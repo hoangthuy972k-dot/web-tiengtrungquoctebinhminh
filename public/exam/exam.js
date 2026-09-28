@@ -160,6 +160,7 @@
           it.text = part.type === 'arrange' || part.type === 'write';
           it.pw = part.type === 'pic-write';
           it.essay = part.type === 'essay';
+          it.sum = part.type === 'summary';
           questionIndex[it.q.n] = it;
           allQuestions.push(it);
         });
@@ -185,11 +186,17 @@
     var thieu = (q.words || []).filter(function (w) { return t.indexOf(w) === -1; });
     return { n: n, thieu: thieu, ok: n >= (q.minHan || 60) && n <= 200 && !thieu.length };
   }
+  // 缩写 (HSK 6 cau 101): cham so bo theo do dai — tu minHan (mac dinh 300) den 1,5 lan so chu yeu cau
+  function summaryCheck(q, v) {
+    var n = hanCount(normText(v)), max = Math.round((q.soChu || 400) * 1.5);
+    return { n: n, max: max, ok: n >= (q.minHan || 300) && n <= max };
+  }
   function isRight(n, v) {
     var it = questionIndex[n];
     if (!it || v === undefined) return false;
     if (it.pw) return picWriteOk(it.q, v);
     if (it.essay) return essayCheck(it.q, v).ok;
+    if (it.sum) return summaryCheck(it.q, v).ok;
     if (it.text) {
       var got = normText(v);
       // q.accept: cac cach viet dung khac (dap an chinh thuc cho phep 2 cach xep cau)
@@ -234,12 +241,50 @@
       html += '</div>';
     });
     $('#exMain').innerHTML = html;
+    if (!state.submitted) { sumEnter(); saveState(); }
     renderSide();
     bindMain();
     applyAnswersToDom();
     followSectionInSide();
     var audio = $('#exAudio');
     if (audio) audio.playbackRate = parseFloat($('#exSpeed').value);
+  }
+
+  // ---------- 缩写 (HSK 6 cau 101) ----------
+  // state.sum[n] = { t: luc bat dau doc, w: da sang buoc viet }. Het readSec (mac dinh 600 giay) thi tu an bai.
+  function sumState(n) { state.sum = state.sum || {}; return state.sum[n] || {}; }
+  function sumQs() { return allQuestions.filter(function (it) { return it.sum; }); }
+  function sumLeft(q) { var st = sumState(q.n); return st.t ? Math.max(0, (q.readSec || 600) - Math.floor((Date.now() - st.t) / 1000)) : (q.readSec || 600); }
+  function fmtMS(sec) { var m = Math.floor(sec / 60), s2 = sec % 60; return (m < 10 ? '0' : '') + m + ':' + (s2 < 10 ? '0' : '') + s2; }
+  function paras(t) { return String(t || '').split(/\n+/).map(function (p) { return '<p>' + esc(p) + '</p>'; }).join(''); }
+  function sumEnter() {
+    // bat dau tinh gio doc khi phan thi chua cau 101 dang hien
+    sumQs().forEach(function (it) {
+      if (data.sections[curSec()] !== it.section) return;
+      state.sum = state.sum || {};
+      if (!state.sum[it.q.n]) state.sum[it.q.n] = { t: Date.now() };
+    });
+  }
+  function sumToWrite(n) {
+    state.sum = state.sum || {};
+    state.sum[n] = Object.assign({ t: Date.now() }, state.sum[n], { w: true });
+    saveState();
+    var card = document.getElementById('q-' + n);
+    if (!card) return;
+    $all('.ex-sum-text, [data-sum-start], [data-sum-clock]', card).forEach(function (el) { el.remove(); });
+    var w = $('.ex-sum-write', card); if (w) w.hidden = false;
+    var ta = $('textarea', card); if (ta) ta.focus();
+  }
+  function sumTick() {
+    if (state.submitted) return;
+    sumQs().forEach(function (it) {
+      var st = sumState(it.q.n);
+      if (!st.t || st.w) return;
+      var left = sumLeft(it.q);
+      var c = $('[data-sum-clock="' + it.q.n + '"] span');
+      if (c) c.textContent = fmtMS(left);
+      if (left <= 0) sumToWrite(it.q.n);
+    });
   }
 
   // ---------- Chuyen phan thi (mot chieu, nhu thi that) ----------
@@ -256,7 +301,7 @@
       'Chuyển sang phần ' + next.name, function () {
         stopClip();
         var a = $('#exAudio'); if (a) a.pause();
-        state.sec = si; saveState();
+        state.sec = si; sumEnter(); saveState();
         $all('#exMain .ex-sec').forEach(function (el, i) { el.hidden = i !== si; });
         renderSide();
         applyAnswersToDom();
@@ -291,7 +336,8 @@
   function zhHtml(zh, n) {
     return esc(zh).replace(/（\s*　*\s*）|\(\s*\)/g, function () {
       return '<span class="ex-blank"' + (n ? ' data-blank="' + n + '"' : '') + '></span>';
-    }).replace(/【([^【】]*)】/g, '<u class="ex-u">$1</u>') // phan gach chan trong de goc (vd HSK 5 "划线句子")
+    }).replace(/＿(\d+)＿/g, function (m, k) { return '<span class="ex-blank ex-blank-n" data-blank="' + k + '" data-bn="' + k + '">' + k + '</span>'; })
+      .replace(/【([^【】]*)】/g, '<u class="ex-u">$1</u>') // phan gach chan trong de goc (vd HSK 5 "划线句子")
       .replace(/\n/g, '<br>');
   }
   function textBlock(q, cls) {
@@ -325,6 +371,9 @@
     return '<div class="ex-explain" data-explain="' + n + '" hidden></div>';
   }
 
+  function passageImg(g) {
+    return g.img ? '<img class="ex-passage-img" src="' + data.img + g.img + '" alt="" loading="lazy" />' : '';
+  }
   function renderWordFillGroup(g) {
     var keysW = g.words.map(function (w) { return w.k; });
     var h = '<div class="ex-card" id="q-' + g.range[0] + '" data-group="' + g.range[0] + '">' + cardHead('Câu ' + g.range[0] + ' - ' + g.range[1]) +
@@ -377,7 +426,7 @@
           (q.zh ? textBlock(q, 'ex-passage') : '') +
           (q.star ? '<div class="ex-text ex-star-q"><div class="zh">★' + esc(q.star) + '</div></div>' : '') +
           (q.zh || q.star ? '<div style="height:10px"></div>' : '') +
-          '<div class="ex-opts' + (q.options.length > 3 ? ' ex-opts-4' : '') + '">' + q.options.map(function (o, i) {
+          '<div class="ex-opts' + (q.options.length > 3 ? ' ex-opts-4' : '') + (q.options.some(function (o) { return String(o.zh).length > 18; }) ? ' ex-opts-long' : '') + '">' + q.options.map(function (o, i) {
             var k = 'ABCDEF'[i];
             return '<button type="button" class="ex-opt" data-n="' + q.n + '" data-v="' + k + '"><span class="ex-opt-k">' + k + '</span>' + (o.py ? '<div class="py">' + esc(o.py) + '</div>' : '') + '<div class="zh">' + esc(o.zh) + '</div></button>';
           }).join('') + '</div>' + explainBox(q.n) + '</div>';
@@ -388,7 +437,7 @@
           if (g.questions.length === 1 && !g.zh) { h += mcCard(g.questions[0], false); return; }
           h += '<div class="ex-card ex-group" id="q-g' + g.range[0] + '" data-group="' + g.range[0] + '">' +
             '<div class="ex-card-head"><h3>Câu ' + g.range[0] + ' - ' + g.range[1] + '</h3>' + (g.audio ? playBtn({ n: g.range[0], audio: g.audio }) : '') + '</div>' +
-            (g.zh ? '<div class="ex-text ex-passage"><div class="zh">' + zhHtml(g.zh) + '</div></div>' : '') +
+            (g.zh ? '<div class="ex-text ex-passage">' + passageImg(g) + '<div class="zh">' + zhHtml(g.zh) + '</div></div>' : '') +
             g.questions.map(function (q) { return mcCard(q, true); }).join('') + '</div>';
         });
       } else part.questions.forEach(function (q) { h += mcCard(q, false); });
@@ -405,13 +454,33 @@
       part.groups.forEach(function (g) {
         var keysS = g.options.map(function (o) { return o.k; });
         h += '<div class="ex-card" id="q-' + g.range[0] + '" data-group="' + g.range[0] + '">' + cardHead('Câu ' + g.range[0] + ' - ' + g.range[1]) +
+          (g.zh ? '<div class="ex-text ex-passage ex-sent-passage">' + passageImg(g) + '<div class="zh">' + zhHtml(g.zh) + '</div></div>' : '') +
           '<div class="ex-bank sent">' + g.options.map(function (o) { return '<div class="ex-bank-item' + (o.used ? ' used' : '') + '"><b>' + o.k + '.</b><span class="ex-text"><span class="py">' + esc(o.py || '') + '</span><span class="zh">' + esc(o.zh) + '</span></span></div>'; }).join('') + '</div>' +
           (g.example ? '<p class="ex-example">' + esc(g.example) + '</p>' : '');
         g.questions.forEach(function (q) {
-          h += '<div class="ex-row' + (isLongRow(q) ? ' is-long' : '') + '" id="q-' + q.n + '" data-n="' + q.n + '">' + rowNum(q) + '<div class="ex-row-text">' + textBlock(q) +
+          h += '<div class="ex-row' + (q.zh ? (isLongRow(q) ? ' is-long' : '') : ' no-text') + '" id="q-' + q.n + '" data-n="' + q.n + '">' + rowNum(q) + '<div class="ex-row-text">' + (q.zh ? textBlock(q) : '') +
             explainBox(q.n) + '</div>' + letterBtns(q.n, keysS) + '</div>';
         });
         h += '</div>';
+      });
+    } else if (part.type === 'summary') {
+      // HSK 6 cau 101 (缩写): doc bai 10 phut -> bai bi an, khong xem lai -> viet tom tat ~400 chu
+      part.questions.forEach(function (q) {
+        var st = sumState(q.n);
+        var doc = !state.submitted && !st.w;
+        h += '<div class="ex-card ex-sum" id="q-' + q.n + '" data-n="' + q.n + '">' +
+          '<div class="ex-card-head"><h3>Câu ' + q.n + '</h3>' +
+          (doc ? '<span class="ex-sum-clock" data-sum-clock="' + q.n + '">' + ICONS.clock + '<span>' + fmtMS(sumLeft(q)) + '</span></span>' : '') + '</div>' +
+          (doc
+            ? '<div class="ex-sum-text zh">' + paras(q.text) + '</div>' +
+              '<button type="button" class="ex-btn-ghost ex-sum-start" data-sum-start="' + q.n + '">Bắt đầu tóm tắt</button>'
+            : '') +
+          '<div class="ex-sum-write"' + (doc ? ' hidden' : '') + '>' +
+            '<p class="ex-essay-de">Tóm tắt bài văn vừa đọc thành bài khoảng ' + (q.soChu || 400) + ' chữ, tự đặt tiêu đề. Chỉ kể lại nội dung, không thêm ý kiến của mình.</p>' +
+            '<textarea class="ex-input ex-textarea ex-essay-ta ex-sum-ta" data-input="' + q.n + '" rows="14" autocomplete="off" spellcheck="false" lang="zh" placeholder="Nội dung tóm tắt" aria-label="Bài tóm tắt câu ' + q.n + '"></textarea>' +
+            '<div class="ex-essay-count" data-count="' + q.n + '" data-count-of="' + (q.soChu || 400) + '">0 / ' + (q.soChu || 400) + ' chữ</div>' +
+          '</div>' +
+          explainBox(q.n) + '</div>';
       });
     } else if (part.type === 'arrange') {
       part.questions.forEach(function (q) {
@@ -560,6 +629,12 @@
       if (goto) { scrollToId(goto.getAttribute('data-goto')); return; }
       var nx = e.target.closest('[data-next-sec]');
       if (nx) { goNextSection(parseInt(nx.getAttribute('data-next-sec'), 10)); return; }
+      var ss = e.target.closest('[data-sum-start]');
+      if (ss) {
+        var sn = parseInt(ss.getAttribute('data-sum-start'), 10);
+        openModal('Bắt đầu tóm tắt', 'Bài đọc sẽ bị ẩn và bạn không thể xem lại nữa. Bắt đầu viết bài tóm tắt?', 'Bắt đầu viết', function () { sumToWrite(sn); });
+        return;
+      }
       var ai = e.target.closest('[data-ai-cham]');
       if (ai) { aiCham(parseInt(ai.getAttribute('data-ai-cham'), 10)); return; }
       var play = e.target.closest('[data-play]');
@@ -598,7 +673,7 @@
       saveState();
       applyAnswersToDom();
       var cnt = $('[data-count="' + n + '"]');
-      if (cnt) cnt.textContent = hanCount(v) + ' chữ';
+      if (cnt) cnt.textContent = hanCount(v) + (cnt.getAttribute('data-count-of') ? ' / ' + cnt.getAttribute('data-count-of') : '') + ' chữ';
     });
     document.addEventListener('click', function (e) {
       var goto = e.target.closest('#exSide [data-goto]');
@@ -613,14 +688,19 @@
     box.innerHTML = '<div class="ex-ai-wait">AI đang chấm bài (khoảng 10–30 giây)…</div>';
     var h = { 'Content-Type': 'application/json' };
     var tk = authToken(); if (tk) h.Authorization = 'Bearer ' + tk;
-    fetch('/api/ai/cham-doan', { method: 'POST', headers: h, body: JSON.stringify({
-      capDo: data.level || 'HSK 5', de: q.prompt || (q.words ? 'Dùng các từ cho sẵn viết một đoạn văn khoảng 80 chữ.' : 'Nhìn tranh viết một đoạn văn khoảng 80 chữ.'),
-      tu: q.words || [], bai: String(state.answers[n] || '')
-    }) }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
+    var body = questionIndex[n].sum
+      ? { kieu: 'sgk', capDo: data.level || 'HSK 6', soChu: q.soChu || 400, goc: q.text, bai: String(state.answers[n] || ''),
+          de: '缩写 (HSK 6 câu 101): đọc bài văn 10 phút rồi viết lại thành bài khoảng ' + (q.soChu || 400) + ' chữ, tự đặt tiêu đề, chỉ kể lại nội dung, không thêm ý kiến.' }
+      : { capDo: data.level || 'HSK 5', de: q.prompt || (q.words ? 'Dùng các từ cho sẵn viết một đoạn văn khoảng 80 chữ.' : 'Nhìn tranh viết một đoạn văn khoảng 80 chữ.'),
+          tu: q.words || [], bai: String(state.answers[n] || '') };
+    fetch('/api/ai/cham-doan', { method: 'POST', headers: h, body: JSON.stringify(body) }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (x) {
         if (!x.ok || typeof x.j.diem !== 'number') { box.innerHTML = '<div class="ex-ai-err">' + esc((x.j && x.j.error) || 'AI chưa chấm được, thử lại sau nhé.') + '</div>'; return; }
         var j = x.j;
-        box.innerHTML = '<div class="ex-ai-kq"><b>AI chấm: ' + j.diem + '/100</b>' + (j.nhanXet ? '<p>' + esc(j.nhanXet) + '</p>' : '') +
+        var tc = j.tieuChi;
+        box.innerHTML = '<div class="ex-ai-kq"><b>AI chấm: ' + j.diem + '/100</b>' +
+          (tc ? '<div class="ex-ai-tc">Nội dung ' + tc.noiDung + '/25 · Từ vựng ' + tc.tuVung + '/25 · Ngữ pháp ' + tc.nguPhap + '/30 · Bố cục ' + tc.boCuc + '/20</div>' : '') +
+          (j.nhanXet ? '<p>' + esc(j.nhanXet) + '</p>' : '') +
           (j.loi && j.loi.length ? '<ol>' + j.loi.map(function (l) { return '<li><s class="hanzi">' + esc(l.sai) + '</s> → <b class="hanzi">' + esc(l.sua) + '</b><br><small>' + esc(l.giai) + '</small></li>'; }).join('') + '</ol>' : '') +
           (j.baiSua ? '<div class="ex-ai-sua"><small>Bài sau khi sửa:</small><div class="hanzi">' + esc(j.baiSua) + '</div></div>' : '') + '</div>';
       }).catch(function () { box.innerHTML = '<div class="ex-ai-err">Không kết nối được máy chủ.</div>'; });
@@ -647,12 +727,16 @@
       var it = questionIndex[n];
       var v = state.answers[n];
       var word = '';
-      if (it && v !== undefined && it.part.type === 'word-fill') {
-        var bank = it.group ? it.group.words : it.part.words;
+      var bn = el.getAttribute('data-bn');
+      if (it && v !== undefined && (it.part.type === 'word-fill' || it.part.type === 'sent-match')) {
+        var bank = it.part.type === 'sent-match' ? it.group.options : it.group ? it.group.words : it.part.words;
         var w = (bank || []).filter(function (x) { return x.k === v; })[0];
         word = w ? w.zh : '';
+      } else if (it && v !== undefined && bn && it.part.type === 'mc') {
+        var o = it.q.options['ABCDEF'.indexOf(v)];
+        word = o ? o.zh : '';
       }
-      el.textContent = word;
+      el.textContent = word || bn || '';
       el.classList.toggle('filled', !!word);
     });
     // Sap xep cau
@@ -711,6 +795,7 @@
       var r = remainingSec();
       $('#exTimerTxt').textContent = fmt(r);
       $('#exTimer').classList.toggle('low', r <= 300);
+      sumTick();
       if (r <= 0) { clearInterval(timerId); submit(true); }
     };
     tick(); timerId = setInterval(tick, 1000);
@@ -768,6 +853,8 @@
     // Nop xong: mo lai tat ca cac phan de xem dap an
     $all('#exMain .ex-sec').forEach(function (el) { el.hidden = false; });
     $all('#exMain .ex-next').forEach(function (el) { el.hidden = true; });
+    $all('#exMain .ex-sum-text, #exMain [data-sum-start], #exMain [data-sum-clock]').forEach(function (el) { el.remove(); });
+    $all('#exMain .ex-sum-write').forEach(function (el) { el.hidden = false; });
     // đánh dấu từng câu
     allQuestions.forEach(function (it) {
       var q = it.q, chosen = state.answers[q.n], ok = isRight(q.n, chosen);
@@ -792,7 +879,14 @@
       if (ex) {
         var ansTxt = typeof q.answer === 'boolean' ? (q.answer ? '✓ Đúng' : '✗ Sai') : q.answer;
         var ec = it.essay ? essayCheck(q, chosen) : null;
-        var h = it.essay
+        var sc = it.sum ? summaryCheck(q, chosen) : null;
+        var h = it.sum
+          ? '<div class="ans">' + (chosen === undefined ? 'Bạn chưa làm' : 'Chấm sơ bộ: ' + (ok ? 'đạt' : 'chưa đạt') + ' — ' + sc.n + ' chữ' +
+              (sc.n < (q.minHan || 300) ? ' · bài cần khoảng ' + (q.soChu || 400) + ' chữ' : sc.n > sc.max ? ' · bài quá dài, cần khoảng ' + (q.soChu || 400) + ' chữ' : '')) + '</div>' +
+            (chosen !== undefined ? '<div class="ex-ai-box" data-ai="' + q.n + '"><button type="button" class="ex-btn-ghost ex-ai-btn" data-ai-cham="' + q.n + '">Nhờ AI chấm chi tiết</button></div>' : '') +
+            '<details class="ex-essay-mau"><summary>Bài đọc gốc</summary><div class="hanzi ex-sum-goc">' + paras(q.text) + '</div>' + (q.textVn ? '<div class="vn">' + paras(q.textVn) + '</div>' : '') + '</details>' +
+            '<details class="ex-essay-mau"><summary>Bài tóm tắt mẫu</summary><div class="hanzi">' + paras(q.answer) + '</div>' + (q.vn ? '<div class="vn">' + paras(q.vn) + '</div>' : '') + '</details>'
+          : it.essay
           ? '<div class="ans">' + (chosen === undefined ? 'Bạn chưa làm' : 'Chấm sơ bộ: ' + (ok ? 'đạt' : 'chưa đạt') + ' — ' + ec.n + ' chữ' +
               (q.words ? (ec.thieu.length ? ' · còn thiếu: <span class="hanzi">' + esc(ec.thieu.join('、')) + '</span>' : ' · dùng đủ 5 từ') : '') +
               (ec.n < (q.minHan || 60) ? ' · cần khoảng 80 chữ' : '')) + '</div>' +
@@ -812,7 +906,7 @@
         if (q.script) h += '<div class="zh hanzi">' + esc(q.script) + '</div>';
         if (q.scriptVn) h += '<div class="vn">' + esc(q.scriptVn) + '</div>';
         if (q.scriptVn && q.starVn) h += '<div class="vn">★ ' + esc(q.starVn) + '</div>';
-        if (q.vn && !q.scriptVn && !it.essay) h += '<div class="vn">' + esc(q.vn) + (q.starVn ? '<br>★ ' + esc(q.starVn) : '') + '</div>';
+        if (q.vn && !q.scriptVn && !it.essay && !it.sum) h += '<div class="vn">' + esc(q.vn) + (q.starVn ? '<br>★ ' + esc(q.starVn) : '') + '</div>';
         else if (!q.vn && !q.scriptVn && q.starVn) h += '<div class="vn">★ ' + esc(q.starVn) + '</div>';
         ex.innerHTML = h; ex.hidden = false;
       }

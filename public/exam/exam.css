@@ -634,3 +634,20 @@ button.ex-folder:hover { border-color: #e0a59f; transform: translateY(-1px); }
 .ex-nav h3 small { margin-left: 8px; font-size: 0.75rem; font-weight: 600; color: var(--ex-soft); }
 .ex-nav-grid.is-locked .ex-dot { opacity: 0.45; cursor: not-allowed; }
 .ex-nav-grid.is-locked .ex-dot:hover { border-color: var(--ex-line); }
+
+/* HSK 6: phuong an dai (chon cau sai), o trong danh so trong doan van, anh minh hoa, cau 101 缩写 */
+.ex-opts-long { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.ex-opts-long .ex-opt { text-align: left; }
+.ex-opts-long .ex-opt .zh { font-size: 1.05rem; line-height: 1.6; }
+.ex-blank.ex-blank-n { height: auto; min-width: 4.5em; line-height: 1.6; white-space: normal; color: var(--ex-soft); font-weight: 500; }
+.ex-blank.ex-blank-n.filled { color: var(--ex-navy); font-weight: 600; }
+.ex-passage-img { float: left; width: 150px; max-width: 38%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; margin: 4px 16px 8px 0; }
+.ex-passage::after { content: ''; display: block; clear: both; }
+.ex-sent-passage { margin-bottom: 14px; }
+.ex-sum-clock { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; background: var(--ex-navy-soft); color: var(--ex-navy); font-weight: 700; font-variant-numeric: tabular-nums; }
+.ex-sum-clock svg { width: 18px; height: 18px; }
+.ex-sum-text { font-size: 1.1rem; line-height: 1.9; }
+.ex-sum-text p, .ex-sum-goc p { margin: 0 0 6px; text-indent: 2em; }
+.ex-sum-start { display: block; width: 100%; margin-top: 14px; padding: 12px; border-radius: 999px; }
+.ex-input.ex-sum-ta { min-height: 320px; }
+.ex-ai-tc { font-size: 0.85rem; color: var(--ex-mid); margin: 2px 0 4px; }

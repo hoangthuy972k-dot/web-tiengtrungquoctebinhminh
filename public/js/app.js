@@ -719,15 +719,6 @@
     renderWelcome();
   }
 
-  // Loi moi hoc lop cung co (cuoi bai kiem tra / ket qua) — dung luc hoc sinh vua thay "minh hoc duoc"
-  function classCtaHtml() {
-    return '<a class="class-cta" href="https://zalo.me/0377527486" target="_blank" rel="noopener">' +
-      '<span class="class-cta-ic" aria-hidden="true">👩‍🏫</span>' +
-      '<span class="class-cta-body"><b>Muốn học cùng cô Hoàng Thùy?</b>' +
-      '<small>Nhắn Zalo cho cô để được tư vấn lớp học phù hợp với trình độ và mục tiêu của bạn.</small></span>' +
-      '<span class="class-cta-go" aria-hidden="true">Nhắn Zalo →</span></a>';
-  }
-
   // Mo thang lo trinh bai 1 cua cap do (hoc thu, khong can dang ky)
   function startFirstLesson(levelId) {
     var lessons = (APP_DATA.lessons && APP_DATA.lessons[levelId]) || [];
@@ -2335,7 +2326,6 @@
             '<div class="cert-foot"><span>Ngày ' + dateTxt + '</span><span>Cô Hoàng Thùy · Hi Hán 喜汉</span></div>' +
           '</div>'
         : '') +
-      classCtaHtml() +
       '<div class="fq-actions">' +
         '<button type="button" class="btn btn-ghost" id="fqRetry">↻ Làm lại</button>' +
         (pass ? '<button type="button" class="btn btn-ghost" id="fqPrint">🖨️ In / lưu chứng nhận</button>' : '') +
@@ -13283,7 +13273,6 @@
         rowsHtml +
       '</div>' +
       statsHtml +
-      classCtaHtml() +
       '<button type="button" class="btn btn-primary rp-cta" id="rpGoReview">↻ Đi tới Ôn tập</button>';
 
     $('#rpGoReview').addEventListener('click', showDashboard);

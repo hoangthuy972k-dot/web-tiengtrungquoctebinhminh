@@ -353,6 +353,15 @@ async function deleteSession(token) {
   }
   await dbPool.query('DELETE FROM sessions WHERE token = ?', [token]);
 }
+async function deleteUserSessions(userId) {
+  if (!USE_DB) {
+    const sessions = readJsonFile(SESSIONS_FILE) || {};
+    Object.keys(sessions).forEach((t) => { if (sessions[t] && sessions[t].userId === userId) delete sessions[t]; });
+    writeJsonFile(SESSIONS_FILE, sessions);
+    return;
+  }
+  await dbPool.query('DELETE FROM sessions WHERE user_id = ?', [userId]);
+}
 async function loadScores() {
   if (!USE_DB) return readJsonFile(SCORES_FILE) || {};
   const [rows] = await dbPool.query('SELECT * FROM scores');
@@ -449,7 +458,8 @@ async function userProgress(userId) {
 app.post('/api/auth/register', asyncRoute(async (req, res) => {
   const name = typeof req.body?.name === 'string' ? req.body.name.trim() : '';
   const email = typeof req.body?.email === 'string' ? req.body.email.trim().toLowerCase() : '';
-  const password = typeof req.body?.password === 'string' ? req.body.password : '';
+  // bo dau cach 2 dau (ban phim dien thoai hay tu them) de lan sau dang nhap tren may khac van khop
+  const password = typeof req.body?.password === 'string' ? req.body.password.trim() : '';
   const level = typeof req.body?.level === 'string' ? req.body.level : 'hsk1';
   if (!name || !email || !password || password.length < 4) {
     return res.status(400).json({ error: 'Thiếu họ tên, email hoặc mật khẩu (tối thiểu 4 ký tự).' });
@@ -480,8 +490,15 @@ app.post('/api/auth/login', asyncRoute(async (req, res) => {
   if (!email || !password) return res.status(400).json({ error: 'Thiếu email hoặc mật khẩu.' });
   const users = await loadUsers();
   const user = users.find((u) => u.email === email);
-  if (!user || hashPassword(password, user.passwordSalt) !== user.passwordHash) {
-    return res.status(401).json({ error: 'Email hoặc mật khẩu không đúng.' });
+  // Bao ro email chua dang ky hay sai mat khau de hoc sinh biet phai sua cho nao
+  // (trang dang ky von da bao "Email nay da duoc dang ky" nen khong lo them gi).
+  if (!user) {
+    return res.status(401).json({ error: 'Email này chưa được đăng ký. Em kiểm tra lại từng chữ của email (đúng như lúc đăng ký), hoặc bấm "Đăng ký" để tạo tài khoản.' });
+  }
+  // Ban phim dien thoai hay tu them dau cach o cuoi -> chap nhan ca mat khau da bo dau cach 2 dau
+  const khop = (p) => hashPassword(p, user.passwordSalt) === user.passwordHash;
+  if (!khop(password) && !(password.trim() !== password && khop(password.trim()))) {
+    return res.status(401).json({ error: 'Mật khẩu không đúng. Lưu ý chữ hoa/chữ thường. Nếu quên mật khẩu, em nhờ thầy/cô đặt lại mật khẩu mới.' });
   }
   const token = await createSession(user.id);
   res.json({ token, user: publicUser(user), progress: await userProgress(user.id) });
@@ -3095,6 +3112,23 @@ app.delete('/api/admin/classes/:id', requireAdmin, asyncRoute(async (req, res) =
     await classDbWrite('DELETE FROM class_members WHERE class_id = ?', [id]);
     await classDbWrite('DELETE FROM classes WHERE id = ?', [id]);
   }
+  res.json({ ok: true });
+}));
+
+// Thay/co dat lai mat khau cho hoc sinh quen mat khau (khong co email khoi phuc).
+// Dang xuat moi thiet bi cu cua em do de mat khau moi co hieu luc ngay.
+app.post('/api/admin/reset-password', requireAdmin, asyncRoute(async (req, res) => {
+  const userId = String(req.body?.userId || '');
+  const password = typeof req.body?.password === 'string' ? req.body.password.trim() : '';
+  if (password.length < 4) return res.status(400).json({ error: 'Mật khẩu mới cần ít nhất 4 ký tự.' });
+  const users = await loadUsers();
+  const user = users.find((u) => u.id === userId);
+  if (!user) return res.status(404).json({ error: 'Không tìm thấy học sinh.' });
+  user.passwordSalt = crypto.randomBytes(16).toString('hex');
+  user.passwordHash = hashPassword(password, user.passwordSalt);
+  if (USE_DB) await dbPool.query('UPDATE users SET password_salt = ?, password_hash = ? WHERE id = ?', [user.passwordSalt, user.passwordHash, user.id]);
+  else await saveUsers(users); // che do file JSON ghi ca danh sach, nen phai truyen du
+  await deleteUserSessions(user.id);
   res.json({ ok: true });
 }));
 

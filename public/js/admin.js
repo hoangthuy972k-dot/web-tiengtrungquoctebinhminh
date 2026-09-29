@@ -335,6 +335,23 @@
     box.hidden = false;
     box.innerHTML = detailHtml(s);
     $('#trBack', box).addEventListener('click', closeStudent);
+    $('#trPwForm', box).addEventListener('submit', function (e) {
+      e.preventDefault();
+      var pw = $('#trPwNew', box).value.trim(), msg = $('#trPwMsg', box);
+      if (pw.length < 4) { msg.textContent = 'Mật khẩu mới cần ít nhất 4 ký tự.'; return; }
+      msg.textContent = 'Đang lưu…';
+      fetch('/api/admin/reset-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Admin-Password': sessionStorage.getItem(PW_KEY) || '' },
+        body: JSON.stringify({ userId: s.id, password: pw })
+      }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (x) {
+          msg.innerHTML = x.ok
+            ? '✅ Đã đổi. Báo em đăng nhập bằng email <b>' + esc(s.email) + '</b> và mật khẩu <b>' + esc(pw) + '</b>.'
+            : '⚠ ' + esc((x.d && x.d.error) || 'Chưa lưu được, thử lại nhé.');
+        })
+        .catch(function () { msg.textContent = '⚠ Không kết nối được máy chủ.'; });
+    });
     window.scrollTo(0, 0);
   }
   function closeStudent() {
@@ -418,6 +435,13 @@
       '<div class="tr-d-head"><div><div class="tr-d-name">' + esc(s.name) + '</div>' +
         '<div class="tr-muted">' + esc(s.email) + ' · ' + esc(levelName(s.level)) + ' · ' + (s.classId && className(s.classId) ? '🏫 ' + esc(className(s.classId)) : 'chưa vào lớp') + ' · tham gia ' + (s.createdAt ? new Date(s.createdAt).toLocaleDateString('vi-VN') : '—') + '</div></div>' +
         (needsAttention(s) ? '<span class="tr-chip is-stale">⚠ ' + esc(attentionReason(s)) + '</span>' : '') + '</div>' +
+      // Hoc sinh quen mat khau: thay/co dat mat khau moi roi bao lai cho em
+      '<details class="tr-pw"><summary>🔑 Đặt lại mật khẩu</summary>' +
+        '<form class="tr-pw-form" id="trPwForm">' +
+          '<label>Mật khẩu mới cho em <input type="text" id="trPwNew" minlength="4" autocomplete="off" spellcheck="false" required></label>' +
+          '<button type="submit" class="btn btn-primary">Lưu mật khẩu mới</button>' +
+          '<p class="tr-hint" id="trPwMsg">Em đăng nhập bằng email <b>' + esc(s.email) + '</b> và mật khẩu mới này. Các máy đang đăng nhập của em sẽ bị đăng xuất.</p>' +
+        '</form></details>' +
       '<section class="admin-cards">' + tiles.map(function (c) {
         return '<div class="admin-card"><div class="admin-card-label">' + c.label + '</div><div class="admin-card-value is-sm">' + c.value + '</div>' +
           (c.sub ? '<div class="admin-card-sub">' + c.sub + '</div>' : '') + '</div>';

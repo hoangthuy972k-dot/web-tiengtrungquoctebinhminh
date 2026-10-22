@@ -1,0 +1,569 @@
+{
+ "/lessons/hsk3v3-bai-1.html": {
+  "points": [
+   {
+    "title": "Cụm từ cố định 「看上去 / 看起来」 — trông, có vẻ",
+    "errors": [
+     {
+      "wrong": "他看很年轻。",
+      "why": "“trông (có vẻ)” không dịch là 看 đơn thuần; phải dùng 看上去 / 看起来.",
+      "right": "他看上去很年轻。"
+     },
+     {
+      "wrong": "这些菜看上来都很好吃。",
+      "why": "không có “看上来”; chỉ dùng 看上去 hoặc 看起来.",
+      "right": "这些菜看起来都很好吃。"
+     },
+     {
+      "wrong": "你妈妈看起来年轻。",
+      "why": "tính từ làm vị ngữ sau 看起来 vẫn cần 很 (hoặc phó từ mức độ).",
+      "right": "你妈妈看起来很年轻。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Trông họ hơi giống nhau.”",
+      "pre": "他们",
+      "blank": "看上去有点儿像",
+      "post": "。",
+      "options": [
+       "看上去有点儿像",
+       "看上来有点儿像",
+       "有点儿像看上去"
+      ],
+      "answer": 0,
+      "explanation": "看上去 + 有点儿像; không có 看上来."
+     },
+     {
+      "context": "“Mấy món này trông đều rất ngon.”",
+      "pre": "这些菜",
+      "blank": "看起来都很好吃",
+      "post": "。",
+      "options": [
+       "看起来都很好吃",
+       "都很好吃看起来",
+       "看都很好吃"
+      ],
+      "answer": 0,
+      "explanation": "看起来 đứng trước phần miêu tả."
+     },
+     {
+      "context": "“Thầy giáo mới đến kia trông rất trẻ.”",
+      "pre": "那个新来的老师",
+      "blank": "看上去很年轻",
+      "post": "。",
+      "options": [
+       "看上去很年轻",
+       "看很年轻",
+       "看上去年轻人"
+      ],
+      "answer": 0,
+      "explanation": "看上去 + 很 + tính từ."
+     },
+     {
+      "context": "Sách: “Trông bạn giống mẹ bạn hơn.” (ôn 更 – HSK2 Bài 4)",
+      "pre": "你",
+      "blank": "看起来",
+      "post": "长得更像你妈妈。",
+      "options": [
+       "看起来",
+       "看见",
+       "看到"
+      ],
+      "answer": 0,
+      "explanation": "看起来 = nhận xét qua vẻ ngoài; 看见/看到 = nhìn thấy."
+     },
+     {
+      "context": "Sách: “Trông bạn mệt lắm, nghỉ ngơi cho tốt đi.” (累 – HSK2 Bài 3)",
+      "pre": "你",
+      "blank": "看上去很累",
+      "post": "，好好休息一下吧。",
+      "options": [
+       "看上去很累",
+       "看上去累很",
+       "很累看上去"
+      ],
+      "answer": 0,
+      "explanation": "很 đứng trước tính từ 累."
+     },
+     {
+      "context": "Sách: “Bạn sao thế? Hôm nay trông bạn không vui lắm.”",
+      "pre": "你怎么了？今天",
+      "blank": "你看起来不太高兴",
+      "post": "。",
+      "options": [
+       "你看起来不太高兴",
+       "你看不太高兴",
+       "你不太高兴看起来"
+      ],
+      "answer": 0,
+      "explanation": "看起来 + 不太 + tính từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他看很年轻。",
+      "isCorrect": false,
+      "correctVersion": "他看上去很年轻。",
+      "explanation": "Phải dùng 看上去 / 看起来, không dùng 看 đơn thuần."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "看起来他比同乐瘦一点儿。",
+      "isCorrect": true,
+      "explanation": "看起来 có thể đứng đầu câu, trước chủ ngữ — đúng. Kết hợp câu so sánh 比 (HSK2 Bài 8)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trông họ hơi giống nhau.”",
+      "words": [
+       "他们",
+       "看上去",
+       "有点儿",
+       "像",
+       "。"
+      ],
+      "answer": "他们看上去有点儿像。",
+      "explanation": "看上去 + 有点儿 + 像."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mấy món này trông đều rất ngon.”",
+      "words": [
+       "这些",
+       "菜",
+       "看起来",
+       "都",
+       "很",
+       "好吃",
+       "。"
+      ],
+      "answer": "这些菜看起来都很好吃。",
+      "explanation": "都 đứng sau 看起来, trước 很好吃."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chị ấy trông trẻ hơn so với trong ảnh.”",
+      "words": [
+       "她",
+       "看起来",
+       "比",
+       "照片",
+       "上",
+       "年轻",
+       "。"
+      ],
+      "answer": "她看起来比照片上年轻。",
+      "explanation": "看起来 + 比 + 照片上 + 年轻."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mẹ bạn trông rất trẻ.”",
+      "words": [
+       "你",
+       "妈妈",
+       "看上去",
+       "很",
+       "年轻",
+       "。"
+      ],
+      "answer": "你妈妈看上去很年轻。",
+      "explanation": "看上去 + 很年轻."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 看起来.",
+      "promptLang": "vi",
+      "prompt": "Hôm nay trông bạn rất vui.",
+      "answer": "你今天看起来很高兴。",
+      "answerPy": "Nǐ jīntiān kàn qǐlai hěn gāoxìng.",
+      "explanation": "Thời gian 今天 đứng trước 看起来."
+     }
+    ]
+   },
+   {
+    "title": "Đại từ nghi vấn không dùng để hỏi (1) — 哪儿 / 什么 / 谁 / 哪",
+    "errors": [
+     {
+      "wrong": "我好像见过他在哪儿。",
+      "why": "在哪儿 là trạng ngữ nơi chốn, phải đứng TRƯỚC động từ (在 + nơi chốn + V).",
+      "right": "我好像在哪儿见过他。"
+     },
+     {
+      "wrong": "我们哪儿天一起去踢足球吧。",
+      "why": "哪儿 chỉ nơi chốn; “hôm nào đó” phải nói 哪天.",
+      "right": "我们哪天一起去踢足球吧。"
+     },
+     {
+      "wrong": "我好像在哪儿看到过这个箱子？",
+      "why": "đây là câu trần thuật, 哪儿 = “ở đâu đó”, cuối câu dùng dấu chấm chứ không phải dấu hỏi.",
+      "right": "我好像在哪儿看到过这个箱子。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (谁): “Mình cũng không biết, để mình đi hỏi ai đó xem.”",
+      "pre": "我们是不是走错了？——我也不知道，我去",
+      "blank": "找谁问问",
+      "post": "。",
+      "options": [
+       "找谁问问",
+       "问问谁找",
+       "谁找问问"
+      ],
+      "answer": 0,
+      "explanation": "谁 = “ai đó”; 找 + 谁 + 问问."
+     },
+     {
+      "context": "Sách (什么): “Lúc nào rảnh đến nhà mình, mình làm món gì đó cho bạn ăn.”",
+      "pre": "你有时间了来我家，我",
+      "blank": "做点儿什么",
+      "post": "给你吃。",
+      "options": [
+       "做点儿什么",
+       "什么做点儿",
+       "做什么点儿"
+      ],
+      "answer": 0,
+      "explanation": "V + 点儿 + 什么 = làm chút gì đó."
+     },
+     {
+      "context": "Sách (哪儿): “Mấy hôm nay mệt quá, mình muốn đi đâu đó chơi.”",
+      "pre": "这几天太累了，我想",
+      "blank": "去哪儿玩儿玩儿",
+      "post": "。——那你去西安吧。",
+      "options": [
+       "去哪儿玩儿玩儿",
+       "哪儿去玩儿玩儿",
+       "玩儿玩儿去哪儿"
+      ],
+      "answer": 0,
+      "explanation": "去 + 哪儿 = đi đâu đó; câu trần thuật, không phải câu hỏi."
+     },
+     {
+      "context": "“Bạn ăn chút gì đó rồi hẵng đi.”",
+      "pre": "你",
+      "blank": "吃点儿什么",
+      "post": "再走吧。",
+      "options": [
+       "吃点儿什么",
+       "什么吃点儿",
+       "吃什么点儿"
+      ],
+      "answer": 0,
+      "explanation": "什么 = “cái gì đó”, đứng sau động từ như tân ngữ."
+     },
+     {
+      "context": "“Hôm nào đó chúng ta cùng đi đá bóng nhé.” (踢足球 – HSK2 Bài 7)",
+      "pre": "我们",
+      "blank": "哪天",
+      "post": "一起去踢足球吧。",
+      "options": [
+       "哪天",
+       "哪儿天",
+       "什么天"
+      ],
+      "answer": 0,
+      "explanation": "哪天 = hôm nào đó (thời gian)."
+     },
+     {
+      "context": "“Hình như anh đã thấy cái va li này ở đâu đó rồi.”",
+      "pre": "我好像",
+      "blank": "在哪儿看到过",
+      "post": "这个箱子。",
+      "options": [
+       "在哪儿看到过",
+       "看到过在哪儿",
+       "哪儿在看到过"
+      ],
+      "answer": 0,
+      "explanation": "在哪儿 đứng trước động từ; V + 过 (ôn HSK2 Bài 4)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们哪儿天一起去踢足球吧。",
+      "isCorrect": false,
+      "correctVersion": "我们哪天一起去踢足球吧。",
+      "explanation": "“Hôm nào đó” là 哪天, không phải 哪儿天."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们快找谁问一下吧。",
+      "isCorrect": true,
+      "explanation": "谁 ở đây = “ai đó”, không phải câu hỏi — đúng."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hình như tôi đã gặp anh ấy ở đâu đó rồi.”",
+      "words": [
+       "我",
+       "好像",
+       "在哪儿",
+       "见过",
+       "他",
+       "。"
+      ],
+      "answer": "我好像在哪儿见过他。",
+      "explanation": "好像 + 在哪儿 + 见过."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn ăn chút gì đó rồi hẵng đi.”",
+      "words": [
+       "你",
+       "吃",
+       "点儿",
+       "什么",
+       "再",
+       "走",
+       "吧",
+       "。"
+      ],
+      "answer": "你吃点儿什么再走吧。",
+      "explanation": "吃点儿什么 + 再走."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm nào đó chúng ta cùng đi đá bóng nhé.”",
+      "words": [
+       "我们",
+       "哪天",
+       "一起",
+       "去",
+       "踢",
+       "足球",
+       "吧",
+       "。"
+      ],
+      "answer": "我们哪天一起去踢足球吧。",
+      "explanation": "哪天 + 一起 + 去 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng ta mau tìm ai đó hỏi một chút đi.”",
+      "words": [
+       "我们",
+       "快",
+       "找",
+       "谁",
+       "问",
+       "一下",
+       "吧",
+       "。"
+      ],
+      "answer": "我们快找谁问一下吧。",
+      "explanation": "找谁问一下 = tìm ai đó hỏi."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 什么 (không phải câu hỏi).",
+      "promptLang": "vi",
+      "prompt": "Tôi muốn mua cái gì đó cho mẹ.",
+      "answer": "我想给妈妈买点儿什么。",
+      "answerPy": "Wǒ xiǎng gěi māma mǎi diǎnr shénme.",
+      "explanation": "给 + người + V (HSK2 Bài 1) + 点儿什么."
+     }
+    ]
+   },
+   {
+    "title": "Định ngữ đa tầng (多项定语)",
+    "errors": [
+     {
+      "wrong": "我那件衣服新买的白色的在哪儿？",
+      "why": "tiếng Việt đặt định ngữ SAU danh từ (“chiếc áo trắng mới mua”), tiếng Trung đặt TẤT CẢ định ngữ TRƯỚC danh từ.",
+      "right": "我那件新买的白色的衣服在哪儿？"
+     },
+     {
+      "wrong": "和家月一起看电影的昨天的两个人是我的朋友。",
+      "why": "định ngữ chỉ thời gian (昨天) đứng ĐẦU chuỗi định ngữ.",
+      "right": "昨天和家月一起看电影的两个人是我的朋友。"
+     },
+     {
+      "wrong": "昨天和家月一起看电影两个人是我的朋友。",
+      "why": "định ngữ là cụm động từ phải có 的 trước danh từ trung tâm.",
+      "right": "昨天和家月一起看电影的两个人是我的朋友。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Lý Văn có phải là chàng trai tóc ngắn, mặc đồ đen kia không?”",
+      "pre": "李文是",
+      "blank": "那个穿着黑衣服的短头发的年轻人",
+      "post": "吗？",
+      "options": [
+       "那个穿着黑衣服的短头发的年轻人",
+       "年轻人那个穿着黑衣服的短头发的",
+       "那个年轻人穿着黑衣服短头发"
+      ],
+      "answer": 0,
+      "explanation": "Trạng thái (穿着黑衣服的) → đặc điểm (短头发的) → danh từ."
+     },
+     {
+      "context": "“Hai người hôm qua đi xem phim cùng Gia Nguyệt là bạn tôi.”",
+      "pre": "",
+      "blank": "昨天和家月一起看电影的两个人",
+      "post": "是我的朋友。",
+      "options": [
+       "昨天和家月一起看电影的两个人",
+       "两个人昨天和家月一起看电影",
+       "和家月一起看电影昨天的两个人"
+      ],
+      "answer": 0,
+      "explanation": "Thời gian (昨天) → hành động (……看电影的) → số lượng → danh từ."
+     },
+     {
+      "context": "“Chiếc áo trắng mới mua của mình đâu rồi?”",
+      "pre": "我",
+      "blank": "那件新买的白色的衣服",
+      "post": "在哪儿？",
+      "options": [
+       "那件新买的白色的衣服",
+       "衣服那件新买的白色的",
+       "那件衣服新买的白色"
+      ],
+      "answer": 0,
+      "explanation": "Chỉ lượng (那件) → hành động (新买的) → đặc điểm (白色的) → 衣服."
+     },
+     {
+      "context": "Sách: “Cuốn sách mua ở hiệu sách hôm qua là cuốn mình thích nhất.”",
+      "pre": "那本",
+      "blank": "昨天在书店买",
+      "post": "的书是我最喜欢的。",
+      "options": [
+       "昨天在书店买",
+       "买昨天在书店",
+       "在书店买昨天"
+      ],
+      "answer": 0,
+      "explanation": "Thời gian → nơi chốn → động từ + 的."
+     },
+     {
+      "context": "Sách: “Người nào là bạn trai bạn?” — “Người cao cao đứng ở cửa kia.”",
+      "pre": "哪个人是你男朋友？——",
+      "blank": "站在门口的那个高个子",
+      "post": "。",
+      "options": [
+       "站在门口的那个高个子",
+       "那个高个子站在门口的",
+       "门口站在的那个高个子"
+      ],
+      "answer": 0,
+      "explanation": "Cụm chỉ lượng (那个) có thể đứng SAU định ngữ chỉ hành động."
+     },
+     {
+      "context": "Sách: “Lớp các bạn học ở toà nhà nào?” — “Sau toà nhà màu trắng cạnh siêu thị.”",
+      "pre": "你们上课的楼在哪儿？——在",
+      "blank": "超市旁边那个白色",
+      "post": "的楼后面。",
+      "options": [
+       "超市旁边那个白色",
+       "白色的那个超市旁边",
+       "旁边超市白色那个"
+      ],
+      "answer": 0,
+      "explanation": "Nơi chốn (超市旁边) → chỉ lượng (那个) → đặc điểm (白色的) → 楼."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "昨天和家月一起看电影两个人是我的朋友。",
+      "isCorrect": false,
+      "correctVersion": "昨天和家月一起看电影的两个人是我的朋友。",
+      "explanation": "Thiếu 的 sau cụm động từ làm định ngữ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我那件新买的白色的衣服在哪儿？",
+      "isCorrect": true,
+      "explanation": "Đúng trật tự: chỉ lượng → hành động → đặc điểm → danh từ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Lý Văn là chàng trai tóc ngắn, mặc đồ đen kia.”",
+      "words": [
+       "李文",
+       "是",
+       "那个",
+       "穿着",
+       "黑衣服",
+       "的",
+       "短头发",
+       "的",
+       "年轻人",
+       "。"
+      ],
+      "answer": "李文是那个穿着黑衣服的短头发的年轻人。",
+      "explanation": "Mọi định ngữ đứng trước 年轻人."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chiếc áo trắng mới mua của mình đâu rồi?”",
+      "words": [
+       "我",
+       "那件",
+       "新买",
+       "的",
+       "白色",
+       "的",
+       "衣服",
+       "在",
+       "哪儿",
+       "？"
+      ],
+      "answer": "我那件新买的白色的衣服在哪儿？",
+      "explanation": "新买的 → 白色的 → 衣服."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Người cao cao đứng ở cửa kia là anh trai tôi.”",
+      "words": [
+       "站",
+       "在",
+       "门口",
+       "的",
+       "那个",
+       "高个子",
+       "是",
+       "我",
+       "哥哥",
+       "。"
+      ],
+      "answer": "站在门口的那个高个子是我哥哥。",
+      "explanation": "Cụm 站在门口的 làm định ngữ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hai người bạn Trung Quốc đến hôm qua đều rất trẻ.”",
+      "words": [
+       "昨天",
+       "来",
+       "的",
+       "两个",
+       "中国",
+       "朋友",
+       "都",
+       "很",
+       "年轻",
+       "。"
+      ],
+      "answer": "昨天来的两个中国朋友都很年轻。",
+      "explanation": "昨天来的 → 两个 → 中国 → 朋友."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, đặt mọi định ngữ trước danh từ.",
+      "promptLang": "vi",
+      "prompt": "Cô gái tóc dài đứng ở giữa kia là em gái tôi.",
+      "answer": "那个站在中间的长头发的女孩儿是我妹妹。",
+      "answerPy": "Nà ge zhàn zài zhōngjiān de cháng tóufa de nǚháir shì wǒ mèimei.",
+      "explanation": "Chỉ lượng → hành động (站在中间的) → đặc điểm (长头发的) → 女孩儿."
+     }
+    ]
+   }
+  ]
+ }
+}

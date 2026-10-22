@@ -525,13 +525,13 @@
 
   /* ---------------- Level cards ---------------- */
 
-  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'yct'];
+  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2v3', 'hsk3v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'yct'];
   // Moi cap do cung mot mau nhan (do) — phan biet bang ten, khong bang mau
-  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'red', hsk2v3: 'red', hsk2: 'red', hsk3: 'red', hsk4: 'red', hsk5: 'red', hsk6: 'red', yct: 'red' };
+  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'red', hsk2v3: 'red', hsk3v3: 'red', hsk2: 'red', hsk3: 'red', hsk4: 'red', hsk5: 'red', hsk6: 'red', yct: 'red' };
   // Nhan hien trong o vuong mau cua the cap do: [dong nho, so lon]
-  var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2v3: ['HSK 3.0', '2'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], hsk6: ['HSK', '6'], yct: ['YCT', '1'] };
-  var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2v3: 'HSK 2 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT Thiếu nhi' };
-  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2v3: true, hsk2: true, hsk3: true, hsk4: true, hsk5: true, hsk6: true, yct: true };
+  var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2v3: ['HSK 3.0', '2'], hsk3v3: ['HSK 3.0', '3'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], hsk6: ['HSK', '6'], yct: ['YCT', '1'] };
+  var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2v3: 'HSK 2 · 3.0', hsk3v3: 'HSK 3 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT Thiếu nhi' };
+  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2v3: true, hsk3v3: true, hsk2: true, hsk3: true, hsk4: true, hsk5: true, hsk6: true, yct: true };
   var practiceLevel = 'hsk2';
 
   // Dem so bai da hoc (da mo hoac co diem) trong 1 cap do
@@ -547,6 +547,7 @@
     yct: 'Trẻ em 6–12 tuổi · học qua tranh và trò chơi',
     hsk1v3: 'Người mới bắt đầu · giáo trình HSK 3.0 (thi từ 07/2026)',
     hsk2v3: 'Đã xong HSK 1 · giáo trình HSK 3.0',
+    hsk3v3: 'Đã xong HSK 2 · giáo trình HSK 3.0',
     hsk1: 'Người mới bắt đầu · giáo trình HSK cũ',
     hsk2: 'Đã xong HSK 1 · giáo trình HSK cũ',
     hsk3: 'Đã xong HSK 2 · giao tiếp hằng ngày',
@@ -594,7 +595,7 @@
       if (id === pickId) card.className += ' is-picked';
       card.innerHTML =
         (id === pickId ? '<span class="level-tag level-tag-pick">✓ Gợi ý cho bạn</span>'
-          : (id === 'hsk1v3' || id === 'hsk2v3' ? '<span class="level-tag">Mới</span>' : '')) +
+          : (id === 'hsk1v3' || id === 'hsk2v3' || id === 'hsk3v3' ? '<span class="level-tag">Mới</span>' : '')) +
         '<span class="level-mark" aria-hidden="true"><span class="level-mark-top">' + mark[0] + '</span><span class="level-mark-num">' + mark[1] + '</span></span>' +
         '<span class="level-card-body">' +
           '<span class="level-card-title">' + (LEVEL_CARD_NAME[id] || level.name) + '</span>' +
@@ -1410,7 +1411,7 @@
     if (bnMenu) bnMenu.addEventListener('click', function () { $('#sidebarToggle').click(); });
   }
 
-  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2v3: 'HSK 2 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT 1' };
+  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2v3: 'HSK 2 (3.0 Mới)', hsk3v3: 'HSK 3 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT 1' };
 
   function selectLevel(id) {
     if (!READY_LEVELS[id]) {
@@ -1504,7 +1505,8 @@
     hsk1: rvBuildGroups(15),
     hsk2: rvBuildGroups(15),
     hsk1v3: rvBuildGroups(15),
-    hsk2v3: rvBuildGroups(15)
+    hsk2v3: rvBuildGroups(15),
+    hsk3v3: rvBuildGroups(18)
   };
 
   /* ---------------- Chung nhan hoan thanh cap + huy hieu ---------------- */
@@ -1711,6 +1713,7 @@
     hsk1: ['match', 'fill', 'sort', 'mc'],
     hsk1v3: ['match', 'fill', 'sort', 'mc'],
     hsk2v3: ['match', 'fill', 'sort', 'mc'],
+    hsk3v3: ['match', 'fill', 'sort', 'mc'],
     hsk2: ['match', 'fill', 'sort', 'errfix'],
     hsk3: ['match', 'fill', 'sort', 'errfix'],
     hsk4: ['match', 'fill', 'sort', 'errfix'],
@@ -1724,6 +1727,7 @@
     hsk1: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'hanviet'],
     hsk1v3: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook', 'hanviet'],
     hsk2v3: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook', 'hanviet'],
+    hsk3v3: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook', 'hanviet'],
     hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate', 'hanviet'],
     hsk3: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate', 'hanviet'],
     hsk4: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate', 'hanviet'],
@@ -3427,7 +3431,7 @@
   }
 
   function audioBaseFor(lesson) {
-    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2v3-|hsk2-|hsk3-|hsk4-|hsk5-|hsk6-)?bai-(\d+)\.html/);
+    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2v3-|hsk3v3-|hsk2-|hsk3-|hsk4-|hsk5-|hsk6-)?bai-(\d+)\.html/);
     if (!m) return null;
     return m[1] ? '/audio/' + m[1] + 'bai-' + m[2] : '/audio/bai-' + m[2];
   }
@@ -3464,7 +3468,7 @@
 
   function strokesUrlFor(lesson) {
     // HSK1: hsk1-bai-N, HSK1 3.0: hsk1v3-bai-N, HSK2: bai-N (khong tien to)
-    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2v3-)?bai-(\d+)\.html/);
+    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2v3-|hsk3v3-)?bai-(\d+)\.html/);
     if (!m) return null;
     return '/js/' + (m[1] || '') + 'bai-' + m[2] + '-strokes.js';
   }
@@ -3708,7 +3712,7 @@
   // Khong hien chiet tu Han tu — len HSK 4 hoc sinh da thuoc mat chu.
   // ══════════════════════════════════════════════════════════
   function vpIsHsk4() {
-    return !!(currentHubLesson && /\/(?:hsk(?:[1345]|[12]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+    return !!(currentHubLesson && /\/(?:hsk(?:[1345]|[123]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
   }
 
   function vpH4Say(t) {
@@ -3763,7 +3767,7 @@
   function renderVpListHsk4() {
     // Chi HSK 3 giu chiet tu Han tu; HSK 4 tro len da bo
     // HSK 1 va HSK 3 con dang hoc mat chu, nen giu khoi chiet tu Han tu
-    var giuHanTu = !!(currentHubLesson && /\/(?:hsk(?:[13]|[12]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+    var giuHanTu = !!(currentHubLesson && /\/(?:hsk(?:[13]|[123]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
     var wrap = $('#vpContent');
     wrap.innerHTML =
       '<div class="h4-list">' +
@@ -10138,7 +10142,7 @@
   // Bai tap ngu phap soan rieng cho tung cap — chi tai khi hoc sinh mo phan Ngu phap
   var GRAMMAR_FILES = {
     hsk1: '/js/grammar-hsk1.js', hsk1v3: '/js/grammar-hsk1v3.js', hsk2: '/js/hsk2-grammar-exercises.js',
-    hsk2v3: '/js/grammar-hsk2v3.js', hsk3: '/js/grammar-hsk3.js',
+    hsk2v3: '/js/grammar-hsk2v3.js', hsk3v3: '/js/grammar-hsk3v3.js', hsk3: '/js/grammar-hsk3.js',
     hsk4: '/js/grammar-hsk4.js', yct: '/js/grammar-yct.js'
   };
   var grammarFileState = {};
@@ -10208,7 +10212,7 @@
   // Ngu phap chia theo diem — trinh ve dung chung + du lieu tung cap
   var NPT_FILES = {
     hsk1: '/js/ngu-phap-tab-hsk1.js', hsk1v3: '/js/ngu-phap-tab-hsk1v3.js',
-    hsk2: '/js/ngu-phap-tab-hsk2.js', hsk2v3: '/js/ngu-phap-tab-hsk2v3.js',
+    hsk2: '/js/ngu-phap-tab-hsk2.js', hsk2v3: '/js/ngu-phap-tab-hsk2v3.js', hsk3v3: '/js/ngu-phap-tab-hsk3v3.js',
     hsk3: '/js/ngu-phap-tab-hsk3.js', hsk4: '/js/ngu-phap-tab-hsk4.js', hsk5: '/js/ngu-phap-tab-hsk5.js', hsk6: '/js/ngu-phap-tab-hsk6.js'
   };
   var nptState = {};
@@ -10874,7 +10878,7 @@
      tieng Trung cua trinh duyet); den luot minh thi hoc sinh noi vao micro, trinh
      duyet nhan dien giong noi (zh-CN) roi so tung chu voi cau goc -> diem %.
      Cau dat >= 70% duoc +1 sao (moi cau 1 lan). */
-  var RP_LESSONS = /\/lessons\/(hsk1-|hsk1v3-|hsk2v3-|hsk3-|hsk4-|yct-)?bai-\d+\.html$/;
+  var RP_LESSONS = /\/lessons\/(hsk1-|hsk1v3-|hsk2v3-|hsk3v3-|hsk3-|hsk4-|yct-)?bai-\d+\.html$/;
   var RP_PASS = 70;
   var rpStates = {};   // dpIndex -> { phase, role, hint, step, results, heard, showHint }
   var rpRec = null;

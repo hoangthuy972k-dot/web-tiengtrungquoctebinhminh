@@ -32,6 +32,15 @@ const APP_DATA = {
       color: 'teal'
     },
     {
+      id: 'hsk3v3',
+      name: 'HSK 3 (3.0 Mới)',
+      subtitle: 'Giáo trình chuẩn mới · New HSK 3',
+      description: 'Giáo trình New HSK 3 (chuẩn HSK 3.0) biên dịch chính thức, 18 bài + audio gốc.',
+      totalLessons: 18,
+      totalVocab: 0,
+      color: 'teal'
+    },
+    {
       id: 'hsk2',
       name: 'HSK 2',
       subtitle: 'Sơ cấp',
@@ -1367,6 +1376,21 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-15.html'
+      }
+    ],
+    // HSK 3 (3.0 Moi): them tung bai vao day khi xong
+    hsk3v3: [
+      {
+        id: 'hsk3v3-l1',
+        number: 1,
+        title: 'Anh chị sẽ đến sân bay đón các em',
+        titleHanzi: '我们去机场接你们',
+        titlePinyin: 'Wǒmen qù jīchǎng jiē nǐmen',
+        topic: 'Đón người ở sân bay, miêu tả ngoại hình & thất lạc hành lý',
+        vocabCount: 27,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3v3-bai-1.html'
       }
     ],
     hsk5: [

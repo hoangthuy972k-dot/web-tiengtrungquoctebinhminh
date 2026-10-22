@@ -8,17 +8,15 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $all = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
-  // Moi cap: file bai tap ngu phap + cach nhan dien URL bai hoc cua cap do
-  var LEVELS = {
-    hsk1:   { files: ['/js/grammar-hsk1.js', '/js/grammar-errors-hsk1.js'],     re: /^\/lessons\/hsk1-bai-(\d+)\.html$/ },
-    hsk1v3: { files: ['/js/grammar-hsk1v3.js', '/js/grammar-errors-hsk1v3.js'], re: /^\/lessons\/hsk1v3-bai-(\d+)\.html$/ },
-    hsk2:   { files: ['/js/hsk2-grammar-exercises.js', '/js/grammar-errors-hsk2.js'], re: /^\/lessons\/bai-(\d+)\.html$/ },
-    hsk2v3: { files: ['/js/grammar-hsk2v3.js', '/js/grammar-errors-hsk2v3.js'], re: /^\/lessons\/hsk2v3-bai-(\d+)\.html$/ },
-    hsk3v3: { files: ['/js/grammar-hsk3v3.js', '/js/grammar-errors-hsk3v3.js'], re: /^\/lessons\/hsk3v3-bai-(\d+)\.html$/ },
-    hsk3:   { files: ['/js/grammar-hsk3.js', '/js/grammar-errors-hsk3.js'],     re: /^\/lessons\/hsk3-bai-(\d+)\.html$/ },
-    hsk4:   { files: ['/js/grammar-hsk4.js', '/js/grammar-errors-hsk4.js'],     re: /^\/lessons\/hsk4-bai-(\d+)\.html$/ },
-    yct:    { files: ['/js/grammar-yct.js', '/js/grammar-errors-yct.js'],       re: /^\/lessons\/yct-bai-(\d+)\.html$/ }
-  };
+  // Cac cap co trong Che do lop hoc. Du lieu moi cap dung san o /js/lop-<cap>.js
+  // (tools/build-lop.js): bai tap rieng cua tung bai + bai tap ngu phap chung da loc cau co chu chua hoc.
+  var LEVELS = { hsk1: 1, hsk1v3: 1, hsk2: 1, hsk2v3: 1, hsk3v3: 1, hsk3: 1, hsk4: 1, hsk5: 1, hsk6: 1, yct: 1 };
+  // Ma phien ban cua chinh lop.js (may chu dong dau ?v=) — dung lai cho file du lieu tai sau
+  var VER = (function () {
+    var s = document.currentScript && document.currentScript.src || '';
+    var m = s.match(/[?&]v=([^&]+)/);
+    return m ? m[1] : String(Date.now()).slice(0, 7);
+  })();
 
   var state = {
     level: 'hsk3',
@@ -62,18 +60,15 @@
   /* ---------------- nap du lieu mot cap ---------------- */
   var loaded = {};
   function loadLevel(level) {
-    var def = LEVELS[level];
-    if (!def) return Promise.resolve();
+    if (!LEVELS[level]) return Promise.resolve();
     if (loaded[level]) return Promise.resolve();
-    return Promise.all(def.files.map(function (src) {
-      return new Promise(function (resolve) {
-        var el = document.createElement('script');
-        el.src = src;
-        el.onload = resolve;
-        el.onerror = function () { resolve(); };   // thieu file thi bo qua
-        document.head.appendChild(el);
-      });
-    })).then(function () { loaded[level] = true; });
+    return new Promise(function (resolve) {
+      var el = document.createElement('script');
+      el.src = '/js/lop-' + level + '.js?v=' + VER;
+      el.onload = function () { loaded[level] = true; resolve(); };
+      el.onerror = function () { resolve(); };   // thieu file thi bo qua
+      document.head.appendChild(el);
+    });
   }
 
   // Chi nhan nhung cau tieng Trung that. Loai cac muc noi ve phat am / cach doc
@@ -116,106 +111,25 @@
   }
   function sortUsable(words, answer) { return !!sortOrder(words, answer); }
 
-  // Moi bai gom hai nguon cau cho tro "Bat loi sai":
-  //  1) cau Dung/Sai san co trong bai tap ngu phap (HSK 2 3.0, HSK 3, HSK 4)
-  //  2) khoi "Loi hoc sinh Viet hay mac" — co o MOI cap, moi loi cho 1 cau sai va 1 cau dung
+  // Moi bai: bai tap rieng cua bai + bai tap ngu phap chung (chi cau toan chu da hoc) — xem tools/build-lop.js
   function collectLessons(level) {
-    var def = LEVELS[level];
-    var bank = {}, errBank = {};
-    [window.GRAMMAR_EXTRA, window.HSK2_GRAMMAR_EXERCISES].forEach(function (src) {
-      if (!src) return;
-      Object.keys(src).forEach(function (url) { if (def.re.test(url)) bank[url] = src[url]; });
-    });
-    if (window.GRAMMAR_ERRORS) {
-      Object.keys(window.GRAMMAR_ERRORS).forEach(function (url) {
-        if (def.re.test(url)) errBank[url] = window.GRAMMAR_ERRORS[url];
-      });
-    }
-
-    var urls = {};
-    Object.keys(bank).forEach(function (u) { urls[u] = 1; });
-    Object.keys(errBank).forEach(function (u) { urls[u] = 1; });
-
-    var out = [];
-    Object.keys(urls).forEach(function (url) {
-      var judges = [], seen = {};
-      (bank[url] || []).forEach(function (g) {
-        (g.items || []).forEach(function (q) {
-          if (q.type !== 'judge') return;
-          var c = cleanSentence(q.sentence);
-          if (!c || seen[c.text]) return;
-          seen[c.text] = 1;
-          var f = q.correctVersion ? cleanSentence(q.correctVersion) : null;
-          judges.push({
-            sentence: c.text, note: c.note, isCorrect: !!q.isCorrect,
-            fix: f ? f.text : '', why: q.explanation || '', point: g.point || ''
-          });
-        });
-      });
-      (errBank[url] || []).forEach(function (e) {
-        var w = cleanSentence(e.wrong), r = cleanSentence(e.right);
-        if (!w || !r) return;                       // bo nhung loi khong phai cau Han
-        if (!seen[w.text]) {
-          seen[w.text] = 1;
-          judges.push({ sentence: w.text, note: w.note, isCorrect: false, fix: r.text, why: e.why, point: e.point || '' });
-        }
-        // cau dung chuan cua chinh diem do — dung lam cau "khong co loi"
-        if (!seen[r.text]) {
-          seen[r.text] = 1;
-          judges.push({ sentence: r.text, note: r.note, isCorrect: true, fix: '', why: '', point: e.point || '' });
-        }
-      });
-
-      // Cau dien tu — dung cho tro gio the A/B/C
-      var mcs = [], seenMc = {};
-      // Cau sap xep — dung cho tro xep cau bang nguoi
-      var sorts = [], seenSort = {};
-      (bank[url] || []).forEach(function (g) {
-        (g.items || []).forEach(function (q) {
-          if (!q.type || q.type === 'mc') {
-            if (!q.options || q.options.length < 2 || typeof q.answer !== 'number') return;
-            var key = (q.pre || '') + '|' + (q.blank || '') + '|' + (q.post || '');
-            if (seenMc[key]) return;
-            seenMc[key] = 1;
-            mcs.push({
-              pre: q.pre || '', post: q.post || '',
-              options: q.options.slice(0, 3), answer: q.answer,
-              context: q.context || '', why: q.explanation || '', point: g.point || ''
-            });
-            return;
-          }
-          if (q.type === 'sort' && Array.isArray(q.words) && q.words.length >= 3 && q.answer) {
-            // Mot so cau cu co hai dap an ngan boi ／ — chi lay ve dau
-            var ans = String(q.answer).split('／')[0].trim();
-            if (seenSort[ans] || !sortUsable(q.words, ans)) return;
-            seenSort[ans] = 1;
-            sorts.push({
-              words: q.words.slice(), answer: ans,
-              context: q.context || '', why: q.explanation || '', point: g.point || ''
-            });
-          }
-        });
-      });
-
-      if (judges.length || mcs.length || sorts.length) {
-        out.push({ n: parseInt(def.re.exec(url)[1], 10), url: url, judges: judges, mcs: mcs, sorts: sorts });
-      }
-    });
-    out.sort(function (a, b) { return a.n - b.n; });
-    return out;
+    var list = (window.LOP_DATA && window.LOP_DATA[level]) || [];
+    return list.map(function (l) {
+      return { n: l.n, url: l.url, title: l.title || '', judges: l.judges || [], mcs: l.mcs || [], sorts: l.sorts || [] };
+    }).sort(function (a, b) { return a.n - b.n; });
   }
 
   /* ---------------- man hinh chuan bi ---------------- */
   function renderLessons() {
     var wrap = $('#lopLessons');
     if (!state.lessons.length) {
-      wrap.innerHTML = '<span style="color:#8d8279">Cấp này chưa có câu Đúng/Sai để chơi.</span>';
+      wrap.innerHTML = '<span style="color:#8d8279">Cấp này chưa có bài nào.</span>';
       updateCount();
       return;
     }
     wrap.innerHTML = state.lessons.map(function (l) {
       return '<button type="button" class="lop-lesson-chip' + (state.picked[l.url] ? ' on' : '') +
-        '" data-url="' + l.url + '">Bài ' + l.n + ' <small style="opacity:.6">(' + l.judges.length + ')</small></button>';
+        '" data-url="' + l.url + '"' + (l.title ? ' title="' + esc(l.title) + '"' : '') + '>Bài ' + l.n + ' <small style="opacity:.6">(' + (l.judges.length + l.mcs.length + l.sorts.length) + ')</small></button>';
     }).join('');
     $all('.lop-lesson-chip', wrap).forEach(function (b) {
       b.addEventListener('click', function () {
@@ -630,7 +544,7 @@
         (q.point ? '<span class="lop-point">📐 ' + esc(q.point) + '</span>' : '') +
       '</div>' +
       (q.context ? '<div class="lop-abc-context">🗣️ ' + esc(q.context) + '</div>' : '') +
-      '<div class="lop-abc-sentence">' + esc(q.pre) + '<span class="lop-blank">＿＿</span>' + esc(q.post) + '</div>' +
+      '<div class="lop-abc-sentence' + (q.noBlank ? ' is-q' : '') + '">' + esc(q.pre) + (q.noBlank ? '' : '<span class="lop-blank">＿＿</span>') + esc(q.post) + '</div>' +
       '<div class="lop-abc-opts">' + q._order.map(function (oi, i) {
         return '<div class="lop-abc-opt" data-i="' + i + '">' +
           '<span class="lop-abc-key">' + ABC[i] + '</span>' +
@@ -2071,7 +1985,7 @@
         (q.point ? '<span class="lop-point">📐 ' + esc(q.point) + '</span>' : '') +
       '</div>' +
       (q.context ? '<div class="lop-abc-context">🗣️ ' + esc(q.context) + '</div>' : '') +
-      '<div class="lop-abc-sentence">' + esc(q.pre) + '<span class="lop-blank">＿＿</span>' + esc(q.post) + '</div>' +
+      '<div class="lop-abc-sentence' + (q.noBlank ? ' is-q' : '') + '">' + esc(q.pre) + (q.noBlank ? '' : '<span class="lop-blank">＿＿</span>') + esc(q.post) + '</div>' +
       '<div class="lop-abc-opts">' + it.order.map(function (oi, i) {
         return '<div class="lop-abc-opt">' +
           '<span class="lop-abc-key">' + ABC[i] + '</span>' +
@@ -2106,8 +2020,8 @@
           '<div class="lop-key-no">' + (i + 1) + '</div>' +
           '<div class="lop-key-main">' +
             '<div class="lop-key-letter">' + ABC[it.ans] + '</div>' +
-            '<div class="lop-key-zh small">' + esc(q.pre) +
-              '<b>' + esc(q.options[q.answer]) + '</b>' + esc(q.post) + '</div>' +
+            '<div class="lop-key-zh small">' + (q.noBlank ? esc(q.pre) + ' → <b>' + esc(q.options[q.answer]) + '</b>' :
+              esc(q.pre) + '<b>' + esc(q.options[q.answer]) + '</b>' + esc(q.post)) + '</div>' +
           '</div></div>';
       }).join('') + '</div>' +
       '<div class="lop-stage-actions">' +
@@ -2184,7 +2098,7 @@
   function paperQuestion(it, i) {
     var q = it.q, ctx = paperCtx(it), body;
     if (it.t === 'mc') {
-      body = '<div class="ps-zh">' + esc(q.pre) + '<span class="ps-blank">＿＿＿</span>' + esc(q.post) + '</div>' +
+      body = '<div class="ps-zh">' + esc(q.pre) + (q.noBlank ? '' : '<span class="ps-blank">＿＿＿</span>') + esc(q.post) + '</div>' +
         '<div class="ps-opts">' + it.order.map(function (oi, k) {
           return '<span class="ps-opt"><b>' + ABC[k] + '.</b> ' + esc(q.options[oi]) + '</span>';
         }).join('') + '</div>';
@@ -2295,7 +2209,7 @@
   /* ---------------- chuyen man hinh ---------------- */
   var LEVEL_NAME = {
     hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2: 'HSK 2', hsk2v3: 'HSK 2 · 3.0', hsk3v3: 'HSK 3 · 3.0',
-    hsk3: 'HSK 3', hsk4: 'HSK 4', yct: 'YCT'
+    hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT'
   };
 
   var GAME_TITLE = {

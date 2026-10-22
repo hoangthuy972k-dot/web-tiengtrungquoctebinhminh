@@ -1,0 +1,112 @@
+{
+ "zh": "为文物而生的人",
+ "py": "Wèi Wénwù ér Shēng de Rén",
+ "vn": "Một người dành cả cuộc đời cho các di vật văn hoá",
+ "topic": "第九单元 古今博览 · Xưa và nay — nhà sưu tầm, giám định gốm sứ Tôn Doanh Châu",
+ "vocabCount": 51,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "尚且",
+   "explain": "\"尚且\" là liên từ, dùng ở VẾ TRƯỚC của câu phức: nêu ra một sự việc rõ ràng (thường là trường hợp \"dễ hơn / có ưu thế hơn\") để so sánh; VẾ SAU rút ra kết luận hiển nhiên cho một sự việc cùng loại nhưng khác về mức độ. Nghĩa ≈ \"A còn …, huống chi B\" / \"A còn …, B thì càng …\". Vế sau hay dùng: 何况……（呢）？ / 更…… / 就更……了 / 更别说……了 / 也就不难想象了. Vị trí: 尚且 đứng SAU chủ ngữ, TRƯỚC vị ngữ (小学生尚且明白; 你作为中国人尚且不认识); hay đi với 如此: ……尚且如此. Phân biệt 况且 (bài 20): 况且 = \"hơn nữa\", bổ sung thêm lý do, đứng ở vế sau.",
+   "rule": "A + <strong style=\"color:var(--sky-d)\">尚且</strong> + V / Adj，（更）<strong style=\"color:var(--sky-d)\">何况</strong> + B + 呢？　|　A + <strong style=\"color:var(--sky-d)\">尚且</strong>……，B + 就更 / 更别说……了　|　……<strong style=\"color:var(--sky-d)\">尚且</strong>如此，……",
+   "examples": [
+    {
+     "zh": "尽管当年家中私藏丰厚，但他们生活却非常简朴，甚至有些吝啬，举个例子吧，过年时孩子们吃的糖葫芦都是孙瀛洲自制的。他对孩子尚且如此，对自己的那份节俭也就不难想象了。",
+     "py": "Jǐnguǎn dāngnián jiā zhōng sīcáng fēnghòu, dàn tāmen shēnghuó què fēicháng jiǎnpǔ, shènzhì yǒuxiē lìnsè, jǔ ge lìzi ba, guònián shí háizimen chī de tánghúlu dōu shì Sūn Yíngzhōu zìzhì de. Tā duì háizi shàngqiě rúcǐ, duì zìjǐ de nà fèn jiéjiǎn yě jiù bù nán xiǎngxiàng le.",
+     "vn": "Dù năm ấy trong nhà cất giữ nhiều của quý, nhưng họ sống vô cùng giản dị, thậm chí có phần keo kiệt; lấy ví dụ nhé, kẹo hồ lô bọn trẻ ăn dịp Tết cũng do Tôn Doanh Châu tự làm. Với con cái ông còn như vậy, thì sự tiết kiệm với bản thân cũng dễ hình dung rồi."
+    },
+    {
+     "zh": "经济增长强劲时，这个企业尚且如此，经济衰退时，企业肯定会出现生存问题。",
+     "py": "Jīngjì zēngzhǎng qiángjìng shí, zhège qǐyè shàngqiě rúcǐ, jīngjì shuāituì shí, qǐyè kěndìng huì chūxiàn shēngcún wèntí.",
+     "vn": "Khi kinh tế tăng trưởng mạnh doanh nghiệp này còn như vậy, thì khi kinh tế suy thoái, chắc chắn doanh nghiệp sẽ gặp vấn đề sống còn."
+    },
+    {
+     "zh": "“人”和“入”这么简单的两个字他尚且分不清楚，何况其他呢？",
+     "py": "“Rén” hé “rù” zhème jiǎndān de liǎng ge zì tā shàngqiě fēn bu qīngchu, hékuàng qítā ne?",
+     "vn": "Hai chữ đơn giản như \"人\" và \"入\" mà cậu ta còn không phân biệt được, huống chi những chữ khác?"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "尚且小学生明白这些道理，何况大学生呢？",
+     "why": "尚且 là liên từ nhưng đứng SAU chủ ngữ, trước vị ngữ — không đặt ở đầu câu.",
+     "right": "小学生尚且明白这些道理，何况大学生呢？"
+    },
+    {
+     "wrong": "大人尚且撑不住，孩子也撑不住。",
+     "why": "Vế sau phải rút ra kết luận \"càng hơn\" bằng 何况 / 更 / 更别说……了, không chỉ lặp lại bằng 也.",
+     "right": "大人尚且撑不住，更别说孩子了。"
+    }
+   ]
+  },
+  {
+   "point": "当",
+   "explain": "\"当\" là giới từ, nghĩa \"đang ở (lúc đó, nơi đó)\" — chỉ chính thời điểm / địa điểm mà sự việc xảy ra. Nghĩa này hay gặp trong các từ ghép \"当 + danh từ\": 当年 (năm ấy, hồi đó), 当时 (lúc đó), 当天 (ngay hôm đó), 当代 (thời nay), 当今 (ngày nay), 当地 (địa phương đó), 当场 (ngay tại chỗ), 当面 (trước mặt), 当众 (trước đám đông). Cách chọn: THỜI GIAN quá khứ → 当年 / 当时; thời HIỆN TẠI → 当代 / 当今; NƠI CHỐN → 当地; ngay TẠI CHỖ lúc sự việc đang diễn ra → 当场. Khuôn giới từ đầy đủ: 当……的时候 / 当……时 (khi …).",
+   "rule": "<strong style=\"color:var(--sky-d)\">当</strong> + 年 / 时 / 天 (chính thời điểm ấy)　|　<strong style=\"color:var(--sky-d)\">当</strong> + 代 / 今 (thời nay)　|　<strong style=\"color:var(--sky-d)\">当</strong> + 地 / 场 / 面 / 众 (chính nơi ấy, tại chỗ)　|　<strong style=\"color:var(--sky-d)\">当</strong>……的时候",
+   "examples": [
+    {
+     "zh": "孙瀛洲的女儿孙女士至今仍记得当年的情景。",
+     "py": "Sūn Yíngzhōu de nǚ'ér Sūn nǚshì zhìjīn réng jìde dāngnián de qíngjǐng.",
+     "vn": "Con gái của Tôn Doanh Châu là bà Tôn đến nay vẫn còn nhớ cảnh tượng năm ấy."
+    },
+    {
+     "zh": "由于经营有方，又收藏有大量珍贵文物，孙瀛洲在当时的古董经营者中很有威望。",
+     "py": "Yóuyú jīngyíng yǒu fāng, yòu shōucáng yǒu dàliàng zhēnguì wénwù, Sūn Yíngzhōu zài dāngshí de gǔdǒng jīngyíngzhě zhōng hěn yǒu wēiwàng.",
+     "vn": "Nhờ kinh doanh có phương pháp, lại sưu tầm được rất nhiều văn vật quý, Tôn Doanh Châu rất có uy danh trong giới buôn đồ cổ thời bấy giờ."
+    },
+    {
+     "zh": "当代社会，被称为“专家”容易，称为“著名专家”也不难，但称得上“大家”的不多。",
+     "py": "Dāngdài shèhuì, bèi chēngwéi “zhuānjiā” róngyì, chēngwéi “zhùmíng zhuānjiā” yě bù nán, dàn chēng de shàng “dàjiā” de bù duō.",
+     "vn": "Xã hội ngày nay, được gọi là \"chuyên gia\" thì dễ, được gọi là \"chuyên gia nổi tiếng\" cũng không khó, nhưng người xứng đáng được gọi là \"bậc thầy\" thì không nhiều."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "当年的社会，年轻人都离不开手机。",
+     "why": "当年 chỉ \"năm ấy, hồi đó\" (quá khứ); nói về thời hiện nay phải dùng 当今 / 当代.",
+     "right": "当今社会，年轻人都离不开手机。"
+    },
+    {
+     "wrong": "小偷被警察当地抓获了。",
+     "why": "\"Bắt quả tang, ngay tại chỗ\" là 当场; 当地 chỉ \"địa phương đó\".",
+     "right": "小偷被警察当场抓获了。"
+    }
+   ]
+  },
+  {
+   "point": "篇章（5）过渡",
+   "explain": "Phần 篇章修辞 của bài: \"过渡\" (chuyển tiếp) là khi bài văn chuyển từ ý này sang ý khác, hoặc từ đoạn này sang đoạn khác, người viết dùng một số từ, câu hoặc đoạn văn để hai ý / hai đoạn nối với nhau tự nhiên, làm cho trên dưới liền mạch thành một khối. Hầu hết bài văn đều có ngôn ngữ chuyển tiếp, gồm ba loại: ① 过渡词 (từ chuyển tiếp): 可是, 但是, 反之, 总而言之, 拿……来说…; ② 过渡句 (câu chuyển tiếp): thường vừa tóm ý trên vừa mở ý dưới (承上启下), hoặc là một câu hỏi dẫn sang nội dung mới — 鲸的身子这么大，它们吃什么呢？; ③ 过渡段 (đoạn chuyển tiếp): cả một đoạn ngắn làm nhiệm vụ nối — trong bài khoá: 也许有人要问，这孙瀛洲到底什么来历？家藏竟然如此丰厚？ nối từ chuyện hiến tặng sang cuộc đời ông.",
+   "rule": "<strong style=\"color:var(--sky-d)\">过渡词</strong>：可是 / 但是 / 反之 / 总而言之……　|　<strong style=\"color:var(--sky-d)\">过渡句</strong>：承上启下 (tóm ý trên, mở ý dưới), hay dùng câu hỏi　|　<strong style=\"color:var(--sky-d)\">过渡段</strong>：một đoạn ngắn nối hai phần nội dung",
+   "examples": [
+    {
+     "zh": "……他对孩子尚且如此，对自己的那份节俭也就不难想象了。可是，为了收购绝世珍品斗彩三秋杯，他却是不惜重金。（“可是”为过渡词）",
+     "py": "…… Tā duì háizi shàngqiě rúcǐ, duì zìjǐ de nà fèn jiéjiǎn yě jiù bù nán xiǎngxiàng le. Kěshì, wèile shōugòu juéshì zhēnpǐn dòucǎi sānqiūbēi, tā què shì bùxī zhòngjīn.",
+     "vn": "… Với con cái ông còn như vậy, sự tiết kiệm với bản thân cũng dễ hình dung. Thế nhưng, để mua được báu vật tuyệt thế là chén Tam Thu đấu thái, ông lại không tiếc tiền lớn. — \"可是\" là từ chuyển tiếp."
+    },
+    {
+     "zh": "鲸的身子这么大，它们吃什么呢？须鲸主要吃虾和小鱼。（“鲸的身子这么大，它们吃什么呢？”为过渡句）",
+     "py": "Jīng de shēnzi zhème dà, tāmen chī shénme ne? Xūjīng zhǔyào chī xiā hé xiǎo yú.",
+     "vn": "Cá voi to như vậy, chúng ăn gì? Cá voi tấm sừng chủ yếu ăn tôm và cá nhỏ. — Câu hỏi đầu là câu chuyển tiếp."
+    },
+    {
+     "zh": "也许有人要问，这孙瀛洲到底什么来历？家藏竟然如此丰厚？（为过渡段）",
+     "py": "Yěxǔ yǒu rén yào wèn, zhè Sūn Yíngzhōu dàodǐ shénme láilì? Jiācáng jìngrán rúcǐ fēnghòu?",
+     "vn": "Có lẽ sẽ có người hỏi: ông Tôn Doanh Châu này rốt cuộc lai lịch thế nào? Đồ cất giữ trong nhà sao lại phong phú đến vậy? — Đoạn chuyển tiếp, nối chuyện hiến tặng với cuộc đời ông."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他对孩子非常节俭。他为了收购斗彩三秋杯不惜重金。",
+     "why": "Hai ý trái ngược (tiết kiệm ↔ không tiếc tiền) đặt cạnh nhau mà không có từ chuyển tiếp → đọc bị hẫng, không rõ quan hệ.",
+     "right": "他对孩子非常节俭。可是，为了收购斗彩三秋杯，他却不惜重金。"
+    },
+    {
+     "wrong": "赵州桥非常坚固……反之，桥面两侧有石栏，栏板上雕刻着精美的图案。",
+     "why": "反之 dùng khi ý sau NGƯỢC với ý trước; ở đây ý sau là bổ sung (không những kiên cố mà còn đẹp) → phải dùng câu chuyển tiếp tăng tiến.",
+     "right": "赵州桥非常坚固……这座桥不但坚固，而且美观。桥面两侧有石栏……"
+    }
+   ]
+  }
+ ]
+}

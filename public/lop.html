@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chế độ lớp học · Hi Hán 喜汉</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/lop.css">
+<script>
+// CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
+// va trinh duyet giu mai ban CSS/JS cu. Chuyen sang /lop de luon qua may chu.
+if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + location.search + location.hash);
+</script>
+<script src="/js/khong-goi-y.js"></script>
+</head>
+<body class="lop-body">
+
+<!-- Tranh son thuy nen — dung chung voi trang chinh -->
+<div class="scene" aria-hidden="true">
+  <div class="scene-layer scene-far"></div>
+  <div class="scene-mist"></div>
+  <div class="scene-layer scene-tree"></div>
+  <div class="scene-layer scene-bamboo"></div>
+  <div class="scene-veil"></div>
+</div>
+
+<!-- ================= MAN HINH CHUAN BI ================= -->
+<div id="lopSetup" class="lop-setup">
+  <div class="lop-setup-card">
+    <div class="lop-setup-head">
+      <div class="lop-logo">喜汉</div>
+      <div>
+        <h1>Chế độ lớp học</h1>
+        <p>Kiểm tra đầu giờ &amp; trò chơi ôn bài — chiếu thẳng lên lớp</p>
+      </div>
+    </div>
+
+    <div class="lop-field">
+      <label for="lopLevel">1 · Cấp độ</label>
+      <select id="lopLevel">
+        <option value="hsk1">HSK 1 (giáo trình cũ)</option>
+        <option value="hsk1v3">HSK 1 · 3.0</option>
+        <option value="hsk2">HSK 2 (giáo trình cũ)</option>
+        <option value="hsk2v3">HSK 2 · 3.0</option>
+        <option value="hsk3" selected>HSK 3</option>
+        <option value="hsk4">HSK 4</option>
+        <option value="yct">YCT · Thiếu nhi</option>
+      </select>
+    </div>
+
+    <div class="lop-field">
+      <label>2 · Chọn bài đã học để ôn</label>
+      <div class="lop-lesson-tools">
+        <button type="button" class="lop-mini-btn" id="lopPickAll">Chọn tất cả</button>
+        <button type="button" class="lop-mini-btn" id="lopPickNone">Bỏ chọn</button>
+        <button type="button" class="lop-mini-btn" id="lopPickRandom">🎲 Quay ngẫu nhiên 1 bài</button>
+      </div>
+      <div id="lopPickState" class="lop-pick-state"></div>
+      <div id="lopLessons" class="lop-lessons">Đang tải…</div>
+    </div>
+
+    <div class="lop-field">
+      <label>3 · Số tổ</label>
+      <div class="lop-team-pick" id="lopTeamPick">
+        <button type="button" data-n="2">2 tổ</button>
+        <button type="button" data-n="3">3 tổ</button>
+        <button type="button" data-n="4" class="active">4 tổ</button>
+        <button type="button" data-n="6">6 tổ</button>
+      </div>
+    </div>
+
+    <div class="lop-field">
+      <label>4 · Kiểm tra đầu giờ (có chấm điểm)</label>
+      <div class="lop-tests">
+        <button type="button" class="lop-test-card" data-test="dictation">
+          <span class="lop-game-emoji">✍️</span>
+          <span class="lop-game-name">Đọc chính tả Hán tự 听写</span>
+          <span class="lop-game-desc">Máy đọc từng từ và hiện nghĩa tiếng Việt, cả lớp viết chữ Hán + phiên âm vào vở. Đọc xong hiện bảng đáp án để đổi vở chấm chéo.</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
+        <button type="button" class="lop-test-card" data-test="quiz">
+          <span class="lop-game-emoji">⚡</span>
+          <span class="lop-game-name">Kiểm tra nhanh 10 câu</span>
+          <span class="lop-game-desc">Chiếu lần lượt 10 câu trắc nghiệm, học sinh ghi A/B/C vào vở. Hết giờ hiện cả bảng đáp án — chấm chéo lấy điểm miệng.</span>
+          <span class="lop-game-count" id="lopCountQuiz">—</span>
+        </button>
+        <button type="button" class="lop-test-card" data-test="phatam">
+          <span class="lop-game-emoji">🗣️</span>
+          <span class="lop-game-name">Kiểm tra phát âm 拼音</span>
+          <span class="lop-game-desc">Kiểm tra riêng phần phát âm — chọn từng bài trong 13 bài hoặc cả khoá. Nghe viết phiên âm, nghe chọn đáp án, hoặc chiếu lên gọi đọc to.</span>
+          <span class="lop-game-count" id="lopCountPa">13 bài</span>
+        </button>
+        <button type="button" class="lop-test-card" data-test="paper">
+          <span class="lop-game-emoji">📄</span>
+          <span class="lop-game-name">Đề giấy — in ra, 4 mã đề</span>
+          <span class="lop-game-desc">Tự ra đề 5–10 câu từ các bài đã chọn, in 4 mã đề khác thứ tự để hai em ngồi cạnh không chép được nhau. Có sẵn bảng đáp án cho thầy/cô.</span>
+          <span class="lop-game-count" id="lopCountPaper">—</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="lop-field">
+      <label>5 · Trò chơi khởi động</label>
+      <div class="lop-games">
+        <button type="button" class="lop-game-card" data-game="errfix">
+          <span class="lop-game-emoji">🔍</span>
+          <span class="lop-game-name">Bắt lỗi sai tiếp sức</span>
+          <span class="lop-game-desc">Chiếu 5 câu, có câu sai. Mỗi tổ cử 1 em lên bảng khoanh câu sai và viết lại câu đúng.</span>
+          <span class="lop-game-count" id="lopCountErrfix">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="abc">
+          <span class="lop-game-emoji">🅰️</span>
+          <span class="lop-game-name">Giơ thẻ A / B / C</span>
+          <span class="lop-game-desc">Chiếu câu có chỗ trống, đếm ngược 10 giây, cả lớp giơ thẻ. Tổ nào đúng nhiều nhất được điểm.</span>
+          <span class="lop-game-count" id="lopCountAbc">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="sort">
+          <span class="lop-game-emoji">🧩</span>
+          <span class="lop-game-name">Xếp câu bằng người</span>
+          <span class="lop-game-desc">Chiếu các thẻ từ lộn xộn. Mỗi tổ cử mấy em lên bảng, mỗi em cầm một thẻ rồi đứng xếp thành câu đúng.</span>
+          <span class="lop-game-count" id="lopCountSort">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="bingo">
+          <span class="lop-game-emoji">🔢</span>
+          <span class="lop-game-name">Bingo 3×3</span>
+          <span class="lop-game-desc">Chiếu 15 từ, mỗi em chọn 9 từ viết vào lưới 3×3 trong vở. Web gọi từng từ, ai đủ 3 ô thẳng hàng thì hô 中了!</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="guess">
+          <span class="lop-game-emoji">🖼️</span>
+          <span class="lop-game-name">Nhìn hình đoán chữ</span>
+          <span class="lop-game-desc">Chiếu hình minh hoạ, tổ nào đoán được chữ Hán và pinyin thì giơ tay. Lật ra có cả nghĩa và phát âm.</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="tiles">
+          <span class="lop-game-emoji">🎴</span>
+          <span class="lop-game-name">Lật ô đoán chữ</span>
+          <span class="lop-game-desc">Hình bị che bởi 9 ô. Mỗi tổ mở một ô rồi đoán — có ô thưởng +1 điểm và ô mất lượt.</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="taboo">
+          <span class="lop-game-emoji">🗣️</span>
+          <span class="lop-game-name">Bạn nói tôi đoán</span>
+          <span class="lop-game-desc">Một em quay lưng với màn hình, tổ mô tả bằng tiếng Trung mà không được nói chính từ đó. 60 giây được mấy từ.</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="trans">
+          <span class="lop-game-emoji">✍️</span>
+          <span class="lop-game-name">Dịch nhanh Việt → Trung</span>
+          <span class="lop-game-desc">Chiếu câu tiếng Việt, mỗi tổ cử 1 em lên bảng viết câu tiếng Trung. Lật ra có cả câu mẫu và phiên âm.</span>
+          <span class="lop-game-count lop-count-vocab">câu dịch</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="listen">
+          <span class="lop-game-emoji">👂</span>
+          <span class="lop-game-name">Nghe nhanh chỉ chữ</span>
+          <span class="lop-game-desc">Chiếu 9 chữ Hán, máy đọc một từ. Hai em đại diện hai tổ lên bảng, ai chỉ đúng trước thì thắng.</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="hanzi">
+          <span class="lop-game-emoji">🀄</span>
+          <span class="lop-game-name">Đoán chữ qua bộ thủ</span>
+          <span class="lop-game-desc">Chiếu bộ thủ, số nét, cấu tạo và mẹo nhớ — không hiện chữ. Tổ nào đoán ra chữ Hán thì được điểm.</span>
+          <span class="lop-game-count lop-count-vocab">chiết tự</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="role">
+          <span class="lop-game-emoji">🎭</span>
+          <span class="lop-game-name">Đóng vai bài khoá</span>
+          <span class="lop-game-desc">Chiếu hội thoại của bài nhưng che lời một vai, chỉ để lại nghĩa tiếng Việt. Hai em lên đóng vai, em giữ vai bị che phải tự nói.</span>
+          <span class="lop-game-count lop-count-vocab">bài khoá</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="hv">
+          <span class="lop-game-emoji">🔤</span>
+          <span class="lop-game-name">Âm Hán–Việt đoán chữ</span>
+          <span class="lop-game-desc">Chiếu âm Hán–Việt (nhĩ, hảo, học sinh…) và nghĩa, tổ đoán chữ Hán. Tận dụng vốn từ Hán–Việt sẵn có của học sinh.</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="match">
+          <span class="lop-game-emoji">🔗</span>
+          <span class="lop-game-name">Nối nghĩa nhanh</span>
+          <span class="lop-game-desc">Sáu chữ Hán bên trái, sáu nghĩa xáo trộn bên phải. Tổ đọc từng cặp “1 – C”, thầy/cô bấm để kiểm tra.</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="chain">
+          <span class="lop-game-emoji">🐉</span>
+          <span class="lop-game-name">Nối từ 接龙</span>
+          <span class="lop-game-desc">Chiếu chữ cuối của từ trước, tổ nào nói được từ bắt đầu bằng chữ đó thì được điểm. Web tra sẵn còn từ nào nối được.</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="write">
+          <span class="lop-game-emoji">🖊️</span>
+          <span class="lop-game-name">Thi viết bảng nhanh</span>
+          <span class="lop-game-desc">Máy đọc một từ (hoặc cả câu), các tổ viết chữ Hán lên bảng. Lật ra có chữ và phiên âm để chấm.</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bộ chọn bài phát âm — chỉ hiện khi bấm thẻ "Kiểm tra phát âm" -->
+    <div class="lop-field" id="lopPaField" hidden>
+      <label>Chọn bài phát âm để kiểm tra</label>
+      <div class="lop-lesson-tools">
+        <button type="button" class="lop-mini" id="lopPaAll">Cả 13 bài</button>
+        <button type="button" class="lop-mini" id="lopPaNone">Bỏ chọn</button>
+      </div>
+      <p class="gh-count" id="lopPaCount">Chưa chọn bài nào.</p>
+      <div id="lopPaList" class="lop-lessons"></div>
+      <div class="lop-pa-dong2">
+        <span class="lop-pa-nhan">Kiểm cái gì</span>
+        <div class="lop-pa-kieu" id="lopPaNguon">
+          <button type="button" data-pn="ghep" class="on">Từ ghép 读一读</button>
+          <button type="button" data-pn="don">Bảng ghép vần</button>
+          <button type="button" data-pn="tu">Từ ví dụ có chữ Hán</button>
+          <button type="button" data-pn="tron">Trộn cả ba</button>
+        </div>
+      </div>
+      <div class="lop-pa-dong2">
+        <span class="lop-pa-nhan">Kiểm thế nào</span>
+        <div class="lop-pa-kieu" id="lopPaKieu">
+          <button type="button" data-pk="doc" class="on">🗣️ Chiếu – em đọc to</button>
+          <button type="button" data-pk="viet">✍️ Nghe – em viết</button>
+          <button type="button" data-pk="chon">🅰️ Nghe – em chọn</button>
+        </div>
+      </div>
+      <div class="lop-pa-dong2">
+        <span class="lop-pa-nhan">Mỗi lượt mấy từ</span>
+        <div class="lop-pa-kieu lop-pa-so" id="lopPaSoTu">
+          <button type="button" data-ps="2">2</button>
+          <button type="button" data-ps="3" class="on">3</button>
+          <button type="button" data-ps="4">4</button>
+          <button type="button" data-ps="5">5</button>
+          <button type="button" data-ps="6">6</button>
+        </div>
+      </div>
+      <p class="lop-pa-giai">Mỗi lượt gọi <b>một em</b> lên kiểm <b id="lopPaGiaiSo">3</b> từ. Chấm ✓ / ✗ từng từ rồi bấm “Em tiếp theo”.</p>
+      <button type="button" class="lop-act" id="lopPaStart">Bắt đầu kiểm tra →</button>
+    </div>
+
+    <p class="lop-note">💡 Mẹo: bấm <b>F11</b> để chiếu toàn màn hình. Trong lúc chơi dùng phím <b>Space</b> để lật đáp án, phím <b>1…6</b> để cộng điểm cho tổ.</p>
+    <p class="lop-note">🎮 Muốn trò chơi bấm thẳng trên màn hình (bong bóng, đập chuột, lật thẻ)? Sang <a href="/game">Trò chơi ôn từ</a> — ở đó chọn <b>Chiếu lớp</b> là chữ to như trang này.</p>
+  </div>
+</div>
+
+<!-- ================= MAN HINH CHOI ================= -->
+<div id="lopPlay" class="lop-play" hidden>
+  <header class="lop-bar">
+    <button type="button" class="lop-bar-btn" id="lopExit">← Đổi bài / đổi trò</button>
+    <div class="lop-bar-title" id="lopTitle">Bắt lỗi sai tiếp sức</div>
+    <div class="lop-bar-sub" id="lopSub"></div>
+    <div class="lop-bar-right">
+      <div class="lop-timer" id="lopTimer">00:30</div>
+      <button type="button" class="lop-bar-btn" id="lopTimerToggle">▶ Bắt đầu</button>
+      <button type="button" class="lop-bar-btn" id="lopTimerSet" title="Đổi thời gian">30s</button>
+      <button type="button" class="lop-bar-btn lop-bar-icon" id="lopSound" title="Bật/tắt tiếng">🔊</button>
+      <button type="button" class="lop-bar-btn" id="lopBuild">✋ Xây dựng bài</button>
+      <button type="button" class="lop-bar-btn" id="lopCall">🙋 Gọi tên</button>
+    </div>
+  </header>
+
+  <main class="lop-stage" id="lopStage"></main>
+
+  <footer class="lop-scorebar" id="lopScorebar"></footer>
+</div>
+
+<!-- Cong diem xay dung bai · em nao gio tay thi bam cong ngay tren lop -->
+<div id="lopBuildBox" class="lop-roll-box" hidden>
+  <div class="lop-call-card lop-build-card">
+    <div class="lop-call-head">
+      <span>✋ Xây dựng bài</span>
+      <select id="lopBuildClass" class="lop-call-class"></select>
+      <button type="button" class="lop-mini-btn" id="lopBuildClose">Đóng</button>
+    </div>
+
+    <div id="lopBuildGate" class="lop-call-gate" hidden>
+      <p>Nhập mật khẩu quản trị để lấy danh sách lớp.</p>
+      <form id="lopBuildLogin">
+        <input type="password" id="lopBuildPw" placeholder="Mật khẩu quản trị" autocomplete="current-password">
+        <button type="submit" class="btn btn-primary">Mở danh sách</button>
+      </form>
+      <p class="lop-call-err" id="lopBuildErr" hidden></p>
+    </div>
+
+    <div id="lopBuildMain" hidden>
+      <input type="search" id="lopBuildFind" class="lop-build-find" placeholder="Gõ tên để tìm nhanh…">
+      <div id="lopBuildList" class="lop-build-list"></div>
+      <div class="lop-call-hint" id="lopBuildHint"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Goi ten hoc sinh len bang · uu tien em lau chua duoc goi -->
+<div id="lopCallBox" class="lop-roll-box" hidden>
+  <div class="lop-call-card">
+    <div class="lop-call-head">
+      <span>Kiểm tra đầu giờ</span>
+      <select id="lopCallClass" class="lop-call-class"></select>
+      <button type="button" class="lop-mini-btn" id="lopCallClose">Đóng</button>
+    </div>
+
+    <div id="lopCallGate" class="lop-call-gate" hidden>
+      <p>Nhập mật khẩu quản trị để lấy danh sách lớp.</p>
+      <form id="lopCallLogin">
+        <input type="password" id="lopCallPw" placeholder="Mật khẩu quản trị" autocomplete="current-password">
+        <button type="submit" class="btn btn-primary">Mở danh sách</button>
+      </form>
+      <p class="lop-call-err" id="lopCallErr" hidden></p>
+    </div>
+
+    <div id="lopCallMain" hidden>
+      <div class="lop-call-name" id="lopCallName">—</div>
+      <div class="lop-call-meta" id="lopCallMeta"></div>
+
+      <div class="lop-call-score" id="lopCallScore" hidden>
+        <span>Chấm điểm: <small>điểm này lên cột “Miệng” ở bảng lớp cho học sinh xem</small></span>
+        <div class="lop-call-nums" id="lopCallNums"></div>
+        <button type="button" class="lop-mini-btn" id="lopCallSkip">Vắng / bỏ qua</button>
+      </div>
+
+      <div class="lop-call-actions">
+        <button type="button" class="lop-act" id="lopCallPick">🙋 Gọi em tiếp theo</button>
+      </div>
+      <div class="lop-call-hint" id="lopCallHint"></div>
+    </div>
+  </div>
+</div>
+
+<!-- De giay in ra — 4 ma de + bang dap an -->
+<div id="lopPaper" class="lop-paper-wrap" hidden>
+  <div class="lop-paper-bar">
+    <button type="button" class="lop-mini-btn" id="lopPaperClose">← Quay lại</button>
+    <div class="lop-paper-opts">
+      <label>Số câu mỗi đề
+        <select id="lopPaperN">
+          <option value="5">5 câu</option>
+          <option value="8" selected>8 câu</option>
+          <option value="10">10 câu</option>
+        </select>
+      </label>
+      <label>Số mã đề
+        <select id="lopPaperV">
+          <option value="2">2 mã đề</option>
+          <option value="4" selected>4 mã đề</option>
+        </select>
+      </label>
+      <label class="lop-paper-check"><input type="checkbox" id="lopPaperKey" checked> In kèm bảng đáp án</label>
+      <label class="lop-paper-check"><input type="checkbox" id="lopPaperHard"> Ẩn gợi ý ngữ pháp (đề khó hơn)</label>
+    </div>
+    <button type="button" class="lop-mini-btn" id="lopPaperAgain">🎲 Ra đề khác</button>
+    <button type="button" class="lop-act" id="lopPaperPrint">🖨️ In ra</button>
+  </div>
+  <div class="lop-paper-sheets" id="lopPaperSheets"></div>
+</div>
+
+<script src="/js/phat-am-bai.js"></script>
+<script src="/js/phat-am-de.js"></script>
+<script src="/js/lop.js"></script>
+</body>
+</html>

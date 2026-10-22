@@ -1,0 +1,1615 @@
+// ══════════════════════════════════════════
+// DATA — Bài 4: 这个工作是他帮我介绍的
+// ══════════════════════════════════════════
+var vocabData = [
+  {
+    "n": 1,
+    "zh": "生日",
+    "py": "shēngrì",
+    "pos": "Danh từ",
+    "vn": "sinh nhật",
+    "hv": "sinh nhật",
+    "em": "🎂",
+    "lesson": 1,
+    "ex_zh": "生日快乐！",
+    "ex_py": "Shēngrì kuàilè!",
+    "ex_vn": "Chúc mừng sinh nhật!",
+    "exList": [
+      {
+        "zh": "生日快乐！",
+        "py": "Shēngrì kuàilè!",
+        "vn": "Chúc mừng sinh nhật!"
+      },
+      {
+        "zh": "你的生日是几月几号？",
+        "py": "Nǐ de shēngrì shì jǐ yuè jǐ hào?",
+        "vn": "Sinh nhật bạn là ngày mấy tháng mấy?"
+      },
+      {
+        "zh": "今天是我女儿的生日。",
+        "py": "Jīntiān shì wǒ nǚ'ér de shēngrì.",
+        "vn": "Hôm nay là sinh nhật con gái tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "生",
+        "p": "shēng",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "丿→一→一→丨→一",
+        "rad": "生 (sinh)",
+        "mean": "sinh ra, sống",
+        "tip": "Hình mầm cây mọc trên đất → \"sinh ra\". 生 + 日 = ngày sinh ra = SINH NHẬT.",
+        "cf": "牛 (niú)",
+        "w": "生日 / 学生 / 生病"
+      },
+      {
+        "c": "日",
+        "p": "rì",
+        "type": "独体字 · Tượng hình",
+        "st": 4,
+        "ord": "丨→フ→一→一",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "ngày, mặt trời",
+        "tip": "Hình vuông có chấm ở giữa mô phỏng mặt trời → \"ngày, mặt trời\".",
+        "cf": "目 (mù – \"mắt\", dài hơn)",
+        "w": "生日 / 今天 / 日子"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "过生日",
+        "py": "guo shēngrì",
+        "vn": "mừng sinh nhật"
+      },
+      {
+        "zh": "生日快乐",
+        "py": "shēngrì kuàilè",
+        "vn": "chúc mừng sinh nhật"
+      },
+      {
+        "zh": "生日的时候",
+        "py": "shēngrì de shíhou",
+        "vn": "dịp sinh nhật"
+      },
+      {
+        "zh": "我的生日",
+        "py": "wǒ de shēngrì",
+        "vn": "sinh nhật của tôi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "过 + 生日",
+        "m": "Mừng sinh nhật — dùng động từ 过"
+      },
+      {
+        "s": "生日快乐！là câu chúc quen thuộc nhất"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sinh nhật bạn là ngày mấy tháng mấy?",
+        "answer": "你的生日是几月几号？",
+        "answerPy": "Nǐ de shēngrì shì jǐ yuè jǐ hào?",
+        "note": "Câu đã có 几 thì không thêm 吗.",
+        "pair": "几月几号？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay là sinh nhật con gái tôi.",
+        "answer": "今天是我女儿的生日。",
+        "answerPy": "Jīntiān shì wǒ nǚ'ér de shēngrì.",
+        "note": "……的生日 — sinh nhật của ai.",
+        "pair": "是……的"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "快乐",
+    "py": "kuàilè",
+    "pos": "Tính từ",
+    "vn": "vui vẻ, hạnh phúc",
+    "hv": "khoái lạc",
+    "em": "😄",
+    "lesson": 1,
+    "ex_zh": "祝你天天快乐。",
+    "ex_py": "Zhù nǐ tiāntiān kuàilè.",
+    "ex_vn": "Chúc bạn ngày nào cũng vui vẻ.",
+    "exList": [
+      {
+        "zh": "祝你天天快乐。",
+        "py": "Zhù nǐ tiāntiān kuàilè.",
+        "vn": "Chúc bạn ngày nào cũng vui vẻ."
+      },
+      {
+        "zh": "她今天很快乐。",
+        "py": "Tā jīntiān hěn kuàilè.",
+        "vn": "Hôm nay cô ấy rất vui."
+      },
+      {
+        "zh": "新年快乐！",
+        "py": "Xīnnián kuàilè!",
+        "vn": "Chúc mừng năm mới!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "快",
+        "p": "kuài",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "忄(tâm) trái → 夬 (quyết) phải",
+        "rad": "忄(tâm – trái tim)",
+        "mean": "nhanh; vui",
+        "tip": "Bộ 忄(tim) → cảm giác trong lòng nhẹ nhõm, nhanh chóng = VUI, NHANH.",
+        "cf": "块 (kuài – bộ 土, đã học ở Bài 3)",
+        "w": "快乐 / 很快 / 快来"
+      },
+      {
+        "c": "乐",
+        "p": "lè / yuè",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "丿→𠃌→丨→乛→乙",
+        "rad": "丿",
+        "mean": "vui (lè); âm nhạc (yuè)",
+        "tip": "Hình chiếc trống có dùi gõ cách điệu → thời xưa nghe nhạc là niềm VUI.",
+        "cf": "东 (dōng – \"phía đông\")",
+        "w": "快乐 / 音乐 / 乐意"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "生日快乐",
+        "py": "shēngrì kuàilè",
+        "vn": "sinh nhật vui vẻ"
+      },
+      {
+        "zh": "很快乐",
+        "py": "hěn kuàilè",
+        "vn": "rất vui"
+      },
+      {
+        "zh": "快乐的一天",
+        "py": "kuàilè de yì tiān",
+        "vn": "một ngày vui vẻ"
+      },
+      {
+        "zh": "不快乐",
+        "py": "bú kuàilè",
+        "vn": "không vui"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "生日快乐！",
+        "m": "Chúc mừng sinh nhật — câu chúc quen thuộc nhất"
+      },
+      {
+        "s": "快乐 (vui, hạnh phúc) và 高兴 (vui trong lúc này)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sinh nhật vui vẻ! Đây là cái đồng hồ tôi tặng bạn.",
+        "answer": "生日快乐！这是我送你的手表。",
+        "answerPy": "Shēngrì kuàilè! Zhè shì wǒ sòng nǐ de shǒubiǎo.",
+        "note": "生日快乐 là câu chúc quen thuộc nhất.",
+        "pair": "送 + người + N"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay tôi rất vui.",
+        "answer": "今天我很快乐。",
+        "answerPy": "Jīntiān wǒ hěn kuàilè.",
+        "note": "Tính từ làm vị ngữ cần có 很.",
+        "pair": "很 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "给",
+    "py": "gěi",
+    "pos": "Giới từ / Động từ",
+    "vn": "cho, tặng",
+    "hv": "cấp",
+    "em": "🎁",
+    "lesson": 1,
+    "ex_zh": "这是送给你的。",
+    "ex_py": "Zhè shì sòng gěi nǐ de.",
+    "ex_vn": "Đây là quà tặng bạn.",
+    "exList": [
+      {
+        "zh": "这是送给你的。",
+        "py": "Zhè shì sòng gěi nǐ de.",
+        "vn": "Đây là quà tặng bạn."
+      },
+      {
+        "zh": "请把这本书给我。",
+        "py": "Qǐng bǎ zhè běn shū gěi wǒ.",
+        "vn": "Làm ơn đưa quyển sách này cho tôi."
+      },
+      {
+        "zh": "妈妈给我买了一块手表。",
+        "py": "Māma gěi wǒ mǎile yí kuài shǒubiǎo.",
+        "vn": "Mẹ mua cho tôi một chiếc đồng hồ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "给",
+        "p": "gěi",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "纟(mịch) trái → 合 (hợp) phải",
+        "rad": "纟(mịch – tơ, sợi)",
+        "mean": "cho, tặng",
+        "tip": "Bộ 纟(tơ lụa) — xưa tặng nhau tơ lụa quý giá, sau mở rộng nghĩa \"CHO, TẶNG\" nói chung.",
+        "cf": "合 (hé – \"hợp\", thiếu bộ 纟)",
+        "w": "给你 / 送给 / 给我"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "给我",
+        "py": "gěi wǒ",
+        "vn": "cho tôi"
+      },
+      {
+        "zh": "给他打电话",
+        "py": "gěi tā dǎ diànhuà",
+        "vn": "gọi điện cho anh ấy"
+      },
+      {
+        "zh": "给你介绍",
+        "py": "gěi nǐ jièshào",
+        "vn": "giới thiệu cho bạn"
+      },
+      {
+        "zh": "给妈妈买",
+        "py": "gěi māma mǎi",
+        "vn": "mua cho mẹ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "给 + người + động từ",
+        "m": "Làm gì cho ai — 给 đứng TRƯỚC động từ"
+      },
+      {
+        "s": "✗ 打电话给我 → ✓ 给我打电话"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tối nay tôi gọi điện cho bạn.",
+        "answer": "今天晚上我给你打电话。",
+        "answerPy": "Jīntiān wǎnshang wǒ gěi nǐ dǎ diànhuà.",
+        "note": "给 đứng TRƯỚC động từ, không đứng sau.",
+        "pair": "给 + người + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Mẹ mua cho tôi một cái đồng hồ mới.",
+        "answer": "妈妈给我买了一个新手表。",
+        "answerPy": "Māma gěi wǒ mǎile yí ge xīn shǒubiǎo.",
+        "note": "给我买 — mua cho tôi.",
+        "pair": "给……买"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "接",
+    "py": "jiē",
+    "pos": "Động từ",
+    "vn": "nhận, đón, nghe máy",
+    "hv": "tiếp",
+    "em": "📞",
+    "lesson": 2,
+    "ex_zh": "电话是儿子接的。",
+    "ex_py": "Diànhuà shì érzi jiē de.",
+    "ex_vn": "Điện thoại là con trai nghe máy.",
+    "exList": [
+      {
+        "zh": "电话是儿子接的。",
+        "py": "Diànhuà shì érzi jiē de.",
+        "vn": "Điện thoại là con trai nghe máy."
+      },
+      {
+        "zh": "我去机场接你。",
+        "py": "Wǒ qù jīchǎng jiē nǐ.",
+        "vn": "Tôi đi ra sân bay đón bạn."
+      },
+      {
+        "zh": "请接一下电话。",
+        "py": "Qǐng jiē yíxià diànhuà.",
+        "vn": "Làm ơn nghe điện thoại một chút."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "接",
+        "p": "jiē",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "扌(thủ) trái → 妾 (thiếp) phải",
+        "rad": "扌(thủ – tay)",
+        "mean": "nhận, đón, tiếp",
+        "tip": "Bộ 扌(tay) → dùng tay đưa ra ĐÓN NHẬN người/vật/cuộc gọi.",
+        "cf": "椄 (jiē – \"ghép cây\", bộ 木)",
+        "w": "接电话 / 接人 / 迎接"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "接你",
+        "py": "jiē nǐ",
+        "vn": "đón bạn"
+      },
+      {
+        "zh": "去学校接",
+        "py": "qù xuéxiào jiē",
+        "vn": "đến trường đón"
+      },
+      {
+        "zh": "接电话",
+        "py": "jiē diànhuà",
+        "vn": "nghe điện thoại"
+      },
+      {
+        "zh": "来接我",
+        "py": "lái jiē wǒ",
+        "vn": "đến đón tôi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "接 + người",
+        "m": "Đón ai: 我去接你"
+      },
+      {
+        "s": "接 + 电话",
+        "m": "Nghe điện thoại — cũng dùng 接"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chiều mai tôi đến trường đón bạn.",
+        "answer": "明天下午我去学校接你。",
+        "answerPy": "Míngtiān xiàwǔ wǒ qù xuéxiào jiē nǐ.",
+        "note": "Thời gian đứng đầu câu, nơi chốn đứng trước động từ.",
+        "pair": "去 + nơi chốn + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Ai đến đón bạn?",
+        "answer": "谁来接你？",
+        "answerPy": "Shéi lái jiē nǐ?",
+        "note": "Câu đã có 谁 thì không thêm 吗.",
+        "pair": "谁 + V？"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "晚上",
+    "py": "wǎnshang",
+    "pos": "Danh từ",
+    "vn": "buổi tối",
+    "hv": "vãn thượng",
+    "em": "🌙",
+    "lesson": 2,
+    "ex_zh": "晚上我问一下儿子。",
+    "ex_py": "Wǎnshang wǒ wèn yíxià érzi.",
+    "ex_vn": "Tối nay tôi sẽ hỏi con trai một chút.",
+    "exList": [
+      {
+        "zh": "晚上我问一下儿子。",
+        "py": "Wǎnshang wǒ wèn yíxià érzi.",
+        "vn": "Tối nay tôi sẽ hỏi con trai một chút."
+      },
+      {
+        "zh": "晚上你想吃什么？",
+        "py": "Wǎnshang nǐ xiǎng chī shénme?",
+        "vn": "Tối nay bạn muốn ăn gì?"
+      },
+      {
+        "zh": "他晚上很累。",
+        "py": "Tā wǎnshang hěn lèi.",
+        "vn": "Buổi tối anh ấy rất mệt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "晚",
+        "p": "wǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "日 (nhật) trái → 免 (miễn) phải",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "muộn, tối",
+        "tip": "Bộ 日 (mặt trời) đã lặn muộn → chỉ thời gian buổi TỐI, MUỘN.",
+        "cf": "免 (miǎn – \"miễn trừ\", thiếu bộ 日)",
+        "w": "晚上 / 晚饭 / 太晚了"
+      },
+      {
+        "c": "上",
+        "p": "shàng",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "一→丨→一",
+        "rad": "一 (nhất)",
+        "mean": "trên, lên",
+        "tip": "Đã học ở Bài 3 (早上) — nét ngắn phía trên nét ngang dài = hướng lên trên.",
+        "cf": "下 (xià)",
+        "w": "晚上 / 早上 / 上班"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "今天晚上",
+        "py": "jīntiān wǎnshang",
+        "vn": "tối nay"
+      },
+      {
+        "zh": "明天晚上",
+        "py": "míngtiān wǎnshang",
+        "vn": "tối mai"
+      },
+      {
+        "zh": "晚上八点",
+        "py": "wǎnshang bā diǎn",
+        "vn": "tám giờ tối"
+      },
+      {
+        "zh": "晚上见",
+        "py": "wǎnshang jiàn",
+        "vn": "tối gặp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "ngày + 晚上",
+        "m": "Buổi tối của ngày nào: 今天晚上"
+      },
+      {
+        "s": "早上 · 中午 · 晚上 — các buổi trong ngày"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tám giờ tối nay chúng ta cùng đi ăn cơm.",
+        "answer": "今天晚上八点我们一起去吃饭。",
+        "answerPy": "Jīntiān wǎnshang bā diǎn wǒmen yìqǐ qù chīfàn.",
+        "note": "Thứ tự: ngày → buổi → giờ.",
+        "pair": "一起 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tối mai bạn có thời gian không?",
+        "answer": "明天晚上你有时间吗？",
+        "answerPy": "Míngtiān wǎnshang nǐ yǒu shíjiān ma?",
+        "note": "有时间 — có thời gian, rảnh.",
+        "pair": "……吗？"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "问",
+    "py": "wèn",
+    "pos": "Động từ",
+    "vn": "hỏi",
+    "hv": "vấn",
+    "em": "❔",
+    "lesson": 2,
+    "ex_zh": "晚上我问一下儿子。",
+    "ex_py": "Wǎnshang wǒ wèn yíxià érzi.",
+    "ex_vn": "Tối nay tôi sẽ hỏi con trai một chút.",
+    "exList": [
+      {
+        "zh": "晚上我问一下儿子。",
+        "py": "Wǎnshang wǒ wèn yíxià érzi.",
+        "vn": "Tối nay tôi sẽ hỏi con trai một chút."
+      },
+      {
+        "zh": "我想问老师一个问题。",
+        "py": "Wǒ xiǎng wèn lǎoshī yí ge wèntí.",
+        "vn": "Tôi muốn hỏi thầy giáo một câu hỏi."
+      },
+      {
+        "zh": "你问他了吗？",
+        "py": "Nǐ wènle tā ma?",
+        "vn": "Bạn hỏi anh ấy chưa?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "问",
+        "p": "wèn",
+        "type": "半包围 · Bán bao (门)",
+        "st": 6,
+        "ord": "门 (môn) bao ngoài → 口 (khẩu) bên trong",
+        "rad": "门 (môn – cửa)",
+        "mean": "hỏi",
+        "tip": "Miệng 口 đứng ở cửa 门 cất tiếng gọi/HỎI vào trong.",
+        "cf": "间 (jiān – thay 口 bằng 日, đã học ở Bài 2)",
+        "w": "问一下 / 问题 / 请问"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "问老师",
+        "py": "wèn lǎoshī",
+        "vn": "hỏi thầy"
+      },
+      {
+        "zh": "问什么",
+        "py": "wèn shénme",
+        "vn": "hỏi gì"
+      },
+      {
+        "zh": "请问",
+        "py": "qǐngwèn",
+        "vn": "xin hỏi"
+      },
+      {
+        "zh": "问一下",
+        "py": "wèn yíxià",
+        "vn": "hỏi một chút"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "问 + người",
+        "m": "Hỏi ai: 问老师"
+      },
+      {
+        "s": "问 (hỏi) ≠ 说 (nói) — 问 luôn chờ câu trả lời"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi muốn hỏi thầy một chút.",
+        "answer": "我想问一下老师。",
+        "answerPy": "Wǒ xiǎng wèn yíxià lǎoshī.",
+        "note": "问一下 — hỏi một chút, nghe nhẹ nhàng hơn.",
+        "pair": "想 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Xin hỏi, bệnh viện ở đâu?",
+        "answer": "请问，医院在哪儿？",
+        "answerPy": "Qǐngwèn, yīyuàn zài nǎr?",
+        "note": "请问 mở đầu khi hỏi người lạ.",
+        "pair": "在哪儿？"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "非常",
+    "py": "fēicháng",
+    "pos": "Phó từ",
+    "vn": "vô cùng, cực kỳ",
+    "hv": "phi thường",
+    "em": "❗",
+    "lesson": 3,
+    "ex_zh": "非常喜欢。",
+    "ex_py": "Fēicháng xǐhuan.",
+    "ex_vn": "Cực kỳ thích luôn.",
+    "exList": [
+      {
+        "zh": "非常喜欢。",
+        "py": "Fēicháng xǐhuan.",
+        "vn": "Cực kỳ thích luôn."
+      },
+      {
+        "zh": "这件衣服非常漂亮。",
+        "py": "Zhè jiàn yīfu fēicháng piàoliang.",
+        "vn": "Chiếc áo này cực kỳ đẹp."
+      },
+      {
+        "zh": "今天非常冷。",
+        "py": "Jīntiān fēicháng lěng.",
+        "vn": "Hôm nay lạnh cực kỳ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "非",
+        "p": "fēi",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "丿→丨→一→一→丨→一→一",
+        "rad": "非 (phi – tự thành bộ)",
+        "mean": "không, phi",
+        "tip": "Hình hai cánh chim xoè ngược chiều nhau → biểu thị sự \"trái ngược, không phải\".",
+        "cf": "排 (pái – \"xếp hàng\", thêm bộ 扌)",
+        "w": "非常 / 非要"
+      },
+      {
+        "c": "常",
+        "p": "cháng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "⺌ → 冖 → 巾",
+        "rad": "巾 (cân – khăn)",
+        "mean": "thường xuyên",
+        "tip": "非 + 常 = mức độ vượt ra ngoài cái \"thường\" = VÔ CÙNG.",
+        "cf": "尝 (cháng – \"nếm\", phần dưới khác)",
+        "w": "非常 / 经常 / 常常"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "非常好",
+        "py": "fēicháng hǎo",
+        "vn": "rất tốt"
+      },
+      {
+        "zh": "非常快乐",
+        "py": "fēicháng kuàilè",
+        "vn": "cực kỳ vui"
+      },
+      {
+        "zh": "非常忙",
+        "py": "fēicháng máng",
+        "vn": "cực kỳ bận"
+      },
+      {
+        "zh": "非常喜欢",
+        "py": "fēicháng xǐhuan",
+        "vn": "cực kỳ thích"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "非常 + tính từ / động từ",
+        "m": "Mức độ cao hơn 很: 非常快乐"
+      },
+      {
+        "s": "很 < 非常 < 最 — ba mức từ thấp lên cao"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay tôi cực kỳ bận, không có thời gian.",
+        "answer": "今天我非常忙，没有时间。",
+        "answerPy": "Jīntiān wǒ fēicháng máng, méiyǒu shíjiān.",
+        "note": "非常 mạnh hơn 很.",
+        "pair": "非常 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Căn phòng này cực kỳ đẹp.",
+        "answer": "这个房间非常漂亮。",
+        "answerPy": "Zhège fángjiān fēicháng piàoliang.",
+        "note": "Đã có 非常 thì không thêm 很.",
+        "pair": "非常 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "开始",
+    "py": "kāishǐ",
+    "pos": "Động từ",
+    "vn": "bắt đầu",
+    "hv": "khai thủy",
+    "em": "🚦",
+    "lesson": 3,
+    "ex_zh": "你是什么时候开始踢足球的？",
+    "ex_py": "Nǐ shì shénme shíhou kāishǐ tī zúqiú de?",
+    "ex_vn": "Bạn bắt đầu đá bóng từ khi nào thế?",
+    "exList": [
+      {
+        "zh": "你是什么时候开始踢足球的？",
+        "py": "Nǐ shì shénme shíhou kāishǐ tī zúqiú de?",
+        "vn": "Bạn bắt đầu đá bóng từ khi nào thế?"
+      },
+      {
+        "zh": "电影已经开始了。",
+        "py": "Diànyǐng yǐjīng kāishǐ le.",
+        "vn": "Phim đã bắt đầu rồi."
+      },
+      {
+        "zh": "我们几点开始上课？",
+        "py": "Wǒmen jǐ diǎn kāishǐ shàngkè?",
+        "vn": "Mấy giờ chúng ta bắt đầu học?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "开",
+        "p": "kāi",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一→丨→一→丨",
+        "rad": "廾 (củng)",
+        "mean": "mở, bắt đầu",
+        "tip": "Hình then cài cửa được kéo mở ra → \"MỞ, khởi đầu\".",
+        "cf": "关 (guān – \"đóng\", trái nghĩa)",
+        "w": "开始 / 开门 / 打开"
+      },
+      {
+        "c": "始",
+        "p": "shǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "女 (nữ) trái → 台 (đài) phải",
+        "rad": "女 (nữ – phụ nữ)",
+        "mean": "bắt đầu",
+        "tip": "开 (mở ra) + 始 (khởi thủy) = mở ra điểm khởi đầu = BẮT ĐẦU.",
+        "cf": "治 (zhì – \"trị\", bộ 氵)",
+        "w": "开始 / 始终"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "开始上课",
+        "py": "kāishǐ shàngkè",
+        "vn": "bắt đầu vào học"
+      },
+      {
+        "zh": "几点开始",
+        "py": "jǐ diǎn kāishǐ",
+        "vn": "mấy giờ bắt đầu"
+      },
+      {
+        "zh": "开始了",
+        "py": "kāishǐ le",
+        "vn": "bắt đầu rồi"
+      },
+      {
+        "zh": "开始学习",
+        "py": "kāishǐ xuéxí",
+        "vn": "bắt đầu học"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "开始 + động từ",
+        "m": "Bắt đầu làm gì: 开始上课"
+      },
+      {
+        "s": "thời gian + 开始",
+        "m": "Bắt đầu từ lúc nào: 八点开始"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mấy giờ bắt đầu học?",
+        "answer": "几点开始上课？",
+        "answerPy": "Jǐ diǎn kāishǐ shàngkè?",
+        "note": "开始 + động từ — bắt đầu làm gì.",
+        "pair": "几点……？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi bắt đầu học tiếng Trung rồi.",
+        "answer": "我开始学习汉语了。",
+        "answerPy": "Wǒ kāishǐ xuéxí Hànyǔ le.",
+        "note": "了 cuối câu báo tình hình đã đổi.",
+        "pair": "……了"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "已经",
+    "py": "yǐjīng",
+    "pos": "Phó từ",
+    "vn": "đã",
+    "hv": "dĩ kinh",
+    "em": "✅",
+    "lesson": 4,
+    "ex_zh": "已经两年多了。",
+    "ex_py": "Yǐjīng liǎng nián duō le.",
+    "ex_vn": "Đã hơn hai năm rồi.",
+    "exList": [
+      {
+        "zh": "已经两年多了。",
+        "py": "Yǐjīng liǎng nián duō le.",
+        "vn": "Đã hơn hai năm rồi."
+      },
+      {
+        "zh": "王老师已经回家了。",
+        "py": "Wáng lǎoshī yǐjīng huí jiā le.",
+        "vn": "Thầy Vương đã về nhà rồi."
+      },
+      {
+        "zh": "我已经吃饭了。",
+        "py": "Wǒ yǐjīng chī fàn le.",
+        "vn": "Tôi đã ăn cơm rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "已",
+        "p": "yǐ",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "乙→一→乚",
+        "rad": "己 (kỷ – biến thể)",
+        "mean": "đã, thôi",
+        "tip": "Hình cuộn dây đã hoàn tất, khép lại → biểu thị việc ĐÃ xong.",
+        "cf": "己 (jǐ – \"bản thân\", hở đầu)",
+        "w": "已经 / 不已"
+      },
+      {
+        "c": "经",
+        "p": "jīng",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "纟(mịch) trái → 巛+ 工 phải",
+        "rad": "纟(mịch – tơ, sợi)",
+        "mean": "trải qua, kinh",
+        "tip": "已 (xong) + 经 (trải qua) = việc đã trải qua = ĐÃ (xong rồi).",
+        "cf": "径 (jìng – \"con đường\", bộ 彳)",
+        "w": "已经 / 经常 / 经理"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "已经来了",
+        "py": "yǐjīng lái le",
+        "vn": "đã đến rồi"
+      },
+      {
+        "zh": "已经知道",
+        "py": "yǐjīng zhīdào",
+        "vn": "đã biết rồi"
+      },
+      {
+        "zh": "已经开始了",
+        "py": "yǐjīng kāishǐ le",
+        "vn": "đã bắt đầu rồi"
+      },
+      {
+        "zh": "已经很晚了",
+        "py": "yǐjīng hěn wǎn le",
+        "vn": "đã muộn lắm rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "已经 + động từ + 了",
+        "m": "Đã … rồi — hai vế thường đi cùng nhau"
+      },
+      {
+        "s": "已经 đứng TRƯỚC động từ, 了 đứng cuối câu"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn tôi đã đến rồi.",
+        "answer": "我朋友已经来了。",
+        "answerPy": "Wǒ péngyou yǐjīng lái le.",
+        "note": "已经 và 了 thường đi cùng nhau.",
+        "pair": "已经……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đã tám giờ rồi, chúng ta bắt đầu thôi.",
+        "answer": "已经八点了，我们开始吧。",
+        "answerPy": "Yǐjīng bā diǎn le, wǒmen kāishǐ ba.",
+        "note": "吧 dùng khi rủ rê, đề nghị.",
+        "pair": "……吧"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "长",
+    "py": "cháng",
+    "pos": "Tính từ",
+    "vn": "dài, lâu",
+    "hv": "trường",
+    "em": "📏",
+    "lesson": 4,
+    "ex_zh": "你在这里工作多长时间了？",
+    "ex_py": "Nǐ zài zhèlǐ gōngzuò duō cháng shíjiān le?",
+    "ex_vn": "Bạn làm việc ở đây được bao lâu rồi?",
+    "exList": [
+      {
+        "zh": "你在这里工作多长时间了？",
+        "py": "Nǐ zài zhèlǐ gōngzuò duō cháng shíjiān le?",
+        "vn": "Bạn làm việc ở đây được bao lâu rồi?"
+      },
+      {
+        "zh": "这条河很长。",
+        "py": "Zhè tiáo hé hěn cháng.",
+        "vn": "Con sông này rất dài."
+      },
+      {
+        "zh": "今天的会开得很长。",
+        "py": "Jīntiān de huì kāi de hěn cháng.",
+        "vn": "Cuộc họp hôm nay kéo dài lâu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "长",
+        "p": "cháng / zhǎng",
+        "type": "独体字 · Tượng hình",
+        "st": 4,
+        "ord": "丿→ 𠃌 → 一 → 乚",
+        "rad": "长 (trường – tự thành bộ)",
+        "mean": "dài (cháng); lớn lên (zhǎng)",
+        "tip": "Hình mái tóc dài được vẽ cách điệu → nghĩa gốc \"DÀI\". Đọc zhǎng khi nghĩa \"trưởng thành, cấp trên\".",
+        "cf": "K không có",
+        "w": "多长时间 / 长大 / 校长"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很长",
+        "py": "hěn cháng",
+        "vn": "rất dài"
+      },
+      {
+        "zh": "长时间",
+        "py": "cháng shíjiān",
+        "vn": "thời gian dài"
+      },
+      {
+        "zh": "不长",
+        "py": "bù cháng",
+        "vn": "không dài"
+      },
+      {
+        "zh": "长长的",
+        "py": "chángcháng de",
+        "vn": "dài dài"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "很 + 长",
+        "m": "Rất dài — nói về vật, về thời gian"
+      },
+      {
+        "s": "长 (cháng, dài) và 长 (zhǎng, lớn lên) — cùng chữ, khác âm"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thời gian chúng tôi nghỉ không dài.",
+        "answer": "我们休息的时间不长。",
+        "answerPy": "Wǒmen xiūxi de shíjiān bù cháng.",
+        "note": "……的时间 — khoảng thời gian làm gì.",
+        "pair": "不 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đã nghỉ một thời gian dài.",
+        "answer": "我休息了很长时间。",
+        "answerPy": "Wǒ xiūxile hěn cháng shíjiān.",
+        "note": "很长时间 — một thời gian dài.",
+        "pair": "……了"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "两",
+    "py": "liǎng",
+    "pos": "Số từ",
+    "vn": "hai (dùng trước lượng từ)",
+    "hv": "lưỡng",
+    "em": "2️⃣",
+    "lesson": 4,
+    "ex_zh": "已经两年多了。",
+    "ex_py": "Yǐjīng liǎng nián duō le.",
+    "ex_vn": "Đã hơn hai năm rồi.",
+    "exList": [
+      {
+        "zh": "已经两年多了。",
+        "py": "Yǐjīng liǎng nián duō le.",
+        "vn": "Đã hơn hai năm rồi."
+      },
+      {
+        "zh": "我有两个孩子。",
+        "py": "Wǒ yǒu liǎng ge háizi.",
+        "vn": "Tôi có hai đứa con."
+      },
+      {
+        "zh": "桌子上有两块手表。",
+        "py": "Zhuōzi shang yǒu liǎng kuài shǒubiǎo.",
+        "vn": "Trên bàn có hai chiếc đồng hồ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "两",
+        "p": "liǎng",
+        "type": "独体字 · Chữ đơn",
+        "st": 7,
+        "ord": "一→冂→𠆢→一→一",
+        "rad": "一 (nhất)",
+        "mean": "hai",
+        "tip": "Khác với 二 (số 2 khi đếm), 两 dùng khi đi kèm LƯỢNG TỪ: 两个, 两年, 两块.",
+        "cf": "辆 (liàng – \"lượng từ xe\", bộ 车)",
+        "w": "两年 / 两个 / 两天"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "两个人",
+        "py": "liǎng gè rén",
+        "vn": "hai người"
+      },
+      {
+        "zh": "两点",
+        "py": "liǎng diǎn",
+        "vn": "hai giờ"
+      },
+      {
+        "zh": "两个小时",
+        "py": "liǎng gè xiǎoshí",
+        "vn": "hai tiếng"
+      },
+      {
+        "zh": "两天",
+        "py": "liǎng tiān",
+        "vn": "hai ngày"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "两 + lượng từ + danh từ",
+        "m": "Hai cái gì: 两个人"
+      },
+      {
+        "s": "两 (đếm số lượng) ≠ 二 (đọc số, thứ tự): 两个 ✓ / 二个 ✗"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi có hai người con gái.",
+        "answer": "我有两个女儿。",
+        "answerPy": "Wǒ yǒu liǎng ge nǚ'ér.",
+        "note": "Đếm số lượng dùng 两, không dùng 二.",
+        "pair": "有 + số + M + N"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hai giờ chúng tôi bắt đầu học.",
+        "answer": "我们两点开始上课。",
+        "answerPy": "Wǒmen liǎng diǎn kāishǐ shàngkè.",
+        "note": "Hai giờ là 两点, không nói 二点.",
+        "pair": "……点"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "帮",
+    "py": "bāng",
+    "pos": "Động từ",
+    "vn": "giúp, giúp đỡ",
+    "hv": "bang",
+    "em": "🤝",
+    "lesson": 4,
+    "ex_zh": "这个工作是他帮我介绍的。",
+    "ex_py": "Zhège gōngzuò shì tā bāng wǒ jièshào de.",
+    "ex_vn": "Công việc này là do anh ấy giới thiệu cho tôi đấy.",
+    "exList": [
+      {
+        "zh": "这个工作是他帮我介绍的。",
+        "py": "Zhège gōngzuò shì tā bāng wǒ jièshào de.",
+        "vn": "Công việc này là do anh ấy giới thiệu cho tôi đấy."
+      },
+      {
+        "zh": "你能帮我一下吗？",
+        "py": "Nǐ néng bāng wǒ yíxià ma?",
+        "vn": "Bạn có thể giúp tôi một chút không?"
+      },
+      {
+        "zh": "谢谢你帮了我这么多。",
+        "py": "Xièxie nǐ bāngle wǒ zhème duō.",
+        "vn": "Cảm ơn bạn đã giúp tôi nhiều như vậy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "帮",
+        "p": "bāng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "邦 (biến thể) → 巾 (cân)",
+        "rad": "巾 (cân – khăn)",
+        "mean": "giúp đỡ",
+        "tip": "Nghĩa gốc liên quan tới \"đoàn thể, phe nhóm\" (邦), sau mở rộng thành \"cùng nhau GIÚP ĐỠ\".",
+        "cf": "邦 (bāng – \"quốc gia\")",
+        "w": "帮忙 / 帮助 / 帮我"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "帮我",
+        "py": "bāng wǒ",
+        "vn": "giúp tôi"
+      },
+      {
+        "zh": "帮你买",
+        "py": "bāng nǐ mǎi",
+        "vn": "mua giúp bạn"
+      },
+      {
+        "zh": "帮忙",
+        "py": "bāngmáng",
+        "vn": "giúp đỡ"
+      },
+      {
+        "zh": "帮他接",
+        "py": "bāng tā jiē",
+        "vn": "đón giúp anh ấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "帮 + người + động từ",
+        "m": "Giúp ai làm gì: 帮我看一下"
+      },
+      {
+        "s": "帮 (giúp, có tân ngữ) và 帮忙 (giúp đỡ, từ ly hợp)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn hỏi giúp tôi thầy một chút nhé.",
+        "answer": "你帮我问一下老师吧。",
+        "answerPy": "Nǐ bāng wǒ wèn yíxià lǎoshī ba.",
+        "note": "帮我 + động từ — làm giúp tôi.",
+        "pair": "帮 + người + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy mua báo giúp tôi.",
+        "answer": "他帮我买报纸。",
+        "answerPy": "Tā bāng wǒ mǎi bàozhǐ.",
+        "note": "帮 đứng trước động từ chính.",
+        "pair": "帮 + người + V"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "介绍",
+    "py": "jièshào",
+    "pos": "Động từ",
+    "vn": "giới thiệu",
+    "hv": "giới thiệu",
+    "em": "🙋",
+    "lesson": 4,
+    "ex_zh": "我来介绍一下。",
+    "ex_py": "Wǒ lái jièshào yíxià.",
+    "ex_vn": "Để tôi giới thiệu một chút.",
+    "exList": [
+      {
+        "zh": "我来介绍一下。",
+        "py": "Wǒ lái jièshào yíxià.",
+        "vn": "Để tôi giới thiệu một chút."
+      },
+      {
+        "zh": "这个工作是他帮我介绍的。",
+        "py": "Zhège gōngzuò shì tā bāng wǒ jièshào de.",
+        "vn": "Công việc này là do anh ấy giới thiệu cho tôi đấy."
+      },
+      {
+        "zh": "请介绍一下你自己。",
+        "py": "Qǐng jièshào yíxià nǐ zìjǐ.",
+        "vn": "Hãy tự giới thiệu về bản thân bạn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "介",
+        "p": "jiè",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "人 (biến thể) → 丨 → 丨",
+        "rad": "人 (nhân)",
+        "mean": "ở giữa, trung gian",
+        "tip": "Hình người đứng giữa hai ranh giới → vai trò TRUNG GIAN, kết nối hai bên.",
+        "cf": "个 (gè)",
+        "w": "介绍 / 中介"
+      },
+      {
+        "c": "绍",
+        "p": "shào",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "纟(mịch) trái → 召 (triệu) phải",
+        "rad": "纟(mịch – tơ)",
+        "mean": "nối tiếp, giới thiệu",
+        "tip": "介 (kết nối) + 绍 (nối tiếp) = kết nối hai người với nhau = GIỚI THIỆU.",
+        "cf": "招 (zhāo – \"chiêu\", bộ 扌)",
+        "w": "介绍 / 绍兴"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "介绍一下",
+        "py": "jièshào yíxià",
+        "vn": "giới thiệu một chút"
+      },
+      {
+        "zh": "给你介绍",
+        "py": "gěi nǐ jièshào",
+        "vn": "giới thiệu cho bạn"
+      },
+      {
+        "zh": "介绍学校",
+        "py": "jièshào xuéxiào",
+        "vn": "giới thiệu trường"
+      },
+      {
+        "zh": "介绍朋友",
+        "py": "jièshào péngyou",
+        "vn": "giới thiệu bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "给 + người + 介绍 + 一下",
+        "m": "Giới thiệu cho ai một chút"
+      },
+      {
+        "s": "介 + 绍",
+        "m": "Bắc cầu (介) nối (绍) hai bên lại với nhau"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi giới thiệu cho bạn một chút, đây là chồng tôi.",
+        "answer": "我给你介绍一下，这是我丈夫。",
+        "answerPy": "Wǒ gěi nǐ jièshào yíxià, zhè shì wǒ zhàngfu.",
+        "note": "介绍一下 — nghe lịch sự, tự nhiên.",
+        "pair": "给……介绍"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy giới thiệu trường học cho chúng tôi.",
+        "answer": "老师给我们介绍学校。",
+        "answerPy": "Lǎoshī gěi wǒmen jièshào xuéxiào.",
+        "note": "给 + người + 介绍 + cái gì.",
+        "pair": "给……介绍"
+      }
+    ]
+  }
+];
+
+const wuData = [
+  {img:'🎂',label:'生日',py:'shēngrì',letter:'A'},
+  {img:'📞',label:'接',py:'jiē',letter:'B'},
+  {img:'☕',label:'非常',py:'fēicháng',letter:'C'},
+  {img:'🤝',label:'帮',py:'bāng',letter:'D'},
+  {img:'🙋',label:'介绍',py:'jièshào',letter:'E'},
+  {img:'🌙',label:'晚上',py:'wǎnshang',letter:'F'},
+];
+
+var dialogData = [
+  {scene:'在教室 · Trong lớp học',
+   preQuiz:[
+     {q:'那份生日礼物是什么？',opts:['一本书','一件衣服','一支笔'],ans:0},
+     {q:'那本书是谁写的？',opts:['送礼物的人自己写的','是买的','是借的'],ans:0},
+   ],
+   lines:[
+     {sp:0,zh:'生日快乐！这是送给你的。',py:'Shēngrì kuàilè! Zhè shì sòng gěi nǐ de.',vn:'Sinh nhật vui vẻ! Đây là quà tặng bạn.'},
+     {sp:1,zh:'是什么？是一本书吗？',py:'Shì shénme? Shì yì běn shū ma?',vn:'Cái gì thế? Là một quyển sách à?'},
+     {sp:0,zh:'对，这本书是我写的。',py:'Duì, zhè běn shū shì wǒ xiě de.',vn:'Đúng vậy, quyển sách này là do tôi viết đấy.'},
+     {sp:1,zh:'太谢谢你了！',py:'Tài xièxie nǐ le!',vn:'Cảm ơn bạn nhiều nhé!'},
+   ]},
+  {scene:'在家里 · Ở nhà',
+   preQuiz:[
+     {q:'早上的电话是谁接的？',opts:['儿子','女儿','说话人自己'],ans:0},
+     {q:'女的打算什么时候问儿子？',opts:['现在','晚上','明天'],ans:1},
+   ],
+   lines:[
+     {sp:0,zh:'早上有你一个电话。',py:'Zǎoshang yǒu nǐ yí ge diànhuà.',vn:'Buổi sáng có một cuộc điện thoại gọi cho bạn đấy.'},
+     {sp:1,zh:'电话是谁打的？',py:'Diànhuà shì shéi dǎ de?',vn:'Điện thoại là do ai gọi thế?'},
+     {sp:0,zh:'不知道，是儿子接的。',py:'Bù zhīdào, shì érzi jiē de.',vn:'Không biết nữa, là con trai nghe máy.'},
+     {sp:1,zh:'好，晚上我问一下儿子。',py:'Hǎo, wǎnshang wǒ wèn yíxià érzi.',vn:'Được rồi, tối nay tôi sẽ hỏi con trai một chút.'},
+   ]},
+  {scene:'在运动场 · Trên sân vận động',
+   preQuiz:[
+     {q:'男的几岁开始踢足球？',opts:['10岁','11岁','12岁'],ans:1},
+     {q:'他已经踢了多少年足球？',opts:['五年','十年','十五年'],ans:1},
+   ],
+   lines:[
+     {sp:0,zh:'你喜欢踢足球吗？',py:'Nǐ xǐhuan tī zúqiú ma?',vn:'Bạn có thích đá bóng không?'},
+     {sp:1,zh:'非常喜欢。',py:'Fēicháng xǐhuan.',vn:'Cực kỳ thích luôn.'},
+     {sp:0,zh:'你是什么时候开始踢足球的？',py:'Nǐ shì shénme shíhou kāishǐ tī zúqiú de?',vn:'Bạn bắt đầu đá bóng từ khi nào thế?'},
+     {sp:1,zh:'我11岁的时候开始踢足球，已经踢了十年了。',py:'Wǒ shíyī suì de shíhou kāishǐ tī zúqiú, yǐjīng tī le shí nián le.',vn:'Tôi bắt đầu đá bóng từ lúc 11 tuổi, đến nay đã đá được 10 năm rồi.'},
+   ]},
+  {scene:'在公司 · Ở công ty',
+   preQuiz:[
+     {q:'女的在这家公司工作多久了？',opts:['一年多','两年多','三年多'],ans:1},
+     {q:'女的是哪一年来的？',opts:['2010年','2011年','2012年'],ans:1},
+     {q:'这个工作是谁帮女的介绍的？',opts:['谢先生','张先生','她自己找的'],ans:0},
+   ],
+   lines:[
+     {sp:0,zh:'你在这里工作多长时间了？',py:'Nǐ zài zhèlǐ gōngzuò duō cháng shíjiān le?',vn:'Bạn làm việc ở đây được bao lâu rồi?'},
+     {sp:1,zh:'已经两年多了，我是2011年来的。',py:'Yǐjīng liǎng nián duō le, wǒ shì èrlíngyīyī nián lái de.',vn:'Đã hơn hai năm rồi, tôi đến đây từ năm 2011.'},
+     {sp:0,zh:'你认识谢先生吗？',py:'Nǐ rènshi Xiè xiānsheng ma?',vn:'Bạn có quen biết ông Tạ không?'},
+     {sp:1,zh:'认识，我们是大学同学。这个工作是他帮我介绍的。',py:'Rènshi, wǒmen shì dàxué tóngxué. Zhège gōngzuò shì tā bāng wǒ jièshào de.',vn:'Quen chứ, chúng tôi là bạn học đại học. Công việc này là do anh ấy giới thiệu cho tôi đấy.'},
+   ]},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
+var matchData = [
+  {left:'生日',right:'快乐'},
+  {left:'已经',right:'开始'},
+  {left:'帮',right:'介绍'},
+  {left:'非常',right:'喜欢'},
+  {left:'接',right:'人'},
+  {left:'长',right:'时间'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: phỏng vấn hỏi kinh nghiệm làm việc/sở thích.
+// Ôn lại 几/觉得 (Bài 1).
+// ══════════════════════════════════════════
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-4/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'妈妈知道电话', blank:'是谁打的', post:'。', py:'Māma zhīdào diànhuà shì shéi dǎ de.', vn:'Mẹ biết điện thoại là ai gọi đến.'},
+    ]},
+    {num:2, lines:[
+      {pre:'看，这是我', blank:'在和小王一起跑步', post:'。', py:'Kàn, zhè shì wǒ zài hé Xiǎo Wáng yìqǐ pǎobù.', vn:'Xem này, đây là tôi đang chạy bộ cùng Tiểu Vương.'},
+    ]},
+    {num:3, lines:[
+      {pre:'今天的晚饭', blank:'是我和丈夫一起做的', post:'。', py:'Jīntiān de wǎnfàn shì wǒ hé zhàngfu yìqǐ zuò de.', vn:'Bữa tối hôm nay là tôi và chồng cùng nấu.'},
+    ]},
+    {num:4, lines:[
+      {pre:'今天报纸', blank:'是王小姐买的', post:'。', py:'Jīntiān bàozhǐ shì Wáng xiǎojiě mǎi de.', vn:'Báo hôm nay là cô Vương mua.'},
+    ]},
+    {num:5, lines:[
+      {pre:'我非常喜欢这个工作，', blank:'已经工作两年了', post:'。', py:'Wǒ fēicháng xǐhuan zhège gōngzuò, yǐjīng gōngzuò liǎng nián le.', vn:'Tôi rất thích công việc này, đã làm được hai năm rồi.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'你喜欢', blank:'吃中国菜吗', post:'？', py:'Nǐ xǐhuan chī Zhōngguó cài ma?', vn:'Bạn thích ăn món Trung Quốc không?'},
+      {speaker:'女', pre:'我非常喜欢吃，', blank:'我也会做', post:'。', py:'Wǒ fēicháng xǐhuan chī, wǒ yě huì zuò.', vn:'Tôi rất thích ăn, tôi cũng biết nấu.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'男', pre:'这个是', blank:'谁买的', post:'？', py:'Zhège shì shéi mǎi de?', vn:'Cái này ai mua vậy?'},
+      {speaker:'女', pre:'这个是安娜买的，', blank:'今天是大卫的生日', post:'。', py:'Zhège shì Ānnà mǎi de, jīntiān shì Dàwèi de shēngrì.', vn:'Cái này Anna mua, hôm nay là sinh nhật David.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'女', pre:'李先生出院', blank:'多长时间了', post:'？', py:'Lǐ xiānsheng chūyuàn duō cháng shíjiān le?', vn:'Ông Lý xuất viện được bao lâu rồi?'},
+      {speaker:'女', pre:'我不知道，', blank:'你问一下张医生吧', post:'。', py:'Wǒ bù zhīdào, nǐ wèn yíxià Zhāng yīshēng ba.', vn:'Tôi không biết, bạn hỏi bác sĩ Trương xem.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'你怎么', blank:'认识芳芳的', post:'？', py:'Nǐ zěnme rènshi Fāngfāng de?', vn:'Bạn quen Phương Phương bằng cách nào?'},
+      {speaker:'男', pre:'是小明', blank:'帮我介绍的', post:'。', py:'Shì Xiǎomíng bāng wǒ jièshào de.', vn:'Là Tiểu Minh giới thiệu cho tôi.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'男', pre:'女儿，你去', blank:'接一下电话', post:'。', py:'Nǚ\'ér, nǐ qù jiē yíxià diànhuà.', vn:'Con gái, con nghe điện thoại hộ bố.'},
+      {speaker:'女', pre:'对不起，爸爸，我', blank:'没时间接电话，我在做饭呢', post:'。', py:'Duìbuqǐ, bàba, wǒ méi shíjiān jiē diànhuà, wǒ zài zuò fàn ne.', vn:'Xin lỗi bố, con không có thời gian nghe điện thoại, con đang nấu cơm.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['张老师','小王','王老师'], ans:0,
+     explain:'女：小王，今天是张老师的生日。男：我知道。这本书是我买的，要送给张老师。问：这本书是送给谁的？ → 张老师。'},
+    {num:12, options:['大卫','李先生','不知道'], ans:1,
+     explain:'女：大卫，上午有你的一个电话。男：我知道，是李先生打的。问：上午的电话是谁打的？ → 李先生。'},
+    {num:13, options:['一年前','一年多了','两年前'], ans:2,
+     explain:'女：你的汉语真好！你是什么时候开始学汉语的？男：两年前开始的，我来中国已经一年多了。问：男的是什么时候开始学汉语的？ → 两年前。'},
+    {num:14, options:['很不喜欢','非常喜欢','不太喜欢'], ans:1,
+     explain:'女：你喜欢现在的工作吗？男：非常喜欢，我已经做了三年多了。问：他喜欢现在的工作吗？ → 非常喜欢。'},
+    {num:15, options:['十年','不到十年','十几年'], ans:0,
+     explain:'女：你什么时候认识谢先生的？男：我们十年前认识的，他是我的大学同学。问：男的和谢先生认识多长时间了？ → 十年。'},
+  ],
+};
+
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: chúc mừng sinh nhật + hỏi thăm công việc
+// ══════════════════════════════════════════
+var fillData = [
+  {pre:'生日',blank:'快乐',post:'！',hint:'(vui vẻ)',ans:'快乐'},
+  {pre:'谢谢，这本书是你送',blank:'给',post:'我的吗？',hint:'(cho, tặng)',ans:'给'},
+  {pre:'对，是我',blank:'昨天',post:'买的。',hint:'(hôm qua — ôn Bài 3)',ans:'昨天'},
+  {pre:'你',blank:'非常',post:'喜欢踢足球，是不是？',hint:'(vô cùng, cực kỳ)',ans:'非常'},
+  {pre:'对，我是8岁',blank:'的时候',post:'开始踢足球的。',hint:'(khi, lúc)',ans:'的时候',exp:'……的时候 chỉ thời điểm một việc xảy ra.'},
+  {pre:'你',blank:'已经',post:'踢了多长时间了？',hint:'(đã)',ans:'已经'},
+  {pre:'',blank:'已经',post:'两年多了。',hint:'(đã)',ans:'已经'},
+  {pre:'这个工作是谁',blank:'帮',post:'你介绍的？',hint:'(giúp)',ans:'帮'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+var sortData = [
+  {words:['这','是','我','昨天','买','的','。'],ans:'这是我昨天买的。',audio:'这是我昨天买的。'},
+  {words:['我','是','8','岁','的','时候','开始','踢','足球','的','。'],ans:'我是8岁的时候开始踢足球的。',audio:'我是8岁的时候开始踢足球的。'},
+  {words:['我','已经','工作','两','年','多','了','。'],ans:'我已经工作两年多了。',audio:'我已经工作两年多了。'},
+  {words:['这个','工作','是','朋友','帮','我','介绍','的','。'],ans:'这个工作是朋友帮我介绍的。',audio:'这个工作是朋友帮我介绍的。'},
+  {words:['你','是','什么','时候','开始','工作','的','？'],ans:'你是什么时候开始工作的？',audio:'你是什么时候开始工作的？'},
+  {words:['生日','快乐','，','这','是','送','给','你','的','书','。'],ans:'生日快乐，这是送给你的书。',audio:'生日快乐，这是送给你的书。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+var errorFixData = [
+  {wrong:'我买是这个的。',
+   opts:['这是我买的。','我是买这个的。','是我这个买的。','我这个是买的。'],ans:0,
+   exp:'是……的 dùng để nhấn mạnh CÁCH/THỜI GIAN/NGƯỜI thực hiện hành động đã xảy ra; 是 đặt đầu, 的 đặt cuối câu.'},
+  {wrong:'我8岁开始的时候踢足球。',
+   opts:['我8岁的时候开始踢足球。','我8岁开始踢的时候足球。','我的时候8岁开始踢足球。','我8岁开始踢足球的时候。'],ans:0,
+   exp:'……的时候 đặt NGAY SAU mốc thời gian/sự việc, TRƯỚC hành động chính.'},
+  {wrong:'我工作已经两年了已经。',
+   opts:['我已经工作两年了。','我工作已经两年已经了。','已经我工作两年了已经。','我已经两年工作了已经。'],ans:0,
+   exp:'已经……了 chỉ dùng MỘT LẦN trong câu, không lặp lại 已经.'},
+  {wrong:'这个工作朋友帮我介绍是的。',
+   opts:['这个工作是朋友帮我介绍的。','这个工作朋友是帮我介绍的。','是这个工作朋友帮我介绍的。','这个工作朋友帮我是介绍的。'],ans:0,
+   exp:'是 phải đứng NGAY SAU chủ ngữ (工作), 的 đứng CUỐI câu.'},
+  {wrong:'快乐生日！',
+   opts:['生日快乐！','快乐的生日！','生日的快乐！','快乐生日的！'],ans:0,
+   exp:'"生日快乐" là cụm cố định, không đảo ngược như "vui sinh nhật" trong tiếng Việt.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+var speakingData = {
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 4. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn học hỏi về sinh nhật của bạn.',
+      q_zh: '你的生日是什么时候？朋友送过你什么礼物？',
+      q_py: 'Nǐ de shēngrì shì shénme shíhou? Péngyou sòngguo nǐ shénme lǐwù?',
+      q_vn: 'Sinh nhật bạn là khi nào? Bạn bè từng tặng bạn quà gì?',
+      grammar: { label: '我的生日是 + ngày tháng + 是…送给我的', any: ['生日'] },
+      need: [
+        { label: 'Nói ngày sinh nhật (月 / 号)', any: ['月', '号', '日'] },
+        { label: 'Nói món quà', any: ['书', '手表', '手机', '衣服', '花', '蛋糕', '礼物', '东西'] },
+        { label: 'Dùng 送 hoặc 给', any: ['送', '给'] }
+      ],
+      bonus: { label: 'Thêm lời chúc 生日快乐', any: ['快乐', '高兴', '谢谢'] },
+      vocab: ['生日', '快乐', '给', '送'],
+      minLen: 12,
+      sample: '我的生日是九月六号。去年朋友送给我一本书，我非常喜欢。',
+      sample_py: 'Wǒ de shēngrì shì jiǔ yuè liù hào. Qùnián péngyou sòng gěi wǒ yì běn shū, wǒ fēicháng xǐhuan.',
+      sample_vn: 'Sinh nhật tôi là ngày 6 tháng 9. Năm ngoái bạn tặng tôi một quyển sách, tôi rất thích.',
+      tip: 'Ngày tháng nói từ lớn đến nhỏ: 九月六号; tặng ai cái gì: 送给我一本书.'
+    },
+    {
+      situation: 'Giáo viên hỏi bạn về quá trình học tiếng Trung.',
+      q_zh: '你是什么时候开始学汉语的？已经学了多长时间了？',
+      q_py: 'Nǐ shì shénme shíhou kāishǐ xué Hànyǔ de? Yǐjīng xuéle duō cháng shíjiān le?',
+      q_vn: 'Bạn bắt đầu học tiếng Trung từ khi nào? Đã học bao lâu rồi?',
+      grammar: { label: '我是…开始学的 + 已经学了…了', any: ['开始'] },
+      need: [
+        { label: 'Nói mốc bắt đầu (去年 / 2023年 / 十岁的时候)', any: ['年', '月', '岁', '去年', '时候'] },
+        { label: 'Dùng 已经', any: ['已经'] },
+        { label: 'Nói khoảng thời gian đã học', any: ['年', '月', '天', '多长时间', '小时'] }
+      ],
+      bonus: { label: 'Thêm cảm nhận (非常喜欢 / 有意思)', any: ['非常', '喜欢', '有意思', '难'] },
+      vocab: ['开始', '已经', '长', '非常'],
+      minLen: 14,
+      sample: '我是去年九月开始学汉语的，已经学了一年多了。我非常喜欢汉语。',
+      sample_py: 'Wǒ shì qùnián jiǔ yuè kāishǐ xué Hànyǔ de, yǐjīng xuéle yì nián duō le. Wǒ fēicháng xǐhuan Hànyǔ.',
+      sample_vn: 'Tôi bắt đầu học tiếng Trung từ tháng 9 năm ngoái, đã học hơn một năm rồi. Tôi rất thích tiếng Trung.',
+      tip: 'Nhấn mạnh thời gian của việc đã xảy ra: 是…的 — 我是去年开始学的.'
+    },
+    {
+      situation: 'Đồng nghiệp mới hỏi bạn làm ở đây bao lâu rồi.',
+      q_zh: '你在这里工作（学习）多长时间了？',
+      q_py: 'Nǐ zài zhèlǐ gōngzuò (xuéxí) duō cháng shíjiān le?',
+      q_vn: 'Bạn làm việc (học) ở đây bao lâu rồi?',
+      grammar: { label: '已经 + số + 年/月 + 了', any: ['已经', '了'] },
+      need: [
+        { label: 'Nói khoảng thời gian (两年多 / 三个月)', any: ['年', '月', '天', '星期'] },
+        { label: 'Dùng 工作 hoặc 学习', any: ['工作', '学习', '上班', '上课'] },
+        { label: 'Nói mốc bắt đầu (我是…来的)', any: ['来', '年', '月', '开始'] }
+      ],
+      bonus: { label: 'Nói thêm ai giới thiệu việc này (帮我介绍的)', any: ['介绍', '帮'] },
+      vocab: ['已经', '长', '帮', '介绍'],
+      minLen: 12,
+      sample: '已经两年多了，我是2023年来的。这个工作是我朋友帮我介绍的。',
+      sample_py: 'Yǐjīng liǎng nián duō le, wǒ shì èr líng èr sān nián lái de. Zhège gōngzuò shì wǒ péngyou bāng wǒ jièshào de.',
+      sample_vn: 'Đã hơn hai năm rồi, tôi đến từ năm 2023. Công việc này là bạn tôi giới thiệu giúp.',
+      tip: '多长时间 hỏi độ dài thời gian; 两年多了 = hơn hai năm rồi.'
+    },
+    {
+      situation: 'Có điện thoại gọi đến nhà lúc bạn đi vắng, người nhà hỏi bạn.',
+      q_zh: '早上有你一个电话，你知道电话是谁打的吗？',
+      q_py: 'Zǎoshang yǒu nǐ yí ge diànhuà, nǐ zhīdào diànhuà shì shéi dǎ de ma?',
+      q_vn: 'Sáng nay có điện thoại gọi cho bạn, bạn có biết ai gọi không?',
+      grammar: { label: '是…打的 / 是…接的', any: ['打', '接', '的'] },
+      need: [
+        { label: 'Trả lời biết hay không biết', any: ['知道', '不知道'] },
+        { label: 'Nói ai gọi hoặc ai nghe máy', any: ['朋友', '同学', '老师', '儿子', '女儿', '妈妈', '爸爸', '公司', '同事'] },
+        { label: 'Nói bạn sẽ làm gì (晚上我问一下)', any: ['问', '打', '晚上', '一下'] }
+      ],
+      bonus: { label: 'Thêm 已经 / 接', any: ['已经', '接'] },
+      vocab: ['给', '接', '晚上', '问'],
+      minLen: 12,
+      sample: '我不知道，是我儿子接的。晚上我问一下他。',
+      sample_py: 'Wǒ bù zhīdào, shì wǒ érzi jiē de. Wǎnshang wǒ wèn yíxià tā.',
+      sample_vn: 'Tôi không biết, con trai tôi nghe máy. Tối tôi hỏi lại cháu.',
+      tip: '接电话 = nghe máy, 打电话 = gọi điện. Nhấn mạnh ai làm: 是我儿子接的.'
+    },
+    {
+      situation: 'Bạn khoe món đồ mới với bạn cùng phòng.',
+      q_zh: '这个东西是谁给你的？是在哪儿买的？',
+      q_py: 'Zhège dōngxi shì shéi gěi nǐ de? Shì zài nǎr mǎi de?',
+      q_vn: 'Món này ai cho bạn vậy? Mua ở đâu thế?',
+      grammar: { label: '是…给我的 / 是在…买的', any: ['的'] },
+      need: [
+        { label: 'Nói người tặng', any: ['朋友', '同学', '妈妈', '爸爸', '哥哥', '姐姐', '老师', '自己'] },
+        { label: 'Nói nơi mua', any: ['商店', '网上', '北京', '这儿', '那儿', '超市', '学校'] },
+        { label: 'Dùng 给 hoặc 买', any: ['给', '买', '送'] }
+      ],
+      bonus: { label: 'Nói thêm dịp tặng (生日)', any: ['生日', '新年', '快乐'] },
+      vocab: ['给', '介绍', '生日'],
+      minLen: 12,
+      sample: '这是我朋友给我的生日礼物，是在商店买的。',
+      sample_py: 'Zhè shì wǒ péngyou gěi wǒ de shēngrì lǐwù, shì zài shāngdiàn mǎi de.',
+      sample_vn: 'Đây là quà sinh nhật bạn tôi tặng, mua ở cửa hàng.',
+      tip: 'Hỏi nơi chốn của việc đã xảy ra: 是在哪儿买的？ Trả lời: 是在…买的.'
+    }
+  ]
+};
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 4 + ôn lại từ bài 1-3 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Chúc mừng sinh nhật!', zh:'生日快乐！', py:'Shēngrì kuàilè!'},
+  {vi:'Quyển sách này là do tôi mua.', zh:'这本书是我买的。', py:'Zhè běn shū shì wǒ mǎi de.'},
+  {vi:'Bộ phim đã bắt đầu rồi.', zh:'电影已经开始了。', py:'Diànyǐng yǐjīng kāishǐ le.'},
+  {vi:'Bạn có thể giúp tôi giới thiệu một chút được không?', zh:'你能帮我介绍一下吗？', py:'Nǐ néng bāng wǒ jièshào yíxià ma?'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Chúc mừng sinh nhật! Quyển sách này là tôi tặng bạn.', zh:'生日快乐！这本书是我送你的。', py:'Shēngrì kuàilè! Zhè běn shū shì wǒ sòng nǐ de.'},
+  {vi:'Phim đã bắt đầu rồi, bạn có thể đến không?', zh:'电影已经开始了，你能来吗？', py:'Diànyǐng yǐjīng kāishǐ le, nǐ néng lái ma?'},
+  {vi:'Bạn có thể giúp tôi giới thiệu một chút về con gái bạn không?', zh:'你能帮我介绍一下你女儿吗？', py:"Nǐ néng bāng wǒ jièshào yíxià nǐ nǚ'ér ma?"},
+  {vi:'Đã tối rồi, anh ấy chưa về.', zh:'已经晚上了，他没有回来。', py:'Yǐjīng wǎnshang le, tā méiyǒu huílái.'},
+];

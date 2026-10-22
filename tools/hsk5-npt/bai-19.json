@@ -1,0 +1,928 @@
+[
+ {
+  "so": "1",
+  "ten": "「般」",
+  "tenVn": "",
+  "cauTruc": [
+   "(像 / 如) N + 般 + 的 + N (định ngữ)",
+   "(像 / 如) N + 般 + (地) + V / Adj (trạng ngữ)"
+  ],
+  "giaiThich": "般 là trợ từ, nghĩa là “一样”, “似的” (giống như). Đứng SAU danh từ, tạo thành cụm làm định ngữ (阳光般的笑容) hoặc trạng ngữ (雨点般往下掉). Phía trước hay có 像 / 如. Sắc thái văn viết, giàu hình ảnh.",
+  "viDu": [
+   {
+    "zh": "……紫的像山泉般清淡可口。",
+    "py": "…… zǐ de xiàng shānquán bān qīngdàn kěkǒu.",
+    "vn": "… củ tím thanh mát, ngon miệng như nước suối trên núi."
+   },
+   {
+    "zh": "说起那段往事，她的脸上露出了阳光般的笑容。",
+    "py": "Shuōqǐ nà duàn wǎngshì, tā de liǎn shang lùchūle yángguāng bān de xiàoróng.",
+    "vn": "Nhắc lại chuyện xưa, trên mặt cô ấy nở nụ cười rạng rỡ như ánh nắng."
+   },
+   {
+    "zh": "望着爸爸远去的背影，我的眼泪雨点般不停地往下掉。",
+    "py": "Wàngzhe bàba yuǎnqù de bèiyǐng, wǒ de yǎnlèi yǔdiǎn bān bù tíng de wǎng xià diào.",
+    "vn": "Nhìn theo bóng lưng bố xa dần, nước mắt tôi rơi không ngừng như mưa."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "她的脸上露出了阳光般一样的笑容。",
+    "why": "般 đã mang nghĩa “一样”, dùng thêm 一样 là thừa. Chọn một trong hai: 阳光般的 hoặc 像阳光一样的.",
+    "dung": "她的脸上露出了阳光般的笑容。"
+   },
+   {
+    "sai": "她的脸上露出了般阳光的笑容。",
+    "why": "般 là trợ từ đứng SAU danh từ so sánh, không đứng trước.",
+    "dung": "她的脸上露出了阳光般的笑容。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "紫的像山泉",
+       "清淡可口。"
+      ],
+      "dap": [
+       [
+        "般"
+       ]
+      ],
+      "chon": [
+       "般",
+       "样",
+       "像"
+      ],
+      "goiY": "“Củ tím thanh mát như nước suối trên núi.”",
+      "giai": "像 + N + 般 + Adj — câu trong bài khoá."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "说起那段往事，她的脸上露出了阳光",
+       "的笑容。"
+      ],
+      "dap": [
+       [
+        "般"
+       ]
+      ],
+      "chon": [
+       "般",
+       "一样",
+       "似"
+      ],
+      "goiY": "Chỉ điền MỘT chữ, làm định ngữ cho 笑容.",
+      "giai": "N + 般的 + N; 一样 là hai chữ, 似 phải là 似的."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我的眼泪雨点",
+       "不停地往下掉。"
+      ],
+      "dap": [
+       [
+        "般"
+       ]
+      ],
+      "chon": [
+       "般",
+       "的",
+       "得"
+      ],
+      "goiY": "Nước mắt rơi như mưa.",
+      "giai": "N + 般 làm trạng ngữ đứng trước động từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他在下半场的进球，为球队赢得了一场金子",
+       "宝贵的胜利。"
+      ],
+      "dap": [
+       [
+        "般"
+       ]
+      ],
+      "chon": [
+       "般",
+       "一般",
+       "样"
+      ],
+      "goiY": "Viết lại câu 像金子一样宝贵 của sách.",
+      "giai": "金子般宝贵 = quý như vàng (练一练 1 của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "书法大赛开办以来，全国各地的参赛作品雪片",
+       "地飞来。"
+      ],
+      "dap": [
+       [
+        "般"
+       ]
+      ],
+      "chon": [
+       "般",
+       "的",
+       "得"
+      ],
+      "goiY": "Tác phẩm dự thi bay về như bông tuyết.",
+      "giai": "雪片般地飞来 (练一练 2 của sách); 般 + 地 + động từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这时，从远处传来了孩子们一阵阵银铃",
+       "清脆的笑声。"
+      ],
+      "dap": [
+       [
+        "般"
+       ]
+      ],
+      "chon": [
+       "般",
+       "像",
+       "的"
+      ],
+      "goiY": "Tiếng cười trong trẻo như chuông bạc.",
+      "giai": "银铃般清脆的笑声 (练一练 3 của sách)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "她的脸上",
+       "露出了",
+       "阳光般的",
+       "笑容",
+       "。"
+      ],
+      "dap": [
+       "她的脸上露出了阳光般的笑容。"
+      ],
+      "goiY": "Trên mặt cô ấy nở nụ cười rạng rỡ như ánh nắng.",
+      "giai": "阳光般的 làm định ngữ cho 笑容."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "紫的",
+       "像",
+       "山泉般",
+       "清淡可口",
+       "。"
+      ],
+      "dap": [
+       "紫的像山泉般清淡可口。"
+      ],
+      "goiY": "Củ tím thanh mát ngon miệng như nước suối.",
+      "giai": "像 + N + 般 + tính từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "深夜的寒风",
+       "像刀子",
+       "般地",
+       "吹来",
+       "。"
+      ],
+      "dap": [
+       "深夜的寒风像刀子般地吹来。"
+      ],
+      "goiY": "Gió lạnh đêm khuya thổi tới như dao cắt.",
+      "giai": "像……般地 + động từ (câu 30 sách bài tập)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "她有一双星星般的眼睛。",
+      "dung": true,
+      "giai": "Đúng: 星星般的 làm định ngữ cho 眼睛."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "她有一双星星般一样的眼睛。",
+      "dung": false,
+      "sua": "她有一双星星般的眼睛。",
+      "giai": "般 = 一样, dùng cả hai là thừa."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他跑得般风快。",
+      "dung": false,
+      "sua": "他跑得像风般快。",
+      "giai": "般 phải đứng sau danh từ so sánh: 像风般快 / 风一般快."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nhìn theo bóng bố xa dần, nước mắt tôi rơi như mưa.",
+      "dap": [
+       "望着爸爸远去的背影，我的眼泪雨点般不停地往下掉。",
+       "望着爸爸远去的背影，我的眼泪像雨点般往下掉。",
+       "看着爸爸远去的背影，我的眼泪雨点般地往下掉。"
+      ],
+      "py": "Wàngzhe bàba yuǎnqù de bèiyǐng, wǒ de yǎnlèi yǔdiǎn bān bù tíng de wǎng xià diào.",
+      "goiY": "Dịch sang tiếng Trung, dùng 般 làm trạng ngữ.",
+      "giai": "N + 般 + (地) + động từ."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cô giáo luôn mang nụ cười rạng rỡ như ánh nắng.",
+      "dap": [
+       "老师总是带着阳光般的笑容。",
+       "老师的脸上总是带着阳光般的笑容。",
+       "老师总是露出阳光般的笑容。"
+      ],
+      "py": "Lǎoshī zǒngshì dàizhe yángguāng bān de xiàoróng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 般 làm định ngữ.",
+      "giai": "阳光般的 + 笑容."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他在下半场的进球，为球队赢得了一场像金子一样宝贵的胜利。→ 他在下半场的进球，＿＿＿。",
+      "goiY": "viết lại bằng 般 — câu của sách",
+      "mau": "他在下半场的进球，为球队赢得了一场金子般宝贵的胜利。",
+      "can": [
+       [
+        "般"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这时，从远处传来了孩子们一阵阵仿佛银铃一样清脆的笑声。→ 这时，从远处＿＿＿。",
+      "goiY": "viết lại bằng 般 — câu của sách",
+      "mau": "这时，从远处传来了孩子们一阵阵银铃般清脆的笑声。",
+      "can": [
+       [
+        "般"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「般」 để tả một người thân hoặc một món ăn quê em",
+      "mau": "妈妈做的河粉汤像山泉般清淡，却香味扑鼻。",
+      "can": [
+       [
+        "般"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「闻」",
+  "tenVn": "",
+  "cauTruc": [
+   "Ngữ tố (nghe, tin tức): 新闻 · 见闻 · 百闻不如一见",
+   "Động từ (ngửi): 闻 + 到 / 闻一闻 / 闻着 + Adj"
+  ],
+  "giaiThich": "闻 có hai cách dùng. Làm NGỮ TỐ (trong từ ghép, thành ngữ): nghĩa là “nghe thấy; điều nghe được, tin tức” — 新闻, 见闻, 百闻不如一见, 闻声赶来. Làm ĐỘNG TỪ độc lập: dùng mũi cảm nhận mùi, tức là NGỬI — 闻到香味, 闻了闻. Người Việt dễ nhầm vì âm Hán–Việt “văn” = nghe; nhưng “nghe” trong câu thường ngày là 听.",
+  "viDu": [
+   {
+    "zh": "火最好用文火，等能闻到香味时，便可开锅了。",
+    "py": "Huǒ zuìhǎo yòng wénhuǒ, děng néng wéndào xiāngwèi shí, biàn kě kāi guō le.",
+    "vn": "Lửa tốt nhất để nhỏ, đợi khi ngửi thấy mùi thơm là có thể mở vung."
+   },
+   {
+    "zh": "他把壶盖儿打开，闻了闻，原来是酒。",
+    "py": "Tā bǎ húgàir dǎkāi, wénle wén, yuánlái shì jiǔ.",
+    "vn": "Anh ấy mở nắp bình ra, ngửi ngửi, hoá ra là rượu."
+   },
+   {
+    "zh": "你们到各地去旅游，一定会增加对中国的了解，老话说：百闻不如一见。",
+    "py": "Nǐmen dào gè dì qù lǚyóu, yídìng huì zēngjiā duì Zhōngguó de liǎojiě, lǎohuà shuō: bǎi wén bùrú yí jiàn.",
+    "vn": "Các bạn đi du lịch khắp nơi chắc chắn sẽ hiểu thêm về Trung Quốc, người xưa nói: trăm nghe không bằng một thấy."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我闻到外面有人在唱歌。",
+    "why": "Động từ 闻 trong câu hiện đại là NGỬI. Nghe âm thanh phải dùng 听.",
+    "dung": "我听到外面有人在唱歌。"
+   },
+   {
+    "sai": "这朵花闻很香。",
+    "why": "闻 làm vị ngữ miêu tả cần 着 / 起来: 闻着很香, 闻起来很香.",
+    "dung": "这朵花闻着很香。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "火最好用文火，等能",
+       "到香味时，便可开锅了。"
+      ],
+      "dap": [
+       [
+        "闻"
+       ]
+      ],
+      "chon": [
+       "闻",
+       "听",
+       "看"
+      ],
+      "goiY": "Cảm nhận mùi thơm bằng mũi.",
+      "giai": "Động từ 闻 = ngửi; 闻到 + mùi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一进村口，我们就",
+       "到了清风送来的浓浓的玫瑰花香。"
+      ],
+      "dap": [
+       [
+        "闻"
+       ]
+      ],
+      "chon": [
+       "闻",
+       "听",
+       "见"
+      ],
+      "goiY": "Hương hoa hồng (练一练 1 của sách).",
+      "giai": "Hoa hồng → mùi → 闻 (động từ “ngửi”)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他把壶盖儿打开，",
+       "了闻，原来是酒。"
+      ],
+      "dap": [
+       [
+        "闻"
+       ]
+      ],
+      "chon": [
+       "闻",
+       "听",
+       "尝"
+      ],
+      "goiY": "Mở nắp bình ra ngửi thử.",
+      "giai": "Lặp động từ đơn tiết: 闻了闻."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老话说：百",
+       "不如一见。"
+      ],
+      "dap": [
+       [
+        "闻"
+       ]
+      ],
+      "chon": [
+       "闻",
+       "听",
+       "看"
+      ],
+      "goiY": "Trăm nghe không bằng một thấy.",
+      "giai": "Thành ngữ cố định; ở đây 闻 là ngữ tố nghĩa “nghe”."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "邻居们",
+       "声赶来，纷纷跳入水中救起了落水的小孩。"
+      ],
+      "dap": [
+       [
+        "闻"
+       ]
+      ],
+      "chon": [
+       "闻",
+       "听",
+       "看"
+      ],
+      "goiY": "Hàng xóm nghe tiếng liền chạy đến.",
+      "giai": "闻声 = nghe tiếng (ngữ tố, văn viết)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我每天晚上都看电视",
+       "，了解国内外发生的事。"
+      ],
+      "dap": [
+       [
+        "新闻"
+       ]
+      ],
+      "chon": [
+       "新闻",
+       "新鲜",
+       "闻到"
+      ],
+      "goiY": "Chương trình thời sự, tin tức.",
+      "giai": "新闻 = tin tức (闻 là ngữ tố “điều nghe được”)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "一进门",
+       "就",
+       "闻到了",
+       "一股香味",
+       "。"
+      ],
+      "dap": [
+       "我一进门就闻到了一股香味。"
+      ],
+      "goiY": "Tôi vừa vào cửa đã ngửi thấy một mùi thơm.",
+      "giai": "一……就……; lượng từ của mùi là 股."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "把壶盖儿",
+       "打开",
+       "，",
+       "闻了闻",
+       "。"
+      ],
+      "dap": [
+       "他把壶盖儿打开，闻了闻。"
+      ],
+      "goiY": "Anh ấy mở nắp bình ra ngửi ngửi.",
+      "giai": "Câu 把 + động từ lặp 闻了闻."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "假期里",
+       "，",
+       "他常带孩子们",
+       "去各地旅行",
+       "，",
+       "增长",
+       "他们的见闻",
+       "。"
+      ],
+      "dap": [
+       "假期里，他常带孩子们去各地旅行，增长他们的见闻。"
+      ],
+      "goiY": "Kỳ nghỉ anh ấy hay đưa con đi du lịch để mở mang hiểu biết.",
+      "giai": "见闻 = điều mắt thấy tai nghe (ngữ tố “nghe”)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这道菜闻着很香。",
+      "dung": true,
+      "giai": "Đúng: 闻着 + tính từ miêu tả mùi."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我闻到有人在敲门。",
+      "dung": false,
+      "sua": "我听到有人在敲门。",
+      "giai": "Âm thanh (tiếng gõ cửa) phải dùng 听."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "说起她到上海留学的事，还真有一段奇闻趣事呢。",
+      "dung": true,
+      "giai": "Đúng: 奇闻 = chuyện lạ nghe được (ngữ tố “nghe”) — 练一练 2 của sách."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Ngửi thấy mùi thơm là có thể mở vung.",
+      "dap": [
+       "闻到香味就可以开锅了。",
+       "能闻到香味时，便可开锅了。",
+       "等闻到香味，就可以开锅了。"
+      ],
+      "py": "Wéndào xiāngwèi jiù kěyǐ kāi guō le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 闻 (động từ).",
+      "giai": "闻到 + 香味."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Trăm nghe không bằng một thấy, bạn nên tự mình đến xem.",
+      "dap": [
+       "百闻不如一见，你应该自己去看看。",
+       "百闻不如一见，你应该亲自去看看。",
+       "百闻不如一见，你最好自己去看一看。"
+      ],
+      "py": "Bǎi wén bùrú yí jiàn, nǐ yīnggāi zìjǐ qù kànkan.",
+      "goiY": "Dịch sang tiếng Trung, dùng thành ngữ có 闻.",
+      "giai": "百闻不如一见 — 闻 là ngữ tố “nghe”."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "一进村口，我们就闻到了清风送来的浓浓的玫瑰花香。这句中的“闻”是什么意思？请再用这个意思造一个句子：＿＿＿",
+      "goiY": "nghĩa “ngửi” — câu của sách",
+      "mau": "我一进厨房就闻到了妈妈做的萝卜饼的香味。",
+      "can": [
+       [
+        "闻"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "对人们的种种批评，她采取了听而不闻的态度。这句中的“闻”是什么意思？请用“见闻”或“新闻”造句：＿＿＿",
+      "goiY": "nghĩa “nghe, tin tức” — câu của sách",
+      "mau": "这次去中国旅行，我增长了很多见闻。",
+      "can": [
+       [
+        "闻"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「闻」 (nghĩa ngửi), tả mùi món ăn em thích",
+      "mau": "每次路过那家面包店，我都能闻到一股刚出炉的面包香。",
+      "can": [
+       [
+        "闻"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「趁」",
+  "tenVn": "",
+  "cauTruc": [
+   "趁 (着) + N / VP / Adj / mệnh đề + V",
+   "趁热 · 趁早 · 趁年轻 · 趁这个机会"
+  ],
+  "giaiThich": "趁 là giới từ, nghĩa là “利用（时间、机会）” — tận dụng thời gian, cơ hội, điều kiện đang có để làm việc gì. Sau 趁 có thể là danh từ, cụm động từ, tính từ hoặc một mệnh đề nhỏ; có thể nói 趁着. Cụm 趁 + … luôn đứng TRƯỚC động từ chính.",
+  "viDu": [
+   {
+    "zh": "趁着这几天休息，我们去看看房子吧。",
+    "py": "Chènzhe zhè jǐ tiān xiūxi, wǒmen qù kànkan fángzi ba.",
+    "vn": "Nhân mấy hôm nay được nghỉ, chúng ta đi xem nhà đi."
+   },
+   {
+    "zh": "趁电影还没开始，我去买两瓶矿泉水。",
+    "py": "Chèn diànyǐng hái méi kāishǐ, wǒ qù mǎi liǎng píng kuàngquánshuǐ.",
+    "vn": "Nhân lúc phim chưa chiếu, tôi đi mua hai chai nước khoáng."
+   },
+   {
+    "zh": "萝卜饼要趁热吃，喜欢口味重的，还可以加少许酱油和醋。",
+    "py": "Luóbobǐng yào chèn rè chī, xǐhuan kǒuwèi zhòng de, hái kěyǐ jiā shǎoxǔ jiàngyóu hé cù.",
+    "vn": "Bánh củ cải phải ăn lúc còn nóng, ai thích vị đậm thì có thể thêm chút xì dầu và giấm."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "萝卜饼要吃趁热。",
+    "why": "Cụm 趁热 là trạng ngữ, phải đứng TRƯỚC động từ 吃 — không đặt cuối câu như tiếng Việt “ăn lúc còn nóng”.",
+    "dung": "萝卜饼要趁热吃。"
+   },
+   {
+    "sai": "趁下大雨，比赛取消了。",
+    "why": "趁 nghĩa là chủ động TẬN DỤNG thời cơ để làm việc gì; ở đây chỉ nói nguyên nhân → dùng 因为 / 由于.",
+    "dung": "因为下大雨，比赛取消了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "萝卜饼要",
+       "热吃，喜欢口味重的，还可以加少许酱油和醋。"
+      ],
+      "dap": [
+       [
+        "趁"
+       ]
+      ],
+      "chon": [
+       "趁",
+       "等",
+       "在"
+      ],
+      "goiY": "Ăn lúc còn nóng.",
+      "giai": "趁热 + V — câu trong bài khoá."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "着这几天休息，我们去看看房子吧。"
+      ],
+      "dap": [
+       [
+        "趁"
+       ]
+      ],
+      "chon": [
+       "趁",
+       "等",
+       "从"
+      ],
+      "goiY": "Tận dụng mấy ngày nghỉ.",
+      "giai": "趁着 + khoảng thời gian thuận lợi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "电影还没开始，我去买两瓶矿泉水。"
+      ],
+      "dap": [
+       [
+        "趁"
+       ]
+      ],
+      "chon": [
+       "趁",
+       "等",
+       "当"
+      ],
+      "goiY": "Tận dụng lúc phim chưa chiếu.",
+      "giai": "趁 + mệnh đề nhỏ (电影还没开始)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你应该",
+       "年轻多学点儿东西。"
+      ],
+      "dap": [
+       [
+        "趁"
+       ]
+      ],
+      "chon": [
+       "趁",
+       "在",
+       "对"
+      ],
+      "goiY": "Tận dụng lúc còn trẻ.",
+      "giai": "趁 + tính từ 年轻."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我想",
+       "这个机会，好好儿锻炼一下自己。"
+      ],
+      "dap": [
+       [
+        "趁"
+       ]
+      ],
+      "chon": [
+       "趁",
+       "等",
+       "把"
+      ],
+      "goiY": "Nhân cơ hội này.",
+      "giai": "趁 + danh từ 机会."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "天阴了，",
+       "还没下雨，赶快把衣服收进来吧。"
+      ],
+      "dap": [
+       [
+        "趁"
+       ]
+      ],
+      "chon": [
+       "趁",
+       "等",
+       "为"
+      ],
+      "goiY": "Nhân lúc chưa mưa (练一练 2 của sách).",
+      "giai": "趁 + mệnh đề; vế sau là câu 把 (ôn HSK 4)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "萝卜饼",
+       "要",
+       "趁热",
+       "吃",
+       "。"
+      ],
+      "dap": [
+       "萝卜饼要趁热吃。"
+      ],
+      "goiY": "Bánh củ cải phải ăn lúc còn nóng.",
+      "giai": "趁热 đứng TRƯỚC động từ 吃."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "趁着",
+       "这几天休息",
+       "，",
+       "我们",
+       "去看看",
+       "房子吧",
+       "。"
+      ],
+      "dap": [
+       "趁着这几天休息，我们去看看房子吧。",
+       "我们趁着这几天休息，去看看房子吧。"
+      ],
+      "goiY": "Nhân mấy hôm nghỉ, chúng ta đi xem nhà đi.",
+      "giai": "趁着 + thời cơ đứng đầu câu hoặc sau chủ ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "饺子",
+       "煮熟后",
+       "要",
+       "趁热吃",
+       "才好",
+       "。"
+      ],
+      "dap": [
+       "饺子煮熟后要趁热吃才好。"
+      ],
+      "goiY": "Sủi cảo luộc chín phải ăn nóng mới ngon.",
+      "giai": "Câu 29 sách bài tập."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们趁天还没黑，赶快回家吧。",
+      "dung": true,
+      "giai": "Đúng: 趁 + mệnh đề nhỏ, đứng trước động từ chính."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "饺子要吃趁热。",
+      "dung": false,
+      "sua": "饺子要趁热吃。",
+      "giai": "趁热 là trạng ngữ, phải đứng trước động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "趁身体不舒服，他没去上课。",
+      "dung": false,
+      "sua": "因为身体不舒服，他没去上课。",
+      "giai": "趁 là chủ động tận dụng cơ hội; đây chỉ là nguyên nhân → 因为."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nhân lúc phim chưa chiếu, tôi đi mua hai chai nước khoáng.",
+      "dap": [
+       "趁电影还没开始，我去买两瓶矿泉水。",
+       "趁着电影还没开始，我去买两瓶矿泉水。",
+       "我趁电影还没开始，去买两瓶矿泉水。"
+      ],
+      "py": "Chèn diànyǐng hái méi kāishǐ, wǒ qù mǎi liǎng píng kuàngquánshuǐ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 趁 + mệnh đề.",
+      "giai": "趁 + 电影还没开始."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Nhân lúc còn trẻ, hãy đi thêm nhiều nơi.",
+      "dap": [
+       "趁年轻，多去一些地方吧。",
+       "趁着年轻，多去几个地方吧。",
+       "趁年轻多去一些地方看看吧。"
+      ],
+      "py": "Chèn niánqīng, duō qù yìxiē dìfang ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 趁 + tính từ.",
+      "giai": "趁年轻 = nhân lúc còn trẻ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "李老师退休了，她想＿＿＿。",
+      "goiY": "dùng 趁: nhân lúc còn khoẻ đi du lịch — câu của sách",
+      "mau": "李老师退休了，她想趁身体还好，去各地旅游。",
+      "can": [
+       [
+        "趁"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：工作这么稳定，你又干得不错，怎么会想到辞职呢？　B：＿＿＿，丰富一下自己的经历。",
+      "goiY": "dùng 趁: nhân lúc còn trẻ ra ngoài xông pha — câu của sách",
+      "mau": "我想趁年轻出去闯一闯，丰富一下自己的经历。",
+      "can": [
+       [
+        "趁"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「趁」 (趁热 / 趁年轻 / 趁这个机会…), nói về việc học hoặc ăn uống của em",
+      "mau": "趁暑假有时间，我想跟奶奶学做家乡的萝卜饼。",
+      "can": [
+       [
+        "趁"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

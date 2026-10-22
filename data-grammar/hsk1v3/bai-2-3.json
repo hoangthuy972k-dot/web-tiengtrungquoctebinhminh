@@ -1,0 +1,102 @@
+{
+ "/lessons/hsk1v3-bai-2.html": {
+  "points": [
+   {
+    "title": "Trật tự từ cơ bản của câu tiếng Trung",
+    "errors": [
+     { "wrong": "我叫名字白家月。", "why": "tiếng Việt nói “tên tôi là…”, học sinh bê cả chữ 名字 vào sau động từ 叫.", "right": "我叫白家月。" },
+     { "wrong": "什么你叫名字？", "why": "học sinh đưa từ để hỏi lên đầu câu theo thói quen tiếng Việt “gì… bạn tên”.", "right": "你叫什么名字？" },
+     { "wrong": "我是不学生。", "why": "tiếng Việt nói “tôi không phải là…”, học sinh đặt 不 sau 是.", "right": "我不是学生。" }
+    ],
+    "items": [
+     { "context": "Hỏi tên: “Bạn tên là gì?”", "pre": "你叫", "blank": "什么", "post": "名字？", "options": ["什么", "谁", "哪"], "answer": 0, "explanation": "Từ để hỏi đứng ĐÚNG chỗ của thành phần cần hỏi, không đảo lên đầu câu như tiếng Việt." },
+     { "context": "Giới thiệu: “Tôi tên là Bạch Gia Nguyệt.”", "pre": "我", "blank": "叫", "post": "白家月。", "options": ["叫", "是", "有"], "answer": 0, "explanation": "叫 + tên riêng. Thứ tự: Chủ ngữ + Động từ + Tân ngữ." },
+     { "context": "Phủ định: “Tôi không phải là giáo viên.”", "pre": "我", "blank": "不是", "post": "老师。", "options": ["不是", "是不", "没是"], "answer": 0, "explanation": "不 luôn đứng TRƯỚC động từ 是." },
+     { "context": "“Bạn ấy học tiếng Trung.”", "pre": "她", "blank": "学", "post": "中文。", "options": ["学", "是", "叫"], "answer": 0, "explanation": "Chủ ngữ (她) + Động từ (学) + Tân ngữ (中文)." },
+     { "context": "“Tôi cũng rất bận.”", "pre": "我", "blank": "也", "post": "很忙。", "options": ["也", "都", "很"], "answer": 0, "explanation": "也 (cũng) đứng sau chủ ngữ, trước phần vị ngữ 很忙." },
+     { "context": "“Cô ấy là ai?”", "pre": "她是", "blank": "谁", "post": "？", "options": ["谁", "什么", "哪"], "answer": 0, "explanation": "Hỏi về người dùng 谁, đặt đúng vị trí tân ngữ sau 是." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi tên là Lý Văn.”", "words": ["我", "叫", "李文", "。"], "answer": "我叫李文。", "explanation": "Chủ ngữ + Động từ + Tân ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn tên là gì?”", "words": ["你", "叫", "什么", "名字", "？"], "answer": "你叫什么名字？", "explanation": "Từ để hỏi 什么 đứng ngay trước 名字, không lên đầu câu." },
+     { "type": "sort", "context": "Sắp xếp: “Cô ấy là giáo viên tiếng Trung.”", "words": ["她", "是", "中文", "老师", "。"], "answer": "她是中文老师。", "explanation": "是 + cụm danh từ làm tân ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không phải là học sinh.”", "words": ["我", "不", "是", "学生", "。"], "answer": "我不是学生。", "explanation": "不 đứng trước 是." },
+     { "context": "Gặp bạn mới, em muốn hỏi tên bạn ấy. Chọn câu đúng.", "pre": "", "blank": "你叫什么名字？", "post": "", "options": ["你叫什么名字？", "什么你名字叫？", "你名字什么叫？"], "answer": 0, "explanation": "Giữ nguyên trật tự Chủ – Động – Tân, chỉ thay phần cần hỏi bằng 什么." },
+     { "context": "Có người hỏi em có phải giáo viên không, em không phải. Chọn câu trả lời đúng.", "pre": "", "blank": "我不是老师，我是学生。", "post": "", "options": ["我不是老师，我是学生。", "我是不老师，我学生是。", "不我是老师，我是学生。"], "answer": 0, "explanation": "不 đứng trước động từ 是; hai vế đều theo trật tự Chủ – Động – Tân." },
+     { "context": "Em muốn nói “Bạn ấy cũng học tiếng Trung.”. Chọn câu đúng.", "pre": "", "blank": "她也学中文。", "post": "", "options": ["她也学中文。", "她学中文也。", "也她学中文。"], "answer": 0, "explanation": "Phó từ 也 đứng sau chủ ngữ và trước động từ." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1v3-bai-3.html": {
+  "points": [
+   {
+    "title": "Câu chữ “是”",
+    "errors": [
+     { "wrong": "我是很忙。", "why": "tiếng Việt nói “tôi thì bận”, học sinh thêm 是 trước tính từ.", "right": "我很忙。" },
+     { "wrong": "她是不中文老师。", "why": "đặt 不 sai chỗ, tiếng Việt là “không phải là cô giáo”.", "right": "她不是中文老师。" },
+     { "wrong": "我是学生吗不是？", "why": "trộn hai kiểu câu hỏi 吗 và 是不是 trong một câu.", "right": "我是不是学生？" }
+    ],
+    "items": [
+     { "context": "“Tôi là người Pháp.”", "pre": "我", "blank": "是", "post": "法国人。", "options": ["是", "有", "叫"], "answer": 0, "explanation": "是 nối chủ ngữ với danh từ chỉ thân phận, quốc tịch." },
+     { "context": "“Cô ấy không phải là giáo viên tiếng Trung.”", "pre": "她", "blank": "不是", "post": "中文老师。", "options": ["不是", "是不", "没有"], "answer": 0, "explanation": "Phủ định của 是 là 不是, không dùng 没有." },
+     { "context": "“Tôi rất bận.” (không có 是)", "pre": "我", "blank": "很", "post": "忙。", "options": ["很", "是", "是很"], "answer": 0, "explanation": "Trước TÍNH TỪ không dùng 是; tính từ tự làm vị ngữ, thường có 很." },
+     { "context": "“Đây là bạn của tôi.”", "pre": "这", "blank": "是", "post": "我的朋友。", "options": ["是", "在", "有"], "answer": 0, "explanation": "这/那 + 是 + danh từ." },
+     { "context": "“Bạn ấy là người nước nào?”", "pre": "她是", "blank": "哪", "post": "国人？", "options": ["哪", "什么", "谁"], "answer": 0, "explanation": "哪国人 = người nước nào." },
+     { "context": "“Chúng tôi đều là học sinh.”", "pre": "我们", "blank": "都是", "post": "学生。", "options": ["都是", "是都", "都不是"], "answer": 0, "explanation": "Phó từ 都 đứng trước động từ 是." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi là học sinh của cô ấy.”", "words": ["我", "是", "她的", "学生", "。"], "answer": "我是她的学生。", "explanation": "是 + cụm danh từ có 的." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy không phải là người Trung Quốc.”", "words": ["他", "不", "是", "中国人", "。"], "answer": "他不是中国人。", "explanation": "不 đứng ngay trước 是." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn là giáo viên phải không?”", "words": ["你", "是", "老师", "吗", "？"], "answer": "你是老师吗？", "explanation": "吗 đặt cuối câu trần thuật để thành câu hỏi." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng tôi đều là người Việt Nam.”", "words": ["我们", "都", "是", "越南人", "。"], "answer": "我们都是越南人。", "explanation": "都 đứng trước 是." },
+     { "context": "Em muốn nói “Tôi rất vui.”. Chọn câu đúng.", "pre": "", "blank": "我很高兴。", "post": "", "options": ["我很高兴。", "我是高兴。", "我是很高兴。"], "answer": 0, "explanation": "Tính từ làm vị ngữ thì KHÔNG dùng 是." },
+     { "context": "Giới thiệu cô giáo của mình. Chọn câu đúng.", "pre": "", "blank": "她是我的中文老师。", "post": "", "options": ["她是我的中文老师。", "她很我的中文老师。", "她有我的中文老师。"], "answer": 0, "explanation": "Nối chủ ngữ với danh từ thì dùng 是." },
+     { "context": "Ai đó hỏi em có phải người Trung Quốc không, em là người Việt. Chọn câu đúng.", "pre": "", "blank": "我不是中国人，我是越南人。", "post": "", "options": ["我不是中国人，我是越南人。", "我没是中国人，我是越南人。", "我是不中国人，我越南人是。"], "answer": 0, "explanation": "Phủ định 是 dùng 不是, không dùng 没." }
+    ]
+   },
+   {
+    "title": "Trợ từ kết cấu “的”",
+    "errors": [
+     { "wrong": "我朋友的中文老师是。", "why": "học sinh đặt 是 xuống cuối câu như tiếng Việt “… là”.", "right": "她是我朋友的中文老师。" },
+     { "wrong": "老师的我", "why": "đảo ngược trật tự sở hữu: tiếng Việt “của tôi” đứng sau, tiếng Trung người sở hữu đứng TRƯỚC 的.", "right": "我的老师" },
+     { "wrong": "我的妈妈很忙。（khi nói chuyện thường ngày）", "why": "với người thân, người Trung thường lược 的; giữ 的 nghe rất xa cách.", "right": "我妈妈很忙。" }
+    ],
+    "items": [
+     { "context": "“Tên của bạn”", "pre": "你", "blank": "的", "post": "名字", "options": ["的", "得", "地"], "answer": 0, "explanation": "的 nối định ngữ (你) với trung tâm ngữ (名字)." },
+     { "context": "“Giáo viên tiếng Trung của Bạch Gia Nguyệt”", "pre": "白家月", "blank": "的", "post": "中文老师", "options": ["的", "是", "在"], "answer": 0, "explanation": "Người sở hữu + 的 + vật/người được sở hữu." },
+     { "context": "“Đây là sách của tôi.”", "pre": "这是我", "blank": "的", "post": "书。", "options": ["的", "得", "也"], "answer": 0, "explanation": "我的书 = sách của tôi." },
+     { "context": "Cách nói tự nhiên khi nhắc đến mẹ mình (quan hệ thân thiết).", "pre": "我", "blank": "", "post": "妈妈很忙。", "options": ["", "的", "是"], "answer": 0, "explanation": "Với người thân (妈妈、爸爸、哥哥…) thường LƯỢC 的." },
+     { "context": "“Bạn của bạn ấy cũng là học sinh.”", "pre": "她", "blank": "的", "post": "朋友也是学生。", "options": ["的", "都", "很"], "answer": 0, "explanation": "她的朋友 = bạn của cô ấy." },
+     { "context": "“Cái này là của ai?”", "pre": "这是谁", "blank": "的", "post": "？", "options": ["的", "吗", "呢"], "answer": 0, "explanation": "谁的 = của ai; 的 có thể đứng cuối, không cần lặp lại danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Đây là giáo viên của tôi.”", "words": ["这", "是", "我", "的", "老师", "。"], "answer": "这是我的老师。", "explanation": "我 + 的 + 老师." },
+     { "type": "sort", "context": "Sắp xếp: “Tên của cô ấy là Annie.”", "words": ["她", "的", "名字", "叫", "安妮", "。"], "answer": "她的名字叫安妮。", "explanation": "她的名字 làm chủ ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn của tôi rất bận.”", "words": ["我", "的", "朋友", "很", "忙", "。"], "answer": "我的朋友很忙。", "explanation": "Cụm có 的 làm chủ ngữ, sau đó là 很 + tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Cái này là của ai?”", "words": ["这", "是", "谁", "的", "？"], "answer": "这是谁的？", "explanation": "的 đứng cuối thay cho danh từ đã rõ." },
+     { "context": "Em muốn nói “giáo viên của tôi”. Chọn cách viết đúng.", "pre": "", "blank": "我的老师", "post": "", "options": ["我的老师", "老师的我", "我老师的"], "answer": 0, "explanation": "Người sở hữu đứng TRƯỚC 的." },
+     { "context": "Nói chuyện thân mật về bố mình. Chọn câu tự nhiên nhất.", "pre": "", "blank": "我爸爸是老师。", "post": "", "options": ["我爸爸是老师。", "我的爸爸是老师的。", "爸爸的我是老师。"], "answer": 0, "explanation": "Người thân thường lược 的 cho tự nhiên." },
+     { "context": "Chỉ vào quyển sách và hỏi chủ nhân. Chọn câu đúng.", "pre": "", "blank": "这本书是谁的？", "post": "", "options": ["这本书是谁的？", "这本书谁的是？", "谁的这本书是？"], "answer": 0, "explanation": "Giữ trật tự Chủ – 是 – 谁的." }
+    ]
+   },
+   {
+    "title": "Câu hỏi có/không dùng “吗”",
+    "errors": [
+     { "wrong": "你叫什么名字吗？", "why": "câu đã có từ để hỏi 什么 mà còn thêm 吗.", "right": "你叫什么名字？" },
+     { "wrong": "吗你是老师？", "why": "đưa 吗 lên đầu câu như “có phải…” trong tiếng Việt.", "right": "你是老师吗？" },
+     { "wrong": "你好吗吗？", "why": "lặp 吗 do quen mẫu câu “你好吗”.", "right": "你好吗？" }
+    ],
+    "items": [
+     { "context": "“Bạn cũng rất bận phải không?”", "pre": "你也很忙", "blank": "吗", "post": "？", "options": ["吗", "呢", "什么"], "answer": 0, "explanation": "吗 đặt CUỐI câu trần thuật để tạo câu hỏi có/không." },
+     { "context": "“Bạn là giáo viên tiếng Trung của bạn ấy phải không?”", "pre": "你是他的中文老师", "blank": "吗", "post": "？", "options": ["吗", "谁", "哪"], "answer": 0, "explanation": "Câu hỏi đúng–sai chỉ cần thêm 吗." },
+     { "context": "Câu đã có từ để hỏi thì KHÔNG thêm 吗.", "pre": "她是", "blank": "谁", "post": "？", "options": ["谁", "谁吗", "吗谁"], "answer": 0, "explanation": "Có 谁 rồi thì không dùng 吗 nữa." },
+     { "context": "“Bạn có khỏe không?”", "pre": "你好", "blank": "吗", "post": "？", "options": ["吗", "呢", "吧"], "answer": 0, "explanation": "Mẫu câu chào hỏi quen thuộc 你好吗？" },
+     { "context": "“Bạn ấy là học sinh của bạn phải không?”", "pre": "她是你的学生", "blank": "吗", "post": "？", "options": ["吗", "的", "也"], "answer": 0, "explanation": "吗 đứng sau dấu kết thúc phần trần thuật, trước dấu hỏi." },
+     { "context": "“Bạn học tiếng Trung à?”", "pre": "你学中文", "blank": "吗", "post": "？", "options": ["吗", "什么", "怎么"], "answer": 0, "explanation": "Hỏi có/không dùng 吗." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn là người Trung Quốc phải không?”", "words": ["你", "是", "中国人", "吗", "？"], "answer": "你是中国人吗？", "explanation": "吗 luôn ở cuối câu." },
+     { "type": "sort", "context": "Sắp xếp: “Cô ấy cũng bận phải không?”", "words": ["她", "也", "忙", "吗", "？"], "answer": "她也忙吗？", "explanation": "也 trước vị ngữ, 吗 cuối câu." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn có phải là giáo viên của tôi không?”", "words": ["你", "是", "我的", "老师", "吗", "？"], "answer": "你是我的老师吗？", "explanation": "Cụm 我的老师 làm tân ngữ, 吗 cuối câu." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn có khỏe không?”", "words": ["你", "好", "吗", "？"], "answer": "你好吗？", "explanation": "Câu hỏi thăm quen thuộc." },
+     { "context": "Em muốn hỏi bạn tên gì. Chọn câu đúng.", "pre": "", "blank": "你叫什么名字？", "post": "", "options": ["你叫什么名字？", "你叫什么名字吗？", "你叫名字吗什么？"], "answer": 0, "explanation": "Đã có 什么 thì KHÔNG dùng 吗." },
+     { "context": "Em muốn hỏi cô ấy có phải giáo viên không. Chọn câu đúng.", "pre": "", "blank": "她是老师吗？", "post": "", "options": ["她是老师吗？", "吗她是老师？", "她吗是老师？"], "answer": 0, "explanation": "吗 chỉ đứng ở CUỐI câu." },
+     { "context": "Bạn hỏi “你好吗？”, em khỏe. Chọn câu trả lời đúng.", "pre": "", "blank": "我很好，谢谢。", "post": "", "options": ["我很好，谢谢。", "我好吗，谢谢。", "我是很好吗。"], "answer": 0, "explanation": "Trả lời câu hỏi 吗 thì bỏ 吗, dùng câu trần thuật." }
+    ]
+   }
+  ]
+ }
+}

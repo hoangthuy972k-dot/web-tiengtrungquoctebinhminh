@@ -1,0 +1,911 @@
+[
+ {
+  "so": "1",
+  "ten": "「终究」",
+  "tenVn": "",
+  "cauTruc": [
+   "S + 终究 + 是 / 不是 + N — xét cho cùng (bản chất không đổi, ≈ 毕竟)",
+   "S + 终究 + 会 / 要 + V — cuối cùng nhất định sẽ …",
+   "Phân biệt 终于: kết quả chờ đợi ĐÃ xảy ra"
+  ],
+  "giaiThich": "\"终究\" là PHÓ TỪ, có hai cách dùng. ① Nhấn mạnh BẢN CHẤT sự vật không thay đổi, sự thật không thể phủ nhận; tăng ngữ khí, thường dùng trong câu trần thuật mang tính đánh giá (≈ 毕竟 \"xét cho cùng\"): 单色印品终究不能满足人们的审美需求; 猫终究是动物. ② Thường đứng TRƯỚC ĐỘNG TỪ NĂNG NGUYỆN (会 / 要 / 能…), biểu thị kết quả dự đoán hoặc mong đợi NHẤT ĐỊNH sẽ xuất hiện, dù thế nào cũng vậy (≈ 最后一定): 正义的事业终究会取得胜利. 终究 đứng sau chủ ngữ, trước 是 / 不 / 会 / 要. Phân biệt 终于 (cuối cùng — kể một kết quả đã chờ đợi và ĐÃ xảy ra): 他终于考上了大学, không dùng 终究.",
+  "viDu": [
+   {
+    "zh": "单色印品终究不能满足人们的审美需求，之后就有了彩色套印技术。",
+    "py": "Dānsè yìnpǐn zhōngjiū bù néng mǎnzú rénmen de shěnměi xūqiú, zhīhòu jiù yǒule cǎisè tàoyìn jìshù.",
+    "vn": "Bản in một màu xét cho cùng không thể đáp ứng nhu cầu thẩm mỹ của con người, sau đó liền có kỹ thuật in chồng màu."
+   },
+   {
+    "zh": "猫终究是动物，动物急了咬人也是正常的。",
+    "py": "Māo zhōngjiū shì dòngwù, dòngwù jíle yǎo rén yě shì zhèngcháng de.",
+    "vn": "Mèo xét cho cùng vẫn là động vật, động vật cáu lên mà cắn người cũng là bình thường."
+   },
+   {
+    "zh": "胜利总是在真理一边，正义的事业终究会取得胜利。",
+    "py": "Shènglì zǒngshì zài zhēnlǐ yì biān, zhèngyì de shìyè zhōngjiū huì qǔdé shènglì.",
+    "vn": "Chiến thắng luôn đứng về phía chân lý, sự nghiệp chính nghĩa cuối cùng nhất định sẽ giành thắng lợi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我终究考上了大学，高兴极了。",
+    "why": "Kể một kết quả mong đợi đã xảy ra (vui mừng) → dùng 终于. 终究 nhấn bản chất không đổi hoặc kết quả tất yếu sẽ đến (thường đi với 会 / 要 / 是).",
+    "dung": "我终于考上了大学，高兴极了。"
+   },
+   {
+    "sai": "他是终究一个孩子，你别生他的气。",
+    "why": "终究 là phó từ, phải đứng TRƯỚC 是.",
+    "dung": "他终究是个孩子，你别生他的气。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "单色印品",
+       "不能满足人们的审美需求。"
+      ],
+      "dap": [
+       [
+        "终究"
+       ]
+      ],
+      "chon": [
+       "终究",
+       "终于",
+       "究竟"
+      ],
+      "goiY": "\"Bản in một màu xét cho cùng không đáp ứng được nhu cầu thẩm mỹ.\" (câu bài khoá)",
+      "giai": "Nhấn bản chất không đổi → 终究; 终于 kể kết quả đã đến; 究竟 dùng trong câu hỏi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "猫终究",
+       "动物，动物急了咬人也是正常的。"
+      ],
+      "dap": [
+       [
+        "是"
+       ]
+      ],
+      "chon": [
+       "是",
+       "会",
+       "在"
+      ],
+      "goiY": "\"Mèo xét cho cùng vẫn là động vật.\" (ví dụ của sách)",
+      "giai": "终究 + 是 + N: bản chất không đổi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "正义的事业终究",
+       "取得胜利。"
+      ],
+      "dap": [
+       [
+        "会"
+       ]
+      ],
+      "chon": [
+       "会",
+       "了",
+       "过"
+      ],
+      "goiY": "\"Sự nghiệp chính nghĩa cuối cùng nhất định sẽ thắng lợi.\" (ví dụ của sách)",
+      "giai": "Nghĩa ②: 终究 + 会 + V = kết quả tất yếu sẽ đến."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "借住在朋友这儿",
+       "不是长久之计，还是应该尽快租个房子。"
+      ],
+      "dap": [
+       [
+        "终究"
+       ]
+      ],
+      "chon": [
+       "终究",
+       "终于",
+       "曾经"
+      ],
+      "goiY": "\"Ở nhờ chỗ bạn chung quy không phải kế lâu dài.\" (练一练 2)",
+      "giai": "终究不是…… = xét cho cùng không phải …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "经过十年的努力，他",
+       "考上了理想的大学。"
+      ],
+      "dap": [
+       [
+        "终于"
+       ]
+      ],
+      "chon": [
+       "终于",
+       "终究",
+       "究竟"
+      ],
+      "goiY": "Phân biệt: kể kết quả mong đợi ĐÃ xảy ra.",
+      "giai": "Kết quả chờ đợi đã đến (考上了) → 终于; 终究 không dùng để kể niềm vui đã thành."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "有再好的管理和技术，产品",
+       "要靠这些普通工人去生产。"
+      ],
+      "dap": [
+       [
+        "终究"
+       ]
+      ],
+      "chon": [
+       "终究",
+       "终于",
+       "首先"
+      ],
+      "goiY": "\"Sản phẩm rốt cuộc vẫn phải dựa vào công nhân sản xuất.\" (ví dụ (4) của sách)",
+      "giai": "终究 + 要 + V: dù thế nào cuối cùng cũng phải …."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "终究",
+       "是",
+       "他",
+       "个孩子"
+      ],
+      "dap": [
+       "他终究是个孩子"
+      ],
+      "goiY": "Dù sao nó cũng là đứa trẻ.",
+      "giai": "终究 đứng sau chủ ngữ, trước 是."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "会",
+       "终究",
+       "变老的",
+       "他"
+      ],
+      "dap": [
+       "他终究会变老的"
+      ],
+      "goiY": "Rốt cuộc anh ta cũng sẽ già.",
+      "giai": "终究 + 会 + V + 的 (练一练 1)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "失败",
+       "不是好事",
+       "终究"
+      ],
+      "dap": [
+       "失败终究不是好事"
+      ],
+      "goiY": "Thất bại xét cho cùng không phải chuyện tốt.",
+      "giai": "S + 终究 + 不是 + N (练一练 3)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我终究考上了大学，高兴极了。",
+      "dung": false,
+      "sua": "我终于考上了大学，高兴极了。",
+      "giai": "Kể kết quả mong đợi đã xảy ra → 终于."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "一个人的力量终究是有限的，还是团结力量大。",
+      "dung": true,
+      "giai": "Đúng: 终究是有限的 = xét cho cùng là có hạn (练习2)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他是终究一个孩子，你别生他的气。",
+      "dung": false,
+      "sua": "他终究是个孩子，你别生他的气。",
+      "giai": "终究 là phó từ, đứng trước 是."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Lời nói dối rốt cuộc cũng sẽ bị người khác phát hiện.",
+      "dap": [
+       "谎言终究会被别人发现的。",
+       "说谎终究会被人发现的。",
+       "谎话终究会被别人发现。"
+      ],
+      "py": "Huǎngyán zhōngjiū huì bèi biérén fāxiàn de.",
+      "goiY": "Dịch sang tiếng Trung, dùng 终究.",
+      "giai": "终究 + 会 + 被……V (bị động, ôn HSK 4) + 的 khẳng định."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Dù sao nó cũng chỉ là đứa trẻ, đừng trách nó nữa.",
+      "dap": [
+       "他终究只是个孩子，别怪他了。",
+       "他终究是个孩子，别责怪他了。",
+       "他终究还是个孩子，不要怪他了。"
+      ],
+      "py": "Tā zhōngjiū zhǐshì ge háizi, bié guài tā le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 终究.",
+      "giai": "终究是 + N: bản chất không đổi; 别……了 khuyên dừng."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng 终究 viết lại câu (练一练 của sách)",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "如果一个人一直不愿意变老，那他就永远不会幸福，因为他＿＿＿。",
+      "goiY": "Dùng 终究 viết lại (练一练 (1) của sách: 他最后是一定会变老的).",
+      "mau": "如果一个人一直不愿意变老，那他就永远不会幸福，因为他终究会变老的。",
+      "can": [
+       [
+        "终究会变老",
+        "终究要变老"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "借住在朋友这儿＿＿＿，还是应该尽快租个房子。",
+      "goiY": "Dùng 终究 viết lại (练一练 (2): 当然不是长久之计).",
+      "mau": "借住在朋友这儿终究不是长久之计，还是应该尽快租个房子。",
+      "can": [
+       [
+        "终究不是"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "失败＿＿＿，但只要从失败中吸取经验教训，坏事也可以变成好事。",
+      "goiY": "Dùng 终究 viết lại (练一练 (3): 失败毕竟不是好事).",
+      "mau": "失败终究不是好事，但只要从失败中吸取经验教训，坏事也可以变成好事。",
+      "can": [
+       [
+        "终究不是好事",
+        "终究不是一件好事"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「愈……愈……」",
+  "tenVn": "",
+  "cauTruc": [
+   "S + 愈 + A + 愈 + B — càng … càng … (văn viết)",
+   "S1 + 愈 + A，S2 + (就) + 愈 + B",
+   "愈是……（就）愈是……　|　愈来愈 + Adj"
+  ],
+  "giaiThich": "\"愈……愈……\" giống \"越……越……\": mức độ của vế sau tăng theo sự thay đổi của vế trước. Dùng trong VĂN VIẾT. Các dạng: ① cùng chủ ngữ: S + 愈 + A + 愈 + B (他愈跑愈快); ② hai chủ ngữ khác nhau: S1 + 愈 + A，S2 + (就 / 也就) + 愈 + B (教育愈普及……，文化发展的速度就愈快); ③ 愈是……（就）愈是…… nhấn mạnh hơn (愈是经营年画久了，他对年画就愈是热爱); ④ 愈来愈 + Adj = 越来越. 愈 là phó từ, đứng sau chủ ngữ, trước động từ / tính từ; sau 愈 không thêm phó từ mức độ (很, 非常…). Một câu nên dùng thống nhất 愈……愈…… hoặc 越……越……, không trộn lẫn.",
+  "viDu": [
+   {
+    "zh": "愈是经营年画久了，他对年画就愈是热爱。",
+    "py": "Yù shì jīngyíng niánhuà jiǔ le, tā duì niánhuà jiù yù shì rè'ài.",
+    "vn": "Càng kinh doanh tranh Tết lâu, anh ấy càng yêu tranh Tết."
+   },
+   {
+    "zh": "机遇的特点之一是转瞬即逝，市场竞争愈激烈愈是如此。",
+    "py": "Jīyù de tèdiǎn zhī yī shì zhuǎnshùn-jíshì, shìchǎng jìngzhēng yù jīliè yù shì rúcǐ.",
+    "vn": "Một đặc điểm của cơ hội là thoáng qua trong chớp mắt, cạnh tranh thị trường càng gay gắt thì càng như vậy."
+   },
+   {
+    "zh": "一个民族，教育愈普及，教育的质量愈高，文化发展的速度就愈快，文化水准也就愈高。",
+    "py": "Yí ge mínzú, jiàoyù yù pǔjí, jiàoyù de zhìliàng yù gāo, wénhuà fāzhǎn de sùdù jiù yù kuài, wénhuà shuǐzhǔn yě jiù yù gāo.",
+    "vn": "Một dân tộc, giáo dục càng phổ cập, chất lượng giáo dục càng cao thì tốc độ phát triển văn hoá càng nhanh, trình độ văn hoá cũng càng cao."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "愈他跑，愈快。",
+    "why": "愈 là phó từ, đứng SAU chủ ngữ, trước động từ / tính từ.",
+    "dung": "他愈跑愈快。"
+   },
+   {
+    "sai": "天气愈来愈很冷了。",
+    "why": "Sau 愈 (愈来愈) không thêm phó từ mức độ 很 / 非常 — bản thân 愈 đã biểu thị mức độ tăng dần.",
+    "dung": "天气愈来愈冷了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "愈是经营年画久了，他对年画就",
+       "是热爱。"
+      ],
+      "dap": [
+       [
+        "愈"
+       ]
+      ],
+      "chon": [
+       "愈",
+       "越来",
+       "很"
+      ],
+      "goiY": "\"Càng làm tranh Tết lâu, anh ấy càng yêu tranh Tết.\" (câu bài khoá)",
+      "giai": "愈是……就愈是……: vế sau lặp lại 愈是."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "情况愈紧急，",
+       "需要沉着冷静。"
+      ],
+      "dap": [
+       [
+        "愈"
+       ]
+      ],
+      "chon": [
+       "愈",
+       "更",
+       "最"
+      ],
+      "goiY": "\"Tình huống càng khẩn cấp càng cần bình tĩnh.\" (练习2)",
+      "giai": "愈 A 愈 B — hai vế cùng dùng 愈."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "市场竞争愈激烈",
+       "是如此。"
+      ],
+      "dap": [
+       [
+        "愈"
+       ]
+      ],
+      "chon": [
+       "愈",
+       "就",
+       "很"
+      ],
+      "goiY": "\"Cạnh tranh càng gay gắt càng như vậy.\" (ví dụ của sách)",
+      "giai": "愈激烈愈是如此."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一个人受的教育愈多，创造文化的能力也",
+       "愈强。"
+      ],
+      "dap": [
+       [
+        "就"
+       ]
+      ],
+      "chon": [
+       "就",
+       "才",
+       "还"
+      ],
+      "goiY": "\"Được giáo dục càng nhiều thì năng lực sáng tạo văn hoá càng mạnh.\" (ví dụ của sách)",
+      "giai": "Hai chủ ngữ khác nhau: vế sau dùng (也)就 + 愈."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "天气愈来",
+       "冷了。"
+      ],
+      "dap": [
+       [
+        "愈"
+       ]
+      ],
+      "chon": [
+       "愈",
+       "越",
+       "更"
+      ],
+      "goiY": "\"Trời càng ngày càng lạnh.\"",
+      "giai": "愈来愈 = 越来越; không trộn 愈来越."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "跑愈快，一会儿就不见了。"
+      ],
+      "dap": [
+       [
+        "愈"
+       ]
+      ],
+      "chon": [
+       "愈",
+       "最",
+       "很"
+      ],
+      "goiY": "\"Anh ấy càng chạy càng nhanh.\"",
+      "giai": "S + 愈 + V + 愈 + Adj."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "愈",
+       "他",
+       "跑",
+       "愈快"
+      ],
+      "dap": [
+       "他愈跑愈快"
+      ],
+      "goiY": "Anh ấy càng chạy càng nhanh.",
+      "giai": "Chủ ngữ đứng trước 愈."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "愈紧急",
+       "情况",
+       "愈需要冷静"
+      ],
+      "dap": [
+       "情况愈紧急愈需要冷静"
+      ],
+      "goiY": "Tình huống càng khẩn cấp càng cần bình tĩnh.",
+      "giai": "愈 A 愈 B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "愈要",
+       "愈是面对成功",
+       "设定更高的目标"
+      ],
+      "dap": [
+       "愈是面对成功愈要设定更高的目标"
+      ],
+      "goiY": "Càng đối mặt thành công càng phải đặt mục tiêu cao hơn.",
+      "giai": "愈是……愈要…… (练一练 D F)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "愈他跑，愈快。",
+      "dung": false,
+      "sua": "他愈跑愈快。",
+      "giai": "愈 là phó từ, đứng sau chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "天气愈来愈冷了。",
+      "dung": true,
+      "giai": "Đúng: 愈来愈 + Adj = 越来越."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "天气愈来愈很冷了。",
+      "dung": false,
+      "sua": "天气愈来愈冷了。",
+      "giai": "Sau 愈 không thêm phó từ mức độ 很."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tiếng Trung tôi càng học càng thấy thú vị.",
+      "dap": [
+       "汉语我愈学愈觉得有意思。",
+       "我愈学汉语愈觉得有意思。",
+       "我对汉语愈学愈感兴趣。"
+      ],
+      "py": "Hànyǔ wǒ yù xué yù juéde yǒu yìsi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 愈……愈…….",
+      "giai": "Cùng chủ ngữ: 愈 + V + 愈 + V/Adj."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Một gia đình càng coi trọng giáo dục thì trình độ văn hoá của các thành viên càng cao.",
+      "dap": [
+       "一个家庭愈重视教育，家庭成员的文化水平就愈高。",
+       "一个家庭愈是重视教育，家庭成员的文化水平就愈高。",
+       "家庭愈重视教育，家庭成员的文化水平也就愈高。"
+      ],
+      "py": "Yí ge jiātíng yù zhòngshì jiàoyù, jiātíng chéngyuán de wénhuà shuǐpíng jiù yù gāo.",
+      "goiY": "Dịch sang tiếng Trung, dùng 愈……愈…….",
+      "giai": "Hai chủ ngữ khác nhau → vế sau 就愈 (练一练 A E)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng 愈……愈…… viết lại / hoàn thành câu (练习 · 练一练 của sách)",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "老师曾教导我们：“情况越紧急，越需要沉着冷静。”→ ＿＿＿",
+      "goiY": "Dùng 愈……愈…… viết lại (练习2 (6) của sách).",
+      "mau": "老师曾教导我们：“情况愈紧急，愈需要沉着冷静。”",
+      "can": [
+       [
+        "愈紧急"
+       ],
+       [
+        "愈需要"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "一个家庭，愈重视教育，教育的投入愈多，＿＿＿。",
+      "goiY": "Nối tiếp bằng vế E của 练一练 (đáp án sách: A E).",
+      "mau": "一个家庭，愈重视教育，教育的投入愈多，家庭成员的文化水平就愈高，综合素质也就愈高。",
+      "can": [
+       [
+        "就愈高"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他生就一副挑战式性格，愈是面对成功，＿＿＿。",
+      "goiY": "Nối tiếp bằng vế F của 练一练 (đáp án sách: D F).",
+      "mau": "他生就一副挑战式性格，愈是面对成功，愈要为自己设定更高的目标。",
+      "can": [
+       [
+        "愈要"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「篇章（6）重复关键词，推进主题」",
+  "tenVn": "",
+  "cauTruc": [
+   "Lặp lại NGUYÊN DẠNG từ khoá trong các vế song song",
+   "Tác dụng: làm nổi bật thông tin; đẩy chủ đề đi tới",
+   "Giúp văn bản liền mạch, câu chữ trôi chảy"
+  ],
+  "giaiThich": "Phần 篇章 thứ sáu của quyển 下: LẶP LẠI TỪ KHOÁ, ĐẨY CHỦ ĐỀ ĐI TỚI. Việc lặp lại từ khoá có vai trò rất quan trọng trong văn bản: ① xét về GIAO TIẾP, lặp từ khoá làm NỔI BẬT một hoặc một số thông tin; ② xét về KẾT CẤU VĂN BẢN, liên tục lặp lại từ ngữ then chốt nhất giúp chủ đề không ngừng được đẩy tới — đó là một trong những cách làm cho văn bản LIỀN MẠCH, câu chữ TRÔI CHẢY. Ví dụ trong bài khoá: 于是 lặp ba lần (于是有人发明了墨；于是印章开始流行；于是有人联想到……) kéo mạch \"nhu cầu → phát minh\" đến tận in khắc bản. Khi lặp phải giữ NGUYÊN DẠNG từ khoá (泪水……泪水……泪水, không đổi thành 眼泪, 泪珠), thường đặt trong các vế song song.",
+  "viDu": [
+   {
+    "zh": "有了纸，书写就需要墨水儿，于是有人发明了墨；字画、书信上需要盖章，于是印章开始流行；碑刻、拓印技术被广泛运用，于是有人联想到：这些技术结合起来，不就能印出书来吗！",
+    "py": "Yǒule zhǐ, shūxiě jiù xūyào mòshuǐr, yúshì yǒu rén fāmíngle mò; zìhuà, shūxìn shang xūyào gài zhāng, yúshì yìnzhāng kāishǐ liúxíng; bēikè, tàyìn jìshù bèi guǎngfàn yùnyòng, yúshì yǒu rén liánxiǎng dào: zhèxiē jìshù jiéhé qilai, bú jiù néng yìnchū shū lai ma!",
+    "vn": "Có giấy rồi, viết chữ thì cần mực, thế là có người phát minh ra mực; tranh chữ, thư từ cần đóng dấu, thế là con dấu thịnh hành; kỹ thuật khắc bia, in dập được dùng rộng rãi, thế là có người nghĩ ra: kết hợp các kỹ thuật này lại chẳng phải in được sách sao!"
+   },
+   {
+    "zh": "我开始每天至少写两千字。没有为“一定要换成稿费”而写，没有读者也写，自己寻找题目，把写作当成生活的一部分。",
+    "py": "Wǒ kāishǐ měi tiān zhìshǎo xiě liǎngqiān zì. Méiyǒu wèi “yídìng yào huànchéng gǎofèi” ér xiě, méiyǒu dúzhě yě xiě, zìjǐ xúnzhǎo tímù, bǎ xiězuò dàngchéng shēnghuó de yí bùfen.",
+    "vn": "Tôi bắt đầu mỗi ngày viết ít nhất hai nghìn chữ. Không viết vì \"nhất định phải đổi thành nhuận bút\", không có người đọc cũng viết, tự tìm đề tài, coi viết lách là một phần của cuộc sống."
+   },
+   {
+    "zh": "佩珊！佩珊！我心里难过极了！想到一个人会死，而且会突然地就死，我真是难过极了！我不肯死！我一定不能死！可是我们总有一天要死。",
+    "py": "Pèishān! Pèishān! Wǒ xīnli nánguò jí le! Xiǎngdào yí ge rén huì sǐ, érqiě huì tūrán de jiù sǐ, wǒ zhēn shì nánguò jí le! Wǒ bù kěn sǐ! Wǒ yídìng bù néng sǐ! Kěshì wǒmen zǒng yǒu yì tiān yào sǐ.",
+    "vn": "Bội San! Bội San! Lòng tôi buồn vô cùng! Nghĩ đến chuyện một người sẽ chết, mà lại có thể chết đột ngột, tôi thật buồn vô cùng! Tôi không chịu chết! Tôi nhất định không thể chết! Thế nhưng rồi sẽ có ngày chúng ta phải chết."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "路近的送，路远的也可以给你们运过去；晴天我们负责，雨天也能帮忙。",
+    "why": "Đổi động từ liên tục (送 → 运过去 → 负责 → 帮忙) làm từ khoá bị mờ, chủ đề \"giao hoa bất kể điều kiện\" không nổi bật, đoạn văn rời rạc.",
+    "dung": "路近的送，路远的也送；晴天送，雨天也送。"
+   },
+   {
+    "sai": "这泪水，是激动的泪水，兴奋的眼泪，喜悦的泪珠。",
+    "why": "Từ khoá phải lặp lại NGUYÊN DẠNG; đổi sang 眼泪, 泪珠 làm mất hiệu quả nhấn mạnh.",
+    "dung": "这泪水，是激动的泪水，兴奋的泪水，喜悦的泪水。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "路近的送，路远的也",
+       "；晴天送，雨天也送。"
+      ],
+      "dap": [
+       [
+        "送"
+       ]
+      ],
+      "chon": [
+       "送",
+       "卖",
+       "带"
+      ],
+      "goiY": "Từ khoá của đoạn là \"giao hoa\" (练一练 của sách).",
+      "giai": "Lặp nguyên từ khoá 送 ở mọi vế."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这泪水，是激动的泪水，兴奋的",
+       "，收获的泪水。"
+      ],
+      "dap": [
+       [
+        "泪水"
+       ]
+      ],
+      "chon": [
+       "泪水",
+       "眼泪",
+       "泪珠"
+      ],
+      "goiY": "Giữ nguyên dạng từ khoá (练习4 ①).",
+      "giai": "Lặp NGUYÊN DẠNG 泪水, không đổi sang từ đồng nghĩa."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "有了纸，书写就需要墨水儿，",
+       "有人发明了墨；字画上需要盖章，于是印章开始流行。"
+      ],
+      "dap": [
+       [
+        "于是"
+       ]
+      ],
+      "chon": [
+       "于是",
+       "但是",
+       "可是"
+      ],
+      "goiY": "Câu bài khoá — lặp 于是 kéo mạch \"nhu cầu → phát minh\".",
+      "giai": "于是 lặp lại ở mỗi vế, nối nguyên nhân – kết quả."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "眼前飞过的一只雁，一只麻雀，",
+       "蝴蝶，他都不放过。"
+      ],
+      "dap": [
+       [
+        "一只"
+       ]
+      ],
+      "chon": [
+       "一只",
+       "一群",
+       "一些"
+      ],
+      "goiY": "Lặp 一只 (练习4 ④).",
+      "giai": "一只 lặp lại nhấn mạnh không bỏ sót con nào."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我不肯死！我一定不能",
+       "！可是我们总有一天要死。"
+      ],
+      "dap": [
+       [
+        "死"
+       ]
+      ],
+      "chon": [
+       "死",
+       "走",
+       "哭"
+      ],
+      "goiY": "Ví dụ (3) của sách.",
+      "giai": "死 lặp nhiều lần diễn tả nỗi đau dồn dập."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "没有为稿费而写，没有读者也",
+       "。"
+      ],
+      "dap": [
+       [
+        "写"
+       ]
+      ],
+      "chon": [
+       "写",
+       "读",
+       "说"
+      ],
+      "goiY": "Ví dụ (2) của sách.",
+      "giai": "Từ khoá 写 lặp lại, đẩy chủ đề \"viết mỗi ngày\"."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "晴天送，",
+       "也送",
+       "雨天"
+      ],
+      "dap": [
+       "晴天送，雨天也送"
+      ],
+      "goiY": "Trời nắng giao, trời mưa cũng giao.",
+      "giai": "Hai vế song song, lặp 送."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "兴奋的泪水",
+       "这泪水，",
+       "是激动的泪水，"
+      ],
+      "dap": [
+       "这泪水，是激动的泪水，兴奋的泪水"
+      ],
+      "goiY": "Giọt nước mắt này là nước mắt xúc động, nước mắt phấn khởi.",
+      "giai": "Mở đầu bằng 这泪水 rồi lặp 泪水."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "一只麻雀，",
+       "一只雁，",
+       "眼前飞过的"
+      ],
+      "dap": [
+       "眼前飞过的一只雁，一只麻雀，",
+       "眼前飞过的一只麻雀，一只雁，"
+      ],
+      "goiY": "Một con nhạn, một con sẻ bay qua trước mắt.",
+      "giai": "Định ngữ 眼前飞过的 đứng đầu, sau đó liệt kê 一只……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "路近的送，路远的也可以给你们运过去；晴天我们负责，雨天也能帮忙。",
+      "dung": false,
+      "sua": "路近的送，路远的也送；晴天送，雨天也送。",
+      "giai": "Đổi động từ liên tục làm mờ từ khoá; nên lặp 送."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这泪水，是激动的泪水，兴奋的泪水，喜悦的泪水。",
+      "dung": true,
+      "giai": "Đúng: lặp nguyên dạng 泪水 (练习4 ①)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这泪水，是激动的泪水，兴奋的眼泪，喜悦的泪珠。",
+      "dung": false,
+      "sua": "这泪水，是激动的泪水，兴奋的泪水，喜悦的泪水。",
+      "giai": "Từ khoá phải giữ nguyên dạng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cô ấy cười, cười rất vui, cười đến chảy cả nước mắt.",
+      "dap": [
+       "她笑了，笑得很开心，笑得眼泪都流出来了。",
+       "她笑了，笑得很高兴，笑得连眼泪都出来了。",
+       "她笑了，笑得特别开心，笑得眼泪都流下来了。"
+      ],
+      "py": "Tā xiào le, xiào de hěn kāixīn, xiào de yǎnlèi dōu liú chulai le.",
+      "goiY": "Dịch sang tiếng Trung, lặp từ khoá 笑.",
+      "giai": "Lặp 笑 ở ba vế, mỗi vế thêm một mức độ."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Học phải kiên trì: ngày mưa cũng học, ngày nghỉ cũng học, ngày Tết cũng học.",
+      "dap": [
+       "学习要坚持：下雨天也学，休息日也学，过年也学。",
+       "学习要坚持：雨天也学，假日也学，春节也学。",
+       "学习要坚持，下雨也学，放假也学，过年也学。"
+      ],
+      "py": "Xuéxí yào jiānchí: xià yǔ tiān yě xué, xiūxi rì yě xué, guònián yě xué.",
+      "goiY": "Dịch sang tiếng Trung, lặp từ khoá 学.",
+      "giai": "Các vế song song cùng kết thúc bằng 也学."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Lặp từ khoá để hoàn thành đoạn văn (练一练 của sách)",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "小张的花店免费送花，路近的送，路远的＿＿＿；大花篮、大花束送，一支两支＿＿＿。",
+      "goiY": "Điền từ theo ý đoạn văn (练一练 của sách, phần 1).",
+      "mau": "小张的花店免费送花，路近的送，路远的也送；大花篮、大花束送，一支两支也送。",
+      "can": [
+       [
+        "送"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "晴天送，雨天＿＿＿；即使人手不够，小李亲自骑自行车＿＿＿。",
+      "goiY": "Điền từ theo ý đoạn văn (练一练 của sách, phần 2).",
+      "mau": "晴天送，雨天也送；即使人手不够，小李亲自骑自行车也送。",
+      "can": [
+       [
+        "送"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他真是个爱学习的人：白天学，晚上＿＿＿；在学校学，回家＿＿＿。",
+      "goiY": "Tự hoàn thành, lặp từ khoá 学.",
+      "mau": "他真是个爱学习的人：白天学，晚上也学；在学校学，回家也学。",
+      "can": [
+       [
+        "学"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

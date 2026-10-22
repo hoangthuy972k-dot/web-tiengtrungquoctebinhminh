@@ -1,0 +1,78 @@
+{
+ "zh": "你睡好了吗？",
+ "py": "Nǐ shuìhǎo le ma?",
+ "vn": "Bạn ngủ ngon không?",
+ "topic": "第八单元 人体探秘 · Giấc ngủ và sức khoẻ: chỉ số giấc ngủ, nguyên nhân, biểu hiện, tác hại của mất ngủ và cách đối phó",
+ "vocabCount": 52,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "不时",
+   "explain": "不时 (phó từ) biểu thị động tác, hành vi LẶP LẠI hoặc thường xảy ra trong một khoảng thời gian tương đối ngắn — \"chốc chốc lại, thỉnh thoảng lại\". Có thể thêm 地 (不时地). Dùng trong văn viết. 不时 đứng sau chủ ngữ / trạng ngữ nơi chốn và trước động từ; hay đi với 传来 / 传出 / 扑面而来 / 响起 / 回头 / 张望. Không dùng cho việc chỉ xảy ra MỘT lần.",
+   "rule": "<strong style=\"color:var(--sky-d)\">不时</strong>（<strong style=\"color:var(--sky-d)\">地</strong>）+ V　|　nơi chốn + <strong style=\"color:var(--sky-d)\">不时</strong> + 传来 / 传出 + N",
+   "examples": [
+    {
+     "zh": "入睡后噩梦连连，一会儿蹬腿，一会儿挥拳头，不时（地）大声叫喊，也是睡眠障碍的典型症状。",
+     "py": "Rùshuì hòu èmèng liánlián, yíhuìr dēng tuǐ, yíhuìr huī quántou, bùshí (de) dàshēng jiàohǎn, yě shì shuìmián zhàng'ài de diǎnxíng zhèngzhuàng.",
+     "vn": "Sau khi ngủ thì ác mộng liên miên, lúc đạp chân, lúc vung nắm đấm, thỉnh thoảng lại hét to — đó cũng là triệu chứng điển hình của rối loạn giấc ngủ."
+    },
+    {
+     "zh": "这里的八月，秋高气爽，不冷不热，走在街上，阵阵桂花香不时扑面而来。",
+     "py": "Zhèlǐ de bāyuè, qiū gāo qì shuǎng, bù lěng bú rè, zǒu zài jiē shang, zhènzhèn guìhuā xiāng bùshí pū miàn ér lái.",
+     "vn": "Tháng tám ở đây trời thu trong mát, không lạnh không nóng; đi trên phố, từng đợt hương hoa quế chốc chốc lại phả vào mặt."
+    },
+    {
+     "zh": "天刚蒙蒙亮，世界还没有睡醒，只有不时传来的几声鸟叫提醒我们，新的一天又开始了。",
+     "py": "Tiān gāng méngméng liàng, shìjiè hái méiyǒu shuìxǐng, zhǐyǒu bùshí chuánlái de jǐ shēng niǎo jiào tíxǐng wǒmen, xīn de yì tiān yòu kāishǐ le.",
+     "vn": "Trời vừa tờ mờ sáng, thế giới còn chưa tỉnh giấc, chỉ có vài tiếng chim chốc chốc vọng lại nhắc chúng ta rằng một ngày mới lại bắt đầu."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "不时窗外传来几声鸟叫。",
+     "why": "不时 là phó từ, phải đứng sau chủ ngữ / trạng ngữ nơi chốn (窗外) và trước động từ, không đứng đầu câu.",
+     "right": "窗外不时传来几声鸟叫。"
+    },
+    {
+     "wrong": "我上个月不时去了一次上海。",
+     "why": "不时 chỉ hành động lặp lại nhiều lần trong một quãng ngắn, không dùng với việc chỉ xảy ra một lần (一次).",
+     "right": "我上个月去了一次上海。"
+    }
+   ]
+  },
+  {
+   "point": "多多少少",
+   "explain": "多多少少 là dạng lặp của phó từ 多少, nghĩa là \"hoặc nhiều hoặc ít\" — ÍT NHIỀU, dù sao cũng có một chút. Đứng trước động từ / cụm động từ (多多少少说出了……), trước động từ năng nguyện (多多少少会……) hoặc trước 与……有关 / 是……. Hay đi với 也 / 还是 / 都 và với các từ chỉ lượng nhỏ (一点儿, 一些, 有些). Không đi với các từ chỉ mức độ cao (很, 非常, 很多).",
+   "rule": "<strong style=\"color:var(--sky-d)\">多多少少</strong> + (<strong style=\"color:var(--sky-d)\">也 / 还是 / 会</strong>) + V (+ 一点儿 / 一些)　|　A + <strong style=\"color:var(--sky-d)\">多多少少</strong> + 与 B 有关",
+   "examples": [
+    {
+     "zh": "不可否认的是，很多人原本睡眠是没有问题的，导致问题的根源多多少少与不健康的生活方式有关。",
+     "py": "Bùkě fǒurèn de shì, hěn duō rén yuánběn shuìmián shì méiyǒu wèntí de, dǎozhì wèntí de gēnyuán duōduōshǎoshǎo yǔ bú jiànkāng de shēnghuó fāngshì yǒuguān.",
+     "vn": "Không thể phủ nhận rằng nhiều người vốn ngủ không có vấn đề gì; căn nguyên gây ra vấn đề ít nhiều đều liên quan đến lối sống không lành mạnh."
+    },
+    {
+     "zh": "春天遭了雹灾，别人家的桃子都没有收成，我家的果园在山后，多多少少还收了一些。",
+     "py": "Chūntiān zāole báozāi, biérén jiā de táozi dōu méiyǒu shōucheng, wǒ jiā de guǒyuán zài shān hòu, duōduōshǎoshǎo hái shōule yìxiē.",
+     "vn": "Mùa xuân gặp mưa đá, đào nhà người khác đều mất mùa; vườn nhà tôi ở sau núi nên ít nhiều vẫn thu hoạch được một ít."
+    },
+    {
+     "zh": "在火车开动的一刹那，我才发现，尽管自己很想去外面闯荡，可离开父母多多少少还是让自己有些感伤。",
+     "py": "Zài huǒchē kāidòng de yíchànà, wǒ cái fāxiàn, jǐnguǎn zìjǐ hěn xiǎng qù wàimiàn chuǎngdàng, kě líkāi fùmǔ duōduōshǎoshǎo háishi ràng zìjǐ yǒuxiē gǎnshāng.",
+     "vn": "Vào khoảnh khắc đoàn tàu lăn bánh, tôi mới nhận ra: dù rất muốn ra ngoài bươn chải, nhưng xa bố mẹ ít nhiều vẫn khiến mình có chút buồn."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "虽然没什么胃口，但我多多少少吃了很多。",
+     "why": "多多少少 nhấn \"ít nhiều, một chút\" — mâu thuẫn với 很多; phía sau thường là lượng nhỏ: 一点儿 / 一些.",
+     "right": "虽然没什么胃口，但我多多少少还是吃了一点儿。"
+    },
+    {
+     "wrong": "这本书对我多多少少很有帮助。",
+     "why": "多多少少 không đi với phó từ chỉ mức độ cao (很 / 非常); dùng 有些 / 有一点儿.",
+     "right": "这本书对我多多少少有些帮助。"
+    }
+   ]
+  }
+ ]
+}

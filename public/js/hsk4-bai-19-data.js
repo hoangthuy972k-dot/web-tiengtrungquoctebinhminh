@@ -1,0 +1,3629 @@
+// ══════════════════════════════════════════
+// DATA — HSK4 Bài 19: 生活的味道 (Mùi vị của cuộc sống)
+// Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
+// ══════════════════════════════════════════
+var vocabData = [
+  {
+    "n": 1,
+    "zh": "学期",
+    "py": "xuéqī",
+    "pos": "Danh từ",
+    "vn": "học kỳ",
+    "hv": "học kỳ",
+    "em": "📚",
+    "lesson": 1,
+    "explain": [
+      "Một kỳ học. 下个学期, 这个学期, 上学期."
+    ],
+    "usage": "下个学期, 这个学期, 一个学期.",
+    "collo": [
+      "下个学期",
+      "这个学期",
+      "新学期"
+    ],
+    "ex_zh": "老师，您好！我希望下个学期在这里继续学习，请问还需要重新申请吗？",
+    "ex_py": "Lǎoshī, nín hǎo! Wǒ xīwàng xià ge xuéqī zài zhèli jìxù xuéxí, qǐngwèn hái xūyào chóngxīn shēnqǐng ma?",
+    "ex_vn": "Chào thầy! Em muốn học kỳ sau tiếp tục học ở đây, xin hỏi có cần đăng ký lại không?",
+    "exList": [
+      {
+        "zh": "老师，您好！我希望下个学期在这里继续学习，请问还需要重新申请吗？",
+        "py": "Lǎoshī, nín hǎo! Wǒ xīwàng xià ge xuéqī zài zhèli jìxù xuéxí, qǐngwèn hái xūyào chóngxīn shēnqǐng ma?",
+        "vn": "Chào thầy! Em muốn học kỳ sau tiếp tục học ở đây, xin hỏi có cần đăng ký lại không?"
+      },
+      {
+        "zh": "这个学期的课比上个学期难多了。",
+        "py": "Zhège xuéqī de kè bǐ shàng ge xuéqī nán duō le.",
+        "vn": "Bài học kỳ này khó hơn kỳ trước nhiều."
+      },
+      {
+        "zh": "新学期开始了，我打算养成课前预习的习惯。",
+        "py": "Xīn xuéqī kāishǐ le, wǒ dǎsuàn yǎngchéng kè qián yùxí de xíguàn.",
+        "vn": "Học kỳ mới bắt đầu, tôi định hình thành thói quen chuẩn bị bài trước."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "期",
+        "p": "qī",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "其 trái → 月 phải",
+        "rad": "月 (nguyệt)",
+        "mean": "kỳ",
+        "tip": "其 + 月(trăng) → chu kỳ trăng → KỲ (thời gian). 学期, 星期, 日期, 到期.",
+        "cf": "其 (qí – ấy)",
+        "w": "学期 / 星期 / 日期 / 到期"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Em muốn học kỳ sau tiếp tục học ở đây, vậy có cần đăng ký lại không ạ?",
+        "answer": "我希望下个学期在这里继续学习，那还需要重新申请吗？",
+        "answerPy": "Wǒ xīwàng xià ge xuéqī zài zhèlǐ jìxù xuéxí, nà hái xūyào chóngxīn shēnqǐng ma?",
+        "note": "继续 là từ bài 13, 申请 là từ bài 13, 重新 là từ bài 2.",
+        "pair": "既然……那……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "这个学期",
+        "py": "zhège xuéqī",
+        "vn": "học kỳ này"
+      },
+      {
+        "zh": "下个学期",
+        "py": "xià gè xuéqī",
+        "vn": "học kỳ sau"
+      },
+      {
+        "zh": "新学期",
+        "py": "xīn xuéqī",
+        "vn": "học kỳ mới"
+      },
+      {
+        "zh": "一个学期",
+        "py": "yí gè xuéqī",
+        "vn": "một học kỳ"
+      },
+      {
+        "zh": "学期开始",
+        "py": "xuéqī kāishǐ",
+        "vn": "bắt đầu học kỳ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "这个 / 下个 + 学期",
+        "m": "Học kỳ này / học kỳ sau"
+      },
+      {
+        "s": "学 + 期",
+        "m": "Kỳ (期) học (学)"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "出生",
+    "py": "chūshēng",
+    "pos": "Động từ",
+    "vn": "ra đời, sinh ra",
+    "hv": "xuất sinh",
+    "em": "👶",
+    "lesson": 1,
+    "explain": [
+      "Sinh ra. 出生年月 = ngày tháng năm sinh; 出生在……; 出生那天."
+    ],
+    "usage": "出生年月, 出生在北京, 出生那天.",
+    "collo": [
+      "出生年月",
+      "同一天出生",
+      "出生地"
+    ],
+    "ex_zh": "给你表格，出生年月、性别、护照号码都要填，还有联系地址、联系电话。",
+    "ex_py": "Gěi nǐ biǎogé, chūshēng nián yuè, xìngbié, hùzhào hàomǎ dōu yào tián, hái yǒu liánxì dìzhǐ, liánxì diànhuà.",
+    "ex_vn": "Đây là mẫu đơn, ngày tháng năm sinh, giới tính, số hộ chiếu đều phải điền, còn địa chỉ và điện thoại liên lạc.",
+    "exList": [
+      {
+        "zh": "给你表格，出生年月、性别、护照号码都要填，还有联系地址、联系电话。",
+        "py": "Gěi nǐ biǎogé, chūshēng nián yuè, xìngbié, hùzhào hàomǎ dōu yào tián, hái yǒu liánxì dìzhǐ, liánxì diànhuà.",
+        "vn": "Đây là mẫu đơn, ngày tháng năm sinh, giới tính, số hộ chiếu đều phải điền, còn địa chỉ và điện thoại liên lạc."
+      },
+      {
+        "zh": "他和弟弟同一天出生，兄弟俩长得很像。",
+        "py": "Tā hé dìdi tóng yì tiān chūshēng, xiōngdì liǎ zhǎng de hěn xiàng.",
+        "vn": "Anh ấy và em trai sinh cùng ngày, hai anh em rất giống nhau."
+      },
+      {
+        "zh": "我妹妹出生那天，正好下了一场大雪。",
+        "py": "Wǒ mèimei chūshēng nà tiān, zhènghǎo xiàle yì cháng dà xuě.",
+        "vn": "Ngày em gái tôi sinh ra, vừa đúng có trận tuyết lớn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "生",
+        "p": "shēng",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 5,
+        "ord": "丿 → 一 → 一 → 丨 → 一",
+        "rad": "生 (sinh)",
+        "mean": "sinh",
+        "tip": "Hình cây mọc từ đất → SINH RA. 出生, 生日, 学生, 生活, 生命.",
+        "cf": "牛 (niú – trâu bò)",
+        "w": "出生 / 生日 / 生活 / 生命"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không những ngày tháng năm sinh và giới tính, mà cả số hộ chiếu cũng phải điền.",
+        "answer": "不但出生年月、性别要填，而且护照号码也要填。",
+        "answerPy": "Búdàn chūshēng niányuè, xìngbié yào tián, érqiě hùzhào hàomǎ yě yào tián.",
+        "note": "号码 là từ bài 16.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "出生年月",
+        "py": "chūshēng nián yuè",
+        "vn": "ngày tháng năm sinh"
+      },
+      {
+        "zh": "同一天出生",
+        "py": "tóng yì tiān chūshēng",
+        "vn": "sinh cùng ngày"
+      },
+      {
+        "zh": "出生地",
+        "py": "chūshēng de",
+        "vn": "nơi sinh"
+      },
+      {
+        "zh": "出生在北京",
+        "py": "chūshēng zài Běijīng",
+        "vn": "sinh ra ở Bắc Kinh"
+      },
+      {
+        "zh": "出生于1990年",
+        "py": "chūshēng yú nián",
+        "vn": "sinh năm 1990"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "出生 + 在 / 于 + nơi chốn, thời gian",
+        "m": "Sinh ra ở đâu, năm nào"
+      },
+      {
+        "s": "出生 ≠ 生活",
+        "m": "出生 là sự kiện ra đời; 生活 là đời sống"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "性别",
+    "py": "xìngbié",
+    "pos": "Danh từ",
+    "vn": "giới tính",
+    "hv": "tính biệt",
+    "em": "⚧️",
+    "lesson": 1,
+    "explain": [
+      "Nam hay nữ. 填性别, 性别：男/女. 性 trong 性格 (Bài 8)."
+    ],
+    "usage": "填性别, 性别：男, 不分性别.",
+    "collo": [
+      "出生年月、性别",
+      "填好姓名、性别",
+      "不管性别"
+    ],
+    "ex_zh": "出生年月、性别、护照号码都要填。",
+    "ex_py": "Chūshēng nián yuè, xìngbié, hùzhào hàomǎ dōu yào tián.",
+    "ex_vn": "Ngày tháng năm sinh, giới tính, số hộ chiếu đều phải điền.",
+    "exList": [
+      {
+        "zh": "出生年月、性别、护照号码都要填，还有联系地址、联系电话。",
+        "py": "Chūshēng nián yuè, xìngbié, hùzhào hàomǎ dōu yào tián, hái yǒu liánxì dìzhǐ, liánxì diànhuà.",
+        "vn": "Ngày tháng năm sinh, giới tính, số hộ chiếu đều phải điền, còn địa chỉ và điện thoại liên lạc."
+      },
+      {
+        "zh": "请在表格上填好姓名、性别、年龄、职业等，然后再给我们传真过来。",
+        "py": "Qǐng zài biǎogé shang tiánhǎo xìngmíng, xìngbié, niánlíng, zhíyè děng, ránhòu zài gěi wǒmen chuánzhēn guòlai.",
+        "vn": "Hãy điền họ tên, giới tính, tuổi, nghề nghiệp vào mẫu đơn, rồi fax cho chúng tôi."
+      },
+      {
+        "zh": "这个工作不分性别，男女都可以申请。",
+        "py": "Zhège gōngzuò bù fēn xìngbié, nánnǚ dōu kěyǐ shēnqǐng.",
+        "vn": "Công việc này không phân biệt giới tính, nam nữ đều có thể ứng tuyển."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "性",
+        "p": "xìng",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "忄 trái → 生 phải",
+        "rad": "忄 (tâm)",
+        "mean": "tính",
+        "tip": "Tâm 忄 + 生(sinh) → bản tính sinh ra → TÍNH. 性别 = giới tính; 性格 (Bài 8); 积极性 (Bài 15).",
+        "cf": "姓 (xìng – họ, bộ 女)",
+        "w": "性别 / 性格 / 积极性"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hãy điền họ tên, giới tính, tuổi, nghề nghiệp vào mẫu đơn trước, rồi fax cho chúng tôi.",
+        "answer": "请先在表格上填好姓名、性别、年龄、职业等，然后再给我们传真过来。",
+        "answerPy": "Qǐng xiān zài biǎogé shang tián hǎo xìngmíng, xìngbié, niánlíng, zhíyè děng, ránhòu zài gěi wǒmen chuánzhēn guolai.",
+        "note": "表格 và 传真 đều là từ bài 16; 等 là từ bài 10.",
+        "pair": "先……然后……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "填写性别",
+        "py": "tián xiě xìngbié",
+        "vn": "điền giới tính"
+      },
+      {
+        "zh": "姓名、性别",
+        "py": "xìngmíng xìngbié",
+        "vn": "họ tên, giới tính"
+      },
+      {
+        "zh": "不管性别",
+        "py": "bùguǎn xìngbié",
+        "vn": "bất kể giới tính"
+      },
+      {
+        "zh": "性别不同",
+        "py": "xìngbié bù tóng",
+        "vn": "giới tính khác nhau"
+      },
+      {
+        "zh": "出生年月、性别",
+        "py": "chūshēng nián yuè xìngbié",
+        "vn": "ngày sinh, giới tính"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "姓名、性别、年龄 + 等",
+        "m": "Các mục trong mẫu đơn — 等 là từ bài 10"
+      },
+      {
+        "s": "性 + 别",
+        "m": "Phân (别) theo giống (性)"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "道歉",
+    "py": "dào qiàn",
+    "pos": "Động từ",
+    "vn": "xin lỗi",
+    "hv": "đạo khiểm",
+    "em": "🙏",
+    "lesson": 1,
+    "explain": [
+      "Nhận lỗi, xin lỗi (trang trọng). Động từ ly hợp: 向……道歉, 道个歉. So sánh 抱歉 (Bài 14: áy náy)."
+    ],
+    "usage": "向他道歉, 不用道歉, 道个歉.",
+    "collo": [
+      "不用道歉",
+      "向您道歉",
+      "主动向他道歉"
+    ],
+    "ex_zh": "没关系，不用道歉，谁都有粗心填错的时候。",
+    "ex_py": "Méi guānxi, búyòng dào qiàn, shéi dōu yǒu cūxīn tiáncuò de shíhou.",
+    "ex_vn": "Không sao, không cần xin lỗi, ai cũng có lúc cẩu thả điền sai.",
+    "exList": [
+      {
+        "zh": "没关系，不用道歉，谁都有粗心填错的时候。",
+        "py": "Méi guānxi, búyòng dào qiàn, shéi dōu yǒu cūxīn tiáncuò de shíhou.",
+        "vn": "Không sao, không cần xin lỗi, ai cũng có lúc cẩu thả điền sai."
+      },
+      {
+        "zh": "A：我是专门来向您道歉的，我真的觉得很对不起您。B：没关系，过去的事情就让它过去吧。",
+        "py": "A: Wǒ shì zhuānmén lái xiàng nín dào qiàn de, wǒ zhēn de juéde hěn duìbuqǐ nín. B: Méi guānxi, guòqù de shìqing jiù ràng tā guòqù ba.",
+        "vn": "A: Tôi đặc biệt đến xin lỗi ngài, tôi thật sự thấy có lỗi. B: Không sao, chuyện đã qua cứ để nó qua."
+      },
+      {
+        "zh": "既然知道是你错了，那你就该主动向他道歉。",
+        "py": "Jìrán zhīdào shì nǐ cuò le, nà nǐ jiù gāi zhǔdòng xiàng tā dào qiàn.",
+        "vn": "Đã biết là bạn sai, thì bạn nên chủ động xin lỗi anh ấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "歉",
+        "p": "qiàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 14,
+        "ord": "兼 trái → 欠 phải",
+        "rad": "欠 (khiếm)",
+        "mean": "áy náy",
+        "tip": "兼 + 欠(thiếu nợ) → cảm thấy còn nợ → ÁY NÁY. 道歉 = nói lời xin lỗi; 抱歉 (Bài 14).",
+        "cf": "谦 (qiān – khiêm)",
+        "w": "道歉 / 抱歉"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đã biết là bạn sai, thì bạn nên chủ động xin lỗi anh ấy.",
+        "answer": "既然知道是你错了，那你就该主动向他道歉。",
+        "answerPy": "Jìrán zhīdào shì nǐ cuò le, nà nǐ jiù gāi zhǔdòng xiàng tā dào qiàn.",
+        "note": "既然……就 (Bài 14), 主动 (Bài 8), 向 (Bài 2).",
+        "pair": "既然……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "向他道歉",
+        "py": "xiàng tā dào qiàn",
+        "vn": "xin lỗi anh ấy"
+      },
+      {
+        "zh": "不用道歉",
+        "py": "bú yòng dào qiàn",
+        "vn": "không cần xin lỗi"
+      },
+      {
+        "zh": "主动道歉",
+        "py": "zhǔdòng dào qiàn",
+        "vn": "chủ động xin lỗi"
+      },
+      {
+        "zh": "道了歉",
+        "py": "dào le qiàn",
+        "vn": "đã xin lỗi"
+      },
+      {
+        "zh": "应该道歉",
+        "py": "yīnggāi dào qiàn",
+        "vn": "nên xin lỗi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "向 + ai + 道歉",
+        "m": "Xin lỗi ai — 道歉 là từ ly hợp: 道了歉 ✓"
+      },
+      {
+        "s": "道歉 ≈ 抱歉 (bài 14)",
+        "m": "道歉 là hành động; 抱歉 là cảm giác áy náy"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "打印",
+    "py": "dǎyìn",
+    "pos": "Động từ",
+    "vn": "in",
+    "hv": "đả ấn",
+    "em": "🖨️",
+    "lesson": 1,
+    "explain": [
+      "In ra giấy từ máy tính. 打印一份, 打印材料, 打印机."
+    ],
+    "usage": "重新打印一份, 打印材料, 负责打印.",
+    "collo": [
+      "重新打印一份",
+      "负责打印会议材料",
+      "打印出来"
+    ],
+    "ex_zh": "申请表都被别人拿走了，我给你重新打印一份，你等一下。",
+    "ex_py": "Shēnqǐngbiǎo dōu bèi biérén názǒu le, wǒ gěi nǐ chóngxīn dǎyìn yí fèn, nǐ děng yíxià.",
+    "ex_vn": "Đơn đăng ký bị người khác lấy hết rồi, tôi in lại cho em một bản, đợi chút.",
+    "exList": [
+      {
+        "zh": "申请表都被别人拿走了，我给你重新打印一份，你等一下。",
+        "py": "Shēnqǐngbiǎo dōu bèi biérén názǒu le, wǒ gěi nǐ chóngxīn dǎyìn yí fèn, nǐ děng yíxià.",
+        "vn": "Đơn đăng ký bị người khác lấy hết rồi, tôi in lại cho em một bản, đợi chút."
+      },
+      {
+        "zh": "A：明天几点到？八点来得及来不及？B：提前点儿吧，咱们还得负责打印会议材料呢。",
+        "py": "A: Míngtiān jǐ diǎn dào? Bā diǎn láidejí láibují? B: Tíqián diǎnr ba, zánmen hái děi fùzé dǎyìn huìyì cáiliào ne.",
+        "vn": "A: Mai mấy giờ đến? 8 giờ kịp không? B: Sớm hơn chút, chúng ta còn phải phụ trách in tài liệu họp."
+      },
+      {
+        "zh": "这篇文章你打印出来，我想仔细看看。",
+        "py": "Zhè piān wénzhāng nǐ dǎyìn chūlai, wǒ xiǎng zǐxì kànkan.",
+        "vn": "Bài văn này bạn in ra, tôi muốn xem kỹ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "印",
+        "p": "yìn",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "𠂆 trái → 卩 phải",
+        "rad": "卩 (tiết)",
+        "mean": "in, dấu",
+        "tip": "Hình tay ấn con dấu 卩 → IN, ẤN. 打印 = in; 复印 = photocopy; 印象 (Bài 6).",
+        "cf": "卯 (mǎo)",
+        "w": "打印 / 复印 / 印象"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì đơn đăng ký bị người khác lấy hết rồi, nên tôi in lại cho em một bản.",
+        "answer": "因为申请表都被别人拿走了，所以我给你重新打印一份。",
+        "answerPy": "Yīnwèi shēnqǐngbiǎo dōu bèi biéren ná zǒu le, suǒyǐ wǒ gěi nǐ chóngxīn dǎyìn yí fèn.",
+        "note": "打印 là in từ máy tính; 复印 là photo bản có sẵn.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "打印一份",
+        "py": "dǎyìn yí fèn",
+        "vn": "in một bản"
+      },
+      {
+        "zh": "重新打印",
+        "py": "chóngxīn dǎyìn",
+        "vn": "in lại"
+      },
+      {
+        "zh": "打印材料",
+        "py": "dǎyìn cáiliào",
+        "vn": "in tài liệu"
+      },
+      {
+        "zh": "打印出来",
+        "py": "dǎyìn chū lái",
+        "vn": "in ra"
+      },
+      {
+        "zh": "负责打印",
+        "py": "fùzé dǎyìn",
+        "vn": "phụ trách việc in"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "打印 + 一份 + N",
+        "m": "In một bản cái gì — 份 là từ bài 4"
+      },
+      {
+        "s": "打印 ≠ 复印",
+        "m": "打印 là in từ máy tính; 复印 là photo bản có sẵn"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "复印",
+    "py": "fùyìn",
+    "pos": "Động từ",
+    "vn": "photocopy, sao chụp",
+    "hv": "phục ấn",
+    "em": "📄",
+    "lesson": 1,
+    "explain": [
+      "Sao chụp tài liệu. 复印护照, 复印一下, 复印件."
+    ],
+    "usage": "把护照复印一下, 复印材料, 复印件.",
+    "collo": [
+      "把护照复印一下",
+      "复印一份",
+      "复印店"
+    ],
+    "ex_zh": "请把你的护照给我，我们要把护照复印一下。",
+    "ex_py": "Qǐng bǎ nǐ de hùzhào gěi wǒ, wǒmen yào bǎ hùzhào fùyìn yíxià.",
+    "ex_vn": "Đưa hộ chiếu cho tôi, chúng tôi cần photo hộ chiếu.",
+    "exList": [
+      {
+        "zh": "请把你的护照给我，我们要把护照复印一下。",
+        "py": "Qǐng bǎ nǐ de hùzhào gěi wǒ, wǒmen yào bǎ hùzhào fùyìn yíxià.",
+        "vn": "Đưa hộ chiếu cho tôi, chúng tôi cần photo hộ chiếu."
+      },
+      {
+        "zh": "办签证需要复印护照和成绩证明。",
+        "py": "Bàn qiānzhèng xūyào fùyìn hùzhào hé chéngjì zhèngmíng.",
+        "vn": "Làm visa cần photo hộ chiếu và bảng điểm."
+      },
+      {
+        "zh": "学校门口有一家复印店，复印一张只要一毛钱。",
+        "py": "Xuéxiào ménkǒu yǒu yì jiā fùyìndiàn, fùyìn yì zhāng zhǐ yào yì máo qián.",
+        "vn": "Cổng trường có tiệm photo, photo một trang chỉ một hào."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "复",
+        "p": "fù",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "𠂉 → 日 → 夂",
+        "rad": "夂 (trĩ)",
+        "mean": "lặp lại",
+        "tip": "Giản thể của 復/複 → LẶP LẠI, PHỤC. 复印 = in lại = photo; 复习 = ôn tập; 重复.",
+        "cf": "夏 (xià – hè)",
+        "w": "复印 / 复习 / 重复"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Làm visa không những cần photo hộ chiếu, mà còn cần cả bảng điểm.",
+        "answer": "办签证不但需要复印护照，而且还需要复印成绩证明。",
+        "answerPy": "Bàn qiānzhèng búdàn xūyào fùyìn hùzhào, érqiě hái xūyào fùyìn chéngjì zhèngmíng.",
+        "note": "签证 là từ bài 16, 证明 là từ bài 8.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "复印一份",
+        "py": "fùyìn yí fèn",
+        "vn": "photo một bản"
+      },
+      {
+        "zh": "把护照复印一下",
+        "py": "bǎ hùzhào fùyìn yíxià",
+        "vn": "photo hộ chiếu"
+      },
+      {
+        "zh": "复印店",
+        "py": "fùyìn diàn",
+        "vn": "tiệm photocopy"
+      },
+      {
+        "zh": "复印材料",
+        "py": "fùyìn cáiliào",
+        "vn": "photo hồ sơ"
+      },
+      {
+        "zh": "复印好了",
+        "py": "fùyìn hǎo le",
+        "vn": "photo xong rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 复印 + 一下",
+        "m": "Photo cái gì một bản"
+      },
+      {
+        "s": "复 + 印",
+        "m": "In (印) lại (复)"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "饺子",
+    "py": "jiǎozi",
+    "pos": "Danh từ",
+    "vn": "bánh chẻo, sủi cảo",
+    "hv": "giảo tử",
+    "em": "🥟",
+    "lesson": 2,
+    "explain": [
+      "Món ăn truyền thống. 包饺子 (Bài 3), 羊肉饺子, 吃饺子."
+    ],
+    "usage": "包饺子, 羊肉饺子, 吃饺子.",
+    "collo": [
+      "做羊肉饺子",
+      "包饺子",
+      "吃不上饺子"
+    ],
+    "ex_zh": "没关系，我想给你做点儿羊肉饺子，刚才用刀切肉的时候把手弄破了。",
+    "ex_py": "Méi guānxi, wǒ xiǎng gěi nǐ zuò diǎnr yángròu jiǎozi, gāngcái yòng dāo qiē ròu de shíhou bǎ shǒu nòngpò le.",
+    "ex_vn": "Không sao, em muốn làm chút sủi cảo thịt dê cho anh, vừa rồi dùng dao thái thịt làm đứt tay.",
+    "exList": [
+      {
+        "zh": "没关系，我想给你做点儿羊肉饺子，刚才用刀切肉的时候把手弄破了。",
+        "py": "Méi guānxi, wǒ xiǎng gěi nǐ zuò diǎnr yángròu jiǎozi, gāngcái yòng dāo qiē ròu de shíhou bǎ shǒu nòngpò le.",
+        "vn": "Không sao, em muốn làm chút sủi cảo thịt dê cho anh, vừa rồi dùng dao thái thịt làm đứt tay."
+      },
+      {
+        "zh": "看来今天吃不上羊肉饺子了。",
+        "py": "Kànlái jīntiān chībushàng yángròu jiǎozi le.",
+        "vn": "Xem ra hôm nay không ăn được sủi cảo thịt dê rồi."
+      },
+      {
+        "zh": "北方人过年时爱吃饺子，全家人坐在一起包饺子。",
+        "py": "Běifāng rén guò nián shí ài chī jiǎozi, quán jiā rén zuò zài yìqǐ bāo jiǎozi.",
+        "vn": "Người miền Bắc Tết thích ăn sủi cảo, cả nhà ngồi gói sủi cảo."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "饺",
+        "p": "jiǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "饣 trái → 交 phải",
+        "rad": "饣 (thực)",
+        "mean": "sủi cảo",
+        "tip": "Bộ ăn 饣 + 交(giao) → hai mép bột GIAO nhau → SỦI CẢO.",
+        "cf": "校 (xiào – trường)",
+        "w": "饺子 / 包饺子 / 水饺"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tay bị đứt rồi, nên xem ra hôm nay không ăn được sủi cảo thịt dê.",
+        "answer": "因为手弄破了，所以看来今天吃不上羊肉饺子了。",
+        "answerPy": "Yīnwèi shǒu nòng pò le, suǒyǐ kànlái jīntiān chī bu shàng yángròu jiǎozi le.",
+        "note": "V + 不上 — không được hưởng, không kịp có.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "包饺子",
+        "py": "bāo jiǎozi",
+        "vn": "gói sủi cảo"
+      },
+      {
+        "zh": "吃饺子",
+        "py": "chī jiǎozi",
+        "vn": "ăn sủi cảo"
+      },
+      {
+        "zh": "羊肉饺子",
+        "py": "yángròu jiǎozi",
+        "vn": "sủi cảo thịt dê"
+      },
+      {
+        "zh": "一盘饺子",
+        "py": "yì pán jiǎozi",
+        "vn": "một đĩa sủi cảo"
+      },
+      {
+        "zh": "饺子很香",
+        "py": "jiǎozi hěn xiāng",
+        "vn": "sủi cảo rất thơm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "包 + 饺子",
+        "m": "Gói sủi cảo — dùng động từ 包"
+      },
+      {
+        "s": "loại nhân + 饺子",
+        "m": "羊肉饺子, 白菜饺子 — sủi cảo nhân gì"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "刀",
+    "py": "dāo",
+    "pos": "Danh từ",
+    "vn": "con dao",
+    "hv": "đao",
+    "em": "🔪",
+    "lesson": 2,
+    "explain": [
+      "Dụng cụ cắt. 一把刀, 用刀切, 刀子."
+    ],
+    "usage": "用刀切肉, 一把刀, 小心刀.",
+    "collo": [
+      "用刀切肉",
+      "一把刀",
+      "刀很快"
+    ],
+    "ex_zh": "刚才用刀切肉的时候把手弄破了。",
+    "ex_py": "Gāngcái yòng dāo qiē ròu de shíhou bǎ shǒu nòngpò le.",
+    "ex_vn": "Vừa rồi dùng dao thái thịt làm đứt tay.",
+    "exList": [
+      {
+        "zh": "刚才用刀切肉的时候把手弄破了。",
+        "py": "Gāngcái yòng dāo qiē ròu de shíhou bǎ shǒu nòngpò le.",
+        "vn": "Vừa rồi dùng dao thái thịt làm đứt tay."
+      },
+      {
+        "zh": "这把刀很快，用的时候千万小心。",
+        "py": "Zhè bǎ dāo hěn kuài, yòng de shíhou qiānwàn xiǎoxīn.",
+        "vn": "Con dao này rất sắc, khi dùng tuyệt đối cẩn thận."
+      },
+      {
+        "zh": "乘坐飞机时，刀不能带上飞机。",
+        "py": "Chéngzuò fēijī shí, dāo bù néng dàishàng fēijī.",
+        "vn": "Khi đi máy bay, dao không được mang lên máy bay."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "刀",
+        "p": "dāo",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 2,
+        "ord": "𠃌 → 丿",
+        "rad": "刀 (đao)",
+        "mean": "dao",
+        "tip": "Tượng hình con DAO. Là bộ thủ 刂 trong 别, 到, 剧 (Bài 13), 剩 (Bài 17).",
+        "cf": "力 (lì – sức)",
+        "w": "刀 / 刀子 / 剪刀"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Con dao này rất sắc, khi dùng nhất định phải cẩn thận, nếu không lại đứt tay.",
+        "answer": "这把刀很快，用的时候千万小心，不然又把手弄破了。",
+        "answerPy": "Zhè bǎ dāo hěn kuài, yòng de shíhou qiānwàn xiǎoxīn, bùrán yòu bǎ shǒu nòng pò le.",
+        "note": "千万 là từ bài 15; 快 ở đây nghĩa là \"sắc\".",
+        "pair": "不然……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一把刀",
+        "py": "yì bǎ dāo",
+        "vn": "một con dao"
+      },
+      {
+        "zh": "用刀切肉",
+        "py": "yòng dāo qiè ròu",
+        "vn": "dùng dao thái thịt"
+      },
+      {
+        "zh": "刀很快",
+        "py": "dāo hěn kuài",
+        "vn": "dao rất sắc"
+      },
+      {
+        "zh": "小心刀",
+        "py": "xiǎoxīn dāo",
+        "vn": "cẩn thận dao"
+      },
+      {
+        "zh": "刀和叉",
+        "py": "dāo hé chā",
+        "vn": "dao và nĩa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 把 + 刀",
+        "m": "Lượng từ 把 cho vật có cán — cùng kiểu 一把勺子 (bài 12)"
+      },
+      {
+        "s": "刀 + 快 / 钝",
+        "m": "Dao sắc / cùn — 快 ở đây nghĩa \"sắc\""
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "破",
+    "py": "pò",
+    "pos": "Tính từ",
+    "vn": "bị đứt, bị thủng, rách",
+    "hv": "phá",
+    "em": "🩹",
+    "lesson": 2,
+    "explain": [
+      "Rách, vỡ, đứt. Thường làm bổ ngữ kết quả: 弄破, 撞破, 破了."
+    ],
+    "usage": "把手弄破了, 衣服破了, 破了一个洞.",
+    "collo": [
+      "把手弄破了",
+      "衣服破了",
+      "杯子打破了"
+    ],
+    "ex_zh": "刚才用刀切肉的时候把手弄破了。",
+    "ex_py": "Gāngcái yòng dāo qiē ròu de shíhou bǎ shǒu nòngpò le.",
+    "ex_vn": "Vừa rồi dùng dao thái thịt làm đứt tay.",
+    "exList": [
+      {
+        "zh": "刚才用刀切肉的时候把手弄破了。",
+        "py": "Gāngcái yòng dāo qiē ròu de shíhou bǎ shǒu nòngpò le.",
+        "vn": "Vừa rồi dùng dao thái thịt làm đứt tay."
+      },
+      {
+        "zh": "这件衬衫破了一个洞，不能穿了。",
+        "py": "Zhè jiàn chènshān pòle yí ge dòng, bù néng chuān le.",
+        "vn": "Chiếc sơ mi này rách một lỗ, không mặc được nữa."
+      },
+      {
+        "zh": "小心点儿，别把杯子打破了。",
+        "py": "Xiǎoxīn diǎnr, bié bǎ bēizi dǎpò le.",
+        "vn": "Cẩn thận, đừng làm vỡ cốc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "破",
+        "p": "pò",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "石 trái → 皮 phải",
+        "rad": "石 (thạch)",
+        "mean": "vỡ, rách",
+        "tip": "Đá 石 + 皮(da) → đá làm rách da → VỠ, RÁCH, PHÁ. 弄破, 打破, 破坏.",
+        "cf": "皮 (pí – da)",
+        "w": "破 / 弄破 / 打破 / 破坏"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cẩn thận một chút, nếu không lại làm vỡ cốc mất.",
+        "answer": "小心点儿，不然就把杯子打破了。",
+        "answerPy": "Xiǎoxīn diǎnr, bùrán jiù bǎ bēizi dǎ pò le.",
+        "note": "Câu chữ 把: 把 + tân ngữ + 打破.",
+        "pair": "不然……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "弄破了",
+        "py": "nòng pò le",
+        "vn": "làm rách, làm xước"
+      },
+      {
+        "zh": "衣服破了",
+        "py": "yīfu pò le",
+        "vn": "áo rách rồi"
+      },
+      {
+        "zh": "打破杯子",
+        "py": "dǎ pò bēizi",
+        "vn": "làm vỡ cốc"
+      },
+      {
+        "zh": "手破了",
+        "py": "shǒu pò le",
+        "vn": "tay bị xước"
+      },
+      {
+        "zh": "破的地方",
+        "py": "pò de dìfang",
+        "vn": "chỗ rách"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 弄破 / 打破",
+        "m": "Làm rách, làm vỡ cái gì — 弄 là từ bài 15"
+      },
+      {
+        "s": "破 dùng cho đứt, rách, thủng, vỡ"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "脱",
+    "py": "tuō",
+    "pos": "Động từ",
+    "vn": "cởi ra",
+    "hv": "thoát",
+    "em": "👕",
+    "lesson": 2,
+    "explain": [
+      "Cởi (quần áo, giày). Trái nghĩa: 穿. 脱衣服, 脱鞋, 脱下来."
+    ],
+    "usage": "把衣服脱下来, 脱鞋, 脱掉一件.",
+    "collo": [
+      "把衣服脱下来",
+      "脱掉一件",
+      "脱鞋"
+    ],
+    "ex_zh": "衣服上也有一点儿血，你把衣服脱下来，我给你洗洗。",
+    "ex_py": "Yīfu shang yě yǒu yìdiǎnr xiě, nǐ bǎ yīfu tuō xiàlai, wǒ gěi nǐ xǐxi.",
+    "ex_vn": "Trên áo cũng có chút máu, em cởi áo ra, anh giặt cho.",
+    "exList": [
+      {
+        "zh": "衣服上也有一点儿血，你把衣服脱下来，我给你洗洗。",
+        "py": "Yīfu shang yě yǒu yìdiǎnr xiě, nǐ bǎ yīfu tuō xiàlai, wǒ gěi nǐ xǐxi.",
+        "vn": "Trên áo cũng có chút máu, em cởi áo ra, anh giặt cho."
+      },
+      {
+        "zh": "A：今天很暖和，外面一点儿也不冷。B：好的，那我脱掉一件。",
+        "py": "A: Jīntiān hěn nuǎnhuo, wàimiàn yìdiǎnr yě bù lěng. B: Hǎo de, nà wǒ tuōdiào yí jiàn.",
+        "vn": "A: Hôm nay ấm, ngoài không lạnh chút nào. B: Được, vậy tôi cởi bớt một cái."
+      },
+      {
+        "zh": "进日本人的家要先脱鞋。",
+        "py": "Jìn Rìběn rén de jiā yào xiān tuō xié.",
+        "vn": "Vào nhà người Nhật phải cởi giày trước."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "脱",
+        "p": "tuō",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "月 trái → 兑 phải",
+        "rad": "月 (nhục)",
+        "mean": "cởi",
+        "tip": "Thịt 月 + 兑 → tách khỏi cơ thể → CỞI, THOÁT. 脱衣服, 脱鞋, 脱掉.",
+        "cf": "说 (shuō – nói, cũng có 兑)",
+        "w": "脱 / 脱掉 / 脱鞋"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trên áo cũng dính chút máu, em cởi áo ra thì anh giặt cho.",
+        "answer": "衣服上也有一点儿血，你把衣服脱下来，我就给你洗洗。",
+        "answerPy": "Yīfu shang yě yǒu yìdiǎnr xiě, nǐ bǎ yīfu tuō xialai, wǒ jiù gěi nǐ xǐxi.",
+        "note": "流血 là từ bài 7; 脱 ↔ 穿 / 戴.",
+        "pair": "……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "脱衣服",
+        "py": "tuō yīfu",
+        "vn": "cởi áo"
+      },
+      {
+        "zh": "脱鞋",
+        "py": "tuō xié",
+        "vn": "cởi giày"
+      },
+      {
+        "zh": "把衣服脱下来",
+        "py": "bǎ yīfu tuō xiàlái",
+        "vn": "cởi áo ra"
+      },
+      {
+        "zh": "脱掉一件",
+        "py": "tuō diào yí jiàn",
+        "vn": "cởi bớt một cái"
+      },
+      {
+        "zh": "脱了外套",
+        "py": "tuō le wài tào",
+        "vn": "đã cởi áo khoác"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 脱下来",
+        "m": "Cởi cái gì ra"
+      },
+      {
+        "s": "脱 ↔ 穿 / 戴",
+        "m": "Cởi ↔ mặc / đeo"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "理发",
+    "py": "lǐ fà",
+    "pos": "Động từ",
+    "vn": "cắt tóc",
+    "hv": "lý phát",
+    "em": "💇",
+    "lesson": 2,
+    "explain": [
+      "Cắt/làm tóc. Động từ ly hợp: 理了发, 该理发了. 理发店, 理发师."
+    ],
+    "usage": "理发店, 该理发了, 去理发.",
+    "collo": [
+      "我常去的那家理发店",
+      "该理发了",
+      "理发师技术不错"
+    ],
+    "ex_zh": "我常去的那家理发店附近有个餐厅，那里的包子很好吃。",
+    "ex_py": "Wǒ cháng qù de nà jiā lǐfàdiàn fùjìn yǒu ge cāntīng, nàli de bāozi hěn hǎochī.",
+    "ex_vn": "Gần tiệm cắt tóc tôi hay đi có một nhà hàng, bánh bao ở đó rất ngon.",
+    "exList": [
+      {
+        "zh": "我常去的那家理发店附近有个餐厅，那里的包子很好吃，我一会儿去买一点儿。",
+        "py": "Wǒ cháng qù de nà jiā lǐfàdiàn fùjìn yǒu ge cāntīng, nàli de bāozi hěn hǎochī, wǒ yíhuìr qù mǎi yìdiǎnr.",
+        "vn": "Gần tiệm cắt tóc tôi hay đi có nhà hàng, bánh bao ở đó rất ngon, lát tôi đi mua chút."
+      },
+      {
+        "zh": "对面那条街上新开了一家理发店，听说那儿的理发师技术还不错。",
+        "py": "Duìmiàn nà tiáo jiē shang xīn kāile yì jiā lǐfàdiàn, tīngshuō nàr de lǐfàshī jìshù hái búcuò.",
+        "vn": "Phố đối diện mới mở tiệm cắt tóc, nghe nói tay nghề thợ ở đó khá tốt."
+      },
+      {
+        "zh": "我办了一张那个理发店的会员卡，理发可节约了不少钱。",
+        "py": "Wǒ bànle yì zhāng nàge lǐfàdiàn de huìyuánkǎ, lǐ fà kě jiéyuēle bù shǎo qián.",
+        "vn": "Tôi làm thẻ hội viên tiệm cắt tóc đó, cắt tóc tiết kiệm được nhiều tiền."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "理",
+        "p": "lǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "王 trái → 里 phải",
+        "rad": "王 (ngọc)",
+        "mean": "sửa, lý",
+        "tip": "Ngọc 王 + 里 → mài ngọc theo vân → SỬA SANG, LÝ. 理发 = sửa tóc; 整理 (Bài 15); 管理 (Bài 15); 理解 (Bài 8).",
+        "cf": "里 (lǐ – trong)",
+        "w": "理发 / 整理 / 管理 / 理解"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chính vì tôi làm thẻ hội viên ở tiệm cắt tóc đó, nên cắt tóc tiết kiệm được khá nhiều tiền.",
+        "answer": "正因为我办了一张那家理发店的会员卡，所以理发节约了不少钱。",
+        "answerPy": "Zhèng yīnwèi wǒ bànle yì zhāng nà jiā lǐfàdiàn de huìyuánkǎ, suǒyǐ lǐfà jiéyuēle bù shǎo qián.",
+        "note": "节约 là từ bài 12; 理发 là từ ly hợp: 理了发.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "该理发了",
+        "py": "gāi lǐ fà le",
+        "vn": "đến lúc cắt tóc rồi"
+      },
+      {
+        "zh": "理发店",
+        "py": "lǐfàdiàn",
+        "vn": "tiệm cắt tóc"
+      },
+      {
+        "zh": "理发师",
+        "py": "lǐfàshī",
+        "vn": "thợ cắt tóc"
+      },
+      {
+        "zh": "去理发",
+        "py": "qù lǐ fà",
+        "vn": "đi cắt tóc"
+      },
+      {
+        "zh": "理了发",
+        "py": "lǐ le fā",
+        "vn": "đã cắt tóc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "理 + 了 + 发",
+        "m": "理发 là từ ly hợp: 理了发 ✓ / 理发了头 ✗"
+      },
+      {
+        "s": "理发 + 店 / 师",
+        "m": "Tiệm cắt tóc, thợ cắt tóc"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "包子",
+    "py": "bāozi",
+    "pos": "Danh từ",
+    "vn": "bánh bao",
+    "hv": "bao tử",
+    "em": "🥟",
+    "lesson": 2,
+    "explain": [
+      "Bánh hấp có nhân. 买包子, 一个包子, 肉包子."
+    ],
+    "usage": "买包子, 包子很好吃, 一屉包子.",
+    "collo": [
+      "那里的包子很好吃",
+      "买包子",
+      "肉包子"
+    ],
+    "ex_zh": "那里的包子很好吃，我一会儿去买一点儿。",
+    "ex_py": "Nàli de bāozi hěn hǎochī, wǒ yíhuìr qù mǎi yìdiǎnr.",
+    "ex_vn": "Bánh bao ở đó rất ngon, lát tôi đi mua chút.",
+    "exList": [
+      {
+        "zh": "那里的包子很好吃，我一会儿去买一点儿。",
+        "py": "Nàli de bāozi hěn hǎochī, wǒ yíhuìr qù mǎi yìdiǎnr.",
+        "vn": "Bánh bao ở đó rất ngon, lát tôi đi mua chút."
+      },
+      {
+        "zh": "好吧，我衣服口袋里有十几块零钱，买包子应该够。",
+        "py": "Hǎo ba, wǒ yīfu kǒudai li yǒu shí jǐ kuài língqián, mǎi bāozi yīnggāi gòu.",
+        "vn": "Được, túi áo em có hơn chục đồng tiền lẻ, mua bánh bao chắc đủ."
+      },
+      {
+        "zh": "早饭我一般吃两个包子，喝一杯豆浆。",
+        "py": "Zǎofàn wǒ yìbān chī liǎng ge bāozi, hē yì bēi dòujiāng.",
+        "vn": "Bữa sáng tôi thường ăn hai cái bánh bao, uống một cốc sữa đậu nành."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "包",
+        "p": "bāo",
+        "type": "半包围结构 · Nửa bao quanh",
+        "st": 5,
+        "ord": "勹 bao → 巳 trong",
+        "rad": "勹 (bao)",
+        "mean": "bọc, túi",
+        "tip": "勹(bọc) + 巳 → BỌC, GÓI. 包子 = bánh bọc nhân; 包饺子 (Bài 3); 面包; 抱 (Bài 17) có 包.",
+        "cf": "抱 (bào – ôm)",
+        "w": "包子 / 包饺子 / 面包 / 书包"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Được, trong túi áo em có hơn chục đồng lẻ, chỉ cần mua bánh bao thì chắc đủ.",
+        "answer": "好吧，我衣服口袋里有十几块零钱，只要买包子就应该够。",
+        "answerPy": "Hǎo ba, wǒ yīfu kǒudài li yǒu shí jǐ kuài língqián, zhǐyào mǎi bāozi jiù yīnggāi gòu.",
+        "note": "够 là từ bài 1; 零钱 khác 现金 (bài 5).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "买包子",
+        "py": "mǎi bāozi",
+        "vn": "mua bánh bao"
+      },
+      {
+        "zh": "肉包子",
+        "py": "ròu bāozi",
+        "vn": "bánh bao nhân thịt"
+      },
+      {
+        "zh": "包子很好吃",
+        "py": "bāozi hěn hǎochī",
+        "vn": "bánh bao rất ngon"
+      },
+      {
+        "zh": "一个包子",
+        "py": "yí gè bāozi",
+        "vn": "một cái bánh bao"
+      },
+      {
+        "zh": "包子和饺子",
+        "py": "bāozi hé jiǎozi",
+        "vn": "bánh bao và sủi cảo"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "loại nhân + 包子",
+        "m": "肉包子, 菜包子 — bánh bao nhân gì"
+      },
+      {
+        "s": "包子 (có vỏ dày, hấp) ≠ 饺子 (vỏ mỏng, luộc)"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "零钱",
+    "py": "língqián",
+    "pos": "Danh từ",
+    "vn": "tiền lẻ",
+    "hv": "linh tiền",
+    "em": "🪙",
+    "lesson": 2,
+    "explain": [
+      "Tiền mệnh giá nhỏ. 零 = số không, lẻ. 带零钱, 换零钱, 十几块零钱."
+    ],
+    "usage": "带的零钱, 换零钱, 没有零钱.",
+    "collo": [
+      "十几块零钱",
+      "带的零钱应该够",
+      "换点儿零钱"
+    ],
+    "ex_zh": "我衣服口袋里有十几块零钱，买包子应该够。",
+    "ex_py": "Wǒ yīfu kǒudai li yǒu shí jǐ kuài língqián, mǎi bāozi yīnggāi gòu.",
+    "ex_vn": "Túi áo em có hơn chục đồng tiền lẻ, mua bánh bao chắc đủ.",
+    "exList": [
+      {
+        "zh": "我衣服口袋里有十几块零钱，买包子应该够。",
+        "py": "Wǒ yīfu kǒudai li yǒu shí jǐ kuài língqián, mǎi bāozi yīnggāi gòu.",
+        "vn": "Túi áo em có hơn chục đồng tiền lẻ, mua bánh bao chắc đủ."
+      },
+      {
+        "zh": "A：先生，一共二百三十九块七。您付现金还是刷卡？B：现金。我带的零钱应该够了。",
+        "py": "A: Xiānsheng, yígòng èrbǎi sānshíjiǔ kuài qī. Nín fù xiànjīn háishi shuā kǎ? B: Xiànjīn. Wǒ dài de língqián yīnggāi gòu le.",
+        "vn": "A: Thưa ông, tổng cộng 239 tệ 7. Ông trả tiền mặt hay quẹt thẻ? B: Tiền mặt. Tiền lẻ tôi mang chắc đủ."
+      },
+      {
+        "zh": "坐公共汽车要准备零钱，司机不找钱。",
+        "py": "Zuò gōnggòng qìchē yào zhǔnbèi língqián, sījī bù zhǎo qián.",
+        "vn": "Đi xe buýt phải chuẩn bị tiền lẻ, tài xế không thối tiền."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "零",
+        "p": "líng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "雨 trên → 令 dưới",
+        "rad": "雨 (vũ)",
+        "mean": "số không; lẻ",
+        "tip": "Mưa 雨 + 令 → giọt mưa rơi rải rác → LẺ TẺ, SỐ KHÔNG. 零钱 = tiền lẻ; 零食 = đồ ăn vặt.",
+        "cf": "令 (lìng – lệnh)",
+        "w": "零钱 / 零 / 零食"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi trả tiền mặt, vì tiền lẻ tôi mang chắc là đủ rồi.",
+        "answer": "我付现金，因为我带的零钱应该够了。",
+        "answerPy": "Wǒ fù xiànjīn, yīnwèi wǒ dài de língqián yīnggāi gòu le.",
+        "note": "付款 là từ bài 18, 现金 là từ bài 5.",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "带零钱",
+        "py": "dài língqián",
+        "vn": "mang tiền lẻ"
+      },
+      {
+        "zh": "换点儿零钱",
+        "py": "huàn diǎn ér língqián",
+        "vn": "đổi ít tiền lẻ"
+      },
+      {
+        "zh": "十几块零钱",
+        "py": "shí jǐ kuài língqián",
+        "vn": "hơn chục đồng lẻ"
+      },
+      {
+        "zh": "零钱够了",
+        "py": "língqián gòu le",
+        "vn": "tiền lẻ đủ rồi"
+      },
+      {
+        "zh": "没有零钱",
+        "py": "méiyǒu língqián",
+        "vn": "không có tiền lẻ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "带 / 换 + 零钱",
+        "m": "Mang / đổi tiền lẻ"
+      },
+      {
+        "s": "零钱 ≠ 现金 (bài 5)",
+        "m": "零钱 là tiền lẻ; 现金 là tiền mặt nói chung"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "打招呼",
+    "py": "dǎ zhāohu",
+    "pos": "Cụm động từ",
+    "vn": "chào hỏi, chào",
+    "hv": "đả chiêu hô",
+    "em": "👋",
+    "lesson": 3,
+    "explain": [
+      "Chào khi gặp. 跟/和……打招呼, 打个招呼. 招呼 cũng nghĩa \"báo trước\"."
+    ],
+    "usage": "跟你打招呼, 打个招呼, 主动打招呼.",
+    "collo": [
+      "跟你打招呼",
+      "多和周围的人打招呼",
+      "打个招呼"
+    ],
+    "ex_zh": "我早上跟你打招呼，你没看见。想不到又在这儿碰见你了。",
+    "ex_py": "Wǒ zǎoshang gēn nǐ dǎ zhāohu, nǐ méi kànjiàn. Xiǎngbudào yòu zài zhèr pèngjiàn nǐ le.",
+    "ex_vn": "Sáng nay tôi chào bạn, bạn không thấy. Không ngờ lại gặp bạn ở đây.",
+    "exList": [
+      {
+        "zh": "我早上跟你打招呼，你没看见。想不到又在这儿碰见你了。",
+        "py": "Wǒ zǎoshang gēn nǐ dǎ zhāohu, nǐ méi kànjiàn. Xiǎngbudào yòu zài zhèr pèngjiàn nǐ le.",
+        "vn": "Sáng nay tôi chào bạn, bạn không thấy. Không ngờ lại gặp bạn ở đây."
+      },
+      {
+        "zh": "要想更快适应新环境，其实有很多办法。比如，多和周围的人打招呼，在别人遇到麻烦的时候去帮一把，等等。",
+        "py": "Yào xiǎng gèng kuài shìyìng xīn huánjìng, qíshí yǒu hěn duō bànfǎ. Bǐrú, duō hé zhōuwéi de rén dǎ zhāohu, zài biérén yùdào máfan de shíhou qù bāng yì bǎ, děngděng.",
+        "vn": "Muốn thích ứng môi trường mới nhanh, thực ra có nhiều cách. Ví dụ, chào hỏi người xung quanh nhiều hơn, giúp một tay khi người khác gặp rắc rối, v.v."
+      },
+      {
+        "zh": "中国人见面时常用\"吃了吗\"来打招呼。",
+        "py": "Zhōngguó rén jiànmiàn shí cháng yòng \"chīle ma\" lái dǎ zhāohu.",
+        "vn": "Người Trung Quốc gặp nhau thường dùng \"ăn chưa\" để chào."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "招",
+        "p": "zhāo",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "扌 trái → 召 phải",
+        "rad": "扌 (thủ)",
+        "mean": "vẫy gọi",
+        "tip": "Tay 扌 + 召(gọi) → vẫy tay GỌI → CHIÊU. 打招呼 = chào hỏi; 招聘 (Bài 10) = tuyển dụng.",
+        "cf": "超 (chāo – vượt)",
+        "w": "打招呼 / 招聘 / 招手"
+      },
+      {
+        "c": "呼",
+        "p": "hū",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "口 trái → 乎 phải",
+        "rad": "口 (khẩu)",
+        "mean": "gọi, thở ra",
+        "tip": "Miệng 口 + 乎 → tiếng gọi → HÔ. 打招呼, 呼吸 (hô hấp).",
+        "cf": "乎 (hū)",
+        "w": "打招呼 / 呼吸"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sáng nay tôi chào bạn mà bạn không thấy, ai ngờ lại gặp bạn ở đây.",
+        "answer": "我早上跟你打招呼，你没看见，没想到又在这儿碰见你了。",
+        "answerPy": "Wǒ zǎoshang gēn nǐ dǎ zhāohu, nǐ méi kànjiàn, méi xiǎngdào yòu zài zhèr pèngjiàn nǐ le.",
+        "note": "打招呼 là từ ly hợp: 打了个招呼 ✓.",
+        "pair": "以为……没想到……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "跟你打招呼",
+        "py": "gēn nǐ dǎ zhāohu",
+        "vn": "chào bạn"
+      },
+      {
+        "zh": "打个招呼",
+        "py": "dǎ gè zhāo hū",
+        "vn": "chào một tiếng"
+      },
+      {
+        "zh": "和周围的人打招呼",
+        "py": "hé zhōuwéi de rén dǎ zhāohu",
+        "vn": "chào hỏi những người xung quanh"
+      },
+      {
+        "zh": "打了招呼",
+        "py": "dǎ le zhāo hū",
+        "vn": "đã chào rồi"
+      },
+      {
+        "zh": "主动打招呼",
+        "py": "zhǔdòng dǎ zhāohu",
+        "vn": "chủ động chào"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "跟 / 和 + ai + 打招呼",
+        "m": "Chào hỏi ai — 打招呼 là từ ly hợp: 打了招呼 ✓"
+      },
+      {
+        "s": "打 + 个 + 招呼",
+        "m": "Chào một tiếng"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "戴",
+    "py": "dài",
+    "pos": "Động từ",
+    "vn": "đeo, mang",
+    "hv": "đái",
+    "em": "👓",
+    "lesson": 3,
+    "explain": [
+      "Đeo (kính, đồng hồ, mũ, khăn). Khác 穿 (mặc áo, đi giày). 戴眼镜, 戴帽子, 戴手表."
+    ],
+    "usage": "戴眼镜, 戴帽子, 忘戴了.",
+    "collo": [
+      "忘戴眼镜了",
+      "戴眼镜",
+      "戴帽子"
+    ],
+    "ex_zh": "真是对不起，我不是故意的，今天早上我忘戴眼镜了，看不清楚。",
+    "ex_py": "Zhēn shì duìbuqǐ, wǒ bú shì gùyì de, jīntiān zǎoshang wǒ wàng dài yǎnjìng le, kànbuqīngchu.",
+    "ex_vn": "Thật xin lỗi, tôi không cố ý, sáng nay tôi quên đeo kính, nhìn không rõ.",
+    "exList": [
+      {
+        "zh": "真是对不起，我不是故意的，今天早上我忘戴眼镜了，看不清楚。",
+        "py": "Zhēn shì duìbuqǐ, wǒ bú shì gùyì de, jīntiān zǎoshang wǒ wàng dài yǎnjìng le, kànbuqīngchu.",
+        "vn": "Thật xin lỗi, tôi không cố ý, sáng nay tôi quên đeo kính, nhìn không rõ."
+      },
+      {
+        "zh": "外面太冷了，出门记得戴帽子。",
+        "py": "Wàimiàn tài lěng le, chū mén jìde dài màozi.",
+        "vn": "Ngoài trời lạnh quá, ra ngoài nhớ đội mũ."
+      },
+      {
+        "zh": "她戴着一块很漂亮的手表。",
+        "py": "Tā dàizhe yí kuài hěn piàoliang de shǒubiǎo.",
+        "vn": "Cô ấy đeo một chiếc đồng hồ rất đẹp."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "戴",
+        "p": "dài",
+        "type": "半包围结构 · Nửa bao quanh",
+        "st": 17,
+        "ord": "十 → 田 → 共 → 戈",
+        "rad": "戈 (qua)",
+        "mean": "đeo",
+        "tip": "Chữ phức tạp 17 nét → ĐEO, ĐỘI (kính, mũ, đồng hồ). Phân biệt với 穿 (mặc, đi giày).",
+        "cf": "代 (dài – thay)",
+        "w": "戴眼镜 / 戴帽子 / 戴手表"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì sáng nay tôi quên đeo kính, nên nhìn không rõ.",
+        "answer": "因为今天早上我忘戴眼镜了，所以看不清楚。",
+        "answerPy": "Yīnwèi jīntiān zǎoshang wǒ wàng dài yǎnjìng le, suǒyǐ kàn bu qīngchu.",
+        "note": "✗ 穿眼镜 → ✓ 戴眼镜; V + 不清楚 — không rõ.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "戴眼镜",
+        "py": "dài yǎnjìng",
+        "vn": "đeo kính"
+      },
+      {
+        "zh": "戴帽子",
+        "py": "dài màozi",
+        "vn": "đội mũ"
+      },
+      {
+        "zh": "忘戴眼镜",
+        "py": "wàng dài yǎnjìng",
+        "vn": "quên đeo kính"
+      },
+      {
+        "zh": "戴手表",
+        "py": "dài shǒubiǎo",
+        "vn": "đeo đồng hồ"
+      },
+      {
+        "zh": "戴上",
+        "py": "dài shàng",
+        "vn": "đeo vào"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "戴 + 眼镜 / 帽子 / 手表",
+        "m": "Dùng cho vật đeo trên người"
+      },
+      {
+        "s": "✗ 穿眼镜 → ✓ 戴眼镜",
+        "m": "穿 dùng cho quần áo, giày; 戴 cho phụ kiện"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "眼镜",
+    "py": "yǎnjìng",
+    "pos": "Danh từ",
+    "vn": "mắt kính",
+    "hv": "nhãn kính",
+    "em": "👓",
+    "lesson": 3,
+    "explain": [
+      "Kính đeo mắt. 戴眼镜, 一副眼镜, 太阳眼镜. Chú ý 镜 ≠ 睛 (眼睛 = con mắt)."
+    ],
+    "usage": "戴眼镜, 一副眼镜, 摘眼镜.",
+    "collo": [
+      "忘戴眼镜了",
+      "一副眼镜",
+      "戴眼镜的人"
+    ],
+    "ex_zh": "今天早上我忘戴眼镜了，看不清楚。",
+    "ex_py": "Jīntiān zǎoshang wǒ wàng dài yǎnjìng le, kànbuqīngchu.",
+    "ex_vn": "Sáng nay tôi quên đeo kính, nhìn không rõ.",
+    "exList": [
+      {
+        "zh": "今天早上我忘戴眼镜了，看不清楚。",
+        "py": "Jīntiān zǎoshang wǒ wàng dài yǎnjìng le, kànbuqīngchu.",
+        "vn": "Sáng nay tôi quên đeo kính, nhìn không rõ."
+      },
+      {
+        "zh": "天天对着电脑看，眼睛越来越不好，我不得不戴眼镜了。",
+        "py": "Tiāntiān duìzhe diànnǎo kàn, yǎnjing yuè lái yuè bù hǎo, wǒ bùdébù dài yǎnjìng le.",
+        "vn": "Ngày nào cũng nhìn máy tính, mắt ngày càng kém, tôi buộc phải đeo kính."
+      },
+      {
+        "zh": "那个戴眼镜的小伙子是我们的新同事。",
+        "py": "Nàge dài yǎnjìng de xiǎohuǒzi shì wǒmen de xīn tóngshì.",
+        "vn": "Chàng trai đeo kính kia là đồng nghiệp mới của chúng tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "镜",
+        "p": "jìng",
+        "type": "左右结构 · Trái-phải",
+        "st": 16,
+        "ord": "钅 trái → 竟 phải",
+        "rad": "钅 (kim)",
+        "mean": "gương, kính",
+        "tip": "Kim loại 钅 + 竟 → GƯƠNG, KÍNH. 眼镜 = kính mắt; 镜子 = gương (Bài 14). Phân biệt 睛 (con ngươi, 眼睛).",
+        "cf": "睛 (jīng – 眼睛 con mắt)",
+        "w": "眼镜 / 镜子 / 太阳镜"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngày nào cũng nhìn máy tính, mắt ngày càng kém, tôi buộc phải đeo kính.",
+        "answer": "天天对着电脑看，眼睛越来越不好，我不得不戴眼镜了。",
+        "answerPy": "Tiāntiān duìzhe diànnǎo kàn, yǎnjing yuè lái yuè bù hǎo, wǒ bùdébù dài yǎnjìng le.",
+        "note": "不得不 (Bài 10), 对着 (Bài 18).",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一副眼镜",
+        "py": "yí fù yǎnjìng",
+        "vn": "một cặp kính"
+      },
+      {
+        "zh": "戴眼镜",
+        "py": "dài yǎnjìng",
+        "vn": "đeo kính"
+      },
+      {
+        "zh": "戴眼镜的人",
+        "py": "dài yǎnjìng de rén",
+        "vn": "người đeo kính"
+      },
+      {
+        "zh": "忘戴眼镜",
+        "py": "wàng dài yǎnjìng",
+        "vn": "quên đeo kính"
+      },
+      {
+        "zh": "配眼镜",
+        "py": "pèi yǎnjìng",
+        "vn": "cắt kính"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 副 + 眼镜",
+        "m": "Lượng từ 副 cho vật đi thành bộ"
+      },
+      {
+        "s": "眼 + 镜",
+        "m": "Gương (镜) cho mắt (眼) — 镜子 là từ bài 2"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "舞蹈",
+    "py": "wǔdǎo",
+    "pos": "Danh từ",
+    "vn": "điệu múa",
+    "hv": "vũ đạo",
+    "em": "💃",
+    "lesson": 3,
+    "explain": [
+      "Nghệ thuật múa (trang trọng hơn 跳舞). 中国舞蹈, 舞蹈动作, 学舞蹈."
+    ],
+    "usage": "中国舞蹈, 舞蹈动作, 学过舞蹈.",
+    "collo": [
+      "学过中国舞蹈",
+      "舞蹈动作",
+      "舞蹈是一门艺术"
+    ],
+    "ex_zh": "难道你以前在你们国家就学过中国舞蹈吗？",
+    "ex_py": "Nándào nǐ yǐqián zài nǐmen guójiā jiù xuéguo Zhōngguó wǔdǎo ma?",
+    "ex_vn": "Chẳng lẽ trước đây ở nước bạn đã học múa Trung Quốc rồi sao?",
+    "exList": [
+      {
+        "zh": "刚才我在旁边看到你跳中国舞了，没看出来你跳得这么好！难道你以前在你们国家就学过中国舞蹈吗？",
+        "py": "Gāngcái wǒ zài pángbiān kàndào nǐ tiào Zhōngguó wǔ le, méi kàn chūlái nǐ tiào de zhème hǎo! Nándào nǐ yǐqián zài nǐmen guójiā jiù xuéguo Zhōngguó wǔdǎo ma?",
+        "vn": "Vừa rồi tôi thấy bạn múa Trung Quốc, không ngờ bạn múa hay thế! Chẳng lẽ trước đây ở nước bạn đã học múa Trung Quốc?"
+      },
+      {
+        "zh": "舞蹈不仅是一门艺术，也是一种\"语言\"，这种语言与国籍无关，无论哪个国家的人都能看懂。",
+        "py": "Wǔdǎo bùjǐn shì yì mén yìshù, yě shì yì zhǒng \"yǔyán\", zhè zhǒng yǔyán yǔ guójí wúguān, wúlùn nǎ ge guójiā de rén dōu néng kàndǒng.",
+        "vn": "Múa không chỉ là nghệ thuật, mà còn là \"ngôn ngữ\", ngôn ngữ này không liên quan quốc tịch, người nước nào cũng hiểu được."
+      },
+      {
+        "zh": "安娜帮助马克练习舞蹈动作。",
+        "py": "Ānnà bāngzhù Mǎkè liànxí wǔdǎo dòngzuò.",
+        "vn": "Anna giúp Mã Khắc luyện động tác múa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "蹈",
+        "p": "dǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 17,
+        "ord": "足 trái → 舀 phải",
+        "rad": "足 (túc)",
+        "mean": "giẫm, múa",
+        "tip": "Chân 足 + 舀 → chân giẫm nhịp → ĐẠO (múa). 舞蹈 = vũ đạo.",
+        "cf": "稻 (dào – lúa)",
+        "w": "舞蹈"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Múa không chỉ là nghệ thuật, mà còn là một loại \"ngôn ngữ\".",
+        "answer": "舞蹈不仅是一门艺术，也是一种\"语言\"。",
+        "answerPy": "Wǔdǎo bùjǐn shì yì mén yìshù, yě shì yì zhǒng \"yǔyán\".",
+        "note": "不仅……也 (Bài 6), 门 lượng từ (Bài 13), 艺术 (Bài 13), 语言 (Bài 12).",
+        "pair": "不仅……也……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "学舞蹈",
+        "py": "xué wǔdǎo",
+        "vn": "học múa"
+      },
+      {
+        "zh": "中国舞蹈",
+        "py": "Zhōngguó wǔdǎo",
+        "vn": "múa Trung Quốc"
+      },
+      {
+        "zh": "舞蹈动作",
+        "py": "wǔdǎo dòngzuò",
+        "vn": "động tác múa"
+      },
+      {
+        "zh": "舞蹈是一门艺术",
+        "py": "wǔdǎo shì yì mén yìshù",
+        "vn": "múa là một môn nghệ thuật"
+      },
+      {
+        "zh": "跳舞蹈",
+        "py": "tiàowǔ dǎo",
+        "vn": "biểu diễn múa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "学 + 舞蹈",
+        "m": "Học múa — 动作 là từ bài 7, 艺术 là từ bài 5"
+      },
+      {
+        "s": "舞蹈 (danh từ, môn múa) ≠ 跳舞 (động từ, nhảy múa)"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "国籍",
+    "py": "guójí",
+    "pos": "Danh từ",
+    "vn": "quốc tịch",
+    "hv": "quốc tịch",
+    "em": "🌍",
+    "lesson": 3,
+    "explain": [
+      "Tư cách công dân của nước nào. 与国籍无关, 中国国籍, 填国籍."
+    ],
+    "usage": "与国籍无关, 什么国籍, 填写国籍.",
+    "collo": [
+      "与国籍无关",
+      "你的国籍",
+      "不同国籍的人"
+    ],
+    "ex_zh": "这种语言与国籍无关，无论哪个国家的人都能看懂。",
+    "ex_py": "Zhè zhǒng yǔyán yǔ guójí wúguān, wúlùn nǎ ge guójiā de rén dōu néng kàndǒng.",
+    "ex_vn": "Ngôn ngữ này không liên quan quốc tịch, người nước nào cũng hiểu được.",
+    "exList": [
+      {
+        "zh": "这种语言与国籍无关，无论哪个国家的人都能看懂。",
+        "py": "Zhè zhǒng yǔyán yǔ guójí wúguān, wúlùn nǎ ge guójiā de rén dōu néng kàndǒng.",
+        "vn": "Ngôn ngữ này không liên quan quốc tịch, người nước nào cũng hiểu được."
+      },
+      {
+        "zh": "申请表上要填写姓名、性别、国籍和护照号码。",
+        "py": "Shēnqǐngbiǎo shang yào tiánxiě xìngmíng, xìngbié, guójí hé hùzhào hàomǎ.",
+        "vn": "Trên đơn phải điền họ tên, giới tính, quốc tịch và số hộ chiếu."
+      },
+      {
+        "zh": "我们班有来自十几个不同国籍的同学。",
+        "py": "Wǒmen bān yǒu láizì shí jǐ ge bù tóng guójí de tóngxué.",
+        "vn": "Lớp tôi có bạn đến từ hơn chục quốc tịch khác nhau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "籍",
+        "p": "jí",
+        "type": "上下结构 · Trên-dưới",
+        "st": 20,
+        "ord": "⺮ trên → 耤 dưới",
+        "rad": "⺮ (trúc)",
+        "mean": "sổ sách, tịch",
+        "tip": "Trúc ⺮ + 耤 → sổ sách bằng thẻ tre → TỊCH (hộ tịch, quốc tịch). Chữ 20 nét!",
+        "cf": "藉 (jiè)",
+        "w": "国籍 / 书籍"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Lớp tôi không những có bạn từ hơn chục quốc tịch, mà ai cũng thân nhau.",
+        "answer": "我们班不但有来自十几个不同国籍的同学，而且大家关系都很好。",
+        "answerPy": "Wǒmen bān búdàn yǒu láizì shí jǐ ge bùtóng guójí de tóngxué, érqiě dàjiā guānxi dōu hěn hǎo.",
+        "note": "来自 là từ bài 13.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "你的国籍",
+        "py": "nǐ de guójí",
+        "vn": "quốc tịch của bạn"
+      },
+      {
+        "zh": "不同国籍的人",
+        "py": "bù tóng guójí de rén",
+        "vn": "người khác quốc tịch"
+      },
+      {
+        "zh": "与国籍无关",
+        "py": "yǔ guójí wú guān",
+        "vn": "không liên quan đến quốc tịch"
+      },
+      {
+        "zh": "填国籍",
+        "py": "tián guójí",
+        "vn": "điền quốc tịch"
+      },
+      {
+        "zh": "改国籍",
+        "py": "gǎi guójí",
+        "vn": "đổi quốc tịch"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "与 + N + 无关",
+        "m": "Không liên quan đến cái gì — 无 là từ bài 12"
+      },
+      {
+        "s": "国 + 籍",
+        "m": "Hộ tịch (籍) nước nào (国)"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "抬",
+    "py": "tái",
+    "pos": "Động từ",
+    "vn": "giơ lên, đưa lên; khiêng",
+    "hv": "đài",
+    "em": "🙆",
+    "lesson": 3,
+    "explain": [
+      "(1) Nâng lên: 抬胳膊, 抬头, 抬腿. (2) Khiêng (nhiều người): 抬沙发, 抬不动 (Bài 11)."
+    ],
+    "usage": "抬胳膊, 抬头, 抬沙发.",
+    "collo": [
+      "先抬胳膊，然后抬腿",
+      "抬起头",
+      "一起抬"
+    ],
+    "ex_zh": "应该像我这样：先抬胳膊，然后抬腿，最后头再向右转一下。",
+    "ex_py": "Yīnggāi xiàng wǒ zhèyàng: xiān tái gēbo, ránhòu tái tuǐ, zuìhòu tóu zài xiàng yòu zhuǎn yíxià.",
+    "ex_vn": "Nên như tôi thế này: giơ cánh tay trước, rồi nhấc chân, cuối cùng đầu quay sang phải.",
+    "exList": [
+      {
+        "zh": "你仔细看着，应该像我这样：先抬胳膊，然后抬腿，最后头再向右转一下。",
+        "py": "Nǐ zǐxì kànzhe, yīnggāi xiàng wǒ zhèyàng: xiān tái gēbo, ránhòu tái tuǐ, zuìhòu tóu zài xiàng yòu zhuǎn yíxià.",
+        "vn": "Bạn nhìn kỹ, nên như tôi: giơ cánh tay trước, rồi nhấc chân, cuối cùng đầu quay sang phải."
+      },
+      {
+        "zh": "这个沙发这么大，你们两个肯定抬不动，我来帮你们一起抬。",
+        "py": "Zhège shāfā zhème dà, nǐmen liǎng ge kěndìng táibudòng, wǒ lái bāng nǐmen yìqǐ tái.",
+        "vn": "Sofa này to thế, hai người chắc không khiêng nổi, để tôi khiêng cùng."
+      },
+      {
+        "zh": "不管遇到什么困难，都要抬起头，勇敢地向前看。",
+        "py": "Bùguǎn yùdào shénme kùnnan, dōu yào tái qǐ tóu, yǒnggǎn de xiàng qián kàn.",
+        "vn": "Bất kể gặp khó khăn gì, đều phải ngẩng đầu, dũng cảm nhìn về phía trước."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "抬",
+        "p": "tái",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "扌 trái → 台 phải",
+        "rad": "扌 (thủ)",
+        "mean": "nâng",
+        "tip": "Tay 扌 + 台(đài, cao) → tay NÂNG lên. 抬头, 抬腿, 抬沙发 (Bài 11, 15).",
+        "cf": "台 (tái – đài)",
+        "w": "抬 / 抬头 / 抬不动"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bất kể gặp khó khăn gì, đều phải ngẩng đầu, dũng cảm nhìn về phía trước.",
+        "answer": "不管遇到什么困难，都要抬起头，勇敢地向前看。",
+        "answerPy": "Bùguǎn yùdào shénme kùnnan, dōu yào tái qǐ tóu, yǒnggǎn de xiàng qián kàn.",
+        "note": "不管……都 (Bài 3), 勇敢 (Bài 9).",
+        "pair": "不管……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "抬起头",
+        "py": "tái qǐ tóu",
+        "vn": "ngẩng đầu lên"
+      },
+      {
+        "zh": "抬胳膊",
+        "py": "tái gēbo",
+        "vn": "giơ cánh tay"
+      },
+      {
+        "zh": "一起抬",
+        "py": "yìqǐ tái",
+        "vn": "cùng khiêng"
+      },
+      {
+        "zh": "抬不起来",
+        "py": "tái bù qǐlai",
+        "vn": "không giơ nổi"
+      },
+      {
+        "zh": "抬高一点儿",
+        "py": "tái gāo yìdiǎnr",
+        "vn": "nâng cao chút"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "抬 + 起 + bộ phận cơ thể",
+        "m": "Giơ, ngẩng bộ phận nào lên"
+      },
+      {
+        "s": "抬 + 不起来",
+        "m": "Không nhấc nổi — bổ ngữ khả năng"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "zh": "胳膊",
+    "py": "gēbo",
+    "pos": "Danh từ",
+    "vn": "cánh tay",
+    "hv": "các bác",
+    "em": "💪",
+    "lesson": 3,
+    "explain": [
+      "Phần tay từ vai đến cổ tay. 抬胳膊, 胳膊疼, 两只胳膊."
+    ],
+    "usage": "抬胳膊, 胳膊疼, 伸胳膊.",
+    "collo": [
+      "先抬胳膊",
+      "胳膊很疼",
+      "两只胳膊"
+    ],
+    "ex_zh": "先抬胳膊，然后抬腿。",
+    "ex_py": "Xiān tái gēbo, ránhòu tái tuǐ.",
+    "ex_vn": "Giơ cánh tay trước, rồi nhấc chân.",
+    "exList": [
+      {
+        "zh": "先抬胳膊，然后抬腿，最后头再向右转一下。",
+        "py": "Xiān tái gēbo, ránhòu tái tuǐ, zuìhòu tóu zài xiàng yòu zhuǎn yíxià.",
+        "vn": "Giơ cánh tay trước, rồi nhấc chân, cuối cùng đầu quay sang phải."
+      },
+      {
+        "zh": "昨天打了两个小时网球，今天胳膊疼得抬不起来。",
+        "py": "Zuótiān dǎle liǎng ge xiǎoshí wǎngqiú, jīntiān gēbo téng de táibuqǐlái.",
+        "vn": "Hôm qua chơi tennis hai tiếng, hôm nay cánh tay đau không giơ lên nổi."
+      },
+      {
+        "zh": "他摔倒的时候胳膊受伤了，得去医院看看。",
+        "py": "Tā shuāidǎo de shíhou gēbo shòushāng le, děi qù yīyuàn kànkan.",
+        "vn": "Anh ấy ngã bị thương cánh tay, phải đi bệnh viện khám."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "膊",
+        "p": "bo",
+        "type": "左右结构 · Trái-phải",
+        "st": 14,
+        "ord": "月 trái → 尃 phải",
+        "rad": "月 (nhục)",
+        "mean": "cánh tay",
+        "tip": "Thịt 月 + 尃 → bộ phận cơ thể → CÁNH TAY. 胳膊 = cánh tay; 博 (Bài 16) cùng có 尃.",
+        "cf": "博 (bó – rộng)",
+        "w": "胳膊"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì hôm qua chơi tennis hai tiếng, nên hôm nay cánh tay đau đến không giơ nổi.",
+        "answer": "因为昨天打了两个小时网球，所以今天胳膊疼得抬不起来。",
+        "answerPy": "Yīnwèi zuótiān dǎle liǎng ge xiǎoshí wǎngqiú, suǒyǐ jīntiān gēbo téng de tái bu qǐlái.",
+        "note": "网球 là từ bài 9; 抬不起来 — bổ ngữ khả năng phủ định.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "两只胳膊",
+        "py": "liǎng zhī gēbo",
+        "vn": "hai cánh tay"
+      },
+      {
+        "zh": "胳膊很疼",
+        "py": "gēbo hěn téng",
+        "vn": "cánh tay rất đau"
+      },
+      {
+        "zh": "抬胳膊",
+        "py": "tái gēbo",
+        "vn": "giơ cánh tay"
+      },
+      {
+        "zh": "胳膊受伤了",
+        "py": "gēbo shòushāng le",
+        "vn": "cánh tay bị thương"
+      },
+      {
+        "zh": "胳膊和腿",
+        "py": "gēbo hé tuǐ",
+        "vn": "tay và chân"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "胳膊 + 疼",
+        "m": "Đau cánh tay — như 肚子疼 (bài 7)"
+      },
+      {
+        "s": "một + 只 + 胳膊",
+        "m": "Lượng từ 只 cho bộ phận thành đôi"
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "zh": "转",
+    "py": "zhuǎn",
+    "pos": "Động từ",
+    "vn": "quay, xoay",
+    "hv": "chuyển",
+    "em": "🔄",
+    "lesson": 3,
+    "explain": [
+      "Xoay hướng. 向右转, 转身, 左转 (Bài 2). Đọc zhuàn = quay tròn (转圈)."
+    ],
+    "usage": "向右转, 左转, 转身.",
+    "collo": [
+      "头再向右转一下",
+      "前面路口左转",
+      "转过身"
+    ],
+    "ex_zh": "最后头再向右转一下。",
+    "ex_py": "Zuìhòu tóu zài xiàng yòu zhuǎn yíxià.",
+    "ex_vn": "Cuối cùng đầu quay sang phải.",
+    "exList": [
+      {
+        "zh": "先抬胳膊，然后抬腿，最后头再向右转一下。",
+        "py": "Xiān tái gēbo, ránhòu tái tuǐ, zuìhòu tóu zài xiàng yòu zhuǎn yíxià.",
+        "vn": "Giơ cánh tay trước, rồi nhấc chân, cuối cùng đầu quay sang phải."
+      },
+      {
+        "zh": "我以前来过这儿，前面路口左转就到了。",
+        "py": "Wǒ yǐqián láiguo zhèr, qiánmiàn lùkǒu zuǒ zhuǎn jiù dào le.",
+        "vn": "Tôi từng đến đây, ngã tư phía trước rẽ trái là đến."
+      },
+      {
+        "zh": "她转过身，发现是老同学在叫她。",
+        "py": "Tā zhuǎnguò shēn, fāxiàn shì lǎo tóngxué zài jiào tā.",
+        "vn": "Cô ấy quay người lại, phát hiện là bạn học cũ đang gọi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "转",
+        "p": "zhuǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "车 trái → 专 phải",
+        "rad": "车 (xa)",
+        "mean": "quay",
+        "tip": "Xe 车 + 专 → bánh xe QUAY → CHUYỂN. zhuǎn = đổi hướng (左转); zhuàn = quay tròn. 传 (Bài 16) cũng có 专.",
+        "cf": "传 (chuán – truyền)",
+        "w": "转 / 左转 / 转身 / 转告"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy vừa quay người lại là phát hiện bạn học cũ đang gọi mình.",
+        "answer": "她一转过身，就发现是老同学在叫她。",
+        "answerPy": "Tā yì zhuǎn guò shēn, jiù fāxiàn shì lǎo tóngxué zài jiào tā.",
+        "note": "转 (zhuǎn) là quay, khác 转 (zhuàn) là xoay tròn.",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "向右转",
+        "py": "xiàng yòu zhuǎn",
+        "vn": "rẽ phải"
+      },
+      {
+        "zh": "左转",
+        "py": "zuǒ zhuǎn",
+        "vn": "rẽ trái"
+      },
+      {
+        "zh": "转过身",
+        "py": "zhuǎn guo shēn",
+        "vn": "quay người lại"
+      },
+      {
+        "zh": "转一下",
+        "py": "zhuǎn yíxià",
+        "vn": "xoay một chút"
+      },
+      {
+        "zh": "头向右转",
+        "py": "tóu xiàng yòu zhuǎn",
+        "vn": "đầu quay sang phải"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "向 + hướng + 转",
+        "m": "Quay, rẽ về phía nào"
+      },
+      {
+        "s": "转 (zhuǎn, quay) ≠ 转 (zhuàn, xoay tròn)"
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "zh": "租",
+    "py": "zū",
+    "pos": "Động từ",
+    "vn": "thuê, cho thuê",
+    "hv": "tô",
+    "em": "🏠",
+    "lesson": 4,
+    "explain": [
+      "Thuê (nhà, xe). 租房子, 租车, 出租 (cho thuê), 出租车."
+    ],
+    "usage": "租房子, 租的房子, 租一个月.",
+    "collo": [
+      "去年租的房子",
+      "租房子的广告",
+      "租一辆车"
+    ],
+    "ex_zh": "马克去年租的房子离马路很近，对面有大大小小的商店，周围环境非常吵。",
+    "ex_py": "Mǎkè qùnián zū de fángzi lí mǎlù hěn jìn, duìmiàn yǒu dàdà-xiǎoxiǎo de shāngdiàn, zhōuwéi huánjìng fēicháng chǎo.",
+    "ex_vn": "Nhà Mã Khắc thuê năm ngoái sát đường lớn, đối diện có nhiều cửa hàng lớn nhỏ, môi trường xung quanh rất ồn.",
+    "exList": [
+      {
+        "zh": "马克去年租的房子离马路很近，对面有大大小小的商店，周围环境非常吵。",
+        "py": "Mǎkè qùnián zū de fángzi lí mǎlù hěn jìn, duìmiàn yǒu dàdà-xiǎoxiǎo de shāngdiàn, zhōuwéi huánjìng fēicháng chǎo.",
+        "vn": "Nhà Mã Khắc thuê năm ngoái sát đường lớn, đối diện có nhiều cửa hàng lớn nhỏ, môi trường xung quanh rất ồn."
+      },
+      {
+        "zh": "有一天，他在小区门口看到一个租房子的广告。",
+        "py": "Yǒu yì tiān, tā zài xiǎoqū ménkǒu kàndào yí ge zū fángzi de guǎnggào.",
+        "vn": "Một hôm, anh ấy thấy quảng cáo cho thuê nhà ở cổng khu chung cư."
+      },
+      {
+        "zh": "你现在租房子住吗？或者租过房子吗？",
+        "py": "Nǐ xiànzài zū fángzi zhù ma? Huòzhě zūguo fángzi ma?",
+        "vn": "Bây giờ bạn thuê nhà ở à? Hoặc từng thuê nhà chưa?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "租",
+        "p": "zū",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "禾 trái → 且 phải",
+        "rad": "禾 (hòa)",
+        "mean": "thuê",
+        "tip": "Lúa 禾 + 且 → nộp lúa để thuê đất → THUÊ, TÔ. 租房, 出租车, 房租.",
+        "cf": "粗 (cū – thô, Bài 15)",
+        "w": "租 / 租房 / 出租车 / 房租"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Một hôm anh ấy thấy tờ quảng cáo cho thuê nhà ở cổng khu chung cư, thế là gọi điện hỏi thử.",
+        "answer": "有一天，他在小区门口看到一个租房子的广告，于是就打电话问了问。",
+        "answerPy": "Yǒu yì tiān, tā zài xiǎoqū ménkǒu kàndào yí ge zū fángzi de guǎnggào, yúshì jiù dǎ diànhuà wènle wèn.",
+        "note": "广告 là từ bài 5, 于是 là từ bài 14.",
+        "pair": "于是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "租房子",
+        "py": "zū fángzi",
+        "vn": "thuê nhà"
+      },
+      {
+        "zh": "租一辆车",
+        "py": "zū yí liàng chē",
+        "vn": "thuê một chiếc xe"
+      },
+      {
+        "zh": "租房广告",
+        "py": "zū fáng guǎnggào",
+        "vn": "quảng cáo cho thuê nhà"
+      },
+      {
+        "zh": "去年租的房子",
+        "py": "qùnián zū de fángzi",
+        "vn": "căn nhà thuê năm ngoái"
+      },
+      {
+        "zh": "房租",
+        "py": "fángzū",
+        "vn": "tiền thuê nhà"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "租 + N",
+        "m": "Thuê cái gì — vừa nghĩa thuê vừa nghĩa cho thuê"
+      },
+      {
+        "s": "房 + 租",
+        "m": "Tiền thuê (租) nhà (房)"
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "zh": "吵",
+    "py": "chǎo",
+    "pos": "Tính từ",
+    "vn": "ồn ào",
+    "hv": "sảo",
+    "em": "📢",
+    "lesson": 4,
+    "explain": [
+      "Ồn, náo động. Cũng là động từ: 吵架 (cãi nhau, Bài 8), 吵了起来."
+    ],
+    "usage": "环境非常吵, 太吵了, 别吵.",
+    "collo": [
+      "周围环境非常吵",
+      "这个小区太吵了",
+      "吵得睡不着"
+    ],
+    "ex_zh": "周围环境非常吵。",
+    "ex_py": "Zhōuwéi huánjìng fēicháng chǎo.",
+    "ex_vn": "Môi trường xung quanh rất ồn.",
+    "exList": [
+      {
+        "zh": "对面有大大小小的商店，周围环境非常吵。所以，房子还没到期，马克就开始着急换房子了。",
+        "py": "Duìmiàn yǒu dàdà-xiǎoxiǎo de shāngdiàn, zhōuwéi huánjìng fēicháng chǎo. Suǒyǐ, fángzi hái méi dàoqī, Mǎkè jiù kāishǐ zháojí huàn fángzi le.",
+        "vn": "Đối diện có nhiều cửa hàng, xung quanh rất ồn. Nên nhà chưa hết hạn, Mã Khắc đã vội đổi nhà."
+      },
+      {
+        "zh": "我觉得咱们还是换个地方住吧。这个小区太吵了，我怕影响孩子学习和休息。",
+        "py": "Wǒ juéde zánmen háishi huàn ge dìfang zhù ba. Zhège xiǎoqū tài chǎo le, wǒ pà yǐngxiǎng háizi xuéxí hé xiūxi.",
+        "vn": "Tôi thấy chúng ta nên đổi chỗ ở. Khu này ồn quá, tôi sợ ảnh hưởng con học và nghỉ."
+      },
+      {
+        "zh": "图书馆里禁止大声说话，太吵会影响别人。",
+        "py": "Túshūguǎn li jìnzhǐ dàshēng shuō huà, tài chǎo huì yǐngxiǎng biérén.",
+        "vn": "Trong thư viện cấm nói to, ồn quá ảnh hưởng người khác."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "吵",
+        "p": "chǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "口 trái → 少 phải",
+        "rad": "口 (khẩu)",
+        "mean": "ồn",
+        "tip": "Miệng 口 + 少 → nhiều miệng nói → ỒN ÀO, CÃI. 吵架 (Bài 8), 吵起来 (Bài 17).",
+        "cf": "炒 (chǎo – xào)",
+        "w": "吵 / 吵架 / 吵闹"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Khu này ồn quá, tôi sợ ảnh hưởng đến việc học và nghỉ ngơi của con.",
+        "answer": "这个小区太吵了，我怕会影响孩子学习和休息。",
+        "answerPy": "Zhège xiǎoqū tài chǎo le, wǒ pà huì yǐngxiǎng háizi xuéxí hé xiūxi.",
+        "note": "吵 (ồn) khác 吵架 (cãi nhau, bài 1).",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "太吵了",
+        "py": "tài chǎo le",
+        "vn": "ồn quá"
+      },
+      {
+        "zh": "非常吵",
+        "py": "fēicháng chǎo",
+        "vn": "rất ồn"
+      },
+      {
+        "zh": "吵得睡不着",
+        "py": "chǎo de shuì bù zhe",
+        "vn": "ồn đến mất ngủ"
+      },
+      {
+        "zh": "环境很吵",
+        "py": "huánjìng hěn chǎo",
+        "vn": "môi trường ồn ào"
+      },
+      {
+        "zh": "别吵",
+        "py": "bié chǎo",
+        "vn": "đừng ồn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "吵 + 得 + kết quả",
+        "m": "Ồn đến mức nào"
+      },
+      {
+        "s": "吵 (ồn) ≠ 吵架 (cãi nhau, bài 1)"
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "zh": "厨房",
+    "py": "chúfáng",
+    "pos": "Danh từ",
+    "vn": "nhà bếp",
+    "hv": "trù phòng",
+    "em": "🍳",
+    "lesson": 4,
+    "explain": [
+      "Phòng nấu ăn. 厨房很大, 在厨房做饭, 厨师 = đầu bếp."
+    ],
+    "usage": "厨房很大, 在厨房做饭, 打扫厨房.",
+    "collo": [
+      "厨房很大",
+      "在厨房里",
+      "厨房和卫生间"
+    ],
+    "ex_zh": "广告上说房子交通方便，周围很安静，厨房很大。",
+    "ex_py": "Guǎnggào shang shuō fángzi jiāotōng fāngbiàn, zhōuwéi hěn ānjìng, chúfáng hěn dà.",
+    "ex_vn": "Quảng cáo nói nhà giao thông thuận tiện, xung quanh yên tĩnh, bếp rất rộng.",
+    "exList": [
+      {
+        "zh": "广告上说房子交通方便，周围很安静，厨房很大。",
+        "py": "Guǎnggào shang shuō fángzi jiāotōng fāngbiàn, zhōuwéi hěn ānjìng, chúfáng hěn dà.",
+        "vn": "Quảng cáo nói nhà giao thông thuận tiện, xung quanh yên tĩnh, bếp rất rộng."
+      },
+      {
+        "zh": "妈妈正在厨房里包饺子，你去帮帮她。",
+        "py": "Māma zhèngzài chúfáng li bāo jiǎozi, nǐ qù bāngbang tā.",
+        "vn": "Mẹ đang gói sủi cảo trong bếp, con đi giúp mẹ đi."
+      },
+      {
+        "zh": "这套房子有两个卧室、一个客厅和一个厨房。",
+        "py": "Zhè tào fángzi yǒu liǎng ge wòshì, yí ge kètīng hé yí ge chúfáng.",
+        "vn": "Căn hộ này có hai phòng ngủ, một phòng khách và một bếp."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "厨",
+        "p": "chú",
+        "type": "半包围结构 · Nửa bao quanh",
+        "st": 12,
+        "ord": "厂 bao → 豆寸 trong",
+        "rad": "厂 (hán)",
+        "mean": "bếp",
+        "tip": "Mái 厂 + 豆(đồ đựng) + 寸(tay) → nơi nấu nướng → BẾP. 厨房 = nhà bếp; 厨师 = đầu bếp.",
+        "cf": "橱 (chú – tủ)",
+        "w": "厨房 / 厨师"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Căn hộ này không những có hai phòng ngủ và một phòng khách, mà còn có cả bếp riêng.",
+        "answer": "这套房子不但有两个卧室和一个客厅，而且还有一个厨房。",
+        "answerPy": "Zhè tào fángzi búdàn yǒu liǎng ge wòshì hé yí ge kètīng, érqiě hái yǒu yí ge chúfáng.",
+        "note": "客厅 là từ bài 11.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "在厨房里",
+        "py": "zài chúfáng li",
+        "vn": "trong bếp"
+      },
+      {
+        "zh": "厨房很大",
+        "py": "chúfáng hěn dà",
+        "vn": "bếp rất rộng"
+      },
+      {
+        "zh": "厨房和卫生间",
+        "py": "chúfáng hé wèishēngjiān",
+        "vn": "bếp và nhà vệ sinh"
+      },
+      {
+        "zh": "打扫厨房",
+        "py": "dǎsǎo chúfáng",
+        "vn": "dọn bếp"
+      },
+      {
+        "zh": "新厨房",
+        "py": "xīn chúfáng",
+        "vn": "bếp mới"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + 厨房 + 里",
+        "m": "Trong bếp"
+      },
+      {
+        "s": "厨 + 房",
+        "m": "Phòng (房) nấu ăn (厨)"
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "zh": "房东",
+    "py": "fángdōng",
+    "pos": "Danh từ",
+    "vn": "chủ nhà (nhà cho thuê)",
+    "hv": "phòng đông",
+    "em": "🔑",
+    "lesson": 4,
+    "explain": [
+      "Người cho thuê nhà. 房东的电话, 联系房东, 找房东."
+    ],
+    "usage": "房东的手机号码, 联系房东, 房东很好.",
+    "collo": [
+      "记下了房东的手机号码",
+      "联系不上房东",
+      "我的房东"
+    ],
+    "ex_zh": "总的来说，这套房子他很满意，于是他就记下了房东的手机号码。",
+    "ex_py": "Zǒng de lái shuō, zhè tào fángzi tā hěn mǎnyì, yúshì tā jiù jìxiàle fángdōng de shǒujī hàomǎ.",
+    "ex_vn": "Nhìn chung, căn nhà này anh rất hài lòng, thế là ghi lại số điện thoại chủ nhà.",
+    "exList": [
+      {
+        "zh": "总的来说，这套房子他很满意，于是他就记下了房东的手机号码。",
+        "py": "Zǒng de lái shuō, zhè tào fángzi tā hěn mǎnyì, yúshì tā jiù jìxiàle fángdōng de shǒujī hàomǎ.",
+        "vn": "Nhìn chung, căn nhà này anh rất hài lòng, thế là ghi lại số điện thoại chủ nhà."
+      },
+      {
+        "zh": "马克为什么一直没联系上房东？",
+        "py": "Mǎkè wèishénme yìzhí méi liánxìshàng fángdōng?",
+        "vn": "Vì sao Mã Khắc mãi không liên lạc được với chủ nhà?"
+      },
+      {
+        "zh": "我的房东人很好，房子有问题他马上就来修。",
+        "py": "Wǒ de fángdōng rén hěn hǎo, fángzi yǒu wèntí tā mǎshàng jiù lái xiū.",
+        "vn": "Chủ nhà tôi rất tốt, nhà có vấn đề là đến sửa ngay."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "东",
+        "p": "dōng",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 5,
+        "ord": "一 → 𠃋 → 小",
+        "rad": "一 (nhất)",
+        "mean": "đông; chủ",
+        "tip": "Giản thể của 東 → phương ĐÔNG; nghĩa mở rộng CHỦ (chủ ngồi phía đông). 房东 = chủ nhà; 东西.",
+        "cf": "车 (chē – xe)",
+        "w": "房东 / 东西 / 东边"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nhìn chung anh rất hài lòng với căn nhà, thế là ghi lại số điện thoại của chủ nhà.",
+        "answer": "总的来说，这套房子他很满意，于是他就记下了房东的手机号码。",
+        "answerPy": "Zǒng de lái shuō, zhè tào fángzi tā hěn mǎnyì, yúshì tā jiù jì xiàle fángdōng de shǒujī hàomǎ.",
+        "note": "号码 là từ bài 16.",
+        "pair": "于是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我的房东",
+        "py": "wǒ de fángdōng",
+        "vn": "chủ nhà của tôi"
+      },
+      {
+        "zh": "联系房东",
+        "py": "liánxì fángdōng",
+        "vn": "liên hệ chủ nhà"
+      },
+      {
+        "zh": "房东的手机号码",
+        "py": "fángdōng de shǒujī hàomǎ",
+        "vn": "số điện thoại chủ nhà"
+      },
+      {
+        "zh": "跟房东商量",
+        "py": "gēn fángdōng shāngliang",
+        "vn": "bàn với chủ nhà"
+      },
+      {
+        "zh": "房东很好",
+        "py": "fángdōng hěn hǎo",
+        "vn": "chủ nhà rất tốt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "房 + 东",
+        "m": "Chủ (东) nhà (房)"
+      },
+      {
+        "s": "联系 + 房东",
+        "m": "Liên hệ chủ nhà — 联系 là từ bài 2"
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "zh": "占线",
+    "py": "zhànxiàn",
+    "pos": "Động từ",
+    "vn": "(đường dây điện thoại) bận",
+    "hv": "chiếm tuyến",
+    "em": "📵",
+    "lesson": 4,
+    "explain": [
+      "Máy bận khi gọi. 电话占线, 一直占线, 总是占线."
+    ],
+    "usage": "电话占线, 一直占线, 总是占线.",
+    "collo": [
+      "电话总是占线",
+      "一直占线",
+      "打不通，占线"
+    ],
+    "ex_zh": "可回家后打电话，电话总是占线。",
+    "ex_py": "Kě huí jiā hòu dǎ diànhuà, diànhuà zǒngshì zhànxiàn.",
+    "ex_vn": "Nhưng về nhà gọi điện, điện thoại luôn bận.",
+    "exList": [
+      {
+        "zh": "可回家后打电话，电话总是占线。第二天，他路过小区门口时，又仔细看了一下广告，原来在记号码的时候写错了一个数字。",
+        "py": "Kě huí jiā hòu dǎ diànhuà, diànhuà zǒngshì zhànxiàn. Dì-èr tiān, tā lùguò xiǎoqū ménkǒu shí, yòu zǐxì kànle yíxià guǎnggào, yuánlái zài jì hàomǎ de shíhou xiěcuòle yí ge shùzì.",
+        "vn": "Nhưng về nhà gọi, máy luôn bận. Hôm sau đi qua cổng khu, xem kỹ lại quảng cáo, hóa ra lúc ghi số viết sai một chữ số."
+      },
+      {
+        "zh": "A：李经理的电话一直占线，去办公室找他，敲了半天门，也没人开。B：他刚出去开会了，可能下午才能回来。",
+        "py": "A: Lǐ jīnglǐ de diànhuà yìzhí zhànxiàn, qù bàngōngshì zhǎo tā, qiāole bàntiān mén, yě méi rén kāi. B: Tā gāng chūqù kāi huì le, kěnéng xiàwǔ cái néng huílai.",
+        "vn": "A: Điện thoại giám đốc Lý luôn bận, đến văn phòng gõ cửa mãi không ai mở. B: Anh ấy vừa đi họp, có lẽ chiều mới về."
+      },
+      {
+        "zh": "现在是上班时间，公司的电话经常占线，你过一会儿再打吧。",
+        "py": "Xiànzài shì shàng bān shíjiān, gōngsī de diànhuà jīngcháng zhànxiàn, nǐ guò yíhuìr zài dǎ ba.",
+        "vn": "Giờ là giờ làm việc, điện thoại công ty hay bận, bạn lát nữa gọi lại."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "占",
+        "p": "zhàn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 5,
+        "ord": "卜 trên → 口 dưới",
+        "rad": "卜 (bốc)",
+        "mean": "chiếm",
+        "tip": "卜 + 口 → CHIẾM. 占线 = chiếm đường dây = máy bận; 占 (chiếm tỷ lệ). 站 (Bài 18) có 占.",
+        "cf": "站 (zhàn – đứng)",
+        "w": "占线 / 占"
+      },
+      {
+        "c": "线",
+        "p": "xiàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "纟 trái → 戋 phải",
+        "rad": "纟 (mịch)",
+        "mean": "dây, tuyến",
+        "tip": "Tơ 纟 + 戋 → sợi DÂY, TUYẾN. 占线, 路线, 线路, 一线.",
+        "cf": "钱 (qián – tiền, cũng có 戋)",
+        "w": "占线 / 路线 / 线"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Điện thoại giám đốc Lý luôn bận, đến văn phòng gõ cửa mãi không ai mở.",
+        "answer": "李经理的电话一直占线，去办公室找他，敲了半天门，也没人开。",
+        "answerPy": "Lǐ jīnglǐ de diànhuà yìzhí zhànxiàn, qù bàngōngshì zhǎo tā, qiāole bàntiān mén, yě méi rén kāi.",
+        "note": "敲 (Bài 15), 半天 (Bài 7).",
+        "pair": "一……也……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "电话占线",
+        "py": "diànhuà zhànxiàn",
+        "vn": "điện thoại bận"
+      },
+      {
+        "zh": "一直占线",
+        "py": "yīzhí zhànxiàn",
+        "vn": "cứ bận máy"
+      },
+      {
+        "zh": "总是占线",
+        "py": "zǒngshì zhànxiàn",
+        "vn": "lúc nào cũng bận"
+      },
+      {
+        "zh": "打不通，占线",
+        "py": "dǎ bù tōng zhànxiàn",
+        "vn": "không gọi được, máy bận"
+      },
+      {
+        "zh": "占线了",
+        "py": "zhànxiàn le",
+        "vn": "đang bận máy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "电话 + 占线",
+        "m": "Điện thoại đang bận"
+      },
+      {
+        "s": "占 + 线",
+        "m": "Chiếm (占) đường dây (线)"
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "zh": "功夫",
+    "py": "gōngfu",
+    "pos": "Danh từ",
+    "vn": "võ thuật, môn võ kung fu",
+    "hv": "công phu",
+    "em": "🥋",
+    "lesson": 5,
+    "explain": [
+      "Võ thuật Trung Quốc. Cũng nghĩa \"công phu, thời gian và công sức\". 中国功夫, 会功夫, 下功夫."
+    ],
+    "usage": "中国功夫, 会功夫, 练功夫.",
+    "collo": [
+      "所有中国人都会功夫",
+      "中国功夫很厉害",
+      "练功夫"
+    ],
+    "ex_zh": "很多外国人认为所有中国人都会功夫和乒乓球，其实只是喜爱这两种运动的中国人比较多。",
+    "ex_py": "Hěn duō wàiguó rén rènwéi suǒyǒu Zhōngguó rén dōu huì gōngfu hé pīngpāngqiú, qíshí zhǐshì xǐ'ài zhè liǎng zhǒng yùndòng de Zhōngguó rén bǐjiào duō.",
+    "ex_vn": "Nhiều người nước ngoài cho rằng tất cả người Trung Quốc đều biết võ và bóng bàn, thực ra chỉ là người thích hai môn này khá nhiều.",
+    "exList": [
+      {
+        "zh": "很多外国人认为所有中国人都会功夫和乒乓球，其实只是喜爱这两种运动的中国人比较多。",
+        "py": "Hěn duō wàiguó rén rènwéi suǒyǒu Zhōngguó rén dōu huì gōngfu hé pīngpāngqiú, qíshí zhǐshì xǐ'ài zhè liǎng zhǒng yùndòng de Zhōngguó rén bǐjiào duō.",
+        "vn": "Nhiều người nước ngoài cho rằng tất cả người Trung Quốc đều biết võ và bóng bàn, thực ra chỉ là người thích hai môn này khá nhiều."
+      },
+      {
+        "zh": "A：你对我们国家的文化了解多少？B：我知道中国功夫很厉害，京剧也很有特点。",
+        "py": "A: Nǐ duì wǒmen guójiā de wénhuà liǎojiě duōshao? B: Wǒ zhīdào Zhōngguó gōngfu hěn lìhai, jīngjù yě hěn yǒu tèdiǎn.",
+        "vn": "A: Bạn hiểu văn hóa nước chúng tôi bao nhiêu? B: Tôi biết võ Trung Quốc rất lợi hại, Kinh kịch cũng rất đặc sắc."
+      },
+      {
+        "zh": "今天的晚会太精彩了，特别是那些外国留学生表演的中国功夫。",
+        "py": "Jīntiān de wǎnhuì tài jīngcǎi le, tèbié shì nàxiē wàiguó liúxuéshēng biǎoyǎn de Zhōngguó gōngfu.",
+        "vn": "Dạ hội hôm nay quá đặc sắc, nhất là màn võ Trung Quốc của du học sinh nước ngoài."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "功",
+        "p": "gōng",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "工 trái → 力 phải",
+        "rad": "力 (lực)",
+        "mean": "công",
+        "tip": "工(việc) + 力(sức) → bỏ sức làm việc → CÔNG. 功夫 = kung fu; 成功 (Bài 9); 事半功倍 (Bài 12).",
+        "cf": "攻 (gōng – tấn công)",
+        "w": "功夫 / 成功 / 功课 / 事半功倍"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi biết võ Trung Quốc không những rất lợi hại, mà Kinh kịch cũng rất đặc sắc.",
+        "answer": "我知道中国功夫不但很厉害，而且京剧也很有特点。",
+        "answerPy": "Wǒ zhīdào Zhōngguó gōngfu búdàn hěn lìhai, érqiě jīngjù yě hěn yǒu tèdiǎn.",
+        "note": "京剧 là từ bài 13, 特点 là từ bài 8, 厉害 là từ bài 11.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "中国功夫",
+        "py": "Zhōngguó gōngfu",
+        "vn": "võ Trung Quốc"
+      },
+      {
+        "zh": "练功夫",
+        "py": "liàn gōngfu",
+        "vn": "luyện võ"
+      },
+      {
+        "zh": "功夫很厉害",
+        "py": "gōngfu hěn lìhai",
+        "vn": "võ rất lợi hại"
+      },
+      {
+        "zh": "会功夫",
+        "py": "huì gōngfu",
+        "vn": "biết võ"
+      },
+      {
+        "zh": "表演功夫",
+        "py": "biǎoyǎn gōngfu",
+        "vn": "biểu diễn võ thuật"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "中国 + 功夫",
+        "m": "Võ thuật Trung Hoa — 表演 là từ bài 13"
+      },
+      {
+        "s": "功夫 cũng có nghĩa \"công sức, thời gian bỏ ra\""
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "zh": "乒乓球",
+    "py": "pīngpāngqiú",
+    "pos": "Danh từ",
+    "vn": "bóng bàn",
+    "hv": "binh bàng cầu",
+    "em": "🏓",
+    "lesson": 5,
+    "explain": [
+      "Môn thể thao quốc gia của Trung Quốc. 打乒乓球, 乒乓球桌, 乒乓球比赛."
+    ],
+    "usage": "打乒乓球, 乒乓球桌, 乒乓球比赛.",
+    "collo": [
+      "特别喜欢打乒乓球",
+      "到处都有乒乓球桌",
+      "看乒乓球比赛"
+    ],
+    "ex_zh": "中国人特别喜欢打乒乓球，在中国你会发现到处都有乒乓球桌。",
+    "ex_py": "Zhōngguó rén tèbié xǐhuan dǎ pīngpāngqiú, zài Zhōngguó nǐ huì fāxiàn dàochù dōu yǒu pīngpāngqiú zhuō.",
+    "ex_vn": "Người Trung Quốc đặc biệt thích chơi bóng bàn, ở Trung Quốc bạn sẽ thấy khắp nơi đều có bàn bóng bàn.",
+    "exList": [
+      {
+        "zh": "中国人特别喜欢打乒乓球，在中国你会发现到处都有乒乓球桌。",
+        "py": "Zhōngguó rén tèbié xǐhuan dǎ pīngpāngqiú, zài Zhōngguó nǐ huì fāxiàn dàochù dōu yǒu pīngpāngqiú zhuō.",
+        "vn": "Người Trung Quốc đặc biệt thích chơi bóng bàn, ở Trung Quốc bạn sẽ thấy khắp nơi đều có bàn bóng bàn."
+      },
+      {
+        "zh": "\"乒乓球\"这个名字也很有意思，\"乒\"和\"乓\"就是打球时发出的声音。",
+        "py": "\"Pīngpāngqiú\" zhège míngzi yě hěn yǒu yìsi, \"pīng\" hé \"pāng\" jiù shì dǎ qiú shí fāchū de shēngyīn.",
+        "vn": "Cái tên \"乒乓球\" cũng rất thú vị, \"乒\" và \"乓\" là âm thanh phát ra khi đánh bóng."
+      },
+      {
+        "zh": "在看乒乓球比赛时，尤其是在运动员发球的时候，观众要安静。",
+        "py": "Zài kàn pīngpāngqiú bǐsài shí, yóuqí shì zài yùndòngyuán fā qiú de shíhou, guānzhòng yào ānjìng.",
+        "vn": "Khi xem thi đấu bóng bàn, nhất là lúc vận động viên giao bóng, khán giả phải yên tĩnh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "乒",
+        "p": "pīng",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 6,
+        "ord": "丘 + 丿",
+        "rad": "丿 (phiệt)",
+        "mean": "(tiếng) bốp",
+        "tip": "Chữ tượng thanh: 兵 bỏ nét phải → 乒 (pīng), bỏ nét trái → 乓 (pāng). Tiếng bóng bàn \"ping-pong\".",
+        "cf": "乓 (pāng)",
+        "w": "乒乓球 / 乒乓"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Khi xem thi đấu bóng bàn, nhất là lúc vận động viên giao bóng, khán giả phải yên tĩnh.",
+        "answer": "在看乒乓球比赛时，尤其是在运动员发球的时候，观众要安静。",
+        "answerPy": "Zài kàn pīngpāngqiú bǐsài shí, yóuqí shì zài yùndòngyuán fā qiú de shíhou, guānzhòng yào ānjìng.",
+        "note": "尤其 (Bài 7), 观众 (Bài 13), 安静 (Bài 2).",
+        "pair": "时……时……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "打乒乓球",
+        "py": "dǎ pīngpāngqiú",
+        "vn": "chơi bóng bàn"
+      },
+      {
+        "zh": "乒乓球桌",
+        "py": "pīngpāngqiú zhuō",
+        "vn": "bàn bóng bàn"
+      },
+      {
+        "zh": "乒乓球比赛",
+        "py": "pīngpāngqiú bǐsài",
+        "vn": "giải bóng bàn"
+      },
+      {
+        "zh": "喜欢打乒乓球",
+        "py": "xǐhuan dǎ pīngpāngqiú",
+        "vn": "thích chơi bóng bàn"
+      },
+      {
+        "zh": "乒乓球和羽毛球",
+        "py": "pīngpāngqiú hé yǔmáoqiú",
+        "vn": "bóng bàn và cầu lông"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "打 + 乒乓球",
+        "m": "Chơi bóng bàn — môn dùng tay thì dùng 打"
+      },
+      {
+        "s": "乒乓 mô phỏng tiếng bóng đập — chữ tượng thanh"
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "zh": "羽毛球",
+    "py": "yǔmáoqiú",
+    "pos": "Danh từ",
+    "vn": "cầu lông",
+    "hv": "vũ mao cầu",
+    "em": "🏸",
+    "lesson": 5,
+    "explain": [
+      "Môn cầu lông. 羽毛 = lông vũ. 打羽毛球, 羽毛球比赛."
+    ],
+    "usage": "打羽毛球, 羽毛球比赛, 羽毛球拍.",
+    "collo": [
+      "像乒乓球、羽毛球、跑步等运动",
+      "打羽毛球",
+      "羽毛球比赛"
+    ],
+    "ex_zh": "像乒乓球、羽毛球、跑步等运动对条件要求不高，所以它们都成为人们运动不错的选择。",
+    "ex_py": "Xiàng pīngpāngqiú, yǔmáoqiú, pǎo bù děng yùndòng duì tiáojiàn yāoqiú bù gāo, suǒyǐ tāmen dōu chéngwéi rénmen yùndòng búcuò de xuǎnzé.",
+    "ex_vn": "Những môn như bóng bàn, cầu lông, chạy bộ yêu cầu điều kiện không cao, nên đều là lựa chọn vận động tốt.",
+    "exList": [
+      {
+        "zh": "像乒乓球、羽毛球、跑步等运动对条件要求不高，所以它们都成为人们运动不错的选择。",
+        "py": "Xiàng pīngpāngqiú, yǔmáoqiú, pǎo bù děng yùndòng duì tiáojiàn yāoqiú bù gāo, suǒyǐ tāmen dōu chéngwéi rénmen yùndòng búcuò de xuǎnzé.",
+        "vn": "Những môn như bóng bàn, cầu lông, chạy bộ yêu cầu điều kiện không cao, nên đều là lựa chọn vận động tốt."
+      },
+      {
+        "zh": "周末我常和朋友去体育馆打羽毛球。",
+        "py": "Zhōumò wǒ cháng hé péngyou qù tǐyùguǎn dǎ yǔmáoqiú.",
+        "vn": "Cuối tuần tôi hay cùng bạn đến nhà thi đấu chơi cầu lông."
+      },
+      {
+        "zh": "羽毛球比赛的时候风太大不行，所以一般在室内进行。",
+        "py": "Yǔmáoqiú bǐsài de shíhou fēng tài dà bù xíng, suǒyǐ yìbān zài shìnèi jìnxíng.",
+        "vn": "Thi đấu cầu lông gió lớn không được, nên thường tổ chức trong nhà."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "羽",
+        "p": "yǔ",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "习 trái → 习 phải",
+        "rad": "羽 (vũ)",
+        "mean": "lông vũ",
+        "tip": "Tượng hình hai cánh chim → LÔNG VŨ. 羽毛球 = quả cầu lông vũ. 习 (học) là một nửa của 羽.",
+        "cf": "习 (xí – học)",
+        "w": "羽毛球 / 羽毛"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cuối tuần chỉ cần rảnh là tôi lại cùng bạn đến nhà thi đấu chơi cầu lông.",
+        "answer": "周末只要有空，我就常和朋友去体育馆打羽毛球。",
+        "answerPy": "Zhōumò zhǐyào yǒu kòng, wǒ jiù cháng hé péngyou qù tǐyùguǎn dǎ yǔmáoqiú.",
+        "note": "空儿 là từ bài 10; môn dùng tay thì dùng 打.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "打羽毛球",
+        "py": "dǎ yǔmáoqiú",
+        "vn": "chơi cầu lông"
+      },
+      {
+        "zh": "羽毛球比赛",
+        "py": "yǔmáoqiú bǐsài",
+        "vn": "giải cầu lông"
+      },
+      {
+        "zh": "羽毛球拍",
+        "py": "yǔmáoqiú pāi",
+        "vn": "vợt cầu lông"
+      },
+      {
+        "zh": "去打羽毛球",
+        "py": "qù dǎ yǔmáoqiú",
+        "vn": "đi chơi cầu lông"
+      },
+      {
+        "zh": "羽毛球运动",
+        "py": "yǔmáoqiú yùndòng",
+        "vn": "môn cầu lông"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "打 + 羽毛球",
+        "m": "Chơi cầu lông"
+      },
+      {
+        "s": "羽毛 + 球",
+        "m": "Quả cầu (球) bằng lông vũ (羽毛) — 毛 là từ bài 17"
+      }
+    ]
+  },
+  {
+    "n": 30,
+    "zh": "场",
+    "py": "chǎng",
+    "pos": "Lượng từ",
+    "vn": "trận (thể thao, giải trí…)",
+    "hv": "trường",
+    "em": "🎫",
+    "lesson": 5,
+    "explain": [
+      "Lượng từ cho thi đấu, biểu diễn, phim, mưa: 一场比赛, 一场演出, 一场电影, 一场雪. Cũng là danh từ: 停车场, 广场."
+    ],
+    "usage": "打几场球, 一场演出, 一场雪.",
+    "collo": [
+      "打几场球",
+      "最后一场演出",
+      "下了一场大雪"
+    ],
+    "ex_zh": "所以很多人一到周末就会到体育馆打几场球。",
+    "ex_py": "Suǒyǐ hěn duō rén yí dào zhōumò jiù huì dào tǐyùguǎn dǎ jǐ chǎng qiú.",
+    "ex_vn": "Nên nhiều người cứ đến cuối tuần là đến nhà thi đấu chơi vài trận bóng.",
+    "exList": [
+      {
+        "zh": "人们常说\"生命在于运动\"，所以很多人一到周末就会到体育馆打几场球。",
+        "py": "Rénmen cháng shuō \"shēngmìng zàiyú yùndòng\", suǒyǐ hěn duō rén yí dào zhōumò jiù huì dào tǐyùguǎn dǎ jǐ chǎng qiú.",
+        "vn": "Người ta thường nói \"sự sống nằm ở vận động\", nên nhiều người cứ cuối tuần là đến nhà thi đấu chơi vài trận bóng."
+      },
+      {
+        "zh": "这个京剧我一直想看，下星期六是他们在这儿的最后一场演出。",
+        "py": "Zhège jīngjù wǒ yìzhí xiǎng kàn, xià xīngqīliù shì tāmen zài zhèr de zuìhòu yì chǎng yǎnchū.",
+        "vn": "Vở Kinh kịch này tôi luôn muốn xem, thứ Bảy tới là buổi diễn cuối của họ ở đây."
+      },
+      {
+        "zh": "那是1994年的冬天，那场雪下得特别大。",
+        "py": "Nà shì yī jiǔ jiǔ sì nián de dōngtiān, nà chǎng xuě xià de tèbié dà.",
+        "vn": "Đó là mùa đông năm 1994, trận tuyết ấy rơi rất lớn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "场",
+        "p": "chǎng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "土 trái → 𠃓 phải",
+        "rad": "土 (thổ)",
+        "mean": "sân; trận",
+        "tip": "Đất 土 + 𠃓 → khoảng đất rộng → SÂN (广场, 停车场); lượng từ cho sự kiện diễn ra trên sân → TRẬN. 扬 (Bài 15) cùng bộ phải.",
+        "cf": "扬 (yáng – 表扬)",
+        "w": "一场 / 广场 / 停车场 / 场所"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vở Kinh kịch này tôi luôn muốn xem, mà thứ Bảy tới lại là buổi diễn cuối của họ ở đây.",
+        "answer": "这个京剧我一直想看，而下星期六就是他们在这儿的最后一场演出。",
+        "answerPy": "Zhège jīngjù wǒ yìzhí xiǎng kàn, ér xià xīngqīliù jiùshì tāmen zài zhèr de zuìhòu yì chǎng yǎnchū.",
+        "note": "演出 là từ bài 13; 一场演出 — lượng từ 场.",
+        "pair": "……，而……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一场比赛",
+        "py": "yì chǎng bǐsài",
+        "vn": "một trận đấu"
+      },
+      {
+        "zh": "最后一场演出",
+        "py": "zuìhòu yì chǎng yǎnchū",
+        "vn": "buổi diễn cuối"
+      },
+      {
+        "zh": "打几场球",
+        "py": "dǎ jǐ chǎng qiú",
+        "vn": "đánh mấy trận"
+      },
+      {
+        "zh": "一场大雪",
+        "py": "yì chǎng dà xuě",
+        "vn": "một trận tuyết lớn"
+      },
+      {
+        "zh": "看了两场电影",
+        "py": "kàn le liǎng chǎng diànyǐng",
+        "vn": "xem hai suất phim"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 场 + 比赛 / 演出 / 雨雪",
+        "m": "Lượng từ 场 cho trận đấu, buổi diễn, cơn mưa"
+      },
+      {
+        "s": "场 (chǎng) ≠ 常 (cháng)"
+      }
+    ]
+  },
+  {
+    "n": 31,
+    "zh": "禁止",
+    "py": "jìnzhǐ",
+    "pos": "Động từ",
+    "vn": "cấm",
+    "hv": "cấm chỉ",
+    "em": "🚫",
+    "lesson": 5,
+    "explain": [
+      "Không cho phép (chính thức). 禁止吸烟, 禁止大声讲话, 禁止停车. Trái nghĩa: 允许 (Bài 18)."
+    ],
+    "usage": "禁止吸烟, 禁止大声讲话, 禁止停车.",
+    "collo": [
+      "禁止大声讲话",
+      "禁止抽烟",
+      "禁止停车"
+    ],
+    "ex_zh": "观众要安静，禁止大声讲话或者离开座位随便走动。",
+    "ex_py": "Guānzhòng yào ānjìng, jìnzhǐ dàshēng jiǎng huà huòzhě líkāi zuòwèi suíbiàn zǒudòng.",
+    "ex_vn": "Khán giả phải yên tĩnh, cấm nói to hoặc rời chỗ ngồi đi lại tùy tiện.",
+    "exList": [
+      {
+        "zh": "观众要安静，禁止大声讲话或者离开座位随便走动。",
+        "py": "Guānzhòng yào ānjìng, jìnzhǐ dàshēng jiǎng huà huòzhě líkāi zuòwèi suíbiàn zǒudòng.",
+        "vn": "Khán giả phải yên tĩnh, cấm nói to hoặc rời chỗ ngồi đi lại tùy tiện."
+      },
+      {
+        "zh": "抽烟不但污染空气，影响身体健康，而且在加油站这样的地方抽烟非常危险，因此，很多地方都禁止抽烟。",
+        "py": "Chōu yān búdàn wūrǎn kōngqì, yǐngxiǎng shēntǐ jiànkāng, érqiě zài jiāyóuzhàn zhèyàng de dìfang chōu yān fēicháng wēixiǎn, yīncǐ, hěn duō dìfang dōu jìnzhǐ chōu yān.",
+        "vn": "Hút thuốc không những ô nhiễm không khí, hại sức khỏe, mà ở cây xăng còn rất nguy hiểm, vì vậy nhiều nơi cấm hút thuốc."
+      },
+      {
+        "zh": "这里禁止停车，请把车停到停车场去。",
+        "py": "Zhèlǐ jìnzhǐ tíng chē, qǐng bǎ chē tíngdào tíngchēchǎng qù.",
+        "vn": "Ở đây cấm đỗ xe, xin đỗ xe vào bãi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "禁",
+        "p": "jìn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "林 trên → 示 dưới",
+        "rad": "示 (thị)",
+        "mean": "cấm",
+        "tip": "Rừng 林 + 示(thần) → rừng thiêng không được vào → CẤM. 禁止 = cấm chỉ.",
+        "cf": "林 (lín – rừng)",
+        "w": "禁止 / 禁烟"
+      },
+      {
+        "c": "止",
+        "p": "zhǐ",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 4,
+        "ord": "丨 → 一 → 丨 → 一",
+        "rad": "止 (chỉ)",
+        "mean": "dừng",
+        "tip": "Tượng hình bàn chân → DỪNG LẠI. 禁止, 停止, 地址 (Bài 18) có 止.",
+        "cf": "正 (zhèng – đúng)",
+        "w": "禁止 / 停止 / 不止"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hút thuốc ở cây xăng rất nguy hiểm, vì vậy nhiều nơi cấm hút thuốc.",
+        "answer": "在加油站抽烟非常危险，因此，很多地方都禁止抽烟。",
+        "answerPy": "Zài jiāyóuzhàn chōu yān fēicháng wēixiǎn, yīncǐ, hěn duō dìfang dōu jìnzhǐ chōu yān.",
+        "note": "加油站 (Bài 2), 危险 (Bài 18), 因此 (Bài 8), 抽烟 (Bài 7).",
+        "pair": "……，因此……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "禁止抽烟",
+        "py": "jìnzhǐ chōuyān",
+        "vn": "cấm hút thuốc"
+      },
+      {
+        "zh": "禁止停车",
+        "py": "jìnzhǐ tíng chē",
+        "vn": "cấm đỗ xe"
+      },
+      {
+        "zh": "禁止大声讲话",
+        "py": "jìnzhǐ dàshēng jiǎng huà",
+        "vn": "cấm nói to"
+      },
+      {
+        "zh": "禁止入内",
+        "py": "jìnzhǐ rù nèi",
+        "vn": "cấm vào"
+      },
+      {
+        "zh": "被禁止了",
+        "py": "bèi jìnzhǐ le",
+        "vn": "bị cấm rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "禁止 + V",
+        "m": "Cấm làm gì — dùng trên biển báo"
+      },
+      {
+        "s": "禁止 ≈ 不允许 (bài 18)",
+        "m": "禁止 mạnh và chính thức hơn"
+      }
+    ]
+  },
+  {
+    "n": 32,
+    "zh": "座位",
+    "py": "zuòwèi",
+    "pos": "Danh từ",
+    "vn": "chỗ ngồi",
+    "hv": "tọa vị",
+    "em": "💺",
+    "lesson": 5,
+    "explain": [
+      "Chỗ ngồi. 离开座位, 找个座位, 座位不够. 座 (Bài 18) lượng từ."
+    ],
+    "usage": "离开座位, 找个座位, 座位不够.",
+    "collo": [
+      "离开座位随便走动",
+      "找个安静点儿的座位",
+      "座位恐怕不够"
+    ],
+    "ex_zh": "禁止大声讲话或者离开座位随便走动。",
+    "ex_py": "Jìnzhǐ dàshēng jiǎng huà huòzhě líkāi zuòwèi suíbiàn zǒudòng.",
+    "ex_vn": "Cấm nói to hoặc rời chỗ ngồi đi lại tùy tiện.",
+    "exList": [
+      {
+        "zh": "禁止大声讲话或者离开座位随便走动。",
+        "py": "Jìnzhǐ dàshēng jiǎng huà huòzhě líkāi zuòwèi suíbiàn zǒudòng.",
+        "vn": "Cấm nói to hoặc rời chỗ ngồi đi lại tùy tiện."
+      },
+      {
+        "zh": "A：请问，您一共几位？B：我们一共四个人，麻烦你给我们找个安静点儿的座位。",
+        "py": "A: Qǐngwèn, nín yígòng jǐ wèi? B: Wǒmen yígòng sì ge rén, máfan nǐ gěi wǒmen zhǎo ge ānjìng diǎnr de zuòwèi.",
+        "vn": "A: Xin hỏi, quý khách mấy vị? B: Chúng tôi bốn người, phiền tìm cho chỗ ngồi yên tĩnh chút."
+      },
+      {
+        "zh": "这个会议室的座位恐怕不够，还是换到旁边那个大的吧。",
+        "py": "Zhège huìyìshì de zuòwèi kǒngpà bú gòu, háishi huàndào pángbiān nàge dà de ba.",
+        "vn": "Chỗ ngồi phòng họp này e không đủ, đổi sang phòng lớn bên cạnh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "位",
+        "p": "wèi",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "亻 trái → 立 phải",
+        "rad": "亻 (nhân)",
+        "mean": "vị trí",
+        "tip": "Người 亻 + 立(đứng) → chỗ người đứng → VỊ TRÍ. 座位, 位置, lượng từ kính trọng 一位.",
+        "cf": "立 (lì – đứng)",
+        "w": "座位 / 位置 / 一位"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng tôi tất cả bốn người, phiền bạn tìm giúp một chỗ ngồi yên tĩnh hơn chút.",
+        "answer": "我们一共四个人，麻烦你给我们找个安静点儿的座位。",
+        "answerPy": "Wǒmen yígòng sì ge rén, máfan nǐ gěi wǒmen zhǎo ge ānjìng diǎnr de zuòwèi.",
+        "note": "麻烦 là từ bài 2 — cách nhờ vả lịch sự.",
+        "pair": "麻烦……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "找个座位",
+        "py": "zhǎo gè zuòwèi",
+        "vn": "tìm chỗ ngồi"
+      },
+      {
+        "zh": "座位不够",
+        "py": "zuòwèi bú gòu",
+        "vn": "không đủ chỗ ngồi"
+      },
+      {
+        "zh": "离开座位",
+        "py": "líkāi zuòwèi",
+        "vn": "rời chỗ ngồi"
+      },
+      {
+        "zh": "安静的座位",
+        "py": "ānjìng de zuòwèi",
+        "vn": "chỗ ngồi yên tĩnh"
+      },
+      {
+        "zh": "座位号",
+        "py": "zuòwèi hào",
+        "vn": "số ghế"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "找 + 个 + 座位",
+        "m": "Tìm một chỗ ngồi"
+      },
+      {
+        "s": "座 + 位",
+        "m": "Chỗ (位) để ngồi (座) — 座 cũng là lượng từ ở bài 18"
+      }
+    ]
+  }
+];
+
+var wuData = [
+  {img:'📄',label:'复印',py:'fùyìn',letter:'A'},
+  {img:'🍳',label:'厨房',py:'chúfáng',letter:'B'},
+  {img:'🚫',label:'禁止',py:'jìnzhǐ',letter:'C'},
+  {img:'👓',label:'戴眼镜',py:'dài yǎnjìng',letter:'D'},
+  {img:'💇',label:'理发',py:'lǐ fà',letter:'E'},
+  {img:'🙏',label:'道歉',py:'dào qiàn',letter:'F'},
+];
+
+var dialogData = [
+  {scene:'课文1 · 马克申请下个学期继续在学校学习',
+   preQuiz:[{q:'马克把申请表填错后，高老师批评他了吗？',opts:['批评了','没有，她说谁都有粗心的时候','让他重新申请'],ans:1},{q:'马克填错了什么？',opts:['护照号码','出生年月','联系电话'],ans:0},{q:'最后高老师还要做什么？',opts:['把马克的护照复印一下','给马克打电话','让马克回家'],ans:0}],
+   lines:[
+     {sp:0,zh:'老师，您好！我希望下个学期在这里继续学习，请问还需要重新申请吗？',py:'Lǎoshī, nín hǎo! Wǒ xīwàng xià ge xuéqī zài zhèli jìxù xuéxí, qǐngwèn hái xūyào chóngxīn shēnqǐng ma?',vn:'Chào thầy! Em muốn học kỳ sau tiếp tục học ở đây, xin hỏi có cần đăng ký lại không?'},
+     {sp:1,zh:'是的。给你表格，出生年月、性别、护照号码都要填，还有联系地址、联系电话。',py:'Shì de. Gěi nǐ biǎogé, chūshēng nián yuè, xìngbié, hùzhào hàomǎ dōu yào tián, hái yǒu liánxì dìzhǐ, liánxì diànhuà.',vn:'Đúng. Đây là mẫu đơn, ngày tháng năm sinh, giới tính, số hộ chiếu đều phải điền, còn địa chỉ và điện thoại liên lạc.'},
+     {sp:0,zh:'真抱歉，我不小心把护照号码填错了，您能再给我一份新的申请表吗？',py:'Zhēn bàoqiàn, wǒ bù xiǎoxīn bǎ hùzhào hàomǎ tiáncuò le, nín néng zài gěi wǒ yí fèn xīn de shēnqǐngbiǎo ma?',vn:'Thật xin lỗi, em lỡ điền sai số hộ chiếu, thầy cho em một đơn mới được không?'},
+     {sp:1,zh:'没关系，不用道歉，谁都有粗心填错的时候。申请表都被别人拿走了，我给你重新打印一份，你等一下。',py:'Méi guānxi, búyòng dào qiàn, shéi dōu yǒu cūxīn tiáncuò de shíhou. Shēnqǐngbiǎo dōu bèi biérén názǒu le, wǒ gěi nǐ chóngxīn dǎyìn yí fèn, nǐ děng yíxià.',vn:'Không sao, không cần xin lỗi, ai cũng có lúc cẩu thả điền sai. Đơn bị người khác lấy hết rồi, tôi in lại cho em một bản, đợi chút.'},
+     {sp:0,zh:'这次我按照要求都填写完了，请问还需要做别的事情吗？',py:'Zhè cì wǒ ànzhào yāoqiú dōu tiánxiě wán le, qǐngwèn hái xūyào zuò biéde shìqing ma?',vn:'Lần này em điền xong theo yêu cầu rồi, xin hỏi còn cần làm gì khác không?'},
+     {sp:1,zh:'请把你的护照给我，我们要把护照复印一下。',py:'Qǐng bǎ nǐ de hùzhào gěi wǒ, wǒmen yào bǎ hùzhào fùyìn yíxià.',vn:'Đưa hộ chiếu cho tôi, chúng tôi cần photo hộ chiếu.'},
+   ]},
+  {scene:'课文2 · 王静做饺子时手受伤了',
+   preQuiz:[{q:'今天他们能吃到羊肉饺子吗？他们会怎么办？',opts:['能吃到','不能，李进去买包子','不能，他们去餐厅'],ans:1},{q:'王静的手为什么流血了？',opts:['切肉的时候把手弄破了','摔倒了','被狗咬了'],ans:0},{q:'王静口袋里有多少零钱？',opts:['十几块','几百块','几毛'],ans:0}],
+   lines:[
+     {sp:0,zh:'呀，你的手怎么流血了？等一下，我给你包起来。',py:'Ya, nǐ de shǒu zěnme liú xiě le? Děng yíxià, wǒ gěi nǐ bāo qilai.',vn:'Ơ, tay em sao chảy máu? Đợi chút, anh băng lại cho.'},
+     {sp:1,zh:'没关系，我想给你做点儿羊肉饺子，刚才用刀切肉的时候把手弄破了。',py:'Méi guānxi, wǒ xiǎng gěi nǐ zuò diǎnr yángròu jiǎozi, gāngcái yòng dāo qiē ròu de shíhou bǎ shǒu nòngpò le.',vn:'Không sao, em muốn làm sủi cảo thịt dê cho anh, vừa rồi dùng dao thái thịt làm đứt tay.'},
+     {sp:0,zh:'你也太不小心了，不过好像不太严重，过几天就好了。衣服上也有一点儿血，你把衣服脱下来，我给你洗洗。',py:'Nǐ yě tài bù xiǎoxīn le, búguò hǎoxiàng bú tài yánzhòng, guò jǐ tiān jiù hǎo le. Yīfu shang yě yǒu yìdiǎnr xiě, nǐ bǎ yīfu tuō xiàlai, wǒ gěi nǐ xǐxi.',vn:'Em bất cẩn quá, nhưng hình như không nghiêm trọng, vài ngày là khỏi. Trên áo cũng có chút máu, em cởi ra, anh giặt cho.'},
+     {sp:1,zh:'看来今天吃不上羊肉饺子了。',py:'Kànlái jīntiān chībushàng yángròu jiǎozi le.',vn:'Xem ra hôm nay không ăn được sủi cảo thịt dê rồi.'},
+     {sp:0,zh:'那我们就吃点儿别的。我常去的那家理发店附近有个餐厅，那里的包子很好吃，我一会儿去买一点儿。',py:'Nà wǒmen jiù chī diǎnr biéde. Wǒ cháng qù de nà jiā lǐfàdiàn fùjìn yǒu ge cāntīng, nàli de bāozi hěn hǎochī, wǒ yíhuìr qù mǎi yìdiǎnr.',vn:'Vậy ăn thứ khác. Gần tiệm cắt tóc anh hay đi có nhà hàng, bánh bao rất ngon, lát anh đi mua.'},
+     {sp:1,zh:'好吧，我衣服口袋里有十几块零钱，买包子应该够。',py:'Hǎo ba, wǒ yīfu kǒudai li yǒu shí jǐ kuài língqián, mǎi bāozi yīnggāi gòu.',vn:'Được, túi áo em có hơn chục đồng tiền lẻ, mua bánh bao chắc đủ.'},
+   ]},
+  {scene:'课文3 · 安娜帮助马克练习舞蹈动作',
+   preQuiz:[{q:'安娜为什么早上没看见马克？',opts:['她忘戴眼镜了','她在跳舞','她没来学校'],ans:0},{q:'安娜小时候跟谁学过跳舞？',opts:['妈妈','老师','朋友'],ans:0},{q:'安娜认为舞蹈是什么？',opts:['一门艺术，也是一种“语言”','一种运动','一种游戏'],ans:0}],
+   lines:[
+     {sp:0,zh:'我早上跟你打招呼，你没看见。想不到又在这儿碰见你了。',py:'Wǒ zǎoshang gēn nǐ dǎ zhāohu, nǐ méi kànjiàn. Xiǎngbudào yòu zài zhèr pèngjiàn nǐ le.',vn:'Sáng nay tôi chào bạn, bạn không thấy. Không ngờ lại gặp bạn ở đây.'},
+     {sp:1,zh:'真是对不起，我不是故意的，今天早上我忘戴眼镜了，看不清楚。',py:'Zhēn shì duìbuqǐ, wǒ bú shì gùyì de, jīntiān zǎoshang wǒ wàng dài yǎnjìng le, kànbuqīngchu.',vn:'Thật xin lỗi, tôi không cố ý, sáng nay quên đeo kính, nhìn không rõ.'},
+     {sp:0,zh:'刚才我在旁边看到你跳中国舞了，没看出来你跳得这么好！难道你以前在你们国家就学过中国舞蹈吗？',py:'Gāngcái wǒ zài pángbiān kàndào nǐ tiào Zhōngguó wǔ le, méi kàn chūlái nǐ tiào de zhème hǎo! Nándào nǐ yǐqián zài nǐmen guójiā jiù xuéguo Zhōngguó wǔdǎo ma?',vn:'Vừa rồi tôi thấy bạn múa Trung Quốc, không ngờ bạn múa hay thế! Chẳng lẽ ở nước bạn đã học múa Trung Quốc?'},
+     {sp:1,zh:'我小时候妈妈教我跳过两年的舞，所以稍微有点儿基础。再说，舞蹈不仅是一门艺术，也是一种"语言"，这种语言与国籍无关，无论哪个国家的人都能看懂。',py:'Wǒ xiǎoshíhou māma jiāo wǒ tiàoguo liǎng nián de wǔ, suǒyǐ shāowēi yǒudiǎnr jīchǔ. Zàishuō, wǔdǎo bùjǐn shì yì mén yìshù, yě shì yì zhǒng "yǔyán", zhè zhǒng yǔyán yǔ guójí wúguān, wúlùn nǎ ge guójiā de rén dōu néng kàndǒng.',vn:'Hồi nhỏ mẹ dạy tôi múa hai năm, nên hơi có chút nền tảng. Hơn nữa, múa không chỉ là nghệ thuật mà còn là "ngôn ngữ", không liên quan quốc tịch, người nước nào cũng hiểu.'},
+     {sp:0,zh:'太好了！我刚学习跳这种舞没多久，你帮我看看，我的这个动作对不对。',py:'Tài hǎo le! Wǒ gāng xuéxí tiào zhè zhǒng wǔ méi duō jiǔ, nǐ bāng wǒ kànkan, wǒ de zhège dòngzuò duì bu duì.',vn:'Tuyệt! Tôi mới học múa này chưa lâu, bạn xem giúp động tác này đúng không.'},
+     {sp:1,zh:'你这个动作做得还是不太标准，我给你跳一遍。你仔细看着，应该像我这样：先抬胳膊，然后抬腿，最后头再向右转一下。',py:'Nǐ zhège dòngzuò zuò de háishi bú tài biāozhǔn, wǒ gěi nǐ tiào yí biàn. Nǐ zǐxì kànzhe, yīnggāi xiàng wǒ zhèyàng: xiān tái gēbo, ránhòu tái tuǐ, zuìhòu tóu zài xiàng yòu zhuǎn yíxià.',vn:'Động tác này chưa chuẩn lắm, tôi múa cho bạn một lượt. Nhìn kỹ nhé, nên như tôi: giơ cánh tay trước, rồi nhấc chân, cuối cùng đầu quay sang phải.'},
+   ]},
+  {scene:'课文4 · Mã Khắc tìm thuê nhà',
+   preQuiz:[{q:'马克为什么打电话总是打不通？',opts:['记号码的时候写错了一个数字','房东很忙','手机坏了'],ans:0},{q:'马克为什么想换房子？',opts:['房子周围环境非常吵','房子太贵','房子太小'],ans:0},{q:'广告上的房子有什么特点？',opts:['交通方便，周围安静，厨房很大','离马路很近','很便宜'],ans:0}],
+   lines:[
+     {sp:0,zh:'马克去年租的房子离马路很近，对面有大大小小的商店，周围环境非常吵。所以，房子还没到期，马克就开始着急换房子了。',py:'Mǎkè qùnián zū de fángzi lí mǎlù hěn jìn, duìmiàn yǒu dàdà-xiǎoxiǎo de shāngdiàn, zhōuwéi huánjìng fēicháng chǎo. Suǒyǐ, fángzi hái méi dàoqī, Mǎkè jiù kāishǐ zháojí huàn fángzi le.',vn:'Nhà Mã Khắc thuê năm ngoái sát đường lớn, đối diện nhiều cửa hàng, xung quanh rất ồn. Nên nhà chưa hết hạn, anh đã vội đổi nhà.'},
+     {sp:0,zh:'有一天，他在小区门口看到一个租房子的广告。广告上说房子交通方便，周围很安静，厨房很大。总的来说，这套房子他很满意，于是他就记下了房东的手机号码。',py:'Yǒu yì tiān, tā zài xiǎoqū ménkǒu kàndào yí ge zū fángzi de guǎnggào. Guǎnggào shang shuō fángzi jiāotōng fāngbiàn, zhōuwéi hěn ānjìng, chúfáng hěn dà. Zǒng de lái shuō, zhè tào fángzi tā hěn mǎnyì, yúshì tā jiù jìxiàle fángdōng de shǒujī hàomǎ.',vn:'Một hôm anh thấy quảng cáo cho thuê nhà ở cổng khu. Quảng cáo nói giao thông tiện, xung quanh yên tĩnh, bếp rộng. Nhìn chung anh rất hài lòng, thế là ghi số điện thoại chủ nhà.'},
+     {sp:0,zh:'可回家后打电话，电话总是占线。第二天，他路过小区门口时，又仔细看了一下广告，原来在记号码的时候写错了一个数字。',py:'Kě huí jiā hòu dǎ diànhuà, diànhuà zǒngshì zhànxiàn. Dì-èr tiān, tā lùguò xiǎoqū ménkǒu shí, yòu zǐxì kànle yíxià guǎnggào, yuánlái zài jì hàomǎ de shíhou xiěcuòle yí ge shùzì.',vn:'Nhưng về nhà gọi, máy luôn bận. Hôm sau đi qua cổng khu, xem kỹ lại quảng cáo, hóa ra lúc ghi số viết sai một chữ số.'},
+   ]},
+  {scene:'课文5 · Kung fu và bóng bàn',
+   preQuiz:[{q:'“乒乓球”这个名字是怎么来的？',opts:['“乒”和“乓”是打球时发出的声音','是发明人的名字','是一个地方的名字'],ans:0},{q:'很多外国人认为所有中国人都会什么？',opts:['功夫和乒乓球','游泳和跑步','唱歌和跳舞'],ans:0},{q:'看乒乓球比赛，运动员发球时观众要怎么做？',opts:['安静，不能大声讲话','大声加油','站起来'],ans:0}],
+   lines:[
+     {sp:0,zh:'很多外国人认为所有中国人都会功夫和乒乓球，其实只是喜爱这两种运动的中国人比较多。中国人特别喜欢打乒乓球，在中国你会发现到处都有乒乓球桌。',py:'Hěn duō wàiguó rén rènwéi suǒyǒu Zhōngguó rén dōu huì gōngfu hé pīngpāngqiú, qíshí zhǐshì xǐ\'ài zhè liǎng zhǒng yùndòng de Zhōngguó rén bǐjiào duō. Zhōngguó rén tèbié xǐhuan dǎ pīngpāngqiú, zài Zhōngguó nǐ huì fāxiàn dàochù dōu yǒu pīngpāngqiú zhuō.',vn:'Nhiều người nước ngoài nghĩ tất cả người Trung Quốc biết võ và bóng bàn, thực ra chỉ là người thích hai môn này khá nhiều. Người Trung Quốc rất thích bóng bàn, khắp nơi đều có bàn bóng bàn.'},
+     {sp:0,zh:'像乒乓球、羽毛球、跑步等运动对条件要求不高，所以它们都成为人们运动不错的选择。人们常说"生命在于运动"，所以很多人一到周末就会到体育馆打几场球。',py:'Xiàng pīngpāngqiú, yǔmáoqiú, pǎo bù děng yùndòng duì tiáojiàn yāoqiú bù gāo, suǒyǐ tāmen dōu chéngwéi rénmen yùndòng búcuò de xuǎnzé. Rénmen cháng shuō "shēngmìng zàiyú yùndòng", suǒyǐ hěn duō rén yí dào zhōumò jiù huì dào tǐyùguǎn dǎ jǐ chǎng qiú.',vn:'Bóng bàn, cầu lông, chạy bộ yêu cầu điều kiện không cao, nên là lựa chọn tốt. Người ta nói "sự sống nằm ở vận động", nên cuối tuần nhiều người đến nhà thi đấu chơi vài trận.'},
+     {sp:0,zh:'"乒乓球"这个名字也很有意思，"乒"和"乓"就是打球时发出的声音。在看乒乓球比赛时，尤其是在运动员发球的时候，观众要安静，禁止大声讲话或者离开座位随便走动。',py:'"Pīngpāngqiú" zhège míngzi yě hěn yǒu yìsi, "pīng" hé "pāng" jiù shì dǎ qiú shí fāchū de shēngyīn. Zài kàn pīngpāngqiú bǐsài shí, yóuqí shì zài yùndòngyuán fā qiú de shíhou, guānzhòng yào ānjìng, jìnzhǐ dàshēng jiǎng huà huòzhě líkāi zuòwèi suíbiàn zǒudòng.',vn:'Tên "乒乓球" cũng thú vị, "乒" "乓" là âm thanh khi đánh bóng. Khi xem thi đấu, nhất là lúc giao bóng, khán giả phải yên tĩnh, cấm nói to hoặc rời chỗ đi lại.'},
+   ]},
+];
+
+var matchData = [
+  {left:'重新',right:'重新申请'},
+  {left:'填错',right:'把护照号码填错了'},
+  {left:'复印',right:'把护照复印一下'},
+  {left:'弄破',right:'把手弄破了'},
+  {left:'脱',right:'把衣服脱下来'},
+  {left:'打',right:'打招呼'},
+  {left:'戴',right:'戴眼镜'},
+  {left:'与国籍',right:'与国籍无关'},
+  {left:'记下',right:'记下房东的号码'},
+  {left:'禁止',right:'禁止大声讲话'},
+];
+
+var fillData = [
+  {pre:'我希望下个',blank:'',post:'在这里继续学习。',hint:'xuéqī',ans:'学期'},
+  {pre:'',blank:'',post:'年月、性别、护照号码都要填。',hint:'chūshēng',ans:'出生'},
+  {pre:'没关系，不用',blank:'',post:'，谁都有粗心填错的时候。',hint:'dào qiàn',ans:'道歉'},
+  {pre:'我给你重新',blank:'',post:'一份，你等一下。',hint:'dǎyìn',ans:'打印'},
+  {pre:'我们要把护照',blank:'',post:'一下。',hint:'fùyìn',ans:'复印'},
+  {pre:'刚才用',blank:'',post:'切肉的时候把手弄破了。',hint:'dāo',ans:'刀'},
+  {pre:'你把衣服',blank:'',post:'下来，我给你洗洗。',hint:'tuō',ans:'脱'},
+  {pre:'我衣服口袋里有十几块',blank:'',post:'，买包子应该够。',hint:'língqián',ans:'零钱'},
+  {pre:'我早上跟你',blank:'',post:'，你没看见。',hint:'dǎ zhāohu',ans:'打招呼'},
+  {pre:'今天早上我忘',blank:'',post:'眼镜了，看不清楚。',hint:'dài',ans:'戴'},
+  {pre:'这种语言与',blank:'',post:'无关，无论哪个国家的人都能看懂。',hint:'guójí',ans:'国籍'},
+  {pre:'先',blank:'',post:'胳膊，然后抬腿。',hint:'tái',ans:'抬'},
+  {pre:'周围环境非常',blank:'',post:'。',hint:'chǎo',ans:'吵'},
+  {pre:'可回家后打电话，电话总是',blank:'',post:'。',hint:'zhànxiàn',ans:'占线'},
+  {pre:'观众要安静，',blank:'',post:'大声讲话。',hint:'jìnzhǐ',ans:'禁止'},
+];
+
+var sortData = [
+  {words:['谁','都','有','粗心','填错','的','时候'],ans:'谁都有粗心填错的时候',audio:'谁都有粗心填错的时候'},
+  {words:['我','给','你','重新','打印','一份','，','你','等','一下'],ans:'我给你重新打印一份，你等一下',audio:'我给你重新打印一份，你等一下'},
+  {words:['看来','今天','吃不上','羊肉','饺子','了'],ans:'看来今天吃不上羊肉饺子了',audio:'看来今天吃不上羊肉饺子了'},
+  {words:['没','看','出来','你','跳','得','这么','好'],ans:'没看出来你跳得这么好',audio:'没看出来你跳得这么好'},
+  {words:['这种','语言','与','国籍','无关'],ans:'这种语言与国籍无关',audio:'这种语言与国籍无关'},
+  {words:['总的来说','，','这套','房子','他','很','满意'],ans:'总的来说，这套房子他很满意',audio:'总的来说，这套房子他很满意'},
+  {words:['人们','常','说','"生命在于运动"'],ans:'人们常说"生命在于运动"',audio:'人们常说"生命在于运动"'},
+  {words:['禁止','大声','讲话','或者','离开','座位','随便','走动'],ans:'禁止大声讲话或者离开座位随便走动',audio:'禁止大声讲话或者离开座位随便走动'},
+];
+
+var errorFixMode = 'wordchoice';
+var errorFixData = [
+  {wrong:'请在表格上填好姓名、____、年龄、职业等，然后再给我们传真过来。',
+   opts:['打招呼','场','性别','吵'],ans:2,
+   exp:'性别 (giới tính) — 姓名、性别、年龄. Câu có 表格/传真 (Bài 16), 职业 (Bài 10). Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'我觉得咱们还是换个地方住吧。这个小区太____了，我怕影响孩子学习和休息。',
+   opts:['打招呼','场','吵','禁止'],ans:2,
+   exp:'吵 (ồn) — 太吵了. Câu có 还是……吧 (Bài 1), 怕 (Bài 16), 影响 (Bài 4). Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'抽烟不但污染空气，影响身体健康，而且在加油站这样的地方抽烟非常危险，因此，很多地方都____抽烟。',
+   opts:['打招呼','性别','吵','禁止'],ans:3,
+   exp:'禁止 (cấm) — 禁止抽烟. Câu có 不但……而且 (Bài 2), 污染 (Bài 14), 危险 (Bài 18), 因此 (Bài 8). Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'要想更快适应新环境，其实有很多办法。比如，多和周围的人____，在别人遇到麻烦的时候去帮一把，等等。',
+   opts:['打招呼','场','性别','禁止'],ans:0,
+   exp:'打招呼 (chào hỏi) — 和周围的人打招呼. Câu có 适应 (Bài 8), 周围 (Bài 16), 比如 (Bài 3). Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'这个京剧我一直想看，下星期六是他们在这儿的最后一____演出。中午你记得提醒我去买票，否则我就没有机会看了。',
+   opts:['打招呼','场','性别','吵'],ans:1,
+   exp:'场 (lượng từ: buổi diễn) — 一场演出. Câu có 京剧/演出 (Bài 13), 提醒 (Bài 4), 否则 (Bài 11). Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'A：先生，一共二百三十九块七。您付现金还是刷卡？B：现金。我带的____应该够了。',
+   opts:['占线','道歉','座位','零钱'],ans:3,
+   exp:'零钱 (tiền lẻ) — 带的零钱应该够. Câu có 现金/刷卡 (Bài 5), 够 (Bài 14). Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'A：请问，您一共几位？B：我们一共四个人，麻烦你给我们找个安静点儿的____。',
+   opts:['占线','道歉','座位','打印'],ans:2,
+   exp:'座位 (chỗ ngồi) — 找个安静点儿的座位. Câu có 麻烦 (Bài 3), 安静 (Bài 2). Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'A：明天几点到？八点来得及来不及？B：提前点儿吧，咱们还得负责____会议材料呢。',
+   opts:['占线','道歉','打印','零钱'],ans:2,
+   exp:'打印 (in) — 打印会议材料. Câu có 来得及 (Bài 4), 提前 (Bài 4), 负责 (Bài 10), 材料 (Bài 4). Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'A：我是专门来向您____的，我真的觉得很对不起您。B：没关系，过去的事情就让它过去吧，你也别太放在心上。',
+   opts:['占线','道歉','座位','打印'],ans:1,
+   exp:'道歉 (xin lỗi) — 向您道歉. Câu có 专门 (Bài 9), 向 (Bài 2). Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'A：李经理的电话一直____，去办公室找他，敲了半天门，也没人开。B：他刚出去开会了，可能下午才能回来。',
+   opts:['占线','道歉','座位','零钱'],ans:0,
+   exp:'占线 (máy bận) — 电话一直占线. Câu có 敲 (Bài 15), 半天 (Bài 7). Các từ còn lại không phù hợp nghĩa.'},
+];
+
+var speakingData = {
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 19. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn mới chuyển đến căn hộ thuê và bạn bè hỏi thăm.',
+      q_zh: '你现在租房子住吗？你租的房子条件怎么样？',
+      q_py: 'Nǐ xiànzài zū fáng zi zhù ma? Nǐ zū de fáng zi tiáojiàn zěnmeyàng?',
+      q_vn: 'Bạn đang thuê nhà à? Nhà bạn thuê điều kiện thế nào?',
+      grammar: { label: '虽然……但是……; 总的来说……', any: ['虽然', '总的来说'] },
+      need: [
+        { label: 'Nói về nhà đang ở', any: ['租', '房子', '房东', '厨房', '房间'] },
+        { label: 'Nhận xét ưu và nhược điểm', any: ['吵', '安静', '方便', '大', '小', '贵', '便宜'] }
+      ],
+      bonus: { label: 'Dùng 总的来说 để kết luận', any: ['总的来说'] },
+      vocab: ['租', '吵', '厨房', '房东'],
+      minLen: 22,
+      sample: '我现在租房子住。房子离马路近，有点儿吵，但是交通方便，厨房也很大，房东人很好。总的来说，我挺满意的。',
+      sample_py: 'Wǒ xiànzài zū fáng zi zhù. Fáng zi lí mǎ lù jìn, yǒudiǎnr chǎo, dànshì jiāotōng fāngbiàn, chúfáng yě hěn dà, fángdōng rén hěn hǎo. Zǒng de lái shuō, wǒ tǐng mǎnyì de.',
+      sample_vn: 'Tôi đang thuê nhà. Nhà gần đường lớn nên hơi ồn, nhưng đi lại thuận tiện, bếp cũng rộng, chủ nhà rất tốt. Nói chung tôi khá hài lòng.',
+      tip: '总的来说 = nói chung, dùng để chốt ý.'
+    },
+    {
+      situation: 'Bạn của bạn sắp thuê nhà và hỏi nên chọn thế nào.',
+      q_zh: '在租房子的时候，房子的哪些条件会吸引你？哪个最重要？',
+      q_py: 'Zài zū fáng zi de shíhou, fáng zi de nǎxiē tiáojiàn huì xīyǐn nǐ? Nǎge zuì zhòngyào?',
+      q_vn: 'Khi thuê nhà, điều kiện nào hấp dẫn bạn? Cái nào quan trọng nhất?',
+      grammar: { label: '对我来说……; 关键在于……', any: ['来说', '关键'] },
+      need: [
+        { label: 'Kể ít nhất hai tiêu chí', any: ['交通', '安静', '价格', '厨房', '干净', '附近', '安全'] },
+        { label: 'Chọn tiêu chí quan trọng nhất', any: ['最重要', '关键', '首先'] }
+      ],
+      bonus: { label: 'Nhắc đến chủ nhà bằng 房东', any: ['房东'] },
+      vocab: ['吸引', '房东', '安全'],
+      minLen: 22,
+      sample: '对我来说，交通方便、周围安静都很吸引我，价格也要合适。不过关键在于房东是否友好，房子再好，房东不好也住得不安心。',
+      sample_py: 'Duì wǒ lái shuō, jiāotōng fāngbiàn, zhōuwéi ānjìng dōu hěn xīyǐn wǒ, jiàgé yě yào héshì. Búguò guānjiàn zài yú fángdōng shìfǒu yǒuhǎo, fáng zi zài hǎo, fángdōng bù hǎo yě zhù děi bù ān xīn.',
+      sample_vn: 'Với tôi, giao thông thuận tiện, xung quanh yên tĩnh đều hấp dẫn, giá cũng phải hợp lý. Nhưng mấu chốt là chủ nhà có thân thiện không, nhà tốt mấy mà chủ không tốt thì ở cũng không yên tâm.',
+      tip: '关键在于…… = mấu chốt nằm ở…: 关键在于你自己。'
+    },
+    {
+      situation: 'Bạn Trung Quốc hỏi về phong trào thể thao ở nước bạn.',
+      q_zh: '在你们国家，哪种运动最普遍？为什么？',
+      q_py: 'Zài nǐmen guójiā, nǎ zhǒng yùndòng zuì pǔbiàn? Wèishénme?',
+      q_vn: 'Ở nước bạn, môn thể thao nào phổ biến nhất? Vì sao?',
+      grammar: { label: '谁都可以……; 一……就……', any: ['谁都', '一', '就'] },
+      need: [
+        { label: 'Nói môn thể thao', any: ['足球', '羽毛球', '乒乓球', '篮球', '跑步', '运动'] },
+        { label: 'Nêu lý do phổ biến', any: ['条件', '容易', '便宜', '谁都', '场地', '普遍'] }
+      ],
+      bonus: { label: 'Dùng lượng từ 场 với trận đấu', any: ['场'] },
+      vocab: ['羽毛球', '乒乓球', '场'],
+      minLen: 22,
+      sample: '在我们国家，足球和羽毛球最普遍。羽毛球对条件的要求不高，谁都可以打，所以很多人一到周末就去打几场球，公园里也常常有人打乒乓球。',
+      sample_py: 'Zài wǒmen guójiā, zúqiú hé yǔmáoqiú zuì pǔbiàn. Yǔmáoqiú duì tiáojiàn de yāoqiú bù gāo, shéi dōu kěyǐ dǎ, suǒyǐ hěn duō rén yí dào zhōumò jiù qù dǎ jǐ chǎng qiú, gōngyuán lǐ yě chángcháng yǒu rén dǎ pīngpāngqiú.',
+      sample_vn: 'Ở nước tôi, bóng đá và cầu lông phổ biến nhất. Cầu lông không đòi hỏi điều kiện cao, ai cũng chơi được, nên nhiều người cứ đến cuối tuần là đi đánh mấy trận, trong công viên cũng thường có người chơi bóng bàn.',
+      tip: '场 là lượng từ cho trận đấu, buổi biểu diễn: 一场比赛、一场电影。'
+    },
+    {
+      situation: 'Bạn lỡ làm hỏng việc của đồng nghiệp.',
+      q_zh: '如果你不小心做错了事，你会怎么向别人道歉？',
+      q_py: 'Rúguǒ nǐ bù xiǎoxīn zuò cuò le shì, nǐ huì zěnme xiàng biérén dàoqiàn?',
+      q_vn: 'Nếu lỡ làm sai, bạn sẽ xin lỗi người khác thế nào?',
+      grammar: { label: '向 + người + 道歉; 既然……就……', any: ['向', '道歉', '既然'] },
+      need: [
+        { label: 'Dùng 向……道歉', any: ['道歉', '对不起', '向'] },
+        { label: 'Nói thái độ và cách sửa', any: ['故意', '说明', '礼貌', '改', '弥补', '负责'] }
+      ],
+      bonus: { label: 'Dùng 原谅 nói mong được tha thứ', any: ['原谅'] },
+      vocab: ['道歉', '打招呼', '故意'],
+      minLen: 22,
+      sample: '我会主动向他道歉，说明我不是故意的，然后想办法把事情做好。既然知道是自己错了，就应该用礼貌的方法说出来，这样他一般会原谅我。',
+      sample_py: 'Wǒ huì zhǔ dòng xiàng tā dàoqiàn, shuōmíng wǒ bú shì gùyì de, ránhòu xiǎng bànfǎ bǎ shìqing zuò hǎo. Jìrán zhīdao shì zìjǐ cuò le, jiù yīnggāi yòng lǐmào de fāngfǎ shuō chū lái, zhè yàng tā yìbān huì yuánliàng wǒ.',
+      sample_vn: 'Tôi sẽ chủ động xin lỗi họ, nói rõ tôi không cố ý, rồi tìm cách làm lại cho tốt. Đã biết mình sai thì nên nói ra một cách lịch sự, như vậy họ thường sẽ tha thứ.',
+      tip: '向 + người + 道歉/学习/借: 向老师请教。'
+    },
+    {
+      situation: 'Bạn đưa bạn bè đi xem một buổi biểu diễn.',
+      q_zh: '看比赛或者演出的时候，观众应该注意什么？',
+      q_py: 'Kàn bǐsài huòzhě yǎnchū de shíhou, guānzhòng yīnggāi zhùyì shénme?',
+      q_vn: 'Khi xem thi đấu hoặc biểu diễn, khán giả nên chú ý gì?',
+      grammar: { label: '禁止 + động từ; 否则……', any: ['禁止', '否则'] },
+      need: [
+        { label: 'Nêu điều nên làm', any: ['安静', '排队', '座位', '关手机', '尊重'] },
+        { label: 'Nêu điều không nên', any: ['禁止', '大声', '离开', '接电话', '照相'] }
+      ],
+      bonus: { label: 'Dùng 否则 nêu hậu quả', any: ['否则'] },
+      vocab: ['禁止', '座位', '尊重'],
+      minLen: 22,
+      sample: '观众要保持安静，禁止大声讲话，也不要随便离开座位。看演出的时候千万别接电话，否则会影响演员和别的观众，这也是对别人的尊重。',
+      sample_py: 'Guānzhòng yào bǎo chí ānjìng, jìnzhǐ dà shēng jiǎng huà, yě bú yào suíbiàn líkāi zuòwèi. Kàn yǎnchū de shíhou qiānwàn bié jiē diànhuà, fǒuzé huì yǐngxiǎng yǎnyuán hé biéde guānzhòng, zhè yě shì duì biérén de zūnzhòng.',
+      sample_vn: 'Khán giả phải giữ yên lặng, cấm nói to, cũng đừng tùy tiện rời chỗ. Lúc xem biểu diễn tuyệt đối đừng nghe điện thoại, nếu không sẽ ảnh hưởng diễn viên và khán giả khác, đó cũng là tôn trọng người khác.',
+      tip: '禁止 + động từ: 禁止抽烟、禁止照相。'
+    }
+  ]
+};
+
+var translateData = [
+  {vi:'Em muốn học kỳ sau tiếp tục học ở đây, xin hỏi có cần đăng ký lại không?',zh:'我希望下个学期在这里继续学习，请问还需要重新申请吗？',py:'Wǒ xīwàng xià ge xuéqī zài zhèli jìxù xuéxí, qǐngwèn hái xūyào chóngxīn shēnqǐng ma?'},
+  {vi:'Không sao, không cần xin lỗi, ai cũng có lúc cẩu thả điền sai.',zh:'没关系，不用道歉，谁都有粗心填错的时候。',py:'Méi guānxi, búyòng dào qiàn, shéi dōu yǒu cūxīn tiáncuò de shíhou.'},
+  {vi:'Vừa rồi dùng dao thái thịt làm đứt tay.',zh:'刚才用刀切肉的时候把手弄破了。',py:'Gāngcái yòng dāo qiē ròu de shíhou bǎ shǒu nòngpò le.'},
+  {vi:'Xem ra hôm nay không ăn được sủi cảo thịt dê rồi.',zh:'看来今天吃不上羊肉饺子了。',py:'Kànlái jīntiān chībushàng yángròu jiǎozi le.'},
+  {vi:'Vừa rồi tôi thấy bạn múa Trung Quốc, không ngờ bạn múa hay thế!',zh:'刚才我在旁边看到你跳中国舞了，没看出来你跳得这么好！',py:'Gāngcái wǒ zài pángbiān kàndào nǐ tiào Zhōngguó wǔ le, méi kàn chūlái nǐ tiào de zhème hǎo!'},
+  {vi:'Ngôn ngữ này không liên quan quốc tịch, người nước nào cũng hiểu được.',zh:'这种语言与国籍无关，无论哪个国家的人都能看懂。',py:'Zhè zhǒng yǔyán yǔ guójí wúguān, wúlùn nǎ ge guójiā de rén dōu néng kàndǒng.'},
+  {vi:'Nhìn chung, căn nhà này anh rất hài lòng, thế là ghi lại số điện thoại chủ nhà.',zh:'总的来说，这套房子他很满意，于是他就记下了房东的手机号码。',py:'Zǒng de lái shuō, zhè tào fángzi tā hěn mǎnyì, yúshì tā jiù jìxiàle fángdōng de shǒujī hàomǎ.'},
+  {vi:'Người ta thường nói "sự sống nằm ở vận động", nên nhiều người cứ cuối tuần là đến nhà thi đấu chơi vài trận bóng.',zh:'人们常说"生命在于运动"，所以很多人一到周末就会到体育馆打几场球。',py:'Rénmen cháng shuō "shēngmìng zàiyú yùndòng", suǒyǐ hěn duō rén yí dào zhōumò jiù huì dào tǐyùguǎn dǎ jǐ chǎng qiú.'},
+];
+var translateDataRev = [
+  {vi:'Ngày tháng năm sinh, giới tính, số hộ chiếu đều phải điền, còn địa chỉ và điện thoại liên lạc.',zh:'出生年月、性别、护照号码都要填，还有联系地址、联系电话。',py:'Chūshēng nián yuè, xìngbié, hùzhào hàomǎ dōu yào tián, hái yǒu liánxì dìzhǐ, liánxì diànhuà.'},
+  {vi:'Đơn đăng ký bị người khác lấy hết rồi, tôi in lại cho em một bản.',zh:'申请表都被别人拿走了，我给你重新打印一份。',py:'Shēnqǐngbiǎo dōu bèi biérén názǒu le, wǒ gěi nǐ chóngxīn dǎyìn yí fèn.'},
+  {vi:'Trên áo cũng có chút máu, em cởi áo ra, anh giặt cho.',zh:'衣服上也有一点儿血，你把衣服脱下来，我给你洗洗。',py:'Yīfu shang yě yǒu yìdiǎnr xiě, nǐ bǎ yīfu tuō xiàlai, wǒ gěi nǐ xǐxi.'},
+  {vi:'Sáng nay tôi quên đeo kính, nhìn không rõ.',zh:'今天早上我忘戴眼镜了，看不清楚。',py:'Jīntiān zǎoshang wǒ wàng dài yǎnjìng le, kànbuqīngchu.'},
+  {vi:'Nên như tôi thế này: giơ cánh tay trước, rồi nhấc chân, cuối cùng đầu quay sang phải.',zh:'应该像我这样：先抬胳膊，然后抬腿，最后头再向右转一下。',py:'Yīnggāi xiàng wǒ zhèyàng: xiān tái gēbo, ránhòu tái tuǐ, zuìhòu tóu zài xiàng yòu zhuǎn yíxià.'},
+  {vi:'Nhà Mã Khắc thuê năm ngoái sát đường lớn, môi trường xung quanh rất ồn.',zh:'马克去年租的房子离马路很近，周围环境非常吵。',py:'Mǎkè qùnián zū de fángzi lí mǎlù hěn jìn, zhōuwéi huánjìng fēicháng chǎo.'},
+  {vi:'Nhưng về nhà gọi điện, điện thoại luôn bận.',zh:'可回家后打电话，电话总是占线。',py:'Kě huí jiā hòu dǎ diànhuà, diànhuà zǒngshì zhànxiàn.'},
+  {vi:'Khán giả phải yên tĩnh, cấm nói to hoặc rời chỗ ngồi đi lại tùy tiện.',zh:'观众要安静，禁止大声讲话或者离开座位随便走动。',py:'Guānzhòng yào ānjìng, jìnzhǐ dàshēng jiǎng huà huòzhě líkāi zuòwèi suíbiàn zǒudòng.'},
+];
+
+var listenData = {
+  type: 'workbook',
+  audioParts: [
+    { src: '/audio/hsk4-bai-19/listen-1.mp3', from: 1, to: 5 },
+    { src: '/audio/hsk4-bai-19/listen-2.mp3', from: 6, to: 12 },
+    { src: '/audio/hsk4-bai-19/listen-3.mp3', from: 13, to: 22 }
+  ],
+  dictation: [
+    {num:1, stmt:'想重新让人相信很难。', judge:true, lines:[
+      {pre:'别以为做错了事道个歉，说句对不起就行了。因为得到别人的原谅很容易，', blank:'但要重新让别人再相信你却很难', post:'。',
+       py:'Bié yǐwéi zuòcuòle shì dào ge qiàn, shuō jù duìbuqǐ jiù xíng le. Yīnwèi dédào biérén de yuánliàng hěn róngyì, dàn yào chóngxīn ràng biérén zài xiāngxìn nǐ què hěn nán.',
+       vn:'Đừng tưởng làm sai rồi xin lỗi, nói câu xin lỗi là xong. Vì được người khác tha thứ rất dễ, nhưng để người khác tin bạn lần nữa lại rất khó.'}]},
+    {num:2, stmt:'他在理发店。', judge:true, lines:[
+      {pre:'你好，', blank:'我想理个发，稍微短一点儿就可以', post:'。一会儿我还有些事要办，所以麻烦你快一点儿。',
+       py:'Nǐ hǎo, wǒ xiǎng lǐ ge fà, shāowēi duǎn yìdiǎnr jiù kěyǐ. Yíhuìr wǒ hái yǒu xiē shì yào bàn, suǒyǐ máfan nǐ kuài yìdiǎnr.',
+       vn:'Chào bạn, tôi muốn cắt tóc, ngắn hơn một chút là được. Lát nữa tôi còn có việc, nên phiền bạn nhanh một chút.'}]},
+    {num:3, stmt:'他想租个大房子。', judge:false, lines:[
+      {pre:'我想租一个交通方便的房子，离地铁站近点儿，', blank:'但是周围环境不能太吵，房租最好也别太贵', post:'。当然，如果房东比较友好，那就更好了。',
+       py:'Wǒ xiǎng zū yí ge jiāotōng fāngbiàn de fángzi, lí dìtiězhàn jìn diǎnr, dànshì zhōuwéi huánjìng bù néng tài chǎo, fángzū zuì hǎo yě bié tài guì. Dāngrán, rúguǒ fángdōng bǐjiào yǒuhǎo, nà jiù gèng hǎo le.',
+       vn:'Tôi muốn thuê một căn nhà giao thông thuận tiện, gần ga tàu điện ngầm, nhưng môi trường xung quanh không được quá ồn, tiền thuê tốt nhất cũng đừng quá đắt. Đương nhiên, nếu chủ nhà thân thiện thì càng tốt.'}]},
+    {num:4, stmt:'人们可以通过音乐交流感情。', judge:true, lines:[
+      {pre:'音乐不仅是一门艺术，也是一种语言。人们对音乐的喜爱与国籍无关。', blank:'通过音乐，不同国家的人可以交流感情', post:'，增进了解。',
+       py:'Yīnyuè bùjǐn shì yì mén yìshù, yě shì yì zhǒng yǔyán. Rénmen duì yīnyuè de xǐ\'ài yǔ guójí wúguān. Tōngguò yīnyuè, bùtóng guójiā de rén kěyǐ jiāoliú gǎnqíng, zēngjìn liǎojiě.',
+       vn:'Âm nhạc không chỉ là một môn nghệ thuật mà còn là một ngôn ngữ. Tình yêu âm nhạc không liên quan đến quốc tịch. Qua âm nhạc, người các nước khác nhau có thể giao lưu tình cảm, tăng thêm hiểu biết.'}]},
+    {num:5, stmt:'他刚来这儿不久。', judge:false, lines:[
+      {pre:'他虽然不是在这儿出生的，但却是在这儿长大的。', blank:'他三岁跟父亲母亲一起来到这儿', post:'，就再也没离开过。因此，他对这个地方感情很深。',
+       py:'Tā suīrán bú shì zài zhèr chūshēng de, dàn què shì zài zhèr zhǎngdà de. Tā sān suì gēn fùqīn mǔqīn yìqǐ láidào zhèr, jiù zài yě méi líkāiguo. Yīncǐ, tā duì zhège dìfang gǎnqíng hěn shēn.',
+       vn:'Anh ấy tuy không sinh ra ở đây nhưng lớn lên ở đây. Ba tuổi anh ấy cùng bố mẹ đến đây, rồi không bao giờ rời đi nữa. Vì vậy anh ấy có tình cảm rất sâu đậm với nơi này.'}]}
+  ],
+  mc: [
+    {num:6, options:['最近很忙','可以教他','会打网球','明天见面'], ans:1, q:'女的是什么意思？',
+     lines:[
+       {speaker:'男', pre:'你乒乓球打得真不错，', blank:'有时间能教教我吗', post:'？', py:'Nǐ pīngpāngqiú dǎ de zhēn búcuò, yǒu shíjiān néng jiāojiao wǒ ma?', vn:'Cậu chơi bóng bàn giỏi thật, có thời gian dạy tôi được không?'},
+       {speaker:'女', pre:'没问题。我每周六都会来体育馆，', blank:'到时候你来找我就行了', post:'。', py:'Méi wèntí. Wǒ měi zhōuliù dōu huì lái tǐyùguǎn, dào shíhou nǐ lái zhǎo wǒ jiù xíng le.', vn:'Không vấn đề. Thứ Bảy nào tôi cũng đến nhà thi đấu, lúc đó cậu đến tìm tôi là được.'}
+     ],
+     explain:'问：女的是什么意思？ "没问题…你来找我就行了" → B 可以教他. C sai: là 乒乓球, không phải 网球.'},
+    {num:7, options:['铅笔用完了','要打印材料','马上下课了','听不见声音'], ans:1, q:'女的为什么很着急？',
+     lines:[
+       {speaker:'男', pre:'你这么着急去哪儿啊？', blank:'我刚才叫你两次你都没听到', post:'。', py:'Nǐ zhème zháojí qù nǎr a? Wǒ gāngcái jiào nǐ liǎng cì nǐ dōu méi tīngdào.', vn:'Cậu vội thế đi đâu vậy? Vừa nãy tôi gọi hai lần cậu đều không nghe.'},
+       {speaker:'女', pre:'', blank:'我去打印几份材料', post:'，一会儿上课讨论的时候要用。', py:'Wǒ qù dǎyìn jǐ fèn cáiliào, yíhuìr shàngkè tǎolùn de shíhou yào yòng.', vn:'Tôi đi in mấy bộ tài liệu, lát nữa thảo luận trên lớp cần dùng.'}
+     ],
+     explain:'问：女的为什么很着急？ "我去打印几份材料" → B 要打印材料.'},
+    {num:8, options:['肚子不舒服','在打羽毛球','想吃饭了','要去饭馆'], ans:2, q:'关于女的，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'打了一下午羽毛球，', blank:'肚子有点儿饿了', post:'。真香，今天吃什么？', py:'Dǎle yí xiàwǔ yǔmáoqiú, dùzi yǒudiǎnr è le. Zhēn xiāng, jīntiān chī shénme?', vn:'Chơi cầu lông cả chiều, bụng hơi đói rồi. Thơm quá, hôm nay ăn gì?'},
+       {speaker:'男', pre:'你鼻子真好，今晚我们吃饺子。', blank:'再等一会儿，饭马上就好', post:'。', py:'Nǐ bízi zhēn hǎo, jīnwǎn wǒmen chī jiǎozi. Zài děng yíhuìr, fàn mǎshàng jiù hǎo.', vn:'Mũi em thính thật, tối nay mình ăn sủi cảo. Đợi chút nữa, cơm sắp xong rồi.'}
+     ],
+     explain:'问：关于女的，可以知道什么？ "肚子有点儿饿了…今天吃什么" → C 想吃饭了. B sai: đã chơi xong (打了一下午).'},
+    {num:9, options:['天气太热了','男的穿得多','女的想开窗','衣服太大了'], ans:1, q:'根据对话，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'开一下窗户吧，', blank:'热得我都有点儿受不了了', post:'。', py:'Kāi yíxià chuānghu ba, rè de wǒ dōu yǒudiǎnr shòubuliǎo le.', vn:'Mở cửa sổ đi, nóng đến mức anh hơi chịu không nổi.'},
+       {speaker:'女', pre:'', blank:'是你穿得太多了', post:'，把外面那件衣服脱了吧。', py:'Shì nǐ chuān de tài duō le, bǎ wàimiàn nà jiàn yīfu tuō le ba.', vn:'Là do anh mặc nhiều quá, cởi cái áo ngoài ra đi.'}
+     ],
+     explain:'问：根据对话，可以知道什么？ "是你穿得太多了" → B 男的穿得多. C sai: người muốn mở cửa sổ là người nam.'},
+    {num:10, options:['手表','手机','书包','出租车'], ans:0, q:'女的在找什么？',
+     lines:[
+       {speaker:'女', pre:'', blank:'你看见我的手表没有', post:'？我印象里上车的时候还戴着呢。', py:'Nǐ kànjiàn wǒ de shǒubiǎo méiyǒu? Wǒ yìnxiàng li shàngchē de shíhou hái dàizhe ne.', vn:'Anh có thấy đồng hồ của em không? Em nhớ lúc lên xe vẫn đeo mà.'},
+       {speaker:'男', pre:'那看看在不在你包里。', blank:'不会丢在出租车上了吧', post:'？', py:'Nà kànkan zài bu zài nǐ bāo li. Bú huì diū zài chūzūchē shang le ba?', vn:'Vậy xem có trong túi em không. Không phải để quên trên taxi chứ?'}
+     ],
+     explain:'问：女的在找什么？ "你看见我的手表没有" → A 手表.'},
+    {num:11, options:['再算一遍','增加一列','减少字数','重新申请'], ans:1, q:'女的要求怎么做？',
+     lines:[
+       {speaker:'男', pre:'孙小姐，表格我做好了，', blank:'您看看有什么问题没有', post:'？', py:'Sūn xiǎojiě, biǎogé wǒ zuòhǎo le, nín kànkan yǒu shénme wèntí méiyǒu?', vn:'Cô Tôn, bảng biểu tôi làm xong rồi, cô xem có vấn đề gì không?'},
+       {speaker:'女', pre:'刚才忘和你说了，', blank:'还要再加上一列"性别"', post:'。', py:'Gāngcái wàng hé nǐ shuō le, hái yào zài jiāshàng yí liè "xìngbié".', vn:'Vừa nãy quên nói với anh, còn phải thêm một cột "giới tính".'}
+     ],
+     explain:'问：女的要求怎么做？ "还要再加上一列" → B 增加一列.'},
+    {num:12, options:['有点儿大','有问题','不太亮','没以前好了'], ans:2, q:'他们觉得厨房的灯怎么样？',
+     lines:[
+       {speaker:'男', pre:'厨房里的这个灯太小了，', blank:'抽时间换一个大点儿、亮点儿的吧', post:'。', py:'Chúfáng li de zhège dēng tài xiǎo le, chōu shíjiān huàn yí ge dà diǎnr, liàng diǎnr de ba.', vn:'Cái đèn trong bếp nhỏ quá, tranh thủ thời gian đổi cái to hơn, sáng hơn đi.'},
+       {speaker:'女', pre:'以前不觉得，你现在一说，', blank:'我也觉得确实挺小的', post:'。我今天下班去超市买一个。', py:'Yǐqián bù juéde, nǐ xiànzài yì shuō, wǒ yě juéde quèshí tǐng xiǎo de. Wǒ jīntiān xiàbān qù chāoshì mǎi yí ge.', vn:'Trước không thấy, giờ anh nói em cũng thấy đúng là khá nhỏ. Hôm nay tan làm em ra siêu thị mua một cái.'}
+     ],
+     explain:'问：他们觉得厨房的灯怎么样？ Đèn nhỏ, muốn đổi cái "亮点儿的" → đèn hiện tại không đủ sáng, đáp án C 不太亮. A ngược nghĩa (太小).'},
+    {num:13, options:['大使馆','银行','学校','医院'], ans:3, q:'男的最可能在哪儿？',
+     lines:[
+       {speaker:'女', pre:'请把', blank:'姓名、年龄、性别、联系方式等信息', post:'填在这张表上。', py:'Qǐng bǎ xìngmíng, niánlíng, xìngbié, liánxì fāngshì děng xìnxī tián zài zhè zhāng biǎo shang.', vn:'Xin điền họ tên, tuổi, giới tính, cách liên lạc… vào tờ này.'},
+       {speaker:'男', pre:'好的，', blank:'是在一楼打针吗', post:'？', py:'Hǎo de, shì zài yī lóu dǎzhēn ma?', vn:'Được, tiêm ở tầng một phải không?'},
+       {speaker:'女', pre:'对，一楼，第二个房间就是打针室。', blank:'到时候表交给护士就行了', post:'。', py:'Duì, yī lóu, dì-èr ge fángjiān jiù shì dǎzhēnshì. Dào shíhou biǎo jiāo gěi hùshi jiù xíng le.', vn:'Đúng, tầng một, phòng thứ hai là phòng tiêm. Lúc đó đưa tờ khai cho y tá là được.'},
+       {speaker:'男', pre:'好的，', blank:'谢谢你', post:'。', py:'Hǎo de, xièxie nǐ.', vn:'Được, cảm ơn cô.'}
+     ],
+     explain:'问：男的最可能在哪儿？ "打针…护士" → D 医院.'},
+    {num:14, options:['体育馆','电影院','宾馆','图书馆'], ans:1, q:'他们最可能在哪儿？',
+     lines:[
+       {speaker:'男', pre:'您好，', blank:'我要两张电影票', post:'，八点二十那场。', py:'Nín hǎo, wǒ yào liǎng zhāng diànyǐngpiào, bā diǎn èrshí nà chǎng.', vn:'Chào cô, tôi lấy hai vé xem phim, suất tám giờ hai mươi.'},
+       {speaker:'女', pre:'好的，您选一下座位吧，', blank:'电脑上这些蓝色的都可以选', post:'。', py:'Hǎo de, nín xuǎn yíxià zuòwèi ba, diànnǎo shang zhèxiē lánsè de dōu kěyǐ xuǎn.', vn:'Vâng, ông chọn chỗ ngồi, những ghế màu xanh trên máy đều chọn được.'},
+       {speaker:'男', pre:'我要中间的，', blank:'第十排，九号和十号', post:'。', py:'Wǒ yào zhōngjiān de, dì-shí pái, jiǔ hào hé shí hào.', vn:'Tôi lấy ghế giữa, hàng mười, số chín và số mười.'},
+       {speaker:'女', pre:'好的，先生，', blank:'一共一百二十元', post:'。', py:'Hǎo de, xiānsheng, yígòng yìbǎi èrshí yuán.', vn:'Vâng, thưa ông, tổng cộng một trăm hai mươi tệ.'}
+     ],
+     explain:'问：他们最可能在哪儿？ "两张电影票…选座位" → B 电影院.'},
+    {num:15, options:['带家具的','购物方便的','房租便宜的','离学校近的'], ans:2, q:'女的想找什么样的房子？',
+     lines:[
+       {speaker:'男', pre:'', blank:'你想租什么样的房子', post:'？', py:'Nǐ xiǎng zū shénmeyàng de fángzi?', vn:'Cậu muốn thuê nhà kiểu gì?'},
+       {speaker:'女', pre:'最好是离公司近一点儿，周围要安静，', blank:'当然也不能太贵了', post:'。', py:'Zuì hǎo shì lí gōngsī jìn yìdiǎnr, zhōuwéi yào ānjìng, dāngrán yě bù néng tài guì le.', vn:'Tốt nhất là gần công ty một chút, xung quanh phải yên tĩnh, đương nhiên cũng không được quá đắt.'},
+       {speaker:'男', pre:'咱公司附近是购物中心，', blank:'估计没有太便宜的房子', post:'。', py:'Zán gōngsī fùjìn shì gòuwù zhōngxīn, gūjì méiyǒu tài piányi de fángzi.', vn:'Gần công ty mình là trung tâm mua sắm, chắc không có nhà rẻ lắm đâu.'},
+       {speaker:'女', pre:'如果交通方便，', blank:'稍微远一点儿，我也可以考虑', post:'。', py:'Rúguǒ jiāotōng fāngbiàn, shāowēi yuǎn yìdiǎnr, wǒ yě kěyǐ kǎolǜ.', vn:'Nếu giao thông thuận tiện, xa hơn một chút tôi cũng có thể cân nhắc.'}
+     ],
+     explain:'问：女的想找什么样的房子？ "不能太贵了…稍微远一点儿也可以考虑" → ưu tiên giá, đáp án C 房租便宜的. D sai: gần công ty, không phải trường học.'},
+    {num:16, options:['图书馆','学校东门','商店','一楼'], ans:2, q:'根据对话，男的最可能去哪儿？',
+     lines:[
+       {speaker:'男', pre:'请问，', blank:'附近哪儿可以复印', post:'？', py:'Qǐngwèn, fùjìn nǎr kěyǐ fùyìn?', vn:'Xin hỏi, gần đây chỗ nào photo được?'},
+       {speaker:'女', pre:'', blank:'图书馆一楼东边有几台自助复印机', post:'。', py:'Túshūguǎn yī lóu dōngbian yǒu jǐ tái zìzhù fùyìnjī.', vn:'Phía đông tầng một thư viện có mấy máy photo tự động.'},
+       {speaker:'男', pre:'图书馆那儿人太多，总是排队，', blank:'还有其他地方吗', post:'？', py:'Túshūguǎn nàr rén tài duō, zǒngshì páiduì, hái yǒu qítā dìfang ma?', vn:'Thư viện đông quá, lúc nào cũng phải xếp hàng, còn chỗ khác không?'},
+       {speaker:'女', pre:'那你要去学校外面了，', blank:'南门对面有个小商店', post:'，那儿也可以复印。', py:'Nà nǐ yào qù xuéxiào wàimiàn le, nánmén duìmiàn yǒu ge xiǎo shāngdiàn, nàr yě kěyǐ fùyìn.', vn:'Vậy cậu phải ra ngoài trường, đối diện cổng nam có cửa hàng nhỏ, ở đó cũng photo được.'}
+     ],
+     explain:'问：男的最可能去哪儿？ Không muốn xếp hàng ở thư viện → đi cửa hàng nhỏ, đáp án C 商店. B sai: là 南门, không phải 东门.'},
+    {num:17, options:['桌子','沙发','冰箱','饮料'], ans:1, q:'女的在搬什么？',
+     lines:[
+       {speaker:'男', pre:'小心，您慢点儿，', blank:'我跟您一起搬吧', post:'。', py:'Xiǎoxīn, nín màn diǎnr, wǒ gēn nín yìqǐ bān ba.', vn:'Cẩn thận, bác từ từ, để cháu khiêng cùng bác.'},
+       {speaker:'女', pre:'没关系，', blank:'这个小沙发我自己搬得动', post:'。', py:'Méi guānxi, zhège xiǎo shāfā wǒ zìjǐ bāndedòng.', vn:'Không sao, cái sofa nhỏ này bác tự khiêng được.'},
+       {speaker:'男', pre:'', blank:'您这是要把它搬出来放哪儿啊', post:'？', py:'Nín zhè shì yào bǎ tā bān chūlai fàng nǎr a?', vn:'Bác khiêng nó ra định để đâu vậy?'},
+       {speaker:'女', pre:'就这儿，', blank:'再往左边一点儿就好了', post:'。', py:'Jiù zhèr, zài wǎng zuǒbian yìdiǎnr jiù hǎo le.', vn:'Ngay đây, dịch sang trái một chút nữa là được.'}
+     ],
+     explain:'问：女的在搬什么？ "这个小沙发我自己搬得动" → B 沙发.'},
+    {num:18, options:['年龄小','有基础','胳膊长','长得高'], ans:1, q:'女的为什么学得快？',
+     lines:[
+       {speaker:'男', pre:'', blank:'你学得可真快', post:'！', py:'Nǐ xué de kě zhēn kuài!', vn:'Cậu học nhanh thật đấy!'},
+       {speaker:'女', pre:'', blank:'我小时候学过两年的舞蹈', post:'，有点儿基础。', py:'Wǒ xiǎo shíhou xuéguo liǎng nián de wǔdǎo, yǒudiǎnr jīchǔ.', vn:'Hồi nhỏ tôi học hai năm múa, có chút nền tảng.'},
+       {speaker:'男', pre:'原来是这样啊，那你帮我看看，', blank:'我的动作对不对', post:'？', py:'Yuánlái shì zhèyàng a, nà nǐ bāng wǒ kànkan, wǒ de dòngzuò duì bu duì?', vn:'Ra là vậy, thế cậu xem giúp, động tác của tôi đúng không?'},
+       {speaker:'女', pre:'总的来说，你跳得也不错，不过，', blank:'胳膊再抬高点儿就更标准了', post:'。', py:'Zǒng de lái shuō, nǐ tiào de yě búcuò, búguò, gēbo zài táigāo diǎnr jiù gèng biāozhǔn le.', vn:'Nhìn chung cậu nhảy cũng được, nhưng cánh tay nâng cao thêm chút thì chuẩn hơn.'}
+     ],
+     explain:'问：女的为什么学得快？ "学过两年的舞蹈，有点儿基础" → B 有基础.'},
+    {num:19, options:['喜欢功夫','个子不高','十六岁了','考试第一'], ans:1, q:'关于邓亚萍，可以知道什么？',
+     lines:[
+       {speaker:'旁白', pre:'邓亚萍是中国著名的乒乓球运动员，也是获得世界乒乓球比赛第一次数最多的女运动员。', blank:'她身高只有一米五五', post:'，看上去好像不是打乒乓球的材料，', py:'Dèng Yàpíng shì Zhōngguó zhùmíng de pīngpāngqiú yùndòngyuán, yě shì huòdé shìjiè pīngpāngqiú bǐsài dì-yī cìshù zuì duō de nǚ yùndòngyuán. Tā shēngāo zhǐyǒu yì mǐ wǔwǔ, kàn shàngqu hǎoxiàng bú shì dǎ pīngpāngqiú de cáiliào,', vn:'Đặng Á Bình là vận động viên bóng bàn nổi tiếng của Trung Quốc, cũng là nữ vận động viên giành nhiều chức vô địch thế giới nhất. Cô chỉ cao 1m55, trông có vẻ không phải "chất liệu" để chơi bóng bàn,'},
+       {speaker:'旁白', pre:'但她通过自己的努力，十三岁就获得全国第一，', blank:'十五岁获得亚洲第一', post:'，第二年又成为世界第一，改变了人们认为高个子才适合打乒乓球的看法。', py:'dàn tā tōngguò zìjǐ de nǔlì, shísān suì jiù huòdé quánguó dì-yī, shíwǔ suì huòdé Yàzhōu dì-yī, dì-èr nián yòu chéngwéi shìjiè dì-yī, gǎibiànle rénmen rènwéi gāo gèzi cái shìhé dǎ pīngpāngqiú de kànfǎ.', vn:'nhưng nhờ nỗ lực của bản thân, 13 tuổi cô đã vô địch toàn quốc, 15 tuổi vô địch châu Á, năm sau lại trở thành số một thế giới, thay đổi quan niệm rằng người cao mới hợp chơi bóng bàn.'}
+     ],
+     explain:'问：关于邓亚萍，可以知道什么？ "身高只有一米五五" → B 个子不高.'},
+    {num:20, options:['五十五岁','十五岁','五十六岁','十六岁'], ans:1, q:'邓亚萍什么时候获得亚洲第一？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）十三岁就获得全国第一，', blank:'十五岁获得亚洲第一', post:'，第二年又成为世界第一。', py:'(Tóng yí duàn huà) Shísān suì jiù huòdé quánguó dì-yī, shíwǔ suì huòdé Yàzhōu dì-yī, dì-èr nián yòu chéngwéi shìjiè dì-yī.', vn:'(Cùng đoạn văn) 13 tuổi vô địch toàn quốc, 15 tuổi vô địch châu Á, năm sau lại trở thành số một thế giới.'}
+     ],
+     explain:'问：邓亚萍什么时候获得亚洲第一？ "十五岁获得亚洲第一" → B 十五岁. Phân biệt 十五 (15) với 五十五 (55) và 一米五五.'},
+    {num:21, options:['同事','同学','学生','老师'], ans:0, q:'说话人一开始想和谁打招呼？',
+     lines:[
+       {speaker:'旁白', pre:'今天早上在上班路上，', blank:'我看见同事小月走在前面不远处', post:'，就想跟她打个招呼。于是，我一边快走一边叫她的名字，可她一直没回头。', py:'Jīntiān zǎoshang zài shàngbān lù shang, wǒ kànjiàn tóngshì Xiǎo Yuè zǒu zài qiánmian bù yuǎn chù, jiù xiǎng gēn tā dǎ ge zhāohu. Yúshì, wǒ yìbiān kuài zǒu yìbiān jiào tā de míngzi, kě tā yìzhí méi huítóu.', vn:'Sáng nay trên đường đi làm, tôi thấy đồng nghiệp Tiểu Nguyệt đi phía trước không xa, liền muốn chào cô ấy. Thế là tôi vừa đi nhanh vừa gọi tên cô ấy, nhưng cô ấy mãi không quay đầu.'},
+       {speaker:'旁白', pre:'我只好加快速度向她跑了过去，等到了她身边，', blank:'才发现原来我认错人了', post:'。', py:'Wǒ zhǐhǎo jiākuài sùdù xiàng tā pǎole guòqu, děng dàole tā shēnbiān, cái fāxiàn yuánlái wǒ rèncuò rén le.', vn:'Tôi đành tăng tốc chạy về phía cô ấy, đến bên cạnh mới phát hiện hoá ra tôi nhận nhầm người.'}
+     ],
+     explain:'问：说话人一开始想和谁打招呼？ "同事小月" → A 同事.'},
+    {num:22, options:['没上班','看错了','速度慢','声音小'], ans:1, q:'说话人怎么了？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）等到了她身边，', blank:'才发现原来我认错人了', post:'。', py:'(Tóng yí duàn huà) Děng dàole tā shēnbiān, cái fāxiàn yuánlái wǒ rèncuò rén le.', vn:'(Cùng đoạn văn) Đến bên cạnh mới phát hiện hoá ra tôi nhận nhầm người.'}
+     ],
+     explain:'问：说话人怎么了？ "我认错人了" → nhìn nhầm, đáp án B 看错了.'}
+  ]
+};

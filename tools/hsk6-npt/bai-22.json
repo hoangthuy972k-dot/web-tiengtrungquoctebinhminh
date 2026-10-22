@@ -1,0 +1,630 @@
+[
+ {
+  "so": "1",
+  "ten": "「动不动」",
+  "tenVn": "",
+  "cauTruc": [
+   "S + 动不动就 + V (việc không mong muốn): 他动不动就发脾气",
+   "不要 / 别 + 动不动就 + V: 不要动不动就训斥孩子"
+  ],
+  "giaiThich": "动不动 (hầu như luôn đi với 就: 动不动就……) biểu thị rất DỄ có một phản ứng hay hành động nào đó — \"hơi một chút là…, hễ động một tí là…\". Phần lớn dùng cho những việc KHÔNG mong muốn (着急, 发脾气, 生病, 哭, 死机, 训斥…), mang sắc thái phàn nàn, không hài lòng. Đứng sau chủ ngữ, trước 就 + V; khi khuyên can thì phủ định đặt TRƯỚC: 不要 / 别 + 动不动就……. Không dùng để khen một việc tốt hay xảy ra (khi đó dùng 经常, 总是).",
+  "viDu": [
+   {
+    "zh": "他最近工作忙、压力大，动不动就着急、发脾气。",
+    "py": "Tā zuìjìn gōngzuò máng, yālì dà, dòngbudòng jiù zháojí, fā píqi.",
+    "vn": "Dạo này anh ấy công việc bận, áp lực lớn, hơi một chút là sốt ruột, nổi cáu."
+   },
+   {
+    "zh": "作为一种将人解放出来的灵活的交通工具，动不动就要将其淘汰，似乎不是明智之举，根本出路还是要在清洁环保、规范驾车出行上下功夫。",
+    "py": "Zuòwéi yì zhǒng jiāng rén jiěfàng chūlái de línghuó de jiāotōng gōngjù, dòngbudòng jiù yào jiāng qí táotài, sìhū bú shì míngzhì zhī jǔ, gēnběn chūlù háishi yào zài qīngjié huánbǎo, guīfàn jiàchē chūxíng shang xià gōngfu.",
+    "vn": "Là một phương tiện giao thông linh hoạt đã giải phóng con người, hơi một chút đã đòi loại bỏ nó thì e rằng không phải việc làm sáng suốt; lối thoát căn bản vẫn là dồn công sức vào việc làm cho nó sạch, thân thiện môi trường và lái xe đúng quy tắc."
+   },
+   {
+    "zh": "父母要多与孩子交流，不要动不动就呵斥压服，以“住嘴”来强行制止孩子发表意见。",
+    "py": "Fùmǔ yào duō yǔ háizi jiāoliú, bú yào dòngbudòng jiù hēchì yāfú, yǐ \"zhùzuǐ\" lái qiángxíng zhìzhǐ háizi fābiǎo yìjiàn.",
+    "vn": "Cha mẹ nên trò chuyện nhiều với con, đừng hơi một chút là quát mắng áp đặt, dùng câu \"im miệng\" để ép con không được nêu ý kiến."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "她学习很努力，动不动就考第一名。",
+    "why": "动不动 dùng cho việc KHÔNG mong muốn, mang ý phàn nàn; muốn nói một việc tốt thường xảy ra thì dùng 经常 / 总是.",
+    "dung": "她学习很努力，经常考第一名。"
+   },
+   {
+    "sai": "他最近心情不好，动不动发脾气。",
+    "why": "Sau 动不动 phải có 就 rồi mới đến động từ: 动不动就 + V.",
+    "dung": "他最近心情不好，动不动就发脾气。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他身体很弱，",
+       "就生病。"
+      ],
+      "dap": [
+       [
+        "动不动"
+       ]
+      ],
+      "chon": [
+       "动不动",
+       "大体",
+       "力求"
+      ],
+      "goiY": "\"Anh ấy yếu lắm, hơi một chút là ốm.\" (练一练 (1))",
+      "giai": "动不动 + 就 + V: rất dễ xảy ra một việc không mong muốn. 大体 = về cơ bản; 力求 = cố gắng đạt tới."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你的电脑该换了，动不动就",
+       "，多耽误事啊。"
+      ],
+      "dap": [
+       [
+        "死机"
+       ]
+      ],
+      "chon": [
+       "死机",
+       "开机",
+       "上网"
+      ],
+      "goiY": "\"Máy tính của cậu nên thay rồi, hơi một chút là treo máy, lỡ việc biết bao.\" (练一练 (2))",
+      "giai": "Sau 动不动就 là việc KHÔNG mong muốn → 死机 (treo máy); 开机, 上网 là việc bình thường."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "对孩子要耐心，",
+       "动不动就训斥。"
+      ],
+      "dap": [
+       [
+        "不要"
+       ]
+      ],
+      "chon": [
+       "不要",
+       "一定",
+       "应该"
+      ],
+      "goiY": "\"Với trẻ con phải kiên nhẫn, đừng hơi một chút là mắng.\" (练一练 (3))",
+      "giai": "Lời khuyên: phủ định đặt TRƯỚC 动不动 — 不要 / 别 + 动不动就……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他最近工作忙、压力大，动不动",
+       "着急、发脾气。"
+      ],
+      "dap": [
+       [
+        "就"
+       ]
+      ],
+      "chon": [
+       "就",
+       "才",
+       "都"
+      ],
+      "goiY": "\"Dạo này anh ấy bận, áp lực lớn, hơi một chút là sốt ruột, nổi cáu.\" (ví dụ của sách)",
+      "giai": "Khung cố định 动不动就 + V; 才 mang nghĩa \"mới\", ngược ý."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "动不动就要将其淘汰，似乎不是",
+       "之举。"
+      ],
+      "dap": [
+       [
+        "明智"
+       ]
+      ],
+      "chon": [
+       "明智",
+       "规范",
+       "平坦"
+      ],
+      "goiY": "\"Hơi một chút đã đòi loại bỏ nó, e rằng không phải việc làm sáng suốt.\" (câu bài khoá)",
+      "giai": "明智之举 = việc làm sáng suốt; 动不动就 ở đây phê phán thái độ vội vàng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "父母不要动不动就",
+       "孩子，要多和孩子交流。"
+      ],
+      "dap": [
+       [
+        "指责"
+       ]
+      ],
+      "chon": [
+       "指责",
+       "引导",
+       "保障"
+      ],
+      "goiY": "\"Cha mẹ đừng hơi một chút là trách con, hãy trò chuyện với con nhiều hơn.\"",
+      "giai": "Việc tiêu cực (trách mắng) mới đi với 动不动就; 引导 (dẫn dắt), 保障 (bảo đảm) là việc tích cực."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这台旧电脑",
+       "动不动",
+       "就",
+       "死机"
+      ],
+      "dap": [
+       "这台旧电脑动不动就死机。"
+      ],
+      "goiY": "Cái máy tính cũ này hơi một chút là treo máy.",
+      "giai": "S + 动不动就 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "她",
+       "身体",
+       "不好",
+       "，",
+       "动不动",
+       "就",
+       "感冒"
+      ],
+      "dap": [
+       "她身体不好，动不动就感冒。"
+      ],
+      "goiY": "Cô ấy sức khỏe không tốt, hơi một chút là bị cảm.",
+      "giai": "Vế trước nêu nguyên nhân, vế sau 动不动就 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "别",
+       "动不动",
+       "就",
+       "发脾气",
+       "，",
+       "有话",
+       "好好说"
+      ],
+      "dap": [
+       "别动不动就发脾气，有话好好说。"
+      ],
+      "goiY": "Đừng hơi một chút là nổi cáu, có gì thì nói tử tế.",
+      "giai": "别 / 不要 đặt trước 动不动."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他学习很努力，动不动就考满分。",
+      "dung": false,
+      "sua": "他学习很努力，经常考满分。",
+      "giai": "动不动 dùng cho việc không mong muốn (ý phàn nàn); việc tốt thường xảy ra dùng 经常 / 常常."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他动不动发脾气，大家都不喜欢和他在一起。",
+      "dung": false,
+      "sua": "他动不动就发脾气，大家都不喜欢和他在一起。",
+      "giai": "Thiếu 就: khung đúng là 动不动就 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这孩子身体太弱了，动不动就发烧。",
+      "dung": true,
+      "giai": "Đúng: 动不动就 + việc không mong muốn (发烧 = sốt)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Em trai tôi dạo này hơi một chút là khóc, mẹ rất lo.",
+      "dap": [
+       "我弟弟最近动不动就哭，妈妈很担心。",
+       "我弟弟最近动不动就哭，让妈妈很担心。",
+       "最近我弟弟动不动就哭，妈妈特别担心。"
+      ],
+      "py": "Wǒ dìdi zuìjìn dòngbudòng jiù kū, māma hěn dānxīn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 动不动就.",
+      "giai": "\"Hơi một chút là …\" = 动不动就 + V (không dịch 一点儿)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Làm lãnh đạo thì đừng hơi một chút là chỉ trích nhân viên.",
+      "dap": [
+       "当领导的不要动不动就指责员工。",
+       "当领导别动不动就指责员工。",
+       "做领导的不要动不动就批评员工。"
+      ],
+      "py": "Dāng lǐngdǎo de bú yào dòngbudòng jiù zhǐzé yuángōng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 动不动就 và 指责 (từ mới).",
+      "giai": "Phủ định 不要 / 别 đặt trước 动不动."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他身体很弱，＿＿＿。",
+      "goiY": "Hoàn thành câu bằng 动不动 (练一练 (1) của sách).",
+      "mau": "他身体很弱，动不动就生病。",
+      "can": [
+       [
+        "动不动就"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "你的电脑该换了，＿＿＿，多耽误事啊。",
+      "goiY": "Hoàn thành câu bằng 动不动 (练一练 (2) của sách).",
+      "mau": "你的电脑该换了，动不动就死机，多耽误事啊。",
+      "can": [
+       [
+        "动不动就"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "对孩子要耐心，＿＿＿。",
+      "goiY": "Hoàn thành câu bằng 动不动 (练一练 (3) của sách) — đây là lời khuyên.",
+      "mau": "对孩子要耐心，不要动不动就训斥。",
+      "can": [
+       [
+        "动不动就"
+       ],
+       [
+        "不要",
+        "别"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「甲乙丙丁……」",
+  "tenVn": "",
+  "cauTruc": [
+   "甲、乙、丙、丁…… = thứ nhất, thứ hai, thứ ba, thứ tư (sắp thứ tự)",
+   "Thiên can + Địa chi = can chi gọi năm: 甲午、乙未、甲申"
+  ],
+  "giaiThich": "① 甲、乙、丙、丁… (các Thiên can, Hán Việt: Giáp, Ất, Bính, Đinh…) dùng để SẮP XẾP THỨ TỰ sự vật, tương đương \"thứ nhất, thứ hai, thứ ba, thứ tư…\" hay \"A, B, C, D\": tiêu đề các phần của bài khoá (甲 更加清洁、安全…), 甲方 / 乙方 (bên A / bên B trong hợp đồng), 甲级 / 乙级. ② Mười Thiên can 甲乙丙丁戊己庚辛壬癸 phối lần lượt với mười hai Địa chi 子丑寅卯辰巳午未申酉戌亥 thành 60 cặp gọi là 干支 (can chi), xoay vòng dùng để ghi ngày, ghi năm; âm lịch Trung Quốc (và Việt Nam) đến nay vẫn dùng can chi để gọi năm: 2015年 là 乙未年, 甲午战争 năm 1894. Chú ý: 甲 còn có thể là họ người (她姓甲) — khi đó không mang hai nghĩa trên.",
+  "viDu": [
+   {
+    "zh": "甲　更加清洁、安全；乙　能自动行驶；丙　融合数字生活方式。",
+    "py": "Jiǎ gèngjiā qīngjié, ānquán; yǐ néng zìdòng xíngshǐ; bǐng rónghé shùzì shēnghuó fāngshì.",
+    "vn": "Một (Giáp): sạch hơn, an toàn hơn; Hai (Ất): tự lái được; Ba (Bính): hòa nhập lối sống số."
+   },
+   {
+    "zh": "甲午战争发生在1894年。",
+    "py": "Jiǎwǔ Zhànzhēng fāshēng zài yī bā jiǔ sì nián.",
+    "vn": "Chiến tranh Giáp Ngọ xảy ra năm 1894."
+   },
+   {
+    "zh": "甲申年来临之际，祝您健康幸福，心想事成。",
+    "py": "Jiǎshēn nián láilín zhī jì, zhù nín jiànkāng xìngfú, xīnxiǎng-shìchéng.",
+    "vn": "Nhân dịp năm Giáp Thân đến, chúc ông/bà mạnh khỏe hạnh phúc, muốn gì được nấy."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这篇文章分为甲、乙、丙三部分，我最喜欢的是丁部分。",
+    "why": "Đã chia ba phần 甲、乙、丙 thì không có phần 丁 (丁 là thứ tư); phần thứ ba là 丙.",
+    "dung": "这篇文章分为甲、乙、丙三部分，我最喜欢的是丙部分。"
+   },
+   {
+    "sai": "她姓甲，所以她在班里排第一。",
+    "why": "甲 làm HỌ người (甲吉) không mang nghĩa thứ tự \"thứ nhất\" — đây là nghĩa khác (练一练 của sách).",
+    "dung": "她姓甲，叫甲吉。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "甲、乙、",
+       "、丁"
+      ],
+      "dap": [
+       [
+        "丙"
+       ]
+      ],
+      "chon": [
+       "丙",
+       "戊",
+       "甲"
+      ],
+      "goiY": "Điền can đứng thứ ba vào dãy thứ tự.",
+      "giai": "Thứ tự Thiên can: 甲 → 乙 → 丙 → 丁 → 戊 …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "合同中，买方是",
+       "方，卖方是乙方。"
+      ],
+      "dap": [
+       [
+        "甲"
+       ]
+      ],
+      "chon": [
+       "甲",
+       "丁",
+       "丙"
+      ],
+      "goiY": "\"Trong hợp đồng, bên mua là bên A, bên bán là bên B.\"",
+      "giai": "甲方 / 乙方 = bên A / bên B — dùng 甲乙 để đánh số các bên."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "2015年，农历",
+       "未。"
+      ],
+      "dap": [
+       [
+        "乙"
+       ]
+      ],
+      "chon": [
+       "乙",
+       "甲",
+       "丙"
+      ],
+      "goiY": "\"Năm 2015, âm lịch là năm Ất Mùi.\" (ví dụ của sách)",
+      "giai": "Can chi gọi năm: 乙未 = Ất Mùi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "甲午",
+       "发生在1894年。"
+      ],
+      "dap": [
+       [
+        "战争"
+       ]
+      ],
+      "chon": [
+       "战争",
+       "比赛",
+       "会议"
+      ],
+      "goiY": "\"Chiến tranh Giáp Ngọ xảy ra năm 1894.\" (ví dụ của sách)",
+      "giai": "甲午战争 — sự kiện gọi theo năm can chi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "课文分为四个部分，第四部分是“",
+       "　长途行车仍靠汽油”。"
+      ],
+      "dap": [
+       [
+        "丁"
+       ]
+      ],
+      "chon": [
+       "丁",
+       "丙",
+       "乙"
+      ],
+      "goiY": "\"Bài khoá chia bốn phần, phần thứ tư là Đinh: Đi đường dài vẫn dựa vào xăng.\"",
+      "giai": "丁 = thứ tư (甲 1 · 乙 2 · 丙 3 · 丁 4)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "“甲、乙、丙、丁……”称作天干，“子、丑、寅、卯……”称作",
+       "。"
+      ],
+      "dap": [
+       [
+        "地支"
+       ]
+      ],
+      "chon": [
+       "地支",
+       "干支",
+       "农历"
+      ],
+      "goiY": "\"Giáp, Ất, Bính, Đinh… gọi là Thiên can; Tý, Sửu, Dần, Mão… gọi là Địa chi.\" (sách)",
+      "giai": "天干 + 地支, gọi tắt là 干支 (can chi)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这篇文章",
+       "分为",
+       "甲、乙、丙",
+       "三部分"
+      ],
+      "dap": [
+       "这篇文章分为甲、乙、丙三部分。"
+      ],
+      "goiY": "Bài văn này chia làm ba phần Giáp, Ất, Bính.",
+      "giai": "甲、乙、丙 đánh số các phần."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "甲申年",
+       "来临之际",
+       "，",
+       "祝您",
+       "健康幸福"
+      ],
+      "dap": [
+       "甲申年来临之际，祝您健康幸福。"
+      ],
+      "goiY": "Nhân dịp năm Giáp Thân đến, chúc ông/bà mạnh khỏe hạnh phúc.",
+      "giai": "Can chi gọi năm + 来临之际 (lời chúc trang trọng)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "合同",
+       "规定",
+       "，",
+       "运费",
+       "由乙方",
+       "承担"
+      ],
+      "dap": [
+       "合同规定，运费由乙方承担。"
+      ],
+      "goiY": "Hợp đồng quy định, phí vận chuyển do bên B chịu.",
+      "giai": "乙方 = bên B; 由 + người + 承担."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "她姓甲，叫甲吉。这里的“甲”表示第一。",
+      "dung": false,
+      "sua": "她姓甲，叫甲吉。这里的“甲”是姓，不表示顺序。",
+      "giai": "甲 ở đây là HỌ người, không mang nghĩa thứ tự (练一练 (1) của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他叫李甲申，肯定是1944年出生的，那一年是甲申年。",
+      "dung": true,
+      "giai": "Đúng: 甲申 là can chi của năm 1944 (练一练 (2) của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这篇文章分为甲、乙、丙三部分，我最喜欢的是丁部分。",
+      "dung": false,
+      "sua": "这篇文章分为甲、乙、丙三部分，我最喜欢的是丙部分。",
+      "giai": "Chỉ có ba phần 甲、乙、丙; phần thứ ba là 丙."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Bản báo cáo chia làm ba phần Giáp, Ất, Bính, phần Bính quan trọng nhất.",
+      "dap": [
+       "报告分为甲、乙、丙三个部分，丙部分最重要。",
+       "这份报告分成甲、乙、丙三部分，其中丙部分最重要。",
+       "报告分为甲、乙、丙三部分，最重要的是丙部分。"
+      ],
+      "py": "Bàogào fēnwéi jiǎ, yǐ, bǐng sān ge bùfen, bǐng bùfen zuì zhòngyào.",
+      "goiY": "Dịch sang tiếng Trung, dùng 甲、乙、丙 để đánh số.",
+      "giai": "分为 + số lượng + 部分; 丙 = thứ ba."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Năm 2026 là năm Bính Ngọ theo âm lịch.",
+      "dap": [
+       "2026年是农历丙午年。",
+       "2026年，农历丙午。",
+       "农历2026年是丙午年。"
+      ],
+      "py": "Èr líng èr liù nián shì nónglì bǐngwǔ nián.",
+      "goiY": "Dịch sang tiếng Trung, dùng can chi.",
+      "giai": "丙午 = Bính Ngọ; 农历 = âm lịch."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "下列哪句中的“甲”和上面讲的意思不同？①她姓甲，叫甲吉。②他叫李甲申，那一年是甲申年。③文章分为甲、乙、丙三部分。＿＿＿",
+      "goiY": "Chọn câu khác nghĩa (练一练 của sách) và giải thích ngắn bằng tiếng Trung.",
+      "mau": "第①句不一样，这里的“甲”是她的姓，不表示顺序，也不是干支。",
+      "can": [
+       [
+        "①",
+        "第一句",
+        "姓"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "请用“甲、乙、丙”给你的周末计划排个顺序：＿＿＿",
+      "goiY": "Dùng 甲、乙、丙 để liệt kê ba việc trong kế hoạch cuối tuần.",
+      "mau": "甲，周六上午复习功课；乙，周六下午去打球；丙，周日陪爸妈去看奶奶。",
+      "can": [
+       [
+        "甲"
+       ],
+       [
+        "乙"
+       ],
+       [
+        "丙"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这份合同里，谁是甲方，谁是乙方？＿＿＿",
+      "goiY": "Trả lời bằng câu có 甲方 và 乙方 (bên mua là công ty A, bên bán là công ty B).",
+      "mau": "买方A公司是甲方，卖方B公司是乙方。",
+      "can": [
+       [
+        "甲方"
+       ],
+       [
+        "乙方"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

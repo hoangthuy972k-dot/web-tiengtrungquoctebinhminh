@@ -1,0 +1,112 @@
+{
+ "zh": "徐健和他的野生动物摄影师们",
+ "py": "Xú Jiàn hé tā de yěshēng dòngwù shèyǐngshīmen",
+ "vn": "Từ Kiện và các nhà nhiếp ảnh động vật hoang dã",
+ "topic": "第四单元 走遍天下 · Nhiếp ảnh động vật hoang dã và bảo tồn đa dạng sinh học",
+ "vocabCount": 45,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "换句话说",
+   "explain": "换句话说 là THÀNH PHẦN CHEN (插入语), nghĩa \"nói cách khác\". Dùng để GIẢI THÍCH, NÓI RÕ lại điều vừa nói bằng một cách diễn đạt khác (cụ thể hơn, dễ hiểu hơn, hoặc nêu hệ quả). Thường đứng giữa hai phân câu / hai câu, hai bên có dấu phẩy. Vế trước và vế sau nói về CÙNG MỘT sự việc. Các thành phần chen cùng loại hay gặp: 也就是说, 就是说.",
+   "rule": "Câu A，<strong style=\"color:var(--sky-d)\">换句话说</strong>，câu B (giải thích lại A)　|　……。<strong style=\"color:var(--sky-d)\">也就是说</strong>／<strong style=\"color:var(--sky-d)\">就是说</strong>，……",
+   "examples": [
+    {
+     "zh": "雪豹，这种皮毛上带着美丽花斑的大型猫科动物正濒临消亡，换句话说，在不久的将来我们很可能再也见不到这种动物。",
+     "py": "Xuěbào, zhè zhǒng pímáo shang dàizhe měilì huābān de dàxíng māokē dòngwù zhèng bīnlín xiāowáng, huàn jù huà shuō, zài bùjiǔ de jiānglái wǒmen hěn kěnéng zài yě jiàn bu dào zhè zhǒng dòngwù.",
+     "vn": "Báo tuyết — loài họ mèo cỡ lớn có bộ lông điểm đốm hoa tuyệt đẹp này — đang đứng bên bờ diệt vong; nói cách khác, trong tương lai không xa rất có thể chúng ta sẽ không bao giờ còn thấy loài vật này nữa."
+    },
+    {
+     "zh": "推销产品靠的是广告，但是做广告需要高额资金，这笔广告费最终还是会转嫁到产品上。换句话说，一个产品的广告越多，它的零售价格也会越高。",
+     "py": "Tuīxiāo chǎnpǐn kào de shì guǎnggào, dànshì zuò guǎnggào xūyào gāo'é zījīn, zhè bǐ guǎnggàofèi zuìzhōng háishi huì zhuǎnjià dào chǎnpǐn shang. Huàn jù huà shuō, yí ge chǎnpǐn de guǎnggào yuè duō, tā de língshòu jiàgé yě huì yuè gāo.",
+     "vn": "Tiêu thụ sản phẩm dựa vào quảng cáo, nhưng quảng cáo cần khoản vốn lớn, khoản phí quảng cáo này rốt cuộc vẫn bị đẩy sang sản phẩm. Nói cách khác, sản phẩm càng quảng cáo nhiều thì giá bán lẻ càng cao."
+    },
+    {
+     "zh": "每个国家都应与他国和睦相处，尽其该尽的国际义务。就是说，国家拥有主权，但并不是可以为所欲为的。",
+     "py": "Měi ge guójiā dōu yīng yǔ tāguó hémù xiāngchǔ, jìn qí gāi jìn de guójì yìwù. Jiùshì shuō, guójiā yōngyǒu zhǔquán, dàn bìng bú shì kěyǐ wéisuǒyùwéi de.",
+     "vn": "Mỗi quốc gia đều nên chung sống hoà thuận với nước khác, làm tròn nghĩa vụ quốc tế của mình. Nghĩa là, quốc gia có chủ quyền, nhưng không phải muốn làm gì thì làm."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他很喜欢看书，换句话说，他也喜欢运动。",
+     "why": "Vế sau của 换句话说 phải giải thích lại CÙNG một ý với vế trước; \"thích vận động\" là ý mới → dùng 另外 / 同时.",
+     "right": "他很喜欢看书，换句话说，他是个名副其实的书迷。"
+    },
+    {
+     "wrong": "换句话说，雪豹正濒临消亡，我们很可能再也见不到它了。",
+     "why": "换句话说 đứng giữa hai vế (sau điều cần giải thích), không đứng đầu câu khi chưa có ý nào trước nó.",
+     "right": "雪豹正濒临消亡，换句话说，我们很可能再也见不到它了。"
+    }
+   ]
+  },
+  {
+   "point": "为……所……",
+   "explain": "为……所…… giới thiệu CHỦ THỂ hành động (施事), tạo thành CÂU BỊ ĐỘNG, dùng trong VĂN VIẾT (为 đọc wéi). Dạng khẳng định: 为 + danh từ / cụm danh từ + 所 + động từ; dạng phủ định: 不 + 为 + danh từ / cụm danh từ + 所 + động từ. Động từ sau 所 thường là động từ hai âm tiết (了解, 掌握, 感动, 利用) hoặc động từ đơn âm văn viết (惑, 困, 动). Nghĩa tương đương 被……（所）……, nhưng trang trọng hơn.",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">为</strong> + N + <strong style=\"color:var(--sky-d)\">所</strong> + V　|　Chủ ngữ + 不 + <strong style=\"color:var(--sky-d)\">为</strong> + N + <strong style=\"color:var(--sky-d)\">所</strong> + V",
+   "examples": [
+    {
+     "zh": "更严峻的是自然保护区的影像空白，很多特有物种，还没来得及为我们所了解，就消失了。",
+     "py": "Gèng yánjùn de shì zìrán bǎohùqū de yǐngxiàng kòngbái, hěn duō tèyǒu wùzhǒng, hái méi láidejí wéi wǒmen suǒ liǎojiě, jiù xiāoshī le.",
+     "vn": "Nghiêm trọng hơn là các khu bảo tồn thiên nhiên còn trống trơn về hình ảnh, rất nhiều loài đặc hữu còn chưa kịp được chúng ta biết đến thì đã biến mất."
+    },
+    {
+     "zh": "我们要通过教育，使原来为少数人所掌握的科学知识，在较短的时间内为更多的人所掌握，并不断扩大其传播范围。",
+     "py": "Wǒmen yào tōngguò jiàoyù, shǐ yuánlái wéi shǎoshù rén suǒ zhǎngwò de kēxué zhīshi, zài jiào duǎn de shíjiān nèi wéi gèng duō de rén suǒ zhǎngwò, bìng búduàn kuòdà qí chuánbō fànwéi.",
+     "vn": "Chúng ta phải thông qua giáo dục, khiến những kiến thức khoa học vốn chỉ số ít người nắm được, trong thời gian khá ngắn được nhiều người hơn nắm vững, và không ngừng mở rộng phạm vi truyền bá của nó."
+    },
+    {
+     "zh": "他是个有原则的人，绝不会为金钱所惑。",
+     "py": "Tā shì ge yǒu yuánzé de rén, jué bú huì wéi jīnqián suǒ huò.",
+     "vn": "Anh ấy là người có nguyên tắc, tuyệt đối không bị đồng tiền mê hoặc."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "很多特有物种还没来得及被我们所了解，就消失了。",
+     "why": "Trong bài dùng cặp cố định 为……所……; muốn dùng 被 thì thường bỏ 所 (被我们了解) — trộn \"被……所\" nghe không chuẩn ở trình độ này.",
+     "right": "很多特有物种还没来得及为我们所了解，就消失了。"
+    },
+    {
+     "wrong": "没有一个人为电影中的人物不所感动。",
+     "why": "Phủ định đặt 不 TRƯỚC 为: 不 + 为 + N + 所 + V.",
+     "right": "没有一个人不为电影中的人物所感动。"
+    }
+   ]
+  },
+  {
+   "point": "足以",
+   "explain": "足以 là ĐỘNG TỪ, nghĩa là hoàn toàn có thể, hoàn toàn đủ để (完全可以、完全能够). Phía sau là CỤM ĐỘNG TỪ: 足以 + V (说明, 证明, 使……, 让……). Dạng phủ định: 不足以 + V (không đủ để …). Văn viết; khẩu ngữ tương đương 完全能 / 够……. Không đứng một mình làm vị ngữ, không mang danh từ trực tiếp.",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">足以</strong> + V / 使(让)……　|　……<strong style=\"color:var(--sky-d)\">不足以</strong> + V",
+   "examples": [
+    {
+     "zh": "他们不分昼夜地奔波，渴望拍出足以使人疯狂的照片，吸引大家心甘情愿地去购买，以便支撑他们深入野外的巨大开支。",
+     "py": "Tāmen bù fēn zhòuyè de bēnbō, kěwàng pāichū zúyǐ shǐ rén fēngkuáng de zhàopiàn, xīyǐn dàjiā xīngān-qíngyuàn de qù gòumǎi, yǐbiàn zhīchēng tāmen shēnrù yěwài de jùdà kāizhī.",
+     "vn": "Họ bôn ba không kể ngày đêm, khao khát chụp được những bức ảnh đủ sức khiến người ta phát cuồng, thu hút mọi người cam tâm tình nguyện bỏ tiền mua, để trang trải khoản chi phí khổng lồ khi đi sâu vào vùng hoang dã."
+    },
+    {
+     "zh": "对这样的坏人不严惩就不足以平民愤。",
+     "py": "Duì zhèyàng de huàirén bù yánchéng jiù bù zúyǐ píng mínfèn.",
+     "vn": "Với kẻ xấu như vậy, không trừng trị nghiêm thì không đủ để dẹp cơn phẫn nộ của dân chúng."
+    },
+    {
+     "zh": "跟儿童谈话很讲究技巧，必须随机应变，要能够随时提出足以了解儿童心理状态而又不会引起儿童反感的问题。",
+     "py": "Gēn értóng tánhuà hěn jiǎngjiu jìqiǎo, bìxū suíjī-yìngbiàn, yào nénggòu suíshí tíchū zúyǐ liǎojiě értóng xīnlǐ zhuàngtài ér yòu bú huì yǐnqǐ értóng fǎngǎn de wèntí.",
+     "vn": "Trò chuyện với trẻ em rất cần kỹ năng, phải tuỳ cơ ứng biến, phải có thể bất cứ lúc nào đưa ra những câu hỏi đủ để hiểu trạng thái tâm lý của trẻ mà lại không khiến trẻ phản cảm."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这些钱足以了。",
+     "why": "足以 là động từ phải có cụm động từ theo sau; muốn nói \"đủ rồi\" thì dùng 足够 / 够.",
+     "right": "这些钱足够了。／这些钱足以支付学费了。"
+    },
+    {
+     "wrong": "只看一次考试成绩，足以不评估一个学生。",
+     "why": "Phủ định là 不足以 + V (不 đứng trước 足以).",
+     "right": "只看一次考试成绩，不足以评估一个学生。"
+    }
+   ]
+  }
+ ]
+}

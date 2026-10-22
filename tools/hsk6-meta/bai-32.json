@@ -1,0 +1,78 @@
+{
+ "zh": "有时，不妨悲伤",
+ "py": "Yǒushí, bùfáng bēishāng",
+ "vn": "Đôi lúc cũng nên buồn",
+ "topic": "第八单元 人体探秘 · Nước mắt và sức khoẻ: đàn ông cũng có quyền khóc, giải toả cảm xúc đúng mức",
+ "vocabCount": 52,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "哪怕",
+   "explain": "“哪怕” là LIÊN TỪ, nghĩa giống “即使” (dù, cho dù). Sau 哪怕 là một tình huống GIẢ THIẾT — thường là tình huống cực đoan, bất lợi nhất; vế sau phối hợp với “也” hoặc “都”, biểu thị tình huống ấy không làm thay đổi kết quả hay kết luận. Hay dùng trong khẩu ngữ. Vế 哪怕 có thể đứng trước, hoặc đứng sau để bổ sung ý: 我们一定会尽全力抢救病人，哪怕只有一线希望. So sánh: 即使 (văn viết hơn), 就算 / 就是 (khẩu ngữ); 哪怕 hay đi với 只有 / 一点儿 / 再 + Adj để nhấn \"dù chỉ …\" hoặc \"dù … đến mấy\".",
+   "rule": "<strong style=\"color:var(--sky-d)\">哪怕</strong> + tình huống giả thiết，（S +）<strong style=\"color:var(--sky-d)\">也 / 都</strong> + kết quả không đổi　|　Kết quả……，<strong style=\"color:var(--sky-d)\">哪怕</strong> + tình huống giả thiết",
+   "examples": [
+    {
+     "zh": "哪怕遭受打击、面对失败、受尽委屈，也一定要坚强，这是什么时候都不能含糊的。",
+     "py": "Nǎpà zāoshòu dǎjī, miànduì shībài, shòujìn wěiqu, yě yídìng yào jiānqiáng, zhè shì shénme shíhou dōu bù néng hánhu de.",
+     "vn": "Dù gặp cú sốc, đối mặt thất bại, chịu đủ mọi uất ức cũng nhất định phải kiên cường, đó là điều lúc nào cũng không được qua loa."
+    },
+    {
+     "zh": "她真的老了，记忆力越来越差，哪怕两三天以前的事情，也会记不清。",
+     "py": "Tā zhēn de lǎo le, jìyìlì yuè lái yuè chà, nǎpà liǎng-sān tiān yǐqián de shìqing, yě huì jì bu qīng.",
+     "vn": "Bà ấy già thật rồi, trí nhớ ngày càng kém, ngay cả chuyện hai ba hôm trước cũng không nhớ rõ."
+    },
+    {
+     "zh": "您放心，我们一定会尽全力抢救病人，哪怕只有一线希望。",
+     "py": "Nín fàngxīn, wǒmen yídìng huì jìn quánlì qiǎngjiù bìngrén, nǎpà zhǐyǒu yí xiàn xīwàng.",
+     "vn": "Xin yên tâm, chúng tôi nhất định sẽ dốc toàn lực cứu chữa bệnh nhân, dù chỉ còn một tia hy vọng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "哪怕遭受打击，他一定要坚强。",
+     "why": "Vế sau thiếu 也 / 都 hô ứng với 哪怕.",
+     "right": "哪怕遭受打击，他也一定要坚强。"
+    },
+    {
+     "wrong": "哪怕天气很好，我们也去爬山了。",
+     "why": "哪怕 nêu tình huống GIẢ THIẾT, thường bất lợi, trái với kết quả; trời đẹp mà đi leo núi là chuyện bình thường, không có ý nhượng bộ.",
+     "right": "哪怕天气不好，我们也要去爬山。"
+    }
+   ]
+  },
+  {
+   "point": "反之",
+   "explain": "“反之” là LIÊN TỪ (văn viết), nghĩa \"从相反的方面说\" — nói từ mặt ngược lại. Dùng giữa hai vế câu, hai câu hay hai đoạn văn, có tác dụng chuyển ý, dẫn ra nội dung TRÁI NGƯỢC với phía trước; sau “反之” có ngắt (dấu phẩy). Khung hay gặp: A，（就）B；反之，（就）C — vế sau thường lược điều kiện \"không A\" vì người đọc tự hiểu. Gần nghĩa 相反, nhưng 相反 còn làm tính từ (相反的方向), còn 反之 chỉ làm liên từ. Cụm cố định: 反之亦然 = ngược lại cũng thế.",
+   "rule": "A，（就）B；<strong style=\"color:var(--sky-d)\">反之</strong>，（就）C（C trái với B）　|　……，<strong style=\"color:var(--sky-d)\">反之亦然</strong>",
+   "examples": [
+    {
+     "zh": "事实表明，长期的压抑、隐忍对健康只有坏处，没有好处，反之，以适当的方式将情绪释放一下，人的心绪才会变得平和。",
+     "py": "Shìshí biǎomíng, chángqī de yāyì, yǐnrěn duì jiànkāng zhǐyǒu huàichù, méiyǒu hǎochù, fǎnzhī, yǐ shìdàng de fāngshì jiāng qíngxù shìfàng yíxià, rén de xīnxù cái huì biàn de pínghé.",
+     "vn": "Thực tế cho thấy, dồn nén, nhẫn nhịn lâu dài chỉ có hại chứ không có lợi cho sức khoẻ; ngược lại, giải toả cảm xúc bằng cách thích hợp thì tâm trạng con người mới trở nên bình hoà."
+    },
+    {
+     "zh": "有些东西，越是一心想要得到，越是不能如愿，反之，不去在意的时候倒会有意外来临。",
+     "py": "Yǒuxiē dōngxi, yuè shì yìxīn xiǎng yào dédào, yuè shì bù néng rúyuàn, fǎnzhī, bú qù zàiyì de shíhou dào huì yǒu yìwài láilín.",
+     "vn": "Có những thứ càng một lòng muốn có thì càng không được như ý; ngược lại, lúc không để tâm thì lại có bất ngờ ập đến."
+    },
+    {
+     "zh": "经济发展了，百姓的收入增加了，消费能力就强，反之，百姓的消费能力就差。",
+     "py": "Jīngjì fāzhǎn le, bǎixìng de shōurù zēngjiā le, xiāofèi nénglì jiù qiáng, fǎnzhī, bǎixìng de xiāofèi nénglì jiù chà.",
+     "vn": "Kinh tế phát triển, thu nhập người dân tăng thì sức tiêu dùng mạnh; ngược lại, sức tiêu dùng của người dân sẽ kém."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "雨水多，气候就比较湿润，反之，气候就比较潮湿。",
+     "why": "Vế sau 反之 phải nói điều NGƯỢC LẠI; 潮湿 cùng nghĩa với 湿润 nên mâu thuẫn.",
+     "right": "雨水多，气候就比较湿润，反之，气候就比较干燥。"
+    },
+    {
+     "wrong": "他们俩朝反之的方向走了。",
+     "why": "反之 chỉ là liên từ, không bổ nghĩa cho danh từ; phải dùng tính từ 相反.",
+     "right": "他们俩朝相反的方向走了。"
+    }
+   ]
+  }
+ ]
+}

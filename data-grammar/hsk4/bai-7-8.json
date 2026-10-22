@@ -1,0 +1,250 @@
+{
+ "/lessons/hsk4-bai-7.html": {
+  "points": [
+   {
+    "title": "「估计」 so sánh với 「可能」",
+    "errors": [
+     { "wrong": "他很估计会来。", "why": "只有 可能 mới thêm được 很; 估计 thì không.", "right": "他很可能会来。" },
+     { "wrong": "这是估计的事。", "why": "nghĩa “có thể xảy ra” là của tính từ 可能.", "right": "这是可能的事。" },
+     { "wrong": "我可能他明天来。", "why": "可能 là động từ năng nguyện, không mang được cả một vế câu.", "right": "我估计他明天来。" }
+    ],
+    "items": [
+     { "context": "估计 mang được cả một VẾ CÂU.", "pre": "我", "blank": "估计他明天来", "post": "。", "options": ["估计他明天来", "可能他明天来我", "我可能他明天来"], "answer": 0, "explanation": "估计 là động từ, theo sau là vế câu." },
+     { "context": "可能 là ĐỘNG TỪ NĂNG NGUYỆN, đứng trước động từ.", "pre": "他", "blank": "可能会来", "post": "。", "options": ["可能会来", "估计的会来", "会来可能"], "answer": 0, "explanation": "Chủ ngữ + 可能 + động từ." },
+     { "context": "Chỉ 可能 mới thêm được 很.", "pre": "他", "blank": "很可能会来", "post": "。", "options": ["很可能会来", "很估计会来", "估计很会来"], "answer": 0, "explanation": "很可能 = rất có khả năng." },
+     { "context": "可能 làm TÍNH TỪ.", "pre": "这是", "blank": "可能的事", "post": "。", "options": ["可能的事", "估计的事", "很估计的事"], "answer": 0, "explanation": "估计 không làm tính từ." },
+     { "context": "“Tôi đoán trời sắp mưa.”", "pre": "我", "blank": "估计要下雨了", "post": "。", "options": ["估计要下雨了", "可能要下雨了我", "我很估计要下雨了"], "answer": 0, "explanation": "估计 + cụm động từ." },
+     { "context": "很可能 có thể đứng TRƯỚC chủ ngữ.", "pre": "", "blank": "很可能他不来了", "post": "。", "options": ["很可能他不来了", "很估计他不来了", "他很估计不来了"], "answer": 0, "explanation": "很可能 + mệnh đề." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我估计他明天来。", "isCorrect": true, "explanation": "估计 + vế câu — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他很估计会来。", "isCorrect": false, "correctVersion": "他很可能会来。", "explanation": "估计 không thêm được 很." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这是估计的事。", "isCorrect": false, "correctVersion": "这是可能的事。", "explanation": "估计 không làm tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đoán mai anh ấy sẽ đến.”", "words": ["我", "估计", "他", "明天", "来", "。"], "answer": "我估计他明天来。", "explanation": "估计 + vế câu." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy rất có khả năng sẽ đến.”", "words": ["他", "很", "可能", "会", "来", "。"], "answer": "他很可能会来。", "explanation": "很可能会来." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đoán trời sắp mưa rồi.”", "words": ["我", "估计", "要", "下雨", "了", "。"], "answer": "我估计要下雨了。", "explanation": "估计 + cụm động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 估计.", "promptLang": "vi", "prompt": "Tôi đoán ngày mai anh ấy sẽ đến.", "answer": "我估计他明天来。", "answerPy": "Wǒ gūjì tā míngtiān lái.", "explanation": "估计 + cả vế câu." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 很可能.", "promptLang": "vi", "prompt": "Anh ấy rất có khả năng sẽ không đến.", "answer": "他很可能不来了。", "answerPy": "Tā hěn kěnéng bù lái le.", "explanation": "很可能 + động từ." }
+    ]
+   },
+   {
+    "title": "「来不及」 — không kịp",
+    "errors": [
+     { "wrong": "我来不及了吃饭。", "why": "动词 đứng ngay sau 来不及, không chen 了 vào giữa.", "right": "我来不及吃饭了。" },
+     { "wrong": "我不来不及做完。", "why": "dạng khẳng định là 来得及, không dùng 不来不及.", "right": "我来得及做完。" },
+     { "wrong": "时间很多，来不及做完。", "why": "来不及 dùng khi thời gian KHÔNG đủ.", "right": "时间很多，来得及做完。" }
+    ],
+    "items": [
+     { "context": "“Tôi không kịp ăn cơm.”", "pre": "我", "blank": "来不及吃饭了", "post": "。", "options": ["来不及吃饭了", "来不及了吃饭", "不来不及吃饭"], "answer": 0, "explanation": "来不及 + động từ + 了." },
+     { "context": "Dạng KHẲNG ĐỊNH của 来不及.", "pre": "时间还多，", "blank": "来得及", "post": "。", "options": ["来得及", "不来不及", "来不及了"], "answer": 0, "explanation": "来得及 = kịp." },
+     { "context": "来不及 đứng ĐỘC LẬP được.", "pre": "快走吧，再晚就", "blank": "来不及了", "post": "。", "options": ["来不及了", "来不及的了", "不来不及了"], "answer": 0, "explanation": "来不及了 = không kịp mất." },
+     { "context": "“Sắp muộn rồi, không kịp ăn sáng nữa.”", "pre": "快迟到了，", "blank": "来不及吃早饭了", "post": "。", "options": ["来不及吃早饭了", "来不及了吃早饭", "不来不及吃早饭"], "answer": 0, "explanation": "来不及 + động từ." },
+     { "context": "Câu hỏi: “Có kịp không?”", "pre": "", "blank": "来得及吗", "post": "？", "options": ["来得及吗", "来不及吗不", "来得及不来不及吗"], "answer": 0, "explanation": "来得及吗？= có kịp không?" },
+     { "context": "“Nếu bây giờ đi thì vẫn kịp.”", "pre": "现在走的话，", "blank": "还来得及", "post": "。", "options": ["还来得及", "还来不及了", "还不来不及"], "answer": 0, "explanation": "还来得及 = vẫn kịp." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我来不及吃饭了。", "isCorrect": true, "explanation": "来不及 + động từ + 了 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我来不及了吃饭。", "isCorrect": false, "correctVersion": "我来不及吃饭了。", "explanation": "Không chen 了 vào giữa." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "时间很多，来不及做完。", "isCorrect": false, "correctVersion": "时间很多，来得及做完。", "explanation": "Thời gian đủ thì dùng 来得及." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không kịp ăn cơm nữa rồi.”", "words": ["我", "来不及", "吃", "饭", "了", "。"], "answer": "我来不及吃饭了。", "explanation": "来不及吃饭了." },
+     { "type": "sort", "context": "Sắp xếp: “Đi nhanh lên, muộn nữa là không kịp đâu.”", "words": ["快", "走", "吧", "，", "再", "晚", "就", "来不及", "了", "。"], "answer": "快走吧，再晚就来不及了。", "explanation": "就来不及了." },
+     { "type": "sort", "context": "Sắp xếp: “Bây giờ đi thì vẫn kịp.”", "words": ["现在", "走", "的话", "，", "还", "来得及", "。"], "answer": "现在走的话，还来得及。", "explanation": "还来得及." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 来不及.", "promptLang": "vi", "prompt": "Tôi không kịp ăn cơm nữa rồi.", "answer": "我来不及吃饭了。", "answerPy": "Wǒ láibují chīfàn le.", "explanation": "来不及 + động từ + 了." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 来得及.", "promptLang": "vi", "prompt": "Bây giờ đi thì vẫn kịp.", "answer": "现在走的话，还来得及。", "answerPy": "Xiànzài zǒu de huà, hái láidejí.", "explanation": "还来得及." }
+    ]
+   },
+   {
+    "title": "Sự lặp lại của từ ly hợp (AAB)",
+    "errors": [
+     { "wrong": "我们散步散步吧。", "why": "từ ly hợp lặp theo dạng AAB, không phải ABAB.", "right": "我们散散步吧。" },
+     { "wrong": "你帮忙帮忙我。", "why": "cùng lỗi; đúng là 帮帮忙.", "right": "你帮帮忙。" },
+     { "wrong": "我散散步了。", "why": "dạng lặp diễn tả ý định/thử làm, không đi với 了.", "right": "我想散散步。" }
+    ],
+    "items": [
+     { "context": "散步 là từ ly hợp, lặp theo dạng AAB.", "pre": "我们", "blank": "散散步", "post": "吧。", "options": ["散散步", "散步散步", "散步步"], "answer": 0, "explanation": "AB → AAB." },
+     { "context": "帮忙 lặp thành:", "pre": "你", "blank": "帮帮忙", "post": "。", "options": ["帮帮忙", "帮忙帮忙", "帮忙忙"], "answer": 0, "explanation": "帮忙 → 帮帮忙." },
+     { "context": "Động từ hai âm tiết KHÔNG ly hợp thì lặp ABAB.", "pre": "我们", "blank": "休息休息", "post": "吧。", "options": ["休息休息", "休休息", "休息息"], "answer": 0, "explanation": "休息 không ly hợp → ABAB." },
+     { "context": "游泳 lặp thành:", "pre": "我想", "blank": "游游泳", "post": "。", "options": ["游游泳", "游泳游泳", "游泳泳"], "answer": 0, "explanation": "游泳 → 游游泳." },
+     { "context": "Dạng lặp không đi với 了 khi nêu ý định.", "pre": "我想", "blank": "散散步", "post": "。", "options": ["散散步", "散散步了", "散步散步了"], "answer": 0, "explanation": "Ý định/thử làm → không dùng 了." },
+     { "context": "睡觉 lặp thành:", "pre": "我想", "blank": "睡睡觉", "post": "。", "options": ["睡睡觉", "睡觉睡觉", "睡觉觉"], "answer": 0, "explanation": "睡觉 → 睡睡觉." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们散散步吧。", "isCorrect": true, "explanation": "Từ ly hợp lặp AAB — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们散步散步吧。", "isCorrect": false, "correctVersion": "我们散散步吧。", "explanation": "Từ ly hợp lặp theo AAB." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们休息休息吧。", "isCorrect": true, "explanation": "休息 không ly hợp → ABAB — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng ta đi dạo một chút đi.”", "words": ["我们", "散散步", "吧", "。"], "answer": "我们散散步吧。", "explanation": "散散步." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn giúp một tay đi.”", "words": ["你", "帮帮忙", "吧", "。"], "answer": "你帮帮忙吧。", "explanation": "帮帮忙." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi muốn bơi một lát.”", "words": ["我", "想", "游游泳", "。"], "answer": "我想游游泳。", "explanation": "游游泳." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng dạng lặp của từ ly hợp.", "promptLang": "vi", "prompt": "Chúng ta đi dạo một chút đi.", "answer": "我们散散步吧。", "answerPy": "Wǒmen sànsan bù ba.", "explanation": "散步 → 散散步." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng dạng lặp của từ ly hợp.", "promptLang": "vi", "prompt": "Bạn giúp một tay đi.", "answer": "你帮帮忙吧。", "answerPy": "Nǐ bāngbang máng ba.", "explanation": "帮忙 → 帮帮忙." }
+    ]
+   },
+   {
+    "title": "「要是……(的话)，就……」",
+    "errors": [
+     { "wrong": "要是明天下雨，我们不去就。", "why": "就 đứng TRƯỚC động từ.", "right": "要是明天下雨，我们就不去。" },
+     { "wrong": "要是明天下雨，就我们不去。", "why": "chủ ngữ vế sau đứng TRƯỚC 就.", "right": "要是明天下雨，我们就不去。" },
+     { "wrong": "要是明天下雨的话就，我们不去。", "why": "就 đứng sau dấu phẩy, đầu vế kết quả.", "right": "要是明天下雨的话，我们就不去。" }
+    ],
+    "items": [
+     { "context": "“Nếu mai mưa thì chúng ta không đi.”", "pre": "要是明天下雨，", "blank": "我们就不去", "post": "。", "options": ["我们就不去", "就我们不去", "我们不去就"], "answer": 0, "explanation": "Chủ ngữ vế sau + 就." },
+     { "context": "Có thể thêm 的话 ở cuối vế giả thiết.", "pre": "要是你有时间", "blank": "的话，就来我家吧", "post": "。", "options": ["的话，就来我家吧", "就的话，来我家吧", "的话就，来我家吧"], "answer": 0, "explanation": "要是……的话，就……." },
+     { "context": "要是 = 如果 (khẩu ngữ hơn).", "pre": "", "blank": "要是你喜欢，我就送给你", "post": "。", "options": ["要是你喜欢，我就送给你", "要是你喜欢，就我送给你", "要是你喜欢，我送给你就"], "answer": 0, "explanation": "要是……就……." },
+     { "context": "Cùng chủ ngữ thì vế sau lược chủ ngữ.", "pre": "要是我有钱，", "blank": "就去中国旅游", "post": "。", "options": ["就去中国旅游", "去中国旅游就", "就我去中国旅游"], "answer": 0, "explanation": "Chủ ngữ giống nhau nên lược." },
+     { "context": "Điều kiện DUY NHẤT thì dùng 只有……才…….", "pre": "", "blank": "只有努力，才能成功", "post": "。", "options": ["只有努力，才能成功", "要是努力，才能成功", "要是努力，就能成功吗"], "answer": 0, "explanation": "Phân biệt với 只有……才……." },
+     { "context": "“Nếu bạn không đến thì gọi điện cho tôi nhé.”", "pre": "要是你不来，", "blank": "就给我打个电话", "post": "。", "options": ["就给我打个电话", "给我打个电话就", "就打个电话给我吗"], "answer": 0, "explanation": "就 + cụm động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "要是明天下雨，我们就不去。", "isCorrect": true, "explanation": "要是……就…… — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "要是明天下雨，就我们不去。", "isCorrect": false, "correctVersion": "要是明天下雨，我们就不去。", "explanation": "Chủ ngữ vế sau đứng trước 就." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "要是你喜欢，我送给你就。", "isCorrect": false, "correctVersion": "要是你喜欢，我就送给你。", "explanation": "就 đứng trước động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Nếu mai mưa thì chúng ta không đi.”", "words": ["要是", "明天", "下雨", "，", "我们", "就", "不", "去", "。"], "answer": "要是明天下雨，我们就不去。", "explanation": "要是……就……." },
+     { "type": "sort", "context": "Sắp xếp: “Nếu bạn có thời gian thì đến nhà tôi nhé.”", "words": ["要是", "你", "有", "时间", "的话", "，", "就", "来", "我", "家", "吧", "。"], "answer": "要是你有时间的话，就来我家吧。", "explanation": "的话，就……." },
+     { "type": "sort", "context": "Sắp xếp: “Nếu bạn thích thì tôi tặng bạn.”", "words": ["要是", "你", "喜欢", "，", "我", "就", "送", "给", "你", "。"], "answer": "要是你喜欢，我就送给你。", "explanation": "我就送给你." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 要是……就…….", "promptLang": "vi", "prompt": "Nếu ngày mai mưa thì chúng ta không đi.", "answer": "要是明天下雨，我们就不去。", "answerPy": "Yàoshi míngtiān xiàyǔ, wǒmen jiù bú qù.", "explanation": "Chủ ngữ vế sau trước 就." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 要是……的话，就…….", "promptLang": "vi", "prompt": "Nếu bạn có thời gian thì đến nhà tôi nhé.", "answer": "要是你有时间的话，就来我家吧。", "answerPy": "Yàoshi nǐ yǒu shíjiān de huà, jiù lái wǒ jiā ba.", "explanation": "的话 + 就." }
+    ]
+   },
+   {
+    "title": "「既……又/也/还……」",
+    "errors": [
+     { "wrong": "这个菜既好吃，但是便宜。", "why": "既 hô ứng với 又/也/还, không đi với 但是.", "right": "这个菜既好吃，又便宜。" },
+     { "wrong": "既这个菜好吃，又便宜。", "why": "既 đứng SAU chủ ngữ.", "right": "这个菜既好吃，又便宜。" },
+     { "wrong": "这个菜既好吃，又很贵。", "why": "hai vế phải CÙNG chiều (cùng khen hoặc cùng chê).", "right": "这个菜既好吃，又便宜。" }
+    ],
+    "items": [
+     { "context": "“Món này vừa ngon vừa rẻ.”", "pre": "这个菜", "blank": "既好吃，又便宜", "post": "。", "options": ["既好吃，又便宜", "既好吃，但是便宜", "既好吃，又很贵"], "answer": 0, "explanation": "既……又…… — hai vế cùng chiều." },
+     { "context": "既 đứng SAU chủ ngữ.", "pre": "他", "blank": "既聪明，又努力", "post": "。", "options": ["既聪明，又努力", "既他聪明，又努力", "聪明既，努力又"], "answer": 0, "explanation": "Chủ ngữ + 既……又……." },
+     { "context": "Hô ứng bằng 也.", "pre": "这里既安静，", "blank": "也很干净", "post": "。", "options": ["也很干净", "但是很干净", "所以很干净"], "answer": 0, "explanation": "既……也……." },
+     { "context": "Hai vế cùng chiều TIÊU CỰC.", "pre": "这件衣服", "blank": "既贵，又不好看", "post": "。", "options": ["既贵，又不好看", "既贵，又很好看", "既贵，但是不好看"], "answer": 0, "explanation": "Hai vế cùng mang ý chê." },
+     { "context": "Quan hệ TƯƠNG PHẢN thì dùng 虽然……但是…….", "pre": "这个菜", "blank": "虽然贵，但是很好吃", "post": "。", "options": ["虽然贵，但是很好吃", "既贵，但是很好吃", "既贵，又很好吃"], "answer": 0, "explanation": "既……又…… không dùng cho ý tương phản." },
+     { "context": "“Cậu ấy vừa biết tiếng Anh vừa biết tiếng Trung.”", "pre": "他", "blank": "既会英语，又会汉语", "post": "。", "options": ["既会英语，又会汉语", "既会英语，但是会汉语", "会英语既，会汉语又"], "answer": 0, "explanation": "既……又…… nối hai cụm động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这个菜既好吃，又便宜。", "isCorrect": true, "explanation": "既……又…… cùng chiều — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这个菜既好吃，但是便宜。", "isCorrect": false, "correctVersion": "这个菜既好吃，又便宜。", "explanation": "既 hô ứng với 又/也/还." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这个菜既好吃，又很贵。", "isCorrect": false, "correctVersion": "这个菜虽然好吃，但是很贵。", "explanation": "Hai vế trái chiều thì dùng 虽然……但是……." },
+     { "type": "sort", "context": "Sắp xếp: “Món này vừa ngon vừa rẻ.”", "words": ["这个", "菜", "既", "好吃", "，", "又", "便宜", "。"], "answer": "这个菜既好吃，又便宜。", "explanation": "既……又……." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy vừa thông minh vừa chăm chỉ.”", "words": ["他", "既", "聪明", "，", "又", "努力", "。"], "answer": "他既聪明，又努力。", "explanation": "既聪明，又努力." },
+     { "type": "sort", "context": "Sắp xếp: “Ở đây vừa yên tĩnh vừa sạch sẽ.”", "words": ["这里", "既", "安静", "，", "也", "很", "干净", "。"], "answer": "这里既安静，也很干净。", "explanation": "既……也……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 既……又…….", "promptLang": "vi", "prompt": "Món này vừa ngon vừa rẻ.", "answer": "这个菜既好吃，又便宜。", "answerPy": "Zhège cài jì hǎochī, yòu piányi.", "explanation": "既……又……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 既……又…….", "promptLang": "vi", "prompt": "Anh ấy vừa thông minh vừa chăm chỉ.", "answer": "他既聪明，又努力。", "answerPy": "Tā jì cōngming, yòu nǔlì.", "explanation": "既聪明，又努力." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk4-bai-8.html": {
+  "points": [
+   {
+    "title": "「使」 — làm cho, khiến cho",
+    "errors": [
+     { "wrong": "这件事我很高兴。", "why": "thiếu 使 để nối nguyên nhân với kết quả.", "right": "这件事使我很高兴。" },
+     { "wrong": "这件事使高兴我。", "why": "đối tượng đứng ngay sau 使.", "right": "这件事使我很高兴。" },
+     { "wrong": "老师使我们做作业。", "why": "使 nêu kết quả tâm lý/trạng thái, không dùng để SAI ai làm gì.", "right": "老师让我们做作业。" }
+    ],
+    "items": [
+     { "context": "“Chuyện này làm tôi rất vui.”", "pre": "这件事", "blank": "使我很高兴", "post": "。", "options": ["使我很高兴", "我很高兴", "使很高兴我"], "answer": 0, "explanation": "Nguyên nhân + 使 + đối tượng + kết quả." },
+     { "context": "Sai ai LÀM việc gì thì dùng 让/叫.", "pre": "老师", "blank": "让我们做作业", "post": "。", "options": ["让我们做作业", "使我们做作业", "使做作业我们"], "answer": 0, "explanation": "使 chỉ nêu kết quả tâm lý/trạng thái." },
+     { "context": "使 thiên về VĂN VIẾT.", "pre": "这本书", "blank": "使我明白了很多道理", "post": "。", "options": ["使我明白了很多道理", "使明白了我很多道理", "我使明白了很多道理"], "answer": 0, "explanation": "使 + đối tượng + kết quả." },
+     { "context": "“Tin này khiến mọi người rất ngạc nhiên.”", "pre": "这个消息", "blank": "使大家很吃惊", "post": "。", "options": ["使大家很吃惊", "使很吃惊大家", "大家使很吃惊"], "answer": 0, "explanation": "使 + đối tượng + kết quả." },
+     { "context": "Phủ định đứng TRƯỚC 使.", "pre": "这件事", "blank": "没使他改变想法", "post": "。", "options": ["没使他改变想法", "使他没改变想法吗", "使没他改变想法"], "answer": 0, "explanation": "没 đứng trước 使." },
+     { "context": "“Vận động khiến người ta khỏe mạnh hơn.”", "pre": "运动", "blank": "使人更健康", "post": "。", "options": ["使人更健康", "使更健康人", "人使更健康"], "answer": 0, "explanation": "使 + 人 + kết quả." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件事使我很高兴。", "isCorrect": true, "explanation": "使 + đối tượng + kết quả — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "老师使我们做作业。", "isCorrect": false, "correctVersion": "老师让我们做作业。", "explanation": "Sai ai làm gì thì dùng 让/叫." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件事使高兴我。", "isCorrect": false, "correctVersion": "这件事使我很高兴。", "explanation": "Đối tượng đứng ngay sau 使." },
+     { "type": "sort", "context": "Sắp xếp: “Chuyện này làm tôi rất vui.”", "words": ["这", "件", "事", "使", "我", "很", "高兴", "。"], "answer": "这件事使我很高兴。", "explanation": "使我很高兴." },
+     { "type": "sort", "context": "Sắp xếp: “Quyển sách này khiến tôi hiểu ra nhiều điều.”", "words": ["这", "本", "书", "使", "我", "明白", "了", "很多", "道理", "。"], "answer": "这本书使我明白了很多道理。", "explanation": "使我明白了……." },
+     { "type": "sort", "context": "Sắp xếp: “Vận động khiến người ta khỏe mạnh hơn.”", "words": ["运动", "使", "人", "更", "健康", "。"], "answer": "运动使人更健康。", "explanation": "使人更健康." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 使.", "promptLang": "vi", "prompt": "Chuyện này làm tôi rất vui.", "answer": "这件事使我很高兴。", "answerPy": "Zhè jiàn shì shǐ wǒ hěn gāoxìng.", "explanation": "使 + đối tượng + kết quả." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 使.", "promptLang": "vi", "prompt": "Vận động khiến người ta khỏe mạnh hơn.", "answer": "运动使人更健康。", "answerPy": "Yùndòng shǐ rén gèng jiànkāng.", "explanation": "使人更健康." }
+    ]
+   },
+   {
+    "title": "「只要……就……」",
+    "errors": [
+     { "wrong": "只要你努力，才会成功。", "why": "只要 hô ứng với 就, không đi với 才.", "right": "只要你努力，就会成功。" },
+     { "wrong": "只要明天不下雨，就我们去爬山。", "why": "chủ ngữ vế sau đứng TRƯỚC 就.", "right": "只要明天不下雨，我们就去爬山。" },
+     { "wrong": "只要你努力，成功你就会。", "why": "就 đứng trước động từ.", "right": "只要你努力，你就会成功。" }
+    ],
+    "items": [
+     { "context": "“Chỉ cần bạn cố gắng là sẽ thành công.”", "pre": "只要你努力，", "blank": "就会成功", "post": "。", "options": ["就会成功", "才会成功", "会成功就"], "answer": 0, "explanation": "只要 hô ứng với 就." },
+     { "context": "Điều kiện DUY NHẤT thì dùng 只有……才…….", "pre": "", "blank": "只有努力，才能成功", "post": "。", "options": ["只有努力，才能成功", "只要努力，才能成功", "只有努力，就能成功"], "answer": 0, "explanation": "只有→才; 只要→就." },
+     { "context": "Chủ ngữ vế sau đứng TRƯỚC 就.", "pre": "只要明天不下雨，", "blank": "我们就去爬山", "post": "。", "options": ["我们就去爬山", "就我们去爬山", "我们去爬山就"], "answer": 0, "explanation": "Chủ ngữ 2 + 就." },
+     { "context": "“Chỉ cần có thời gian là tôi đọc sách.”", "pre": "只要有时间，我", "blank": "就看书", "post": "。", "options": ["就看书", "才看书", "看书就"], "answer": 0, "explanation": "就 trước động từ." },
+     { "context": "Chủ ngữ có thể đứng TRƯỚC 只要.", "pre": "你", "blank": "只要多练习，就会进步", "post": "。", "options": ["只要多练习，就会进步", "只要多练习，进步就会", "只要多练习，才会进步"], "answer": 0, "explanation": "Chủ ngữ + 只要……，就……." },
+     { "context": "“Chỉ cần bạn gọi một tiếng là tôi đến ngay.”", "pre": "只要你说一声，我", "blank": "就来", "post": "。", "options": ["就来", "才来", "来就"], "answer": 0, "explanation": "只要……就…… nhấn mạnh điều kiện dễ đạt." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "只要你努力，就会成功。", "isCorrect": true, "explanation": "只要……就…… — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "只要你努力，才会成功。", "isCorrect": false, "correctVersion": "只要你努力，就会成功。", "explanation": "只要 không đi với 才." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "只要明天不下雨，就我们去爬山。", "isCorrect": false, "correctVersion": "只要明天不下雨，我们就去爬山。", "explanation": "Chủ ngữ vế sau trước 就." },
+     { "type": "sort", "context": "Sắp xếp: “Chỉ cần bạn cố gắng là sẽ thành công.”", "words": ["只要", "你", "努力", "，", "就", "会", "成功", "。"], "answer": "只要你努力，就会成功。", "explanation": "只要……就……." },
+     { "type": "sort", "context": "Sắp xếp: “Chỉ cần mai không mưa là chúng tôi đi leo núi.”", "words": ["只要", "明天", "不", "下雨", "，", "我们", "就", "去", "爬山", "。"], "answer": "只要明天不下雨，我们就去爬山。", "explanation": "Chủ ngữ 2 + 就." },
+     { "type": "sort", "context": "Sắp xếp: “Chỉ cần bạn gọi một tiếng là tôi đến ngay.”", "words": ["只要", "你", "说", "一声", "，", "我", "就", "来", "。"], "answer": "只要你说一声，我就来。", "explanation": "只要……我就……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 只要……就…….", "promptLang": "vi", "prompt": "Chỉ cần bạn cố gắng là sẽ thành công.", "answer": "只要你努力，就会成功。", "answerPy": "Zhǐyào nǐ nǔlì, jiù huì chénggōng.", "explanation": "只要……就……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 只要……就…….", "promptLang": "vi", "prompt": "Chỉ cần có thời gian là tôi đọc sách.", "answer": "只要有时间，我就看书。", "answerPy": "Zhǐyào yǒu shíjiān, wǒ jiù kàn shū.", "explanation": "只要 + điều kiện，我就……." }
+    ]
+   },
+   {
+    "title": "「可不是」 — đúng thế, chứ sao",
+    "errors": [
+     { "wrong": "可不是吗不？", "why": "可不是 là lời TÁN ĐỒNG, không phải câu hỏi chính-phản.", "right": "可不是！" },
+     { "wrong": "我可不是同意你。", "why": "可不是 dùng độc lập, không mang tân ngữ kiểu này.", "right": "可不是！我也这么想。" },
+     { "wrong": "可不是，我不同意你的看法。", "why": "可不是 nêu sự TÁN ĐỒNG, mâu thuẫn với vế sau.", "right": "可不是！我也这么想。" }
+    ],
+    "items": [
+     { "context": "A: 今天真热！ B: …… (đồng tình)", "pre": "", "blank": "可不是", "post": "！", "options": ["可不是", "可不是吗不", "不可是"], "answer": 0, "explanation": "可不是！= đúng thế!" },
+     { "context": "Cách nói ngắn gọn của 可不是.", "pre": "", "blank": "可不", "post": "！", "options": ["可不", "不可", "可是不"], "answer": 0, "explanation": "可不！= 可不是！" },
+     { "context": "Sau 可不是 thường nêu thêm ý ĐỒNG TÌNH.", "pre": "可不是！", "blank": "我也这么想", "post": "。", "options": ["我也这么想", "我不同意你的看法", "我觉得不对"], "answer": 0, "explanation": "可不是 = tán đồng." },
+     { "context": "可不是 đứng ĐỘC LẬP thành một câu.", "pre": "A: 这个菜真好吃！B: ", "blank": "可不是！", "post": "", "options": ["可不是！", "我可不是同意你。", "可不是吗不？"], "answer": 0, "explanation": "可不是 dùng độc lập." },
+     { "context": "Muốn PHẢN ĐỐI thì không dùng 可不是.", "pre": "A: 这个办法很好。B: ", "blank": "我不这么认为。", "post": "", "options": ["我不这么认为。", "可不是！我不同意。", "可不！我不同意。"], "answer": 0, "explanation": "可不是 chỉ dùng để tán đồng." },
+     { "context": "A: 最近工作太忙了。B: …… (đồng cảm)", "pre": "", "blank": "可不是！我也是。", "post": "", "options": ["可不是！我也是。", "可不是吗不？", "可不是，我很闲。"], "answer": 0, "explanation": "可不是 + ý đồng cảm." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "A: 今天真热！ B: 可不是！我也觉得。", "isCorrect": true, "explanation": "可不是 nêu tán đồng — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "可不是，我不同意你的看法。", "isCorrect": false, "correctVersion": "可不是！我也这么想。", "explanation": "可不是 nêu sự tán đồng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "可不是吗不？", "isCorrect": false, "correctVersion": "可不是！", "explanation": "可不是 không phải câu hỏi chính-phản." },
+     { "type": "sort", "context": "Sắp xếp: “Đúng thế! Tôi cũng nghĩ vậy.”", "words": ["可不是", "！", "我", "也", "这么", "想", "。"], "answer": "可不是！我也这么想。", "explanation": "可不是 + ý đồng tình." },
+     { "type": "sort", "context": "Sắp xếp: “Đúng thế! Tôi cũng vậy.”", "words": ["可不是", "！", "我", "也", "是", "。"], "answer": "可不是！我也是。", "explanation": "可不是！我也是." },
+     { "type": "sort", "context": "Sắp xếp: “Ừ đúng vậy, dạo này bận quá.”", "words": ["可不", "！", "最近", "太", "忙", "了", "。"], "answer": "可不！最近太忙了。", "explanation": "可不 = dạng ngắn." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 可不是.", "promptLang": "vi", "prompt": "Đúng thế! Tôi cũng nghĩ vậy.", "answer": "可不是！我也这么想。", "answerPy": "Kě bú shì! Wǒ yě zhème xiǎng.", "explanation": "可不是 nêu tán đồng." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 可不是.", "promptLang": "vi", "prompt": "Đúng thế! Dạo này bận quá.", "answer": "可不是！最近太忙了。", "answerPy": "Kě bú shì! Zuìjìn tài máng le.", "explanation": "可不是 + ý đồng cảm." }
+    ]
+   },
+   {
+    "title": "「因此」 — vì vậy",
+    "errors": [
+     { "wrong": "因为下雨，因此我们没去。", "why": "因此 KHÔNG dùng kết hợp với 因为.", "right": "因为下雨，所以我们没去。" },
+     { "wrong": "我们没去因此。", "why": "因此 đứng ĐẦU vế kết quả.", "right": "下雨了，因此我们没去。" },
+     { "wrong": "因此下雨，我们没去。", "why": "因此 đứng ở vế KẾT QUẢ, không đứng ở vế nguyên nhân.", "right": "下雨了，因此我们没去。" }
+    ],
+    "items": [
+     { "context": "“Trời mưa, vì vậy chúng tôi không đi.”", "pre": "下雨了，", "blank": "因此我们没去", "post": "。", "options": ["因此我们没去", "因此下雨我们没去", "我们没去因此"], "answer": 0, "explanation": "因此 đứng đầu vế kết quả." },
+     { "context": "因此 KHÔNG đi cùng 因为.", "pre": "因为下雨，", "blank": "所以我们没去", "post": "。", "options": ["所以我们没去", "因此我们没去", "因此所以我们没去"], "answer": 0, "explanation": "因为 đi với 所以; 因此 dùng một mình." },
+     { "context": "因此 thiên về VĂN VIẾT.", "pre": "他很努力，", "blank": "因此成绩很好", "post": "。", "options": ["因此成绩很好", "因为成绩很好", "因此因为成绩很好"], "answer": 0, "explanation": "因此 = vì vậy (văn viết)." },
+     { "context": "“Giá quá đắt, vì vậy tôi không mua.”", "pre": "价格太贵了，", "blank": "因此我没买", "post": "。", "options": ["因此我没买", "因此我买了", "我没买因此"], "answer": 0, "explanation": "因此 + kết quả." },
+     { "context": "Chủ ngữ vế sau đứng SAU 因此.", "pre": "他生病了，", "blank": "因此今天没来", "post": "。", "options": ["因此今天没来", "今天因此没来吗", "没来因此今天"], "answer": 0, "explanation": "因此 mở đầu vế kết quả." },
+     { "context": "Nêu NGUYÊN NHÂN thì dùng 因为.", "pre": "", "blank": "因为下雨", "post": "，我们没去。", "options": ["因为下雨", "因此下雨", "所以下雨"], "answer": 0, "explanation": "因为 nêu nguyên nhân." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "下雨了，因此我们没去。", "isCorrect": true, "explanation": "因此 đầu vế kết quả — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "因为下雨，因此我们没去。", "isCorrect": false, "correctVersion": "因为下雨，所以我们没去。", "explanation": "因此 không đi cùng 因为." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "因此下雨，我们没去。", "isCorrect": false, "correctVersion": "下雨了，因此我们没去。", "explanation": "因此 đứng ở vế kết quả." },
+     { "type": "sort", "context": "Sắp xếp: “Trời mưa, vì vậy chúng tôi không đi.”", "words": ["下雨", "了", "，", "因此", "我们", "没", "去", "。"], "answer": "下雨了，因此我们没去。", "explanation": "因此 + kết quả." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy rất chăm, vì vậy thành tích rất tốt.”", "words": ["他", "很", "努力", "，", "因此", "成绩", "很", "好", "。"], "answer": "他很努力，因此成绩很好。", "explanation": "因此成绩很好." },
+     { "type": "sort", "context": "Sắp xếp: “Giá quá đắt, vì vậy tôi không mua.”", "words": ["价格", "太", "贵", "了", "，", "因此", "我", "没", "买", "。"], "answer": "价格太贵了，因此我没买。", "explanation": "因此我没买." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 因此.", "promptLang": "vi", "prompt": "Trời mưa, vì vậy chúng tôi không đi.", "answer": "下雨了，因此我们没去。", "answerPy": "Xiàyǔ le, yīncǐ wǒmen méi qù.", "explanation": "因此 đầu vế kết quả." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 因此.", "promptLang": "vi", "prompt": "Anh ấy rất chăm chỉ, vì vậy thành tích rất tốt.", "answer": "他很努力，因此成绩很好。", "answerPy": "Tā hěn nǔlì, yīncǐ chéngjì hěn hǎo.", "explanation": "因此 + kết quả." }
+    ]
+   },
+   {
+    "title": "「往往」 so sánh với 「经常」",
+    "errors": [
+     { "wrong": "我以后往往来看你。", "why": "往往 chỉ dùng cho việc ĐÃ xảy ra, không dùng cho dự định.", "right": "我以后经常来看你。" },
+     { "wrong": "他往往迟到。", "why": "câu có 往往 cần nêu điều kiện/tình huống liên quan.", "right": "他早上起得晚，往往迟到。" },
+     { "wrong": "他往来上课。", "why": "往往 không rút gọn thành 往; chỉ 经常 mới rút thành 常.", "right": "他经常来上课。" }
+    ],
+    "items": [
+     { "context": "Dự định TƯƠNG LAI thì dùng 经常.", "pre": "我以后", "blank": "经常来看你", "post": "。", "options": ["经常来看你", "往往来看你", "往来看你"], "answer": 0, "explanation": "往往 chỉ dùng cho việc đã xảy ra." },
+     { "context": "往往 cần nêu ĐIỀU KIỆN liên quan.", "pre": "他早上起得晚，", "blank": "往往迟到", "post": "。", "options": ["往往迟到", "往迟到", "经常往往迟到"], "answer": 0, "explanation": "往往 nêu tính quy luật gắn với điều kiện." },
+     { "context": "经常 rút gọn được thành 常.", "pre": "他", "blank": "常来我家", "post": "。", "options": ["常来我家", "往来我家", "往往常来我家"], "answer": 0, "explanation": "往往 không rút gọn thành 往." },
+     { "context": "“Cuối tuần anh ấy thường đi leo núi.”", "pre": "周末他", "blank": "往往去爬山", "post": "。", "options": ["往往去爬山", "往去爬山", "往往经常去爬山"], "answer": 0, "explanation": "往往 + điều kiện thời gian 周末." },
+     { "context": "“Tôi thường xuyên tập thể dục.”", "pre": "我", "blank": "经常运动", "post": "。", "options": ["经常运动", "往往运动", "往运动"], "answer": 0, "explanation": "Không nêu điều kiện → dùng 经常." },
+     { "context": "“Ăn quá nhanh thường dễ đau dạ dày.”", "pre": "吃得太快，", "blank": "往往会胃疼", "post": "。", "options": ["往往会胃疼", "往会胃疼", "经常往往会胃疼"], "answer": 0, "explanation": "往往 nêu quy luật." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他早上起得晚，往往迟到。", "isCorrect": true, "explanation": "往往 gắn với điều kiện — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我以后往往来看你。", "isCorrect": false, "correctVersion": "我以后经常来看你。", "explanation": "往往 không dùng cho dự định tương lai." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他往来上课。", "isCorrect": false, "correctVersion": "他经常来上课。", "explanation": "往往 không rút gọn thành 往." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy dậy muộn nên thường hay đi trễ.”", "words": ["他", "早上", "起", "得", "晚", "，", "往往", "迟到", "。"], "answer": "他早上起得晚，往往迟到。", "explanation": "往往 + điều kiện." },
+     { "type": "sort", "context": "Sắp xếp: “Cuối tuần anh ấy thường đi leo núi.”", "words": ["周末", "他", "往往", "去", "爬山", "。"], "answer": "周末他往往去爬山。", "explanation": "往往去爬山." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi thường xuyên tập thể dục.”", "words": ["我", "经常", "运动", "。"], "answer": "我经常运动。", "explanation": "经常运动." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 往往 hay 经常.", "promptLang": "vi", "prompt": "Anh ấy dậy muộn nên thường hay đi trễ.", "answer": "他早上起得晚，往往迟到。", "answerPy": "Tā zǎoshang qǐ de wǎn, wǎngwǎng chídào.", "explanation": "Có điều kiện liên quan → 往往." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 往往 hay 经常.", "promptLang": "vi", "prompt": "Sau này tôi sẽ thường xuyên đến thăm bạn.", "answer": "我以后经常来看你。", "answerPy": "Wǒ yǐhòu jīngcháng lái kàn nǐ.", "explanation": "Dự định tương lai → 经常." }
+    ]
+   }
+  ]
+ }
+}

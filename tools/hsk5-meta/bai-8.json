@@ -1,0 +1,112 @@
+{
+ "zh": "“朝三暮四”的古今义",
+ "py": "“Zhāosān-mùsì” de gǔ jīn yì",
+ "vn": "Thành ngữ “Sáng ba chiều bốn” — nghĩa xưa và nay",
+ "topic": "Unit 3 倾听故事 · Thành ngữ &amp; sự thay đổi nghĩa của từ",
+ "vocabCount": 43,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "倒",
+   "explain": "倒 là PHÓ TỪ, đứng sau chủ ngữ, trước động từ/tính từ (rất hay dùng dạng 倒是). Có bốn cách dùng: ① trái với lẽ thường, với điều người ta nghĩ; ② không ngờ tới; ③ NHƯỢNG BỘ — khẳng định một mặt bằng 倒 rồi nói sang mặt khác (就是 / 可是 / 不过…); ④ hỏi hoặc giục một cách sốt ruột.",
+   "rule": "① Chủ ngữ + <strong style=\"color:var(--sky-d)\">倒</strong> + V/Adj (trái lẽ thường)　② A <strong style=\"color:var(--sky-d)\">倒是</strong> + Adj，就是 / 可是 + B (nhượng bộ)　③ 你<strong style=\"color:var(--sky-d)\">倒是</strong> + V + 呀！(thúc giục)",
+   "examples": [
+    {
+     "zh": "在其他粮食不足的情况下，用橡子喂猴子倒是个办法。",
+     "py": "Zài qítā liángshi bùzú de qíngkuàng xià, yòng xiàngzi wèi hóuzi dàoshì ge bànfǎ.",
+     "vn": "Trong tình hình các loại lương thực khác không đủ, cho khỉ ăn hạt dẻ lại là một cách hay."
+    },
+    {
+     "zh": "质量倒是挺好，就是价格太贵了。",
+     "py": "Zhìliàng dàoshì tǐng hǎo, jiùshì jiàgé tài guì le.",
+     "vn": "Chất lượng thì tốt đấy, chỉ có điều giá đắt quá."
+    },
+    {
+     "zh": "你究竟去还是不去？倒是说句话呀！",
+     "py": "Nǐ jiūjìng qù háishi bú qù? Dàoshì shuō jù huà ya!",
+     "vn": "Rốt cuộc cậu đi hay không đi? Nói một câu đi chứ!"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "倒他是挺聪明的，就是不努力。",
+     "why": "倒 là phó từ, phải đứng SAU chủ ngữ.",
+     "right": "他倒是挺聪明的，就是不努力。"
+    },
+    {
+     "wrong": "这件衣服倒是很漂亮，而且很便宜。",
+     "why": "倒是 nhượng bộ thì vế sau phải CHUYỂN Ý (就是 / 可是 / 不过), không nối bằng 而且.",
+     "right": "这件衣服倒是很漂亮，就是有点儿贵。"
+    }
+   ]
+  },
+  {
+   "point": "……来……去",
+   "explain": "……来……去 biểu thị một động tác lặp đi lặp lại nhiều lần. Hai động từ đứng trước 来 và 去 thường là CÙNG MỘT TỪ (跑来跑去) hoặc hai từ GẦN NGHĨA (研究来讨论去). Cả cụm không mang tân ngữ phía sau; hay nối tiếp bằng 还是 / 也 + kết quả.",
+   "rule": "<strong style=\"color:var(--sky-d)\">V来V去</strong>（跑来跑去 · 想来想去）　|　<strong style=\"color:var(--sky-d)\">V₁来V₂去</strong>（V₁, V₂ gần nghĩa: 研究来讨论去）",
+   "examples": [
+    {
+     "zh": "小狗追着自己的尾巴，在草地上跑来跑去。",
+     "py": "Xiǎo gǒu zhuīzhe zìjǐ de wěiba, zài cǎodì shang pǎo lái pǎo qù.",
+     "vn": "Con chó nhỏ đuổi theo đuôi mình, chạy qua chạy lại trên bãi cỏ."
+    },
+    {
+     "zh": "猴子们似乎只弄懂了主人前面说的一个“三”，觉得自己吃了亏，一个个立起身子跳来跳去，对着老人大喊大叫地发脾气。",
+     "py": "Hóuzimen sìhū zhǐ nòngdǒngle zhǔrén qiánmiàn shuō de yí ge “sān”, juéde zìjǐ chīle kuī, yí gègè lìqǐ shēnzi tiào lái tiào qù, duìzhe lǎorén dà hǎn dà jiào de fā píqi.",
+     "vn": "Lũ khỉ dường như chỉ hiểu mỗi chữ “ba” chủ nhân nói lúc đầu, cho rằng mình bị thiệt, con nào con nấy đứng thẳng người nhảy qua nhảy lại, la hét ầm ĩ nổi giận với ông lão."
+    },
+    {
+     "zh": "他们研究来讨论去，还是没找出原因。",
+     "py": "Tāmen yánjiū lái tǎolùn qù, háishi méi zhǎochū yuányīn.",
+     "vn": "Họ nghiên cứu tới thảo luận lui mà vẫn chưa tìm ra nguyên nhân."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他找来找去手机，也没找到。",
+     "why": "V来V去 không mang tân ngữ phía sau; tân ngữ chuyển sang vế kết quả.",
+     "right": "他找来找去，也没找到手机。"
+    },
+    {
+     "wrong": "他在房间里来走去走，很着急。",
+     "why": "Động từ phải đứng TRƯỚC 来 và 去: 走来走去.",
+     "right": "他在房间里走来走去，很着急。"
+    }
+   ]
+  },
+  {
+   "point": "要不",
+   "explain": "要不 là LIÊN TỪ, nghĩa như 要不然: ① \"nếu không (như vậy) thì…\" — nêu kết quả xảy ra khi điều ở trước không thành; ② \"hay là…\" — đưa ra một lựa chọn khác, một đề nghị (thường có 吧 cuối câu). 要不 / 要不然 thường đặt ở đầu vế sau, TRƯỚC chủ ngữ.",
+   "rule": "……，<strong style=\"color:var(--sky-d)\">要不(然)</strong> + (chủ ngữ) + kết quả　|　<strong style=\"color:var(--sky-d)\">要不</strong> + (chủ ngữ) + V + 吧 (đề nghị)",
+   "examples": [
+    {
+     "zh": "还好碰见你了，要不然我今天肯定要迟到了。",
+     "py": "Háihǎo pèngjiàn nǐ le, yàoburán wǒ jīntiān kěndìng yào chídào le.",
+     "vn": "May mà gặp được cậu, không thì hôm nay tớ chắc chắn bị muộn rồi."
+    },
+    {
+     "zh": "今天太晚了，要不你明天再走吧。",
+     "py": "Jīntiān tài wǎn le, yàobu nǐ míngtiān zài zǒu ba.",
+     "vn": "Hôm nay muộn quá rồi, hay là mai bạn hẵng đi."
+    },
+    {
+     "zh": "要不这样吧，既然你们觉得少，那就改成每天早上四颗，晚上三颗，这样总够了吧？",
+     "py": "Yàobu zhèyàng ba, jìrán nǐmen juéde shǎo, nà jiù gǎichéng měi tiān zǎoshang sì kē, wǎnshang sān kē, zhèyàng zǒng gòu le ba?",
+     "vn": "Hay là thế này nhé, các con đã thấy ít thì đổi thành mỗi ngày sáng bốn hạt, tối ba hạt, thế này chắc là đủ rồi chứ?"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "快点儿走，我们要不就迟到了。",
+     "why": "要不 đứng ĐẦU vế sau, trước chủ ngữ 我们.",
+     "right": "快点儿走，要不我们就迟到了。"
+    },
+    {
+     "wrong": "要不你不来，我们就走了。",
+     "why": "Vế ĐIỀU KIỆN phải dùng 要是 / 如果; 要不 chỉ mở đầu vế KẾT QUẢ (nếu không thì…).",
+     "right": "要是你不来，我们就走了。"
+    }
+   ]
+  }
+ ]
+}

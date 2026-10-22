@@ -1,0 +1,210 @@
+{
+ "/lessons/hsk3-bai-17.html": {
+  "points": [
+   {
+    "title": "Động từ hai âm tiết lặp lại dạng 「ABAB」",
+    "errors": [
+     { "wrong": "我们休休息息吧。", "why": "động từ HAI âm tiết lặp theo dạng ABAB, không phải AABB.", "right": "我们休息休息吧。" },
+     { "wrong": "你看看一下这个。", "why": "dùng cùng lúc dạng lặp và 一下 là thừa.", "right": "你看看这个。／你看一下这个。" },
+     { "wrong": "我想休息休息了。", "why": "dạng lặp diễn tả ý định/thử làm, không đi với 了.", "right": "我想休息休息。" }
+    ],
+    "items": [
+     { "context": "“Chúng ta nghỉ một chút đi.”", "pre": "我们", "blank": "休息休息", "post": "吧。", "options": ["休息休息", "休休息息", "休息一下休息"], "answer": 0, "explanation": "Động từ hai âm tiết lặp dạng ABAB." },
+     { "context": "Động từ MỘT âm tiết lặp dạng AA.", "pre": "你", "blank": "看看", "post": "这个。", "options": ["看看", "看看一下", "看一下看"], "answer": 0, "explanation": "看 → 看看; không dùng cùng 一下." },
+     { "context": "“Bạn nghĩ thử xem.”", "pre": "你", "blank": "考虑考虑", "post": "吧。", "options": ["考虑考虑", "考考虑虑", "考虑一下考虑"], "answer": 0, "explanation": "考虑 → 考虑考虑." },
+     { "context": "“Chúng ta thảo luận một chút nhé.”", "pre": "我们", "blank": "讨论讨论", "post": "吧。", "options": ["讨论讨论", "讨讨论论", "讨论了讨论"], "answer": 0, "explanation": "讨论 → 讨论讨论." },
+     { "context": "Có thể chen 了 vào giữa dạng lặp của động từ đơn âm.", "pre": "我", "blank": "看了看", "post": "，没发现问题。", "options": ["看了看", "看看了", "了看看"], "answer": 0, "explanation": "V + 了 + V (đã xảy ra, trong thời gian ngắn)." },
+     { "context": "“Bạn giới thiệu một chút đi.”", "pre": "你", "blank": "介绍介绍", "post": "吧。", "options": ["介绍介绍", "介介绍绍", "介绍介绍了"], "answer": 0, "explanation": "介绍 → 介绍介绍." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们休休息息吧。", "isCorrect": false, "correctVersion": "我们休息休息吧。", "explanation": "Động từ hai âm tiết lặp dạng ABAB." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你考虑考虑吧。", "isCorrect": true, "explanation": "ABAB — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你看看一下这个。", "isCorrect": false, "correctVersion": "你看看这个。", "explanation": "Không dùng dạng lặp cùng 一下." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng ta nghỉ một chút đi.”", "words": ["我们", "休息", "休息", "吧", "。"], "answer": "我们休息休息吧。", "explanation": "ABAB + 吧." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn giới thiệu một chút nhé.”", "words": ["你", "介绍", "介绍", "吧", "。"], "answer": "你介绍介绍吧。", "explanation": "介绍介绍." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi xem thử, không thấy vấn đề gì.”", "words": ["我", "看", "了", "看", "，", "没", "发现", "问题", "。"], "answer": "我看了看，没发现问题。", "explanation": "V + 了 + V." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng dạng lặp động từ.", "promptLang": "vi", "prompt": "Chúng ta nghỉ một chút đi.", "answer": "我们休息休息吧。", "answerPy": "Wǒmen xiūxi xiūxi ba.", "explanation": "休息休息." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng dạng lặp động từ.", "promptLang": "vi", "prompt": "Bạn nghĩ thử xem.", "answer": "你考虑考虑吧。", "answerPy": "Nǐ kǎolǜ kǎolǜ ba.", "explanation": "考虑考虑." }
+    ]
+   },
+   {
+    "title": "Đại từ nghi vấn dùng để chỉ chung 「谁/什么/哪儿 + 都/也」",
+    "errors": [
+     { "wrong": "谁知道这件事都。", "why": "都 phải đứng TRƯỚC động từ.", "right": "谁都知道这件事。" },
+     { "wrong": "我什么不想吃。", "why": "thiếu 都/也 trước phủ định.", "right": "我什么都不想吃。" },
+     { "wrong": "哪儿都我不想去吗？", "why": "trộn cấu trúc chỉ chung với câu hỏi 吗.", "right": "我哪儿都不想去。" }
+    ],
+    "items": [
+     { "context": "“Ai cũng biết chuyện này.”", "pre": "", "blank": "谁都知道这件事", "post": "。", "options": ["谁都知道这件事", "谁知道这件事都", "都谁知道这件事"], "answer": 0, "explanation": "谁 + 都 + động từ." },
+     { "context": "“Tôi chẳng muốn ăn gì cả.”", "pre": "我", "blank": "什么都不想吃", "post": "。", "options": ["什么都不想吃", "什么不想吃", "不想吃什么都"], "answer": 0, "explanation": "什么 + 都 + 不 + động từ." },
+     { "context": "“Tôi chẳng muốn đi đâu cả.”", "pre": "我", "blank": "哪儿都不想去", "post": "。", "options": ["哪儿都不想去", "哪儿不想去都", "都哪儿不想去"], "answer": 0, "explanation": "哪儿 + 都 + 不 + động từ." },
+     { "context": "也 dùng thay 都 trong câu phủ định.", "pre": "他", "blank": "谁也不认识", "post": "。", "options": ["谁也不认识", "谁不也认识", "也谁不认识"], "answer": 0, "explanation": "谁 + 也 + 不 + động từ." },
+     { "context": "“Món gì cậu ấy cũng thích ăn.”", "pre": "他", "blank": "什么菜都爱吃", "post": "。", "options": ["什么菜都爱吃", "什么都菜爱吃", "爱吃什么菜都"], "answer": 0, "explanation": "什么 + N + 都 + động từ." },
+     { "context": "“Làm thế nào cũng không xong.”", "pre": "", "blank": "怎么做都不行", "post": "。", "options": ["怎么做都不行", "怎么都做不行", "都怎么做不行"], "answer": 0, "explanation": "怎么 + V + 都 + ……." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "谁都知道这件事。", "isCorrect": true, "explanation": "谁 + 都 + động từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我什么不想吃。", "isCorrect": false, "correctVersion": "我什么都不想吃。", "explanation": "Thiếu 都/也 trước phủ định." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我哪儿不想去都。", "isCorrect": false, "correctVersion": "我哪儿都不想去。", "explanation": "都 đứng trước động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Ai cũng biết chuyện này.”", "words": ["谁", "都", "知道", "这", "件", "事", "。"], "answer": "谁都知道这件事。", "explanation": "谁都 + động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi chẳng muốn ăn gì cả.”", "words": ["我", "什么", "都", "不", "想", "吃", "。"], "answer": "我什么都不想吃。", "explanation": "什么都不 + động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy chẳng quen ai cả.”", "words": ["他", "谁", "也", "不", "认识", "。"], "answer": "他谁也不认识。", "explanation": "谁也不 + động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng đại từ nghi vấn chỉ chung.", "promptLang": "vi", "prompt": "Ai cũng biết chuyện này.", "answer": "谁都知道这件事。", "answerPy": "Shéi dōu zhīdào zhè jiàn shì.", "explanation": "谁都 + động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng đại từ nghi vấn chỉ chung.", "promptLang": "vi", "prompt": "Hôm nay tôi chẳng muốn đi đâu cả.", "answer": "今天我哪儿都不想去。", "answerPy": "Jīntiān wǒ nǎr dōu bù xiǎng qù.", "explanation": "哪儿都不 + động từ." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk3-bai-18.html": {
+  "points": [
+   {
+    "title": "「只要……，就……」 — câu điều kiện",
+    "errors": [
+     { "wrong": "只要你努力，成功你就会。", "why": "đảo trật tự vế sau; 就 đứng trước động từ.", "right": "只要你努力，你就会成功。" },
+     { "wrong": "只要你努力，才会成功。", "why": "只要 đi với 就, không đi với 才.", "right": "只要你努力，就会成功。" },
+     { "wrong": "只要明天不下雨，就我们去爬山。", "why": "chủ ngữ vế sau đứng TRƯỚC 就.", "right": "只要明天不下雨，我们就去爬山。" }
+    ],
+    "items": [
+     { "context": "“Chỉ cần bạn cố gắng là sẽ thành công.”", "pre": "只要你努力，", "blank": "就会成功", "post": "。", "options": ["就会成功", "才会成功", "会成功就"], "answer": 0, "explanation": "只要 đi cặp với 就." },
+     { "context": "“Chỉ cần mai không mưa là chúng tôi đi leo núi.”", "pre": "只要明天不下雨，", "blank": "我们就去爬山", "post": "。", "options": ["我们就去爬山", "就我们去爬山", "我们去爬山就"], "answer": 0, "explanation": "Chủ ngữ thứ hai đứng trước 就." },
+     { "context": "“Chỉ cần có thời gian là tôi đọc sách.”", "pre": "只要有时间，我", "blank": "就看书", "post": "。", "options": ["就看书", "才看书", "看书就"], "answer": 0, "explanation": "就 trước động từ." },
+     { "context": "Điều kiện DUY NHẤT thì dùng 只有……才…….", "pre": "", "blank": "只有努力，才能成功", "post": "。", "options": ["只有努力，才能成功", "只有努力，就能成功", "只要努力，才能成功"], "answer": 0, "explanation": "只有 đi với 才; 只要 đi với 就." },
+     { "context": "Chủ ngữ có thể đứng TRƯỚC 只要.", "pre": "你", "blank": "只要多练习，就会进步", "post": "。", "options": ["只要多练习，就会进步", "只要多练习，进步就会", "只要多练习，才会进步"], "answer": 0, "explanation": "只要 + điều kiện，就 + kết quả." },
+     { "context": "“Chỉ cần bạn gọi một tiếng là tôi đến ngay.”", "pre": "只要你说一声，我", "blank": "就来", "post": "。", "options": ["就来", "才来", "来就"], "answer": 0, "explanation": "只要……就…… nhấn mạnh điều kiện dễ đạt." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "只要你努力，就会成功。", "isCorrect": true, "explanation": "只要 đi cặp với 就 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "只要你努力，才会成功。", "isCorrect": false, "correctVersion": "只要你努力，就会成功。", "explanation": "只要 không đi với 才." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "只要明天不下雨，就我们去爬山。", "isCorrect": false, "correctVersion": "只要明天不下雨，我们就去爬山。", "explanation": "Chủ ngữ vế sau trước 就." },
+     { "type": "sort", "context": "Sắp xếp: “Chỉ cần bạn cố gắng là sẽ thành công.”", "words": ["只要", "你", "努力", "，", "就", "会", "成功", "。"], "answer": "只要你努力，就会成功。", "explanation": "只要……就……." },
+     { "type": "sort", "context": "Sắp xếp: “Chỉ cần mai không mưa là chúng tôi đi leo núi.”", "words": ["只要", "明天", "不", "下雨", "，", "我们", "就", "去", "爬山", "。"], "answer": "只要明天不下雨，我们就去爬山。", "explanation": "Chủ ngữ 2 + 就." },
+     { "type": "sort", "context": "Sắp xếp: “Chỉ cần bạn gọi một tiếng là tôi đến ngay.”", "words": ["只要", "你", "说", "一声", "，", "我", "就", "来", "。"], "answer": "只要你说一声，我就来。", "explanation": "只要……我就……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 只要……就…….", "promptLang": "vi", "prompt": "Chỉ cần bạn cố gắng là sẽ thành công.", "answer": "只要你努力，就会成功。", "answerPy": "Zhǐyào nǐ nǔlì, jiù huì chénggōng.", "explanation": "只要……就……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 只要……就…….", "promptLang": "vi", "prompt": "Chỉ cần có thời gian là tôi đọc sách.", "answer": "只要有时间，我就看书。", "answerPy": "Zhǐyào yǒu shíjiān, wǒ jiù kàn shū.", "explanation": "只要 + điều kiện，我就 + động từ." }
+    ]
+   },
+   {
+    "title": "Giới từ 「关于」",
+    "errors": [
+     { "wrong": "关于这个问题，我们讨论关于。", "why": "关于 chỉ dùng MỘT lần, ở đầu cụm chủ đề.", "right": "关于这个问题，我们讨论一下。" },
+     { "wrong": "我们讨论关于这个问题。", "why": "cụm 关于 thường đứng ĐẦU câu làm chủ đề, không đứng sau động từ.", "right": "关于这个问题，我们讨论一下。" },
+     { "wrong": "关于他，我很了解他关于。", "why": "lặp 关于 và lặp tân ngữ.", "right": "关于他，我很了解。" }
+    ],
+    "items": [
+     { "context": "“Về vấn đề này, chúng ta thảo luận một chút.”", "pre": "", "blank": "关于这个问题", "post": "，我们讨论一下。", "options": ["关于这个问题", "这个问题关于", "关于讨论这个问题"], "answer": 0, "explanation": "Cụm 关于 + danh từ đứng đầu câu, nêu chủ đề." },
+     { "context": "“Về chuyện đó, tôi không biết gì cả.”", "pre": "", "blank": "关于那件事", "post": "，我什么都不知道。", "options": ["关于那件事", "那件事关于", "关于知道那件事"], "answer": 0, "explanation": "关于 + cụm danh từ." },
+     { "context": "关于 cũng làm định ngữ, cần thêm 的.", "pre": "这是一本", "blank": "关于中国文化的书", "post": "。", "options": ["关于中国文化的书", "关于中国文化书", "书关于中国文化的"], "answer": 0, "explanation": "关于…… + 的 + danh từ." },
+     { "context": "“Về việc học tiếng Trung, thầy đã nói rất nhiều.”", "pre": "", "blank": "关于学汉语", "post": "，老师说了很多。", "options": ["关于学汉语", "学汉语关于", "关于说了学汉语"], "answer": 0, "explanation": "关于 + cụm động từ làm chủ đề cũng được." },
+     { "context": "“Tôi rất thích bộ phim về Bắc Kinh này.”", "pre": "我很喜欢这部", "blank": "关于北京的电影", "post": "。", "options": ["关于北京的电影", "关于北京电影", "电影关于北京的"], "answer": 0, "explanation": "关于 + N + 的 + N." },
+     { "context": "“Về cậu ấy, tôi hiểu rất rõ.”", "pre": "", "blank": "关于他", "post": "，我很了解。", "options": ["关于他", "他关于", "关于了解他"], "answer": 0, "explanation": "关于 + đại từ, đứng đầu câu." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "关于这个问题，我们讨论一下。", "isCorrect": true, "explanation": "关于 + N ở đầu câu — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这是一本关于中国文化的书。", "isCorrect": true, "explanation": "关于…… + 的 + danh từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "关于他，我很了解他关于。", "isCorrect": false, "correctVersion": "关于他，我很了解。", "explanation": "关于 chỉ dùng một lần; không lặp tân ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Về vấn đề này, chúng ta thảo luận một chút.”", "words": ["关于", "这个", "问题", "，", "我们", "讨论", "一下", "。"], "answer": "关于这个问题，我们讨论一下。", "explanation": "关于 + N，chủ ngữ + động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Đây là một quyển sách về văn hóa Trung Quốc.”", "words": ["这", "是", "一", "本", "关于", "中国", "文化", "的", "书", "。"], "answer": "这是一本关于中国文化的书。", "explanation": "关于…… + 的 + 书." },
+     { "type": "sort", "context": "Sắp xếp: “Về chuyện đó, tôi chẳng biết gì cả.”", "words": ["关于", "那", "件", "事", "，", "我", "什么", "都", "不", "知道", "。"], "answer": "关于那件事，我什么都不知道。", "explanation": "关于 + N ở đầu câu." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 关于.", "promptLang": "vi", "prompt": "Về vấn đề này, chúng ta thảo luận một chút.", "answer": "关于这个问题，我们讨论一下。", "answerPy": "Guānyú zhège wèntí, wǒmen tǎolùn yíxià.", "explanation": "关于 + N ở đầu câu." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 关于 làm định ngữ.", "promptLang": "vi", "prompt": "Đây là một quyển sách về văn hóa Trung Quốc.", "answer": "这是一本关于中国文化的书。", "answerPy": "Zhè shì yì běn guānyú Zhōngguó wénhuà de shū.", "explanation": "关于…… + 的 + danh từ." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk3-bai-19.html": {
+  "points": [
+   {
+    "title": "Nghĩa mở rộng của bổ ngữ phương hướng 「出来/下来/起来」",
+    "errors": [
+     { "wrong": "我想出来了他的名字。", "why": "“nhớ ra” dùng 想起来, không dùng 想出来.", "right": "我想起来他的名字了。" },
+     { "wrong": "看出来他很累。", "why": "“trông có vẻ” là 看起来/看上去, không phải 看出来.", "right": "看起来他很累。" },
+     { "wrong": "天气冷起来了。", "why": "chuyển từ mạnh sang yếu, động sang tĩnh thì dùng 下来.", "right": "天气冷下来了。" }
+    ],
+    "items": [
+     { "context": "“Tôi nhớ ra tên cậu ấy rồi.” (hồi tưởng)", "pre": "我", "blank": "想起来", "post": "他的名字了。", "options": ["想起来", "想出来", "想下来"], "answer": 0, "explanation": "V + 起来 = nhớ lại, hồi tưởng có kết quả." },
+     { "context": "“Cậu ấy trông có vẻ rất mệt.” (đánh giá qua quan sát)", "pre": "他", "blank": "看起来", "post": "很累。", "options": ["看起来", "看出来", "看下来"], "answer": 0, "explanation": "看起来/看上去 = trông có vẻ, ước lượng." },
+     { "context": "“Tôi nhận ra ai đang nói.” (phân biệt, nhận ra)", "pre": "我", "blank": "听出来", "post": "是谁在说话。", "options": ["听出来", "听起来", "听下来"], "answer": 0, "explanation": "V + 出来 = phân biệt, nhận ra." },
+     { "context": "“Trời đã dịu lại rồi.” (mạnh → yếu)", "pre": "天气", "blank": "冷下来", "post": "了。", "options": ["冷下来", "冷起来", "冷出来"], "answer": 0, "explanation": "Adj + 下来 = chuyển từ mạnh sang yếu, động sang tĩnh." },
+     { "context": "“Cậu ấy viết ra một bài hát.” (từ không thành có)", "pre": "他", "blank": "写出来", "post": "一首歌。", "options": ["写出来", "写起来", "写下来"], "answer": 0, "explanation": "V + 出来 = tạo ra sự vật mới." },
+     { "context": "“Lớp học yên lặng dần.” (động → tĩnh)", "pre": "教室里", "blank": "安静下来", "post": "了。", "options": ["安静下来", "安静起来", "安静出来"], "answer": 0, "explanation": "安静下来 = lặng dần." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我想出来了他的名字。", "isCorrect": false, "correctVersion": "我想起来他的名字了。", "explanation": "“Nhớ ra” dùng 想起来." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "看起来他很累。", "isCorrect": true, "explanation": "看起来 = trông có vẻ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "天气冷起来了。", "isCorrect": false, "correctVersion": "天气冷下来了。", "explanation": "Mạnh → yếu dùng 下来." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi nhớ ra tên cậu ấy rồi.”", "words": ["我", "想", "起来", "他", "的", "名字", "了", "。"], "answer": "我想起来他的名字了。", "explanation": "想起来 = nhớ ra." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi nhận ra ai đang nói.”", "words": ["我", "听", "出来", "是", "谁", "在", "说话", "。"], "answer": "我听出来是谁在说话。", "explanation": "听出来 = nhận ra." },
+     { "type": "sort", "context": "Sắp xếp: “Trong lớp đã yên lặng dần rồi.”", "words": ["教室", "里", "安静", "下来", "了", "。"], "answer": "教室里安静下来了。", "explanation": "安静下来 = động → tĩnh." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn đúng bổ ngữ phương hướng mở rộng.", "promptLang": "vi", "prompt": "Tôi nhớ ra tên cậu ấy rồi.", "answer": "我想起来他的名字了。", "answerPy": "Wǒ xiǎng qǐlái tā de míngzi le.", "explanation": "想起来 = hồi tưởng." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn đúng bổ ngữ phương hướng mở rộng.", "promptLang": "vi", "prompt": "Cậu ấy trông có vẻ rất vui.", "answer": "他看起来很高兴。", "answerPy": "Tā kàn qǐlái hěn gāoxìng.", "explanation": "看起来 = trông có vẻ." }
+    ]
+   },
+   {
+    "title": "Câu khiến động 「使/叫/让」",
+    "errors": [
+     { "wrong": "这件事我很高兴。", "why": "thiếu 使/让 để nối nguyên nhân với kết quả.", "right": "这件事使我很高兴。" },
+     { "wrong": "这个消息让高兴我。", "why": "đối tượng phải đứng ngay sau 让.", "right": "这个消息让我很高兴。" },
+     { "wrong": "老师使我们做作业。", "why": "使 chỉ nêu kết quả tâm lý/trạng thái, không dùng để SAI ai làm gì.", "right": "老师让我们做作业。" }
+    ],
+    "items": [
+     { "context": "“Chuyện này làm tôi rất vui.”", "pre": "这件事", "blank": "使我很高兴", "post": "。", "options": ["使我很高兴", "我很高兴", "使很高兴我"], "answer": 0, "explanation": "Nguyên nhân + 使 + đối tượng + kết quả." },
+     { "context": "“Tin đó khiến mọi người rất ngạc nhiên.”", "pre": "这个消息", "blank": "让大家很吃惊", "post": "。", "options": ["让大家很吃惊", "让很吃惊大家", "大家让很吃惊"], "answer": 0, "explanation": "让 + đối tượng + kết quả." },
+     { "context": "Sai ai làm việc gì thì dùng 让/叫, không dùng 使.", "pre": "老师", "blank": "让", "post": "我们做作业。", "options": ["让", "使", "被"], "answer": 0, "explanation": "使 chỉ nêu kết quả tâm lý/trạng thái." },
+     { "context": "“Mẹ bảo tôi về nhà sớm.”", "pre": "妈妈", "blank": "叫我早点儿回家", "post": "。", "options": ["叫我早点儿回家", "叫早点儿回家我", "我叫早点儿回家"], "answer": 0, "explanation": "叫 + người + việc, thường dùng trong văn nói." },
+     { "context": "使 thường dùng trong VĂN VIẾT.", "pre": "这本书", "blank": "使我明白了很多道理", "post": "。", "options": ["使我明白了很多道理", "使明白了我很多道理", "我使明白了很多道理"], "answer": 0, "explanation": "使 + đối tượng + kết quả, sắc thái văn viết." },
+     { "context": "Phủ định đứng TRƯỚC 让.", "pre": "妈妈", "blank": "不让我看电视", "post": "。", "options": ["不让我看电视", "让我不看电视吗", "让不我看电视"], "answer": 0, "explanation": "不 đứng trước 让." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件事使我很高兴。", "isCorrect": true, "explanation": "使 + đối tượng + kết quả — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这个消息让高兴我。", "isCorrect": false, "correctVersion": "这个消息让我很高兴。", "explanation": "Đối tượng đứng ngay sau 让." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "老师使我们做作业。", "isCorrect": false, "correctVersion": "老师让我们做作业。", "explanation": "Sai ai làm gì thì dùng 让/叫." },
+     { "type": "sort", "context": "Sắp xếp: “Chuyện này làm tôi rất vui.”", "words": ["这", "件", "事", "使", "我", "很", "高兴", "。"], "answer": "这件事使我很高兴。", "explanation": "Nguyên nhân + 使 + tôi + kết quả." },
+     { "type": "sort", "context": "Sắp xếp: “Mẹ bảo tôi về nhà sớm.”", "words": ["妈妈", "叫", "我", "早点儿", "回", "家", "。"], "answer": "妈妈叫我早点儿回家。", "explanation": "叫 + người + việc." },
+     { "type": "sort", "context": "Sắp xếp: “Mẹ không cho tôi xem TV.”", "words": ["妈妈", "不", "让", "我", "看", "电视", "。"], "answer": "妈妈不让我看电视。", "explanation": "不 trước 让." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 使/让.", "promptLang": "vi", "prompt": "Chuyện này làm tôi rất vui.", "answer": "这件事使我很高兴。", "answerPy": "Zhè jiàn shì shǐ wǒ hěn gāoxìng.", "explanation": "使 + đối tượng + kết quả." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 让.", "promptLang": "vi", "prompt": "Mẹ không cho tôi xem TV.", "answer": "妈妈不让我看电视。", "answerPy": "Māma bú ràng wǒ kàn diànshì.", "explanation": "不 đứng trước 让." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk3-bai-20.html": {
+  "points": [
+   {
+    "title": "Câu chữ 「被」 — câu bị động",
+    "errors": [
+     { "wrong": "我的手机被他没拿走。", "why": "phủ định phải đứng TRƯỚC 被.", "right": "我的手机没被他拿走。" },
+     { "wrong": "我的手机被拿。", "why": "sau động từ trong câu 被 phải có thành phần khác (了/bổ ngữ).", "right": "我的手机被拿走了。" },
+     { "wrong": "杯子叫打破了。", "why": "sau 叫/让 KHÔNG được lược tân ngữ (chỉ 被 mới lược được).", "right": "杯子被打破了。／杯子叫弟弟打破了。" }
+    ],
+    "items": [
+     { "context": "“Điện thoại của tôi bị cậu ấy lấy đi rồi.”", "pre": "我的手机", "blank": "被他拿走了", "post": "。", "options": ["被他拿走了", "被他拿", "他被拿走了"], "answer": 0, "explanation": "Chủ ngữ + 被 + tác nhân + V + thành phần khác." },
+     { "context": "Sau 被 có thể LƯỢC tân ngữ.", "pre": "杯子", "blank": "被打破了", "post": "。", "options": ["被打破了", "叫打破了", "被打"], "answer": 0, "explanation": "Chỉ 被 mới lược được tân ngữ, 叫/让 thì không." },
+     { "context": "Phủ định: “Điện thoại của tôi không bị lấy đi.”", "pre": "我的手机", "blank": "没被他拿走", "post": "。", "options": ["没被他拿走", "被他没拿走", "被没他拿走"], "answer": 0, "explanation": "没 đứng TRƯỚC 被." },
+     { "context": "“Cái cốc bị em trai làm vỡ rồi.” (dùng 叫)", "pre": "杯子", "blank": "叫弟弟打破了", "post": "。", "options": ["叫弟弟打破了", "叫打破了弟弟", "弟弟叫打破了"], "answer": 0, "explanation": "叫 + tác nhân (không được lược) + V + 了." },
+     { "context": "Động từ năng nguyện đứng TRƯỚC 被.", "pre": "这件事", "blank": "不会被人知道", "post": "。", "options": ["不会被人知道", "被人不会知道", "被不会人知道"], "answer": 0, "explanation": "不会 đứng trước 被." },
+     { "context": "“Bài văn đó đã được thầy sửa xong rồi.”", "pre": "那篇文章", "blank": "被老师改好了", "post": "。", "options": ["被老师改好了", "被老师改", "老师被改好了"], "answer": 0, "explanation": "改好了 = bổ ngữ kết quả + 了." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我的手机被他拿走了。", "isCorrect": true, "explanation": "被 + tác nhân + V + 了 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我的手机被他没拿走。", "isCorrect": false, "correctVersion": "我的手机没被他拿走。", "explanation": "没 đứng trước 被." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "杯子叫打破了。", "isCorrect": false, "correctVersion": "杯子被打破了。", "explanation": "Sau 叫 không được lược tân ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Điện thoại của tôi bị cậu ấy lấy đi rồi.”", "words": ["我", "的", "手机", "被", "他", "拿", "走", "了", "。"], "answer": "我的手机被他拿走了。", "explanation": "被 + tác nhân + V + bổ ngữ + 了." },
+     { "type": "sort", "context": "Sắp xếp: “Cái cốc bị em trai làm vỡ rồi.”", "words": ["杯子", "叫", "弟弟", "打", "破", "了", "。"], "answer": "杯子叫弟弟打破了。", "explanation": "叫 + tác nhân bắt buộc." },
+     { "type": "sort", "context": "Sắp xếp: “Bài văn đó đã được thầy sửa xong rồi.”", "words": ["那", "篇", "文章", "被", "老师", "改", "好", "了", "。"], "answer": "那篇文章被老师改好了。", "explanation": "改好了 = bổ ngữ kết quả." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu chữ 被.", "promptLang": "vi", "prompt": "Điện thoại của tôi bị cậu ấy lấy đi rồi.", "answer": "我的手机被他拿走了。", "answerPy": "Wǒ de shǒujī bèi tā ná zǒu le.", "explanation": "被 + tác nhân + V + 走了." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu chữ 被 ở dạng phủ định.", "promptLang": "vi", "prompt": "Cái cốc không bị làm vỡ.", "answer": "杯子没被打破。", "answerPy": "Bēizi méi bèi dǎ pò.", "explanation": "没 đứng trước 被." }
+    ]
+   },
+   {
+    "title": "「只有……，才……」 — điều kiện duy nhất",
+    "errors": [
+     { "wrong": "只有努力，就能成功。", "why": "只有 đi cặp với 才, không đi với 就.", "right": "只有努力，才能成功。" },
+     { "wrong": "只有努力，能成功才。", "why": "才 đứng TRƯỚC động từ.", "right": "只有努力，才能成功。" },
+     { "wrong": "只有你去，才我也去。", "why": "chủ ngữ vế sau đứng TRƯỚC 才.", "right": "只有你去，我才去。" }
+    ],
+    "items": [
+     { "context": "“Chỉ có cố gắng mới thành công được.”", "pre": "只有努力，", "blank": "才能成功", "post": "。", "options": ["才能成功", "就能成功", "能成功才"], "answer": 0, "explanation": "只有 đi cặp với 才." },
+     { "context": "“Chỉ khi bạn đi thì tôi mới đi.”", "pre": "只有你去，", "blank": "我才去", "post": "。", "options": ["我才去", "才我去", "我去才"], "answer": 0, "explanation": "Chủ ngữ vế sau đứng trước 才." },
+     { "context": "Điều kiện DỄ đạt thì dùng 只要……就…….", "pre": "", "blank": "只要有时间，我就去", "post": "。", "options": ["只要有时间，我就去", "只有有时间，我就去", "只要有时间，我才去"], "answer": 0, "explanation": "只要→就 (dễ); 只有→才 (duy nhất)." },
+     { "context": "“Chỉ khi luyện nhiều mới nói giỏi được.”", "pre": "只有多练习，", "blank": "才能说得好", "post": "。", "options": ["才能说得好", "就能说得好", "能说得好才"], "answer": 0, "explanation": "才 + động từ năng nguyện + động từ." },
+     { "context": "“Chỉ khi thầy đồng ý chúng tôi mới được đi.”", "pre": "只有老师同意，", "blank": "我们才能去", "post": "。", "options": ["我们才能去", "才我们能去", "我们能去才"], "answer": 0, "explanation": "Chủ ngữ 2 + 才 + 能 + động từ." },
+     { "context": "“Chỉ có cách này mới giải quyết được vấn đề.”", "pre": "只有这个办法，", "blank": "才能解决问题", "post": "。", "options": ["才能解决问题", "就能解决问题", "解决问题才能"], "answer": 0, "explanation": "只有 + N，才……." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "只有努力，才能成功。", "isCorrect": true, "explanation": "只有……才…… — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "只有努力，就能成功。", "isCorrect": false, "correctVersion": "只有努力，才能成功。", "explanation": "只有 không đi với 就." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "只有你去，才我去。", "isCorrect": false, "correctVersion": "只有你去，我才去。", "explanation": "Chủ ngữ vế sau trước 才." },
+     { "type": "sort", "context": "Sắp xếp: “Chỉ có cố gắng mới thành công được.”", "words": ["只有", "努力", "，", "才", "能", "成功", "。"], "answer": "只有努力，才能成功。", "explanation": "只有……才能……." },
+     { "type": "sort", "context": "Sắp xếp: “Chỉ khi bạn đi thì tôi mới đi.”", "words": ["只有", "你", "去", "，", "我", "才", "去", "。"], "answer": "只有你去，我才去。", "explanation": "Chủ ngữ 2 + 才." },
+     { "type": "sort", "context": "Sắp xếp: “Chỉ khi luyện nhiều mới nói giỏi được.”", "words": ["只有", "多", "练习", "，", "才", "能", "说", "得", "好", "。"], "answer": "只有多练习，才能说得好。", "explanation": "只有……才能……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 只有……才…….", "promptLang": "vi", "prompt": "Chỉ có cố gắng mới thành công được.", "answer": "只有努力，才能成功。", "answerPy": "Zhǐyǒu nǔlì, cái néng chénggōng.", "explanation": "只有……才能……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 只有……才…….", "promptLang": "vi", "prompt": "Chỉ khi bạn đi thì tôi mới đi.", "answer": "只有你去，我才去。", "answerPy": "Zhǐyǒu nǐ qù, wǒ cái qù.", "explanation": "Chủ ngữ vế sau trước 才." }
+    ]
+   }
+  ]
+ }
+}

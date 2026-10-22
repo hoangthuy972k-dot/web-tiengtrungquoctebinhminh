@@ -1,0 +1,112 @@
+{
+ "zh": "体育明星们的离奇遭遇",
+ "py": "Tǐyù míngxīngmen de líqí zāoyù",
+ "vn": "Cảnh ngộ ly kỳ của các ngôi sao thể thao",
+ "topic": "第六单元 趣味世界 · Những chấn thương ly kỳ trong thể thao và bài học về sự cẩn thận",
+ "vocabCount": 54,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "紧缩句",
+   "explain": "紧缩句 (câu co) dùng HÌNH THỨC câu đơn để diễn đạt NỘI DUNG câu phức: bỏ ngắt quãng (dấu phẩy) giữa các vế, bỏ liên từ ở vế đầu (即使 / 就算 / 只要 / 如果 / 要是…), thậm chí bỏ bớt thành phần (chủ ngữ), nhưng thường GIỮ phó từ quan hệ ở vế sau: 也, 就, 都, 才, 还. Khẩu ngữ rất hay dùng: 想赢球也不能…… (= 即使想赢球，也不能……), 她一回来我就告诉你 (= 只要她一回来，我就告诉你), 不站住就开枪了 (= 你要是不站住，我就开枪了). Các khuôn câu co quen thuộc đã học: 一……就……, 再……也……, 越……越……, 不……不…… (不见不散), 非……不…… (非去不可). Khi dịch sang tiếng Việt phải THÊM lại từ nối (dù, hễ, nếu…) cho rõ quan hệ.",
+   "rule": "Câu phức: 即使 / 就算 + A，(S) + 也 + B　→　câu co: A + (S) + <strong style=\"color:var(--sky-d)\">也</strong> + B　|　只要 / 如果 + A，就 + B　→　A + <strong style=\"color:var(--sky-d)\">就</strong> + B　|　khuôn cố định: <strong style=\"color:var(--sky-d)\">一……就……</strong> · <strong style=\"color:var(--sky-d)\">再……也……</strong> · <strong style=\"color:var(--sky-d)\">不……不……</strong>",
+   "examples": [
+    {
+     "zh": "想赢球也不能置猫头鹰的生命于不顾。（即使想赢球，也不能置猫头鹰的生命于不顾。）",
+     "py": "Xiǎng yíng qiú yě bù néng zhì māotóuyīng de shēngmìng yú bú gù. (Jíshǐ xiǎng yíng qiú, yě bù néng zhì māotóuyīng de shēngmìng yú bú gù.)",
+     "vn": "Dù muốn thắng cũng không thể bất chấp mạng sống của con cú mèo."
+    },
+    {
+     "zh": "她一回来我就告诉你。（只要她一回来，我就告诉你。）",
+     "py": "Tā yì huílái wǒ jiù gàosu nǐ. (Zhǐyào tā yì huílái, wǒ jiù gàosu nǐ.)",
+     "vn": "Cô ấy vừa về là tôi báo cho bạn ngay."
+    },
+    {
+     "zh": "站住！不站住就开枪了。（站住！你要是不站住，我就开枪了。）",
+     "py": "Zhànzhù! Bú zhànzhù jiù kāi qiāng le. (Zhànzhù! Nǐ yàoshi bú zhànzhù, wǒ jiù kāi qiāng le.)",
+     "vn": "Đứng lại! Không đứng lại là tao bắn đấy."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "你不说我能知道。",
+     "why": "Bỏ luôn cả 也 → mất quan hệ nhượng bộ, câu thành \"cậu không nói thì tôi biết được\" rất khó hiểu. Câu co bỏ liên từ đầu nhưng phải GIỮ phó từ quan hệ ở vế sau.",
+     "right": "你不说我也能知道。"
+    },
+    {
+     "wrong": "不站住开枪了。",
+     "why": "Thiếu 就 nối điều kiện – kết quả; câu co vẫn cần 就 để người nghe hiểu \"nếu không … thì …\".",
+     "right": "不站住就开枪了。"
+    }
+   ]
+  },
+  {
+   "point": "特意",
+   "explain": "\"特意\" là PHÓ TỪ, biểu thị CHUYÊN VÌ một việc nào đó mà làm (专门为了某一件事), thường là bỏ tâm sức, có ý tốt với người khác: 特意来看你, 特意为你准备的, 特意绕道北京. Đứng trước động từ / cụm động từ, hay đi với 为 + người, 从……来 / 赶来. Phân biệt với 故意 (词语辨析 của bài): 故意 = biết không nên / không cần mà vẫn làm, thường mang nghĩa xấu; 故意 còn làm danh từ trong pháp luật (存在伤害对方的故意), 特意 thì không. Gần nghĩa: 专门, 专程 (HSK 6 bài 5 — cất công đi một chuyến).",
+   "rule": "S + <strong style=\"color:var(--sky-d)\">特意</strong> + V (+ O)　|　<strong style=\"color:var(--sky-d)\">特意</strong> + 为 + người + V　|　是 + S + <strong style=\"color:var(--sky-d)\">特意</strong> + V + 的　|　≠ <strong style=\"color:var(--sky-d)\">故意</strong> (nghĩa xấu, làm được danh từ)",
+   "examples": [
+    {
+     "zh": "一次赛前热身，主办方特意做了警示牌，警告运动员不要在球门里训练。",
+     "py": "Yí cì sài qián rèshēn, zhǔbànfāng tèyì zuòle jǐngshìpái, jǐnggào yùndòngyuán búyào zài qiúmén li xùnliàn.",
+     "vn": "Một lần khởi động trước trận, ban tổ chức đã cất công làm biển cảnh báo, nhắc vận động viên không được tập trong khung thành."
+    },
+    {
+     "zh": "那一年我出差去天津，特意绕道北京，去了趟圆明园。",
+     "py": "Nà yì nián wǒ chūchāi qù Tiānjīn, tèyì ràodào Běijīng, qùle tàng Yuánmíngyuán.",
+     "vn": "Năm đó tôi đi công tác Thiên Tân, đã cố ý đi vòng qua Bắc Kinh, ghé Viên Minh Viên một chuyến."
+    },
+    {
+     "zh": "城市生活的忙乱、嘈杂使人们渴望安静，因此地处边城的我的故乡就成了人们特意要来的旅游胜地了。",
+     "py": "Chéngshì shēnghuó de mángluàn, cáozá shǐ rénmen kěwàng ānjìng, yīncǐ dì chǔ biānchéng de wǒ de gùxiāng jiù chéngle rénmen tèyì yào lái de lǚyóu shèngdì le.",
+     "vn": "Sự bận rộn, ồn ào của cuộc sống thành thị khiến người ta khao khát yên tĩnh, vì thế quê hương nơi biên thành của tôi đã trở thành điểm du lịch mà người ta cất công tìm đến."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他特意把我的杯子打碎了。",
+     "why": "Làm việc xấu, biết không nên mà vẫn làm → phải dùng 故意. 特意 dùng cho việc bỏ công làm tốt.",
+     "right": "他故意把我的杯子打碎了。"
+    },
+    {
+     "wrong": "法院认为他存在伤害对方的特意。",
+     "why": "特意 chỉ là phó từ, không làm danh từ; danh từ trong pháp luật là 故意.",
+     "right": "法院认为他存在伤害对方的故意。"
+    }
+   ]
+  },
+  {
+   "point": "修辞（2）比拟",
+   "explain": "比拟 là một phép tu từ (phần 篇章修辞 của quyển 下): dựa vào trí tưởng tượng, VIẾT VẬT NHƯ NGƯỜI (拟人 — nhân hoá: 太阳露出了笑脸), hoặc VIẾT NGƯỜI NHƯ VẬT (拟物: 他们就夹着尾巴跑 — coi người như con vật cụp đuôi chạy), hoặc VIẾT VẬT NÀY NHƯ VẬT KIA (猫头鹰“迫降”球场 — coi con cú như máy bay). Khác 比喻 (so sánh, ôn HSK 6 bài 8): 比喻 thường nêu cả hai sự vật và có từ so sánh (像, 好像, 仿佛…); 比拟 KHÔNG nêu vật được mượn, chỉ gán động tác, tình cảm, tính chất của nó cho đối tượng. Khi phân tích dùng khung: 把 A 比作 B. Tu từ (1) là 仿词 (bài 23).",
+   "rule": "<strong style=\"color:var(--sky-d)\">拟人</strong>: vật + động tác / tình cảm của người (太阳露出了笑脸)　|　<strong style=\"color:var(--sky-d)\">拟物</strong>: người / vật A + đặc điểm của vật B (飞出了小女儿)　|　phân tích: 把 A <strong style=\"color:var(--sky-d)\">比作</strong> B　|　≠ 比喻 (có 像 / 好像)",
+   "examples": [
+    {
+     "zh": "雨停了，天晴了，太阳露出了笑脸。（“太阳”被比拟成人，具有和人一样的思想情感、动作情态。）",
+     "py": "Yǔ tíng le, tiān qíng le, tàiyáng lùchūle xiàoliǎn. (“Tàiyáng” bèi bǐnǐ chéng rén, jùyǒu hé rén yíyàng de sīxiǎng qínggǎn, dòngzuò qíngtài.)",
+     "vn": "Mưa tạnh, trời quang, mặt trời hé nụ cười. (Mặt trời được nhân hoá, có tình cảm, động tác giống con người.)"
+    },
+    {
+     "zh": "这帮人就是欺软怕硬，你老实，他们就欺负你；你厉害，他们就夹着尾巴跑。",
+     "py": "Zhè bāng rén jiù shì qīruǎn-pàyìng, nǐ lǎoshi, tāmen jiù qīfu nǐ; nǐ lìhai, tāmen jiù jiāzhe wěiba pǎo.",
+     "vn": "Bọn này chuyên bắt nạt kẻ yếu, sợ kẻ mạnh: cậu hiền thì chúng bắt nạt cậu; cậu dữ thì chúng cụp đuôi chạy mất. (Coi người như con vật.)"
+    },
+    {
+     "zh": "球赛进行得正激烈时，一只很可能是因受伤而“迫降”球场的猫头鹰遮挡住了球员的视线。",
+     "py": "Qiúsài jìnxíng de zhèng jīliè shí, yì zhī hěn kěnéng shì yīn shòushāng ér “pòjiàng” qiúchǎng de māotóuyīng zhēdǎng zhùle qiúyuán de shìxiàn.",
+     "vn": "Khi trận đấu đang quyết liệt, một con cú mèo — rất có thể vì bị thương mà \"hạ cánh khẩn cấp\" xuống sân — đã che khuất tầm nhìn của cầu thủ. (Coi con cú như máy bay.)"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "“她的脸红得像苹果一样。”——这句用了比拟。",
+     "why": "Có từ so sánh 像 và nêu cả hai sự vật (脸, 苹果) → đây là 比喻 (so sánh), không phải 比拟.",
+     "right": "“她的脸红得像苹果一样。”用的是比喻；“花儿羞答答地垂下头来。”用的才是比拟。"
+    },
+    {
+     "wrong": "“太阳照进了窗子，亮得有些晃眼。”——这句用了比拟。",
+     "why": "Câu chỉ tả thực ánh nắng, không gán động tác, tình cảm của người hay vật khác cho mặt trời (đáp án 练一练 của sách).",
+     "right": "“太阳照进了窗子，亮得有些晃眼。”没有使用比拟。"
+    }
+   ]
+  }
+ ]
+}

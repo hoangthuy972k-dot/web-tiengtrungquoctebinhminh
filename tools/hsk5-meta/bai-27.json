@@ -1,0 +1,78 @@
+{
+ "zh": "下棋",
+ "py": "Xià qí",
+ "vn": "Đánh cờ",
+ "topic": "Unit 9 感受人生 · Đánh cờ &amp; bài học được mất",
+ "vocabCount": 35,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "动词 + 下来",
+   "explain": "\"Động từ + 下来\" chỉ động tác đã HOÀN THÀNH sau một quá trình, có khi kèm nghĩa TÁCH RỜI (lấy ra khỏi chỗ cũ) hoặc CỐ ĐỊNH lại (giữ lại, ghi lại, chốt lại). ① Hoàn thành: 定下来 (chốt xong), 几局下来 (sau mấy ván). ② Tách rời: 撕下来 (xé ra), 脱下来 (cởi ra). ③ Cố định, dừng hẳn: 记下来 / 录下来 (ghi lại), 停下来 (dừng lại). Đừng nhầm với 下去 (tiếp tục: 说下去, 坚持下去) và 起来 (bắt đầu).",
+   "rule": "V + <strong style=\"color:var(--sky-d)\">下来</strong>：① hoàn thành (定下来 / 几局下来)　② tách rời (撕下来 / 脱下来)　③ cố định, dừng hẳn (记下来 / 录下来 / 停下来)",
+   "examples": [
+    {
+     "zh": "你的论文大概什么时候发表？定下来了吗？",
+     "py": "Nǐ de lùnwén dàgài shénme shíhou fābiǎo? Dìng xiàlai le ma?",
+     "vn": "Luận văn của bạn khoảng bao giờ công bố? Đã chốt chưa?"
+    },
+    {
+     "zh": "你看，那张纸是从这本书里撕下来的。",
+     "py": "Nǐ kàn, nà zhāng zhǐ shì cóng zhè běn shū li sī xiàlai de.",
+     "vn": "Bạn xem, tờ giấy đó là xé ra từ cuốn sách này."
+    },
+    {
+     "zh": "几局下来，基本上都是不到10分钟我就败下阵来。",
+     "py": "Jǐ jú xiàlai, jīběnshang dōu shì bú dào shí fēnzhōng wǒ jiù bàixià zhèn lai.",
+     "vn": "Mấy ván trôi qua, gần như ván nào chưa đến 10 phút tôi cũng đã thua trận."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "请把老师的话记下去。",
+     "why": "Ghi lại để giữ cố định dùng 下来; 下去 chỉ sự tiếp tục (说下去, 坚持下去).",
+     "right": "请把老师的话记下来。"
+    },
+    {
+     "wrong": "说到这，父亲停起来，把棋子重新摆好。",
+     "why": "停 đi với 下来 (dừng hẳn lại); 起来 chỉ động tác bắt đầu.",
+     "right": "说到这，父亲停下来，把棋子重新摆好。"
+    }
+   ]
+  },
+  {
+   "point": "舍不得",
+   "explain": "舍不得 là động từ: không nỡ bỏ, không nỡ rời xa, tiếc không muốn dùng hay tiêu. Phía sau có thể là danh từ (舍不得你) hoặc động từ (舍不得花 / 穿 / 离开 / 扔). Dạng khẳng định 舍得 thường dùng trong câu hỏi, câu trả lời hoặc so sánh: 你舍得吗？/ 他比我舍得花钱. 舍不得 đã là phủ định: không viết 舍得不, không thêm 没 phía trước — \"đã không nỡ\" nói 没舍得 + V.",
+   "rule": "① S + <strong style=\"color:var(--sky-d)\">舍不得</strong> + N / V　② S + <strong style=\"color:var(--sky-d)\">舍得</strong> + V + 吗？(hỏi / đáp / so sánh)",
+   "examples": [
+    {
+     "zh": "把你最喜欢的玩具送给小朋友，你舍得吗？",
+     "py": "Bǎ nǐ zuì xǐhuan de wánjù sòng gěi xiǎopéngyou, nǐ shěde ma?",
+     "vn": "Tặng món đồ chơi bạn thích nhất cho em nhỏ, bạn có nỡ không?"
+    },
+    {
+     "zh": "有些人对于把钱花在为家庭和自己的生活增加乐趣的事情上，总是有些舍不得。",
+     "py": "Yǒuxiē rén duìyú bǎ qián huā zài wèi jiātíng hé zìjǐ de shēnghuó zēngjiā lèqù de shìqing shang, zǒngshì yǒuxiē shěbude.",
+     "vn": "Có những người luôn thấy hơi tiếc khi tiêu tiền vào những việc làm tăng thêm niềm vui cho gia đình và cuộc sống của chính mình."
+    },
+    {
+     "zh": "可惜，大部分人都像你这样，开始不考虑得失，等到后来失去得多了，又开始舍不得，后果就是屡下屡败。",
+     "py": "Kěxī, dà bùfen rén dōu xiàng nǐ zhèyàng, kāishǐ bù kǎolǜ déshī, děngdào hòulái shīqù de duō le, yòu kāishǐ shěbude, hòuguǒ jiù shì lǚ xià lǚ bài.",
+     "vn": "Tiếc là phần lớn mọi người đều giống con: lúc đầu không tính đến được mất, đến khi mất nhiều rồi lại bắt đầu tiếc, hậu quả là đánh ván nào thua ván ấy."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "奶奶买了新衣服，舍得不穿。",
+     "why": "Dạng phủ định là 舍不得 (不 xen giữa 舍 và 得), không viết 舍得不.",
+     "right": "奶奶买了新衣服，舍不得穿。"
+    },
+    {
+     "wrong": "上次去旅行，我没舍不得买纪念品。",
+     "why": "舍不得 đã mang nghĩa phủ định, không thêm 没; \"đã không nỡ mua\" nói 没舍得买.",
+     "right": "上次去旅行，我没舍得买纪念品。"
+    }
+   ]
+  }
+ ]
+}

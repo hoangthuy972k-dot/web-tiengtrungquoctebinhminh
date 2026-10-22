@@ -1,0 +1,934 @@
+[
+ {
+  "so": "1",
+  "ten": "「随即」",
+  "tenVn": "",
+  "cauTruc": [
+   "Việc 1，随即 + V (việc 2): 他答应了一声，随即把东西递给我",
+   "S + V1 + 了……，随即 + (又) + V2"
+  ],
+  "giaiThich": "随即 là PHÓ TỪ, biểu thị việc thứ hai xảy ra NGAY SAU việc thứ nhất (紧跟着就发生) — \"ngay sau đó, liền\". Đứng trước động từ ở VẾ SAU (có thể lược chủ ngữ): 他答应了一声，随即把东西递给我. Dùng trong văn viết; gần nghĩa 立即, 马上 nhưng nhấn sự NỐI TIẾP giữa hai hành động / hai sự việc. Phải có một việc xảy ra trước làm mốc; không dùng cho kế hoạch tương lai xa.",
+  "viDu": [
+   {
+    "zh": "缺乏父母之爱的孩子，不安全感也会随即产生。",
+    "py": "Quēfá fùmǔ zhī ài de háizi, bù ānquángǎn yě huì suíjí chǎnshēng.",
+    "vn": "Đứa trẻ thiếu tình thương của cha mẹ, cảm giác bất an cũng sẽ theo đó mà nảy sinh ngay."
+   },
+   {
+    "zh": "在公司的内部会议上，大家对这个产品一致看好，总经理更是信心百倍，随即开始制定市场开拓方案。",
+    "py": "Zài gōngsī de nèibù huìyì shang, dàjiā duì zhège chǎnpǐn yízhì kànhǎo, zǒngjīnglǐ gèng shì xìnxīn bǎibèi, suíjí kāishǐ zhìdìng shìchǎng kāituò fāng'àn.",
+    "vn": "Trong cuộc họp nội bộ của công ty, mọi người đều đánh giá cao sản phẩm này, tổng giám đốc lại càng tự tin gấp bội, lập tức bắt tay xây dựng phương án mở rộng thị trường."
+   },
+   {
+    "zh": "春天，孩子们在楼旁空地上开出一个小小的花园，随即种上了一棵树、几株花和几粒丝瓜种子。",
+    "py": "Chūntiān, háizimen zài lóu páng kòngdì shang kāichū yí ge xiǎoxiǎo de huāyuán, suíjí zhòngshangle yì kē shù, jǐ zhū huā hé jǐ lì sīguā zhǒngzi.",
+    "vn": "Mùa xuân, bọn trẻ vỡ ra một khu vườn nho nhỏ trên khoảnh đất trống cạnh tòa nhà, rồi ngay sau đó trồng lên một cái cây, mấy khóm hoa và gieo mấy hạt mướp."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "随即，他把手里的东西递给了我。",
+    "why": "随即 là phó từ chỉ \"ngay sau một việc khác\" — phải có việc thứ nhất đi trước, và 随即 đứng trước động từ, không tách bằng dấu phẩy như liên từ.",
+    "dung": "他答应了一声，随即把手里的东西递给了我。"
+   },
+   {
+    "sai": "我明年随即去中国留学。",
+    "why": "随即 không dùng cho kế hoạch tương lai xa, không có hành động làm mốc ngay trước đó; nói về tương lai dùng 就 / 将.",
+    "dung": "我明年就去中国留学。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他答应了一声，",
+       "把手里的东西递给我。"
+      ],
+      "dap": [
+       [
+        "随即"
+       ]
+      ],
+      "chon": [
+       "随即",
+       "宁愿",
+       "连同"
+      ],
+      "goiY": "\"Anh ấy ừ một tiếng, rồi liền đưa đồ trong tay cho tôi.\" (练一练 (1))",
+      "giai": "随即 + V ở vế sau: hành động xảy ra ngay sau hành động trước. 宁愿 dùng cho lựa chọn; 连同 nối hai danh từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "缺乏父母之爱的孩子，不安全感也会",
+       "产生。"
+      ],
+      "dap": [
+       [
+        "随即"
+       ]
+      ],
+      "chon": [
+       "随即",
+       "一如既往",
+       "与日俱增"
+      ],
+      "goiY": "\"Đứa trẻ thiếu tình thương cha mẹ, cảm giác bất an cũng sẽ theo đó nảy sinh.\" (ví dụ của sách)",
+      "giai": "随即 + 产生: nảy sinh ngay sau đó. 与日俱增 đứng cuối câu, không đứng trước động từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "孩子们开出一个小小的花园，",
+       "种上了几粒丝瓜种子。"
+      ],
+      "dap": [
+       [
+        "随即"
+       ]
+      ],
+      "chon": [
+       "随即",
+       "宁愿",
+       "愣"
+      ],
+      "goiY": "\"Bọn trẻ vỡ ra một khu vườn nhỏ, ngay sau đó gieo mấy hạt mướp.\" (câu bài khoá)",
+      "giai": "Hai hành động nối tiếp: 开出花园 → 随即种上."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "总经理信心百倍，",
+       "开始制定市场开拓方案。"
+      ],
+      "dap": [
+       [
+        "随即"
+       ]
+      ],
+      "chon": [
+       "随即",
+       "连同",
+       "一起"
+      ],
+      "goiY": "\"Tổng giám đốc tự tin gấp bội, lập tức bắt tay xây dựng phương án mở rộng thị trường.\" (ví dụ của sách)",
+      "giai": "随即 + 开始 + V. 一起 cần có người cùng làm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "时间紧迫，你们先走，我",
+       "动身。"
+      ],
+      "dap": [
+       [
+        "随即"
+       ]
+      ],
+      "chon": [
+       "随即",
+       "宁愿",
+       "断定"
+      ],
+      "goiY": "\"Thời gian gấp, các cậu đi trước, tôi đi ngay sau.\" (练习2 ①)",
+      "giai": "随即 thay cho 然后……马上."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她看了一眼成绩单，",
+       "高兴地跳了起来。"
+      ],
+      "dap": [
+       [
+        "随即"
+       ]
+      ],
+      "chon": [
+       "随即",
+       "一如既往",
+       "宁愿"
+      ],
+      "goiY": "\"Cô ấy liếc nhìn bảng điểm, rồi liền nhảy cẫng lên vì vui.\"",
+      "giai": "Hành động 2 (跳起来) xảy ra ngay sau hành động 1 (看成绩单)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "随即",
+       "他",
+       "答应了一声",
+       "，",
+       "把东西递给我"
+      ],
+      "dap": [
+       "他答应了一声，随即把东西递给我。"
+      ],
+      "goiY": "Anh ấy ừ một tiếng rồi liền đưa đồ cho tôi.",
+      "giai": "随即 đứng đầu vế sau, trước cụm 把."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "随即",
+       "开出一个花园",
+       "孩子们",
+       "，",
+       "种上了几株花"
+      ],
+      "dap": [
+       "孩子们开出一个花园，随即种上了几株花。"
+      ],
+      "goiY": "Bọn trẻ vỡ một khu vườn, ngay sau đó trồng mấy khóm hoa.",
+      "giai": "Việc 1，随即 + việc 2."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "随即",
+       "又",
+       "飞回原地",
+       "几只鸟",
+       "把死鸟扔进池塘",
+       "，"
+      ],
+      "dap": [
+       "几只鸟把死鸟扔进池塘，随即又飞回原地。"
+      ],
+      "goiY": "Mấy con chim ném xác chim xuống ao, rồi liền bay về chỗ cũ.",
+      "giai": "随即 + 又 + V (练一练 (3))."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "随即，他把手里的东西递给了我。",
+      "dung": false,
+      "sua": "他答应了一声，随即把手里的东西递给了我。",
+      "giai": "随即 phải có việc thứ nhất đi trước và đứng trước động từ, không tách bằng dấu phẩy như liên từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他说完必要的话之后随即转身离去。",
+      "dung": true,
+      "giai": "Nói xong → ngay sau đó quay người đi: 随即 + 转身 — đúng (练一练 (2))."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我明年随即去中国留学。",
+      "dung": false,
+      "sua": "我明年就去中国留学。",
+      "giai": "随即 không dùng cho kế hoạch tương lai xa, không có hành động làm mốc ngay trước."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nghe xong, cậu ấy ngẩn ra một lúc, rồi liền bật cười.",
+      "dap": [
+       "听完以后，他愣了一下，随即笑了起来。",
+       "他听完愣了一下，随即笑了起来。",
+       "听完，他愣了一会儿，随即笑了。"
+      ],
+      "py": "Tīngwán yǐhòu, tā lèngle yíxià, suíjí xiàole qǐlái.",
+      "goiY": "Dịch sang tiếng Trung, dùng 随即 (và 愣 = ngẩn ra).",
+      "giai": "愣了一下 (việc 1)，随即 + 笑了起来 (việc 2)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mưa vừa tạnh, cầu vồng liền xuất hiện ngay sau đó.",
+      "dap": [
+       "雨停了，彩虹随即出现了。",
+       "雨一停，天上随即出现了彩虹。",
+       "雨停以后，彩虹随即出现在天空中。"
+      ],
+      "py": "Yǔ tíng le, cǎihóng suíjí chūxiàn le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 随即.",
+      "giai": "Chủ ngữ vế sau (彩虹) + 随即 + V."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "时间紧迫，你们先走，我＿＿＿。",
+      "goiY": "Viết lại \"然后我马上动身\" bằng 随即 (练习2 ① của sách).",
+      "mau": "时间紧迫，你们先走，我随即动身。",
+      "can": [
+       [
+        "随即"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他答应了一声，＿＿＿把手里的东西递给我。",
+      "goiY": "Đặt 随即 vào đúng chỗ (练一练 (1) của sách).",
+      "mau": "他答应了一声，随即把手里的东西递给我。",
+      "can": [
+       [
+        "随即"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他匆匆进了屋，说完必要的话之后＿＿＿，根本不顾及对方究竟听懂了多少。",
+      "goiY": "Dùng 随即 + \"quay người rời đi\" (练一练 (2) của sách).",
+      "mau": "他匆匆进了屋，说完必要的话之后随即转身离去，根本不顾及对方究竟听懂了多少。",
+      "can": [
+       [
+        "随即"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「宁愿」",
+  "tenVn": "",
+  "cauTruc": [
+   "宁愿 + A，也要 + B: thà chịu A cũng phải đạt B",
+   "宁愿 + A，也不 + B: thà A chứ không B",
+   "Cũng nói: 宁可, 宁肯"
+  ],
+  "giaiThich": "宁愿 là PHÓ TỪ, dùng trong câu ghép LỰA CHỌN: sau khi so sánh lợi – hại, được – mất, chọn lấy một cách làm (thường là cách chịu thiệt hơn) — \"thà\". Khung thường gặp: 宁愿……也要…… (thà chịu A cũng phải đạt B) và 宁愿……也不…… (thà A chứ không B). Có thể nói 宁可, 宁肯. Vế sau dùng 也, không dùng 但是. 宁 ở đây đọc nìng.",
+  "viDu": [
+   {
+    "zh": "我心中难免不解：古人是怎么想的，愣是编出个拔苗助长的故事来？要是我，宁愿用别的比喻。",
+    "py": "Wǒ xīn zhōng nánmiǎn bùjiě: gǔrén shì zěnme xiǎng de, lèng shì biānchū ge bámiáo-zhùzhǎng de gùshi lái? Yàoshi wǒ, nìngyuàn yòng biéde bǐyù.",
+    "vn": "Trong lòng tôi không khỏi thắc mắc: người xưa nghĩ thế nào mà lại cứ bịa ra câu chuyện kéo mạ cho mau lớn? Nếu là tôi, tôi thà dùng một phép so sánh khác."
+   },
+   {
+    "zh": "咱们宁愿多花点儿钱，也要买个质量好的。",
+    "py": "Zánmen nìngyuàn duō huā diǎnr qián, yě yào mǎi ge zhìliàng hǎo de.",
+    "vn": "Chúng mình thà tốn thêm chút tiền, cũng phải mua cái chất lượng tốt."
+   },
+   {
+    "zh": "他就是这样，宁愿吃苦受累，也决不求人。",
+    "py": "Tā jiù shì zhèyàng, nìngyuàn chīkǔ shòulèi, yě jué bù qiú rén.",
+    "vn": "Anh ấy là vậy đó, thà chịu khổ chịu mệt chứ nhất quyết không cầu cạnh ai."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我宁愿走路去学校，也坐公共汽车。",
+    "why": "Thiếu 不: muốn loại bỏ phương án B phải nói 宁愿 A，也不 B.",
+    "dung": "我宁愿走路去学校，也不坐公共汽车。"
+   },
+   {
+    "sai": "他宁愿吃苦受累，但是决不求人。",
+    "why": "Vế sau của 宁愿 dùng 也 (也不 / 也要 / 也决不), không dùng 但是.",
+    "dung": "他宁愿吃苦受累，也决不求人。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "咱们",
+       "多花点儿钱，也要买个质量好的。"
+      ],
+      "dap": [
+       [
+        "宁愿"
+       ]
+      ],
+      "chon": [
+       "宁愿",
+       "随即",
+       "连同"
+      ],
+      "goiY": "\"Chúng mình thà tốn thêm tiền, cũng phải mua cái chất lượng tốt.\" (ví dụ của sách)",
+      "giai": "宁愿……也要……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他宁愿吃苦受累，",
+       "决不求人。"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "但是",
+       "而且"
+      ],
+      "goiY": "\"Anh ấy thà chịu khổ chịu mệt chứ nhất quyết không cầu cạnh ai.\" (ví dụ của sách)",
+      "giai": "Vế sau của 宁愿 dùng 也, không dùng 但是."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "要是我，",
+       "用别的比喻。"
+      ],
+      "dap": [
+       [
+        "宁愿"
+       ]
+      ],
+      "chon": [
+       "宁愿",
+       "随即",
+       "一如既往"
+      ],
+      "goiY": "\"Nếu là tôi, tôi thà dùng phép so sánh khác.\" (câu bài khoá)",
+      "giai": "宁愿 có thể dùng một mình khi vế bị loại đã rõ trong ngữ cảnh."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我宁愿一辈子不结婚，也",
+       "嫁给他。"
+      ],
+      "dap": [
+       [
+        "不"
+       ]
+      ],
+      "chon": [
+       "不",
+       "要",
+       "就"
+      ],
+      "goiY": "\"Tôi thà cả đời không lấy chồng chứ không lấy anh ta.\" (练习2 ③)",
+      "giai": "宁愿 A，也不 B: loại bỏ B."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我宁愿少睡会儿觉，也",
+       "把作文写完。"
+      ],
+      "dap": [
+       [
+        "要"
+       ]
+      ],
+      "chon": [
+       "要",
+       "不",
+       "没"
+      ],
+      "goiY": "\"Tôi thà ngủ ít một chút, cũng phải viết xong bài văn.\" (练一练 (3))",
+      "giai": "宁愿 A，也要 B: chịu thiệt A để đạt B."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我",
+       "走路去学校，也不想挤公共汽车。"
+      ],
+      "dap": [
+       [
+        "宁愿",
+        "宁可"
+       ]
+      ],
+      "chon": [
+       "宁愿",
+       "随即",
+       "连同"
+      ],
+      "goiY": "\"Tôi thà đi bộ đến trường chứ không muốn chen xe buýt.\"",
+      "giai": "宁愿 = 宁可 = thà."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "宁愿",
+       "也要",
+       "多花点儿钱",
+       "买个好的",
+       "咱们",
+       "，"
+      ],
+      "dap": [
+       "咱们宁愿多花点儿钱，也要买个好的。"
+      ],
+      "goiY": "Chúng mình thà tốn thêm tiền cũng phải mua cái tốt.",
+      "giai": "S + 宁愿 A，也要 B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "也不",
+       "宁愿",
+       "我",
+       "一辈子不结婚",
+       "嫁给他",
+       "，"
+      ],
+      "dap": [
+       "我宁愿一辈子不结婚，也不嫁给他。"
+      ],
+      "goiY": "Tôi thà cả đời không lấy chồng chứ không lấy anh ta.",
+      "giai": "S + 宁愿 A，也不 B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "宁愿",
+       "吃苦受累",
+       "也",
+       "决不求人",
+       "，"
+      ],
+      "dap": [
+       "他宁愿吃苦受累，也决不求人。"
+      ],
+      "goiY": "Anh ấy thà chịu khổ chứ quyết không cầu người.",
+      "giai": "也 + 决不 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我宁愿走路去学校，也坐公共汽车。",
+      "dung": false,
+      "sua": "我宁愿走路去学校，也不坐公共汽车。",
+      "giai": "Thiếu 不: muốn loại bỏ B phải nói 也不 B."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他宁愿吃苦受累，但是决不求人。",
+      "dung": false,
+      "sua": "他宁愿吃苦受累，也决不求人。",
+      "giai": "Vế sau của 宁愿 dùng 也, không dùng 但是."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "咱们宁愿多花点儿钱，也要买个质量好的。",
+      "dung": true,
+      "giai": "宁愿……也要…… — đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi thà đi bộ nửa tiếng, chứ không muốn chen chúc trên xe buýt.",
+      "dap": [
+       "我宁愿走半个小时路，也不想挤公共汽车。",
+       "我宁愿走半个小时，也不愿意挤公共汽车。",
+       "我宁可走半个小时路，也不想挤公交车。"
+      ],
+      "py": "Wǒ nìngyuàn zǒu bàn ge xiǎoshí lù, yě bù xiǎng jǐ gōnggòng qìchē.",
+      "goiY": "Dịch sang tiếng Trung, dùng 宁愿……也不…….",
+      "giai": "Phương án chấp nhận sau 宁愿, phương án loại bỏ sau 也不."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cô ấy thà ngủ ít một chút, cũng phải ôn xong bài hôm nay.",
+      "dap": [
+       "她宁愿少睡一会儿，也要把今天的课复习完。",
+       "她宁愿少睡会儿觉，也要复习完今天的内容。",
+       "她宁可少睡一点儿，也要把今天的功课复习完。"
+      ],
+      "py": "Tā nìngyuàn shǎo shuì yíhuìr, yě yào bǎ jīntiān de kè fùxí wán.",
+      "goiY": "Dịch sang tiếng Trung, dùng 宁愿……也要…….",
+      "giai": "Chịu thiệt (少睡) + 也要 + mục đích (复习完)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "一个房子条件不错，但到学校需要一个小时；另一个房子条件差些，但五分钟就能走到学校。你选择哪个房子？＿＿＿。",
+      "goiY": "Trả lời bằng câu có 宁愿 (练一练 (1) của sách).",
+      "mau": "我宁愿住条件差些的房子，也不想每天花一个小时去学校。",
+      "can": [
+       [
+        "宁愿"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "坐公共汽车比较舒服，但是路上会堵车，时间没有保证；坐地铁很挤，但是时间有保证。你怎么去？＿＿＿。",
+      "goiY": "Trả lời bằng câu có 宁愿 (练一练 (2) của sách).",
+      "mau": "我宁愿坐地铁挤一点儿，也不愿意坐公共汽车迟到。",
+      "can": [
+       [
+        "宁愿"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "少睡会儿觉，把作文写完；该睡觉就睡觉，作文不写了。你会怎样？＿＿＿。",
+      "goiY": "Trả lời bằng câu có 宁愿 (练一练 (3) của sách).",
+      "mau": "我宁愿少睡会儿觉，也要把作文写完。",
+      "can": [
+       [
+        "宁愿"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「A归A」",
+  "tenVn": "",
+  "cauTruc": [
+   "A归A，(但 / 可) + ……还是 / 也 / 都……",
+   "A = từ ngữ vừa xuất hiện ở câu trước (lặp y hệt)"
+  ],
+  "giaiThich": "A归A là cách nói khẩu ngữ. \"A\" liên quan về nghĩa với câu trước: là từ ngữ đã xuất hiện (toàn bộ hoặc một phần) ở phía trước, có khi là sự khái quát ý câu trên — như 不解 trong bài khoá đã xuất hiện ở câu trước. A归A làm mạnh ý NHƯỢNG BỘ (\"A thì A thật\"), vế sau biểu thị ý đối ứng hoặc CHUYỂN NGƯỢC lại (thường có 但 / 可 / 还是 / 也 / 都). Hai chữ A phải giống hệt nhau.",
+  "viDu": [
+   {
+    "zh": "不解归不解，我每天工作疲倦了，都要去看看那几棵丝瓜。",
+    "py": "Bùjiě guī bùjiě, wǒ měi tiān gōngzuò píjuàn le, dōu yào qù kànkan nà jǐ kē sīguā.",
+    "vn": "Thắc mắc thì thắc mắc, ngày nào làm việc mệt rồi tôi cũng đều ra ngắm mấy cây mướp ấy."
+   },
+   {
+    "zh": "老张心里很不满意：大家都有意见，为什么偏叫我去说？不满归不满，老张也只能去，谁让他是长辈呢！",
+    "py": "Lǎo Zhāng xīnli hěn bù mǎnyì: dàjiā dōu yǒu yìjiàn, wèi shénme piān jiào wǒ qù shuō? Bùmǎn guī bùmǎn, Lǎo Zhāng yě zhǐ néng qù, shéi ràng tā shì zhǎngbèi ne!",
+    "vn": "Ông Trương trong lòng rất không vui: mọi người ai cũng có ý kiến, sao lại cứ bắt tôi đi nói? Không vui thì không vui, ông Trương cũng đành phải đi, ai bảo ông là bậc bề trên chứ!"
+   },
+   {
+    "zh": "朋友之间，开玩笑归开玩笑，但千万别过了头。",
+    "py": "Péngyou zhījiān, kāi wánxiào guī kāi wánxiào, dàn qiānwàn bié guòle tóu.",
+    "vn": "Giữa bạn bè với nhau, đùa thì đùa, nhưng tuyệt đối đừng quá trớn."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "不解归不理解，我每天都要去看看那几棵丝瓜。",
+    "why": "Hai chữ A trong A归A phải lặp lại y hệt nhau.",
+    "dung": "不解归不解，我每天都要去看看那几棵丝瓜。"
+   },
+   {
+    "sai": "喜欢归喜欢，他买了那件很贵的衣服。",
+    "why": "Vế sau phải có ý chuyển ngược so với A (thích — nhưng không mua); \"thích nên mua\" không có sự đối ứng, không dùng A归A.",
+    "dung": "喜欢归喜欢，那件衣服太贵了，他还是没买。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "不解",
+       "不解，我每天工作疲倦了，都要去看看那几棵丝瓜。"
+      ],
+      "dap": [
+       [
+        "归"
+       ]
+      ],
+      "chon": [
+       "归",
+       "就",
+       "和"
+      ],
+      "goiY": "\"Thắc mắc thì thắc mắc, ngày nào mệt tôi cũng ra ngắm mấy cây mướp.\" (câu bài khoá)",
+      "giai": "Khung A归A: chữ 归 nằm giữa hai chữ A giống nhau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "开玩笑归",
+       "，但千万别过了头。"
+      ],
+      "dap": [
+       [
+        "开玩笑"
+       ]
+      ],
+      "chon": [
+       "开玩笑",
+       "说笑话",
+       "玩儿"
+      ],
+      "goiY": "\"Đùa thì đùa, nhưng tuyệt đối đừng quá trớn.\" (ví dụ của sách)",
+      "giai": "Hai chữ A phải lặp y hệt: 开玩笑归开玩笑."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "不满归不满，老张",
+       "只能去，谁让他是长辈呢！"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "更",
+       "再"
+      ],
+      "goiY": "\"Không vui thì không vui, ông Trương cũng đành phải đi.\" (ví dụ của sách)",
+      "giai": "Vế sau hay có 也 / 还是 / 都 thể hiện chuyển ý."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "生气归生气，我",
+       "会帮你的。"
+      ],
+      "dap": [
+       [
+        "还是"
+       ]
+      ],
+      "chon": [
+       "还是",
+       "所以",
+       "因此"
+      ],
+      "goiY": "\"Giận thì giận, tớ vẫn sẽ giúp cậu.\" (练一练 (2))",
+      "giai": "还是 = vẫn — chuyển ý so với 生气; 所以 / 因此 là quan hệ nhân quả, sai logic."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "喜欢归喜欢，价格那么贵，他还是决定",
+       "。"
+      ],
+      "dap": [
+       [
+        "不买了"
+       ]
+      ],
+      "chon": [
+       "不买了",
+       "马上买",
+       "买两件"
+      ],
+      "goiY": "\"Thích thì thích, giá đắt thế nên cậu ấy vẫn quyết định không mua.\" (练一练 (3))",
+      "giai": "Vế sau phải NGƯỢC với A (thích → không mua)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "咱们好",
+       "好，你要是做事不公平，我照样批评你。"
+      ],
+      "dap": [
+       [
+        "归"
+       ]
+      ],
+      "chon": [
+       "归",
+       "很",
+       "又"
+      ],
+      "goiY": "\"Chúng ta thân thì thân, nhưng cậu mà làm việc thiếu công bằng thì tớ vẫn phê bình như thường.\" (练一练 (1))",
+      "giai": "好归好 + chuyển ý; 照样 = vẫn như thường (ôn bài 10)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "归",
+       "累",
+       "累",
+       "，",
+       "作业",
+       "总算写完了"
+      ],
+      "dap": [
+       "累归累，作业总算写完了。"
+      ],
+      "goiY": "Mệt thì mệt, bài tập cuối cùng cũng làm xong rồi.",
+      "giai": "A归A đứng đầu câu, vế sau nêu mặt đối lập."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "担心",
+       "归",
+       "担心",
+       "，",
+       "我",
+       "还是",
+       "每天去浇水"
+      ],
+      "dap": [
+       "担心归担心，我还是每天去浇水。"
+      ],
+      "goiY": "Lo thì lo, tôi vẫn ngày nào cũng ra tưới nước.",
+      "giai": "A归A，S + 还是 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "开玩笑归开玩笑",
+       "，",
+       "但",
+       "千万别",
+       "过了头"
+      ],
+      "dap": [
+       "开玩笑归开玩笑，但千万别过了头。"
+      ],
+      "goiY": "Đùa thì đùa, nhưng đừng quá trớn.",
+      "giai": "A归A，但……"
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "不解归不理解，我每天都要去看看那几棵丝瓜。",
+      "dung": false,
+      "sua": "不解归不解，我每天都要去看看那几棵丝瓜。",
+      "giai": "Hai chữ A phải giống hệt nhau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "喜欢归喜欢，他买了那件很贵的衣服。",
+      "dung": false,
+      "sua": "喜欢归喜欢，那件衣服太贵了，他还是没买。",
+      "giai": "Vế sau phải có ý chuyển ngược với A; \"thích rồi mua\" không có đối ứng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "生气归生气，他还是把事情做完了。",
+      "dung": true,
+      "giai": "Giận thì giận, nhưng vẫn làm xong việc — có chuyển ý, đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Mệt thì mệt thật, nhưng ngày nào cô ấy cũng ra tưới cây.",
+      "dap": [
+       "累归累，她每天都去给植物浇水。",
+       "累归累，她还是每天都去浇花。",
+       "累归累，她每天还是要去给花浇水。"
+      ],
+      "py": "Lèi guī lèi, tā měi tiān dōu qù gěi zhíwù jiāo shuǐ.",
+      "goiY": "Dịch sang tiếng Trung, dùng A归A.",
+      "giai": "\"A thì A thật, nhưng…\" = A归A，……."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Đùa thì đùa, nhưng đừng lấy khuyết điểm của người khác ra làm trò cười.",
+      "dap": [
+       "开玩笑归开玩笑，但别拿别人的缺点开玩笑。",
+       "开玩笑归开玩笑，可别拿别人的缺点取笑。",
+       "开玩笑归开玩笑，但不要嘲笑别人的缺点。"
+      ],
+      "py": "Kāi wánxiào guī kāi wánxiào, dàn bié ná biérén de quēdiǎn kāi wánxiào.",
+      "goiY": "Dịch sang tiếng Trung, dùng A归A (嘲笑 ôn bài 1).",
+      "giai": "A归A，但 + lời khuyên ngược lại."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "咱们好归好，你要是做事不公平＿＿＿。",
+      "goiY": "Hoàn thành câu (练一练 (1) của sách): vế sau chuyển ý ngược với 好归好.",
+      "mau": "咱们好归好，你要是做事不公平，我照样会批评你。",
+      "can": [
+       [
+        "批评",
+        "不客气",
+        "不会",
+        "照样"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "生气归生气，你＿＿＿，我还是会帮你的。",
+      "goiY": "Hoàn thành câu (练一练 (2) của sách): nêu điều kiện.",
+      "mau": "生气归生气，你要是真遇到了困难，我还是会帮你的。",
+      "can": [
+       [
+        "要是",
+        "如果",
+        "困难",
+        "需要"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "喜欢归喜欢，价格那么贵，他还是决定＿＿＿。",
+      "goiY": "Hoàn thành câu (练一练 (3) của sách): quyết định ngược với 喜欢.",
+      "mau": "喜欢归喜欢，价格那么贵，他还是决定不买了。",
+      "can": [
+       [
+        "不买",
+        "放弃",
+        "算了"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,112 @@
+{
+ "zh": "家乡的萝卜饼",
+ "py": "Jiāxiāng de luóbobǐng",
+ "vn": "Bánh củ cải quê nhà",
+ "topic": "Unit 7 交流文化 · Ẩm thực quê hương &amp; cách làm bánh củ cải",
+ "vocabCount": 44,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "般",
+   "explain": "般 là trợ từ, nghĩa là “一样”, “似的” (giống như). Đứng SAU danh từ, tạo thành cụm làm định ngữ (阳光般的笑容) hoặc trạng ngữ (雨点般往下掉). Phía trước hay có 像 / 如. Sắc thái văn viết, giàu hình ảnh.",
+   "rule": "(像 / 如) N + <strong style=\"color:var(--sky-d)\">般</strong> + 的 + N (định ngữ)　|　(像 / 如) N + <strong style=\"color:var(--sky-d)\">般</strong> + (地) + V / Adj (trạng ngữ)",
+   "examples": [
+    {
+     "zh": "……紫的像山泉般清淡可口。",
+     "py": "…… zǐ de xiàng shānquán bān qīngdàn kěkǒu.",
+     "vn": "… củ tím thanh mát, ngon miệng như nước suối trên núi."
+    },
+    {
+     "zh": "说起那段往事，她的脸上露出了阳光般的笑容。",
+     "py": "Shuōqǐ nà duàn wǎngshì, tā de liǎn shang lùchūle yángguāng bān de xiàoróng.",
+     "vn": "Nhắc lại chuyện xưa, trên mặt cô ấy nở nụ cười rạng rỡ như ánh nắng."
+    },
+    {
+     "zh": "望着爸爸远去的背影，我的眼泪雨点般不停地往下掉。",
+     "py": "Wàngzhe bàba yuǎnqù de bèiyǐng, wǒ de yǎnlèi yǔdiǎn bān bù tíng de wǎng xià diào.",
+     "vn": "Nhìn theo bóng lưng bố xa dần, nước mắt tôi rơi không ngừng như mưa."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "她的脸上露出了阳光般一样的笑容。",
+     "why": "般 đã mang nghĩa “一样”, dùng thêm 一样 là thừa. Chọn một trong hai: 阳光般的 hoặc 像阳光一样的.",
+     "right": "她的脸上露出了阳光般的笑容。"
+    },
+    {
+     "wrong": "她的脸上露出了般阳光的笑容。",
+     "why": "般 là trợ từ đứng SAU danh từ so sánh, không đứng trước.",
+     "right": "她的脸上露出了阳光般的笑容。"
+    }
+   ]
+  },
+  {
+   "point": "闻",
+   "explain": "闻 có hai cách dùng. Làm NGỮ TỐ (trong từ ghép, thành ngữ): nghĩa là “nghe thấy; điều nghe được, tin tức” — 新闻, 见闻, 百闻不如一见, 闻声赶来. Làm ĐỘNG TỪ độc lập: dùng mũi cảm nhận mùi, tức là NGỬI — 闻到香味, 闻了闻. Người Việt dễ nhầm vì âm Hán–Việt “văn” = nghe; nhưng “nghe” trong câu thường ngày là 听.",
+   "rule": "Ngữ tố (nghe, tin tức): 新<strong style=\"color:var(--sky-d)\">闻</strong> · 见<strong style=\"color:var(--sky-d)\">闻</strong> · 百<strong style=\"color:var(--sky-d)\">闻</strong>不如一见　|　Động từ (ngửi): <strong style=\"color:var(--sky-d)\">闻</strong> + 到 / <strong style=\"color:var(--sky-d)\">闻</strong>一<strong style=\"color:var(--sky-d)\">闻</strong> / <strong style=\"color:var(--sky-d)\">闻</strong>着 + Adj",
+   "examples": [
+    {
+     "zh": "火最好用文火，等能闻到香味时，便可开锅了。",
+     "py": "Huǒ zuìhǎo yòng wénhuǒ, děng néng wéndào xiāngwèi shí, biàn kě kāi guō le.",
+     "vn": "Lửa tốt nhất để nhỏ, đợi khi ngửi thấy mùi thơm là có thể mở vung."
+    },
+    {
+     "zh": "他把壶盖儿打开，闻了闻，原来是酒。",
+     "py": "Tā bǎ húgàir dǎkāi, wénle wén, yuánlái shì jiǔ.",
+     "vn": "Anh ấy mở nắp bình ra, ngửi ngửi, hoá ra là rượu."
+    },
+    {
+     "zh": "你们到各地去旅游，一定会增加对中国的了解，老话说：百闻不如一见。",
+     "py": "Nǐmen dào gè dì qù lǚyóu, yídìng huì zēngjiā duì Zhōngguó de liǎojiě, lǎohuà shuō: bǎi wén bùrú yí jiàn.",
+     "vn": "Các bạn đi du lịch khắp nơi chắc chắn sẽ hiểu thêm về Trung Quốc, người xưa nói: trăm nghe không bằng một thấy."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我闻到外面有人在唱歌。",
+     "why": "Động từ 闻 trong câu hiện đại là NGỬI. Nghe âm thanh phải dùng 听.",
+     "right": "我听到外面有人在唱歌。"
+    },
+    {
+     "wrong": "这朵花闻很香。",
+     "why": "闻 làm vị ngữ miêu tả cần 着 / 起来: 闻着很香, 闻起来很香.",
+     "right": "这朵花闻着很香。"
+    }
+   ]
+  },
+  {
+   "point": "趁",
+   "explain": "趁 là giới từ, nghĩa là “利用（时间、机会）” — tận dụng thời gian, cơ hội, điều kiện đang có để làm việc gì. Sau 趁 có thể là danh từ, cụm động từ, tính từ hoặc một mệnh đề nhỏ; có thể nói 趁着. Cụm 趁 + … luôn đứng TRƯỚC động từ chính.",
+   "rule": "<strong style=\"color:var(--sky-d)\">趁</strong> (着) + N / VP / Adj / mệnh đề + V　|　<strong style=\"color:var(--sky-d)\">趁</strong>热 · <strong style=\"color:var(--sky-d)\">趁</strong>早 · <strong style=\"color:var(--sky-d)\">趁</strong>年轻 · <strong style=\"color:var(--sky-d)\">趁</strong>这个机会",
+   "examples": [
+    {
+     "zh": "趁着这几天休息，我们去看看房子吧。",
+     "py": "Chènzhe zhè jǐ tiān xiūxi, wǒmen qù kànkan fángzi ba.",
+     "vn": "Nhân mấy hôm nay được nghỉ, chúng ta đi xem nhà đi."
+    },
+    {
+     "zh": "趁电影还没开始，我去买两瓶矿泉水。",
+     "py": "Chèn diànyǐng hái méi kāishǐ, wǒ qù mǎi liǎng píng kuàngquánshuǐ.",
+     "vn": "Nhân lúc phim chưa chiếu, tôi đi mua hai chai nước khoáng."
+    },
+    {
+     "zh": "萝卜饼要趁热吃，喜欢口味重的，还可以加少许酱油和醋。",
+     "py": "Luóbobǐng yào chèn rè chī, xǐhuan kǒuwèi zhòng de, hái kěyǐ jiā shǎoxǔ jiàngyóu hé cù.",
+     "vn": "Bánh củ cải phải ăn lúc còn nóng, ai thích vị đậm thì có thể thêm chút xì dầu và giấm."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "萝卜饼要吃趁热。",
+     "why": "Cụm 趁热 là trạng ngữ, phải đứng TRƯỚC động từ 吃 — không đặt cuối câu như tiếng Việt “ăn lúc còn nóng”.",
+     "right": "萝卜饼要趁热吃。"
+    },
+    {
+     "wrong": "趁下大雨，比赛取消了。",
+     "why": "趁 nghĩa là chủ động TẬN DỤNG thời cơ để làm việc gì; ở đây chỉ nói nguyên nhân → dùng 因为 / 由于.",
+     "right": "因为下大雨，比赛取消了。"
+    }
+   ]
+  }
+ ]
+}

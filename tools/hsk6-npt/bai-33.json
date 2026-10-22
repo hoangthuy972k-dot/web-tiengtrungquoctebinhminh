@@ -1,0 +1,927 @@
+[
+ {
+  "so": "1",
+  "ten": "「A的A，B的B」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ tập thể + A的A，B的B — người thì A, người thì B",
+   "A, B là động từ / cụm động từ / tính từ",
+   "Có thể 3 vế + vế tổng kết (…，妈妈愁得不得了)"
+  ],
+  "giaiThich": "Khuôn \"A的A，B的B\" dùng để LIỆT KÊ vài tình huống, vài kiểu hành động khác nhau của một nhóm người / sự vật — \"người thì A, người thì B\"; mang sắc thái KHẨU NGỮ, sinh động. A, B thường là động từ / cụm động từ (看电影的看电影，打电话的打电话 — bài khoá), cũng có thể là tính từ (红的红，绿的绿; 老的老，小的小，病的病). Phía trước thường có chủ ngữ chỉ một tập thể (大家 / 人们 / 一家子 / 一树的桃); có thể liệt kê 2–3 vế, sau đó hay có một vế tổng kết (漂亮极了 / 妈妈愁得不得了). Hai phần của mỗi vế phải GIỐNG HỆT nhau (跑的跑, không nói *跑的跳).",
+  "viDu": [
+   {
+    "zh": "进了果园，大家看到一树的桃，红的红，绿的绿，漂亮极了。",
+    "py": "Jìnle guǒyuán, dàjiā kàndào yí shù de táo, hóng de hóng, lǜ de lǜ, piàoliang jí le.",
+    "vn": "Vào vườn cây, mọi người thấy cả cây đào, quả thì đỏ, quả thì xanh, đẹp vô cùng."
+   },
+   {
+    "zh": "坐在宽敞座椅中的人们，享受着齐全的软硬件设施，看电影的看电影，打电话的打电话……",
+    "py": "Zuò zài kuānchang zuòyǐ zhōng de rénmen, xiǎngshòuzhe qíquán de ruǎn-yìngjiàn shèshī, kàn diànyǐng de kàn diànyǐng, dǎ diànhuà de dǎ diànhuà……",
+    "vn": "Những người ngồi trên các ghế rộng rãi tận hưởng đầy đủ tiện nghi, người thì xem phim, người thì gọi điện…"
+   },
+   {
+    "zh": "信号灯变绿了，前面的汽车还是不走，后面一长串汽车的司机按喇叭的按喇叭，探头的探头。",
+    "py": "Xìnhàodēng biàn lǜ le, qiánmiàn de qìchē háishi bù zǒu, hòumiàn yì cháng chuàn qìchē de sījī àn lǎba de àn lǎba, tàn tóu de tàn tóu.",
+    "vn": "Đèn đã chuyển xanh, xe phía trước vẫn không đi, tài xế cả dãy xe dài phía sau người thì bấm còi, người thì thò đầu ra nhìn."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "晚会上，大家唱的跳，跳的唱。",
+    "why": "Mỗi vế phải lặp lại CÙNG một từ ở hai bên 的: 唱的唱, 跳的跳.",
+    "dung": "晚会上，大家唱的唱，跳的跳。"
+   },
+   {
+    "sai": "我唱的唱，跳的跳，高兴极了。",
+    "why": "Khuôn này liệt kê hoạt động của NHIỀU người (người thì…, người thì…); chủ ngữ phải là tập thể, không dùng cho một người.",
+    "dung": "我们唱的唱，跳的跳，高兴极了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "车上的人们看电影的看电影，打电话的",
+       "。"
+      ],
+      "dap": [
+       [
+        "打电话"
+       ]
+      ],
+      "chon": [
+       "打电话",
+       "看电影",
+       "玩手机"
+      ],
+      "goiY": "\"Người thì xem phim, người thì gọi điện.\" (câu bài khoá)",
+      "giai": "Hai bên 的 phải giống hệt nhau: 打电话的打电话."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "进了果园，大家看到一树的桃，红的红，",
+       "的绿，漂亮极了。"
+      ],
+      "dap": [
+       [
+        "绿"
+       ]
+      ],
+      "chon": [
+       "绿",
+       "红",
+       "黄"
+      ],
+      "goiY": "\"Quả thì đỏ, quả thì xanh.\" (ví dụ của sách)",
+      "giai": "Vế thứ hai lặp lại chính từ đứng sau: 绿的绿."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "玩儿了一天，大家饿的饿，",
+       "的渴。"
+      ],
+      "dap": [
+       [
+        "渴"
+       ]
+      ],
+      "chon": [
+       "渴",
+       "累",
+       "饱"
+      ],
+      "goiY": "\"Người thì đói, người thì khát.\" (练一练)",
+      "giai": "Lặp lại từ: 渴的渴."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "晚会上，大家",
+       "的唱，跳的跳，高兴得不得了。"
+      ],
+      "dap": [
+       [
+        "唱"
+       ]
+      ],
+      "chon": [
+       "唱",
+       "说",
+       "笑"
+      ],
+      "goiY": "\"Người thì hát, người thì nhảy.\" (练一练)",
+      "giai": "Vế đầu: 唱的唱."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那一年，一家子老的老，",
+       "的小，病的病，妈妈愁得不得了。"
+      ],
+      "dap": [
+       [
+        "小"
+       ]
+      ],
+      "chon": [
+       "小",
+       "少",
+       "大"
+      ],
+      "goiY": "\"Người thì già, người thì nhỏ, người thì ốm.\" (练一练)",
+      "giai": "Tính từ cũng dùng được trong khuôn: 小的小."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "司机们按喇叭的按喇叭，",
+       "的探头。"
+      ],
+      "dap": [
+       [
+        "探头"
+       ]
+      ],
+      "chon": [
+       "探头",
+       "开车",
+       "停车"
+      ],
+      "goiY": "\"Người thì bấm còi, người thì thò đầu ra.\" (ví dụ của sách)",
+      "giai": "Cụm động từ: 探头的探头."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "运动场上，",
+       "跑的跑，",
+       "跳的跳",
+       "大家"
+      ],
+      "dap": [
+       "运动场上，大家跑的跑，跳的跳。"
+      ],
+      "goiY": "Trên sân vận động, người thì chạy, người thì nhảy.",
+      "giai": "Chủ ngữ tập thể 大家 đứng trước khuôn A的A，B的B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "看电影的看电影，",
+       "坐在车上的人们",
+       "打电话的打电话"
+      ],
+      "dap": [
+       "坐在车上的人们看电影的看电影，打电话的打电话。"
+      ],
+      "goiY": "Những người trên tàu người thì xem phim, người thì gọi điện.",
+      "giai": "Chủ ngữ + A的A，B的B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "老的老，小的小，",
+       "一家子",
+       "妈妈愁得不得了",
+       "病的病，"
+      ],
+      "dap": [
+       "一家子老的老，小的小，病的病，妈妈愁得不得了。"
+      ],
+      "goiY": "Cả nhà người thì già, người thì nhỏ, người thì ốm, mẹ lo đến phát sầu.",
+      "giai": "Ba vế liệt kê + vế tổng kết."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "下课了，同学们聊天的聊天，睡觉的睡觉。",
+      "dung": true,
+      "giai": "Đúng: chủ ngữ tập thể + 聊天的聊天，睡觉的睡觉."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "晚会上，大家唱的跳，跳的唱。",
+      "dung": false,
+      "sua": "晚会上，大家唱的唱，跳的跳。",
+      "giai": "Hai bên 的 phải là cùng một từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我看书的看书，写字的写字。",
+      "dung": false,
+      "sua": "我们看书的看书，写字的写字。",
+      "giai": "Khuôn này dùng cho nhiều người, không dùng cho một mình 我."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Giờ ra chơi, các bạn người thì chơi bóng, người thì đọc sách.",
+      "dap": [
+       "课间，同学们打球的打球，看书的看书。",
+       "下课后，同学们打球的打球，看书的看书。",
+       "课间休息时，同学们打球的打球，看书的看书。"
+      ],
+      "py": "Kèjiān, tóngxuémen dǎ qiú de dǎ qiú, kàn shū de kàn shū.",
+      "goiY": "Dịch sang tiếng Trung, dùng A的A，B的B.",
+      "giai": "\"Người thì A, người thì B\" = A的A，B的B."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Ở chợ hoa ngày Tết, hoa thì đỏ, hoa thì vàng, đẹp vô cùng.",
+      "dap": [
+       "春节的花市上，花儿红的红，黄的黄，漂亮极了。",
+       "过年的花市上，花红的红，黄的黄，漂亮极了。",
+       "春节花市上的花红的红，黄的黄，美极了。"
+      ],
+      "py": "Chūnjié de huāshì shang, huār hóng de hóng, huáng de huáng, piàoliang jí le.",
+      "goiY": "Dịch sang tiếng Trung, dùng A的A，B的B với tính từ.",
+      "giai": "Tính từ cũng vào được khuôn: 红的红，黄的黄."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "运动场上，大家＿＿＿。",
+      "goiY": "Dùng A的A，B的B hoàn thành câu (练习2 (2) của sách).",
+      "mau": "运动场上，大家跑的跑，跳的跳。",
+      "can": [
+       [
+        "跑的跑"
+       ],
+       [
+        "跳的跳"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "那一年，爸爸病了，爷爷奶奶年岁已高，我们姐弟年龄还小，一家子＿＿＿，妈妈愁得不得了。",
+      "goiY": "Dùng A的A，B的B hoàn thành đoạn (练一练 (1) của sách: A + E).",
+      "mau": "那一年，爸爸病了，爷爷奶奶年岁已高，我们姐弟年龄还小，一家子老的老，小的小，病的病，妈妈愁得不得了。",
+      "can": [
+       [
+        "老的老"
+       ],
+       [
+        "小的小"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "玩儿了一天，大家＿＿＿，迫不及待地想吃顿可口的饭菜。",
+      "goiY": "Dùng A的A，B的B hoàn thành đoạn (练一练 (2) của sách: B + C).",
+      "mau": "玩儿了一天，大家饿的饿，渴的渴，迫不及待地想吃顿可口的饭菜。",
+      "can": [
+       [
+        "饿的饿"
+       ],
+       [
+        "渴的渴"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「一时」",
+  "tenVn": "",
+  "cauTruc": [
+   "① Chủ ngữ + 一时 + (竟 / 没 / 不) + V — nhất thời, bất chợt",
+   "一时 + 冲动 / 心急 / 糊涂 (định ngữ, trạng thái tạm thời)",
+   "② 一时A，一时B — lúc thì A lúc thì B (= 时而……时而……)"
+  ],
+  "giaiThich": "\"一时\" làm PHÓ TỪ có hai nghĩa chính. ① Biểu thị hành vi xảy ra TẠM THỜI, NGẪU NHIÊN hoặc ĐỘT NGỘT (nhất thời, trong chốc lát): 一时竟忘了他叫什么名字 (bài khoá), 一时心急 / 一时冲动 / 一时想不起来 / 一时动弹不得 — hay đi với phủ định (想不起来, 没法, 说不出) và với 竟 để nhấn mạnh bất ngờ. ② Dùng LẶP LẠI \"一时……一时……\" biểu thị các hành vi, trạng thái khác nhau XEN KẼ nhau (lúc thì…, lúc thì…), giống \"时而……时而……\": 一时冷，一时热; 一时太阳当空，一时阴雨绵绵. Vị trí: sau chủ ngữ, trước vị ngữ (他一时心急), hoặc làm định ngữ trước danh từ trừu tượng (一时冲动).",
+  "viDu": [
+   {
+    "zh": "我感叹初中时，班里那个贵族气十足的男生，他叫……唉，一时竟忘了他叫什么名字。",
+    "py": "Wǒ gǎntàn chūzhōng shí, bān li nàge guìzúqì shízú de nánshēng, tā jiào…… ài, yìshí jìng wàngle tā jiào shénme míngzi.",
+    "vn": "Tôi cảm thán về cậu bạn đầy vẻ quý tộc hồi cấp hai, cậu ấy tên là… ôi, nhất thời lại quên mất tên cậu ấy."
+   },
+   {
+    "zh": "接到丈夫病危的电话，她一时心急，连门都没有锁，就冲出家门，直奔医院而去。",
+    "py": "Jiēdào zhàngfu bìngwēi de diànhuà, tā yìshí xīnjí, lián mén dōu méiyǒu suǒ, jiù chōngchū jiāmén, zhí bèn yīyuàn ér qù.",
+    "vn": "Nhận được điện thoại báo chồng nguy kịch, chị ấy nhất thời cuống lên, đến cửa cũng không khoá, lao ra khỏi nhà chạy thẳng đến bệnh viện."
+   },
+   {
+    "zh": "高原上天气变化大，一时太阳当空，一时阴雨绵绵是常有的事。",
+    "py": "Gāoyuán shang tiānqì biànhuà dà, yìshí tàiyáng dāngkōng, yìshí yīnyǔ miánmián shì cháng yǒu de shì.",
+    "vn": "Trên cao nguyên thời tiết thay đổi thất thường, lúc thì nắng chang chang, lúc thì mưa dầm dề là chuyện thường."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他一时每天都去跑步。",
+    "why": "一时 chỉ sự việc tạm thời, bất chợt; không dùng với thói quen lâu dài (每天都).",
+    "dung": "他每天都去跑步。（或：他一时想不起来今天有没有跑步。）"
+   },
+   {
+    "sai": "他的病好些了，身上一时冷，时而热的情况没有了。",
+    "why": "Khuôn lặp phải đồng bộ: 一时……一时…… hoặc 时而……时而……, không trộn lẫn.",
+    "dung": "他的病好些了，身上一时冷，一时热的情况没有了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我",
+       "竟忘了他叫什么名字。"
+      ],
+      "dap": [
+       [
+        "一时"
+       ]
+      ],
+      "chon": [
+       "一时",
+       "一向",
+       "一直"
+      ],
+      "goiY": "\"Nhất thời lại quên mất tên cậu ấy.\" (câu bài khoá)",
+      "giai": "Quên tạm thời, bất chợt → 一时."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "接到电话，她一时",
+       "，连门都没有锁就冲出了家门。"
+      ],
+      "dap": [
+       [
+        "心急"
+       ]
+      ],
+      "chon": [
+       "心急",
+       "放心",
+       "耐心"
+      ],
+      "goiY": "\"Chị ấy nhất thời cuống lên…\" (ví dụ của sách)",
+      "giai": "一时心急 = bất chợt cuống quýt."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "买房子是大事，可不能凭一时",
+       "。"
+      ],
+      "dap": [
+       [
+        "冲动"
+       ]
+      ],
+      "chon": [
+       "冲动",
+       "感动",
+       "行动"
+      ],
+      "goiY": "\"Không thể dựa vào bốc đồng nhất thời.\" (练一练)",
+      "giai": "Cụm quen: 一时冲动."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "高原上天气变化大，一时太阳当空，",
+       "阴雨绵绵。"
+      ],
+      "dap": [
+       [
+        "一时"
+       ]
+      ],
+      "chon": [
+       "一时",
+       "一起",
+       "一向"
+      ],
+      "goiY": "\"Lúc thì nắng, lúc thì mưa.\" (ví dụ của sách)",
+      "giai": "Nghĩa ②: 一时……一时…… lặp lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他吃了药，好些了，身上一时冷，一时",
+       "的情况没有了。"
+      ],
+      "dap": [
+       [
+        "热"
+       ]
+      ],
+      "chon": [
+       "热",
+       "病",
+       "累"
+      ],
+      "goiY": "\"Lúc lạnh lúc nóng.\" (ví dụ của sách)",
+      "giai": "一时冷，一时热: hai trạng thái trái ngược xen kẽ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "路途遥远，我们一时",
+       "估计到达的时间。"
+      ],
+      "dap": [
+       [
+        "没法"
+       ]
+      ],
+      "chon": [
+       "没法",
+       "一定",
+       "已经"
+      ],
+      "goiY": "\"Nhất thời chưa thể ước tính giờ đến.\" (练习2)",
+      "giai": "一时 hay đi với phủ định: 一时没法……."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "一时",
+       "竟",
+       "我",
+       "忘了他的名字"
+      ],
+      "dap": [
+       "我一时竟忘了他的名字。"
+      ],
+      "goiY": "Tôi nhất thời lại quên mất tên anh ấy.",
+      "giai": "Chủ ngữ + 一时 + 竟 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "可一时",
+       "见了面觉得似曾相识，",
+       "又记不起来在哪儿见过"
+      ],
+      "dap": [
+       "见了面觉得似曾相识，可一时又记不起来在哪儿见过。"
+      ],
+      "goiY": "Gặp mặt thấy như đã từng quen, nhưng nhất thời lại không nhớ ra đã gặp ở đâu.",
+      "giai": "一时 đứng sau 可, trước 又 + V (练一练 (1))."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "一时",
+       "动弹不得",
+       "从台阶上摔了下来，",
+       "他一不留神，"
+      ],
+      "dap": [
+       "他一不留神，从台阶上摔了下来，一时动弹不得。"
+      ],
+      "goiY": "Anh ấy sơ ý, ngã từ bậc thềm xuống, nhất thời không cử động được.",
+      "giai": "一时 ở vế kết quả (练一练 (2))."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他一时想不起来那本书放在哪儿了。",
+      "dung": true,
+      "giai": "Đúng: 一时 + phủ định, chỉ tình trạng tạm thời."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他一时每天都坚持锻炼身体。",
+      "dung": false,
+      "sua": "他每天都坚持锻炼身体。",
+      "giai": "一时 không dùng cho thói quen lâu dài."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这里的天气一时晴，时而雨。",
+      "dung": false,
+      "sua": "这里的天气一时晴，一时雨。",
+      "giai": "Khuôn lặp phải đồng bộ: 一时……一时……."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nhìn thấy đề thi, tôi nhất thời không biết nên bắt đầu làm từ câu nào.",
+      "dap": [
+       "看到试卷，我一时不知道该从哪道题开始做。",
+       "看到考题，我一时不知道应该从哪道题做起。",
+       "看到试卷，我一时不知道该先做哪道题。"
+      ],
+      "py": "Kàndào shìjuàn, wǒ yìshí bù zhīdào gāi cóng nǎ dào tí kāishǐ zuò.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一时 (nghĩa ①).",
+      "giai": "一时 + 不知道 = nhất thời không biết."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tâm trạng của cậu ấy mấy hôm nay lúc thì vui, lúc thì buồn.",
+      "dap": [
+       "他这几天的心情一时好，一时坏。",
+       "这几天他的心情一时高兴，一时难过。",
+       "他这几天心情一时好一时坏。"
+      ],
+      "py": "Tā zhè jǐ tiān de xīnqíng yìshí hǎo, yìshí huài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一时……一时…… (nghĩa ②).",
+      "giai": "一时A，一时B = lúc thì A lúc thì B."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "路途遥远，＿＿＿。",
+      "goiY": "Dùng 一时 hoàn thành câu (练习2 (3) của sách).",
+      "mau": "路途遥远，我们一时没法估计到达的时间。",
+      "can": [
+       [
+        "一时"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他一不留神，从台阶上重重地摔了下来，＿＿＿。",
+      "goiY": "Dùng 一时 hoàn thành câu (练一练 (2) của sách).",
+      "mau": "他一不留神，从台阶上重重地摔了下来，一时动弹不得。",
+      "can": [
+       [
+        "一时"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "买房子是大事，要考虑清楚，可不能＿＿＿。",
+      "goiY": "Dùng 一时 hoàn thành câu (练一练 (3) của sách).",
+      "mau": "买房子是大事，要考虑清楚，可不能凭一时冲动。",
+      "can": [
+       [
+        "一时冲动"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「修辞：借代」",
+  "tenVn": "",
+  "cauTruc": [
+   "“X”借代“Y” — không gọi thẳng, mượn cách gọi có liên quan",
+   "đặc điểm → người: 小眼镜 / 大胡子 / 小黄帽",
+   "bộ phận → toàn thể: 几千双眼睛 · tên tiêu biểu → loại người: 诸葛亮"
+  ],
+  "giaiThich": "Phần 篇章修辞 của bài: \"借代\" (hoán dụ) là KHÔNG gọi thẳng tên sự vật, mà mượn một cách gọi khác có liên quan chặt chẽ với nó để thay thế. Các kiểu hay gặp: ① lấy ĐẶC ĐIỂM nổi bật thay cho người: 小眼镜 = người (bé) đeo kính, 大胡子 / 花白胡子 = người có râu, 小黄帽 / 小红帽 = em nhỏ đội mũ vàng / đỏ; ② lấy BỘ PHẬN thay cho toàn thể: 几千双眼睛 = mấy nghìn người; ③ lấy TÊN NGƯỜI TIÊU BIỂU thay cho loại người: 诸葛亮 = người thông minh, liệu việc như thần (bài khoá: 我们班那个料事如神的诸葛亮); ④ lấy VẬT CỤ THỂ thay cho khái niệm: 面包 = cái ăn, cuộc sống; 一草一木、一针一线 = mọi tài sản của dân. Khác 比喻 (so sánh, có 像 / 好像): 借代 không có từ so sánh, cái thay thế ĐỨNG THẲNG vào vị trí của sự vật. Khi đọc hiểu: \"“X”借代“Y”\".",
+  "viDu": [
+   {
+    "zh": "还有，中学我们班那个料事如神的诸葛亮……",
+    "py": "Hái yǒu, zhōngxué wǒmen bān nàge liàoshì-rúshén de Zhūgě Liàng……",
+    "vn": "Còn nữa, \"Gia Cát Lượng\" liệu việc như thần của lớp cấp hai chúng tôi… (诸葛亮 thay cho \"bạn học liệu việc như thần\")"
+   },
+   {
+    "zh": "这个小眼镜就是我的儿子。",
+    "py": "Zhège xiǎo yǎnjìng jiù shì wǒ de érzi.",
+    "vn": "Cậu bé đeo kính này chính là con trai tôi. (小眼镜 thay cho \"người đeo kính nhỏ\")"
+   },
+   {
+    "zh": "汽车停下来，等待放了学的小黄帽们过马路。",
+    "py": "Qìchē tíng xialai, děngdài fàngle xué de xiǎo huángmàomen guò mǎlù.",
+    "vn": "Ô tô dừng lại, chờ các em nhỏ đội mũ vàng vừa tan học qua đường. (小黄帽 thay cho \"học sinh tiểu học đội mũ vàng\")"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他像大胡子一样边说话边朝我走来。",
+    "why": "Có từ so sánh 像……一样 thì là 比喻, không còn là 借代; 借代 phải dùng cái thay thế đứng thẳng vào vị trí người.",
+    "dung": "大胡子边说话边乐呵呵地朝我走来。"
+   },
+   {
+    "sai": "（在正式的请假条里）那个白大褂让我在家休息两天。",
+    "why": "借代 kiểu biệt danh (白大褂, 小眼镜) mang sắc thái khẩu ngữ, đùa vui; văn bản trang trọng phải gọi đúng tên.",
+    "dung": "医生建议我在家休息两天。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这个小",
+       "就是我的儿子。（用小眼镜借代“戴着小眼镜的人”）"
+      ],
+      "dap": [
+       [
+        "眼镜"
+       ]
+      ],
+      "chon": [
+       "眼镜",
+       "帽子",
+       "胡子"
+      ],
+      "goiY": "\"Cậu bé đeo kính này là con tôi.\" (ví dụ của sách)",
+      "giai": "Lấy đặc điểm (cặp kính) thay cho người."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "汽车停下来，等待放了学的小黄",
+       "们过马路。"
+      ],
+      "dap": [
+       [
+        "帽"
+       ]
+      ],
+      "chon": [
+       "帽",
+       "鞋",
+       "车"
+      ],
+      "goiY": "\"Các em đội mũ vàng qua đường.\" (ví dụ của sách)",
+      "giai": "小黄帽 thay cho học sinh tiểu học đội mũ vàng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "中学我们班那个料事如神的",
+       "……"
+      ],
+      "dap": [
+       [
+        "诸葛亮"
+       ]
+      ],
+      "chon": [
+       "诸葛亮",
+       "李芳芳",
+       "漫画家"
+      ],
+      "goiY": "\"Gia Cát Lượng của lớp tôi.\" (câu bài khoá)",
+      "giai": "Tên người tiêu biểu thay cho \"người liệu việc như thần\"."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "几千双",
+       "都盯着你呢，你肩上的责任很重啊。"
+      ],
+      "dap": [
+       [
+        "眼睛"
+       ]
+      ],
+      "chon": [
+       "眼睛",
+       "耳朵",
+       "手"
+      ],
+      "goiY": "\"Mấy nghìn đôi mắt đang dõi theo cậu.\" (练习4)",
+      "giai": "Bộ phận (đôi mắt) thay cho người."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "“老李，你生病了吗？”一个花白",
+       "问道。"
+      ],
+      "dap": [
+       [
+        "胡子"
+       ]
+      ],
+      "chon": [
+       "胡子",
+       "头发",
+       "衣服"
+      ],
+      "goiY": "\"Một bộ râu hoa râm hỏi.\" (练习4)",
+      "giai": "花白胡子 thay cho người có râu hoa râm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为了全家的",
+       "，我也要好好工作呀。"
+      ],
+      "dap": [
+       [
+        "面包"
+       ]
+      ],
+      "chon": [
+       "面包",
+       "工作",
+       "汽车"
+      ],
+      "goiY": "\"Vì miếng ăn của cả nhà.\" (练一练)",
+      "giai": "面包 thay cho cái ăn, cuộc sống."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这个",
+       "就是我的儿子",
+       "小眼镜"
+      ],
+      "dap": [
+       "这个小眼镜就是我的儿子。"
+      ],
+      "goiY": "Cậu bé đeo kính này chính là con trai tôi.",
+      "giai": "小眼镜 đứng thẳng vào vị trí chủ ngữ (người)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "一蹦一跳地走过来",
+       "远远的，",
+       "一个可爱的小红帽"
+      ],
+      "dap": [
+       "远远的，一个可爱的小红帽一蹦一跳地走过来。"
+      ],
+      "goiY": "Từ xa, một cô bé đội mũ đỏ đáng yêu nhảy chân sáo đi tới.",
+      "giai": "小红帽 thay cho người đội mũ đỏ (练习4)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们都很了解",
+       "他的狡猾是出了名的，",
+       "这只老狐狸"
+      ],
+      "dap": [
+       "他的狡猾是出了名的，我们都很了解这只老狐狸。"
+      ],
+      "goiY": "Sự xảo quyệt của hắn thì ai cũng biết, chúng tôi đều hiểu rõ con cáo già này.",
+      "giai": "老狐狸 thay cho \"hắn\" (người xảo quyệt)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "大胡子边说话边乐呵呵地朝我走来。",
+      "dung": true,
+      "giai": "Đúng: 大胡子 là 借代 (người có râu rậm)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "“她的脸红得像苹果一样。”这句话用了借代。",
+      "dung": false,
+      "sua": "“她的脸红得像苹果一样。”这句话用的是比喻，不是借代。",
+      "giai": "Có 像……一样 là so sánh (比喻); 借代 không có từ so sánh."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "（请假条）白大褂让我在家休息两天。",
+      "dung": false,
+      "sua": "医生建议我在家休息两天。",
+      "giai": "Văn bản trang trọng không dùng biệt danh kiểu 借代."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cậu \"Kính Cận\" lớp tôi lại đứng nhất rồi! (dùng 借代)",
+      "dap": [
+       "我们班的小眼镜又考了第一名！",
+       "我们班那个小眼镜又考第一了！",
+       "我们班的“小眼镜”又得了第一名！"
+      ],
+      "py": "Wǒmen bān de xiǎo yǎnjìng yòu kǎole dì-yī míng!",
+      "goiY": "Dịch sang tiếng Trung, dùng 借代 小眼镜.",
+      "giai": "Lấy cặp kính thay cho người đeo kính."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mấy nghìn đôi mắt đang nhìn cậu, cậu nhất định phải cố lên.",
+      "dap": [
+       "几千双眼睛都在看着你，你一定要加油。",
+       "几千双眼睛都盯着你呢，你一定要加油啊。",
+       "几千双眼睛正看着你，你可一定要加油。"
+      ],
+      "py": "Jǐ qiān shuāng yǎnjing dōu zài kànzhe nǐ, nǐ yídìng yào jiāyóu.",
+      "goiY": "Dịch sang tiếng Trung, dùng 借代 (bộ phận thay toàn thể).",
+      "giai": "几千双眼睛 = mấy nghìn người."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "“老李，你有些不舒服吗？你生病了吗？”一个花白胡子问道。——“＿＿”借代“＿＿”。",
+      "goiY": "Chỉ ra cách dùng 借代 (练习4 (1) của sách).",
+      "mau": "“花白胡子”借代“有花白胡子的人”。",
+      "can": [
+       [
+        "花白胡子"
+       ],
+       [
+        "有花白胡子的人",
+        "留着花白胡子的人"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "几千双眼睛都盯着你呢，你肩上的责任很重啊。——“＿＿”借代“＿＿”。",
+      "goiY": "Chỉ ra cách dùng 借代 (练习4 (2) của sách).",
+      "mau": "“几千双眼睛”借代“几千个人”。",
+      "can": [
+       [
+        "几千双眼睛"
+       ],
+       [
+        "几千个人",
+        "几千人"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "远远的，一个可爱的小红帽一蹦一跳地走过来。——“＿＿”借代“＿＿”。",
+      "goiY": "Chỉ ra cách dùng 借代 (练习4 (4) của sách).",
+      "mau": "“小红帽”借代“戴小红帽的人”。",
+      "can": [
+       [
+        "小红帽"
+       ],
+       [
+        "戴小红帽的人",
+        "戴着小红帽的人"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

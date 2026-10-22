@@ -1,0 +1,250 @@
+{
+ "/lessons/hsk4-bai-13.html": {
+  "points": [
+   {
+    "title": "「大概」 so sánh với 「也许」",
+    "errors": [
+     { "wrong": "也许有三分之二的人来了。", "why": "ước lượng SỐ LƯỢNG thì dùng 大概.", "right": "大概有三分之二的人来了。" },
+     { "wrong": "大概以后我会成为一名记者。", "why": "dự định tương lai chưa chắc chắn thì dùng 也许.", "right": "也许以后我会成为一名记者。" },
+     { "wrong": "这只是我的也许想法。", "why": "làm tính từ (“chung chung”) là của 大概.", "right": "这只是我的大概想法。" }
+    ],
+    "items": [
+     { "context": "Ước lượng SỐ LƯỢNG → 大概.", "pre": "", "blank": "大概有三分之二的人来了", "post": "。", "options": ["大概有三分之二的人来了", "也许有三分之二的人来了", "大概也许有三分之二的人来了"], "answer": 0, "explanation": "也许 không ước lượng số lượng." },
+     { "context": "Dự định TƯƠNG LAI chưa chắc chắn → 也许.", "pre": "", "blank": "也许以后我会成为一名记者", "post": "。", "options": ["也许以后我会成为一名记者", "大概以后我会成为一名记者", "大概的以后我会成为记者"], "answer": 0, "explanation": "也许 nêu dự định chưa chắc." },
+     { "context": "大概 làm TÍNH TỪ.", "pre": "这只是我的", "blank": "大概想法", "post": "。", "options": ["大概想法", "也许想法", "也许的想法"], "answer": 0, "explanation": "大概(的) + danh từ = chung chung." },
+     { "context": "Suy đoán với khả năng CAO → 大概.", "pre": "他", "blank": "大概不会来了", "post": "。", "options": ["大概不会来了", "也许大概不会来了", "大概的不会来了"], "answer": 0, "explanation": "大概 phán đoán mạnh hơn 也许." },
+     { "context": "大概 ước lượng THỜI GIAN.", "pre": "我", "blank": "大概八点到", "post": "。", "options": ["大概八点到", "也许八点到的", "大概的八点到"], "answer": 0, "explanation": "大概 + thời gian." },
+     { "context": "Khả năng THẤP hơn → 也许.", "pre": "他", "blank": "也许知道这件事", "post": "。", "options": ["也许知道这件事", "大概的知道这件事", "也许的知道这件事"], "answer": 0, "explanation": "也许 = có lẽ (khả năng thấp)." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "大概有三分之二的人来了。", "isCorrect": true, "explanation": "大概 ước lượng số lượng — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "大概以后我会成为一名记者。", "isCorrect": false, "correctVersion": "也许以后我会成为一名记者。", "explanation": "Dự định chưa chắc → 也许." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这只是我的也许想法。", "isCorrect": false, "correctVersion": "这只是我的大概想法。", "explanation": "也许 không làm tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Khoảng hai phần ba số người đã đến.”", "words": ["大概", "有", "三分之二", "的", "人", "来", "了", "。"], "answer": "大概有三分之二的人来了。", "explanation": "大概 + số lượng." },
+     { "type": "sort", "context": "Sắp xếp: “Có lẽ sau này tôi sẽ trở thành nhà báo.”", "words": ["也许", "以后", "我", "会", "成为", "一", "名", "记者", "。"], "answer": "也许以后我会成为一名记者。", "explanation": "也许 + dự định." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi khoảng tám giờ đến.”", "words": ["我", "大概", "八点", "到", "。"], "answer": "我大概八点到。", "explanation": "大概 + thời gian." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 大概 hay 也许.", "promptLang": "vi", "prompt": "Khoảng hai phần ba số người đã đến.", "answer": "大概有三分之二的人来了。", "answerPy": "Dàgài yǒu sān fēn zhī èr de rén lái le.", "explanation": "Số lượng → 大概." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 大概 hay 也许.", "promptLang": "vi", "prompt": "Có lẽ sau này tôi sẽ trở thành nhà báo.", "answer": "也许以后我会成为一名记者。", "answerPy": "Yěxǔ yǐhòu wǒ huì chéngwéi yì míng jìzhě.", "explanation": "Dự định chưa chắc → 也许." }
+    ]
+   },
+   {
+    "title": "「偶尔」 — thỉnh thoảng",
+    "errors": [
+     { "wrong": "偶尔我每天去。", "why": "偶尔 (tần suất thấp) mâu thuẫn với 每天.", "right": "我偶尔去。" },
+     { "wrong": "我去偶尔。", "why": "偶尔 là phó từ, đứng TRƯỚC động từ.", "right": "我偶尔去。" },
+     { "wrong": "我偶尔的去咖啡馆。", "why": "偶尔 là phó từ, không thêm 的.", "right": "我偶尔去咖啡馆。" }
+    ],
+    "items": [
+     { "context": "“Bình thường tôi ở nhà nấu ăn, thỉnh thoảng mới ra ngoài ăn.”", "pre": "平时我在家做饭，", "blank": "偶尔出去吃", "post": "。", "options": ["偶尔出去吃", "偶尔的出去吃", "出去吃偶尔"], "answer": 0, "explanation": "偶尔 + động từ, đối lập với 平时." },
+     { "context": "Tần suất CAO thì dùng 经常.", "pre": "我", "blank": "经常运动", "post": "。", "options": ["经常运动", "偶尔每天运动", "偶尔运动每天"], "answer": 0, "explanation": "偶尔 ↔ 经常." },
+     { "context": "偶尔 là PHÓ TỪ, trước động từ.", "pre": "我", "blank": "偶尔去咖啡馆", "post": "。", "options": ["偶尔去咖啡馆", "去咖啡馆偶尔", "偶尔的去咖啡馆"], "answer": 0, "explanation": "Chủ ngữ + 偶尔 + động từ." },
+     { "context": "“Anh ấy thỉnh thoảng cũng mắc lỗi.”", "pre": "他", "blank": "偶尔也会出错", "post": "。", "options": ["偶尔也会出错", "也偶尔的会出错", "出错偶尔也会"], "answer": 0, "explanation": "偶尔 + 也会 + động từ." },
+     { "context": "Đối lập với 常常.", "pre": "他常常迟到，", "blank": "偶尔才准时", "post": "。", "options": ["偶尔才准时", "偶尔的才准时", "才偶尔准时吗"], "answer": 0, "explanation": "偶尔才 = hiếm khi mới." },
+     { "context": "“Cuối tuần tôi thỉnh thoảng đi leo núi.”", "pre": "周末我", "blank": "偶尔去爬山", "post": "。", "options": ["偶尔去爬山", "去爬山偶尔", "偶尔的去爬山"], "answer": 0, "explanation": "偶尔去爬山." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "平时我在家做饭，偶尔出去吃。", "isCorrect": true, "explanation": "偶尔 đối lập với 平时 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我偶尔每天去。", "isCorrect": false, "correctVersion": "我偶尔去。", "explanation": "偶尔 mâu thuẫn với 每天." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我偶尔的去咖啡馆。", "isCorrect": false, "correctVersion": "我偶尔去咖啡馆。", "explanation": "Phó từ 偶尔 không thêm 的." },
+     { "type": "sort", "context": "Sắp xếp: “Bình thường tôi nấu ăn ở nhà, thỉnh thoảng mới ra ngoài ăn.”", "words": ["平时", "我", "在", "家", "做饭", "，", "偶尔", "出去", "吃", "。"], "answer": "平时我在家做饭，偶尔出去吃。", "explanation": "平时……，偶尔……." },
+     { "type": "sort", "context": "Sắp xếp: “Cuối tuần tôi thỉnh thoảng đi leo núi.”", "words": ["周末", "我", "偶尔", "去", "爬山", "。"], "answer": "周末我偶尔去爬山。", "explanation": "偶尔去爬山." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy thỉnh thoảng cũng mắc lỗi.”", "words": ["他", "偶尔", "也", "会", "出错", "。"], "answer": "他偶尔也会出错。", "explanation": "偶尔也会." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 偶尔.", "promptLang": "vi", "prompt": "Bình thường tôi nấu ăn ở nhà, thỉnh thoảng mới ra ngoài ăn.", "answer": "平时我在家做饭，偶尔出去吃。", "answerPy": "Píngshí wǒ zài jiā zuòfàn, ǒu'ěr chūqù chī.", "explanation": "偶尔 đối lập với 平时." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 偶尔.", "promptLang": "vi", "prompt": "Cuối tuần tôi thỉnh thoảng đi leo núi.", "answer": "周末我偶尔去爬山。", "answerPy": "Zhōumò wǒ ǒu'ěr qù páshān.", "explanation": "偶尔 + động từ." }
+    ]
+   },
+   {
+    "title": "Giới từ 「由」 — do ai làm",
+    "errors": [
+     { "wrong": "这件事由于我负责。", "why": "由于 chỉ NGUYÊN NHÂN; “do ai làm” là 由.", "right": "这件事由我负责。" },
+     { "wrong": "这件事我由负责。", "why": "由 đứng TRƯỚC người đảm nhận.", "right": "这件事由我负责。" },
+     { "wrong": "由我负责这件事由。", "why": "由 chỉ dùng một lần.", "right": "这件事由我负责。" }
+    ],
+    "items": [
+     { "context": "“Việc này do tôi phụ trách.”", "pre": "这件事", "blank": "由我负责", "post": "。", "options": ["由我负责", "由于我负责", "我由负责"], "answer": 0, "explanation": "由 + người + động từ." },
+     { "context": "Nêu NGUYÊN NHÂN thì dùng 由于.", "pre": "", "blank": "由于下雨", "post": "，比赛取消了。", "options": ["由于下雨", "由下雨", "由于的下雨"], "answer": 0, "explanation": "由于 = do (nguyên nhân)." },
+     { "context": "“Bài này do cô Vương dịch.”", "pre": "这篇文章", "blank": "由王老师翻译", "post": "。", "options": ["由王老师翻译", "由于王老师翻译", "王老师由翻译"], "answer": 0, "explanation": "由 + người + động từ." },
+     { "context": "“Buổi họp do giám đốc chủ trì.”", "pre": "会议", "blank": "由经理主持", "post": "。", "options": ["由经理主持", "由于经理主持", "经理由主持的"], "answer": 0, "explanation": "由经理主持." },
+     { "context": "“Hoạt động lần này do lớp chúng tôi tổ chức.”", "pre": "这次活动", "blank": "由我们班组织", "post": "。", "options": ["由我们班组织", "由于我们班组织", "我们班由组织了"], "answer": 0, "explanation": "由 + đơn vị + động từ." },
+     { "context": "Phân biệt: 被 nêu người CHỊU tác động.", "pre": "我的手机", "blank": "被他拿走了", "post": "。", "options": ["被他拿走了", "由他拿走了", "由于他拿走了"], "answer": 0, "explanation": "由 (người thực hiện nhiệm vụ) ≠ 被 (bị động)." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件事由我负责。", "isCorrect": true, "explanation": "由 + người + động từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件事由于我负责。", "isCorrect": false, "correctVersion": "这件事由我负责。", "explanation": "由于 chỉ nguyên nhân." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件事我由负责。", "isCorrect": false, "correctVersion": "这件事由我负责。", "explanation": "由 đứng trước người." },
+     { "type": "sort", "context": "Sắp xếp: “Việc này do tôi phụ trách.”", "words": ["这", "件", "事", "由", "我", "负责", "。"], "answer": "这件事由我负责。", "explanation": "由我负责." },
+     { "type": "sort", "context": "Sắp xếp: “Bài viết này do cô Vương dịch.”", "words": ["这", "篇", "文章", "由", "王老师", "翻译", "。"], "answer": "这篇文章由王老师翻译。", "explanation": "由王老师翻译." },
+     { "type": "sort", "context": "Sắp xếp: “Hoạt động lần này do lớp chúng tôi tổ chức.”", "words": ["这次", "活动", "由", "我们", "班", "组织", "。"], "answer": "这次活动由我们班组织。", "explanation": "由我们班组织." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 由.", "promptLang": "vi", "prompt": "Việc này do tôi phụ trách.", "answer": "这件事由我负责。", "answerPy": "Zhè jiàn shì yóu wǒ fùzé.", "explanation": "由 + người + động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 由.", "promptLang": "vi", "prompt": "Buổi họp do giám đốc chủ trì.", "answer": "会议由经理主持。", "answerPy": "Huìyì yóu jīnglǐ zhǔchí.", "explanation": "由经理主持." }
+    ]
+   },
+   {
+    "title": "「进行」 — tiến hành",
+    "errors": [
+     { "wrong": "我们进行吃饭。", "why": "进行 không dùng với hành động sinh hoạt hàng ngày.", "right": "我们吃饭。" },
+     { "wrong": "我们进行讨论了这个问题。", "why": "进行 + động từ hai âm tiết; tân ngữ đưa lên trước hoặc dùng 对.", "right": "我们对这个问题进行了讨论。" },
+     { "wrong": "我们讨论进行。", "why": "进行 đứng TRƯỚC động từ hai âm tiết.", "right": "我们进行讨论。" }
+    ],
+    "items": [
+     { "context": "进行 + động từ HAI ÂM TIẾT.", "pre": "我们", "blank": "进行讨论", "post": "。", "options": ["进行讨论", "讨论进行", "进行吃饭"], "answer": 0, "explanation": "进行 + 讨论/研究/调查……" },
+     { "context": "Hành động HÀNG NGÀY không dùng 进行.", "pre": "我们", "blank": "吃饭", "post": "。", "options": ["吃饭", "进行吃饭", "进行的吃饭"], "answer": 0, "explanation": "进行 chỉ dùng cho việc chính thức." },
+     { "context": "Có tân ngữ thì dùng 对……进行…….", "pre": "我们", "blank": "对这个问题进行了讨论", "post": "。", "options": ["对这个问题进行了讨论", "进行讨论了这个问题", "进行了这个问题讨论"], "answer": 0, "explanation": "对 + tân ngữ + 进行 + động từ." },
+     { "context": "“Cuộc điều tra vẫn đang được tiến hành.”", "pre": "调查", "blank": "还在进行", "post": "。", "options": ["还在进行", "还在进行吃饭", "进行还在的"], "answer": 0, "explanation": "进行 làm vị ngữ chính." },
+     { "context": "“Hai bên đã tiến hành trao đổi.”", "pre": "双方", "blank": "进行了交流", "post": "。", "options": ["进行了交流", "交流进行了", "进行交流了的"], "answer": 0, "explanation": "进行了 + động từ hai âm tiết." },
+     { "context": "“Công việc vẫn tiếp tục được tiến hành.”", "pre": "工作", "blank": "继续进行", "post": "。", "options": ["继续进行", "进行继续的", "继续的进行吃饭"], "answer": 0, "explanation": "继续进行." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们对这个问题进行了讨论。", "isCorrect": true, "explanation": "对……进行…… — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们进行吃饭。", "isCorrect": false, "correctVersion": "我们吃饭。", "explanation": "进行 không dùng với việc sinh hoạt hàng ngày." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们讨论进行。", "isCorrect": false, "correctVersion": "我们进行讨论。", "explanation": "进行 đứng trước động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng tôi đã tiến hành thảo luận về vấn đề này.”", "words": ["我们", "对", "这个", "问题", "进行", "了", "讨论", "。"], "answer": "我们对这个问题进行了讨论。", "explanation": "对……进行了……." },
+     { "type": "sort", "context": "Sắp xếp: “Hai bên đã tiến hành trao đổi.”", "words": ["双方", "进行", "了", "交流", "。"], "answer": "双方进行了交流。", "explanation": "进行了交流." },
+     { "type": "sort", "context": "Sắp xếp: “Cuộc điều tra vẫn đang được tiến hành.”", "words": ["调查", "还", "在", "进行", "。"], "answer": "调查还在进行。", "explanation": "还在进行." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 进行.", "promptLang": "vi", "prompt": "Chúng tôi đã tiến hành thảo luận về vấn đề này.", "answer": "我们对这个问题进行了讨论。", "answerPy": "Wǒmen duì zhège wèntí jìnxíng le tǎolùn.", "explanation": "对……进行了……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 进行.", "promptLang": "vi", "prompt": "Hai bên đã tiến hành trao đổi.", "answer": "双方进行了交流。", "answerPy": "Shuāngfāng jìnxíng le jiāoliú.", "explanation": "进行了 + động từ hai âm tiết." }
+    ]
+   },
+   {
+    "title": "「随着」 — cùng với, theo đà",
+    "errors": [
+     { "wrong": "随着经济发展，生活水平提高。", "why": "sau 随着 thường có 的 giữa định ngữ và danh từ hóa.", "right": "随着经济的发展，生活水平提高了。" },
+     { "wrong": "生活水平提高了，随着经济的发展。", "why": "cụm 随着 đứng ở vế ĐẦU.", "right": "随着经济的发展，生活水平提高了。" },
+     { "wrong": "随着的经济发展，生活水平提高了。", "why": "的 đứng giữa định ngữ và danh từ, không đứng sau 随着.", "right": "随着经济的发展，生活水平提高了。" }
+    ],
+    "items": [
+     { "context": "“Cùng với sự phát triển kinh tế, mức sống được nâng cao.”", "pre": "", "blank": "随着经济的发展", "post": "，生活水平提高了。", "options": ["随着经济的发展", "随着的经济发展", "经济的发展随着"], "answer": 0, "explanation": "随着 + …… 的发展." },
+     { "context": "Cụm 随着 đứng ở vế ĐẦU.", "pre": "", "blank": "随着年龄的增长", "post": "，他越来越成熟了。", "options": ["随着年龄的增长", "年龄的增长随着", "随着的年龄增长"], "answer": 0, "explanation": "随着 + cụm danh từ hóa." },
+     { "context": "Vế sau thường có 越来越.", "pre": "随着时间的推移，", "blank": "我越来越喜欢这里", "post": "。", "options": ["我越来越喜欢这里", "越来越我喜欢这里", "我喜欢这里越来越的"], "answer": 0, "explanation": "随着……，越来越……." },
+     { "context": "Nêu NGUYÊN NHÂN thì dùng 由于.", "pre": "", "blank": "由于下雨", "post": "，比赛取消了。", "options": ["由于下雨", "随着下雨", "随着的下雨"], "answer": 0, "explanation": "随着 nêu điều kiện song hành, không nêu nguyên nhân." },
+     { "context": "“Cùng với sự hiểu biết sâu thêm, tôi càng thích văn hóa Trung Quốc.”", "pre": "", "blank": "随着了解的加深", "post": "，我更喜欢中国文化了。", "options": ["随着了解的加深", "随着的了解加深", "了解的加深随着"], "answer": 0, "explanation": "随着……的加深." },
+     { "context": "“Cùng với sự tăng lên của số lượng học sinh, trường mở thêm lớp.”", "pre": "", "blank": "随着学生人数的增加", "post": "，学校增加了班级。", "options": ["随着学生人数的增加", "随着的学生人数增加", "学生人数的增加随着"], "answer": 0, "explanation": "随着……的增加." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "随着经济的发展，生活水平提高了。", "isCorrect": true, "explanation": "随着 + ……的发展 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "生活水平提高了，随着经济的发展。", "isCorrect": false, "correctVersion": "随着经济的发展，生活水平提高了。", "explanation": "Cụm 随着 đứng ở vế đầu." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "随着的经济发展，生活水平提高了。", "isCorrect": false, "correctVersion": "随着经济的发展，生活水平提高了。", "explanation": "的 đứng giữa định ngữ và danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Cùng với sự phát triển kinh tế, mức sống được nâng cao.”", "words": ["随着", "经济", "的", "发展", "，", "生活", "水平", "提高", "了", "。"], "answer": "随着经济的发展，生活水平提高了。", "explanation": "随着……的发展." },
+     { "type": "sort", "context": "Sắp xếp: “Cùng với tuổi tác tăng lên, anh ấy ngày càng chín chắn.”", "words": ["随着", "年龄", "的", "增长", "，", "他", "越来越", "成熟", "了", "。"], "answer": "随着年龄的增长，他越来越成熟了。", "explanation": "随着……，越来越……." },
+     { "type": "sort", "context": "Sắp xếp: “Cùng với thời gian trôi qua, tôi ngày càng thích nơi này.”", "words": ["随着", "时间", "的", "推移", "，", "我", "越来越", "喜欢", "这里", "。"], "answer": "随着时间的推移，我越来越喜欢这里。", "explanation": "随着时间的推移." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 随着.", "promptLang": "vi", "prompt": "Cùng với sự phát triển kinh tế, mức sống đã được nâng cao.", "answer": "随着经济的发展，生活水平提高了。", "answerPy": "Suízhe jīngjì de fāzhǎn, shēnghuó shuǐpíng tígāo le.", "explanation": "随着……的发展." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 随着.", "promptLang": "vi", "prompt": "Cùng với tuổi tác tăng lên, anh ấy ngày càng chín chắn.", "answer": "随着年龄的增长，他越来越成熟了。", "answerPy": "Suízhe niánlíng de zēngzhǎng, tā yuè lái yuè chéngshú le.", "explanation": "随着……的增长." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk4-bai-14.html": {
+  "points": [
+   {
+    "title": "「够」 — đủ",
+    "errors": [
+     { "wrong": "这个箱子够重。", "why": "够 + tính từ trong câu khẳng định thường thêm 的(了).", "right": "这个箱子够重的了。" },
+     { "wrong": "这些钱不够的。", "why": "phủ định là 不够 + tính từ/danh từ, không thêm 的.", "right": "这些钱不够。" },
+     { "wrong": "我够吃了饭。", "why": "够 đứng SAU động từ khi nói “đủ (đã làm đủ)”.", "right": "我吃够了。" }
+    ],
+    "items": [
+     { "context": "够 làm ĐỘNG TỪ, đứng sau động từ khác.", "pre": "我", "blank": "吃够了", "post": "。", "options": ["吃够了", "够吃了饭", "够的吃了"], "answer": 0, "explanation": "动词 + 够 = làm đủ rồi." },
+     { "context": "“Mỗi ngày phải ngủ đủ tám tiếng.”", "pre": "每天要", "blank": "睡够八个小时", "post": "。", "options": ["睡够八个小时", "够睡八个小时的", "睡八个小时够的"], "answer": 0, "explanation": "睡够 + thời lượng." },
+     { "context": "够 + TÍNH TỪ (khẳng định) thường thêm 的了.", "pre": "这个箱子", "blank": "够重的了", "post": "。", "options": ["够重的了", "够重", "重够的了"], "answer": 0, "explanation": "够 + tính từ + 的(了)." },
+     { "context": "Phủ định: 不够 + tính từ.", "pre": "这些钱", "blank": "不够", "post": "。", "options": ["不够", "不够的", "够不的"], "answer": 0, "explanation": "不够 = không đủ." },
+     { "context": "“Cậu ấy đủ dũng cảm.”", "pre": "他", "blank": "够勇敢", "post": "。", "options": ["够勇敢", "勇敢够", "不够勇敢的了"], "answer": 0, "explanation": "够 + tính từ." },
+     { "context": "“Thời gian không đủ.”", "pre": "时间", "blank": "不够", "post": "。", "options": ["不够", "够不", "不够的了"], "answer": 0, "explanation": "不够 đứng làm vị ngữ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "每天要睡够八个小时。", "isCorrect": true, "explanation": "睡够 + thời lượng — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这些钱不够的。", "isCorrect": false, "correctVersion": "这些钱不够。", "explanation": "不够 không thêm 的." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我够吃了饭。", "isCorrect": false, "correctVersion": "我吃够了。", "explanation": "够 đứng sau động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Mỗi ngày phải ngủ đủ tám tiếng.”", "words": ["每天", "要", "睡", "够", "八", "个", "小时", "。"], "answer": "每天要睡够八个小时。", "explanation": "睡够八个小时." },
+     { "type": "sort", "context": "Sắp xếp: “Chiếc vali này nặng thật đấy.”", "words": ["这个", "箱子", "够", "重", "的", "了", "。"], "answer": "这个箱子够重的了。", "explanation": "够重的了." },
+     { "type": "sort", "context": "Sắp xếp: “Số tiền này không đủ.”", "words": ["这些", "钱", "不", "够", "。"], "answer": "这些钱不够。", "explanation": "不够." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 够.", "promptLang": "vi", "prompt": "Mỗi ngày phải ngủ đủ tám tiếng.", "answer": "每天要睡够八个小时。", "answerPy": "Měi tiān yào shuì gòu bā ge xiǎoshí.", "explanation": "睡够 + thời lượng." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 不够.", "promptLang": "vi", "prompt": "Số tiền này không đủ.", "answer": "这些钱不够。", "answerPy": "Zhèxiē qián bú gòu.", "explanation": "不够 làm vị ngữ." }
+    ]
+   },
+   {
+    "title": "「以」 — bằng, lấy… làm…",
+    "errors": [
+     { "wrong": "他以为最快的速度完成了。", "why": "以为 là “tưởng rằng”; ở đây phải tách 以 + 最快的速度.", "right": "他以最快的速度完成了。" },
+     { "wrong": "我们以学习目的为。", "why": "cấu trúc là 以 A 为 B.", "right": "我们以学习为目的。" },
+     { "wrong": "他努力学习，以他考上大学。", "why": "hai vế của cấu trúc mục đích phải CÙNG chủ ngữ, vế sau lược chủ ngữ.", "right": "他努力学习，以考上大学。" }
+    ],
+    "items": [
+     { "context": "以 + CÁCH THỨC + động từ.", "pre": "他", "blank": "以最快的速度完成了", "post": "。", "options": ["以最快的速度完成了", "以为最快的速度完成了", "最快的速度以完成了"], "answer": 0, "explanation": "以 + cách thức + động từ." },
+     { "context": "Cấu trúc 以 A 为 B.", "pre": "我们", "blank": "以学习为目的", "post": "。", "options": ["以学习为目的", "以学习目的为", "为学习以目的"], "answer": 0, "explanation": "以 A 为 B = lấy A làm B." },
+     { "context": "以 làm LIÊN TỪ chỉ mục đích.", "pre": "他努力学习，", "blank": "以考上大学", "post": "。", "options": ["以考上大学", "以他考上大学", "考上大学以"], "answer": 0, "explanation": "Vế sau lược chủ ngữ." },
+     { "context": "以为 nghĩa khác hẳn: tưởng rằng.", "pre": "我", "blank": "以为他是老师", "post": "。", "options": ["以为他是老师", "以他是老师为", "以他为老师是"], "answer": 0, "explanation": "Phân biệt 以 và 以为." },
+     { "context": "“Chúng tôi lấy cậu ấy làm gương.”", "pre": "我们", "blank": "以他为榜样", "post": "。", "options": ["以他为榜样", "以他榜样为", "为他以榜样"], "answer": 0, "explanation": "以 A 为 B." },
+     { "context": "“Anh ấy hoàn thành công việc bằng thái độ nghiêm túc.”", "pre": "他", "blank": "以认真的态度完成了工作", "post": "。", "options": ["以认真的态度完成了工作", "以为认真的态度完成工作", "认真的态度以完成工作"], "answer": 0, "explanation": "以 + cách thức + động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他以最快的速度完成了。", "isCorrect": true, "explanation": "以 + cách thức + động từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们以学习目的为。", "isCorrect": false, "correctVersion": "我们以学习为目的。", "explanation": "Cấu trúc là 以 A 为 B." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他努力学习，以他考上大学。", "isCorrect": false, "correctVersion": "他努力学习，以考上大学。", "explanation": "Vế sau lược chủ ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy hoàn thành với tốc độ nhanh nhất.”", "words": ["他", "以", "最快", "的", "速度", "完成", "了", "。"], "answer": "他以最快的速度完成了。", "explanation": "以……的速度." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng tôi lấy cậu ấy làm gương.”", "words": ["我们", "以", "他", "为", "榜样", "。"], "answer": "我们以他为榜样。", "explanation": "以 A 为 B." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy học chăm chỉ để thi đỗ đại học.”", "words": ["他", "努力", "学习", "，", "以", "考", "上", "大学", "。"], "answer": "他努力学习，以考上大学。", "explanation": "以 + mục đích." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 以.", "promptLang": "vi", "prompt": "Anh ấy hoàn thành với tốc độ nhanh nhất.", "answer": "他以最快的速度完成了。", "answerPy": "Tā yǐ zuì kuài de sùdù wánchéng le.", "explanation": "以 + cách thức + động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 以……为…….", "promptLang": "vi", "prompt": "Chúng tôi lấy cậu ấy làm gương.", "answer": "我们以他为榜样。", "answerPy": "Wǒmen yǐ tā wéi bǎngyàng.", "explanation": "以 A 为 B." }
+    ]
+   },
+   {
+    "title": "「既然」 — đã vậy thì",
+    "errors": [
+     { "wrong": "既然你不舒服，因为就回家吧。", "why": "既然 hô ứng với 就/那么, không đi với 因为.", "right": "既然你不舒服，就回家吧。" },
+     { "wrong": "既然你不舒服，就你回家吧。", "why": "chủ ngữ vế sau đứng TRƯỚC 就.", "right": "既然你不舒服，你就回家吧。" },
+     { "wrong": "因为你不舒服，就回家吧。", "why": "nêu sự thật ĐÃ BIẾT rồi suy luận thì dùng 既然.", "right": "既然你不舒服，就回家吧。" }
+    ],
+    "items": [
+     { "context": "“Đã không khỏe thì về nhà đi.”", "pre": "既然你不舒服，", "blank": "就回家吧", "post": "。", "options": ["就回家吧", "因为就回家吧", "回家吧就"], "answer": 0, "explanation": "既然 hô ứng với 就." },
+     { "context": "既然 nêu SỰ THẬT đã biết rồi suy luận.", "pre": "", "blank": "既然你已经决定了", "post": "，我就不说什么了。", "options": ["既然你已经决定了", "因为你已经决定了呢", "既然的你已经决定了"], "answer": 0, "explanation": "既然 + sự thật đã biết." },
+     { "context": "Có thể thêm 那么.", "pre": "既然大家都同意，", "blank": "那么就这样决定吧", "post": "。", "options": ["那么就这样决定吧", "因为就这样决定吧", "那么因为就这样决定"], "answer": 0, "explanation": "既然……，那么就……." },
+     { "context": "Chủ ngữ vế sau đứng TRƯỚC 就.", "pre": "既然你不想去，", "blank": "我就一个人去", "post": "。", "options": ["我就一个人去", "就我一个人去", "我一个人去就"], "answer": 0, "explanation": "Chủ ngữ 2 + 就." },
+     { "context": "Nêu NGUYÊN NHÂN khách quan thì dùng 因为.", "pre": "", "blank": "因为下雨", "post": "，我们没去。", "options": ["因为下雨", "既然下雨", "既然因为下雨"], "answer": 0, "explanation": "既然 nêu sự thật đã biết để suy luận." },
+     { "context": "“Đã đến rồi thì ở lại ăn cơm đi.”", "pre": "既然来了，", "blank": "就留下来吃饭吧", "post": "。", "options": ["就留下来吃饭吧", "因为留下来吃饭吧", "留下来吃饭吧就"], "answer": 0, "explanation": "既然……就……吧." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "既然你不舒服，就回家吧。", "isCorrect": true, "explanation": "既然……就…… — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "既然你不舒服，因为就回家吧。", "isCorrect": false, "correctVersion": "既然你不舒服，就回家吧。", "explanation": "既然 không đi với 因为." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "既然你不想去，就我一个人去。", "isCorrect": false, "correctVersion": "既然你不想去，我就一个人去。", "explanation": "Chủ ngữ vế sau trước 就." },
+     { "type": "sort", "context": "Sắp xếp: “Đã không khỏe thì về nhà đi.”", "words": ["既然", "你", "不", "舒服", "，", "就", "回", "家", "吧", "。"], "answer": "既然你不舒服，就回家吧。", "explanation": "既然……就……吧." },
+     { "type": "sort", "context": "Sắp xếp: “Đã đến rồi thì ở lại ăn cơm nhé.”", "words": ["既然", "来", "了", "，", "就", "留", "下来", "吃饭", "吧", "。"], "answer": "既然来了，就留下来吃饭吧。", "explanation": "既然来了，就……." },
+     { "type": "sort", "context": "Sắp xếp: “Đã vậy thì tôi đi một mình.”", "words": ["既然", "你", "不", "想", "去", "，", "我", "就", "一个人", "去", "。"], "answer": "既然你不想去，我就一个人去。", "explanation": "Chủ ngữ 2 + 就." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 既然……就…….", "promptLang": "vi", "prompt": "Đã không khỏe thì về nhà đi.", "answer": "既然你不舒服，就回家吧。", "answerPy": "Jìrán nǐ bù shūfu, jiù huí jiā ba.", "explanation": "既然……就……吧." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 既然……就…….", "promptLang": "vi", "prompt": "Đã đến rồi thì ở lại ăn cơm nhé.", "answer": "既然来了，就留下来吃饭吧。", "answerPy": "Jìrán lái le, jiù liú xiàlái chīfàn ba.", "explanation": "既然来了，就……." }
+    ]
+   },
+   {
+    "title": "「于是」 so sánh với 「因此」",
+    "errors": [
+     { "wrong": "他很努力，于是我认为他会成功。", "why": "vế sau là NHẬN ĐỊNH thì dùng 因此.", "right": "他很努力，因此我认为他会成功。" },
+     { "wrong": "于是下雨了，我们回家了。", "why": "于是 đứng ở vế SAU.", "right": "下雨了，于是我们回家了。" },
+     { "wrong": "因为下雨了，于是我们回家了。", "why": "于是 dùng một mình, không đi với 因为.", "right": "下雨了，于是我们回家了。" }
+    ],
+    "items": [
+     { "context": "于是 nêu việc xảy ra TIẾP THEO.", "pre": "下雨了，", "blank": "于是我们回家了", "post": "。", "options": ["于是我们回家了", "因为于是我们回家了", "我们回家了于是"], "answer": 0, "explanation": "于是 = thế là (tiếp nối)." },
+     { "context": "Vế sau là NHẬN ĐỊNH → 因此.", "pre": "他很努力，", "blank": "因此我认为他会成功", "post": "。", "options": ["因此我认为他会成功", "于是我认为他会成功", "因为因此我认为他会成功"], "answer": 0, "explanation": "于是 chỉ dùng cho sự việc xảy ra." },
+     { "context": "于是 thường đi với 就.", "pre": "他叫了我一声，", "blank": "于是我就回头了", "post": "。", "options": ["于是我就回头了", "于是就我回头了", "我回头了于是就"], "answer": 0, "explanation": "于是 + chủ ngữ + 就." },
+     { "context": "“Cậu ấy bị bệnh, vì vậy hôm nay không đến.” (nhân quả)", "pre": "他生病了，", "blank": "因此今天没来", "post": "。", "options": ["因此今天没来", "于是因此今天没来", "因为因此今天没来"], "answer": 0, "explanation": "因此 nhấn mạnh nhân quả." },
+     { "context": "于是 KHÔNG đi với 因为.", "pre": "", "blank": "天黑了", "post": "，于是我们回家了。", "options": ["天黑了", "因为天黑了", "由于因为天黑了"], "answer": 0, "explanation": "于是 dùng một mình." },
+     { "context": "“Nghe xong, thế là cậu ấy quyết định đi.”", "pre": "听完以后，", "blank": "于是他决定去了", "post": "。", "options": ["于是他决定去了", "因此他认为去了", "于是因此他决定去"], "answer": 0, "explanation": "于是 + việc tiếp theo." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "下雨了，于是我们回家了。", "isCorrect": true, "explanation": "于是 nêu việc tiếp theo — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他很努力，于是我认为他会成功。", "isCorrect": false, "correctVersion": "他很努力，因此我认为他会成功。", "explanation": "Vế sau là nhận định → 因此." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "因为下雨了，于是我们回家了。", "isCorrect": false, "correctVersion": "下雨了，于是我们回家了。", "explanation": "于是 dùng một mình." },
+     { "type": "sort", "context": "Sắp xếp: “Trời mưa, thế là chúng tôi về nhà.”", "words": ["下雨", "了", "，", "于是", "我们", "回", "家", "了", "。"], "answer": "下雨了，于是我们回家了。", "explanation": "于是 + việc tiếp theo." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy gọi tôi một tiếng, thế là tôi quay đầu lại.”", "words": ["他", "叫", "了", "我", "一声", "，", "于是", "我", "就", "回头", "了", "。"], "answer": "他叫了我一声，于是我就回头了。", "explanation": "于是……就……." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy rất chăm chỉ, vì vậy tôi cho rằng anh ấy sẽ thành công.”", "words": ["他", "很", "努力", "，", "因此", "我", "认为", "他", "会", "成功", "。"], "answer": "他很努力，因此我认为他会成功。", "explanation": "因此 + nhận định." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 于是 hay 因此.", "promptLang": "vi", "prompt": "Trời mưa, thế là chúng tôi về nhà.", "answer": "下雨了，于是我们回家了。", "answerPy": "Xiàyǔ le, yúshì wǒmen huí jiā le.", "explanation": "Việc xảy ra tiếp theo → 于是." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 于是 hay 因此.", "promptLang": "vi", "prompt": "Anh ấy rất chăm chỉ, vì vậy tôi cho rằng anh ấy sẽ thành công.", "answer": "他很努力，因此我认为他会成功。", "answerPy": "Tā hěn nǔlì, yīncǐ wǒ rènwéi tā huì chénggōng.", "explanation": "Nhận định → 因此." }
+    ]
+   },
+   {
+    "title": "「什么的」 — vân vân",
+    "errors": [
+     { "wrong": "什么的苹果、香蕉。", "why": "什么的 đứng ở CUỐI dãy liệt kê.", "right": "苹果、香蕉什么的。" },
+     { "wrong": "苹果什么的、香蕉什么的。", "why": "什么的 chỉ dùng một lần, ở cuối.", "right": "苹果、香蕉什么的。" },
+     { "wrong": "我买了书、笔什么的等。", "why": "什么的 và 等 không dùng cùng lúc.", "right": "我买了书、笔什么的。" }
+    ],
+    "items": [
+     { "context": "什么的 đứng ở CUỐI dãy liệt kê.", "pre": "我喜欢吃苹果、香蕉", "blank": "什么的", "post": "。", "options": ["什么的", "什么", "的什么"], "answer": 0, "explanation": "Liệt kê + 什么的." },
+     { "context": "Có thể đứng sau CỤM ĐỘNG TỪ.", "pre": "周末我看看书、看看电影", "blank": "什么的", "post": "。", "options": ["什么的", "什么的等", "的什么等"], "answer": 0, "explanation": "什么的 sau cụm động từ." },
+     { "context": "Không dùng 什么的 cùng 等.", "pre": "我买了书、笔", "blank": "什么的", "post": "。", "options": ["什么的", "什么的等", "等什么的"], "answer": 0, "explanation": "Chọn một trong hai." },
+     { "context": "什么的 dùng trong KHẨU NGỮ.", "pre": "桌子上有笔、本子", "blank": "什么的", "post": "。", "options": ["什么的", "的什么", "什么的的"], "answer": 0, "explanation": "什么的 = và những thứ tương tự." },
+     { "context": "Văn viết thì dùng 等.", "pre": "会议讨论了教育、医疗", "blank": "等问题", "post": "。", "options": ["等问题", "什么的问题", "等什么的问题"], "answer": 0, "explanation": "等 dùng trong văn viết." },
+     { "context": "“Cậu ấy thích hát, nhảy… các thứ.”", "pre": "他喜欢唱歌、跳舞", "blank": "什么的", "post": "。", "options": ["什么的", "什么的等", "的什么"], "answer": 0, "explanation": "Liệt kê hành động + 什么的." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我喜欢吃苹果、香蕉什么的。", "isCorrect": true, "explanation": "什么的 ở cuối dãy liệt kê — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "什么的苹果、香蕉。", "isCorrect": false, "correctVersion": "苹果、香蕉什么的。", "explanation": "什么的 đứng ở cuối." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我买了书、笔什么的等。", "isCorrect": false, "correctVersion": "我买了书、笔什么的。", "explanation": "什么的 và 等 không dùng cùng lúc." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi thích ăn táo, chuối… các thứ.”", "words": ["我", "喜欢", "吃", "苹果", "、", "香蕉", "什么的", "。"], "answer": "我喜欢吃苹果、香蕉什么的。", "explanation": "Liệt kê + 什么的." },
+     { "type": "sort", "context": "Sắp xếp: “Cuối tuần tôi đọc sách, xem phim… các thứ.”", "words": ["周末", "我", "看书", "、", "看电影", "什么的", "。"], "answer": "周末我看书、看电影什么的。", "explanation": "什么的 sau cụm động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Trên bàn có bút, vở… các thứ.”", "words": ["桌子", "上", "有", "笔", "、", "本子", "什么的", "。"], "answer": "桌子上有笔、本子什么的。", "explanation": "什么的 ở cuối." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 什么的.", "promptLang": "vi", "prompt": "Tôi thích ăn táo, chuối… các thứ.", "answer": "我喜欢吃苹果、香蕉什么的。", "answerPy": "Wǒ xǐhuan chī píngguǒ, xiāngjiāo shénme de.", "explanation": "什么的 ở cuối dãy liệt kê." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 什么的.", "promptLang": "vi", "prompt": "Cuối tuần tôi đọc sách, xem phim… các thứ.", "answer": "周末我看书、看电影什么的。", "answerPy": "Zhōumò wǒ kàn shū, kàn diànyǐng shénme de.", "explanation": "什么的 sau cụm động từ." }
+    ]
+   }
+  ]
+ }
+}

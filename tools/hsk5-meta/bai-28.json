@@ -1,0 +1,112 @@
+{
+ "zh": "最受欢迎的毕业生",
+ "py": "Zuì shòu huānyíng de bìyèshēng",
+ "vn": "Người tốt nghiệp được hoan nghênh nhất",
+ "topic": "Unit 10 关注经济 · Việc làm của sinh viên &amp; sức mạnh của sự chuyên tâm",
+ "vocabCount": 46,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "从此",
+   "explain": "从此 là phó từ, nghĩa là \"từ đó (trở đi)\" — kể từ thời điểm này hoặc thời điểm vừa được nhắc đến. Vế trước kể một sự việc làm MỐC; 从此 đứng đầu vế sau (trước chủ ngữ hoặc trước động từ), nói về sự thay đổi / trạng thái kéo dài từ đó về sau. Sau 从此 thường có 就 / 一直 / 再也不 / 不再. Không đặt mốc thời gian cụ thể sau 从此 (muốn nói \"từ lớp 6\" dùng 从……起 / 从……开始).",
+   "rule": "Sự việc làm mốc，<strong style=\"color:var(--sky-d)\">从此</strong> + (S) + (就 / 一直 / 不再) + V　|　……。<strong style=\"color:var(--sky-d)\">从此</strong> + S + ……",
+   "examples": [
+    {
+     "zh": "李白听了老婆婆的话，很受感动。从此他刻苦用功，最后成了一位伟大的诗人。",
+     "py": "Lǐ Bái tīngle lǎo pópo de huà, hěn shòu gǎndòng. Cóngcǐ tā kèkǔ yònggōng, zuìhòu chéngle yí wèi wěidà de shīrén.",
+     "vn": "Lý Bạch nghe lời bà cụ, rất cảm động. Từ đó ông chăm chỉ khổ luyện, cuối cùng trở thành một nhà thơ vĩ đại."
+    },
+    {
+     "zh": "因为小学六年级的时候，他迷上了公交车，从此，就一直关注公交线路。",
+     "py": "Yīnwèi xiǎoxué liù niánjí de shíhou, tā míshangle gōngjiāochē, cóngcǐ, jiù yìzhí guānzhù gōngjiāo xiànlù.",
+     "vn": "Số là hồi học lớp sáu, cậu ấy mê xe buýt, từ đó luôn để ý các tuyến xe buýt."
+    },
+    {
+     "zh": "嫦娥自己吃下了不死药，结果她飞到了月亮上，从此与后羿分离。",
+     "py": "Cháng'é zìjǐ chīxiàle bù sǐ yào, jiéguǒ tā fēidàole yuèliang shang, cóngcǐ yǔ Hòuyì fēnlí.",
+     "vn": "Hằng Nga tự mình uống thuốc trường sinh, kết quả bay lên cung trăng, từ đó chia lìa với Hậu Nghệ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "从此小学六年级，他就一直关注公交线路。",
+     "why": "从此 không đi kèm mốc thời gian cụ thể phía sau. Mốc thời gian dùng 从……起 / 从……开始.",
+     "right": "从小学六年级起，他就一直关注公交线路。"
+    },
+    {
+     "wrong": "他每天都锻炼，从此身体很好。",
+     "why": "从此 nói về MỐC THỜI GIAN (từ lúc đó trở đi), không diễn đạt quan hệ nhân quả. Ở đây là nguyên nhân → kết quả nên dùng 因此 / 所以.",
+     "right": "他每天都锻炼，因此身体很好。"
+    }
+   ]
+  },
+  {
+   "point": "假设",
+   "explain": "假设 là động từ, nghĩa là coi một tình huống nào đó như là thật (giả sử) để suy luận hoặc đặt câu hỏi; thường đứng đầu câu: 假设 + tình huống，……? Có thể có chủ ngữ phía trước (我们假设……). 假设 còn làm danh từ, chỉ tình huống được đặt ra, giả thuyết: 大胆的假设, 这种假设被证明是对的. Khác 假如 (liên từ, chỉ đứng đầu vế câu, không làm danh từ).",
+   "rule": "<strong style=\"color:var(--sky-d)\">假设</strong> + tình huống，(那么) + ……？(động từ)　|　S + <strong style=\"color:var(--sky-d)\">假设</strong> + mệnh đề　|　一种 / 大胆的 / 当年的 + <strong style=\"color:var(--sky-d)\">假设</strong> (danh từ)",
+   "examples": [
+    {
+     "zh": "假设我要从国贸到鼓楼大街，该怎么乘车？",
+     "py": "Jiǎshè wǒ yào cóng Guómào dào Gǔlóu Dàjiē, gāi zěnme chéng chē?",
+     "vn": "Giả sử tôi muốn đi từ Quốc Mậu đến đường Cổ Lâu, thì nên đi xe thế nào?"
+    },
+    {
+     "zh": "假设汽水两块钱一瓶，两个空瓶可以换一瓶汽水，如果给你6块钱，你最多能喝几瓶汽水？",
+     "py": "Jiǎshè qìshuǐ liǎng kuài qián yì píng, liǎng ge kōng píng kěyǐ huàn yì píng qìshuǐ, rúguǒ gěi nǐ liù kuài qián, nǐ zuì duō néng hē jǐ píng qìshuǐ?",
+     "vn": "Giả sử nước ngọt hai đồng một chai, hai vỏ chai đổi được một chai nước ngọt, nếu cho bạn 6 đồng, bạn uống được nhiều nhất mấy chai?"
+    },
+    {
+     "zh": "这是一种大胆的假设，但不一定是科学的。",
+     "py": "Zhè shì yì zhǒng dàdǎn de jiǎshè, dàn bù yídìng shì kēxué de.",
+     "vn": "Đây là một giả thuyết táo bạo, nhưng chưa chắc đã khoa học."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我们假如他明天9点能出发。",
+     "why": "假如 là liên từ, không đứng sau chủ ngữ làm vị ngữ. Sau chủ ngữ cần động từ 假设.",
+     "right": "我们假设他明天9点能出发。"
+    },
+    {
+     "wrong": "您当年的假如已经被证明是对的。",
+     "why": "假如 không làm danh từ. \"Giả thuyết\" phải dùng 假设.",
+     "right": "您当年的假设已经被证明是对的。"
+    }
+   ]
+  },
+  {
+   "point": "堆",
+   "explain": "堆 có ba cách dùng. (1) Lượng từ: dùng cho vật hoặc người tụ thành đống, thành đám — 一堆垃圾, 一大堆名字, 一堆人 (KHÔNG dùng cho người đáng kính: ✗ 一堆老师). (2) Động từ: dùng tay hoặc công cụ gom đồ vật lại một chỗ — 堆在这儿, 堆成山. (3) Danh từ: đống đồ chất lại — 建筑材料堆, 石头堆.",
+   "rule": "一 (大) + <strong style=\"color:var(--sky-d)\">堆</strong> + N (lượng từ)　|　把 + N + <strong style=\"color:var(--sky-d)\">堆</strong>在 / <strong style=\"color:var(--sky-d)\">堆</strong>成 + …… (động từ)　|　N + <strong style=\"color:var(--sky-d)\">堆</strong> (danh từ: 石头堆)",
+   "examples": [
+    {
+     "zh": "他有问必答，不但准确无误地按顺序报了一大堆公交车、地铁站的名字，而且还给一对情侣制订了北京休闲一日游的具体方案。",
+     "py": "Tā yǒu wèn bì dá, búdàn zhǔnquè wú wù de àn shùnxù bàole yí dà duī gōngjiāochē, dìtiězhàn de míngzi, érqiě hái gěi yí duì qínglǚ zhìdìngle Běijīng xiūxián yí rì yóu de jùtǐ fāng'àn.",
+     "vn": "Cậu ấy hỏi gì đáp nấy, không những đọc chính xác, theo đúng thứ tự cả một loạt tên tuyến xe buýt, ga tàu điện ngầm, mà còn lập cho một cặp đôi phương án cụ thể cho một ngày du lịch thư giãn ở Bắc Kinh."
+    },
+    {
+     "zh": "今年真不错！你看这粮食，都堆成山了。",
+     "py": "Jīnnián zhēn búcuò! Nǐ kàn zhè liángshi, dōu duīchéng shān le.",
+     "vn": "Năm nay được mùa thật! Anh xem lương thực này, chất thành núi rồi."
+    },
+    {
+     "zh": "叔叔把手指上的金戒指取了下来，扔到石头堆里。",
+     "py": "Shūshu bǎ shǒuzhǐ shang de jīn jièzhi qǔle xiàlai, rēngdào shítou duī li.",
+     "vn": "Chú tháo chiếc nhẫn vàng trên ngón tay ra, ném vào đống đá."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "门口站着一堆老师，在等校长。",
+     "why": "堆 (lượng từ) không dùng cho người đáng kính. Dùng 几位 / 一些.",
+     "right": "门口站着几位老师，在等校长。"
+    },
+    {
+     "wrong": "别把东西堆门口。",
+     "why": "堆 làm động từ chỉ nơi chốn cần 在: 堆在 + nơi chốn.",
+     "right": "别把东西堆在门口。"
+    }
+   ]
+  }
+ ]
+}

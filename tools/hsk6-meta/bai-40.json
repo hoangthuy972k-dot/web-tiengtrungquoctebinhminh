@@ -1,0 +1,78 @@
+{
+ "zh": "人类超能力会改变世界纪录吗？",
+ "py": "Rénlèi chāo nénglì huì gǎibiàn shìjiè jìlù ma?",
+ "vn": "Siêu năng lực của con người có làm thay đổi kỷ lục thế giới?",
+ "topic": "第十单元 热点追踪 · Giới hạn vận động của con người: kỷ lục thế giới, ví dụ Bolt, phân tích cơ thể và luyện tập khoa học",
+ "vocabCount": 51,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "（把）……放在眼里",
+   "explain": "\"(把)……放在眼里\" nghĩa là COI TRỌNG, COI RA GÌ, để tâm đến (重视; 看得起). Dùng nhiều trong KHẨU NGỮ và chủ yếu ở dạng PHỦ ĐỊNH: 不把……放在眼里 = không coi … ra gì, chẳng để … vào mắt (coi thường người khác — thường chê); hoặc không để tâm đến khó khăn, nguy hiểm (có thể khen: 这些苦他都不放在眼里). Hai cách đặt: ① 不 + 把 + đối tượng + 放在眼里 (不 đứng TRƯỚC 把); ② đưa đối tượng lên đầu: 谁都不放在眼里 / 这些苦他都不放在眼里. Dạng khẳng định thường xuất hiện trong câu phản vấn: 他怎么会把这个毛头小子放在眼里？ (= không coi ra gì).",
+   "rule": "（S）+ <strong style=\"color:var(--sky-d)\">不把</strong> + đối tượng + <strong style=\"color:var(--sky-d)\">放在眼里</strong>　|　đối tượng + （S）+ <strong style=\"color:var(--sky-d)\">都不放在眼里</strong>　|　<strong style=\"color:var(--sky-d)\">怎么会把……放在眼里</strong>？",
+   "examples": [
+    {
+     "zh": "在那条狭窄的跑道上，任性的牙买加田径比赛选手博尔特简直就不把世界纪录放在眼里！",
+     "py": "Zài nà tiáo xiázhǎi de pǎodào shang, rènxìng de Yámǎijiā tiánjìng bǐsài xuǎnshǒu Bó'ěrtè jiǎnzhí jiù bù bǎ shìjiè jìlù fàng zài yǎn li!",
+     "vn": "Trên đường chạy chật hẹp ấy, vận động viên điền kinh người Jamaica ngang tàng Bolt quả thật chẳng coi kỷ lục thế giới ra gì!"
+    },
+    {
+     "zh": "一时间，大家都想挣钱，而且是想短时间挣大钱，以致一些商家根本不把10%的利润率放在眼里。",
+     "py": "Yìshíjiān, dàjiā dōu xiǎng zhèngqián, érqiě shì xiǎng duǎn shíjiān zhèng dà qián, yǐzhì yìxiē shāngjiā gēnběn bù bǎ bǎi fēn zhī shí de lìrùnlǜ fàng zài yǎn li.",
+     "vn": "Có một dạo ai cũng muốn kiếm tiền, lại còn muốn kiếm tiền lớn trong thời gian ngắn, đến nỗi một số nhà buôn hoàn toàn chẳng coi mức lợi nhuận 10% ra gì."
+    },
+    {
+     "zh": "烈日暴晒、大雨浇头、蚊虫叮咬，这些别人吃不了的苦他都不放在眼里，他心里只有一个念头：这次只能成功，不能失败。",
+     "py": "Lièrì bàoshài, dàyǔ jiāo tóu, wénchóng dīngyǎo, zhèxiē biérén chī bu liǎo de kǔ tā dōu bú fàng zài yǎn li, tā xīnli zhǐ yǒu yí ge niàntou: zhè cì zhǐ néng chénggōng, bù néng shībài.",
+     "vn": "Nắng gắt thiêu đốt, mưa lớn xối đầu, muỗi côn trùng đốt — những cái khổ người khác không chịu nổi ấy anh đều chẳng để tâm; trong lòng anh chỉ có một ý nghĩ: lần này chỉ được thành công, không được thất bại."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他把谁都不放在眼里。",
+     "why": "Khi đối tượng là 谁都 (ai cũng) thì đưa lên trước, không dùng 把: 谁都不放在眼里. 把 cần một đối tượng xác định (把世界纪录 / 把对手).",
+     "right": "他谁都不放在眼里。"
+    },
+    {
+     "wrong": "他把对手不放在眼里。",
+     "why": "Phủ định đặt TRƯỚC 把: 不把 + O + 放在眼里 (quy tắc chung của câu chữ 把: 不 / 没 đứng trước 把).",
+     "right": "他不把对手放在眼里。"
+    }
+   ]
+  },
+  {
+   "point": "不无",
+   "explain": "不无 (động từ, văn viết) = \"不是没有, 多少有些\" — không phải không có, ít nhiều cũng có. Đây là cách nói phủ định hai lần để KHẲNG ĐỊNH một cách uyển chuyển, nhẹ nhàng (mức độ thấp hơn 有). Sau 不无 thường là danh từ / động từ HAI ÂM TIẾT: 不无道理 (cũng có lý), 不无关系 (có liên quan phần nào), 不无好处 / 不无效果 / 不无遗憾 / 不无担心; còn làm trạng ngữ: 不无得意地宣布 (có phần đắc ý tuyên bố). Hay đi với 也 / 是……的: 其观点也不无道理; 对……是不无好处的.",
+   "rule": "（S）+ <strong style=\"color:var(--sky-d)\">（也）不无</strong> + N / V hai âm tiết（<strong style=\"color:var(--sky-d)\">道理 / 关系 / 好处 / 效果</strong>）　|　<strong style=\"color:var(--sky-d)\">不无</strong> + adj + 地 + V（不无得意地宣布）",
+   "examples": [
+    {
+     "zh": "也有人从运动医学和心理学角度出发，其观点也不无道理。",
+     "py": "Yě yǒu rén cóng yùndòng yīxué hé xīnlǐxué jiǎodù chūfā, qí guāndiǎn yě bùwú dàolǐ.",
+     "vn": "Cũng có người xuất phát từ góc độ y học thể thao và tâm lý học, quan điểm của họ cũng không phải không có lý."
+    },
+    {
+     "zh": "他写的剧本里有很多关于股市及金融的内容，大概和他曾经从商不无关系。",
+     "py": "Tā xiě de jùběn li yǒu hěn duō guānyú gǔshì jí jīnróng de nèiróng, dàgài hé tā céngjīng cóngshāng bùwú guānxi.",
+     "vn": "Kịch bản anh ấy viết có nhiều nội dung về chứng khoán và tài chính, có lẽ không phải không liên quan đến việc anh từng kinh doanh."
+    },
+    {
+     "zh": "会上，经理不无得意地宣布，我们的产品被评为“消费者信得过产品”。",
+     "py": "Huì shang, jīnglǐ bùwú déyì de xuānbù, wǒmen de chǎnpǐn bèi píngwéi “xiāofèizhě xìndeguò chǎnpǐn”.",
+     "vn": "Trong cuộc họp, giám đốc có phần đắc ý tuyên bố: sản phẩm của chúng ta được bình chọn là \"sản phẩm người tiêu dùng tin cậy\"."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "你说的话不无有道理。",
+     "why": "不无 đã bao hàm \"có\" (= 不是没有), không thêm 有 nữa; sau 不无 đặt thẳng danh từ: 不无道理.",
+     "right": "你说的话不无道理。"
+    },
+    {
+     "wrong": "这件事和他不无。",
+     "why": "不无 phải có thành phần đi sau (danh từ / động từ hai âm tiết), không đứng một mình cuối câu: 不无关系.",
+     "right": "这件事和他不无关系。"
+    }
+   ]
+  }
+ ]
+}

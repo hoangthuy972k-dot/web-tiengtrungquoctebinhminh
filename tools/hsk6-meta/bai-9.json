@@ -1,0 +1,112 @@
+{
+ "zh": "不用手机的日子",
+ "py": "Bú yòng shǒujī de rìzi",
+ "vn": "Một ngày không sử dụng điện thoại di động",
+ "topic": "第三单元 多彩社会 · Xã hội muôn màu — Điện thoại thông minh &amp; cuộc sống",
+ "vocabCount": 47,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "通红、雪白 (tính từ trạng thái)",
+   "explain": "通红, 雪白 là TÍNH TỪ TRẠNG THÁI (状态形容词): 通红 = đỏ khắp cả, đỏ bừng; 雪白 = trắng như tuyết, trắng tinh. Chúng chủ yếu dùng để miêu tả trạng thái sự vật, nghĩa chính nằm ở CHỮ THỨ HAI (红, 白), chữ đầu nói lên mức độ / hình ảnh so sánh. Vì bản thân đã hàm ý mức độ cao nên phía trước KHÔNG dùng 很, 非常, 特别…, phía sau KHÔNG thêm 极了, 得很…. Dạng lặp là ABAB (通红通红, 雪白雪白). Cùng loại: 冰凉, 笔直, 雪亮, 滚圆, 漆黑, 碧绿….",
+   "rule": "<strong style=\"color:var(--sky-d)\">通红 / 雪白 / 冰凉 / 笔直 / 雪亮</strong> (không thêm 很 / 非常 / 极了) · lặp <strong style=\"color:var(--sky-d)\">ABAB</strong>: 通红通红的",
+   "examples": [
+    {
+     "zh": "我脸憋得通红。",
+     "py": "Wǒ liǎn biē de tōnghóng.",
+     "vn": "Mặt tôi đỏ bừng."
+    },
+    {
+     "zh": "雪白的米在沸腾的水中翻滚，屋子里渐渐弥漫着粥的香气。",
+     "py": "Xuěbái de mǐ zài fèiténg de shuǐ zhōng fāngǔn, wūzi li jiànjiàn mímànzhe zhōu de xiāngqì.",
+     "vn": "Những hạt gạo trắng tinh cuộn lên trong nước sôi sùng sục, trong phòng dần tỏa khắp mùi thơm của cháo."
+    },
+    {
+     "zh": "那几只还没断奶的小猫幸福地躺在妈妈的怀里，肚子都吃得滚圆滚圆的。",
+     "py": "Nà jǐ zhī hái méi duànnǎi de xiǎo māo xìngfú de tǎng zài māma de huái li, dùzi dōu chī de gǔnyuán gǔnyuán de.",
+     "vn": "Mấy chú mèo con còn chưa cai sữa nằm hạnh phúc trong lòng mẹ, bụng con nào cũng ăn căng tròn."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我的脸很通红。",
+     "why": "Tính từ trạng thái đã hàm mức độ cao, không thêm 很 / 非常 phía trước.",
+     "right": "我的脸通红通红的。"
+    },
+    {
+     "wrong": "外面的雪雪白极了。",
+     "why": "Không thêm bổ ngữ mức độ 极了 / 得很 phía sau; muốn nhấn mạnh thì lặp ABAB.",
+     "right": "外面的雪雪白雪白的。"
+    }
+   ]
+  },
+  {
+   "point": "说A就A",
+   "explain": "\"说A就A\" là cách nói khẩu ngữ thường dùng, biểu thị sự việc xảy ra hoặc tiến triển RẤT NHANH, bất ngờ (\"nói… là… ngay\"). Hai chữ A trước và sau phải GIỐNG HỆT nhau, có thể là động từ, cụm động từ hoặc tính từ. Dạng phủ định: 说不A就不A.",
+   "rule": "<strong style=\"color:var(--sky-d)\">说</strong> + A + <strong style=\"color:var(--sky-d)\">就</strong> + A (hai A giống nhau) · <strong style=\"color:var(--sky-d)\">说不</strong> A <strong style=\"color:var(--sky-d)\">就不</strong> A",
+   "examples": [
+    {
+     "zh": "说干就干，索性这礼拜就开始。",
+     "py": "Shuō gàn jiù gàn, suǒxìng zhè lǐbài jiù kāishǐ.",
+     "vn": "Nói là làm, dứt khoát bắt đầu ngay tuần này."
+    },
+    {
+     "zh": "他辞了职去旅游，可把爸妈气坏了，天天在家唠叨：“挺好的工作，一点儿都不珍惜，说不干就不干了。”",
+     "py": "Tā cíle zhí qù lǚyóu, kě bǎ bà mā qìhuài le, tiāntiān zài jiā láodao: “Tǐng hǎo de gōngzuò, yìdiǎnr dōu bù zhēnxī, shuō bú gàn jiù bú gàn le.”",
+     "vn": "Cậu ấy nghỉ việc đi du lịch, làm bố mẹ tức điên, ngày nào cũng cằn nhằn ở nhà: \"Công việc tốt thế mà chẳng biết quý, nói bỏ là bỏ.\""
+    },
+    {
+     "zh": "六月下旬，天气说热就热了，人们争先恐后地往商店跑，去买电扇，去买空调。",
+     "py": "Liù yuè xiàxún, tiānqì shuō rè jiù rè le, rénmen zhēngxiān-kǒnghòu de wǎng shāngdiàn pǎo, qù mǎi diànshàn, qù mǎi kōngtiáo.",
+     "vn": "Hạ tuần tháng sáu, trời nói nóng là nóng ngay, mọi người tranh nhau chạy ra cửa hàng mua quạt điện, mua điều hòa."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他说干就做，马上开始了。",
+     "why": "Hai chữ A phải giống hệt nhau (说干就干), không thay bằng từ đồng nghĩa.",
+     "right": "他说干就干，马上开始了。"
+    },
+    {
+     "wrong": "天气说很热就很热了。",
+     "why": "A là tính từ trần, không thêm 很 / 非常.",
+     "right": "天气说热就热了。"
+    }
+   ]
+  },
+  {
+   "point": "形容词/动词 + 得 + 要命",
+   "explain": "\"Tính từ / động từ + 得 + 要命\" biểu thị mức độ đã đến CỰC ĐIỂM (\"… chết đi được, … kinh khủng\"). Thường dùng với tính từ / động từ tâm lý chỉ trạng thái khó chịu (累, 疼, 紧张, 害怕, 吓, 空虚, 气…), cũng có thể dùng với 高兴, 喜欢…. Là khẩu ngữ. 要命 đứng SAU 得 làm bổ ngữ; trước tính từ không thêm 很, 非常.",
+   "rule": "Adj / V (tâm lý) + <strong style=\"color:var(--sky-d)\">得要命</strong> — 累得要命 · 紧张得要命 · 吓得要命",
+   "examples": [
+    {
+     "zh": "五个小时没碰它，我心空虚得要命。",
+     "py": "Wǔ ge xiǎoshí méi pèng tā, wǒ xīn kōngxū de yào mìng.",
+     "vn": "Năm tiếng không đụng đến nó, lòng tôi trống rỗng kinh khủng."
+    },
+    {
+     "zh": "每次考试之前，不少同学都紧张得要命，吃不好，睡不着，有的还生病。",
+     "py": "Měi cì kǎoshì zhīqián, bù shǎo tóngxué dōu jǐnzhāng de yào mìng, chī bu hǎo, shuì bu zháo, yǒu de hái shēngbìng.",
+     "vn": "Mỗi lần trước kỳ thi, không ít bạn căng thẳng kinh khủng, ăn không ngon, ngủ không được, có bạn còn ốm."
+    },
+    {
+     "zh": "他风趣地说，自从那次让蛇咬了一口，就害怕所有的爬行动物、虫子，见了麻绳都吓得要命。",
+     "py": "Tā fēngqù de shuō, zìcóng nà cì ràng shé yǎole yì kǒu, jiù hàipà suǒyǒu de páxíng dòngwù, chóngzi, jiànle máshéng dōu xià de yào mìng.",
+     "vn": "Anh ấy hài hước kể, từ lần bị rắn cắn, anh sợ tất cả loài bò sát, sâu bọ, thấy sợi dây thừng cũng sợ chết khiếp."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我很累得要命。",
+     "why": "Đã có 要命 chỉ mức độ cực điểm thì không thêm 很 trước tính từ.",
+     "right": "我累得要命。"
+    },
+    {
+     "wrong": "今天我要命得累。",
+     "why": "要命 là bổ ngữ, đứng SAU 得: Adj + 得 + 要命.",
+     "right": "今天我累得要命。"
+    }
+   ]
+  }
+ ]
+}

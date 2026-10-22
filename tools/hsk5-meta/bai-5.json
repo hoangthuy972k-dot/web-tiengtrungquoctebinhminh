@@ -1,0 +1,146 @@
+{
+ "zh": "济南的泉水",
+ "py": "Jǐnán de quánshuǐ",
+ "vn": "Nước suối Tế Nam",
+ "topic": "Unit 2 谈古说今 · Danh thắng, truyền thuyết &amp; thiên nhiên",
+ "vocabCount": 51,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "起来",
+   "explain": "起来 là động từ, làm bổ ngữ xu hướng đứng sau động từ khác. Bài này học hai nghĩa: ① từ PHÂN TÁN đến TẬP TRUNG (积蓄起来, 收起来, 集合起来); ② từ LỘ RA đến CHE GIẤU (藏起来, 躲起来). Tân ngữ thường đưa lên trước bằng 把, không đặt sau cả cụm 起来.",
+   "rule": "① V + <strong style=\"color:var(--sky-d)\">起来</strong> (phân tán → tập trung)　② V + <strong style=\"color:var(--sky-d)\">起来</strong> (lộ ra → giấu kín)　|　把 + N + V + <strong style=\"color:var(--sky-d)\">起来</strong>",
+   "examples": [
+    {
+     "zh": "……地下水流到这里，碰到火成岩挡住了路，就积蓄起来，越积越多。",
+     "py": "…… dìxiàshuǐ liúdào zhèli, pèngdào huǒchéngyán dǎngzhùle lù, jiù jīxù qǐlai, yuè jī yuè duō.",
+     "vn": "… nước ngầm chảy tới đây, gặp đá mác-ma chắn đường liền tích tụ lại, càng tích càng nhiều."
+    },
+    {
+     "zh": "渔夫想，这网一收起来，鱼一定可以装满整条船。",
+     "py": "Yúfū xiǎng, zhè wǎng yì shōu qǐlai, yú yídìng kěyǐ zhuāngmǎn zhěng tiáo chuán.",
+     "vn": "Người đánh cá nghĩ, tấm lưới này mà thu lại thì cá chắc chắn sẽ đầy cả thuyền."
+    },
+    {
+     "zh": "为了不被坏人抢走，他把壶埋入地下藏了起来。",
+     "py": "Wèile bú bèi huàirén qiǎngzǒu, tā bǎ hú máirù dìxià cángle qǐlai.",
+     "vn": "Để không bị kẻ xấu cướp mất, anh chôn chiếc bình xuống đất giấu đi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "为了不被发现，他躲出来了。",
+     "why": "Từ chỗ lộ ra thành giấu kín phải dùng 起来; 出来 có nghĩa ngược lại (từ trong kín ra ngoài).",
+     "right": "为了不被发现，他躲起来了。"
+    },
+    {
+     "wrong": "他藏起来钱了。",
+     "why": "Tân ngữ không đứng sau cả cụm 起来 — đưa lên trước bằng 把 (hoặc chen giữa: 藏起钱来).",
+     "right": "他把钱藏起来了。"
+    }
+   ]
+  },
+  {
+   "point": "于",
+   "explain": "于 là giới từ của VĂN VIẾT, tương đương 在, 从, 对, 向, 比… tuỳ ngữ cảnh. Biểu thị: thời gian (成立于1997年), phạm vi (用于感冒的治疗), nơi chốn / nguồn gốc (来自于), đối tượng (有助于健康, 求助于……), so sánh (高于自己). 于 thường đứng NGAY SAU động từ hoặc tính từ.",
+   "rule": "V / Adj + <strong style=\"color:var(--sky-d)\">于</strong> + N　(thời gian · phạm vi · nơi chốn · đối tượng · so sánh)",
+   "examples": [
+    {
+     "zh": "这家公司成立于1997年。",
+     "py": "Zhè jiā gōngsī chénglì yú yī jiǔ jiǔ qī nián.",
+     "vn": "Công ty này được thành lập năm 1997."
+    },
+    {
+     "zh": "济南的泉水，来自于济南市以南的广大山区。",
+     "py": "Jǐnán de quánshuǐ, láizì yú Jǐnán shì yǐ nán de guǎngdà shānqū.",
+     "vn": "Nước suối Tế Nam đến từ vùng núi rộng lớn phía nam thành phố Tế Nam."
+    },
+    {
+     "zh": "队员们都认为对方的水平远远高于自己。",
+     "py": "Duìyuánmen dōu rènwéi duìfāng de shuǐpíng yuǎnyuǎn gāo yú zìjǐ.",
+     "vn": "Các đội viên đều cho rằng trình độ của đối phương cao hơn mình rất nhiều."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我毕业于在北京大学。",
+     "why": "于 đã tương đương 在 / 从, không dùng chồng thêm 在.",
+     "right": "我毕业于北京大学。"
+    },
+    {
+     "wrong": "他比我高于。",
+     "why": "Adj + 于 đã mang nghĩa so sánh \"hơn\", không dùng thêm 比.",
+     "right": "他高于我。（或：他比我高。）"
+    }
+   ]
+  },
+  {
+   "point": "从而",
+   "explain": "从而 là liên từ, dùng giữa hai phân câu: vế trước nêu nguyên nhân, phương pháp…; vế sau (mở đầu bằng 从而) nêu KẾT QUẢ hoặc MỤC ĐÍCH đạt được nhờ đó. Thiên về văn viết; vế sau thường dùng chung chủ ngữ với vế trước, và 从而 không mở đầu một câu độc lập.",
+   "rule": "A (nguyên nhân / phương pháp)，<strong style=\"color:var(--sky-d)\">从而</strong> + B (kết quả / mục đích)",
+   "examples": [
+    {
+     "zh": "比赛前做好思想准备可以减少运动员的压力，从而取得比赛的成功。",
+     "py": "Bǐsài qián zuòhǎo sīxiǎng zhǔnbèi kěyǐ jiǎnshǎo yùndòngyuán de yālì, cóng'ér qǔdé bǐsài de chénggōng.",
+     "vn": "Chuẩn bị tốt tâm lý trước trận đấu có thể giảm áp lực cho vận động viên, nhờ đó giành thắng lợi."
+    },
+    {
+     "zh": "在学习过程中及时复习，可以尽早发现和解决问题，加深理解，从而取得更好的成绩。",
+     "py": "Zài xuéxí guòchéng zhōng jíshí fùxí, kěyǐ jǐnzǎo fāxiàn hé jiějué wèntí, jiāshēn lǐjiě, cóng'ér qǔdé gèng hǎo de chéngjì.",
+     "vn": "Trong quá trình học, ôn tập kịp thời giúp sớm phát hiện và giải quyết vấn đề, hiểu sâu hơn, nhờ đó đạt kết quả tốt hơn."
+    },
+    {
+     "zh": "而济南的老百姓住在泉边，喝着这甜美的泉水，自然对它充满感激之情，从而也产生了许多关于泉水的美丽传说。",
+     "py": "Ér Jǐnán de lǎobǎixìng zhù zài quán biān, hēzhe zhè tiánměi de quánshuǐ, zìrán duì tā chōngmǎn gǎnjī zhī qíng, cóng'ér yě chǎnshēngle xǔduō guānyú quánshuǐ de měilì chuánshuō.",
+     "vn": "Còn người dân Tế Nam sống bên suối, uống thứ nước ngọt lành này, tự nhiên chan chứa lòng biết ơn, từ đó cũng ra đời nhiều truyền thuyết đẹp về nước suối."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "从而他取得了好成绩。",
+     "why": "从而 không đứng đầu một câu độc lập; nó nối vế kết quả với vế nguyên nhân / phương pháp đứng trước.",
+     "right": "他每天坚持复习，从而取得了好成绩。"
+    },
+    {
+     "wrong": "因为下大雨，从而比赛取消了。",
+     "why": "Kết quả ngoài ý muốn, không phải nhờ một cách làm chủ động — dùng 所以. 从而 không đi cặp với 因为 như vậy.",
+     "right": "因为下大雨，所以比赛取消了。"
+    }
+   ]
+  },
+  {
+   "point": "为 (wéi)",
+   "explain": "为 (wéi) là động từ. ① Nghĩa \"thành, trở thành\", thường đứng sau động từ khác làm bổ ngữ: 变为, 改为, 选为. ② Nghĩa \"làm, coi là, là\": 以 A 为 B (lấy A làm B), 称 A 为 B (gọi A là B). Phân biệt với giới từ 为 (wèi) = vì, cho.",
+   "rule": "① V + <strong style=\"color:var(--sky-d)\">为</strong> + N (变为 / 改为 / 选为)　② 以 A <strong style=\"color:var(--sky-d)\">为</strong> B · 称 A <strong style=\"color:var(--sky-d)\">为</strong> B",
+   "examples": [
+    {
+     "zh": "而济南市区的地下岩石变为了火成岩，……",
+     "py": "Ér Jǐnán shìqū de dìxià yánshí biànwéile huǒchéngyán, ……",
+     "vn": "Còn đá dưới lòng đất nội thành Tế Nam đã biến thành đá mác-ma, …"
+    },
+    {
+     "zh": "每个人都会遇到各种压力，可是，压力也可以变为动力。",
+     "py": "Měi ge rén dōu huì yùdào gè zhǒng yālì, kěshì, yālì yě kěyǐ biànwéi dònglì.",
+     "vn": "Ai cũng gặp đủ loại áp lực, nhưng áp lực cũng có thể biến thành động lực."
+    },
+    {
+     "zh": "找工作时，很多人会以收入多少为第一标准，这种想法我不能接受。",
+     "py": "Zhǎo gōngzuò shí, hěn duō rén huì yǐ shōurù duōshao wéi dì-yī biāozhǔn, zhè zhǒng xiǎngfǎ wǒ bù néng jiēshòu.",
+     "vn": "Khi tìm việc, nhiều người lấy thu nhập cao thấp làm tiêu chuẩn số một, cách nghĩ này tôi không chấp nhận được."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "压力也可以变为成动力。",
+     "why": "为 đã mang nghĩa \"thành\", không thêm 成 nữa.",
+     "right": "压力也可以变为动力。"
+    },
+    {
+     "wrong": "很多人以收入多少是第一标准。",
+     "why": "Cấu trúc cố định là 以 A 为 B — không dùng 是 thay cho 为.",
+     "right": "很多人以收入多少为第一标准。"
+    }
+   ]
+  }
+ ]
+}

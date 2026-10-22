@@ -1,0 +1,1831 @@
+var vocabData = [
+  {
+    "n": 1,
+    "zh": "生病",
+    "py": "shēngbìng",
+    "pos": "Động từ",
+    "vn": "bị bệnh, sinh bệnh",
+    "hv": "sinh bệnh",
+    "em": "🤒",
+    "lesson": 1,
+    "ex_zh": "他生病了，今天没有去上班。",
+    "ex_py": "Tā shēngbìng le, jīntiān méiyǒu qù shàngbān.",
+    "ex_vn": "Anh ấy bị bệnh rồi, hôm nay không đi làm.",
+    "exList": [
+      {
+        "zh": "他生病了，今天没有去上班。",
+        "py": "Tā shēngbìng le, jīntiān méiyǒu qù shàngbān.",
+        "vn": "Anh ấy bị bệnh rồi, hôm nay không đi làm."
+      },
+      {
+        "zh": "你生病了吗？",
+        "py": "Nǐ shēngbìng le ma?",
+        "vn": "Bạn bị ốm à?"
+      },
+      {
+        "zh": "妈妈生病了，我很担心。",
+        "py": "Māma shēngbìng le, wǒ hěn dānxīn.",
+        "vn": "Mẹ ốm rồi, tôi rất lo lắng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "生",
+        "p": "shēng",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "丿→一→一→丨→一",
+        "rad": "生 (sinh – tự thành bộ)",
+        "mean": "sinh ra; sống; nảy mầm",
+        "tip": "Hình mầm cây mọc trên mặt đất → \"sinh ra, nảy mầm\". Gặp lại trong 学生, 医生.",
+        "cf": "牛 (niú – thiếu nét trên)",
+        "w": "生病 / 学生 / 医生"
+      },
+      {
+        "c": "病",
+        "p": "bìng",
+        "type": "半包围 · Bán bao (疒)",
+        "st": 10,
+        "ord": "疒 (bộ bệnh) → 丙 bên trong",
+        "rad": "疒 (nạch – bệnh tật)",
+        "mean": "bệnh; ốm",
+        "tip": "Bộ 疒 = hình người nằm trên giường bệnh. Thấy 疒 → nghĩ ngay tới ỐM ĐAU.",
+        "cf": "痛 (tòng – cùng bộ 疒)",
+        "w": "生病 / 看病 / 病人"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "生病了",
+        "py": "shēngbìng le",
+        "vn": "ốm rồi"
+      },
+      {
+        "zh": "没生病",
+        "py": "méi shēngbìng",
+        "vn": "không ốm"
+      },
+      {
+        "zh": "生病的时候",
+        "py": "shēngbìng de shíhou",
+        "vn": "lúc bị ốm"
+      },
+      {
+        "zh": "生病的人",
+        "py": "shēngbìng de rén",
+        "vn": "người bị ốm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 生病 + 了",
+        "m": "Ai đó bị ốm rồi"
+      },
+      {
+        "s": "生病 (bị ốm) → 吃药 (uống thuốc) → 休息 (nghỉ ngơi)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay tôi ốm rồi, không đi học được.",
+        "answer": "今天我生病了，不能去学校。",
+        "answerPy": "Jīntiān wǒ shēngbìng le, bù néng qù xuéxiào.",
+        "note": "Sub + 生病 + 了 — ai đó bị ốm rồi.",
+        "pair": "……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Lúc bị ốm bạn phải uống nhiều nước nóng.",
+        "answer": "生病的时候你要多喝热水。",
+        "answerPy": "Shēngbìng de shíhou nǐ yào duō hē rèshuǐ.",
+        "note": "生病的时候 — lúc bị ốm.",
+        "pair": "要 + V"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "每",
+    "py": "měi",
+    "pos": "Đại từ",
+    "vn": "mỗi",
+    "hv": "mỗi",
+    "em": "🔁",
+    "lesson": 1,
+    "ex_zh": "我每天都学习中文。",
+    "ex_py": "Wǒ měitiān dōu xuéxí Zhōngwén.",
+    "ex_vn": "Mỗi ngày tôi đều học tiếng Trung.",
+    "exList": [
+      {
+        "zh": "我每天都学习中文。",
+        "py": "Wǒ měitiān dōu xuéxí Zhōngwén.",
+        "vn": "Mỗi ngày tôi đều học tiếng Trung."
+      },
+      {
+        "zh": "每个人都喜欢他。",
+        "py": "Měige rén dōu xǐhuan tā.",
+        "vn": "Mỗi người đều thích anh ấy."
+      },
+      {
+        "zh": "每次都是这样。",
+        "py": "Měicì dōu shì zhèyàng.",
+        "vn": "Lần nào cũng như vậy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "每",
+        "p": "měi",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "ノ→一→一→フ→一→ㄥ→丶",
+        "rad": "母 (mẫu – biến thể)",
+        "mean": "mỗi, từng",
+        "tip": "Gần giống chữ 母 (mẹ) thêm 1 nét trên đầu — mỗi bà mẹ đều có quy tắc riêng, hãy nhớ 每 hay đi cùng 都.",
+        "cf": "母 (mǔ – \"mẹ\", thiếu 1 nét)",
+        "w": "每天 / 每个 / 每次"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "每天",
+        "py": "měi tiān",
+        "vn": "mỗi ngày"
+      },
+      {
+        "zh": "每个人",
+        "py": "měi gè rén",
+        "vn": "mỗi người"
+      },
+      {
+        "zh": "每年",
+        "py": "měi nián",
+        "vn": "mỗi năm"
+      },
+      {
+        "zh": "每个星期",
+        "py": "měi gè xīngqī",
+        "vn": "mỗi tuần"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "每 + lượng từ + danh từ",
+        "m": "Mỗi …: 每个人 · 每天"
+      },
+      {
+        "s": "每 hay đi cùng 都 ở vế sau: 我每天都跑步"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sáng nào tôi cũng chạy bộ.",
+        "answer": "我每天早上都跑步。",
+        "answerPy": "Wǒ měi tiān zǎoshang dōu pǎobù.",
+        "note": "每 hay đi với 都 ở vế sau.",
+        "pair": "每……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Mỗi người đều có thời gian của mình.",
+        "answer": "每个人都有自己的时间。",
+        "answerPy": "Měi ge rén dōu yǒu zìjǐ de shíjiān.",
+        "note": "每个人 — mỗi người.",
+        "pair": "每……都……"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "早上",
+    "py": "zǎoshang",
+    "pos": "Danh từ",
+    "vn": "buổi sáng",
+    "hv": "tảo thượng",
+    "em": "🌅",
+    "lesson": 1,
+    "ex_zh": "早上的天气很冷。",
+    "ex_py": "Zǎoshang de tiānqì hěn lěng.",
+    "ex_vn": "Thời tiết buổi sáng rất lạnh.",
+    "exList": [
+      {
+        "zh": "早上的天气很冷。",
+        "py": "Zǎoshang de tiānqì hěn lěng.",
+        "vn": "Thời tiết buổi sáng rất lạnh."
+      },
+      {
+        "zh": "我早上七点起床。",
+        "py": "Wǒ zǎoshang qī diǎn qǐchuáng.",
+        "vn": "Buổi sáng tôi thức dậy lúc 7 giờ."
+      },
+      {
+        "zh": "早上好！",
+        "py": "Zǎoshang hǎo!",
+        "vn": "Chào buổi sáng!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "早",
+        "p": "zǎo",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "日 (mặt trời) trên → 十 dưới",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "sớm",
+        "tip": "Mặt trời 日 mới nhô lên trên cây/giá 十 → trời còn SỚM.",
+        "cf": "旱 (hàn – \"hạn hán\", phần dưới khác)",
+        "w": "早上 / 早饭 / 早点"
+      },
+      {
+        "c": "上",
+        "p": "shàng",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "一 → 丨 → 一",
+        "rad": "一 (nhất)",
+        "mean": "trên; lên",
+        "tip": "Một nét ngắn phía TRÊN một nét ngang dài → chỉ hướng lên trên. 早上 = phần sớm của ngày.",
+        "cf": "下 (xià – trái nghĩa)",
+        "w": "早上 / 上班 / 上课"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "今天早上",
+        "py": "jīntiān zǎoshang",
+        "vn": "sáng nay"
+      },
+      {
+        "zh": "明天早上",
+        "py": "míngtiān zǎoshang",
+        "vn": "sáng mai"
+      },
+      {
+        "zh": "早上六点",
+        "py": "zǎoshang liù diǎn",
+        "vn": "sáu giờ sáng"
+      },
+      {
+        "zh": "每天早上",
+        "py": "měi tiān zǎoshang",
+        "vn": "sáng nào cũng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "ngày + 早上",
+        "m": "Buổi sáng của ngày nào: 今天早上"
+      },
+      {
+        "s": "早上 · 上午 · 中午 · 下午 · 晚上 — năm buổi trong ngày"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sáng nay tôi dậy lúc sáu giờ.",
+        "answer": "今天早上我六点起床。",
+        "answerPy": "Jīntiān zǎoshang wǒ liù diǎn qǐchuáng.",
+        "note": "Thời gian đứng TRƯỚC động từ.",
+        "pair": "……点……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Sáng mai bạn có đi chạy bộ không?",
+        "answer": "明天早上你去跑步吗？",
+        "answerPy": "Míngtiān zǎoshang nǐ qù pǎobù ma?",
+        "note": "早上 · 上午 · 中午 · 下午 · 晚上.",
+        "pair": "……吗？"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "跑步",
+    "py": "pǎobù",
+    "pos": "Động từ",
+    "vn": "chạy bộ",
+    "hv": "bào bộ",
+    "em": "🏃",
+    "lesson": 1,
+    "ex_zh": "我去操场跑步。",
+    "ex_py": "Wǒ qù cāochǎng pǎobù.",
+    "ex_vn": "Tôi đi sân tập chạy bộ.",
+    "exList": [
+      {
+        "zh": "我去操场跑步。",
+        "py": "Wǒ qù cāochǎng pǎobù.",
+        "vn": "Tôi đi sân tập chạy bộ."
+      },
+      {
+        "zh": "他每天早上跑步。",
+        "py": "Tā měitiān zǎoshang pǎobù.",
+        "vn": "Mỗi sáng anh ấy đều chạy bộ."
+      },
+      {
+        "zh": "跑步对身体很好。",
+        "py": "Pǎobù duì shēntǐ hěn hǎo.",
+        "vn": "Chạy bộ rất tốt cho sức khỏe."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "跑",
+        "p": "pǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "足 (túc) trái → 包 (bao) phải",
+        "rad": "足 (túc – chân)",
+        "mean": "chạy",
+        "tip": "Bộ 足 (chân) bên trái → động tác liên quan tới chân. Chân + 包 (bọc/ôm lấy đất) → CHẠY.",
+        "cf": "饱 (bǎo – \"no\", bộ 饣\")",
+        "w": "跑步 / 跑车 / 快跑"
+      },
+      {
+        "c": "步",
+        "p": "bù",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "止 (chỉ) trên → 少 biến thể dưới",
+        "rad": "止 (chỉ – dừng/chân)",
+        "mean": "bước",
+        "tip": "Hai bàn chân nối tiếp nhau tạo thành BƯỚC đi.",
+        "cf": "涉 (shè – thêm bộ 氵)",
+        "w": "跑步 / 一步 / 步行"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去跑步",
+        "py": "qù pǎobù",
+        "vn": "đi chạy bộ"
+      },
+      {
+        "zh": "每天跑步",
+        "py": "měi tiān pǎobù",
+        "vn": "ngày nào cũng chạy"
+      },
+      {
+        "zh": "喜欢跑步",
+        "py": "xǐhuan pǎobù",
+        "vn": "thích chạy bộ"
+      },
+      {
+        "zh": "早上跑步",
+        "py": "zǎoshang pǎobù",
+        "vn": "sáng chạy bộ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "thời gian + 跑步",
+        "m": "Chạy bộ vào lúc nào: 每天早上跑步"
+      },
+      {
+        "s": "跑 + 步",
+        "m": "Chạy (跑) từng bước (步) — chạy bộ"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thích chạy bộ vào buổi sáng nhất.",
+        "answer": "我最喜欢早上跑步。",
+        "answerPy": "Wǒ zuì xǐhuan zǎoshang pǎobù.",
+        "note": "跑 + 步 — chạy từng bước.",
+        "pair": "最 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay tôi mệt quá, không đi chạy bộ nữa.",
+        "answer": "今天我太累了，不去跑步了。",
+        "answerPy": "Jīntiān wǒ tài lèi le, bú qù pǎobù le.",
+        "note": "不……了 — không làm nữa.",
+        "pair": "太……了"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "起床",
+    "py": "qǐchuáng",
+    "pos": "Động từ",
+    "vn": "thức dậy",
+    "hv": "khởi sàng",
+    "em": "⏰",
+    "lesson": 1,
+    "ex_zh": "你每天几点起床？",
+    "ex_py": "Nǐ měitiān jǐ diǎn qǐchuáng?",
+    "ex_vn": "Mỗi ngày bạn thức dậy lúc mấy giờ?",
+    "exList": [
+      {
+        "zh": "你每天几点起床？",
+        "py": "Nǐ měitiān jǐ diǎn qǐchuáng?",
+        "vn": "Mỗi ngày bạn thức dậy lúc mấy giờ?"
+      },
+      {
+        "zh": "我六点起床。",
+        "py": "Wǒ liù diǎn qǐchuáng.",
+        "vn": "Tôi thức dậy lúc 6 giờ."
+      },
+      {
+        "zh": "弟弟还没起床。",
+        "py": "Dìdi hái méi qǐchuáng.",
+        "vn": "Em trai vẫn chưa thức dậy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "起",
+        "p": "qǐ",
+        "type": "半包围 · Bán bao (走)",
+        "st": 10,
+        "ord": "走 (tẩu) trái/dưới → 己 (kỷ) phải/trên",
+        "rad": "走 (tẩu – đi)",
+        "mean": "dậy; bắt đầu",
+        "tip": "Bộ 走 (đi) + 己 (bản thân) → tự mình đứng dậy và bước đi = THỨC DẬY, bắt đầu.",
+        "cf": "赶 (gǎn – \"vội, đuổi kịp\")",
+        "w": "起床 / 起来 / 早起"
+      },
+      {
+        "c": "床",
+        "p": "chuáng",
+        "type": "半包围 · Bán bao (广)",
+        "st": 7,
+        "ord": "广 (mái nhà) → 木 (mộc) bên trong",
+        "rad": "广 (nghiễm – mái che)",
+        "mean": "giường",
+        "tip": "Mái nhà 广 che phía trên khung gỗ 木 → cái GIƯỜNG ở trong nhà.",
+        "cf": "庄 (zhuāng – \"trang trại\")",
+        "w": "起床 / 床上 / 一张床"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "几点起床",
+        "py": "jǐ diǎn qǐchuáng",
+        "vn": "mấy giờ dậy"
+      },
+      {
+        "zh": "早上起床",
+        "py": "zǎoshang qǐchuáng",
+        "vn": "sáng dậy"
+      },
+      {
+        "zh": "六点起床",
+        "py": "liù diǎn qǐchuáng",
+        "vn": "sáu giờ dậy"
+      },
+      {
+        "zh": "不想起床",
+        "py": "bù xiǎng qǐchuáng",
+        "vn": "không muốn dậy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "thời gian + 起床",
+        "m": "Mấy giờ ngủ dậy: 六点起床"
+      },
+      {
+        "s": "起 + 床",
+        "m": "Rời (起) khỏi giường (床)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mấy giờ bạn ngủ dậy?",
+        "answer": "你几点起床？",
+        "answerPy": "Nǐ jǐ diǎn qǐchuáng?",
+        "note": "起 + 床 — rời khỏi giường.",
+        "pair": "几点……？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay tôi không muốn dậy, tôi rất mệt.",
+        "answer": "今天我不想起床，我很累。",
+        "answerPy": "Jīntiān wǒ bù xiǎng qǐchuáng, wǒ hěn lèi.",
+        "note": "Phủ định đặt trước 想.",
+        "pair": "不想 + V"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "药",
+    "py": "yào",
+    "pos": "Danh từ",
+    "vn": "thuốc",
+    "hv": "dược",
+    "em": "💊",
+    "lesson": 2,
+    "ex_zh": "吃药以后要喝水。",
+    "ex_py": "Chī yào yǐhòu yào hē shuǐ.",
+    "ex_vn": "Sau khi uống thuốc phải uống nước.",
+    "exList": [
+      {
+        "zh": "吃药以后要喝水。",
+        "py": "Chī yào yǐhòu yào hē shuǐ.",
+        "vn": "Sau khi uống thuốc phải uống nước."
+      },
+      {
+        "zh": "你吃药了吗？",
+        "py": "Nǐ chī yào le ma?",
+        "vn": "Bạn uống thuốc chưa?"
+      },
+      {
+        "zh": "医生给了我一点儿药。",
+        "py": "Yīshēng gěile wǒ yìdiǎnr yào.",
+        "vn": "Bác sĩ đã cho tôi một ít thuốc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "药",
+        "p": "yào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "艹 (thảo đầu) trên → 约 (ước) dưới",
+        "rad": "艹 (thảo – cỏ cây)",
+        "mean": "thuốc",
+        "tip": "Bộ 艹 (cỏ) ở trên → thuốc xưa làm từ cây cỏ, thảo dược. Thấy 艹 → nghĩ tới cây cỏ/thuốc men.",
+        "cf": "约 (yuē – \"hẹn\", thiếu 艹)",
+        "w": "吃药 / 买药 / 中药"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "吃药",
+        "py": "chī yào",
+        "vn": "uống thuốc"
+      },
+      {
+        "zh": "买药",
+        "py": "mǎi yào",
+        "vn": "mua thuốc"
+      },
+      {
+        "zh": "一些药",
+        "py": "yìxiē yào",
+        "vn": "một ít thuốc"
+      },
+      {
+        "zh": "医生的药",
+        "py": "yīshēng de yào",
+        "vn": "thuốc của bác sĩ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "吃 + 药",
+        "m": "Uống thuốc — tiếng Trung nói 吃药, không nói 喝药"
+      },
+      {
+        "s": "药 có bộ 艹 (cỏ) ở trên — thuốc xưa làm từ cây cỏ"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Uống thuốc xong rồi bạn nghỉ một chút đi.",
+        "answer": "吃药以后你休息一下吧。",
+        "answerPy": "Chī yào yǐhòu nǐ xiūxi yíxià ba.",
+        "note": "Tiếng Trung nói 吃药, không nói 喝药.",
+        "pair": "……吧"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi muốn đi mua một ít thuốc.",
+        "answer": "我要去买一些药。",
+        "answerPy": "Wǒ yào qù mǎi yìxiē yào.",
+        "note": "一些药 — một ít thuốc.",
+        "pair": "要 + V"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "身体",
+    "py": "shēntǐ",
+    "pos": "Danh từ",
+    "vn": "cơ thể, sức khỏe",
+    "hv": "thân thể",
+    "em": "💪",
+    "lesson": 2,
+    "ex_zh": "爸爸的身体很好。",
+    "ex_py": "Bàba de shēntǐ hěn hǎo.",
+    "ex_vn": "Sức khỏe của bố rất tốt.",
+    "exList": [
+      {
+        "zh": "爸爸的身体很好。",
+        "py": "Bàba de shēntǐ hěn hǎo.",
+        "vn": "Sức khỏe của bố rất tốt."
+      },
+      {
+        "zh": "现在身体怎么样？",
+        "py": "Xiànzài shēntǐ zěnmeyàng?",
+        "vn": "Bây giờ sức khỏe thế nào rồi?"
+      },
+      {
+        "zh": "多运动对身体好。",
+        "py": "Duō yùndòng duì shēntǐ hǎo.",
+        "vn": "Vận động nhiều tốt cho sức khỏe."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "身",
+        "p": "shēn",
+        "type": "独体字 · Chữ đơn",
+        "st": 7,
+        "ord": "丿→ 丨→ 一→ 一→ 一→ 一→ 一",
+        "rad": "身 (thân – tự thành bộ)",
+        "mean": "thân mình",
+        "tip": "Hình dáng người mang thai/thân người nhìn nghiêng → THÂN THỂ.",
+        "cf": "躬 (gōng – thêm bộ 弓)",
+        "w": "身体 / 全身 / 自身"
+      },
+      {
+        "c": "体",
+        "p": "tǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "亻 (nhân) trái → 本 (bản) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "cơ thể",
+        "tip": "Người 亻 + 本 (gốc rễ) → cái GỐC của một con người = cơ thể.",
+        "cf": "休 (xiū – khác phần phải)",
+        "w": "身体 / 体育 / 体重"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "身体怎么样",
+        "py": "shēntǐ zěnmeyàng",
+        "vn": "sức khoẻ thế nào"
+      },
+      {
+        "zh": "好身体",
+        "py": "hǎo shēntǐ",
+        "vn": "sức khoẻ tốt"
+      },
+      {
+        "zh": "我的身体",
+        "py": "wǒ de shēntǐ",
+        "vn": "sức khoẻ của tôi"
+      },
+      {
+        "zh": "身体不舒服",
+        "py": "shēntǐ bù shūfu",
+        "vn": "người khó chịu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "ai + 身体 + 怎么样？",
+        "m": "Hỏi thăm sức khoẻ: 你爸爸身体怎么样？"
+      },
+      {
+        "s": "身 + 体",
+        "m": "Thân (身) thể (体) — hai chữ cùng nghĩa ghép lại"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sức khoẻ bố bạn thế nào?",
+        "answer": "你爸爸身体怎么样？",
+        "answerPy": "Nǐ bàba shēntǐ zěnmeyàng?",
+        "note": "Câu hỏi thăm sức khoẻ rất hay dùng.",
+        "pair": "怎么样？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Ngày nào cũng vận động thì sức khoẻ sẽ rất tốt.",
+        "answer": "每天都运动，身体很好。",
+        "answerPy": "Měi tiān dōu yùndòng, shēntǐ hěn hǎo.",
+        "note": "身 + 体 — hai chữ cùng nghĩa ghép lại.",
+        "pair": "每……都……"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "出院",
+    "py": "chūyuàn",
+    "pos": "Động từ",
+    "vn": "xuất viện",
+    "hv": "xuất viện",
+    "em": "🚪",
+    "lesson": 2,
+    "ex_zh": "他明天就可以出院了。",
+    "ex_py": "Tā míngtiān jiù kěyǐ chūyuàn le.",
+    "ex_vn": "Ngày mai anh ấy có thể xuất viện rồi.",
+    "exList": [
+      {
+        "zh": "他明天就可以出院了。",
+        "py": "Tā míngtiān jiù kěyǐ chūyuàn le.",
+        "vn": "Ngày mai anh ấy có thể xuất viện rồi."
+      },
+      {
+        "zh": "什么时候能出院？",
+        "py": "Shénme shíhou néng chūyuàn?",
+        "vn": "Khi nào thì có thể xuất viện?"
+      },
+      {
+        "zh": "医生说下星期出院。",
+        "py": "Yīshēng shuō xià xīngqī chūyuàn.",
+        "vn": "Bác sĩ nói tuần sau xuất viện."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "出",
+        "p": "chū",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "凵 → 山 chồng lên",
+        "rad": "凵 (khảm – hố)",
+        "mean": "ra, xuất",
+        "tip": "Hình một chân bước RA khỏi cái hố/hang → \"đi ra, xuất hiện\". Trái nghĩa với 进 (vào).",
+        "cf": "击 (jī)",
+        "w": "出院 / 出去 / 出发"
+      },
+      {
+        "c": "院",
+        "p": "yuàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "阝(phụ) trái → 完 (hoàn) phải",
+        "rad": "阝(phụ – đồi/khu vực)",
+        "mean": "viện, sân, khuôn viên",
+        "tip": "Bộ 阝 (khu vực có tường bao) + 完 → một khuôn viên khép kín = VIỆN (bệnh viện, học viện...).",
+        "cf": "完 (wán – thiếu bộ 阝)",
+        "w": "出院 / 医院 / 学院"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "出院了",
+        "py": "chūyuàn le",
+        "vn": "ra viện rồi"
+      },
+      {
+        "zh": "什么时候出院",
+        "py": "shénme shíhou chūyuàn",
+        "vn": "khi nào ra viện"
+      },
+      {
+        "zh": "可以出院",
+        "py": "kěyǐ chūyuàn",
+        "vn": "được ra viện"
+      },
+      {
+        "zh": "出院回家",
+        "py": "chūyuàn huí jiā",
+        "vn": "ra viện về nhà"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 出院 + 了",
+        "m": "Ai đó ra viện rồi"
+      },
+      {
+        "s": "出 + 院",
+        "m": "Ra (出) khỏi bệnh viện (医院)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Khi nào bạn được ra viện?",
+        "answer": "你什么时候出院？",
+        "answerPy": "Nǐ shénme shíhou chūyuàn?",
+        "note": "出 + 院 — ra khỏi bệnh viện.",
+        "pair": "什么时候……？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bác sĩ nói ngày mai tôi có thể ra viện.",
+        "answer": "医生说明天我可以出院。",
+        "answerPy": "Yīshēng shuō míngtiān wǒ kěyǐ chūyuàn.",
+        "note": "Sub + 出院 + 了 — ai đó ra viện rồi.",
+        "pair": "可以 + V"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "高",
+    "py": "gāo",
+    "pos": "Tính từ",
+    "vn": "cao",
+    "hv": "cao",
+    "em": "📏",
+    "lesson": 3,
+    "ex_zh": "他比我高一点儿。",
+    "ex_py": "Tā bǐ wǒ gāo yìdiǎnr.",
+    "ex_vn": "Anh ấy cao hơn tôi một chút.",
+    "exList": [
+      {
+        "zh": "他比我高一点儿。",
+        "py": "Tā bǐ wǒ gāo yìdiǎnr.",
+        "vn": "Anh ấy cao hơn tôi một chút."
+      },
+      {
+        "zh": "这座楼很高。",
+        "py": "Zhè zuò lóu hěn gāo.",
+        "vn": "Tòa nhà này rất cao."
+      },
+      {
+        "zh": "他多高？",
+        "py": "Tā duō gāo?",
+        "vn": "Anh ấy cao bao nhiêu?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "高",
+        "p": "gāo",
+        "type": "独体字 · Tượng hình",
+        "st": 10,
+        "ord": "亠 → 口 → 冂 → 口",
+        "rad": "高 (cao – tự thành bộ)",
+        "mean": "cao",
+        "tip": "Hình vẽ một tòa tháp nhiều tầng nhìn từ xa → \"CAO\". Nhớ theo hình dáng tháp canh cổ.",
+        "cf": "亭 (tíng – \"đình\", có 丁 dưới)",
+        "w": "高兴 / 高大 / 多高"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很高",
+        "py": "hěn gāo",
+        "vn": "rất cao"
+      },
+      {
+        "zh": "一米八高",
+        "py": "yì mǐ bā gāo",
+        "vn": "cao một mét tám"
+      },
+      {
+        "zh": "不高",
+        "py": "bù gāo",
+        "vn": "không cao"
+      },
+      {
+        "zh": "高高的",
+        "py": "gāogāo de",
+        "vn": "cao cao"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 米 + 高",
+        "m": "Cao bao nhiêu mét: 他一米八高"
+      },
+      {
+        "s": "高 (cao) ↔ 小 (nhỏ, thấp) — với người thì nói 个子高 hay 个子不高"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Em trai tôi cao một mét tám.",
+        "answer": "我弟弟一米八高。",
+        "answerPy": "Wǒ dìdi yì mǐ bā gāo.",
+        "note": "Nói chiều cao thì đặt số đo trước 高.",
+        "pair": "số + 米 + 高"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy không cao lắm, nhưng chạy rất nhanh.",
+        "answer": "她不太高，跑得很快。",
+        "answerPy": "Tā bú tài gāo, pǎo de hěn kuài.",
+        "note": "V + 得 + tính từ — làm việc đó thế nào.",
+        "pair": "不太 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "米",
+    "py": "mǐ",
+    "pos": "Lượng từ",
+    "vn": "mét",
+    "hv": "mễ",
+    "em": "📐",
+    "lesson": 3,
+    "ex_zh": "他高一米八。",
+    "ex_py": "Tā gāo yì mǐ bā.",
+    "ex_vn": "Anh ấy cao 1 mét 8.",
+    "exList": [
+      {
+        "zh": "他高一米八。",
+        "py": "Tā gāo yì mǐ bā.",
+        "vn": "Anh ấy cao 1 mét 8."
+      },
+      {
+        "zh": "这条路有一千米长。",
+        "py": "Zhè tiáo lù yǒu yìqiān mǐ cháng.",
+        "vn": "Con đường này dài 1000 mét."
+      },
+      {
+        "zh": "我一米六五。",
+        "py": "Wǒ yì mǐ liù wǔ.",
+        "vn": "Tôi cao 1 mét 65."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "米",
+        "p": "mǐ",
+        "type": "独体字 · Tượng hình",
+        "st": 6,
+        "ord": "丶 → 一 → 十 → 丿 → 捺",
+        "rad": "米 (mễ – gạo)",
+        "mean": "gạo; (mượn âm) mét",
+        "tip": "Hình các hạt gạo tách ra từ bông lúa → nghĩa gốc là \"GẠO\". Do phiên âm gần giống \"mètre\" nên mượn làm đơn vị đo \"MÉT\".",
+        "cf": "来 (lái – gần giống nét trên)",
+        "w": "一米 / 大米 / 米饭"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一米",
+        "py": "yì mǐ",
+        "vn": "một mét"
+      },
+      {
+        "zh": "一米八",
+        "py": "yì mǐ bā",
+        "vn": "một mét tám"
+      },
+      {
+        "zh": "两米",
+        "py": "liǎng mǐ",
+        "vn": "hai mét"
+      },
+      {
+        "zh": "多少米",
+        "py": "duōshao mǐ",
+        "vn": "bao nhiêu mét"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 米",
+        "m": "Bao nhiêu mét — 米 tự làm lượng từ"
+      },
+      {
+        "s": "米 (mét) và 米饭 (cơm) — cùng chữ, hai nghĩa"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn cao bao nhiêu mét?",
+        "answer": "你多少米高？",
+        "answerPy": "Nǐ duōshao mǐ gāo?",
+        "note": "米 tự làm lượng từ, không thêm 个.",
+        "pair": "多少……？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cái bàn này dài hai mét.",
+        "answer": "这个桌子两米长。",
+        "answerPy": "Zhège zhuōzi liǎng mǐ cháng.",
+        "note": "米 (mét) và 米饭 (cơm) — cùng chữ, hai nghĩa.",
+        "pair": "số + 米"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "知道",
+    "py": "zhīdào",
+    "pos": "Động từ",
+    "vn": "biết",
+    "hv": "tri đạo",
+    "em": "💡",
+    "lesson": 3,
+    "ex_zh": "我知道这件事。",
+    "ex_py": "Wǒ zhīdào zhè jiàn shì.",
+    "ex_vn": "Tôi biết chuyện này.",
+    "exList": [
+      {
+        "zh": "我知道这件事。",
+        "py": "Wǒ zhīdào zhè jiàn shì.",
+        "vn": "Tôi biết chuyện này."
+      },
+      {
+        "zh": "你怎么知道的？",
+        "py": "Nǐ zěnme zhīdào de?",
+        "vn": "Sao bạn lại biết được?"
+      },
+      {
+        "zh": "我不知道他叫什么名字。",
+        "py": "Wǒ bù zhīdào tā jiào shénme míngzi.",
+        "vn": "Tôi không biết anh ấy tên gì."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "知",
+        "p": "zhī",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "矢 (thỉ) trái → 口 (khẩu) phải",
+        "rad": "矢 (thỉ – mũi tên)",
+        "mean": "biết",
+        "tip": "Mũi tên 矢 bắn trúng đích + miệng 口 nói ra → nói trúng, tức là BIẾT rõ.",
+        "cf": "智 (zhì – thêm bộ 日)",
+        "w": "知道 / 通知 / 知识"
+      },
+      {
+        "c": "道",
+        "p": "dào",
+        "type": "半包围 · Bán bao (辶)",
+        "st": 12,
+        "ord": "首 (thủ) trước → 辶 sau cùng",
+        "rad": "辶 (sước – bước đi)",
+        "mean": "đường; đạo; nói",
+        "tip": "首 (đầu, hướng đi) + 辶 (đi) → con ĐƯỜNG dẫn tới đích. 知 + 道 = biết rõ đường đi = BIẾT.",
+        "cf": "导 (dǎo – \"dẫn dắt\")",
+        "w": "知道 / 道路 / 味道"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "不知道",
+        "py": "bù zhīdào",
+        "vn": "không biết"
+      },
+      {
+        "zh": "知道了",
+        "py": "zhīdào le",
+        "vn": "biết rồi"
+      },
+      {
+        "zh": "你知道吗",
+        "py": "nǐ zhīdào ma",
+        "vn": "bạn có biết không"
+      },
+      {
+        "zh": "知道他的名字",
+        "py": "zhīdào tā de míngzi",
+        "vn": "biết tên anh ấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "知道 + mệnh đề",
+        "m": "Biết một chuyện: 我知道他生病了"
+      },
+      {
+        "s": "知道 (biết một chuyện) khác 认识 (quen biết một người)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi không biết cô ấy ốm rồi.",
+        "answer": "我不知道她生病了。",
+        "answerPy": "Wǒ bù zhīdào tā shēngbìng le.",
+        "note": "知道 là biết chuyện, 认识 là quen người.",
+        "pair": "知道 + mệnh đề"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn có biết mấy giờ thầy đến không?",
+        "answer": "你知道老师几点来吗？",
+        "answerPy": "Nǐ zhīdào lǎoshī jǐ diǎn lái ma?",
+        "note": "知道 + mệnh đề — biết chuyện gì.",
+        "pair": "……吗？"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "休息",
+    "py": "xiūxi",
+    "pos": "Động từ",
+    "vn": "nghỉ ngơi",
+    "hv": "hưu tức",
+    "em": "😴",
+    "lesson": 3,
+    "ex_zh": "累了就休息一下吧。",
+    "ex_py": "Lèi le jiù xiūxi yíxià ba.",
+    "ex_vn": "Mệt thì nghỉ ngơi một chút đi.",
+    "exList": [
+      {
+        "zh": "累了就休息一下吧。",
+        "py": "Lèi le jiù xiūxi yíxià ba.",
+        "vn": "Mệt thì nghỉ ngơi một chút đi."
+      },
+      {
+        "zh": "我们休息十分钟。",
+        "py": "Wǒmen xiūxi shí fēnzhōng.",
+        "vn": "Chúng ta nghỉ 10 phút."
+      },
+      {
+        "zh": "今天他在家休息。",
+        "py": "Jīntiān tā zài jiā xiūxi.",
+        "vn": "Hôm nay anh ấy ở nhà nghỉ ngơi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "休",
+        "p": "xiū",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "亻 (nhân) trái → 木 (mộc) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "nghỉ",
+        "tip": "Người 亻 dựa vào cây 木 → hình ảnh một người ngồi tựa gốc cây để NGHỈ NGƠI.",
+        "cf": "体 (tǐ – khác phần phải)",
+        "w": "休息 / 休假 / 退休"
+      },
+      {
+        "c": "息",
+        "p": "xī",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "自 (tự) trên → 心 (tâm) dưới",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "hơi thở; ngừng lại",
+        "tip": "自 (mũi) trên 心 (tim) → hơi thở ra vào từ tim/mũi → nghĩa \"thở, nghỉ\".",
+        "cf": "鼻 (bí – \"mũi\")",
+        "w": "休息 / 消息 / 信息"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "休息一下",
+        "py": "xiūxi yíxià",
+        "vn": "nghỉ một chút"
+      },
+      {
+        "zh": "在家休息",
+        "py": "zài jiā xiūxi",
+        "vn": "nghỉ ở nhà"
+      },
+      {
+        "zh": "想休息",
+        "py": "xiǎng xiūxi",
+        "vn": "muốn nghỉ"
+      },
+      {
+        "zh": "好好休息",
+        "py": "hǎohǎo xiūxi",
+        "vn": "nghỉ cho khoẻ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "休息 + 一下",
+        "m": "Nghỉ một chút — 一下 làm ngữ khí nhẹ đi"
+      },
+      {
+        "s": "休 = 亻 + 木",
+        "m": "Người (亻) tựa vào gốc cây (木) — nghỉ ngơi"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn mệt quá rồi, nghỉ một chút đi.",
+        "answer": "你太累了，休息一下吧。",
+        "answerPy": "Nǐ tài lèi le, xiūxi yíxià ba.",
+        "note": "一下 làm ngữ khí nhẹ đi.",
+        "pair": "太……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chủ nhật tôi nghỉ ở nhà, không đi đâu cả.",
+        "answer": "星期天我在家休息，不去别的地方。",
+        "answerPy": "Xīngqītiān wǒ zài jiā xiūxi, bú qù biéde dìfang.",
+        "note": "Nơi chốn đứng trước động từ.",
+        "pair": "在……休息"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "忙",
+    "py": "máng",
+    "pos": "Tính từ",
+    "vn": "bận",
+    "hv": "mang",
+    "em": "😅",
+    "lesson": 3,
+    "ex_zh": "老师最近很忙。",
+    "ex_py": "Lǎoshī zuìjìn hěn máng.",
+    "ex_vn": "Dạo này giáo viên rất bận.",
+    "exList": [
+      {
+        "zh": "老师最近很忙。",
+        "py": "Lǎoshī zuìjìn hěn máng.",
+        "vn": "Dạo này giáo viên rất bận."
+      },
+      {
+        "zh": "你在忙什么？",
+        "py": "Nǐ zài máng shénme?",
+        "vn": "Bạn đang bận gì vậy?"
+      },
+      {
+        "zh": "他工作很忙，没有时间休息。",
+        "py": "Tā gōngzuò hěn máng, méiyǒu shíjiān xiūxi.",
+        "vn": "Anh ấy làm việc rất bận, không có thời gian nghỉ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "忙",
+        "p": "máng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "忄 (tâm đứng) trái → 亡 (vong) phải",
+        "rad": "忄 (tâm – trái tim)",
+        "mean": "bận rộn",
+        "tip": "Trái tim 忄 + 亡 (mất, quên) → bận đến mức như \"mất cả tâm trí\", quay cuồng.",
+        "cf": "忘 (wàng – \"quên\", 忄 ở dưới)",
+        "w": "忙不忙 / 帮忙 / 很忙"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很忙",
+        "py": "hěn máng",
+        "vn": "rất bận"
+      },
+      {
+        "zh": "不忙",
+        "py": "bù máng",
+        "vn": "không bận"
+      },
+      {
+        "zh": "太忙了",
+        "py": "tài máng le",
+        "vn": "bận quá"
+      },
+      {
+        "zh": "忙什么",
+        "py": "máng shénme",
+        "vn": "bận gì thế"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 很 + 忙",
+        "m": "Câu vị ngữ tính từ: 我很忙"
+      },
+      {
+        "s": "忙 có bộ 忄 (tâm) — bận đến rối cả lòng"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Dạo này tôi rất bận, không có thời gian đi du lịch.",
+        "answer": "我很忙，没有时间去旅游。",
+        "answerPy": "Wǒ hěn máng, méiyǒu shíjiān qù lǚyóu.",
+        "note": "Phủ định của 有 là 没有.",
+        "pair": "没有 + N"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay bạn bận gì thế?",
+        "answer": "你今天忙什么？",
+        "answerPy": "Nǐ jīntiān máng shénme?",
+        "note": "Câu có 什么 thì không thêm 吗.",
+        "pair": "……什么？"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "时间",
+    "py": "shíjiān",
+    "pos": "Danh từ",
+    "vn": "thời gian",
+    "hv": "thời gian",
+    "em": "⏳",
+    "lesson": 3,
+    "ex_zh": "我没有时间去玩。",
+    "ex_py": "Wǒ méiyǒu shíjiān qù wán.",
+    "ex_vn": "Tôi không có thời gian đi chơi.",
+    "exList": [
+      {
+        "zh": "我没有时间去玩。",
+        "py": "Wǒ méiyǒu shíjiān qù wán.",
+        "vn": "Tôi không có thời gian đi chơi."
+      },
+      {
+        "zh": "现在是什么时间？",
+        "py": "Xiànzài shì shénme shíjiān?",
+        "vn": "Bây giờ là mấy giờ?"
+      },
+      {
+        "zh": "时间过得真快。",
+        "py": "Shíjiān guò de zhēn kuài.",
+        "vn": "Thời gian trôi qua thật nhanh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "时",
+        "p": "shí",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "日 (nhật) trái → 寸 (thốn) phải",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "thời gian, giờ",
+        "tip": "Mặt trời 日 di chuyển theo từng khoảng đo được 寸 (đơn vị đo) → chỉ THỜI GIAN.",
+        "cf": "待 (dài – \"chờ đợi\")",
+        "w": "时间 / 小时 / 有时"
+      },
+      {
+        "c": "间",
+        "p": "jiān",
+        "type": "半包围 · Bán bao (门)",
+        "st": 7,
+        "ord": "门 (môn) bao ngoài → 日 bên trong",
+        "rad": "门 (môn – cửa)",
+        "mean": "khoảng, giữa",
+        "tip": "Ánh mặt trời 日 lọt qua khe cửa 门 → khoảng KHÔNG GIAN/THỜI GIAN ở giữa.",
+        "cf": "问 (wèn – thay 日 bằng 口)",
+        "w": "时间 / 中间 / 房间"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "有时间",
+        "py": "yǒushí jiān",
+        "vn": "có thời gian"
+      },
+      {
+        "zh": "没有时间",
+        "py": "méiyǒu shíjiān",
+        "vn": "không có thời gian"
+      },
+      {
+        "zh": "多少时间",
+        "py": "duōshao shíjiān",
+        "vn": "bao nhiêu thời gian"
+      },
+      {
+        "zh": "一些时间",
+        "py": "yìxiē shíjiān",
+        "vn": "một ít thời gian"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "有 / 没有 + 时间",
+        "m": "Có, không có thời gian"
+      },
+      {
+        "s": "时 + 间",
+        "m": "Khoảng (间) thời (时) gian"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chiều nay tôi không có thời gian.",
+        "answer": "今天下午我没有时间。",
+        "answerPy": "Jīntiān xiàwǔ wǒ méiyǒu shíjiān.",
+        "note": "有 / 没有 + 时间.",
+        "pair": "没有 + N"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có thời gian thì chúng ta cùng đi chạy bộ.",
+        "answer": "你有时间我们一起去跑步。",
+        "answerPy": "Nǐ yǒu shíjiān wǒmen yìqǐ qù pǎobù.",
+        "note": "时 + 间 — khoảng thời gian.",
+        "pair": "一起 + V"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "累",
+    "py": "lèi",
+    "pos": "Tính từ",
+    "vn": "mệt",
+    "hv": "lụy",
+    "em": "😩",
+    "lesson": 3,
+    "ex_zh": "工作一天，我很累。",
+    "ex_py": "Gōngzuò yìtiān, wǒ hěn lèi.",
+    "ex_vn": "Làm việc một ngày, tôi rất mệt.",
+    "exList": [
+      {
+        "zh": "工作一天，我很累。",
+        "py": "Gōngzuò yìtiān, wǒ hěn lèi.",
+        "vn": "Làm việc một ngày, tôi rất mệt."
+      },
+      {
+        "zh": "你累不累？",
+        "py": "Nǐ lèi bu lèi?",
+        "vn": "Bạn có mệt không?"
+      },
+      {
+        "zh": "他每天回来都很累。",
+        "py": "Tā měitiān huílái dōu hěn lèi.",
+        "vn": "Mỗi ngày anh ấy về nhà đều rất mệt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "累",
+        "p": "lèi",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "田 (điền) trên → 糸 (mịch) dưới",
+        "rad": "糸 (mịch – tơ, sợi)",
+        "mean": "mệt mỏi; tích lũy",
+        "tip": "田 (ruộng, gánh nặng) đè lên trên bó tơ 糸 → gánh nhiều thứ chồng chất → MỆT MỎI.",
+        "cf": "螺 (luó – \"ốc\", thêm bộ 虫\")",
+        "w": "很累 / 劳累 / 积累"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很累",
+        "py": "hěn lèi",
+        "vn": "rất mệt"
+      },
+      {
+        "zh": "不累",
+        "py": "bú lèi",
+        "vn": "không mệt"
+      },
+      {
+        "zh": "太累了",
+        "py": "tài lèi le",
+        "vn": "mệt quá"
+      },
+      {
+        "zh": "觉得累",
+        "py": "juéde lèi",
+        "vn": "thấy mệt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "很 / 太 + 累 + 了",
+        "m": "Rất mệt, mệt quá"
+      },
+      {
+        "s": "累 (mệt vì làm nhiều) khác 生病 (mệt vì ốm)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay tôi mệt quá, muốn nghỉ sớm.",
+        "answer": "今天我太累了，要早点儿休息。",
+        "answerPy": "Jīntiān wǒ tài lèi le, yào zǎo diǎnr xiūxi.",
+        "note": "累 là mệt vì làm nhiều.",
+        "pair": "太……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chạy bộ mười phút thôi, tôi không mệt.",
+        "answer": "跑步十分钟，我不累。",
+        "answerPy": "Pǎobù shí fēnzhōng, wǒ bú lèi.",
+        "note": "Phủ định tính từ thì bỏ 很, dùng 不.",
+        "pair": "不 + Adj"
+      }
+    ]
+  }
+];
+
+const wuData = [
+  {img:'⏰',label:'起床',py:'qǐchuáng',letter:'A'},
+  {img:'🤒',label:'生病',py:'shēngbìng',letter:'B'},
+  {img:'😴',label:'休息',py:'xiūxi',letter:'C'},
+  {img:'😅',label:'忙',py:'máng',letter:'D'},
+  {img:'😩',label:'累',py:'lèi',letter:'E'},
+  {img:'🏃',label:'跑步',py:'pǎobù',letter:'F'},
+];
+
+var dialogData = [
+  {scene:'在运动场 · Trên sân vận động',
+   preQuiz:[
+     {q:'男的每天早上做什么？',opts:['出去跑步','在家看书','去上班'],ans:0},
+     {q:'男的每天几点起床？',opts:['5点','6点','7点'],ans:1},
+     {q:'女的为什么问他这些？',opts:['因为他很少生病','因为他生病了','因为他不运动'],ans:0},
+   ],
+   lines:[
+     {sp:0,zh:'你很少生病，是不是喜欢运动？',py:'Nǐ hěn shǎo shēngbìng, shìbushì xǐhuan yùndòng?',vn:'Bạn rất ít khi bị bệnh, có phải là vì thích vận động không?'},
+     {sp:1,zh:'是啊，我每天早上都要出去跑步。',py:'Shì a, wǒ měitiān zǎoshang dōu yào chūqu pǎobù.',vn:'Đúng vậy, mỗi sáng tôi đều phải ra ngoài chạy bộ.'},
+     {sp:0,zh:'你每天几点起床？',py:'Nǐ měitiān jǐ diǎn qǐchuáng?',vn:'Mỗi ngày bạn thức dậy lúc mấy giờ?'},
+     {sp:1,zh:'我每天6点起床。',py:'Wǒ měitiān liù diǎn qǐchuáng.',vn:'Mỗi ngày tôi thức dậy lúc 6 giờ.'},
+   ]},
+  {scene:'在医院 · Trong bệnh viện',
+   preQuiz:[
+     {q:'病人吃药了吗？',opts:['吃了','没吃','忘了'],ans:0},
+     {q:'病人现在身体怎么样？',opts:['好多了','更不好了','一样'],ans:0},
+     {q:'医生说什么时候能出院？',opts:['明天','下个星期','不知道'],ans:1},
+   ],
+   lines:[
+     {sp:0,zh:'吃药了吗？现在身体怎么样？',py:'Chī yào le ma? Xiànzài shēntǐ zěnmeyàng?',vn:'Bạn uống thuốc chưa? Bây giờ sức khỏe thế nào rồi?'},
+     {sp:1,zh:'吃了。现在好多了。',py:'Chī le. Xiànzài hǎo duō le.',vn:'Uống rồi. Bây giờ tốt hơn nhiều rồi.'},
+     {sp:0,zh:'什么时候能出院？',py:'Shénme shíhou néng chūyuàn?',vn:'Khi nào thì có thể xuất viện?'},
+     {sp:1,zh:'医生说下个星期。',py:'Yīshēng shuō xià ge xīngqī.',vn:'Bác sĩ nói là tuần sau.'},
+   ]},
+  {scene:'在操场 · Trên sân tập',
+   preQuiz:[
+     {q:'大卫今年多大？',opts:['20多岁','30多岁','十几岁'],ans:0},
+     {q:'大卫多高？',opts:['一米7几','一米8几','一米9几'],ans:1},
+     {q:'女的怎么知道大卫这么多事情？',opts:['是他同学','是他老师','是他邻居'],ans:0},
+   ],
+   lines:[
+     {sp:0,zh:'大卫今年多大？',py:'Dàwèi jīnnián duō dà?',vn:'David năm nay bao nhiêu tuổi?'},
+     {sp:1,zh:'20多岁。',py:'Èrshí duō suì.',vn:'Hơn 20 tuổi.'},
+     {sp:0,zh:'他多高？',py:'Tā duō gāo?',vn:'Anh ấy cao bao nhiêu?'},
+     {sp:1,zh:'一米8几。',py:'Yī mǐ bā jǐ.',vn:'Hơn 1 mét 8.'},
+     {sp:0,zh:'你怎么知道这么多呀？',py:'Nǐ zěnme zhīdào zhème duō ya?',vn:'Sao bạn lại biết nhiều chuyện về anh ấy thế?'},
+     {sp:1,zh:'他是我同学。',py:'Tā shì wǒ tóngxué.',vn:'Anh ấy là bạn học của tôi.'},
+   ]},
+  {scene:'在房间 · Trong phòng',
+   preQuiz:[
+     {q:'张老师星期六休息吗？',opts:['休息','不休息','不知道'],ans:1},
+     {q:'张老师为什么没时间休息？',opts:['很忙','生病了','去旅游了'],ans:0},
+     {q:'张老师每天回来感觉怎么样？',opts:['很累','很高兴','没事'],ans:0},
+   ],
+   lines:[
+     {sp:0,zh:'张老师星期六也不休息啊。',py:'Zhāng lǎoshī xīngqīliù yě bù xiūxi a.',vn:'Thầy Trương thứ Bảy cũng không nghỉ ngơi à.'},
+     {sp:1,zh:'是啊，他这几天很忙，没有时间休息。',py:'Shì a, tā zhè jǐ tiān hěn máng, méiyǒu shíjiān xiūxi.',vn:'Đúng vậy, mấy ngày nay thầy ấy rất bận, không có thời gian nghỉ ngơi.'},
+     {sp:0,zh:'那会很累吧。',py:'Nà huì hěn lèi ba.',vn:'Như thế thì mệt lắm nhỉ.'},
+     {sp:1,zh:'他每天回来都很累。',py:'Tā měitiān huílái dōu hěn lèi.',vn:'Mỗi ngày thầy ấy về nhà đều rất mệt.'},
+   ]},
+];
+
+
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
+var matchData = [
+  {left:'吃',right:'药'},
+  {left:'每天',right:'跑步'},
+  {left:'身体',right:'好'},
+  {left:'没有',right:'时间'},
+  {left:'很',right:'忙'},
+  {left:'早上',right:'起床'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE (Listening) — đề nghe THẬT từ HSK标准教程2 练习册 (Bài 2)
+// 1 file audio duy nhất chứa đủ cả câu 1-15 (Phần 1+2+3)
+// ══════════════════════════════════════════
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-2/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'医生说要住一个月，', blank:'现在不能出院', post:'。', py:'Yīshēng shuō yào zhù yí gè yuè, xiànzài bù néng chūyuàn.', vn:'Bác sĩ nói phải nằm viện một tháng, bây giờ chưa thể xuất viện.'},
+    ]},
+    {num:2, lines:[
+      {pre:'我爸爸', blank:'每天早上都要运动', post:'。', py:'Wǒ bàba měitiān zǎoshang dōu yào yùndòng.', vn:'Bố tôi sáng nào cũng phải vận động.'},
+    ]},
+    {num:3, lines:[
+      {pre:'张先生', blank:'已经给大卫打电话了', post:'。', py:'Zhāng xiānsheng yǐjīng gěi Dàwèi dǎ diànhuà le.', vn:'Ông Trương đã gọi điện cho David rồi.'},
+    ]},
+    {num:4, lines:[
+      {pre:'他最近太累了，', blank:'已经生病了', post:'。', py:'Tā zuìjìn tài lèi le, yǐjīng shēngbìng le.', vn:'Anh ấy gần đây quá mệt, đã bị ốm rồi.'},
+    ]},
+    {num:5, lines:[
+      {pre:'她每天十二点睡觉，', blank:'早上九点起床', post:'。', py:'Tā měitiān shí\'èr diǎn shuìjiào, zǎoshang jiǔ diǎn qǐchuáng.', vn:'Cô ấy ngày nào cũng ngủ lúc 12 giờ, sáng dậy lúc 9 giờ.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'你爸爸', blank:'每天运动吗', post:'？', py:'Nǐ bàba měitiān yùndòng ma?', vn:'Bố bạn ngày nào cũng vận động à?'},
+      {speaker:'女', pre:'对，他', blank:'每天早上出去跑步', post:'。', py:'Duì, tā měitiān zǎoshang chūqu pǎobù.', vn:'Đúng vậy, sáng nào bố cũng ra ngoài chạy bộ.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'男', pre:'你', blank:'怎么了', post:'？', py:'Nǐ zěnme le?', vn:'Bạn sao vậy?'},
+      {speaker:'女', pre:'', blank:'身体不好，已经两天了', post:'。', py:'Shēntǐ bù hǎo, yǐjīng liǎng tiān le.', vn:'Người không khỏe, đã hai ngày rồi.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'明天下午你有时间吗？', blank:'我们去看电影吧', post:'。', py:'Míngtiān xiàwǔ nǐ yǒu shíjiān ma? Wǒmen qù kàn diànyǐng ba.', vn:'Chiều mai bạn có thời gian không? Chúng ta đi xem phim đi.'},
+      {speaker:'女', pre:'对不起，我', blank:'要看书，没有时间', post:'。', py:'Duìbuqǐ, wǒ yào kàn shū, méiyǒu shíjiān.', vn:'Xin lỗi, tôi phải đọc sách, không có thời gian.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'你的小女儿', blank:'多高', post:'？', py:'Nǐ de xiǎo nǚ\'ér duō gāo?', vn:'Con gái nhỏ của bạn cao bao nhiêu?'},
+      {speaker:'男', pre:'', blank:'一米多一点儿吧', post:'。', py:'Yì mǐ duō yìdiǎnr ba.', vn:'Hơn một mét một chút.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'医生，我明天', blank:'能出院吗', post:'？', py:'Yīshēng, wǒ míngtiān néng chūyuàn ma?', vn:'Bác sĩ, ngày mai tôi có thể xuất viện không?'},
+      {speaker:'男', pre:'能，', blank:'回家每天吃这个药', post:'。', py:'Néng, huí jiā měitiān chī zhège yào.', vn:'Được, về nhà uống thuốc này mỗi ngày.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['能','不能','不知道'], ans:1,
+     explain:'女：你什么时候能出院？男：医生说要再住三天看一看。问：男的明天能出院吗？ → 不能。'},
+    {num:12, options:['六点多','七点多','十点多'], ans:2,
+     explain:'女：你每天早上几点起床？男：七点多，星期六和星期天十点多起床。问：男的星期六几点起床？ → 十点多。'},
+    {num:13, options:['不累','很累','累'], ans:0,
+     explain:'女：你一个人做饭累不累？答：不累，我很喜欢做饭。问：女的觉得做饭累不累？ → 不累。'},
+    {num:14, options:['工作了','在学习','在找工作'], ans:0,
+     explain:'女：你女儿今年多大了？男：今年23岁，已经工作了。问：男的的女儿现在工作了吗？ → 工作了。'},
+    {num:15, options:['去医院了','病了','身体好多了'], ans:1,
+     explain:'女：我这几天身体不好，吃了很多药。男：我和你一起去医院看看吧。问：女的怎么了？ → 病了。'},
+  ],
+};
+
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi thăm đồng nghiệp mới ốm dậy
+// ══════════════════════════════════════════
+var fillData = [
+  {pre:'你',blank:'是不是',post:'生病了？',hint:'(có phải... không — câu hỏi Có/Không)',ans:'是不是',exp:'是不是 đặt sau chủ ngữ, trước phần muốn hỏi.'},
+  {pre:'是啊，我',blank:'每',post:'天都要吃药。',hint:'(mỗi)',ans:'每',exp:'每 luôn cần 都 đi kèm ở vị ngữ phía sau.'},
+  {pre:'你',blank:'多',post:'高？',hint:'(bao nhiêu — hỏi mức độ, đứng trước tính từ)',ans:'多',exp:'多 + Tính từ dùng để hỏi mức độ: 多高/多大/多重.'},
+  {pre:'我一米七',blank:'多',post:'。',hint:'(hơn — ôn lại Bài 1)',ans:'多'},
+  {pre:'你每天',blank:'几',post:'点起床？',hint:'(mấy — ôn lại Bài 1)',ans:'几'},
+  {pre:'我每天六点起床，可是身体还是很',blank:'累',post:'。',hint:'(mệt)',ans:'累'},
+  {pre:'你',blank:'为什么',post:'这么忙？',hint:'(tại sao — ôn lại Bài 1)',ans:'为什么'},
+  {pre:'因为我没有',blank:'时间',post:'休息。',hint:'(thời gian)',ans:'时间'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+var sortData = [
+  {words:['你','是不是','很','忙','？'],ans:'你是不是很忙？',audio:'你是不是很忙？'},
+  {words:['他','每天','都','跑步','。'],ans:'他每天都跑步。',audio:'他每天都跑步。'},
+  {words:['你','朋友','多','高','？'],ans:'你朋友多高？',audio:'你朋友多高？'},
+  {words:['我','每天','七','点','起床','。'],ans:'我每天七点起床。',audio:'我每天七点起床。'},
+  {words:['医生','说','我','身体','很','好','。'],ans:'医生说我身体很好。',audio:'医生说我身体很好。'},
+  {words:['我','很','累','，','也','很','忙','。'],ans:'我很累，也很忙。',audio:'我很累，也很忙。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+var errorFixData = [
+  {wrong:'他每天跑步。',
+   opts:['他每天都跑步。','他每都天跑步。','都他每天跑步。','他都每天跑步。'],ans:0,
+   exp:'每 luôn cần 都 đi kèm ở vị ngữ: 每 + Danh từ + 都 + Động từ.'},
+  {wrong:'你高多？',
+   opts:['你多高？','你多么高？','高你多？','多你高？'],ans:0,
+   exp:'多 đứng NGAY TRƯỚC tính từ khi hỏi mức độ, không đặt sau như "cao bao nhiêu" trong tiếng Việt.'},
+  {wrong:'你生病是不是了？',
+   opts:['你是不是生病了？','你是不是了生病？','是不是你了生病？','你了是不是生病？'],ans:0,
+   exp:'是不是 đứng NGAY SAU chủ ngữ, TRƯỚC toàn bộ phần vị ngữ muốn hỏi.'},
+  {wrong:'我很没有时间。',
+   opts:['我没有时间。','我时间很没有。','很我没有时间。','我没有很时间。'],ans:0,
+   exp:'没有 (phủ định của 有) KHÔNG dùng 很 phía trước — đây là lỗi thường gặp do ảnh hưởng "rất không có" trong tiếng Việt.'},
+  {wrong:'他身体好很。',
+   opts:['他身体很好。','他身体很好很。','很他身体好。','他很身体好。'],ans:0,
+   exp:'很 phải đứng TRƯỚC tính từ, không đặt sau.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+var speakingData = {
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 2. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn học hỏi bạn về thói quen buổi sáng.',
+      q_zh: '你每天几点起床？起床以后你做什么？',
+      q_py: 'Nǐ měi tiān jǐ diǎn qǐchuáng? Qǐchuáng yǐhòu nǐ zuò shénme?',
+      q_vn: 'Mỗi ngày bạn thức dậy lúc mấy giờ? Dậy xong bạn làm gì?',
+      grammar: { label: '我每天 + giờ + 起床', any: ['每天', '每'] },
+      need: [
+        { label: 'Nói giờ thức dậy (六点 / 六点半…)', any: ['点', '半'] },
+        { label: 'Dùng 起床', any: ['起床', '起来'] },
+        { label: 'Nói việc làm sau khi dậy', any: ['跑步', '运动', '吃', '洗', '看', '去', '学', '上班', '上学', '喝'] }
+      ],
+      bonus: { label: 'Thêm 早上 / 以后 để nối câu', any: ['早上', '以后', '然后'] },
+      vocab: ['每', '早上', '起床', '跑步'],
+      minLen: 12,
+      sample: '我每天早上六点起床。起床以后我去跑步，再吃早饭。',
+      sample_py: 'Wǒ měi tiān zǎoshang liù diǎn qǐchuáng. Qǐchuáng yǐhòu wǒ qù pǎobù, zài chī zǎofàn.',
+      sample_vn: 'Mỗi ngày tôi dậy lúc 6 giờ sáng. Dậy xong tôi đi chạy bộ, rồi ăn sáng.',
+      tip: '每天 đứng trước động từ, thường đi với 都: 我每天都六点起床。'
+    },
+    {
+      situation: 'Bạn bè hỏi vì sao bạn ít khi ốm.',
+      q_zh: '你身体好吗？你喜欢什么运动？',
+      q_py: 'Nǐ shēntǐ hǎo ma? Nǐ xǐhuan shénme yùndòng?',
+      q_vn: 'Sức khoẻ bạn thế nào? Bạn thích môn thể thao nào?',
+      grammar: { label: '我很少生病 / 我不常生病', any: ['生病', '病'] },
+      need: [
+        { label: 'Trả lời có hay ít khi ốm', any: ['很少', '不常', '常常', '经常', '不生病', '没'] },
+        { label: 'Nói môn thể thao mình thích', any: ['跑步', '运动', '游泳', '足球', '篮球', '打球', '爬山', '骑车', '跳舞'] },
+        { label: 'Nói mức độ / tần suất (每天 / 每个星期…)', any: ['每天', '每', '星期', '天天', '常常', '经常'] }
+      ],
+      bonus: { label: 'Thêm ích lợi cho 身体', any: ['身体', '健康', '好'] },
+      vocab: ['生病', '身体', '跑步', '每'],
+      minLen: 12,
+      sample: '我很少生病。我每天早上都去跑步，运动对身体很好。',
+      sample_py: 'Wǒ hěn shǎo shēngbìng. Wǒ měi tiān zǎoshang dōu qù pǎobù, yùndòng duì shēntǐ hěn hǎo.',
+      sample_vn: 'Tôi rất ít khi ốm. Sáng nào tôi cũng đi chạy bộ, vận động rất tốt cho sức khoẻ.',
+      tip: '很少 + động từ = rất ít khi làm gì: 我很少生病、我很少喝咖啡.'
+    },
+    {
+      situation: 'Bạn kể cho người quen nghe về một người bạn của mình.',
+      q_zh: '你的朋友今年多大？他多高？',
+      q_py: 'Nǐ de péngyou jīnnián duō dà? Tā duō gāo?',
+      q_vn: 'Bạn của bạn năm nay bao nhiêu tuổi? Cao bao nhiêu?',
+      grammar: { label: '多大 / 多高 + 一米八几、20多岁', any: ['岁', '米'] },
+      need: [
+        { label: 'Nói tuổi (20岁 / 20多岁)', any: ['岁'] },
+        { label: 'Nói chiều cao (一米七 / 一米八几)', any: ['米'] },
+        { label: 'Nói người đó là ai (同学 / 朋友 / 哥哥…)', any: ['同学', '朋友', '哥哥', '姐姐', '弟弟', '妹妹', '同事'] }
+      ],
+      bonus: { label: 'Nói vì sao bạn biết rõ (他是我同学)', any: ['知道', '同学', '认识'] },
+      vocab: ['高', '米', '知道'],
+      minLen: 12,
+      sample: '我朋友今年20多岁，他一米八几。他是我的同学。',
+      sample_py: 'Wǒ péngyou jīnnián èrshí duō suì, tā yì mǐ bā jǐ. Tā shì wǒ de tóngxué.',
+      sample_vn: 'Bạn tôi năm nay hơn 20 tuổi, cậu ấy cao một mét tám mấy. Cậu ấy là bạn học của tôi.',
+      tip: 'Hỏi tuổi người lớn dùng 多大, hỏi chiều cao dùng 多高. 20多岁 = hơn 20 tuổi.'
+    },
+    {
+      situation: 'Đồng nghiệp hỏi thăm tuần này của bạn.',
+      q_zh: '你这个星期忙不忙？有时间休息吗？',
+      q_py: 'Nǐ zhège xīngqī máng bu máng? Yǒu shíjiān xiūxi ma?',
+      q_vn: 'Tuần này bạn có bận không? Có thời gian nghỉ ngơi không?',
+      grammar: { label: '很忙 / 没有时间休息', any: ['忙', '休息'] },
+      need: [
+        { label: 'Trả lời bận hay không bận', any: ['忙', '不忙', '很忙', '有点儿忙'] },
+        { label: 'Nói về thời gian nghỉ', any: ['时间', '休息', '星期', '周末'] },
+        { label: 'Nói cảm giác hoặc lý do (累 / 工作 / 学习)', any: ['累', '工作', '学习', '上班', '上课', '考试'] }
+      ],
+      bonus: { label: 'Thêm 每天 / 星期六 để nói rõ', any: ['每天', '星期六', '星期天', '周末'] },
+      vocab: ['忙', '时间', '休息', '累'],
+      minLen: 12,
+      sample: '这个星期我很忙，没有时间休息。我每天回来都很累。',
+      sample_py: 'Zhège xīngqī wǒ hěn máng, méiyǒu shíjiān xiūxi. Wǒ měi tiān huílai dōu hěn lèi.',
+      sample_vn: 'Tuần này tôi rất bận, không có thời gian nghỉ. Ngày nào về tôi cũng rất mệt.',
+      tip: 'Câu hỏi chính phản 忙不忙？ trả lời gọn: 很忙 hoặc 不忙.'
+    },
+    {
+      situation: 'Bạn đang nằm viện, bác sĩ vào hỏi thăm. Hãy đóng vai người bệnh trả lời.',
+      q_zh: '吃药了吗？现在身体怎么样？什么时候能出院？',
+      q_py: 'Chī yào le ma? Xiànzài shēntǐ zěnmeyàng? Shénme shíhou néng chūyuàn?',
+      q_vn: 'Uống thuốc chưa? Sức khoẻ bây giờ thế nào? Khi nào xuất viện được?',
+      grammar: { label: '吃药了 / 好多了 / 医生说…', any: ['吃', '好多了', '医生'] },
+      need: [
+        { label: 'Trả lời đã uống thuốc chưa', any: ['吃了', '吃药', '没吃', '药'] },
+        { label: 'Nói tình trạng sức khoẻ', any: ['好多了', '好一点', '身体', '还好', '不舒服', '好了'] },
+        { label: 'Nói thời gian xuất viện', any: ['出院', '星期', '天', '明天', '下个'] }
+      ],
+      bonus: { label: 'Nhắc lời bác sĩ (医生说…)', any: ['医生说', '大夫说'] },
+      vocab: ['药', '身体', '出院', '休息'],
+      minLen: 12,
+      sample: '吃了，现在身体好多了。医生说下个星期能出院。',
+      sample_py: 'Chī le, xiànzài shēntǐ hǎo duō le. Yīshēng shuō xià ge xīngqī néng chūyuàn.',
+      sample_vn: 'Uống rồi, giờ sức khoẻ đỡ nhiều rồi. Bác sĩ nói tuần sau xuất viện được.',
+      tip: '好多了 = đỡ hơn nhiều rồi, dùng khi sức khoẻ/tình hình tốt lên.'
+    }
+  ]
+};
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 2 + ôn lại toàn bộ HSK1 và bài 1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Có phải bạn ít khi bị bệnh vì thích vận động không?', zh:'你很少生病，是不是喜欢运动？', py:'Nǐ hěn shǎo shēngbìng, shìbushì xǐhuan yùndòng?'},
+  {vi:'Mỗi ngày tôi đều thức dậy lúc sáu giờ.', zh:'我每天六点起床。', py:'Wǒ měitiān liù diǎn qǐchuáng.'},
+  {vi:'David cao bao nhiêu?', zh:'大卫多高？', py:'Dàwèi duō gāo?'},
+  {vi:'Tôi rất mệt, muốn nghỉ ngơi.', zh:'我很累，想休息。', py:'Wǒ hěn lèi, xiǎng xiūxi.'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Tôi mỗi ngày đều dậy lúc sáu giờ, ngày nào cũng chạy bộ.', zh:'我每天六点起床，每天都跑步。', py:'Wǒ měitiān liù diǎn qǐchuáng, měitiān dōu pǎobù.'},
+  {vi:'Anh ấy bị bệnh rồi, đang nghỉ ngơi ở bệnh viện.', zh:'他生病了，在医院休息。', py:'Tā shēngbìng le, zài yīyuàn xiūxi.'},
+  {vi:'Bạn có biết David cao bao nhiêu không?', zh:'你知道大卫多高吗？', py:'Nǐ zhīdào Dàwèi duō gāo ma?'},
+  {vi:'Tôi rất bận, cũng rất mệt.', zh:'我很忙，也很累。', py:'Wǒ hěn máng, yě hěn lèi.'},
+];

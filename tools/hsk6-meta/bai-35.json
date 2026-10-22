@@ -1,0 +1,112 @@
+{
+ "zh": "走近木版年画",
+ "py": "Zǒujìn Mùbǎn Niánhuà",
+ "vn": "Đến với tranh Tết mộc bản",
+ "topic": "第九单元 古今博览 · Xưa nay muôn mặt — nguồn gốc, kỹ thuật in khắc gỗ của tranh Tết Trung Quốc và người truyền nhân Trương Quang Ninh",
+ "vocabCount": 52,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "终究",
+   "explain": "\"终究\" là PHÓ TỪ, có hai cách dùng. ① Nhấn mạnh BẢN CHẤT sự vật không thay đổi, sự thật không thể phủ nhận; tăng ngữ khí, thường dùng trong câu trần thuật mang tính đánh giá (≈ 毕竟 \"xét cho cùng\"): 单色印品终究不能满足人们的审美需求; 猫终究是动物. ② Thường đứng TRƯỚC ĐỘNG TỪ NĂNG NGUYỆN (会 / 要 / 能…), biểu thị kết quả dự đoán hoặc mong đợi NHẤT ĐỊNH sẽ xuất hiện, dù thế nào cũng vậy (≈ 最后一定): 正义的事业终究会取得胜利. 终究 đứng sau chủ ngữ, trước 是 / 不 / 会 / 要. Phân biệt 终于 (cuối cùng — kể một kết quả đã chờ đợi và ĐÃ xảy ra): 他终于考上了大学, không dùng 终究.",
+   "rule": "S + <strong style=\"color:var(--sky-d)\">终究</strong> + 是 / 不是 + N (bản chất không đổi, ≈ 毕竟)　|　S + <strong style=\"color:var(--sky-d)\">终究</strong> + 会 / 要 / 能 + V (kết quả tất yếu, ≈ 最后一定)",
+   "examples": [
+    {
+     "zh": "单色印品终究不能满足人们的审美需求，之后就有了彩色套印技术。",
+     "py": "Dānsè yìnpǐn zhōngjiū bù néng mǎnzú rénmen de shěnměi xūqiú, zhīhòu jiù yǒule cǎisè tàoyìn jìshù.",
+     "vn": "Bản in một màu xét cho cùng không thể đáp ứng nhu cầu thẩm mỹ của con người, sau đó liền có kỹ thuật in chồng màu."
+    },
+    {
+     "zh": "猫终究是动物，动物急了咬人也是正常的。",
+     "py": "Māo zhōngjiū shì dòngwù, dòngwù jíle yǎo rén yě shì zhèngcháng de.",
+     "vn": "Mèo xét cho cùng vẫn là động vật, động vật cáu lên mà cắn người cũng là bình thường."
+    },
+    {
+     "zh": "胜利总是在真理一边，正义的事业终究会取得胜利。",
+     "py": "Shènglì zǒngshì zài zhēnlǐ yì biān, zhèngyì de shìyè zhōngjiū huì qǔdé shènglì.",
+     "vn": "Chiến thắng luôn đứng về phía chân lý, sự nghiệp chính nghĩa cuối cùng nhất định sẽ giành thắng lợi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我终究考上了大学，高兴极了。",
+     "why": "Kể một kết quả mong đợi đã xảy ra (vui mừng) → dùng 终于. 终究 nhấn bản chất không đổi hoặc kết quả tất yếu sẽ đến (thường đi với 会 / 要 / 是).",
+     "right": "我终于考上了大学，高兴极了。"
+    },
+    {
+     "wrong": "他是终究一个孩子，你别生他的气。",
+     "why": "终究 là phó từ, phải đứng TRƯỚC 是.",
+     "right": "他终究是个孩子，你别生他的气。"
+    }
+   ]
+  },
+  {
+   "point": "愈……愈……",
+   "explain": "\"愈……愈……\" giống \"越……越……\": mức độ của vế sau tăng theo sự thay đổi của vế trước. Dùng trong VĂN VIẾT. Các dạng: ① cùng chủ ngữ: S + 愈 + A + 愈 + B (他愈跑愈快); ② hai chủ ngữ khác nhau: S1 + 愈 + A，S2 + (就 / 也就) + 愈 + B (教育愈普及……，文化发展的速度就愈快); ③ 愈是……（就）愈是…… nhấn mạnh hơn (愈是经营年画久了，他对年画就愈是热爱); ④ 愈来愈 + Adj = 越来越. 愈 là phó từ, đứng sau chủ ngữ, trước động từ / tính từ; sau 愈 không thêm phó từ mức độ (很, 非常…). Một câu nên dùng thống nhất 愈……愈…… hoặc 越……越……, không trộn lẫn.",
+   "rule": "S + <strong style=\"color:var(--sky-d)\">愈</strong> + A + <strong style=\"color:var(--sky-d)\">愈</strong> + B　|　S1 + <strong style=\"color:var(--sky-d)\">愈</strong> + A，S2 + (就 / 也就) + <strong style=\"color:var(--sky-d)\">愈</strong> + B　|　<strong style=\"color:var(--sky-d)\">愈是</strong>……，(就)<strong style=\"color:var(--sky-d)\">愈是</strong>……　|　<strong style=\"color:var(--sky-d)\">愈来愈</strong> + Adj",
+   "examples": [
+    {
+     "zh": "愈是经营年画久了，他对年画就愈是热爱。",
+     "py": "Yù shì jīngyíng niánhuà jiǔ le, tā duì niánhuà jiù yù shì rè'ài.",
+     "vn": "Càng kinh doanh tranh Tết lâu, anh ấy càng yêu tranh Tết."
+    },
+    {
+     "zh": "机遇的特点之一是转瞬即逝，市场竞争愈激烈愈是如此。",
+     "py": "Jīyù de tèdiǎn zhī yī shì zhuǎnshùn-jíshì, shìchǎng jìngzhēng yù jīliè yù shì rúcǐ.",
+     "vn": "Một đặc điểm của cơ hội là thoáng qua trong chớp mắt, cạnh tranh thị trường càng gay gắt thì càng như vậy."
+    },
+    {
+     "zh": "一个民族，教育愈普及，教育的质量愈高，文化发展的速度就愈快，文化水准也就愈高。",
+     "py": "Yí ge mínzú, jiàoyù yù pǔjí, jiàoyù de zhìliàng yù gāo, wénhuà fāzhǎn de sùdù jiù yù kuài, wénhuà shuǐzhǔn yě jiù yù gāo.",
+     "vn": "Một dân tộc, giáo dục càng phổ cập, chất lượng giáo dục càng cao thì tốc độ phát triển văn hoá càng nhanh, trình độ văn hoá cũng càng cao."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "愈他跑，愈快。",
+     "why": "愈 là phó từ, đứng SAU chủ ngữ, trước động từ / tính từ.",
+     "right": "他愈跑愈快。"
+    },
+    {
+     "wrong": "天气愈来愈很冷了。",
+     "why": "Sau 愈 (愈来愈) không thêm phó từ mức độ 很 / 非常 — bản thân 愈 đã biểu thị mức độ tăng dần.",
+     "right": "天气愈来愈冷了。"
+    }
+   ]
+  },
+  {
+   "point": "篇章（6）重复关键词，推进主题",
+   "explain": "Phần 篇章 thứ sáu của quyển 下: LẶP LẠI TỪ KHOÁ, ĐẨY CHỦ ĐỀ ĐI TỚI. Việc lặp lại từ khoá có vai trò rất quan trọng trong văn bản: ① xét về GIAO TIẾP, lặp từ khoá làm NỔI BẬT một hoặc một số thông tin; ② xét về KẾT CẤU VĂN BẢN, liên tục lặp lại từ ngữ then chốt nhất giúp chủ đề không ngừng được đẩy tới — đó là một trong những cách làm cho văn bản LIỀN MẠCH, câu chữ TRÔI CHẢY. Ví dụ trong bài khoá: 于是 lặp ba lần (于是有人发明了墨；于是印章开始流行；于是有人联想到……) kéo mạch \"nhu cầu → phát minh\" đến tận in khắc bản. Khi lặp phải giữ NGUYÊN DẠNG từ khoá (泪水……泪水……泪水, không đổi thành 眼泪, 泪珠), thường đặt trong các vế song song.",
+   "rule": "Vế 1 … <strong style=\"color:var(--sky-d)\">từ khoá</strong>，vế 2 … <strong style=\"color:var(--sky-d)\">từ khoá</strong>，vế 3 … <strong style=\"color:var(--sky-d)\">từ khoá</strong> (giữ nguyên dạng, các vế song song) → nhấn mạnh thông tin, chủ đề được đẩy tới",
+   "examples": [
+    {
+     "zh": "有了纸，书写就需要墨水儿，于是有人发明了墨；字画、书信上需要盖章，于是印章开始流行；碑刻、拓印技术被广泛运用，于是有人联想到：这些技术结合起来，不就能印出书来吗！",
+     "py": "Yǒule zhǐ, shūxiě jiù xūyào mòshuǐr, yúshì yǒu rén fāmíngle mò; zìhuà, shūxìn shang xūyào gài zhāng, yúshì yìnzhāng kāishǐ liúxíng; bēikè, tàyìn jìshù bèi guǎngfàn yùnyòng, yúshì yǒu rén liánxiǎng dào: zhèxiē jìshù jiéhé qilai, bú jiù néng yìnchū shū lai ma!",
+     "vn": "Có giấy rồi, viết chữ thì cần mực, thế là có người phát minh ra mực; tranh chữ, thư từ cần đóng dấu, thế là con dấu thịnh hành; kỹ thuật khắc bia, in dập được dùng rộng rãi, thế là có người nghĩ ra: kết hợp các kỹ thuật này lại chẳng phải in được sách sao!"
+    },
+    {
+     "zh": "我开始每天至少写两千字。没有为“一定要换成稿费”而写，没有读者也写，自己寻找题目，把写作当成生活的一部分。",
+     "py": "Wǒ kāishǐ měi tiān zhìshǎo xiě liǎngqiān zì. Méiyǒu wèi “yídìng yào huànchéng gǎofèi” ér xiě, méiyǒu dúzhě yě xiě, zìjǐ xúnzhǎo tímù, bǎ xiězuò dàngchéng shēnghuó de yí bùfen.",
+     "vn": "Tôi bắt đầu mỗi ngày viết ít nhất hai nghìn chữ. Không viết vì \"nhất định phải đổi thành nhuận bút\", không có người đọc cũng viết, tự tìm đề tài, coi viết lách là một phần của cuộc sống."
+    },
+    {
+     "zh": "佩珊！佩珊！我心里难过极了！想到一个人会死，而且会突然地就死，我真是难过极了！我不肯死！我一定不能死！可是我们总有一天要死。",
+     "py": "Pèishān! Pèishān! Wǒ xīnli nánguò jí le! Xiǎngdào yí ge rén huì sǐ, érqiě huì tūrán de jiù sǐ, wǒ zhēn shì nánguò jí le! Wǒ bù kěn sǐ! Wǒ yídìng bù néng sǐ! Kěshì wǒmen zǒng yǒu yì tiān yào sǐ.",
+     "vn": "Bội San! Bội San! Lòng tôi buồn vô cùng! Nghĩ đến chuyện một người sẽ chết, mà lại có thể chết đột ngột, tôi thật buồn vô cùng! Tôi không chịu chết! Tôi nhất định không thể chết! Thế nhưng rồi sẽ có ngày chúng ta phải chết."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "路近的送，路远的也可以给你们运过去；晴天我们负责，雨天也能帮忙。",
+     "why": "Đổi động từ liên tục (送 → 运过去 → 负责 → 帮忙) làm từ khoá bị mờ, chủ đề \"giao hoa bất kể điều kiện\" không nổi bật, đoạn văn rời rạc.",
+     "right": "路近的送，路远的也送；晴天送，雨天也送。"
+    },
+    {
+     "wrong": "这泪水，是激动的泪水，兴奋的眼泪，喜悦的泪珠。",
+     "why": "Từ khoá phải lặp lại NGUYÊN DẠNG; đổi sang 眼泪, 泪珠 làm mất hiệu quả nhấn mạnh.",
+     "right": "这泪水，是激动的泪水，兴奋的泪水，喜悦的泪水。"
+    }
+   ]
+  }
+ ]
+}

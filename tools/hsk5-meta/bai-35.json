@@ -1,0 +1,112 @@
+{
+ "zh": "植物会出汗",
+ "py": "Zhíwù huì chū hàn",
+ "vn": "Thực vật cũng đổ mồ hôi",
+ "topic": "Unit 12 亲近自然 · Khoa học quanh ta: cây cối \"đổ mồ hôi\" và bí ẩn của lực kéo thoát hơi nước",
+ "vocabCount": 35,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "赶快",
+   "explain": "赶快 là PHÓ TỪ, nghĩa là \"nắm chặt thời gian, đẩy nhanh tốc độ\" (抓紧时间、加快速度) — thường dùng khi thời gian gấp, sắp muộn. 赶快 đứng TRƯỚC động từ (và trước 把), hay dùng trong câu cầu khiến, thúc giục: 你赶快……吧, 得赶快……. Không đặt 赶快 sau động từ, không dùng làm bổ ngữ trạng thái (✗ 跑得赶快 → 跑得很快).",
+   "rule": "S + <strong style=\"color:var(--sky-d)\">赶快</strong> + V (+ 吧)　|　得 / 要 + <strong style=\"color:var(--sky-d)\">赶快</strong> + V　|　<strong style=\"color:var(--sky-d)\">赶快</strong> + 把 + O + V……",
+   "examples": [
+    {
+     "zh": "我下个月要搬家，得赶快找房子。",
+     "py": "Wǒ xià ge yuè yào bānjiā, děi gǎnkuài zhǎo fángzi.",
+     "vn": "Tháng sau tôi phải chuyển nhà, phải mau chóng tìm nhà thôi."
+    },
+    {
+     "zh": "这份材料下午开会要用，你赶快把它复印一下。",
+     "py": "Zhè fèn cáiliào xiàwǔ kāihuì yào yòng, nǐ gǎnkuài bǎ tā fùyìn yíxià.",
+     "vn": "Tài liệu này chiều họp phải dùng, cậu mau đi photo nó đi."
+    },
+    {
+     "zh": "……一旦温度上升，大脑就会指挥我们的身体赶快出汗，……",
+     "py": "……Yídàn wēndù shàngshēng, dànǎo jiù huì zhǐhuī wǒmen de shēntǐ gǎnkuài chū hàn, ……",
+     "vn": "…Một khi nhiệt độ tăng lên, não sẽ ra lệnh cho cơ thể chúng ta mau chóng đổ mồ hôi, …"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他跑得赶快，第一个到了终点。",
+     "why": "赶快 là phó từ đứng trước động từ, không làm bổ ngữ trạng thái sau 得. Miêu tả tốc độ dùng 很快.",
+     "right": "他跑得很快，第一个到了终点。"
+    },
+    {
+     "wrong": "你把作业写赶快。",
+     "why": "赶快 phải đứng TRƯỚC 把 và động từ, không đặt sau động từ.",
+     "right": "你赶快把作业写完。"
+    }
+   ]
+  },
+  {
+   "point": "片",
+   "explain": "片 có hai cách dùng. ① DANH TỪ: vật phẳng và mỏng, thường không lớn — 碎片 (mảnh vỡ), 叶片 (phiến lá), 切成片 (thái lát). ② LƯỢNG TỪ: dùng cho vật thành miếng mỏng (一片面包, 一片药), cho vùng diện tích rộng (一片草地 / 树林 / 天空), và cho âm thanh, cảnh sắc, không khí (一片欢呼声, 一片绿色). Lặp lại 一片片 = từng miếng, từng chiếc một. Vật dài dùng 根 / 支, tấm kính dùng 块, giấy dùng 张.",
+   "rule": "① N + <strong style=\"color:var(--sky-d)\">片</strong> (碎片 / 叶片) · 切成<strong style=\"color:var(--sky-d)\">片</strong>　② 一<strong style=\"color:var(--sky-d)\">片</strong> + 面包 / 药 (vật mỏng)　|　一<strong style=\"color:var(--sky-d)\">片</strong> + 草地 / 树林 (vùng rộng)　|　一<strong style=\"color:var(--sky-d)\">片</strong> + 欢呼声 (âm thanh, cảnh sắc)",
+   "examples": [
+    {
+     "zh": "瓶子里装着满满的石头、玻璃碎片和沙子。",
+     "py": "Píngzi li zhuāngzhe mǎnmǎn de shítou, bōli suìpiàn hé shāzi.",
+     "vn": "Trong chai đựng đầy đá, mảnh thuỷ tinh vỡ và cát."
+    },
+    {
+     "zh": "窗外有一棵大树，秋风中，叶子一片片地掉落下来。",
+     "py": "Chuāng wài yǒu yì kē dà shù, qiūfēng zhōng, yèzi yí piànpiàn de diàoluò xialai.",
+     "vn": "Ngoài cửa sổ có một cây lớn, trong gió thu, lá rụng xuống từng chiếc từng chiếc."
+    },
+    {
+     "zh": "同学们听了，发出一片热烈的欢呼声。",
+     "py": "Tóngxuémen tīng le, fāchū yí piàn rèliè de huānhūshēng.",
+     "vn": "Các bạn nghe xong, reo hò vang dậy."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "请给我一片纸，我要写个电话号码。",
+     "why": "Giấy dùng lượng từ 张 (一张纸). 片 dùng cho vật mỏng nhỏ như lát bánh mì, viên thuốc, lá cây.",
+     "right": "请给我一张纸，我要写个电话号码。"
+    },
+    {
+     "wrong": "他从地上捡起一片管子。",
+     "why": "Ống là vật dài, mảnh → lượng từ 根 / 支 (bảng 词语搭配: 一根 / 支管子).",
+     "right": "他从地上捡起一根管子。"
+    }
+   ]
+  },
+  {
+   "point": "根本",
+   "explain": "根本 có ba cách dùng. ① DANH TỪ: phần quan trọng nhất, gốc rễ của sự vật — 教育是国家的根本, 从根本上解决问题. ② TÍNH TỪ: chủ yếu, quan trọng nhất, có tính quyết định — 根本的问题, 根本利益. ③ PHÓ TỪ: từ đầu đến cuối, hoàn toàn — hay dùng trong câu PHỦ ĐỊNH, đứng TRƯỚC 不 / 没 / 无法: 根本读不懂, 根本无法; còn nghĩa triệt để, hoàn toàn (事情已经根本解决了) và nhấn mạnh (他根本就是在故意找麻烦). Đừng nhầm với 基本 (về cơ bản, đại thể).",
+   "rule": "① 从<strong style=\"color:var(--sky-d)\">根本</strong>上 + V · N + 是 + ……的<strong style=\"color:var(--sky-d)\">根本</strong>　② <strong style=\"color:var(--sky-d)\">根本</strong> + 的 + N　③ <strong style=\"color:var(--sky-d)\">根本</strong> + 不 / 没 / 无法 + V　|　<strong style=\"color:var(--sky-d)\">根本</strong> + V (triệt để)",
+   "examples": [
+    {
+     "zh": "这个办法只能救急，不能从根本上解决问题。",
+     "py": "Zhège bànfǎ zhǐ néng jiùjí, bù néng cóng gēnběn shang jiějué wèntí.",
+     "vn": "Cách này chỉ cứu vãn tạm thời, không thể giải quyết vấn đề từ gốc rễ."
+    },
+    {
+     "zh": "谈判还算顺利，一些根本的问题都谈好了。",
+     "py": "Tánpàn hái suàn shùnlì, yìxiē gēnběn de wèntí dōu tánhǎo le.",
+     "vn": "Cuộc đàm phán cũng khá thuận lợi, một số vấn đề căn bản đều đã bàn xong."
+    },
+    {
+     "zh": "可是，经过测验计算发现，以大树输送管道的尺寸产生的毛细作用，根本无法把水分送到几十米高的地方。",
+     "py": "Kěshì, jīngguò cèyàn jìsuàn fāxiàn, yǐ dà shù shūsòng guǎndào de chǐcùn chǎnshēng de máoxì zuòyòng, gēnběn wúfǎ bǎ shuǐfèn sòngdào jǐshí mǐ gāo de dìfang.",
+     "vn": "Thế nhưng, qua đo đạc tính toán thì phát hiện, hiện tượng mao dẫn sinh ra với kích cỡ đường ống vận chuyển của cây lớn hoàn toàn không thể đưa nước lên nơi cao mấy chục mét."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我不根本知道这件事。",
+     "why": "Phó từ 根本 đứng TRƯỚC từ phủ định: 根本不 / 根本没 / 根本无法.",
+     "right": "我根本不知道这件事。"
+    },
+    {
+     "wrong": "这项工作已经根本完成了，只剩一点儿小问题。",
+     "why": "根本完成 = hoàn toàn xong, mâu thuẫn với \"còn chút vấn đề\". \"Về cơ bản\" là 基本.",
+     "right": "这项工作已经基本完成了，只剩一点儿小问题。"
+    }
+   ]
+  }
+ ]
+}

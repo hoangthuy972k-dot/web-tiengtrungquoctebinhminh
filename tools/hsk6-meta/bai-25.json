@@ -1,0 +1,112 @@
+{
+ "zh": "草船借箭",
+ "py": "Cǎo Chuán Jiè Jiàn",
+ "vn": "Thuyền cỏ mượn tên",
+ "topic": "第七单元 经典阅读 · Đọc tác phẩm kinh điển — trí tuệ của Gia Cát Lượng trong 《三国演义》",
+ "vocabCount": 53,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "即将",
+   "explain": "\"即将\" là PHÓ TỪ, nghĩa là \"sắp, sắp sửa\" (= 将要, 就要), biểu thị sự việc sắp xảy ra trong thời gian gần. Dùng nhiều trong VĂN VIẾT: thông báo, tin tức, lời phát biểu. Đứng trước động từ (即将到达 / 开始 / 起飞 / 交战 / 毕业) hoặc cùng động từ làm định ngữ: 即将开始的冬眠, 即将到来的考试. Không đứng trực tiếp trước danh từ (*即将的考试) và không đi với thời gian quá khứ. Khẩu ngữ thường nói 就要 / 快要……了.",
+   "rule": "<strong style=\"color:var(--sky-d)\">即将</strong> + V (到达 / 开始 / 起飞 / 交战)　|　<strong style=\"color:var(--sky-d)\">即将</strong> + V + 的 + N (即将开始的新生活)　|　khẩu ngữ: 就要 / 快要 + V + 了",
+   "examples": [
+    {
+     "zh": "诸葛亮说：“您委托的事，当然要办好。箭什么时候用？”周瑜说：“即将交战，十天怎么样？”",
+     "py": "Zhūgě Liàng shuō: “Nín wěituō de shì, dāngrán yào bànhǎo. Jiàn shénme shíhou yòng?” Zhōu Yú shuō: “Jíjiāng jiāozhàn, shí tiān zěnmeyàng?”",
+     "vn": "Gia Cát Lượng nói: \"Việc ngài giao phó đương nhiên phải làm tốt. Khi nào cần dùng tên?\" Chu Du nói: \"Sắp giao chiến rồi, mười ngày thì thế nào?\""
+    },
+    {
+     "zh": "我们已经完成了学业，即将走上工作岗位，开始人生新的一页。",
+     "py": "Wǒmen yǐjīng wánchéngle xuéyè, jíjiāng zǒushang gōngzuò gǎngwèi, kāishǐ rénshēng xīn de yí yè.",
+     "vn": "Chúng tôi đã hoàn thành việc học, sắp bước vào vị trí công tác, mở ra trang mới của cuộc đời."
+    },
+    {
+     "zh": "熊妈妈和她的孩子们胖起来了，他们每天都吃得饱饱的，正在为即将开始的冬眠储存脂肪。",
+     "py": "Xióng māma hé tā de háizimen pàng qǐlai le, tāmen měi tiān dōu chī de bǎobǎo de, zhèngzài wèi jíjiāng kāishǐ de dōngmián chǔcún zhīfáng.",
+     "vn": "Gấu mẹ và các con đã béo lên, ngày nào chúng cũng ăn no căng, đang tích trữ mỡ cho kỳ ngủ đông sắp bắt đầu."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他去年即将毕业。",
+     "why": "即将 chỉ việc SẮP xảy ra (tương lai gần), không đi với thời gian quá khứ (去年).",
+     "right": "他即将毕业。（或：他明年就要毕业了。）"
+    },
+    {
+     "wrong": "即将的考试让我很紧张。",
+     "why": "即将 là phó từ, phải đứng trước động từ; không nối thẳng 的 + danh từ.",
+     "right": "即将到来的考试让我很紧张。"
+    }
+   ]
+  },
+  {
+   "point": "能A就A",
+   "explain": "\"能A就A\" biểu thị \"cố hết mức, được đến đâu thì làm đến đó\" (= 尽量……). A có thể là động từ, tính từ hoặc cụm có động từ / tính từ; HAI A PHẢI GIỐNG HỆT NHAU. Dùng trong khẩu ngữ. Dạng mở rộng hay gặp: 能 + V + 多少 + 就 + V + 多少 (能拿多少就拿多少); 能多 + Adj + 就多 + Adj (声音能多响亮就多响亮); 能 + V + 多 + Adj + 就 + V + 多 + Adj (能走多远就走多远). Khi viết lại câu có 尽量, bỏ 尽量 và 都, đặt 能……就…… vào.",
+   "rule": "<strong style=\"color:var(--sky-d)\">能</strong> A <strong style=\"color:var(--sky-d)\">就</strong> A (hai A giống nhau)　|　<strong style=\"color:var(--sky-d)\">能</strong> V 多少 <strong style=\"color:var(--sky-d)\">就</strong> V 多少　|　<strong style=\"color:var(--sky-d)\">能多</strong> Adj <strong style=\"color:var(--sky-d)\">就多</strong> Adj",
+   "examples": [
+    {
+     "zh": "这个手机没用多久，能修就修，尽量别换新的。",
+     "py": "Zhège shǒujī méi yòng duō jiǔ, néng xiū jiù xiū, jǐnliàng bié huàn xīn de.",
+     "vn": "Cái điện thoại này dùng chưa được bao lâu, sửa được thì sửa, cố đừng đổi cái mới."
+    },
+    {
+     "zh": "这是我们家树上结的苹果，挺多的，你能拿多少就拿多少吧。",
+     "py": "Zhè shì wǒmen jiā shù shang jiē de píngguǒ, tǐng duō de, nǐ néng ná duōshao jiù ná duōshao ba.",
+     "vn": "Đây là táo cây nhà tôi, nhiều lắm, cậu lấy được bao nhiêu thì cứ lấy bấy nhiêu."
+    },
+    {
+     "zh": "船上的士兵奋力敲鼓，齐声高喊，声音能多响亮就多响亮。",
+     "py": "Chuán shang de shìbīng fènlì qiāo gǔ, qíshēng gāo hǎn, shēngyīn néng duō xiǎngliàng jiù duō xiǎngliàng.",
+     "vn": "Binh sĩ trên thuyền ra sức đánh trống, đồng thanh hò hét, tiếng càng vang dội càng tốt."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这本书设计的时候能薄就很薄。",
+     "why": "Hai A phải giống hệt nhau (薄 — 薄), không thêm 很 vào A thứ hai.",
+     "right": "这本书设计的时候能薄就薄。"
+    },
+    {
+     "wrong": "你能多拿就拿多少吧。",
+     "why": "Trộn hai dạng khác nhau; phải dùng đúng một khuôn: 能拿多少就拿多少 hoặc 能多拿就多拿.",
+     "right": "你能拿多少就拿多少吧。"
+    }
+   ]
+  },
+  {
+   "point": "篇章（3）替代",
+   "explain": "Phần 篇章修辞 thứ ba của quyển 下. \"替代\" (thay thế) là dùng một HÌNH THỨC THAY THẾ để thay cho một phần nội dung trong văn bản: đại từ 这 / 那 / 此 / 如此 / 这样 / 其, từ chỉ thời gian 当时 / 从此, liên từ 否则 (= nếu không như thế), 前者 / 后者… Thay thế giúp TRÁNH LẶP, câu văn gọn hơn, đồng thời có tác dụng LIÊN KẾT trước sau không thể xem nhẹ. Thường thay cho nội dung đã nói ở trước (这话 = 用弓箭最好); đôi khi thay cho nội dung nói ngay sau (这样一句广告语：“……”). Khi đọc hiểu phải xác định được hình thức thay thế thay cho nội dung cụ thể nào.",
+   "rule": "nội dung A……，<strong style=\"color:var(--sky-d)\">这 / 此 / 如此 / 这样</strong> ……　|　mốc thời gian……，<strong style=\"color:var(--sky-d)\">当时 / 从此</strong> ……　|　不要……，<strong style=\"color:var(--sky-d)\">否则</strong> ……　|　A 还是 B？——<strong style=\"color:var(--sky-d)\">前者 / 后者</strong>",
+   "examples": [
+    {
+     "zh": "周瑜说：“这话不假。可现在我们缺箭，当务之急是赶造十万支箭。”（“这话”替代“（水上作战，）（用）弓箭（最好）”。）",
+     "py": "Zhōu Yú shuō: “Zhè huà bù jiǎ. Kě xiànzài wǒmen quē jiàn, dāngwùzhījí shì gǎnzào shíwàn zhī jiàn.”",
+     "vn": "Chu Du nói: \"Lời này không sai…\" — 这话 thay cho \"(đánh trên sông nước) dùng cung tên là tốt nhất\"."
+    },
+    {
+     "zh": "不过这是机密，你得替我保密，不要走漏消息，否则我性命难保。（“否则”替代“（如果）走漏了消息”。）",
+     "py": "Búguò zhè shì jīmì, nǐ děi tì wǒ bǎo mì, búyào zǒulòu xiāoxi, fǒuzé wǒ xìngmìng nán bǎo.",
+     "vn": "Có điều đây là cơ mật, ông phải giữ bí mật giúp tôi, đừng để lộ tin, nếu không tính mạng tôi khó giữ. — 否则 thay cho \"(nếu) để lộ tin\"."
+    },
+    {
+     "zh": "“你喜欢《红楼梦》还是《三国演义》？”“前者吧，我想”，莉莉说。（“前者”替代“《红楼梦》”。）",
+     "py": "“Nǐ xǐhuan 《Hónglóu Mèng》 háishi 《Sānguó Yǎnyì》?” “Qiánzhě ba, wǒ xiǎng”, Lìli shuō.",
+     "vn": "\"Cậu thích Hồng lâu mộng hay Tam Quốc diễn nghĩa?\" \"Cái trước, chắc vậy\", Lili nói. — 前者 thay cho 《红楼梦》."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我喜欢《红楼梦》和《三国演义》，尤其喜欢前者《红楼梦》。",
+     "why": "Đã dùng 前者 để thay thế thì không nhắc lại tên sách — lặp thừa, mất tác dụng thay thế.",
+     "right": "我喜欢《红楼梦》和《三国演义》，尤其喜欢前者。"
+    },
+    {
+     "wrong": "你不要走漏消息，如果你走漏了消息，我性命难保。",
+     "why": "Lặp lại nguyên vế \"走漏消息\" làm câu dài dòng; dùng 否则 để thay thế.",
+     "right": "你不要走漏消息，否则我性命难保。"
+    }
+   ]
+  }
+ ]
+}

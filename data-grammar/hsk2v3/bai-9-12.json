@@ -1,0 +1,294 @@
+{
+ "/lessons/hsk2v3-bai-9.html": {
+  "points": [
+   {
+    "title": "Câu so sánh với 「没有」 (3)",
+    "errors": [
+     { "wrong": "我不有他高。", "why": "phủ định so sánh là 没有, không phải 不有.", "right": "我没有他高。" },
+     { "wrong": "我没有他很高。", "why": "không dùng 很 trong câu so sánh.", "right": "我没有他高。" },
+     { "wrong": "我没有高他。", "why": "đối tượng so sánh đứng ngay sau 没有.", "right": "我没有他高。" }
+    ],
+    "items": [
+     { "context": "“Tôi không cao bằng cậu ấy.”", "pre": "我", "blank": "没有他高", "post": "。", "options": ["没有他高", "不有他高", "没有他很高"], "answer": 0, "explanation": "A + 没有 + B + tính từ." },
+     { "context": "Thêm 那么 để nhấn mạnh.", "pre": "我", "blank": "没有他那么高", "post": "。", "options": ["没有他那么高", "没有那么他高", "那么没有他高"], "answer": 0, "explanation": "没有 + B + 那么 + tính từ." },
+     { "context": "“Hôm nay không nóng bằng hôm qua.”", "pre": "今天", "blank": "没有昨天热", "post": "。", "options": ["没有昨天热", "不有昨天热", "没有昨天很热"], "answer": 0, "explanation": "没有 + 昨天 + 热." },
+     { "context": "“Tiếng Trung của tôi không giỏi bằng cậu ấy.”", "pre": "我的汉语", "blank": "没有他好", "post": "。", "options": ["没有他好", "没有好他", "不有他好"], "answer": 0, "explanation": "Cụm danh từ + 没有 + B + tính từ." },
+     { "context": "Khẳng định thì dùng 比.", "pre": "他", "blank": "比我高", "post": "。", "options": ["比我高", "没有我高", "比我很高"], "answer": 0, "explanation": "比 = hơn; 没有 = không bằng." },
+     { "context": "“Món này không ngon bằng món kia.”", "pre": "这个菜", "blank": "没有那个菜好吃", "post": "。", "options": ["没有那个菜好吃", "没有好吃那个菜", "不有那个菜好吃"], "answer": 0, "explanation": "没有 + đối tượng + tính từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我没有他高。", "isCorrect": true, "explanation": "A + 没有 + B + tính từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我没有他很高。", "isCorrect": false, "correctVersion": "我没有他高。", "explanation": "Câu so sánh không dùng 很." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không cao bằng cậu ấy.”", "words": ["我", "没有", "他", "高", "。"], "answer": "我没有他高。", "explanation": "没有 + 他 + 高." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay không nóng bằng hôm qua.”", "words": ["今天", "没有", "昨天", "热", "。"], "answer": "今天没有昨天热。", "explanation": "没有 + 昨天 + 热." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không cao bằng cậu ấy đâu.”", "words": ["我", "没有", "他", "那么", "高", "。"], "answer": "我没有他那么高。", "explanation": "没有 + B + 那么 + tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Món này không ngon bằng món kia.”", "words": ["这个", "菜", "没有", "那个", "菜", "好吃", "。"], "answer": "这个菜没有那个菜好吃。", "explanation": "没有 + đối tượng + tính từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 没有 để so sánh.", "promptLang": "vi", "prompt": "Hôm nay không nóng bằng hôm qua.", "answer": "今天没有昨天热。", "answerPy": "Jīntiān méiyǒu zuótiān rè.", "explanation": "没有 + 昨天 + 热." }
+    ]
+   },
+   {
+    "title": "Động từ 「离」 — cách bao xa",
+    "errors": [
+     { "wrong": "我家离学校很远吗不？", "why": "trộn 吗 với dạng hỏi chính-phản.", "right": "你家离学校远不远？" },
+     { "wrong": "我家很远离学校。", "why": "离 + địa điểm đứng TRƯỚC tính từ.", "right": "我家离学校很远。" },
+     { "wrong": "离我家学校很远。", "why": "A đứng trước 离, B đứng sau 离.", "right": "我家离学校很远。" }
+    ],
+    "items": [
+     { "context": "“Nhà tôi cách trường rất xa.”", "pre": "我家", "blank": "离学校很远", "post": "。", "options": ["离学校很远", "很远离学校", "离很远学校"], "answer": 0, "explanation": "A + 离 + B + 远/近." },
+     { "context": "“Nhà tôi cách trường rất gần.”", "pre": "我家", "blank": "离学校很近", "post": "。", "options": ["离学校很近", "近离学校很", "离很近学校"], "answer": 0, "explanation": "离 + B + 近." },
+     { "context": "Câu hỏi chính-phản.", "pre": "你家", "blank": "离学校远不远", "post": "？", "options": ["离学校远不远", "离学校很远吗不", "远不远离学校"], "answer": 0, "explanation": "离 + B + tính từ + 不 + tính từ？" },
+     { "context": "“Từ đây đến đó còn ba cây số.”", "pre": "这儿", "blank": "离那儿还有三公里", "post": "。", "options": ["离那儿还有三公里", "还有三公里离那儿", "离还有那儿三公里"], "answer": 0, "explanation": "离 + B + 还有 + khoảng cách." },
+     { "context": "“Còn ba ngày nữa là thi.”", "pre": "", "blank": "离考试还有三天", "post": "。", "options": ["离考试还有三天", "还有三天离考试", "离还有考试三天"], "answer": 0, "explanation": "离 cũng dùng cho khoảng cách THỜI GIAN." },
+     { "context": "“Bệnh viện cách đây không xa.”", "pre": "医院", "blank": "离这儿不远", "post": "。", "options": ["离这儿不远", "不远离这儿", "离不远这儿"], "answer": 0, "explanation": "不远 = không xa." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我家离学校很远。", "isCorrect": true, "explanation": "A + 离 + B + 很远 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我家很远离学校。", "isCorrect": false, "correctVersion": "我家离学校很远。", "explanation": "离 + địa điểm đứng trước tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Nhà tôi cách trường rất xa.”", "words": ["我", "家", "离", "学校", "很", "远", "。"], "answer": "我家离学校很远。", "explanation": "离学校很远." },
+     { "type": "sort", "context": "Sắp xếp: “Nhà bạn cách trường có xa không?”", "words": ["你", "家", "离", "学校", "远", "不", "远", "？"], "answer": "你家离学校远不远？", "explanation": "Câu hỏi chính-phản." },
+     { "type": "sort", "context": "Sắp xếp: “Từ đây đến đó còn ba cây số.”", "words": ["这儿", "离", "那儿", "还", "有", "三", "公里", "。"], "answer": "这儿离那儿还有三公里。", "explanation": "离 + B + 还有 + khoảng cách." },
+     { "type": "sort", "context": "Sắp xếp: “Bệnh viện cách đây không xa.”", "words": ["医院", "离", "这儿", "不", "远", "。"], "answer": "医院离这儿不远。", "explanation": "离这儿不远." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 离.", "promptLang": "vi", "prompt": "Nhà tôi cách trường rất xa.", "answer": "我家离学校很远。", "answerPy": "Wǒ jiā lí xuéxiào hěn yuǎn.", "explanation": "A + 离 + B + 很远." }
+    ]
+   },
+   {
+    "title": "Bổ ngữ thời lượng (1) — làm bao lâu",
+    "errors": [
+     { "wrong": "我学了汉语两年。", "why": "có tân ngữ thì phải LẶP động từ hoặc dùng 的.", "right": "我学汉语学了两年。／我学了两年的汉语。" },
+     { "wrong": "我两年学了汉语。", "why": "bổ ngữ thời lượng đứng SAU động từ.", "right": "我学汉语学了两年。" },
+     { "wrong": "我睡了觉八个小时。", "why": "动词 li hợp: thời lượng đứng sau 睡.", "right": "我睡了八个小时的觉。" }
+    ],
+    "items": [
+     { "context": "“Tôi đã ngủ tám tiếng.” (không có tân ngữ)", "pre": "我", "blank": "睡了八个小时", "post": "。", "options": ["睡了八个小时", "八个小时睡了", "睡八个小时了吗"], "answer": 0, "explanation": "Động từ + 了 + thời lượng." },
+     { "context": "“Tôi học tiếng Trung hai năm rồi.” (lặp động từ)", "pre": "我", "blank": "学汉语学了两年", "post": "。", "options": ["学汉语学了两年", "学了汉语两年", "两年学了汉语"], "answer": 0, "explanation": "Lặp động từ khi có tân ngữ." },
+     { "context": "Cách khác: dùng 的 giữa thời lượng và tân ngữ.", "pre": "我", "blank": "学了两年的汉语", "post": "。", "options": ["学了两年的汉语", "学了汉语两年的", "两年的学了汉语"], "answer": 0, "explanation": "V + 了 + thời lượng + 的 + tân ngữ." },
+     { "context": "“Tôi đợi cậu ấy nửa tiếng.”", "pre": "我", "blank": "等了他半个小时", "post": "。", "options": ["等了他半个小时", "等了半个小时他", "半个小时等了他"], "answer": 0, "explanation": "Tân ngữ là NGƯỜI thì đứng ngay sau 了." },
+     { "context": "“Cậu ấy đã ở Bắc Kinh ba năm.”", "pre": "他", "blank": "在北京住了三年", "post": "。", "options": ["在北京住了三年", "住了在北京三年", "三年在北京住了"], "answer": 0, "explanation": "Thời lượng đứng cuối." },
+     { "context": "“Tôi ngủ tám tiếng rồi.” (động từ li hợp 睡觉)", "pre": "我", "blank": "睡了八个小时的觉", "post": "。", "options": ["睡了八个小时的觉", "睡了觉八个小时", "睡觉了八个小时"], "answer": 0, "explanation": "Li hợp: thời lượng chen vào giữa." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我学汉语学了两年。", "isCorrect": true, "explanation": "Lặp động từ khi có tân ngữ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我两年学了汉语。", "isCorrect": false, "correctVersion": "我学汉语学了两年。", "explanation": "Thời lượng đứng sau động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đã ngủ tám tiếng.”", "words": ["我", "睡", "了", "八", "个", "小时", "。"], "answer": "我睡了八个小时。", "explanation": "睡了 + thời lượng." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi học tiếng Trung hai năm rồi.”", "words": ["我", "学", "汉语", "学", "了", "两", "年", "。"], "answer": "我学汉语学了两年。", "explanation": "Lặp động từ 学." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đợi cậu ấy nửa tiếng.”", "words": ["我", "等", "了", "他", "半", "个", "小时", "。"], "answer": "我等了他半个小时。", "explanation": "Tân ngữ người + thời lượng." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy đã ở Bắc Kinh ba năm.”", "words": ["他", "在", "北京", "住", "了", "三", "年", "。"], "answer": "他在北京住了三年。", "explanation": "住了三年." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng bổ ngữ thời lượng.", "promptLang": "vi", "prompt": "Tôi học tiếng Trung hai năm rồi.", "answer": "我学汉语学了两年。", "answerPy": "Wǒ xué Hànyǔ xué le liǎng nián.", "explanation": "Lặp động từ khi có tân ngữ." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk2v3-bai-10.html": {
+  "points": [
+   {
+    "title": "Câu có cụm chủ vị làm vị ngữ (主谓谓语句)",
+    "errors": [
+     { "wrong": "他身体很好的。", "why": "thêm 的 vào cuối là thừa.", "right": "他身体很好。" },
+     { "wrong": "他的身体很好很。", "why": "lặp 很.", "right": "他身体很好。" },
+     { "wrong": "身体他很好。", "why": "chủ ngữ lớn (他) đứng ĐẦU câu.", "right": "他身体很好。" }
+    ],
+    "items": [
+     { "context": "“Cậu ấy sức khỏe rất tốt.”", "pre": "他", "blank": "身体很好", "post": "。", "options": ["身体很好", "身体好", "很好身体"], "answer": 0, "explanation": "Chủ ngữ lớn + [chủ ngữ nhỏ + vị ngữ]." },
+     { "context": "“Bắc Kinh mùa đông rất lạnh.”", "pre": "北京", "blank": "冬天很冷", "post": "。", "options": ["冬天很冷", "很冷冬天", "冬天冷"], "answer": 0, "explanation": "北京 (lớn) + 冬天很冷 (cụm chủ-vị)." },
+     { "context": "“Tiếng Trung của cậu ấy phát âm rất chuẩn.”", "pre": "他汉语", "blank": "发音很好", "post": "。", "options": ["发音很好", "很好发音", "发音好很"], "answer": 0, "explanation": "Cụm chủ-vị làm vị ngữ." },
+     { "context": "Phủ định đặt trong cụm chủ-vị.", "pre": "他", "blank": "身体不太好", "post": "。", "options": ["身体不太好", "不身体太好", "身体太不好吗"], "answer": 0, "explanation": "不 đứng trong vị ngữ nhỏ." },
+     { "context": "“Món này mùi vị rất ngon.”", "pre": "这个菜", "blank": "味道很好", "post": "。", "options": ["味道很好", "很好味道", "味道好很"], "answer": 0, "explanation": "这个菜 + 味道很好." },
+     { "context": "“Lớp chúng tôi học sinh rất nhiều.”", "pre": "我们班", "blank": "学生很多", "post": "。", "options": ["学生很多", "很多学生", "学生多"], "answer": 0, "explanation": "我们班 + 学生很多." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他身体很好。", "isCorrect": true, "explanation": "Cụm chủ-vị làm vị ngữ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "身体他很好。", "isCorrect": false, "correctVersion": "他身体很好。", "explanation": "Chủ ngữ lớn đứng đầu câu." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy sức khỏe rất tốt.”", "words": ["他", "身体", "很", "好", "。"], "answer": "他身体很好。", "explanation": "他 + 身体很好." },
+     { "type": "sort", "context": "Sắp xếp: “Bắc Kinh mùa đông rất lạnh.”", "words": ["北京", "冬天", "很", "冷", "。"], "answer": "北京冬天很冷。", "explanation": "北京 + 冬天很冷." },
+     { "type": "sort", "context": "Sắp xếp: “Món này mùi vị rất ngon.”", "words": ["这个", "菜", "味道", "很", "好", "。"], "answer": "这个菜味道很好。", "explanation": "这个菜 + 味道很好." },
+     { "type": "sort", "context": "Sắp xếp: “Lớp chúng tôi học sinh rất nhiều.”", "words": ["我们", "班", "学生", "很", "多", "。"], "answer": "我们班学生很多。", "explanation": "我们班 + 学生很多." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu có cụm chủ vị làm vị ngữ.", "promptLang": "vi", "prompt": "Bắc Kinh mùa đông rất lạnh.", "answer": "北京冬天很冷。", "answerPy": "Běijīng dōngtiān hěn lěng.", "explanation": "北京 + 冬天很冷." }
+    ]
+   },
+   {
+    "title": "Câu hỏi lựa chọn với 「还是」",
+    "errors": [
+     { "wrong": "你喝茶还是喝咖啡吗？", "why": "câu hỏi có 还是 KHÔNG dùng 吗.", "right": "你喝茶还是喝咖啡？" },
+     { "wrong": "你喝茶或者喝咖啡？", "why": "trong câu HỎI dùng 还是, không dùng 或者.", "right": "你喝茶还是喝咖啡？" },
+     { "wrong": "还是你喝茶喝咖啡？", "why": "还是 đứng GIỮA hai lựa chọn.", "right": "你喝茶还是喝咖啡？" }
+    ],
+    "items": [
+     { "context": "“Bạn uống trà hay uống cà phê?”", "pre": "你喝茶", "blank": "还是喝咖啡", "post": "？", "options": ["还是喝咖啡", "还是喝咖啡吗", "或者喝咖啡"], "answer": 0, "explanation": "还是 nối hai lựa chọn; không dùng 吗." },
+     { "context": "Câu KHẲNG ĐỊNH thì dùng 或者.", "pre": "茶", "blank": "或者", "post": "咖啡都可以。", "options": ["或者", "还是", "还是吗"], "answer": 0, "explanation": "或者 dùng trong câu kể; 还是 trong câu hỏi." },
+     { "context": "“Cậu ấy là người Trung Quốc hay người Việt Nam?”", "pre": "他是中国人", "blank": "还是越南人", "post": "？", "options": ["还是越南人", "还是越南人吗", "或者越南人"], "answer": 0, "explanation": "(是) A + 还是 + B？" },
+     { "context": "“Chúng ta đi hôm nay hay ngày mai?”", "pre": "我们今天去", "blank": "还是明天去", "post": "？", "options": ["还是明天去", "还是明天去吗", "或者明天去"], "answer": 0, "explanation": "还是 giữa hai lựa chọn." },
+     { "context": "“Bạn muốn cái to hay cái nhỏ?”", "pre": "你要大的", "blank": "还是小的", "post": "？", "options": ["还是小的", "还是小的吗", "或者小的"], "answer": 0, "explanation": "还是 + lựa chọn thứ hai." },
+     { "context": "“Cái này của bạn hay của cậu ấy?”", "pre": "这个是你的", "blank": "还是他的", "post": "？", "options": ["还是他的", "还是他的吗", "或者他的"], "answer": 0, "explanation": "Câu hỏi lựa chọn không dùng 吗." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你喝茶还是喝咖啡？", "isCorrect": true, "explanation": "还是 nối hai lựa chọn — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你喝茶还是喝咖啡吗？", "isCorrect": false, "correctVersion": "你喝茶还是喝咖啡？", "explanation": "Câu hỏi có 还是 không dùng 吗." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn uống trà hay uống cà phê?”", "words": ["你", "喝", "茶", "还是", "喝", "咖啡", "？"], "answer": "你喝茶还是喝咖啡？", "explanation": "A 还是 B？" },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy là người Trung Quốc hay người Việt Nam?”", "words": ["他", "是", "中国人", "还是", "越南人", "？"], "answer": "他是中国人还是越南人？", "explanation": "是 A 还是 B？" },
+     { "type": "sort", "context": "Sắp xếp: “Chúng ta đi hôm nay hay ngày mai?”", "words": ["我们", "今天", "去", "还是", "明天", "去", "？"], "answer": "我们今天去还是明天去？", "explanation": "还是 giữa hai lựa chọn." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn muốn cái to hay cái nhỏ?”", "words": ["你", "要", "大", "的", "还是", "小", "的", "？"], "answer": "你要大的还是小的？", "explanation": "大的 还是 小的？" },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu hỏi lựa chọn với 还是.", "promptLang": "vi", "prompt": "Bạn uống trà hay uống cà phê?", "answer": "你喝茶还是喝咖啡？", "answerPy": "Nǐ hē chá háishi hē kāfēi?", "explanation": "Không dùng 吗." }
+    ]
+   },
+   {
+    "title": "Cấu trúc 「要/快/快要/就要……了」 — sắp xảy ra",
+    "errors": [
+     { "wrong": "快要下雨。", "why": "thiếu 了 ở cuối câu.", "right": "快要下雨了。" },
+     { "wrong": "明天快要考试了。", "why": "快要 KHÔNG đi cùng từ chỉ thời gian cụ thể; phải dùng 就要.", "right": "明天就要考试了。" },
+     { "wrong": "要下雨快了。", "why": "sai trật tự; 快要 đứng liền nhau trước động từ.", "right": "快要下雨了。" }
+    ],
+    "items": [
+     { "context": "“Trời sắp mưa rồi.”", "pre": "", "blank": "快要下雨了", "post": "。", "options": ["快要下雨了", "快要下雨", "要下雨快了"], "answer": 0, "explanation": "快要 + động từ + 了." },
+     { "context": "Có từ chỉ thời gian cụ thể thì dùng 就要.", "pre": "明天", "blank": "就要考试了", "post": "。", "options": ["就要考试了", "快要考试了", "快考试了明天"], "answer": 0, "explanation": "快要 không đi cùng thời gian cụ thể." },
+     { "context": "“Sắp đến giờ rồi.”", "pre": "", "blank": "快到时间了", "post": "。", "options": ["快到时间了", "快到时间", "到时间快了"], "answer": 0, "explanation": "快 + động từ + 了." },
+     { "context": "“Tôi sắp về nước rồi.”", "pre": "我", "blank": "快要回国了", "post": "。", "options": ["快要回国了", "快要回国", "要回国快了"], "answer": 0, "explanation": "快要……了." },
+     { "context": "“Tuần sau tôi sắp đi Bắc Kinh rồi.”", "pre": "下个星期我", "blank": "就要去北京了", "post": "。", "options": ["就要去北京了", "快要去北京了", "快去北京了下个星期"], "answer": 0, "explanation": "下个星期 là thời gian cụ thể → 就要." },
+     { "context": "“Cậu ấy sắp đến rồi.”", "pre": "他", "blank": "快来了", "post": "。", "options": ["快来了", "快来", "来快了"], "answer": 0, "explanation": "快 + 来 + 了." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "快要下雨了。", "isCorrect": true, "explanation": "快要 + động từ + 了 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "明天快要考试了。", "isCorrect": false, "correctVersion": "明天就要考试了。", "explanation": "Có thời gian cụ thể thì dùng 就要." },
+     { "type": "sort", "context": "Sắp xếp: “Trời sắp mưa rồi.”", "words": ["快要", "下雨", "了", "。"], "answer": "快要下雨了。", "explanation": "快要……了." },
+     { "type": "sort", "context": "Sắp xếp: “Ngày mai sắp thi rồi.”", "words": ["明天", "就要", "考试", "了", "。"], "answer": "明天就要考试了。", "explanation": "就要……了." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi sắp về nước rồi.”", "words": ["我", "快要", "回国", "了", "。"], "answer": "我快要回国了。", "explanation": "快要回国了." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy sắp đến rồi.”", "words": ["他", "快", "来", "了", "。"], "answer": "他快来了。", "explanation": "快来了." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 就要……了.", "promptLang": "vi", "prompt": "Ngày mai sắp thi rồi.", "answer": "明天就要考试了。", "answerPy": "Míngtiān jiù yào kǎoshì le.", "explanation": "Có thời gian cụ thể → 就要." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk2v3-bai-11.html": {
+  "points": [
+   {
+    "title": "Trợ từ động thái 「着」 (1) — trạng thái đang duy trì",
+    "errors": [
+     { "wrong": "门不开着。", "why": "phủ định của 着 là 没(有), không phải 不.", "right": "门没开着。" },
+     { "wrong": "他坐了着。", "why": "着 không dùng cùng 了 ở vị trí này.", "right": "他坐着。" },
+     { "wrong": "着门开。", "why": "着 đứng ngay SAU động từ.", "right": "门开着。" }
+    ],
+    "items": [
+     { "context": "“Cửa đang mở.”", "pre": "门", "blank": "开着", "post": "。", "options": ["开着", "着开", "开了着"], "answer": 0, "explanation": "Động từ + 着 = trạng thái đang duy trì." },
+     { "context": "Phủ định: “Cửa không mở.”", "pre": "门", "blank": "没开着", "post": "。", "options": ["没开着", "不开着", "没着开"], "answer": 0, "explanation": "Phủ định dùng 没(有)." },
+     { "context": "“Cậu ấy đang ngồi.”", "pre": "他", "blank": "坐着", "post": "。", "options": ["坐着", "坐了着", "着坐"], "answer": 0, "explanation": "坐着 = đang ở trạng thái ngồi." },
+     { "context": "“Đèn vẫn đang sáng.”", "pre": "灯还", "blank": "亮着", "post": "。", "options": ["亮着", "着亮", "亮了着"], "answer": 0, "explanation": "还 + động từ + 着." },
+     { "context": "Phân biệt: 在 chỉ hành động ĐANG diễn ra.", "pre": "他", "blank": "在看书", "post": "。", "options": ["在看书", "看书着", "着看书"], "answer": 0, "explanation": "在 = đang làm; 着 = trạng thái duy trì." },
+     { "context": "“Cửa sổ đang đóng.”", "pre": "窗户", "blank": "关着", "post": "。", "options": ["关着", "着关", "关了着"], "answer": 0, "explanation": "关着 = đang ở trạng thái đóng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "门开着。", "isCorrect": true, "explanation": "Động từ + 着 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "门不开着。", "isCorrect": false, "correctVersion": "门没开着。", "explanation": "Phủ định của 着 là 没(有)." },
+     { "type": "sort", "context": "Sắp xếp: “Cửa đang mở.”", "words": ["门", "开", "着", "。"], "answer": "门开着。", "explanation": "开着." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy đang ngồi.”", "words": ["他", "坐", "着", "。"], "answer": "他坐着。", "explanation": "坐着." },
+     { "type": "sort", "context": "Sắp xếp: “Đèn vẫn đang sáng.”", "words": ["灯", "还", "亮", "着", "。"], "answer": "灯还亮着。", "explanation": "还亮着." },
+     { "type": "sort", "context": "Sắp xếp: “Cửa sổ không mở.”", "words": ["窗户", "没", "开", "着", "。"], "answer": "窗户没开着。", "explanation": "没开着." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 着.", "promptLang": "vi", "prompt": "Cửa đang mở.", "answer": "门开着。", "answerPy": "Mén kāi zhe.", "explanation": "开着 = đang mở." }
+    ]
+   },
+   {
+    "title": "Trợ từ động thái 「着」 (2) — có tân ngữ và câu hỏi",
+    "errors": [
+     { "wrong": "他手里拿一本书着。", "why": "着 đứng ngay sau động từ, TRƯỚC tân ngữ.", "right": "他手里拿着一本书。" },
+     { "wrong": "他穿着衣服吗没有？", "why": "trộn 吗 với 没有.", "right": "他穿着衣服吗？／他穿着衣服没有？" },
+     { "wrong": "他不穿着外套。", "why": "phủ định của 着 là 没.", "right": "他没穿着外套。" }
+    ],
+    "items": [
+     { "context": "“Trong tay cậu ấy đang cầm một quyển sách.”", "pre": "他手里", "blank": "拿着一本书", "post": "。", "options": ["拿着一本书", "拿一本书着", "着拿一本书"], "answer": 0, "explanation": "Động từ + 着 + tân ngữ." },
+     { "context": "“Cậu ấy đang mặc một chiếc áo trắng.”", "pre": "他", "blank": "穿着一件白衣服", "post": "。", "options": ["穿着一件白衣服", "穿一件白衣服着", "着穿一件白衣服"], "answer": 0, "explanation": "穿着 + tân ngữ." },
+     { "context": "Câu hỏi với 吗.", "pre": "门", "blank": "开着吗", "post": "？", "options": ["开着吗", "开吗着", "着开吗没有"], "answer": 0, "explanation": "……着 + 吗？" },
+     { "context": "“Trên bàn đặt mấy quyển sách.”", "pre": "桌子上", "blank": "放着几本书", "post": "。", "options": ["放着几本书", "放几本书着", "着放几本书"], "answer": 0, "explanation": "Câu tồn hiện: nơi chốn + V + 着 + sự vật." },
+     { "context": "Phủ định: “Cậu ấy không mặc áo khoác.”", "pre": "他", "blank": "没穿着外套", "post": "。", "options": ["没穿着外套", "不穿着外套", "没着穿外套"], "answer": 0, "explanation": "没 + V + 着 + tân ngữ." },
+     { "context": "“Cậu ấy vừa đi vừa hát.” (着 nối hai hành động)", "pre": "他", "blank": "走着走着唱起歌来", "post": "。", "options": ["走着走着唱起歌来", "走走着着唱起歌来", "着走着走唱起歌来"], "answer": 0, "explanation": "V着V着 = trong khi đang làm." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他手里拿着一本书。", "isCorrect": true, "explanation": "V + 着 + tân ngữ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他手里拿一本书着。", "isCorrect": false, "correctVersion": "他手里拿着一本书。", "explanation": "着 đứng trước tân ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Trong tay cậu ấy đang cầm một quyển sách.”", "words": ["他", "手", "里", "拿", "着", "一", "本", "书", "。"], "answer": "他手里拿着一本书。", "explanation": "拿着 + tân ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Trên bàn đặt mấy quyển sách.”", "words": ["桌子", "上", "放", "着", "几", "本", "书", "。"], "answer": "桌子上放着几本书。", "explanation": "Nơi chốn + V着 + sự vật." },
+     { "type": "sort", "context": "Sắp xếp: “Cửa có đang mở không?”", "words": ["门", "开", "着", "吗", "？"], "answer": "门开着吗？", "explanation": "……着吗？" },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy đang mặc một chiếc áo trắng.”", "words": ["他", "穿", "着", "一", "件", "白", "衣服", "。"], "answer": "他穿着一件白衣服。", "explanation": "穿着 + tân ngữ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 着 + tân ngữ.", "promptLang": "vi", "prompt": "Trên bàn đặt mấy quyển sách.", "answer": "桌子上放着几本书。", "answerPy": "Zhuōzi shàng fàng zhe jǐ běn shū.", "explanation": "Nơi chốn + V + 着 + sự vật." }
+    ]
+   },
+   {
+    "title": "Phó từ chỉ mức độ 「最」",
+    "errors": [
+     { "wrong": "他很最高。", "why": "最 đã là mức cao nhất, không thêm 很.", "right": "他最高。" },
+     { "wrong": "他高最。", "why": "最 đứng TRƯỚC tính từ.", "right": "他最高。" },
+     { "wrong": "我最喜欢很这个。", "why": "chen 很 vào giữa 最喜欢 và tân ngữ.", "right": "我最喜欢这个。" }
+    ],
+    "items": [
+     { "context": "“Cậu ấy cao nhất.”", "pre": "他", "blank": "最高", "post": "。", "options": ["最高", "很最高", "高最"], "answer": 0, "explanation": "最 + tính từ; không thêm 很." },
+     { "context": "“Tôi thích cái này nhất.”", "pre": "我", "blank": "最喜欢这个", "post": "。", "options": ["最喜欢这个", "很最喜欢这个", "喜欢最这个"], "answer": 0, "explanation": "最 + động từ tâm lý + tân ngữ." },
+     { "context": "“Món này ngon nhất.”", "pre": "这个菜", "blank": "最好吃", "post": "。", "options": ["最好吃", "很最好吃", "好吃最"], "answer": 0, "explanation": "最好吃." },
+     { "context": "“Trong lớp cậu ấy học giỏi nhất.”", "pre": "班里他", "blank": "学得最好", "post": "。", "options": ["学得最好", "最学得好", "学最得好"], "answer": 0, "explanation": "最 đứng trước tính từ sau 得." },
+     { "context": "“Tôi thích nhất là mùa xuân.”", "pre": "我", "blank": "最喜欢春天", "post": "。", "options": ["最喜欢春天", "喜欢最春天", "很最喜欢春天"], "answer": 0, "explanation": "最喜欢 + tân ngữ." },
+     { "context": "“Đây là thứ đắt nhất.”", "pre": "这是", "blank": "最贵的", "post": "。", "options": ["最贵的", "贵最的", "很最贵的"], "answer": 0, "explanation": "最 + tính từ + 的." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他最高。", "isCorrect": true, "explanation": "最 + tính từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他很最高。", "isCorrect": false, "correctVersion": "他最高。", "explanation": "最 không đi cùng 很." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy cao nhất.”", "words": ["他", "最", "高", "。"], "answer": "他最高。", "explanation": "最高." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi thích cái này nhất.”", "words": ["我", "最", "喜欢", "这个", "。"], "answer": "我最喜欢这个。", "explanation": "最喜欢 + tân ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Món này ngon nhất.”", "words": ["这个", "菜", "最", "好吃", "。"], "answer": "这个菜最好吃。", "explanation": "最好吃." },
+     { "type": "sort", "context": "Sắp xếp: “Trong lớp cậu ấy học giỏi nhất.”", "words": ["班", "里", "他", "学", "得", "最", "好", "。"], "answer": "班里他学得最好。", "explanation": "学得最好." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 最.", "promptLang": "vi", "prompt": "Tôi thích cái này nhất.", "answer": "我最喜欢这个。", "answerPy": "Wǒ zuì xǐhuan zhège.", "explanation": "最喜欢 + tân ngữ." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk2v3-bai-12.html": {
+  "points": [
+   {
+    "title": "Câu so sánh với 「比」 (4) — 「多了 / 得多」",
+    "errors": [
+     { "wrong": "他比我很高多了。", "why": "không dùng 很 trong câu 比.", "right": "他比我高多了。" },
+     { "wrong": "他比我高一点儿得多。", "why": "không dùng đồng thời hai mức chênh lệch.", "right": "他比我高得多。" },
+     { "wrong": "他比我多了高。", "why": "多了 đứng SAU tính từ.", "right": "他比我高多了。" }
+    ],
+    "items": [
+     { "context": "“Cậu ấy cao hơn tôi nhiều.”", "pre": "他", "blank": "比我高多了", "post": "。", "options": ["比我高多了", "比我很高多了", "比我多了高"], "answer": 0, "explanation": "比 + B + tính từ + 多了." },
+     { "context": "Cách nói khác cùng nghĩa.", "pre": "他", "blank": "比我高得多", "post": "。", "options": ["比我高得多", "比我得多高", "比我很高得多"], "answer": 0, "explanation": "得多 = 多了." },
+     { "context": "“Hôm nay lạnh hơn hôm qua nhiều.”", "pre": "今天", "blank": "比昨天冷多了", "post": "。", "options": ["比昨天冷多了", "比昨天很冷多了", "比昨天多了冷"], "answer": 0, "explanation": "冷多了 = lạnh hơn nhiều." },
+     { "context": "Chênh lệch NHỎ thì dùng 一点儿.", "pre": "他", "blank": "比我高一点儿", "post": "。", "options": ["比我高一点儿", "比我高一点儿多了", "比我一点儿高"], "answer": 0, "explanation": "一点儿 = hơn một chút." },
+     { "context": "“Món này ngon hơn món kia nhiều.”", "pre": "这个菜", "blank": "比那个好吃得多", "post": "。", "options": ["比那个好吃得多", "比那个得多好吃", "比那个很好吃得多"], "answer": 0, "explanation": "好吃得多." },
+     { "context": "“Tiếng Trung của cậu ấy giỏi hơn tôi nhiều.”", "pre": "他的汉语", "blank": "比我好多了", "post": "。", "options": ["比我好多了", "比我多了好", "比我很好多了"], "answer": 0, "explanation": "好多了." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他比我高多了。", "isCorrect": true, "explanation": "比 + B + tính từ + 多了 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他比我高一点儿得多。", "isCorrect": false, "correctVersion": "他比我高得多。", "explanation": "Không dùng hai mức chênh lệch cùng lúc." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy cao hơn tôi nhiều.”", "words": ["他", "比", "我", "高", "多", "了", "。"], "answer": "他比我高多了。", "explanation": "高多了." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay lạnh hơn hôm qua nhiều.”", "words": ["今天", "比", "昨天", "冷", "多", "了", "。"], "answer": "今天比昨天冷多了。", "explanation": "冷多了." },
+     { "type": "sort", "context": "Sắp xếp: “Món này ngon hơn món kia nhiều.”", "words": ["这个", "菜", "比", "那个", "好吃", "得", "多", "。"], "answer": "这个菜比那个好吃得多。", "explanation": "好吃得多." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy cao hơn tôi một chút.”", "words": ["他", "比", "我", "高", "一点儿", "。"], "answer": "他比我高一点儿。", "explanation": "高一点儿." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 比 với 多了/得多.", "promptLang": "vi", "prompt": "Hôm nay lạnh hơn hôm qua nhiều.", "answer": "今天比昨天冷多了。", "answerPy": "Jīntiān bǐ zuótiān lěng duō le.", "explanation": "冷多了." }
+    ]
+   },
+   {
+    "title": "Câu so sánh với 「比」 (5) — có bổ ngữ trạng thái",
+    "errors": [
+     { "wrong": "他跑比我快得。", "why": "得 đứng ngay sau động từ, trước tính từ.", "right": "他跑得比我快。" },
+     { "wrong": "他比我跑得很快。", "why": "câu so sánh không dùng 很.", "right": "他比我跑得快。" },
+     { "wrong": "他比跑得我快。", "why": "比 + đối tượng phải đi liền nhau.", "right": "他比我跑得快。" }
+    ],
+    "items": [
+     { "context": "“Cậu ấy chạy nhanh hơn tôi.” (比 trước động từ)", "pre": "他", "blank": "比我跑得快", "post": "。", "options": ["比我跑得快", "比我跑得很快", "比跑得我快"], "answer": 0, "explanation": "A + 比 + B + động từ + 得 + tính từ." },
+     { "context": "Cách nói khác: 比 đứng SAU 得.", "pre": "他", "blank": "跑得比我快", "post": "。", "options": ["跑得比我快", "跑比我快得", "跑得很比我快"], "answer": 0, "explanation": "A + động từ + 得 + 比 + B + tính từ." },
+     { "context": "“Cậu ấy nói hay hơn tôi.”", "pre": "他", "blank": "比我说得好", "post": "。", "options": ["比我说得好", "比我说得很好", "比说得我好"], "answer": 0, "explanation": "比 + 我 + 说得 + 好." },
+     { "context": "“Cô ấy viết đẹp hơn tôi.”", "pre": "她", "blank": "写得比我漂亮", "post": "。", "options": ["写得比我漂亮", "写比我漂亮得", "写得很比我漂亮"], "answer": 0, "explanation": "写得 + 比我 + 漂亮." },
+     { "context": "Không dùng 很 trong câu so sánh.", "pre": "他", "blank": "比我起得早", "post": "。", "options": ["比我起得早", "比我起得很早", "比起得我早"], "answer": 0, "explanation": "Câu 比 không dùng 很." },
+     { "context": "“Cậu ấy đến muộn hơn tôi.”", "pre": "他", "blank": "来得比我晚", "post": "。", "options": ["来得比我晚", "来比我晚得", "来得很比我晚"], "answer": 0, "explanation": "来得 + 比我 + 晚." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他跑得比我快。", "isCorrect": true, "explanation": "动词 + 得 + 比 + B + tính từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他比我跑得很快。", "isCorrect": false, "correctVersion": "他比我跑得快。", "explanation": "Câu so sánh không dùng 很." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy chạy nhanh hơn tôi.”", "words": ["他", "比", "我", "跑", "得", "快", "。"], "answer": "他比我跑得快。", "explanation": "比我跑得快." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy chạy nhanh hơn tôi.” (dạng thứ hai)", "words": ["他", "跑", "得", "比", "我", "快", "。"], "answer": "他跑得比我快。", "explanation": "跑得比我快." },
+     { "type": "sort", "context": "Sắp xếp: “Cô ấy viết đẹp hơn tôi.”", "words": ["她", "写", "得", "比", "我", "漂亮", "。"], "answer": "她写得比我漂亮。", "explanation": "写得比我漂亮." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy dậy sớm hơn tôi.”", "words": ["他", "比", "我", "起", "得", "早", "。"], "answer": "他比我起得早。", "explanation": "比我起得早." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 比 với bổ ngữ trạng thái.", "promptLang": "vi", "prompt": "Cậu ấy chạy nhanh hơn tôi.", "answer": "他比我跑得快。", "answerPy": "Tā bǐ wǒ pǎo de kuài.", "explanation": "比我跑得快." }
+    ]
+   },
+   {
+    "title": "Câu so sánh với 「比」 (6) — vừa có tân ngữ vừa có bổ ngữ",
+    "errors": [
+     { "wrong": "他比我说汉语得好。", "why": "có tân ngữ thì tân ngữ đứng trước, 得 đi liền động từ được lặp.", "right": "他汉语说得比我好。" },
+     { "wrong": "他说汉语比我说得好得。", "why": "lặp 得 hai lần.", "right": "他说汉语说得比我好。" },
+     { "wrong": "他汉语说得比我很好。", "why": "câu so sánh không dùng 很.", "right": "他汉语说得比我好。" }
+    ],
+    "items": [
+     { "context": "“Cậu ấy nói tiếng Trung giỏi hơn tôi.” (tân ngữ lên trước)", "pre": "他", "blank": "汉语说得比我好", "post": "。", "options": ["汉语说得比我好", "比我说汉语得好", "汉语说得比我很好"], "answer": 0, "explanation": "A + tân ngữ + động từ + 得 + 比 + B + tính từ." },
+     { "context": "Cách khác: lặp động từ.", "pre": "他", "blank": "说汉语说得比我好", "post": "。", "options": ["说汉语说得比我好", "说汉语比我说得好得", "说汉语得比我说好"], "answer": 0, "explanation": "Lặp động từ 说." },
+     { "context": "“Cậu ấy chơi bóng rổ giỏi hơn tôi.”", "pre": "他", "blank": "篮球打得比我好", "post": "。", "options": ["篮球打得比我好", "比我篮球打得很好", "打篮球得比我好"], "answer": 0, "explanation": "Tân ngữ 篮球 lên trước." },
+     { "context": "“Cô ấy viết chữ Hán đẹp hơn tôi.”", "pre": "她", "blank": "汉字写得比我漂亮", "post": "。", "options": ["汉字写得比我漂亮", "比我汉字写得很漂亮", "写汉字得比我漂亮"], "answer": 0, "explanation": "汉字 + 写得 + 比我 + 漂亮." },
+     { "context": "Không dùng 很.", "pre": "他", "blank": "汉语说得比我流利", "post": "。", "options": ["汉语说得比我流利", "汉语说得比我很流利", "比我汉语说得流利得"], "answer": 0, "explanation": "Câu 比 không dùng 很." },
+     { "context": "“Cậu ấy hát hay hơn tôi.” (động từ li hợp)", "pre": "他", "blank": "唱歌唱得比我好听", "post": "。", "options": ["唱歌唱得比我好听", "唱歌得比我好听", "比我唱歌唱得很好听"], "answer": 0, "explanation": "唱歌 + 唱得 + 比我 + 好听." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他汉语说得比我好。", "isCorrect": true, "explanation": "Tân ngữ + 说得 + 比我 + 好 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他比我说汉语得好。", "isCorrect": false, "correctVersion": "他汉语说得比我好。", "explanation": "得 phải đi liền động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy nói tiếng Trung giỏi hơn tôi.”", "words": ["他", "汉语", "说", "得", "比", "我", "好", "。"], "answer": "他汉语说得比我好。", "explanation": "Tân ngữ lên trước." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy chơi bóng rổ giỏi hơn tôi.”", "words": ["他", "篮球", "打", "得", "比", "我", "好", "。"], "answer": "他篮球打得比我好。", "explanation": "篮球打得比我好." },
+     { "type": "sort", "context": "Sắp xếp: “Cô ấy viết chữ Hán đẹp hơn tôi.”", "words": ["她", "汉字", "写", "得", "比", "我", "漂亮", "。"], "answer": "她汉字写得比我漂亮。", "explanation": "汉字写得比我漂亮." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy hát hay hơn tôi.”", "words": ["他", "唱歌", "唱", "得", "比", "我", "好听", "。"], "answer": "他唱歌唱得比我好听。", "explanation": "唱歌唱得比我好听." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 比 với cả tân ngữ và bổ ngữ.", "promptLang": "vi", "prompt": "Cậu ấy nói tiếng Trung giỏi hơn tôi.", "answer": "他汉语说得比我好。", "answerPy": "Tā Hànyǔ shuō de bǐ wǒ hǎo.", "explanation": "Tân ngữ + 说得 + 比我 + 好." }
+    ]
+   }
+  ]
+ }
+}

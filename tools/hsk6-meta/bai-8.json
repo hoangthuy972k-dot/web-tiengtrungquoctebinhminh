@@ -1,0 +1,112 @@
+{
+ "zh": "遇见原来的我",
+ "py": "Yùjiàn yuánlái de wǒ",
+ "vn": "Gặp lại tôi của ngày xưa",
+ "topic": "第二单元 不甘平庸 · Bản thể, cái tôi và sự thay đổi của con người",
+ "vocabCount": 41,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "对……而言",
+   "explain": "\"对……而言\" biểu thị nhìn nhận từ GÓC ĐỘ của một người, một sự việc nào đó — \"đối với … mà nói\". Dùng trong văn viết; khẩu ngữ thường nói \"对……来说\", \"对……说来\". Giữa 对 và 而言 là danh từ / đại từ / cụm danh từ; cả khung thường đứng đầu câu (hoặc sau chủ ngữ), sau có dấu phẩy, vế sau nêu nhận định.",
+   "rule": "<strong style=\"color:var(--sky-d)\">对</strong> + người / sự việc + <strong style=\"color:var(--sky-d)\">而言</strong>，+ nhận định　|　khẩu ngữ: 对……来说 / 对……说来",
+   "examples": [
+    {
+     "zh": "对今天的中国而言，经济发展必须坚持走可持续发展的道路。",
+     "py": "Duì jīntiān de Zhōngguó ér yán, jīngjì fāzhǎn bìxū jiānchí zǒu kě chíxù fāzhǎn de dàolù.",
+     "vn": "Đối với Trung Quốc ngày nay, phát triển kinh tế phải kiên trì đi theo con đường phát triển bền vững."
+    },
+    {
+     "zh": "对年轻的我们而言，面对困难是件快乐的事情——那意味着挑战。",
+     "py": "Duì niánqīng de wǒmen ér yán, miànduì kùnnan shì jiàn kuàilè de shìqing — nà yìwèizhe tiǎozhàn.",
+     "vn": "Đối với lớp trẻ chúng ta, đối mặt với khó khăn là một việc vui — điều đó có nghĩa là thử thách."
+    },
+    {
+     "zh": "你用电脑生成了一张你50岁时的图片，对你而言，就像看一个陌生人。",
+     "py": "Nǐ yòng diànnǎo shēngchéngle yì zhāng nǐ wǔshí suì shí de túpiàn, duì nǐ ér yán, jiù xiàng kàn yí ge mòshēngrén.",
+     "vn": "Bạn dùng máy tính tạo ra một bức ảnh bạn lúc 50 tuổi, đối với bạn, nhìn nó chẳng khác gì nhìn một người lạ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我而言，学汉语很有意思。",
+     "why": "Thiếu 对 — khung phải đủ hai phần 对……而言.",
+     "right": "对我而言，学汉语很有意思。"
+    },
+    {
+     "wrong": "对我而言说，这个问题很重要。",
+     "why": "而言 đã mang nghĩa \"mà nói\", không thêm 说; muốn dùng 说 thì nói 对我来说.",
+     "right": "对我而言，这个问题很重要。"
+    }
+   ]
+  },
+  {
+   "point": "有关",
+   "explain": "① 有关 là ĐỘNG TỪ, nghĩa là \"có liên quan\" (= 有关系): A 和 / 跟 / 与 B 有关; phủ định là 与……无关 / 没有关系. ② 有关 còn là GIỚI TỪ, nghĩa là \"liên quan đến, đề cập tới\" (= 涉及): 有关 + N (+ 的) + N làm định ngữ — 有关病例的记载, 有关服饰问题的资料; hoặc đứng ngay trước danh từ: 有关部门, 有关专家, 有关记载.",
+   "rule": "A + 和 / 跟 / 与 + B + <strong style=\"color:var(--sky-d)\">有关</strong>（động từ）　|　<strong style=\"color:var(--sky-d)\">有关</strong> + N (+ 的) + N（giới từ, = 涉及）",
+   "examples": [
+    {
+     "zh": "有关本体的问题，困扰了哲学家2500多年。",
+     "py": "Yǒuguān běntǐ de wèntí, kùnrǎole zhéxuéjiā liǎngqiān wǔbǎi duō nián.",
+     "vn": "Vấn đề liên quan đến bản thể đã làm các nhà triết học trăn trở hơn 2500 năm."
+    },
+    {
+     "zh": "中国的语文教学向来重视识字，这固然和汉字的特点有关。",
+     "py": "Zhōngguó de yǔwén jiàoxué xiànglái zhòngshì shízì, zhè gùrán hé Hànzì de tèdiǎn yǒuguān.",
+     "vn": "Việc dạy ngữ văn ở Trung Quốc xưa nay coi trọng việc học chữ, điều này dĩ nhiên có liên quan đến đặc điểm của chữ Hán."
+    },
+    {
+     "zh": "手术前，他仔细研究了中外有关病例的文字记载。",
+     "py": "Shǒushù qián, tā zǐxì yánjiūle Zhōng-wài yǒuguān bìnglì de wénzì jìzǎi.",
+     "vn": "Trước ca mổ, anh ấy nghiên cứu kỹ những ghi chép về các ca bệnh liên quan trong và ngoài nước."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这件事有关他。",
+     "why": "Động từ 有关 không mang tân ngữ trực tiếp; đối tượng phải đưa lên trước bằng 和 / 跟 / 与.",
+     "right": "这件事跟他有关。"
+    },
+    {
+     "wrong": "这次失败跟他的态度没有关。",
+     "why": "Phủ định của 有关 là 无关 hoặc 没有关系, không nói 没有关.",
+     "right": "这次失败跟他的态度无关。"
+    }
+   ]
+  },
+  {
+   "point": "不瞒你说",
+   "explain": "\"不瞒你说\" là XEN NGỮ (插入语), nghĩa \"nói thật với bạn, không giấu gì bạn\", dùng để biểu thị suy nghĩ, cách nhìn, ý kiến hoặc thái độ chủ quan của người nói — thường là điều thật lòng, hơi khó nói. Thường đứng đầu câu, sau có dấu phẩy. Các xen ngữ cùng loại hay dùng: 我看, 我想, 说实在的, 说真的, 依我看, 依我说, 依我之见.",
+   "rule": "<strong style=\"color:var(--sky-d)\">不瞒你说</strong>，+ suy nghĩ / ý kiến thật của người nói　|　cùng loại: 说真的 / 说实在的 / 依我看 / 依我之见，……",
+   "examples": [
+    {
+     "zh": "不瞒你说，对这个问题，我是这样想的。",
+     "py": "Bù mán nǐ shuō, duì zhège wèntí, wǒ shì zhèyàng xiǎng de.",
+     "vn": "Nói thật với bạn, về vấn đề này, tôi nghĩ thế này."
+    },
+    {
+     "zh": "不瞒你说，书法方面，本人虽称不上“家”，但水平还是有一些的。",
+     "py": "Bù mán nǐ shuō, shūfǎ fāngmiàn, běnrén suī chēng bu shàng \"jiā\", dàn shuǐpíng háishi yǒu yìxiē de.",
+     "vn": "Nói thật với bạn, về mặt thư pháp, bản thân tôi tuy chưa đáng gọi là \"nhà\", nhưng trình độ cũng có đôi chút."
+    },
+    {
+     "zh": "说实在的，她的问题涉及了我的隐私，我很反感，话也变得火药味十足。",
+     "py": "Shuō shízài de, tā de wèntí shèjíle wǒ de yǐnsī, wǒ hěn fǎngǎn, huà yě biàn de huǒyàowèi shízú.",
+     "vn": "Nói thật, câu hỏi của cô ấy động chạm tới chuyện riêng tư của tôi, tôi rất khó chịu, lời nói cũng trở nên đầy mùi thuốc súng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "不瞒他说，我也不知道答案。",
+     "why": "Xen ngữ cố định là 不瞒你说 (nói với người đối diện), không đổi thành 他.",
+     "right": "不瞒你说，我也不知道答案。"
+    },
+    {
+     "wrong": "说实在，这部电影一点儿也不好看。",
+     "why": "Xen ngữ cùng loại phải đủ 的: 说实在的 / 说真的.",
+     "right": "说实在的，这部电影一点儿也不好看。"
+    }
+   ]
+  }
+ ]
+}

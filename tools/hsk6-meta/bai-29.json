@@ -1,0 +1,112 @@
+{
+ "zh": "“笑”的备忘录",
+ "py": "“Xiào” de Bèiwànglù",
+ "vn": "Bản ghi nhớ về tiếng cười",
+ "topic": "第八单元 人体探秘 · Khám phá cơ thể người — não bộ nhận ra tiếng cười thật giả và lợi – hại của tiếng cười",
+ "vocabCount": 53,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "预先",
+   "explain": "\"预先\" là PHÓ TỪ, nghĩa là \"trước, sẵn từ trước\": trước khi sự việc xảy ra hoặc động tác được tiến hành thì đã có một hành động nào đó (chuẩn bị, thông báo, đặt chỗ, dự tính…). Đứng trước động từ: 预先订好 / 准备 / 通知 / 告知 / 安排 / 想到; đứng được trước phủ định: 预先没有想到, 预先未被告知 (văn viết). Hay đi với bổ ngữ kết quả 好: 预先准备好的马. Gần nghĩa 事先, 提前 (练习2: 提前 → 预先). Không đứng sau động từ và không làm vị ngữ độc lập.",
+   "rule": "<strong style=\"color:var(--sky-d)\">预先</strong> + V (+ 好 / 过)　|　<strong style=\"color:var(--sky-d)\">预先</strong> + 没(有) / 未 + V　|　<strong style=\"color:var(--sky-d)\">预先</strong> + V + 好的 + N (làm định ngữ)",
+   "examples": [
+    {
+     "zh": "那里一年四季都是旅游旺季，到那里去旅行，一定要预先订好旅馆。",
+     "py": "Nàlǐ yì nián sìjì dōu shì lǚyóu wàngjì, dào nàlǐ qù lǚxíng, yídìng yào yùxiān dìnghǎo lǚguǎn.",
+     "vn": "Nơi đó quanh năm đều là mùa du lịch cao điểm, đi du lịch ở đó nhất định phải đặt sẵn khách sạn trước."
+    },
+    {
+     "zh": "大家预先都没有想到，本届绘画展览竟然这么受欢迎。",
+     "py": "Dàjiā yùxiān dōu méiyǒu xiǎngdào, běn jiè huìhuà zhǎnlǎn jìngrán zhème shòu huānyíng.",
+     "vn": "Trước đó mọi người đều không ngờ triển lãm tranh kỳ này lại được hoan nghênh đến thế."
+    },
+    {
+     "zh": "志愿者在预先未被告知测试目的的情况下，仅凭直觉就能准确地分辨出假笑声。",
+     "py": "Zhìyuànzhě zài yùxiān wèi bèi gàozhī cèshì mùdì de qíngkuàng xià, jǐn píng zhíjué jiù néng zhǔnquè de fēnbiàn chū jiǎ xiàoshēng.",
+     "vn": "Dù không được báo trước mục đích thử nghiệm, chỉ dựa vào trực giác, tình nguyện viên đã có thể phân biệt chính xác tiếng cười giả."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我订好预先了旅馆。",
+     "why": "预先 là phó từ, phải đứng TRƯỚC động từ, không đứng sau.",
+     "right": "我预先订好了旅馆。"
+    },
+    {
+     "wrong": "这件事很预先。",
+     "why": "预先 không làm vị ngữ, không đi với 很 (không phải tính từ).",
+     "right": "这件事要预先准备。"
+    }
+   ]
+  },
+  {
+   "point": "……也好，……也罢",
+   "explain": "\"A也好，B也罢\" dùng để LIỆT KÊ (thường hai khả năng, có khi đối lập: 好 / 不好, 刮风 / 下雨), biểu thị trong BẤT KỲ trường hợp nào kết quả cũng vậy. Có thể nói \"……也好，……也好\" hoặc \"……也罢，……也罢\". Vế sau thường có 都 / 也 hô ứng. A, B có thể là danh từ, động từ, tính từ hoặc cụm từ. Khi viết lại câu có 是 A 还是 B / 无论 A 还是 B / A 或者 B → bỏ 是 / 无论 / 还是 / 或者, đặt 也好 / 也罢 sau mỗi vế.",
+   "rule": "A + <strong style=\"color:var(--sky-d)\">也好</strong>，B + <strong style=\"color:var(--sky-d)\">也罢</strong>，(S) + <strong style=\"color:var(--sky-d)\">都 / 也</strong> + ……　|　A<strong style=\"color:var(--sky-d)\">也好</strong>，B<strong style=\"color:var(--sky-d)\">也好</strong>　|　A<strong style=\"color:var(--sky-d)\">也罢</strong>，B<strong style=\"color:var(--sky-d)\">也罢</strong>",
+   "examples": [
+    {
+     "zh": "中国人深信开怀大笑也好，哈哈傻笑也罢，哪怕是私下里偷偷地笑，都会是生活中最通用，而且管用的治病良方。",
+     "py": "Zhōngguórén shēnxìn kāihuái dà xiào yě hǎo, hāhā shǎxiào yě bà, nǎpà shì sīxià li tōutōu de xiào, dōu huì shì shēnghuó zhōng zuì tōngyòng, érqiě guǎnyòng de zhì bìng liángfāng.",
+     "vn": "Người Trung Quốc tin chắc rằng dù cười sảng khoái hay cười ha hả ngây ngô, thậm chí là lén cười một mình, đều sẽ là phương thuốc chữa bệnh thông dụng nhất mà lại hiệu nghiệm."
+    },
+    {
+     "zh": "退休以后别人都养养花，喂喂鸟，可是花也好，鸟也好，都引不起他的兴趣。",
+     "py": "Tuìxiū yǐhòu biérén dōu yǎngyang huā, wèiwei niǎo, kěshì huā yě hǎo, niǎo yě hǎo, dōu yǐn bu qǐ tā de xìngqù.",
+     "vn": "Nghỉ hưu rồi người khác đều trồng hoa, nuôi chim, nhưng hoa cũng vậy mà chim cũng vậy, đều chẳng khơi dậy được hứng thú của ông."
+    },
+    {
+     "zh": "开汽车也罢，骑自行车也罢，行进中打电话都会影响注意力与反应能力。",
+     "py": "Kāi qìchē yě bà, qí zìxíngchē yě bà, xíngjìn zhōng dǎ diànhuà dōu huì yǐngxiǎng zhùyìlì yǔ fǎnyìng nénglì.",
+     "vn": "Dù lái ô tô hay đi xe đạp, vừa di chuyển vừa gọi điện đều ảnh hưởng đến sự chú ý và khả năng phản ứng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "上学也好还是工作也罢，只要你自己愿意就行。",
+     "why": "也好……也罢 đã thay cho 是……还是……, không giữ 还是 (lỗi này có cả trong bản đáp án in của sách).",
+     "right": "上学也好，工作也罢，只要你自己愿意就行。"
+    },
+    {
+     "wrong": "刮风也好，下雨也罢，我们六点准时出发不能影响。",
+     "why": "Vế sau phải nêu kết quả không đổi, thường có 都 / 也 hô ứng và trật tự câu bình thường.",
+     "right": "刮风也好，下雨也罢，都不能影响我们六点准时出发。"
+    }
+   ]
+  },
+  {
+   "point": "修辞（6）设问",
+   "explain": "Phần 篇章修辞 thứ sáu của quyển 下. \"设问\" (thiết vấn) là KHÔNG CÓ NGHI VẤN MÀ VẪN HỎI: người viết tự nêu câu hỏi rồi tự trả lời (无疑而问，自问自答). Tác dụng: ① gây sự chú ý, gợi người đọc suy nghĩ; ② giúp tổ chức bài văn, chuyển ý tự nhiên và gọn — như câu 笑，真的是人生旅途中的最佳良药吗？答案似乎不是那么肯定 mở phần tác hại của tiếng cười. Cách viết lại câu trần thuật thành câu thiết vấn: đem ý đầu biến thành câu hỏi (thêm 吗 / 真的……吗 / 什么 / 如何…), sau đó tự trả lời (不一定 / 没错 / 是的 / 不是…). Khác 反问 (câu hỏi tu từ, không cần trả lời, đáp án nằm sẵn trong câu).",
+   "rule": "Câu hỏi tự đặt (……<strong style=\"color:var(--sky-d)\">吗</strong>？/ 什么……？/ 如何……？) + <strong style=\"color:var(--sky-d)\">tự trả lời</strong> (不一定 / 没错 / 是的 / 答案是……)",
+   "examples": [
+    {
+     "zh": "难道我们听到庸俗、不上档次的笑话假笑两声、敷衍一下也不可以吗？可是，好像确实不行。",
+     "py": "Nándào wǒmen tīngdào yōngsú, bú shàng dàngcì de xiàohua jiǎ xiào liǎng shēng, fūyǎn yíxià yě bù kěyǐ ma? Kěshì, hǎoxiàng quèshí bù xíng.",
+     "vn": "Lẽ nào nghe chuyện cười tầm thường mà cười giả vài tiếng, đối phó một chút cũng không được sao? Thế nhưng, hình như quả thật là không được."
+    },
+    {
+     "zh": "笑，真的是人生旅途中的最佳良药吗？答案似乎不是那么肯定。",
+     "py": "Xiào, zhēn de shì rénshēng lǚtú zhōng de zuì jiā liángyào ma? Dá'àn sìhū bú shì nàme kěndìng.",
+     "vn": "Cười có thật là liều thuốc tốt nhất trên hành trình cuộc đời không? Câu trả lời dường như không chắc chắn đến vậy."
+    },
+    {
+     "zh": "离开了手机，难道会死吗？何不尝试一下一周关机一天？说干就干，索性这礼拜就开始。",
+     "py": "Líkāile shǒujī, nándào huì sǐ ma? Hébù chángshì yíxià yì zhōu guān jī yì tiān? Shuō gàn jiù gàn, suǒxìng zhè lǐbài jiù kāishǐ.",
+     "vn": "Rời điện thoại ra thì chết chắc? Sao không thử mỗi tuần tắt máy một ngày? Nói là làm, dứt khoát bắt đầu ngay tuần này."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "有钱一定幸福吗？",
+     "why": "Chỉ nêu câu hỏi mà không tự trả lời thì chưa phải 设问 (设问 = tự hỏi TỰ ĐÁP).",
+     "right": "有钱一定幸福吗？不一定，有朋友，有健康，有自己的事业才会幸福。"
+    },
+    {
+     "wrong": "气候真的变暖了吗？没错吗？我们的地球每一天都在变化。",
+     "why": "Phần tự trả lời phải là câu khẳng định / phủ định rõ ràng, không đặt thêm câu hỏi.",
+     "right": "气候真的变暖了吗？没错，我们的地球每一天都在变化。"
+    }
+   ]
+  }
+ ]
+}

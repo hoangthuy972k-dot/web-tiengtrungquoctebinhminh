@@ -1,0 +1,1626 @@
+// ══════════════════════════════════════════
+// DATA — Bài 5: 就买这件吧
+// ══════════════════════════════════════════
+var vocabData = [
+  {
+    "n": 1,
+    "zh": "外面",
+    "py": "wàimian",
+    "pos": "Danh từ",
+    "vn": "bên ngoài",
+    "hv": "ngoại diện",
+    "em": "🌳",
+    "lesson": 1,
+    "ex_zh": "我不想去外面吃。",
+    "ex_py": "Wǒ bù xiǎng qù wàimian chī.",
+    "ex_vn": "Tôi không muốn ra ngoài ăn.",
+    "exList": [
+      {
+        "zh": "我不想去外面吃。",
+        "py": "Wǒ bù xiǎng qù wàimian chī.",
+        "vn": "Tôi không muốn ra ngoài ăn."
+      },
+      {
+        "zh": "外面在下雨。",
+        "py": "Wàimian zài xià yǔ.",
+        "vn": "Bên ngoài đang mưa."
+      },
+      {
+        "zh": "孩子在外面玩儿。",
+        "py": "Háizi zài wàimian wánr.",
+        "vn": "Bọn trẻ đang chơi bên ngoài."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "外",
+        "p": "wài",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "夕 (tịch) trái → 卜 (bốc) phải",
+        "rad": "夕 (tịch – buổi tối)",
+        "mean": "ngoài, bên ngoài",
+        "tip": "Đã học ở Bài 6 dạng đơn (门外) — 外 ghép với 面 (mặt) = phía mặt ngoài.",
+        "cf": "处 (chù – \"nơi chốn\")",
+        "w": "外面 / 外国 / 门外"
+      },
+      {
+        "c": "面",
+        "p": "miàn",
+        "type": "独体字 · Chữ đơn",
+        "st": 9,
+        "ord": "一→フ→丨→ 三 ngang giữa",
+        "rad": "面 (diện – tự thành bộ)",
+        "mean": "mặt, mặt phẳng; mì",
+        "tip": "Hình khuôn mặt cách điệu → nghĩa \"MẶT, bề mặt\". 外 + 面 = mặt phía ngoài.",
+        "cf": "画 (huà – \"vẽ\")",
+        "w": "外面 / 里面 / 面条"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "外面很冷",
+        "py": "wàimian hěn lěng",
+        "vn": "bên ngoài rất lạnh"
+      },
+      {
+        "zh": "在外面",
+        "py": "zài wàimian",
+        "vn": "ở bên ngoài"
+      },
+      {
+        "zh": "外面下雨",
+        "py": "wàimian xià yǔ",
+        "vn": "bên ngoài mưa"
+      },
+      {
+        "zh": "到外面去",
+        "py": "dào wàimian qù",
+        "vn": "ra bên ngoài"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + 外面",
+        "m": "Ở bên ngoài: 他在外面"
+      },
+      {
+        "s": "外面 ↔ 里面 — ngoài và trong"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bên ngoài rất lạnh, bạn ở nhà nghỉ đi.",
+        "answer": "外面很冷，你在家休息吧。",
+        "answerPy": "Wàimiàn hěn lěng, nǐ zài jiā xiūxi ba.",
+        "note": "外面 ↔ 里面 — ngoài và trong.",
+        "pair": "……吧"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bên ngoài mưa rồi, tối nay tôi không ra ngoài.",
+        "answer": "外面下雨了，今天晚上我不去外面。",
+        "answerPy": "Wàimiàn xià yǔ le, jīntiān wǎnshang wǒ bú qù wàimiàn.",
+        "note": "了 cuối câu báo tình hình đã đổi.",
+        "pair": "……了"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "准备",
+    "py": "zhǔnbèi",
+    "pos": "Động từ",
+    "vn": "chuẩn bị",
+    "hv": "chuẩn bị",
+    "em": "📝",
+    "lesson": 1,
+    "ex_zh": "你准备做什么呢？",
+    "ex_py": "Nǐ zhǔnbèi zuò shénme ne?",
+    "ex_vn": "Bạn chuẩn bị làm gì vậy?",
+    "exList": [
+      {
+        "zh": "你准备做什么呢？",
+        "py": "Nǐ zhǔnbèi zuò shénme ne?",
+        "vn": "Bạn chuẩn bị làm gì vậy?"
+      },
+      {
+        "zh": "我准备去北京旅游。",
+        "py": "Wǒ zhǔnbèi qù Běijīng lǚyóu.",
+        "vn": "Tôi định đi Bắc Kinh du lịch."
+      },
+      {
+        "zh": "她正在准备晚饭。",
+        "py": "Tā zhèngzài zhǔnbèi wǎnfàn.",
+        "vn": "Cô ấy đang chuẩn bị bữa tối."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "准",
+        "p": "zhǔn",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "冫(băng) trái → 隹 (chuy) phải",
+        "rad": "冫(băng – nước đá)",
+        "mean": "chuẩn, cho phép",
+        "tip": "Liên quan tới sự \"chuẩn xác, sẵn sàng\" cho việc gì đó.",
+        "cf": "淮 (huái – \"sông Hoài\", bộ 氵)",
+        "w": "准备 / 准时 / 标准"
+      },
+      {
+        "c": "备",
+        "p": "bèi",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "夂→田→丨",
+        "rad": "夂",
+        "mean": "chuẩn bị, đầy đủ",
+        "tip": "准 (chuẩn xác) + 备 (đầy đủ) = sắp xếp đầy đủ, sẵn sàng = CHUẨN BỊ.",
+        "cf": "各 (gè – \"mỗi\")",
+        "w": "准备 / 设备 / 备用"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "准备考试",
+        "py": "zhǔnbèi kǎoshì",
+        "vn": "chuẩn bị thi"
+      },
+      {
+        "zh": "准备好了",
+        "py": "zhǔnbèi hǎo le",
+        "vn": "chuẩn bị xong rồi"
+      },
+      {
+        "zh": "准备做菜",
+        "py": "zhǔnbèi zuò cài",
+        "vn": "chuẩn bị nấu ăn"
+      },
+      {
+        "zh": "准备一下",
+        "py": "zhǔnbèi yíxià",
+        "vn": "chuẩn bị một chút"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "准备 + động từ",
+        "m": "Chuẩn bị làm gì: 准备考试"
+      },
+      {
+        "s": "准备 vừa là chuẩn bị, vừa là dự định: 我准备明天去"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đang chuẩn bị kỳ thi tiếng Trung.",
+        "answer": "我在准备汉语考试。",
+        "answerPy": "Wǒ zài zhǔnbèi Hànyǔ kǎoshì.",
+        "note": "在 + động từ — đang làm việc gì.",
+        "pair": "在 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Mẹ chuẩn bị nấu ăn rồi.",
+        "answer": "妈妈准备做菜了。",
+        "answerPy": "Māma zhǔnbèi zuò cài le.",
+        "note": "准备 vừa là chuẩn bị, vừa là dự định.",
+        "pair": "准备 + V"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "就",
+    "py": "jiù",
+    "pos": "Phó từ",
+    "vn": "thì, liền, chính",
+    "hv": "tựu",
+    "em": "👉",
+    "lesson": 1,
+    "ex_zh": "就做你爱吃的鱼吧。",
+    "ex_py": "Jiù zuò nǐ ài chī de yú ba.",
+    "ex_vn": "Vậy thì làm món cá anh thích ăn nhất đi.",
+    "exList": [
+      {
+        "zh": "就做你爱吃的鱼吧。",
+        "py": "Jiù zuò nǐ ài chī de yú ba.",
+        "vn": "Vậy thì làm món cá anh thích ăn nhất đi."
+      },
+      {
+        "zh": "我就住在这儿。",
+        "py": "Wǒ jiù zhù zài zhèr.",
+        "vn": "Tôi ở ngay đây thôi."
+      },
+      {
+        "zh": "他一说我就明白了。",
+        "py": "Tā yì shuō wǒ jiù míngbai le.",
+        "vn": "Anh ấy vừa nói là tôi hiểu ngay."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "就",
+        "p": "jiù",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "京 (kinh) trái → 尤 (vưu) phải",
+        "rad": "尤 (vưu)",
+        "mean": "thì, liền; đến gần",
+        "tip": "京 (nơi cao lớn) + 尤 (đặc biệt) → tiến gần tới, hoàn thành NGAY, dùng để nối ý quyết định nhanh.",
+        "cf": "鹫 (jiù – \"chim ưng\")",
+        "w": "就是 / 就去 / 那就"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "就来",
+        "py": "jiù lái",
+        "vn": "đến ngay"
+      },
+      {
+        "zh": "就在这儿",
+        "py": "jiù zài zhèr",
+        "vn": "ngay ở đây"
+      },
+      {
+        "zh": "吃了就去",
+        "py": "chī le jiù qù",
+        "vn": "ăn xong là đi"
+      },
+      {
+        "zh": "就是他",
+        "py": "jiù shì tā",
+        "vn": "chính là anh ấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 就 + động từ",
+        "m": "Làm ngay, làm sớm: 我就来"
+      },
+      {
+        "s": "就 (sớm hơn nghĩ) — 他五点就来了 = anh ấy đến sớm"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ăn cơm xong là tôi đi học ngay.",
+        "answer": "我吃了饭就去学校。",
+        "answerPy": "Wǒ chīle fàn jiù qù xuéxiào.",
+        "note": "Việc trước xong, việc sau làm ngay.",
+        "pair": "V了……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy năm giờ đã đến rồi.",
+        "answer": "他五点就来了。",
+        "answerPy": "Tā wǔ diǎn jiù lái le.",
+        "note": "就 = sớm hơn mình nghĩ.",
+        "pair": "就……了"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "鱼",
+    "py": "yú",
+    "pos": "Danh từ",
+    "vn": "cá",
+    "hv": "ngư",
+    "em": "🐟",
+    "lesson": 1,
+    "ex_zh": "我最喜欢吃鱼。",
+    "ex_py": "Wǒ zuì xǐhuan chī yú.",
+    "ex_vn": "Tôi thích ăn cá nhất.",
+    "exList": [
+      {
+        "zh": "我最喜欢吃鱼。",
+        "py": "Wǒ zuì xǐhuan chī yú.",
+        "vn": "Tôi thích ăn cá nhất."
+      },
+      {
+        "zh": "这条鱼很新鲜。",
+        "py": "Zhè tiáo yú hěn xīnxiān.",
+        "vn": "Con cá này rất tươi."
+      },
+      {
+        "zh": "他不喜欢吃鱼。",
+        "py": "Tā bù xǐhuan chī yú.",
+        "vn": "Anh ấy không thích ăn cá."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "鱼",
+        "p": "yú",
+        "type": "独体字 · Tượng hình",
+        "st": 8,
+        "ord": "ク→田→一→一→灬 (biến thể)",
+        "rad": "鱼 (ngư – tự thành bộ)",
+        "mean": "cá",
+        "tip": "Hình con cá với đầu, thân vảy và đuôi cách điệu → \"CÁ\".",
+        "cf": "渔 (yú – \"đánh cá\", thêm bộ 氵)",
+        "w": "吃鱼 / 鱼肉 / 金鱼"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "吃鱼",
+        "py": "chī yú",
+        "vn": "ăn cá"
+      },
+      {
+        "zh": "买鱼",
+        "py": "mǎi yú",
+        "vn": "mua cá"
+      },
+      {
+        "zh": "一条鱼",
+        "py": "yì tiáo yú",
+        "vn": "một con cá"
+      },
+      {
+        "zh": "做鱼",
+        "py": "zuò yú",
+        "vn": "làm món cá"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 条 + 鱼",
+        "m": "Lượng từ của 鱼 là 条"
+      },
+      {
+        "s": "鱼 là chữ tượng hình — vẽ hình con cá"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Con cá này là chồng tôi mua.",
+        "answer": "这条鱼是我丈夫买的。",
+        "answerPy": "Zhè tiáo yú shì wǒ zhàngfu mǎi de.",
+        "note": "Lượng từ của 鱼 là 条.",
+        "pair": "是……的"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi cực kỳ thích ăn cá.",
+        "answer": "我非常喜欢吃鱼。",
+        "answerPy": "Wǒ fēicháng xǐhuan chī yú.",
+        "note": "非常 mạnh hơn 很.",
+        "pair": "非常 + V"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "件",
+    "py": "jiàn",
+    "pos": "Lượng từ",
+    "vn": "chiếc, cái, kiện (quần áo)",
+    "hv": "kiện",
+    "em": "👕",
+    "lesson": 2,
+    "ex_zh": "这件衣服很漂亮。",
+    "ex_py": "Zhè jiàn yīfu hěn piàoliang.",
+    "ex_vn": "Chiếc áo này rất đẹp.",
+    "exList": [
+      {
+        "zh": "这件衣服很漂亮。",
+        "py": "Zhè jiàn yīfu hěn piàoliang.",
+        "vn": "Chiếc áo này rất đẹp."
+      },
+      {
+        "zh": "那件小的怎么样？",
+        "py": "Nà jiàn xiǎo de zěnmeyàng?",
+        "vn": "Chiếc nhỏ hơn kia thì sao?"
+      },
+      {
+        "zh": "我要买两件衣服。",
+        "py": "Wǒ yào mǎi liǎng jiàn yīfu.",
+        "vn": "Tôi muốn mua hai chiếc áo."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "件",
+        "p": "jiàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "亻(nhân) trái → 牛 (ngưu) phải",
+        "rad": "亻(nhân – người)",
+        "mean": "chiếc, kiện, việc",
+        "tip": "Người 亻 đứng cạnh con bò 牛 (vật có giá trị) → đơn vị đếm từng \"KIỆN, CHIẾC\" riêng lẻ.",
+        "cf": "伴 (bàn – \"bạn đồng hành\")",
+        "w": "一件 / 这件 / 件件"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一件衣服",
+        "py": "yí jiàn yīfu",
+        "vn": "một bộ quần áo"
+      },
+      {
+        "zh": "两件事",
+        "py": "liǎng jiàn shì",
+        "vn": "hai việc"
+      },
+      {
+        "zh": "这件",
+        "py": "zhè jiàn",
+        "vn": "cái này"
+      },
+      {
+        "zh": "那件新的",
+        "py": "nà jiàn xīn de",
+        "vn": "cái mới kia"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 件 + danh từ",
+        "m": "Lượng từ của quần áo và sự việc"
+      },
+      {
+        "s": "件 dùng cho 衣服 · 事; 个 dùng cho người và đồ vật thường"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái áo này bao nhiêu tiền?",
+        "answer": "这件衣服多少钱？",
+        "answerPy": "Zhè jiàn yīfu duōshao qián?",
+        "note": "Lượng từ của 衣服 là 件.",
+        "pair": "多少钱？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi muốn mua hai bộ quần áo mới.",
+        "answer": "我想买两件新衣服。",
+        "answerPy": "Wǒ xiǎng mǎi liǎng jiàn xīn yīfu.",
+        "note": "Đếm số lượng dùng 两, không dùng 二.",
+        "pair": "想 + V"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "还",
+    "py": "hái",
+    "pos": "Phó từ",
+    "vn": "vẫn, còn; tạm được",
+    "hv": "hoàn",
+    "em": "👌",
+    "lesson": 2,
+    "ex_zh": "颜色还可以。",
+    "ex_py": "Yánsè hái kěyǐ.",
+    "ex_vn": "Màu sắc cũng được.",
+    "exList": [
+      {
+        "zh": "颜色还可以。",
+        "py": "Yánsè hái kěyǐ.",
+        "vn": "Màu sắc cũng được."
+      },
+      {
+        "zh": "他还没回家。",
+        "py": "Tā hái méi huí jiā.",
+        "vn": "Anh ấy vẫn chưa về nhà."
+      },
+      {
+        "zh": "你还想吃什么？",
+        "py": "Nǐ hái xiǎng chī shénme?",
+        "vn": "Bạn còn muốn ăn gì nữa không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "还",
+        "p": "hái / huán",
+        "type": "半包围 · Bán bao (辶)",
+        "st": 7,
+        "ord": "不 (bất) → 辶 (viết sau cùng)",
+        "rad": "辶 (sước – đi)",
+        "mean": "vẫn, còn (hái); trả lại (huán)",
+        "tip": "Bộ 辶 (đi) + 不 → ý \"đi mà chưa dứt hẳn\" = VẪN CÒN tiếp diễn.",
+        "cf": "环 (huán – \"vòng\", bộ 王)",
+        "w": "还可以 / 还是 / 还有"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "还有",
+        "py": "hái yǒu",
+        "vn": "còn có"
+      },
+      {
+        "zh": "还没有",
+        "py": "hái méiyǒu",
+        "vn": "vẫn chưa có"
+      },
+      {
+        "zh": "还在休息",
+        "py": "hái zài xiūxi",
+        "vn": "vẫn đang nghỉ"
+      },
+      {
+        "zh": "还要",
+        "py": "hái yào",
+        "vn": "còn muốn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "还 + động từ",
+        "m": "Vẫn còn, còn thêm: 我还要一个"
+      },
+      {
+        "s": "还没 + động từ",
+        "m": "Vẫn chưa làm: 他还没来"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy vẫn chưa đến.",
+        "answer": "老师还没来。",
+        "answerPy": "Lǎoshī hái méi lái.",
+        "note": "还没 — việc chưa xảy ra, có thể sắp xảy ra.",
+        "pair": "还没 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi còn muốn một cốc cà phê nữa.",
+        "answer": "我还要一杯咖啡。",
+        "answerPy": "Wǒ hái yào yì bēi kāfēi.",
+        "note": "还要 — còn muốn thêm.",
+        "pair": "还 + V"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "可以",
+    "py": "kěyǐ",
+    "pos": "Tính từ / Trợ động từ",
+    "vn": "tạm được, có thể",
+    "hv": "khả dĩ",
+    "em": "👍",
+    "lesson": 2,
+    "ex_zh": "听和说还可以。",
+    "ex_py": "Tīng hé shuō hái kěyǐ.",
+    "ex_vn": "Nghe và nói cũng tạm được.",
+    "exList": [
+      {
+        "zh": "听和说还可以。",
+        "py": "Tīng hé shuō hái kěyǐ.",
+        "vn": "Nghe và nói cũng tạm được."
+      },
+      {
+        "zh": "这里可以吃饭吗？",
+        "py": "Zhèlǐ kěyǐ chīfàn ma?",
+        "vn": "Ở đây có thể ăn cơm không?"
+      },
+      {
+        "zh": "你可以帮我一下吗？",
+        "py": "Nǐ kěyǐ bāng wǒ yíxià ma?",
+        "vn": "Bạn có thể giúp tôi một chút không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "可",
+        "p": "kě",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "一→丨→乛→一→亅",
+        "rad": "口 (khẩu)",
+        "mean": "có thể, được",
+        "tip": "Miệng 口 phát ra lời chấp thuận → biểu thị sự CHO PHÉP, ĐƯỢC.",
+        "cf": "河 (hé – \"sông\", thêm bộ 氵)",
+        "w": "可以 / 可能 / 可是"
+      },
+      {
+        "c": "以",
+        "p": "yǐ",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "丶→フ→丿→乀",
+        "rad": "人 (nhân – biến thể)",
+        "mean": "lấy, dùng để",
+        "tip": "可 (được phép) + 以 (dùng để) = được phép DÙNG ĐỂ làm gì = CÓ THỂ.",
+        "cf": "已 (yǐ – \"đã\", đã học ở Bài 4)",
+        "w": "可以 / 以后 / 以前"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "可以吃",
+        "py": "kěyǐ chī",
+        "vn": "có thể ăn"
+      },
+      {
+        "zh": "可以去",
+        "py": "kěyǐ qù",
+        "vn": "có thể đi"
+      },
+      {
+        "zh": "不可以",
+        "py": "bù kěyǐ",
+        "vn": "không được"
+      },
+      {
+        "zh": "可以吗",
+        "py": "kěyǐ ma",
+        "vn": "được không"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "可以 + động từ",
+        "m": "Được phép làm gì: 我可以问一下吗？"
+      },
+      {
+        "s": "可以 (được phép) ≠ 会 (biết làm) ≠ 能 (đủ sức làm)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi hỏi thầy một chút được không?",
+        "answer": "我可以问一下老师吗？",
+        "answerPy": "Wǒ kěyǐ wèn yíxià lǎoshī ma?",
+        "note": "可以 là xin phép, 会 là biết làm.",
+        "pair": "可以……吗？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn ốm rồi, không được uống cà phê.",
+        "answer": "你生病了，不可以喝咖啡。",
+        "answerPy": "Nǐ shēngbìng le, bù kěyǐ hē kāfēi.",
+        "note": "不可以 — không được phép.",
+        "pair": "不可以 + V"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "不错",
+    "py": "búcuò",
+    "pos": "Tính từ",
+    "vn": "không tồi, khá tốt",
+    "hv": "bất thác",
+    "em": "👏",
+    "lesson": 2,
+    "ex_zh": "这件不错，就买这件吧。",
+    "ex_py": "Zhè jiàn búcuò, jiù mǎi zhè jiàn ba.",
+    "ex_vn": "Chiếc này đẹp đấy, quyết định mua chiếc này đi.",
+    "exList": [
+      {
+        "zh": "这件不错，就买这件吧。",
+        "py": "Zhè jiàn búcuò, jiù mǎi zhè jiàn ba.",
+        "vn": "Chiếc này đẹp đấy, quyết định mua chiếc này đi."
+      },
+      {
+        "zh": "这个主意不错。",
+        "py": "Zhège zhǔyi búcuò.",
+        "vn": "Ý này không tồi đấy."
+      },
+      {
+        "zh": "今天天气不错。",
+        "py": "Jīntiān tiānqì búcuò.",
+        "vn": "Thời tiết hôm nay khá đẹp."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "不",
+        "p": "bù",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一→丨→丿→丶",
+        "rad": "一 (nhất)",
+        "mean": "không",
+        "tip": "Từ phủ định cơ bản nhất trong tiếng Trung.",
+        "cf": "布 (bù – \"vải\", thêm bộ 巾)",
+        "w": "不错 / 不是 / 不去"
+      },
+      {
+        "c": "错",
+        "p": "cuò",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "钅(kim) trái → 昔 (tích) phải",
+        "rad": "钅(kim – kim loại)",
+        "mean": "sai, nhầm",
+        "tip": "不 (không) + 错 (sai) = KHÔNG SAI = khá tốt, không tồi.",
+        "cf": "措 (cuò – \"biện pháp\", bộ 扌)",
+        "w": "不错 / 错了 / 对错"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很不错",
+        "py": "hěn búcuò",
+        "vn": "khá tốt"
+      },
+      {
+        "zh": "菜不错",
+        "py": "cài búcuò",
+        "vn": "món ăn ngon"
+      },
+      {
+        "zh": "身体不错",
+        "py": "shēntǐ búcuò",
+        "vn": "sức khoẻ tốt"
+      },
+      {
+        "zh": "考试不错",
+        "py": "kǎoshì búcuò",
+        "vn": "thi khá tốt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 不错",
+        "m": "Cách khen nhẹ nhàng: 这个菜不错"
+      },
+      {
+        "s": "不错 = không tệ = khá tốt — là lời khen, không phải chê"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Con cá này khá ngon.",
+        "answer": "这条鱼不错。",
+        "answerPy": "Zhè tiáo yú búcuò.",
+        "note": "不错 là lời khen, không phải chê.",
+        "pair": "Sub + 不错"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Sức khoẻ bố tôi khá tốt.",
+        "answer": "我爸爸的身体不错。",
+        "answerPy": "Wǒ bàba de shēntǐ búcuò.",
+        "note": "身体不错 — sức khoẻ khá.",
+        "pair": "Sub + 不错"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "考试",
+    "py": "kǎoshì",
+    "pos": "Danh từ / Động từ",
+    "vn": "kỳ thi, thi",
+    "hv": "khảo thí",
+    "em": "📝",
+    "lesson": 3,
+    "ex_zh": "是在想昨天的考试吗？",
+    "ex_py": "Shì zài xiǎng zuótiān de kǎoshì ma?",
+    "ex_vn": "Có phải đang nghĩ về kỳ thi hôm qua không?",
+    "exList": [
+      {
+        "zh": "是在想昨天的考试吗？",
+        "py": "Shì zài xiǎng zuótiān de kǎoshì ma?",
+        "vn": "Có phải đang nghĩ về kỳ thi hôm qua không?"
+      },
+      {
+        "zh": "明天有一个汉语考试。",
+        "py": "Míngtiān yǒu yí ge Hànyǔ kǎoshì.",
+        "vn": "Ngày mai có một kỳ thi tiếng Hán."
+      },
+      {
+        "zh": "这次考试很难。",
+        "py": "Zhècì kǎoshì hěn nán.",
+        "vn": "Kỳ thi lần này rất khó."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "考",
+        "p": "kǎo",
+        "type": "独体字 · Chữ đơn",
+        "st": 6,
+        "ord": "土→ 一 →耂 (biến thể)",
+        "rad": "耂 (lão – biến thể)",
+        "mean": "thi, kiểm tra",
+        "tip": "Liên quan tới việc người lớn tuổi/có kinh nghiệm ra đề kiểm tra kiến thức.",
+        "cf": "老 (lǎo – \"già\", cùng bộ 耂)",
+        "w": "考试 / 考虑 / 高考"
+      },
+      {
+        "c": "试",
+        "p": "shì",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "讠(ngôn) trái → 式 (thức) phải",
+        "rad": "讠(ngôn – lời nói)",
+        "mean": "thử, thi",
+        "tip": "考 (kiểm tra) + 试 (thử) = kiểm tra thử năng lực = THI.",
+        "cf": "式 (shì – \"kiểu, thức\")",
+        "w": "考试 / 试一下 / 试穿"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "准备考试",
+        "py": "zhǔnbèi kǎoshì",
+        "vn": "chuẩn bị thi"
+      },
+      {
+        "zh": "汉语考试",
+        "py": "Hànyǔ kǎoshì",
+        "vn": "kỳ thi tiếng Trung"
+      },
+      {
+        "zh": "考试的时候",
+        "py": "kǎoshì de shíhou",
+        "vn": "lúc thi"
+      },
+      {
+        "zh": "考试了",
+        "py": "kǎoshì le",
+        "vn": "thi rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "准备 + 考试",
+        "m": "Chuẩn bị cho kỳ thi"
+      },
+      {
+        "s": "考 + 试",
+        "m": "Khảo (考) sát bằng cách thử (试)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngày mai bắt đầu thi rồi.",
+        "answer": "明天开始考试了。",
+        "answerPy": "Míngtiān kāishǐ kǎoshì le.",
+        "note": "开始 + động từ — bắt đầu làm gì.",
+        "pair": "开始 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Sau kỳ thi tôi muốn đi Bắc Kinh du lịch.",
+        "answer": "考试以后我要去北京旅游。",
+        "answerPy": "Kǎoshì yǐhòu wǒ yào qù Běijīng lǚyóu.",
+        "note": "以后 đứng SAU mốc thời gian.",
+        "pair": "……以后"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "意思",
+    "py": "yìsi",
+    "pos": "Danh từ",
+    "vn": "ý nghĩa, ý tứ",
+    "hv": "ý tư",
+    "em": "💭",
+    "lesson": 3,
+    "ex_zh": "很多字我都不知道是什么意思。",
+    "ex_py": "Hěn duō zì wǒ dōu bù zhīdào shì shénme yìsi.",
+    "ex_vn": "Nhiều chữ tôi còn chẳng biết nghĩa là gì.",
+    "exList": [
+      {
+        "zh": "很多字我都不知道是什么意思。",
+        "py": "Hěn duō zì wǒ dōu bù zhīdào shì shénme yìsi.",
+        "vn": "Nhiều chữ tôi còn chẳng biết nghĩa là gì."
+      },
+      {
+        "zh": "这个词是什么意思？",
+        "py": "Zhège cí shì shénme yìsi?",
+        "vn": "Từ này nghĩa là gì?"
+      },
+      {
+        "zh": "我明白你的意思了。",
+        "py": "Wǒ míngbai nǐ de yìsi le.",
+        "vn": "Tôi hiểu ý của bạn rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "意",
+        "p": "yì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "立→日→心",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "ý, ý định",
+        "tip": "Âm thanh 音 phát ra từ tâm 心 → điều trong lòng muốn nói = Ý.",
+        "cf": "音 (yīn – \"âm thanh\")",
+        "w": "意思 / 同意 / 意见"
+      },
+      {
+        "c": "思",
+        "p": "sī",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "田→心",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "suy nghĩ",
+        "tip": "田 (ruộng, đầu óc) trên 心 (tim) → dùng đầu và tim để SUY NGHĨ.",
+        "cf": "田 (tián – \"ruộng\")",
+        "w": "意思 / 思考 / 意思意思"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "什么意思",
+        "py": "shénme yìsi",
+        "vn": "nghĩa là gì"
+      },
+      {
+        "zh": "这个意思",
+        "py": "zhège yìsi",
+        "vn": "ý này"
+      },
+      {
+        "zh": "有意思",
+        "py": "yǒuyìsi",
+        "vn": "thú vị"
+      },
+      {
+        "zh": "不好意思",
+        "py": "bù hǎoyìsi",
+        "vn": "ngại quá"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "什么 + 意思？",
+        "m": "Hỏi nghĩa: 这个字是什么意思？"
+      },
+      {
+        "s": "不好意思 — câu nói khi ngại, khi làm phiền người khác"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chữ này nghĩa là gì?",
+        "answer": "这个字是什么意思？",
+        "answerPy": "Zhège zì shì shénme yìsi?",
+        "note": "Khung hỏi nghĩa quen thuộc nhất.",
+        "pair": "是什么意思？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Ngại quá, tôi đến muộn rồi.",
+        "answer": "不好意思，我来晚了。",
+        "answerPy": "Bù hǎoyìsi, wǒ lái wǎn le.",
+        "note": "不好意思 — nói khi ngại, khi làm phiền người khác.",
+        "pair": "……了"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "咖啡",
+    "py": "kāfēi",
+    "pos": "Danh từ",
+    "vn": "cà phê",
+    "hv": "ca phê",
+    "em": "☕",
+    "lesson": 4,
+    "ex_zh": "喝咖啡吗？",
+    "ex_py": "Hē kāfēi ma?",
+    "ex_vn": "Bạn uống cà phê không?",
+    "exList": [
+      {
+        "zh": "喝咖啡吗？",
+        "py": "Hē kāfēi ma?",
+        "vn": "Bạn uống cà phê không?"
+      },
+      {
+        "zh": "我每天早上喝一杯咖啡。",
+        "py": "Wǒ měitiān zǎoshang hē yì bēi kāfēi.",
+        "vn": "Mỗi sáng tôi uống một ly cà phê."
+      },
+      {
+        "zh": "这杯咖啡有点儿苦。",
+        "py": "Zhè bēi kāfēi yǒudiǎnr kǔ.",
+        "vn": "Ly cà phê này hơi đắng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "咖",
+        "p": "kā",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "口 (khẩu) trái → 加 (gia) phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "(phiên âm)",
+        "tip": "Bộ 口 (miệng) — chữ mượn âm để phiên âm từ nước ngoài \"coffee\", không mang nghĩa gốc.",
+        "cf": "加 (jiā – \"thêm vào\")",
+        "w": "咖啡 / 咖喱"
+      },
+      {
+        "c": "啡",
+        "p": "fēi",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "口 (khẩu) trái → 非 (phi) phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "(phiên âm)",
+        "tip": "咖 + 啡 = phiên âm mượn từ \"coffee\" — cả hai đều có bộ 口 vì liên quan tới miệng (uống).",
+        "cf": "非 (fēi – đã học ở Bài 4: 非常)",
+        "w": "咖啡"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "喝咖啡",
+        "py": "hē kāfēi",
+        "vn": "uống cà phê"
+      },
+      {
+        "zh": "一杯咖啡",
+        "py": "yì bēi kāfēi",
+        "vn": "một cốc cà phê"
+      },
+      {
+        "zh": "买咖啡",
+        "py": "mǎi kāfēi",
+        "vn": "mua cà phê"
+      },
+      {
+        "zh": "热咖啡",
+        "py": "rè kāfēi",
+        "vn": "cà phê nóng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "喝 + 咖啡",
+        "m": "Uống cà phê — 喝 dùng cho mọi đồ uống"
+      },
+      {
+        "s": "咖啡 là từ mượn — cả hai chữ đều có bộ 口"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sáng nào tôi cũng uống một cốc cà phê.",
+        "answer": "我每天早上都喝一杯咖啡。",
+        "answerPy": "Wǒ měi tiān zǎoshang dōu hē yì bēi kāfēi.",
+        "note": "每 đi với 都 thành một cặp.",
+        "pair": "每……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn mua giúp tôi một cốc cà phê nóng nhé.",
+        "answer": "你帮我买一杯热咖啡吧。",
+        "answerPy": "Nǐ bāng wǒ mǎi yì bēi rè kāfēi ba.",
+        "note": "帮我 + động từ — làm giúp tôi.",
+        "pair": "帮 + người + V"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "对",
+    "py": "duì",
+    "pos": "Giới từ",
+    "vn": "đối với",
+    "hv": "đối",
+    "em": "🎯",
+    "lesson": 4,
+    "ex_zh": "咖啡喝多了对身体不好。",
+    "ex_py": "Kāfēi hē duō le duì shēntǐ bù hǎo.",
+    "ex_vn": "Uống nhiều cà phê không tốt cho sức khỏe.",
+    "exList": [
+      {
+        "zh": "咖啡喝多了对身体不好。",
+        "py": "Kāfēi hē duō le duì shēntǐ bù hǎo.",
+        "vn": "Uống nhiều cà phê không tốt cho sức khỏe."
+      },
+      {
+        "zh": "运动对身体很好。",
+        "py": "Yùndòng duì shēntǐ hěn hǎo.",
+        "vn": "Vận động rất tốt cho sức khỏe."
+      },
+      {
+        "zh": "他对我很好。",
+        "py": "Tā duì wǒ hěn hǎo.",
+        "vn": "Anh ấy đối xử với tôi rất tốt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "对",
+        "p": "duì",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "又 → 寸",
+        "rad": "寸 (thốn – tấc)",
+        "mean": "đúng; đối với",
+        "tip": "Hai nửa đối xứng ghép khớp với nhau → nghĩa \"ĐÚNG, phù hợp, hướng về phía\".",
+        "cf": "又 (yòu – \"lại, và\")",
+        "w": "对不对 / 对身体好 / 对不起"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "对了",
+        "py": "duì le",
+        "vn": "đúng rồi"
+      },
+      {
+        "zh": "不对",
+        "py": "bú duì",
+        "vn": "không đúng"
+      },
+      {
+        "zh": "对我说",
+        "py": "duì wǒ shuō",
+        "vn": "nói với tôi"
+      },
+      {
+        "zh": "对身体好",
+        "py": "duì shēntǐ hǎo",
+        "vn": "tốt cho sức khoẻ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "对 + người + 说",
+        "m": "Nói với ai: 他对我说"
+      },
+      {
+        "s": "对 (đúng) và 对 (hướng về ai) — cùng chữ, hai nghĩa"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chữ này không đúng.",
+        "answer": "这个字不对。",
+        "answerPy": "Zhège zì bú duì.",
+        "note": "对 ↔ 不对 — đúng và không đúng.",
+        "pair": "不 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy nói với tôi, tối nay anh ấy đến đón tôi.",
+        "answer": "他对我说，今天晚上他来接我。",
+        "answerPy": "Tā duì wǒ shuō, jīntiān wǎnshang tā lái jiē wǒ.",
+        "note": "对我说 — nói với tôi.",
+        "pair": "对 + người + 说"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "以后",
+    "py": "yǐhòu",
+    "pos": "Danh từ chỉ thời gian",
+    "vn": "sau này, sau khi",
+    "hv": "dĩ hậu",
+    "em": "⏭️",
+    "lesson": 4,
+    "ex_zh": "以后我少喝一点儿。",
+    "ex_py": "Yǐhòu wǒ shǎo hē yìdiǎnr.",
+    "ex_vn": "Sau này tôi sẽ uống ít lại.",
+    "exList": [
+      {
+        "zh": "以后我少喝一点儿。",
+        "py": "Yǐhòu wǒ shǎo hē yìdiǎnr.",
+        "vn": "Sau này tôi sẽ uống ít lại."
+      },
+      {
+        "zh": "下课以后我们去踢足球。",
+        "py": "Xiàkè yǐhòu wǒmen qù tī zúqiú.",
+        "vn": "Sau khi tan học chúng ta đi đá bóng."
+      },
+      {
+        "zh": "以后有时间再聊。",
+        "py": "Yǐhòu yǒu shíjiān zài liáo.",
+        "vn": "Sau này có thời gian nói chuyện tiếp."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "以",
+        "p": "yǐ",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "丶→フ→丿→乀",
+        "rad": "人 (nhân – biến thể)",
+        "mean": "lấy, từ",
+        "tip": "Đã học ở trên (可以) — kết hợp 后 (sau) tạo mốc thời gian \"TỪ SAU đó\".",
+        "cf": "已 (yǐ)",
+        "w": "以后 / 以前 / 可以"
+      },
+      {
+        "c": "后",
+        "p": "hòu",
+        "type": "半包围 · Bán bao",
+        "st": 6,
+        "ord": "⺈→𠃌→口",
+        "rad": "⼑ (đao – biến thể)",
+        "mean": "sau, phía sau",
+        "tip": "Trái nghĩa với 前 (trước) — chỉ vị trí/thời gian ở phía SAU.",
+        "cf": "厚 (hòu – \"dày\")",
+        "w": "以后 / 后面 / 最后"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "以后再说",
+        "py": "yǐhòu zài shuō",
+        "vn": "sau này nói tiếp"
+      },
+      {
+        "zh": "吃了以后",
+        "py": "chī le yǐhòu",
+        "vn": "sau khi ăn"
+      },
+      {
+        "zh": "考试以后",
+        "py": "kǎoshì yǐhòu",
+        "vn": "sau kỳ thi"
+      },
+      {
+        "zh": "以后见",
+        "py": "yǐhòu jiàn",
+        "vn": "sau này gặp lại"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "việc gì + 以后",
+        "m": "Sau khi làm gì: 考试以后我去旅游"
+      },
+      {
+        "s": "以后 đứng SAU mốc thời gian, khác tiếng Việt"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sau khi ăn cơm tôi đi chạy bộ.",
+        "answer": "吃了饭以后我去跑步。",
+        "answerPy": "Chīle fàn yǐhòu wǒ qù pǎobù.",
+        "note": "Việc nào trước thì nói trước.",
+        "pair": "V了……以后"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Sau này tôi muốn làm bác sĩ.",
+        "answer": "以后我想做医生。",
+        "answerPy": "Yǐhòu wǒ xiǎng zuò yīshēng.",
+        "note": "以后 đứng đầu câu khi nói về tương lai.",
+        "pair": "想 + V"
+      }
+    ]
+  }
+];
+
+const wuData = [
+  {img:'🐟',label:'鱼',py:'yú',letter:'A'},
+  {img:'☕',label:'咖啡',py:'kāfēi',letter:'B'},
+  {img:'👕',label:'件',py:'jiàn',letter:'C'},
+  {img:'📝',label:'考试',py:'kǎoshì',letter:'D'},
+  {img:'🌳',label:'外面',py:'wàimian',letter:'E'},
+  {img:'📝',label:'准备',py:'zhǔnbèi',letter:'F'},
+];
+
+var dialogData = [
+  {scene:'在家里 · Ở nhà',
+   preQuiz:[
+     {q:'女的想在哪儿吃饭？',opts:['饭馆','家里','公司'],ans:1},
+     {q:'女的准备做什么菜？',opts:['鱼','面条','米饭'],ans:0},
+   ],
+   lines:[
+     {sp:0,zh:'晚上我们去饭馆吃饭怎么样？',py:'Wǎnshang wǒmen qù fànguǎn chīfàn zěnmeyàng?',vn:'Tối nay chúng ta ra nhà hàng ăn cơm nhé?'},
+     {sp:1,zh:'我不想去外面吃，我想在家吃。',py:'Wǒ bù xiǎng qù wàimian chī, wǒ xiǎng zài jiā chī.',vn:'Em không muốn ra ngoài ăn đâu, em muốn ăn ở nhà.'},
+     {sp:0,zh:'那你准备做什么呢？',py:'Nà nǐ zhǔnbèi zuò shénme ne?',vn:'Thế em chuẩn bị nấu món gì nào?'},
+     {sp:1,zh:'就做你爱吃的鱼吧。',py:'Jiù zuò nǐ ài chī de yú ba.',vn:'Vậy thì làm món cá anh thích ăn nhất đi.'},
+   ]},
+  {scene:'在商店 · Trong cửa hàng',
+   preQuiz:[
+     {q:'第一件衣服有什么问题？',opts:['颜色不好','有点儿大','太贵'],ans:1},
+     {q:'最后买了哪件衣服？',opts:['大的','小的','都没买'],ans:1},
+   ],
+   lines:[
+     {sp:0,zh:'帮我看一下这件衣服怎么样？',py:'Bāng wǒ kàn yíxià zhè jiàn yīfu zěnmeyàng?',vn:'Xem giúp tôi chiếc áo này thế nào?'},
+     {sp:1,zh:'颜色还可以，就是有点儿大。',py:'Yánsè hái kěyǐ, jiùshì yǒudiǎnr dà.',vn:'Màu sắc cũng được, chỉ có điều hơi rộng một chút.'},
+     {sp:0,zh:'这件小的怎么样？',py:'Zhè jiàn xiǎo de zěnmeyàng?',vn:'Chiếc nhỏ hơn này thì sao?'},
+     {sp:1,zh:'这件不错，就买这件吧。',py:'Zhè jiàn búcuò, jiù mǎi zhè jiàn ba.',vn:'Chiếc này đẹp đấy, quyết định mua chiếc này đi.'},
+   ]},
+  {scene:'在教室 · Trong lớp học',
+   preQuiz:[
+     {q:'男的今天为什么不去打球？',opts:['有点儿累','下雨','没时间'],ans:0},
+     {q:'男的觉得自己哪方面不好？',opts:['听和说','读和写','都不好'],ans:1},
+     {q:'男的在想什么事？',opts:['昨天的考试','明天的比赛','晚饭吃什么'],ans:0},
+   ],
+   lines:[
+     {sp:0,zh:'今天去不去打球？',py:'Jīntiān qù bú qù dǎqiú?',vn:'Hôm nay có đi chơi bóng không?'},
+     {sp:1,zh:'这两天有点儿累，不去打球了。',py:'Zhè liǎng tiān yǒudiǎnr lèi, bú qù dǎqiú le.',vn:'Hai ngày nay tôi hơi mệt, không đi chơi bóng nữa đâu.'},
+     {sp:0,zh:'你在做什么呢？是在想昨天的考试吗？',py:'Nǐ zài zuò shénme ne? Shì zài xiǎng zuótiān de kǎoshì ma?',vn:'Bạn đang làm gì thế? Có phải đang nghĩ về kỳ thi hôm qua không?'},
+     {sp:1,zh:'是啊，我觉得听和说还可以，读和写不好，很多字我都不知道是什么意思。',py:'Shì a, wǒ juéde tīng hé shuō hái kěyǐ, dú hé xiě bù hǎo, hěn duō zì wǒ dōu bù zhīdào shì shénme yìsi.',vn:'Đúng vậy, tôi thấy phần nghe và nói còn tạm được, còn đọc và viết thì rất tệ, nhiều chữ tôi còn chẳng biết nghĩa là gì.'},
+   ]},
+  {scene:'在公司 · Ở công ty',
+   preQuiz:[
+     {q:'男的已经喝了几杯咖啡？',opts:['一杯','两杯','三杯'],ans:1},
+     {q:'以后男的打算每天喝几杯咖啡？',opts:['一杯','两杯','不喝了'],ans:0},
+   ],
+   lines:[
+     {sp:0,zh:'休息一下吧，喝咖啡吗？',py:'Xiūxi yíxià ba, hē kāfēi ma?',vn:'Nghỉ tay chút đi, bạn uống cà phê không?'},
+     {sp:1,zh:'不喝了，我已经喝两杯了。',py:'Bù hē le, wǒ yǐjīng hē liǎng bēi le.',vn:'Không uống nữa đâu, tôi đã uống hai ly rồi.'},
+     {sp:0,zh:'是呀，咖啡喝多了对身体不好。',py:'Shì ya, kāfēi hē duō le duì shēntǐ bù hǎo.',vn:'Đúng thế, uống nhiều cà phê không tốt cho sức khỏe đâu.'},
+     {sp:1,zh:'以后我少喝一点儿，每天喝一杯。',py:'Yǐhòu wǒ shǎo hē yìdiǎnr, měitiān hē yì bēi.',vn:'Sau này tôi sẽ uống ít lại, mỗi ngày chỉ uống một ly thôi.'},
+   ]},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
+var matchData = [
+  {left:'准备',right:'考试'},
+  {left:'有点儿',right:'累'},
+  {left:'喝',right:'咖啡'},
+  {left:'一件',right:'衣服'},
+  {left:'对',right:'身体'},
+  {left:'什么',right:'意思'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: chuẩn bị thi, mua áo, hẹn uống cà phê.
+// Ôn lại 颜色/觉得 (Bài 1, 3).
+// ══════════════════════════════════════════
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-5/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'我今天有点儿累，', blank:'去外面吃晚饭吧', post:'。', py:'Wǒ jīntiān yǒudiǎnr lèi, qù wàimian chī wǎnfàn ba.', vn:'Hôm nay tôi hơi mệt, ra ngoài ăn tối đi.'},
+    ]},
+    {num:2, lines:[
+      {pre:'他们都', blank:'在准备下午的考试呢', post:'。', py:'Tāmen dōu zài zhǔnbèi xiàwǔ de kǎoshì ne.', vn:'Họ đều đang chuẩn bị cho kỳ thi chiều nay.'},
+    ]},
+    {num:3, lines:[
+      {pre:'医生说', blank:'喝茶对身体很好', post:'。', py:'Yīshēng shuō hē chá duì shēntǐ hěn hǎo.', vn:'Bác sĩ nói uống trà rất tốt cho sức khỏe.'},
+    ]},
+    {num:4, lines:[
+      {pre:'我准备了', blank:'你爱吃的鱼', post:'。', py:'Wǒ zhǔnbèi le nǐ ài chī de yú.', vn:'Tôi đã chuẩn bị con cá mà bạn thích ăn.'},
+    ]},
+    {num:5, lines:[
+      {pre:'这件衣服还不错，', blank:'你喜欢就买吧', post:'。', py:'Zhè jiàn yīfu hái búcuò, nǐ xǐhuan jiù mǎi ba.', vn:'Bộ quần áo này khá ổn, nếu bạn thích thì mua đi.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'今天晚上你想', blank:'吃什么', post:'？', py:'Jīntiān wǎnshang nǐ xiǎng chī shénme?', vn:'Tối nay bạn muốn ăn gì?'},
+      {speaker:'女', pre:'我们在家吃吧，', blank:'就做你爱吃的', post:'。', py:'Wǒmen zài jiā chī ba, jiù zuò nǐ ài chī de.', vn:'Chúng ta ăn ở nhà đi, cứ nấu món bạn thích ăn.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'男', pre:'你', blank:'想不想去看电影', post:'？', py:'Nǐ xiǎng bu xiǎng qù kàn diànyǐng?', vn:'Bạn có muốn đi xem phim không?'},
+      {speaker:'女', pre:'我有点儿累，', blank:'在家看电视吧', post:'。', py:'Wǒ yǒudiǎnr lèi, zài jiā kàn diànshì ba.', vn:'Tôi hơi mệt, ở nhà xem tivi thôi.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'你和小明', blank:'在做什么呢', post:'？', py:'Nǐ hé Xiǎomíng zài zuò shénme ne?', vn:'Bạn và Tiểu Minh đang làm gì vậy?'},
+      {speaker:'女', pre:'我们', blank:'在准备明天的考试呢', post:'。', py:'Wǒmen zài zhǔnbèi míngtiān de kǎoshì ne.', vn:'Chúng tôi đang chuẩn bị cho kỳ thi ngày mai.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'医生说每天', blank:'喝咖啡对身体不好', post:'。', py:'Yīshēng shuō měitiān hē kāfēi duì shēntǐ bù hǎo.', vn:'Bác sĩ nói uống cà phê mỗi ngày không tốt cho sức khỏe.'},
+      {speaker:'男', pre:'以后我', blank:'不喝咖啡了，喝茶', post:'。', py:'Yǐhòu wǒ bù hē kāfēi le, hē chá.', vn:'Sau này tôi không uống cà phê nữa, uống trà.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'你看看，这件衣服', blank:'怎么样', post:'？', py:'Nǐ kànkan, zhè jiàn yīfu zěnmeyàng?', vn:'Bạn xem thử, bộ quần áo này thế nào?'},
+      {speaker:'男', pre:'我觉得有点儿大，', blank:'那件还不错', post:'。', py:'Wǒ juéde yǒudiǎnr dà, nà jiàn hái búcuò.', vn:'Tôi thấy hơi to, cái kia khá ổn.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['外面','咖啡馆','书店'], ans:1,
+     explain:'女：外面有点儿冷！男：是啊，我们就在咖啡馆看书吧。问：他们在哪儿看书？ → 咖啡馆。'},
+    {num:12, options:['鱼','都爱吃','晚饭'], ans:0,
+     explain:'男：我去准备晚饭。你们爱吃什么？女：我丈夫和我都爱吃鱼。问：她丈夫最爱吃什么？ → 鱼。'},
+    {num:13, options:['他儿子不喜欢','椅子有点儿高','一百块钱'], ans:1,
+     explain:'女：这个椅子怎么样？男：我儿子不到一米，这个有点儿高。问：男的为什么不买这个椅子？ → 椅子有点儿高。'},
+    {num:14, options:['读和写还不错','说和写还不错','听和说还不错'], ans:2,
+     explain:'女：你昨天的考试怎么样？男：听和说还不错。问：男的昨天的考试怎么样？ → 听和说还不错。'},
+    {num:15, options:['一个','不吃','很多'], ans:2,
+     explain:'女：吃苹果对身体好，但是也不能吃太多。男：我以后少吃一点儿，每天吃一个。问：男的以前每天吃几个苹果？ → 很多（比一个多）。'},
+  ],
+};
+
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: chuẩn bị thi & mua áo mới
+// ══════════════════════════════════════════
+var fillData = [
+  {pre:'你准备好了吗？还没',blank:'准备',post:'好呢，我有点儿累。',hint:'(chuẩn bị)',ans:'准备'},
+  {pre:'你觉得这件衣服',blank:'可以',post:'吗？',hint:'(được, có thể)',ans:'可以'},
+  {pre:'颜色',blank:'还',post:'可以，就是有点儿大。',hint:'(tạm, cũng)',ans:'还',exp:'还可以 = tạm được, không hẳn tốt cũng không tệ.'},
+  {pre:'那你',blank:'就',post:'买那件小的吧。',hint:'(vậy thì)',ans:'就',exp:'就 dùng để chỉ một kết luận/quyết định logic tiếp theo.'},
+  {pre:'好，',blank:'就',post:'买这件。',hint:'(luôn, thì)',ans:'就'},
+  {pre:'考试',blank:'以后',post:'，我们去喝咖啡吧。',hint:'(sau khi, sau này)',ans:'以后'},
+  {pre:'',blank:'对',post:'啊，我请客！',hint:'(đúng vậy)',ans:'对'},
+  {pre:'这个字是什么',blank:'意思',post:'？',hint:'(ý nghĩa)',ans:'意思'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+var sortData = [
+  {words:['我','在','准备','明天','的','考试','。'],ans:'我在准备明天的考试。',audio:'我在准备明天的考试。'},
+  {words:['这件','衣服','颜色','还','可以','。'],ans:'这件衣服颜色还可以。',audio:'这件衣服颜色还可以。'},
+  {words:['我','有点儿','累','。'],ans:'我有点儿累。',audio:'我有点儿累。'},
+  {words:['那','就','买','这件','小','的','吧','。'],ans:'那就买这件小的吧。',audio:'那就买这件小的吧。'},
+  {words:['考试','以后','我们','去','喝','咖啡','。'],ans:'考试以后我们去喝咖啡。',audio:'考试以后我们去喝咖啡。'},
+  {words:['这个','字','是','什么','意思','？'],ans:'这个字是什么意思？',audio:'这个字是什么意思？'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+var errorFixData = [
+  {wrong:'我累有点儿。',
+   opts:['我有点儿累。','我点儿有累。','有点儿我累。','我累点儿有。'],ans:0,
+   exp:'有点儿 đứng NGAY TRƯỚC tính từ/động từ mang nghĩa tiêu cực nhẹ, không đặt sau như "một chút" trong tiếng Việt.'},
+  {wrong:'颜色可以还。',
+   opts:['颜色还可以。','可以颜色还。','还可以颜色。','颜色可以还了。'],ans:0,
+   exp:'还可以 là cụm cố định "tạm được", 还 luôn đứng TRƯỚC 可以.'},
+  {wrong:'买就这件吧。',
+   opts:['就买这件吧。','买这件就吧。','这件就买吧。','买这就件吧。'],ans:0,
+   exp:'就 (khi mang nghĩa quyết định) đứng TRƯỚC động từ chính, không đặt sau như "thì" trong tiếng Việt.'},
+  {wrong:'以后考试，我们去喝咖啡。',
+   opts:['考试以后，我们去喝咖啡。','以后考试，我们去喝咖啡。','我们以后考试去喝咖啡。','考试我们以后去喝咖啡。'],ans:0,
+   exp:'以后 đứng SAU sự việc mốc thời gian: 考试以后 = sau khi thi, không đặt trước.'},
+  {wrong:'这个字什么是意思？',
+   opts:['这个字是什么意思？','这个字什么是意思？','什么字这个是意思？','这个是字什么意思？'],ans:0,
+   exp:'什么意思 là cụm cố định, không tách rời: Chủ ngữ + 是 + 什么意思？'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+var speakingData = {
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 5. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Buổi tối, người nhà hỏi bạn muốn ăn ở đâu.',
+      q_zh: '晚上我们去饭馆吃饭还是在家吃？你准备做什么菜？',
+      q_py: 'Wǎnshang wǒmen qù fànguǎn chīfàn háishi zài jiā chī? Nǐ zhǔnbèi zuò shénme cài?',
+      q_vn: 'Tối nay chúng ta đi nhà hàng ăn hay ăn ở nhà? Bạn định nấu món gì?',
+      grammar: { label: '我想在家吃 + 就做…吧', any: ['就', '想'] },
+      need: [
+        { label: 'Chọn ăn ở nhà hay ra ngoài', any: ['家', '外面', '饭馆', '饭店'] },
+        { label: 'Nói món định nấu / định ăn', any: ['鱼', '菜', '面条', '羊肉', '鸡蛋', '米饭', '汤', '肉'] },
+        { label: 'Dùng 准备 hoặc 想', any: ['准备', '想', '要'] }
+      ],
+      bonus: { label: 'Dùng 就…吧 để chốt phương án', any: ['就', '吧'] },
+      vocab: ['外面', '准备', '就', '鱼'],
+      minLen: 12,
+      sample: '我不想去外面吃，我想在家吃。就做你爱吃的鱼吧。',
+      sample_py: 'Wǒ bù xiǎng qù wàimian chī, wǒ xiǎng zài jiā chī. Jiù zuò nǐ ài chī de yú ba.',
+      sample_vn: 'Tôi không muốn ra ngoài ăn, tôi muốn ăn ở nhà. Cứ nấu món cá bạn thích đi.',
+      tip: '就…吧 dùng khi chốt nhanh một phương án: 就买这件吧、就做鱼吧.'
+    },
+    {
+      situation: 'Trong cửa hàng, bạn nhờ bạn đi cùng cho ý kiến về chiếc áo.',
+      q_zh: '帮我看一下这件衣服怎么样？颜色和大小可以吗？',
+      q_py: 'Bāng wǒ kàn yíxià zhè jiàn yīfu zěnmeyàng? Yánsè hé dàxiǎo kěyǐ ma?',
+      q_vn: 'Xem giúp tôi chiếc áo này thế nào? Màu và cỡ được không?',
+      grammar: { label: '颜色还可以，就是有点儿…', any: ['还', '可以', '不错', '有点儿'] },
+      need: [
+        { label: 'Nhận xét về màu hoặc cỡ', any: ['颜色', '大', '小', '长', '短', '好看'] },
+        { label: 'Dùng 还可以 / 不错 / 有点儿', any: ['还可以', '不错', '有点儿', '可以'] },
+        { label: 'Đưa ra kết luận mua hay không', any: ['买', '就买', '不买', '换'] }
+      ],
+      bonus: { label: 'Dùng 就买这件吧 để chốt', any: ['就买', '就'] },
+      vocab: ['件', '还', '可以', '不错'],
+      minLen: 12,
+      sample: '颜色还可以，就是有点儿大。那件小的不错，就买这件吧。',
+      sample_py: 'Yánsè hái kěyǐ, jiù shì yǒudiǎnr dà. Nà jiàn xiǎo de búcuò, jiù mǎi zhè jiàn ba.',
+      sample_vn: 'Màu thì tạm được, chỉ hơi rộng. Chiếc nhỏ kia khá đẹp, mua chiếc này đi.',
+      tip: '有点儿 + tính từ mang ý chê nhẹ: 有点儿大、有点儿贵.'
+    },
+    {
+      situation: 'Sau kỳ thi, bạn học hỏi bạn làm bài thế nào.',
+      q_zh: '昨天的考试你觉得怎么样？听说读写哪个好？',
+      q_py: 'Zuótiān de kǎoshì nǐ juéde zěnmeyàng? Tīng shuō dú xiě nǎge hǎo?',
+      q_vn: 'Bài thi hôm qua bạn thấy thế nào? Nghe nói đọc viết, phần nào tốt?',
+      grammar: { label: '…还可以，…不好', any: ['还可以', '不好', '可以'] },
+      need: [
+        { label: 'Nhận xét chung về bài thi', any: ['还可以', '不错', '难', '不好', '好'] },
+        { label: 'Nói kỹ năng nào tốt / chưa tốt', any: ['听', '说', '读', '写', '字'] },
+        { label: 'Dùng 觉得', any: ['觉得', '我觉得'] }
+      ],
+      bonus: { label: 'Nói thêm về 意思 của chữ chưa hiểu', any: ['意思', '不知道', '不懂'] },
+      vocab: ['考试', '意思', '还', '可以'],
+      minLen: 14,
+      sample: '我觉得听和说还可以，读和写不好，很多字我都不知道是什么意思。',
+      sample_py: 'Wǒ juéde tīng hé shuō hái kěyǐ, dú hé xiě bù hǎo, hěn duō zì wǒ dōu bù zhīdào shì shénme yìsi.',
+      sample_vn: 'Tôi thấy nghe và nói thì tạm được, đọc và viết chưa tốt, nhiều chữ tôi không biết nghĩa là gì.',
+      tip: '还可以 = tạm được; 是什么意思 = có nghĩa là gì.'
+    },
+    {
+      situation: 'Giờ nghỉ ở công ty, đồng nghiệp mời bạn uống cà phê.',
+      q_zh: '休息一下吧，喝咖啡吗？你一天喝几杯？',
+      q_py: 'Xiūxi yíxià ba, hē kāfēi ma? Nǐ yì tiān hē jǐ bēi?',
+      q_vn: 'Nghỉ một chút nhé, uống cà phê không? Một ngày bạn uống mấy cốc?',
+      grammar: { label: '喝多了对身体不好 + 以后我少喝一点儿', any: ['对', '以后'] },
+      need: [
+        { label: 'Trả lời có uống hay không', any: ['喝', '不喝', '已经'] },
+        { label: 'Nói số lượng (一杯 / 两杯)', any: ['杯', '一天', '每天'] },
+        { label: 'Dùng 以后 nói dự định', any: ['以后', '以后我'] }
+      ],
+      bonus: { label: 'Dùng 对身体不好 để nêu lý do', any: ['对身体', '身体', '不好'] },
+      vocab: ['咖啡', '对', '以后', '休息'],
+      minLen: 12,
+      sample: '不喝了，我已经喝两杯了。咖啡喝多了对身体不好，以后我每天喝一杯。',
+      sample_py: 'Bù hē le, wǒ yǐjīng hē liǎng bēi le. Kāfēi hē duōle duì shēntǐ bù hǎo, yǐhòu wǒ měi tiān hē yì bēi.',
+      sample_vn: 'Thôi không uống nữa, tôi uống hai cốc rồi. Uống nhiều cà phê không tốt cho sức khoẻ, sau này mỗi ngày tôi uống một cốc.',
+      tip: '对 + đối tượng + 好/不好: 对身体好、对眼睛不好.'
+    },
+    {
+      situation: 'Bạn của bạn đang phân vân giữa hai món đồ và hỏi ý kiến bạn.',
+      q_zh: '这两个你觉得哪个好？为什么？',
+      q_py: 'Zhè liǎng ge nǐ juéde nǎge hǎo? Wèi shénme?',
+      q_vn: 'Hai cái này bạn thấy cái nào tốt hơn? Vì sao?',
+      grammar: { label: '我觉得…不错，就买…吧', any: ['觉得'] },
+      need: [
+        { label: 'Chọn một cái', any: ['这个', '那个', '第一', '第二', '大', '小', '红', '白', '黑'] },
+        { label: 'Nêu lý do (颜色 / 价格 / 大小)', any: ['颜色', '便宜', '贵', '大', '小', '好看', '不错', '有点儿'] },
+        { label: 'Dùng 觉得 để nêu ý kiến', any: ['觉得'] }
+      ],
+      bonus: { label: 'Chốt bằng 就…吧', any: ['就', '吧'] },
+      vocab: ['不错', '可以', '就'],
+      minLen: 12,
+      sample: '我觉得这个不错，颜色好看，也不太贵。就买这个吧。',
+      sample_py: 'Wǒ juéde zhège búcuò, yánsè hǎokàn, yě bú tài guì. Jiù mǎi zhège ba.',
+      sample_vn: 'Tôi thấy cái này khá ổn, màu đẹp, cũng không đắt lắm. Mua cái này đi.',
+      tip: '不太 + tính từ = không… lắm: 不太贵、不太大.'
+    }
+  ]
+};
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 5 + ôn lại từ bài 1-4 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Cà phê ở đây ngon đấy, vậy uống cà phê đi.', zh:'这儿的咖啡不错，就喝咖啡吧。', py:'Zhèr de kāfēi búcuò, jiù hē kāfēi ba.'},
+  {vi:'Sức khỏe bạn thế nào? — Cũng tạm ổn.', zh:'你身体怎么样？还好。', py:'Nǐ shēntǐ zěnmeyàng? Hái hǎo.'},
+  {vi:'Hôm nay thời tiết hơi lạnh.', zh:'今天天气有点儿冷。', py:'Jīntiān tiānqì yǒudiǎnr lěng.'},
+  {vi:'Bạn không muốn đi thì ở nhà nghỉ ngơi đi.', zh:'你不想去，就在家休息吧。', py:'Nǐ bù xiǎng qù, jiù zài jiā xiūxi ba.'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Bộ quần áo này không tồi, bạn thấy thế nào?', zh:'这件衣服不错，你觉得怎么样？', py:'Zhè jiàn yīfu búcuò, nǐ juéde zěnmeyàng?'},
+  {vi:'Thời tiết hơi lạnh, chúng ta cứ ở nhà uống cà phê đi.', zh:'天气有点儿冷，我们就在家喝咖啡吧。', py:'Tiānqì yǒudiǎnr lěng, wǒmen jiù zài jiā hē kāfēi ba.'},
+  {vi:'Sức khỏe bạn vẫn ổn chứ? Cũng tạm được.', zh:'你身体还好吗？还可以。', py:'Nǐ shēntǐ hái hǎo ma? Hái kěyǐ.'},
+  {vi:'Kỳ thi lần này cũng khá tốt.', zh:'这次考试还不错。', py:'Zhè cì kǎoshì hái búcuò.'},
+];

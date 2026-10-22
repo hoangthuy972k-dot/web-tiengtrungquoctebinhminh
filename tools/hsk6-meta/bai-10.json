@@ -1,0 +1,112 @@
+{
+ "zh": "全球化视野中的中国饮食",
+ "py": "Quánqiúhuà shìyě zhōng de Zhōngguó yǐnshí",
+ "vn": "Ẩm thực Trung Quốc trong tầm nhìn toàn cầu hoá",
+ "topic": "第三单元 多彩社会 · Văn hoá ẩm thực &amp; giao lưu văn hoá",
+ "vocabCount": 51,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "以至",
+   "explain": "以至 là LIÊN TỪ, đứng đầu VẾ SAU, biểu thị: do tình huống ở vế trước đạt mức độ rất sâu, rất cao nên dẫn đến một kết quả nào đó (= đến mức, đến nỗi). Cũng nói 以至于. Vế trước thường có 太, 那么, 这么, 十来遍… nêu mức độ; kết quả có thể tốt (辉煌至今) hoặc không mong muốn (忘了为什么出发). Sắc thái văn viết.",
+   "rule": "Vế nguyên nhân (mức độ cao)，<strong style=\"color:var(--sky-d)\">以至(于)</strong> + kết quả",
+   "examples": [
+    {
+     "zh": "中国的饮食文化历经数千年，始终具有魅力，是因为它不仅民族特性鲜明，而且善于吸收不同国家、不同区域、不同民族的优异之处，以至辉煌至今。",
+     "py": "Zhōngguó de yǐnshí wénhuà lìjīng shù qiān nián, shǐzhōng jùyǒu mèilì, shì yīnwèi tā bùjǐn mínzú tèxìng xiānmíng, érqiě shànyú xīshōu bù tóng guójiā, bù tóng qūyù, bù tóng mínzú de yōuyì zhī chù, yǐzhì huīhuáng zhì jīn.",
+     "vn": "Văn hoá ẩm thực Trung Quốc trải qua mấy nghìn năm vẫn luôn hấp dẫn, là vì nó không những mang bản sắc dân tộc rõ nét, mà còn giỏi tiếp thu điểm ưu tú của các quốc gia, khu vực, dân tộc khác, nhờ vậy mà huy hoàng đến tận hôm nay."
+    },
+    {
+     "zh": "那个电影她看了十来遍，以至许多台词都能背诵下来。",
+     "py": "Nàge diànyǐng tā kànle shí lái biàn, yǐzhì xǔduō táicí dōu néng bèisòng xiàlái.",
+     "vn": "Bộ phim ấy cô xem đến hơn chục lần, đến mức thuộc lòng được nhiều câu thoại."
+    },
+    {
+     "zh": "著名作家纪伯伦曾说：“我们已经走得太远，以至于忘了为什么出发。”",
+     "py": "Zhùmíng zuòjiā Jìbólún céng shuō: \"Wǒmen yǐjīng zǒu de tài yuǎn, yǐzhìyú wàngle wèi shénme chūfā.\"",
+     "vn": "Nhà văn nổi tiếng Kahlil Gibran từng nói: \"Chúng ta đã đi quá xa, đến mức quên mất vì sao mình khởi hành.\""
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "以至他太累了，上课睡着了。",
+     "why": "以至 đứng đầu vế SAU (vế kết quả), không đứng ở vế nêu nguyên nhân.",
+     "right": "他太累了，以至上课睡着了。"
+    },
+    {
+     "wrong": "他学习很努力，以至他是我们班的班长。",
+     "why": "Kết quả phải do MỨC ĐỘ của vế trước gây ra; \"làm lớp trưởng\" không phải hệ quả tự nhiên của \"học chăm\" → quan hệ gượng ép.",
+     "right": "他学习非常努力，以至每次考试都是全班第一。"
+    }
+   ]
+  },
+  {
+   "point": "即便",
+   "explain": "即便 là LIÊN TỪ, biểu thị GIẢ THIẾT kiêm NHƯỢNG BỘ, nghĩa như 就是 / 即使: \"cho dù, dù cho\". Vế sau thường có 也 (hoặc 还是, 照样) hô ứng, nêu kết quả / thái độ KHÔNG THAY ĐỔI. Sắc thái văn viết hơn 就是, 哪怕. Có thể dùng cho giả thiết chưa xảy ra (即便下雨) hoặc sự thật đã có nhưng không ảnh hưởng kết quả (即便薪水低).",
+   "rule": "<strong style=\"color:var(--sky-d)\">即便</strong> + giả thiết / điều kiện bất lợi，(chủ ngữ) + <strong style=\"color:var(--sky-d)\">也 / 还是</strong> + kết quả không đổi",
+   "examples": [
+    {
+     "zh": "她最近心情不好，即便有些不讲理，你也要原谅她。",
+     "py": "Tā zuìjìn xīnqíng bù hǎo, jíbiàn yǒuxiē bù jiǎnglǐ, nǐ yě yào yuánliàng tā.",
+     "vn": "Dạo này cô ấy tâm trạng không tốt, cho dù có hơi vô lý thì cậu cũng nên tha thứ cho cô ấy."
+    },
+    {
+     "zh": "我喜欢那个工作，即便薪水低，我还是要去。",
+     "py": "Wǒ xǐhuan nàge gōngzuò, jíbiàn xīnshui dī, wǒ háishi yào qù.",
+     "vn": "Tôi thích công việc đó, cho dù lương thấp tôi vẫn muốn đi."
+    },
+    {
+     "zh": "原本中华饮食中的大量食物来自辽阔的土地，……经过精心构思，巧妙烹饪，即便仅为一餐素食，也可以让你尽享人间美味。",
+     "py": "Yuánběn Zhōnghuá yǐnshí zhōng de dàliàng shíwù láizì liáokuò de tǔdì, …… jīngguò jīngxīn gòusī, qiǎomiào pēngrèn, jíbiàn jǐn wéi yì cān sùshí, yě kěyǐ ràng nǐ jìnxiǎng rénjiān měiwèi.",
+     "vn": "Vốn dĩ phần lớn thực phẩm trong ẩm thực Trung Hoa đến từ vùng đất bao la, … qua ý tưởng tỉ mỉ, nấu nướng khéo léo, cho dù chỉ là một bữa chay cũng có thể khiến bạn tận hưởng mỹ vị nhân gian."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "即便明天下雨，我们就不去了。",
+     "why": "即便 đi với 也 (kết quả KHÔNG đổi), không đi với 就 (kết quả thay đổi theo điều kiện). Muốn nói \"nếu mưa thì không đi\" phải dùng 如果……就…….",
+     "right": "即便明天下雨，我们也要去。"
+    },
+    {
+     "wrong": "即便他很努力，所以成绩很好。",
+     "why": "即便 là quan hệ nhượng bộ, không đi với 所以 (quan hệ nhân quả).",
+     "right": "即便他很努力，成绩也不太理想。"
+    }
+   ]
+  },
+  {
+   "point": "所在",
+   "explain": "所在 là DANH TỪ, nghĩa là \"nơi, chỗ (tồn tại)\"; dùng trong văn viết. Hai cách dùng: ① chỉ một nơi chốn cụ thể: 风景秀美、气候宜人的所在 (một nơi phong cảnh đẹp, khí hậu dễ chịu); ② hay gặp hơn: đứng NGAY SAU danh từ trừu tượng, dạng A 是 B + 所在 = A chính là chỗ / điểm mấu chốt của B: 希望所在, 力量所在, 奥秘所在, 问题所在, 根本所在.",
+   "rule": "A + 是 + (……的) + N trừu tượng + <strong style=\"color:var(--sky-d)\">所在</strong>　|　……的 + <strong style=\"color:var(--sky-d)\">所在</strong> (= nơi, chỗ)",
+   "examples": [
+    {
+     "zh": "他选择了风景秀美、气候宜人的所在，盖了房子，安下了家。",
+     "py": "Tā xuǎnzéle fēngjǐng xiùměi, qìhòu yírén de suǒzài, gàile fángzi, ānxiàle jiā.",
+     "vn": "Ông ấy chọn một nơi phong cảnh đẹp đẽ, khí hậu dễ chịu, xây nhà và an cư ở đó."
+    },
+    {
+     "zh": "培养人是教育的立足点，是教育价值的根本所在，是教育的本体功能。",
+     "py": "Péiyǎng rén shì jiàoyù de lìzúdiǎn, shì jiàoyù jiàzhí de gēnběn suǒzài, shì jiàoyù de běntǐ gōngnéng.",
+     "vn": "Bồi dưỡng con người là chỗ đứng của giáo dục, là cái gốc của giá trị giáo dục, là chức năng bản thể của giáo dục."
+    },
+    {
+     "zh": "可以说，中华饮食文化自诞生之日起，就面向世界，边继承，边改革，不断引进新元素，这也是其充满活力的奥秘所在。",
+     "py": "Kěyǐ shuō, Zhōnghuá yǐnshí wénhuà zì dànshēng zhī rì qǐ, jiù miànxiàng shìjiè, biān jìchéng, biān gǎigé, búduàn yǐnjìn xīn yuánsù, zhè yě shì qí chōngmǎn huólì de àomì suǒzài.",
+     "vn": "Có thể nói, văn hoá ẩm thực Trung Hoa ngay từ ngày ra đời đã hướng ra thế giới, vừa kế thừa vừa cải cách, không ngừng đưa vào yếu tố mới — đó cũng chính là bí quyết giúp nó tràn đầy sức sống."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "青少年所在是一个国家的希望。",
+     "why": "所在 đứng NGAY SAU danh từ trừu tượng mà nó bổ sung (希望所在), không đứng sau chủ ngữ.",
+     "right": "青少年是一个国家的希望所在。"
+    },
+    {
+     "wrong": "我找不到问题的所在在哪儿。",
+     "why": "所在 đã mang nghĩa \"chỗ, nơi\" — thêm 在哪儿 là lặp ý.",
+     "right": "我找不到问题所在。"
+    }
+   ]
+  }
+ ]
+}

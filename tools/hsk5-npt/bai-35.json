@@ -1,0 +1,938 @@
+[
+ {
+  "so": "1",
+  "ten": "「赶快」",
+  "tenVn": "",
+  "cauTruc": [
+   "S + 赶快 + V (+ 吧)",
+   "得 / 要 + 赶快 + V",
+   "赶快 + 把 + O + V……"
+  ],
+  "giaiThich": "赶快 là PHÓ TỪ, nghĩa là \"nắm chặt thời gian, đẩy nhanh tốc độ\" (抓紧时间、加快速度) — thường dùng khi thời gian gấp, sắp muộn. 赶快 đứng TRƯỚC động từ (và trước 把), hay dùng trong câu cầu khiến, thúc giục: 你赶快……吧, 得赶快……. Không đặt 赶快 sau động từ, không dùng làm bổ ngữ trạng thái (✗ 跑得赶快 → 跑得很快).",
+  "viDu": [
+   {
+    "zh": "我下个月要搬家，得赶快找房子。",
+    "py": "Wǒ xià ge yuè yào bānjiā, děi gǎnkuài zhǎo fángzi.",
+    "vn": "Tháng sau tôi phải chuyển nhà, phải mau chóng tìm nhà thôi."
+   },
+   {
+    "zh": "这份材料下午开会要用，你赶快把它复印一下。",
+    "py": "Zhè fèn cáiliào xiàwǔ kāihuì yào yòng, nǐ gǎnkuài bǎ tā fùyìn yíxià.",
+    "vn": "Tài liệu này chiều họp phải dùng, cậu mau đi photo nó đi."
+   },
+   {
+    "zh": "……一旦温度上升，大脑就会指挥我们的身体赶快出汗，……",
+    "py": "……Yídàn wēndù shàngshēng, dànǎo jiù huì zhǐhuī wǒmen de shēntǐ gǎnkuài chū hàn, ……",
+    "vn": "…Một khi nhiệt độ tăng lên, não sẽ ra lệnh cho cơ thể chúng ta mau chóng đổ mồ hôi, …"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他跑得赶快，第一个到了终点。",
+    "why": "赶快 là phó từ đứng trước động từ, không làm bổ ngữ trạng thái sau 得. Miêu tả tốc độ dùng 很快.",
+    "dung": "他跑得很快，第一个到了终点。"
+   },
+   {
+    "sai": "你把作业写赶快。",
+    "why": "赶快 phải đứng TRƯỚC 把 và động từ, không đặt sau động từ.",
+    "dung": "你赶快把作业写完。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我下个月要搬家，得",
+       "找房子。"
+      ],
+      "dap": [
+       [
+        "赶快"
+       ]
+      ],
+      "chon": [
+       "赶快",
+       "很快",
+       "快要"
+      ],
+      "goiY": "Câu ví dụ của sách: phải mau tìm nhà.",
+      "giai": "得 + 赶快 + V: phải làm ngay."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这份材料下午开会要用，你",
+       "把它复印一下。"
+      ],
+      "dap": [
+       [
+        "赶快"
+       ]
+      ],
+      "chon": [
+       "赶快",
+       "很快",
+       "快乐"
+      ],
+      "goiY": "Câu ví dụ của sách: mau đi photo.",
+      "giai": "赶快 đứng trước 把."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一旦温度上升，大脑就会指挥我们的身体",
+       "出汗。"
+      ],
+      "dap": [
+       [
+        "赶快"
+       ]
+      ],
+      "chon": [
+       "赶快",
+       "根本",
+       "特殊"
+      ],
+      "goiY": "Câu bài khoá: cơ thể mau chóng đổ mồ hôi.",
+      "giai": "赶快 + 出汗."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "快下雨了，",
+       "把衣服收进来吧。"
+      ],
+      "dap": [
+       [
+        "赶快"
+       ]
+      ],
+      "chon": [
+       "赶快",
+       "快要",
+       "很快"
+      ],
+      "goiY": "Trời sắp mưa, thúc giục làm ngay.",
+      "giai": "赶快 + 把……V + 吧: câu cầu khiến."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你发烧了，",
+       "去医院看看吧。"
+      ],
+      "dap": [
+       [
+        "赶快"
+       ]
+      ],
+      "chon": [
+       "赶快",
+       "一直",
+       "已经"
+      ],
+      "goiY": "Bị sốt rồi, phải đi viện ngay.",
+      "giai": "赶快 + V + 吧: lời khuyên gấp."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他跑得",
+       "，一会儿就到了。"
+      ],
+      "dap": [
+       [
+        "很快"
+       ]
+      ],
+      "chon": [
+       "很快",
+       "赶快",
+       "快要"
+      ],
+      "goiY": "Sau 得 là bổ ngữ trạng thái — cẩn thận!",
+      "giai": "赶快 không làm bổ ngữ sau 得; miêu tả tốc độ dùng 很快."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我下个月要搬家",
+       "，",
+       "得",
+       "赶快",
+       "找房子",
+       "。"
+      ],
+      "dap": [
+       "我下个月要搬家，得赶快找房子。"
+      ],
+      "goiY": "Tháng sau tôi phải chuyển nhà, phải mau tìm nhà.",
+      "giai": "得 + 赶快 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "赶快",
+       "把它",
+       "复印",
+       "一下",
+       "。"
+      ],
+      "dap": [
+       "你赶快把它复印一下。",
+       "你把它赶快复印一下。"
+      ],
+      "goiY": "Cậu mau đi photo nó đi.",
+      "giai": "赶快 thường đứng trước 把."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "快迟到了",
+       "，",
+       "我们",
+       "赶快",
+       "走吧",
+       "。"
+      ],
+      "dap": [
+       "快迟到了，我们赶快走吧。",
+       "我们赶快走吧，快迟到了。"
+      ],
+      "goiY": "Sắp muộn rồi, chúng ta mau đi thôi.",
+      "giai": "S + 赶快 + V + 吧."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你赶快回家吧，妈妈在等你。",
+      "dung": true,
+      "giai": "Đúng: 赶快 + V + 吧 — lời thúc giục."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他跑得赶快，第一个到了终点。",
+      "dung": false,
+      "sua": "他跑得很快，第一个到了终点。",
+      "giai": "赶快 không làm bổ ngữ sau 得."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你把作业写赶快。",
+      "dung": false,
+      "sua": "你赶快把作业写完。",
+      "giai": "赶快 đứng trước 把 và động từ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tháng sau tôi phải chuyển nhà, phải mau chóng tìm nhà thôi.",
+      "dap": [
+       "我下个月要搬家，得赶快找房子。",
+       "下个月我要搬家，得赶快找房子。",
+       "我下个月要搬家，要赶快找房子。"
+      ],
+      "py": "Wǒ xià ge yuè yào bānjiā, děi gǎnkuài zhǎo fángzi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 赶快.",
+      "giai": "得 / 要 + 赶快 + V."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Trời sắp mưa rồi, cậu mau về nhà đi.",
+      "dap": [
+       "快下雨了，你赶快回家吧。",
+       "要下雨了，你赶快回家吧。",
+       "天快下雨了，你赶快回家吧。"
+      ],
+      "py": "Kuài xià yǔ le, nǐ gǎnkuài huí jiā ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 赶快……吧.",
+      "giai": "快……了，赶快 + V + 吧."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，要不该赶上堵车了。",
+      "goiY": "thúc giục xuất phát ngay (dùng 赶快) — bài 练一练 (1) của sách",
+      "mau": "我们赶快出发吧，要不该赶上堵车了。",
+      "can": [
+       [
+        "赶快"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：＿＿＿。　B：好，我马上就收拾好了。",
+      "goiY": "giục người kia thu dọn (dùng 赶快) — bài 练一练 (2) của sách",
+      "mau": "快到时间了，你赶快收拾东西吧",
+      "can": [
+       [
+        "赶快"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "A：你怎么还在玩儿游戏？火车票预定了吗？　B：＿＿＿。",
+      "goiY": "Trả lời theo ý em, dùng 「赶快」 — bài 练一练 (3) của sách",
+      "mau": "还没呢，我这就赶快在网上订",
+      "can": [
+       [
+        "赶快"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「片」",
+  "tenVn": "",
+  "cauTruc": [
+   "N + 片 (碎片 / 叶片) · 切成片 (danh từ)",
+   "一片 + 面包 / 药 / 西瓜 (vật mỏng)",
+   "一片 + 草地 / 树林 / 天空 (vùng rộng)",
+   "一片 + 欢呼声 / 绿色 (âm thanh, cảnh sắc)"
+  ],
+  "giaiThich": "片 có hai cách dùng. ① DANH TỪ: vật phẳng và mỏng, thường không lớn — 碎片 (mảnh vỡ), 叶片 (phiến lá), 切成片 (thái lát). ② LƯỢNG TỪ: dùng cho vật thành miếng mỏng (一片面包, 一片药), cho vùng diện tích rộng (一片草地 / 树林 / 天空), và cho âm thanh, cảnh sắc, không khí (一片欢呼声, 一片绿色). Lặp lại 一片片 = từng miếng, từng chiếc một. Vật dài dùng 根 / 支, tấm kính dùng 块, giấy dùng 张.",
+  "viDu": [
+   {
+    "zh": "瓶子里装着满满的石头、玻璃碎片和沙子。",
+    "py": "Píngzi li zhuāngzhe mǎnmǎn de shítou, bōli suìpiàn hé shāzi.",
+    "vn": "Trong chai đựng đầy đá, mảnh thuỷ tinh vỡ và cát."
+   },
+   {
+    "zh": "窗外有一棵大树，秋风中，叶子一片片地掉落下来。",
+    "py": "Chuāng wài yǒu yì kē dà shù, qiūfēng zhōng, yèzi yí piànpiàn de diàoluò xialai.",
+    "vn": "Ngoài cửa sổ có một cây lớn, trong gió thu, lá rụng xuống từng chiếc từng chiếc."
+   },
+   {
+    "zh": "同学们听了，发出一片热烈的欢呼声。",
+    "py": "Tóngxuémen tīng le, fāchū yí piàn rèliè de huānhūshēng.",
+    "vn": "Các bạn nghe xong, reo hò vang dậy."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "请给我一片纸，我要写个电话号码。",
+    "why": "Giấy dùng lượng từ 张 (一张纸). 片 dùng cho vật mỏng nhỏ như lát bánh mì, viên thuốc, lá cây.",
+    "dung": "请给我一张纸，我要写个电话号码。"
+   },
+   {
+    "sai": "他从地上捡起一片管子。",
+    "why": "Ống là vật dài, mảnh → lượng từ 根 / 支 (bảng 词语搭配: 一根 / 支管子).",
+    "dung": "他从地上捡起一根管子。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "瓶子里装着满满的石头、玻璃碎",
+       "和沙子。"
+      ],
+      "dap": [
+       [
+        "片"
+       ]
+      ],
+      "chon": [
+       "片",
+       "块",
+       "根"
+      ],
+      "goiY": "Câu ví dụ của sách: mảnh thuỷ tinh vỡ.",
+      "giai": "碎片 — 片 làm danh từ: vật mỏng dẹt."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大树出的“汗”，通常是从叶",
+       "的气孔里冒出来的。"
+      ],
+      "dap": [
+       [
+        "片"
+       ]
+      ],
+      "chon": [
+       "片",
+       "根",
+       "本"
+      ],
+      "goiY": "Câu bài khoá: phiến lá.",
+      "giai": "叶片 = phiến lá (片 danh từ)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "秋风中，叶子一",
+       "片地掉落下来。"
+      ],
+      "dap": [
+       [
+        "片"
+       ]
+      ],
+      "chon": [
+       "片",
+       "根",
+       "张"
+      ],
+      "goiY": "Câu ví dụ của sách: từng chiếc lá rơi.",
+      "giai": "一片片 = từng chiếc một (lặp lượng từ)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "同学们听了，发出一",
+       "热烈的欢呼声。"
+      ],
+      "dap": [
+       [
+        "片"
+       ]
+      ],
+      "chon": [
+       "片",
+       "根",
+       "块"
+      ],
+      "goiY": "Câu ví dụ của sách: tiếng reo hò.",
+      "giai": "一片 + âm thanh: 一片欢呼声."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "今天早上我吃了两",
+       "面包。"
+      ],
+      "dap": [
+       [
+        "片"
+       ]
+      ],
+      "chon": [
+       "片",
+       "根",
+       "壶"
+      ],
+      "goiY": "Bánh mì thái lát.",
+      "giai": "一片面包 (bảng 词语搭配)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "请给我一",
+       "纸，我要写个电话号码。"
+      ],
+      "dap": [
+       [
+        "张"
+       ]
+      ],
+      "chon": [
+       "张",
+       "片",
+       "根"
+      ],
+      "goiY": "Giấy dùng lượng từ nào? Cẩn thận!",
+      "giai": "纸 dùng 张, không dùng 片."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "请把",
+       "土豆",
+       "切成",
+       "片",
+       "。"
+      ],
+      "dap": [
+       "请把土豆切成片。"
+      ],
+      "goiY": "Hãy thái khoai tây thành lát.",
+      "giai": "把 + N + 切成片: 片 danh từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "秋风中",
+       "，",
+       "叶子",
+       "一片片地",
+       "掉落",
+       "下来",
+       "。"
+      ],
+      "dap": [
+       "秋风中，叶子一片片地掉落下来。"
+      ],
+      "goiY": "Trong gió thu, lá rụng từng chiếc.",
+      "giai": "一片片地 + V: lặp lượng từ làm trạng ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "同学们听了",
+       "，",
+       "发出",
+       "一片",
+       "热烈的",
+       "欢呼声",
+       "。"
+      ],
+      "dap": [
+       "同学们听了，发出一片热烈的欢呼声。"
+      ],
+      "goiY": "Các bạn nghe xong reo hò vang dậy.",
+      "giai": "一片 + (Adj 的) + âm thanh."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "窗外是一片绿绿的草地。",
+      "dung": true,
+      "giai": "Đúng: 一片 + vùng diện tích rộng (草地)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他从地上捡起一片管子。",
+      "dung": false,
+      "sua": "他从地上捡起一根管子。",
+      "giai": "Ống là vật dài → 一根 / 一支."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "请给我一片纸，我要写个电话号码。",
+      "dung": false,
+      "sua": "请给我一张纸，我要写个电话号码。",
+      "giai": "Giấy dùng 张."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Sáng nay tôi chỉ ăn hai lát bánh mì.",
+      "dap": [
+       "今天早上我只吃了两片面包。",
+       "我今天早上只吃了两片面包。",
+       "今天早上我就吃了两片面包。"
+      ],
+      "py": "Jīntiān zǎoshang wǒ zhǐ chīle liǎng piàn miànbāo.",
+      "goiY": "Dịch sang tiếng Trung, dùng 片 (lượng từ).",
+      "giai": "两片 + 面包."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Ngoài cửa sổ là một cánh rừng rất lớn.",
+      "dap": [
+       "窗外是一片很大的树林。",
+       "窗外有一片很大的树林。",
+       "窗外是一大片树林。"
+      ],
+      "py": "Chuāng wài shì yí piàn hěn dà de shùlín.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一片.",
+      "giai": "一片 + vùng rộng (树林)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：我来切菜吧，土豆怎么切？　B：＿＿＿。",
+      "goiY": "nói cách thái (片 — danh từ) — bài 练一练 (1) của sách",
+      "mau": "切成薄片吧",
+      "can": [
+       [
+        "片"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "今天早上我吃了＿＿＿。",
+      "goiY": "kể bữa sáng (片 — lượng từ) — bài 练一练 (2) của sách",
+      "mau": "今天早上我吃了两片面包和一个鸡蛋。",
+      "can": [
+       [
+        "片"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "A：这药怎么吃？　B：＿＿＿。",
+      "goiY": "Trả lời theo ý em, dùng 「片」 (lượng từ) — bài 练一练 (3) của sách",
+      "mau": "一天三次，一次两片",
+      "can": [
+       [
+        "片"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「根本」",
+  "tenVn": "",
+  "cauTruc": [
+   "从根本上 + V · ……是……的根本 (danh từ)",
+   "根本 + 的 + N (tính từ)",
+   "根本 + 不 / 没 / 无法 + V (phó từ)",
+   "根本 + V — triệt để, hoàn toàn"
+  ],
+  "giaiThich": "根本 có ba cách dùng. ① DANH TỪ: phần quan trọng nhất, gốc rễ của sự vật — 教育是国家的根本, 从根本上解决问题. ② TÍNH TỪ: chủ yếu, quan trọng nhất, có tính quyết định — 根本的问题, 根本利益. ③ PHÓ TỪ: từ đầu đến cuối, hoàn toàn — hay dùng trong câu PHỦ ĐỊNH, đứng TRƯỚC 不 / 没 / 无法: 根本读不懂, 根本无法; còn nghĩa triệt để, hoàn toàn (事情已经根本解决了) và nhấn mạnh (他根本就是在故意找麻烦). Đừng nhầm với 基本 (về cơ bản, đại thể).",
+  "viDu": [
+   {
+    "zh": "这个办法只能救急，不能从根本上解决问题。",
+    "py": "Zhège bànfǎ zhǐ néng jiùjí, bù néng cóng gēnběn shang jiějué wèntí.",
+    "vn": "Cách này chỉ cứu vãn tạm thời, không thể giải quyết vấn đề từ gốc rễ."
+   },
+   {
+    "zh": "谈判还算顺利，一些根本的问题都谈好了。",
+    "py": "Tánpàn hái suàn shùnlì, yìxiē gēnběn de wèntí dōu tánhǎo le.",
+    "vn": "Cuộc đàm phán cũng khá thuận lợi, một số vấn đề căn bản đều đã bàn xong."
+   },
+   {
+    "zh": "可是，经过测验计算发现，以大树输送管道的尺寸产生的毛细作用，根本无法把水分送到几十米高的地方。",
+    "py": "Kěshì, jīngguò cèyàn jìsuàn fāxiàn, yǐ dà shù shūsòng guǎndào de chǐcùn chǎnshēng de máoxì zuòyòng, gēnběn wúfǎ bǎ shuǐfèn sòngdào jǐshí mǐ gāo de dìfang.",
+    "vn": "Thế nhưng, qua đo đạc tính toán thì phát hiện, hiện tượng mao dẫn sinh ra với kích cỡ đường ống vận chuyển của cây lớn hoàn toàn không thể đưa nước lên nơi cao mấy chục mét."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我不根本知道这件事。",
+    "why": "Phó từ 根本 đứng TRƯỚC từ phủ định: 根本不 / 根本没 / 根本无法.",
+    "dung": "我根本不知道这件事。"
+   },
+   {
+    "sai": "这项工作已经根本完成了，只剩一点儿小问题。",
+    "why": "根本完成 = hoàn toàn xong, mâu thuẫn với \"còn chút vấn đề\". \"Về cơ bản\" là 基本.",
+    "dung": "这项工作已经基本完成了，只剩一点儿小问题。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "其实他是位盲人，",
+       "看不见你的动作。"
+      ],
+      "dap": [
+       [
+        "根本"
+       ]
+      ],
+      "chon": [
+       "根本",
+       "基本",
+       "特别"
+      ],
+      "goiY": "Bài tập 1 của sách: người mù hoàn toàn không nhìn thấy.",
+      "giai": "根本 + phủ định (看不见)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "胡说！我",
+       "不认识他。"
+      ],
+      "dap": [
+       [
+        "根本"
+       ]
+      ],
+      "chon": [
+       "根本",
+       "基本",
+       "赶快"
+      ],
+      "goiY": "Câu nghe 8 của sách bài tập.",
+      "giai": "根本不 = hoàn toàn không."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这个办法只能救急，不能从",
+       "上解决问题。"
+      ],
+      "dap": [
+       [
+        "根本"
+       ]
+      ],
+      "chon": [
+       "根本",
+       "基本",
+       "特殊"
+      ],
+      "goiY": "Câu ví dụ của sách: giải quyết từ gốc rễ.",
+      "giai": "从根本上 — 根本 danh từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "经过测验计算发现，毛细作用",
+       "无法把水分送到几十米高的地方。"
+      ],
+      "dap": [
+       [
+        "根本"
+       ]
+      ],
+      "chon": [
+       "根本",
+       "基本",
+       "自动"
+      ],
+      "goiY": "Câu bài khoá.",
+      "giai": "根本无法 = hoàn toàn không thể."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "谈判还算顺利，一些",
+       "的问题都谈好了。"
+      ],
+      "dap": [
+       [
+        "根本"
+       ]
+      ],
+      "chon": [
+       "根本",
+       "根",
+       "特别"
+      ],
+      "goiY": "Câu ví dụ của sách: vấn đề căn bản.",
+      "giai": "根本 + 的 + N — 根本 tính từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这项工作已经",
+       "完成了，只剩一点儿小问题。"
+      ],
+      "dap": [
+       [
+        "基本"
+       ]
+      ],
+      "chon": [
+       "基本",
+       "根本",
+       "赶快"
+      ],
+      "goiY": "Vẫn còn chút vấn đề — cẩn thận!",
+      "giai": "基本完成 = về cơ bản đã xong; 根本 không có nghĩa \"về cơ bản\"."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "其实",
+       "他是位盲人",
+       "，",
+       "根本",
+       "看不见",
+       "你的动作",
+       "。"
+      ],
+      "dap": [
+       "其实他是位盲人，根本看不见你的动作。"
+      ],
+      "goiY": "Thật ra anh ấy là người mù, hoàn toàn không nhìn thấy động tác của bạn.",
+      "giai": "根本 + 看不见."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "毛细作用",
+       "根本",
+       "无法",
+       "把水分",
+       "送到",
+       "几十米高的地方",
+       "。"
+      ],
+      "dap": [
+       "毛细作用根本无法把水分送到几十米高的地方。"
+      ],
+      "goiY": "Mao dẫn hoàn toàn không thể đưa nước lên cao mấy chục mét.",
+      "giai": "根本无法 + 把……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这个办法",
+       "不能",
+       "从根本上",
+       "解决",
+       "问题",
+       "。"
+      ],
+      "dap": [
+       "这个办法不能从根本上解决问题。"
+      ],
+      "goiY": "Cách này không thể giải quyết vấn đề từ gốc rễ.",
+      "giai": "不能 + 从根本上 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我根本没听说过这件事。",
+      "dung": true,
+      "giai": "Đúng: 根本 đứng trước 没."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我没根本听说过这件事。",
+      "dung": false,
+      "sua": "我根本没听说过这件事。",
+      "giai": "根本 phải đứng TRƯỚC từ phủ định."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "教育是国家的根本。",
+      "dung": true,
+      "giai": "Đúng: 根本 làm danh từ = gốc rễ (câu ví dụ của sách)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi hoàn toàn không biết chuyện này.",
+      "dap": [
+       "我根本不知道这件事。",
+       "这件事我根本不知道。",
+       "我根本就不知道这件事。"
+      ],
+      "py": "Wǒ gēnběn bù zhīdào zhè jiàn shì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 根本.",
+      "giai": "根本 + 不 + V."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cách này không thể giải quyết vấn đề từ gốc rễ.",
+      "dap": [
+       "这个办法不能从根本上解决问题。",
+       "这个方法不能从根本上解决问题。",
+       "这个办法无法从根本上解决问题。"
+      ],
+      "py": "Zhège bànfǎ bù néng cóng gēnběn shang jiějué wèntí.",
+      "goiY": "Dịch sang tiếng Trung, dùng 从根本上.",
+      "giai": "从根本上 + 解决."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你觉得他说的话有道理吗？　B：＿＿＿。",
+      "goiY": "phủ định hoàn toàn (dùng 根本) — bài 练一练 (1) của sách",
+      "mau": "他说的根本没有道理",
+      "can": [
+       [
+        "根本"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "搬家要整理的东西太多了，＿＿＿。",
+      "goiY": "một mình không làm xuể (dùng 根本) — bài 练一练 (2) của sách",
+      "mau": "搬家要整理的东西太多了，我一个人根本收拾不完。",
+      "can": [
+       [
+        "根本"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "秦国人在赵国四处散布谣言，说秦军最怕赵括，＿＿＿。",
+      "goiY": "Hoàn thành câu theo ý em, dùng 「根本」 — bài 练一练 (3) của sách (chuyện 纸上谈兵)",
+      "mau": "秦国人在赵国四处散布谣言，说秦军最怕赵括，其实秦军根本不怕他。",
+      "can": [
+       [
+        "根本"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,939 @@
+[
+ {
+  "so": "1",
+  "ten": "「一致」",
+  "tenVn": "",
+  "cauTruc": [
+   "A 跟 B 的意见 / 看法 + (不)一致 (tính từ)",
+   "取得一致",
+   "(大家 / 双方) + 一致 + 认为 / 同意 / 表示 (phó từ)"
+  ],
+  "giaiThich": "一致 có hai cách dùng. ① Tính từ: không có bất đồng (没有分歧), nhất trí, thống nhất — làm vị ngữ sau 意见 / 看法 / 目标, hoặc trong cụm 取得一致; phủ định: 不一致. ② Phó từ: cùng, đồng loạt (一同、一齐), đứng TRƯỚC động từ: 一致认为 / 一致同意 / 一致表示. 一 đọc yí (biến điệu trước thanh 4).",
+  "viDu": [
+   {
+    "zh": "……但文文跟他们的意见不一致，她坚持要去美国。",
+    "py": "……Dàn Wénwen gēn tāmen de yìjiàn bù yízhì, tā jiānchí yào qù Měiguó.",
+    "vn": "…Nhưng Văn Văn không cùng ý kiến với họ, cô nhất quyết muốn đi Mỹ."
+   },
+   {
+    "zh": "长期共同生活的夫妻在兴趣爱好、心理情绪上也趋于一致。",
+    "py": "Chángqī gòngtóng shēnghuó de fūqī zài xìngqù àihào, xīnlǐ qíngxù shang yě qūyú yízhì.",
+    "vn": "Những cặp vợ chồng sống chung lâu năm cũng dần giống nhau về sở thích, tâm lý và cảm xúc."
+   },
+   {
+    "zh": "专家们一致认为这是一种成功的产品，可以放心使用。",
+    "py": "Zhuānjiāmen yízhì rènwéi zhè shì yì zhǒng chénggōng de chǎnpǐn, kěyǐ fàngxīn shǐyòng.",
+    "vn": "Các chuyên gia nhất trí cho rằng đây là một sản phẩm thành công, có thể yên tâm sử dụng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他们一致意见了。",
+    "why": "一致 không mang tân ngữ. Nói 意见一致 (一致 làm vị ngữ) hoặc 取得一致.",
+    "dung": "他们的意见一致了。"
+   },
+   {
+    "sai": "大家都同意一致。",
+    "why": "一致 làm phó từ phải đứng TRƯỚC động từ.",
+    "dung": "大家一致同意。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "但文文跟他们的意见不",
+       "，她坚持要去美国。"
+      ],
+      "dap": [
+       [
+        "一致"
+       ]
+      ],
+      "chon": [
+       "一致",
+       "一起",
+       "一定"
+      ],
+      "goiY": "Câu của bài khoá: ý kiến không thống nhất.",
+      "giai": "意见 + 不一致: 一致 làm vị ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "专家们",
+       "认为这是一种成功的产品，可以放心使用。"
+      ],
+      "dap": [
+       [
+        "一致"
+       ]
+      ],
+      "chon": [
+       "一致",
+       "一样",
+       "一共"
+      ],
+      "goiY": "Các chuyên gia đồng loạt cho rằng…",
+      "giai": "一致 (phó từ) đứng trước 认为."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们终于取得",
+       "了，真是太不容易了。"
+      ],
+      "dap": [
+       [
+        "一致"
+       ]
+      ],
+      "chon": [
+       "一致",
+       "一样",
+       "同意"
+      ],
+      "goiY": "Cụm cố định \"đạt được sự nhất trí\" (sách bài tập, nghe 3).",
+      "giai": "取得一致 = đạt được sự nhất trí. Không nói 取得一样."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "双方",
+       "表示将进一步发展友好合作关系。"
+      ],
+      "dap": [
+       [
+        "一致"
+       ]
+      ],
+      "chon": [
+       "一致",
+       "一起",
+       "一样"
+      ],
+      "goiY": "Hai bên cùng bày tỏ… — câu ví dụ của sách.",
+      "giai": "一致 + 表示: phó từ, văn viết trang trọng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的建议一提出，就得到了大家的",
+       "认可。"
+      ],
+      "dap": [
+       [
+        "一致"
+       ]
+      ],
+      "chon": [
+       "一致",
+       "一样",
+       "一定"
+      ],
+      "goiY": "Bài tập 2 của sách: nhất trí công nhận.",
+      "giai": "一致认可. 一样 dùng khi so sánh (A 跟 B 一样)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家的目标从来都是",
+       "的，都是为了公司好。"
+      ],
+      "dap": [
+       [
+        "一致"
+       ]
+      ],
+      "chon": [
+       "一致",
+       "一起",
+       "一共"
+      ],
+      "goiY": "Mục tiêu của mọi người trước giờ vẫn thống nhất (sách bài tập).",
+      "giai": "是……的 + tính từ 一致."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "文文",
+       "跟父母的",
+       "意见",
+       "不一致",
+       "。"
+      ],
+      "dap": [
+       "文文跟父母的意见不一致。"
+      ],
+      "goiY": "Văn Văn không cùng ý kiến với bố mẹ.",
+      "giai": "A 跟 B 的意见 + 不一致."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "专家们",
+       "一致",
+       "认为",
+       "这是",
+       "一种",
+       "成功的产品",
+       "。"
+      ],
+      "dap": [
+       "专家们一致认为这是一种成功的产品。"
+      ],
+      "goiY": "Các chuyên gia nhất trí cho rằng đây là một sản phẩm thành công.",
+      "giai": "一致 đứng trước động từ 认为."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "全班同学",
+       "一致",
+       "同意",
+       "去下龙湾",
+       "春游",
+       "。"
+      ],
+      "dap": [
+       "全班同学一致同意去下龙湾春游。"
+      ],
+      "goiY": "Cả lớp nhất trí đồng ý đi Hạ Long dã ngoại.",
+      "giai": "Chủ ngữ + 一致同意 + việc."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这次讨论，大家的意见终于一致了。",
+      "dung": true,
+      "giai": "Đúng: 意见 + 一致 (vị ngữ) + 了 (thay đổi trạng thái)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "大家都同意一致去公园。",
+      "dung": false,
+      "sua": "大家一致同意去公园。",
+      "giai": "Phó từ 一致 phải đứng TRƯỚC động từ 同意."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他们一致意见了。",
+      "dung": false,
+      "sua": "他们的意见一致了。",
+      "giai": "一致 không mang tân ngữ 意见; đưa 意见 lên làm chủ ngữ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Về chuyện chọn ngành, ý kiến của tôi và bố mẹ không thống nhất.",
+      "dap": [
+       "在选专业的问题上，我跟父母的意见不一致。",
+       "关于选专业，我跟父母的意见不一致。",
+       "在选专业这件事上，我和父母的意见不一致。"
+      ],
+      "py": "Zài xuǎn zhuānyè de wèntí shang, wǒ gēn fùmǔ de yìjiàn bù yízhì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 意见不一致.",
+      "giai": "A 跟 B 的意见 + 不一致."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mọi người nhất trí cho rằng cô ấy là lớp trưởng giỏi nhất.",
+      "dap": [
+       "大家一致认为她是最好的班长。",
+       "大家一致认为她是最能干的班长。",
+       "同学们一致认为她是最好的班长。"
+      ],
+      "py": "Dàjiā yízhì rènwéi tā shì zuì hǎo de bānzhǎng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一致 làm phó từ.",
+      "giai": "一致 + 认为: phó từ đứng trước động từ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "她是一名酒店服务员，工作很勤奋，＿＿＿。",
+      "goiY": "mọi người đều nhất trí khen cô ấy (dùng 一致) — bài 练一练 (1) của sách",
+      "mau": "她是一名酒店服务员，工作很勤奋，大家一致认为她是一名好员工。",
+      "can": [
+       [
+        "一致"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：公司开会讨论你做的产品宣传方案了吗？　B：＿＿＿。",
+      "goiY": "đã thảo luận, mọi người nhất trí thông qua (dùng 一致) — bài 练一练 (2) của sách",
+      "mau": "讨论了，大家一致同意用我的方案。",
+      "can": [
+       [
+        "一致"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「一致」, nói về một lần em và gia đình / bạn bè thống nhất hoặc không thống nhất ý kiến",
+      "mau": "去哪儿过春节，我跟爸爸妈妈的意见终于一致了。",
+      "can": [
+       [
+        "一致"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「某」",
+  "tenVn": "",
+  "cauTruc": [
+   "Họ + 某 (người xác định, không nói tên)",
+   "某 + (一) + lượng từ + N (không xác định)",
+   "某种 / 某人 / 某一方面 / 某个地方"
+  ],
+  "giaiThich": "某 là đại từ chỉ thị. ① Chỉ người / sự vật XÁC ĐỊNH, người nói biết tên nhưng không nói ra — thường đặt sau họ: 李某, 张某; đôi khi mang sắc thái chê (有时有贬义). ② Chỉ người / sự vật KHÔNG XÁC ĐỊNH (= một … nào đó): 某种, 某人, 某一方面, 某天, 某个地方. 某 đã có nghĩa \"một … nào đó\" nên không thêm 一个 phía trước, cũng không thêm 的 phía sau.",
+  "viDu": [
+   {
+    "zh": "公司业务员李某闻之大喜，以为自己碰到了一个大买主。",
+    "py": "Gōngsī yèwùyuán Lǐ mǒu wén zhī dà xǐ, yǐwéi zìjǐ pèngdàole yí ge dà mǎizhǔ.",
+    "vn": "Nhân viên kinh doanh họ Lý của công ty nghe vậy mừng lắm, tưởng mình vớ được khách hàng lớn."
+   },
+   {
+    "zh": "人们如果长期进行某一方面的训练，就可以使大脑在某一方面的反应能力提高。",
+    "py": "Rénmen rúguǒ chángqī jìnxíng mǒu yì fāngmiàn de xùnliàn, jiù kěyǐ shǐ dànǎo zài mǒu yì fāngmiàn de fǎnyìng nénglì tígāo.",
+    "vn": "Nếu con người luyện tập lâu dài về một mặt nào đó, thì có thể làm khả năng phản ứng của não ở mặt đó được nâng cao."
+   },
+   {
+    "zh": "在这个陌生的地方，妈妈感到她们好像交换了某种身份：自己倒像女儿，而文文倒像妈妈。",
+    "py": "Zài zhège mòshēng de dìfang, māma gǎndào tāmen hǎoxiàng jiāohuànle mǒu zhǒng shēnfen: zìjǐ dào xiàng nǚ’ér, ér Wénwen dào xiàng māma.",
+    "vn": "Ở nơi xa lạ này, người mẹ cảm thấy hai mẹ con dường như đã đổi vai cho nhau: mình lại giống con gái, còn Văn Văn lại giống mẹ."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "她是一个某大学的老师。",
+    "why": "某 đã mang nghĩa \"một … nào đó\", không thêm 一个 phía trước.",
+    "dung": "她是某大学的老师。"
+   },
+   {
+    "sai": "某的人告诉了我这件事。",
+    "why": "某 đứng thẳng trước danh từ / lượng từ, không thêm 的.",
+    "dung": "某人告诉了我这件事。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "在这个陌生的地方，妈妈感到她们好像交换了",
+       "种身份。"
+      ],
+      "dap": [
+       [
+        "某"
+       ]
+      ],
+      "chon": [
+       "某",
+       "每",
+       "各"
+      ],
+      "goiY": "Một thân phận nào đó — câu của bài khoá.",
+      "giai": "某 + lượng từ 种 + danh từ: chỉ sự vật không xác định."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "人们如果长期进行",
+       "一方面的训练，就可以提高大脑的反应能力。"
+      ],
+      "dap": [
+       [
+        "某"
+       ]
+      ],
+      "chon": [
+       "某",
+       "每",
+       "另"
+      ],
+      "goiY": "Một mặt nào đó — câu ví dụ của sách.",
+      "giai": "某一方面 = một mặt nào đó."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "公司业务员李",
+       "闻之大喜，以为自己碰到了一个大买主。"
+      ],
+      "dap": [
+       [
+        "某"
+       ]
+      ],
+      "chon": [
+       "某",
+       "先生",
+       "们"
+      ],
+      "goiY": "Biết tên mà không nói ra.",
+      "giai": "Họ + 某: người xác định nhưng giấu tên (văn viết)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我好像在",
+       "个地方见过他，可是想不起来了。"
+      ],
+      "dap": [
+       [
+        "某"
+       ]
+      ],
+      "chon": [
+       "某",
+       "每",
+       "哪"
+      ],
+      "goiY": "Một nơi nào đó, không nhớ rõ.",
+      "giai": "某个地方 = một nơi nào đó."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "刘主任把所有费用全部公开，连某年",
+       "月买了12元的纸都记录得很清楚。"
+      ],
+      "dap": [
+       [
+        "某"
+       ]
+      ],
+      "chon": [
+       "某",
+       "每",
+       "几"
+      ],
+      "goiY": "Năm nào tháng nào đó — câu 练一练 của sách.",
+      "giai": "某年某月: 某 lặp lại, chỉ thời gian không xác định."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他说有",
+       "人给他打过电话，但他不肯说是谁。"
+      ],
+      "dap": [
+       [
+        "某"
+       ]
+      ],
+      "chon": [
+       "某",
+       "每",
+       "别"
+      ],
+      "goiY": "Có một người nào đó (không chịu nói là ai).",
+      "giai": "某人 = một người nào đó."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "妈妈",
+       "感到",
+       "她们好像",
+       "交换了",
+       "某种",
+       "身份",
+       "。"
+      ],
+      "dap": [
+       "妈妈感到她们好像交换了某种身份。"
+      ],
+      "goiY": "Người mẹ cảm thấy hai mẹ con như đã đổi thân phận cho nhau.",
+      "giai": "某种 + danh từ làm tân ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我好像",
+       "在",
+       "某个地方",
+       "见过",
+       "他",
+       "。"
+      ],
+      "dap": [
+       "我好像在某个地方见过他。"
+      ],
+      "goiY": "Hình như tôi đã gặp anh ấy ở đâu đó.",
+      "giai": "在 + 某个地方 + V过."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "一位",
+       "著名的教授",
+       "到",
+       "某大学",
+       "做演讲",
+       "。"
+      ],
+      "dap": [
+       "一位著名的教授到某大学做演讲。"
+      ],
+      "goiY": "Một giáo sư nổi tiếng đến một trường đại học nọ diễn thuyết.",
+      "giai": "某 + 大学: giấu tên trường (câu 练一练 của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "只要坚持练习，你就会在某一方面变得很厉害。",
+      "dung": true,
+      "giai": "Đúng: 某一方面 = một mặt nào đó (không xác định)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "她是一个某大学的老师。",
+      "dung": false,
+      "sua": "她是某大学的老师。",
+      "giai": "某 đã có nghĩa \"một … nào đó\", bỏ 一个."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "某的人告诉了我这件事。",
+      "dung": false,
+      "sua": "某人告诉了我这件事。",
+      "giai": "某 đứng thẳng trước danh từ, không thêm 的."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi thấy hình như đã gặp anh ấy ở đâu đó rồi.",
+      "dap": [
+       "我好像在某个地方见过他。",
+       "我觉得好像在某个地方见过他。",
+       "我好像在某地见过他。"
+      ],
+      "py": "Wǒ hǎoxiàng zài mǒu ge dìfang jiànguo tā.",
+      "goiY": "Dịch sang tiếng Trung, dùng 某个地方.",
+      "giai": "某 + 个 + 地方: nơi không xác định."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chỉ cần luyện tập lâu dài một mặt nào đó, bạn sẽ tiến bộ rất nhanh.",
+      "dap": [
+       "只要长期进行某一方面的练习，你就会进步得很快。",
+       "只要长期练习某一方面，你就会进步得很快。",
+       "只要长期进行某一方面的训练，你就会进步得很快。"
+      ],
+      "py": "Zhǐyào chángqī jìnxíng mǒu yì fāngmiàn de liànxí, nǐ jiù huì jìnbù de hěn kuài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 某一方面.",
+      "giai": "某一方面 + 的 + 练习 / 训练."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "在这个陌生的地方，妈妈感到＿＿＿。",
+      "goiY": "hai mẹ con như đã đổi thân phận cho nhau (dùng 某种) — câu của bài khoá",
+      "mau": "在这个陌生的地方，妈妈感到她们好像交换了某种身份。",
+      "can": [
+       [
+        "某种"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你怎么一直看那个人？你认识他吗？　B：＿＿＿。",
+      "goiY": "hình như đã gặp ở đâu đó nhưng không nhớ ra (dùng 某个)",
+      "mau": "我好像在某个地方见过他，可是想不起来了。",
+      "can": [
+       [
+        "某"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「某」 (某种 / 某人 / 某一方面 / 某天…), nói về một người hoặc một việc em không muốn / không thể nói rõ",
+      "mau": "某天我在书店遇到了一位老同学，我们聊了很久。",
+      "can": [
+       [
+        "某"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「幸亏」",
+  "tenVn": "",
+  "cauTruc": [
+   "幸亏 + A，(chủ ngữ) + 才 + B",
+   "幸亏 + A，要不然 / 否则 + B",
+   "幸亏 + A (điều xấu đã rõ trong ngữ cảnh)"
+  ],
+  "giaiThich": "幸亏 là phó từ: nhờ một điều kiện thuận lợi nào đó mà TRÁNH ĐƯỢC chuyện không mong muốn (may mà, may sao). Đứng đầu vế nêu điều kiện tốt, trước hoặc sau chủ ngữ; vế sau hay có 才 / 要不然 / 不然 / 否则. Cũng có thể đứng một mình khi điều xấu đã rõ trong ngữ cảnh (幸亏那晚天色很暗). Không dùng 所以 ở vế sau.",
+  "viDu": [
+   {
+    "zh": "幸亏你提醒了我，我今天就去报名。",
+    "py": "Xìngkuī nǐ tíxǐngle wǒ, wǒ jīntiān jiù qù bàomíng.",
+    "vn": "May mà cậu nhắc tớ, hôm nay tớ đi đăng ký luôn."
+   },
+   {
+    "zh": "医生说这个病人是心脏问题，幸亏送来得及时。",
+    "py": "Yīshēng shuō zhège bìngrén shì xīnzàng wèntí, xìngkuī sòng lai de jíshí.",
+    "vn": "Bác sĩ nói bệnh nhân này bị bệnh tim, may mà được đưa đến kịp thời."
+   },
+   {
+    "zh": "妈妈忍不住流下了眼泪。她说：“幸亏那晚天色很暗。”",
+    "py": "Māma rěnbuzhù liúxiàle yǎnlèi. Tā shuō: “Xìngkuī nà wǎn tiānsè hěn àn.”",
+    "vn": "Người mẹ không kìm được nước mắt. Bà nói: \"May mà tối hôm đó trời rất tối.\""
+   }
+  ],
+  "loi": [
+   {
+    "sai": "幸亏你提醒了我，所以我没迟到。",
+    "why": "Vế sau của 幸亏 dùng 才 hoặc 要不然, không dùng 所以.",
+    "dung": "幸亏你提醒了我，我才没迟到。"
+   },
+   {
+    "sai": "幸亏了你，我才找到了工作。",
+    "why": "幸亏 là phó từ, không mang 了 + danh từ. \"Nhờ có ai\" dùng 多亏(了) + người.",
+    "dung": "多亏了你，我才找到了工作。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "妈妈忍不住流下了眼泪。她说：“",
+       "那晚天色很暗。”"
+      ],
+      "dap": [
+       [
+        "幸亏"
+       ]
+      ],
+      "chon": [
+       "幸亏",
+       "可惜",
+       "因为"
+      ],
+      "goiY": "May mà tối hôm đó trời tối — câu của bài khoá.",
+      "giai": "幸亏 + điều kiện tốt (trời tối nên con không thấy mẹ khóc)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "你提醒了我，我今天就去报名。"
+      ],
+      "dap": [
+       [
+        "幸亏"
+       ]
+      ],
+      "chon": [
+       "幸亏",
+       "可惜",
+       "虽然"
+      ],
+      "goiY": "Nhờ bạn nhắc nên mới kịp — câu ví dụ của sách.",
+      "giai": "幸亏 đứng đầu câu, trước chủ ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "幸亏你带了地图，我们今天",
+       "没走错路。"
+      ],
+      "dap": [
+       [
+        "才"
+       ]
+      ],
+      "chon": [
+       "才",
+       "所以",
+       "就"
+      ],
+      "goiY": "Bài 练一练 (1) của sách.",
+      "giai": "幸亏……才…… — không dùng 所以."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "幸亏我带了伞，",
+       "就被淋湿了。"
+      ],
+      "dap": [
+       [
+        "要不然"
+       ]
+      ],
+      "chon": [
+       "要不然",
+       "所以",
+       "因为"
+      ],
+      "goiY": "Nếu không mang ô thì đã bị ướt.",
+      "giai": "幸亏……要不然…… : vế sau là điều xấu đã tránh được."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "医生说这个病人是心脏问题，",
+       "送来得及时。"
+      ],
+      "dap": [
+       [
+        "幸亏"
+       ]
+      ],
+      "chon": [
+       "幸亏",
+       "可惜",
+       "于是"
+      ],
+      "goiY": "May mà được đưa đến kịp — câu ví dụ của sách.",
+      "giai": "幸亏 + A: nhờ A mà tránh được chuyện xấu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我回家经常坐那趟车呢！",
+       "昨天加班走得晚，打车回去的。"
+      ],
+      "dap": [
+       [
+        "幸亏"
+       ]
+      ],
+      "chon": [
+       "幸亏",
+       "只好",
+       "不过"
+      ],
+      "goiY": "May mà hôm qua tăng ca về muộn (sách bài tập, nghe 6).",
+      "giai": "Nhờ về muộn mà tránh được tai nạn → 幸亏."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "幸亏",
+       "你",
+       "提醒了我",
+       "，",
+       "我",
+       "才",
+       "没迟到",
+       "。"
+      ],
+      "dap": [
+       "幸亏你提醒了我，我才没迟到。"
+      ],
+      "goiY": "May mà cậu nhắc tớ, tớ mới không bị muộn.",
+      "giai": "幸亏 + A，chủ ngữ + 才 + B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "幸亏",
+       "我昨天",
+       "带了伞",
+       "，",
+       "才",
+       "没被",
+       "雨淋湿",
+       "。"
+      ],
+      "dap": [
+       "幸亏我昨天带了伞，才没被雨淋湿。"
+      ],
+      "goiY": "May mà hôm qua tôi mang ô, nên mới không bị mưa làm ướt.",
+      "giai": "幸亏……才没…… (ôn câu 被)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "幸亏",
+       "送来得",
+       "及时",
+       "，",
+       "要不然",
+       "就",
+       "危险了",
+       "。"
+      ],
+      "dap": [
+       "幸亏送来得及时，要不然就危险了。"
+      ],
+      "goiY": "May mà đưa đến kịp, nếu không thì nguy rồi.",
+      "giai": "幸亏……要不然…… ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "幸亏同事借给我一把伞，要不然我就被淋湿了。",
+      "dung": true,
+      "giai": "Đúng: 幸亏 A，要不然 B — bài 练一练 (2) của sách."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "幸亏你提醒了我，所以我没迟到。",
+      "dung": false,
+      "sua": "幸亏你提醒了我，我才没迟到。",
+      "giai": "Vế sau của 幸亏 dùng 才, không dùng 所以."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "幸亏了你，我才找到了工作。",
+      "dung": false,
+      "sua": "多亏了你，我才找到了工作。",
+      "giai": "幸亏 không mang 了 + danh từ; nhờ có ai dùng 多亏了."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "May mà cậu nhắc tớ, nếu không tớ quên mất rồi.",
+      "dap": [
+       "幸亏你提醒了我，要不然我就忘了。",
+       "幸亏你提醒我，要不然我就忘了。",
+       "幸亏你提醒了我，不然我就忘了。"
+      ],
+      "py": "Xìngkuī nǐ tíxǐngle wǒ, yàobùrán wǒ jiù wàng le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 幸亏……要不然…….",
+      "giai": "Vế sau là điều xấu đã tránh được."
+     },
+     {
+      "kieu": "dich",
+      "vn": "May mà hôm qua tôi đi sớm, nên mới không bị lỡ chuyến tàu.",
+      "dap": [
+       "幸亏我昨天走得早，才没错过火车。",
+       "幸亏昨天我走得早，才没误了火车。",
+       "幸亏我昨天出门早，才没错过火车。"
+      ],
+      "py": "Xìngkuī wǒ zuótiān zǒu de zǎo, cái méi cuòguò huǒchē.",
+      "goiY": "Dịch sang tiếng Trung, dùng 幸亏……才…….",
+      "giai": "幸亏 + A，才 + 没 + B."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你回来啦，我正想去接你呢，这是谁的雨伞啊？　B：＿＿＿。",
+      "goiY": "may mà đồng nghiệp cho mượn ô (dùng 幸亏) — bài 练一练 (2) của sách",
+      "mau": "幸亏同事借给我一把伞，要不然我就被淋湿了。",
+      "can": [
+       [
+        "幸亏"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：小莉，你再看看，这几批产品的数量是不是有问题啊？　B：＿＿＿。",
+      "goiY": "may mà được nhắc, đúng là đếm sai một lô (dùng 幸亏) — bài 练一练 (3) của sách",
+      "mau": "幸亏您提醒我，我真的数错了一批。",
+      "can": [
+       [
+        "幸亏"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「幸亏……才 / 要不然……」, kể một lần em may mắn tránh được chuyện không hay",
+      "mau": "幸亏我考试前认真复习了，要不然这次肯定考不及格。",
+      "can": [
+       [
+        "幸亏"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

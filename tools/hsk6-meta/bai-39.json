@@ -1,0 +1,112 @@
+{
+ "zh": "互联网时代的生活",
+ "py": "Hùliánwǎng shídài de shēnghuó",
+ "vn": "Cuộc sống trong thời đại Internet",
+ "topic": "第十单元 热点追踪 · Cuộc sống thời Internet: tiện lợi, gọi vốn cộng đồng (众筹) và những nỗi lo (lừa đảo, tin tặc)",
+ "vocabCount": 48,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "任意",
+   "explain": "\"任意\" là PHÓ TỪ, nghĩa là muốn làm thế nào thì làm thế ấy, không bị ràng buộc, không bị hạn chế (想怎么做就怎么做，不受约束，不受限制). Đứng SAU chủ ngữ / động từ năng nguyện (能, 可以, 可) và ngay TRƯỚC động từ: 任意挑选, 任意放大, 任意选用. Sắc thái tuỳ ngữ cảnh: tích cực khi nói được tự do lựa chọn (我们足不出户就能任意挑选商品; 联大代表们发言时可以任意选用); tiêu cực khi nói tuỳ tiện làm bừa, thường đi với 不能 hoặc lời phê phán (合同一旦生效，任何一方都不能任意反悔; 对自然任意改造). Phân biệt: 任何 là ĐẠI TỪ đứng trước danh từ (任何人, 任何一方); 任意 là phó từ đứng trước động từ, không làm vị ngữ (không nói *很任意).",
+   "rule": "S + (能 / 可以 / 可) + <strong style=\"color:var(--sky-d)\">任意</strong> + V（挑选 / 选用 / 放大）　|　不能 + <strong style=\"color:var(--sky-d)\">任意</strong> + V（反悔 / 改变）　|　对 + N + <strong style=\"color:var(--sky-d)\">任意</strong> + V（改造）",
+   "examples": [
+    {
+     "zh": "合同一旦生效，任何一方都不能任意反悔了。",
+     "py": "Hétong yídàn shēngxiào, rènhé yì fāng dōu bù néng rènyì fǎnhuǐ le.",
+     "vn": "Hợp đồng một khi có hiệu lực thì không bên nào được tuỳ tiện nuốt lời nữa."
+    },
+    {
+     "zh": "它将异地购物、交易变为了可能——我们足不出户就能任意挑选欧洲、美洲的商品……",
+     "py": "Tā jiāng yìdì gòuwù, jiāoyì biànwéile kěnéng — wǒmen zú bù chū hù jiù néng rènyì tiāoxuǎn Ōuzhōu, Měizhōu de shāngpǐn……",
+     "vn": "Nó biến việc mua sắm, giao dịch ở nơi xa thành điều có thể — không cần ra khỏi nhà, chúng ta vẫn tha hồ chọn lựa hàng hoá châu Âu, châu Mỹ…"
+    },
+    {
+     "zh": "科学家很早以前就发现蝙蝠能在黑暗中任意飞行，既能躲避障碍物也能捕食飞行中的昆虫，但是塞住蝙蝠的双耳、封住它的嘴后，它们在黑暗中就寸步难行了。",
+     "py": "Kēxuéjiā hěn zǎo yǐqián jiù fāxiàn biānfú néng zài hēi'àn zhōng rènyì fēixíng, jì néng duǒbì zhàng'àiwù yě néng bǔshí fēixíng zhōng de kūnchóng, dànshì sāizhù biānfú de shuāng ěr, fēngzhù tā de zuǐ hòu, tāmen zài hēi'àn zhōng jiù cùnbù-nánxíng le.",
+     "vn": "Từ rất lâu các nhà khoa học đã phát hiện dơi có thể bay tự do trong bóng tối, vừa tránh được chướng ngại vật vừa bắt được côn trùng đang bay; nhưng bịt hai tai, bịt miệng dơi lại thì trong bóng tối chúng không nhích nổi một bước."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "你可以任意一本书借回家看。",
+     "why": "任意 là phó từ, phải đứng TRƯỚC động từ (借); đứng trước danh từ là 任何 / 任意 + V + 一 + lượng từ.",
+     "right": "你可以任意借一本书回家看。"
+    },
+    {
+     "wrong": "在这个房间里大家都很任意。",
+     "why": "任意 không làm vị ngữ, không đi với 很; muốn nói \"thoải mái, tuỳ ý\" dùng 随意 / 随便.",
+     "right": "在这个房间里大家可以随意坐。（或：大家可以任意选座位。）"
+    }
+   ]
+  },
+  {
+   "point": "尚未",
+   "explain": "\"尚未\" nghĩa là \"还没有\" (vẫn chưa), dùng trong VĂN VIẾT. 尚 = còn, vẫn; 未 = chưa. Đứng trước động từ (hoặc cụm bị động 尚未被……): 尚未查明, 尚未完成, 尚未普及, 尚未被人们认识. Hay làm định ngữ trong cụm dài: 尚未查明身份的罪犯 (tội phạm chưa xác minh được danh tính). Vì đã mang nghĩa phủ định hoàn thành, KHÔNG thêm 了 / 过 phía sau động từ. Có thể lặp để liệt kê: 学业尚未完成，事业尚未确立，经济上也尚未独立. Trong khẩu ngữ, lời nói thân mật thì dùng 还没(有). Phân biệt 尚且 (bài 34: ngay cả … còn …).",
+   "rule": "S + <strong style=\"color:var(--sky-d)\">尚未</strong> + V（= 还没有 V，văn viết）　|　<strong style=\"color:var(--sky-d)\">尚未</strong> + V + 的 + N（định ngữ）　|　<strong style=\"color:var(--sky-d)\">尚未</strong> + 被 + ……（bị động）",
+   "examples": [
+    {
+     "zh": "据官方报道，尚未查明身份的罪犯盗窃了1800万个电子邮件账户及其密码……",
+     "py": "Jù guānfāng bàodào, shàngwèi chámíng shēnfen de zuìfàn dàoqièle yìqiān bābǎi wàn ge diànzǐ yóujiàn zhànghù jí qí mìmǎ……",
+     "vn": "Theo tin chính thức, những tên tội phạm chưa xác minh được danh tính đã đánh cắp 18 triệu tài khoản email cùng mật khẩu…"
+    },
+    {
+     "zh": "所谓潜在的市场，就是客观上已经存在或即将形成，但尚未被人们认识的市场。",
+     "py": "Suǒwèi qiánzài de shìchǎng, jiù shì kèguān shang yǐjīng cúnzài huò jíjiāng xíngchéng, dàn shàngwèi bèi rénmen rènshi de shìchǎng.",
+     "vn": "Cái gọi là thị trường tiềm năng chính là thị trường về khách quan đã tồn tại hoặc sắp hình thành, nhưng vẫn chưa được người ta nhận biết."
+    },
+    {
+     "zh": "中国的现代化发展不过短短几十年，和当代强国有着很大的差距。就像一个久病初愈的人刚刚走下病床，身心的疲倦尚未消退，便一脚踏入了飞驰向前的竞争轨道。",
+     "py": "Zhōngguó de xiàndàihuà fāzhǎn búguò duǎnduǎn jǐ shí nián, hé dāngdài qiángguó yǒuzhe hěn dà de chājù. Jiù xiàng yí ge jiǔ bìng chū yù de rén gānggāng zǒuxià bìngchuáng, shēnxīn de píjuàn shàngwèi xiāotuì, biàn yì jiǎo tàrùle fēichí xiàng qián de jìngzhēng guǐdào.",
+     "vn": "Quá trình hiện đại hoá của Trung Quốc chẳng qua mới vài chục năm, còn cách rất xa các cường quốc đương đại. Giống như một người ốm lâu mới khỏi vừa bước xuống giường bệnh, sự mệt mỏi của thể xác lẫn tinh thần còn chưa tan, đã đặt chân ngay vào đường đua cạnh tranh lao vun vút về phía trước."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这个问题尚未解决了。",
+     "why": "尚未 đã có nghĩa \"vẫn chưa\", phủ định sự hoàn thành, nên không thêm 了 sau động từ.",
+     "right": "这个问题尚未解决。"
+    },
+    {
+     "wrong": "妈妈，我尚未吃饭，快点儿做饭吧！",
+     "why": "尚未 là văn viết, không hợp lời nói thân mật trong nhà; khẩu ngữ dùng 还没.",
+     "right": "妈妈，我还没吃饭，快点儿做饭吧！"
+    }
+   ]
+  },
+  {
+   "point": "修辞（11）夸张",
+   "explain": "Phần 篇章修辞 của bài: \"夸张\" (khoa trương, phóng đại) là CỐ Ý miêu tả sự vật khách quan TO HƠN (扩大) hoặc NHỎ HƠN (缩小) thực tế. Tác dụng: làm nổi bật bản chất, đặc điểm của sự vật, khơi gợi trí tưởng tượng phong phú của người đọc. Hai kiểu: ① PHÓNG TO: 他种的瓜不光甜，几十里外就能闻到瓜香; 他饿得可以把一头大象吃下去; ② THU NHỎ: 我住的房间，只有巴掌这么大. Ngoài ra còn kiểu \"vượt trước\" (超前夸张): 看见这鲜绿的麦苗，就闻出白面包子的香味来了 (lúa mới xanh đã ngửi thấy mùi bánh bao). Khung hay gặp: Adj + 得 + 连……都 / 也……; 恨不得……; 像……一样. Câu bài khoá: 它能让我们自如地通话、视频、传递消息，哪怕你在天涯海角 (天涯海角 = chân trời góc bể, phóng đại khoảng cách). Khi phân tích: \"把 A 夸张为 B\". Chú ý: phóng đại phải để người nghe hiểu là cố ý nói quá (không bị hiểu là nói sai sự thật); văn bản khoa học, báo cáo số liệu không dùng 夸张.",
+   "rule": "<strong style=\"color:var(--sky-d)\">把 A 夸张为 B</strong>　|　phóng to: 几十里外就能闻到瓜香 · 饿得能把一头大象吃下去　|　thu nhỏ: 只有巴掌这么大　|　khung: Adj + 得 + 连……都……",
+   "examples": [
+    {
+     "zh": "它能让我们自如地通话、视频、传递消息，哪怕你在天涯海角。",
+     "py": "Tā néng ràng wǒmen zìrú de tōnghuà, shìpín, chuándì xiāoxi, nǎpà nǐ zài tiānyá-hǎijiǎo.",
+     "vn": "Nó cho phép chúng ta thoải mái gọi điện, gọi video, gửi tin nhắn, dù bạn ở tận chân trời góc bể. (天涯海角 phóng đại khoảng cách xa)"
+    },
+    {
+     "zh": "他种的瓜不光甜，几十里外就能闻到瓜香。",
+     "py": "Tā zhòng de guā bùguāng tián, jǐ shí lǐ wài jiù néng wéndào guā xiāng.",
+     "vn": "Dưa ông ấy trồng không chỉ ngọt, cách mấy chục dặm đã ngửi thấy mùi thơm. (phóng to)"
+    },
+    {
+     "zh": "看见这鲜绿的麦苗，就闻出白面包子的香味来了。",
+     "py": "Kànjiàn zhè xiānlǜ de màimiáo, jiù wén chū báimiàn bāozi de xiāngwèi lai le.",
+     "vn": "Nhìn thấy mạ lúa mì xanh mướt này là đã ngửi ra mùi thơm của bánh bao bột trắng. (phóng đại vượt trước)"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "（实验报告）这个溶液热得像下火一样。",
+     "why": "Văn bản khoa học, báo cáo cần số liệu chính xác, không dùng 夸张.",
+     "right": "这个溶液的温度达到了八十摄氏度。"
+    },
+    {
+     "wrong": "“密密麻麻的雨点从天空噼里啪啦落了下来。”这句话用了夸张。",
+     "why": "Câu này chỉ miêu tả thật bằng từ láy, từ tượng thanh, không cố ý phóng to hay thu nhỏ (đáp án 练一练 của sách).",
+     "right": "“密密麻麻的雨点从天空噼里啪啦落了下来。”这句话没有用夸张。"
+    }
+   ]
+  }
+ ]
+}

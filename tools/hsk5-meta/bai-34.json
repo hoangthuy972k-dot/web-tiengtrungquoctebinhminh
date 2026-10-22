@@ -1,0 +1,112 @@
+{
+ "zh": "鸟儿的护肤术",
+ "py": "Niǎor de hùfū shù",
+ "vn": "Cách loài chim bảo vệ da",
+ "topic": "Unit 12 亲近自然 · Thế giới loài chim: bộ lông và cách chăm sóc bộ lông",
+ "vocabCount": 34,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "总之",
+   "explain": "总之 là LIÊN TỪ, dùng để khái quát, tổng kết nội dung đã nói ở phía trước (= 总的来说, 总而言之). Hay gặp hai tình huống: ① sau khi trình bày nhiều ý, dùng 总之 để rút ra kết luận chung (总之，在鸟儿的生活中，羽毛充当着十分重要的角色); ② sau khi liệt kê nhiều khả năng mà chưa nói rõ được, dùng 总之 để nêu điều chắc chắn (……还有杭州，总之，想去南方几个城市转转). Thường đứng đầu câu hoặc đầu vế sau, có dấu phẩy phía sau; đứng ở PHẦN KẾT, không dùng để mở đầu đoạn văn. Sau 总之 phải là ý KHÁI QUÁT hơn các ý trước.",
+   "rule": "(ý 1，ý 2，ý 3……)，<strong style=\"color:var(--sky-d)\">总之</strong>，+ kết luận chung　|　不管……，<strong style=\"color:var(--sky-d)\">总之</strong> + điều không thay đổi",
+   "examples": [
+    {
+     "zh": "暑假我可能去上海、南京，还有杭州，总之，想去南方几个城市转转。",
+     "py": "Shǔjià wǒ kěnéng qù Shànghǎi, Nánjīng, hái yǒu Hángzhōu, zǒngzhī, xiǎng qù nánfāng jǐ ge chéngshì zhuànzhuan.",
+     "vn": "Kỳ nghỉ hè có thể tôi sẽ đi Thượng Hải, Nam Kinh, còn cả Hàng Châu nữa, nói chung là muốn đi dạo một vòng mấy thành phố phía nam."
+    },
+    {
+     "zh": "总之，网络的确带给我们以前无法想象的方便，但同时它也带来了一定的危害。",
+     "py": "Zǒngzhī, wǎngluò díquè dài gěi wǒmen yǐqián wúfǎ xiǎngxiàng de fāngbiàn, dàn tóngshí tā yě dàiláile yídìng de wēihài.",
+     "vn": "Tóm lại, mạng internet quả thật đem lại cho chúng ta sự tiện lợi mà trước kia không thể tưởng tượng nổi, nhưng đồng thời nó cũng mang đến những tác hại nhất định."
+    },
+    {
+     "zh": "总之，在鸟儿的生活中，羽毛充当着十分重要的角色。",
+     "py": "Zǒngzhī, zài niǎor de shēnghuó zhōng, yǔmáo chōngdāngzhe shífēn zhòngyào de juésè.",
+     "vn": "Tóm lại, trong cuộc sống của loài chim, lông vũ đóng vai trò vô cùng quan trọng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "总之，今天我想跟大家谈谈养宠物的好处。",
+     "why": "总之 khái quát những gì đã nói TRƯỚC đó, không dùng để mở đầu, giới thiệu đề tài.",
+     "right": "今天我想跟大家谈谈养宠物的好处。"
+    },
+    {
+     "wrong": "他会说英语、法语，还会说汉语，总之，他会说英语。",
+     "why": "Phần sau 总之 phải là kết luận khái quát hơn các ý trước, không lặp lại một ý nhỏ.",
+     "right": "他会说英语、法语，还会说汉语，总之，他会好几种语言。"
+    }
+   ]
+  },
+  {
+   "point": "动词 + 过",
+   "explain": "过 đứng sau động từ làm BỔ NGỮ XU HƯỚNG (đọc nhẹ guo), khác với trợ từ động thái 过 (đã từng). Bài này học hai nghĩa: ① qua động tác, người hoặc vật ĐỔI HƯỚNG — hay đi với 身 / 头 / 脸: 转过身, 回过头, 背过头去; ② qua động tác, người hoặc vật DI CHUYỂN VỊ TRÍ (từ tay người này sang tay người kia, lướt qua một chỗ): 接过书, 递过一块毛巾, 闪过很多想法. 过 đứng NGAY SAU động từ; tân ngữ đứng sau 过, và đứng trước 来 / 去 nếu có: 背过头去, 回过头来.",
+   "rule": "① V (转 / 回 / 背) + <strong style=\"color:var(--sky-d)\">过</strong> + 身 / 头 / 脸 (+ 来 / 去) — đổi hướng　② V (接 / 递 / 闪) + <strong style=\"color:var(--sky-d)\">过</strong> + N — dời vị trí",
+   "examples": [
+    {
+     "zh": "他转过身，一句话也不说。",
+     "py": "Tā zhuǎnguo shēn, yí jù huà yě bù shuō.",
+     "vn": "Anh ấy quay người lại, không nói một lời nào."
+    },
+    {
+     "zh": "……它们只要有时间，就会情不自禁地背过头去，反复地啄着羽毛，……",
+     "py": "……Tāmen zhǐyào yǒu shíjiān, jiù huì qíngbúzìjīn de bèiguo tóu qu, fǎnfù de zhuózhe yǔmáo, ……",
+     "vn": "…Hễ có thời gian là chúng lại bất giác ngoảnh đầu ra sau, rỉa lông hết lần này đến lần khác, …"
+    },
+    {
+     "zh": "接过书的那一刻，老王突然明白了自己失败的原因。",
+     "py": "Jiēguo shū de nà yí kè, Lǎo Wáng tūrán míngbaile zìjǐ shībài de yuányīn.",
+     "vn": "Khoảnh khắc đón lấy cuốn sách, ông Vương chợt hiểu ra nguyên nhân thất bại của mình."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "你回头过就可以看见我了。",
+     "why": "过 là bổ ngữ, đứng NGAY SAU động từ, trước tân ngữ 头: 回过头.",
+     "right": "你回过头就可以看见我了。"
+    },
+    {
+     "wrong": "他背过去头，不想看我。",
+     "why": "Khi có 来 / 去, tân ngữ chỉ bộ phận cơ thể đứng giữa 过 và 去: 背过头去.",
+     "right": "他背过头去，不想看我。"
+    }
+   ]
+  },
+  {
+   "point": "动词 + 开",
+   "explain": "开 đứng sau động từ làm BỔ NGỮ; bài này học nghĩa \"舒展\" — DANG RA, MỞ RỘNG RA, TRẢI RA: 张开手臂, 张开双翅, 展开, 铺开. Ngoài ra V + 开 còn có nghĩa lan rộng ra (消息传开了) và tách rời ra (区分开, 打开). 开 đứng ngay sau động từ; tân ngữ đứng sau 开 (张开双臂) hoặc đưa lên trước bằng 把 (把纸铺开). Phủ định khả năng: V + 不开 (张不开, 打不开).",
+   "rule": "V (张 / 展 / 铺 / 打) + <strong style=\"color:var(--sky-d)\">开</strong> + N　|　把 + N + V + <strong style=\"color:var(--sky-d)\">开</strong>　|　N + (已经) + 传<strong style=\"color:var(--sky-d)\">开</strong>了",
+   "examples": [
+    {
+     "zh": "猴子突然站了起来，张开手臂，抱住了管理员。",
+     "py": "Hóuzi tūrán zhànle qilai, zhāngkāi shǒubì, bàozhùle guǎnlǐyuán.",
+     "vn": "Con khỉ đột nhiên đứng dậy, dang rộng cánh tay, ôm chầm lấy người quản lý."
+    },
+    {
+     "zh": "《清明上河图》在我们的面前慢慢展开。",
+     "py": "\"Qīngmíng Shàng Hé Tú\" zài wǒmen de miànqián mànman zhǎnkāi.",
+     "vn": "Bức \"Thanh minh thượng hà đồ\" từ từ mở ra trước mắt chúng tôi."
+    },
+    {
+     "zh": "而老鹰的洗澡方式更是直接，它们会在雨中张开双翅痛快地迎接洗礼！",
+     "py": "Ér lǎoyīng de xǐzǎo fāngshì gèng shì zhíjiē, tāmen huì zài yǔ zhōng zhāngkāi shuāng chì tòngkuài de yíngjiē xǐlǐ!",
+     "vn": "Còn cách tắm của diều hâu thì càng trực tiếp hơn, chúng dang rộng đôi cánh trong mưa, sảng khoái đón nhận \"lễ tẩy rửa\"!"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "妈妈张双臂开迎接我。",
+     "why": "开 là bổ ngữ, đứng ngay sau động từ 张, trước tân ngữ: 张开双臂.",
+     "right": "妈妈张开双臂迎接我。"
+    },
+    {
+     "wrong": "他把纸铺，准备练习书法。",
+     "why": "Câu 把 cần thành phần khác sau động từ; ở đây cần bổ ngữ 开 (trải ra): 把纸铺开.",
+     "right": "他把纸铺开，准备练习书法。"
+    }
+   ]
+  }
+ ]
+}

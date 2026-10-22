@@ -1,0 +1,112 @@
+{
+ "zh": "放手",
+ "py": "Fàngshǒu",
+ "vn": "Buông tay",
+ "topic": "Unit 8 体会教育 · Cha mẹ buông tay để con trưởng thành",
+ "vocabCount": 45,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "一致",
+   "explain": "一致 có hai cách dùng. ① Tính từ: không có bất đồng (没有分歧), nhất trí, thống nhất — làm vị ngữ sau 意见 / 看法 / 目标, hoặc trong cụm 取得一致; phủ định: 不一致. ② Phó từ: cùng, đồng loạt (一同、一齐), đứng TRƯỚC động từ: 一致认为 / 一致同意 / 一致表示. 一 đọc yí (biến điệu trước thanh 4).",
+   "rule": "① A 跟 B + 的意见 / 看法 + (不)<strong style=\"color:var(--sky-d)\">一致</strong>　|　取得<strong style=\"color:var(--sky-d)\">一致</strong>　② (大家 / 双方) + <strong style=\"color:var(--sky-d)\">一致</strong> + 认为 / 同意 / 表示",
+   "examples": [
+    {
+     "zh": "……但文文跟他们的意见不一致，她坚持要去美国。",
+     "py": "……Dàn Wénwen gēn tāmen de yìjiàn bù yízhì, tā jiānchí yào qù Měiguó.",
+     "vn": "…Nhưng Văn Văn không cùng ý kiến với họ, cô nhất quyết muốn đi Mỹ."
+    },
+    {
+     "zh": "长期共同生活的夫妻在兴趣爱好、心理情绪上也趋于一致。",
+     "py": "Chángqī gòngtóng shēnghuó de fūqī zài xìngqù àihào, xīnlǐ qíngxù shang yě qūyú yízhì.",
+     "vn": "Những cặp vợ chồng sống chung lâu năm cũng dần giống nhau về sở thích, tâm lý và cảm xúc."
+    },
+    {
+     "zh": "专家们一致认为这是一种成功的产品，可以放心使用。",
+     "py": "Zhuānjiāmen yízhì rènwéi zhè shì yì zhǒng chénggōng de chǎnpǐn, kěyǐ fàngxīn shǐyòng.",
+     "vn": "Các chuyên gia nhất trí cho rằng đây là một sản phẩm thành công, có thể yên tâm sử dụng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他们一致意见了。",
+     "why": "一致 không mang tân ngữ. Nói 意见一致 (一致 làm vị ngữ) hoặc 取得一致.",
+     "right": "他们的意见一致了。"
+    },
+    {
+     "wrong": "大家都同意一致。",
+     "why": "一致 làm phó từ phải đứng TRƯỚC động từ.",
+     "right": "大家一致同意。"
+    }
+   ]
+  },
+  {
+   "point": "某",
+   "explain": "某 là đại từ chỉ thị. ① Chỉ người / sự vật XÁC ĐỊNH, người nói biết tên nhưng không nói ra — thường đặt sau họ: 李某, 张某; đôi khi mang sắc thái chê (有时有贬义). ② Chỉ người / sự vật KHÔNG XÁC ĐỊNH (= một … nào đó): 某种, 某人, 某一方面, 某天, 某个地方. 某 đã có nghĩa \"một … nào đó\" nên không thêm 一个 phía trước, cũng không thêm 的 phía sau.",
+   "rule": "① Họ + <strong style=\"color:var(--sky-d)\">某</strong> (李某 / 某某)　② <strong style=\"color:var(--sky-d)\">某</strong> + (一) + lượng từ + N (某种身份 / 某一方面 / 某个地方)",
+   "examples": [
+    {
+     "zh": "公司业务员李某闻之大喜，以为自己碰到了一个大买主。",
+     "py": "Gōngsī yèwùyuán Lǐ mǒu wén zhī dà xǐ, yǐwéi zìjǐ pèngdàole yí ge dà mǎizhǔ.",
+     "vn": "Nhân viên kinh doanh họ Lý của công ty nghe vậy mừng lắm, tưởng mình vớ được khách hàng lớn."
+    },
+    {
+     "zh": "人们如果长期进行某一方面的训练，就可以使大脑在某一方面的反应能力提高。",
+     "py": "Rénmen rúguǒ chángqī jìnxíng mǒu yì fāngmiàn de xùnliàn, jiù kěyǐ shǐ dànǎo zài mǒu yì fāngmiàn de fǎnyìng nénglì tígāo.",
+     "vn": "Nếu con người luyện tập lâu dài về một mặt nào đó, thì có thể làm khả năng phản ứng của não ở mặt đó được nâng cao."
+    },
+    {
+     "zh": "在这个陌生的地方，妈妈感到她们好像交换了某种身份：自己倒像女儿，而文文倒像妈妈。",
+     "py": "Zài zhège mòshēng de dìfang, māma gǎndào tāmen hǎoxiàng jiāohuànle mǒu zhǒng shēnfen: zìjǐ dào xiàng nǚ’ér, ér Wénwen dào xiàng māma.",
+     "vn": "Ở nơi xa lạ này, người mẹ cảm thấy hai mẹ con dường như đã đổi vai cho nhau: mình lại giống con gái, còn Văn Văn lại giống mẹ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "她是一个某大学的老师。",
+     "why": "某 đã mang nghĩa \"một … nào đó\", không thêm 一个 phía trước.",
+     "right": "她是某大学的老师。"
+    },
+    {
+     "wrong": "某的人告诉了我这件事。",
+     "why": "某 đứng thẳng trước danh từ / lượng từ, không thêm 的.",
+     "right": "某人告诉了我这件事。"
+    }
+   ]
+  },
+  {
+   "point": "幸亏",
+   "explain": "幸亏 là phó từ: nhờ một điều kiện thuận lợi nào đó mà TRÁNH ĐƯỢC chuyện không mong muốn (may mà, may sao). Đứng đầu vế nêu điều kiện tốt, trước hoặc sau chủ ngữ; vế sau hay có 才 / 要不然 / 不然 / 否则. Cũng có thể đứng một mình khi điều xấu đã rõ trong ngữ cảnh (幸亏那晚天色很暗). Không dùng 所以 ở vế sau.",
+   "rule": "<strong style=\"color:var(--sky-d)\">幸亏</strong> + A (điều kiện tốt)，(chủ ngữ) + 才 + B　|　<strong style=\"color:var(--sky-d)\">幸亏</strong> + A，要不然 / 否则 + B (điều xấu suýt xảy ra)",
+   "examples": [
+    {
+     "zh": "幸亏你提醒了我，我今天就去报名。",
+     "py": "Xìngkuī nǐ tíxǐngle wǒ, wǒ jīntiān jiù qù bàomíng.",
+     "vn": "May mà cậu nhắc tớ, hôm nay tớ đi đăng ký luôn."
+    },
+    {
+     "zh": "医生说这个病人是心脏问题，幸亏送来得及时。",
+     "py": "Yīshēng shuō zhège bìngrén shì xīnzàng wèntí, xìngkuī sòng lai de jíshí.",
+     "vn": "Bác sĩ nói bệnh nhân này bị bệnh tim, may mà được đưa đến kịp thời."
+    },
+    {
+     "zh": "妈妈忍不住流下了眼泪。她说：“幸亏那晚天色很暗。”",
+     "py": "Māma rěnbuzhù liúxiàle yǎnlèi. Tā shuō: “Xìngkuī nà wǎn tiānsè hěn àn.”",
+     "vn": "Người mẹ không kìm được nước mắt. Bà nói: \"May mà tối hôm đó trời rất tối.\""
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "幸亏你提醒了我，所以我没迟到。",
+     "why": "Vế sau của 幸亏 dùng 才 hoặc 要不然, không dùng 所以.",
+     "right": "幸亏你提醒了我，我才没迟到。"
+    },
+    {
+     "wrong": "幸亏了你，我才找到了工作。",
+     "why": "幸亏 là phó từ, không mang 了 + danh từ. \"Nhờ có ai\" dùng 多亏(了) + người.",
+     "right": "多亏了你，我才找到了工作。"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,250 @@
+{
+ "/lessons/hsk4-bai-17.html": {
+  "points": [
+   {
+    "title": "「倒」 — đổ / lại (trái dự đoán)",
+    "errors": [
+     { "wrong": "请给我水倒一杯。", "why": "倒 là động từ đứng TRƯỚC tân ngữ: 倒一杯水.", "right": "请给我倒一杯水。" },
+     { "wrong": "倒他比我还高。", "why": "倒 (phó từ) đứng SAU chủ ngữ.", "right": "没想到他倒比我还高。" },
+     { "wrong": "他说得倒是容易，做得倒是难。", "why": "倒是 nhượng bộ đi với 就是/可 ở vế sau.", "right": "他说得倒是容易，就是做起来难。" }
+    ],
+    "items": [
+     { "context": "倒 (dào) làm ĐỘNG TỪ: rót.", "pre": "请给我", "blank": "倒一杯水", "post": "。", "options": ["倒一杯水", "水倒一杯", "一杯水倒"], "answer": 0, "explanation": "倒 + tân ngữ." },
+     { "context": "倒 (phó từ): trái với dự đoán.", "pre": "没想到他", "blank": "倒比我还高", "post": "。", "options": ["倒比我还高", "比我倒还高", "比我还高倒"], "answer": 0, "explanation": "Chủ ngữ + 倒 + 比……还……." },
+     { "context": "倒是……，就是…… (nhượng bộ).", "pre": "这件衣服", "blank": "倒是好看，就是太贵了", "post": "。", "options": ["倒是好看，就是太贵了", "倒是好看，倒是太贵了", "好看倒是，太贵了就是"], "answer": 0, "explanation": "倒是 A，就是 B." },
+     { "context": "Ngữ khí trách móc.", "pre": "你", "blank": "说得倒容易", "post": "。", "options": ["说得倒容易", "倒说得容易的", "说得容易倒"], "answer": 0, "explanation": "说得倒容易 = nói thì dễ lắm." },
+     { "context": "“Đổ rác” cũng dùng 倒.", "pre": "你去", "blank": "倒垃圾", "post": "吧。", "options": ["倒垃圾", "垃圾倒", "倒了垃圾了吗"], "answer": 0, "explanation": "倒垃圾 = đổ rác." },
+     { "context": "“Không ngờ đồ rẻ lại tốt hơn.”", "pre": "便宜的", "blank": "倒比贵的好", "post": "。", "options": ["倒比贵的好", "比倒贵的好", "比贵的好倒"], "answer": 0, "explanation": "倒 + 比……好." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "没想到他倒比我还高。", "isCorrect": true, "explanation": "倒 sau chủ ngữ, trái dự đoán — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "请给我水倒一杯。", "isCorrect": false, "correctVersion": "请给我倒一杯水。", "explanation": "倒 đứng trước tân ngữ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件衣服倒是好看，就是太贵了。", "isCorrect": true, "explanation": "倒是……，就是…… — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Làm ơn rót cho tôi một cốc nước.”", "words": ["请", "给", "我", "倒", "一", "杯", "水", "。"], "answer": "请给我倒一杯水。", "explanation": "倒一杯水." },
+     { "type": "sort", "context": "Sắp xếp: “Không ngờ anh ấy lại cao hơn cả tôi.”", "words": ["没想到", "他", "倒", "比", "我", "还", "高", "。"], "answer": "没想到他倒比我还高。", "explanation": "倒比……还……." },
+     { "type": "sort", "context": "Sắp xếp: “Chiếc áo này đẹp thì đẹp, chỉ là đắt quá.”", "words": ["这", "件", "衣服", "倒是", "好看", "，", "就是", "太", "贵", "了", "。"], "answer": "这件衣服倒是好看，就是太贵了。", "explanation": "倒是……就是……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 倒 (động từ).", "promptLang": "vi", "prompt": "Làm ơn rót cho tôi một cốc nước.", "answer": "请给我倒一杯水。", "answerPy": "Qǐng gěi wǒ dào yì bēi shuǐ.", "explanation": "倒 + tân ngữ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 倒是……就是…….", "promptLang": "vi", "prompt": "Chiếc áo này đẹp thì đẹp, chỉ là đắt quá.", "answer": "这件衣服倒是好看，就是太贵了。", "answerPy": "Zhè jiàn yīfu dàoshì hǎokàn, jiùshì tài guì le.", "explanation": "倒是 A，就是 B." }
+    ]
+   },
+   {
+    "title": "「干」 — làm (gàn) / khô (gān)",
+    "errors": [
+     { "wrong": "你在干？", "why": "干 (làm) cần tân ngữ: 干什么.", "right": "你在干什么？" },
+     { "wrong": "把衣服晾做。", "why": "“phơi cho khô” dùng bổ ngữ 干 (gān): 晾干.", "right": "把衣服晾干。" },
+     { "wrong": "好好儿干活儿吧做。", "why": "干活儿 đã có nghĩa “làm việc”, không thêm 做.", "right": "好好儿干活儿吧。" }
+    ],
+    "items": [
+     { "context": "干 (gàn) = làm, khẩu ngữ.", "pre": "你在", "blank": "干什么", "post": "？", "options": ["干什么", "干", "什么干"], "answer": 0, "explanation": "干什么 = làm gì." },
+     { "context": "“Làm việc cho tốt vào.”", "pre": "", "blank": "好好儿干", "post": "吧。", "options": ["好好儿干", "干好好儿", "好好儿做干"], "answer": 0, "explanation": "好好儿干 = làm tốt vào." },
+     { "context": "干 (gān) = khô, làm bổ ngữ.", "pre": "把衣服", "blank": "晾干", "post": "。", "options": ["晾干", "晾做", "干晾"], "answer": 0, "explanation": "动词 + 干 (gān)." },
+     { "context": "干活儿 = làm việc (chân tay).", "pre": "他每天都", "blank": "干活儿", "post": "。", "options": ["干活儿", "活儿干", "干做活儿"], "answer": 0, "explanation": "干活儿." },
+     { "context": "干(儿) gānr = thực phẩm khô.", "pre": "我喜欢吃", "blank": "牛肉干", "post": "。", "options": ["牛肉干", "干牛肉", "牛肉做干"], "answer": 0, "explanation": "Danh từ + 干 = đồ khô." },
+     { "context": "“Lau khô bàn.”", "pre": "把桌子", "blank": "擦干", "post": "。", "options": ["擦干", "干擦", "擦干净做"], "answer": 0, "explanation": "擦干 = lau khô." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你在干什么？", "isCorrect": true, "explanation": "干什么 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你在干？", "isCorrect": false, "correctVersion": "你在干什么？", "explanation": "干 cần tân ngữ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "把衣服晾干。", "isCorrect": true, "explanation": "晾干 (gān) — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn đang làm gì đấy?”", "words": ["你", "在", "干", "什么", "？"], "answer": "你在干什么？", "explanation": "干什么？" },
+     { "type": "sort", "context": "Sắp xếp: “Phơi quần áo cho khô.”", "words": ["把", "衣服", "晾", "干", "。"], "answer": "把衣服晾干。", "explanation": "晾干." },
+     { "type": "sort", "context": "Sắp xếp: “Ngày nào anh ấy cũng làm việc.”", "words": ["他", "每天", "都", "干", "活儿", "。"], "answer": "他每天都干活儿。", "explanation": "干活儿." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 干 (gàn).", "promptLang": "vi", "prompt": "Bạn đang làm gì đấy?", "answer": "你在干什么？", "answerPy": "Nǐ zài gàn shénme?", "explanation": "干什么." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 干 (gān) làm bổ ngữ.", "promptLang": "vi", "prompt": "Phơi quần áo cho khô.", "answer": "把衣服晾干。", "answerPy": "Bǎ yīfu liàng gān.", "explanation": "晾干." }
+    ]
+   },
+   {
+    "title": "「趟」 so sánh với 「次」",
+    "errors": [
+     { "wrong": "我问了他三趟。", "why": "hành động không di chuyển (问/说/看) chỉ dùng 次.", "right": "我问了他三次。" },
+     { "wrong": "等了好几次公共汽车。（chuyến xe）", "why": "chuyến xe/tàu chạy theo tuyến dùng 趟.", "right": "等了好几趟公共汽车。" },
+     { "wrong": "我去一趟了北京。", "why": "了 đứng sau động từ: 去了一趟.", "right": "我去了一趟北京。" }
+    ],
+    "items": [
+     { "context": "Hành động ĐI–VỀ → 趟.", "pre": "我", "blank": "去了一趟北京", "post": "。", "options": ["去了一趟北京", "去一趟了北京", "去了一趟北京次"], "answer": 0, "explanation": "去/回/来 + 一趟." },
+     { "context": "Hành động KHÔNG di chuyển → chỉ 次.", "pre": "我", "blank": "问了他三次", "post": "。", "options": ["问了他三次", "问了他三趟", "三次问了他"], "answer": 0, "explanation": "问/说/看 + 次." },
+     { "context": "CHUYẾN xe theo tuyến → 趟.", "pre": "等了", "blank": "好几趟公共汽车", "post": "。", "options": ["好几趟公共汽车", "好几次公共汽车", "公共汽车好几趟了"], "answer": 0, "explanation": "趟 = chuyến (xe/tàu)." },
+     { "context": "“Đi công tác một chuyến.”", "pre": "他要", "blank": "出趟差", "post": "。", "options": ["出趟差", "出次差", "趟出差"], "answer": 0, "explanation": "出趟差." },
+     { "context": "Cả hai đều dùng được với 来/去.", "pre": "他", "blank": "来过两次", "post": "。", "options": ["来过两次", "来过两趟次", "两次来过"], "answer": 0, "explanation": "来 + 次/趟 đều được." },
+     { "context": "“Về nhà một chuyến.”", "pre": "我想", "blank": "回一趟家", "post": "。", "options": ["回一趟家", "回家一趟次", "一趟回家"], "answer": 0, "explanation": "回一趟家." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我去了一趟北京。", "isCorrect": true, "explanation": "去了一趟 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我问了他三趟。", "isCorrect": false, "correctVersion": "我问了他三次。", "explanation": "问 không đi với 趟." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "等了好几趟公共汽车。", "isCorrect": true, "explanation": "趟 = chuyến xe — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đã đi Bắc Kinh một chuyến.”", "words": ["我", "去", "了", "一", "趟", "北京", "。"], "answer": "我去了一趟北京。", "explanation": "去了一趟北京." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đã hỏi anh ấy ba lần.”", "words": ["我", "问", "了", "他", "三", "次", "。"], "answer": "我问了他三次。", "explanation": "问了他三次." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi muốn về nhà một chuyến.”", "words": ["我", "想", "回", "一", "趟", "家", "。"], "answer": "我想回一趟家。", "explanation": "回一趟家." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 趟 hay 次.", "promptLang": "vi", "prompt": "Tôi đã đi Bắc Kinh một chuyến.", "answer": "我去了一趟北京。", "answerPy": "Wǒ qù le yí tàng Běijīng.", "explanation": "Đi–về → 趟." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 趟 hay 次.", "promptLang": "vi", "prompt": "Tôi đã hỏi anh ấy ba lần.", "answer": "我问了他三次。", "answerPy": "Wǒ wèn le tā sān cì.", "explanation": "问 → 次." }
+    ]
+   },
+   {
+    "title": "「为了……而……」",
+    "errors": [
+     { "wrong": "他为了学习而。", "why": "sau 而 phải có hành động.", "right": "他为了学习而努力。" },
+     { "wrong": "他而为了健康锻炼。", "why": "为了 đứng trước mục đích, 而 đứng trước hành động.", "right": "他为了健康而锻炼。" },
+     { "wrong": "他因为健康而锻炼。", "why": "nêu MỤC ĐÍCH dùng 为了; 因……而 nêu nguyên nhân.", "right": "他为了健康而锻炼。" }
+    ],
+    "items": [
+     { "context": "“Anh ấy tập luyện vì sức khỏe.”", "pre": "他", "blank": "为了健康而锻炼", "post": "。", "options": ["为了健康而锻炼", "而为了健康锻炼", "为了锻炼而健康"], "answer": 0, "explanation": "为了 + mục đích + 而 + hành động." },
+     { "context": "Nêu NGUYÊN NHÂN → 因……而.", "pre": "他", "blank": "因生病而请假", "post": "。", "options": ["因生病而请假", "为了生病而请假", "为了请假而生病"], "answer": 0, "explanation": "因 + nguyên nhân + 而 + kết quả." },
+     { "context": "Sau 而 là HÀNH ĐỘNG.", "pre": "我们", "blank": "为了理想而奋斗", "post": "。", "options": ["为了理想而奋斗", "为了奋斗而理想", "为了理想而"], "answer": 0, "explanation": "为了……而奋斗." },
+     { "context": "为了 đứng đầu câu cũng được (không có 而).", "pre": "", "blank": "为了健康", "post": "，他每天锻炼。", "options": ["为了健康", "为了而健康", "而为了健康"], "answer": 0, "explanation": "为了 + mục đích，+ câu." },
+     { "context": "“Cô ấy làm việc vì gia đình.”", "pre": "她", "blank": "为了家人而工作", "post": "。", "options": ["为了家人而工作", "为了工作而家人", "而为了家人工作"], "answer": 0, "explanation": "为了家人而工作." },
+     { "context": "“Anh ấy học tiếng Trung để đi Trung Quốc du học.”", "pre": "他", "blank": "为了去中国留学而学汉语", "post": "。", "options": ["为了去中国留学而学汉语", "为了学汉语而去中国留学", "而为了去中国留学学汉语"], "answer": 0, "explanation": "Mục đích trước 而, hành động sau 而." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他为了健康而锻炼。", "isCorrect": true, "explanation": "为了……而…… — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他因为健康而锻炼。", "isCorrect": false, "correctVersion": "他为了健康而锻炼。", "explanation": "Mục đích dùng 为了." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他为了学习而。", "isCorrect": false, "correctVersion": "他为了学习而努力。", "explanation": "Sau 而 phải có hành động." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy tập luyện vì sức khỏe.”", "words": ["他", "为了", "健康", "而", "锻炼", "。"], "answer": "他为了健康而锻炼。", "explanation": "为了健康而锻炼." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng ta phấn đấu vì lý tưởng.”", "words": ["我们", "为了", "理想", "而", "奋斗", "。"], "answer": "我们为了理想而奋斗。", "explanation": "为了理想而奋斗." },
+     { "type": "sort", "context": "Sắp xếp: “Cô ấy làm việc vì gia đình.”", "words": ["她", "为了", "家人", "而", "工作", "。"], "answer": "她为了家人而工作。", "explanation": "为了家人而工作." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 为了……而…….", "promptLang": "vi", "prompt": "Anh ấy tập luyện vì sức khỏe.", "answer": "他为了健康而锻炼。", "answerPy": "Tā wèile jiànkāng ér duànliàn.", "explanation": "为了 + mục đích + 而 + hành động." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 为了……而…….", "promptLang": "vi", "prompt": "Chúng ta phấn đấu vì lý tưởng.", "answer": "我们为了理想而奋斗。", "answerPy": "Wǒmen wèile lǐxiǎng ér fèndòu.", "explanation": "为了理想而奋斗." }
+    ]
+   },
+   {
+    "title": "「仍然」 — vẫn",
+    "errors": [
+     { "wrong": "仍然他在工作。", "why": "仍然 là phó từ, đứng SAU chủ ngữ.", "right": "他仍然在工作。" },
+     { "wrong": "他仍然的在工作。", "why": "仍然 không thêm 的.", "right": "他仍然在工作。" },
+     { "wrong": "虽然很晚了，所以他仍然在工作。", "why": "vế nhượng bộ hô ứng bằng 但/也, không dùng 所以.", "right": "虽然很晚了，但他仍然在工作。" }
+    ],
+    "items": [
+     { "context": "“Dù đã muộn, anh ấy vẫn đang làm việc.”", "pre": "虽然很晚了，但他", "blank": "仍然在工作", "post": "。", "options": ["仍然在工作", "仍然的在工作", "在工作仍然"], "answer": 0, "explanation": "Chủ ngữ + 仍然 + động từ." },
+     { "context": "仍然 = 还是 = 依然.", "pre": "他", "blank": "仍然不同意", "post": "。", "options": ["仍然不同意", "不仍然同意", "仍然的不同意"], "answer": 0, "explanation": "仍然 + phủ định." },
+     { "context": "Kết hợp với 即使.", "pre": "即使失败了，他", "blank": "也仍然不放弃", "post": "。", "options": ["也仍然不放弃", "仍然也的不放弃", "不放弃也仍然"], "answer": 0, "explanation": "也仍然 + động từ." },
+     { "context": "Kết hợp với 尽管.", "pre": "尽管很累，她", "blank": "仍然坚持学习", "post": "。", "options": ["仍然坚持学习", "所以仍然坚持学习", "仍然的坚持学习"], "answer": 0, "explanation": "尽管……，仍然……." },
+     { "context": "“Mười năm rồi anh ấy vẫn như xưa.”", "pre": "十年过去了，他", "blank": "仍然和以前一样", "post": "。", "options": ["仍然和以前一样", "和仍然以前一样", "和以前一样仍然"], "answer": 0, "explanation": "仍然 + vị ngữ." },
+     { "context": "Khẩu ngữ hơn thì dùng 还是.", "pre": "他", "blank": "还是不同意", "post": "。", "options": ["还是不同意", "仍然还是不同意", "不还是同意"], "answer": 0, "explanation": "还是 = 仍然 (khẩu ngữ)." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "虽然很晚了，但他仍然在工作。", "isCorrect": true, "explanation": "仍然 sau chủ ngữ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "仍然他在工作。", "isCorrect": false, "correctVersion": "他仍然在工作。", "explanation": "仍然 là phó từ, đứng sau chủ ngữ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他仍然的在工作。", "isCorrect": false, "correctVersion": "他仍然在工作。", "explanation": "仍然 không thêm 的." },
+     { "type": "sort", "context": "Sắp xếp: “Dù đã muộn, anh ấy vẫn đang làm việc.”", "words": ["虽然", "很", "晚", "了", "，", "但", "他", "仍然", "在", "工作", "。"], "answer": "虽然很晚了，但他仍然在工作。", "explanation": "仍然在工作." },
+     { "type": "sort", "context": "Sắp xếp: “Dù thất bại, anh ấy vẫn không từ bỏ.”", "words": ["即使", "失败", "了", "，", "他", "也", "仍然", "不", "放弃", "。"], "answer": "即使失败了，他也仍然不放弃。", "explanation": "也仍然不放弃." },
+     { "type": "sort", "context": "Sắp xếp: “Mười năm trôi qua, anh ấy vẫn như trước.”", "words": ["十", "年", "过去", "了", "，", "他", "仍然", "和", "以前", "一样", "。"], "answer": "十年过去了，他仍然和以前一样。", "explanation": "仍然和以前一样." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 仍然.", "promptLang": "vi", "prompt": "Dù đã muộn, anh ấy vẫn đang làm việc.", "answer": "虽然很晚了，但他仍然在工作。", "answerPy": "Suīrán hěn wǎn le, dàn tā réngrán zài gōngzuò.", "explanation": "仍然 + động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 仍然.", "promptLang": "vi", "prompt": "Dù thất bại, anh ấy vẫn không từ bỏ.", "answer": "即使失败了，他也仍然不放弃。", "answerPy": "Jíshǐ shībài le, tā yě réngrán bú fàngqì.", "explanation": "也仍然不放弃." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk4-bai-18.html": {
+  "points": [
+   {
+    "title": "「是否」 — có… hay không (văn viết)",
+    "errors": [
+     { "wrong": "我不知道他是否来吗。", "why": "是否 đã mang nghĩa nghi vấn, không thêm 吗.", "right": "我不知道他是否来。" },
+     { "wrong": "我不知道是否他来。", "why": "是否 đứng SAU chủ ngữ, trước động từ.", "right": "我不知道他是否来。" },
+     { "wrong": "他是否不来？", "why": "是否 không đi với phủ định trực tiếp; dùng 是否会来.", "right": "他是否会来？" }
+    ],
+    "items": [
+     { "context": "“Tôi không biết anh ấy có đến hay không.”", "pre": "我不知道他", "blank": "是否来", "post": "。", "options": ["是否来", "是否来吗", "来是否"], "answer": 0, "explanation": "Chủ ngữ + 是否 + động từ." },
+     { "context": "是否 = 是不是 (văn viết).", "pre": "请问你", "blank": "是否同意", "post": "？", "options": ["是否同意", "是否同意吗", "同意是否"], "answer": 0, "explanation": "是否 + động từ." },
+     { "context": "Mệnh đề 是否 làm chủ ngữ.", "pre": "", "blank": "婚姻是否幸福", "post": "跟钱没有关系。", "options": ["婚姻是否幸福", "是否婚姻幸福", "婚姻幸福是否"], "answer": 0, "explanation": "Danh từ + 是否 + tính từ." },
+     { "context": "Khẩu ngữ thì dùng 是不是.", "pre": "你", "blank": "是不是不舒服", "post": "？", "options": ["是不是不舒服", "是否不舒服吗", "是否是不是不舒服"], "answer": 0, "explanation": "是不是 (khẩu ngữ) = 是否 (văn viết)." },
+     { "context": "“Hãy kiểm tra xem thông tin có chính xác không.”", "pre": "请检查信息", "blank": "是否正确", "post": "。", "options": ["是否正确", "是否正确吗", "正确是否"], "answer": 0, "explanation": "查/看 + ……是否……." },
+     { "context": "Không thêm 吗 sau mệnh đề 是否.", "pre": "我想知道你", "blank": "是否有时间", "post": "。", "options": ["是否有时间", "是否有时间吗", "有时间是否"], "answer": 0, "explanation": "是否 đã đủ nghĩa nghi vấn." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我不知道他是否来。", "isCorrect": true, "explanation": "Chủ ngữ + 是否 + động từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我不知道他是否来吗。", "isCorrect": false, "correctVersion": "我不知道他是否来。", "explanation": "Không thêm 吗." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我不知道是否他来。", "isCorrect": false, "correctVersion": "我不知道他是否来。", "explanation": "是否 đứng sau chủ ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không biết anh ấy có đến hay không.”", "words": ["我", "不", "知道", "他", "是否", "来", "。"], "answer": "我不知道他是否来。", "explanation": "他是否来." },
+     { "type": "sort", "context": "Sắp xếp: “Hôn nhân có hạnh phúc hay không không liên quan đến tiền.”", "words": ["婚姻", "是否", "幸福", "跟", "钱", "没有", "关系", "。"], "answer": "婚姻是否幸福跟钱没有关系。", "explanation": "Mệnh đề 是否 làm chủ ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Hãy kiểm tra xem thông tin có chính xác không.”", "words": ["请", "检查", "信息", "是否", "正确", "。"], "answer": "请检查信息是否正确。", "explanation": "检查……是否正确." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 是否.", "promptLang": "vi", "prompt": "Tôi không biết anh ấy có đến hay không.", "answer": "我不知道他是否来。", "answerPy": "Wǒ bù zhīdào tā shìfǒu lái.", "explanation": "是否 + động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 是否.", "promptLang": "vi", "prompt": "Hãy kiểm tra xem thông tin có chính xác không.", "answer": "请检查信息是否正确。", "answerPy": "Qǐng jiǎnchá xìnxī shìfǒu zhèngquè.", "explanation": "检查……是否……." }
+    ]
+   },
+   {
+    "title": "「受不了」 — chịu không nổi",
+    "errors": [
+     { "wrong": "我不受了你。", "why": "dạng đúng là 受不了 (bổ ngữ khả năng phủ định).", "right": "我受不了你。" },
+     { "wrong": "我受得不了。", "why": "khẳng định là 受得了, phủ định là 受不了, không trộn.", "right": "我受不了。" },
+     { "wrong": "这个天气受不了我。", "why": "chủ ngữ là người chịu đựng.", "right": "我受不了这个天气。" }
+    ],
+    "items": [
+     { "context": "“Tôi chịu không nổi thời tiết này.”", "pre": "我", "blank": "受不了这个天气", "post": "。", "options": ["受不了这个天气", "不受了这个天气", "受得不了这个天气"], "answer": 0, "explanation": "受不了 + tân ngữ." },
+     { "context": "Khẳng định: 受得了.", "pre": "这点儿苦我", "blank": "受得了", "post": "。", "options": ["受得了", "受得不了", "不受了"], "answer": 0, "explanation": "受得了 = chịu được." },
+     { "context": "受不了 đứng ĐỘC LẬP.", "pre": "眼睛实在", "blank": "受不了", "post": "了。", "options": ["受不了", "不受了", "受不了的了"], "answer": 0, "explanation": "实在受不了了." },
+     { "context": "“Tôi chịu không nổi tính khí của anh ấy.”", "pre": "我", "blank": "受不了他的脾气", "post": "。", "options": ["受不了他的脾气", "他的脾气受不了我", "受他的脾气不了"], "answer": 0, "explanation": "受不了 + cụm danh từ." },
+     { "context": "Câu hỏi.", "pre": "你", "blank": "受得了吗", "post": "？", "options": ["受得了吗", "受不了吗得", "受得了不了吗"], "answer": 0, "explanation": "受得了吗？" },
+     { "context": "Thêm 真/实在 nhấn mạnh.", "pre": "我", "blank": "真受不了", "post": "这么热的天。", "options": ["真受不了", "受真不了", "真不受了"], "answer": 0, "explanation": "真受不了." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我受不了这个天气。", "isCorrect": true, "explanation": "受不了 + tân ngữ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我不受了你。", "isCorrect": false, "correctVersion": "我受不了你。", "explanation": "Dạng đúng là 受不了." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我受得不了。", "isCorrect": false, "correctVersion": "我受不了。", "explanation": "Không trộn 得 và 不." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi chịu không nổi thời tiết này.”", "words": ["我", "受不了", "这个", "天气", "。"], "answer": "我受不了这个天气。", "explanation": "受不了 + tân ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Chút khổ này tôi chịu được.”", "words": ["这点儿", "苦", "我", "受得了", "。"], "answer": "这点儿苦我受得了。", "explanation": "受得了." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi thật sự chịu không nổi tính khí của anh ấy.”", "words": ["我", "真", "受不了", "他", "的", "脾气", "。"], "answer": "我真受不了他的脾气。", "explanation": "真受不了." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 受不了.", "promptLang": "vi", "prompt": "Tôi chịu không nổi thời tiết này.", "answer": "我受不了这个天气。", "answerPy": "Wǒ shòubuliǎo zhège tiānqì.", "explanation": "受不了 + tân ngữ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 受得了.", "promptLang": "vi", "prompt": "Chút khổ này tôi chịu được.", "answer": "这点儿苦我受得了。", "answerPy": "Zhè diǎnr kǔ wǒ shòudeliǎo.", "explanation": "受得了." }
+    ]
+   },
+   {
+    "title": "「接着」 so sánh với 「然后」",
+    "errors": [
+     { "wrong": "我说完了，你然后说吧。", "why": "chủ ngữ KHÁC nhau và nối tiếp ngay thì dùng 接着.", "right": "我说完了，你接着说吧。" },
+     { "wrong": "先吃饭，接着再看电影。", "why": "cấu trúc 先……然后再…… dùng 然后.", "right": "先吃饭，然后再看电影。" },
+     { "wrong": "接着，他工作了一年，又考上了研究生。", "why": "接着 đứng ở vế SAU.", "right": "他工作了一年，接着又考上了研究生。" }
+    ],
+    "items": [
+     { "context": "Chủ ngữ KHÁC nhau, nối tiếp ngay → 接着.", "pre": "我说完了，你", "blank": "接着说吧", "post": "。", "options": ["接着说吧", "然后说吧", "说接着吧"], "answer": 0, "explanation": "接着 là phó từ, đứng sau chủ ngữ." },
+     { "context": "Cấu trúc 先……然后再…….", "pre": "先吃饭，", "blank": "然后再看电影", "post": "。", "options": ["然后再看电影", "接着再看电影", "再然后看电影"], "answer": 0, "explanation": "先……然后（再）……." },
+     { "context": "接着 = tiếp tục.", "pre": "我", "blank": "接着看", "post": "。", "options": ["接着看", "然后看", "看接着"], "answer": 0, "explanation": "接着 + động từ = tiếp tục làm." },
+     { "context": "Cả hai đều dùng được ở đây.", "pre": "他工作了一年，", "blank": "接着又考上了研究生", "post": "。", "options": ["接着又考上了研究生", "接着先考上了研究生", "又接着考上了研究生"], "answer": 0, "explanation": "接着又 + động từ." },
+     { "context": "接着 đứng ở vế SAU.", "pre": "", "blank": "他先做完作业，接着又复习了", "post": "。", "options": ["他先做完作业，接着又复习了", "接着他先做完作业，又复习了", "他接着先做完作业又复习了"], "answer": 0, "explanation": "先……，接着……." },
+     { "context": "“Nghe xong, cô ấy liền khóc ngay.”", "pre": "听完，她", "blank": "接着就哭了", "post": "。", "options": ["接着就哭了", "然后先哭了", "哭了接着就"], "answer": 0, "explanation": "接着就 = ngay sau đó liền." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我说完了，你接着说吧。", "isCorrect": true, "explanation": "接着 với chủ ngữ khác — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "先吃饭，接着再看电影。", "isCorrect": false, "correctVersion": "先吃饭，然后再看电影。", "explanation": "先……然后再……." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他工作了一年，接着又考上了研究生。", "isCorrect": true, "explanation": "接着又 — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi nói xong rồi, bạn nói tiếp đi.”", "words": ["我", "说", "完", "了", "，", "你", "接着", "说", "吧", "。"], "answer": "我说完了，你接着说吧。", "explanation": "你接着说吧." },
+     { "type": "sort", "context": "Sắp xếp: “Ăn cơm trước, sau đó xem phim.”", "words": ["先", "吃饭", "，", "然后", "再", "看", "电影", "。"], "answer": "先吃饭，然后再看电影。", "explanation": "先……然后再……." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy làm việc một năm, sau đó lại thi đỗ cao học.”", "words": ["他", "工作", "了", "一", "年", "，", "接着", "又", "考", "上", "了", "研究生", "。"], "answer": "他工作了一年，接着又考上了研究生。", "explanation": "接着又考上了." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 接着 hay 然后.", "promptLang": "vi", "prompt": "Tôi nói xong rồi, bạn nói tiếp đi.", "answer": "我说完了，你接着说吧。", "answerPy": "Wǒ shuō wán le, nǐ jiēzhe shuō ba.", "explanation": "Chủ ngữ khác, nối tiếp → 接着." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 接着 hay 然后.", "promptLang": "vi", "prompt": "Ăn cơm trước, sau đó xem phim.", "answer": "先吃饭，然后再看电影。", "answerPy": "Xiān chīfàn, ránhòu zài kàn diànyǐng.", "explanation": "先……然后再……." }
+    ]
+   },
+   {
+    "title": "「除此以外」 — ngoài điều này ra",
+    "errors": [
+     { "wrong": "除此以外这个。", "why": "此 đã chỉ nội dung phía trước, không thêm 这个.", "right": "除此以外，……" },
+     { "wrong": "除此以外，我没有。", "why": "vế sau thường có 还/也 hoặc phủ định 再……", "right": "除此以外，我没有别的要求。" },
+     { "wrong": "除此以外，他会说汉语。（chưa nêu nội dung trước）", "why": "除此以外 phải đứng SAU nội dung đã nêu.", "right": "他会说英语。除此以外，他还会说汉语。" }
+    ],
+    "items": [
+     { "context": "除此以外 đứng SAU nội dung đã nêu.", "pre": "他会说英语。", "blank": "除此以外，他还会说汉语", "post": "。", "options": ["除此以外，他还会说汉语", "除此以外这个，他会说汉语", "他还会说汉语，除此以外"], "answer": 0, "explanation": "A。除此以外，还 B." },
+     { "context": "Vế sau có 还/也.", "pre": "我喜欢看书。除此以外，", "blank": "我也喜欢运动", "post": "。", "options": ["我也喜欢运动", "我喜欢运动也", "也我喜欢运动"], "answer": 0, "explanation": "除此以外，也……." },
+     { "context": "Vế sau phủ định: 再……不……", "pre": "我只有这一个要求，", "blank": "除此以外再没有别的", "post": "。", "options": ["除此以外再没有别的", "除此以外还有别的吗", "除此以外这个再没有"], "answer": 0, "explanation": "除此以外再没有……." },
+     { "context": "Nghĩa tương đương trong khẩu ngữ.", "pre": "", "blank": "除了这个以外", "post": "，还有别的问题吗？", "options": ["除了这个以外", "除此这个以外", "除以外此"], "answer": 0, "explanation": "除此以外 = 除了这个以外." },
+     { "context": "“Đây là nguyên nhân chính, ngoài ra không còn gì khác.”", "pre": "这是主要原因，", "blank": "除此以外没有别的", "post": "。", "options": ["除此以外没有别的", "除此以外这个没有别的", "没有别的除此以外"], "answer": 0, "explanation": "除此以外没有别的." },
+     { "context": "“Cô ấy học rất giỏi. Ngoài ra, cô ấy còn hát rất hay.”", "pre": "她学习很好。", "blank": "除此以外，她还唱歌很好听", "post": "。", "options": ["除此以外，她还唱歌很好听", "除此以外这个，她唱歌很好听", "她还唱歌很好听，除此以外"], "answer": 0, "explanation": "除此以外，还……." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他会说英语。除此以外，他还会说汉语。", "isCorrect": true, "explanation": "除此以外 sau nội dung đã nêu — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "除此以外这个，他会说汉语。", "isCorrect": false, "correctVersion": "除此以外，他还会说汉语。", "explanation": "Không thêm 这个 sau 此." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我只有这一个要求，除此以外再没有别的。", "isCorrect": true, "explanation": "除此以外再没有…… — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy biết tiếng Anh. Ngoài ra, anh ấy còn biết tiếng Trung.”", "words": ["他", "会", "说", "英语", "。", "除此以外", "，", "他", "还", "会", "说", "汉语", "。"], "answer": "他会说英语。除此以外，他还会说汉语。", "explanation": "除此以外，还……." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi thích đọc sách. Ngoài ra, tôi cũng thích thể thao.”", "words": ["我", "喜欢", "看书", "。", "除此以外", "，", "我", "也", "喜欢", "运动", "。"], "answer": "我喜欢看书。除此以外，我也喜欢运动。", "explanation": "除此以外，也……." },
+     { "type": "sort", "context": "Sắp xếp: “Đây là nguyên nhân chính, ngoài ra không có gì khác.”", "words": ["这", "是", "主要", "原因", "，", "除此以外", "没有", "别的", "。"], "answer": "这是主要原因，除此以外没有别的。", "explanation": "除此以外没有别的." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 除此以外.", "promptLang": "vi", "prompt": "Anh ấy biết tiếng Anh. Ngoài ra, anh ấy còn biết tiếng Trung.", "answer": "他会说英语。除此以外，他还会说汉语。", "answerPy": "Tā huì shuō Yīngyǔ. Chú cǐ yǐwài, tā hái huì shuō Hànyǔ.", "explanation": "除此以外，还……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 除此以外.", "promptLang": "vi", "prompt": "Tôi thích đọc sách. Ngoài ra, tôi cũng thích thể thao.", "answer": "我喜欢看书。除此以外，我也喜欢运动。", "answerPy": "Wǒ xǐhuan kàn shū. Chú cǐ yǐwài, wǒ yě xǐhuan yùndòng.", "explanation": "除此以外，也……." }
+    ]
+   },
+   {
+    "title": "「把……叫作……」 — gọi … là …",
+    "errors": [
+     { "wrong": "人们叫作这种花“月季”。", "why": "sự vật phải đưa lên sau 把.", "right": "人们把这种花叫作“月季”。" },
+     { "wrong": "人们把这种花叫“月季”作。", "why": "叫作 đi liền nhau, tên gọi đứng sau.", "right": "人们把这种花叫作“月季”。" },
+     { "wrong": "人们把这种花当作“月季”。", "why": "当作 = coi là; đặt TÊN GỌI thì dùng 叫作.", "right": "人们把这种花叫作“月季”。" }
+    ],
+    "items": [
+     { "context": "“Người ta gọi loài hoa này là ‘nguyệt quý’.”", "pre": "人们", "blank": "把这种花叫作“月季”", "post": "。", "options": ["把这种花叫作“月季”", "叫作这种花“月季”", "把这种花叫“月季”作"], "answer": 0, "explanation": "把 + sự vật + 叫作 + tên." },
+     { "context": "Đặt TÊN GỌI → 叫作; coi là → 当作.", "pre": "我们", "blank": "把他当作朋友", "post": "。", "options": ["把他当作朋友", "把他叫作朋友", "叫作他朋友"], "answer": 0, "explanation": "当作 = coi là." },
+     { "context": "“Người Trung Quốc gọi ngày này là Tết Trung thu.”", "pre": "中国人", "blank": "把这一天叫作中秋节", "post": "。", "options": ["把这一天叫作中秋节", "叫作这一天中秋节", "把中秋节叫作这一天"], "answer": 0, "explanation": "把 + ngày + 叫作 + tên." },
+     { "context": "“Mọi người gọi cậu ấy là ‘Tiểu Hổ’.”", "pre": "大家", "blank": "把他叫作“小虎”", "post": "。", "options": ["把他叫作“小虎”", "叫作他“小虎”", "把“小虎”叫作他"], "answer": 0, "explanation": "把 + người + 叫作 + biệt danh." },
+     { "context": "Dạng bị động tương đương.", "pre": "这种花", "blank": "被叫作“月季”", "post": "。", "options": ["被叫作“月季”", "把叫作“月季”", "叫作被“月季”"], "answer": 0, "explanation": "A 被叫作 B." },
+     { "context": "“Chúng tôi gọi phòng này là ‘phòng đọc sách’.”", "pre": "我们", "blank": "把这个房间叫作“书房”", "post": "。", "options": ["把这个房间叫作“书房”", "叫作这个房间“书房”", "把“书房”叫作这个房间"], "answer": 0, "explanation": "把 + sự vật + 叫作 + tên." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "人们把这种花叫作“月季”。", "isCorrect": true, "explanation": "把……叫作…… — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "人们叫作这种花“月季”。", "isCorrect": false, "correctVersion": "人们把这种花叫作“月季”。", "explanation": "Sự vật đưa lên sau 把." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们把他当作朋友。", "isCorrect": true, "explanation": "当作 = coi là — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Người ta gọi loài hoa này là ‘nguyệt quý’.”", "words": ["人们", "把", "这", "种", "花", "叫作", "“月季”", "。"], "answer": "人们把这种花叫作“月季”。", "explanation": "把……叫作……." },
+     { "type": "sort", "context": "Sắp xếp: “Người Trung Quốc gọi ngày này là Tết Trung thu.”", "words": ["中国人", "把", "这", "一", "天", "叫作", "中秋节", "。"], "answer": "中国人把这一天叫作中秋节。", "explanation": "把……叫作中秋节." },
+     { "type": "sort", "context": "Sắp xếp: “Mọi người gọi cậu ấy là ‘Tiểu Hổ’.”", "words": ["大家", "把", "他", "叫作", "“小虎”", "。"], "answer": "大家把他叫作“小虎”。", "explanation": "把他叫作……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 把……叫作…….", "promptLang": "vi", "prompt": "Người Trung Quốc gọi ngày này là Tết Trung thu.", "answer": "中国人把这一天叫作中秋节。", "answerPy": "Zhōngguórén bǎ zhè yì tiān jiàozuò Zhōngqiūjié.", "explanation": "把 + ngày + 叫作 + tên." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 把……叫作…….", "promptLang": "vi", "prompt": "Mọi người gọi cậu ấy là ‘Tiểu Hổ’.", "answer": "大家把他叫作“小虎”。", "answerPy": "Dàjiā bǎ tā jiàozuò “Xiǎohǔ”.", "explanation": "把 + người + 叫作 + biệt danh." }
+    ]
+   }
+  ]
+ }
+}

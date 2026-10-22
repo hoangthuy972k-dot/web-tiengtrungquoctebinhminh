@@ -1,0 +1,921 @@
+[
+ {
+  "so": "1",
+  "ten": "「唯独」",
+  "tenVn": "",
+  "cauTruc": [
+   "……都……，唯独 + N / Đại từ + ……",
+   "……，唯独 + mệnh đề (ngoại lệ đối lập)"
+  ],
+  "giaiThich": "唯独 là PHÓ TỪ, nghĩa là \"chỉ riêng, duy chỉ\" (= 只是、单单). Phía trước (câu trên) thường có nội dung đối lập: nêu tình hình chung của cả nhóm (都……), rồi 唯独 tách riêng MỘT trường hợp ngoại lệ ra. 唯独 đứng trước danh từ / đại từ hoặc cả một mệnh đề.",
+  "viDu": [
+   {
+    "zh": "那次旅行大家都去了，唯独你没有去成。",
+    "py": "Nà cì lǚxíng dàjiā dōu qù le, wéidú nǐ méiyǒu qùchéng.",
+    "vn": "Chuyến du lịch lần đó mọi người đều đi, chỉ có cậu là không đi được."
+   },
+   {
+    "zh": "中国的传统节日都是喜气洋洋的，唯独清明节，庄严而伤感。",
+    "py": "Zhōngguó de chuántǒng jiérì dōu shì xǐqì yángyáng de, wéidú Qīngmíng Jié, zhuāngyán ér shānggǎn.",
+    "vn": "Các ngày lễ truyền thống của Trung Quốc đều rộn ràng vui tươi, chỉ riêng Tết Thanh minh là trang nghiêm và buồn thương."
+   },
+   {
+    "zh": "正想着，赵姐已经坐在那儿开始自己享受，唯独剩下我和我的搭档——与我同一天就职的小林。",
+    "py": "Zhèng xiǎngzhe, Zhào jiě yǐjīng zuò zài nàr kāishǐ zìjǐ xiǎngshòu, wéidú shèngxià wǒ hé wǒ de dādàng — yǔ wǒ tóng yì tiān jiùzhí de Xiǎo Lín.",
+    "vn": "Đang nghĩ thì chị Triệu đã ngồi đó tự thưởng thức, chỉ còn lại tôi và cộng sự của tôi — Tiểu Lâm, người nhận việc cùng ngày với tôi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "唯独大家都去了，你没去。",
+    "why": "唯独 phải đứng ở vế nêu NGOẠI LỆ, không đứng ở vế nêu tình hình chung.",
+    "dung": "大家都去了，唯独你没去。"
+   },
+   {
+    "sai": "他唯独会说汉语。",
+    "why": "Không có tình hình chung để đối lập thì dùng 只; 唯独 cần câu trên nêu \"tất cả / những cái khác\".",
+    "dung": "别的外语他都不会，唯独会说汉语。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "同学们都交了作业，",
+       "小王没交。"
+      ],
+      "dap": [
+       [
+        "唯独"
+       ]
+      ],
+      "chon": [
+       "唯独",
+       "单独",
+       "独自"
+      ],
+      "goiY": "\"Các bạn đều nộp bài, chỉ riêng Tiểu Vương không nộp.\"",
+      "giai": "Vế trước có 都 (tình hình chung), vế sau tách riêng ngoại lệ → 唯独. 单独 = riêng lẻ, 独自 = một mình."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "别的菜我都爱吃，",
+       "不喜欢苦瓜。"
+      ],
+      "dap": [
+       [
+        "唯独"
+       ]
+      ],
+      "chon": [
+       "唯独",
+       "明明",
+       "大不了"
+      ],
+      "goiY": "\"Món khác tôi đều thích, chỉ riêng mướp đắng là không.\"",
+      "giai": "……都……，唯独…… — ngoại lệ đối lập với \"đều thích\"."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家都下班了，",
+       "他还在办公室里加班。"
+      ],
+      "dap": [
+       [
+        "唯独"
+       ]
+      ],
+      "chon": [
+       "唯独",
+       "独自",
+       "孤独"
+      ],
+      "goiY": "\"Mọi người đều tan làm rồi, chỉ có anh ấy còn tăng ca trong văn phòng.\"",
+      "giai": "唯独 + người + hành động khác mọi người. 孤独 là tính từ \"cô đơn\"."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "全家人都同意了，",
+       "爸爸反对。"
+      ],
+      "dap": [
+       [
+        "唯独"
+       ]
+      ],
+      "chon": [
+       "唯独",
+       "单独",
+       "明明"
+      ],
+      "goiY": "\"Cả nhà đều đồng ý, chỉ có bố phản đối.\"",
+      "giai": "Ngoại lệ đối lập với \"cả nhà đều\" → 唯独."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这几门课我都考得不错，",
+       "数学没及格。"
+      ],
+      "dap": [
+       [
+        "唯独"
+       ]
+      ],
+      "chon": [
+       "唯独",
+       "大不了",
+       "成天"
+      ],
+      "goiY": "\"Mấy môn này tôi đều thi khá, chỉ riêng toán không qua.\"",
+      "giai": "唯独 + môn học + kết quả trái ngược."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "赵姐给大家都沏了茶，",
+       "剩下我和小林。"
+      ],
+      "dap": [
+       [
+        "唯独"
+       ]
+      ],
+      "chon": [
+       "唯独",
+       "单独",
+       "独自"
+      ],
+      "goiY": "\"Chị Triệu pha trà cho mọi người, chỉ còn lại tôi và Tiểu Lâm.\" (ý bài khoá)",
+      "giai": "唯独剩下 = chỉ còn lại (bị bỏ sót) — cụm trong bài khoá."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "大家都去了",
+       "，",
+       "唯独",
+       "你",
+       "没有去成"
+      ],
+      "dap": [
+       "大家都去了，唯独你没有去成。"
+      ],
+      "goiY": "Mọi người đều đi, chỉ có cậu không đi được.",
+      "giai": "Vế chung trước, 唯独 + người + ngoại lệ sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "唯独",
+       "他",
+       "成天",
+       "玩手机",
+       "同学们都在复习",
+       "，"
+      ],
+      "dap": [
+       "同学们都在复习，唯独他成天玩手机。"
+      ],
+      "goiY": "Các bạn đều đang ôn bài, chỉ riêng cậu ta suốt ngày chơi điện thoại.",
+      "giai": "唯独 đứng đầu vế ngoại lệ, trước chủ ngữ 他; 成天 đứng trước động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "唯独",
+       "对汉语",
+       "格外用心",
+       "他",
+       "，",
+       "对什么都不在意"
+      ],
+      "dap": [
+       "他对什么都不在意，唯独对汉语格外用心。"
+      ],
+      "goiY": "Cậu ấy chẳng để tâm đến gì, chỉ riêng tiếng Trung là đặc biệt chú tâm.",
+      "giai": "唯独 có thể đứng trước cụm giới từ (对汉语)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "大家都同意了，唯独他一个人反对。",
+      "dung": true,
+      "giai": "Vế chung + 唯独 + ngoại lệ — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "唯独大家都去了，你没去。",
+      "dung": false,
+      "sua": "大家都去了，唯独你没去。",
+      "giai": "唯独 phải đứng ở vế nêu ngoại lệ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他唯独会说汉语。",
+      "dung": false,
+      "sua": "别的外语他都不会，唯独会说汉语。",
+      "giai": "Thiếu vế tình hình chung để đối lập; không có vế đó thì dùng 只."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Mọi người đều đến rồi, chỉ có cậu ấy chưa đến.",
+      "dap": [
+       "大家都来了，唯独他还没来。",
+       "大家都到了，唯独他还没到。",
+       "大家都来了，唯独他没来。"
+      ],
+      "py": "Dàjiā dōu lái le, wéidú tā hái méi lái.",
+      "goiY": "Dịch sang tiếng Trung, dùng 唯独.",
+      "giai": "……都……，唯独 + người + ngoại lệ."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Món nào tôi cũng thích ăn, chỉ riêng mướp đắng thì không.",
+      "dap": [
+       "什么菜我都爱吃，唯独不喜欢苦瓜。",
+       "什么菜我都喜欢吃，唯独不喜欢苦瓜。",
+       "什么菜我都爱吃，唯独苦瓜不喜欢。"
+      ],
+      "py": "Shénme cài wǒ dōu ài chī, wéidú bù xǐhuan kǔguā.",
+      "goiY": "Dịch sang tiếng Trung, dùng 什么……都…… và 唯独.",
+      "giai": "Đại từ nghi vấn + 都 nêu tình hình chung, 唯独 nêu ngoại lệ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我上学的时候，哪门功课都好，＿＿＿。",
+      "goiY": "chỉ riêng một môn là không tốt (dùng 唯独) — 练一练 (1) của sách",
+      "mau": "我上学的时候，哪门功课都好，唯独体育不太好。",
+      "can": [
+       [
+        "唯独"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "说理、鼓励、引导、表扬，什么样的教育方式都可以尝试，＿＿＿。",
+      "goiY": "chỉ riêng đánh mắng là không được (dùng 唯独) — 练一练 (2) của sách",
+      "mau": "说理、鼓励、引导、表扬，什么样的教育方式都可以尝试，唯独打骂不行。",
+      "can": [
+       [
+        "唯独"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他对什么都不在意，＿＿＿，他格外用心。",
+      "goiY": "chỉ riêng một việc là cậu ấy đặc biệt chú tâm (dùng 唯独) — 练一练 (3) của sách",
+      "mau": "他对什么都不在意，唯独对学习汉语，他格外用心。",
+      "can": [
+       [
+        "唯独"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「明明」",
+  "tenVn": "",
+  "cauTruc": [
+   "明明 + (是) + sự thật，却 / 还……",
+   "明明 + sự thật，怎么 / 为什么 / 哪里……？ (câu hỏi ngược)"
+  ],
+  "giaiThich": "明明 là PHÓ TỪ, biểu thị sự việc rất rõ ràng, hiển nhiên là như vậy. Trước hoặc sau vế có 明明 thường là một câu hỏi ngược (反问) hoặc một vế chuyển ý (却, 还, 怎么……) — người nói trách móc, phản bác vì người kia nói / làm trái với sự thật đó. Dùng nhiều trong khẩu ngữ.",
+  "viDu": [
+   {
+    "zh": "你唱的明明是流行歌曲，哪里是京剧啊？",
+    "py": "Nǐ chàng de míngmíng shì liúxíng gēqǔ, nǎlǐ shì jīngjù a?",
+    "vn": "Cái cậu hát rõ ràng là nhạc pop, đâu phải kinh kịch?"
+   },
+   {
+    "zh": "明明是你把书弄丢了，还说不知道，真不像话！",
+    "py": "Míngmíng shì nǐ bǎ shū nòngdiū le, hái shuō bù zhīdào, zhēn búxiànghuà!",
+    "vn": "Rõ ràng là cậu làm mất sách, còn bảo không biết, thật quá đáng!"
+   },
+   {
+    "zh": "哼，太不像话了，明明是在欺负人。",
+    "py": "Hng, tài búxiànghuà le, míngmíng shì zài qīfu rén.",
+    "vn": "Hừ, quá lắm rồi, rõ ràng là đang bắt nạt người ta."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "你知道明明，为什么不告诉我？",
+    "why": "Phó từ 明明 đứng TRƯỚC động từ, không đứng sau.",
+    "dung": "你明明知道，为什么不告诉我？"
+   },
+   {
+    "sai": "今天明明很冷，所以我穿了大衣。",
+    "why": "明明 không dùng để nêu nguyên nhân bình thường; nó cần vế trái ngược / câu hỏi ngược đi kèm.",
+    "dung": "今天明明很冷，你怎么只穿了一件衬衫？"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "你",
+       "看见我了，为什么说没看见？"
+      ],
+      "dap": [
+       [
+        "明明"
+       ]
+      ],
+      "chon": [
+       "明明",
+       "明显",
+       "明白"
+      ],
+      "goiY": "\"Cậu rõ ràng đã thấy tớ, sao lại nói không thấy?\"",
+      "giai": "明明 (phó từ) đứng trước động từ, vế sau là câu hỏi ngược. 明显 là tính từ, 明白 = hiểu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "是你把书弄丢了，还说不知道。"
+      ],
+      "dap": [
+       [
+        "明明"
+       ]
+      ],
+      "chon": [
+       "明明",
+       "唯独",
+       "大不了"
+      ],
+      "goiY": "\"Rõ ràng là cậu làm mất sách, còn bảo không biết.\"",
+      "giai": "明明是 + sự thật, 还 + lời chối — câu mẫu trong sách."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们",
+       "说好了七点见，他怎么到现在还没来？"
+      ],
+      "dap": [
+       [
+        "明明"
+       ]
+      ],
+      "chon": [
+       "明明",
+       "明显",
+       "光明"
+      ],
+      "goiY": "\"Chúng tôi rõ ràng đã hẹn bảy giờ gặp, sao đến giờ cậu ta vẫn chưa tới?\"",
+      "giai": "明明 + sự thật (đã hẹn), 怎么……还没…… trách móc."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这道题",
+       "很简单，你怎么又做错了？"
+      ],
+      "dap": [
+       [
+        "明明"
+       ]
+      ],
+      "chon": [
+       "明明",
+       "唯独",
+       "成天"
+      ],
+      "goiY": "\"Bài này rõ ràng rất dễ, sao cậu lại làm sai?\"",
+      "giai": "明明 + tính từ (很简单), vế sau câu hỏi ngược."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你",
+       "知道他不吃辣，为什么还点这个菜？"
+      ],
+      "dap": [
+       [
+        "明明"
+       ]
+      ],
+      "chon": [
+       "明明",
+       "明白",
+       "明显"
+      ],
+      "goiY": "\"Cậu rõ ràng biết anh ấy không ăn cay, sao còn gọi món này?\"",
+      "giai": "明明知道……，为什么还…… — khung câu rất hay gặp."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "哼，太不像话了，",
+       "是在欺负人。"
+      ],
+      "dap": [
+       [
+        "明明"
+       ]
+      ],
+      "chon": [
+       "明明",
+       "大不了",
+       "唯独"
+      ],
+      "goiY": "\"Hừ, quá lắm rồi, rõ ràng là đang bắt nạt người ta.\" (câu bài khoá)",
+      "giai": "明明是 + sự việc đang xảy ra (在欺负人)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "明明",
+       "知道",
+       "，",
+       "为什么不告诉我"
+      ],
+      "dap": [
+       "你明明知道，为什么不告诉我？"
+      ],
+      "goiY": "Cậu rõ ràng biết, sao không nói với tớ?",
+      "giai": "Chủ ngữ + 明明 + động từ; vế sau câu hỏi ngược."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "明明",
+       "是",
+       "流行歌曲",
+       "你唱的",
+       "，",
+       "哪里是京剧啊"
+      ],
+      "dap": [
+       "你唱的明明是流行歌曲，哪里是京剧啊？"
+      ],
+      "goiY": "Cái cậu hát rõ là nhạc pop, đâu phải kinh kịch?",
+      "giai": "Chủ ngữ (你唱的) + 明明是 + sự thật; 哪里是……啊 phản bác."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "却",
+       "不承认",
+       "明明",
+       "是他的错",
+       "，"
+      ],
+      "dap": [
+       "明明是他的错，却不承认。"
+      ],
+      "goiY": "Rõ ràng là lỗi của cậu ta, vậy mà không nhận.",
+      "giai": "明明……，却…… — vế sau trái với sự thật."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你明明看见了，怎么非说没看见？",
+      "dung": true,
+      "giai": "明明 + sự thật, vế sau câu hỏi ngược — đúng (câu 练一练 của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你知道明明，为什么不告诉我？",
+      "dung": false,
+      "sua": "你明明知道，为什么不告诉我？",
+      "giai": "明明 là phó từ, đứng trước động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "今天明明很冷，所以我穿了大衣。",
+      "dung": false,
+      "sua": "今天明明很冷，你怎么只穿了一件衬衫？",
+      "giai": "明明 cần vế trái ngược / câu hỏi ngược, không dùng với 所以 nêu kết quả bình thường."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cậu rõ ràng biết, sao không nói với tớ?",
+      "dap": [
+       "你明明知道，为什么不告诉我？",
+       "你明明知道，怎么不告诉我？",
+       "你明明知道，为什么没告诉我？"
+      ],
+      "py": "Nǐ míngmíng zhīdào, wèi shénme bú gàosu wǒ?",
+      "goiY": "Dịch sang tiếng Trung, dùng 明明.",
+      "giai": "明明 + động từ, vế sau câu hỏi ngược 为什么 / 怎么."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Rõ ràng là lỗi của cậu ta, vậy mà cậu ta không chịu nhận.",
+      "dap": [
+       "明明是他的错，他却不承认。",
+       "明明是他的错，他却不肯承认。",
+       "明明是他错了，他却不承认。"
+      ],
+      "py": "Míngmíng shì tā de cuò, tā què bù chéngrèn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 明明……却…….",
+      "giai": "却 đứng sau chủ ngữ của vế sau (他却……)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，却不承认，真不讲理！",
+      "goiY": "rõ ràng là cậu ta làm sai / va vào mình (dùng 明明) — 练一练 (1) của sách",
+      "mau": "明明是他撞了我，却不承认，真不讲理！",
+      "can": [
+       [
+        "明明"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "你＿＿＿，这样做不对，为什么还要坚持呢？",
+      "goiY": "cậu rõ ràng biết (dùng 明明) — 练一练 (2) của sách",
+      "mau": "你明明知道，这样做不对，为什么还要坚持呢？",
+      "can": [
+       [
+        "明明"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，怎么非说没看见？",
+      "goiY": "cậu rõ ràng đã nhìn thấy (dùng 明明) — 练一练 (3) của sách",
+      "mau": "你明明看见了，怎么非说没看见？",
+      "can": [
+       [
+        "明明"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「大不了」",
+  "tenVn": "",
+  "cauTruc": [
+   "……(不要紧 / 没关系)，大不了 + phương án xấu nhất",
+   "没什么大不了的 (tính từ, dạng phủ định)"
+  ],
+  "giaiThich": "大不了 là PHÓ TỪ, nghĩa là \"cùng lắm (thì), tệ nhất cũng chỉ là\" (= 最坏也不过). Biểu thị tuy xuất hiện khó khăn nhưng cuối cùng vẫn giải quyết được — người nói nêu ra phương án xấu nhất mà mình vẫn chấp nhận được, để trấn an hoặc tỏ thái độ bất cần. Dùng trong khẩu ngữ. (Làm tính từ ở dạng phủ định: 没什么大不了的 = chẳng có gì to tát.)",
+  "viDu": [
+   {
+    "zh": "小林要去找领导讨公道：“哼，太不像话了，明明是在欺负人，大不了辞职。”",
+    "py": "Xiǎo Lín yào qù zhǎo lǐngdǎo tǎo gōngdao: \"Hng, tài búxiànghuà le, míngmíng shì zài qīfu rén, dàbuliǎo cízhí.\"",
+    "vn": "Tiểu Lâm định đi tìm lãnh đạo đòi lẽ công bằng: \"Hừ, quá lắm rồi, rõ ràng là đang bắt nạt người ta, cùng lắm thì nghỉ việc.\""
+   },
+   {
+    "zh": "失败了不要紧，大不了从头再来。",
+    "py": "Shībàile bú yàojǐn, dàbuliǎo cóngtóu zài lái.",
+    "vn": "Thất bại cũng không sao, cùng lắm thì làm lại từ đầu."
+   },
+   {
+    "zh": "别难过了，不就是衣服丢了吗，大不了再买一件。",
+    "py": "Bié nánguò le, bú jiù shì yīfu diū le ma, dàbuliǎo zài mǎi yí jiàn.",
+    "vn": "Đừng buồn nữa, chẳng qua là mất cái áo thôi mà, cùng lắm thì mua cái khác."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他的汉语大不了，说得跟中国人一样。",
+    "why": "大不了 không mang nghĩa \"giỏi, tuyệt vời\" — đó là 了不起.",
+    "dung": "他的汉语很了不起，说得跟中国人一样。"
+   },
+   {
+    "sai": "大不了明天下雨，我们就不去了。",
+    "why": "大不了 đứng ở vế nêu phương án xấu nhất (giải pháp), không đứng ở vế giả thiết điều kiện.",
+    "dung": "要是明天下雨也没关系，大不了我们改天再去。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "失败了不要紧，",
+       "从头再来。"
+      ],
+      "dap": [
+       [
+        "大不了"
+       ]
+      ],
+      "chon": [
+       "大不了",
+       "了不起",
+       "不得了"
+      ],
+      "goiY": "\"Thất bại cũng không sao, cùng lắm thì làm lại từ đầu.\"",
+      "giai": "大不了 + phương án xấu nhất. 了不起 = giỏi; 不得了 = ghê gớm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这次没考好也没关系，",
+       "下次再考。"
+      ],
+      "dap": [
+       [
+        "大不了"
+       ]
+      ],
+      "chon": [
+       "大不了",
+       "受不了",
+       "了不起"
+      ],
+      "goiY": "\"Lần này thi không tốt cũng không sao, cùng lắm lần sau thi lại.\"",
+      "giai": "Vế trước trấn an (也没关系), vế sau 大不了 + giải pháp. 受不了 = chịu không nổi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "别难过了，衣服丢了就丢了，",
+       "再买一件。"
+      ],
+      "dap": [
+       [
+        "大不了"
+       ]
+      ],
+      "chon": [
+       "大不了",
+       "明明",
+       "唯独"
+      ],
+      "goiY": "\"Đừng buồn, mất thì thôi, cùng lắm mua cái khác.\"",
+      "giai": "大不了 + 再 + V: cùng lắm thì làm lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "没赶上末班车也没什么，",
+       "打车回去。"
+      ],
+      "dap": [
+       [
+        "大不了"
+       ]
+      ],
+      "chon": [
+       "大不了",
+       "不得了",
+       "了不起"
+      ],
+      "goiY": "\"Lỡ chuyến xe cuối cũng chẳng sao, cùng lắm thì bắt taxi về.\"",
+      "giai": "Phương án xấu nhất vẫn giải quyết được → 大不了."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件事没什么",
+       "的，我们再想别的办法。"
+      ],
+      "dap": [
+       [
+        "大不了"
+       ]
+      ],
+      "chon": [
+       "大不了",
+       "唯独",
+       "明明"
+      ],
+      "goiY": "\"Chuyện này chẳng có gì to tát, chúng ta nghĩ cách khác.\"",
+      "giai": "没什么大不了的 = chẳng có gì to tát — 大不了 làm tính từ ở dạng phủ định. 唯独, 明明 là phó từ, không đứng sau 没什么."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "明明是在欺负人，",
+       "辞职！"
+      ],
+      "dap": [
+       [
+        "大不了"
+       ]
+      ],
+      "chon": [
+       "大不了",
+       "唯独",
+       "明明"
+      ],
+      "goiY": "\"Rõ ràng là đang bắt nạt người ta, cùng lắm thì nghỉ việc!\" (câu bài khoá)",
+      "giai": "大不了 + 辞职 — thái độ bất cần của Tiểu Lâm."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "不要紧",
+       "失败了",
+       "，",
+       "大不了",
+       "从头再来"
+      ],
+      "dap": [
+       "失败了不要紧，大不了从头再来。"
+      ],
+      "goiY": "Thất bại cũng không sao, cùng lắm làm lại từ đầu.",
+      "giai": "Vế trấn an trước, 大不了 + phương án sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "大不了",
+       "坐回去",
+       "坐错车",
+       "没关系",
+       "，"
+      ],
+      "dap": [
+       "坐错车没关系，大不了坐回去。"
+      ],
+      "goiY": "Đi nhầm xe không sao, cùng lắm thì đi ngược về.",
+      "giai": "Câu 练一练 (1) của sách sau khi viết lại."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "没什么",
+       "大不了的",
+       "这件事",
+       "，",
+       "别担心"
+      ],
+      "dap": [
+       "这件事没什么大不了的，别担心。",
+       "别担心，这件事没什么大不了的。"
+      ],
+      "goiY": "Chuyện này chẳng có gì to tát, đừng lo.",
+      "giai": "没什么大不了的 — 大不了 làm tính từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "钱包丢了就丢了，大不了再买一个。",
+      "dung": true,
+      "giai": "大不了 + 再 + V — phương án xấu nhất vẫn chấp nhận được."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他的汉语大不了，说得跟中国人一样。",
+      "dung": false,
+      "sua": "他的汉语很了不起，说得跟中国人一样。",
+      "giai": "Khen giỏi dùng 了不起, không dùng 大不了."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "大不了明天下雨，我们就不去了。",
+      "dung": false,
+      "sua": "要是明天下雨也没关系，大不了我们改天再去。",
+      "giai": "大不了 đứng ở vế giải pháp, không đứng ở vế giả thiết."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Thất bại cũng không sao, cùng lắm thì làm lại từ đầu.",
+      "dap": [
+       "失败了不要紧，大不了从头再来。",
+       "失败了也没关系，大不了从头再来。",
+       "失败了没关系，大不了从头再来。"
+      ],
+      "py": "Shībàile bú yàojǐn, dàbuliǎo cóngtóu zài lái.",
+      "goiY": "Dịch sang tiếng Trung, dùng 大不了.",
+      "giai": "Vế trấn an + 大不了 + phương án xấu nhất."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Lần này thi không đỗ cũng chẳng có gì to tát.",
+      "dap": [
+       "这次没考上也没什么大不了的。",
+       "这次没考上没什么大不了的。",
+       "这次考不上也没什么大不了的。"
+      ],
+      "py": "Zhè cì méi kǎoshàng yě méi shénme dàbuliǎo de.",
+      "goiY": "Dịch sang tiếng Trung, dùng 没什么大不了的.",
+      "giai": "没什么大不了的 = chẳng có gì to tát (大不了 làm tính từ)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để viết lại câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "坐错车没关系，＿＿＿。",
+      "goiY": "viết lại câu \"坐错车没关系，最多就是坐回去。\" bằng 大不了 — 练一练 (1) của sách",
+      "mau": "坐错车没关系，大不了坐回去。",
+      "can": [
+       [
+        "大不了"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "别难过了，不就是画儿湿了吗，＿＿＿。",
+      "goiY": "viết lại \"……我再给你画一张就完了。\" bằng 大不了 — 练一练 (2) của sách",
+      "mau": "别难过了，不就是画儿湿了吗，大不了我再给你画一张。",
+      "can": [
+       [
+        "大不了"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "少一个座位？没关系，＿＿＿。",
+      "goiY": "viết lại \"……最多就是少去一个人。\" bằng 大不了 — 练一练 (3) của sách",
+      "mau": "少一个座位？没关系，大不了少去一个人。",
+      "can": [
+       [
+        "大不了"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

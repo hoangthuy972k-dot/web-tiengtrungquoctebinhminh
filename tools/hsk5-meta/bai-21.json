@@ -1,0 +1,112 @@
+{
+ "zh": "汉字叔叔：一个美国人的汉字情缘",
+ "py": "Hànzì shūshu: yí ge Měiguórén de Hànzì qíngyuán",
+ "vn": "Tình yêu chữ Hán của “ông chú người Mỹ”",
+ "topic": "Unit 7 交流文化 · Giao lưu văn hoá — chữ Hán &amp; ước mơ",
+ "vocabCount": 45,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "硬",
+   "explain": "硬 ở bài này là PHÓ TỪ (khác 硬 tính từ “cứng” của bài 7), có hai nghĩa: ① kiên quyết, khăng khăng làm một việc — kể cả khi việc đó vô lý, trái ý người khác: 硬说, 硬要; ② năng lực, điều kiện không đủ nhưng vẫn gắng gượng làm: 硬挺过来, 硬把药喝下去. 硬 đứng ngay trước động từ (hoặc trước 把); khẩu ngữ hay nói 硬是. Thành ngữ 死记硬背 (học vẹt) cũng dùng 硬 theo nghĩa này.",
+   "rule": "① Sub + <strong style=\"color:var(--sky-d)\">硬</strong> + V (硬说 / 硬要) — khăng khăng　② Sub + <strong style=\"color:var(--sky-d)\">硬</strong>(是) + (把 + O) + V — gắng gượng",
+   "examples": [
+    {
+     "zh": "在中国历史故事“指鹿为马”中，赵高把鹿硬说成马。",
+     "py": "Zài Zhōngguó lìshǐ gùshi “zhǐ lù wéi mǎ” zhōng, Zhào Gāo bǎ lù yìng shuōchéng mǎ.",
+     "vn": "Trong câu chuyện lịch sử Trung Quốc “chỉ hươu bảo ngựa”, Triệu Cao cứ khăng khăng nói con hươu là con ngựa."
+    },
+    {
+     "zh": "你不知道这一年我是怎么硬挺过来的。",
+     "py": "Nǐ bù zhīdào zhè yì nián wǒ shì zěnme yìng tǐng guolai de.",
+     "vn": "Cậu không biết năm nay tôi đã gắng gượng vượt qua như thế nào đâu."
+    },
+    {
+     "zh": "虽然中药汤有点儿苦，但为了治病，他还是硬把它喝下去了。",
+     "py": "Suīrán zhōngyào tāng yǒudiǎnr kǔ, dàn wèile zhì bìng, tā háishi yìng bǎ tā hē xiaqu le.",
+     "vn": "Tuy thuốc bắc hơi đắng, nhưng để chữa bệnh, anh ấy vẫn cố uống hết."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他说硬是我拿的。",
+     "why": "硬 là phó từ, đứng TRƯỚC động từ 说: 硬说 = khăng khăng nói.",
+     "right": "他硬说是我拿的。"
+    },
+    {
+     "wrong": "药太苦了，他硬地喝下去了。",
+     "why": "Phó từ 硬 đứng thẳng trước động từ, không thêm 地; có thể dùng 硬是 hoặc 硬把……",
+     "right": "药太苦了，他硬是把药喝下去了。"
+    }
+   ]
+  },
+  {
+   "point": "偶然",
+   "explain": "偶然 là TÍNH TỪ: sự việc xảy ra ngoài dự liệu, hoặc theo quy luật thông thường thì khó xảy ra (trái nghĩa 必然 — tất nhiên). Làm định ngữ (偶然的机会), vị ngữ (并非偶然, 非常偶然), trạng ngữ (偶然发现); trước có thể thêm phó từ mức độ. 偶然 còn làm PHÓ TỪ với nghĩa “thỉnh thoảng, có lúc” (= 偶尔), hay đi với 也: 偶然也会……. Phân biệt với 偶尔 xem mục 词语辨析.",
+   "rule": "① 一个<strong style=\"color:var(--sky-d)\">偶然</strong>的机会 / ……并非<strong style=\"color:var(--sky-d)\">偶然</strong> (tính từ — bất ngờ)　② Sub + <strong style=\"color:var(--sky-d)\">偶然</strong> + 也(会) + V (phó từ — thỉnh thoảng)",
+   "examples": [
+    {
+     "zh": "一个偶然的机会，他发现如果了解汉字的来源和演变过程，再学习它就变得轻松、容易。",
+     "py": "Yí ge ǒurán de jīhuì, tā fāxiàn rúguǒ liǎojiě Hànzì de láiyuán hé yǎnbiàn guòchéng, zài xuéxí tā jiù biàn de qīngsōng, róngyì.",
+     "vn": "Một dịp tình cờ, anh ấy phát hiện ra nếu hiểu nguồn gốc và quá trình biến đổi của chữ Hán thì học nó sẽ trở nên nhẹ nhàng, dễ dàng."
+    },
+    {
+     "zh": "虽然桂花偶然也能长成18米高的大树，但是绝大多数情况下它们都很矮。",
+     "py": "Suīrán guìhuā ǒurán yě néng zhǎngchéng shíbā mǐ gāo de dà shù, dànshì jué dà duōshù qíngkuàng xià tāmen dōu hěn ǎi.",
+     "vn": "Tuy cây hoa quế đôi khi cũng có thể mọc thành cây lớn cao 18 mét, nhưng tuyệt đại đa số trường hợp chúng đều rất thấp."
+    },
+    {
+     "zh": "她专心地织着毛衣，偶然也会抬眼看一下墙上的挂钟。",
+     "py": "Tā zhuānxīn de zhīzhe máoyī, ǒurán yě huì tái yǎn kàn yíxià qiáng shang de guàzhōng.",
+     "vn": "Bà chăm chú đan áo len, thỉnh thoảng cũng ngước mắt nhìn chiếc đồng hồ treo tường."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "一个偶尔的机会，我认识了他。",
+     "why": "Dịp BẤT NGỜ, không định trước → 偶然的机会. 偶尔 nhấn mạnh số lần ít.",
+     "right": "一个偶然的机会，我认识了他。"
+    },
+    {
+     "wrong": "我们见面的机会很偶尔。",
+     "why": "偶尔 không làm vị ngữ, không thêm phó từ mức độ 很. Muốn nói “ít khi gặp” thì dùng 偶尔 làm trạng ngữ.",
+     "right": "我们偶尔才见一次面。"
+    }
+   ]
+  },
+  {
+   "point": "尽快",
+   "explain": "尽快 là PHÓ TỪ, nghĩa 尽量加快 — cố gắng làm nhanh nhất có thể, càng sớm càng tốt. Đứng sau chủ ngữ, trước động từ hoặc trước 把; hay dùng trong lời yêu cầu, dặn dò, kế hoạch: 请尽快回复, 我要尽快把……. Đọc jǐnkuài (thanh 3, như 尽管, 尽量). Khác 赶快: 赶快 giục làm NGAY lập tức trong tình huống gấp, mang tính khẩu ngữ (着火了，赶快跑！).",
+   "rule": "Sub + <strong style=\"color:var(--sky-d)\">尽快</strong> + V (+ O)　|　Sub + <strong style=\"color:var(--sky-d)\">尽快</strong> + 把 + O + V……　|　请<strong style=\"color:var(--sky-d)\">尽快</strong> + V",
+   "examples": [
+    {
+     "zh": "……我要抓紧时间尽快把《说文解字》电脑化。",
+     "py": "…… wǒ yào zhuājǐn shíjiān jǐnkuài bǎ 《Shuōwén Jiězì》 diànnǎohuà.",
+     "vn": "… tôi phải tranh thủ thời gian số hoá 《Thuyết văn giải tự》 càng sớm càng tốt."
+    },
+    {
+     "zh": "新产品出了点儿问题，你和严经理尽快商量一下这事。",
+     "py": "Xīn chǎnpǐn chūle diǎnr wèntí, nǐ hé Yán jīnglǐ jǐnkuài shāngliang yíxià zhè shì.",
+     "vn": "Sản phẩm mới có chút vấn đề, anh với giám đốc Nghiêm bàn ngay việc này đi."
+    },
+    {
+     "zh": "趁这两天天气好，你尽快把过季的衣服洗一洗，收起来。",
+     "py": "Chèn zhè liǎng tiān tiānqì hǎo, nǐ jǐnkuài bǎ guò jì de yīfu xǐ yi xǐ, shōu qilai.",
+     "vn": "Nhân hai hôm nay trời đẹp, con giặt ngay quần áo trái mùa rồi cất đi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我做尽快作业。",
+     "why": "尽快 là phó từ, đứng TRƯỚC động từ, không chen giữa động từ và tân ngữ.",
+     "right": "我尽快做作业。"
+    },
+    {
+     "wrong": "着火了！大家尽快跑啊！",
+     "why": "Tình huống khẩn cấp, giục chạy NGAY → 赶快 / 快. 尽快 hợp với yêu cầu, kế hoạch.",
+     "right": "着火了！大家赶快跑啊！"
+    }
+   ]
+  }
+ ]
+}

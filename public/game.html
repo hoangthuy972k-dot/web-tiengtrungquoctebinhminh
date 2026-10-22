@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sân chơi chữ Hán · Hi Hán 喜汉</title>
+<meta name="description" content="Trò chơi ôn từ vựng tiếng Trung — chọn cấp độ, chọn bài rồi chơi. Dùng được cả khi tự học lẫn khi chiếu lên lớp.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/arcade.css">
+<link rel="stylesheet" href="/css/game-hub.css">
+<script src="/js/khong-goi-y.js"></script>
+</head>
+<body class="gh-body">
+
+<div class="scene" aria-hidden="true">
+  <div class="scene-layer scene-far"></div>
+  <div class="scene-mist"></div>
+  <div class="scene-layer scene-tree"></div>
+  <div class="scene-layer scene-bamboo"></div>
+  <div class="scene-veil"></div>
+</div>
+
+<!-- ═════════════ MÀN CHUẨN BỊ ═════════════ -->
+<div id="ghSetup" class="gh-setup">
+  <div class="gh-tam">
+
+    <header class="gh-hero">
+      <div class="gh-hero-dau" aria-hidden="true">喜汉</div>
+      <div class="gh-hero-chu">
+        <h1>Sân chơi chữ Hán</h1>
+        <p>Chọn bài muốn ôn — trò chơi tự lấy từ vựng của đúng những bài đó</p>
+      </div>
+    </header>
+
+    <section class="gh-buoc">
+      <h2><span class="gh-so">1</span> Chơi kiểu nào</h2>
+      <div class="gh-mode" id="ghMode">
+        <button type="button" data-mode="hoc" class="active">
+          <span class="gh-mode-bt" aria-hidden="true">🎧</span>
+          <b>Tự học</b>
+          <i>Có đồng hồ và điểm số — chơi trên máy hoặc điện thoại</i>
+        </button>
+        <button type="button" data-mode="lop">
+          <span class="gh-mode-bt" aria-hidden="true">📽️</span>
+          <b>Chiếu lớp</b>
+          <i>Chữ to, không đếm ngược — thầy cô bấm sau khi học sinh đọc</i>
+        </button>
+      </div>
+    </section>
+
+    <section class="gh-buoc">
+      <h2><span class="gh-so">2</span> Lấy từ vựng của bài nào</h2>
+      <div class="gh-hang">
+        <label class="gh-sel">
+          <span>Cấp độ</span>
+          <select id="ghLevel"></select>
+        </label>
+        <div class="gh-tools">
+          <button type="button" class="gh-mini" id="ghAll">Chọn tất cả</button>
+          <button type="button" class="gh-mini" id="ghNone">Bỏ chọn</button>
+          <button type="button" class="gh-mini gh-mini-vui" id="ghRand">🎲 Ngẫu nhiên</button>
+        </div>
+      </div>
+      <div id="ghLessons" class="gh-bai">Đang tải…</div>
+      <p class="gh-count" id="ghCount">Chưa chọn bài nào.</p>
+    </section>
+
+    <section class="gh-buoc">
+      <h2><span class="gh-so">3</span> Chọn trò chơi</h2>
+      <div class="gh-games" id="ghGames"></div>
+    </section>
+
+    <p class="gh-meo">💡 Chọn nhiều bài cùng lúc để ôn tổng hợp. Khi chiếu lớp, bấm <b>F11</b> cho toàn màn hình.</p>
+  </div>
+</div>
+
+<!-- ═════════════ MÀN CHƠI ═════════════ -->
+<div id="ghPlay" class="gh-play" hidden>
+  <header class="gh-play-top">
+    <button type="button" class="gh-back" id="ghBack">
+      <span aria-hidden="true">←</span> Đổi bài · đổi trò
+    </button>
+    <div class="gh-play-nhan">
+      <b id="ghPlayTen"></b>
+      <span id="ghPlayBai"></span>
+    </div>
+  </header>
+  <main class="gh-san" id="ghStage"></main>
+</div>
+
+<script src="/js/data.js"></script>
+<script src="/js/arcade.js"></script>
+<script src="/js/game-hub.js"></script>
+</body>
+</html>

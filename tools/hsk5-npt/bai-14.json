@@ -1,0 +1,1267 @@
+[
+ {
+  "so": "1",
+  "ten": "「所谓」",
+  "tenVn": "",
+  "cauTruc": [
+   "所谓 A，(就是)……",
+   "这就是所谓的“……”",
+   "(某人) 所谓的“……”，其实……"
+  ],
+  "giaiThich": "所谓 là tính từ, có hai cách dùng. ① “Cái thường được gọi là …” — đưa ra một từ ngữ, khái niệm rồi giải thích nó. ② “Cái mà (ai đó) gọi là …” — nhắc lại lời người khác, hàm ý KHÔNG đồng ý, không thừa nhận (hay có ngoặc kép, giọng mỉa mai).",
+  "viDu": [
+   {
+    "zh": "很多时候，烦恼是自己找来的，这就是所谓的“自寻烦恼”。",
+    "py": "Hěn duō shíhou, fánnǎo shì zìjǐ zhǎolái de, zhè jiù shì suǒwèi de “zì xún fánnǎo”.",
+    "vn": "Nhiều khi phiền não là do mình tự chuốc lấy, đó chính là cái gọi là “tự tìm phiền não”."
+   },
+   {
+    "zh": "所谓四合，“四”指东、西、南、北四面，“合”就是四面房屋围在一起，中间形成一个方形的院子。",
+    "py": "Suǒwèi sìhé, “sì” zhǐ dōng, xī, nán, běi sìmiàn, “hé” jiù shì sìmiàn fángwū wéi zài yìqǐ, zhōngjiān xíngchéng yí ge fāngxíng de yuànzi.",
+    "vn": "Cái gọi là “tứ hợp”: “tứ” chỉ bốn phía đông, tây, nam, bắc; “hợp” là nhà cửa bốn phía quây lại với nhau, ở giữa tạo thành một khoảng sân vuông."
+   },
+   {
+    "zh": "他所谓的“新闻”，其实我们早就知道了！",
+    "py": "Tā suǒwèi de “xīnwén”, qíshí wǒmen zǎo jiù zhīdao le!",
+    "vn": "Cái mà anh ta gọi là “tin mới” ấy, thật ra chúng tôi biết từ lâu rồi!"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这就是所以的“自寻烦恼”。",
+    "why": "Nhầm 所谓 (sở vị — cái gọi là) với 所以 (sở dĩ — cho nên). Trước ngoặc kép để gọi tên một khái niệm phải dùng 所谓.",
+    "dung": "这就是所谓的“自寻烦恼”。"
+   },
+   {
+    "sai": "我所谓他说得不对。",
+    "why": "所谓 là tính từ, không làm động từ “cho rằng”. Muốn nêu ý kiến dùng 认为 / 觉得.",
+    "dung": "我认为他说得不对。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "很多时候，烦恼是自己找来的，这就是",
+       "的“自寻烦恼”。"
+      ],
+      "dap": [
+       [
+        "所谓"
+       ]
+      ],
+      "chon": [
+       "所谓",
+       "所以",
+       "称为"
+      ],
+      "goiY": "“Đó chính là cái gọi là ‘tự tìm phiền não’.”",
+      "giai": "Gọi tên một khái niệm trong ngoặc kép → 所谓的“……”."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "四合，“四”指东、西、南、北四面。"
+      ],
+      "dap": [
+       [
+        "所谓"
+       ]
+      ],
+      "chon": [
+       "所谓",
+       "所以",
+       "通常"
+      ],
+      "goiY": "Mở đầu câu giải thích tên gọi “tứ hợp”.",
+      "giai": "所谓 A，…… — nêu khái niệm rồi giải thích (câu trong bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "的“新闻”，其实我们早就知道了！"
+      ],
+      "dap": [
+       [
+        "所谓"
+       ]
+      ],
+      "chon": [
+       "所谓",
+       "所以",
+       "因而"
+      ],
+      "goiY": "Giọng mỉa mai: “cái tin mới mà anh ta nói ấy”.",
+      "giai": "Cách dùng ②: 某人所谓的“……” — không thừa nhận."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "现在市场上",
+       "的“健康食品”其实没有统一的标准。"
+      ],
+      "dap": [
+       [
+        "所谓"
+       ]
+      ],
+      "chon": [
+       "所谓",
+       "所以",
+       "具备"
+      ],
+      "goiY": "“Cái gọi là thực phẩm sức khoẻ” trên thị trường.",
+      "giai": "Hàm ý nghi ngờ, không thừa nhận → 所谓的."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "“低头族”，就是走路、吃饭时都一直看手机的人。"
+      ],
+      "dap": [
+       [
+        "所谓"
+       ]
+      ],
+      "chon": [
+       "所谓",
+       "所以",
+       "则"
+      ],
+      "goiY": "Giải thích từ mới “hội cúi đầu”.",
+      "giai": "所谓 A，就是 B — định nghĩa một khái niệm (ôn từ 低头族 của bài 12)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他连书都没打开，这就是他",
+       "的“认真复习”？"
+      ],
+      "dap": [
+       [
+        "所谓"
+       ]
+      ],
+      "chon": [
+       "所谓",
+       "所以",
+       "通常"
+      ],
+      "goiY": "Giọng mỉa mai: “ôn bài chăm chỉ” kiểu gì mà sách còn chưa mở.",
+      "giai": "Nhắc lại lời người khác để phủ định → 所谓的."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这",
+       "就是",
+       "所谓的",
+       "“自寻烦恼”",
+       "。"
+      ],
+      "dap": [
+       "这就是所谓的“自寻烦恼”。"
+      ],
+      "goiY": "Đó chính là cái gọi là “tự tìm phiền não”.",
+      "giai": "这就是 + 所谓的 + “khái niệm”."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "所谓的",
+       "“新闻”",
+       "，",
+       "其实",
+       "我们",
+       "早就知道了",
+       "！"
+      ],
+      "dap": [
+       "他所谓的“新闻”，其实我们早就知道了！"
+      ],
+      "goiY": "Cái “tin mới” anh ta nói, thật ra chúng tôi biết từ lâu rồi!",
+      "giai": "某人 + 所谓的 + “……”，其实…… (mỉa mai)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "所谓",
+       "“大杂院”",
+       "，",
+       "就是",
+       "多户",
+       "合住的",
+       "四合院",
+       "。"
+      ],
+      "dap": [
+       "所谓“大杂院”，就是多户合住的四合院。"
+      ],
+      "goiY": "Cái gọi là “đại tạp viện” chính là tứ hợp viện nhiều hộ ở chung.",
+      "giai": "所谓 A，就是 B."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这就是所以的“一见钟情”。",
+      "dung": false,
+      "sua": "这就是所谓的“一见钟情”。",
+      "giai": "Nhầm 所谓 với 所以 (cho nên)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "所谓“日常用语”，就是每天生活中常用的话。",
+      "dung": true,
+      "giai": "Đúng: 所谓 A，就是 B — giải thích khái niệm."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我所谓这个办法不太好。",
+      "dung": false,
+      "sua": "我认为这个办法不太好。",
+      "giai": "所谓 không làm động từ “cho rằng”; nêu ý kiến dùng 认为 / 觉得."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cái gọi là “tứ hợp viện” chính là nhà có bốn dãy phòng quây quanh một khoảng sân.",
+      "dap": [
+       "所谓“四合院”，就是四面房屋围着一个院子的房子。",
+       "所谓四合院，就是四面房屋围着一个院子的房子。",
+       "所谓“四合院”，就是四面房屋围在一起、中间有院子的房子。"
+      ],
+      "py": "Suǒwèi “sìhéyuàn”, jiù shì sìmiàn fángwū wéizhe yí ge yuànzi de fángzi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 所谓……，就是……",
+      "giai": "所谓 + khái niệm, 就是 + giải thích."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cái “món quà” mà cậu ấy nói, hoá ra chỉ là một tấm bưu thiếp.",
+      "dap": [
+       "他所谓的“礼物”，原来只是一张明信片。",
+       "他所谓的“礼物”，其实只是一张明信片。",
+       "他所谓的礼物，原来只是一张明信片。"
+      ],
+      "py": "Tā suǒwèi de “lǐwù”, yuánlái zhǐ shì yì zhāng míngxìnpiàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 所谓的 (giọng mỉa mai).",
+      "giai": "Cách dùng ②: nhắc lại lời người khác, hàm ý không như họ nói."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "四面房屋围在一起，中间形成一个方形的院子，＿＿＿。",
+      "goiY": "nói đó chính là cái gọi là “tứ hợp viện” (dùng 所谓) — câu của sách",
+      "mau": "四面房屋围在一起，中间形成一个方形的院子，这就是所谓的“四合院”。",
+      "can": [
+       [
+        "所谓"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：这么长时间没回家了，回去后感觉怎么样？　B：＿＿＿。",
+      "goiY": "cảm giác thân thuộc, “nhà mình vẫn là nhất” (dùng 所谓) — câu của sách",
+      "mau": "感觉特别亲切，这就是所谓的“金窝银窝，不如自己的狗窝”吧。",
+      "can": [
+       [
+        "所谓"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「所谓」 để giải thích một từ mới hoặc để mỉa mai lời ai đó, nói về trường lớp của em",
+      "mau": "他所谓的“一会儿就好”，结果让我们等了一个多小时。",
+      "can": [
+       [
+        "所谓"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「则」",
+  "tenVn": "",
+  "cauTruc": [
+   "一则 + 新闻 / 故事 / 广告",
+   "A……，(而) B 则……",
+   "(điều kiện) 则 (kết quả) = 就 (văn viết)"
+  ],
+  "giaiThich": "则 có ba cách dùng. ① Lượng từ: dùng cho những đoạn văn ngắn thành bài, thành mục (新闻, 故事, 广告, 消息). ② Liên từ ĐỐI CHIẾU: A……，(而) B 则…… — “còn B thì …”. ③ Liên từ NHÂN QUẢ trong văn viết, tương đương 就 của khẩu ngữ (有风则寒, 欲速则不达).",
+  "viDu": [
+   {
+    "zh": "今天的报纸上有一则非常重要的新闻。",
+    "py": "Jīntiān de bàozhǐ shang yǒu yì zé fēicháng zhòngyào de xīnwén.",
+    "vn": "Trên báo hôm nay có một mẩu tin vô cùng quan trọng."
+   },
+   {
+    "zh": "有的人家喜欢种草、养花、种竹子，有的人家则喜欢用大盆养金鱼。",
+    "py": "Yǒu de rénjiā xǐhuan zhòng cǎo, yǎng huā, zhòng zhúzi, yǒu de rénjiā zé xǐhuan yòng dà pén yǎng jīnyú.",
+    "vn": "Có nhà thích trồng cỏ, nuôi hoa, trồng trúc, còn có nhà thì lại thích nuôi cá vàng trong chậu lớn."
+   },
+   {
+    "zh": "北京的冬天，有风则寒，无风则暖。",
+    "py": "Běijīng de dōngtiān, yǒu fēng zé hán, wú fēng zé nuǎn.",
+    "vn": "Mùa đông Bắc Kinh, có gió thì lạnh, không gió thì ấm."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我喜欢喝茶，则他喜欢喝咖啡。",
+    "why": "则 đối chiếu đứng SAU chủ ngữ của vế thứ hai, không đứng đầu vế như 但是 / 而.",
+    "dung": "我喜欢喝茶，他则喜欢喝咖啡。"
+   },
+   {
+    "sai": "昨天我看了一则电影。",
+    "why": "Lượng từ 则 chỉ dùng cho văn bản ngắn (新闻, 故事, 广告, 消息, 日记). Phim dùng 部.",
+    "dung": "昨天我看了一部电影。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "今天的报纸上有一",
+       "非常重要的新闻。"
+      ],
+      "dap": [
+       [
+        "则"
+       ]
+      ],
+      "chon": [
+       "则",
+       "部",
+       "本"
+      ],
+      "goiY": "Lượng từ cho một mẩu tin.",
+      "giai": "Lượng từ 则 dùng cho văn bản ngắn: 一则新闻."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在第七课，我们学习了两",
+       "成语故事。"
+      ],
+      "dap": [
+       [
+        "则"
+       ]
+      ],
+      "chon": [
+       "则",
+       "部",
+       "场"
+      ],
+      "goiY": "Lượng từ cho câu chuyện thành ngữ ngắn.",
+      "giai": "一则故事 / 两则成语故事."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "猫享受独处的快乐，而狗",
+       "是希望和别人分享快乐。"
+      ],
+      "dap": [
+       [
+        "则"
+       ]
+      ],
+      "chon": [
+       "则",
+       "就",
+       "但"
+      ],
+      "goiY": "“Còn chó thì …” — đối chiếu hai con vật.",
+      "giai": "A……，而 B 则…… — đối chiếu (câu của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "哥哥喜欢安静，弟弟",
+       "特别爱热闹。"
+      ],
+      "dap": [
+       [
+        "则"
+       ]
+      ],
+      "chon": [
+       "则",
+       "也",
+       "都"
+      ],
+      "goiY": "Hai anh em có tính cách trái ngược.",
+      "giai": "则 đứng sau chủ ngữ vế thứ hai: 弟弟则……"
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "北京的冬天，有风",
+       "寒，无风则暖。"
+      ],
+      "dap": [
+       [
+        "则"
+       ]
+      ],
+      "chon": [
+       "则",
+       "而",
+       "但"
+      ],
+      "goiY": "Có gió thì lạnh (văn viết).",
+      "giai": "则 chỉ quan hệ nhân quả, = 就 của khẩu ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "“欲速",
+       "不达”，学语言也不能太着急。"
+      ],
+      "dap": [
+       [
+        "则"
+       ]
+      ],
+      "chon": [
+       "则",
+       "而",
+       "也"
+      ],
+      "goiY": "Thành ngữ “dục tốc bất đạt”.",
+      "giai": "欲速则不达 — 则 = 就 (muốn nhanh thì không tới)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "有的人家",
+       "喜欢养花",
+       "，",
+       "有的人家",
+       "则",
+       "喜欢",
+       "养金鱼",
+       "。"
+      ],
+      "dap": [
+       "有的人家喜欢养花，有的人家则喜欢养金鱼。"
+      ],
+      "goiY": "Có nhà thích trồng hoa, có nhà thì lại thích nuôi cá vàng.",
+      "giai": "有的……，有的……则…… — đối chiếu."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "北方人",
+       "爱吃面食",
+       "，",
+       "南方人",
+       "则",
+       "爱吃",
+       "米饭",
+       "。"
+      ],
+      "dap": [
+       "北方人爱吃面食，南方人则爱吃米饭。"
+      ],
+      "goiY": "Người phương Bắc thích ăn đồ làm từ bột mì, còn người phương Nam thì thích ăn cơm.",
+      "giai": "Chủ ngữ vế 2 + 则 + vị ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "在网上",
+       "看到了",
+       "一则",
+       "有趣的",
+       "广告",
+       "。"
+      ],
+      "dap": [
+       "我在网上看到了一则有趣的广告。"
+      ],
+      "goiY": "Tôi thấy một mẩu quảng cáo thú vị trên mạng.",
+      "giai": "Số từ + 则 + (định ngữ) + danh từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我喜欢数学，则我同桌喜欢语文。",
+      "dung": false,
+      "sua": "我喜欢数学，我同桌则喜欢语文。",
+      "giai": "则 phải đứng sau chủ ngữ của vế thứ hai."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "昨天晚上我看了一则很感人的新闻。",
+      "dung": true,
+      "giai": "Đúng: 一则新闻 — lượng từ cho mẩu tin."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这则电影非常有意思。",
+      "dung": false,
+      "sua": "这部电影非常有意思。",
+      "giai": "Phim không dùng lượng từ 则; dùng 部."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chị gái thích đi du lịch, còn tôi thì thích ở nhà đọc sách.",
+      "dap": [
+       "姐姐喜欢旅游，我则喜欢在家看书。",
+       "姐姐喜欢旅行，我则喜欢在家看书。",
+       "姐姐喜欢旅游，而我则喜欢在家看书。"
+      ],
+      "py": "Jiějie xǐhuan lǚyóu, wǒ zé xǐhuan zài jiā kàn shū.",
+      "goiY": "Dịch sang tiếng Trung, dùng 则 để đối chiếu.",
+      "giai": "Chủ ngữ vế 2 + 则."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tuần này tôi đọc được một mẩu truyện cười rất hay.",
+      "dap": [
+       "这个星期我读了一则很好玩儿的笑话。",
+       "这周我读了一则很有意思的笑话。",
+       "这个星期我读到了一则很有意思的笑话。"
+      ],
+      "py": "Zhège xīngqī wǒ dúle yì zé hěn hǎowánr de xiàohua.",
+      "goiY": "Dịch sang tiếng Trung, dùng 则 làm lượng từ.",
+      "giai": "一则 + 笑话 / 故事 / 新闻."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：最近你读了什么有意思的书吗？　B：＿＿＿。",
+      "goiY": "kể đã đọc mấy mẩu chuyện thú vị (则 — lượng từ) — câu của sách",
+      "mau": "我最近读了几则成语故事，特别有意思。",
+      "can": [
+       [
+        "则"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你知道中国北方人和南方人吃饭的习惯有什么不同吗？　B：＿＿＿。",
+      "goiY": "đối chiếu thói quen ăn của hai miền (则 — liên từ) — câu của sách",
+      "mau": "北方人喜欢吃面条、饺子，南方人则喜欢吃米饭。",
+      "can": [
+       [
+        "则"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「则」 để so sánh hai người trong gia đình em (tính cách hoặc sở thích)",
+      "mau": "爸爸做事很快，妈妈则总是慢慢来，从不着急。",
+      "can": [
+       [
+        "则"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「为……所……」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + 为 + B + 所 + V",
+   "A + 最 / 深 / 广 + 为 + B + 所 + V",
+   "没有人不为……所 + V"
+  ],
+  "giaiThich": "为……所…… là cấu trúc cố định của VĂN VIẾT, ở đây 为 (đọc wéi) có nghĩa như 被: chủ ngữ là đối tượng chịu tác động, sau 为 là người / sự vật gây ra tác động, sau 所 là động từ. Hay đi với động từ tâm lý (感动, 喜爱, 吸引) hoặc 知, 用; trước 为 có thể thêm 最 / 深 / 广.",
+  "viDu": [
+   {
+    "zh": "认识他的人，没有人不为他认真的工作态度所感动。",
+    "py": "Rènshi tā de rén, méiyǒu rén bù wéi tā rènzhēn de gōngzuò tàidu suǒ gǎndòng.",
+    "vn": "Người quen biết anh ấy, không ai không cảm động trước thái độ làm việc nghiêm túc của anh."
+   },
+   {
+    "zh": "有了科学，大自然就可以更好地为人所用。",
+    "py": "Yǒule kēxué, dàzìrán jiù kěyǐ gèng hǎo de wéi rén suǒ yòng.",
+    "vn": "Có khoa học, thiên nhiên có thể được con người sử dụng tốt hơn."
+   },
+   {
+    "zh": "院子不仅拉近了人与自然的关系，也让家里人在此得到了感情的交流，对创造生活情趣起了很大作用，因而最为人们所喜爱。",
+    "py": "Yuànzi bùjǐn lājìnle rén yǔ zìrán de guānxi, yě ràng jiā li rén zài cǐ dédàole gǎnqíng de jiāoliú, duì chuàngzào shēnghuó qíngqù qǐle hěn dà zuòyòng, yīn'ér zuì wéi rénmen suǒ xǐ'ài.",
+    "vn": "Khoảng sân không những kéo gần con người với thiên nhiên mà còn giúp người trong nhà giao lưu tình cảm, góp phần lớn tạo nên thú vui cuộc sống, vì thế được mọi người yêu thích nhất."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他的故事为我所感动。",
+    "why": "Đảo lộn vai: chủ ngữ phải là người BỊ tác động (我), sau 为 là cái gây tác động (他的故事).",
+    "dung": "我为他的故事所感动。"
+   },
+   {
+    "sai": "他为老师批评了。",
+    "why": "为 (wéi) mang nghĩa bị động phải đi cùng 所 trước động từ. Nói khẩu ngữ thì dùng 被.",
+    "dung": "他被老师批评了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "认识他的人，没有人不",
+       "他认真的工作态度所感动。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "对",
+       "让"
+      ],
+      "goiY": "Khung bị động văn viết đi với 所.",
+      "giai": "为……所…… = 被……; 为 đọc wéi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "院子对创造生活情趣起了很大作用，因而最为人们",
+       "喜爱。"
+      ],
+      "dap": [
+       [
+        "所"
+       ]
+      ],
+      "chon": [
+       "所",
+       "被",
+       "的"
+      ],
+      "goiY": "Câu cuối đoạn 2 của bài khoá.",
+      "giai": "为 + 人们 + 所 + 喜爱."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "有了科学，大自然就可以更好地为人",
+       "用。"
+      ],
+      "dap": [
+       [
+        "所"
+       ]
+      ],
+      "chon": [
+       "所",
+       "被",
+       "得"
+      ],
+      "goiY": "Thiên nhiên được con người sử dụng.",
+      "giai": "为人所用 — động từ đơn âm vẫn dùng được sau 所."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这位作家的小说深",
+       "年轻读者所喜爱。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "被",
+       "让"
+      ],
+      "goiY": "Được độc giả trẻ yêu thích sâu sắc.",
+      "giai": "深 + 为 + B + 所 + V — 深 đứng trước 为."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的歌声",
+       "大家所熟悉。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "给",
+       "对"
+      ],
+      "goiY": "Giọng hát của anh ấy được mọi người quen thuộc.",
+      "giai": "A + 为 + B + 所 + 熟悉 / 知."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "很多游客都为北京四合院的样式",
+       "吸引。"
+      ],
+      "dap": [
+       [
+        "所"
+       ]
+      ],
+      "chon": [
+       "所",
+       "被",
+       "就"
+      ],
+      "goiY": "Du khách bị kiểu dáng tứ hợp viện thu hút.",
+      "giai": "为 + B + 所 + 吸引."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "大家",
+       "都",
+       "为",
+       "他的精神",
+       "所",
+       "感动",
+       "。"
+      ],
+      "dap": [
+       "大家都为他的精神所感动。"
+      ],
+      "goiY": "Mọi người đều cảm động trước tinh thần của anh ấy.",
+      "giai": "A + 都 + 为 + B + 所 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这种",
+       "传统建筑",
+       "最",
+       "为",
+       "游客",
+       "所",
+       "喜爱",
+       "。"
+      ],
+      "dap": [
+       "这种传统建筑最为游客所喜爱。"
+      ],
+      "goiY": "Kiểu kiến trúc truyền thống này được du khách yêu thích nhất.",
+      "giai": "最 đứng trước 为."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这个",
+       "故事",
+       "早已",
+       "为",
+       "人们",
+       "所",
+       "熟知",
+       "。"
+      ],
+      "dap": [
+       "这个故事早已为人们所熟知。"
+      ],
+      "goiY": "Câu chuyện này từ lâu đã được mọi người biết đến.",
+      "giai": "Phó từ 早已 đứng trước 为."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他的故事为我所感动。",
+      "dung": false,
+      "sua": "我为他的故事所感动。",
+      "giai": "Đảo vai: người bị cảm động (我) mới làm chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这本书深为学生们所喜爱。",
+      "dung": true,
+      "giai": "Đúng: 深 + 为 + B + 所 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我为老师表扬了。",
+      "dung": false,
+      "sua": "我被老师表扬了。",
+      "giai": "为 (bị động) phải đi với 所; khẩu ngữ dùng 被."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Mọi người đều cảm động trước lòng tốt của cô ấy.",
+      "dap": [
+       "大家都为她的善良所感动。",
+       "人们都为她的善良所感动。",
+       "大家都为她的好心所感动。"
+      ],
+      "py": "Dàjiā dōu wéi tā de shànliáng suǒ gǎndòng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 为……所……",
+      "giai": "Người bị tác động + 为 + cái gây tác động + 所 + 感动."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tứ hợp viện Bắc Kinh được rất nhiều người nước ngoài yêu thích.",
+      "dap": [
+       "北京四合院为很多外国人所喜爱。",
+       "北京四合院为许多外国人所喜爱。",
+       "北京的四合院为很多外国人所喜爱。"
+      ],
+      "py": "Běijīng sìhéyuàn wéi hěn duō wàiguórén suǒ xǐ'ài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 为……所……",
+      "giai": "A + 为 + B + 所 + 喜爱."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这个老师＿＿＿，＿＿＿。",
+      "goiY": "thầy giảng bài thế nào + được học sinh yêu quý (dùng 为……所……) — câu của sách",
+      "mau": "这个老师讲课生动有趣，深为学生们所喜爱。",
+      "can": [
+       [
+        "为"
+       ],
+       [
+        "所"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "在这座小城，她＿＿＿，因为她把这里的每一位老人都当成家人来照顾。",
+      "goiY": "cô ấy được mọi người biết đến và kính trọng (dùng 为……所……) — câu của sách",
+      "mau": "在这座小城，她为大家所熟知，因为她把这里的每一位老人都当成家人来照顾。",
+      "can": [
+       [
+        "为"
+       ],
+       [
+        "所"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「为……所……」 nói về một người hoặc một nơi được nhiều người yêu thích",
+      "mau": "会安古城的老房子为很多游客所喜爱。",
+      "can": [
+       [
+        "为"
+       ],
+       [
+        "所"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "4",
+  "ten": "「起 (động từ + 起)」",
+  "tenVn": "",
+  "cauTruc": [
+   "V + 起 + O",
+   "V + 起 + 了 + O",
+   "拉起 / 关闭起 / 建立起 / 组织起 / 团结起"
+  ],
+  "giaiThich": "起 là động từ, đặt sau một động từ khác (V + 起) để biểu thị sự NỐI KẾT, KẾT HỢP và CỐ ĐỊNH lại: 拉起手 (nắm lấy tay nhau), 关闭起大门 (đóng chặt cổng lại), 建立起制度 (dựng nên một chế độ). Tân ngữ đứng SAU 起; 了 đặt sau 起.",
+  "viDu": [
+   {
+    "zh": "拉起手，我们就是好朋友。",
+    "py": "Lāqǐ shǒu, wǒmen jiù shì hǎo péngyou.",
+    "vn": "Nắm tay nhau rồi, chúng ta là bạn tốt."
+   },
+   {
+    "zh": "只要关闭起大门，四合院内便形成一个封闭式的小环境。",
+    "py": "Zhǐyào guānbì qǐ dàmén, sìhéyuàn nèi biàn xíngchéng yí ge fēngbìshì de xiǎo huánjìng.",
+    "vn": "Chỉ cần đóng cổng lớn lại, bên trong tứ hợp viện liền thành một môi trường nhỏ khép kín."
+   },
+   {
+    "zh": "对公司来说，最重要的是建立起一套行之有效的制度。",
+    "py": "Duì gōngsī lái shuō, zuì zhòngyào de shì jiànlì qǐ yí tào xíng zhī yǒu xiào de zhìdù.",
+    "vn": "Đối với công ty, quan trọng nhất là xây dựng được một chế độ thiết thực, hiệu quả."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他们建立了起深厚的友谊。",
+    "why": "了 phải đặt SAU cả cụm V + 起, không chen vào giữa.",
+    "dung": "他们建立起了深厚的友谊。"
+   },
+   {
+    "sai": "他拉手起我。",
+    "why": "Tân ngữ đứng SAU 起: V + 起 + O.",
+    "dung": "他拉起我的手。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "拉",
+       "手，我们就是好朋友。"
+      ],
+      "dap": [
+       [
+        "起"
+       ]
+      ],
+      "chon": [
+       "起",
+       "过",
+       "着"
+      ],
+      "goiY": "Nắm tay nhau (câu của sách).",
+      "giai": "拉起手 — V + 起: nối kết."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只要关闭",
+       "大门，四合院内便形成一个封闭式的小环境。"
+      ],
+      "dap": [
+       [
+        "起"
+       ]
+      ],
+      "chon": [
+       "起",
+       "出",
+       "过"
+      ],
+      "goiY": "Đóng chặt cổng lại (câu của bài khoá).",
+      "giai": "关闭起大门 — V + 起: cố định lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "对公司来说，最重要的是建立",
+       "一套行之有效的制度。"
+      ],
+      "dap": [
+       [
+        "起"
+       ]
+      ],
+      "chon": [
+       "起",
+       "过",
+       "着"
+      ],
+      "goiY": "Dựng nên một chế độ hiệu quả.",
+      "giai": "建立起 + 制度 / 关系 / 友谊."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "两国人民建立起",
+       "深厚的友谊。"
+      ],
+      "dap": [
+       [
+        "了"
+       ]
+      ],
+      "chon": [
+       "了",
+       "过",
+       "着"
+      ],
+      "goiY": "Đã xây dựng được tình hữu nghị.",
+      "giai": "了 đặt sau cả cụm V + 起."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他拉",
+       "我的手，带我走进了教室。"
+      ],
+      "dap": [
+       [
+        "起"
+       ]
+      ],
+      "chon": [
+       "起",
+       "到",
+       "在"
+      ],
+      "goiY": "Cậu ấy nắm lấy tay tôi.",
+      "giai": "V + 起 + tân ngữ: 拉起我的手."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "同学们团结",
+       "来，终于完成了任务。"
+      ],
+      "dap": [
+       [
+        "起"
+       ]
+      ],
+      "chon": [
+       "起",
+       "出",
+       "过"
+      ],
+      "goiY": "Đoàn kết lại với nhau.",
+      "giai": "团结起来 — kết hợp lại (ôn bổ ngữ xu hướng 起来)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "拉起",
+       "我的手",
+       "，",
+       "走",
+       "进了",
+       "教室",
+       "。"
+      ],
+      "dap": [
+       "他拉起我的手，走进了教室。"
+      ],
+      "goiY": "Cậu ấy nắm tay tôi, đi vào lớp.",
+      "giai": "V + 起 + O."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "要",
+       "建立起",
+       "一套",
+       "有效的",
+       "制度",
+       "。"
+      ],
+      "dap": [
+       "我们要建立起一套有效的制度。"
+      ],
+      "goiY": "Chúng ta cần xây dựng một chế độ hiệu quả.",
+      "giai": "Động từ năng nguyện 要 + 建立起 + O."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "两国",
+       "之间",
+       "建立起了",
+       "深厚的",
+       "友谊",
+       "。"
+      ],
+      "dap": [
+       "两国之间建立起了深厚的友谊。"
+      ],
+      "goiY": "Giữa hai nước đã xây dựng được tình hữu nghị sâu sắc.",
+      "giai": "V + 起 + 了 + O."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他们建立了起很好的关系。",
+      "dung": false,
+      "sua": "他们建立起了很好的关系。",
+      "giai": "了 không chen giữa V và 起."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "只要关闭起大门，院子里就很安静。",
+      "dung": true,
+      "giai": "Đúng: 关闭起大门 — V + 起 + O."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "她拉手起妈妈。",
+      "dung": false,
+      "sua": "她拉起妈妈的手。",
+      "giai": "Tân ngữ phải đứng sau 起."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy nắm lấy tay tôi, nói: “Chúng mình là bạn tốt.”",
+      "dap": [
+       "他拉起我的手，说：“我们是好朋友。”",
+       "他拉起我的手说：“我们是好朋友。”",
+       "他拉起我的手，说：“咱们是好朋友。”"
+      ],
+      "py": "Tā lāqǐ wǒ de shǒu, shuō: “Wǒmen shì hǎo péngyou.”",
+      "goiY": "Dịch sang tiếng Trung, dùng V + 起.",
+      "giai": "拉起 + 手."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Lớp chúng tôi đã xây dựng được một nội quy rất hiệu quả.",
+      "dap": [
+       "我们班建立起了一套很有效的规定。",
+       "我们班建立起了一套非常有效的制度。",
+       "我们班建立起一套很有效的规定。"
+      ],
+      "py": "Wǒmen bān jiànlì qǐle yí tào hěn yǒuxiào de guīdìng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 建立起.",
+      "giai": "建立起了 + 一套 + 制度 / 规定."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他拉起我的手，＿＿＿。",
+      "goiY": "nói tiếp việc cậu ấy làm sau khi nắm tay (dùng V + 起 ở vế trước) — câu của sách",
+      "mau": "他拉起我的手，带我去见他的父母。",
+      "can": [
+       [
+        "起"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "我们两国＿＿＿。",
+      "goiY": "hai nước đã xây dựng được tình hữu nghị (动词 + 起) — câu của sách",
+      "mau": "我们两国建立起了深厚的友谊。",
+      "can": [
+       [
+        "起"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「动词 + 起」 (拉起 / 关闭起 / 建立起 / 组织起…) nói về lớp học hoặc gia đình em",
+      "mau": "新学期开始，我们班建立起了一个互帮互助的学习小组。",
+      "can": [
+       [
+        "起"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

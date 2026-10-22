@@ -1,0 +1,146 @@
+{
+ "zh": "人生有选择，一切可改变",
+ "py": "Rénshēng yǒu xuǎnzé, yíqiè kě gǎibiàn",
+ "vn": "Đời người có lựa chọn, mọi thứ có thể đổi thay",
+ "topic": "Unit 1 了解生活 · Lựa chọn cuộc đời &amp; đam mê",
+ "vocabCount": 44,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "各自",
+   "explain": "各自 là đại từ, chỉ MỖI NGƯỜI tự mình, hoặc mỗi bên trong nhiều bên. Thường đi cùng đối tượng mà nó chỉ, làm chủ ngữ hoặc định ngữ. Chủ ngữ phải là số nhiều.",
+   "rule": "Chủ ngữ (số nhiều) + <strong style=\"color:var(--sky-d)\">各自</strong> + Động từ　|　<strong style=\"color:var(--sky-d)\">各自的</strong> + Danh từ",
+   "examples": [
+    {
+     "zh": "中场休息时间到了，比赛双方队员各自回场外休息。",
+     "py": "Zhōngchǎng xiūxi shíjiān dào le, bǐsài shuāngfāng duìyuán gèzì huí chǎng wài xiūxi.",
+     "vn": "Đến giờ nghỉ giữa hiệp, cầu thủ hai đội ai về chỗ nghỉ của đội nấy ngoài sân."
+    },
+    {
+     "zh": "刘经理认真看了三家广告公司各自提交的计划。",
+     "py": "Liú jīnglǐ rènzhēn kànle sān jiā guǎnggào gōngsī gèzì tíjiāo de jìhuà.",
+     "vn": "Giám đốc Lưu đã xem kỹ kế hoạch mà ba công ty quảng cáo mỗi bên nộp lên."
+    },
+    {
+     "zh": "以前陆地上的夜晚，他们在各自的房间，一家人没有更多的交流。",
+     "py": "Yǐqián lùdì shang de yèwǎn, tāmen zài gèzì de fángjiān, yì jiā rén méiyǒu gèng duō de jiāoliú.",
+     "vn": "Trước đây, những buổi tối trên đất liền, họ ai ở phòng nấy, cả nhà không trò chuyện gì nhiều."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我各自回家了。",
+     "why": "各自 là \"mỗi người trong nhiều người\" — chủ ngữ phải là số nhiều.",
+     "right": "我们各自回家了。"
+    },
+    {
+     "wrong": "各自同学都交了作业。",
+     "why": "各自 không đứng trước danh từ như 每; phải đặt sau chủ ngữ (hoặc dùng 每个同学).",
+     "right": "同学们各自交了作业。"
+    }
+   ]
+  },
+  {
+   "point": "勿",
+   "explain": "勿 là phó từ, biểu thị CẤM ĐOÁN hoặc khuyên can, thuộc văn viết, tương đương 不要. Hay gặp trên biển báo, thông báo: 请勿吸烟, 请勿入内, 切勿…….",
+   "rule": "(请 / 切) + <strong style=\"color:var(--sky-d)\">勿</strong> + Động từ",
+   "examples": [
+    {
+     "zh": "非工作人员，请勿入内。",
+     "py": "Fēi gōngzuò rényuán, qǐng wù rù nèi.",
+     "vn": "Không phải nhân viên, xin đừng vào."
+    },
+    {
+     "zh": "网上购票者须注意网站的安全性，切勿上当受骗。",
+     "py": "Wǎng shang gòu piào zhě xū zhùyì wǎngzhàn de ānquánxìng, qiè wù shàngdàng shòupiàn.",
+     "vn": "Người mua vé trên mạng phải chú ý độ an toàn của trang web, tuyệt đối chớ để bị lừa."
+    },
+    {
+     "zh": "中国有句老话，可上山，勿下海。",
+     "py": "Zhōngguó yǒu jù lǎohuà, kě shàng shān, wù xià hǎi.",
+     "vn": "Trung Quốc có câu nói xưa: lên núi thì được, chớ xuống biển."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我明天勿去学校。",
+     "why": "勿 dùng để cấm đoán, khuyên can người khác — không dùng để phủ định việc của chính mình.",
+     "right": "我明天不去学校。"
+    },
+    {
+     "wrong": "妈妈，你勿担心我！",
+     "why": "勿 là văn viết (biển báo, thông báo). Nói với người thân trong khẩu ngữ dùng 别 / 不要.",
+     "right": "妈妈，你别担心我！"
+    }
+   ]
+  },
+  {
+   "point": "包括",
+   "explain": "包括 là động từ, biểu thị BAO GỒM các bộ phận. Ngoài ra còn dùng để NHẤN MẠNH một phần trong số đông, có tác dụng nêu ví dụ, bổ sung, giải thích: 包括……（在内），所有人都…….",
+   "rule": "A + <strong style=\"color:var(--sky-d)\">包括</strong> + B、C……　|　<strong style=\"color:var(--sky-d)\">包括</strong> + X (在内)，所有人都……",
+   "examples": [
+    {
+     "zh": "汉语技能教学包括听、说、读、写四个方面。",
+     "py": "Hànyǔ jìnéng jiàoxué bāokuò tīng, shuō, dú, xiě sì ge fāngmiàn.",
+     "vn": "Dạy kỹ năng tiếng Hán bao gồm bốn mặt: nghe, nói, đọc, viết."
+    },
+    {
+     "zh": "然而，包括翟峰的父母，所有人都觉得，翟峰“疯了”。",
+     "py": "Rán'ér, bāokuò Zhái Fēng de fùmǔ, suǒyǒu rén dōu juéde, Zhái Fēng \"fēng le\".",
+     "vn": "Thế nhưng mọi người, kể cả bố mẹ Trác Phong, đều cho rằng Trác Phong \"điên rồi\"."
+    },
+    {
+     "zh": "我们班所有人，包括最不爱运动的刘方，也都参加了这次运动会。",
+     "py": "Wǒmen bān suǒyǒu rén, bāokuò zuì bú ài yùndòng de Liú Fāng, yě dōu cānjiāle zhè cì yùndònghuì.",
+     "vn": "Cả lớp chúng tôi, kể cả Lưu Phương — người lười vận động nhất — cũng đều tham gia hội thao lần này."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "包括他以内，大家都迟到了。",
+     "why": "cụm cố định là 包括……在内, không phải 以内.",
+     "right": "包括他在内，大家都迟到了。"
+    },
+    {
+     "wrong": "我们家包括四口人。",
+     "why": "chỉ nói SỐ LƯỢNG thì dùng 有; 包括 dùng khi liệt kê các bộ phận.",
+     "right": "我们家有四口人。"
+    }
+   ]
+  },
+  {
+   "point": "时刻",
+   "explain": "时刻 là danh từ, chỉ một THỜI ĐIỂM hoặc khoảng thời gian (thường quan trọng): 最后时刻, 美好的时刻. 时刻 còn làm PHÓ TỪ, nghĩa là lúc nào cũng, luôn luôn; có thể lặp lại thành 时时刻刻.",
+   "rule": "最后 / 美好的 + <strong style=\"color:var(--sky-d)\">时刻</strong> (danh từ)　|　<strong style=\"color:var(--sky-d)\">时刻 / 时时刻刻</strong> + Động từ (phó từ)",
+   "examples": [
+    {
+     "zh": "在最后时刻，他为本队踢进了赢得比赛的关键一球。",
+     "py": "Zài zuìhòu shíkè, tā wèi běn duì tījìnle yíngdé bǐsài de guānjiàn yì qiú.",
+     "vn": "Ở thời khắc cuối cùng, anh ấy đã ghi bàn thắng quyết định cho đội nhà."
+    },
+    {
+     "zh": "美好的时刻过去后是一个个紧张的夜晚。",
+     "py": "Měihǎo de shíkè guòqù hòu shì yí gègè jǐnzhāng de yèwǎn.",
+     "vn": "Qua những khoảnh khắc tươi đẹp là từng đêm căng thẳng."
+    },
+    {
+     "zh": "工作中，他时时刻刻提醒自己：乘客的安全是最重要的。",
+     "py": "Gōngzuò zhōng, tā shíshíkèkè tíxǐng zìjǐ: chéngkè de ānquán shì zuì zhòngyào de.",
+     "vn": "Khi làm việc, anh ấy luôn luôn tự nhắc mình: an toàn của hành khách là quan trọng nhất."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "21世纪是一个信息时刻。",
+     "why": "时刻 là một thời điểm ngắn; một giai đoạn lịch sử dài phải dùng 时代.",
+     "right": "21世纪是一个信息时代。"
+    },
+    {
+     "wrong": "我时刻刻都在想这件事。",
+     "why": "dạng lặp của 时刻 là 时时刻刻 (AABB), không phải 时刻刻.",
+     "right": "我时时刻刻都在想这件事。"
+    }
+   ]
+  }
+ ]
+}

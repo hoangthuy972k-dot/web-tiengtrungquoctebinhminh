@@ -1,0 +1,20 @@
+{
+"她|0": "Tā shì wǒ de Hànyǔ lǎoshī.",
+"她|1": "Tā bú shì wǒ de tóngxué.",
+"谁|0": "Tā shì shéi?",
+"谁|1": "Tā shì shéi de tóngxué?",
+"的|0": "Wǒ de míngzi jiào Wáng Měi.",
+"的|1": "Tā shì lǎoshī de xuésheng.",
+"汉语|0": "Tā shì Hànyǔ lǎoshī.",
+"汉语|1": "Nǐ de Hànyǔ míngzi jiào shénme?",
+"哪|0": "Nǐ shì nǎ guó rén?",
+"哪|1": "Tā shì nǎ guó rén?",
+"呢|0": "Wǒ shì xuésheng, nǐ ne?",
+"呢|1": "Tā shì Zhōngguó rén, tā ne?",
+"他|0": "Tā shì wǒ de péngyou.",
+"他|1": "Tā jiào shénme míngzi?",
+"同学|0": "Tóngxuémen hǎo!",
+"同学|1": "Tā shì nǐ de tóngxué ma?",
+"朋友|0": "Tā shì wǒ de hǎo péngyou.",
+"朋友|1": "Nǐ de Zhōngguó péngyou jiào shénme míngzi?"
+}

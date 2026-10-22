@@ -1,0 +1,112 @@
+{
+ "zh": "我的人生我做主",
+ "py": "Wǒ de rénshēng wǒ zuò zhǔ",
+ "vn": "Tôi làm chủ cuộc đời tôi",
+ "topic": "第二单元 不甘平庸 · Chọn nghề &amp; năng lực ra quyết định",
+ "vocabCount": 45,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "于",
+   "explain": "于 là GIỚI TỪ, dùng trong văn viết. ① Biểu thị thời gian, nơi chốn, nghĩa tương đương 在: 毕业于3年前, 产于浙江. ② Biểu thị phương diện, nguyên nhân, mục đích: 苦于没有时间 (khổ vì không có thời gian), 勇于承担 (dám gánh vác — dũng cảm về mặt …), 忙于工作 (bận vì công việc). 于 thường đứng NGAY SAU động từ / tính từ một âm tiết, tạo thành khối V于 + tân ngữ.",
+   "rule": "V / adj + <strong style=\"color:var(--sky-d)\">于</strong> + thời gian / nơi chốn (= 在)　|　V / adj + <strong style=\"color:var(--sky-d)\">于</strong> + phương diện / nguyên nhân / mục đích",
+   "examples": [
+    {
+     "zh": "毕业于3年前的他，一直做会计，成天和数字打交道，枯燥而且压力大。",
+     "py": "Bìyè yú sān nián qián de tā, yìzhí zuò kuàijì, chéngtiān hé shùzì dǎ jiāodao, kūzào érqiě yālì dà.",
+     "vn": "Tốt nghiệp từ ba năm trước, anh ấy làm kế toán suốt, cả ngày giao du với những con số, vừa nhàm chán vừa áp lực lớn."
+    },
+    {
+     "zh": "著名的西湖龙井茶产于浙江省的西湖一带。",
+     "py": "Zhùmíng de Xīhú Lóngjǐng chá chǎn yú Zhèjiāng Shěng de Xīhú yídài.",
+     "vn": "Trà Long Tỉnh Tây Hồ nổi tiếng được sản xuất ở vùng Tây Hồ, tỉnh Chiết Giang."
+    },
+    {
+     "zh": "我一直想和他一起去旅行，只是苦于没有时间。",
+     "py": "Wǒ yìzhí xiǎng hé tā yìqǐ qù lǚxíng, zhǐshì kǔyú méiyǒu shíjiān.",
+     "vn": "Tôi vẫn luôn muốn cùng anh ấy đi du lịch, chỉ khổ nỗi không có thời gian."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他毕业了于2015年。",
+     "why": "于 đứng NGAY sau động từ, không chen 了 vào giữa.",
+     "right": "他毕业于2015年。"
+    },
+    {
+     "wrong": "于上海，他住了十年。",
+     "why": "于 là văn viết, thường đi sau động từ (V于 + nơi); đầu câu khẩu ngữ phải dùng 在.",
+     "right": "他在上海住了十年。"
+    }
+   ]
+  },
+  {
+   "point": "致使",
+   "explain": "致使 ① là ĐỘNG TỪ: do nguyên nhân nào đó mà làm cho (khiến cho) một kết quả xảy ra — chủ ngữ là nguyên nhân: 他的粗心致使试验失败. ② cũng là LIÊN TỪ: đứng đầu phân câu sau, nêu kết quả do nguyên nhân ở trên gây ra; thường đi với 由于 / 因为 ở vế trước. Kết quả phần lớn là TIÊU CỰC hoặc người nói không mong muốn. Dùng trong văn viết.",
+   "rule": "Nguyên nhân (N / cụm từ) + <strong style=\"color:var(--sky-d)\">致使</strong> + người/vật + kết quả　|　由于 / 因为……，<strong style=\"color:var(--sky-d)\">致使</strong> + kết quả (thường tiêu cực)",
+   "examples": [
+    {
+     "zh": "他的粗心致使试验失败。",
+     "py": "Tā de cūxīn zhìshǐ shìyàn shībài.",
+     "vn": "Sự cẩu thả của anh ấy khiến thí nghiệm thất bại."
+    },
+    {
+     "zh": "对自己缺乏信心，对未来过度悲观致使小王出现以上现象。",
+     "py": "Duì zìjǐ quēfá xìnxīn, duì wèilái guòdù bēiguān zhìshǐ Xiǎo Wáng chūxiàn yǐshàng xiànxiàng.",
+     "vn": "Thiếu tự tin vào bản thân, bi quan quá mức về tương lai đã khiến Tiểu Vương xuất hiện những hiện tượng trên."
+    },
+    {
+     "zh": "由于新产品研发能力有限，致使企业逐渐失去竞争力。",
+     "py": "Yóuyú xīn chǎnpǐn yánfā nénglì yǒuxiàn, zhìshǐ qǐyè zhújiàn shīqù jìngzhēnglì.",
+     "vn": "Do năng lực nghiên cứu phát triển sản phẩm mới có hạn nên doanh nghiệp dần mất sức cạnh tranh."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "由于大家的努力，致使我们取得了好成绩。",
+     "why": "致使 dẫn kết quả tiêu cực, không mong muốn; kết quả tốt thì không dùng 致使.",
+     "right": "由于大家的努力，我们取得了好成绩。"
+    },
+    {
+     "wrong": "致使他迟到了，因为路上堵车。",
+     "why": "Liên từ 致使 đứng đầu VẾ SAU (kết quả), sau vế nguyên nhân.",
+     "right": "因为路上堵车，致使他迟到了。"
+    }
+   ]
+  },
+  {
+   "point": "并非",
+   "explain": "并非 là ĐỘNG TỪ, nghĩa là \"并不是\" (hoàn toàn không phải). 并 đứng trước từ phủ định 非, làm TĂNG CƯỜNG ngữ khí phủ định — thường dùng để bác bỏ một cách nghĩ, một nhận định mà người ta cho là đúng. Hay gặp: 并非少数, 并非坏事, 并非如此, 并非……而是……. Văn phong viết.",
+   "rule": "A + <strong style=\"color:var(--sky-d)\">并非</strong> + B (bác bỏ)　|　<strong style=\"color:var(--sky-d)\">并非</strong>……，而是……　|　事实<strong style=\"color:var(--sky-d)\">并非</strong>如此",
+   "examples": [
+    {
+     "zh": "类似小王这样的年轻人并非少数。",
+     "py": "Lèisì Xiǎo Wáng zhèyàng de niánqīngrén bìngfēi shǎoshù.",
+     "vn": "Những người trẻ giống như Tiểu Vương không phải là số ít."
+    },
+    {
+     "zh": "这意味着，原本英明的决定今天看来可能并非如此了。",
+     "py": "Zhè yìwèizhe, yuánběn yīngmíng de juédìng jīntiān kànlái kěnéng bìngfēi rúcǐ le.",
+     "vn": "Điều này có nghĩa là quyết định vốn sáng suốt, ngày nay nhìn lại có thể không còn như vậy nữa."
+    },
+    {
+     "zh": "不要怕犯错，不要害怕走弯路，犯些小错并非坏事，它会增加我们的心灵免疫力。",
+     "py": "Bú yào pà fàn cuò, bú yào hàipà zǒu wānlù, fàn xiē xiǎo cuò bìngfēi huàishì, tā huì zēngjiā wǒmen de xīnlíng miǎnyìlì.",
+     "vn": "Đừng sợ mắc lỗi, đừng sợ đi đường vòng, phạm vài lỗi nhỏ hoàn toàn không phải chuyện xấu, nó sẽ tăng sức đề kháng cho tâm hồn chúng ta."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他非并想去，只是没办法。",
+     "why": "并 là phó từ tăng cường, phải đứng TRƯỚC từ phủ định 非: 并非.",
+     "right": "他并非想去，只是没办法。"
+    },
+    {
+     "wrong": "并非少数类似小王这样的年轻人。",
+     "why": "并非 làm vị ngữ, đứng sau chủ ngữ (cái bị bác bỏ đứng sau 并非).",
+     "right": "类似小王这样的年轻人并非少数。"
+    }
+   ]
+  }
+ ]
+}

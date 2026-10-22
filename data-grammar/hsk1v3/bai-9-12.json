@@ -1,0 +1,294 @@
+{
+ "/lessons/hsk1v3-bai-9.html": {
+  "points": [
+   {
+    "title": "Câu tồn hiện (1) — 有 / 是",
+    "errors": [
+     { "wrong": "一家电影院有学校前边。", "why": "tiếng Việt “có một rạp phim ở trước trường”, học sinh để nơi chốn xuống cuối.", "right": "学校前边有一家电影院。" },
+     { "wrong": "学校前边有电影院是。", "why": "dùng thừa cả 有 lẫn 是 trong một câu.", "right": "学校前边是电影院。" },
+     { "wrong": "学校前边不有电影院。", "why": "phủ định 有 bằng 不.", "right": "学校前边没有电影院。" }
+    ],
+    "items": [
+     { "context": "“Phía trước trường có một rạp chiếu phim.”", "pre": "学校前边", "blank": "有", "post": "一家电影院。", "options": ["有", "是", "在"], "answer": 0, "explanation": "有 giới thiệu sự vật CHƯA xác định (một cái…)." },
+     { "context": "“Phía trước rạp phim là một siêu thị.” (nói rõ đó là cái gì)", "pre": "电影院前边", "blank": "是", "post": "一家超市。", "options": ["是", "有", "在"], "answer": 0, "explanation": "是 dùng khi giới thiệu chính xác cái đã biết, mang nghĩa “chính là”." },
+     { "context": "“Trước trường không có siêu thị.”", "pre": "学校前边", "blank": "没有", "post": "超市。", "options": ["没有", "不有", "不是"], "answer": 0, "explanation": "Phủ định của 有 luôn là 没有." },
+     { "context": "“Trong phòng có mấy người?”", "pre": "房间里有", "blank": "几", "post": "个人？", "options": ["几", "什么", "怎么"], "answer": 0, "explanation": "几 + lượng từ hỏi số lượng nhỏ." },
+     { "context": "“Bên cạnh nhà tôi có một bệnh viện.”", "pre": "我家旁边", "blank": "有", "post": "一家医院。", "options": ["有", "是", "会"], "answer": 0, "explanation": "Nơi chốn + 有 + sự vật mới nhắc tới." },
+     { "context": "“Trên bàn có sách của tôi.”", "pre": "桌子上", "blank": "有", "post": "我的书。", "options": ["有", "在", "会"], "answer": 0, "explanation": "Câu tồn hiện: nơi chốn đứng ĐẦU câu." },
+     { "type": "sort", "context": "Sắp xếp: “Trước trường có một rạp chiếu phim.”", "words": ["学校", "前边", "有", "一家", "电影院", "。"], "answer": "学校前边有一家电影院。", "explanation": "Nơi chốn + 有 + sự vật." },
+     { "type": "sort", "context": "Sắp xếp: “Trong phòng có hai người.”", "words": ["房间", "里", "有", "两", "个", "人", "。"], "answer": "房间里有两个人。", "explanation": "Nơi chốn có phương vị từ + 有." },
+     { "type": "sort", "context": "Sắp xếp: “Phía sau siêu thị là bệnh viện.”", "words": ["超市", "后边", "是", "医院", "。"], "answer": "超市后边是医院。", "explanation": "是 khi nêu rõ đó là nơi nào." },
+     { "type": "sort", "context": "Sắp xếp: “Trước nhà tôi không có siêu thị.”", "words": ["我家", "前边", "没有", "超市", "。"], "answer": "我家前边没有超市。", "explanation": "没有 phủ định câu tồn hiện." },
+     { "context": "Em muốn giới thiệu trước trường có một rạp phim. Chọn câu đúng.", "pre": "", "blank": "学校前边有一家电影院。", "post": "", "options": ["学校前边有一家电影院。", "一家电影院有学校前边。", "学校前边是有电影院。"], "answer": 0, "explanation": "Nơi chốn đứng đầu, 有 giới thiệu sự vật mới." },
+     { "context": "Bạn hỏi gần nhà em có bệnh viện không, nhà em không có. Chọn câu đúng.", "pre": "", "blank": "我家旁边没有医院。", "post": "", "options": ["我家旁边没有医院。", "我家旁边不有医院。", "我家旁边不是医院。"], "answer": 0, "explanation": "Phủ định 有 dùng 没有." },
+     { "context": "Chỉ vào tòa nhà quen thuộc phía sau siêu thị (là bệnh viện). Chọn câu tự nhiên.", "pre": "", "blank": "超市后边是医院。", "post": "", "options": ["超市后边是医院。", "超市后边有医院是。", "医院是超市后边。"], "answer": 0, "explanation": "Đã xác định rõ thì dùng 是." }
+    ]
+   },
+   {
+    "title": "Trật tự thời gian và nơi chốn khi cùng làm trạng ngữ",
+    "errors": [
+     { "wrong": "我们在电影院外边七点见。", "why": "tiếng Việt “gặp ở rạp lúc 7h”, học sinh để thời gian sau nơi chốn.", "right": "我们七点在电影院外边见。" },
+     { "wrong": "安妮学中文下午在家里。", "why": "đẩy cả thời gian và nơi chốn xuống cuối câu.", "right": "安妮下午在家里学中文。" },
+     { "wrong": "我在家七点吃早饭。", "why": "đảo nơi chốn lên trước thời gian.", "right": "我七点在家吃早饭。" }
+    ],
+    "items": [
+     { "context": "Thứ tự đúng: chủ ngữ + THỜI GIAN + NƠI CHỐN + động từ.", "pre": "我们", "blank": "七点在电影院外边", "post": "见。", "options": ["七点在电影院外边", "在电影院外边七点", "见七点在电影院"], "answer": 0, "explanation": "Tiếng Trung: thời gian trước, nơi chốn sau, rồi mới đến động từ." },
+     { "context": "“Chiều nay Annie học tiếng Trung ở nhà.”", "pre": "安妮", "blank": "下午在家里", "post": "学中文。", "options": ["下午在家里", "在家里下午", "学中文下午"], "answer": 0, "explanation": "下午 (thời gian) → 在家里 (nơi chốn) → 学 (động từ)." },
+     { "context": "“Tôi 7 giờ ăn sáng ở nhà.”", "pre": "我", "blank": "七点在家", "post": "吃早饭。", "options": ["七点在家", "在家七点", "吃早饭七点"], "answer": 0, "explanation": "Thời gian đứng trước nơi chốn." },
+     { "context": "“Sáng mai chúng ta gặp nhau ở trường nhé.”", "pre": "我们", "blank": "明天早上在学校", "post": "见吧。", "options": ["明天早上在学校", "在学校明天早上", "见明天早上"], "answer": 0, "explanation": "Cụm thời gian dài cũng đứng trước nơi chốn." },
+     { "context": "“Bạn ấy tối nay không học ở nhà.”", "pre": "她今天晚上", "blank": "不在家", "post": "学习。", "options": ["不在家", "在家不", "不学习在家"], "answer": 0, "explanation": "不 đứng trước cụm 在 + nơi chốn." },
+     { "context": "“Bạn mấy giờ ăn cơm ở nhà hàng?”", "pre": "你", "blank": "几点在饭店", "post": "吃饭？", "options": ["几点在饭店", "在饭店几点", "吃饭几点"], "answer": 0, "explanation": "Từ hỏi thời gian giữ đúng vị trí của thời gian." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng ta 7 giờ gặp nhau ở ngoài rạp phim.”", "words": ["我们", "七点", "在", "电影院", "外边", "见", "。"], "answer": "我们七点在电影院外边见。", "explanation": "Thời gian → nơi chốn → động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Chiều nay tôi học tiếng Trung ở nhà.”", "words": ["我", "下午", "在", "家", "学", "中文", "。"], "answer": "我下午在家学中文。", "explanation": "Thứ tự chuẩn của trạng ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn ấy 8 giờ làm việc ở bệnh viện.”", "words": ["她", "八点", "在", "医院", "工作", "。"], "answer": "她八点在医院工作。", "explanation": "Thời gian trước nơi chốn." },
+     { "type": "sort", "context": "Sắp xếp: “Mai chúng ta ăn cơm ở nhà hàng nhé.”", "words": ["明天", "我们", "在", "饭店", "吃饭", "吧", "。"], "answer": "明天我们在饭店吃饭吧。", "explanation": "Thời gian có thể đứng đầu câu." },
+     { "context": "Hẹn bạn 7 giờ ở ngoài rạp phim. Chọn câu đúng.", "pre": "", "blank": "我们七点在电影院外边见。", "post": "", "options": ["我们七点在电影院外边见。", "我们在电影院外边七点见。", "我们见七点在电影院外边。"], "answer": 0, "explanation": "Thời gian đứng TRƯỚC nơi chốn." },
+     { "context": "Nói buổi chiều em học ở nhà. Chọn câu đúng.", "pre": "", "blank": "我下午在家学习。", "post": "", "options": ["我下午在家学习。", "我在家下午学习。", "我学习下午在家。"], "answer": 0, "explanation": "Chủ ngữ + thời gian + nơi chốn + động từ." },
+     { "context": "Hỏi bạn mấy giờ ăn cơm ở trường. Chọn câu đúng.", "pre": "", "blank": "你几点在学校吃饭？", "post": "", "options": ["你几点在学校吃饭？", "你在学校几点吃饭？", "你吃饭几点在学校？"], "answer": 0, "explanation": "几点 giữ vị trí của thời gian, trước nơi chốn." }
+    ]
+   },
+   {
+    "title": "Số thứ tự với 「第」",
+    "errors": [
+     { "wrong": "一个电影院是第。", "why": "đặt 第 rời khỏi số từ.", "right": "第一个电影院" },
+     { "wrong": "第两个", "why": "sau 第 phải dùng 二, không dùng 两.", "right": "第二个" },
+     { "wrong": "我住第三。", "why": "thiếu lượng từ/danh từ sau số thứ tự.", "right": "我住第三层。" }
+    ],
+    "items": [
+     { "context": "“thứ nhất, thứ hai, thứ ba”", "pre": "第一，", "blank": "第二", "post": "，第三", "options": ["第二", "第两", "二第"], "answer": 0, "explanation": "Sau 第 luôn dùng 二, không dùng 两." },
+     { "context": "“quyển sách thứ nhất”", "pre": "", "blank": "第一本", "post": "书", "options": ["第一本", "一第本", "第本一"], "answer": 0, "explanation": "第 + số + lượng từ + danh từ." },
+     { "context": "“lần đầu tiên đến Bắc Kinh”", "pre": "", "blank": "第一次", "post": "来北京", "options": ["第一次", "一次第", "第次一"], "answer": 0, "explanation": "第一次 = lần thứ nhất." },
+     { "context": "“người thứ hai”", "pre": "", "blank": "第二个", "post": "人", "options": ["第二个", "第两个", "二个第"], "answer": 0, "explanation": "第二 + 个 + 人." },
+     { "context": "“Đây là lần thứ mấy bạn đến?”", "pre": "这是你", "blank": "第几次", "post": "来？", "options": ["第几次", "几第次", "第次几"], "answer": 0, "explanation": "Hỏi thứ tự dùng 第几." },
+     { "context": "“Tôi học ở tầng ba.”", "pre": "我在", "blank": "第三层", "post": "学习。", "options": ["第三层", "三第层", "第层三"], "answer": 0, "explanation": "第 + số + lượng từ (层)." },
+     { "type": "sort", "context": "Sắp xếp: “Đây là lần đầu tôi đến Trung Quốc.”", "words": ["这", "是", "我", "第一次", "来", "中国", "。"], "answer": "这是我第一次来中国。", "explanation": "第一次 đứng trước động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi thích quyển sách thứ hai.”", "words": ["我", "喜欢", "第二", "本", "书", "。"], "answer": "我喜欢第二本书。", "explanation": "第二 + 本 + 书." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn ấy là người thứ nhất.”", "words": ["她", "是", "第一", "个", "人", "。"], "answer": "她是第一个人。", "explanation": "第一 + lượng từ + danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Đây là lần thứ mấy bạn đến?”", "words": ["这", "是", "你", "第几", "次", "来", "？"], "answer": "这是你第几次来？", "explanation": "第几 hỏi thứ tự." },
+     { "context": "Em muốn nói đây là lần đầu tiên em đến Bắc Kinh. Chọn câu đúng.", "pre": "", "blank": "这是我第一次来北京。", "post": "", "options": ["这是我第一次来北京。", "这是我一第次来北京。", "这是我第次一来北京。"], "answer": 0, "explanation": "第一次 là một khối cố định." },
+     { "context": "Nói “người thứ hai”. Chọn cách đúng.", "pre": "", "blank": "第二个人", "post": "", "options": ["第二个人", "第两个人", "两第个人"], "answer": 0, "explanation": "Sau 第 dùng 二, không dùng 两." },
+     { "context": "Hỏi bạn đây là lần thứ mấy đến Việt Nam. Chọn câu đúng.", "pre": "", "blank": "这是你第几次来越南？", "post": "", "options": ["这是你第几次来越南？", "这是你几第次来越南？", "这是你第次几来越南？"], "answer": 0, "explanation": "第几次 = lần thứ mấy." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1v3-bai-10.html": {
+  "points": [
+   {
+    "title": "Cách diễn đạt số tiền (块 / 毛 / 分)",
+    "errors": [
+     { "wrong": "三二块", "why": "đọc liền số như tiếng Việt “ba hai đồng”, thiếu đơn vị ở giữa.", "right": "三块二（毛）" },
+     { "wrong": "两块钱二", "why": "đặt sai vị trí phần lẻ.", "right": "两块二" },
+     { "wrong": "这个多少块钱吗？", "why": "đã có 多少 còn thêm 吗.", "right": "这个多少钱？" }
+    ],
+    "items": [
+     { "context": "“3 tệ 2 hào”", "pre": "", "blank": "三块二", "post": "", "options": ["三块二", "三二块", "二块三"], "answer": 0, "explanation": "Đơn vị lớn trước: 块 → 毛 → 分." },
+     { "context": "“Cái này bao nhiêu tiền?”", "pre": "这个", "blank": "多少钱", "post": "？", "options": ["多少钱", "多少钱吗", "几钱"], "answer": 0, "explanation": "Hỏi giá dùng 多少钱, không thêm 吗." },
+     { "context": "“20 tệ”", "pre": "", "blank": "二十块", "post": "", "options": ["二十块", "两十块", "二十个块"], "answer": 0, "explanation": "Số 20 đọc 二十; 块 là lượng từ tiền." },
+     { "context": "“2 tệ” (khi nói tiền, dùng 两)", "pre": "", "blank": "两块", "post": "", "options": ["两块", "二块", "两个块"], "answer": 0, "explanation": "Trước lượng từ 块 dùng 两." },
+     { "context": "“Quả táo này 5 tệ.”", "pre": "这个苹果", "blank": "五块钱", "post": "。", "options": ["五块钱", "钱五块", "五钱块"], "answer": 0, "explanation": "số + 块 + 钱." },
+     { "context": "“Hơi đắt.”", "pre": "", "blank": "有点儿贵", "post": "。", "options": ["有点儿贵", "贵有点儿", "很有点儿贵"], "answer": 0, "explanation": "有点儿 + tính từ, mang ý chê nhẹ." },
+     { "type": "sort", "context": "Sắp xếp: “Cái cốc này bao nhiêu tiền?”", "words": ["这个", "杯子", "多少", "钱", "？"], "answer": "这个杯子多少钱？", "explanation": "多少钱 đứng cuối câu hỏi giá." },
+     { "type": "sort", "context": "Sắp xếp: “Cái này 3 tệ 2.”", "words": ["这个", "三", "块", "二", "。"], "answer": "这个三块二。", "explanation": "块 trước, phần lẻ sau." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi có hai mươi tệ.”", "words": ["我", "有", "二十", "块", "钱", "。"], "answer": "我有二十块钱。", "explanation": "有 + số tiền." },
+     { "type": "sort", "context": "Sắp xếp: “Hoa quả ở đây không đắt.”", "words": ["这儿", "的", "水果", "不", "贵", "。"], "answer": "这儿的水果不贵。", "explanation": "不 + tính từ." },
+     { "context": "Hỏi giá một quyển sách. Chọn câu đúng.", "pre": "", "blank": "这本书多少钱？", "post": "", "options": ["这本书多少钱？", "这本书多少钱吗？", "这本书几钱？"], "answer": 0, "explanation": "多少钱 đã là từ hỏi, không thêm 吗." },
+     { "context": "Nói giá 2 tệ 5. Chọn cách đúng.", "pre": "", "blank": "两块五", "post": "", "options": ["两块五", "二块五", "五块两"], "answer": 0, "explanation": "Tiền dùng 两块; đơn vị lớn nói trước." },
+     { "context": "Em thấy món đồ hơi đắt. Chọn câu tự nhiên nhất.", "pre": "", "blank": "有点儿贵。", "post": "", "options": ["有点儿贵。", "很贵有点儿。", "贵有点儿了。"], "answer": 0, "explanation": "有点儿 đứng trước tính từ, thể hiện ý chê nhẹ." }
+    ]
+   },
+   {
+    "title": "Câu vị ngữ tính từ",
+    "errors": [
+     { "wrong": "我的房间是大。", "why": "tiếng Việt “phòng tôi thì to”, học sinh thêm 是 trước tính từ.", "right": "我的房间很大。" },
+     { "wrong": "这儿的水果不少真！", "why": "đảo trật tự phó từ 真 ra sau.", "right": "这儿的水果真不少！" },
+     { "wrong": "她高兴。（khi nói “cô ấy vui”）", "why": "tính từ đứng một mình mang nghĩa so sánh, nghe cụt; cần phó từ 很.", "right": "她很高兴。" }
+    ],
+    "items": [
+     { "context": "“Phòng tôi không to.”", "pre": "我的房间", "blank": "不大", "post": "。", "options": ["不大", "是不大", "没大"], "answer": 0, "explanation": "Phủ định tính từ dùng 不, không dùng 是/没." },
+     { "context": "“Hoa quả ở đây nhiều thật!”", "pre": "这儿的水果", "blank": "真不少", "post": "！", "options": ["真不少", "不少真", "是真不少"], "answer": 0, "explanation": "真 đứng TRƯỚC tính từ." },
+     { "context": "“Tôi rất vui.”", "pre": "我", "blank": "很高兴", "post": "。", "options": ["很高兴", "是高兴", "高兴很"], "answer": 0, "explanation": "很 + tính từ là cách nói trung tính, không cần 是." },
+     { "context": "“Cái cốc này hơi nhỏ.”", "pre": "这个杯子", "blank": "有点儿小", "post": "。", "options": ["有点儿小", "小有点儿", "很有点儿小"], "answer": 0, "explanation": "有点儿 + tính từ (ý chê)." },
+     { "context": "“Hôm nay lạnh không?”", "pre": "今天", "blank": "冷", "post": "吗？", "options": ["冷", "是冷", "很冷的"], "answer": 0, "explanation": "Câu hỏi với 吗 thì bỏ 很." },
+     { "context": "“Chúng tôi đều rất bận.”", "pre": "我们", "blank": "都很忙", "post": "。", "options": ["都很忙", "很都忙", "都是很忙"], "answer": 0, "explanation": "都 đứng trước 很." },
+     { "type": "sort", "context": "Sắp xếp: “Phòng tôi rất to.”", "words": ["我的", "房间", "很", "大", "。"], "answer": "我的房间很大。", "explanation": "很 + tính từ, không dùng 是." },
+     { "type": "sort", "context": "Sắp xếp: “Hoa quả ở đây rất rẻ.”", "words": ["这儿", "的", "水果", "很", "便宜", "。"], "answer": "这儿的水果很便宜。", "explanation": "Cụm có 的 làm chủ ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay không lạnh.”", "words": ["今天", "不", "冷", "。"], "answer": "今天不冷。", "explanation": "不 + tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Cái cốc này hơi nhỏ.”", "words": ["这个", "杯子", "有点儿", "小", "。"], "answer": "这个杯子有点儿小。", "explanation": "有点儿 trước tính từ." },
+     { "context": "Em muốn khen phòng của bạn to. Chọn câu đúng.", "pre": "", "blank": "你的房间很大。", "post": "", "options": ["你的房间很大。", "你的房间是大。", "你的房间大很。"], "answer": 0, "explanation": "Tính từ làm vị ngữ không dùng 是." },
+     { "context": "Em thấy cái cốc hơi nhỏ, muốn chê nhẹ. Chọn câu đúng.", "pre": "", "blank": "这个杯子有点儿小。", "post": "", "options": ["这个杯子有点儿小。", "这个杯子很有点儿小。", "这个杯子小有点儿。"], "answer": 0, "explanation": "有点儿 + tính từ diễn đạt ý không hài lòng nhẹ." },
+     { "context": "Hỏi bạn hôm nay có lạnh không. Chọn câu đúng.", "pre": "", "blank": "今天冷吗？", "post": "", "options": ["今天冷吗？", "今天很冷吗？", "今天是冷吗？"], "answer": 0, "explanation": "Câu hỏi 吗 thường bỏ 很." }
+    ]
+   },
+   {
+    "title": "Đại từ nghi vấn 「怎么样」",
+    "errors": [
+     { "wrong": "这个杯子怎么？", "why": "nhầm 怎么 (cách thức) với 怎么样 (đánh giá).", "right": "这个杯子怎么样？" },
+     { "wrong": "这个怎么样吗？", "why": "đã có từ hỏi còn thêm 吗.", "right": "这个怎么样？" },
+     { "wrong": "怎么样这个杯子？", "why": "đưa từ hỏi lên đầu câu như tiếng Việt “thế nào cái cốc này”.", "right": "这个杯子怎么样？" }
+    ],
+    "items": [
+     { "context": "“Cái cốc này thế nào?” (hỏi ý kiến)", "pre": "这个杯子", "blank": "怎么样", "post": "？", "options": ["怎么样", "怎么", "什么"], "answer": 0, "explanation": "怎么样 hỏi đánh giá, tình hình." },
+     { "context": "“Chúng ta đi siêu thị, được không?”", "pre": "我们去超市，", "blank": "怎么样", "post": "？", "options": ["怎么样", "怎么", "吗"], "answer": 0, "explanation": "怎么样 cuối câu = “thấy sao?”, dùng để rủ rê lịch sự." },
+     { "context": "Hỏi CÁCH LÀM thì dùng 怎么.", "pre": "这个菜", "blank": "怎么", "post": "做？", "options": ["怎么", "怎么样", "什么"], "answer": 0, "explanation": "怎么 + động từ = làm thế nào." },
+     { "context": "“Dạo này bạn thế nào?”", "pre": "你最近", "blank": "怎么样", "post": "？", "options": ["怎么样", "怎么", "哪儿"], "answer": 0, "explanation": "Hỏi thăm tình hình dùng 怎么样." },
+     { "context": "“Món này ngon không?” (hỏi đánh giá)", "pre": "这个菜", "blank": "怎么样", "post": "？", "options": ["怎么样", "怎么", "多少"], "answer": 0, "explanation": "Hỏi nhận xét về món ăn." },
+     { "context": "Trả lời: “Tôi rất thích, cũng không đắt.”", "pre": "我很喜欢，", "blank": "也不贵", "post": "。", "options": ["也不贵", "不也贵", "也贵不"], "answer": 0, "explanation": "也 + 不 + tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Cái cốc này thế nào?”", "words": ["这个", "杯子", "怎么样", "？"], "answer": "这个杯子怎么样？", "explanation": "怎么样 đứng cuối." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng ta 2 giờ đi, thấy sao?”", "words": ["我们", "两点", "去", "，", "怎么样", "？"], "answer": "我们两点去，怎么样？", "explanation": "怎么样 dùng để rủ rê lịch sự." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi rất thích, cũng không đắt.”", "words": ["我", "很", "喜欢", "，", "也", "不", "贵", "。"], "answer": "我很喜欢，也不贵。", "explanation": "Hai vế nối nhau, 也 trước 不." },
+     { "type": "sort", "context": "Sắp xếp: “Dạo này bạn thế nào?”", "words": ["你", "最近", "怎么样", "？"], "answer": "你最近怎么样？", "explanation": "Thời gian trước, từ hỏi cuối." },
+     { "context": "Em muốn hỏi ý kiến bạn về cái cốc. Chọn câu đúng.", "pre": "", "blank": "这个杯子怎么样？", "post": "", "options": ["这个杯子怎么样？", "这个杯子怎么？", "怎么样这个杯子？"], "answer": 0, "explanation": "怎么样 hỏi đánh giá và đứng ở cuối." },
+     { "context": "Em muốn rủ bạn 2 giờ đi siêu thị một cách lịch sự. Chọn câu đúng.", "pre": "", "blank": "我们两点去超市，怎么样？", "post": "", "options": ["我们两点去超市，怎么样？", "我们两点去超市怎么？", "怎么样我们两点去超市？"], "answer": 0, "explanation": "…，怎么样？ là cách rủ rê lịch sự." },
+     { "context": "Em muốn hỏi cách nấu một món ăn. Chọn câu đúng.", "pre": "", "blank": "这个菜怎么做？", "post": "", "options": ["这个菜怎么做？", "这个菜怎么样做？", "这个菜做怎么样？"], "answer": 0, "explanation": "Hỏi cách thức dùng 怎么 + động từ." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1v3-bai-11.html": {
+  "points": [
+   {
+    "title": "Câu hỏi chính phản",
+    "errors": [
+     { "wrong": "你是不是老师吗？", "why": "dùng cùng lúc câu hỏi chính phản và 吗.", "right": "你是不是老师？" },
+     { "wrong": "你去不去学校吗？", "why": "cùng lỗi trên.", "right": "你去不去学校？" },
+     { "wrong": "你去没去学校吗？", "why": "thêm 吗 vào mẫu 去没去 (hỏi việc đã xảy ra).", "right": "你去没去学校？" }
+    ],
+    "items": [
+     { "context": "“Nó có ở phía sau siêu thị không?”", "pre": "它", "blank": "是不是", "post": "在超市后边？", "options": ["是不是", "是吗不", "不是吗"], "answer": 0, "explanation": "Mẫu chính phản: động từ + 不 + động từ." },
+     { "context": "“Bạn có đi học không?”", "pre": "你", "blank": "去不去", "post": "学校？", "options": ["去不去", "去吗不", "不去吗"], "answer": 0, "explanation": "去不去 = có đi hay không." },
+     { "context": "Câu hỏi chính phản KHÔNG dùng kèm 吗.", "pre": "你是不是学生", "blank": "？", "post": "", "options": ["？", "吗？", "呢吗？"], "answer": 0, "explanation": "Đã có 是不是 thì bỏ 吗." },
+     { "context": "“Bạn có bận không?”", "pre": "你", "blank": "忙不忙", "post": "？", "options": ["忙不忙", "不忙吗", "忙吗不"], "answer": 0, "explanation": "Tính từ cũng dùng mẫu chính phản: 忙不忙." },
+     { "context": "“Bạn đã đi trường chưa?” (việc đã xảy ra)", "pre": "你", "blank": "去没去", "post": "学校？", "options": ["去没去", "去不去", "没去吗"], "answer": 0, "explanation": "Việc đã xảy ra dùng 去没去." },
+     { "context": "“Bạn có biết nấu ăn không?”", "pre": "你", "blank": "会不会", "post": "做饭？", "options": ["会不会", "会吗不", "不会吗"], "answer": 0, "explanation": "Động từ năng nguyện cũng có mẫu chính phản." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn có phải là giáo viên không?”", "words": ["你", "是不是", "老师", "？"], "answer": "你是不是老师？", "explanation": "是不是 + danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn ấy có bận không?”", "words": ["她", "忙不忙", "？"], "answer": "她忙不忙？", "explanation": "Mẫu chính phản với tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Chiều nay bạn có đi siêu thị không?”", "words": ["你", "下午", "去不去", "超市", "？"], "answer": "你下午去不去超市？", "explanation": "Thời gian trước mẫu chính phản." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn có biết viết chữ Hán không?”", "words": ["你", "会不会", "写", "汉字", "？"], "answer": "你会不会写汉字？", "explanation": "会不会 + động từ." },
+     { "context": "Em muốn hỏi bạn có đi siêu thị không (không dùng 吗). Chọn câu đúng.", "pre": "", "blank": "你去不去超市？", "post": "", "options": ["你去不去超市？", "你去不去超市吗？", "你不去超市吗不？"], "answer": 0, "explanation": "Mẫu chính phản không dùng kèm 吗." },
+     { "context": "Em muốn hỏi bạn có bận không. Chọn câu đúng.", "pre": "", "blank": "你忙不忙？", "post": "", "options": ["你忙不忙？", "你忙吗不忙？", "你不忙吗忙？"], "answer": 0, "explanation": "忙不忙 = có bận không." },
+     { "context": "Em muốn hỏi bạn đã đến trường chưa. Chọn câu đúng.", "pre": "", "blank": "你去没去学校？", "post": "", "options": ["你去没去学校？", "你去不去学校了？", "你没去学校吗不？"], "answer": 0, "explanation": "Việc đã xảy ra dùng V + 没 + V." }
+    ]
+   },
+   {
+    "title": "Phó từ chỉ thời gian 「在 / 正在」 (đang)",
+    "errors": [
+     { "wrong": "学生们上课在呢。", "why": "đặt 在 sau động từ như tiếng Việt “đang” đứng sau.", "right": "学生们在上课呢。" },
+     { "wrong": "我正在学中文吗？", "why": "câu đang diễn ra, dùng 吗 thì phải bỏ 呢 và giữ đúng trật tự.", "right": "你在学中文吗？" },
+     { "wrong": "我不在看电视。", "why": "phủ định hành động đang diễn ra dùng 没(有) + động từ.", "right": "我没看电视。" }
+    ],
+    "items": [
+     { "context": "“Các bạn học sinh đang học bài.”", "pre": "学生们", "blank": "在", "post": "上课呢。", "options": ["在", "会", "要"], "answer": 0, "explanation": "在 + động từ = đang làm gì." },
+     { "context": "“Bạn ấy đang ăn cơm.”", "pre": "她", "blank": "正在", "post": "吃饭。", "options": ["正在", "在正", "是在"], "answer": 0, "explanation": "正在 nhấn mạnh đúng lúc đó đang diễn ra." },
+     { "context": "“Bạn vẫn đang học đại học à?”", "pre": "你还", "blank": "在", "post": "读大学吗？", "options": ["在", "正", "会"], "answer": 0, "explanation": "还在 = vẫn đang." },
+     { "context": "Câu “đang làm” thường kết thúc bằng 呢.", "pre": "他在看电视", "blank": "呢", "post": "。", "options": ["呢", "吗", "了"], "answer": 0, "explanation": "在…呢 là khung quen thuộc." },
+     { "context": "“Bạn đang làm gì đấy?”", "pre": "你", "blank": "在做什么", "post": "呢？", "options": ["在做什么", "做什么在", "什么在做"], "answer": 0, "explanation": "在 + động từ + từ hỏi." },
+     { "context": "Phủ định: “Tôi không xem tivi.”", "pre": "我", "blank": "没", "post": "看电视。", "options": ["没", "不在", "不"], "answer": 0, "explanation": "Việc không diễn ra dùng 没(有) + động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Học sinh đang lên lớp.”", "words": ["学生们", "在", "上课", "呢", "。"], "answer": "学生们在上课呢。", "explanation": "在 + động từ + 呢." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn đang làm gì đấy?”", "words": ["你", "在", "做", "什么", "呢", "？"], "answer": "你在做什么呢？", "explanation": "在 trước động từ, 呢 cuối câu." },
+     { "type": "sort", "context": "Sắp xếp: “Mẹ tôi đang nấu cơm.”", "words": ["我", "妈妈", "正在", "做饭", "。"], "answer": "我妈妈正在做饭。", "explanation": "正在 + động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn ấy vẫn đang học tiếng Trung.”", "words": ["她", "还", "在", "学", "中文", "。"], "answer": "她还在学中文。", "explanation": "还在 = vẫn đang." },
+     { "context": "Bạn gọi điện hỏi em làm gì, em đang ăn cơm. Chọn câu đúng.", "pre": "", "blank": "我在吃饭呢。", "post": "", "options": ["我在吃饭呢。", "我吃饭在呢。", "我在吃饭吗。"], "answer": 0, "explanation": "在 + động từ + 呢." },
+     { "context": "Hỏi bạn có đang học tiếng Trung không. Chọn câu đúng.", "pre": "", "blank": "你在学中文吗？", "post": "", "options": ["你在学中文吗？", "你在学中文呢吗？", "你学中文在吗？"], "answer": 0, "explanation": "Hỏi có/không thì dùng 吗 và bỏ 呢." },
+     { "context": "Em không xem tivi. Chọn câu đúng.", "pre": "", "blank": "我没看电视。", "post": "", "options": ["我没看电视。", "我不在看电视。", "我在不看电视。"], "answer": 0, "explanation": "Phủ định việc đang/đã diễn ra dùng 没." }
+    ]
+   },
+   {
+    "title": "Động từ năng nguyện 「要」 (muốn, cần, sẽ)",
+    "errors": [
+     { "wrong": "我不要去超市。（khi muốn nói “tôi không muốn đi”）", "why": "不要 trong tiếng Trung nghĩa là “đừng”, không phải “không muốn”.", "right": "我不想去超市。" },
+     { "wrong": "我要超市。", "why": "要 làm động từ năng nguyện thì cần động từ đi kèm.", "right": "我要去超市。" },
+     { "wrong": "妈妈没要去超市。", "why": "dùng 没 phủ định 要.", "right": "妈妈不想去超市。" }
+    ],
+    "items": [
+     { "context": "“Mẹ định đi siêu thị.”", "pre": "妈妈", "blank": "要", "post": "去超市。", "options": ["要", "会", "在"], "answer": 0, "explanation": "要 + động từ = định/sẽ làm gì." },
+     { "context": "“Hôm nay bạn ấy sẽ chơi với các bạn nhỏ.”", "pre": "他今天", "blank": "要", "post": "和小朋友玩。", "options": ["要", "想要", "在要"], "answer": 0, "explanation": "要 diễn đạt kế hoạch sắp thực hiện." },
+     { "context": "“Tôi không muốn đi.” (dùng từ đúng!)", "pre": "我", "blank": "不想", "post": "去。", "options": ["不想", "不要", "没要"], "answer": 0, "explanation": "不要 = “đừng”; muốn nói “không muốn” phải dùng 不想." },
+     { "context": "“Đừng đi!” (khuyên ngăn)", "pre": "", "blank": "不要", "post": "去！", "options": ["不要", "不想", "没有"], "answer": 0, "explanation": "不要 + động từ = đừng làm gì." },
+     { "context": "“Tôi muốn một cốc sữa.”", "pre": "我", "blank": "要", "post": "一杯牛奶。", "options": ["要", "会", "在"], "answer": 0, "explanation": "要 cũng là động từ thường, nghĩa “muốn có, gọi (món)”." },
+     { "context": "“Bạn có muốn đi cùng tôi không?”", "pre": "你", "blank": "要不要", "post": "和我一起去？", "options": ["要不要", "要吗不", "不要吗"], "answer": 0, "explanation": "Mẫu chính phản 要不要." },
+     { "type": "sort", "context": "Sắp xếp: “Chiều nay tôi phải đi học.”", "words": ["今天下午", "我", "要", "去", "上课", "。"], "answer": "今天下午我要去上课。", "explanation": "Thời gian + 要 + động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi muốn một cốc sữa.”", "words": ["我", "要", "一", "杯", "牛奶", "。"], "answer": "我要一杯牛奶。", "explanation": "要 + số lượng + vật." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không muốn đi siêu thị.”", "words": ["我", "不想", "去", "超市", "。"], "answer": "我不想去超市。", "explanation": "“Không muốn” dùng 不想." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn có muốn đi cùng không?”", "words": ["你", "要不要", "一起", "去", "？"], "answer": "你要不要一起去？", "explanation": "要不要 + động từ." },
+     { "context": "Em không muốn đi siêu thị. Chọn câu đúng.", "pre": "", "blank": "我不想去超市。", "post": "", "options": ["我不想去超市。", "我不要去超市。", "我没要去超市。"], "answer": 0, "explanation": "不要 nghĩa là “đừng”, dễ gây hiểu nhầm." },
+     { "context": "Em muốn ngăn bạn đi vì trời mưa. Chọn câu đúng.", "pre": "", "blank": "外边下雨呢，不要去了。", "post": "", "options": ["外边下雨呢，不要去了。", "外边下雨呢，不想去了。", "外边下雨呢，没要去了。"], "answer": 0, "explanation": "Khuyên ngăn dùng 不要 + động từ." },
+     { "context": "Gọi đồ ở quán: em muốn một cốc sữa. Chọn câu đúng.", "pre": "", "blank": "我要一杯牛奶。", "post": "", "options": ["我要一杯牛奶。", "我会一杯牛奶。", "我要喝一杯牛奶吗。"], "answer": 0, "explanation": "要 + số lượng + đồ vật khi gọi món." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1v3-bai-12.html": {
+  "points": [
+   {
+    "title": "Câu phi chủ vị",
+    "errors": [
+     { "wrong": "天下雨了。（khi chỉ muốn nói “mưa rồi”）", "why": "thêm chủ ngữ 天 không cần thiết; hiện tượng tự nhiên dùng câu phi chủ vị.", "right": "下雨了。" },
+     { "wrong": "它很漂亮真！", "why": "đảo 真 ra sau và thêm chủ ngữ thừa khi cảm thán.", "right": "真漂亮！" },
+     { "wrong": "是下雨了。", "why": "thêm 是 vào câu phi chủ vị.", "right": "下雨了。" }
+    ],
+    "items": [
+     { "context": "“Mưa rồi.”", "pre": "", "blank": "下雨了", "post": "。", "options": ["下雨了", "天下雨了吗", "是下雨了"], "answer": 0, "explanation": "Hiện tượng tự nhiên nói gọn, không cần chủ ngữ." },
+     { "context": "“Đẹp thật!”", "pre": "", "blank": "真漂亮", "post": "！", "options": ["真漂亮", "漂亮真", "是真漂亮"], "answer": 0, "explanation": "真 + tính từ, câu cảm thán không cần chủ ngữ." },
+     { "context": "“12 giờ rồi, ăn cơm trưa thôi.”", "pre": "", "blank": "十二点了", "post": "，吃午饭吧。", "options": ["十二点了", "是十二点了", "十二点是了"], "answer": 0, "explanation": "Câu chỉ thời gian cũng có thể phi chủ vị." },
+     { "context": "“Nóng quá!”", "pre": "", "blank": "太热了", "post": "！", "options": ["太热了", "热太了", "是太热"], "answer": 0, "explanation": "太 + tính từ + 了." },
+     { "context": "“Xin chào!”", "pre": "", "blank": "你好", "post": "！", "options": ["你好", "是你好", "你好吗好"], "answer": 0, "explanation": "Lời chào là câu cố định, không phân tích chủ – vị." },
+     { "context": "“Tuyết rơi rồi.”", "pre": "", "blank": "下雪了", "post": "。", "options": ["下雪了", "雪下了", "是下雪"], "answer": 0, "explanation": "下 + hiện tượng thời tiết + 了." },
+     { "type": "sort", "context": "Sắp xếp: “Mưa rồi, đừng đi nữa.”", "words": ["下雨", "了", "，", "别", "去", "了", "。"], "answer": "下雨了，别去了。", "explanation": "Câu phi chủ vị + lời khuyên." },
+     { "type": "sort", "context": "Sắp xếp: “12 giờ rồi, chúng ta ăn cơm thôi.”", "words": ["十二点", "了", "，", "我们", "吃饭", "吧", "。"], "answer": "十二点了，我们吃饭吧。", "explanation": "Vế đầu phi chủ vị, vế sau có chủ ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Đẹp quá!”", "words": ["太", "漂亮", "了", "！"], "answer": "太漂亮了！", "explanation": "太…了 là khung cảm thán." },
+     { "type": "sort", "context": "Sắp xếp: “Lạnh thật!”", "words": ["真", "冷", "！"], "answer": "真冷！", "explanation": "真 + tính từ." },
+     { "context": "Nhìn ra ngoài thấy trời mưa. Chọn câu tự nhiên nhất.", "pre": "", "blank": "下雨了。", "post": "", "options": ["下雨了。", "天下雨了。", "是下雨了。"], "answer": 0, "explanation": "Hiện tượng tự nhiên nói gọn không cần chủ ngữ." },
+     { "context": "Thấy bức ảnh đẹp, em khen. Chọn câu đúng.", "pre": "", "blank": "真漂亮！", "post": "", "options": ["真漂亮！", "漂亮真！", "是真漂亮！"], "answer": 0, "explanation": "真 đứng trước tính từ." },
+     { "context": "Đã 12 giờ trưa, em rủ bạn ăn cơm. Chọn câu đúng.", "pre": "", "blank": "十二点了，吃午饭吧。", "post": "", "options": ["十二点了，吃午饭吧。", "是十二点了，吃午饭吗。", "十二点吧，吃午饭了。"], "answer": 0, "explanation": "了 báo tình hình mới, 吧 để rủ rê." }
+    ]
+   },
+   {
+    "title": "Trợ từ ngữ khí 「了」(1) — tình hình mới",
+    "errors": [
+     { "wrong": "了下雨。", "why": "đưa 了 lên đầu câu.", "right": "下雨了。" },
+     { "wrong": "我十二点了吃午饭。", "why": "chen 了 vào giữa câu; 了 (ngữ khí) đứng CUỐI câu.", "right": "十二点了，我吃午饭。" },
+     { "wrong": "他不来了吗不？", "why": "lắp ghép nhiều dấu hiệu hỏi.", "right": "他不来了吗？" }
+    ],
+    "items": [
+     { "context": "“Mưa rồi.” (trước đó chưa mưa)", "pre": "下雨", "blank": "了", "post": "。", "options": ["了", "吗", "呢"], "answer": 0, "explanation": "了 cuối câu báo tình hình MỚI xuất hiện." },
+     { "context": "“12 giờ rồi, ăn cơm thôi.”", "pre": "十二点", "blank": "了", "post": "，吃午饭吧。", "options": ["了", "吧", "呢"], "answer": 0, "explanation": "了 cho biết thời gian đã đến mốc mới." },
+     { "context": "“Tôi biết rồi.”", "pre": "我知道", "blank": "了", "post": "。", "options": ["了", "吗", "的"], "answer": 0, "explanation": "了 báo trạng thái mới: từ chưa biết → biết." },
+     { "context": "“Bạn ấy không đến nữa.”", "pre": "他不来", "blank": "了", "post": "。", "options": ["了", "吗", "呢"], "answer": 0, "explanation": "不…了 = không… nữa (thay đổi so với trước)." },
+     { "context": "“Lạnh rồi, mặc thêm áo đi.”", "pre": "冷", "blank": "了", "post": "，多穿衣服吧。", "options": ["了", "吧", "吗"], "answer": 0, "explanation": "Tính từ + 了 = đã trở nên…" },
+     { "context": "“Em gái tôi 12 tuổi rồi.”", "pre": "我妹妹十二岁", "blank": "了", "post": "。", "options": ["了", "吗", "呢"], "answer": 0, "explanation": "了 báo mốc mới về tuổi." },
+     { "type": "sort", "context": "Sắp xếp: “Mưa rồi, chúng ta đừng đi nữa.”", "words": ["下雨", "了", "，", "我们", "别", "去", "了", "。"], "answer": "下雨了，我们别去了。", "explanation": "了 kết thúc từng vế." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi biết rồi, cảm ơn bạn.”", "words": ["我", "知道", "了", "，", "谢谢", "你", "。"], "answer": "我知道了，谢谢你。", "explanation": "了 cuối vế đầu." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn ấy không đến nữa.”", "words": ["他", "不", "来", "了", "。"], "answer": "他不来了。", "explanation": "不…了 = không… nữa." },
+     { "type": "sort", "context": "Sắp xếp: “Lạnh rồi, mặc thêm áo nhé.”", "words": ["冷", "了", "，", "多", "穿", "衣服", "吧", "。"], "answer": "冷了，多穿衣服吧。", "explanation": "Tính từ + 了 (thay đổi thời tiết)." },
+     { "context": "Trời vừa bắt đầu mưa. Chọn câu đúng.", "pre": "", "blank": "下雨了。", "post": "", "options": ["下雨了。", "了下雨。", "下了雨吗。"], "answer": 0, "explanation": "了 đứng CUỐI câu để báo tình hình mới." },
+     { "context": "Bạn dặn việc, em đã hiểu. Chọn câu trả lời tự nhiên.", "pre": "", "blank": "我知道了。", "post": "", "options": ["我知道了。", "我了知道。", "我知道吗了。"], "answer": 0, "explanation": "了 báo trạng thái đã thay đổi (đã biết)." },
+     { "context": "Bạn định đi nhưng đổi ý. Chọn câu đúng.", "pre": "", "blank": "我不去了。", "post": "", "options": ["我不去了。", "我了不去。", "我不了去。"], "answer": 0, "explanation": "不 + động từ + 了 = không làm nữa." }
+    ]
+   },
+   {
+    "title": "Cấu trúc 「太……了！」",
+    "errors": [
+     { "wrong": "太冷。", "why": "thiếu 了; khung 太…了 phải đủ hai vế.", "right": "太冷了！" },
+     { "wrong": "这个杯子太了小。", "why": "đặt 了 sai chỗ, phải đứng sau tính từ.", "right": "这个杯子太小了。" },
+     { "wrong": "很太冷了。", "why": "dùng thừa 很 trước 太.", "right": "太冷了！" }
+    ],
+    "items": [
+     { "context": "“Lạnh quá!”", "pre": "太冷", "blank": "了", "post": "！", "options": ["了", "吗", "呢"], "answer": 0, "explanation": "Khung 太 + tính từ + 了 luôn đủ hai vế." },
+     { "context": "“Cái cốc này nhỏ quá.”", "pre": "这个杯子", "blank": "太小了", "post": "。", "options": ["太小了", "太了小", "很太小"], "answer": 0, "explanation": "了 đứng sau tính từ." },
+     { "context": "“Ngon quá!”", "pre": "", "blank": "太好吃了", "post": "！", "options": ["太好吃了", "好吃太了", "太了好吃"], "answer": 0, "explanation": "太 + tính từ + 了." },
+     { "context": "“Đắt quá, tôi không mua.”", "pre": "", "blank": "太贵了", "post": "，我不买。", "options": ["太贵了", "很太贵", "太贵"], "answer": 0, "explanation": "太…了 thường mang ý than phiền." },
+     { "context": "“Cảm ơn bạn nhiều!”", "pre": "", "blank": "太谢谢你了", "post": "！", "options": ["太谢谢你了", "谢谢你太了", "太了谢谢你"], "answer": 0, "explanation": "Khung 太…了 bao lấy cả cụm." },
+     { "context": "So sánh mức độ trung tính thì dùng 很, không dùng 太.", "pre": "今天", "blank": "很冷", "post": "。", "options": ["很冷", "太冷", "太冷了吗"], "answer": 0, "explanation": "太…了 mang sắc thái “quá mức”, không dùng để nói trung tính." },
+     { "type": "sort", "context": "Sắp xếp: “Lạnh quá!”", "words": ["太", "冷", "了", "！"], "answer": "太冷了！", "explanation": "Khung cố định 太…了." },
+     { "type": "sort", "context": "Sắp xếp: “Cái cốc này nhỏ quá.”", "words": ["这个", "杯子", "太", "小", "了", "。"], "answer": "这个杯子太小了。", "explanation": "Chủ ngữ + 太 + tính từ + 了." },
+     { "type": "sort", "context": "Sắp xếp: “Món này ngon quá!”", "words": ["这个", "菜", "太", "好吃", "了", "！"], "answer": "这个菜太好吃了！", "explanation": "太 + tính từ + 了." },
+     { "type": "sort", "context": "Sắp xếp: “Đắt quá, tôi không mua nữa.”", "words": ["太", "贵", "了", "，", "我", "不", "买", "了", "。"], "answer": "太贵了，我不买了。", "explanation": "Hai vế đều kết thúc bằng 了." },
+     { "context": "Trời rất lạnh, em muốn than. Chọn câu đúng.", "pre": "", "blank": "太冷了！", "post": "", "options": ["太冷了！", "太冷。", "很太冷了。"], "answer": 0, "explanation": "Khung 太…了 phải đủ, không thêm 很." },
+     { "context": "Em thấy món ăn rất ngon, muốn khen. Chọn câu đúng.", "pre": "", "blank": "太好吃了！", "post": "", "options": ["太好吃了！", "好吃太了！", "太了好吃！"], "answer": 0, "explanation": "了 đứng sau tính từ." },
+     { "context": "Nói thời tiết hôm nay lạnh (bình thường, không than phiền). Chọn câu đúng.", "pre": "", "blank": "今天很冷。", "post": "", "options": ["今天很冷。", "今天太冷。", "今天很太冷了。"], "answer": 0, "explanation": "Nói trung tính dùng 很, 太…了 dùng khi quá mức." }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,1669 @@
+// ══════════════════════════════════════════
+// DATA — Bài 1: 九月去北京旅游最好
+// ══════════════════════════════════════════
+var vocabData = [
+  {
+    "n": 1,
+    "zh": "旅游",
+    "py": "lǚyóu",
+    "pos": "Động từ / Danh từ",
+    "vn": "du lịch, đi chơi",
+    "hv": "lữ du",
+    "em": "🧳",
+    "lesson": 1,
+    "ex_zh": "我要去北京旅游。",
+    "ex_py": "Wǒ yào qù Běijīng lǚyóu.",
+    "ex_vn": "Tôi muốn đi Bắc Kinh du lịch.",
+    "exList": [
+      {
+        "zh": "我要去北京旅游。",
+        "py": "Wǒ yào qù Běijīng lǚyóu.",
+        "vn": "Tôi muốn đi Bắc Kinh du lịch."
+      },
+      {
+        "zh": "九月去北京旅游最好。",
+        "py": "Jiǔyuè qù Běijīng lǚyóu zuì hǎo.",
+        "vn": "Đi Bắc Kinh du lịch vào tháng 9 là tốt nhất."
+      },
+      {
+        "zh": "我很喜欢旅游。",
+        "py": "Wǒ hěn xǐhuan lǚyóu.",
+        "vn": "Tôi rất thích đi du lịch."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "旅",
+        "p": "lǚ",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "方 (phương) → 从 biến thể",
+        "rad": "方 (phương – lá cờ)",
+        "mean": "đi xa, lữ hành",
+        "tip": "方(cờ hiệu) + 从(người đi theo) → đoàn người cùng đi theo cờ hiệu = ĐI XA.",
+        "cf": "旁 (páng – \"bên cạnh\")",
+        "w": "旅游 / 旅行"
+      },
+      {
+        "c": "游",
+        "p": "yóu",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "氵(thuỷ) trái → 斿 phải",
+        "rad": "氵(thuỷ – nước)",
+        "mean": "du ngoạn, bơi",
+        "tip": "氵(nước) + 斿(cờ phất trong gió) → đi trên nước có cờ dẫn đường = DU NGOẠN.",
+        "cf": "油 (yóu – \"dầu\")",
+        "w": "旅游 / 游泳"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去旅游",
+        "py": "qù lǚyóu",
+        "vn": "đi du lịch"
+      },
+      {
+        "zh": "去北京旅游",
+        "py": "qù Běijīng lǚyóu",
+        "vn": "đi Bắc Kinh du lịch"
+      },
+      {
+        "zh": "喜欢旅游",
+        "py": "xǐhuan lǚyóu",
+        "vn": "thích du lịch"
+      },
+      {
+        "zh": "旅游的时候",
+        "py": "lǚyóu de shíhou",
+        "vn": "lúc đi du lịch"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "去 + nơi chốn + 旅游",
+        "m": "Đi đâu du lịch: 去中国旅游"
+      },
+      {
+        "s": "旅 + 游",
+        "m": "Đi xa (旅) và ngao du (游)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tháng chín tôi định đi Bắc Kinh du lịch.",
+        "answer": "九月我要去北京旅游。",
+        "answerPy": "Jiǔ yuè wǒ yào qù Běijīng lǚyóu.",
+        "note": "去 + nơi chốn + 旅游.",
+        "pair": "要 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Lúc đi du lịch tôi thích chụp ảnh.",
+        "answer": "旅游的时候我喜欢照相。",
+        "answerPy": "Lǚyóu de shíhou wǒ xǐhuan zhàoxiàng.",
+        "note": "động từ + 的时候 — lúc làm gì.",
+        "pair": "……的时候"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "觉得",
+    "py": "juéde",
+    "pos": "Động từ",
+    "vn": "cảm thấy, cho rằng",
+    "hv": "giác đắc",
+    "em": "💭",
+    "lesson": 1,
+    "ex_zh": "你觉得什么时候去最好？",
+    "ex_py": "Nǐ juéde shénme shíhou qù zuì hǎo?",
+    "ex_vn": "Bạn nghĩ đi vào thời gian nào là tốt nhất?",
+    "exList": [
+      {
+        "zh": "你觉得什么时候去最好？",
+        "py": "Nǐ juéde shénme shíhou qù zuì hǎo?",
+        "vn": "Bạn nghĩ đi vào thời gian nào là tốt nhất?"
+      },
+      {
+        "zh": "我觉得它的眼睛最漂亮。",
+        "py": "Wǒ juéde tā de yǎnjing zuì piàoliang.",
+        "vn": "Tôi thấy đôi mắt của nó là đẹp nhất."
+      },
+      {
+        "zh": "我觉得这个菜很好吃。",
+        "py": "Wǒ juéde zhège cài hěn hǎochī.",
+        "vn": "Tôi thấy món này rất ngon."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "觉",
+        "p": "jué",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "冖 → 丷 → 见",
+        "rad": "见 (kiến – nhìn thấy)",
+        "mean": "cảm nhận, cảm thấy",
+        "tip": "Phần trên gần giống 学(học), dưới là 见(nhìn thấy) → \"nhìn ra, tỉnh ngộ\" = CẢM THẤY.",
+        "cf": "学 (xué – \"học\")",
+        "w": "觉得 / 睡觉"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "觉得很好",
+        "py": "juéde hěn hǎo",
+        "vn": "thấy rất tốt"
+      },
+      {
+        "zh": "觉得好吃",
+        "py": "juéde hǎochī",
+        "vn": "thấy ngon"
+      },
+      {
+        "zh": "我觉得",
+        "py": "wǒ juéde",
+        "vn": "tôi thấy rằng"
+      },
+      {
+        "zh": "不觉得",
+        "py": "bù juéde",
+        "vn": "không thấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 觉得 + mệnh đề",
+        "m": "Ai đó cảm thấy …: 我觉得很好"
+      },
+      {
+        "s": "觉得 dùng để nêu cảm nhận, ý kiến của mình"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thấy món Trung Quốc rất ngon.",
+        "answer": "我觉得中国菜很好吃。",
+        "answerPy": "Wǒ juéde Zhōngguó cài hěn hǎochī.",
+        "note": "觉得 dùng để nêu cảm nhận.",
+        "pair": "觉得 + mệnh đề"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn thấy cái ghế này thế nào?",
+        "answer": "你觉得这个椅子怎么样？",
+        "answerPy": "Nǐ juéde zhège yǐzi zěnmeyàng?",
+        "note": "Câu hỏi ý kiến rất hay dùng.",
+        "pair": "怎么样？"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "最",
+    "py": "zuì",
+    "pos": "Phó từ",
+    "vn": "nhất",
+    "hv": "tối",
+    "em": "🏆",
+    "lesson": 1,
+    "ex_zh": "九月去北京旅游最好。",
+    "ex_py": "Jiǔyuè qù Běijīng lǚyóu zuì hǎo.",
+    "ex_vn": "Đi Bắc Kinh du lịch vào tháng 9 là tốt nhất.",
+    "exList": [
+      {
+        "zh": "九月去北京旅游最好。",
+        "py": "Jiǔyuè qù Běijīng lǚyóu zuì hǎo.",
+        "vn": "Đi Bắc Kinh du lịch vào tháng 9 là tốt nhất."
+      },
+      {
+        "zh": "我最喜欢踢足球。",
+        "py": "Wǒ zuì xǐhuan tī zúqiú.",
+        "vn": "Tôi thích đá bóng nhất."
+      },
+      {
+        "zh": "它的眼睛最漂亮。",
+        "py": "Tā de yǎnjing zuì piàoliang.",
+        "vn": "Đôi mắt của nó là đẹp nhất."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "最",
+        "p": "zuì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "曰 → 取",
+        "rad": "曰 (viết – nói)",
+        "mean": "nhất, tột cùng",
+        "tip": "曰(nói) trên 取(lấy) → lấy phần cao nhất trong tất cả = NHẤT.",
+        "cf": "取 (qǔ – \"lấy\")",
+        "w": "最好 / 最喜欢 / 最漂亮"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "最好",
+        "py": "zuìhǎo",
+        "vn": "tốt nhất"
+      },
+      {
+        "zh": "最喜欢",
+        "py": "zuì xǐhuan",
+        "vn": "thích nhất"
+      },
+      {
+        "zh": "最大",
+        "py": "zuì dà",
+        "vn": "lớn nhất"
+      },
+      {
+        "zh": "最新的",
+        "py": "zuì xīn de",
+        "vn": "mới nhất"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "最 + tính từ / động từ",
+        "m": "Nhất — mức cao nhất: 我最喜欢旅游"
+      },
+      {
+        "s": "很 < 最 — 最 là mức cao nhất, không thêm 很"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thích nhất là đi du lịch.",
+        "answer": "我最喜欢旅游。",
+        "answerPy": "Wǒ zuì xǐhuan lǚyóu.",
+        "note": "最 là mức cao nhất, không thêm 很.",
+        "pair": "最 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tháng chín đi Bắc Kinh là đẹp nhất.",
+        "answer": "九月去北京最好。",
+        "answerPy": "Jiǔ yuè qù Běijīng zuì hǎo.",
+        "note": "最好 — tốt nhất, hay nhất.",
+        "pair": "最 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "为什么",
+    "py": "wèi shénme",
+    "pos": "Đại từ nghi vấn",
+    "vn": "tại sao, vì sao",
+    "hv": "vị thập ma",
+    "em": "❓",
+    "lesson": 1,
+    "ex_zh": "为什么？",
+    "ex_py": "Wèi shénme?",
+    "ex_vn": "Tại sao thế?",
+    "exList": [
+      {
+        "zh": "为什么？",
+        "py": "Wèi shénme?",
+        "vn": "Tại sao thế?"
+      },
+      {
+        "zh": "你为什么昨天没来？",
+        "py": "Nǐ wèi shénme zuótiān méi lái?",
+        "vn": "Sao hôm qua bạn không đến?"
+      },
+      {
+        "zh": "你为什么喜欢踢足球？",
+        "py": "Nǐ wèi shénme xǐhuan tī zúqiú?",
+        "vn": "Sao bạn lại thích đá bóng?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "为",
+        "p": "wèi / wéi",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "丶→力biến thể",
+        "rad": "丶 (điểm)",
+        "mean": "vì, làm",
+        "tip": "Dạng giản thể của 爲 (gốc là hình con voi giúp việc) → nay dùng làm \"VÌ, ĐỂ, LÀM\".",
+        "cf": "办 (bàn – \"làm, xử lý\")",
+        "w": "为什么 / 因为"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "为什么不去",
+        "py": "wèi shénme bú qù",
+        "vn": "sao không đi"
+      },
+      {
+        "zh": "为什么不来",
+        "py": "wèi shénme bù lái",
+        "vn": "sao không đến"
+      },
+      {
+        "zh": "为什么喜欢",
+        "py": "wèi shénme xǐhuan",
+        "vn": "sao lại thích"
+      },
+      {
+        "zh": "你为什么",
+        "py": "nǐ wèi shénme",
+        "vn": "sao bạn lại"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "为什么 + động từ",
+        "m": "Vì sao lại …: 你为什么不去？"
+      },
+      {
+        "s": "Câu đã có 为什么 thì KHÔNG thêm 吗"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sao hôm nay bạn không đi đá bóng?",
+        "answer": "你今天为什么不去踢足球？",
+        "answerPy": "Nǐ jīntiān wèishénme bú qù tī zúqiú?",
+        "note": "Câu đã có 为什么 thì không thêm 吗.",
+        "pair": "为什么……？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Sao bạn lại thích vận động thế?",
+        "answer": "你为什么这么喜欢运动？",
+        "answerPy": "Nǐ wèishénme zhème xǐhuan yùndòng?",
+        "note": "为什么 đứng trước động từ.",
+        "pair": "为什么……？"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "也",
+    "py": "yě",
+    "pos": "Phó từ",
+    "vn": "cũng",
+    "hv": "dã",
+    "em": "➕",
+    "lesson": 1,
+    "ex_zh": "九月的北京天气不冷也不热。",
+    "ex_py": "Jiǔyuè de Běijīng tiānqì bù lěng yě bú rè.",
+    "ex_vn": "Thời tiết Bắc Kinh vào tháng 9 không lạnh cũng không nóng.",
+    "exList": [
+      {
+        "zh": "九月的北京天气不冷也不热。",
+        "py": "Jiǔyuè de Běijīng tiānqì bù lěng yě bú rè.",
+        "vn": "Thời tiết Bắc Kinh vào tháng 9 không lạnh cũng không nóng."
+      },
+      {
+        "zh": "我也是越南人。",
+        "py": "Wǒ yě shì Yuènán rén.",
+        "vn": "Tôi cũng là người Việt Nam."
+      },
+      {
+        "zh": "他也喜欢旅游。",
+        "py": "Tā yě xǐhuan lǚyóu.",
+        "vn": "Anh ấy cũng thích du lịch."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "也",
+        "p": "yě",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "乛→𠃊→乙",
+        "rad": "乙 (ất)",
+        "mean": "cũng",
+        "tip": "Chữ cổ vốn chỉ hình cái bình đựng nước, nay dùng làm phó từ \"CŨNG\".",
+        "cf": "心 (xīn – \"tim\")",
+        "w": "也是 / 也不 / 也很"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "也是",
+        "py": "yě shì",
+        "vn": "cũng là"
+      },
+      {
+        "zh": "也去",
+        "py": "yě qù",
+        "vn": "cũng đi"
+      },
+      {
+        "zh": "也很好",
+        "py": "yě hěn hǎo",
+        "vn": "cũng rất tốt"
+      },
+      {
+        "zh": "也喜欢",
+        "py": "yě xǐhuan",
+        "vn": "cũng thích"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 也 + động từ / tính từ",
+        "m": "也 đứng SAU chủ ngữ, TRƯỚC động từ"
+      },
+      {
+        "s": "✗ 也我去 → ✓ 我也去"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi cũng thích đi du lịch.",
+        "answer": "我也喜欢旅游。",
+        "answerPy": "Wǒ yě xǐhuan lǚyóu.",
+        "note": "也 đứng sau chủ ngữ, trước động từ.",
+        "pair": "也 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cái ghế này cũng rất mới.",
+        "answer": "这个椅子也很新。",
+        "answerPy": "Zhège yǐzi yě hěn xīn.",
+        "note": "✗ 也我去 → ✓ 我也去.",
+        "pair": "也 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "运动",
+    "py": "yùndòng",
+    "pos": "Danh từ / Động từ",
+    "vn": "vận động, thể thao",
+    "hv": "vận động",
+    "em": "🏃",
+    "lesson": 2,
+    "ex_zh": "你喜欢什么运动？",
+    "ex_py": "Nǐ xǐhuan shénme yùndòng?",
+    "ex_vn": "Bạn thích môn thể thao nào?",
+    "exList": [
+      {
+        "zh": "你喜欢什么运动？",
+        "py": "Nǐ xǐhuan shénme yùndòng?",
+        "vn": "Bạn thích môn thể thao nào?"
+      },
+      {
+        "zh": "我每天都运动。",
+        "py": "Wǒ měitiān dōu yùndòng.",
+        "vn": "Ngày nào tôi cũng vận động."
+      },
+      {
+        "zh": "游泳是很好的运动。",
+        "py": "Yóuyǒng shì hěn hǎo de yùndòng.",
+        "vn": "Bơi lội là môn thể thao rất tốt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "运",
+        "p": "yùn",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 7,
+        "ord": "辶 → 云",
+        "rad": "辶 (sước – đi)",
+        "mean": "vận chuyển, vận động",
+        "tip": "辶(đi) + 云(mây trôi) → chuyển động như mây trôi = VẬN ĐỘNG.",
+        "cf": "远 (yuǎn – \"xa\")",
+        "w": "运动 / 运气"
+      },
+      {
+        "c": "动",
+        "p": "dòng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "云 biến thể → 力",
+        "rad": "力 (lực – sức)",
+        "mean": "cử động, hoạt động",
+        "tip": "云(biến thể) + 力(sức) → dùng sức để chuyển động = ĐỘNG, CỬ ĐỘNG.",
+        "cf": "助 (zhù – \"giúp đỡ\")",
+        "w": "运动 / 动作 / 不动"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "喜欢运动",
+        "py": "xǐhuan yùndòng",
+        "vn": "thích vận động"
+      },
+      {
+        "zh": "做运动",
+        "py": "zuò yùndòng",
+        "vn": "tập thể thao"
+      },
+      {
+        "zh": "运动的时候",
+        "py": "yùndòng de shíhou",
+        "vn": "lúc vận động"
+      },
+      {
+        "zh": "每天运动",
+        "py": "měi tiān yùndòng",
+        "vn": "ngày nào cũng tập"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "喜欢 / 做 + 运动",
+        "m": "Thích vận động, tập thể thao"
+      },
+      {
+        "s": "运 + 动",
+        "m": "Chuyển (运) động (动) — vận động cơ thể"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngày nào tôi cũng tập thể thao.",
+        "answer": "我每天都运动。",
+        "answerPy": "Wǒ měi tiān dōu yùndòng.",
+        "note": "每 hay đi với 都 ở vế sau.",
+        "pair": "每……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Sở thích của tôi là thể thao và du lịch.",
+        "answer": "我最喜欢运动和旅游。",
+        "answerPy": "Wǒ zuì xǐhuan yùndòng hé lǚyóu.",
+        "note": "和 chỉ nối danh từ với danh từ.",
+        "pair": "A 和 B"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "踢",
+    "py": "tī",
+    "pos": "Động từ",
+    "vn": "đá",
+    "hv": "thích",
+    "em": "🦵",
+    "lesson": 2,
+    "ex_zh": "我最喜欢踢足球。",
+    "ex_py": "Wǒ zuì xǐhuan tī zúqiú.",
+    "ex_vn": "Tôi thích đá bóng nhất.",
+    "exList": [
+      {
+        "zh": "我最喜欢踢足球。",
+        "py": "Wǒ zuì xǐhuan tī zúqiú.",
+        "vn": "Tôi thích đá bóng nhất."
+      },
+      {
+        "zh": "下午我们一起去踢足球吧。",
+        "py": "Xiàwǔ wǒmen yìqǐ qù tī zúqiú ba.",
+        "vn": "Chiều nay chúng ta cùng nhau đi đá bóng đi."
+      },
+      {
+        "zh": "他踢球踢得很好。",
+        "py": "Tā tī qiú tī de hěn hǎo.",
+        "vn": "Anh ấy đá bóng rất giỏi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "踢",
+        "p": "tī",
+        "type": "左右结构 · Trái-phải",
+        "st": 15,
+        "ord": "足 (túc) trái → 易 (dịch) phải",
+        "rad": "足 (túc – chân)",
+        "mean": "đá",
+        "tip": "足(chân) + 易(dễ dàng) → dùng chân hất dễ dàng = ĐÁ.",
+        "cf": "惕 (tì – \"cảnh giác\")",
+        "w": "踢足球 / 踢球"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "踢足球",
+        "py": "tī zúqiú",
+        "vn": "đá bóng"
+      },
+      {
+        "zh": "喜欢踢",
+        "py": "xǐhuan tī",
+        "vn": "thích đá"
+      },
+      {
+        "zh": "去踢球",
+        "py": "qù tī qiú",
+        "vn": "đi đá bóng"
+      },
+      {
+        "zh": "不会踢",
+        "py": "bú huì tī",
+        "vn": "không biết đá"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "踢 + 足球",
+        "m": "Đá bóng — môn dùng CHÂN thì dùng 踢"
+      },
+      {
+        "s": "踢 có bộ 足 (chân) bên trái — đá bằng chân"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chiều nay chúng ta cùng đi đá bóng nhé.",
+        "answer": "今天下午我们一起去踢足球吧。",
+        "answerPy": "Jīntiān xiàwǔ wǒmen yìqǐ qù tī zúqiú ba.",
+        "note": "踢 có bộ 足 (chân) bên trái.",
+        "pair": "一起 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn tôi không biết đá bóng.",
+        "answer": "我朋友不会踢足球。",
+        "answerPy": "Wǒ péngyou bú huì tī zúqiú.",
+        "note": "踢足球 — đá bóng, dùng chân nên đi với 踢.",
+        "pair": "不会 + V"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "足球",
+    "py": "zúqiú",
+    "pos": "Danh từ",
+    "vn": "quả bóng đá, môn bóng đá",
+    "hv": "túc cầu",
+    "em": "⚽",
+    "lesson": 2,
+    "ex_zh": "我最喜欢踢足球。",
+    "ex_py": "Wǒ zuì xǐhuan tī zúqiú.",
+    "ex_vn": "Tôi thích đá bóng nhất.",
+    "exList": [
+      {
+        "zh": "我最喜欢踢足球。",
+        "py": "Wǒ zuì xǐhuan tī zúqiú.",
+        "vn": "Tôi thích đá bóng nhất."
+      },
+      {
+        "zh": "这是我的足球。",
+        "py": "Zhè shì wǒ de zúqiú.",
+        "vn": "Đây là quả bóng đá của tôi."
+      },
+      {
+        "zh": "他们在踢足球。",
+        "py": "Tāmen zài tī zúqiú.",
+        "vn": "Họ đang đá bóng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "足",
+        "p": "zú",
+        "type": "独体字 · Tượng hình",
+        "st": 7,
+        "ord": "口→丨→𠃌→乂biến thể",
+        "rad": "足 (túc – tự thành bộ)",
+        "mean": "chân, đủ",
+        "tip": "Hình bàn chân cách điệu → CHÂN, mở rộng nghĩa \"ĐỦ, ĐẦY ĐỦ\".",
+        "cf": "走 (zǒu – \"đi bộ\")",
+        "w": "足球 / 不足"
+      },
+      {
+        "c": "球",
+        "p": "qiú",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "王 (vương) trái → 求 (cầu) phải",
+        "rad": "王 (vương – ngọc)",
+        "mean": "quả bóng",
+        "tip": "王(ngọc) + 求(tìm) → vật hình tròn quý như ngọc = QUẢ BÓNG.",
+        "cf": "救 (jiù – \"cứu giúp\")",
+        "w": "足球 / 篮球 / 打球"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "踢足球",
+        "py": "tī zúqiú",
+        "vn": "đá bóng"
+      },
+      {
+        "zh": "看足球",
+        "py": "kàn zúqiú",
+        "vn": "xem bóng đá"
+      },
+      {
+        "zh": "一个足球",
+        "py": "yí gè zúqiú",
+        "vn": "một quả bóng đá"
+      },
+      {
+        "zh": "喜欢足球",
+        "py": "xǐhuan zúqiú",
+        "vn": "thích bóng đá"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "踢 + 足球",
+        "m": "Đá bóng — dùng chân nên đi với 踢"
+      },
+      {
+        "s": "足 + 球",
+        "m": "Quả bóng (球) đá bằng chân (足)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thích xem bóng đá nhất.",
+        "answer": "我最喜欢看足球。",
+        "answerPy": "Wǒ zuì xǐhuan kàn zúqiú.",
+        "note": "足 + 球 — quả bóng đá bằng chân.",
+        "pair": "最 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi muốn mua cho bạn một quả bóng đá.",
+        "answer": "我要给朋友买一个足球。",
+        "answerPy": "Wǒ yào gěi péngyou mǎi yí ge zúqiú.",
+        "note": "给 + người + động từ.",
+        "pair": "给……买"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "一起",
+    "py": "yìqǐ",
+    "pos": "Phó từ",
+    "vn": "cùng nhau",
+    "hv": "nhất khởi",
+    "em": "🤝",
+    "lesson": 2,
+    "ex_zh": "下午我们一起去踢足球吧。",
+    "ex_py": "Xiàwǔ wǒmen yìqǐ qù tī zúqiú ba.",
+    "ex_vn": "Chiều nay chúng ta cùng nhau đi đá bóng đi.",
+    "exList": [
+      {
+        "zh": "下午我们一起去踢足球吧。",
+        "py": "Xiàwǔ wǒmen yìqǐ qù tī zúqiú ba.",
+        "vn": "Chiều nay chúng ta cùng nhau đi đá bóng đi."
+      },
+      {
+        "zh": "我们一起去旅游吧。",
+        "py": "Wǒmen yìqǐ qù lǚyóu ba.",
+        "vn": "Chúng ta cùng nhau đi du lịch đi."
+      },
+      {
+        "zh": "他们一起住。",
+        "py": "Tāmen yìqǐ zhù.",
+        "vn": "Họ ở cùng nhau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "起",
+        "p": "qǐ",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 10,
+        "ord": "走 biến thể → 己",
+        "rad": "走 (tẩu – đi)",
+        "mean": "dậy, bắt đầu",
+        "tip": "走(biến thể) + 己(bản thân) → tự mình đứng dậy đi = DẬY, BẮT ĐẦU. Ghép với 一 = CÙNG NHAU.",
+        "cf": "己 (jǐ – \"bản thân\")",
+        "w": "一起 / 起来 / 早起"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一起去",
+        "py": "yìqǐ qù",
+        "vn": "cùng đi"
+      },
+      {
+        "zh": "和我一起",
+        "py": "hé wǒ yìqǐ",
+        "vn": "cùng với tôi"
+      },
+      {
+        "zh": "一起运动",
+        "py": "yìqǐ yùndòng",
+        "vn": "cùng tập thể thao"
+      },
+      {
+        "zh": "一起吃饭",
+        "py": "yìqǐ chī fàn",
+        "vn": "cùng ăn cơm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "和 + ai + 一起 + động từ",
+        "m": "Cùng ai làm gì: 和我一起去"
+      },
+      {
+        "s": "一起 đứng TRƯỚC động từ, không đứng cuối câu"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chủ nhật bạn cùng đi với tôi nhé.",
+        "answer": "星期天你和我一起去吧。",
+        "answerPy": "Xīngqītiān nǐ hé wǒ yìqǐ qù ba.",
+        "note": "一起 đứng trước động từ.",
+        "pair": "和……一起……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng ta cùng tập thể thao đi.",
+        "answer": "我们一起运动吧。",
+        "answerPy": "Wǒmen yìqǐ yùndòng ba.",
+        "note": "Không nói 我们运动一起.",
+        "pair": "……吧"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "要",
+    "py": "yào",
+    "pos": "Trợ động từ",
+    "vn": "muốn, cần, sẽ",
+    "hv": "yếu",
+    "em": "🎯",
+    "lesson": 3,
+    "ex_zh": "我要去北京旅游。",
+    "ex_py": "Wǒ yào qù Běijīng lǚyóu.",
+    "ex_vn": "Tôi muốn đi Bắc Kinh du lịch.",
+    "exList": [
+      {
+        "zh": "我要去北京旅游。",
+        "py": "Wǒ yào qù Běijīng lǚyóu.",
+        "vn": "Tôi muốn đi Bắc Kinh du lịch."
+      },
+      {
+        "zh": "我们要不要买几个新的椅子？",
+        "py": "Wǒmen yào bu yào mǎi jǐ ge xīn de yǐzi?",
+        "vn": "Chúng ta có cần mua vài chiếc ghế mới không?"
+      },
+      {
+        "zh": "我要学习英语。",
+        "py": "Wǒ yào xuéxí Yīngyǔ.",
+        "vn": "Tôi muốn học tiếng Anh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "要",
+        "p": "yào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "覀 biến thể → 女",
+        "rad": "西 (tây – biến thể)",
+        "mean": "muốn, cần, sẽ",
+        "tip": "Chữ cổ vốn là hình dáng cái lưng người phụ nữ chống nạnh, nay dùng làm trợ động từ \"MUỐN, CẦN\".",
+        "cf": "腰 (yāo – \"thắt lưng\")",
+        "w": "要去 / 要不要 / 不想"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "要去",
+        "py": "yào qù",
+        "vn": "định đi"
+      },
+      {
+        "zh": "要一个",
+        "py": "yào yí gè",
+        "vn": "lấy một cái"
+      },
+      {
+        "zh": "不要",
+        "py": "búyào",
+        "vn": "không cần"
+      },
+      {
+        "zh": "要买",
+        "py": "yào mǎi",
+        "vn": "định mua"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "要 + động từ",
+        "m": "Định làm gì: 我要去旅游"
+      },
+      {
+        "s": "要 + danh từ",
+        "m": "Cần, lấy cái gì: 我要一个椅子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sang năm tôi định đi Trung Quốc du lịch.",
+        "answer": "明年我要去中国旅游。",
+        "answerPy": "Míngnián wǒ yào qù Zhōngguó lǚyóu.",
+        "note": "要 + động từ — định làm gì.",
+        "pair": "要 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi muốn lấy một cái ghế mới.",
+        "answer": "我要一个新椅子。",
+        "answerPy": "Wǒ yào yí ge xīn yǐzi.",
+        "note": "要 + danh từ — cần, lấy cái gì.",
+        "pair": "要 + N"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "新",
+    "py": "xīn",
+    "pos": "Tính từ",
+    "vn": "mới",
+    "hv": "tân",
+    "em": "✨",
+    "lesson": 3,
+    "ex_zh": "我们要不要买几个新的椅子？",
+    "ex_py": "Wǒmen yào bu yào mǎi jǐ ge xīn de yǐzi?",
+    "ex_vn": "Chúng ta có cần mua vài chiếc ghế mới không?",
+    "exList": [
+      {
+        "zh": "我们要不要买几个新的椅子？",
+        "py": "Wǒmen yào bu yào mǎi jǐ ge xīn de yǐzi?",
+        "vn": "Chúng ta có cần mua vài chiếc ghế mới không?"
+      },
+      {
+        "zh": "这是我的新手机。",
+        "py": "Zhè shì wǒ de xīn shǒujī.",
+        "vn": "Đây là điện thoại mới của tôi."
+      },
+      {
+        "zh": "他今天穿了新衣服。",
+        "py": "Tā jīntiān chuānle xīn yīfu.",
+        "vn": "Hôm nay anh ấy mặc quần áo mới."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "新",
+        "p": "xīn",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "立 → 木 → 斤",
+        "rad": "斤 (cân – cái rìu)",
+        "mean": "mới",
+        "tip": "斤(rìu) chặt 木(cây) 立(dựng) lên → tạo ra vật MỚI.",
+        "cf": "亲 (qīn – \"thân thiết\")",
+        "w": "新的 / 新年 / 更新"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "新椅子",
+        "py": "xīn yǐzi",
+        "vn": "cái ghế mới"
+      },
+      {
+        "zh": "新同学",
+        "py": "xīn tóngxué",
+        "vn": "bạn học mới"
+      },
+      {
+        "zh": "新的",
+        "py": "xīn de",
+        "vn": "cái mới"
+      },
+      {
+        "zh": "很新",
+        "py": "hěn xīn",
+        "vn": "rất mới"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "新 + danh từ",
+        "m": "Cái gì mới: 新椅子"
+      },
+      {
+        "s": "新 cũng dùng cho người: 新同学 · 新老师"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đây là cái ghế mới của tôi.",
+        "answer": "这是我的新椅子。",
+        "answerPy": "Zhè shì wǒ de xīn yǐzi.",
+        "note": "新 đứng trước danh từ làm định ngữ.",
+        "pair": "这是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy là bạn học mới của chúng tôi.",
+        "answer": "她是我们的新同学。",
+        "answerPy": "Tā shì wǒmen de xīn tóngxué.",
+        "note": "新 cũng dùng được cho người.",
+        "pair": "是……"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "椅子",
+    "py": "yǐzi",
+    "pos": "Danh từ",
+    "vn": "cái ghế",
+    "hv": "ỷ tử",
+    "em": "🪑",
+    "lesson": 3,
+    "ex_zh": "我们要不要买几个新的椅子？",
+    "ex_py": "Wǒmen yào bu yào mǎi jǐ ge xīn de yǐzi?",
+    "ex_vn": "Chúng ta có cần mua vài chiếc ghế mới không?",
+    "exList": [
+      {
+        "zh": "我们要不要买几个新的椅子？",
+        "py": "Wǒmen yào bu yào mǎi jǐ ge xīn de yǐzi?",
+        "vn": "Chúng ta có cần mua vài chiếc ghế mới không?"
+      },
+      {
+        "zh": "这把椅子很舒服。",
+        "py": "Zhè bǎ yǐzi hěn shūfu.",
+        "vn": "Chiếc ghế này rất thoải mái."
+      },
+      {
+        "zh": "请坐这个椅子。",
+        "py": "Qǐng zuò zhège yǐzi.",
+        "vn": "Mời bạn ngồi ghế này."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "椅",
+        "p": "yǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "木 (mộc) trái → 奇 (kỳ) phải",
+        "rad": "木 (mộc – gỗ)",
+        "mean": "ghế tựa",
+        "tip": "木(gỗ) + 奇(đặc biệt) → đồ gỗ đặc biệt để ngồi tựa lưng = GHẾ.",
+        "cf": "倚 (yǐ – \"dựa vào\")",
+        "w": "椅子 / 一把椅子"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个椅子",
+        "py": "yí gè yǐzi",
+        "vn": "một cái ghế"
+      },
+      {
+        "zh": "买椅子",
+        "py": "mǎi yǐzi",
+        "vn": "mua ghế"
+      },
+      {
+        "zh": "椅子上",
+        "py": "yǐzi shàng",
+        "vn": "trên ghế"
+      },
+      {
+        "zh": "新椅子",
+        "py": "xīn yǐzi",
+        "vn": "cái ghế mới"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 个 + 椅子",
+        "m": "Lượng từ của 椅子 là 个"
+      },
+      {
+        "s": "椅 + 子",
+        "m": "子 là đuôi từ đọc nhẹ, giống 桌子 · 杯子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nhà tôi có bốn cái ghế.",
+        "answer": "我家有四个椅子。",
+        "answerPy": "Wǒ jiā yǒu sì ge yǐzi.",
+        "note": "Lượng từ của 椅子 là 个.",
+        "pair": "nơi chốn + 有 + N"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cặp sách của tôi ở trên ghế.",
+        "answer": "我的书包在椅子上。",
+        "answerPy": "Wǒ de shūbāo zài yǐzi shang.",
+        "note": "椅子上 — trên ghế.",
+        "pair": "在……上"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "它",
+    "py": "tā",
+    "pos": "Đại từ",
+    "vn": "nó (chỉ con vật, đồ vật)",
+    "hv": "tha",
+    "em": "🐾",
+    "lesson": 4,
+    "ex_zh": "那是我的猫，它叫花花。",
+    "ex_py": "Nà shì wǒ de māo, tā jiào Huāhua.",
+    "ex_vn": "Đó là con mèo của tôi, nó tên là Hoa Hoa.",
+    "exList": [
+      {
+        "zh": "那是我的猫，它叫花花。",
+        "py": "Nà shì wǒ de māo, tā jiào Huāhua.",
+        "vn": "Đó là con mèo của tôi, nó tên là Hoa Hoa."
+      },
+      {
+        "zh": "它很漂亮。",
+        "py": "Tā hěn piàoliang.",
+        "vn": "Nó đẹp lắm."
+      },
+      {
+        "zh": "这本书，它是我的。",
+        "py": "Zhè běn shū, tā shì wǒ de.",
+        "vn": "Quyển sách này, nó là của tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "它",
+        "p": "tā",
+        "type": "上下结构 · Trên-dưới",
+        "st": 5,
+        "ord": "宀biến thể → 匕biến thể",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "nó",
+        "tip": "Chữ cổ vốn là hình con vật dưới mái nhà, nay dùng làm đại từ \"NÓ\" (chỉ vật, con vật).",
+        "cf": "他 (tā – \"anh ấy\", chỉ người)",
+        "w": "它叫 / 它是 / 它的"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "喜欢它",
+        "py": "xǐhuan tā",
+        "vn": "thích nó"
+      },
+      {
+        "zh": "它是",
+        "py": "tā shì",
+        "vn": "nó là"
+      },
+      {
+        "zh": "它的名字",
+        "py": "tā de míngzi",
+        "vn": "tên của nó"
+      },
+      {
+        "zh": "给它",
+        "py": "gěi tā",
+        "vn": "cho nó"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "它 thay cho ĐỒ VẬT hoặc con vật, không thay cho người"
+      },
+      {
+        "s": "他 (nam) · 她 (nữ) · 它 (vật) — ba chữ đọc giống nhau là tā"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái ghế này rất mới, tôi rất thích nó.",
+        "answer": "这个椅子很新，我很喜欢它。",
+        "answerPy": "Zhège yǐzi hěn xīn, wǒ hěn xǐhuan tā.",
+        "note": "它 thay cho đồ vật, không thay cho người.",
+        "pair": "喜欢 + N"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Con mèo này tên là gì? Tên nó là Tiểu Bạch.",
+        "answer": "这个猫叫什么名字？它叫小白。",
+        "answerPy": "Zhège māo jiào shénme míngzi? Tā jiào Xiǎobái.",
+        "note": "他 · 她 · 它 đọc giống nhau là tā.",
+        "pair": "叫什么名字？"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "眼睛",
+    "py": "yǎnjing",
+    "pos": "Danh từ",
+    "vn": "mắt, đôi mắt",
+    "hv": "nhãn tình",
+    "em": "👀",
+    "lesson": 4,
+    "ex_zh": "我觉得它的眼睛最漂亮。",
+    "ex_py": "Wǒ juéde tā de yǎnjing zuì piàoliang.",
+    "ex_vn": "Tôi thấy đôi mắt của nó là đẹp nhất.",
+    "exList": [
+      {
+        "zh": "我觉得它的眼睛最漂亮。",
+        "py": "Wǒ juéde tā de yǎnjing zuì piàoliang.",
+        "vn": "Tôi thấy đôi mắt của nó là đẹp nhất."
+      },
+      {
+        "zh": "她的眼睛很大。",
+        "py": "Tā de yǎnjing hěn dà.",
+        "vn": "Đôi mắt của cô ấy rất to."
+      },
+      {
+        "zh": "请闭上眼睛。",
+        "py": "Qǐng bìshang yǎnjing.",
+        "vn": "Xin hãy nhắm mắt lại."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "眼",
+        "p": "yǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "目 (mục) trái → 艮 (cấn) phải",
+        "rad": "目 (mục – mắt)",
+        "mean": "mắt",
+        "tip": "目(mắt) + 艮(dừng lại, nhìn chăm chú) → bộ phận để NHÌN = MẮT.",
+        "cf": "银 (yín – \"bạc\")",
+        "w": "眼睛 / 眼镜"
+      },
+      {
+        "c": "睛",
+        "p": "jīng",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "目 (mục) trái → 青 (thanh) phải",
+        "rad": "目 (mục – mắt)",
+        "mean": "con ngươi, mắt",
+        "tip": "目(mắt) + 青(xanh trong) → tròng mắt trong xanh = CON NGƯƠI.",
+        "cf": "晴 (qíng – \"trời quang\")",
+        "w": "眼睛 / 眼珠"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "大眼睛",
+        "py": "dà yǎnjing",
+        "vn": "đôi mắt to"
+      },
+      {
+        "zh": "漂亮的眼睛",
+        "py": "piàoliang de yǎnjing",
+        "vn": "đôi mắt đẹp"
+      },
+      {
+        "zh": "她的眼睛",
+        "py": "tā de yǎnjing",
+        "vn": "đôi mắt cô ấy"
+      },
+      {
+        "zh": "眼睛不舒服",
+        "py": "yǎnjing bù shūfu",
+        "vn": "mắt khó chịu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "ai + 的 + 眼睛",
+        "m": "Đôi mắt của ai"
+      },
+      {
+        "s": "眼 + 睛",
+        "m": "Hai chữ đều có bộ 目 (mắt)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đôi mắt cô ấy rất đẹp.",
+        "answer": "她的眼睛很漂亮。",
+        "answerPy": "Tā de yǎnjing hěn piàoliang.",
+        "note": "……的眼睛 — đôi mắt của ai.",
+        "pair": "很 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay mắt tôi hơi khó chịu, tôi không xem tivi nữa.",
+        "answer": "今天我的眼睛不太舒服，我不看电视了。",
+        "answerPy": "Jīntiān wǒ de yǎnjing bú tài shūfu, wǒ bú kàn diànshì le.",
+        "note": "眼 + 睛 — hai chữ đều có bộ 目 (mắt).",
+        "pair": "不太 + Adj"
+      }
+    ]
+  }
+];
+
+const wuData = [
+  {img:'🧳',label:'旅游',py:'lǚyóu',letter:'A'},
+  {img:'🏃',label:'运动',py:'yùndòng',letter:'B'},
+  {img:'⚽',label:'足球',py:'zúqiú',letter:'C'},
+  {img:'✨',label:'新',py:'xīn',letter:'D'},
+  {img:'🪑',label:'椅子',py:'yǐzi',letter:'E'},
+  {img:'👀',label:'眼睛',py:'yǎnjing',letter:'F'},
+];
+
+var dialogData = [
+  {scene:'在学校 · Bàn chuyện đi du lịch',
+   preQuiz:[
+     {q:'男的要去哪儿旅游？',opts:['北京','上海','广州'],ans:0},
+     {q:'女的觉得几月去最好？',opts:['八月','九月','十月'],ans:1},
+     {q:'为什么九月最好？',opts:['东西便宜','天气不冷也不热','人不多'],ans:1},
+   ],
+   lines:[
+     {sp:0,zh:'我要去北京旅游，你觉得什么时候去最好？',py:'Wǒ yào qù Běijīng lǚyóu, nǐ juéde shénme shíhou qù zuì hǎo?',vn:'Tôi muốn đi Bắc Kinh du lịch, bạn nghĩ đi vào thời gian nào là tốt nhất?'},
+     {sp:1,zh:'九月去北京旅游最好。',py:'Jiǔyuè qù Běijīng lǚyóu zuì hǎo.',vn:'Đi Bắc Kinh du lịch vào tháng 9 là tốt nhất.'},
+     {sp:0,zh:'为什么？',py:'Wèi shénme?',vn:'Tại sao thế?'},
+     {sp:1,zh:'九月的北京天气不冷也不热。',py:'Jiǔyuè de Běijīng tiānqì bù lěng yě bú rè.',vn:'Thời tiết Bắc Kinh vào tháng 9 không lạnh cũng không nóng.'},
+   ]},
+  {scene:'看照片 · Rủ nhau đi đá bóng',
+   preQuiz:[
+     {q:'男的最喜欢什么运动？',opts:['踢足球','游泳','打篮球'],ans:0},
+     {q:'他们打算什么时候去踢足球？',opts:['早上','下午','晚上'],ans:1},
+     {q:'女的同意一起去吗？',opts:['同意','不同意','没有回答'],ans:0},
+   ],
+   lines:[
+     {sp:0,zh:'你喜欢什么运动？',py:'Nǐ xǐhuan shénme yùndòng?',vn:'Bạn thích môn thể thao nào?'},
+     {sp:1,zh:'我最喜欢踢足球。',py:'Wǒ zuì xǐhuan tī zúqiú.',vn:'Tôi thích đá bóng nhất.'},
+     {sp:0,zh:'下午我们一起去踢足球吧。',py:'Xiàwǔ wǒmen yìqǐ qù tī zúqiú ba.',vn:'Chiều nay chúng ta cùng nhau đi đá bóng đi.'},
+     {sp:1,zh:'好啊。',py:'Hǎo a.',vn:'Được thôi.'},
+   ]},
+  {scene:'在家里 · Bàn chuyện mua ghế mới',
+   preQuiz:[
+     {q:'他们打算买什么？',opts:['椅子','桌子','杯子'],ans:0},
+     {q:'他们打算什么时候去买？',opts:['今天晚上','明天下午','后天早上'],ans:1},
+     {q:'女的明天几点能回来？',opts:['两点多','三点多','四点多'],ans:1},
+   ],
+   lines:[
+     {sp:0,zh:'我们要不要买几个新的椅子？',py:'Wǒmen yào bu yào mǎi jǐ ge xīn de yǐzi?',vn:'Chúng ta có cần mua vài chiếc ghế mới không?'},
+     {sp:1,zh:'好啊，什么时候去买？',py:'Hǎo a, shénme shíhou qù mǎi?',vn:'Được thôi, khi nào thì đi mua?'},
+     {sp:0,zh:'明天下午怎么样？你明天几点能回来？',py:'Míngtiān xiàwǔ zěnmeyàng? Nǐ míngtiān jǐ diǎn néng huílái?',vn:'Chiều mai thế nào? Ngày mai mấy giờ bạn có thể về?'},
+     {sp:1,zh:'三点多。',py:'Sān diǎn duō.',vn:'Hơn 3 giờ một chút.'},
+   ]},
+  {scene:'在家里 · Nói chuyện về con mèo',
+   preQuiz:[
+     {q:'那只猫叫什么名字？',opts:['花花','毛毛','球球'],ans:0},
+     {q:'男的觉得猫的什么最漂亮？',opts:['眼睛','耳朵','尾巴'],ans:0},
+     {q:'那只猫多大了？',opts:['三个多月','六个多月','一年多'],ans:1},
+   ],
+   lines:[
+     {sp:0,zh:'桌子下面有个猫。',py:'Zhuōzi xiàmiàn yǒu ge māo.',vn:'Dưới gầm bàn có một con mèo kìa.'},
+     {sp:1,zh:'那是我的猫，它叫花花。它很漂亮。',py:'Nà shì wǒ de māo, tā jiào Huāhua. Tā hěn piàoliang.',vn:'Đó là con mèo của tôi, nó tên là Hoa Hoa. Nó đẹp lắm.'},
+     {sp:0,zh:'是呀，我觉得它的眼睛最漂亮。它多大了？',py:'Shì ya, wǒ juéde tā de yǎnjing zuì piàoliang. Tā duō dà le?',vn:'Đúng vậy, tôi thấy đôi mắt của nó là đẹp nhất. Nó được bao nhiêu tháng rồi?'},
+     {sp:1,zh:'六个多月。',py:'Liù ge duō yuè.',vn:'Hơn 6 tháng một chút.'},
+   ]},
+];
+
+
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation) — Động từ/Phó từ + Tân ngữ/Tính từ
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
+// ══════════════════════════════════════════
+var matchData = [
+  {left:'踢',right:'足球'},
+  {left:'要',right:'旅游'},
+  {left:'最',right:'喜欢'},
+  {left:'一起',right:'运动'},
+  {left:'新',right:'椅子'},
+  {left:'它的',right:'眼睛'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE (Listening) — đề nghe THẬT từ HSK标准教程2 练习册 (Bài 1)
+// 1 file audio duy nhất chứa đủ cả câu 1-15 (Phần 1+2+3)
+// ══════════════════════════════════════════
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-1/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'下午', blank:'他要踢足球', post:'。', py:'Xiàwǔ tā yào tī zúqiú.', vn:'Chiều nay anh ấy sẽ đi đá bóng.'},
+    ]},
+    {num:2, lines:[
+      {pre:'妈妈', blank:'买了几件新衣服', post:'。', py:'Māma mǎile jǐ jiàn xīn yīfu.', vn:'Mẹ đã mua mấy bộ quần áo mới.'},
+    ]},
+    {num:3, lines:[
+      {pre:'她的', blank:'眼睛很漂亮', post:'。', py:'Tā de yǎnjīng hěn piàoliang.', vn:'Mắt của cô ấy rất đẹp.'},
+    ]},
+    {num:4, lines:[
+      {pre:'我们去', blank:'买一个新的桌子', post:'吧。', py:'Wǒmen qù mǎi yí gè xīn de zhuōzi ba.', vn:'Chúng ta đi mua một cái bàn mới đi.'},
+    ]},
+    {num:5, lines:[
+      {pre:'王小姐', blank:'最喜欢运动', post:'。', py:'Wáng xiǎojiě zuì xǐhuan yùndòng.', vn:'Cô Vương thích vận động nhất.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'你想', blank:'喝点儿什么', post:'？', py:'Nǐ xiǎng hē diǎnr shénme?', vn:'Bạn muốn uống gì?'},
+      {speaker:'女', pre:'我想', blank:'喝茶', post:'。', py:'Wǒ xiǎng hē chá.', vn:'Tôi muốn uống trà.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'男', pre:'我们下午', blank:'一起去运动', post:'吧。', py:'Wǒmen xiàwǔ yìqǐ qù yùndòng ba.', vn:'Chiều nay chúng ta cùng đi vận động đi.'},
+      {speaker:'女', pre:'好啊，我', blank:'最喜欢跑步了', post:'。', py:'Hǎo a, wǒ zuì xǐhuan pǎobù le.', vn:'Được đó, tôi thích chạy bộ nhất.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'女', pre:'你', blank:'几点能回来', post:'？', py:'Nǐ jǐ diǎn néng huílai?', vn:'Mấy giờ bạn có thể về?'},
+      {speaker:'男', pre:'', blank:'七点多，不会太晚', post:'。', py:'Qī diǎn duō, bú huì tài wǎn.', vn:'Hơn 7 giờ, sẽ không quá muộn đâu.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'你的猫', blank:'多大了', post:'？', py:'Nǐ de māo duō dà le?', vn:'Con mèo của bạn được bao nhiêu tuổi rồi?'},
+      {speaker:'男', pre:'', blank:'一岁多', post:'。', py:'Yí suì duō.', vn:'Hơn một tuổi.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'什么时候', blank:'去北京旅游最好', post:'？', py:'Shénme shíhou qù Běijīng lǚyóu zuì hǎo?', vn:'Khi nào đi du lịch Bắc Kinh là đẹp nhất?'},
+      {speaker:'男', pre:'', blank:'九月和十月北京天气最好，你九月去吧', post:'。', py:'Jiǔyuè hé shíyuè Běijīng tiānqì zuì hǎo, nǐ jiǔyuè qù ba.', vn:'Tháng 9 và tháng 10 thời tiết Bắc Kinh đẹp nhất, bạn đi vào tháng 9 đi.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['八月','几个月','九月'], ans:2,
+     explain:'女：你觉得什么时候去北京旅游最好？男：我觉得九月去最好。问：几月去北京旅游最好？ → 九月。'},
+    {num:12, options:['太远了','太冷了','太热了'], ans:1,
+     explain:'女：你喜欢上海吗？男：上海冬天太冷了，我不喜欢。问：男的为什么不喜欢上海？ → 太冷了。'},
+    {num:13, options:['桌子','椅子','杯子'], ans:1,
+     explain:'女：我要去商店，你去吗？男：我也去，我要买几个新椅子。问：男的要买什么？ → 椅子。'},
+    {num:14, options:['不到十岁','四十岁','十多岁'], ans:2,
+     explain:'女：王医生的女儿今年多大了？男：十四岁了。问：王医生的女儿今年多大了？ → 十多岁（14岁）。'},
+    {num:15, options:['杯子','北京','茶杯'], ans:0,
+     explain:'女：我觉得这个杯子很漂亮。男：你也很喜欢？这是我在北京买的。问：女的觉得什么很漂亮？ → 杯子。'},
+  ],
+};
+
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hoàn thành đoạn thoại MỚI (rủ bạn đi vận động)
+// ══════════════════════════════════════════
+var fillData = [
+  {pre:'你明天',blank:'要',post:'不要去运动？',hint:'(muốn, sẽ — trợ động từ)',ans:'要',exp:'要 đặt trước động từ để hỏi/nêu ý định.'},
+  {pre:'要啊，我',blank:'最',post:'喜欢运动了！',hint:'(nhất)',ans:'最',exp:'最 đặt trước động từ tâm lý/tính từ để biểu thị mức độ cao nhất.'},
+  {pre:'那我们',blank:'一起',post:'去吧，我叫上小李。',hint:'(cùng nhau)',ans:'一起'},
+  {pre:'好，我',blank:'也',post:'想叫他一起去。',hint:'(cũng)',ans:'也'},
+  {pre:'我们班有',blank:'几',post:'个同学要去呢？',hint:'(vài, mấy — số ước lượng nhỏ hơn 10)',ans:'几',exp:'几 phải đi kèm lượng từ + danh từ.'},
+  {pre:'有十',blank:'多',post:'个人要去。',hint:'(hơn — số ước lượng, số > 10 thì 多 đứng sau số đếm)',ans:'多'},
+  {pre:'你',blank:'为什么',post:'不去？',hint:'(tại sao)',ans:'为什么'},
+  {pre:'因为我',blank:'要',post:'去买新椅子。',hint:'(muốn, cần)',ans:'要'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng 要/最/几/多/也/为什么
+// ══════════════════════════════════════════
+var sortData = [
+  {words:['我','也','要','去','旅游','。'],ans:'我也要去旅游。',audio:'我也要去旅游。'},
+  {words:['他','最','喜欢','运动','。'],ans:'他最喜欢运动。',audio:'他最喜欢运动。'},
+  {words:['你们','要','不要','一起','去','？'],ans:'你们要不要一起去？',audio:'你们要不要一起去？'},
+  {words:['教室','里','有','几','把','新','椅子','。'],ans:'教室里有几把新椅子。',audio:'教室里有几把新椅子。'},
+  {words:['她','的','眼睛','最','好看','。'],ans:'她的眼睛最好看。',audio:'她的眼睛最好看。'},
+  {words:['我们','十','多','个','人','要','去','。'],ans:'我们十多个人要去。',audio:'我们十多个人要去。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI — lỗi ngữ pháp học sinh Việt hay mắc
+// (chuyển di tiêu cực từ trật tự từ tiếng Việt: "đẹp nhất", "cũng" cuối câu...)
+// ══════════════════════════════════════════
+var errorFixData = [
+  {wrong:'她的眼睛漂亮最。',
+   opts:['她的眼睛最漂亮。','她最的眼睛漂亮。','最她的眼睛漂亮。','她的最眼睛漂亮。'],ans:0,
+   exp:'最 phải đứng NGAY TRƯỚC tính từ／động từ tâm lý, không đặt sau như trật tự "đẹp nhất" trong tiếng Việt.'},
+  {wrong:'我不要去旅游。(ý muốn nói "tôi không MUỐN đi du lịch")',
+   opts:['我不想去旅游。','我不去要旅游。','我要不去旅游。','我去不要旅游。'],ans:0,
+   exp:'Phủ định "muốn" phải dùng 不想, KHÔNG dùng 不要 (不要 mang nghĩa "đừng làm việc gì", như một lời cấm/khuyên).'},
+  {wrong:'教室里有几椅子。',
+   opts:['教室里有几把椅子。','教室里几有把椅子。','教室里有把几椅子。','教室里有几椅子把。'],ans:0,
+   exp:'Sau 几 bắt buộc phải có LƯỢNG TỪ (把) rồi mới đến danh từ — không được bỏ qua lượng từ như tiếng Việt "mấy ghế".'},
+  {wrong:'十把多椅子。',
+   opts:['十多把椅子。','多十把椅子。','十把椅子多。','把十多椅子。'],ans:0,
+   exp:'Với số đếm LỚN HƠN 10, 多 phải đứng SAU số đếm và TRƯỚC lượng từ: Số + 多 + Lượng từ + Danh từ.'},
+  {wrong:'我想去旅游也。',
+   opts:['我也想去旅游。','我想也去旅游。','想我也去旅游。','我想去也旅游。'],ans:0,
+   exp:'也 phải đứng SAU chủ ngữ và TRƯỚC động từ/trợ động từ, không đặt cuối câu như "cũng" trong tiếng Việt có thể đứng linh hoạt.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
+// ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+var speakingData = {
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 1. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Trong lớp, bạn học hỏi bạn về kế hoạch du lịch sắp tới.',
+      q_zh: '你想去哪儿旅游？你觉得什么时候去最好？',
+      q_py: 'Nǐ xiǎng qù nǎr lǚyóu? Nǐ juéde shénme shíhou qù zuì hǎo?',
+      q_vn: 'Bạn muốn đi du lịch ở đâu? Bạn thấy đi vào lúc nào là tốt nhất?',
+      grammar: { label: '我觉得 + thời gian + 去最好', any: ['觉得'] },
+      need: [
+        { label: 'Nói rõ là đi du lịch (旅游)', any: ['旅游', '旅行'] },
+        { label: 'Nêu thời gian (tháng / mùa / dịp nào)', any: ['月', '春天', '夏天', '秋天', '冬天', '时候', '号', '放假', '周末', '星期'] },
+        { label: 'Dùng 最 để nói “nhất”', any: ['最'] }
+      ],
+      bonus: { label: 'Nêu thêm lý do (因为… / 不冷也不热)', any: ['因为', '也', '天气', '不冷', '不热'] },
+      vocab: ['旅游', '觉得', '最'],
+      minLen: 14,
+      sample: '我想去北京旅游。我觉得九月去最好，九月的北京不冷也不热。',
+      sample_py: 'Wǒ xiǎng qù Běijīng lǚyóu. Wǒ juéde jiǔ yuè qù zuì hǎo, jiǔ yuè de Běijīng bù lěng yě bú rè.',
+      sample_vn: 'Tôi muốn đi Bắc Kinh du lịch. Tôi thấy tháng 9 đi là tốt nhất, Bắc Kinh tháng 9 không lạnh cũng không nóng.',
+      tip: 'Nêu ý kiến thì mở đầu bằng 我觉得…; 最 đặt ngay trước tính từ/động từ: 最好、最喜欢.'
+    },
+    {
+      situation: 'Một người bạn mới quen hỏi bạn về sở thích thể thao.',
+      q_zh: '你最喜欢什么运动？你常常跟谁一起做运动？',
+      q_py: 'Nǐ zuì xǐhuan shénme yùndòng? Nǐ chángcháng gēn shéi yìqǐ zuò yùndòng?',
+      q_vn: 'Bạn thích môn thể thao nào nhất? Bạn thường tập cùng ai?',
+      grammar: { label: '我最喜欢 + môn thể thao', any: ['最喜欢', '最爱', '喜欢'] },
+      need: [
+        { label: 'Nói tên môn thể thao', any: ['足球', '篮球', '排球', '网球', '羽毛球', '乒乓球', '跑步', '游泳', '爬山', '骑车', '跳舞', '运动', '打球', '踢球'] },
+        { label: 'Nói tập cùng ai (跟 / 和 + người)', any: ['跟', '和', '同学', '朋友', '哥哥', '姐姐', '爸爸', '妈妈', '同事'] },
+        { label: 'Dùng 一起', any: ['一起'] }
+      ],
+      bonus: { label: 'Thêm thời gian tập (每天 / 周末 / 下午…)', any: ['每天', '周末', '星期', '下午', '晚上', '上午', '常常'] },
+      vocab: ['运动', '踢', '足球', '一起', '最'],
+      minLen: 12,
+      sample: '我最喜欢踢足球。我常常跟同学一起去踢足球。',
+      sample_py: 'Wǒ zuì xǐhuan tī zúqiú. Wǒ chángcháng gēn tóngxué yìqǐ qù tī zúqiú.',
+      sample_vn: 'Tôi thích đá bóng nhất. Tôi thường cùng bạn học đi đá bóng.',
+      tip: '一起 luôn đứng TRƯỚC động từ: 跟朋友一起去 — không nói 去一起.'
+    },
+    {
+      situation: 'Bạn muốn rủ bạn cùng lớp chiều nay đi chơi.',
+      q_zh: '下午你想做什么？请你用中文约朋友一起去。',
+      q_py: 'Xiàwǔ nǐ xiǎng zuò shénme? Qǐng nǐ yòng Zhōngwén yuē péngyou yìqǐ qù.',
+      q_vn: 'Chiều nay bạn muốn làm gì? Hãy dùng tiếng Trung rủ bạn cùng đi.',
+      grammar: { label: '我们一起 + động từ + 吧！', any: ['一起'] },
+      need: [
+        { label: 'Nói việc định làm (đi đâu / làm gì)', any: ['去', '看', '吃', '喝', '踢', '打', '买', '学', '玩', '跑', '游', '听', '唱', '逛'] },
+        { label: 'Có lời mời: 吧 / 怎么样 / 好吗', any: ['吧', '怎么样', '好吗', '好不好', '行吗'] },
+        { label: 'Nói thời gian (下午 / 几点…)', any: ['下午', '上午', '晚上', '中午', '点', '明天', '今天', '周末', '星期'] }
+      ],
+      bonus: { label: 'Hỏi thêm giờ hẹn (你几点能来？)', any: ['几点', '什么时候'] },
+      vocab: ['一起', '要'],
+      minLen: 10,
+      sample: '下午我们一起去踢足球吧！你几点能来？',
+      sample_py: 'Xiàwǔ wǒmen yìqǐ qù tī zúqiú ba! Nǐ jǐ diǎn néng lái?',
+      sample_vn: 'Chiều nay chúng mình cùng đi đá bóng nhé! Mấy giờ bạn đến được?',
+      tip: 'Lời rủ thân mật: 我们一起 + động từ + 吧！ Muốn hỏi ý kiến thì thêm …怎么样？'
+    },
+    {
+      situation: 'Ở nhà, bạn bàn với người nhà chuyện mua đồ mới.',
+      q_zh: '你们家要不要买新的东西？要买几个？什么时候去买？',
+      q_py: 'Nǐmen jiā yào bu yào mǎi xīn de dōngxi? Yào mǎi jǐ ge? Shénme shíhou qù mǎi?',
+      q_vn: 'Nhà bạn có cần mua đồ mới không? Định mua mấy cái? Khi nào đi mua?',
+      grammar: { label: '要买 + 几 + lượng từ + 新的…', any: ['要买', '要不要', '想买', '不买', '不要', '要'] },
+      need: [
+        { label: 'Nói rõ món đồ muốn mua', any: ['椅子', '桌子', '衣服', '手机', '电脑', '书', '车', '东西', '鞋', '包', '杯子', '床', '冰箱', '空调', '花', '本子'] },
+        { label: 'Nói số lượng (几个 / 两把 / 十多个…)', any: ['几', '个', '把', '张', '件', '条', '本', '台', '双', '多'] },
+        { label: 'Nói thời gian đi mua', any: ['明天', '今天', '后天', '周末', '星期', '下午', '上午', '晚上', '月', '号'] }
+      ],
+      bonus: { label: 'Dùng 数量 + 多 (三点多 / 十多个)', any: ['多'] },
+      vocab: ['要', '新', '椅子'],
+      minLen: 12,
+      sample: '我们家要买几个新椅子。明天下午去买吧，我三点多能回来。',
+      sample_py: 'Wǒmen jiā yào mǎi jǐ ge xīn yǐzi. Míngtiān xiàwǔ qù mǎi ba, wǒ sān diǎn duō néng huílai.',
+      sample_vn: 'Nhà tôi cần mua vài chiếc ghế mới. Chiều mai đi mua nhé, hơn 3 giờ tôi về được.',
+      tip: '要不要…？ là cách hỏi “có… không”, trả lời 要 hoặc 不要. 三点多 = hơn 3 giờ một chút.'
+    },
+    {
+      situation: 'Bạn khoe ảnh thú cưng hoặc ảnh bạn thân cho bạn học xem.',
+      q_zh: '说一说你的小动物或者你的朋友。你觉得他（它）什么地方最好看？',
+      q_py: 'Shuō yi shuō nǐ de xiǎo dòngwù huòzhě nǐ de péngyou. Nǐ juéde tā shénme dìfang zuì hǎokàn?',
+      q_vn: 'Hãy kể về con vật cưng hoặc người bạn của bạn. Bạn thấy chỗ nào của họ (nó) đẹp nhất?',
+      grammar: { label: '我觉得 + 它/他的 + … + 最好看', any: ['觉得'] },
+      need: [
+        { label: 'Giới thiệu đối tượng (这是我的…)', any: ['我的', '这是', '它', '他', '她', '猫', '狗', '朋友'] },
+        { label: 'Nói bộ phận / đặc điểm', any: ['眼睛', '头发', '脸', '嘴', '鼻子', '耳朵', '手', '个子', '笑', '性格', '衣服', '毛'] },
+        { label: 'Dùng 最 + 好看/漂亮/可爱', any: ['最'] }
+      ],
+      bonus: { label: 'Thêm tuổi hoặc tên (它叫… / 六个多月)', any: ['叫', '岁', '月', '名字'] },
+      vocab: ['觉得', '最', '眼睛', '它'],
+      minLen: 12,
+      sample: '这是我的猫，它叫花花，六个多月了。我觉得它的眼睛最好看。',
+      sample_py: 'Zhè shì wǒ de māo, tā jiào Huāhua, liù ge duō yuè le. Wǒ juéde tā de yǎnjing zuì hǎokàn.',
+      sample_vn: 'Đây là con mèo của tôi, nó tên Hoa Hoa, hơn 6 tháng tuổi. Tôi thấy đôi mắt của nó đẹp nhất.',
+      tip: '它 dùng cho con vật/đồ vật, 他/她 dùng cho người. Nhận xét thì dùng 我觉得…最….'
+    }
+  ]
+};
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — chỉ dùng từ vựng bài 1 (không có bài trước để ôn)
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Tôi muốn đi du lịch.', zh:'我要去旅游。', py:'Wǒ yào qù lǚyóu.'},
+  {vi:'Tôi thích đá bóng nhất.', zh:'我最喜欢踢足球。', py:'Wǒ zuì xǐhuan tī zúqiú.'},
+  {vi:'Chúng ta cùng đi nhé!', zh:'我们一起去吧！', py:'Wǒmen yìqǐ qù ba!'},
+  {vi:'Sao bạn không đi vận động?', zh:'你为什么不去运动？', py:'Nǐ wèishénme bú qù yùndòng?'},
+  {vi:'Đây là chiếc ghế mới.', zh:'这是新椅子。', py:'Zhè shì xīn yǐzi.'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Tôi cũng muốn đi du lịch, còn bạn thì sao?', zh:'我也要去旅游，你呢？', py:'Wǒ yě yào qù lǚyóu, nǐ ne?'},
+  {vi:'Môn thể thao anh ấy thích nhất là đá bóng.', zh:'他最喜欢的运动是踢足球。', py:'Tā zuì xǐhuan de yùndòng shì tī zúqiú.'},
+  {vi:'Đây là ghế mới, nó rất đẹp.', zh:'这是新椅子，它很好看。', py:'Zhè shì xīn yǐzi, tā hěn hǎokàn.'},
+  {vi:'Sao bạn không thích vận động?', zh:'你为什么不喜欢运动？', py:'Nǐ wèishénme bù xǐhuan yùndòng?'},
+];

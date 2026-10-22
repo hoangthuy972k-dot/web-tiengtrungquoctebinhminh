@@ -1,0 +1,918 @@
+[
+ {
+  "so": "1",
+  "ten": "「如何」",
+  "tenVn": "",
+  "cauTruc": [
+   "(该) 如何 + Động từ",
+   "…… 如何？(cuối câu)"
+  ],
+  "giaiThich": "如何 là đại từ, dùng để hỏi CÁCH THỨC, nghĩa gần với 怎么 / 怎么样 nhưng thiên về VĂN VIẾT. Ngoài ra 如何 còn đặt ở CUỐI câu để hỏi tình hình hoặc xin ý kiến — vị trí mà 怎么 không dùng được.",
+  "viDu": [
+   {
+    "zh": "我们明天举行会议，讨论这个问题该如何解决。",
+    "py": "Wǒmen míngtiān jǔxíng huìyì, tǎolùn zhège wèntí gāi rúhé jiějué.",
+    "vn": "Ngày mai chúng ta họp, bàn xem vấn đề này nên giải quyết như thế nào."
+   },
+   {
+    "zh": "评委叫第一对夫妻说说他俩是如何恩爱的。",
+    "py": "Píngwěi jiào dì-yī duì fūqī shuōshuo tā liǎ shì rúhé ēn'ài de.",
+    "vn": "Giám khảo bảo cặp thứ nhất kể xem hai người đằm thắm ra sao."
+   },
+   {
+    "zh": "最近身体如何？",
+    "py": "Zuìjìn shēntǐ rúhé?",
+    "vn": "Dạo này sức khoẻ ra sao?"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "今天如何这么冷？",
+    "why": "如何 KHÔNG dùng để hỏi nguyên nhân, chỉ hỏi cách thức.",
+    "dung": "今天怎么这么冷？"
+   },
+   {
+    "sai": "最近身体怎么？",
+    "why": "怎么 không đứng cuối câu để hỏi tình hình — vị trí này phải dùng 如何.",
+    "dung": "最近身体如何？"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "你们俩结婚这么多年了，最近生活",
+       "？"
+      ],
+      "dap": [
+       [
+        "如何"
+       ]
+      ],
+      "chon": [
+       "如何",
+       "怎么",
+       "什么"
+      ],
+      "goiY": "Hỏi thăm TÌNH HÌNH, từ để hỏi đứng ở cuối câu.",
+      "giai": "Cuối câu hỏi tình hình dùng 如何; 怎么 không đứng cuối câu được."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "半夜外面",
+       "这么吵？"
+      ],
+      "dap": [
+       [
+        "怎么"
+       ]
+      ],
+      "chon": [
+       "怎么",
+       "如何",
+       "如何样"
+      ],
+      "goiY": "Hỏi NGUYÊN NHÂN: “Sao nửa đêm bên ngoài lại ồn thế?”",
+      "giai": "Hỏi nguyên nhân (sao lại…) dùng 怎么; 如何 chỉ hỏi cách thức. “如何样” không tồn tại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "评委请每对夫妻说说他们是",
+       "爱护对方的。"
+      ],
+      "dap": [
+       [
+        "如何"
+       ]
+      ],
+      "chon": [
+       "如何",
+       "如何样",
+       "什么"
+      ],
+      "goiY": "“Giám khảo mời từng cặp kể xem họ yêu thương, chăm sóc nhau như thế nào.”",
+      "giai": "Hỏi cách thức trước động từ: 是如何 + V + 的. Không có từ “如何样”."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老师，我不知道该",
+       "写好这篇文章。"
+      ],
+      "dap": [
+       [
+        "如何"
+       ]
+      ],
+      "chon": [
+       "如何",
+       "为什么",
+       "如何样"
+      ],
+      "goiY": "“Thưa thầy, em không biết nên viết bài văn này thế nào cho hay.”",
+      "giai": "该 + 如何 + động từ: hỏi cách làm. 为什么 hỏi lý do, không hợp nghĩa."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们周末一起去看电影，你觉得",
+       "？"
+      ],
+      "dap": [
+       [
+        "如何"
+       ]
+      ],
+      "chon": [
+       "如何",
+       "怎么",
+       "如何样"
+      ],
+      "goiY": "Xin ý kiến người nghe, từ để hỏi ở cuối câu.",
+      "giai": "Cuối câu xin ý kiến dùng 如何 (hoặc 怎么样); “你觉得怎么？” là sai."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这么小的细节你都注意到了，你是",
+       "发现的？"
+      ],
+      "dap": [
+       [
+        "如何"
+       ]
+      ],
+      "chon": [
+       "如何",
+       "为什么",
+       "多少"
+      ],
+      "goiY": "“Chi tiết nhỏ thế mà cậu cũng để ý, cậu phát hiện ra bằng cách nào?”",
+      "giai": "Hỏi cách thức của một việc đã xảy ra: 是如何 + V + 的 (ôn 是……的)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "大家",
+       "都在讨论",
+       "这个问题",
+       "该如何",
+       "解决"
+      ],
+      "dap": [
+       "大家都在讨论这个问题该如何解决。"
+      ],
+      "goiY": "Mọi người đều đang bàn xem vấn đề này nên giải quyết thế nào.",
+      "giai": "该如何 đứng ngay trước động từ 解决."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "评委",
+       "请他们",
+       "说说",
+       "自己是如何",
+       "相敬如宾的"
+      ],
+      "dap": [
+       "评委请他们说说自己是如何相敬如宾的。"
+      ],
+      "goiY": "Giám khảo mời họ kể xem mình đã tôn trọng nhau như khách quý ra sao.",
+      "giai": "是 + 如何 + V + 的: hỏi cách thức của việc đã xảy ra."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "不知道",
+       "如何",
+       "把这件事",
+       "告诉老婆"
+      ],
+      "dap": [
+       "他不知道如何把这件事告诉老婆。"
+      ],
+      "goiY": "Anh ấy không biết nên nói chuyện này với vợ thế nào.",
+      "giai": "如何 đứng trước cả cụm 把 + tân ngữ + động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "最近你们的婚姻生活如何？",
+      "dung": true,
+      "giai": "如何 đứng cuối câu hỏi tình hình — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "半夜外面如何这么吵？",
+      "dung": false,
+      "sua": "半夜外面怎么这么吵？",
+      "giai": "Đây là hỏi nguyên nhân (sao lại ồn thế) nên dùng 怎么, không dùng 如何."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你觉得这个办法怎么？",
+      "dung": false,
+      "sua": "你觉得这个办法如何？",
+      "giai": "怎么 không đứng cuối câu để xin ý kiến — dùng 如何 (hoặc 怎么样)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Giám khảo hỏi họ đã yêu thương, chăm sóc nhau như thế nào.",
+      "dap": [
+       "评委问他们是如何爱护对方的。",
+       "评委问他们是如何爱护彼此的。"
+      ],
+      "py": "Píngwěi wèn tāmen shì rúhé àihù duìfāng de.",
+      "goiY": "Dịch sang tiếng Trung, dùng 是如何……的.",
+      "giai": "Hỏi cách thức của việc đã xảy ra: 是 + 如何 + V + 的."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Dạo này việc học của bạn thế nào?",
+      "dap": [
+       "你最近学习如何？",
+       "最近你的学习如何？",
+       "你最近的学习如何？"
+      ],
+      "py": "Nǐ zuìjìn xuéxí rúhé?",
+      "goiY": "Dịch sang tiếng Trung, đặt 如何 ở cuối câu.",
+      "giai": "Hỏi tình hình → 如何 cuối câu; không nói “学习怎么？”."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这对夫妻结婚三十年从来没吵过架，大家都想知道＿＿＿。",
+      "goiY": "họ đã làm được điều đó bằng cách nào (dùng 如何)",
+      "mau": "这对夫妻结婚三十年从来没吵过架，大家都想知道他们是如何做到的。",
+      "can": [
+       [
+        "如何"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "你们结婚已经十年了，＿＿＿？",
+      "goiY": "hỏi thăm cuộc sống hôn nhân của họ dạo này ra sao — 如何 đặt ở cuối câu",
+      "mau": "你们结婚已经十年了，最近生活如何？",
+      "can": [
+       [
+        "如何"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「如何」 (hỏi cách làm, hoặc đặt cuối câu hỏi tình hình), nói về em hoặc gia đình em",
+      "mau": "我们明天举行会议，讨论这个问题该如何解决。",
+      "can": [
+       [
+        "如何"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「靠」",
+  "tenVn": "",
+  "cauTruc": [
+   "靠着 / 靠在 + nơi chốn",
+   "靠 + người (dựa vào)"
+  ],
+  "giaiThich": "靠 là động từ, nghĩa gốc: để một phần cơ thể tì lên người hoặc vật khác. Nghĩa mở rộng: nhờ vào, dựa vào ai đó.",
+  "viDu": [
+   {
+    "zh": "王老师喜欢靠着桌子讲课。",
+    "py": "Wáng lǎoshī xǐhuan kàozhe zhuōzi jiǎngkè.",
+    "vn": "Thầy Vương thích tựa vào bàn để giảng bài."
+   },
+   {
+    "zh": "男人的头靠在女人的肩膀上，睡着了。",
+    "py": "Nánrén de tóu kào zài nǚrén de jiānbǎng shang, shuìzháo le.",
+    "vn": "Đầu người đàn ông tựa lên vai người phụ nữ, ngủ thiếp đi."
+   },
+   {
+    "zh": "在家靠父母，出门靠朋友。",
+    "py": "Zài jiā kào fùmǔ, chūmén kào péngyou.",
+    "vn": "Ở nhà nhờ cha mẹ, ra ngoài nhờ bạn bè."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他的头靠女人的肩膀。",
+    "why": "thiếu 在……上 — chỉ vị trí tì lên phải có kết cấu đầy đủ.",
+    "dung": "他的头靠在女人的肩膀上。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的头靠",
+       "女人的肩膀上，睡着了。"
+      ],
+      "dap": [
+       [
+        "在"
+       ]
+      ],
+      "chon": [
+       "在",
+       "着",
+       "了"
+      ],
+      "goiY": "Chỉ VỊ TRÍ tì lên, phía sau đã có 上.",
+      "giai": "靠在 + nơi chốn + 上. 靠着 không đi với ……上 phía sau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "门站了很久，一句话也没说。"
+      ],
+      "dap": [
+       [
+        "靠着"
+       ]
+      ],
+      "chon": [
+       "靠着",
+       "靠在",
+       "靠到"
+      ],
+      "goiY": "“Anh ấy tựa vào cửa đứng rất lâu, không nói một câu nào.”",
+      "giai": "靠着 + vật + động từ khác: vừa tựa vừa làm việc khác. 靠在 phải đi với ……上."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她累了，把头靠在我的肩膀",
+       "。"
+      ],
+      "dap": [
+       [
+        "上"
+       ]
+      ],
+      "chon": [
+       "上",
+       "里",
+       "下"
+      ],
+      "goiY": "“Cô ấy mệt rồi, tựa đầu lên vai tôi.”",
+      "giai": "Kết cấu đầy đủ: 靠在……上 (ôn câu chữ 把)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他没有工作，每个月都",
+       "父母给的钱生活。"
+      ],
+      "dap": [
+       [
+        "靠"
+       ]
+      ],
+      "chon": [
+       "靠",
+       "靠在",
+       "在"
+      ],
+      "goiY": "“Anh ta không có việc làm, tháng nào cũng sống nhờ tiền bố mẹ cho.”",
+      "giai": "Nghĩa mở rộng “dựa vào, nhờ vào” dùng 靠 + người/vật; không dùng 靠在."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这次比赛能入围，我",
+       "的是自己的努力。"
+      ],
+      "dap": [
+       [
+        "靠"
+       ]
+      ],
+      "chon": [
+       "靠",
+       "靠在",
+       "靠上"
+      ],
+      "goiY": "“Lần này lọt được vào vòng trong, tôi dựa vào chính sự cố gắng của mình.”",
+      "giai": "靠的是……: cái mình dựa vào là…; nghĩa trừu tượng nên không có 在/上."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "孩子把脑袋",
+       "，很快就睡着了。"
+      ],
+      "dap": [
+       [
+        "靠在妈妈的肩膀上"
+       ]
+      ],
+      "chon": [
+       "靠在妈妈的肩膀上",
+       "靠妈妈的肩膀",
+       "靠在妈妈的肩膀"
+      ],
+      "goiY": "“Đứa bé tựa đầu lên vai mẹ, chẳng mấy chốc đã ngủ.”",
+      "giai": "Tì lên đâu phải đủ 靠在 + nơi chốn + 上; thiếu 在 hoặc thiếu 上 đều sai."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "奶奶",
+       "靠着",
+       "沙发",
+       "睡着了"
+      ],
+      "dap": [
+       "奶奶靠着沙发睡着了。"
+      ],
+      "goiY": "Bà tựa vào ghế sofa ngủ thiếp đi.",
+      "giai": "Chủ ngữ + 靠着 + vật + động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "女儿",
+       "把头",
+       "靠在",
+       "我的",
+       "肩膀上"
+      ],
+      "dap": [
+       "女儿把头靠在我的肩膀上。"
+      ],
+      "goiY": "Con gái tựa đầu lên vai tôi.",
+      "giai": "把 + 头 + 靠在 + nơi chốn + 上."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "完全是",
+       "靠",
+       "自己的努力",
+       "入围的"
+      ],
+      "dap": [
+       "他完全是靠自己的努力入围的。"
+      ],
+      "goiY": "Anh ấy hoàn toàn nhờ vào sự cố gắng của bản thân mà lọt vào vòng trong.",
+      "giai": "靠 + danh từ (nghĩa “nhờ vào”), kết hợp 是……的 nhấn mạnh cách thức."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他的头靠女人的肩膀，睡着了。",
+      "dung": false,
+      "sua": "他的头靠在女人的肩膀上，睡着了。",
+      "giai": "Chỉ vị trí tì lên phải có đủ 在……上."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "她从来没靠过父母，什么事都自己做。",
+      "dung": true,
+      "giai": "靠 nghĩa “dựa vào” + người, kết hợp 从来没……过 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "老师靠在桌子讲课。",
+      "dung": false,
+      "sua": "老师靠在桌子上讲课。",
+      "giai": "Dùng 靠在 thì phải có 上 sau nơi chốn (hoặc đổi thành 靠着桌子)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cô ấy tựa đầu lên vai chồng, ngủ thiếp đi.",
+      "dap": [
+       "她把头靠在丈夫的肩膀上，睡着了。",
+       "她的头靠在丈夫的肩膀上，睡着了。",
+       "她把头靠在老公的肩膀上，睡着了。"
+      ],
+      "py": "Tā bǎ tóu kào zài zhàngfu de jiānbǎng shang, shuìzháo le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 靠在……上.",
+      "giai": "Tì lên vai → 靠在 + 肩膀 + 上."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cuộc sống hạnh phúc phải dựa vào chính mình.",
+      "dap": [
+       "幸福的生活要靠自己。",
+       "幸福的生活得靠自己。",
+       "幸福的生活要靠自己创造。"
+      ],
+      "py": "Xìngfú de shēnghuó yào kào zìjǐ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 靠 nghĩa “dựa vào”.",
+      "giai": "Nghĩa trừu tượng “dựa vào” → 靠 + người, không cần 在/上."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "女朋友累了，＿＿＿，很快就睡着了。",
+      "goiY": "cô ấy tựa đầu lên vai anh ấy (dùng 靠在……上)",
+      "mau": "女朋友累了，把头靠在他的肩膀上，很快就睡着了。",
+      "can": [
+       [
+        "靠在"
+       ],
+       [
+        "上"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这次能入围，＿＿＿。",
+      "goiY": "chúng tôi dựa vào sự cố gắng của cả nhóm (dùng 靠)",
+      "mau": "这次能入围，我们靠的是大家的努力。",
+      "can": [
+       [
+        "靠"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「靠」 (tựa vào đâu, hoặc dựa vào ai), nói về em hoặc cuộc sống quanh em",
+      "mau": "在家靠父母，出门靠朋友。",
+      "can": [
+       [
+        "靠"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「居然」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 居然 + Động từ / Cụm động từ"
+  ],
+  "giaiThich": "居然 là phó từ, biểu thị việc xảy ra NGOÀI DỰ LIỆU, không ngờ tới. Đứng sau chủ ngữ và trước động từ.",
+  "viDu": [
+   {
+    "zh": "这么简单的题，你居然也不会做？",
+    "py": "Zhème jiǎndān de tí, nǐ jūrán yě bú huì zuò?",
+    "vn": "Bài dễ thế này mà bạn lại không làm được à?"
+   },
+   {
+    "zh": "这个女人为了不影响丈夫睡觉，居然放弃这次机会！",
+    "py": "Zhège nǚrén wèile bù yǐngxiǎng zhàngfu shuìjiào, jūrán fàngqì zhè cì jīhuì!",
+    "vn": "Người phụ nữ này vì không muốn ảnh hưởng giấc ngủ của chồng mà lại từ bỏ cơ hội này!"
+   },
+   {
+    "zh": "她每天都努力复习，居然没有通过考试。",
+    "py": "Tā měi tiān dōu nǔlì fùxí, jūrán méiyǒu tōngguò kǎoshì.",
+    "vn": "Cô ấy ngày nào cũng ôn chăm chỉ, vậy mà lại không qua được kỳ thi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "居然他放弃了这次机会。",
+    "why": "居然 là phó từ, phải đứng SAU chủ ngữ.",
+    "dung": "他居然放弃了这次机会。"
+   },
+   {
+    "sai": "今天天气很好，我居然去公园了。",
+    "why": "đi công viên khi trời đẹp là chuyện bình thường — 居然 phải dùng cho việc TRÁI với dự đoán.",
+    "dung": "今天下大雨，他居然还去公园了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家都以为他会参加比赛，没想到",
+       "这次机会。"
+      ],
+      "dap": [
+       [
+        "他居然放弃了"
+       ]
+      ],
+      "chon": [
+       "他居然放弃了",
+       "居然他放弃了",
+       "他放弃了居然"
+      ],
+      "goiY": "Chú ý VỊ TRÍ của 居然.",
+      "giai": "居然 là phó từ: sau chủ ngữ, trước động từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家都以为下这么大的雨他不会去，没想到他",
+       "还是去跑步了。"
+      ],
+      "dap": [
+       [
+        "居然"
+       ]
+      ],
+      "chon": [
+       "居然",
+       "果然",
+       "当然"
+      ],
+      "goiY": "“Ai cũng tưởng mưa to thế anh ấy sẽ không đi, không ngờ anh ấy vẫn đi chạy bộ.”",
+      "giai": "Trái với dự đoán → 居然. 果然 = quả nhiên (đúng như dự đoán), trái với 没想到."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们结婚十年了，没想到他",
+       "忘了我的生日！"
+      ],
+      "dap": [
+       [
+        "居然"
+       ]
+      ],
+      "chon": [
+       "居然",
+       "终于",
+       "果然"
+      ],
+      "goiY": "“Chúng tôi cưới nhau mười năm rồi, không ngờ anh ấy lại quên sinh nhật tôi!”",
+      "giai": "Việc bất ngờ, ngoài dự liệu → 居然. 终于 dùng cho việc mong chờ cuối cùng đã đến."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他平时从来不看书，这次考试",
+       "考了第一名。"
+      ],
+      "dap": [
+       [
+        "居然"
+       ]
+      ],
+      "chon": [
+       "居然",
+       "果然",
+       "一直"
+      ],
+      "goiY": "“Anh ta bình thường chẳng bao giờ đọc sách, thế mà kỳ thi này lại đứng nhất.”",
+      "giai": "Kết quả trái với điều bình thường → 居然 (ôn 从来不)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "。"
+      ],
+      "dap": [
+       [
+        "今天下大雨，他居然还去公园了"
+       ]
+      ],
+      "chon": [
+       "今天下大雨，他居然还去公园了",
+       "今天天气很好，我居然去公园了",
+       "今天下大雨，居然他还去公园了"
+      ],
+      "goiY": "Chọn câu dùng 居然 đúng cả NGHĨA lẫn VỊ TRÍ.",
+      "giai": "居然 dùng cho việc trái dự đoán (mưa to vẫn đi) và đứng sau chủ ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这么小的一只蚊子，",
+       "把他叮醒了。"
+      ],
+      "dap": [
+       [
+        "居然"
+       ]
+      ],
+      "chon": [
+       "居然",
+       "当然",
+       "从来"
+      ],
+      "goiY": "“Con muỗi bé tí thế mà lại đốt anh ấy tỉnh giấc.”",
+      "giai": "Việc nhỏ gây kết quả bất ngờ → 居然 (ôn câu chữ 把)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "居然",
+       "放弃了",
+       "这次",
+       "机会"
+      ],
+      "dap": [
+       "他居然放弃了这次机会。"
+      ],
+      "goiY": "Anh ấy lại từ bỏ cơ hội lần này.",
+      "giai": "Chủ ngữ + 居然 + động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "那个",
+       "平时很安静的",
+       "女孩",
+       "居然",
+       "跟老师",
+       "吵架了"
+      ],
+      "dap": [
+       "那个平时很安静的女孩居然跟老师吵架了。"
+      ],
+      "goiY": "Cô bé bình thường rất trầm lặng ấy lại cãi nhau với cô giáo.",
+      "giai": "居然 đứng trước cụm giới từ 跟老师 + động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "半夜",
+       "他",
+       "居然",
+       "被一只蚊子",
+       "叮醒了"
+      ],
+      "dap": [
+       "半夜他居然被一只蚊子叮醒了。",
+       "他半夜居然被一只蚊子叮醒了。",
+       "他居然半夜被一只蚊子叮醒了。"
+      ],
+      "goiY": "Nửa đêm anh ấy lại bị một con muỗi đốt tỉnh giấc.",
+      "giai": "居然 đứng sau chủ ngữ, trước cụm 被 (ôn câu bị động)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "居然她忘了我的生日。",
+      "dung": false,
+      "sua": "她居然忘了我的生日。",
+      "giai": "居然 là phó từ, phải đứng sau chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "周末天气很好，我们居然去公园玩了。",
+      "dung": false,
+      "sua": "周末下大雨，他们居然还去公园玩了。",
+      "giai": "Trời đẹp đi chơi công viên là chuyện bình thường, không dùng 居然."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他平时那么爱抱怨，今天居然一句话也没说。",
+      "dung": true,
+      "giai": "Hay than phiền mà hôm nay không nói câu nào — trái dự đoán, dùng 居然 đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Bài dễ như thế mà cậu ấy lại không làm được.",
+      "dap": [
+       "这么简单的题，他居然不会做。",
+       "这么简单的题，他居然也不会做。",
+       "这么简单的题目，他居然不会做。"
+      ],
+      "py": "Zhème jiǎndān de tí, tā jūrán bú huì zuò.",
+      "goiY": "Dịch sang tiếng Trung, dùng 居然.",
+      "giai": "居然 đứng sau chủ ngữ 他, trước 不会做."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Hai vợ chồng họ trước giờ chưa từng cãi nhau, vậy mà lại ly hôn rồi.",
+      "dap": [
+       "他们夫妻俩从来没吵过架，居然离婚了。",
+       "他们夫妻俩从来没吵过架，居然离婚了！",
+       "他们两口子从来没吵过架，居然离婚了。"
+      ],
+      "py": "Tāmen fūqī liǎ cónglái méi chǎoguo jià, jūrán líhūn le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 从来没……过 và 居然.",
+      "giai": "Việc ngoài dự liệu → 居然; 吵架 là động từ li hợp: 吵过架."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我以为他会很生气，没想到他＿＿＿。",
+      "goiY": "anh ấy lại bật cười (việc bất ngờ — dùng 居然)",
+      "mau": "我以为他会很生气，没想到他居然笑了。",
+      "can": [
+       [
+        "居然"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这么小的一只蚊子，＿＿＿。",
+      "goiY": "vậy mà lại làm cả nhà thức giấc lúc nửa đêm (dùng 居然)",
+      "mau": "这么小的一只蚊子，居然把全家人都吵醒了。",
+      "can": [
+       [
+        "居然"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「居然」 kể một chuyện bất ngờ, trái với dự đoán của em",
+      "mau": "她每天都努力复习，居然没有通过考试。",
+      "can": [
+       [
+        "居然"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,937 @@
+[
+ {
+  "so": "1",
+  "ten": "「时而」",
+  "tenVn": "",
+  "cauTruc": [
+   "时而 A，时而 B (，时而 C): lúc thì A, lúc thì B — các tình huống luân phiên (văn viết)",
+   "Chủ ngữ + 时而 + cụm động từ: thỉnh thoảng lại … (không theo thời gian cố định)"
+  ],
+  "giaiThich": "时而 là PHÓ TỪ, dùng trong văn viết. Có hai cách dùng: ① Hai (hoặc hơn hai) 时而 dùng liền nhau tạo thành câu ghép song song, biểu thị nhiều tình huống THAY PHIÊN nhau xảy ra (lúc thì…, lúc thì…). ② Dùng MỘT 时而: biểu thị một hành động lặp lại, xuất hiện không theo thời gian cố định (thỉnh thoảng lại…); thường đứng trước cụm động từ.",
+  "viDu": [
+   {
+    "zh": "我们的车在大山里沿着公路盘旋而行，时而行驶在深深的谷底，时而爬升到海拔一千多米高的山腰。",
+    "py": "Wǒmen de chē zài dà shān li yánzhe gōnglù pánxuán ér xíng, shí'ér xíngshǐ zài shēnshēn de gǔdǐ, shí'ér páshēng dào hǎibá yìqiān duō mǐ gāo de shānyāo.",
+    "vn": "Xe chúng tôi men theo con đường vòng vèo trong núi lớn, lúc thì chạy dưới đáy thung lũng sâu, lúc thì leo lên lưng chừng núi cao hơn một nghìn mét so với mặt biển."
+   },
+   {
+    "zh": "五彩的蝴蝶颜色鲜艳极了，尤其是在阳光下，时而金黄，时而翠绿，时而由紫变蓝。",
+    "py": "Wǔcǎi de húdié yánsè xiānyàn jí le, yóuqí shì zài yángguāng xià, shí'ér jīnhuáng, shí'ér cuìlǜ, shí'ér yóu zǐ biàn lán.",
+    "vn": "Những con bướm ngũ sắc màu sắc rực rỡ vô cùng, nhất là dưới ánh mặt trời, lúc thì vàng óng, lúc thì xanh biếc, lúc lại từ tím chuyển sang xanh lam."
+   },
+   {
+    "zh": "主人去世以后，那狗没有了往日的精神，一点儿东西不吃，时而发出令人伤心的叫声。",
+    "py": "Zhǔrén qùshì yǐhòu, nà gǒu méiyǒule wǎngrì de jīngshen, yìdiǎnr dōngxi bù chī, shí'ér fāchū lìng rén shāngxīn de jiàoshēng.",
+    "vn": "Sau khi chủ mất, con chó ấy không còn tinh thần như trước, chẳng ăn gì cả, thỉnh thoảng lại phát ra tiếng kêu khiến người ta đau lòng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他们时而唱歌，一会儿跳舞。",
+    "why": "Cặp song song phải cùng dạng: 时而……，时而…… (văn viết) hoặc 一会儿……，一会儿…… (khẩu ngữ), không trộn lẫn.",
+    "dung": "他们时而唱歌，时而跳舞。"
+   },
+   {
+    "sai": "我时而每个周末都去爬山。",
+    "why": "时而 = thỉnh thoảng, không theo thời gian cố định — mâu thuẫn với 每个周末都 (đều đặn).",
+    "dung": "我每个周末都去爬山。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们的车",
+       "行驶在深深的谷底，时而爬升到山腰。"
+      ],
+      "dap": [
+       [
+        "时而"
+       ]
+      ],
+      "chon": [
+       "时而",
+       "有时",
+       "经常"
+      ],
+      "goiY": "\"Xe chúng tôi lúc thì chạy dưới đáy thung lũng, lúc thì leo lên lưng chừng núi.\" (câu bài khoá)",
+      "giai": "Vế sau đã có 时而 → vế trước cũng dùng 时而 cho cân đối."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他们玩儿得兴高采烈，时而唱歌，",
+       "跳舞。"
+      ],
+      "dap": [
+       [
+        "时而"
+       ]
+      ],
+      "chon": [
+       "时而",
+       "一会儿",
+       "然后"
+      ],
+      "goiY": "\"Họ chơi hăng say, lúc hát, lúc nhảy.\" (练习2 ②)",
+      "giai": "Cặp song song phải cùng dạng: 时而……，时而……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "山上的天气变化很快，时而晴，时而阴，",
+       "还下一阵小雨。"
+      ],
+      "dap": [
+       [
+        "时而"
+       ]
+      ],
+      "chon": [
+       "时而",
+       "已经",
+       "从来"
+      ],
+      "goiY": "\"Thời tiết trên núi thay đổi nhanh, lúc nắng, lúc râm, lúc lại mưa một trận nhỏ.\"",
+      "giai": "Ba 时而 liên tiếp — liệt kê ba tình huống luân phiên."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "主人去世以后，那只狗一点儿东西不吃，",
+       "发出令人伤心的叫声。"
+      ],
+      "dap": [
+       [
+        "时而"
+       ]
+      ],
+      "chon": [
+       "时而",
+       "一直",
+       "总是"
+      ],
+      "goiY": "\"Sau khi chủ mất, con chó chẳng ăn gì, thỉnh thoảng lại kêu lên thảm thiết.\"",
+      "giai": "Một 时而 đứng trước cụm động từ: hành động lặp lại không định kỳ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "女儿第一天上幼儿园回来特别高兴，",
+       "掏出老师奖励的小红花。"
+      ],
+      "dap": [
+       [
+        "时而"
+       ]
+      ],
+      "chon": [
+       "时而",
+       "从来",
+       "始终"
+      ],
+      "goiY": "\"Ngày đầu đi mẫu giáo về, con gái rất vui, thỉnh thoảng lại lôi bông hoa đỏ cô thưởng ra ngắm.\"",
+      "giai": "时而 + 掏出……: động tác lặp lại nhiều lần một cách ngẫu nhiên."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这位作家的语言",
+       "朴实、自然，时而幽默、生动，深受读者喜爱。"
+      ],
+      "dap": [
+       [
+        "时而"
+       ]
+      ],
+      "chon": [
+       "时而",
+       "同时",
+       "已经"
+      ],
+      "goiY": "\"Ngôn ngữ của nhà văn này lúc giản dị, tự nhiên, lúc hài hước, sinh động.\"",
+      "giai": "Hai 时而 nối hai cặp tính từ luân phiên."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们的车",
+       "时而",
+       "在谷底",
+       "，",
+       "时而",
+       "在山腰"
+      ],
+      "dap": [
+       "我们的车时而在谷底，时而在山腰。"
+      ],
+      "goiY": "Xe chúng tôi lúc ở đáy thung lũng, lúc ở lưng chừng núi.",
+      "giai": "Chủ ngữ đứng đầu, sau đó là hai vế 时而 song song."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "孩子们",
+       "在草地上",
+       "时而跑",
+       "，",
+       "时而跳",
+       "，",
+       "开心极了"
+      ],
+      "dap": [
+       "孩子们在草地上时而跑，时而跳，开心极了。"
+      ],
+      "goiY": "Bọn trẻ trên bãi cỏ lúc chạy lúc nhảy, vui vô cùng.",
+      "giai": "Trạng ngữ nơi chốn 在草地上 đứng trước các vế 时而."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "那只狗",
+       "不吃东西",
+       "，",
+       "时而",
+       "发出",
+       "伤心的叫声"
+      ],
+      "dap": [
+       "那只狗不吃东西，时而发出伤心的叫声。"
+      ],
+      "goiY": "Con chó không ăn gì, thỉnh thoảng lại kêu thảm thiết.",
+      "giai": "Một 时而 đứng ngay trước cụm động từ 发出……叫声."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "阳光下，蝴蝶的颜色时而金黄，时而翠绿。",
+      "dung": true,
+      "giai": "时而 + tính từ, hai vế song song — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他们时而唱歌，一会儿跳舞。",
+      "dung": false,
+      "sua": "他们时而唱歌，时而跳舞。",
+      "giai": "Không trộn 时而 với 一会儿; hai vế phải cùng dạng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我时而每天都去跑步。",
+      "dung": false,
+      "sua": "我每天都去跑步。",
+      "giai": "时而 (thỉnh thoảng, không định kỳ) mâu thuẫn với 每天都 (đều đặn)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trên đường lên núi, lúc thì trời nắng, lúc thì mưa, thời tiết thay đổi rất nhanh.",
+      "dap": [
+       "上山的路上，时而晴天，时而下雨，天气变化很快。",
+       "上山的路上时而晴，时而下雨，天气变化得很快。",
+       "去山上的路上，时而出太阳，时而下雨，天气变化很快。"
+      ],
+      "py": "Shàng shān de lù shang, shí'ér qíngtiān, shí'ér xià yǔ, tiānqì biànhuà hěn kuài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 时而……，时而…….",
+      "giai": "Hai tình huống thời tiết luân phiên → 时而……，时而……."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cô ấy ngồi bên cửa sổ đọc sách, thỉnh thoảng lại ngẩng đầu nhìn ra ngoài.",
+      "dap": [
+       "她坐在窗边看书，时而抬头看看窗外。",
+       "她坐在窗户边看书，时而抬起头看看外面。",
+       "她坐在窗前看书，时而抬头往外看。"
+      ],
+      "py": "Tā zuò zài chuāng biān kàn shū, shí'ér táitóu kànkan chuāng wài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 时而.",
+      "giai": "Một 时而 trước cụm động từ: hành động lặp lại không định kỳ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "那是一条年久失修的老路，时而土路，时而水泥道，＿＿＿。",
+      "goiY": "chọn vế sau: \"gồ ghề, kéo dài tới tận nơi xa không thấy điểm cuối\" — 练一练 (1) của sách",
+      "mau": "那是一条年久失修的老路，时而土路，时而水泥道，高低不平，延伸到看不到尽头的远方。",
+      "can": [
+       [
+        "高低不平"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，时而说已经想好了，就这么办，时而又犹豫不决，说还得好好想想。",
+      "goiY": "chọn vế trước: \"nửa ngày rồi mà anh ấy vẫn chưa quyết\" — 练一练 (2) của sách",
+      "mau": "半天了，他还是拿不定主意，时而说已经想好了，就这么办，时而又犹豫不决，说还得好好想想。",
+      "can": [
+       [
+        "拿不定主意"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，时而朴实、自然，时而幽默、生动，有的像政论，有的像诗歌，深受读者喜爱。",
+      "goiY": "chọn vế trước: \"ngôn ngữ của ông ấy bắt nguồn từ dân gian\" — 练一练 (3) của sách",
+      "mau": "他的语言来自民间，时而朴实、自然，时而幽默、生动，有的像政论，有的像诗歌，深受读者喜爱。",
+      "can": [
+       [
+        "来自民间"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「不禁」",
+  "tenVn": "",
+  "cauTruc": [
+   "(Tình huống)，chủ ngữ + 不禁 + cụm động từ: không kìm được mà …",
+   "不禁 + cụm chủ vị / tính từ (+ 起来): bất giác …, không khỏi …"
+  ],
+  "giaiThich": "不禁 là PHÓ TỪ, nghĩa là \"không tự chủ được, không kìm được\" (不由自主地、无法控制地). Diễn tả phản ứng tự nhiên bật ra khi gặp một tình huống nào đó. Sau 不禁 có thể là cụm động từ (不禁问自己), cụm chủ vị (不禁心里有些发慌) hoặc tính từ (不禁兴奋起来). Thường có một vế nêu tình huống / nguyên nhân đứng trước. Gần nghĩa 忍不住, 不由得 (bài 2), nhưng 不禁 mang sắc thái văn viết hơn.",
+  "viDu": [
+   {
+    "zh": "它比万里长城更让我震撼，它比历史悠久的宫殿更让我感动。我不禁问自己，这里的人为什么选择了梯田？",
+    "py": "Tā bǐ Wànlǐ Chángchéng gèng ràng wǒ zhènhàn, tā bǐ lìshǐ yōujiǔ de gōngdiàn gèng ràng wǒ gǎndòng. Wǒ bùjīn wèn zìjǐ, zhèlǐ de rén wèi shénme xuǎnzéle tītián?",
+    "vn": "Nó khiến tôi choáng ngợp hơn cả Vạn Lý Trường Thành, xúc động hơn cả những cung điện lâu đời. Tôi không khỏi tự hỏi: vì sao người ở đây lại chọn ruộng bậc thang?"
+   },
+   {
+    "zh": "那是我第一次用汉语演讲，走上讲台，不禁心里有些发慌。",
+    "py": "Nà shì wǒ dì-yī cì yòng Hànyǔ yǎnjiǎng, zǒushàng jiǎngtái, bùjīn xīnli yǒuxiē fāhuāng.",
+    "vn": "Đó là lần đầu tôi diễn thuyết bằng tiếng Trung, bước lên bục, trong lòng không khỏi có chút hoảng."
+   },
+   {
+    "zh": "听到这个消息，大家不禁兴奋起来。",
+    "py": "Tīngdào zhège xiāoxi, dàjiā bùjīn xīngfèn qilai.",
+    "vn": "Nghe tin này, mọi người không kìm được mà phấn khích hẳn lên."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我不禁决定明天去图书馆。",
+    "why": "不禁 chỉ dùng cho phản ứng tự nhiên, không chủ ý (cười, khóc, hỏi, cảm thán…), không dùng cho hành động có kế hoạch như 决定.",
+    "dung": "我决定明天去图书馆。"
+   },
+   {
+    "sai": "看到这么美的风景，不禁我拿出了相机。",
+    "why": "不禁 là phó từ, đứng SAU chủ ngữ, trước động từ.",
+    "dung": "看到这么美的风景，我不禁拿出了相机。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我",
+       "问自己，这里的人为什么选择了梯田？"
+      ],
+      "dap": [
+       [
+        "不禁"
+       ]
+      ],
+      "chon": [
+       "不禁",
+       "不必",
+       "不断"
+      ],
+      "goiY": "\"Tôi không khỏi tự hỏi: vì sao người ở đây lại chọn ruộng bậc thang?\" (câu bài khoá)",
+      "giai": "不禁 + 问自己: phản ứng tự nhiên trước cảnh tượng choáng ngợp."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "走上讲台，我",
+       "心里有些发慌。"
+      ],
+      "dap": [
+       [
+        "不禁"
+       ]
+      ],
+      "chon": [
+       "不禁",
+       "不免",
+       "不够"
+      ],
+      "goiY": "\"Bước lên bục, trong lòng tôi không khỏi có chút hoảng.\"",
+      "giai": "Sau 不禁 là cụm chủ vị 心里有些发慌."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "听到这个消息，大家",
+       "兴奋起来。"
+      ],
+      "dap": [
+       [
+        "不禁"
+       ]
+      ],
+      "chon": [
+       "不禁",
+       "不但",
+       "不管"
+      ],
+      "goiY": "\"Nghe tin này, mọi người không kìm được mà phấn khích hẳn lên.\"",
+      "giai": "不禁 + tính từ + 起来."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "看着电影中父子情深的画面，他",
+       "流下了眼泪。"
+      ],
+      "dap": [
+       [
+        "不禁"
+       ]
+      ],
+      "chon": [
+       "不禁",
+       "不停",
+       "不曾"
+      ],
+      "goiY": "\"Nhìn cảnh tình cha con sâu nặng trong phim, anh ấy bất giác rơi nước mắt.\"",
+      "giai": "Phản ứng không kìm được: 不禁流下眼泪."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "听他说得很有道理，大家",
+       "连连点头。"
+      ],
+      "dap": [
+       [
+        "不禁"
+       ]
+      ],
+      "chon": [
+       "不禁",
+       "不许",
+       "不用"
+      ],
+      "goiY": "\"Nghe anh ấy nói rất có lý, mọi người bất giác gật đầu lia lịa.\"",
+      "giai": "不禁 + 连连点头 — 练一练 (1)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "看到污染的河流，人们",
+       "要问：我们还能喝上干净的水吗？"
+      ],
+      "dap": [
+       [
+        "不禁"
+       ]
+      ],
+      "chon": [
+       "不禁",
+       "不得",
+       "不及"
+      ],
+      "goiY": "\"Nhìn dòng sông ô nhiễm, người ta không khỏi muốn hỏi…\"",
+      "giai": "不禁要问 = không khỏi muốn hỏi."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "听到",
+       "这个好消息",
+       "，",
+       "妈妈",
+       "不禁",
+       "笑了起来"
+      ],
+      "dap": [
+       "听到这个好消息，妈妈不禁笑了起来。"
+      ],
+      "goiY": "Nghe tin vui này, mẹ không nhịn được cười.",
+      "giai": "Vế tình huống đứng trước, 不禁 đứng sau chủ ngữ 妈妈."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "站在山顶上",
+       "，",
+       "我们",
+       "不禁",
+       "被眼前的美景",
+       "震撼了"
+      ],
+      "dap": [
+       "站在山顶上，我们不禁被眼前的美景震撼了。"
+      ],
+      "goiY": "Đứng trên đỉnh núi, chúng tôi không khỏi choáng ngợp trước cảnh đẹp trước mắt.",
+      "giai": "不禁 đứng trước cả cụm bị động 被……震撼."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "看着",
+       "这些老照片",
+       "，",
+       "奶奶",
+       "不禁",
+       "想起了",
+       "年轻时的事"
+      ],
+      "dap": [
+       "看着这些老照片，奶奶不禁想起了年轻时的事。"
+      ],
+      "goiY": "Nhìn những tấm ảnh cũ, bà không khỏi nhớ lại chuyện hồi trẻ.",
+      "giai": "V着 + tân ngữ làm trạng ngữ; 不禁 + 想起了……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "听了他的话，大家不禁哈哈大笑起来。",
+      "dung": true,
+      "giai": "Phản ứng tự nhiên (cười) — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "看到这么美的风景，不禁我拿出了相机。",
+      "dung": false,
+      "sua": "看到这么美的风景，我不禁拿出了相机。",
+      "giai": "不禁 là phó từ, phải đứng sau chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我不禁决定下个月去云南旅游。",
+      "dung": false,
+      "sua": "我决定下个月去云南旅游。",
+      "giai": "决定 là hành động có chủ ý, không dùng 不禁."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Đọc xong bức thư của mẹ, tôi không kìm được mà khóc.",
+      "dap": [
+       "读完妈妈的信，我不禁哭了。",
+       "看完妈妈的信，我不禁哭了起来。",
+       "读完妈妈写的信，我不禁流下了眼泪。"
+      ],
+      "py": "Dúwán māma de xìn, wǒ bùjīn kū le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不禁.",
+      "giai": "Vế tình huống + chủ ngữ + 不禁 + phản ứng (哭了)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Nhìn thấy ruộng bậc thang tráng lệ như vậy, du khách không khỏi cảm thán.",
+      "dap": [
+       "看到这么壮丽的梯田，游客们不禁感叹起来。",
+       "看到如此壮丽的梯田，游客们不禁发出感叹。",
+       "看到这么壮丽的梯田，游客们都不禁感叹。"
+      ],
+      "py": "Kàndào zhème zhuànglì de tītián, yóukèmen bùjīn gǎntàn qilai.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不禁.",
+      "giai": "不禁 + 感叹 (起来): cảm thán bật ra tự nhiên."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "听他说得＿＿＿，大家不禁连连点头。",
+      "goiY": "hoàn thành câu: anh ấy nói rất có lý — 练一练 (1) của sách",
+      "mau": "听他说得很有道理，大家不禁连连点头。",
+      "can": [
+       [
+        "道理",
+        "有理",
+        "对",
+        "好"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "看着电影中父子情深，他不禁＿＿＿。",
+      "goiY": "hoàn thành câu: anh ấy bất giác rơi nước mắt / nhớ tới cha — 练一练 (2) của sách",
+      "mau": "看着电影中父子情深，他不禁流下了眼泪。",
+      "can": [
+       [
+        "眼泪",
+        "哭",
+        "想起",
+        "父亲",
+        "爸爸"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "看到污染的河流，人们不禁要问：“＿＿＿？”",
+      "goiY": "hoàn thành câu: đặt một câu hỏi lo lắng về hậu quả ô nhiễm — 练一练 (3) của sách",
+      "mau": "看到污染的河流，人们不禁要问：“我们的子孙后代还能喝上干净的水吗？”",
+      "can": [
+       [
+        "吗",
+        "怎么",
+        "什么",
+        "为什么",
+        "谁"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「无不」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ số nhiều / toàn thể + 无不 + động từ / cụm động từ: không ai / không gì không … (= đều …)",
+   "但凡……，无不……: hễ là … thì đều …"
+  ],
+  "giaiThich": "无不 là PHÓ TỪ, nghĩa là \"没有一个不\" — không một ai / không một cái nào không…, tức là TẤT CẢ ĐỀU. Đây là phủ định kép, khẳng định mạnh hơn 都. Thường đứng trước động từ, cụm động từ; chủ ngữ phải là SỐ NHIỀU hoặc mang nghĩa toàn bộ (百姓, 这里的一切, 人人…). Dùng trong văn viết.",
+  "viDu": [
+   {
+    "zh": "坏人受到了应有的惩罚，百姓无不拍手称快。",
+    "py": "Huàirén shòudàole yīngyǒu de chéngfá, bǎixìng wúbù pāishǒu chēngkuài.",
+    "vn": "Kẻ xấu đã phải chịu sự trừng phạt đích đáng, dân chúng ai nấy đều vỗ tay hả hê."
+   },
+   {
+    "zh": "哈尼梯田的美景让人陶醉，这里的一切无不体现着当地百姓与自然和谐相处的智慧。",
+    "py": "Hāní tītián de měijǐng ràng rén táozuì, zhèlǐ de yíqiè wúbù tǐxiànzhe dāngdì bǎixìng yǔ zìrán héxié xiāngchǔ de zhìhuì.",
+    "vn": "Cảnh đẹp của ruộng bậc thang Hà Nhì khiến người ta ngây ngất, mọi thứ ở đây đều thể hiện trí tuệ chung sống hài hoà với thiên nhiên của người dân địa phương."
+   },
+   {
+    "zh": "在人们的学习、生活、工作中，任何人的一言一行，一举一动，无不影响着你周围的人们。",
+    "py": "Zài rénmen de xuéxí, shēnghuó, gōngzuò zhōng, rènhé rén de yì yán yì xíng, yì jǔ yí dòng, wúbù yǐngxiǎngzhe nǐ zhōuwéi de rénmen.",
+    "vn": "Trong học tập, cuộc sống, công việc, mỗi lời nói việc làm, mỗi cử chỉ hành động của bất kỳ ai đều ảnh hưởng tới những người xung quanh."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他无不喜欢这本书。",
+    "why": "无不 cần chủ ngữ số nhiều / toàn thể; chủ ngữ số ít 他 thì dùng 很 / 非常.",
+    "dung": "同学们无不喜欢这本书。"
+   },
+   {
+    "sai": "看过这部电影的人无不都很感动。",
+    "why": "无不 đã mang nghĩa \"đều\", thêm 都 là thừa (thành phần dư — xem 扩展 bài này).",
+    "dung": "看过这部电影的人无不很感动。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "坏人受到了应有的惩罚，百姓",
+       "拍手称快。"
+      ],
+      "dap": [
+       [
+        "无不"
+       ]
+      ],
+      "chon": [
+       "无不",
+       "不必",
+       "无论"
+      ],
+      "goiY": "\"Kẻ xấu bị trừng phạt đích đáng, dân chúng ai nấy đều vỗ tay hả hê.\"",
+      "giai": "Chủ ngữ số nhiều 百姓 + 无不 + cụm động từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这里的一切",
+       "体现着当地百姓与自然和谐相处的智慧。"
+      ],
+      "dap": [
+       [
+        "无不"
+       ]
+      ],
+      "chon": [
+       "无不",
+       "无法",
+       "不禁"
+      ],
+      "goiY": "\"Mọi thứ ở đây đều thể hiện trí tuệ chung sống hài hoà với thiên nhiên.\" (câu bài khoá)",
+      "giai": "这里的一切 mang nghĩa toàn bộ → 无不."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "任何人的一言一行，",
+       "影响着你周围的人们。"
+      ],
+      "dap": [
+       [
+        "无不"
+       ]
+      ],
+      "chon": [
+       "无不",
+       "无非",
+       "不再"
+      ],
+      "goiY": "\"Mỗi lời nói việc làm của bất kỳ ai đều ảnh hưởng tới những người xung quanh.\"",
+      "giai": "任何…… + 无不: nhấn mạnh không có ngoại lệ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "看过这部电影的观众，",
+       "被主人公的故事感动。"
+      ],
+      "dap": [
+       [
+        "无不"
+       ]
+      ],
+      "chon": [
+       "无不",
+       "无从",
+       "难免"
+      ],
+      "goiY": "\"Khán giả đã xem bộ phim này ai cũng cảm động trước câu chuyện của nhân vật chính.\"",
+      "giai": "Chủ ngữ số nhiều 观众 + 无不 + cụm bị động."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他设计的灯具、家具和各种装饰品，",
+       "造型新颖，光彩照人。"
+      ],
+      "dap": [
+       [
+        "无不"
+       ]
+      ],
+      "chon": [
+       "无不",
+       "无法",
+       "不仅"
+      ],
+      "goiY": "\"Đèn, đồ nội thất và các đồ trang trí anh ấy thiết kế món nào cũng kiểu dáng mới lạ.\"",
+      "giai": "练一练 (1): 无不 đứng đầu vị ngữ sau chủ ngữ số nhiều."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "来到哈尼梯田的游客，",
+       "陶醉于眼前的美景。"
+      ],
+      "dap": [
+       [
+        "无不"
+       ]
+      ],
+      "chon": [
+       "无不",
+       "无论",
+       "不必"
+      ],
+      "goiY": "\"Du khách đến ruộng bậc thang Hà Nhì ai nấy đều say sưa trước cảnh đẹp.\"",
+      "giai": "无不 + 陶醉于……."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "同学们",
+       "无不",
+       "喜欢",
+       "这位",
+       "幽默的老师"
+      ],
+      "dap": [
+       "同学们无不喜欢这位幽默的老师。"
+      ],
+      "goiY": "Học sinh ai cũng thích thầy giáo hài hước này.",
+      "giai": "Chủ ngữ số nhiều + 无不 + động từ + tân ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这里的",
+       "每一处风景",
+       "无不",
+       "让人",
+       "陶醉"
+      ],
+      "dap": [
+       "这里的每一处风景无不让人陶醉。"
+      ],
+      "goiY": "Mỗi phong cảnh ở đây đều khiến người ta say mê.",
+      "giai": "每一处风景 mang nghĩa toàn bộ, đi với 无不."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "但凡",
+       "去过那里的人",
+       "，",
+       "无不",
+       "称赞",
+       "那里的美景"
+      ],
+      "dap": [
+       "但凡去过那里的人，无不称赞那里的美景。"
+      ],
+      "goiY": "Hễ ai đã từng đến đó đều khen cảnh đẹp nơi ấy.",
+      "giai": "但凡……，无不……: hễ là … thì đều …."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "听到这个好消息，全班同学无不欢呼起来。",
+      "dung": true,
+      "giai": "Chủ ngữ số nhiều 全班同学 + 无不 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他无不喜欢踢足球。",
+      "dung": false,
+      "sua": "他非常喜欢踢足球。",
+      "giai": "Chủ ngữ số ít không dùng 无不."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "看过这本书的人无不都很感动。",
+      "dung": false,
+      "sua": "看过这本书的人无不很感动。",
+      "giai": "无不 đã = \"đều\", thêm 都 là thừa thành phần."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Người dân trong làng ai cũng biết câu chuyện này.",
+      "dap": [
+       "村里的人无不知道这个故事。",
+       "村子里的人无不知道这个故事。",
+       "村里的人们无不知道这个故事。"
+      ],
+      "py": "Cūn li de rén wúbù zhīdào zhège gùshi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 无不.",
+      "giai": "\"Ai cũng\" = 无不 (không ai không); chủ ngữ số nhiều 村里的人."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Những tác phẩm của ông ấy đều thể hiện tình yêu đối với quê hương.",
+      "dap": [
+       "他的作品无不体现着对家乡的热爱。",
+       "他的作品无不体现出对家乡的热爱。",
+       "他的那些作品无不表现着对故乡的爱。"
+      ],
+      "py": "Tā de zuòpǐn wúbù tǐxiànzhe duì jiāxiāng de rè'ài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 无不.",
+      "giai": "他的作品 (số nhiều) + 无不体现着……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他设计的灯具、家具和各种装饰品，＿＿＿造型新颖，光彩照人。",
+      "goiY": "đặt 无不 vào đúng vị trí — 练一练 (1) của sách",
+      "mau": "他设计的灯具、家具和各种装饰品，无不造型新颖，光彩照人。",
+      "can": [
+       [
+        "无不"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "但凡有一些创业体会的人，＿＿＿在他一针见血的点评中了解到了创业的本质。",
+      "goiY": "đặt 无不 vào đúng vị trí — 练一练 (2) của sách",
+      "mau": "但凡有一些创业体会的人，无不在他一针见血的点评中了解到了创业的本质。",
+      "can": [
+       [
+        "无不"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "李敖的情感经历与他笔下那颇含激情的文章一样，＿＿＿充满传奇的色彩。",
+      "goiY": "đặt 无不 vào đúng vị trí — 练一练 (3) của sách",
+      "mau": "李敖的情感经历与他笔下那颇含激情的文章一样，无不充满传奇的色彩。",
+      "can": [
+       [
+        "无不"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

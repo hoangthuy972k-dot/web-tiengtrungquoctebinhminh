@@ -1,0 +1,107 @@
+{
+ "zh": "锯掉生活的“筐底”",
+ "py": "Jùdiào shēnghuó de “kuāngdǐ”",
+ "vn": "Cưa bỏ “đáy giỏ” của cuộc sống",
+ "topic": "Unit 5 放眼世界 · Bóng rổ ra đời &amp; cách tư duy đơn giản",
+ "vocabCount": 39,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "何况",
+   "explain": "何况 là liên từ, dùng giọng PHẢN VẤN để tiến thêm một bước: vế trước nêu trường hợp A, vế sau “huống chi” B — kết luận hiển nhiên, có ý “khỏi phải nói”. Ngoài ra 何况 còn dùng để BỔ SUNG thêm một lý do (= hơn nữa).",
+   "rule": "① 连 A 都……，(更) <strong style=\"color:var(--sky-d)\">何况</strong> B 呢？　② ……，(又) <strong style=\"color:var(--sky-d)\">何况</strong> ……(bổ sung lý do)",
+   "examples": [
+    {
+     "zh": "……缺少了激烈紧张的气氛，连运动员都不满意，更何况看比赛的球迷呢？",
+     "py": "…… quēshǎole jīliè jǐnzhāng de qìfēn, lián yùndòngyuán dōu bù mǎnyì, gèng hékuàng kàn bǐsài de qiúmí ne?",
+     "vn": "… thiếu hẳn bầu không khí sôi nổi căng thẳng, ngay cả vận động viên cũng không hài lòng, huống chi là người hâm mộ xem trận đấu?"
+    },
+    {
+     "zh": "北京的发展变化太快，我这个土生土长的老北京还常迷路呢，何况你一个外地人。",
+     "py": "Běijīng de fāzhǎn biànhuà tài kuài, wǒ zhège tǔ shēng tǔ zhǎng de lǎo Běijīng hái cháng mílù ne, hékuàng nǐ yí ge wàidì rén.",
+     "vn": "Bắc Kinh thay đổi nhanh quá, dân Bắc Kinh gốc như tôi còn hay lạc đường, huống chi bạn là người nơi khác."
+    },
+    {
+     "zh": "这辆车外观漂亮，安全性高，又何况价钱也就比上次看的那辆贵了几千块，小王有点儿动心了。",
+     "py": "Zhè liàng chē wàiguān piàoliang, ānquánxìng gāo, yòu hékuàng jiàqian yě jiù bǐ shàng cì kàn de nà liàng guìle jǐ qiān kuài, Xiǎo Wáng yǒudiǎnr dòngxīn le.",
+     "vn": "Chiếc xe này dáng đẹp, độ an toàn cao, hơn nữa giá cũng chỉ đắt hơn chiếc lần trước xem vài nghìn tệ, Tiểu Vương hơi xiêu lòng rồi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "连老师都不会做这道题。何况我们。",
+     "why": "何况 nối vế sau với vế trước trong CÙNG một câu, không tách thành câu riêng; câu phản vấn nên có 呢？.",
+     "right": "连老师都不会做这道题，何况我们呢？"
+    },
+    {
+     "wrong": "这道题连我们都会做，何况老师不会做呢？",
+     "why": "Vế sau của 何况 phải cùng chiều với vế trước (A còn làm được → B càng làm được), không lật ngược nghĩa.",
+     "right": "这道题连我们都会做，何况老师呢？"
+    }
+   ]
+  },
+  {
+   "point": "何必",
+   "explain": "何必 là phó từ, dùng giọng PHẢN VẤN để nói “không cần phải …” (= 不必). Cuối câu thường có 呢, hay đi kèm vế “……不就行了吗？” để đưa ra cách đơn giản hơn.",
+   "rule": "<strong style=\"color:var(--sky-d)\">何必</strong> + V / 这么 + Adj + 呢？　|　<strong style=\"color:var(--sky-d)\">何必</strong>……呢？……不就行了吗？",
+   "examples": [
+    {
+     "zh": "何必这么麻烦呢？把篮筐的底去掉不就行了吗？",
+     "py": "Hébì zhème máfan ne? Bǎ lánkuāng de dǐ qùdiào bú jiù xíng le ma?",
+     "vn": "Sao phải phiền phức thế? Bỏ đáy giỏ đi chẳng phải là xong sao?"
+    },
+    {
+     "zh": "食堂楼下就有个小超市，何必去学校外边呢？",
+     "py": "Shítáng lóu xià jiù yǒu ge xiǎo chāoshì, hébì qù xuéxiào wàibian ne?",
+     "vn": "Ngay dưới nhà ăn có siêu thị nhỏ, cần gì phải ra ngoài trường?"
+    },
+    {
+     "zh": "你何必亲自送一趟呢？叫个快递不就行了？",
+     "py": "Nǐ hébì qīnzì sòng yí tàng ne? Jiào ge kuàidì bú jiù xíng le?",
+     "vn": "Bạn cần gì phải tự mang đi một chuyến? Gọi chuyển phát nhanh chẳng phải là xong sao?"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "——要我帮忙吗？——何必了，谢谢。",
+     "why": "何必 không đứng một mình để trả lời; câu trần thuật từ chối dùng 不必.",
+     "right": "——要我帮忙吗？——不必了，谢谢。"
+    },
+    {
+     "wrong": "何必你亲自去呢？",
+     "why": "何必 là phó từ, đứng SAU chủ ngữ, trước động từ.",
+     "right": "你何必亲自去呢？"
+    }
+   ]
+  },
+  {
+   "point": "多亏",
+   "explain": "多亏 là động từ: nhờ sự giúp đỡ của người khác hoặc một yếu tố thuận lợi mà tránh được điều không may hoặc được lợi. Mang ý biết ơn, may mắn; vế sau hay có 要不 / 不然 (nếu không thì …). Chỉ dùng cho kết quả TỐT.",
+   "rule": "<strong style=\"color:var(--sky-d)\">多亏</strong> (了) + người / việc，……　|　<strong style=\"color:var(--sky-d)\">多亏</strong>……，要不 / 不然……",
+   "examples": [
+    {
+     "zh": "多亏了他这句话，人们如梦初醒。",
+     "py": "Duōkuīle tā zhè jù huà, rénmen rú mèng chū xǐng.",
+     "vn": "Nhờ câu nói ấy của cậu bé, mọi người như bừng tỉnh."
+    },
+    {
+     "zh": "赵老师，谢谢您，多亏您给我那瓶药，很管用。",
+     "py": "Zhào lǎoshī, xièxie nín, duōkuī nín gěi wǒ nà píng yào, hěn guǎnyòng.",
+     "vn": "Cô Triệu, cảm ơn cô, may mà cô cho em lọ thuốc ấy, rất hiệu nghiệm."
+    },
+    {
+     "zh": "今天搬家多亏有你在，你可帮我大忙了。",
+     "py": "Jīntiān bānjiā duōkuī yǒu nǐ zài, nǐ kě bāng wǒ dà máng le.",
+     "vn": "Hôm nay chuyển nhà may mà có bạn, bạn giúp tôi nhiều lắm."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "多亏下大雨，比赛取消了，我们都很失望。",
+     "why": "多亏 chỉ dùng khi kết quả TỐT, có ý biết ơn. Kết quả xấu dùng 因为 / 由于.",
+     "right": "因为下大雨，比赛取消了，我们都很失望。"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1224 @@
+[
+ {
+  "so": "1",
+  "ten": "「来 / 过来」",
+  "tenVn": "",
+  "cauTruc": [
+   "醒 + 来 / 过来",
+   "V + 过来 (trở lại trạng thái bình thường)",
+   "V + 得 / 不 + 过来 (làm xuể / không xuể)"
+  ],
+  "giaiThich": "来 / 过来 là động từ xu hướng, dạng thường gặp \"Động từ + 来 / 过来\". Đứng sau động từ 醒, chúng chỉ sự chuyển từ trạng thái ngủ sang tỉnh (醒来, 醒过来). 过来 đứng sau động từ còn chỉ việc TRỞ LẠI trạng thái bình thường, vốn có (清醒过来, 活过来). Dạng \"Động từ + 得 / 不 + 过来\" chỉ có (hoặc không có) khả năng làm xuể một việc, thường dùng ở dạng phủ định.",
+  "viDu": [
+   {
+    "zh": "早晨醒来，我发现窗外正下着大雪。",
+    "py": "Zǎochen xǐnglái, wǒ fāxiàn chuāng wài zhèng xiàzhe dàxuě.",
+    "vn": "Sáng sớm tỉnh dậy, tôi thấy ngoài cửa sổ tuyết đang rơi dày."
+   },
+   {
+    "zh": "我被一阵吵闹声突然惊醒，过了半天，脑子才清醒过来。",
+    "py": "Wǒ bèi yí zhèn chǎonào shēng tūrán jīngxǐng, guòle bàntiān, nǎozi cái qīngxǐng guòlái.",
+    "vn": "Tôi đột ngột bị một tràng tiếng ồn làm giật mình tỉnh giấc, mãi một lúc lâu đầu óc mới tỉnh táo lại."
+   },
+   {
+    "zh": "最近手头的工作太多了，我都忙不过来了。",
+    "py": "Zuìjìn shǒutóu de gōngzuò tài duō le, wǒ dōu máng bu guòlái le.",
+    "vn": "Dạo này việc trong tay nhiều quá, tôi bận không xuể."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我被闹钟叫醒，过了半天才清醒过去。",
+    "why": "Trở lại trạng thái bình thường (tỉnh táo) phải dùng 过来; 过去 chỉ MẤT trạng thái bình thường (昏过去 = ngất đi).",
+    "dung": "我被闹钟叫醒，过了半天才清醒过来。"
+   },
+   {
+    "sai": "星星太多了，我数不了过来。",
+    "why": "Bổ ngữ khả năng là V + 不 + 过来, không chèn 了 vào giữa.",
+    "dung": "星星太多了，我数不过来。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "早晨醒",
+       "，我发现窗外正下着大雪。"
+      ],
+      "dap": [
+       [
+        "来"
+       ]
+      ],
+      "chon": [
+       "来",
+       "去",
+       "起"
+      ],
+      "goiY": "Chuyển từ ngủ sang tỉnh: 醒 + ?",
+      "giai": "醒来 = tỉnh dậy (từ trạng thái ngủ sang tỉnh). Không nói 醒去 / 醒起."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我被一阵吵闹声突然惊醒，过了半天，脑子才清醒",
+       "。"
+      ],
+      "dap": [
+       [
+        "过来"
+       ]
+      ],
+      "chon": [
+       "过来",
+       "过去",
+       "起来"
+      ],
+      "goiY": "Đầu óc TRỞ LẠI trạng thái tỉnh táo bình thường.",
+      "giai": "过来 chỉ trở lại trạng thái bình thường; 过去 là mất trạng thái bình thường (昏过去)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "最近手头的工作太多了，我都忙不",
+       "了。"
+      ],
+      "dap": [
+       [
+        "过来"
+       ]
+      ],
+      "chon": [
+       "过来",
+       "起来",
+       "下去"
+      ],
+      "goiY": "Việc quá nhiều, làm không xuể.",
+      "giai": "V + 不 + 过来: không đủ sức làm xuể. 忙不过来 là cách nói cố định."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "天上的星星那么多，谁数得",
+       "呀？"
+      ],
+      "dap": [
+       [
+        "过来"
+       ]
+      ],
+      "chon": [
+       "过来",
+       "过去",
+       "出来"
+      ],
+      "goiY": "\"Sao trên trời nhiều thế, ai mà đếm xuể?\"",
+      "giai": "V + 得 + 过来 dùng trong câu hỏi tu từ = không ai làm xuể. 数得出来 là \"đếm ra được (kết quả)\", không hợp ý \"nhiều quá\"."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "孩子可以再生一个，妻子却不能活",
+       "。"
+      ],
+      "dap": [
+       [
+        "过来"
+       ]
+      ],
+      "chon": [
+       "过来",
+       "起来",
+       "过去"
+      ],
+      "goiY": "Người đã mất không thể SỐNG LẠI.",
+      "giai": "活过来 = sống lại, trở lại trạng thái bình thường (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这棵树有上百年的树龄了，树干很粗，我们三个人都抱不",
+       "。"
+      ],
+      "dap": [
+       [
+        "过来"
+       ]
+      ],
+      "chon": [
+       "过来",
+       "起来",
+       "下来"
+      ],
+      "goiY": "Thân cây to quá, ba người ôm không xuể.",
+      "giai": "V + 不 + 过来: không làm xuể vì quá nhiều / quá to (抱不过来)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "早晨",
+       "醒来",
+       "我发现",
+       "窗外",
+       "正下着大雪"
+      ],
+      "dap": [
+       "早晨醒来，我发现窗外正下着大雪。"
+      ],
+      "goiY": "Sáng sớm tỉnh dậy, tôi thấy ngoài cửa sổ tuyết đang rơi dày.",
+      "giai": "醒来 đứng ngay sau thời gian 早晨; 正 + V + 着 chỉ hành động đang diễn ra."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "过了半天",
+       "才",
+       "清醒",
+       "过来"
+      ],
+      "dap": [
+       "他过了半天才清醒过来。",
+       "过了半天他才清醒过来。"
+      ],
+      "goiY": "Mãi một lúc lâu anh ấy mới tỉnh táo lại.",
+      "giai": "Thời gian 过了半天 + 才 + V + 过来."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "作业",
+       "太多了",
+       "我",
+       "做不",
+       "过来"
+      ],
+      "dap": [
+       "作业太多了，我做不过来。"
+      ],
+      "goiY": "Bài tập nhiều quá, tôi làm không xuể.",
+      "giai": "V + 不 + 过来 đặt cuối câu."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我喝了一杯咖啡，终于清醒过来了。",
+      "dung": true,
+      "giai": "Uống cà phê xong tỉnh táo lại — trở về trạng thái bình thường → 清醒过来, đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他晕倒了，过了十分钟才醒过去。",
+      "dung": false,
+      "sua": "他晕倒了，过了十分钟才醒过来。",
+      "giai": "Tỉnh lại là trở về trạng thái bình thường → dùng 过来; 过去 chỉ mất ý thức (晕过去)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "孩子太多了，老师一个人照顾不了过来。",
+      "dung": false,
+      "sua": "孩子太多了，老师一个人照顾不过来。",
+      "giai": "Bổ ngữ khả năng: V + 不 + 过来, không chèn 了."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi bị đồng hồ báo thức gọi dậy, mãi lâu sau mới tỉnh hẳn.",
+      "dap": [
+       "我被闹钟叫醒，过了很久才清醒过来。",
+       "我被闹钟叫醒了，过了半天才清醒过来。",
+       "我被闹钟叫醒，过了好半天才清醒过来。"
+      ],
+      "py": "Wǒ bèi nàozhōng jiàoxǐng, guòle hěn jiǔ cái qīngxǐng guòlái.",
+      "goiY": "Dịch sang tiếng Trung, dùng 清醒过来 (ôn câu 被).",
+      "giai": "清醒过来: trở lại trạng thái tỉnh táo; câu 被 kể việc bị đánh thức."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Dạo này bài tập nhiều quá, tôi làm không xuể.",
+      "dap": [
+       "最近作业太多了，我做不过来。",
+       "最近作业太多了，我都做不过来了。",
+       "最近作业太多了，我忙不过来。"
+      ],
+      "py": "Zuìjìn zuòyè tài duō le, wǒ zuò bu guòlái.",
+      "goiY": "Dịch sang tiếng Trung, dùng V + 不 + 过来.",
+      "giai": "做不过来 / 忙不过来 = làm không xuể."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：刘阿姨帮着照顾孙子就够累的了，下个月她女儿的孩子又要出生了。B：是啊！＿＿＿。",
+      "goiY": "hai đứa cháu, một mình bà chăm không xuể (dùng 过来)",
+      "mau": "是啊！两个孩子，她一个人肯定照顾不过来。",
+      "can": [
+       [
+        "过来"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "老师说我文章里的错别字比较多，＿＿＿。",
+      "goiY": "bảo em sửa lại hết cho đúng (dùng 改过来)",
+      "mau": "老师说我文章里的错别字比较多，让我把它们都改过来。",
+      "can": [
+       [
+        "过来"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 醒来 / V + 过来 / V + 不 + 过来, nói về buổi sáng hoặc việc học của em",
+      "mau": "每天早上醒来，我都要过好几分钟才清醒过来。",
+      "can": [
+       [
+        "过来",
+        "醒来"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「所」",
+  "tenVn": "",
+  "cauTruc": [
+   "(Chủ ngữ) + 所 + V + 的 (+ N)",
+   "有 / 无 + 所 + V",
+   "一 + 所 + 大学 / 医院 (lượng từ)"
+  ],
+  "giaiThich": "所 là trợ từ, đặt trước động từ trong cụm chủ–vị: \"(A) 所 V (的)\" chỉ SỰ VẬT là đối tượng của hành động, làm định ngữ hoặc chủ ngữ (所表现的 = cái được thể hiện). Dạng \"有 / 无 + 所 + V\": cụm 所 + V làm tân ngữ của 有 / 无 (有所提高 = có phần nâng cao, 无所不谈 = chuyện gì cũng nói). 所 còn là lượng từ cho trường học, bệnh viện, cơ quan: 一所大学.",
+  "viDu": [
+   {
+    "zh": "山水画所表现的是人与自然的关系。",
+    "py": "Shānshuǐhuà suǒ biǎoxiàn de shì rén yǔ zìrán de guānxi.",
+    "vn": "Điều mà tranh sơn thủy thể hiện là mối quan hệ giữa con người và thiên nhiên."
+   },
+   {
+    "zh": "调查显示，随着年龄的增大，女性的职场幸福感有所提高。",
+    "py": "Diàochá xiǎnshì, suízhe niánlíng de zēngdà, nǚxìng de zhíchǎng xìngfúgǎn yǒu suǒ tígāo.",
+    "vn": "Điều tra cho thấy, cùng với tuổi tác tăng lên, cảm giác hạnh phúc nơi công sở của phụ nữ có phần tăng lên."
+   },
+   {
+    "zh": "学校附近就有一所幼儿园，你可以把孩子送到那儿去。",
+    "py": "Xuéxiào fùjìn jiù yǒu yì suǒ yòu'éryuán, nǐ kěyǐ bǎ háizi sòngdào nàr qù.",
+    "vn": "Gần trường có ngay một trường mẫu giáo, anh có thể gửi con ở đó."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这是我所的知道的情况。",
+    "why": "所 đứng NGAY TRƯỚC động từ, còn 的 đứng sau động từ.",
+    "dung": "这是我所知道的情况。"
+   },
+   {
+    "sai": "他的汉语水平有所提高很多。",
+    "why": "有所 + V đã mang nghĩa \"có phần…\" (mức độ nhẹ), không thêm bổ ngữ mức độ 很多 phía sau.",
+    "dung": "他的汉语水平有所提高。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "山水画",
+       "表现的是人与自然的关系。"
+      ],
+      "dap": [
+       [
+        "所"
+       ]
+      ],
+      "chon": [
+       "所",
+       "被",
+       "把"
+      ],
+      "goiY": "Cái MÀ tranh sơn thủy thể hiện…",
+      "giai": "所 đứng trước động từ: (A) 所 V 的 = cái mà A làm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "正如你",
+       "估计的那样，李岩确实改变了主意。"
+      ],
+      "dap": [
+       [
+        "所"
+       ]
+      ],
+      "chon": [
+       "所",
+       "被",
+       "的"
+      ],
+      "goiY": "\"Đúng như điều mà bạn dự đoán…\"",
+      "giai": "正如 + A + 所 + V + 的那样: đúng như điều A …"
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "调查显示，女性的职场幸福感有",
+       "提高。"
+      ],
+      "dap": [
+       [
+        "所"
+       ]
+      ],
+      "chon": [
+       "所",
+       "了",
+       "点"
+      ],
+      "goiY": "\"Có phần nâng cao.\"",
+      "giai": "有所 + V (hai âm tiết) = có phần …; không nói 有了提高 ở cấu trúc này, còn 有点提高 là sai."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我和李阳是无",
+       "不谈的好朋友。"
+      ],
+      "dap": [
+       [
+        "所"
+       ]
+      ],
+      "chon": [
+       "所",
+       "不",
+       "没"
+      ],
+      "goiY": "\"Không chuyện gì là không nói.\"",
+      "giai": "无所不谈: 无 + 所 + 不 + V — chuyện gì cũng nói."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "来自北京一",
+       "大学的学生做了关于这个问题的实验。"
+      ],
+      "dap": [
+       [
+        "所"
+       ]
+      ],
+      "chon": [
+       "所",
+       "本",
+       "张"
+      ],
+      "goiY": "Lượng từ cho trường học.",
+      "giai": "所 là lượng từ cho trường học, bệnh viện: 一所大学."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我有一个建议要送给你，希望我",
+       "说的能帮助你。"
+      ],
+      "dap": [
+       [
+        "所"
+       ]
+      ],
+      "chon": [
+       "所",
+       "被",
+       "把"
+      ],
+      "goiY": "\"Hy vọng điều MÀ tôi nói giúp được bạn.\"",
+      "giai": "我所说的 = điều mà tôi nói, làm chủ ngữ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这",
+       "就是",
+       "我",
+       "所知道的",
+       "情况"
+      ],
+      "dap": [
+       "这就是我所知道的情况。"
+      ],
+      "goiY": "Đây chính là tình hình mà tôi biết.",
+      "giai": "所 + V + 的 làm định ngữ cho 情况."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他的",
+       "汉语水平",
+       "有所",
+       "提高"
+      ],
+      "dap": [
+       "他的汉语水平有所提高。"
+      ],
+      "goiY": "Trình độ tiếng Trung của anh ấy có phần nâng cao.",
+      "giai": "有所 + động từ hai âm tiết đặt sau chủ ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "人们",
+       "对闹钟铃声",
+       "所产生的",
+       "反应",
+       "很不相同"
+      ],
+      "dap": [
+       "人们对闹钟铃声所产生的反应很不相同。"
+      ],
+      "goiY": "Phản ứng mà con người sinh ra với tiếng chuông báo thức rất khác nhau.",
+      "giai": "Cụm 人们对……所产生的 làm định ngữ cho 反应 (câu trong bài khóa)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "老师所说的都是对的。",
+      "dung": true,
+      "giai": "所 đứng ngay trước động từ 说, cụm 老师所说的 làm chủ ngữ — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这是我所的看到的情况。",
+      "dung": false,
+      "sua": "这是我所看到的情况。",
+      "giai": "所 phải đứng NGAY TRƯỚC động từ; 的 đứng sau động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们学校附近有一所医院。",
+      "dung": true,
+      "giai": "所 là lượng từ cho bệnh viện, trường học — đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Điều mà bạn nói tôi đều hiểu.",
+      "dap": [
+       "你所说的我都明白。",
+       "你所说的我都懂。",
+       "你所说的话我都明白。"
+      ],
+      "py": "Nǐ suǒ shuō de wǒ dōu míngbai.",
+      "goiY": "Dịch sang tiếng Trung, dùng 所 + V + 的.",
+      "giai": "你所说的 = điều mà bạn nói, đưa lên đầu câu làm chủ đề."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Gần trường tôi có một trường mẫu giáo.",
+      "dap": [
+       "我们学校附近有一所幼儿园。",
+       "学校附近有一所幼儿园。",
+       "我的学校附近有一所幼儿园。"
+      ],
+      "py": "Wǒmen xuéxiào fùjìn yǒu yì suǒ yòu'éryuán.",
+      "goiY": "Dịch sang tiếng Trung, dùng lượng từ 所.",
+      "giai": "Lượng từ cho trường học: 一所幼儿园."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他在北京住了五十年，＿＿＿。",
+      "goiY": "theo những gì tôi được biết, ông ấy rất yêu Bắc Kinh (dùng 所)",
+      "mau": "他在北京住了五十年，我所了解的是，他非常热爱北京。",
+      "can": [
+       [
+        "所"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "经过一个学期的努力，＿＿＿。",
+      "goiY": "thành tích của em có phần tiến bộ (dùng 有所)",
+      "mau": "经过一个学期的努力，我的成绩有所提高。",
+      "can": [
+       [
+        "有所"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 所 (所 + V + 的 / 有所 / 无所不谈 / 一所……), nói về trường hoặc bạn bè của em",
+      "mau": "我和同桌是无所不谈的好朋友。",
+      "can": [
+       [
+        "所"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「相当」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + 与 / 跟 + B + 相当",
+   "A + 相当于 + B",
+   "相当 + Tính từ (phó từ: khá)"
+  ],
+  "giaiThich": "相当 là động từ, chỉ hai bên (số lượng, điều kiện, tình hình…) xấp xỉ, ngang nhau: A 与 / 跟 B 相当, hoặc A 相当于 B. 相当 còn làm phó từ, chỉ mức độ khá cao, đứng trước tính từ / động từ tâm lý: 相当满意 (khá hài lòng), 相当一部分人 (một bộ phận khá lớn).",
+  "viDu": [
+   {
+    "zh": "这些能力最多为正常状态的65%，与醉酒者相当。",
+    "py": "Zhèxiē nénglì zuì duō wéi zhèngcháng zhuàngtài de bǎi fēn zhī liùshíwǔ, yǔ zuìjiǔzhě xiāngdāng.",
+    "vn": "Những khả năng này nhiều nhất chỉ bằng 65% trạng thái bình thường, tương đương với người say rượu."
+   },
+   {
+    "zh": "这种鸟一天所食的害虫相当于自己的体重。",
+    "py": "Zhè zhǒng niǎo yì tiān suǒ shí de hàichóng xiāngdāng yú zìjǐ de tǐzhòng.",
+    "vn": "Lượng sâu bọ mà loài chim này ăn trong một ngày tương đương với trọng lượng cơ thể nó."
+   },
+   {
+    "zh": "菜的味道好极了，服务也挺周到，我相当满意。",
+    "py": "Cài de wèidào hǎo jí le, fúwù yě tǐng zhōudào, wǒ xiāngdāng mǎnyì.",
+    "vn": "Món ăn ngon tuyệt, phục vụ cũng rất chu đáo, tôi khá hài lòng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他的水平相当我。",
+    "why": "Động từ 相当 không mang thẳng tân ngữ: phải là 跟 / 与 + B + 相当, hoặc 相当于 + B.",
+    "dung": "他的水平跟我相当。"
+   },
+   {
+    "sai": "这次考试相当很难。",
+    "why": "相当 đã là phó từ chỉ mức độ, không dùng chồng với 很.",
+    "dung": "这次考试相当难。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这些能力最多为正常状态的65%，与醉酒者",
+       "。"
+      ],
+      "dap": [
+       [
+        "相当"
+       ]
+      ],
+      "chon": [
+       "相当",
+       "相同",
+       "相比"
+      ],
+      "goiY": "Ngang với người say rượu.",
+      "giai": "A 与 B 相当 = A ngang với B. 相比 cần vế so sánh phía sau; 相同 là \"giống hệt\", không hợp với con số xấp xỉ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这种鸟一天所食的害虫",
+       "于自己的体重。"
+      ],
+      "dap": [
+       [
+        "相当"
+       ]
+      ],
+      "chon": [
+       "相当",
+       "相似",
+       "相比"
+      ],
+      "goiY": "Tương đương với trọng lượng cơ thể nó.",
+      "giai": "相当于 + B = tương đương với B."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "菜的味道好极了，服务也挺周到，我",
+       "满意。"
+      ],
+      "dap": [
+       [
+        "相当"
+       ]
+      ],
+      "chon": [
+       "相当",
+       "相等",
+       "相同"
+      ],
+      "goiY": "Khá hài lòng.",
+      "giai": "相当 là phó từ chỉ mức độ khá cao: 相当满意."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这两个队的实力",
+       "，比赛一定很精彩。"
+      ],
+      "dap": [
+       [
+        "相当"
+       ]
+      ],
+      "chon": [
+       "相当",
+       "相信",
+       "相处"
+      ],
+      "goiY": "Thực lực hai đội ngang nhau.",
+      "giai": "Chủ ngữ số nhiều (两个队的实力) + 相当 = ngang nhau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "有",
+       "一部分人会以收入多少作为选择职业的标准。"
+      ],
+      "dap": [
+       [
+        "相当"
+       ]
+      ],
+      "chon": [
+       "相当",
+       "相同",
+       "相等"
+      ],
+      "goiY": "\"Một bộ phận khá lớn người…\"",
+      "giai": "相当一部分 = một phần khá lớn (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一年的学费",
+       "于他两个月的工资。"
+      ],
+      "dap": [
+       [
+        "相当"
+       ]
+      ],
+      "chon": [
+       "相当",
+       "相比",
+       "相信"
+      ],
+      "goiY": "Học phí một năm bằng hai tháng lương.",
+      "giai": "相当于 + B: tương đương với B."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这些能力",
+       "与",
+       "醉酒者",
+       "相当"
+      ],
+      "dap": [
+       "这些能力与醉酒者相当。"
+      ],
+      "goiY": "Những khả năng này tương đương người say rượu.",
+      "giai": "A + 与 + B + 相当: B đứng TRƯỚC 相当."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "一天所食的害虫",
+       "这种鸟",
+       "相当于",
+       "自己的体重"
+      ],
+      "dap": [
+       "这种鸟一天所食的害虫相当于自己的体重。"
+      ],
+      "goiY": "Sâu bọ loài chim này ăn trong một ngày tương đương trọng lượng cơ thể nó.",
+      "giai": "Chủ ngữ 这种鸟一天所食的害虫 + 相当于 + tân ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "对",
+       "这次的成绩",
+       "相当",
+       "满意"
+      ],
+      "dap": [
+       "我对这次的成绩相当满意。"
+      ],
+      "goiY": "Tôi khá hài lòng với thành tích lần này.",
+      "giai": "对 + đối tượng + 相当 + 满意."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这次考试相当难，很多同学都没考好。",
+      "dung": true,
+      "giai": "相当 là phó từ đứng trước tính từ 难 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他的汉语水平相当我。",
+      "dung": false,
+      "sua": "他的汉语水平跟我相当。",
+      "giai": "相当 không mang thẳng tân ngữ; phải là 跟 / 与 + B + 相当."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这家饭馆的菜相当很好吃。",
+      "dung": false,
+      "sua": "这家饭馆的菜相当好吃。",
+      "giai": "相当 đã chỉ mức độ, không dùng chồng với 很."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Món ăn ở nhà hàng này khá ngon.",
+      "dap": [
+       "这家饭馆的菜相当好吃。",
+       "这家餐厅的菜相当好吃。",
+       "这个饭馆的菜相当好吃。"
+      ],
+      "py": "Zhè jiā fànguǎn de cài xiāngdāng hǎochī.",
+      "goiY": "Dịch sang tiếng Trung, dùng 相当 làm phó từ.",
+      "giai": "相当 + tính từ = khá …; không thêm 很."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Giá chiếc điện thoại này tương đương một tháng lương của anh ấy.",
+      "dap": [
+       "这个手机的价格相当于他一个月的工资。",
+       "这部手机的价格相当于他一个月的工资。",
+       "这个手机的价钱相当于他一个月的工资。"
+      ],
+      "py": "Zhège shǒujī de jiàgé xiāngdāng yú tā yí ge yuè de gōngzī.",
+      "goiY": "Dịch sang tiếng Trung, dùng 相当于.",
+      "giai": "相当于 + B = tương đương với B."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "在最后的比赛中，＿＿＿。",
+      "goiY": "hai đội ngang tài ngang sức (dùng 相当)",
+      "mau": "在最后的比赛中，两个队的水平相当，比分一直很接近。",
+      "can": [
+       [
+        "相当"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：公司让我去上班了，你觉得我该不该接受这份工作呢？B：这家公司这么有名，＿＿＿，你还等什么？",
+      "goiY": "nói rằng đãi ngộ cũng khá tốt (dùng 相当)",
+      "mau": "这家公司这么有名，待遇也相当好，你还等什么？",
+      "can": [
+       [
+        "相当"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu dùng 相当 (động từ \"tương đương\" hoặc phó từ \"khá\"), nói về việc học hoặc sở thích của em",
+      "mau": "这次考试相当难，可是我考得相当不错。",
+      "can": [
+       [
+        "相当"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "4",
+  "ten": "「数」",
+  "tenVn": "",
+  "cauTruc": [
+   "数 (shǔ) + (số lượng): đếm",
+   "(最)……的 + 要 / 就 + 数 + N: kể ra thì … là nhất",
+   "数 (shù) + lượng từ / thời gian: vài"
+  ],
+  "giaiThich": "数 (shǔ) là động từ: đếm, hoặc lần lượt nói ra từng con số. Cấu trúc \"数……(最)……\" hoặc \"(最)……的 (要 / 就) 数……\" nghĩa là tính ra, so ra thì … là nhất. 数 (shù) còn là số từ, nghĩa \"vài, mấy\" (= 几), dùng nhiều trong văn viết: 数天, 数小时, 数百人.",
+  "viDu": [
+   {
+    "zh": "我大概数了一下，车上有32个学生。",
+    "py": "Wǒ dàgài shǔle yíxià, chē shang yǒu sānshí'èr ge xuésheng.",
+    "vn": "Tôi đếm sơ qua, trên xe có 32 học sinh."
+   },
+   {
+    "zh": "要说我们班跑得最快的，那就数李阳了。",
+    "py": "Yào shuō wǒmen bān pǎo de zuì kuài de, nà jiù shǔ Lǐ Yáng le.",
+    "vn": "Nói đến người chạy nhanh nhất lớp mình thì phải kể đến Lý Dương."
+   },
+   {
+    "zh": "这种状态如果持续数天、数周、数月，将导致高血压、失眠和一些精神问题等。",
+    "py": "Zhè zhǒng zhuàngtài rúguǒ chíxù shù tiān, shù zhōu, shù yuè, jiāng dǎozhì gāo xuèyā, shīmián hé yìxiē jīngshén wèntí děng.",
+    "vn": "Trạng thái này nếu kéo dài vài ngày, vài tuần, vài tháng sẽ dẫn đến cao huyết áp, mất ngủ và một số vấn đề về tinh thần."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我们班最高的是数小王了。",
+    "why": "Cấu trúc là (最)……的 + 要 / 就 + 数 + N — không thêm 是 trước 数.",
+    "dung": "我们班最高的要数小王了。"
+   },
+   {
+    "sai": "他在北京住了数年多。",
+    "why": "数 (shù) đã là con số ước lượng \"vài\", không đi với 多 phía sau.",
+    "dung": "他在北京住了数年。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我大概",
+       "了一下，车上有32个学生。"
+      ],
+      "dap": [
+       [
+        "数"
+       ]
+      ],
+      "chon": [
+       "数",
+       "想",
+       "说"
+      ],
+      "goiY": "Đếm sơ qua số học sinh.",
+      "giai": "数 (shǔ) = đếm: 数了一下."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "先生，这是找您的钱，58块6，您",
+       "。"
+      ],
+      "dap": [
+       [
+        "数数"
+       ]
+      ],
+      "chon": [
+       "数数",
+       "听听",
+       "想想"
+      ],
+      "goiY": "Mời khách đếm lại tiền thừa.",
+      "giai": "数数 (shǔshu) = đếm thử, lặp động từ cho nhẹ nhàng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我觉得北京最美、最有名气的公园要",
+       "颐和园了。"
+      ],
+      "dap": [
+       [
+        "数"
+       ]
+      ],
+      "chon": [
+       "数",
+       "是",
+       "有"
+      ],
+      "goiY": "Kể ra thì đẹp nhất là Di Hòa Viên.",
+      "giai": "(最)……要数…… = kể ra thì … là nhất. Không dùng 是 trong cấu trúc này."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "要说我们班跑得最快的，那就",
+       "李阳了。"
+      ],
+      "dap": [
+       [
+        "数"
+       ]
+      ],
+      "chon": [
+       "数",
+       "比",
+       "让"
+      ],
+      "goiY": "Kể ra thì nhanh nhất là Lý Dương.",
+      "giai": "……的，那就数 + N + 了: phải kể đến N."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这里夏季的雷阵雨一般可持续",
+       "小时或者更久的时间。"
+      ],
+      "dap": [
+       [
+        "数"
+       ]
+      ],
+      "chon": [
+       "数",
+       "多",
+       "第"
+      ],
+      "goiY": "\"Vài giờ\" — văn viết.",
+      "giai": "数 (shù) + 小时 = vài giờ. 多 phải đứng sau số (十多小时)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "每晚抽出点儿时间来阅读、学习，坚持",
+       "年之后，成功就会向你招手。"
+      ],
+      "dap": [
+       [
+        "数"
+       ]
+      ],
+      "chon": [
+       "数",
+       "来",
+       "多"
+      ],
+      "goiY": "\"Vài năm\" — văn viết.",
+      "giai": "数 (shù) + 年 = vài năm; 来, 多 phải đứng sau số từ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "数了一下",
+       "车上",
+       "有32个学生"
+      ],
+      "dap": [
+       "我数了一下，车上有32个学生。"
+      ],
+      "goiY": "Tôi đếm thử, trên xe có 32 học sinh.",
+      "giai": "Động từ 数 + 了一下 đứng trước, kết quả đếm đứng sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们班",
+       "跑得最快的",
+       "要数",
+       "李阳了"
+      ],
+      "dap": [
+       "我们班跑得最快的要数李阳了。"
+      ],
+      "goiY": "Người chạy nhanh nhất lớp mình phải kể đến Lý Dương.",
+      "giai": "……最……的 + 要数 + N + 了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "经过",
+       "数年的努力",
+       "他终于",
+       "拿到了博士学位"
+      ],
+      "dap": [
+       "经过数年的努力，他终于拿到了博士学位。"
+      ],
+      "goiY": "Sau vài năm nỗ lực, cuối cùng anh ấy đã lấy được bằng tiến sĩ.",
+      "giai": "经过 + 数年的努力 đứng đầu câu (câu luyện của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "天上的星星太多了，谁也数不过来。",
+      "dung": true,
+      "giai": "数 (shǔ) + 不过来 = đếm không xuể — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "中国雾天最多的地方是数四川的峨眉山。",
+      "dung": false,
+      "sua": "中国雾天最多的地方要数四川的峨眉山了。",
+      "giai": "Cấu trúc (最)……的 + 要 / 就 + 数 + N — không dùng 是 trước 数."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这种状态如果持续数天，将导致失眠。",
+      "dung": true,
+      "giai": "数 (shù) + 天 = vài ngày, văn viết — đúng (câu trong bài khóa)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Người hát hay nhất lớp tôi phải kể đến Tiểu Mỹ.",
+      "dap": [
+       "我们班唱歌唱得最好的要数小美了。",
+       "我们班唱歌最好听的要数小美了。",
+       "我们班唱歌唱得最好的就数小美了。",
+       "我们班唱歌唱得最好的要数小美。"
+      ],
+      "py": "Wǒmen bān chànggē chàng de zuì hǎo de yào shǔ Xiǎoměi le.",
+      "goiY": "Dịch sang tiếng Trung, dùng ……的要数…….",
+      "giai": "(最)……的 + 要 / 就 + 数 + N (+ 了)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Sau vài năm nỗ lực, cuối cùng anh ấy đã lấy được bằng tiến sĩ.",
+      "dap": [
+       "经过数年的努力，他终于拿到了博士学位。",
+       "经过数年的努力，他终于获得了博士学位。"
+      ],
+      "py": "Jīngguò shù nián de nǔlì, tā zhōngyú nádàole bóshì xuéwèi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 数 (shù) = vài.",
+      "giai": "数年 = vài năm (văn viết)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "据说，四川的峨眉山是中国雾天最多的地方。→ ＿＿＿。",
+      "goiY": "viết lại bằng cấu trúc ……要数…… (kể ra thì … là nhất)",
+      "mau": "据说，中国雾天最多的地方要数四川的峨眉山了。",
+      "can": [
+       [
+        "数"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "它的听力非常好，＿＿＿。",
+      "goiY": "âm thanh cách vài cây số dưới nước nó cũng nghe rõ (dùng 数 shù)",
+      "mau": "它的听力非常好，水下数公里外的声音它都能清楚地听到。",
+      "can": [
+       [
+        "数"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu dùng 数 (đếm / \"……要数……\" / 数 + thời gian), nói về trường lớp hoặc quê em",
+      "mau": "我们学校最漂亮的地方要数图书馆了。",
+      "can": [
+       [
+        "数"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

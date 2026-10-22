@@ -1,0 +1,250 @@
+{
+ "/lessons/hsk4-bai-19.html": {
+  "points": [
+   {
+    "title": "Đại từ nghi vấn phiếm chỉ 「什么/谁/哪儿/怎么……都/也」",
+    "errors": [
+     { "wrong": "我什么不想吃。", "why": "phiếm chỉ BẮT BUỘC có 都/也 trước vị ngữ.", "right": "我什么都不想吃。" },
+     { "wrong": "谁知道这件事都。", "why": "都 đứng TRƯỚC động từ.", "right": "谁都知道这件事。" },
+     { "wrong": "怎么想都想起来。", "why": "怎么……都 + bổ ngữ khả năng PHỦ ĐỊNH.", "right": "怎么想都想不起来。" }
+    ],
+    "items": [
+     { "context": "“Ai cũng biết chuyện này.”", "pre": "", "blank": "谁都知道这件事", "post": "。", "options": ["谁都知道这件事", "谁知道这件事都", "都谁知道这件事"], "answer": 0, "explanation": "谁 + 都 + động từ." },
+     { "context": "“Tôi chẳng muốn ăn gì cả.”", "pre": "我", "blank": "什么都不想吃", "post": "。", "options": ["什么都不想吃", "什么不想吃", "不想吃什么都"], "answer": 0, "explanation": "什么 + 都 + 不 + động từ." },
+     { "context": "怎么 + V + 都 + bổ ngữ khả năng phủ định.", "pre": "我", "blank": "怎么想都想不起来", "post": "。", "options": ["怎么想都想不起来", "怎么想都想起来", "怎么都想想不起来"], "answer": 0, "explanation": "怎么想都想不起来." },
+     { "context": "“Tôi chẳng muốn đi đâu cả.”", "pre": "我", "blank": "哪儿都不想去", "post": "。", "options": ["哪儿都不想去", "哪儿不想去都", "都哪儿不想去"], "answer": 0, "explanation": "哪儿 + 都 + 不 + động từ." },
+     { "context": "也 dùng thay 都 trong câu phủ định.", "pre": "他", "blank": "谁也不认识", "post": "。", "options": ["谁也不认识", "谁不也认识", "也谁不认识"], "answer": 0, "explanation": "谁 + 也 + 不 + động từ." },
+     { "context": "“Làm thế nào cũng không được.”", "pre": "", "blank": "怎么做都不行", "post": "。", "options": ["怎么做都不行", "怎么都做不行", "做怎么都不行"], "answer": 0, "explanation": "怎么 + V + 都 + ……." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "谁都知道这件事。", "isCorrect": true, "explanation": "谁 + 都 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我什么不想吃。", "isCorrect": false, "correctVersion": "我什么都不想吃。", "explanation": "Thiếu 都/也." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "怎么想都想起来。", "isCorrect": false, "correctVersion": "怎么想都想不起来。", "explanation": "Sau 都 là bổ ngữ khả năng phủ định." },
+     { "type": "sort", "context": "Sắp xếp: “Ai cũng biết chuyện này.”", "words": ["谁", "都", "知道", "这", "件", "事", "。"], "answer": "谁都知道这件事。", "explanation": "谁都 + động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi chẳng muốn ăn gì cả.”", "words": ["我", "什么", "都", "不", "想", "吃", "。"], "answer": "我什么都不想吃。", "explanation": "什么都不 + động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Nghĩ thế nào cũng không nhớ ra.”", "words": ["我", "怎么", "想", "都", "想", "不", "起来", "。"], "answer": "我怎么想都想不起来。", "explanation": "怎么想都想不起来." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng đại từ nghi vấn phiếm chỉ.", "promptLang": "vi", "prompt": "Ai cũng biết chuyện này.", "answer": "谁都知道这件事。", "answerPy": "Shéi dōu zhīdào zhè jiàn shì.", "explanation": "谁都 + động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 怎么……都…….", "promptLang": "vi", "prompt": "Nghĩ thế nào cũng không nhớ ra.", "answer": "我怎么想都想不起来。", "answerPy": "Wǒ zěnme xiǎng dōu xiǎng bù qǐlái.", "explanation": "怎么想都想不起来." }
+    ]
+   },
+   {
+    "title": "「上」 làm bổ ngữ — đạt được mục đích",
+    "errors": [
+     { "wrong": "他考大学上了。", "why": "上 đứng ngay sau động từ: 考上.", "right": "他考上大学了。" },
+     { "wrong": "我买上不票。", "why": "bổ ngữ khả năng phủ định: 买不上.", "right": "我买不上票。" },
+     { "wrong": "我不吃上饺子。", "why": "phủ định dạng bổ ngữ khả năng là 吃不上.", "right": "我吃不上饺子。" }
+    ],
+    "items": [
+     { "context": "“Anh ấy thi đỗ đại học rồi.”", "pre": "他", "blank": "考上大学了", "post": "。", "options": ["考上大学了", "考大学上了", "上考大学了"], "answer": 0, "explanation": "考上 = thi đỗ (đạt mục đích)." },
+     { "context": "Bổ ngữ khả năng phủ định.", "pre": "我", "blank": "买不上票", "post": "。", "options": ["买不上票", "买上不票", "不买上票"], "answer": 0, "explanation": "买不上 = không mua được." },
+     { "context": "Bổ ngữ khả năng khẳng định.", "pre": "你", "blank": "吃得上饺子吗", "post": "？", "options": ["吃得上饺子吗", "吃上得饺子吗", "得吃上饺子吗"], "answer": 0, "explanation": "吃得上 = ăn được (có điều kiện)." },
+     { "context": "“Không lên được máy bay.”", "pre": "我", "blank": "坐不上飞机", "post": "了。", "options": ["坐不上飞机", "不坐上飞机", "坐飞机不上"], "answer": 0, "explanation": "坐不上 = không đi được." },
+     { "context": "上 nghĩa gốc: lên.", "pre": "他", "blank": "上楼", "post": "去了。", "options": ["上楼", "楼上去", "上得楼"], "answer": 0, "explanation": "上楼 = lên lầu." },
+     { "context": "“Cuối cùng cũng mua được vé.”", "pre": "终于", "blank": "买上票了", "post": "。", "options": ["买上票了", "买票上了", "上买票了"], "answer": 0, "explanation": "买上 = mua được." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他考上大学了。", "isCorrect": true, "explanation": "考上 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我买上不票。", "isCorrect": false, "correctVersion": "我买不上票。", "explanation": "Phủ định là 买不上." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我吃不上饺子。", "isCorrect": true, "explanation": "吃不上 — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy thi đỗ đại học rồi.”", "words": ["他", "考", "上", "大学", "了", "。"], "answer": "他考上大学了。", "explanation": "考上大学." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không mua được vé.”", "words": ["我", "买", "不", "上", "票", "。"], "answer": "我买不上票。", "explanation": "买不上票." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn có ăn được sủi cảo không?”", "words": ["你", "吃", "得", "上", "饺子", "吗", "？"], "answer": "你吃得上饺子吗？", "explanation": "吃得上饺子吗？" },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng bổ ngữ 上.", "promptLang": "vi", "prompt": "Anh ấy thi đỗ đại học rồi.", "answer": "他考上大学了。", "answerPy": "Tā kǎo shàng dàxué le.", "explanation": "考上 = thi đỗ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng bổ ngữ khả năng với 上.", "promptLang": "vi", "prompt": "Tôi không mua được vé.", "answer": "我买不上票。", "answerPy": "Wǒ mǎi bù shàng piào.", "explanation": "买不上." }
+    ]
+   },
+   {
+    "title": "「出来」 so sánh với 「起来」",
+    "errors": [
+     { "wrong": "我想起来一个好办法。", "why": "nghĩ RA cái mới thì dùng 想出来.", "right": "我想出来一个好办法。" },
+     { "wrong": "我想出来他的名字了。", "why": "NHỚ LẠI cái vốn có thì dùng 想起来.", "right": "我想起来他的名字了。" },
+     { "wrong": "天气热出来了。", "why": "bắt đầu và tiếp diễn thì dùng 起来.", "right": "天气热起来了。" }
+    ],
+    "items": [
+     { "context": "Nghĩ RA cái mới → 出来.", "pre": "我", "blank": "想出来一个好办法", "post": "。", "options": ["想出来一个好办法", "想起来一个好办法", "想出一个好办法起来"], "answer": 0, "explanation": "想出来 = nghĩ ra (từ không → có)." },
+     { "context": "NHỚ LẠI → 起来.", "pre": "我", "blank": "想起来他的名字了", "post": "。", "options": ["想起来他的名字了", "想出来他的名字了", "想他的名字出来了"], "answer": 0, "explanation": "想起来 = nhớ ra." },
+     { "context": "Bắt đầu và tiếp diễn → 起来.", "pre": "天气", "blank": "热起来了", "post": "。", "options": ["热起来了", "热出来了", "起来热了"], "answer": 0, "explanation": "热起来 = bắt đầu nóng lên." },
+     { "context": "Ẩn → hiện (nhận ra) → 出来.", "pre": "我", "blank": "看出来他很累", "post": "。", "options": ["看出来他很累", "看起来他很累的", "看他出来很累"], "answer": 0, "explanation": "看出来 = nhận ra." },
+     { "context": "Phủ định: nghĩ không ra.", "pre": "我", "blank": "想不出来", "post": "。", "options": ["想不出来", "想不起来", "不想出来"], "answer": 0, "explanation": "想不出来 = nghĩ không ra." },
+     { "context": "“Dịch ra tiếng Trung.”", "pre": "请把这句话", "blank": "翻译出来", "post": "。", "options": ["翻译出来", "翻译起来", "出来翻译"], "answer": 0, "explanation": "翻译出来 = dịch ra." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我想出来一个好办法。", "isCorrect": true, "explanation": "想出来 = nghĩ ra — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我想出来他的名字了。", "isCorrect": false, "correctVersion": "我想起来他的名字了。", "explanation": "Nhớ lại → 想起来." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "天气热出来了。", "isCorrect": false, "correctVersion": "天气热起来了。", "explanation": "Bắt đầu → 起来." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi nghĩ ra một cách hay.”", "words": ["我", "想", "出来", "一", "个", "好", "办法", "。"], "answer": "我想出来一个好办法。", "explanation": "想出来." },
+     { "type": "sort", "context": "Sắp xếp: “Trời bắt đầu nóng lên rồi.”", "words": ["天气", "热", "起来", "了", "。"], "answer": "天气热起来了。", "explanation": "热起来了." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi nhận ra anh ấy rất mệt.”", "words": ["我", "看", "出来", "他", "很", "累", "。"], "answer": "我看出来他很累。", "explanation": "看出来." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 出来 hay 起来.", "promptLang": "vi", "prompt": "Tôi nghĩ ra một cách hay.", "answer": "我想出来一个好办法。", "answerPy": "Wǒ xiǎng chūlái yí ge hǎo bànfǎ.", "explanation": "Nghĩ ra → 想出来." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 出来 hay 起来.", "promptLang": "vi", "prompt": "Trời bắt đầu nóng lên rồi.", "answer": "天气热起来了。", "answerPy": "Tiānqì rè qǐlái le.", "explanation": "Bắt đầu → 起来." }
+    ]
+   },
+   {
+    "title": "「总的来说」 — nhìn chung",
+    "errors": [
+     { "wrong": "总的来说他很聪明，但是他很懒。（chưa liệt kê）", "why": "总的来说 đứng SAU khi đã nêu chi tiết, để tổng kết.", "right": "他很聪明，但是有点儿懒。总的来说，他是个好学生。" },
+     { "wrong": "总来说，这次旅行很愉快。", "why": "thiếu 的: 总的来说.", "right": "总的来说，这次旅行很愉快。" },
+     { "wrong": "这次旅行很愉快总的来说。", "why": "总的来说 đứng ĐẦU câu tổng kết.", "right": "总的来说，这次旅行很愉快。" }
+    ],
+    "items": [
+     { "context": "总的来说 đứng đầu câu TỔNG KẾT.", "pre": "有好有坏，", "blank": "总的来说", "post": "，这次旅行很愉快。", "options": ["总的来说", "总来说", "说的总来"], "answer": 0, "explanation": "总的来说，+ nhận xét chung." },
+     { "context": "Sau khi liệt kê chi tiết.", "pre": "他很聪明，但是有点儿懒。", "blank": "总的来说，他是个好学生", "post": "。", "options": ["总的来说，他是个好学生", "他是个好学生总的来说", "总来说他是个好学生"], "answer": 0, "explanation": "Chi tiết → 总的来说 + kết luận." },
+     { "context": "Có thể đi sau 所以.", "pre": "虽然有些问题，但大家都很努力，所以", "blank": "总的来说还不错", "post": "。", "options": ["总的来说还不错", "还不错总的来说", "总来说还不错"], "answer": 0, "explanation": "所以总的来说……." },
+     { "context": "Từ gần nghĩa.", "pre": "", "blank": "总之", "post": "，我们要继续努力。", "options": ["总之", "总的", "总来说"], "answer": 0, "explanation": "总之 ≈ 总的来说." },
+     { "context": "“Nhìn chung, thành tích lần này không tệ.”", "pre": "", "blank": "总的来说，这次成绩不错", "post": "。", "options": ["总的来说，这次成绩不错", "总来说，这次成绩不错", "这次成绩总的来说不错吗"], "answer": 0, "explanation": "总的来说，……." },
+     { "context": "“Nhìn chung tôi hài lòng với công việc này.”", "pre": "", "blank": "总的来说，我对这份工作很满意", "post": "。", "options": ["总的来说，我对这份工作很满意", "我对这份工作总来说很满意", "对这份工作很满意总的来说"], "answer": 0, "explanation": "总的来说 + nhận xét." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "总的来说，这次旅行很愉快。", "isCorrect": true, "explanation": "总的来说 đầu câu tổng kết — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "总来说，这次旅行很愉快。", "isCorrect": false, "correctVersion": "总的来说，这次旅行很愉快。", "explanation": "Thiếu 的." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这次旅行很愉快总的来说。", "isCorrect": false, "correctVersion": "总的来说，这次旅行很愉快。", "explanation": "总的来说 đứng đầu câu." },
+     { "type": "sort", "context": "Sắp xếp: “Nhìn chung, chuyến đi lần này rất vui.”", "words": ["总的来说", "，", "这次", "旅行", "很", "愉快", "。"], "answer": "总的来说，这次旅行很愉快。", "explanation": "总的来说，……." },
+     { "type": "sort", "context": "Sắp xếp: “Nhìn chung, cậu ấy là một học sinh tốt.”", "words": ["总的来说", "，", "他", "是", "个", "好", "学生", "。"], "answer": "总的来说，他是个好学生。", "explanation": "总的来说，他是……." },
+     { "type": "sort", "context": "Sắp xếp: “Nhìn chung tôi hài lòng với công việc này.”", "words": ["总的来说", "，", "我", "对", "这", "份", "工作", "很", "满意", "。"], "answer": "总的来说，我对这份工作很满意。", "explanation": "总的来说 + nhận xét." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 总的来说.", "promptLang": "vi", "prompt": "Nhìn chung, chuyến đi lần này rất vui.", "answer": "总的来说，这次旅行很愉快。", "answerPy": "Zǒng de lái shuō, zhè cì lǚxíng hěn yúkuài.", "explanation": "总的来说，……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 总的来说.", "promptLang": "vi", "prompt": "Nhìn chung, cậu ấy là một học sinh tốt.", "answer": "总的来说，他是个好学生。", "answerPy": "Zǒng de lái shuō, tā shì ge hǎo xuésheng.", "explanation": "总的来说 + kết luận." }
+    ]
+   },
+   {
+    "title": "「在于」 — nằm ở, chính là",
+    "errors": [
+     { "wrong": "关键在于。", "why": "sau 在于 phải có tân ngữ.", "right": "关键在于坚持。" },
+     { "wrong": "关键是在于坚持。", "why": "không dùng 是 và 在于 chồng nhau.", "right": "关键在于坚持。" },
+     { "wrong": "在于坚持关键。", "why": "chủ ngữ (关键/区别/原因) đứng TRƯỚC 在于.", "right": "关键在于坚持。" }
+    ],
+    "items": [
+     { "context": "“Mấu chốt nằm ở sự kiên trì.”", "pre": "关键", "blank": "在于坚持", "post": "。", "options": ["在于坚持", "是在于坚持", "在于"], "answer": 0, "explanation": "关键 + 在于 + động từ." },
+     { "context": "Tân ngữ là MỆNH ĐỀ.", "pre": "问题", "blank": "在于我们没有时间", "post": "。", "options": ["在于我们没有时间", "是在于我们没有时间", "在于的我们没有时间"], "answer": 0, "explanation": "在于 + mệnh đề." },
+     { "context": "“Sự khác biệt nằm ở giá cả.”", "pre": "两者的区别", "blank": "在于价格", "post": "。", "options": ["在于价格", "在于的价格", "价格在于"], "answer": 0, "explanation": "区别 + 在于 + danh từ." },
+     { "context": "“Nguyên nhân thất bại nằm ở việc chuẩn bị chưa đủ.”", "pre": "失败的原因", "blank": "在于准备不够", "post": "。", "options": ["在于准备不够", "是在于准备不够", "准备不够在于"], "answer": 0, "explanation": "原因 + 在于 + mệnh đề." },
+     { "context": "在于 thiên về VĂN VIẾT; khẩu ngữ dùng 是.", "pre": "关键", "blank": "是要坚持", "post": "。", "options": ["是要坚持", "在于是要坚持", "是在于要坚持"], "answer": 0, "explanation": "关键是…… (khẩu ngữ)." },
+     { "context": "“Giá trị của cuộc sống nằm ở sự cống hiến.”", "pre": "生命的价值", "blank": "在于奉献", "post": "。", "options": ["在于奉献", "在于的奉献", "奉献在于"], "answer": 0, "explanation": "价值 + 在于 + danh từ/động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "关键在于坚持。", "isCorrect": true, "explanation": "关键 + 在于 + tân ngữ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "关键是在于坚持。", "isCorrect": false, "correctVersion": "关键在于坚持。", "explanation": "Không dùng 是 và 在于 chồng nhau." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "问题在于我们没有时间。", "isCorrect": true, "explanation": "在于 + mệnh đề — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Mấu chốt nằm ở sự kiên trì.”", "words": ["关键", "在于", "坚持", "。"], "answer": "关键在于坚持。", "explanation": "关键在于坚持." },
+     { "type": "sort", "context": "Sắp xếp: “Sự khác biệt của hai cái nằm ở giá cả.”", "words": ["两者", "的", "区别", "在于", "价格", "。"], "answer": "两者的区别在于价格。", "explanation": "区别在于价格." },
+     { "type": "sort", "context": "Sắp xếp: “Vấn đề nằm ở chỗ chúng ta không có thời gian.”", "words": ["问题", "在于", "我们", "没有", "时间", "。"], "answer": "问题在于我们没有时间。", "explanation": "在于 + mệnh đề." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 在于.", "promptLang": "vi", "prompt": "Mấu chốt nằm ở sự kiên trì.", "answer": "关键在于坚持。", "answerPy": "Guānjiàn zàiyú jiānchí.", "explanation": "关键在于……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 在于.", "promptLang": "vi", "prompt": "Vấn đề nằm ở chỗ chúng ta không có thời gian.", "answer": "问题在于我们没有时间。", "answerPy": "Wèntí zàiyú wǒmen méiyǒu shíjiān.", "explanation": "在于 + mệnh đề." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk4-bai-20.html": {
+  "points": [
+   {
+    "title": "「V着V着」 — đang… thì…",
+    "errors": [
+     { "wrong": "他走走着着就睡着了。", "why": "dạng đúng là V着V着, không phải VV着着.", "right": "他走着走着就睡着了。" },
+     { "wrong": "他躺着躺着。", "why": "sau V着V着 phải có hành động KHÁC xảy ra.", "right": "他躺着躺着就睡着了。" },
+     { "wrong": "他躺着躺着了就睡着。", "why": "không chen 了 vào sau cụm V着V着.", "right": "他躺着躺着就睡着了。" }
+    ],
+    "items": [
+     { "context": "“Đang nằm thì ngủ thiếp đi.”", "pre": "他", "blank": "躺着躺着就睡着了", "post": "。", "options": ["躺着躺着就睡着了", "躺躺着着就睡着了", "躺着躺着"], "answer": 0, "explanation": "V着V着 + 就 + hành động khác." },
+     { "context": "“Đang kể thì tự mình cười trước.”", "pre": "他", "blank": "讲着讲着自己就先笑了", "post": "。", "options": ["讲着讲着自己就先笑了", "讲讲着着自己就先笑了", "讲着自己讲着就先笑了"], "answer": 0, "explanation": "讲着讲着 + 就……." },
+     { "context": "“Đang lái xe thì hết xăng.”", "pre": "车", "blank": "开着开着没油了", "post": "。", "options": ["开着开着没油了", "开开着着没油了", "开着没油了开着"], "answer": 0, "explanation": "开着开着 + kết quả." },
+     { "context": "Động từ thường là ĐƠN âm tiết.", "pre": "我们", "blank": "走着走着就到了", "post": "。", "options": ["走着走着就到了", "走路着走路着就到了", "走着着走就到了"], "answer": 0, "explanation": "走着走着就到了." },
+     { "context": "Sau V着V着 thường có 就.", "pre": "她", "blank": "看着看着就哭了", "post": "。", "options": ["看着看着就哭了", "看着看着哭就了", "看看着着就哭了"], "answer": 0, "explanation": "看着看着就哭了." },
+     { "context": "“Đang nói chuyện thì quên mất giờ.”", "pre": "我们", "blank": "聊着聊着就忘了时间", "post": "。", "options": ["聊着聊着就忘了时间", "聊聊着着就忘了时间", "聊着就聊着忘了时间"], "answer": 0, "explanation": "聊着聊着就……." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他躺着躺着就睡着了。", "isCorrect": true, "explanation": "V着V着 + 就 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他走走着着就睡着了。", "isCorrect": false, "correctVersion": "他走着走着就睡着了。", "explanation": "Dạng đúng là V着V着." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他躺着躺着。", "isCorrect": false, "correctVersion": "他躺着躺着就睡着了。", "explanation": "Cần hành động khác theo sau." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy đang nằm thì ngủ thiếp đi.”", "words": ["他", "躺着", "躺着", "就", "睡着", "了", "。"], "answer": "他躺着躺着就睡着了。", "explanation": "躺着躺着就睡着了." },
+     { "type": "sort", "context": "Sắp xếp: “Xe đang chạy thì hết xăng.”", "words": ["车", "开着", "开着", "没", "油", "了", "。"], "answer": "车开着开着没油了。", "explanation": "开着开着没油了." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng tôi nói chuyện mãi rồi quên cả giờ.”", "words": ["我们", "聊着", "聊着", "就", "忘", "了", "时间", "。"], "answer": "我们聊着聊着就忘了时间。", "explanation": "聊着聊着就忘了时间." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng V着V着.", "promptLang": "vi", "prompt": "Anh ấy đang nằm thì ngủ thiếp đi.", "answer": "他躺着躺着就睡着了。", "answerPy": "Tā tǎng zhe tǎng zhe jiù shuì zháo le.", "explanation": "V着V着 + 就." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng V着V着.", "promptLang": "vi", "prompt": "Chúng tôi nói chuyện mãi rồi quên cả giờ.", "answer": "我们聊着聊着就忘了时间。", "answerPy": "Wǒmen liáo zhe liáo zhe jiù wàng le shíjiān.", "explanation": "聊着聊着就……." }
+    ]
+   },
+   {
+    "title": "「一……就……」 — vừa… đã… / hễ… là…",
+    "errors": [
+     { "wrong": "我一到家，休息就。", "why": "就 đứng TRƯỚC động từ.", "right": "我一到家就休息。" },
+     { "wrong": "老师一来，就我们开始上课。", "why": "chủ ngữ vế sau đứng TRƯỚC 就.", "right": "老师一来，我们就开始上课。" },
+     { "wrong": "他一说话脸红。", "why": "vế sau bắt buộc có 就.", "right": "他一说话就脸红。" }
+    ],
+    "items": [
+     { "context": "Nối tiếp ngay: “Vừa về đến nhà là nghỉ ngay.”", "pre": "我", "blank": "一到家就休息", "post": "。", "options": ["一到家就休息", "到家一就休息", "一到家休息就"], "answer": 0, "explanation": "一 + V1 + 就 + V2." },
+     { "context": "Nghĩa “hễ … là …” (điều kiện).", "pre": "他", "blank": "一说话就脸红", "post": "。", "options": ["一说话就脸红", "一说话脸红", "说话一就脸红"], "answer": 0, "explanation": "一 + điều kiện + 就 + kết quả." },
+     { "context": "Hai chủ ngữ khác nhau.", "pre": "老师", "blank": "一来，我们就开始上课", "post": "。", "options": ["一来，我们就开始上课", "一来，就我们开始上课", "来一，我们开始上课就"], "answer": 0, "explanation": "Chủ ngữ 2 đứng trước 就." },
+     { "context": "“Hễ khóc là được (thứ mình muốn).”", "pre": "孩子", "blank": "一哭就能得到", "post": "。", "options": ["一哭就能得到", "一哭能得到", "哭一就能得到"], "answer": 0, "explanation": "一哭就……." },
+     { "context": "“Vừa nghe là hiểu ngay.”", "pre": "他", "blank": "一听就懂了", "post": "。", "options": ["一听就懂了", "听一就懂了", "一听懂就了"], "answer": 0, "explanation": "一听就懂." },
+     { "context": "“Hễ trời mưa là đường tắc.”", "pre": "", "blank": "一下雨路就堵", "post": "。", "options": ["一下雨路就堵", "下雨一路就堵", "一下雨就路堵"], "answer": 0, "explanation": "一 + điều kiện，chủ ngữ + 就." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我一到家就休息。", "isCorrect": true, "explanation": "一……就…… — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "老师一来，就我们开始上课。", "isCorrect": false, "correctVersion": "老师一来，我们就开始上课。", "explanation": "Chủ ngữ vế sau trước 就." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他一说话脸红。", "isCorrect": false, "correctVersion": "他一说话就脸红。", "explanation": "Thiếu 就." },
+     { "type": "sort", "context": "Sắp xếp: “Vừa về đến nhà là tôi nghỉ ngay.”", "words": ["我", "一", "到", "家", "就", "休息", "。"], "answer": "我一到家就休息。", "explanation": "一到家就休息." },
+     { "type": "sort", "context": "Sắp xếp: “Hễ nói chuyện là cậu ấy đỏ mặt.”", "words": ["他", "一", "说话", "就", "脸红", "。"], "answer": "他一说话就脸红。", "explanation": "一说话就脸红." },
+     { "type": "sort", "context": "Sắp xếp: “Thầy vừa đến là chúng tôi vào học.”", "words": ["老师", "一", "来", "，", "我们", "就", "开始", "上课", "。"], "answer": "老师一来，我们就开始上课。", "explanation": "Hai chủ ngữ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 一……就…….", "promptLang": "vi", "prompt": "Hễ nói chuyện là cậu ấy đỏ mặt.", "answer": "他一说话就脸红。", "answerPy": "Tā yì shuōhuà jiù liǎnhóng.", "explanation": "一 + điều kiện + 就." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 一……就…….", "promptLang": "vi", "prompt": "Thầy vừa đến là chúng tôi vào học.", "answer": "老师一来，我们就开始上课。", "answerPy": "Lǎoshī yì lái, wǒmen jiù kāishǐ shàngkè.", "explanation": "Chủ ngữ 2 + 就." }
+    ]
+   },
+   {
+    "title": "「究竟」 so sánh với 「到底」",
+    "errors": [
+     { "wrong": "我们要坚持究竟。", "why": "究竟 KHÔNG làm động từ; “đến cùng” là 到底.", "right": "我们要坚持到底。" },
+     { "wrong": "谁究竟来了？", "why": "chủ ngữ là đại từ nghi vấn thì 究竟 đứng TRƯỚC.", "right": "究竟谁来了？" },
+     { "wrong": "你究竟去吗？", "why": "究竟 không dùng trong câu hỏi 吗.", "right": "你究竟去不去？" }
+    ],
+    "items": [
+     { "context": "“Rốt cuộc ai đã đến?” (văn viết)", "pre": "", "blank": "究竟谁来了", "post": "？", "options": ["究竟谁来了", "谁究竟来了", "究竟谁来了吗"], "answer": 0, "explanation": "究竟 trước đại từ nghi vấn." },
+     { "context": "“Đến cùng” → chỉ 到底.", "pre": "我们要", "blank": "坚持到底", "post": "。", "options": ["坚持到底", "坚持究竟", "究竟坚持"], "answer": 0, "explanation": "究竟 không làm động từ." },
+     { "context": "究竟 không đi với 吗.", "pre": "你", "blank": "究竟去不去", "post": "？", "options": ["究竟去不去", "究竟去吗", "去究竟吗"], "answer": 0, "explanation": "究竟 + chính-phản." },
+     { "context": "“Rốt cuộc chuyện này là thế nào?”", "pre": "这件事", "blank": "究竟是怎么回事", "post": "？", "options": ["究竟是怎么回事", "究竟是怎么回事吗", "是究竟怎么回事"], "answer": 0, "explanation": "Chủ ngữ + 究竟 + ……？" },
+     { "context": "到底 dùng được cả hai cách.", "pre": "你", "blank": "到底想说什么", "post": "？", "options": ["到底想说什么", "到底想说什么吗", "想到底说什么"], "answer": 0, "explanation": "到底 = 究竟 (khẩu ngữ hơn)." },
+     { "context": "“Rốt cuộc bạn chọn cái nào?”", "pre": "你", "blank": "究竟选哪个", "post": "？", "options": ["究竟选哪个", "究竟选哪个吗", "选究竟哪个"], "answer": 0, "explanation": "究竟 + 哪个？" },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "究竟谁来了？", "isCorrect": true, "explanation": "究竟 trước đại từ nghi vấn — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们要坚持究竟。", "isCorrect": false, "correctVersion": "我们要坚持到底。", "explanation": "究竟 không làm động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你究竟去吗？", "isCorrect": false, "correctVersion": "你究竟去不去？", "explanation": "究竟 không đi với 吗." },
+     { "type": "sort", "context": "Sắp xếp: “Rốt cuộc ai đã đến?”", "words": ["究竟", "谁", "来", "了", "？"], "answer": "究竟谁来了？", "explanation": "究竟谁……？" },
+     { "type": "sort", "context": "Sắp xếp: “Rốt cuộc chuyện này là thế nào?”", "words": ["这", "件", "事", "究竟", "是", "怎么", "回事", "？"], "answer": "这件事究竟是怎么回事？", "explanation": "究竟是怎么回事？" },
+     { "type": "sort", "context": "Sắp xếp: “Chúng ta phải kiên trì đến cùng.”", "words": ["我们", "要", "坚持", "到底", "。"], "answer": "我们要坚持到底。", "explanation": "坚持到底." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 究竟 hay 到底.", "promptLang": "vi", "prompt": "Rốt cuộc chuyện này là thế nào?", "answer": "这件事究竟是怎么回事？", "answerPy": "Zhè jiàn shì jiūjìng shì zěnme huí shì?", "explanation": "究竟 (truy vấn)." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 究竟 hay 到底.", "promptLang": "vi", "prompt": "Chúng ta phải kiên trì đến cùng.", "answer": "我们要坚持到底。", "answerPy": "Wǒmen yào jiānchí dàodǐ.", "explanation": "Đến cùng → 到底." }
+    ]
+   },
+   {
+    "title": "「起来」 — nghĩa mở rộng",
+    "errors": [
+     { "wrong": "这个菜起来看很好吃。", "why": "起来 đứng SAU động từ: 看起来.", "right": "这个菜看起来很好吃。" },
+     { "wrong": "天气又热出来了。", "why": "bắt đầu và tiếp diễn thì dùng 起来.", "right": "天气又热起来了。" },
+     { "wrong": "这件事说起来容易，做起来也容易。", "why": "说起来……做起来…… thường nêu ý ĐỐI LẬP.", "right": "这件事说起来容易，做起来难。" }
+    ],
+    "items": [
+     { "context": "Đánh giá qua quan sát: 看起来.", "pre": "这个菜", "blank": "看起来很好吃", "post": "。", "options": ["看起来很好吃", "起来看很好吃", "看很好吃起来"], "answer": 0, "explanation": "看起来 + đánh giá." },
+     { "context": "Bắt đầu và tiếp diễn.", "pre": "天气", "blank": "又热起来了", "post": "。", "options": ["又热起来了", "又热出来了", "热又起来了"], "answer": 0, "explanation": "又 + tính từ + 起来了." },
+     { "context": "说起来……做起来……", "pre": "这件事", "blank": "说起来容易，做起来难", "post": "。", "options": ["说起来容易，做起来难", "说起来容易，做起来也容易", "起来说容易，起来做难"], "answer": 0, "explanation": "说起来 A，做起来 B (đối lập)." },
+     { "context": "Nghĩa gốc: từ dưới lên.", "pre": "他", "blank": "拿起来一本书", "post": "。", "options": ["拿起来一本书", "拿一本书起来了来", "起来拿一本书"], "answer": 0, "explanation": "拿起来 = cầm lên." },
+     { "context": "“Nghe có vẻ như tiếng nước ngoài.”", "pre": "这", "blank": "听起来像外语", "post": "。", "options": ["听起来像外语", "起来听像外语", "听像外语起来"], "answer": 0, "explanation": "听起来 + đánh giá." },
+     { "context": "“Mọi người bắt đầu hát.”", "pre": "大家", "blank": "唱起来了", "post": "。", "options": ["唱起来了", "唱出来了", "起来唱了"], "answer": 0, "explanation": "唱起来 = bắt đầu hát." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这个菜看起来很好吃。", "isCorrect": true, "explanation": "看起来 + đánh giá — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "天气又热出来了。", "isCorrect": false, "correctVersion": "天气又热起来了。", "explanation": "Bắt đầu → 起来." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件事说起来容易，做起来难。", "isCorrect": true, "explanation": "说起来……做起来…… — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Món này trông rất ngon.”", "words": ["这个", "菜", "看", "起来", "很", "好吃", "。"], "answer": "这个菜看起来很好吃。", "explanation": "看起来很好吃." },
+     { "type": "sort", "context": "Sắp xếp: “Trời lại bắt đầu nóng lên rồi.”", "words": ["天气", "又", "热", "起来", "了", "。"], "answer": "天气又热起来了。", "explanation": "又热起来了." },
+     { "type": "sort", "context": "Sắp xếp: “Chuyện này nói thì dễ, làm thì khó.”", "words": ["这", "件", "事", "说", "起来", "容易", "，", "做", "起来", "难", "。"], "answer": "这件事说起来容易，做起来难。", "explanation": "说起来……做起来……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 看起来.", "promptLang": "vi", "prompt": "Món này trông rất ngon.", "answer": "这个菜看起来很好吃。", "answerPy": "Zhège cài kàn qǐlái hěn hǎochī.", "explanation": "看起来 + đánh giá." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 说起来……做起来…….", "promptLang": "vi", "prompt": "Chuyện này nói thì dễ, làm thì khó.", "answer": "这件事说起来容易，做起来难。", "answerPy": "Zhè jiàn shì shuō qǐlái róngyì, zuò qǐlái nán.", "explanation": "说起来……做起来……." }
+    ]
+   },
+   {
+    "title": "「Động từ + 起」 — nói đến, nhắc đến",
+    "errors": [
+     { "wrong": "起说吃的东西，他就很高兴。", "why": "起 đứng SAU động từ: 说起.", "right": "说起吃的东西，他就很高兴。" },
+     { "wrong": "说起来吃的东西，他就很高兴。", "why": "“nhắc đến” là 说起 + danh từ, không phải 说起来 + danh từ.", "right": "说起吃的东西，他就很高兴。" },
+     { "wrong": "他问起了。", "why": "sau 动词 + 起 phải có danh từ.", "right": "他问起了那件事。" }
+    ],
+    "items": [
+     { "context": "“Nhắc đến đồ ăn là anh ấy vui ngay.”", "pre": "", "blank": "说起吃的东西", "post": "，他就很高兴。", "options": ["说起吃的东西", "起说吃的东西", "说起来吃的东西"], "answer": 0, "explanation": "说起 + danh từ." },
+     { "context": "“Anh ấy hỏi đến chuyện đó.”", "pre": "他", "blank": "问起了那件事", "post": "。", "options": ["问起了那件事", "问起了", "起问了那件事"], "answer": 0, "explanation": "问起 + danh từ." },
+     { "context": "“Nói đến trận đấu đó, mọi người đều rất hào hứng.”", "pre": "", "blank": "聊起那场比赛", "post": "，大家都很兴奋。", "options": ["聊起那场比赛", "聊那场比赛起", "起聊那场比赛"], "answer": 0, "explanation": "聊起 + danh từ." },
+     { "context": "Phân biệt 想起 (nhớ đến).", "pre": "看到照片，我", "blank": "想起了小时候", "post": "。", "options": ["想起了小时候", "想小时候起了", "起想了小时候"], "answer": 0, "explanation": "想起 = nhớ đến." },
+     { "context": "“Nhắc đến chuyện này, cô ấy có chút buồn.”", "pre": "", "blank": "提起这件事", "post": "，她有点儿难过。", "options": ["提起这件事", "提这件事起", "起提这件事"], "answer": 0, "explanation": "提起 + danh từ." },
+     { "context": "“Hồi tưởng lại quá khứ.”", "pre": "他常常", "blank": "回忆起过去", "post": "。", "options": ["回忆起过去", "回忆过去起", "起回忆过去"], "answer": 0, "explanation": "回忆起 + danh từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "说起吃的东西，他就很高兴。", "isCorrect": true, "explanation": "说起 + danh từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "起说吃的东西，他就很高兴。", "isCorrect": false, "correctVersion": "说起吃的东西，他就很高兴。", "explanation": "起 đứng sau động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他问起了。", "isCorrect": false, "correctVersion": "他问起了那件事。", "explanation": "Sau 动词 + 起 phải có danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Nhắc đến đồ ăn là anh ấy vui ngay.”", "words": ["说", "起", "吃", "的", "东西", "，", "他", "就", "很", "高兴", "。"], "answer": "说起吃的东西，他就很高兴。", "explanation": "说起……." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy hỏi đến chuyện đó.”", "words": ["他", "问", "起", "了", "那", "件", "事", "。"], "answer": "他问起了那件事。", "explanation": "问起了……." },
+     { "type": "sort", "context": "Sắp xếp: “Nói đến trận đấu đó, mọi người đều rất hào hứng.”", "words": ["聊", "起", "那", "场", "比赛", "，", "大家", "都", "很", "兴奋", "。"], "answer": "聊起那场比赛，大家都很兴奋。", "explanation": "聊起……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 动词 + 起.", "promptLang": "vi", "prompt": "Nhắc đến đồ ăn là anh ấy vui ngay.", "answer": "说起吃的东西，他就很高兴。", "answerPy": "Shuō qǐ chī de dōngxi, tā jiù hěn gāoxìng.", "explanation": "说起 + danh từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 动词 + 起.", "promptLang": "vi", "prompt": "Anh ấy hỏi đến chuyện đó.", "answer": "他问起了那件事。", "answerPy": "Tā wèn qǐ le nà jiàn shì.", "explanation": "问起 + danh từ." }
+    ]
+   }
+  ]
+ }
+}

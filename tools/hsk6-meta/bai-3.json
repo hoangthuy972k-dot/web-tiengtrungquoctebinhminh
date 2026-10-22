@@ -1,0 +1,112 @@
+{
+ "zh": "一盒月饼",
+ "py": "Yì hé yuèbing",
+ "vn": "Một hộp bánh Trung thu",
+ "topic": "第一单元 生活点滴 · Những chuyện nhỏ trong cuộc sống",
+ "vocabCount": 44,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "番",
+   "explain": "番 là LƯỢNG TỪ. ① Dùng cho hành động tốn nhiều thời gian, công sức hoặc diễn ra khá lâu, nghĩa như 遍, 回: 打量了一番, 研究了一番. ② Dùng cho tâm tư, lời nói, quá trình để chỉ số lần; số từ chỉ có thể là 一 hoặc 几: 一番期望, 一番心意, 几番风雨. ③ Đứng sau động từ 翻, nghĩa là \"gấp bội\": 翻一番 = tăng gấp đôi (trên cơ số cũ tăng thêm một lần), 翻两番 = gấp bốn.",
+   "rule": "① V + 了 + (一)<strong style=\"color:var(--sky-d)\">番</strong> — làm một lượt　② 一 / 几 + <strong style=\"color:var(--sky-d)\">番</strong> + 心意/期望/风雨　③ 翻(了)一<strong style=\"color:var(--sky-d)\">番</strong> — tăng gấp đôi",
+   "examples": [
+    {
+     "zh": "他打量了我一番，到嘴边的话又不说了。",
+     "py": "Tā dǎliangle wǒ yì fān, dào zuǐ biān de huà yòu bù shuō le.",
+     "vn": "Ông ấy nhìn tôi một lượt, lời đã ra tới miệng lại thôi không nói."
+    },
+    {
+     "zh": "父母的话常常在他耳边回响，他总在提醒自己不要辜负了父母的一番期望。",
+     "py": "Fùmǔ de huà chángcháng zài tā ěr biān huíxiǎng, tā zǒng zài tíxǐng zìjǐ búyào gūfùle fùmǔ de yì fān qīwàng.",
+     "vn": "Lời cha mẹ thường vang bên tai, anh luôn tự nhắc mình đừng phụ tấm lòng kỳ vọng của cha mẹ."
+    },
+    {
+     "zh": "和五年前比，多数人的工资已经翻番了。",
+     "py": "Hé wǔ nián qián bǐ, duōshù rén de gōngzī yǐjīng fānfān le.",
+     "vn": "So với năm năm trước, lương của đa số người đã tăng gấp đôi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这本书我看了三番。",
+     "why": "番 chỉ đi với số từ 一/几 và dùng cho hành động tốn công sức; đếm số lượt đọc thì dùng 遍.",
+     "right": "这本书我看了三遍。"
+    },
+    {
+     "wrong": "他一番认真地研究了这个问题。",
+     "why": "Với nghĩa \"một lượt\", 一番 đứng SAU động từ: V + 了 + 一番.",
+     "right": "他认真地把这个问题研究了一番。"
+    }
+   ]
+  },
+  {
+   "point": "过于",
+   "explain": "过于 là PHÓ TỪ, biểu thị vượt quá một giới hạn nhất định, quá mức — thường hàm ý chê, không hài lòng. Cấu trúc thường gặp: 过于 + tính từ / động từ (phần lớn là từ hai âm tiết): 过于匆忙, 过于操劳, 过于看重. 过于 mang sắc thái văn viết hơn 太; không dùng 过于 để khen.",
+   "rule": "<strong style=\"color:var(--sky-d)\">过于</strong> + Tính từ / Động từ (thường hai âm tiết) — quá mức, hàm ý chê　|　不要 / 别 + <strong style=\"color:var(--sky-d)\">过于</strong> + A — đừng quá …",
+   "examples": [
+    {
+     "zh": "他出来得过于匆忙，居然忘了带手机，对于现在的年轻人，没有手机的日子，一天也是难熬的。",
+     "py": "Tā chūlái de guòyú cōngmáng, jūrán wàngle dài shǒujī, duìyú xiànzài de niánqīngrén, méiyǒu shǒujī de rìzi, yì tiān yě shì nán'áo de.",
+     "vn": "Anh ấy ra khỏi nhà vội vàng quá, thế mà quên mang điện thoại; với người trẻ bây giờ, không có điện thoại thì một ngày thôi cũng khó sống."
+    },
+    {
+     "zh": "进了山才发现，这里人烟过于稀少了，车开上好一阵子都见不到一个人。",
+     "py": "Jìnle shān cái fāxiàn, zhèli rényān guòyú xīshǎo le, chē kāi shang hǎo yízhènzi dōu jiàn bu dào yí ge rén.",
+     "vn": "Vào núi rồi mới thấy nơi đây quá thưa người, xe chạy một hồi lâu cũng không gặp một bóng người."
+    },
+    {
+     "zh": "这回轮到我打量他了：饱经沧桑的脸上流露出朴实；一双过于操劳的大手；胡须起码一个星期没刮了；南方口音。",
+     "py": "Zhè huí lún dào wǒ dǎliang tā le: bǎojīng-cāngsāng de liǎn shang liúlù chū pǔshí; yì shuāng guòyú cāoláo de dà shǒu; húxū qǐmǎ yí ge xīngqī méi guā le; nánfāng kǒuyīn.",
+     "vn": "Lần này đến lượt tôi quan sát ông: gương mặt dãi dầu toát lên vẻ chất phác; đôi bàn tay to thô vì lao lực quá nhiều; râu ít nhất một tuần chưa cạo; giọng miền Nam."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这件衣服过于漂亮，我非常喜欢。",
+     "why": "过于 mang ý chê (vượt mức cho phép), không dùng để khen.",
+     "right": "这件衣服特别漂亮，我非常喜欢。"
+    },
+    {
+     "wrong": "你别过于累了。",
+     "why": "过于 thường đi với từ hai âm tiết; với tính từ một âm tiết như 累 dùng 太.",
+     "right": "你别太累了。"
+    }
+   ]
+  },
+  {
+   "point": "着呢",
+   "explain": "着呢 là TRỢ TỪ, đứng sau tính từ (hoặc một số cụm như 要面子), biểu thị mức độ rất cao, mang giọng khoa trương, nhấn mạnh. Chỉ dùng trong KHẨU NGỮ. Trước tính từ không thêm 很 / 非常 / 太; chỉ dùng trong câu khẳng định, không dùng với phủ định 不.",
+   "rule": "Tính từ / 要面子… + <strong style=\"color:var(--sky-d)\">着呢</strong> — … lắm (khẩu ngữ, nhấn mạnh mức độ)",
+   "examples": [
+    {
+     "zh": "别看我已经年过七旬，我身体好着呢。",
+     "py": "Bié kàn wǒ yǐjīng nián guò qī xún, wǒ shēntǐ hǎozhe ne.",
+     "vn": "Đừng thấy tôi đã ngoài bảy mươi, sức khoẻ tôi tốt lắm."
+    },
+    {
+     "zh": "他肯定发烧了，身上烫着呢。",
+     "py": "Tā kěndìng fāshāo le, shēn shang tàngzhe ne.",
+     "vn": "Chắc chắn nó sốt rồi, người nóng hầm hập."
+    },
+    {
+     "zh": "（我女儿）要面子着呢，从来没有辜负过我的期望。",
+     "py": "(Wǒ nǚ'ér) yào miànzi zhe ne, cónglái méiyǒu gūfùguo wǒ de qīwàng.",
+     "vn": "(Con gái tôi) biết giữ thể diện lắm, chưa bao giờ phụ kỳ vọng của tôi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我身体很好着呢。",
+     "why": "着呢 đã biểu thị mức độ cao, không thêm 很 phía trước.",
+     "right": "我身体好着呢。"
+    },
+    {
+     "wrong": "今天不冷着呢。",
+     "why": "着呢 chỉ dùng trong câu khẳng định, không đi với phủ định 不.",
+     "right": "今天一点儿也不冷。"
+    }
+   ]
+  }
+ ]
+}

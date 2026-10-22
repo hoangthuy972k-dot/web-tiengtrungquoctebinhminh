@@ -1,0 +1,112 @@
+{
+ "zh": "当好职场插班生",
+ "py": "Dānghǎo zhíchǎng chābānshēng",
+ "vn": "Làm tốt vai \"học sinh chuyển lớp\" nơi công sở",
+ "topic": "第二单元 不甘平庸 · Người mới nơi công sở &amp; thái độ làm việc",
+ "vocabCount": 46,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "唯独",
+   "explain": "唯独 là PHÓ TỪ, nghĩa là \"chỉ riêng, duy chỉ\" (= 只是、单单). Phía trước (câu trên) thường có nội dung đối lập: nêu tình hình chung của cả nhóm (都……), rồi 唯独 tách riêng MỘT trường hợp ngoại lệ ra. 唯独 đứng trước danh từ / đại từ hoặc cả một mệnh đề.",
+   "rule": "……都……，<strong style=\"color:var(--sky-d)\">唯独</strong> + N / Đại từ + ……　|　……，<strong style=\"color:var(--sky-d)\">唯独</strong> + mệnh đề",
+   "examples": [
+    {
+     "zh": "那次旅行大家都去了，唯独你没有去成。",
+     "py": "Nà cì lǚxíng dàjiā dōu qù le, wéidú nǐ méiyǒu qùchéng.",
+     "vn": "Chuyến du lịch lần đó mọi người đều đi, chỉ có cậu là không đi được."
+    },
+    {
+     "zh": "中国的传统节日都是喜气洋洋的，唯独清明节，庄严而伤感。",
+     "py": "Zhōngguó de chuántǒng jiérì dōu shì xǐqì yángyáng de, wéidú Qīngmíng Jié, zhuāngyán ér shānggǎn.",
+     "vn": "Các ngày lễ truyền thống của Trung Quốc đều rộn ràng vui tươi, chỉ riêng Tết Thanh minh là trang nghiêm và buồn thương."
+    },
+    {
+     "zh": "正想着，赵姐已经坐在那儿开始自己享受，唯独剩下我和我的搭档——与我同一天就职的小林。",
+     "py": "Zhèng xiǎngzhe, Zhào jiě yǐjīng zuò zài nàr kāishǐ zìjǐ xiǎngshòu, wéidú shèngxià wǒ hé wǒ de dādàng — yǔ wǒ tóng yì tiān jiùzhí de Xiǎo Lín.",
+     "vn": "Đang nghĩ thì chị Triệu đã ngồi đó tự thưởng thức, chỉ còn lại tôi và cộng sự của tôi — Tiểu Lâm, người nhận việc cùng ngày với tôi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "唯独大家都去了，你没去。",
+     "why": "唯独 phải đứng ở vế nêu NGOẠI LỆ, không đứng ở vế nêu tình hình chung.",
+     "right": "大家都去了，唯独你没去。"
+    },
+    {
+     "wrong": "他唯独会说汉语。",
+     "why": "Không có tình hình chung để đối lập thì dùng 只; 唯独 cần câu trên nêu \"tất cả / những cái khác\".",
+     "right": "别的外语他都不会，唯独会说汉语。"
+    }
+   ]
+  },
+  {
+   "point": "明明",
+   "explain": "明明 là PHÓ TỪ, biểu thị sự việc rất rõ ràng, hiển nhiên là như vậy. Trước hoặc sau vế có 明明 thường là một câu hỏi ngược (反问) hoặc một vế chuyển ý (却, 还, 怎么……) — người nói trách móc, phản bác vì người kia nói / làm trái với sự thật đó. Dùng nhiều trong khẩu ngữ.",
+   "rule": "<strong style=\"color:var(--sky-d)\">明明</strong> + (是) + sự thật，却 / 还 / 怎么 / 为什么……？　|　……，<strong style=\"color:var(--sky-d)\">明明</strong> + sự thật",
+   "examples": [
+    {
+     "zh": "你唱的明明是流行歌曲，哪里是京剧啊？",
+     "py": "Nǐ chàng de míngmíng shì liúxíng gēqǔ, nǎlǐ shì jīngjù a?",
+     "vn": "Cái cậu hát rõ ràng là nhạc pop, đâu phải kinh kịch?"
+    },
+    {
+     "zh": "明明是你把书弄丢了，还说不知道，真不像话！",
+     "py": "Míngmíng shì nǐ bǎ shū nòngdiū le, hái shuō bù zhīdào, zhēn búxiànghuà!",
+     "vn": "Rõ ràng là cậu làm mất sách, còn bảo không biết, thật quá đáng!"
+    },
+    {
+     "zh": "哼，太不像话了，明明是在欺负人。",
+     "py": "Hng, tài búxiànghuà le, míngmíng shì zài qīfu rén.",
+     "vn": "Hừ, quá lắm rồi, rõ ràng là đang bắt nạt người ta."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "你知道明明，为什么不告诉我？",
+     "why": "Phó từ 明明 đứng TRƯỚC động từ, không đứng sau.",
+     "right": "你明明知道，为什么不告诉我？"
+    },
+    {
+     "wrong": "今天明明很冷，所以我穿了大衣。",
+     "why": "明明 không dùng để nêu nguyên nhân bình thường; nó cần vế trái ngược / câu hỏi ngược đi kèm.",
+     "right": "今天明明很冷，你怎么只穿了一件衬衫？"
+    }
+   ]
+  },
+  {
+   "point": "大不了",
+   "explain": "大不了 là PHÓ TỪ, nghĩa là \"cùng lắm (thì), tệ nhất cũng chỉ là\" (= 最坏也不过). Biểu thị tuy xuất hiện khó khăn nhưng cuối cùng vẫn giải quyết được — người nói nêu ra phương án xấu nhất mà mình vẫn chấp nhận được, để trấn an hoặc tỏ thái độ bất cần. Dùng trong khẩu ngữ. (Làm tính từ ở dạng phủ định: 没什么大不了的 = chẳng có gì to tát.)",
+   "rule": "……(不要紧 / 没关系 / 也没什么)，<strong style=\"color:var(--sky-d)\">大不了</strong> + phương án xấu nhất　|　没什么<strong style=\"color:var(--sky-d)\">大不了</strong>的",
+   "examples": [
+    {
+     "zh": "小林要去找领导讨公道：“哼，太不像话了，明明是在欺负人，大不了辞职。”",
+     "py": "Xiǎo Lín yào qù zhǎo lǐngdǎo tǎo gōngdao: \"Hng, tài búxiànghuà le, míngmíng shì zài qīfu rén, dàbuliǎo cízhí.\"",
+     "vn": "Tiểu Lâm định đi tìm lãnh đạo đòi lẽ công bằng: \"Hừ, quá lắm rồi, rõ ràng là đang bắt nạt người ta, cùng lắm thì nghỉ việc.\""
+    },
+    {
+     "zh": "失败了不要紧，大不了从头再来。",
+     "py": "Shībàile bú yàojǐn, dàbuliǎo cóngtóu zài lái.",
+     "vn": "Thất bại cũng không sao, cùng lắm thì làm lại từ đầu."
+    },
+    {
+     "zh": "别难过了，不就是衣服丢了吗，大不了再买一件。",
+     "py": "Bié nánguò le, bú jiù shì yīfu diū le ma, dàbuliǎo zài mǎi yí jiàn.",
+     "vn": "Đừng buồn nữa, chẳng qua là mất cái áo thôi mà, cùng lắm thì mua cái khác."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他的汉语大不了，说得跟中国人一样。",
+     "why": "大不了 không mang nghĩa \"giỏi, tuyệt vời\" — đó là 了不起.",
+     "right": "他的汉语很了不起，说得跟中国人一样。"
+    },
+    {
+     "wrong": "大不了明天下雨，我们就不去了。",
+     "why": "大不了 đứng ở vế nêu phương án xấu nhất (giải pháp), không đứng ở vế giả thiết điều kiện.",
+     "right": "要是明天下雨也没关系，大不了我们改天再去。"
+    }
+   ]
+  }
+ ]
+}

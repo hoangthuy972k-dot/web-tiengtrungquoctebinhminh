@@ -1,0 +1,27 @@
+// Viet lai cau luyen dich HSK3 bai 3 — chi dung khung HSK 3.
+module.exports = {
+  '还是|0': { prompt: 'Cuối tuần bạn định đi leo núi hay ở nhà xem tivi? Nếu trời mưa thì ở nhà đi.',
+    answer: '周末你打算去爬山还是在家看电视？如果下雨，就在家吧。', pair: '如果……就……',
+    note: '还是 dùng trong câu HỎI; câu kể thì dùng 或者.' },
+  '还是|1': { prompt: 'Tuy tôi từng thấy cái quần đó, nhưng không nhớ nó màu đỏ hay màu xanh.',
+    answer: '那条裤子我虽然看过，但是不记得是红色还是绿色。', pair: '虽然……但是……',
+    note: '一条裤子 — lượng từ 条 cho vật dài.' },
+  '小心|0': { prompt: 'Vì trời mưa đường trơn nên bạn lái xe nhớ cẩn thận hơn một chút.',
+    answer: '因为下雨了路很滑，所以你开车要记得小心点儿。', pair: '因为……所以……',
+    note: '记得 + V — nhớ làm gì, dùng khi dặn dò.' },
+  '裤子|0': { prompt: 'Chiếc quần này không những tôi mua ở trung tâm thương mại, mà giá cũng không đắt lắm.',
+    answer: '这条裤子不但是我在商场买的，而且也不太贵。', pair: '不但……而且……',
+    note: '是……的 — nhấn nơi mua, thời gian mua.' },
+  '衬衫|0': { prompt: 'Tôi mặc cái áo sơ mi này xong là ra ngoài ngay.',
+    answer: '我一穿上这件衬衫，就出去了。', pair: '一……就……',
+    note: '一件衬衫 (áo) khác 一条裤子 (quần) — hai lượng từ khác nhau.' },
+  '元|0': { prompt: 'Cái quần này tuy giá 320 đồng hơi đắt, nhưng chất lượng rất tốt.',
+    answer: '这条裤子虽然要320元有点儿贵，但是很好。', pair: '虽然……但是……',
+    note: '元 dùng khi viết, 块 dùng khi nói — cùng một đơn vị.' },
+  '或者|0': { prompt: 'Bạn mặc áo sơ mi hoặc mặc quần đều được, chỉ cần bạn thấy thoải mái là được.',
+    answer: '你穿衬衫或者穿裤子都可以，只要你觉得舒服就行。', pair: '只要……就……',
+    note: '或者 dùng trong câu kể; 还是 dùng trong câu hỏi.' },
+  '花|1': { prompt: 'Trà hoa hoặc trà xanh, loại nào tôi cũng thích uống.',
+    answer: '花茶或者绿茶，我都喜欢喝。', pair: '或者……都……',
+    note: 'Sửa từ 不管……还是…… (khung HSK 4) sang 或者……都…… cho đúng tầm HSK 3.' }
+};

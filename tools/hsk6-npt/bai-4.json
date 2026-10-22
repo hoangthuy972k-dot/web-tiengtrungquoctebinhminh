@@ -1,0 +1,904 @@
+[
+ {
+  "so": "1",
+  "ten": "「乘机」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 乘机 + Động từ (= 利用这个机会 + V)",
+   "乘 + ……的机会 / ai + 不注意 + V"
+  ],
+  "giaiThich": "乘机 là PHÓ TỪ, nghĩa là \"lợi dụng cơ hội\" (= 利用机会): nhân lúc có điều kiện, thời cơ thuận lợi thì làm ngay việc gì. Đứng SAU chủ ngữ, ngay TRƯỚC động từ. 乘机 đã chứa sẵn \"机 (cơ hội)\" nên không mang tân ngữ 机会; muốn nói rõ cơ hội nào thì dùng 乘 / 利用 + ……的机会.",
+  "viDu": [
+   {
+    "zh": "这次出差去北京，我们可以乘机游览一下长城。",
+    "py": "Zhè cì chūchāi qù Běijīng, wǒmen kěyǐ chéngjī yóulǎn yíxià Chángchéng.",
+    "vn": "Lần này đi công tác Bắc Kinh, chúng ta có thể nhân dịp tham quan Vạn Lý Trường Thành."
+   },
+   {
+    "zh": "这天，大象正在吃树叶，老鼠乘机跑进大象的鼻子中，准备实施它的计划。",
+    "py": "Zhè tiān, dàxiàng zhèngzài chī shùyè, lǎoshǔ chéngjī pǎojìn dàxiàng de bízi zhōng, zhǔnbèi shíshī tā de jìhuà.",
+    "vn": "Hôm ấy, voi đang ăn lá cây, chuột nhân cơ hội chạy vào vòi voi, chuẩn bị thực hiện kế hoạch của nó."
+   },
+   {
+    "zh": "因为一些法律法规还不完善，让犯罪分子乘机钻了空子。",
+    "py": "Yīnwèi yìxiē fǎlǜ fǎguī hái bù wánshàn, ràng fànzuì fènzǐ chéngjī zuānle kòngzi.",
+    "vn": "Vì một số luật lệ, quy định còn chưa hoàn thiện nên kẻ phạm tội đã nhân cơ hội lách luật."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "乘机我们游览了一下长城。",
+    "why": "乘机 là phó từ, phải đứng SAU chủ ngữ, trước động từ.",
+    "dung": "我们乘机游览了一下长城。"
+   },
+   {
+    "sai": "他乘机这个机会出国留学了。",
+    "why": "乘机 đã có sẵn nghĩa \"cơ hội\", không mang tân ngữ 机会. Có tân ngữ thì dùng 乘 / 利用.",
+    "dung": "他乘这个机会出国留学了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这次出差去北京，我们可以",
+       "游览一下长城。"
+      ],
+      "dap": [
+       [
+        "乘机"
+       ]
+      ],
+      "chon": [
+       "乘机",
+       "恰巧",
+       "不料"
+      ],
+      "goiY": "\"Lần này đi công tác Bắc Kinh, chúng ta có thể nhân dịp tham quan Vạn Lý Trường Thành.\"",
+      "giai": "Tận dụng dịp đi công tác để làm thêm việc khác → 乘机. 恰巧 là tình cờ, 不料 là không ngờ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大象正在吃树叶，老鼠",
+       "跑进了大象的鼻子。"
+      ],
+      "dap": [
+       [
+        "乘机"
+       ]
+      ],
+      "chon": [
+       "乘机",
+       "未免",
+       "毫无"
+      ],
+      "goiY": "\"Voi đang ăn lá cây, chuột nhân cơ hội chạy vào vòi voi.\"",
+      "giai": "Lợi dụng lúc voi mải ăn → 乘机 + 跑进 (câu trong bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "对方守门员救球脱手，我们",
+       "攻入一球。"
+      ],
+      "dap": [
+       [
+        "乘机"
+       ]
+      ],
+      "chon": [
+       "乘机",
+       "不料",
+       "倘若"
+      ],
+      "goiY": "\"Thủ môn đối phương bắt bóng tuột tay, chúng tôi nhân cơ hội ghi một bàn.\"",
+      "giai": "Sơ hở của đối phương là thời cơ → 乘机攻入一球."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "因为法律还不完善，让犯罪分子",
+       "钻了空子。"
+      ],
+      "dap": [
+       [
+        "乘机"
+       ]
+      ],
+      "chon": [
+       "乘机",
+       "恰巧",
+       "未免"
+      ],
+      "goiY": "\"Vì luật còn chưa hoàn thiện nên kẻ phạm tội đã nhân cơ hội lách luật.\"",
+      "giai": "乘机钻空子 = nhân cơ hội lợi dụng kẽ hở (ví dụ sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老师刚走出教室，几个学生就",
+       "玩起了手机。"
+      ],
+      "dap": [
+       [
+        "乘机"
+       ]
+      ],
+      "chon": [
+       "乘机",
+       "毫无",
+       "草率"
+      ],
+      "goiY": "\"Cô giáo vừa ra khỏi lớp, mấy học sinh đã nhân cơ hội lôi điện thoại ra chơi.\"",
+      "giai": "乘机 đứng sau 就, trước động từ 玩."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "当人抵抗力下降的时候，病毒就会",
+       "进入人的身体。"
+      ],
+      "dap": [
+       [
+        "乘机"
+       ]
+      ],
+      "chon": [
+       "乘机",
+       "不料",
+       "盲目"
+      ],
+      "goiY": "\"Khi sức đề kháng giảm, virus sẽ nhân cơ hội xâm nhập cơ thể.\"",
+      "giai": "Sức đề kháng giảm là thời cơ cho virus → 乘机进入 (练一练 1)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "游览了一下长城",
+       "我们",
+       "乘机"
+      ],
+      "dap": [
+       "我们乘机游览了一下长城。"
+      ],
+      "goiY": "Chúng tôi nhân dịp tham quan Vạn Lý Trường Thành một chút.",
+      "giai": "Chủ ngữ + 乘机 + động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "孩子",
+       "玩起了游戏",
+       "妈妈一出门",
+       "乘机"
+      ],
+      "dap": [
+       "妈妈一出门，孩子乘机玩起了游戏。"
+      ],
+      "goiY": "Mẹ vừa ra khỏi cửa, đứa trẻ liền nhân cơ hội chơi game.",
+      "giai": "Vế nêu thời cơ đứng trước; vế sau: chủ ngữ + 乘机 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "小偷",
+       "乘机",
+       "偷走了她的钱包",
+       "人多的时候"
+      ],
+      "dap": [
+       "人多的时候，小偷乘机偷走了她的钱包。"
+      ],
+      "goiY": "Lúc đông người, tên trộm nhân cơ hội lấy mất ví của cô ấy.",
+      "giai": "Trạng ngữ thời gian (……的时候) đầu câu, 乘机 sau chủ ngữ 小偷."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这次去上海开会，我乘机看望了几个老同学。",
+      "dung": true,
+      "giai": "乘机 đứng sau chủ ngữ 我, trước động từ 看望 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "乘机我们游览了一下长城。",
+      "dung": false,
+      "sua": "我们乘机游览了一下长城。",
+      "giai": "乘机 là phó từ, không đứng trước chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他乘机这个机会出国留学了。",
+      "dung": false,
+      "sua": "他乘这个机会出国留学了。",
+      "giai": "乘机 không mang tân ngữ 机会; dùng 乘 + 这个机会."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Mẹ vừa ra khỏi nhà, em trai liền nhân cơ hội bật ti vi.",
+      "dap": [
+       "妈妈刚出门，弟弟就乘机打开了电视。",
+       "妈妈一出门，弟弟就乘机打开了电视。",
+       "妈妈刚出门，弟弟乘机打开了电视。",
+       "妈妈一出门，弟弟乘机打开了电视。"
+      ],
+      "py": "Māma gāng chū mén, dìdi jiù chéngjī dǎkāile diànshì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 乘机.",
+      "giai": "乘机 đứng sau chủ ngữ 弟弟 (và sau 就), trước động từ 打开."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Lần này đi Bắc Kinh công tác, tôi muốn nhân dịp đi thăm bạn cũ.",
+      "dap": [
+       "这次去北京出差，我想乘机去看看老朋友。",
+       "这次去北京出差，我想乘机看望一下老朋友。",
+       "这次到北京出差，我想乘机去看看老朋友。",
+       "这次去北京出差，我想乘机去看望老朋友。"
+      ],
+      "py": "Zhè cì qù Běijīng chūchāi, wǒ xiǎng chéngjī qù kànkan lǎo péngyou.",
+      "goiY": "Dịch sang tiếng Trung, dùng 乘机.",
+      "giai": "Động từ năng nguyện 想 đứng trước 乘机: 我想乘机 + V."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để viết lại câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "当人抵抗力下降的时候，＿＿＿。",
+      "goiY": "virus sẽ tận dụng cơ hội này xâm nhập cơ thể — dùng 乘机 viết lại câu (练一练 1 của sách)",
+      "mau": "当人抵抗力下降的时候，病毒就会乘机进入人的身体。",
+      "can": [
+       [
+        "乘机"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "节日里，老人们一边品尝美酒，一边唱歌跳舞，＿＿＿。",
+      "goiY": "nam nữ thanh niên thì tận dụng dịp này hẹn hò, tìm bạn đời — dùng 乘机 (练一练 2)",
+      "mau": "节日里，老人们一边品尝美酒，一边唱歌跳舞，青年男女则乘机谈情说爱，寻找自己的伴侣。",
+      "can": [
+       [
+        "乘机"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "对方守门员救球脱手，＿＿＿。",
+      "goiY": "chúng tôi tận dụng cơ hội này ghi một bàn — dùng 乘机 (练一练 3)",
+      "mau": "对方守门员救球脱手，我们乘机攻入一球。",
+      "can": [
+       [
+        "乘机"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「不料」",
+  "tenVn": "",
+  "cauTruc": [
+   "Vế 1 (dự tính / ý định)，不料 + (chủ ngữ) + 却 / 竟 / 竟然 / 倒 / 还 + điều bất ngờ"
+  ],
+  "giaiThich": "不料 là LIÊN TỪ, nghĩa là \"không ngờ\" (= 没想到). Vế trước nói tình huống hoặc ý định dự tính; vế sau dùng 不料 dẫn ra tình huống không ngờ tới. Thường đi với 却, 竟, 竟然, 倒, 还. 不料 đứng đầu vế SAU, không đứng ở vế nêu dự tính. Đọc búliào.",
+  "viDu": [
+   {
+    "zh": "我只想和她开个玩笑，不料她却生气了。",
+    "py": "Wǒ zhǐ xiǎng hé tā kāi ge wánxiào, búliào tā què shēngqì le.",
+    "vn": "Tôi chỉ muốn đùa với cô ấy một chút, không ngờ cô ấy lại giận."
+   },
+   {
+    "zh": "我们做好了一切准备，下个星期就去旅行，不料他竟病倒了。",
+    "py": "Wǒmen zuòhǎole yíqiè zhǔnbèi, xià ge xīngqī jiù qù lǚxíng, búliào tā jìng bìngdǎo le.",
+    "vn": "Chúng tôi đã chuẩn bị xong xuôi, tuần sau là đi du lịch, chẳng ngờ anh ấy lại đổ bệnh."
+   },
+   {
+    "zh": "老鼠乘机跑进大象的鼻子中，准备实施它的计划。不料，刚进去，大象痒得难受，猛烈地打起了喷嚏。",
+    "py": "Lǎoshǔ chéngjī pǎojìn dàxiàng de bízi zhōng, zhǔnbèi shíshī tā de jìhuà. Búliào, gāng jìnqu, dàxiàng yǎng de nánshòu, měngliè de dǎqǐle pēntì.",
+    "vn": "Chuột nhân cơ hội chạy vào vòi voi, chuẩn bị thực hiện kế hoạch. Chẳng ngờ vừa vào, voi ngứa không chịu nổi, hắt hơi dữ dội."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "不料我只想和她开个玩笑，她却生气了。",
+    "why": "不料 đứng đầu vế SAU (vế nêu điều bất ngờ), không đứng ở vế nêu dự tính.",
+    "dung": "我只想和她开个玩笑，不料她却生气了。"
+   },
+   {
+    "sai": "我们本来打算明天去爬山，不料明天会下雨。",
+    "why": "不料 nêu điều ĐÃ xảy ra ngoài dự tính, không dùng cho dự đoán tương lai (会下雨).",
+    "dung": "我们本来打算明天去爬山，不料今天就下起了大雨。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我只想和她开个玩笑，",
+       "她却生气了。"
+      ],
+      "dap": [
+       [
+        "不料"
+       ]
+      ],
+      "chon": [
+       "不料",
+       "乘机",
+       "倘若"
+      ],
+      "goiY": "\"Tôi chỉ muốn đùa một chút, không ngờ cô ấy lại giận.\"",
+      "giai": "Dự tính (đùa) → kết quả bất ngờ (giận), có 却 hô ứng → 不料."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们做好了一切准备，下个星期就去旅行，",
+       "他竟病倒了。"
+      ],
+      "dap": [
+       [
+        "不料"
+       ]
+      ],
+      "chon": [
+       "不料",
+       "恰巧",
+       "未免"
+      ],
+      "goiY": "\"Chúng tôi đã chuẩn bị xong, tuần sau đi du lịch, chẳng ngờ anh ấy lại đổ bệnh.\"",
+      "giai": "不料……竟…… nhấn mạnh sự bất ngờ (ví dụ sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "早上天气还是好好的，不料中午",
+       "下起了大雨。"
+      ],
+      "dap": [
+       [
+        "却",
+        "竟然",
+        "竟"
+       ]
+      ],
+      "chon": [
+       "却",
+       "乘机",
+       "未免"
+      ],
+      "goiY": "\"Sáng trời còn đẹp, không ngờ trưa lại đổ mưa to.\"",
+      "giai": "Sau 不料 + chủ ngữ/thời gian thường có 却 / 竟然 hô ứng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老鼠准备实施它的计划。",
+       "，刚进去，大象就猛烈地打起了喷嚏。"
+      ],
+      "dap": [
+       [
+        "不料"
+       ]
+      ],
+      "chon": [
+       "不料",
+       "于是",
+       "乘机"
+      ],
+      "goiY": "\"Chuột chuẩn bị thực hiện kế hoạch. Chẳng ngờ vừa vào, voi đã hắt hơi dữ dội.\"",
+      "giai": "不料 có thể đứng đầu câu, sau dấu phẩy — như trong bài khoá."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我本来以为这次考试很难，",
+       "竟然这么容易。"
+      ],
+      "dap": [
+       [
+        "不料"
+       ]
+      ],
+      "chon": [
+       "不料",
+       "倘若",
+       "毫无"
+      ],
+      "goiY": "\"Tôi cứ tưởng lần thi này khó lắm, không ngờ lại dễ thế.\"",
+      "giai": "本来以为……，不料…… = cứ tưởng…, không ngờ…"
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他想给妈妈一个惊喜，不料妈妈",
+       "早就知道了。"
+      ],
+      "dap": [
+       [
+        "竟然",
+        "却",
+        "竟"
+       ]
+      ],
+      "chon": [
+       "竟然",
+       "乘机",
+       "未免"
+      ],
+      "goiY": "\"Cậu ấy muốn tạo bất ngờ cho mẹ, không ngờ mẹ đã biết từ lâu.\"",
+      "giai": "不料 + chủ ngữ + 竟然 + V: kết quả trái với ý định."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "不料",
+       "我只想",
+       "她却生气了",
+       "开个玩笑"
+      ],
+      "dap": [
+       "我只想开个玩笑，不料她却生气了。"
+      ],
+      "goiY": "Tôi chỉ muốn đùa một chút, không ngờ cô ấy lại giận.",
+      "giai": "Vế dự tính trước, 不料 mở đầu vế sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "不料",
+       "他竟",
+       "病倒了",
+       "我们准备好了一切"
+      ],
+      "dap": [
+       "我们准备好了一切，不料他竟病倒了。"
+      ],
+      "goiY": "Chúng tôi đã chuẩn bị xong hết, chẳng ngờ anh ấy lại đổ bệnh.",
+      "giai": "不料 + chủ ngữ + 竟 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "不料",
+       "刚出门",
+       "我本来想去跑步",
+       "就下起了雨"
+      ],
+      "dap": [
+       "我本来想去跑步，不料刚出门就下起了雨。"
+      ],
+      "goiY": "Tôi vốn định đi chạy bộ, không ngờ vừa ra khỏi cửa trời đã mưa.",
+      "giai": "本来…… (dự tính)，不料 + 刚……就……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我以为他会很高兴，不料他竟然哭了。",
+      "dung": true,
+      "giai": "以为 (dự đoán sai) + 不料……竟然…… — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "不料我只想和她开个玩笑，她却生气了。",
+      "dung": false,
+      "sua": "我只想和她开个玩笑，不料她却生气了。",
+      "giai": "不料 phải đứng ở vế sau, trước điều bất ngờ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们本来打算明天去爬山，不料明天会下雨。",
+      "dung": false,
+      "sua": "我们本来打算明天去爬山，不料今天就下起了大雨。",
+      "giai": "不料 dùng cho việc đã xảy ra ngoài dự tính, không dùng để dự đoán (会下雨)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi định đến thư viện ôn bài, không ngờ hôm nay thư viện lại đóng cửa.",
+      "dap": [
+       "我准备去图书馆复习，不料图书馆今天却关门了。",
+       "我打算去图书馆复习，不料图书馆今天却关门了。",
+       "我准备去图书馆复习，不料今天图书馆却关门了。",
+       "我打算去图书馆复习，不料今天图书馆却关门了。"
+      ],
+      "py": "Wǒ zhǔnbèi qù túshūguǎn fùxí, búliào túshūguǎn jīntiān què guān mén le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不料……却…….",
+      "giai": "Vế 1 là dự định, vế 2: 不料 + chủ ngữ + 却 + điều bất ngờ."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tôi tưởng anh ấy sẽ đồng ý, không ngờ anh ấy lại từ chối.",
+      "dap": [
+       "我以为他会同意，不料他却拒绝了。",
+       "我以为他会答应，不料他却拒绝了。",
+       "我以为他会同意，不料他竟然拒绝了。",
+       "我以为他会答应，不料他竟然拒绝了。"
+      ],
+      "py": "Wǒ yǐwéi tā huì tóngyì, búliào tā què jùjué le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 以为……不料…….",
+      "giai": "以为 = tưởng (mà sai) — hô ứng tự nhiên với 不料."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "早上天气还是好好的，不料＿＿＿。",
+      "goiY": "trưa / chiều thời tiết thay đổi bất ngờ — 练一练 (1) của sách",
+      "mau": "早上天气还是好好的，不料中午却下起了大雨。",
+      "can": []
+     },
+     {
+      "kieu": "vandung",
+      "de": "考试前我准备得特别充分，不料题目太多，＿＿＿。",
+      "goiY": "kết quả ngoài dự tính (không làm kịp…) — 练一练 (2)",
+      "mau": "考试前我准备得特别充分，不料题目太多，我竟然没有做完。",
+      "can": []
+     },
+     {
+      "kieu": "vandung",
+      "de": "我想在这个公司好好干，不料，刚来一个月，＿＿＿。",
+      "goiY": "một việc không ngờ xảy ra với công ty / với em — 练一练 (3)",
+      "mau": "我想在这个公司好好干，不料，刚来一个月，公司就倒闭了。",
+      "can": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「未免」",
+  "tenVn": "",
+  "cauTruc": [
+   "未免 + 太 / 过于 / 有些 / 不大 + Tính từ (tiêu cực)",
+   "未免 + Tính từ + 了一点儿 / 一些"
+  ],
+  "giaiThich": "未免 là PHÓ TỪ, biểu thị người nói KHÔNG TÁN THÀNH, chỉ có thể nói là… — một cách nhận xét, chê nhẹ nhàng, uyển chuyển (\"có phần…, có hơi… quá\"). Phần lớn bổ nghĩa cho TÍNH TỪ mang nghĩa tiêu cực, ít khi đứng trước động từ. Hay đi với 太, 过于, 有些, 不大 và số lượng từ 一点儿, 一些.",
+  "viDu": [
+   {
+    "zh": "他这个人也未免太不会关心人了。",
+    "py": "Tā zhège rén yě wèimiǎn tài bú huì guānxīn rén le.",
+    "vn": "Con người anh ta cũng có hơi quá vô tâm với người khác."
+   },
+   {
+    "zh": "看到大象悲惨的样子，老鼠不忍下手，它觉得那样未免太过残忍。",
+    "py": "Kàndào dàxiàng bēicǎn de yàngzi, lǎoshǔ bù rěn xiàshǒu, tā juéde nàyàng wèimiǎn tài guò cánrěn.",
+    "vn": "Nhìn dáng vẻ thảm thương của voi, chuột không nỡ ra tay, nó thấy làm vậy có phần quá tàn nhẫn."
+   },
+   {
+    "zh": "举办展览的想法是不错，只是现在能够展出的展品未免少了一些。",
+    "py": "Jǔbàn zhǎnlǎn de xiǎngfǎ shì búcuò, zhǐshì xiànzài nénggòu zhǎnchū de zhǎnpǐn wèimiǎn shǎole yìxiē.",
+    "vn": "Ý tưởng tổ chức triển lãm thì hay, có điều hiện giờ hiện vật có thể trưng bày hơi ít."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这个房间未免太干净了。",
+    "why": "未免 biểu thị không tán thành nên đi với tính từ nghĩa TIÊU CỰC; 干净 là nghĩa tích cực, câu trở nên vô lý.",
+    "dung": "这个房间未免太小了。"
+   },
+   {
+    "sai": "他未免来晚。",
+    "why": "Sau 未免 cần 太 / 有些… hoặc 了一点儿 để trọn ý đánh giá; động từ trơn đứng sau 未免 không tự nhiên.",
+    "dung": "他未免来得太晚了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "看到大象悲惨的样子，老鼠觉得那样",
+       "太过残忍。"
+      ],
+      "dap": [
+       [
+        "未免"
+       ]
+      ],
+      "chon": [
+       "未免",
+       "恰巧",
+       "毫无"
+      ],
+      "goiY": "\"Nhìn dáng vẻ thảm thương của voi, chuột thấy làm vậy có phần quá tàn nhẫn.\"",
+      "giai": "未免 + 太过 + tính từ tiêu cực (残忍) — câu trong bài khoá."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他这个人也",
+       "太不会关心人了。"
+      ],
+      "dap": [
+       [
+        "未免"
+       ]
+      ],
+      "chon": [
+       "未免",
+       "乘机",
+       "不料"
+      ],
+      "goiY": "\"Con người anh ta cũng có hơi quá vô tâm.\"",
+      "giai": "Chê nhẹ nhàng → 未免太……了 (ví dụ sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "举办展览的想法是不错，只是展品",
+       "少了一些。"
+      ],
+      "dap": [
+       [
+        "未免"
+       ]
+      ],
+      "chon": [
+       "未免",
+       "毫无",
+       "倘若"
+      ],
+      "goiY": "\"Ý tưởng triển lãm thì hay, chỉ là hiện vật hơi ít.\"",
+      "giai": "未免 + Adj + 了一些: có hơi… một chút."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这么小的屋子一个月房租4500，价格未免",
+       "贵了吧？"
+      ],
+      "dap": [
+       [
+        "太",
+        "过于"
+       ]
+      ],
+      "chon": [
+       "太",
+       "很",
+       "非常"
+      ],
+      "goiY": "\"Căn phòng bé thế này mà tiền thuê 4500 một tháng, giá có hơi đắt quá không?\"",
+      "giai": "未免 đi với 太 / 过于 / 有些, không đi với 很, 非常."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这篇文章",
+       "有些长，再好好修改一下吧。"
+      ],
+      "dap": [
+       [
+        "未免"
+       ]
+      ],
+      "chon": [
+       "未免",
+       "恰巧",
+       "乘机"
+      ],
+      "goiY": "\"Bài văn này có hơi dài, sửa lại kỹ thêm đi.\"",
+      "giai": "未免有些 + Adj — góp ý uyển chuyển."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只考了一次不及格就要放弃，你",
+       "太草率了。"
+      ],
+      "dap": [
+       [
+        "未免"
+       ]
+      ],
+      "chon": [
+       "未免",
+       "毫无",
+       "不顾"
+      ],
+      "goiY": "\"Mới thi trượt một lần đã đòi bỏ cuộc, cậu có phần quá khinh suất rồi.\"",
+      "giai": "未免太草率了 = có phần quá khinh suất (ôn từ 草率)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "未免",
+       "现在的规定",
+       "太复杂了"
+      ],
+      "dap": [
+       "现在的规定未免太复杂了。"
+      ],
+      "goiY": "Quy định hiện nay có phần quá phức tạp.",
+      "giai": "Chủ ngữ + 未免 + 太 + Adj + 了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "那样做",
+       "未免",
+       "太残忍了",
+       "老鼠觉得"
+      ],
+      "dap": [
+       "老鼠觉得那样做未免太残忍了。"
+      ],
+      "goiY": "Chuột cảm thấy làm như vậy có phần quá tàn nhẫn.",
+      "giai": "觉得 + mệnh đề; trong mệnh đề: 那样做 + 未免太残忍了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "少了一些",
+       "展品",
+       "未免",
+       "能展出的"
+      ],
+      "dap": [
+       "能展出的展品未免少了一些。"
+      ],
+      "goiY": "Hiện vật có thể trưng bày hơi ít.",
+      "giai": "Định ngữ 能展出的 + 展品 + 未免 + Adj + 了一些."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这件衣服的颜色未免太鲜艳了一点儿。",
+      "dung": true,
+      "giai": "未免 + 太 + Adj + 了一点儿 — đúng, chê nhẹ nhàng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这个房间未免太干净了。",
+      "dung": false,
+      "sua": "这个房间未免太小了。",
+      "giai": "未免 đi với tính từ nghĩa tiêu cực."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他未免来晚。",
+      "dung": false,
+      "sua": "他未免来得太晚了。",
+      "giai": "Sau 未免 cần 太 / 有些… hoặc 了一点儿 cho trọn ý."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Bộ quần áo này có hơi đắt quá.",
+      "dap": [
+       "这件衣服未免太贵了。",
+       "这套衣服未免太贵了。",
+       "这件衣服未免有点儿贵。",
+       "这件衣服未免贵了一点儿。"
+      ],
+      "py": "Zhè jiàn yīfu wèimiǎn tài guì le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 未免.",
+      "giai": "未免太 + Adj + 了 hoặc 未免 + Adj + 了一点儿."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cậu nói như vậy thì có phần quá đáng rồi.",
+      "dap": [
+       "你这么说未免太过分了。",
+       "你这样说未免太过分了。",
+       "你这么说未免有些过分了。",
+       "你这样说未免有点儿过分了。"
+      ],
+      "py": "Nǐ zhème shuō wèimiǎn tài guòfèn le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 未免.",
+      "giai": "未免 + 太 / 有些 + 过分 — góp ý uyển chuyển."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để viết lại câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这么小的屋子一个月房租4500，＿＿＿。",
+      "goiY": "giá có hơi đắt quá — dùng 未免 viết lại câu (练一练 1 của sách)",
+      "mau": "这么小的屋子一个月房租4500，价格未免太贵了。",
+      "can": [
+       [
+        "未免"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，好好修改一下还是不错的。",
+      "goiY": "bài văn này có hơi dài — dùng 未免 (练一练 2)",
+      "mau": "这篇文章未免有些长，好好修改一下还是不错的。",
+      "can": [
+       [
+        "未免"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，真应该好好简练一番。",
+      "goiY": "quy định hiện nay có phần quá phức tạp — dùng 未免 (练一练 3)",
+      "mau": "现在的规定未免太复杂了，真应该好好简练一番。",
+      "can": [
+       [
+        "未免"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

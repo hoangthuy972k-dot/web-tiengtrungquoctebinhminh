@@ -1,0 +1,250 @@
+{
+ "/lessons/hsk4-bai-1.html": {
+  "points": [
+   {
+    "title": "「不仅……也/还/而且……」",
+    "errors": [
+     { "wrong": "他不仅会说汉语，但是会说英语。", "why": "不仅 hô ứng với 也/还/而且, không đi với 但是.", "right": "他不仅会说汉语，还会说英语。" },
+     { "wrong": "不仅他会说汉语，他还会说英语。", "why": "hai vế CÙNG chủ ngữ thì 不仅 đứng SAU chủ ngữ.", "right": "他不仅会说汉语，还会说英语。" },
+     { "wrong": "他不仅会说汉语，他们还很喜欢中国文化。", "why": "hai vế KHÁC chủ ngữ thì 不仅 phải đứng TRƯỚC chủ ngữ vế đầu.", "right": "不仅他会说汉语，他们也很喜欢中国文化。" }
+    ],
+    "items": [
+     { "context": "Hai vế CÙNG chủ ngữ 「他」.", "pre": "他", "blank": "不仅会说汉语，还会说英语", "post": "。", "options": ["不仅会说汉语，还会说英语", "不仅会说汉语，但是会说英语", "不仅他会说汉语，还会说英语"], "answer": 0, "explanation": "Cùng chủ ngữ → 不仅 đứng sau chủ ngữ; hô ứng với 还." },
+     { "context": "Hai vế KHÁC chủ ngữ.", "pre": "", "blank": "不仅他去了，我们也去了", "post": "。", "options": ["不仅他去了，我们也去了", "他不仅去了，我们也去了", "不仅他去了，但是我们去了"], "answer": 0, "explanation": "Khác chủ ngữ → 不仅 đứng trước chủ ngữ vế đầu." },
+     { "context": "Chọn từ hô ứng đúng.", "pre": "这个办法不仅简单，", "blank": "而且", "post": "很有效。", "options": ["而且", "但是", "可是"], "answer": 0, "explanation": "不仅 đi với 也/还/而且." },
+     { "context": "“Cô ấy không chỉ học giỏi mà còn rất tốt bụng.”", "pre": "她", "blank": "不仅学习好，人也很好", "post": "。", "options": ["不仅学习好，人也很好", "不仅学习好，但是人很好", "学习不仅好，人很好也"], "answer": 0, "explanation": "不仅……也……." },
+     { "context": "Quan hệ TƯƠNG PHẢN thì dùng 虽然……但是…….", "pre": "他", "blank": "虽然很忙，但是每天都运动", "post": "。", "options": ["虽然很忙，但是每天都运动", "不仅很忙，但是每天都运动", "不仅很忙，还每天都运动吗"], "answer": 0, "explanation": "不仅 nêu bổ sung, 虽然 nêu tương phản." },
+     { "context": "“Món này không chỉ ngon mà còn rẻ nữa.”", "pre": "这个菜", "blank": "不仅好吃，而且便宜", "post": "。", "options": ["不仅好吃，而且便宜", "不仅好吃，但是便宜", "好吃不仅，便宜而且"], "answer": 0, "explanation": "不仅……而且……." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他不仅会说汉语，还会说英语。", "isCorrect": true, "explanation": "Cùng chủ ngữ, 不仅 sau chủ ngữ, hô ứng 还 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他不仅会说汉语，但是会说英语。", "isCorrect": false, "correctVersion": "他不仅会说汉语，还会说英语。", "explanation": "不仅 không hô ứng với 但是." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "不仅他会说汉语，他还很了解中国文化。", "isCorrect": false, "correctVersion": "他不仅会说汉语，还很了解中国文化。", "explanation": "Cùng chủ ngữ thì 不仅 đứng sau chủ ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy không chỉ biết nói tiếng Trung mà còn biết nói tiếng Anh.”", "words": ["他", "不仅", "会", "说", "汉语", "，", "还", "会", "说", "英语", "。"], "answer": "他不仅会说汉语，还会说英语。", "explanation": "不仅……还……." },
+     { "type": "sort", "context": "Sắp xếp: “Món này không chỉ ngon mà còn rẻ.”", "words": ["这个", "菜", "不仅", "好吃", "，", "而且", "便宜", "。"], "answer": "这个菜不仅好吃，而且便宜。", "explanation": "不仅……而且……." },
+     { "type": "sort", "context": "Sắp xếp: “Không chỉ anh ấy đi, chúng tôi cũng đi.”", "words": ["不仅", "他", "去", "了", "，", "我们", "也", "去", "了", "。"], "answer": "不仅他去了，我们也去了。", "explanation": "Khác chủ ngữ → 不仅 trước chủ ngữ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 不仅……还…….", "promptLang": "vi", "prompt": "Anh ấy không chỉ biết nói tiếng Trung mà còn biết nói tiếng Anh.", "answer": "他不仅会说汉语，还会说英语。", "answerPy": "Tā bùjǐn huì shuō Hànyǔ, hái huì shuō Yīngyǔ.", "explanation": "Cùng chủ ngữ, 不仅 sau chủ ngữ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 不仅……而且…….", "promptLang": "vi", "prompt": "Cách này không chỉ đơn giản mà còn rất hiệu quả.", "answer": "这个办法不仅简单，而且很有效。", "answerPy": "Zhège bànfǎ bùjǐn jiǎndān, érqiě hěn yǒuxiào.", "explanation": "不仅……而且……." }
+    ]
+   },
+   {
+    "title": "「从来」 — từ trước đến nay",
+    "errors": [
+     { "wrong": "我从来去过北京。", "why": "从来 hầu như luôn dùng trong câu PHỦ ĐỊNH.", "right": "我从来没去过北京。" },
+     { "wrong": "我没从来去过北京。", "why": "从来 đứng TRƯỚC từ phủ định.", "right": "我从来没去过北京。" },
+     { "wrong": "我从来没吃过这个菜了。", "why": "câu với 没……过 không dùng 了.", "right": "我从来没吃过这个菜。" }
+    ],
+    "items": [
+     { "context": "“Tôi chưa từng đến Bắc Kinh.”", "pre": "我", "blank": "从来没去过北京", "post": "。", "options": ["从来没去过北京", "没从来去过北京", "从来去过北京"], "answer": 0, "explanation": "从来 + 没(有) + động từ + 过." },
+     { "context": "“Anh ấy chưa bao giờ đi muộn.”", "pre": "他", "blank": "从来不迟到", "post": "。", "options": ["从来不迟到", "不从来迟到", "从来迟到不"], "answer": 0, "explanation": "从来不 + động từ (thói quen)." },
+     { "context": "Phân biệt: 从来不 (thói quen) vs 从来没……过 (kinh nghiệm).", "pre": "我", "blank": "从来不喝酒", "post": "。", "options": ["从来不喝酒", "从来没喝酒", "从来没喝酒了"], "answer": 0, "explanation": "Thói quen hiện tại → 从来不." },
+     { "context": "“Tôi chưa từng ăn món này.”", "pre": "我", "blank": "从来没吃过这个菜", "post": "。", "options": ["从来没吃过这个菜", "从来不吃过这个菜", "从来没吃过这个菜了"], "answer": 0, "explanation": "Kinh nghiệm → 从来没……过." },
+     { "context": "Câu KHẲNG ĐỊNH thì dùng 一直.", "pre": "他", "blank": "一直很努力", "post": "。", "options": ["一直很努力", "从来很努力", "从来不很努力"], "answer": 0, "explanation": "从来 chủ yếu dùng trong câu phủ định." },
+     { "context": "“Cô ấy chưa bao giờ nói dối.”", "pre": "她", "blank": "从来不说谎", "post": "。", "options": ["从来不说谎", "没从来说谎", "从来说谎不"], "answer": 0, "explanation": "从来不 + động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我从来没去过北京。", "isCorrect": true, "explanation": "从来 + 没……过 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我没从来去过北京。", "isCorrect": false, "correctVersion": "我从来没去过北京。", "explanation": "从来 đứng trước từ phủ định." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他从来很努力。", "isCorrect": false, "correctVersion": "他一直很努力。", "explanation": "Câu khẳng định dùng 一直, không dùng 从来." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi chưa từng đến Bắc Kinh.”", "words": ["我", "从来", "没", "去", "过", "北京", "。"], "answer": "我从来没去过北京。", "explanation": "从来没……过." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy chưa bao giờ đi muộn.”", "words": ["他", "从来", "不", "迟到", "。"], "answer": "他从来不迟到。", "explanation": "从来不 + động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi chưa từng ăn món này.”", "words": ["我", "从来", "没", "吃", "过", "这个", "菜", "。"], "answer": "我从来没吃过这个菜。", "explanation": "从来没吃过." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 从来.", "promptLang": "vi", "prompt": "Tôi chưa từng đến Bắc Kinh.", "answer": "我从来没去过北京。", "answerPy": "Wǒ cónglái méi qù guo Běijīng.", "explanation": "从来没……过." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 从来.", "promptLang": "vi", "prompt": "Anh ấy chưa bao giờ đi học muộn.", "answer": "他从来不迟到。", "answerPy": "Tā cónglái bù chídào.", "explanation": "Thói quen → 从来不." }
+    ]
+   },
+   {
+    "title": "「刚」 so sánh với 「刚才」",
+    "errors": [
+     { "wrong": "刚我去了他家。", "why": "刚 là phó từ, phải đứng SAU chủ ngữ.", "right": "我刚去了他家。" },
+     { "wrong": "他刚不在。", "why": "刚 KHÔNG đứng trước từ phủ định; phải dùng 刚才.", "right": "他刚才不在。" },
+     { "wrong": "我刚才来了两个小时。", "why": "thời lượng chỉ đi được với 刚, không đi với 刚才.", "right": "我刚来两个小时。" }
+    ],
+    "items": [
+     { "context": "刚 là PHÓ TỪ, đứng sau chủ ngữ.", "pre": "我", "blank": "刚到", "post": "。", "options": ["刚到", "到刚", "刚我到"], "answer": 0, "explanation": "Chủ ngữ + 刚 + động từ." },
+     { "context": "刚才 là DANH TỪ thời gian, đứng được trước chủ ngữ.", "pre": "", "blank": "刚才他来了", "post": "。", "options": ["刚才他来了", "刚他来了", "他来了刚才吗"], "answer": 0, "explanation": "刚才 + chủ ngữ + vị ngữ." },
+     { "context": "Trước từ PHỦ ĐỊNH chỉ dùng được 刚才.", "pre": "他", "blank": "刚才不在", "post": "。", "options": ["刚才不在", "刚不在", "不刚在"], "answer": 0, "explanation": "刚 không đứng trước 不/没." },
+     { "context": "Có THỜI LƯỢNG phía sau thì dùng 刚.", "pre": "我", "blank": "刚来两个小时", "post": "。", "options": ["刚来两个小时", "刚才来两个小时", "来刚两个小时"], "answer": 0, "explanation": "刚 + động từ + thời lượng." },
+     { "context": "“Vừa nãy bạn nói gì vậy?”", "pre": "", "blank": "刚才你说什么", "post": "？", "options": ["刚才你说什么", "刚你说什么", "你刚说什么吗"], "answer": 0, "explanation": "刚才 đứng trước chủ ngữ." },
+     { "context": "“Tôi vừa ăn cơm xong.”", "pre": "我", "blank": "刚吃完饭", "post": "。", "options": ["刚吃完饭", "刚才吃完饭了吗", "吃完饭刚"], "answer": 0, "explanation": "Chủ ngữ + 刚 + cụm động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我刚到。", "isCorrect": true, "explanation": "Chủ ngữ + 刚 + động từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "刚我去了他家。", "isCorrect": false, "correctVersion": "我刚去了他家。", "explanation": "刚 là phó từ, đứng sau chủ ngữ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他刚不在。", "isCorrect": false, "correctVersion": "他刚才不在。", "explanation": "刚 không đứng trước từ phủ định." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi vừa mới đến.”", "words": ["我", "刚", "到", "。"], "answer": "我刚到。", "explanation": "我刚到." },
+     { "type": "sort", "context": "Sắp xếp: “Vừa nãy anh ấy không có ở đây.”", "words": ["他", "刚才", "不", "在", "。"], "answer": "他刚才不在。", "explanation": "刚才 + phủ định." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi mới đến được hai tiếng.”", "words": ["我", "刚", "来", "两", "个", "小时", "。"], "answer": "我刚来两个小时。", "explanation": "刚 + động từ + thời lượng." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 刚 hay 刚才.", "promptLang": "vi", "prompt": "Vừa nãy anh ấy không có ở đây.", "answer": "他刚才不在。", "answerPy": "Tā gāngcái bú zài.", "explanation": "Trước phủ định dùng 刚才." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 刚 hay 刚才.", "promptLang": "vi", "prompt": "Tôi vừa mới ăn cơm xong.", "answer": "我刚吃完饭。", "answerPy": "Wǒ gāng chī wán fàn.", "explanation": "Chủ ngữ + 刚 + động từ." }
+    ]
+   },
+   {
+    "title": "「即使……也……」 — nhượng bộ giả thiết",
+    "errors": [
+     { "wrong": "即使下雨，我们还去。", "why": "即使 hô ứng với 也, không dùng 还.", "right": "即使下雨，我们也去。" },
+     { "wrong": "即使下雨，也我们去。", "why": "chủ ngữ vế sau đứng TRƯỚC 也.", "right": "即使下雨，我们也去。" },
+     { "wrong": "虽然下雨，我们也去。", "why": "虽然 nêu sự thật và hô ứng với 但是; 即使 mới nêu giả thiết.", "right": "即使下雨，我们也去。" }
+    ],
+    "items": [
+     { "context": "“Dù trời mưa chúng tôi vẫn đi.” (giả thiết)", "pre": "即使下雨，", "blank": "我们也去", "post": "。", "options": ["我们也去", "我们还去", "也我们去"], "answer": 0, "explanation": "即使 hô ứng với 也; chủ ngữ trước 也." },
+     { "context": "Nêu SỰ THẬT đã xảy ra thì dùng 虽然……但是…….", "pre": "", "blank": "虽然下雨了，但是我们还是去了", "post": "。", "options": ["虽然下雨了，但是我们还是去了", "即使下雨了，但是我们去了", "即使下雨了，我们但是去了"], "answer": 0, "explanation": "即使 = giả thiết; 虽然 = sự thật." },
+     { "context": "“Dù rất khó tôi cũng sẽ học.”", "pre": "即使很难，", "blank": "我也要学", "post": "。", "options": ["我也要学", "我还要学", "也我要学"], "answer": 0, "explanation": "即使……也……." },
+     { "context": "“Dù bạn không đi tôi cũng đi.”", "pre": "即使你不去，", "blank": "我也去", "post": "。", "options": ["我也去", "我就去", "也我去"], "answer": 0, "explanation": "Chủ ngữ vế sau + 也." },
+     { "context": "Điều kiện DUY NHẤT thì dùng 只有……才…….", "pre": "", "blank": "只有努力，才能成功", "post": "。", "options": ["只有努力，才能成功", "即使努力，才能成功", "即使努力，也能成功吗"], "answer": 0, "explanation": "Phân biệt với cặp 只有……才……." },
+     { "context": "“Dù rất bận anh ấy cũng tập thể dục mỗi ngày.”", "pre": "即使很忙，他", "blank": "也每天运动", "post": "。", "options": ["也每天运动", "还每天运动", "就每天运动"], "answer": 0, "explanation": "也 đứng sau chủ ngữ, trước vị ngữ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "即使下雨，我们也去。", "isCorrect": true, "explanation": "即使……也…… — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "即使下雨，我们还去。", "isCorrect": false, "correctVersion": "即使下雨，我们也去。", "explanation": "即使 hô ứng với 也." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "即使下雨，也我们去。", "isCorrect": false, "correctVersion": "即使下雨，我们也去。", "explanation": "Chủ ngữ vế sau đứng trước 也." },
+     { "type": "sort", "context": "Sắp xếp: “Dù trời mưa chúng tôi vẫn đi.”", "words": ["即使", "下雨", "，", "我们", "也", "去", "。"], "answer": "即使下雨，我们也去。", "explanation": "即使……也……." },
+     { "type": "sort", "context": "Sắp xếp: “Dù rất khó tôi cũng sẽ học.”", "words": ["即使", "很", "难", "，", "我", "也", "要", "学", "。"], "answer": "即使很难，我也要学。", "explanation": "也 trước 要." },
+     { "type": "sort", "context": "Sắp xếp: “Dù bạn không đi tôi cũng đi.”", "words": ["即使", "你", "不", "去", "，", "我", "也", "去", "。"], "answer": "即使你不去，我也去。", "explanation": "即使 + chủ ngữ vế đầu." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 即使……也…….", "promptLang": "vi", "prompt": "Dù trời mưa chúng tôi vẫn đi.", "answer": "即使下雨，我们也去。", "answerPy": "Jíshǐ xiàyǔ, wǒmen yě qù.", "explanation": "即使……也……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 即使……也…….", "promptLang": "vi", "prompt": "Dù rất bận anh ấy cũng tập thể dục mỗi ngày.", "answer": "即使很忙，他也每天运动。", "answerPy": "Jíshǐ hěn máng, tā yě měi tiān yùndòng.", "explanation": "Chủ ngữ + 也 + vị ngữ." }
+    ]
+   },
+   {
+    "title": "「(在)……上」 — chỉ phương diện, khía cạnh",
+    "errors": [
+     { "wrong": "在学习他很努力。", "why": "thiếu 上 để tạo cụm chỉ phương diện.", "right": "在学习上他很努力。" },
+     { "wrong": "在上学习他很努力。", "why": "上 đứng SAU danh từ chỉ phạm vi.", "right": "在学习上他很努力。" },
+     { "wrong": "他在身体上很好上。", "why": "上 chỉ dùng một lần.", "right": "他在身体上很好。" }
+    ],
+    "items": [
+     { "context": "“Về mặt học tập anh ấy rất chăm chỉ.”", "pre": "", "blank": "在学习上", "post": "，他很努力。", "options": ["在学习上", "在上学习", "在学习"], "answer": 0, "explanation": "在 + danh từ phạm vi + 上." },
+     { "context": "“Về mặt công việc cô ấy rất nghiêm túc.”", "pre": "", "blank": "在工作上", "post": "，她很认真。", "options": ["在工作上", "在上工作", "工作在上"], "answer": 0, "explanation": "在工作上 = về mặt công việc." },
+     { "context": "Có thể lược 在, giữ 上.", "pre": "", "blank": "学习上", "post": "他没有问题。", "options": ["学习上", "上学习", "在学习"], "answer": 0, "explanation": "在 có thể lược bỏ." },
+     { "context": "上 nghĩa gốc là “trên bề mặt”.", "pre": "书", "blank": "在桌子上", "post": "。", "options": ["在桌子上", "在上桌子", "桌子在上"], "answer": 0, "explanation": "Cùng cấu trúc, nghĩa cụ thể." },
+     { "context": "“Về mặt sức khỏe anh ấy không có vấn đề gì.”", "pre": "", "blank": "在身体上", "post": "，他没有问题。", "options": ["在身体上", "在上身体", "身体在上"], "answer": 0, "explanation": "在身体上." },
+     { "context": "“Về mặt kinh tế nhà họ khá khó khăn.”", "pre": "", "blank": "在经济上", "post": "，他们家比较困难。", "options": ["在经济上", "在上经济", "经济上在"], "answer": 0, "explanation": "在经济上." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "在学习上，他很努力。", "isCorrect": true, "explanation": "在 + phạm vi + 上 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "在学习，他很努力。", "isCorrect": false, "correctVersion": "在学习上，他很努力。", "explanation": "Thiếu 上." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "在上工作，她很认真。", "isCorrect": false, "correctVersion": "在工作上，她很认真。", "explanation": "上 đứng sau danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Về mặt học tập anh ấy rất chăm chỉ.”", "words": ["在", "学习", "上", "，", "他", "很", "努力", "。"], "answer": "在学习上，他很努力。", "explanation": "在学习上." },
+     { "type": "sort", "context": "Sắp xếp: “Về mặt công việc cô ấy rất nghiêm túc.”", "words": ["在", "工作", "上", "，", "她", "很", "认真", "。"], "answer": "在工作上，她很认真。", "explanation": "在工作上." },
+     { "type": "sort", "context": "Sắp xếp: “Về mặt sức khỏe anh ấy không có vấn đề gì.”", "words": ["在", "身体", "上", "，", "他", "没有", "问题", "。"], "answer": "在身体上，他没有问题。", "explanation": "在身体上." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng (在)……上.", "promptLang": "vi", "prompt": "Về mặt học tập anh ấy rất chăm chỉ.", "answer": "在学习上，他很努力。", "answerPy": "Zài xuéxí shàng, tā hěn nǔlì.", "explanation": "在 + phạm vi + 上." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng (在)……上.", "promptLang": "vi", "prompt": "Về mặt công việc cô ấy rất nghiêm túc.", "answer": "在工作上，她很认真。", "answerPy": "Zài gōngzuò shàng, tā hěn rènzhēn.", "explanation": "在工作上." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk4-bai-2.html": {
+  "points": [
+   {
+    "title": "「正好」 — vừa vặn / đúng lúc",
+    "errors": [
+     { "wrong": "这件衣服很正好。", "why": "正好 đã mang nghĩa “vừa vặn”, không thêm 很.", "right": "这件衣服正好。" },
+     { "wrong": "我正好来了，你正好走。", "why": "lạm dụng; 正好 chỉ nhấn một tình huống trùng hợp.", "right": "我来的时候，他正好要走。" },
+     { "wrong": "正好我有时间吗？", "why": "正好 nêu sự trùng hợp, không dùng trong câu hỏi 吗 kiểu này.", "right": "我正好有时间。" }
+    ],
+    "items": [
+     { "context": "“Chiếc áo này vừa vặn.” (tính từ)", "pre": "这件衣服", "blank": "正好", "post": "。", "options": ["正好", "很正好", "正好很"], "answer": 0, "explanation": "正好 đã nêu mức độ, không thêm 很." },
+     { "context": "“Tôi đúng lúc rảnh.” (phó từ)", "pre": "我", "blank": "正好有时间", "post": "。", "options": ["正好有时间", "有时间正好", "很正好有时间"], "answer": 0, "explanation": "正好 + động từ = đúng lúc, gặp dịp." },
+     { "context": "“Tôi đến thì anh ấy vừa định đi.”", "pre": "我来的时候，他", "blank": "正好要走", "post": "。", "options": ["正好要走", "要正好走", "很正好要走"], "answer": 0, "explanation": "正好 đứng trước động từ năng nguyện." },
+     { "context": "“Cỡ này vừa đúng.”", "pre": "这个大小", "blank": "正好", "post": "。", "options": ["正好", "正好的很", "很正好"], "answer": 0, "explanation": "正好 làm vị ngữ." },
+     { "context": "“Đúng lúc bạn đến, giúp tôi một tay nhé.”", "pre": "你", "blank": "正好来了", "post": "，帮我一下吧。", "options": ["正好来了", "来了正好", "很正好来了"], "answer": 0, "explanation": "正好 + động từ." },
+     { "context": "Số tiền vừa đủ.", "pre": "我的钱", "blank": "正好够", "post": "。", "options": ["正好够", "够正好", "很正好够"], "answer": 0, "explanation": "正好够 = vừa đủ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件衣服正好。", "isCorrect": true, "explanation": "正好 làm vị ngữ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件衣服很正好。", "isCorrect": false, "correctVersion": "这件衣服正好。", "explanation": "正好 không đi cùng 很." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我正好有时间，我们一起去吧。", "isCorrect": true, "explanation": "正好 + động từ, nêu sự trùng hợp — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Chiếc áo này vừa vặn.”", "words": ["这", "件", "衣服", "正好", "。"], "answer": "这件衣服正好。", "explanation": "正好 làm vị ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đúng lúc rảnh, chúng ta cùng đi nhé.”", "words": ["我", "正好", "有", "时间", "，", "我们", "一起", "去", "吧", "。"], "answer": "我正好有时间，我们一起去吧。", "explanation": "正好有时间." },
+     { "type": "sort", "context": "Sắp xếp: “Lúc tôi đến thì anh ấy vừa định đi.”", "words": ["我", "来", "的", "时候", "，", "他", "正好", "要", "走", "。"], "answer": "我来的时候，他正好要走。", "explanation": "正好要走." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 正好.", "promptLang": "vi", "prompt": "Chiếc áo này vừa vặn.", "answer": "这件衣服正好。", "answerPy": "Zhè jiàn yīfu zhènghǎo.", "explanation": "Không thêm 很." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 正好.", "promptLang": "vi", "prompt": "Tôi đúng lúc rảnh, chúng ta cùng đi nhé.", "answer": "我正好有时间，我们一起去吧。", "answerPy": "Wǒ zhènghǎo yǒu shíjiān, wǒmen yìqǐ qù ba.", "explanation": "正好 + động từ." }
+    ]
+   },
+   {
+    "title": "「差不多」 so sánh với 「几乎」",
+    "errors": [
+     { "wrong": "他几乎高。", "why": "几乎 KHÔNG đứng ngay trước tính từ đơn âm tiết; dùng 差不多.", "right": "他差不多高。" },
+     { "wrong": "几乎二十个人来了。", "why": "trước cụm số lượng dùng 差不多.", "right": "差不多二十个人来了。" },
+     { "wrong": "我差不多迟到了，还好赶上了。", "why": "việc SUÝT xảy ra nhưng không xảy ra thì dùng 几乎.", "right": "我几乎迟到了，还好赶上了。" }
+    ],
+    "items": [
+     { "context": "Trước TÍNH TỪ đơn âm tiết chỉ dùng được 差不多.", "pre": "他们两个人", "blank": "差不多高", "post": "。", "options": ["差不多高", "几乎高", "几乎差不多高"], "answer": 0, "explanation": "几乎 không đứng ngay trước tính từ đơn âm." },
+     { "context": "Trước CỤM SỐ LƯỢNG dùng 差不多.", "pre": "", "blank": "差不多二十个人", "post": "来了。", "options": ["差不多二十个人", "几乎二十个人", "几乎差不多二十个人"], "answer": 0, "explanation": "差不多 + số lượng." },
+     { "context": "Việc SUÝT xảy ra (nhưng không xảy ra) dùng 几乎.", "pre": "我", "blank": "几乎迟到了", "post": "，还好赶上了。", "options": ["几乎迟到了", "差不多迟到了", "几乎差不多迟到了"], "answer": 0, "explanation": "几乎 diễn tả suýt nữa thì…" },
+     { "context": "“Hai cái này gần như giống nhau.”", "pre": "这两个", "blank": "差不多", "post": "。", "options": ["差不多", "几乎", "很差不多"], "answer": 0, "explanation": "差不多 làm vị ngữ được, 几乎 thì không." },
+     { "context": "“Gần như mọi người đều đến rồi.”", "pre": "", "blank": "几乎所有人都来了", "post": "。", "options": ["几乎所有人都来了", "差不多所有人几乎来了", "所有人几乎都来了吗"], "answer": 0, "explanation": "几乎 + 所有/全部." },
+     { "context": "“Tôi làm gần xong rồi.”", "pre": "我", "blank": "差不多做完了", "post": "。", "options": ["差不多做完了", "几乎差不多做完了", "做完差不多了"], "answer": 0, "explanation": "差不多 + động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他们两个人差不多高。", "isCorrect": true, "explanation": "差不多 + tính từ đơn âm — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "几乎二十个人来了。", "isCorrect": false, "correctVersion": "差不多二十个人来了。", "explanation": "Trước cụm số lượng dùng 差不多." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我差不多迟到了，还好赶上了。", "isCorrect": false, "correctVersion": "我几乎迟到了，还好赶上了。", "explanation": "Việc suýt xảy ra dùng 几乎." },
+     { "type": "sort", "context": "Sắp xếp: “Hai người họ cao gần bằng nhau.”", "words": ["他们", "两", "个", "人", "差不多", "高", "。"], "answer": "他们两个人差不多高。", "explanation": "差不多高." },
+     { "type": "sort", "context": "Sắp xếp: “Suýt nữa thì tôi đi muộn.”", "words": ["我", "几乎", "迟到", "了", "。"], "answer": "我几乎迟到了。", "explanation": "几乎迟到了." },
+     { "type": "sort", "context": "Sắp xếp: “Gần như mọi người đều đến rồi.”", "words": ["几乎", "所有", "人", "都", "来", "了", "。"], "answer": "几乎所有人都来了。", "explanation": "几乎 + 所有." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 差不多 hay 几乎.", "promptLang": "vi", "prompt": "Hai người họ cao gần bằng nhau.", "answer": "他们两个人差不多高。", "answerPy": "Tāmen liǎng ge rén chàbuduō gāo.", "explanation": "Trước tính từ đơn âm dùng 差不多." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 差不多 hay 几乎.", "promptLang": "vi", "prompt": "Suýt nữa thì tôi đi muộn, may mà kịp.", "answer": "我几乎迟到了，还好赶上了。", "answerPy": "Wǒ jīhū chídào le, háihǎo gǎn shàng le.", "explanation": "Suýt xảy ra → 几乎." }
+    ]
+   },
+   {
+    "title": "「尽管」 — mặc dù",
+    "errors": [
+     { "wrong": "尽管他很累，所以还在工作。", "why": "尽管 hô ứng với 但是/可是/却/还是, không đi với 所以.", "right": "尽管他很累，但是还在工作。" },
+     { "wrong": "尽管下雨，也我们去了。", "why": "chủ ngữ vế sau đứng TRƯỚC 还是/却.", "right": "尽管下雨，我们还是去了。" },
+     { "wrong": "尽管明天下雨，我们也去。", "why": "尽管 nêu SỰ THẬT; giả thiết thì dùng 即使.", "right": "即使明天下雨，我们也去。" }
+    ],
+    "items": [
+     { "context": "“Mặc dù anh ấy rất mệt nhưng vẫn đang làm việc.”", "pre": "尽管他很累，", "blank": "但是还在工作", "post": "。", "options": ["但是还在工作", "所以还在工作", "因为还在工作"], "answer": 0, "explanation": "尽管 hô ứng với 但是/可是/却/还是." },
+     { "context": "“Mặc dù trời mưa chúng tôi vẫn đi.”", "pre": "尽管下雨，", "blank": "我们还是去了", "post": "。", "options": ["我们还是去了", "还是我们去了", "我们也去了吗"], "answer": 0, "explanation": "Chủ ngữ vế sau đứng trước 还是." },
+     { "context": "尽管 nêu SỰ THẬT; giả thiết dùng 即使.", "pre": "", "blank": "即使明天下雨，我们也去", "post": "。", "options": ["即使明天下雨，我们也去", "尽管明天下雨，我们也去", "尽管明天下雨，所以我们去"], "answer": 0, "explanation": "Việc chưa xảy ra → 即使." },
+     { "context": "Hô ứng bằng 却.", "pre": "尽管很忙，他", "blank": "却", "post": "每天都运动。", "options": ["却", "所以", "因为"], "answer": 0, "explanation": "却 đứng sau chủ ngữ, trước vị ngữ." },
+     { "context": "“Mặc dù giá đắt nhưng rất nhiều người mua.”", "pre": "尽管价格很贵，", "blank": "但是买的人很多", "post": "。", "options": ["但是买的人很多", "所以买的人很多", "因为买的人很多"], "answer": 0, "explanation": "尽管……但是……." },
+     { "context": "尽管 có thể đứng SAU chủ ngữ.", "pre": "他", "blank": "尽管很忙，但是还坚持学习", "post": "。", "options": ["尽管很忙，但是还坚持学习", "尽管很忙，所以还坚持学习", "很忙尽管，但是还坚持学习"], "answer": 0, "explanation": "Chủ ngữ + 尽管……，但是……." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "尽管他很累，但是还在工作。", "isCorrect": true, "explanation": "尽管……但是…… — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "尽管他很累，所以还在工作。", "isCorrect": false, "correctVersion": "尽管他很累，但是还在工作。", "explanation": "尽管 không hô ứng với 所以." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "尽管明天下雨，我们也去。", "isCorrect": false, "correctVersion": "即使明天下雨，我们也去。", "explanation": "Việc chưa xảy ra thì dùng 即使." },
+     { "type": "sort", "context": "Sắp xếp: “Mặc dù anh ấy rất mệt nhưng vẫn đang làm việc.”", "words": ["尽管", "他", "很", "累", "，", "但是", "还", "在", "工作", "。"], "answer": "尽管他很累，但是还在工作。", "explanation": "尽管……但是……." },
+     { "type": "sort", "context": "Sắp xếp: “Mặc dù trời mưa chúng tôi vẫn đi.”", "words": ["尽管", "下雨", "，", "我们", "还是", "去", "了", "。"], "answer": "尽管下雨，我们还是去了。", "explanation": "尽管……还是……." },
+     { "type": "sort", "context": "Sắp xếp: “Mặc dù rất bận nhưng anh ấy vẫn tập thể dục mỗi ngày.”", "words": ["尽管", "很", "忙", "，", "他", "却", "每天", "都", "运动", "。"], "answer": "尽管很忙，他却每天都运动。", "explanation": "尽管……却……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 尽管……但是…….", "promptLang": "vi", "prompt": "Mặc dù anh ấy rất mệt nhưng vẫn đang làm việc.", "answer": "尽管他很累，但是还在工作。", "answerPy": "Jǐnguǎn tā hěn lèi, dànshì hái zài gōngzuò.", "explanation": "尽管……但是……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 尽管……还是…….", "promptLang": "vi", "prompt": "Mặc dù trời mưa chúng tôi vẫn đi.", "answer": "尽管下雨，我们还是去了。", "answerPy": "Jǐnguǎn xiàyǔ, wǒmen háishi qù le.", "explanation": "Chủ ngữ vế sau trước 还是." }
+    ]
+   },
+   {
+    "title": "「却」 — chuyển ý nhẹ nhàng",
+    "errors": [
+     { "wrong": "却他没来。", "why": "却 là phó từ, đứng SAU chủ ngữ.", "right": "他却没来。" },
+     { "wrong": "他却没来，但是我们等了很久。", "why": "却 và 但是 không dùng chồng trong cùng một vế.", "right": "我们等了很久，他却没来。" },
+     { "wrong": "虽然他很累，却他还在工作。", "why": "chủ ngữ vế sau phải đứng trước 却.", "right": "虽然他很累，但他却还在工作。" }
+    ],
+    "items": [
+     { "context": "“Chúng tôi đợi rất lâu, vậy mà anh ấy không đến.”", "pre": "我们等了很久，", "blank": "他却没来", "post": "。", "options": ["他却没来", "却他没来", "他没来却"], "answer": 0, "explanation": "却 đứng sau chủ ngữ, trước vị ngữ." },
+     { "context": "却 là PHÓ TỪ, 但是 là LIÊN TỪ.", "pre": "虽然很忙，", "blank": "他却很快乐", "post": "。", "options": ["他却很快乐", "却他很快乐", "但是他却但是很快乐"], "answer": 0, "explanation": "却 đứng trong vế, sau chủ ngữ." },
+     { "context": "“Giá rẻ nhưng chất lượng lại rất tốt.”", "pre": "价格很便宜，", "blank": "质量却很好", "post": "。", "options": ["质量却很好", "却质量很好", "质量很好却"], "answer": 0, "explanation": "Chủ ngữ 质量 + 却 + vị ngữ." },
+     { "context": "Vị trí của 却 khi có phủ định.", "pre": "我给他打了电话，他", "blank": "却没接", "post": "。", "options": ["却没接", "没却接", "接却没"], "answer": 0, "explanation": "却 đứng trước từ phủ định." },
+     { "context": "“Tôi tưởng anh ấy sẽ đến, vậy mà không.”", "pre": "我以为他会来，", "blank": "他却没来", "post": "。", "options": ["他却没来", "却他没来", "他没来却了"], "answer": 0, "explanation": "以为……，却……." },
+     { "context": "“Học rất lâu rồi mà vẫn chưa nói được.”", "pre": "学了很久，", "blank": "却还不会说", "post": "。", "options": ["却还不会说", "还却不会说", "不会说却还"], "answer": 0, "explanation": "却 + 还 + phủ định." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们等了很久，他却没来。", "isCorrect": true, "explanation": "却 sau chủ ngữ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们等了很久，却他没来。", "isCorrect": false, "correctVersion": "我们等了很久，他却没来。", "explanation": "却 là phó từ, đứng sau chủ ngữ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "价格很便宜，质量却很好。", "isCorrect": true, "explanation": "Chủ ngữ 质量 + 却 — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng tôi đợi rất lâu, vậy mà anh ấy không đến.”", "words": ["我们", "等", "了", "很久", "，", "他", "却", "没", "来", "。"], "answer": "我们等了很久，他却没来。", "explanation": "他却没来." },
+     { "type": "sort", "context": "Sắp xếp: “Giá rẻ nhưng chất lượng lại rất tốt.”", "words": ["价格", "很", "便宜", "，", "质量", "却", "很", "好", "。"], "answer": "价格很便宜，质量却很好。", "explanation": "质量却很好." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi gọi điện cho anh ấy nhưng anh ấy lại không nghe máy.”", "words": ["我", "给", "他", "打", "了", "电话", "，", "他", "却", "没", "接", "。"], "answer": "我给他打了电话，他却没接。", "explanation": "却没接." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 却.", "promptLang": "vi", "prompt": "Chúng tôi đợi rất lâu, vậy mà anh ấy không đến.", "answer": "我们等了很久，他却没来。", "answerPy": "Wǒmen děng le hěn jiǔ, tā què méi lái.", "explanation": "却 sau chủ ngữ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 却.", "promptLang": "vi", "prompt": "Giá rất rẻ nhưng chất lượng lại rất tốt.", "answer": "价格很便宜，质量却很好。", "answerPy": "Jiàgé hěn piányi, zhìliàng què hěn hǎo.", "explanation": "质量却很好." }
+    ]
+   },
+   {
+    "title": "Liên từ 「而」",
+    "errors": [
+     { "wrong": "他很高，而他很瘦而。", "why": "而 chỉ dùng một lần, ở giữa hai vế.", "right": "他很高，而且很瘦。" },
+     { "wrong": "而他很高，他很瘦。", "why": "而 đứng ở ĐẦU vế thứ hai, không đứng đầu câu.", "right": "他很高，而他弟弟很矮。" },
+     { "wrong": "我喜欢茶，而喜欢咖啡。", "why": "hai vế cùng ý thì dùng 也; 而 dùng khi hai vế TƯƠNG PHẢN hoặc song song có đối chiếu.", "right": "我喜欢茶，而他喜欢咖啡。" }
+    ],
+    "items": [
+     { "context": "Hai vế ĐỐI CHIẾU nhau.", "pre": "我喜欢茶，", "blank": "而他喜欢咖啡", "post": "。", "options": ["而他喜欢咖啡", "而喜欢咖啡", "他而喜欢咖啡"], "answer": 0, "explanation": "而 + vế thứ hai có chủ ngữ riêng." },
+     { "context": "“Anh ấy cao, còn em trai thì thấp.”", "pre": "他很高，", "blank": "而他弟弟很矮", "post": "。", "options": ["而他弟弟很矮", "而很矮他弟弟", "他弟弟而很矮"], "answer": 0, "explanation": "而 đứng đầu vế hai." },
+     { "context": "Hai vế CÙNG ý thì dùng 而且.", "pre": "这个菜很好吃，", "blank": "而且很便宜", "post": "。", "options": ["而且很便宜", "而很便宜", "而且而很便宜"], "answer": 0, "explanation": "而且 = hơn nữa; 而 = còn/mà (đối chiếu)." },
+     { "context": "“Học mà không nghĩ thì uổng công.”", "pre": "学习", "blank": "而不思考", "post": "，是没有用的。", "options": ["而不思考", "而不而思考", "不而思考"], "answer": 0, "explanation": "而 nối hai hành động đối lập." },
+     { "context": "“Cô ấy đi làm, còn tôi đi học.”", "pre": "她去上班，", "blank": "而我去上学", "post": "。", "options": ["而我去上学", "而去上学我", "我而去上学"], "answer": 0, "explanation": "而 + chủ ngữ + vị ngữ." },
+     { "context": "“Việc này không khó mà rất thú vị.”", "pre": "这件事不难，", "blank": "而很有意思", "post": "。", "options": ["而很有意思", "而且而很有意思", "很有意思而"], "answer": 0, "explanation": "而 nêu ý chuyển nhẹ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我喜欢茶，而他喜欢咖啡。", "isCorrect": true, "explanation": "而 nối hai vế đối chiếu — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "而他很高，他弟弟很矮。", "isCorrect": false, "correctVersion": "他很高，而他弟弟很矮。", "explanation": "而 đứng đầu vế thứ HAI." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这个菜很好吃，而很便宜。", "isCorrect": false, "correctVersion": "这个菜很好吃，而且很便宜。", "explanation": "Hai vế cùng ý thì dùng 而且." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi thích trà, còn anh ấy thích cà phê.”", "words": ["我", "喜欢", "茶", "，", "而", "他", "喜欢", "咖啡", "。"], "answer": "我喜欢茶，而他喜欢咖啡。", "explanation": "而 + vế hai." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy cao, còn em trai anh ấy thì thấp.”", "words": ["他", "很", "高", "，", "而", "他", "弟弟", "很", "矮", "。"], "answer": "他很高，而他弟弟很矮。", "explanation": "而他弟弟很矮." },
+     { "type": "sort", "context": "Sắp xếp: “Cô ấy đi làm, còn tôi đi học.”", "words": ["她", "去", "上班", "，", "而", "我", "去", "上学", "。"], "answer": "她去上班，而我去上学。", "explanation": "而我去上学." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 而.", "promptLang": "vi", "prompt": "Tôi thích trà, còn anh ấy thích cà phê.", "answer": "我喜欢茶，而他喜欢咖啡。", "answerPy": "Wǒ xǐhuan chá, ér tā xǐhuan kāfēi.", "explanation": "而 nối hai vế đối chiếu." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 而.", "promptLang": "vi", "prompt": "Cô ấy đi làm, còn tôi đi học.", "answer": "她去上班，而我去上学。", "answerPy": "Tā qù shàngbān, ér wǒ qù shàngxué.", "explanation": "而 + chủ ngữ + vị ngữ." }
+    ]
+   }
+  ]
+ }
+}

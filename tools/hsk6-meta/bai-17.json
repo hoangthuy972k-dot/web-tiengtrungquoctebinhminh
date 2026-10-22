@@ -1,0 +1,112 @@
+{
+ "zh": "小动物眼中的慢世界",
+ "py": "Xiǎo dòngwù yǎn zhōng de màn shìjiè",
+ "vn": "Thế giới chậm trong mắt động vật nhỏ",
+ "topic": "第五单元 美丽家园 · Thị giác và tốc độ xử lý thông tin của động vật nhỏ",
+ "vocabCount": 44,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "东A西B（东张西望）",
+   "explain": "\"东张西望\" được tạo thành từ khuôn \"东A西B\", biểu thị \"chỗ này … , chỗ kia …\" (这里……，那里……) — hành động lặp đi lặp lại ở nhiều nơi, theo nhiều hướng, thường có vẻ lộn xộn, không tập trung. A và B sau 东, 西 thường là hai từ GẦN NGHĨA (张 — 望 đều là nhìn; 拉 — 扯 đều là kéo; 躲 — 藏 đều là trốn). Cả cụm có thể làm vị ngữ, định ngữ (东张西望的苍蝇) hoặc trạng ngữ (东拉西扯地闲聊). Khuôn này còn có dạng 东一句西一句 (câu này câu kia, nói không đầu không cuối).",
+   "rule": "<strong style=\"color:var(--sky-d)\">东</strong> + A + <strong style=\"color:var(--sky-d)\">西</strong> + B (A ≈ B)：东张西望 · 东拉西扯 · 东躲西藏 · 东奔西走　|　<strong style=\"color:var(--sky-d)\">东一……西一……</strong>：东一句西一句",
+   "examples": [
+    {
+     "zh": "大家吃完饭没事干，只好东拉西扯地闲聊天儿。",
+     "py": "Dàjiā chīwán fàn méi shì gàn, zhǐhǎo dōnglā-xīchě de xián liáotiānr.",
+     "vn": "Ăn cơm xong chẳng có việc gì làm, mọi người đành tán gẫu đủ thứ chuyện trên trời dưới đất."
+    },
+    {
+     "zh": "有人端来一个盛着菜的盘子，立刻飞来一只东张西望的苍蝇，企图落在盘子上，人动手去打，却总是打不中。",
+     "py": "Yǒu rén duānlái yí ge chéngzhe cài de pánzi, lìkè fēilái yì zhī dōngzhāng-xīwàng de cāngying, qǐtú luò zài pánzi shang, rén dòng shǒu qù dǎ, què zǒngshì dǎ bu zhòng.",
+     "vn": "Có người bưng ra một chiếc đĩa đựng thức ăn, lập tức một con ruồi nhìn ngang nhìn dọc bay tới, toan đậu xuống đĩa; người ta giơ tay đập nhưng lần nào cũng không trúng."
+    },
+    {
+     "zh": "客人还不走，我只好跟他东一句西一句地没话找话说。",
+     "py": "Kèrén hái bù zǒu, wǒ zhǐhǎo gēn tā dōng yí jù xī yí jù de méi huà zhǎo huà shuō.",
+     "vn": "Khách vẫn chưa về, tôi đành nói với ông ấy câu này câu kia, cố kiếm chuyện để nói."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他在门口东看西张。",
+     "why": "Thành ngữ cố định là 东张西望 (东 + 张, 西 + 望), không tự đảo hay thay chữ.",
+     "right": "他在门口东张西望。"
+    },
+    {
+     "wrong": "大家东拉西扯地认真讨论了这个问题。",
+     "why": "东拉西扯 = nói lan man, không vào trọng tâm — mâu thuẫn với 认真讨论.",
+     "right": "大家东拉西扯地闲聊了一个下午。（或：大家认真讨论了这个问题。）"
+    }
+   ]
+  },
+  {
+   "point": "中（zhòng）",
+   "explain": "\"中\" đọc thanh 4 (zhòng) là ĐỘNG TỪ, có hai nghĩa chính: ① \"trúng, đúng vào, vừa khớp\" (正对上、恰好合上): 打中, 猜中, 看中, 选中, 射中; phủ định bằng bổ ngữ khả năng: 打不中 = đánh không trúng. ② \"chịu, bị, mắc phải\" (受到、遭受) một điều không may: 中暑 (say nắng), 中毒 (trúng độc), 中计 (mắc mưu), 中弹 (trúng đạn). Chú ý phân biệt với 中 zhōng (giữa, trong).",
+   "rule": "V + <strong style=\"color:var(--sky-d)\">中</strong>（打中 / 猜中 / 看中 / 选中）　|　V + <strong style=\"color:var(--sky-d)\">不中</strong>（打不中）　|　<strong style=\"color:var(--sky-d)\">中</strong> + N（中暑 / 中毒 / 中计）",
+   "examples": [
+    {
+     "zh": "有人端来一个盛着菜的盘子，立刻飞来一只东张西望的苍蝇，企图落在盘子上，人动手去打，却总是打不中。",
+     "py": "Yǒu rén duānlái yí ge chéngzhe cài de pánzi, lìkè fēilái yì zhī dōngzhāng-xīwàng de cāngying, qǐtú luò zài pánzi shang, rén dòng shǒu qù dǎ, què zǒngshì dǎ bu zhòng.",
+     "vn": "Có người bưng ra một chiếc đĩa đựng thức ăn, lập tức một con ruồi bay tới toan đậu xuống đĩa; người ta giơ tay đập nhưng lần nào cũng đập không trúng."
+    },
+    {
+     "zh": "今天的谜语，猜中了有奖。",
+     "py": "Jīntiān de míyǔ, cāizhòngle yǒu jiǎng.",
+     "vn": "Câu đố hôm nay, đoán trúng thì có thưởng."
+    },
+    {
+     "zh": "晚上再出去吧，中午太热，小心出门中暑。",
+     "py": "Wǎnshang zài chūqù ba, zhōngwǔ tài rè, xiǎoxīn chūmén zhòngshǔ.",
+     "vn": "Tối hẵng ra ngoài, buổi trưa nóng quá, ra đường coi chừng say nắng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这种蘑菇有毒，吃了会中（zhōng）毒的。",
+     "why": "中毒 (trúng độc) đọc zhòng (thanh 4) vì 中 ở đây là động từ \"bị, mắc phải\".",
+     "right": "这种蘑菇有毒，吃了会中（zhòng）毒的。"
+    },
+    {
+     "wrong": "我打了好几次都没打得中。",
+     "why": "Phủ định bổ ngữ kết quả dùng 没 + V中 (没打中) hoặc bổ ngữ khả năng V不中 (打不中); không nói 没打得中.",
+     "right": "我打了好几次都没打中。（或：我怎么打都打不中。）"
+    }
+   ]
+  },
+  {
+   "point": "姑且",
+   "explain": "\"姑且\" là PHÓ TỪ, biểu thị trong tình huống bất đắc dĩ thì TẠM THỜI làm như vậy, sau này sẽ tính cách khác; mang ý MIỄN CƯỠNG, NHƯỢNG BỘ (cứ tạm …, tạm thời …). Đứng trước động từ, hay đi cùng 先 và trợ từ 吧 cuối câu. Cụm cố định: \"A 姑且不论 / 姑且不说\" = tạm chưa bàn đến A (để nói điều quan trọng hơn ở vế sau, thường có 但). Văn viết hơn 暂且 / 先.",
+   "rule": "<strong style=\"color:var(--sky-d)\">姑且</strong> + (先) + V (+ 吧)，以后再……　|　A + <strong style=\"color:var(--sky-d)\">姑且不论</strong>，但……",
+   "examples": [
+    {
+     "zh": "狗，哦，我们姑且换一个文雅的称呼吧，犬的CFF为80HZ。",
+     "py": "Gǒu, ò, wǒmen gūqiě huàn yí ge wényǎ de chēnghu ba, quǎn de CFF wéi bāshí HZ.",
+     "vn": "Chó — ồ, chúng ta tạm đổi sang một cách gọi văn nhã vậy — CFF của \"khuyển\" là 80 Hz."
+    },
+    {
+     "zh": "这件事，你姑且先答应下来，然后再慢慢想办法。",
+     "py": "Zhè jiàn shì, nǐ gūqiě xiān dāying xiàlái, ránhòu zài mànmàn xiǎng bànfǎ.",
+     "vn": "Việc này, cậu cứ tạm nhận lời đã, rồi từ từ nghĩ cách."
+    },
+    {
+     "zh": "别让你妈妈着急了，你姑且按她说的做吧。",
+     "py": "Bié ràng nǐ māma zháojí le, nǐ gūqiě àn tā shuō de zuò ba.",
+     "vn": "Đừng để mẹ cậu sốt ruột nữa, cậu cứ tạm làm theo lời mẹ đi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他姑且是我最好的朋友。",
+     "why": "姑且 chỉ hành động tạm thời, miễn cưỡng (đi với động từ hành động), không dùng để khẳng định một sự thật lâu dài.",
+     "right": "他一直是我最好的朋友。"
+    },
+    {
+     "wrong": "姑且我们先在这儿住一晚吧。",
+     "why": "姑且 là phó từ, đứng SAU chủ ngữ, trước động từ.",
+     "right": "我们姑且先在这儿住一晚吧。"
+    }
+   ]
+  }
+ ]
+}

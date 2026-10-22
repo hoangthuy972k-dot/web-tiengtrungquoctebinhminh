@@ -1,0 +1,946 @@
+[
+ {
+  "so": "1",
+  "ten": "「一旦」",
+  "tenVn": "",
+  "cauTruc": [
+   "一旦 + điều kiện / sự việc，(S) + 就 / 便 + kết quả",
+   "S + 一旦 + V (了)，就 ……"
+  ],
+  "giaiThich": "一旦 là phó từ, chỉ một thời điểm KHÔNG xác định: \"một ngày nào đó bỗng …\" hoặc giả định \"nếu có ngày …\". Đứng ở vế trước (trước hoặc sau chủ ngữ), vế sau thường có 就 / 便 nêu kết quả tất yếu. Không đi với từ chỉ thời gian xác định (明天, 明年…) và vế sau không nối bằng 所以 / 但是.",
+  "viDu": [
+   {
+    "zh": "长大后，我终于明白了这个道理：女人一旦做了母亲，就变得矛盾了。",
+    "py": "Zhǎngdà hòu, wǒ zhōngyú míngbaile zhège dàolǐ: nǚrén yídàn zuòle mǔqīn, jiù biàn de máodùn le.",
+    "vn": "Lớn lên, tôi cuối cùng cũng hiểu ra đạo lý này: người phụ nữ một khi đã làm mẹ thì trở nên đầy mâu thuẫn."
+   },
+   {
+    "zh": "灰姑娘一旦进了这个王宫，……应该怎样对待她的继母，应该怎样对待她的两个姐姐？",
+    "py": "Huīgūniang yídàn jìnle zhège wánggōng, …… yīnggāi zěnyàng duìdài tā de jìmǔ, yīnggāi zěnyàng duìdài tā de liǎng ge jiějie?",
+    "vn": "Lọ Lem một khi đã vào hoàng cung, … thì nên đối xử với mẹ kế thế nào, nên đối xử với hai người chị thế nào?"
+   },
+   {
+    "zh": "所谓私人空间，是指我们身体周围的一定的空间，一旦有人闯入这个空间，我们就会感觉不舒服、不自在。",
+    "py": "Suǒwèi sīrén kōngjiān, shì zhǐ wǒmen shēntǐ zhōuwéi de yídìng de kōngjiān, yídàn yǒu rén chuǎngrù zhège kōngjiān, wǒmen jiù huì gǎnjué bù shūfu, bú zìzai.",
+    "vn": "Cái gọi là không gian riêng là khoảng không gian nhất định quanh cơ thể ta; một khi có người xông vào khoảng không gian này, ta sẽ thấy khó chịu, không thoải mái."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "资料一旦提交，所以不能更改了。",
+    "why": "Vế sau của 一旦 nêu kết quả tất yếu, dùng 就 / 便, không dùng 所以.",
+    "dung": "资料一旦提交，就不能更改了。"
+   },
+   {
+    "sai": "一旦明年毕业，我就去中国留学。",
+    "why": "一旦 chỉ thời điểm không xác định; việc chắc chắn xảy ra vào lúc xác định (明年毕业) dùng 一……就…… hoặc 等……以后.",
+    "dung": "明年一毕业，我就去中国留学。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "网上报名的资料",
+       "提交，就不能更改了。"
+      ],
+      "dap": [
+       [
+        "一旦"
+       ]
+      ],
+      "chon": [
+       "一旦",
+       "自从",
+       "难免"
+      ],
+      "goiY": "“Hồ sơ MỘT KHI đã nộp thì không sửa được nữa.”",
+      "giai": "一旦 + sự việc，就 + kết quả (câu nghe 2 của sách bài tập)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "女人",
+       "做了母亲，就变得矛盾了。"
+      ],
+      "dap": [
+       [
+        "一旦"
+       ]
+      ],
+      "chon": [
+       "一旦",
+       "自从",
+       "难免"
+      ],
+      "goiY": "“Người phụ nữ một khi đã làm mẹ …”",
+      "giai": "Câu ví dụ (1) của sách: 一旦 đứng sau chủ ngữ 女人."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "所谓私人空间，是指我们身体周围的一定的空间，",
+       "有人闯入这个空间，我们就会感觉不舒服。"
+      ],
+      "dap": [
+       [
+        "一旦"
+       ]
+      ],
+      "chon": [
+       "一旦",
+       "自从",
+       "虽然"
+      ],
+      "goiY": "“… một khi có người xông vào …”",
+      "giai": "Câu ví dụ (3) của sách: 一旦 đứng đầu vế, trước chủ ngữ 有人."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一旦做了决定，他",
+       "不会轻易改变。"
+      ],
+      "dap": [
+       [
+        "就"
+       ]
+      ],
+      "chon": [
+       "就",
+       "才",
+       "都"
+      ],
+      "goiY": "“Một khi đã quyết định, anh ấy (THÌ) không dễ thay đổi.”",
+      "giai": "Vế sau của 一旦 dùng 就 nêu kết quả tất yếu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "好习惯一旦养成，",
+       "会影响你的一生。"
+      ],
+      "dap": [
+       [
+        "就",
+        "便"
+       ]
+      ],
+      "chon": [
+       "就",
+       "才",
+       "却"
+      ],
+      "goiY": "“Thói quen tốt một khi đã hình thành thì sẽ ảnh hưởng cả đời.”",
+      "giai": "一旦……就 / 便……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "人",
+       "失去了健康，有再多的钱也没有用。"
+      ],
+      "dap": [
+       [
+        "一旦"
+       ]
+      ],
+      "chon": [
+       "一旦",
+       "自从",
+       "难免"
+      ],
+      "goiY": "“Con người một khi mất sức khoẻ …” (giả định)",
+      "giai": "Giả định một ngày nào đó xảy ra → 一旦."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "资料",
+       "一旦",
+       "提交",
+       "，",
+       "就",
+       "不能更改了",
+       "。"
+      ],
+      "dap": [
+       "资料一旦提交，就不能更改了。"
+      ],
+      "goiY": "Hồ sơ một khi đã nộp thì không sửa được nữa.",
+      "giai": "S + 一旦 + V，就 + kết quả."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "一旦",
+       "有人闯入这个空间",
+       "，",
+       "我们",
+       "就会",
+       "感觉不舒服",
+       "。"
+      ],
+      "dap": [
+       "一旦有人闯入这个空间，我们就会感觉不舒服。"
+      ],
+      "goiY": "Một khi có người xông vào không gian này, ta sẽ thấy khó chịu.",
+      "giai": "一旦 đứng đầu câu khi hai vế khác chủ ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "好习惯",
+       "一旦",
+       "养成",
+       "，",
+       "就",
+       "很难改变",
+       "。"
+      ],
+      "dap": [
+       "好习惯一旦养成，就很难改变。"
+      ],
+      "goiY": "Thói quen tốt một khi đã hình thành thì rất khó thay đổi.",
+      "giai": "一旦 + V，就 + kết quả."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "手机一旦丢了，里面的资料就都找不回来了。",
+      "dung": true,
+      "giai": "Đúng: 一旦 + giả định (丢了)，就 + kết quả."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "一旦明年毕业，我就去中国留学。",
+      "dung": false,
+      "sua": "明年一毕业，我就去中国留学。",
+      "giai": "Việc chắc chắn xảy ra vào thời điểm xác định không dùng 一旦."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你一旦提交了资料，所以不能更改了。",
+      "dung": false,
+      "sua": "你一旦提交了资料，就不能更改了。",
+      "giai": "Vế sau của 一旦 dùng 就, không dùng 所以."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Một khi đã quyết định thì phải kiên trì đến cùng.",
+      "dap": [
+       "一旦做了决定，就要坚持到底。",
+       "一旦决定了，就要坚持到底。",
+       "一旦做出决定，就要坚持到底。",
+       "一旦做了决定，就要坚持下去。"
+      ],
+      "py": "Yídàn zuòle juédìng, jiù yào jiānchí dàodǐ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一旦……就…….",
+      "giai": "一旦 + 做了决定，就要 + V."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Lọ Lem một khi đã vào hoàng cung thì nên đối xử với mẹ kế thế nào?",
+      "dap": [
+       "灰姑娘一旦进了王宫，应该怎样对待继母？",
+       "灰姑娘一旦进了王宫，应该怎么对待继母？",
+       "灰姑娘一旦进入王宫，应该怎样对待继母？",
+       "灰姑娘一旦进入王宫，应该怎么对待继母？",
+       "灰姑娘一旦进了王宫，应该怎样对待她的继母？"
+      ],
+      "py": "Huīgūniang yídàn jìnle wánggōng, yīnggāi zěnyàng duìdài jìmǔ?",
+      "goiY": "Dịch sang tiếng Trung, dùng 一旦 và 对待.",
+      "giai": "Câu hỏi của giáo viên trong bài khoá."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：明年就要毕业了，你有什么计划？　B：＿＿＿。",
+      "goiY": "nói về kế hoạch, dùng 一旦……就…… — câu 练一练 (1) của sách",
+      "mau": "我想去中国留学，一旦申请成功，我就开始准备。",
+      "can": [
+       [
+        "一旦"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "天冷了，多穿点儿，＿＿＿。",
+      "goiY": "nhắc hậu quả nếu bị cảm, dùng 一旦 — câu 练一练 (3) của sách",
+      "mau": "天冷了，多穿点儿，一旦感冒了，就会影响学习。",
+      "can": [
+       [
+        "一旦"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 一旦……就……, nhắc bạn bè một điều cần cẩn thận (mật khẩu, lời hứa, bài thi…)",
+      "mau": "密码一旦告诉了别人，你的账号就不安全了。",
+      "can": [
+       [
+        "一旦"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「难免」",
+  "tenVn": "",
+  "cauTruc": [
+   "N + 是难免的",
+   "难免 + 会 / 要 + V"
+  ],
+  "giaiThich": "难免 là tính từ: không dễ tránh được, khó tránh khỏi. ① Làm vị ngữ trong khung 是难免的. ② Đứng trước động từ / tính từ làm trạng ngữ, thường kèm 会 / 要: 难免会紧张. Hay dùng khi nói về điều không mong muốn nhưng tự nhiên, dễ thông cảm (lỗi, căng thẳng, mâu thuẫn). Không nói 很难免.",
+  "viDu": [
+   {
+    "zh": "刚开始工作，这样的错误是难免的。",
+    "py": "Gāng kāishǐ gōngzuò, zhèyàng de cuòwù shì nánmiǎn de.",
+    "vn": "Mới bắt đầu đi làm, lỗi như thế là khó tránh khỏi."
+   },
+   {
+    "zh": "朋友间难免会产生矛盾、误会甚至是伤害。",
+    "py": "Péngyou jiān nánmiǎn huì chǎnshēng máodùn, wùhuì shènzhì shì shānghài.",
+    "vn": "Giữa bạn bè khó tránh khỏi nảy sinh mâu thuẫn, hiểu lầm, thậm chí là tổn thương."
+   },
+   {
+    "zh": "……作为一个母亲，在自己的亲生女儿和不是亲生的灰姑娘之间，难免会更疼爱自己亲生的女儿，很难完全平等地对待她们。",
+    "py": "…… zuòwéi yí ge mǔqīn, zài zìjǐ de qīnshēng nǚ'ér hé bú shì qīnshēng de Huīgūniang zhījiān, nánmiǎn huì gèng téng'ài zìjǐ qīnshēng de nǚ'ér, hěn nán wánquán píngděng de duìdài tāmen.",
+    "vn": "… là một người mẹ, giữa con gái ruột và Lọ Lem không phải con ruột, khó tránh khỏi việc thương con ruột hơn, rất khó đối xử với các cô hoàn toàn bình đẳng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这样的错误很难免。",
+    "why": "难免 đã mang nghĩa \"khó tránh\", không đi với 很; làm vị ngữ phải dùng khung 是难免的.",
+    "dung": "这样的错误是难免的。"
+   },
+   {
+    "sai": "考试的时候他难免的紧张。",
+    "why": "Đứng trước động từ / tính từ thì dùng 难免 (会) + V, không thêm 的.",
+    "dung": "考试的时候他难免会紧张。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "刚开始工作，这样的错误是",
+       "的。"
+      ],
+      "dap": [
+       [
+        "难免"
+       ]
+      ],
+      "chon": [
+       "难免",
+       "一旦",
+       "自从"
+      ],
+      "goiY": "“Mới đi làm, lỗi như thế là KHÓ TRÁNH KHỎI.”",
+      "giai": "Câu ví dụ (1) của sách: 是难免的."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "朋友间",
+       "会产生矛盾、误会甚至是伤害。"
+      ],
+      "dap": [
+       [
+        "难免"
+       ]
+      ],
+      "chon": [
+       "难免",
+       "一旦",
+       "自从"
+      ],
+      "goiY": "“Giữa bạn bè khó tránh khỏi nảy sinh mâu thuẫn …”",
+      "giai": "Câu ví dụ (2) của sách: 难免会 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "作为一个母亲，在自己的亲生女儿和不是亲生的灰姑娘之间，",
+       "会更疼爱自己亲生的女儿。"
+      ],
+      "dap": [
+       [
+        "难免"
+       ]
+      ],
+      "chon": [
+       "难免",
+       "一旦",
+       "自从"
+      ],
+      "goiY": "“… khó tránh khỏi việc thương con ruột hơn.”",
+      "giai": "Câu của bài khoá."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "考试时紧张是难免",
+       "，但没想到影响会这么大。"
+      ],
+      "dap": [
+       [
+        "的"
+       ]
+      ],
+      "chon": [
+       "的",
+       "地",
+       "得"
+      ],
+      "goiY": "Khung 是难免__",
+      "giai": "是难免的 — không bỏ 的 (câu nghe 8 của sách bài tập)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "第一次离开家，心里难免",
+       "想家。"
+      ],
+      "dap": [
+       [
+        "会",
+        "要"
+       ]
+      ],
+      "chon": [
+       "会",
+       "就",
+       "才"
+      ],
+      "goiY": "“… trong lòng khó tránh khỏi (SẼ) nhớ nhà.”",
+      "giai": "难免 + 会 / 要 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "人不是机器，偶尔出点儿错也是",
+       "的。"
+      ],
+      "dap": [
+       [
+        "难免"
+       ]
+      ],
+      "chon": [
+       "难免",
+       "平等",
+       "完美"
+      ],
+      "goiY": "“… thỉnh thoảng sai một chút cũng là khó tránh.”",
+      "giai": "是难免的 làm vị ngữ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "刚开始工作",
+       "，",
+       "这样的错误",
+       "是",
+       "难免的",
+       "。"
+      ],
+      "dap": [
+       "刚开始工作，这样的错误是难免的。"
+      ],
+      "goiY": "Mới đi làm, lỗi như vậy là khó tránh khỏi.",
+      "giai": "N + 是难免的."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "朋友间",
+       "难免",
+       "会产生",
+       "矛盾",
+       "。"
+      ],
+      "dap": [
+       "朋友间难免会产生矛盾。"
+      ],
+      "goiY": "Giữa bạn bè khó tránh khỏi nảy sinh mâu thuẫn.",
+      "giai": "难免 + 会 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "第一次",
+       "上台",
+       "难免",
+       "会",
+       "紧张",
+       "。"
+      ],
+      "dap": [
+       "第一次上台难免会紧张。"
+      ],
+      "goiY": "Lần đầu lên sân khấu khó tránh khỏi căng thẳng.",
+      "giai": "难免会 + tính từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "刚学开车的时候，难免会有点儿紧张。",
+      "dung": true,
+      "giai": "Đúng: 难免会 + 有点儿 + tính từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这样的错误很难免。",
+      "dung": false,
+      "sua": "这样的错误是难免的。",
+      "giai": "难免 không đi với 很; làm vị ngữ dùng 是难免的."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "考试的时候他难免的紧张。",
+      "dung": false,
+      "sua": "考试的时候他难免会紧张。",
+      "giai": "Trước động từ / tính từ dùng 难免 (会), không thêm 的."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Mới đi làm, mắc lỗi như vậy là khó tránh khỏi.",
+      "dap": [
+       "刚开始工作，犯这样的错误是难免的。",
+       "刚开始工作，出这样的错误是难免的。",
+       "刚工作，犯这样的错误是难免的。",
+       "刚开始工作，这样的错误是难免的。"
+      ],
+      "py": "Gāng kāishǐ gōngzuò, fàn zhèyàng de cuòwù shì nánmiǎn de.",
+      "goiY": "Dịch sang tiếng Trung, dùng 是难免的.",
+      "giai": "Khung N + 是难免的."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Giữa bạn bè khó tránh khỏi nảy sinh mâu thuẫn.",
+      "dap": [
+       "朋友间难免会产生矛盾。",
+       "朋友之间难免会产生矛盾。",
+       "朋友间难免会有矛盾。",
+       "朋友之间难免会有矛盾。",
+       "朋友之间难免有矛盾。"
+      ],
+      "py": "Péngyou jiān nánmiǎn huì chǎnshēng máodùn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 难免会.",
+      "giai": "Câu ví dụ (2) của sách."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：这孩子真是太淘气了！　B：＿＿＿。",
+      "goiY": "bênh đứa trẻ, dùng 难免 — câu 练一练 (1) của sách",
+      "mau": "他还小，淘气是难免的，慢慢就懂事了。",
+      "can": [
+       [
+        "难免"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "刚刚退休的老人＿＿＿。",
+      "goiY": "nói cảm giác của người mới nghỉ hưu, dùng 难免 — câu 练一练 (2) của sách",
+      "mau": "刚刚退休的老人难免会觉得生活有点儿无聊。",
+      "can": [
+       [
+        "难免"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 难免, an ủi một người bạn đang căng thẳng vì sắp thi (giống câu 练一练 (3) của sách)",
+      "mau": "马上就要考试了，紧张是难免的，你已经准备得很好了。",
+      "can": [
+       [
+        "难免"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「自从」",
+  "tenVn": "",
+  "cauTruc": [
+   "自从 + sự việc quá khứ + (以后 / 之后 / 后)，S + 就 / 一直 ……"
+  ],
+  "giaiThich": "自从 là giới từ, chỉ thời gian bắt đầu từ một thời điểm trong QUÁ KHỨ và kéo dài đến nay. Sau 自从 là từ chỉ thời gian hoặc một sự việc đã xảy ra, thường thêm 以后 / 之后 / 后; vế sau hay có 就, 一直, 再也没……. Cụm 自从…… đứng đầu câu hoặc sau chủ ngữ, không đặt cuối câu. Nói về tương lai phải dùng 从 (从明天开始).",
+  "viDu": [
+   {
+    "zh": "自从城市出现后，它就成为人类生活的中心。",
+    "py": "Zìcóng chéngshì chūxiàn hòu, tā jiù chéngwéi rénlèi shēnghuó de zhōngxīn.",
+    "vn": "Từ khi thành phố xuất hiện, nó đã trở thành trung tâm của đời sống loài người."
+   },
+   {
+    "zh": "自从有了长大后成为作家这个理想之后，他每天都坚持写作。",
+    "py": "Zìcóng yǒule zhǎngdà hòu chéngwéi zuòjiā zhège lǐxiǎng zhīhòu, tā měi tiān dōu jiānchí xiězuò.",
+    "vn": "Từ khi có ước mơ lớn lên trở thành nhà văn, ngày nào cậu ấy cũng kiên trì viết."
+   },
+   {
+    "zh": "自从我听说了这件事，就开始思考应该如何阅读，除了阅读还应该做什么。",
+    "py": "Zìcóng wǒ tīngshuōle zhè jiàn shì, jiù kāishǐ sīkǎo yīnggāi rúhé yuèdú, chúle yuèdú hái yīnggāi zuò shénme.",
+    "vn": "Từ khi nghe chuyện này, tôi bắt đầu suy nghĩ nên đọc như thế nào, ngoài đọc ra còn nên làm gì."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "自从明天开始，我每天早上跑步。",
+    "why": "自从 chỉ dùng cho thời điểm trong quá khứ. Tương lai dùng 从.",
+    "dung": "从明天开始，我每天早上跑步。"
+   },
+   {
+    "sai": "我们一直是好朋友自从去年。",
+    "why": "Cụm 自从…… phải đứng đầu câu hoặc sau chủ ngữ, trước động từ chính — không đặt cuối câu như \"từ năm ngoái\" trong tiếng Việt.",
+    "dung": "自从去年认识以后，我们一直是好朋友。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "我听说了这件事，就开始思考应该如何阅读。"
+      ],
+      "dap": [
+       [
+        "自从"
+       ]
+      ],
+      "chon": [
+       "自从",
+       "一旦",
+       "难免"
+      ],
+      "goiY": "“TỪ KHI tôi nghe chuyện này …”",
+      "giai": "Câu của bài khoá: 自从 + sự việc quá khứ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "自从城市出现后，它",
+       "成为人类生活的中心。"
+      ],
+      "dap": [
+       [
+        "就"
+       ]
+      ],
+      "chon": [
+       "就",
+       "才",
+       "再"
+      ],
+      "goiY": "“… nó (THÌ) trở thành trung tâm …”",
+      "giai": "Vế sau của 自从 hay dùng 就."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "有了成为作家这个理想之后，他每天都坚持写作。"
+      ],
+      "dap": [
+       [
+        "自从"
+       ]
+      ],
+      "chon": [
+       "自从",
+       "从",
+       "一旦"
+      ],
+      "goiY": "“Từ khi có ước mơ thành nhà văn …”",
+      "giai": "Câu ví dụ (2) của sách; 自从……之后."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "自从上了高中",
+       "，我就很少回老家了。"
+      ],
+      "dap": [
+       [
+        "以后",
+        "之后"
+       ]
+      ],
+      "chon": [
+       "以后",
+       "以前",
+       "时候"
+      ],
+      "goiY": "“Từ khi lên cấp ba (TRỞ ĐI) …”",
+      "giai": "自从 + sự việc + 以后 / 之后."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "明天开始，我每天早上都去跑步。"
+      ],
+      "dap": [
+       [
+        "从"
+       ]
+      ],
+      "chon": [
+       "从",
+       "自从",
+       "一旦"
+      ],
+      "goiY": "“TỪ ngày mai …” (tương lai)",
+      "giai": "Tương lai không dùng 自从; dùng 从."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "自从用了新的学习方法，他的成绩",
+       "在进步。"
+      ],
+      "dap": [
+       [
+        "一直"
+       ]
+      ],
+      "chon": [
+       "一直",
+       "一旦",
+       "一共"
+      ],
+      "goiY": "“… thành tích của cậu ấy LUÔN tiến bộ.”",
+      "giai": "自从…… vế sau hay dùng 一直 chỉ trạng thái kéo dài đến nay."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "自从",
+       "我听说了这件事",
+       "，",
+       "就",
+       "开始思考",
+       "应该如何阅读",
+       "。"
+      ],
+      "dap": [
+       "自从我听说了这件事，就开始思考应该如何阅读。"
+      ],
+      "goiY": "Từ khi nghe chuyện này, tôi bắt đầu suy nghĩ nên đọc thế nào.",
+      "giai": "自从 + sự việc quá khứ，就 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "自从",
+       "城市出现后",
+       "，",
+       "它",
+       "就成为",
+       "人类生活的中心",
+       "。"
+      ],
+      "dap": [
+       "自从城市出现后，它就成为人类生活的中心。"
+      ],
+      "goiY": "Từ khi thành phố xuất hiện, nó trở thành trung tâm đời sống loài người.",
+      "giai": "Câu ví dụ (1) của sách."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "自从",
+       "上了高中",
+       "，",
+       "他",
+       "每天都",
+       "坚持跑步",
+       "。"
+      ],
+      "dap": [
+       "自从上了高中，他每天都坚持跑步。",
+       "他自从上了高中，每天都坚持跑步。"
+      ],
+      "goiY": "Từ khi lên cấp ba, ngày nào cậu ấy cũng kiên trì chạy bộ.",
+      "giai": "自从 đứng đầu câu hoặc sau chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "自从来了中国，我的汉语进步得很快。",
+      "dung": true,
+      "giai": "Đúng: 自从 + sự việc quá khứ (来了中国)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "自从下个月开始，我要每天早起。",
+      "dung": false,
+      "sua": "从下个月开始，我要每天早起。",
+      "giai": "自从 chỉ dùng cho quá khứ; tương lai dùng 从."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们一直是好朋友自从去年。",
+      "dung": false,
+      "sua": "自从去年认识以后，我们一直是好朋友。",
+      "giai": "Cụm 自从…… đứng đầu câu hoặc sau chủ ngữ, không đặt cuối câu."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Từ khi tôi đến Trung Quốc, quan niệm của tôi đã thay đổi.",
+      "dap": [
+       "自从我来中国以后，我的观念就转变了。",
+       "自从我来到中国，我的观念就转变了。",
+       "自从我来中国以后，我的观念就变了。",
+       "自从来中国以后，我的观念就转变了。",
+       "自从我来了中国，我的观念就转变了。"
+      ],
+      "py": "Zìcóng wǒ lái Zhōngguó yǐhòu, wǒ de guānniàn jiù zhuǎnbiàn le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 自从 và 转变.",
+      "giai": "Ghép hai câu 练一练 (1)(2) của sách: 自从……以后，……就转变了."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Từ khi có ước mơ trở thành nhà văn, ngày nào cậu ấy cũng kiên trì viết.",
+      "dap": [
+       "自从有了成为作家这个理想之后，他每天都坚持写作。",
+       "自从有了成为作家的理想以后，他每天都坚持写作。",
+       "自从有了当作家的理想以后，他每天都坚持写作。",
+       "自从有了成为作家的理想，他每天都坚持写作。"
+      ],
+      "py": "Zìcóng yǒule chéngwéi zuòjiā zhège lǐxiǎng zhīhòu, tā měi tiān dōu jiānchí xiězuò.",
+      "goiY": "Dịch sang tiếng Trung, dùng 自从……之后.",
+      "giai": "Câu ví dụ (2) của sách (rút gọn)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "自从我来中国以后，＿＿＿。",
+      "goiY": "kể một thay đổi của bản thân — câu 练一练 (1) của sách",
+      "mau": "自从我来中国以后，我的汉语水平提高得很快。",
+      "can": [
+       [
+        "自从"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，我的观念就转变了。",
+      "goiY": "nêu sự việc đã làm quan niệm của em thay đổi, dùng 自从 — câu 练一练 (2) của sách",
+      "mau": "自从读了这篇文章，我的观念就转变了。",
+      "can": [
+       [
+        "自从"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 自从, trả lời câu hỏi \"你跟你同屋现在的关系怎么样？\" (练一练 (3) của sách)",
+      "mau": "自从上次一起旅行以后，我们就成了最好的朋友。",
+      "can": [
+       [
+        "自从"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

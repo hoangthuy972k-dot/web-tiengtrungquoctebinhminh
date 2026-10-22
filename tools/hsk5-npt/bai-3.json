@@ -1,0 +1,1231 @@
+[
+ {
+  "so": "1",
+  "ten": "「各自」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ (số nhiều) + 各自 + Động từ",
+   "各自的 + Danh từ"
+  ],
+  "giaiThich": "各自 là đại từ, chỉ MỖI NGƯỜI tự mình, hoặc mỗi bên trong nhiều bên. Thường đi cùng đối tượng mà nó chỉ, làm chủ ngữ hoặc định ngữ. Chủ ngữ phải là số nhiều.",
+  "viDu": [
+   {
+    "zh": "中场休息时间到了，比赛双方队员各自回场外休息。",
+    "py": "Zhōngchǎng xiūxi shíjiān dào le, bǐsài shuāngfāng duìyuán gèzì huí chǎng wài xiūxi.",
+    "vn": "Đến giờ nghỉ giữa hiệp, cầu thủ hai đội ai về chỗ nghỉ của đội nấy ngoài sân."
+   },
+   {
+    "zh": "刘经理认真看了三家广告公司各自提交的计划。",
+    "py": "Liú jīnglǐ rènzhēn kànle sān jiā guǎnggào gōngsī gèzì tíjiāo de jìhuà.",
+    "vn": "Giám đốc Lưu đã xem kỹ kế hoạch mà ba công ty quảng cáo mỗi bên nộp lên."
+   },
+   {
+    "zh": "以前陆地上的夜晚，他们在各自的房间，一家人没有更多的交流。",
+    "py": "Yǐqián lùdì shang de yèwǎn, tāmen zài gèzì de fángjiān, yì jiā rén méiyǒu gèng duō de jiāoliú.",
+    "vn": "Trước đây, những buổi tối trên đất liền, họ ai ở phòng nấy, cả nhà không trò chuyện gì nhiều."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我各自回家了。",
+    "why": "各自 là \"mỗi người trong nhiều người\" — chủ ngữ phải là số nhiều.",
+    "dung": "我们各自回家了。"
+   },
+   {
+    "sai": "各自同学都交了作业。",
+    "why": "各自 không đứng trước danh từ như 每; phải đặt sau chủ ngữ (hoặc dùng 每个同学).",
+    "dung": "同学们各自交了作业。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "下课以后，同学们",
+       "回家了。"
+      ],
+      "dap": [
+       [
+        "各自"
+       ]
+      ],
+      "chon": [
+       "各自",
+       "每个",
+       "互相"
+      ],
+      "goiY": "“Tan học, các bạn ai về nhà nấy.”",
+      "giai": "Chủ ngữ số nhiều + 各自 + V. 每个 phải đứng trước danh từ (每个同学); 互相 là “lẫn nhau”."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "比赛结束后，两个队的队员",
+       "回到了休息室。"
+      ],
+      "dap": [
+       [
+        "各自"
+       ]
+      ],
+      "chon": [
+       "各自",
+       "互相",
+       "每个"
+      ],
+      "goiY": "“Hết trận, cầu thủ hai đội đội nào về phòng nghỉ của đội nấy.”",
+      "giai": "各自 đứng sau chủ ngữ số nhiều, trước động từ. 互相回到 không thành nghĩa."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "三家公司",
+       "提交了自己的计划。"
+      ],
+      "dap": [
+       [
+        "各自"
+       ]
+      ],
+      "chon": [
+       "各自",
+       "每",
+       "互相"
+      ],
+      "goiY": "“Ba công ty, mỗi bên nộp kế hoạch của mình.”",
+      "giai": "各自 + V: mỗi bên tự làm phần của mình. 每 không đứng một mình trước động từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "以前的夜晚，一家人在",
+       "的房间，没有更多的交流。"
+      ],
+      "dap": [
+       [
+        "各自"
+       ]
+      ],
+      "chon": [
+       "各自",
+       "互相",
+       "每个"
+      ],
+      "goiY": "“Trước đây buổi tối, cả nhà ai ở phòng nấy.”",
+      "giai": "各自的 + danh từ làm định ngữ (câu trong bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家对这个问题有",
+       "的看法，讨论了很久。"
+      ],
+      "dap": [
+       [
+        "各自"
+       ]
+      ],
+      "chon": [
+       "各自",
+       "互相",
+       "每"
+      ],
+      "goiY": "“Mỗi người có cách nhìn riêng về vấn đề này.”",
+      "giai": "各自的看法 = cách nhìn riêng của mỗi người. 互相的看法 không tự nhiên."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "放假了，室友们",
+       "回老家，宿舍里只剩下我一个人。"
+      ],
+      "dap": [
+       [
+        "各自"
+       ]
+      ],
+      "chon": [
+       "各自",
+       "互相",
+       "自从"
+      ],
+      "goiY": "“Nghỉ lễ, bạn cùng phòng ai về quê nấy.”",
+      "giai": "各自 + V. 自从 là giới từ “từ khi”, không đứng trước động từ kiểu này."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "同学们",
+       "各自",
+       "回",
+       "教室",
+       "了"
+      ],
+      "dap": [
+       "同学们各自回教室了。"
+      ],
+      "goiY": "Các bạn ai về lớp nấy.",
+      "giai": "各自 đứng ngay sau chủ ngữ số nhiều, trước động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他们",
+       "在",
+       "各自的",
+       "房间里",
+       "看书"
+      ],
+      "dap": [
+       "他们在各自的房间里看书。"
+      ],
+      "goiY": "Họ đọc sách trong phòng riêng của mỗi người.",
+      "giai": "各自的 làm định ngữ cho 房间; 在 + nơi chốn đứng trước động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "两家公司",
+       "各自",
+       "提交了",
+       "一份",
+       "计划"
+      ],
+      "dap": [
+       "两家公司各自提交了一份计划。"
+      ],
+      "goiY": "Hai công ty mỗi bên nộp một bản kế hoạch.",
+      "giai": "Chủ ngữ 两家公司 + 各自 + V + tân ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "夫妻俩各自有各自的爱好。",
+      "dung": true,
+      "giai": "Chủ ngữ số nhiều (夫妻俩); 各自有各自的…… là cách nói tự nhiên — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我各自去图书馆了。",
+      "dung": false,
+      "sua": "我们各自去图书馆了。",
+      "giai": "各自 cần chủ ngữ số nhiều; 我 là một người."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "各自同学都交了作业。",
+      "dung": false,
+      "sua": "同学们各自交了作业。",
+      "giai": "各自 không đứng trước danh từ như 每; phải đặt sau chủ ngữ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Hết giờ học, các bạn ai về nhà nấy.",
+      "dap": [
+       "下课了，同学们各自回家了。",
+       "下课后，同学们各自回家了。",
+       "下课以后，同学们各自回家了。"
+      ],
+      "py": "Xiàkè le, tóngxuémen gèzì huí jiā le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 各自.",
+      "giai": "Chủ ngữ số nhiều 同学们 + 各自 + 回家."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chúng tôi mỗi người đều có ước mơ riêng.",
+      "dap": [
+       "我们都有各自的梦想。",
+       "我们各自都有自己的梦想。",
+       "我们每个人都有各自的梦想。"
+      ],
+      "py": "Wǒmen dōu yǒu gèzì de mèngxiǎng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 各自的.",
+      "giai": "各自的 + danh từ làm định ngữ: 各自的梦想."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "晚饭以后，我们一家人＿＿＿。",
+      "goiY": "mỗi người về phòng mình làm việc riêng (dùng 各自)",
+      "mau": "晚饭以后，我们一家人各自回房间做自己的事。",
+      "can": [
+       [
+        "各自"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这次讨论会上，＿＿＿，最后才做出了决定。",
+      "goiY": "mọi người lần lượt nêu ý kiến riêng của mình (dùng 各自)",
+      "mau": "这次讨论会上，大家各自说了自己的看法，最后才做出了决定。",
+      "can": [
+       [
+        "各自"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「各自」 (chủ ngữ số nhiều), nói về em, bạn bè hoặc gia đình em",
+      "mau": "放学后，我和同桌各自去上辅导班。",
+      "can": [
+       [
+        "各自"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「勿」",
+  "tenVn": "",
+  "cauTruc": [
+   "(请 / 切) + 勿 + Động từ"
+  ],
+  "giaiThich": "勿 là phó từ, biểu thị CẤM ĐOÁN hoặc khuyên can, thuộc văn viết, tương đương 不要. Hay gặp trên biển báo, thông báo: 请勿吸烟, 请勿入内, 切勿…….",
+  "viDu": [
+   {
+    "zh": "非工作人员，请勿入内。",
+    "py": "Fēi gōngzuò rényuán, qǐng wù rù nèi.",
+    "vn": "Không phải nhân viên, xin đừng vào."
+   },
+   {
+    "zh": "网上购票者须注意网站的安全性，切勿上当受骗。",
+    "py": "Wǎng shang gòu piào zhě xū zhùyì wǎngzhàn de ānquánxìng, qiè wù shàngdàng shòupiàn.",
+    "vn": "Người mua vé trên mạng phải chú ý độ an toàn của trang web, tuyệt đối chớ để bị lừa."
+   },
+   {
+    "zh": "中国有句老话，可上山，勿下海。",
+    "py": "Zhōngguó yǒu jù lǎohuà, kě shàng shān, wù xià hǎi.",
+    "vn": "Trung Quốc có câu nói xưa: lên núi thì được, chớ xuống biển."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我明天勿去学校。",
+    "why": "勿 dùng để cấm đoán, khuyên can người khác — không dùng để phủ định việc của chính mình.",
+    "dung": "我明天不去学校。"
+   },
+   {
+    "sai": "妈妈，你勿担心我！",
+    "why": "勿 là văn viết (biển báo, thông báo). Nói với người thân trong khẩu ngữ dùng 别 / 不要.",
+    "dung": "妈妈，你别担心我！"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "非工作人员，请",
+       "入内。"
+      ],
+      "dap": [
+       [
+        "勿"
+       ]
+      ],
+      "chon": [
+       "勿",
+       "没",
+       "未"
+      ],
+      "goiY": "Biển báo: “Không phải nhân viên, xin đừng vào.”",
+      "giai": "请勿 + V: cấm đoán, văn viết. 没 / 未 phủ định việc đã xảy ra."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为了他人的健康，请",
+       "在公共场所吸烟。"
+      ],
+      "dap": [
+       [
+        "勿"
+       ]
+      ],
+      "chon": [
+       "勿",
+       "没",
+       "非"
+      ],
+      "goiY": "“Vì sức khoẻ người khác, xin đừng hút thuốc ở nơi công cộng.”",
+      "giai": "请勿 đứng trước cả cụm 在 + nơi chốn + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "网上购票时，切",
+       "上当受骗。"
+      ],
+      "dap": [
+       [
+        "勿"
+       ]
+      ],
+      "chon": [
+       "勿",
+       "没",
+       "非"
+      ],
+      "goiY": "“Khi mua vé trên mạng, tuyệt đối chớ để bị lừa.”",
+      "giai": "切勿 = tuyệt đối chớ, giọng khuyên can mạnh."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "中国有句老话，可上山，",
+       "下海。"
+      ],
+      "dap": [
+       [
+        "勿"
+       ]
+      ],
+      "chon": [
+       "勿",
+       "没",
+       "未"
+      ],
+      "goiY": "Câu nói xưa trong bài khoá: “lên núi thì được, chớ xuống biển”.",
+      "giai": "可 (được) đối với 勿 (chớ) — lối văn viết ngắn gọn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "图书馆里请",
+       "大声说话。"
+      ],
+      "dap": [
+       [
+        "勿"
+       ]
+      ],
+      "chon": [
+       "勿",
+       "没",
+       "无"
+      ],
+      "goiY": "Thông báo trong thư viện: “Xin đừng nói to.”",
+      "giai": "请勿 + V. 无 là “không có”, đứng trước danh từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "宾馆房间的门上挂着一块“请",
+       "打扰”的牌子。"
+      ],
+      "dap": [
+       [
+        "勿"
+       ]
+      ],
+      "chon": [
+       "勿",
+       "没",
+       "未"
+      ],
+      "goiY": "Tấm biển “Xin đừng làm phiền”.",
+      "giai": "请勿打扰 là câu quen thuộc trên cửa phòng khách sạn."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "请勿",
+       "在",
+       "公共场所",
+       "吸烟"
+      ],
+      "dap": [
+       "请勿在公共场所吸烟。"
+      ],
+      "goiY": "Xin đừng hút thuốc ở nơi công cộng.",
+      "giai": "请勿 đứng đầu câu mệnh lệnh, trước cụm 在 + nơi chốn."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "门上",
+       "挂着",
+       "一块",
+       "“请勿入内”的",
+       "牌子"
+      ],
+      "dap": [
+       "门上挂着一块“请勿入内”的牌子。"
+      ],
+      "goiY": "Trên cửa treo tấm biển “Xin đừng vào”.",
+      "giai": "Câu tồn tại: nơi chốn + V + 着 + số lượng + sự vật."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "请勿",
+       "在",
+       "车厢内",
+       "吃东西"
+      ],
+      "dap": [
+       "请勿在车厢内吃东西。"
+      ],
+      "goiY": "Xin đừng ăn uống trong toa xe.",
+      "giai": "请勿 + 在 + nơi chốn + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "考试期间，请勿使用手机。",
+      "dung": true,
+      "giai": "Thông báo trang trọng, cấm đoán → 请勿 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我明天勿去上课。",
+      "dung": false,
+      "sua": "我明天不去上课。",
+      "giai": "勿 dùng để cấm người khác, không phủ định việc của chính mình."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "妈妈，你勿担心我！",
+      "dung": false,
+      "sua": "妈妈，你别担心我！",
+      "giai": "Khẩu ngữ với người thân dùng 别 / 不要; 勿 là văn viết."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Khu vực nguy hiểm, xin đừng lại gần.",
+      "dap": [
+       "危险区域，请勿靠近。",
+       "危险地区，请勿靠近。",
+       "危险区域，请勿接近。"
+      ],
+      "py": "Wēixiǎn qūyù, qǐng wù kàojìn.",
+      "goiY": "Dịch sang tiếng Trung như một tấm biển báo, dùng 请勿.",
+      "giai": "Biển báo → văn viết: 请勿 + V."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Xin đừng hút thuốc trong phòng.",
+      "dap": [
+       "请勿在房间内吸烟。",
+       "房间内请勿吸烟。",
+       "请勿在房间里吸烟。",
+       "房间里请勿吸烟。"
+      ],
+      "py": "Qǐng wù zài fángjiān nèi xīyān.",
+      "goiY": "Dịch sang tiếng Trung, dùng 请勿.",
+      "giai": "请勿 + 在 + nơi chốn + V, hoặc nơi chốn + 请勿 + V."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "大多数宾馆房间的门上都挂着一块“＿＿＿”的牌子。",
+      "goiY": "nhắc nhân viên đừng làm phiền khách nghỉ (dùng 勿)",
+      "mau": "大多数宾馆房间的门上都挂着一块“请勿打扰”的牌子。",
+      "can": [
+       [
+        "勿"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "为了他人的健康，＿＿＿。",
+      "goiY": "xin đừng hút thuốc ở nơi công cộng (dùng 勿)",
+      "mau": "为了他人的健康，请勿在公共场所吸烟。",
+      "can": [
+       [
+        "勿"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự viết một tấm biển báo cho lớp học / thư viện / phòng thí nghiệm có dùng 「勿」",
+      "mau": "图书馆内请勿大声说话。",
+      "can": [
+       [
+        "勿"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「包括」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + 包括 + B、C……",
+   "包括 + X (在内)，所有人都……"
+  ],
+  "giaiThich": "包括 là động từ, biểu thị BAO GỒM các bộ phận. Ngoài ra còn dùng để NHẤN MẠNH một phần trong số đông, có tác dụng nêu ví dụ, bổ sung, giải thích: 包括……（在内），所有人都…….",
+  "viDu": [
+   {
+    "zh": "汉语技能教学包括听、说、读、写四个方面。",
+    "py": "Hànyǔ jìnéng jiàoxué bāokuò tīng, shuō, dú, xiě sì ge fāngmiàn.",
+    "vn": "Dạy kỹ năng tiếng Hán bao gồm bốn mặt: nghe, nói, đọc, viết."
+   },
+   {
+    "zh": "然而，包括翟峰的父母，所有人都觉得，翟峰“疯了”。",
+    "py": "Rán'ér, bāokuò Zhái Fēng de fùmǔ, suǒyǒu rén dōu juéde, Zhái Fēng \"fēng le\".",
+    "vn": "Thế nhưng mọi người, kể cả bố mẹ Trác Phong, đều cho rằng Trác Phong \"điên rồi\"."
+   },
+   {
+    "zh": "我们班所有人，包括最不爱运动的刘方，也都参加了这次运动会。",
+    "py": "Wǒmen bān suǒyǒu rén, bāokuò zuì bú ài yùndòng de Liú Fāng, yě dōu cānjiāle zhè cì yùndònghuì.",
+    "vn": "Cả lớp chúng tôi, kể cả Lưu Phương — người lười vận động nhất — cũng đều tham gia hội thao lần này."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "包括他以内，大家都迟到了。",
+    "why": "cụm cố định là 包括……在内, không phải 以内.",
+    "dung": "包括他在内，大家都迟到了。"
+   },
+   {
+    "sai": "我们家包括四口人。",
+    "why": "chỉ nói SỐ LƯỢNG thì dùng 有; 包括 dùng khi liệt kê các bộ phận.",
+    "dung": "我们家有四口人。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "汉语技能教学",
+       "听、说、读、写四个方面。"
+      ],
+      "dap": [
+       [
+        "包括"
+       ]
+      ],
+      "chon": [
+       "包括",
+       "关于",
+       "对于"
+      ],
+      "goiY": "“Dạy kỹ năng tiếng Hán bao gồm bốn mặt.”",
+      "giai": "A 包括 B、C…: liệt kê các bộ phận. 关于, 对于 là giới từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "然而，",
+       "翟峰的父母，所有人都觉得，翟峰“疯了”。"
+      ],
+      "dap": [
+       [
+        "包括"
+       ]
+      ],
+      "chon": [
+       "包括",
+       "关于",
+       "对于"
+      ],
+      "goiY": "“Kể cả bố mẹ Trác Phong, ai cũng cho rằng anh ấy điên rồi.”",
+      "giai": "包括 + X，所有人都……: nhấn mạnh X nằm trong số đông."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这次旅行的费用",
+       "机票和酒店，但是不包括吃饭。"
+      ],
+      "dap": [
+       [
+        "包括"
+       ]
+      ],
+      "chon": [
+       "包括",
+       "比如",
+       "关于"
+      ],
+      "goiY": "“Chi phí chuyến đi bao gồm vé máy bay và khách sạn.”",
+      "giai": "包括 làm vị ngữ, tân ngữ là các khoản. 比如 là “ví dụ”, không làm vị ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们班所有人，",
+       "最不爱运动的刘方，也都参加了这次运动会。"
+      ],
+      "dap": [
+       [
+        "包括"
+       ]
+      ],
+      "chon": [
+       "包括",
+       "关于",
+       "而且"
+      ],
+      "goiY": "“Cả lớp, kể cả Lưu Phương lười vận động nhất, cũng đều tham gia.”",
+      "giai": "包括 chen giữa để bổ sung, nêu ví dụ đặc biệt."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "包括老师",
+       "，大家都没想到他居然考了第一名。"
+      ],
+      "dap": [
+       [
+        "在内"
+       ]
+      ],
+      "chon": [
+       "在内",
+       "以内",
+       "里面"
+      ],
+      "goiY": "“Kể cả thầy cô, không ai ngờ cậu ấy lại đứng nhất.”",
+      "giai": "Cụm cố định: 包括……在内. 以内 dùng cho phạm vi số lượng (三天以内)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "“学习”，其实",
+       "“学”与“习”两层意思。"
+      ],
+      "dap": [
+       [
+        "包括"
+       ]
+      ],
+      "chon": [
+       "包括",
+       "关于",
+       "比如"
+      ],
+      "goiY": "“Học tập” thật ra gồm hai tầng nghĩa “học” và “tập”.",
+      "giai": "包括 + các thành phần bên trong."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这次旅行的",
+       "费用",
+       "包括",
+       "机票和酒店"
+      ],
+      "dap": [
+       "这次旅行的费用包括机票和酒店。"
+      ],
+      "goiY": "Chi phí chuyến đi này bao gồm vé máy bay và khách sạn.",
+      "giai": "Chủ ngữ + 包括 + các bộ phận."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "包括我",
+       "在内",
+       "，",
+       "全班同学",
+       "都",
+       "去了"
+      ],
+      "dap": [
+       "包括我在内，全班同学都去了。",
+       "全班同学都去了，包括我在内。"
+      ],
+      "goiY": "Kể cả tôi, cả lớp đều đi.",
+      "giai": "包括 + X + 在内 đứng đầu câu (hoặc cuối câu để bổ sung)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "早饭",
+       "不",
+       "包括",
+       "在房费里"
+      ],
+      "dap": [
+       "早饭不包括在房费里。"
+      ],
+      "goiY": "Bữa sáng không tính trong tiền phòng.",
+      "giai": "不 đứng trước 包括; 包括在……里 = được tính trong …."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "包括爸爸在内，全家人都支持我。",
+      "dung": true,
+      "giai": "包括……在内，……都…… — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "包括他以内，大家都迟到了。",
+      "dung": false,
+      "sua": "包括他在内，大家都迟到了。",
+      "giai": "Phải là 包括……在内, không dùng 以内."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们家包括四口人。",
+      "dung": false,
+      "sua": "我们家有四口人。",
+      "giai": "Chỉ nói số lượng thì dùng 有; 包括 dùng khi kể các bộ phận."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cả nhà tôi, kể cả ông, đều thích xem bóng đá.",
+      "dap": [
+       "我们全家，包括爷爷，都喜欢看足球。",
+       "包括爷爷在内，我们全家都喜欢看足球。",
+       "我们全家包括爷爷都喜欢看足球。",
+       "包括爷爷在内，全家人都喜欢看足球。"
+      ],
+      "py": "Wǒmen quán jiā, bāokuò yéye, dōu xǐhuan kàn zúqiú.",
+      "goiY": "Dịch sang tiếng Trung, dùng 包括.",
+      "giai": "包括 + X (在内)，……都……: nhấn mạnh X nằm trong số đông."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tiền phòng bao gồm bữa sáng.",
+      "dap": [
+       "房费包括早饭。",
+       "房费包括早餐。",
+       "房价包括早饭。",
+       "房价包括早餐。"
+      ],
+      "py": "Fángfèi bāokuò zǎofàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 包括.",
+      "giai": "A 包括 B: B là một phần nằm trong A."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "世界上使用筷子的国家主要＿＿＿。",
+      "goiY": "kể ra vài nước (dùng 包括)",
+      "mau": "世界上使用筷子的国家主要包括中国、日本、韩国和越南。",
+      "can": [
+       [
+        "包括"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这个节目全家人都喜欢，＿＿＿，也很爱看。",
+      "goiY": "kể cả ông bà đã hơn 70 tuổi (dùng 包括)",
+      "mau": "这个节目全家人都喜欢，包括七十多岁的爷爷奶奶，也很爱看。",
+      "can": [
+       [
+        "包括"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「包括」 (liệt kê, hoặc 包括……在内), nói về lớp em hoặc gia đình em",
+      "mau": "包括我在内，我们班有十个同学喜欢打篮球。",
+      "can": [
+       [
+        "包括"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "4",
+  "ten": "「时刻」",
+  "tenVn": "",
+  "cauTruc": [
+   "最后 / 美好的 + 时刻 (danh từ)",
+   "时刻 / 时时刻刻 + Động từ (phó từ)"
+  ],
+  "giaiThich": "时刻 là danh từ, chỉ một THỜI ĐIỂM hoặc khoảng thời gian (thường quan trọng): 最后时刻, 美好的时刻. 时刻 còn làm PHÓ TỪ, nghĩa là lúc nào cũng, luôn luôn; có thể lặp lại thành 时时刻刻.",
+  "viDu": [
+   {
+    "zh": "在最后时刻，他为本队踢进了赢得比赛的关键一球。",
+    "py": "Zài zuìhòu shíkè, tā wèi běn duì tījìnle yíngdé bǐsài de guānjiàn yì qiú.",
+    "vn": "Ở thời khắc cuối cùng, anh ấy đã ghi bàn thắng quyết định cho đội nhà."
+   },
+   {
+    "zh": "美好的时刻过去后是一个个紧张的夜晚。",
+    "py": "Měihǎo de shíkè guòqù hòu shì yí gègè jǐnzhāng de yèwǎn.",
+    "vn": "Qua những khoảnh khắc tươi đẹp là từng đêm căng thẳng."
+   },
+   {
+    "zh": "工作中，他时时刻刻提醒自己：乘客的安全是最重要的。",
+    "py": "Gōngzuò zhōng, tā shíshíkèkè tíxǐng zìjǐ: chéngkè de ānquán shì zuì zhòngyào de.",
+    "vn": "Khi làm việc, anh ấy luôn luôn tự nhắc mình: an toàn của hành khách là quan trọng nhất."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "21世纪是一个信息时刻。",
+    "why": "时刻 là một thời điểm ngắn; một giai đoạn lịch sử dài phải dùng 时代.",
+    "dung": "21世纪是一个信息时代。"
+   },
+   {
+    "sai": "我时刻刻都在想这件事。",
+    "why": "dạng lặp của 时刻 là 时时刻刻 (AABB), không phải 时刻刻.",
+    "dung": "我时时刻刻都在想这件事。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "在最后",
+       "，他为本队踢进了赢得比赛的关键一球。"
+      ],
+      "dap": [
+       [
+        "时刻"
+       ]
+      ],
+      "chon": [
+       "时刻",
+       "时代",
+       "年代"
+      ],
+      "goiY": "“Ở thời khắc cuối cùng, anh ấy ghi bàn quyết định.”",
+      "giai": "最后时刻 = một thời điểm then chốt. 时代, 年代 là cả một giai đoạn dài."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "美好的",
+       "过去后是一个个紧张的夜晚。"
+      ],
+      "dap": [
+       [
+        "时刻"
+       ]
+      ],
+      "chon": [
+       "时刻",
+       "时代",
+       "年代"
+      ],
+      "goiY": "“Qua những khoảnh khắc tươi đẹp là từng đêm căng thẳng.”",
+      "giai": "美好的时刻: khoảnh khắc ngắn. 时代 quá dài, không hợp."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "21世纪是一个信息",
+       "。"
+      ],
+      "dap": [
+       [
+        "时代"
+       ]
+      ],
+      "chon": [
+       "时代",
+       "时刻",
+       "时候"
+      ],
+      "goiY": "So sánh: “Thế kỷ 21 là thời đại thông tin.”",
+      "giai": "Cả một giai đoạn lịch sử → 时代, không dùng 时刻."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "工作中，他",
+       "提醒自己：乘客的安全是最重要的。"
+      ],
+      "dap": [
+       [
+        "时时刻刻",
+        "时刻"
+       ]
+      ],
+      "chon": [
+       "时时刻刻",
+       "时刻刻",
+       "时代"
+      ],
+      "goiY": "“Khi làm việc, anh ấy LUÔN LUÔN tự nhắc mình.”",
+      "giai": "时刻 làm phó từ, lặp lại thành 时时刻刻 (không có dạng 时刻刻)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只要你愿意，公司的大门",
+       "都为你开着。"
+      ],
+      "dap": [
+       [
+        "时刻"
+       ]
+      ],
+      "chon": [
+       "时刻",
+       "时代",
+       "时间"
+      ],
+      "goiY": "“Chỉ cần bạn muốn, cửa công ty lúc nào cũng mở cho bạn.”",
+      "giai": "时刻 (phó từ) + 都 + V: lúc nào cũng …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他们最怕雷电交加的",
+       "。"
+      ],
+      "dap": [
+       [
+        "时刻"
+       ]
+      ],
+      "chon": [
+       "时刻",
+       "时代",
+       "年代"
+      ],
+      "goiY": "“Họ sợ nhất những lúc sấm chớp đan xen.”",
+      "giai": "……的时刻 = lúc …, một thời điểm cụ thể (câu trong bài khoá)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "在",
+       "最后时刻",
+       "，",
+       "他",
+       "踢进了",
+       "一个球"
+      ],
+      "dap": [
+       "在最后时刻，他踢进了一个球。",
+       "他在最后时刻踢进了一个球。"
+      ],
+      "goiY": "Ở thời khắc cuối cùng, anh ấy ghi được một bàn.",
+      "giai": "Trạng ngữ thời gian 在最后时刻 đứng đầu câu hoặc sau chủ ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "妈妈",
+       "时时刻刻",
+       "都",
+       "关心着",
+       "我"
+      ],
+      "dap": [
+       "妈妈时时刻刻都关心着我。"
+      ],
+      "goiY": "Mẹ lúc nào cũng quan tâm đến tôi.",
+      "giai": "时时刻刻 (phó từ) + 都 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这是",
+       "我",
+       "人生中",
+       "最难忘的",
+       "时刻"
+      ],
+      "dap": [
+       "这是我人生中最难忘的时刻。"
+      ],
+      "goiY": "Đây là khoảnh khắc khó quên nhất trong đời tôi.",
+      "giai": "最难忘的 + 时刻: định ngữ đứng trước danh từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这是我一生中最幸福的时刻。",
+      "dung": true,
+      "giai": "时刻 là danh từ chỉ một khoảnh khắc — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "现在是互联网的时刻。",
+      "dung": false,
+      "sua": "现在是互联网的时代。",
+      "giai": "Cả một giai đoạn dài → 时代."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我时刻刻都在想这件事。",
+      "dung": false,
+      "sua": "我时时刻刻都在想这件事。",
+      "giai": "Dạng lặp đúng là 时时刻刻."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Ở thời khắc cuối cùng, cậu ấy đã ghi bàn thắng quyết định.",
+      "dap": [
+       "在最后时刻，他踢进了关键的一球。",
+       "在最后时刻，他踢进了关键一球。",
+       "他在最后时刻踢进了关键的一球。",
+       "在最后时刻，他踢进了关键的一个球。"
+      ],
+      "py": "Zài zuìhòu shíkè, tā tījìnle guānjiàn de yì qiú.",
+      "goiY": "Dịch sang tiếng Trung, dùng 最后时刻.",
+      "giai": "最后时刻 làm trạng ngữ thời gian."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mẹ lúc nào cũng nhắc tôi phải chú ý an toàn.",
+      "dap": [
+       "妈妈时时刻刻提醒我要注意安全。",
+       "妈妈时刻提醒我要注意安全。",
+       "妈妈时时刻刻都提醒我注意安全。",
+       "妈妈时刻提醒我注意安全。"
+      ],
+      "py": "Māma shíshíkèkè tíxǐng wǒ yào zhùyì ānquán.",
+      "goiY": "Dịch sang tiếng Trung, dùng 时刻 hoặc 时时刻刻.",
+      "giai": "时刻 / 时时刻刻 làm phó từ đứng trước động từ 提醒."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "任何时候都不要看轻自己，＿＿＿。",
+      "goiY": "phải luôn luôn tin vào bản thân (dùng 时刻)",
+      "mau": "任何时候都不要看轻自己，要时刻相信自己。",
+      "can": [
+       [
+        "时刻"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你为什么这么感谢他？　B：＿＿＿。",
+      "goiY": "vào lúc khó khăn nhất chính anh ấy đã giúp tôi (dùng 时刻)",
+      "mau": "在我最困难的时刻，是他帮助了我。",
+      "can": [
+       [
+        "时刻"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「时刻」 (danh từ: một khoảnh khắc; hoặc phó từ: luôn luôn), nói về em",
+      "mau": "在最紧张的时刻，妈妈给了我一个拥抱。",
+      "can": [
+       [
+        "时刻"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

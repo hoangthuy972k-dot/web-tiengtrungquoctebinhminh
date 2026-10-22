@@ -1,0 +1,3837 @@
+// ══════════════════════════════════════════
+// DATA — HSK4 Bài 9: 阳光总在风雨后 (Sau cơn mưa trời lại sáng)
+// Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
+// ══════════════════════════════════════════
+var vocabData = [
+  {
+    "n": 1,
+    "zh": "饼干",
+    "py": "bǐnggān",
+    "pos": "Danh từ",
+    "vn": "bánh quy",
+    "hv": "bính can",
+    "em": "🍪",
+    "lesson": 1,
+    "explain": [
+      "Loại bánh giòn, nướng khô."
+    ],
+    "usage": "Danh từ; thường đi với 买饼干, 一块饼干.",
+    "collo": [
+      "买饼干",
+      "一块饼干",
+      "饼干和巧克力"
+    ],
+    "ex_zh": "怎么又买了这么多饼干和巧克力？难道你不减肥了？",
+    "ex_py": "Zěnme yòu mǎile zhème duō bǐnggān hé qiǎokèlì? Nándào nǐ bù jiǎn féi le?",
+    "ex_vn": "Sao lại mua nhiều bánh quy và sô cô la thế này? Chẳng lẽ bạn không giảm cân nữa à?",
+    "exList": [
+      {
+        "zh": "怎么又买了这么多饼干和巧克力？难道你不减肥了？",
+        "py": "Zěnme yòu mǎile zhème duō bǐnggān hé qiǎokèlì? Nándào nǐ bù jiǎn féi le?",
+        "vn": "Sao lại mua nhiều bánh quy và sô cô la thế này? Chẳng lẽ bạn không giảm cân nữa à?"
+      },
+      {
+        "zh": "这些饼干和巧克力送给你了。",
+        "py": "Zhèxiē bǐnggān hé qiǎokèlì sònggěi nǐ le.",
+        "vn": "Số bánh quy và sô cô la này tặng cho bạn rồi."
+      },
+      {
+        "zh": "她喜欢一边喝茶一边吃饼干。",
+        "py": "Tā xǐhuan yìbiān hē chá yìbiān chī bǐnggān.",
+        "vn": "Cô ấy thích vừa uống trà vừa ăn bánh quy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "饼",
+        "p": "bǐng",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 9,
+        "ord": "饣 (thực) trái → 并 (tịnh) phải",
+        "rad": "饣 (thực – ăn)",
+        "mean": "bánh",
+        "tip": "Bộ ăn 饣 + 并(biểu âm) → loại thực phẩm dạng BÁNH, kết hợp 干(khô) thành 饼干 = BÁNH QUY (bánh khô).",
+        "cf": "并 (bìng – \"cùng\", không có bộ 饣\")",
+        "w": "饼干 / 大饼 / 月饼"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sao lại mua nhiều bánh quy và sô cô la thế này? Chẳng lẽ bạn không giảm cân nữa à?",
+        "answer": "怎么又买了这么多饼干和巧克力？难道你不减肥了？",
+        "answerPy": "Zěnme yòu mǎile zhème duō bǐnggān hé qiǎokèlì? Nándào nǐ bù jiǎn féi le?",
+        "note": "饼干和巧克力 kết hợp 难道/巧克力, ôn lại từ vựng Bài 8.",
+        "pair": "难道……了……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Số bánh quy này tôi mua cho con, nếu bạn ăn hết thì lát nữa con tôi lại khóc đấy.",
+        "answer": "这些饼干是我给孩子买的，要是你都吃了，一会儿他就该哭了。",
+        "answerPy": "Zhèxiē bǐnggān shì wǒ gěi háizi mǎi de, yàoshi nǐ dōu chī le, yíhuìr tā jiù gāi kū le.",
+        "note": "该……了 — sắp phải, sắp xảy ra rồi.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "买饼干",
+        "py": "mǎi bǐnggān",
+        "vn": "mua bánh quy"
+      },
+      {
+        "zh": "一块饼干",
+        "py": "yí kuài bǐnggān",
+        "vn": "một cái bánh quy"
+      },
+      {
+        "zh": "一包饼干",
+        "py": "yì bāo bǐnggān",
+        "vn": "một gói bánh quy"
+      },
+      {
+        "zh": "饼干和巧克力",
+        "py": "bǐnggān hé qiǎokèlì",
+        "vn": "bánh quy và sô cô la"
+      },
+      {
+        "zh": "吃饼干",
+        "py": "chī bǐnggān",
+        "vn": "ăn bánh quy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 块 / 包 + 饼干",
+        "m": "Một cái / một gói bánh quy"
+      },
+      {
+        "s": "饼 + 干",
+        "m": "Bánh (饼) khô (干) — ghép nghĩa dễ nhớ"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "难道",
+    "py": "nándào",
+    "pos": "Phó từ",
+    "vn": "chẳng lẽ, lẽ nào",
+    "hv": "nan đạo",
+    "em": "❓",
+    "lesson": 1,
+    "explain": [
+      "Phó từ tăng cường ngữ khí phản vấn. Dùng trong câu hỏi phản vấn khẳng định thì diễn tả ý phủ định; dùng trong câu hỏi phản vấn phủ định thì diễn tả ý khẳng định."
+    ],
+    "usage": "难道 + mệnh đề + 吗？",
+    "collo": [
+      "难道你不……了",
+      "难道你没……",
+      "难道……吗"
+    ],
+    "ex_zh": "怎么又买了这么多饼干和巧克力？难道你不减肥了？",
+    "ex_py": "Zěnme yòu mǎile zhème duō bǐnggān hé qiǎokèlì? Nándào nǐ bù jiǎn féi le?",
+    "ex_vn": "Sao lại mua nhiều bánh quy và sô cô la thế này? Chẳng lẽ bạn không giảm cân nữa à?",
+    "exList": [
+      {
+        "zh": "怎么又买了这么多饼干和巧克力？难道你不减肥了？",
+        "py": "Zěnme yòu mǎile zhème duō bǐnggān hé qiǎokèlì? Nándào nǐ bù jiǎn féi le?",
+        "vn": "Sao lại mua nhiều bánh quy và sô cô la thế này? Chẳng lẽ bạn không giảm cân nữa à?"
+      },
+      {
+        "zh": "难道你没看短信？我今天有事去不了了。",
+        "py": "Nándào nǐ méi kàn duǎnxìn? Wǒ jīntiān yǒu shì qù bu liǎo le.",
+        "vn": "Chẳng lẽ bạn không xem tin nhắn? Hôm nay tôi có việc không đi được."
+      },
+      {
+        "zh": "你不是两点就出发了吗？难道路上花了两个多小时？",
+        "py": "Nǐ bú shì liǎng diǎn jiù chūfā le ma? Nándào lùshang huāle liǎng ge duō xiǎoshí?",
+        "vn": "Bạn chẳng phải hai giờ đã xuất phát sao? Chẳng lẽ trên đường mất hơn hai tiếng?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "难",
+        "p": "nán",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 10,
+        "ord": "又 trái → 隹 (chuy) phải",
+        "rad": "又 (hựu)",
+        "mean": "khó",
+        "tip": "难 (khó) + 道(nói, đường) → khó mà NÓI RẰNG không phải vậy, mở rộng thành phó từ phản vấn CHẲNG LẼ.",
+        "cf": "滩 (tān – \"bãi cát\", bộ 氵\")",
+        "w": "难道 / 难过 / 困难"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chẳng lẽ bạn không nghe điện thoại? Tôi gọi cho bạn nhiều lần rồi.",
+        "answer": "难道你没接电话吗？我给你打了好几次了。",
+        "answerPy": "Nándào nǐ méi jiē diànhuà ma? Wǒ gěi nǐ dǎle hǎojǐ cì le.",
+        "note": "难道……吗 — chẳng lẽ … sao.",
+        "pair": "难道……吗……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ho lại rồi à? Chẳng lẽ cảm cúm chưa khỏi hẳn?",
+        "answer": "你又咳嗽了？难道感冒还没好吗？",
+        "answerPy": "Nǐ yòu késou le? Nándào gǎnmào hái méi hǎo ma?",
+        "note": "难道……吗 kết hợp 咳嗽, ôn lại từ vựng Bài 7.",
+        "pair": "难道……吗……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "难道……吗",
+        "py": "nándào ma",
+        "vn": "chẳng lẽ… sao"
+      },
+      {
+        "zh": "难道你不知道",
+        "py": "nándào nǐ bù zhīdào",
+        "vn": "chẳng lẽ bạn không biết"
+      },
+      {
+        "zh": "难道没有",
+        "py": "nándào méiyǒu",
+        "vn": "lẽ nào không có"
+      },
+      {
+        "zh": "难道忘了",
+        "py": "nándào wàng le",
+        "vn": "chẳng lẽ quên rồi"
+      },
+      {
+        "zh": "难道不对吗",
+        "py": "nándào bú duì ma",
+        "vn": "lẽ nào không đúng sao"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "难道 + mệnh đề + 吗？",
+        "m": "Chẳng lẽ …? — câu hỏi tu từ, không cần trả lời"
+      },
+      {
+        "s": "✗ 难道你来了。 → ✓ 难道你来了吗？",
+        "m": "难道 bắt buộc đi với 吗 / 不成"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "得",
+    "py": "děi",
+    "pos": "Động từ năng nguyện",
+    "vn": "phải",
+    "hv": "đắc",
+    "em": "✅",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả sự cần thiết phải làm việc gì đó (khẩu ngữ)."
+    ],
+    "usage": "得 + động từ: 就得少吃东西.",
+    "collo": [
+      "就得少吃",
+      "还得去",
+      "我得在……之前"
+    ],
+    "ex_zh": "如果你想减肥，就得少吃东西，而且要多运动。",
+    "ex_py": "Rúguǒ nǐ xiǎng jiǎn féi, jiù děi shǎo chī dōngxi, érqiě yào duō yùndòng.",
+    "ex_vn": "Nếu bạn muốn giảm cân, thì phải ăn ít đi, hơn nữa phải vận động nhiều.",
+    "exList": [
+      {
+        "zh": "如果你想减肥，就得少吃东西，而且要多运动。",
+        "py": "Rúguǒ nǐ xiǎng jiǎn féi, jiù děi shǎo chī dōngxi, érqiě yào duō yùndòng.",
+        "vn": "Nếu bạn muốn giảm cân, thì phải ăn ít đi, hơn nữa phải vận động nhiều."
+      },
+      {
+        "zh": "他还得去取行李箱，您别担心，我打个电话问问。",
+        "py": "Tā hái děi qù qǔ xínglixiāng, nín bié dānxīn, wǒ dǎ ge diànhuà wènwen.",
+        "vn": "Anh ấy còn phải đi lấy vali, anh đừng lo, tôi gọi điện hỏi thử."
+      },
+      {
+        "zh": "师傅，麻烦您快点儿行吗？我得在九点之前到大使馆。",
+        "py": "Shīfu, máfan nín kuài diǎnr xíng ma? Wǒ děi zài jiǔ diǎn zhīqián dào dàshǐguǎn.",
+        "vn": "Bác tài ơi, phiền bác nhanh hơn một chút được không? Tôi phải đến đại sứ quán trước 9 giờ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "得",
+        "p": "děi",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "彳 (xích) trái → 旦+寸 phải",
+        "rad": "彳 (xích – bước chân)",
+        "mean": "phải, cần",
+        "tip": "得 đọc \"děi\" khi làm động từ năng nguyện nghĩa PHẢI (khẩu ngữ) — khác với 得 (de) trợ từ hay 得(dé) đạt được.",
+        "cf": "得 khi đọc \"dé\" nghĩa là ĐẠT ĐƯỢC (得到)",
+        "w": "得 (děi) / 就得 / 还得"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn muốn giảm cân thành công, thì phải kiên trì, mới có thể từ từ có hiệu quả.",
+        "answer": "要想减肥成功，就得坚持，才会慢慢有效果。",
+        "answerPy": "Yào xiǎng jiǎn féi chénggōng, jiù děi jiānchí, cái huì mànman yǒu xiàoguǒ.",
+        "note": "就得 + động từ kết hợp 坚持, ôn lại từ vựng của bài.",
+        "pair": "……，才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tôi phải đến đại sứ quán trước 9 giờ, nên phiền bác đi nhanh hơn một chút.",
+        "answer": "因为我得在九点之前到大使馆，所以麻烦您快点儿。",
+        "answerPy": "Yīnwèi wǒ děi zài jiǔ diǎn zhīqián dào dàshǐguǎn, suǒyǐ máfan nín kuài diǎnr.",
+        "note": "得 ở đây đọc děi — phải; phủ định là 不用 chứ không phải 不得.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我得走了",
+        "py": "wǒ de zǒu le",
+        "vn": "tôi phải đi rồi"
+      },
+      {
+        "zh": "就得少吃",
+        "py": "jiù de shǎo chī",
+        "vn": "thì phải ăn ít"
+      },
+      {
+        "zh": "还得去",
+        "py": "hái de qù",
+        "vn": "còn phải đi"
+      },
+      {
+        "zh": "得在……之前",
+        "py": "de zài zhī qián",
+        "vn": "phải trước khi…"
+      },
+      {
+        "zh": "不用",
+        "py": "bú yòng",
+        "vn": "không cần"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 得 (děi) + V",
+        "m": "Ai đó phải làm gì"
+      },
+      {
+        "s": "✗ 不得去 → ✓ 不用去",
+        "m": "Phủ định của 得 là 不用, không phải 不得"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "坚持",
+    "py": "jiānchí",
+    "pos": "Động từ",
+    "vn": "kiên trì, khăng khăng giữ",
+    "hv": "kiên trì",
+    "em": "💪",
+    "lesson": 1,
+    "explain": [
+      "Duy trì một hành động/quan điểm mà không từ bỏ dù gặp khó khăn."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 只能坚持, 坚持练习.",
+    "collo": [
+      "只能坚持",
+      "坚持练习",
+      "坚持自己的选择"
+    ],
+    "ex_zh": "要想减肥成功，只能坚持，才会慢慢有效果。",
+    "ex_py": "Yào xiǎng jiǎn féi chénggōng, zhǐ néng jiānchí, cái huì mànman yǒu xiàoguǒ.",
+    "ex_vn": "Muốn giảm cân thành công, chỉ có thể kiên trì, mới từ từ có hiệu quả.",
+    "exList": [
+      {
+        "zh": "要想减肥成功，只能坚持，才会慢慢有效果。",
+        "py": "Yào xiǎng jiǎn féi chénggōng, zhǐ néng jiānchí, cái huì mànman yǒu xiàoguǒ.",
+        "vn": "Muốn giảm cân thành công, chỉ có thể kiên trì, mới từ từ có hiệu quả."
+      },
+      {
+        "zh": "只要你坚持练习，我相信你也会越打越好的。",
+        "py": "Zhǐyào nǐ jiānchí liànxí, wǒ xiāngxìn nǐ yě huì yuè dǎ yuè hǎo de.",
+        "vn": "Chỉ cần bạn kiên trì luyện tập, tôi tin bạn cũng sẽ đánh ngày càng giỏi."
+      },
+      {
+        "zh": "可是她坚持自己的选择，现在终于向所有人证明了她的选择是正确的。",
+        "py": "Kěshì tā jiānchí zìjǐ de xuǎnzé, xiànzài zhōngyú xiàng suǒyǒu rén zhèngmíngle tā de xuǎnzé shì zhèngquè de.",
+        "vn": "Nhưng cô ấy khăng khăng giữ lựa chọn của mình, bây giờ cuối cùng đã chứng minh cho tất cả mọi người thấy lựa chọn của cô ấy là đúng đắn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "坚",
+        "p": "jiān",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 7,
+        "ord": "又 trên → 土 dưới",
+        "rad": "土 (thổ – đất)",
+        "mean": "vững chắc",
+        "tip": "Chữ giản thể mang nghĩa VỮNG CHẮC (như đất nền), kết hợp 持(giữ) thành 坚持 = KIÊN TRÌ (giữ vững lập trường).",
+        "cf": "紧 (jǐn – \"chặt, căng\")",
+        "w": "坚持 / 坚强 / 坚定"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn kiên trì luyện tập, tôi tin bạn cũng sẽ đánh ngày càng giỏi hơn.",
+        "answer": "只要你坚持练习，我相信你也会越打越好的。",
+        "answerPy": "Zhǐyào nǐ jiānchí liànxí, wǒ xiāngxìn nǐ yě huì yuè dǎ yuè hǎo de.",
+        "note": "坚持练习 kết hợp 只要, ôn lại điểm ngữ pháp Bài 8.",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bất kể gặp khó khăn gì, cô ấy vẫn kiên trì giữ vững lựa chọn của mình.",
+        "answer": "不管遇到什么困难，她都坚持自己的选择。",
+        "answerPy": "Bùguǎn yùdào shénme kùnnan, tā dōu jiānchí zìjǐ de xuǎnzé.",
+        "note": "坚持自己的选择 — kiên trì giữ vững lựa chọn của mình.",
+        "pair": "不管……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "坚持练习",
+        "py": "jiānchí liànxí",
+        "vn": "kiên trì luyện tập"
+      },
+      {
+        "zh": "坚持下来",
+        "py": "jiānchí xiàlái",
+        "vn": "kiên trì đến cùng"
+      },
+      {
+        "zh": "坚持自己的选择",
+        "py": "jiānchí zìjǐ de xuǎnzé",
+        "vn": "giữ vững lựa chọn của mình"
+      },
+      {
+        "zh": "只能坚持",
+        "py": "zhī néng jiānchí",
+        "vn": "chỉ có thể kiên trì"
+      },
+      {
+        "zh": "坚持每天跑步",
+        "py": "jiānchí měi tiān pǎobù",
+        "vn": "kiên trì chạy bộ mỗi ngày"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "坚持 + V",
+        "m": "Kiên trì làm gì (lâu dài, không bỏ)"
+      },
+      {
+        "s": "坚持 + 下来",
+        "m": "Trụ được đến cùng — bổ ngữ xu hướng 下来"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "放弃",
+    "py": "fàngqì",
+    "pos": "Động từ",
+    "vn": "từ bỏ, bỏ",
+    "hv": "phóng khí",
+    "em": "🙅",
+    "lesson": 1,
+    "explain": [
+      "Ngừng theo đuổi, buông bỏ một việc/mục tiêu nào đó."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 打算放弃, 放弃……的工作.",
+    "collo": [
+      "打算放弃了",
+      "放弃律师的工作",
+      "放弃是一种聪明的选择"
+    ],
+    "ex_zh": "我本来已经打算放弃了，但是你刚才的话让我改变了主意。",
+    "ex_py": "Wǒ běnlái yǐjīng dǎsuàn fàngqì le, dànshì nǐ gāngcái de huà ràng wǒ gǎibiànle zhǔyi.",
+    "ex_vn": "Tôi vốn đã định bỏ cuộc rồi, nhưng lời bạn vừa nói khiến tôi thay đổi ý định.",
+    "exList": [
+      {
+        "zh": "我本来已经打算放弃了，但是你刚才的话让我改变了主意。",
+        "py": "Wǒ běnlái yǐjīng dǎsuàn fàngqì le, dànshì nǐ gāngcái de huà ràng wǒ gǎibiànle zhǔyi.",
+        "vn": "Tôi vốn đã định bỏ cuộc rồi, nhưng lời bạn vừa nói khiến tôi thay đổi ý định."
+      },
+      {
+        "zh": "听说她毕业后放弃了律师的工作，开始专门写小说。",
+        "py": "Tīngshuō tā bìyè hòu fàngqìle lǜshī de gōngzuò, kāishǐ zhuānmén xiě xiǎoshuō.",
+        "vn": "Nghe nói cô ấy sau khi tốt nghiệp đã từ bỏ công việc luật sư, bắt đầu chuyên viết tiểu thuyết."
+      },
+      {
+        "zh": "所以有时候放弃是一种聪明的选择。",
+        "py": "Suǒyǐ yǒu shíhou fàngqì shì yì zhǒng cōngming de xuǎnzé.",
+        "vn": "Vì vậy đôi khi từ bỏ là một lựa chọn khôn ngoan."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "弃",
+        "p": "qì",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 7,
+        "ord": "亠 trên → 廾 dưới",
+        "rad": "廾 (củng)",
+        "mean": "vứt bỏ",
+        "tip": "Chữ tượng hình hai tay VỨT BỎ một vật gì đó, kết hợp 放(buông) thành 放弃 = TỪ BỎ, BUÔNG BỎ.",
+        "cf": "弁 (biàn – ít dùng, mũ đội đầu cổ)",
+        "w": "放弃 / 抛弃 / 放弃机会"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nghe nói sau khi tốt nghiệp cô ấy đã bỏ nghề luật sư để chuyên viết tiểu thuyết, cứ tưởng khó thành, ai ngờ lại thành công.",
+        "answer": "听说她毕业后放弃了律师的工作，专门写小说，本来以为很难成功，没想到真的成功了。",
+        "answerPy": "Tīngshuō tā bìyè hòu fàngqìle lǜshī de gōngzuò, zhuānmén xiě xiǎoshuō, běnlái yǐwéi hěn nán chénggōng, méi xiǎngdào zhēn de chénggōng le.",
+        "note": "律师 (bài 3), 专门 (bài 2), 小说 (bài 6) cùng xuất hiện lại.",
+        "pair": "以为……没想到……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì mục tiêu lý tưởng của mình, từ bỏ một số thứ cũng là đáng.",
+        "answer": "为了自己的理想，放弃一些东西也是值得的。",
+        "answerPy": "Wèile zìjǐ de lǐxiǎng, fàngqì yìxiē dōngxi yě shì zhídé de.",
+        "note": "放弃……值得的 kết hợp 理想/值得, ôn lại từ vựng Bài 6.",
+        "pair": "一……也……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "放弃工作",
+        "py": "fàngqì gōngzuò",
+        "vn": "từ bỏ công việc"
+      },
+      {
+        "zh": "打算放弃",
+        "py": "dǎsuàn fàngqì",
+        "vn": "định bỏ cuộc"
+      },
+      {
+        "zh": "不要放弃",
+        "py": "búyào fàngqì",
+        "vn": "đừng bỏ cuộc"
+      },
+      {
+        "zh": "放弃机会",
+        "py": "fàngqì jīhuì",
+        "vn": "bỏ lỡ cơ hội"
+      },
+      {
+        "zh": "放弃是一种选择",
+        "py": "fàngqì shì yì zhǒng xuǎnzé",
+        "vn": "từ bỏ cũng là một lựa chọn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 放弃 + N / V",
+        "m": "Ai đó từ bỏ cái gì"
+      },
+      {
+        "s": "放弃 ↔ 坚持",
+        "m": "Từ bỏ ↔ kiên trì"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "主意",
+    "py": "zhǔyi",
+    "pos": "Danh từ",
+    "vn": "ý định, ý kiến",
+    "hv": "chủ ý",
+    "em": "💡",
+    "lesson": 1,
+    "explain": [
+      "Ý tưởng/quyết định về việc nên làm gì."
+    ],
+    "usage": "Danh từ; thường đi với 改变主意, 有主意.",
+    "collo": [
+      "改变主意",
+      "拿主意",
+      "有个好主意"
+    ],
+    "ex_zh": "但是你刚才的话让我改变了主意。",
+    "ex_py": "Dànshì nǐ gāngcái de huà ràng wǒ gǎibiànle zhǔyi.",
+    "ex_vn": "Nhưng lời bạn vừa nói khiến tôi thay đổi ý định.",
+    "exList": [
+      {
+        "zh": "但是你刚才的话让我改变了主意。",
+        "py": "Dànshì nǐ gāngcái de huà ràng wǒ gǎibiànle zhǔyi.",
+        "vn": "Nhưng lời bạn vừa nói khiến tôi thay đổi ý định."
+      },
+      {
+        "zh": "这件事你自己拿主意吧。",
+        "py": "Zhè jiàn shì nǐ zìjǐ ná zhǔyi ba.",
+        "vn": "Việc này bạn tự mình quyết định đi."
+      },
+      {
+        "zh": "他突然有了一个好主意。",
+        "py": "Tā tūrán yǒule yí ge hǎo zhǔyi.",
+        "vn": "Anh ấy đột nhiên nghĩ ra một ý hay."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "意",
+        "p": "yì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "音 trên → 心 dưới",
+        "rad": "心 (tâm)",
+        "mean": "ý nghĩ",
+        "tip": "Bộ 音(âm thanh, lời) trên 心(tâm) → Ý NGHĨ phát ra từ trong lòng, kết hợp 主(chủ, chính) thành 主意 = Ý ĐỊNH (ý nghĩ chủ đạo, quyết định).",
+        "cf": "意 dễ nhầm với 竟 (jìng – \"rốt cuộc\")",
+        "w": "主意 / 注意 / 拿主意"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chính vì lời bạn nói vừa rồi mà tôi đổi ý, nên tôi quyết định không bỏ cuộc nữa.",
+        "answer": "正因为你刚才的话让我改变了主意，所以我决定不放弃了。",
+        "answerPy": "Zhèng yīnwèi nǐ gāngcái de huà ràng wǒ gǎibiànle zhǔyi, suǒyǐ wǒ juédìng bú fàngqì le.",
+        "note": "改变 là từ bài 3 — 改变主意 là kết hợp cố định.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Việc này tôi cũng chưa biết làm sao, nếu bạn rảnh thì giúp tôi nghĩ một ý hay nhé.",
+        "answer": "这件事我也不知道该怎么办，要是你有空，就帮我想个好主意吧。",
+        "answerPy": "Zhè jiàn shì wǒ yě bù zhīdào gāi zěnme bàn, yàoshi nǐ yǒu kòng, jiù bāng wǒ xiǎng ge hǎo zhǔyi ba.",
+        "note": "该怎么办 — nên làm thế nào đây.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "改变主意",
+        "py": "gǎibiàn zhǔyi",
+        "vn": "đổi ý"
+      },
+      {
+        "zh": "拿主意",
+        "py": "ná zhǔyi",
+        "vn": "quyết định"
+      },
+      {
+        "zh": "好主意",
+        "py": "hǎo zhǔyi",
+        "vn": "ý hay"
+      },
+      {
+        "zh": "想个主意",
+        "py": "xiǎng gè zhǔyi",
+        "vn": "nghĩ ra một ý"
+      },
+      {
+        "zh": "没主意",
+        "py": "méi zhǔyi",
+        "vn": "không có ý gì"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "改变 / 拿 + 主意",
+        "m": "Đổi ý / đưa ra quyết định"
+      },
+      {
+        "s": "主意 (zhǔyi) — âm thứ hai đọc nhẹ"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "网球",
+    "py": "wǎngqiú",
+    "pos": "Danh từ",
+    "vn": "quần vợt",
+    "hv": "võng cầu",
+    "em": "🎾",
+    "lesson": 2,
+    "explain": [
+      "Môn thể thao dùng vợt đánh bóng qua lưới."
+    ],
+    "usage": "Danh từ; thường đi với 打网球, 网球打得真好.",
+    "collo": [
+      "打网球",
+      "网球打得真好",
+      "对网球感兴趣"
+    ],
+    "ex_zh": "你网球打得真好，还得过那么多国际大奖！",
+    "ex_py": "Nǐ wǎngqiú dǎ de zhēn hǎo, hái déguo nàme duō guójì dà jiǎng!",
+    "ex_vn": "Bạn đánh quần vợt giỏi thật, còn từng giành nhiều giải quốc tế lớn như vậy!",
+    "exList": [
+      {
+        "zh": "你网球打得真好，还得过那么多国际大奖！",
+        "py": "Nǐ wǎngqiú dǎ de zhēn hǎo, hái déguo nàme duō guójì dà jiǎng!",
+        "vn": "Bạn đánh quần vợt giỏi thật, còn từng giành nhiều giải quốc tế lớn như vậy!"
+      },
+      {
+        "zh": "我从小也对网球感兴趣，但是到现在还是打得不怎么样。",
+        "py": "Wǒ cóngxiǎo yě duì wǎngqiú gǎn xìngqù, dànshì dào xiànzài háishi dǎ de bù zěnmeyàng.",
+        "vn": "Tôi từ nhỏ cũng hứng thú với quần vợt, nhưng đến giờ vẫn đánh không giỏi lắm."
+      },
+      {
+        "zh": "周末我们一起去打网球吧。",
+        "py": "Zhōumò wǒmen yìqǐ qù dǎ wǎngqiú ba.",
+        "vn": "Cuối tuần chúng ta cùng đi đánh quần vợt đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "网",
+        "p": "wǎng",
+        "type": "半包围结构 · Bán bao vây (giản thể)",
+        "st": 6,
+        "ord": "冂 bao ngoài → 亡 trong",
+        "rad": "冂 (quynh)",
+        "mean": "lưới",
+        "tip": "Chữ tượng hình cái LƯỚI đan chéo → nghĩa gốc là LƯỚI, kết hợp 球(quả bóng) thành 网球 = QUẦN VỢT (bóng đánh qua lưới).",
+        "cf": "罔 (wǎng – \"lừa dối\", ít dùng)",
+        "w": "网球 / 上网 / 网站"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn đánh quần vợt giỏi thật, tuy mỗi lần xem tôi đều thấy bạn thắng nhẹ tênh, nhưng thật ra bạn luyện rất vất vả.",
+        "answer": "你网球打得真好，虽然每次看你比赛都感觉你轻轻松松就赢了，但是其实你练得很辛苦。",
+        "answerPy": "Nǐ wǎngqiú dǎ de zhēn hǎo, suīrán měi cì kàn nǐ bǐsài dōu gǎnjué nǐ qīngqīng-sōngsōng jiù yíng le, dànshì qíshí nǐ liàn de hěn xīnkǔ.",
+        "note": "辛苦 là từ bài 7; 打得真好 — lặp động từ để mang bổ ngữ.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi từ nhỏ đã hứng thú với quần vợt, nhưng chưa từng giành được giải quốc tế nào.",
+        "answer": "我从小就对网球感兴趣，但是从来没得过国际大奖。",
+        "answerPy": "Wǒ cóngxiǎo jiù duì wǎngqiú gǎn xìngqù, dànshì cónglái méi déguo guójì dà jiǎng.",
+        "note": "对网球感兴趣 kết hợp 国际, ôn lại từ vựng của bài.",
+        "pair": "……，但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "打网球",
+        "py": "dǎ wǎngqiú",
+        "vn": "chơi quần vợt"
+      },
+      {
+        "zh": "网球打得好",
+        "py": "wǎngqiú dǎ de hǎo",
+        "vn": "đánh quần vợt giỏi"
+      },
+      {
+        "zh": "网球比赛",
+        "py": "wǎngqiú bǐsài",
+        "vn": "trận quần vợt"
+      },
+      {
+        "zh": "对网球感兴趣",
+        "py": "duì wǎngqiú gǎn xìngqù",
+        "vn": "hứng thú với quần vợt"
+      },
+      {
+        "zh": "学打网球",
+        "py": "xué dǎ wǎngqiú",
+        "vn": "học đánh quần vợt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "打 + 网球",
+        "m": "Môn dùng tay thì dùng 打; môn dùng chân dùng 踢"
+      },
+      {
+        "s": "网球 + 打得 + Adj",
+        "m": "Đánh quần vợt thế nào — lặp động từ"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "国际",
+    "py": "guójì",
+    "pos": "Danh từ",
+    "vn": "quốc tế",
+    "hv": "quốc tế",
+    "em": "🌐",
+    "lesson": 2,
+    "explain": [
+      "Liên quan đến nhiều quốc gia trên thế giới."
+    ],
+    "usage": "Danh từ, làm định ngữ: 国际大奖, 国际比赛.",
+    "collo": [
+      "国际大奖",
+      "国际比赛",
+      "国际学生"
+    ],
+    "ex_zh": "你网球打得真好，还得过那么多国际大奖！",
+    "ex_py": "Nǐ wǎngqiú dǎ de zhēn hǎo, hái déguo nàme duō guójì dà jiǎng!",
+    "ex_vn": "Bạn đánh quần vợt giỏi thật, còn từng giành nhiều giải quốc tế lớn như vậy!",
+    "exList": [
+      {
+        "zh": "你网球打得真好，还得过那么多国际大奖！",
+        "py": "Nǐ wǎngqiú dǎ de zhēn hǎo, hái déguo nàme duō guójì dà jiǎng!",
+        "vn": "Bạn đánh quần vợt giỏi thật, còn từng giành nhiều giải quốc tế lớn như vậy!"
+      },
+      {
+        "zh": "这是一场重要的国际比赛。",
+        "py": "Zhè shì yì chǎng zhòngyào de guójì bǐsài.",
+        "vn": "Đây là một trận thi đấu quốc tế quan trọng."
+      },
+      {
+        "zh": "这所大学有很多国际学生。",
+        "py": "Zhè suǒ dàxué yǒu hěn duō guójì xuésheng.",
+        "vn": "Trường đại học này có rất nhiều sinh viên quốc tế."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "际",
+        "p": "jì",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 7,
+        "ord": "阝(phụ) trái → 示(biến thể) phải",
+        "rad": "阝 (phụ – gò đất)",
+        "mean": "ranh giới, giữa",
+        "tip": "Bộ 阝(gò đất, ranh giới) → nơi TIẾP GIÁP giữa hai vùng, kết hợp 国(quốc gia) thành 国际 = QUỐC TẾ (giữa các quốc gia).",
+        "cf": "察 (chá – \"xem xét\", bộ 宀\")",
+        "w": "国际 / 国际化 / 国际关系"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy từng giành nhiều giải quốc tế lớn, nhưng chưa bao giờ nghỉ ngơi việc luyện tập.",
+        "answer": "他得过很多国际大奖，但是从来没有休息过练习。",
+        "answerPy": "Tā déguo hěn duō guójì dà jiǎng, dànshì cónglái méiyǒu xiūxiguo liànxí.",
+        "note": "国际大奖 — giải thưởng quốc tế lớn.",
+        "pair": "……，但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bất kể xuân hạ thu đông, anh ấy đều kiên trì luyện tập, cuối cùng giành được giải quốc tế.",
+        "answer": "不管春夏秋冬，他都坚持练习，最后获得了国际大奖。",
+        "answerPy": "Bùguǎn chūn xià qiū dōng, tā dōu jiānchí liànxí, zuìhòu huòdéle guójì dà jiǎng.",
+        "note": "国际大奖 kết hợp 坚持/获得, ôn lại từ vựng của bài.",
+        "pair": "不管……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "国际比赛",
+        "py": "guójì bǐsài",
+        "vn": "thi đấu quốc tế"
+      },
+      {
+        "zh": "国际大奖",
+        "py": "guójì dà jiǎng",
+        "vn": "giải thưởng quốc tế"
+      },
+      {
+        "zh": "国际学生",
+        "py": "guójì xuésheng",
+        "vn": "sinh viên quốc tế"
+      },
+      {
+        "zh": "国际机场",
+        "py": "guójì jīchǎng",
+        "vn": "sân bay quốc tế"
+      },
+      {
+        "zh": "国际新闻",
+        "py": "guójì xīnwén",
+        "vn": "tin quốc tế"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "国际 + N",
+        "m": "Mang tính quốc tế: 国际比赛, 国际机场"
+      },
+      {
+        "s": "✗ 很国际 → ✓ 国际比赛",
+        "m": "国际 chỉ làm định ngữ, không làm vị ngữ"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "轻松",
+    "py": "qīngsōng",
+    "pos": "Tính từ",
+    "vn": "nhẹ nhàng, dễ dàng",
+    "hv": "khinh tùng",
+    "em": "😌",
+    "lesson": 2,
+    "explain": [
+      "Không tốn nhiều công sức, thoải mái."
+    ],
+    "usage": "Tính từ, dạng lặp AABB: 轻轻松松.",
+    "collo": [
+      "轻轻松松就赢了",
+      "感觉很轻松",
+      "轻松地完成"
+    ],
+    "ex_zh": "每次看你比赛，感觉你轻轻松松就赢了。",
+    "ex_py": "Měi cì kàn nǐ bǐsài, gǎnjué nǐ qīngqīngsōngsōng jiù yíng le.",
+    "ex_vn": "Mỗi lần xem bạn thi đấu, tôi cảm thấy bạn thắng rất nhẹ nhàng.",
+    "exList": [
+      {
+        "zh": "每次看你比赛，感觉你轻轻松松就赢了。",
+        "py": "Měi cì kàn nǐ bǐsài, gǎnjué nǐ qīngqīngsōngsōng jiù yíng le.",
+        "vn": "Mỗi lần xem bạn thi đấu, tôi cảm thấy bạn thắng rất nhẹ nhàng."
+      },
+      {
+        "zh": "考完试后，他觉得特别轻松。",
+        "py": "Kǎowán shì hòu, tā juéde tèbié qīngsōng.",
+        "vn": "Sau khi thi xong, anh ấy cảm thấy đặc biệt nhẹ nhõm."
+      },
+      {
+        "zh": "这份工作对他来说很轻松。",
+        "py": "Zhè fèn gōngzuò duì tā láishuō hěn qīngsōng.",
+        "vn": "Công việc này đối với anh ấy rất nhẹ nhàng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "松",
+        "p": "sōng",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 8,
+        "ord": "木 (mộc) trái → 公 (công) phải",
+        "rad": "木 (mộc – cây)",
+        "mean": "lỏng lẻo, thư thái",
+        "tip": "Bộ cây 木 (cây thông, cành lá thưa lỏng) → mở rộng thành LỎNG LẺO, THƯ THÁI, kết hợp 轻(nhẹ) thành 轻松 = NHẸ NHÀNG, DỄ DÀNG.",
+        "cf": "松 dễ nhầm với 桧 (guì – tên loài cây)",
+        "w": "轻松 / 放松 / 轻轻松松"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sở dĩ mỗi lần xem bạn thi đấu tôi đều thấy bạn thắng nhẹ tênh, là vì bạn đã luyện tập rất vất vả.",
+        "answer": "因为你平时练习得很辛苦，所以每次比赛才看起来轻轻松松就赢了。",
+        "answerPy": "Yīnwèi nǐ píngshí liànxí de hěn xīnkǔ, suǒyǐ měi cì bǐsài cái kàn qilai qīngqīng-sōngsōng jiù yíng le.",
+        "note": "平时 là từ bài 2; 看起来 — nhìn thì có vẻ.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Không có ai có thể nhẹ nhàng thành công, thành công nào cũng cần trải qua nỗ lực.",
+        "answer": "没有人能轻轻松松就成功，任何成功都需要经过努力。",
+        "answerPy": "Méiyǒu rén néng qīngqīngsōngsōng jiù chénggōng, rènhé chénggōng dōu xūyào jīngguò nǔlì.",
+        "note": "轻轻松松就成功 kết hợp 任何, ôn lại từ vựng Bài 5.",
+        "pair": "没有……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很轻松",
+        "py": "hěn qīngsōng",
+        "vn": "rất nhẹ nhàng"
+      },
+      {
+        "zh": "轻轻松松",
+        "py": "qīngqīng-sōngsōng",
+        "vn": "nhẹ tênh"
+      },
+      {
+        "zh": "轻松地完成",
+        "py": "qīngsōng de wán chéng",
+        "vn": "hoàn thành nhẹ nhàng"
+      },
+      {
+        "zh": "感觉轻松",
+        "py": "gǎnjué qīngsōng",
+        "vn": "cảm thấy thoải mái"
+      },
+      {
+        "zh": "工作轻松",
+        "py": "gōngzuò qīngsōng",
+        "vn": "công việc nhàn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "轻轻松松 + 就 + V",
+        "m": "Nhẹ nhàng là đã … (dạng lặp AABB nhấn mức độ)"
+      },
+      {
+        "s": "轻松 ≈ 放松",
+        "m": "轻松 là trạng thái; 放松 là hành động thả lỏng"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "赢",
+    "py": "yíng",
+    "pos": "Động từ",
+    "vn": "thắng",
+    "hv": "doanh",
+    "em": "🏆",
+    "lesson": 2,
+    "explain": [
+      "Giành được chiến thắng trong thi đấu/cạnh tranh."
+    ],
+    "usage": "Động từ; thường đi với 就赢了, 赢比赛.",
+    "collo": [
+      "就赢了",
+      "赢比赛",
+      "赢得比赛"
+    ],
+    "ex_zh": "每次看你比赛，感觉你轻轻松松就赢了。",
+    "ex_py": "Měi cì kàn nǐ bǐsài, gǎnjué nǐ qīngqīngsōngsōng jiù yíng le.",
+    "ex_vn": "Mỗi lần xem bạn thi đấu, tôi cảm thấy bạn thắng rất nhẹ nhàng.",
+    "exList": [
+      {
+        "zh": "每次看你比赛，感觉你轻轻松松就赢了。",
+        "py": "Měi cì kàn nǐ bǐsài, gǎnjué nǐ qīngqīngsōngsōng jiù yíng le.",
+        "vn": "Mỗi lần xem bạn thi đấu, tôi cảm thấy bạn thắng rất nhẹ nhàng."
+      },
+      {
+        "zh": "没有人随随便便就能成功的。",
+        "py": "Méiyǒu rén suísuíbiànbiàn jiù néng chénggōng de.",
+        "vn": "Không có ai tùy tiện là có thể thành công được."
+      },
+      {
+        "zh": "这场比赛我们队赢了。",
+        "py": "Zhè chǎng bǐsài wǒmen duì yíng le.",
+        "vn": "Trận đấu này đội chúng tôi đã thắng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "赢",
+        "p": "yíng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 17,
+        "ord": "亡+口+月 trên → 贝+凡 dưới",
+        "rad": "贝 (bối – tiền của)",
+        "mean": "thắng",
+        "tip": "Chữ phức tạp kết hợp nhiều bộ, liên quan đến việc GIÀNH ĐƯỢC lợi ích (贝 tiền của) → mở rộng thành THẮNG (trong thi đấu/cạnh tranh).",
+        "cf": "嬴 (yíng – họ, tự dạng gần giống nhưng có bộ 女\")",
+        "w": "赢 / 赢了 / 输赢"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không có ai có thể tùy tiện mà thắng, mỗi lần thắng đều phải trải qua luyện tập vất vả.",
+        "answer": "没有人能随随便便就赢，每次赢都要经过辛苦练习。",
+        "answerPy": "Méiyǒu rén néng suísuíbiànbiàn jiù yíng, měi cì yíng dōu yào jīngguò xīnkǔ liànxí.",
+        "note": "随随便便就赢 kết hợp 随便/辛苦, ôn lại từ vựng của bài.",
+        "pair": "没有……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn kiên trì luyện tập, tôi tin bạn cũng sẽ đánh ngày càng giỏi và thắng nhiều hơn.",
+        "answer": "只要你坚持练习，我相信你也会越打越好，赢得更多比赛。",
+        "answerPy": "Zhǐyào nǐ jiānchí liànxí, wǒ xiāngxìn nǐ yě huì yuè dǎ yuè hǎo, yíngdé gèng duō bǐsài.",
+        "note": "赢得比赛 kết hợp 坚持, ôn lại từ vựng của bài.",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "赢了比赛",
+        "py": "yíng le bǐsài",
+        "vn": "thắng trận"
+      },
+      {
+        "zh": "赢得比赛",
+        "py": "yíng de bǐsài",
+        "vn": "giành chiến thắng"
+      },
+      {
+        "zh": "轻松就赢了",
+        "py": "qīngsōng jiù yíng le",
+        "vn": "thắng nhẹ nhàng"
+      },
+      {
+        "zh": "赢了他",
+        "py": "yíng le tā",
+        "vn": "thắng anh ta"
+      },
+      {
+        "zh": "想赢",
+        "py": "xiǎng yíng",
+        "vn": "muốn thắng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 赢 + (了) + ai / 比赛",
+        "m": "Ai đó thắng ai / thắng trận"
+      },
+      {
+        "s": "赢 ↔ 输",
+        "m": "Thắng ↔ thua"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "随便",
+    "py": "suíbiàn",
+    "pos": "Tính từ",
+    "vn": "tình cờ, tùy tiện",
+    "hv": "tùy tiện",
+    "em": "🤷",
+    "lesson": 2,
+    "explain": [
+      "Làm việc gì đó một cách qua loa, không nghiêm túc/cẩn thận, hoặc không có sự chuẩn bị/nỗ lực đặc biệt."
+    ],
+    "usage": "Tính từ, dạng lặp AABB: 随随便便.",
+    "collo": [
+      "随随便便就能成功",
+      "随便说说",
+      "随便看看"
+    ],
+    "ex_zh": "没有人随随便便就能成功的。",
+    "ex_py": "Méiyǒu rén suísuíbiànbiàn jiù néng chénggōng de.",
+    "ex_vn": "Không có ai tùy tiện là có thể thành công được.",
+    "exList": [
+      {
+        "zh": "没有人随随便便就能成功的。",
+        "py": "Méiyǒu rén suísuíbiànbiàn jiù néng chénggōng de.",
+        "vn": "Không có ai tùy tiện là có thể thành công được."
+      },
+      {
+        "zh": "这件事不能随便决定。",
+        "py": "Zhè jiàn shì bù néng suíbiàn juédìng.",
+        "vn": "Việc này không thể quyết định tùy tiện."
+      },
+      {
+        "zh": "我只是随便说说，你别当真。",
+        "py": "Wǒ zhǐshì suíbiàn shuōshuo, nǐ bié dàngzhēn.",
+        "vn": "Tôi chỉ nói qua loa vậy thôi, bạn đừng để tâm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "随",
+        "p": "suí",
+        "type": "半包围结构 · Bán bao vây (giản thể)",
+        "st": 11,
+        "ord": "阝(phụ) trái → 有+辶 phải",
+        "rad": "阝 (phụ)",
+        "mean": "tùy theo",
+        "tip": "Chữ mang nghĩa TÙY THEO, đi theo không cố định, kết hợp 便(tiện lợi) thành 随便 = TÙY TIỆN (làm theo ý thích, không câu nệ).",
+        "cf": "隋 (suí – tên triều đại nhà Tùy)",
+        "w": "随便 / 随时 / 随意"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không có ai tùy tiện là có thể thành công, mọi thành công đều cần trải qua nỗ lực.",
+        "answer": "没有人随随便便就能成功，任何成功都需要经过努力。",
+        "answerPy": "Méiyǒu rén suísuíbiànbiàn jiù néng chénggōng, rènhé chénggōng dōu xūyào jīngguò nǔlì.",
+        "note": "随随便便就能成功 kết hợp 任何, ôn lại từ vựng Bài 5.",
+        "pair": "没有……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Việc quan trọng thế này, dù bận đến mấy bạn cũng không thể quyết định qua loa.",
+        "answer": "这么重要的事，不管多忙，你都不能随便决定。",
+        "answerPy": "Zhème zhòngyào de shì, bùguǎn duō máng, nǐ dōu bù néng suíbiàn juédìng.",
+        "note": "不管 + 多 + Adj，都…… — dù thế nào cũng vậy.",
+        "pair": "不管……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "随便说说",
+        "py": "suíbiàn shuōshuō",
+        "vn": "nói chơi thôi"
+      },
+      {
+        "zh": "随便看看",
+        "py": "suíbiàn kànkàn",
+        "vn": "xem qua thôi"
+      },
+      {
+        "zh": "随随便便",
+        "py": "suísuí-biànbiàn",
+        "vn": "tùy tiện, qua loa"
+      },
+      {
+        "zh": "别随便决定",
+        "py": "bié suíbiàn juédìng",
+        "vn": "đừng quyết định bừa"
+      },
+      {
+        "zh": "随便你",
+        "py": "suíbiàn nǐ",
+        "vn": "tùy bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "随随便便 + 就 + V",
+        "m": "Cứ qua loa là đã … (thường dùng trong câu phủ định)"
+      },
+      {
+        "s": "随便 + V",
+        "m": "Làm gì một cách tùy ý, qua loa"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "汗",
+    "py": "hàn",
+    "pos": "Danh từ",
+    "vn": "mồ hôi",
+    "hv": "hãn",
+    "em": "💦",
+    "lesson": 2,
+    "explain": [
+      "Chất lỏng tiết ra từ da khi vận động/nóng."
+    ],
+    "usage": "Danh từ; thường đi với 流下的汗水, 满头大汗.",
+    "collo": [
+      "流下的汗水",
+      "满头大汗",
+      "出汗"
+    ],
+    "ex_zh": "却没注意到你成功前流下的汗水。",
+    "ex_py": "Què méi zhùyì dào nǐ chénggōng qián liúxià de hànshuǐ.",
+    "ex_vn": "Nhưng lại không chú ý đến những giọt mồ hôi bạn đã đổ ra trước khi thành công.",
+    "exList": [
+      {
+        "zh": "却没注意到你成功前流下的汗水。",
+        "py": "Què méi zhùyì dào nǐ chénggōng qián liúxià de hànshuǐ.",
+        "vn": "Nhưng lại không chú ý đến những giọt mồ hôi bạn đã đổ ra trước khi thành công."
+      },
+      {
+        "zh": "外面热吗？你怎么满头大汗？",
+        "py": "Wàimiàn rè ma? Nǐ zěnme mǎntóu dà hàn?",
+        "vn": "Bên ngoài nóng à? Sao bạn mồ hôi đầy đầu vậy?"
+      },
+      {
+        "zh": "运动完，他出了很多汗。",
+        "py": "Yùndòng wán, tā chūle hěn duō hàn.",
+        "vn": "Vận động xong, anh ấy ra rất nhiều mồ hôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "汗",
+        "p": "hàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "氵 (thủy) trái → 干 (can) phải",
+        "rad": "氵 (thủy – nước)",
+        "mean": "mồ hôi",
+        "tip": "Bộ nước 氵 (chất lỏng) + 干(khô, biểu âm) → chất lỏng tiết ra rồi KHÔ đi trên da, mở rộng thành MỒ HÔI.",
+        "cf": "汉 (hàn – \"người Hán\", cùng bộ 氵\")",
+        "w": "汗 / 出汗 / 汗水"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi chỉ nhìn thấy hoa tươi bạn nhận được khi thành công, chứ không chú ý đến mồ hôi bạn đổ ra trước đó.",
+        "answer": "我只看到了你成功时获得的鲜花，却没注意到你成功前流下的汗水。",
+        "answerPy": "Wǒ zhǐ kàndàole nǐ chénggōng shí huòdé de xiānhuā, què méi zhùyì dào nǐ chénggōng qián liúxià de hànshuǐ.",
+        "note": "流下的汗水 kết hợp 获得, ôn lại từ vựng Bài 6.",
+        "pair": "……，却……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thang máy hỏng rồi, tôi leo cầu thang lên nên mồ hôi đầy đầu.",
+        "answer": "电梯坏了，我爬楼梯上来的，所以满头大汗。",
+        "answerPy": "Diàntī huài le, wǒ pá lóutī shanglai de, suǒyǐ mǎntóu dà hàn.",
+        "note": "满头大汗 — mồ hôi đầy đầu.",
+        "pair": "……，所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "出汗",
+        "py": "chū hàn",
+        "vn": "ra mồ hôi"
+      },
+      {
+        "zh": "满头大汗",
+        "py": "mǎntóu-dàhàn",
+        "vn": "mồ hôi đầm đìa"
+      },
+      {
+        "zh": "流下的汗水",
+        "py": "liú xià de hàn shuǐ",
+        "vn": "những giọt mồ hôi đổ xuống"
+      },
+      {
+        "zh": "擦汗",
+        "py": "cā hàn",
+        "vn": "lau mồ hôi"
+      },
+      {
+        "zh": "一身汗",
+        "py": "yì shēn hàn",
+        "vn": "người đầy mồ hôi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "出 + 汗",
+        "m": "Ra mồ hôi"
+      },
+      {
+        "s": "满头大汗 (thành ngữ)",
+        "m": "Mồ hôi nhễ nhại đầy đầu"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "通过",
+    "py": "tōngguò",
+    "pos": "Giới từ/Động từ",
+    "vn": "qua, nhờ vào; thông qua; đạt tiêu chuẩn",
+    "hv": "thông quá",
+    "em": "✅",
+    "lesson": 2,
+    "explain": [
+      "1. (Giới từ) Đạt được mục đích nhờ người/phương tiện/cách thức nào đó.",
+      "2. (Động từ) Đi qua, xuyên qua từ đầu này đến đầu kia.",
+      "3. (Động từ) Phù hợp với một tiêu chuẩn/đạt được yêu cầu nào đó."
+    ],
+    "usage": "通过 + phương tiện/cách thức + động từ (giới từ); 通过 + địa điểm (động từ, xuyên qua); 通过 + kỳ thi/kiểm tra (động từ, đạt chuẩn).",
+    "collo": [
+      "通过努力",
+      "这条街只能步行通过",
+      "通过那家公司的面试"
+    ],
+    "ex_zh": "任何成功都要通过努力才能得到。",
+    "ex_py": "Rènhé chénggōng dōu yào tōngguò nǔlì cái néng dédào.",
+    "ex_vn": "Bất kỳ thành công nào cũng phải qua nỗ lực mới có thể đạt được.",
+    "exList": [
+      {
+        "zh": "任何成功都要通过努力才能得到。",
+        "py": "Rènhé chénggōng dōu yào tōngguò nǔlì cái néng dédào.",
+        "vn": "Bất kỳ thành công nào cũng phải qua nỗ lực mới có thể đạt được."
+      },
+      {
+        "zh": "这条街只能步行通过。",
+        "py": "Zhè tiáo jiē zhǐ néng bùxíng tōngguò.",
+        "vn": "Con phố này chỉ có thể đi bộ qua."
+      },
+      {
+        "zh": "我通过那家公司的面试了。经理对我印象不错，他要我明天就正式去上班。",
+        "py": "Wǒ tōngguò nà jiā gōngsī de miànshì le. Jīnglǐ duì wǒ yìnxiàng búcuò, tā yào wǒ míngtiān jiù zhèngshì qù shàngbān.",
+        "vn": "Tôi đã vượt qua vòng phỏng vấn của công ty đó rồi. Giám đốc có ấn tượng khá tốt về tôi, ông ấy muốn tôi ngày mai đi làm chính thức luôn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "过",
+        "p": "guò",
+        "type": "半包围结构 · Bán bao vây (giản thể)",
+        "st": 6,
+        "ord": "讠(biến thể) trái → 寸 phải",
+        "rad": "辶 (sước – đi)",
+        "mean": "đi qua",
+        "tip": "Bộ đi 辶 + 寸(biểu âm) → hành động ĐI QUA, kết hợp 通(thông suốt) thành 通过 = THÔNG QUA, ĐI QUA.",
+        "cf": "讨 (tǎo – \"thảo luận\", bộ 讠\")",
+        "w": "通过 / 通知 / 经过"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bất kỳ thành công nào cũng phải qua nỗ lực mới có thể đạt được, chỉ cần bạn kiên trì luyện tập.",
+        "answer": "任何成功都要通过努力才能得到，只要你坚持练习。",
+        "answerPy": "Rènhé chénggōng dōu yào tōngguò nǔlì cái néng dédào, zhǐyào nǐ jiānchí liànxí.",
+        "note": "通过努力才能得到 kết hợp 坚持, ôn lại từ vựng của bài.",
+        "pair": "任何……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi hy vọng không những khơi được hứng thú của mọi người qua hoạt động lần này, mà còn để mọi người hiểu công ty hơn.",
+        "answer": "我希望通过这次活动不但能引起大家的兴趣，而且还能让大家更了解我们公司。",
+        "answerPy": "Wǒ xīwàng tōngguò zhè cì huódòng búdàn néng yǐnqǐ dàjiā de xìngqù, érqiě hái néng ràng dàjiā gèng liǎojiě wǒmen gōngsī.",
+        "note": "通过 + N — nhờ vào cái gì; 活动 là từ bài 6.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "通过努力",
+        "py": "tōngguò nǔlì",
+        "vn": "nhờ nỗ lực"
+      },
+      {
+        "zh": "通过考试",
+        "py": "tōngguò kǎoshì",
+        "vn": "đỗ kỳ thi"
+      },
+      {
+        "zh": "通过面试",
+        "py": "tōngguò miàn shì",
+        "vn": "qua vòng phỏng vấn"
+      },
+      {
+        "zh": "通过这次活动",
+        "py": "tōngguò zhè cì huódòng",
+        "vn": "thông qua hoạt động này"
+      },
+      {
+        "zh": "步行通过",
+        "py": "bù xíng tōngguò",
+        "vn": "đi bộ qua"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "通过 + N，Sub + V (giới từ)",
+        "m": "Nhờ vào cái gì mà làm được gì"
+      },
+      {
+        "s": "通过 + 考试 / 面试 (động từ)",
+        "m": "Vượt qua kỳ thi, vòng phỏng vấn"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "篇",
+    "py": "piān",
+    "pos": "Lượng từ",
+    "vn": "bài, tờ (bài văn, giấy...)",
+    "hv": "thiên",
+    "em": "📄",
+    "lesson": 3,
+    "explain": [
+      "Lượng từ dùng cho bài văn, bài báo."
+    ],
+    "usage": "Lượng từ; đi với danh từ chỉ văn bản: 一篇新闻, 一篇文章.",
+    "collo": [
+      "一篇新闻",
+      "一篇文章",
+      "一篇报道"
+    ],
+    "ex_zh": "我在报纸上看到一篇关于她的新闻。",
+    "ex_py": "Wǒ zài bàozhǐ shang kàndào yì piān guānyú tā de xīnwén.",
+    "ex_vn": "Tôi đọc được trên báo một bài tin tức về cô ấy.",
+    "exList": [
+      {
+        "zh": "我在报纸上看到一篇关于她的新闻。",
+        "py": "Wǒ zài bàozhǐ shang kàndào yì piān guānyú tā de xīnwén.",
+        "vn": "Tôi đọc được trên báo một bài tin tức về cô ấy."
+      },
+      {
+        "zh": "老师让我们写一篇关于成功的文章。",
+        "py": "Lǎoshī ràng wǒmen xiě yì piān guānyú chénggōng de wénzhāng.",
+        "vn": "Thầy giáo bảo chúng tôi viết một bài văn về thành công."
+      },
+      {
+        "zh": "这篇报道写得很详细。",
+        "py": "Zhè piān bàodào xiě de hěn xiángxì.",
+        "vn": "Bài phóng sự này viết rất chi tiết."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "篇",
+        "p": "piān",
+        "type": "上下结构 · Trên-dưới",
+        "st": 15,
+        "ord": "竹(biến thể) trên → 扁 dưới",
+        "rad": "竹 (trúc – tre)",
+        "mean": "thẻ tre, bài viết",
+        "tip": "Bộ tre 竹 (thẻ tre dùng viết chữ thời xưa) + 扁(dẹt, biểu âm) → mỗi THẺ TRE ghi một BÀI VĂN, mở rộng thành lượng từ đếm BÀI/TỜ.",
+        "cf": "编 (biān – \"biên soạn\", bộ 纟\")",
+        "w": "一篇 / 篇章 / 长篇"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đọc được một bài báo về cô ấy, mới biết hóa ra cô ấy đã là nhà văn nổi tiếng.",
+        "answer": "我一在报纸上看到一篇关于她的新闻，就知道她现在已经是一个有名的作家了。",
+        "answerPy": "Wǒ yí zài bàozhǐ shang kàndào yì piān guānyú tā de xīnwén, jiù zhīdào tā xiànzài yǐjīng shì yí ge yǒumíng de zuòjiā le.",
+        "note": "关于 + N + 的 + N — bài viết về cái gì.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bài viết này không những kể về trải nghiệm thành công của cô ấy, mà còn kể cả những thất bại cô ấy từng gặp.",
+        "answer": "这篇文章不仅写了她的成功经历，而且还写了她经历过的失败。",
+        "answerPy": "Zhè piān wénzhāng bùjǐn xiěle tā de chénggōng jīnglì, érqiě hái xiěle tā jīnglìguo de shībài.",
+        "note": "篇 dùng cho bài viết, 本 dùng cho sách.",
+        "pair": "不仅……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一篇文章",
+        "py": "yì piān wénzhāng",
+        "vn": "một bài văn"
+      },
+      {
+        "zh": "一篇新闻",
+        "py": "yì piān xīnwén",
+        "vn": "một bản tin"
+      },
+      {
+        "zh": "一篇报道",
+        "py": "yì piān bào dào",
+        "vn": "một bài phóng sự"
+      },
+      {
+        "zh": "这篇小说",
+        "py": "zhè piān xiǎoshuō",
+        "vn": "bài / truyện này"
+      },
+      {
+        "zh": "写了三篇",
+        "py": "xiě le sān piān",
+        "vn": "viết được ba bài"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 篇 + 文章 / 新闻",
+        "m": "Lượng từ 篇 cho bài viết"
+      },
+      {
+        "s": "✗ 一本文章 → ✓ 一篇文章",
+        "m": "本 dùng cho sách, 篇 dùng cho bài"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "作家",
+    "py": "zuòjiā",
+    "pos": "Danh từ",
+    "vn": "nhà văn",
+    "hv": "tác gia",
+    "em": "✍️",
+    "lesson": 3,
+    "explain": [
+      "Người sáng tác văn học chuyên nghiệp."
+    ],
+    "usage": "Danh từ; thường đi với 有名的作家, 成为作家.",
+    "collo": [
+      "有名的作家",
+      "成为作家",
+      "当作家"
+    ],
+    "ex_zh": "她现在已经是一个有名的作家了。",
+    "ex_py": "Tā xiànzài yǐjīng shì yí ge yǒumíng de zuòjiā le.",
+    "ex_vn": "Cô ấy hiện giờ đã là một nhà văn nổi tiếng.",
+    "exList": [
+      {
+        "zh": "她现在已经是一个有名的作家了。",
+        "py": "Tā xiànzài yǐjīng shì yí ge yǒumíng de zuòjiā le.",
+        "vn": "Cô ấy hiện giờ đã là một nhà văn nổi tiếng."
+      },
+      {
+        "zh": "他从小就梦想成为一名作家。",
+        "py": "Tā cóngxiǎo jiù mèngxiǎng chéngwéi yì míng zuòjiā.",
+        "vn": "Anh ấy từ nhỏ đã mơ ước trở thành một nhà văn."
+      },
+      {
+        "zh": "这位作家写了很多受欢迎的小说。",
+        "py": "Zhè wèi zuòjiā xiěle hěn duō shòu huānyíng de xiǎoshuō.",
+        "vn": "Nhà văn này đã viết rất nhiều tiểu thuyết được yêu thích."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "家",
+        "p": "jiā",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "宀 (miên) trên → 豕 dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "nhà, chuyên gia",
+        "tip": "Bộ mái nhà 宀 → NHÀ, mở rộng thành hậu tố chỉ CHUYÊN GIA trong một lĩnh vực, kết hợp 作(sáng tác) thành 作家 = NHÀ VĂN.",
+        "cf": "冢 (zhǒng – \"mộ phần\", ít dùng)",
+        "w": "作家 / 画家 / 科学家"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy sau khi tốt nghiệp đã từ bỏ công việc luật sư, chuyên viết tiểu thuyết, hiện giờ đã trở thành một nhà văn nổi tiếng.",
+        "answer": "她毕业后放弃了律师的工作，专门写小说，现在已经成为了一个有名的作家。",
+        "answerPy": "Tā bìyè hòu fàngqìle lǜshī de gōngzuò, zhuānmén xiě xiǎoshuō, xiànzài yǐjīng chéngwéile yí ge yǒumíng de zuòjiā.",
+        "note": "成为……作家 kết hợp 放弃/律师/成为, ôn lại nhiều từ vựng.",
+        "pair": "为了……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy mơ làm nhà văn từ nhỏ, và chính vì kiên trì nên bây giờ ước mơ đã thành hiện thực.",
+        "answer": "他从小就梦想成为一名作家，正因为一直坚持，所以现在这个梦想终于实现了。",
+        "answerPy": "Tā cóngxiǎo jiù mèngxiǎng chéngwéi yì míng zuòjiā, zhèng yīnwèi yìzhí jiānchí, suǒyǐ xiànzài zhège mèngxiǎng zhōngyú shíxiàn le.",
+        "note": "名 là lượng từ lịch sự cho người có nghề nghiệp.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "有名的作家",
+        "py": "yǒumíng de zuòjiā",
+        "vn": "nhà văn nổi tiếng"
+      },
+      {
+        "zh": "成为作家",
+        "py": "chéngwéi zuòjiā",
+        "vn": "trở thành nhà văn"
+      },
+      {
+        "zh": "当作家",
+        "py": "dāng zuòjiā",
+        "vn": "làm nhà văn"
+      },
+      {
+        "zh": "一位作家",
+        "py": "yí wèi zuòjiā",
+        "vn": "một nhà văn"
+      },
+      {
+        "zh": "作家的作品",
+        "py": "zuòjiā de zuòpǐn",
+        "vn": "tác phẩm của nhà văn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "成为 / 当 + 作家",
+        "m": "Trở thành / làm nhà văn"
+      },
+      {
+        "s": "V + 家",
+        "m": "作家, 画家, 科学家 — người chuyên làm nghề đó"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "当时",
+    "py": "dāngshí",
+    "pos": "Danh từ",
+    "vn": "lúc đó",
+    "hv": "đương thời",
+    "em": "🕰️",
+    "lesson": 3,
+    "explain": [
+      "Thời điểm được nhắc đến trong quá khứ."
+    ],
+    "usage": "Danh từ, làm trạng ngữ chỉ thời gian: 当时她的父母.",
+    "collo": [
+      "当时她的父母",
+      "当时的情况",
+      "在当时"
+    ],
+    "ex_zh": "当时她的父母和亲戚都不支持她。",
+    "ex_py": "Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā.",
+    "ex_vn": "Lúc đó bố mẹ và họ hàng của cô ấy đều không ủng hộ cô ấy.",
+    "exList": [
+      {
+        "zh": "当时她的父母和亲戚都不支持她。",
+        "py": "Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā.",
+        "vn": "Lúc đó bố mẹ và họ hàng của cô ấy đều không ủng hộ cô ấy."
+      },
+      {
+        "zh": "当时的情况非常困难。",
+        "py": "Dāngshí de qíngkuàng fēicháng kùnnan.",
+        "vn": "Tình huống lúc đó vô cùng khó khăn."
+      },
+      {
+        "zh": "在当时，很少有人相信她能成功。",
+        "py": "Zài dāngshí, hěn shǎo yǒu rén xiāngxìn tā néng chénggōng.",
+        "vn": "Lúc đó, rất ít người tin rằng cô ấy có thể thành công."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "当",
+        "p": "dāng",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 6,
+        "ord": "⺌ trên → 彐 dưới",
+        "rad": "⺌ (tiểu, biến thể)",
+        "mean": "đương lúc",
+        "tip": "Chữ giản thể mang nghĩa ĐANG Ở, ĐƯƠNG LÚC, kết hợp 时(thời gian) thành 当时 = LÚC ĐÓ (thời điểm đang được nhắc tới).",
+        "cf": "尝 (cháng – \"nếm\", bộ 口\")",
+        "w": "当时 / 当年 / 应当"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Lúc đó bố mẹ và họ hàng đều không ủng hộ cô ấy, nhưng cô ấy vẫn khăng khăng giữ lựa chọn của mình.",
+        "answer": "当时她的父母和亲戚都不支持她，可是她还是坚持自己的选择。",
+        "answerPy": "Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā, kěshì tā háishi jiānchí zìjǐ de xuǎnzé.",
+        "note": "当时……可是……坚持 kết hợp 可是/坚持, ôn lại từ vựng của bài.",
+        "pair": "……，可是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tình huống lúc đó rất khó khăn, nhưng cuối cùng mọi người vẫn giải quyết được vấn đề.",
+        "answer": "当时的情况很困难，但最后大家还是解决了问题。",
+        "answerPy": "Dāngshí de qíngkuàng hěn kùnnan, dàn zuìhòu dàjiā háishi jiějuéle wèntí.",
+        "note": "当时的情况 — tình huống lúc đó.",
+        "pair": "……，还是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "当时的情况",
+        "py": "dāngshí de qíngkuàng",
+        "vn": "tình hình lúc đó"
+      },
+      {
+        "zh": "在当时",
+        "py": "zài dāngshí",
+        "vn": "vào lúc bấy giờ"
+      },
+      {
+        "zh": "当时她的父母",
+        "py": "dāngshí tā de fùmǔ",
+        "vn": "bố mẹ cô ấy lúc đó"
+      },
+      {
+        "zh": "当时我还小",
+        "py": "dāngshí wǒ hái xiǎo",
+        "vn": "lúc đó tôi còn nhỏ"
+      },
+      {
+        "zh": "当时不知道",
+        "py": "dāngshí bù zhīdào",
+        "vn": "lúc đó không biết"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "当时，Sub + V",
+        "m": "Lúc đó (một thời điểm trong quá khứ)"
+      },
+      {
+        "s": "当时 ≠ 当……的时候",
+        "m": "当时 là danh từ đứng riêng; 当……的时候 là khung câu"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "可是",
+    "py": "kěshì",
+    "pos": "Liên từ",
+    "vn": "nhưng",
+    "hv": "khả thị",
+    "em": "↩️",
+    "lesson": 3,
+    "explain": [
+      "Liên từ dùng ở vế sau của câu phức, biểu thị sự chuyển ý. Vế trước thường có 虽然 kết hợp."
+    ],
+    "usage": "虽然……，可是……",
+    "collo": [
+      "虽然……可是……",
+      "当时……可是……",
+      "可是她坚持"
+    ],
+    "ex_zh": "当时她的父母和亲戚都不支持她，可是她坚持自己的选择。",
+    "ex_py": "Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā, kěshì tā jiānchí zìjǐ de xuǎnzé.",
+    "ex_vn": "Lúc đó bố mẹ và họ hàng của cô ấy đều không ủng hộ cô ấy, nhưng cô ấy khăng khăng giữ lựa chọn của mình.",
+    "exList": [
+      {
+        "zh": "当时她的父母和亲戚都不支持她，可是她坚持自己的选择。",
+        "py": "Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā, kěshì tā jiānchí zìjǐ de xuǎnzé.",
+        "vn": "Lúc đó bố mẹ và họ hàng của cô ấy đều không ủng hộ cô ấy, nhưng cô ấy khăng khăng giữ lựa chọn của mình."
+      },
+      {
+        "zh": "虽然收入高，可是经常要加班，很少有时间和家人在一起。",
+        "py": "Suīrán shōurù gāo, kěshì jīngcháng yào jiābān, hěn shǎo yǒu shíjiān hé jiārén zài yìqǐ.",
+        "vn": "Tuy thu nhập cao, nhưng thường xuyên phải tăng ca, rất ít thời gian ở bên gia đình."
+      },
+      {
+        "zh": "小时候，大家都说我像我妈，尤其是性格。可是长大后，他们说我更像爸爸。",
+        "py": "Xiǎo shíhou, dàjiā dōu shuō wǒ xiàng wǒ mā, yóuqí shì xìnggé. Kěshì zhǎngdà hòu, tāmen shuō wǒ gèng xiàng bàba.",
+        "vn": "Lúc nhỏ, mọi người đều nói tôi giống mẹ, đặc biệt là tính cách. Nhưng lớn lên, họ lại nói tôi giống bố hơn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "可",
+        "p": "kě",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 5,
+        "ord": "丁 trong → 口 (khẩu) ngoài",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "có thể, nhưng",
+        "tip": "可 mang nghĩa CÓ THỂ, kết hợp 是(là) thành 可是 = NHƯNG (chuyển ý nhẹ nhàng, khẩu ngữ hơn 但是).",
+        "cf": "何 (hé – \"sao, gì\", bộ 亻\")",
+        "w": "可是 / 可以 / 但是"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy thu nhập cao, nhưng thường xuyên phải tăng ca, rất ít thời gian ở bên gia đình.",
+        "answer": "虽然收入高，可是经常要加班，很少有时间和家人在一起。",
+        "answerPy": "Suīrán shōurù gāo, kěshì jīngcháng yào jiābān, hěn shǎo yǒu shíjiān hé jiārén zài yìqǐ.",
+        "note": "虽然……可是…… kết hợp 收入, ôn lại từ vựng Bài 3.",
+        "pair": "虽然……可是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy đã từ bỏ công việc luật sư, nhưng lại thành công trở thành một nhà văn.",
+        "answer": "她放弃了律师的工作，可是却成功地成为了一名作家。",
+        "answerPy": "Tā fàngqìle lǜshī de gōngzuò, kěshì què chénggōng de chéngwéile yì míng zuòjiā.",
+        "note": "可是……成为 kết hợp 放弃/成为/作家, ôn lại nhiều từ vựng của bài.",
+        "pair": "为了……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "虽然……可是……",
+        "py": "suīrán kěshì",
+        "vn": "tuy… nhưng…"
+      },
+      {
+        "zh": "可是她坚持",
+        "py": "kěshì tā jiānchí",
+        "vn": "nhưng cô ấy kiên trì"
+      },
+      {
+        "zh": "可是没想到",
+        "py": "kěshì méi xiǎng dào",
+        "vn": "nhưng không ngờ"
+      },
+      {
+        "zh": "可是我不同意",
+        "py": "kěshì wǒ bù tóngyì",
+        "vn": "nhưng tôi không đồng ý"
+      },
+      {
+        "zh": "……，可是……",
+        "py": "kěshì",
+        "vn": "…, nhưng…"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "虽然 + mệnh đề 1，可是 + mệnh đề 2",
+        "m": "Tuy … nhưng …"
+      },
+      {
+        "s": "可是 ≈ 但是",
+        "m": "可是 thiên khẩu ngữ hơn 但是"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "正确",
+    "py": "zhèngquè",
+    "pos": "Tính từ",
+    "vn": "đúng, chính xác",
+    "hv": "chính xác",
+    "em": "✅",
+    "lesson": 3,
+    "explain": [
+      "Phù hợp với sự thật/lẽ phải, không sai."
+    ],
+    "usage": "Tính từ; thường đi với 选择是正确的, 正确的方法.",
+    "collo": [
+      "选择是正确的",
+      "正确的方法",
+      "正确回答"
+    ],
+    "ex_zh": "现在终于向所有人证明了她的选择是正确的。",
+    "ex_py": "Xiànzài zhōngyú xiàng suǒyǒu rén zhèngmíngle tā de xuǎnzé shì zhèngquè de.",
+    "ex_vn": "Bây giờ cuối cùng đã chứng minh cho tất cả mọi người thấy lựa chọn của cô ấy là đúng đắn.",
+    "exList": [
+      {
+        "zh": "现在终于向所有人证明了她的选择是正确的。",
+        "py": "Xiànzài zhōngyú xiàng suǒyǒu rén zhèngmíngle tā de xuǎnzé shì zhèngquè de.",
+        "vn": "Bây giờ cuối cùng đã chứng minh cho tất cả mọi người thấy lựa chọn của cô ấy là đúng đắn."
+      },
+      {
+        "zh": "正确的减肥方法是按时吃饭，多吃水果，多运动，而不是饿肚子。",
+        "py": "Zhèngquè de jiǎnféi fāngfǎ shì ànshí chīfàn, duō chī shuǐguǒ, duō yùndòng, ér bú shì è dùzi.",
+        "vn": "Phương pháp giảm cân đúng đắn là ăn đúng giờ, ăn nhiều hoa quả, vận động nhiều, chứ không phải nhịn đói."
+      },
+      {
+        "zh": "请选择正确的答案。",
+        "py": "Qǐng xuǎnzé zhèngquè de dá'àn.",
+        "vn": "Xin chọn đáp án đúng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "确",
+        "p": "què",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 12,
+        "ord": "石 (thạch) trái → 角(biến thể) phải",
+        "rad": "石 (thạch – đá)",
+        "mean": "chắc chắn",
+        "tip": "Bộ đá 石 (vững chắc như đá) → mở rộng thành CHẮC CHẮN, kết hợp 正(đúng đắn) thành 正确 = CHÍNH XÁC, ĐÚNG ĐẮN.",
+        "cf": "确 dễ nhầm với 碗 (wǎn – \"cái bát\")",
+        "w": "正确 / 确定 / 的确"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ sau khi thành công, cô ấy mới chứng minh được với mọi người rằng lựa chọn của mình là đúng đắn.",
+        "answer": "只有成功以后，她才向大家证明了自己的选择是正确的。",
+        "answerPy": "Zhǐyǒu chénggōng yǐhòu, tā cái xiàng dàjiā zhèngmíngle zìjǐ de xuǎnzé shì zhèngquè de.",
+        "note": "证明 là từ bài 8 — 向 + ai + 证明.",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Phương pháp giảm cân đúng đắn không phải là nhịn đói, mà là ăn uống hợp lý và vận động nhiều.",
+        "answer": "正确的减肥方法不是饿肚子，而是合理饮食、多运动。",
+        "answerPy": "Zhèngquè de jiǎnféi fāngfǎ bú shì è dùzi, ér shì hélǐ yǐnshí, duō yùndòng.",
+        "note": "正确的方法 kết hợp 肚子, ôn lại từ vựng Bài 7.",
+        "pair": "不是……而是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "正确的选择",
+        "py": "zhèngquè de xuǎnzé",
+        "vn": "lựa chọn đúng đắn"
+      },
+      {
+        "zh": "正确的方法",
+        "py": "zhèngquè de fāngfǎ",
+        "vn": "phương pháp đúng"
+      },
+      {
+        "zh": "正确回答",
+        "py": "zhèngquè huídá",
+        "vn": "trả lời đúng"
+      },
+      {
+        "zh": "不正确",
+        "py": "bú zhèngquè",
+        "vn": "không chính xác"
+      },
+      {
+        "zh": "是正确的",
+        "py": "shì zhèngquè de",
+        "vn": "là đúng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 是正确的",
+        "m": "Cái gì đó là đúng đắn"
+      },
+      {
+        "s": "正确 ≈ 对",
+        "m": "正确 trang trọng hơn, dùng cho lựa chọn, phương pháp"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "理想",
+    "py": "lǐxiǎng",
+    "pos": "Danh từ/Tính từ",
+    "vn": "lý tưởng",
+    "hv": "lý tưởng",
+    "em": "🌟",
+    "lesson": 3,
+    "explain": [
+      "1. (Danh từ) Mục tiêu/ước mơ cao đẹp mà một người theo đuổi.",
+      "2. (Tính từ) Đạt mức mong muốn, hoàn hảo như ý."
+    ],
+    "usage": "Danh từ: 为了自己的理想; tính từ: 考得不太理想.",
+    "collo": [
+      "为了自己的理想",
+      "考得不太理想",
+      "实现理想"
+    ],
+    "ex_zh": "看来为了自己的理想，放弃一些东西也是值得的。",
+    "ex_py": "Kànlái wèile zìjǐ de lǐxiǎng, fàngqì yìxiē dōngxi yě shì zhídé de.",
+    "ex_vn": "Xem ra vì lý tưởng của bản thân, từ bỏ một số thứ cũng đáng.",
+    "exList": [
+      {
+        "zh": "看来为了自己的理想，放弃一些东西也是值得的。",
+        "py": "Kànlái wèile zìjǐ de lǐxiǎng, fàngqì yìxiē dōngxi yě shì zhídé de.",
+        "vn": "Xem ra vì lý tưởng của bản thân, từ bỏ một số thứ cũng đáng."
+      },
+      {
+        "zh": "你研究生考试考得怎么样？数学可能考得不太理想。",
+        "py": "Nǐ yánjiūshēng kǎoshì kǎo de zěnmeyàng? Shùxué kěnéng kǎo de bú tài lǐxiǎng.",
+        "vn": "Bạn thi nghiên cứu sinh thế nào? Môn toán có thể thi không được lý tưởng lắm."
+      },
+      {
+        "zh": "每个人都有自己的理想。",
+        "py": "Měi ge rén dōu yǒu zìjǐ de lǐxiǎng.",
+        "vn": "Mỗi người đều có lý tưởng của riêng mình."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "想",
+        "p": "xiǎng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "相 trên → 心 dưới",
+        "rad": "心 (tâm)",
+        "mean": "nghĩ, mong muốn",
+        "tip": "Bộ tâm 心 (suy nghĩ trong lòng) + 相(biểu âm) → NGHĨ TỚI, MONG MUỐN, kết hợp 理(lý lẽ, đạo lý) thành 理想 = LÝ TƯỞNG (điều mong muốn hợp lý lẽ).",
+        "cf": "相 (xiàng – \"tướng mạo\", không có bộ 心\")",
+        "w": "理想 / 思想 / 梦想"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Xem ra vì lý tưởng của bản thân, từ bỏ công việc ổn định cũng là đáng.",
+        "answer": "看来为了自己的理想，放弃稳定的工作也是值得的。",
+        "answerPy": "Kànlái wèile zìjǐ de lǐxiǎng, fàngqì wěndìng de gōngzuò yě shì zhídé de.",
+        "note": "为了……理想……放弃……值得 kết hợp 放弃/值得, ôn lại nhiều từ vựng.",
+        "pair": "为了……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn thi cao học thế nào? Nếu kết quả không được như ý thì sang năm thi lại cũng được mà.",
+        "answer": "你研究生考试考得怎么样？要是结果不太理想，就明年再考一次吧。",
+        "answerPy": "Nǐ yánjiūshēng kǎoshì kǎo de zěnmeyàng? Yàoshi jiéguǒ bú tài lǐxiǎng, jiù míngnián zài kǎo yí cì ba.",
+        "note": "研究生 là từ bài 7; 理想 ở đây là tính từ \"như ý\".",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "实现理想",
+        "py": "shíxiàn lǐxiǎng",
+        "vn": "thực hiện lý tưởng"
+      },
+      {
+        "zh": "为了理想",
+        "py": "wèile lǐxiǎng",
+        "vn": "vì lý tưởng"
+      },
+      {
+        "zh": "考得不太理想",
+        "py": "kǎo de bú tài lǐxiǎng",
+        "vn": "thi không được như ý"
+      },
+      {
+        "zh": "理想的工作",
+        "py": "lǐxiǎng de gōngzuò",
+        "vn": "công việc lý tưởng"
+      },
+      {
+        "zh": "我的理想",
+        "py": "wǒ de lǐxiǎng",
+        "vn": "lý tưởng của tôi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "实现 + 理想 (danh từ)",
+        "m": "Thực hiện ước mơ, lý tưởng"
+      },
+      {
+        "s": "V + 得 + 不太理想 (tính từ)",
+        "m": "Làm gì không được như ý"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "zh": "勇敢",
+    "py": "yǒnggǎn",
+    "pos": "Tính từ",
+    "vn": "dũng cảm, gan dạ",
+    "hv": "dũng cảm",
+    "em": "🦁",
+    "lesson": 4,
+    "explain": [
+      "Không sợ hãi, dám đối mặt với khó khăn/nguy hiểm."
+    ],
+    "usage": "Tính từ; thường đi với 勇敢地去做, 勇敢地面对.",
+    "collo": [
+      "勇敢地去做",
+      "勇敢地面对困难",
+      "很勇敢"
+    ],
+    "ex_zh": "如果你想做什么事情，那就勇敢地去做，不要担心结果。",
+    "ex_py": "Rúguǒ nǐ xiǎng zuò shénme shìqing, nà jiù yǒnggǎn de qù zuò, búyào dānxīn jiéguǒ.",
+    "ex_vn": "Nếu bạn muốn làm việc gì, thì hãy dũng cảm làm đi, đừng lo lắng về kết quả.",
+    "exList": [
+      {
+        "zh": "如果你想做什么事情，那就勇敢地去做，不要担心结果。",
+        "py": "Rúguǒ nǐ xiǎng zuò shénme shìqing, nà jiù yǒnggǎn de qù zuò, búyào dānxīn jiéguǒ.",
+        "vn": "Nếu bạn muốn làm việc gì, thì hãy dũng cảm làm đi, đừng lo lắng về kết quả."
+      },
+      {
+        "zh": "只有我们勇敢地面对困难，才能有希望取得成功。",
+        "py": "Zhǐyǒu wǒmen yǒnggǎn de miànduì kùnnan, cái néng yǒu xīwàng qǔdé chénggōng.",
+        "vn": "Chỉ khi chúng ta dũng cảm đối mặt với khó khăn, mới có hy vọng đạt được thành công."
+      },
+      {
+        "zh": "她是一个非常勇敢的女孩。",
+        "py": "Tā shì yí ge fēicháng yǒnggǎn de nǚhái.",
+        "vn": "Cô ấy là một cô gái vô cùng dũng cảm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "勇",
+        "p": "yǒng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "甬 trên → 力 dưới",
+        "rad": "力 (lực – sức)",
+        "mean": "dũng cảm",
+        "tip": "Bộ sức lực 力 + 甬(biểu âm) → có SỨC MẠNH tinh thần để đối mặt, kết hợp 敢(dám) thành 勇敢 = DŨNG CẢM.",
+        "cf": "涌 (yǒng – \"trào dâng\", bộ 氵\")",
+        "w": "勇敢 / 勇气 / 英勇"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn muốn làm việc gì, hãy dũng cảm làm đi, đừng cân nhắc việc có thất bại hay không.",
+        "answer": "如果你想做什么事情，就勇敢地去做，不要考虑会不会失败。",
+        "answerPy": "Rúguǒ nǐ xiǎng zuò shénme shìqing, jiù yǒnggǎn de qù zuò, búyào kǎolǜ huì bu huì shībài.",
+        "note": "勇敢地去做 kết hợp 失败, ôn lại từ vựng của bài.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ có dũng cảm đối mặt với khó khăn, mới có thể có hy vọng đạt được thành công.",
+        "answer": "只有勇敢地面对困难，才能有希望取得成功。",
+        "answerPy": "Zhǐyǒu yǒnggǎn de miànduì kùnnan, cái néng yǒu xīwàng qǔdé chénggōng.",
+        "note": "勇敢地面对 kết hợp 面对, ôn lại từ vựng của bài.",
+        "pair": "只有……才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很勇敢",
+        "py": "hěn yǒnggǎn",
+        "vn": "rất dũng cảm"
+      },
+      {
+        "zh": "勇敢地去做",
+        "py": "yǒnggǎn de qù zuò",
+        "vn": "dũng cảm làm"
+      },
+      {
+        "zh": "勇敢地面对",
+        "py": "yǒnggǎn de miànduì",
+        "vn": "dũng cảm đối mặt"
+      },
+      {
+        "zh": "勇敢的人",
+        "py": "yǒnggǎn de rén",
+        "vn": "người dũng cảm"
+      },
+      {
+        "zh": "变得勇敢",
+        "py": "biàn de yǒnggǎn",
+        "vn": "trở nên dũng cảm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "勇敢地 + V",
+        "m": "Dũng cảm làm gì"
+      },
+      {
+        "s": "勇敢地 + 面对 + 困难",
+        "m": "Dũng cảm đối mặt với khó khăn"
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "zh": "结果",
+    "py": "jiéguǒ",
+    "pos": "Danh từ/Liên từ",
+    "vn": "kết quả; rốt cuộc thì",
+    "hv": "kết quả",
+    "em": "🎯",
+    "lesson": 4,
+    "explain": [
+      "1. (Danh từ) Trạng thái cuối cùng mà sự việc phát triển đạt tới.",
+      "2. (Liên từ) Diễn tả quan hệ nhân quả, dùng ở vế sau của câu phức để chỉ kết quả cuối cùng."
+    ],
+    "usage": "Danh từ: 担心结果, 调查结果; liên từ: ……结果……(kết quả bất ngờ).",
+    "collo": [
+      "担心结果",
+      "调查结果交上来",
+      "结果竟然"
+    ],
+    "ex_zh": "不要担心结果，不要考虑会不会失败。",
+    "ex_py": "Búyào dānxīn jiéguǒ, búyào kǎolǜ huì bu huì shībài.",
+    "ex_vn": "Đừng lo lắng về kết quả, đừng cân nhắc việc có thất bại hay không.",
+    "exList": [
+      {
+        "zh": "不要担心结果，不要考虑会不会失败。",
+        "py": "Búyào dānxīn jiéguǒ, búyào kǎolǜ huì bu huì shībài.",
+        "vn": "Đừng lo lắng về kết quả, đừng cân nhắc việc có thất bại hay không."
+      },
+      {
+        "zh": "下个月把调查结果交上来。",
+        "py": "Xià ge yuè bǎ diàochá jiéguǒ jiāo shanglai.",
+        "vn": "Tháng sau nộp kết quả điều tra lên."
+      },
+      {
+        "zh": "我妻子想减肥，所以她每天早上都去骑马。结果马竟然在一个月之内瘦了二十斤。",
+        "py": "Wǒ qīzi xiǎng jiǎn féi, suǒyǐ tā měitiān zǎoshang dōu qù qímǎ. Jiéguǒ mǎ jìngrán zài yí ge yuè zhīnèi shòule èrshí jīn.",
+        "vn": "Vợ tôi muốn giảm cân, nên mỗi sáng cô ấy đều đi cưỡi ngựa. Kết quả là con ngựa lại giảm mất 20 cân trong vòng một tháng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "果",
+        "p": "guǒ",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "田 trên → 木 dưới",
+        "rad": "木 (mộc – cây)",
+        "mean": "quả, kết quả",
+        "tip": "Chữ tượng hình QUẢ trên cây → mở rộng thành KẾT QUẢ (thành quả cuối cùng), kết hợp 结(kết thành) thành 结果 = KẾT QUẢ.",
+        "cf": "东 (dōng – \"phương đông\", không liên quan)",
+        "w": "结果 / 效果 / 成果"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn muốn làm việc gì, hãy dũng cảm làm đi, đừng lo lắng về kết quả.",
+        "answer": "如果你想做什么事情，就勇敢地去做，不要担心结果。",
+        "answerPy": "Rúguǒ nǐ xiǎng zuò shénme shìqing, jiù yǒnggǎn de qù zuò, búyào dānxīn jiéguǒ.",
+        "note": "担心结果 kết hợp 勇敢, ôn lại từ vựng của bài.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Không có ai có thể tùy tiện thành công, kết quả đều là nhờ nỗ lực mà có được.",
+        "answer": "没有人能随随便便就成功，结果都是靠努力得来的。",
+        "answerPy": "Méiyǒu rén néng suísuíbiànbiàn jiù chénggōng, jiéguǒ dōu shì kào nǔlì délái de.",
+        "note": "结果 kết hợp 随便, ôn lại từ vựng của bài.",
+        "pair": "没有……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "担心结果",
+        "py": "dānxīn jiéguǒ",
+        "vn": "lo lắng kết quả"
+      },
+      {
+        "zh": "调查结果",
+        "py": "diàochá jiéguǒ",
+        "vn": "kết quả khảo sát"
+      },
+      {
+        "zh": "结果怎么样",
+        "py": "jiéguǒ zěnmeyàng",
+        "vn": "kết quả thế nào"
+      },
+      {
+        "zh": "结果竟然",
+        "py": "jiéguǒ jìngrán",
+        "vn": "rốt cuộc lại"
+      },
+      {
+        "zh": "好结果",
+        "py": "hǎo jiéguǒ",
+        "vn": "kết quả tốt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 的 + 结果 (danh từ)",
+        "m": "Kết quả của cái gì"
+      },
+      {
+        "s": "……，结果 + mệnh đề (liên từ)",
+        "m": "…, rốt cuộc thì … (thường ngoài dự tính)"
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "zh": "失败",
+    "py": "shībài",
+    "pos": "Động từ",
+    "vn": "thất bại",
+    "hv": "thất bại",
+    "em": "😞",
+    "lesson": 4,
+    "explain": [
+      "Không đạt được kết quả mong muốn, không thành công."
+    ],
+    "usage": "Động từ; thường đi với 会不会失败, 失败中总结经验.",
+    "collo": [
+      "会不会失败",
+      "即使最后失败了",
+      "从失败中总结"
+    ],
+    "ex_zh": "不要考虑会不会失败。",
+    "ex_py": "Búyào kǎolǜ huì bu huì shībài.",
+    "ex_vn": "Đừng cân nhắc việc có thất bại hay không.",
+    "exList": [
+      {
+        "zh": "不要考虑会不会失败。",
+        "py": "Búyào kǎolǜ huì bu huì shībài.",
+        "vn": "Đừng cân nhắc việc có thất bại hay không."
+      },
+      {
+        "zh": "即使最后失败了也没有关系，因为至少你已经努力过。",
+        "py": "Jíshǐ zuìhòu shībàile yě méiyǒu guānxi, yīnwèi zhìshǎo nǐ yǐjīng nǔlìguo.",
+        "vn": "Dù cuối cùng có thất bại cũng không sao, vì ít nhất bạn đã nỗ lực rồi."
+      },
+      {
+        "zh": "取得成功的人往往都经历过许多失败。",
+        "py": "Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài.",
+        "vn": "Người đạt được thành công thường đều đã trải qua rất nhiều thất bại."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "败",
+        "p": "bài",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 8,
+        "ord": "贝 (bối) trái → 攵 (phốc) phải",
+        "rad": "贝 (bối – tiền của)",
+        "mean": "thua, hỏng",
+        "tip": "Bộ 贝(của cải) + 攵(hành động phá hủy) → làm HỎNG của cải, mở rộng thành THUA, THẤT BẠI, kết hợp 失(mất) thành 失败 = THẤT BẠI.",
+        "cf": "贩 (fàn – \"buôn bán\", bộ 贝\")",
+        "w": "失败 / 成功 / 打败"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đừng lo kết quả, cũng đừng nghĩ có thất bại hay không; chỉ cần dũng cảm làm là được.",
+        "answer": "不要担心结果，也不要考虑会不会失败，只要勇敢地去做就行。",
+        "answerPy": "Búyào dānxīn jiéguǒ, yě búyào kǎolǜ huì bu huì shībài, zhǐyào yǒnggǎn de qù zuò jiù xíng.",
+        "note": "考虑 là từ bài 5; 勇敢地 + V.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Người thành công tuy đều từng trải qua rất nhiều thất bại, nhưng khác người thường ở chỗ họ đã kiên trì đến cùng.",
+        "answer": "取得成功的人虽然都经历过许多失败，但是他们和普通人的区别就是坚持了下来。",
+        "answerPy": "Qǔdé chénggōng de rén suīrán dōu jīnglìguo xǔduō shībài, dànshì tāmen hé pǔtōng rén de qūbié jiùshì jiānchíle xiàlai.",
+        "note": "坚持下来 — bổ ngữ xu hướng 下来: trụ được đến cùng.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "经历失败",
+        "py": "jīnglì shībài",
+        "vn": "trải qua thất bại"
+      },
+      {
+        "zh": "害怕失败",
+        "py": "hàipà shībài",
+        "vn": "sợ thất bại"
+      },
+      {
+        "zh": "从失败中总结",
+        "py": "cóng shībài zhōng zǒngjié",
+        "vn": "tổng kết từ thất bại"
+      },
+      {
+        "zh": "失败了",
+        "py": "shībài le",
+        "vn": "đã thất bại"
+      },
+      {
+        "zh": "一次失败",
+        "py": "yí cì shībài",
+        "vn": "một lần thất bại"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "即使 + 失败了，也 + V",
+        "m": "Cho dù thất bại thì vẫn …"
+      },
+      {
+        "s": "失败 ↔ 成功",
+        "m": "Thất bại ↔ thành công (bài 4)"
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "zh": "过程",
+    "py": "guòchéng",
+    "pos": "Danh từ",
+    "vn": "quá trình",
+    "hv": "quá trình",
+    "em": "🔄",
+    "lesson": 4,
+    "explain": [
+      "Diễn biến từ đầu đến cuối của một sự việc."
+    ],
+    "usage": "Danh từ; thường đi với 做事情的过程, 努力的过程.",
+    "collo": [
+      "做事情的过程",
+      "努力的过程",
+      "成长的过程"
+    ],
+    "ex_zh": "我们应该把注意力放在做事情的过程上。",
+    "ex_py": "Wǒmen yīnggāi bǎ zhùyìlì fàng zài zuò shìqing de guòchéng shang.",
+    "ex_vn": "Chúng ta nên đặt sự chú ý vào quá trình làm việc.",
+    "exList": [
+      {
+        "zh": "我们应该把注意力放在做事情的过程上。",
+        "py": "Wǒmen yīnggāi bǎ zhùyìlì fàng zài zuò shìqing de guòchéng shang.",
+        "vn": "Chúng ta nên đặt sự chú ý vào quá trình làm việc."
+      },
+      {
+        "zh": "在努力的过程中，我们已经学到了很多东西。",
+        "py": "Zài nǔlì de guòchéng zhōng, wǒmen yǐjīng xuédàole hěn duō dōngxi.",
+        "vn": "Trong quá trình nỗ lực, chúng ta đã học được rất nhiều thứ."
+      },
+      {
+        "zh": "成长的过程虽然辛苦，但很有意义。",
+        "py": "Chéngzhǎng de guòchéng suīrán xīnkǔ, dàn hěn yǒu yìyì.",
+        "vn": "Quá trình trưởng thành tuy vất vả, nhưng rất có ý nghĩa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "程",
+        "p": "chéng",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "禾 (hòa) trái → 呈 (trình) phải",
+        "rad": "禾 (hòa – lúa)",
+        "mean": "trình tự, chặng đường",
+        "tip": "Bộ lúa 禾 (đo lường mùa vụ theo trình tự) + 呈(biểu âm) → TRÌNH TỰ, kết hợp 过(trải qua) thành 过程 = QUÁ TRÌNH.",
+        "cf": "呈 (chéng – \"trình bày\", không có bộ 禾\")",
+        "w": "过程 / 过程中 / 工程"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng ta nên đặt sự chú ý vào quá trình làm việc, như vậy mới có thể phát hiện niềm vui khi giải quyết vấn đề.",
+        "answer": "我们应该把注意力放在做事情的过程上，这样才能发现解决问题的快乐。",
+        "answerPy": "Wǒmen yīnggāi bǎ zhùyìlì fàng zài zuò shìqing de guòchéng shang, zhèyàng cái néng fāxiàn jiějué wèntí de kuàilè.",
+        "note": "做事情的过程 — quá trình làm việc.",
+        "pair": "……，才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bất kể là thành công hay thất bại, trong quá trình nỗ lực, chúng ta đều đã học được rất nhiều.",
+        "answer": "不管是成功还是失败，在努力的过程中，我们都已经学到了很多。",
+        "answerPy": "Bùguǎn shì chénggōng háishi shībài, zài nǔlì de guòchéng zhōng, wǒmen dōu yǐjīng xuédàole hěn duō.",
+        "note": "努力的过程中 kết hợp 失败, ôn lại từ vựng của bài.",
+        "pair": "不管……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "努力的过程",
+        "py": "nǔlì de guòchéng",
+        "vn": "quá trình nỗ lực"
+      },
+      {
+        "zh": "成长的过程",
+        "py": "chéng zhǎng de guòchéng",
+        "vn": "quá trình trưởng thành"
+      },
+      {
+        "zh": "做事的过程",
+        "py": "zuò shì de guòchéng",
+        "vn": "quá trình làm việc"
+      },
+      {
+        "zh": "在……过程中",
+        "py": "zài guòchéng zhōng",
+        "vn": "trong quá trình…"
+      },
+      {
+        "zh": "整个过程",
+        "py": "zhěng gè guòchéng",
+        "vn": "toàn bộ quá trình"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + … + 过程中",
+        "m": "Trong quá trình làm gì"
+      },
+      {
+        "s": "过程 ≠ 结果",
+        "m": "过程 là chặng đường; 结果 là cái đạt được cuối cùng"
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "zh": "至少",
+    "py": "zhìshǎo",
+    "pos": "Phó từ",
+    "vn": "ít nhất",
+    "hv": "chí thiểu",
+    "em": "➖",
+    "lesson": 4,
+    "explain": [
+      "Diễn tả mức tối thiểu của một điều gì đó."
+    ],
+    "usage": "Phó từ, đứng trước động từ/mệnh đề: 至少你已经努力过.",
+    "collo": [
+      "至少你已经努力过",
+      "走路至少要",
+      "至少睡7个小时"
+    ],
+    "ex_zh": "因为至少你已经努力过。",
+    "ex_py": "Yīnwèi zhìshǎo nǐ yǐjīng nǔlìguo.",
+    "ex_vn": "Vì ít nhất bạn đã nỗ lực rồi.",
+    "exList": [
+      {
+        "zh": "因为至少你已经努力过。",
+        "py": "Yīnwèi zhìshǎo nǐ yǐjīng nǔlìguo.",
+        "vn": "Vì ít nhất bạn đã nỗ lực rồi."
+      },
+      {
+        "zh": "我住的地方离地铁站有点儿远，走路至少要三十分钟。",
+        "py": "Wǒ zhù de dìfang lí dìtiě zhàn yǒudiǎnr yuǎn, zǒulù zhìshǎo yào sānshí fēnzhōng.",
+        "vn": "Nơi tôi ở cách ga tàu điện ngầm hơi xa, đi bộ ít nhất phải mất 30 phút."
+      },
+      {
+        "zh": "根据调查，人每天晚上最少应该睡7个小时。",
+        "py": "Gēnjù diàochá, rén měitiān wǎnshang zuìshǎo yīnggāi shuì qī ge xiǎoshí.",
+        "vn": "Theo điều tra, mỗi người mỗi tối nên ngủ ít nhất 7 tiếng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "至",
+        "p": "zhì",
+        "type": "独体字 · Chữ đơn",
+        "st": 6,
+        "ord": "nét liền",
+        "rad": "至 (chí – đến)",
+        "mean": "đến, tới mức",
+        "tip": "Chữ tượng hình mũi tên CẮM ĐẾN đất → nghĩa gốc là ĐẾN, TỚI MỨC, kết hợp 少(ít) thành 至少 = ÍT NHẤT (mức tối thiểu).",
+        "cf": "到 (dào – \"đến\", bộ 刂\")",
+        "w": "至少 / 甚至 / 至今"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Dù cuối cùng có thất bại cũng không sao, vì ít nhất bạn đã nỗ lực rồi.",
+        "answer": "即使最后失败了也没有关系，因为至少你已经努力过。",
+        "answerPy": "Jíshǐ zuìhòu shībàile yě méiyǒu guānxi, yīnwèi zhìshǎo nǐ yǐjīng nǔlìguo.",
+        "note": "至少……努力过 kết hợp 失败, ôn lại từ vựng của bài.",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Muốn giảm cân thành công, ít nhất phải kiên trì một tháng mới có hiệu quả.",
+        "answer": "要想减肥成功，至少要坚持一个月才会有效果。",
+        "answerPy": "Yào xiǎng jiǎn féi chénggōng, zhìshǎo yào jiānchí yí ge yuè cái huì yǒu xiàoguǒ.",
+        "note": "至少要坚持 kết hợp 坚持, ôn lại từ vựng của bài.",
+        "pair": "一……才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "至少要",
+        "py": "zhìshǎo yào",
+        "vn": "ít nhất phải"
+      },
+      {
+        "zh": "至少睡7个小时",
+        "py": "zhìshǎo shuì gè xiǎoshí",
+        "vn": "ngủ ít nhất 7 tiếng"
+      },
+      {
+        "zh": "至少你努力过",
+        "py": "zhìshǎo nǐ nǔlì guo",
+        "vn": "ít ra bạn đã cố"
+      },
+      {
+        "zh": "至少一半",
+        "py": "zhìshǎo yíbàn",
+        "vn": "ít nhất một nửa"
+      },
+      {
+        "zh": "至少三次",
+        "py": "zhìshǎo sān cì",
+        "vn": "ít nhất ba lần"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "至少 + số lượng",
+        "m": "Ít nhất bao nhiêu"
+      },
+      {
+        "s": "至少 ↔ 最多",
+        "m": "Ít nhất ↔ nhiều nhất"
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "zh": "总结",
+    "py": "zǒngjié",
+    "pos": "Động từ",
+    "vn": "tổng kết",
+    "hv": "tổng kết",
+    "em": "📋",
+    "lesson": 4,
+    "explain": [
+      "Rút ra kết luận/kinh nghiệm chung sau khi xem xét toàn bộ sự việc."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 总结出有用的经验, 总结经验.",
+    "collo": [
+      "总结出有用的经验",
+      "总结经验",
+      "做一个总结"
+    ],
+    "ex_zh": "我们还可以从失败中总结出有用的经验。",
+    "ex_py": "Wǒmen hái kěyǐ cóng shībài zhōng zǒngjié chū yǒuyòng de jīngyàn.",
+    "ex_vn": "Chúng ta còn có thể từ thất bại tổng kết ra kinh nghiệm hữu ích.",
+    "exList": [
+      {
+        "zh": "我们还可以从失败中总结出有用的经验。",
+        "py": "Wǒmen hái kěyǐ cóng shībài zhōng zǒngjié chū yǒuyòng de jīngyàn.",
+        "vn": "Chúng ta còn có thể từ thất bại tổng kết ra kinh nghiệm hữu ích."
+      },
+      {
+        "zh": "有了这些积累，成功自然离我们越来越近。",
+        "py": "Yǒule zhèxiē jīlěi, chénggōng zìrán lí wǒmen yuè lái yuè jìn.",
+        "vn": "Có được những tích lũy này, thành công tự nhiên ngày càng gần chúng ta hơn."
+      },
+      {
+        "zh": "老师让我们总结一下这次考试的经验。",
+        "py": "Lǎoshī ràng wǒmen zǒngjié yíxià zhè cì kǎoshì de jīngyàn.",
+        "vn": "Thầy giáo bảo chúng tôi tổng kết một chút kinh nghiệm của kỳ thi này."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "总",
+        "p": "zǒng",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 9,
+        "ord": "⺈ trên → 心 dưới",
+        "rad": "心 (tâm)",
+        "mean": "tổng, toàn bộ",
+        "tip": "Bộ tâm 心 (gom lại trong lòng) → mở rộng thành TỔNG, TOÀN BỘ, kết hợp 结(kết lại) thành 总结 = TỔNG KẾT.",
+        "cf": "忽 (hū – \"bỗng nhiên\", bộ 心\")",
+        "w": "总结 / 总是 / 总共"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng ta còn có thể từ thất bại tổng kết ra kinh nghiệm hữu ích, có được những tích lũy này, thành công sẽ ngày càng gần hơn.",
+        "answer": "我们还可以从失败中总结出有用的经验，有了这些积累，成功会越来越近。",
+        "answerPy": "Wǒmen hái kěyǐ cóng shībài zhōng zǒngjié chū yǒuyòng de jīngyàn, yǒule zhèxiē jīlěi, chénggōng huì yuè lái yuè jìn.",
+        "note": "总结出……经验 kết hợp 失败/积累, ôn lại nhiều từ vựng.",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy giáo bảo chúng tôi tổng kết kinh nghiệm của kỳ thi này, để chuẩn bị tốt hơn cho lần sau.",
+        "answer": "老师让我们总结这次考试的经验，为了下次准备得更好。",
+        "answerPy": "Lǎoshī ràng wǒmen zǒngjié zhè cì kǎoshì de jīngyàn, wèile xià cì zhǔnbèi de gèng hǎo.",
+        "note": "总结……经验 — tổng kết kinh nghiệm.",
+        "pair": "为了……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "总结经验",
+        "py": "zǒngjié jīngyàn",
+        "vn": "tổng kết kinh nghiệm"
+      },
+      {
+        "zh": "做一个总结",
+        "py": "zuò yí gè zǒngjié",
+        "vn": "làm một bản tổng kết"
+      },
+      {
+        "zh": "总结出经验",
+        "py": "zǒngjié chū jīngyàn",
+        "vn": "rút ra kinh nghiệm"
+      },
+      {
+        "zh": "从失败中总结",
+        "py": "cóng shībài zhōng zǒngjié",
+        "vn": "tổng kết từ thất bại"
+      },
+      {
+        "zh": "总结一下",
+        "py": "zǒngjié yíxià",
+        "vn": "tổng kết một chút"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "总结 + 经验 (động từ)",
+        "m": "Tổng kết kinh nghiệm"
+      },
+      {
+        "s": "做 + 一个总结 (danh từ)",
+        "m": "Làm một bản tổng kết"
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "zh": "取",
+    "py": "qǔ",
+    "pos": "Động từ",
+    "vn": "đạt được, lấy",
+    "hv": "thủ",
+    "em": "🏆",
+    "lesson": 5,
+    "explain": [
+      "Đạt được, giành lấy (thành công, kết quả)."
+    ],
+    "usage": "Động từ; thường đi với 取得成功, 去取行李箱.",
+    "collo": [
+      "取得成功",
+      "取行李箱",
+      "取得好成绩"
+    ],
+    "ex_zh": "取得成功的人往往都经历过许多失败。",
+    "ex_py": "Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài.",
+    "ex_vn": "Người đạt được thành công thường đều đã trải qua rất nhiều thất bại.",
+    "exList": [
+      {
+        "zh": "取得成功的人往往都经历过许多失败。",
+        "py": "Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài.",
+        "vn": "Người đạt được thành công thường đều đã trải qua rất nhiều thất bại."
+      },
+      {
+        "zh": "他还得去取行李箱，您别担心。",
+        "py": "Tā hái děi qù qǔ xínglixiāng, nín bié dānxīn.",
+        "vn": "Anh ấy còn phải đi lấy vali, anh đừng lo lắng."
+      },
+      {
+        "zh": "只要能取得好的成绩，就一定会参加。",
+        "py": "Zhǐyào néng qǔdé hǎo de chéngjì, jiù yídìng huì cānjiā.",
+        "vn": "Chỉ cần có thể đạt được thành tích tốt, thì nhất định sẽ tham gia."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "取",
+        "p": "qǔ",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "耳 (nhĩ) trái → 又 phải",
+        "rad": "又 (hựu – tay phải)",
+        "mean": "lấy",
+        "tip": "Chữ tượng hình bàn tay 又 cầm lấy TAI 耳 (tục cổ đại cắt tai chiến lợi phẩm) → nghĩa gốc là LẤY, mở rộng thành ĐẠT ĐƯỢC.",
+        "cf": "职 (zhí – \"chức vụ\", bộ 耳\")",
+        "w": "取 / 取得 / 获取"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chính vì đã trải qua nhiều thất bại mà vẫn kiên trì, nên họ mới đạt được thành công.",
+        "answer": "正因为经历过许多失败还能坚持，所以他们才取得了成功。",
+        "answerPy": "Zhèng yīnwèi jīnglìguo xǔduō shībài hái néng jiānchí, suǒyǐ tāmen cái qǔdéle chénggōng.",
+        "note": "取得成功 là kết hợp cố định, không nói 拿到成功.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì anh ấy còn phải đi lấy vali, nên phiền bạn đợi thêm một chút.",
+        "answer": "因为他还得去取行李箱，所以麻烦你再等一下。",
+        "answerPy": "Yīnwèi tā hái děi qù qǔ xínglixiāng, suǒyǐ máfan nǐ zài děng yíxià.",
+        "note": "取 + đồ vật — đi lấy: 取钱, 取行李.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "取得成功",
+        "py": "qǔdé chénggōng",
+        "vn": "đạt được thành công"
+      },
+      {
+        "zh": "取得好成绩",
+        "py": "qǔdé hǎo chéngjì",
+        "vn": "đạt thành tích tốt"
+      },
+      {
+        "zh": "取行李箱",
+        "py": "qǔ xínglixiāng",
+        "vn": "lấy vali"
+      },
+      {
+        "zh": "取钱",
+        "py": "qǔ qián",
+        "vn": "rút tiền"
+      },
+      {
+        "zh": "去取东西",
+        "py": "qù qǔ dōngxi",
+        "vn": "đi lấy đồ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "取得 + 成功 / 成绩",
+        "m": "Đạt được thành công, thành tích"
+      },
+      {
+        "s": "取 + đồ vật",
+        "m": "Đi lấy cái gì — 取钱, 取行李"
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "zh": "经历",
+    "py": "jīnglì",
+    "pos": "Động từ",
+    "vn": "trải qua",
+    "hv": "kinh lịch",
+    "em": "📖",
+    "lesson": 5,
+    "explain": [
+      "Đã từng trải qua một sự việc/giai đoạn nào đó trong đời."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 经历过许多失败.",
+    "collo": [
+      "经历过许多失败",
+      "成功经历",
+      "经历过困难"
+    ],
+    "ex_zh": "取得成功的人往往都经历过许多失败。",
+    "ex_py": "Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài.",
+    "ex_vn": "Người đạt được thành công thường đều đã trải qua rất nhiều thất bại.",
+    "exList": [
+      {
+        "zh": "取得成功的人往往都经历过许多失败。",
+        "py": "Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài.",
+        "vn": "Người đạt được thành công thường đều đã trải qua rất nhiều thất bại."
+      },
+      {
+        "zh": "李进和张远聊张远的成功经历。",
+        "py": "Lǐ Jìn hé Zhāng Yuǎn liáo Zhāng Yuǎn de chénggōng jīnglì.",
+        "vn": "Lý Tiến và Trương Viễn nói chuyện về trải nghiệm thành công của Trương Viễn."
+      },
+      {
+        "zh": "她经历过很多困难，但从来没有放弃。",
+        "py": "Tā jīnglìguo hěn duō kùnnan, dàn cónglái méiyǒu fàngqì.",
+        "vn": "Cô ấy đã trải qua rất nhiều khó khăn, nhưng chưa bao giờ từ bỏ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "历",
+        "p": "lì",
+        "type": "半包围结构 · Bán bao vây (giản thể)",
+        "st": 4,
+        "ord": "厂 bao ngoài → 力 trong",
+        "rad": "厂 (xưởng)",
+        "mean": "trải qua",
+        "tip": "Chữ giản thể mang nghĩa TRẢI QUA THỜI GIAN, kết hợp 经(đi qua) thành 经历 = TRẢI QUA (kinh nghiệm sống).",
+        "cf": "厉 (lì – \"nghiêm khắc\", tự dạng gần giống)",
+        "w": "经历 / 历史 / 经验"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mặc dù cô ấy đã trải qua rất nhiều thất bại, nhưng chưa bao giờ từ bỏ lựa chọn của mình.",
+        "answer": "尽管她经历过很多失败，但她从来没有放弃过自己的选择。",
+        "answerPy": "Jǐnguǎn tā jīnglìguo hěn duō shībài, dàn tā cónglái méiyǒu fàngqìguo zìjǐ de xuǎnzé.",
+        "note": "从来没 + V + 过 — chưa bao giờ.",
+        "pair": "尽管……但……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Lý Tiến vừa nghe Trương Viễn kể chuyện thành công, vừa ghi lại vài chỗ quan trọng.",
+        "answer": "李进一边听张远聊成功经历，一边记下了几个重要的地方。",
+        "answerPy": "Lǐ Jìn yìbiān tīng Zhāng Yuǎn liáo chénggōng jīnglì, yìbiān jìxiàle jǐ ge zhòngyào de dìfang.",
+        "note": "一边 A 一边 B — hai việc diễn ra cùng lúc.",
+        "pair": "一边……一边……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "经历过失败",
+        "py": "jīnglì guo shībài",
+        "vn": "từng trải qua thất bại"
+      },
+      {
+        "zh": "成功经历",
+        "py": "chénggōng jīnglì",
+        "vn": "trải nghiệm thành công"
+      },
+      {
+        "zh": "经历过困难",
+        "py": "jīnglì guo kùnnan",
+        "vn": "từng qua khó khăn"
+      },
+      {
+        "zh": "难忘的经历",
+        "py": "nán wàng de jīnglì",
+        "vn": "trải nghiệm khó quên"
+      },
+      {
+        "zh": "经历了很多",
+        "py": "jīnglì le hěn duō",
+        "vn": "đã trải qua nhiều"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "经历 + 过 + N (động từ)",
+        "m": "Đã từng trải qua cái gì"
+      },
+      {
+        "s": "……的 + 经历 (danh từ)",
+        "m": "Trải nghiệm về cái gì"
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "zh": "许多",
+    "py": "xǔduō",
+    "pos": "Số từ",
+    "vn": "rất nhiều",
+    "hv": "hứa đa",
+    "em": "🔢",
+    "lesson": 5,
+    "explain": [
+      "Diễn tả số lượng lớn."
+    ],
+    "usage": "Số từ, đứng trước danh từ: 许多失败, 许多困难.",
+    "collo": [
+      "经历过许多失败",
+      "许多困难",
+      "许多东西"
+    ],
+    "ex_zh": "取得成功的人往往都经历过许多失败。",
+    "ex_py": "Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài.",
+    "ex_vn": "Người đạt được thành công thường đều đã trải qua rất nhiều thất bại.",
+    "exList": [
+      {
+        "zh": "取得成功的人往往都经历过许多失败。",
+        "py": "Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài.",
+        "vn": "Người đạt được thành công thường đều đã trải qua rất nhiều thất bại."
+      },
+      {
+        "zh": "每一个人都希望成功，可是很多时候，在成功之前会遇到很多困难。",
+        "py": "Měi yí ge rén dōu xīwàng chénggōng, kěshì hěn duō shíhou, zài chénggōng zhīqián huì yùdào hěn duō kùnnan.",
+        "vn": "Mỗi người đều mong muốn thành công, nhưng rất nhiều lúc, trước khi thành công sẽ gặp phải nhiều khó khăn."
+      },
+      {
+        "zh": "他有许多好朋友。",
+        "py": "Tā yǒu xǔduō hǎo péngyou.",
+        "vn": "Anh ấy có rất nhiều bạn tốt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "许",
+        "p": "xǔ",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 6,
+        "ord": "讠 (ngôn) trái → 午 (ngọ) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "cho phép, nhiều",
+        "tip": "Bộ lời nói 讠 + 午(biểu âm) → mở rộng thành SỐ LƯỢNG NHIỀU (khi kết hợp 多 thành 许多).",
+        "cf": "浒 (hǔ – \"bến nước\", ít dùng)",
+        "w": "许多 / 也许 / 允许"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Người đạt thành công không những từng trải qua nhiều thất bại, mà còn gặp vô số khó khăn.",
+        "answer": "取得成功的人不但经历过许多失败，而且还遇到过许多困难。",
+        "answerPy": "Qǔdé chénggōng de rén búdàn jīnglìguo xǔduō shībài, érqiě hái yùdàoguo xǔduō kùnnan.",
+        "note": "困难 là từ bài 2 — 遇到困难.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù cuối cùng thất bại, chúng ta vẫn học được rất nhiều điều bổ ích trong quá trình nỗ lực.",
+        "answer": "即使最后失败了，我们也能在努力的过程中学到许多有用的东西。",
+        "answerPy": "Jíshǐ zuìhòu shībài le, wǒmen yě néng zài nǔlì de guòchéng zhōng xuédào xǔduō yǒuyòng de dōngxi.",
+        "note": "即使……也…… — nhượng bộ giả định, khác 尽管 (việc có thật).",
+        "pair": "即使……也……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "许多失败",
+        "py": "xǔduō shībài",
+        "vn": "rất nhiều thất bại"
+      },
+      {
+        "zh": "许多困难",
+        "py": "xǔduō kùnnan",
+        "vn": "rất nhiều khó khăn"
+      },
+      {
+        "zh": "许多东西",
+        "py": "xǔduō dōngxi",
+        "vn": "rất nhiều thứ"
+      },
+      {
+        "zh": "许多人",
+        "py": "xǔduō rén",
+        "vn": "rất nhiều người"
+      },
+      {
+        "zh": "学到许多",
+        "py": "xué dào xǔduō",
+        "vn": "học được rất nhiều"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "许多 + N",
+        "m": "Rất nhiều … — không cần thêm 的"
+      },
+      {
+        "s": "许多 ≈ 很多",
+        "m": "许多 thiên văn viết hơn 很多"
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "zh": "区别",
+    "py": "qūbié",
+    "pos": "Danh từ",
+    "vn": "sự khác biệt",
+    "hv": "khu biệt",
+    "em": "🔀",
+    "lesson": 5,
+    "explain": [
+      "Điểm không giống nhau giữa hai hay nhiều đối tượng."
+    ],
+    "usage": "Danh từ; thường đi với 有什么区别, ……的区别就是.",
+    "collo": [
+      "有什么区别",
+      "……的区别就是",
+      "区分区别"
+    ],
+    "ex_zh": "他们和普通人的区别就是他们都坚持了下来。",
+    "ex_py": "Tāmen hé pǔtōng rén de qūbié jiùshì tāmen dōu jiānchíle xiàlái.",
+    "ex_vn": "Họ và người bình thường khác nhau ở chỗ họ đều kiên trì đến cùng.",
+    "exList": [
+      {
+        "zh": "他们和普通人的区别就是他们都坚持了下来。",
+        "py": "Tāmen hé pǔtōng rén de qūbié jiùshì tāmen dōu jiānchíle xiàlái.",
+        "vn": "Họ và người bình thường khác nhau ở chỗ họ đều kiên trì đến cùng."
+      },
+      {
+        "zh": "\"爱\"和\"喜欢\"有什么区别？我认为\"爱\"比\"喜欢\"的感情更深。",
+        "py": "\"Ài\" hé \"xǐhuan\" yǒu shénme qūbié? Wǒ rènwéi \"ài\" bǐ \"xǐhuan\" de gǎnqíng gèng shēn.",
+        "vn": "\"Yêu\" và \"thích\" có gì khác biệt? Tôi cho rằng \"yêu\" tình cảm sâu đậm hơn \"thích\"."
+      },
+      {
+        "zh": "这两种方法有很大的区别。",
+        "py": "Zhè liǎng zhǒng fāngfǎ yǒu hěn dà de qūbié.",
+        "vn": "Hai phương pháp này có sự khác biệt rất lớn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "别",
+        "p": "bié",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "另 trái → 刂 (đao) phải",
+        "rad": "刂 (đao – dao)",
+        "mean": "khác biệt, chia tách",
+        "tip": "Bộ dao 刂 (cắt tách ra) + 另(khác) → CHIA TÁCH RA thành cái KHÁC, kết hợp 区(khu vực) thành 区别 = SỰ KHÁC BIỆT (phân chia rạch ròi).",
+        "cf": "到 (dào – \"đến\", bộ 刂 khác vị trí)",
+        "w": "区别 / 区分 / 别的"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Người thành công và người bình thường khác nhau không phải ở may mắn, mà ở chỗ họ đã kiên trì đến cùng.",
+        "answer": "取得成功的人和普通人的区别不是运气，而是他们都坚持了下来。",
+        "answerPy": "Qǔdé chénggōng de rén hé pǔtōng rén de qūbié bú shì yùnqi, ér shì tāmen dōu jiānchíle xiàlai.",
+        "note": "不是 A，而是 B — phủ định A rồi khẳng định B.",
+        "pair": "不是……而是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn có biết \"希望\" và \"理想\" khác nhau chỗ nào không? Nếu không biết thì tra từ điển đi.",
+        "answer": "你知道\"希望\"和\"理想\"有什么区别吗？要是不知道，就查一下词典吧。",
+        "answerPy": "Nǐ zhīdào \"xīwàng\" hé \"lǐxiǎng\" yǒu shénme qūbié ma? Yàoshi bù zhīdào, jiù chá yíxià cídiǎn ba.",
+        "note": "A 和 B 有什么区别 — mẫu câu hỏi so sánh hai từ.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "有什么区别",
+        "py": "yǒu shénme qūbié",
+        "vn": "có gì khác nhau"
+      },
+      {
+        "zh": "……的区别是",
+        "py": "de qūbié shì",
+        "vn": "điểm khác nhau là"
+      },
+      {
+        "zh": "分不清区别",
+        "py": "fēn bu qīng qūbié",
+        "vn": "không phân biệt được"
+      },
+      {
+        "zh": "很大的区别",
+        "py": "hěn dà de qūbié",
+        "vn": "khác biệt lớn"
+      },
+      {
+        "zh": "没有区别",
+        "py": "méiyǒu qūbié",
+        "vn": "không có khác biệt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "A 和 B 的区别 + 是 + …",
+        "m": "Điểm khác nhau giữa A và B là …"
+      },
+      {
+        "s": "A 和 B 有什么区别？",
+        "m": "A với B khác nhau chỗ nào?"
+      }
+    ]
+  },
+  {
+    "n": 30,
+    "zh": "暂时",
+    "py": "zànshí",
+    "pos": "Danh từ",
+    "vn": "tạm thời, nhất thời",
+    "hv": "tạm thời",
+    "em": "⏳",
+    "lesson": 5,
+    "explain": [
+      "Trong khoảng thời gian ngắn, không lâu dài."
+    ],
+    "usage": "Danh từ, làm định ngữ: 困难只是暂时的.",
+    "collo": [
+      "困难只是暂时的",
+      "暂时不能",
+      "暂时的问题"
+    ],
+    "ex_zh": "困难只是暂时的，\"阳光总在风雨后\"。",
+    "ex_py": "Kùnnan zhǐ shì zànshí de, \"yángguāng zǒng zài fēngyǔ hòu\".",
+    "ex_vn": "Khó khăn chỉ là tạm thời, \"sau cơn mưa trời lại sáng\".",
+    "exList": [
+      {
+        "zh": "困难只是暂时的，\"阳光总在风雨后\"。",
+        "py": "Kùnnan zhǐ shì zànshí de, \"yángguāng zǒng zài fēngyǔ hòu\".",
+        "vn": "Khó khăn chỉ là tạm thời, \"sau cơn mưa trời lại sáng\"."
+      },
+      {
+        "zh": "所有的困难都是暂时的，要有信心，我相信你一定会成功。",
+        "py": "Suǒyǒu de kùnnan dōu shì zànshí de, yào yǒu xìnxīn, wǒ xiāngxìn nǐ yídìng huì chénggōng.",
+        "vn": "Mọi khó khăn đều chỉ là tạm thời, phải có lòng tin, tôi tin bạn nhất định sẽ thành công."
+      },
+      {
+        "zh": "这只是暂时的问题，很快就会解决。",
+        "py": "Zhè zhǐshì zànshí de wèntí, hěn kuài jiù huì jiějué.",
+        "vn": "Đây chỉ là vấn đề tạm thời, sẽ sớm được giải quyết."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "暂",
+        "p": "zàn",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 8,
+        "ord": "斩(biến thể) trên → 日 dưới",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "ngắn ngủi",
+        "tip": "Bộ mặt trời 日 (thời gian) + 斩(biểu âm) → khoảng THỜI GIAN NGẮN NGỦI, kết hợp 时(thời gian) thành 暂时 = TẠM THỜI.",
+        "cf": "斩 (zhǎn – \"chém\", bộ 斤\")",
+        "w": "暂时 / 暂停 / 暂且"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần tin rằng mọi khó khăn đều chỉ là tạm thời, thì bạn nhất định sẽ thành công.",
+        "answer": "只要相信所有的困难都是暂时的，你就一定会成功。",
+        "answerPy": "Zhǐyào xiāngxìn suǒyǒu de kùnnan dōu shì zànshí de, nǐ jiù yídìng huì chénggōng.",
+        "note": "所有 là từ bài 6; 信心 (bài 3) và 暂时 hay đi cùng nhau khi động viên.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đây chỉ là vấn đề tạm thời, chỉ cần chúng ta dũng cảm đối mặt, nhất định có thể giải quyết.",
+        "answer": "这只是暂时的问题，只要我们勇敢地面对，一定能解决。",
+        "answerPy": "Zhè zhǐshì zànshí de wèntí, zhǐyào wǒmen yǒnggǎn de miànduì, yídìng néng jiějué.",
+        "note": "暂时的问题……勇敢地面对 kết hợp 勇敢/面对, ôn lại từ vựng của bài.",
+        "pair": "只要……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "暂时的困难",
+        "py": "zànshí de kùnnan",
+        "vn": "khó khăn tạm thời"
+      },
+      {
+        "zh": "暂时不能",
+        "py": "zànshí bù néng",
+        "vn": "tạm thời chưa thể"
+      },
+      {
+        "zh": "只是暂时的",
+        "py": "zhī shì zànshí de",
+        "vn": "chỉ là nhất thời"
+      },
+      {
+        "zh": "暂时住这儿",
+        "py": "zànshí zhù zhèr",
+        "vn": "tạm ở đây"
+      },
+      {
+        "zh": "暂时的问题",
+        "py": "zànshí de wèntí",
+        "vn": "vấn đề trước mắt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 只是暂时的",
+        "m": "Cái gì đó chỉ là tạm thời"
+      },
+      {
+        "s": "暂时 + 不 + V",
+        "m": "Tạm thời chưa làm gì"
+      }
+    ]
+  },
+  {
+    "n": 31,
+    "zh": "面对",
+    "py": "miànduì",
+    "pos": "Động từ",
+    "vn": "đương đầu, đối mặt",
+    "hv": "diện đối",
+    "em": "😤",
+    "lesson": 5,
+    "explain": [
+      "Trực tiếp đương đầu với một tình huống/vấn đề, không né tránh."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 面对困难.",
+    "collo": [
+      "勇敢地面对困难",
+      "面对失败",
+      "面对问题"
+    ],
+    "ex_zh": "只有我们勇敢地面对困难，才能有希望取得成功。",
+    "ex_py": "Zhǐyǒu wǒmen yǒnggǎn de miànduì kùnnan, cái néng yǒu xīwàng qǔdé chénggōng.",
+    "ex_vn": "Chỉ khi chúng ta dũng cảm đối mặt với khó khăn, mới có hy vọng đạt được thành công.",
+    "exList": [
+      {
+        "zh": "只有我们勇敢地面对困难，才能有希望取得成功。",
+        "py": "Zhǐyǒu wǒmen yǒnggǎn de miànduì kùnnan, cái néng yǒu xīwàng qǔdé chénggōng.",
+        "vn": "Chỉ khi chúng ta dũng cảm đối mặt với khó khăn, mới có hy vọng đạt được thành công."
+      },
+      {
+        "zh": "我们要学会面对失败，而不是逃避。",
+        "py": "Wǒmen yào xuéhuì miànduì shībài, ér bú shì táobì.",
+        "vn": "Chúng ta phải học cách đối mặt với thất bại, chứ không phải trốn tránh."
+      },
+      {
+        "zh": "遇到问题，我们应该冷静面对。",
+        "py": "Yùdào wèntí, wǒmen yīnggāi lěngjìng miànduì.",
+        "vn": "Gặp vấn đề, chúng ta nên bình tĩnh đối mặt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "面",
+        "p": "miàn",
+        "type": "独体字 · Chữ đơn",
+        "st": 9,
+        "ord": "nét liền",
+        "rad": "面 (diện – mặt)",
+        "mean": "mặt, đối diện",
+        "tip": "Chữ tượng hình khuôn MẶT người → mở rộng thành ĐỐI DIỆN, kết hợp 对(hướng về) thành 面对 = ĐỐI MẶT.",
+        "cf": "面 dễ nhầm với 而 (ér – \"mà\")",
+        "w": "面对 / 面试 / 见面"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ khi chúng ta dũng cảm đối mặt với khó khăn, mới có thể vượt qua nó và đạt được thành công.",
+        "answer": "只有我们勇敢地面对困难，才能战胜它，取得成功。",
+        "answerPy": "Zhǐyǒu wǒmen yǒnggǎn de miànduì kùnnan, cái néng zhànshèng tā, qǔdé chénggōng.",
+        "note": "勇敢地面对困难 kết hợp 勇敢/取, ôn lại từ vựng của bài.",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Khó khăn chỉ là tạm thời, chỉ cần chúng ta dũng cảm đối mặt, nhất định có hy vọng thành công.",
+        "answer": "困难只是暂时的，只要我们勇敢地面对，一定有希望成功。",
+        "answerPy": "Kùnnan zhǐ shì zànshí de, zhǐyào wǒmen yǒnggǎn de miànduì, yídìng yǒu xīwàng chénggōng.",
+        "note": "暂时……勇敢地面对 kết hợp 暂时/勇敢, ôn lại từ vựng của bài.",
+        "pair": "只要……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "面对困难",
+        "py": "miànduì kùnnan",
+        "vn": "đối mặt khó khăn"
+      },
+      {
+        "zh": "面对失败",
+        "py": "miànduì shībài",
+        "vn": "đối diện thất bại"
+      },
+      {
+        "zh": "勇敢地面对",
+        "py": "yǒnggǎn de miànduì",
+        "vn": "dũng cảm đối mặt"
+      },
+      {
+        "zh": "面对问题",
+        "py": "miànduì wèntí",
+        "vn": "đối mặt vấn đề"
+      },
+      {
+        "zh": "不敢面对",
+        "py": "bù gǎn miànduì",
+        "vn": "không dám đối mặt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "面对 + 困难 / 失败",
+        "m": "Đối mặt với khó khăn, thất bại"
+      },
+      {
+        "s": "面 + 对",
+        "m": "Quay mặt (面) về phía (对) — ghép nghĩa dễ nhớ"
+      }
+    ]
+  },
+  {
+    "n": 32,
+    "zh": "孙月",
+    "py": "Sūn Yuè",
+    "pos": "Danh từ riêng",
+    "vn": "Tôn Nguyệt (tên người)",
+    "hv": "Tôn Nguyệt",
+    "em": "👩",
+    "lesson": 1,
+    "explain": [
+      "Tên riêng của nhân vật nữ, xuất hiện lại từ Bài 2."
+    ],
+    "usage": "Danh từ riêng chỉ tên người.",
+    "collo": [
+      "孙月说",
+      "王静和孙月"
+    ],
+    "ex_zh": "王静和孙月聊孙月减肥的事情。",
+    "ex_py": "Wáng Jìng hé Sūn Yuè liáo Sūn Yuè jiǎn féi de shìqing.",
+    "ex_vn": "Vương Tĩnh và Tôn Nguyệt nói chuyện về việc giảm cân của Tôn Nguyệt.",
+    "exList": [
+      {
+        "zh": "王静和孙月聊孙月减肥的事情。",
+        "py": "Wáng Jìng hé Sūn Yuè liáo Sūn Yuè jiǎn féi de shìqing.",
+        "vn": "Vương Tĩnh và Tôn Nguyệt nói chuyện về việc giảm cân của Tôn Nguyệt."
+      }
+    ]
+  },
+  {
+    "n": 33,
+    "zh": "王红",
+    "py": "Wáng Hóng",
+    "pos": "Danh từ riêng",
+    "vn": "Vương Hồng (tên người)",
+    "hv": "Vương Hồng",
+    "em": "👩",
+    "lesson": 3,
+    "explain": [
+      "Tên riêng của nhân vật nữ, nhà văn, xuất hiện lại từ Bài 4."
+    ],
+    "usage": "Danh từ riêng chỉ tên người.",
+    "collo": [
+      "王红的成功经历",
+      "记得王红吗"
+    ],
+    "ex_zh": "小林和小李谈王红的成功经历。",
+    "ex_py": "Xiǎo Lín hé Xiǎo Lǐ tán Wáng Hóng de chénggōng jīnglì.",
+    "ex_vn": "Tiểu Lâm và Tiểu Lý nói chuyện về trải nghiệm thành công của Vương Hồng.",
+    "exList": [
+      {
+        "zh": "小林和小李谈王红的成功经历。",
+        "py": "Xiǎo Lín hé Xiǎo Lǐ tán Wáng Hóng de chénggōng jīnglì.",
+        "vn": "Tiểu Lâm và Tiểu Lý nói chuyện về trải nghiệm thành công của Vương Hồng."
+      }
+    ]
+  },
+  {
+    "n": 34,
+    "zh": "爱迪生",
+    "py": "Àidíshēng",
+    "pos": "Danh từ riêng",
+    "vn": "Edison (nhà phát minh)",
+    "hv": "Ái Địch Sinh",
+    "em": "💡",
+    "lesson": 5,
+    "explain": [
+      "Thomas Alva Edison (1847-1931), nhà phát minh nổi tiếng người Mỹ."
+    ],
+    "usage": "Danh từ riêng chỉ tên người.",
+    "collo": [
+      "爱迪生就是",
+      "爱迪生发明电灯"
+    ],
+    "ex_zh": "爱迪生就是在找了上千种材料后才找到了能点亮电灯的材料。",
+    "ex_py": "Àidíshēng jiùshì zài zhǎole shàng qiān zhǒng cáiliào hòu cái zhǎodàole néng diǎnliàng diàndēng de cáiliào.",
+    "ex_vn": "Edison chính là sau khi tìm hàng nghìn loại vật liệu mới tìm được loại vật liệu có thể thắp sáng bóng đèn điện.",
+    "exList": [
+      {
+        "zh": "爱迪生就是在找了上千种材料后才找到了能点亮电灯的材料。",
+        "py": "Àidíshēng jiùshì zài zhǎole shàng qiān zhǒng cáiliào hòu cái zhǎodàole néng diǎnliàng diàndēng de cáiliào.",
+        "vn": "Edison chính là sau khi tìm hàng nghìn loại vật liệu mới tìm được loại vật liệu có thể thắp sáng bóng đèn điện."
+      }
+    ]
+  }
+];
+
+var wuData = [
+  {img:'🍪',label:'饼干',py:'bǐnggān',letter:'A'},
+  {img:'🎾',label:'网球',py:'wǎngqiú',letter:'B'},
+  {img:'✍️',label:'作家',py:'zuòjiā',letter:'C'},
+  {img:'🦁',label:'勇敢',py:'yǒnggǎn',letter:'D'},
+  {img:'💡',label:'爱迪生',py:'Àidíshēng',letter:'E'},
+  {img:'😌',label:'轻松',py:'qīngsōng',letter:'F'},
+];
+
+var dialogData = [
+  {scene:'课文1 · 王静和孙月聊孙月减肥的事情',
+   preQuiz:[{q:'孙月一个月减肥的结果是什么？',opts:['轻了一公斤','瘦了很多','完全没变化'],ans:0},{q:'朋友认为要想减肥成功，应该怎么做？',opts:['坚持','吃减肥药','不吃饭'],ans:0},{q:'孙月最后决定怎么做？',opts:['继续减肥，把饼干和巧克力送给朋友','放弃减肥','去医院'],ans:0}],
+   lines:[
+     {sp:0,zh:'怎么又买了这么多饼干和巧克力？难道你不减肥了？',py:'Zěnme yòu mǎile zhème duō bǐnggān hé qiǎokèlì? Nándào nǐ bù jiǎn féi le?',vn:'Sao lại mua nhiều bánh quy và sô cô la thế này? Chẳng lẽ bạn không giảm cân nữa à?'},
+     {sp:1,zh:'减了一个月都没瘦下来，我实在没有信心了。',py:'Jiǎnle yí ge yuè dōu méi shòu xialai, wǒ shízài méiyǒu xìnxīn le.',vn:'Giảm một tháng rồi mà không gầy xuống được, tôi thực sự mất hết lòng tin rồi.'},
+     {sp:0,zh:'如果你想减肥，就得少吃东西，而且要多运动。',py:'Rúguǒ nǐ xiǎng jiǎn féi, jiù děi shǎo chī dōngxi, érqiě yào duō yùndòng.',vn:'Nếu bạn muốn giảm cân, thì phải ăn ít đi, hơn nữa phải vận động nhiều.'},
+     {sp:1,zh:'我就是这么做的，但这一个月下来，我只轻了一公斤。',py:'Wǒ jiùshì zhème zuò de, dàn zhè yí ge yuè xialai, wǒ zhǐ qīngle yì gōngjīn.',vn:'Tôi chính là làm như vậy đấy, nhưng qua một tháng này, tôi chỉ nhẹ được một cân.'},
+     {sp:0,zh:'一个月太短了。要想减肥成功，只能坚持，才会慢慢有效果。',py:'Yí ge yuè tài duǎn le. Yào xiǎng jiǎn féi chénggōng, zhǐ néng jiānchí, cái huì mànman yǒu xiàoguǒ.',vn:'Một tháng quá ngắn. Muốn giảm cân thành công, chỉ có thể kiên trì, mới từ từ có hiệu quả.'},
+     {sp:1,zh:'我本来已经打算放弃了，但是你刚才的话让我改变了主意。这些饼干和巧克力送给你了。',py:'Wǒ běnlái yǐjīng dǎsuàn fàngqì le, dànshì nǐ gāngcái de huà ràng wǒ gǎibiànle zhǔyi. Zhèxiē bǐnggān hé qiǎokèlì sònggěi nǐ le.',vn:'Tôi vốn đã định bỏ cuộc rồi, nhưng lời bạn vừa nói khiến tôi thay đổi ý định. Số bánh quy và sô cô la này tặng cho bạn rồi.'},
+   ]},
+  {scene:'课文2 · 李进和张远聊张远的成功经历',
+   preQuiz:[{q:'张远练球的频率是怎样的？',opts:['只在夏天练习','不管春夏秋冬从来没有休息过','一周休息一天'],ans:1},{q:'张远得过什么？',opts:['很多国际大奖','很多钱','很多礼物'],ans:0},{q:'张远认为成功要靠什么？',opts:['努力','运气','朋友'],ans:0}],
+   lines:[
+     {sp:0,zh:'你网球打得真好，还得过那么多国际大奖！每次看你比赛，感觉你轻轻松松就赢了。',py:'Nǐ wǎngqiú dǎ de zhēn hǎo, hái déguo nàme duō guójì dà jiǎng! Měi cì kàn nǐ bǐsài, gǎnjué nǐ qīngqīngsōngsōng jiù yíng le.',vn:'Bạn đánh quần vợt giỏi thật, còn từng giành nhiều giải quốc tế lớn như vậy! Mỗi lần xem bạn thi đấu, tôi cảm thấy bạn thắng rất nhẹ nhàng.'},
+     {sp:1,zh:'哪里啊！那是你没看到我辛苦练习的一面，没有人随随便便就能成功的。',py:'Nǎli a! Nà shì nǐ méi kàndào wǒ xīnkǔ liànxí de yí miàn, méiyǒu rén suísuíbiànbiàn jiù néng chénggōng de.',vn:'Đâu có! Đó là vì bạn không nhìn thấy mặt tôi luyện tập vất vả, không có ai tùy tiện là có thể thành công được.'},
+     {sp:0,zh:'我从小也对网球感兴趣，但是到现在还是打得不怎么样。',py:'Wǒ cóngxiǎo yě duì wǎngqiú gǎn xìngqù, dànshì dào xiànzài háishi dǎ de bù zěnmeyàng.',vn:'Tôi từ nhỏ cũng hứng thú với quần vợt, nhưng đến giờ vẫn đánh không giỏi lắm.'},
+     {sp:1,zh:'你知道吗？不管春夏秋冬，我练球从来没有休息过一天。',py:'Nǐ zhīdào ma? Bùguǎn chūn xià qiū dōng, wǒ liàn qiú cónglái méiyǒu xiūxiguo yì tiān.',vn:'Bạn biết không? Bất kể xuân hạ thu đông, tôi luyện bóng chưa từng nghỉ một ngày nào.'},
+     {sp:0,zh:'真是不容易啊！看来我只看到了你成功时获得的鲜花，却没注意到你成功前流下的汗水。',py:'Zhēn shì bù róngyì a! Kànlái wǒ zhǐ kàndàole nǐ chénggōng shí huòdé de xiānhuā, què méi zhùyì dào nǐ chénggōng qián liúxià de hànshuǐ.',vn:'Thật không dễ dàng! Xem ra tôi chỉ nhìn thấy hoa tươi bạn nhận được khi thành công, chứ không chú ý đến những giọt mồ hôi bạn đã đổ ra trước khi thành công.'},
+     {sp:1,zh:'任何成功都要通过努力才能得到。只要你坚持练习，我相信你也会越打越好的。',py:'Rènhé chénggōng dōu yào tōngguò nǔlì cái néng dédào. Zhǐyào nǐ jiānchí liànxí, wǒ xiāngxìn nǐ yě huì yuè dǎ yuè hǎo de.',vn:'Bất kỳ thành công nào cũng phải qua nỗ lực mới có thể đạt được. Chỉ cần bạn kiên trì luyện tập, tôi tin bạn cũng sẽ đánh ngày càng giỏi.'},
+   ]},
+  {scene:'课文3 · 小林和小李谈王红的成功经历',
+   preQuiz:[{q:'王红当时的父母和亲戚对她的选择态度怎样？',opts:['都支持她','都不支持她','没有表态'],ans:1},{q:'王红毕业后放弃了什么工作？',opts:['律师','老师','医生'],ans:0},{q:'王红现在是做什么的？',opts:['有名的作家','有名的演员','有名的律师'],ans:0}],
+   lines:[
+     {sp:0,zh:'你还记得王红吗？我在报纸上看到一篇关于她的新闻，她现在已经是一个有名的作家了。',py:'Nǐ hái jìde Wáng Hóng ma? Wǒ zài bàozhǐ shang kàndào yì piān guānyú tā de xīnwén, tā xiànzài yǐjīng shì yí ge yǒumíng de zuòjiā le.',vn:'Bạn còn nhớ Vương Hồng không? Tôi đọc được trên báo một bài tin tức về cô ấy, cô ấy hiện giờ đã là một nhà văn nổi tiếng.'},
+     {sp:1,zh:'听说她毕业后放弃了律师的工作，开始专门写小说，没想到她竟然成功了。',py:'Tīngshuō tā bìyè hòu fàngqìle lǜshī de gōngzuò, kāishǐ zhuānmén xiě xiǎoshuō, méi xiǎngdào tā jìngrán chénggōng le.',vn:'Nghe nói cô ấy sau khi tốt nghiệp đã từ bỏ công việc luật sư, bắt đầu chuyên viết tiểu thuyết, không ngờ cô ấy lại thành công.'},
+     {sp:0,zh:'当时她的父母和亲戚都不支持她，可是她坚持自己的选择，现在终于向所有人证明了她的选择是正确的。',py:'Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā, kěshì tā jiānchí zìjǐ de xuǎnzé, xiànzài zhōngyú xiàng suǒyǒu rén zhèngmíngle tā de xuǎnzé shì zhèngquè de.',vn:'Lúc đó bố mẹ và họ hàng của cô ấy đều không ủng hộ cô ấy, nhưng cô ấy khăng khăng giữ lựa chọn của mình, bây giờ cuối cùng đã chứng minh cho tất cả mọi người thấy lựa chọn của cô ấy là đúng đắn.'},
+     {sp:1,zh:'看来为了自己的理想，放弃一些东西也是值得的。',py:'Kànlái wèile zìjǐ de lǐxiǎng, fàngqì yìxiē dōngxi yě shì zhídé de.',vn:'Xem ra vì lý tưởng của bản thân, từ bỏ một số thứ cũng đáng.'},
+     {sp:0,zh:'一个人只有两只手，不可能得到所有想要的东西，所以有时候放弃是一种聪明的选择。',py:'Yí ge rén zhǐyǒu liǎng zhī shǒu, bù kěnéng dédào suǒyǒu xiǎng yào de dōngxi, suǒyǐ yǒu shíhou fàngqì shì yì zhǒng cōngming de xuǎnzé.',vn:'Một người chỉ có hai bàn tay, không thể có được tất cả những thứ mình muốn, vì vậy đôi khi từ bỏ là một lựa chọn khôn ngoan.'},
+     {sp:1,zh:'是啊，只有学会放弃，才能把自己的能力用到最该做的事情上，最后获得成功。',py:'Shì a, zhǐyǒu xuéhuì fàngqì, cái néng bǎ zìjǐ de nénglì yòngdào zuì gāi zuò de shìqing shang, zuìhòu huòdé chénggōng.',vn:'Đúng vậy, chỉ khi học được cách từ bỏ, mới có thể dùng năng lực của mình vào việc đáng làm nhất, cuối cùng đạt được thành công.'},
+   ]},
+  {scene:'课文4 · Hãy dũng cảm hành động',
+   preQuiz:[{q:'我们应该把注意力放在哪里？',opts:['做事情的过程上','结果上','钱上'],ans:0},{q:'如果太看重结果，失败会给人们带来什么？',opts:['很多烦恼','很多钱','很多朋友'],ans:0},{q:'即使失败了，我们还可以得到什么？',opts:['有用的经验','更多的钱','更长的假期'],ans:0}],
+   lines:[
+     {sp:0,zh:'如果你想做什么事情，那就勇敢地去做，不要担心结果，不要考虑会不会失败。要是太看重结果，失败就会给人们带来很多烦恼。',py:'Rúguǒ nǐ xiǎng zuò shénme shìqing, nà jiù yǒnggǎn de qù zuò, búyào dānxīn jiéguǒ, búyào kǎolǜ huì bu huì shībài. Yàoshi tài kànzhòng jiéguǒ, shībài jiù huì gěi rénmen dàilai hěn duō fánnǎo.',vn:'Nếu bạn muốn làm việc gì, thì hãy dũng cảm làm đi, đừng lo lắng về kết quả, đừng cân nhắc việc có thất bại hay không. Nếu quá coi trọng kết quả, thất bại sẽ mang lại cho người ta rất nhiều phiền muộn.'},
+     {sp:0,zh:'我们应该把注意力放在做事情的过程上，这样你会在做的过程中发现解决问题的快乐，这是其他任何东西都给不了的。',py:'Wǒmen yīnggāi bǎ zhùyìlì fàng zài zuò shìqing de guòchéng shang, zhèyàng nǐ huì zài zuò de guòchéng zhōng fāxiàn jiějué wèntí de kuàilè, zhè shì qítā rènhé dōngxi dōu gěi bu liǎo de.',vn:'Chúng ta nên đặt sự chú ý vào quá trình làm việc, như vậy bạn sẽ trong quá trình làm phát hiện niềm vui giải quyết vấn đề, đây là điều mà bất kỳ thứ gì khác cũng không thể mang lại được.'},
+     {sp:0,zh:'即使最后失败了也没有关系，因为至少你已经努力过，而且我们还可以从失败中总结出有用的经验，有了这些积累，成功自然离我们越来越近。',py:'Jíshǐ zuìhòu shībàile yě méiyǒu guānxi, yīnwèi zhìshǎo nǐ yǐjīng nǔlìguo, érqiě wǒmen hái kěyǐ cóng shībài zhōng zǒngjié chū yǒuyòng de jīngyàn, yǒule zhèxiē jīlěi, chénggōng zìrán lí wǒmen yuè lái yuè jìn.',vn:'Dù cuối cùng có thất bại cũng không sao, vì ít nhất bạn đã nỗ lực rồi, hơn nữa chúng ta còn có thể từ thất bại tổng kết ra kinh nghiệm hữu ích, có được những tích lũy này, thành công tự nhiên ngày càng gần chúng ta hơn.'},
+   ]},
+  {scene:'课文5 · Edison và bài học thành công',
+   preQuiz:[{q:'爱迪生找了多少种材料才找到能点亮电灯的材料？',opts:['几十种','几百种','上千种'],ans:2},{q:'取得成功的人和普通人的区别是什么？',opts:['他们都坚持了下来','他们更聪明','他们更有钱'],ans:0},{q:'“阳光总在风雨后”是什么意思？',opts:['勇敢面对困难才有希望成功','下雨以后一定出太阳','风雨天气不好'],ans:0}],
+   lines:[
+     {sp:0,zh:'每一个人都希望成功，可是很多时候，在成功之前会遇到很多困难。有些人遇到困难就放弃，而有些人遇到困难却想办法解决它。',py:'Měi yí ge rén dōu xīwàng chénggōng, kěshì hěn duō shíhou, zài chénggōng zhīqián huì yùdào hěn duō kùnnan. Yǒuxiē rén yùdào kùnnan jiù fàngqì, ér yǒuxiē rén yùdào kùnnan què xiǎng bànfǎ jiějué tā.',vn:'Mỗi người đều mong muốn thành công, nhưng rất nhiều lúc, trước khi thành công sẽ gặp phải nhiều khó khăn. Có người gặp khó khăn liền từ bỏ, mà có người gặp khó khăn lại nghĩ cách giải quyết nó.'},
+     {sp:0,zh:'对困难的态度不同，结果也是不一样的。爱迪生就是在找了上千种材料后才找到了能点亮电灯的材料。',py:'Duì kùnnan de tàidù bù tóng, jiéguǒ yě shì bù yíyàng de. Àidíshēng jiùshì zài zhǎole shàng qiān zhǒng cáiliào hòu cái zhǎodàole néng diǎnliàng diàndēng de cáiliào.',vn:'Thái độ đối với khó khăn khác nhau, kết quả cũng không giống nhau. Edison chính là sau khi tìm hàng nghìn loại vật liệu mới tìm được loại vật liệu có thể thắp sáng bóng đèn điện.'},
+     {sp:0,zh:'取得成功的人往往都经历过许多失败，他们和普通人的区别就是他们都坚持了下来。所以就算只有1%的希望，我们也要做出100%的努力。',py:'Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài, tāmen hé pǔtōng rén de qūbié jiùshì tāmen dōu jiānchíle xiàlái. Suǒyǐ jiùsuàn zhǐyǒu bǎifēnzhī yī de xīwàng, wǒmen yě yào zuòchū bǎifēnzhī bǎi de nǔlì.',vn:'Người đạt được thành công thường đều đã trải qua rất nhiều thất bại, họ và người bình thường khác nhau ở chỗ họ đều kiên trì đến cùng. Vì vậy cho dù chỉ có 1% hy vọng, chúng ta cũng phải nỗ lực 100%.'},
+     {sp:0,zh:'困难只是暂时的，"阳光总在风雨后"，只有我们勇敢地面对困难，才能有希望取得成功。',py:'Kùnnan zhǐ shì zànshí de, "yángguāng zǒng zài fēngyǔ hòu", zhǐyǒu wǒmen yǒnggǎn de miànduì kùnnan, cái néng yǒu xīwàng qǔdé chénggōng.',vn:'Khó khăn chỉ là tạm thời, "sau cơn mưa trời lại sáng", chỉ khi chúng ta dũng cảm đối mặt với khó khăn, mới có hy vọng đạt được thành công.'},
+   ]},
+];
+
+var matchData = [
+  {left:'难道',right:'难道你不减肥了'},
+  {left:'坚持',right:'只能坚持'},
+  {left:'放弃',right:'打算放弃了'},
+  {left:'轻松',right:'轻轻松松就赢了'},
+  {left:'通过',right:'通过努力才能得到'},
+  {left:'可是',right:'可是她坚持'},
+  {left:'正确',right:'选择是正确的'},
+  {left:'结果',right:'不要担心结果'},
+  {left:'区别',right:'……的区别就是'},
+  {left:'面对',right:'勇敢地面对困难'},
+];
+
+var fillData = [
+  {pre:'怎么又买了这么多饼干和巧克力？',blank:'',post:'你不减肥了？',hint:'nándào',ans:'难道'},
+  {pre:'如果你想减肥，就',blank:'',post:'少吃东西，而且要多运动。',hint:'děi',ans:'得'},
+  {pre:'要想减肥成功，只能',blank:'',post:'，才会慢慢有效果。',hint:'jiānchí',ans:'坚持'},
+  {pre:'我本来已经打算',blank:'',post:'了，但是你刚才的话让我改变了主意。',hint:'fàngqì',ans:'放弃'},
+  {pre:'每次看你比赛，感觉你',blank:'',post:'就赢了。',hint:'qīngqīngsōngsōng',ans:'轻轻松松'},
+  {pre:'任何成功都要',blank:'',post:'努力才能得到。',hint:'tōngguò',ans:'通过'},
+  {pre:'当时她的父母和亲戚都不支持她，',blank:'',post:'她坚持自己的选择。',hint:'kěshì',ans:'可是'},
+  {pre:'现在终于向所有人证明了她的选择是',blank:'',post:'的。',hint:'zhèngquè',ans:'正确'},
+  {pre:'不要担心',blank:'',post:'，不要考虑会不会失败。',hint:'jiéguǒ',ans:'结果'},
+  {pre:'即使最后',blank:'',post:'了也没有关系，因为至少你已经努力过。',hint:'shībài',ans:'失败'},
+  {pre:'我们应该把注意力放在做事情的',blank:'',post:'上。',hint:'guòchéng',ans:'过程'},
+  {pre:'取得成功的人往往都',blank:'',post:'过许多失败。',hint:'jīnglì',ans:'经历'},
+  {pre:'他们和普通人的',blank:'',post:'就是他们都坚持了下来。',hint:'qūbié',ans:'区别'},
+  {pre:'困难只是',blank:'',post:'的。',hint:'zànshí',ans:'暂时'},
+  {pre:'只有我们勇敢地',blank:'',post:'困难，才能有希望取得成功。',hint:'miànduì',ans:'面对'},
+];
+
+var sortData = [
+  {words:['怎么','又','买','了','这么','多','饼干','和','巧克力','？'],ans:'怎么又买了这么多饼干和巧克力？',audio:'怎么又买了这么多饼干和巧克力？'},
+  {words:['要想','减肥','成功','，','只能','坚持'],ans:'要想减肥成功，只能坚持',audio:'要想减肥成功，只能坚持'},
+  {words:['没有','人','随随便便','就','能','成功','的'],ans:'没有人随随便便就能成功的',audio:'没有人随随便便就能成功的'},
+  {words:['任何','成功','都','要','通过','努力','才','能','得到'],ans:'任何成功都要通过努力才能得到',audio:'任何成功都要通过努力才能得到'},
+  {words:['她','现在','已经','是','一个','有名','的','作家','了'],ans:'她现在已经是一个有名的作家了',audio:'她现在已经是一个有名的作家了'},
+  {words:['我们','应该','把','注意力','放','在','做','事情','的','过程','上'],ans:'我们应该把注意力放在做事情的过程上',audio:'我们应该把注意力放在做事情的过程上'},
+  {words:['取得','成功','的','人','往往','都','经历','过','许多','失败'],ans:'取得成功的人往往都经历过许多失败',audio:'取得成功的人往往都经历过许多失败'},
+  {words:['困难','只是','暂时','的'],ans:'困难只是暂时的',audio:'困难只是暂时的'},
+];
+
+var errorFixMode = 'wordchoice';
+var errorFixData = [
+  {wrong:'我住的地方离地铁站有点儿远，走路____要三十分钟。',
+   opts:['至少','区别','正确','暂时'],ans:0,
+   exp:'至少 (ít nhất) đi với số lượng thời gian: 至少要三十分钟. Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'所有的困难都是____的，要有信心，我相信你一定会成功。',
+   opts:['至少','正确','区别','暂时'],ans:3,
+   exp:'暂时 (tạm thời) phù hợp với ngữ cảnh "khó khăn không kéo dài mãi". Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'"爱"和"喜欢"有什么____？我认为"爱"比"喜欢"的感情更深。',
+   opts:['暂时','至少','区别','正确'],ans:2,
+   exp:'区别 (sự khác biệt) phù hợp với câu hỏi so sánh hai từ. Các từ còn lại không mang nghĩa khác biệt.'},
+  {wrong:'其实，只要我们真正努力过了，就不需要太关心结果。因为不管最后是成功还是失败，在努力的____中，我们已经学到了很多东西。',
+   opts:['区别','暂时','至少','过程'],ans:3,
+   exp:'过程 (quá trình) đi với 努力的: 努力的过程中. Các từ còn lại không mang nghĩa diễn biến sự việc.'},
+  {wrong:'减肥不只是为了瘦，更是为了健康。____的减肥方法是按时吃饭，多吃水果，多运动，而不是饿肚子。',
+   opts:['过程','区别','暂时','正确'],ans:3,
+   exp:'正确 (đúng đắn) đi với 方法: 正确的方法. Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'A：师傅，麻烦您快点儿行吗？我____在九点之前到大使馆。B：不用担心，保证按时把您送到。',
+   opts:['取','理想','放弃','得'],ans:3,
+   exp:'得 (děi, phải) là động từ năng nguyện diễn tả sự cần thiết. Các từ còn lại không phải động từ năng nguyện.'},
+  {wrong:'A：你哥不是说三点到吗？都过去半个小时了，怎么还没出来？B：他还得去____行李箱，您别担心，我打个电话问问。',
+   opts:['得','放弃','理想','取'],ans:3,
+   exp:'取 (lấy) đi với 行李箱: 取行李箱 = lấy vali. Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'A：外面热吗？你怎么满头大____？B：电梯坏了，我爬楼梯上来的。',
+   opts:['理想','取','放弃','汗'],ans:3,
+   exp:'汗 (mồ hôi) đi với 满头大: 满头大汗. Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'A：你考虑清楚了？真的要____这次机会？B：是的，我妈妈身体不太好，我决定留下来照顾她。',
+   opts:['汗','取','理想','放弃'],ans:3,
+   exp:'放弃 (từ bỏ) đi với 机会: 放弃这次机会. Các từ còn lại không phù hợp nghĩa.'},
+  {wrong:'A：你研究生考试考得怎么样？B：数学可能考得不太____。',
+   opts:['放弃','汗','取','理想'],ans:3,
+   exp:'理想 (lý tưởng, ở đây làm tính từ nghĩa "như ý") đi với 考得: 考得不太理想 = thi không được như ý. Các từ còn lại không phù hợp nghĩa.'},
+];
+
+var speakingData = {
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 9. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn bè hỏi kinh nghiệm giảm cân của bạn.',
+      q_zh: '你觉得减肥最重要的是什么？',
+      q_py: 'Nǐ juéde jiǎnféi zuì zhòngyào de shì shénme?',
+      q_vn: 'Bạn thấy điều quan trọng nhất khi giảm cân là gì?',
+      grammar: { label: '只有……，才…… (chỉ có… mới…)', any: ['只有', '才'] },
+      need: [
+        { label: 'Nêu điều quan trọng nhất', any: ['坚持', '运动', '吃', '习惯'] },
+        { label: 'Nói về thời gian hoặc hiệu quả', any: ['效果', '个月', '慢慢', '一天', '时间'] }
+      ],
+      bonus: { label: 'Nói điều không nên làm', any: ['放弃', '不吃饭', '着急', '暂时'] },
+      vocab: ['坚持', '放弃', '暂时'],
+      minLen: 22,
+      sample: '我觉得最重要的是坚持。只有每天运动、少吃甜的，才会慢慢有效果，一两个星期是不够的，更不能暂时坚持几天就放弃。',
+      sample_py: 'Wǒ juéde zuì zhòngyào de shì jiānchí. Zhǐyǒu měitiān yùndòng, shǎo chī tián de, cái huì mànmàn yǒu xiàoguǒ, yì liǎng ge xīngqī shì bú gòu de, gèng bù néng zànshí jiānchí jǐ tiān jiù fàngqì.',
+      sample_vn: 'Tôi thấy quan trọng nhất là kiên trì. Chỉ có mỗi ngày vận động, ăn ít đồ ngọt thì mới dần có hiệu quả, một hai tuần là chưa đủ, càng không thể cố mấy hôm rồi bỏ.',
+      tip: '只有……才…… nêu điều kiện duy nhất: 只有努力，才能成功。'
+    },
+    {
+      situation: 'Cả lớp bàn về câu "không ai tùy tiện mà thành công".',
+      q_zh: '你同意“没有人随随便便就能成功”这句话吗？',
+      q_py: 'Nǐ tóngyì "méiyǒu rén suí suíbiàn biàn jiù néng chénggōng" zhè jù huà ma?',
+      q_vn: 'Bạn có đồng ý câu "không ai tùy tiện là thành công được" không?',
+      grammar: { label: '通过…… + 才能…… (nhờ vào… mới có thể…)', any: ['通过', '才能'] },
+      need: [
+        { label: 'Nêu quan điểm', any: ['同意', '不同意', '我觉得'] },
+        { label: 'Dùng 通过 hoặc 努力 nêu lý do', any: ['通过', '努力', '坚持', '经历', '过程'] }
+      ],
+      bonus: { label: 'Nêu ví dụ người nổi tiếng hoặc bản thân', any: ['作家', '爱迪生', '同学', '我自己', '比如'] },
+      vocab: ['随便', '通过', '坚持'],
+      minLen: 22,
+      sample: '我同意。任何成功都要通过努力才能得到，那些看起来很随便就成功的人，其实在我们看不见的地方坚持了很久。',
+      sample_py: 'Wǒ tóngyì. Rènhé chénggōng dōu yào tōngguò nǔlì cái néng děi dào, nàxiē kàn qǐlai hěn suíbiàn jiù chénggōng de rén, qíshí zài wǒmen kàn bú jiàn de dìfang jiānchí le hěn jiǔ.',
+      sample_vn: 'Tôi đồng ý. Mọi thành công đều phải nhờ nỗ lực mới có được, những người trông có vẻ dễ dàng thành công thật ra đã kiên trì rất lâu ở chỗ ta không thấy.',
+      tip: '通过 + phương thức + 才能…: 通过练习才能提高。'
+    },
+    {
+      situation: 'Bạn phải chọn giữa công việc ổn định và ước mơ của mình.',
+      q_zh: '如果为了理想需要放弃一些东西，你会怎么选择？',
+      q_py: 'Rúguǒ wèile lǐxiǎng xūyào fàngqì yì xiē dōngxi, nǐ huì zěnme xuǎnzé?',
+      q_vn: 'Nếu vì lý tưởng phải từ bỏ vài thứ, bạn sẽ chọn thế nào?',
+      grammar: { label: '为了……，放弃……也是值得的', any: ['为了', '值得'] },
+      need: [
+        { label: 'Nói lựa chọn của bạn', any: ['理想', '放弃', '选择', '坚持'] },
+        { label: 'Nêu lý do', any: ['值得', '喜欢', '将来', '后悔', '勇敢'] }
+      ],
+      bonus: { label: 'Nói điều bạn sẽ không từ bỏ', any: ['家人', '健康', '感情', '不会放弃'] },
+      vocab: ['理想', '放弃', '勇敢'],
+      minLen: 22,
+      sample: '我觉得为了自己的理想，放弃一些暂时的东西也是值得的。年轻的时候应该勇敢一点儿，不过健康和家人我不会放弃。',
+      sample_py: 'Wǒ juéde wèile zìjǐ de lǐxiǎng, fàngqì yì xiē zànshí de dōngxi yě shì zhídé de. Niánqīng de shíhou yīnggāi yǒnggǎn yìdiǎnr, búguò jiànkāng hé jiārén wǒ bú huì fàngqì.',
+      sample_vn: 'Tôi thấy vì lý tưởng của mình, từ bỏ vài thứ tạm thời cũng đáng. Khi còn trẻ nên dũng cảm một chút, nhưng sức khỏe và gia đình thì tôi sẽ không từ bỏ.',
+      tip: '值得 + động từ hoặc 值得 + 小句: 这本书值得看。'
+    },
+    {
+      situation: 'Bạn vừa thi đấu xong nhưng không đạt giải.',
+      q_zh: '你觉得应该关心结果还是关心过程？为什么？',
+      q_py: 'Nǐ juéde yīnggāi guānxīn jiéguǒ háishi guānxīn guòchéng? Wèishénme?',
+      q_vn: 'Bạn thấy nên quan tâm kết quả hay quá trình? Vì sao?',
+      grammar: { label: '把注意力放在……上 / 结果 · 过程', any: ['过程', '结果'] },
+      need: [
+        { label: 'Chọn kết quả hay quá trình', any: ['过程', '结果'] },
+        { label: 'Nêu lý do', any: ['快乐', '经验', '总结', '失败', '学到', '成长'] }
+      ],
+      bonus: { label: 'Dùng 至少 hoặc 总结 nói điều thu được', any: ['至少', '总结'] },
+      vocab: ['结果', '过程', '总结', '至少'],
+      minLen: 22,
+      sample: '我觉得应该把注意力放在过程上。就算结果是失败，认真总结以后，至少也能积累经验，下次做得更好。',
+      sample_py: 'Wǒ juéde yīnggāi bǎ zhùyì lì fàng zài guòchéng shàng. Jiù suàn jiéguǒ shì shībài, rènzhēn zǒngjié yǐhòu, zhìshǎo yě néng jīlěi jīngyàn, xià cì zuò děi gèng hǎo.',
+      sample_vn: 'Tôi thấy nên đặt sự chú ý vào quá trình. Cho dù kết quả là thất bại, sau khi tổng kết nghiêm túc, ít nhất cũng tích lũy được kinh nghiệm, lần sau làm tốt hơn.',
+      tip: '至少 = ít nhất: 至少要练习一个小时。'
+    },
+    {
+      situation: 'Bạn kể một lần suýt bỏ cuộc nhưng đã cố đi tiếp.',
+      q_zh: '你有没有遇到过困难想放弃，但最后坚持下来的经历？',
+      q_py: 'Nǐ yǒu méiyǒu yùdào guo kùnnan xiǎng fàngqì, dàn zuìhòu jiānchí xià lái de jīnglì?',
+      q_vn: 'Bạn từng gặp khó khăn muốn bỏ cuộc nhưng cuối cùng vẫn kiên trì chưa?',
+      grammar: { label: '虽然……，可是……，最后……', any: ['虽然', '可是', '最后'] },
+      need: [
+        { label: 'Kể khó khăn cụ thể', any: ['考试', '工作', '比赛', '学习', '困难', '当时'] },
+        { label: 'Nói kết quả', any: ['坚持', '成功', '通过', '取得', '完成'] }
+      ],
+      bonus: { label: 'Dùng 面对 hoặc 经历 nói cảm nhận', any: ['面对', '经历'] },
+      vocab: ['坚持', '当时', '经历'],
+      minLen: 22,
+      sample: '有。准备汉语考试的时候，我觉得太难了，当时真想放弃。可是我每天坚持背二十个词，最后通过了考试，这次经历让我更有信心。',
+      sample_py: 'Yǒu. Zhǔnbèi Hànyǔ kǎoshì de shíhou, wǒ juéde tài nán le, dāngshí zhēn xiǎng fàngqì. Kěshì wǒ měitiān jiānchí bèi èr shí ge cí, zuìhòu tōngguò le kǎoshì, zhè cì jīnglì ràng wǒ gèng yǒu xìnxīn.',
+      sample_vn: 'Có. Lúc ôn thi tiếng Hán, tôi thấy khó quá, khi đó thật sự muốn bỏ. Nhưng tôi kiên trì học 20 từ mỗi ngày, cuối cùng đã đỗ, trải nghiệm này khiến tôi tự tin hơn.',
+      tip: '当时 = lúc đó (trong quá khứ), khác 现在 và 那时候 mang nghĩa gần giống.'
+    }
+  ]
+};
+
+var translateData = [
+  {vi:'Sao lại mua nhiều bánh quy và sô cô la thế này? Chẳng lẽ bạn không giảm cân nữa à?',zh:'怎么又买了这么多饼干和巧克力？难道你不减肥了？',py:'Zěnme yòu mǎile zhème duō bǐnggān hé qiǎokèlì? Nándào nǐ bù jiǎn féi le?'},
+  {vi:'Muốn giảm cân thành công, chỉ có thể kiên trì, mới từ từ có hiệu quả.',zh:'要想减肥成功，只能坚持，才会慢慢有效果。',py:'Yào xiǎng jiǎn féi chénggōng, zhǐ néng jiānchí, cái huì mànman yǒu xiàoguǒ.'},
+  {vi:'Không có ai tùy tiện là có thể thành công được.',zh:'没有人随随便便就能成功的。',py:'Méiyǒu rén suísuíbiànbiàn jiù néng chénggōng de.'},
+  {vi:'Bất kỳ thành công nào cũng phải qua nỗ lực mới có thể đạt được.',zh:'任何成功都要通过努力才能得到。',py:'Rènhé chénggōng dōu yào tōngguò nǔlì cái néng dédào.'},
+  {vi:'Bây giờ cuối cùng đã chứng minh cho tất cả mọi người thấy lựa chọn của cô ấy là đúng đắn.',zh:'现在终于向所有人证明了她的选择是正确的。',py:'Xiànzài zhōngyú xiàng suǒyǒu rén zhèngmíngle tā de xuǎnzé shì zhèngquè de.'},
+  {vi:'Nếu bạn muốn làm việc gì, thì hãy dũng cảm làm đi, đừng lo lắng về kết quả.',zh:'如果你想做什么事情，那就勇敢地去做，不要担心结果。',py:'Rúguǒ nǐ xiǎng zuò shénme shìqing, nà jiù yǒnggǎn de qù zuò, búyào dānxīn jiéguǒ.'},
+  {vi:'Người đạt được thành công thường đều đã trải qua rất nhiều thất bại.',zh:'取得成功的人往往都经历过许多失败。',py:'Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài.'},
+  {vi:'Khó khăn chỉ là tạm thời, sau cơn mưa trời lại sáng.',zh:'困难只是暂时的，阳光总在风雨后。',py:'Kùnnan zhǐ shì zànshí de, yángguāng zǒng zài fēngyǔ hòu.'},
+];
+var translateDataRev = [
+  {vi:'Tôi vốn đã định bỏ cuộc rồi, nhưng lời bạn vừa nói khiến tôi thay đổi ý định.',zh:'我本来已经打算放弃了，但是你刚才的话让我改变了主意。',py:'Wǒ běnlái yǐjīng dǎsuàn fàngqì le, dànshì nǐ gāngcái de huà ràng wǒ gǎibiànle zhǔyi.'},
+  {vi:'Mỗi lần xem bạn thi đấu, tôi cảm thấy bạn thắng rất nhẹ nhàng.',zh:'每次看你比赛，感觉你轻轻松松就赢了。',py:'Měi cì kàn nǐ bǐsài, gǎnjué nǐ qīngqīngsōngsōng jiù yíng le.'},
+  {vi:'Bất kể xuân hạ thu đông, tôi luyện bóng chưa từng nghỉ một ngày nào.',zh:'不管春夏秋冬，我练球从来没有休息过一天。',py:'Bùguǎn chūn xià qiū dōng, wǒ liàn qiú cónglái méiyǒu xiūxiguo yì tiān.'},
+  {vi:'Lúc đó bố mẹ và họ hàng của cô ấy đều không ủng hộ cô ấy.',zh:'当时她的父母和亲戚都不支持她。',py:'Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā.'},
+  {vi:'Đôi khi từ bỏ là một lựa chọn khôn ngoan.',zh:'有时候放弃是一种聪明的选择。',py:'Yǒu shíhou fàngqì shì yì zhǒng cōngming de xuǎnzé.'},
+  {vi:'Chúng ta nên đặt sự chú ý vào quá trình làm việc.',zh:'我们应该把注意力放在做事情的过程上。',py:'Wǒmen yīnggāi bǎ zhùyìlì fàng zài zuò shìqing de guòchéng shang.'},
+  {vi:'Edison chính là sau khi tìm hàng nghìn loại vật liệu mới tìm được loại vật liệu có thể thắp sáng bóng đèn.',zh:'爱迪生就是在找了上千种材料后才找到了能点亮电灯的材料。',py:'Àidíshēng jiùshì zài zhǎole shàng qiān zhǒng cáiliào hòu cái zhǎodàole néng diǎnliàng diàndēng de cáiliào.'},
+  {vi:'Chỉ khi chúng ta dũng cảm đối mặt với khó khăn, mới có hy vọng đạt được thành công.',zh:'只有我们勇敢地面对困难，才能有希望取得成功。',py:'Zhǐyǒu wǒmen yǒnggǎn de miànduì kùnnan, cái néng yǒu xīwàng qǔdé chénggōng.'},
+];
+
+var listenData = {
+  type: 'workbook',
+  audioParts: [
+    { src: '/audio/hsk4-bai-9/listen-1.mp3', from: 1, to: 5 },
+    { src: '/audio/hsk4-bai-9/listen-2.mp3', from: 6, to: 12 },
+    { src: '/audio/hsk4-bai-9/listen-3.mp3', from: 13, to: 22 }
+  ],
+  dictation: [
+    {num:1, stmt:'好的开始很重要。', judge:true, lines:[
+      {pre:'', blank:'好的开始是成功的一半', post:'，很多事情开头做好了，以后就容易多了；开头没做好，后面会更困难。',
+       py:'Hǎo de kāishǐ shì chénggōng de yíbàn, hěn duō shìqing kāitóu zuòhǎo le, yǐhòu jiù róngyì duō le; kāitóu méi zuòhǎo, hòumian huì gèng kùnnan.',
+       vn:'Khởi đầu tốt là một nửa của thành công, nhiều việc mở đầu làm tốt thì về sau dễ hơn nhiều; mở đầu không tốt, về sau sẽ càng khó khăn.'}]},
+    {num:2, stmt:'结果比过程更重要。', judge:false, lines:[
+      {pre:'其实，只要我们真正努力过了，', blank:'就不需要太关心结果', post:'。因为无论最后是成功还是失败，在努力的过程中，我们已经学到了很多东西。',
+       py:'Qíshí, zhǐyào wǒmen zhēnzhèng nǔlìguo le, jiù bù xūyào tài guānxīn jiéguǒ. Yīnwèi wúlùn zuìhòu shì chénggōng háishi shībài, zài nǔlì de guòchéng zhōng, wǒmen yǐjīng xuédàole hěn duō dōngxi.',
+       vn:'Thực ra, chỉ cần chúng ta đã thật sự nỗ lực, thì không cần quá quan tâm đến kết quả. Vì dù cuối cùng thành công hay thất bại, trong quá trình nỗ lực chúng ta đã học được rất nhiều.'}]},
+    {num:3, stmt:'没有失败就没有成功。', judge:true, lines:[
+      {pre:'为什么说没有失败就没有成功？', blank:'因为我们可以从失败中发现自己的缺点', post:'，总结出很多经验，有了这些经验的积累，才有可能获得成功。',
+       py:'Wèishénme shuō méiyǒu shībài jiù méiyǒu chénggōng? Yīnwèi wǒmen kěyǐ cóng shībài zhōng fāxiàn zìjǐ de quēdiǎn, zǒngjié chū hěn duō jīngyàn, yǒule zhèxiē jīngyàn de jīlěi, cái yǒu kěnéng huòdé chénggōng.',
+       vn:'Vì sao nói không có thất bại thì không có thành công? Vì chúng ta có thể phát hiện khuyết điểm của mình từ thất bại, đúc kết ra nhiều kinh nghiệm, có sự tích luỹ kinh nghiệm đó mới có thể đạt được thành công.'}]},
+    {num:4, stmt:'聪明最重要。', judge:false, lines:[
+      {pre:'我认为态度决定一切。如果一个人做事情积极、努力，那么他就更容易成功。', blank:'如果一个人不积极、不努力、不认真', post:'，他再聪明也很难成功。',
+       py:'Wǒ rènwéi tàidu juédìng yíqiè. Rúguǒ yí ge rén zuò shìqing jījí, nǔlì, nàme tā jiù gèng róngyì chénggōng. Rúguǒ yí ge rén bù jījí, bù nǔlì, bú rènzhēn, tā zài cōngming yě hěn nán chénggōng.',
+       vn:'Tôi cho rằng thái độ quyết định tất cả. Nếu một người làm việc tích cực, nỗ lực thì dễ thành công hơn. Nếu một người không tích cực, không nỗ lực, không nghiêm túc, dù thông minh đến đâu cũng khó thành công.'}]},
+    {num:5, stmt:'不要担心失败。', judge:true, lines:[
+      {pre:'如果你想做什么事情，那就勇敢地去做吧。', blank:'只有试过才知道能不能成功', post:'。实际上，即使最后不成功也没有关系，因为至少你努力过。',
+       py:'Rúguǒ nǐ xiǎng zuò shénme shìqing, nà jiù yǒnggǎn de qù zuò ba. Zhǐyǒu shìguo cái zhīdào néng bu néng chénggōng. Shíjìshang, jíshǐ zuìhòu bù chénggōng yě méiyǒu guānxi, yīnwèi zhìshǎo nǐ nǔlìguo.',
+       vn:'Nếu bạn muốn làm việc gì, hãy dũng cảm làm đi. Chỉ có thử rồi mới biết có thành công hay không. Thực tế, dù cuối cùng không thành công cũng không sao, vì ít nhất bạn đã nỗ lực.'}]}
+  ],
+  mc: [
+    {num:6, options:['不饿','想吃巧克力','不能吃东西','正在减肥'], ans:3, q:'女的是什么意思？',
+     lines:[
+       {speaker:'男', pre:'饿了吧？', blank:'来块儿巧克力怎么样', post:'？', py:'È le ba? Lái kuàir qiǎokèlì zěnmeyàng?', vn:'Đói rồi phải không? Ăn miếng sô cô la nhé?'},
+       {speaker:'女', pre:'不，', blank:'我最近在减肥', post:'，我吃个西红柿吧。', py:'Bù, wǒ zuìjìn zài jiǎnféi, wǒ chī ge xīhóngshì ba.', vn:'Không, dạo này em đang giảm cân, em ăn quả cà chua vậy.'}
+     ],
+     explain:'问：女的是什么意思？ "我最近在减肥" → D 正在减肥. Cô ấy vẫn ăn (cà chua) nên A, C sai.'},
+    {num:7, options:['不想吃饭','放弃减肥','坚持运动','瘦了很多'], ans:1, q:'女的是什么意思？',
+     lines:[
+       {speaker:'男', pre:'怎么又买这么多吃的，', blank:'难道你不减肥了', post:'？', py:'Zěnme yòu mǎi zhème duō chī de, nándào nǐ bù jiǎnféi le?', vn:'Sao lại mua nhiều đồ ăn thế, chẳng lẽ em không giảm cân nữa?'},
+       {speaker:'女', pre:'我减了一个月，结果一点儿也没瘦，', blank:'我实在没有信心了', post:'。', py:'Wǒ jiǎnle yí ge yuè, jiéguǒ yìdiǎnr yě méi shòu, wǒ shízài méiyǒu xìnxīn le.', vn:'Em giảm một tháng rồi, kết quả chẳng gầy đi chút nào, em thật sự hết tự tin rồi.'}
+     ],
+     explain:'问：女的是什么意思？ Mua nhiều đồ ăn, "没有信心了" → bỏ cuộc giảm cân, đáp án B 放弃减肥.'},
+    {num:8, options:['有些着急','刚下火车','行李箱丢了','提前回来了'], ans:0, q:'男的怎么了？',
+     lines:[
+       {speaker:'男', pre:'你哥不是说三点到吗？都过去半个小时了，', blank:'怎么还没出来', post:'？', py:'Nǐ gē bú shì shuō sān diǎn dào ma? Dōu guòqù bàn ge xiǎoshí le, zěnme hái méi chūlai?', vn:'Anh trai em chẳng phải nói ba giờ đến sao? Đã qua nửa tiếng rồi, sao vẫn chưa ra?'},
+       {speaker:'女', pre:'他还得去取行李箱，', blank:'您别担心', post:'，我打个电话问问。', py:'Tā hái děi qù qǔ xínglixiāng, nín bié dānxīn, wǒ dǎ ge diànhuà wènwen.', vn:'Anh ấy còn phải đi lấy vali, bác đừng lo, cháu gọi điện hỏi thử.'}
+     ],
+     explain:'问：男的怎么了？ "都过去半个小时了，怎么还没出来" và cô gái nói "别担心" → người nam đang sốt ruột, đáp án A 有些着急.'},
+    {num:9, options:['走一会儿','别迟到','休息一下','再跑一会儿'], ans:3, q:'男的是什么意思？',
+     lines:[
+       {speaker:'女', pre:'我实在跑不动了，', blank:'你让我休息一会儿吧', post:'。', py:'Wǒ shízài pǎobudòng le, nǐ ràng wǒ xiūxi yíhuìr ba.', vn:'Em thật sự không chạy nổi nữa, cho em nghỉ một lát đi.'},
+       {speaker:'男', pre:'你才跑了十分钟，要坚持，', blank:'至少再跑十分钟', post:'。', py:'Nǐ cái pǎole shí fēnzhōng, yào jiānchí, zhìshǎo zài pǎo shí fēnzhōng.', vn:'Em mới chạy được mười phút, phải kiên trì, ít nhất chạy thêm mười phút nữa.'}
+     ],
+     explain:'问：男的是什么意思？ "至少再跑十分钟" → D 再跑一会儿. C là yêu cầu của người nữ.'},
+    {num:10, options:['加班','爬山','打网球','打篮球'], ans:2, q:'他们要去做什么？',
+     lines:[
+       {speaker:'女', pre:'走，', blank:'咱们一起去打网球吧', post:'，锻炼锻炼身体。', py:'Zǒu, zánmen yìqǐ qù dǎ wǎngqiú ba, duànliàn duànliàn shēntǐ.', vn:'Đi thôi, chúng ta cùng đi chơi tennis, rèn luyện sức khoẻ.'},
+       {speaker:'男', pre:'好主意，我很久没去运动了。你等我几分钟，', blank:'我去换双运动鞋', post:'。', py:'Hǎo zhǔyi, wǒ hěn jiǔ méi qù yùndòng le. Nǐ děng wǒ jǐ fēnzhōng, wǒ qù huàn shuāng yùndòngxié.', vn:'Ý hay đấy, lâu rồi tôi không vận động. Đợi tôi vài phút, tôi đi thay đôi giày thể thao.'}
+     ],
+     explain:'问：他们要去做什么？ "一起去打网球" → C 打网球.'},
+    {num:11, options:['提前完成了','遇到困难了','通过检查了','交给别人了'], ans:1, q:'任务怎么样了？',
+     lines:[
+       {speaker:'女', pre:'我本来以为任务能顺利完成，', blank:'没想到事情会变成这样', post:'。', py:'Wǒ běnlái yǐwéi rènwu néng shùnlì wánchéng, méi xiǎngdào shìqing huì biànchéng zhèyàng.', vn:'Tôi vốn tưởng nhiệm vụ sẽ hoàn thành thuận lợi, không ngờ sự việc lại thành ra thế này.'},
+       {speaker:'男', pre:'别着急，', blank:'会慢慢好起来的', post:'。', py:'Bié zháojí, huì mànman hǎo qilai de.', vn:'Đừng vội, sẽ dần dần ổn thôi.'}
+     ],
+     explain:'问：任务怎么样了？ "没想到事情会变成这样…会慢慢好起来" → gặp trục trặc, đáp án B 遇到困难了.'},
+    {num:12, options:['没找到他','没调查清楚','不敢告诉他','不想告诉他'], ans:0, q:'女的为什么没把这事告诉校长？',
+     lines:[
+       {speaker:'男', pre:'发生这么大的事，', blank:'你怎么没告诉校长呢', post:'？', py:'Fāshēng zhème dà de shì, nǐ zěnme méi gàosu xiàozhǎng ne?', vn:'Xảy ra chuyện lớn thế này, sao cô không báo hiệu trưởng?'},
+       {speaker:'女', pre:'当时他不在办公室，', blank:'打他的电话又一直没人接', post:'。', py:'Dāngshí tā bú zài bàngōngshì, dǎ tā de diànhuà yòu yìzhí méi rén jiē.', vn:'Lúc đó thầy ấy không ở văn phòng, gọi điện cũng mãi không ai nghe.'}
+     ],
+     explain:'问：女的为什么没把这事告诉校长？ Không ở văn phòng, gọi không ai nghe → A 没找到他.'},
+    {num:13, options:['很勇敢','很可爱','很诚实','很有礼貌'], ans:2, q:'女的觉得自己怎么样？',
+     lines:[
+       {speaker:'男', pre:'您能给我们', blank:'介绍一些您的成功经验', post:'吗？', py:'Nín néng gěi wǒmen jièshào yìxiē nín de chénggōng jīngyàn ma?', vn:'Bà có thể chia sẻ với chúng tôi một vài kinh nghiệm thành công không?'},
+       {speaker:'女', pre:'我觉得', blank:'平时的积累是最重要的', post:'，要多向周围的人学习。', py:'Wǒ juéde píngshí de jīlěi shì zuì zhòngyào de, yào duō xiàng zhōuwéi de rén xuéxí.', vn:'Tôi thấy tích luỹ thường ngày là quan trọng nhất, phải học hỏi nhiều từ những người xung quanh.'},
+       {speaker:'男', pre:'那您觉得', blank:'您最大的优点是什么', post:'呢？', py:'Nà nín juéde nín zuì dà de yōudiǎn shì shénme ne?', vn:'Vậy bà thấy ưu điểm lớn nhất của mình là gì?'},
+       {speaker:'女', pre:'', blank:'是诚实', post:'。', py:'Shì chéngshí.', vn:'Là thật thà.'}
+     ],
+     explain:'问：女的觉得自己怎么样？ "最大的优点…是诚实" → C 很诚实.'},
+    {num:14, options:['翻译','做调查','招聘','写总结'], ans:3, q:'经理让男的做什么？',
+     lines:[
+       {speaker:'女', pre:'你今天', blank:'怎么这么安静', post:'呀？', py:'Nǐ jīntiān zěnme zhème ānjìng ya?', vn:'Hôm nay sao anh im lặng thế?'},
+       {speaker:'男', pre:'刚刚经理让我写篇总结，', blank:'我正考虑怎么写呢', post:'。', py:'Gānggāng jīnglǐ ràng wǒ xiě piān zǒngjié, wǒ zhèng kǎolǜ zěnme xiě ne.', vn:'Vừa nãy giám đốc bảo tôi viết bản tổng kết, tôi đang nghĩ viết thế nào.'},
+       {speaker:'女', pre:'总结？', blank:'哪方面的', post:'？', py:'Zǒngjié? Nǎ fāngmiàn de?', vn:'Tổng kết? Về mặt nào?'},
+       {speaker:'男', pre:'', blank:'招聘方面的', post:'。', py:'Zhāopìn fāngmiàn de.', vn:'Về mảng tuyển dụng.'}
+     ],
+     explain:'问：经理让男的做什么？ "经理让我写篇总结" → D 写总结. 招聘 chỉ là chủ đề của bản tổng kết.'},
+    {num:15, options:['接受邀请了','在讲课','在邀请客人','没时间'], ans:0, q:'关于男的，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'黄教授，', blank:'我们想邀请您七月份也去我们那儿讲一次课', post:'，您看您有时间吗？', py:'Huáng jiàoshòu, wǒmen xiǎng yāoqǐng nín qī yuèfèn yě qù wǒmen nàr jiǎng yí cì kè, nín kàn nín yǒu shíjiān ma?', vn:'Giáo sư Hoàng, chúng tôi muốn mời thầy tháng Bảy cũng đến chỗ chúng tôi giảng một buổi, thầy xem có thời gian không?'},
+       {speaker:'男', pre:'', blank:'七月十二号以后应该都可以', post:'。', py:'Qī yuè shí\'èr hào yǐhòu yīnggāi dōu kěyǐ.', vn:'Sau ngày 12 tháng Bảy chắc đều được.'},
+       {speaker:'女', pre:'那我们暂时定七月十五号可以吗？', blank:'正好是星期五', post:'。', py:'Nà wǒmen zànshí dìng qī yuè shíwǔ hào kěyǐ ma? Zhènghǎo shì xīngqīwǔ.', vn:'Vậy chúng tôi tạm định ngày 15 tháng Bảy được không? Vừa đúng thứ Sáu.'},
+       {speaker:'男', pre:'好的，', blank:'如果有什么变化我会提前和你联系的', post:'。', py:'Hǎo de, rúguǒ yǒu shénme biànhuà wǒ huì tíqián hé nǐ liánxì de.', vn:'Được, nếu có thay đổi gì tôi sẽ liên hệ trước với cô.'}
+     ],
+     explain:'问：关于男的，可以知道什么？ "以后应该都可以…好的" → đã nhận lời, đáp án A 接受邀请了.'},
+    {num:16, options:['要去约会','正在减肥','不打算买裙子','想换小一号的'], ans:1, q:'关于女的，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'您穿这条裙子', blank:'有点儿大', post:'。', py:'Nín chuān zhè tiáo qúnzi yǒudiǎnr dà.', vn:'Chị mặc chiếc váy này hơi rộng.'},
+       {speaker:'女', pre:'那太好了，', blank:'我就买这条', post:'。', py:'Nà tài hǎo le, wǒ jiù mǎi zhè tiáo.', vn:'Vậy thì tốt quá, tôi mua chiếc này.'},
+       {speaker:'男', pre:'还是', blank:'给您换小一号的', post:'吧。', py:'Háishi gěi nín huàn xiǎo yí hào de ba.', vn:'Hay để tôi đổi cho chị cỡ nhỏ hơn một số nhé.'},
+       {speaker:'女', pre:'不用，我穿上它，', blank:'朋友见了肯定会说我减肥成功了', post:'。', py:'Búyòng, wǒ chuānshang tā, péngyou jiànle kěndìng huì shuō wǒ jiǎnféi chénggōng le.', vn:'Không cần, tôi mặc nó, bạn bè nhìn thấy chắc chắn sẽ nói tôi giảm cân thành công.'}
+     ],
+     explain:'问：关于女的，可以知道什么？ Cô ấy cố ý mua váy rộng để mọi người nghĩ giảm cân thành công → B 正在减肥. D sai vì cô ấy từ chối đổi cỡ nhỏ.'},
+    {num:17, options:['声音非常小','有上海味儿','别人听不懂','声音很好听'], ans:1, q:'男的的同学说话有什么特点？',
+     lines:[
+       {speaker:'女', pre:'上海话和普通话的区别很大，上次去上海，', blank:'我竟然一句也听不懂', post:'。', py:'Shànghǎihuà hé pǔtōnghuà de qūbié hěn dà, shàng cì qù Shànghǎi, wǒ jìngrán yí jù yě tīngbudǒng.', vn:'Tiếng Thượng Hải và tiếng phổ thông khác nhau nhiều lắm, lần trước đi Thượng Hải, tôi thế mà không hiểu nổi một câu.'},
+       {speaker:'男', pre:'别说你听不懂，', blank:'就连很多中国人听起来也很困难', post:'。', py:'Bié shuō nǐ tīngbudǒng, jiù lián hěn duō Zhōngguórén tīng qilai yě hěn kùnnan.', vn:'Đừng nói cậu không hiểu, ngay cả nhiều người Trung Quốc nghe cũng rất khó.'},
+       {speaker:'女', pre:'你的这个同学', blank:'是上海人吧', post:'？', py:'Nǐ de zhège tóngxué shì Shànghǎirén ba?', vn:'Bạn học này của cậu là người Thượng Hải phải không?'},
+       {speaker:'男', pre:'对，他虽然讲普通话，可是仔细听，', blank:'还是有上海味儿', post:'。', py:'Duì, tā suīrán jiǎng pǔtōnghuà, kěshì zǐxì tīng, háishi yǒu Shànghǎi wèir.', vn:'Đúng, cậu ấy tuy nói tiếng phổ thông, nhưng nghe kỹ vẫn có giọng Thượng Hải.'}
+     ],
+     explain:'问：男的的同学说话有什么特点？ "还是有上海味儿" → B 有上海味儿.'},
+    {num:18, options:['能够赚钱','能够出名','送给爱人','记下经历'], ans:3, q:'男的为什么要写这本书？',
+     lines:[
+       {speaker:'女', pre:'您', blank:'为什么会写这本书', post:'呢？', py:'Nín wèishénme huì xiě zhè běn shū ne?', vn:'Vì sao ông lại viết cuốn sách này?'},
+       {speaker:'男', pre:'这些年我经历了许多难忘的事情，', blank:'我想把它们都写下来', post:'。', py:'Zhèxiē nián wǒ jīnglìle xǔduō nánwàng de shìqing, wǒ xiǎng bǎ tāmen dōu xiě xiàlai.', vn:'Những năm qua tôi trải qua nhiều chuyện khó quên, tôi muốn viết tất cả lại.'},
+       {speaker:'女', pre:'您想通过这本书', blank:'告诉读者什么', post:'呢？', py:'Nín xiǎng tōngguò zhè běn shū gàosu dúzhě shénme ne?', vn:'Ông muốn nói với độc giả điều gì qua cuốn sách này?'},
+       {speaker:'男', pre:'我主要想告诉大家，', blank:'友谊是我们生命中不可缺少的', post:'。', py:'Wǒ zhǔyào xiǎng gàosu dàjiā, yǒuyì shì wǒmen shēngmìng zhōng bù kě quēshǎo de.', vn:'Tôi chủ yếu muốn nói với mọi người, tình bạn là thứ không thể thiếu trong cuộc đời chúng ta.'}
+     ],
+     explain:'问：男的为什么要写这本书？ "经历了许多难忘的事情，我想把它们都写下来" → D 记下经历.'},
+    {num:19, options:['后悔','紧张','高兴','难过'], ans:0, q:'许多人都有过怎样的经历？',
+     lines:[
+       {speaker:'旁白', pre:'', blank:'许多人都有过后悔的经历', post:'，其实，只要我们按照自己的想法去做了，就没什么后悔的，因为我们不可能把所有的事情都做对。', py:'Xǔduō rén dōu yǒuguo hòuhuǐ de jīnglì, qíshí, zhǐyào wǒmen ànzhào zìjǐ de xiǎngfǎ qù zuò le, jiù méi shénme hòuhuǐ de, yīnwèi wǒmen bù kěnéng bǎ suǒyǒu de shìqing dōu zuòduì.', vn:'Nhiều người từng có trải nghiệm hối hận, thực ra chỉ cần chúng ta đã làm theo suy nghĩ của mình thì không có gì phải hối hận, vì chúng ta không thể làm đúng mọi việc.'},
+       {speaker:'旁白', pre:'另外，让我们走向成功的，', blank:'往往是我们从过去做错的事情中得到的经验', post:'。', py:'Lìngwài, ràng wǒmen zǒuxiàng chénggōng de, wǎngwǎng shì wǒmen cóng guòqù zuòcuò de shìqing zhōng dédào de jīngyàn.', vn:'Ngoài ra, thứ đưa chúng ta đến thành công thường là kinh nghiệm rút ra từ những việc làm sai trong quá khứ.'}
+     ],
+     explain:'问：许多人都有过怎样的经历？ "许多人都有过后悔的经历" → A 后悔.'},
+    {num:20, options:['理想','努力工作','正确的方法','失败的经验'], ans:3, q:'什么能帮助我们走向成功？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）让我们走向成功的，', blank:'往往是我们从过去做错的事情中得到的经验', post:'。', py:'(Tóng yí duàn huà) Ràng wǒmen zǒuxiàng chénggōng de, wǎngwǎng shì wǒmen cóng guòqù zuòcuò de shìqing zhōng dédào de jīngyàn.', vn:'(Cùng đoạn văn) Thứ đưa chúng ta đến thành công thường là kinh nghiệm rút ra từ những việc làm sai trong quá khứ.'}
+     ],
+     explain:'问：什么能帮助我们走向成功？ "从过去做错的事情中得到的经验" = kinh nghiệm từ thất bại → D 失败的经验.'},
+    {num:21, options:['减肥','支持朋友','得奖金','锻炼身体'], ans:3, q:'第一个人为什么参加比赛？',
+     lines:[
+       {speaker:'旁白', pre:'有三个人参加长跑比赛，他们都很努力，却都没有得第一。这是不是说明三个都失败了？肯定不是，因为他们的目的不同。', blank:'第一个人是想通过跑步锻炼身体', post:'；', py:'Yǒu sān ge rén cānjiā chángpǎo bǐsài, tāmen dōu hěn nǔlì, què dōu méiyǒu dé dì-yī. Zhè shì bu shì shuōmíng sān ge dōu shībài le? Kěndìng bú shì, yīnwèi tāmen de mùdì bùtóng. Dì-yī ge rén shì xiǎng tōngguò pǎobù duànliàn shēntǐ;', vn:'Có ba người tham gia thi chạy đường dài, họ đều rất cố gắng nhưng không ai về nhất. Điều đó có phải nói lên cả ba đều thất bại? Chắc chắn không, vì mục đích của họ khác nhau. Người thứ nhất muốn rèn luyện sức khoẻ qua chạy bộ;'},
+       {speaker:'旁白', pre:'第二个人以前参加过长跑，', blank:'这次是想得到一个更好的成绩', post:'；第三个人是第一次参加，只要能跑完，他就很高兴。这样看来，三个人都成功了。', py:'dì-èr ge rén yǐqián cānjiāguo chángpǎo, zhè cì shì xiǎng dédào yí ge gèng hǎo de chéngjì; dì-sān ge rén shì dì-yī cì cānjiā, zhǐyào néng pǎowán, tā jiù hěn gāoxìng. Zhèyàng kànlái, sān ge rén dōu chénggōng le.', vn:'người thứ hai trước đây từng chạy, lần này muốn có thành tích tốt hơn; người thứ ba lần đầu tham gia, chỉ cần chạy hết là đã rất vui. Xem ra, cả ba người đều thành công.'}
+     ],
+     explain:'问：第一个人为什么参加比赛？ "第一个人是想通过跑步锻炼身体" → D 锻炼身体.'},
+    {num:22, options:['都想得第一','没有努力','都成功了','很有耐心'], ans:2, q:'说话人认为这三个人怎么样？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）这样看来，', blank:'三个人都成功了', post:'。', py:'(Tóng yí duàn huà) Zhèyàng kànlái, sān ge rén dōu chénggōng le.', vn:'(Cùng đoạn văn) Xem ra, cả ba người đều thành công.'}
+     ],
+     explain:'问：说话人认为这三个人怎么样？ "三个人都成功了" → C 都成功了. B sai vì "他们都很努力".'}
+  ]
+};

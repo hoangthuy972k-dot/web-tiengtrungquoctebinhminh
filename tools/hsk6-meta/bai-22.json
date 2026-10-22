@@ -1,0 +1,78 @@
+{
+ "zh": "2050年的汽车什么样？",
+ "py": "Èr líng wǔ líng nián de qìchē shénme yàng?",
+ "vn": "Xe hơi năm 2050 sẽ như thế nào?",
+ "topic": "第六单元 趣味世界 · Ô tô tương lai: sạch, an toàn, tự lái và hòa nhập lối sống số",
+ "vocabCount": 52,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "动不动",
+   "explain": "动不动 (hầu như luôn đi với 就: 动不动就……) biểu thị rất DỄ có một phản ứng hay hành động nào đó — \"hơi một chút là…, hễ động một tí là…\". Phần lớn dùng cho những việc KHÔNG mong muốn (着急, 发脾气, 生病, 哭, 死机, 训斥…), mang sắc thái phàn nàn, không hài lòng. Đứng sau chủ ngữ, trước 就 + V; khi khuyên can thì phủ định đặt TRƯỚC: 不要 / 别 + 动不动就……. Không dùng để khen một việc tốt hay xảy ra (khi đó dùng 经常, 总是).",
+   "rule": "S + <strong style=\"color:var(--sky-d)\">动不动</strong> + 就 + V (việc không mong muốn)　|　<strong style=\"color:var(--sky-d)\">不要 / 别</strong> + 动不动就 + V (lời khuyên)",
+   "examples": [
+    {
+     "zh": "他最近工作忙、压力大，动不动就着急、发脾气。",
+     "py": "Tā zuìjìn gōngzuò máng, yālì dà, dòngbudòng jiù zháojí, fā píqi.",
+     "vn": "Dạo này anh ấy công việc bận, áp lực lớn, hơi một chút là sốt ruột, nổi cáu."
+    },
+    {
+     "zh": "作为一种将人解放出来的灵活的交通工具，动不动就要将其淘汰，似乎不是明智之举，根本出路还是要在清洁环保、规范驾车出行上下功夫。",
+     "py": "Zuòwéi yì zhǒng jiāng rén jiěfàng chūlái de línghuó de jiāotōng gōngjù, dòngbudòng jiù yào jiāng qí táotài, sìhū bú shì míngzhì zhī jǔ, gēnběn chūlù háishi yào zài qīngjié huánbǎo, guīfàn jiàchē chūxíng shang xià gōngfu.",
+     "vn": "Là một phương tiện giao thông linh hoạt đã giải phóng con người, hơi một chút đã đòi loại bỏ nó thì e rằng không phải việc làm sáng suốt; lối thoát căn bản vẫn là dồn công sức vào việc làm cho nó sạch, thân thiện môi trường và lái xe đúng quy tắc."
+    },
+    {
+     "zh": "父母要多与孩子交流，不要动不动就呵斥压服，以“住嘴”来强行制止孩子发表意见。",
+     "py": "Fùmǔ yào duō yǔ háizi jiāoliú, bú yào dòngbudòng jiù hēchì yāfú, yǐ \"zhùzuǐ\" lái qiángxíng zhìzhǐ háizi fābiǎo yìjiàn.",
+     "vn": "Cha mẹ nên trò chuyện nhiều với con, đừng hơi một chút là quát mắng áp đặt, dùng câu \"im miệng\" để ép con không được nêu ý kiến."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "她学习很努力，动不动就考第一名。",
+     "why": "动不动 dùng cho việc KHÔNG mong muốn, mang ý phàn nàn; muốn nói một việc tốt thường xảy ra thì dùng 经常 / 总是.",
+     "right": "她学习很努力，经常考第一名。"
+    },
+    {
+     "wrong": "他最近心情不好，动不动发脾气。",
+     "why": "Sau 动不动 phải có 就 rồi mới đến động từ: 动不动就 + V.",
+     "right": "他最近心情不好，动不动就发脾气。"
+    }
+   ]
+  },
+  {
+   "point": "甲乙丙丁……",
+   "explain": "① 甲、乙、丙、丁… (các Thiên can, Hán Việt: Giáp, Ất, Bính, Đinh…) dùng để SẮP XẾP THỨ TỰ sự vật, tương đương \"thứ nhất, thứ hai, thứ ba, thứ tư…\" hay \"A, B, C, D\": tiêu đề các phần của bài khoá (甲 更加清洁、安全…), 甲方 / 乙方 (bên A / bên B trong hợp đồng), 甲级 / 乙级. ② Mười Thiên can 甲乙丙丁戊己庚辛壬癸 phối lần lượt với mười hai Địa chi 子丑寅卯辰巳午未申酉戌亥 thành 60 cặp gọi là 干支 (can chi), xoay vòng dùng để ghi ngày, ghi năm; âm lịch Trung Quốc (và Việt Nam) đến nay vẫn dùng can chi để gọi năm: 2015年 là 乙未年, 甲午战争 năm 1894. Chú ý: 甲 còn có thể là họ người (她姓甲) — khi đó không mang hai nghĩa trên.",
+   "rule": "<strong style=\"color:var(--sky-d)\">甲、乙、丙、丁……</strong> = thứ nhất, thứ hai, thứ ba, thứ tư… (sắp thứ tự)　|　<strong style=\"color:var(--sky-d)\">天干 + 地支</strong> (甲午, 乙未, 甲申…) = can chi, dùng gọi năm",
+   "examples": [
+    {
+     "zh": "甲　更加清洁、安全；乙　能自动行驶；丙　融合数字生活方式。",
+     "py": "Jiǎ gèngjiā qīngjié, ānquán; yǐ néng zìdòng xíngshǐ; bǐng rónghé shùzì shēnghuó fāngshì.",
+     "vn": "Một (Giáp): sạch hơn, an toàn hơn; Hai (Ất): tự lái được; Ba (Bính): hòa nhập lối sống số."
+    },
+    {
+     "zh": "甲午战争发生在1894年。",
+     "py": "Jiǎwǔ Zhànzhēng fāshēng zài yī bā jiǔ sì nián.",
+     "vn": "Chiến tranh Giáp Ngọ xảy ra năm 1894."
+    },
+    {
+     "zh": "甲申年来临之际，祝您健康幸福，心想事成。",
+     "py": "Jiǎshēn nián láilín zhī jì, zhù nín jiànkāng xìngfú, xīnxiǎng-shìchéng.",
+     "vn": "Nhân dịp năm Giáp Thân đến, chúc ông/bà mạnh khỏe hạnh phúc, muốn gì được nấy."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这篇文章分为甲、乙、丙三部分，我最喜欢的是丁部分。",
+     "why": "Đã chia ba phần 甲、乙、丙 thì không có phần 丁 (丁 là thứ tư); phần thứ ba là 丙.",
+     "right": "这篇文章分为甲、乙、丙三部分，我最喜欢的是丙部分。"
+    },
+    {
+     "wrong": "她姓甲，所以她在班里排第一。",
+     "why": "甲 làm HỌ người (甲吉) không mang nghĩa thứ tự \"thứ nhất\" — đây là nghĩa khác (练一练 của sách).",
+     "right": "她姓甲，叫甲吉。"
+    }
+   ]
+  }
+ ]
+}

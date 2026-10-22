@@ -1,0 +1,751 @@
+{
+ "/lessons/hsk3v3-bai-5.html": {
+  "points": [
+   {
+    "title": "Bổ ngữ trình độ (2) 「得很」 — … lắm, … cực kỳ",
+    "errors": [
+     {
+      "wrong": "现在天气很好得很。",
+      "why": "đã dùng 得很 thì trước tính từ KHÔNG thêm 很 nữa — mức độ đã nằm trong 得很.",
+      "right": "现在天气好得很。"
+     },
+     {
+      "wrong": "房间里面热很。",
+      "why": "thiếu 得: bổ ngữ trình độ phải là tính từ + 得很 (“nóng lắm” ≠ 热很).",
+      "right": "房间里面热得很。"
+     },
+     {
+      "wrong": "我觉得爬山得很累。",
+      "why": "nhầm với bổ ngữ trạng thái: 得很 đứng SAU tính từ, không đứng trước.",
+      "right": "我觉得爬山累得很。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: viết lại câu “这里的东西很贵，我什么也不想买。” bằng 得很.",
+      "pre": "这里的东西",
+      "blank": "贵得很",
+      "post": "，我什么也不想买。",
+      "options": [
+       "贵得很",
+       "很贵得很",
+       "得很贵"
+      ],
+      "answer": 0,
+      "explanation": "很贵 → 贵得很; 什么也不… = gì cũng không…."
+     },
+     {
+      "context": "Sách: viết lại câu “超市里的水果特别多，想吃什么有什么。” bằng 得很.",
+      "pre": "超市里的水果",
+      "blank": "多得很",
+      "post": "，想吃什么有什么。",
+      "options": [
+       "多得很",
+       "很多得",
+       "得很多"
+      ],
+      "answer": 0,
+      "explanation": "特别多 → 多得很; 想吃什么有什么 — đại từ nghi vấn hô ứng (ôn HSK3 Bài 2)."
+     },
+     {
+      "context": "Sách: viết lại câu “我好多天没看见他了，他这个月非常忙。” bằng 得很.",
+      "pre": "我好多天没看见他了，他这个月",
+      "blank": "忙得很",
+      "post": "。",
+      "options": [
+       "忙得很",
+       "非常忙得很",
+       "得很忙"
+      ],
+      "answer": 0,
+      "explanation": "非常忙 → 忙得很; không dùng 非常 cùng 得很."
+     },
+     {
+      "context": "“Bây giờ thời tiết đẹp lắm!”",
+      "pre": "现在天气",
+      "blank": "好得很",
+      "post": "！",
+      "options": [
+       "好得很",
+       "很好得",
+       "得很好"
+      ],
+      "answer": 0,
+      "explanation": "Tính từ + 得很."
+     },
+     {
+      "context": "“Tôi thấy leo núi mệt lắm.” (累 – HSK2 Bài 3)",
+      "pre": "我觉得爬山",
+      "blank": "累得很",
+      "post": "。",
+      "options": [
+       "累得很",
+       "得很累",
+       "很累得"
+      ],
+      "answer": 0,
+      "explanation": "得很 đứng sau tính từ 累."
+     },
+     {
+      "context": "“Cô ấy buồn lắm, ha ha.”",
+      "pre": "她",
+      "blank": "难过得很",
+      "post": "，哈哈。",
+      "options": [
+       "难过得很",
+       "很难过得",
+       "难过很得"
+      ],
+      "answer": 0,
+      "explanation": "难过 + 得很."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "房间里面很热得很。",
+      "isCorrect": false,
+      "correctVersion": "房间里面热得很。",
+      "explanation": "Đã có 得很 thì bỏ 很 trước tính từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这件大衣漂亮得很，你穿上试试吧。",
+      "isCorrect": true,
+      "explanation": "Tính từ 漂亮 + 得很 — đúng; 试试 lặp động từ (HSK2 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bây giờ thời tiết đẹp lắm.”",
+      "words": [
+       "现在",
+       "天气",
+       "好",
+       "得",
+       "很",
+       "。"
+      ],
+      "answer": "现在天气好得很。",
+      "explanation": "Tính từ + 得很."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trong phòng nóng lắm.”",
+      "words": [
+       "房间",
+       "里面",
+       "热",
+       "得",
+       "很",
+       "。"
+      ],
+      "answer": "房间里面热得很。",
+      "explanation": "热得很."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Siêu thị cách đây xa lắm.”",
+      "words": [
+       "超市",
+       "离",
+       "这儿",
+       "远",
+       "得",
+       "很",
+       "。"
+      ],
+      "answer": "超市离这儿远得很。",
+      "explanation": "离 (HSK2 Bài 9) + 远得很."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô ấy buồn lắm.”",
+      "words": [
+       "她",
+       "难过",
+       "得",
+       "很",
+       "。"
+      ],
+      "answer": "她难过得很。",
+      "explanation": "难过得很."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 得很.",
+      "promptLang": "vi",
+      "prompt": "Hôm nay tôi bận lắm, không có thời gian đi leo núi.",
+      "answer": "今天我忙得很，没有时间去爬山。",
+      "answerPy": "Jīntiān wǒ máng de hěn, méiyǒu shíjiān qù pá shān.",
+      "explanation": "Tính từ 忙 + 得很; không thêm 很 trước 忙."
+     }
+    ]
+   },
+   {
+    "title": "Lượng từ lặp lại (量词重叠) — 张张 / 个个 / 天天…",
+    "errors": [
+     {
+      "wrong": "这些照片都张张非常好看。",
+      "why": "lượng từ lặp lại đứng TRƯỚC 都 (AA + 都), không đứng sau.",
+      "right": "这些照片张张都非常好看。"
+     },
+     {
+      "wrong": "我喜欢个个。",
+      "why": "lượng từ lặp lại không làm tân ngữ sau động từ; phải đưa lên trước 都.",
+      "right": "这些菜我个个都喜欢。"
+     },
+     {
+      "wrong": "每天天我都去锻炼身体。",
+      "why": "天天 đã có nghĩa “mỗi ngày”, không dùng cùng 每 (dùng 每天 hoặc 天天).",
+      "right": "我天天都去锻炼身体。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: hoàn thành hội thoại “你喜欢哪个菜？” (dùng 个)",
+      "pre": "你喜欢哪个菜？——",
+      "blank": "这些菜我个个都喜欢",
+      "post": "。",
+      "options": [
+       "这些菜我个个都喜欢",
+       "这些菜我都个个喜欢",
+       "我喜欢个个这些菜"
+      ],
+      "answer": 0,
+      "explanation": "AA + 都 + V; lượng từ lặp đứng trước 都."
+     },
+     {
+      "context": "Sách: hoàn thành hội thoại “你觉得这些衣服怎么样？” (dùng 件)",
+      "pre": "你觉得这些衣服怎么样？——",
+      "blank": "件件都很漂亮",
+      "post": "。",
+      "options": [
+       "件件都很漂亮",
+       "都件件很漂亮",
+       "很漂亮件件都"
+      ],
+      "answer": 0,
+      "explanation": "件件都 + Adj = 每件都很漂亮."
+     },
+     {
+      "context": "Sách: hoàn thành hội thoại “你今年回北京过年吗？” (dùng 年)",
+      "pre": "你今年回北京过年吗？——回，我",
+      "blank": "年年都回北京过年",
+      "post": "。",
+      "options": [
+       "年年都回北京过年",
+       "都年年回北京过年",
+       "回北京过年年年"
+      ],
+      "answer": 0,
+      "explanation": "年年 = mỗi năm; 过年 (HSK2 Bài 14)."
+     },
+     {
+      "context": "“Những bức ảnh này tấm nào cũng rất đẹp.”",
+      "pre": "这些照片",
+      "blank": "张张都",
+      "post": "非常好看。",
+      "options": [
+       "张张都",
+       "都张张",
+       "每张张"
+      ],
+      "answer": 0,
+      "explanation": "AA + 都."
+     },
+     {
+      "context": "“Tôi muốn ra ngoài chụp ảnh, nhưng ngày nào cũng mưa.”",
+      "pre": "我想出去拍照，但是",
+      "blank": "天天",
+      "post": "下雨。",
+      "options": [
+       "天天",
+       "每天天",
+       "天每天"
+      ],
+      "answer": 0,
+      "explanation": "天天 = 每天; 但是 (HSK2 Bài 8)."
+     },
+     {
+      "context": "“Những quả táo này quả nào cũng rất to.”",
+      "pre": "这些苹果",
+      "blank": "个个都很大",
+      "post": "。",
+      "options": [
+       "个个都很大",
+       "都个个很大",
+       "很大个个都"
+      ],
+      "answer": 0,
+      "explanation": "个个都 + Adj."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这些苹果都个个很大。",
+      "isCorrect": false,
+      "correctVersion": "这些苹果个个都很大。",
+      "explanation": "Lượng từ lặp phải đứng trước 都."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们班的同学个个都对音乐感兴趣。",
+      "isCorrect": true,
+      "explanation": "个个都 + 对……感兴趣 — đúng; 班 (HSK2 Bài 13)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Những bức ảnh này tấm nào cũng rất đẹp.”",
+      "words": [
+       "这些",
+       "照片",
+       "张张",
+       "都",
+       "非常",
+       "好看",
+       "。"
+      ],
+      "answer": "这些照片张张都非常好看。",
+      "explanation": "张张都 + Adj."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ngày nào bố tôi cũng đi tập thể dục.”",
+      "words": [
+       "我",
+       "爸爸",
+       "天天",
+       "都",
+       "去",
+       "锻炼",
+       "身体",
+       "。"
+      ],
+      "answer": "我爸爸天天都去锻炼身体。",
+      "explanation": "天天都 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Những bộ quần áo này bộ nào cũng rất đẹp.”",
+      "words": [
+       "这些",
+       "衣服",
+       "件件",
+       "都",
+       "很",
+       "漂亮",
+       "。"
+      ],
+      "answer": "这些衣服件件都很漂亮。",
+      "explanation": "件件都 + Adj."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Học sinh lớp chúng tôi ai cũng rất cao.”",
+      "words": [
+       "我们",
+       "班",
+       "的",
+       "学生",
+       "个个",
+       "都",
+       "很",
+       "高",
+       "。"
+      ],
+      "answer": "我们班的学生个个都很高。",
+      "explanation": "个个都 + Adj."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng lượng từ lặp lại.",
+      "promptLang": "vi",
+      "prompt": "Ngày nào cô ấy cũng nghe nhạc.",
+      "answer": "她天天都听音乐。",
+      "answerPy": "Tā tiāntiān dōu tīng yīnyuè.",
+      "explanation": "天天都 + V; không nói 每天天."
+     }
+    ]
+   },
+   {
+    "title": "Câu tồn hiện (3) — người / vật xuất hiện hoặc biến mất",
+    "errors": [
+     {
+      "wrong": "两个人后边走过去。",
+      "why": "người xuất hiện là không xác định → đặt SAU động từ: nơi chốn + V + bổ ngữ + số lượng + người.",
+      "right": "后边走过去两个人。"
+     },
+     {
+      "wrong": "在楼上下来了几个人。",
+      "why": "câu tồn hiện mở đầu bằng từ chỉ nơi chốn, không thêm 在 ở đầu câu.",
+      "right": "楼上下来了几个人。"
+     },
+     {
+      "wrong": "树上飞来了那只鸟。",
+      "why": "tân ngữ của câu tồn hiện thường là người / vật KHÔNG xác định (几只、两个…), không dùng 那只 / 这个.",
+      "right": "树上飞来了几只鸟。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: hoàn thành câu “教室里……。”",
+      "pre": "教室里",
+      "blank": "走出来两个学生",
+      "post": "。",
+      "options": [
+       "走出来两个学生",
+       "两个学生走出来",
+       "走出来这两个学生"
+      ],
+      "answer": 0,
+      "explanation": "Nơi chốn + V + bổ ngữ xu hướng + số lượng + người; 教室 (HSK2 Bài 2)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “……一个人。”",
+      "pre": "",
+      "blank": "前边走过来",
+      "post": "一个人。",
+      "options": [
+       "前边走过来",
+       "在前边走过来",
+       "一个人前边走过来"
+      ],
+      "answer": 0,
+      "explanation": "Nơi chốn (前边) đứng đầu câu, không cần 在."
+     },
+     {
+      "context": "Sách: hoàn thành câu “……飞过来……。”",
+      "pre": "天上",
+      "blank": "飞过来几只鸟",
+      "post": "。",
+      "options": [
+       "飞过来几只鸟",
+       "几只鸟飞过来",
+       "飞过来那几只鸟"
+      ],
+      "answer": 0,
+      "explanation": "飞过来 + 几只鸟 (鸟 – HSK2 Bài 15); bổ ngữ xu hướng kép (HSK2 Bài 14)."
+     },
+     {
+      "context": "“Phía sau có hai người đi qua.”",
+      "pre": "后边",
+      "blank": "走过去两个人",
+      "post": "。",
+      "options": [
+       "走过去两个人",
+       "两个人走过去",
+       "走两个人过去"
+      ],
+      "answer": 0,
+      "explanation": "Người không xác định đứng sau 走过去."
+     },
+     {
+      "context": "“Trên lầu có mấy người đi xuống.”",
+      "pre": "楼上",
+      "blank": "下来了几个人",
+      "post": "。",
+      "options": [
+       "下来了几个人",
+       "几个人下来了",
+       "下来了那几个人"
+      ],
+      "answer": 0,
+      "explanation": "V + 了 + số lượng + người; 楼 (HSK2 Bài 12)."
+     },
+     {
+      "context": "“Trên cây có mấy con chim bay tới.”",
+      "pre": "树上",
+      "blank": "飞来了几只鸟",
+      "post": "。",
+      "options": [
+       "飞来了几只鸟",
+       "几只鸟飞来了",
+       "飞来了鸟几只"
+      ],
+      "answer": 0,
+      "explanation": "Nơi chốn + V + 来了 + 几只 + 鸟."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "前面开过来很多车。",
+      "isCorrect": true,
+      "explanation": "Nơi chốn + 开过来 + 很多车 — đúng câu tồn hiện."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "在后边走过去两个人。",
+      "isCorrect": false,
+      "correctVersion": "后边走过去两个人。",
+      "explanation": "Đầu câu tồn hiện không dùng 在."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Phía trước có rất nhiều xe chạy tới.”",
+      "words": [
+       "前面",
+       "开",
+       "过来",
+       "很多",
+       "车",
+       "。"
+      ],
+      "answer": "前面开过来很多车。",
+      "explanation": "Nơi chốn + 开过来 + 很多车."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trên lầu có mấy người đi xuống.”",
+      "words": [
+       "楼上",
+       "下来",
+       "了",
+       "几个",
+       "人",
+       "。"
+      ],
+      "answer": "楼上下来了几个人。",
+      "explanation": "Nơi chốn + 下来了 + 几个人."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trên cây có mấy con chim bay tới.”",
+      "words": [
+       "树上",
+       "飞来",
+       "了",
+       "几只",
+       "鸟",
+       "。"
+      ],
+      "answer": "树上飞来了几只鸟。",
+      "explanation": "Nơi chốn + 飞来了 + 几只鸟."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Lớp chúng tôi có một bạn học mới đến.”",
+      "words": [
+       "我们",
+       "班",
+       "来",
+       "了",
+       "一个",
+       "新",
+       "同学",
+       "。"
+      ],
+      "answer": "我们班来了一个新同学。",
+      "explanation": "我们班 làm nơi chốn; 来了 + 一个新同学 (班 – HSK2 Bài 13)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng câu tồn hiện.",
+      "promptLang": "vi",
+      "prompt": "Phía trước có một người đi tới.",
+      "answer": "前面走过来一个人。",
+      "answerPy": "Qiánmiàn zǒu guòlai yí ge rén.",
+      "explanation": "Nơi chốn + 走过来 + 一个人 (bổ ngữ xu hướng kép – HSK2 Bài 14)."
+     }
+    ]
+   },
+   {
+    "title": "Câu ghép rút gọn 「……了……就……」 — xong việc này là làm ngay việc kia",
+    "errors": [
+     {
+      "wrong": "我吃早饭了就去学校了。",
+      "why": "了 phải đứng ngay sau động từ thứ nhất (V₁ + 了 + tân ngữ), không đặt sau tân ngữ.",
+      "right": "我吃了早饭就去学校了。"
+     },
+     {
+      "wrong": "昨天我们下了课就回家。",
+      "why": "việc đã xảy ra (hành động 2 đã hoàn thành) cần thêm 了 ở cuối câu.",
+      "right": "昨天我们下了课就回家了。"
+     },
+     {
+      "wrong": "你听完了音乐会，就你来我家吃饭。",
+      "why": "就 là phó từ, đứng sau chủ ngữ và ngay trước động từ thứ hai (tiếng Việt “thì em đến” dễ dịch thành 就你来).",
+      "right": "你听完了音乐会就来我家吃饭。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: hoàn thành câu “爸爸每次上了飞机就……。”",
+      "pre": "爸爸每次上了飞机就",
+      "blank": "睡觉",
+      "post": "。",
+      "options": [
+       "睡觉",
+       "睡觉过",
+       "着睡觉"
+      ],
+      "answer": 0,
+      "explanation": "Thói quen (每次): V₁ + 了 … 就 + V₂, cuối câu không cần 了; 次 (HSK2 Bài 1)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “今天我没吃早饭，所以下了课就……。”",
+      "pre": "今天我没吃早饭，所以下了课就",
+      "blank": "去吃饭了",
+      "post": "。",
+      "options": [
+       "去吃饭了",
+       "了去吃饭",
+       "去吃饭过"
+      ],
+      "answer": 0,
+      "explanation": "Việc đã xảy ra → thêm 了 cuối câu; 所以 (HSK2 Bài 4)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “我今天有点儿不舒服，……。”",
+      "pre": "我今天有点儿不舒服，",
+      "blank": "下了班就回家休息",
+      "post": "。",
+      "options": [
+       "下了班就回家休息",
+       "下班了就休息回家",
+       "就下了班回家休息"
+      ],
+      "answer": 0,
+      "explanation": "V₁ + 了 + O + 就 + V₂; 舒服 (HSK2 Bài 6)."
+     },
+     {
+      "context": "“Nghe xong buổi hoà nhạc thì em đến nhà chị ăn cơm nhé.”",
+      "pre": "你",
+      "blank": "听完了音乐会就来",
+      "post": "我家吃饭。",
+      "options": [
+       "听完了音乐会就来",
+       "听完音乐会了就来",
+       "就听完了音乐会来"
+      ],
+      "answer": 0,
+      "explanation": "V + 完 + 了 + tân ngữ + 就 + V₂."
+     },
+     {
+      "context": "“Tôi ăn sáng xong là đi học luôn.” (việc đã xảy ra)",
+      "pre": "我吃了早饭就",
+      "blank": "去学校了",
+      "post": "。",
+      "options": [
+       "去学校了",
+       "了去学校",
+       "去学校过"
+      ],
+      "answer": 0,
+      "explanation": "Hành động 2 đã hoàn thành → 了 cuối câu."
+     },
+     {
+      "context": "“Hôm qua chúng tôi tan học xong là về nhà.”",
+      "pre": "昨天我们",
+      "blank": "下了课就回家了",
+      "post": "。",
+      "options": [
+       "下了课就回家了",
+       "下课了就回家",
+       "就下了课回家了"
+      ],
+      "answer": 0,
+      "explanation": "Việc đã xảy ra: V₁ + 了 … 就 + V₂ + 了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我吃早饭了就去学校了。",
+      "isCorrect": false,
+      "correctVersion": "我吃了早饭就去学校了。",
+      "explanation": "了 đứng ngay sau động từ thứ nhất."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "明天你下了班就给我打电话吧。",
+      "isCorrect": true,
+      "explanation": "Việc sắp làm: V₁ + 了 … 就 + V₂, cuối câu không cần 了 — đúng; 给 + người + 打电话 (HSK2 Bài 1)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nghe xong buổi hoà nhạc thì em đến nhà chị ăn cơm nhé.”",
+      "words": [
+       "你",
+       "听",
+       "完",
+       "了",
+       "音乐会",
+       "就",
+       "来",
+       "我家",
+       "吃饭",
+       "。"
+      ],
+      "answer": "你听完了音乐会就来我家吃饭。",
+      "explanation": "V + 完 + 了 + O + 就 + V₂."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi ăn sáng xong là đi học luôn.”",
+      "words": [
+       "我",
+       "吃",
+       "了",
+       "早饭",
+       "就",
+       "去",
+       "学校",
+       "了",
+       "。"
+      ],
+      "answer": "我吃了早饭就去学校了。",
+      "explanation": "了 sau 吃, 就 trước 去, 了 cuối câu."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm qua chúng tôi tan học xong là về nhà.”",
+      "words": [
+       "昨天",
+       "我们",
+       "下",
+       "了",
+       "课",
+       "就",
+       "回家",
+       "了",
+       "。"
+      ],
+      "answer": "昨天我们下了课就回家了。",
+      "explanation": "下了课 + 就 + 回家了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ngày mai bạn đến Bắc Kinh thì gọi điện cho tôi nhé.”",
+      "words": [
+       "明天",
+       "你",
+       "到",
+       "了",
+       "北京",
+       "就",
+       "给",
+       "我",
+       "打",
+       "电话",
+       "吧",
+       "。"
+      ],
+      "answer": "明天你到了北京就给我打电话吧。",
+      "explanation": "Việc sắp làm, cuối câu dùng 吧."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng ……了……就…….",
+      "promptLang": "vi",
+      "prompt": "Mỗi ngày tôi tan làm là đi tập thể dục.",
+      "answer": "我每天下了班就去锻炼身体。",
+      "answerPy": "Wǒ měi tiān xiàle bān jiù qù duànliàn shēntǐ.",
+      "explanation": "Thói quen: V₁ + 了 … 就 + V₂, cuối câu không thêm 了."
+     }
+    ]
+   }
+  ]
+ }
+}

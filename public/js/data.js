@@ -1391,6 +1391,54 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk3v3-bai-1.html'
+      },
+      {
+        id: 'hsk3v3-l2',
+        number: 2,
+        title: 'Các em muốn ăn món gì thì gọi món đó',
+        titleHanzi: '你们想吃什么就点什么',
+        titlePinyin: 'Nǐmen xiǎng chī shénme jiù diǎn shénme',
+        topic: 'Gọi món ở nhà hàng, đồ ăn giao tận nơi & thói quen ăn uống',
+        vocabCount: 28,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3v3-bai-2.html'
+      },
+      {
+        id: 'hsk3v3-l3',
+        number: 3,
+        title: 'Khu dân cư này khá tốt',
+        titleHanzi: '这个小区挺好的',
+        titlePinyin: 'Zhège xiǎoqū tǐng hǎo de',
+        topic: 'Tìm nhà, dọn nhà mới & kế hoạch chuyển nhà',
+        vocabCount: 26,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3v3-bai-3.html'
+      },
+      {
+        id: 'hsk3v3-l4',
+        number: 4,
+        title: 'Khách sạn này không giống như những khách sạn khác',
+        titleHanzi: '这家宾馆跟别的都不一样',
+        titlePinyin: 'Zhè jiā bīnguǎn gēn biéde dōu bù yíyàng',
+        topic: 'Lên kế hoạch kỳ nghỉ, chọn khách sạn & cảm nhận chuyến du lịch',
+        vocabCount: 27,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3v3-bai-4.html'
+      },
+      {
+        id: 'hsk3v3-l5',
+        number: 5,
+        title: 'Những bức ảnh như thế này mới đẹp',
+        titleHanzi: '这样的照片才好看',
+        titlePinyin: 'Zhèyàng de zhàopiàn cái hǎokàn',
+        topic: 'Leo núi, chụp ảnh & sở thích giải trí',
+        vocabCount: 27,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk3v3-bai-5.html'
       }
     ],
     hsk5: [

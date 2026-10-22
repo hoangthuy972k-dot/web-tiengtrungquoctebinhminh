@@ -1,0 +1,570 @@
+{
+ "/lessons/hsk3v3-bai-4.html": {
+  "points": [
+   {
+    "title": "Cấu trúc 「一……也/都 + 不/没……」 — phủ định hoàn toàn",
+    "errors": [
+     {
+      "wrong": "草原不冷一点儿。",
+      "why": "dịch theo trật tự tiếng Việt “không lạnh chút nào” nên đặt 一点儿 cuối câu; phải đưa 一点儿也 lên TRƯỚC 不.",
+      "right": "草原一点儿也不冷。"
+     },
+     {
+      "wrong": "这个星期我一点儿时间也不有。",
+      "why": "有 chỉ phủ định bằng 没, không dùng 不.",
+      "right": "这个星期我一点儿时间也没有。"
+     },
+     {
+      "wrong": "我一个中国电影也不看过。",
+      "why": "kinh nghiệm với 过 (việc đã qua) phủ định bằng 没, không dùng 不.",
+      "right": "我一个中国电影也没看过。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Bộ quần áo này không đắt chút nào, bạn mua đi.” (贵)",
+      "pre": "这件衣服",
+      "blank": "一点儿也不贵",
+      "post": "，你买吧。",
+      "options": [
+       "一点儿也不贵",
+       "一点儿也贵",
+       "不贵一点儿"
+      ],
+      "answer": 0,
+      "explanation": "一点儿也 + 不 + tính từ — phủ định hoàn toàn."
+     },
+     {
+      "context": "Sách: “Tháng trước chúng tôi chuyển nhà, chẳng quen ai cả.” (认识; 搬家 – ôn HSK3 Bài 3)",
+      "pre": "我们上个月搬家了，",
+      "blank": "一个人也不认识",
+      "post": "。",
+      "options": [
+       "一个人也不认识",
+       "一个人也认识",
+       "不认识一个人也"
+      ],
+      "answer": 0,
+      "explanation": "一 + lượng từ + danh từ + 也不 + V."
+     },
+     {
+      "context": "Sách: “Tuần này tôi bận quá, chẳng có chút thời gian nào.” (时间)",
+      "pre": "这个星期我太忙了，",
+      "blank": "一点儿时间也没有",
+      "post": "。",
+      "options": [
+       "一点儿时间也没有",
+       "一点儿时间也不有",
+       "没有一点儿时间也"
+      ],
+      "answer": 0,
+      "explanation": "有 phủ định bằng 没: 一点儿 + danh từ + 也没有."
+     },
+     {
+      "context": "“Ở thảo nguyên không lạnh chút nào.”",
+      "pre": "草原",
+      "blank": "一点儿也不冷",
+      "post": "。",
+      "options": [
+       "一点儿也不冷",
+       "不冷一点儿",
+       "一点儿不也冷"
+      ],
+      "answer": 0,
+      "explanation": "Trật tự: 一点儿 + 也 + 不 + tính từ."
+     },
+     {
+      "context": "“Tôi chưa xem bộ phim Trung Quốc nào.” (ôn V过 – HSK2 Bài 4)",
+      "pre": "我",
+      "blank": "一个中国电影也没看过",
+      "post": "。",
+      "options": [
+       "一个中国电影也没看过",
+       "一个中国电影也不看过",
+       "没看过一个中国电影也"
+      ],
+      "answer": 0,
+      "explanation": "Kinh nghiệm với 过 phủ định bằng 没."
+     },
+     {
+      "context": "“Tiểu Lý đợi rất lâu nhưng không hề sốt ruột chút nào.” (着急 – ôn HSK3 Bài 1)",
+      "pre": "小李等了很久，但是",
+      "blank": "一点儿也没着急",
+      "post": "。",
+      "options": [
+       "一点儿也没着急",
+       "一点儿着急也没",
+       "没着急一点儿也"
+      ],
+      "answer": 0,
+      "explanation": "Việc đã qua: 一点儿也 + 没 + V/tính từ; 但是 (ôn HSK2 Bài 8)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个星期我一点儿时间也不有。",
+      "isCorrect": false,
+      "correctVersion": "这个星期我一点儿时间也没有。",
+      "explanation": "有 phủ định bằng 没."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "她一件衣服都不想买。",
+      "isCorrect": true,
+      "explanation": "一 + lượng từ + danh từ + 都不 + V — đúng (câu của sách)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ở thảo nguyên không lạnh chút nào.”",
+      "words": [
+       "草原",
+       "一点儿",
+       "也",
+       "不",
+       "冷",
+       "。"
+      ],
+      "answer": "草原一点儿也不冷。",
+      "explanation": "一点儿也 đứng trước 不冷."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô ấy chẳng muốn mua bộ quần áo nào cả.”",
+      "words": [
+       "她",
+       "一件",
+       "衣服",
+       "都",
+       "不",
+       "想",
+       "买",
+       "。"
+      ],
+      "answer": "她一件衣服都不想买。",
+      "explanation": "一件衣服 đứng trước 都不想买."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi chẳng muốn ăn chút gì cả.”",
+      "words": [
+       "我",
+       "一点儿",
+       "东西",
+       "也",
+       "不",
+       "想",
+       "吃",
+       "。"
+      ],
+      "answer": "我一点儿东西也不想吃。",
+      "explanation": "一点儿东西 + 也不想吃."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm qua tôi không uống cốc cà phê nào.”",
+      "words": [
+       "我",
+       "昨天",
+       "一杯",
+       "咖啡",
+       "也",
+       "没",
+       "喝",
+       "。"
+      ],
+      "answer": "我昨天一杯咖啡也没喝。",
+      "explanation": "Việc đã qua dùng 没; 咖啡 (ôn HSK2 Bài 9)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 一点儿也不.",
+      "promptLang": "vi",
+      "prompt": "Hôm nay không nóng chút nào.",
+      "answer": "今天一点儿也不热。",
+      "answerPy": "Jīntiān yìdiǎnr yě bú rè.",
+      "explanation": "一点儿也 + 不 + tính từ; 热 thanh 4 nên 不 đọc bú."
+     }
+    ]
+   },
+   {
+    "title": "Câu so sánh (9) 「A 跟 B 一样」",
+    "errors": [
+     {
+      "wrong": "我跟姐姐高一样。",
+      "why": "tiếng Việt nói “cao bằng” nên đặt tính từ trước; tiếng Trung tính từ đứng SAU 一样.",
+      "right": "我跟姐姐一样高。"
+     },
+     {
+      "wrong": "我的手机一样你的手机。",
+      "why": "一样 là tính từ, không mang tân ngữ như động từ 像; phải dùng 跟……一样.",
+      "right": "我的手机跟你的一样。"
+     },
+     {
+      "wrong": "这个房间跟那个房间一样很大。",
+      "why": "sau 一样, tính từ đứng trơn, không thêm 很.",
+      "right": "这个房间跟那个房间一样大。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Cái cốc của tôi giống cái của bạn.”",
+      "pre": "我的杯子",
+      "blank": "跟你的一样",
+      "post": "。",
+      "options": [
+       "跟你的一样",
+       "一样跟你的",
+       "跟一样你的"
+      ],
+      "answer": 0,
+      "explanation": "A 跟 B 一样; 你的 = 你的杯子."
+     },
+     {
+      "context": "Sách: “Từ học hôm nay không giống hôm qua.”",
+      "pre": "今天学习的词",
+      "blank": "跟昨天的不一样",
+      "post": "。",
+      "options": [
+       "跟昨天的不一样",
+       "跟昨天的一样不",
+       "不一样跟昨天的"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định: 不 đặt ngay trước 一样."
+     },
+     {
+      "context": "Sách: “Tôi cao bằng anh trai tôi.”",
+      "pre": "",
+      "blank": "我跟哥哥",
+      "post": "一样高。",
+      "options": [
+       "我跟哥哥",
+       "我比哥哥",
+       "我一样哥哥"
+      ],
+      "answer": 0,
+      "explanation": "A 跟 B 一样 + tính từ; 比 không đi với 一样."
+     },
+     {
+      "context": "“Khách sạn này không giống những khách sạn khác.”",
+      "pre": "这家宾馆",
+      "blank": "跟别的都不一样",
+      "post": "。",
+      "options": [
+       "跟别的都不一样",
+       "都跟别的一样不",
+       "跟别的都一样不"
+      ],
+      "answer": 0,
+      "explanation": "都 + 不 + 一样."
+     },
+     {
+      "context": "“Phòng khách sạn đẹp đúng như tôi nghĩ.”",
+      "pre": "宾馆的房间",
+      "blank": "跟我想的一样漂亮",
+      "post": "。",
+      "options": [
+       "跟我想的一样漂亮",
+       "跟我想的漂亮一样",
+       "跟我想的一样很漂亮"
+      ],
+      "answer": 0,
+      "explanation": "Tính từ đứng sau 一样, không thêm 很."
+     },
+     {
+      "context": "“Hai cái va li này to bằng nhau.” (箱子 – ôn HSK3 Bài 1)",
+      "pre": "这两个箱子",
+      "blank": "一样大",
+      "post": "。",
+      "options": [
+       "一样大",
+       "大一样",
+       "一样很大"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ số nhiều + 一样 + tính từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我跟姐姐高一样。",
+      "isCorrect": false,
+      "correctVersion": "我跟姐姐一样高。",
+      "explanation": "Tính từ phải đứng sau 一样."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他买的新手机跟我的一样。",
+      "isCorrect": true,
+      "explanation": "A 跟 B 一样 — đúng (câu của sách)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Căn phòng này rộng bằng căn phòng kia.”",
+      "words": [
+       "这个",
+       "房间",
+       "跟",
+       "那个",
+       "房间",
+       "一样",
+       "大",
+       "。"
+      ],
+      "answer": "这个房间跟那个房间一样大。",
+      "explanation": "A 跟 B + 一样 + 大."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Khách sạn này không giống những khách sạn khác.”",
+      "words": [
+       "这家",
+       "宾馆",
+       "跟",
+       "别的",
+       "都",
+       "不",
+       "一样",
+       "。"
+      ],
+      "answer": "这家宾馆跟别的都不一样。",
+      "explanation": "跟别的 + 都不一样."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi cao bằng anh trai tôi.”",
+      "words": [
+       "我",
+       "跟",
+       "哥哥",
+       "一样",
+       "高",
+       "。"
+      ],
+      "answer": "我跟哥哥一样高。",
+      "explanation": "一样 + 高."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm nay trời lạnh như hôm qua.”",
+      "words": [
+       "今天",
+       "跟",
+       "昨天",
+       "一样",
+       "冷",
+       "。"
+      ],
+      "answer": "今天跟昨天一样冷。",
+      "explanation": "So sánh thời tiết hai ngày."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 跟……一样.",
+      "promptLang": "vi",
+      "prompt": "Áo của bạn giống áo của tôi.",
+      "answer": "你的衣服跟我的一样。",
+      "answerPy": "Nǐ de yīfu gēn wǒ de yíyàng.",
+      "explanation": "我的 = 我的衣服, không cần nhắc lại danh từ."
+     }
+    ]
+   },
+   {
+    "title": "Cấu trúc 「除了……(以外)，……都/还/也……」",
+    "errors": [
+     {
+      "wrong": "除了咖啡以外，妈妈都喜欢喝茶。",
+      "why": "muốn nói “ngoài cà phê, mẹ CŨNG thích trà” (bổ sung) phải dùng 也/还; 都 chỉ dùng khi loại trừ.",
+      "right": "除了咖啡以外，妈妈也喜欢喝茶。"
+     },
+     {
+      "wrong": "除了这个汉字以外，我都会写别的汉字。",
+      "why": "都 tổng kết cho danh từ đứng TRƯỚC nó; phải đưa 别的汉字 lên trước 都.",
+      "right": "除了这个汉字以外，别的汉字我都会写。"
+     },
+     {
+      "wrong": "除了小王，大家去了。",
+      "why": "vế sau thiếu 都 hô ứng → câu không trọn ý “trừ … ra, … đều …”.",
+      "right": "除了小王，大家都去了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (viết lại): “Mẹ thích uống cà phê, cũng thích uống trà.”",
+      "pre": "",
+      "blank": "除了咖啡以外",
+      "post": "，妈妈也喜欢喝茶。",
+      "options": [
+       "除了咖啡以外",
+       "咖啡除了以外",
+       "以外除了咖啡"
+      ],
+      "answer": 0,
+      "explanation": "除了 + A + 以外, rồi vế sau dùng 也 (bổ sung)."
+     },
+     {
+      "context": "Sách (viết lại): “Thầy Vương là người Trung Quốc, các thầy cô khác đều là người nước ngoài.”",
+      "pre": "除了王老师以外，",
+      "blank": "别的老师都是",
+      "post": "外国人。",
+      "options": [
+       "别的老师都是",
+       "别的老师还是",
+       "都别的老师是"
+      ],
+      "answer": 0,
+      "explanation": "Loại trừ → dùng 都; 外国 (ôn HSK2 Bài 2)."
+     },
+     {
+      "context": "Sách (viết lại): “Tôi chỉ muốn ăn hoa quả, những thứ khác đều không muốn ăn.”",
+      "pre": "除了水果以外，",
+      "blank": "别的东西我都不想吃",
+      "post": "。",
+      "options": [
+       "别的东西我都不想吃",
+       "别的东西我也想吃",
+       "我都不想吃别的东西"
+      ],
+      "answer": 0,
+      "explanation": "Danh từ được tổng kết (别的东西) đứng trước 都."
+     },
+     {
+      "context": "“Trừ tôi ra, mọi người đều đang chơi điện thoại.”",
+      "pre": "除了我以外，",
+      "blank": "大家都",
+      "post": "在玩手机。",
+      "options": [
+       "大家都",
+       "大家也",
+       "都大家"
+      ],
+      "answer": 0,
+      "explanation": "Tôi không chơi → loại trừ → 都 (dùng 也 thì nghĩa là tôi cũng chơi)."
+     },
+     {
+      "context": "“Ngoài chiếc va li này ra, còn đồ gì khác không?”",
+      "pre": "除了这个行李箱以外，",
+      "blank": "还有别的东西",
+      "post": "吗？",
+      "options": [
+       "还有别的东西",
+       "都有别的东西",
+       "有还别的东西"
+      ],
+      "answer": 0,
+      "explanation": "Bổ sung → 还 đứng trước động từ 有."
+     },
+     {
+      "context": "“Ngoài bóng đá ra, anh ấy còn thích bóng rổ.” (ôn HSK2 Bài 7)",
+      "pre": "除了足球，",
+      "blank": "他还喜欢",
+      "post": "篮球。",
+      "options": [
+       "他还喜欢",
+       "他都喜欢",
+       "还他喜欢"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ đặt trước 还."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "除了咖啡以外，妈妈都喜欢喝茶。",
+      "isCorrect": false,
+      "correctVersion": "除了咖啡以外，妈妈也喜欢喝茶。",
+      "explanation": "Bổ sung phải dùng 也/还."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "除了这个汉字，别的汉字我都会写。",
+      "isCorrect": true,
+      "explanation": "以外 được lược bỏ; 别的汉字 đứng trước 都 — đúng (câu của sách)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trừ tôi ra, mọi người đều đang chơi điện thoại.”",
+      "words": [
+       "除了",
+       "我",
+       "以外",
+       "，",
+       "大家",
+       "都",
+       "在",
+       "玩",
+       "手机",
+       "。"
+      ],
+      "answer": "除了我以外，大家都在玩手机。",
+      "explanation": "Loại trừ → 都."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ngoài ca hát ra, anh ấy cũng thích nhảy.”",
+      "words": [
+       "除了",
+       "唱歌",
+       "以外",
+       "，",
+       "他",
+       "也",
+       "喜欢",
+       "跳舞",
+       "。"
+      ],
+      "answer": "除了唱歌以外，他也喜欢跳舞。",
+      "explanation": "Bổ sung → 也; 跳舞 (ôn HSK2 Bài 14)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trừ thầy Vương ra, các thầy cô khác đều là người nước ngoài.”",
+      "words": [
+       "除了",
+       "王老师",
+       "以外",
+       "，",
+       "别的",
+       "老师",
+       "都",
+       "是",
+       "外国人",
+       "。"
+      ],
+      "answer": "除了王老师以外，别的老师都是外国人。",
+      "explanation": "别的老师 + 都是."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ngoài cưỡi ngựa ra, chúng tôi còn ngắm trăng.”",
+      "words": [
+       "除了",
+       "骑马",
+       "以外",
+       "，",
+       "我们",
+       "还",
+       "看了",
+       "月亮",
+       "。"
+      ],
+      "answer": "除了骑马以外，我们还看了月亮。",
+      "explanation": "Bổ sung → 还."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 除了……以外，还…….",
+      "promptLang": "vi",
+      "prompt": "Ngoài hộ chiếu ra, bạn còn phải mang vé máy bay.",
+      "answer": "除了护照以外，你还要带机票。",
+      "answerPy": "Chúle hùzhào yǐwài, nǐ hái yào dài jīpiào.",
+      "explanation": "护照、带 (ôn HSK3 Bài 1); 机票 (ôn HSK2 Bài 15); 还要 = còn phải."
+     }
+    ]
+   }
+  ]
+ }
+}

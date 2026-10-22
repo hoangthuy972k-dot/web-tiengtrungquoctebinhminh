@@ -65,13 +65,14 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
     </div>
 
     <div class="lop-field">
-      <label>3 · Số tổ</label>
+      <label>3 · Số tổ — đặt tên cho từng tổ</label>
       <div class="lop-team-pick" id="lopTeamPick">
         <button type="button" data-n="2">2 tổ</button>
         <button type="button" data-n="3">3 tổ</button>
         <button type="button" data-n="4" class="active">4 tổ</button>
         <button type="button" data-n="6">6 tổ</button>
       </div>
+      <div class="lop-team-names" id="lopTeamNames"></div>
     </div>
 
     <div class="lop-field">
@@ -105,7 +106,12 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
     </div>
 
     <div class="lop-field">
-      <label>5 · Trò chơi khởi động</label>
+      <label>5 · Trò chơi trên lớp</label>
+      <button type="button" class="lop-show-cta" id="lopShow" disabled>
+        <span class="lop-show-ic">🎪</span>
+        <span class="lop-show-t"><b>Gameshow 3 vòng</b><small>Khởi động → Tăng tốc → Về đích (điểm ×2) · khoảng 15 phút · web tự chọn trò hợp với bài · kết thúc có bục trao giải</small></span>
+        <span class="lop-show-go">Bắt đầu ▶</span>
+      </button>
       <div class="lop-games">
         <button type="button" class="lop-game-card" data-game="errfix">
           <span class="lop-game-emoji">🔍</span>
@@ -256,6 +262,10 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       <button type="button" class="lop-bar-btn" id="lopTimerToggle">▶ Bắt đầu</button>
       <button type="button" class="lop-bar-btn" id="lopTimerSet" title="Đổi thời gian">30s</button>
       <button type="button" class="lop-bar-btn lop-bar-icon" id="lopSound" title="Bật/tắt tiếng">🔊</button>
+      <span class="lop-round" id="lopRound" hidden></span>
+      <button type="button" class="lop-bar-btn" id="lopWheel" title="Vòng quay chọn tổ trả lời">🎡 Quay tổ</button>
+      <button type="button" class="lop-bar-btn lop-bar-next" id="lopNextRound" hidden>Vòng tiếp ▶</button>
+      <button type="button" class="lop-bar-btn" id="lopAward" title="Kết thúc và trao giải">🏁 Trao giải</button>
       <button type="button" class="lop-bar-btn" id="lopBuild">✋ Xây dựng bài</button>
       <button type="button" class="lop-bar-btn" id="lopCall">🙋 Gọi tên</button>
     </div>
@@ -266,6 +276,8 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
   <footer class="lop-scorebar" id="lopScorebar"></footer>
 </div>
 
+<!-- Lop hieu ung: vong quay, gioi thieu vong, buc trao giai -->
+<div id="lopFx" class="lop-fx" hidden></div>
 <!-- Cong diem xay dung bai · em nao gio tay thi bam cong ngay tren lop -->
 <div id="lopBuildBox" class="lop-roll-box" hidden>
   <div class="lop-call-card lop-build-card">

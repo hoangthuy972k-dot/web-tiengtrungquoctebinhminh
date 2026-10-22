@@ -44,7 +44,7 @@
   }
   function save() {
     try {
-      localStorage.setItem('hyv_lop', JSON.stringify({ level: state.level, teams: state.teams, secs: state.timer.secs, sound: audio.on }));
+      localStorage.setItem('hyv_lop', JSON.stringify({ level: state.level, teams: state.teams, secs: state.timer.secs, sound: audio.on, teamNames: state.teamNames || [] }));
     } catch (e) { /* bo qua */ }
   }
   function restore() {
@@ -54,6 +54,7 @@
       if (d.teams) state.teams = d.teams;
       if (d.secs) { state.timer.secs = d.secs; state.timer.left = d.secs; }
       if (d.sound === false) audio.on = false;
+      if (Array.isArray(d.teamNames)) state.teamNames = d.teamNames;
     } catch (e) { /* bo qua */ }
   }
 
@@ -191,6 +192,7 @@
     $('#lopCountPaper').textContent = total ? total + ' câu' : 'chọn bài';
     $('.lop-test-card[data-test="paper"]').disabled = total < 1;
     $('.lop-test-card[data-test="dictation"]').disabled = !label;
+    if ($('#lopShow')) $('#lopShow').disabled = !label;
     // Cac tro dung tu vung: chua chon bai thi khoa lai cho de hieu
     $all('.lop-game-card').forEach(function (c) {
       if (c.querySelector('.lop-count-vocab')) c.disabled = !label;
@@ -309,15 +311,31 @@
   function renderScorebar() {
     var top = Math.max.apply(null, state.scores);
     $('#lopScorebar').innerHTML = state.scores.map(function (s, i) {
-      return '<div class="lop-team' + (s > 0 && s === top ? ' lead' : '') + '">' +
-        '<div class="lop-team-name">Tổ ' + (i + 1) + '</div>' +
-        '<div class="lop-team-score">' + s + '</div>' +
+      var x2 = fx.x2[i] ? ' on' : fx.used[i] ? ' used' : '';
+      return '<div class="lop-team' + (s > 0 && s === top ? ' lead' : '') + (fx.bump === i ? ' bump' : '') + '" style="--tc:' + teamColor(i) + '">' +
+        '<div class="lop-team-m">' + teamMascot(i) + (s > 0 && s === top ? '<span class="lop-crown">👑</span>' : '') + '</div>' +
+        '<div class="lop-team-info"><div class="lop-team-name">' + esc(teamName(i)) + '</div>' +
+          '<div class="lop-team-meta">' +
+            (fx.last === i && fx.streak >= 2 ? '<span class="lop-streak">🔥' + fx.streak + '</span>' : '') +
+            '<button type="button" class="lop-x2' + x2 + '" data-x2="' + i + '" title="Thẻ ×2: điểm lần ghi tiếp theo được nhân đôi (mỗi tổ 1 lần)">×2</button>' +
+          '</div></div>' +
+        '<div class="lop-team-score">' + s + (fx.float && fx.float.i === i ? '<span class="lop-float">' + fx.float.t + '</span>' : '') + '</div>' +
         '<div class="lop-team-btns">' +
           '<button type="button" data-team="' + i + '" data-d="1">+</button>' +
           '<button type="button" data-team="' + i + '" data-d="-1">−</button>' +
         '</div></div>';
     }).join('') +
     '<button type="button" class="lop-mini-btn" id="lopResetScore" style="align-self:center">Xoá điểm</button>';
+    fx.bump = -1; fx.float = null;
+    $all('#lopScorebar [data-x2]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var i = parseInt(b.getAttribute('data-x2'), 10);
+        if (fx.used[i]) return;
+        fx.x2[i] = !fx.x2[i];
+        if (fx.x2[i]) flashBanner(teamMascot(i) + ' ' + teamName(i) + ' dùng thẻ ×2!', 'x2');
+        renderScorebar();
+      });
+    });
 
     $all('#lopScorebar [data-team]').forEach(function (b) {
       b.addEventListener('click', function () {
@@ -328,9 +346,21 @@
   }
   function addScore(i, d) {
     if (i < 0 || i >= state.scores.length) return;
-    var truoc = state.scores[i];
-    state.scores[i] = Math.max(0, truoc + d);
-    if (state.scores[i] !== truoc) { try { d > 0 ? sndUp() : sndDown(); } catch (e) { /* bo qua */ } }
+    var truoc = state.scores[i], them = d, ghi = [];
+    if (d > 0) {
+      var mul = state.show ? state.show.plan[state.show.idx].mul : 1;
+      if (mul > 1) { them *= mul; ghi.push('×' + mul); }
+      if (fx.x2[i]) { them *= 2; fx.x2[i] = false; fx.used[i] = true; ghi.push('thẻ ×2'); }
+      // chuoi thang: cung mot to ghi diem 3 lan lien tiep -> thuong +1
+      if (fx.last === i) fx.streak++; else { fx.last = i; fx.streak = 1; }
+      if (fx.streak === 3) { them += 1; fx.streak = 0; fx.last = -1; try { sndFire(); } catch (e) { /* */ } flashBanner('🔥 ' + teamName(i) + ' chuỗi 3 — thưởng +1!', 'fire'); }
+    } else if (fx.last === i) { fx.last = -1; fx.streak = 0; }
+    state.scores[i] = Math.max(0, truoc + them);
+    if (state.scores[i] !== truoc) {
+      try { them > 0 ? sndUp() : sndDown(); } catch (e) { /* bo qua */ }
+      fx.bump = i;
+      fx.float = { i: i, t: (them > 0 ? '+' : '') + (state.scores[i] - truoc) };
+    }
     renderScorebar();
   }
 
@@ -2238,8 +2268,9 @@
     state.game = game;
     $('#lopTitle').textContent = GAME_TITLE[game];
     $('#lopSub').textContent = (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel();
-    resetScores();
+    if (!state.show || state.scores.length !== state.teams) { resetScores(); if (!state.show) resetFx(); }
     renderScorebar();
+    paintShowBar();
     // Moi tro mot nhip: gio the tra loi nhanh, xep cau can thoi gian len bang
     $('#lopScorebar').hidden = false;
     state.timer.secs = GAME_SECS[game] || 30;
@@ -2277,6 +2308,7 @@
     else { dealRows(); renderErrfix(); }
   }
   function exitGame() {
+    endShow();
     clearInterval(state.timer.id);
     state.timer.running = false;
     $('#lopPlay').hidden = true;
@@ -2290,9 +2322,271 @@
     }
   }
 
+  /* ================= GAMESHOW: to co linh vat, chuoi thang, the x2, vong quay, 3 vong, buc trao giai =================
+     Them khong khi thi dau cho moi tro choi: diem cua to luon hien o day, chung cho ca buoi hoc. */
+  var TEAM_DEF = [
+    { m: '🐉', n: 'Rồng Vàng', c: '#c9971c' },
+    { m: '🐯', n: 'Hổ Lửa', c: '#d2452f' },
+    { m: '🐼', n: 'Gấu Trúc', c: '#2f3b45' },
+    { m: '🦊', n: 'Cáo Cam', c: '#e07a1f' },
+    { m: '🐬', n: 'Cá Heo', c: '#2479b5' },
+    { m: '🦚', n: 'Khổng Tước', c: '#23906a' }
+  ];
+  function teamName(i) { return (state.teamNames && state.teamNames[i]) || TEAM_DEF[i].n; }
+  function teamColor(i) { return TEAM_DEF[i].c; }
+  function teamMascot(i) { return TEAM_DEF[i].m; }
+
+  // Hieu ung cham diem: chuoi thang, the x2, nhan doi o vong cuoi
+  var fx = { last: -1, streak: 0, x2: {}, used: {}, bump: -1, float: null };
+  function resetFx() { fx = { last: -1, streak: 0, x2: {}, used: {}, bump: -1, float: null }; }
+
+  function sndFanfare() {
+    [523, 659, 784, 1047].forEach(function (f, k) { tone(f, 0.22, 'triangle', 0.22, k * 0.13); });
+    tone(1047, 0.9, 'sine', 0.18, 0.55); tone(1319, 0.9, 'sine', 0.12, 0.55);
+  }
+  function sndFire() { tone(660, 0.08, 'square', 0.12); tone(990, 0.08, 'square', 0.12, 0.08); tone(1320, 0.18, 'square', 0.12, 0.16); }
+
+  function flashBanner(text, cls) {
+    var b = document.createElement('div');
+    b.className = 'lop-banner ' + (cls || '');
+    b.textContent = text;
+    document.body.appendChild(b);
+    setTimeout(function () { b.classList.add('out'); }, 1300);
+    setTimeout(function () { b.remove(); }, 1800);
+  }
+
+  /* ---- the cua cac to tren man hinh chuan bi: linh vat + ten sua duoc ---- */
+  function renderTeamNames() {
+    var box = $('#lopTeamNames');
+    if (!box) return;
+    box.innerHTML = '';
+    for (var i = 0; i < state.teams; i++) {
+      var row = document.createElement('label');
+      row.className = 'lop-tn';
+      row.style.setProperty('--tc', teamColor(i));
+      row.innerHTML = '<span class="lop-tn-m">' + teamMascot(i) + '</span>' +
+        '<input type="text" maxlength="18" data-tn="' + i + '" value="' + esc(teamName(i)) + '" aria-label="Tên tổ ' + (i + 1) + '">';
+      box.appendChild(row);
+    }
+    $all('input[data-tn]', box).forEach(function (inp) {
+      inp.addEventListener('input', function () {
+        state.teamNames = state.teamNames || [];
+        state.teamNames[parseInt(inp.getAttribute('data-tn'), 10)] = inp.value.trim();
+        save();
+      });
+    });
+  }
+
+  /* ---- vong quay chon to ---- */
+  function openWheel() {
+    var n = state.teams, box = $('#lopFx');
+    var seg = 360 / n, stops = [];
+    for (var i = 0; i < n; i++) stops.push(teamColor(i) + ' ' + (i * seg) + 'deg ' + ((i + 1) * seg) + 'deg');
+    var labels = '';
+    for (var k = 0; k < n; k++) {
+      var goc = (k * seg + seg / 2) * Math.PI / 180;
+      labels += '<span class="lop-wheel-lb" style="left:' + (50 + 33 * Math.sin(goc)).toFixed(1) + '%;top:' + (50 - 33 * Math.cos(goc)).toFixed(1) + '%">' + teamMascot(k) + '</span>';
+    }
+    box.innerHTML = '<div class="lop-fx-card lop-wheel-card">' +
+      '<div class="lop-wheel-wrap"><div class="lop-wheel-ptr">▼</div>' +
+      '<div class="lop-wheel" id="lopWheelDisc" style="background:conic-gradient(' + stops.join(',') + ')">' + labels + '</div></div>' +
+      '<div class="lop-wheel-res" id="lopWheelRes">Bấm “Quay” để chọn tổ trả lời</div>' +
+      '<div class="lop-fx-actions"><button type="button" class="lop-act" id="lopWheelSpin">🎡 Quay</button>' +
+      '<button type="button" class="lop-act ghost" id="lopFxClose">Đóng</button></div></div>';
+    box.hidden = false;
+    var angle = 0;
+    $('#lopFxClose').addEventListener('click', closeFx);
+    $('#lopWheelSpin').addEventListener('click', function () {
+      var pick = Math.floor(Math.random() * n);
+      // kim o dinh: quay de giua o "pick" ve 0deg
+      var target = 360 * 5 + (360 - (pick * seg + seg / 2));
+      angle = angle - (angle % 360) + target;
+      var disc = $('#lopWheelDisc');
+      disc.style.transform = 'rotate(' + angle + 'deg)';
+      $('#lopWheelRes').textContent = '…';
+      var ticks = 0, tid = setInterval(function () { sndTick(false); if (++ticks > 22) clearInterval(tid); }, 120);
+      setTimeout(function () {
+        clearInterval(tid);
+        sndUp();
+        var r = $('#lopWheelRes');
+        r.innerHTML = '<b style="color:' + teamColor(pick) + '">' + teamMascot(pick) + ' ' + esc(teamName(pick)) + '</b> trả lời!';
+      }, 3200);
+    });
+  }
+  function closeFx() { var b = $('#lopFx'); b.hidden = true; b.innerHTML = ''; stopConfetti(); }
+
+  /* ---- buc trao giai + phao giay ---- */
+  var confetti = null;
+  function startConfetti() {
+    var cv = document.createElement('canvas');
+    cv.className = 'lop-confetti';
+    document.body.appendChild(cv);
+    var ctx = cv.getContext('2d'), W = cv.width = innerWidth, H = cv.height = innerHeight;
+    var colors = TEAM_DEF.map(function (t) { return t.c; }).concat(['#ffd166', '#ef476f', '#06d6a0']);
+    var bits = [];
+    for (var i = 0; i < 160; i++) bits.push({ x: Math.random() * W, y: -Math.random() * H, r: 4 + Math.random() * 6, c: colors[i % colors.length], v: 2 + Math.random() * 3, a: Math.random() * 6, s: (Math.random() - 0.5) * 0.2 });
+    var stop = false;
+    (function tick() {
+      if (stop) return;
+      ctx.clearRect(0, 0, W, H);
+      bits.forEach(function (b) {
+        b.y += b.v; b.x += Math.sin(b.a += 0.03) * 1.2;
+        if (b.y > H + 10) { b.y = -10; b.x = Math.random() * W; }
+        ctx.save(); ctx.translate(b.x, b.y); ctx.rotate(b.a); ctx.fillStyle = b.c; ctx.fillRect(-b.r / 2, -b.r / 4, b.r, b.r / 2); ctx.restore();
+      });
+      requestAnimationFrame(tick);
+    })();
+    confetti = { el: cv, stop: function () { stop = true; cv.remove(); } };
+  }
+  function stopConfetti() { if (confetti) { confetti.stop(); confetti = null; } }
+
+  function openAward() {
+    clearInterval(state.timer.id); state.timer.running = false; paintTimer();
+    var order = state.scores.map(function (s, i) { return { i: i, s: s }; }).sort(function (a, b) { return b.s - a.s; });
+    var podium = [order[1], order[0], order[2]].filter(Boolean);
+    var place = function (o) { return order.indexOf(o) + 1; };
+    var box = $('#lopFx');
+    box.innerHTML = '<div class="lop-fx-card lop-award-card">' +
+      '<div class="lop-award-title">🏆 Bục vinh quang</div>' +
+      '<div class="lop-podium">' + podium.map(function (o) {
+        var p = place(o);
+        return '<div class="lop-pod p' + p + '" style="--tc:' + teamColor(o.i) + '">' +
+          '<div class="lop-pod-m">' + teamMascot(o.i) + '</div>' +
+          '<div class="lop-pod-n">' + esc(teamName(o.i)) + '</div>' +
+          '<div class="lop-pod-s">' + o.s + ' điểm</div>' +
+          '<div class="lop-pod-col"><span>' + ['🥇', '🥈', '🥉'][p - 1] + '</span></div></div>';
+      }).join('') + '</div>' +
+      (order.length > 3 ? '<div class="lop-award-rest">' + order.slice(3).map(function (o, k) {
+        return '<span>' + (k + 4) + '. ' + teamMascot(o.i) + ' ' + esc(teamName(o.i)) + ' — ' + o.s + '</span>';
+      }).join('') + '</div>' : '') +
+      '<div class="lop-fx-actions"><button type="button" class="lop-act" id="lopFxClose">Chơi tiếp</button>' +
+      '<button type="button" class="lop-act ghost" id="lopAwardNew">Ván mới (xoá điểm)</button></div></div>';
+    box.hidden = false;
+    sndFanfare();
+    startConfetti();
+    $('#lopFxClose').addEventListener('click', closeFx);
+    $('#lopAwardNew').addEventListener('click', function () { closeFx(); resetScores(); resetFx(); endShow(); renderScorebar(); });
+  }
+
+  /* ---- Gameshow 3 vong: tu chon tro hop voi bai da chon ---- */
+  var SHOW_ROUNDS = [
+    { ten: 'Vòng 1 · Khởi động', mo: 'Cả lớp cùng chơi, trả lời thật nhanh!', tro: ['abc', 'listen', 'match', 'hv'], mul: 1 },
+    { ten: 'Vòng 2 · Tăng tốc', mo: 'Mỗi tổ cử đại diện — phối hợp để ghi điểm.', tro: ['sort', 'errfix', 'tiles', 'guess', 'hanzi'], mul: 1 },
+    { ten: 'Vòng 3 · Về đích', mo: 'Mọi điểm ở vòng này được NHÂN ĐÔI ×2!', tro: ['write', 'taboo', 'chain'], mul: 2 }
+  ];
+  function troDuoc(g) {
+    if (g === 'abc') return pickedMcs().length >= 4;
+    if (g === 'sort') return pickedSorts().length >= 2;
+    if (g === 'errfix') return pickedJudges().length >= 5;
+    return !!pickedLabel();
+  }
+  function startShow() {
+    if (!pickedLabel()) return;
+    var plan = SHOW_ROUNDS.map(function (r) {
+      var ok = shuffle(r.tro.filter(troDuoc));
+      return { ten: r.ten, mo: r.mo, mul: r.mul, game: ok[0] || 'match' };
+    });
+    state.show = { plan: plan, idx: 0 };
+    resetScores(); resetFx();
+    showIntro();
+  }
+  function showIntro() {
+    var sh = state.show, r = sh.plan[sh.idx];
+    var box = $('#lopFx');
+    box.innerHTML = '<div class="lop-fx-card lop-intro-card">' +
+      '<div class="lop-intro-step">' + sh.plan.map(function (p, k) {
+        return '<span class="' + (k < sh.idx ? 'done' : k === sh.idx ? 'on' : '') + '">' + (k + 1) + '</span>';
+      }).join('<i></i>') + '</div>' +
+      '<div class="lop-intro-ten">' + esc(r.ten) + '</div>' +
+      '<div class="lop-intro-game">' + esc(GAME_TITLE[r.game] || '') + '</div>' +
+      '<div class="lop-intro-mo">' + esc(r.mo) + '</div>' +
+      '<div class="lop-intro-cd" id="lopIntroCd"></div>' +
+      '<div class="lop-fx-actions"><button type="button" class="lop-act" id="lopIntroGo">Bắt đầu vòng này ▶</button></div></div>';
+    box.hidden = false;
+    sndFanfare();
+    $('#lopIntroGo').addEventListener('click', function () {
+      var cd = $('#lopIntroCd'), n = 3;
+      this.disabled = true;
+      cd.textContent = n; sndTick(true);
+      var t = setInterval(function () {
+        n--;
+        if (n > 0) { cd.textContent = n; sndTick(true); return; }
+        clearInterval(t); cd.textContent = '开始!'; sndUp();
+        setTimeout(function () { closeFx(); startGame(r.game); }, 450);
+      }, 700);
+    });
+  }
+  function nextShowRound() {
+    var sh = state.show;
+    if (!sh) return;
+    if (sh.idx >= sh.plan.length - 1) { openAward(); return; }
+    sh.idx++;
+    showIntro();
+  }
+  function endShow() { state.show = null; paintShowBar(); }
+  function paintShowBar() {
+    var sh = state.show, badge = $('#lopRound'), nx = $('#lopNextRound');
+    if (!badge || !nx) return;
+    badge.hidden = !sh; nx.hidden = !sh;
+    if (sh) {
+      var r = sh.plan[sh.idx];
+      badge.textContent = (sh.idx + 1) + '/' + sh.plan.length + (r.mul > 1 ? ' · ×2' : '');
+      badge.classList.toggle('x2', r.mul > 1);
+      nx.textContent = sh.idx >= sh.plan.length - 1 ? '🏁 Trao giải' : 'Vòng tiếp ▶';
+    }
+  }
+
+  /* ---- sap xep lai man hinh chuan bi: nhom tro choi + nhan thoi luong / cach choi ---- */
+  var GAME_GROUPS = [
+    { ten: '⚡ Khởi động nhanh — cả lớp cùng chơi', g: ['abc', 'listen', 'match', 'hv'] },
+    { ten: '📚 Ôn từ vựng', g: ['bingo', 'guess', 'tiles', 'hanzi', 'chain'] },
+    { ten: '🧩 Câu & ngữ pháp', g: ['errfix', 'sort', 'trans'] },
+    { ten: '🎤 Nói – viết', g: ['taboo', 'role', 'write'] }
+  ];
+  var GAME_TAGS = {
+    abc: ['3–5′', 'cả lớp'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
+    bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
+    errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],
+    taboo: ['5′', 'nói'], role: ['5–7′', 'đóng vai'], write: ['5′', 'lên bảng']
+  };
+  function decorateSetup() {
+    var grid = $('.lop-games');
+    if (!grid || grid.getAttribute('data-ok')) return;
+    grid.setAttribute('data-ok', '1');
+    var cards = {};
+    $all('.lop-game-card', grid).forEach(function (c) { cards[c.getAttribute('data-game')] = c; });
+    grid.innerHTML = '';
+    GAME_GROUPS.forEach(function (grp) {
+      var h = document.createElement('div');
+      h.className = 'lop-group';
+      h.textContent = grp.ten;
+      grid.appendChild(h);
+      grp.g.forEach(function (k) {
+        var c = cards[k];
+        if (!c) return;
+        var tags = GAME_TAGS[k] || [];
+        if (tags.length && !c.querySelector('.lop-game-tags')) {
+          var t = document.createElement('span');
+          t.className = 'lop-game-tags';
+          t.innerHTML = tags.map(function (x) { return '<i>' + esc(x) + '</i>'; }).join('');
+          c.appendChild(t);
+        }
+        grid.appendChild(c);
+        delete cards[k];
+      });
+    });
+    Object.keys(cards).forEach(function (k) { grid.appendChild(cards[k]); });
+  }
+
   /* ---------------- khoi tao ---------------- */
   function init() {
     restore();
+    decorateSetup();
+    renderTeamNames();
+    $('#lopShow').addEventListener('click', startShow);
+    $('#lopWheel').addEventListener('click', openWheel);
+    $('#lopAward').addEventListener('click', openAward);
+    $('#lopNextRound').addEventListener('click', nextShowRound);
     $('#lopLevel').value = state.level;
     $all('#lopTeamPick button').forEach(function (b) {
       b.classList.toggle('active', parseInt(b.getAttribute('data-n'), 10) === state.teams);
@@ -2300,6 +2594,7 @@
         state.teams = parseInt(b.getAttribute('data-n'), 10);
         $all('#lopTeamPick button').forEach(function (x) { x.classList.remove('active'); });
         b.classList.add('active');
+        renderTeamNames();
         save();
       });
     });

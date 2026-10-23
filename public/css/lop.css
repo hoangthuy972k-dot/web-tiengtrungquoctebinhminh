@@ -1793,3 +1793,103 @@
   .lop-banner { opacity: 1; transform: translate(-50%, 0); }
   .lop-wheel { transition-duration: .01s; }
 }
+
+/* ================= San khau khi choi (body.lop-playing) — mau sac tuoi, the dap an 4 mau ================= */
+body.lop-playing {
+  --sk-bg1: #1a1446; --sk-bg2: #3a1c6e; --sk-bg3: #7a1f4b;
+  --sk-a: #e5484d; --sk-b: #2f7cf6; --sk-c: #f2a516; --sk-d: #1f9d55;
+  --sk-gold: #ffcf5c;
+  background: radial-gradient(1200px 700px at 15% -10%, #4b2ca8 0%, transparent 60%),
+              radial-gradient(900px 600px at 110% 110%, var(--sk-bg3) 0%, transparent 55%),
+              linear-gradient(160deg, var(--sk-bg1) 0%, var(--sk-bg2) 100%);
+  background-attachment: fixed;
+  color: #fff;
+}
+body.lop-playing .scene { display: none; }
+
+/* Thanh tren: kinh mo toi, chu trang, thanh thoi gian chay ngang */
+body.lop-playing .lop-bar { background: rgba(14, 10, 40, .55); border-bottom: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(8px); box-shadow: none; position: relative; }
+body.lop-playing .lop-bar::after {
+  content: ''; position: absolute; left: 0; bottom: -1px; height: 5px;
+  width: calc(var(--tleft, 1) * 100%); background: linear-gradient(90deg, #22d3ee, #a78bfa, #f472b6);
+  transition: width 1s linear; border-radius: 0 4px 4px 0;
+}
+body.lop-playing .lop-bar.is-low::after { background: linear-gradient(90deg, #f97316, #ef4444); }
+body.lop-playing .lop-bar-title { color: #fff; }
+body.lop-playing .lop-bar-sub { color: rgba(255,255,255,.65); border-left-color: rgba(255,255,255,.2); }
+body.lop-playing .lop-bar-btn { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.16); color: #fff; }
+body.lop-playing .lop-bar-btn:hover { background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.35); }
+body.lop-playing .lop-timer { color: var(--sk-gold); text-shadow: 0 0 22px rgba(255, 207, 92, .35); }
+body.lop-playing .lop-timer.is-low { color: #ff6b6b; }
+
+/* Dau san khau + goi y */
+body.lop-playing .lop-stage-head { color: rgba(255,255,255,.75); }
+body.lop-playing .lop-stage-head b { color: #fff; }
+body.lop-playing .lop-stage-head .lop-point { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); color: #ffe4a3; }
+body.lop-playing .lop-abc-context { background: rgba(255,255,255,.08); border-left-color: var(--sk-gold); color: #fff; }
+
+/* Cau hoi: the lon, chu trang tren nen kinh */
+body.lop-playing .lop-abc-sentence {
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); color: #fff;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35); backdrop-filter: blur(6px);
+}
+body.lop-playing .lop-blank { color: var(--sk-gold); }
+
+/* The dap an 4 mau + hinh */
+body.lop-playing .lop-abc-opts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(10px, 1.4vw, 18px); }
+body.lop-playing .lop-abc-opt {
+  --oc: var(--sk-a);
+  background: var(--oc); border: none; color: #fff; border-radius: 18px;
+  box-shadow: 0 8px 0 rgba(0,0,0,.25), 0 14px 26px rgba(0,0,0,.25);
+  padding: clamp(14px, 2.2vh, 26px) clamp(16px, 2vw, 26px);
+  transition: transform .15s ease, opacity .25s ease, filter .25s ease;
+}
+body.lop-playing .lop-abc-opt:hover { transform: translateY(-3px); border: none; }
+body.lop-playing .lop-abc-opt:nth-child(2) { --oc: var(--sk-b); }
+body.lop-playing .lop-abc-opt:nth-child(3) { --oc: var(--sk-c); }
+body.lop-playing .lop-abc-opt:nth-child(4) { --oc: var(--sk-d); }
+body.lop-playing .lop-abc-key { background: rgba(255,255,255,.22); font-size: 0; position: relative; }
+body.lop-playing .lop-abc-key::before { font-size: 1.5rem; }
+body.lop-playing .lop-abc-opt:nth-child(1) .lop-abc-key::before { content: '▲'; }
+body.lop-playing .lop-abc-opt:nth-child(2) .lop-abc-key::before { content: '◆'; }
+body.lop-playing .lop-abc-opt:nth-child(3) .lop-abc-key::before { content: '●'; }
+body.lop-playing .lop-abc-opt:nth-child(4) .lop-abc-key::before { content: '■'; }
+body.lop-playing .lop-abc-key::after {
+  content: attr(data-k); position: absolute; right: -6px; bottom: -6px; font-size: .8rem; font-weight: 800;
+  background: #fff; color: var(--oc); border-radius: 999px; width: 22px; height: 22px; display: grid; place-items: center;
+}
+body.lop-playing .lop-abc-text { color: #fff; text-shadow: 0 2px 0 rgba(0,0,0,.18); }
+body.lop-playing .lop-abc-opt.is-right { background: var(--oc); transform: scale(1.04); box-shadow: 0 0 0 5px #fff, 0 18px 40px rgba(0,0,0,.35); animation: skRight .5s ease; }
+body.lop-playing .lop-abc-opt.is-right .lop-abc-key { background: #fff; }
+body.lop-playing .lop-abc-opt.is-right .lop-abc-key::before { content: '✓'; color: var(--oc); }
+body.lop-playing .lop-abc-opt.is-dim { opacity: .28; filter: grayscale(.6); }
+@keyframes skRight { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1.04); } }
+body.lop-playing .lop-abc-why { background: rgba(255,255,255,.1); color: #fff; }
+
+/* Nut hanh dong */
+body.lop-playing .lop-act { background: linear-gradient(180deg, #ffd166, #f4a52a); color: #3b2300; box-shadow: 0 6px 0 #b8741a; border: none; }
+body.lop-playing .lop-act:active { transform: translateY(3px); box-shadow: 0 3px 0 #b8741a; }
+body.lop-playing .lop-act.ghost { background: rgba(255,255,255,.12); color: #fff; box-shadow: none; border: 1px solid rgba(255,255,255,.25); }
+
+/* Cac the trang cua tro khac: giu nen trang de doc ro, them bong va bo goc */
+body.lop-playing .lop-row,
+body.lop-playing .lop-sort-card,
+body.lop-playing .lop-listen-cell { box-shadow: 0 10px 26px rgba(0,0,0,.28); }
+
+/* Bang diem: nen toi, the to sang */
+body.lop-playing .lop-scorebar { background: rgba(14, 10, 40, .55); border-top: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(8px); }
+body.lop-playing .lop-team { background: rgba(255,255,255,.96); }
+body.lop-playing .lop-team.lead { background: #fff; box-shadow: 0 0 0 3px var(--tc), 0 0 28px color-mix(in srgb, var(--tc) 55%, transparent); }
+
+@media (max-width: 700px) {
+  body.lop-playing .lop-abc-opts { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.lop-playing .lop-abc-opt.is-right { animation: none; }
+  body.lop-playing .lop-bar::after { transition: none; }
+}
+/* 3 dap an: o thu ba trai rong ca hang */
+body.lop-playing .lop-abc-opt:nth-child(3):last-child { grid-column: 1 / -1; }
+/* Thanh tren nhieu nut (gameshow) — xuong dong thay vi tran ngang tren man hep */
+.lop-bar { flex-wrap: wrap; row-gap: 8px; }
+.lop-bar-right { flex-wrap: wrap; justify-content: flex-end; row-gap: 8px; }

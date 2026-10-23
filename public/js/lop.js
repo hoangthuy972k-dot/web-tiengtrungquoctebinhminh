@@ -371,6 +371,12 @@
     var el = $('#lopTimer');
     el.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
     el.classList.toggle('is-low', t.left <= 5 && t.left > 0);
+    // thanh thoi gian chay ngang duoi thanh tren (san khau khi choi)
+    var bar = $('.lop-bar');
+    if (bar) {
+      bar.style.setProperty('--tleft', t.secs ? Math.max(0, Math.min(1, t.left / t.secs)) : 1);
+      bar.classList.toggle('is-low', t.left <= 5 && t.left > 0);
+    }
     $('#lopTimerToggle').textContent = t.running ? '⏸ Dừng' : '▶ Bắt đầu';
     $('#lopTimerSet').textContent = t.secs + 's';
   }
@@ -577,7 +583,7 @@
       '<div class="lop-abc-sentence' + (q.noBlank ? ' is-q' : '') + '">' + esc(q.pre) + (q.noBlank ? '' : '<span class="lop-blank">＿＿</span>') + esc(q.post) + '</div>' +
       '<div class="lop-abc-opts">' + q._order.map(function (oi, i) {
         return '<div class="lop-abc-opt" data-i="' + i + '">' +
-          '<span class="lop-abc-key">' + ABC[i] + '</span>' +
+          '<span class="lop-abc-key" data-k="' + ABC[i] + '">' + ABC[i] + '</span>' +
           '<span class="lop-abc-text">' + esc(q.options[oi]) + '</span>' +
         '</div>';
       }).join('') + '</div>' +
@@ -2018,7 +2024,7 @@
       '<div class="lop-abc-sentence' + (q.noBlank ? ' is-q' : '') + '">' + esc(q.pre) + (q.noBlank ? '' : '<span class="lop-blank">＿＿</span>') + esc(q.post) + '</div>' +
       '<div class="lop-abc-opts">' + it.order.map(function (oi, i) {
         return '<div class="lop-abc-opt">' +
-          '<span class="lop-abc-key">' + ABC[i] + '</span>' +
+          '<span class="lop-abc-key" data-k="' + ABC[i] + '">' + ABC[i] + '</span>' +
           '<span class="lop-abc-text">' + esc(q.options[oi]) + '</span>' +
         '</div>';
       }).join('') + '</div>' +
@@ -2581,6 +2587,13 @@
   /* ---------------- khoi tao ---------------- */
   function init() {
     restore();
+    // Khi vao man choi: doi nen sang san khau mau (body.lop-playing)
+    var playEl = $('#lopPlay');
+    if (playEl && window.MutationObserver) {
+      var syncPlaying = function () { document.body.classList.toggle('lop-playing', !playEl.hidden); };
+      new MutationObserver(syncPlaying).observe(playEl, { attributes: true, attributeFilter: ['hidden'] });
+      syncPlaying();
+    }
     decorateSetup();
     renderTeamNames();
     $('#lopShow').addEventListener('click', startShow);

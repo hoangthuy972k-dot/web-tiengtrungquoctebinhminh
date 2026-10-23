@@ -817,7 +817,7 @@
   /* ---------------- tro dau to dung cau trac nghiem: keo co, hop bi mat, dua tau ---------------- */
   // Ca ba dung chung bo cau A/B/C cua cac bai da chon (state.deck/state.pos),
   // khung cau hoi giong "Gio the" nhung gon hon de con cho cho hinh tro choi.
-  var MC_GAMES = { tug: 1, mine: 1, train: 1 };
+  var MC_GAMES = { tug: 1, mine: 1, train: 1, nhip: 1 };
 
   function mcDeal() {
     state.deck = shuffle(pickedMcs());
@@ -1071,6 +1071,151 @@
     if (state.train.xong >= 0) return;
     state.train.ghi = {};
     mcNext(); renderTrain(); resetTimer();
+  }
+
+  /* ---- Thi dua tren dien thoai: moi em tu lam ca bo cau theo nhip rieng (phong kieu 'nhip') ---- */
+  // Man chieu chi hien ma QR luc dau, sau do la bang xep hang + tien do tung em.
+  function qrSvg(link) {
+    try { var g = qrcode(0, 'M'); g.addData(link); g.make(); return g.createSvgTag({ cellSize: 8, margin: 2, scalable: true }); }
+    catch (e) { return ''; }
+  }
+  function startNhip() {
+    $('#lopScorebar').hidden = true;
+    stopTimer();
+    state.nhipSo = state.nhipSo || 10;
+    $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Đang mở phòng…</span></div>';
+    fetch('/api/live/tao', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ kieu: 'nhip' }) })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || 'Lỗi kết nối'); return d; }); })
+      .then(function (d) {
+        if (state.game !== 'nhip') return;
+        state.live = { ma: d.ma, khoa: d.khoa, kieu: 'nhip', info: null, ve: '' };
+        state.live.poll = setInterval(nhipTai, 1500);
+        renderNhip();
+      })
+      .catch(function (e) {
+        $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Chưa mở được phòng: ' + esc(e.message) + '</span></div>';
+      });
+  }
+  function nhipTai() {
+    var l = state.live;
+    if (!l || l.kieu !== 'nhip') return;
+    liveApi('GET', 'gv').then(function (d) {
+      if (state.live !== l || state.game !== 'nhip') return;
+      l.info = d;
+      renderNhip();
+    }).catch(function () { /* mang chap chon: lan sau thu lai */ });
+  }
+  function renderNhip() {
+    var l = state.live;
+    if (!l) {
+      $('#lopStage').innerHTML = '<div class="lop-tug-win">Phiên thi đã kết thúc</div>' +
+        '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopNhipMoi">Mở phòng mới ▶</button></div>';
+      $('#lopNhipMoi').addEventListener('click', startNhip);
+      return;
+    }
+    var d = l.info || { pha: 'cho', ds: [], bxh: [], soHs: 0 };
+    var link = location.origin + '/choi?ma=' + l.ma;
+    var tong = pickedMcs().length;
+    // Dung khung mot lan cho moi pha, cac lan hoi sau chi cap nhat phan dong
+    if (l.ve !== d.pha) {
+      l.ve = d.pha;
+      if (d.pha === 'cho') {
+        var so = [10, 20, 30].filter(function (n) { return n < tong; }).concat([tong]);
+        if (so.indexOf(state.nhipSo) < 0) state.nhipSo = so[0];
+        $('#lopStage').innerHTML =
+          '<div class="lop-nhip-card">' +
+            '<div class="lop-live-top">' +
+              '<div class="lop-live-qr">' + qrSvg(link) + '</div>' +
+              '<div class="lop-live-info">' +
+                '<div class="lop-live-lb">Mở điện thoại, quét mã QR hoặc vào</div>' +
+                '<div class="lop-live-url">' + esc(location.host) + '/choi</div>' +
+                '<div class="lop-live-lb">Mã phòng</div>' +
+                '<div class="lop-live-ma">' + liveMa() + '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="lop-live-dem" id="lopLiveDem"></div>' +
+            '<div class="lop-live-ds" id="lopLiveDs"></div>' +
+            '<div class="lop-nhip-so"><span>Mỗi em làm</span>' + so.map(function (n) {
+              return '<button type="button" data-so="' + n + '" class="' + (n === state.nhipSo ? 'on' : '') + '">' + (n === tong ? 'Tất cả ' + n : n) + ' câu</button>';
+            }).join('') + '</div>' +
+            '<div class="lop-fx-actions"><button type="button" class="lop-act" id="lopNhipGo">Bắt đầu cho cả lớp làm ▶</button></div>' +
+          '</div>';
+        $all('#lopStage [data-so]').forEach(function (b) {
+          b.addEventListener('click', function () {
+            state.nhipSo = parseInt(b.getAttribute('data-so'), 10);
+            $all('#lopStage [data-so]').forEach(function (x) { x.classList.toggle('on', x === b); });
+          });
+        });
+        $('#lopNhipGo').addEventListener('click', nhipBatDau);
+      } else if (d.pha === 'choi') {
+        $('#lopStage').innerHTML =
+          '<div class="lop-nhip-head">' +
+            '<div class="lop-nhip-tk"><div>📱 Phòng <b>' + liveMa() + '</b></div>' +
+              '<div><b class="lop-live-big" id="lopNhipXong">0</b> / <span id="lopNhipSoHs">0</span> bạn đã làm xong · ⏱ <span id="lopNhipGio">00:00</span></div>' +
+              '<div class="lop-nhip-goi">Vào muộn? Quét mã bên cạnh hoặc vào ' + esc(location.host) + '/choi</div></div>' +
+            '<div class="lop-nhip-qr">' + qrSvg(link) + '</div>' +
+          '</div>' +
+          '<div class="lop-nhip-bxh" id="lopNhipBxh"></div>' +
+          '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopNhipEnd">🏁 Kết thúc &amp; trao giải</button></div>';
+        $('#lopNhipEnd').addEventListener('click', function () {
+          var moi = (state.live && state.live.info) || d; // so lieu moi nhat, khong phai luc dung khung
+          if (moi.soXong < moi.soHs && !confirm('Còn bạn chưa làm xong. Kết thúc luôn?')) return;
+          liveKetThuc(true);
+          renderNhip();
+        });
+      }
+    }
+    if (d.pha === 'cho' && $('#lopLiveDs')) {
+      $('#lopLiveDem').innerHTML = d.ds.length ? '<b>' + d.ds.length + '</b> bạn đã vào lớp' : 'Chưa có bạn nào vào';
+      var cu = $('#lopLiveDs').getAttribute('data-n');
+      if (cu !== String(d.ds.length)) {
+        $('#lopLiveDs').setAttribute('data-n', d.ds.length);
+        $('#lopLiveDs').innerHTML = d.ds.map(function (h) {
+          return '<button type="button" class="lop-live-hs" data-pid="' + esc(h.pid) + '" title="Bấm để mời bạn này ra">' + esc(h.ten) + '</button>';
+        }).join('');
+        $all('#lopLiveDs [data-pid]').forEach(function (b) {
+          b.addEventListener('click', function () {
+            if (!confirm('Mời "' + b.textContent + '" ra khỏi phòng?')) return;
+            liveApi('POST', 'duoi', { pid: b.getAttribute('data-pid') }).then(nhipTai);
+          });
+        });
+      }
+    }
+    if (d.pha === 'choi' && $('#lopNhipBxh')) {
+      $('#lopNhipXong').textContent = d.soXong;
+      $('#lopNhipSoHs').textContent = d.soHs;
+      var giay = Math.floor((Date.now() - (l.bd || Date.now())) / 1000);
+      $('#lopNhipGio').textContent = (giay < 600 ? '0' : '') + Math.floor(giay / 60) + ':' + (giay % 60 < 10 ? '0' : '') + giay % 60;
+      $('#lopNhipBxh').innerHTML = d.bxh.map(function (r) {
+        var pt = d.tong ? Math.round(r.lam / d.tong * 100) : 0;
+        return '<div class="lop-nhip-row' + (r.xong ? ' xong' : '') + '">' +
+          '<span class="lop-live-hang">' + (['🥇', '🥈', '🥉'][r.hang - 1] || r.hang) + '</span>' +
+          '<span class="lop-live-ten">' + esc(r.ten) + (r.chuoi >= 3 ? ' 🔥' : '') + '</span>' +
+          '<span class="lop-nhip-tien"><i style="width:' + pt + '%"></i><em>' + (r.xong ? '🏁 xong' : r.lam + '/' + d.tong) + '</em></span>' +
+          '<span class="lop-nhip-dung">✓ ' + r.dungSo + '</span>' +
+          '<b>' + r.diem + '</b></div>';
+      }).join('') || '<div class="lop-stage-head"><span>Chưa có bạn nào vào phòng.</span></div>';
+    }
+  }
+  function nhipBatDau() {
+    var l = state.live;
+    if (!l) return;
+    var b = $('#lopNhipGo');
+    b.disabled = true;
+    var cau = shuffle(pickedMcs()).slice(0, state.nhipSo).map(function (q) {
+      var thu = shuffle(q.options.map(function (_, i) { return i; }));
+      return {
+        zh: q.pre + (q.noBlank ? '' : '＿＿') + q.post,
+        ctx: q.context || '', why: q.why || '',
+        opts: thu.map(function (oi) { return q.options[oi]; }),
+        dung: thu.indexOf(q.answer),
+      };
+    });
+    liveApi('POST', 'batdau', { cau: cau }).then(function () {
+      l.bd = Date.now();
+      try { sndFanfare(); } catch (e) { /* */ }
+      nhipTai();
+    }).catch(function (e) { b.disabled = false; alert(e.message); });
   }
 
   /* ---------------- tro: xep cau bang nguoi ---------------- */
@@ -2707,7 +2852,7 @@
     trans: 'Dịch nhanh Việt → Trung', listen: 'Nghe nhanh chỉ chữ', hanzi: 'Đoán chữ qua bộ thủ',
     role: 'Đóng vai bài khoá', hv: 'Âm Hán–Việt đoán chữ', match: 'Nối nghĩa nhanh',
     chain: 'Nối từ 接龙', write: 'Thi viết bảng nhanh',
-    tug: 'Kéo co tri thức', mine: 'Hộp bí mật', train: 'Đua tàu tri thức'
+    tug: 'Kéo co tri thức', mine: 'Hộp bí mật', train: 'Đua tàu tri thức', nhip: 'Thi đua trên điện thoại'
   };
   var GAME_SECS = {
     errfix: 30, abc: 10, sort: 60, bingo: 30, guess: 20, tiles: 30, taboo: 60,
@@ -2767,6 +2912,7 @@
     else if (game === 'tug') { dealTug(); renderTug(); }
     else if (game === 'mine') { dealMine(); renderMine(); }
     else if (game === 'train') { dealTrain(); renderTrain(); }
+    else if (game === 'nhip') startNhip();
     else if (game === 'sort') { dealSort(); renderSort(); }
     else { dealRows(); renderErrfix(); }
   }
@@ -3004,6 +3150,7 @@
   var GAME_GROUPS = [
     { ten: '⚡ Khởi động nhanh — cả lớp cùng chơi', g: ['abc', 'listen', 'match', 'hv'] },
     { ten: '🏆 Đấu tổ kịch tính', g: ['tug', 'train', 'mine'] },
+    { ten: '📱 Học sinh dùng điện thoại', g: ['nhip'] },
     { ten: '📚 Ôn từ vựng', g: ['bingo', 'guess', 'tiles', 'hanzi', 'chain'] },
     { ten: '🧩 Câu & ngữ pháp', g: ['errfix', 'sort', 'trans'] },
     { ten: '🎤 Nói – viết', g: ['taboo', 'role', 'write'] }
@@ -3013,7 +3160,7 @@
     bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
     errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],
     taboo: ['5′', 'nói'], role: ['5–7′', 'đóng vai'], write: ['5′', 'lên bảng'],
-    tug: ['5′', '2 tổ đấu'], train: ['5–7′', 'các tổ đua'], mine: ['5–7′', 'theo lượt']
+    nhip: ['5–10′', 'quét mã QR', 'tự làm'], tug: ['5′', '2 tổ đấu'], train: ['5–7′', 'các tổ đua'], mine: ['5–7′', 'theo lượt']
   };
   function decorateSetup() {
     var grid = $('.lop-games');

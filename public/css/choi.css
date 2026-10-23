@@ -100,3 +100,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .ch-cho-ic, .ch-chon-o, .ch-kq-ic { animation: none; }
 }
+.ch-cau { white-space: pre-line; }
+.ch-why { max-width: 420px; font-size: .95rem; }
+.ch-why:empty { display: none; }
+.ch-nut-tiep { min-width: 220px; }

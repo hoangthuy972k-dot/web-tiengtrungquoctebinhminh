@@ -2017,3 +2017,29 @@ body.lop-playing .lop-fx-card .lop-act.ghost { background: var(--color-gray-100)
   .lop-mine-cell, .lop-tug-side.keo .lop-tug-m { animation: none !important; }
 }
 .lop-mine > *, .lop-tug > *, .lop-train-row > * { min-width: 0; }
+
+/* ================= Thi dua tren dien thoai (tu lam theo nhip rieng) ================= */
+.lop-nhip-card { width: 100%; max-width: 900px; background: #fffdf8; color: var(--color-gray-900); border-radius: 28px; padding: clamp(18px, 3vw, 34px); box-shadow: 0 30px 70px rgba(0,0,0,.35); text-align: center; }
+.lop-nhip-so { display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 18px; font-weight: 700; color: var(--color-gray-700); }
+.lop-nhip-so button { font: inherit; font-weight: 700; border-radius: 999px; padding: 7px 16px; border: 2px solid var(--color-gray-200); background: #fff; color: var(--color-gray-800); cursor: pointer; }
+.lop-nhip-so button.on { border-color: #3a1c6e; background: #3a1c6e; color: #fff; }
+.lop-nhip-head { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.lop-nhip-tk { display: flex; flex-direction: column; gap: 6px; font-size: clamp(1.05rem, 1.8vw, 1.4rem); color: #fff; }
+.lop-nhip-goi { font-size: .9rem; color: rgba(255,255,255,.7); }
+.lop-nhip-qr { width: clamp(110px, 12vw, 160px); background: #fff; border-radius: 14px; padding: 6px; flex: none; }
+.lop-nhip-qr svg { display: block; width: 100%; height: auto; }
+.lop-nhip-bxh { width: 100%; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 460px), 1fr)); gap: 8px; }
+.lop-nhip-row {
+  display: grid; grid-template-columns: 36px minmax(0, 1fr) minmax(90px, 1.1fr) 52px 64px; gap: 10px; align-items: center;
+  padding: 8px 12px; border-radius: 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); color: #fff;
+}
+.lop-nhip-row:nth-child(-n+3) { background: rgba(255, 207, 92, .14); border-color: rgba(255, 207, 92, .35); }
+.lop-nhip-row b { text-align: right; color: #ffcf5c; font-variant-numeric: tabular-nums; }
+.lop-nhip-tien { position: relative; height: 22px; border-radius: 999px; background: rgba(255,255,255,.14); overflow: hidden; }
+.lop-nhip-tien i { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, #22d3ee, #a78bfa); border-radius: 999px; transition: width .6s ease; }
+.lop-nhip-row.xong .lop-nhip-tien i { background: linear-gradient(90deg, #22c55e, #86efac); }
+.lop-nhip-tien em { position: relative; display: block; text-align: center; font-style: normal; font-size: .8rem; font-weight: 800; line-height: 22px; }
+.lop-nhip-dung { color: #86efac; font-weight: 800; font-size: .9rem; }
+@media (max-width: 700px) { .lop-nhip-qr { display: none; } }
+.lop-nhip-tk b, .lop-nhip-tk span { color: #fff; }
+.lop-nhip-tk .lop-live-big { color: #ffcf5c; }

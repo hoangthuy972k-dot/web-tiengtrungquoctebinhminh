@@ -4,10 +4,10 @@
 (function () {
   'use strict';
   var $ = function (s) { return document.getElementById(s); };
-  var MAN = ['manVao', 'manCho', 'manHoi', 'manDaChon', 'manKq', 'manHet'];
+  var MAN = ['manVao', 'manCho', 'manHoi', 'manDaChon', 'manKq', 'manHet', 'manXong'];
   var HINH = ['▲', '◆', '●', '■'];
   var KEY = 'hyv_choi';
-  var s = { ma: '', pid: '', tok: '', qid: -1, pha: '', daChon: -1, poll: 0, dem: 0, conLai: 0, tai: 0 };
+  var s = { ma: '', pid: '', tok: '', qid: -1, pha: '', daChon: -1, poll: 0, dem: 0, conLai: 0, tai: 0, nhip: false, nhipI: -1, dangPh: false };
 
   function hien(id) {
     MAN.forEach(function (m) { $(m).hidden = m !== id; });
@@ -82,6 +82,7 @@
   function ve(d) {
     $('chanDiem').textContent = d.diem;
     $('chanTen').textContent = d.ten;
+    if (d.kieu === 'nhip') { s.nhip = true; veNhip(d); return; }
     var moi = d.qid !== s.qid || d.pha !== s.pha;
     s.pha = d.pha;
     if (d.pha === 'cho') { if (moi) hien('manCho'); s.qid = d.qid; return; }
@@ -98,7 +99,8 @@
   function veCau(d) {
     var c = d.cau || { opts: [] };
     $('soCau').textContent = 'Câu ' + (c.so || d.qid) + (c.tong ? '/' + c.tong : '');
-    $('cauZh').textContent = c.zh || '';
+    $('cauZh').textContent = (c.ctx ? '🗣️ ' + c.ctx + String.fromCharCode(10) : '') + (c.zh || '');
+    $('demGio').hidden = !!s.nhip;
     var o = $('opts');
     o.className = 'ch-opts n' + c.opts.length;
     o.innerHTML = c.opts.map(function (t, i) {
@@ -114,6 +116,7 @@
     rung(40);
   }
   function chon(i, c) {
+    if (s.nhip) { chonNhip(i, c); return; }
     if (s.daChon >= 0) return;
     s.daChon = i;
     Array.prototype.forEach.call($('opts').querySelectorAll('button'), function (b) { b.disabled = true; });
@@ -155,6 +158,8 @@
     $('kqCong').textContent = dung ? '+' + d.cong + (d.chuoi >= 2 ? '  🔥 chuỗi ' + d.chuoi : '') : '';
     $('kqDung').innerHTML = !dung && d.dung >= 0 ? 'Đáp án: <b>' + HINH[d.dung] + ' ' + esc(c.opts[d.dung] || '') + '</b>' : '';
     $('kqHang').innerHTML = d.hang ? 'Hạng <b>' + d.hang + '</b> / ' + d.soHs : '';
+    $('kqWhy').textContent = '';
+    $('nutTiep').hidden = true;
     hien('manKq');
     rung(dung ? [30, 40, 30] : 120);
   }
@@ -169,6 +174,59 @@
     clearTimeout(s.poll);
     s.ma = '';
   }
+  /* ---- kieu tu lam theo nhip rieng: moi em tu sang cau tiep ---- */
+  function veNhip(d) {
+    var doi = d.pha !== s.pha;
+    s.pha = d.pha;
+    if (d.pha === 'cho') { if (doi) hien('manCho'); return; }
+    if (d.pha === 'het') { if (doi) { s.dangPh = false; veHet(d); } return; }
+    if (d.xong) {
+      if (s.dangPh) return; // dang xem dap an cau cuoi
+      $('xongTk').textContent = 'Đúng ' + d.dungSo + '/' + d.tong + ' câu · ' + d.diem + ' điểm';
+      $('xongHang').innerHTML = d.hang ? 'Hạng <b>' + d.hang + '</b> / ' + d.soHs : '';
+      if ($('manXong').hidden) { hien('manXong'); rung([30, 40, 30]); }
+      return;
+    }
+    if (s.dangPh || !d.cau) return;
+    if (d.i !== s.nhipI || $('manHoi').hidden) {
+      s.nhipI = d.i;
+      d.cau.so = d.i + 1;
+      d.cau.tong = d.tong;
+      veCau(d);
+    }
+  }
+  function chonNhip(i, c) {
+    if (s.dangPh) return;
+    s.dangPh = true;
+    Array.prototype.forEach.call($('opts').querySelectorAll('button'), function (b) { b.disabled = true; });
+    rung(25);
+    api('POST', '/api/live/' + s.ma + '/tl', { pid: s.pid, tok: s.tok, i: s.nhipI, chon: i }).then(function (r) {
+      $('chanDiem').textContent = r.diem;
+      if (r.dung == null) { s.dangPh = false; s.nhipI = -1; return; }
+      $('manKq').className = 'ch-man ch-kq ' + (r.dung ? 'dung' : 'sai');
+      $('kqIc').textContent = r.dung ? '✓' : '✗';
+      $('kqTit').textContent = r.dung ? 'Chính xác!' : 'Chưa đúng rồi';
+      $('kqCong').textContent = r.dung ? '+' + r.cong + (r.chuoi >= 2 ? '  🔥 chuỗi ' + r.chuoi : '') : '';
+      $('kqDung').innerHTML = r.dung ? '' : 'Đáp án: <b>' + HINH[r.dap] + ' ' + esc(c.opts[r.dap] || '') + '</b>';
+      $('kqHang').innerHTML = '';
+      $('kqWhy').textContent = r.why ? '💡 ' + r.why : '';
+      $('nutTiep').hidden = false;
+      $('nutTiep').textContent = r.xong ? 'Xem kết quả →' : 'Câu tiếp →';
+      hien('manKq');
+      rung(r.dung ? [30, 40, 30] : 120);
+    }).catch(function (e) {
+      s.dangPh = false;
+      s.nhipI = -1; // lech cau (vd. mo 2 tab): lay lai cau hien tai
+      if (e.status !== 409) Array.prototype.forEach.call($('opts').querySelectorAll('button'), function (b) { b.disabled = false; });
+      batDauPoll();
+    });
+  }
+  $('nutTiep').addEventListener('click', function () {
+    s.dangPh = false;
+    $('nutTiep').hidden = true;
+    batDauPoll(); // hoi may ngay de lay cau tiep
+  });
+
   $('nutLai').addEventListener('click', function () { $('oMa').value = ''; hien('manVao'); });
 
   /* ---- khoi tao ---- */

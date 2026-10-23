@@ -8903,3 +8903,120 @@ html.ho-tro-toi[data-theme="dark"] .h4-peek { color: #5cc8bd; }
 .mt-q-explain { margin-top: var(--space-2); padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); background: var(--color-gray-50); font-size: 0.9rem; line-height: 1.6; }
 .mt-q-explain .hanzi { color: var(--fg-gray-900); }
 .mt-q-vn { color: var(--fg-text-muted); margin-top: 4px; }
+
+/* =====================================================================
+   GIAO DIEN AM TUOI (2026-10): nen nga + may line-art, do gach, nut noi khoi,
+   the cap do moi cap mot mau + chu Han in mo. Lop nay dat CUOI file de de
+   len kieu cu; mau deu qua bien nen che do toi (dinh nghia o tren) van dung.
+   ===================================================================== */
+:root {
+  --color-red-800: #84291b;
+  --color-red-700: #9e3221;
+  --color-red-600: #c2412d;
+  --color-red-500: #d4553f;
+  --color-red-100: #f6d5ca;
+  --color-red-50: #fbe9e3;
+  --color-gray-50: #fbf6ec;
+  --color-gray-100: #f5eee2;
+  --color-gray-200: #eadfcf;
+  --color-gray-300: #dccfbb;
+  --color-surface: #fffdf8;
+  --color-green-600: #2e8b6a;
+  --color-green-50: #dcf1e7;
+  --color-purple-600: #a23c62;
+  --color-purple-50: #f6e0e8;
+  --color-blue-600: #2f5d8a;
+  --color-blue-50: #e1ecf6;
+  --color-gold-600: #b06f12;
+  --color-gold-50: #fcecc9;
+  --radius-lg: 22px;
+  --radius-xl: 22px;
+  --shadow-sm: 0 1px 2px rgba(90, 60, 30, .06), 0 2px 6px rgba(90, 60, 30, .05);
+  --shadow-md: 0 1px 2px rgba(90, 60, 30, .06), 0 8px 24px rgba(90, 60, 30, .09);
+  --am-may: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='140' viewBox='0 0 220 140'%3E%3Cg fill='none' stroke='%23c2412d' stroke-opacity='.07' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M20 90c0-14 12-24 26-22 4-12 22-16 31-6 10-8 27-2 27 12 12 0 18 14 8 22H28c-6 0-8-3-8-6z'/%3E%3Cpath d='M44 80c4-6 12-6 15 0M76 76c4-6 12-6 15 0'/%3E%3Cpath d='M140 40c0-9 8-15 17-14 3-8 14-10 20-4 7-5 17-1 17 8 8 0 11 9 5 14h-53c-4 0-6-2-6-4z'/%3E%3C/g%3E%3C/svg%3E");
+  --am-gold-btn: #ffd27a;
+}
+
+/* Nen: bo tranh son thuy, thay bang may line-art rat mo tren nen nga */
+.scene { background: var(--color-bg) var(--am-may); background-size: 440px 280px; }
+.scene-layer, .scene-mist, .scene-petals, .scene-veil { display: none; }
+body { background-color: var(--color-bg); }
+
+/* The: nen dac, bong am, bo goc mem */
+.dash-auth-banner,
+.dash-streak-card,
+.stat-tile,
+.level-card,
+.lesson-card-link {
+  background: var(--color-surface);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-color: var(--color-border);
+}
+.home-head h1, .home-head p, .dash-breadcrumb h1, .dash-breadcrumb p,
+.home-section-head h2, .home-section-head p { text-shadow: none; }
+
+/* Nut noi khoi kieu tro choi: bong day dac phia duoi, bam xuong thi lun */
+.btn { border-radius: 14px; font-weight: 700; }
+.btn-primary, .btn-gold, .btn-white { transition: transform .08s ease, box-shadow .08s ease, background-color .15s ease; }
+.btn-primary { box-shadow: 0 4px 0 var(--color-red-800); }
+.btn-primary:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--color-red-800); }
+.btn-gold { background: var(--am-gold-btn); color: #4a2c08; box-shadow: 0 4px 0 #b06f12; }
+.btn-gold:hover { background: #ffdc94; }
+.btn-gold:active { transform: translateY(3px); box-shadow: 0 1px 0 #b06f12; }
+.btn-outline { box-shadow: 0 3px 0 var(--color-border); }
+.btn-outline:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--color-border); }
+
+/* The "Hoc tiep": do gach dam, chu Han 学 in mo, nut vang noi */
+.dash-cta-card {
+  background: linear-gradient(140deg, #c84a33 0%, #b8372a 55%, #9e2f22 100%);
+  box-shadow: var(--shadow-md);
+}
+.dash-cta-card::after {
+  content: '学'; position: absolute; z-index: 0; right: -14px; bottom: -58px; pointer-events: none;
+  font-family: var(--font-seal); font-weight: 900; font-size: 14rem; line-height: 1; color: rgba(255, 255, 255, .08);
+}
+.dash-cta-card .btn-white,
+html.ho-tro-toi .dash-cta-card .btn-white.btn-white {
+  background: var(--am-gold-btn); color: #4a2c08; border-color: transparent; box-shadow: 0 4px 0 #8a4f0c;
+}
+.dash-cta-card .btn-white:hover, html.ho-tro-toi .dash-cta-card .btn-white.btn-white:hover { background: #ffdc94; }
+.dash-cta-card .btn-white:active { transform: translateY(3px); box-shadow: 0 1px 0 #8a4f0c; }
+.dash-cta-progress-bar span { background: var(--am-gold-btn); }
+
+/* The cap do: moi cap mot mau, vien day noi khoi, chu Han lon in mo goc phai */
+.level-card {
+  overflow: hidden; border: none; border-radius: var(--radius-lg);
+  box-shadow: 0 0 0 2px var(--lv-bg), 0 6px 0 var(--lv-bg);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.level-card:hover { transform: translateY(-3px); box-shadow: 0 0 0 2px var(--lv), 0 9px 0 var(--lv-bg); }
+.level-card.is-picked { box-shadow: 0 0 0 3px var(--lv), 0 8px 0 var(--lv-bg); }
+.level-card.is-disabled:hover { box-shadow: 0 0 0 2px var(--lv-bg), 0 6px 0 var(--lv-bg); }
+.level-zh {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-46%); z-index: 0; pointer-events: none;
+  font-family: var(--font-seal); font-weight: 900; font-size: 5.2rem; line-height: 1; color: var(--lv-bg);
+}
+.level-card > *:not(.level-zh):not(.level-tag) { position: relative; z-index: 1; }
+.level-card > .level-tag { z-index: 1; background: var(--lv); color: #fff; }
+.level-mark { background: var(--lv); color: #fff; box-shadow: 0 3px 0 color-mix(in srgb, var(--lv) 65%, #000); }
+.level-card-title { font-size: 1.12rem; }
+.level-meter { height: 8px; background: var(--lv-bg); }
+
+/* Chuoi ngay hoc: den long — ngay da hoc thi sang do, hom nay vien do */
+.dash-streak-dot {
+  position: relative; width: 24px; height: 28px; border-radius: 50% / 46%;
+  border: 2px solid var(--color-gray-300); background: var(--color-gray-100);
+}
+.dash-streak-dot::before {
+  content: ''; position: absolute; left: 50%; top: -7px; width: 8px; height: 4px; transform: translateX(-50%);
+  border-radius: 2px; background: var(--color-gray-400);
+}
+.dash-streak-dot.is-done {
+  border-color: var(--color-red-600);
+  background: radial-gradient(ellipse 30% 45% at 50% 50%, #ffd27a 0 70%, transparent 72%), var(--color-red-600);
+}
+.dash-streak-dot.is-today { border-color: var(--color-red-600); box-shadow: 0 0 0 3px var(--color-red-50); }
+
+/* Cac the lon khac bo goc dong bo */
+.task-card, .welcome, .dash-streak-card, .stat-tile { border-radius: var(--radius-lg); }

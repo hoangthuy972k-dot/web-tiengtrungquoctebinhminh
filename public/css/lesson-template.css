@@ -530,3 +530,12 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
 .lt-theme-toggle:focus-visible { outline: 3px solid #fde2b8; outline-offset: 2px; }
 .site-header > .lt-theme-toggle { max-width: none; margin: 0; }
 @media (max-width: 640px) { .lt-theme-toggle { top: 12px; right: 12px; width: 40px; height: 40px; } }
+
+/* ===== Giao dien am tuoi (2026-10): nen nga + may line-art, do gach, nut noi khoi ===== */
+:root{--bg:#fbf6ec;--card:#fffdf8;--border:#eadfcf;--sky:#c2412d;--sky-l:#fbe9e3;--sky-d:#9e3221;--snow:#fcecc9;}
+body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='140' viewBox='0 0 220 140'%3E%3Cg fill='none' stroke='%23c2412d' stroke-opacity='.07' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M20 90c0-14 12-24 26-22 4-12 22-16 31-6 10-8 27-2 27 12 12 0 18 14 8 22H28c-6 0-8-3-8-6z'/%3E%3Cpath d='M44 80c4-6 12-6 15 0M76 76c4-6 12-6 15 0'/%3E%3Cpath d='M140 40c0-9 8-15 17-14 3-8 14-10 20-4 7-5 17-1 17 8 8 0 11 9 5 14h-53c-4 0-6-2-6-4z'/%3E%3C/g%3E%3C/svg%3E");background-size:440px 280px;}
+.btn-p{border-radius:14px;font-weight:700;box-shadow:0 4px 0 var(--nen-sky-d, var(--sky-d));transition:transform .08s ease,box-shadow .08s ease,background-color .15s ease;}
+.btn-p:hover{transform:none;}
+.btn-p:active{transform:translateY(3px);box-shadow:0 1px 0 var(--nen-sky-d, var(--sky-d));}
+.btn-s{border-radius:14px;font-weight:700;box-shadow:0 3px 0 var(--sky-l);}
+.btn-s:active{transform:translateY(2px);box-shadow:0 1px 0 var(--sky-l);}

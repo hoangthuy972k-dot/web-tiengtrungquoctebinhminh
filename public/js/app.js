@@ -527,7 +527,9 @@
 
   var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2v3', 'hsk3v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'yct'];
   // Moi cap do cung mot mau nhan (do) — phan biet bang ten, khong bang mau
-  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'red', hsk2v3: 'red', hsk3v3: 'red', hsk2: 'red', hsk3: 'red', hsk4: 'red', hsk5: 'red', hsk6: 'red', yct: 'red' };
+  var LEVEL_COLOR = { hsk1v3: 'red', hsk2v3: 'green', hsk3v3: 'gold', hsk1: 'purple', hsk2: 'blue', hsk3: 'teal', hsk4: 'orange', hsk5: 'red', hsk6: 'green', yct: 'blue' };
+  // Chu Han lon in mo o goc the cap do
+  var LEVEL_ZH = { hsk1: '一', hsk1v3: '一', hsk2v3: '二', hsk3v3: '三', hsk2: '二', hsk3: '三', hsk4: '四', hsk5: '五', hsk6: '六', yct: '童' };
   // Nhan hien trong o vuong mau cua the cap do: [dong nho, so lon]
   var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2v3: ['HSK 3.0', '2'], hsk3v3: ['HSK 3.0', '3'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], hsk6: ['HSK', '6'], yct: ['YCT', '1'] };
   var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2v3: 'HSK 2 · 3.0', hsk3v3: 'HSK 3 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT Thiếu nhi' };
@@ -596,6 +598,7 @@
       card.innerHTML =
         (id === pickId ? '<span class="level-tag level-tag-pick">✓ Gợi ý cho bạn</span>'
           : (id === 'hsk1v3' || id === 'hsk2v3' || id === 'hsk3v3' ? '<span class="level-tag">Mới</span>' : '')) +
+        '<span class="level-zh" aria-hidden="true">' + (LEVEL_ZH[id] || '') + '</span>' +
         '<span class="level-mark" aria-hidden="true"><span class="level-mark-top">' + mark[0] + '</span><span class="level-mark-num">' + mark[1] + '</span></span>' +
         '<span class="level-card-body">' +
           '<span class="level-card-title">' + (LEVEL_CARD_NAME[id] || level.name) + '</span>' +

@@ -1439,6 +1439,66 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 4,
         fullPageUrl: '/lessons/hsk3v3-bai-5.html'
+      },
+      {
+        id: 'hsk3v3-l6',
+        number: 6,
+        title: 'Trên tàu cao tốc vẫn có thể đặt đồ ăn giao tận nơi',
+        titleHanzi: '高铁上还可以点外卖',
+        titlePinyin: 'Gāotiě shang hái kěyǐ diǎn wàimài',
+        topic: 'Phương tiện giao thông & đi tàu cao tốc',
+        vocabCount: 26,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3v3-bai-6.html'
+      },
+      {
+        id: 'hsk3v3-l7',
+        number: 7,
+        title: 'Chiếc váy đó đẹp hơn quần soóc',
+        titleHanzi: '那条裙子比短裤更好看',
+        titlePinyin: 'Nà tiáo qúnzi bǐ duǎnkù gèng hǎokàn',
+        topic: 'Mua sắm, so sánh & đánh giá sản phẩm',
+        vocabCount: 27,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk3v3-bai-7.html'
+      },
+      {
+        id: 'hsk3v3-l8',
+        number: 8,
+        title: 'Hôm nay tôi xuất viện rồi',
+        titleHanzi: '今天我出院了',
+        titlePinyin: 'Jīntiān wǒ chūyuàn le',
+        topic: 'Sức khoẻ, khám bệnh & thói quen lành mạnh',
+        vocabCount: 28,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk3v3-bai-8.html'
+      },
+      {
+        id: 'hsk3v3-l9',
+        number: 9,
+        title: 'Chơi không tốt cũng không sao',
+        titleHanzi: '打不好没关系',
+        titlePinyin: 'Dǎ bu hǎo méi guānxi',
+        topic: 'Thể thao, thi đấu & vận động viên',
+        vocabCount: 26,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3v3-bai-9.html'
+      },
+      {
+        id: 'hsk3v3-l10',
+        number: 10,
+        title: 'Ngày mai em trả lại sách cho cô nhé',
+        titleHanzi: '你明天再把书还给我',
+        titlePinyin: 'Nǐ míngtiān zài bǎ shū huán gěi wǒ',
+        topic: 'Phương pháp học tập, thi cử & hệ thống giáo dục Trung Quốc',
+        vocabCount: 28,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3v3-bai-10.html'
       }
     ],
     hsk5: [

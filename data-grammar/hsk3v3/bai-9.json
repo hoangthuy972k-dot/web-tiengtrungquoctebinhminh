@@ -1,0 +1,578 @@
+{
+ "/lessons/hsk3v3-bai-9.html": {
+  "points": [
+   {
+    "title": "Câu ghép chỉ mục đích 「为了……，……」 — để …, (thì) …",
+    "errors": [
+     {
+      "wrong": "因为考上大学，她每天努力学习。",
+      "why": "“thi đỗ đại học” là MỤC ĐÍCH (chưa xảy ra) → dùng 为了; 因为 chỉ nguyên nhân (HSK2 Bài 4). Tiếng Việt đều nói “vì” nên dễ nhầm.",
+      "right": "为了考上大学，她每天努力学习。"
+     },
+     {
+      "wrong": "为了早点儿到家，所以我打算坐飞机回去。",
+      "why": "为了 không đi với 所以 (所以 đi với 因为).",
+      "right": "为了早点儿到家，我打算坐飞机回去。"
+     },
+     {
+      "wrong": "我来中国为了学习汉语。",
+      "why": "mục đích đặt ở vế sau thì phải dùng 是为了.",
+      "right": "我来中国是为了学习汉语。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: hoàn thành câu “……，我们决定搬家。”",
+      "pre": "",
+      "blank": "为了离公司近一点儿",
+      "post": "，我们决定搬家。",
+      "options": [
+       "为了离公司近一点儿",
+       "所以离公司近一点儿",
+       "离公司近一点儿为了"
+      ],
+      "answer": 0,
+      "explanation": "为了 + mục đích đứng đầu câu; 决定 = quyết định; 搬家 (ôn HSK3 Bài 3); 离 (HSK2 Bài 9)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “……，她每天都去锻炼身体。”",
+      "pre": "",
+      "blank": "为了身体好",
+      "post": "，她每天都去锻炼身体。",
+      "options": [
+       "为了身体好",
+       "所以身体好",
+       "身体好为了"
+      ],
+      "answer": 0,
+      "explanation": "为了 + mục đích (sức khoẻ tốt); 锻炼身体 (ôn HSK3 Bài 5)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “……，他们打算坐高铁去上海。”",
+      "pre": "",
+      "blank": "为了早点儿到上海",
+      "post": "，他们打算坐高铁去上海。",
+      "options": [
+       "为了早点儿到上海",
+       "为了早点儿到上海了",
+       "早点儿到上海为了"
+      ],
+      "answer": 0,
+      "explanation": "为了 đứng đầu câu, mục đích chưa xảy ra nên không thêm 了; 高铁 = tàu cao tốc."
+     },
+     {
+      "context": "“Nghe nói để chuẩn bị cho đại hội thể thao, mấy bạn nam các anh ngày nào cũng tập bóng.”",
+      "pre": "听说",
+      "blank": "为了",
+      "post": "准备运动会，你们几个男生每天都练球。",
+      "options": [
+       "为了",
+       "因为",
+       "所以"
+      ],
+      "answer": 0,
+      "explanation": "准备运动会 là mục đích → 为了."
+     },
+     {
+      "context": "“Mọi người chơi cầu chỉ là để rèn luyện sức khoẻ.”",
+      "pre": "大家打球只",
+      "blank": "是为了",
+      "post": "锻炼身体。",
+      "options": [
+       "是为了",
+       "为了是",
+       "是因为"
+      ],
+      "answer": 0,
+      "explanation": "Mục đích ở vế sau: (只)是为了 + mục đích."
+     },
+     {
+      "context": "Sách (Bài tập tổng hợp): “Để đạt thành tích tốt, các vận động viên mỗi ngày phải tập hơn mười tiếng.”",
+      "pre": "运动员们",
+      "blank": "为了得到好成绩",
+      "post": "，每天要练十多个小时。",
+      "options": [
+       "为了得到好成绩",
+       "因为得到好成绩",
+       "得到好成绩为了"
+      ],
+      "answer": 0,
+      "explanation": "为了 + 得到 + 好成绩 (từ mới bài này)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "为了锻炼身体，所以我每天都去跑步。",
+      "isCorrect": false,
+      "correctVersion": "为了锻炼身体，我每天都去跑步。",
+      "explanation": "为了 không đi với 所以."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "为了参加网球比赛，她最近一直在练习。",
+      "isCorrect": true,
+      "explanation": "为了 + mục đích, vế sau là hành động — đúng; 一直 (ôn HSK3 Bài 4)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Để rèn luyện sức khoẻ, sáng nào tôi cũng đi chạy bộ.”",
+      "words": [
+       "为了",
+       "锻炼",
+       "身体",
+       "，",
+       "我",
+       "每天",
+       "早上",
+       "都",
+       "去",
+       "跑步",
+       "。"
+      ],
+      "answer": "为了锻炼身体，我每天早上都去跑步。",
+      "explanation": "为了 + mục đích，+ hành động; 跑步 (HSK2 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mọi người chơi cầu chỉ là để rèn luyện sức khoẻ.”",
+      "words": [
+       "大家",
+       "打球",
+       "只是",
+       "为了",
+       "锻炼",
+       "身体",
+       "。"
+      ],
+      "answer": "大家打球只是为了锻炼身体。",
+      "explanation": "只是为了 — mục đích ở vế sau."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Để học tốt tiếng Trung, ngày nào cô ấy cũng xem phim Trung Quốc.”",
+      "words": [
+       "为了",
+       "学好",
+       "汉语",
+       "，",
+       "她",
+       "每天",
+       "都",
+       "看",
+       "中国",
+       "电影",
+       "。"
+      ],
+      "answer": "为了学好汉语，她每天都看中国电影。",
+      "explanation": "学好 — bổ ngữ kết quả (HSK2 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đến Bắc Kinh là để thăm ông bà.”",
+      "words": [
+       "我",
+       "来",
+       "北京",
+       "是",
+       "为了",
+       "看",
+       "爷爷",
+       "奶奶",
+       "。"
+      ],
+      "answer": "我来北京是为了看爷爷奶奶。",
+      "explanation": "是为了 + mục đích; 爷爷、奶奶 (HSK2 Bài 5)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 为了.",
+      "promptLang": "vi",
+      "prompt": "Để chuẩn bị cho đại hội thể thao, ngày nào chúng tôi cũng luyện tập.",
+      "answer": "为了准备运动会，我们每天都练习。",
+      "answerPy": "Wèile zhǔnbèi yùndònghuì, wǒmen měi tiān dōu liànxí.",
+      "explanation": "为了 + mục đích; 准备 (HSK2 Bài 5); không thêm 所以."
+     }
+    ]
+   },
+   {
+    "title": "Bổ ngữ khả năng (可能补语) — V + 得 / 不 + bổ ngữ",
+    "errors": [
+     {
+      "wrong": "我不能听懂老师的话。",
+      "why": "muốn nói “nghe không hiểu” (do năng lực, điều kiện) phải dùng bổ ngữ khả năng V + 不 + 懂; 不能听懂 là lỗi dịch từng chữ từ tiếng Việt.",
+      "right": "我听不懂老师的话。"
+     },
+     {
+      "wrong": "这本书我不看得懂。",
+      "why": "不 đứng GIỮA động từ và bổ ngữ, thay cho 得 (V不C), không đặt trước động từ.",
+      "right": "这本书我看不懂。"
+     },
+     {
+      "wrong": "我说话你听得见不听得见？",
+      "why": "nghi vấn chính phản là “V得C + V不C”, vế sau không giữ 得.",
+      "right": "我说话你听得见听不见？"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: hoàn thành hội thoại “我和你妈妈在门口等着你呢。——机场人太多了，我……。”",
+      "pre": "机场人太多了，我",
+      "blank": "找不到你们",
+      "post": "。",
+      "options": [
+       "找不到你们",
+       "不找到你们",
+       "没找得到你们"
+      ],
+      "answer": 0,
+      "explanation": "找不到 = tìm không thấy (phủ định khả năng); 着 (HSK2 Bài 11)."
+     },
+     {
+      "context": "Sách: hoàn thành hội thoại “喂？喂？我说话你……？——没问题，我听得见。”",
+      "pre": "喂？喂？我说话你",
+      "blank": "听得见听不见",
+      "post": "？",
+      "options": [
+       "听得见听不见",
+       "听得见不听得见",
+       "不听得见"
+      ],
+      "answer": 0,
+      "explanation": "Nghi vấn: V得C + V不C; trả lời 听得见."
+     },
+     {
+      "context": "Sách: hoàn thành hội thoại “咱们还没做今天的作业呢，半个小时……？”",
+      "pre": "咱们还没做今天的作业呢，半个小时",
+      "blank": "做得完吗",
+      "post": "？",
+      "options": [
+       "做得完吗",
+       "做完得吗",
+       "不做得完吗"
+      ],
+      "answer": 0,
+      "explanation": "V得C + 吗; 完 — bổ ngữ kết quả (HSK2 Bài 3); 作业 = bài tập về nhà."
+     },
+     {
+      "context": "Sách: hoàn thành hội thoại “——没问题，……，今天的作业一点儿也不多。”",
+      "pre": "没问题，",
+      "blank": "做得完",
+      "post": "，今天的作业一点儿也不多。",
+      "options": [
+       "做得完",
+       "做不完",
+       "没做完"
+      ],
+      "answer": 0,
+      "explanation": "Khẳng định V得C; 一点儿也不 (ôn HSK3 Bài 4)."
+     },
+     {
+      "context": "“Chơi không tốt cũng không sao.”",
+      "pre": "",
+      "blank": "打不好",
+      "post": "没关系。",
+      "options": [
+       "打不好",
+       "不打好",
+       "没打得好"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định khả năng: V + 不 + 好."
+     },
+     {
+      "context": "“Nếu lúc nào cũng không đỡ được cầu thì ngại lắm.”",
+      "pre": "如果总是",
+      "blank": "接不住",
+      "post": "球，就太不好意思了。",
+      "options": [
+       "接不住",
+       "不接住",
+       "接得不住"
+      ],
+      "answer": 0,
+      "explanation": "接住 = đỡ được; phủ định khả năng 接不住; 总是 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这本书我不看得懂。",
+      "isCorrect": false,
+      "correctVersion": "这本书我看不懂。",
+      "explanation": "不 đứng giữa V và bổ ngữ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你只有一个星期的时间，学得会游泳吗？",
+      "isCorrect": true,
+      "explanation": "V得C + 吗 — câu của sách; 游泳 (HSK2 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm nay sao thế? Sút mãi không vào!”",
+      "words": [
+       "今天",
+       "怎么回事",
+       "？",
+       "总是",
+       "踢",
+       "不",
+       "进去",
+       "！"
+      ],
+      "answer": "今天怎么回事？总是踢不进去！",
+      "explanation": "V + 不 + bổ ngữ xu hướng 进去."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cuốn sách này bạn đọc có hiểu không?”",
+      "words": [
+       "这",
+       "本",
+       "书",
+       "你",
+       "看",
+       "得",
+       "懂",
+       "看",
+       "不",
+       "懂",
+       "？"
+      ],
+      "answer": "这本书你看得懂看不懂？",
+      "explanation": "V得C + V不C."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn ngồi xa như vậy, có nhìn thấy không?”",
+      "words": [
+       "你",
+       "坐",
+       "得",
+       "这么",
+       "远",
+       "，",
+       "看",
+       "得",
+       "见",
+       "吗",
+       "？"
+      ],
+      "answer": "你坐得这么远，看得见吗？",
+      "explanation": "坐得这么远 — bổ ngữ trạng thái (HSK2 Bài 7); 看得见吗 — bổ ngữ khả năng."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nhiều món như vậy, tôi ăn không hết.”",
+      "words": [
+       "这么",
+       "多",
+       "菜",
+       "，",
+       "我",
+       "吃",
+       "不",
+       "完",
+       "。"
+      ],
+      "answer": "这么多菜，我吃不完。",
+      "explanation": "吃不完 = ăn không hết; 这么 (HSK2 Bài 3)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng bổ ngữ khả năng.",
+      "promptLang": "vi",
+      "prompt": "Bạn nói nhanh quá, tôi nghe không hiểu.",
+      "answer": "你说得太快了，我听不懂。",
+      "answerPy": "Nǐ shuō de tài kuài le, wǒ tīng bu dǒng.",
+      "explanation": "听不懂 (✗ 不能听懂); 说得太快 — bổ ngữ trạng thái (HSK2 Bài 7)."
+     }
+    ]
+   },
+   {
+    "title": "Cấu trúc cố định 「越A越B」 — càng … càng …",
+    "errors": [
+     {
+      "wrong": "我越看着急。",
+      "why": "thiếu 越 thứ hai: phải có đủ hai vế 越A越B.",
+      "right": "我越看越着急。"
+     },
+     {
+      "wrong": "越妈妈说，他越不高兴。",
+      "why": "越 là phó từ, đứng SAU chủ ngữ: 妈妈越说.",
+      "right": "妈妈越说，他越不高兴。"
+     },
+     {
+      "wrong": "今天的比赛我越看越很着急。",
+      "why": "sau 越 không thêm 很 / 非常 — 越 đã biểu thị mức độ tăng dần.",
+      "right": "今天的比赛我越看越着急。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: hoàn thành câu “我们越说……。”",
+      "pre": "我们越说",
+      "blank": "越高兴",
+      "post": "。",
+      "options": [
+       "越高兴",
+       "很高兴",
+       "越很高兴"
+      ],
+      "answer": 0,
+      "explanation": "越A越B; sau 越 không thêm 很."
+     },
+     {
+      "context": "Sách: hoàn thành câu “这个电影越看……。”",
+      "pre": "这个电影越看",
+      "blank": "越有意思",
+      "post": "。",
+      "options": [
+       "越有意思",
+       "越很有意思",
+       "有意思越"
+      ],
+      "answer": 0,
+      "explanation": "有意思 (HSK2 Bài 8)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “她……，我越担心。”",
+      "pre": "她",
+      "blank": "越不说话",
+      "post": "，我越担心。",
+      "options": [
+       "越不说话",
+       "不说话越",
+       "越很不说话"
+      ],
+      "answer": 0,
+      "explanation": "越 + 不 + V; 担心 = lo lắng; 说话 (HSK1 Bài 14)."
+     },
+     {
+      "context": "“Trận bóng đá hôm nay tôi càng xem càng sốt ruột.”",
+      "pre": "今天的足球比赛我",
+      "blank": "越看越着急",
+      "post": "。",
+      "options": [
+       "越看越着急",
+       "越看着急",
+       "看越越着急"
+      ],
+      "answer": 0,
+      "explanation": "着急 zháojí (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "“Mẹ càng nói, nó càng không vui.”",
+      "pre": "",
+      "blank": "妈妈越说",
+      "post": "，他越不高兴。",
+      "options": [
+       "妈妈越说",
+       "越妈妈说",
+       "妈妈说越"
+      ],
+      "answer": 0,
+      "explanation": "越 đứng sau chủ ngữ."
+     },
+     {
+      "context": "“Tôi muốn quen bạn bè Trung Quốc, càng nhiều càng tốt.”",
+      "pre": "我想认识中国朋友，",
+      "blank": "越多越好",
+      "post": "。",
+      "options": [
+       "越多越好",
+       "越很多越好",
+       "多越好"
+      ],
+      "answer": 0,
+      "explanation": "越 + tính từ + 越 + tính từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "雨越下越大，我们别出去了。",
+      "isCorrect": true,
+      "explanation": "越下越大 — đúng; 别……了 (HSK2 Bài 2)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "越妈妈说，他越不高兴。",
+      "isCorrect": false,
+      "correctVersion": "妈妈越说，他越不高兴。",
+      "explanation": "越 đứng sau chủ ngữ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mưa càng lúc càng to.”",
+      "words": [
+       "雨",
+       "越",
+       "下",
+       "越",
+       "大",
+       "。"
+      ],
+      "answer": "雨越下越大。",
+      "explanation": "越 + V + 越 + Adj."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tiếng Trung càng học càng thú vị.”",
+      "words": [
+       "汉语",
+       "越",
+       "学",
+       "越",
+       "有意思",
+       "。"
+      ],
+      "answer": "汉语越学越有意思。",
+      "explanation": "有意思 (HSK2 Bài 8)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy càng chạy càng nhanh.”",
+      "words": [
+       "他",
+       "越",
+       "跑",
+       "越",
+       "快",
+       "。"
+      ],
+      "answer": "他越跑越快。",
+      "explanation": "跑 (HSK2 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chiếc áo này tôi càng nhìn càng thích.”",
+      "words": [
+       "这",
+       "件",
+       "衣服",
+       "我",
+       "越",
+       "看",
+       "越",
+       "喜欢",
+       "。"
+      ],
+      "answer": "这件衣服我越看越喜欢。",
+      "explanation": "Tân ngữ đưa lên đầu câu làm chủ đề; 越看越喜欢."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 越A越B.",
+      "promptLang": "vi",
+      "prompt": "Bóng rổ tôi càng chơi càng thích.",
+      "answer": "篮球我越打越喜欢。",
+      "answerPy": "Lánqiú wǒ yuè dǎ yuè xǐhuan.",
+      "explanation": "越 + V + 越 + 喜欢; 打篮球 (HSK2 Bài 7)."
+     }
+    ]
+   }
+  ]
+ }
+}

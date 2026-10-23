@@ -392,6 +392,8 @@
         clearInterval(t.id);
         t.running = false;
         try { sndEnd(); } catch (e) { /* bo qua */ }
+        // choi bang dien thoai: het gio la lat dap an luon
+        if (state.live && state.game === 'abc') revealAbc();
       } else {
         try { sndTick(t.left <= 5); } catch (e) { /* bo qua */ }
       }
@@ -588,15 +590,21 @@
         '</div>';
       }).join('') + '</div>' +
       '<div id="lopAbcWhy" class="lop-abc-why" hidden></div>' +
+      '<div class="lop-live-strip" id="lopLiveStrip" hidden></div>' +
       '<div class="lop-stage-actions">' +
         '<button type="button" class="lop-act" id="lopAbcReveal">Lật đáp án (Space)</button>' +
         '<button type="button" class="lop-act ghost" id="lopAbcNext">Câu tiếp theo →</button>' +
+        '<button type="button" class="lop-act ghost" id="lopLiveBtn">' + (state.live ? '📱 Phòng ' + liveMa() : '📱 Chơi bằng điện thoại') + '</button>' +
+        (state.live ? '<button type="button" class="lop-act ghost" id="lopLiveEnd">🏆 Kết thúc &amp; xếp hạng</button>' : '') +
       '</div>';
 
     $('#lopAbcReveal').addEventListener('click', revealAbc);
     $('#lopAbcNext').addEventListener('click', nextAbc);
+    $('#lopLiveBtn').addEventListener('click', moLive);
+    if ($('#lopLiveEnd')) $('#lopLiveEnd').addEventListener('click', function () { liveKetThuc(true); renderAbc(); resetTimer(false); });
     $all('#lopStage .lop-abc-opt').forEach(function (el) { el.addEventListener('click', revealAbc); });
     state.abcShown = false;
+    liveDayCau(q);
   }
 
   function revealAbc() {
@@ -607,6 +615,7 @@
     $all('#lopStage .lop-abc-opt').forEach(function (el, i) {
       el.classList.add(i === q._ans ? 'is-right' : 'is-dim');
     });
+    liveLat();
     if (q.why) {
       var w = $('#lopAbcWhy');
       w.hidden = false;
@@ -618,6 +627,186 @@
     else { dealAbc(); }
     renderAbc();
     resetTimer();
+  }
+
+  /* ---------------- choi bang dien thoai (phien truc tiep, may chu: live.js) ---------------- */
+  // Hoc sinh vao /choi bang ma phong, bam A/B/C/D; may cham theo toc do.
+  // Chi dung cho tro "Gio the A/B/C". state.live = { ma, khoa, poll, info, sanh }
+  function liveApi(method, path, body) {
+    var l = state.live;
+    var url = '/api/live/' + (l ? l.ma + '/' : '') + path + (method === 'GET' ? '?khoa=' + encodeURIComponent(l.khoa) : '');
+    return fetch(url, {
+      method: method,
+      headers: method === 'GET' ? {} : { 'Content-Type': 'application/json' },
+      body: method === 'GET' ? undefined : JSON.stringify(Object.assign({ khoa: l ? l.khoa : '' }, body || {})),
+      cache: 'no-store',
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        if (!r.ok) throw new Error(d.error || 'Lỗi kết nối');
+        return d;
+      });
+    });
+  }
+  function liveMa() { return state.live.ma.replace(/(\d{3})(\d{3})/, '$1 $2'); }
+
+  function moLive() {
+    if (state.live) { moSanh(); return; }
+    var b = $('#lopLiveBtn');
+    if (b) b.disabled = true;
+    fetch('/api/live/tao', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || 'Lỗi kết nối'); return d; }); })
+      .then(function (d) {
+        state.live = { ma: d.ma, khoa: d.khoa, info: null, sanh: false };
+        state.live.poll = setInterval(liveTai, 1000);
+        moSanh();
+      })
+      .catch(function (e) { alert('Chưa mở được phòng: ' + e.message); })
+      .then(function () { if (b) b.disabled = false; });
+  }
+
+  // Sanh cho: ma QR + ma phong + danh sach hoc sinh da vao
+  function moSanh() {
+    var l = state.live, qr = '';
+    var link = location.origin + '/choi?ma=' + l.ma;
+    try {
+      var g = qrcode(0, 'M'); g.addData(link); g.make();
+      qr = g.createSvgTag({ cellSize: 8, margin: 2, scalable: true });
+    } catch (e) { /* khong co QR thi van con ma so */ }
+    stopTimer();
+    var box = $('#lopFx');
+    box.innerHTML = '<div class="lop-fx-card lop-live-card">' +
+      '<div class="lop-live-top">' +
+        '<div class="lop-live-qr">' + qr + '</div>' +
+        '<div class="lop-live-info">' +
+          '<div class="lop-live-lb">Mở điện thoại, quét mã QR hoặc vào</div>' +
+          '<div class="lop-live-url">' + esc(location.host) + '/choi</div>' +
+          '<div class="lop-live-lb">Mã phòng</div>' +
+          '<div class="lop-live-ma">' + liveMa() + '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="lop-live-dem" id="lopLiveDem">Chưa có bạn nào vào</div>' +
+      '<div class="lop-live-ds" id="lopLiveDs"></div>' +
+      '<div class="lop-fx-actions">' +
+        '<button type="button" class="lop-act" id="lopLiveGo">Bắt đầu câu hỏi ▶</button>' +
+        '<button type="button" class="lop-act ghost" id="lopLiveOff">Tắt phiên điện thoại</button>' +
+      '</div></div>';
+    box.hidden = false;
+    l.sanh = true;
+    veSanh();
+    $('#lopLiveGo').addEventListener('click', function () {
+      l.sanh = false; closeFx();
+      // gui lai cau dang chieu cho ca lop, dong ho chay lai tu dau
+      renderAbc(); resetTimer();
+    });
+    $('#lopLiveOff').addEventListener('click', function () {
+      closeFx(); liveKetThuc(false); renderAbc(); resetTimer(false);
+    });
+  }
+  function veSanh() {
+    var l = state.live;
+    if (!l || !l.sanh || !$('#lopLiveDs')) return;
+    var ds = (l.info && l.info.ds) || [];
+    $('#lopLiveDem').innerHTML = ds.length ? '<b>' + ds.length + '</b> bạn đã vào lớp' : 'Chưa có bạn nào vào';
+    $('#lopLiveDs').innerHTML = ds.map(function (h) {
+      return '<button type="button" class="lop-live-hs" data-pid="' + esc(h.pid) + '" title="Bấm để mời bạn này ra">' + esc(h.ten) + '</button>';
+    }).join('');
+    $all('#lopLiveDs [data-pid]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (!confirm('Mời "' + b.textContent + '" ra khỏi phòng?')) return;
+        liveApi('POST', 'duoi', { pid: b.getAttribute('data-pid') }).then(liveTai);
+      });
+    });
+  }
+
+  function liveTai() {
+    var l = state.live;
+    if (!l) return;
+    liveApi('GET', 'gv').then(function (d) {
+      if (state.live !== l) return;
+      var cu = l.info;
+      l.info = d;
+      if (l.sanh && (!cu || cu.soHs !== d.soHs || cu.ds.length !== d.ds.length)) veSanh();
+      veDai();
+      // ca lop da tra loi het thi tu lat dap an
+      if (state.game === 'abc' && d.pha === 'hoi' && d.soHs > 0 && d.daTL >= d.soHs && !state.abcShown && !l.sanh) revealAbc();
+    }).catch(function () { /* mang chap chon: lan sau thu lai */ });
+  }
+
+  // Dai thong tin duoi cau hoi: so ban da tra loi / bang xep hang sau khi lat
+  function veDai() {
+    var l = state.live, el = $('#lopLiveStrip');
+    if (!l || !el || state.game !== 'abc') return;
+    var d = l.info;
+    el.hidden = false;
+    if (!d) { el.innerHTML = '📱 Phòng <b>' + liveMa() + '</b>'; return; }
+    if (d.pha === 'lat' && d.phanBo) {
+      $all('#lopStage .lop-abc-opt').forEach(function (o, i) {
+        var n = o.querySelector('.lop-live-n');
+        if (!n) { n = document.createElement('span'); n.className = 'lop-live-n'; o.appendChild(n); }
+        n.textContent = (d.phanBo[i] || 0) + ' 👤';
+      });
+      el.innerHTML = '<div class="lop-live-bxh">' + d.bxh.slice(0, 5).map(function (r) {
+        return '<div class="lop-live-row"><span class="lop-live-hang">' + (['🥇', '🥈', '🥉'][r.hang - 1] || r.hang) + '</span>' +
+          '<span class="lop-live-ten">' + esc(r.ten) + (r.chuoi >= 2 ? ' 🔥' + r.chuoi : '') + '</span>' +
+          (r.cong ? '<span class="lop-live-cong">+' + r.cong + '</span>' : '<span></span>') +
+          '<b>' + r.diem + '</b></div>';
+      }).join('') + '</div>';
+      return;
+    }
+    el.innerHTML = '📱 Phòng <b>' + liveMa() + '</b> · <b class="lop-live-big">' + d.daTL + '</b> / ' + d.soHs + ' bạn đã trả lời';
+  }
+
+  function liveDayCau(q) {
+    var l = state.live;
+    if (!l || !q) return;
+    l.info = l.info ? Object.assign({}, l.info, { pha: 'hoi', daTL: 0, phanBo: null }) : null;
+    veDai();
+    liveApi('POST', 'cau', {
+      zh: q.pre + (q.noBlank ? '' : '＿＿') + q.post,
+      opts: q._order.map(function (oi) { return q.options[oi]; }),
+      dung: q._ans,
+      secs: state.timer.secs,
+      so: state.pos + 1,
+      tong: state.deck.length,
+    }).catch(function () { /* bo qua */ });
+  }
+  function liveLat() {
+    if (!state.live) return;
+    stopTimer(); // da lat thi dung dong ho, khoi keu tich tac
+    liveApi('POST', 'lat').then(liveTai).catch(function () { /* bo qua */ });
+  }
+
+  // Ket thuc phien: hien bang xep hang chung cuoc (ca nhan)
+  function liveKetThuc(hienBxh) {
+    var l = state.live;
+    if (!l) return;
+    clearInterval(l.poll);
+    var p = liveApi('POST', 'xong'); // liveApi doc state.live nen goi truoc khi xoa
+    state.live = null;
+    if (!hienBxh) { p.catch(function () { /* */ }); return; }
+    p.then(function (d) { veBxhCuoi(d.bxh || []); }).catch(function () { /* */ });
+  }
+  function veBxhCuoi(bxh) {
+    var mau = ['#e8b63a', '#9aa7b8', '#c47b45'];
+    var top = bxh.slice(0, 3);
+    var thu = [1, 0, 2].filter(function (i) { return top[i]; });
+    var box = $('#lopFx');
+    box.innerHTML = '<div class="lop-fx-card">' +
+      '<div class="lop-award-title">🏆 Bảng vàng cá nhân</div>' +
+      (top.length ? '<div class="lop-podium">' + thu.map(function (i) {
+        var r = top[i];
+        return '<div class="lop-pod p' + (i + 1) + '" style="--tc:' + mau[i] + '">' +
+          '<div class="lop-pod-n">' + esc(r.ten) + '</div><div class="lop-pod-s">' + r.diem + ' điểm</div>' +
+          '<div class="lop-pod-col">' + ['🥇', '🥈', '🥉'][i] + '</div></div>';
+      }).join('') + '</div>' : '<p>Chưa có bạn nào ghi điểm.</p>') +
+      (bxh.length > 3 ? '<div class="lop-award-rest">' + bxh.slice(3, 10).map(function (r) {
+        return '<span>' + r.hang + '. ' + esc(r.ten) + ' · ' + r.diem + '</span>';
+      }).join('') + '</div>' : '') +
+      '<div class="lop-fx-actions"><button type="button" class="lop-act" id="lopFxClose">Đóng</button></div></div>';
+    box.hidden = false;
+    try { sndFanfare(); } catch (e) { /* */ }
+    if (top.length) startConfetti();
+    $('#lopFxClose').addEventListener('click', closeFx);
   }
 
   /* ---------------- tro: xep cau bang nguoi ---------------- */
@@ -2315,6 +2504,7 @@
   }
   function exitGame() {
     endShow();
+    liveKetThuc(false);
     clearInterval(state.timer.id);
     state.timer.running = false;
     $('#lopPlay').hidden = true;

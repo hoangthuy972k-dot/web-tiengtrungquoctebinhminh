@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Vào lớp chơi · Hi Hán 喜汉</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2a1a5e">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700&family=Be+Vietnam+Pro:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/choi.css">
+</head>
+<body>
+<main class="ch" id="ch">
+
+  <!-- Vao phong -->
+  <section class="ch-man" id="manVao">
+    <div class="ch-logo">喜汉</div>
+    <h1 class="ch-tit">Vào lớp chơi</h1>
+    <p class="ch-mo">Nhập mã phòng trên bảng và tên của em.</p>
+    <form class="ch-form" id="formVao" autocomplete="off">
+      <label for="oMa">Mã phòng</label>
+      <input id="oMa" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="123456" required>
+      <label for="oTen">Tên của em</label>
+      <input id="oTen" maxlength="20" placeholder="Ví dụ: Minh Anh" required>
+      <button type="submit" class="ch-nut" id="nutVao">Vào lớp ▶</button>
+      <p class="ch-loi" id="loiVao" role="alert"></p>
+    </form>
+  </section>
+
+  <!-- Cho cau hoi -->
+  <section class="ch-man" id="manCho" hidden>
+    <div class="ch-ten" id="tenCho"></div>
+    <div class="ch-cho-ic" aria-hidden="true">👀</div>
+    <h2 class="ch-tit">Em đã vào lớp!</h2>
+    <p class="ch-mo" id="moCho">Nhìn lên bảng, câu hỏi sắp hiện ra…</p>
+  </section>
+
+  <!-- Cau hoi -->
+  <section class="ch-man ch-man-hoi" id="manHoi" hidden>
+    <div class="ch-dau">
+      <span id="soCau"></span>
+      <span class="ch-dem" id="demGio"></span>
+    </div>
+    <div class="ch-cau" id="cauZh"></div>
+    <div class="ch-opts" id="opts"></div>
+  </section>
+
+  <!-- Da chon, cho lat -->
+  <section class="ch-man" id="manDaChon" hidden>
+    <div class="ch-chon-o" id="oDaChon"></div>
+    <h2 class="ch-tit">Đã chọn!</h2>
+    <p class="ch-mo">Chờ cô lật đáp án nhé…</p>
+  </section>
+
+  <!-- Ket qua cau -->
+  <section class="ch-man ch-kq" id="manKq" hidden>
+    <div class="ch-kq-ic" id="kqIc"></div>
+    <h2 class="ch-tit" id="kqTit"></h2>
+    <p class="ch-kq-cong" id="kqCong"></p>
+    <p class="ch-mo" id="kqDung"></p>
+    <div class="ch-kq-hang" id="kqHang"></div>
+  </section>
+
+  <!-- Ket thuc -->
+  <section class="ch-man" id="manHet" hidden>
+    <div class="ch-cho-ic" aria-hidden="true">🏁</div>
+    <h2 class="ch-tit">Kết thúc!</h2>
+    <div class="ch-kq-hang" id="hetHang"></div>
+    <ol class="ch-bxh" id="hetBxh"></ol>
+    <button type="button" class="ch-nut ch-nut-phu" id="nutLai">Vào phòng khác</button>
+  </section>
+
+  <footer class="ch-chan" id="chan" hidden>
+    <span id="chanTen"></span>
+    <b id="chanDiem">0</b>
+  </footer>
+</main>
+<script src="/js/choi.js"></script>
+</body>
+</html>

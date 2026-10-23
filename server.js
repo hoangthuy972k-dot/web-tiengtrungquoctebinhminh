@@ -58,6 +58,8 @@ app.use(
 );
 app.use(compression());
 app.use(express.json({ limit: '10mb' }));
+// Phien choi truc tiep tren dien thoai (Che do lop hoc -> /choi)
+require('./live')(app);
 // Cache: HTML/CSS/JS phai luon kiem tra lai voi server truoc khi dung
 // (no-cache = van luu tren may, nhung phai xac nhan bang ETag), nen sua
 // code xong la reload thay ngay, khong bao gio dinh ban cu.
@@ -78,7 +80,7 @@ const ASSET_REF_RE = /(<(?:script|link)\b[^>]*?\b(?:src|href)=")(\/(?:js|css|exa
 // sinh khong hoi AI trong luc thi, va bo qua trang quan tri.
 const WIDGET_TAGS = '<link rel="stylesheet" href="/css/widgets.css" />\n<script src="/js/widgets.js" defer></script>\n';
 // Trang lop.html la man hinh chieu len lop — khong gan nut noi cho do roi mat.
-const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html|lop\.html|hsk30\.html)$/;
+const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html|lop\.html|choi\.html|hsk30\.html)$/;
 
 function sendVersionedHtml(res, filePath) {
   let html = fs.readFileSync(filePath, 'utf8');
@@ -95,7 +97,7 @@ function sendVersionedHtml(res, filePath) {
 // CDN cua Hostinger phuc vu thang cac duong dan co duoi .html nen chung khong di
 // qua day, khong duoc dong dau ?v= va trinh duyet giu mai ban CSS/JS cu. Cac trang
 // dung thuong xuyen co them duong dan khong duoi file de luon qua Node.
-const CLEAN_PAGES = { '/lop': 'lop.html', '/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html' };
+const CLEAN_PAGES = { '/lop': 'lop.html', '/choi': 'choi.html', '/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html' };
 
 // Trang Phat am da bo: ai con giu duong dan cu thi dua ve trang chu
 app.get(['/phat-am', '/phat-am.html'], (req, res) => res.redirect(301, '/'));

@@ -1,0 +1,102 @@
+/* Trang hoc sinh choi tren dien thoai (/choi) — cung bang mau voi san khau Che do lop hoc */
+:root {
+  --bg1: #1a1446; --bg2: #3a1c6e; --bg3: #7a1f4b;
+  --a: #e5484d; --b: #2f7cf6; --c: #e0960c; --d: #1f9d55;
+  --gold: #ffcf5c; --ok: #22c55e; --bad: #ef4444;
+  --kinh: rgba(255, 255, 255, .08); --vien: rgba(255, 255, 255, .16);
+  --mo: rgba(255, 255, 255, .72);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  color: #fff;
+  background: radial-gradient(700px 500px at 10% -10%, #4b2ca8 0%, transparent 60%),
+              radial-gradient(600px 500px at 110% 110%, var(--bg3) 0%, transparent 55%),
+              linear-gradient(160deg, var(--bg1) 0%, var(--bg2) 100%);
+  background-attachment: fixed;
+  -webkit-tap-highlight-color: transparent;
+}
+[hidden] { display: none !important; }
+
+.ch { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; padding: 16px 16px calc(72px + env(safe-area-inset-bottom)); max-width: 640px; margin: 0 auto; }
+.ch-man { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; }
+
+.ch-logo { font-family: 'Noto Sans SC', sans-serif; font-weight: 700; font-size: 1.6rem; width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; background: linear-gradient(135deg, var(--a), #b8322a); box-shadow: 0 10px 24px rgba(0,0,0,.3); }
+.ch-tit { margin: 6px 0 0; font-size: clamp(1.5rem, 6vw, 2rem); font-weight: 800; text-wrap: balance; }
+.ch-mo { margin: 0; color: var(--mo); font-size: 1rem; line-height: 1.5; }
+
+.ch-form { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 8px; margin-top: 14px; text-align: left; }
+.ch-form label { font-weight: 700; font-size: .9rem; color: var(--mo); margin-top: 6px; }
+.ch-form input {
+  font: inherit; font-size: 1.25rem; font-weight: 700; padding: 14px 16px; border-radius: 14px;
+  border: 2px solid var(--vien); background: rgba(255,255,255,.95); color: #1d1640; outline: none;
+}
+.ch-form input:focus-visible { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(255, 207, 92, .3); }
+#oMa { letter-spacing: .35em; text-align: center; font-variant-numeric: tabular-nums; }
+.ch-nut {
+  margin-top: 14px; font: inherit; font-size: 1.15rem; font-weight: 800; padding: 15px; border: none; border-radius: 14px; cursor: pointer;
+  background: linear-gradient(180deg, #ffd166, #f4a52a); color: #3b2300; box-shadow: 0 6px 0 #b8741a;
+}
+.ch-nut:active { transform: translateY(3px); box-shadow: 0 3px 0 #b8741a; }
+.ch-nut:disabled { opacity: .6; }
+.ch-nut:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.ch-nut-phu { background: var(--kinh); color: #fff; box-shadow: none; border: 1px solid var(--vien); }
+.ch-loi { min-height: 1.4em; margin: 4px 0 0; color: #ffb4b4; font-weight: 600; }
+
+.ch-ten { background: var(--kinh); border: 1px solid var(--vien); border-radius: 999px; padding: 6px 16px; font-weight: 700; }
+.ch-cho-ic { font-size: 4rem; animation: chNhun 1.6s ease-in-out infinite; }
+@keyframes chNhun { 50% { transform: translateY(-8px); } }
+
+/* Cau hoi */
+.ch-man-hoi { justify-content: flex-start; gap: 12px; }
+.ch-dau { width: 100%; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: var(--mo); }
+.ch-dem { font-variant-numeric: tabular-nums; font-size: 1.3rem; color: var(--gold); min-width: 3ch; text-align: right; }
+.ch-dem.thap { color: #ff8a8a; }
+.ch-cau {
+  width: 100%; font-family: 'Noto Sans SC', sans-serif; font-weight: 700; font-size: clamp(1.25rem, 5.4vw, 1.7rem); line-height: 1.5;
+  background: var(--kinh); border: 1px solid var(--vien); border-radius: 18px; padding: 14px 16px;
+}
+.ch-cau:empty { display: none; }
+.ch-opts { width: 100%; flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; min-height: 52vh; }
+.ch-opts.n3 .ch-opt:nth-child(3) { grid-column: 1 / -1; }
+.ch-opt {
+  font: inherit; color: #fff; border: none; border-radius: 18px; cursor: pointer; padding: 12px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  box-shadow: 0 7px 0 rgba(0,0,0,.25); transition: transform .1s ease, opacity .2s ease;
+}
+.ch-opt:active { transform: translateY(4px); box-shadow: 0 3px 0 rgba(0,0,0,.25); }
+.ch-opt:disabled { opacity: .5; }
+.ch-opt:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.o0 { background: var(--a); } .o1 { background: var(--b); } .o2 { background: var(--c); } .o3 { background: var(--d); }
+.ch-hinh { font-size: 2.2rem; line-height: 1; }
+.ch-opt-t { font-family: 'Noto Sans SC', 'Be Vietnam Pro', sans-serif; font-weight: 700; font-size: clamp(1.1rem, 5vw, 1.5rem); line-height: 1.3; word-break: break-word; }
+
+/* Da chon */
+.ch-chon-o { min-width: 60%; padding: 22px 26px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; font-family: 'Noto Sans SC', sans-serif; font-weight: 700; font-size: 1.4rem; box-shadow: 0 10px 26px rgba(0,0,0,.3); animation: chPop .3s ease; }
+@keyframes chPop { from { transform: scale(.8); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* Ket qua */
+.ch-kq-ic { width: 110px; height: 110px; border-radius: 50%; display: grid; place-items: center; font-size: 3.6rem; font-weight: 800; animation: chPop .35s ease; }
+.ch-kq.dung .ch-kq-ic { background: var(--ok); box-shadow: 0 0 0 10px rgba(34, 197, 94, .2); }
+.ch-kq.sai .ch-kq-ic { background: var(--bad); box-shadow: 0 0 0 10px rgba(239, 68, 68, .2); }
+.ch-kq-cong { margin: 0; font-size: 2rem; font-weight: 800; color: var(--gold); min-height: 0; }
+.ch-kq-cong:empty { display: none; }
+.ch-kq-hang { background: var(--kinh); border: 1px solid var(--vien); border-radius: 14px; padding: 10px 18px; font-size: 1.1rem; }
+.ch-kq-hang:empty { display: none; }
+.ch-kq-hang b { color: var(--gold); font-size: 1.4rem; }
+
+.ch-bxh { list-style: none; padding: 0; margin: 8px 0 0; width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 6px; }
+.ch-bxh li { display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 8px; background: var(--kinh); border: 1px solid var(--vien); border-radius: 12px; padding: 8px 12px; text-align: left; }
+.ch-bxh i { font-style: normal; font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; }
+
+.ch-chan {
+  position: fixed; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px calc(12px + env(safe-area-inset-bottom)); background: rgba(14, 10, 40, .8); backdrop-filter: blur(8px);
+  border-top: 1px solid var(--vien); font-weight: 700;
+}
+.ch-chan b { background: #fff; color: #1d1640; border-radius: 999px; padding: 4px 14px; font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ch-cho-ic, .ch-chon-o, .ch-kq-ic { animation: none; }
+}

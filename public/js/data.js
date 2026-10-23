@@ -35,9 +35,9 @@ const APP_DATA = {
       id: 'hsk3v3',
       name: 'HSK 3 (3.0 Mới)',
       subtitle: 'Giáo trình chuẩn mới · New HSK 3',
-      description: 'Giáo trình New HSK 3 (chuẩn HSK 3.0) biên dịch chính thức, 18 bài + audio gốc.',
+      description: 'Giáo trình New HSK 3 (chuẩn HSK 3.0) biên dịch chính thức, 18 bài · 485 từ mới + audio gốc.',
       totalLessons: 18,
-      totalVocab: 0,
+      totalVocab: 485,
       color: 'teal'
     },
     {
@@ -1559,6 +1559,42 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 4,
         fullPageUrl: '/lessons/hsk3v3-bai-15.html'
+      },
+      {
+        id: 'hsk3v3-l16',
+        number: 16,
+        title: 'Con nghe nói có một số con gấu trúc đã ra nước ngoài',
+        titleHanzi: '我听说有的熊猫出国了',
+        titlePinyin: 'Wǒ tīngshuō yǒude xióngmāo chūguó le',
+        topic: 'Động vật, thú cưng & gấu trúc – quốc bảo Trung Quốc',
+        vocabCount: 26,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk3v3-bai-16.html'
+      },
+      {
+        id: 'hsk3v3-l17',
+        number: 17,
+        title: 'Mình sẽ học hỏi từ những người cẩn thận',
+        titleHanzi: '我要多向认真的人学习',
+        titlePinyin: 'Wǒ yào duō xiàng rènzhēn de rén xuéxí',
+        topic: 'Cảm xúc, học hỏi người khác & chọn hướng đi sau đại học',
+        vocabCount: 27,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk3v3-bai-17.html'
+      },
+      {
+        id: 'hsk3v3-l18',
+        number: 18,
+        title: 'Cháu đã học được cách gói sủi cảo',
+        titleHanzi: '我学会了包饺子',
+        titlePinyin: 'Wǒ xuéhuìle bāo jiǎozi',
+        topic: 'Tết Nguyên đán, gia đình & trưởng thành',
+        vocabCount: 28,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk3v3-bai-18.html'
       }
     ],
     hsk5: [

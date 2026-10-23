@@ -1,0 +1,116 @@
+/* ══════════════ Tro choi tu choi o nha (/game) — khung chung ══════════════
+   Dung bien mau cua style.css (nen nga, do gach) nen che do toi tu theo.
+   Moi tro co file css rieng tro-nha-*.css, chi ve phan san choi cua minh. */
+.tn {
+  --tn-a: #e5484d; --tn-b: #2f7cf6; --tn-c: #e0960c; --tn-d: #1f9d55;
+  --tn-vang: #ffd27a; --tn-vang-dam: #b06f12;
+  display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 980px; margin: 0 auto;
+}
+.tn-top {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  background: var(--color-surface); border-radius: 20px; padding: 12px 16px; box-shadow: var(--shadow-md);
+}
+.tn-de { flex: 1; min-width: 180px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; font-weight: 700; color: var(--fg-gray-800); }
+.tn-de:empty { display: none; }
+.tn-hoi-zh { font-family: var(--font-hanzi); font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; color: var(--fg-gray-900); line-height: 1.15; }
+.tn-hoi-py { font-size: 1rem; font-weight: 600; color: var(--fg-pinyin); }
+.tn-hoi-vn { font-size: clamp(1.15rem, 3.4vw, 1.5rem); font-weight: 800; color: var(--fg-gray-900); }
+.tn-meta { display: flex; gap: 8px; flex-shrink: 0; }
+.tn-chip {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 64px; padding: 5px 12px;
+  border-radius: 14px; background: var(--color-gray-100); font-variant-numeric: tabular-nums;
+}
+.tn-chip i { font-style: normal; font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-text-muted); }
+.tn-chip b { font-size: 1.35rem; line-height: 1.1; color: var(--fg-gray-900); }
+.tn-chip-diem { background: var(--tn-vang); }
+.tn-chip-diem i { color: #6b4405; }
+.tn-chip-diem b { color: #3a2410; }
+.tn-chip-diem.nhun { animation: tnNhun .35s ease; }
+.tn-chip-tim b { font-size: 1rem; letter-spacing: 2px; }
+.tn-chip-gio.thap b { color: var(--fg-red-600); }
+@keyframes tnNhun { 50% { transform: scale(1.14); } }
+
+.tn-san {
+  position: relative; min-height: min(62vh, 560px); border-radius: 22px; overflow: hidden;
+  background: var(--color-surface); box-shadow: var(--shadow-md); padding: clamp(12px, 2.4vw, 22px);
+  display: flex; flex-direction: column; gap: 14px;
+}
+.tn-duoi { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.tn-duoi:empty { display: none; }
+
+/* O dap an 4 mau (cung kieu man chieu Che do lop hoc) */
+.tn-lua { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.tn-lua-3 .tn-o:nth-child(3) { grid-column: 1 / -1; }
+.tn-o {
+  font: inherit; color: #fff; border: none; border-radius: 16px; cursor: pointer; min-height: 64px; padding: 10px 14px;
+  display: flex; align-items: center; gap: 12px; text-align: left;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, .22); transition: transform .08s ease, box-shadow .08s ease, opacity .2s ease;
+}
+.tn-o:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 2px 0 rgba(0, 0, 0, .22); }
+.tn-o:focus-visible { outline: 3px solid var(--color-gold-500); outline-offset: 2px; }
+.tn-o0 { background: var(--tn-a); } .tn-o1 { background: var(--tn-b); } .tn-o2 { background: var(--tn-c); } .tn-o3 { background: var(--tn-d); }
+.tn-o-hinh { width: 34px; height: 34px; flex: none; border-radius: 10px; background: rgba(255, 255, 255, .22); display: grid; place-items: center; font-size: 1.05rem; }
+.tn-o-chu { font-weight: 700; font-size: clamp(1rem, 2.6vw, 1.2rem); line-height: 1.3; word-break: break-word; }
+.tn-o.is-zh .tn-o-chu { font-family: var(--font-hanzi); font-size: clamp(1.35rem, 4vw, 1.8rem); }
+.tn-o.is-dung { box-shadow: 0 0 0 4px #fff, 0 0 0 7px var(--color-green-600); transform: scale(1.02); }
+.tn-o.is-dung .tn-o-hinh::after { content: '✓'; }
+.tn-o.is-dung .tn-o-hinh { font-size: 0; }
+.tn-o.is-dung .tn-o-hinh::after { font-size: 1.2rem; }
+.tn-o.is-sai { animation: tnLac .35s ease; }
+.tn-o.is-mo { opacity: .35; }
+.tn-o:disabled { cursor: default; }
+.tn-lua-nho .tn-o { min-height: 52px; padding: 8px 12px; }
+@keyframes tnLac { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+
+/* Chu bay len (+10, Chuoi 3!) */
+.tn-bay {
+  position: absolute; left: 50%; top: 40%; z-index: 20; pointer-events: none; transform: translate(-50%, 0);
+  font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 900; color: var(--color-green-600);
+  text-shadow: 0 2px 0 #fff, 0 0 12px rgba(255, 255, 255, .8); animation: tnBay 1.1s ease forwards;
+}
+.tn-bay.sai { color: var(--fg-red-600); }
+.tn-bay.vang { color: #c77d0a; }
+@keyframes tnBay { from { opacity: 0; transform: translate(-50%, 10px) scale(.8); } 20% { opacity: 1; transform: translate(-50%, 0) scale(1.05); } to { opacity: 0; transform: translate(-50%, -50px); } }
+
+/* Man ket qua */
+.tn-ketqua { margin: auto; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; padding: 18px 0; }
+.tn-kq-sao { display: flex; gap: 6px; font-size: clamp(2.6rem, 9vw, 3.6rem); line-height: 1; }
+.tn-kq-sao span { color: var(--color-gray-200); }
+.tn-kq-sao span.on { color: #f2b33d; text-shadow: 0 3px 0 #b06f12; animation: tnSao .45s ease both; }
+@keyframes tnSao { from { transform: scale(0) rotate(-40deg); } 70% { transform: scale(1.25); } to { transform: none; } }
+.tn-kq-tit { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; color: var(--fg-gray-900); }
+.tn-kq-diem { font-size: clamp(2.2rem, 7vw, 3rem); font-weight: 900; color: var(--fg-red-600); font-variant-numeric: tabular-nums; line-height: 1; }
+.tn-kq-diem small { font-size: .4em; font-weight: 700; color: var(--fg-text-muted); }
+.tn-kq-chi { color: var(--fg-gray-700); font-weight: 600; }
+.tn-kq-kl { background: var(--color-gold-50); color: var(--fg-gold-700); border-radius: 999px; padding: 4px 14px; font-weight: 800; font-size: .9rem; }
+.tn-kq-on { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; text-align: left; background: var(--color-gray-100); border-radius: 14px; padding: 12px 16px; max-width: 420px; font-size: .92rem; color: var(--fg-gray-800); }
+.tn-kq-on em { font-style: normal; font-family: var(--font-hanzi); font-weight: 700; font-size: 1.1rem; color: var(--fg-gray-900); }
+
+/* Nut */
+.tn-nut {
+  font: inherit; font-weight: 800; border: none; border-radius: 14px; padding: 12px 22px; cursor: pointer;
+  background: var(--color-gray-100); color: var(--fg-gray-800); box-shadow: 0 4px 0 var(--color-gray-300);
+}
+.tn-nut:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--color-gray-300); }
+.tn-nut-chinh { background: var(--color-red-600); color: #fff; box-shadow: 0 4px 0 var(--color-red-800); }
+.tn-nut-chinh:active { box-shadow: 0 1px 0 var(--color-red-800); }
+.tn-nut-vang { background: var(--tn-vang); color: #4a2c08; box-shadow: 0 4px 0 var(--tn-vang-dam); }
+.tn-nut:focus-visible { outline: 3px solid var(--color-gold-500); outline-offset: 2px; }
+
+/* Man gioi thieu truoc khi choi */
+.tn-moi { margin: auto; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; max-width: 520px; padding: 10px 0; }
+.tn-moi-ic { font-size: clamp(3rem, 12vw, 4.6rem); line-height: 1; }
+.tn-moi h2 { margin: 0; font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2rem); }
+.tn-moi p { margin: 0; color: var(--fg-gray-700); line-height: 1.6; }
+
+.tn-thieu { text-align: center; padding: 40px 16px; color: var(--fg-gray-700); font-weight: 600; }
+
+@media (max-width: 520px) {
+  .tn-top { padding: 10px 12px; }
+  .tn-chip { min-width: 54px; padding: 4px 8px; }
+  .tn-o { min-height: 56px; gap: 8px; padding: 8px 10px; }
+  .tn-o-hinh { width: 28px; height: 28px; font-size: .9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tn-chip-diem.nhun, .tn-o.is-sai, .tn-bay, .tn-kq-sao span.on { animation: none !important; }
+}

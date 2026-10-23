@@ -1,0 +1,32 @@
+/* Tro choi tu choi o nha — Thu thach toc do, The lat */
+.tn-td-so { font-size: .85rem; font-weight: 800; color: var(--fg-text-muted); background: var(--color-gray-100); border-radius: 999px; padding: 2px 10px; }
+.tn-td-thanh { height: 10px; border-radius: 999px; background: var(--color-gray-100); overflow: hidden; }
+.tn-td-thanh i { display: block; height: 100%; width: 100%; border-radius: 999px; background: linear-gradient(90deg, #7c4dff, #e5484d); }
+.tn-tocdo .tn-lua { flex: 1; }
+.tn-tocdo .tn-o { min-height: 90px; }
+
+.tn-thelat .tn-san { align-items: center; justify-content: center; }
+.tn-tl-dem { font-size: .95rem; font-weight: 800; color: var(--fg-gray-700); }
+.tn-tl-the {
+  position: relative; width: min(420px, 100%); aspect-ratio: 4 / 3; border: none; padding: 0; background: none; cursor: pointer;
+  perspective: 1200px; font: inherit;
+}
+.tn-tl-mat {
+  position: absolute; inset: 0; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden; transition: transform .5s cubic-bezier(.3, 1.2, .5, 1);
+  box-shadow: 0 6px 0 var(--color-gray-300), var(--shadow-md); padding: 16px;
+}
+.tn-tl-truoc { background: var(--color-surface); border: 2px solid var(--color-gray-200); }
+.tn-tl-sau { background: linear-gradient(150deg, #c84a33, #9e2f22); color: #fff; transform: rotateY(180deg); box-shadow: 0 6px 0 #6e2116, var(--shadow-md); }
+.tn-tl-the.lat .tn-tl-truoc { transform: rotateY(-180deg); }
+.tn-tl-the.lat .tn-tl-sau { transform: rotateY(0deg); }
+.tn-tl-zh { font-family: var(--font-hanzi); font-size: clamp(3rem, 12vw, 4.6rem); font-weight: 700; color: var(--fg-gray-900); line-height: 1.1; }
+.tn-tl-py { font-size: 1.2rem; font-weight: 600; color: var(--fg-pinyin); }
+.tn-tl-goi { position: absolute; bottom: 12px; font-size: .8rem; font-weight: 700; color: var(--fg-text-muted); }
+.tn-tl-em { font-size: 2.6rem; line-height: 1; }
+.tn-tl-vn { font-size: clamp(1.4rem, 5vw, 1.9rem); font-weight: 800; text-align: center; }
+.tn-tl-hv { font-size: .95rem; font-weight: 700; color: #ffe2b8; }
+.tn-tl-zh2 { font-family: var(--font-hanzi); font-size: 1.05rem; opacity: .85; }
+.tn-tl-nghe { padding: 8px 16px; }
+@media (prefers-reduced-motion: reduce) { .tn-tl-mat { transition: none; } }
+.tn-td-thanh i { transition: width 1s linear; }

@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════════
-   TRANG TRO CHOI ON TU  (/game)
+   TRANG TRO CHOI TU HOC  (/game) — hoc sinh tu choi o nha
    ------------------------------------------------------------------
    Mot trang duy nhat phuc vu ca hai:
      · hoc sinh tu choi  — co dong ho, co diem
@@ -34,7 +34,6 @@
   function doc() {
     try {
       var d = JSON.parse(localStorage.getItem('hyv_game') || '{}');
-      if (d.cheDo === 'lop' || d.cheDo === 'hoc') state.cheDo = d.cheDo;
       if (d.level) state.level = d.level;
       if (Array.isArray(d.picked)) d.picked.forEach(function (u) { state.picked[u] = 1; });
     } catch (e) { /* bo qua */ }

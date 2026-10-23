@@ -1499,6 +1499,66 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk3v3-bai-10.html'
+      },
+      {
+        id: 'hsk3v3-l11',
+        number: 11,
+        title: 'Xem ra em không thể giải quyết vấn đề này',
+        titleHanzi: '看来我没办法解决这个问题',
+        titlePinyin: 'Kànlái wǒ méi bànfǎ jiějué zhège wèntí',
+        topic: 'Công việc văn phòng, họp hành, xin nghỉ & lựa chọn nghề nghiệp',
+        vocabCount: 27,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk3v3-bai-11.html'
+      },
+      {
+        id: 'hsk3v3-l12',
+        number: 12,
+        title: 'Thời tiết thay đổi rất nhanh vào mùa này',
+        titleHanzi: '这个季节天气变化很快',
+        titlePinyin: 'Zhège jìjié tiānqì biànhuà hěn kuài',
+        topic: 'Thời tiết, sự thay đổi của các mùa & bốn mùa ở Bắc Kinh',
+        vocabCount: 27,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk3v3-bai-12.html'
+      },
+      {
+        id: 'hsk3v3-l13',
+        number: 13,
+        title: 'Hàng xóm mới của tôi đến từ Vương quốc Anh',
+        titleHanzi: '我的新邻居来自英国',
+        titlePinyin: 'Wǒ de xīn línjū láizì Yīngguó',
+        topic: 'Mời khách, làm khách & khác biệt văn hoá',
+        vocabCount: 27,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3v3-bai-13.html'
+      },
+      {
+        id: 'hsk3v3-l14',
+        number: 14,
+        title: 'Quyển sách này đã bị người khác mượn rồi',
+        titleHanzi: '这本书被别人借走了',
+        titlePinyin: 'Zhè běn shū bèi biérén jièzǒu le',
+        topic: 'Thư viện, hoạt động trong trường & lời động viên',
+        vocabCount: 27,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3v3-bai-14.html'
+      },
+      {
+        id: 'hsk3v3-l15',
+        number: 15,
+        title: 'Em cũng là một nửa người Nam Kinh',
+        titleHanzi: '我是半个南京人',
+        titlePinyin: 'Wǒ shì bàn ge Nánjīng rén',
+        topic: 'Khu dân cư, thành phố Nam Kinh & sông Hoàng Hà',
+        vocabCount: 26,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk3v3-bai-15.html'
       }
     ],
     hsk5: [

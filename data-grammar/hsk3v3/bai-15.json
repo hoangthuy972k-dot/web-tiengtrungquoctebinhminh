@@ -1,0 +1,757 @@
+{
+ "/lessons/hsk3v3-bai-15.html": {
+  "points": [
+   {
+    "title": "Giới từ 「根据」 — 根据 + căn cứ, chủ ngữ + động từ",
+    "errors": [
+     {
+      "wrong": "小区有了很多变化根据他们的需要。",
+      "why": "tiếng Việt hay đặt “theo nhu cầu của họ” ở cuối câu; cụm 根据 + N là trạng ngữ, phải đứng ĐẦU câu hoặc sau chủ ngữ, TRƯỚC động từ.",
+      "right": "小区根据他们的需要，有了很多变化。"
+     },
+     {
+      "wrong": "根据我，时间比钱更重要。",
+      "why": "根据 nêu căn cứ khách quan (yêu cầu, nhu cầu, sở thích…), không đi trực tiếp với đại từ chỉ người để nói ý kiến; nêu ý kiến cá nhân dùng 在……看来 (ngữ pháp 3 của bài).",
+      "right": "在我看来，时间比钱更重要。"
+     },
+     {
+      "wrong": "我根据爸爸妈妈的帮助买了房子。",
+      "why": "“dựa vào” trong tiếng Việt còn có nghĩa “nhờ vào”, nhưng 根据 chỉ là “căn cứ vào”; nhờ sự giúp đỡ của ai dùng 在……的帮助下 (ôn HSK3 Bài 10).",
+      "right": "在爸爸妈妈的帮助下，我买了房子。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Chúng tôi sẽ căn cứ vào thời gian của mọi người để quyết định mua vé máy bay giờ nào.”",
+      "pre": "我们会",
+      "blank": "根据大家的时间",
+      "post": "决定买什么时候的机票。",
+      "options": [
+       "根据大家的时间",
+       "大家的时间根据",
+       "在大家的时间"
+      ],
+      "answer": 0,
+      "explanation": "根据 + N đứng trước động từ 决定 (ôn HSK3 Bài 7); 机票 (ôn HSK2 Bài 15)."
+     },
+     {
+      "context": "Sách: “Bạn nên căn cứ vào thời tiết để chọn quần áo phù hợp.”",
+      "pre": "你应该",
+      "blank": "根据天气",
+      "post": "选择合适的衣服。",
+      "options": [
+       "根据天气",
+       "天气根据",
+       "对天气"
+      ],
+      "answer": 0,
+      "explanation": "根据 + 天气 + V; 应该 (ôn HSK3 Bài 1), 合适 (ôn HSK3 Bài 7), 选择 (ôn HSK3 Bài 6)."
+     },
+     {
+      "context": "Sách: “Cô giáo sẽ căn cứ vào trình độ của từng học sinh để giao bài tập khác nhau.”",
+      "pre": "老师会",
+      "blank": "根据每个学生的水平",
+      "post": "，给每个学生不同的作业。",
+      "options": [
+       "根据每个学生的水平",
+       "每个学生的水平根据",
+       "根据每个学生"
+      ],
+      "answer": 0,
+      "explanation": "根据 + định ngữ + danh từ (水平 – ôn HSK3 Bài 5), không nói 根据 + người; 作业 (ôn HSK3 Bài 10)."
+     },
+     {
+      "context": "“Thầy nói: theo yêu cầu, chúng ta đều phải tham gia cuộc thi ngày mai.”",
+      "pre": "老师说，",
+      "blank": "根据要求",
+      "post": "，我们都必须参加明天的比赛。",
+      "options": [
+       "根据要求",
+       "要求根据",
+       "在要求"
+      ],
+      "answer": 0,
+      "explanation": "根据 đứng đầu vế câu, sau là dấu phẩy; 必须 (ôn HSK3 Bài 6), 参加、比赛 (ôn HSK3 Bài 9)."
+     },
+     {
+      "context": "“Thầy cô căn cứ vào sở thích của từng học sinh, đã chọn những cuốn sách khác nhau.”",
+      "pre": "老师",
+      "blank": "根据",
+      "post": "每个学生的兴趣，选择了不一样的书。",
+      "options": [
+       "根据",
+       "了解",
+       "经过"
+      ],
+      "answer": 0,
+      "explanation": "根据 + 兴趣 (ôn HSK3 Bài 5); 不一样 (ôn HSK3 Bài 4)."
+     },
+     {
+      "context": "“Mấy năm nay khu dân cư căn cứ vào nhu cầu của người già, đã có nhiều thay đổi.”",
+      "pre": "这几年小区根据老人的",
+      "blank": "需要",
+      "post": "，有了很多变化。",
+      "options": [
+       "需要",
+       "帮助",
+       "影响"
+      ],
+      "answer": 0,
+      "explanation": "根据 + nhu cầu (需要 – ôn HSK3 Bài 3); 帮助 / 影响 đi với khung 在……下 (ôn HSK3 Bài 10), không đi với 根据."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "小区有了很多变化根据他们的需要。",
+      "isCorrect": false,
+      "correctVersion": "小区根据他们的需要，有了很多变化。",
+      "explanation": "Cụm 根据 + N phải đứng trước động từ hoặc ở đầu câu."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们根据天气决定明天去不去爬山。",
+      "isCorrect": true,
+      "explanation": "Đúng: 根据 + 天气 + 决定……; 爬山 (ôn HSK3 Bài 5), câu hỏi chính phản 去不去."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Theo yêu cầu, chúng ta phải đến trước 8 giờ.”",
+      "words": [
+       "根据",
+       "要求",
+       "，",
+       "我们",
+       "必须",
+       "八点",
+       "以前",
+       "到",
+       "。"
+      ],
+      "answer": "根据要求，我们必须八点以前到。",
+      "explanation": "根据 đầu câu; ……以前 (ôn HSK3 Bài 8), 必须 (ôn HSK3 Bài 6)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn có thể chọn theo sở thích của mình.”",
+      "words": [
+       "你",
+       "可以",
+       "根据",
+       "自己的",
+       "兴趣",
+       "来",
+       "选择",
+       "。"
+      ],
+      "answer": "你可以根据自己的兴趣来选择。",
+      "explanation": "Câu 选词填空 của sách; 根据……来 + V; 自己 (ôn HSK2 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mấy năm nay khu dân cư căn cứ nhu cầu của họ, đã có rất nhiều thay đổi.”",
+      "words": [
+       "这几年",
+       "小区",
+       "根据",
+       "他们的",
+       "需要",
+       "，",
+       "有了",
+       "很多",
+       "变化",
+       "。"
+      ],
+      "answer": "这几年小区根据他们的需要，有了很多变化。",
+      "explanation": "Câu của Bài khoá 1: chủ ngữ + 根据 + N, động từ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mẹ căn cứ vào thời tiết chuẩn bị quần áo cho tôi.”",
+      "words": [
+       "妈妈",
+       "根据",
+       "天气",
+       "给我",
+       "准备",
+       "衣服",
+       "。"
+      ],
+      "answer": "妈妈根据天气给我准备衣服。",
+      "explanation": "准备 (ôn HSK2 Bài 5); 给 + người + V (ôn HSK2 Bài 1)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng giới từ 根据.",
+      "promptLang": "vi",
+      "prompt": "Căn cứ vào thành tích, cô giáo đã chọn ba bạn tham gia cuộc thi.",
+      "answer": "根据成绩，老师选了三个同学参加比赛。",
+      "answerPy": "Gēnjù chéngjì, lǎoshī xuǎnle sān ge tóngxué cānjiā bǐsài.",
+      "explanation": "成绩、参加、比赛 (ôn HSK3 Bài 9); 选 (ôn HSK3 Bài 2)."
+     }
+    ]
+   },
+   {
+    "title": "Cụm số lượng lặp lại 「số từ + lượng từ + số từ + lượng từ (+ 地) + động từ」",
+    "errors": [
+     {
+      "wrong": "他们走进去两个两个地。",
+      "why": "tiếng Việt nói “đi vào từng tốp hai người một” (cụm đứng sau); trong tiếng Trung cụm lặp làm trạng ngữ, phải đứng TRƯỚC động từ.",
+      "right": "他们两个两个地走进去了。"
+     },
+     {
+      "wrong": "她本本地看，已经看完十多本了。",
+      "why": "lượng từ lặp lại 本本 (ôn HSK3 Bài 5) nghĩa là “quyển nào cũng”, không chỉ cách thức; muốn nói “đọc từng quyển một” phải dùng 一本一本地.",
+      "right": "她一本一本地看，已经看完十多本了。"
+     },
+     {
+      "wrong": "孩子们一个一个地人走进来了。",
+      "why": "dịch từng chữ “từng người một” nên chen danh từ 人 vào; cụm lặp chỉ gồm số từ + lượng từ, danh từ (nếu có) đặt ở chủ ngữ.",
+      "right": "孩子们一个一个地走进来了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成对话, 本): A: Con gái chị có thích đọc sách ngoại ngữ không? B: “Thích, tuy hơi khó nhưng cháu đọc từng quyển một, đã đọc xong hơn mười quyển rồi.”",
+      "pre": "喜欢，虽然有点儿难，她",
+      "blank": "一本一本地看",
+      "post": "，已经看完十多本了。",
+      "options": [
+       "一本一本地看",
+       "看一本一本地",
+       "本本地看"
+      ],
+      "answer": 0,
+      "explanation": "Số + lượng + số + lượng + (地) + V; 本本 = quyển nào cũng (ôn HSK3 Bài 5); 虽然 (ôn HSK2 Bài 8)."
+     },
+     {
+      "context": "Sách (完成对话, 张): A: Bây giờ bạn chọn được dùng tấm ảnh nào chưa? B: “Đừng vội, mình phải xem từng tấm một.”",
+      "pre": "别着急，我要",
+      "blank": "一张一张地看",
+      "post": "。",
+      "options": [
+       "一张一张地看",
+       "看一张一张",
+       "张张地看"
+      ],
+      "answer": 0,
+      "explanation": "一张一张地 + V; 着急 (ôn HSK3 Bài 1), 张 (ôn HSK3 Bài 2)."
+     },
+     {
+      "context": "Sách (完成对话, 个): A: Nhiều bài tập thế này, bao giờ mới làm xong? B: “Làm từng bài một, từ từ sẽ xong thôi.”",
+      "pre": "",
+      "blank": "一个一个地做",
+      "post": "，慢慢就做完了。",
+      "options": [
+       "一个一个地做",
+       "做一个一个地",
+       "个个地做"
+      ],
+      "answer": 0,
+      "explanation": "一个一个地 + 做; 慢慢 + V (ôn HSK2 Bài 11 慢); 做完 bổ ngữ kết quả."
+     },
+     {
+      "context": "“Trình độ tiếng Trung của học sinh đã nâng cao lên từng ngày.”",
+      "pre": "学生们的汉语水平",
+      "blank": "一天一天地",
+      "post": "提高了。",
+      "options": [
+       "一天一天地",
+       "天天地",
+       "一天地"
+      ],
+      "answer": 0,
+      "explanation": "一天一天地 = từng ngày một (thay đổi dần dần); 天天 = ngày nào cũng (ôn HSK3 Bài 5); 提高 (ôn HSK3 Bài 10)."
+     },
+     {
+      "context": "“Vậy thì nhiều lắm, em phải kể cho chị từng chút một.”",
+      "pre": "那太多了，我得",
+      "blank": "一点儿一点儿",
+      "post": "给您讲。",
+      "options": [
+       "一点儿一点儿",
+       "一点儿",
+       "点儿点儿"
+      ],
+      "answer": 0,
+      "explanation": "一点儿一点儿 = từng chút một; 得 děi (ôn HSK3 Bài 8), 讲 (ôn HSK3 Bài 10)."
+     },
+     {
+      "context": "“Họ đi vào từng tốp hai người một.”",
+      "pre": "他们",
+      "blank": "两个两个地",
+      "post": "走进去了。",
+      "options": [
+       "两个两个地",
+       "两个地",
+       "个个地"
+      ],
+      "answer": 0,
+      "explanation": "Cụm lặp đứng trước động từ; 走进去 — bổ ngữ xu hướng (ôn HSK2 Bài 4)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他们走进去两个两个地。",
+      "isCorrect": false,
+      "correctVersion": "他们两个两个地走进去了。",
+      "explanation": "Cụm số lượng lặp lại làm trạng ngữ, phải đứng trước động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "请大家一个一个地说，别着急。",
+      "isCorrect": true,
+      "explanation": "Đúng: 一个一个地 + 说; 别着急 (ôn HSK3 Bài 1, HSK2 Bài 2)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mình phải giảng cho bạn từng chút một.”",
+      "words": [
+       "我",
+       "得",
+       "一点儿",
+       "一点儿",
+       "给你",
+       "讲",
+       "。"
+      ],
+      "answer": "我得一点儿一点儿给你讲。",
+      "explanation": "得 + cụm lặp + 给 + người + 讲."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trình độ tiếng Trung của học sinh nâng cao lên từng ngày.”",
+      "words": [
+       "学生们的",
+       "汉语",
+       "水平",
+       "一天一天地",
+       "提高了",
+       "。"
+      ],
+      "answer": "学生们的汉语水平一天一天地提高了。",
+      "explanation": "水平 (ôn HSK3 Bài 5); cụm lặp đứng trước 提高."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Các bạn nhỏ lần lượt từng người một đi vào lớp học.”",
+      "words": [
+       "小朋友们",
+       "一个一个地",
+       "走进了",
+       "教室",
+       "。"
+      ],
+      "answer": "小朋友们一个一个地走进了教室。",
+      "explanation": "小朋友 (ôn HSK1 Bài 11); 教室 (ôn HSK2 Bài 2)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô ấy xem từng tấm ảnh một lượt.”",
+      "words": [
+       "她",
+       "把",
+       "照片",
+       "一张一张地",
+       "看了",
+       "一遍",
+       "。"
+      ],
+      "answer": "她把照片一张一张地看了一遍。",
+      "explanation": "Câu chữ 把 + cụm lặp + V (ôn HSK3 Bài 10); 遍 (ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng cụm số lượng lặp lại.",
+      "promptLang": "vi",
+      "prompt": "Chúng mình làm từng bài một nhé, đừng vội.",
+      "answer": "咱们一个一个地做吧，别着急。",
+      "answerPy": "Zánmen yí ge yí ge de zuò ba, bié zháojí.",
+      "explanation": "咱们 (ôn HSK3 Bài 3); 别着急 (ôn HSK3 Bài 1)."
+     }
+    ]
+   },
+   {
+    "title": "Cấu trúc cố định 「在……看来」",
+    "errors": [
+     {
+      "wrong": "在我看，时间比钱更重要。",
+      "why": "thiếu 来: cấu trúc cố định là 在 + người + 看来.",
+      "right": "在我看来，时间比钱更重要。"
+     },
+     {
+      "wrong": "在我看来，我觉得时间比钱更重要。",
+      "why": "dịch theo kiểu “theo tôi, tôi thấy…”: 在我看来 đã nêu ý kiến của mình rồi, thêm 我觉得 là lặp ý.",
+      "right": "在我看来，时间比钱更重要。"
+     },
+     {
+      "wrong": "我看来，这个方法不太好。",
+      "why": "thiếu 在: phải nói 在我看来; hoặc bỏ 我 thành 看来 (= xem ra – ôn HSK3 Bài 11), nhưng nghĩa khác: 看来 là phỏng đoán từ tình hình, không phải ý kiến riêng.",
+      "right": "在我看来，这个方法不太好。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成句子): “Theo tôi, thời gian quan trọng hơn tiền bạc.”",
+      "pre": "",
+      "blank": "在我看来",
+      "post": "，时间比钱更重要。",
+      "options": [
+       "在我看来",
+       "在我看",
+       "我看来在"
+      ],
+      "answer": 0,
+      "explanation": "在 + người + 看来; câu so sánh 比……更…… (ôn HSK2 Bài 8, HSK3 Bài 7)."
+     },
+     {
+      "context": "Sách (完成句子): “Theo bác sĩ, vận động mỗi ngày rất tốt cho sức khỏe.”",
+      "pre": "",
+      "blank": "在医生看来",
+      "post": "，每天运动对身体很好。",
+      "options": [
+       "在医生看来",
+       "根据医生",
+       "医生在看来"
+      ],
+      "answer": 0,
+      "explanation": "Nêu ý kiến của ai dùng 在……看来, không dùng 根据 + người; 运动 (ôn HSK2 Bài 7)."
+     },
+     {
+      "context": "Sách (完成句子): “Trong mắt du khách, môi trường của thành phố này vô cùng tốt.”",
+      "pre": "",
+      "blank": "在游客们看来",
+      "post": "，这个城市的环境非常好。",
+      "options": [
+       "在游客们看来",
+       "在游客们看",
+       "游客们在看来"
+      ],
+      "answer": 0,
+      "explanation": "游客 của bài này; 环境 (ôn HSK3 Bài 3)."
+     },
+     {
+      "context": "“Trong mắt các đồng nghiệp, cô ấy làm việc vô cùng chăm chỉ.”",
+      "pre": "在同事们",
+      "blank": "看来",
+      "post": "，她工作非常认真。",
+      "options": [
+       "看来",
+       "看",
+       "来看"
+      ],
+      "answer": 0,
+      "explanation": "Khung 在……看来 phải đủ 看来; 认真 (ôn HSK3 Bài 10)."
+     },
+     {
+      "context": "“Theo tôi, đọc sách mỗi ngày là một thói quen rất tốt.”",
+      "pre": "",
+      "blank": "在我看来",
+      "post": "，每天读书是一种很好的习惯。",
+      "options": [
+       "在我看来",
+       "我看来",
+       "在我的看"
+      ],
+      "answer": 0,
+      "explanation": "习惯、种 (ôn HSK3 Bài 8); 读书 (ôn HSK1 Bài 9)."
+     },
+     {
+      "context": "“Đối với người Trung Quốc chúng ta, sông Hoàng Hà giống như mẹ.”",
+      "pre": "",
+      "blank": "在我们中国人看来",
+      "post": "，黄河像妈妈一样。",
+      "options": [
+       "在我们中国人看来",
+       "我们中国人在看来",
+       "在看来我们中国人"
+      ],
+      "answer": 0,
+      "explanation": "Câu của Bài khoá 3; A 像 B 一样 (ôn HSK3 Bài 1, Bài 4)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "在我看来，我觉得时间比钱更重要。",
+      "isCorrect": false,
+      "correctVersion": "在我看来，时间比钱更重要。",
+      "explanation": "在我看来 đã nêu ý kiến, không thêm 我觉得."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "在爷爷看来，每天早上锻炼身体是最好的习惯。",
+      "isCorrect": true,
+      "explanation": "Đúng: 在 + 爷爷 + 看来; 锻炼 (ôn HSK3 Bài 5), 爷爷 (ôn HSK2 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Theo tôi, đọc sách mỗi ngày là một thói quen rất tốt.”",
+      "words": [
+       "在",
+       "我",
+       "看来",
+       "，",
+       "每天",
+       "读书",
+       "是",
+       "一种",
+       "很好的",
+       "习惯",
+       "。"
+      ],
+      "answer": "在我看来，每天读书是一种很好的习惯。",
+      "explanation": "在 + 我 + 看来，quan điểm."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trong mắt mẹ, việc học là quan trọng nhất.”",
+      "words": [
+       "在",
+       "妈妈",
+       "看来",
+       "，",
+       "学习",
+       "是",
+       "最",
+       "重要的",
+       "。"
+      ],
+      "answer": "在妈妈看来，学习是最重要的。",
+      "explanation": "最 (ôn HSK2 Bài 11); 重要 (ôn HSK3 Bài 1)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Theo các bạn học, bài kiểm tra lần này chẳng khó chút nào.”",
+      "words": [
+       "在",
+       "同学们",
+       "看来",
+       "，",
+       "这次",
+       "考试",
+       "一点儿",
+       "也",
+       "不难",
+       "。"
+      ],
+      "answer": "在同学们看来，这次考试一点儿也不难。",
+      "explanation": "一点儿也不 + Adj (ôn HSK3 Bài 4); 考试 (ôn HSK2 Bài 10)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Theo các cụ già, khu dân cư này rất thuận tiện.”",
+      "words": [
+       "在",
+       "老人们",
+       "看来",
+       "，",
+       "这个",
+       "小区",
+       "非常",
+       "方便",
+       "。"
+      ],
+      "answer": "在老人们看来，这个小区非常方便。",
+      "explanation": "老人 của bài này; 方便 (ôn HSK3 Bài 2)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 在……看来.",
+      "promptLang": "vi",
+      "prompt": "Theo tôi, sống ở thành phố nhỏ thoải mái hơn sống ở thành phố lớn.",
+      "answer": "在我看来，住在小城市比住在大城市舒服。",
+      "answerPy": "Zài wǒ kànlái, zhù zài xiǎo chéngshì bǐ zhù zài dà chéngshì shūfu.",
+      "explanation": "Câu so sánh 比 (ôn HSK2 Bài 8); 舒服 (ôn HSK2 Bài 6)."
+     }
+    ]
+   },
+   {
+    "title": "Cụm từ cố định 「不一会儿」 — 不一会儿 + (chủ ngữ) + 就 + V + 了",
+    "errors": [
+     {
+      "wrong": "我等了不一会儿，他就来了。",
+      "why": "nhầm với 一会儿 (ôn HSK2 Bài 5): 一会儿 có thể đứng SAU động từ chỉ thời lượng (等了一会儿), còn 不一会儿 làm trạng ngữ, đứng TRƯỚC động từ hoặc ở đầu câu.",
+      "right": "不一会儿，他就来了。"
+     },
+     {
+      "wrong": "你等一下，我不一会儿就回来。",
+      "why": "tiếng Việt nói “chẳng mấy chốc tôi về”, nhưng 不一会儿 thường dùng khi KỂ LẠI việc đã xảy ra; nói việc sắp làm dùng 一会儿 / 马上 (ôn HSK2 Bài 5, HSK3 Bài 2).",
+      "right": "你等一下，我一会儿就回来。"
+     },
+     {
+      "wrong": "不一会儿，出租车就来。",
+      "why": "việc đã xảy ra (kể lại) cần 了 ở cuối: 不一会儿……就……了.",
+      "right": "不一会儿，出租车就来了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成句子): “Tôi chỉ định xem nửa tiếng ti vi, nhưng chẳng mấy chốc một tiếng đã trôi qua.”",
+      "pre": "我只想看半个小时电视，可是",
+      "blank": "不一会儿",
+      "post": "一个小时就过去了。",
+      "options": [
+       "不一会儿",
+       "一会儿",
+       "一会儿不"
+      ],
+      "answer": 0,
+      "explanation": "不一会儿 + 就……了 — thời gian trôi rất nhanh; 只 (ôn HSK3 Bài 2), 半 (ôn HSK1 Bài 7)."
+     },
+     {
+      "context": "Sách (完成句子): “Họ đứng chờ ở cổng, chẳng mấy chốc taxi đã đến.”",
+      "pre": "他们在门口站着，出租车",
+      "blank": "不一会儿就来了",
+      "post": "。",
+      "options": [
+       "不一会儿就来了",
+       "来了不一会儿",
+       "一会儿不来了"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ + 不一会儿 + 就 + V + 了; V + 着 (ôn HSK2 Bài 11), 门口 (ôn HSK2 Bài 9)."
+     },
+     {
+      "context": "Sách (完成句子): “Chúng tôi ngồi trong phòng họp, một lát sau thầy giáo đã đến.”",
+      "pre": "我们坐在会议室里，",
+      "blank": "不一会儿，老师就来了",
+      "post": "。",
+      "options": [
+       "不一会儿，老师就来了",
+       "老师来了不一会儿",
+       "不一会儿，老师就来"
+      ],
+      "answer": 0,
+      "explanation": "不一会儿 đứng đầu vế câu, sau là 就……了 (việc đã xảy ra)."
+     },
+     {
+      "context": "“Một lát sau, hiệu trưởng Trương đã đến.”",
+      "pre": "",
+      "blank": "不一会儿",
+      "post": "，张校长就来了。",
+      "options": [
+       "不一会儿",
+       "一会儿不",
+       "不会一儿"
+      ],
+      "answer": 0,
+      "explanation": "Cụm cố định 不一会儿, không tách hay đảo chữ."
+     },
+     {
+      "context": "“Hai tiếng nghe có vẻ dài, nhưng chẳng mấy chốc đã trôi qua.”",
+      "pre": "两个小时看起来长，但是不一会儿",
+      "blank": "就",
+      "post": "过去了。",
+      "options": [
+       "就",
+       "才",
+       "再"
+      ],
+      "answer": 0,
+      "explanation": "不一会儿 hay đi với 就 (sớm, nhanh); 才 = muộn, chậm (ôn HSK3 Bài 3); 看起来 (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "“Mẹ nấu rất nhiều món, chẳng mấy chốc chúng tôi đã ăn hết.”",
+      "pre": "妈妈做了很多菜，",
+      "blank": "不一会儿我们就吃完了",
+      "post": "。",
+      "options": [
+       "不一会儿我们就吃完了",
+       "我们吃完了不一会儿",
+       "我们不一会儿吃完"
+      ],
+      "answer": 0,
+      "explanation": "吃完 — bổ ngữ kết quả (ôn HSK2 Bài 3); 不一会儿 + 就 + V + 了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你等一下，我不一会儿就回来。",
+      "isCorrect": false,
+      "correctVersion": "你等一下，我一会儿就回来。",
+      "explanation": "不一会儿 dùng khi kể lại việc đã xảy ra; nói việc sắp làm dùng 一会儿 / 马上 (ôn HSK2 Bài 5, HSK3 Bài 2)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们聊了几句，不一会儿就到家了。",
+      "isCorrect": true,
+      "explanation": "Đúng: 不一会儿 + 就 + V + 了; 聊 của bài này, 句 (ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Những chuyện buồn chẳng mấy chốc là quên hết.”",
+      "words": [
+       "难过的",
+       "事情",
+       "不一会儿",
+       "就",
+       "忘了",
+       "。"
+      ],
+      "answer": "难过的事情不一会儿就忘了。",
+      "explanation": "Câu của Bài khoá 4; 难过 (ôn HSK3 Bài 5), 忘 (ôn HSK2 Bài 6)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Một lát sau, hiệu trưởng Trương đã đến.”",
+      "words": [
+       "不一会儿",
+       "，",
+       "张校长",
+       "就",
+       "来了",
+       "。"
+      ],
+      "answer": "不一会儿，张校长就来了。",
+      "explanation": "不一会儿 ở đầu câu, có dấu phẩy."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng tôi vừa ăn vừa trò chuyện, chẳng mấy chốc đã 10 giờ.”",
+      "words": [
+       "我们",
+       "边吃边聊",
+       "，",
+       "不一会儿",
+       "就",
+       "十点",
+       "了",
+       "。"
+      ],
+      "answer": "我们边吃边聊，不一会儿就十点了。",
+      "explanation": "边……边…… (ôn HSK3 Bài 13); 就……了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn tôi đạp xe đến, một lát sau đã tới nơi.”",
+      "words": [
+       "朋友",
+       "骑",
+       "自行车",
+       "来",
+       "，",
+       "不一会儿",
+       "就",
+       "到了",
+       "。"
+      ],
+      "answer": "朋友骑自行车来，不一会儿就到了。",
+      "explanation": "骑 (ôn HSK3 Bài 4), 自行车 (ôn HSK3 Bài 7); câu liên động (ôn HSK3 Bài 7)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 不一会儿.",
+      "promptLang": "vi",
+      "prompt": "Bài tập hôm nay rất đơn giản, chẳng mấy chốc tôi đã làm xong.",
+      "answer": "今天的作业很简单，我不一会儿就写完了。",
+      "answerPy": "Jīntiān de zuòyè hěn jiǎndān, wǒ bù yíhuìr jiù xiěwán le.",
+      "explanation": "简单 (ôn HSK3 Bài 2); 作业 (ôn HSK3 Bài 10); 写完 — bổ ngữ kết quả."
+     }
+    ]
+   }
+  ]
+ }
+}

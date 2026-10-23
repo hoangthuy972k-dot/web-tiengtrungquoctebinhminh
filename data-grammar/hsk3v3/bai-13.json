@@ -1,0 +1,582 @@
+{
+ "/lessons/hsk3v3-bai-13.html": {
+  "points": [
+   {
+    "title": "Câu ghép giả định 「……的话，就……」 — nếu… thì…",
+    "errors": [
+     {
+      "wrong": "的话你有时间，就来我家吧。",
+      "why": "dịch theo trật tự tiếng Việt “nếu bạn có thời gian…”; 的话 phải đứng CUỐI vế giả định. Muốn có từ ở đầu câu thì dùng 如果.",
+      "right": "你有时间的话，就来我家吧。"
+     },
+     {
+      "wrong": "明天下雨的话，就我们不去了。",
+      "why": "就 là phó từ, đứng SAU chủ ngữ của vế sau và trước động từ, không đứng trước chủ ngữ.",
+      "right": "明天下雨的话，我们就不去了。"
+     },
+     {
+      "wrong": "你觉得满意，的话咱们就买。",
+      "why": "的话 gắn liền với vế giả định, đứng ngay trước dấu phẩy, không tách sang vế sau.",
+      "right": "你觉得满意的话，咱们就买。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: A: “Mai bạn rảnh thì đến nhà mình ăn cơm nhé.” — B: “Được đấy, nghe nói món Bắc Kinh bạn nấu ngon lắm.”",
+      "pre": "明天你没事的话，",
+      "blank": "就来我家吃饭吧",
+      "post": "。——好啊，早就听说你做的北京菜特别好吃。",
+      "options": [
+       "就来我家吃饭吧",
+       "来就我家吃饭吧",
+       "的话来我家吃饭吧"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau dùng 就 + V; 听说 (ôn HSK3 Bài 3)."
+     },
+     {
+      "context": "Sách: A: “Hôm nay bạn có thời gian thì chúng mình đi ăn vịt quay nhé?” — B: “Hôm nay không được, trưa mai chúng ta cùng đi nhé.”",
+      "pre": "",
+      "blank": "你今天有时间的话，我们就去吃烤鸭",
+      "post": "，好吗？——今天不行，明天中午我们一起去吧。",
+      "options": [
+       "你今天有时间的话，我们就去吃烤鸭",
+       "的话你今天有时间，我们就去吃烤鸭",
+       "你今天有时间，就我们的话去吃烤鸭"
+      ],
+      "answer": 0,
+      "explanation": "……的话，chủ ngữ + 就 + V; 烤鸭 (ôn HSK2 Bài 1)."
+     },
+     {
+      "context": "Sách: A: “Bạn không muốn nấu cơm thì chúng ta gọi đồ ăn ngoài nhé.” — B: “Được, mình không hay gọi đồ ăn ngoài, bạn gọi đi.”",
+      "pre": "你不想做饭",
+      "blank": "的话，我们就点外卖吧",
+      "post": "。——行，我不常点外卖，你点吧。",
+      "options": [
+       "的话，我们就点外卖吧",
+       "，的话我们就点外卖吧",
+       "的话，就我们点外卖吧"
+      ],
+      "answer": 0,
+      "explanation": "外卖 (ôn HSK3 Bài 2); 的话 đứng trước dấu phẩy, 就 sau chủ ngữ."
+     },
+     {
+      "context": "“Bạn thấy hài lòng thì chúng ta mua.” (满意 – ôn HSK3 Bài 4)",
+      "pre": "你觉得满意",
+      "blank": "的话，咱们就买",
+      "post": "。",
+      "options": [
+       "的话，咱们就买",
+       "，的话咱们就买",
+       "的话，就咱们买"
+      ],
+      "answer": 0,
+      "explanation": "咱们 (ôn HSK3 Bài 3) đứng trước 就."
+     },
+     {
+      "context": "“Mai trời đẹp thì tôi đi leo núi.” (爬山 – ôn HSK3 Bài 5)",
+      "pre": "明天天气好的话，",
+      "blank": "我就去爬山",
+      "post": "。",
+      "options": [
+       "我就去爬山",
+       "就我去爬山",
+       "我去就爬山"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ + 就 + V."
+     },
+     {
+      "context": "“Nếu bạn mệt thì nghỉ một lát đi.” (如果 – ôn HSK3 Bài 6)",
+      "pre": "",
+      "blank": "如果你累了的话",
+      "post": "，就休息一会儿吧。",
+      "options": [
+       "如果你累了的话",
+       "的话如果你累了",
+       "如果的话你累了"
+      ],
+      "answer": 0,
+      "explanation": "如果……的话 kết hợp được; 一会儿 (ôn HSK2 Bài 5)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "的话你有时间，就来我家做客吧。",
+      "isCorrect": false,
+      "correctVersion": "你有时间的话，就来我家做客吧。",
+      "explanation": "的话 đứng cuối vế giả định."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你不忙的话，我们就一起去看电影吧。",
+      "isCorrect": true,
+      "explanation": "Đúng: ……的话，chủ ngữ + 就……; 电影 (ôn HSK1 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Các bạn có thời gian thì đến nhà mình chơi nhé.”",
+      "words": [
+       "你们",
+       "有",
+       "时间",
+       "的话",
+       "，",
+       "就",
+       "来",
+       "我家",
+       "做客",
+       "。"
+      ],
+      "answer": "你们有时间的话，就来我家做客。",
+      "explanation": "……的话 +，+ 就 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn thấy hài lòng thì chúng ta mua.”",
+      "words": [
+       "你",
+       "觉得",
+       "满意",
+       "的话",
+       "，",
+       "咱们",
+       "就",
+       "买",
+       "。"
+      ],
+      "answer": "你觉得满意的话，咱们就买。",
+      "explanation": "咱们 đứng trước 就."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mai trời mưa thì chúng ta không đi nữa.”",
+      "words": [
+       "明天",
+       "下雨",
+       "的话",
+       "，",
+       "我们",
+       "就",
+       "不",
+       "去",
+       "了",
+       "。"
+      ],
+      "answer": "明天下雨的话，我们就不去了。",
+      "explanation": "下雨 (ôn HSK1 Bài 12); 不……了 = không… nữa."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn thích thì tôi tặng bạn.”",
+      "words": [
+       "你",
+       "喜欢",
+       "的话",
+       "，",
+       "我",
+       "就",
+       "送给",
+       "你",
+       "。"
+      ],
+      "answer": "你喜欢的话，我就送给你。",
+      "explanation": "送给 (ôn HSK2 Bài 3)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng ……的话，就…….",
+      "promptLang": "vi",
+      "prompt": "Bạn đói thì ăn chút gì đó trước đi.",
+      "answer": "你饿了的话，就先吃点儿什么吧。",
+      "answerPy": "Nǐ è le dehuà, jiù xiān chī diǎnr shénme ba.",
+      "explanation": "饿 (ôn HSK3 Bài 2); 什么 = cái gì đó (ôn HSK3 Bài 1); 先 (ôn HSK3 Bài 4)."
+     }
+    ]
+   },
+   {
+    "title": "Câu chữ 「把」 (4) — 把 + tân ngữ + V + bổ ngữ xu hướng / trạng thái",
+    "errors": [
+     {
+      "wrong": "你开声音得太大了。",
+      "why": "muốn nói hành động làm sự vật xác định (声音) thay đổi trạng thái thì đưa tân ngữ lên trước bằng 把; 得 phải đi liền sau động từ.",
+      "right": "你把声音开得太大了。"
+     },
+     {
+      "wrong": "我把饮料放冰箱进去了。",
+      "why": "nơi chốn không đứng trước 进; nói 放进 + nơi chốn (+ 里) hoặc 放进 + nơi chốn + 去.",
+      "right": "我把饮料放进冰箱里了。"
+     },
+     {
+      "wrong": "他把球没踢进去。",
+      "why": "phó từ phủ định 没 phải đứng TRƯỚC 把 (ôn HSK3 Bài 10).",
+      "right": "他没把球踢进去。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Mẹ dọn phòng rất sạch sẽ.” (打扫 – ôn HSK3 Bài 3; 干净 – ôn HSK3 Bài 4)",
+      "pre": "妈妈把房间",
+      "blank": "打扫得很干净",
+      "post": "。",
+      "options": [
+       "打扫得很干净",
+       "很干净打扫",
+       "打扫很干净得"
+      ],
+      "answer": 0,
+      "explanation": "把 + O + V + 得 + trạng thái."
+     },
+     {
+      "context": "Sách: “Bây giờ trời nóng quá, bạn nên cho mấy thứ này vào tủ lạnh.”",
+      "pre": "现在天气太热了，你应该把这些东西",
+      "blank": "放进冰箱里",
+      "post": "。",
+      "options": [
+       "放进冰箱里",
+       "冰箱里放进",
+       "放冰箱进里"
+      ],
+      "answer": 0,
+      "explanation": "V + 进 + nơi chốn; 应该 (ôn HSK3 Bài 1) đứng trước 把; 冰箱 (ôn HSK3 Bài 3)."
+     },
+     {
+      "context": "Sách: “Trời lạnh quá, bạn đi lấy áo khoác lại đây.” (大衣 – ôn HSK3 Bài 5)",
+      "pre": "天气太冷了，你去把大衣",
+      "blank": "拿过来",
+      "post": "。",
+      "options": [
+       "拿过来",
+       "过来拿",
+       "拿来过"
+      ],
+      "answer": 0,
+      "explanation": "Bổ ngữ xu hướng kép 过来: mang lại gần người nói."
+     },
+     {
+      "context": "“Bạn viết chữ nhỏ quá, tôi nhìn không rõ.”",
+      "pre": "你把字",
+      "blank": "写得太小了",
+      "post": "，我看不清楚。",
+      "options": [
+       "写得太小了",
+       "太小了写得",
+       "写太小得了"
+      ],
+      "answer": 0,
+      "explanation": "把 + 字 + 写得 + 太小了; 看不清楚 (ôn HSK3 Bài 9, 10)."
+     },
+     {
+      "context": "“Anh ấy đá bóng vào lưới chưa?” (踢 – ôn HSK2 Bài 7)",
+      "pre": "他",
+      "blank": "把球踢进去",
+      "post": "了吗？",
+      "options": [
+       "把球踢进去",
+       "踢进去把球",
+       "把踢进去球"
+      ],
+      "answer": 0,
+      "explanation": "把 + 球 + 踢 + 进去."
+     },
+     {
+      "context": "“Em nhớ vừa nãy đã lấy đồ uống ra rồi.” (记得 – ôn HSK2 Bài 8)",
+      "pre": "我记得刚才已经把饮料",
+      "blank": "拿出来",
+      "post": "了。",
+      "options": [
+       "拿出来",
+       "出来拿",
+       "拿出"
+      ],
+      "answer": 0,
+      "explanation": "V + 出来 — vật từ trong ra ngoài; 刚才 = vừa nãy."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他把球没踢进去。",
+      "isCorrect": false,
+      "correctVersion": "他没把球踢进去。",
+      "explanation": "没 đứng trước 把."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我去把盘子拿过来。",
+      "isCorrect": true,
+      "explanation": "Đúng: 把 + 盘子 + 拿过来 (bổ ngữ xu hướng kép); câu liên động 去 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Em bật âm thanh to quá rồi.”",
+      "words": [
+       "你",
+       "把",
+       "声音",
+       "开",
+       "得",
+       "太",
+       "大",
+       "了",
+       "。"
+      ],
+      "answer": "你把声音开得太大了。",
+      "explanation": "把 + O + V + 得 + 太 + Adj + 了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh để hết đồ uống và rượu vào tủ lạnh rồi.”",
+      "words": [
+       "我",
+       "把",
+       "饮料",
+       "和",
+       "酒",
+       "都",
+       "放进",
+       "冰箱里",
+       "了",
+       "。"
+      ],
+      "answer": "我把饮料和酒都放进冰箱里了。",
+      "explanation": "都 đứng sau tân ngữ của 把, trước động từ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chị đi lấy đĩa lại đây.”",
+      "words": [
+       "我",
+       "去",
+       "把",
+       "盘子",
+       "拿",
+       "过来",
+       "。"
+      ],
+      "answer": "我去把盘子拿过来。",
+      "explanation": "去 + 把 + O + 拿过来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mẹ dọn phòng rất sạch sẽ.”",
+      "words": [
+       "妈妈",
+       "把",
+       "房间",
+       "打扫",
+       "得",
+       "很",
+       "干净",
+       "。"
+      ],
+      "answer": "妈妈把房间打扫得很干净。",
+      "explanation": "房间 (ôn HSK1 Bài 8)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng câu chữ 把 + bổ ngữ xu hướng.",
+      "promptLang": "vi",
+      "prompt": "Bạn mang va li vào đi.",
+      "answer": "你把箱子拿进来吧。",
+      "answerPy": "Nǐ bǎ xiāngzi ná jìnlai ba.",
+      "explanation": "箱子 (ôn HSK3 Bài 1); 进来 (ôn HSK2 Bài 5)."
+     }
+    ]
+   },
+   {
+    "title": "Câu ghép đẳng lập 「一边……，一边……」 — vừa… vừa…",
+    "errors": [
+     {
+      "wrong": "这个菜一边便宜，一边好吃。",
+      "why": "tiếng Việt “vừa rẻ vừa ngon” nhưng 一边……一边…… chỉ nối hai HÀNH ĐỘNG cùng lúc; nối hai tính chất phải dùng 又……又…… (ôn HSK3 Bài 2).",
+      "right": "这个菜又便宜又好吃。"
+     },
+     {
+      "wrong": "一边我吃饭，一边我看电视。",
+      "why": "chủ ngữ đặt ở ĐẦU câu, trước 一边 thứ nhất; không lặp sau mỗi 一边.",
+      "right": "我一边吃饭，一边看电视。"
+     },
+     {
+      "wrong": "我们一边吃了蛋糕，一边聊了天儿。",
+      "why": "hai hành động sau 一边 đang diễn ra cùng lúc, không thêm 了 sau động từ.",
+      "right": "我们一边吃蛋糕，一边聊天儿。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: A: “Hôm qua bạn đi đâu với Gia Nguyệt?” — B: “Đi nhà hàng, bọn mình vừa ăn vừa trò chuyện, vui ơi là vui.”",
+      "pre": "昨天你跟家月去哪儿了？——去饭馆了，我们",
+      "blank": "一边吃饭，一边聊天儿",
+      "post": "，开心极了。",
+      "options": [
+       "一边吃饭，一边聊天儿",
+       "一边吃饭，聊天儿一边",
+       "吃饭一边，聊天儿一边"
+      ],
+      "answer": 0,
+      "explanation": "极了 (ôn HSK3 Bài 7); 开心 (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "Sách: A: “Hôm qua leo núi chắc mệt lắm nhỉ?” — B: “Bọn mình vừa leo vừa hát, chẳng mệt chút nào.”",
+      "pre": "你们昨天爬山爬得很累吧？——我们",
+      "blank": "一边爬山，一边唱歌",
+      "post": "，一点儿也不累。",
+      "options": [
+       "一边爬山，一边唱歌",
+       "一边爬山，一边很高兴",
+       "爬山一边，唱歌一边"
+      ],
+      "answer": 0,
+      "explanation": "Sau 一边 là động từ, không phải tính từ; 一点儿也不 + Adj (ôn HSK3 Bài 4)."
+     },
+     {
+      "context": "Sách: A: “Lúc nghỉ ngơi bạn thích làm gì?” — B: “Mình thường vừa uống trà vừa đọc sách.”",
+      "pre": "休息的时候你喜欢做什么？——我常常",
+      "blank": "一边喝茶，一边看书",
+      "post": "。",
+      "options": [
+       "一边喝茶，一边看书",
+       "一边喝茶，看书",
+       "喝茶一边，看书一边"
+      ],
+      "answer": 0,
+      "explanation": "Hai vế đều cần 一边; 茶 (ôn HSK1 Bài 13)."
+     },
+     {
+      "context": "“Tôi thích vừa chạy bộ vừa nghe nhạc.” (跑步 – ôn HSK2 Bài 7)",
+      "pre": "我喜欢",
+      "blank": "一边跑步，一边听音乐",
+      "post": "。",
+      "options": [
+       "一边跑步，一边听音乐",
+       "一边跑步，又听音乐",
+       "跑步一边，听音乐"
+      ],
+      "answer": 0,
+      "explanation": "音乐 (ôn HSK3 Bài 5)."
+     },
+     {
+      "context": "“Bạn không nên vừa lái xe vừa gọi điện thoại.” (应该 – ôn HSK3 Bài 1)",
+      "pre": "你不应该",
+      "blank": "边开车边打电话",
+      "post": "。",
+      "options": [
+       "边开车边打电话",
+       "开车边打电话边",
+       "边开车打电话"
+      ],
+      "answer": 0,
+      "explanation": "Dạng rút gọn 边……边……."
+     },
+     {
+      "context": "“Món này vừa rẻ vừa ngon.” (phân biệt với 一边……一边……)",
+      "pre": "这个菜",
+      "blank": "又便宜又好吃",
+      "post": "。",
+      "options": [
+       "又便宜又好吃",
+       "一边便宜一边好吃",
+       "边便宜边好吃"
+      ],
+      "answer": 0,
+      "explanation": "Hai tính chất → 又……又…… (ôn HSK3 Bài 2); 便宜 (ôn HSK1 Bài 10)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个菜一边便宜，一边好吃。",
+      "isCorrect": false,
+      "correctVersion": "这个菜又便宜又好吃。",
+      "explanation": "Hai tính từ → dùng 又……又……."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "咱们一边吃蛋糕，一边聊天儿吧。",
+      "isCorrect": true,
+      "explanation": "Đúng: hai hành động cùng lúc; 咱们 (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng ta vừa ăn bánh kem vừa trò chuyện nhé.”",
+      "words": [
+       "咱们",
+       "一边",
+       "吃",
+       "蛋糕",
+       "，",
+       "一边",
+       "聊天儿",
+       "吧",
+       "。"
+      ],
+      "answer": "咱们一边吃蛋糕，一边聊天儿吧。",
+      "explanation": "蛋糕 (ôn HSK2 Bài 6)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi thích vừa chạy bộ vừa nghe nhạc.”",
+      "words": [
+       "我",
+       "喜欢",
+       "一边",
+       "跑步",
+       "，",
+       "一边",
+       "听",
+       "音乐",
+       "。"
+      ],
+      "answer": "我喜欢一边跑步，一边听音乐。",
+      "explanation": "喜欢 + cả cụm 一边……一边……."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn không nên vừa lái xe vừa gọi điện thoại.”",
+      "words": [
+       "你",
+       "不",
+       "应该",
+       "边",
+       "开车",
+       "边",
+       "打",
+       "电话",
+       "。"
+      ],
+      "answer": "你不应该边开车边打电话。",
+      "explanation": "边……边…… rút gọn."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm đó chúng tôi vừa uống trà đen vừa trò chuyện.”",
+      "words": [
+       "那天",
+       "我们",
+       "一边",
+       "喝",
+       "红茶",
+       "，",
+       "一边",
+       "聊天儿",
+       "。"
+      ],
+      "answer": "那天我们一边喝红茶，一边聊天儿。",
+      "explanation": "Thời gian 那天 đứng đầu câu."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 一边……，一边…….",
+      "promptLang": "vi",
+      "prompt": "Bố tôi thường vừa ăn sáng vừa xem điện thoại.",
+      "answer": "我爸爸常常一边吃早饭，一边看手机。",
+      "answerPy": "Wǒ bàba chángcháng yìbiān chī zǎofàn, yìbiān kàn shǒujī.",
+      "explanation": "早饭 (ôn HSK1 Bài 13); 常常 (ôn HSK3 Bài 8)."
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,774 @@
+{
+ "/lessons/hsk3v3-bai-12.html": {
+  "points": [
+   {
+    "title": "Câu ghép lựa chọn 「或者……，或者……」 — hoặc là… hoặc là…",
+    "errors": [
+     {
+      "wrong": "你喝茶或者喝咖啡？",
+      "why": "tiếng Việt đều nói “hay / hoặc”, nhưng câu HỎI lựa chọn tiếng Trung phải dùng 还是; 或者 chỉ dùng trong câu trần thuật.",
+      "right": "你喝茶还是喝咖啡？"
+     },
+     {
+      "wrong": "或者明天去，后天去或者。",
+      "why": "mỗi 或者 phải đứng TRƯỚC phương án lựa chọn, không đặt ở cuối như “… hoặc”.",
+      "right": "或者明天去，或者后天去。"
+     },
+     {
+      "wrong": "或者明天去，还是后天去，我给你打电话。",
+      "why": "không trộn 或者 với 还是 trong cùng một câu trần thuật; dùng thống nhất 或者……，或者…….",
+      "right": "或者明天去，或者后天去，我给你打电话。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “明天天气不错，你打算做什么？” — Trả lời: “Mình hoặc là đi công viên chèo thuyền, hoặc là đi leo núi.”",
+      "pre": "我",
+      "blank": "或者去公园坐船，或者去爬山",
+      "post": "。",
+      "options": [
+       "或者去公园坐船，或者去爬山",
+       "还是去公园坐船，还是去爬山",
+       "去公园坐船或者，去爬山或者"
+      ],
+      "answer": 0,
+      "explanation": "Câu trần thuật dùng 或者……，或者……; 爬山 (ôn HSK3 Bài 5), 打算 (ôn HSK3 Bài 6)."
+     },
+     {
+      "context": "Sách: “你每天下课回家以后做什么？” — “Mình hoặc là xem TV, hoặc là chơi bóng rổ với bạn.”",
+      "pre": "我",
+      "blank": "或者看电视，或者跟朋友打篮球",
+      "post": "。",
+      "options": [
+       "或者看电视，或者跟朋友打篮球",
+       "看电视或者，跟朋友打篮球或者",
+       "或者看电视，跟朋友或者打篮球"
+      ],
+      "answer": 0,
+      "explanation": "或者 đứng trước mỗi phương án; 打篮球 (ôn HSK2 Bài 7), 以后 (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "Sách: “考完试你有什么打算？” — “Thi xong, mình hoặc là về nhà, hoặc là đi du lịch với bạn.”",
+      "pre": "考完试，我",
+      "blank": "或者回家，或者跟朋友去旅游",
+      "post": "。",
+      "options": [
+       "或者回家，或者跟朋友去旅游",
+       "还是回家，还是跟朋友去旅游",
+       "或者回家，还是跟朋友去旅游"
+      ],
+      "answer": 0,
+      "explanation": "Không trộn 或者 với 还是; 旅游 (ôn HSK2 Bài 1), V + 完 (ôn HSK2 Bài 3)."
+     },
+     {
+      "context": "“Hoặc là ngày mai, hoặc là ngày kia, cô sẽ gọi điện cho em.”",
+      "pre": "",
+      "blank": "或者明天去，或者后天去",
+      "post": "，我给你打电话。",
+      "options": [
+       "或者明天去，或者后天去",
+       "还是明天去，还是后天去",
+       "或者明天去，还是后天去"
+      ],
+      "answer": 0,
+      "explanation": "Câu của Bài khoá 1; 给 + người + 打电话 (ôn HSK1 Bài 13)."
+     },
+     {
+      "context": "“Bạn uống trà hay cà phê?” (câu hỏi lựa chọn)",
+      "pre": "你喝茶",
+      "blank": "还是",
+      "post": "喝咖啡？",
+      "options": [
+       "还是",
+       "或者",
+       "也"
+      ],
+      "answer": 0,
+      "explanation": "Câu HỎI lựa chọn dùng 还是 (ôn HSK2 Bài 2, HSK3 Bài 11), không dùng 或者; 咖啡 (ôn HSK2 Bài 9)."
+     },
+     {
+      "context": "“Bữa tối em tự chọn nhé, hoặc món Trung, hoặc món Thái.”",
+      "pre": "晚饭你自己选，",
+      "blank": "或者吃中国菜，或者吃泰国菜",
+      "post": "。",
+      "options": [
+       "或者吃中国菜，或者吃泰国菜",
+       "还是吃中国菜，还是吃泰国菜",
+       "吃中国菜或者，吃泰国菜或者"
+      ],
+      "answer": 0,
+      "explanation": "自己 (ôn HSK2 Bài 3); 选 (ôn HSK3 Bài 2)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你想去公园或者去爬山？",
+      "isCorrect": false,
+      "correctVersion": "你想去公园还是去爬山？",
+      "explanation": "Câu hỏi lựa chọn phải dùng 还是."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们或者今天去电影院看电影，或者明天在家看电影。",
+      "isCorrect": true,
+      "explanation": "Đúng: hai phương án đều có 或者 đứng trước; 电影院 (ôn HSK1 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hoặc là ngày mai, hoặc là ngày kia, cô sẽ gọi điện cho em.”",
+      "words": [
+       "或者",
+       "明天去",
+       "，",
+       "或者",
+       "后天去",
+       "，",
+       "我",
+       "给你",
+       "打电话",
+       "。"
+      ],
+      "answer": "或者明天去，或者后天去，我给你打电话。",
+      "explanation": "或者 + phương án A，或者 + phương án B."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Thứ bảy mình hoặc là ở nhà nghỉ ngơi, hoặc là đi siêu thị mua đồ.”",
+      "words": [
+       "星期六",
+       "我",
+       "或者",
+       "在家",
+       "休息",
+       "，",
+       "或者",
+       "去",
+       "超市",
+       "买东西",
+       "。"
+      ],
+      "answer": "星期六我或者在家休息，或者去超市买东西。",
+      "explanation": "休息 (ôn HSK1 Bài 5); 超市 (ôn HSK1 Bài 6)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng ta hoặc là đi tàu cao tốc, hoặc là đi máy bay, đều được.”",
+      "words": [
+       "咱们",
+       "或者",
+       "坐高铁",
+       "，",
+       "或者",
+       "坐飞机",
+       "，",
+       "都",
+       "可以",
+       "。"
+      ],
+      "answer": "咱们或者坐高铁，或者坐飞机，都可以。",
+      "explanation": "高铁 (ôn HSK3 Bài 6); 咱们 (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn hoặc là gọi điện cho tôi, hoặc là viết email cho tôi.”",
+      "words": [
+       "你",
+       "或者",
+       "给我",
+       "打电话",
+       "，",
+       "或者",
+       "给我",
+       "写",
+       "邮件",
+       "。"
+      ],
+      "answer": "你或者给我打电话，或者给我写邮件。",
+      "explanation": "邮件 (ôn HSK3 Bài 5); 给 + người + V."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 或者……，或者…….",
+      "promptLang": "vi",
+      "prompt": "Ngày mai trời đẹp, chúng ta hoặc là đi công viên, hoặc là đi leo núi.",
+      "answer": "明天天气很好，咱们或者去公园，或者去爬山。",
+      "answerPy": "Míngtiān tiānqì hěn hǎo, zánmen huòzhě qù gōngyuán, huòzhě qù pá shān.",
+      "explanation": "咱们 (ôn HSK3 Bài 3); 爬山 (ôn HSK3 Bài 5)."
+     }
+    ]
+   },
+   {
+    "title": "Bổ ngữ xu hướng mở rộng (2) 「起来」 — bắt đầu, chuyển sang trạng thái mới",
+    "errors": [
+     {
+      "wrong": "怎么突然刮风起来了？",
+      "why": "dịch theo trật tự tiếng Việt “nổi gió lên”; khi động từ có tân ngữ, tân ngữ phải đặt GIỮA 起 và 来.",
+      "right": "怎么突然刮起风来了？"
+     },
+     {
+      "wrong": "最近天气热下来了。",
+      "why": "muốn nói “bắt đầu nóng lên” (trạng thái mới bắt đầu) dùng 起来; 下来 đi với xu hướng giảm dần (冷下来、安静下来).",
+      "right": "最近天气热起来了。"
+     },
+     {
+      "wrong": "看到照片，大家都起来笑了。",
+      "why": "起来 là bổ ngữ, phải đứng SAU động từ (笑起来); đặt trước động từ thì 起来 thành “đứng dậy”.",
+      "right": "看到照片，大家都笑起来了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Nhìn thấy bức ảnh đó, mọi người đều bật cười.”",
+      "pre": "看到那张照片，大家都",
+      "blank": "笑起来了",
+      "post": "。",
+      "options": [
+       "笑起来了",
+       "笑起了来",
+       "起来笑了"
+      ],
+      "answer": 0,
+      "explanation": "笑 (ôn HSK2 Bài 10) + 起来: bắt đầu cười; 张 (ôn HSK3 Bài 2)."
+     },
+     {
+      "context": "Sách: “Uống thuốc xong, sức khoẻ của anh ấy đã khá lên.”",
+      "pre": "吃了药以后，他的身体",
+      "blank": "好起来了",
+      "post": "。",
+      "options": [
+       "好起来了",
+       "起来好了",
+       "好起了来"
+      ],
+      "answer": 0,
+      "explanation": "Tính từ + 起来 + 了: chuyển sang trạng thái mới; 身体 (ôn HSK2 Bài 11), 药 (ôn HSK1 Bài 12)."
+     },
+     {
+      "context": "Sách: “Cậu ấy làm xong bài tập là bắt đầu xem TV.”",
+      "pre": "他写完作业就",
+      "blank": "看起电视来了",
+      "post": "。",
+      "options": [
+       "看起电视来了",
+       "看电视起来了",
+       "看起来电视了"
+      ],
+      "answer": 0,
+      "explanation": "Có tân ngữ (电视) thì đặt giữa 起 và 来; 作业 (ôn HSK3 Bài 10), 就 = ngay (ôn HSK3 Bài 3)."
+     },
+     {
+      "context": "“Sao bỗng nhiên lại nổi gió thế?”",
+      "pre": "怎么突然",
+      "blank": "刮起风来",
+      "post": "了？",
+      "options": [
+       "刮起风来",
+       "刮风起来",
+       "起来刮风"
+      ],
+      "answer": 0,
+      "explanation": "Tân ngữ 风 đứng giữa 起 và 来; 突然 (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "“Dạo này trời bắt đầu nóng lên rồi.”",
+      "pre": "最近天气",
+      "blank": "热起来",
+      "post": "了。",
+      "options": [
+       "热起来",
+       "起来热",
+       "热下来"
+      ],
+      "answer": 0,
+      "explanation": "Tính từ 热 + 起来: bắt đầu nóng lên; 最近 (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "“Lúc chúng tôi ra khỏi nhà thì trời bắt đầu mưa.”",
+      "pre": "我们出门的时候，",
+      "blank": "下起雨来了",
+      "post": "。",
+      "options": [
+       "下起雨来了",
+       "下雨起来了",
+       "起来下雨了"
+      ],
+      "answer": 0,
+      "explanation": "下雨 có tân ngữ 雨 → 下起雨来; 出门 (ôn HSK2 Bài 15)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "外面突然刮风起来了。",
+      "isCorrect": false,
+      "correctVersion": "外面突然刮起风来了。",
+      "explanation": "Tân ngữ 风 phải đặt giữa 起 và 来."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "雨已经下起来了，咱们快点儿走吧。",
+      "isCorrect": true,
+      "explanation": "Đúng: 下 + 起来 + 了; 咱们 (ôn HSK3 Bài 3), 已经……了 (ôn HSK2 Bài 1)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trời đã bắt đầu mưa rồi.”",
+      "words": [
+       "雨",
+       "已经",
+       "下",
+       "起来",
+       "了",
+       "。"
+      ],
+      "answer": "雨已经下起来了。",
+      "explanation": "已经……了 (ôn HSK2 Bài 1)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Sao bỗng nhiên lại nổi gió thế?”",
+      "words": [
+       "怎么",
+       "突然",
+       "刮",
+       "起",
+       "风",
+       "来",
+       "了",
+       "？"
+      ],
+      "answer": "怎么突然刮起风来了？",
+      "explanation": "刮 + 起 + 风 + 来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Dạo này trời bắt đầu nóng lên rồi.”",
+      "words": [
+       "最近",
+       "天气",
+       "热",
+       "起来",
+       "了",
+       "。"
+      ],
+      "answer": "最近天气热起来了。",
+      "explanation": "Tính từ + 起来 + 了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Sức khoẻ của anh ấy cuối cùng cũng khá lên rồi.”",
+      "words": [
+       "他的",
+       "身体",
+       "终于",
+       "好",
+       "起来",
+       "了",
+       "。"
+      ],
+      "answer": "他的身体终于好起来了。",
+      "explanation": "终于 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 起来.",
+      "promptLang": "vi",
+      "prompt": "Vừa nãy còn nắng, bây giờ trời bắt đầu mưa rồi.",
+      "answer": "刚才还是晴天，现在下起雨来了。",
+      "answerPy": "Gāngcái hái shì qíngtiān, xiànzài xià qǐ yǔ lai le.",
+      "explanation": "晴 (ôn HSK2 Bài 12); 刚才 của bài này."
+     }
+    ]
+   },
+   {
+    "title": "Phó từ chỉ phạm vi 「就」 — chỉ (số lượng ít / ngoại lệ)",
+    "errors": [
+     {
+      "wrong": "我昨天睡了就五个小时。",
+      "why": "tiếng Việt nói “ngủ chỉ năm tiếng”, nhưng tiếng Trung đặt 就 TRƯỚC động từ: 就 + 睡了 + 五个小时.",
+      "right": "我昨天就睡了五个小时。"
+     },
+     {
+      "wrong": "今年就下雪一次。",
+      "why": "động lượng 一次 đứng ngay sau động từ (下了一次), tân ngữ 雪 đặt sau cùng; việc đã xảy ra cần 了.",
+      "right": "今年就下了一次雪。"
+     },
+     {
+      "wrong": "我们班同学都会打篮球，只就我不会。",
+      "why": "dịch chữ “chỉ” thành 只 rồi thêm 就 — chồng hai từ; chỉ dùng 就 + chủ ngữ để nói ngoại lệ.",
+      "right": "我们班同学都会打篮球，就我不会。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Hôm qua mình ngủ không ngon, chỉ ngủ có năm tiếng.”",
+      "pre": "我昨天没睡好，",
+      "blank": "就睡了五个小时",
+      "post": "。",
+      "options": [
+       "就睡了五个小时",
+       "睡了就五个小时",
+       "睡了五个小时就"
+      ],
+      "answer": 0,
+      "explanation": "就 + V + 了 + số lượng: chỉ… (cho là ít); 小时 (ôn HSK1 Bài 15)."
+     },
+     {
+      "context": "Sách: “Lần thi này mọi người đều làm tốt, chỉ có cậu ấy làm chưa tốt.”",
+      "pre": "这次考试大家都考得很好，",
+      "blank": "就他没考好",
+      "post": "。",
+      "options": [
+       "就他没考好",
+       "他没考好就",
+       "都他没考好"
+      ],
+      "answer": 0,
+      "explanation": "就 + chủ ngữ (他): ngoại lệ “chỉ riêng cậu ấy”; 考得很好 (ôn HSK2 Bài 7)."
+     },
+     {
+      "context": "Sách: “Bạn trong lớp mình hầu như ai cũng biết chơi bóng rổ, chỉ có mình là không biết.”",
+      "pre": "我们班同学几乎都会打篮球，",
+      "blank": "就我不会",
+      "post": "。",
+      "options": [
+       "就我不会",
+       "我不会就",
+       "只就我不会"
+      ],
+      "answer": 0,
+      "explanation": "几乎 (ôn HSK3 Bài 9); 就 + 我: ngoại lệ."
+     },
+     {
+      "context": "“Hôm qua cậu ấy chỉ đọc sách có mười phút.”",
+      "pre": "他昨天",
+      "blank": "就看了十分钟",
+      "post": "书。",
+      "options": [
+       "就看了十分钟",
+       "看了就十分钟",
+       "看了十分钟就"
+      ],
+      "answer": 0,
+      "explanation": "就 đứng trước động từ mang số lượng; 分钟 (ôn HSK1 Bài 7)."
+     },
+     {
+      "context": "“Ngày nào em cũng để ô trong cặp, chỉ riêng hôm nay không mang.”",
+      "pre": "我每天书包里都放着雨伞，",
+      "blank": "就今天",
+      "post": "没带。",
+      "options": [
+       "就今天",
+       "今天都",
+       "才今天"
+      ],
+      "answer": 0,
+      "explanation": "……都……，就 + N + ……: ngoại lệ; 书包 (ôn HSK2 Bài 4), 带 (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "“Món các bạn gọi đều khá ngon, chỉ có món mình gọi là không ngon lắm.”",
+      "pre": "你们点的菜都挺好吃的，",
+      "blank": "就",
+      "post": "我点的这个菜不太好吃。",
+      "options": [
+       "就",
+       "才",
+       "都"
+      ],
+      "answer": 0,
+      "explanation": "挺……的 (ôn HSK3 Bài 3); 就 + chủ ngữ: ngoại lệ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我昨天睡了就五个小时。",
+      "isCorrect": false,
+      "correctVersion": "我昨天就睡了五个小时。",
+      "explanation": "就 phải đứng TRƯỚC động từ, không đứng trước cụm số lượng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "北京常常下雪，但听说今年就下了一次。",
+      "isCorrect": true,
+      "explanation": "Đúng: 就 + V + 了 + 一次 — chỉ một lần (cho là ít); 听说 (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm qua cậu ấy chỉ đọc sách có mười phút.”",
+      "words": [
+       "他",
+       "昨天",
+       "就",
+       "看了",
+       "十分钟",
+       "书",
+       "。"
+      ],
+      "answer": "他昨天就看了十分钟书。",
+      "explanation": "就 + V + 了 + thời lượng + tân ngữ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bắc Kinh thường có tuyết, nhưng nghe nói năm nay chỉ rơi có một lần.”",
+      "words": [
+       "北京",
+       "常常",
+       "下雪",
+       "，",
+       "但",
+       "听说",
+       "今年",
+       "就",
+       "下了",
+       "一次",
+       "。"
+      ],
+      "answer": "北京常常下雪，但听说今年就下了一次。",
+      "explanation": "常常 của bài này; 听说 (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mọi người đều đến rồi, chỉ có Tiểu Vương vẫn chưa đến.”",
+      "words": [
+       "大家",
+       "都",
+       "来了",
+       "，",
+       "就",
+       "小王",
+       "还",
+       "没来",
+       "。"
+      ],
+      "answer": "大家都来了，就小王还没来。",
+      "explanation": "就 + chủ ngữ: ngoại lệ; 还没 + V = vẫn chưa."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi chỉ có một trăm tệ.”",
+      "words": [
+       "我",
+       "就",
+       "有",
+       "一百",
+       "块",
+       "钱",
+       "。"
+      ],
+      "answer": "我就有一百块钱。",
+      "explanation": "就 + 有 + số lượng: chỉ có; 块 (ôn HSK1 Bài 10)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 就 (chỉ).",
+      "promptLang": "vi",
+      "prompt": "Các bạn lớp tôi đều thích mùa đông, chỉ có tôi là không thích.",
+      "answer": "我们班同学都喜欢冬天，就我不喜欢。",
+      "answerPy": "Wǒmen bān tóngxué dōu xǐhuan dōngtiān, jiù wǒ bù xǐhuan.",
+      "explanation": "班 (ôn HSK2 Bài 13); 就 + 我: ngoại lệ."
+     }
+    ]
+   },
+   {
+    "title": "Bổ ngữ xu hướng mở rộng (3) 「下来」 — hoàn thành việc tốn thời gian, công sức",
+    "errors": [
+     {
+      "wrong": "这一年多住下去，我还是更喜欢北京的四季。",
+      "why": "nhìn lại một quá trình ĐÃ xong (từ trước đến nay) dùng 下来; 下去 (HSK3 Bài 8) hướng về tương lai — tiếp tục.",
+      "right": "这一年多住下来，我还是更喜欢北京的四季。"
+     },
+     {
+      "wrong": "5000米的比赛，没想到我跑起来了。",
+      "why": "起来 = bắt đầu; muốn nói “chạy được đến đích” (hoàn thành việc khó) phải dùng 下来.",
+      "right": "5000米的比赛，没想到我跑下来了。"
+     },
+     {
+      "wrong": "这半年下来练，他的水平提高了不少。",
+      "why": "下来 là bổ ngữ, phải đứng SAU động từ: 练下来.",
+      "right": "这半年练下来，他的水平提高了不少。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Cảm ơn bạn đã luôn giúp mình, mình mới học trọn được khoá học năm nay.”",
+      "pre": "谢谢你一直帮助我，才让我",
+      "blank": "把这一年的课学下来",
+      "post": "。",
+      "options": [
+       "把这一年的课学下来",
+       "把这一年的课学起来",
+       "把这一年的课下来学"
+      ],
+      "answer": 0,
+      "explanation": "下来: hoàn thành việc tốn thời gian, công sức; 帮助 (ôn HSK3 Bài 1), 才 (ôn HSK3 Bài 3)."
+     },
+     {
+      "context": "Sách: “Tuy ngoại ngữ rất khó học, nhưng mình vẫn luôn kiên trì học được đến giờ.”",
+      "pre": "虽然外语很难学，可是我",
+      "blank": "一直学下来了",
+      "post": "。",
+      "options": [
+       "一直学下来了",
+       "一直学起来了",
+       "一直下来学了"
+      ],
+      "answer": 0,
+      "explanation": "虽然……可是…… (≈ 但是, ôn HSK2 Bài 8); 外语 (ôn HSK3 Bài 10)."
+     },
+     {
+      "context": "Sách: “Cuốn sách này với tôi rất khó, tôi mất một tháng cuối cùng cũng đọc hết được.”",
+      "pre": "这本书对我来说很难，我用了一个月终于",
+      "blank": "看下来了",
+      "post": "。",
+      "options": [
+       "看下来了",
+       "看起来了",
+       "下来看了"
+      ],
+      "answer": 0,
+      "explanation": "对……来说 (ôn HSK3 Bài 11); 终于 (ôn HSK3 Bài 5)."
+     },
+     {
+      "context": "“Sống ở đây hơn một năm, tôi vẫn thích bốn mùa ở Bắc Kinh hơn.”",
+      "pre": "这一年多",
+      "blank": "住下来",
+      "post": "，我还是更喜欢北京的四季。",
+      "options": [
+       "住下来",
+       "住起来",
+       "下来住"
+      ],
+      "answer": 0,
+      "explanation": "Câu của Bài khoá 4; 更 (ôn HSK2 Bài 4)."
+     },
+     {
+      "context": "“Luyện suốt nửa năm nay, trình độ vẽ của cậu ấy tiến bộ không ít.”",
+      "pre": "这半年",
+      "blank": "练下来",
+      "post": "，他画画的水平提高了不少。",
+      "options": [
+       "练下来",
+       "练起来",
+       "下来练"
+      ],
+      "answer": 0,
+      "explanation": "练 (ôn HSK3 Bài 9); 水平 (ôn HSK3 Bài 5); 提高 (ôn HSK3 Bài 10)."
+     },
+     {
+      "context": "“Cuộc thi chạy 5000 mét, không ngờ tôi lại chạy được đến đích.”",
+      "pre": "5000米的长跑比赛，没想到我",
+      "blank": "跑下来了",
+      "post": "。",
+      "options": [
+       "跑下来了",
+       "跑起来了",
+       "下来跑了"
+      ],
+      "answer": 0,
+      "explanation": "比赛 (ôn HSK3 Bài 9); 米 (ôn HSK3 Bài 1). 长跑 = chạy cự ly dài."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "一年多住起来，我已经习惯这里了。",
+      "isCorrect": false,
+      "correctVersion": "一年多住下来，我已经习惯这里了。",
+      "explanation": "Hoàn thành một quá trình tốn thời gian → dùng 下来, không dùng 起来."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这本书很难，可是我终于看下来了。",
+      "isCorrect": true,
+      "explanation": "Đúng: 看下来 = đọc trọn được (tốn công sức); 终于 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Sống ở đây hơn một năm, tôi vẫn thích bốn mùa ở Bắc Kinh hơn.”",
+      "words": [
+       "这",
+       "一年多",
+       "住",
+       "下来",
+       "，",
+       "我",
+       "还是",
+       "更",
+       "喜欢",
+       "北京的",
+       "四季",
+       "。"
+      ],
+      "answer": "这一年多住下来，我还是更喜欢北京的四季。",
+      "explanation": "Khoảng thời gian + V + 下来，kết quả."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Luyện suốt nửa năm nay, trình độ vẽ của cậu ấy tiến bộ không ít.”",
+      "words": [
+       "这",
+       "半年",
+       "练",
+       "下来",
+       "，",
+       "他",
+       "画画的",
+       "水平",
+       "提高了",
+       "不少",
+       "。"
+      ],
+      "answer": "这半年练下来，他画画的水平提高了不少。",
+      "explanation": "半 (ôn HSK1 Bài 7); 画 (ôn HSK2 Bài 6)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cuộc thi chạy 5000 mét, không ngờ tôi lại chạy được đến đích.”",
+      "words": [
+       "5000米的",
+       "长跑",
+       "比赛",
+       "，",
+       "没想到",
+       "我",
+       "跑",
+       "下来",
+       "了",
+       "。"
+      ],
+      "answer": "5000米的长跑比赛，没想到我跑下来了。",
+      "explanation": "跑 (ôn HSK2 Bài 7) + 下来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Học suốt một tháng, tiếng Trung của tôi tiến bộ rất nhiều.”",
+      "words": [
+       "一个月",
+       "学",
+       "下来",
+       "，",
+       "我的",
+       "中文",
+       "提高了",
+       "很多",
+       "。"
+      ],
+      "answer": "一个月学下来，我的中文提高了很多。",
+      "explanation": "提高 (ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng V + 下来.",
+      "promptLang": "vi",
+      "prompt": "Học suốt một năm, tiếng Trung của cô ấy đã nói rất tốt rồi.",
+      "answer": "一年学下来，她的中文说得很好了。",
+      "answerPy": "Yì nián xué xiàlai, tā de Zhōngwén shuō de hěn hǎo le.",
+      "explanation": "V + 得 + Adj (ôn HSK2 Bài 7)."
+     }
+    ]
+   }
+  ]
+ }
+}

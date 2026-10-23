@@ -1937,3 +1937,83 @@ body.lop-playing .lop-abc-opt:nth-child(3):last-child { grid-column: 1 / -1; }
 }
 /* Nut phu trong the sang (sanh cho, trao giai) khi dang o san khau toi */
 body.lop-playing .lop-fx-card .lop-act.ghost { background: var(--color-gray-100); color: var(--color-gray-800); border: 1px solid var(--color-gray-300); }
+
+/* ================= Tro dau to: keo co, hop bi mat, dua tau ================= */
+/* Khung cau hoi gon (nho hon "Gio the") de con cho cho hinh tro choi */
+.lop-mc { width: 100%; display: flex; flex-direction: column; gap: clamp(8px, 1.4vh, 14px); }
+.lop-mc .lop-abc-sentence { font-size: clamp(1.5rem, 3.2vw, 2.6rem); padding: clamp(10px, 1.8vh, 20px) clamp(14px, 2vw, 26px); }
+.lop-mc .lop-abc-text { font-size: clamp(1.15rem, 2.1vw, 1.7rem); }
+.lop-mc .lop-abc-opt { padding: clamp(10px, 1.6vh, 18px) clamp(14px, 1.6vw, 20px); }
+.lop-act.lop-team-act { background: var(--tc); color: #fff; box-shadow: 0 6px 0 color-mix(in srgb, var(--tc) 60%, #000); border: none; }
+.lop-act.lop-team-act:disabled { opacity: .4; }
+
+/* Keo co */
+.lop-tug { width: 100%; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: clamp(10px, 1.6vw, 22px); }
+.lop-tug-side { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.lop-tug-m {
+  width: clamp(64px, 8vw, 104px); height: clamp(64px, 8vw, 104px); border-radius: 50%; display: grid; place-items: center;
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem); background: #fff; border: 5px solid var(--tc); box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+.lop-tug-side.keo .lop-tug-m { animation: lopKeoL .5s ease; }
+.lop-tug-side.R.keo .lop-tug-m { animation-name: lopKeoR; }
+@keyframes lopKeoL { 40% { transform: translateX(-14px) rotate(-10deg); } }
+@keyframes lopKeoR { 40% { transform: translateX(14px) rotate(10deg); } }
+.lop-tug-sel { font: inherit; font-weight: 700; border-radius: 10px; padding: 4px 8px; border: 2px solid var(--tc); color: var(--color-gray-900); background: #fff; max-width: 170px; }
+.lop-tug-track { position: relative; height: clamp(70px, 10vh, 100px); }
+.lop-tug-nac i { position: absolute; top: 18%; bottom: 18%; width: 2px; background: rgba(255,255,255,.18); transform: translateX(-1px); }
+.lop-tug-nac i:first-child, .lop-tug-nac i:last-child { width: 6px; background: #ffcf5c; transform: translateX(-3px); border-radius: 3px; }
+.lop-tug-nac i:nth-child(6) { width: 4px; background: rgba(255,255,255,.6); transform: translateX(-2px); }
+.lop-tug-rope { position: absolute; left: 0; right: 0; top: 50%; height: 12px; transform: translateY(-50%); border-radius: 6px;
+  background: repeating-linear-gradient(120deg, #c89b5a 0 10px, #a0763c 10px 20px); box-shadow: 0 4px 10px rgba(0,0,0,.3); }
+.lop-tug-knot { position: absolute; top: 50%; transform: translate(-50%, -50%); font-size: clamp(2.2rem, 4vw, 3.2rem); transition: left .6s cubic-bezier(.3, 1.4, .5, 1); filter: drop-shadow(0 4px 6px rgba(0,0,0,.35)); }
+.lop-tug-win {
+  font-size: clamp(1.6rem, 3.6vw, 2.8rem); font-weight: 900; text-align: center; padding: 18px 28px; border-radius: 22px;
+  background: #fff; color: var(--color-gray-900); box-shadow: 0 0 0 5px var(--tc, #ffcf5c), 0 20px 50px rgba(0,0,0,.35); animation: lopRise .5s ease both;
+}
+.lop-tug-win b { color: var(--tc, #b8322a); }
+
+/* Hop bi mat */
+.lop-mine-turn { align-self: center; background: #fff; color: var(--color-gray-900); border-radius: 999px; padding: 8px 22px; font-size: clamp(1.1rem, 2vw, 1.5rem); box-shadow: 0 0 0 4px var(--tc); }
+.lop-mine-turn b { color: var(--tc); }
+.lop-mine { width: 100%; display: grid; grid-template-columns: minmax(260px, 0.8fr) 1.2fr; gap: clamp(14px, 2vw, 28px); align-items: start; }
+.lop-mine-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(6px, 1vw, 12px); }
+.lop-mine-cell {
+  aspect-ratio: 1; border-radius: 14px; display: grid; place-items: center; font: inherit; font-weight: 900; font-size: clamp(1.2rem, 2.4vw, 2rem);
+  border: none; color: #fff; background: linear-gradient(160deg, #7c4dff, #4527a0); box-shadow: 0 6px 0 #2a1663;
+}
+.lop-mine-cell:disabled { cursor: default; }
+.lop-mine-grid.is-pick .lop-mine-cell:not(.open) { cursor: pointer; animation: lopHop 1.2s ease-in-out infinite; background: linear-gradient(160deg, #ffb703, #fb8500); box-shadow: 0 6px 0 #a35400; }
+.lop-mine-grid.is-pick .lop-mine-cell:not(.open):hover { transform: translateY(-4px) scale(1.04); animation: none; }
+@keyframes lopHop { 50% { transform: translateY(-3px); } }
+.lop-mine-cell.open { background: rgba(255,255,255,.92); color: #2e9e6e; box-shadow: none; font-size: clamp(.95rem, 1.7vw, 1.4rem); text-align: center; line-height: 1.15; padding: 4px; }
+.lop-mine-cell.open.to { color: #1f7a45; background: #e7f9ee; }
+.lop-mine-cell.open.qua { color: #b45309; background: #fff4d6; }
+.lop-mine-cell.open.bom { color: #fff; background: #ef4444; }
+.lop-mine-cell.open.sao { color: #6d28d9; background: #efe7ff; }
+.lop-mine-cell.moi { animation: lopLatHop .55s ease; }
+@keyframes lopLatHop { 0% { transform: rotateY(90deg) scale(.8); } 100% { transform: none; } }
+
+/* Dua tau */
+.lop-train { width: 100%; display: flex; flex-direction: column; gap: clamp(6px, 1vh, 12px); }
+.lop-train-row { display: grid; grid-template-columns: minmax(110px, 180px) 1fr auto; align-items: center; gap: 12px; }
+.lop-train-name { font-weight: 800; color: #fff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: var(--tc); border-radius: 999px; padding: 4px 12px; font-size: clamp(.9rem, 1.5vw, 1.15rem); }
+/* --p: 0..1 tien do; dau tau cham co khi --p = 1 (4.4em = chieu dai doan tau) */
+.lop-train-track { position: relative; height: clamp(40px, 6vh, 58px); font-size: clamp(1.6rem, 3vw, 2.4rem); }
+.lop-train-rail { position: absolute; left: 0; right: 0; bottom: 8px; height: 6px; border-radius: 3px;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,.55) 0 4px, transparent 4px 16px), rgba(255,255,255,.15); }
+.lop-train-ga i { position: absolute; left: calc((100% - 4.4em) * var(--p) + 4.4em); bottom: 4px; width: 10px; height: 14px; border-radius: 3px; background: rgba(255,255,255,.3); transform: translateX(-50%); }
+.lop-train-flag { position: absolute; right: -0.2em; bottom: 0.9em; font-size: .7em; }
+.lop-train-car { position: absolute; bottom: 10px; left: calc((100% - 4.4em) * var(--p, 0)); width: 4.4em; transition: left .8s cubic-bezier(.3, 1.2, .5, 1); line-height: 1; white-space: nowrap; text-align: right; }
+.lop-train-car span { display: inline-block; transform: scaleX(-1); filter: drop-shadow(0 3px 0 var(--tc)); }
+.lop-train-ok { font: inherit; font-weight: 800; border: none; border-radius: 12px; padding: 8px 14px; cursor: pointer; color: #fff; background: var(--tc); box-shadow: 0 4px 0 rgba(0,0,0,.3); }
+.lop-train-ok:disabled { opacity: .35; cursor: default; }
+
+@media (max-width: 800px) {
+  .lop-mine { grid-template-columns: 1fr; }
+  .lop-tug { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lop-tug-knot, .lop-train-car { transition: none; }
+  .lop-mine-cell, .lop-tug-side.keo .lop-tug-m { animation: none !important; }
+}
+.lop-mine > *, .lop-tug > *, .lop-train-row > * { min-width: 0; }

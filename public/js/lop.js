@@ -182,6 +182,11 @@
     $('.lop-game-card[data-game="errfix"]').disabled = n < 3;
     $('#lopCountAbc').textContent = m ? m + ' câu' : 'chọn bài';
     $('.lop-game-card[data-game="abc"]').disabled = m < 1;
+    // Keo co / hop bi mat / dua tau dung chung bo cau A/B/C
+    $all('.lop-count-mc').forEach(function (el) {
+      el.textContent = m ? m + ' câu' : 'chọn bài';
+      el.closest('.lop-game-card').disabled = m < 4;
+    });
     var s = pickedSorts().length;
     $('#lopCountSort').textContent = s ? s + ' câu' : 'chọn bài';
     $('.lop-game-card[data-game="sort"]').disabled = s < 1;
@@ -807,6 +812,265 @@
     try { sndFanfare(); } catch (e) { /* */ }
     if (top.length) startConfetti();
     $('#lopFxClose').addEventListener('click', closeFx);
+  }
+
+  /* ---------------- tro dau to dung cau trac nghiem: keo co, hop bi mat, dua tau ---------------- */
+  // Ca ba dung chung bo cau A/B/C cua cac bai da chon (state.deck/state.pos),
+  // khung cau hoi giong "Gio the" nhung gon hon de con cho cho hinh tro choi.
+  var MC_GAMES = { tug: 1, mine: 1, train: 1 };
+
+  function mcDeal() {
+    state.deck = shuffle(pickedMcs());
+    state.pos = 0;
+    state.mcShown = false;
+  }
+  function mcCur() {
+    if (!state.deck[state.pos]) mcDeal();
+    return state.deck[state.pos];
+  }
+  function mcNext() {
+    state.pos++;
+    if (state.pos >= state.deck.length) mcDeal();
+    state.mcShown = false;
+  }
+  function mcHtml(q) {
+    if (!q) return '';
+    if (!q._order) {
+      q._order = shuffle(q.options.map(function (_, i) { return i; }));
+      q._ans = q._order.indexOf(q.answer);
+    }
+    var lo = state.mcShown;
+    return '<div class="lop-mc" id="lopMcBox">' +
+      (q.context ? '<div class="lop-abc-context">🗣️ ' + esc(q.context) + '</div>' : '') +
+      '<div class="lop-abc-sentence' + (q.noBlank ? ' is-q' : '') + '">' + esc(q.pre) + (q.noBlank ? '' : '<span class="lop-blank">＿＿</span>') + esc(q.post) + '</div>' +
+      '<div class="lop-abc-opts">' + q._order.map(function (oi, i) {
+        return '<div class="lop-abc-opt' + (lo ? (i === q._ans ? ' is-right' : ' is-dim') : '') + '">' +
+          '<span class="lop-abc-key" data-k="' + ABC[i] + '">' + ABC[i] + '</span>' +
+          '<span class="lop-abc-text">' + esc(q.options[oi]) + '</span>' +
+        '</div>';
+      }).join('') + '</div>' +
+      '<div id="lopMcWhy" class="lop-abc-why"' + (lo && q.why ? '>💡 ' + esc(q.why) : ' hidden>') + '</div>' +
+    '</div>';
+  }
+  function mcReveal() {
+    var q = state.deck[state.pos];
+    if (!q || state.mcShown) return;
+    state.mcShown = true;
+    $all('#lopMcBox .lop-abc-opt').forEach(function (el, i) {
+      el.classList.add(i === q._ans ? 'is-right' : 'is-dim');
+    });
+    if (q.why && $('#lopMcWhy')) { $('#lopMcWhy').hidden = false; $('#lopMcWhy').textContent = '💡 ' + q.why; }
+  }
+  function teamOpts(sel) {
+    var s = '';
+    for (var i = 0; i < state.teams; i++) s += '<option value="' + i + '"' + (i === sel ? ' selected' : '') + '>' + teamMascot(i) + ' ' + esc(teamName(i)) + '</option>';
+    return s;
+  }
+
+  /* ---- Keo co: hai to, to nao tra loi dung truoc keo nut day ve phia minh 1 nac ---- */
+  function dealTug() {
+    mcDeal();
+    state.tug = { L: 0, R: Math.min(1, state.teams - 1), pos: 0, max: 5, xong: -1, da: false };
+  }
+  function tugPct() { var t = state.tug; return 50 + t.pos * (42 / t.max); }
+  function renderTug() {
+    var t = state.tug, q = mcCur();
+    var ben = function (s) {
+      var i = t[s];
+      return '<div class="lop-tug-side ' + s + '" style="--tc:' + teamColor(i) + '">' +
+        '<span class="lop-tug-m">' + teamMascot(i) + '</span>' +
+        '<select class="lop-tug-sel" data-side="' + s + '" aria-label="Chọn tổ bên ' + (s === 'L' ? 'trái' : 'phải') + '">' + teamOpts(i) + '</select></div>';
+    };
+    var nac = '';
+    for (var k = -t.max; k <= t.max; k++) nac += '<i style="left:' + (50 + k * (42 / t.max)) + '%"></i>';
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head"><span>Kéo co · tổ nào trả lời đúng trước kéo dây về phía mình — kéo ' + t.max + ' nấc là thắng</span></div>' +
+      '<div class="lop-tug">' + ben('L') +
+        '<div class="lop-tug-track"><div class="lop-tug-nac">' + nac + '</div><div class="lop-tug-rope"></div>' +
+          '<div class="lop-tug-knot" id="lopTugKnot" style="left:' + tugPct() + '%">🎀</div></div>' +
+        ben('R') + '</div>' +
+      (t.xong >= 0
+        ? '<div class="lop-tug-win" style="--tc:' + teamColor(t.xong) + '">' + teamMascot(t.xong) + ' <b>' + esc(teamName(t.xong)) + '</b> thắng kéo co!</div>' +
+          '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopTugNew">Ván mới ▶</button></div>'
+        : mcHtml(q) +
+          '<div class="lop-stage-actions">' +
+            '<button type="button" class="lop-act lop-team-act" data-side="L" style="--tc:' + teamColor(t.L) + '">◀ ' + esc(teamName(t.L)) + ' đúng</button>' +
+            '<button type="button" class="lop-act ghost" id="lopMcReveal">Lật đáp án</button>' +
+            '<button type="button" class="lop-act ghost" id="lopMcNext">Câu tiếp →</button>' +
+            '<button type="button" class="lop-act lop-team-act" data-side="R" style="--tc:' + teamColor(t.R) + '">' + esc(teamName(t.R)) + ' đúng ▶</button>' +
+          '</div>');
+    $all('#lopStage .lop-tug-sel').forEach(function (s) {
+      s.addEventListener('change', function () {
+        var side = s.getAttribute('data-side'), v = parseInt(s.value, 10);
+        var khac = side === 'L' ? 'R' : 'L';
+        if (t[khac] === v) t[khac] = t[side]; // chon trung thi doi cho hai ben
+        t[side] = v;
+        renderTug();
+      });
+    });
+    $all('#lopStage .lop-team-act').forEach(function (b) {
+      b.addEventListener('click', function () { tugWin(b.getAttribute('data-side')); });
+    });
+    if ($('#lopTugNew')) $('#lopTugNew').addEventListener('click', function () { dealTug(); renderTug(); resetTimer(); });
+    if ($('#lopMcReveal')) $('#lopMcReveal').addEventListener('click', mcReveal);
+    if ($('#lopMcNext')) $('#lopMcNext').addEventListener('click', tugNext);
+  }
+  function tugWin(side) {
+    var t = state.tug;
+    if (t.xong >= 0 || t.da) return;
+    t.da = true;
+    t.pos += side === 'L' ? -1 : 1;
+    var team = t[side];
+    mcReveal();
+    stopTimer();
+    addScore(team, 1);
+    $('#lopTugKnot').style.left = tugPct() + '%';
+    $all('#lopStage .lop-team-act').forEach(function (b) { b.disabled = true; });
+    var tr = $('.lop-tug-side.' + side);
+    if (tr) { tr.classList.remove('keo'); void tr.offsetWidth; tr.classList.add('keo'); }
+    if (Math.abs(t.pos) >= t.max) {
+      t.xong = team;
+      stopTimer();
+      setTimeout(function () {
+        addScore(team, 3);
+        flashBanner('🏆 ' + teamMascot(team) + ' ' + teamName(team) + ' thắng kéo co! +3', 'fire');
+        try { sndFanfare(); } catch (e) { /* */ }
+        renderTug();
+      }, 700);
+    }
+  }
+  function tugNext() {
+    if (state.tug.xong >= 0) return;
+    state.tug.da = false;
+    mcNext(); renderTug(); resetTimer();
+  }
+
+  /* ---- Hop bi mat: tra loi dung thi duoc mo mot hop — co diem, co qua, co bom ---- */
+  var HOP_MAU = [
+    { t: '+1', d: 1, n: 5 }, { t: '+2', d: 2, n: 4 }, { t: '+3', d: 3, n: 2 },
+    { t: '🎁 +5', d: 5, n: 1, c: 'qua' }, { t: '💣 −2', d: -2, n: 3, c: 'bom' }, { t: '⭐ Thêm lượt', d: 0, n: 1, c: 'sao', them: 1 }
+  ];
+  function dealMine() {
+    mcDeal();
+    var hop = [];
+    HOP_MAU.forEach(function (h) { for (var k = 0; k < h.n; k++) hop.push(h); });
+    state.mine = { hop: shuffle(hop), mo: {}, turn: 0, buoc: 'hoi', moi: -1 };
+  }
+  function renderMine() {
+    var m = state.mine, q = mcCur(), ti = m.turn;
+    var conHop = m.hop.length - Object.keys(m.mo).length;
+    var nut = '';
+    if (!conHop) nut = '<button type="button" class="lop-act" id="lopMineNew">Bảng hộp mới ▶</button>';
+    else if (m.buoc === 'hoi') nut =
+      '<button type="button" class="lop-act lop-team-act" id="lopMineOk" style="--tc:' + teamColor(ti) + '">✓ Đúng — chọn hộp</button>' +
+      '<button type="button" class="lop-act ghost" id="lopMcReveal">Lật đáp án</button>' +
+      '<button type="button" class="lop-act ghost" id="lopMineNo">✗ Sai — lượt tổ sau</button>';
+    else if (m.buoc === 'sai') nut = '<button type="button" class="lop-act" id="lopMineTiep">Lượt tổ sau →</button>';
+    $('#lopStage').innerHTML =
+      '<div class="lop-mine-turn" style="--tc:' + teamColor(ti) + '">' + teamMascot(ti) + ' Lượt của <b>' + esc(teamName(ti)) + '</b>' +
+        (m.buoc === 'chon' ? ' — chọn một hộp!' : m.buoc === 'sai' ? ' — chưa đúng rồi' : '') + '</div>' +
+      '<div class="lop-mine">' +
+        '<div class="lop-mine-grid' + (m.buoc === 'chon' ? ' is-pick' : '') + '">' + m.hop.map(function (h, i) {
+          if (m.mo[i]) return '<div class="lop-mine-cell open ' + (h.c || (h.d >= 3 ? 'to' : '')) + (m.moi === i ? ' moi' : '') + '">' + h.t + '</div>';
+          return '<button type="button" class="lop-mine-cell" data-hop="' + i + '"' + (m.buoc === 'chon' ? '' : ' disabled') + '>' + (i + 1) + '</button>';
+        }).join('') + '</div>' +
+        (conHop ? mcHtml(q) : '<div class="lop-tug-win">Đã mở hết hộp!</div>') +
+      '</div>' +
+      '<div class="lop-stage-actions">' + nut + '</div>';
+    m.moi = -1;
+    $all('#lopStage [data-hop]').forEach(function (b) {
+      b.addEventListener('click', function () { moHop(parseInt(b.getAttribute('data-hop'), 10)); });
+    });
+    if ($('#lopMineOk')) $('#lopMineOk').addEventListener('click', function () { mcReveal(); m.buoc = 'chon'; try { sndUp(); } catch (e) { /* */ } renderMine(); });
+    if ($('#lopMineNo')) $('#lopMineNo').addEventListener('click', function () { mcReveal(); m.buoc = 'sai'; try { sndDown(); } catch (e) { /* */ } renderMine(); });
+    if ($('#lopMineTiep')) $('#lopMineTiep').addEventListener('click', mineTiep);
+    if ($('#lopMineNew')) $('#lopMineNew').addEventListener('click', function () { dealMine(); renderMine(); resetTimer(); });
+    if ($('#lopMcReveal')) $('#lopMcReveal').addEventListener('click', mcReveal);
+  }
+  function moHop(i) {
+    var m = state.mine;
+    if (m.buoc !== 'chon' || m.mo[i]) return;
+    var h = m.hop[i], ti = m.turn;
+    m.mo[i] = 1; m.moi = i;
+    if (h.d) addScore(ti, h.d);
+    if (h.c === 'bom') flashBanner('💣 Bùm! ' + teamName(ti) + ' −2', 'x2');
+    else if (h.c === 'qua') flashBanner('🎁 ' + teamName(ti) + ' trúng quà +5!', 'fire');
+    else if (h.them) flashBanner('⭐ ' + teamName(ti) + ' được thêm một lượt!', 'fire');
+    m.buoc = 'mo';
+    renderMine();
+    stopTimer();
+    // de ca lop nhin thay hop vua mo roi moi sang cau sau
+    setTimeout(function () { if (state.game === 'mine' && state.mine === m) { if (!h.them) m.turn = (m.turn + 1) % state.teams; m.buoc = 'hoi'; mcNext(); renderMine(); resetTimer(); } }, 1600);
+  }
+  function mineTiep() {
+    var m = state.mine;
+    m.turn = (m.turn + 1) % state.teams;
+    m.buoc = 'hoi';
+    mcNext(); renderMine(); resetTimer();
+  }
+
+  /* ---- Dua tau: moi to mot doan tau, tra loi dung chay them mot ga ---- */
+  function dealTrain() {
+    mcDeal();
+    var p = [];
+    for (var i = 0; i < state.teams; i++) p.push(0);
+    state.train = { p: p, dich: 7, xong: -1, ghi: {} };
+  }
+  function trainP(p) { return (p / state.train.dich).toFixed(4); }
+  function renderTrain() {
+    var tr = state.train, q = mcCur();
+    var ga = '';
+    for (var k = 1; k < tr.dich; k++) ga += '<i style="--p:' + trainP(k) + '"></i>';
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head"><span>Đua tàu · tổ nào trả lời đúng chạy thêm một ga — tới ga ' + tr.dich + ' 🏁 là về đích (+3)</span></div>' +
+      '<div class="lop-train">' + tr.p.map(function (p, i) {
+        return '<div class="lop-train-row" style="--tc:' + teamColor(i) + '">' +
+          '<span class="lop-train-name">' + teamMascot(i) + ' ' + esc(teamName(i)) + '</span>' +
+          '<div class="lop-train-track"><div class="lop-train-rail"></div><div class="lop-train-ga">' + ga + '</div><span class="lop-train-flag">🏁</span>' +
+            '<div class="lop-train-car" id="lopTrain' + i + '" style="--p:' + trainP(p) + '"><span>🚂🚃🚃</span></div></div>' +
+          '<button type="button" class="lop-train-ok" data-t="' + i + '"' + (tr.ghi[i] || tr.xong >= 0 ? ' disabled' : '') + ' title="' + esc(teamName(i)) + ' trả lời đúng (phím ' + (i + 1) + ')">✓ ' + (i + 1) + '</button>' +
+        '</div>';
+      }).join('') + '</div>' +
+      (tr.xong >= 0
+        ? '<div class="lop-tug-win" style="--tc:' + teamColor(tr.xong) + '">' + teamMascot(tr.xong) + ' <b>' + esc(teamName(tr.xong)) + '</b> về đích đầu tiên!</div>' +
+          '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopTrainNew">Đua lại ▶</button></div>'
+        : mcHtml(q) +
+          '<div class="lop-stage-actions">' +
+            '<button type="button" class="lop-act" id="lopMcReveal">Lật đáp án (Space)</button>' +
+            '<button type="button" class="lop-act ghost" id="lopMcNext">Câu tiếp →</button>' +
+          '</div>');
+    $all('#lopStage [data-t]').forEach(function (b) {
+      b.addEventListener('click', function () { trainOk(parseInt(b.getAttribute('data-t'), 10)); });
+    });
+    if ($('#lopMcReveal')) $('#lopMcReveal').addEventListener('click', mcReveal);
+    if ($('#lopMcNext')) $('#lopMcNext').addEventListener('click', trainNext);
+    if ($('#lopTrainNew')) $('#lopTrainNew').addEventListener('click', function () { dealTrain(); renderTrain(); resetTimer(); });
+  }
+  function trainOk(i) {
+    var tr = state.train;
+    if (tr.xong >= 0 || tr.ghi[i] || i >= tr.p.length) return;
+    tr.ghi[i] = 1;
+    tr.p[i]++;
+    addScore(i, 1);
+    var car = $('#lopTrain' + i);
+    if (car) car.style.setProperty('--p', trainP(tr.p[i]));
+    var b = $('#lopStage [data-t="' + i + '"]');
+    if (b) b.disabled = true;
+    if (tr.p[i] >= tr.dich) {
+      tr.xong = i;
+      stopTimer();
+      setTimeout(function () {
+        addScore(i, 3);
+        flashBanner('🏁 ' + teamMascot(i) + ' ' + teamName(i) + ' về đích! +3', 'fire');
+        try { sndFanfare(); } catch (e) { /* */ }
+        renderTrain();
+      }, 900);
+    }
+  }
+  function trainNext() {
+    if (state.train.xong >= 0) return;
+    state.train.ghi = {};
+    mcNext(); renderTrain(); resetTimer();
   }
 
   /* ---------------- tro: xep cau bang nguoi ---------------- */
@@ -2442,12 +2706,13 @@
     bingo: 'Bingo 3×3', guess: 'Nhìn hình đoán chữ', tiles: 'Lật ô đoán chữ', taboo: 'Bạn nói tôi đoán',
     trans: 'Dịch nhanh Việt → Trung', listen: 'Nghe nhanh chỉ chữ', hanzi: 'Đoán chữ qua bộ thủ',
     role: 'Đóng vai bài khoá', hv: 'Âm Hán–Việt đoán chữ', match: 'Nối nghĩa nhanh',
-    chain: 'Nối từ 接龙', write: 'Thi viết bảng nhanh'
+    chain: 'Nối từ 接龙', write: 'Thi viết bảng nhanh',
+    tug: 'Kéo co tri thức', mine: 'Hộp bí mật', train: 'Đua tàu tri thức'
   };
   var GAME_SECS = {
     errfix: 30, abc: 10, sort: 60, bingo: 30, guess: 20, tiles: 30, taboo: 60,
     trans: 60, listen: 15, hanzi: 30, role: 90, hv: 20, match: 45,
-    chain: 20, write: 30
+    chain: 20, write: 30, tug: 15, mine: 20, train: 20
   };
   var VOCAB_GAMES = {
     bingo: 1, guess: 1, tiles: 1, taboo: 1, trans: 1, listen: 1, hanzi: 1,
@@ -2456,7 +2721,7 @@
 
   function startGame(game) {
     if (!VOCAB_GAMES[game]) {
-      var n = game === 'abc' ? pickedMcs().length : game === 'sort' ? pickedSorts().length : pickedJudges().length;
+      var n = game === 'abc' || MC_GAMES[game] ? pickedMcs().length : game === 'sort' ? pickedSorts().length : pickedJudges().length;
       if (!n || (game === 'errfix' && n < 3)) return;
     } else if (!pickedLabel()) return;
 
@@ -2499,6 +2764,9 @@
     }
 
     if (game === 'abc') { dealAbc(); renderAbc(); }
+    else if (game === 'tug') { dealTug(); renderTug(); }
+    else if (game === 'mine') { dealMine(); renderMine(); }
+    else if (game === 'train') { dealTrain(); renderTrain(); }
     else if (game === 'sort') { dealSort(); renderSort(); }
     else { dealRows(); renderErrfix(); }
   }
@@ -2666,12 +2934,12 @@
 
   /* ---- Gameshow 3 vong: tu chon tro hop voi bai da chon ---- */
   var SHOW_ROUNDS = [
-    { ten: 'Vòng 1 · Khởi động', mo: 'Cả lớp cùng chơi, trả lời thật nhanh!', tro: ['abc', 'listen', 'match', 'hv'], mul: 1 },
-    { ten: 'Vòng 2 · Tăng tốc', mo: 'Mỗi tổ cử đại diện — phối hợp để ghi điểm.', tro: ['sort', 'errfix', 'tiles', 'guess', 'hanzi'], mul: 1 },
-    { ten: 'Vòng 3 · Về đích', mo: 'Mọi điểm ở vòng này được NHÂN ĐÔI ×2!', tro: ['write', 'taboo', 'chain'], mul: 2 }
+    { ten: 'Vòng 1 · Khởi động', mo: 'Cả lớp cùng chơi, trả lời thật nhanh!', tro: ['abc', 'listen', 'match', 'hv', 'train'], mul: 1 },
+    { ten: 'Vòng 2 · Tăng tốc', mo: 'Mỗi tổ cử đại diện — phối hợp để ghi điểm.', tro: ['sort', 'errfix', 'tiles', 'guess', 'hanzi', 'mine'], mul: 1 },
+    { ten: 'Vòng 3 · Về đích', mo: 'Mọi điểm ở vòng này được NHÂN ĐÔI ×2!', tro: ['write', 'taboo', 'chain', 'tug'], mul: 2 }
   ];
   function troDuoc(g) {
-    if (g === 'abc') return pickedMcs().length >= 4;
+    if (g === 'abc' || MC_GAMES[g]) return pickedMcs().length >= 4;
     if (g === 'sort') return pickedSorts().length >= 2;
     if (g === 'errfix') return pickedJudges().length >= 5;
     return !!pickedLabel();
@@ -2735,6 +3003,7 @@
   /* ---- sap xep lai man hinh chuan bi: nhom tro choi + nhan thoi luong / cach choi ---- */
   var GAME_GROUPS = [
     { ten: '⚡ Khởi động nhanh — cả lớp cùng chơi', g: ['abc', 'listen', 'match', 'hv'] },
+    { ten: '🏆 Đấu tổ kịch tính', g: ['tug', 'train', 'mine'] },
     { ten: '📚 Ôn từ vựng', g: ['bingo', 'guess', 'tiles', 'hanzi', 'chain'] },
     { ten: '🧩 Câu & ngữ pháp', g: ['errfix', 'sort', 'trans'] },
     { ten: '🎤 Nói – viết', g: ['taboo', 'role', 'write'] }
@@ -2743,7 +3012,8 @@
     abc: ['3–5′', 'cả lớp'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
     bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
     errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],
-    taboo: ['5′', 'nói'], role: ['5–7′', 'đóng vai'], write: ['5′', 'lên bảng']
+    taboo: ['5′', 'nói'], role: ['5–7′', 'đóng vai'], write: ['5′', 'lên bảng'],
+    tug: ['5′', '2 tổ đấu'], train: ['5–7′', 'các tổ đua'], mine: ['5–7′', 'theo lượt']
   };
   function decorateSetup() {
     var grid = $('.lop-games');
@@ -2941,11 +3211,16 @@
         else if (g === 'dictation') { var dp = $('#lopDictPlay'); if (dp) dp.click(); }
         else if (g === 'quiz') { var qn = $('#lopQuizNext'); if (qn) qn.click(); }
         else if (g === 'write') revealWrite();
+        else if (MC_GAMES[g]) mcReveal();
         else revealAll();
         return;
       }
+      // Dua tau: phim 1..6 = to do tra loi dung
+      if (g === 'train' && /^[1-6]$/.test(e.key)) { trainOk(parseInt(e.key, 10) - 1); return; }
       if (e.code === 'ArrowRight' || e.code === 'Enter') {
         if (g === 'abc') { e.preventDefault(); nextAbc(); }
+        else if (g === 'tug') { e.preventDefault(); tugNext(); }
+        else if (g === 'train') { e.preventDefault(); trainNext(); }
         else if (g === 'sort') { e.preventDefault(); nextSort(); }
         else if (g === 'guess') { e.preventDefault(); nextGuess(); }
         else if (g === 'bingo') { e.preventDefault(); callBingo(); }

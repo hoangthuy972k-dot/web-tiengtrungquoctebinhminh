@@ -104,3 +104,46 @@ body {
 .ch-why { max-width: 420px; font-size: .95rem; }
 .ch-why:empty { display: none; }
 .ch-nut-tiep { min-width: 220px; }
+
+/* ---- Vi tri tren nui (thi dua tren dien thoai) ---- */
+.ch-vt { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
+.ch-vt:empty { display: none; }
+.ch-vt-dau {
+  align-self: center; font-size: 1.35rem; font-weight: 900; color: #3b2300; padding: 8px 18px; border-radius: 999px;
+  background: linear-gradient(180deg, #ffe08a, #f4a52a); box-shadow: 0 0 0 4px rgba(255, 207, 92, .3), 0 8px 22px rgba(0,0,0,.3);
+  animation: chPop .35s ease, chLac 1.2s ease .35s;
+}
+@keyframes chLac { 20%, 60% { transform: rotate(-3deg); } 40%, 80% { transform: rotate(3deg); } }
+.ch-vt-hang { font-size: 1.15rem; font-weight: 700; }
+.ch-vt-hang b { font-size: 1.8rem; color: var(--gold); }
+.ch-vt-hang small { color: var(--mo); font-weight: 600; }
+.ch-len { color: #4ade80; font-weight: 900; }
+.ch-xuong { color: #fca5a5; font-weight: 900; }
+.ch-vt-vuot { background: rgba(249, 115, 22, .18); border: 1px solid rgba(249, 115, 22, .45); border-radius: 12px; padding: 8px 12px; font-weight: 700; }
+.ch-vt-duoi { color: var(--mo); font-size: .95rem; line-height: 1.45; }
+.ch-vt-duoi b { color: #fff; }
+.ch-nui {
+  position: relative; height: 92px; margin: 6px 8px 0; border-radius: 12px; overflow: visible;
+  background: linear-gradient(to top left, rgba(255,255,255,.14) 0 49.5%, transparent 50%);
+}
+.ch-nui i { position: absolute; width: 9px; height: 9px; margin: 0 0 -4px -4px; border-radius: 50%; background: rgba(255,255,255,.55); }
+.ch-nui-em {
+  position: absolute; z-index: 2; transform: translate(-50%, 40%); font-size: .72rem; font-weight: 900; color: #3b2300;
+  background: var(--gold); border-radius: 999px; padding: 3px 7px; box-shadow: 0 0 0 3px rgba(255, 207, 92, .35); transition: left .6s ease, bottom .6s ease;
+}
+.ch-nui-co { position: absolute; right: -6px; top: -14px; font-size: 1.2rem; }
+.ch-chang { background: var(--kinh); border: 1px solid var(--vien); border-radius: 14px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; text-align: left; }
+.ch-chang-tit { font-weight: 800; color: var(--gold); margin-bottom: 2px; }
+.ch-chang-hang { display: grid; grid-template-columns: 30px 1fr auto; gap: 8px; align-items: center; padding: 4px 6px; border-radius: 8px; }
+.ch-chang-hang.la { background: rgba(255, 207, 92, .2); }
+.ch-chang-hang span { text-align: center; font-weight: 800; }
+.ch-chang-hang b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ch-chang-hang i { font-style: normal; font-weight: 700; color: var(--mo); font-variant-numeric: tabular-nums; }
+.ch-chang-cach { text-align: center; color: var(--mo); line-height: .8; }
+.ch-toast {
+  position: fixed; left: 50%; top: 14px; z-index: 50; transform: translateX(-50%); max-width: calc(100% - 32px);
+  background: #fff; color: #7a1f1f; font-weight: 800; border-radius: 14px; padding: 10px 16px; box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  animation: chPop .3s ease;
+}
+.ch-toast[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) { .ch-vt-dau, .ch-toast { animation: none; } .ch-nui-em { transition: none; } }

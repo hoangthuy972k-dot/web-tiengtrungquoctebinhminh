@@ -1155,8 +1155,34 @@
               '<div class="lop-nhip-goi">Vào muộn? Quét mã bên cạnh hoặc vào ' + esc(location.host) + '/choi</div></div>' +
             '<div class="lop-nhip-qr">' + qrSvg(link) + '</div>' +
           '</div>' +
-          '<div class="lop-nhip-bxh" id="lopNhipBxh"></div>' +
-          '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopNhipEnd">🏁 Kết thúc &amp; trao giải</button></div>';
+          '<div class="lop-leo" id="lopLeo">' +
+            '<div class="lop-nui" id="lopNui">' +
+              '<svg class="lop-nui-hinh" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true">' +
+                '<polygon points="0,60 22,34 34,40 70,4 86,26 100,60" fill="rgba(255,255,255,.10)"/>' +
+                '<polygon points="70,4 63,13 67,12 70,15 74,11 77,14" fill="rgba(255,255,255,.55)"/>' +
+                '<polyline points="6,53 68,8" fill="none" stroke="rgba(255,207,92,.55)" stroke-width=".6" stroke-dasharray="1.6 1.2"/>' +
+              '</svg>' +
+              '<span class="lop-nui-co">🚩</span>' +
+              '<span class="lop-nui-trai">⛺ Chân núi</span>' +
+              '<span class="lop-nui-dinh" id="lopNuiDinh"></span>' +
+            '</div>' +
+            '<aside class="lop-leo-ben">' +
+              '<div class="lop-leo-h">🏆 Dẫn đầu</div><div id="lopLeoTop"></div>' +
+              '<div class="lop-leo-h">📣 Diễn biến</div><div class="lop-leo-tin" id="lopLeoTin"></div>' +
+            '</aside>' +
+          '</div>' +
+          '<div class="lop-nhip-bxh" id="lopNhipBxh" hidden></div>' +
+          '<div class="lop-stage-actions">' +
+            '<button type="button" class="lop-act ghost" id="lopNhipXem">📋 Xem dạng danh sách</button>' +
+            '<button type="button" class="lop-act" id="lopNhipEnd">🏁 Kết thúc &amp; trao giải</button>' +
+          '</div>';
+        l.cham = {}; l.suMoi = 0; l.xem = 'nui';
+        $('#lopNhipXem').addEventListener('click', function () {
+          l.xem = l.xem === 'nui' ? 'ds' : 'nui';
+          $('#lopLeo').hidden = l.xem !== 'nui';
+          $('#lopNhipBxh').hidden = l.xem === 'nui';
+          this.textContent = l.xem === 'nui' ? '📋 Xem dạng danh sách' : '⛰️ Xem đoàn leo núi';
+        });
         $('#lopNhipEnd').addEventListener('click', function () {
           var moi = (state.live && state.live.info) || d; // so lieu moi nhat, khong phai luc dung khung
           if (moi.soXong < moi.soHs && !confirm('Còn bạn chưa làm xong. Kết thúc luôn?')) return;
@@ -1195,7 +1221,65 @@
           '<span class="lop-nhip-dung">✓ ' + r.dungSo + '</span>' +
           '<b>' + r.diem + '</b></div>';
       }).join('') || '<div class="lop-stage-head"><span>Chưa có bạn nào vào phòng.</span></div>';
+      veNui(l, d);
     }
+  }
+
+  /* ---- Doan leo nui: moi cau dung leo len mot bac, ca lop thay nhau ---- */
+  var MAU_NG = ['#e5484d', '#2f7cf6', '#f2a516', '#1f9d55', '#a855f7', '#ec4899', '#14b8a6', '#f97316', '#6366f1', '#84cc16'];
+  function mauTen(t) { var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0; return MAU_NG[h % MAU_NG.length]; }
+  function chuDau(t) { var w = String(t).trim().split(/\s+/); return (w[w.length - 1] || '?').charAt(0).toUpperCase(); }
+  function veNui(l, d) {
+    var nui = $('#lopNui');
+    if (!nui || !l.cham) return;
+    var tong = Math.max(1, d.tong || 1);
+    $('#lopNuiDinh').textContent = 'Đỉnh: ' + tong + ' câu đúng';
+    // Nguoi cung do cao dan deu theo be ngang ngon nui o do cao do (chan nui
+    // rong nen chua duoc nhieu em), xep so le len xuong cho ten khoi de nhau
+    var soBac = {}, demBac = {}, conLai = {};
+    d.bxh.forEach(function (r) { soBac[r.dungSo] = (soBac[r.dungSo] || 0) + 1; });
+    d.bxh.forEach(function (r) {
+      var bac = r.dungSo, k = demBac[bac] = (demBac[bac] || 0) + 1, n = soBac[bac];
+      var t = Math.min(1, bac / tong);
+      var trai = 70 - (1 - t) * 62, phai = 70 + (1 - t) * 26;   // suon nui o do cao t (dinh o 70%)
+      var x = n === 1 ? 6 + t * 62 : trai + 3 + (phai - trai - 6) * (k - 0.5) / n;
+      var y = 86 - t * 72 + (n > 1 && k % 2 === 0 ? 6 : 0);
+      var el = l.cham[r.pid];
+      if (!el) {
+        el = document.createElement('div');
+        el.className = 'lop-ng';
+        el.innerHTML = '<span class="lop-ng-av"></span><em></em>';
+        nui.appendChild(el);
+        l.cham[r.pid] = el;
+      }
+      el.style.left = x + '%';
+      el.style.top = y + '%';
+      el.style.zIndex = 100 - r.hang;
+      el.style.setProperty('--c', mauTen(r.ten));
+      el.querySelector('.lop-ng-av').textContent = r.hang <= 3 ? ['🥇', '🥈', '🥉'][r.hang - 1] : chuDau(r.ten);
+      // nhan gon: top 3 ghi du ten, con lai ghi ten goi (chu cuoi)
+      el.querySelector('em').textContent = r.hang <= 3 ? r.ten : String(r.ten).trim().split(/\s+/).pop();
+      el.classList.toggle('dau', r.hang === 1 && r.dungSo > 0);
+      el.classList.toggle('xong', r.xong);
+      el.classList.toggle('top3', r.hang <= 3);
+      el.title = r.ten + ' · hạng ' + r.hang + ' · ' + r.dungSo + ' câu đúng · ' + r.diem + ' điểm';
+      conLai[r.pid] = 1;
+    });
+    Object.keys(l.cham).forEach(function (pid) {
+      if (!conLai[pid]) { l.cham[pid].remove(); delete l.cham[pid]; }
+    });
+    $('#lopLeoTop').innerHTML = d.bxh.slice(0, 5).map(function (r) {
+      return '<div class="lop-leo-r"><span>' + (['🥇', '🥈', '🥉'][r.hang - 1] || r.hang) + '</span><b>' + esc(r.ten) + '</b><i>' + r.dungSo + ' câu</i></div>';
+    }).join('') || '<div class="lop-leo-trong">Chưa có ai vào</div>';
+    var su = d.su || [];
+    $('#lopLeoTin').innerHTML = su.slice(0, 6).map(function (x) {
+      return '<div class="lop-leo-t' + (x.id > l.suMoi ? ' moi' : '') + '">' + esc(x.txt) + '</div>';
+    }).join('') || '<div class="lop-leo-trong">Cuộc leo núi bắt đầu!</div>';
+    // tin lon (doi nguoi dan dau, nguoi dau tien ve dich) bay qua man chieu
+    su.filter(function (x) { return x.id > l.suMoi; }).reverse().forEach(function (x) {
+      if (/^👑|^🏁/.test(x.txt) && l.suMoi) { try { flashBanner(x.txt, 'fire'); sndUp(); } catch (e) { /* bo qua */ } }
+    });
+    if (su[0]) l.suMoi = Math.max(l.suMoi, su[0].id);
   }
   function nhipBatDau() {
     var l = state.live;

@@ -157,7 +157,9 @@
     $('kqTit').textContent = dung ? 'Chính xác!' : d.chon < 0 ? 'Chưa kịp chọn' : 'Chưa đúng rồi';
     $('kqCong').textContent = dung ? '+' + d.cong + (d.chuoi >= 2 ? '  🔥 chuỗi ' + d.chuoi : '') : '';
     $('kqDung').innerHTML = !dung && d.dung >= 0 ? 'Đáp án: <b>' + HINH[d.dung] + ' ' + esc(c.opts[d.dung] || '') + '</b>' : '';
-    $('kqHang').innerHTML = d.hang ? 'Hạng <b>' + d.hang + '</b> / ' + d.soHs : '';
+    $('kqHang').innerHTML = d.hang ? 'Hạng <b>' + d.hang + '</b> / ' + d.soHs + doiHang(d.hangCu, d.hang) : '';
+    $('kqViTri').innerHTML = d.hang === 1 && d.hangCu > 1 ? '<div class="ch-vt-dau">👑 Bạn đang dẫn đầu!</div>'
+      : d.vuot && d.vuot.length ? '<div class="ch-vt-vuot">🔥 Bạn vừa vượt <b>' + d.vuot.map(esc).join(', ') + '</b></div>' : '';
     $('kqWhy').textContent = '';
     $('nutTiep').hidden = true;
     hien('manKq');
@@ -174,16 +176,76 @@
     clearTimeout(s.poll);
     s.ma = '';
   }
+  /* ---- vi tri tren "nui": hang, vuot ai, con cach ban phia truoc bao xa ---- */
+  function doiHang(cu, moi) {
+    if (!cu || !moi || cu === moi) return '';
+    return cu > moi ? ' <span class="ch-len">▲' + (cu - moi) + '</span>' : ' <span class="ch-xuong">▼' + (moi - cu) + '</span>';
+  }
+  function nuiHtml(vt) {
+    var tong = Math.max(1, s.tong || Math.max.apply(null, vt.doan.concat([1])));
+    var dem = {};
+    var cham = vt.doan.map(function (n, k) {
+      if (k === vt.hang - 1) return '';
+      dem[n] = (dem[n] || 0) + 1;
+      var x = Math.min(100, n / tong * 100);
+      return '<i style="left:' + x + '%;bottom:' + (x * 0.9 + Math.min(4, dem[n] - 1) * 9) + '%"></i>';
+    }).join('');
+    var x0 = Math.min(100, vt.dungSo / tong * 100);
+    return '<div class="ch-nui" aria-label="Bạn đang ở bậc ' + vt.dungSo + ' trên ' + tong + '">' +
+      '<span class="ch-nui-co">🚩</span>' + cham +
+      '<b class="ch-nui-em" style="left:' + x0 + '%;bottom:' + (x0 * 0.9) + '%">Em</b></div>';
+  }
+  function nhomHtml(vt, tieuDe) {
+    return '<div class="ch-chang"><div class="ch-chang-tit">' + tieuDe + '</div>' + vt.nhom.map(function (r, k) {
+      var cach = k && r.hang - vt.nhom[k - 1].hang > 1 ? '<div class="ch-chang-cach">⋯</div>' : '';
+      return cach + '<div class="ch-chang-hang' + (r.la ? ' la' : '') + '"><span>' + (['🥇', '🥈', '🥉'][r.hang - 1] || r.hang) + '</span>' +
+        '<b>' + esc(r.ten) + (r.la ? ' (bạn)' : '') + '</b><i>' + r.dungSo + ' câu</i></div>';
+    }).join('') + '</div>';
+  }
+  function viTriHtml(vt, r) {
+    var h = '';
+    if (r.dauBang) h += '<div class="ch-vt-dau">👑 Bạn đang dẫn đầu!</div>';
+    h += '<div class="ch-vt-hang">Hạng <b>' + vt.hang + '</b><small>/' + vt.soHs + '</small>' + doiHang(r.hangCu, vt.hang) + '</div>';
+    if (r.vuot && r.vuot.length) h += '<div class="ch-vt-vuot">🔥 Bạn vừa vượt <b>' + r.vuot.map(esc).join(', ') + '</b></div>';
+    if (vt.truoc) {
+      var cach = vt.truoc.dungSo - vt.dungSo;
+      h += '<div class="ch-vt-duoi">' + (cach > 0
+        ? 'Còn <b>' + cach + ' câu đúng</b> nữa là đuổi kịp <b>' + esc(vt.truoc.ten) + '</b> (hạng ' + vt.truoc.hang + ')'
+        : 'Đang ngang <b>' + esc(vt.truoc.ten) + '</b> — đúng tiếp và nhanh hơn để vượt!') + '</div>';
+    } else if (vt.sau) {
+      var hon = vt.dungSo - vt.sau.dungSo;
+      h += '<div class="ch-vt-duoi">' + (hon > 0 ? 'Bạn hơn <b>' + esc(vt.sau.ten) + '</b> ' + hon + ' câu — giữ vững nhé!' : '<b>' + esc(vt.sau.ten) + '</b> đang bám sát ngay sau bạn!') + '</div>';
+    }
+    h += nuiHtml(vt);
+    // cu 3 cau dung: dung lai xem bang chang
+    if (r.moc) h += nhomHtml(vt, '⛰️ Chặng ' + Math.round(vt.dungSo / 3) + ' — bạn đang ở đây');
+    return h;
+  }
+  var henBao = 0;
+  function baoNhanh(txt) {
+    var t = $('toast');
+    t.textContent = txt;
+    t.hidden = false;
+    clearTimeout(henBao);
+    henBao = setTimeout(function () { t.hidden = true; }, 3200);
+  }
+
   /* ---- kieu tu lam theo nhip rieng: moi em tu sang cau tiep ---- */
   function veNhip(d) {
     var doi = d.pha !== s.pha;
     s.pha = d.pha;
+    if (d.tong) s.tong = d.tong;
+    // ban khac vua vuot minh -> bao ngay
+    (d.tin || []).forEach(function (t) {
+      if (t.loai === 'biVuot') { baoNhanh('⚠️ ' + t.ten + ' vừa vượt bạn — cố lên!'); rung([60, 40, 60]); }
+    });
     if (d.pha === 'cho') { if (doi) hien('manCho'); return; }
     if (d.pha === 'het') { if (doi) { s.dangPh = false; veHet(d); } return; }
     if (d.xong) {
       if (s.dangPh) return; // dang xem dap an cau cuoi
       $('xongTk').textContent = 'Đúng ' + d.dungSo + '/' + d.tong + ' câu · ' + d.diem + ' điểm';
       $('xongHang').innerHTML = d.hang ? 'Hạng <b>' + d.hang + '</b> / ' + d.soHs : '';
+      if (d.vt) $('xongViTri').innerHTML = nhomHtml(d.vt, 'Bảng leo núi lúc này');
       if ($('manXong').hidden) { hien('manXong'); rung([30, 40, 30]); }
       return;
     }
@@ -209,7 +271,9 @@
       $('kqCong').textContent = r.dung ? '+' + r.cong + (r.chuoi >= 2 ? '  🔥 chuỗi ' + r.chuoi : '') : '';
       $('kqDung').innerHTML = r.dung ? '' : 'Đáp án: <b>' + HINH[r.dap] + ' ' + esc(c.opts[r.dap] || '') + '</b>';
       $('kqHang').innerHTML = '';
+      $('kqViTri').innerHTML = r.vt ? viTriHtml(r.vt, r) : '';
       $('kqWhy').textContent = r.why ? '💡 ' + r.why : '';
+      if (r.dauBang) rung([40, 30, 40, 30, 80]);
       $('nutTiep').hidden = false;
       $('nutTiep').textContent = r.xong ? 'Xem kết quả →' : 'Câu tiếp →';
       hien('manKq');

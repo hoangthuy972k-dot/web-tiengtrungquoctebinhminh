@@ -2485,6 +2485,44 @@
     updatePathBar();
   }
 
+  // Moi khach tao tai khoan SAU KHI hoc xong 1 buoc (khong bat dang ky ngay khi vua vao web).
+  // Toi da 1 lan / ngay; bam "Tao tai khoan" thi mo khung dang ky voi cap do dang hoc.
+  var pbDoneLuc = {}; // "url|buoc" -> luc mo buoc ra da xong chua
+  var NUDGE_KEY = 'hyv_signup_nudge'; // ngay (YYYY-MM-DD) lan cuoi da moi
+  var dangKyTuBuoc = false; // dang ky tu loi moi nay -> giu nguyen bai dang hoc tren may
+  function moiDangKySauBuoc(levelId, step) {
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    if (auth && auth.token) return;
+    var hom = dateKey(new Date());
+    if (readJSON(NUDGE_KEY, '') === hom) return;
+    writeJSON(NUDGE_KEY, hom);
+    var cu = $('#signupNudge');
+    if (cu) cu.remove();
+    var box = document.createElement('div');
+    box.id = 'signupNudge';
+    box.className = 'signup-nudge';
+    box.setAttribute('role', 'status');
+    box.innerHTML = '<button type="button" class="sn-close" data-sn-close aria-label="Đóng">✕</button>' +
+      '<p class="sn-title">🎉 Xong bước “' + lbEsc(step.title) + '”!</p>' +
+      '<p class="sn-text">Lưu bước vừa học và bắt đầu tích sao? Tạo tài khoản miễn phí để giữ tiến độ trên mọi thiết bị và có tên trên bảng xếp hạng.</p>' +
+      '<div class="sn-actions"><button type="button" class="btn btn-primary" data-sn-go>Tạo tài khoản →</button>' +
+      '<button type="button" class="btn btn-ghost" data-sn-later>Để sau</button></div>';
+    document.body.appendChild(box);
+    var tuDong = setTimeout(function () { box.remove(); }, 30000);
+    box.addEventListener('click', function (e) {
+      var t = e.target;
+      if (t.closest('[data-sn-go]')) {
+        clearTimeout(tuDong);
+        box.remove();
+        dangKyTuBuoc = true;
+        openAuthModal('register', levelId);
+      } else if (t.closest('[data-sn-close]') || t.closest('[data-sn-later]')) {
+        clearTimeout(tuDong);
+        box.remove();
+      }
+    });
+  }
+
   // Thanh duoi man hinh: "Buoc 3/7 · Hoi thoai" + nut "Tiep tuc →"
   function updatePathBar() {
     var bar = $('#pathBar');
@@ -2495,6 +2533,13 @@
     var sec = document.getElementById(step.section);
     if (!sec || sec.hidden) { bar.hidden = true; document.body.classList.remove('has-path-bar'); return; }
     var done = pathStepDone(pathState.lesson, step);
+    // Em VUA lam xong buoc nay (luc mo ra chua xong) -> khach thi moi tao tai khoan
+    var khoaBuoc = pathState.lesson.fullPageUrl + '|' + step.key;
+    if (!(khoaBuoc in pbDoneLuc)) pbDoneLuc[khoaBuoc] = done;
+    else if (done && !pbDoneLuc[khoaBuoc]) {
+      pbDoneLuc[khoaBuoc] = true;
+      moiDangKySauBuoc(pathState.levelId, step);
+    }
     var last = pathState.idx === ps.length - 1;
     var next = last ? null : ps[pathState.idx + 1];
     bar.innerHTML =
@@ -14263,29 +14308,68 @@
 
   /* ---------------- Bang xep hang "Cham chi" (ngoi sao) ---------------- */
 
+  // Dong "Tien bo nhat tuan" co them gain / thisWeek / lastWeek
+  function starGainText(row) {
+    return 'tuần này ' + Number(row.thisWeek || 0).toLocaleString('vi-VN') + ' · cùng kỳ tuần trước ' + Number(row.lastWeek || 0).toLocaleString('vi-VN');
+  }
+
   function starLbRowHtml(row) {
+    var gain = row.gain != null;
     return '<div class="lb-row' + (row.isMe ? ' is-me' : '') + '">' +
       '<span class="lb-rank">' + medalFor(row.rank) + '</span>' +
       '<span class="lb-name">' + lbEsc(row.name) + (row.isMe ? ' <em>(bạn)</em>' : '') + '</span>' +
-      (row.rank === 1 ? '<span class="lb-level lb-crown">👑 Chăm chỉ nhất</span>' : '<span class="lb-level">' + (row.level || '').toUpperCase() + '</span>') +
-      '<span class="lb-today">' + (row.today > 0 ? 'hôm nay +' + row.today : '') + '</span>' +
-      '<span class="lb-score lb-stars">⭐ ' + Number(row.total).toLocaleString('vi-VN') + '</span>' +
+      (row.rank === 1 ? '<span class="lb-level lb-crown">' + (gain ? '📈 Tiến bộ nhất' : '👑 Chăm chỉ nhất') + '</span>' : '<span class="lb-level">' + (row.level || '').toUpperCase() + '</span>') +
+      '<span class="lb-today">' + (gain ? starGainText(row) : (row.today > 0 ? 'hôm nay +' + row.today : '')) + '</span>' +
+      '<span class="lb-score lb-stars">⭐ ' + (gain ? '+' : '') + Number(row.total).toLocaleString('vi-VN') + '</span>' +
     '</div>';
   }
 
-  // Bang sao: "Tuan nay" (mac dinh — ai cung co co hoi moi tuan) hoac "Tu truoc toi nay"
+  // Pham vi bang xep hang: '' = de may chu tu chon (em da vao lop -> "Lop em"),
+  // 'class' / 'school' = em da bam chon. Chi hien nut khi em co lop.
+  var lbScope = '';
+  try { lbScope = sessionStorage.getItem('hyv_lb_scope') || ''; } catch (e) { /* ignore */ }
+  if (lbScope !== 'class' && lbScope !== 'school') lbScope = '';
+  function lbScopeQuery() { return lbScope ? 'scope=' + lbScope : ''; }
+  function lbScopeHtml(data) {
+    if (!data || !data.myClass) return '';
+    var sc = data.scope === 'class' ? 'class' : 'school';
+    return '<div class="lb-scope" role="group" aria-label="Phạm vi xếp hạng">' +
+      '<button type="button" class="lb-scope-btn' + (sc === 'class' ? ' is-on' : '') + '" data-lb-scope="class" aria-pressed="' + (sc === 'class') + '">🏫 Lớp em <small>' + lbEsc(data.myClass.name) + '</small></button>' +
+      '<button type="button" class="lb-scope-btn' + (sc === 'school' ? ' is-on' : '') + '" data-lb-scope="school" aria-pressed="' + (sc === 'school') + '">🌏 Toàn trường</button>' +
+    '</div>';
+  }
+  // Doi pham vi: ve lai ca 2 bang o trang chu (va bang sao dang mo, neu co)
+  function bindLbScope(wrap) {
+    $all('[data-lb-scope]', wrap).forEach(function (b) {
+      b.addEventListener('click', function () {
+        lbScope = b.getAttribute('data-lb-scope');
+        try { sessionStorage.setItem('hyv_lb_scope', lbScope); } catch (e) { /* ignore */ }
+        renderTodayLeaderboard();
+        renderStarLeaderboard();
+        if (lbTab === 'stars' && $('#leaderboard') && !$('#leaderboard').hidden) loadStarLeaderboard();
+      });
+    });
+  }
+
+  // Bang sao: "Tuan nay" (mac dinh — ai cung co co hoi moi tuan), "Tien bo nhat tuan"
+  // hoac "Tu truoc toi nay"
   var starPeriod = 'week';
   try { starPeriod = sessionStorage.getItem('hyv_star_period') || 'week'; } catch (e) { /* ignore */ }
+  if (['week', 'improve', 'all'].indexOf(starPeriod) === -1) starPeriod = 'week';
   function starPeriodHtml(data) {
     var reset = '';
-    if (starPeriod === 'week' && data && data.resetInSec != null) {
+    if (starPeriod !== 'all' && data && data.resetInSec != null) {
       var d = Math.floor(data.resetInSec / 86400), h = Math.floor(data.resetInSec % 86400 / 3600);
       reset = '<span class="sp-reset">Làm mới sau ' + (d ? d + ' ngày ' : '') + h + ' giờ</span>';
     }
-    return '<div class="star-period" role="group" aria-label="Khoảng thời gian">' +
-      '<button type="button" class="sp-btn' + (starPeriod === 'week' ? ' is-on' : '') + '" data-star-period="week" aria-pressed="' + (starPeriod === 'week') + '">📅 Tuần này</button>' +
-      '<button type="button" class="sp-btn' + (starPeriod === 'all' ? ' is-on' : '') + '" data-star-period="all" aria-pressed="' + (starPeriod === 'all') + '">🏆 Từ trước tới nay</button>' +
-      reset + '</div>';
+    function b(v, label) {
+      return '<button type="button" class="sp-btn' + (starPeriod === v ? ' is-on' : '') + '" data-star-period="' + v + '" aria-pressed="' + (starPeriod === v) + '">' + label + '</button>';
+    }
+    return lbScopeHtml(data) + '<div class="star-period" role="group" aria-label="Khoảng thời gian">' +
+      b('week', '📅 Tuần này') + b('improve', '📈 Tiến bộ nhất tuần') + b('all', '🏆 Từ trước tới nay') +
+      reset + '</div>' +
+      (starPeriod === 'improve' ? '<p class="sp-note">Xếp theo số sao <b>tăng thêm</b> so với cùng thời điểm tuần trước. Cần ít nhất ' +
+        ((data && data.minStars) || 30) + ' sao trong tuần này để vào bảng.</p>' : '');
   }
   function bindStarPeriod(wrap, rerender) {
     $all('[data-star-period]', wrap).forEach(function (b) {
@@ -14295,8 +14379,19 @@
         rerender();
       });
     });
+    bindLbScope(wrap);
   }
-  function starLbUrl() { return '/api/leaderboard/stars' + (starPeriod === 'week' ? '?period=week' : ''); }
+  function starLbUrl() { return '/api/leaderboard/stars?period=' + starPeriod + (lbScope ? '&' + lbScopeQuery() : ''); }
+  function starEmptyText(data) {
+    if (starPeriod === 'improve') return 'Tuần này chưa ai đủ điều kiện vào bảng tiến bộ (ít nhất ' + ((data && data.minStars) || 30) + ' sao và nhiều hơn cùng kỳ tuần trước).';
+    var lop = data && data.scope === 'class' ? ' trong lớp' : '';
+    return starPeriod === 'week' ? 'Tuần này chưa ai' + lop + ' tích được sao.' : 'Chưa có ai' + lop + ' tích được ngôi sao nào.';
+  }
+  function starNoMeText(data, loggedIn) {
+    if (!loggedIn) return '';
+    if (starPeriod === 'improve') return 'Bạn chưa có tên trên bảng tiến bộ — tích đủ ' + ((data && data.minStars) || 30) + ' sao tuần này và vượt cùng kỳ tuần trước nhé!';
+    return 'Bạn chưa có ngôi sao nào' + (starPeriod === 'week' ? ' tuần này' : '') + ' — học 5 phút là có ngay!';
+  }
 
   function loadStarLeaderboard() {
     var content = $('#leaderboardContent');
@@ -14310,8 +14405,8 @@
         if (!data.rows.length) {
           content.innerHTML = starPeriodHtml(data) +
             '<div class="lb-empty">' +
-              '<p>' + (starPeriod === 'week' ? 'Tuần này chưa ai tích được sao.' : 'Chưa có ai tích được ngôi sao nào.') + '</p>' +
-              '<p style="color:var(--color-gray-500);font-size:0.9rem;">Đăng nhập rồi học 5 phút để trở thành người chăm chỉ đầu tiên!</p>' +
+              '<p>' + starEmptyText(data) + '</p>' +
+              '<p style="color:var(--color-gray-500);font-size:0.9rem;">' + (auth && auth.token ? 'Học 5 phút là có ngay 5 sao!' : 'Đăng nhập rồi học 5 phút để trở thành người chăm chỉ đầu tiên!') + '</p>' +
             '</div>';
           bindStarPeriod(content, loadStarLeaderboard);
           return;
@@ -14320,7 +14415,7 @@
         if (data.me && !data.rows.some(function (r) { return r.isMe; })) {
           html += '<p class="lb-me-label">Vị trí của bạn</p><div class="lb-list">' + starLbRowHtml(data.me) + '</div>';
         } else if (!data.me) {
-          html += '<p class="lb-me-label">' + (auth && auth.token ? 'Bạn chưa có ngôi sao nào' + (starPeriod === 'week' ? ' tuần này' : '') + ' — học 5 phút là có ngay!' : 'Đăng nhập để bắt đầu tích sao và có tên trên bảng.') + '</p>';
+          html += '<p class="lb-me-label">' + (auth && auth.token ? starNoMeText(data, true) : 'Đăng nhập để bắt đầu tích sao và có tên trên bảng.') + '</p>';
         }
         content.innerHTML = html;
         bindStarPeriod(content, loadStarLeaderboard);
@@ -14396,6 +14491,9 @@
   }
 
   function hbMetaHtml(row) {
+    if (row.gain != null) {
+      return '<span title="Điểm cùng kỳ tuần trước → tuần này">' + row.lastWeek + ' → ' + row.thisWeek + '</span>';
+    }
     return '<span title="Câu đúng khi học bài">' + HB_ICONS.book + row.lessonCorrect + '</span>' +
       '<span title="Câu đúng khi thi thử">' + HB_ICONS.pen + row.examCorrect + '</span>' +
       (row.streak > 0 ? '<span title="Chuỗi ngày học">' + HB_ICONS.flame + row.streak + '</span>' : '');
@@ -14415,7 +14513,7 @@
         '<div class="hb-avatar"><span>' + lbEsc(hbInitial(row.name)) + '</span></div>' +
         '<div class="hb-name" title="' + lbEsc(row.name) + '">' + lbEsc(row.name) + '</div>' +
         (row.isMe ? '<span class="hb-me">Bạn</span>' : '') +
-        '<div class="hb-points"><b>' + row.points + '</b><span>điểm</span></div>' +
+        '<div class="hb-points"><b>' + (row.gain != null ? '+' : '') + row.points + '</b><span>điểm</span></div>' +
         '<div class="hb-meta">' + hbMetaHtml(row) + '</div>' +
       '</div>' +
       '<div class="hb-step" aria-hidden="true"><span>' + rank + '</span></div>' +
@@ -14423,17 +14521,27 @@
   }
 
   function hbFootHtml(data, loggedIn) {
-    var rule = '<p class="hb-rule">Điểm = số câu đúng khi học bài + khi thi thử (lượt đầu) trong ngày. Bảng làm mới lúc 0:00.</p>';
+    var per = data.period || 'day';
+    var improve = per === 'improve';
+    var khi = per === 'day' ? 'hôm nay' : 'tuần này';
+    var rule = '<p class="hb-rule">' + (improve
+      ? 'Xếp theo số điểm <b>tăng thêm</b> so với cùng số ngày của tuần trước. Cần ít nhất ' + (data.minPoints || 20) + ' điểm trong tuần này để vào bảng. Bảng làm mới mỗi thứ Hai.'
+      : per === 'week'
+        ? 'Điểm = số câu đúng khi học bài + khi thi thử (lượt đầu) từ thứ Hai tới nay. Bảng làm mới mỗi thứ Hai.'
+        : 'Điểm = số câu đúng khi học bài + khi thi thử (lượt đầu) trong ngày. Bảng làm mới lúc 0:00.') + '</p>';
     var msg, btn;
     if (data.me && data.me.rank <= 5) {
-      msg = HB_ICONS.star + '<span>Tuyệt vời! Bạn đang đứng <b>hạng ' + data.me.rank + '</b> trên bảng vàng hôm nay.</span>';
+      msg = HB_ICONS.star + '<span>Tuyệt vời! Bạn đang đứng <b>hạng ' + data.me.rank + '</b> trên ' +
+        (improve ? 'bảng tiến bộ tuần này' : 'bảng vàng ' + khi) + '.</span>';
       btn = '<button type="button" class="hb-cta" data-hb-study>Giữ vững phong độ</button>';
     } else if (data.me) {
-      msg = '<span>Bạn đang <b>hạng ' + data.me.rank + '</b> với ' + data.me.points + ' điểm' +
+      msg = '<span>Bạn đang <b>hạng ' + data.me.rank + '</b> với ' + (improve ? '+' : '') + data.me.points + ' điểm' +
         (data.toTop5 ? ' · còn <b>' + data.toTop5 + ' câu đúng</b> nữa để vào Top 5' : '') + '.</span>';
       btn = '<button type="button" class="hb-cta" data-hb-study>Học tiếp</button>';
     } else if (loggedIn) {
-      msg = '<span>Hôm nay bạn chưa có điểm. Làm bài tập hoặc thi thử để ghi danh lên bảng vàng.</span>';
+      msg = improve
+        ? '<span>Bạn chưa có tên trên bảng tiến bộ. Đạt ít nhất ' + (data.minPoints || 20) + ' điểm tuần này và vượt cùng kỳ tuần trước nhé!</span>'
+        : '<span>' + (per === 'day' ? 'Hôm nay' : 'Tuần này') + ' bạn chưa có điểm. Làm bài tập hoặc thi thử để ghi danh lên bảng vàng.</span>';
       btn = '<button type="button" class="hb-cta" data-hb-study>Học ngay</button>';
     } else {
       msg = '<span>Đăng nhập để tên bạn được ghi lên bảng vàng mỗi ngày.</span>';
@@ -14450,11 +14558,32 @@
     var pad = function (x) { return (x < 10 ? '0' : '') + x; };
     var tick = function () {
       var left = Math.max(0, Math.round((end - Date.now()) / 1000));
-      el.textContent = pad(Math.floor(left / 3600)) + ':' + pad(Math.floor(left % 3600 / 60)) + ':' + pad(left % 60);
+      var ngay = Math.floor(left / 86400); // bang tuan: con vai ngay moi lam moi
+      el.textContent = (ngay ? ngay + ' ngày ' : '') + pad(Math.floor(left % 86400 / 3600)) + ':' + pad(Math.floor(left % 3600 / 60)) + ':' + pad(left % 60);
       if (left === 0) { clearInterval(hbTimer); setTimeout(renderTodayLeaderboard, 1500); }
     };
     tick();
     hbTimer = setInterval(tick, 1000);
+  }
+
+  // Bang vang: 'day' (hom nay) | 'week' (tuan nay) | 'improve' (tien bo nhat tuan).
+  // '' = de may chu tu chon: em da vao lop -> "Lop em" + tuan nay, chua co lop -> hom nay.
+  var hbPeriod = '';
+  try { hbPeriod = sessionStorage.getItem('hyv_hb_period') || ''; } catch (e) { /* ignore */ }
+  if (['day', 'week', 'improve'].indexOf(hbPeriod) === -1) hbPeriod = '';
+
+  function hbPeriodHtml(data) {
+    var per = data.period || 'day';
+    function b(v, label) {
+      return '<button type="button" class="sp-btn' + (per === v ? ' is-on' : '') + '" data-hb-period="' + v + '" aria-pressed="' + (per === v) + '">' + label + '</button>';
+    }
+    return lbScopeHtml(data) + '<div class="star-period hb-period" role="group" aria-label="Khoảng thời gian">' +
+      b('day', '☀️ Hôm nay') + b('week', '📅 Tuần này') + b('improve', '📈 Tiến bộ nhất tuần') + '</div>';
+  }
+
+  function dmy(key) {
+    var parts = String(key || '').split('-');
+    return parts.length === 3 ? parts[2] + '/' + parts[1] : '';
   }
 
   function renderTodayLeaderboard() {
@@ -14462,18 +14591,32 @@
     if (!content) return;
     var auth = readJSON(STORAGE_KEYS.auth, null);
     var loggedIn = !!(auth && auth.token);
-    fetch('/api/leaderboard/today', { headers: loggedIn ? { 'Authorization': 'Bearer ' + auth.token } : {} })
+    var q = [];
+    if (hbPeriod) q.push('period=' + hbPeriod);
+    if (lbScope) q.push(lbScopeQuery());
+    fetch('/api/leaderboard/today' + (q.length ? '?' + q.join('&') : ''), { headers: loggedIn ? { 'Authorization': 'Bearer ' + auth.token } : {} })
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(function (data) {
         var top = data.top || [];
+        var per = data.period || 'day';
+        var lop = data.scope === 'class' && data.myClass ? ' trong lớp ' + data.myClass.name : '';
+        var title = $('#hbTitle');
+        if (title) title.textContent = per === 'improve' ? 'Tiến bộ nhất tuần' : per === 'week' ? 'Bảng vàng tuần này' : 'Bảng vàng hôm nay';
         var sub = $('#hbSub');
         if (sub) {
-          var parts = String(data.date || '').split('-');
-          var dateTxt = parts.length === 3 ? parts[2] + '/' + parts[1] : '';
-          sub.textContent = (dateTxt ? 'Ngày ' + dateTxt + ' · ' : '') +
-            (top.length ? data.count + ' học sinh đã ghi điểm hôm nay' : 'Chưa ai ghi điểm hôm nay, vị trí số 1 đang chờ bạn');
+          if (per === 'day') {
+            var dateTxt = dmy(data.date);
+            sub.textContent = (dateTxt ? 'Ngày ' + dateTxt + ' · ' : '') +
+              (top.length ? data.count + ' học sinh' + lop + ' đã ghi điểm hôm nay' : 'Chưa ai' + lop + ' ghi điểm hôm nay, vị trí số 1 đang chờ bạn');
+          } else if (per === 'week') {
+            sub.textContent = 'Tuần từ thứ Hai ' + dmy(data.week) + ' · ' +
+              (top.length ? data.count + ' học sinh' + lop + ' đã ghi điểm tuần này' : 'Chưa ai' + lop + ' ghi điểm tuần này, vị trí số 1 đang chờ bạn');
+          } else {
+            sub.textContent = 'So với cùng kỳ tuần trước · ' +
+              (top.length ? data.count + ' học sinh' + lop + ' đang tiến bộ' : 'Chưa ai' + lop + ' đủ điều kiện — học đều để giành vị trí đầu tiên');
+          }
         }
-        var podium = '<ol class="hb-podium" aria-label="Top 3 hôm nay">' +
+        var podium = '<ol class="hb-podium" aria-label="Top 3">' +
           hbPodiumItem(top[0], 1) + hbPodiumItem(top[1], 2) + hbPodiumItem(top[2], 3) + '</ol>';
         var rest = top.length > 3
           ? '<ol class="hb-rest" start="4" aria-label="Hạng 4 và 5">' + top.slice(3).map(function (row) {
@@ -14482,11 +14625,19 @@
                 '<span class="hb-avatar sm"><span>' + lbEsc(hbInitial(row.name)) + '</span></span>' +
                 '<span class="hb-row-name">' + lbEsc(row.name) + (row.isMe ? ' <span class="hb-me">Bạn</span>' : '') + '</span>' +
                 '<span class="hb-meta">' + hbMetaHtml(row) + '</span>' +
-                '<span class="hb-row-pts"><b>' + row.points + '</b> điểm</span>' +
+                '<span class="hb-row-pts"><b>' + (row.gain != null ? '+' : '') + row.points + '</b> điểm</span>' +
               '</li>';
             }).join('') + '</ol>'
           : '';
-        content.innerHTML = podium + rest + hbFootHtml(data, loggedIn);
+        content.innerHTML = hbPeriodHtml(data) + podium + rest + hbFootHtml(data, loggedIn);
+        $all('[data-hb-period]', content).forEach(function (b) {
+          b.addEventListener('click', function () {
+            hbPeriod = b.getAttribute('data-hb-period');
+            try { sessionStorage.setItem('hyv_hb_period', hbPeriod); } catch (e) { /* ignore */ }
+            renderTodayLeaderboard();
+          });
+        });
+        bindLbScope(content);
         var studyBtn = content.querySelector('[data-hb-study]');
         if (studyBtn) studyBtn.addEventListener('click', function () { var b = $('#ctaStreak'); if (b) b.click(); });
         var loginBtn = content.querySelector('[data-hb-login]');
@@ -14508,13 +14659,14 @@
   var sbTimer = null;
 
   function sbRowHtml(row) {
+    var gain = row.gain != null;
     return '<li class="sb-row' + (row.isMe ? ' is-me' : '') + (row.rank <= 3 ? ' is-top' + row.rank : '') + '">' +
       '<span class="sb-rank">' + (row.rank <= 3 ? ['🥇', '🥈', '🥉'][row.rank - 1] : row.rank) + '</span>' +
       '<span class="sb-avatar" aria-hidden="true">' + lbEsc(hbInitial(row.name)) + '</span>' +
       '<span class="sb-name">' + lbEsc(row.name) + (row.isMe ? ' <span class="sb-me">Bạn</span>' : '') +
-        (row.rank === 1 ? '<span class="sb-crown">👑 Chăm chỉ nhất</span>' : '') + '</span>' +
-      '<span class="sb-today">' + (row.today > 0 ? 'hôm nay +' + row.today : '') + '</span>' +
-      '<span class="sb-total"><b>' + Number(row.total).toLocaleString('vi-VN') + '</b> ⭐</span>' +
+        (row.rank === 1 ? '<span class="sb-crown">' + (gain ? '📈 Tiến bộ nhất' : '👑 Chăm chỉ nhất') + '</span>' : '') + '</span>' +
+      '<span class="sb-today">' + (gain ? starGainText(row) : (row.today > 0 ? 'hôm nay +' + row.today : '')) + '</span>' +
+      '<span class="sb-total"><b>' + (gain ? '+' : '') + Number(row.total).toLocaleString('vi-VN') + '</b> ⭐</span>' +
     '</li>';
   }
 
@@ -14528,7 +14680,7 @@
       .then(function (data) {
         var rows = (data.rows || []).slice(0, 10);
         if (!rows.length) {
-          content.innerHTML = starPeriodHtml(data) + '<div class="sb-empty"><p>' + (starPeriod === 'week' ? 'Tuần này chưa ai tích được sao.' : 'Chưa ai tích được ngôi sao nào.') + '</p><p>' +
+          content.innerHTML = starPeriodHtml(data) + '<div class="sb-empty"><p>' + starEmptyText(data) + '</p><p>' +
             (loggedIn ? 'Học 5 phút là bạn có ngay 5 sao và đứng đầu bảng!' : 'Đăng nhập rồi học 5 phút để trở thành người chăm chỉ đầu tiên!') + '</p></div>';
           bindStarPeriod(content, renderStarLeaderboard);
           return;
@@ -14537,7 +14689,7 @@
         if (data.me && data.me.rank > 10) {
           html += '<p class="sb-me-label">Vị trí của bạn</p><ol class="sb-list">' + sbRowHtml(data.me) + '</ol>';
         } else if (!data.me) {
-          html += '<p class="sb-foot">' + (loggedIn ? 'Bạn chưa có sao nào — học 5 phút để có tên trên bảng!' : '<button type="button" class="sb-login" data-sb-login>Đăng nhập</button> để tích sao và có tên trên bảng.') + '</p>';
+          html += '<p class="sb-foot">' + (loggedIn ? starNoMeText(data, true) : '<button type="button" class="sb-login" data-sb-login>Đăng nhập</button> để tích sao và có tên trên bảng.') + '</p>';
         }
         content.innerHTML = html;
         bindStarPeriod(content, renderStarLeaderboard);
@@ -15521,6 +15673,28 @@
     renderHomeHead();
   }
 
+  // O chon "Cap do dang hoc" khi dang ky: du moi cap trong APP_DATA.levels (ca HSK 3.0
+  // va HSK 4–6). Chon san: cap cua bai em vua hoc > ket qua "Minh nen hoc cap nao?" > bai gan nhat.
+  function fillRegisterLevel(preferId) {
+    var sel = $('#registerLevel');
+    if (!sel) return;
+    var levels = (typeof APP_DATA !== 'undefined' && APP_DATA.levels) || [];
+    if (levels.length && sel.getAttribute('data-filled') !== '1') {
+      sel.innerHTML = levels.map(function (l) {
+        return '<option value="' + lbEsc(l.id) + '">' + lbEsc(PRACTICE_LEVEL_LABEL[l.id] || l.name) + '</option>';
+      }).join('');
+      sel.setAttribute('data-filled', '1');
+    }
+    var pick = readJSON(LEVEL_PICK_KEY, null);
+    var last = getLastLesson();
+    var cands = [preferId, pick && pick.id, last && last.levelId];
+    for (var i = 0; i < cands.length; i++) {
+      if (cands[i] && sel.querySelector('option[value="' + cands[i] + '"]')) { sel.value = cands[i]; return; }
+    }
+  }
+
+  var openAuthModal = function () {}; // gan trong initAuth
+
   function initAuth() {
     var overlay = $('#authModal');
     var closeBtn = $('#authModalClose');
@@ -15528,8 +15702,9 @@
     var authBannerRegisterBtn = $('#authBannerRegister');
     var authBannerLoginBtn = $('#authBannerLogin');
 
-    function openModal(tab) {
+    function openModal(tab, levelId) {
       overlay.classList.add('is-open');
+      if (tab === 'register') fillRegisterLevel(levelId);
       setAuthTab(tab || 'login');
       var firstInput = $('#' + tab + 'Panel') ? $('#' + tab + 'Panel input') : $('#loginPanel input');
       if (firstInput) setTimeout(function () { firstInput.focus(); }, 50);
@@ -15537,6 +15712,7 @@
     function closeModal() {
       overlay.classList.remove('is-open');
     }
+    openAuthModal = openModal;
 
     if (authBannerRegisterBtn) authBannerRegisterBtn.addEventListener('click', function () { openModal('register'); });
     if (authBannerLoginBtn) authBannerLoginBtn.addEventListener('click', function () { openModal('login'); });
@@ -15576,12 +15752,18 @@
     }
 
     $all('.auth-tab').forEach(function (tab) {
-      tab.addEventListener('click', function () { setAuthTab(tab.getAttribute('data-auth')); });
+      tab.addEventListener('click', function () {
+        var t = tab.getAttribute('data-auth');
+        if (t === 'register') fillRegisterLevel();
+        setAuthTab(t);
+      });
     });
     $all('[data-auth-switch]').forEach(function (link) {
       link.addEventListener('click', function (e) {
         e.preventDefault();
-        setAuthTab(link.getAttribute('data-auth-switch'));
+        var t = link.getAttribute('data-auth-switch');
+        if (t === 'register') fillRegisterLevel();
+        setAuthTab(t);
       });
     });
 
@@ -15645,8 +15827,12 @@
         .then(function (res) {
           if (!res.ok) { setFormError(form, res.data.error || 'Đăng ký thất bại.'); return; }
           // Tai khoan moi: xoa "bai dang hoc do" con sot tren may de trang chu hien
-          // "Bat dau hoc" cho em tu chon cap do, khong tu nhay vao bai cua nguoi khac
-          try { localStorage.removeItem(LAST_LESSON_KEY); localStorage.removeItem(RESUME_KEY); } catch (e2) { /* bo qua */ }
+          // "Bat dau hoc" cho em tu chon cap do, khong tu nhay vao bai cua nguoi khac.
+          // Rieng khi em vua hoc xong 1 buoc roi bam "Tao tai khoan" thi giu bai em dang hoc.
+          if (!dangKyTuBuoc) {
+            try { localStorage.removeItem(LAST_LESSON_KEY); localStorage.removeItem(RESUME_KEY); } catch (e2) { /* bo qua */ }
+          }
+          dangKyTuBuoc = false;
           setSession(res.data.token, res.data.user, res.data.progress);
           closeModal();
           showToast('Tạo tài khoản thành công! Chào mừng ' + res.data.user.name + '.');
@@ -15686,16 +15872,8 @@
 
     renderUserChip();
     syncProgressToServer();
-
-    var currentAuth = readJSON(STORAGE_KEYS.auth, null);
-    if (!currentAuth) {
-      var alreadyPrompted = false;
-      try { alreadyPrompted = sessionStorage.getItem(STORAGE_KEYS.authPrompted) === '1'; } catch (e) {}
-      if (!alreadyPrompted) {
-        try { sessionStorage.setItem(STORAGE_KEYS.authPrompted, '1'); } catch (e) {}
-        setTimeout(function () { openModal('register'); }, 600);
-      }
-    }
+    // Khong tu mo khung dang ky khi khach vua vao (trang chu hua "hoc thu khong can dang ky"):
+    // loi moi tao tai khoan hien sau khi em hoc xong 1 buoc (moiDangKySauBuoc).
   }
 
   /* ---------------- Lop hoc & bai tap duoc giao ----------------
@@ -15926,7 +16104,10 @@
     function o(noiDung, cls, title) {
       return '<td class="ab-s' + (cls ? ' ' + cls : '') + '"' + (title ? ' title="' + title + '"' : '') + '>' + noiDung + '</td>';
     }
-    return o(soBuoi ? cc + '<i>/' + soBuoi + '</i>' : '—', cc > 0 ? 'is-ok' : '', 'Đã hoàn thành ' + cc + '/' + soBuoi + ' bài được giao') +
+    var chuyenCan = o(soBuoi ? cc + '<i>/' + soBuoi + '</i>' : '—', cc > 0 ? 'is-ok' : '', 'Đã hoàn thành ' + cc + '/' + soBuoi + ' bài được giao');
+    // Ban khac: may chu khong gui diem, chi co tien do lam bai
+    if (d.rieng) return chuyenCan + '<td class="ab-s is-private" colspan="4" title="Điểm của mỗi bạn chỉ bạn ấy xem được">🔒 riêng</td>';
+    return chuyenCan +
       o(xd > 0 ? '+' + xd : '—', xd > 0 ? 'is-plus' : '', xd > 0 ? 'Được cộng ' + xd + ' điểm xây dựng bài' : 'Chưa có điểm xây dựng bài') +
       o(d.mieng == null ? '—' : d.mieng, d.mieng != null ? 'is-oral' : '',
         d.mieng == null ? 'Chưa được gọi lên bảng lần nào'
@@ -15941,7 +16122,11 @@
     if (!b.rows.length) return '<p class="assign-empty">Lớp chưa có danh sách.</p>';
     var ses = b.sessions;
     var counts = ses.map(function (_, i) {
-      return b.rows.filter(function (r) { return r.marks && (r.marks[i] === 'done' || r.marks[i] === 'late'); }).length;
+      return b.rows.filter(function (r) {
+        var c = r.marks ? r.marks[i] : null;
+        var st = c && typeof c === 'object' ? c.s : c;
+        return st === 'done' || st === 'late';
+      }).length;
     });
     var joined = b.rows.filter(function (r) { return r.joined; }).length;
     var head = '<tr><th class="ab-name">Học sinh <small>(' + joined + '/' + b.rows.length + ' đã vào lớp)</small></th>' +
@@ -15976,7 +16161,8 @@
       '<div class="ab-wrap"><table class="ab-table"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>' +
       '<p class="ab-hint">↔ Kéo ngang bảng để xem các buổi khác.</p>' +
       '<p class="ab-legend"><span class="ab-c is-done">✓</span> Đã làm <span class="ab-c is-late">✓</span> Nộp muộn · Ô trống: chưa làm · ' +
-        'Số trong ô là <b>số câu đúng / tổng số câu</b></p>';
+        'Số trong ô là <b>số câu đúng / tổng số câu</b></p>' +
+      '<p class="ab-legend">🔒 Điểm số chỉ hiện ở dòng của em. Các bạn khác chỉ thấy em đã làm bài hay chưa.</p>';
   }
 
   function renderAssignCard() {
@@ -16272,6 +16458,19 @@
       var sig = [d.loggedIn, d.ready, d.total].join('|');
       if (sig !== statSig) { statSig = sig; renderStatTiles(); }
     });
+    openLessonFromQuery();
+  }
+
+  // Link thay/co gui qua Zalo (trang quan tri "Can nhac hoc"): /?hoc=bai-3 -> mo thang lo trinh bai do
+  function openLessonFromQuery() {
+    var m = /[?&]hoc=([\w-]{1,60})(?:&|$)/.exec(location.search || '');
+    if (!m) return;
+    try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) { /* ignore */ }
+    var info = lessonByUrl('/lessons/' + m[1] + '.html');
+    if (!info || !READY_LEVELS[info.levelId]) return;
+    writeJSON(LAST_LESSON_KEY, { levelId: info.levelId, url: info.lesson.fullPageUrl, uid: currentUserId() });
+    showLessonHub(info.levelId, info.lesson);
+    if (!currentUserId()) setTimeout(function () { showToast('Nhớ đăng nhập để bài học được lưu vào tài khoản của em nhé!'); }, 900);
   }
 
   function showBoard(which) {

@@ -177,6 +177,7 @@
       fillClassFilter();
       renderClass();
       if (window.__trClasses) window.__trClasses.render();
+      if (window.__trNhac) window.__trNhac.render();
       $('#adminUpdatedAt').textContent = new Date().toLocaleTimeString('vi-VN');
       showDash();
       var hash = location.hash.replace('#hs-', '');
@@ -512,13 +513,16 @@
       b.classList.toggle('active', on);
       b.setAttribute('aria-selected', on ? 'true' : 'false');
     });
-    var classes = name === 'classes', gopy = name === 'gopy';
+    var classes = name === 'classes', gopy = name === 'gopy', nhac = name === 'nhac';
     $('#trClasses').hidden = !classes;
     var gy = $('#trGopY');
     if (gy) gy.hidden = !gopy;
-    if (classes || gopy) { $('#trClass').hidden = true; $('#trDetail').hidden = true; }
+    var nh = $('#trNhac');
+    if (nh) nh.hidden = !nhac;
+    if (classes || gopy || nhac) { $('#trClass').hidden = true; $('#trDetail').hidden = true; }
     else { closeStudent(); }
     if (gopy && window.__trGopY) window.__trGopY.render();
+    if (nhac && window.__trNhac) window.__trNhac.render();
   }
   $all('.tr-tab').forEach(function (b) {
     b.addEventListener('click', function () { showTab(b.getAttribute('data-tab')); });

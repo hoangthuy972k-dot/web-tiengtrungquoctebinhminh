@@ -39,6 +39,7 @@
 
   <nav class="tr-tabs" role="tablist" aria-label="Báo cáo">
     <button type="button" class="tr-tab active" data-tab="students" role="tab" aria-selected="true">👩‍🎓 Học sinh</button>
+    <button type="button" class="tr-tab" data-tab="nhac" role="tab" aria-selected="false">📣 Cần nhắc học <span class="gy-dem" id="nhTabDem" hidden>0</span></button>
     <button type="button" class="tr-tab" data-tab="classes" role="tab" aria-selected="false">🏫 Lớp &amp; bài giao</button>
     <button type="button" class="tr-tab" data-tab="gopy" role="tab" aria-selected="false">💬 Góp ý <span class="gy-dem" id="gyTabDem" hidden>0</span></button>
   </nav>
@@ -103,6 +104,9 @@
   <!-- Chi tiet 1 hoc sinh -->
   <div id="trDetail" hidden></div>
 
+  <!-- Can nhac hoc: hoc sinh lau chua hoc + tin nhan Zalo soan san -->
+  <div id="trNhac" hidden></div>
+
   <!-- Lop hoc & bai giao -->
   <div id="trClasses" hidden></div>
 
@@ -114,5 +118,6 @@
 <script src="/js/admin.js"></script>
 <script src="/js/admin-classes.js"></script>
 <script src="/js/admin-gop-y.js"></script>
+<script src="/js/admin-nhac-hoc.js"></script>
 </body>
 </html>

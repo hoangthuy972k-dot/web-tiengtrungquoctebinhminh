@@ -1637,6 +1637,51 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .sp-btn.is-on { background: var(--sb-jade, #1f6f5c); border-color: var(--sb-jade, #1f6f5c); color: #fff; }
 .sp-btn:focus-visible { outline: 2px solid var(--color-gold-500); outline-offset: 2px; }
 .sp-reset { margin-left: auto; font-size: 0.78rem; color: var(--fg-text-muted); }
+.sp-note { margin: -4px 0 12px; font-size: 0.85rem; color: var(--fg-gray-600); }
+.hb-period { margin-top: 4px; }
+
+/* "Lop em / Toan truong" tren 2 bang xep hang */
+.lb-scope { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 10px; }
+.lb-scope-btn {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fg-gray-600);
+  cursor: pointer;
+}
+.lb-scope-btn small { font-weight: 500; opacity: 0.8; margin-left: 2px; }
+.lb-scope-btn.is-on { border-color: var(--color-gold-500); background: var(--color-gold-50, #fdf6e3); color: var(--color-gray-900, #1f1a17); box-shadow: inset 0 -3px 0 var(--color-gold-500); }
+.lb-scope-btn:focus-visible { outline: 2px solid var(--color-gold-500); outline-offset: 2px; }
+
+/* Loi moi tao tai khoan sau khi hoc xong 1 buoc (khach) */
+.signup-nudge {
+  position: fixed;
+  right: 24px;
+  bottom: 96px;
+  z-index: 160;
+  width: min(380px, calc(100vw - 32px));
+  padding: 16px 16px 14px;
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  color: var(--color-gray-900, #1f1a17);
+  border: 1px solid var(--color-gray-200);
+  box-shadow: var(--shadow-md);
+}
+.signup-nudge .sn-title { margin: 0 28px 6px 0; font-weight: 700; font-size: 1.02rem; }
+.signup-nudge .sn-text { margin: 0 0 12px; font-size: 0.92rem; color: var(--fg-gray-600); line-height: 1.5; }
+.signup-nudge .sn-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.signup-nudge .sn-close {
+  position: absolute; top: 6px; right: 6px; width: 36px; height: 36px;
+  border: 0; background: transparent; font-size: 1rem; color: var(--fg-gray-600); cursor: pointer; border-radius: 50%;
+}
+@media (max-width: 1079px) {
+  .signup-nudge { left: 16px; right: 16px; width: auto; bottom: calc(var(--bottom-nav-h) + 96px); }
+}
 
 /* ---------- Lo trinh bai hoc 7 buoc ---------- */
 .lesson-path {
@@ -8295,6 +8340,8 @@ body.pinyin-hidden .py-inline {
   color: var(--fg-text-muted); background: var(--color-gray-50);
 }
 .ab-s i { font-style: normal; font-weight: 600; font-size: 0.78em; opacity: 0.7; }
+/* Diem cua ban khac: may chu khong gui, chi ghi "riêng" */
+.ab-s.is-private { font-weight: 500; font-size: 0.82rem; letter-spacing: 0.01em; }
 /* Hang cua chinh em duoc to vang de de tim, nhung mau bon cot diem van phai
    thang — chinh em la nguoi can nhin mau nhat.                              */
 .ab-table td.ab-s.is-ok, .ab-table tr.is-me td.ab-s.is-ok { color: var(--fg-green-600); background: var(--color-green-50); }

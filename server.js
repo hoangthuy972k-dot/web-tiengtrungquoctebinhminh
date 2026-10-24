@@ -524,6 +524,19 @@ const requireAuth = asyncRoute(async (req, res, next) => {
   next();
 });
 
+// Cac cap do hop le = APP_DATA.levels trong public/js/data.js (doc 1 lan khi khoi dong).
+// Dang ky voi cap la (hoac bi sua tay) thi ve 'hsk1'.
+const KNOWN_LEVELS = (() => {
+  try {
+    const ids = vm.runInNewContext(
+      fs.readFileSync(path.join(PUBLIC_DIR, 'js', 'data.js'), 'utf8') + '\n;APP_DATA.levels.map(function (l) { return l.id; })',
+      {}, { timeout: 2000 }
+    );
+    if (Array.isArray(ids) && ids.length) return new Set(ids.map(String));
+  } catch (err) { console.error('Khong doc duoc danh sach cap do tu data.js:', err.message); }
+  return new Set(['hsk1', 'hsk1v3', 'hsk2v3', 'hsk3v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'yct']);
+})();
+
 function publicUser(user) {
   return { id: user.id, name: user.name, email: user.email, level: user.level };
 }
@@ -554,7 +567,8 @@ app.post('/api/auth/register', asyncRoute(async (req, res) => {
   const email = typeof req.body?.email === 'string' ? req.body.email.trim().toLowerCase() : '';
   // bo dau cach 2 dau (ban phim dien thoai hay tu them) de lan sau dang nhap tren may khac van khop
   const password = typeof req.body?.password === 'string' ? req.body.password.trim() : '';
-  const level = typeof req.body?.level === 'string' ? req.body.level.slice(0, 20) : 'hsk1';
+  const levelIn = typeof req.body?.level === 'string' ? req.body.level.trim() : '';
+  const level = KNOWN_LEVELS.has(levelIn) ? levelIn : 'hsk1';
   if (!name || !email || !password || password.length < 6) {
     return res.status(400).json({ error: 'Thiếu họ tên, email hoặc mật khẩu (tối thiểu 6 ký tự).' });
   }
@@ -888,39 +902,124 @@ async function loadDailyPoints(day) {
   return rows.map((r) => ({ userId: r.user_id, lessonCorrect: r.lesson_correct, examCorrect: r.exam_correct, updatedMs: Number(r.updated_ms) }));
 }
 
+// Tong diem tung hoc sinh trong cac ngay tu `from` den `to` (khoa ngay gio VN, tinh ca 2 dau)
+async function loadPointsRange(from, to) {
+  const out = {};
+  if (!USE_DB) {
+    const all = readJsonFile(DAILY_POINTS_FILE) || {};
+    Object.keys(all).forEach((day) => {
+      if (day < from || day > to) return;
+      const dayMap = all[day] || {};
+      Object.keys(dayMap).forEach((userId) => {
+        const r = dayMap[userId] || {};
+        const o = out[userId] || (out[userId] = { lessonCorrect: 0, examCorrect: 0, updatedMs: 0 });
+        o.lessonCorrect += r.lessonCorrect || 0;
+        o.examCorrect += r.examCorrect || 0;
+        o.updatedMs = Math.max(o.updatedMs, r.updatedMs || 0);
+      });
+    });
+    return out;
+  }
+  const [rows] = await dbPool.query(
+    'SELECT user_id, SUM(lesson_correct) AS lc, SUM(exam_correct) AS ec, MAX(updated_ms) AS um FROM daily_points WHERE day >= ? AND day <= ? GROUP BY user_id',
+    [from, to]
+  );
+  rows.forEach((r) => { out[r.user_id] = { lessonCorrect: Number(r.lc) || 0, examCorrect: Number(r.ec) || 0, updatedMs: Number(r.um) || 0 }; });
+  return out;
+}
+function dayKeyAdd(key, n) {
+  return new Date(Date.parse(key + 'T00:00:00Z') + n * 86400000).toISOString().slice(0, 10);
+}
+
+// Pham vi bang xep hang: "Lop em" (mac dinh khi hoc sinh da vao lop) hoac "Toan truong".
+// ?scope=class|school; khong gui = tu chon. Hoc sinh chua vao lop thi luon la toan truong.
+async function lbScopeOf(req, meId) {
+  const want = req.query.scope === 'school' ? 'school' : 'auto';
+  let lop = null;
+  if (meId) {
+    const st = await loadClassState();
+    const mem = st.members[meId];
+    const cls = mem && st.classes.find((c) => c.id === mem.classId);
+    if (cls) lop = { name: cls.name, ids: new Set(Object.keys(st.members).filter((u) => st.members[u].classId === cls.id)) };
+  }
+  const scope = lop && want !== 'school' ? 'class' : 'school';
+  return { scope, myClass: lop ? { name: lop.name } : null, allow: scope === 'class' ? lop.ids : null };
+}
+
+// "Tien bo nhat tuan": xep theo so diem/sao TANG THEM so voi tuan truoc (so tuyet doi,
+// khong chia ti le de 1 em tu 1 len 5 diem khong thanh "tang 400%"). Phai hoc du
+// mot muc toi thieu trong tuan nay moi duoc vao bang.
+const IMPROVE_MIN_POINTS = 20; // it nhat 20 cau dung trong tuan nay
+const IMPROVE_MIN_POINTS_GAIN = 5;
+const IMPROVE_MIN_STARS = 30;  // it nhat 30 sao trong tuan nay
+const IMPROVE_MIN_STARS_GAIN = 10;
+
+// ?period=day (hom nay) | week (tuan nay) | improve (tien bo nhat tuan).
+// Khong gui period: hoc sinh co lop -> tuan nay, con lai -> hom nay.
 app.get('/api/leaderboard/today', asyncRoute(async (req, res) => {
   const day = vnDayKey();
   const meId = await optionalUserId(req);
-  const [daily, users, scores] = await Promise.all([loadDailyPoints(day), loadUsers(), loadScores()]);
+  const pham = await lbScopeOf(req, meId);
+  const period = ['day', 'week', 'improve'].includes(req.query.period) ? req.query.period : (pham.myClass ? 'week' : 'day');
+  const week = vnWeekKey();
+  // So ngay da qua trong tuan (0 = thu Hai). Tien bo: so voi CUNG SO NGAY dau tuan truoc.
+  const soNgay = Math.round((Date.parse(day) - Date.parse(week)) / 86400000);
+  let pts;
+  if (period === 'day') {
+    pts = {};
+    (await loadDailyPoints(day)).forEach((d) => { pts[d.userId] = d; });
+  } else {
+    pts = await loadPointsRange(week, day);
+  }
+  const prev = period === 'improve' ? await loadPointsRange(dayKeyAdd(week, -7), dayKeyAdd(week, -7 + soNgay)) : null;
+  const [users, scores] = await Promise.all([loadUsers(), loadScores()]);
   const userById = {};
   users.forEach((u) => { userById[u.id] = u; });
-  const board = daily
-    .filter((d) => userById[d.userId])
-    .map((d) => {
-      const sc = scores[d.userId] || {};
-      return {
-        userId: d.userId,
-        name: userById[d.userId].name,
-        level: userById[d.userId].level,
-        lessonCorrect: d.lessonCorrect,
-        examCorrect: d.examCorrect,
-        points: d.lessonCorrect + d.examCorrect,
+  const board = Object.keys(pts)
+    .filter((id) => userById[id] && (!pham.allow || pham.allow.has(id)))
+    .map((id) => {
+      const d = pts[id];
+      const sc = scores[id] || {};
+      const points = (d.lessonCorrect || 0) + (d.examCorrect || 0);
+      const r = {
+        userId: id,
+        name: userById[id].name,
+        level: userById[id].level,
+        lessonCorrect: d.lessonCorrect || 0,
+        examCorrect: d.examCorrect || 0,
+        points,
         streak: sc.streak || 0,
-        updatedMs: d.updatedMs,
+        updatedMs: d.updatedMs || 0,
       };
+      if (prev) {
+        const p = prev[id];
+        r.thisWeek = points;
+        r.lastWeek = p ? (p.lessonCorrect || 0) + (p.examCorrect || 0) : 0;
+        r.points = points - r.lastWeek; // diem tang them
+      }
+      return r;
     })
-    .filter((r) => r.points > 0)
+    .filter((r) => (prev ? r.thisWeek >= IMPROVE_MIN_POINTS && r.points >= IMPROVE_MIN_POINTS_GAIN : r.points > 0))
     // bang diem thi chuoi ngay hoc dai hon dung tren, roi ai dat diem som hon
-    .sort((a, b) => b.points - a.points || b.streak - a.streak || a.updatedMs - b.updatedMs);
-  const toRow = (r, i) => ({
-    rank: i + 1, name: r.name, level: r.level, points: r.points,
-    lessonCorrect: r.lessonCorrect, examCorrect: r.examCorrect, streak: r.streak, isMe: r.userId === meId,
-  });
+    .sort((a, b) => b.points - a.points || (prev ? b.thisWeek - a.thisWeek : 0) || b.streak - a.streak || a.updatedMs - b.updatedMs);
+  const toRow = (r, i) => {
+    const row = {
+      rank: i + 1, name: r.name, level: r.level, points: r.points,
+      lessonCorrect: r.lessonCorrect, examCorrect: r.examCorrect, streak: r.streak, isMe: r.userId === meId,
+    };
+    if (prev) { row.gain = r.points; row.thisWeek = r.thisWeek; row.lastWeek = r.lastWeek; }
+    return row;
+  };
   const meIdx = meId ? board.findIndex((r) => r.userId === meId) : -1;
   const fifth = board[4];
   res.json({
+    period,
+    scope: pham.scope,
+    myClass: pham.myClass,
+    week,
+    minPoints: period === 'improve' ? IMPROVE_MIN_POINTS : null,
     date: day,
-    resetInSec: secondsToVnMidnight(),
+    resetInSec: period === 'day' ? secondsToVnMidnight() : secondsToVnWeekEnd(),
     count: board.length,
     top: board.slice(0, 5).map(toRow),
     me: meIdx >= 0 ? toRow(board[meIdx], meIdx) : null,
@@ -973,7 +1072,7 @@ async function initStarsTable() {
     ')'
   );
   for (const col of ['answer_peak INT NULL', 'day_answer INT NOT NULL DEFAULT 0', 'day_tasks TINYINT NOT NULL DEFAULT 0', 'day_sec INT NOT NULL DEFAULT 0',
-    'week CHAR(10) NULL', 'week_stars INT NOT NULL DEFAULT 0']) {
+    'week CHAR(10) NULL', 'week_stars INT NOT NULL DEFAULT 0', 'prev_week CHAR(10) NULL', 'prev_week_stars INT NOT NULL DEFAULT 0']) {
     try {
       await dbPool.query('ALTER TABLE stars ADD COLUMN ' + col);
     } catch (err) {
@@ -982,7 +1081,7 @@ async function initStarsTable() {
   }
 }
 function blankStar() {
-  return { total: 0, carrySec: 0, day: '', dayVisit: 0, dayStars: 0, dayAnswer: 0, dayTasks: 0, daySec: 0, week: '', weekStars: 0, answerPeak: null, lastTickMs: 0, updatedMs: 0 };
+  return { total: 0, carrySec: 0, day: '', dayVisit: 0, dayStars: 0, dayAnswer: 0, dayTasks: 0, daySec: 0, week: '', weekStars: 0, prevWeek: '', prevWeekStars: 0, answerPeak: null, lastTickMs: 0, updatedMs: 0 };
 }
 async function loadStar(userId) {
   if (!USE_DB) {
@@ -995,6 +1094,7 @@ async function loadStar(userId) {
   return {
     total: r.total, carrySec: r.carry_sec, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars,
     dayAnswer: r.day_answer || 0, dayTasks: r.day_tasks || 0, daySec: r.day_sec || 0, week: r.week || '', weekStars: r.week_stars || 0,
+    prevWeek: r.prev_week || '', prevWeekStars: r.prev_week_stars || 0,
     answerPeak: r.answer_peak == null ? null : r.answer_peak,
     lastTickMs: Number(r.last_tick_ms), updatedMs: Number(r.updated_ms),
   };
@@ -1008,11 +1108,11 @@ async function saveStar(userId, s) {
     return;
   }
   await dbPool.query(
-    'INSERT INTO stars (user_id,total,carry_sec,day,day_visit,day_stars,day_answer,day_tasks,day_sec,week,week_stars,answer_peak,last_tick_ms,updated_ms) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ' +
+    'INSERT INTO stars (user_id,total,carry_sec,day,day_visit,day_stars,day_answer,day_tasks,day_sec,week,week_stars,prev_week,prev_week_stars,answer_peak,last_tick_ms,updated_ms) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ' +
       'ON DUPLICATE KEY UPDATE total=VALUES(total), carry_sec=VALUES(carry_sec), day=VALUES(day), day_visit=VALUES(day_visit), ' +
-      'day_stars=VALUES(day_stars), day_answer=VALUES(day_answer), day_tasks=VALUES(day_tasks), day_sec=VALUES(day_sec), week=VALUES(week), week_stars=VALUES(week_stars), ' +
+      'day_stars=VALUES(day_stars), day_answer=VALUES(day_answer), day_tasks=VALUES(day_tasks), day_sec=VALUES(day_sec), week=VALUES(week), week_stars=VALUES(week_stars), prev_week=VALUES(prev_week), prev_week_stars=VALUES(prev_week_stars), ' +
       'answer_peak=VALUES(answer_peak), last_tick_ms=VALUES(last_tick_ms), updated_ms=VALUES(updated_ms)',
-    [userId, s.total, s.carrySec, s.day, s.dayVisit, s.dayStars, s.dayAnswer || 0, s.dayTasks || 0, s.daySec || 0, s.week || null, s.weekStars || 0,
+    [userId, s.total, s.carrySec, s.day, s.dayVisit, s.dayStars, s.dayAnswer || 0, s.dayTasks || 0, s.daySec || 0, s.week || null, s.weekStars || 0, s.prevWeek || null, s.prevWeekStars || 0,
       s.answerPeak == null ? null : s.answerPeak, s.lastTickMs, s.updatedMs]
   );
 }
@@ -1021,9 +1121,10 @@ async function loadAllStars() {
     const all = readJsonFile(STARS_FILE) || {};
     return Object.keys(all).map((id) => Object.assign({ userId: id }, blankStar(), all[id]));
   }
-  const [rows] = await dbPool.query('SELECT user_id, total, day, day_visit, day_stars, day_answer, day_tasks, week, week_stars, updated_ms FROM stars WHERE total > 0 ORDER BY total DESC, updated_ms ASC LIMIT 2000');
+  const [rows] = await dbPool.query('SELECT user_id, total, day, day_visit, day_stars, day_answer, day_tasks, week, week_stars, prev_week, prev_week_stars, updated_ms FROM stars WHERE total > 0 ORDER BY total DESC, updated_ms ASC LIMIT 2000');
   return rows.map((r) => ({ userId: r.user_id, total: r.total, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars, dayAnswer: r.day_answer || 0,
-    dayTasks: r.day_tasks || 0, week: r.week || '', weekStars: r.week_stars || 0, updatedMs: Number(r.updated_ms) }));
+    dayTasks: r.day_tasks || 0, week: r.week || '', weekStars: r.week_stars || 0,
+    prevWeek: r.prev_week || '', prevWeekStars: r.prev_week_stars || 0, updatedMs: Number(r.updated_ms) }));
 }
 // Tuan tinh tu thu Hai (gio VN); khoa = ngay thu Hai dau tuan
 function vnWeekKey(ms) {
@@ -1040,7 +1141,15 @@ function rollStarDay(s) {
   const day = vnDayKey();
   if (s.day !== day) { s.day = day; s.dayVisit = 0; s.dayStars = 0; s.dayAnswer = 0; s.dayTasks = 0; s.daySec = 0; }
   const week = vnWeekKey();
-  if (s.week !== week) { s.week = week; s.weekStars = 0; }
+  // giu lai so sao tuan truoc de tinh "Tien bo nhat tuan"
+  if (s.week !== week) { s.prevWeek = s.week || ''; s.prevWeekStars = s.weekStars || 0; s.week = week; s.weekStars = 0; }
+}
+// So sao cua tuan truoc lien ke (0 neu tuan do khong hoc)
+function starsLastWeek(s) {
+  const lw = vnWeekKey(Date.now() - 7 * 86400000);
+  if (s.week === lw) return s.weekStars || 0;
+  if (s.prevWeek === lw) return s.prevWeekStars || 0;
+  return 0;
 }
 // Moi lan cong sao deu cong ca vao tong va vao "tuan nay"
 function addStars(s, n) {
@@ -1159,24 +1268,38 @@ app.post('/api/stars/tick', requireAuth, asyncRoute(async (req, res) => {
 // Bang xep hang "nguoi cham chi nhat": tong sao, kem so sao hom nay.
 app.get('/api/leaderboard/stars', asyncRoute(async (req, res) => {
   const meId = await optionalUserId(req);
+  const pham = await lbScopeOf(req, meId);
   const [all, users] = await Promise.all([loadAllStars(), loadUsers()]);
   const byId = {};
   users.forEach((u) => { byId[u.id] = u; });
   const today = vnDayKey();
   // ?period=week: chi tinh sao kiem duoc trong tuan nay (thu Hai → Chu nhat, gio VN)
-  const weekly = req.query.period === 'week';
+  // ?period=improve: sao tuan nay tang them bao nhieu so voi CUNG THOI DIEM tuan truoc
+  // (tuan truoc chi luu tong ca tuan nen chia deu theo so ngay da qua)
+  const period = req.query.period === 'week' || req.query.period === 'improve' ? req.query.period : 'all';
+  const weekly = period !== 'all';
+  const improve = period === 'improve';
   const thisWeek = vnWeekKey();
-  const score = (s) => (weekly ? (s.week === thisWeek ? s.weekStars || 0 : 0) : s.total);
+  const soNgay = Math.round((Date.parse(today) - Date.parse(thisWeek)) / 86400000) + 1; // 1..7
+  const weekOf = (s) => (s.week === thisWeek ? s.weekStars || 0 : 0);
+  const lastOf = (s) => Math.round(starsLastWeek(s) * soNgay / 7);
+  const score = (s) => (improve ? weekOf(s) - lastOf(s) : weekly ? weekOf(s) : s.total);
   const board = all
-    .filter((s) => byId[s.userId] && score(s) > 0)
-    .sort((a, b) => score(b) - score(a) || a.updatedMs - b.updatedMs);
-  const toRow = (s, i) => ({
-    rank: i + 1, name: byId[s.userId].name, level: byId[s.userId].level, total: score(s),
-    today: s.day === today ? starsToday(s) : 0, isMe: s.userId === meId,
-  });
+    .filter((s) => byId[s.userId] && (!pham.allow || pham.allow.has(s.userId)))
+    .filter((s) => (improve ? weekOf(s) >= IMPROVE_MIN_STARS && score(s) >= IMPROVE_MIN_STARS_GAIN : score(s) > 0))
+    .sort((a, b) => score(b) - score(a) || (improve ? weekOf(b) - weekOf(a) : 0) || a.updatedMs - b.updatedMs);
+  const toRow = (s, i) => {
+    const row = {
+      rank: i + 1, name: byId[s.userId].name, level: byId[s.userId].level, total: score(s),
+      today: s.day === today ? starsToday(s) : 0, isMe: s.userId === meId,
+    };
+    if (improve) { row.gain = score(s); row.thisWeek = weekOf(s); row.lastWeek = lastOf(s); }
+    return row;
+  };
   const meIdx = meId ? board.findIndex((s) => s.userId === meId) : -1;
   res.json({
-    period: weekly ? 'week' : 'all', week: thisWeek, resetInSec: weekly ? secondsToVnWeekEnd() : null,
+    period, scope: pham.scope, myClass: pham.myClass, minStars: improve ? IMPROVE_MIN_STARS : null,
+    week: thisWeek, resetInSec: weekly ? secondsToVnWeekEnd() : null,
     rows: board.slice(0, 50).map(toRow), me: meIdx >= 0 ? toRow(board[meIdx], meIdx) : null, count: board.length,
   });
 }));
@@ -2934,7 +3057,15 @@ function numberedAssignments(st, classId) {
 }
 
 // Bang lop cho hoc sinh: danh sach lop (theo thu tu giao vien dan) + ai da lam bai nao.
-// Chi tra ten va trang thai (khong tra email / diem cua ban khac).
+// Rieng tu: chi dong CUA EM moi co diem (so cau dung, xay dung, mieng, giua ki,
+// cuoi ki). Dong cua ban khac chi co dau tick da lam / chua lam va so bai da xong —
+// may chu khong gui diem cua ban khac (khong chi an tren giao dien).
+function boardMarkPublic(status) {
+  // nop muon / qua han la chuyen rieng cua tung em: ban khac chi thay da lam hay chua
+  if (status === 'late') return 'done';
+  if (status === 'overdue') return 'todo';
+  return status;
+}
 async function classBoard(st, classId, meId) {
   const list = numberedAssignments(st, classId);
   const roster = st.roster.filter((r) => r.classId === classId).sort((a, b) => a.sort - b.sort);
@@ -2946,11 +3077,11 @@ async function classBoard(st, classId, meId) {
   function marks(userId) {
     if (!userId || !st.members[userId] || st.members[userId].classId !== classId) return null;
     const d = done[userId] || {};
-    // Tra ca SO CAU DUNG de bang lop hien duoc diem, khong chi hien dau tick.
-    // Van khong tra email hay bat cu gi khac cua ban khac.
+    const laEm = !!meId && userId === meId;
+    // Dong cua em: kem SO CAU DUNG. Dong cua ban khac: chi trang thai da lam / chua lam.
     return list.map((a) => {
       const s = assignmentStatus(a, d[a.lessonUrl], now);
-      return { s: s.status, c: s.correct || 0, t: s.total || 0 };
+      return laEm ? { s: s.status, c: s.correct || 0, t: s.total || 0 } : { s: boardMarkPublic(s.status) };
     });
   }
   // So diem cua lop — de hoc sinh thay minh duoc cong bao nhieu
@@ -2961,6 +3092,8 @@ async function classBoard(st, classId, meId) {
     const m = marks(r.userId);
     // Chuyen can = so bai tap da lam xong; tinh thang tu marks nen luon khop bang tren
     const chuyenCan = m ? m.filter((x) => x.s === 'done' || x.s === 'late').length : 0;
+    // Ban khac: chi tien do (so bai da xong), khong gui diem
+    if (!meId || r.userId !== meId) return { chuyenCan, rieng: true };
     const p = tongDiem[r.id] || { build: 0, mid: null, final: null };
     const o = tongMieng[r.id] || { mieng: null, so: 0, lan: null };
     return { chuyenCan, build: p.build, mid: p.mid, final: p.final,
@@ -2973,9 +3106,10 @@ async function classBoard(st, classId, meId) {
       const m = marks(u);
       // Em nay chua co ten trong danh sach nen khong co so diem cham tay,
       // nhung chuyen can van tinh duoc tu bai da lam.
+      const cc = m ? m.filter((x) => x.s === 'done' || x.s === 'late').length : 0;
       rows.push({
         name: nameById[u], me: u === meId, joined: true, extra: roster.length > 0, marks: m,
-        diem: { chuyenCan: m ? m.filter((x) => x.s === 'done' || x.s === 'late').length : 0, build: 0, mid: null, final: null, mieng: null, miengSo: 0, miengLan: null }
+        diem: u === meId ? { chuyenCan: cc, build: 0, mid: null, final: null, mieng: null, miengSo: 0, miengLan: null } : { chuyenCan: cc, rieng: true }
       });
     });
   return {
@@ -3579,6 +3713,25 @@ app.get('/api/admin/report', requireAdmin, asyncRoute(async (req, res) => {
     return examTitle[id];
   }
   const classSt = await loadClassState();
+  // Bai hoc gan nhat cua tung em (phan nao lam/cap nhat sau cung) — cho danh sach "Can nhac hoc"
+  const lastLessonOf = {};
+  try {
+    const partDone = await loadPartDone(null);
+    Object.keys(partDone).forEach((uid) => {
+      let best = null;
+      Object.keys(partDone[uid] || {}).forEach((url) => {
+        const parts = partDone[uid][url] || {};
+        Object.keys(parts).forEach((p) => {
+          const ms = Math.max(Number(parts[p].firstMs) || 0, Number(parts[p].lastMs) || 0);
+          if (!best || ms > best.ms) best = { url, ms };
+        });
+      });
+      if (best) {
+        best.parts = Object.keys(partDone[uid][best.url] || {});
+        lastLessonOf[uid] = best;
+      }
+    });
+  } catch (err) { console.error('lastLesson', err.message); }
   const today = vnDayKey();
   const week = vnWeekKey();
   const days30 = [];
@@ -3611,14 +3764,16 @@ app.get('/api/admin/report', requireAdmin, asyncRoute(async (req, res) => {
       totalCorrect: sc.totalCorrect || 0,
       totalQuestions: sc.totalQuestions || 0,
       lessonScores: sc.lessonScores || {},
+      lastLesson: lastLessonOf[u.id] || null,
       wrongWords: Array.from(wrong).slice(0, 60),
       srsTotal: srsKeys.length,
       srsDue: srsKeys.filter((k) => srs[k].due <= today).length,
       stars: s ? {
         total: s.total || 0,
         week: s.week === week ? (s.weekStars || 0) : 0,
+        lastWeek: starsLastWeek(s),
         today: s.day === today ? starsToday(s) : 0,
-      } : { total: 0, week: 0, today: 0 },
+      } : { total: 0, week: 0, lastWeek: 0, today: 0 },
       exams: attempts.filter((a) => a.userId === u.id && a.submittedMs).map((a) => ({
         examId: a.examId, title: titleOf(a.examId), level: a.level, score: a.score, maxScore: a.maxScore,
         correct: a.correct, total: a.total, usedSec: a.usedSec, submittedMs: a.submittedMs,

@@ -1217,7 +1217,7 @@ var matchData = [
 var mcData = [
   {q:'今天天气＿＿？',opts:['怎么样','什么','怎么','哪儿'],ans:0,exp:'怎么样 dùng để hỏi tình trạng, xin nhận xét: 天气怎么样？ — Thời tiết thế nào?'},
   {q:'今天＿＿热了。',opts:['太','很','不','没'],ans:0,exp:'太 + tính từ + 了 = quá…: 太热了.'},
-  {q:'Phủ định của "太……了" (quá) thường dùng cấu trúc nào?',opts:['不太……','没太……','别太……','无太……'],ans:0,exp:'Phủ định nhẹ nhàng của 太……了 là 不太 + tính từ: 不太好 = không tốt lắm.'},
+  {q:'Muốn nói "hôm nay không nóng lắm", dùng câu nào?',opts:['今天不太热。','今天没太热。','今天太不热。','今天不热太。'],ans:0,exp:'不太 + tính từ = không … lắm: 不太热. 没 không dùng để phủ định tính từ chỉ tính chất, và 太 phải đứng trước 热.'},
   {q:'明天会＿＿吗？(biểu thị khả năng sẽ xảy ra)',opts:['来','是','有','在'],ans:0,exp:'Sau 会 (sẽ, có khả năng) cần một động từ; 来 (đến) hợp nghĩa: 明天会来吗？'},
   {q:'"身体" nghĩa là gì?',opts:['sức khỏe, cơ thể','tâm trạng','tính cách','ngoại hình'],ans:0,exp:'身体 = cơ thể, sức khỏe: 你身体怎么样？ là câu hỏi thăm sức khỏe.'},
   {q:'"水果" nghĩa là gì?',opts:['trái cây, hoa quả','rau củ','nước uống','đồ ăn'],ans:0,exp:'水果 = 水 (nước) + 果 (quả): hoa quả, trái cây.'},

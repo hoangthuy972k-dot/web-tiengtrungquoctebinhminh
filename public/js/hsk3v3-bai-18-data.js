@@ -2646,7 +2646,7 @@ var mcData = [
   { q: '还有最后一个＿＿就要毕业了，他很快就会回来了。', opts: ['学期', '节日', '目标', '过去'], ans: 0, exp: '最后一个学期 = học kỳ cuối, sau đó tốt nghiệp.' },
   { q: '在他身上，我懂得了，只要一直坚持，就能＿＿自己的目标。', opts: ['发生', '完成', '出发', '懂得'], ans: 1, exp: '完成目标 = hoàn thành mục tiêu. 发生, 出发 không mang tân ngữ 目标.' },
   { q: '我相信，他以后一定会＿＿得更好。', opts: ['收', '起', '发展', '出生'], ans: 2, exp: '发展得更好 = phát triển tốt hơn. 收, 起 không đi với 得更好 ở đây.' },
-  { q: 'Chọn câu đúng: "Cuộc điện thoại lúc nãy là mẹ tôi gọi đến."', opts: ['刚刚的电话是我妈妈打来的。', '刚才的电话是我妈妈打来的。', '电话刚刚的是我妈妈打来的。', '刚的电话是我妈妈打来的。'], ans: 1, exp: '刚才 là danh từ thời gian nên làm định ngữ được: 刚才的电话. 刚刚 là phó từ, thường chỉ đứng trước động từ.' },
+  { q: 'Chọn câu đúng: "Cuộc điện thoại lúc nãy là mẹ tôi gọi đến."', opts: ['刚才电话的是我妈妈打来的。', '刚才的电话是我妈妈打来的。', '电话刚刚的是我妈妈打来的。', '刚的电话是我妈妈打来的。'], ans: 1, exp: '刚才 là danh từ thời gian nên làm định ngữ được: 刚才的电话 (cuộc điện thoại lúc nãy). 的 phải đứng sau 刚才, trước 电话; 刚 một mình không làm định ngữ.' },
   { q: 'Chọn câu đúng: "Chỉ cần có thời gian, tôi sẽ đến thăm bạn."', opts: ['只要有时间，就我去看你。', '只要有时间，我才去看你。', '只要有时间，我去看你就。', '只要有时间，我就去看你。'], ans: 3, exp: '只要…，就… = chỉ cần… thì…; 就 đứng sau chủ ngữ vế sau, trước động từ.' },
   { q: '"教室里来了五六个学生。" — 「五六个」 ở đây biểu thị gì?', opts: ['Số ước lượng: khoảng năm, sáu người', 'Đúng 56 người', 'Năm hoặc sáu lần', 'Thứ tự thứ năm, thứ sáu'], ans: 0, exp: 'Hai số liền nhau (五六个) = số ước lượng: khoảng năm, sáu người.' }
 ];

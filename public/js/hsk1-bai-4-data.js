@@ -858,7 +858,7 @@ var mcData = [
   {q:'你是＿＿国人？',opts:['哪','什么','谁','这'],ans:0,exp:'哪 + 国 + 人 hỏi quốc tịch: 你是哪国人？ — Bạn là người nước nào?'},
   {q:'Trợ từ nào biểu thị quan hệ SỞ HỮU?',opts:['的','了','吗','呢'],ans:0,exp:'的 biểu thị sở hữu: 我的老师 = thầy giáo của tôi. 了, 吗, 呢 không có chức năng này.'},
   {q:'我是中国人，你＿＿？',opts:['呢','吗','吧','啊'],ans:0,exp:'呢 đặt sau đại từ/danh từ để hỏi ngược lại: 你呢？ — Còn bạn thì sao?'},
-  {q:'"这是我的书" có thể lược bỏ "的" khi danh từ phía sau là:',opts:['người thân, bạn bè thân thiết','đồ vật bất kỳ','tên riêng','số đếm'],ans:0,exp:'Trước danh từ chỉ người thân, bạn bè thân thiết có thể bỏ 的: 我朋友, 我妈妈.'},
+  {q:'Có thể bỏ "的" (như 我朋友 thay cho 我的朋友) khi danh từ phía sau là:',opts:['người thân, bạn bè thân thiết','đồ vật bất kỳ','tên riêng','số đếm'],ans:0,exp:'Trước danh từ chỉ người thân, bạn bè thân thiết có thể bỏ 的: 我朋友, 我妈妈.'},
   {q:'"汉语" nghĩa là gì?',opts:['tiếng Trung Quốc','người Trung Quốc','nước Trung Quốc','chữ Hán'],ans:0,exp:'汉语 (Hànyǔ) là tiếng Trung (tiếng Hán); 中国人 là người Trung Quốc, 汉字 là chữ Hán.'},
   {q:'"同学" nghĩa là gì?',opts:['bạn cùng lớp','bạn bè nói chung','thầy cô giáo','người nước ngoài'],ans:0,exp:'同学 là bạn cùng lớp/cùng trường; 朋友 mới là bạn bè nói chung.'},
   {q:'Từ nào dùng để chỉ NGƯỜI NỮ đang được nhắc đến (cô ấy)?',opts:['她','他','你','我'],ans:0,exp:'她 có bộ 女 (nữ), chỉ người nữ; 他 chỉ người nam.'},

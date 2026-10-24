@@ -156,7 +156,7 @@ var fillData = [
   {pre:'Con nối bố và mẹ: “爸爸',blank:'和',post:'妈妈”',hint:'(và)',ans:'和',exp:'和 = và, nối 爸爸 với 妈妈.'},
   {pre:'Con nói mình không có chị gái: “我',blank:'没有',post:'姐姐。”',hint:'(không có)',ans:'没有',exp:'没有 = không có (phủ định của 有, không nói 不有).'},
   {pre:'Con nói mình có một em gái: “我有一',blank:'个',post:'妹妹。”',hint:'(cái, con)',ans:'个',exp:'Số + lượng từ + danh từ: 一 + 个 + 妹妹.'},
-  {pre:'Con giới thiệu người trong ảnh: “这是我',blank:'爸爸',post:'。”',hint:'(bố)',ans:'爸爸',exp:'爸爸 = bố.'},
+  {pre:'Con giới thiệu bố mình: “他是我',blank:'爸爸',post:'。”',hint:'(bố)',ans:'爸爸',exp:'爸爸 = bố: 他是我爸爸 = ông ấy là bố con.'},
   {pre:'Con giới thiệu nhà mình: “我',blank:'家',post:'有三口人。”',hint:'(nhà, gia đình)',ans:'家',exp:'我家 = nhà mình; 家 là nhà, gia đình.'},
 ];
 

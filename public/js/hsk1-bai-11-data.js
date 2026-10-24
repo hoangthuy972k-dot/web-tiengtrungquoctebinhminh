@@ -1002,7 +1002,7 @@ var matchData = [
 // Trắc nghiệm — trọng tâm cách nói giờ & trạng ngữ thời gian, không audio
 var mcData = [
   {q:'＿＿几点？',opts:['现在','什么','怎么','哪儿'],ans:0,exp:'现在几点？ = Bây giờ mấy giờ? — 现在 nghĩa là "bây giờ".'},
-  {q:'Số "2 giờ" nói thế nào (không dùng 二)?',opts:['两点','二点','两个点','二个点'],ans:0,exp:'Nói 2 giờ dùng 两点 (liǎng diǎn), không nói 二点.'},
+  {q:'"Bây giờ là 3 giờ" nói thế nào?',opts:['现在三点。','现在三个点。','现在点三。','三点现在。'],ans:0,exp:'Giờ đúng = số + 点: 三点 (không thêm 个); 现在 đứng đầu câu: 现在三点。'},
   {q:'Trạng ngữ chỉ thời gian thường đứng ở đâu trong câu?',opts:['trước hoặc ngay sau chủ ngữ','luôn ở cuối câu','luôn tách biệt hoàn toàn ở đầu câu','sau động từ'],ans:0,exp:'Trạng ngữ thời gian đứng trước động từ: ở đầu câu hoặc ngay sau chủ ngữ — 我星期一去北京 / 星期一我去北京.'},
   {q:'"前" trong "星期五前" nghĩa là gì?',opts:['trước (một mốc thời gian)','sau','trong','ngoài'],ans:0,exp:'Mốc thời gian + 前 = trước mốc đó: 星期五前 = trước thứ Sáu.'},
   {q:'"时候" nghĩa là gì?',opts:['thời gian, lúc, khi','giờ','phút','ngày'],ans:0,exp:'时候 = lúc, khi; 什么时候 = khi nào.'},

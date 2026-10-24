@@ -1066,7 +1066,7 @@ var fillData = [
   {pre:'Bạn khẳng định mình biết nói tiếng Trung: “我',blank:'会',post:'说汉语。”',hint:'(biết — qua học tập)',ans:'会',exp:'会 = biết (do học mà có): 我会说汉语.'},
   {pre:'Bạn phủ định mẹ mình biết nói tiếng Trung: “我妈妈不',blank:'会',post:'说汉语。”',hint:'(biết)',ans:'会',exp:'Phủ định của 会 là 不会.'},
   {pre:'Bạn khen món ăn ngon: “这个菜',blank:'很',post:'好吃。”',hint:'(rất)',ans:'很',exp:'很 đứng trước tính từ 好吃: 很好吃 = rất ngon.'},
-  {pre:'Bạn hỏi ai đó có biết nấu món Việt Nam không: “你会',blank:'做',post:'越南菜吗？”',hint:'(làm, nấu)',ans:'做',exp:'做 + 菜 = nấu món ăn.'},
+  {pre:'Bạn hỏi ai đó có biết nấu món Trung Quốc không: “你会',blank:'做',post:'中国菜吗？”',hint:'(làm, nấu)',ans:'做',exp:'做 + 菜 = nấu món ăn: 会做中国菜 = biết nấu món Trung Quốc.'},
   {pre:'Bạn hỏi ai đó có biết viết chữ Hán không: “你会',blank:'写',post:'汉字吗？”',hint:'(viết)',ans:'写',exp:'写 + 汉字 = viết chữ Hán.'},
   {pre:'Bạn hỏi cách viết một chữ cụ thể: “这个字',blank:'怎么',post:'写？”',hint:'(như thế nào)',ans:'怎么',exp:'怎么 + 写 = viết như thế nào (hỏi cách làm).'},
   {pre:'Bạn nói mình biết đọc nhưng không biết viết: “这个字我会读，',blank:'不',post:'会写。”',hint:'(không, chẳng)',ans:'不',exp:'会读，不会写: phủ định 会 bằng 不.'},

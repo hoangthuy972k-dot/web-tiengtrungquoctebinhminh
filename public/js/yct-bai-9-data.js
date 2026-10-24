@@ -148,7 +148,7 @@ var mcData = [
   {q:'Câu nào ĐÚNG khi nói "Mình cũng thích chó."?',opts:['我也喜欢狗。','我喜欢也狗。','也我喜欢狗。','我狗也喜欢。'],ans:0,exp:'也 đứng trước động từ 喜欢: 我也喜欢狗。'},
   {q:'Câu nào ĐÚNG khi hỏi "Hôm nay là ngày mấy?"?',opts:['今天是几号？','今天几是号？','几号今天是？','是今天几号？'],ans:0,exp:'Trật tự: 今天 + 是 + 几号？'},
   {q:'"今天" và "明天" khác nhau ở đâu?',opts:['今天 là hôm nay, 明天 là ngày mai','cả hai đều là hôm nay','cả hai đều là ngày mai','không khác nhau'],ans:0,exp:'今天 là hôm nay, 明天 là ngày mai.'},
-  {q:'Muốn nói "Ở đây có cá" con cần từ nào để chỉ ngày, tháng?',opts:['月, 号','喜欢, 星期','明天, 今天','生日, 星期'],ans:0,exp:'Nói ngày tháng cần 月 (tháng) và 号 (ngày): 五月一号.'},
+  {q:'Muốn nói ngày tháng (ví dụ ngày 1 tháng 5), con cần hai từ nào?',opts:['月, 号','喜欢, 星期','明天, 今天','生日, 星期'],ans:0,exp:'Nói ngày tháng cần 月 (tháng) và 号 (ngày): 五月一号.'},
   {q:'"星期" thường đi cùng số từ để chỉ điều gì?',opts:['thứ trong tuần','tháng trong năm','giờ trong ngày','ngày trong tháng'],ans:0,exp:'星期 + số chỉ thứ trong tuần: 星期一 = thứ Hai.'},
   {q:'Câu nào ĐÚNG khi nói "Mình thích mèo."?',opts:['我喜欢猫。','我猫喜欢。','喜欢我猫。','猫我喜欢。'],ans:0,exp:'Trật tự: 我 + 喜欢 + 猫 (chủ ngữ + động từ + tân ngữ).'},
 ];

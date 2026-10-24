@@ -1237,13 +1237,13 @@ var dialogData = [
 // Điền từ — đổi con vật/nơi chốn so với bài khoá
 var fillData = [
   {pre:'Bạn hỏi con mèo đang ở đâu: “小猫',blank:'在',post:'哪儿？”',hint:'(ở — động từ)',ans:'在',exp:'在 + 哪儿: hỏi ai/cái gì đang ở đâu.'},
-  {pre:'Bạn nói con chó ở dưới bàn: “小狗在桌子',blank:'下面',post:'。”',hint:'(bên dưới)',ans:'下面',exp:'下面 = bên dưới: 在桌子下面.'},
+  {pre:'Bạn nói con mèo ở dưới ghế: “小猫在椅子',blank:'下面',post:'。”',hint:'(bên dưới)',ans:'下面',exp:'下面 = bên dưới: 在椅子下面 = ở dưới ghế.'},
   {pre:'Bạn hỏi ai đó làm việc ở đâu: “你在',blank:'哪儿',post:'工作？”',hint:'(ở đâu)',ans:'哪儿',exp:'在哪儿工作 = làm việc ở đâu.'},
   {pre:'Bạn nói mình làm việc ở bệnh viện: “我在',blank:'医院',post:'工作。”',hint:'(bệnh viện)',ans:'医院',exp:'在 + 医院 + 工作 = làm việc ở bệnh viện.'},
   {pre:'Bạn giới thiệu con trai mình là bác sĩ: “我儿子是',blank:'医生',post:'。”',hint:'(bác sĩ)',ans:'医生',exp:'医生 = bác sĩ (nghề nghiệp), khác 医院 (bệnh viện).'},
   {pre:'Bạn hỏi cha có ở nhà không: “你',blank:'爸爸',post:'在家吗？”',hint:'(cha, bố)',ans:'爸爸',exp:'爸爸 = bố: 你爸爸在家吗？'},
   {pre:'Bạn phủ định ai đó không có ở nhà: “他不',blank:'在',post:'家。”',hint:'(ở — động từ)',ans:'在',exp:'Phủ định 在 bằng 不: 不在家 = không có ở nhà.'},
-  {pre:'Bạn hỏi vị trí một cái ghế: “',blank:'椅',post:'子在哪儿？”',hint:'(ghế)',ans:'椅',exp:'椅子 = cái ghế.'},
+  {pre:'Bạn hỏi vị trí một cái ghế: “',blank:'椅子',post:'在哪儿？”',hint:'(cái ghế)',ans:'椅子',exp:'椅子 = cái ghế; 在哪儿 hỏi vị trí: 椅子在哪儿？'},
 ];
 
 // Sắp xếp — đổi con vật/vị trí so với bài khoá

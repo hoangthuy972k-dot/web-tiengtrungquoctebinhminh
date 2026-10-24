@@ -913,7 +913,7 @@ var fillData = [
   {pre:'Bạn hỏi tuổi một em bé: “她',blank:'几',post:'岁了？”',hint:'(mấy — số nhỏ dưới 10)',ans:'几',exp:'Em bé tuổi nhỏ → hỏi bằng 几岁.'},
   {pre:'Bạn hỏi tuổi một người lớn tuổi: “您',blank:'多',post:'大了？”',hint:'(bao nhiêu — hỏi mức độ)',ans:'多',exp:'Người lớn tuổi → hỏi bằng 多大 (lịch sự hơn thì dùng 您).'},
   {pre:'Diễn tả tình huống mới (vừa lên tuổi): “她今年五岁',blank:'了',post:'。”',hint:'(trợ từ chỉ sự thay đổi)',ans:'了',exp:'了 cuối câu cho biết đã có thay đổi: năm nay lên năm tuổi rồi.'},
-  {pre:'Nói về thời điểm hiện tại: “去年我十九岁，',blank:'今年',post:'我二十岁。”',hint:'(năm nay)',ans:'今年',exp:'今年 (năm nay) đối lại với 去年 (năm ngoái).'},
+  {pre:'Nói tuổi của con gái năm nay: “我女儿',blank:'今年',post:'七岁了。”',hint:'(năm nay)',ans:'今年',exp:'今年 = năm nay, đứng trước số tuổi: 今年七岁了 = năm nay lên bảy tuổi rồi.'},
 ];
 
 // Sắp xếp — thay đổi số liệu/đối tượng so với bài khoá

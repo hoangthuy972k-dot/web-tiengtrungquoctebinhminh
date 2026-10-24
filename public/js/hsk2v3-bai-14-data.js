@@ -207,6 +207,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "过",
+        "p": "guò",
+        "type": "半包围 · Bán bao (辶)",
+        "st": 6,
+        "ord": "寸 (thốn) → 辶 (viết sau cùng)",
+        "rad": "辶 (sước – đi)",
+        "mean": "đi qua, trải qua",
+        "tip": "Bộ 辶 (đi) → thời gian/sự việc TRÔI QUA, cũng dùng cho việc \"đón\" một ngày lễ.",
+        "cf": "边 (biān, bên, Bài 3)",
+        "w": "过年 / 过生日 / 经过"
+      },
+      {
         "c": "年",
         "p": "nián",
         "type": "象形字 · Chữ tượng hình",
@@ -296,6 +308,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "没",
+        "p": "méi",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "氵(thuỷ) trái → 殳(thù, biến thể) phải",
+        "rad": "氵 (thuỷ – nước)",
+        "mean": "không có, chìm",
+        "tip": "氵(nước) + 殳(tay cầm gậy khuấy) → vật bị NƯỚC nhấn CHÌM mất dạng, mở rộng thành nghĩa KHÔNG CÓ.",
+        "cf": "设 (shè – \"thiết lập, bày ra\", cũng có 殳\")",
+        "w": "没意思 / 没关系 / 没有"
+      },
+      {
         "c": "意",
         "p": "yì",
         "type": "会意字 · Chữ hội ý",
@@ -306,6 +330,18 @@ var vocabData = [
         "tip": "没意思 ↔ 有意思 (bài 8).",
         "cf": "有意思 (yǒu yìsi)",
         "w": "没意思 / 有意思 / 意思"
+      },
+      {
+        "c": "思",
+        "p": "sī",
+        "type": "会意字 · Chữ hội ý",
+        "st": 9,
+        "ord": "田 → 心",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "nghĩ, suy nghĩ",
+        "tip": "田 (ruộng, tượng trưng cho đầu óc) + 心 (tim) = suy nghĩ.",
+        "cf": "",
+        "w": "没意思 / 意思 / 思想"
       }
     ],
     "colloFull": [
@@ -484,6 +520,18 @@ var vocabData = [
         "tip": "Đủ bộ phương vị: 前面/后面、里面/外面、上面/下面.",
         "cf": "后面 (hòumiàn – bài 10)",
         "w": "前面 / 前边 / 以前"
+      },
+      {
+        "c": "面",
+        "p": "miàn",
+        "type": "独体字 · Chữ đơn",
+        "st": 9,
+        "ord": "一(đỉnh) trên → 囗(khung ngoài) → 三(nét ngang trong)",
+        "rad": "面 (diện – tự thành bộ)",
+        "mean": "mặt, bề mặt; mì, bột mì",
+        "tip": "Hình khuôn MẶT người cách điệu (khung ngoài là đường viền mặt, các nét ngang trong là mắt/mũi) → nghĩa MẶT, bề mặt; mở rộng chỉ bột MÌ được cán phẳng như mặt bàn.",
+        "cf": "而 (ér – \"mà, nhưng\", chỉ giống phần dưới của 面\")",
+        "w": "前面 / 面包 / 面条"
       }
     ],
     "colloFull": [
@@ -574,6 +622,18 @@ var vocabData = [
         "tip": "Ôn 离 (bài 9): 离学校也不远.",
         "cf": "",
         "w": "房子 / 房间 / 买房"
+      },
+      {
+        "c": "子",
+        "p": "zi",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "𠃉(đầu, tay) → 一(chân quấn tã)",
+        "rad": "子 (tử – tự thành bộ, con)",
+        "mean": "con; hậu tố danh từ không mang nghĩa riêng",
+        "tip": "Hình đứa TRẺ sơ sinh đầu to, hai tay đưa lên, chân quấn tã → CON; khi đọc nhẹ (zi) thường làm hậu tố danh từ như 杯子, 桌子.",
+        "cf": "孑 (jié – \"cô độc, lẻ loi\", thiếu nét móc dưới)",
+        "w": "房子 / 儿子 / 杯子"
       }
     ],
     "colloFull": [
@@ -653,6 +713,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "小",
+        "p": "xiǎo",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "亅(sổ móc) giữa → 丶丶(hai chấm) hai bên",
+        "rad": "小 (tiểu – tự thành bộ)",
+        "mean": "nhỏ, bé",
+        "tip": "Hình một vật bị chẻ thành từng mảnh nhỏ hai bên → biểu thị NHỎ, BÉ.",
+        "cf": "少 (shǎo – \"ít\", thêm 1 nét phẩy\")",
+        "w": "小孩儿 / 小朋友 / 小学"
+      },
+      {
         "c": "孩",
         "p": "hái",
         "type": "形声字 · Chữ hình thanh",
@@ -663,6 +735,18 @@ var vocabData = [
         "tip": "Ôn 帮 (bài 10): 帮 + người + việc.",
         "cf": "男孩儿 (bài 9) · 女孩儿",
         "w": "小孩儿 / 孩子 / 女孩儿"
+      },
+      {
+        "c": "儿",
+        "p": "ér",
+        "type": "独体字 · Chữ đơn",
+        "st": 2,
+        "ord": "丿→乚 (hai nét: phẩy và nét cong móc)",
+        "rad": "儿 (nhân – người, dạng chân đứng, tự thành bộ)",
+        "mean": "con, nhi (đứa trẻ); hậu tố tạo âm uốn lưỡi chỉ địa điểm",
+        "tip": "Hình đôi CHÂN của một đứa trẻ đang đứng → TRẺ EM (儿子, 女儿). Đứng cuối từ thì đọc nhẹ thành âm uốn lưỡi -r: 一会儿 (yíhuìr), 男孩儿 (nánháir).",
+        "cf": "几 (jǐ – \"mấy, bao nhiêu\", hình dạng gần giống)",
+        "w": "小孩儿 / 这儿 / 那儿"
       }
     ],
     "colloFull": [
@@ -752,6 +836,30 @@ var vocabData = [
         "tip": "女孩儿 ↔ 男孩儿 (bài 9).",
         "cf": "男孩儿 (nánháir)",
         "w": "女孩儿 / 女儿 / 女的"
+      },
+      {
+        "c": "孩",
+        "p": "hái",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "子(tử) trái → 亥(hợi) phải",
+        "rad": "子 (tử – con)",
+        "mean": "trẻ con, con",
+        "tip": "Bộ Con 子 + 亥 (âm \"hài\") — ghép hình đứa TRẺ NHỎ 子 với âm đọc tạo thành từ chỉ TRẺ CON.",
+        "cf": "该 (gāi – \"nên, phải\", cũng có 亥\" nhưng bộ 讠\")",
+        "w": "女孩儿 / 孩子 / 小孩"
+      },
+      {
+        "c": "儿",
+        "p": "ér",
+        "type": "独体字 · Chữ đơn",
+        "st": 2,
+        "ord": "丿→乚 (hai nét: phẩy và nét cong móc)",
+        "rad": "儿 (nhân – người, dạng chân đứng, tự thành bộ)",
+        "mean": "con, nhi (đứa trẻ); hậu tố tạo âm uốn lưỡi chỉ địa điểm",
+        "tip": "Hình đôi CHÂN của một đứa trẻ đang đứng → TRẺ EM (儿子, 女儿). Đứng cuối từ thì đọc nhẹ thành âm uốn lưỡi -r: 一会儿 (yíhuìr), 男孩儿 (nánháir).",
+        "cf": "几 (jǐ – \"mấy, bao nhiêu\", hình dạng gần giống)",
+        "w": "女孩儿 / 这儿 / 那儿"
       }
     ],
     "colloFull": [
@@ -930,6 +1038,18 @@ var vocabData = [
         "tip": "Ôn tính từ lặp (bài 6): 眼睛大大的.",
         "cf": "",
         "w": "眼睛 / 大眼睛 / 眼里"
+      },
+      {
+        "c": "睛",
+        "p": "jīng",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "目 (mục) trái → 青 (thanh) phải",
+        "rad": "目 (mục – mắt)",
+        "mean": "con ngươi, mắt",
+        "tip": "目(mắt) + 青(xanh trong) → tròng mắt trong xanh = CON NGƯƠI.",
+        "cf": "晴 (qíng – \"trời quang\")",
+        "w": "眼睛 / 眼珠"
       }
     ],
     "colloFull": [
@@ -1020,6 +1140,18 @@ var vocabData = [
         "tip": "跳舞 là từ li hợp: 跳舞跳得不错 (ôn bài 7).",
         "cf": "",
         "w": "跳舞 / 跳 / 跳得好"
+      },
+      {
+        "c": "舞",
+        "p": "wǔ",
+        "type": "独体字 · Chữ đơn",
+        "st": 14,
+        "ord": "一→一→夕→丨丨丨→一→丿→丨→一",
+        "rad": "舛 (suyễn)",
+        "mean": "múa",
+        "tip": "Hình người dang tay múa với dải lụa cách điệu → \"MÚA\".",
+        "cf": "午 (wǔ – \"buổi trưa\", ít nét hơn)",
+        "w": "跳舞 / 舞蹈"
       }
     ],
     "colloFull": [

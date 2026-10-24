@@ -29,6 +29,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "公",
+        "p": "gōng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 4,
+        "ord": "八(bát) trên → 厶(khư) dưới",
+        "rad": "八 (bát – chia, tách ra)",
+        "mean": "công cộng, công bằng; ông (kính xưng)",
+        "tip": "八(chia đều làm hai) đặt trên 厶(cái riêng tư, cá nhân) → chia sẻ CÁI RIÊNG thành CHUNG → CÔNG CỘNG, CÔNG BẰNG.",
+        "cf": "分 (fēn – \"chia, phút\", cũng có bộ 八 ở trên)",
+        "w": "公交车 / 公司 / 公园"
+      },
+      {
         "c": "交",
         "p": "jiāo",
         "type": "会意字 · Chữ hội ý",
@@ -39,6 +51,18 @@ var vocabData = [
         "tip": "公交车 = 公共交通车 (xe giao thông công cộng) nói tắt.",
         "cf": "",
         "w": "公交车 / 交通"
+      },
+      {
+        "c": "车",
+        "p": "chē",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一→𠃌→丨",
+        "rad": "车 (xa – tự thành bộ)",
+        "mean": "xe",
+        "tip": "Hình bánh xe nhìn từ trên xuống → XE.",
+        "cf": "东 (dōng – \"phía đông\", hình dạng gần giống\")",
+        "w": "公交车 / 开车 / 坐车"
       }
     ],
     "colloFull": [
@@ -206,6 +230,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "车",
+        "p": "chē",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一→𠃌→丨",
+        "rad": "车 (xa – tự thành bộ)",
+        "mean": "xe",
+        "tip": "Hình bánh xe nhìn từ trên xuống → XE.",
+        "cf": "东 (dōng – \"phía đông\", hình dạng gần giống\")",
+        "w": "车站 / 开车 / 坐车"
+      },
       {
         "c": "站",
         "p": "zhàn",
@@ -397,6 +433,18 @@ var vocabData = [
         "tip": "打 ghép rất nhiều từ: 打车, 打电话, 打球.",
         "cf": "",
         "w": "打车 / 打电话 / 打篮球"
+      },
+      {
+        "c": "车",
+        "p": "chē",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一→𠃌→丨",
+        "rad": "车 (xa – tự thành bộ)",
+        "mean": "xe",
+        "tip": "Hình bánh xe nhìn từ trên xuống → XE.",
+        "cf": "东 (dōng – \"phía đông\", hình dạng gần giống\")",
+        "w": "打车 / 开车 / 坐车"
       }
     ],
     "colloFull": [
@@ -485,6 +533,18 @@ var vocabData = [
         "tip": "Đọc hái nghĩa \"còn, vẫn\"; đọc huán nghĩa \"trả lại\".",
         "cf": "",
         "w": "还是 / 还有 / 还书 (huán)"
+      },
+      {
+        "c": "是",
+        "p": "shì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "日(nhật) trên → 疋(sơ biến thể) dưới",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "là, đúng",
+        "tip": "日(mặt trời) luôn ĐÚNG giờ mọc → mở rộng thành nghĩa \"ĐÚNG, LÀ\".",
+        "cf": "定 (dìng – \"quyết định\")",
+        "w": "还是 / 是学生 / 不是"
       }
     ],
     "colloFull": [
@@ -840,6 +900,18 @@ var vocabData = [
         "tip": "Hình cái lưới đan — ngày nay chỉ mạng Internet.",
         "cf": "",
         "w": "网上 / 上网 / 网站"
+      },
+      {
+        "c": "上",
+        "p": "shàng",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "丨(sổ) → 一(ngang ngắn) → 一(ngang dài)",
+        "rad": "一 (nhất – nét ngang)",
+        "mean": "lên, trên",
+        "tip": "Một vật được đặt phía TRÊN một đường ngang (mặt đất) → chỉ vị trí Ở TRÊN, hướng đi LÊN.",
+        "cf": "下 (xià – \"xuống\", trái nghĩa, dễ nhầm vì hình đối xứng)",
+        "w": "网上 / 上车 / 上学"
       }
     ],
     "colloFull": [
@@ -930,6 +1002,18 @@ var vocabData = [
         "tip": "Trái nghĩa với 里 (trong), 内 (nội).",
         "cf": "",
         "w": "外国 / 外边 / 外面"
+      },
+      {
+        "c": "国",
+        "p": "guó",
+        "type": "全包围结构 · Bao vây toàn phần",
+        "st": 8,
+        "ord": "囗(vi) bao ngoài → 玉(ngọc, biến thể) bên trong",
+        "rad": "囗 (vi – vây quanh, bao bọc)",
+        "mean": "nước, quốc gia",
+        "tip": "囗(đường biên giới bao quanh) + 玉(ngọc quý) → một vùng đất có ĐƯỜNG BIÊN bao bọc lấy báu vật (ngọc) bên trong, tượng trưng cho một QUỐC GIA.",
+        "cf": "固 (gù – \"vững chắc\", cũng có 囗 bao ngoài nhưng bên trong là 古\")",
+        "w": "外国 / 中国 / 法国"
       }
     ],
     "colloFull": [
@@ -1097,6 +1181,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "教",
+        "p": "jiāo",
+        "type": "会意字 · Chữ hội ý",
+        "st": 11,
+        "ord": "孝 → 攵",
+        "rad": "攵 (phốc)",
+        "mean": "dạy",
+        "tip": "教 cũng là câu hai tân ngữ: 教 + người + môn học.",
+        "cf": "学 (xué – học)",
+        "w": "教室 / 教 / 教我们中文"
+      },
       {
         "c": "室",
         "p": "shì",
@@ -1376,6 +1472,18 @@ var vocabData = [
         "tip": "过来 = đi về phía người nói; 过去 = đi xa người nói.",
         "cf": "",
         "w": "过来 / 过去 / 经过"
+      },
+      {
+        "c": "来",
+        "p": "lái",
+        "type": "独体字 · Tượng hình",
+        "st": 7,
+        "ord": "一→丨→㇏→丿→丶→一",
+        "rad": "木 (mộc, biến thể)",
+        "mean": "đến, tới",
+        "tip": "Hình bông lúa mạch từ xa mang ĐẾN → ĐẾN, TỚI.",
+        "cf": "米 (mǐ – \"gạo\")",
+        "w": "过来 / 来公司 / 回来"
       }
     ],
     "colloFull": [
@@ -1453,6 +1561,42 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "北",
+        "p": "běi",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "丬(biến thể, người quay lưng) trái → 匕(biến thể) phải",
+        "rad": "匕 (chuỷ – tự thành bộ, gốc nghĩa \"người\")",
+        "mean": "phía bắc",
+        "tip": "Hình hai người quay LƯNG lại nhau (nghĩa gốc của 北 chính là \"背\") → hướng lưng ngoảnh về là hướng BẮC.",
+        "cf": "比 (bǐ – \"so sánh\", hình rất giống nhưng nét móc khác hướng\")",
+        "w": "北京大学 / 北京 / 北方"
+      },
+      {
+        "c": "京",
+        "p": "jīng",
+        "type": "上中下结构 · Trên-giữa-dưới",
+        "st": 8,
+        "ord": "亠(đầu) trên → 口(khẩu) giữa → 小(biến thể) dưới",
+        "rad": "亠 (đầu – nắp đậy)",
+        "mean": "kinh đô, thủ đô",
+        "tip": "Hình ngôi lầu cao xây trên nền đất vững (tượng hình kinh đô cổ) → nơi vua ở, KINH ĐÔ, thủ đô.",
+        "cf": "亮 (liàng – \"sáng\", cũng có 亠 trên và nét dưới phức tạp\")",
+        "w": "北京大学 / 北京 / 京剧"
+      },
+      {
+        "c": "大",
+        "p": "dà",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "一→ノ→乀",
+        "rad": "大 (đại)",
+        "mean": "to, lớn",
+        "tip": "Hình người dang rộng hai tay hai chân → biểu thị sự TO LỚN.",
+        "cf": "太 (tài – \"quá\", thêm 1 chấm)",
+        "w": "北京大学 / 大家 / 大学"
+      },
       {
         "c": "学",
         "p": "xué",

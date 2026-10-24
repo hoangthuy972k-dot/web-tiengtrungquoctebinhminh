@@ -29,6 +29,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "手",
+        "p": "shǒu",
+        "type": "象形字 · Chữ tượng hình",
+        "st": 4,
+        "ord": "丿 → 二 → 亅",
+        "rad": "手 (thủ – tay)",
+        "mean": "tay",
+        "tip": "Hình bàn tay với các ngón — làm bộ thủ thì viết 扌.",
+        "cf": "",
+        "w": "手表 / 手 / 洗手"
+      },
+      {
         "c": "表",
         "p": "biǎo",
         "type": "会意字 · Chữ hội ý",
@@ -129,6 +141,18 @@ var vocabData = [
         "tip": "Nhớ cặp đối lập 左 ↔ 右, 左边 ↔ 右边.",
         "cf": "右 (yòu – phải)",
         "w": "左边 / 左 / 往左走"
+      },
+      {
+        "c": "边",
+        "p": "biān",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 5,
+        "ord": "力(biến thể) trên-phải → 辶(sước) bao ngoài",
+        "rad": "辶 (sước – đi)",
+        "mean": "bên, phía, cạnh",
+        "tip": "辶(đi dọc theo) + phần trên như đường viền/ranh giới → đi dọc theo MÉP, RANH GIỚI → BÊN, PHÍA.",
+        "cf": "这 (zhè – \"này\", cũng bộ 辶\")",
+        "w": "左边 / 这边 / 那边"
       }
     ],
     "colloFull": [
@@ -398,6 +422,18 @@ var vocabData = [
         "tip": "右 có 口 ở dưới, 左 có 工 ở dưới — mẹo phân biệt.",
         "cf": "左 (zuǒ – trái)",
         "w": "右边 / 右 / 往右走"
+      },
+      {
+        "c": "边",
+        "p": "biān",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 5,
+        "ord": "力(biến thể) trên-phải → 辶(sước) bao ngoài",
+        "rad": "辶 (sước – đi)",
+        "mean": "bên, phía, cạnh",
+        "tip": "辶(đi dọc theo) + phần trên như đường viền/ranh giới → đi dọc theo MÉP, RANH GIỚI → BÊN, PHÍA.",
+        "cf": "这 (zhè – \"này\", cũng bộ 辶\")",
+        "w": "右边 / 这边 / 那边"
       }
     ],
     "colloFull": [
@@ -578,6 +614,18 @@ var vocabData = [
         "tip": "记得 trái nghĩa với 忘 (wàng, bài 6).",
         "cf": "忘 (wàng – quên)",
         "w": "记得 / 记住 / 日记"
+      },
+      {
+        "c": "得",
+        "p": "de",
+        "type": "左中右结构 · Trái-giữa-phải",
+        "st": 11,
+        "ord": "彳(xích) trái → 日+一 giữa → 寸(thốn) phải",
+        "rad": "彳 (xích – bước chân nhỏ, đi lại)",
+        "mean": "được, đạt được; (trong \"觉得\" mang nghĩa \"cảm thấy\")",
+        "tip": "彳(bước chân đi tìm) + 寸(bàn tay, nắm giữ/đo lường) → đi tìm và NẮM ĐƯỢC điều mình muốn → ĐƯỢC, ĐẠT ĐƯỢC.",
+        "cf": "待 (dài – \"chờ, đợi\", cũng có bộ 彳 bên trái)",
+        "w": "记得 / 觉得 / 得到"
       }
     ],
     "colloFull": [
@@ -657,6 +705,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "爱",
+        "p": "ài",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "爫(biến thể) trên → 友(biến thể) dưới",
+        "rad": "爫 (trảo – móng tay, biến thể)",
+        "mean": "yêu, thích",
+        "tip": "Hình bàn tay ôm lấy trái tim (chữ phồn thể 愛 có 心) → YÊU THƯƠNG.",
+        "cf": "受 (shòu – \"nhận, chịu\")",
+        "w": "爱情片 / 爱吃 / 我爱你"
+      },
+      {
         "c": "情",
         "p": "qíng",
         "type": "形声字 · Chữ hình thanh",
@@ -667,6 +727,18 @@ var vocabData = [
         "tip": "爱情 (tình yêu) + 片 (phim) = phim tình cảm.",
         "cf": "",
         "w": "爱情片 / 爱情 / 心情"
+      },
+      {
+        "c": "片",
+        "p": "piàn",
+        "type": "象形字 · Chữ tượng hình",
+        "st": 4,
+        "ord": "丿 → 丨 → 一 → ㇕",
+        "rad": "片 (phiến – mảnh)",
+        "mean": "mảnh, tấm; phim (电影片)",
+        "tip": "Chữ 片 vẽ nửa khúc gỗ bị bổ đôi — một \"mảnh\" gỗ. Từ đó 片 chỉ vật mỏng, phẳng: 照片 (tấm ảnh), 名片 (danh thiếp), 爱情片 (phim tình cảm).",
+        "cf": "",
+        "w": "爱情片 / 照片"
       }
     ],
     "colloFull": [
@@ -747,6 +819,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "有",
+        "p": "yǒu",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "𠂇(tay, biến thể) trên → 月(nguyệt/thịt) dưới",
+        "rad": "月 (nguyệt – thịt/tháng)",
+        "mean": "có",
+        "tip": "𠂇(bàn tay) cầm nắm lấy 月(miếng thịt) → cầm được vật trong tay → CÓ.",
+        "cf": "右 (yòu – \"bên phải\", cùng phần trên nhưng dưới là 口 không phải 月)",
+        "w": "有意思 / 有点儿 / 没有"
+      },
+      {
         "c": "意",
         "p": "yì",
         "type": "会意字 · Chữ hội ý",
@@ -757,6 +841,18 @@ var vocabData = [
         "tip": "Phủ định là 没有意思 (chán, không thú vị).",
         "cf": "",
         "w": "有意思 / 没意思 / 意思"
+      },
+      {
+        "c": "思",
+        "p": "sī",
+        "type": "会意字 · Chữ hội ý",
+        "st": 9,
+        "ord": "田 → 心",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "nghĩ, suy nghĩ",
+        "tip": "田 (ruộng, tượng trưng cho đầu óc) + 心 (tim) = suy nghĩ.",
+        "cf": "",
+        "w": "有意思 / 意思 / 思想"
       }
     ],
     "colloFull": [
@@ -935,6 +1031,18 @@ var vocabData = [
         "tip": "虽然 luôn đứng đầu vế nhượng bộ, đi cặp với 但是.",
         "cf": "因为……所以…… (bài 4)",
         "w": "虽然 / 虽然……但是…… / 虽说"
+      },
+      {
+        "c": "然",
+        "p": "rán",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "月(biến thể) → 犬(biến thể) → 灬",
+        "rad": "灬(hỏa – lửa)",
+        "mean": "vậy, như thế",
+        "tip": "Kết hợp thịt 月 + chó 犬 + lửa 灬 (nướng) → nghĩa gốc \"đốt\", nay dùng làm hậu tố \"NHƯ VẬY\".",
+        "cf": "燃 (rán – \"đốt cháy\")",
+        "w": "虽然 / 当然 / 自然"
       }
     ],
     "colloFull": [
@@ -1023,6 +1131,18 @@ var vocabData = [
         "tip": "Có thể rút gọn thành 但 hoặc thay bằng 可是.",
         "cf": "可是 (kěshì)",
         "w": "但是 / 但 / 虽然……但是……"
+      },
+      {
+        "c": "是",
+        "p": "shì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "日(nhật) trên → 疋(sơ biến thể) dưới",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "là, đúng",
+        "tip": "日(mặt trời) luôn ĐÚNG giờ mọc → mở rộng thành nghĩa \"ĐÚNG, LÀ\".",
+        "cf": "定 (dìng – \"quyết định\")",
+        "w": "但是 / 是学生 / 不是"
       }
     ],
     "colloFull": [
@@ -1201,6 +1321,18 @@ var vocabData = [
         "tip": "Cặp từ 妻子 ↔ 丈夫 dùng khi nói trang trọng.",
         "cf": "丈夫 (zhàngfu – chồng)",
         "w": "妻子 / 我的妻子"
+      },
+      {
+        "c": "子",
+        "p": "zi",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "𠃉(đầu, tay) → 一(chân quấn tã)",
+        "rad": "子 (tử – tự thành bộ, con)",
+        "mean": "con; hậu tố danh từ không mang nghĩa riêng",
+        "tip": "Hình đứa TRẺ sơ sinh đầu to, hai tay đưa lên, chân quấn tã → CON; khi đọc nhẹ (zi) thường làm hậu tố danh từ như 杯子, 桌子.",
+        "cf": "孑 (jié – \"cô độc, lẻ loi\", thiếu nét móc dưới)",
+        "w": "妻子 / 儿子 / 杯子"
       }
     ],
     "colloFull": [
@@ -1290,6 +1422,18 @@ var vocabData = [
         "tip": "Ở đây 请 mang nghĩa \"请客\" — mời (và trả tiền).",
         "cf": "妻子 (qīzi – vợ)",
         "w": "丈夫 / 我丈夫"
+      },
+      {
+        "c": "夫",
+        "p": "fū",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一 → 一 → 丿 → 捺",
+        "rad": "大 (đại)",
+        "mean": "chồng; người đàn ông",
+        "tip": "Hình người 大 cài thêm một trâm cài đầu (một nét ngang) → người đàn ông đã trưởng thành, có gia đình.",
+        "cf": "天 (tiān – nét ngang ở vị trí khác)",
+        "w": "丈夫 / 夫妻 / 农夫"
       }
     ],
     "colloFull": [
@@ -1368,6 +1512,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "饭",
+        "p": "fàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "饣(thực) trái → 反(phản) phải",
+        "rad": "饣 (thực – ăn, đồ ăn)",
+        "mean": "cơm, bữa ăn",
+        "tip": "饣(bộ ăn) + 反(gợi âm \"phàn\") → thứ để ĂN trong mỗi bữa = CƠM.",
+        "cf": "饱 (bǎo – \"no\", cùng bộ 饣)",
+        "w": "饭馆 / 米饭 / 饭店"
+      },
       {
         "c": "馆",
         "p": "guǎn",

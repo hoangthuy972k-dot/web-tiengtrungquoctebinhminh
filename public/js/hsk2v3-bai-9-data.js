@@ -129,6 +129,18 @@ var vocabData = [
         "tip": "Cùng nhóm với 左边、右边、上边、下边 (bài 8).",
         "cf": "",
         "w": "旁边 / 在……旁边"
+      },
+      {
+        "c": "边",
+        "p": "biān",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 5,
+        "ord": "力(biến thể) trên-phải → 辶(sước) bao ngoài",
+        "rad": "辶 (sước – đi)",
+        "mean": "bên, phía, cạnh",
+        "tip": "辶(đi dọc theo) + phần trên như đường viền/ranh giới → đi dọc theo MÉP, RANH GIỚI → BÊN, PHÍA.",
+        "cf": "这 (zhè – \"này\", cũng bộ 辶\")",
+        "w": "旁边 / 这边 / 那边"
       }
     ],
     "colloFull": [
@@ -218,6 +230,30 @@ var vocabData = [
         "tip": "田 (ruộng) + 力 (sức): người làm ruộng — nghĩa \"nam\".",
         "cf": "女孩儿 (nǚháir – bé gái)",
         "w": "男孩儿 / 男人 / 男的"
+      },
+      {
+        "c": "孩",
+        "p": "hái",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "子(tử) trái → 亥(hợi) phải",
+        "rad": "子 (tử – con)",
+        "mean": "trẻ con, con",
+        "tip": "Bộ Con 子 + 亥 (âm \"hài\") — ghép hình đứa TRẺ NHỎ 子 với âm đọc tạo thành từ chỉ TRẺ CON.",
+        "cf": "该 (gāi – \"nên, phải\", cũng có 亥\" nhưng bộ 讠\")",
+        "w": "男孩儿 / 孩子 / 小孩"
+      },
+      {
+        "c": "儿",
+        "p": "ér",
+        "type": "独体字 · Chữ đơn",
+        "st": 2,
+        "ord": "丿→乚 (hai nét: phẩy và nét cong móc)",
+        "rad": "儿 (nhân – người, dạng chân đứng, tự thành bộ)",
+        "mean": "con, nhi (đứa trẻ); hậu tố tạo âm uốn lưỡi chỉ địa điểm",
+        "tip": "Hình đôi CHÂN của một đứa trẻ đang đứng → TRẺ EM (儿子, 女儿). Đứng cuối từ thì đọc nhẹ thành âm uốn lưỡi -r: 一会儿 (yíhuìr), 男孩儿 (nánháir).",
+        "cf": "几 (jǐ – \"mấy, bao nhiêu\", hình dạng gần giống)",
+        "w": "男孩儿 / 这儿 / 那儿"
       }
     ],
     "colloFull": [
@@ -295,6 +331,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "这",
+        "p": "zhè",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 7,
+        "ord": "文(văn) trong → 辶(sước) bao ngoài dưới-trái",
+        "rad": "辶 (sước – đi, chợt đi chợt dừng)",
+        "mean": "này, đây (chỉ thị gần)",
+        "tip": "辶(đi tới) bao lấy 文(chữ viết, sự việc) → chỉ vào sự việc/vật đang ở gần, vừa nhắc tới → NÀY, ĐÂY.",
+        "cf": "边 (biān – \"bên, phía\", cũng có bộ 辶\")",
+        "w": "这样 / 这个 / 这些"
+      },
       {
         "c": "样",
         "p": "yàng",
@@ -395,6 +443,18 @@ var vocabData = [
         "tip": "个子高 / 个子不高 — nói về chiều cao của người.",
         "cf": "",
         "w": "个子 / 一个 / 个子高"
+      },
+      {
+        "c": "子",
+        "p": "zi",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "𠃉(đầu, tay) → 一(chân quấn tã)",
+        "rad": "子 (tử – tự thành bộ, con)",
+        "mean": "con; hậu tố danh từ không mang nghĩa riêng",
+        "tip": "Hình đứa TRẺ sơ sinh đầu to, hai tay đưa lên, chân quấn tã → CON; khi đọc nhẹ (zi) thường làm hậu tố danh từ như 杯子, 桌子.",
+        "cf": "孑 (jié – \"cô độc, lẻ loi\", thiếu nét móc dưới)",
+        "w": "个子 / 儿子 / 杯子"
       }
     ],
     "colloFull": [
@@ -483,6 +543,18 @@ var vocabData = [
         "tip": "没有 + B + 这么/那么 + tính từ — nhấn mức độ của B.",
         "cf": "这么 (zhème)",
         "w": "那么 / 这么 / 那么高"
+      },
+      {
+        "c": "么",
+        "p": "me",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "丿→㇋→乙 (nét cong xoắn nhỏ, biến thể của 幺)",
+        "rad": "丿(phiệt)",
+        "mean": "trợ từ/hậu tố không mang nghĩa riêng (什么, 怎么, 那么)",
+        "tip": "Hình sợi TƠ nhỏ xoắn lại (biến thể của 幺) → nét chữ đơn giản, dùng làm hậu tố/trợ từ trong 什么, 怎么, 那么.",
+        "cf": "幺 (yāo – \"nhỏ, số 1 trong đếm số\", gần như đồng dạng, thêm 1 nét)",
+        "w": "那么 / 怎么 / 什么"
       }
     ],
     "colloFull": [
@@ -662,6 +734,18 @@ var vocabData = [
         "tip": "Hình hai cánh cửa; 门口 = chỗ cửa ra vào.",
         "cf": "",
         "w": "门口 / 开门 / 大门"
+      },
+      {
+        "c": "口",
+        "p": "kǒu",
+        "type": "全包围结构 · Bao vây toàn phần",
+        "st": 3,
+        "ord": "丨(sổ trái) → 𠃌(ngang gập) → 一(ngang đáy)",
+        "rad": "口 (khẩu – tự thành bộ)",
+        "mean": "miệng; (lượng từ đếm người trong gia đình)",
+        "tip": "Hình vuông giống hình dạng cái MIỆNG đang mở — mượn nghĩa \"miệng ăn\" trong nhà để đếm số NGƯỜI trong gia đình.",
+        "cf": "日 (rì – \"mặt trời, ngày\", có thêm một nét ngang ở giữa)",
+        "w": "门口 / 一口人 / 几口人"
       }
     ],
     "colloFull": [
@@ -752,6 +836,18 @@ var vocabData = [
         "tip": "咖啡 là từ phiên âm, cả hai chữ đều mang bộ 口.",
         "cf": "",
         "w": "咖啡 / 咖啡店 / 喝咖啡"
+      },
+      {
+        "c": "啡",
+        "p": "fēi",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "口 (khẩu) trái → 非 (phi) phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "(phiên âm)",
+        "tip": "咖 + 啡 = phiên âm mượn từ \"coffee\" — cả hai đều có bộ 口 vì liên quan tới miệng (uống).",
+        "cf": "非 (fēi – đã học ở Bài 4: 非常)",
+        "w": "咖啡"
       }
     ],
     "colloFull": [
@@ -1008,6 +1104,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "走",
+        "p": "zǒu",
+        "type": "独体字 · Chữ đơn",
+        "st": 7,
+        "ord": "土 (biến thể) → 龰 (chỉ – biến thể)",
+        "rad": "走 (tẩu – tự thành bộ)",
+        "mean": "đi, đi bộ",
+        "tip": "Hình người vung tay bước đi cách điệu → \"ĐI\".",
+        "cf": "足 (zú, chân)",
+        "w": "走路 / 走了 / 快走"
+      },
       {
         "c": "路",
         "p": "lù",

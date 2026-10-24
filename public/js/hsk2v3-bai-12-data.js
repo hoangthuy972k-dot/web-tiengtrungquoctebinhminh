@@ -39,6 +39,18 @@ var vocabData = [
         "tip": "Ôn 没什么事 (bài 11) = không có việc gì quan trọng.",
         "cf": "",
         "w": "事情 / 有事 / 没事"
+      },
+      {
+        "c": "情",
+        "p": "qíng",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 11,
+        "ord": "忄 → 青",
+        "rad": "忄 (tâm – trái tim)",
+        "mean": "tình cảm",
+        "tip": "忄(tâm, lòng) + 青 (qīng, gợi âm) → điều nằm trong lòng = TÌNH CẢM (爱情); 事情 = sự việc, chuyện.",
+        "cf": "",
+        "w": "事情 / 爱情片 / 爱情"
       }
     ],
     "colloFull": [
@@ -306,6 +318,18 @@ var vocabData = [
         "tip": "Cùng nhóm phương vị: 里面、外面、后面、旁边.",
         "cf": "里面 (lǐmiàn – bên trong)",
         "w": "外面 / 外边 / 往外"
+      },
+      {
+        "c": "面",
+        "p": "miàn",
+        "type": "独体字 · Chữ đơn",
+        "st": 9,
+        "ord": "一(đỉnh) trên → 囗(khung ngoài) → 三(nét ngang trong)",
+        "rad": "面 (diện – tự thành bộ)",
+        "mean": "mặt, bề mặt; mì, bột mì",
+        "tip": "Hình khuôn MẶT người cách điệu (khung ngoài là đường viền mặt, các nét ngang trong là mắt/mũi) → nghĩa MẶT, bề mặt; mở rộng chỉ bột MÌ được cán phẳng như mặt bàn.",
+        "cf": "而 (ér – \"mà, nhưng\", chỉ giống phần dưới của 面\")",
+        "w": "外面 / 面包 / 面条"
       }
     ],
     "colloFull": [
@@ -485,6 +509,18 @@ var vocabData = [
         "tip": "Ôn 从 (bài 7): 从小 = từ khi còn nhỏ, thường đi với 就.",
         "cf": "小时候 (xiǎoshíhou)",
         "w": "从小 / 从……开始 / 从小就"
+      },
+      {
+        "c": "小",
+        "p": "xiǎo",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "亅(sổ móc) giữa → 丶丶(hai chấm) hai bên",
+        "rad": "小 (tiểu – tự thành bộ)",
+        "mean": "nhỏ, bé",
+        "tip": "Hình một vật bị chẻ thành từng mảnh nhỏ hai bên → biểu thị NHỎ, BÉ.",
+        "cf": "少 (shǎo – \"ít\", thêm 1 nét phẩy\")",
+        "w": "从小 / 小朋友 / 小学"
       }
     ],
     "colloFull": [
@@ -563,6 +599,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "地",
+        "p": "dì",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 6,
+        "ord": "土 → 也",
+        "rad": "土 (thổ – đất)",
+        "mean": "đất, mặt đất; nơi, vùng",
+        "tip": "土 (đất) + 也 (yě, chỉ âm) → mặt đất, vùng đất. 外地 = vùng đất bên ngoài → nơi khác.",
+        "cf": "他 tā, 她 tā — cùng phần 也 bên phải",
+        "w": "地铁 / 外地 / 地方"
+      },
       {
         "c": "铁",
         "p": "tiě",
@@ -832,6 +880,30 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "小",
+        "p": "xiǎo",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "亅(sổ móc) giữa → 丶丶(hai chấm) hai bên",
+        "rad": "小 (tiểu – tự thành bộ)",
+        "mean": "nhỏ, bé",
+        "tip": "Hình một vật bị chẻ thành từng mảnh nhỏ hai bên → biểu thị NHỎ, BÉ.",
+        "cf": "少 (shǎo – \"ít\", thêm 1 nét phẩy\")",
+        "w": "小时候 / 小朋友 / 小学"
+      },
+      {
+        "c": "时",
+        "p": "shí",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 7,
+        "ord": "日 → 寸",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "thời gian, lúc",
+        "tip": "Bộ 日 (mặt trời) cho biết chữ liên quan đến thời gian.",
+        "cf": "",
+        "w": "小时候 / 有时 / 时候"
+      },
       {
         "c": "候",
         "p": "hòu",

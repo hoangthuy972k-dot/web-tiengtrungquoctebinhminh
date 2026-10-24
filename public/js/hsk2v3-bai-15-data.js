@@ -39,6 +39,18 @@ var vocabData = [
         "tip": "Ôn bài 14: 姓 + họ, 叫 + tên; 姓名 = cả họ lẫn tên.",
         "cf": "名字 (míngzi)",
         "w": "姓名 / 姓 / 名字"
+      },
+      {
+        "c": "名",
+        "p": "míng",
+        "type": "会意字 · Chữ hội ý",
+        "st": 6,
+        "ord": "夕 → 口",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "tên; lượng từ chỉ người",
+        "tip": "夕 (tối) + 口 (miệng): trời tối phải xưng tên để nhận ra nhau.",
+        "cf": "",
+        "w": "姓名 / 一名学生 / 名字"
       }
     ],
     "colloFull": [
@@ -128,6 +140,18 @@ var vocabData = [
         "tip": "Cùng nhóm: 出国、出门、出去 (bổ ngữ xu hướng, bài 14).",
         "cf": "进 (jìn – vào, bài 11)",
         "w": "出国 / 出门 / 出去"
+      },
+      {
+        "c": "国",
+        "p": "guó",
+        "type": "全包围结构 · Bao vây toàn phần",
+        "st": 8,
+        "ord": "囗(vi) bao ngoài → 玉(ngọc, biến thể) bên trong",
+        "rad": "囗 (vi – vây quanh, bao bọc)",
+        "mean": "nước, quốc gia",
+        "tip": "囗(đường biên giới bao quanh) + 玉(ngọc quý) → một vùng đất có ĐƯỜNG BIÊN bao bọc lấy báu vật (ngọc) bên trong, tượng trưng cho một QUỐC GIA.",
+        "cf": "固 (gù – \"vững chắc\", cũng có 囗 bao ngoài nhưng bên trong là 古\")",
+        "w": "出国 / 中国 / 法国"
       }
     ],
     "colloFull": [
@@ -207,6 +231,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "门",
+        "p": "mén",
+        "type": "象形字 · Chữ tượng hình",
+        "st": 3,
+        "ord": "丶 → 丨 → 乛",
+        "rad": "门 (môn – cửa)",
+        "mean": "cửa",
+        "tip": "Hình hai cánh cửa; 门口 = chỗ cửa ra vào.",
+        "cf": "",
+        "w": "门票 / 门口 / 开门"
+      },
       {
         "c": "票",
         "p": "piào",
@@ -298,6 +334,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "高",
+        "p": "gāo",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "亠 → 口 → 冋(biến thể) → 口, xếp từ trên xuống dưới",
+        "rad": "高 (cao – tự thành bộ)",
+        "mean": "cao",
+        "tip": "Hình ảnh một tòa lầu nhiều tầng với mái, cửa sổ, nền móng xếp chồng lên nhau → biểu thị CAO.",
+        "cf": "亮 (liàng – \"sáng\", cấu trúc trên-dưới gần giống)",
+        "w": "高中 / 高兴 / 高大"
+      },
+      {
         "c": "中",
         "p": "zhōng",
         "type": "指事字 · Chữ chỉ sự",
@@ -386,6 +434,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "出",
+        "p": "chū",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "凵 → 山 chồng lên",
+        "rad": "凵 (khảm – hố)",
+        "mean": "ra, xuất",
+        "tip": "Hình một chân bước RA khỏi cái hố/hang → \"đi ra, xuất hiện\". Trái nghĩa với 进 (vào).",
+        "cf": "击 (jī)",
+        "w": "出门 / 出院 / 出去"
+      },
       {
         "c": "门",
         "p": "mén",
@@ -566,6 +626,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "机",
+        "p": "jī",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 6,
+        "ord": "木 → 几",
+        "rad": "木 (mộc – gỗ)",
+        "mean": "máy",
+        "tip": "飞机 (máy bay) → 机票、机场.",
+        "cf": "手机 (shǒujī)",
+        "w": "机场 / 机票 / 飞机"
+      },
+      {
         "c": "场",
         "p": "chǎng",
         "type": "形声字 · Chữ hình thanh",
@@ -666,6 +738,18 @@ var vocabData = [
         "tip": "飞机 (máy bay) → 机票、机场.",
         "cf": "手机 (shǒujī)",
         "w": "机票 / 飞机 / 机场"
+      },
+      {
+        "c": "票",
+        "p": "piào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "覀(biến thể) → 示",
+        "rad": "示 (thị – chỉ ra)",
+        "mean": "vé, phiếu",
+        "tip": "Phần trên giống 覀(che phủ), dưới 示(tờ giấy chỉ ra) → tờ giấy làm bằng chứng = VÉ.",
+        "cf": "漂 (piāo – \"trôi nổi\")",
+        "w": "机票 / 火车票 / 电影票"
       }
     ],
     "colloFull": [
@@ -832,6 +916,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "好",
+        "p": "hǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "女(nữ) trái → 子(tử) phải",
+        "rad": "女 (nữ – con gái)",
+        "mean": "tốt, khoẻ",
+        "tip": "女(mẹ) + 子(con) → mẹ bồng con là hình ảnh TỐT ĐẸP nhất → nghĩa TỐT.",
+        "cf": "她 (tā – \"cô ấy\", cũng bộ 女\")",
+        "w": "好像 / 你好 / 好吗"
+      },
       {
         "c": "像",
         "p": "xiàng",

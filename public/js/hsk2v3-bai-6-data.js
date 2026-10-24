@@ -39,6 +39,18 @@ var vocabData = [
         "tip": "Hình cây non mọc lên khỏi mặt đất — nghĩa \"sinh ra\".",
         "cf": "",
         "w": "生日 / 学生 / 生病"
+      },
+      {
+        "c": "日",
+        "p": "rì",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 4,
+        "ord": "囗 (khung ngoài) → 一 (nét ngang giữa)",
+        "rad": "日 (nhật – tự thành bộ)",
+        "mean": "ngày, mặt trời",
+        "tip": "Hình vuông có một nét ngang ở giữa, mô phỏng hình MẶT TRỜI nhìn từ xa (hình tròn được vuông hoá) → nghĩa MẶT TRỜI, mở rộng thành NGÀY.",
+        "cf": "曰 (yuē – \"nói rằng\", hình dẹt hơn, nét ngang không chạm hai bên)",
+        "w": "生日 / 星期日 / 日子"
       }
     ],
     "colloFull": [
@@ -298,6 +310,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "画",
+        "p": "huà",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "nét liền",
+        "rad": "田 (điền)",
+        "mean": "vẽ, bức tranh",
+        "tip": "Chữ giản thể mô phỏng khung tranh với đường viền bao quanh hình ảnh bên trong → VẼ, BỨC TRANH.",
+        "cf": "面 (miàn – \"mặt\", hình dáng gần giống\")",
+        "w": "画笔 / 画画儿 / 一张画"
+      },
+      {
         "c": "笔",
         "p": "bǐ",
         "type": "会意字 · Chữ hội ý",
@@ -397,6 +421,18 @@ var vocabData = [
         "tip": "蛋糕 = bánh làm từ trứng.",
         "cf": "",
         "w": "蛋糕 / 鸡蛋"
+      },
+      {
+        "c": "糕",
+        "p": "gāo",
+        "type": "左右结构 · Trái-phải",
+        "st": 16,
+        "ord": "米 trái → 羔 phải",
+        "rad": "米 (mễ – gạo, bột)",
+        "mean": "bánh, bánh ngọt",
+        "tip": "米(nguyên liệu bột) + 羔(âm cao) → loại BÁNH làm từ bột; 蛋(trứng)+糕(bánh) = BÁNH KEM.",
+        "cf": "羔 (gāo – \"cừu non\", không có bộ 米\")",
+        "w": "蛋糕 / 一块蛋糕"
       }
     ],
     "colloFull": [
@@ -476,6 +512,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "快",
+        "p": "kuài",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 7,
+        "ord": "忄 → 夬",
+        "rad": "忄 (tâm đứng – trái tim)",
+        "mean": "nhanh; vui",
+        "tip": "快 + động từ = mau làm gì: 快来、快走、快吃。",
+        "cf": "慢 (màn – chậm)",
+        "w": "快乐 / 快点儿 / 很快"
+      },
       {
         "c": "乐",
         "p": "lè",
@@ -565,6 +613,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "打",
+        "p": "dǎ",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 5,
+        "ord": "扌 → 丁",
+        "rad": "扌 (thủ – tay)",
+        "mean": "đánh; làm (nhiều nghĩa)",
+        "tip": "打 ghép rất nhiều từ: 打车, 打电话, 打球.",
+        "cf": "",
+        "w": "打开 / 打车 / 打电话"
+      },
       {
         "c": "开",
         "p": "kāi",
@@ -1201,6 +1261,18 @@ var vocabData = [
         "tip": "舒服 tả cảm giác dễ chịu của cơ thể hoặc tinh thần.",
         "cf": "",
         "w": "舒服 / 不舒服 / 舒舒服服"
+      },
+      {
+        "c": "服",
+        "p": "fú",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "月(biến thể) trái → 𠬛(biến thể) phải",
+        "rad": "月 (nguyệt/nhục – biến thể của thịt/thuyền)",
+        "mean": "quần áo; phục tùng; uống (thuốc)",
+        "tip": "月(biến thể của 舟-thuyền) + phần phải tượng trưng bàn tay điều khiển → gốc nghĩa \"chèo lái\", mượn chỉ thứ khoác lên người → QUẦN ÁO.",
+        "cf": "报 (bào – \"báo, báo cáo\", dễ nhầm phần bên phải)",
+        "w": "舒服 / 衣服 / 校服"
       }
     ],
     "colloFull": [

@@ -485,6 +485,18 @@ var vocabData = [
         "tip": "Gắn với việc rời nhà đi xa: 旅游 (du lịch), 旅行 (lữ hành).",
         "cf": "",
         "w": "旅游 / 旅行"
+      },
+      {
+        "c": "游",
+        "p": "yóu",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 12,
+        "ord": "氵 → 方 → 子",
+        "rad": "氵 (thuỷ – nước)",
+        "mean": "bơi; đi chơi",
+        "tip": "Bộ 氵 cho biết hành động ở dưới nước.",
+        "cf": "",
+        "w": "旅游 / 游 / 游泳"
       }
     ],
     "colloFull": [
@@ -575,6 +587,18 @@ var vocabData = [
         "tip": "帮忙 là từ ly hợp: nói 帮个忙, không nói 帮忙你.",
         "cf": "",
         "w": "帮忙 / 帮我 / 帮个忙"
+      },
+      {
+        "c": "忙",
+        "p": "máng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "忄(tâm) trái → 亡(vong) phải",
+        "rad": "忄 (tâm – trái tim)",
+        "mean": "bận rộn",
+        "tip": "忄(tâm/lòng dạ) + 亡(mất) → trong lòng cảm thấy như MẤT thời gian vì quá BẬN RỘN.",
+        "cf": "忘 (wàng – \"quên\", cũng có 亡\" nhưng ở trên)",
+        "w": "帮忙 / 很忙 / 工作忙"
       }
     ],
     "colloFull": [
@@ -654,6 +678,30 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "不",
+        "p": "bù",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一(ngang) → 丨→ ㇒ → 丶",
+        "rad": "一 (nhất)",
+        "mean": "không, chẳng, đừng",
+        "tip": "Nét ngang trên cùng như một bức tường CHẶN LẠI → mang nghĩa PHỦ ĐỊNH điều phía sau.",
+        "cf": "布 (bù – \"vải\")",
+        "w": "不好意思 / 对不起"
+      },
+      {
+        "c": "好",
+        "p": "hǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "女(nữ) trái → 子(tử) phải",
+        "rad": "女 (nữ – con gái)",
+        "mean": "tốt, khoẻ",
+        "tip": "女(mẹ) + 子(con) → mẹ bồng con là hình ảnh TỐT ĐẸP nhất → nghĩa TỐT.",
+        "cf": "她 (tā – \"cô ấy\", cũng bộ 女\")",
+        "w": "不好意思 / 你好 / 好吗"
+      },
+      {
         "c": "意",
         "p": "yì",
         "type": "会意字 · Chữ hội ý",
@@ -664,6 +712,18 @@ var vocabData = [
         "tip": "音 (âm thanh) + 心 (tim): tiếng lòng — chính là \"ý\".",
         "cf": "",
         "w": "不好意思 / 意思"
+      },
+      {
+        "c": "思",
+        "p": "sī",
+        "type": "会意字 · Chữ hội ý",
+        "st": 9,
+        "ord": "田 → 心",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "nghĩ, suy nghĩ",
+        "tip": "田 (ruộng, tượng trưng cho đầu óc) + 心 (tim) = suy nghĩ.",
+        "cf": "",
+        "w": "不好意思 / 意思 / 思想"
       }
     ],
     "colloFull": [
@@ -752,6 +812,18 @@ var vocabData = [
         "tip": "Rất giống 己 (bản thân) và 巳: 已 hở nửa nét trên.",
         "cf": "己 (jǐ – bản thân), 巳 (sì)",
         "w": "已经 / 已"
+      },
+      {
+        "c": "经",
+        "p": "jīng",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "纟(mịch) trái → 巛+ 工 phải",
+        "rad": "纟(mịch – tơ, sợi)",
+        "mean": "trải qua, kinh",
+        "tip": "纟(sợi tơ) + phần chỉ âm — vốn là sợi dọc trên khung cửi, chạy suốt từ đầu đến cuối → TRẢI QUA (已经 = đã), THƯỜNG XUYÊN (经常).",
+        "cf": "径 (jìng – \"con đường\", bộ 彳)",
+        "w": "已经 / 经常 / 经理"
       }
     ],
     "colloFull": [
@@ -919,6 +991,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "介",
+        "p": "jiè",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "人 (biến thể) → 丨 → 丨",
+        "rad": "人 (nhân)",
+        "mean": "ở giữa, trung gian",
+        "tip": "Hình người đứng giữa hai ranh giới → vai trò TRUNG GIAN, kết nối hai bên.",
+        "cf": "个 (gè)",
+        "w": "介绍 / 中介"
+      },
+      {
         "c": "绍",
         "p": "shào",
         "type": "形声字 · Chữ hình thanh",
@@ -1007,6 +1091,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "有",
+        "p": "yǒu",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "𠂇(tay, biến thể) trên → 月(nguyệt/thịt) dưới",
+        "rad": "月 (nguyệt – thịt/tháng)",
+        "mean": "có",
+        "tip": "𠂇(bàn tay) cầm nắm lấy 月(miếng thịt) → cầm được vật trong tay → CÓ.",
+        "cf": "右 (yòu – \"bên phải\", cùng phần trên nhưng dưới là 口 không phải 月)",
+        "w": "有时 / 有点儿 / 没有"
+      },
       {
         "c": "时",
         "p": "shí",
@@ -1186,6 +1282,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "意",
+        "p": "yì",
+        "type": "会意字 · Chữ hội ý",
+        "st": 13,
+        "ord": "立 → 曰 → 心",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "ý, ý nghĩ",
+        "tip": "音 (âm thanh) + 心 (tim): tiếng lòng — chính là \"ý\".",
+        "cf": "",
+        "w": "意思 / 不好意思"
+      },
+      {
         "c": "思",
         "p": "sī",
         "type": "会意字 · Chữ hội ý",
@@ -1274,6 +1382,42 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "北",
+        "p": "běi",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "丬(biến thể, người quay lưng) trái → 匕(biến thể) phải",
+        "rad": "匕 (chuỷ – tự thành bộ, gốc nghĩa \"người\")",
+        "mean": "phía bắc",
+        "tip": "Hình hai người quay LƯNG lại nhau (nghĩa gốc của 北 chính là \"背\") → hướng lưng ngoảnh về là hướng BẮC.",
+        "cf": "比 (bǐ – \"so sánh\", hình rất giống nhưng nét móc khác hướng\")",
+        "w": "北京烤鸭 / 北京 / 北方"
+      },
+      {
+        "c": "京",
+        "p": "jīng",
+        "type": "上中下结构 · Trên-giữa-dưới",
+        "st": 8,
+        "ord": "亠(đầu) trên → 口(khẩu) giữa → 小(biến thể) dưới",
+        "rad": "亠 (đầu – nắp đậy)",
+        "mean": "kinh đô, thủ đô",
+        "tip": "Hình ngôi lầu cao xây trên nền đất vững (tượng hình kinh đô cổ) → nơi vua ở, KINH ĐÔ, thủ đô.",
+        "cf": "亮 (liàng – \"sáng\", cũng có 亠 trên và nét dưới phức tạp\")",
+        "w": "北京烤鸭 / 北京 / 京剧"
+      },
+      {
+        "c": "烤",
+        "p": "kǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "火 trái → 考 phải",
+        "rad": "火 (hỏa)",
+        "mean": "nướng",
+        "tip": "Lửa 火 + 考 → NƯỚNG, QUAY. 烤鸭 = vịt quay; 烤肉 = thịt nướng; 考 (thi) không có 火.",
+        "cf": "考 (kǎo – thi)",
+        "w": "北京烤鸭 / 烤鸭 / 烤肉"
+      },
       {
         "c": "鸭",
         "p": "yā",

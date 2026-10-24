@@ -39,6 +39,18 @@ var vocabData = [
         "tip": "Hình vòng xoáy nước — ý quay vòng, trở lại.",
         "cf": "",
         "w": "回来 / 回去 / 回家"
+      },
+      {
+        "c": "来",
+        "p": "lái",
+        "type": "独体字 · Tượng hình",
+        "st": 7,
+        "ord": "一→丨→㇏→丿→丶→一",
+        "rad": "木 (mộc, biến thể)",
+        "mean": "đến, tới",
+        "tip": "Hình bông lúa mạch từ xa mang ĐẾN → ĐẾN, TỚI.",
+        "cf": "米 (mǐ – \"gạo\")",
+        "w": "回来 / 来公司"
       }
     ],
     "colloFull": [
@@ -127,6 +139,18 @@ var vocabData = [
         "tip": "这么 (thế này) ↔ 那么 (thế kia).",
         "cf": "那么 (nàme)",
         "w": "这么 / 这个 / 这儿"
+      },
+      {
+        "c": "么",
+        "p": "me",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "丿→㇋→乙 (nét cong xoắn nhỏ, biến thể của 幺)",
+        "rad": "丿(phiệt)",
+        "mean": "trợ từ/hậu tố không mang nghĩa riêng (什么, 怎么, 那么)",
+        "tip": "Hình sợi TƠ nhỏ xoắn lại (biến thể của 幺) → nét chữ đơn giản, dùng làm hậu tố/trợ từ trong 什么, 怎么, 那么.",
+        "cf": "幺 (yāo – \"nhỏ, số 1 trong đếm số\", gần như đồng dạng, thêm 1 nét)",
+        "w": "这么 / 怎么 / 什么"
       }
     ],
     "colloFull": [
@@ -294,6 +318,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "一",
+        "p": "yī",
+        "type": "独体字 · Chỉ sự",
+        "st": 1,
+        "ord": "一 (một nét ngang duy nhất)",
+        "rad": "一 (nhất – tự thành bộ, số một)",
+        "mean": "một, số 1",
+        "tip": "Một nét NGANG đơn giản nhất, tượng trưng cho đơn vị ÍT NHẤT → SỐ MỘT. Đọc yī; đứng trước thanh 4 đổi thành yí (一会儿), trước thanh 1, 2, 3 đổi thành yì (一起).",
+        "cf": "二 (èr – \"số hai\", thêm một nét ngang thứ hai)",
+        "w": "一起 / 一点儿 / 第一"
+      },
+      {
         "c": "起",
         "p": "qǐ",
         "type": "形声字 · Chữ hình thanh",
@@ -393,6 +429,18 @@ var vocabData = [
         "tip": "出去 = ra khỏi (xa người nói); 出来 = ra (về phía người nói).",
         "cf": "",
         "w": "出去 / 出来 / 出门"
+      },
+      {
+        "c": "去",
+        "p": "qù",
+        "type": "会意字 · Chữ hội ý",
+        "st": 5,
+        "ord": "土 → 厶",
+        "rad": "厶 (khư)",
+        "mean": "đi, đến",
+        "tip": "动词 + 去 = đi xa chỗ người nói: 上去、下去、进去、出去。",
+        "cf": "来 (lái)",
+        "w": "出去 / 上去 / 下去"
       }
     ],
     "colloFull": [
@@ -570,6 +618,18 @@ var vocabData = [
         "tip": "Vốn là hình cái mũi — người Trung Quốc chỉ vào mũi khi nói \"tôi\".",
         "cf": "",
         "w": "自己 / 自行车"
+      },
+      {
+        "c": "己",
+        "p": "jǐ",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 3,
+        "ord": "nét liền",
+        "rad": "己 (kỷ)",
+        "mean": "bản thân, mình",
+        "tip": "Chữ tượng hình mô phỏng sợi dây cuộn lại tự thân → BẢN THÂN; 自(chính mình)+己(bản thân) = TỰ MÌNH.",
+        "cf": "已 (yǐ – \"đã\", hình dáng gần giống\")",
+        "w": "自己 / 自己的"
       }
     ],
     "colloFull": [
@@ -837,6 +897,30 @@ var vocabData = [
         "tip": "Đọc wèi khi nghĩa \"vì\"; đọc wéi khi nghĩa \"làm, là\".",
         "cf": "",
         "w": "为什么 / 为了 / 为你"
+      },
+      {
+        "c": "什",
+        "p": "shén",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "亻(nhân) trái → 十(thập) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "gì (dùng trong 什么)",
+        "tip": "亻(người) + 十(số mười, nhiều thứ) → hỏi về NGƯỜI/vật trong nhiều khả năng khác nhau = GÌ.",
+        "cf": "付 (fù – \"trả tiền\", cũng bộ 亻\")",
+        "w": "为什么 / 什么"
+      },
+      {
+        "c": "么",
+        "p": "me",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "丿→㇋→乙 (nét cong xoắn nhỏ, biến thể của 幺)",
+        "rad": "丿(phiệt)",
+        "mean": "trợ từ/hậu tố không mang nghĩa riêng (什么, 怎么, 那么)",
+        "tip": "Hình sợi TƠ nhỏ xoắn lại (biến thể của 幺) → nét chữ đơn giản, dùng làm hậu tố/trợ từ trong 什么, 怎么, 那么.",
+        "cf": "幺 (yāo – \"nhỏ, số 1 trong đếm số\", gần như đồng dạng, thêm 1 nét)",
+        "w": "为什么 / 怎么 / 什么"
       }
     ],
     "colloFull": [
@@ -915,6 +999,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "不",
+        "p": "bù",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一(ngang) → 丨→ ㇒ → 丶",
+        "rad": "一 (nhất)",
+        "mean": "không, chẳng, đừng",
+        "tip": "Nét ngang trên cùng như một bức tường CHẶN LẠI → mang nghĩa PHỦ ĐỊNH điều phía sau.",
+        "cf": "布 (bù – \"vải\")",
+        "w": "不错 / 对不起"
+      },
       {
         "c": "错",
         "p": "cuò",
@@ -1093,6 +1189,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "回",
+        "p": "huí",
+        "type": "象形字 · Chữ tượng hình",
+        "st": 6,
+        "ord": "囗 ngoài → 口 trong",
+        "rad": "囗 (vi – bao quanh)",
+        "mean": "quay về, trở lại",
+        "tip": "Hình vòng xoáy nước — ý quay vòng, trở lại.",
+        "cf": "",
+        "w": "回去 / 回来 / 回家"
+      },
       {
         "c": "去",
         "p": "qù",
@@ -1369,6 +1477,18 @@ var vocabData = [
         "tip": "西安 là cố đô nổi tiếng với đội quân đất nung.",
         "cf": "",
         "w": "西安 / 西边 / 东西"
+      },
+      {
+        "c": "安",
+        "p": "ān",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "宀(miên) trên → 女(nữ) dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "yên ổn, an toàn",
+        "tip": "宀(mái nhà) trên + 女(người phụ nữ) dưới → người phụ nữ ở trong NHÀ thì được AN TOÀN, YÊN ỔN.",
+        "cf": "案 (àn – \"vụ án, bàn án\", thêm bộ 木 phía dưới)",
+        "w": "西安 / 安全 / 平安"
       }
     ],
     "colloFull": [

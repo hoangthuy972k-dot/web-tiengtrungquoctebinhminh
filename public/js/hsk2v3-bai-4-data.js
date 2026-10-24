@@ -127,6 +127,18 @@ var vocabData = [
         "tip": "商场 = nơi buôn bán lớn; 商店 = cửa hàng.",
         "cf": "",
         "w": "商场 / 商店 / 商量"
+      },
+      {
+        "c": "场",
+        "p": "chǎng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "土(thổ) trái → 𠃌(biến thể giản thể của 昜) phải",
+        "rad": "土 (thổ – đất)",
+        "mean": "bãi, sân, trường (nơi diễn ra hoạt động)",
+        "tip": "Bộ Đất 土(mặt đất bằng phẳng) + phần bên phải (biến thể của 昜, chỉ ánh nắng rực rỡ) → khoảng ĐẤT trống rộng lớn, BÃI, SÂN, TRƯỜNG.",
+        "cf": "扬 (yáng – \"giương lên\", bộ 扌 nhưng phần phải giống hệt\")",
+        "w": "商场 / 机场 / 场地"
       }
     ],
     "colloFull": [
@@ -216,6 +228,18 @@ var vocabData = [
         "tip": "进去 = vào (xa người nói); 进来 = vào (về phía người nói).",
         "cf": "",
         "w": "进去 / 进来 / 进步"
+      },
+      {
+        "c": "去",
+        "p": "qù",
+        "type": "会意字 · Chữ hội ý",
+        "st": 5,
+        "ord": "土 → 厶",
+        "rad": "厶 (khư)",
+        "mean": "đi, đến",
+        "tip": "动词 + 去 = đi xa chỗ người nói: 上去、下去、进去、出去。",
+        "cf": "来 (lái)",
+        "w": "进去 / 上去 / 下去"
       }
     ],
     "colloFull": [
@@ -393,6 +417,18 @@ var vocabData = [
         "tip": "Bộ 衤 (áo quần) cho biết chữ liên quan đến trang phục.",
         "cf": "",
         "w": "裤子 / 短裤"
+      },
+      {
+        "c": "子",
+        "p": "zi",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "𠃉(đầu, tay) → 一(chân quấn tã)",
+        "rad": "子 (tử – tự thành bộ, con)",
+        "mean": "con; hậu tố danh từ không mang nghĩa riêng",
+        "tip": "Hình đứa TRẺ sơ sinh đầu to, hai tay đưa lên, chân quấn tã → CON; khi đọc nhẹ (zi) thường làm hậu tố danh từ như 杯子, 桌子.",
+        "cf": "孑 (jié – \"cô độc, lẻ loi\", thiếu nét móc dưới)",
+        "w": "裤子 / 儿子 / 杯子"
       }
     ],
     "colloFull": [
@@ -472,6 +508,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "白",
+        "p": "bái",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "丿(phẩy) trên → 日(nhật, biến thể) dưới",
+        "rad": "白 (bạch – tự thành bộ)",
+        "mean": "trắng, sáng rõ; ban ngày",
+        "tip": "Như chữ 日(mặt trời) thêm một nét phẩy phía trên tượng trưng ÁNH SÁNG chiếu ra → nghĩa TRẮNG, SÁNG RÕ; có ánh sáng mặt trời nên 白天 = BAN NGÀY.",
+        "cf": "百 (bǎi – \"trăm\", thêm nét ngang trên đầu\")",
+        "w": "白色 / 白天 / 明白"
+      },
       {
         "c": "色",
         "p": "sè",
@@ -571,6 +619,18 @@ var vocabData = [
         "tip": "因为 thường đi cặp với 所以.",
         "cf": "",
         "w": "因为 / 原因"
+      },
+      {
+        "c": "为",
+        "p": "wèi",
+        "type": "独体字 · Chữ đơn (giản thể)",
+        "st": 4,
+        "ord": "nét liền",
+        "rad": "丶 (chủ)",
+        "mean": "vì, để",
+        "tip": "Chữ giản thể đơn giản hóa từ hình bàn tay LÀM VIỆC gì đó → mở rộng nghĩa \"làm VÌ mục đích\" = VÌ, ĐỂ.",
+        "cf": "办 (bàn – \"làm\", có 力 thay vì 丶\")",
+        "w": "因为 / 为了"
       }
     ],
     "colloFull": [
@@ -749,6 +809,18 @@ var vocabData = [
         "tip": "Bộ 纟 vì ngày xưa màu sắc gắn với việc nhuộm vải.",
         "cf": "",
         "w": "红色 / 红茶 / 很红"
+      },
+      {
+        "c": "色",
+        "p": "sè",
+        "type": "会意字 · Chữ hội ý",
+        "st": 6,
+        "ord": "⺈ → 巴",
+        "rad": "色 (sắc)",
+        "mean": "màu sắc",
+        "tip": "Ghép với màu: 白色、红色、绿色、黑色。",
+        "cf": "",
+        "w": "红色 / 白色 / 颜色"
       }
     ],
     "colloFull": [
@@ -837,6 +909,18 @@ var vocabData = [
         "tip": "所以 = vì vậy, đứng ở vế kết quả.",
         "cf": "",
         "w": "所以 / 所有 / 厕所"
+      },
+      {
+        "c": "以",
+        "p": "yǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "㇒㇙(chấm-phẩy) trái → 人(nhân) phải",
+        "rad": "人 (nhân – người)",
+        "mean": "dùng, bằng, để; (trong 可以: có thể)",
+        "tip": "亻(người) cầm công cụ (nét chấm-phẩy bên trái) để làm việc gì → nghĩa DÙNG, mở rộng thành ĐỂ, BẰNG.",
+        "cf": "似 (sì – \"giống như\", chính là 亻 + 以 ghép lại\")",
+        "w": "所以 / 可以 / 以为"
       }
     ],
     "colloFull": [
@@ -915,6 +999,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "书",
+        "p": "shū",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "𠃌 (biến thể) → 一 → 乙 nét cong móc",
+        "rad": "乙 (ất – biến thể, nét uốn)",
+        "mean": "sách; viết, thư",
+        "tip": "Hình cuộn giấy có nét bút cong lượn ghi chép chữ nghĩa lên trên → SÁCH, VIẾT, THƯ.",
+        "cf": "己 (jǐ – \"bản thân, mình\", nét cong có hình dáng gần giống)",
+        "w": "书包 / 书店 / 看书"
+      },
       {
         "c": "包",
         "p": "bāo",
@@ -1005,6 +1101,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "过",
+        "p": "guò",
+        "type": "半包围 · Bán bao (辶)",
+        "st": 6,
+        "ord": "寸 (thốn) → 辶 (viết sau cùng)",
+        "rad": "辶 (sước – đi)",
+        "mean": "đi qua, trải qua",
+        "tip": "Bộ 辶 (đi) → thời gian/sự việc TRÔI QUA, cũng dùng cho việc \"đón\" một ngày lễ.",
+        "cf": "边 (biān, bên, Bài 3)",
+        "w": "过去 / 过生日 / 过年"
+      },
       {
         "c": "去",
         "p": "qù",
@@ -1105,6 +1213,18 @@ var vocabData = [
         "tip": "绿 (xanh lá) khác 蓝 (xanh lam).",
         "cf": "蓝 (lán – xanh lam)",
         "w": "绿色 / 绿茶 / 很绿"
+      },
+      {
+        "c": "色",
+        "p": "sè",
+        "type": "会意字 · Chữ hội ý",
+        "st": 6,
+        "ord": "⺈ → 巴",
+        "rad": "色 (sắc)",
+        "mean": "màu sắc",
+        "tip": "Ghép với màu: 白色、红色、绿色、黑色。",
+        "cf": "",
+        "w": "绿色 / 白色 / 红色"
       }
     ],
     "colloFull": [
@@ -1194,6 +1314,18 @@ var vocabData = [
         "tip": "Phần dưới là bộ 灬 (lửa) — khói lửa làm ám đen.",
         "cf": "",
         "w": "黑色 / 黑板 / 天黑了"
+      },
+      {
+        "c": "色",
+        "p": "sè",
+        "type": "会意字 · Chữ hội ý",
+        "st": 6,
+        "ord": "⺈ → 巴",
+        "rad": "色 (sắc)",
+        "mean": "màu sắc",
+        "tip": "Ghép với màu: 白色、红色、绿色、黑色。",
+        "cf": "",
+        "w": "黑色 / 白色 / 红色"
       }
     ],
     "colloFull": [
@@ -1372,6 +1504,18 @@ var vocabData = [
         "tip": "Vốn chỉ sắc mặt, sau mở rộng thành \"màu sắc\".",
         "cf": "",
         "w": "颜色 / 什么颜色"
+      },
+      {
+        "c": "色",
+        "p": "sè",
+        "type": "会意字 · Chữ hội ý",
+        "st": 6,
+        "ord": "⺈ → 巴",
+        "rad": "色 (sắc)",
+        "mean": "màu sắc",
+        "tip": "Ghép với màu: 白色、红色、绿色、黑色。",
+        "cf": "",
+        "w": "颜色 / 白色 / 红色"
       }
     ],
     "colloFull": [

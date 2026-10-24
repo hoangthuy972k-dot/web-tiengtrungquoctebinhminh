@@ -206,6 +206,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "经",
+        "p": "jīng",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "纟(mịch) trái → 巛+ 工 phải",
+        "rad": "纟(mịch – tơ, sợi)",
+        "mean": "trải qua, kinh",
+        "tip": "纟(sợi tơ) + phần chỉ âm — vốn là sợi dọc trên khung cửi, chạy suốt từ đầu đến cuối → TRẢI QUA (已经 = đã), THƯỜNG XUYÊN (经常).",
+        "cf": "径 (jìng – \"con đường\", bộ 彳)",
+        "w": "经常 / 已经 / 经理"
+      },
+      {
         "c": "常",
         "p": "cháng",
         "type": "形声字 · Chữ hình thanh",
@@ -483,6 +495,18 @@ var vocabData = [
         "tip": "Ôn 走路 (bài 9) — đi bộ.",
         "cf": "",
         "w": "路上 / 走路 / 路口"
+      },
+      {
+        "c": "上",
+        "p": "shàng",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "丨(sổ) → 一(ngang ngắn) → 一(ngang dài)",
+        "rad": "一 (nhất – nét ngang)",
+        "mean": "lên, trên",
+        "tip": "Một vật được đặt phía TRÊN một đường ngang (mặt đất) → chỉ vị trí Ở TRÊN, hướng đi LÊN.",
+        "cf": "下 (xià – \"xuống\", trái nghĩa, dễ nhầm vì hình đối xứng)",
+        "w": "路上 / 上车 / 上学"
       }
     ],
     "colloFull": [
@@ -841,6 +865,18 @@ var vocabData = [
         "tip": "Ôn 舒服 (bài 6): 身体不舒服 = người không khoẻ.",
         "cf": "",
         "w": "身体 / 身体好 / 身上"
+      },
+      {
+        "c": "体",
+        "p": "tǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "亻 (nhân) trái → 本 (bản) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "cơ thể",
+        "tip": "Người 亻 + 本 (gốc rễ) → cái GỐC của một con người = cơ thể.",
+        "cf": "休 (xiū – khác phần phải)",
+        "w": "身体 / 体育 / 体重"
       }
     ],
     "colloFull": [
@@ -1096,6 +1132,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "药",
+        "p": "yào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "艹(thảo đầu) trên → 约(ước) dưới",
+        "rad": "艹 (thảo – cỏ cây)",
+        "mean": "thuốc",
+        "tip": "Bộ 艹(cỏ) ở trên → thuốc xưa làm từ cây cỏ, thảo dược.",
+        "cf": "约 (yuē – \"hẹn\", thiếu 艹)",
+        "w": "药店 / 吃药 / 一点儿药"
+      },
       {
         "c": "店",
         "p": "diàn",

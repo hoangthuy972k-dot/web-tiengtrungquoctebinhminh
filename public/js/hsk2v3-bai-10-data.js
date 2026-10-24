@@ -29,6 +29,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "开",
+        "p": "kāi",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一(ngang) trên → 廾(hai tay) dưới",
+        "rad": "廾 (củng – hai tay nâng lên)",
+        "mean": "mở, bật, lái, khai",
+        "tip": "Hình thanh chắn ngang cửa được hai tay (廾) nâng lên → MỞ, BẬT, khởi động.",
+        "cf": "井 (jǐng – \"giếng\", hình dạng rất gần giống, thêm 1 chấm)",
+        "w": "开学 / 开车 / 开门"
+      },
+      {
         "c": "学",
         "p": "xué",
         "type": "会意字 · Chữ hội ý",
@@ -218,6 +230,18 @@ var vocabData = [
         "tip": "Cùng nhóm phương vị với 旁边 (bài 9), 左边/右边 (bài 8).",
         "cf": "前面 (qiánmiàn – phía trước)",
         "w": "后面 / 以后 / 后边"
+      },
+      {
+        "c": "面",
+        "p": "miàn",
+        "type": "独体字 · Chữ đơn",
+        "st": 9,
+        "ord": "一(đỉnh) trên → 囗(khung ngoài) → 三(nét ngang trong)",
+        "rad": "面 (diện – tự thành bộ)",
+        "mean": "mặt, bề mặt; mì, bột mì",
+        "tip": "Hình khuôn MẶT người cách điệu (khung ngoài là đường viền mặt, các nét ngang trong là mắt/mũi) → nghĩa MẶT, bề mặt; mở rộng chỉ bột MÌ được cán phẳng như mặt bàn.",
+        "cf": "而 (ér – \"mà, nhưng\", chỉ giống phần dưới của 面\")",
+        "w": "后面 / 面包 / 面条"
       }
     ],
     "colloFull": [
@@ -476,6 +500,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "考",
+        "p": "kǎo",
+        "type": "独体字 · Chữ đơn",
+        "st": 6,
+        "ord": "土→ 一 →耂 (biến thể)",
+        "rad": "耂 (lão – biến thể)",
+        "mean": "thi, kiểm tra",
+        "tip": "Liên quan tới việc người lớn tuổi/có kinh nghiệm ra đề kiểm tra kiến thức.",
+        "cf": "老 (lǎo – \"già\", cùng bộ 耂)",
+        "w": "考试 / 考虑 / 高考"
+      },
+      {
         "c": "试",
         "p": "shì",
         "type": "形声字 · Chữ hình thanh",
@@ -665,6 +701,18 @@ var vocabData = [
         "tip": "本 cũng là lượng từ của sách: 一本书.",
         "cf": "",
         "w": "本子 / 一本书 / 课本"
+      },
+      {
+        "c": "子",
+        "p": "zi",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "𠃉(đầu, tay) → 一(chân quấn tã)",
+        "rad": "子 (tử – tự thành bộ, con)",
+        "mean": "con; hậu tố danh từ không mang nghĩa riêng",
+        "tip": "Hình đứa TRẺ sơ sinh đầu to, hai tay đưa lên, chân quấn tã → CON; khi đọc nhẹ (zi) thường làm hậu tố danh từ như 杯子, 桌子.",
+        "cf": "孑 (jié – \"cô độc, lẻ loi\", thiếu nét móc dưới)",
+        "w": "本子 / 儿子 / 杯子"
       }
     ],
     "colloFull": [
@@ -932,6 +980,18 @@ var vocabData = [
         "tip": "还是 trong câu hỏi = \"hay là\"; trong câu trần thuật = \"vẫn nên\".",
         "cf": "或者 (huòzhě – hoặc, dùng trong câu trần thuật)",
         "w": "还是 / A还是B / 还有"
+      },
+      {
+        "c": "是",
+        "p": "shì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "日(nhật) trên → 疋(sơ biến thể) dưới",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "là, đúng",
+        "tip": "日(mặt trời) luôn ĐÚNG giờ mọc → mở rộng thành nghĩa \"ĐÚNG, LÀ\".",
+        "cf": "定 (dìng – \"quyết định\")",
+        "w": "还是 / 是学生 / 不是"
       }
     ],
     "colloFull": [
@@ -1111,6 +1171,18 @@ var vocabData = [
         "tip": "快要……了 / 就要……了 — luôn có 了 ở cuối câu.",
         "cf": "就要 (jiù yào)",
         "w": "快要 / 快要……了 / 很快"
+      },
+      {
+        "c": "要",
+        "p": "yào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "覀(biến thể của 西) trên → 女(nữ) dưới",
+        "rad": "覀 (biến thể của 西 – phía tây)",
+        "mean": "cần, muốn, sẽ, quan trọng",
+        "tip": "覀(giống mái che/nắp đậy) trên 女(người) dưới — hình ảnh gợi điều gì đó được che chở, giữ gìn cẩn thận vì QUAN TRỌNG → mở rộng thành CẦN, MUỐN có được.",
+        "cf": "腰 (yāo – \"eo lưng\", thêm bộ 月\")",
+        "w": "快要 / 要什么 / 不要"
       }
     ],
     "colloFull": [

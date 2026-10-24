@@ -119,6 +119,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "下",
+        "p": "xià",
+        "type": "独体字 · Chỉ sự",
+        "st": 3,
+        "ord": "一(ngang, mốc) → 丨(sổ) → 丶(chấm dưới)",
+        "rad": "一 (nhất – nét ngang, chỉ vị trí)",
+        "mean": "dưới, xuống, rơi xuống",
+        "tip": "Một nét ngắn nằm DƯỚI một đường ngang dài → chỉ vị trí ở phía DƯỚI → DƯỚI, RƠI XUỐNG.",
+        "cf": "上 (shàng – \"trên\", đối lập vị trí với 下)",
+        "w": "下来 / 下雨 / 下雪"
+      },
+      {
         "c": "来",
         "p": "lái",
         "type": "象形字 · Chữ tượng hình",
@@ -218,6 +230,18 @@ var vocabData = [
         "tip": "上来 = lên chỗ người nói; 上去 = lên chỗ khác.",
         "cf": "下 (xià)",
         "w": "上来 / 上去 / 上班"
+      },
+      {
+        "c": "来",
+        "p": "lái",
+        "type": "独体字 · Tượng hình",
+        "st": 7,
+        "ord": "一→丨→㇏→丿→丶→一",
+        "rad": "木 (mộc, biến thể)",
+        "mean": "đến, tới",
+        "tip": "Hình bông lúa mạch từ xa mang ĐẾN → ĐẾN, TỚI.",
+        "cf": "米 (mǐ – \"gạo\")",
+        "w": "上来 / 来公司 / 回来"
       }
     ],
     "colloFull": [
@@ -296,6 +320,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "上",
+        "p": "shàng",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "丨(sổ) → 一(ngang ngắn) → 一(ngang dài)",
+        "rad": "一 (nhất – nét ngang)",
+        "mean": "lên, trên",
+        "tip": "Một vật được đặt phía TRÊN một đường ngang (mặt đất) → chỉ vị trí Ở TRÊN, hướng đi LÊN.",
+        "cf": "下 (xià – \"xuống\", trái nghĩa, dễ nhầm vì hình đối xứng)",
+        "w": "上去 / 上车 / 上学"
+      },
       {
         "c": "去",
         "p": "qù",
@@ -385,6 +421,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "下",
+        "p": "xià",
+        "type": "独体字 · Chỉ sự",
+        "st": 3,
+        "ord": "一(ngang, mốc) → 丨(sổ) → 丶(chấm dưới)",
+        "rad": "一 (nhất – nét ngang, chỉ vị trí)",
+        "mean": "dưới, xuống, rơi xuống",
+        "tip": "Một nét ngắn nằm DƯỚI một đường ngang dài → chỉ vị trí ở phía DƯỚI → DƯỚI, RƠI XUỐNG.",
+        "cf": "上 (shàng – \"trên\", đối lập vị trí với 下)",
+        "w": "下面 / 下雨 / 下雪"
+      },
       {
         "c": "面",
         "p": "miàn",
@@ -565,6 +613,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "一",
+        "p": "yī",
+        "type": "独体字 · Chỉ sự",
+        "st": 1,
+        "ord": "一 (một nét ngang duy nhất)",
+        "rad": "一 (nhất – tự thành bộ, số một)",
+        "mean": "một, số 1",
+        "tip": "Một nét NGANG đơn giản nhất, tượng trưng cho đơn vị ÍT NHẤT → SỐ MỘT. Đọc yī; đứng trước thanh 4 đổi thành yí (一会儿), trước thanh 1, 2, 3 đổi thành yì (一起).",
+        "cf": "二 (èr – \"số hai\", thêm một nét ngang thứ hai)",
+        "w": "一会儿 / 一点儿 / 一起"
+      },
+      {
         "c": "会",
         "p": "huì",
         "type": "会意字 · Chữ hội ý",
@@ -575,6 +635,18 @@ var vocabData = [
         "tip": "Trong 一会儿 đọc là huìr, nghĩa \"khoảng thời gian ngắn\".",
         "cf": "",
         "w": "一会儿 / 会议 / 会说"
+      },
+      {
+        "c": "儿",
+        "p": "ér",
+        "type": "独体字 · Chữ đơn",
+        "st": 2,
+        "ord": "丿→乚 (hai nét: phẩy và nét cong móc)",
+        "rad": "儿 (nhân – người, dạng chân đứng, tự thành bộ)",
+        "mean": "con, nhi (đứa trẻ); hậu tố tạo âm uốn lưỡi chỉ địa điểm",
+        "tip": "Hình đôi CHÂN của một đứa trẻ đang đứng → TRẺ EM (儿子, 女儿). Đứng cuối từ thì đọc nhẹ thành âm uốn lưỡi -r: 一会儿 (yíhuìr), 男孩儿 (nánháir).",
+        "cf": "几 (jǐ – \"mấy, bao nhiêu\", hình dạng gần giống)",
+        "w": "一会儿 / 这儿 / 那儿"
       }
     ],
     "colloFull": [
@@ -664,6 +736,18 @@ var vocabData = [
         "tip": "下去 = xuống chỗ khác; 下来 = xuống chỗ người nói.",
         "cf": "上 (shàng)",
         "w": "下去 / 下来 / 下面"
+      },
+      {
+        "c": "去",
+        "p": "qù",
+        "type": "会意字 · Chữ hội ý",
+        "st": 5,
+        "ord": "土 → 厶",
+        "rad": "厶 (khư)",
+        "mean": "đi, đến",
+        "tip": "动词 + 去 = đi xa chỗ người nói: 上去、下去、进去、出去。",
+        "cf": "来 (lái)",
+        "w": "下去 / 上去 / 出去"
       }
     ],
     "colloFull": [
@@ -753,6 +837,18 @@ var vocabData = [
         "tip": "Khi có tân ngữ chỉ nơi chốn: 进教室来 (không nói 进来教室).",
         "cf": "",
         "w": "进来 / 进去 / 进教室"
+      },
+      {
+        "c": "来",
+        "p": "lái",
+        "type": "独体字 · Tượng hình",
+        "st": 7,
+        "ord": "一→丨→㇏→丿→丶→一",
+        "rad": "木 (mộc, biến thể)",
+        "mean": "đến, tới",
+        "tip": "Hình bông lúa mạch từ xa mang ĐẾN → ĐẾN, TỚI.",
+        "cf": "米 (mǐ – \"gạo\")",
+        "w": "进来 / 来公司 / 回来"
       }
     ],
     "colloFull": [
@@ -1021,6 +1117,18 @@ var vocabData = [
         "tip": "Bộ 礻 liên quan lễ nghi, cúng tế.",
         "cf": "",
         "w": "礼物 / 礼貌 / 送礼"
+      },
+      {
+        "c": "物",
+        "p": "wù",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "牛 trái → 勿 phải",
+        "rad": "牛 (ngưu – trâu, bò)",
+        "mean": "vật, đồ vật",
+        "tip": "牛(con trâu, đại diện gia súc) + 勿(đừng) → mọi VẬT tồn tại quanh ta; 动(chuyển động)+物(vật) = ĐỘNG VẬT.",
+        "cf": "物 vs 牛 (niú – chỉ riêng con trâu\")",
+        "w": "礼物 / 动物 / 东西"
       }
     ],
     "colloFull": [
@@ -1111,6 +1219,18 @@ var vocabData = [
         "tip": "准备 = sắp sẵn trước; 准时 = đúng giờ.",
         "cf": "",
         "w": "准备 / 准时"
+      },
+      {
+        "c": "备",
+        "p": "bèi",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "夂→田→丨",
+        "rad": "夂",
+        "mean": "chuẩn bị, đầy đủ",
+        "tip": "准 (chuẩn xác) + 备 (đầy đủ) = sắp xếp đầy đủ, sẵn sàng = CHUẨN BỊ.",
+        "cf": "各 (gè – \"mỗi\")",
+        "w": "准备 / 设备 / 备用"
       }
     ],
     "colloFull": [
@@ -1190,6 +1310,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "奶",
+        "p": "nǎi",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "女(nữ) trái → 乃(nãi) phải",
+        "rad": "女 (nữ – phụ nữ)",
+        "mean": "sữa; bà (nội/ngoại)",
+        "tip": "女(người mẹ) + 乃(cho, ban cho) → người mẹ CHO con bú, nghĩa là SỮA.",
+        "cf": "奴 (nú – \"nô lệ\", cũng bộ 女 trái nhưng phải là 又\")",
+        "w": "奶茶 / 牛奶 / 奶奶"
+      },
       {
         "c": "茶",
         "p": "chá",
@@ -1468,6 +1600,18 @@ var vocabData = [
         "tip": "酒店 nghĩa hiện đại là khách sạn, không chỉ là quán rượu.",
         "cf": "",
         "w": "酒店 / 啤酒 / 红酒"
+      },
+      {
+        "c": "店",
+        "p": "diàn",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 8,
+        "ord": "广(nghiễm) ngoài → 占(chiếm) trong",
+        "rad": "广 (nghiễm – mái hiên)",
+        "mean": "cửa hàng, tiệm",
+        "tip": "广(mái nhà lớn) + 占(bày bán) → nơi bày bán hàng hoá = CỬA HÀNG.",
+        "cf": "点 (diǎn – \"điểm, giờ\")",
+        "w": "酒店 / 商店 / 书店"
       }
     ],
     "colloFull": [

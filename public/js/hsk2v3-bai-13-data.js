@@ -39,6 +39,18 @@ var vocabData = [
         "tip": "Ôn 就要……了 (bài 10): 新年就要到了。",
         "cf": "旧 (jiù – cũ)",
         "w": "新年 / 新的 / 新衣服"
+      },
+      {
+        "c": "年",
+        "p": "nián",
+        "type": "独体字 · Chữ đơn",
+        "st": 6,
+        "ord": "丿(phẩy) → 一 → 一 → 丨 → 一 (nét sổ xuyên giữa các nét ngang)",
+        "rad": "干 (can – can dự)",
+        "mean": "năm",
+        "tip": "Hình ảnh cây lúa trĩu hạt được gánh về sau một mùa vụ, một chu kỳ canh tác → tượng trưng cho một NĂM.",
+        "cf": "午 (wǔ – \"buổi trưa, giờ ngọ\", dễ nhầm vì nét ngang gần giống\")",
+        "w": "新年 / 明年 / 今年"
       }
     ],
     "colloFull": [
@@ -306,6 +318,18 @@ var vocabData = [
         "tip": "Ôn 地 (bài 6): 希望她高高兴兴地过个新年。",
         "cf": "",
         "w": "希望 / 希望你…… / 我希望"
+      },
+      {
+        "c": "望",
+        "p": "wàng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "亡→月→王",
+        "rad": "月 (nguyệt – mặt trăng)",
+        "mean": "trông mong, nhìn xa",
+        "tip": "Người đứng nhìn 月 (trăng) từ xa → ánh mắt TRÔNG MONG, hy vọng.",
+        "cf": "忘 (wàng – \"quên\", bộ 心)",
+        "w": "希望 / 看望 / 望远镜"
       }
     ],
     "colloFull": [
@@ -384,6 +408,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "上",
+        "p": "shàng",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "丨(sổ) → 一(ngang ngắn) → 一(ngang dài)",
+        "rad": "一 (nhất – nét ngang)",
+        "mean": "lên, trên",
+        "tip": "Một vật được đặt phía TRÊN một đường ngang (mặt đất) → chỉ vị trí Ở TRÊN, hướng đi LÊN.",
+        "cf": "下 (xià – \"xuống\", trái nghĩa, dễ nhầm vì hình đối xứng)",
+        "w": "上面 / 上车 / 上学"
+      },
       {
         "c": "面",
         "p": "miàn",
@@ -474,6 +510,30 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "洗",
+        "p": "xǐ",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 9,
+        "ord": "氵 → 先",
+        "rad": "氵 (thuỷ – nước)",
+        "mean": "rửa, giặt",
+        "tip": "Bộ 氵 (nước) cho biết việc dùng nước.",
+        "cf": "",
+        "w": "洗手间 / 洗手 / 洗澡"
+      },
+      {
+        "c": "手",
+        "p": "shǒu",
+        "type": "象形字 · Chữ tượng hình",
+        "st": 4,
+        "ord": "丿 → 二 → 亅",
+        "rad": "手 (thủ – tay)",
+        "mean": "tay",
+        "tip": "Hình bàn tay với các ngón — làm bộ thủ thì viết 扌.",
+        "cf": "",
+        "w": "洗手间 / 手 / 洗手"
+      },
       {
         "c": "间",
         "p": "jiān",
@@ -575,6 +635,18 @@ var vocabData = [
         "tip": "里面 ↔ 外面 (bài 12).",
         "cf": "外面 (wàimiàn)",
         "w": "里面 / 里边 / 家里"
+      },
+      {
+        "c": "面",
+        "p": "miàn",
+        "type": "独体字 · Chữ đơn",
+        "st": 9,
+        "ord": "一(đỉnh) trên → 囗(khung ngoài) → 三(nét ngang trong)",
+        "rad": "面 (diện – tự thành bộ)",
+        "mean": "mặt, bề mặt; mì, bột mì",
+        "tip": "Hình khuôn MẶT người cách điệu (khung ngoài là đường viền mặt, các nét ngang trong là mắt/mũi) → nghĩa MẶT, bề mặt; mở rộng chỉ bột MÌ được cán phẳng như mặt bàn.",
+        "cf": "而 (ér – \"mà, nhưng\", chỉ giống phần dưới của 面\")",
+        "w": "里面 / 面包 / 面条"
       }
     ],
     "colloFull": [
@@ -742,6 +814,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "可",
+        "p": "kě",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 5,
+        "ord": "丂(bao trên-trái) → 口(khẩu) trong",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "có thể, được phép",
+        "tip": "丂(hình miệng há ra ngập ngừng) ôm lấy 口(miệng) → gật đầu mở miệng ưng thuận, cho phép làm gì → CÓ THỂ, ĐƯỢC.",
+        "cf": "何 (hé – \"cái gì, sao\", thêm bộ 亻 bên trái\")",
+        "w": "可能 / 可以 / 可是"
+      },
+      {
         "c": "能",
         "p": "néng",
         "type": "象形字 · Chữ tượng hình",
@@ -831,6 +915,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "上",
+        "p": "shàng",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "丨(sổ) → 一(ngang ngắn) → 一(ngang dài)",
+        "rad": "一 (nhất – nét ngang)",
+        "mean": "lên, trên",
+        "tip": "Một vật được đặt phía TRÊN một đường ngang (mặt đất) → chỉ vị trí Ở TRÊN, hướng đi LÊN.",
+        "cf": "下 (xià – \"xuống\", trái nghĩa, dễ nhầm vì hình đối xứng)",
+        "w": "上网 / 上车 / 上学"
+      },
+      {
         "c": "网",
         "p": "wǎng",
         "type": "象形字 · Chữ tượng hình",
@@ -919,6 +1015,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "那",
+        "p": "nà",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 6,
+        "ord": "⺄ → 二 → 阝",
+        "rad": "阝 (ấp)",
+        "mean": "kia, đó",
+        "tip": "Bộ 阝(ấp – vùng đất) bên phải → chỉ nơi chốn ở XA, cái KIA; ngược với 这 (này, ở gần).",
+        "cf": "这么 (zhème)",
+        "w": "那样 / 那么 / 这么"
+      },
       {
         "c": "样",
         "p": "yàng",
@@ -1019,6 +1127,18 @@ var vocabData = [
         "tip": "告诉 cũng mang hai tân ngữ: 告诉 + người + nội dung.",
         "cf": "",
         "w": "告诉 / 告诉我 / 告诉他一件事"
+      },
+      {
+        "c": "诉",
+        "p": "sù",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "讠(ngôn) trái → 斥 (xích) phải",
+        "rad": "讠(ngôn – lời nói)",
+        "mean": "kể, nói ra",
+        "tip": "Bộ 讠(lời nói) → 告 + 诉 = nói ra cho ai đó biết = MÁCH, NÓI CHO BIẾT.",
+        "cf": "折 (zhé, gãy, bộ 扌)",
+        "w": "告诉 / 诉说"
       }
     ],
     "colloFull": [

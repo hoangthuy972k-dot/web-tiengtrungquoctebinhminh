@@ -394,6 +394,18 @@ var vocabData = [
         "tip": "篮 vốn là cái rổ đan bằng tre — 篮球 là \"bóng ném vào rổ\".",
         "cf": "",
         "w": "篮球 / 打篮球"
+      },
+      {
+        "c": "球",
+        "p": "qiú",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 11,
+        "ord": "王 → 求",
+        "rad": "王 (ngọc)",
+        "mean": "quả bóng, quả cầu",
+        "tip": "Bộ 王 (ngọc) gợi vật tròn; 求 (qiú) chỉ âm.",
+        "cf": "",
+        "w": "篮球 / 球 / 足球"
       }
     ],
     "colloFull": [
@@ -484,6 +496,18 @@ var vocabData = [
         "tip": "运动 = 运 (chuyển) + 动 (động): làm cho cơ thể chuyển động.",
         "cf": "",
         "w": "运动 / 去运动 / 运动员"
+      },
+      {
+        "c": "动",
+        "p": "dòng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "云 biến thể → 力",
+        "rad": "力 (lực – sức)",
+        "mean": "cử động, hoạt động",
+        "tip": "云(biến thể) + 力(sức) → dùng sức để chuyển động = ĐỘNG, CỬ ĐỘNG.",
+        "cf": "助 (zhù – \"giúp đỡ\")",
+        "w": "运动 / 动作 / 不动"
       }
     ],
     "colloFull": [
@@ -663,6 +687,18 @@ var vocabData = [
         "tip": "Hình bàn chân — 足球 là môn bóng chơi bằng chân.",
         "cf": "",
         "w": "足球 / 踢足球"
+      },
+      {
+        "c": "球",
+        "p": "qiú",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 11,
+        "ord": "王 → 求",
+        "rad": "王 (ngọc)",
+        "mean": "quả bóng, quả cầu",
+        "tip": "Bộ 王 (ngọc) gợi vật tròn; 求 (qiú) chỉ âm.",
+        "cf": "",
+        "w": "足球 / 球 / 篮球"
       }
     ],
     "colloFull": [
@@ -920,6 +956,18 @@ var vocabData = [
     ],
     "hanzi": [
       {
+        "c": "跑",
+        "p": "pǎo",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 12,
+        "ord": "足 → 包",
+        "rad": "⻊ (túc – chân)",
+        "mean": "chạy",
+        "tip": "⻊ (chân) + 包 (bāo) chỉ âm: việc làm bằng chân.",
+        "cf": "走 (zǒu – đi)",
+        "w": "跑步 / 往外跑 / 跑得快"
+      },
+      {
         "c": "步",
         "p": "bù",
         "type": "会意字 · Chữ hội ý",
@@ -1009,6 +1057,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "游",
+        "p": "yóu",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 12,
+        "ord": "氵 → 方 → 子",
+        "rad": "氵 (thuỷ – nước)",
+        "mean": "bơi; đi chơi",
+        "tip": "Bộ 氵 cho biết hành động ở dưới nước.",
+        "cf": "",
+        "w": "游泳 / 游 / 旅游"
+      },
       {
         "c": "泳",
         "p": "yǒng",
@@ -1199,6 +1259,18 @@ var vocabData = [
         "tip": "爱好 chỉ sở thích lâu dài, khác 喜欢 (thích, dùng rộng hơn).",
         "cf": "喜欢 (xǐhuan)",
         "w": "爱好 / 爱吃 / 我爱你"
+      },
+      {
+        "c": "好",
+        "p": "hǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "女(nữ) trái → 子(tử) phải",
+        "rad": "女 (nữ – con gái)",
+        "mean": "tốt, khoẻ",
+        "tip": "女(mẹ) + 子(con) → mẹ bồng con là hình ảnh TỐT ĐẸP nhất → nghĩa TỐT.",
+        "cf": "她 (tā – \"cô ấy\", cũng bộ 女\")",
+        "w": "爱好 / 你好 / 好吗"
       }
     ],
     "colloFull": [
@@ -1277,6 +1349,18 @@ var vocabData = [
       }
     ],
     "hanzi": [
+      {
+        "c": "开",
+        "p": "kāi",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一(ngang) trên → 廾(hai tay) dưới",
+        "rad": "廾 (củng – hai tay nâng lên)",
+        "mean": "mở, bật, lái, khai",
+        "tip": "Hình thanh chắn ngang cửa được hai tay (廾) nâng lên → MỞ, BẬT, khởi động.",
+        "cf": "井 (jǐng – \"giếng\", hình dạng rất gần giống, thêm 1 chấm)",
+        "w": "开始 / 开车 / 开门"
+      },
       {
         "c": "始",
         "p": "shǐ",

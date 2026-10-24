@@ -3312,7 +3312,7 @@ var fillData = [
   {pre:'你把衣服',blank:'',post:'下来，我给你洗洗。',hint:'tuō',ans:'脱'},
   {pre:'我衣服口袋里有十几块',blank:'',post:'，买包子应该够。',hint:'língqián',ans:'零钱'},
   {pre:'我早上跟你',blank:'',post:'，你没看见。',hint:'dǎ zhāohu',ans:'打招呼'},
-  {pre:'今天早上我忘',blank:'',post:'眼镜了，看不清楚。',hint:'dài',ans:'戴'},
+  {pre:'今天早上我忘',blank:'',post:'眼镜了，看不清楚。',hint:'dài',ans:'戴',exp:'戴 dùng cho đồ đeo trên người: 戴眼镜, 戴帽子. 穿 dùng cho quần áo, giày.'},
   {pre:'这种语言与',blank:'',post:'无关，无论哪个国家的人都能看懂。',hint:'guójí',ans:'国籍'},
   {pre:'先',blank:'',post:'胳膊，然后抬腿。',hint:'tái',ans:'抬'},
   {pre:'周围环境非常',blank:'',post:'。',hint:'chǎo',ans:'吵'},

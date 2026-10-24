@@ -911,7 +911,7 @@ var fillData = [
   {pre:'他培养出一批人才，有的已成为当今古陶瓷鉴定的',blank:'泰斗',post:'。',hint:'(bậc thầy, Thái Sơn Bắc Đẩu)',ans:'泰斗'},
   {pre:'昆明气候',blank:'温和',post:'，四季如春。',hint:'(ôn hoà)',ans:'温和'},
   {pre:'由于采用了新技术，工厂的收益相当',blank:'可观',post:'。',hint:'(lớn, đáng kể)',ans:'可观'},
-  {pre:'这个字中国人',blank:'尚且',post:'觉得难，何况我们留学生呢？',hint:'(còn … huống chi)',ans:'尚且'}
+  {pre:'这个字中国人',blank:'尚且',post:'觉得难，何况我们留学生呢？',hint:'(còn … huống chi)',ans:'尚且',exp:'A尚且…，何况B呢？ = A còn…, huống chi B? Lấy trường hợp dễ hơn để suy ra trường hợp khó hơn.'}
 ];
 
 var sortData = [

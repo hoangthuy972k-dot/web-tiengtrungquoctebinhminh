@@ -2207,16 +2207,16 @@ var matchData = [
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'桌子上有一', blank:'串', post:'钥匙。', hint:'(chuỗi, chùm)', ans:'串'},
+  {pre:'桌子上有一', blank:'串', post:'钥匙。', hint:'(chuỗi, chùm)', ans:'串',exp:'串 là lượng từ cho vật kết thành chùm/chuỗi: 一串钥匙, 一串葡萄.'},
   {pre:'父母', blank:'一辈子', post:'住在农村老家。', hint:'(cả đời)', ans:'一辈子'},
-  {pre:'长年', blank:'以来', post:'，父母很少离开老屋。', hint:'(từ… đến nay)', ans:'以来'},
+  {pre:'长年', blank:'以来', post:'，父母很少离开老屋。', hint:'(từ… đến nay)', ans:'以来',exp:'(从)…以来 = từ… đến nay; nói khoảng thời gian kéo dài đến hiện tại: 长年以来.'},
   {pre:'父母也', blank:'坚决', post:'不在城里住。', hint:'(kiên quyết)', ans:'坚决'},
   {pre:'我们用', blank:'打工', post:'挣的钱买了一套新房。', hint:'(làm thuê)', ans:'打工'},
-  {pre:'父母第一次走进新房时，高兴得', blank:'不得了', post:'。', hint:'(vô cùng)', ans:'不得了'},
-  {pre:'', blank:'临', post:'走那天，父亲从老家赶来送我们。', hint:'(ngay trước khi)', ans:'临'},
-  {pre:'父亲', blank:'悄悄', post:'把我拉到一边说话。', hint:'(khẽ khàng)', ans:'悄悄'},
-  {pre:'温暖的气息', blank:'立刻', post:'扑面而来。', hint:'(lập tức)', ans:'立刻'},
-  {pre:'厨房里飘来', blank:'阵阵', post:'饭菜香。', hint:'(từng đợt)', ans:'阵阵'},
+  {pre:'父母第一次走进新房时，高兴得', blank:'不得了', post:'。', hint:'(vô cùng)', ans:'不得了',exp:'Tính từ + 得 + 不得了 = …vô cùng (bổ ngữ mức độ): 高兴得不得了.'},
+  {pre:'', blank:'临', post:'走那天，父亲从老家赶来送我们。', hint:'(ngay trước khi)', ans:'临',exp:'临 + động từ = lúc sắp…, ngay trước khi: 临走那天, 临睡前.'},
+  {pre:'父亲', blank:'悄悄', post:'把我拉到一边说话。', hint:'(khẽ khàng)', ans:'悄悄',exp:'悄悄 = lặng lẽ, khẽ (không để người khác biết), làm trạng ngữ: 悄悄把我拉到一边.'},
+  {pre:'温暖的气息', blank:'立刻', post:'扑面而来。', hint:'(lập tức)', ans:'立刻',exp:'立刻 = lập tức, ngay; nhấn mạnh việc xảy ra ngay sau đó.'},
+  {pre:'厨房里飘来', blank:'阵阵', post:'饭菜香。', hint:'(từng đợt)', ans:'阵阵',exp:'Lượng từ lặp 阵阵 = từng đợt, từng làn: 阵阵饭菜香, 阵阵笑声.'},
   {pre:'他在城里打工，一个月能', blank:'挣', post:'五千多块钱。', hint:'(kiếm (tiền))', ans:'挣'},
   {pre:'房子', blank:'装修', post:'好以后，父母就搬进来住了。', hint:'(sửa sang, trang trí nhà)', ans:'装修'},
   {pre:'桌子上全是', blank:'灰尘', post:'，好久没人打扫了。', hint:'(bụi)', ans:'灰尘'},

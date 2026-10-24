@@ -2549,16 +2549,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '星期六上午十点一＿＿起飞。', opts: ['刻', '久', '先', '直'], ans: 0 },
-  { q: '不好意思，飞机＿＿了，让您久等了。', opts: ['起飞', '晚点', '欢迎', '满意'], ans: 1 },
-  { q: '这个＿＿好！我好久没骑马了。', opts: ['主意', '假期', '司机', '相机'], ans: 0 },
-  { q: '在草原上＿＿马、吃羊肉、看月亮，一定很有意思。', opts: ['坐', '开', '骑', '走'], ans: 2 },
-  { q: '我们不用带太多东西，别忘了拿上新买的＿＿。', opts: ['海', '相机', '月亮', '草原'], ans: 1 },
-  { q: '宾馆的房间又大又＿＿，我非常满意。', opts: ['一直', '久', '干净', '先'], ans: 2 },
-  { q: '＿＿你们！我是你们的司机，我姓李。', opts: ['满意', '晚点', '起飞', '欢迎'], ans: 3 },
-  { q: 'Chọn cách nói đúng: "Tôi chẳng có chút thời gian nào."', opts: ['我没有一点儿时间也。', '我一点儿时间也没有。', '我一点儿也时间没有。', '我时间一点儿没有也。'], ans: 1 },
-  { q: 'Chọn câu đúng: "Chiếc điện thoại mới anh ấy mua không giống của tôi."', opts: ['他买的新手机跟我的一样不。', '他买的新手机跟我的不一样。', '他买的新手机一样跟我的不。', '他买的新手机跟我的没一样。'], ans: 1 },
-  { q: '"除了我以外，大家都在玩手机。" — câu này có nghĩa là gì?', opts: ['Mọi người, kể cả tôi, đều đang chơi điện thoại.', 'Chỉ có tôi đang chơi điện thoại.', 'Tôi không chơi điện thoại, những người khác đều đang chơi.', 'Không ai chơi điện thoại cả.'], ans: 2 }
+  { q: '星期六上午十点一＿＿起飞。', opts: ['刻', '久', '先', '直'], ans: 0, exp: '一刻 = 15 phút: 十点一刻 = 10 giờ 15. 久, 先, 直 không dùng để nói giờ.' },
+  { q: '不好意思，飞机＿＿了，让您久等了。', opts: ['起飞', '晚点', '欢迎', '满意'], ans: 1, exp: '飞机晚点了 = máy bay trễ giờ; vì thế mới nói 让您久等了 (để anh chờ lâu).' },
+  { q: '这个＿＿好！我好久没骑马了。', opts: ['主意', '假期', '司机', '相机'], ans: 0, exp: '这个主意好 = ý này hay, dùng để đáp lại một đề nghị (đi cưỡi ngựa).' },
+  { q: '在草原上＿＿马、吃羊肉、看月亮，一定很有意思。', opts: ['坐', '开', '骑', '走'], ans: 2, exp: '骑 dùng cho thứ ngồi dạng chân: 骑马, 骑自行车. Không nói 坐马 hay 开马.' },
+  { q: '我们不用带太多东西，别忘了拿上新买的＿＿。', opts: ['海', '相机', '月亮', '草原'], ans: 1, exp: '新买的 + đồ vật có thể mang theo → 相机. 海, 月亮, 草原 không "mang theo" được.' },
+  { q: '宾馆的房间又大又＿＿，我非常满意。', opts: ['一直', '久', '干净', '先'], ans: 2, exp: '又大又干净 = vừa rộng vừa sạch; sau 又 là tính từ. 一直, 先 là phó từ, 久 không tả phòng ở.' },
+  { q: '＿＿你们！我是你们的司机，我姓李。', opts: ['满意', '晚点', '起飞', '欢迎'], ans: 3, exp: '欢迎你们 = chào mừng các bạn, câu chào khi đón khách. 满意, 晚点 không dùng để chào.' },
+  { q: 'Chọn cách nói đúng: "Tôi chẳng có chút thời gian nào."', opts: ['我没有一点儿时间也。', '我一点儿时间也没有。', '我一点儿也时间没有。', '我时间一点儿没有也。'], ans: 1, exp: '一点儿 + danh từ + 也 + 没有 = không có chút… nào; 也 đứng sau 一点儿时间, ngay trước 没有.' },
+  { q: 'Chọn câu đúng: "Chiếc điện thoại mới anh ấy mua không giống của tôi."', opts: ['他买的新手机跟我的一样不。', '他买的新手机跟我的不一样。', '他买的新手机一样跟我的不。', '他买的新手机跟我的没一样。'], ans: 1, exp: 'A 跟 B (不)一样: phủ định đặt 不 ngay trước 一样. Không nói 没一样, không đặt 不 cuối câu.' },
+  { q: '"除了我以外，大家都在玩手机。" — câu này có nghĩa là gì?', opts: ['Mọi người, kể cả tôi, đều đang chơi điện thoại.', 'Chỉ có tôi đang chơi điện thoại.', 'Tôi không chơi điện thoại, những người khác đều đang chơi.', 'Không ai chơi điện thoại cả.'], ans: 2, exp: '除了…以外，都… = ngoài… ra thì (loại trừ): tôi không chơi, những người khác đều chơi. Khác với 除了…还/也 (bổ sung).' }
 ];
 
 var speakingData = {

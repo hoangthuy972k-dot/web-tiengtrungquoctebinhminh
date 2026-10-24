@@ -2460,16 +2460,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '小雪的＿＿离家有点儿远，咱们换一个近点儿的房子吧。', opts: ['初中', '花园', '银行', '卫生间'], ans: 0 },
-  { q: '房子里面也不错，＿＿和洗衣机都是新的。', opts: ['纸', '空调', '层', '环境'], ans: 1 },
-  { q: '我今天早上来的时候，＿＿还开着。', opts: ['冰箱', '小区', '灯', '信用卡'], ans: 2 },
-  { q: '我先用你的钱买吧，明天＿＿给你。', opts: ['办', '换', '关', '还'], ans: 3 },
-  { q: '＿＿中国银行的服务不错，咱们去那儿办信用卡吧。', opts: ['听说', '需要', '打扫', '搬'], ans: 0 },
-  { q: '你能帮我＿＿一下这个箱子吗？', opts: ['关', '还', '搬', '办'], ans: 2 },
-  { q: '这么多事情最少＿＿两个星期才能做完。', opts: ['环境', '听说', '打扫', '需要'], ans: 3 },
-  { q: 'Chọn câu đúng: "Mình khá thích màu này."', opts: ['我喜欢挺这个颜色的。', '我挺喜欢这个颜色的。', '我挺这个颜色喜欢的。', '我挺很喜欢这个颜色的。'], ans: 1 },
-  { q: 'Chọn câu đúng: "Hôm nay không ăn gì, tôi đói lả cả người."', opts: ['我今天没吃东西，很饿坏了。', '我今天没吃东西，坏饿了。', '我今天没吃东西，饿坏了。', '我今天没吃东西，饿得坏了。'], ans: 2 },
-  { q: '电影八点开始，他七点半＿＿到了。(đến sớm)', opts: ['就', '才', '还', '再'], ans: 0 }
+  { q: '小雪的＿＿离家有点儿远，咱们换一个近点儿的房子吧。', opts: ['初中', '花园', '银行', '卫生间'], ans: 0, exp: '初中 = trường cấp 2 của Tiểu Tuyết; trường xa nhà nên muốn đổi nhà gần hơn. 花园, 银行 không hợp lý do chuyển nhà.' },
+  { q: '房子里面也不错，＿＿和洗衣机都是新的。', opts: ['纸', '空调', '层', '环境'], ans: 1, exp: '空调和洗衣机 — hai đồ điện trong nhà, đều là mới. 层 là tầng, 环境 là môi trường, không nói "là đồ mới".' },
+  { q: '我今天早上来的时候，＿＿还开着。', opts: ['冰箱', '小区', '灯', '信用卡'], ans: 2, exp: '灯还开着 = đèn vẫn đang bật (V + 着 chỉ trạng thái còn kéo dài), ý là quên tắt đèn.' },
+  { q: '我先用你的钱买吧，明天＿＿给你。', opts: ['办', '换', '关', '还'], ans: 3, exp: '还 đọc huán = trả lại: 还给你. Mượn tiền hôm nay, mai trả. 换 là đổi, 办 là làm (thủ tục).' },
+  { q: '＿＿中国银行的服务不错，咱们去那儿办信用卡吧。', opts: ['听说', '需要', '打扫', '搬'], ans: 0, exp: '听说 = nghe nói, đặt đầu câu để dẫn thông tin nghe từ người khác. 需要, 打扫 không mở đầu câu kiểu này.' },
+  { q: '你能帮我＿＿一下这个箱子吗？', opts: ['关', '还', '搬', '办'], ans: 2, exp: '搬箱子 = khiêng, chuyển cái thùng. 关 là đóng, 还 là trả, 办 là làm thủ tục.' },
+  { q: '这么多事情最少＿＿两个星期才能做完。', opts: ['环境', '听说', '打扫', '需要'], ans: 3, exp: '需要 + khoảng thời gian = cần (bao lâu): 最少需要两个星期才能做完.' },
+  { q: 'Chọn câu đúng: "Mình khá thích màu này."', opts: ['我喜欢挺这个颜色的。', '我挺喜欢这个颜色的。', '我挺这个颜色喜欢的。', '我挺很喜欢这个颜色的。'], ans: 1, exp: '挺 + động từ tâm lý/tính từ (+ 的) = khá…: 我挺喜欢…的. 挺 đứng trước 喜欢 và không dùng chung với 很.' },
+  { q: 'Chọn câu đúng: "Hôm nay không ăn gì, tôi đói lả cả người."', opts: ['我今天没吃东西，很饿坏了。', '我今天没吃东西，坏饿了。', '我今天没吃东西，饿坏了。', '我今天没吃东西，饿得坏了。'], ans: 2, exp: 'Tính từ + 坏了 = …muốn chết, …lả người (mức độ rất cao): 饿坏了. Không thêm 很, không dùng 得.' },
+  { q: '电影八点开始，他七点半＿＿到了。(đến sớm)', opts: ['就', '才', '还', '再'], ans: 0, exp: '就 = sớm, nhanh hơn dự kiến: 8 giờ chiếu mà 7 rưỡi đã đến. 才 thì ngược lại, chỉ muộn hơn dự kiến.' }
 ];
 
 var speakingData = {

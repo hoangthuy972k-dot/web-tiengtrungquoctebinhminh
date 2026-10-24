@@ -3137,8 +3137,8 @@ var fillData = [
   {pre:'这张照片上和你',blank:'',post:'的那个人是少数民族吗？',hint:'gān bēi',ans:'干杯'},
   {pre:'她',blank:'',post:'得真漂亮。',hint:'dǎban',ans:'打扮'},
   {pre:'有一次我把存包的',blank:'',post:'丢了。',hint:'yàoshi',ans:'钥匙'},
-  {pre:'',blank:'',post:'哪个季节去丽江旅游比较好呢？',hint:'jiūjìng',ans:'究竟'},
-  {pre:'窗外的树一',blank:'',post:'一棵地变绿。',hint:'kē',ans:'棵'},
+  {pre:'',blank:'',post:'哪个季节去丽江旅游比较好呢？',hint:'jiūjìng',ans:'究竟',exp:'究竟 = rốt cuộc (như 到底), dùng trong câu hỏi để hỏi dồn.'},
+  {pre:'窗外的树一',blank:'',post:'一棵地变绿。',hint:'kē',ans:'棵',exp:'棵 là lượng từ cho cây: 一棵一棵地 = từng cây một.'},
   {pre:'虽然上海人也会讲',blank:'',post:'，可是仔细听，还是有上海味儿。',hint:'pǔtōnghuà',ans:'普通话'},
   {pre:'放假的时候，我会',blank:'',post:'好行李，向目的地出发。',hint:'shōushi',ans:'收拾'},
 ];

@@ -1277,8 +1277,8 @@ var fillData = [
   {pre:'这次调查的',blank:'对象',post:'是三百名中学生。',hint:'(đối tượng)',ans:'对象'},
   {pre:'这家超市24小时',blank:'营业',post:'，半夜也能买东西。',hint:'(mở cửa bán hàng)',ans:'营业'},
   {pre:'这次去北京学习的名',blank:'额',post:'只有五个。',hint:'(suất)',ans:'额'},
-  {pre:'三家的营业额加起来还',blank:'不如',post:'他一家高。',hint:'(không bằng)',ans:'不如'},
-  {pre:'我已经试了六次了，还是不行，我看我',blank:'干脆',post:'放弃好了。',hint:'(dứt khoát)',ans:'干脆'},
+  {pre:'三家的营业额加起来还',blank:'不如',post:'他一家高。',hint:'(không bằng)',ans:'不如',exp:'A不如B (+ tính từ) = A không bằng B: 三家加起来还不如他一家高.'},
+  {pre:'我已经试了六次了，还是不行，我看我',blank:'干脆',post:'放弃好了。',hint:'(dứt khoát)',ans:'干脆',exp:'干脆 = dứt khoát, thôi thì… luôn: 我看我干脆放弃好了.'},
   {pre:'坐车的人太多了，我',blank:'挤',post:'了半天才上了车。',hint:'(chen)',ans:'挤'},
   {pre:'他每天工作十几个小时，身体终于累',blank:'垮',post:'了。',hint:'(gục, sụp)',ans:'垮'},
   {pre:'一家公司',blank:'垄断',post:'了市场，价格就很难降下来。',hint:'(độc chiếm)',ans:'垄断'},
@@ -1297,10 +1297,10 @@ var fillData = [
   {pre:'旅游业的发展',blank:'促进',post:'了当地经济的发展。',hint:'(thúc đẩy)',ans:'促进'},
   {pre:'我们不能只考虑个人',blank:'利益',post:'。',hint:'(lợi ích)',ans:'利益'},
   {pre:'对她的',blank:'合理',post:'要求你不应该拒绝。',hint:'(hợp lý)',ans:'合理'},
-  {pre:'拿把伞吧，',blank:'万一',post:'下雨呢？',hint:'(lỡ như)',ans:'万一'},
+  {pre:'拿把伞吧，',blank:'万一',post:'下雨呢？',hint:'(lỡ như)',ans:'万一',exp:'万一 = lỡ như (khả năng nhỏ, thường là việc xấu): 万一下雨呢？'},
   {pre:'警察正在路口',blank:'维持',post:'交通秩序。',hint:'(duy trì)',ans:'维持'},
   {pre:'这个城市的奶茶店太多了，市场已经',blank:'饱和',post:'了。',hint:'(bão hoà)',ans:'饱和'},
-  {pre:'你们上次赢了，这次就肯定也能赢吗？我看',blank:'不见得',post:'。',hint:'(chưa chắc)',ans:'不见得'},
+  {pre:'你们上次赢了，这次就肯定也能赢吗？我看',blank:'不见得',post:'。',hint:'(chưa chắc)',ans:'不见得',exp:'不见得 = chưa chắc (phủ định nhẹ, khẩu ngữ).'},
   {pre:'',blank:'建伟',post:'在大学的一座公寓楼里开了一家书店。',hint:'(tên nhân vật chính)',ans:'建伟'}
 ];
 

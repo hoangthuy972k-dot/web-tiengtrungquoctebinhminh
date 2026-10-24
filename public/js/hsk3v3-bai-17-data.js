@@ -2547,16 +2547,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '你怎么还来图书馆学习？同学们都在＿＿找工作呢。', opts: ['到处', '继续', '比如', '真正'], ans: 0 },
-  { q: '我不想现在就工作，还想＿＿学习，我爸妈也同意。', opts: ['同意', '继续', '回答', '认为'], ans: 1 },
-  { q: '最近我做错了好几件事，我怕李老师＿＿。', opts: ['聪明', '容易', '生气', '有用'], ans: 2 },
-  { q: '我记得那个屋子里有些跟电脑＿＿的书。', opts: ['有用', '有名', '有意思', '有关'], ans: 3 },
-  { q: '天中，你的手机怎么＿＿了？——我的手机没电了。', opts: ['关机', '留学', '同意', '查'], ans: 0 },
-  { q: '“你以后想做什么”，这个问题真不＿＿回答。', opts: ['聪明', '容易', '常见', '真正'], ans: 1 },
-  { q: '我们走错＿＿了，机场在东边。', opts: ['难题', '屋子', '国家', '方向'], ans: 3 },
-  { q: 'Chọn câu đúng: "Sau này mình sẽ học hỏi nhiều từ những người cẩn thận."', opts: ['以后我要多学习向认真的人。', '以后我要多向认真的人学习。', '以后我向要多认真的人学习。', '以后我要多认真的人向学习。'], ans: 1 },
-  { q: '"你不是喜欢玩电脑吗？" — câu này có ý gì?', opts: ['Hỏi xem bạn có thích chơi máy tính không', 'Cho rằng bạn không thích máy tính', 'Nhắc lại: bạn THÍCH chơi máy tính mà', 'Người nói không thích máy tính'], ans: 2 },
-  { q: '只有每天锻炼身体，＿＿会越来越健康。', opts: ['就', '都', '也', '才'], ans: 3 }
+  { q: '你怎么还来图书馆学习？同学们都在＿＿找工作呢。', opts: ['到处', '继续', '比如', '真正'], ans: 0, exp: '到处 = khắp nơi: 在到处找工作. 继续, 比如 không hợp.' },
+  { q: '我不想现在就工作，还想＿＿学习，我爸妈也同意。', opts: ['同意', '继续', '回答', '认为'], ans: 1, exp: '继续学习 = tiếp tục học; không muốn đi làm ngay.' },
+  { q: '最近我做错了好几件事，我怕李老师＿＿。', opts: ['聪明', '容易', '生气', '有用'], ans: 2, exp: 'Làm sai nhiều việc → sợ thầy 生气 (giận).' },
+  { q: '我记得那个屋子里有些跟电脑＿＿的书。', opts: ['有用', '有名', '有意思', '有关'], ans: 3, exp: '跟…有关 = liên quan đến…: 跟电脑有关的书.' },
+  { q: '天中，你的手机怎么＿＿了？——我的手机没电了。', opts: ['关机', '留学', '同意', '查'], ans: 0, exp: '手机关机了 = điện thoại tắt máy (vì hết pin).' },
+  { q: '“你以后想做什么”，这个问题真不＿＿回答。', opts: ['聪明', '容易', '常见', '真正'], ans: 1, exp: '不容易回答 = không dễ trả lời. 聪明 dùng cho người.' },
+  { q: '我们走错＿＿了，机场在东边。', opts: ['难题', '屋子', '国家', '方向'], ans: 3, exp: '走错方向 = đi nhầm hướng; sân bay ở phía đông.' },
+  { q: 'Chọn câu đúng: "Sau này mình sẽ học hỏi nhiều từ những người cẩn thận."', opts: ['以后我要多学习向认真的人。', '以后我要多向认真的人学习。', '以后我向要多认真的人学习。', '以后我要多认真的人向学习。'], ans: 1, exp: '向 + người + 学习 = học hỏi ai; phó từ 多 đứng trước 向.' },
+  { q: '"你不是喜欢玩电脑吗？" — câu này có ý gì?', opts: ['Hỏi xem bạn có thích chơi máy tính không', 'Cho rằng bạn không thích máy tính', 'Nhắc lại: bạn THÍCH chơi máy tính mà', 'Người nói không thích máy tính'], ans: 2, exp: '不是…吗？ là câu phản vấn mang ý khẳng định: bạn THÍCH chơi máy tính mà.' },
+  { q: '只有每天锻炼身体，＿＿会越来越健康。', opts: ['就', '都', '也', '才'], ans: 3, exp: '只有…才… = chỉ có… mới…; 只有 luôn đi với 才, còn 只要 đi với 就.' }
 ];
 
 var speakingData = {

@@ -4775,6 +4775,7 @@ var fillData = [
     "blank": "从前",
     "post": "，这里是一个很小的村子，现在已经变成了大城市。",
     "hint": "(trước đây, ngày xưa)",
+    "exp": "从前 = ngày trước, xưa kia; đối lập với 现在 ở vế sau.",
     "ans": "从前"
   },
   {
@@ -4796,6 +4797,7 @@ var fillData = [
     "blank": "至今",
     "post": "还没离开过呢。",
     "hint": "(đến nay)",
+    "exp": "至今 = cho đến nay (văn viết): 至今还没离开过.",
     "ans": "至今"
   },
   {
@@ -4978,6 +4980,7 @@ var fillData = [
     "blank": "顶着",
     "post": "大雪往前走。",
     "hint": "(đội, chống chọi)",
+    "exp": "V + 着 + tân ngữ + V2: 顶着大雪往前走 = đội tuyết mà đi; V1着 chỉ trạng thái kèm theo.",
     "ans": "顶着"
   },
   {
@@ -4985,6 +4988,7 @@ var fillData = [
     "blank": "得很",
     "post": "，自言自语地抱怨：“怎么还有那么远啊！”",
     "hint": "(… lắm — bổ ngữ mức độ)",
+    "exp": "Tính từ + 得很 = …lắm (bổ ngữ mức độ): 烦得很. Không thêm 很 trước tính từ.",
     "ans": "得很"
   }
 ];

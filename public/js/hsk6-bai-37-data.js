@@ -914,7 +914,7 @@ var fillData = [
   {pre:'',blank:'毒品',post:'不仅摧残人的身体，还会毁掉一个家庭。',hint:'(ma tuý)',ans:'毒品'},
   {pre:'导游',blank:'带领',post:'游客一边游览名胜古迹，一边体验当地民俗。',hint:'(dẫn dắt)',ans:'带领'},
   {pre:'面对考官的提问，她',blank:'沉着',post:'地回答，一点儿也不紧张。',hint:'(bình tĩnh, điềm tĩnh)',ans:'沉着'},
-  {pre:'这个问题我们',blank:'暂且',post:'放一放，等时机成熟了再讨论吧。',hint:'(tạm thời)',ans:'暂且'},
+  {pre:'这个问题我们',blank:'暂且',post:'放一放，等时机成熟了再讨论吧。',hint:'(tạm thời)',ans:'暂且',exp:'暂且 = tạm thời, tạm (để sau tính tiếp): 暂且放一放.'},
   {pre:'民警们在毒贩的必经之路上',blank:'埋伏',post:'了整整两天。',hint:'(mai phục)',ans:'埋伏'},
   {pre:'快住手，你这么做是',blank:'非法',post:'的。',hint:'(phạm pháp, trái luật)',ans:'非法'},
   {pre:'',blank:'贩卖',post:'野生动物不仅违法，还会破坏生态平衡。',hint:'(buôn bán trái phép)',ans:'贩卖'},

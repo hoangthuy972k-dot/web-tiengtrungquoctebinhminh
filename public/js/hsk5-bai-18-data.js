@@ -1163,7 +1163,7 @@ var fillData = [
   {pre:'这些画作在有人看来极其神秘甚至',blank:'丑陋',post:'。',hint:'(xấu xí)',ans:'丑陋'},
   {pre:'下午是',blank:'自由',post:'活动时间，大家可以随便逛逛。',hint:'(tự do)',ans:'自由'},
   {pre:'这套衣服是姐姐自己',blank:'设计',post:'的。',hint:'(thiết kế)',ans:'设计'},
-  {pre:'老师让我们两两一',blank:'组',post:'，互相检查作业。',hint:'(nhóm)',ans:'组'},
+  {pre:'老师让我们两两一',blank:'组',post:'，互相检查作业。',hint:'(nhóm)',ans:'组',exp:'两两一组 = cứ hai người một nhóm; 组 làm lượng từ chỉ nhóm.'},
   {pre:'刚出生的',blank:'婴儿',post:'每天要睡十几个小时。',hint:'(trẻ sơ sinh)',ans:'婴儿'},
   {pre:'动物园里的那只黑',blank:'猩猩',post:'会用笔画画儿。',hint:'(tinh tinh)',ans:'猩猩'},
   {pre:'学校不允许学生在墙上',blank:'涂鸦',post:'。',hint:'(vẽ nguệch ngoạc)',ans:'涂鸦'},
@@ -1183,7 +1183,7 @@ var fillData = [
   {pre:'考试前要',blank:'调整',post:'好心态，别太紧张。',hint:'(điều chỉnh)',ans:'调整'},
   {pre:'',blank:'事实',post:'证明，他的办法是对的。',hint:'(sự thật)',ans:'事实'},
   {pre:'只有一个房间亮着灯，',blank:'其余',post:'窗户都是黑的。',hint:'(còn lại)',ans:'其余'},
-  {pre:'连这么简单的题你都不会，',blank:'可见',post:'你上课没有认真听。',hint:'(có thể thấy)',ans:'可见'}
+  {pre:'连这么简单的题你都不会，',blank:'可见',post:'你上课没有认真听。',hint:'(có thể thấy)',ans:'可见',exp:'可见 = có thể thấy (rút ra kết luận từ sự việc trước).'}
 ];
 
 // ══════════════════════════════════════════

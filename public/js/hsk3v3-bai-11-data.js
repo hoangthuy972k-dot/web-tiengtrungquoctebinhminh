@@ -2549,16 +2549,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '我们下午三点在第一会议室＿＿。', opts: ['开会', '会议', '地点', '同事'], ans: 0 },
-  { q: '明天开会前要发到公司的＿＿里。', opts: ['邮件', '城市', '邮箱', '办法'], ans: 2 },
-  { q: '听得见＿＿，但是有点儿小，听不清楚。', opts: ['地点', '声音', '生活', '同事'], ans: 1 },
-  { q: '老张说家里有点儿事，所以＿＿了。', opts: ['休息', '离开', '开会', '请假'], ans: 3 },
-  { q: '工作中遇到不能＿＿的问题，你怎么办？', opts: ['解决', '愿意', '发', '怕'], ans: 0 },
-  { q: '你＿＿去别的城市工作吗？——经理已经问过我了，我还没想好呢。', opts: ['只能', '怕', '愿意', '为'], ans: 2 },
-  { q: '虽然去上海可能会有更好的＿＿，但是我不想离开家人。', opts: ['城市', '机会', '邮箱', '声音'], ans: 1 },
-  { q: 'Chọn câu đúng: "Bạn muốn uống trà hay cà phê?"', opts: ['你想喝茶或者咖啡？', '你想喝茶或咖啡？', '你想或者喝茶还是咖啡？', '你想喝茶还是咖啡？'], ans: 3 },
-  { q: '"这么晚了，看来他今天不会来了。" — 「看来」 ở đây biểu thị gì?', opts: ['Mời người khác đến xem', 'Suy đoán, kết luận dựa trên tình hình', 'Nói về vẻ bề ngoài của một người', 'Thời gian trong tương lai'], ans: 1 },
-  { q: 'Chọn câu chữ 把 (3) đúng: "Mẹ đã giặt sạch quần áo rồi."', opts: ['妈妈把衣服洗干净了。', '妈妈把衣服洗了干净。', '妈妈洗干净把衣服了。', '妈妈把衣服洗。'], ans: 0 }
+  { q: '我们下午三点在第一会议室＿＿。', opts: ['开会', '会议', '地点', '同事'], ans: 0, exp: '在会议室开会: cần động từ 开会. 会议 là danh từ, không đứng sau nơi chốn để làm vị ngữ.' },
+  { q: '明天开会前要发到公司的＿＿里。', opts: ['邮件', '城市', '邮箱', '办法'], ans: 2, exp: '发到邮箱里 = gửi vào hộp thư. 邮件 là bản thân lá thư/email, không nói 发到邮件里.' },
+  { q: '听得见＿＿，但是有点儿小，听不清楚。', opts: ['地点', '声音', '生活', '同事'], ans: 1, exp: '听得见声音 = nghe thấy được âm thanh; vế sau 有点儿小 nói về âm lượng.' },
+  { q: '老张说家里有点儿事，所以＿＿了。', opts: ['休息', '离开', '开会', '请假'], ans: 3, exp: '家里有事，所以请假了 = xin nghỉ phép. 休息 không cần xin phép; 离开 không hợp lý do.' },
+  { q: '工作中遇到不能＿＿的问题，你怎么办？', opts: ['解决', '愿意', '发', '怕'], ans: 0, exp: '解决问题 = giải quyết vấn đề (kết hợp cố định).' },
+  { q: '你＿＿去别的城市工作吗？——经理已经问过我了，我还没想好呢。', opts: ['只能', '怕', '愿意', '为'], ans: 2, exp: '愿意 + V = sẵn lòng, muốn; dùng để hỏi ý người khác có đồng ý làm không.' },
+  { q: '虽然去上海可能会有更好的＿＿，但是我不想离开家人。', opts: ['城市', '机会', '邮箱', '声音'], ans: 1, exp: '更好的机会 = cơ hội tốt hơn khi đi Thượng Hải. 城市, 声音 không hợp nghĩa.' },
+  { q: 'Chọn câu đúng: "Bạn muốn uống trà hay cà phê?"', opts: ['你想喝茶或者咖啡？', '你想喝茶或咖啡？', '你想或者喝茶还是咖啡？', '你想喝茶还是咖啡？'], ans: 3, exp: 'Câu hỏi lựa chọn dùng 还是: 喝茶还是咖啡？ 或者 dùng trong câu trần thuật.' },
+  { q: '"这么晚了，看来他今天不会来了。" — 「看来」 ở đây biểu thị gì?', opts: ['Mời người khác đến xem', 'Suy đoán, kết luận dựa trên tình hình', 'Nói về vẻ bề ngoài của một người', 'Thời gian trong tương lai'], ans: 1, exp: '看来 = xem ra; suy đoán, kết luận dựa trên tình hình (đã muộn thế này).' },
+  { q: 'Chọn câu chữ 把 (3) đúng: "Mẹ đã giặt sạch quần áo rồi."', opts: ['妈妈把衣服洗干净了。', '妈妈把衣服洗了干净。', '妈妈洗干净把衣服了。', '妈妈把衣服洗。'], ans: 0, exp: 'Câu 把 phải có thành phần khác sau động từ: 洗干净了. Bổ ngữ 干净 đứng liền sau 洗, 了 ở cuối.' }
 ];
 
 var speakingData = {

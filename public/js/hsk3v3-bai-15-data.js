@@ -2461,16 +2461,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '小区里有很多树，孩子们＿＿后就在树下做游戏。', opts: ['放学', '平时', '经过', '了解'], ans: 0 },
-  { q: '南京有两千年＿＿的历史。', opts: ['附近', '以上', '西北', '关系'], ans: 1 },
-  { q: '南京有很多有名的景点，每年去旅游的＿＿特别多。', opts: ['老人', '马路', '游客', '草地'], ans: 2 },
-  { q: '中国有一条大河，它的名字跟颜色有＿＿。', opts: ['游戏', '景点', '外地', '关系'], ans: 3 },
-  { q: '下班后我请你吃晚饭，咱们边吃边＿＿。', opts: ['聊', '养', '遇见', '经过'], ans: 0 },
-  { q: '我选什么课好呢？——你可以＿＿自己的兴趣来选择。', opts: ['了解', '根据', '遇见', '经过'], ans: 1 },
-  { q: '那里有高高的大树和绿绿的＿＿。', opts: ['马路', '景点', '草地', '游客'], ans: 2 },
-  { q: 'Chọn câu đúng: "Những chuyện buồn chẳng mấy chốc là quên hết."', opts: ['难过的事情就不一会儿忘了。', '难过的事情不一会儿就忘了。', '不一会儿难过的事情忘就了。', '难过的事情忘了不一会儿。'], ans: 1 },
-  { q: 'Chọn câu đúng: "Đối với người Trung Quốc chúng ta, sông Hoàng Hà giống như mẹ."', opts: ['在我们中国人看，黄河像妈妈一样。', '我们中国人看来在，黄河像妈妈一样。', '根据我们中国人，黄河像妈妈一样。', '在我们中国人看来，黄河像妈妈一样。'], ans: 3 },
-  { q: '"他们两个两个地走进去了。" — 「两个两个地」 ở đây biểu thị gì?', opts: ['Cách thức: từng tốp hai người một', 'Tổng số người là hai', 'Ai cũng (mỗi người đều)', 'Thời gian rất ngắn'], ans: 0 }
+  { q: '小区里有很多树，孩子们＿＿后就在树下做游戏。', opts: ['放学', '平时', '经过', '了解'], ans: 0, exp: '放学后 = sau khi tan học. 平时, 经过 không đi với 后 kiểu này.' },
+  { q: '南京有两千年＿＿的历史。', opts: ['附近', '以上', '西北', '关系'], ans: 1, exp: '数量 + 以上 = trên…: 两千年以上的历史. 附近, 西北 không dùng sau số lượng.' },
+  { q: '南京有很多有名的景点，每年去旅游的＿＿特别多。', opts: ['老人', '马路', '游客', '草地'], ans: 2, exp: '去旅游的游客 = du khách. 老人, 马路 không hợp với 旅游.' },
+  { q: '中国有一条大河，它的名字跟颜色有＿＿。', opts: ['游戏', '景点', '外地', '关系'], ans: 3, exp: '跟…有关系 = có liên quan đến… Tên sông Hoàng Hà liên quan đến màu nước.' },
+  { q: '下班后我请你吃晚饭，咱们边吃边＿＿。', opts: ['聊', '养', '遇见', '经过'], ans: 0, exp: '边吃边聊 = vừa ăn vừa trò chuyện. 养, 经过 không hợp.' },
+  { q: '我选什么课好呢？——你可以＿＿自己的兴趣来选择。', opts: ['了解', '根据', '遇见', '经过'], ans: 1, exp: '根据 + căn cứ = dựa vào: 根据自己的兴趣来选择.' },
+  { q: '那里有高高的大树和绿绿的＿＿。', opts: ['马路', '景点', '草地', '游客'], ans: 2, exp: '绿绿的草地 = bãi cỏ xanh. 马路, 游客 không tả bằng 绿绿的.' },
+  { q: 'Chọn câu đúng: "Những chuyện buồn chẳng mấy chốc là quên hết."', opts: ['难过的事情就不一会儿忘了。', '难过的事情不一会儿就忘了。', '不一会儿难过的事情忘就了。', '难过的事情忘了不一会儿。'], ans: 1, exp: '不一会儿就… = chẳng mấy chốc đã…; 不一会儿 đứng trước 就, sau chủ ngữ.' },
+  { q: 'Chọn câu đúng: "Đối với người Trung Quốc chúng ta, sông Hoàng Hà giống như mẹ."', opts: ['在我们中国人看，黄河像妈妈一样。', '我们中国人看来在，黄河像妈妈一样。', '根据我们中国人，黄河像妈妈一样。', '在我们中国人看来，黄河像妈妈一样。'], ans: 3, exp: '在……看来 = theo cách nhìn của…: 在我们中国人看来.' },
+  { q: '"他们两个两个地走进去了。" — 「两个两个地」 ở đây biểu thị gì?', opts: ['Cách thức: từng tốp hai người một', 'Tổng số người là hai', 'Ai cũng (mỗi người đều)', 'Thời gian rất ngắn'], ans: 0, exp: 'Số lượng từ lặp + 地 chỉ cách thức: 两个两个地 = từng tốp hai người.' }
 ];
 
 var speakingData = {

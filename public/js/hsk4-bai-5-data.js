@@ -3483,10 +3483,10 @@ var matchData = [
 var fillData = [
   {pre:'您看这个沙发怎么样？现在正在',blank:'',post:'，比平时便宜了一千块。',hint:'dǎzhé',ans:'打折'},
   {pre:'价格还可以，就是不知道',blank:'',post:'有没有保证。',hint:'zhìliàng',ans:'质量'},
-  {pre:'您放心，质量',blank:'',post:'不"打折"。',hint:'kěndìng',ans:'肯定'},
+  {pre:'您放心，质量',blank:'',post:'不"打折"。',hint:'kěndìng',ans:'肯定',exp:'肯定 = chắc chắn, đứng trước động từ/phủ định: 质量肯定不打折 = chất lượng chắc chắn không bị "giảm".'},
   {pre:'这种沙发是今年最',blank:'',post:'的。',hint:'liúxíng',ans:'流行'},
-  {pre:'商场正好打折，我们',blank:'',post:'也买一台吧。',hint:'shùnbiàn',ans:'顺便'},
-  {pre:'咱家的冰箱',blank:'',post:'太旧了，制冷效果也不太好了。',hint:'shízài',ans:'实在'},
+  {pre:'商场正好打折，我们',blank:'',post:'也买一台吧。',hint:'shùnbiàn',ans:'顺便',exp:'顺便 = tiện thể, nhân tiện làm thêm việc khác: 商场正好打折，顺便也买一台.'},
+  {pre:'咱家的冰箱',blank:'',post:'太旧了，制冷效果也不太好了。',hint:'shízài',ans:'实在',exp:'实在 = thật sự, quả là (nhấn mạnh mức độ): 实在太旧了.'},
   {pre:'我带的',blank:'',post:'不够，用你的信用卡吧。',hint:'xiànjīn',ans:'现金'},
   {pre:'李老师',blank:'',post:'咱们去他家做客。',hint:'yāoqǐng',ans:'邀请'},
   {pre:'他很喜欢',blank:'',post:'酒，我们就给他买两瓶吧。',hint:'pútao',ans:'葡萄'},
@@ -3495,7 +3495,7 @@ var fillData = [
   {pre:'我买衣服的',blank:'',post:'是"只买对的，不买贵的"。',hint:'biāozhǔn',ans:'标准'},
   {pre:'如果不适合自己，即使花钱很少，也是一种',blank:'',post:'。',hint:'làngfèi',ans:'浪费'},
   {pre:'现在网上',blank:'',post:'变得越来越流行了。',hint:'gòuwù',ans:'购物'},
-  {pre:'年轻人',blank:'',post:'喜欢在网上买东西。',hint:'yóuqí',ans:'尤其'},
+  {pre:'年轻人',blank:'',post:'喜欢在网上买东西。',hint:'yóuqí',ans:'尤其',exp:'尤其 = đặc biệt là, nhất là; nhấn mạnh một nhóm nổi bật trong cái chung (người trẻ).'},
 ];
 
 var sortData = [

@@ -1240,7 +1240,7 @@ var fillData = [
   {pre:'由于报名的考生太多，学校决定适当',blank:'延长',post:'报名时间。',hint:'(kéo dài)',ans:'延长'},
   {pre:'这种植物在沙漠里也能',blank:'存活',post:'下来。',hint:'(sống sót)',ans:'存活'},
   {pre:'这几年，农村的生活条件得到了很大的',blank:'改善',post:'。',hint:'(cải thiện)',ans:'改善'},
-  {pre:'她在收拾花园时，',blank:'无意',post:'地找到了这只耳环。',hint:'(tình cờ)',ans:'无意'},
+  {pre:'她在收拾花园时，',blank:'无意',post:'地找到了这只耳环。',hint:'(tình cờ)',ans:'无意',exp:'无意 = vô tình, không cố ý: 无意地找到了这只耳环.'},
   {pre:'他',blank:'巧妙',post:'地回答了记者的问题，大家都很佩服。',hint:'(khéo léo)',ans:'巧妙'},
   {pre:'公司在产品包装、宣传推广和销售等方面积累了相当丰富、',blank:'实用',post:'的经验。',hint:'(thiết thực)',ans:'实用'},
   {pre:'猫是老鼠的',blank:'天敌',post:'，老鼠一看见猫就跑。',hint:'(kẻ thù tự nhiên)',ans:'天敌'},
@@ -1249,7 +1249,7 @@ var fillData = [
   {pre:'全世界的人民都希望世界',blank:'和平',post:'。',hint:'(hòa bình)',ans:'和平'},
   {pre:'我不觉得他可以对我',blank:'构成',post:'威胁。',hint:'(gây ra, tạo thành)',ans:'构成'},
   {pre:'遇到困难不应该',blank:'逃避',post:'，应该积极地面对。',hint:'(trốn tránh)',ans:'逃避'},
-  {pre:'随着经济',blank:'不断',post:'发展，人们的生活越来越好。',hint:'(không ngừng)',ans:'不断'},
+  {pre:'随着经济',blank:'不断',post:'发展，人们的生活越来越好。',hint:'(không ngừng)',ans:'不断',exp:'不断 + V = không ngừng: 经济不断发展.'},
   {pre:'年轻人精力',blank:'旺盛',post:'，熬一次夜好像没什么影响。',hint:'(dồi dào)',ans:'旺盛'},
   {pre:'我们是理工科学校，男老师占的',blank:'比例',post:'太大了。',hint:'(tỷ lệ)',ans:'比例'},
   {pre:'来中国一年多了，你有什么',blank:'感想',post:'？',hint:'(cảm nghĩ)',ans:'感想'},
@@ -1268,7 +1268,7 @@ var fillData = [
   {pre:'我们班的篮球队终于进入了',blank:'决赛',post:'。',hint:'(chung kết)',ans:'决赛'},
   {pre:'参加本届运动会的运动员人数',blank:'接近',post:'一万人。',hint:'(gần tới)',ans:'接近'},
   {pre:'早上是背单词的最',blank:'佳',post:'时间。',hint:'(tốt)',ans:'佳'},
-  {pre:'他',blank:'的确',post:'是我所教过的学生中最聪明的。',hint:'(quả thực)',ans:'的确'}
+  {pre:'他',blank:'的确',post:'是我所教过的学生中最聪明的。',hint:'(quả thực)',ans:'的确',exp:'的确 = quả thực, đúng là (khẳng định mạnh).'}
 ];
 
 // ══════════════════════════════════════════

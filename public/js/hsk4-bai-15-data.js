@@ -3238,12 +3238,12 @@ var fillData = [
   {pre:'你应该让孩子学会',blank:'',post:'时间。',hint:'guǎnlǐ',ans:'管理'},
   {pre:'他就怕',blank:'',post:'，每次都哭得特别厉害。',hint:'dǎ zhēn',ans:'打针'},
   {pre:'原来鼓励和',blank:'',post:'对小孩儿挺有用的。',hint:'biǎoyáng',ans:'表扬'},
-  {pre:'表扬',blank:'',post:'不要太多，过多的表扬可能会给孩子带来压力。',hint:'qiānwàn',ans:'千万'},
+  {pre:'表扬',blank:'',post:'不要太多，过多的表扬可能会给孩子带来压力。',hint:'qiānwàn',ans:'千万',exp:'千万 + 不要/别 = nhất định đừng; dùng để dặn dò, khuyên nhủ.'},
   {pre:'还可能让孩子',blank:'',post:'自己的能力，变得没有信心。',hint:'huáiyí',ans:'怀疑'},
   {pre:'会通过哭、扔东西或者',blank:'',post:'敲打来引起父母的注意。',hint:'gùyì',ans:'故意'},
   {pre:'教育孩子应该选择',blank:'',post:'的教育方法。',hint:'héshì',ans:'合适'},
   {pre:'看到父母',blank:'',post:'人，他们也会学着说假话。',hint:'piàn',ans:'骗'},
-  {pre:'七岁',blank:'',post:'的儿童普遍好动，坐不住。',hint:'zuǒyòu',ans:'左右'},
+  {pre:'七岁',blank:'',post:'的儿童普遍好动，坐不住。',hint:'zuǒyòu',ans:'左右',exp:'Số + 左右 = khoảng, tầm: 七岁左右.'},
 ];
 
 var sortData = [

@@ -2631,16 +2631,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '服务员，再给我们拿一＿＿筷子。', opts: ['张', '双', '个', '块'], ans: 1 },
-  { q: '这家饭馆的服务很＿＿，菜也都做得很好吃。', opts: ['热情', '简单', '好久', '方便'], ans: 0 },
-  { q: '你可以拿走这＿＿菜单，看看下次还吃点儿什么。', opts: ['双', '杯', '张', '件'], ans: 2 },
-  { q: '现在很多饭馆都能送＿＿，在家里就能吃到。', opts: ['饮料', '菜单', '服务', '外卖'], ans: 3 },
-  { q: '在手机上就能看菜单，你＿＿拿了。(không cần)', opts: ['不用', '没', '不会', '不能'], ans: 0 },
-  { q: '跑完步我太＿＿了，想喝一杯水。', opts: ['饿', '累', '忙', '渴'], ans: 3 },
-  { q: '早上我＿＿喝了一杯咖啡，什么都没吃。', opts: ['又', '还', '只', '都'], ans: 2 },
-  { q: 'Chọn cách nói đúng: "Món này vừa rẻ vừa ngon."', opts: ['这个菜又便宜和好吃。', '这个菜又很便宜又很好吃。', '这个菜又便宜又好吃。', '这个菜便宜又又好吃。'], ans: 2 },
-  { q: '"哪个菜都好吃。" — 「哪个」 ở đây có nghĩa là gì?', opts: ['Món nào? (đang hỏi)', 'Bất kỳ món nào (món nào cũng)', 'Món này', 'Món kia'], ans: 1 },
-  { q: 'Chọn câu đúng: "Bạn muốn đi đâu thì chúng ta đi đó."', opts: ['你想去哪儿，就我们去哪儿。', '你想去哪儿，我们就去哪儿。', '你想去哪儿？我们就去哪儿？', '我们想去哪儿，你就去哪儿。'], ans: 1 }
+  { q: '服务员，再给我们拿一＿＿筷子。', opts: ['张', '双', '个', '块'], ans: 1, exp: 'Đũa luôn đi thành đôi → 一双筷子. 张 dùng cho vật phẳng (giấy, bàn), 块 cho miếng, cục.' },
+  { q: '这家饭馆的服务很＿＿，菜也都做得很好吃。', opts: ['热情', '简单', '好久', '方便'], ans: 0, exp: '服务很热情 = phục vụ nhiệt tình — khen thái độ phục vụ. 简单, 方便 không dùng để khen người phục vụ.' },
+  { q: '你可以拿走这＿＿菜单，看看下次还吃点儿什么。', opts: ['双', '杯', '张', '件'], ans: 2, exp: '菜单 là tờ giấy phẳng → 一张菜单. 双 là đôi, 杯 là cốc, 件 dùng cho áo hoặc sự việc.' },
+  { q: '现在很多饭馆都能送＿＿，在家里就能吃到。', opts: ['饮料', '菜单', '服务', '外卖'], ans: 3, exp: '送外卖 = giao đồ ăn tận nơi; vế sau "ở nhà cũng ăn được" cho thấy cần 外卖.' },
+  { q: '在手机上就能看菜单，你＿＿拿了。(không cần)', opts: ['不用', '没', '不会', '不能'], ans: 0, exp: '不用 + động từ = không cần. 不能 là không được/không thể, 没 phủ định việc đã xảy ra, 不会 là sẽ không.' },
+  { q: '跑完步我太＿＿了，想喝一杯水。', opts: ['饿', '累', '忙', '渴'], ans: 3, exp: 'Muốn uống nước → 渴 (khát). 饿 là đói (muốn ăn), 累 là mệt, 忙 là bận.' },
+  { q: '早上我＿＿喝了一杯咖啡，什么都没吃。', opts: ['又', '还', '只', '都'], ans: 2, exp: '只 + động từ = chỉ; vế sau 什么都没吃 cho thấy ngoài cà phê không ăn gì. 又/还 (lại/còn) mâu thuẫn với ý này.' },
+  { q: 'Chọn cách nói đúng: "Món này vừa rẻ vừa ngon."', opts: ['这个菜又便宜和好吃。', '这个菜又很便宜又很好吃。', '这个菜又便宜又好吃。', '这个菜便宜又又好吃。'], ans: 2, exp: '又A又B = vừa A vừa B; sau 又 dùng thẳng tính từ, không thêm 很 và không dùng 和 để nối.' },
+  { q: '"哪个菜都好吃。" — 「哪个」 ở đây có nghĩa là gì?', opts: ['Món nào? (đang hỏi)', 'Bất kỳ món nào (món nào cũng)', 'Món này', 'Món kia'], ans: 1, exp: '哪个 + 都 = bất kỳ cái nào cũng (phiếm chỉ), không phải câu hỏi. Câu này nghĩa là món nào cũng ngon.' },
+  { q: 'Chọn câu đúng: "Bạn muốn đi đâu thì chúng ta đi đó."', opts: ['你想去哪儿，就我们去哪儿。', '你想去哪儿，我们就去哪儿。', '你想去哪儿？我们就去哪儿？', '我们想去哪儿，你就去哪儿。'], ans: 1, exp: 'Hai đại từ nghi vấn hô ứng: 你想去哪儿，我们就去哪儿. 就 đứng sau chủ ngữ vế sau, trước động từ.' }
 ];
 
 var speakingData = {

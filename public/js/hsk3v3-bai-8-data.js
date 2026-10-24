@@ -2641,16 +2641,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '天中，＿＿常看见你来体育馆。', opts: ['最近', '以后', '突然', '差不多'], ans: 0 },
-  { q: '我下课以后常去打＿＿，你也来玩吧。', opts: ['体育馆', '羽毛球', '习惯', '方法'], ans: 1 },
-  { q: '是不是＿＿了？发烧吗？', opts: ['健康', '开心', '感冒', '关心'], ans: 2 },
-  { q: '你怎么＿＿住院了？大家都很担心你。', opts: ['差不多', '常', '其他', '突然'], ans: 3 },
-  { q: '谢谢关心，我会＿＿的。', opts: ['注意', '担心', '习惯', '希望'], ans: 0 },
-  { q: '有一种药需要每天睡前吃一次，＿＿几种每天吃三次。', opts: ['方法', '其他', '健康', '心里'], ans: 1 },
-  { q: '我都记在＿＿了，回家以后一定会多注意。', opts: ['耳朵', '病人', '身体', '心里'], ans: 3 },
-  { q: 'Chọn câu đúng: "Tôi không thể béo thêm nữa."', opts: ['我不能再胖起来了。', '我不能再胖下去了。', '我不能再下去胖了。', '我不能胖再下去了。'], ans: 1 },
-  { q: 'Chọn câu đúng (từ li hợp): "Hôm qua tôi bơi một tiếng."', opts: ['昨天我游泳了一个小时。', '昨天我一个小时游泳了。', '昨天我游了一个小时泳。', '昨天我游一个小时了泳。'], ans: 2 },
-  { q: 'Chọn câu đúng: "Anh ấy về nước được hai tháng rồi."', opts: ['他两个月回国了。', '他回两个月国了。', '他回国过两个月。', '他回国两个月了。'], ans: 3 }
+  { q: '天中，＿＿常看见你来体育馆。', opts: ['最近', '以后', '突然', '差不多'], ans: 0, exp: '最近常看见你 = dạo này hay thấy bạn (việc đã xảy ra). 以后 chỉ tương lai, 突然 không đi với 常.' },
+  { q: '我下课以后常去打＿＿，你也来玩吧。', opts: ['体育馆', '羽毛球', '习惯', '方法'], ans: 1, exp: '打 + môn bóng: 打羽毛球 = chơi cầu lông. 体育馆 là nơi chốn, không đi sau 打.' },
+  { q: '是不是＿＿了？发烧吗？', opts: ['健康', '开心', '感冒', '关心'], ans: 2, exp: 'Hỏi bệnh: 感冒了？发烧吗？ 健康, 开心, 关心 không phải bệnh.' },
+  { q: '你怎么＿＿住院了？大家都很担心你。', opts: ['差不多', '常', '其他', '突然'], ans: 3, exp: '怎么突然 + V = sao tự dưng lại…; nhập viện là chuyện bất ngờ. 常 không hợp với 住院 ở đây.' },
+  { q: '谢谢关心，我会＿＿的。', opts: ['注意', '担心', '习惯', '希望'], ans: 0, exp: '我会注意的 = tôi sẽ chú ý; đáp lại lời quan tâm, nhắc nhở. 担心 là lo lắng, không hợp để trả lời.' },
+  { q: '有一种药需要每天睡前吃一次，＿＿几种每天吃三次。', opts: ['方法', '其他', '健康', '心里'], ans: 1, exp: '其他几种 = mấy loại khác (còn lại), đối với 一种 ở vế trước.' },
+  { q: '我都记在＿＿了，回家以后一定会多注意。', opts: ['耳朵', '病人', '身体', '心里'], ans: 3, exp: '记在心里 = ghi nhớ trong lòng. 耳朵, 身体 không dùng với 记在.' },
+  { q: 'Chọn câu đúng: "Tôi không thể béo thêm nữa."', opts: ['我不能再胖起来了。', '我不能再胖下去了。', '我不能再下去胖了。', '我不能胖再下去了。'], ans: 1, exp: '下去 (nghĩa mở rộng) = tiếp tục trạng thái đang có: 不能再胖下去了. 起来 là bắt đầu có trạng thái mới.' },
+  { q: 'Chọn câu đúng (từ li hợp): "Hôm qua tôi bơi một tiếng."', opts: ['昨天我游泳了一个小时。', '昨天我一个小时游泳了。', '昨天我游了一个小时泳。', '昨天我游一个小时了泳。'], ans: 2, exp: '游泳 là từ li hợp: thời lượng chen vào giữa: 游了一个小时泳. Không đặt thời lượng sau cả từ 游泳.' },
+  { q: 'Chọn câu đúng: "Anh ấy về nước được hai tháng rồi."', opts: ['他两个月回国了。', '他回两个月国了。', '他回国过两个月。', '他回国两个月了。'], ans: 3, exp: 'Động từ không kéo dài (回国) + thời gian + 了 = đã được bao lâu kể từ lúc việc xảy ra: 回国两个月了.' }
 ];
 
 var speakingData = {

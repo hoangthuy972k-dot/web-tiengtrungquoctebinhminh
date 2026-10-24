@@ -3562,18 +3562,18 @@ var fillData = [
   {pre:'你爷爷京剧唱得真专业，我还以为他是京剧',blank:'',post:'呢。',hint:'yǎnyuán',ans:'演员'},
   {pre:'年轻时在我们那儿很有名，深受',blank:'',post:'们的喜爱。',hint:'guānzhòng',ans:'观众'},
   {pre:'你爷爷一定对京剧有着很深',blank:'',post:'的感情。',hint:'hòu',ans:'厚'},
-  {pre:'他8岁就开始上台演出，到现在',blank:'',post:'唱了60多年了。',hint:'dàgài',ans:'大概'},
+  {pre:'他8岁就开始上台演出，到现在',blank:'',post:'唱了60多年了。',hint:'dàgài',ans:'大概',exp:'大概 + số lượng = khoảng, chừng: 大概唱了60多年了.'},
   {pre:'真没想到你一个',blank:'',post:'美国的外国留学生，能把京剧唱得这么好。',hint:'láizì',ans:'来自'},
-  {pre:'我常常跟着电视学唱京剧，然后一',blank:'',post:'一遍地练习。',hint:'biàn',ans:'遍'},
+  {pre:'我常常跟着电视学唱京剧，然后一',blank:'',post:'一遍地练习。',hint:'biàn',ans:'遍',exp:'一遍一遍地 + V = hết lượt này đến lượt khác (lặp lại nhiều lần).'},
   {pre:'别',blank:'',post:'，因为我以前学习过音乐，有一些音乐基础。',hint:'chī jīng',ans:'吃惊'},
   {pre:'有时候会影响他们和中国人之间的',blank:'',post:'交流。',hint:'zhèngcháng',ans:'正常'},
   {pre:'所以我们想',blank:'',post:'举办一次中国传统文化节活动。',hint:'shēnqǐng',ans:'申请'},
   {pre:'这次活动',blank:'',post:'由你负责，相信也一定会很成功。',hint:'jìxù',ans:'继续'},
   {pre:'我们回去就开会',blank:'',post:'，星期五之前把详细的计划书发给您。',hint:'tǎolùn',ans:'讨论'},
-  {pre:'筷子在中国',blank:'',post:'已经有3000多年的历史了。',hint:'dàyuē',ans:'大约'},
+  {pre:'筷子在中国',blank:'',post:'已经有3000多年的历史了。',hint:'dàyuē',ans:'大约',exp:'大约 + số lượng = khoảng, ước chừng: 大约3000多年.'},
   {pre:'有人在',blank:'',post:'上专门进行过调查。',hint:'hùliánwǎng',ans:'互联网'},
-  {pre:'',blank:'',post:'人们对茶的认识的加深，慢慢开始把它当作解渴的饮料。',hint:'suízhe',ans:'随着'},
-  {pre:'它的味道',blank:'',post:'有点儿苦，其实是一种用中药做成的饮料。',hint:'shāowēi',ans:'稍微'},
+  {pre:'',blank:'',post:'人们对茶的认识的加深，慢慢开始把它当作解渴的饮料。',hint:'suízhe',ans:'随着',exp:'随着 + sự thay đổi = cùng với việc…: 随着认识的加深.'},
+  {pre:'它的味道',blank:'',post:'有点儿苦，其实是一种用中药做成的饮料。',hint:'shāowēi',ans:'稍微',exp:'稍微 + tính từ + 有点儿/一点儿 = hơi…; 稍微有点儿苦.'},
 ];
 
 var sortData = [

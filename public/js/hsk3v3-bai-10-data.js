@@ -2637,16 +2637,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '这个电影很好看，我看了三＿＿。', opts: ['遍', '页', '句', '年级'], ans: 0 },
-  { q: '老师写在＿＿上的题都很重要。', opts: ['办公室', '黑板', '对话', '作业'], ans: 1 },
-  { q: '书上第五＿＿的这个对话我看不懂。', opts: ['句', '遍', '页', '本'], ans: 2 },
-  { q: '这个方法真好！我以后也试试，希望能＿＿成绩。', opts: ['复习', '遇到', '讲', '提高'], ans: 3 },
-  { q: '明天还有考试呢，别想那么多了，先＿＿外语吧。', opts: ['复习', '明白', '要求', '一般'], ans: 0 },
-  { q: '为了考上好高中，我现在非常＿＿。', opts: ['一般', '努力', '难', '当然'], ans: 1 },
-  { q: '中国的学校＿＿是小学六年，初中三年，高中三年。', opts: ['当然', '认真', '一般', '差'], ans: 2 },
-  { q: 'Chọn câu chữ 把 đúng: "Mình sẽ ghi những bài này vào vở."', opts: ['我会把这些题记本子上。', '我把会这些题记在本子上。', '我会把这些题记在本子上。', '我会记这些题把在本子上。'], ans: 2 },
-  { q: 'Chọn câu đúng: "Ngày mai em trả sách lại cho cô nhé."', opts: ['你明天再把书还我给。', '你把明天再书还给我。', '你明天再还把书给我。', '你明天再把书还给我。'], ans: 3 },
-  { q: '"在老师的帮助下，我的成绩提高很快。" — 「在……下」 ở đây biểu thị gì?', opts: ['Nơi chốn (ở phía dưới)', 'Điều kiện', 'Thời gian', 'Phạm vi, phương diện'], ans: 1 }
+  { q: '这个电影很好看，我看了三＿＿。', opts: ['遍', '页', '句', '年级'], ans: 0, exp: '遍 = lượt (từ đầu đến cuối): 看了三遍. 页 là trang, 句 là câu.' },
+  { q: '老师写在＿＿上的题都很重要。', opts: ['办公室', '黑板', '对话', '作业'], ans: 1, exp: '写在黑板上 = viết trên bảng. 办公室, 作业 không đi với 写在…上 trong lớp học.' },
+  { q: '书上第五＿＿的这个对话我看不懂。', opts: ['句', '遍', '页', '本'], ans: 2, exp: '第五页 = trang thứ 5 trong sách. 遍 chỉ số lần, 本 chỉ số cuốn.' },
+  { q: '这个方法真好！我以后也试试，希望能＿＿成绩。', opts: ['复习', '遇到', '讲', '提高'], ans: 3, exp: '提高成绩 = nâng cao thành tích. 复习, 讲 không mang tân ngữ 成绩.' },
+  { q: '明天还有考试呢，别想那么多了，先＿＿外语吧。', opts: ['复习', '明白', '要求', '一般'], ans: 0, exp: '复习外语 = ôn ngoại ngữ trước kỳ thi. 明白, 要求 không hợp.' },
+  { q: '为了考上好高中，我现在非常＿＿。', opts: ['一般', '努力', '难', '当然'], ans: 1, exp: '为了考上好高中，我非常努力 = để đỗ trường tốt nên rất cố gắng. 难, 一般 không hợp nghĩa.' },
+  { q: '中国的学校＿＿是小学六年，初中三年，高中三年。', opts: ['当然', '认真', '一般', '差'], ans: 2, exp: '一般 = thông thường, nói về quy định chung (tiểu học 6 năm…). 当然, 认真 không hợp.' },
+  { q: 'Chọn câu chữ 把 đúng: "Mình sẽ ghi những bài này vào vở."', opts: ['我会把这些题记本子上。', '我把会这些题记在本子上。', '我会把这些题记在本子上。', '我会记这些题把在本子上。'], ans: 2, exp: 'Câu 把 có trợ động từ: S + 会 + 把 + O + V + 在 + nơi chốn. Trợ động từ đứng trước 把, không bỏ 在.' },
+  { q: 'Chọn câu đúng: "Ngày mai em trả sách lại cho cô nhé."', opts: ['你明天再把书还我给。', '你把明天再书还给我。', '你明天再还把书给我。', '你明天再把书还给我。'], ans: 3, exp: 'Phó từ 再 đứng trước 把: 再把书还给我; động từ + 给 + người.' },
+  { q: '"在老师的帮助下，我的成绩提高很快。" — 「在……下」 ở đây biểu thị gì?', opts: ['Nơi chốn (ở phía dưới)', 'Điều kiện', 'Thời gian', 'Phạm vi, phương diện'], ans: 1, exp: '在……下 = trong điều kiện… (nhờ sự giúp đỡ của cô giáo) → biểu thị điều kiện, không phải nơi chốn.' }
 ];
 
 var speakingData = {

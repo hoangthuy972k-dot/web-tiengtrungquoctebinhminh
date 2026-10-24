@@ -3529,11 +3529,11 @@ var matchData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'他',blank:'不仅',post:'性格好，长得也很帅。',hint:'(không những)',ans:'不仅'},
-  {pre:'我们是',blank:'刚',post:'认识的，还不太熟悉。',hint:'(vừa mới)',ans:'刚'},
-  {pre:'他工作很努力，',blank:'从来',post:'不迟到。',hint:'(từ trước đến nay)',ans:'从来'},
-  {pre:'即使工作很忙，他',blank:'也',post:'会每天给妈妈打电话。',hint:'(cũng)',ans:'也'},
-  {pre:'两个人在性格',blank:'上',post:'很像，所以很聊得来。',hint:'(về phương diện)',ans:'上'},
+  {pre:'他',blank:'不仅',post:'性格好，长得也很帅。',hint:'(không những)',ans:'不仅',exp:'不仅A，(而且/也)B = không những A mà còn B. 不仅 đứng sau chủ ngữ khi hai vế cùng chủ ngữ; vế sau có 也 hô ứng.'},
+  {pre:'我们是',blank:'刚',post:'认识的，还不太熟悉。',hint:'(vừa mới)',ans:'刚',exp:'刚 + động từ = vừa mới (việc xảy ra chưa lâu), đứng trước động từ: 刚认识. Vì mới quen nên 还不太熟悉.'},
+  {pre:'他工作很努力，',blank:'从来',post:'不迟到。',hint:'(từ trước đến nay)',ans:'从来',exp:'从来 + 不/没 = từ trước đến nay chưa bao giờ. 从来 thường đi với dạng phủ định: 从来不迟到.'},
+  {pre:'即使工作很忙，他',blank:'也',post:'会每天给妈妈打电话。',hint:'(cũng)',ans:'也',exp:'即使…，也… = cho dù… thì vẫn…; vế sau bắt buộc có 也 đứng trước động từ.'},
+  {pre:'两个人在性格',blank:'上',post:'很像，所以很聊得来。',hint:'(về phương diện)',ans:'上',exp:'在…上 = về mặt…: 在性格上 = về tính cách. 上 ở đây chỉ phương diện, không chỉ vị trí.'},
   {pre:'他一个人踢进两个球，我对他',blank:'印象',post:'很深。',hint:'(ấn tượng)',ans:'印象'},
   {pre:'我们刚搬来这儿，对环境还不太',blank:'熟悉',post:'。',hint:'(hiểu rõ, quen thuộc)',ans:'熟悉'},
   {pre:'两个人在一起，最好能有',blank:'共同',post:'的爱好。',hint:'(chung)',ans:'共同'},

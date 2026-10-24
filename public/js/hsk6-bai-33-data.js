@@ -919,7 +919,7 @@ var matchData = [
 ];
 
 var fillData = [
-  {pre:'公司下个月将举办',blank:'为期',post:'一周的艺术节。',hint:'(kéo dài, có thời hạn)',ans:'为期'},
+  {pre:'公司下个月将举办',blank:'为期',post:'一周的艺术节。',hint:'(kéo dài, có thời hạn)',ans:'为期',exp:'为期 + khoảng thời gian = kéo dài (trong)…: 为期一周的艺术节.'},
   {pre:'语言是不同文化之间沟通的',blank:'桥梁',post:'。',hint:'(cây cầu, cầu nối)',ans:'桥梁'},
   {pre:'高铁跨过了一座座桥，穿越了辽阔的',blank:'平原',post:'，一路向西。',hint:'(đồng bằng)',ans:'平原'},
   {pre:'窗外北风',blank:'呼啸',post:'，屋里却暖和得像春天一样。',hint:'(gào thét)',ans:'呼啸'},
@@ -940,7 +940,7 @@ var fillData = [
   {pre:'这对',blank:'双胞胎',post:'兄弟长得一模一样，连老师都分不清。',hint:'(sinh đôi)',ans:'双胞胎'},
   {pre:'晚饭后，邻居们坐在树下拉',blank:'家常',post:'，好不热闹。',hint:'(chuyện nhà)',ans:'家常'},
   {pre:'一提起小时候的',blank:'往事',post:'，爷爷的话就多了起来。',hint:'(chuyện cũ)',ans:'往事'},
-  {pre:'老中医的医术很高，',blank:'方圆',post:'百里的人都来找他看病。',hint:'(trong vòng, xung quanh)',ans:'方圆'},
+  {pre:'老中医的医术很高，',blank:'方圆',post:'百里的人都来找他看病。',hint:'(trong vòng, xung quanh)',ans:'方圆',exp:'方圆 + khoảng cách = trong vòng bán kính…: 方圆百里.'},
   {pre:'在这个信息',blank:'爆炸',post:'的时代，学会选择比学会接受更重要。',hint:'(bùng nổ)',ans:'爆炸'},
   {pre:'春节时，家家户户都贴',blank:'对联',post:'，包饺子，放鞭炮。',hint:'(câu đối)',ans:'对联'},
   {pre:'大年初一，孩子们要先给爷爷奶奶',blank:'拜年',post:'，才能拿红包。',hint:'(chúc Tết)',ans:'拜年'},
@@ -958,7 +958,7 @@ var fillData = [
   {pre:'新年前夕，学校举行了师生',blank:'联欢',post:'会。',hint:'(liên hoan văn nghệ)',ans:'联欢'},
   {pre:'弟弟一有空就看',blank:'漫画',post:'，作业都忘了写。',hint:'(truyện tranh)',ans:'漫画'},
   {pre:'放假回到乡下，孩子们',blank:'无拘无束',post:'地在田野里跑来跑去。',hint:'(thoải mái, không gò bó)',ans:'无拘无束'},
-  {pre:'教师节那天，同学们送给老师一',blank:'束',post:'鲜花。',hint:'(bó — lượng từ)',ans:'束'},
+  {pre:'教师节那天，同学们送给老师一',blank:'束',post:'鲜花。',hint:'(bó — lượng từ)',ans:'束',exp:'束 là lượng từ cho bó (hoa): 一束鲜花.'},
   {pre:'月光下，一叶小',blank:'舟',post:'在湖面上慢慢地漂着。',hint:'(thuyền)',ans:'舟'}
 ];
 

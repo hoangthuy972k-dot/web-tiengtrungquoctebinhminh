@@ -1655,7 +1655,7 @@ var fillData = [
   {pre:'孩子们',blank:'沐浴',post:'着春天的阳光，在草地上开心地奔跑。',hint:'(tắm mình)',ans:'沐浴'},
   {pre:'学校食堂每顿饭都有两',blank:'荤',post:'两素，营养搭配得很合理。',hint:'(món mặn)',ans:'荤'},
   {pre:'国歌响起的那一刻，全场气氛十分',blank:'庄严',post:'，大家都站得笔直。',hint:'(trang nghiêm)',ans:'庄严'},
-  {pre:'中秋节',blank:'亦',post:'称团圆节，是全家人团聚的日子。',hint:'(cũng — văn viết)',ans:'亦'},
+  {pre:'中秋节',blank:'亦',post:'称团圆节，是全家人团聚的日子。',hint:'(cũng — văn viết)',ans:'亦',exp:'亦 = cũng (văn viết, như 也): 亦称团圆节.'},
   {pre:'老街是越中',blank:'边境',post:'上的一个城市，那里的贸易非常发达。',hint:'(biên giới)',ans:'边境'},
   {pre:'这家网站',blank:'泄露',post:'了大量用户的个人信息，引起了人们的愤怒。',hint:'(làm lộ)',ans:'泄露'},
   {pre:'校长亲自',blank:'率领',post:'代表团去国外参加比赛。',hint:'(dẫn đầu)',ans:'率领'},
@@ -1663,7 +1663,7 @@ var fillData = [
   {pre:'一次质量问题就可能严重损害公司多年建立的',blank:'声誉',post:'。',hint:'(danh tiếng)',ans:'声誉'},
   {pre:'写议论文时，要',blank:'列举',post:'具体的例子来支持自己的观点。',hint:'(nêu ra)',ans:'列举'},
   {pre:'这次比赛不仅考书面写作，还考',blank:'口头',post:'表达能力。',hint:'(bằng lời nói)',ans:'口头'},
-  {pre:'爷爷戴上一',blank:'副',post:'老花镜，认认真真地看起报纸来。',hint:'(lượng từ: cặp)',ans:'副'},
+  {pre:'爷爷戴上一',blank:'副',post:'老花镜，认认真真地看起报纸来。',hint:'(lượng từ: cặp)',ans:'副',exp:'副 là lượng từ cho vật thành cặp: 一副眼镜, 一副手套.'},
   {pre:'父母和孩子之间要多沟通，才能消除',blank:'隔阂',post:'。',hint:'(khoảng cách)',ans:'隔阂'}
 ];
 

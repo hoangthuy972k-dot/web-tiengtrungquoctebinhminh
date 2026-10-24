@@ -1,7 +1,7 @@
 /* Che do sang / toi — chay trong <head> truoc khi ve trang de khong chop nen trang.
-   Khong chon gi: theo cai dat cua may (prefers-color-scheme). Da bam nut: luu
-   'light' hoac 'dark' trong localStorage (hyv_theme) — dung chung cho trang chu
-   va trang bai hoc day du.
+   Mac dinh LUON la nen sang (ban ngay), ke ca khi may dang de che do toi —
+   hoc sinh vao lan dau thay nen sang. Chi khi tu bam nut moi luu 'light' hoac
+   'dark' trong localStorage (hyv_theme) — dung chung cho trang chu va trang bai hoc.
    Trang bai hoc (co .site-header) tu gan them nut mat trang / mat troi o goc tren;
    trang chu co nut rieng (#themeToggle, xu ly trong app.js). */
 (function () {
@@ -9,8 +9,8 @@
   var root = document.documentElement;
   try {
     var t = localStorage.getItem(KEY);
-    if (t === 'dark' || t === 'light') root.setAttribute('data-theme', t);
-  } catch (e) { /* trinh duyet chan bo nho: theo may */ }
+    root.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+  } catch (e) { root.setAttribute('data-theme', 'light'); }
 
   function mayToi() { return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); }
   function hienTai() {
@@ -37,13 +37,8 @@
     }
     b.addEventListener('click', function () {
       var moi = hienTai() === 'dark' ? 'light' : 'dark';
-      var may = mayToi() ? 'dark' : 'light';
-      try {
-        if (moi === may) localStorage.removeItem(KEY);
-        else localStorage.setItem(KEY, moi);
-      } catch (e) { /* bo qua */ }
-      if (moi === may) root.removeAttribute('data-theme');
-      else root.setAttribute('data-theme', moi);
+      try { localStorage.setItem(KEY, moi); } catch (e) { /* bo qua */ }
+      root.setAttribute('data-theme', moi);
       ve();
     });
     if (window.matchMedia) {

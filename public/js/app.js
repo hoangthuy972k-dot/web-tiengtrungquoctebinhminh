@@ -783,6 +783,9 @@
   function getLastLesson() {
     var saved = readJSON(LAST_LESSON_KEY, null);
     if (!saved || !saved.levelId || !READY_LEVELS[saved.levelId]) return null;
+    // "Bai dang hoc" gan voi tung tai khoan: may dung chung thi khong hien bai
+    // cua ban khac (ban ghi cu chua co uid thi van dung nhu truoc)
+    if (saved.uid !== undefined && (saved.uid || null) !== (currentUserId() || null)) return null;
     var lessons = (APP_DATA.lessons && APP_DATA.lessons[saved.levelId]) || [];
     var lesson = lessons.find(function (l) { return l.fullPageUrl === saved.url; });
     return lesson ? { levelId: saved.levelId, lesson: lesson } : null;
@@ -908,8 +911,8 @@
     });
   }
 
-  // Nut nen sang / toi tren thanh tren. Bam de doi; neu lua chon trung voi cai dat
-  // cua may thi xoa lua chon (quay ve tu theo may). theme.js ap dung luc tai trang.
+  // Nut nen sang / toi tren thanh tren. Mac dinh nen sang; bam de doi va luu lua
+  // chon. theme.js ap dung luc tai trang.
   function themeHienTai() {
     var t = document.documentElement.getAttribute('data-theme');
     if (t === 'dark' || t === 'light') return t;
@@ -928,13 +931,8 @@
     if (!b) return;
     b.addEventListener('click', function () {
       var moi = themeHienTai() === 'dark' ? 'light' : 'dark';
-      var may = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      try {
-        if (moi === may) localStorage.removeItem('hyv_theme');
-        else localStorage.setItem('hyv_theme', moi);
-      } catch (e) { /* bo qua */ }
-      if (moi === may) document.documentElement.removeAttribute('data-theme');
-      else document.documentElement.setAttribute('data-theme', moi);
+      try { localStorage.setItem('hyv_theme', moi); } catch (e) { /* bo qua */ }
+      document.documentElement.setAttribute('data-theme', moi);
       veNutTheme();
     });
     if (window.matchMedia) {
@@ -1752,7 +1750,7 @@
   function showLessonHub(levelId, lesson) {
     currentHubLevelId = levelId;
     currentHubLesson = lesson;
-    writeJSON(LAST_LESSON_KEY, { levelId: levelId, url: lesson.fullPageUrl });
+    writeJSON(LAST_LESSON_KEY, { levelId: levelId, url: lesson.fullPageUrl, uid: currentUserId() });
     if (practiceLevel !== levelId) {
       practiceLevel = levelId;
       renderLevelSubmenu();
@@ -14846,6 +14844,8 @@
       if (progress) mergeProgressFromServer(progress);
       syncProgressToServer();
       loadAssignments();
+      // ve lai the "Hoc tiep" theo tai khoan vua vao
+      try { renderTaskCard(); } catch (e) { /* bo qua */ }
     }
 
     function setFormError(form, message) {
@@ -14894,6 +14894,9 @@
       }).then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
         .then(function (res) {
           if (!res.ok) { setFormError(form, res.data.error || 'Đăng ký thất bại.'); return; }
+          // Tai khoan moi: xoa "bai dang hoc do" con sot tren may de trang chu hien
+          // "Bat dau hoc" cho em tu chon cap do, khong tu nhay vao bai cua nguoi khac
+          try { localStorage.removeItem(LAST_LESSON_KEY); localStorage.removeItem(RESUME_KEY); } catch (e2) { /* bo qua */ }
           setSession(res.data.token, res.data.user, res.data.progress);
           closeModal();
           showToast('Tạo tài khoản thành công! Chào mừng ' + res.data.user.name + '.');
@@ -15005,7 +15008,7 @@
       pathState = null;
       currentHubLevelId = info.levelId;
       currentHubLesson = info.lesson;
-      writeJSON(LAST_LESSON_KEY, { levelId: info.levelId, url: info.lesson.fullPageUrl });
+      writeJSON(LAST_LESSON_KEY, { levelId: info.levelId, url: info.lesson.fullPageUrl, uid: currentUserId() });
       ASSIGN_PART_OPEN[next](info.levelId, info.lesson);
       return;
     }
@@ -15288,7 +15291,7 @@
         pathState = null;
         currentHubLevelId = info.levelId;
         currentHubLesson = info.lesson;
-        writeJSON(LAST_LESSON_KEY, { levelId: info.levelId, url: info.lesson.fullPageUrl });
+        writeJSON(LAST_LESSON_KEY, { levelId: info.levelId, url: info.lesson.fullPageUrl, uid: currentUserId() });
         ASSIGN_PART_OPEN[part](info.levelId, info.lesson);
       });
     });

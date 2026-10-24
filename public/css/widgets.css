@@ -802,3 +802,18 @@ body:has(#ghPlay:not([hidden])) .hw-fab-stack { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .hw-help-menu, .hw-help-fab { animation: none; transition: none; }
 }
+
+/* ---------- Nut len dau trang (tren nut den long) ---------- */
+.hw-top-fab {
+  display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border-radius: 50%; cursor: pointer;
+  border: 2px solid var(--color-gray-200, #eadfcf); background: var(--color-surface, #fffdf8); color: var(--fg-red-600, #c2412d);
+  box-shadow: 0 4px 0 var(--color-gray-200, #eadfcf), 0 8px 18px rgba(90, 60, 30, .14);
+  animation: hwPop .18s cubic-bezier(.2, .8, .2, 1);
+}
+.hw-top-fab[hidden] { display: none; }
+.hw-top-fab svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.hw-top-fab:hover { color: #fff; background: var(--color-red-600, #c2412d); border-color: var(--color-red-600, #c2412d); }
+.hw-top-fab:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--color-gray-200, #eadfcf); }
+.hw-top-fab:focus-visible { outline: 3px solid var(--color-gold-500, #e9a23b); outline-offset: 2px; }
+.hw-help-menu:not([hidden]) ~ .hw-top-fab { display: none; }
+@media (prefers-reduced-motion: reduce) { .hw-top-fab { animation: none; } }

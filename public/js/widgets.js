@@ -148,6 +148,9 @@
           '<span class="hw-menu-text"><b>Tin nhắn</b><small>Nhắn thầy cô và bạn học</small></span>' +
           '<span class="hw-badge hw-badge-inline" id="hwChatBadge" hidden>0</span></button>' +
       '</div>' +
+      // Nut len dau trang: chi hien khi da cuon xuong, khoi phai keo nguoc len
+      '<button type="button" class="hw-top-fab" id="hwTopFab" aria-label="Lên đầu trang" title="Lên đầu trang" hidden>' +
+        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>' +
       '<button type="button" class="hw-help-fab" id="hwHelpFab" aria-label="Trợ giúp" aria-expanded="false" aria-controls="hwHelpMenu">' +
         I.lantern() + '<span class="hw-badge" id="hwHelpBadge" hidden>0</span></button>' +
     '</div>' +
@@ -319,6 +322,27 @@
 
   // ---- Nut "Tro giup" mo / dong menu ----
   var helpFab = $('#hwHelpFab', root), helpMenu = $('#hwHelpMenu', root);
+
+  // ---- Nut len dau trang ----
+  (function () {
+    var nut = $('#hwTopFab', root);
+    if (!nut) return;
+    var cho = false;
+    function capNhat() {
+      cho = false;
+      nut.hidden = (window.scrollY || document.documentElement.scrollTop) < 500;
+    }
+    window.addEventListener('scroll', function () {
+      if (cho) return;
+      cho = true;
+      setTimeout(capNhat, 120);
+    }, { passive: true });
+    nut.addEventListener('click', function () {
+      var em = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      try { window.scrollTo({ top: 0, behavior: em ? 'auto' : 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
+    });
+    capNhat();
+  })();
   function dongMenu() { helpMenu.hidden = true; helpFab.setAttribute('aria-expanded', 'false'); }
   helpFab.addEventListener('click', function () {
     var mo = helpMenu.hidden;

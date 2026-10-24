@@ -561,6 +561,27 @@
   /* ---------------- tro: gio the A/B/C ---------------- */
   var ABC = ['A', 'B', 'C', 'D'];
 
+  // Goi y cua cau (vd "có" cho 有, "đừng" cho 别) thuong chinh la nghia cua dap an
+  // -> an mac dinh, thay/co bam "💡 Gợi ý" (hoac phim G) moi hien len bang.
+  function hintHtml(q) {
+    if (!q || !q.hint) return '';
+    return '<div class="lop-hint"><button type="button" class="lop-hint-btn" aria-expanded="false">💡 Gợi ý</button>' +
+      '<span class="lop-hint-text" hidden>' + esc(q.hint) + '</span></div>';
+  }
+  function toggleHint(btn) {
+    var b = btn || $('#lopStage .lop-hint-btn');
+    var t = b && b.nextElementSibling;
+    if (!t) return;
+    var show = t.hidden;
+    t.hidden = !show;
+    b.setAttribute('aria-expanded', show ? 'true' : 'false');
+    b.classList.toggle('open', show);
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target && e.target.closest ? e.target.closest('.lop-hint-btn') : null;
+    if (b) toggleHint(b);
+  });
+
   function dealAbc() {
     state.deck = shuffle(pickedMcs());
     state.pos = 0;
@@ -588,6 +609,7 @@
       '</div>' +
       (q.context ? '<div class="lop-abc-context">🗣️ ' + esc(q.context) + '</div>' : '') +
       '<div class="lop-abc-sentence' + (q.noBlank ? ' is-q' : '') + '">' + esc(q.pre) + (q.noBlank ? '' : '<span class="lop-blank">＿＿</span>') + esc(q.post) + '</div>' +
+      hintHtml(q) +
       '<div class="lop-abc-opts">' + q._order.map(function (oi, i) {
         return '<div class="lop-abc-opt" data-i="' + i + '">' +
           '<span class="lop-abc-key" data-k="' + ABC[i] + '">' + ABC[i] + '</span>' +
@@ -843,6 +865,7 @@
     return '<div class="lop-mc" id="lopMcBox">' +
       (q.context ? '<div class="lop-abc-context">🗣️ ' + esc(q.context) + '</div>' : '') +
       '<div class="lop-abc-sentence' + (q.noBlank ? ' is-q' : '') + '">' + esc(q.pre) + (q.noBlank ? '' : '<span class="lop-blank">＿＿</span>') + esc(q.post) + '</div>' +
+      hintHtml(q) +
       '<div class="lop-abc-opts">' + q._order.map(function (oi, i) {
         return '<div class="lop-abc-opt' + (lo ? (i === q._ans ? ' is-right' : ' is-dim') : '') + '">' +
           '<span class="lop-abc-key" data-k="' + ABC[i] + '">' + ABC[i] + '</span>' +
@@ -2704,6 +2727,7 @@
       '</div>' +
       (q.context ? '<div class="lop-abc-context">🗣️ ' + esc(q.context) + '</div>' : '') +
       '<div class="lop-abc-sentence' + (q.noBlank ? ' is-q' : '') + '">' + esc(q.pre) + (q.noBlank ? '' : '<span class="lop-blank">＿＿</span>') + esc(q.post) + '</div>' +
+      hintHtml(q) +
       '<div class="lop-abc-opts">' + it.order.map(function (oi, i) {
         return '<div class="lop-abc-opt">' +
           '<span class="lop-abc-key" data-k="' + ABC[i] + '">' + ABC[i] + '</span>' +
@@ -2805,7 +2829,10 @@
   // goi y co chu Han ma chu do lai nam trong chinh cac phuong an tra loi.
   function paperCtx(it) {
     var c = it.q.context || '';
-    if (!c || !$('#lopPaperHard') || !$('#lopPaperHard').checked) return c;
+    var kho = $('#lopPaperHard') && $('#lopPaperHard').checked;
+    // De giay: goi y (truong hint) in kem o che do thuong, bo han o che do kho
+    if (it.q.hint && !kho) c = (c ? c + ' — ' : '') + 'Gợi ý: ' + it.q.hint;
+    if (!c || !kho) return c;
     if (it.t !== 'mc') return c;
     var han = c.match(/[一-鿿]/g) || [];
     var opts = it.q.options.join('');
@@ -3487,6 +3514,7 @@
         else { dealRows(); renderErrfix(); }
         resetTimer(); return;
       }
+      if (e.key === 'g' || e.key === 'G') { toggleHint(); return; }
       if (e.key === 't' || e.key === 'T') { toggleTimer(); return; }
       if (e.key === 'r' || e.key === 'R') { openBuild(); return; }
       if (/^[1-6]$/.test(e.key)) { addScore(parseInt(e.key, 10) - 1, 1); }

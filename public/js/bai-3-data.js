@@ -1645,7 +1645,7 @@ var listenData = {
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ở cửa hàng mua đồng hồ, hỏi màu
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你好，这块手表',blank:'多',post:'少钱？',hint:'(bao nhiêu — trong "多少")',ans:'多'},
+  {pre:'你好，这块手表',blank:'多',post:'少钱？',hint:'(hỏi giá: bao nhiêu tiền?)',ans:'多'},
   {pre:'3000',blank:'多',post:'块，不贵。',hint:'(hơn — ôn Bài 1)',ans:'多'},
   {pre:'这块手表真',blank:'漂亮',post:'！',hint:'(đẹp)',ans:'漂亮'},
   {pre:'是啊，这是我',blank:'昨天',post:'买的。',hint:'(hôm qua)',ans:'昨天',exp:'的 sau động từ để danh hoá cả cụm "hành động + thời gian".'},

@@ -213,6 +213,7 @@
     layThanh: layThanh,
     datThanh: datThanh,
     tach: tach,
+    laAmTiet: laAmTiet,
     raDe: raDe
   };
 })();

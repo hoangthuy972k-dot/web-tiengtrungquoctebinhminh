@@ -324,6 +324,33 @@
     return Array.prototype.slice.call((scope || document).querySelectorAll(selector));
   }
 
+  // Goi y an mac dinh: nhieu goi y tieng Viet chinh la nghia cua tu can dien
+  // ("(có)", "(đừng)") hoac goi ten chuc nang ngu phap -> hien san thi lo dap an.
+  // An sau nut "💡 Gợi ý", hoc sinh bam moi hien (bat su kien o muc document).
+  function hintBtnHtml(hint) {
+    if (!hint) return '';
+    return '<span class="hint-wrap"><button type="button" class="hint-btn" aria-expanded="false">💡 Gợi ý</button>' +
+      '<span class="hint-text" hidden>' + hint + '</span></span>';
+  }
+  // Cau trac nghiem dang "你家＿＿几口人？(có)": tach goi y trong ngoac o cuoi cau
+  function tachGoiY(text) {
+    var s = String(text || '');
+    var m = s.match(/\s*[（(]([^（）()]*[A-Za-zÀ-ỹ][^（）()]*)[）)]\s*$/);
+    if (!m || !/＿|_{2,}/.test(s.slice(0, m.index))) return { q: s, hint: '' };
+    return { q: s.slice(0, m.index), hint: '(' + m[1] + ')' };
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target && e.target.closest ? e.target.closest('.hint-btn') : null;
+    if (!b) return;
+    e.stopPropagation();
+    var t = b.nextElementSibling;
+    if (!t) return;
+    var show = t.hidden;
+    t.hidden = !show;
+    b.setAttribute('aria-expanded', show ? 'true' : 'false');
+    b.classList.toggle('open', show);
+  });
+
   function readJSON(key, fallback) {
     try {
       var raw = localStorage.getItem(key);
@@ -2990,8 +3017,9 @@
     nhom.push(shuffle((gramItems || []).slice()).slice(0, 9));
     // Trac nghiem cua bai
     nhom.push(shuffle((data.mcData || []).slice()).slice(0, 5).map(function (q) {
-      return { kind: 'Trắc nghiệm', prompt: '<div class="fq-q hanzi">' + q.q + '</div>', opts: q.opts.slice(), ans: q.ans, zhOpts: true,
-        qText: q.q, exp: q.exp || '' };
+      var gy = tachGoiY(q.q);
+      return { kind: 'Trắc nghiệm', prompt: '<div class="fq-q hanzi">' + gy.q + '</div>' + (gy.hint ? '<div class="fq-py">' + hintBtnHtml(gy.hint) + '</div>' : ''), opts: q.opts.slice(), ans: q.ans, zhOpts: true,
+        qText: gy.q, exp: q.exp || '' };
     }));
     // Chon tu / sua loi sai
     var wordChoice = data.errorFixMode === 'wordchoice';
@@ -3013,7 +3041,7 @@
       dienDaDung.push(f);
       var opts = shuffle([f.ans].concat(shuffle(dsDien.filter(function (x) { return x !== f.ans; })).slice(0, 3)));
       return { kind: 'Điền từ', prompt: '<div class="fq-q hanzi">' + (f.pre || '') + '<span class="blank">___</span>' + (f.post || '') + '</div>' +
-        (f.hint ? '<div class="fq-py">' + f.hint + '</div>' : ''), opts: opts, ans: opts.indexOf(f.ans), zhOpts: true,
+        (f.hint ? '<div class="fq-py">' + hintBtnHtml(f.hint) + '</div>' : ''), opts: opts, ans: opts.indexOf(f.ans), zhOpts: true,
         qText: (f.pre || '') + '___' + (f.post || ''), exp: f.exp || '', vocab: tuTheoZh[f.ans] || null };
     }) : []);
     // Doc hieu bai khoa / hoi thoai
@@ -3427,6 +3455,7 @@
     $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#wpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+    kdpMo(lesson); // 1 phut phat am tu tu vung cua bai, truoc phan ghep tranh
 
     rsHideNotice('#wpContent');
     loadLessonWarmup(lesson).then(function (data) {
@@ -3558,6 +3587,358 @@
       optEl.classList.add('is-wrong');
       fb.innerHTML = '<span style="color:var(--color-red-600);">✗ Chưa đúng, thử lại!</span>';
       setTimeout(function () { optEl.classList.remove('is-wrong'); }, 600);
+    }
+  }
+
+  /* ---------------- Khoi dong phat am 1 phut (truoc phan ghep tranh) ----------------
+     Sinh ~5 cau tu chinh tu vung cua bai:
+       · nghe chon thanh dieu cua mot am tiet,
+       · phan biet cap am hoc sinh Viet hay nham (zh/z, ch/c, sh/s, r/l, an/ang,
+         en/eng, in/ing, ü/u): may doc tu THAT cua bai, hoc sinh chon pinyin dung
+         giua pinyin that va pinyin "gan giong" (dap an nhieu khong bao gio duoc doc),
+       · bien dieu (3+3, 不, 一) neu bai co tu kieu 你好 / 不是 / 一起.
+     Doc bang giong may (vpSpeak, giong phan tu vung). Khong luu gi len may chu —
+     chi nho tren trinh duyet la bai nay da luyen, lan sau thu gon lai cho nhanh. */
+  var KDP_KEY = 'hyv_kd_phatam';
+  var KDP_SO_CAU = 5;
+  var kdp = null; // { lesson, items, pos, ok, daTL }
+
+  var KDP_THANH = [
+    null,
+    { ky: 'ā', ta: 'cao và giữ đều, không lên không xuống (cao hơn thanh ngang tiếng Việt)' },
+    { ky: 'á', ta: 'đi lên từ giữa lên cao, gần dấu sắc' },
+    { ky: 'ǎ', ta: 'xuống thấp rồi mới lên, gần dấu hỏi (đứng trước thanh khác thì chỉ xuống thấp)' },
+    { ky: 'à', ta: 'rơi mạnh từ cao xuống thấp, dứt khoát — đừng kéo dài như dấu huyền' }
+  ];
+  // Cap am hoc sinh Viet hay nham: k = 'dau' (thanh mau) / 'cuoi' (van mau)
+  var KDP_CAP = [
+    { k: 'dau', x: 'zh', y: 'z', ten: 'zh hay z?', meo: '<b>zh</b>: cong đầu lưỡi lên chạm vòm miệng (gần “tr” tiếng Việt, không bật hơi). <b>z</b>: đầu lưỡi phẳng chạm sau răng cửa trên, đọc như “ts”.' },
+    { k: 'dau', x: 'ch', y: 'c', ten: 'ch hay c?', meo: '<b>ch</b>: cong lưỡi như zh nhưng bật hơi mạnh. <b>c</b>: lưỡi phẳng như z nhưng bật hơi mạnh (“ts” + luồng hơi) — đừng đọc thành “c/k” tiếng Việt.' },
+    { k: 'dau', x: 'sh', y: 's', ten: 'sh hay s?', meo: '<b>sh</b>: cong đầu lưỡi lên (như “s” uốn lưỡi). <b>s</b>: lưỡi phẳng, giống “x” tiếng Việt.' },
+    { k: 'dau', x: 'r', y: 'l', ten: 'r hay l?', meo: '<b>r</b>: cong lưỡi như sh nhưng dây thanh rung, đầu lưỡi không chạm vòm. <b>l</b>: đầu lưỡi chạm lợi trên, giống “l” tiếng Việt.' },
+    { k: 'cuoi', x: 'ang', y: 'an', ten: 'an hay ang?', meo: '<b>-an</b> kết thúc ở đầu lưỡi chạm lợi trên (như “an” tiếng Việt). <b>-ang</b> kết thúc ở cuống lưỡi, miệng vẫn mở (như “ang”).' },
+    { k: 'cuoi', x: 'eng', y: 'en', ten: 'en hay eng?', meo: '<b>en</b> gần “ân” tiếng Việt; <b>eng</b> gần “âng” — cuối âm nâng cuống lưỡi lên.' },
+    { k: 'cuoi', x: 'ing', y: 'in', ten: 'in hay ing?', meo: '<b>in</b> gần “in” tiếng Việt; <b>ing</b> gần “inh”.' },
+    { k: 'cuoi', x: 'ü', y: 'u', ten: 'ü hay u?', meo: '<b>ü</b>: để lưỡi như đọc “i” rồi tròn môi (gần “uy” đọc liền một hơi). <b>u</b>: như “u” tiếng Việt.' }
+  ];
+
+  function kdpCoTheDung() {
+    var P = window.PhatAmDe;
+    return !!(window.speechSynthesis && P && P.laAmTiet && P.layThanh && P.datThanh && P.tach && P.boThanh);
+  }
+
+  // Cat pinyin cua mot tu thanh dung n am tiet (n = so chu Han). Dau cach / dau ' / gach noi
+  // la ranh gioi bat buoc; am tiet bat dau bang a/o/e ma khong co dau ' thi khong cat
+  // (quy tac viet pinyin). Khong cat duoc (vd am nhi hoa 一点儿 yìdiǎnr) -> null, bo tu do.
+  function kdpTachAm(py, n) {
+    var P = window.PhatAmDe;
+    var raw = String(py || '').toLowerCase(), s = '', bien = {};
+    for (var i = 0; i < raw.length; i++) {
+      var c = raw.charAt(i);
+      if (/[a-züāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜ]/.test(c)) s += c;
+      else if (s.length) bien[s.length] = true;
+    }
+    var memo = {};
+    function cat(pos, con) {
+      if (pos === s.length) return con === 0 ? [] : null;
+      if (con === 0) return null;
+      var key = pos + '|' + con;
+      if (memo.hasOwnProperty(key)) return memo[key];
+      var kq = null;
+      for (var len = Math.min(6, s.length - pos); len >= 1 && !kq; len--) {
+        var end = pos + len, ok = true;
+        for (var k = pos + 1; k < end; k++) if (bien[k]) { ok = false; break; }
+        if (!ok) continue;
+        if (end < s.length && !bien[end] && /[aoe]/.test(P.boThanh(s.charAt(end)))) continue;
+        var am = s.slice(pos, end);
+        if (!P.laAmTiet(am)) continue;
+        var sau = cat(end, con - 1);
+        if (sau) kq = [am].concat(sau);
+      }
+      memo[key] = kq;
+      return kq;
+    }
+    return s ? cat(0, n) : null;
+  }
+
+  // Ghep lai pinyin ca tu (them dau ' truoc am tiet bat dau bang a/o/e)
+  function kdpGhep(am) {
+    var P = window.PhatAmDe;
+    return am.map(function (x, i) { return (i && /^[aoe]/.test(P.boThanh(x))) ? '\'' + x : x; }).join('');
+  }
+  function kdpToChu(w, i) {
+    return w.chu.map(function (c, k) { return k === i ? '<mark class="kdp-mark">' + c + '</mark>' : c; }).join('');
+  }
+  function kdpToAm(am, i) {
+    return am.map(function (x, k) { return k === i ? '<b>' + x + '</b>' : x; }).join(' ');
+  }
+
+  function kdpDoiAm(am) {
+    var P = window.PhatAmDe;
+    var t = P.layThanh(am), p = P.tach(am), ra = [];
+    function thu(g, cap) { if (P.laAmTiet(g)) ra.push({ moi: P.datThanh(g, t), cap: cap }); }
+    KDP_CAP.forEach(function (cap) {
+      if (cap.k === 'dau') {
+        if (p.dau === cap.x) thu(cap.y + p.cuoi, cap);
+        else if (p.dau === cap.y) thu(cap.x + p.cuoi, cap);
+      } else if (cap.x === 'ü') {
+        if (p.cuoi === 'ü') thu(p.dau + 'u', cap);
+        else if (p.cuoi === 'u' && (p.dau === 'n' || p.dau === 'l')) thu(p.dau + 'ü', cap);
+      } else {
+        var cx = p.cuoi.slice(-cap.x.length), cy = p.cuoi.slice(-cap.y.length);
+        if (cx === cap.x) thu(p.dau + p.cuoi.slice(0, -cap.x.length) + cap.y, cap);
+        else if (cy === cap.y) thu(p.dau + p.cuoi.slice(0, -cap.y.length) + cap.x, cap);
+      }
+    });
+    return ra;
+  }
+
+  // Chu da am: giong may doc mot chu dung rieng theo am mac dinh, co the khac am
+  // cua bai (长 zhǎng / cháng, 行 háng / xíng) -> bo cac tu MOT chu nay ra
+  var KDP_DA_AM = '了长行得地的着还都只重为乐觉教数差相种干空少中正朝调背处传当发假角降量难切曲省似应和要弹分称冲倒恶供横结卡落扇舍兴血载涨转作参系便几好看会';
+
+  function kdpTu(zh, py, vn) {
+    var P = window.PhatAmDe;
+    zh = String(zh || '').trim();
+    if (!/^[一-鿿]{1,4}$/.test(zh)) return null;
+    if (zh.length === 1 && KDP_DA_AM.indexOf(zh) >= 0) return null;
+    var chu = zh.split('');
+    var am = kdpTachAm(py, chu.length);
+    if (!am) return null;
+    return { zh: zh, chu: chu, am: am, thanh: am.map(function (x) { return P.layThanh(x); }), vn: String(vn || '') };
+  }
+
+  function kdpTaoCau(data) {
+    var P = window.PhatAmDe;
+    var tu = [], daCo = {};
+    ((data && data.vocabData) || []).forEach(function (v) {
+      var w = v && !daCo[v.zh] ? kdpTu(v.zh, v.py, v.vn) : null;
+      if (!w) return;
+      daCo[w.zh] = 1;
+      tu.push(w);
+    });
+    if (!tu.length) return [];
+
+    // Cum ngan 2-4 chu trong cau vi du / hoi thoai cua bai (你好！, 不客气) — chi dung
+    // cho cau bien dieu, vi 你好 thuong khong nam rieng trong bang tu moi
+    var cum = [];
+    function themCum(zh, py, vn) {
+      var z = String(zh || '').replace(/[，。！？、：；“”‘’"'（）()…—\s,.!?~～]/g, '');
+      if (daCo[z]) return;
+      var w = kdpTu(z, py, vn);
+      if (w && w.chu.length > 1) { daCo[z] = 1; cum.push(w); }
+    }
+    ((data && data.vocabData) || []).forEach(function (v) { if (v) themCum(v.ex_zh, v.ex_py, v.ex_vn); });
+    ((data && data.dialogData) || []).forEach(function (sc) {
+      if (!sc) return;
+      Object.keys(sc).forEach(function (k) {
+        if (Array.isArray(sc[k])) sc[k].forEach(function (l) { if (l && l.zh && l.py) themCum(l.zh, l.py, l.vn); });
+      });
+    });
+
+    // (c) Bien dieu — tin cach ghi cua giao trinh: 一 da ghi yí/yì la co bien dieu,
+    // con yī (一月, 第一, 统一) thi giu nguyen nen khong hoi.
+    var bd = [];
+    tu.concat(cum).forEach(function (w) {
+      w.thanh.forEach(function (t, i) {
+        var c = w.chu[i], sau = w.thanh[i + 1];
+        if (c === '不') {
+          if (t === 2 || (t === 4 && sau === 4)) bd.push({ w: w, i: i, loai: 'bu', goc: 'bù', doc: 'bú', opts: ['bù', 'bú'] });
+        } else if (c === '一') {
+          if (t === 2 || t === 4) bd.push({ w: w, i: i, loai: 'yi', goc: 'yī', doc: P.datThanh('yi', t), opts: ['yī', 'yí', 'yì'] });
+        } else if (t === 3 && sau === 3 && w.thanh[i + 2] !== 3 && w.thanh[i - 1] !== 3 &&
+                   w.chu[i + 1] !== '一' && w.chu[i + 1] !== '不') {
+          bd.push({ w: w, i: i, loai: '33', goc: w.am[i], doc: P.datThanh(w.am[i], 2), opts: shuffle([w.am[i], P.datThanh(w.am[i], 2)]) });
+        }
+      });
+    });
+
+    // (b) Phan biet am: moi cap am toi da 1 cau, moi tu toi da 1 cau
+    var capUng = [];
+    tu.forEach(function (w) {
+      w.am.forEach(function (x, i) {
+        kdpDoiAm(x).forEach(function (d) { capUng.push({ w: w, i: i, moi: d.moi, cap: d.cap }); });
+      });
+    });
+
+    // (a) Thanh dieu: bo am tiet thanh nhe, 一/不, va thanh 3 dung truoc thanh 3 (doc thanh thanh 2)
+    var thanhUng = [];
+    tu.forEach(function (w) {
+      w.thanh.forEach(function (t, i) {
+        if (!t || w.chu[i] === '一' || w.chu[i] === '不') return;
+        if (t === 3 && w.thanh[i + 1] === 3) return;
+        thanhUng.push({ w: w, i: i, t: t });
+      });
+    });
+
+    var dungTu = {}, cau = [], capDung = {};
+    var bdCau = null;
+    if (bd.length) {
+      var b = shuffle(bd)[0];
+      dungTu[b.w.zh] = 1;
+      bdCau = kdpCauBienDieu(b);
+    }
+    var capCau = [];
+    shuffle(capUng).forEach(function (x) {
+      if (capCau.length >= 2 || capDung[x.cap.ten] || dungTu[x.w.zh]) return;
+      var amMoi = x.w.am.slice(); amMoi[x.i] = x.moi;
+      var dung = kdpGhep(x.w.am), sai = kdpGhep(amMoi);
+      if (dung === sai) return;
+      capDung[x.cap.ten] = 1; dungTu[x.w.zh] = 1;
+      var opts = shuffle([dung, sai]);
+      capCau.push({
+        ten: 'Phân biệt âm · ' + x.cap.ten, noi: x.w.zh, zhHtml: x.w.zh, vn: x.w.vn,
+        hoi: 'Em nghe thấy pinyin nào?', opts: opts, dung: opts.indexOf(dung), pyOpts: true,
+        giai: 'Từ này đọc là <b>' + dung + '</b>. ' + x.cap.meo
+      });
+    });
+    var conLai = KDP_SO_CAU - capCau.length - (bdCau ? 1 : 0);
+    var thanhCau = [], thanhDung = {};
+    // uu tien cac thanh khac nhau de du ca 4 thanh
+    var tron = shuffle(thanhUng);
+    [true, false].forEach(function (khacThanh) {
+      tron.forEach(function (x) {
+        if (thanhCau.length >= conLai || dungTu[x.w.zh] || (khacThanh && thanhDung[x.t])) return;
+        dungTu[x.w.zh] = 1; thanhDung[x.t] = 1;
+        var c = x.w.chu[x.i];
+        thanhCau.push({
+          ten: 'Nghe chọn thanh điệu', noi: x.w.zh, zhHtml: kdpToChu(x.w, x.i), vn: x.w.vn,
+          hoi: x.w.chu.length > 1 ? 'Chữ <b class="hanzi">' + c + '</b> trong từ này mang thanh mấy?' : 'Chữ này mang thanh mấy?',
+          opts: [1, 2, 3, 4].map(function (k) { return '<span class="kdp-ky">' + KDP_THANH[k].ky + '</span> Thanh ' + k; }),
+          dung: x.t - 1,
+          giai: '<b class="hanzi">' + c + '</b> đọc <b>' + x.w.am[x.i] + '</b> — thanh ' + x.t + ': ' + KDP_THANH[x.t].ta + '.' +
+            (x.w.chu.length > 1 ? ' Cả từ: ' + kdpToAm(x.w.am, x.i) + '.' : '')
+        });
+      });
+    });
+    cau = thanhCau.concat(capCau);
+    if (bdCau) cau.push(bdCau);
+    return cau.length >= 3 ? cau : [];
+  }
+
+  function kdpCauBienDieu(b) {
+    var w = b.w, c = w.chu[b.i];
+    var amThat = w.am.slice(); amThat[b.i] = b.doc;
+    var giai;
+    if (b.loai === 'bu') {
+      giai = '不 đứng trước một âm tiết thanh 4 thì đọc thành <b>bú</b> (thanh 2): 不是 bú shì, 不去 bú qù. Trước thanh 1, 2, 3 vẫn đọc bù.';
+    } else if (b.loai === 'yi') {
+      giai = b.doc === 'yí'
+        ? '一 đứng trước thanh 4 (kể cả 个 gè) đọc thành <b>yí</b>: 一个 yí ge, 一下 yíxià.'
+        : '一 đứng trước thanh 1, 2, 3 đọc thành <b>yì</b>: 一起 yìqǐ, 一天 yì tiān.';
+      giai += ' Khi đếm số, số thứ tự (第一) hoặc đứng cuối từ thì giữ yī.';
+    } else {
+      giai = 'Hai thanh 3 đi liền nhau: thanh 3 đứng trước đọc thành thanh 2 → <b>' + amThat.join(' ') + '</b>. Khi viết pinyin vẫn giữ <b>' + w.am.join(' ') + '</b>.';
+    }
+    var opts = b.opts;
+    return {
+      ten: 'Biến điệu', noi: w.zh, zhHtml: kdpToChu(w, b.i), vn: w.vn,
+      hoi: 'Khi đọc liền cả cụm, chữ <b class="hanzi">' + c + '</b> thực tế phát âm thành?', opts: opts, dung: opts.indexOf(b.doc), pyOpts: true,
+      giai: giai
+    };
+  }
+
+  function kdpDaLam(url) { var m = readJSON(KDP_KEY, {}); return !!(m && m[url]); }
+  function kdpGhiDaLam(url) {
+    var m = readJSON(KDP_KEY, {}) || {};
+    m[url] = 1;
+    writeJSON(KDP_KEY, m);
+  }
+
+  // Goi tu showWarmupPractice: nap tu vung, tao cau; bai/thiet bi khong dung duoc thi an han
+  function kdpMo(lesson) {
+    var box = $('#wpPron'), sec = $('#warmupPractice');
+    if (!box) return;
+    box.innerHTML = '';
+    sec.classList.remove('kdp-dang-lam');
+    kdp = null;
+    if (!kdpCoTheDung()) return;
+    loadLessonRawData(lesson).then(function (data) {
+      if (currentHubLesson !== lesson || $('#warmupPractice').hidden) return;
+      var items = kdpTaoCau(data);
+      if (!items.length) return;
+      kdp = { lesson: lesson, items: items, pos: 0, ok: 0, daTL: false };
+      if (kdpDaLam(lesson.fullPageUrl)) kdpThuGon(null);
+      else { sec.classList.add('kdp-dang-lam'); kdpRender(); }
+    }).catch(function () { /* khong co tu vung -> chi con phan ghep tranh */ });
+  }
+
+  function kdpRender() {
+    var st = kdp, box = $('#wpPron');
+    if (!st || !box) return;
+    if (st.pos >= st.items.length) { kdpThuGon(st.ok); return; }
+    var q = st.items[st.pos], last = st.pos === st.items.length - 1;
+    st.daTL = false;
+    box.innerHTML =
+      '<div class="kdp-card">' +
+        '<div class="kdp-head">' +
+          '<span class="kdp-title">' + uiIcon('loa') + 'Khởi động phát âm · 1 phút</span>' +
+          '<button type="button" class="kdp-skip" id="kdpSkip">Bỏ qua →</button>' +
+        '</div>' +
+        '<div class="kdp-dots" aria-label="Câu ' + (st.pos + 1) + '/' + st.items.length + '">' + st.items.map(function (_, i) {
+          return '<i class="' + (i < st.pos ? 'is-done' : i === st.pos ? 'is-here' : '') + '"></i>';
+        }).join('') + '</div>' +
+        '<div class="kdp-kind">' + q.ten + '</div>' +
+        '<div class="kdp-word">' +
+          '<button type="button" class="kdp-play" id="kdpPlay" aria-label="Nghe lại">' + uiIcon('loa') + '</button>' +
+          '<span class="kdp-zh hanzi">' + q.zhHtml + '</span>' +
+        '</div>' +
+        (q.vn ? '<div class="kdp-vn">' + q.vn + '</div>' : '') +
+        '<p class="kdp-q">' + q.hoi + '</p>' +
+        '<div class="kdp-opts' + (q.opts.length === 4 ? ' is-4' : '') + '">' + q.opts.map(function (o, i) {
+          return '<button type="button" class="kdp-opt' + (q.pyOpts ? ' is-py' : '') + '" data-i="' + i + '">' + o + '</button>';
+        }).join('') + '</div>' +
+        '<div class="kdp-fb" id="kdpFb" aria-live="polite"></div>' +
+        '<div class="kdp-actions"><button type="button" class="btn btn-primary" id="kdpNext" hidden>' +
+          (last ? 'Xong — sang ghép tranh →' : 'Câu tiếp →') + '</button></div>' +
+      '</div>';
+    $('#kdpPlay').addEventListener('click', function () { vpSpeak(q.noi); });
+    $('#kdpSkip').addEventListener('click', function () { kdpThuGon(null); });
+    $('#kdpNext').addEventListener('click', function () { st.pos++; kdpRender(); });
+    $all('.kdp-opt', box).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (st.daTL) return;
+        st.daTL = true;
+        var i = parseInt(btn.getAttribute('data-i'), 10), dung = i === q.dung;
+        if (dung) st.ok++;
+        $all('.kdp-opt', box).forEach(function (b, k) {
+          b.disabled = true;
+          if (k === q.dung) b.classList.add('is-right');
+          else if (k === i) b.classList.add('is-wrong');
+        });
+        $('#kdpFb').innerHTML = '<span class="kdp-fb-tag ' + (dung ? 'is-ok' : 'is-no') + '">' + (dung ? '✓ Đúng rồi!' : '✗ Chưa đúng') + '</span> ' + q.giai;
+        $('#kdpNext').hidden = false;
+        $('#kdpNext').focus();
+        vpSpeak(q.noi);
+      });
+    });
+    setTimeout(function () { if (kdp === st && st.items[st.pos] === q && !$('#warmupPractice').hidden) vpSpeak(q.noi); }, 250);
+  }
+
+  // Xong / bo qua: thu gon thanh mot dong, hien phan ghep tranh ben duoi
+  function kdpThuGon(diem) {
+    var st = kdp, box = $('#wpPron');
+    if (!st || !box) return;
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    kdpGhiDaLam(st.lesson.fullPageUrl); // lam xong hay bo qua deu thu gon o lan sau
+    $('#warmupPractice').classList.remove('kdp-dang-lam');
+    box.innerHTML =
+      '<div class="kdp-bar">' +
+        '<span>' + uiIcon('loa') + (diem === null
+          ? 'Khởi động phát âm 1 phút: ' + st.items.length + ' câu nghe thanh điệu, phân biệt âm'
+          : 'Khởi động phát âm: đúng <b>' + diem + '/' + st.items.length + '</b>' + (diem === st.items.length ? ' 🎉' : '')) + '</span>' +
+        '<button type="button" class="kdp-redo" id="kdpRedo">' + (diem === null ? 'Luyện ngay' : 'Luyện lại') + '</button>' +
+      '</div>';
+    $('#kdpRedo').addEventListener('click', function () {
+      var moi = kdpTaoCau(lessonDataCache[st.lesson.fullPageUrl]);
+      if (moi.length) st.items = moi;
+      st.pos = 0; st.ok = 0;
+      $('#warmupPractice').classList.add('kdp-dang-lam');
+      kdpRender();
+    });
+    if (diem !== null) {
+      var c = $('#wpContent');
+      if (c && c.scrollIntoView) c.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -13833,7 +14214,7 @@
       data.map(function (q, i) {
       return '<div class="sp-card fg-card" id="fgCard' + i + '">' +
         '<div class="fg-text hanzi"><span class="fg-num">' + (i + 1) + '</span>' + q.pre + '<input type="text" class="fg-input" id="fgInput' + i + '" placeholder="___">' + q.post + '</div>' +
-        (q.hint ? '<div class="fg-hint">' + q.hint + '</div>' : '') +
+        (q.hint ? '<div class="fg-hint">' + hintBtnHtml(q.hint) + '</div>' : '') +
         '<div class="fg-fb" id="fgFb' + i + '"></div>' +
       '</div>';
     }).join('') +
@@ -14036,11 +14417,12 @@
     wrap.innerHTML =
       pgbHtml(pgbId, data.length) +
       data.map(function (q, i) {
+      var gy = tachGoiY(q.q);
       var promptHtml = opts.blankMode
         ? '📝 ' + q.wrong + '<div class="mc-sub">👆 Chọn từ phù hợp với nghĩa của câu để điền vào chỗ trống:</div>'
         : opts.wrongPrefix
         ? '❌ ' + q.wrong + '<div class="mc-sub">👆 Câu này sai — chọn câu SỬA ĐÚNG bên dưới:</div>'
-        : q.q;
+        : gy.q + (gy.hint ? '<div class="mc-sub">' + hintBtnHtml(gy.hint) + '</div>' : '');
       var optsHtml = q.opts.map(function (o, j) {
         return '<button type="button" class="vp-option-btn" data-qi="' + i + '" data-oi="' + j + '">' + o + '</button>';
       }).join('');
@@ -15402,7 +15784,7 @@
     var fillPool = (data.fillData || []).map(function (f) { return f.ans; }).concat(vocabZh);
     fills.slice(0, 2).forEach(function (f) {
       var o = qrOptions(f.ans, fillPool, rnd);
-      zones[1].push({ type: 'mc', kind: 'Điền từ', prompt: 'Chọn từ điền vào chỗ trống' + (f.hint ? ' <span class="qr-hint">' + qrEsc(f.hint) + '</span>' : '') + ':', sentence: { pre: f.pre, post: f.post }, opts: o.opts, ans: o.ans, optZh: true, explain: f.exp || '' });
+      zones[1].push({ type: 'mc', kind: 'Điền từ', prompt: 'Chọn từ điền vào chỗ trống:', hint: f.hint || '', sentence: { pre: f.pre, post: f.post }, opts: o.opts, ans: o.ans, optZh: true, explain: f.exp || '' });
     });
     qrShuffle(data.errorFixData || [], rnd).slice(0, 2).forEach(function (e) {
       var correctText = e.opts[e.ans];
@@ -15415,7 +15797,8 @@
     }), rnd);
     function qrMcQuestion(m) {
       var o = qrOptions(m.opts[m.ans], m.opts, rnd);
-      return { type: 'mc', kind: 'Trắc nghiệm', prompt: qrEsc(m.q), opts: o.opts, ans: o.ans, optZh: /[一-鿿]/.test(m.opts.join('')), explain: m.exp || '' };
+      var gy = tachGoiY(m.q);
+      return { type: 'mc', kind: 'Trắc nghiệm', prompt: qrEsc(gy.q), hint: gy.hint, opts: o.opts, ans: o.ans, optZh: /[一-鿿]/.test(m.opts.join('')), explain: m.exp || '' };
     }
     while (zones[1].length < 4 && mcs.length) zones[1].push(qrMcQuestion(mcs.shift()));
     var sorts = qrShuffle(data.sortData || [], rnd);
@@ -15759,6 +16142,7 @@
     if (q.bigVn) body += '<div class="qr-big-vn">' + qrEsc(q.bigVn) + '</div>';
     if (q.sentence) body += '<div class="qr-sentence hanzi">' + qrEsc(q.sentence.pre) + '<span class="qr-blank">___</span>' + qrEsc(q.sentence.post) + '</div>';
     if (q.wrong) body += '<div class="qr-wrong-sentence hanzi">' + qrEsc(q.wrong) + '</div>';
+    if (q.hint) body += '<div class="qr-hint">' + hintBtnHtml(qrEsc(q.hint)) + '</div>';
     if (q.quote) body += '<div class="qr-quote hanzi">“' + qrEsc(q.quote.zh) + '”' + (q.quote.py ? '<span class="py-inline">' + qrEsc(q.quote.py) + '</span>' : '') + '</div>' + (q.promptAfter ? '<p class="qr-prompt">' + qrEsc(q.promptAfter) + '</p>' : '');
     if (q.transcript) {
       body += '<div class="qr-transcript">' + q.transcript.map(function (l) {

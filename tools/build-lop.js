@@ -96,6 +96,11 @@ function tachDan(pre, post, ctx) {
   return { pre, post, ctx };
 }
 
+// Goi y cua bai tap ("(có)", "(đừng)") -> bo ngoac ngoai; rong thi tra ''
+function goiY(h) {
+  return String(h || '').trim().replace(/^[（(]\s*|\s*[）)]$/g, '').trim();
+}
+
 // 3 phuong an, dap an luon nam trong do. Chon nhieu nhieu khac dap an, uu tien cung do dai.
 function baPhuongAn(dung, nhieu) {
   const ds = [];
@@ -130,9 +135,11 @@ function dungCap(level) {
     const seenJ = {}, seenM = {}, seenS = {};
     const themJ = (j) => { if (seenJ[j.sentence]) return; seenJ[j.sentence] = 1; judges.push(j); };
     const themM = (m) => {
-      // Goi y nghia trong ngoac o cuoi cau ("…门开着呢。（bên phải）") -> dua len dong goi y
+      // Goi y nghia trong ngoac o cuoi cau ("…门开着呢。（bên phải）") -> tach ra truong hint rieng.
+      // Goi y hay chinh la nghia cua dap an -> lop.js an sau nut "Gợi ý", thay/co bam moi hien.
       const ng = String(m.post || '').match(/[（(]([^）)]*[A-Za-zÀ-ỹ][^）)]*)[）)]\s*$/);
-      if (ng) { m.post = m.post.slice(0, ng.index).trimEnd(); m.context = (m.context ? m.context + ' — ' : '') + 'Gợi ý: ' + ng[1]; }
+      if (ng) { m.post = m.post.slice(0, ng.index).trimEnd(); m.hint = (m.hint ? m.hint + ' — ' : '') + ng[1].trim(); }
+      if (!m.hint) delete m.hint;
       const k = m.pre + '|' + m.options[m.answer] + '|' + m.post; if (seenM[k]) return; seenM[k] = 1; mcs.push(m); };
     const themS = (s) => { if (seenS[s.answer] || !xepDuoc(s.words, s.answer)) return; seenS[s.answer] = 1; sorts.push(s); };
 
@@ -143,8 +150,8 @@ function dungCap(level) {
       const nhieu = fills.map((x) => x.ans).concat(tuBai);
       const opts = baPhuongAn(q.ans, nhieu);
       if (opts.length < 3) return;
-      const t = tachDan(q.pre, q.post, q.hint ? 'Gợi ý: ' + String(q.hint).replace(/^\(|\)$/g, '') : '');
-      themM({ pre: t.pre, post: t.post, options: opts, answer: 0, context: t.ctx, why: q.exp || '', point: '', src: 'bai' });
+      const t = tachDan(q.pre, q.post, '');
+      themM({ pre: t.pre, post: t.post, options: opts, answer: 0, context: t.ctx, hint: goiY(q.hint), why: q.exp || '', point: '', src: 'bai' });
       thongKe.rieng++;
     });
     (D.mc || []).forEach((q) => {
@@ -153,8 +160,8 @@ function dungCap(level) {
       const t = String(q.q || '');
       const cat = t.split(/＿+|_{2,}|（\s*）/);
       if (cat.length === 2) {
-        const t = tachDan(cat[0], cat[1].replace(/[（(][^）)]*[）)]\s*$/, ''), (cat[1].match(/[（(]([^）)]*)[）)]\s*$/) || [])[1] || '');
-        themM({ pre: t.pre, post: t.post, options: opts, answer: 0, context: t.ctx, why: q.exp || '', point: '', src: 'bai' });
+        const t = tachDan(cat[0], cat[1].replace(/[（(][^）)]*[）)]\s*$/, ''), '');
+        themM({ pre: t.pre, post: t.post, options: opts, answer: 0, context: t.ctx, hint: goiY((cat[1].match(/[（(]([^）)]*)[）)]\s*$/) || [])[1]), why: q.exp || '', point: '', src: 'bai' });
       } else {
         themM({ pre: t, post: '', noBlank: true, options: opts, answer: 0, context: '', why: q.exp || '', point: '', src: 'bai' });
       }

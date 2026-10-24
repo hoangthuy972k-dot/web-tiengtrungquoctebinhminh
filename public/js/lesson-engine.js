@@ -713,6 +713,29 @@ function markDlgViewed(i){
 }
 
 // ══════════════════════════════════════════
+// GOI Y AN MAC DINH
+// Nhieu goi y tieng Viet chinh la nghia cua tu can dien ("(có)", "(đừng)") hoac
+// goi ten chuc nang ngu phap (的/地/得, 了/着/过) — hien san thi lo dap an.
+// -> an sau nut "💡 Gợi ý", hoc sinh bam moi hien.
+// ══════════════════════════════════════════
+function hintBtnHtml(hint){
+  if(!hint) return '';
+  return '<span class="hint-wrap"><button type="button" class="hint-btn" data-action="toggle-hint" aria-expanded="false">💡 Gợi ý</button>'+
+    '<span class="hint-text" hidden>'+hint+'</span></span>';
+}
+// Cau trac nghiem dang "你家＿＿几口人？(có)": tach goi y trong ngoac o cuoi cau
+function tachGoiY(text){
+  const s=String(text||'');
+  const m=s.match(/\s*[（(]([^（）()]*[A-Za-zÀ-ỹ][^（）()]*)[）)]\s*$/);
+  if(!m||!/＿|_{2,}/.test(s.slice(0,m.index))) return {q:s,hint:''};
+  return {q:s.slice(0,m.index),hint:'('+m[1]+')'};
+}
+function anGoiY(scope){
+  (scope||document).querySelectorAll('.hint-text').forEach(function(t){ t.hidden=true; });
+  (scope||document).querySelectorAll('.hint-btn').forEach(function(b){ b.setAttribute('aria-expanded','false'); b.classList.remove('open'); });
+}
+
+// ══════════════════════════════════════════
 // FILL BLANK
 // ══════════════════════════════════════════
 function buildFill(){
@@ -724,7 +747,7 @@ function buildFill(){
       '<span>'+q.pre+'</span>'+
       '<input class="q-inp" id="fi'+i+'" type="text" placeholder="___">'+
       '<span>'+q.post+'</span></div>'+
-      '<div class="q-hint">'+q.hint+'</div>'+
+      (q.hint?'<div class="q-hint">'+hintBtnHtml(q.hint)+'</div>':'')+
       '<div class="q-fb" id="ff'+i+'"></div></div>';
   });
 }
@@ -754,6 +777,7 @@ function resetFill(){
     document.getElementById('fq'+i).className='quiz-card';
     document.getElementById('ff'+i).className='q-fb';
   });
+  anGoiY(document.getElementById('fill-list'));
   document.getElementById('fill-score').style.display='none';
   document.getElementById('fill-prog').style.width='0%';
 }
@@ -894,8 +918,10 @@ function buildMC(){
   l.innerHTML='';
   mcData.forEach(function(q,i){
     const opts=q.opts.map(function(o,j){return '<button class="q-opt" id="mo'+i+'_'+j+'" data-action="check-mc" data-qi="'+i+'" data-ci="'+j+'">'+o+'</button>';}).join('');
+    const gy=tachGoiY(q.q);
     l.innerHTML+='<div class="quiz-card" id="mcq'+i+'">'+
-      '<div class="q-text"><span class="q-num">'+(i+1)+'</span>'+q.q+'</div>'+
+      '<div class="q-text"><span class="q-num">'+(i+1)+'</span>'+gy.q+'</div>'+
+      (gy.hint?'<div class="q-hint">'+hintBtnHtml(gy.hint)+'</div>':'')+
       '<div class="q-opts">'+opts+'</div>'+
       '<div class="q-fb" id="mf'+i+'"></div></div>';
   });
@@ -1403,6 +1429,14 @@ document.addEventListener('click', function(e){
   if(action==='place-word'){ placeW(parseInt(el.dataset.si,10), parseInt(el.dataset.wi,10), el.dataset.word); return; }
   if(action==='check-mc'){ checkMC(parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='toggle-show'){ document.getElementById(el.dataset.target).classList.toggle('show'); return; }
+  if(action==='toggle-hint'){
+    e.stopPropagation();
+    const t=el.nextElementSibling; if(!t) return;
+    const show=t.hidden; t.hidden=!show;
+    el.setAttribute('aria-expanded',show?'true':'false');
+    el.classList.toggle('open',show);
+    return;
+  }
   if(action==='toggle-ex-vn'){
     e.stopPropagation();
     const p=el.nextElementSibling; if(!p) return;

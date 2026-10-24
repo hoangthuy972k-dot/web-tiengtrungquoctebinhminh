@@ -557,3 +557,11 @@ body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
   .header-meta::-webkit-scrollbar{display:none;}
   .h-chip{white-space:nowrap;flex:none;}
 }
+
+/* ===== Goi y an mac dinh: nut "💡 Gợi ý" (dien tu / trac nghiem) ===== */
+:root{--hint-ink:var(--sky-d);--hint-bd:var(--sky);--hint-bg:var(--sky-l);--hint-text:var(--mid);}
+.hint-wrap{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.hint-btn{font:inherit;font-size:0.8rem;font-weight:600;line-height:1.2;padding:4px 12px;min-height:30px;border-radius:999px;cursor:pointer;border:1.5px dashed var(--hint-bd);background:transparent;color:var(--hint-ink);}
+.hint-btn:hover,.hint-btn.open{border-style:solid;background:var(--hint-bg);}
+.hint-btn:focus-visible{outline:2px solid var(--hint-ink);outline-offset:2px;}
+.hint-text{font-size:0.86rem;color:var(--hint-text);}

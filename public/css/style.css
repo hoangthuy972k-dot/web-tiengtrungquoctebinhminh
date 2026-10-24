@@ -8933,7 +8933,7 @@ html.ho-tro-toi[data-theme="dark"] .h4-peek { color: #5cc8bd; }
   --radius-xl: 22px;
   --shadow-sm: 0 1px 2px rgba(90, 60, 30, .06), 0 2px 6px rgba(90, 60, 30, .05);
   --shadow-md: 0 1px 2px rgba(90, 60, 30, .06), 0 8px 24px rgba(90, 60, 30, .09);
-  --am-may: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='140' viewBox='0 0 220 140'%3E%3Cg fill='none' stroke='%23c2412d' stroke-opacity='.07' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M20 90c0-14 12-24 26-22 4-12 22-16 31-6 10-8 27-2 27 12 12 0 18 14 8 22H28c-6 0-8-3-8-6z'/%3E%3Cpath d='M44 80c4-6 12-6 15 0M76 76c4-6 12-6 15 0'/%3E%3Cpath d='M140 40c0-9 8-15 17-14 3-8 14-10 20-4 7-5 17-1 17 8 8 0 11 9 5 14h-53c-4 0-6-2-6-4z'/%3E%3C/g%3E%3C/svg%3E");
+  --am-may: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='140' viewBox='0 0 220 140'%3E%3Cg fill='none' stroke='%23c2412d' stroke-opacity='.045' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M20 90c0-14 12-24 26-22 4-12 22-16 31-6 10-8 27-2 27 12 12 0 18 14 8 22H28c-6 0-8-3-8-6z'/%3E%3Cpath d='M44 80c4-6 12-6 15 0M76 76c4-6 12-6 15 0'/%3E%3Cpath d='M140 40c0-9 8-15 17-14 3-8 14-10 20-4 7-5 17-1 17 8 8 0 11 9 5 14h-53c-4 0-6-2-6-4z'/%3E%3C/g%3E%3C/svg%3E");
   --am-gold-btn: #ffd27a;
 }
 
@@ -9020,3 +9020,16 @@ html.ho-tro-toi .dash-cta-card .btn-white.btn-white {
 
 /* Cac the lon khac bo goc dong bo */
 .task-card, .welcome, .dash-streak-card, .stat-tile { border-radius: var(--radius-lg); }
+
+/* ===== De nhin (2026-10): nhan nho to len, o cap do du tuong phan cho chu trang ===== */
+.app-nav-label { font-size: .76rem; }
+.level-mark-top { font-size: .66rem; }
+.level-tag { font-size: .76rem; }
+.badge-hint { font-size: .76rem; }
+.dash-streak-day span:first-child { font-size: .76rem; }
+/* mau dam hon de chu trang tren o cap do / nhan dat chuan doc (>= 4.5) */
+.level-card.is-gold { --lv: #95590b; }
+.level-card.is-orange { --lv: #b4470b; }
+.level-card.is-teal { --lv: #0b746b; }
+.level-card.is-green { --lv: #23744f; }
+.bn-item { font-size: .76rem; }

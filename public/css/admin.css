@@ -370,3 +370,31 @@
 .tr-pw-form label { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; }
 .tr-pw-form input { padding: 8px 10px; border: 1px solid var(--color-gray-300, #ccc); border-radius: 8px; font: inherit; min-width: 220px; }
 .tr-pw-form .tr-hint { flex-basis: 100%; margin: 0; }
+
+/* Tab "Can nhac hoc": danh sach em lau chua hoc + tin nhan Zalo soan san */
+.nh-controls { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--space-3); }
+.nh-controls .tr-field { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--color-gray-600); }
+.nh-site input { min-width: 260px; }
+.nh-check { display: flex; align-items: center; gap: 6px; min-height: 42px; font-size: 0.9rem; cursor: pointer; }
+.nh-check input { width: 18px; height: 18px; }
+.nh-group-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
+.nh-group-head .admin-section-title { margin: 0; flex: 1; min-width: 200px; }
+.nh-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-3); }
+.nh-item { background: var(--color-white); border: 1px solid var(--color-gray-200, #e6e2da); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); display: flex; flex-direction: column; gap: 6px; }
+.nh-top { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+.nh-name { border: 0; background: none; padding: 0; font: inherit; font-weight: 700; font-size: 1rem; color: inherit; cursor: pointer; text-align: left; }
+.nh-name:hover { text-decoration: underline; }
+.nh-days { font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--color-gold-50, #fdf5e6); color: var(--color-gray-900); }
+.nh-days.is-long { background: var(--color-red-50, #fdecea); color: var(--color-red-600); }
+.nh-done { font-size: 0.78rem; color: var(--color-green-600, #1f7a3e); font-weight: 600; }
+.nh-ok-chip { font-size: 0.75rem; color: var(--color-green-600, #1f7a3e); font-weight: 700; }
+.nh-meta { font-size: 0.85rem; color: var(--color-gray-600); line-height: 1.5; }
+.nh-msg, .nh-all { width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid var(--color-gray-200, #e6e2da); border-radius: 8px; font: inherit; font-size: 0.88rem; line-height: 1.5; resize: vertical; background: var(--color-gray-50); color: inherit; }
+.nh-all { margin-bottom: var(--space-3); }
+.nh-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.nh-status { font-size: 0.82rem; color: var(--color-green-600, #1f7a3e); }
+@media (max-width: 640px) {
+  .nh-list { grid-template-columns: 1fr; }
+  .nh-site input { min-width: 0; width: 100%; }
+  .nh-site { flex-basis: 100%; }
+}

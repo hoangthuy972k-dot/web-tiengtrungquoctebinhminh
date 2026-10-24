@@ -437,3 +437,8 @@ body.gh-dang-lop .gh-san { background: #fff; }
 @media (prefers-reduced-motion: reduce) {
   .gh-game, .gh-game-hinh, .gh-game-emoji, .gh-bai-o, .gh-mode button { transition: none; }
 }
+
+/* Ky luc ca nhan tren the tro choi */
+.gh-game-kl { margin-top: 2px; font-size: 0.8rem; font-weight: 700; color: var(--color-text-muted); }
+.gh-game-kl.has-kl { color: var(--fg-gold-700, #8a5a0f); }
+.gh-game-kl b { font-variant-numeric: tabular-nums; }

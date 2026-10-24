@@ -113,6 +113,16 @@ function savePageScore(key,val){
     ls['page-'+key]=val;
     all[location.pathname]=ls;
     localStorage.setItem('hyv_lesson_scores',JSON.stringify(all));
+    // Cung quy tac ngay hoc voi trang chu: xong 1 bai tap tu 5 cau = 1 ngay hoc
+    if(val&&val.total>=5) markPageStudyDay();
+  }catch(e){/* localStorage unavailable */}
+}
+function markPageStudyDay(){
+  try{
+    var today=new Date();
+    var key=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+    var days=JSON.parse(localStorage.getItem('hyv_study_days')||'[]');
+    if(days.indexOf(key)===-1){days.push(key);localStorage.setItem('hyv_study_days',JSON.stringify(days));}
   }catch(e){/* localStorage unavailable */}
 }
 // +1 sao ngay khi tra loi dung 1 cau (widgets.js gui len may chu; moi cau chi
@@ -1457,8 +1467,10 @@ if(typeof listenData!=='undefined')buildListen();
 if(typeof errorFixData!=='undefined')buildErrorFix();
 
 // ══════════════════════════════════════════
-// GHI NHẬN TIẾN ĐỘ (cho thẻ thống kê + chuỗi ngày học ở trang chủ)
+// GHI NHẬN TIẾN ĐỘ (cho thẻ thống kê ở trang chủ)
 // ══════════════════════════════════════════
+// Chi mo trang KHONG con tinh la 1 ngay hoc — ngay hoc ghi o savePageScore
+// (xong 1 bai tap tu 5 cau), cung quy tac voi trang chu.
 (function recordHomepageProgress(){
   if(typeof vocabData==='undefined') return;
   try{
@@ -1467,11 +1479,6 @@ if(typeof errorFixData!=='undefined')buildErrorFix();
     var exampleCount=vocabData.reduce(function(sum,v){return sum+((v.exList&&v.exList.length)||(v.ex_zh?1:0));},0);
     visited[location.pathname]={vocab:vocabCount,examples:exampleCount};
     localStorage.setItem('hyv_visited_lessons',JSON.stringify(visited));
-
-    var today=new Date();
-    var key=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
-    var days=JSON.parse(localStorage.getItem('hyv_study_days')||'[]');
-    if(days.indexOf(key)===-1){days.push(key);localStorage.setItem('hyv_study_days',JSON.stringify(days));}
   }catch(e){/* localStorage unavailable - fail silently */}
 })();
 

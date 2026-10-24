@@ -183,6 +183,8 @@
       var hinh = g.anh
         ? '<span class="gh-game-hinh" style="background-image:url(\'' + g.anh + '\')"></span>'
         : '<span class="gh-game-emoji">' + g.emoji + '</span>';
+      // Ky luc ca nhan cua tro nay (tro-nha.js luu khi ket thuc van)
+      var kl = window.TroNha && window.TroNha.docKyLuc ? window.TroNha.docKyLuc(g.key) : 0;
       return '<button type="button" class="gh-game" data-game="' + g.key + '"' + (soBai ? '' : ' disabled') + '>' +
         '<span class="gh-game-tranh" style="--nen:' + (g.nen || '') + '">' +
           '<span class="gh-game-chu" aria-hidden="true">' + (g.chu || '') + '</span>' +
@@ -191,6 +193,7 @@
         '<span class="gh-game-duoi">' +
           '<span class="gh-game-ten">' + g.ten + '</span>' +
           '<span class="gh-game-mo">' + moTa + '</span>' +
+          '<span class="gh-game-kl' + (kl > 0 ? ' has-kl' : '') + '">' + (kl > 0 ? '🏆 Kỷ lục của em: <b>' + kl + '</b> điểm' : 'Chưa có kỷ lục — chơi thử nhé!') + '</span>' +
         '</span>' +
       '</button>';
     }).join('');
@@ -232,6 +235,7 @@
     $('#ghPlay').hidden = true;
     $('#ghSetup').hidden = false;
     document.body.classList.remove('gh-dang-lop');
+    veTro(); // ky luc vua lap hien ngay tren the tro choi
   }
 
   /* ---------------- khoi dong ---------------- */

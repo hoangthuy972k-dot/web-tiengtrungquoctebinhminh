@@ -26,17 +26,24 @@
   // Diem that theo tung phan cua tung bai hoc, ghi lai khi hoc sinh hoan thanh
   // 1 luot quiz/game — dung cho man hinh "Ket qua cuoi bai".
   function recordLessonScore(lesson, section, data) {
+    var xongTruoc = baiDaXong(lesson);
     var all = readJSON(STORAGE_KEYS.lessonScores, {});
     var ls = all[lesson.fullPageUrl] || {};
     ls[section] = data;
     all[lesson.fullPageUrl] = ls;
     writeJSON(STORAGE_KEYS.lessonScores, all);
     syncProgressToServer();
+    // Ngay hoc (QUY_TAC_NGAY_HOC): xong 1 buoc lo trinh, hoac 1 luot bai tap tu 5 cau
+    var laBuoc = pathEnabled(lesson) && pathStepsOf(lesson).some(function (s) { return s.key === section; });
+    if (data && (data.done || data.total >= 5 || (laBuoc && data.total > 0))) markStudyDay();
     taskMark('learn'); // xong 1 phan bai hoc = viec (2) cua nhiem vu hom nay
     updatePathBar();
+    if (!xongTruoc && baiDaXong(lesson)) chucMungXongBai(lesson);
+    henKiemHuyHieu();
   }
 
   function recordGameScore(lesson, subtype, correct, total) {
+    var xongTruoc = baiDaXong(lesson);
     var all = readJSON(STORAGE_KEYS.lessonScores, {});
     var ls = all[lesson.fullPageUrl] || {};
     var game = ls.game || {};
@@ -45,8 +52,12 @@
     all[lesson.fullPageUrl] = ls;
     writeJSON(STORAGE_KEYS.lessonScores, all);
     syncProgressToServer();
+    // Xong 1 tro luyen tap = xong buoc "Luyen tap" cua lo trinh -> tinh 1 ngay hoc
+    if (total > 0) markStudyDay();
     taskMark('learn');
     updatePathBar();
+    if (!xongTruoc && baiDaXong(lesson)) chucMungXongBai(lesson);
+    henKiemHuyHieu();
   }
 
   function getLessonScores(lesson) {
@@ -170,8 +181,12 @@
     rsMergeFromServer(progress.resumeState);
     srsMergeFromServer(progress.srs);
 
+    // Du lieu cu vua gop ve: huy hieu dat duoc tu lich su nay ghi lai im lang (khong chuc mung lai)
+    tienDoDaGop = true;
+    gieoHuyHieuLai = true;
     renderStreak();
     renderStatTiles();
+    renderLevelCards();
   }
 
   // Khi mo trang va da co phien dang nhap san (tu lan truoc), keo tien
@@ -183,6 +198,7 @@
     if (!auth || !auth.token) return;
     fetch('/api/auth/me', { headers: { 'Authorization': 'Bearer ' + auth.token } })
       .then(function (r) {
+        if (r.status !== 200) daCoTienDoMay();
         if (r.status === 401) {
           // Server khong con phien nay (da dang xuat o thiet bi khac, hoac
           // tai khoan bi xoa) — bao ro cho hoc sinh thay vi lang le dang xuat.
@@ -196,10 +212,22 @@
       })
       .then(function (data) {
         if (!data) return;
-        mergeProgressFromServer(data.progress);
+        if (data.progress) mergeProgressFromServer(data.progress);
+        else daCoTienDoMay();
         syncProgressToServer();
       })
-      .catch(function () {});
+      .catch(daCoTienDoMay);
+  }
+
+  // Tien do tren may nay da "chot" (da gop tu may chu, hoac khong lay duoc) — tu day moi
+  // ghi huy hieu moi dat va moi xet the "Chao mung quay lai" (tranh bao nham khi du lieu
+  // cua thiet bi khac chua ve toi).
+  var tienDoDaGop = !(readJSON(STORAGE_KEYS.auth, null) || {}).token;
+  var gieoHuyHieuLai = false;
+  function daCoTienDoMay() {
+    if (tienDoDaGop) return;
+    tienDoDaGop = true;
+    try { renderStreak(); renderBadges(); } catch (e) { /* bo qua */ }
   }
 
   /* ---------------- Analytics (luot truy cap + thoi gian hoc, gui ve server) ---------------- */
@@ -215,9 +243,17 @@
 
   // Cac khoa luu tien do RIENG cua nguoi dang hoc — xoa khi dang xuat
   var KHOA_TIEN_DO = ['hyv_visited_lessons', 'hyv_study_days', 'hyv_lesson_scores', 'hyv_review_wrong_words', 'hyv_srs',
-    'hyv_daily_tasks', 'hyv_day_sec', 'hyv_last_lesson', 'hyv_resume', 'hyv_quick_review', 'hyv_wb_answers', 'hyv_khoi_dong', 'hyv_level_pick'];
+    'hyv_daily_tasks', 'hyv_day_sec', 'hyv_last_lesson', 'hyv_resume', 'hyv_quick_review', 'hyv_wb_answers', 'hyv_khoi_dong', 'hyv_level_pick',
+    'hyv_badges', 'hyv_comeback'];
   function xoaTienDoTrenMay() {
     KHOA_TIEN_DO.forEach(function (k) { try { localStorage.removeItem(k); } catch (e) { /* bo qua */ } });
+    // Ky luc tung tro o San choi chu Han (/game): hyv_tn_kl_<tro>
+    try {
+      for (var i = localStorage.length - 1; i >= 0; i--) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf('hyv_tn_kl_') === 0) localStorage.removeItem(k);
+      }
+    } catch (e) { /* bo qua */ }
   }
 
   function currentUserId() {
@@ -465,8 +501,13 @@
     return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
   }
 
-  // Ghi nhan "hom nay co vao hoc" ngay khi hoc sinh tuong tac voi bat ky
-  // bai tap nao (khong can lam het ca bai) — dung cho "Chuoi ngay hoc".
+  // MOT quy tac "ngay hoc" cho ca trang (chuoi ngay hoc, so streak gui len may chu):
+  // xong 1 luot on tap (srsFinish, rvQuizStep), HOAC 1 buoc lo trinh bai (recordLessonScore
+  // / recordGameScore), HOAC lam tu 5 cau bai tap trong ngay (pgbRecord, tro choi /game,
+  // bai tap tren trang bai hoc day du). Mo trang, bam lung tung hay doc thanh ngu KHONG tinh.
+  var QUY_TAC_NGAY_HOC = 'Một ngày học được tính khi em xong 1 lượt ôn tập, 1 bước trong lộ trình bài học, hoặc làm từ 5 câu bài tập (kể cả trò chơi ở Sân chơi chữ Hán).';
+  var QUY_TAC_NGHI_PHEP = 'Ngày nghỉ phép: mỗi tuần (thứ Hai – Chủ nhật) em được nghỉ 1 ngày mà chuỗi vẫn giữ, nếu tuần đó hoặc tuần trước em học từ 5 ngày trở lên. Nghỉ 2 ngày liền thì chuỗi bắt đầu lại.';
+
   function markStudyDay() {
     var days = readJSON(STORAGE_KEYS.studyDays, []);
     var key = dateKey(new Date());
@@ -474,12 +515,18 @@
       days.push(key);
       writeJSON(STORAGE_KEYS.studyDays, days);
       syncProgressToServer();
+      henKiemHuyHieu();
     }
   }
 
-  var PRACTICE_SECTION_IDS = ['warmupPractice', 'workbookPractice', 'vocabPractice', 'flashcardPractice',
-    'grammarPractice', 'dialoguePractice', 'listenPractice', 'speakPractice', 'gamePractice', 'translatePractice',
-    'reviewPractice'];
+  // Dem cau tra loi trong ngay (moi bai tap dung pgbRecord): du 5 cau = 1 ngay hoc
+  var SO_CAU_NGAY_HOC = 5;
+  function demCauNgayHoc() {
+    var t = taskLog();
+    t.cau = (t.cau || 0) + 1;
+    writeJSON(TASK_KEY, t);
+    if (t.cau >= SO_CAU_NGAY_HOC) markStudyDay();
+  }
 
   /* ---------------- Sidebar nav ---------------- */
 
@@ -596,6 +643,9 @@
         : prog.done ? prog.done + '/' + prog.total + ' bài đã học'
         : prog.total + ' bài học';
       var mark = LEVEL_MARK[id] || [id.toUpperCase(), ''];
+      // "Gio em da co the: ..." theo bai xong gan nhat cua cap nay
+      var baiXong = isReady && prog.done ? baiXongGanNhat(id) : null;
+      var canDo = baiXong ? candoCua(baiXong, id) : '';
       var card = document.createElement('button');
       card.type = 'button';
       card.className = 'level-card is-' + (LEVEL_COLOR[id] || 'red') + (isReady ? '' : ' is-disabled');
@@ -610,7 +660,8 @@
         '<span class="level-card-body">' +
           '<span class="level-card-title">' + (LEVEL_CARD_NAME[id] || level.name) + '</span>' +
           '<span class="level-sub">' + sub + '</span>' +
-          (LEVEL_AUDIENCE[id] ? '<span class="level-who">' + LEVEL_AUDIENCE[id] + '</span>' : '') +
+          (canDo ? '<span class="level-cando" title="Sau Bài ' + baiXong.number + '">✅ Giờ em đã có thể: ' + rsEsc(canDo) + '.</span>'
+            : (LEVEL_AUDIENCE[id] ? '<span class="level-who">' + LEVEL_AUDIENCE[id] + '</span>' : '')) +
         '</span>' +
         (isReady ? '<span class="level-meter" aria-hidden="true"><span style="width:' + pct + '%"></span></span>' : '');
       card.addEventListener('click', function () {
@@ -824,8 +875,8 @@
 
   /* ---------------- Nhiem vu hom nay (the do tren trang chu) ----------------
      3 viec nho moi ngay: (1) on 10 tu cu, (2) hoc tiep phan dang do, (3) doc thanh
-     ngu hom nay. Xong ca 3: +10 sao (may chu, 1 lan/ngay) va giu chuoi ngay hoc.
-     Trang thai luu theo ngay trong localStorage (hyv_daily_tasks). */
+     ngu hom nay. Xong ca 3: +10 sao (may chu, 1 lan/ngay). Chuoi ngay hoc KHONG can
+     ca 3 viec — xem QUY_TAC_NGAY_HOC. Trang thai luu theo ngay (hyv_daily_tasks). */
 
   var TASK_KEY = 'hyv_daily_tasks';
   var lastStarDetail = null;
@@ -842,7 +893,6 @@
     if (t[key]) return;
     t[key] = true;
     writeJSON(TASK_KEY, t);
-    markStudyDay();
     if (t.review && t.learn && t.idiom && !t.rewarded) {
       t.rewarded = true;
       writeJSON(TASK_KEY, t);
@@ -1014,9 +1064,14 @@
     var reward = $('#taskReward');
     if (reward) {
       var auth = readJSON(STORAGE_KEYS.auth, null);
-      reward.innerHTML = doneCount === 3
-        ? (auth && auth.token ? 'Đã nhận <b>+10 sao</b> · chuỗi ngày học được giữ · Mai gặp lại nhé!' : 'Chuỗi ngày học được giữ · <b>Đăng nhập</b> để nhận +10 sao mỗi ngày')
-        : 'Làm xong cả 3 việc: <b>+10 sao</b> và giữ chuỗi ngày học';
+      // Sao thuong can ca 3 viec; chuoi ngay hoc chi can 1 viec hoc that (QUY_TAC_NGAY_HOC)
+      var hocHomNay = readJSON(STORAGE_KEYS.studyDays, []).indexOf(dateKey(new Date())) !== -1;
+      reward.innerHTML = (doneCount === 3
+        ? (auth && auth.token ? 'Đã nhận <b>+10 sao</b> · Mai gặp lại nhé!' : 'Xong cả 3 việc · <b>Đăng nhập</b> để nhận +10 sao mỗi ngày')
+        : 'Làm xong cả 3 việc: <b>+10 sao</b>') +
+        '<span class="task-streak-rule">' + (hocHomNay
+          ? '🔥 Hôm nay đã tính 1 ngày học — chuỗi được giữ.'
+          : '🔥 Giữ chuỗi chỉ cần 1 việc: xong 1 lượt ôn, 1 bước bài học hoặc làm từ 5 câu bài tập.') + '</span>';
     }
     renderTaskGoal();
     renderResumeCard();
@@ -1220,6 +1275,8 @@
 
   function srsFinish() {
     var st = srsState, wrap = $('#srsContent');
+    markStudyDay(); // xong 1 luot on tap = 1 ngay hoc
+    henKiemHuyHieu(); // co the vua du "Thuoc 50 tu"
     taskMark('review');
     var s = srsStats();
     var tomorrow = srsDayAfter(1), a = srsAll();
@@ -1590,10 +1647,13 @@
     ov.querySelector('.idiom-close').focus();
   }
 
-  // Huy hieu: tinh tu du lieu that cua hoc sinh; chua dat thi xam + ghi con thieu bao nhieu
+  // Huy hieu: tinh tu du lieu that cua hoc sinh; DA DAT thi giu mai (luu hyv_badges kem ngay dat),
+  // chuoi ngay hoc tinh theo KY LUC (chuoiDaiNhat) nen dut chuoi khong lam huy hieu xam lai.
+  var BADGE_KEY = 'hyv_badges';
   function computeBadges() {
     var stats = computeProgressStats();
     var srs = srsStats();
+    var best = chuoiDaiNhat(readJSON(STORAGE_KEYS.studyDays, []));
     var passed = 0, levelsDone = [];
     Object.keys(READY_LEVELS).forEach(function (id) {
       var st = levelFinalStatus(id);
@@ -1601,26 +1661,68 @@
       if (st.total && st.done >= st.total) levelsDone.push(PRACTICE_LEVEL_LABEL[id] || id);
     });
     var stars = stats.stars || 0;
-    function b(icon, name, have, need, unit) {
-      return { icon: icon, name: name, ok: have >= need, hint: have >= need ? 'Đã đạt' : 'Còn ' + (need - have) + ' ' + unit };
+    var luu = readJSON(BADGE_KEY, null) || {};
+    function ngayDat(k) {
+      var p = String(k || '').split('-');
+      return p.length === 3 ? 'Đạt ngày ' + p[2] + '/' + p[1] + '/' + p[0] : 'Đã đạt';
     }
+    function b(id, icon, name, have, need, unit) {
+      var daLuu = luu[id];
+      var ok = have >= need || !!daLuu;
+      return { id: id, icon: icon, name: (daLuu && daLuu.name) || name, ok: ok, moi: have >= need && !daLuu,
+        hint: daLuu ? ngayDat(daLuu.at) : ok ? 'Đã đạt' : 'Còn ' + (need - have) + ' ' + unit };
+    }
+    var capXong = b('level-done', '🏆', levelsDone.length ? 'Hoàn thành ' + levelsDone[0] : 'Hoàn thành 1 cấp độ', levelsDone.length, 1, 'cấp');
+    if (!capXong.ok) capXong.hint = 'Qua hết bài của 1 cấp';
     return [
-      b('🌱', 'Bài học đầu tiên', stats.lessons, 1, 'bài'),
-      b('🎓', 'Qua kiểm tra cuối bài', passed, 1, 'bài'),
-      b('📚', '100 từ đã học', stats.words, 100, 'từ'),
-      b('📖', '500 từ đã học', stats.words, 500, 'từ'),
-      b('🧠', 'Thuộc 50 từ', srs.known, 50, 'từ'),
-      b('🔥', '7 ngày liên tiếp', stats.streak, 7, 'ngày'),
-      b('💎', '30 ngày liên tiếp', stats.streak, 30, 'ngày'),
-      b('⭐', '500 sao chăm chỉ', stars, 500, 'sao'),
-      { icon: '🏆', name: levelsDone.length ? 'Hoàn thành ' + levelsDone[0] : 'Hoàn thành 1 cấp độ', ok: levelsDone.length > 0, hint: levelsDone.length ? 'Đã đạt' : 'Qua hết bài của 1 cấp' }
+      b('first-lesson', '🌱', 'Bài học đầu tiên', stats.lessons, 1, 'bài'),
+      b('first-final', '🎓', 'Qua kiểm tra cuối bài', passed, 1, 'bài'),
+      b('words-100', '📚', '100 từ đã học', stats.words, 100, 'từ'),
+      b('words-500', '📖', '500 từ đã học', stats.words, 500, 'từ'),
+      b('known-50', '🧠', 'Thuộc 50 từ', srs.known, 50, 'từ'),
+      b('streak-7', '🔥', '7 ngày liên tiếp', best, 7, 'ngày'),
+      b('streak-30', '💎', '30 ngày liên tiếp', best, 30, 'ngày'),
+      b('stars-500', '⭐', '500 sao chăm chỉ', stars, 500, 'sao'),
+      capXong
     ];
+  }
+
+  // Ghi huy hieu vua dat (kem ngay) va chuc mung. Lan dau tren may / ngay sau khi gop du lieu
+  // tu may chu thi chi ghi im lang (do la huy hieu cu, khong phai vua dat).
+  function kiemHuyHieu(list) {
+    if (!tienDoDaGop) return;
+    list = list || computeBadges();
+    var luu = readJSON(BADGE_KEY, null);
+    var imLang = luu === null || gieoHuyHieuLai;
+    gieoHuyHieuLai = false;
+    luu = luu || {};
+    var moi = list.filter(function (x) { return x.moi; });
+    if (!moi.length && readJSON(BADGE_KEY, null) !== null) return;
+    var homNay = dateKey(new Date());
+    moi.forEach(function (x) { luu[x.id] = { at: homNay, name: x.name }; });
+    writeJSON(BADGE_KEY, luu);
+    if (!imLang && moi.length) {
+      chucMung({
+        icon: moi.map(function (x) { return x.icon; }).join(''),
+        nhan: moi.length > 1 ? moi.length + ' huy hiệu mới!' : 'Huy hiệu mới!',
+        tieuDe: moi.map(function (x) { return x.name; }).join(' · '),
+        phu: 'Huy hiệu đã đạt được giữ mãi, kể cả khi chuỗi ngày học bắt đầu lại.'
+      });
+    }
+  }
+  var henHuyHieuTimer = null;
+  function henKiemHuyHieu() {
+    clearTimeout(henHuyHieuTimer);
+    henHuyHieuTimer = setTimeout(function () {
+      try { kiemHuyHieu(); if (!$('#home').hidden) renderBadges(); } catch (e) { /* bo qua */ }
+    }, 900);
   }
 
   function renderBadges() {
     var wrap = $('#badgeRow');
-    if (!wrap) return;
     var list = computeBadges();
+    kiemHuyHieu(list);
+    if (!wrap) return;
     var got = list.filter(function (x) { return x.ok; }).length;
     wrap.innerHTML = '<p class="badge-title">Huy hiệu <span>' + got + '/' + list.length + '</span></p><div class="badge-grid">' +
       list.map(function (x) {
@@ -1628,6 +1730,202 @@
           '<span class="badge-ic" aria-hidden="true">' + x.icon + '</span>' +
           '<span class="badge-name">' + x.name + '</span><span class="badge-hint">' + x.hint + '</span></div>';
       }).join('') + '</div>';
+  }
+
+  /* ---- The chuc mung noi (huy hieu moi, xong bai) + phao giay nhe ----
+     Khong chan man hinh (hoc sinh dang lam bai van bam tiep duoc), tu an sau 7 giay.
+     Phao giay rut gon tu lop.js; ai bat "giam chuyen dong" thi bo qua. */
+  var chucMungTimer = null, chucMungCho = [];
+  function chucMung(o) {
+    // Dang hien 1 the (vd vua xong bai) -> the sau (huy hieu) cho toi luot
+    var cu = document.getElementById('hhChucMung');
+    if (cu && !cu.classList.contains('is-out')) { chucMungCho.push(o); return; }
+    if (cu) cu.remove();
+    clearTimeout(chucMungTimer);
+    var box = document.createElement('div');
+    box.id = 'hhChucMung';
+    box.className = 'hh-cm';
+    box.setAttribute('role', 'status');
+    box.setAttribute('aria-live', 'polite');
+    box.innerHTML =
+      '<span class="hh-cm-ic" aria-hidden="true">' + o.icon + '</span>' +
+      '<div class="hh-cm-body">' +
+        '<p class="hh-cm-nhan">' + o.nhan + '</p>' +
+        '<b class="hh-cm-tit">' + o.tieuDe + '</b>' +
+        (o.phu ? '<span class="hh-cm-phu">' + o.phu + '</span>' : '') +
+      '</div>' +
+      '<button type="button" class="hh-cm-x" aria-label="Đóng">✕</button>';
+    document.body.appendChild(box);
+    var dong = function () {
+      if (box.classList.contains('is-out')) return;
+      clearTimeout(chucMungTimer);
+      box.classList.add('is-out');
+      setTimeout(function () {
+        box.remove();
+        if (chucMungCho.length) chucMung(chucMungCho.shift());
+      }, 250);
+    };
+    box.querySelector('.hh-cm-x').addEventListener('click', dong);
+    chucMungTimer = setTimeout(dong, o.lau || 7000);
+    if (typeof sfxQueue === 'function') { try { sfxQueue('correct'); } catch (e) { /* bo qua */ } }
+    phaoGiay();
+  }
+  function phaoGiay() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var cv = document.createElement('canvas');
+    cv.className = 'hh-confetti';
+    cv.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(cv);
+    var ctx = cv.getContext && cv.getContext('2d');
+    if (!ctx) { cv.remove(); return; }
+    var W = cv.width = window.innerWidth, H = cv.height = window.innerHeight;
+    var mau = ['#c8372d', '#e9a23b', '#26a35b', '#4472ea', '#db2777', '#ffd166'];
+    var bits = [];
+    for (var i = 0; i < 70; i++) {
+      bits.push({ x: W * (0.2 + Math.random() * 0.6), y: -Math.random() * H * 0.4, r: 4 + Math.random() * 5, c: mau[i % mau.length],
+        v: 2.5 + Math.random() * 3, a: Math.random() * 6 });
+    }
+    var batDau = Date.now(), THOI_GIAN = 2600;
+    (function tick() {
+      var t = Date.now() - batDau;
+      if (t > THOI_GIAN || !cv.parentNode) { cv.remove(); return; }
+      ctx.clearRect(0, 0, W, H);
+      ctx.globalAlpha = t > THOI_GIAN - 600 ? Math.max(0, (THOI_GIAN - t) / 600) : 1;
+      bits.forEach(function (b) {
+        b.y += b.v; b.x += Math.sin(b.a += 0.05) * 1.4;
+        ctx.save(); ctx.translate(b.x, b.y); ctx.rotate(b.a); ctx.fillStyle = b.c; ctx.fillRect(-b.r / 2, -b.r / 4, b.r, b.r / 2); ctx.restore();
+      });
+      requestAnimationFrame(tick);
+    })();
+  }
+
+  /* ---- "Gio em da co the: ..." — sinh tu chu de (topic) + ten bai trong data.js ----
+     Bai so cap: chu de la danh sach viec/chu diem ("Chào hỏi & Xin lỗi cơ bản") ->
+     "dùng tiếng Trung để chào hỏi và xin lỗi". HSK 4-6: bai doc dai ->
+     "đọc hiểu bài “…” và trao đổi bằng tiếng Trung về …". */
+  // Muc chu de la diem ngu phap / cum la -> viet lai cho tu nhien (khoa viet thuong)
+  var CANDO_SUA = {
+    'chỉ định gần/xa': ['lam', 'chỉ người, vật ở gần hay ở xa'],
+    'hành động đang diễn ra': ['lam', 'nói hành động đang diễn ra'],
+    'hành động đã hoàn thành': ['lam', 'kể việc đã làm xong'],
+    'câu hỏi chính phản': ['lam', 'hỏi kiểu “có… không”'],
+    'câu hỏi lựa chọn': ['lam', 'hỏi kiểu “… hay …”'],
+    'trạng thái đang duy trì': ['lam', 'tả trạng thái đang duy trì'],
+    'tồn tại': ['lam', 'tả ở đâu có cái gì'],
+    'số lần làm việc gì': ['lam', 'kể đã làm việc gì mấy lần'],
+    'miêu tả mức độ làm việc gì': ['lam', 'nói ai làm việc gì giỏi đến mức nào'],
+    'so sánh mức độ chênh lệch lớn': ['lam', 'so sánh hơn kém nhiều hay ít'],
+    'so sánh mức chênh lệch cụ thể': ['lam', 'so sánh hơn kém cụ thể bao nhiêu'],
+    'so sánh “không bằng”': ['lam', 'so sánh kiểu “không bằng”'],
+    'tự giới thiệu': ['lam', 'tự giới thiệu bản thân'],
+    'tự giới thiệu tên': ['lam', 'giới thiệu tên mình'],
+    'xin lỗi cơ bản': ['lam', 'xin lỗi'],
+    'đếm số 1-10': ['lam', 'đếm số từ 1 đến 10'],
+    'lý do': ['lam', 'nêu lý do'],
+    'lời khuyên': ['lam', 'đưa ra lời khuyên'],
+    'lời động viên': ['lam', 'động viên người khác'],
+    'hỏi về người': ['lam', 'hỏi về một người'],
+    'đi đâu': ['lam', 'hỏi ai đó đi đâu'],
+    'mừng sinh nhật': ['lam', 'chúc mừng sinh nhật'],
+    'khám bệnh': ['lam', 'đi khám bệnh'],
+    'thất lạc hành lý': ['lam', 'báo thất lạc hành lý'],
+    'đồ vật thất lạc': ['lam', 'tìm đồ vật bị thất lạc'],
+    'đón tết cùng nhau': ['ve', 'ngày Tết'],
+    'đi công tác': ['ve', 'chuyến đi công tác'],
+    'đi học': ['ve', 'việc đi học'],
+    'đi tàu cao tốc': ['ve', 'chuyến đi tàu cao tốc'],
+    'học hỏi người khác': ['ve', 'việc học hỏi người khác'],
+    'chọn hướng đi sau đại học': ['ve', 'việc chọn hướng đi sau đại học'],
+    'mua sắm': ['lam', 'mua sắm']
+  };
+  // Muc bat dau bang cac dong tu nay la "viec lam duoc" (khong them "nói về")
+  var CANDO_DONG_TU = /^(chào hỏi|cảm ơn|tạm biệt|xin |xin$|gọi |hỏi |đón |nhờ |làm quen|làm khách|mời |mượn |khen |tả |miêu tả|so sánh|giải quyết|lên kế hoạch|tìm |xem nhà|dọn nhà|chọn |đánh giá|phỏng vấn|đi khám)/;
+  // Danh tu rieng dau muc: giu chu hoa
+  var CANDO_RIENG = /^(Tết|Bắc Kinh|Nam Bắc|Đại học Bắc Kinh|Trung Quốc|Nam Kinh|Hoàng Hà|Thượng Hải|AI|Gia Cát|Lỗ Tấn)/;
+  function candoThuong(s) {
+    s = String(s || '').trim();
+    return CANDO_RIENG.test(s) ? s : s.charAt(0).toLowerCase() + s.slice(1);
+  }
+  function candoNoi(ds) {
+    return ds.length < 2 ? (ds[0] || '') : ds.slice(0, -1).join(', ') + ' và ' + ds[ds.length - 1];
+  }
+  function capCuaBai(lesson) {
+    var ra = '';
+    Object.keys((APP_DATA && APP_DATA.lessons) || {}).some(function (id) {
+      if (APP_DATA.lessons[id].indexOf(lesson) !== -1) { ra = id; return true; }
+      return false;
+    });
+    return ra;
+  }
+  function candoCua(lesson, levelId) {
+    if (!lesson || !lesson.topic) return '';
+    var lv = levelId || capCuaBai(lesson);
+    var topic = String(lesson.topic);
+    if (/^hsk[456]$/.test(lv)) {
+      var loi = topic.indexOf(' · ') >= 0 ? topic.slice(topic.indexOf(' · ') + 3) : topic;
+      if (loi.indexOf(' — ') >= 0) {
+        var sau = loi.slice(loi.indexOf(' — ') + 3), truoc = loi.slice(0, loi.indexOf(' — '));
+        loi = sau.length <= 60 ? sau : truoc;
+      }
+      // Chu de qua dai (kieu "A: x, y va z") thi chi giu phan truoc dau hai cham
+      if (loi.length > 64 && loi.indexOf(':') > 0) loi = loi.slice(0, loi.indexOf(':'));
+      // HSK 4: chu de la danh sach muc viet hoa ("Tình yêu, Hôn nhân & ...")
+      var ve4 = lv === 'hsk4' ? candoNoi(loi.split(/\s*,\s*|\s+&\s+/).map(candoThuong))
+        : candoThuong(loi.replace(/\s+&\s+/g, ' và '));
+      var ten = String(lesson.title || '').replace(/[.。]\s*$/, '');
+      return 'đọc hiểu bài “' + ten + '” và trao đổi bằng tiếng Trung về ' + ve4;
+    }
+    var lam = [], ve = [], thay = {};
+    topic.split(/\s*,\s*|\s+&\s+/).forEach(function (muc) {
+      muc = muc.trim();
+      if (!muc) return;
+      var k = muc.toLowerCase();
+      var sua = CANDO_SUA[k];
+      var loai = sua ? sua[0] : (CANDO_DONG_TU.test(k) ? 'lam' : 've');
+      var cum = sua ? sua[1] : candoThuong(muc);
+      // "Gọi món" + "Gọi món ở nhà hàng": bo muc trung
+      var goc = cum.split(' ').slice(0, 2).join(' ').toLowerCase();
+      if (thay[goc]) return;
+      thay[goc] = 1;
+      (loai === 'lam' ? lam : ve).push(cum);
+    });
+    lam = lam.slice(0, 3);
+    ve = ve.slice(0, Math.max(1, 3 - lam.length));
+    var cau = lam.slice();
+    if (ve.length) cau.push('nói về ' + (lam.length ? ve.join(', ') : candoNoi(ve)));
+    return 'dùng tiếng Trung để ' + candoNoi(cau);
+  }
+  // Bai "xong" = di het lo trinh, hoac da qua kiem tra cuoi bai
+  function baiDaXong(lesson) {
+    if (!lesson) return false;
+    if (lessonPassed(lesson)) return true;
+    if (!pathEnabled(lesson) || !lessonHasAnyProgress(lesson)) return false;
+    return pathCurrentIndex(lesson) >= pathStepsOf(lesson).length;
+  }
+  // Bai xong gan nhat (so bai lon nhat) cua 1 cap — cho dong "Gio em da co the" tren the cap do
+  function baiXongGanNhat(levelId) {
+    var diem = readJSON(STORAGE_KEYS.lessonScores, {});
+    var ds = ((APP_DATA.lessons && APP_DATA.lessons[levelId]) || []).filter(function (l) { return diem[l.fullPageUrl]; });
+    var ra = null;
+    ds.forEach(function (l) { if ((!ra || l.number > ra.number) && baiDaXong(l)) ra = l; });
+    return ra;
+  }
+  function chucMungXongBai(lesson) {
+    var cd = candoCua(lesson);
+    chucMung({
+      icon: '🎉',
+      nhan: 'Hoàn thành Bài ' + lesson.number + '!',
+      tieuDe: cd ? 'Giờ em đã có thể: ' + rsEsc(cd) + '.' : 'Em đã đi hết lộ trình của bài này.',
+      lau: 9000
+    });
+  }
+  // Mot dong "Gio em da co the" (xong bai) / "Hoc xong bai nay em se co the" (chua xong)
+  function candoDongHtml(lesson, levelId) {
+    var cd = candoCua(lesson, levelId);
+    if (!cd) return '';
+    return baiDaXong(lesson)
+      ? '<p class="cando-line is-done"><span aria-hidden="true">✅</span> <b>Giờ em đã có thể:</b> ' + rsEsc(cd) + '.</p>'
+      : '<p class="cando-line"><span aria-hidden="true">🎯</span> <b>Học xong bài này, em sẽ có thể:</b> ' + rsEsc(cd) + '.</p>';
   }
 
   function renderLessonList(id) {
@@ -1805,6 +2103,7 @@
     }
     grid.hidden = false;
     $('#lessonPath').hidden = true;
+    if (document.getElementById('lpCando')) document.getElementById('lpCando').innerHTML = '';
     $('.hub-progress-label').textContent = 'Tiến độ tổng';
     tabIds.forEach(function (tabId) {
       var def = HUB_TAB_DEFS[tabId];
@@ -2003,6 +2302,7 @@
       var cho = $('#lessonPath');
       cho.hidden = false;
       cho.innerHTML = '<li class="lp-step"><p style="color:var(--color-gray-500);margin:8px 4px;">Đang tải lộ trình…</p></li>';
+      if (document.getElementById('lpCando')) document.getElementById('lpCando').innerHTML = '';
       kiemKhoiDong(lesson).then(function () {
         if (!$('#lessonHub').hidden && currentHubLesson === lesson) renderLessonPath(levelId, lesson);
       });
@@ -2043,6 +2343,14 @@
 
     var list = $('#lessonPath');
     list.hidden = false;
+    // Dong "Hoc xong bai nay em se co the..." / "Gio em da co the..." ngay tren lo trinh
+    var canDoEl = document.getElementById('lpCando');
+    if (!canDoEl) {
+      canDoEl = document.createElement('div');
+      canDoEl.id = 'lpCando';
+      list.parentNode.insertBefore(canDoEl, list);
+    }
+    canDoEl.innerHTML = candoDongHtml(lesson, levelId);
     list.innerHTML = ps.map(function (s, i) {
       var done = pathStepDone(lesson, s);
       var skipped = pathStepSkipped(lesson, s);
@@ -4015,6 +4323,7 @@
   function pgbRecord(id, index, isCorrect, praiseThreshold) {
     var st = pgbState[id];
     if (!st) return;
+    demCauNgayHoc();
     sfxQueue(isCorrect ? 'correct' : 'wrong');
     // +1 sao ngay khi dung (moi o cau cua moi bai chi duoc thuong lan dau)
     if (isCorrect && window.hwStarAnswer) {
@@ -4210,7 +4519,8 @@
     var wrap = $('#rvContent');
     var total = state.items.length;
     if (state.pos >= total) {
-      // Xong luot "On 10 tu cu" cua nhiem vu hom nay
+      // Xong 1 luot on tap = 1 ngay hoc; luot "On 10 tu cu" con la viec (1) cua nhiem vu hom nay
+      if (total > 0) markStudyDay();
       if (rvDaily && pgbId === 'rvqmeaning' && total > 0) taskMark('review');
       wrap.innerHTML = '<div class="vp-quiz-done"><strong>' + state.score + '/' + total + '</strong>' +
         '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành lượt ôn tập này.</p>' +
@@ -13277,6 +13587,7 @@
     $('#reviewPractice').hidden = true;
 
     renderResultsContent(lesson);
+    if (lessonHasAnyProgress(lesson)) $('#rpContent').insertAdjacentHTML('afterbegin', candoDongHtml(lesson, levelId));
     $('#resultsPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
@@ -13851,59 +14162,214 @@
     return out;
   }
 
-  function computeStreak(studyDays) {
-    var set = {};
-    studyDays.forEach(function (d) { set[d] = true; });
-    var streak = 0;
-    var cursor = new Date();
-    if (!set[dateKey(cursor)]) {
-      cursor.setDate(cursor.getDate() - 1);
-    }
-    while (set[dateKey(cursor)]) {
-      streak++;
-      cursor.setDate(cursor.getDate() - 1);
-    }
-    return streak;
+  /* Chuoi ngay hoc co "ngay nghi phep" (QUY_TAC_NGHI_PHEP): moi tuan thu Hai - Chu nhat
+     duoc bo 1 ngay ma chuoi van giu, neu tuan do HOAC tuan truoc co tu 5 ngay hoc. Hai ngay
+     nghi lien nhau thi chuoi ve 0. Ngay nghi phep giu chuoi nhung KHONG cong them vao so ngay.
+     Dung chung cho the chuoi, o thong ke, huy hieu va so "streak" gui len may chu. */
+  var NGHI_PHEP_CAN = 5;
+  function ngayLui(d, n) {
+    var x = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    x.setDate(x.getDate() - n);
+    return x;
   }
+  function ngayTuKhoa(k) {
+    var p = String(k).split('-');
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  }
+  function thuHaiCua(d) { var w = d.getDay(); return ngayLui(d, w === 0 ? 6 : w - 1); }
+  function soNgayHocTuan(set, thuHai) {
+    var n = 0;
+    for (var i = 0; i < 7; i++) if (set[dateKey(ngayLui(thuHai, -i))]) n++;
+    return n;
+  }
+  function duocNghiPhep(set, d) {
+    var t2 = thuHaiCua(d);
+    return soNgayHocTuan(set, t2) >= NGHI_PHEP_CAN || soNgayHocTuan(set, ngayLui(t2, 7)) >= NGHI_PHEP_CAN;
+  }
+  // Di lui tu ngay "den": dem ngay hoc, ngay nghi le (1 ngay, truoc no la ngay hoc) thi
+  // dung ngay nghi phep cua tuan do neu con va du dieu kien; khong thi dung.
+  function chuoiKetThucTai(set, den) {
+    var streak = 0, nghi = {}, tuanDaDung = {};
+    var cur = ngayLui(den, 0);
+    for (var gioiHan = 0; gioiHan < 4000; gioiHan++) {
+      var k = dateKey(cur);
+      if (set[k]) { streak++; cur = ngayLui(cur, 1); continue; }
+      var truoc = ngayLui(cur, 1), tuan = dateKey(thuHaiCua(cur));
+      if (!set[dateKey(truoc)] || tuanDaDung[tuan] || !duocNghiPhep(set, cur)) break;
+      tuanDaDung[tuan] = true;
+      nghi[k] = true;
+      cur = truoc;
+    }
+    return { streak: streak, nghi: nghi };
+  }
+  function boNgayHoc(studyDays) {
+    var set = {};
+    (studyDays || []).forEach(function (d) { if (typeof d === 'string' && d.length === 10) set[d] = true; });
+    return set;
+  }
+  // Chuoi hien tai: hom nay chua hoc thi chua tinh la nghi (con ca ngay de hoc), tinh tu hom qua
+  function thongTinChuoi(studyDays) {
+    var set = boNgayHoc(studyDays);
+    var homNay = new Date();
+    var hocHomNay = !!set[dateKey(homNay)];
+    var r = chuoiKetThucTai(set, hocHomNay ? homNay : ngayLui(homNay, 1));
+    r.set = set;
+    r.hocHomNay = hocHomNay;
+    return r;
+  }
+  function computeStreak(studyDays) { return thongTinChuoi(studyDays).streak; }
+
+  // Ky luc chuoi tu truoc toi nay (cung quy tac): xet moi "cuoi doan" ngay hoc lien nhau
+  var kyLucChuoiNho = { khoa: '', gt: 0 };
+  function chuoiDaiNhat(studyDays) {
+    var set = boNgayHoc(studyDays);
+    var ds = Object.keys(set).sort();
+    var khoa = ds.length + '|' + (ds[ds.length - 1] || '') + '|' + dateKey(new Date());
+    if (kyLucChuoiNho.khoa === khoa) return kyLucChuoiNho.gt;
+    var best = 0;
+    ds.forEach(function (k) {
+      var d = ngayTuKhoa(k);
+      if (set[dateKey(ngayLui(d, -1))]) return; // chua phai ngay cuoi cua doan
+      var n = chuoiKetThucTai(set, d).streak;
+      if (n > best) best = n;
+    });
+    best = Math.max(best, thongTinChuoi(studyDays).streak);
+    kyLucChuoiNho = { khoa: khoa, gt: best };
+    return best;
+  }
+
+  function gioVietNam() { return new Date(Date.now() + 7 * 3600000).getUTCHours(); }
 
   var STREAK_MILESTONES = [3, 7, 14, 30, 60, 100, 200, 365];
 
+  // Hop phu duoi cac cham tuan (tao 1 lan, khong sua index.html)
+  function hopChuoi(id, cls) {
+    var el = document.getElementById(id);
+    if (el) return el;
+    var badge = $('#streakBadge');
+    if (!badge) return null;
+    el = document.createElement('div');
+    el.id = id;
+    el.className = cls;
+    var sau = id === 'streakNote' ? badge : (document.getElementById('streakNote') || badge);
+    sau.parentNode.insertBefore(el, sau.nextSibling);
+    return el;
+  }
+
   function renderStreak() {
     var studyDays = readJSON(STORAGE_KEYS.studyDays, []);
-    var streak = computeStreak(studyDays);
+    var info = thongTinChuoi(studyDays);
+    var streak = info.streak;
     $('#streakCount').textContent = streak + ' ngày';
 
     var todayKey = dateKey(new Date());
     var days = currentWeekDates();
     var wrap = $('#streakDays');
     wrap.innerHTML = '';
+    wrap.title = QUY_TAC_NGHI_PHEP;
+    var nghiTuanNay = null;
     days.forEach(function (d, i) {
       var key = dateKey(d);
-      var isDone = studyDays.indexOf(key) !== -1;
+      var isDone = !!info.set[key];
       var isToday = key === todayKey;
+      var isNghi = !!info.nghi[key];
+      if (isNghi) nghiTuanNay = WEEKDAY_LABELS[i];
       var el = document.createElement('div');
       el.className = 'dash-streak-day';
       el.innerHTML =
         '<span>' + WEEKDAY_LABELS[i] + '</span>' +
-        '<span class="dash-streak-dot' + (isDone ? ' is-done' : '') + (isToday ? ' is-today' : '') + '"></span>';
+        '<span class="dash-streak-dot' + (isDone ? ' is-done' : '') + (isNghi ? ' is-frozen' : '') + (isToday ? ' is-today' : '') + '"' +
+          (isNghi ? ' title="Ngày nghỉ phép — chuỗi vẫn được giữ" role="img" aria-label="' + WEEKDAY_LABELS[i] + ': ngày nghỉ phép, chuỗi vẫn được giữ"' : '') +
+        '></span>';
       wrap.appendChild(el);
     });
 
+    // Moc chuoi: tinh theo KY LUC (da dat thi giu, chuoi dut van con)
+    var best = chuoiDaiNhat(studyDays);
     var reached = null;
     var next = null;
     STREAK_MILESTONES.forEach(function (m) {
-      if (streak >= m) reached = m;
-      if (next === null && streak < m) next = m;
+      if (best >= m) reached = m;
+      if (next === null && best < m) next = m;
     });
     var badgeEl = $('#streakBadge');
-    if (reached) {
-      badgeEl.innerHTML = '<span class="streak-badge-pill">🏅 Đã đạt mốc ' + reached + ' ngày!</span>' +
-        (next ? '<span class="streak-badge-next">Còn ' + (next - streak) + ' ngày nữa để đạt mốc ' + next + ' ngày</span>' : '');
-    } else if (next) {
-      badgeEl.innerHTML = '<span class="streak-badge-next">Học ' + next + ' ngày liên tiếp để nhận huy hiệu đầu tiên!</span>';
-    } else {
-      badgeEl.innerHTML = '';
+    var conLai = next ? next - streak : 0;
+    var html = '';
+    if (reached) html += '<span class="streak-badge-pill">🏅 Đã đạt mốc ' + reached + ' ngày</span>';
+    if (best > streak && best >= 2) html += '<span class="streak-badge-next">Kỷ lục của em: ' + best + ' ngày liên tiếp</span>';
+    if (next && streak > 0) html += '<span class="streak-badge-next">Còn ' + conLai + ' ngày nữa để đạt mốc ' + next + ' ngày</span>';
+    else if (next && !reached) html += '<span class="streak-badge-next">Học ' + next + ' ngày liên tiếp để đạt mốc đầu tiên!</span>';
+    badgeEl.innerHTML = html;
+
+    // Ngay nghi phep tuan nay + cach tinh chuoi
+    var note = hopChuoi('streakNote', 'streak-note');
+    if (note) {
+      var trongTuan = soNgayHocTuan(info.set, thuHaiCua(new Date()));
+      var dongNghi = nghiTuanNay
+        ? '❄️ Tuần này đã dùng ngày nghỉ phép (' + nghiTuanNay + ') — chuỗi vẫn được giữ.'
+        : duocNghiPhep(info.set, new Date())
+          ? '🛡️ Tuần này em có 1 ngày nghỉ phép: lỡ nghỉ 1 ngày, chuỗi vẫn giữ.'
+          : '🛡️ Học đủ 5 ngày trong tuần để có 1 ngày nghỉ phép (tuần này: ' + Math.min(trongTuan, 5) + '/5).';
+      note.innerHTML = '<p class="streak-freeze" title="' + QUY_TAC_NGHI_PHEP + '">' + dongNghi + '</p>' +
+        '<details class="streak-rule"><summary>Cách tính chuỗi ngày học</summary>' +
+          '<p>' + QUY_TAC_NGAY_HOC + '</p><p>' + QUY_TAC_NGHI_PHEP + '</p></details>';
     }
+
+    veNhacGiuChuoi(info);
+    veChaoMungQuayLai(info);
+  }
+
+  // Sau 18:00 (gio VN) ma hom nay chua co ngay hoc: nhac nhe 1 bai on ngan de giu chuoi
+  function veNhacGiuChuoi(info) {
+    var box = hopChuoi('streakNudge', 'streak-nudge');
+    if (!box) return;
+    if (info.hocHomNay || info.streak < 1 || gioVietNam() < 18) { box.hidden = true; box.innerHTML = ''; return; }
+    box.hidden = false;
+    box.innerHTML = '<p><b>Hôm nay chưa học</b> — học 1 bài ôn để giữ chuỗi ' + info.streak + ' ngày</p>' +
+      '<button type="button" class="btn btn-primary" id="streakNudgeGo">Ôn nhanh 3 phút</button>';
+    $('#streakNudgeGo').addEventListener('click', function () { runTask('review'); });
+  }
+
+  /* "Chao mung quay lai": vang tu 3 ngay tro len, hien 1 lan cho moi lan vang
+     (luu ngay hoc cuoi da chao trong hyv_comeback). Khong trach moc, chi 1 nut on 3 phut. */
+  var COMEBACK_KEY = 'hyv_comeback';
+  var comebackDangHien = null;
+  function veChaoMungQuayLai(info) {
+    var home = $('#home');
+    var box = $('#comebackCard');
+    var an = function () { if (box) { box.hidden = true; box.innerHTML = ''; } };
+    if (!home || !tienDoDaGop || info.hocHomNay) { an(); return; }
+    var ds = Object.keys(info.set).sort();
+    var cuoi = ds[ds.length - 1];
+    if (!cuoi) { an(); return; }
+    var vang = Math.round((ngayLui(new Date(), 0) - ngayTuKhoa(cuoi)) / 86400000);
+    if (vang < 3) { an(); return; }
+    if (comebackDangHien !== cuoi) {
+      if (readJSON(COMEBACK_KEY, null) === cuoi) { an(); return; }
+      comebackDangHien = cuoi;
+      writeJSON(COMEBACK_KEY, cuoi);
+    }
+    if (!box) {
+      box = document.createElement('section');
+      box.id = 'comebackCard';
+      box.className = 'comeback-card';
+      box.setAttribute('aria-labelledby', 'comebackTitle');
+      var hang = home.querySelector('.dash-row');
+      home.insertBefore(box, hang || home.firstChild);
+    }
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    var ten = auth && auth.user && auth.user.name ? auth.user.name.trim().split(/\s+/).pop() : '';
+    box.hidden = false;
+    box.innerHTML =
+      '<span class="comeback-ic" aria-hidden="true">👋</span>' +
+      '<div class="comeback-body">' +
+        '<h2 id="comebackTitle">Chào mừng quay lại' + (ten ? ', ' + rsEsc(ten) : '') + '!</h2>' +
+        '<p>Vui quá khi gặp lại em. Mình khởi động nhẹ nhàng bằng 3 phút ôn lại những từ đã học nhé.</p>' +
+        '<button type="button" class="btn btn-primary" id="comebackGo">Ôn nhanh 3 phút</button>' +
+      '</div>' +
+      '<button type="button" class="comeback-close" id="comebackClose" aria-label="Ẩn lời chào">✕</button>';
+    $('#comebackGo').addEventListener('click', function () { comebackDangHien = ''; an(); runTask('review'); });
+    $('#comebackClose').addEventListener('click', function () { comebackDangHien = ''; an(); });
   }
 
   /* ---------------- "Ban da hoc duoc": so lieu cua chinh hoc sinh ---------------- */
@@ -15386,12 +15852,11 @@
     document.addEventListener('visibilitychange', function () { if (document.hidden) rsFlush(true); });
     window.addEventListener('pagehide', function () { rsFlush(true); });
 
-    document.addEventListener('click', function (e) {
-      var section = e.target.closest('.dash-section');
-      if (!section || PRACTICE_SECTION_IDS.indexOf(section.id) === -1) return;
-      if (e.target.closest('.level-detail-back')) return;
-      markStudyDay();
-    });
+    // Ngay hoc KHONG con tinh theo cu bam bat ky trong man luyen tap — xem QUY_TAC_NGAY_HOC.
+    // The chuoi: nhac luc 18:00 (gio VN) / qua nua dem tu doi ngay -> ve lai moi 5 phut khi dang o trang chu
+    setInterval(function () {
+      if (!document.hidden && !$('#home').hidden) renderStreak();
+    }, 300000);
 
     $('#levelDetailBack').addEventListener('click', showDashboard);
     $('#qrBack').addEventListener('click', function () {

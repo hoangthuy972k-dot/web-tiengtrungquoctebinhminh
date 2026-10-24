@@ -114,3 +114,7 @@
 @media (prefers-reduced-motion: reduce) {
   .tn-chip-diem.nhun, .tn-o.is-sai, .tn-bay, .tn-kq-sao span.on { animation: none !important; }
 }
+
+/* Choi xong van tu 5 cau = 1 ngay hoc (giu chuoi) */
+.tn-kq-ngay { margin-top: 6px; font-size: .86rem; font-weight: 700; color: var(--fg-green-600, #1a7d44); }
+.tn-kq-ngay.is-chua { color: var(--color-text-muted); font-weight: 600; }

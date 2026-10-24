@@ -199,6 +199,28 @@
     if (moi) { try { localStorage.setItem(k, String(diem)); } catch (e) { /* bo qua */ } }
     return { cu: cu, moi: moi && diem > 0 };
   }
+  // Doc ky luc (game-hub.js hien tren the tro choi)
+  function docKyLuc(key) {
+    try { return parseInt(localStorage.getItem('hyv_tn_kl_' + key) || '0', 10) || 0; } catch (e) { return 0; }
+  }
+
+  /* Choi xong 1 van tu 5 cau tro len = 1 ngay hoc, cung quy tac voi trang chu
+     (QUY_TAC_NGAY_HOC trong app.js: "lam tu 5 cau bai tap"). Ghi vao hyv_study_days
+     cua may nay; trang chu tu gop + dong bo len tai khoan o lan mo tiep theo.
+     So phut hoc thi widgets.js (server tu gan vao game.html) da tu dem khi dang choi. */
+  var SO_CAU_NGAY_HOC = 5;
+  function ghiNgayHoc(kq) {
+    if (!kq || !(kq.tong >= SO_CAU_NGAY_HOC)) return false;
+    try {
+      var d = new Date();
+      var k = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+      var ds = JSON.parse(localStorage.getItem('hyv_study_days') || '[]');
+      if (!Array.isArray(ds)) ds = [];
+      if (ds.indexOf(k) === -1) { ds.push(k); localStorage.setItem('hyv_study_days', JSON.stringify(ds)); }
+      return true;
+    } catch (e) { return false; }
+  }
+
   // kq: { diem, dung, tong, chuoi, thang (true/false/undefined), loi }
   function ketQua(sk, key, kq, choiLai) {
     sk.san.innerHTML = '';
@@ -207,6 +229,7 @@
     var sao = kq.thang === false ? (pt >= 0.6 ? 1 : 0) : pt >= 0.9 ? 3 : pt >= 0.7 ? 2 : pt >= 0.4 ? 1 : 0;
     if (kq.thang === true && sao < 2) sao = 2;
     var kl = kyLuc(key, kq.diem);
+    var tinhNgay = ghiNgayHoc(kq);
     var b = tao('div', 'tn-ketqua');
     b.innerHTML =
       '<div class="tn-kq-sao" aria-label="' + sao + ' sao">' + [0, 1, 2].map(function (i) {
@@ -215,7 +238,9 @@
       '<div class="tn-kq-tit">' + esc(kq.loi || (kq.thang === false ? 'Suýt nữa rồi!' : sao >= 3 ? 'Xuất sắc!' : sao >= 2 ? 'Giỏi lắm!' : 'Cố lên nhé!')) + '</div>' +
       '<div class="tn-kq-diem">' + kq.diem + ' <small>điểm</small></div>' +
       '<div class="tn-kq-chi">Đúng ' + kq.dung + '/' + kq.tong + (kq.chuoi > 1 ? ' · chuỗi dài nhất ' + kq.chuoi : '') + '</div>' +
-      '<div class="tn-kq-kl">' + (kl.moi ? '🏆 Kỷ lục mới!' : 'Kỷ lục của em: ' + Math.max(kl.cu, kq.diem)) + '</div>';
+      '<div class="tn-kq-kl">' + (kl.moi ? '🏆 Kỷ lục mới!' : 'Kỷ lục của em: ' + Math.max(kl.cu, kq.diem)) + '</div>' +
+      (tinhNgay ? '<div class="tn-kq-ngay">🔥 Đã tính 1 ngày học — giữ chuỗi ngày học của em</div>'
+        : '<div class="tn-kq-ngay is-chua">Làm từ ' + SO_CAU_NGAY_HOC + ' câu trở lên để tính 1 ngày học</div>');
     var nut = tao('button', 'tn-nut tn-nut-chinh', '↻ Chơi lại');
     nut.type = 'button';
     nut.addEventListener('click', choiLai);
@@ -254,6 +279,7 @@
     tao: tao, tron: tron, esc: esc, doc: doc, keu: keu, keuDung: keuDung, keuSai: keuSai, keuThang: keuThang, rung: rung,
     itChuyenDong: itChuyenDong,
     cauHoi: cauHoi, boCau: boCau, oDapAn: oDapAn, khung: khung, demNguoc: demNguoc, ketQua: ketQua, manMoi: manMoi,
+    docKyLuc: docKyLuc,
     dangKy: function (g) { if (!KHO[g.key]) THU_TU.push(g.key); KHO[g.key] = g; }
   };
 

@@ -472,7 +472,7 @@ var dialogData = [
 // (không lặp lại nguyên văn bài khoá, kiểm tra khả năng dùng ĐÚNG NGỮ CẢNH)
 var fillData = [
   {pre:'Gặp một người bạn cùng tuổi ngoài đường, bạn nói: “',blank:'你好',post:'”',hint:'(chào thân mật, ngôi 2 số ít)',ans:'你好',exp:'你好 dùng khi chào người ngang hàng, thân mật'},
-  {pre:'Gặp một cụ ông lớn tuổi lần đầu, muốn thể hiện phép lịch sự, bạn nói: “',blank:'您好',post:'”',hint:'(dùng 您 để thể hiện sự kính trọng)',ans:'您好',exp:'Với người lớn tuổi/cấp trên nên dùng 您 thay vì 你'},
+  {pre:'Gặp một cụ ông lớn tuổi lần đầu, muốn thể hiện phép lịch sự, bạn nói: “',blank:'您好',post:'”',hint:'(dùng đại từ kính trọng thay cho 你)',ans:'您好',exp:'Với người lớn tuổi/cấp trên nên dùng 您 thay vì 你'},
   {pre:'Bước vào lớp học, bạn chào cả nhóm bạn cùng lúc: “',blank:'你们好',post:'”',hint:'(số nhiều — chào từ 2 người trở lên)',ans:'你们好'},
   {pre:'Bạn vô tình giẫm chân người khác, bạn nói: “',blank:'对不起',post:'”',hint:'(xin lỗi)',ans:'对不起'},
   {pre:'Nghe người khác xin lỗi mình, bạn đáp lại: “',blank:'没关系',post:'”',hint:'(không sao đâu)',ans:'没关系'},

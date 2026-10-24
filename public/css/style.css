@@ -9033,3 +9033,110 @@ html.ho-tro-toi .dash-cta-card .btn-white.btn-white {
 .level-card.is-teal { --lv: #0b746b; }
 .level-card.is-green { --lv: #23744f; }
 .bn-item { font-size: .76rem; }
+
+/* ===== Goi y an mac dinh: nut "💡 Gợi ý" (bai tap dien tu / trac nghiem) ===== */
+:root {
+  --hint-ink: var(--color-gold-700);
+  --hint-bd: var(--color-gold-400);
+  --hint-bg: var(--color-gold-50);
+  --hint-text: var(--color-gray-700);
+}
+@media (prefers-color-scheme: dark) {
+  html.ho-tro-toi:not([data-theme="light"]) { --hint-ink: var(--color-gold-400); --hint-bd: var(--color-gold-600); }
+}
+html.ho-tro-toi[data-theme="dark"] { --hint-ink: var(--color-gold-400); --hint-bd: var(--color-gold-600); }
+.hint-wrap { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.hint-btn {
+  font: inherit; font-size: 0.82rem; font-weight: 600; line-height: 1.2;
+  padding: 4px 12px; min-height: 30px; border-radius: 999px; cursor: pointer;
+  border: 1.5px dashed var(--hint-bd); background: transparent; color: var(--hint-ink);
+}
+.hint-btn:hover, .hint-btn.open { border-style: solid; background: var(--hint-bg); }
+.hint-btn:focus-visible { outline: 2px solid var(--hint-ink); outline-offset: 2px; }
+.hint-text { font-size: 0.9rem; font-weight: 500; color: var(--hint-text); }
+.qr-hint { margin: 6px 0 2px; }
+
+/* ===== Khoi dong phat am 1 phut (buoc 1 lo trinh, truoc phan ghep tranh) ===== */
+:root {
+  --kdp-bg: var(--color-surface);
+  --kdp-bd: var(--color-border);
+  --kdp-accent: var(--color-red-600);
+  --kdp-accent-bg: var(--color-red-50);
+  --kdp-ok: var(--color-green-600);
+  --kdp-ok-bg: var(--color-green-50);
+  --kdp-no: var(--color-red-600);
+  --kdp-no-bg: var(--color-red-50);
+  --kdp-muted: var(--color-text-muted);
+  --kdp-mark-bg: var(--color-gold-50);
+  --kdp-mark-ink: var(--color-gold-700);
+}
+@media (prefers-color-scheme: dark) {
+  html.ho-tro-toi:not([data-theme="light"]) { --kdp-accent: var(--color-red-500); --kdp-ok: var(--color-green-500); --kdp-no: var(--color-red-500); --kdp-mark-ink: var(--color-gold-400); --kdp-muted: var(--color-gray-500); }
+}
+html.ho-tro-toi[data-theme="dark"] { --kdp-accent: var(--color-red-500); --kdp-ok: var(--color-green-500); --kdp-no: var(--color-red-500); --kdp-mark-ink: var(--color-gold-400); --kdp-muted: var(--color-gray-500); }
+#warmupPractice.kdp-dang-lam #wpContent,
+#warmupPractice.kdp-dang-lam #rsNotice-wpContent { display: none; }
+#wpPron:empty { display: none; }
+#wpPron { margin-bottom: var(--space-4); }
+.kdp-card {
+  background: var(--kdp-bg); border: 1.5px solid var(--kdp-bd); border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5) var(--space-5); box-shadow: var(--shadow-sm);
+}
+.kdp-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.kdp-title { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--kdp-accent); font-size: 0.95rem; }
+.kdp-title .ui-ico, .kdp-bar .ui-ico { width: 18px; height: 18px; flex: none; }
+.kdp-skip {
+  font: inherit; font-size: 0.88rem; font-weight: 600; color: var(--kdp-muted); background: none;
+  border: 1px solid var(--kdp-bd); border-radius: var(--radius-pill); padding: 6px 14px; min-height: 36px; cursor: pointer;
+  white-space: nowrap; flex: none;
+}
+.kdp-skip:hover { color: var(--kdp-accent); border-color: var(--kdp-accent); }
+.kdp-dots { display: flex; gap: 6px; margin: var(--space-3) 0 var(--space-2); }
+.kdp-dots i { flex: 1; height: 5px; border-radius: 3px; background: var(--kdp-bd); }
+.kdp-dots i.is-done { background: var(--kdp-ok); }
+.kdp-dots i.is-here { background: var(--kdp-accent); }
+.kdp-kind { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; color: var(--kdp-muted); }
+.kdp-word { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-2); }
+.kdp-play {
+  width: 48px; height: 48px; border-radius: 50%; border: none; cursor: pointer; flex: none;
+  background: var(--kdp-accent-bg); color: var(--kdp-accent); display: inline-flex; align-items: center; justify-content: center;
+}
+.kdp-play .ui-ico { width: 24px; height: 24px; }
+.kdp-play:focus-visible, .kdp-opt:focus-visible, .kdp-skip:focus-visible, .kdp-redo:focus-visible { outline: 2px solid var(--kdp-accent); outline-offset: 2px; }
+.kdp-zh { font-size: 2rem; font-weight: 600; letter-spacing: 0.04em; }
+.kdp-mark { background: var(--kdp-mark-bg); color: var(--kdp-mark-ink); border-radius: 6px; padding: 0 2px; }
+.kdp-vn { color: var(--kdp-muted); font-size: 0.9rem; margin-top: 2px; }
+.kdp-q { margin: var(--space-3) 0 var(--space-2); font-weight: 600; }
+.kdp-opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: var(--space-2); }
+.kdp-opts.is-4 { grid-template-columns: repeat(4, 1fr); }
+.kdp-opt {
+  font: inherit; font-weight: 600; min-height: 48px; padding: 8px 10px; cursor: pointer;
+  border: 1.5px solid var(--kdp-bd); border-radius: var(--radius-md); background: var(--kdp-bg); color: inherit;
+}
+.kdp-opt.is-py { font-size: 1.15rem; letter-spacing: 0.02em; }
+.kdp-opt:hover:not(:disabled) { border-color: var(--kdp-accent); }
+.kdp-opt:disabled { cursor: default; }
+.kdp-opt.is-right { border-color: var(--kdp-ok); background: var(--kdp-ok-bg); color: var(--kdp-ok); }
+.kdp-opt.is-wrong { border-color: var(--kdp-no); background: var(--kdp-no-bg); color: var(--kdp-no); }
+.kdp-ky { display: inline-block; min-width: 1.1em; font-size: 1.15rem; }
+.kdp-fb { min-height: 1.4em; margin-top: var(--space-3); font-size: 0.92rem; line-height: 1.55; }
+.kdp-fb-tag { font-weight: 700; }
+.kdp-fb-tag.is-ok { color: var(--kdp-ok); }
+.kdp-fb-tag.is-no { color: var(--kdp-no); }
+.kdp-actions { display: flex; justify-content: flex-end; margin-top: var(--space-3); }
+.kdp-actions .btn[hidden] { display: none; }
+.kdp-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap;
+  padding: var(--space-2) var(--space-4); border: 1px dashed var(--kdp-bd); border-radius: var(--radius-md);
+  color: var(--kdp-muted); font-size: 0.9rem;
+}
+.kdp-bar > span { display: inline-flex; align-items: center; gap: 6px; }
+.kdp-redo {
+  font: inherit; font-size: 0.88rem; font-weight: 600; color: var(--kdp-accent); background: var(--kdp-accent-bg);
+  border: none; border-radius: var(--radius-pill); padding: 6px 14px; min-height: 36px; cursor: pointer;
+}
+@media (max-width: 480px) {
+  .kdp-card { padding: var(--space-3) var(--space-4) var(--space-4); }
+  .kdp-opts.is-4 { grid-template-columns: repeat(2, 1fr); }
+  .kdp-zh { font-size: 1.7rem; }
+}

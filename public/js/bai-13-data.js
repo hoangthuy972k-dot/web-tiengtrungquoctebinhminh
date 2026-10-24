@@ -1214,7 +1214,7 @@ var fillData = [
   {pre:'她',blank:'不是',post:'你妹妹吗？怎么长这么高了！',hint:'(chẳng phải... sao?)',ans:'不是',exp:'不是……吗？dùng để xác nhận lại, tỏ ý ngạc nhiên.'},
   {pre:'是啊，她',blank:'长',post:'高了很多。',hint:'(lớn lên, cao lên)',ans:'长'},
   {pre:'我们从这儿一直',blank:'往',post:'前走吧。',hint:'(hướng về phía)',ans:'往'},
-  {pre:'到了前面的路',blank:'口',post:'，宾馆就在那儿。',hint:'(ghép 路口 – ngã tư)',ans:'口'},
+  {pre:'到了前面的路',blank:'口',post:'，宾馆就在那儿。',hint:'(chỗ các con đường giao nhau — ngã tư)',ans:'口'},
   {pre:'',blank:'宾馆',post:'离机场不远，走十分钟就到。',hint:'(khách sạn)',ans:'宾馆'},
 ];
 

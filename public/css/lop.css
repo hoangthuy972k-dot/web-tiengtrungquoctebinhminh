@@ -2091,3 +2091,21 @@ body.lop-playing .lop-fx-card .lop-act.ghost { background: var(--color-gray-100)
 .lop-nui { min-height: 0; height: clamp(300px, 56vh, 540px); }
 .lop-leo-ben { max-height: clamp(300px, 56vh, 540px); overflow: hidden; }
 .lop-nhip-qr { width: clamp(90px, 9vw, 130px); }
+
+/* ---------- Goi y an mac dinh: thay/co bam "💡 Gợi ý" (hoac phim G) moi hien len bang ---------- */
+:root { --lop-hint-ink: var(--color-gold-700); --lop-hint-bd: var(--color-gold-400); --lop-hint-bg: var(--color-gold-50); }
+@media (prefers-color-scheme: dark) {
+  html.ho-tro-toi:not([data-theme="light"]) { --lop-hint-ink: var(--color-gold-400); --lop-hint-bd: var(--color-gold-600); }
+}
+html.ho-tro-toi[data-theme="dark"] { --lop-hint-ink: var(--color-gold-400); --lop-hint-bd: var(--color-gold-600); }
+.lop-hint { align-self: center; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 1100px; }
+.lop-hint-btn {
+  font: inherit; font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 700;
+  padding: 6px 18px; border-radius: 999px; cursor: pointer;
+  border: 1.5px dashed var(--lop-hint-bd); background: transparent; color: var(--lop-hint-ink);
+}
+.lop-hint-btn.open { border-style: solid; background: var(--lop-hint-bg); }
+.lop-hint-text { font-size: clamp(1.1rem, 1.9vw, 1.6rem); color: var(--color-gray-700); }
+body.lop-playing .lop-hint-btn { color: #ffe4a3; border-color: rgba(255, 228, 163, .5); }
+body.lop-playing .lop-hint-btn.open { background: rgba(255, 255, 255, .08); }
+body.lop-playing .lop-hint-text { color: #fff; }

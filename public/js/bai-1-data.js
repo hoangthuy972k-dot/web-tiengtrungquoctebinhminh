@@ -1500,7 +1500,7 @@ var fillData = [
   {pre:'那我们',blank:'一起',post:'去吧，我叫上小李。',hint:'(cùng nhau)',ans:'一起'},
   {pre:'好，我',blank:'也',post:'想叫他一起去。',hint:'(cũng)',ans:'也'},
   {pre:'我们班有',blank:'几',post:'个同学要去呢？',hint:'(vài, mấy — số ước lượng nhỏ hơn 10)',ans:'几',exp:'几 phải đi kèm lượng từ + danh từ.'},
-  {pre:'有十',blank:'多',post:'个人要去。',hint:'(hơn — số ước lượng, số > 10 thì 多 đứng sau số đếm)',ans:'多'},
+  {pre:'有十',blank:'多',post:'个人要去。',hint:'(mười mấy người — từ chỉ số ước lượng, đứng ngay sau số tròn chục)',ans:'多'},
   {pre:'你',blank:'为什么',post:'不去？',hint:'(tại sao)',ans:'为什么'},
   {pre:'因为我',blank:'要',post:'去买新椅子。',hint:'(muốn, cần)',ans:'要'},
 ];

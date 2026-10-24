@@ -1335,7 +1335,7 @@ var fillData = [
   {pre:'Bạn nói có thấy ai đó: “我',blank:'看见',post:'他了。”',hint:'(nhìn thấy)',ans:'看见'},
   {pre:'Bạn hỏi khi nào ai đó quay lại: “他什么时候',blank:'回来',post:'？”',hint:'(quay về)',ans:'回来'},
   {pre:'Bạn khen quần áo ai đó đẹp: “你的衣服太',blank:'漂亮',post:'了！”',hint:'(đẹp)',ans:'漂亮'},
-  {pre:'Bạn nói mua khá nhiều đồ: “我买了不',blank:'少',post:'东西。”',hint:'(不少 = nhiều)',ans:'少'},
+  {pre:'Bạn nói mua khá nhiều đồ: “我买了不',blank:'少',post:'东西。”',hint:'("không ít" = nhiều)',ans:'少'},
   {pre:'Bạn nói những thứ này đều là của mình: “这些',blank:'都',post:'是我的。”',hint:'(đều)',ans:'都'},
 ];
 

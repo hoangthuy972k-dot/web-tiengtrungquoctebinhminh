@@ -9033,3 +9033,21 @@ html.ho-tro-toi .dash-cta-card .btn-white.btn-white {
 .level-card.is-teal { --lv: #0b746b; }
 .level-card.is-green { --lv: #23744f; }
 .bn-item { font-size: .76rem; }
+
+/* ══ On tap ngat quang: cau nho lai (hop 3+) + the ngu phap "Cau nao dung?" ══ */
+.srs-recall-tag { display: inline-block; margin-bottom: var(--space-3); padding: 2px 10px; border-radius: var(--radius-pill); background: var(--color-gold-50, #fdf4e3); color: var(--fg-gray-700); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em; }
+.srs-type { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-3); }
+.srs-type-input { width: 100%; min-height: 48px; padding: 10px 14px; border: 1.5px solid var(--color-gray-300); border-radius: var(--radius-md); background: var(--color-white); color: inherit; font-family: var(--font-hanzi); font-size: 1.15rem; text-align: center; }
+.srs-type-input:focus { outline: none; border-color: var(--color-red-500); box-shadow: 0 0 0 3px var(--color-red-50); }
+.srs-type-input.is-correct { border-color: var(--color-green-600); background: var(--color-green-50); color: var(--fg-green-600); }
+.srs-type-input.is-wrong { border-color: var(--color-red-600); background: var(--color-red-50); color: var(--fg-red-600); }
+.srs-type-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+.srs-type-actions .btn { min-height: 44px; white-space: nowrap; }
+.srs-type-hint { margin-top: 4px; font-size: 0.8rem; color: var(--fg-gray-600); }
+.srs-next { display: block; margin: var(--space-3) auto 0; min-height: 44px; }
+.srs-gram-point { margin-top: 4px; font-size: 0.85rem; color: var(--fg-gray-600); }
+.srs-gram-opt { text-align: center; }
+.srs-gram-why { margin-top: 6px; font-size: 0.88rem; line-height: 1.55; color: var(--fg-gray-700); text-align: left; }
+@media (max-width: 480px) {
+  .srs-type-actions .btn { flex: 1 1 0; }
+}

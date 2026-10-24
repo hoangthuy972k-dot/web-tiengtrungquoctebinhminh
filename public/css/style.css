@@ -9159,6 +9159,7 @@ html.ho-tro-toi .dash-cta-card .btn-white.btn-white {
 .srs-gram-why { margin-top: 6px; font-size: 0.88rem; line-height: 1.55; color: var(--fg-gray-700); text-align: left; }
 @media (max-width: 480px) {
   .srs-type-actions .btn { flex: 1 1 0; }
+}
 
 /* ===== Dong luc hoc (2026-10): chuoi co ngay nghi phep, nhac giu chuoi, chao mung quay lai,
    huy hieu giu mai + chuc mung, dong "Gio em da co the" ===== */
@@ -9305,6 +9306,7 @@ html.ho-tro-toi .dash-cta-card .btn-white.btn-white {
   line-height: 1.4;
   color: var(--dl-ok-fg);
   font-weight: 600;
+}
 
 /* ===== Goi y an mac dinh: nut "💡 Gợi ý" (bai tap dien tu / trac nghiem) ===== */
 :root {

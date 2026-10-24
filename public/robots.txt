@@ -1,0 +1,12 @@
+# Hi Hán 喜汉 — https://hihanchinese.online
+# Trang quan tri, man hinh lop hoc, phong thi HSK 3.0 va API (noi dung de thi
+# bao ve) khong can xuat hien tren cong cu tim kiem.
+User-agent: *
+Disallow: /api/
+Disallow: /bao-cao
+Disallow: /admin.html
+Disallow: /lop
+Disallow: /choi
+Disallow: /hsk30
+
+Sitemap: https://hihanchinese.online/sitemap.xml

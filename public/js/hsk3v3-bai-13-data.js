@@ -2557,7 +2557,7 @@ var mcData = [
   { q: '谢谢你们来参加我儿子的生日＿＿。', opts: ['晚会', '邻居', '客人', '东方'], ans: 0, exp: '生日晚会 = tiệc sinh nhật (buổi tối). 邻居, 客人 là người, không "tham gia" được.' },
   { q: '我很喜欢画画，以后想做一名＿＿。', opts: ['司机', '画家', '医生', '邻居'], ans: 1, exp: 'Thích vẽ → muốn làm 画家 (họa sĩ). 一名 + nghề nghiệp.' },
   { q: '你们国家过生日和这里过生日有什么＿＿？——差不多。', opts: ['一样', '直到', '不同', '来自'], ans: 2, exp: '有什么不同 = có gì khác nhau; câu trả lời 差不多 phù hợp. 一样 không đi với 有什么.' },
-  { q: 'Chọn câu đúng: "Nếu các bạn có thời gian thì đến nhà mình chơi nhé."', opts: ['的话你们有时间，就来我家做客。', '你们有时间的话，就来我家做客。', '你们有时间，的话就来我家做客。', '你们有时间的话，来就我家做客。'], ans: 1, exp: '…的话 đặt cuối vế điều kiện: 你们有时间的话，就…; 就 đứng trước động từ.' },
+  { q: 'Chọn câu đúng: "Nếu các bạn có thời gian thì đến nhà mình chơi nhé."', opts: ['的话你们有时间，就来我家做客。', '你们有时间的话，就来我家做客。', '你们的话有时间，就来我家做客。', '你们有时间的话，来就我家做客。'], ans: 1, exp: '…的话 đặt cuối vế điều kiện: 你们有时间的话，就…; 就 đứng trước động từ.' },
   { q: 'Chọn câu chữ 把 đúng: "Anh đã cho đồ uống vào tủ lạnh rồi."', opts: ['我饮料把放进冰箱里了。', '我放进饮料把冰箱里了。', '我把放进饮料冰箱里了。', '我把饮料放进冰箱里了。'], ans: 3, exp: 'Câu 把: 把 + tân ngữ + V + 进 + nơi chốn: 把饮料放进冰箱里了. 把 đứng trước tân ngữ.' },
   { q: 'Chọn câu đúng: "Tôi thích vừa chạy bộ vừa nghe nhạc."', opts: ['我喜欢一边跑步，一边听音乐。', '我一边喜欢跑步，一边听音乐。', '我喜欢一边跑步，听音乐一边。', '我喜欢跑步一边，听音乐一边。'], ans: 0, exp: '一边 V1，一边 V2: mỗi 一边 đứng ngay trước một động từ; 喜欢 đặt trước cả cấu trúc.' }
 ];

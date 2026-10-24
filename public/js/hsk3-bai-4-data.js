@@ -437,7 +437,7 @@ var vocabData = [
   {
     "n": 5,
     "zh": "聪明",
-    "py": "cōngming",
+    "py": "cōngmíng",
     "pos": "Tính từ",
     "vn": "thông minh",
     "hv": "thông minh",
@@ -1933,7 +1933,7 @@ const wuData = [
   {img:'📷',label:'照片',py:'zhàopiàn',letter:'B'},
   {img:'🎂',label:'蛋糕',py:'dàngāo',letter:'C'},
   {img:'🏪',label:'超市',py:'chāoshì',letter:'D'},
-  {img:'🧠',label:'聪明',py:'cōngming',letter:'E'},
+  {img:'🧠',label:'聪明',py:'cōngmíng',letter:'E'},
   {img:'🙋',label:'客人',py:'kèrén',letter:'F'},
 ];
 

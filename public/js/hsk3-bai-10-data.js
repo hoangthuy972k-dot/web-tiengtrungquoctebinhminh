@@ -687,20 +687,7 @@ var vocabData = [
         "vn": "Hơn một trăm á? Xe đạp cơ đấy!"
       }
     ],
-    "hanzi": [
-      {
-        "c": "骑",
-        "p": "qí",
-        "type": "左右结构 · Trái-phải",
-        "st": 11,
-        "ord": "马 trái → 奇 phải",
-        "rad": "马 (mã – ngựa)",
-        "mean": "cưỡi, đi (xe)",
-        "tip": "马(ngựa) + 奇(kỳ lạ, đơn lẻ) → ngồi một mình trên NGỰA = CƯỠI, mở rộng nghĩa ĐI (xe đạp, xe máy).",
-        "cf": "寄 (jì – \"gửi\", có bộ 宀\")",
-        "w": "自行车 / 骑自行车"
-      }
-    ],
+    "hanzi": [],
     "checkList": [
       {
         "promptLang": "vi",

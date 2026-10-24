@@ -2147,7 +2147,7 @@ var vocabData = [
   {
     "n": 25,
     "zh": "一直",
-    "py": "yìzhí",
+    "py": "yīzhí",
     "pos": "Phó từ",
     "vn": "luôn luôn, suốt; (đi) thẳng",
     "hv": "nhất trực",

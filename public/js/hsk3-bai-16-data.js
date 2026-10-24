@@ -1405,7 +1405,7 @@ var vocabData = [
   {
     "n": 14,
     "zh": "关系",
-    "py": "guānxi",
+    "py": "guānxì",
     "pos": "Danh từ",
     "vn": "quan hệ",
     "hv": "quan hệ",

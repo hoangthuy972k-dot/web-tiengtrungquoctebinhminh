@@ -1026,7 +1026,7 @@ var vocabData = [
       note:'一……就……; V + 个没完 = làm mãi không dứt.',pair:'一……就……'}
    ]},
 
-  {n:38,zh:'吃苦',py:'chī kǔ',pos:'Động từ',vn:'chịu khổ, chịu cực',hv:'cật khổ',em:'💪',lesson:1,
+  {n:38,zh:'吃苦',py:'chī kǔ',pos:'Động từ',vn:'chịu khổ, chịu cực',hv:'ngật khổ',em:'💪',lesson:1,
    explain:['Chịu đựng gian khổ, vất vả. Là động từ ly hợp: 吃了很多苦, 吃过苦.','能吃苦 = chịu được khổ, chịu khó — lời khen trong công việc.'],
    usage:'吃苦 / 吃了不少苦 / 能吃苦 / 吃苦耐劳 (chịu thương chịu khó). Không mang tân ngữ phía sau: không nói 吃苦工作.',
    collo:['能吃苦','吃了不少苦','吃苦耐劳','怕吃苦'],
@@ -1388,7 +1388,7 @@ var hvBridgeData = {
      warn:'Không phải "việc gốc/việc chính". 本事 = tài cán, năng lực (khẩu ngữ, đọc běnshi nhẹ).'},
     {zh:'难得',hv:'nan đắc',vn:'hiếm có, quý',
      warn:'Đừng dịch "khó được" theo nghĩa "khó đạt". 难得的机会 = cơ hội hiếm có; 难得回家 = hiếm khi về nhà.'},
-    {zh:'吃苦',hv:'cật khổ',vn:'chịu khổ',
+    {zh:'吃苦',hv:'ngật khổ',vn:'chịu khổ',
      warn:'Không phải "ăn đồ đắng". 吃 ở đây là "chịu, gánh" (như 吃亏 = chịu thiệt).'},
     {zh:'目光',hv:'mục quang',vn:'ánh mắt; tầm nhìn',
      warn:'"Quang" không phải ánh sáng thật: 目光 là cái nhìn, ánh mắt; 目光长远 = nhìn xa trông rộng.'},

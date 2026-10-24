@@ -1078,7 +1078,7 @@ var vocabData = [
     "py": "wǎn",
     "pos": "Danh từ",
     "vn": "bát, chén (còn dùng làm lượng từ: 一碗 – một bát)",
-    "hv": "uyển",
+    "hv": "oản",
     "em": "🍚",
     "lesson": 2,
     "ex_zh": "服务员，再给我们拿一双筷子、一个勺子和一个碗。",
@@ -2640,7 +2640,7 @@ var mcData = [
   { q: '早上我＿＿喝了一杯咖啡，什么都没吃。', opts: ['又', '还', '只', '都'], ans: 2, exp: '只 + động từ = chỉ; vế sau 什么都没吃 cho thấy ngoài cà phê không ăn gì. 又/还 (lại/còn) mâu thuẫn với ý này.' },
   { q: 'Chọn cách nói đúng: "Món này vừa rẻ vừa ngon."', opts: ['这个菜又便宜和好吃。', '这个菜又很便宜又很好吃。', '这个菜又便宜又好吃。', '这个菜便宜又又好吃。'], ans: 2, exp: '又A又B = vừa A vừa B; sau 又 dùng thẳng tính từ, không thêm 很 và không dùng 和 để nối.' },
   { q: '"哪个菜都好吃。" — 「哪个」 ở đây có nghĩa là gì?', opts: ['Món nào? (đang hỏi)', 'Bất kỳ món nào (món nào cũng)', 'Món này', 'Món kia'], ans: 1, exp: '哪个 + 都 = bất kỳ cái nào cũng (phiếm chỉ), không phải câu hỏi. Câu này nghĩa là món nào cũng ngon.' },
-  { q: 'Chọn câu đúng: "Bạn muốn đi đâu thì chúng ta đi đó."', opts: ['你想去哪儿，就我们去哪儿。', '你想去哪儿，我们就去哪儿。', '你想去哪儿？我们就去哪儿？', '我们想去哪儿，你就去哪儿。'], ans: 1, exp: 'Hai đại từ nghi vấn hô ứng: 你想去哪儿，我们就去哪儿. 就 đứng sau chủ ngữ vế sau, trước động từ.' }
+  { q: 'Chọn câu đúng: "Bạn muốn đi đâu thì chúng ta đi đó."', opts: ['你想去哪儿，就我们去哪儿。', '你想去哪儿，我们就去哪儿。', '你想去哪儿，我们去就哪儿。', '我们想去哪儿，你就去哪儿。'], ans: 1, exp: 'Hai đại từ nghi vấn hô ứng: 你想去哪儿，我们就去哪儿. 就 đứng sau chủ ngữ vế sau, trước động từ.' }
 ];
 
 var speakingData = {

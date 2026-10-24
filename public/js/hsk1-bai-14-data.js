@@ -609,7 +609,7 @@ var vocabData = [
   {
     "n": 8,
     "zh": "回来",
-    "py": "huílai",
+    "py": "huílái",
     "pos": "Động từ",
     "vn": "quay về, trở lại",
     "hv": "hồi lai",

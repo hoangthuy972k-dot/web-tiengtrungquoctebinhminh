@@ -308,7 +308,9 @@ function hsk3GiuHanTu(){ return /hsk(?:[13]|[123]v3)-bai-\d+|\/bai-\d+\.html/.te
 // Khoi chiet tu Han tu — dung chung cho ca hai bo cuc (the cu va o HSK 3/4)
 function hzListHtml(v,vi){
   return (v.hanzi||[]).map(function(h,hi){
-    const hasWriter=(typeof STROKE_DATA!=='undefined')&&!!STROKE_DATA[h.c]&&(typeof HanziWriter!=='undefined');
+    // Net chu nap tre (hzNap): luc ve the chua co STROKE_DATA thi cu hien nut,
+    // nap xong chu nao khong co du lieu se bi go nut (hzGoNutThieu)
+    const hasWriter=hzSan()?!!STROKE_DATA[h.c]:!!HZ_STROKES_URL;
     return '<div class="hz-item"><div class="hz-writer-wrap">'+
       '<div class="hz-writer-box" id="hzw'+vi+'_'+hi+'"><span class="hz-fallback">'+h.c+'</span></div>'+
       '<div class="hz-writer-under"><span class="hzw-py">'+h.p+'</span>'+
@@ -546,17 +548,64 @@ function buildVocab(){
 // ══════════════════════════════════════════
 const hzWriters={};
 const hzQuizTok={};
+// Nap tre: trang bai khong con the <script> hanzi-writer + -strokes.js (~30-60KB)
+// ma chi khai bao <meta name="hz-strokes" content="/js/...-strokes.js?v=...">.
+// Hai file chi duoc tai khi o chu Han dau tien lot vao man hinh (mo the tu vung)
+// hoac khi bam "Luyen viet" — hoc sinh chi lam bai tap thi khong ton byte nao.
+const HZ_STROKES_URL=(function(){
+  const m=document.querySelector('meta[name="hz-strokes"]');
+  return m?m.getAttribute('content'):'';
+})();
+let hzNapP=null;
+function hzSan(){ return typeof HanziWriter!=='undefined'&&typeof STROKE_DATA!=='undefined'; }
+function hzNapScript(src){
+  return new Promise(function(ok,loi){
+    const s=document.createElement('script');
+    s.src=src; s.onload=ok; s.onerror=loi;
+    document.head.appendChild(s);
+  });
+}
+function hzNap(){
+  if(hzSan()) return Promise.resolve(true);
+  if(!HZ_STROKES_URL) return Promise.resolve(false);
+  if(!hzNapP){
+    hzNapP=Promise.all([
+      typeof HanziWriter!=='undefined'?null:hzNapScript('/js/vendor/hanzi-writer.min.js'),
+      typeof STROKE_DATA!=='undefined'?null:hzNapScript(HZ_STROKES_URL)
+    ]).then(function(){ hzGoNutThieu(); return hzSan(); },function(){
+      hzNapP=null;   // mat mang: lan sau mo the se thu lai
+      return false;
+    });
+  }
+  return hzNapP;
+}
+// Nap xong: chu nao khong co du lieu net thi go nut "Luyen viet" + cham bo thu
+function hzGoNutThieu(){
+  if(!hzSan()) return;
+  document.querySelectorAll('.hz-writer-box').forEach(function(el){
+    const fb=el.querySelector('.hz-fallback');
+    if(!fb||STROKE_DATA[fb.textContent]) return;
+    const item=el.closest('.hz-item');
+    if(!item) return;
+    item.querySelectorAll('.hz-quiz-btn,.hz-rad-dot').forEach(function(x){ x.remove(); });
+  });
+}
+function hzHien(el){
+  if(hzSan()){ showHzWriter(el); return; }
+  hzNap().then(function(ok){ if(ok&&el.isConnected&&el.dataset.hzVis==='1') showHzWriter(el); });
+}
 // Net chu tu chay khi o chu hien tren man hinh (the tu vung da lat), tam dung khi khuat
 function observeHzBoxes(root){
-  if(typeof HanziWriter==='undefined'||typeof STROKE_DATA==='undefined') return;
+  if(!hzSan()&&!HZ_STROKES_URL) return;
   const boxes=root.querySelectorAll('.hz-writer-box');
   if(typeof IntersectionObserver==='undefined'){
-    boxes.forEach(function(el){ showHzWriter(el); });
+    boxes.forEach(function(el){ el.dataset.hzVis='1'; hzHien(el); });
     return;
   }
   const io=new IntersectionObserver(function(entries){
     entries.forEach(function(en){
-      if(en.isIntersecting) showHzWriter(en.target);
+      en.target.dataset.hzVis=en.isIntersecting?'1':'';
+      if(en.isIntersecting) hzHien(en.target);
       else hideHzWriter(en.target);
     });
   },{rootMargin:'120px 0px'});
@@ -591,6 +640,17 @@ function showHzWriter(el){
 function hzQuiz(vi,hi){
   const w=hzWriters[vi+'_'+hi];
   const fb=document.getElementById('hzfb'+vi+'_'+hi);
+  if(!w&&!hzSan()&&HZ_STROKES_URL){
+    // Net chu chua tai xong (nap tre) — tai roi ve o chu, xong moi bat dau luyen
+    if(fb)fb.textContent='⏳ Đang tải nét chữ...';
+    hzNap().then(function(ok){
+      const box=document.getElementById('hzw'+vi+'_'+hi);
+      if(ok&&box) showHzWriter(box);
+      if(ok&&hzWriters[vi+'_'+hi]) hzQuiz(vi,hi);
+      else if(fb) fb.textContent=ok?'Chữ này chưa có dữ liệu để luyện viết.':'Chưa tải được nét chữ, kiểm tra mạng rồi thử lại nhé.';
+    });
+    return;
+  }
   if(!w){ if(fb)fb.textContent='Chữ này chưa có dữ liệu để luyện viết.'; return; }
   const key=vi+'_'+hi;
   const tok=(hzQuizTok[key]||0)+1;

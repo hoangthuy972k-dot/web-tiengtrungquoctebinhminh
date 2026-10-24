@@ -19,6 +19,11 @@ var vocabData = [
         "zh": "今天天气怎么样？",
         "py": "Jīntiān tiānqì zěnmeyàng?",
         "vn": "Hôm nay thời tiết thế nào?"
+      },
+      {
+        "zh": "北京的天气很好。",
+        "py": "Běijīng de tiānqì hěn hǎo.",
+        "vn": "Thời tiết ở Bắc Kinh rất đẹp."
       }
     ],
     "hanzi": [],
@@ -90,6 +95,11 @@ var vocabData = [
         "zh": "昨天北京的天气怎么样？",
         "py": "Zuótiān Běijīng de tiānqì zěnmeyàng?",
         "vn": "Hôm qua thời tiết ở Bắc Kinh thế nào?"
+      },
+      {
+        "zh": "这个菜怎么样？",
+        "py": "Zhège cài zěnmeyàng?",
+        "vn": "Món này thế nào?"
       }
     ],
     "hanzi": [
@@ -173,6 +183,11 @@ var vocabData = [
         "zh": "太热了。",
         "py": "Tài rè le.",
         "vn": "Nóng lắm."
+      },
+      {
+        "zh": "这个杯子太小了。",
+        "py": "Zhège bēizi tài xiǎo le.",
+        "vn": "Cái cốc này nhỏ quá."
       }
     ],
     "hanzi": [
@@ -256,6 +271,11 @@ var vocabData = [
         "zh": "太热了。",
         "py": "Tài rè le.",
         "vn": "Nóng lắm."
+      },
+      {
+        "zh": "今天很热。",
+        "py": "Jīntiān hěn rè.",
+        "vn": "Hôm nay trời nóng."
       }
     ],
     "hanzi": [
@@ -340,6 +360,11 @@ var vocabData = [
         "zh": "不冷不热。",
         "py": "Bù lěng bú rè.",
         "vn": "Không lạnh cũng không nóng."
+      },
+      {
+        "zh": "昨天太冷了。",
+        "py": "Zuótiān tài lěng le.",
+        "vn": "Hôm qua lạnh quá."
       }
     ],
     "hanzi": [
@@ -423,6 +448,11 @@ var vocabData = [
         "zh": "今天会下雨吗？",
         "py": "Jīntiān huì xià yǔ ma?",
         "vn": "Hôm nay có mưa không nhỉ?"
+      },
+      {
+        "zh": "下雨了！",
+        "py": "Xià yǔ le!",
+        "vn": "Trời mưa rồi!"
       }
     ],
     "hanzi": [
@@ -506,6 +536,11 @@ var vocabData = [
         "zh": "王小姐今天会来吗？",
         "py": "Wáng xiǎojiě jīntiān huì lái ma?",
         "vn": "Hôm nay cô Vương có đến không nhỉ?"
+      },
+      {
+        "zh": "李小姐是我的朋友。",
+        "py": "Lǐ xiǎojiě shì wǒ de péngyou.",
+        "vn": "Cô Lý là bạn của tôi."
       }
     ],
     "hanzi": [
@@ -589,6 +624,11 @@ var vocabData = [
         "zh": "王小姐今天会来吗？",
         "py": "Wáng xiǎojiě jīntiān huì lái ma?",
         "vn": "Hôm nay cô Vương có đến không nhỉ?"
+      },
+      {
+        "zh": "你什么时候来北京？",
+        "py": "Nǐ shénme shíhou lái Běijīng?",
+        "vn": "Khi nào bạn đến Bắc Kinh?"
       }
     ],
     "hanzi": [
@@ -672,6 +712,11 @@ var vocabData = [
         "zh": "你身体怎么样？",
         "py": "Nǐ shēntǐ zěnmeyàng?",
         "vn": "Sức khỏe của anh thế nào?"
+      },
+      {
+        "zh": "我妈妈身体很好。",
+        "py": "Wǒ māma shēntǐ hěn hǎo.",
+        "vn": "Mẹ tôi sức khỏe rất tốt."
       }
     ],
     "hanzi": [
@@ -768,6 +813,11 @@ var vocabData = [
         "zh": "不爱吃饭。",
         "py": "Bú ài chī fàn.",
         "vn": "Chẳng muốn ăn cơm."
+      },
+      {
+        "zh": "我爱吃中国菜。",
+        "py": "Wǒ ài chī Zhōngguó cài.",
+        "vn": "Tôi rất thích ăn món Trung Quốc."
       }
     ],
     "hanzi": [
@@ -851,6 +901,11 @@ var vocabData = [
         "zh": "你多吃些水果。",
         "py": "Nǐ duō chī xiē shuǐguǒ.",
         "vn": "Anh hãy ăn thêm một ít trái cây."
+      },
+      {
+        "zh": "我想买些水果。",
+        "py": "Wǒ xiǎng mǎi xiē shuǐguǒ.",
+        "vn": "Tôi muốn mua ít hoa quả."
       }
     ],
     "hanzi": [
@@ -934,6 +989,11 @@ var vocabData = [
         "zh": "你多吃些水果。",
         "py": "Nǐ duō chī xiē shuǐguǒ.",
         "vn": "Anh hãy ăn thêm một ít trái cây."
+      },
+      {
+        "zh": "你爱吃什么水果？",
+        "py": "Nǐ ài chī shénme shuǐguǒ?",
+        "vn": "Bạn thích ăn hoa quả gì?"
       }
     ],
     "hanzi": [
@@ -1030,6 +1090,11 @@ var vocabData = [
         "zh": "多喝水。",
         "py": "Duō hē shuǐ.",
         "vn": "Uống thêm nước nhé."
+      },
+      {
+        "zh": "我想喝水。",
+        "py": "Wǒ xiǎng hē shuǐ.",
+        "vn": "Tôi muốn uống nước."
       }
     ],
     "hanzi": [],
@@ -1120,14 +1185,14 @@ var dialogData = [
 
 // Điền từ — đổi tình huống/thời tiết so với bài khoá
 var fillData = [
-  {pre:'Bạn hỏi thời tiết hôm nay: “今天天气',blank:'怎么样',post:'？”',hint:'(thế nào)',ans:'怎么样'},
-  {pre:'Bạn nói trời nóng quá: “今天',blank:'太',post:'热了。”',hint:'(quá, lắm)',ans:'太'},
-  {pre:'Bạn nói thời tiết không lạnh cũng không nóng: “今天不冷不',blank:'热',post:'。”',hint:'(nóng)',ans:'热'},
-  {pre:'Bạn nói trời lạnh: “今天很',blank:'冷',post:'。”',hint:'(lạnh)',ans:'冷'},
-  {pre:'Bạn hỏi ngày mai có mưa không: “明天会',blank:'下雨',post:'吗？”',hint:'(có mưa)',ans:'下雨'},
-  {pre:'Bạn hỏi thăm sức khỏe: “你',blank:'身体',post:'怎么样？”',hint:'(sức khỏe, cơ thể)',ans:'身体'},
-  {pre:'Bạn khuyên ai đó ăn thêm trái cây: “你多吃',blank:'些',post:'水果。”',hint:'(một ít, một vài)',ans:'些'},
-  {pre:'Bạn nói mình không thích ăn cơm khi trời nóng: “天气太热了，我不',blank:'爱',post:'吃饭。”',hint:'(thích, muốn)',ans:'爱'},
+  {pre:'Bạn hỏi thời tiết hôm nay: “今天天气',blank:'怎么样',post:'？”',hint:'(thế nào)',ans:'怎么样',exp:'天气怎么样？ dùng để hỏi thời tiết.'},
+  {pre:'Bạn nói trời nóng quá: “今天',blank:'太',post:'热了。”',hint:'(quá, lắm)',ans:'太',exp:'太 + tính từ + 了: 太热了 = nóng quá.'},
+  {pre:'Bạn nói thời tiết không lạnh cũng không nóng: “今天不冷不',blank:'热',post:'。”',hint:'(nóng)',ans:'热',exp:'不冷不热 = không lạnh không nóng, dễ chịu.'},
+  {pre:'Bạn nói trời lạnh: “今天很',blank:'冷',post:'。”',hint:'(lạnh)',ans:'冷',exp:'很冷 = rất lạnh.'},
+  {pre:'Bạn hỏi ngày mai có mưa không: “明天会',blank:'下雨',post:'吗？”',hint:'(có mưa)',ans:'下雨',exp:'会下雨 = sẽ mưa, có khả năng mưa.'},
+  {pre:'Bạn hỏi thăm sức khỏe: “你',blank:'身体',post:'怎么样？”',hint:'(sức khỏe, cơ thể)',ans:'身体',exp:'身体 + 怎么样 = sức khỏe thế nào.'},
+  {pre:'Bạn khuyên ai đó ăn thêm trái cây: “你多吃',blank:'些',post:'水果。”',hint:'(một ít, một vài)',ans:'些',exp:'些 = một ít: 多吃些水果.'},
+  {pre:'Bạn nói mình không thích ăn cơm khi trời nóng: “天气太热了，我不',blank:'爱',post:'吃饭。”',hint:'(thích, muốn)',ans:'爱',exp:'不爱 + động từ = không thích làm gì.'},
 ];
 
 // Sắp xếp — đổi câu chữ/tình huống so với bài khoá
@@ -1150,16 +1215,16 @@ var matchData = [
 
 // Trắc nghiệm — trọng tâm 怎么样/太……了/会 dự đoán, không audio
 var mcData = [
-  {q:'今天天气＿＿？',opts:['怎么样','什么','怎么','哪儿'],ans:0},
-  {q:'今天＿＿热了。',opts:['太','很','不','没'],ans:0},
-  {q:'Phủ định của "太……了" (quá) thường dùng cấu trúc nào?',opts:['不太……','没太……','别太……','无太……'],ans:0},
-  {q:'明天会＿＿吗？(biểu thị khả năng sẽ xảy ra)',opts:['来','是','有','在'],ans:0},
-  {q:'"身体" nghĩa là gì?',opts:['sức khỏe, cơ thể','tâm trạng','tính cách','ngoại hình'],ans:0},
-  {q:'"水果" nghĩa là gì?',opts:['trái cây, hoa quả','rau củ','nước uống','đồ ăn'],ans:0},
-  {q:'"冷" nghĩa là gì?',opts:['lạnh','nóng','ấm','mát'],ans:0},
-  {q:'Câu vị ngữ chủ-vị nào ĐÚNG?',opts:['我身体不太好。','我不太好身体。','身体我不太好。','不太好我身体。'],ans:0},
-  {q:'"爱" trong "不爱吃饭" nghĩa là gì?',opts:['thích, muốn','yêu (tình cảm nam nữ)','ghét','sợ'],ans:0},
-  {q:'"下雨" nghĩa là gì?',opts:['đổ mưa, có mưa','có nắng','có gió','có tuyết'],ans:0},
+  {q:'今天天气＿＿？',opts:['怎么样','什么','怎么','哪儿'],ans:0,exp:'怎么样 dùng để hỏi tình trạng, xin nhận xét: 天气怎么样？ — Thời tiết thế nào?'},
+  {q:'今天＿＿热了。',opts:['太','很','不','没'],ans:0,exp:'太 + tính từ + 了 = quá…: 太热了.'},
+  {q:'Phủ định của "太……了" (quá) thường dùng cấu trúc nào?',opts:['不太……','没太……','别太……','无太……'],ans:0,exp:'Phủ định nhẹ nhàng của 太……了 là 不太 + tính từ: 不太好 = không tốt lắm.'},
+  {q:'明天会＿＿吗？(biểu thị khả năng sẽ xảy ra)',opts:['来','是','有','在'],ans:0,exp:'Sau 会 (sẽ, có khả năng) cần một động từ; 来 (đến) hợp nghĩa: 明天会来吗？'},
+  {q:'"身体" nghĩa là gì?',opts:['sức khỏe, cơ thể','tâm trạng','tính cách','ngoại hình'],ans:0,exp:'身体 = cơ thể, sức khỏe: 你身体怎么样？ là câu hỏi thăm sức khỏe.'},
+  {q:'"水果" nghĩa là gì?',opts:['trái cây, hoa quả','rau củ','nước uống','đồ ăn'],ans:0,exp:'水果 = 水 (nước) + 果 (quả): hoa quả, trái cây.'},
+  {q:'"冷" nghĩa là gì?',opts:['lạnh','nóng','ấm','mát'],ans:0,exp:'冷 (lěng) = lạnh; nóng là 热 (rè).'},
+  {q:'Câu vị ngữ chủ-vị nào ĐÚNG?',opts:['我身体不太好。','我不太好身体。','身体我不太好。','不太好我身体。'],ans:0,exp:'Câu vị ngữ chủ–vị: 我 (chủ ngữ) + 身体不太好 (cụm chủ–vị làm vị ngữ).'},
+  {q:'"爱" trong "不爱吃饭" nghĩa là gì?',opts:['thích, muốn','yêu (tình cảm nam nữ)','ghét','sợ'],ans:0,exp:'爱 + động từ = thích làm gì: 不爱吃饭 = không thích ăn.'},
+  {q:'"下雨" nghĩa là gì?',opts:['đổ mưa, có mưa','có nắng','có gió','có tuyết'],ans:0,exp:'下雨 = đổ mưa (下 là rơi xuống, 雨 là mưa).'},
 ];
 
 var speakingData = {
@@ -1223,4 +1288,31 @@ var translateDataRev = [
   {vi:'Sức khỏe tôi không tốt lắm, mai không thể đi học được.', zh:'我身体不太好，明天不能去学校。', py:'Wǒ shēntǐ bú tài hǎo, míngtiān bù néng qù xuéxiào.'},
   {vi:'Anh ấy có đến không? Anh ấy sẽ đến.', zh:'他会来吗？他会来。', py:'Tā huì lái ma? Tā huì lái.'},
   {vi:'Trời mưa rồi, thời tiết không tốt lắm.', zh:'下雨了，天气不太好。', py:'Xià yǔ le, tiānqì bú tài hǎo.'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'今天天气怎么样？今天太冷了。',
+   questions:[
+     {q:'Thời tiết hôm nay thế nào?',opts:['Rất nóng','Rất lạnh','Có mưa'],ans:1},
+   ]},
+  {audio:'明天会下雨吗？明天不会下雨，天气很好。',
+   questions:[
+     {q:'Ngày mai thời tiết ra sao?',opts:['Có mưa','Đẹp, không mưa','Lạnh quá'],ans:1},
+   ]},
+  {audio:'你身体怎么样？我身体很好，谢谢！',
+   questions:[
+     {q:'Sức khỏe người trả lời thế nào?',opts:['Rất tốt','Không tốt lắm','Bị ốm'],ans:0},
+   ]},
+  {audio:'天气太热了，我不想吃饭，我想喝水。',
+   questions:[
+     {q:'Vì sao người nói không muốn ăn?',opts:['Trời quá nóng','Trời quá lạnh','Đã ăn rồi'],ans:0},
+     {q:'Người nói muốn làm gì?',opts:['Ăn hoa quả','Uống nước','Uống trà'],ans:1},
+   ]},
+  {audio:'王小姐今天会来吗？会来，她下午三点来。',
+   questions:[
+     {q:'Cô Vương đến lúc mấy giờ?',opts:['3 giờ sáng','3 giờ chiều','Không đến'],ans:1},
+   ]},
 ];

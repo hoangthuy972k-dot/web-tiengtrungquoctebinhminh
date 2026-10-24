@@ -6,6 +6,7 @@ var vocabData = [
    ex_zh:'我有一个哥哥。',ex_py:'Wǒ yǒu yí ge gēge.',ex_vn:'Mình có một anh trai.',
    exList:[
      {zh:'我有一个哥哥。',py:'Wǒ yǒu yí ge gēge.',vn:'Mình có một anh trai.'},
+     {zh:'我有一个姐姐。',py:'Wǒ yǒu yí ge jiějie.',vn:'Tớ có một chị gái.'},
    ],
    hanzi:[
      {c:'有',p:'yǒu',type:'半包围结构 · Bán bao vây',st:6,ord:'ナ(biến thể) → 月(nguyệt) trong',rad:'月 (nguyệt – thịt/trăng)',mean:'có',
@@ -16,6 +17,7 @@ var vocabData = [
    ex_zh:'你有几个妹妹？',ex_py:'Nǐ yǒu jǐ ge mèimei?',ex_vn:'Bạn có mấy em gái?',
    exList:[
      {zh:'你有几个妹妹？',py:'Nǐ yǒu jǐ ge mèimei?',vn:'Bạn có mấy em gái?'},
+     {zh:'你有几个哥哥？',py:'Nǐ yǒu jǐ ge gēge?',vn:'Bạn có mấy anh trai?'},
    ],
    hanzi:[
      {c:'几',p:'jǐ',type:'独体字 · Chữ đơn',st:2,ord:'ノ→乙(biến thể)',rad:'几 (kỷ – tự thành bộ)',mean:'mấy',
@@ -26,6 +28,7 @@ var vocabData = [
    ex_zh:'我家有三口人。',ex_py:'Wǒ jiā yǒu sān kǒu rén.',ex_vn:'Nhà mình có ba người.',
    exList:[
      {zh:'我家有三口人。',py:'Wǒ jiā yǒu sān kǒu rén.',vn:'Nhà mình có ba người.'},
+     {zh:'我家有五口人。',py:'Wǒ jiā yǒu wǔ kǒu rén.',vn:'Nhà tớ có năm người.'},
    ],
    hanzi:[
      {c:'口',p:'kǒu',type:'独体字 · Tượng hình',st:3,ord:'丨→𠃌→一',rad:'口 (khẩu – tự thành bộ)',mean:'miệng; lượng từ đếm người',
@@ -36,6 +39,7 @@ var vocabData = [
    ex_zh:'爸爸和妈妈很高兴。',ex_py:'Bàba hé māma hěn gāoxìng.',ex_vn:'Bố và mẹ rất vui.',
    exList:[
      {zh:'爸爸和妈妈很高兴。',py:'Bàba hé māma hěn gāoxìng.',vn:'Bố và mẹ rất vui.'},
+     {zh:'我有一个哥哥和一个妹妹。',py:'Wǒ yǒu yí ge gēge hé yí ge mèimei.',vn:'Tớ có một anh trai và một em gái.'},
    ],
    hanzi:[
      {c:'和',p:'hé',type:'左右结构 · Trái-phải',st:8,ord:'禾(hòa) trái → 口(khẩu) phải',rad:'口 (khẩu – miệng)',mean:'và',
@@ -44,7 +48,7 @@ var vocabData = [
    ]},
   {n:5,zh:'没有',py:'méiyǒu',pos:'Động từ',vn:'không có', hv: 'một hữu',em:'🚫',lesson:2,
    ex_zh:'没有。我有一个妹妹。',ex_py:'Méiyǒu. Wǒ yǒu yí ge mèimei.',ex_vn:'Không có. Mình có một em gái.',
-   exList:[{zh:'没有。我有一个妹妹。',py:'Méiyǒu. Wǒ yǒu yí ge mèimei.',vn:'Không có. Mình có một em gái.'}],
+   exList:[{zh:'没有。我有一个妹妹。',py:'Méiyǒu. Wǒ yǒu yí ge mèimei.',vn:'Không có. Mình có một em gái.'},{zh:'我没有哥哥。',py:'Wǒ méiyǒu gēge.',vn:'Tớ không có anh trai.'}],
    hanzi:[
      {c:'没',p:'méi',type:'左右结构 · Trái-phải',st:7,ord:'氵(thuỷ) trái → 殳(biến thể) phải',rad:'氵 (thuỷ – nước)',mean:'không, không có',
       tip:'氵(nước) dâng lên che lấp mọi thứ → mang nghĩa KHÔNG CÒN, KHÔNG CÓ. (有 đã học ở trên)',
@@ -52,7 +56,7 @@ var vocabData = [
    ]},
   {n:6,zh:'个',py:'ge',pos:'Lượng từ',vn:'cái, con (lượng từ dùng chung)', hv: 'cá',em:'🔘',lesson:2,
    ex_zh:'我有一个妹妹。',ex_py:'Wǒ yǒu yí ge mèimei.',ex_vn:'Mình có một em gái.',
-   exList:[{zh:'我有一个妹妹。',py:'Wǒ yǒu yí ge mèimei.',vn:'Mình có một em gái.'}],
+   exList:[{zh:'我有一个妹妹。',py:'Wǒ yǒu yí ge mèimei.',vn:'Mình có một em gái.'},{zh:'我有三个妹妹。',py:'Wǒ yǒu sān ge mèimei.',vn:'Tớ có ba em gái.'}],
    hanzi:[
      {c:'个',p:'ge',type:'独体字 · Chữ đơn',st:3,ord:'丿→丨→㇏',rad:'人 (nhân, biến thể)',mean:'cái, con',
       tip:'Hình đơn giản một cá thể đứng riêng lẻ → lượng từ dùng CHUNG.',
@@ -62,6 +66,7 @@ var vocabData = [
    ex_zh:'我爸爸是老师。',ex_py:'Wǒ bàba shì lǎoshī.',ex_vn:'Bố mình là giáo viên.',
    exList:[
      {zh:'我爸爸是老师。',py:'Wǒ bàba shì lǎoshī.',vn:'Bố mình là giáo viên.'},
+     {zh:'爸爸，再见！',py:'Bàba, zàijiàn!',vn:'Con chào bố ạ!'},
    ],
    hanzi:[
      {c:'爸',p:'bà',type:'上下结构 · Trên-dưới',st:8,ord:'父(phụ) trên → 巴(ba) dưới',rad:'父 (phụ – cha)',mean:'cha, bố',
@@ -72,6 +77,7 @@ var vocabData = [
    ex_zh:'妈妈，再见！',ex_py:'Māma, zàijiàn!',ex_vn:'Con chào mẹ ạ!',
    exList:[
      {zh:'妈妈，再见！',py:'Māma, zàijiàn!',vn:'Con chào mẹ ạ!'},
+     {zh:'我妈妈是中国人。',py:'Wǒ māma shì Zhōngguó rén.',vn:'Mẹ tớ là người Trung Quốc.'},
    ],
    hanzi:[
      {c:'妈',p:'mā',type:'左右结构 · Trái-phải',st:6,ord:'女(nữ) trái → 马(mã) phải',rad:'女 (nữ – con gái)',mean:'mẹ',
@@ -80,7 +86,7 @@ var vocabData = [
    ]},
   {n:9,zh:'哥哥',py:'gēge',pos:'Danh từ',vn:'anh trai', hv: 'ca ca',em:'👦',lesson:2,
    ex_zh:'四口人，爸爸、妈妈、哥哥和我。',ex_py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',ex_vn:'Bốn người, bố, mẹ, anh trai và mình.',
-   exList:[{zh:'四口人，爸爸、妈妈、哥哥和我。',py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',vn:'Bốn người, bố, mẹ, anh trai và mình.'}],
+   exList:[{zh:'四口人，爸爸、妈妈、哥哥和我。',py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',vn:'Bốn người, bố, mẹ, anh trai và mình.'},{zh:'我哥哥叫明明。',py:'Wǒ gēge jiào Míngming.',vn:'Anh trai tớ tên là Minh Minh.'}],
    hanzi:[
      {c:'哥',p:'gē',type:'上下结构 · Trên-dưới',st:10,ord:'可(khả,biến thể) trên → 可,口(biến thể) dưới',rad:'口 (khẩu, phần trên)',mean:'anh trai',
       tip:'Hai chữ 口(miệng) chồng lên nhau → hai anh em cùng cất tiếng gọi, người lớn hơn là ANH.',
@@ -88,7 +94,7 @@ var vocabData = [
    ]},
   {n:10,zh:'姐姐',py:'jiějie',pos:'Danh từ',vn:'chị gái', hv: 'thư thư',em:'👧',lesson:2,
    ex_zh:'你有姐姐吗？',ex_py:'Nǐ yǒu jiějie ma?',ex_vn:'Bạn có chị gái không?',
-   exList:[{zh:'你有姐姐吗？',py:'Nǐ yǒu jiějie ma?',vn:'Bạn có chị gái không?'}],
+   exList:[{zh:'你有姐姐吗？',py:'Nǐ yǒu jiějie ma?',vn:'Bạn có chị gái không?'},{zh:'她是我姐姐。',py:'Tā shì wǒ jiějie.',vn:'Bạn ấy là chị gái tớ.'}],
    hanzi:[
      {c:'姐',p:'jiě',type:'左右结构 · Trái-phải',st:8,ord:'女(nữ) trái → 且(thả) phải',rad:'女 (nữ – con gái)',mean:'chị gái',
       tip:'女(nữ giới) + 且(hơn nữa) → người con gái LỚN HƠN trong nhà = CHỊ.',
@@ -98,6 +104,7 @@ var vocabData = [
    ex_zh:'我妹妹叫甜甜。',ex_py:'Wǒ mèimei jiào Tiántian.',ex_vn:'Em gái mình tên là Điềm Điềm.',
    exList:[
      {zh:'我妹妹叫甜甜。',py:'Wǒ mèimei jiào Tiántian.',vn:'Em gái mình tên là Điềm Điềm.'},
+     {zh:'你有妹妹吗？',py:'Nǐ yǒu mèimei ma?',vn:'Bạn có em gái không?'},
    ],
    hanzi:[
      {c:'妹',p:'mèi',type:'左右结构 · Trái-phải',st:8,ord:'女(nữ) trái → 未(vị) phải',rad:'女 (nữ – con gái)',mean:'em gái',
@@ -106,7 +113,7 @@ var vocabData = [
    ]},
   {n:12,zh:'家',py:'jiā',pos:'Danh từ',vn:'nhà, gia đình', hv: 'gia',em:'🏠',lesson:1,
    ex_zh:'你家有几口人？',ex_py:'Nǐ jiā yǒu jǐ kǒu rén?',ex_vn:'Nhà bạn có mấy người?',
-   exList:[{zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà bạn có mấy người?'}],
+   exList:[{zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà bạn có mấy người?'},{zh:'我家有爸爸、妈妈和我。',py:'Wǒ jiā yǒu bàba, māma hé wǒ.',vn:'Nhà tớ có bố, mẹ và tớ.'}],
    hanzi:[
      {c:'家',p:'jiā',type:'上下结构 · Trên-dưới',st:10,ord:'宀(miên) trên → 豕(thỉ) dưới',rad:'宀 (miên – mái nhà)',mean:'nhà, gia đình',
       tip:'宀(mái nhà) + 豕(con lợn) → thời xưa nuôi lợn dưới nhà sàn, biểu tượng của NHÀ.',
@@ -143,14 +150,14 @@ var dialogData = [
 
 // Điền từ — tình huống hỏi về gia đình
 var fillData = [
-  {pre:'Con hỏi nhà bạn có mấy người: “你家',blank:'有',post:'几口人？”',hint:'(có)',ans:'有'},
-  {pre:'Con hỏi số lượng dưới 10: “你家有',blank:'几',post:'口人？”',hint:'(mấy)',ans:'几'},
-  {pre:'Con đếm số người trong nhà: “四',blank:'口',post:'人”',hint:'(lượng từ đếm người)',ans:'口'},
-  {pre:'Con nối bố và mẹ: “爸爸',blank:'和',post:'妈妈”',hint:'(và)',ans:'和'},
-  {pre:'Con nói mình không có chị gái: “我',blank:'没有',post:'姐姐。”',hint:'(không có)',ans:'没有'},
-  {pre:'Con nói mình có một em gái: “我有一',blank:'个',post:'妹妹。”',hint:'(cái, con)',ans:'个'},
-  {pre:'Con giới thiệu người trong ảnh: “这是我',blank:'爸爸',post:'。”',hint:'(bố)',ans:'爸爸'},
-  {pre:'Con giới thiệu nhà mình: “我',blank:'家',post:'有三口人。”',hint:'(nhà, gia đình)',ans:'家'},
+  {pre:'Con hỏi nhà bạn có mấy người: “你家',blank:'有',post:'几口人？”',hint:'(có)',ans:'有',exp:'有 = có: 你家有几口人？'},
+  {pre:'Con hỏi số lượng dưới 10: “你家有',blank:'几',post:'口人？”',hint:'(mấy)',ans:'几',exp:'几 hỏi số lượng nhỏ dưới 10.'},
+  {pre:'Con đếm số người trong nhà: “四',blank:'口',post:'人”',hint:'(lượng từ đếm người)',ans:'口',exp:'Đếm người trong nhà dùng lượng từ 口: 四口人.'},
+  {pre:'Con nối bố và mẹ: “爸爸',blank:'和',post:'妈妈”',hint:'(và)',ans:'和',exp:'和 = và, nối 爸爸 với 妈妈.'},
+  {pre:'Con nói mình không có chị gái: “我',blank:'没有',post:'姐姐。”',hint:'(không có)',ans:'没有',exp:'没有 = không có (phủ định của 有, không nói 不有).'},
+  {pre:'Con nói mình có một em gái: “我有一',blank:'个',post:'妹妹。”',hint:'(cái, con)',ans:'个',exp:'Số + lượng từ + danh từ: 一 + 个 + 妹妹.'},
+  {pre:'Con giới thiệu người trong ảnh: “这是我',blank:'爸爸',post:'。”',hint:'(bố)',ans:'爸爸',exp:'爸爸 = bố.'},
+  {pre:'Con giới thiệu nhà mình: “我',blank:'家',post:'有三口人。”',hint:'(nhà, gia đình)',ans:'家',exp:'我家 = nhà mình; 家 là nhà, gia đình.'},
 ];
 
 // Sắp xếp — câu hỏi về gia đình
@@ -173,21 +180,21 @@ var matchData = [
 
 // Trắc nghiệm — không audio
 var mcData = [
-  {q:'你家＿＿几口人？(có)',opts:['有','是','叫','在'],ans:0},
-  {q:'你家有＿＿口人？(mấy — số nhỏ)',opts:['几','什么','哪','谁'],ans:0},
-  {q:'"没有" nghĩa là gì?',opts:['không có','có','muốn có','sẽ có'],ans:0},
-  {q:'"和" nghĩa là gì?',opts:['và','hoặc','nhưng','vì'],ans:0},
-  {q:'"哥哥" nghĩa là gì?',opts:['anh trai','em trai','chị gái','em gái'],ans:0},
-  {q:'"姐姐" nghĩa là gì?',opts:['chị gái','em gái','anh trai','em trai'],ans:0},
-  {q:'"妹妹" nghĩa là gì?',opts:['em gái','chị gái','em trai','anh trai'],ans:0},
-  {q:'"口" trong "几口人" dùng để làm gì?',opts:['lượng từ đếm người trong nhà','danh từ chỉ miệng','động từ ăn uống','tính từ'],ans:0},
-  {q:'"家" nghĩa là gì?',opts:['nhà, gia đình','trường học','cửa hàng','công viên'],ans:0},
-  {q:'Lượng từ nào dùng chung cho hầu hết đồ vật/con vật?',opts:['个','口','和','有'],ans:0},
-  {q:'"几" nghĩa là gì?',opts:['mấy (số nhỏ)','nhiều','ít','đủ'],ans:0},
-  {q:'Câu nào ĐÚNG khi nói "Nhà mình có bốn người."?',opts:['我家有四口人。','我家四有口人。','四口人我家有。','有我家四口人。'],ans:0},
-  {q:'"爸爸" nghĩa là gì?',opts:['bố','mẹ','anh trai','chị gái'],ans:0},
-  {q:'"妈妈" nghĩa là gì?',opts:['mẹ','bố','em gái','em trai'],ans:0},
-  {q:'Muốn hỏi số người trong nhà, con dùng câu nào?',opts:['你家有几口人？','你家在哪儿？','你叫什么？','你几岁？'],ans:0},
+  {q:'你家＿＿几口人？(có)',opts:['有','是','叫','在'],ans:0,exp:'有 (yǒu) = có: 你家有几口人？'},
+  {q:'你家有＿＿口人？(mấy — số nhỏ)',opts:['几','什么','哪','谁'],ans:0,exp:'几 hỏi số lượng nhỏ (dưới 10): 几口人 = mấy người.'},
+  {q:'"没有" nghĩa là gì?',opts:['không có','có','muốn có','sẽ có'],ans:0,exp:'没有 (méiyǒu) là phủ định của 有: không có. Không nói 不有.'},
+  {q:'"和" nghĩa là gì?',opts:['và','hoặc','nhưng','vì'],ans:0,exp:'和 (hé) = và, dùng nối hai người/vật: 爸爸和妈妈.'},
+  {q:'"哥哥" nghĩa là gì?',opts:['anh trai','em trai','chị gái','em gái'],ans:0,exp:'哥哥 (gēge) là anh trai.'},
+  {q:'"姐姐" nghĩa là gì?',opts:['chị gái','em gái','anh trai','em trai'],ans:0,exp:'姐姐 (jiějie) là chị gái.'},
+  {q:'"妹妹" nghĩa là gì?',opts:['em gái','chị gái','em trai','anh trai'],ans:0,exp:'妹妹 (mèimei) là em gái.'},
+  {q:'"口" trong "几口人" dùng để làm gì?',opts:['lượng từ đếm người trong nhà','danh từ chỉ miệng','động từ ăn uống','tính từ'],ans:0,exp:'口 là lượng từ đếm số người trong gia đình: 三口人.'},
+  {q:'"家" nghĩa là gì?',opts:['nhà, gia đình','trường học','cửa hàng','công viên'],ans:0,exp:'家 (jiā) là nhà, gia đình: 我家 = nhà mình.'},
+  {q:'Lượng từ nào dùng chung cho hầu hết đồ vật/con vật?',opts:['个','口','和','有'],ans:0,exp:'个 là lượng từ dùng chung nhiều nhất: 一个妹妹.'},
+  {q:'"几" nghĩa là gì?',opts:['mấy (số nhỏ)','nhiều','ít','đủ'],ans:0,exp:'几 (jǐ) = mấy, hỏi số lượng nhỏ.'},
+  {q:'Câu nào ĐÚNG khi nói "Nhà mình có bốn người."?',opts:['我家有四口人。','我家四有口人。','四口人我家有。','有我家四口人。'],ans:0,exp:'Trật tự: 我家 + 有 + 四口人 (số + 口 + 人).'},
+  {q:'"爸爸" nghĩa là gì?',opts:['bố','mẹ','anh trai','chị gái'],ans:0,exp:'爸爸 (bàba) là bố.'},
+  {q:'"妈妈" nghĩa là gì?',opts:['mẹ','bố','em gái','em trai'],ans:0,exp:'妈妈 (māma) là mẹ.'},
+  {q:'Muốn hỏi số người trong nhà, con dùng câu nào?',opts:['你家有几口人？','你家在哪儿？','你叫什么？','你几岁？'],ans:0,exp:'你家有几口人？ dùng hỏi nhà có mấy người.'},
 ];
 
 var speakingData = {
@@ -248,4 +255,32 @@ var translateData = [
 // ══════════════════════════════════════════
 var translateDataRev = [
   {vi:"Ba người, bố, mẹ và mình.", zh:"三口人，爸爸、妈妈和我。", py:"Sān kǒu rén, bàba, māma hé wǒ."},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'你家有几口人？我家有五口人：爸爸、妈妈、姐姐、妹妹和我。',
+   questions:[
+     {q:'Nhà bạn ấy có mấy người?',opts:['四','五','三'],ans:1},
+     {q:'Bạn ấy KHÔNG có ai?',opts:['姐姐','妹妹','哥哥'],ans:2},
+   ]},
+  {audio:'你有哥哥吗？没有。我有一个姐姐。',
+   questions:[
+     {q:'Bạn ấy có anh trai không?',opts:['Có','Không có','Có hai anh trai'],ans:1},
+   ]},
+  {audio:'我家有三口人，爸爸、妈妈和我。',
+   questions:[
+     {q:'Nhà bạn ấy có những ai?',opts:['Bố, mẹ và bạn ấy','Bố, mẹ và anh trai','Mẹ và em gái'],ans:0},
+   ]},
+  {audio:'你有几个妹妹？我有一个妹妹，她叫甜甜。',
+   questions:[
+     {q:'Em gái của bạn ấy tên là gì?',opts:['乐乐','甜甜','明明'],ans:1},
+   ]},
+  {audio:'我爸爸是老师，我妈妈是中国人。',
+   questions:[
+     {q:'Bố bạn ấy làm nghề gì?',opts:['Bác sĩ','Giáo viên','Bán hàng'],ans:1},
+     {q:'Mẹ bạn ấy là người nước nào?',opts:['Trung Quốc','Việt Nam','Không nói'],ans:0},
+   ]},
 ];

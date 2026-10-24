@@ -107,6 +107,11 @@ var vocabData = [
         "zh": "我想喝茶。",
         "py": "Wǒ xiǎng hē chá.",
         "vn": "Tôi muốn uống trà."
+      },
+      {
+        "zh": "你想喝茶吗？",
+        "py": "Nǐ xiǎng hē chá ma?",
+        "vn": "Bạn có muốn uống trà không?"
       }
     ],
     "hanzi": [
@@ -190,6 +195,11 @@ var vocabData = [
         "zh": "我想喝茶。",
         "py": "Wǒ xiǎng hē chá.",
         "vn": "Tôi muốn uống trà."
+      },
+      {
+        "zh": "我妈妈不喝茶。",
+        "py": "Wǒ māma bù hē chá.",
+        "vn": "Mẹ tôi không uống trà."
       }
     ],
     "hanzi": [
@@ -273,6 +283,11 @@ var vocabData = [
         "zh": "我想吃米饭。",
         "py": "Wǒ xiǎng chī mǐfàn.",
         "vn": "Tôi muốn ăn cơm."
+      },
+      {
+        "zh": "你想吃什么？",
+        "py": "Nǐ xiǎng chī shénme?",
+        "vn": "Bạn muốn ăn gì?"
       }
     ],
     "hanzi": [],
@@ -343,6 +358,11 @@ var vocabData = [
         "zh": "我想吃米饭。",
         "py": "Wǒ xiǎng chī mǐfàn.",
         "vn": "Tôi muốn ăn cơm."
+      },
+      {
+        "zh": "米饭很好吃。",
+        "py": "Mǐfàn hěn hǎochī.",
+        "vn": "Cơm rất ngon."
       }
     ],
     "hanzi": [
@@ -439,6 +459,11 @@ var vocabData = [
         "zh": "下午你想做什么？",
         "py": "Xiàwǔ nǐ xiǎng zuò shénme?",
         "vn": "Buổi chiều bạn muốn làm gì?"
+      },
+      {
+        "zh": "下午我去学校看书。",
+        "py": "Xiàwǔ wǒ qù xuéxiào kàn shū.",
+        "vn": "Buổi chiều tôi đến trường đọc sách."
       }
     ],
     "hanzi": [
@@ -535,6 +560,11 @@ var vocabData = [
         "zh": "下午我想去商店。",
         "py": "Xiàwǔ wǒ xiǎng qù shāngdiàn.",
         "vn": "Chiều nay mình muốn đến cửa hàng."
+      },
+      {
+        "zh": "你去商店买什么？",
+        "py": "Nǐ qù shāngdiàn mǎi shénme?",
+        "vn": "Bạn đến cửa hàng mua gì?"
       }
     ],
     "hanzi": [
@@ -631,6 +661,11 @@ var vocabData = [
         "zh": "你想买什么？",
         "py": "Nǐ xiǎng mǎi shénme?",
         "vn": "Bạn muốn mua gì vậy?"
+      },
+      {
+        "zh": "我想买茶。",
+        "py": "Wǒ xiǎng mǎi chá.",
+        "vn": "Tôi muốn mua trà."
       }
     ],
     "hanzi": [
@@ -714,6 +749,11 @@ var vocabData = [
         "zh": "我想买一个杯子。",
         "py": "Wǒ xiǎng mǎi yí ge bēizi.",
         "vn": "Mình muốn mua một cái ly."
+      },
+      {
+        "zh": "你想买几个杯子？",
+        "py": "Nǐ xiǎng mǎi jǐ ge bēizi?",
+        "vn": "Bạn muốn mua mấy cái cốc?"
       }
     ],
     "hanzi": [
@@ -797,6 +837,11 @@ var vocabData = [
         "zh": "我想买一个杯子。",
         "py": "Wǒ xiǎng mǎi yí ge bēizi.",
         "vn": "Mình muốn mua một cái ly."
+      },
+      {
+        "zh": "这是我的杯子。",
+        "py": "Zhè shì wǒ de bēizi.",
+        "vn": "Đây là cốc của tôi."
       }
     ],
     "hanzi": [
@@ -893,6 +938,11 @@ var vocabData = [
         "zh": "这个杯子多少钱？",
         "py": "Zhège bēizi duōshao qián?",
         "vn": "Cái ly này bao nhiêu tiền?"
+      },
+      {
+        "zh": "这是我妈妈。",
+        "py": "Zhè shì wǒ māma.",
+        "vn": "Đây là mẹ tôi."
       }
     ],
     "hanzi": [
@@ -976,6 +1026,11 @@ var vocabData = [
         "zh": "这个杯子多少钱？",
         "py": "Zhège bēizi duōshao qián?",
         "vn": "Cái ly này bao nhiêu tiền?"
+      },
+      {
+        "zh": "这个菜多少钱？",
+        "py": "Zhège cài duōshao qián?",
+        "vn": "Món này bao nhiêu tiền?"
       }
     ],
     "hanzi": [
@@ -1059,6 +1114,11 @@ var vocabData = [
         "zh": "这个杯子多少钱？",
         "py": "Zhège bēizi duōshao qián?",
         "vn": "Cái ly này bao nhiêu tiền?"
+      },
+      {
+        "zh": "那个杯子多少钱？",
+        "py": "Nàge bēizi duōshao qián?",
+        "vn": "Cái cốc kia bao nhiêu tiền?"
       }
     ],
     "hanzi": [
@@ -1142,6 +1202,11 @@ var vocabData = [
         "zh": "28块。",
         "py": "Èrshíbā kuài.",
         "vn": "28 đồng."
+      },
+      {
+        "zh": "这个杯子20块钱。",
+        "py": "Zhège bēizi èrshí kuài qián.",
+        "vn": "Cái cốc này 20 đồng."
       }
     ],
     "hanzi": [
@@ -1225,6 +1290,11 @@ var vocabData = [
         "zh": "那个杯子18块钱。",
         "py": "Nàge bēizi shíbā kuài qián.",
         "vn": "Ly đó 18 đồng."
+      },
+      {
+        "zh": "那是我的书。",
+        "py": "Nà shì wǒ de shū.",
+        "vn": "Kia là sách của tôi."
       }
     ],
     "hanzi": [
@@ -1328,14 +1398,14 @@ var dialogData = [
 
 // Điền từ — đổi đối tượng/giá so với bài khoá
 var fillData = [
-  {pre:'Bạn muốn gọi món uống ở quán: “我',blank:'想',post:'喝茶。”',hint:'(muốn)',ans:'想'},
-  {pre:'Bạn hỏi ai đó muốn ăn gì: “你想',blank:'吃',post:'什么？”',hint:'(ăn)',ans:'吃'},
-  {pre:'Bạn hỏi giá của cái ly: “这个杯子',blank:'多少',post:'钱？”',hint:'(bao nhiêu — số lớn)',ans:'多少'},
-  {pre:'Bạn nói giá mười lăm đồng: “十五',blank:'块',post:'。”',hint:'(đồng — đơn vị tiền khẩu ngữ)',ans:'块'},
-  {pre:'Bạn hỏi buổi chiều ai đó định làm gì: “',blank:'下午',post:'你想做什么？”',hint:'(buổi chiều)',ans:'下午'},
-  {pre:'Bạn nói mình muốn đi mua sắm: “我想去',blank:'商店',post:'。”',hint:'(cửa hàng)',ans:'商店'},
-  {pre:'Chỉ vào vật gần mình: “',blank:'这',post:'是我的杯子。”',hint:'(này, đây)',ans:'这'},
-  {pre:'Chỉ vào vật xa mình: “',blank:'那',post:'是你的杯子。”',hint:'(kia, đó)',ans:'那'},
+  {pre:'Bạn muốn gọi món uống ở quán: “我',blank:'想',post:'喝茶。”',hint:'(muốn)',ans:'想',exp:'想 + động từ = muốn làm gì: 我想喝茶.'},
+  {pre:'Bạn hỏi ai đó muốn ăn gì: “你想',blank:'吃',post:'什么？”',hint:'(ăn)',ans:'吃',exp:'吃 = ăn: 你想吃什么？'},
+  {pre:'Bạn hỏi giá của cái ly: “这个杯子',blank:'多少',post:'钱？”',hint:'(bao nhiêu — số lớn)',ans:'多少',exp:'多少钱 dùng để hỏi giá.'},
+  {pre:'Bạn nói giá mười lăm đồng: “十五',blank:'块',post:'。”',hint:'(đồng — đơn vị tiền khẩu ngữ)',ans:'块',exp:'块 là "đồng" trong khẩu ngữ: 十五块.'},
+  {pre:'Bạn hỏi buổi chiều ai đó định làm gì: “',blank:'下午',post:'你想做什么？”',hint:'(buổi chiều)',ans:'下午',exp:'下午 = buổi chiều, đặt đầu câu làm trạng ngữ thời gian.'},
+  {pre:'Bạn nói mình muốn đi mua sắm: “我想去',blank:'商店',post:'。”',hint:'(cửa hàng)',ans:'商店',exp:'去商店 = đi đến cửa hàng.'},
+  {pre:'Chỉ vào vật gần mình: “',blank:'这',post:'是我的杯子。”',hint:'(này, đây)',ans:'这',exp:'这 chỉ vật ở gần: 这是我的杯子.'},
+  {pre:'Chỉ vào vật xa mình: “',blank:'那',post:'是你的杯子。”',hint:'(kia, đó)',ans:'那',exp:'那 chỉ vật ở xa: 那是你的杯子.'},
 ];
 
 // Sắp xếp — đổi giá/đồ vật so với bài khoá
@@ -1358,16 +1428,16 @@ var matchData = [
 
 // Trắc nghiệm — trọng tâm 想/多少/这-那, không audio
 var mcData = [
-  {q:'我＿＿喝茶。(muốn)',opts:['想','会','是','有'],ans:0},
-  {q:'这个杯子＿＿钱？(hỏi số lớn hơn 10)',opts:['多少','几','怎么','什么'],ans:0},
-  {q:'"个" là loại từ nào?',opts:['lượng từ dùng chung','danh từ chỉ người','động từ','tính từ'],ans:0},
-  {q:'"这" và "那" khác nhau thế nào?',opts:['这 chỉ vật gần, 那 chỉ vật xa','这 chỉ vật xa, 那 chỉ vật gần','cả hai đều chỉ vật gần','cả hai đều chỉ vật xa'],ans:0},
-  {q:'Đơn vị tiền tệ khẩu ngữ (nói) là gì?',opts:['块','元','钱','毛'],ans:0},
-  {q:'"米饭" nghĩa là gì?',opts:['cơm','trà','nước','bánh'],ans:0},
-  {q:'"商店" nghĩa là gì?',opts:['cửa hàng','trường học','ngân hàng','thư viện'],ans:0},
-  {q:'"买" nghĩa là gì?',opts:['mua','bán','cho','tặng'],ans:0},
-  {q:'Câu nào ĐÚNG khi hỏi giá?',opts:['这个杯子多少钱？','这个杯子几钱？','这个杯子多钱？','这个杯子怎么钱？'],ans:0},
-  {q:'"喝" nghĩa là gì?',opts:['uống','ăn','nói','đọc'],ans:0},
+  {q:'我＿＿喝茶。(muốn)',opts:['想','会','是','有'],ans:0,exp:'想 + động từ: muốn làm gì — 我想喝茶. 会 là "biết", 是 là "là", 有 là "có".'},
+  {q:'这个杯子＿＿钱？(hỏi số lớn hơn 10)',opts:['多少','几','怎么','什么'],ans:0,exp:'Hỏi giá hoặc số lượng lớn dùng 多少: 多少钱？ — 几 chỉ dùng cho số nhỏ dưới 10.'},
+  {q:'"个" là loại từ nào?',opts:['lượng từ dùng chung','danh từ chỉ người','động từ','tính từ'],ans:0,exp:'个 là lượng từ dùng chung, đứng giữa số từ và danh từ: 一个杯子.'},
+  {q:'"这" và "那" khác nhau thế nào?',opts:['这 chỉ vật gần, 那 chỉ vật xa','这 chỉ vật xa, 那 chỉ vật gần','cả hai đều chỉ vật gần','cả hai đều chỉ vật xa'],ans:0,exp:'这 chỉ vật ở gần người nói (này), 那 chỉ vật ở xa (kia).'},
+  {q:'Đơn vị tiền tệ khẩu ngữ (nói) là gì?',opts:['块','元','钱','毛'],ans:0,exp:'块 là đơn vị tiền trong khẩu ngữ; văn viết dùng 元.'},
+  {q:'"米饭" nghĩa là gì?',opts:['cơm','trà','nước','bánh'],ans:0,exp:'米饭 (mǐfàn) là cơm.'},
+  {q:'"商店" nghĩa là gì?',opts:['cửa hàng','trường học','ngân hàng','thư viện'],ans:0,exp:'商店 (shāngdiàn) là cửa hàng.'},
+  {q:'"买" nghĩa là gì?',opts:['mua','bán','cho','tặng'],ans:0,exp:'买 (mǎi, thanh 3) là mua; đừng nhầm với 卖 (mài, thanh 4) là bán.'},
+  {q:'Câu nào ĐÚNG khi hỏi giá?',opts:['这个杯子多少钱？','这个杯子几钱？','这个杯子多钱？','这个杯子怎么钱？'],ans:0,exp:'Hỏi giá dùng 多少钱; không nói 几钱, 多钱 hay 怎么钱.'},
+  {q:'"喝" nghĩa là gì?',opts:['uống','ăn','nói','đọc'],ans:0,exp:'喝 (hē) là uống: 喝茶, 喝水; còn ăn là 吃.'},
 ];
 
 var speakingData = {
@@ -1431,4 +1501,31 @@ var translateDataRev = [
   {vi:'Cái cốc này bao nhiêu tiền? Năm đồng.', zh:'这个杯子多少钱？五块钱。', py:'Zhège bēizi duōshao qián? Wǔ kuài qián.'},
   {vi:'Chiều nay tôi muốn đi cửa hàng mua cơm.', zh:'下午我想去商店买米饭。', py:'Xiàwǔ wǒ xiǎng qù shāngdiàn mǎi mǐfàn.'},
   {vi:'Nhà tôi có ba cái cốc.', zh:'我家有三个杯子。', py:'Wǒ jiā yǒu sān ge bēizi.'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'你想喝茶吗？我不想喝茶。你想吃什么？我想吃米饭。',
+   questions:[
+     {q:'Người trả lời muốn gì?',opts:['Uống trà','Ăn cơm','Ăn món Trung Quốc'],ans:1},
+   ]},
+  {audio:'这个杯子多少钱？35块。那个呢？那个杯子20块。',
+   questions:[
+     {q:'Cái cốc thứ nhất giá bao nhiêu?',opts:['20 đồng','25 đồng','35 đồng'],ans:2},
+     {q:'Cái cốc kia giá bao nhiêu?',opts:['20 đồng','30 đồng','35 đồng'],ans:0},
+   ]},
+  {audio:'下午你想做什么？我想去商店买书。',
+   questions:[
+     {q:'Buổi chiều người trả lời muốn làm gì?',opts:['Đến trường','Đi mua sách','Uống trà'],ans:1},
+   ]},
+  {audio:'我妈妈想喝茶，我去商店买茶。',
+   questions:[
+     {q:'Người nói đến cửa hàng mua gì?',opts:['Cốc','Trà','Cơm'],ans:1},
+   ]},
+  {audio:'请问，这个菜多少钱？这个菜40块，米饭3块。',
+   questions:[
+     {q:'Món ăn giá bao nhiêu?',opts:['3 đồng','14 đồng','40 đồng'],ans:2},
+   ]},
 ];

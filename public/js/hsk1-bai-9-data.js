@@ -19,6 +19,11 @@ var vocabData = [
         "zh": "小猫在哪儿？",
         "py": "Xiǎo māo zài nǎr?",
         "vn": "Con mèo đâu rồi?"
+      },
+      {
+        "zh": "这个杯子很小。",
+        "py": "Zhège bēizi hěn xiǎo.",
+        "vn": "Cái cốc này rất nhỏ."
       }
     ],
     "hanzi": [
@@ -103,6 +108,11 @@ var vocabData = [
         "zh": "小猫在那儿。",
         "py": "Xiǎo māo zài nàr.",
         "vn": "Con mèo ở đó kìa."
+      },
+      {
+        "zh": "你家有猫吗？",
+        "py": "Nǐ jiā yǒu māo ma?",
+        "vn": "Nhà bạn có mèo không?"
       }
     ],
     "hanzi": [
@@ -275,6 +285,11 @@ var vocabData = [
         "zh": "小猫在那儿。",
         "py": "Xiǎo māo zài nàr.",
         "vn": "Con mèo ở đó kìa."
+      },
+      {
+        "zh": "我的书在那儿。",
+        "py": "Wǒ de shū zài nàr.",
+        "vn": "Sách của tôi ở đằng kia."
       }
     ],
     "hanzi": [],
@@ -345,6 +360,11 @@ var vocabData = [
         "zh": "小狗在椅子下面。",
         "py": "Xiǎo gǒu zài yǐzi xiàmiàn.",
         "vn": "Con chó ở dưới ghế dựa."
+      },
+      {
+        "zh": "你的狗在哪儿？",
+        "py": "Nǐ de gǒu zài nǎr?",
+        "vn": "Con chó của bạn đâu rồi?"
       }
     ],
     "hanzi": [
@@ -428,6 +448,11 @@ var vocabData = [
         "zh": "小狗在椅子下面。",
         "py": "Xiǎo gǒu zài yǐzi xiàmiàn.",
         "vn": "Con chó ở dưới ghế dựa."
+      },
+      {
+        "zh": "那个椅子多少钱？",
+        "py": "Nàge yǐzi duōshao qián?",
+        "vn": "Cái ghế kia bao nhiêu tiền?"
       }
     ],
     "hanzi": [
@@ -512,6 +537,11 @@ var vocabData = [
         "zh": "小狗在椅子下面。",
         "py": "Xiǎo gǒu zài yǐzi xiàmiàn.",
         "vn": "Con chó ở dưới ghế dựa."
+      },
+      {
+        "zh": "我的杯子在椅子下面。",
+        "py": "Wǒ de bēizi zài yǐzi xiàmiàn.",
+        "vn": "Cốc của tôi ở dưới ghế."
       }
     ],
     "hanzi": [
@@ -595,6 +625,11 @@ var vocabData = [
         "zh": "我在学校工作。",
         "py": "Wǒ zài xuéxiào gōngzuò.",
         "vn": "Tôi làm việc ở trường học."
+      },
+      {
+        "zh": "我妈妈在商店工作。",
+        "py": "Wǒ māma zài shāngdiàn gōngzuò.",
+        "vn": "Mẹ tôi làm việc ở cửa hàng."
       }
     ],
     "hanzi": [],
@@ -666,6 +701,11 @@ var vocabData = [
         "zh": "你在哪儿工作？",
         "py": "Nǐ zài nǎr gōngzuò?",
         "vn": "Anh làm việc ở đâu?"
+      },
+      {
+        "zh": "你去哪儿？",
+        "py": "Nǐ qù nǎr?",
+        "vn": "Bạn đi đâu đấy?"
       }
     ],
     "hanzi": [],
@@ -736,6 +776,11 @@ var vocabData = [
         "zh": "我在学校工作。",
         "py": "Wǒ zài xuéxiào gōngzuò.",
         "vn": "Tôi làm việc ở trường học."
+      },
+      {
+        "zh": "你爸爸在哪儿工作？",
+        "py": "Nǐ bàba zài nǎr gōngzuò?",
+        "vn": "Bố bạn làm việc ở đâu?"
       }
     ],
     "hanzi": [
@@ -831,6 +876,11 @@ var vocabData = [
         "zh": "我儿子在医院工作。",
         "py": "Wǒ érzi zài yīyuàn gōngzuò.",
         "vn": "Con trai tôi làm việc ở bệnh viện."
+      },
+      {
+        "zh": "你儿子几岁了？",
+        "py": "Nǐ érzi jǐ suì le?",
+        "vn": "Con trai anh mấy tuổi rồi?"
       }
     ],
     "hanzi": [],
@@ -901,6 +951,11 @@ var vocabData = [
         "zh": "我儿子在医院工作，他是医生。",
         "py": "Wǒ érzi zài yīyuàn gōngzuò, tā shì yīshēng.",
         "vn": "Con trai tôi làm việc ở bệnh viện, nó là bác sĩ."
+      },
+      {
+        "zh": "明天我去医院。",
+        "py": "Míngtiān wǒ qù yīyuàn.",
+        "vn": "Ngày mai tôi đi bệnh viện."
       }
     ],
     "hanzi": [
@@ -997,6 +1052,11 @@ var vocabData = [
         "zh": "他是医生。",
         "py": "Tā shì yīshēng.",
         "vn": "Nó là bác sĩ."
+      },
+      {
+        "zh": "我爸爸是医生。",
+        "py": "Wǒ bàba shì yīshēng.",
+        "vn": "Bố tôi là bác sĩ."
       }
     ],
     "hanzi": [],
@@ -1067,6 +1127,11 @@ var vocabData = [
         "zh": "你爸爸在家吗？",
         "py": "Nǐ bàba zài jiā ma?",
         "vn": "Cha cô có ở nhà không?"
+      },
+      {
+        "zh": "爸爸在家看书。",
+        "py": "Bàba zài jiā kàn shū.",
+        "vn": "Bố đọc sách ở nhà."
       }
     ],
     "hanzi": [
@@ -1171,14 +1236,14 @@ var dialogData = [
 
 // Điền từ — đổi con vật/nơi chốn so với bài khoá
 var fillData = [
-  {pre:'Bạn hỏi con mèo đang ở đâu: “小猫',blank:'在',post:'哪儿？”',hint:'(ở — động từ)',ans:'在'},
-  {pre:'Bạn nói con chó ở dưới bàn: “小狗在桌子',blank:'下面',post:'。”',hint:'(bên dưới)',ans:'下面'},
-  {pre:'Bạn hỏi ai đó làm việc ở đâu: “你在',blank:'哪儿',post:'工作？”',hint:'(ở đâu)',ans:'哪儿'},
-  {pre:'Bạn nói mình làm việc ở bệnh viện: “我在',blank:'医院',post:'工作。”',hint:'(bệnh viện)',ans:'医院'},
-  {pre:'Bạn giới thiệu con trai mình là bác sĩ: “我儿子是',blank:'医生',post:'。”',hint:'(bác sĩ)',ans:'医生'},
-  {pre:'Bạn hỏi cha có ở nhà không: “你',blank:'爸爸',post:'在家吗？”',hint:'(cha, bố)',ans:'爸爸'},
-  {pre:'Bạn phủ định ai đó không có ở nhà: “他不',blank:'在',post:'家。”',hint:'(ở — động từ)',ans:'在'},
-  {pre:'Bạn hỏi vị trí một cái ghế: “',blank:'椅',post:'子在哪儿？”',hint:'(ghế)',ans:'椅'},
+  {pre:'Bạn hỏi con mèo đang ở đâu: “小猫',blank:'在',post:'哪儿？”',hint:'(ở — động từ)',ans:'在',exp:'在 + 哪儿: hỏi ai/cái gì đang ở đâu.'},
+  {pre:'Bạn nói con chó ở dưới bàn: “小狗在桌子',blank:'下面',post:'。”',hint:'(bên dưới)',ans:'下面',exp:'下面 = bên dưới: 在桌子下面.'},
+  {pre:'Bạn hỏi ai đó làm việc ở đâu: “你在',blank:'哪儿',post:'工作？”',hint:'(ở đâu)',ans:'哪儿',exp:'在哪儿工作 = làm việc ở đâu.'},
+  {pre:'Bạn nói mình làm việc ở bệnh viện: “我在',blank:'医院',post:'工作。”',hint:'(bệnh viện)',ans:'医院',exp:'在 + 医院 + 工作 = làm việc ở bệnh viện.'},
+  {pre:'Bạn giới thiệu con trai mình là bác sĩ: “我儿子是',blank:'医生',post:'。”',hint:'(bác sĩ)',ans:'医生',exp:'医生 = bác sĩ (nghề nghiệp), khác 医院 (bệnh viện).'},
+  {pre:'Bạn hỏi cha có ở nhà không: “你',blank:'爸爸',post:'在家吗？”',hint:'(cha, bố)',ans:'爸爸',exp:'爸爸 = bố: 你爸爸在家吗？'},
+  {pre:'Bạn phủ định ai đó không có ở nhà: “他不',blank:'在',post:'家。”',hint:'(ở — động từ)',ans:'在',exp:'Phủ định 在 bằng 不: 不在家 = không có ở nhà.'},
+  {pre:'Bạn hỏi vị trí một cái ghế: “',blank:'椅',post:'子在哪儿？”',hint:'(ghế)',ans:'椅',exp:'椅子 = cái ghế.'},
 ];
 
 // Sắp xếp — đổi con vật/vị trí so với bài khoá
@@ -1201,16 +1266,16 @@ var matchData = [
 
 // Trắc nghiệm — trọng tâm 在/哪儿, không audio
 var mcData = [
-  {q:'小猫＿＿哪儿？',opts:['在','是','有','去'],ans:0},
-  {q:'小狗在椅子＿＿。',opts:['下面','上面','里面','外面'],ans:0},
-  {q:'你在＿＿工作？',opts:['哪儿','什么','谁','怎么'],ans:0},
-  {q:'Giới từ "在" trong câu "我在学校工作" có nghĩa gì?',opts:['ở, tại (nơi chốn xảy ra hành động)','là','có','muốn'],ans:0},
-  {q:'"医生" nghĩa là gì?',opts:['bác sĩ','bệnh viện','giáo viên','học sinh'],ans:0},
-  {q:'"工作" nghĩa là gì?',opts:['làm việc, công việc','nghỉ ngơi','học tập','đi chơi'],ans:0},
-  {q:'"爸爸" nghĩa là gì?',opts:['cha, bố','mẹ','anh trai','ông nội'],ans:0},
-  {q:'Câu nào ĐÚNG khi phủ định "在" (không ở đâu đó)?',opts:['不在','没在','不是在','别在'],ans:0},
-  {q:'"哪儿" nghĩa là gì?',opts:['ở đâu, chỗ nào','ở đó','ở đây','cái nào'],ans:0},
-  {q:'"儿子" nghĩa là gì?',opts:['con trai','con gái','cháu trai','em trai'],ans:0},
+  {q:'小猫＿＿哪儿？',opts:['在','是','有','去'],ans:0,exp:'在 + nơi chốn làm động từ "ở": 小猫在哪儿？ — Con mèo ở đâu?'},
+  {q:'小狗在椅子＿＿。',opts:['下面','上面','里面','外面'],ans:0,exp:'下面 = bên dưới: 在椅子下面 = ở dưới ghế. 上面/里面/外面 là trên/trong/ngoài.'},
+  {q:'你在＿＿工作？',opts:['哪儿','什么','谁','怎么'],ans:0,exp:'哪儿 dùng để hỏi nơi chốn: 你在哪儿工作？'},
+  {q:'Giới từ "在" trong câu "我在学校工作" có nghĩa gì?',opts:['ở, tại (nơi chốn xảy ra hành động)','là','có','muốn'],ans:0,exp:'Giới từ 在 + nơi chốn + động từ chỉ nơi xảy ra hành động: 在学校工作 = làm việc ở trường.'},
+  {q:'"医生" nghĩa là gì?',opts:['bác sĩ','bệnh viện','giáo viên','học sinh'],ans:0,exp:'医生 (yīshēng) là bác sĩ; 医院 là bệnh viện.'},
+  {q:'"工作" nghĩa là gì?',opts:['làm việc, công việc','nghỉ ngơi','học tập','đi chơi'],ans:0,exp:'工作 (gōngzuò) vừa là động từ "làm việc" vừa là danh từ "công việc".'},
+  {q:'"爸爸" nghĩa là gì?',opts:['cha, bố','mẹ','anh trai','ông nội'],ans:0,exp:'爸爸 (bàba) là bố; mẹ là 妈妈.'},
+  {q:'Câu nào ĐÚNG khi phủ định "在" (không ở đâu đó)?',opts:['不在','没在','不是在','别在'],ans:0,exp:'Phủ định của 在 dùng 不在: 他不在家.'},
+  {q:'"哪儿" nghĩa là gì?',opts:['ở đâu, chỗ nào','ở đó','ở đây','cái nào'],ans:0,exp:'哪儿 (nǎr) = ở đâu; 那儿 (nàr) = ở đó — chú ý thanh điệu.'},
+  {q:'"儿子" nghĩa là gì?',opts:['con trai','con gái','cháu trai','em trai'],ans:0,exp:'儿子 (érzi) là con trai; con gái là 女儿.'},
 ];
 
 var speakingData = {
@@ -1274,4 +1339,31 @@ var translateDataRev = [
   {vi:'Con chó nhỏ ở đâu? Con chó nhỏ ở dưới ghế.', zh:'小狗在哪儿？小狗在椅子下面。', py:'Xiǎo gǒu zài nǎr? Xiǎo gǒu zài yǐzi xiàmiàn.'},
   {vi:'Con trai tôi có làm việc ở bệnh viện không?', zh:'我儿子在医院工作吗？', py:'Wǒ érzi zài yīyuàn gōngzuò ma?'},
   {vi:'Cái cốc của bố bạn ở đâu?', zh:'你爸爸的杯子在哪儿？', py:'Nǐ bàba de bēizi zài nǎr?'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'小猫在哪儿？小猫在椅子下面。',
+   questions:[
+     {q:'Con mèo ở đâu?',opts:['Trên ghế','Dưới ghế','Ở đằng kia'],ans:1},
+   ]},
+  {audio:'你爸爸在哪儿工作？他在医院工作，他是医生。',
+   questions:[
+     {q:'Bố của người trả lời làm nghề gì?',opts:['Giáo viên','Bác sĩ','Bán hàng'],ans:1},
+   ]},
+  {audio:'李月在家吗？她不在家，她在学校。',
+   questions:[
+     {q:'Lý Nguyệt đang ở đâu?',opts:['Ở nhà','Ở trường','Ở bệnh viện'],ans:1},
+   ]},
+  {audio:'我妈妈在商店工作。我爸爸在学校工作，他是汉语老师。',
+   questions:[
+     {q:'Mẹ người nói làm việc ở đâu?',opts:['Cửa hàng','Trường học','Bệnh viện'],ans:0},
+     {q:'Bố người nói làm nghề gì?',opts:['Bác sĩ','Giáo viên tiếng Trung','Học sinh'],ans:1},
+   ]},
+  {audio:'我的杯子在哪儿？你的杯子在那儿。',
+   questions:[
+     {q:'Người thứ nhất tìm cái gì?',opts:['Cái ghế','Cái cốc','Quyển sách'],ans:1},
+   ]},
 ];

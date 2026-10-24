@@ -19,6 +19,11 @@ var vocabData = [
         "zh": "你和李小姐是什么时候认识的？",
         "py": "Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?",
         "vn": "Cô và cô Lý quen nhau khi nào vậy?"
+      },
+      {
+        "zh": "你认识李老师吗？",
+        "py": "Nǐ rènshi Lǐ lǎoshī ma?",
+        "vn": "Bạn có quen cô Lý không?"
       }
     ],
     "hanzi": [
@@ -114,6 +119,11 @@ var vocabData = [
         "zh": "我们是2011年9月认识的。",
         "py": "Wǒmen shì èr líng yī yī nián jiǔ yuè rènshi de.",
         "vn": "Chúng tôi quen nhau vào tháng 9 năm 2011."
+      },
+      {
+        "zh": "我是2015年来北京的。",
+        "py": "Wǒ shì èr líng yī wǔ nián lái Běijīng de.",
+        "vn": "Tôi đến Bắc Kinh vào năm 2015."
       }
     ],
     "hanzi": [],
@@ -185,6 +195,11 @@ var vocabData = [
         "zh": "她是我大学同学。",
         "py": "Tā shì wǒ dàxué tóngxué.",
         "vn": "Cô ấy là bạn học cùng lớp đại học của tôi."
+      },
+      {
+        "zh": "你在哪个大学学习？",
+        "py": "Nǐ zài nǎge dàxué xuéxí?",
+        "vn": "Bạn học ở trường đại học nào?"
       }
     ],
     "hanzi": [],
@@ -256,6 +271,11 @@ var vocabData = [
         "zh": "你们是怎么来饭店的？",
         "py": "Nǐmen shì zěnme lái fàndiàn de?",
         "vn": "Anh chị đến khách sạn bằng cách nào?"
+      },
+      {
+        "zh": "我们在饭店吃饭吧。",
+        "py": "Wǒmen zài fàndiàn chī fàn ba.",
+        "vn": "Chúng ta ăn ở nhà hàng nhé."
       }
     ],
     "hanzi": [],
@@ -327,6 +347,11 @@ var vocabData = [
         "zh": "我们是坐出租车来的。",
         "py": "Wǒmen shì zuò chūzūchē lái de.",
         "vn": "Chúng tôi đi xe taxi đến."
+      },
+      {
+        "zh": "我们坐出租车去吧。",
+        "py": "Wǒmen zuò chūzūchē qù ba.",
+        "vn": "Chúng ta đi taxi nhé."
       }
     ],
     "hanzi": [
@@ -423,6 +448,11 @@ var vocabData = [
         "zh": "他是和朋友一起开车来的。",
         "py": "Tā shì hé péngyou yìqǐ kāi chē lái de.",
         "vn": "Cậu ấy lái xe cùng với bạn đến đây."
+      },
+      {
+        "zh": "我们一起去看电影吧！",
+        "py": "Wǒmen yìqǐ qù kàn diànyǐng ba!",
+        "vn": "Chúng mình cùng đi xem phim nhé!"
       }
     ],
     "hanzi": [
@@ -506,6 +536,11 @@ var vocabData = [
         "zh": "很高兴认识您！",
         "py": "Hěn gāoxìng rènshi nín!",
         "vn": "Rất vui được biết ngài!"
+      },
+      {
+        "zh": "今天我很高兴。",
+        "py": "Jīntiān wǒ hěn gāoxìng.",
+        "vn": "Hôm nay tôi rất vui."
       }
     ],
     "hanzi": [
@@ -602,6 +637,11 @@ var vocabData = [
         "zh": "听张先生说，您是坐飞机来北京的？",
         "py": "Tīng Zhāng xiānsheng shuō, nín shì zuò fēijī lái Běijīng de?",
         "vn": "Nghe ông Trương nói cô đáp máy bay đến Bắc Kinh, có phải không?"
+      },
+      {
+        "zh": "你听，下雨了。",
+        "py": "Nǐ tīng, xià yǔ le.",
+        "vn": "Bạn nghe kìa, trời mưa rồi."
       }
     ],
     "hanzi": [
@@ -685,6 +725,11 @@ var vocabData = [
         "zh": "您是坐飞机来北京的？",
         "py": "Nín shì zuò fēijī lái Běijīng de?",
         "vn": "Cô đáp máy bay đến Bắc Kinh phải không?"
+      },
+      {
+        "zh": "我是坐飞机来的。",
+        "py": "Wǒ shì zuò fēijī lái de.",
+        "vn": "Tôi đến bằng máy bay."
       }
     ],
     "hanzi": [
@@ -801,14 +846,14 @@ var dialogData = [
 
 // Điền từ — đổi năm/địa điểm/phương tiện so với bài khoá
 var fillData = [
-  {pre:'Bạn hỏi ai đó quen bạn mình khi nào: “你是什么时候',blank:'认识',post:'他的？”',hint:'(quen biết)',ans:'认识'},
-  {pre:'Bạn nói mình quen bạn ấy năm 2015: “我是2015',blank:'年',post:'认识他的。”',hint:'(năm)',ans:'年'},
-  {pre:'Bạn giới thiệu bạn học cùng đại học: “她是我',blank:'大学',post:'同学。”',hint:'(trường đại học)',ans:'大学'},
-  {pre:'Bạn hỏi ai đó đến khách sạn bằng gì: “你们是怎么来',blank:'饭店',post:'的？”',hint:'(khách sạn)',ans:'饭店'},
-  {pre:'Bạn nói mình đi taxi đến: “我们是坐',blank:'出租车',post:'来的。”',hint:'(xe taxi)',ans:'出租车'},
-  {pre:'Bạn nói rất vui được quen ai đó: “很',blank:'高兴',post:'认识您！”',hint:'(vui mừng)',ans:'高兴'},
-  {pre:'Bạn nói nghe ai đó kể lại: “',blank:'听',post:'张先生说……”',hint:'(nghe)',ans:'听'},
-  {pre:'Bạn nói mình đến bằng máy bay: “我是坐',blank:'飞机',post:'来的。”',hint:'(máy bay)',ans:'飞机'},
+  {pre:'Bạn hỏi ai đó quen bạn mình khi nào: “你是什么时候',blank:'认识',post:'他的？”',hint:'(quen biết)',ans:'认识',exp:'Câu 是……的 nhấn mạnh thời gian quen biết: 是什么时候认识他的？'},
+  {pre:'Bạn nói mình quen bạn ấy năm 2015: “我是2015',blank:'年',post:'认识他的。”',hint:'(năm)',ans:'年',exp:'Số năm + 年: 2015年 = năm 2015, đọc từng chữ số.'},
+  {pre:'Bạn giới thiệu bạn học cùng đại học: “她是我',blank:'大学',post:'同学。”',hint:'(trường đại học)',ans:'大学',exp:'大学同学 = bạn học đại học.'},
+  {pre:'Bạn hỏi ai đó đến khách sạn bằng gì: “你们是怎么来',blank:'饭店',post:'的？”',hint:'(khách sạn)',ans:'饭店',exp:'饭店 = khách sạn, nhà hàng.'},
+  {pre:'Bạn nói mình đi taxi đến: “我们是坐',blank:'出租车',post:'来的。”',hint:'(xe taxi)',ans:'出租车',exp:'坐出租车 = đi taxi (nói về cách thức).'},
+  {pre:'Bạn nói rất vui được quen ai đó: “很',blank:'高兴',post:'认识您！”',hint:'(vui mừng)',ans:'高兴',exp:'很高兴认识您 = rất vui được quen ông/bà.'},
+  {pre:'Bạn nói nghe ai đó kể lại: “',blank:'听',post:'张先生说……”',hint:'(nghe)',ans:'听',exp:'听 + người + 说 = nghe ai nói.'},
+  {pre:'Bạn nói mình đến bằng máy bay: “我是坐',blank:'飞机',post:'来的。”',hint:'(máy bay)',ans:'飞机',exp:'坐飞机来的 = đến bằng máy bay.'},
 ];
 
 // Sắp xếp — đổi năm/địa điểm/phương tiện so với bài khoá
@@ -831,16 +876,16 @@ var matchData = [
 
 // Trắc nghiệm — trọng tâm 是……的, không audio
 var mcData = [
-  {q:'你是什么时候＿＿他的？',opts:['认识','知道','看见','听'],ans:0},
-  {q:'我们是2011年9月＿＿的。',opts:['认识','是','有','在'],ans:0},
-  {q:'Cấu trúc nhấn mạnh "是……的" dùng để nhấn mạnh điều gì?',opts:['thời gian, địa điểm, cách thức của hành động đã xảy ra','hành động đang diễn ra','hành động sắp xảy ra','số lượng của sự vật'],ans:0},
-  {q:'Thể phủ định của "是……的" bắt buộc phải giữ từ nào?',opts:['不是……的','没是……的','别是……的','无是……的'],ans:0},
-  {q:'"大学" nghĩa là gì?',opts:['trường đại học','trường tiểu học','trường trung học','nhà trẻ'],ans:0},
-  {q:'"出租车" nghĩa là gì?',opts:['xe taxi','xe buýt','xe máy','xe đạp'],ans:0},
-  {q:'"飞机" nghĩa là gì?',opts:['máy bay','tàu hoả','tàu thuyền','ô tô'],ans:0},
-  {q:'"高兴" nghĩa là gì?',opts:['vui mừng, phấn khởi','buồn bã','tức giận','lo lắng'],ans:0},
-  {q:'Cách nói năm tháng đúng thứ tự là?',opts:['Năm → Tháng → Ngày','Ngày → Tháng → Năm','Tháng → Năm → Ngày','Ngày → Năm → Tháng'],ans:0},
-  {q:'"听" nghĩa là gì?',opts:['nghe, nghe thấy','nói','xem','đọc'],ans:0},
+  {q:'你是什么时候＿＿他的？',opts:['认识','知道','看见','听'],ans:0,exp:'认识 = quen biết (một người); 知道 là biết (thông tin), 看见 là nhìn thấy, 听 là nghe.'},
+  {q:'我们是2011年9月＿＿的。',opts:['认识','是','有','在'],ans:0,exp:'Câu 是……的 nhấn mạnh thời gian của việc đã xảy ra: 我们是2011年9月认识的.'},
+  {q:'Cấu trúc nhấn mạnh "是……的" dùng để nhấn mạnh điều gì?',opts:['thời gian, địa điểm, cách thức của hành động đã xảy ra','hành động đang diễn ra','hành động sắp xảy ra','số lượng của sự vật'],ans:0,exp:'是……的 nhấn mạnh thời gian, địa điểm, cách thức của hành động ĐÃ xảy ra.'},
+  {q:'Thể phủ định của "是……的" bắt buộc phải giữ từ nào?',opts:['不是……的','没是……的','别是……的','无是……的'],ans:0,exp:'Phủ định 是……的 là 不是……的, phải giữ 是.'},
+  {q:'"大学" nghĩa là gì?',opts:['trường đại học','trường tiểu học','trường trung học','nhà trẻ'],ans:0,exp:'大学 = trường đại học.'},
+  {q:'"出租车" nghĩa là gì?',opts:['xe taxi','xe buýt','xe máy','xe đạp'],ans:0,exp:'出租车 = xe taxi; 坐出租车 = đi taxi.'},
+  {q:'"飞机" nghĩa là gì?',opts:['máy bay','tàu hoả','tàu thuyền','ô tô'],ans:0,exp:'飞机 = máy bay; 坐飞机 = đi máy bay.'},
+  {q:'"高兴" nghĩa là gì?',opts:['vui mừng, phấn khởi','buồn bã','tức giận','lo lắng'],ans:0,exp:'高兴 = vui mừng: 很高兴认识你.'},
+  {q:'Cách nói năm tháng đúng thứ tự là?',opts:['Năm → Tháng → Ngày','Ngày → Tháng → Năm','Tháng → Năm → Ngày','Ngày → Năm → Tháng'],ans:0,exp:'Tiếng Trung nói thời gian từ lớn đến nhỏ: năm → tháng → ngày.'},
+  {q:'"听" nghĩa là gì?',opts:['nghe, nghe thấy','nói','xem','đọc'],ans:0,exp:'听 = nghe: 听张先生说 = nghe ông Trương nói.'},
 ];
 
 var speakingData = {
@@ -904,4 +949,31 @@ var translateDataRev = [
   {vi:'Chúng tôi đến bằng taxi, không phải đến bằng máy bay.', zh:'我们是坐出租车来的，不是坐飞机来的。', py:'Wǒmen shì zuò chūzūchē lái de, bú shì zuò fēijī lái de.'},
   {vi:'Anh ấy học tiếng Trung ở Đại học Bắc Kinh.', zh:'他在北京大学学习汉语。', py:'Tā zài Běijīng Dàxué xuéxí Hànyǔ.'},
   {vi:'Quen biết bạn, tôi rất vui.', zh:'认识你，我很高兴。', py:'Rènshi nǐ, wǒ hěn gāoxìng.'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'你和王方是什么时候认识的？我们是2018年认识的。',
+   questions:[
+     {q:'Họ quen nhau năm nào?',opts:['2008','2018','2080'],ans:1},
+   ]},
+  {audio:'你们是怎么来北京的？我们是坐飞机来的。',
+   questions:[
+     {q:'Họ đến Bắc Kinh bằng gì?',opts:['Taxi','Máy bay','Tự lái xe'],ans:1},
+   ]},
+  {audio:'你们是在哪儿认识的？我们是在大学认识的，他是我同学。',
+   questions:[
+     {q:'Họ quen nhau ở đâu?',opts:['Ở bệnh viện','Ở trường đại học','Ở nhà hàng'],ans:1},
+   ]},
+  {audio:'中午我们一起去饭店吃饭吧。好啊，我们坐出租车去吧。',
+   questions:[
+     {q:'Buổi trưa họ định làm gì?',opts:['Cùng đi ăn ở nhà hàng','Cùng đi xem phim','Cùng đi mua quần áo'],ans:0},
+     {q:'Họ đi bằng gì?',opts:['Máy bay','Taxi','Đi bộ'],ans:1},
+   ]},
+  {audio:'李先生，很高兴认识您！听王小姐说，您是医生？是的，我在医院工作。',
+   questions:[
+     {q:'Ông Lý làm nghề gì?',opts:['Giáo viên','Bác sĩ','Lái taxi'],ans:1},
+   ]},
 ];

@@ -172,6 +172,11 @@ var vocabData = [
         "zh": "您好！",
         "py": "Nín hǎo!",
         "vn": "Chào ngài!"
+      },
+      {
+        "zh": "您好，您好！",
+        "py": "Nín hǎo, nín hǎo!",
+        "vn": "Cháu chào bác ạ, chào bác ạ!"
       }
     ],
     "hanzi": [
@@ -232,6 +237,11 @@ var vocabData = [
         "zh": "你们好！",
         "py": "Nǐmen hǎo!",
         "vn": "Chào các anh/chị!"
+      },
+      {
+        "zh": "你好！你们好！",
+        "py": "Nǐ hǎo! Nǐmen hǎo!",
+        "vn": "Chào bạn! Chào các bạn!"
       }
     ],
     "hanzi": [
@@ -292,6 +302,11 @@ var vocabData = [
         "zh": "对不起！",
         "py": "Duìbuqǐ!",
         "vn": "Xin lỗi!"
+      },
+      {
+        "zh": "对不起，对不起！",
+        "py": "Duìbuqǐ, duìbuqǐ!",
+        "vn": "Xin lỗi, xin lỗi!"
       }
     ],
     "hanzi": [
@@ -378,6 +393,11 @@ var vocabData = [
         "zh": "没关系！",
         "py": "Méi guānxi!",
         "vn": "Không sao đâu!"
+      },
+      {
+        "zh": "没关系，没关系！",
+        "py": "Méi guānxi, méi guānxi!",
+        "vn": "Không sao, không sao đâu!"
       }
     ],
     "hanzi": [
@@ -473,12 +493,12 @@ var dialogData = [
 var fillData = [
   {pre:'Gặp một người bạn cùng tuổi ngoài đường, bạn nói: “',blank:'你好',post:'”',hint:'(chào thân mật, ngôi 2 số ít)',ans:'你好',exp:'你好 dùng khi chào người ngang hàng, thân mật'},
   {pre:'Gặp một cụ ông lớn tuổi lần đầu, muốn thể hiện phép lịch sự, bạn nói: “',blank:'您好',post:'”',hint:'(dùng đại từ kính trọng thay cho 你)',ans:'您好',exp:'Với người lớn tuổi/cấp trên nên dùng 您 thay vì 你'},
-  {pre:'Bước vào lớp học, bạn chào cả nhóm bạn cùng lúc: “',blank:'你们好',post:'”',hint:'(số nhiều — chào từ 2 người trở lên)',ans:'你们好'},
-  {pre:'Bạn vô tình giẫm chân người khác, bạn nói: “',blank:'对不起',post:'”',hint:'(xin lỗi)',ans:'对不起'},
-  {pre:'Nghe người khác xin lỗi mình, bạn đáp lại: “',blank:'没关系',post:'”',hint:'(không sao đâu)',ans:'没关系'},
-  {pre:'Được đồng nghiệp giới thiệu với giám đốc công ty, bạn nên nói: “',blank:'您好',post:'”',hint:'(người có địa vị cao hơn → dùng kính ngữ)',ans:'您好'},
-  {pre:'Đến muộn buổi họp, bạn xin lỗi cả phòng: “',blank:'对不起',post:'”',hint:'(xin lỗi)',ans:'对不起'},
-  {pre:'Bạn của bạn lỡ làm rơi đồ của bạn, bạn trấn an họ: “',blank:'没关系',post:'”',hint:'(không sao đâu)',ans:'没关系'},
+  {pre:'Bước vào lớp học, bạn chào cả nhóm bạn cùng lúc: “',blank:'你们好',post:'”',hint:'(số nhiều — chào từ 2 người trở lên)',ans:'你们好',exp:'你们好 dùng khi chào từ hai người trở lên.'},
+  {pre:'Bạn vô tình giẫm chân người khác, bạn nói: “',blank:'对不起',post:'”',hint:'(xin lỗi)',ans:'对不起',exp:'对不起 là lời xin lỗi khi mình làm phiền hay gây lỗi cho người khác.'},
+  {pre:'Nghe người khác xin lỗi mình, bạn đáp lại: “',blank:'没关系',post:'”',hint:'(không sao đâu)',ans:'没关系',exp:'没关系 là câu đáp lại lời xin lỗi: "Không sao đâu".'},
+  {pre:'Được đồng nghiệp giới thiệu với giám đốc công ty, bạn nên nói: “',blank:'您好',post:'”',hint:'(người có địa vị cao hơn → dùng kính ngữ)',ans:'您好',exp:'Với giám đốc (người có địa vị cao hơn) nên dùng kính ngữ 您好.'},
+  {pre:'Đến muộn buổi họp, bạn xin lỗi cả phòng: “',blank:'对不起',post:'”',hint:'(xin lỗi)',ans:'对不起',exp:'Đến muộn là lỗi của mình nên nói 对不起 để xin lỗi.'},
+  {pre:'Bạn của bạn lỡ làm rơi đồ của bạn, bạn trấn an họ: “',blank:'没关系',post:'”',hint:'(không sao đâu)',ans:'没关系',exp:'Khi bạn mình lỡ làm điều gì và xin lỗi, đáp 没关系 để trấn an.'},
 ];
 
 // Sắp xếp — ghép cả dấu câu (！), khác cách trình bày trong bài khoá
@@ -501,16 +521,16 @@ var matchData = [
 
 // Trắc nghiệm — kiểm tra NGỮ DỤNG (chọn đúng ngữ cảnh) và quy tắc biến điệu, không audio
 var mcData = [
-  {q:'Gặp một người bạn cùng tuổi ngoài đường, bạn nên chào thế nào?',opts:['你好','您好','你们好','没关系'],ans:0},
-  {q:'Gặp một cụ ông lớn tuổi lần đầu, cách chào lịch sự nhất là?',opts:['您好','你好','你们好','对不起'],ans:0},
-  {q:'Bạn muốn chào cả một nhóm bạn cùng lúc, nên nói?',opts:['你们好','你好','您好','没关系'],ans:0},
-  {q:'Bạn vô tình làm phiền người khác, câu xin lỗi đúng là?',opts:['对不起','没关系','你好','您好'],ans:0},
-  {q:'Khi ai đó xin lỗi bạn, cách đáp lịch sự nhất là?',opts:['没关系','你好','您好','你们好'],ans:0},
-  {q:'"你好" khi hai âm tiết cùng mang thanh 3 đứng liền nhau, thực tế phát âm gần giống:',opts:['ní hǎo','nǐ hào','nì hǎo','nī hǎo'],ans:0},
-  {q:'Từ nào dùng để thể hiện sự KÍNH TRỌNG khi xưng hô với người lớn tuổi/cấp trên?',opts:['您','你','你们','好'],ans:0},
-  {q:'"你们" được dùng khi đối tượng giao tiếp là:',opts:['nhiều người','một người ngang hàng','một người lớn tuổi hơn','một đồ vật'],ans:0},
-  {q:'Từ nào KHÔNG phải là lời chào hỏi trong bài?',opts:['没关系','你好','您好','你们好'],ans:0},
-  {q:'Cặp câu nào đúng theo thứ tự Hỏi – Đáp?',opts:['对不起 → 没关系','你好 → 对不起','您好 → 没关系','你们好 → 你好'],ans:0},
+  {q:'Gặp một người bạn cùng tuổi ngoài đường, bạn nên chào thế nào?',opts:['你好','您好','你们好','没关系'],ans:0,exp:'你好 là lời chào thân mật với người ngang hàng; 您好 dành cho người lớn tuổi, 你们好 chào nhiều người, 没关系 không phải lời chào.'},
+  {q:'Gặp một cụ ông lớn tuổi lần đầu, cách chào lịch sự nhất là?',opts:['您好','你好','你们好','对不起'],ans:0,exp:'您 là đại từ kính trọng, dùng với người lớn tuổi hoặc người cần thể hiện sự lịch sự.'},
+  {q:'Bạn muốn chào cả một nhóm bạn cùng lúc, nên nói?',opts:['你们好','你好','您好','没关系'],ans:0,exp:'你们 là số nhiều của 你, nên 你们好 dùng để chào cả một nhóm người.'},
+  {q:'Bạn vô tình làm phiền người khác, câu xin lỗi đúng là?',opts:['对不起','没关系','你好','您好'],ans:0,exp:'对不起 là lời xin lỗi; 没关系 là câu đáp lại lời xin lỗi.'},
+  {q:'Khi ai đó xin lỗi bạn, cách đáp lịch sự nhất là?',opts:['没关系','你好','您好','你们好'],ans:0,exp:'没关系 (không sao đâu) là câu đáp chuẩn khi người khác xin lỗi mình.'},
+  {q:'"你好" khi hai âm tiết cùng mang thanh 3 đứng liền nhau, thực tế phát âm gần giống:',opts:['ní hǎo','nǐ hào','nì hǎo','nī hǎo'],ans:0,exp:'Hai thanh 3 đi liền nhau thì thanh 3 đầu đọc gần như thanh 2: nǐ hǎo → ní hǎo (pinyin vẫn viết nǐ hǎo).'},
+  {q:'Từ nào dùng để thể hiện sự KÍNH TRỌNG khi xưng hô với người lớn tuổi/cấp trên?',opts:['您','你','你们','好'],ans:0,exp:'您 = 你 thêm 心 (trái tim) ở dưới — cách xưng hô kính trọng.'},
+  {q:'"你们" được dùng khi đối tượng giao tiếp là:',opts:['nhiều người','một người ngang hàng','một người lớn tuổi hơn','một đồ vật'],ans:0,exp:'们 đặt sau đại từ chỉ người để tạo số nhiều: 你们 = các bạn (từ hai người trở lên).'},
+  {q:'Từ nào KHÔNG phải là lời chào hỏi trong bài?',opts:['没关系','你好','您好','你们好'],ans:0,exp:'没关系 là câu đáp lời xin lỗi, không phải lời chào; ba đáp án còn lại đều là lời chào.'},
+  {q:'Cặp câu nào đúng theo thứ tự Hỏi – Đáp?',opts:['对不起 → 没关系','你好 → 对不起','您好 → 没关系','你们好 → 你好'],ans:0,exp:'Một người nói 对不起 (xin lỗi) thì người kia đáp 没关系 (không sao) — đúng thứ tự hỏi–đáp.'},
 ];
 
 var speakingData = {
@@ -574,4 +594,31 @@ var translateDataRev = [
   {vi:'Kính chào ngài! Xin lỗi ạ!', zh:'您好！对不起！', py:'Nín hǎo! Duìbuqǐ!'},
   {vi:'Không sao đâu, chào bạn!', zh:'没关系，你好！', py:'Méi guānxi, nǐ hǎo!'},
   {vi:'Chào các bạn! Xin lỗi! — Không sao đâu!', zh:'你们好！对不起！——没关系！', py:'Nǐmen hǎo! Duìbuqǐ! — Méi guānxi!'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'您好！你好！',
+   questions:[
+     {q:'Người thứ nhất chào theo cách nào?',opts:['Chào thân mật (你好)','Chào kính trọng (您好)','Chào nhiều người (你们好)'],ans:1},
+   ]},
+  {audio:'你们好！你好！',
+   questions:[
+     {q:'Câu đầu tiên dùng để chào ai?',opts:['Một người lớn tuổi','Một nhóm người','Một người bạn'],ans:1},
+   ]},
+  {audio:'对不起！没关系！',
+   questions:[
+     {q:'Người thứ nhất nói gì?',opts:['Xin chào','Xin lỗi','Cảm ơn'],ans:1},
+     {q:'Người thứ hai đáp lại thế nào?',opts:['Không sao đâu','Tạm biệt','Xin lỗi'],ans:0},
+   ]},
+  {audio:'对不起，对不起！没关系，没关系！',
+   questions:[
+     {q:'Tình huống nào hợp với đoạn nghe?',opts:['Hai người gặp nhau lần đầu','Một người xin lỗi, người kia bỏ qua','Hai người chào tạm biệt'],ans:1},
+   ]},
+  {audio:'你好！您好！你们好！',
+   questions:[
+     {q:'Trong đoạn nghe có mấy cách chào khác nhau?',opts:['1','2','3'],ans:2},
+   ]},
 ];

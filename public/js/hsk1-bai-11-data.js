@@ -19,6 +19,11 @@ var vocabData = [
         "zh": "现在几点？",
         "py": "Xiànzài jǐ diǎn?",
         "vn": "Bây giờ là mấy giờ rồi?"
+      },
+      {
+        "zh": "现在我在家看书。",
+        "py": "Xiànzài wǒ zài jiā kàn shū.",
+        "vn": "Bây giờ tôi đang ở nhà đọc sách."
       }
     ],
     "hanzi": [
@@ -103,6 +108,11 @@ var vocabData = [
         "zh": "现在十点十分。",
         "py": "Xiànzài shí diǎn shí fēn.",
         "vn": "Bây giờ là 10 giờ 10 phút."
+      },
+      {
+        "zh": "我下午三点去商店。",
+        "py": "Wǒ xiàwǔ sān diǎn qù shāngdiàn.",
+        "vn": "Ba giờ chiều tôi đi cửa hàng."
       }
     ],
     "hanzi": [
@@ -186,6 +196,11 @@ var vocabData = [
         "zh": "现在十点十分。",
         "py": "Xiànzài shí diǎn shí fēn.",
         "vn": "Bây giờ là 10 giờ 10 phút."
+      },
+      {
+        "zh": "现在十二点十分。",
+        "py": "Xiànzài shí'èr diǎn shí fēn.",
+        "vn": "Bây giờ là 12 giờ 10 phút."
       }
     ],
     "hanzi": [
@@ -269,6 +284,11 @@ var vocabData = [
         "zh": "中午几点吃饭？",
         "py": "Zhōngwǔ jǐ diǎn chī fàn?",
         "vn": "Mấy giờ thì ăn cơm trưa vậy?"
+      },
+      {
+        "zh": "中午你想吃什么？",
+        "py": "Zhōngwǔ nǐ xiǎng chī shénme?",
+        "vn": "Buổi trưa bạn muốn ăn gì?"
       }
     ],
     "hanzi": [],
@@ -340,6 +360,11 @@ var vocabData = [
         "zh": "十二点吃饭。",
         "py": "Shí'èr diǎn chī fàn.",
         "vn": "12 giờ ăn cơm."
+      },
+      {
+        "zh": "你想几点吃饭？",
+        "py": "Nǐ xiǎng jǐ diǎn chī fàn?",
+        "vn": "Bạn muốn mấy giờ ăn cơm?"
       }
     ],
     "hanzi": [],
@@ -410,6 +435,11 @@ var vocabData = [
         "zh": "爸爸什么时候回家？",
         "py": "Bàba shénme shíhou huí jiā?",
         "vn": "Chừng nào cha mới về đến nhà?"
+      },
+      {
+        "zh": "你什么时候去北京？",
+        "py": "Nǐ shénme shíhou qù Běijīng?",
+        "vn": "Khi nào bạn đi Bắc Kinh?"
       }
     ],
     "hanzi": [
@@ -506,6 +536,11 @@ var vocabData = [
         "zh": "爸爸什么时候回家？",
         "py": "Bàba shénme shíhou huí jiā?",
         "vn": "Chừng nào cha mới về đến nhà?"
+      },
+      {
+        "zh": "我下午五点回家。",
+        "py": "Wǒ xiàwǔ wǔ diǎn huí jiā.",
+        "vn": "Năm giờ chiều tôi về nhà."
       }
     ],
     "hanzi": [
@@ -589,6 +624,11 @@ var vocabData = [
         "zh": "我们什么时候去看电影？",
         "py": "Wǒmen shénme shíhou qù kàn diànyǐng?",
         "vn": "Khi nào chúng ta đi xem phim?"
+      },
+      {
+        "zh": "我们是同学。",
+        "py": "Wǒmen shì tóngxué.",
+        "vn": "Chúng tôi là bạn cùng lớp."
       }
     ],
     "hanzi": [],
@@ -659,6 +699,11 @@ var vocabData = [
         "zh": "我们什么时候去看电影？",
         "py": "Wǒmen shénme shíhou qù kàn diànyǐng?",
         "vn": "Khi nào chúng ta đi xem phim?"
+      },
+      {
+        "zh": "我想看中国电影。",
+        "py": "Wǒ xiǎng kàn Zhōngguó diànyǐng.",
+        "vn": "Tôi muốn xem phim Trung Quốc."
       }
     ],
     "hanzi": [
@@ -742,6 +787,11 @@ var vocabData = [
         "zh": "你想在北京住几天？",
         "py": "Nǐ xiǎng zài Běijīng zhù jǐ tiān?",
         "vn": "Anh định ở Bắc Kinh mấy ngày?"
+      },
+      {
+        "zh": "你住在哪儿？",
+        "py": "Nǐ zhù zài nǎr?",
+        "vn": "Bạn sống ở đâu?"
       }
     ],
     "hanzi": [
@@ -825,6 +875,11 @@ var vocabData = [
         "zh": "星期五前能回家吗？",
         "py": "Xīngqī wǔ qián néng huí jiā ma?",
         "vn": "Anh có thể về nhà trước thứ sáu được không?"
+      },
+      {
+        "zh": "十二点前我能回家。",
+        "py": "Shí'èr diǎn qián wǒ néng huí jiā.",
+        "vn": "Trước 12 giờ tôi có thể về nhà."
       }
     ],
     "hanzi": [],
@@ -916,14 +971,14 @@ var dialogData = [
 
 // Điền từ — đổi giờ/số ngày so với bài khoá
 var fillData = [
-  {pre:'Bạn hỏi giờ hiện tại: “',blank:'现在',post:'几点？”',hint:'(bây giờ)',ans:'现在'},
-  {pre:'Bạn nói bây giờ là 3 giờ 20 phút: “现在三点二十',blank:'分',post:'。”',hint:'(phút)',ans:'分'},
-  {pre:'Bạn hỏi khi nào mẹ về nhà: “妈妈什么',blank:'时候',post:'回家？”',hint:'(khi nào, lúc nào)',ans:'时候'},
-  {pre:'Bạn nói mình sẽ về nhà lúc 7 giờ chiều: “下午七',blank:'点',post:'回家。”',hint:'(giờ)',ans:'点'},
-  {pre:'Bạn hỏi khi nào đi xem phim: “我们什么时候去看',blank:'电影',post:'？”',hint:'(phim)',ans:'电影'},
-  {pre:'Bạn hỏi bạn định ở lại mấy ngày: “你想',blank:'住',post:'几天？”',hint:'(ở, trú ngụ)',ans:'住'},
-  {pre:'Bạn hỏi có thể về nhà trước thứ ba không: “星期二',blank:'前',post:'能回家吗？”',hint:'(trước — mốc thời gian)',ans:'前'},
-  {pre:'Bạn khẳng định có thể về nhà đúng hẹn: “你能回家吗？',blank:'能',post:'。”',hint:'(có thể)',ans:'能'},
+  {pre:'Bạn hỏi giờ hiện tại: “',blank:'现在',post:'几点？”',hint:'(bây giờ)',ans:'现在',exp:'现在几点？ dùng để hỏi giờ hiện tại.'},
+  {pre:'Bạn nói bây giờ là 3 giờ 20 phút: “现在三点二十',blank:'分',post:'。”',hint:'(phút)',ans:'分',exp:'Số + 分 = số phút: 二十分 = 20 phút.'},
+  {pre:'Bạn hỏi khi nào mẹ về nhà: “妈妈什么',blank:'时候',post:'回家？”',hint:'(khi nào, lúc nào)',ans:'时候',exp:'什么时候 = khi nào.'},
+  {pre:'Bạn nói mình sẽ về nhà lúc 7 giờ chiều: “下午七',blank:'点',post:'回家。”',hint:'(giờ)',ans:'点',exp:'Số + 点 = giờ: 七点 = 7 giờ.'},
+  {pre:'Bạn hỏi khi nào đi xem phim: “我们什么时候去看',blank:'电影',post:'？”',hint:'(phim)',ans:'电影',exp:'看电影 = xem phim.'},
+  {pre:'Bạn hỏi bạn định ở lại mấy ngày: “你想',blank:'住',post:'几天？”',hint:'(ở, trú ngụ)',ans:'住',exp:'住 + thời gian = ở lại bao lâu: 住几天.'},
+  {pre:'Bạn hỏi có thể về nhà trước thứ ba không: “星期二',blank:'前',post:'能回家吗？”',hint:'(trước — mốc thời gian)',ans:'前',exp:'Mốc thời gian + 前 = trước lúc đó.'},
+  {pre:'Bạn khẳng định có thể về nhà đúng hẹn: “你能回家吗？',blank:'能',post:'。”',hint:'(có thể)',ans:'能',exp:'Trả lời câu hỏi có 能 chỉ cần lặp lại 能 (được, có thể).'},
 ];
 
 // Sắp xếp — đổi giờ/số ngày so với bài khoá
@@ -946,16 +1001,16 @@ var matchData = [
 
 // Trắc nghiệm — trọng tâm cách nói giờ & trạng ngữ thời gian, không audio
 var mcData = [
-  {q:'＿＿几点？',opts:['现在','什么','怎么','哪儿'],ans:0},
-  {q:'Số "2 giờ" nói thế nào (không dùng 二)?',opts:['两点','二点','两个点','二个点'],ans:0},
-  {q:'Trạng ngữ chỉ thời gian thường đứng ở đâu trong câu?',opts:['trước hoặc ngay sau chủ ngữ','luôn ở cuối câu','luôn tách biệt hoàn toàn ở đầu câu','sau động từ'],ans:0},
-  {q:'"前" trong "星期五前" nghĩa là gì?',opts:['trước (một mốc thời gian)','sau','trong','ngoài'],ans:0},
-  {q:'"时候" nghĩa là gì?',opts:['thời gian, lúc, khi','giờ','phút','ngày'],ans:0},
-  {q:'"回" nghĩa là gì?',opts:['trở về, về','đi','ở','đến'],ans:0},
-  {q:'"电影" nghĩa là gì?',opts:['phim, điện ảnh','tivi','điện thoại','máy tính'],ans:0},
-  {q:'"住" nghĩa là gì?',opts:['ở, trú ngụ','đi','về','đến'],ans:0},
-  {q:'Câu hỏi giờ ĐÚNG ngữ pháp là?',opts:['现在几点？','现在几点钟的？','几点现在？','点几现在？'],ans:0},
-  {q:'"我们" nghĩa là gì?',opts:['chúng tôi, chúng ta','các bạn','họ','bạn và tôi'],ans:0},
+  {q:'＿＿几点？',opts:['现在','什么','怎么','哪儿'],ans:0,exp:'现在几点？ = Bây giờ mấy giờ? — 现在 nghĩa là "bây giờ".'},
+  {q:'Số "2 giờ" nói thế nào (không dùng 二)?',opts:['两点','二点','两个点','二个点'],ans:0,exp:'Nói 2 giờ dùng 两点 (liǎng diǎn), không nói 二点.'},
+  {q:'Trạng ngữ chỉ thời gian thường đứng ở đâu trong câu?',opts:['trước hoặc ngay sau chủ ngữ','luôn ở cuối câu','luôn tách biệt hoàn toàn ở đầu câu','sau động từ'],ans:0,exp:'Trạng ngữ thời gian đứng trước động từ: ở đầu câu hoặc ngay sau chủ ngữ — 我星期一去北京 / 星期一我去北京.'},
+  {q:'"前" trong "星期五前" nghĩa là gì?',opts:['trước (một mốc thời gian)','sau','trong','ngoài'],ans:0,exp:'Mốc thời gian + 前 = trước mốc đó: 星期五前 = trước thứ Sáu.'},
+  {q:'"时候" nghĩa là gì?',opts:['thời gian, lúc, khi','giờ','phút','ngày'],ans:0,exp:'时候 = lúc, khi; 什么时候 = khi nào.'},
+  {q:'"回" nghĩa là gì?',opts:['trở về, về','đi','ở','đến'],ans:0,exp:'回 = trở về: 回家 = về nhà.'},
+  {q:'"电影" nghĩa là gì?',opts:['phim, điện ảnh','tivi','điện thoại','máy tính'],ans:0,exp:'电影 = phim; 看电影 = xem phim.'},
+  {q:'"住" nghĩa là gì?',opts:['ở, trú ngụ','đi','về','đến'],ans:0,exp:'住 = ở, cư trú: 住三天 = ở ba ngày.'},
+  {q:'Câu hỏi giờ ĐÚNG ngữ pháp là?',opts:['现在几点？','现在几点钟的？','几点现在？','点几现在？'],ans:0,exp:'Câu đúng: 现在几点？ — trạng ngữ 现在 đứng trước, 几点 làm vị ngữ.'},
+  {q:'"我们" nghĩa là gì?',opts:['chúng tôi, chúng ta','các bạn','họ','bạn và tôi'],ans:0,exp:'我们 = chúng tôi/chúng ta; 们 tạo số nhiều cho đại từ.'},
 ];
 
 var speakingData = {
@@ -1019,4 +1074,31 @@ var translateDataRev = [
   {vi:'Khi nào bạn về nhà? Tôi sáu giờ về nhà.', zh:'你什么时候回家？我六点回家。', py:'Nǐ shénme shíhou huí jiā? Wǒ liù diǎn huí jiā.'},
   {vi:'Trước thứ Sáu, tôi muốn đọc quyển sách này và quyển sách kia.', zh:'星期五前，我想看这本书和那本书。', py:'Xīngqīwǔ qián, wǒ xiǎng kàn zhè běn shū hé nà běn shū.'},
   {vi:'Bây giờ mấy giờ rồi?', zh:'现在几点了？', py:'Xiànzài jǐ diǎn le?'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'现在几点？现在十点二十分。',
+   questions:[
+     {q:'Bây giờ là mấy giờ?',opts:['10 giờ 20','10 giờ 12','12 giờ 10'],ans:0},
+   ]},
+  {audio:'我们中午几点吃饭？十二点三十分。',
+   questions:[
+     {q:'Họ ăn trưa lúc mấy giờ?',opts:['12 giờ','12 giờ 30','13 giờ'],ans:1},
+   ]},
+  {audio:'你什么时候回家？我下午五点回家。',
+   questions:[
+     {q:'Người trả lời về nhà lúc mấy giờ?',opts:['5 giờ sáng','5 giờ chiều','3 giờ chiều'],ans:1},
+   ]},
+  {audio:'我星期三去北京，在北京住四天。',
+   questions:[
+     {q:'Người nói đi Bắc Kinh vào thứ mấy?',opts:['Thứ Hai','Thứ Tư','Thứ Năm'],ans:1},
+     {q:'Người nói ở Bắc Kinh mấy ngày?',opts:['3 ngày','4 ngày','5 ngày'],ans:1},
+   ]},
+  {audio:'明天我们去看电影吗？去，下午六点去。',
+   questions:[
+     {q:'Ngày mai họ đi xem phim lúc mấy giờ?',opts:['6 giờ chiều','6 giờ sáng','5 giờ chiều'],ans:0},
+   ]},
 ];

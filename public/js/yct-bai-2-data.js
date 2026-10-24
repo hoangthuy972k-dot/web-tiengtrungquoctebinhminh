@@ -4,7 +4,7 @@
 var vocabData = [
   {n:1,zh:'我',py:'wǒ',pos:'Đại từ',vn:'tôi, tớ, mình', hv: 'ngã',em:'🙋',lesson:1,
    ex_zh:'我叫乐乐。',ex_py:'Wǒ jiào Lèle.',ex_vn:'Mình tên là Lạc Lạc.',
-   exList:[{zh:'我叫乐乐。',py:'Wǒ jiào Lèle.',vn:'Mình tên là Lạc Lạc.'}],
+   exList:[{zh:'我叫乐乐。',py:'Wǒ jiào Lèle.',vn:'Mình tên là Lạc Lạc.'},{zh:'我叫明明。',py:'Wǒ jiào Míngming.',vn:'Tớ tên là Minh Minh.'}],
    hanzi:[
      {c:'我',p:'wǒ',type:'独体字 · Chữ đơn',st:7,ord:'丿→𠄌→一→一→丿→㇂→戈',rad:'戈 (qua, biến thể)',mean:'tôi, tớ, mình',
       tip:'Chữ cổ là hình vũ khí có răng cưa, người cầm nó tự xưng mình là chủ → TÔI.',
@@ -14,6 +14,7 @@ var vocabData = [
    ex_zh:'她叫甜甜。',ex_py:'Tā jiào Tiántian.',ex_vn:'Bạn ấy tên là Điềm Điềm.',
    exList:[
      {zh:'她叫甜甜。',py:'Tā jiào Tiántian.',vn:'Bạn ấy tên là Điềm Điềm.'},
+     {zh:'你叫乐乐吗？',py:'Nǐ jiào Lèle ma?',vn:'Bạn tên là Lạc Lạc à?'},
    ],
    hanzi:[
      {c:'叫',p:'jiào',type:'左右结构 · Trái-phải',st:5,ord:'口(khẩu) trái → 니(biến thể) phải',rad:'口 (khẩu – miệng)',mean:'gọi, tên là',
@@ -22,7 +23,7 @@ var vocabData = [
    ]},
   {n:3,zh:'什么',py:'shénme',pos:'Đại từ',vn:'cái gì, gì', hv: 'thập ma',em:'❓',lesson:1,
    ex_zh:'你叫什么？',ex_py:'Nǐ jiào shénme?',ex_vn:'Bạn tên gì?',
-   exList:[{zh:'你叫什么？',py:'Nǐ jiào shénme?',vn:'Bạn tên gì?'}],
+   exList:[{zh:'你叫什么？',py:'Nǐ jiào shénme?',vn:'Bạn tên gì?'},{zh:'你好！你叫什么？',py:'Nǐ hǎo! Nǐ jiào shénme?',vn:'Chào bạn! Bạn tên là gì?'}],
    hanzi:[
      {c:'什',p:'shén',type:'左右结构 · Trái-phải',st:4,ord:'亻(nhân) trái → 十(thập) phải',rad:'亻 (nhân – người)',mean:'gì (trong 什么)',
       tip:'亻(người) + 十(số mười, chỉ nhiều loại) → hỏi về NHIỀU THỨ.',
@@ -33,7 +34,7 @@ var vocabData = [
    ]},
   {n:4,zh:'认识',py:'rènshi',pos:'Động từ',vn:'quen, biết', hv: 'nhận thức',em:'🤝',lesson:1,
    ex_zh:'认识你，很高兴！',ex_py:'Rènshi nǐ, hěn gāoxìng!',ex_vn:'Quen được bạn, mình vui lắm!',
-   exList:[{zh:'认识你，很高兴！',py:'Rènshi nǐ, hěn gāoxìng!',vn:'Quen được bạn, mình vui lắm!'}],
+   exList:[{zh:'认识你，很高兴！',py:'Rènshi nǐ, hěn gāoxìng!',vn:'Quen được bạn, mình vui lắm!'},{zh:'我认识她。',py:'Wǒ rènshi tā.',vn:'Tớ quen bạn ấy.'}],
    hanzi:[
      {c:'认',p:'rèn',type:'左右结构 · Trái-phải',st:4,ord:'讠(ngôn) trái → 人(biến thể) phải',rad:'讠 (ngôn – lời nói)',mean:'nhận, nhận biết',
       tip:'讠(lời nói) + 人(người) → dùng lời NHẬN RA một người.',
@@ -46,6 +47,7 @@ var vocabData = [
    ex_zh:'我很好。',ex_py:'Wǒ hěn hǎo.',ex_vn:'Mình rất khỏe.',
    exList:[
      {zh:'我很好。',py:'Wǒ hěn hǎo.',vn:'Mình rất khỏe.'},
+     {zh:'老师很好。',py:'Lǎoshī hěn hǎo.',vn:'Cô giáo rất tốt.'},
    ],
    hanzi:[
      {c:'很',p:'hěn',type:'左右结构 · Trái-phải',st:9,ord:'彳(sách) trái → 艮(cấn) phải',rad:'彳 (sách – bước ngắn)',mean:'rất',
@@ -56,6 +58,7 @@ var vocabData = [
    ex_zh:'我很高兴！',ex_py:'Wǒ hěn gāoxìng!',ex_vn:'Mình rất vui!',
    exList:[
      {zh:'我很高兴！',py:'Wǒ hěn gāoxìng!',vn:'Mình rất vui!'},
+     {zh:'你高兴吗？',py:'Nǐ gāoxìng ma?',vn:'Con có vui không?'},
    ],
    hanzi:[
      {c:'高',p:'gāo',type:'独体字 · Tượng hình',st:10,ord:'亠→口→冂→口',rad:'高 (cao – tự thành bộ)',mean:'cao',
@@ -69,6 +72,7 @@ var vocabData = [
    ex_zh:'她叫什么？',ex_py:'Tā jiào shénme?',ex_vn:'Bạn ấy tên là gì?',
    exList:[
      {zh:'她叫什么？',py:'Tā jiào shénme?',vn:'Bạn ấy tên là gì?'},
+     {zh:'我不认识她。',py:'Wǒ bú rènshi tā.',vn:'Tớ không quen bạn ấy.'},
    ],
    hanzi:[
      {c:'她',p:'tā',type:'左右结构 · Trái-phải',st:6,ord:'女(nữ) trái → 也(dã) phải',rad:'女 (nữ – con gái)',mean:'cô ấy, bạn ấy',
@@ -77,7 +81,7 @@ var vocabData = [
    ]},
   {n:8,zh:'吗',py:'ma',pos:'Trợ từ',vn:'trợ từ tạo câu hỏi Có/Không', hv: 'ma',em:'❔',lesson:2,
    ex_zh:'你认识她吗？',ex_py:'Nǐ rènshi tā ma?',ex_vn:'Bạn có quen cô ấy không?',
-   exList:[{zh:'你认识她吗？',py:'Nǐ rènshi tā ma?',vn:'Bạn có quen cô ấy không?'}],
+   exList:[{zh:'你认识她吗？',py:'Nǐ rènshi tā ma?',vn:'Bạn có quen cô ấy không?'},{zh:'你好吗？',py:'Nǐ hǎo ma?',vn:'Bạn có khỏe không?'}],
    hanzi:[
      {c:'吗',p:'ma',type:'左右结构 · Trái-phải',st:6,ord:'口(khẩu) trái → 马(mã) phải',rad:'口 (khẩu – miệng)',mean:'trợ từ tạo câu hỏi',
       tip:'口(miệng) phát âm hỏi, mượn âm 马(ngựa) làm ký hiệu ngữ âm.',
@@ -85,7 +89,7 @@ var vocabData = [
    ]},
   {n:9,zh:'不',py:'bù',pos:'Phó từ',vn:'không, chẳng', hv: 'bất',em:'🚫',lesson:2,
    ex_zh:'不认识。',ex_py:'Bú rènshi.',ex_vn:'Mình không quen.',
-   exList:[{zh:'不认识。',py:'Bú rènshi.',vn:'Mình không quen.'}],
+   exList:[{zh:'不认识。',py:'Bú rènshi.',vn:'Mình không quen.'},{zh:'我不叫乐乐，我叫明明。',py:'Wǒ bú jiào Lèle, wǒ jiào Míngming.',vn:'Tớ không tên là Lạc Lạc, tớ tên là Minh Minh.'}],
    hanzi:[
      {c:'不',p:'bù / bú',type:'独体字 · Chữ đơn',st:4,ord:'一→丨→㇒→丶',rad:'一 (nhất)',mean:'không, chẳng',
       tip:'Nét ngang trên cùng như bức tường CHẶN LẠI → PHỦ ĐỊNH.',
@@ -123,14 +127,14 @@ var dialogData = [
 
 // Điền từ — tình huống làm quen bạn mới
 var fillData = [
-  {pre:'Con hỏi tên bạn mới: “你',blank:'叫',post:'什么？”',hint:'(gọi, tên là)',ans:'叫'},
-  {pre:'Con giới thiệu tên mình: “',blank:'我',post:'叫甜甜。”',hint:'(tôi, tớ)',ans:'我'},
-  {pre:'Con nói vui khi quen bạn mới: “认识你，',blank:'很',post:'高兴！”',hint:'(rất)',ans:'很'},
-  {pre:'Con nói mình rất vui: “我很',blank:'高兴',post:'！”',hint:'(vui, phấn khởi)',ans:'高兴'},
-  {pre:'Con hỏi có quen một bạn nữ không: “你认识',blank:'她',post:'吗？”',hint:'(cô ấy, bạn ấy)',ans:'她'},
-  {pre:'Con tạo câu hỏi Có/Không: “你叫乐乐',blank:'吗',post:'？”',hint:'(trợ từ hỏi)',ans:'吗'},
-  {pre:'Con phủ định là không quen: “',blank:'不',post:'认识。”',hint:'(không, chẳng)',ans:'不'},
-  {pre:'Con xác nhận là mình quen: “我',blank:'认识',post:'她。”',hint:'(quen, biết)',ans:'认识'},
+  {pre:'Con hỏi tên bạn mới: “你',blank:'叫',post:'什么？”',hint:'(gọi, tên là)',ans:'叫',exp:'叫 + 什么: câu hỏi tên.'},
+  {pre:'Con giới thiệu tên mình: “',blank:'我',post:'叫甜甜。”',hint:'(tôi, tớ)',ans:'我',exp:'我 (tôi, tớ) đứng đầu câu khi tự giới thiệu: 我叫……'},
+  {pre:'Con nói vui khi quen bạn mới: “认识你，',blank:'很',post:'高兴！”',hint:'(rất)',ans:'很',exp:'很 đứng trước tính từ 高兴: 很高兴 = rất vui.'},
+  {pre:'Con nói mình rất vui: “我很',blank:'高兴',post:'！”',hint:'(vui, phấn khởi)',ans:'高兴',exp:'高兴 (vui) đứng sau 很: 我很高兴！'},
+  {pre:'Con hỏi có quen một bạn nữ không: “你认识',blank:'她',post:'吗？”',hint:'(cô ấy, bạn ấy)',ans:'她',exp:'她 có bộ 女, dùng chỉ một bạn nữ.'},
+  {pre:'Con tạo câu hỏi Có/Không: “你叫乐乐',blank:'吗',post:'？”',hint:'(trợ từ hỏi)',ans:'吗',exp:'吗 đặt cuối câu để tạo câu hỏi Có/Không.'},
+  {pre:'Con phủ định là không quen: “',blank:'不',post:'认识。”',hint:'(không, chẳng)',ans:'不',exp:'不 + 认识 = không quen.'},
+  {pre:'Con xác nhận là mình quen: “我',blank:'认识',post:'她。”',hint:'(quen, biết)',ans:'认识',exp:'认识 = quen biết: 我认识她。'},
 ];
 
 // Sắp xếp — câu làm quen & hỏi thăm
@@ -153,21 +157,21 @@ var matchData = [
 
 // Trắc nghiệm — không audio
 var mcData = [
-  {q:'你＿＿什么？(hỏi tên)',opts:['叫','是','有','在'],ans:0},
-  {q:'认识你，＿＿高兴！',opts:['很','不','叫','吗'],ans:0},
-  {q:'"高兴" nghĩa là gì?',opts:['vui, phấn khởi','buồn','tức giận','sợ hãi'],ans:0},
-  {q:'"认识" nghĩa là gì?',opts:['quen biết','xa lạ','yêu thích','ghét bỏ'],ans:0},
-  {q:'"她" dùng để chỉ ai?',opts:['một bạn nữ','một bạn nam','thầy giáo','chính mình'],ans:0},
-  {q:'Trợ từ nào đặt cuối câu để tạo câu hỏi Có/Không?',opts:['吗','很','叫','不'],ans:0},
-  {q:'Phủ định của "认识" (quen biết) là gì?',opts:['不认识','没认识','别认识','无认识'],ans:0},
-  {q:'"什么" nghĩa là gì?',opts:['cái gì, gì','ai','ở đâu','khi nào'],ans:0},
-  {q:'"我" nghĩa là gì?',opts:['tôi, tớ, mình','bạn','cô ấy','chúng ta'],ans:0},
-  {q:'Câu nào ĐÚNG khi hỏi tên bạn mới?',opts:['你叫什么？','你什么叫？','什么你叫？','叫你什么？'],ans:0},
-  {q:'"叫" nghĩa là gì?',opts:['gọi, tên là','biết','thích','đi'],ans:0},
-  {q:'"很" nghĩa là gì?',opts:['rất','không','cũng','đã'],ans:0},
-  {q:'Câu nào ĐÚNG khi nói "Mình không quen."?',opts:['我不认识。','我认识不。','不我认识。','认识不我。'],ans:0},
-  {q:'"不" nghĩa là gì?',opts:['không, chẳng','có','rất','cũng'],ans:0},
-  {q:'Muốn nói vui khi quen ai đó, con dùng câu nào?',opts:['认识你，很高兴！','你好吗？','你叫什么？','你认识她吗？'],ans:0},
+  {q:'你＿＿什么？(hỏi tên)',opts:['叫','是','有','在'],ans:0,exp:'你叫什么？ là câu hỏi tên: 叫 (tên là) + 什么 (gì).'},
+  {q:'认识你，＿＿高兴！',opts:['很','不','叫','吗'],ans:0,exp:'很 (rất) đứng trước tính từ: 很高兴 = rất vui.'},
+  {q:'"高兴" nghĩa là gì?',opts:['vui, phấn khởi','buồn','tức giận','sợ hãi'],ans:0,exp:'高兴 (gāoxìng) nghĩa là vui, phấn khởi.'},
+  {q:'"认识" nghĩa là gì?',opts:['quen biết','xa lạ','yêu thích','ghét bỏ'],ans:0,exp:'认识 (rènshi) là quen biết: 认识你 = quen bạn.'},
+  {q:'"她" dùng để chỉ ai?',opts:['một bạn nữ','một bạn nam','thầy giáo','chính mình'],ans:0,exp:'她 có bộ 女 (nữ) nên dùng để chỉ một bạn nữ, cô ấy.'},
+  {q:'Trợ từ nào đặt cuối câu để tạo câu hỏi Có/Không?',opts:['吗','很','叫','不'],ans:0,exp:'吗 đặt cuối câu biến câu kể thành câu hỏi Có/Không: 你认识她吗？'},
+  {q:'Phủ định của "认识" (quen biết) là gì?',opts:['不认识','没认识','别认识','无认识'],ans:0,exp:'Muốn phủ định 认识 thì đặt 不 phía trước: 不认识 = không quen.'},
+  {q:'"什么" nghĩa là gì?',opts:['cái gì, gì','ai','ở đâu','khi nào'],ans:0,exp:'什么 (shénme) nghĩa là "gì, cái gì": 你叫什么？'},
+  {q:'"我" nghĩa là gì?',opts:['tôi, tớ, mình','bạn','cô ấy','chúng ta'],ans:0,exp:'我 (wǒ) là ngôi thứ nhất: tôi, tớ, mình.'},
+  {q:'Câu nào ĐÚNG khi hỏi tên bạn mới?',opts:['你叫什么？','你什么叫？','什么你叫？','叫你什么？'],ans:0,exp:'Từ để hỏi đứng đúng chỗ của câu trả lời: 我叫乐乐 → 你叫什么？'},
+  {q:'"叫" nghĩa là gì?',opts:['gọi, tên là','biết','thích','đi'],ans:0,exp:'叫 (jiào) nghĩa là "gọi, tên là": 我叫乐乐。'},
+  {q:'"很" nghĩa là gì?',opts:['rất','không','cũng','đã'],ans:0,exp:'很 (hěn) nghĩa là rất, đứng trước tính từ: 很好, 很高兴.'},
+  {q:'Câu nào ĐÚNG khi nói "Mình không quen."?',opts:['我不认识。','我认识不。','不我认识。','认识不我。'],ans:0,exp:'不 đứng ngay trước động từ: 我 + 不 + 认识。'},
+  {q:'"不" nghĩa là gì?',opts:['không, chẳng','có','rất','cũng'],ans:0,exp:'不 (bù) nghĩa là không, chẳng — dùng để phủ định.'},
+  {q:'Muốn nói vui khi quen ai đó, con dùng câu nào?',opts:['认识你，很高兴！','你好吗？','你叫什么？','你认识她吗？'],ans:0,exp:'认识你，很高兴！ = Rất vui được quen bạn — câu nói khi làm quen.'},
 ];
 
 var speakingData = {
@@ -231,4 +235,32 @@ var translateDataRev = [
   {vi:"Mình tên là Điềm Điềm.", zh:"我叫甜甜。", py:"Wǒ jiào Tiántian."},
   {vi:"Mình tên Điềm Điềm. Bạn tên gì?", zh:"我叫甜甜。你叫什么？", py:"Wǒ jiào Tiántian. Nǐ jiào shénme?"},
   {vi:"Mình tên Minh Minh. Quen được bạn mình rất vui!", zh:"我叫明明。认识你很高兴！", py:"Wǒ jiào Míngming. Rènshi nǐ hěn gāoxìng!"},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'你好！我叫明明。你叫什么？我叫乐乐。',
+   questions:[
+     {q:'Bạn hỏi trước tên là gì?',opts:['乐乐','明明','甜甜'],ans:1},
+     {q:'Bạn trả lời tên là gì?',opts:['甜甜','明明','乐乐'],ans:2},
+   ]},
+  {audio:'你认识她吗？我认识她，她叫甜甜。',
+   questions:[
+     {q:'Bạn nữ đó tên là gì?',opts:['甜甜','乐乐','明明'],ans:0},
+   ]},
+  {audio:'你认识她吗？不认识。',
+   questions:[
+     {q:'Câu trả lời có nghĩa là gì?',opts:['Có quen','Không quen','Rất vui'],ans:1},
+   ]},
+  {audio:'我叫甜甜。认识你，很高兴！',
+   questions:[
+     {q:'Bạn nhỏ nói câu này khi nào?',opts:['Khi mới làm quen','Khi đếm số','Khi chào tạm biệt'],ans:0},
+   ]},
+  {audio:'老师好！你好！你叫什么？我叫甜甜。',
+   questions:[
+     {q:'Ai hỏi tên bạn nhỏ?',opts:['Một bạn nam','Cô giáo','Mẹ'],ans:1},
+     {q:'Bạn nhỏ tên là gì?',opts:['明明','乐乐','甜甜'],ans:2},
+   ]},
 ];

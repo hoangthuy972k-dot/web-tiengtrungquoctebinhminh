@@ -6,6 +6,7 @@ var vocabData = [
    ex_zh:'你好！',ex_py:'Nǐ hǎo!',ex_vn:'Chào bạn!',
    exList:[
      {zh:'你好！',py:'Nǐ hǎo!',vn:'Chào bạn!'},
+     {zh:'你好，老师！',py:'Nǐ hǎo, lǎoshī!',vn:'Em chào cô ạ!'},
    ],
    hanzi:[
      {c:'你',p:'nǐ',type:'左右结构 · Trái-phải',st:7,ord:'亻(nhân) trái → 尔(biến thể) phải',rad:'亻 (nhân – người)',mean:'bạn, con, em',
@@ -16,6 +17,7 @@ var vocabData = [
    ex_zh:'老师好！',ex_py:'Lǎoshī hǎo!',ex_vn:'Con chào cô ạ!',
    exList:[
      {zh:'老师好！',py:'Lǎoshī hǎo!',vn:'Con chào cô ạ!'},
+     {zh:'老师好！你好！',py:'Lǎoshī hǎo! Nǐ hǎo!',vn:'Con chào cô ạ! — Chào con!'},
    ],
    hanzi:[
      {c:'好',p:'hǎo',type:'左右结构 · Trái-phải',st:6,ord:'女(nữ) trái → 子(tử) phải',rad:'女 (nữ – con gái)',mean:'tốt, khỏe',
@@ -26,6 +28,7 @@ var vocabData = [
    ex_zh:'老师，再见！',ex_py:'Lǎoshī, zàijiàn!',ex_vn:'Con chào cô, con về ạ!',
    exList:[
      {zh:'老师，再见！',py:'Lǎoshī, zàijiàn!',vn:'Con chào cô, con về ạ!'},
+     {zh:'再见，老师！',py:'Zàijiàn, lǎoshī!',vn:'Con chào cô, con về ạ!'},
    ],
    hanzi:[
      {c:'老',p:'lǎo',type:'独体字 · Chữ đơn',st:6,ord:'土→耂→匕(biến thể)',rad:'老 (lão – tự thành bộ)',mean:'già, đáng kính',
@@ -39,6 +42,7 @@ var vocabData = [
    ex_zh:'再见，再见！',ex_py:'Zàijiàn, zàijiàn!',ex_vn:'Tạm biệt, tạm biệt!',
    exList:[
      {zh:'再见，再见！',py:'Zàijiàn, zàijiàn!',vn:'Tạm biệt, tạm biệt!'},
+     {zh:'好，再见！',py:'Hǎo, zàijiàn!',vn:'Được rồi, tạm biệt nhé!'},
    ],
    hanzi:[
      {c:'再',p:'zài',type:'独体字 · Chữ đơn',st:6,ord:'一→冂→土(biến thể)',rad:'冂 (biến thể)',mean:'lại, lần nữa',
@@ -50,7 +54,7 @@ var vocabData = [
    ]},
   {n:5,zh:'一',py:'yī',pos:'Số từ',vn:'một', hv: 'nhất',em:'1️⃣',lesson:2,
    ex_zh:'一，二，三！',ex_py:'Yī, èr, sān!',ex_vn:'Một, hai, ba!',
-   exList:[{zh:'一，二，三！',py:'Yī, èr, sān!',vn:'Một, hai, ba!'}],
+   exList:[{zh:'一，二，三！',py:'Yī, èr, sān!',vn:'Một, hai, ba!'},{zh:'一，三，五，七，九！',py:'Yī, sān, wǔ, qī, jiǔ!',vn:'Một, ba, năm, bảy, chín!'}],
    hanzi:[
      {c:'一',p:'yī',type:'独体字 · Chữ đơn',st:1,ord:'一',rad:'一 (nhất – tự thành bộ)',mean:'một',
       tip:'Một nét ngang duy nhất → biểu thị số MỘT, số đầu tiên.',
@@ -60,6 +64,7 @@ var vocabData = [
    ex_zh:'二，四，六，八，十！',ex_py:'Èr, sì, liù, bā, shí!',ex_vn:'Hai, bốn, sáu, tám, mười!',
    exList:[
      {zh:'二，四，六，八，十！',py:'Èr, sì, liù, bā, shí!',vn:'Hai, bốn, sáu, tám, mười!'},
+     {zh:'一，二！一，二！',py:'Yī, èr! Yī, èr!',vn:'Một, hai! Một, hai!'},
    ],
    hanzi:[
      {c:'二',p:'èr',type:'独体字 · Chữ đơn',st:2,ord:'一→一',rad:'二 (nhị – tự thành bộ)',mean:'hai',
@@ -70,6 +75,7 @@ var vocabData = [
    ex_zh:'三，二，一！',ex_py:'Sān, èr, yī!',ex_vn:'Ba, hai, một!',
    exList:[
      {zh:'三，二，一！',py:'Sān, èr, yī!',vn:'Ba, hai, một!'},
+     {zh:'三，四，五！',py:'Sān, sì, wǔ!',vn:'Ba, bốn, năm!'},
    ],
    hanzi:[
      {c:'三',p:'sān',type:'独体字 · Chữ đơn',st:3,ord:'一→一→一',rad:'一 (nhất, biến thể)',mean:'ba',
@@ -78,7 +84,7 @@ var vocabData = [
    ]},
   {n:8,zh:'四',py:'sì',pos:'Số từ',vn:'bốn', hv: 'tứ',em:'4️⃣',lesson:2,
    ex_zh:'四，五，六！',ex_py:'Sì, wǔ, liù!',ex_vn:'Bốn, năm, sáu!',
-   exList:[{zh:'四，五，六！',py:'Sì, wǔ, liù!',vn:'Bốn, năm, sáu!'}],
+   exList:[{zh:'四，五，六！',py:'Sì, wǔ, liù!',vn:'Bốn, năm, sáu!'},{zh:'二，四，六！',py:'Èr, sì, liù!',vn:'Hai, bốn, sáu!'}],
    hanzi:[
      {c:'四',p:'sì',type:'全包围结构 · Bao vây hoàn toàn',st:5,ord:'囗(vi) ngoài → 儿(biến thể) trong',rad:'囗 (vi, biến thể)',mean:'bốn',
       tip:'Hình khung vuông chứa số đếm bên trong (chữ cổ) → số BỐN.',
@@ -88,6 +94,7 @@ var vocabData = [
    ex_zh:'五，四，三，二，一！',ex_py:'Wǔ, sì, sān, èr, yī!',ex_vn:'Năm, bốn, ba, hai, một!',
    exList:[
      {zh:'五，四，三，二，一！',py:'Wǔ, sì, sān, èr, yī!',vn:'Năm, bốn, ba, hai, một!'},
+     {zh:'五，六，七，八！',py:'Wǔ, liù, qī, bā!',vn:'Năm, sáu, bảy, tám!'},
    ],
    hanzi:[
      {c:'五',p:'wǔ',type:'独体字 · Chữ đơn',st:4,ord:'一→𠃌→乂(biến thể)→一',rad:'一 (nhất, biến thể)',mean:'năm (số)',
@@ -98,6 +105,7 @@ var vocabData = [
    ex_zh:'六，七，八！',ex_py:'Liù, qī, bā!',ex_vn:'Sáu, bảy, tám!',
    exList:[
      {zh:'六，七，八！',py:'Liù, qī, bā!',vn:'Sáu, bảy, tám!'},
+     {zh:'六，五，四！',py:'Liù, wǔ, sì!',vn:'Sáu, năm, bốn!'},
    ],
    hanzi:[
      {c:'六',p:'liù',type:'上下结构 · Trên-dưới',st:4,ord:'亠 trên → 八(biến thể) dưới',rad:'八 (bát, biến thể)',mean:'sáu',
@@ -106,7 +114,7 @@ var vocabData = [
    ]},
   {n:11,zh:'七',py:'qī',pos:'Số từ',vn:'bảy', hv: 'thất',em:'7️⃣',lesson:2,
    ex_zh:'七，八，九，十！',ex_py:'Qī, bā, jiǔ, shí!',ex_vn:'Bảy, tám, chín, mười!',
-   exList:[{zh:'七，八，九，十！',py:'Qī, bā, jiǔ, shí!',vn:'Bảy, tám, chín, mười!'}],
+   exList:[{zh:'七，八，九，十！',py:'Qī, bā, jiǔ, shí!',vn:'Bảy, tám, chín, mười!'},{zh:'五，六，七！',py:'Wǔ, liù, qī!',vn:'Năm, sáu, bảy!'}],
    hanzi:[
      {c:'七',p:'qī',type:'独体字 · Chữ đơn',st:2,ord:'一→㇃',rad:'一 (nhất, biến thể)',mean:'bảy',
       tip:'Một nét ngang cắt một nét sổ cong → số BẢY.',
@@ -116,6 +124,7 @@ var vocabData = [
    ex_zh:'八，九，十！',ex_py:'Bā, jiǔ, shí!',ex_vn:'Tám, chín, mười!',
    exList:[
      {zh:'八，九，十！',py:'Bā, jiǔ, shí!',vn:'Tám, chín, mười!'},
+     {zh:'二，四，六，八！',py:'Èr, sì, liù, bā!',vn:'Hai, bốn, sáu, tám!'},
    ],
    hanzi:[
      {c:'八',p:'bā',type:'独体字 · Tượng hình',st:2,ord:'丿→㇏',rad:'八 (bát – tự thành bộ)',mean:'tám',
@@ -126,6 +135,7 @@ var vocabData = [
    ex_zh:'九，七，五，三，一！',ex_py:'Jiǔ, qī, wǔ, sān, yī!',ex_vn:'Chín, bảy, năm, ba, một!',
    exList:[
      {zh:'九，七，五，三，一！',py:'Jiǔ, qī, wǔ, sān, yī!',vn:'Chín, bảy, năm, ba, một!'},
+     {zh:'七，八，九！',py:'Qī, bā, jiǔ!',vn:'Bảy, tám, chín!'},
    ],
    hanzi:[
      {c:'九',p:'jiǔ',type:'独体字 · Chữ đơn',st:2,ord:'ノ→乙(biến thể)',rad:'乙 (ất, biến thể)',mean:'chín',
@@ -136,6 +146,7 @@ var vocabData = [
    ex_zh:'十，九，八，七，六！',ex_py:'Shí, jiǔ, bā, qī, liù!',ex_vn:'Mười, chín, tám, bảy, sáu!',
    exList:[
      {zh:'十，九，八，七，六！',py:'Shí, jiǔ, bā, qī, liù!',vn:'Mười, chín, tám, bảy, sáu!'},
+     {zh:'六，七，八，九，十！',py:'Liù, qī, bā, jiǔ, shí!',vn:'Sáu, bảy, tám, chín, mười!'},
    ],
    hanzi:[
      {c:'十',p:'shí',type:'独体字 · Chữ đơn',st:2,ord:'一→丨',rad:'十 (thập – tự thành bộ)',mean:'mười',
@@ -177,14 +188,14 @@ var dialogData = [
 
 // Điền từ — tình huống chào hỏi & đếm số
 var fillData = [
-  {pre:'Con chào cô giáo, con nói: “',blank:'老师',post:'好！”',hint:'(thầy/cô giáo)',ans:'老师'},
-  {pre:'Con chào một người bạn: “',blank:'你',post:'好！”',hint:'(bạn, con, em)',ans:'你'},
-  {pre:'Con tạm biệt khi ra về: “',blank:'再见',post:'！”',hint:'(tạm biệt)',ans:'再见'},
-  {pre:'Đếm: 一，',blank:'二',post:'，三',hint:'(hai)',ans:'二'},
-  {pre:'Đếm: 四，',blank:'五',post:'，六',hint:'(năm)',ans:'五'},
-  {pre:'Đếm: 七，',blank:'八',post:'，九',hint:'(tám)',ans:'八'},
-  {pre:'Số cuối cùng khi đếm đến mười: “',blank:'十',post:'”',hint:'(mười)',ans:'十'},
-  {pre:'Đếm: 六，',blank:'七',post:'，八',hint:'(bảy)',ans:'七'},
+  {pre:'Con chào cô giáo, con nói: “',blank:'老师',post:'好！”',hint:'(thầy/cô giáo)',ans:'老师',exp:'老师好 là cách chào thầy cô lễ phép: 老师 + 好.'},
+  {pre:'Con chào một người bạn: “',blank:'你',post:'好！”',hint:'(bạn, con, em)',ans:'你',exp:'你好 = 你 (bạn) + 好 (khỏe): lời chào bạn bè.'},
+  {pre:'Con tạm biệt khi ra về: “',blank:'再见',post:'！”',hint:'(tạm biệt)',ans:'再见',exp:'再见 (hẹn gặp lại) dùng khi chia tay, ra về.'},
+  {pre:'Đếm: 一，',blank:'二',post:'，三',hint:'(hai)',ans:'二',exp:'Dãy 一，二，三 là 1, 2, 3 — số 2 là 二.'},
+  {pre:'Đếm: 四，',blank:'五',post:'，六',hint:'(năm)',ans:'五',exp:'Dãy 四，五，六 là 4, 5, 6 — số 5 là 五.'},
+  {pre:'Đếm: 七，',blank:'八',post:'，九',hint:'(tám)',ans:'八',exp:'Dãy 七，八，九 là 7, 8, 9 — số 8 là 八.'},
+  {pre:'Số cuối cùng khi đếm đến mười: “',blank:'十',post:'”',hint:'(mười)',ans:'十',exp:'十 (shí) là số 10, viết như hình chữ thập.'},
+  {pre:'Đếm: 六，',blank:'七',post:'，八',hint:'(bảy)',ans:'七',exp:'Dãy 六，七，八 là 6, 7, 8 — số 7 là 七.'},
 ];
 
 // Sắp xếp — câu chào hỏi & dãy số
@@ -207,21 +218,21 @@ var matchData = [
 
 // Trắc nghiệm — không audio
 var mcData = [
-  {q:'Từ nào dùng để gọi thầy/cô giáo?',opts:['老师','学生','朋友','妈妈'],ans:0},
-  {q:'"好" nghĩa là gì?',opts:['tốt, khỏe','xấu','buồn','mệt'],ans:0},
-  {q:'"再见" nghĩa là gì?',opts:['tạm biệt','xin chào','cảm ơn','xin lỗi'],ans:0},
-  {q:'Số nào đứng sau 五 (năm)?',opts:['六','四','七','八'],ans:0},
-  {q:'Số nào đứng trước 十 (mười)?',opts:['九','八','七','六'],ans:0},
-  {q:'"三" là số mấy?',opts:['ba','hai','bốn','năm'],ans:0},
-  {q:'"八" là số mấy?',opts:['tám','bảy','chín','sáu'],ans:0},
-  {q:'Đếm từ 1 đến 3: 一，二，＿＿',opts:['三','四','五','六'],ans:0},
-  {q:'Đếm từ 8 đến 10: 八，九，＿＿',opts:['十','一','二','三'],ans:0},
-  {q:'"你" dùng để gọi ai?',opts:['người đang nói chuyện cùng mình','thầy cô giáo','bố mẹ','bạn bè ở xa'],ans:0},
-  {q:'"你好" dùng khi nào?',opts:['khi gặp ai đó','khi chia tay','khi đếm số','khi hỏi tên'],ans:0},
-  {q:'"一" là số mấy?',opts:['một','hai','ba','không'],ans:0},
-  {q:'Số nào đứng ngay sau 二 (hai)?',opts:['三','一','四','五'],ans:0},
-  {q:'"再见" dùng khi nào?',opts:['khi chia tay, ra về','khi mới gặp','khi hỏi tên','khi đếm số'],ans:0},
-  {q:'Đếm ngược: 十，九，＿＿',opts:['八','七','六','五'],ans:0},
+  {q:'Từ nào dùng để gọi thầy/cô giáo?',opts:['老师','学生','朋友','妈妈'],ans:0,exp:'老师 (lǎoshī) là thầy/cô giáo. 学生 là học sinh, 朋友 là bạn bè, 妈妈 là mẹ.'},
+  {q:'"好" nghĩa là gì?',opts:['tốt, khỏe','xấu','buồn','mệt'],ans:0,exp:'好 (hǎo) nghĩa là tốt, khỏe — nên 你好 là lời chào "chúc bạn khỏe".'},
+  {q:'"再见" nghĩa là gì?',opts:['tạm biệt','xin chào','cảm ơn','xin lỗi'],ans:0,exp:'再见 = 再 (lại) + 见 (gặp): "hẹn gặp lại", tức là tạm biệt.'},
+  {q:'Số nào đứng sau 五 (năm)?',opts:['六','四','七','八'],ans:0,exp:'Đếm 四，五，六 — ngay sau 五 (5) là 六 (6).'},
+  {q:'Số nào đứng trước 十 (mười)?',opts:['九','八','七','六'],ans:0,exp:'Đếm 八，九，十 — ngay trước 十 (10) là 九 (9).'},
+  {q:'"三" là số mấy?',opts:['ba','hai','bốn','năm'],ans:0,exp:'三 có ba nét ngang, là số 3.'},
+  {q:'"八" là số mấy?',opts:['tám','bảy','chín','sáu'],ans:0,exp:'八 (bā) có hai nét tách sang hai bên, là số 8.'},
+  {q:'Đếm từ 1 đến 3: 一，二，＿＿',opts:['三','四','五','六'],ans:0,exp:'一，二，三 là 1, 2, 3 — số còn thiếu là 三.'},
+  {q:'Đếm từ 8 đến 10: 八，九，＿＿',opts:['十','一','二','三'],ans:0,exp:'Đếm 八，九，十 — số 10 là 十.'},
+  {q:'"你" dùng để gọi ai?',opts:['người đang nói chuyện cùng mình','thầy cô giáo','bố mẹ','bạn bè ở xa'],ans:0,exp:'你 là "bạn", dùng gọi người đang nói chuyện trực tiếp với mình.'},
+  {q:'"你好" dùng khi nào?',opts:['khi gặp ai đó','khi chia tay','khi đếm số','khi hỏi tên'],ans:0,exp:'你好 là lời chào khi gặp nhau; khi chia tay thì nói 再见.'},
+  {q:'"一" là số mấy?',opts:['một','hai','ba','không'],ans:0,exp:'一 chỉ có một nét ngang, là số 1.'},
+  {q:'Số nào đứng ngay sau 二 (hai)?',opts:['三','一','四','五'],ans:0,exp:'Đếm 一，二，三 — sau 二 (2) là 三 (3).'},
+  {q:'"再见" dùng khi nào?',opts:['khi chia tay, ra về','khi mới gặp','khi hỏi tên','khi đếm số'],ans:0,exp:'再见 dùng khi chia tay, ra về; khi mới gặp thì nói 你好.'},
+  {q:'Đếm ngược: 十，九，＿＿',opts:['八','七','六','五'],ans:0,exp:'Đếm ngược 十，九，八 — sau 九 (9) là 八 (8).'},
 ];
 
 var speakingData = {
@@ -285,4 +296,31 @@ var translateDataRev = [
   {vi:"Tạm biệt con!", zh:"再见！", py:"Zàijiàn!"},
   {vi:"Một, hai, ba, bốn, năm!", zh:"一，二，三，四，五！", py:"Yī, èr, sān, sì, wǔ!"},
   {vi:"Sáu, bảy, tám, chín, mười!", zh:"六，七，八，九，十！", py:"Liù, qī, bā, jiǔ, shí!"},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'老师好！你好！',
+   questions:[
+     {q:'Bạn nhỏ chào ai?',opts:['Cô giáo','Bạn cùng lớp','Mẹ'],ans:0},
+   ]},
+  {audio:'一，二，三，四，五。',
+   questions:[
+     {q:'Bạn nhỏ đếm đến số mấy?',opts:['3','5','10'],ans:1},
+     {q:'Số đầu tiên bạn nhỏ đọc là số nào?',opts:['五','三','一'],ans:2},
+   ]},
+  {audio:'老师，再见！再见！',
+   questions:[
+     {q:'Bạn nhỏ đang làm gì?',opts:['Chào khi mới gặp','Chào tạm biệt cô giáo','Đếm số'],ans:1},
+   ]},
+  {audio:'十，九，八，七，六。',
+   questions:[
+     {q:'Bạn nhỏ đếm như thế nào?',opts:['Đếm xuôi từ 6 đến 10','Đếm ngược từ 10 xuống 6','Đếm từ 1 đến 5'],ans:1},
+   ]},
+  {audio:'七，八，九。',
+   questions:[
+     {q:'Số nào KHÔNG có trong đoạn nghe?',opts:['七','八','十'],ans:2},
+   ]},
 ];

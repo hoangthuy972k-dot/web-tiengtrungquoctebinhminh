@@ -565,3 +565,6 @@ body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 .hint-btn:hover,.hint-btn.open{border-style:solid;background:var(--hint-bg);}
 .hint-btn:focus-visible{outline:2px solid var(--hint-ink);outline-offset:2px;}
 .hint-text{font-size:0.86rem;color:var(--hint-text);}
+/* Giai thich sau khi tra loi (exp/why/giai): chu thuong, mau trung tinh, xuong dong gon tren dien thoai */
+.q-fb .q-exp{margin-top:6px;padding-top:6px;border-top:1px dashed var(--border);font-weight:400;font-size:0.84rem;line-height:1.55;color:var(--ink2);overflow-wrap:anywhere;}
+.q-fb .q-exp.is-ngan{color:var(--mid);}

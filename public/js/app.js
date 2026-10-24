@@ -339,6 +339,27 @@
     if (!m || !/＿|_{2,}/.test(s.slice(0, m.index))) return { q: s, hint: '' };
     return { q: s.slice(0, m.index), hint: '(' + m[1] + ')' };
   }
+  // Giai thich cua 1 cau bai tap: du lieu bai co the dat ten exp / why / giai
+  function giaiThichCua(q) {
+    if (!q) return '';
+    var s = q.exp || q.why || q.giai || '';
+    return typeof s === 'string' ? s.trim() : '';
+  }
+  // Ban ngan khi tra loi dung: cau dau tien cua loi giai (toi da ~110 ky tu)
+  function giaiThichNgan(s) {
+    s = String(s || '');
+    var m = s.match(/^[\s\S]*?[.!?。！？](?=\s|$)/);
+    var t = m && m[0].length >= 12 ? m[0] : s;
+    if (t.length > 110) t = t.slice(0, 108).replace(/\s+\S*$/, '') + '…';
+    return t;
+  }
+  // Dong "💡 giai thich" in duoi phan phan hoi: sai -> day du, dung -> ban ngan
+  function giaiThichHtml(q, dung) {
+    var s = giaiThichCua(q);
+    if (!s) return '';
+    return '<div class="ex-why' + (dung ? ' is-ngan' : '') + '">💡 ' + fqText(dung ? giaiThichNgan(s) : s) + '</div>';
+  }
+
   document.addEventListener('click', function (e) {
     var b = e.target && e.target.closest ? e.target.closest('.hint-btn') : null;
     if (!b) return;
@@ -883,6 +904,7 @@
     trophy: '<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6"/>',
     teacher: '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
     review: '<path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/>',
+    onxoay: '<path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/><path d="M12 8v4l3 2"/>',
     idiom: '<path d="M6 4h12v16H6zM6 4a2 2 0 0 0-2 2v1h2M18 20a2 2 0 0 0 2-2v-1h-2M9 9h6M9 13h6"/>',
     loa: '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>',
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
@@ -2444,7 +2466,7 @@
   // O dang bai -> nhung phan luu "dang lam do" thuoc ve o do
   var HUB_RESUME_PREFIX = {
     warmup: ['warmup'], vocab: ['vocab:q:'], flash: ['flash'], grammar: ['grammar:q:'], dialog: ['dialog'],
-    listen: ['listen:q:', 'listen:dialog', 'listen:wb'], game: ['game:match', 'game:fill', 'game:sort', 'game:errfix', 'game:mc'],
+    listen: ['listen:q:', 'listen:dialog', 'listen:wb'], game: ['game:match', 'game:fill', 'game:sort', 'game:errfix', 'game:mc', 'game:onxoay'],
     speak: ['speak:ai', 'speak:rec:'], translate: ['translate:q:'], workbook: ['workbook']
   };
 
@@ -2944,9 +2966,13 @@
     var wrap = $('#fqContent');
     wrap.innerHTML = '<p style="color:var(--color-gray-500);">Đang chuẩn bị đề…</p>';
     fqState = null;
-    Promise.all([loadLessonRawData(lesson), ensureGrammarFile(levelId), ensureNptFiles(levelId)]).then(function (res) {
+    // On xoay oc: tu bai 3 tro di tron 3 cau cua cac bai truoc (tai loi -> bo qua, khong chan de)
+    var cauCu = (Number(lesson.number) || 0) >= 3 ? oxTaiNhom(levelId, lesson) : Promise.resolve([]);
+    Promise.all([loadLessonRawData(lesson), ensureGrammarFile(levelId), ensureNptFiles(levelId), cauCu]).then(function (res) {
       var data = res[0];
-      fqState = { lesson: lesson, levelId: levelId, items: fqBuild(data, fqGrammarItems().concat(fqNptItems(lesson))), pos: 0, score: 0, log: [], waiting: false, tuSai: {} };
+      var cu = [];
+      try { cu = oxChoKiemTra(res[3], 3); } catch (e) { cu = []; }
+      fqState = { lesson: lesson, levelId: levelId, items: fqBuild(data, fqGrammarItems().concat(fqNptItems(lesson)), cu), pos: 0, score: 0, log: [], waiting: false, tuSai: {} };
       pgbInit('fq', fqState.items.length);
       fqRender();
     }).catch(function () {
@@ -3008,7 +3034,8 @@
   // tu vung 2 chieu · ngu phap · trac nghiem · chon tu / sua loi · dien tu · doc hieu bai khoa
   // + cuoi de 3-5 cau tu go (dien chu Han, dich Viet → Trung)
   var FQ_TOI_DA = 30;
-  function fqBuild(data, gramItems) {
+  function fqBuild(data, gramItems, cuItems) {
+    var cu = (cuItems || []).slice(0, 3); // cau "Ôn bài cũ" (ôn xoáy ốc) — luôn giữ trong đề
     var vocab = (data.vocabData || []).filter(function (v) { return v.zh && v.vn; });
     var tuTheoZh = {};
     vocab.forEach(function (v) { if (!tuTheoZh[v.zh]) tuTheoZh[v.zh] = v; });
@@ -3019,7 +3046,7 @@
     nhom.push(shuffle((data.mcData || []).slice()).slice(0, 5).map(function (q) {
       var gy = tachGoiY(q.q);
       return { kind: 'Trắc nghiệm', prompt: '<div class="fq-q hanzi">' + gy.q + '</div>' + (gy.hint ? '<div class="fq-py">' + hintBtnHtml(gy.hint) + '</div>' : ''), opts: q.opts.slice(), ans: q.ans, zhOpts: true,
-        qText: gy.q, exp: q.exp || '' };
+        qText: gy.q, exp: giaiThichCua(q) };
     }));
     // Chon tu / sua loi sai
     var wordChoice = data.errorFixMode === 'wordchoice';
@@ -3030,7 +3057,7 @@
           ? '<div class="fq-q hanzi">' + q.wrong + '</div>'
           : '<div class="fq-q">Câu sai: <span class="hanzi">' + q.wrong + '</span><br><small>Chọn câu đúng:</small></div>',
         opts: q.opts.slice(), ans: q.ans, zhOpts: true,
-        qText: wordChoice ? q.wrong : 'Câu sai: ' + q.wrong, exp: q.exp || '', vocab: wordChoice ? tuTheoZh[q.opts[q.ans]] : null
+        qText: wordChoice ? q.wrong : 'Câu sai: ' + q.wrong, exp: giaiThichCua(q), vocab: wordChoice ? tuTheoZh[q.opts[q.ans]] : null
       };
     }));
     // Dien tu -> chon 1 trong 4 dap an cua cac cau dien khac
@@ -3042,14 +3069,14 @@
       var opts = shuffle([f.ans].concat(shuffle(dsDien.filter(function (x) { return x !== f.ans; })).slice(0, 3)));
       return { kind: 'Điền từ', prompt: '<div class="fq-q hanzi">' + (f.pre || '') + '<span class="blank">___</span>' + (f.post || '') + '</div>' +
         (f.hint ? '<div class="fq-py">' + hintBtnHtml(f.hint) + '</div>' : ''), opts: opts, ans: opts.indexOf(f.ans), zhOpts: true,
-        qText: (f.pre || '') + '___' + (f.post || ''), exp: f.exp || '', vocab: tuTheoZh[f.ans] || null };
+        qText: (f.pre || '') + '___' + (f.post || ''), exp: giaiThichCua(f), vocab: tuTheoZh[f.ans] || null };
     }) : []);
     // Doc hieu bai khoa / hoi thoai
     var docHieu = [];
     (data.dialogData || []).forEach(function (sc) { (sc.preQuiz || []).forEach(function (q) { if (q.opts && typeof q.ans === 'number') docHieu.push(q); }); });
     nhom.push(shuffle(docHieu).slice(0, 4).map(function (q) {
       return { kind: 'Đọc hiểu', prompt: '<div class="fq-q hanzi">' + q.q + '</div>', opts: q.opts.slice(), ans: q.ans, zhOpts: true,
-        qText: q.q, exp: q.exp || q.giai || '' };
+        qText: q.q, exp: giaiThichCua(q) };
     }));
 
     // Cau tu go o cuoi de: dich 1-2 cau (neu bai co translateData) + dien chu Han (uu tien
@@ -3067,7 +3094,7 @@
           '<div class="fq-q hanzi">' + (f.pre || '') + '<span class="blank">___</span>' + (f.post || '') + '</div>' +
           (f.hint ? '<div class="fq-py">' + f.hint + '</div>' : ''),
         dap: f.ans, ansText: f.ans, ansZh: true,
-        qText: (f.pre || '') + '___' + (f.post || ''), exp: f.exp || '', vocab: tuTheoZh[f.ans] || null };
+        qText: (f.pre || '') + '___' + (f.post || ''), exp: giaiThichCua(f), vocab: tuTheoZh[f.ans] || null };
     });
     var goDich = shuffle(dichDs).slice(0, soDich).map(function (t) {
       var goiY = Array.isArray(t.goiY) ? t.goiY.filter(Boolean) : [];
@@ -3079,7 +3106,7 @@
     });
     var goTay = goDien.concat(goDich);
 
-    var khac = nhom.reduce(function (n, g) { return n + g.length; }, 0);
+    var khac = nhom.reduce(function (n, g) { return n + g.length; }, 0) + cu.length;
     // Tu vung lap phan con lai (it nhat 6, toi da 16 tu), nua Trung -> Viet, nua Viet -> Trung
     var soTu = Math.min(vocab.length, 16, Math.max(6, FQ_TOI_DA - goTay.length - khac));
     var tv = shuffle(vocab).slice(0, soTu).map(function (v, i) {
@@ -3093,8 +3120,10 @@
             qText: 'Chữ Hán có nghĩa: ' + v.vn, vocab: v };
     });
     var items = tv.concat.apply(tv, nhom);
-    // Giu tong do dai nhu cu (~30 cau): phan trac nghiem nhuong cho cac cau tu go
-    return shuffle(items).slice(0, Math.max(FQ_TOI_DA - goTay.length, 10)).concat(goTay);
+    // Giu tong do dai nhu cu (~30 cau): phan trac nghiem nhuong cho cac cau tu go va cau on bai cu
+    var chinh = shuffle(items).slice(0, Math.max(FQ_TOI_DA - goTay.length - cu.length, 10));
+    cu.forEach(function (c) { chinh.splice(Math.floor(Math.random() * (chinh.length + 1)), 0, c); });
+    return chinh.concat(goTay);
   }
 
   // Chu Han / dap an de so sanh: bo khoang trang, dau cau (Trung + Latin), doi so/chu full-width
@@ -3251,11 +3280,11 @@
   }
 
   // Tu vung lam sai -> ve hop 1 cua On tap ngat quang (on lai ngay mai)
-  function fqTuSai(st, v) {
+  function fqTuSai(st, v, baiCu) {
     if (!v || !v.zh || st.tuSai[v.zh]) return;
     st.tuSai[v.zh] = 1;
     try {
-      srsEnroll(st.lesson, [v]); // tu chua co trong lich on thi them vao truoc
+      srsEnroll(baiCu || st.lesson, [v]); // tu chua co trong lich on thi them vao truoc (cau on bai cu -> ghi bai goc)
       srsAnswer(v.zh, false);
     } catch (e) { /* bo qua */ }
   }
@@ -3274,7 +3303,9 @@
     pgbRecord('fq', st.pos, ok);
     if (opts.tuCham) window.hwStarAnswer = giuSao;
     st.log.push({ n: st.pos + 1, it: it, ok: ok, given: given == null ? '' : String(given) });
-    if (!ok && it.vocab) fqTuSai(st, it.vocab);
+    if (!ok && it.vocab) fqTuSai(st, it.vocab, it.lessonCu);
+    // Cau on bai cu dung -> tin hieu "nho" cho tu do (sai da xu ly o fqTuSai)
+    if (ok && it.lessonCu && it.vocab) srsSignal(it.vocab.zh, true);
     var wait = typeof opts.wait === 'boolean' ? opts.wait : !ok;
     var ansText = it.ansText != null ? it.ansText : it.opts[it.ans];
     var ansZh = it.ansZh != null ? it.ansZh : it.zhOpts;
@@ -13937,8 +13968,133 @@
     errfix: { label: 'Sửa lỗi sai', emoji: '🛠️', color: 'pink', desc: 'Tìm câu đúng để sửa lỗi sai thường gặp' },
     errfixWord: { label: 'Chọn từ phù hợp với nghĩa', emoji: '📝', color: 'pink', desc: 'Đọc câu, chọn từ phù hợp với nghĩa để điền vào chỗ trống (bài gốc trong SGK)' },
     mc: { label: 'Trắc nghiệm', emoji: '🎯', color: 'teal', desc: 'Chọn đáp án đúng cho mỗi câu hỏi' },
-    sgk: { label: 'Bài tập SGK · 练习', emoji: '📘', color: 'red', desc: 'Đúng các bài tập trong sách: chọn từ điền trống, chọn đáp án, chọn vị trí của từ' }
+    sgk: { label: 'Bài tập SGK · 练习', emoji: '📘', color: 'red', desc: 'Đúng các bài tập trong sách: chọn từ điền trống, chọn đáp án, chọn vị trí của từ' },
+    onxoay: { label: '🔁 Ôn bài cũ', emoji: '🔁', color: 'gold', desc: 'Ôn lại từ các bài trước: vài câu chọn ngẫu nhiên từ các bài gần nhất' }
   };
+
+  /* ---------------- On xoay oc: cau cua cac bai truoc (N-1 ... N-4) ----------------
+     Khong soan noi dung moi: lay ngau nhien tu mcData / fillData (doi thanh chon 1 trong 4) /
+     errorFixData dang chon tu cua cac bai truoc cung cap do. Dung o buoc Luyen tap (bo
+     "Ôn bài cũ") va tron 3 cau vao bai kiem tra cuoi bai. Bai nao tai loi thi bo qua. */
+  var OX_SO_CAU = 7;
+  var OX_SO_BAI = 4;
+
+  function oxBaiTruoc(levelId, lesson) {
+    var n = Number(lesson && lesson.number) || 0;
+    if (n < 2) return [];
+    return ((APP_DATA.lessons && APP_DATA.lessons[levelId]) || []).filter(function (l) {
+      var k = Number(l && l.number) || 0;
+      return l !== lesson && l.fullPageUrl && l.fullPageUrl !== lesson.fullPageUrl && k < n && k >= n - OX_SO_BAI;
+    }).sort(function (a, b) { return b.number - a.number; });
+  }
+
+  // Cau on tu 1 bai cu, dang chung { q (HTML), hint, opts, ans, exp, src, vocab, lesson }
+  function oxCauTuBai(l, data) {
+    var out = [];
+    var src = 'Bài ' + l.number;
+    var tuTheoZh = {};
+    (data.vocabData || []).forEach(function (v) { if (v && v.zh && !tuTheoZh[v.zh]) tuTheoZh[v.zh] = v; });
+    var vocabZh = Object.keys(tuTheoZh);
+    function them(q, hint, opts, ans, goc) {
+      if (!Array.isArray(opts) || opts.length < 2 || typeof ans !== 'number' || ans < 0 || opts[ans] == null) return;
+      out.push({ q: q, hint: hint || '', opts: opts, ans: ans, exp: giaiThichCua(goc), src: src,
+        vocab: tuTheoZh[String(opts[ans]).trim()] || null, lesson: l });
+    }
+    (data.mcData || []).forEach(function (q) {
+      if (!q || !Array.isArray(q.opts)) return;
+      var gy = tachGoiY(q.q);
+      them(gy.q, gy.hint, q.opts.slice(), q.ans, q);
+    });
+    var fills = (data.fillData || []).filter(function (f) { return f && f.ans; });
+    var dsDien = fills.map(function (f) { return f.ans; }).filter(function (x, i, arr) { return arr.indexOf(x) === i; });
+    fills.forEach(function (f) {
+      // phuong an nhieu: dap an cac cau dien khac cua bai, thieu thi lay them tu vung cua bai
+      var nhieu = dsDien.filter(function (x) { return x !== f.ans; });
+      if (nhieu.length < 3) nhieu = nhieu.concat(shuffle(vocabZh.filter(function (x) { return x !== f.ans && nhieu.indexOf(x) < 0; })).slice(0, 3 - nhieu.length));
+      if (nhieu.length < 2) return;
+      var opts = shuffle([f.ans].concat(shuffle(nhieu).slice(0, 3)));
+      them((f.pre || '') + '<span class="blank">___</span>' + (f.post || ''), f.hint, opts, opts.indexOf(f.ans), f);
+    });
+    if (data.errorFixMode === 'wordchoice') {
+      (data.errorFixData || []).forEach(function (q) {
+        if (q && q.wrong && Array.isArray(q.opts)) them(q.wrong, '', q.opts.slice(), q.ans, q);
+      });
+    }
+    return out;
+  }
+
+  // Tai cau on cua cac bai truoc -> mang theo tung bai (bai loi / chua co du lieu -> mang rong).
+  // Toi da 6 giay: mang cham thi bo qua phan on, khong chan man hinh chinh.
+  function oxTaiNhom(levelId, lesson) {
+    var ds = oxBaiTruoc(levelId, lesson);
+    if (!ds.length) return Promise.resolve([]);
+    var tai = Promise.all(ds.map(function (l) {
+      return loadLessonRawData(l).then(function (d) { return oxCauTuBai(l, d); }).catch(function () { return []; });
+    }));
+    var cho = new Promise(function (resolve) { setTimeout(function () { resolve([]); }, 6000); });
+    return Promise.race([tai, cho]).catch(function () { return []; });
+  }
+
+  function oxTongCau(nhom) {
+    return (nhom || []).reduce(function (s, g) { return s + (g ? g.length : 0); }, 0);
+  }
+
+  // Chon so cau, xoay vong qua tung bai de cau trai deu cac bai truoc
+  function oxChon(nhom, soCau) {
+    var hang = (nhom || []).map(function (g) { return shuffle(g || []); }).filter(function (g) { return g.length; });
+    var out = [];
+    while (out.length < soCau && hang.some(function (g) { return g.length; })) {
+      hang.forEach(function (g) { if (out.length < soCau && g.length) out.push(g.shift()); });
+    }
+    return shuffle(out);
+  }
+
+  // Bo cau dang lam (giu lai khi tai lai trang giua chung), hoac bo moi
+  function oxBoCau(moi) {
+    var nhom = gpGameData && gpGameData.onxoay;
+    var luu = moi ? null : rsGet('oxset');
+    var dangLam = rsGet('game:onxoay');
+    if (luu && Array.isArray(luu.items) && luu.items.length && dangLam && dangLam.n === luu.items.length) return luu.items;
+    var bo = oxChon(nhom, OX_SO_CAU).map(function (c) {
+      return { q: c.q, hint: c.hint, opts: c.opts, ans: c.ans, exp: c.exp, src: c.src };
+    });
+    rsClear('game:onxoay');
+    rsSet('oxset', { items: bo });
+    return bo;
+  }
+
+  function renderGameOnXoay(moi) {
+    var bo = oxBoCau(moi);
+    var area = $('#gpGameArea');
+    var cacBai = [];
+    bo.forEach(function (c) { if (cacBai.indexOf(c.src) < 0) cacBai.push(c.src); });
+    cacBai.sort(function (a, b) { return (parseFloat(a.replace(/^\D+/, '')) || 0) - (parseFloat(b.replace(/^\D+/, '')) || 0); });
+    area.innerHTML = '<p class="ox-intro">Ôn lại từ các bài trước' + (cacBai.length ? ' (' + cacBai.join(', ') + ')' : '') +
+      ' — câu sai sẽ được nhắc lại trong lịch ôn tập.</p><div id="oxList"></div>' +
+      '<button type="button" class="btn btn-outline ox-redo" id="oxRedo">🔁 Làm bộ câu khác</button>';
+    renderGameMcList(bo, { wrongPrefix: false, gameKey: 'onxoay', wrap: $('#oxList') });
+    $('#oxRedo').addEventListener('click', function () {
+      rsClear('game:onxoay');
+      rsHideNotice('#gpContent');
+      renderGameOnXoay(true);
+      var top = $('#gpContent');
+      if (top && top.getBoundingClientRect().top < 0) top.scrollIntoView({ block: 'start' });
+    });
+  }
+
+  // Cau on bai cu cho bai kiem tra cuoi bai (dang cau cua fqBuild)
+  function oxChoKiemTra(nhom, soCau) {
+    return oxChon(nhom, soCau).map(function (c) {
+      return {
+        kind: 'Ôn bài cũ',
+        prompt: '<div class="fq-q-note">🔁 Ôn bài cũ · ' + c.src + '</div><div class="fq-q hanzi">' + c.q + '</div>' +
+          (c.hint ? '<div class="fq-py">' + hintBtnHtml(c.hint) + '</div>' : ''),
+        opts: c.opts.slice(), ans: c.ans, zhOpts: /[㐀-鿿]/.test(c.opts.join('')),
+        qText: String(c.q).replace(/<span class="blank">___<\/span>/g, '___'), exp: c.exp,
+        vocab: c.vocab, lessonCu: c.lesson
+      };
+    });
+  }
 
   // errorFixData được tái sử dụng theo 2 kiểu: mặc định là "sửa lỗi sai" (chọn
   // câu đúng), một số bài (vd. HSK4 dùng nguyên bài SGK) là "chọn từ thích hợp"
@@ -13977,14 +14133,18 @@
 
     gpMode = null;
     rsHideNotice('#gpContent');
-    loadLessonGameData(lesson).then(function (data) {
+    Promise.all([loadLessonGameData(lesson), oxTaiNhom(levelId, lesson)]).then(function (res) {
+      var data = res[0];
+      // Bo "Ôn bài cũ": chi hien khi cac bai truoc co du cau (bai 1 -> khong co)
+      data.onxoay = oxTongCau(res[1]) >= 4 ? res[1] : [];
+      if (!currentHubLesson || currentHubLesson.fullPageUrl !== lesson.fullPageUrl) return; // da chuyen sang bai khac trong luc tai
       gpGameData = data;
       // Nho so dang bai co noi dung (bai chi co 1 dang thi buoc Luyen tap chi can 1 dang)
       var nLoai = (LEVEL_GAME_TYPES[levelId] || []).filter(function (t) { return (data[t] || []).length; }).length;
       var mLoai = readJSON('hyv_game_types', {}) || {};
       if (nLoai && mLoai[lesson.fullPageUrl] !== nLoai) { mLoai[lesson.fullPageUrl] = nLoai; writeJSON('hyv_game_types', mLoai); }
       var savedGame = rsGet('game:mode');
-      if (savedGame && (LEVEL_GAME_TYPES[levelId] || []).indexOf(savedGame) >= 0 && (data[savedGame] || []).length) gpMode = savedGame;
+      if (savedGame && gpCacDang().indexOf(savedGame) >= 0 && (data[savedGame] || []).length) gpMode = savedGame;
       renderGameScreen();
     }).catch(function () {
       $('#gpContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung game của bài này.</p>';
@@ -13998,9 +14158,16 @@
     else renderGameByType(gpMode);
   }
 
+  // Cac dang trong man Luyen tap: dang cua cap do + "Ôn bài cũ" khi bai co cau on tu bai truoc
+  function gpCacDang() {
+    var types = (LEVEL_GAME_TYPES[currentHubLevelId] || []).slice();
+    if (gpGameData && (gpGameData.onxoay || []).length) types.push('onxoay');
+    return types;
+  }
+
   function renderGamePicker() {
     var wrap = $('#gpContent');
-    var types = LEVEL_GAME_TYPES[currentHubLevelId] || [];
+    var types = gpCacDang();
     // Dieu kien qua buoc Luyen tap + ket qua tot nhat tung dang
     var gs = currentHubLesson ? gameStepStatus(currentHubLesson) : null;
     var gRaw = currentHubLesson ? (getLessonScores(currentHubLesson).game || {}) : {};
@@ -14052,7 +14219,8 @@
       return;
     }
 
-    if (type === 'match') renderGameMatch(data);
+    if (type === 'onxoay') renderGameOnXoay(false);
+    else if (type === 'match') renderGameMatch(data);
     else if (type === 'fill') renderGameFill(data);
     else if (type === 'sort') renderGameSort(data);
     else if (type === 'errfix') renderGameMcList(data, { wrongPrefix: gpGameData.errorFixMode !== 'wordchoice', blankMode: gpGameData.errorFixMode === 'wordchoice', gameKey: 'errfix' });
@@ -14259,7 +14427,8 @@
         card.classList.add(correct ? 'is-correct' : 'is-wrong');
         input.classList.remove('is-correct', 'is-wrong');
         input.classList.add(correct ? 'is-correct' : 'is-wrong');
-        fb.textContent = correct ? '✓ Đúng rồi!' : '✗ Đáp án: "' + q.ans + '"' + (q.exp ? ' — ' + q.exp : '');
+        fb.textContent = correct ? '✓ Đúng rồi!' : '✗ Đáp án: "' + q.ans + '"';
+        fb.insertAdjacentHTML('beforeend', giaiThichHtml(q, correct));
         fb.className = 'fg-fb ' + (correct ? 'is-correct' : 'is-wrong');
         pgbRecord('gmFill', i, correct);
         if (v) srsSignal(srsWordFor(q.ans), correct); // o bo trong khong tinh la tra loi
@@ -14413,16 +14582,17 @@
     var pgbId = 'gm-' + (opts.gameKey || 'mc');
     var mcKey = 'game:' + (opts.gameKey || 'mc');
     pgbInit(pgbId, data.length);
-    var wrap = $('#gpGameArea');
+    var wrap = opts.wrap || $('#gpGameArea'); // bo "Ôn bài cũ" ve vao khung rieng
     wrap.innerHTML =
       pgbHtml(pgbId, data.length) +
       data.map(function (q, i) {
       var gy = tachGoiY(q.q);
+      var goiY = gy.hint || q.hint || '';
       var promptHtml = opts.blankMode
         ? '📝 ' + q.wrong + '<div class="mc-sub">👆 Chọn từ phù hợp với nghĩa của câu để điền vào chỗ trống:</div>'
         : opts.wrongPrefix
         ? '❌ ' + q.wrong + '<div class="mc-sub">👆 Câu này sai — chọn câu SỬA ĐÚNG bên dưới:</div>'
-        : gy.q + (gy.hint ? '<div class="mc-sub">' + hintBtnHtml(gy.hint) + '</div>' : '');
+        : (q.src ? '<span class="ox-src">' + q.src + '</span>' : '') + gy.q + (goiY ? '<div class="mc-sub">' + hintBtnHtml(goiY) + '</div>' : '');
       var optsHtml = q.opts.map(function (o, j) {
         return '<button type="button" class="vp-option-btn" data-qi="' + i + '" data-oi="' + j + '">' + o + '</button>';
       }).join('');
@@ -14464,7 +14634,9 @@
         });
         var fb = $('#mcFb' + qi);
         fb.className = 'mc-fb ' + (correct ? 'is-correct' : 'is-wrong');
-        fb.textContent = (correct ? '✓ Đúng rồi!' : '✗ Đáp án: "' + q.opts[q.ans] + '"') + (q.exp ? ' — ' + q.exp : '');
+        fb.textContent = correct ? '✓ Đúng rồi!' : '✗ Đáp án: "' + q.opts[q.ans] + '"';
+        // Sua loi sai: giai thich la phan chinh -> luon hien day du
+        fb.insertAdjacentHTML('beforeend', giaiThichHtml(q, correct && opts.gameKey !== 'errfix'));
         updateScore();
         if (!rsRestoring) {
           if (Object.keys(answered).length >= data.length) { rsClear(mcKey); rsHideNotice('#gpContent'); }
@@ -14694,6 +14866,7 @@
     { key: 'sort', label: 'Sắp xếp câu', emoji: '🧩', color: 'orange', sources: ['game.sort', 'page-sort'] },
     { key: 'mc', label: 'Trắc nghiệm', emoji: '✅', color: 'blue', sources: ['game.mc', 'page-mc'] },
     { key: 'errfix', label: 'Sửa lỗi sai', emoji: '🔍', color: 'pink', sources: ['game.errfix', 'page-errorfix'] },
+    { key: 'onxoay', label: 'Ôn bài cũ', emoji: '🔁', color: 'gold', sources: ['game.onxoay'] },
     { key: 'speak', label: 'Luyện nói', emoji: '🎤', color: 'green', sources: ['speak', 'page-speak'] },
     { key: 'translate', label: 'Luyện dịch', emoji: '🔄', color: 'teal', sources: ['translate'] },
     { key: 'workbook', label: 'Sách bài tập', emoji: '📘', color: 'indigo', sources: ['workbook', 'workbook-mocktest'] },
@@ -15784,12 +15957,12 @@
     var fillPool = (data.fillData || []).map(function (f) { return f.ans; }).concat(vocabZh);
     fills.slice(0, 2).forEach(function (f) {
       var o = qrOptions(f.ans, fillPool, rnd);
-      zones[1].push({ type: 'mc', kind: 'Điền từ', prompt: 'Chọn từ điền vào chỗ trống:', hint: f.hint || '', sentence: { pre: f.pre, post: f.post }, opts: o.opts, ans: o.ans, optZh: true, explain: f.exp || '' });
+      zones[1].push({ type: 'mc', kind: 'Điền từ', prompt: 'Chọn từ điền vào chỗ trống:', hint: f.hint || '', sentence: { pre: f.pre, post: f.post }, opts: o.opts, ans: o.ans, optZh: true, explain: giaiThichCua(f) });
     });
     qrShuffle(data.errorFixData || [], rnd).slice(0, 2).forEach(function (e) {
       var correctText = e.opts[e.ans];
       var o = qrOptions(correctText, e.opts, rnd);
-      zones[1].push({ type: 'mc', kind: 'Sửa câu sai', prompt: 'Câu dưới đây bị sai. Chọn cách viết đúng:', wrong: e.wrong, opts: o.opts, ans: o.ans, optZh: true, explain: e.exp || '' });
+      zones[1].push({ type: 'mc', kind: 'Sửa câu sai', prompt: 'Câu dưới đây bị sai. Chọn cách viết đúng:', wrong: e.wrong, opts: o.opts, ans: o.ans, optZh: true, explain: giaiThichCua(e) });
     });
     // Bai khong co "sua cau sai" (vd. HSK1): bu bang cau trac nghiem cua bai
     var mcs = qrShuffle((data.mcData || []).filter(function (m) {
@@ -15798,7 +15971,7 @@
     function qrMcQuestion(m) {
       var o = qrOptions(m.opts[m.ans], m.opts, rnd);
       var gy = tachGoiY(m.q);
-      return { type: 'mc', kind: 'Trắc nghiệm', prompt: qrEsc(gy.q), hint: gy.hint, opts: o.opts, ans: o.ans, optZh: /[一-鿿]/.test(m.opts.join('')), explain: m.exp || '' };
+      return { type: 'mc', kind: 'Trắc nghiệm', prompt: qrEsc(gy.q), hint: gy.hint, opts: o.opts, ans: o.ans, optZh: /[一-鿿]/.test(m.opts.join('')), explain: giaiThichCua(m) };
     }
     while (zones[1].length < 4 && mcs.length) zones[1].push(qrMcQuestion(mcs.shift()));
     var sorts = qrShuffle(data.sortData || [], rnd);

@@ -730,6 +730,28 @@ function tachGoiY(text){
   if(!m||!/＿|_{2,}/.test(s.slice(0,m.index))) return {q:s,hint:''};
   return {q:s.slice(0,m.index),hint:'('+m[1]+')'};
 }
+// Giai thich cua 1 cau (exp / why / giai) — chuoi rong neu khong co
+function giaiThich(q){
+  if(!q) return '';
+  const s=q.exp||q.why||q.giai||'';
+  return typeof s==='string'?s.trim():'';
+}
+// Ban ngan khi tra loi dung: cau dau tien cua loi giai (toi da ~110 ky tu)
+function giaiThichNgan(s){
+  const m=String(s).match(/^[\s\S]*?[.!?。！？](?=\s|$)/);
+  let t=m&&m[0].length>=12?m[0]:String(s);
+  if(t.length>110) t=t.slice(0,108).replace(/\s+\S*$/,'')+'…';
+  return t;
+}
+// Them dong "💡 giai thich" duoi phan phan hoi (sai: day du; dung: ban ngan)
+function themGiaiThich(fb,q,dung){
+  const s=giaiThich(q);
+  if(!fb||!s) return;
+  const d=document.createElement('div');
+  d.className='q-exp'+(dung?' is-ngan':'');
+  d.textContent='💡 '+(dung?giaiThichNgan(s):s);
+  fb.appendChild(d);
+}
 function anGoiY(scope){
   (scope||document).querySelectorAll('.hint-text').forEach(function(t){ t.hidden=true; });
   (scope||document).querySelectorAll('.hint-btn').forEach(function(b){ b.setAttribute('aria-expanded','false'); b.classList.remove('open'); });
@@ -760,7 +782,8 @@ function checkFill(){
     card.className='quiz-card '+(c?'ok':'err');
     inp.className='q-inp '+(c?'ok':'err');
     fb.className='q-fb '+(c?'ok':'err');
-    fb.textContent=c?'✓ Đúng rồi!':'✗ Đáp án：「'+q.ans+'」— '+q.exp;
+    fb.textContent=c?'✓ Đúng rồi!':'✗ Đáp án：「'+q.ans+'」';
+    themGiaiThich(fb,q,c);
     if(c){ok++;starAnswer('fill|'+i);}
   });
   const pct=Math.round(ok/fillData.length*100);
@@ -941,6 +964,7 @@ function checkMC(qi,chosen){
   });
   fb.className='q-fb '+(c?'ok':'err');
   fb.textContent=c?'✓ Đúng rồi!':'✗ Đáp án：「'+q.opts[q.ans]+'」';
+  themGiaiThich(fb,q,c);
   const done=mcAns.filter(Boolean).length;
   let okC=0;mcData.forEach(function(_,i){if(mcAns[i]&&document.getElementById('mf'+i).classList.contains('ok'))okC++;});
   const sb=document.getElementById('mc-score');sb.style.display='flex';
@@ -1364,7 +1388,9 @@ function checkErrorFix(qi,chosen){
     else if(j===chosen&&!c)b.classList.add('sel-err');
   });
   fb.className='q-fb '+(c?'ok':'err');
-  fb.textContent=(c?'✓ Đúng rồi! ':'✗ Đáp án：「'+q.opts[q.ans]+'」 — ')+q.exp;
+  // Sua loi sai: giai thich la phan chinh cua bai -> hien day du ca khi dung
+  fb.textContent=c?'✓ Đúng rồi!':'✗ Đáp án：「'+q.opts[q.ans]+'」';
+  themGiaiThich(fb,q,false);
   const done=errAns.filter(Boolean).length;
   let ok=0;errorFixData.forEach(function(_,i){if(errAns[i]&&document.getElementById('ef'+i).classList.contains('ok'))ok++;});
   const sb=document.getElementById('errfix-score');sb.style.display='flex';

@@ -142,29 +142,6 @@
 
       <section class="assign-card" id="assignCard" hidden aria-live="polite"></section>
 
-      <div class="dash-row">
-        <section class="dash-cta-card resume-card" id="homeResume" aria-labelledby="resumeTitle"></section>
-
-        <div class="dash-streak-card">
-          <p class="dash-card-eyebrow">Tiến độ</p>
-          <div class="dash-streak-main">
-            <span class="dash-streak-big-flame" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c.5 3.5 4.5 5.5 4.5 10a4.5 4.5 0 0 1-9 0c0-2 1-3.5 2-4.5.3 1.6 1 2.6 2 3 0-3 .5-6 .5-8.5z"/></svg></span>
-            <div>
-              <strong id="streakCount">0 ngày</strong>
-              <span>học liên tiếp</span>
-            </div>
-          </div>
-          <div class="dash-streak-days" id="streakDays"></div>
-          <div class="dash-streak-badge" id="streakBadge"></div>
-          <button type="button" class="dash-star-row" id="starRow" title="Xem bảng xếp hạng người chăm chỉ">
-            <span class="dash-star-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></span>
-            <span class="dash-star-text"><strong id="starTotal">Tích sao chăm chỉ</strong><span id="starHint">Đăng nhập để bắt đầu tích sao</span></span>
-          </button>
-          <button type="button" class="dash-stats-link" id="statsOpen">Xem thống kê và huy hiệu</button>
-          <button class="btn btn-dark btn-block" id="ctaStreak" type="button" hidden>Học ngay hôm nay</button>
-        </div>
-      </div>
-
       <section class="task-card" id="continueCard" aria-labelledby="taskTitle">
         <div class="task-card-head">
           <div>
@@ -200,6 +177,29 @@
         <button type="button" class="levels-quiz-btn" id="levelQuizBtn">Mình nên học cấp nào?</button>
       </div>
       <div class="level-grid" id="levelGrid"></div>
+
+      <div class="dash-row">
+        <section class="dash-cta-card resume-card" id="homeResume" aria-labelledby="resumeTitle"></section>
+
+        <div class="dash-streak-card">
+          <p class="dash-card-eyebrow">Tiến độ</p>
+          <div class="dash-streak-main">
+            <span class="dash-streak-big-flame" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c.5 3.5 4.5 5.5 4.5 10a4.5 4.5 0 0 1-9 0c0-2 1-3.5 2-4.5.3 1.6 1 2.6 2 3 0-3 .5-6 .5-8.5z"/></svg></span>
+            <div>
+              <strong id="streakCount">0 ngày</strong>
+              <span>học liên tiếp</span>
+            </div>
+          </div>
+          <div class="dash-streak-days" id="streakDays"></div>
+          <div class="dash-streak-badge" id="streakBadge"></div>
+          <button type="button" class="dash-star-row" id="starRow" title="Xem bảng xếp hạng người chăm chỉ">
+            <span class="dash-star-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></span>
+            <span class="dash-star-text"><strong id="starTotal">Tích sao chăm chỉ</strong><span id="starHint">Đăng nhập để bắt đầu tích sao</span></span>
+          </button>
+          <button type="button" class="dash-stats-link" id="statsOpen">Xem thống kê và huy hiệu</button>
+          <button class="btn btn-dark btn-block" id="ctaStreak" type="button" hidden>Học ngay hôm nay</button>
+        </div>
+      </div>
 
       <details class="home-fold" id="statsFold">
         <summary><span class="home-fold-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span class="home-fold-t"><b>Thống kê và huy hiệu</b><small>Số từ, số bài, điểm và huy hiệu bạn đã có</small></span><svg class="home-fold-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>

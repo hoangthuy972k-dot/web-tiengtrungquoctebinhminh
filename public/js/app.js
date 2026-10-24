@@ -15837,7 +15837,7 @@
       box.id = 'comebackCard';
       box.className = 'comeback-card';
       box.setAttribute('aria-labelledby', 'comebackTitle');
-      var hang = home.querySelector('.dash-row');
+      var hang = home.querySelector('#assignCard');
       home.insertBefore(box, hang || home.firstChild);
     }
     var auth = readJSON(STORAGE_KEYS.auth, null);

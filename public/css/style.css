@@ -8821,7 +8821,7 @@ body.pinyin-hidden .py-inline {
 }
 @media (prefers-reduced-motion: reduce) { .home-fold-chev { transition: none; } }
 
-/* Dien thoai / may tinh bang doc: viec can lam truoc (Tiep tuc hoc -> Nhiem vu), Tien do sau */
+/* Dien thoai / may tinh bang doc: Tien do nam duoi luoi cap do, truoc thong ke va bang vang */
 @media (max-width: 900px) {
   #home:not([hidden]) { display: flex; flex-direction: column; }
   #home .dash-row { display: contents; }

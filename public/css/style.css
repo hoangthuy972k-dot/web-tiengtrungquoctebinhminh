@@ -9033,3 +9033,65 @@ html.ho-tro-toi .dash-cta-card .btn-white.btn-white {
 .level-card.is-teal { --lv: #0b746b; }
 .level-card.is-green { --lv: #23744f; }
 .bn-item { font-size: .76rem; }
+/* ===== Kiem tra cuoi bai: phan hoi sau moi cau, cau tu go, danh sach cau sai (2026-10) ===== */
+.fq-fb { margin-top: var(--space-4); padding: 12px 14px; border-radius: var(--radius-md); border: 1.5px solid var(--color-gray-200); background: var(--color-surface); line-height: 1.55; }
+.fq-fb p { margin: 0 0 6px; }
+.fq-fb p:last-child { margin-bottom: 0; }
+.fq-fb.is-ok { border-color: var(--color-green-600); background: var(--color-green-50); }
+.fq-fb.is-bad { border-color: var(--color-red-600); background: var(--color-red-50); }
+.fq-fb.is-wait { border-color: var(--color-gold-500); background: var(--color-gold-50); }
+.fq-fb-title { font-weight: 800; }
+.fq-fb.is-ok .fq-fb-title { color: var(--fg-green-600); }
+.fq-fb.is-bad .fq-fb-title { color: var(--fg-red-600); }
+.fq-fb-ans b { font-size: 1.1rem; }
+.fq-fb-ans b.hanzi { font-family: var(--font-hanzi-display); font-size: var(--zh-text); }
+.fq-fb-given { text-decoration: line-through; color: var(--fg-red-600); }
+.fq-fb-exp { font-size: 0.92rem; color: var(--fg-gray-600); }
+.fq-fb-next { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.fq-fb-next .btn { min-width: 120px; }
+.fq-fb-key { font-size: 0.8rem; color: var(--fg-text-muted); }
+.fq-ai-loi { margin: 4px 0 8px; padding-left: 20px; font-size: 0.92rem; }
+.fq-ai-loi li { margin-bottom: 4px; }
+.fq-self { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.fq-q-note { font-size: 0.85rem; font-weight: 700; color: var(--fg-text-muted); margin-bottom: 6px; }
+.fq-vi { font-weight: 700; }
+.fq-goiy { margin-top: 6px; font-size: 0.9rem; color: var(--fg-gray-600); }
+.fq-type { display: flex; flex-direction: column; gap: 10px; }
+.fq-input {
+  width: 100%; box-sizing: border-box; padding: 12px 14px;
+  border: 1.5px solid var(--color-gray-300); border-radius: var(--radius-md);
+  background: var(--color-surface); color: inherit;
+  font-family: var(--font-hanzi); font-size: var(--zh-text); line-height: 1.5; resize: vertical;
+}
+.fq-input:focus { outline: none; border-color: var(--color-red-500); }
+.fq-input:disabled { opacity: 0.8; }
+.fq-type-msg { margin: 0; font-size: 0.88rem; font-weight: 700; color: var(--fg-red-600); }
+.fq-type-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.fq-type-actions[hidden] { display: none; }
+.fq-record { margin: 6px 0 2px; font-size: 1rem; }
+.fq-pass { margin: 2px 0 6px; font-weight: 800; }
+.fq-pass.is-ok { color: var(--fg-green-600); }
+.fq-pass.is-bad { color: var(--fg-red-600); }
+.fq-wrong { margin: var(--space-5) 0; text-align: left; }
+.fq-wrong h3 { margin: 0 0 10px; font-size: 1.05rem; }
+.fq-wrong.is-clean p { margin: 0; text-align: center; font-weight: 700; color: var(--fg-green-600); }
+.fq-wrong-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.fq-wrong-item { padding: 10px 12px; border: 1.5px solid var(--color-gray-200); border-left: 4px solid var(--color-red-600); border-radius: var(--radius-md); background: var(--color-surface); }
+.fq-wrong-head { display: flex; justify-content: space-between; gap: 8px; font-size: 0.78rem; font-weight: 700; color: var(--fg-text-muted); margin-bottom: 4px; }
+.fq-wrong-kind { text-transform: uppercase; letter-spacing: 0.02em; }
+.fq-wrong-q { margin-bottom: 6px; line-height: 1.5; overflow-wrap: anywhere; }
+.fq-wrong-row { display: flex; gap: 8px; align-items: baseline; font-size: 0.92rem; overflow-wrap: anywhere; }
+.fq-wrong-row span { flex-shrink: 0; min-width: 84px; color: var(--fg-text-muted); }
+.fq-wrong-bad { color: var(--fg-red-600); text-decoration: line-through; }
+.fq-wrong-good { color: var(--fg-green-600); }
+.fq-wrong-exp { margin-top: 6px; font-size: 0.88rem; color: var(--fg-gray-600); }
+.fq-wrong-srs { margin: 10px 0 0; font-size: 0.88rem; color: var(--fg-gray-600); }
+/* Lo trinh: buoc da lam nhung chua dat chuan (vd kiem tra cuoi bai < 70%) */
+.lp-step.is-retry .lp-node { border-color: var(--color-gold-500); }
+.lp-step.is-retry .lp-badge { color: var(--fg-gold-700); }
+.lp-step.is-retry.is-current .lp-node { background: var(--color-gold-500); border-color: var(--color-gold-500); }
+/* Man Luyen tap: dieu kien qua buoc + ket qua tot nhat tung dang */
+.gp-rule { margin: 0 0 var(--space-4); padding: 10px 12px; border-radius: var(--radius-md); background: var(--color-gold-50); font-size: 0.9rem; line-height: 1.5; }
+.gp-rule.is-done { background: var(--color-green-50); color: var(--fg-green-600); font-weight: 700; }
+.game-picker-best { margin-top: 6px; font-size: 0.78rem; font-weight: 700; color: var(--fg-gold-700); }
+.game-picker-best.is-ok { color: var(--fg-green-600); }

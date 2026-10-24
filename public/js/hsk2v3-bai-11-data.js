@@ -1347,7 +1347,7 @@ var sortData = [
 var mcData = [
   { q: '教室的门＿＿，你进去吧。', opts: ['开着', '开了着', '着开', '开着了'], ans: 0, exp: '着 đặt ngay sau động từ, chỉ trạng thái đang duy trì: 门开着 = cửa đang mở; không đi cùng 了.' },
   { q: '她穿＿＿白色的裤子。', opts: ['着', '了', '过', '得'], ans: 0, exp: '穿着 = đang mặc (trạng thái duy trì); 穿了 là đã mặc, 穿过 là đã từng mặc.' },
-  { q: 'Phủ định của 门开着 là gì?', opts: ['门没开着', '门不开着', '门开着不', '门没有开'], ans: 0 },
+  { q: 'Phủ định của 门开着 là gì?', opts: ['门没开着', '门不开着', '门开着不', '门没开着了'], ans: 0, exp: 'Phủ định trạng thái 着 dùng 没 + động từ + 着: 门没开着. Không dùng 不 với 着, và đã có 没 thì không thêm 了.' },
   { q: '在我们家，爸爸＿＿高。', opts: ['最', '比', '还', '更'], ans: 0, exp: 'Trong một phạm vi (在我们家) muốn nói ai cao nhất thì dùng 最; 比 cần có đối tượng so sánh.' },
   { q: '你们班谁中文说得＿＿好？', opts: ['最', '很', '非常', '比'], ans: 0, exp: 'Hỏi ai nói giỏi nhất trong lớp dùng 最; 很/非常 không dùng để so sánh trong nhóm.' },
   { q: '“一动就疼” dùng mẫu câu nào?', opts: ['一……就……', '虽然……但是……', '因为……所以……', '还是……'], ans: 0, exp: '一…就… = hễ… là…: 一动就疼 = hễ cử động là đau.' },

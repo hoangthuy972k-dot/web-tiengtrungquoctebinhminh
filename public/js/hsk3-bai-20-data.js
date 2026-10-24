@@ -1609,7 +1609,7 @@ var fillData = [
   {pre:'只有你们的爸爸妈妈才能',blank:'分',post:'出来。',hint:'(phân biệt)',ans:'分'},
   {pre:'所以得',blank:'试',post:'着洗洗。',hint:'(thử)',ans:'试'},
   {pre:'只有',blank:'真正',post:'了解问题，才能解决问题。',hint:'(thật sự)',ans:'真正'},
-  {pre:'',blank:'多么',post:'重的行李箱，他都能一个人搬走。',hint:'(mức độ tương đối cao)',ans:'多么'},
+  {pre:'',blank:'多么',post:'重的行李箱，他都能一个人搬走。',hint:'(dù nặng đến đâu đi nữa)',ans:'多么'},
   {pre:'不同的问题有不同的',blank:'解决',post:'办法。',hint:'(giải quyết)',ans:'解决'},
 ];
 

@@ -3521,7 +3521,7 @@ var fillData = [
   {pre:'我们和上次那个公司的',blank:'',post:'终于谈成了。',hint:'shēngyi',ans:'生意'},
   {pre:'我原来以为做生意很简单，后来才发现其实',blank:'',post:'不容易。',hint:'bìng',ans:'并',exp:'并 + 不/没 = hoàn toàn không (phủ nhận điều người ta tưởng): 其实并不容易.'},
   {pre:'重要的是要多',blank:'',post:'经验。',hint:'jīlěi',ans:'积累'},
-  {pre:'我相信经过大家的努力，一切都会好的，这是',blank:'',post:'。',hint:'yíqiè',ans:'一切'},
+  {pre:'我相信经过我们大家的努力，公司的生意会越做越大，',blank:'',post:'都会好的。',hint:'yíqiè',ans:'一切'},
   {pre:'我们今年的工作都已经',blank:'',post:'计划完成了。',hint:'ànzhào',ans:'按照',exp:'按照 + kế hoạch/quy định = theo, dựa theo: 按照计划完成.'},
   {pre:'公司决定这个月给每人多发三千元',blank:'',post:'。',hint:'jiǎngjīn',ans:'奖金'},
   {pre:'如果对工作没有',blank:'',post:'心，也很难把工作做好。',hint:'zérèn',ans:'责任'},

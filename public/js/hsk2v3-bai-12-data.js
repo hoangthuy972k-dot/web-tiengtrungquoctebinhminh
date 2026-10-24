@@ -1190,9 +1190,9 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '坐飞机比坐火车快＿＿。', opts: ['得多', '多得', '很多', '太多'], ans: 0 },
-  { q: '我这里比北京冷＿＿。', opts: ['多了', '了多', '很多', '非常'], ans: 0 },
-  { q: '妈妈＿＿我睡得晚。', opts: ['比', '跟', '最', '没有'], ans: 0 },
+  { q: '坐飞机比坐火车快＿＿。', opts: ['得多', '多得', '很', '非常'], ans: 0, exp: 'Câu 比 muốn nói hơn nhiều thì thêm 得多 (hoặc 多了) sau tính từ; không dùng 很/非常 trong câu so sánh 比.' },
+  { q: '我这里比北京冷＿＿。', opts: ['多了', '了多', '很', '非常'], ans: 0, exp: 'A 比 B + tính từ + 多了 = A hơn B nhiều. Không đặt 很/非常 trong câu 比; 了多 sai trật tự.' },
+  { q: '妈妈＿＿我睡得晚。', opts: ['比', '跟', '最', '很'], ans: 0, exp: 'So sánh hơn: A 比 B + động từ + 得 + tính từ — 妈妈比我睡得晚 = mẹ ngủ muộn hơn em.' },
   { q: '白家月汉字写得＿＿陈天中好。', opts: ['比', '最', '很', '真'], ans: 0, exp: 'Động từ + 得 + 比 + B + tính từ: 写得比陈天中好 = viết đẹp hơn Trần Thiên Trung.' },
   { q: 'Câu nào đúng?', opts: ['你跑步跑得比我快。', '你跑步得比我快。', '你比我跑步得快。', '你跑步比得我快。'], ans: 0, exp: 'Động từ có tân ngữ thì lặp động từ, rồi đặt 比 sau 得: 跑步跑得比我快.' },
   { q: '“好高啊！” ở đây 好 có nghĩa là gì?', opts: ['Rất', 'Tốt', 'Được', 'Xong'], ans: 0, exp: '好 + tính từ + 啊 = thật là…!: 好高啊 = cao thật!' },

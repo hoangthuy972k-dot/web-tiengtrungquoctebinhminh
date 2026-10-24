@@ -2551,7 +2551,7 @@ var sortData = [
 var mcData = [
   { q: '这个星期＿＿是阴天，今天终于晴了。', opts: ['总是', '终于', '已经', '比较'], ans: 0, exp: '总是 = lúc nào cũng, suốt; vế sau 今天终于晴了 cho thấy trước đó toàn trời âm u. 终于 đã dùng ở vế sau.' },
   { q: '又能＿＿身体，又能照好看的照片。', opts: ['照', '锻炼', '爬', '穿'], ans: 1, exp: '锻炼身体 = rèn luyện thân thể (kết hợp cố định). 照, 爬, 穿 không đi với 身体.' },
-  { q: '我回去穿上运动＿＿，拿上大衣。', opts: ['衣', '山', '树', '鞋'], ans: 3 },
+  { q: '我回去穿上运动＿＿，拿上大衣。', opts: ['车', '山', '树', '鞋'], ans: 3, exp: '运动鞋 = giày thể thao; đi với động từ 穿上. 运动车/运动山/运动树 không phải từ.' },
   { q: '她对拍照一直很＿＿。', opts: ['兴趣', '感兴趣', '难过', '水平'], ans: 1, exp: '对…感兴趣 = có hứng thú với…; 兴趣 là danh từ, không đứng thẳng sau 很. Có thể nói 很有兴趣 hoặc 很感兴趣.' },
   { q: '啊，手机没＿＿了。', opts: ['电', '太阳', '树', '邮件'], ans: 0, exp: '手机没电了 = điện thoại hết pin. 电 ở đây là điện/pin.' },
   { q: '我＿＿了你的那封邮件，也看到了你给我照的照片。', opts: ['比较', '收到', '结束', '锻炼'], ans: 1, exp: '收到邮件 = nhận được email. 结束, 锻炼 không mang tân ngữ 邮件.' },

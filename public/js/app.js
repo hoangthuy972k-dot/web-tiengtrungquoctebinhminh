@@ -249,7 +249,8 @@
 
   // Cac khoa luu tien do RIENG cua nguoi dang hoc — xoa khi dang xuat
   var KHOA_TIEN_DO = ['hyv_visited_lessons', 'hyv_study_days', 'hyv_lesson_scores', 'hyv_review_wrong_words', 'hyv_srs',
-    'hyv_daily_tasks', 'hyv_day_sec', 'hyv_last_lesson', 'hyv_resume', 'hyv_quick_review', 'hyv_wb_answers', 'hyv_khoi_dong', 'hyv_level_pick'];
+    'hyv_daily_tasks', 'hyv_day_sec', 'hyv_last_lesson', 'hyv_resume', 'hyv_quick_review', 'hyv_wb_answers', 'hyv_khoi_dong', 'hyv_level_pick',
+    'hyv_srs_gram'];
   function xoaTienDoTrenMay() {
     KHOA_TIEN_DO.forEach(function (k) { try { localStorage.removeItem(k); } catch (e) { /* bo qua */ } });
   }
@@ -1147,8 +1148,18 @@
     var key = String(zh).trim();
     var all = srsAll(), e = all[key];
     if (!e) return;
-    if (!ok) { srsAnswer(key, false); return; }
     var today = dateKey(new Date());
+    if (!ok) {
+      // Sai trong bai tap / tro choi (ngoai buoi on): chi lui 1 hop, hen on lai ngay mai.
+      // Bam "Chua nho" o the lat va sai o bai kiem tra cuoi bai van ve hop dau (srsAnswer).
+      e.box = Math.max(1, (e.box || 0) - 1);
+      e.due = srsDayAfter(SRS_INTERVALS[e.box]);
+      e.at = Date.now();
+      e.up = today;
+      writeJSON(SRS_KEY, all);
+      syncProgressToServer();
+      return;
+    }
     if (e.up === today || (e.box || 0) >= SRS_SIGNAL_MAX_BOX) return;
     e.box = (e.box || 0) + 1;
     e.due = srsDayAfter(SRS_INTERVALS[e.box]);
@@ -2847,7 +2858,7 @@
         '<div class="fq-self"><button type="button" class="btn btn-primary" id="fqSelfOk">✓ Em dịch đúng ý</button>' +
         '<button type="button" class="btn btn-ghost" id="fqSelfNo">✗ Em dịch chưa đúng</button></div>';
       $('#fqSelfOk').addEventListener('click', function () {
-        fqAnswer(it, true, v, { wait: false, html: '<p class="fq-fb-title">✓ Em tự chấm: đúng ý</p>' });
+        fqAnswer(it, true, v, { wait: false, tuCham: true, html: '<p class="fq-fb-title">✓ Em tự chấm: đúng ý</p>' });
       });
       $('#fqSelfNo').addEventListener('click', function () {
         fqAnswer(it, false, v, { wait: false, html: '<p class="fq-fb-title">✗ Em tự chấm: chưa đúng — câu này nằm trong danh sách xem lại cuối bài</p>' });
@@ -2877,7 +2888,11 @@
     it._xong = true;
     opts = opts || {};
     if (ok) st.score++;
+    // Cau hoc sinh tu cham (khi AI loi) khong duoc cong sao — tranh tu cham "dung" lay sao
+    var giuSao = window.hwStarAnswer;
+    if (opts.tuCham) window.hwStarAnswer = null;
     pgbRecord('fq', st.pos, ok);
+    if (opts.tuCham) window.hwStarAnswer = giuSao;
     st.log.push({ n: st.pos + 1, it: it, ok: ok, given: given == null ? '' : String(given) });
     if (!ok && it.vocab) fqTuSai(st, it.vocab);
     var wait = typeof opts.wait === 'boolean' ? opts.wait : !ok;

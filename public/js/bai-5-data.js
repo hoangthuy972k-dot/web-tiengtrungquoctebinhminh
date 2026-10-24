@@ -1443,11 +1443,11 @@ var listenData = {
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'你准备好了吗？还没',blank:'准备',post:'好呢，我有点儿累。',hint:'(chuẩn bị)',ans:'准备'},
-  {pre:'你觉得这件衣服',blank:'可以',post:'吗？',hint:'(được, có thể)',ans:'可以'},
+  {pre:'你觉得这件衣服',blank:'可以',post:'吗？',hint:'(được, có thể)',ans:'可以',exp:'可以 ở đây = được, ổn (đánh giá): 这件衣服可以吗？= cái áo này được không?'},
   {pre:'颜色',blank:'还',post:'可以，就是有点儿大。',hint:'(tạm, cũng)',ans:'还',exp:'还可以 = tạm được, không hẳn tốt cũng không tệ.'},
   {pre:'那你',blank:'就',post:'买那件小的吧。',hint:'(vậy thì)',ans:'就',exp:'就 dùng để chỉ một kết luận/quyết định logic tiếp theo.'},
-  {pre:'好，',blank:'就',post:'买这件。',hint:'(luôn, thì)',ans:'就'},
-  {pre:'考试',blank:'以后',post:'，我们去喝咖啡吧。',hint:'(sau khi, sau này)',ans:'以后'},
+  {pre:'好，',blank:'就',post:'买这件。',hint:'(luôn, thì)',ans:'就',exp:'就 nhấn mạnh quyết định dứt khoát: 就买这件 = mua luôn cái này.'},
+  {pre:'考试',blank:'以后',post:'，我们去喝咖啡吧。',hint:'(sau khi, sau này)',ans:'以后',exp:'…以后 = sau khi…, đặt sau sự việc: 考试以后 = sau khi thi.'},
   {pre:'',blank:'对',post:'啊，我请客！',hint:'(đúng vậy)',ans:'对'},
   {pre:'这个字是什么',blank:'意思',post:'？',hint:'(ý nghĩa)',ans:'意思'},
 ];

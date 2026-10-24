@@ -1399,8 +1399,8 @@ var fillData = [
   { pre: '', blank: '新年', post: '就要到了。', hint: '(năm mới)', ans: '新年' },
   { pre: '这一年王老师', blank: '教', post: '我们中文。', hint: '(dạy)', ans: '教' },
   { pre: '', blank: '希望', post: '花店还有漂亮的花。', hint: '(hy vọng)', ans: '希望' },
-  { pre: '你们在本子', blank: '上面', post: '写。', hint: '(phía trên)', ans: '上面' },
-  { pre: '教室的门开着，但是', blank: '里面', post: '没有人。', hint: '(bên trong)', ans: '里面' },
+  { pre: '你们在本子', blank: '上面', post: '写。', hint: '(phía trên)', ans: '上面', exp: '在 + danh từ + 上面 chỉ vị trí: 在本子上面写 = viết lên trên vở.' },
+  { pre: '教室的门开着，但是', blank: '里面', post: '没有人。', hint: '(bên trong)', ans: '里面', exp: '里面 = bên trong: 教室里面没有人 = trong lớp không có ai.' },
   { pre: '我经常', blank: '上网', post: '听歌、看电影。', hint: '(lên mạng)', ans: '上网' },
   { pre: '她', blank: '告诉', post: '我是在网上买的。', hint: '(kể, nói cho biết)', ans: '告诉' },
   { pre: '你们', blank: '班', post: '有多少学生？', hint: '(lớp)', ans: '班' }
@@ -1416,14 +1416,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '姐姐比我大＿＿。', opts: ['三岁', '岁三', '三个岁', '大三'], ans: 0 },
-  { q: '坐飞机比坐火车快＿＿。', opts: ['五个多小时', '五个多小时得多', '多五个小时了', '五小时个多'], ans: 0 },
-  { q: '那间教室比这间大＿＿。', opts: ['一些', '得多了', '很多的', '非常'], ans: 0 },
-  { q: '他卖＿＿我一本中文书。', opts: ['给', '了给', '给了给', '的'], ans: 0 },
-  { q: '“日”比“口”多＿＿。', opts: ['一笔', '一个笔', '笔一', '一支笔'], ans: 0 },
-  { q: 'Câu nào diễn tả khác biệt NHỎ?', opts: ['这个本子比那个贵一点儿。', '这个本子比那个贵多了。', '这个本子比那个贵得多。', '这个本子比那个贵十块。'], ans: 0 },
-  { q: '“告诉” cần mấy tân ngữ trong câu “她告诉我这件事”?', opts: ['Hai (人 + 事)', 'Một', 'Không có', 'Ba'], ans: 0 },
-  { q: 'Chữ “间” bên trong là chữ gì?', opts: ['日', '口', '门', '目'], ans: 0 }
+  { q: '姐姐比我大＿＿。', opts: ['三岁', '岁三', '三个岁', '大三'], ans: 0, exp: 'A + 比 + B + tính từ + số lượng chênh lệch: 比我大三岁; 岁 không cần lượng từ 个.' },
+  { q: '坐飞机比坐火车快＿＿。', opts: ['五个多小时', '五个多小时得多', '多五个小时了', '五小时个多'], ans: 0, exp: 'Chênh lệch cụ thể đặt sau tính từ: 快五个多小时; không thêm 得多 nữa.' },
+  { q: '那间教室比这间大＿＿。', opts: ['一些', '得多了', '很多的', '非常'], ans: 0, exp: 'Câu 比 có thể dùng tính từ + 一些 (hơn một chút): 大一些; 得多了 thừa 了, 非常 không đặt sau tính từ.' },
+  { q: '他卖＿＿我一本中文书。', opts: ['给', '了给', '给了给', '的'], ans: 0, exp: '卖给 + người + vật: 卖给我一本书; 给 đứng ngay sau động từ.' },
+  { q: '“日”比“口”多＿＿。', opts: ['一笔', '一个笔', '笔一', '一支笔'], ans: 0, exp: '笔 là lượng từ đếm nét chữ: 多一笔 = nhiều hơn một nét; không thêm 个.' },
+  { q: 'Câu nào diễn tả khác biệt NHỎ?', opts: ['这个本子比那个贵一点儿。', '这个本子比那个贵多了。', '这个本子比那个贵得多。', '这个本子比那个贵十块。'], ans: 0, exp: 'Tính từ + 一点儿 sau câu 比 chỉ khác biệt nhỏ; 多了/得多 chỉ khác biệt lớn.' },
+  { q: '“告诉” cần mấy tân ngữ trong câu “她告诉我这件事”?', opts: ['Hai (人 + 事)', 'Một', 'Không có', 'Ba'], ans: 0, exp: '告诉 mang hai tân ngữ: người (我) + việc (这件事).' },
+  { q: 'Chữ “间” bên trong là chữ gì?', opts: ['日', '口', '门', '目'], ans: 0, exp: '间 gồm 门 ở ngoài và 日 ở trong.' }
 ];
 
 var speakingData = {

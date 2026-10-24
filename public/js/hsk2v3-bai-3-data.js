@@ -1650,14 +1650,14 @@ var matchData = [
 ];
 
 var fillData = [
-  { pre: '今天回来', blank: '这么', post: '晚啊！', hint: '(thế này)', ans: '这么' },
-  { pre: '下班的时候没做', blank: '完', post: '。', hint: '(xong)', ans: '完' },
+  { pre: '今天回来', blank: '这么', post: '晚啊！', hint: '(thế này)', ans: '这么', exp: '这么 + tính từ = … thế này: 这么晚 = muộn thế này.' },
+  { pre: '下班的时候没做', blank: '完', post: '。', hint: '(xong)', ans: '完', exp: '完 là bổ ngữ kết quả (xong); phủ định dùng 没 + động từ + 完: 没做完 = chưa làm xong.' },
   { pre: '我也很想', blank: '一起', post: '出去玩。', hint: '(cùng nhau)', ans: '一起' },
   { pre: '就在桌子上，你', blank: '自己', post: '拿。', hint: '(tự mình)', ans: '自己' },
   { pre: '我去洗洗', blank: '手', post: '。', hint: '(tay)', ans: '手' },
   { pre: '', blank: '为什么', post: '想去西安？', hint: '(vì sao)', ans: '为什么' },
   { pre: '这个时候去西安很', blank: '不错', post: '！', hint: '(rất tuyệt)', ans: '不错' },
-  { pre: '他这个月', blank: '每', post: '天都很累。', hint: '(mỗi)', ans: '每' }
+  { pre: '他这个月', blank: '每', post: '天都很累。', hint: '(mỗi)', ans: '每', exp: '每 + danh từ/lượng từ thường đi với 都: 每天都很累.' }
 ];
 
 var sortData = [
@@ -1670,14 +1670,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '已经下班了，你为什么还不＿＿？', opts: ['一起', '送', '回去', '拿'], ans: 2 },
-  { q: '他每天早上都＿＿女朋友去上班。', opts: ['送', '累', '洗', '完'], ans: 0 },
-  { q: '爸爸＿＿了一些水果给孩子们吃。', opts: ['回去', '拿', '一起', '完'], ans: 1 },
-  { q: '我昨天晚上没睡好，今天觉得很＿＿。', opts: ['不错', '累', '自己', '这么'], ans: 1 },
-  { q: '"我吃完饭了" — 「完」ở đây là gì?', opts: ['Bổ ngữ kết quả', 'Trợ từ ngữ khí', 'Lượng từ', 'Giới từ'], ans: 0 },
-  { q: 'Phủ định của "我吃完饭了" là câu nào?', opts: ['我没吃完饭。', '我不吃完饭了。', '我吃完饭没有了。', '我没吃完饭了。'], ans: 0 },
-  { q: 'Hình thức lặp lại đúng của động từ hai âm tiết 休息 là gì?', opts: ['休息休息', '休休息息', '休息一休息', '休了休息'], ans: 0 },
-  { q: 'Câu nào diễn đạt việc đã xảy ra với động từ lặp lại?', opts: ['我看了看网上的介绍。', '我看看了网上的介绍。', '我看网上的介绍了看。', '我了看看网上的介绍。'], ans: 0 }
+  { q: '已经下班了，你为什么还不＿＿？', opts: ['一起', '送', '回去', '拿'], ans: 2, exp: '回去 = trở về (rời chỗ này về nơi của mình): đã tan làm sao còn chưa về.' },
+  { q: '他每天早上都＿＿女朋友去上班。', opts: ['送', '累', '洗', '完'], ans: 0, exp: '送 + người + đi đâu = đưa ai đi đâu: 送女朋友去上班.' },
+  { q: '爸爸＿＿了一些水果给孩子们吃。', opts: ['回去', '拿', '一起', '完'], ans: 1, exp: '拿 = lấy, cầm: 拿了一些水果给孩子们吃 = lấy ít hoa quả cho các con ăn.' },
+  { q: '我昨天晚上没睡好，今天觉得很＿＿。', opts: ['不错', '累', '自己', '这么'], ans: 1, exp: 'Ngủ không ngon thì thấy mệt: 觉得很累; 不错 mang nghĩa tốt, không hợp ngữ cảnh.' },
+  { q: '"我吃完饭了" — 「完」ở đây là gì?', opts: ['Bổ ngữ kết quả', 'Trợ từ ngữ khí', 'Lượng từ', 'Giới từ'], ans: 0, exp: '完 đứng sau động từ 吃 để nói kết quả của hành động (xong) → bổ ngữ kết quả.' },
+  { q: 'Phủ định của "我吃完饭了" là câu nào?', opts: ['我没吃完饭。', '我不吃完饭了。', '我吃完饭没有了。', '我没吃完饭了。'], ans: 0, exp: 'Phủ định bổ ngữ kết quả: 没 + động từ + bổ ngữ và bỏ 了: 我没吃完饭.' },
+  { q: 'Hình thức lặp lại đúng của động từ hai âm tiết 休息 là gì?', opts: ['休息休息', '休休息息', '休息一休息', '休了休息'], ans: 0, exp: 'Động từ hai âm tiết AB lặp theo kiểu ABAB: 休息休息 = nghỉ ngơi một chút.' },
+  { q: 'Câu nào diễn đạt việc đã xảy ra với động từ lặp lại?', opts: ['我看了看网上的介绍。', '我看看了网上的介绍。', '我看网上的介绍了看。', '我了看看网上的介绍。'], ans: 0, exp: 'Việc đã xảy ra: 了 chen giữa động từ một âm tiết được lặp: 看了看; không đặt 了 sau cả cụm.' }
 ];
 
 var speakingData = {

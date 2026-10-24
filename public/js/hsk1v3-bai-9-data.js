@@ -2271,11 +2271,11 @@ var listenData = [];
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'学校', blank:'前边', post:'有一家电影院。', hint:'(phía trước)', ans:'前边'},
+  {pre:'学校', blank:'前边', post:'有一家电影院。', hint:'(phía trước)', ans:'前边', exp:'前边 = phía trước, đặt sau danh từ: 学校前边 = phía trước trường; nơi chốn đứng đầu câu tồn tại với 有.'},
   {pre:'我们晚上去那个电影院', blank:'看电影', post:'吧。', hint:'(xem phim)', ans:'看电影'},
-  {pre:'我们七点在电影院', blank:'外边', post:'见，好吗？', hint:'(bên ngoài)', ans:'外边'},
+  {pre:'我们七点在电影院', blank:'外边', post:'见，好吗？', hint:'(bên ngoài)', ans:'外边', exp:'在 + nơi chốn + phương vị từ chỉ chỗ hẹn: 在电影院外边见 = gặp ở bên ngoài rạp.'},
   {pre:'椅子上有一本中文书，那是谁的', blank:'书', post:'？', hint:'(sách)', ans:'书'},
-  {pre:'这是我的', blank:'第二本', post:'中文书。', hint:'(quyển thứ hai)', ans:'第二本'},
+  {pre:'这是我的', blank:'第二本', post:'中文书。', hint:'(quyển thứ hai)', ans:'第二本', exp:'第 + số = số thứ tự, sau đó mới đến lượng từ: 第二本书 = quyển thứ hai (两本 = hai quyển).'},
   {pre:'我明天上午在学校', blank:'学习', post:'。', hint:'(học tập)', ans:'学习'},
   {pre:'我白天在家里读书，晚上和朋友们去外边', blank:'唱歌', post:'。', hint:'(hát)', ans:'唱歌'},
   {pre:'我在家里做饭、看电视，和孩子们、小狗', blank:'玩', post:'。', hint:'(chơi)', ans:'玩'},
@@ -2297,14 +2297,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"学校前边有一家电影院。" nghĩa là gì?', opts:['Phía trước trường học có một rạp chiếu phim.', 'Phía sau trường học có một hiệu sách.', 'Trong trường có một rạp chiếu phim.', 'Trường học ở gần rạp chiếu phim.'], ans:0},
-  {q:'"那个电影院" nghĩa là gì?', opts:['rạp chiếu phim đó', 'rạp chiếu phim này', 'rạp chiếu phim nào', 'một rạp chiếu phim'], ans:0},
-  {q:'"这是我的第二本中文书。" nghĩa là gì?', opts:['Đây là quyển sách tiếng Trung thứ hai của tôi.', 'Đây là quyển sách tiếng Trung đầu tiên của tôi.', 'Đây là hai quyển sách tiếng Trung của tôi.', 'Đây không phải sách tiếng Trung của tôi.'], ans:0},
-  {q:'Từ "第" dùng để làm gì?', opts:['biểu thị số thứ tự', 'biểu thị số lượng', 'biểu thị phủ định', 'biểu thị nghi vấn'], ans:0},
-  {q:'"你唱歌很好听。" nghĩa là gì?', opts:['Bạn hát rất hay.', 'Bạn hát không hay.', 'Bạn thích hát.', 'Bạn không thích hát.'], ans:0},
-  {q:'Câu tồn hiện (存现句) thường dùng từ nào để biểu thị sự tồn tại?', opts:['有 hoặc 是', '能 hoặc 会', '的 hoặc 了', '吗 hoặc 呢'], ans:0},
-  {q:'Khi thời gian và nơi chốn cùng làm trạng ngữ, thứ tự đúng là gì?', opts:['thời gian trước, nơi chốn sau', 'nơi chốn trước, thời gian sau', 'luôn đặt cuối câu', 'không có quy tắc cố định'], ans:0},
-  {q:'"我也有一只小狗。" nghĩa là gì?', opts:['Tôi cũng có một con chó nhỏ.', 'Tôi không có chó.', 'Tôi muốn có một con chó.', 'Tôi có hai con chó.'], ans:0},
+  {q:'"学校前边有一家电影院。" nghĩa là gì?', opts:['Phía trước trường học có một rạp chiếu phim.', 'Phía sau trường học có một hiệu sách.', 'Trong trường có một rạp chiếu phim.', 'Trường học ở gần rạp chiếu phim.'], ans:0, exp:'前边 = phía trước (phía sau là 后边); 有一家电影院 = có một rạp chiếu phim.'},
+  {q:'"那个电影院" nghĩa là gì?', opts:['rạp chiếu phim đó', 'rạp chiếu phim này', 'rạp chiếu phim nào', 'một rạp chiếu phim'], ans:0, exp:'那 = đó/kia, 这 = này, 哪 = nào; 那个电影院 = rạp chiếu phim đó.'},
+  {q:'"这是我的第二本中文书。" nghĩa là gì?', opts:['Đây là quyển sách tiếng Trung thứ hai của tôi.', 'Đây là quyển sách tiếng Trung đầu tiên của tôi.', 'Đây là hai quyển sách tiếng Trung của tôi.', 'Đây không phải sách tiếng Trung của tôi.'], ans:0, exp:'第二 = thứ hai (số thứ tự), khác với 两本 = hai quyển (số lượng).'},
+  {q:'Từ "第" dùng để làm gì?', opts:['biểu thị số thứ tự', 'biểu thị số lượng', 'biểu thị phủ định', 'biểu thị nghi vấn'], ans:0, exp:'第 đặt trước số đếm để tạo số thứ tự: 第一, 第二.'},
+  {q:'"你唱歌很好听。" nghĩa là gì?', opts:['Bạn hát rất hay.', 'Bạn hát không hay.', 'Bạn thích hát.', 'Bạn không thích hát.'], ans:0, exp:'好听 = nghe hay; 你唱歌很好听 là lời khen: bạn hát rất hay.'},
+  {q:'Câu tồn hiện (存现句) thường dùng từ nào để biểu thị sự tồn tại?', opts:['有 hoặc 是', '能 hoặc 会', '的 hoặc 了', '吗 hoặc 呢'], ans:0, exp:'Câu tồn hiện: Nơi chốn + 有/是 + người/vật, ví dụ 学校前边有一家电影院.'},
+  {q:'Khi thời gian và nơi chốn cùng làm trạng ngữ, thứ tự đúng là gì?', opts:['thời gian trước, nơi chốn sau', 'nơi chốn trước, thời gian sau', 'luôn đặt cuối câu', 'không có quy tắc cố định'], ans:0, exp:'Thời gian đứng trước nơi chốn: 我明天上午在学校学习.'},
+  {q:'"我也有一只小狗。" nghĩa là gì?', opts:['Tôi cũng có một con chó nhỏ.', 'Tôi không có chó.', 'Tôi muốn có một con chó.', 'Tôi có hai con chó.'], ans:0, exp:'也 = cũng, đứng trước động từ 有; 一只小狗 = một con chó nhỏ.'},
 ];
 
 // ══════════════════════════════════════════

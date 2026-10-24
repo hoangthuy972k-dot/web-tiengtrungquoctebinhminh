@@ -1712,8 +1712,8 @@ var matchData = [
 var fillData = [
   {pre:'虽然我的',blank:'眼镜',post:'有点儿旧了，但是看得还很清楚。',hint:'(mắt kính)',ans:'眼镜'},
   {pre:'昨天还好好的手机，怎么',blank:'突然',post:'不能用了？',hint:'(bỗng nhiên)',ans:'突然'},
-  {pre:'我',blank:'离',post:'不开眼镜。',hint:'(rời khỏi)',ans:'离'},
-  {pre:'虽然教室里的灯有点儿旧了，但是黑板上的字我还看得',blank:'清楚',post:'。',hint:'(rõ ràng)',ans:'清楚'},
+  {pre:'我',blank:'离',post:'不开眼镜。',hint:'(rời khỏi)',ans:'离',exp:'离不开 = không rời được; động từ + 不 + 开 là bổ ngữ khả năng ở dạng phủ định.'},
+  {pre:'虽然教室里的灯有点儿旧了，但是黑板上的字我还看得',blank:'清楚',post:'。',hint:'(rõ ràng)',ans:'清楚',exp:'看得清楚 = nhìn rõ được; động từ + 得 + kết quả là bổ ngữ khả năng.'},
   {pre:'你的手机是不是',blank:'刚才',post:'忘在教室里了？',hint:'(lúc nãy)',ans:'刚才'},
   {pre:'房间里的东西太重了，你快过来',blank:'帮忙',post:'搬一下吧。',hint:'(giúp đỡ)',ans:'帮忙'},
   {pre:'今天这些题',blank:'特别',post:'难。',hint:'(vô cùng, rất)',ans:'特别'},
@@ -1722,8 +1722,8 @@ var fillData = [
   {pre:'虽然外边有点儿冷，但是我还是想去公园',blank:'锻炼',post:'一会儿。',hint:'(tập thể dục)',ans:'锻炼'},
   {pre:'她喜欢听',blank:'音乐',post:'。',hint:'(âm nhạc)',ans:'音乐'},
   {pre:'那去',blank:'公园',post:'走走。',hint:'(công viên)',ans:'公园'},
-  {pre:'他昨天喝了很多咖啡，所以晚上',blank:'睡不着',post:'觉。',hint:'(ngủ không được)',ans:'睡不着'},
-  {pre:'喝杯牛奶，可以睡得',blank:'更',post:'好些。',hint:'(càng, hơn nữa)',ans:'更'},
+  {pre:'他昨天喝了很多咖啡，所以晚上',blank:'睡不着',post:'觉。',hint:'(ngủ không được)',ans:'睡不着',exp:'睡不着 = không ngủ được; động từ + 不 + 着 là bổ ngữ khả năng phủ định.'},
+  {pre:'喝杯牛奶，可以睡得',blank:'更',post:'好些。',hint:'(càng, hơn nữa)',ans:'更',exp:'更 + tính từ = … hơn: 睡得更好些.'},
 ];
 
 // ══════════════════════════════════════════

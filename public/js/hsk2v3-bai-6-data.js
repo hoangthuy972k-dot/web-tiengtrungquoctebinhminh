@@ -1445,9 +1445,9 @@ var fillData = [
   { pre: '你不说，我还真', blank: '忘', post: '了。', hint: '(quên)', ans: '忘' },
   { pre: '她喜欢', blank: '画画', post: '，你觉得画笔怎么样？', hint: '(vẽ tranh)', ans: '画画' },
   { pre: '小雪，生日', blank: '快乐', post: '！', hint: '(vui vẻ)', ans: '快乐' },
-  { pre: '你', blank: '打开', post: '看看喜欢不喜欢。', hint: '(mở ra)', ans: '打开' },
-  { pre: '还有鱼啊肉啊', blank: '什么的', post: '。', hint: '(vân vân)', ans: '什么的' },
-  { pre: '还要高高兴兴', blank: '地', post: '玩。', hint: '(trợ từ trạng ngữ)', ans: '地' },
+  { pre: '你', blank: '打开', post: '看看喜欢不喜欢。', hint: '(mở ra)', ans: '打开', exp: '打开 = mở ra (开 là kết quả của động tác); 打开看看 = mở ra xem thử.' },
+  { pre: '还有鱼啊肉啊', blank: '什么的', post: '。', hint: '(vân vân)', ans: '什么的', exp: '什么的 đặt cuối danh sách liệt kê, nghĩa là “vân vân”.' },
+  { pre: '还要高高兴兴', blank: '地', post: '玩。', hint: '(trợ từ trạng ngữ)', ans: '地', exp: 'Tính từ lặp (高高兴兴) làm trạng ngữ, nối với động từ phía sau bằng 地.' },
   { pre: '他们说要舒舒服服地睡一觉，早早地上', blank: '床', post: '了。', hint: '(giường)', ans: '床' }
 ];
 
@@ -1461,14 +1461,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '今天买的苹果＿＿，我吃了一个，很好吃。', opts: ['大大的', '大的大', '很大大', '大大得'], ans: 0 },
-  { q: '桌子上有电脑、杯子、书和画笔＿＿。', opts: ['什么的', '怎么的', '那么的', '这么的'], ans: 0 },
-  { q: '爸爸很快＿＿吃完早饭，就去上班了。', opts: ['地', '的', '得', '了'], ans: 0 },
-  { q: '中国人过生日一般要吃什么？', opts: ['面条儿', '饺子', '米饭', '面包'], ans: 0 },
-  { q: 'Hình thức lặp của tính từ hai âm tiết 高兴 là gì?', opts: ['高高兴兴', '高兴高兴', '高兴兴高', '高高兴'], ans: 0 },
-  { q: '“什么的” dùng để làm gì?', opts: ['Liệt kê chưa đầy đủ (vân vân)', 'Hỏi cái gì', 'Phủ định', 'Nhấn mạnh thời gian'], ans: 0 },
-  { q: 'Trợ từ nào nối trạng ngữ với động từ?', opts: ['地', '的', '得', '了'], ans: 0 },
-  { q: '“过生日” nghĩa là gì?', opts: ['Đón sinh nhật', 'Đã từng sinh nhật', 'Qua ngày sinh nhật', 'Quên sinh nhật'], ans: 0 }
+  { q: '今天买的苹果＿＿，我吃了一个，很好吃。', opts: ['大大的', '大的大', '很大大', '大大得'], ans: 0, exp: 'Tính từ một âm tiết lặp AA + 的: 大大的 = to to; không dùng 很 trước tính từ lặp.' },
+  { q: '桌子上有电脑、杯子、书和画笔＿＿。', opts: ['什么的', '怎么的', '那么的', '这么的'], ans: 0, exp: '什么的 đặt sau danh sách liệt kê = vân vân.' },
+  { q: '爸爸很快＿＿吃完早饭，就去上班了。', opts: ['地', '的', '得', '了'], ans: 0, exp: 'Trạng ngữ (很快) đứng trước động từ 吃 nên nối bằng 地; 的 đứng trước danh từ, 得 đứng sau động từ.' },
+  { q: '中国人过生日一般要吃什么？', opts: ['面条儿', '饺子', '米饭', '面包'], ans: 0, exp: 'Người Trung Quốc thường ăn mì (面条儿) vào ngày sinh nhật, sợi mì dài tượng trưng cho sống lâu.' },
+  { q: 'Hình thức lặp của tính từ hai âm tiết 高兴 là gì?', opts: ['高高兴兴', '高兴高兴', '高兴兴高', '高高兴'], ans: 0, exp: 'Tính từ hai âm tiết AB lặp thành AABB: 高高兴兴; ABAB là kiểu lặp của động từ.' },
+  { q: '“什么的” dùng để làm gì?', opts: ['Liệt kê chưa đầy đủ (vân vân)', 'Hỏi cái gì', 'Phủ định', 'Nhấn mạnh thời gian'], ans: 0, exp: '什么的 đứng cuối loạt liệt kê, nghĩa là “vân vân”, không dùng để hỏi.' },
+  { q: 'Trợ từ nào nối trạng ngữ với động từ?', opts: ['地', '的', '得', '了'], ans: 0, exp: '地 nối trạng ngữ với động từ (高兴地玩); 的 nối định ngữ với danh từ; 得 nối động từ với bổ ngữ.' },
+  { q: '“过生日” nghĩa là gì?', opts: ['Đón sinh nhật', 'Đã từng sinh nhật', 'Qua ngày sinh nhật', 'Quên sinh nhật'], ans: 0, exp: '过 ở đây là động từ “đón, trải qua (ngày lễ)”: 过生日 = đón sinh nhật, không phải 过 chỉ kinh nghiệm.' }
 ];
 
 var speakingData = {

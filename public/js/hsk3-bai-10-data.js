@@ -1717,7 +1717,7 @@ var fillData = [
   {pre:'我觉得',blank:'数学',post:'比体育有意思多了。',hint:'(môn Toán)',ans:'数学'},
   {pre:'坐地铁上班很',blank:'方便',post:'。',hint:'(thuận tiện)',ans:'方便'},
   {pre:'我还打算买辆',blank:'自行车',post:'。',hint:'(xe đạp)',ans:'自行车'},
-  {pre:'他每天',blank:'骑',post:'自行车去公司，只要半个小时。',hint:'(cưỡi, đi xe)',ans:'骑'},
+  {pre:'他每天',blank:'骑',post:'自行车去公司，只要半个小时。',hint:'(cưỡi, đi xe)',ans:'骑',exp:'骑 dùng cho xe đạp, xe máy, ngựa (ngồi giạng chân); ô tô thì dùng 开 hoặc 坐.'},
   {pre:'这件衣服太',blank:'旧',post:'了，可以送人。',hint:'(cũ)',ans:'旧'},
   {pre:'手机坏了，要',blank:'换',post:'一个新的。',hint:'(đổi, thay)',ans:'换'},
   {pre:'这个',blank:'地方',post:'的环境怎么样？',hint:'(chỗ, nơi)',ans:'地方'},

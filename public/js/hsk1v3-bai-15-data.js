@@ -2099,13 +2099,13 @@ var listenData = [];
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你们', blank:'爱吃哪个菜', post:'？', hint:'(thích ăn món nào)', ans:'爱吃哪个菜'},
-  {pre:'我喜欢这个，', blank:'也喜欢那个', post:'。', hint:'(cũng thích cái kia)', ans:'也喜欢那个'},
-  {pre:'去年我和男朋友', blank:'去了西安', post:'。', hint:'(đã đi Tây An)', ans:'去了西安'},
+  {pre:'你们', blank:'爱吃哪个菜', post:'？', hint:'(thích ăn món nào)', ans:'爱吃哪个菜', exp:'哪 + 个 + danh từ = … nào: 哪个菜 = món nào; 爱吃 = thích ăn.'},
+  {pre:'我喜欢这个，', blank:'也喜欢那个', post:'。', hint:'(cũng thích cái kia)', ans:'也喜欢那个', exp:'也 đứng trước động từ 喜欢 ở vế sau: 我喜欢这个，也喜欢那个.'},
+  {pre:'去年我和男朋友', blank:'去了西安', post:'。', hint:'(đã đi Tây An)', ans:'去了西安', exp:'了 sau động từ 去 chỉ việc đã xảy ra (去年): 去了西安 = đã đi Tây An.'},
   {pre:'我和王老师都是', blank:'北京人', post:'。', hint:'(người Bắc Kinh)', ans:'北京人'},
-  {pre:'你们的飞机到北京', blank:'要几个小时', post:'？', hint:'(mất mấy tiếng)', ans:'要几个小时'},
-  {pre:'她可以去机场', blank:'接你们', post:'。', hint:'(đón các em)', ans:'接你们'},
-  {pre:'我们星期日早上八点到大兴机场，', blank:'早不早', post:'？', hint:'(có sớm không)', ans:'早不早'},
+  {pre:'你们的飞机到北京', blank:'要几个小时', post:'？', hint:'(mất mấy tiếng)', ans:'要几个小时', exp:'要 + thời lượng = mất bao lâu; 几个小时 = mấy tiếng (几 + 个 + 小时).'},
+  {pre:'她可以去机场', blank:'接你们', post:'。', hint:'(đón các em)', ans:'接你们', exp:'Câu liên động: 去机场 + 接你们, động từ sau nói mục đích (đi sân bay để đón).'},
+  {pre:'我们星期日早上八点到大兴机场，', blank:'早不早', post:'？', hint:'(có sớm không)', ans:'早不早', exp:'Câu hỏi chính phản với tính từ: 早不早？= có sớm không? (không thêm 吗).'},
   {pre:'那我们和您姐姐在大兴机场', blank:'见', post:'！', hint:'(gặp nhau)', ans:'见'},
 ];
 
@@ -2125,14 +2125,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"你们爱吃哪个菜？" nghĩa là gì?', opts:['Các bạn thích ăn món nào?', 'Các bạn đã ăn chưa?', 'Món này có ngon không?', 'Ai nấu món này?'], ans:0},
-  {q:'"我喜欢这个，也喜欢那个。" là ví dụ của cấu trúc nào?', opts:['câu ghép đẳng lập "……，还/也……"', 'câu hỏi chính phản', 'câu tồn hiện', 'câu có hai tân ngữ'], ans:0},
-  {q:'"我和王老师都是北京人。" nghĩa là gì?', opts:['Tôi và cô Vương đều là người Bắc Kinh.', 'Tôi và cô Vương không quen nhau.', 'Cô Vương không phải người Bắc Kinh.', 'Chỉ có tôi là người Bắc Kinh.'], ans:0},
-  {q:'"你们的飞机到北京要几个小时？" nghĩa là gì?', opts:['Chuyến bay của các bạn đến Bắc Kinh mất mấy tiếng?', 'Máy bay khởi hành lúc mấy giờ?', 'Vé máy bay giá bao nhiêu?', 'Các bạn có đi máy bay không?'], ans:0},
-  {q:'"她可以去机场接你们。" nghĩa là gì?', opts:['Chị ấy có thể đi sân bay đón các bạn.', 'Chị ấy không thể đi đón.', 'Các bạn phải tự đi đến sân bay.', 'Chị ấy sẽ ở nhà.'], ans:0},
-  {q:'Mời khách ăn nhiều hơn ("多吃点儿") thể hiện điều gì trong văn hoá Trung Quốc?', opts:['sự nhiệt tình, hiếu khách trên bàn ăn', 'phép lịch sự tối thiểu', 'yêu cầu bắt buộc phải ăn hết', 'không có ý nghĩa đặc biệt'], ans:0},
-  {q:'"那我们在大兴机场见！" — từ "那" trong câu này có nghĩa gì?', opts:['vậy thì, thế thì', 'đó, kia (chỉ vị trí)', 'phủ định', 'nghi vấn'], ans:0},
-  {q:'Bắc Kinh là gì của Trung Quốc?', opts:['thủ đô', 'thành phố cảng', 'tỉnh miền núi', 'đặc khu kinh tế'], ans:0},
+  {q:'"你们爱吃哪个菜？" nghĩa là gì?', opts:['Các bạn thích ăn món nào?', 'Các bạn đã ăn chưa?', 'Món này có ngon không?', 'Ai nấu món này?'], ans:0, exp:'爱吃 = thích ăn; 哪个菜 = món nào → hỏi món yêu thích.'},
+  {q:'"我喜欢这个，也喜欢那个。" là ví dụ của cấu trúc nào?', opts:['câu ghép đẳng lập "……，还/也……"', 'câu hỏi chính phản', 'câu tồn hiện', 'câu có hai tân ngữ'], ans:0, exp:'Hai vế song song, vế sau dùng 也/还 trước động từ: 我喜欢这个，也喜欢那个.'},
+  {q:'"我和王老师都是北京人。" nghĩa là gì?', opts:['Tôi và cô Vương đều là người Bắc Kinh.', 'Tôi và cô Vương không quen nhau.', 'Cô Vương không phải người Bắc Kinh.', 'Chỉ có tôi là người Bắc Kinh.'], ans:0, exp:'我和王老师 là chủ ngữ gồm hai người; 都 (đều) đứng sau chủ ngữ, trước 是.'},
+  {q:'"你们的飞机到北京要几个小时？" nghĩa là gì?', opts:['Chuyến bay của các bạn đến Bắc Kinh mất mấy tiếng?', 'Máy bay khởi hành lúc mấy giờ?', 'Vé máy bay giá bao nhiêu?', 'Các bạn có đi máy bay không?'], ans:0, exp:'要 + thời lượng = mất (bao lâu); 几个小时 = mấy tiếng.'},
+  {q:'"她可以去机场接你们。" nghĩa là gì?', opts:['Chị ấy có thể đi sân bay đón các bạn.', 'Chị ấy không thể đi đón.', 'Các bạn phải tự đi đến sân bay.', 'Chị ấy sẽ ở nhà.'], ans:0, exp:'可以 = có thể; 去机场接你们 = đi sân bay để đón các bạn (câu liên động).'},
+  {q:'Mời khách ăn nhiều hơn ("多吃点儿") thể hiện điều gì trong văn hoá Trung Quốc?', opts:['sự nhiệt tình, hiếu khách trên bàn ăn', 'phép lịch sự tối thiểu', 'yêu cầu bắt buộc phải ăn hết', 'không có ý nghĩa đặc biệt'], ans:0, exp:'Chủ nhà mời 多吃点儿 để thể hiện sự nhiệt tình, hiếu khách, không phải bắt khách ăn hết.'},
+  {q:'"那我们在大兴机场见！" — từ "那" trong câu này có nghĩa gì?', opts:['vậy thì, thế thì', 'đó, kia (chỉ vị trí)', 'phủ định', 'nghi vấn'], ans:0, exp:'那 đứng đầu câu (那我们…) nghĩa là “vậy thì”, nối với ý người kia vừa nói, không chỉ vị trí.'},
+  {q:'Bắc Kinh là gì của Trung Quốc?', opts:['thủ đô', 'thành phố cảng', 'tỉnh miền núi', 'đặc khu kinh tế'], ans:0, exp:'北京 là thủ đô của Trung Quốc.'},
 ];
 
 // ══════════════════════════════════════════

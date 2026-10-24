@@ -2647,8 +2647,8 @@ var fillData = [
   {pre:'好的，我们下午两点', blank:'见', post:'吧。', hint:'(gặp)', ans:'见'},
   {pre:'下午我想去电影院', blank:'看电影', post:'，你去吗？', hint:'(xem phim)', ans:'看电影'},
   {pre:'我明天下午两点还', blank:'上课', post:'呢。', hint:'(lên lớp)', ans:'上课'},
-  {pre:'我', blank:'晚上六点半', post:'下班。', hint:'(6 giờ rưỡi tối)', ans:'晚上六点半'},
-  {pre:'我', blank:'十分钟后', post:'去。', hint:'(sau 10 phút)', ans:'十分钟后'},
+  {pre:'我', blank:'晚上六点半', post:'下班。', hint:'(6 giờ rưỡi tối)', ans:'晚上六点半', exp:'Từ chỉ thời gian làm trạng ngữ đứng trước động từ: 我 + 晚上六点半 + 下班, không đặt cuối câu như tiếng Việt.'},
+  {pre:'我', blank:'十分钟后', post:'去。', hint:'(sau 10 phút)', ans:'十分钟后', exp:'十分钟后 (10 phút nữa) là trạng ngữ thời gian, phải đứng trước động từ 去.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2667,14 +2667,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"现在几点？" nghĩa là gì?', opts:['Bây giờ mấy giờ rồi?', 'Hôm nay thứ mấy?', 'Bạn đi đâu?', 'Ai gọi điện?'], ans:0},
-  {q:'"十点十分" nghĩa là gì?', opts:['10 giờ 10 phút', '10 giờ', '10 giờ rưỡi', '1 giờ 10 phút'], ans:0},
-  {q:'Trợ từ "吧" trong "我们下午两点见吧" dùng để làm gì?', opts:['đưa ra đề nghị, gợi ý', 'hỏi có/không', 'phủ định', 'chỉ quá khứ'], ans:0},
-  {q:'"我不想去，下午还有事" nghĩa là gì?', opts:['Tôi không muốn đi, chiều còn có việc', 'Tôi muốn đi xem phim', 'Tôi rất bận rộn', 'Tôi sẽ đi'], ans:0},
-  {q:'"四点半下课" nghĩa là gì?', opts:['4 giờ rưỡi tan học', '4 giờ tan học', '4 giờ 15 tan học', '4 giờ vào học'], ans:0},
-  {q:'"我在家里呢" nghĩa là gì?', opts:['Tôi đang ở nhà', 'Tôi đang ở bệnh viện', 'Tôi đang đi làm', 'Tôi đang ở cửa hàng'], ans:0},
-  {q:'"十分钟后去" nghĩa là gì?', opts:['10 phút nữa đi', 'Đã đi được 10 phút', '10 giờ thì đi', 'Không đi nữa'], ans:0},
-  {q:'Phó từ, từ ngữ chỉ thời gian làm trạng ngữ thường đặt ở đâu?', opts:['trước động từ/tính từ', 'sau động từ/tính từ', 'luôn ở đầu câu', 'luôn ở cuối câu'], ans:0},
+  {q:'"现在几点？" nghĩa là gì?', opts:['Bây giờ mấy giờ rồi?', 'Hôm nay thứ mấy?', 'Bạn đi đâu?', 'Ai gọi điện?'], ans:0, exp:'现在 = bây giờ, 几点 = mấy giờ; hỏi giờ không cần dùng 是.'},
+  {q:'"十点十分" nghĩa là gì?', opts:['10 giờ 10 phút', '10 giờ', '10 giờ rưỡi', '1 giờ 10 phút'], ans:0, exp:'点 là giờ, 分 là phút: 十点十分 = 10 giờ 10 phút; 10 giờ rưỡi là 十点半.'},
+  {q:'Trợ từ "吧" trong "我们下午两点见吧" dùng để làm gì?', opts:['đưa ra đề nghị, gợi ý', 'hỏi có/không', 'phủ định', 'chỉ quá khứ'], ans:0, exp:'吧 ở cuối câu này mang ý đề nghị, rủ rê: 我们下午两点见吧 = chiều 2 giờ mình gặp nhau nhé.'},
+  {q:'"我不想去，下午还有事" nghĩa là gì?', opts:['Tôi không muốn đi, chiều còn có việc', 'Tôi muốn đi xem phim', 'Tôi rất bận rộn', 'Tôi sẽ đi'], ans:0, exp:'不想 = không muốn; 还有事 = còn có việc. Vế sau nêu lý do không đi.'},
+  {q:'"四点半下课" nghĩa là gì?', opts:['4 giờ rưỡi tan học', '4 giờ tan học', '4 giờ 15 tan học', '4 giờ vào học'], ans:0, exp:'半 = rưỡi (30 phút), 下课 = tan học: 四点半下课 = 4 giờ rưỡi tan học.'},
+  {q:'"我在家里呢" nghĩa là gì?', opts:['Tôi đang ở nhà', 'Tôi đang ở bệnh viện', 'Tôi đang đi làm', 'Tôi đang ở cửa hàng'], ans:0, exp:'在 + nơi chốn = ở đâu; 呢 cuối câu nhấn mạnh trạng thái đang diễn ra: 我在家里呢 = tôi đang ở nhà.'},
+  {q:'"十分钟后去" nghĩa là gì?', opts:['10 phút nữa đi', 'Đã đi được 10 phút', '10 giờ thì đi', 'Không đi nữa'], ans:0, exp:'十分钟后 = sau 10 phút; đứng trước 去 nên là thời điểm sẽ đi, không phải việc đã qua.'},
+  {q:'Phó từ, từ ngữ chỉ thời gian làm trạng ngữ thường đặt ở đâu?', opts:['trước động từ/tính từ', 'sau động từ/tính từ', 'luôn ở đầu câu', 'luôn ở cuối câu'], ans:0, exp:'Trạng ngữ (phó từ, từ chỉ thời gian) đứng trước động từ/tính từ: 我晚上六点半下班; không đặt sau động từ.'},
 ];
 
 // ══════════════════════════════════════════

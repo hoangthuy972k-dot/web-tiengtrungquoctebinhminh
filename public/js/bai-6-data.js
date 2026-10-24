@@ -1467,13 +1467,13 @@ var listenData = {
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'你',blank:'怎么',post:'没去打篮球？',hint:'(sao, tại sao)',ans:'怎么',exp:'怎么 đứng sau chủ ngữ, trước động từ, dùng hỏi lý do.'},
-  {pre:'',blank:'因为',post:'昨天下雨，',hint:'(vì)',ans:'因为'},
+  {pre:'',blank:'因为',post:'昨天下雨，',hint:'(vì)',ans:'因为',exp:'因为 nêu nguyên nhân ở vế đầu; vế sau thường có 所以.'},
   {pre:'',blank:'所以',post:'我没去。',hint:'(nên, cho nên)',ans:'所以',exp:'因为……，所以…… luôn đi thành cặp, không đảo ngược.'},
-  {pre:'你',blank:'经常',post:'游泳吗？',hint:'(thường xuyên)',ans:'经常'},
+  {pre:'你',blank:'经常',post:'游泳吗？',hint:'(thường xuyên)',ans:'经常',exp:'经常 (thường xuyên) là phó từ, đứng trước động từ: 经常游泳.'},
   {pre:'这个饭店的面条很',blank:'好吃',post:'。',hint:'(ngon)',ans:'好吃'},
-  {pre:'你',blank:'怎么',post:'不吃羊肉了？',hint:'(sao — ôn lại)',ans:'怎么'},
-  {pre:'我这个星期天天都吃羊肉，',blank:'所以',post:'不想吃了。',hint:'(nên)',ans:'所以'},
-  {pre:'我姐姐',blank:'经常',post:'打篮球。',hint:'(thường xuyên)',ans:'经常'},
+  {pre:'你',blank:'怎么',post:'不吃羊肉了？',hint:'(sao — ôn lại)',ans:'怎么',exp:'怎么 + phủ định = sao (lại)…? hỏi lý do với ý ngạc nhiên: 怎么不吃羊肉了？'},
+  {pre:'我这个星期天天都吃羊肉，',blank:'所以',post:'不想吃了。',hint:'(nên)',ans:'所以',exp:'所以 mở đầu vế kết quả: (因为)天天吃羊肉，所以不想吃了.'},
+  {pre:'我姐姐',blank:'经常',post:'打篮球。',hint:'(thường xuyên)',ans:'经常',exp:'经常 là phó từ, đứng sau chủ ngữ và trước động từ: 我姐姐经常打篮球.'},
 ];
 
 // ══════════════════════════════════════════

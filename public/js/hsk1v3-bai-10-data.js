@@ -2340,13 +2340,13 @@ var listenData = [];
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'请问，有', blank:'杯子', post:'吗？', hint:'(cốc)', ans:'杯子'},
-  {pre:'', blank:'多少钱', post:'一个？', hint:'(bao nhiêu tiền)', ans:'多少钱'},
-  {pre:'这些', blank:'五块钱', post:'一个，那些十块钱一个。', hint:'(5 đồng)', ans:'五块钱'},
-  {pre:'', blank:'这儿的水果', post:'真不少！', hint:'(hoa quả ở đây)', ans:'这儿的水果'},
+  {pre:'', blank:'多少钱', post:'一个？', hint:'(bao nhiêu tiền)', ans:'多少钱', exp:'Hỏi giá dùng 多少钱; có thể đặt lên đầu: 多少钱一个？= bao nhiêu tiền một cái?'},
+  {pre:'这些', blank:'五块钱', post:'一个，那些十块钱一个。', hint:'(5 đồng)', ans:'五块钱', exp:'块 là đơn vị tiền trong khẩu ngữ: 五块钱一个 = 5 đồng một cái.'},
+  {pre:'', blank:'这儿的水果', post:'真不少！', hint:'(hoa quả ở đây)', ans:'这儿的水果', exp:'的 nối định ngữ chỉ nơi chốn với danh từ: 这儿的水果 = hoa quả ở đây.'},
   {pre:'我想买两斤', blank:'苹果', post:'。', hint:'(táo)', ans:'苹果'},
   {pre:'这儿的苹果真', blank:'便宜', post:'！', hint:'(rẻ)', ans:'便宜'},
-  {pre:'这件一百元，', blank:'怎么样', post:'？', hint:'(thế nào)', ans:'怎么样'},
-  {pre:'好看，也不', blank:'贵', post:'。', hint:'(đắt)', ans:'贵'},
+  {pre:'这件一百元，', blank:'怎么样', post:'？', hint:'(thế nào)', ans:'怎么样', exp:'怎么样 đặt cuối câu để hỏi ý kiến: 这件一百元，怎么样？= thấy thế nào?'},
+  {pre:'好看，也不', blank:'贵', post:'。', hint:'(đắt)', ans:'贵', exp:'Câu vị ngữ tính từ: 不 + 贵, không cần 是; 也 đứng trước 不: 也不贵.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2365,14 +2365,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"多少钱一个？" nghĩa là gì?', opts:['Bao nhiêu tiền một cái?', 'Cái này màu gì?', 'Cái này ở đâu?', 'Còn cái nào không?'], ans:0},
-  {q:'"这儿的水果真不少！" nghĩa là gì?', opts:['Hoa quả ở đây nhiều thật!', 'Hoa quả ở đây rất ít.', 'Hoa quả ở đây không tươi.', 'Ở đây không có hoa quả.'], ans:0},
-  {q:'Lượng từ "斤" dùng để làm gì?', opts:['đo khối lượng (1 cân = 0,5kg)', 'đếm số người', 'đếm số quyển sách', 'đếm số chiếc áo'], ans:0},
-  {q:'"这儿的苹果真便宜！" nghĩa là gì?', opts:['Táo ở đây rẻ thật!', 'Táo ở đây đắt thật!', 'Táo ở đây không ngon.', 'Ở đây không bán táo.'], ans:0},
-  {q:'"好看，也不贵。" nghĩa là gì?', opts:['Đẹp, mà cũng không đắt.', 'Đẹp nhưng rất đắt.', 'Không đẹp, cũng không rẻ.', 'Xấu và đắt.'], ans:0},
-  {q:'Đại từ nghi vấn "怎么样" dùng để hỏi điều gì?', opts:['ý kiến, tình hình như thế nào', 'số lượng bao nhiêu', 'vị trí ở đâu', 'thời gian khi nào'], ans:0},
-  {q:'Câu vị ngữ tính từ có đặc điểm gì?', opts:['tính từ trực tiếp làm vị ngữ, không cần "是"', 'luôn cần động từ "是" đứng trước', 'luôn cần lượng từ đứng trước', 'chỉ dùng trong câu hỏi'], ans:0},
-  {q:'"男孩子的衣服在那儿。" nghĩa là gì?', opts:['Quần áo bé trai ở đằng kia.', 'Quần áo bé gái ở đằng kia.', 'Không có quần áo bé trai.', 'Bé trai ở đằng kia.'], ans:0},
+  {q:'"多少钱一个？" nghĩa là gì?', opts:['Bao nhiêu tiền một cái?', 'Cái này màu gì?', 'Cái này ở đâu?', 'Còn cái nào không?'], ans:0, exp:'多少钱 = bao nhiêu tiền, 一个 = một cái → hỏi giá cho mỗi cái.'},
+  {q:'"这儿的水果真不少！" nghĩa là gì?', opts:['Hoa quả ở đây nhiều thật!', 'Hoa quả ở đây rất ít.', 'Hoa quả ở đây không tươi.', 'Ở đây không có hoa quả.'], ans:0, exp:'不少 = không ít, tức là nhiều; 真 nhấn mạnh: nhiều thật!'},
+  {q:'Lượng từ "斤" dùng để làm gì?', opts:['đo khối lượng (1 cân = 0,5kg)', 'đếm số người', 'đếm số quyển sách', 'đếm số chiếc áo'], ans:0, exp:'斤 là đơn vị khối lượng, 1 斤 = 0,5 kg: 两斤苹果 = 1 kg táo.'},
+  {q:'"这儿的苹果真便宜！" nghĩa là gì?', opts:['Táo ở đây rẻ thật!', 'Táo ở đây đắt thật!', 'Táo ở đây không ngon.', 'Ở đây không bán táo.'], ans:0, exp:'便宜 = rẻ (ngược với 贵 = đắt); 真便宜 = rẻ thật!'},
+  {q:'"好看，也不贵。" nghĩa là gì?', opts:['Đẹp, mà cũng không đắt.', 'Đẹp nhưng rất đắt.', 'Không đẹp, cũng không rẻ.', 'Xấu và đắt.'], ans:0, exp:'也不贵 = cũng không đắt: món đồ vừa đẹp lại vừa không đắt.'},
+  {q:'Đại từ nghi vấn "怎么样" dùng để hỏi điều gì?', opts:['ý kiến, tình hình như thế nào', 'số lượng bao nhiêu', 'vị trí ở đâu', 'thời gian khi nào'], ans:0, exp:'怎么样 hỏi ý kiến hoặc tình hình; hỏi số lượng dùng 多少, hỏi nơi chốn dùng 哪儿.'},
+  {q:'Câu vị ngữ tính từ có đặc điểm gì?', opts:['tính từ trực tiếp làm vị ngữ, không cần "是"', 'luôn cần động từ "是" đứng trước', 'luôn cần lượng từ đứng trước', 'chỉ dùng trong câu hỏi'], ans:0, exp:'Câu vị ngữ tính từ: tính từ làm vị ngữ trực tiếp, không dùng 是, thường có 很/真 đứng trước: 苹果真便宜.'},
+  {q:'"男孩子的衣服在那儿。" nghĩa là gì?', opts:['Quần áo bé trai ở đằng kia.', 'Quần áo bé gái ở đằng kia.', 'Không có quần áo bé trai.', 'Bé trai ở đằng kia.'], ans:0, exp:'男孩子的衣服 = quần áo của bé trai (的 nối định ngữ); 在那儿 = ở đằng kia.'},
 ];
 
 // ══════════════════════════════════════════

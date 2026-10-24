@@ -1599,7 +1599,7 @@ var matchData = [
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'我的',blank:'照相机',post:'被谁拿走了？',hint:'(máy chụp ảnh)',ans:'照相机'},
-  {pre:'我的手机',blank:'被',post:'谁放在这儿了？',hint:'(bị, giới từ chỉ thể bị động)',ans:'被'},
+  {pre:'我的手机',blank:'被',post:'谁放在这儿了？',hint:'(bị, giới từ chỉ thể bị động)',ans:'被',exp:'Câu bị động: Vật + 被 + người làm + động từ: 我的手机被谁放在这儿了？'},
   {pre:'别',blank:'难过',post:'，再买一个吧。',hint:'(buồn)',ans:'难过'},
   {pre:'公司',blank:'东',post:'门外有一个大公园。',hint:'(phía đông)',ans:'东'},
   {pre:'我这个月',blank:'信用卡',post:'里的钱已经花得差不多了。',hint:'(thẻ tín dụng)',ans:'信用卡'},

@@ -1812,11 +1812,11 @@ var matchData = [
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'我不喜欢一直住在同一个',blank:'城市',post:'。',hint:'(thành phố)',ans:'城市'},
-  {pre:'',blank:'如果',post:'有钱，就去了。',hint:'(nếu)',ans:'如果'},
+  {pre:'',blank:'如果',post:'有钱，就去了。',hint:'(nếu)',ans:'如果',exp:'如果…，就… = nếu… thì…'},
   {pre:'虽然大家都说这个办法很好，但是我',blank:'认为',post:'还是有点儿问题。',hint:'(cho rằng)',ans:'认为'},
   {pre:'你送的小',blank:'皮鞋',post:'和小帽子真漂亮！',hint:'(giày da)',ans:'皮鞋'},
   {pre:'他过生日，我送了他一个新',blank:'帽子',post:'。',hint:'(mũ, nón)',ans:'帽子'},
-  {pre:'乐乐，你',blank:'长',post:'高了。',hint:'(trưởng thành, lớn lên)',ans:'长'},
+  {pre:'乐乐，你',blank:'长',post:'高了。',hint:'(trưởng thành, lớn lên)',ans:'长',exp:'长 đọc zhǎng = lớn lên: 长高了 = cao lên rồi.'},
   {pre:'你女儿长得白白的、胖胖的，真',blank:'可爱',post:'！',hint:'(đáng yêu)',ans:'可爱'},
   {pre:'从这儿到学校差不多有五十',blank:'米',post:'。',hint:'(mét)',ans:'米'},
   {pre:'这个行李箱太重了，差不多有三十',blank:'公斤',post:'。',hint:'(kilôgram)',ans:'公斤'},

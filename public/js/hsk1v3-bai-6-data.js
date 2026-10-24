@@ -2406,12 +2406,12 @@ var listenData = [];
 // PHẦN 3a · ĐIỀN TỪ (dựa theo bài tập tổng hợp thật trong sách)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我想', blank:'去', post:'超市买牛奶。', hint:'(đi)', ans:'去'},
-  {pre:'我想去超市', blank:'买', post:'牛奶。', hint:'(mua)', ans:'买'},
-  {pre:'我们', blank:'坐', post:'出租车去西安饭店吃晚饭。', hint:'(ngồi, đi bằng)', ans:'坐'},
+  {pre:'我想', blank:'去', post:'超市买牛奶。', hint:'(đi)', ans:'去', exp:'Câu liên động: 去 + nơi chốn trước, việc cần làm sau: 去超市买牛奶.'},
+  {pre:'我想去超市', blank:'买', post:'牛奶。', hint:'(mua)', ans:'买', exp:'Động từ thứ hai 买 nói mục đích của việc đi siêu thị: 去超市 + 买牛奶.'},
+  {pre:'我们', blank:'坐', post:'出租车去西安饭店吃晚饭。', hint:'(ngồi, đi bằng)', ans:'坐', exp:'坐 + phương tiện + 去 + nơi đến: cách đi đứng trước, nơi đến đứng sau (坐出租车去…).'},
   {pre:'妈妈：你想吃什么？孩子：我想吃', blank:'米饭', post:'。', hint:'(cơm)', ans:'米饭'},
-  {pre:'老师：你的手机号是', blank:'多少', post:'？', hint:'(bao nhiêu)', ans:'多少'},
-  {pre:'王一雪想', blank:'坐', post:'出租车去超市。', hint:'(ngồi, đi bằng)', ans:'坐'},
+  {pre:'老师：你的手机号是', blank:'多少', post:'？', hint:'(bao nhiêu)', ans:'多少', exp:'Số điện thoại có nhiều chữ số nên hỏi bằng 多少; 几 chỉ hỏi số nhỏ, thường dưới 10.'},
+  {pre:'王一雪想', blank:'坐', post:'出租车去超市。', hint:'(ngồi, đi bằng)', ans:'坐', exp:'Nói đi bằng phương tiện gì dùng 坐 + phương tiện + 去: 坐出租车去超市.'},
   {pre:'这些包子非常', blank:'好吃', post:'。', hint:'(ngon)', ans:'好吃'},
   {pre:'她的', blank:'手机', post:'号是多少？', hint:'(điện thoại di động)', ans:'手机'},
 ];
@@ -2432,14 +2432,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Khi đọc số điện thoại, số "1" phải đọc là gì?', opts:['yāo', 'yī', 'yì', 'yí'], ans:0},
-  {q:'"你的手机号是多少？" — vì sao dùng "多少" mà không dùng "几"?', opts:['多少 dùng khi số lượng lớn/không giới hạn chữ số', '几 mới đúng ngữ pháp', 'Không có sự khác biệt', '多少 chỉ dùng cho tuổi tác'], ans:0},
-  {q:'"想" (động từ năng nguyện) biểu thị điều gì?', opts:['Mong muốn, dự định', 'Khả năng do học tập (giống 会)', 'Sự sở hữu', 'Sự phủ định'], ans:0},
-  {q:'"我想去超市买东西" là câu gì?', opts:['Câu liên động biểu thị mục đích', 'Câu liên động biểu thị phương thức', 'Câu chữ 是', 'Câu vị ngữ danh từ'], ans:0},
-  {q:'"坐出租车去" là câu gì?', opts:['Câu liên động biểu thị phương thức (đi bằng cách nào)', 'Câu liên động biểu thị mục đích', 'Câu nghi vấn', 'Câu phủ định'], ans:0},
-  {q:'"怎么" dùng để hỏi về điều gì?', opts:['Phương thức thực hiện hành động', 'Số lượng', 'Thời gian', 'Địa điểm cụ thể'], ans:0},
-  {q:'"我们怎么去？" trả lời phù hợp là gì?', opts:['坐出租车去', '去超市', '想买东西', '很好吃'], ans:0},
-  {q:'"那边的包子非常好吃" — "非常" bổ nghĩa cho từ nào?', opts:['好吃', '包子', '那边', '的'], ans:0},
+  {q:'Khi đọc số điện thoại, số "1" phải đọc là gì?', opts:['yāo', 'yī', 'yì', 'yí'], ans:0, exp:'Khi đọc số điện thoại, số phòng, “1” thường đọc là yāo để khỏi nhầm với “7” (qī).'},
+  {q:'"你的手机号是多少？" — vì sao dùng "多少" mà không dùng "几"?', opts:['多少 dùng khi số lượng lớn/không giới hạn chữ số', '几 mới đúng ngữ pháp', 'Không có sự khác biệt', '多少 chỉ dùng cho tuổi tác'], ans:0, exp:'几 hỏi số nhỏ (thường dưới 10); số điện thoại dài nhiều chữ số nên dùng 多少.'},
+  {q:'"想" (động từ năng nguyện) biểu thị điều gì?', opts:['Mong muốn, dự định', 'Khả năng do học tập (giống 会)', 'Sự sở hữu', 'Sự phủ định'], ans:0, exp:'想 + động từ = muốn, định làm gì: 我想去超市; biết làm nhờ học thì dùng 会.'},
+  {q:'"我想去超市买东西" là câu gì?', opts:['Câu liên động biểu thị mục đích', 'Câu liên động biểu thị phương thức', 'Câu chữ 是', 'Câu vị ngữ danh từ'], ans:0, exp:'去超市 rồi 买东西: động từ sau nói mục đích của động từ trước → câu liên động chỉ mục đích.'},
+  {q:'"坐出租车去" là câu gì?', opts:['Câu liên động biểu thị phương thức (đi bằng cách nào)', 'Câu liên động biểu thị mục đích', 'Câu nghi vấn', 'Câu phủ định'], ans:0, exp:'坐出租车 nói cách đi (bằng gì), 去 là hành động chính → câu liên động chỉ phương thức.'},
+  {q:'"怎么" dùng để hỏi về điều gì?', opts:['Phương thức thực hiện hành động', 'Số lượng', 'Thời gian', 'Địa điểm cụ thể'], ans:0, exp:'怎么 + động từ hỏi cách làm: 怎么去？= đi bằng cách nào?'},
+  {q:'"我们怎么去？" trả lời phù hợp là gì?', opts:['坐出租车去', '去超市', '想买东西', '很好吃'], ans:0, exp:'Hỏi 怎么去 (đi bằng gì) thì trả lời bằng phương thức: 坐出租车去.'},
+  {q:'"那边的包子非常好吃" — "非常" bổ nghĩa cho từ nào?', opts:['好吃', '包子', '那边', '的'], ans:0, exp:'非常 là phó từ chỉ mức độ, đứng trước và bổ nghĩa cho tính từ 好吃 (rất ngon).'},
 ];
 
 // ══════════════════════════════════════════

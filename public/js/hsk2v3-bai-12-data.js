@@ -1172,12 +1172,12 @@ var matchData = [
 var fillData = [
   { pre: '有什么', blank: '事情', post: '吗？', hint: '(sự việc)', ans: '事情' },
   { pre: '北京这几天虽然是', blank: '晴', post: '天，但是有点儿冷。', hint: '(nắng)', ans: '晴' },
-  { pre: '外边还', blank: '正', post: '下着雪呢！', hint: '(đang)', ans: '正' },
+  { pre: '外边还', blank: '正', post: '下着雪呢！', hint: '(đang)', ans: '正', exp: '正 + động từ + 着 + 呢 = đang…: 正下着雪呢 nhấn mạnh hành động đang diễn ra lúc nói.' },
   { pre: '你去', blank: '外面', post: '的时候多穿点儿衣服。', hint: '(bên ngoài)', ans: '外面' },
   { pre: '', blank: '阴', post: '天下雪什么的就少出去吧。', hint: '(âm u)', ans: '阴' },
-  { pre: '我', blank: '从小', post: '就经常跟爸爸跑步。', hint: '(từ nhỏ)', ans: '从小' },
+  { pre: '我', blank: '从小', post: '就经常跟爸爸跑步。', hint: '(từ nhỏ)', ans: '从小', exp: '从小就… = từ nhỏ đã…; 从 chỉ điểm bắt đầu về thời gian.' },
   { pre: '我现在坐', blank: '地铁', post: '去找你。', hint: '(tàu điện ngầm)', ans: '地铁' },
-  { pre: '你看，前边的那个人', blank: '好', post: '高啊！', hint: '(rất, thật là)', ans: '好' }
+  { pre: '你看，前边的那个人', blank: '好', post: '高啊！', hint: '(rất, thật là)', ans: '好', exp: '好 + tính từ + 啊 = thật là…! (cảm thán): 好高啊！' }
 ];
 
 var sortData = [
@@ -1193,11 +1193,11 @@ var mcData = [
   { q: '坐飞机比坐火车快＿＿。', opts: ['得多', '多得', '很多', '太多'], ans: 0 },
   { q: '我这里比北京冷＿＿。', opts: ['多了', '了多', '很多', '非常'], ans: 0 },
   { q: '妈妈＿＿我睡得晚。', opts: ['比', '跟', '最', '没有'], ans: 0 },
-  { q: '白家月汉字写得＿＿陈天中好。', opts: ['比', '最', '很', '真'], ans: 0 },
-  { q: 'Câu nào đúng?', opts: ['你跑步跑得比我快。', '你跑步得比我快。', '你比我跑步得快。', '你跑步比得我快。'], ans: 0 },
-  { q: '“好高啊！” ở đây 好 có nghĩa là gì?', opts: ['Rất', 'Tốt', 'Được', 'Xong'], ans: 0 },
-  { q: '晴天 trái nghĩa với từ nào?', opts: ['阴天', '大风', '热天', '冷天'], ans: 0 },
-  { q: '“正下着雪呢” nhấn mạnh điều gì?', opts: ['Tuyết đang rơi ngay lúc này', 'Tuyết đã tạnh', 'Tuyết sắp rơi', 'Tuyết rơi rất to'], ans: 0 }
+  { q: '白家月汉字写得＿＿陈天中好。', opts: ['比', '最', '很', '真'], ans: 0, exp: 'Động từ + 得 + 比 + B + tính từ: 写得比陈天中好 = viết đẹp hơn Trần Thiên Trung.' },
+  { q: 'Câu nào đúng?', opts: ['你跑步跑得比我快。', '你跑步得比我快。', '你比我跑步得快。', '你跑步比得我快。'], ans: 0, exp: 'Động từ có tân ngữ thì lặp động từ, rồi đặt 比 sau 得: 跑步跑得比我快.' },
+  { q: '“好高啊！” ở đây 好 có nghĩa là gì?', opts: ['Rất', 'Tốt', 'Được', 'Xong'], ans: 0, exp: '好 + tính từ + 啊 = thật là…!: 好高啊 = cao thật!' },
+  { q: '晴天 trái nghĩa với từ nào?', opts: ['阴天', '大风', '热天', '冷天'], ans: 0, exp: '晴天 = trời nắng, 阴天 = trời âm u; hai từ trái nghĩa.' },
+  { q: '“正下着雪呢” nhấn mạnh điều gì?', opts: ['Tuyết đang rơi ngay lúc này', 'Tuyết đã tạnh', 'Tuyết sắp rơi', 'Tuyết rơi rất to'], ans: 0, exp: '正 + động từ + 着 + 呢 nhấn mạnh hành động đang diễn ra ngay lúc nói.' }
 ];
 
 var speakingData = {

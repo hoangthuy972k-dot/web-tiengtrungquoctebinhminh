@@ -1681,13 +1681,13 @@ var matchData = [
 ];
 
 var fillData = [
-  { pre: '我们来', blank: '过', post: '这家商场吗？', hint: '(đã từng)', ans: '过' },
-  { pre: '我们', blank: '进去', post: '看看吧。', hint: '(đi vào)', ans: '进去' },
-  { pre: '我想买', blank: '条', post: '裤子。', hint: '(lượng từ cho quần)', ans: '条' },
-  { pre: '', blank: '因为', post: '我喜欢白色啊！', hint: '(bởi vì)', ans: '因为' },
-  { pre: '就是因为没穿过，', blank: '所以', post: '要试试啊！', hint: '(cho nên)', ans: '所以' },
-  { pre: '那边卖书包，我们', blank: '过去', post: '看看吧。', hint: '(sang đó)', ans: '过去' },
-  { pre: '我也觉得绿色的', blank: '更', post: '好看。', hint: '(hơn)', ans: '更' },
+  { pre: '我们来', blank: '过', post: '这家商场吗？', hint: '(đã từng)', ans: '过', exp: 'Động từ + 过 = đã từng làm; hỏi kinh nghiệm: 我们来过这家商场吗？' },
+  { pre: '我们', blank: '进去', post: '看看吧。', hint: '(đi vào)', ans: '进去', exp: '进去 = đi vào trong (rời xa người nói): 进去看看 = vào xem thử.' },
+  { pre: '我想买', blank: '条', post: '裤子。', hint: '(lượng từ cho quần)', ans: '条', exp: '条 là lượng từ cho vật dài, mềm như quần: 一条裤子.' },
+  { pre: '', blank: '因为', post: '我喜欢白色啊！', hint: '(bởi vì)', ans: '因为', exp: '因为 nêu nguyên nhân, dùng để trả lời câu hỏi 为什么.' },
+  { pre: '就是因为没穿过，', blank: '所以', post: '要试试啊！', hint: '(cho nên)', ans: '所以', exp: '因为…，所以…: 所以 mở đầu vế kết quả.' },
+  { pre: '那边卖书包，我们', blank: '过去', post: '看看吧。', hint: '(sang đó)', ans: '过去', exp: '过去 = đi sang đó (rời xa người nói); còn 过来 là qua đây.' },
+  { pre: '我也觉得绿色的', blank: '更', post: '好看。', hint: '(hơn)', ans: '更', exp: '更 + tính từ = … hơn: 绿色的更好看 (so với màu khác).' },
   { pre: '商场里的衣服', blank: '颜色', post: '很多。', hint: '(màu sắc)', ans: '颜色' }
 ];
 
@@ -1701,14 +1701,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '我看见老师在教室里，你＿＿找她吧。', opts: ['进去', '书包', '颜色', '条'], ans: 0 },
-  { q: '你已经有一＿＿黑色的裤子了，别买了。', opts: ['个', '间', '条', '名'], ans: 2 },
-  { q: '商场里衣服的＿＿很多。', opts: ['书包', '颜色', '商场', '进去'], ans: 1 },
-  { q: '"她去过中国" nghĩa là gì?', opts: ['Cô ấy từng đến Trung Quốc', 'Cô ấy đang ở Trung Quốc', 'Cô ấy sẽ đi Trung Quốc', 'Cô ấy không đến Trung Quốc'], ans: 0 },
-  { q: 'Phủ định của "她去过中国" là câu nào?', opts: ['她没去过中国。', '她不去过中国。', '她去过没中国。', '她没有去中国过。'], ans: 0 },
-  { q: '"红色的、绿色的、黑色的" ở đây thay cho cụm nào?', opts: ['红色的书包…', '红色的人…', '红色的天…', '红色的时间…'], ans: 0 },
-  { q: 'Cặp liên từ nào chỉ quan hệ nguyên nhân – kết quả?', opts: ['因为……所以……', '还是……吧', '虽然……也……', '一……就……'], ans: 0 },
-  { q: '"我觉得绿色的更好看" — 「更」nghĩa là gì?', opts: ['càng, hơn', 'rất', 'không', 'lại'], ans: 0 }
+  { q: '我看见老师在教室里，你＿＿找她吧。', opts: ['进去', '书包', '颜色', '条'], ans: 0, exp: 'Cô giáo ở trong lớp, người nghe ở ngoài: đi vào trong dùng 进去.' },
+  { q: '你已经有一＿＿黑色的裤子了，别买了。', opts: ['个', '间', '条', '名'], ans: 2, exp: '条 là lượng từ cho quần (vật dài, mềm); 间 dùng cho phòng, 名 cho người.' },
+  { q: '商场里衣服的＿＿很多。', opts: ['书包', '颜色', '商场', '进去'], ans: 1, exp: '颜色 = màu sắc: 衣服的颜色很多 = quần áo có nhiều màu.' },
+  { q: '"她去过中国" nghĩa là gì?', opts: ['Cô ấy từng đến Trung Quốc', 'Cô ấy đang ở Trung Quốc', 'Cô ấy sẽ đi Trung Quốc', 'Cô ấy không đến Trung Quốc'], ans: 0, exp: 'Động từ + 过 chỉ kinh nghiệm đã từng làm: 去过中国 = từng đến Trung Quốc.' },
+  { q: 'Phủ định của "她去过中国" là câu nào?', opts: ['她没去过中国。', '她不去过中国。', '她去过没中国。', '她没有去中国过。'], ans: 0, exp: 'Phủ định 过 dùng 没 + động từ + 过 và vẫn giữ 过: 没去过; không dùng 不.' },
+  { q: '"红色的、绿色的、黑色的" ở đây thay cho cụm nào?', opts: ['红色的书包…', '红色的人…', '红色的天…', '红色的时间…'], ans: 0, exp: 'Cụm 的 (红色的) thay cho danh từ đã nhắc trước: 红色的 = cái (cặp sách) màu đỏ.' },
+  { q: 'Cặp liên từ nào chỉ quan hệ nguyên nhân – kết quả?', opts: ['因为……所以……', '还是……吧', '虽然……也……', '一……就……'], ans: 0, exp: '因为…所以… nêu nguyên nhân – kết quả; 还是…吧 dùng để chọn phương án.' },
+  { q: '"我觉得绿色的更好看" — 「更」nghĩa là gì?', opts: ['càng, hơn', 'rất', 'không', 'lại'], ans: 0, exp: '更 + tính từ = hơn, càng…: 更好看 = đẹp hơn (so với cái khác).' }
 ];
 
 var speakingData = {

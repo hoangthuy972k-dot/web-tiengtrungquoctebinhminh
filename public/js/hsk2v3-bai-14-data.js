@@ -1317,14 +1317,14 @@ var matchData = [
 ];
 
 var fillData = [
-  { pre: '你家楼下', blank: '站', post: '着一个人。', hint: '(đứng)', ans: '站' },
+  { pre: '你家楼下', blank: '站', post: '着一个人。', hint: '(đứng)', ans: '站', exp: 'Câu tồn hiện: Nơi chốn + động từ + 着 + người/vật: 楼下站着一个人.' },
   { pre: '手里还拿着一个黑色的', blank: '包', post: '。', hint: '(túi)', ans: '包' },
   { pre: '就要', blank: '过年', post: '了，你一个人在这儿多没意思啊。', hint: '(đón Tết)', ans: '过年' },
-  { pre: '一飞，你旁边这', blank: '位', post: '是？', hint: '(lượng từ lịch sự cho người)', ans: '位' },
+  { pre: '一飞，你旁边这', blank: '位', post: '是？', hint: '(lượng từ lịch sự cho người)', ans: '位', exp: '位 là lượng từ lịch sự dùng cho người: 这位.' },
   { pre: '我家就在', blank: '前面', post: '那个楼。', hint: '(phía trước)', ans: '前面' },
   { pre: '你住的', blank: '房子', post: '真不错，很大。', hint: '(căn nhà)', ans: '房子' },
   { pre: '他高个子、大', blank: '眼睛', post: '。', hint: '(mắt)', ans: '眼睛' },
-  { pre: '他唱歌唱得很好，', blank: '跳舞', post: '跳得也不错。', hint: '(nhảy múa)', ans: '跳舞' }
+  { pre: '他唱歌唱得很好，', blank: '跳舞', post: '跳得也不错。', hint: '(nhảy múa)', ans: '跳舞', exp: 'Động từ có tân ngữ + 得 thì lặp động từ: 跳舞跳得不错.' }
 ];
 
 var sortData = [
@@ -1337,14 +1337,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '那间教室里＿＿不少学生。', opts: ['坐着', '坐了着', '着坐', '在坐着'], ans: 0 },
-  { q: '我们一起去＿＿好啊！', opts: ['多', '很', '真是', '最'], ans: 0 },
-  { q: '一听到老师叫他的名字，他就站＿＿了。', opts: ['起来', '上去', '出来', '回去'], ans: 0 },
-  { q: '同学们都走出＿＿去了。', opts: ['教室', '教室里', '去教室', '教室的'], ans: 0 },
-  { q: '妈妈让我买回一些菜＿＿。', opts: ['来', '去', '上', '下'], ans: 0 },
-  { q: 'Trong câu tồn hiện, đứng đầu câu là gì?', opts: ['Từ chỉ nơi chốn', 'Người', 'Sự vật', 'Thời gian'], ans: 0 },
-  { q: '“多没意思啊！” biểu thị điều gì?', opts: ['Câu cảm thán, mức độ cao', 'Câu hỏi', 'Câu phủ định', 'Câu so sánh'], ans: 0 },
-  { q: 'Lượng từ nào lịch sự khi nói về người?', opts: ['位', '个', '条', '块'], ans: 0 }
+  { q: '那间教室里＿＿不少学生。', opts: ['坐着', '坐了着', '着坐', '在坐着'], ans: 0, exp: 'Câu tồn hiện: Nơi chốn + động từ + 着 + số lượng + người/vật: 教室里坐着不少学生.' },
+  { q: '我们一起去＿＿好啊！', opts: ['多', '很', '真是', '最'], ans: 0, exp: '多 + tính từ + 啊 = thật là…! (cảm thán): 多好啊！' },
+  { q: '一听到老师叫他的名字，他就站＿＿了。', opts: ['起来', '上去', '出来', '回去'], ans: 0, exp: '站起来 = đứng dậy; 起来 chỉ hướng từ thấp lên cao.' },
+  { q: '同学们都走出＿＿去了。', opts: ['教室', '教室里', '去教室', '教室的'], ans: 0, exp: 'Tân ngữ nơi chốn chen giữa động từ và 去: 走出 + 教室 + 去; không thêm 里.' },
+  { q: '妈妈让我买回一些菜＿＿。', opts: ['来', '去', '上', '下'], ans: 0, exp: 'Mua đồ mang về chỗ người nói (mẹ ở nhà) nên dùng 来: 买回一些菜来.' },
+  { q: 'Trong câu tồn hiện, đứng đầu câu là gì?', opts: ['Từ chỉ nơi chốn', 'Người', 'Sự vật', 'Thời gian'], ans: 0, exp: 'Câu tồn hiện: Nơi chốn + động từ (着) + người/vật; nơi chốn đứng đầu câu.' },
+  { q: '“多没意思啊！” biểu thị điều gì?', opts: ['Câu cảm thán, mức độ cao', 'Câu hỏi', 'Câu phủ định', 'Câu so sánh'], ans: 0, exp: '多 + tính từ + 啊 là câu cảm thán, nhấn mạnh mức độ: 多没意思啊 = chán biết bao!' },
+  { q: 'Lượng từ nào lịch sự khi nói về người?', opts: ['位', '个', '条', '块'], ans: 0, exp: '位 là lượng từ lịch sự cho người: 这位老师; 个 là cách nói thông thường, 条/块 không dùng cho người.' }
 ];
 
 var speakingData = {

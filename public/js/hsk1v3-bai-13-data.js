@@ -2164,11 +2164,11 @@ var listenData = [];
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'王老师，我', blank:'可以再问您', post:'一个问题吗？', hint:'(có thể hỏi thêm)', ans:'可以再问您'},
-  {pre:'那个小店', blank:'卖不卖', post:'手机？', hint:'(có bán không)', ans:'卖不卖'},
-  {pre:'你可以打电话', blank:'问一下', post:'。', hint:'(hỏi thử)', ans:'问一下'},
-  {pre:'请', blank:'给我一杯', post:'牛奶。', hint:'(cho tôi một cốc)', ans:'给我一杯'},
-  {pre:'我还没吃早饭，', blank:'再要这个面包和鸡蛋', post:'吧。', hint:'(lấy thêm bánh mì và trứng)', ans:'再要这个面包和鸡蛋'},
+  {pre:'王老师，我', blank:'可以再问您', post:'一个问题吗？', hint:'(có thể hỏi thêm)', ans:'可以再问您', exp:'可以…吗 dùng để xin phép; 再 (thêm lần nữa) đứng trước động từ 问: 可以再问您…'},
+  {pre:'那个小店', blank:'卖不卖', post:'手机？', hint:'(có bán không)', ans:'卖不卖', exp:'Câu hỏi chính phản V不V: 卖不卖手机？= có bán điện thoại không? (không thêm 吗).'},
+  {pre:'你可以打电话', blank:'问一下', post:'。', hint:'(hỏi thử)', ans:'问一下', exp:'Động từ + 一下 = làm thử, làm nhanh một chút: 问一下 = hỏi thử xem.'},
+  {pre:'请', blank:'给我一杯', post:'牛奶。', hint:'(cho tôi một cốc)', ans:'给我一杯', exp:'给 mang hai tân ngữ: người (我) đứng trước, vật (一杯牛奶) đứng sau.'},
+  {pre:'我还没吃早饭，', blank:'再要这个面包和鸡蛋', post:'吧。', hint:'(lấy thêm bánh mì và trứng)', ans:'再要这个面包和鸡蛋', exp:'再 + động từ = thêm, làm thêm: 再要 = lấy thêm; 再 đứng trước động từ.'},
   {pre:'我要一斤', blank:'饺子', post:'。', hint:'(sủi cảo)', ans:'饺子'},
   {pre:'四十个太多了，我要', blank:'一半', post:'吧。', hint:'(một nửa)', ans:'一半'},
   {pre:'请给我一杯', blank:'茶', post:'吧。', hint:'(trà)', ans:'茶'},
@@ -2190,14 +2190,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"我可以再问您一个问题吗？" nghĩa là gì?', opts:['Em có thể hỏi thêm cô một câu nữa không ạ?', 'Em không hiểu câu hỏi này.', 'Cô có câu hỏi gì cho em không?', 'Em đã hỏi xong rồi.'], ans:0},
-  {q:'Động từ năng nguyện "可以" biểu thị điều gì?', opts:['khả năng, năng lực hoặc sự cho phép', 'mong muốn, dự định', 'mệnh lệnh, bắt buộc', 'phủ định'], ans:0},
-  {q:'"你可以打电话问一下。" — "一下" trong câu này biểu thị điều gì?', opts:['hành động thử làm/xảy ra trong thời gian ngắn', 'hành động lặp lại nhiều lần', 'hành động đã hoàn thành', 'hành động phủ định'], ans:0},
-  {q:'"请给我一杯牛奶。" nghĩa là gì?', opts:['Cho tôi một cốc sữa.', 'Cho tôi một cốc trà.', 'Cho tôi một cốc nước.', 'Tôi không muốn uống sữa.'], ans:0},
-  {q:'Câu "白家月给安妮一个苹果。" có mấy tân ngữ?', opts:['hai tân ngữ (安妮 và 苹果)', 'một tân ngữ', 'không có tân ngữ', 'ba tân ngữ'], ans:0},
-  {q:'"四十个太多了，我要一半吧。" nghĩa là gì?', opts:['40 cái nhiều quá, tôi lấy một nửa thôi.', '40 cái vừa đủ, tôi lấy hết.', 'Tôi muốn thêm 40 cái nữa.', 'Tôi không muốn ăn cái nào.'], ans:0},
-  {q:'"请给我一杯茶吧。" nghĩa là gì?', opts:['Cho tôi một cốc trà nhé.', 'Tôi không uống trà.', 'Trà này có ngon không?', 'Cho tôi xem thực đơn.'], ans:0},
-  {q:'Câu có hai tân ngữ trong bài này được tạo bởi động từ nào?', opts:['给 và 问', '是 và 有', '去 và 来', '在 và 要'], ans:0},
+  {q:'"我可以再问您一个问题吗？" nghĩa là gì?', opts:['Em có thể hỏi thêm cô một câu nữa không ạ?', 'Em không hiểu câu hỏi này.', 'Cô có câu hỏi gì cho em không?', 'Em đã hỏi xong rồi.'], ans:0, exp:'可以…吗 dùng để xin phép; 再 = thêm lần nữa; 一个问题 = một câu hỏi.'},
+  {q:'Động từ năng nguyện "可以" biểu thị điều gì?', opts:['khả năng, năng lực hoặc sự cho phép', 'mong muốn, dự định', 'mệnh lệnh, bắt buộc', 'phủ định'], ans:0, exp:'可以 + động từ chỉ có thể làm (khả năng, điều kiện) hoặc được phép: 我可以再问您吗？; mong muốn thì dùng 想/要.'},
+  {q:'"你可以打电话问一下。" — "一下" trong câu này biểu thị điều gì?', opts:['hành động thử làm/xảy ra trong thời gian ngắn', 'hành động lặp lại nhiều lần', 'hành động đã hoàn thành', 'hành động phủ định'], ans:0, exp:'Động từ + 一下 chỉ hành động ngắn, mang ý thử: 问一下 = hỏi thử một chút.'},
+  {q:'"请给我一杯牛奶。" nghĩa là gì?', opts:['Cho tôi một cốc sữa.', 'Cho tôi một cốc trà.', 'Cho tôi một cốc nước.', 'Tôi không muốn uống sữa.'], ans:0, exp:'给 + 我 + 一杯牛奶 = cho tôi một cốc sữa; 杯 là lượng từ cho đồ uống đựng trong cốc.'},
+  {q:'Câu "白家月给安妮一个苹果。" có mấy tân ngữ?', opts:['hai tân ngữ (安妮 và 苹果)', 'một tân ngữ', 'không có tân ngữ', 'ba tân ngữ'], ans:0, exp:'给 mang hai tân ngữ: người nhận (安妮) và vật được cho (一个苹果).'},
+  {q:'"四十个太多了，我要一半吧。" nghĩa là gì?', opts:['40 cái nhiều quá, tôi lấy một nửa thôi.', '40 cái vừa đủ, tôi lấy hết.', 'Tôi muốn thêm 40 cái nữa.', 'Tôi không muốn ăn cái nào.'], ans:0, exp:'太多了 = nhiều quá; 一半 = một nửa; 吧 làm lời đề nghị nhẹ nhàng.'},
+  {q:'"请给我一杯茶吧。" nghĩa là gì?', opts:['Cho tôi một cốc trà nhé.', 'Tôi không uống trà.', 'Trà này có ngon không?', 'Cho tôi xem thực đơn.'], ans:0, exp:'请给我… = xin cho tôi…; 一杯茶 = một cốc trà; 吧 làm câu mềm mỏng hơn.'},
+  {q:'Câu có hai tân ngữ trong bài này được tạo bởi động từ nào?', opts:['给 và 问', '是 và 有', '去 và 来', '在 và 要'], ans:0, exp:'给 (cho ai cái gì) và 问 (hỏi ai điều gì) đều mang được hai tân ngữ: người trước, vật/việc sau.'},
 ];
 
 // ══════════════════════════════════════════

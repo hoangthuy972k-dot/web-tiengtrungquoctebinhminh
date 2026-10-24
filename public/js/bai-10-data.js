@@ -1039,7 +1039,7 @@ var fillData = [
   {pre:'你怎么还在这儿运动？别运动',blank:'了',post:'，已经很晚了。',hint:'(đừng... nữa)',ans:'了',exp:'别/不要 + Động từ + 了 = đừng làm... nữa.'},
   {pre:'我知道，可是运动',blank:'对',post:'身体很好，我想多运动一下。',hint:'(đối với)',ans:'对',exp:'对 đứng sau chủ ngữ, trước đối tượng chịu tác động: 运动对身体好.'},
   {pre:'你今天上的是什么运动',blank:'课',post:'？',hint:'(tiết học, lớp học)',ans:'课'},
-  {pre:'这是我',blank:'正在',post:'上的运动课。',hint:'(đang)',ans:'正在'},
+  {pre:'这是我',blank:'正在',post:'上的运动课。',hint:'(đang)',ans:'正在',exp:'正在 + động từ = đang làm: 正在上的运动课 = môn thể dục đang học.'},
   {pre:'运动完以后别忘了',blank:'洗',post:'手再吃东西。',hint:'(rửa)',ans:'洗'},
   {pre:'对了，你看见我的',blank:'手机',post:'了吗？我找不到了。',hint:'(điện thoại)',ans:'手机'},
   {pre:'别找了，在桌子上呢。运动对身体真有',blank:'帮助',post:'。',hint:'(giúp ích)',ans:'帮助'},

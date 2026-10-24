@@ -2398,11 +2398,11 @@ var fillData = [
   {pre:'新来的',blank:'秘书',post:'工作很认真。',hint:'(thư ký)',ans:'秘书'},
   {pre:'因为',blank:'经理',post:'今天开会，所以我不能跟他见面。',hint:'(giám đốc)',ans:'经理'},
   {pre:'如果你找不到我，就来我',blank:'办公室',post:'找我吧。',hint:'(văn phòng)',ans:'办公室'},
-  {pre:'这儿有很多',blank:'辆',post:'车，找不到我的了。',hint:'(chiếc — xe cộ)',ans:'辆'},
+  {pre:'这儿有很多',blank:'辆',post:'车，找不到我的了。',hint:'(chiếc — xe cộ)',ans:'辆',exp:'辆 là lượng từ cho xe cộ: 很多辆车.'},
   {pre:'我朋友住在这个',blank:'楼',post:'的五层。',hint:'(tòa nhà)',ans:'楼'},
   {pre:'出门前，你别忘了',blank:'拿',post:'伞。',hint:'(cầm, lấy)',ans:'拿'},
-  {pre:'大家都以为他很有钱，',blank:'其实',post:'他没有多少钱。',hint:'(thực ra)',ans:'其实'},
-  {pre:'下雨了，你带',blank:'把',post:'伞出去吧。',hint:'(lượng từ — đồ có tay cầm)',ans:'把'},
+  {pre:'大家都以为他很有钱，',blank:'其实',post:'他没有多少钱。',hint:'(thực ra)',ans:'其实',exp:'其实 = thực ra, nêu sự thật ngược với điều mọi người tưởng (以为).'},
+  {pre:'下雨了，你带',blank:'把',post:'伞出去吧。',hint:'(lượng từ — đồ có tay cầm)',ans:'把',exp:'把 ở đây là lượng từ cho đồ có tay cầm như ô: 带把伞 = mang một cái ô.'},
 ];
 
 // ══════════════════════════════════════════

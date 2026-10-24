@@ -1244,7 +1244,7 @@ var fillData = [
   {pre:'他',blank:'姓',post:'王，是新来的同事。',hint:'(họ)',ans:'姓'},
   {pre:'他是',blank:'去年',post:'来公司的，工作已经一年了。',hint:'(năm ngoái)',ans:'去年'},
   {pre:'坐在他',blank:'右边',post:'说话的那个女孩子是谁？',hint:'(bên phải)',ans:'右边'},
-  {pre:'那',blank:'可能',post:'是新来的同事。',hint:'(có thể, có lẽ)',ans:'可能'},
+  {pre:'那',blank:'可能',post:'是新来的同事。',hint:'(có thể, có lẽ)',ans:'可能',exp:'可能 (có lẽ) đứng trước động từ để phỏng đoán: 那可能是新来的同事.'},
   {pre:'今天饭店的菜比昨天',blank:'便宜',post:'一些，我们多吃点儿吧。',hint:'(rẻ)',ans:'便宜'},
   {pre:'她刚才一直在',blank:'说话',post:'，看起来很开心。',hint:'(nói chuyện)',ans:'说话'},
   {pre:'星期五大家一起去',blank:'唱歌',post:'吧！',hint:'(hát)',ans:'唱歌'},

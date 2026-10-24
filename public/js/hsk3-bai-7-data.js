@@ -1395,10 +1395,10 @@ var fillData = [
   {pre:'我跟小丽下个月',blank:'结婚',post:'。',hint:'(kết hôn)',ans:'结婚'},
   {pre:'',blank:'欢迎',post:'你来。',hint:'(hoan nghênh)',ans:'欢迎'},
   {pre:'都八点半了，你怎么又',blank:'迟到',post:'了？',hint:'(đến muộn)',ans:'迟到'},
-  {pre:'我们八点',blank:'半',post:'在公司门口见面，好吗？',hint:'(rưỡi)',ans:'半'},
+  {pre:'我们八点',blank:'半',post:'在公司门口见面，好吗？',hint:'(rưỡi)',ans:'半',exp:'半 đặt sau 点: 八点半 = 8 giờ rưỡi.'},
   {pre:'谁明天去机场',blank:'接',post:'新同事？',hint:'(đón)',ans:'接'},
-  {pre:'我们在这儿等了一',blank:'刻',post:'了，他还没来。',hint:'(mười lăm phút)',ans:'刻'},
-  {pre:'你看，都',blank:'差',post:'五分六点了，我们该走了。',hint:'(kém, thiếu)',ans:'差'},
+  {pre:'我们在这儿等了一',blank:'刻',post:'了，他还没来。',hint:'(mười lăm phút)',ans:'刻',exp:'一刻 = 15 phút: 等了一刻了 = đã đợi 15 phút rồi.'},
+  {pre:'你看，都',blank:'差',post:'五分六点了，我们该走了。',hint:'(kém, thiếu)',ans:'差',exp:'差 + số phút + giờ = … kém…: 差五分六点 = 6 giờ kém 5.'},
 ];
 
 // ══════════════════════════════════════════

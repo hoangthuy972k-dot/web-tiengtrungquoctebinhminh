@@ -1410,14 +1410,14 @@ var listenData = {
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi đường đến siêu thị
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'商店',blank:'离',post:'这儿远吗？',hint:'(cách)',ans:'离'},
+  {pre:'商店',blank:'离',post:'这儿远吗？',hint:'(cách)',ans:'离',exp:'A + 离 + B + 远/近 chỉ khoảng cách: 商店离这儿远吗？'},
   {pre:'不远，走几分钟',blank:'就',post:'到了。',hint:'(là, liền)',ans:'就',exp:'就 ở đây nhấn mạnh khoảng cách/thời gian NGẮN.'},
-  {pre:'你',blank:'还',post:'在商店吗？',hint:'(vẫn, còn)',ans:'还'},
-  {pre:'对，我还在这儿买东西',blank:'呢',post:'。',hint:'(trợ từ ngữ khí — nhấn mạnh)',ans:'呢'},
+  {pre:'你',blank:'还',post:'在商店吗？',hint:'(vẫn, còn)',ans:'还',exp:'还 + 在 = vẫn còn đang…: 你还在商店吗？= bạn vẫn còn ở cửa hàng à?'},
+  {pre:'对，我还在这儿买东西',blank:'呢',post:'。',hint:'(trợ từ ngữ khí — nhấn mạnh)',ans:'呢',exp:'呢 ở cuối câu (thường đi với 在/还在) nhấn mạnh hành động đang tiếp diễn.'},
   {pre:'坐公共汽车要一个多',blank:'小时',post:'。',hint:'(tiếng đồng hồ)',ans:'小时'},
   {pre:'坐公共汽车太',blank:'慢',post:'了。',hint:'(chậm)',ans:'慢'},
-  {pre:'还有一个星期',blank:'就',post:'是我的生日了。',hint:'(là — nhấn mạnh sắp đến)',ans:'就'},
-  {pre:'我们下个星期一起',blank:'过',post:'吧。',hint:'(tổ chức, đón — sinh nhật/lễ)',ans:'过'},
+  {pre:'还有一个星期',blank:'就',post:'是我的生日了。',hint:'(là — nhấn mạnh sắp đến)',ans:'就',exp:'还有 + thời gian + 就 + … + 了 = chỉ còn… nữa là…; 就 nhấn mạnh sắp đến.'},
+  {pre:'我们下个星期一起',blank:'过',post:'吧。',hint:'(tổ chức, đón — sinh nhật/lễ)',ans:'过',exp:'过 ở đây là động từ “đón, tổ chức” (sinh nhật, ngày lễ): 一起过 = cùng đón sinh nhật.'},
 ];
 
 // ══════════════════════════════════════════

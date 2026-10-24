@@ -1922,16 +1922,16 @@ var matchData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'今天',blank:'又',post:'去看了看。',hint:'(lại)',ans:'又'},
+  {pre:'今天',blank:'又',post:'去看了看。',hint:'(lại)',ans:'又',exp:'又 = lại (việc lặp lại đã xảy ra); 再 dùng cho việc chưa xảy ra.'},
   {pre:'你对这份工作',blank:'满意',post:'吗？',hint:'(hài lòng)',ans:'满意'},
   {pre:'这个楼没有',blank:'电梯',post:'，老人上下楼很难。',hint:'(thang máy)',ans:'电梯'},
-  {pre:'但是在二十',blank:'层',post:'。',hint:'(tầng)',ans:'层'},
+  {pre:'但是在二十',blank:'层',post:'。',hint:'(tầng)',ans:'层',exp:'层 là lượng từ cho tầng nhà: 二十层 = tầng 20.'},
   {pre:'往下看多',blank:'害怕',post:'啊！',hint:'(sợ)',ans:'害怕'},
   {pre:'这个小',blank:'熊猫',post:'送给你。',hint:'(gấu trúc)',ans:'熊猫'},
   {pre:'我们下个月还会在上海',blank:'见面',post:'。',hint:'(gặp nhau)',ans:'见面'},
   {pre:'我们去图书馆吧，那儿很',blank:'安静',post:'。',hint:'(yên tĩnh)',ans:'安静'},
   {pre:'外面这么热，我们喝杯冰',blank:'可乐',post:'吧。',hint:'(coca-cola)',ans:'可乐'},
-  {pre:'你先在这儿坐',blank:'一会儿',post:'，我去买杯咖啡就回来。',hint:'(một lát)',ans:'一会儿'},
+  {pre:'你先在这儿坐',blank:'一会儿',post:'，我去买杯咖啡就回来。',hint:'(một lát)',ans:'一会儿',exp:'一会儿 là thời lượng, đứng sau động từ: 坐一会儿 = ngồi một lát.'},
   {pre:'我',blank:'马上',post:'回来。',hint:'(ngay lập tức)',ans:'马上'},
   {pre:'他说他要先去一下',blank:'洗手间',post:'，马上就回来。',hint:'(nhà vệ sinh)',ans:'洗手间'},
   {pre:'都十年了，这条街道',blank:'几乎',post:'没变化。',hint:'(hầu như)',ans:'几乎'},

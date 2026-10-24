@@ -2286,13 +2286,13 @@ var listenData = [];
 // PHẦN 3a · ĐIỀN TỪ (dựa theo bài tập tổng hợp thật trong sách)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'今天', blank:'6月22号', post:'。', hint:'(ngày tháng)', ans:'6月22号'},
+  {pre:'今天', blank:'6月22号', post:'。', hint:'(ngày tháng)', ans:'6月22号', exp:'Ngày tháng nói từ lớn đến nhỏ: tháng trước, ngày sau (6月22号); câu nói ngày tháng không cần 是.'},
   {pre:'杨同乐有一个', blank:'新', post:'电脑。', hint:'(mới)', ans:'新'},
   {pre:'王一雪：你会做这两个', blank:'菜', post:'吗？', hint:'(món ăn)', ans:'菜'},
-  {pre:'你的电脑', blank:'真', post:'好看！', hint:'(thật, thực sự)', ans:'真'},
+  {pre:'你的电脑', blank:'真', post:'好看！', hint:'(thật, thực sự)', ans:'真', exp:'真 + tính từ = … thật!, dùng để cảm thán: 真好看 = đẹp thật!'},
   {pre:'我也很', blank:'喜欢', post:'。', hint:'(thích)', ans:'喜欢'},
-  {pre:'今天几号？今天9月8', blank:'号', post:'。', hint:'(mùng — lượng từ ngày)', ans:'号'},
-  {pre:'你', blank:'会', post:'做饭吗？', hint:'(biết, có thể)', ans:'会'},
+  {pre:'今天几号？今天9月8', blank:'号', post:'。', hint:'(mùng — lượng từ ngày)', ans:'号', exp:'号 = ngày (mùng) trong khẩu ngữ, đứng sau số ngày: 9月8号.'},
+  {pre:'你', blank:'会', post:'做饭吗？', hint:'(biết, có thể)', ans:'会', exp:'会 + động từ = biết làm gì (kỹ năng có được nhờ học): 会做饭 = biết nấu cơm.'},
   {pre:'我会做面条儿、', blank:'饺子', post:'。', hint:'(sủi cảo)', ans:'饺子'},
 ];
 
@@ -2312,14 +2312,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Trật tự diễn đạt ngày tháng trong tiếng Trung là gì?', opts:['Năm→Tháng→Ngày→Thứ', 'Thứ→Ngày→Tháng→Năm', 'Ngày→Tháng→Năm→Thứ', 'Không có trật tự cố định'], ans:0},
-  {q:'"今天9月8号" là loại câu gì?', opts:['Câu vị ngữ danh từ (không cần 是)', 'Câu chữ 是 bắt buộc', 'Câu nghi vấn', 'Câu mệnh lệnh'], ans:0},
-  {q:'"会" dùng để diễn đạt điều gì?', opts:['Biết/có khả năng làm gì đó nhờ học tập', 'Sự sở hữu', 'Sự tồn tại', 'Sự phủ định'], ans:0},
-  {q:'"你会做饭吗？" — "会" ở đây có thể được thay bằng cách phủ định nào?', opts:['不会', '没会', '不是会', '没有会'], ans:0},
-  {q:'"星期日" và "星期天" có nghĩa gì?', opts:['Cả hai đều là Chủ nhật', 'Thứ 7 và Chủ nhật', 'Khác nghĩa hoàn toàn', 'Thứ 2 và Chủ nhật'], ans:0},
-  {q:'"面条儿" và "饺子" đều là gì?', opts:['Món ăn (mì và sủi cảo)', 'Ngày trong tuần', 'Đồ vật', 'Số đếm'], ans:0},
-  {q:'"这是你的新电脑吗？" — từ nào là định ngữ chỉ tính chất "mới"?', opts:['新', '电脑', '你的', '这'], ans:0},
-  {q:'Số "2" đọc là "两" khi nào?', opts:['Khi đứng trước lượng từ', 'Khi làm số thứ tự', 'Luôn luôn đọc là 两', 'Không bao giờ dùng 两'], ans:0},
+  {q:'Trật tự diễn đạt ngày tháng trong tiếng Trung là gì?', opts:['Năm→Tháng→Ngày→Thứ', 'Thứ→Ngày→Tháng→Năm', 'Ngày→Tháng→Năm→Thứ', 'Không có trật tự cố định'], ans:0, exp:'Tiếng Trung nói thời gian từ lớn đến nhỏ: Năm → Tháng → Ngày → Thứ, ngược với tiếng Việt.'},
+  {q:'"今天9月8号" là loại câu gì?', opts:['Câu vị ngữ danh từ (không cần 是)', 'Câu chữ 是 bắt buộc', 'Câu nghi vấn', 'Câu mệnh lệnh'], ans:0, exp:'Câu nói ngày tháng là câu vị ngữ danh từ: 今天9月8号, không cần dùng 是.'},
+  {q:'"会" dùng để diễn đạt điều gì?', opts:['Biết/có khả năng làm gì đó nhờ học tập', 'Sự sở hữu', 'Sự tồn tại', 'Sự phủ định'], ans:0, exp:'会 chỉ kỹ năng biết làm nhờ học tập, như 会做饭; sở hữu thì dùng 有.'},
+  {q:'"你会做饭吗？" — "会" ở đây có thể được thay bằng cách phủ định nào?', opts:['不会', '没会', '不是会', '没有会'], ans:0, exp:'Phủ định của 会 là 不会 (không biết làm); 没 không đứng trước 会.'},
+  {q:'"星期日" và "星期天" có nghĩa gì?', opts:['Cả hai đều là Chủ nhật', 'Thứ 7 và Chủ nhật', 'Khác nghĩa hoàn toàn', 'Thứ 2 và Chủ nhật'], ans:0, exp:'星期日 và 星期天 đều là Chủ nhật; 星期天 hay dùng trong khẩu ngữ.'},
+  {q:'"面条儿" và "饺子" đều là gì?', opts:['Món ăn (mì và sủi cảo)', 'Ngày trong tuần', 'Đồ vật', 'Số đếm'], ans:0, exp:'面条儿 là mì sợi, 饺子 là sủi cảo — cả hai đều là món ăn.'},
+  {q:'"这是你的新电脑吗？" — từ nào là định ngữ chỉ tính chất "mới"?', opts:['新', '电脑', '你的', '这'], ans:0, exp:'新 đứng trước 电脑 để bổ nghĩa “mới”; tính từ một âm tiết làm định ngữ thường không cần 的: 新电脑.'},
+  {q:'Số "2" đọc là "两" khi nào?', opts:['Khi đứng trước lượng từ', 'Khi làm số thứ tự', 'Luôn luôn đọc là 两', 'Không bao giờ dùng 两'], ans:0, exp:'Trước lượng từ, số 2 đọc là 两 (两个); khi đếm hoặc chỉ thứ tự, ngày tháng thì dùng 二.'},
 ];
 
 // ══════════════════════════════════════════

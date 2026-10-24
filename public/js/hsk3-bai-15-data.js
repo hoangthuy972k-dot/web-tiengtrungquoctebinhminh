@@ -2366,15 +2366,15 @@ var fillData = [
   {pre:'我先给大家讲讲这次比赛的',blank:'要求',post:'。',hint:'(yêu cầu)',ans:'要求'},
   {pre:'需要',blank:'注意',post:'的地方。',hint:'(chú ý)',ans:'注意'},
   {pre:'在家用手机',blank:'上网',post:'也很方便。',hint:'(lên mạng)',ans:'上网'},
-  {pre:'',blank:'除了',post:'看新闻，人们还可以上网听歌。',hint:'(ngoài...ra)',ans:'除了'},
+  {pre:'',blank:'除了',post:'看新闻，人们还可以上网听歌。',hint:'(ngoài...ra)',ans:'除了',exp:'除了…，还… = ngoài… ra còn…: 除了看新闻，还可以上网听歌.'},
   {pre:'他每天都看',blank:'新闻',post:'，了解世界大事。',hint:'(tin tức)',ans:'新闻'},
   {pre:'不用',blank:'花',post:'钱，还有新衣服穿。',hint:'(tốn, tiêu tốn)',ans:'花'},
-  {pre:'他满意',blank:'极了',post:'。',hint:'(hết sức, cực kỳ)',ans:'极了'},
+  {pre:'他满意',blank:'极了',post:'。',hint:'(hết sức, cực kỳ)',ans:'极了',exp:'Tính từ + 极了 = cực kỳ, hết sức: 满意极了.'},
   {pre:'新年也是这里很重要的一个',blank:'节日',post:'。',hint:'(ngày lễ)',ans:'节日'},
   {pre:'每年夏天都要',blank:'举行',post:'一次比赛。',hint:'(tổ chức)',ans:'举行'},
   {pre:'你可以喝到',blank:'世界',post:'上不同地方的啤酒。',hint:'(thế giới)',ans:'世界'},
   {pre:'你还可以在',blank:'街道',post:'两边看到歌舞。',hint:'(đường, đường phố)',ans:'街道'},
-  {pre:'世界',blank:'各',post:'个地方的啤酒文化。',hint:'(mỗi)',ans:'各'},
+  {pre:'世界',blank:'各',post:'个地方的啤酒文化。',hint:'(mỗi)',ans:'各',exp:'各 + lượng từ/danh từ = các, mỗi: 世界各个地方.'},
   {pre:'了解世界各个地方的啤酒',blank:'文化',post:'。',hint:'(văn hóa)',ans:'文化'},
 ];
 

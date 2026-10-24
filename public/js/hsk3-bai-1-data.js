@@ -1777,9 +1777,9 @@ var matchData = [
 var fillData = [
   {pre:'虽然这个',blank:'周末',post:'工作很多，但是我还是想去旅游。',hint:'(cuối tuần)',ans:'周末'},
   {pre:'你周末有什么',blank:'打算',post:'？',hint:'(kế hoạch, dự định)',ans:'打算'},
-  {pre:'好',blank:'啊',post:'，我们一起去吧。',hint:'(trợ từ ngữ khí)',ans:'啊'},
-  {pre:'如果你明天有空，就能',blank:'跟',post:'我一起去图书馆吗？',hint:'(cùng, với)',ans:'跟'},
-  {pre:'因为工作很忙，所以他',blank:'一直',post:'没有时间休息。',hint:'(suốt, liên tục)',ans:'一直'},
+  {pre:'好',blank:'啊',post:'，我们一起去吧。',hint:'(trợ từ ngữ khí)',ans:'啊',exp:'好啊 = được đấy; 啊 ở cuối câu làm giọng đồng ý thân mật, nhiệt tình.'},
+  {pre:'如果你明天有空，就能',blank:'跟',post:'我一起去图书馆吗？',hint:'(cùng, với)',ans:'跟',exp:'跟 + người + 一起 + động từ = cùng ai làm gì: 跟我一起去.'},
+  {pre:'因为工作很忙，所以他',blank:'一直',post:'没有时间休息。',hint:'(suốt, liên tục)',ans:'一直',exp:'一直 + 没(有) + động từ = suốt thời gian đó không…: 一直没有时间休息.'},
   {pre:'因为今天下雨，所以弟弟一整天都在玩儿',blank:'游戏',post:'。',hint:'(trò chơi)',ans:'游戏'},
   {pre:'老师，今天的',blank:'作业',post:'是什么？',hint:'(bài tập về nhà)',ans:'作业'},
   {pre:'考试快到了，你别',blank:'着急',post:'。',hint:'(lo lắng)',ans:'着急'},

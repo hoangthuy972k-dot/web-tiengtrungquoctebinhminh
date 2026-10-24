@@ -1013,11 +1013,11 @@ var listenData = {
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'服务员，我房间的门打不开了，可以',blank:'让',post:'人来看看吗？',hint:'(để, bảo — câu kiêm ngữ)',ans:'让',exp:'让 + Người + Động từ = bảo/để ai đó làm gì.'},
-  {pre:'好的，我先',blank:'找',post:'找是什么事情。',hint:'(tìm)',ans:'找'},
-  {pre:'谢谢，那我先',blank:'等',post:'一下。',hint:'(đợi)',ans:'等'},
+  {pre:'好的，我先',blank:'找',post:'找是什么事情。',hint:'(tìm)',ans:'找',exp:'Động từ lặp lại (找找) mang ý làm thử, làm nhanh: 找找 = tìm xem thử.'},
+  {pre:'谢谢，那我先',blank:'等',post:'一下。',hint:'(đợi)',ans:'等',exp:'等一下 = đợi một lát; động từ + 一下 chỉ hành động ngắn.'},
   {pre:'找到问题以后我',blank:'再',post:'告诉您。',hint:'(rồi mới, lại)',ans:'再',exp:'再 chỉ hành động xảy ra SAU một hành động khác, không dùng cho việc đã xảy ra rồi (đó là 又).'},
   {pre:'这件白的有点儿',blank:'贵',post:'。',hint:'(đắt)',ans:'贵'},
-  {pre:'那件',blank:'黑',post:'的颜色还不错。',hint:'(đen)',ans:'黑'},
+  {pre:'那件',blank:'黑',post:'的颜色还不错。',hint:'(đen)',ans:'黑',exp:'黑的 = cái màu đen; cụm 的 thay cho danh từ đã nói trước đó.'},
   {pre:'您有什么',blank:'事情',post:'吗？',hint:'(chuyện, việc)',ans:'事情'},
   {pre:'我想',blank:'告诉',post:'您一件事情。',hint:'(nói cho biết)',ans:'告诉'},
 ];

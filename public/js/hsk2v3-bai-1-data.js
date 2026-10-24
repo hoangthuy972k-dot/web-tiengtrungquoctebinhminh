@@ -1594,14 +1594,14 @@ var matchData = [
 ];
 
 var fillData = [
-  { pre: '一飞给我打电话了，', blank: '让', post: '我来接你们。', hint: '(nhờ, bảo)', ans: '让' },
-  { pre: '你们是第一', blank: '次', post: '来北京吗？', hint: '(lần)', ans: '次' },
+  { pre: '一飞给我打电话了，', blank: '让', post: '我来接你们。', hint: '(nhờ, bảo)', ans: '让', exp: 'Câu kiêm ngữ: 让 + người + động từ = bảo/nhờ ai làm gì: 让我来接你们.' },
+  { pre: '你们是第一', blank: '次', post: '来北京吗？', hint: '(lần)', ans: '次', exp: '次 là động lượng từ đếm số lần: 第一次来 = lần đầu đến.' },
   { pre: '不是，我们是来', blank: '旅游', post: '的。', hint: '(du lịch)', ans: '旅游' },
-  { pre: '不好意思，我', blank: '已经', post: '到北京了。', hint: '(đã)', ans: '已经' },
-  { pre: '我想请你帮个', blank: '忙', post: '。', hint: '(giúp đỡ)', ans: '忙' },
+  { pre: '不好意思，我', blank: '已经', post: '到北京了。', hint: '(đã)', ans: '已经', exp: '已经 + động từ + 了 = đã… rồi; 已经 đứng trước động từ 到.' },
+  { pre: '我想请你帮个', blank: '忙', post: '。', hint: '(giúp đỡ)', ans: '忙', exp: '帮忙 là từ ly hợp nên có thể tách ra: 帮 + 个 + 忙 = giúp một việc.' },
   { pre: '安妮，我给你', blank: '介绍', post: '一下。', hint: '(giới thiệu)', ans: '介绍' },
   { pre: '我', blank: '有时', post: '不太懂她的意思。', hint: '(có lúc)', ans: '有时' },
-  { pre: '好的，', blank: '那', post: '我给他打个电话。', hint: '(vậy thì)', ans: '那' }
+  { pre: '好的，', blank: '那', post: '我给他打个电话。', hint: '(vậy thì)', ans: '那', exp: '那 đứng đầu câu = “vậy thì”, nối tiếp ý người kia vừa nói: 那我给他打个电话.' }
 ];
 
 var sortData = [
@@ -1614,14 +1614,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '我＿＿去电影院看个电影。(có khi)', opts: ['有时', '已经', '意思', '介绍'], ans: 0 },
-  { q: '上课要多听、多说，你懂我的＿＿吗？', opts: ['帮忙', '意思', '已经', '旅游'], ans: 1 },
-  { q: '我很喜欢北京，这＿＿是我第三次来北京了。', opts: ['有时', '介绍', '已经', '帮忙'], ans: 2 },
-  { q: '安妮，我给你＿＿一下，这是我的中国朋友李文。', opts: ['介绍', '帮忙', '意思', '有时'], ans: 0 },
-  { q: '今天的工作太多了！那你找个人来＿＿吧。', opts: ['意思', '旅游', '帮忙', '已经'], ans: 2 },
-  { q: '"你们就是她的学生吧？" — 「吧」ở đây diễn đạt điều gì?', opts: ['Sự suy đoán, ước tính', 'Mệnh lệnh', 'Phủ định', 'Cảm thán'], ans: 0 },
-  { q: 'Câu nào dùng đúng cấu trúc "是……的"?', opts: ['我是今天早上到的。', '我今天早上到的是。', '是我今天早上到。', '我到的是今天早上。'], ans: 0 },
-  { q: 'Câu kiêm ngữ nào đúng?', opts: ['妈妈叫孩子们回家。', '妈妈回家叫孩子们。', '孩子们叫回家妈妈。', '叫妈妈孩子们回家。'], ans: 0 }
+  { q: '我＿＿去电影院看个电影。(có khi)', opts: ['有时', '已经', '意思', '介绍'], ans: 0, exp: '有时 = có lúc, đôi khi, đứng trước động từ; 已经 = đã, 意思 = ý nghĩa, 介绍 = giới thiệu.' },
+  { q: '上课要多听、多说，你懂我的＿＿吗？', opts: ['帮忙', '意思', '已经', '旅游'], ans: 1, exp: '懂…的意思 = hiểu ý của…; 意思 là danh từ nên đứng sau 我的.' },
+  { q: '我很喜欢北京，这＿＿是我第三次来北京了。', opts: ['有时', '介绍', '已经', '帮忙'], ans: 2, exp: '已经 + 是… + 了 = đã là… rồi: 这已经是我第三次来北京了.' },
+  { q: '安妮，我给你＿＿一下，这是我的中国朋友李文。', opts: ['介绍', '帮忙', '意思', '有时'], ans: 0, exp: '给 + người + 介绍一下 = giới thiệu cho ai; vế sau chính là người được giới thiệu.' },
+  { q: '今天的工作太多了！那你找个人来＿＿吧。', opts: ['意思', '旅游', '帮忙', '已经'], ans: 2, exp: '找个人来帮忙 = tìm người đến giúp; 帮忙 là động từ ly hợp, không mang tân ngữ phía sau.' },
+  { q: '"你们就是她的学生吧？" — 「吧」ở đây diễn đạt điều gì?', opts: ['Sự suy đoán, ước tính', 'Mệnh lệnh', 'Phủ định', 'Cảm thán'], ans: 0, exp: '吧 cuối câu trần thuật ở đây là suy đoán: 你们就是她的学生吧？= các bạn là học trò của cô ấy phải không?' },
+  { q: 'Câu nào dùng đúng cấu trúc "是……的"?', opts: ['我是今天早上到的。', '我今天早上到的是。', '是我今天早上到。', '我到的是今天早上。'], ans: 0, exp: '是…的 nhấn mạnh thời gian/cách thức của việc đã xảy ra: 是 đứng trước phần nhấn mạnh, 的 ở cuối câu.' },
+  { q: 'Câu kiêm ngữ nào đúng?', opts: ['妈妈叫孩子们回家。', '妈妈回家叫孩子们。', '孩子们叫回家妈妈。', '叫妈妈孩子们回家。'], ans: 0, exp: 'Câu kiêm ngữ: Chủ ngữ + 叫 + người + động từ; 孩子们 vừa là tân ngữ của 叫 vừa là chủ ngữ của 回家.' }
 ];
 
 var speakingData = {

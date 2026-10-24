@@ -1387,7 +1387,7 @@ var fillData = [
   { pre: '', blank: '旁边', post: '那个男孩儿就穿了这样的裤子。', hint: '(bên cạnh)', ans: '旁边' },
   { pre: '儿子的', blank: '个子', post: '没有他那么高。', hint: '(chiều cao)', ans: '个子' },
   { pre: '', blank: '门口', post: '有家奶茶店。', hint: '(cửa ra vào)', ans: '门口' },
-  { pre: '咖啡店', blank: '离', post: '这儿有点儿远。', hint: '(cách)', ans: '离' },
+  { pre: '咖啡店', blank: '离', post: '这儿有点儿远。', hint: '(cách)', ans: '离', exp: 'A + 离 + B + xa/gần chỉ khoảng cách giữa hai nơi: 咖啡店离这儿有点儿远.' },
   { pre: '这里离家很', blank: '近', post: '，还是走路吧。', hint: '(gần)', ans: '近' },
   { pre: '要', blank: '走路', post: '还是打车？', hint: '(đi bộ)', ans: '走路' },
   { pre: '这', blank: '周', post: '刘明休息。', hint: '(tuần)', ans: '周' }
@@ -1403,14 +1403,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '昨天＿＿今天这么冷。', opts: ['没有', '不比', '很', '更'], ans: 0 },
-  { q: '学校＿＿医院不远。', opts: ['离', '从', '比', '往'], ans: 0 },
-  { q: '他们学中文学了＿＿。', opts: ['两年', '年两', '二年', '两个年'], ans: 0 },
-  { q: '李文等了她＿＿。', opts: ['一个小时', '小时一个', '一小时个', '个一小时'], ans: 0 },
-  { q: 'Câu nào đúng khi nói "Trần Thiên Trung chạy bộ hai tiếng"?', opts: ['陈天中跑步跑了两个小时。', '陈天中跑步了两个小时。', '陈天中两个小时跑步了。', '陈天中跑了步两个小时。'], ans: 0 },
-  { q: '“没有” trong câu so sánh có nghĩa là gì?', opts: ['Không bằng', 'Hơn', 'Bằng nhau', 'Không có'], ans: 0 },
-  { q: '他写了半个小时汉字了。Câu này có nghĩa là gì?', opts: ['Bây giờ vẫn đang viết', 'Đã viết xong', 'Chưa bắt đầu viết', 'Sẽ viết nửa tiếng'], ans: 0 },
-  { q: '现在＿＿我的生日还有三天。', opts: ['离', '从', '比', '在'], ans: 0 }
+  { q: '昨天＿＿今天这么冷。', opts: ['没有', '不比', '很', '更'], ans: 0, exp: 'A + 没有 + B + 这么/那么 + tính từ = A không… bằng B; 这么 không đi với 不比/很/更.' },
+  { q: '学校＿＿医院不远。', opts: ['离', '从', '比', '往'], ans: 0, exp: '离 chỉ khoảng cách: 学校离医院不远; 从 chỉ điểm xuất phát, 往 chỉ hướng.' },
+  { q: '他们学中文学了＿＿。', opts: ['两年', '年两', '二年', '两个年'], ans: 0, exp: 'Thời lượng đứng sau động từ; 年 không cần lượng từ 个, và trước nó dùng 两 chứ không dùng 二: 两年.' },
+  { q: '李文等了她＿＿。', opts: ['一个小时', '小时一个', '一小时个', '个一小时'], ans: 0, exp: 'Tân ngữ là đại từ thì thời lượng đứng sau: 等了她一个小时; 小时 cần lượng từ 个.' },
+  { q: 'Câu nào đúng khi nói "Trần Thiên Trung chạy bộ hai tiếng"?', opts: ['陈天中跑步跑了两个小时。', '陈天中跑步了两个小时。', '陈天中两个小时跑步了。', '陈天中跑了步两个小时。'], ans: 0, exp: 'Động từ có tân ngữ + thời lượng thì lặp động từ: 跑步跑了两个小时.' },
+  { q: '“没有” trong câu so sánh có nghĩa là gì?', opts: ['Không bằng', 'Hơn', 'Bằng nhau', 'Không có'], ans: 0, exp: 'A + 没有 + B + tính từ = A không bằng B (so sánh kém), không phải “không có”.' },
+  { q: '他写了半个小时汉字了。Câu này có nghĩa là gì?', opts: ['Bây giờ vẫn đang viết', 'Đã viết xong', 'Chưa bắt đầu viết', 'Sẽ viết nửa tiếng'], ans: 0, exp: 'Động từ + 了 + thời lượng + … + 了 (hai chữ 了): hành động vẫn đang tiếp diễn đến bây giờ.' },
+  { q: '现在＿＿我的生日还有三天。', opts: ['离', '从', '比', '在'], ans: 0, exp: 'Khoảng cách thời gian cũng dùng 离: 现在离我的生日还有三天.' }
 ];
 
 var speakingData = {

@@ -2496,14 +2496,14 @@ var listenData = [];
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你什么', blank:'时候', post:'能到饭店？', hint:'(lúc, khi)', ans:'时候'},
-  {pre:'还不知道，', blank:'正在找', post:'呢。', hint:'(đang tìm)', ans:'正在找'},
-  {pre:'你', blank:'开车没开车', post:'？', hint:'(có lái xe không)', ans:'开车没开车'},
-  {pre:'你还', blank:'在读大学', post:'吗？', hint:'(đang học đại học)', ans:'在读大学'},
-  {pre:'非常忙，我学医，我们的', blank:'课很多', post:'。', hint:'(nhiều môn học)', ans:'课很多'},
-  {pre:'', blank:'弟弟起床没起床', post:'呢？', hint:'(em trai đã dậy chưa)', ans:'弟弟起床没起床'},
-  {pre:'他今天', blank:'去不去', post:'那里？', hint:'(có đi không)', ans:'去不去'},
-  {pre:'他今天', blank:'要和小朋友玩', post:'。', hint:'(muốn chơi với các bạn)', ans:'要和小朋友玩'},
+  {pre:'你什么', blank:'时候', post:'能到饭店？', hint:'(lúc, khi)', ans:'时候', exp:'什么时候 = khi nào, đứng trước động từ để hỏi thời gian: 你什么时候能到？'},
+  {pre:'还不知道，', blank:'正在找', post:'呢。', hint:'(đang tìm)', ans:'正在找', exp:'正在 + động từ (+ 呢) = đang làm gì: 正在找呢 = đang tìm đây.'},
+  {pre:'你', blank:'开车没开车', post:'？', hint:'(có lái xe không)', ans:'开车没开车', exp:'Câu hỏi chính phản về việc đã xảy ra: V + 没 + V (开车没开车), không thêm 吗.'},
+  {pre:'你还', blank:'在读大学', post:'吗？', hint:'(đang học đại học)', ans:'在读大学', exp:'在 + động từ = đang; 还在读大学 = vẫn đang học đại học.'},
+  {pre:'非常忙，我学医，我们的', blank:'课很多', post:'。', hint:'(nhiều môn học)', ans:'课很多', exp:'Câu vị ngữ tính từ: 课 + 很多, tính từ 多 làm vị ngữ, không cần 是.'},
+  {pre:'', blank:'弟弟起床没起床', post:'呢？', hint:'(em trai đã dậy chưa)', ans:'弟弟起床没起床', exp:'Hỏi việc đã làm chưa dùng V没V: 弟弟起床没起床？= em trai dậy chưa?'},
+  {pre:'他今天', blank:'去不去', post:'那里？', hint:'(có đi không)', ans:'去不去', exp:'Hỏi ý định (việc chưa xảy ra) dùng V + 不 + V: 去不去？= có đi không?'},
+  {pre:'他今天', blank:'要和小朋友玩', post:'。', hint:'(muốn chơi với các bạn)', ans:'要和小朋友玩', exp:'要 (muốn) đứng trước cụm 和 + người, rồi mới đến động từ 玩: 要和小朋友玩.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2522,14 +2522,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"你什么时候能到饭店？" nghĩa là gì?', opts:['Khi nào bạn có thể đến nhà hàng?', 'Nhà hàng ở đâu?', 'Bạn có đến nhà hàng không?', 'Nhà hàng có ngon không?'], ans:0},
-  {q:'"你开车没开车？" là dạng câu hỏi gì?', opts:['câu hỏi chính phản (正反问)', 'câu hỏi dùng 吗', 'câu hỏi dùng từ để hỏi', 'câu cảm thán'], ans:0},
-  {q:'"你还在读大学吗？" nghĩa là gì?', opts:['Bạn vẫn đang học đại học à?', 'Bạn đã tốt nghiệp đại học chưa?', 'Bạn có muốn học đại học không?', 'Bạn học đại học nào?'], ans:0},
-  {q:'Phó từ "正在" dùng để biểu thị điều gì?', opts:['hành động đang diễn ra', 'hành động đã hoàn thành', 'hành động sắp xảy ra', 'hành động phủ định'], ans:0},
-  {q:'"弟弟起床没起床呢？" nghĩa là gì?', opts:['Em trai đã dậy chưa?', 'Em trai đi đâu rồi?', 'Em trai đang ăn gì?', 'Em trai bao nhiêu tuổi?'], ans:0},
-  {q:'"他今天要和小朋友玩。" nghĩa là gì?', opts:['Hôm nay cậu ấy muốn chơi với các bạn.', 'Hôm nay cậu ấy phải đi học.', 'Hôm nay cậu ấy không muốn chơi.', 'Hôm nay cậu ấy đi làm.'], ans:0},
-  {q:'Động từ năng nguyện "要" trong bài dùng để biểu thị điều gì?', opts:['mong muốn, dự định làm gì', 'khả năng làm gì', 'sự cho phép', 'sự phủ định'], ans:0},
-  {q:'Câu hỏi chính phản với động từ dùng phó từ phủ định nào?', opts:['不/没', '不 (chỉ dùng 不)', '没 (chỉ dùng 没)', '别'], ans:0},
+  {q:'"你什么时候能到饭店？" nghĩa là gì?', opts:['Khi nào bạn có thể đến nhà hàng?', 'Nhà hàng ở đâu?', 'Bạn có đến nhà hàng không?', 'Nhà hàng có ngon không?'], ans:0, exp:'什么时候 = khi nào (hỏi thời gian); 能到 = có thể đến.'},
+  {q:'"你开车没开车？" là dạng câu hỏi gì?', opts:['câu hỏi chính phản (正反问)', 'câu hỏi dùng 吗', 'câu hỏi dùng từ để hỏi', 'câu cảm thán'], ans:0, exp:'Ghép dạng khẳng định và phủ định (开车 + 没开车) để hỏi là câu hỏi chính phản, không cần 吗.'},
+  {q:'"你还在读大学吗？" nghĩa là gì?', opts:['Bạn vẫn đang học đại học à?', 'Bạn đã tốt nghiệp đại học chưa?', 'Bạn có muốn học đại học không?', 'Bạn học đại học nào?'], ans:0, exp:'还 = vẫn, 在 + động từ = đang: 还在读大学吗？= vẫn đang học đại học à?'},
+  {q:'Phó từ "正在" dùng để biểu thị điều gì?', opts:['hành động đang diễn ra', 'hành động đã hoàn thành', 'hành động sắp xảy ra', 'hành động phủ định'], ans:0, exp:'正在 + động từ = đang làm, hành động đang diễn ra; việc đã xong thì dùng 了.'},
+  {q:'"弟弟起床没起床呢？" nghĩa là gì?', opts:['Em trai đã dậy chưa?', 'Em trai đi đâu rồi?', 'Em trai đang ăn gì?', 'Em trai bao nhiêu tuổi?'], ans:0, exp:'起床没起床 hỏi việc đã xảy ra hay chưa: em trai đã dậy chưa?'},
+  {q:'"他今天要和小朋友玩。" nghĩa là gì?', opts:['Hôm nay cậu ấy muốn chơi với các bạn.', 'Hôm nay cậu ấy phải đi học.', 'Hôm nay cậu ấy không muốn chơi.', 'Hôm nay cậu ấy đi làm.'], ans:0, exp:'要 = muốn; 和小朋友玩 = chơi với các bạn nhỏ.'},
+  {q:'Động từ năng nguyện "要" trong bài dùng để biểu thị điều gì?', opts:['mong muốn, dự định làm gì', 'khả năng làm gì', 'sự cho phép', 'sự phủ định'], ans:0, exp:'要 + động từ ở đây = muốn, định làm gì: 他今天要和小朋友玩.'},
+  {q:'Câu hỏi chính phản với động từ dùng phó từ phủ định nào?', opts:['不/没', '不 (chỉ dùng 不)', '没 (chỉ dùng 没)', '别'], ans:0, exp:'Hỏi việc chưa xảy ra dùng V不V (去不去); hỏi việc đã xảy ra dùng V没V (开车没开车).'},
 ];
 
 // ══════════════════════════════════════════

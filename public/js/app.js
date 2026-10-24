@@ -1121,14 +1121,57 @@
     if (changed) { writeJSON(SRS_KEY, all); syncProgressToServer(); if (!$('#home').hidden) renderTaskCard(); }
   }
 
+  // Tra loi trong phien on (va bai kiem tra cuoi goi srsAnswer(zh, false) cho tu sai).
+  // e.up = ngay cuoi cung hop cua tu bi doi boi 1 cau tra loi (chi luu tren may,
+  // khong gui len server) — dung de chan "len hop nhieu lan trong 1 ngay" o srsSignal.
   function srsAnswer(zh, ok) {
     var all = srsAll(), e = all[zh];
     if (!e) return;
     e.box = ok ? Math.min(6, (e.box || 0) + 1) : 1;
     e.due = srsDayAfter(SRS_INTERVALS[e.box]);
     e.at = Date.now();
+    e.up = dateKey(new Date());
     writeJSON(SRS_KEY, all);
     syncProgressToServer();
+  }
+
+  /* Tin hieu tu cac phan hoc khac (flashcard, quiz tu vung, on tap bai, game trong bai):
+     - sai -> rot hop y nhu trong phien on (srsAnswer(zh, false));
+     - dung -> moi tu chi duoc len 1 hop moi ngay, va chi len toi hop SRS_SIGNAL_MAX_BOX:
+       muon vao "da thuoc" (hop 4+) phai qua phien on, noi tu hop 3 tro len la cau nho lai
+       (go chu/pinyin hoac nghe chon nghia) chu khong phai nhan dien 4 lua chon.
+     Bo qua khi dang dung lai bai lam do (rsQuiet) de khong cham diem 2 lan. */
+  var SRS_SIGNAL_MAX_BOX = 3;
+  function srsSignal(zh, ok) {
+    if (rsRestoring || !zh) return;
+    var key = String(zh).trim();
+    var all = srsAll(), e = all[key];
+    if (!e) return;
+    if (!ok) { srsAnswer(key, false); return; }
+    var today = dateKey(new Date());
+    if (e.up === today || (e.box || 0) >= SRS_SIGNAL_MAX_BOX) return;
+    e.box = (e.box || 0) + 1;
+    e.due = srsDayAfter(SRS_INTERVALS[e.box]);
+    e.at = Date.now();
+    e.up = today;
+    writeJSON(SRS_KEY, all);
+    syncProgressToServer();
+  }
+
+  // Tu (khoa SRS) ung voi 1 cap trong tro ghep: hai nua ghep lai thanh tu (女朋 + 友),
+  // hoac 1 ve la tu con ve kia la nghia tieng Viet. Cap cum tu (买 + 手表) khong tinh.
+  function srsWordForPair(left, right) {
+    var all = srsAll(), cjk = /[㐀-鿿]/;
+    var l = String(left == null ? '' : left).trim(), r = String(right == null ? '' : right).trim();
+    if (l && r && all[l + r]) return l + r;
+    if (all[l] && !cjk.test(r)) return l;
+    if (all[r] && !cjk.test(l)) return r;
+    return null;
+  }
+
+  function srsWordFor(text) {
+    var k = String(text == null ? '' : text).trim();
+    return k && srsAll()[k] ? k : null;
   }
 
   function srsStats() {
@@ -1150,7 +1193,7 @@
     Object.keys(remote).forEach(function (k) {
       var r = remote[k], l = all[k];
       if (!l || (l.at || 0) < (r.at || 0)) {
-        all[k] = { url: r.url, box: r.box, due: r.due, at: r.at, py: l && l.py, vn: l && l.vn, hv: l && l.hv };
+        all[k] = { url: r.url, box: r.box, due: r.due, at: r.at, py: l && l.py, vn: l && l.vn, hv: l && l.hv, up: l && l.up };
         changed = true;
       }
     });
@@ -1192,40 +1235,257 @@
         .sort(function (a, b) { return all[a].box - all[b].box || (all[a].due < all[b].due ? -1 : 1); })
         .slice(0, SRS_SESSION - pick.length).forEach(function (k) { pick.push(k); });
     }
-    srsFillDetails(keys).then(function () {
+    Promise.all([srsFillDetails(keys), srgPickCards().catch(function () { return []; })]).then(function (res) {
       var a = srsAll();
-      var items = shuffle(pick.filter(function (k) { return a[k] && a[k].vn; }));
+      var items = shuffle(pick.filter(function (k) { return a[k] && a[k].vn; })).map(function (k) { return { zh: k }; });
       var pool = keys.filter(function (k) { return a[k] && a[k].vn; });
       if (items.length < 1 || pool.length < 4) {
         wrap.innerHTML = '<p>Bạn cần học ít nhất 4 từ (mở phần Học từ của một bài) để bắt đầu ôn tập ngắt quãng.</p>';
         return;
       }
-      srsState = { items: items, baseLen: items.length, pool: pool, pos: 0, score: 0, dueCount: Math.min(due.length, 15), up: 0, retry: [], today: today };
+      // Xen the ngu phap (toi da SRG_PER_SESSION) rai deu giua cac tu, khong dat o cau dau
+      var gcards = res[1] || [];
+      var nWords = items.length;
+      gcards.forEach(function (c, i) {
+        items.splice(Math.floor((i + 1) * nWords / (gcards.length + 1)) + i + 1, 0, { g: c });
+      });
+      srsState = { items: items, baseLen: items.length, pool: pool, pos: 0, score: 0, dueCount: Math.min(due.length, 15), up: 0, retry: [], today: today, recallN: 0, gram: gcards.length, gramOk: 0 };
       srsRender();
     });
+  }
+
+  /* ---- Cau hoi "nho lai" cho tu o hop 3+ (go chu Han / pinyin) ---- */
+
+  // Tach pinyin thanh chu cai + day thanh dieu (dau thanh hoac so 1-4; 0/5 = thanh nhe, bo qua).
+  // ü / u: / v deu quy ve "v"; ju/qu/xu/yu viet kieu "jv" cung quy ve "u".
+  var SRS_TONE_MARK = { '\u0304': '1', '\u0301': '2', '\u030c': '3', '\u0300': '4' };
+  function srsPyParse(s) {
+    s = String(s == null ? '' : s).toLowerCase();
+    if (s.normalize) s = s.normalize('NFD');
+    s = s.replace(/u\u0308/g, 'v').replace(/\u00fc/g, 'v').replace(/u:/g, 'v');
+    var letters = '', tones = '';
+    for (var i = 0; i < s.length; i++) {
+      var c = s.charAt(i);
+      if (SRS_TONE_MARK[c]) tones += SRS_TONE_MARK[c];
+      else if (/[1-4]/.test(c)) tones += c;
+      else if (/[a-z]/.test(c)) letters += c;
+    }
+    letters = letters.replace(/([jqxy])v/g, '$1u');
+    return { l: letters, t: tones };
+  }
+
+  function srsZhNorm(s) {
+    return String(s == null ? '' : s).replace(/[\s\u3000…·.,，。!?！？、:：;；'"“”‘’()（）\[\]【】\/／~～\-—_]/g, '');
+  }
+
+  // Dung neu go dung chu Han, hoac dung pinyin (khong dau, dau thanh, hay so thanh deu duoc;
+  // da go thanh dieu thi thanh phai dung). Chap nhan ca tu khac co CUNG nghia trong lich on.
+  function srsRecallMatch(input, zh) {
+    var a = srsAll(), w = a[zh];
+    var cands = [zh];
+    if (w && w.vn) Object.keys(a).forEach(function (k) { if (k !== zh && a[k].vn === w.vn) cands.push(k); });
+    var raw = String(input == null ? '' : input).trim();
+    if (!raw) return false;
+    if (/[\u3400-\u9fff]/.test(raw)) {
+      var u = srsZhNorm(raw);
+      return cands.some(function (k) {
+        return u === srsZhNorm(k) || u === srsZhNorm(k.replace(/[（(][^）)]*[）)]/g, ''));
+      });
+    }
+    var up = srsPyParse(raw);
+    if (!up.l) return false;
+    return cands.some(function (k) {
+      var py = a[k] && a[k].py;
+      if (!py) return false;
+      return String(py).replace(/[（(][^）)]*[）)]/g, ' ').split(/[\/,;，；、]|\s+hoặc\s+|\s+or\s+/).some(function (alt) {
+        var e = srsPyParse(alt);
+        return e.l && e.l === up.l && (!up.t || up.t === e.t);
+      });
+    });
+  }
+
+  /* ---- The ngu phap "Cau nao dung?" (lich on rieng, khong tinh vao so tu) ----
+     Lay tu loi sai hay gap (GRAMMAR_ERRORS trong /js/grammar-errors-<cap>.js; HSK5/6 lay
+     muc "loi" cua ngu phap chia theo diem) cua nhung bai hoc sinh da hoc (co diem).
+     Moi the: hop 0-6 + ngay den han giong tu vung, luu localStorage hyv_srs_gram. */
+  var SRG_KEY = 'hyv_srs_gram';
+  var SRG_PER_SESSION = 3;
+  var SRG_ERR_FILES = {
+    hsk1: '/js/grammar-errors-hsk1.js', hsk1v3: '/js/grammar-errors-hsk1v3.js',
+    hsk2: '/js/grammar-errors-hsk2.js', hsk2v3: '/js/grammar-errors-hsk2v3.js',
+    hsk3: '/js/grammar-errors-hsk3.js', hsk3v3: '/js/grammar-errors-hsk3v3.js',
+    hsk4: '/js/grammar-errors-hsk4.js', yct: '/js/grammar-errors-yct.js'
+  };
+  var srgFileState = {};
+
+  function srgEnsureLevel(levelId) {
+    if (srgFileState[levelId]) return srgFileState[levelId];
+    var p = SRG_ERR_FILES[levelId] ? napScript(SRG_ERR_FILES[levelId])
+      : NPT_FILES[levelId] ? ensureNptFiles(levelId) : Promise.resolve();
+    srgFileState[levelId] = p;
+    return p;
+  }
+
+  function srgHash(s) {
+    var h = 5381;
+    for (var i = 0; i < s.length; i++) h = ((h * 33) ^ s.charCodeAt(i)) >>> 0;
+    return h.toString(36);
+  }
+
+  // Danh sach loi sai cua 1 bai: [{ point, wrong, right, why }]
+  function srgLessonErrors(url) {
+    var ge = window.GRAMMAR_ERRORS && window.GRAMMAR_ERRORS[url];
+    if (ge && ge.length) return ge;
+    var out = [];
+    ((window.NGU_PHAP_TAB && window.NGU_PHAP_TAB[url]) || []).forEach(function (d) {
+      (d.loi || []).forEach(function (l) { out.push({ point: d.ten || '', wrong: l.sai, right: l.dung, why: l.why }); });
+    });
+    return out;
+  }
+
+  function srgPickCards() {
+    var studied = [];
+    Object.keys(READY_LEVELS).forEach(function (id) {
+      ((APP_DATA.lessons && APP_DATA.lessons[id]) || []).forEach(function (l) {
+        if (lessonHasAnyProgress(l)) studied.push({ levelId: id, url: l.fullPageUrl });
+      });
+    });
+    if (!studied.length) return Promise.resolve([]);
+    var levels = {};
+    studied.forEach(function (s) { levels[s.levelId] = 1; });
+    return Promise.all(Object.keys(levels).map(srgEnsureLevel)).then(function () {
+      var store = readJSON(SRG_KEY, {}), today = dateKey(new Date());
+      var cards = [];
+      studied.forEach(function (s) {
+        srgLessonErrors(s.url).forEach(function (e) {
+          if (!e || !e.wrong || !e.right) return;
+          // dap an dung co the ghi nhieu cach "A／B": chi lay cach dau
+          var right = String(e.right).split(/\s*[／]\s*/)[0].trim();
+          var wrong = String(e.wrong).trim();
+          if (!right || right === wrong) return;
+          cards.push({ id: s.url + '|' + srgHash(wrong + '\u0001' + right), url: s.url, point: e.point || '', wrong: wrong, right: right, why: e.why || '' });
+        });
+      });
+      var due = cards.filter(function (c) { return store[c.id] && store[c.id].due <= today; })
+        .sort(function (x, y) { var a = store[x.id], b = store[y.id]; return a.due < b.due ? -1 : a.due > b.due ? 1 : a.box - b.box; });
+      var fresh = shuffle(cards.filter(function (c) { return !store[c.id]; }));
+      var pick = [], points = {};
+      due.concat(fresh).forEach(function (c) {
+        // moi phien khong lap lai cung 1 diem ngu phap neu con the khac
+        if (pick.length >= SRG_PER_SESSION || points[c.url + '|' + c.point]) return;
+        points[c.url + '|' + c.point] = 1;
+        pick.push(c);
+      });
+      return pick;
+    });
+  }
+
+  function srgBox(id) { var e = readJSON(SRG_KEY, {})[id]; return e ? e.box || 0 : 0; }
+
+  function srgAnswer(card, ok) {
+    var store = readJSON(SRG_KEY, {});
+    var e = store[card.id] || { box: 0 };
+    e.box = ok ? Math.min(6, (e.box || 0) + 1) : 1;
+    e.due = srsDayAfter(SRS_INTERVALS[e.box]);
+    e.at = Date.now();
+    store[card.id] = e;
+    writeJSON(SRG_KEY, store);
+  }
+
+  function srgStats() {
+    var store = readJSON(SRG_KEY, {}), keys = Object.keys(store);
+    return { total: keys.length, known: keys.filter(function (k) { return store[k].box >= 4; }).length };
+  }
+
+  // Phan dau moi the on: so cau + nhan ben phai + thanh tien do
+  function srsHeadHtml(st, right) {
+    var isRetry = st.pos >= st.baseLen;
+    return '<div class="srs-top"><span>Câu ' + (st.pos + 1) + '/' + st.items.length + (isRetry ? ' · làm lại câu sai' : '') + '</span>' +
+        '<span class="srs-box">' + right + '</span></div>' +
+      '<div class="srs-bar"><i style="width:' + Math.round(st.pos / st.items.length * 100) + '%"></i></div>';
+  }
+
+  function srsInfoHtml(zh, w) {
+    return '<b class="hanzi">' + zh + '</b> ' + (w.py || '') + (w.hv ? ' · Hán Việt: ' + w.hv : '') + ' — ' + w.vn;
+  }
+
+  // Ghi ket qua 1 tu trong phien on (luot lam lai cau sai khong doi hop)
+  function srsRecordWord(zh, w, ok, isRetry) {
+    var st = srsState;
+    if (typeof sfxQueue === 'function') sfxQueue(ok ? 'correct' : 'wrong');
+    if (isRetry) return;
+    var before = w.box || 0;
+    srsAnswer(zh, ok);
+    if (ok) {
+      st.score++;
+      if (before < 6) st.up++;
+      // moi lan on dung 1 tu den han = +1 sao (khoa theo ngay den han)
+      if (window.hwStarAnswer) window.hwStarAnswer('/srs|' + zh + '|' + st.today);
+    } else if (st.retry.indexOf(zh) === -1) { st.retry.push(zh); st.items.push({ zh: zh }); }
+  }
+
+  function srsNext(delay) { setTimeout(function () { srsState.pos++; srsRender(); }, delay); }
+
+  // Sau cau sai can doc lai dap an: hien nut "Tiep tuc" thay vi tu chuyen
+  function srsContinueBtn() {
+    var card = $('#srsContent .vp-quiz-card');
+    if (!card) return;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'btn btn-primary srs-next';
+    btn.textContent = 'Tiếp tục →';
+    btn.addEventListener('click', function () { btn.disabled = true; srsState.pos++; srsRender(); });
+    card.appendChild(btn);
+    try { btn.focus({ preventScroll: true }); } catch (e) { btn.focus(); }
+  }
+
+  // 3 tu gay nhieu: khac tu, khac nghia; o che do nghe con phai khac am doc (bo dong am)
+  function srsDistractors(st, a, zh, noHomophone) {
+    var w = a[zh], me = srsPyParse(w.py).l;
+    var pool = st.pool.filter(function (k) {
+      if (k === zh || !a[k] || !a[k].vn || a[k].vn === w.vn) return false;
+      return !(noHomophone && me && srsPyParse(a[k].py).l === me);
+    });
+    return shuffle(pool).slice(0, 3);
   }
 
   function srsRender() {
     var st = srsState, wrap = $('#srsContent'), a = srsAll();
     if (st.pos >= st.items.length) { srsFinish(); return; }
-    var zh = st.items[st.pos], w = a[zh];
-    var reverse = st.pos % 2 === 1; // xen ke: Trung → Viet, Viet → Trung
-    var opts = shuffle([zh].concat(shuffle(st.pool.filter(function (k) { return k !== zh; })).slice(0, 3)));
-    var isRetry = st.pos >= st.baseLen;
-    wrap.innerHTML =
-      '<div class="srs-top"><span>Câu ' + (st.pos + 1) + '/' + st.items.length + (isRetry ? ' · làm lại câu sai' : '') + '</span>' +
-        '<span class="srs-box">Hộp nhớ ' + (w.box || 0) + '/6</span></div>' +
-      '<div class="srs-bar"><i style="width:' + Math.round(st.pos / st.items.length * 100) + '%"></i></div>' +
-      '<div class="vp-quiz-card"><div class="vp-quiz-prompt">' +
-        (reverse
-          ? '<div class="fq-q">Chữ Hán nào nghĩa là: <b>' + w.vn + '</b></div>'
-          : '<div class="fq-zh hanzi">' + zh + '</div><div class="fq-py">' + (w.py || '') + '</div>' +
-            '<button type="button" class="vp-speak-btn" data-speak="' + zh + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button>') +
+    var it = st.items[st.pos], isRetry = st.pos >= st.baseLen;
+    if (it.g) { srsRenderGram(it.g, isRetry); return; }
+    var zh = it.zh, w = a[zh];
+    if (!w || !w.vn) { st.pos++; srsRender(); return; }
+    var box = w.box || 0;
+    // Hop 0-2: nhan dien 4 lua chon nhu cu. Hop 3+ (luot dau): cau NHO LAI, xen ke
+    // go chu Han/pinyin va nghe (khong thay chu) roi chon nghia.
+    if (!it.kind) {
+      if (!isRetry && box >= 3) it.kind = (st.recallN++ % 2 === 0 || !window.speechSynthesis) ? 'type' : 'audio';
+      else it.kind = 'pick';
+    }
+    if (it.kind === 'type') { srsRenderType(zh, w, isRetry); return; }
+    var audio = it.kind === 'audio';
+    var reverse = !audio && st.pos % 2 === 1; // xen ke: Trung → Viet, Viet → Trung
+    var opts = shuffle([zh].concat(srsDistractors(st, a, zh, audio)));
+    var prompt;
+    if (audio) {
+      prompt = '<div class="srs-recall-tag">Nghe và chọn nghĩa</div>' +
+        '<button type="button" class="vp-quiz-play-btn" data-speak="' + zh + '">' + uiIcon('loa') + 'Nghe lại</button>' +
+        '<div class="fq-q">Từ bạn vừa nghe có nghĩa là gì?</div>';
+    } else if (reverse) {
+      prompt = '<div class="fq-q">Chữ Hán nào nghĩa là: <b>' + w.vn + '</b></div>';
+    } else {
+      prompt = '<div class="fq-zh hanzi">' + zh + '</div><div class="fq-py">' + (w.py || '') + '</div>' +
+        '<button type="button" class="vp-speak-btn" data-speak="' + zh + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button>';
+    }
+    wrap.innerHTML = srsHeadHtml(st, 'Hộp nhớ ' + box + '/6') +
+      '<div class="vp-quiz-card"><div class="vp-quiz-prompt">' + prompt +
       '</div><div class="vp-quiz-options">' + opts.map(function (k, i) {
         return '<button type="button" class="vp-option-btn' + (reverse ? ' hanzi' : '') + '" data-i="' + i + '">' + (reverse ? k : a[k].vn) + '</button>';
       }).join('') + '</div>' +
       '<div class="srs-fb" id="srsFb" aria-live="polite"></div></div>';
     $all('[data-speak]', wrap).forEach(function (b) { b.addEventListener('click', function () { vpSpeak(b.getAttribute('data-speak')); }); });
+    if (audio) vpSpeak(zh);
     $all('.vp-option-btn', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () {
         var ok = opts[parseInt(btn.getAttribute('data-i'), 10)] === zh;
@@ -1234,20 +1494,84 @@
           if (opts[j] === zh) b.classList.add('is-correct');
           else if (b === btn) b.classList.add('is-wrong');
         });
+        $('#srsFb').innerHTML = (audio && !ok ? '✗ Bạn vừa nghe: ' : '') + srsInfoHtml(zh, w);
+        srsRecordWord(zh, w, ok, isRetry);
+        srsNext(ok ? 900 : (audio ? 2600 : 1800));
+      });
+    });
+  }
+
+  function srsRenderType(zh, w, isRetry) {
+    var st = srsState, wrap = $('#srsContent');
+    wrap.innerHTML = srsHeadHtml(st, 'Hộp nhớ ' + (w.box || 0) + '/6') +
+      '<div class="vp-quiz-card"><div class="vp-quiz-prompt">' +
+        '<div class="srs-recall-tag">Nhớ lại</div>' +
+        '<div class="fq-q">Gõ chữ Hán hoặc pinyin của từ: <b>' + w.vn + '</b></div>' +
+        '<div class="srs-type-hint">Pinyin gõ không dấu, có dấu hay số thanh (vd: ma1) đều được</div>' +
+      '</div>' +
+      '<form class="srs-type" id="srsTypeForm" autocomplete="off">' +
+        '<input type="text" class="srs-type-input" id="srsTypeInput" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Chữ Hán hoặc pinyin" aria-label="Chữ Hán hoặc pinyin">' +
+        '<div class="srs-type-actions">' +
+          '<button type="submit" class="btn btn-primary">Kiểm tra</button>' +
+          '<button type="button" class="btn btn-outline" id="srsTypeSkip">Không nhớ</button>' +
+        '</div>' +
+      '</form>' +
+      '<div class="srs-fb" id="srsFb" aria-live="polite"></div></div>';
+    var form = $('#srsTypeForm'), input = $('#srsTypeInput'), done = false;
+    function finish(val) {
+      if (done) return;
+      done = true;
+      var ok = val !== null && srsRecallMatch(val, zh);
+      input.disabled = true;
+      $all('button', form).forEach(function (b) { b.disabled = true; });
+      input.classList.add(ok ? 'is-correct' : 'is-wrong');
+      $('#srsFb').innerHTML = (ok ? '✓ Đúng rồi! ' :
+        '✗ ' + (val ? 'Chưa đúng (bạn gõ: <span class="hanzi">' + rsEsc(val) + '</span>). ' : '') + 'Đáp án: ') + srsInfoHtml(zh, w);
+      srsRecordWord(zh, w, ok, isRetry);
+      vpSpeak(zh);
+      if (ok) srsNext(1200);
+      else srsContinueBtn();
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = input.value.trim();
+      if (!v) { input.focus(); return; }
+      finish(v);
+    });
+    $('#srsTypeSkip').addEventListener('click', function () { finish(null); });
+    try { input.focus({ preventScroll: true }); } catch (e) { input.focus(); }
+  }
+
+  // The ngu phap: 2 cau (1 dung, 1 sai hay gap cua nguoi Viet), chon cau dung
+  function srsRenderGram(card, isRetry) {
+    var st = srsState, wrap = $('#srsContent');
+    var opts = shuffle([true, false]);
+    wrap.innerHTML = srsHeadHtml(st, 'Ngữ pháp · hộp ' + srgBox(card.id) + '/6') +
+      '<div class="vp-quiz-card srs-gram"><div class="vp-quiz-prompt">' +
+        '<div class="srs-recall-tag">Ngữ pháp</div>' +
+        '<div class="fq-q">Câu nào đúng?</div>' +
+        (card.point ? '<div class="srs-gram-point">' + rsEsc(card.point) + '</div>' : '') +
+      '</div><div class="vp-quiz-options srs-gram-opts">' + opts.map(function (isRight, i) {
+        return '<button type="button" class="vp-option-btn srs-gram-opt" data-i="' + i + '">' + rsEsc(isRight ? card.right : card.wrong) + '</button>';
+      }).join('') + '</div>' +
+      '<div class="srs-fb" id="srsFb" aria-live="polite"></div></div>';
+    $all('.vp-option-btn', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var ok = opts[parseInt(btn.getAttribute('data-i'), 10)] === true;
+        $all('.vp-option-btn', wrap).forEach(function (b, j) {
+          b.disabled = true;
+          if (opts[j] === true) b.classList.add('is-correct');
+          else if (b === btn) b.classList.add('is-wrong');
+        });
+        $('#srsFb').innerHTML = (ok ? '✓ Đúng rồi! ' : '✗ Câu đúng là: <b class="hanzi">' + rsEsc(card.right) + '</b>') +
+          (card.why ? '<div class="srs-gram-why">' + rsEsc(card.why) + '</div>' : '');
         if (typeof sfxQueue === 'function') sfxQueue(ok ? 'correct' : 'wrong');
-        var fb = $('#srsFb');
-        fb.innerHTML = '<b class="hanzi">' + zh + '</b> ' + (w.py || '') + (w.hv ? ' · Hán Việt: ' + w.hv : '') + ' — ' + w.vn;
         if (!isRetry) {
-          var before = w.box || 0;
-          srsAnswer(zh, ok);
-          if (ok) {
-            st.score++;
-            if (before < 6) st.up++;
-            // moi lan on dung 1 tu den han = +1 sao (khoa theo ngay den han)
-            if (window.hwStarAnswer) window.hwStarAnswer('/srs|' + zh + '|' + st.today);
-          } else if (st.retry.indexOf(zh) === -1) { st.retry.push(zh); st.items.push(zh); }
+          srgAnswer(card, ok);
+          if (ok) { st.score++; st.gramOk++; } else st.items.push({ g: card });
         }
-        setTimeout(function () { st.pos++; srsRender(); }, ok ? 900 : 1800);
+        if (ok) srsNext(1600);
+        else srsContinueBtn();
       });
     });
   }
@@ -1263,6 +1587,7 @@
         '<div class="fq-score">' + st.score + '<span>/' + st.baseLen + '</span></div>' +
         '<p class="fq-msg">' + (st.score === st.baseLen ? 'Tuyệt vời! Nhớ hết rồi 🎉' : 'Làm tốt lắm! Những từ sai sẽ quay lại vào ngày mai.') + '</p>' +
         '<p class="fq-stars">' + st.up + ' từ lên hộp nhớ mới · mỗi từ ôn đúng +1 ⭐</p>' +
+        (st.gram ? '<p class="fq-stars">Ngữ pháp: đúng ' + st.gramOk + '/' + st.gram + ' câu “Câu nào đúng?”</p>' : '') +
       '</div>' +
       '<div class="srs-summary">' +
         '<div><b>' + s.total + '</b><span>từ trong lịch ôn</span></div>' +
@@ -4475,6 +4800,7 @@
           else if (j === i) b.classList.add('is-wrong');
         });
         if (isCorrect) vpQuiz.score++;
+        srsSignal(word.zh, isCorrect);
         pgbRecord('vpq', vpQuiz.pos, isCorrect);
         rsSet(rsKey, { order: vpQuiz.order, pos: vpQuiz.pos + 1, score: vpQuiz.score, results: pgbSnap('vpq') });
         setTimeout(function () {
@@ -4599,6 +4925,7 @@
           else if (j === i) b.classList.add('is-wrong');
         });
         if (isCorrect) { state.score++; rvWrongWords.delete(word.zh); } else { rvWrongWords.add(word.zh); }
+        srsSignal(word.zh, isCorrect);
         rvSaveWrongWords();
         pgbRecord(pgbId, state.pos, isCorrect, 5);
         setTimeout(function () {
@@ -4911,12 +5238,14 @@
     });
     function fcSave() { rsSet('flash', { index: fcIndex, yes: fcTally.yes, no: fcTally.no, total: total }); }
     $('#fcNo').addEventListener('click', function () {
+      srsSignal(word.zh, false); // tu danh gia "chua nho" -> tu rot hop, on lai som
       fcTally.no++;
       fcIndex++;
       fcSave();
       renderFlashcard();
     });
     $('#fcYes').addEventListener('click', function () {
+      srsSignal(word.zh, true);
       fcTally.yes++;
       fcIndex++;
       fcSave();
@@ -12990,6 +13319,7 @@
   var gmSel = null;
   var gmDone = null;
   var gmOrder = [];
+  var gmMissed = {}; // tu (khoa SRS) da ghep sai it nhat 1 lan trong luot nay
 
   // Co chu theo do dai: o ngan (tu vung) chu rat to, o dai (nua cau, giai thich) vua phai
   // Mot co chu cho CA van (ca hai cot): truoc day moi o tu co theo do dai cua
@@ -13005,6 +13335,7 @@
   function renderGameMatch(data, fresh) {
     gmSel = null;
     gmDone = new Set();
+    gmMissed = {};
     gmOrder = shuffle(data.map(function (_, i) { return i; }));
     var mSaved = fresh ? null : rsGet('game:match');
     if (mSaved && mSaved.n === data.length && Array.isArray(mSaved.order) && mSaved.order.length === data.length && (mSaved.done || []).length) {
@@ -13094,6 +13425,13 @@
     }
     var leftEl = $('.mg-item[data-li="' + gmSel + '"]');
     var rightEl = $('.mg-item[data-ri="' + ri + '"]');
+    // On tap ngat quang: cap ung voi 1 tu -> sai lan dau thi rot hop; ghep dung ma
+    // chua sai lan nao trong luot nay moi tinh la "dung"
+    var gmWord = srsWordForPair(data[gmSel].left, data[gmSel].right);
+    if (gmWord) {
+      if (!isCorrect && !gmMissed[gmWord]) { gmMissed[gmWord] = 1; srsSignal(gmWord, false); }
+      else if (isCorrect && !gmMissed[gmWord]) srsSignal(gmWord, true);
+    }
     if (isCorrect) {
       leftEl.classList.remove('is-sel');
       leftEl.classList.add('is-correct');
@@ -13174,6 +13512,7 @@
         fb.textContent = correct ? '✓ Đúng rồi!' : '✗ Đáp án: "' + q.ans + '"' + (q.exp ? ' — ' + q.exp : '');
         fb.className = 'fg-fb ' + (correct ? 'is-correct' : 'is-wrong');
         pgbRecord('gmFill', i, correct);
+        if (v) srsSignal(srsWordFor(q.ans), correct); // o bo trong khong tinh la tra loi
         if (correct) ok++;
       });
       recordGameScore(currentHubLesson, 'fill', ok, data.length);
@@ -13366,6 +13705,7 @@
         var correct = oi === q.ans;
         answered[qi] = correct;
         pgbRecord(pgbId, qi, correct);
+        srsSignal(srsWordFor(q.opts[q.ans]), correct); // dap an dung la 1 tu trong lich on
         $all('.vp-option-btn[data-qi="' + qi + '"]', wrap).forEach(function (b, j) {
           b.disabled = true;
           if (j === q.ans) b.classList.add('is-correct');
@@ -14289,13 +14629,14 @@
   /* ---------------- "Ban da hoc duoc": so lieu cua chinh hoc sinh ---------------- */
 
   var STAT_TILE_DEFS = [
-    { key: 'words', label: 'từ đã học', icon: 'is-red', svg: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>' },
+    { key: 'known', label: 'từ đã thuộc', title: 'Số từ ở hộp nhớ 4 trở lên trong ôn tập ngắt quãng (đã ôn đúng nhiều lần, cách nhau nhiều ngày)', icon: 'is-red', svg: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>' },
     { key: 'lessons', label: 'bài đã học', icon: 'is-gold', svg: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' },
     { key: 'streak', label: 'ngày liên tiếp', icon: 'is-green', svg: '<path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-3 1-3s1 2 2 2c0-4 1-7 2-10z"/>' },
     { key: 'stars', label: 'sao chăm chỉ', icon: 'is-blue', svg: '<path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/>' }
   ];
 
-  // Tu da hoc = tong tu moi cua nhung bai hoc sinh da lam it nhat 1 phan
+  // words = tong tu moi cua nhung bai hoc sinh da lam it nhat 1 phan (huy hieu van dung);
+  // known = tu da thuoc that su theo on tap ngat quang (hop 4+) — so hien tren o thong ke
   function computeProgressStats() {
     var words = 0, lessonsDone = 0;
     Object.keys(READY_LEVELS).forEach(function (id) {
@@ -14308,6 +14649,7 @@
     var d = lastStarDetail;
     return {
       words: words,
+      known: srsStats().known,
       lessons: lessonsDone,
       streak: computeStreak(readJSON(STORAGE_KEYS.studyDays, [])),
       stars: d && d.loggedIn && d.ready ? d.total : null,
@@ -15131,6 +15473,7 @@
     STAT_TILE_DEFS.forEach(function (def) {
       var tile = document.createElement('div');
       tile.className = 'stat-tile';
+      if (def.title) tile.title = def.title;
       var v = stats[def.key];
       var label = def.label;
       if (def.key === 'stars' && v === null) { v = '—'; label = 'đăng nhập để tích sao'; }

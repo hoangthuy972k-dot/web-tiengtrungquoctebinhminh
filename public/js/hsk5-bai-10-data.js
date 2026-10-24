@@ -648,7 +648,7 @@ var vocabData = [
       note:'显示出 + danh từ (才能); muốn đi với tính từ phải dùng 显得.',pair:'不仅……而且……'}
    ]},
 
-  {n:24,zh:'意识',py:'yìshi',pos:'Danh từ / Động từ',vn:'ý thức; nhận thức rõ',hv:'ý thức',em:'💡',lesson:10,
+  {n:24,zh:'意识',py:'yìshí',pos:'Danh từ / Động từ',vn:'ý thức; nhận thức rõ',hv:'ý thức',em:'💡',lesson:10,
    explain:['Danh từ: ý thức (安全意识, 环保意识); 无意识 = vô thức, không cố ý.','Động từ: nhận ra, nhận thức được — thường dùng 意识到.'],
    usage:'意识到 + việc / sai lầm; 有……意识 / 缺乏……意识; 无意识地 + V.',
    collo:['意识到','安全意识','无意识地','环保意识'],

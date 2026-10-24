@@ -1173,8 +1173,10 @@
       return;
     }
     if (key === 'idiom') {
-      var d = idiomOfToday();
-      if (d) openIdiomDetail(d);
+      napIdioms().then(function () {
+        var d = idiomOfToday();
+        if (d) openIdiomDetail(d);
+      });
     }
   }
 
@@ -1731,9 +1733,49 @@
       '<span class="idiom-scene-wm">' + idiomEsc(d.zh) + '</span>' + icons + '</div>';
   }
 
+  // idioms.js (~90KB) khong con nap san trong index.html: chi tai khi the
+  // "Thanh ngu hom nay" sap lot vao man hinh, hoac khi bam mo thanh ngu.
+  var idiomsP = null;
+  function napIdioms() {
+    if (typeof IDIOMS !== 'undefined') return Promise.resolve(true);
+    if (!idiomsP) {
+      idiomsP = new Promise(function (resolve) {
+        var el = document.createElement('script');
+        el.src = '/js/idioms.js?v=' + (window.__assetVersion || '1');
+        el.onload = function () {
+          // tai xong (du do cuon toi hay do bam) thi ve the thanh ngu va dong
+          // "Thanh ngu hom nay: ..." trong danh sach nhiem vu
+          try { renderIdiomOfDay(); renderTaskCard(); } catch (e) { /* bo qua */ }
+          resolve(true);
+        };
+        el.onerror = function () { idiomsP = null; resolve(false); };
+        document.head.appendChild(el);
+      });
+    }
+    return idiomsP;
+  }
+  var idiomHenNap = false;
+  function henNapIdioms(box) {
+    if (idiomHenNap) return;
+    idiomHenNap = true;
+    function nap() {
+      napIdioms().then(function () { idiomHenNap = false; });
+    }
+    // the thanh ngu dang an (hidden) nen theo doi ca khung "Nhiem vu hom nay" chua no
+    var khung = box.closest('section') || box.parentNode;
+    if (typeof IntersectionObserver === 'undefined' || !khung) { nap(); return; }
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries.some(function (en) { return en.isIntersecting; })) return;
+      io.disconnect();
+      nap();
+    }, { rootMargin: '300px 0px' });
+    io.observe(khung);
+  }
+
   function renderIdiomOfDay() {
     var box = $('#idiomToday');
     if (!box) return;
+    if (typeof IDIOMS === 'undefined') { henNapIdioms(box); return; }
     var d = idiomOfToday();
     if (!d) { box.hidden = true; return; }
     box.innerHTML =

@@ -851,7 +851,7 @@ var vocabData = [
     "py": "zāng",
     "pos": "Tính từ",
     "vn": "bẩn, bẩn thỉu",
-    "hv": "tạng",
+    "hv": "tảng",
     "em": "🧹",
     "lesson": 2,
     "explain": [

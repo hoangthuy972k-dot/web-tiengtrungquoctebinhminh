@@ -50,11 +50,11 @@ var vocabData = [
       tip:'氵(nước) dâng lên che lấp mọi thứ → mang nghĩa KHÔNG CÒN, KHÔNG CÓ. (有 đã học ở trên)',
       cf:'汉 (hàn – "Hán")',w:'没有'},
    ]},
-  {n:6,zh:'个',py:'ge',pos:'Lượng từ',vn:'cái, con (lượng từ dùng chung)', hv: 'cá',em:'🔘',lesson:2,
+  {n:6,zh:'个',py:'gè',pos:'Lượng từ',vn:'cái, con (lượng từ dùng chung)', hv: 'cá',em:'🔘',lesson:2,
    ex_zh:'我有一个妹妹。',ex_py:'Wǒ yǒu yí ge mèimei.',ex_vn:'Mình có một em gái.',
    exList:[{zh:'我有一个妹妹。',py:'Wǒ yǒu yí ge mèimei.',vn:'Mình có một em gái.'}],
    hanzi:[
-     {c:'个',p:'ge',type:'独体字 · Chữ đơn',st:3,ord:'丿→丨→㇏',rad:'人 (nhân, biến thể)',mean:'cái, con',
+     {c:'个',p:'gè',type:'独体字 · Chữ đơn',st:3,ord:'丿→丨→㇏',rad:'人 (nhân, biến thể)',mean:'cái, con',
       tip:'Hình đơn giản một cá thể đứng riêng lẻ → lượng từ dùng CHUNG.',
       cf:'介 (jiè – "giới thiệu")',w:'一个妹妹'},
    ]},

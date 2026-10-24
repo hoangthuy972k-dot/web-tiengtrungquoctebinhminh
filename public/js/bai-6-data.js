@@ -146,7 +146,7 @@ var vocabData = [
       },
       {
         "zh": "外面",
-        "py": "wàimian",
+        "py": "wàimiàn",
         "vn": "bên ngoài"
       },
       {

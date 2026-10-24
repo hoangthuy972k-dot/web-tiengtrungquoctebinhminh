@@ -1773,7 +1773,7 @@ var vocabData = [
       },
       {
         "zh": "回来",
-        "py": "huílai",
+        "py": "huílái",
         "vn": "quay về"
       }
     ],

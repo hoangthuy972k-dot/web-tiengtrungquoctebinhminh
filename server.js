@@ -60,20 +60,102 @@ app.use(compression());
 app.use(express.json({ limit: '10mb' }));
 // Phien choi truc tiep tren dien thoai (Che do lop hoc -> /choi)
 require('./live')(app);
-// Cache: HTML/CSS/JS phai luon kiem tra lai voi server truoc khi dung
-// (no-cache = van luu tren may, nhung phai xac nhan bang ETag), nen sua
-// code xong la reload thay ngay, khong bao gio dinh ban cu.
+// Cache — ba muc:
+// 1) HTML, JSON, manifest, robots.txt, sitemap.xml: luon no-cache (van luu tren
+//    may nhung moi lan dung phai hoi lai server bang ETag, thuong chi la 304 rat
+//    nhe), nen deploy xong mo trang la thay ban moi ngay, khong bao gio dinh ban cu.
+// 2) JS/CSS KHONG co ?v= (hoac ?v= khong con khop noi dung file): cung no-cache
+//    nhu tren — khong co gi bao dam URL doi khi noi dung doi.
+// 3) JS/CSS CO ?v= KHOP voi noi dung file hien tai (xem phienBanHopLe):
+//    'public, max-age=31536000, immutable' — dien thoai giu 1 nam va KHONG hoi lai
+//    server lan nao nua (bot 1 vong mang cho moi file moi lan mo trang, rat dang ke
+//    tren 3G/4G yeu). An toan vi ?v= sinh ra tu NOI DUNG file: noi dung doi -> ?v=
+//    trong HTML doi -> URL moi -> trinh duyet tai ban moi; HTML thi luon no-cache
+//    nen luon tro dung URL moi. Ai quen chay tools/stamp-assets.js sau khi sua file
+//    (trang bai hoc), hoac file bi sua khi server dang chay, thi ?v= cu khong khop
+//    -> tra no-cache: khong bao gio "khoa" mot ban sai tren may hoc sinh suot 1 nam.
 // Audio/anh thi cache dai 30 ngay vi gan nhu khong bao gio doi.
-const REVALIDATE_EXT = new Set(['.html', '.css', '.js', '.json', '.webmanifest']);
+const REVALIDATE_EXT = new Set(['.html', '.css', '.js', '.json', '.webmanifest', '.txt', '.xml']);
+const IMMUTABLE_EXT = new Set(['.js', '.css']);
+const CACHE_IMMUTABLE = 'public, max-age=31536000, immutable';
 
 // CDN cua Hostinger (hcdn) cache file .js/.css o edge va bo header Cache-Control,
 // nen sau moi lan deploy hoc sinh van co the nhan ban cu (trinh duyet cache
-// theo heuristic). Cach chac chan nhat: moi lan server khoi dong (= moi lan
-// deploy) tao 1 ma phien ban moi va gan ?v=... vao MOI the <script>/<link>
-// tro toi /js/ va /css/ trong HTML tra ve — URL moi thi CDN lan trinh duyet
+// theo heuristic). Cach chac chan nhat: gan ?v=... vao MOI the <script>/<link>
+// tro toi /js/, /css/, /exam/ trong HTML tra ve — URL moi thi CDN lan trinh duyet
 // deu phai tai lai. HTML thi luon no-cache nen ban than trang khong bi cu.
-const ASSET_VERSION = Date.now().toString(36);
+// Ma phien ban = dau NOI DUNG cua tat ca file .js/.css trong public/js, public/css,
+// public/exam, tinh 1 lan khi server khoi dong (= moi lan deploy). Noi dung khong
+// doi thi ma giu nguyen (Hostinger khoi dong lai server cung khong bat hoc sinh tai
+// lai ~300KB app.js); sua bat ky file nao thi ma doi -> moi URL ?v= deu moi.
+// Phai la dau CA THU MUC (khong phai dau rieng tung file) vi app.js lay ?v= cua
+// chinh no gan cho cac file no tai sau (ngu phap tung cap, du lieu bai...).
+// Trang bai hoc (public/lessons/*.html) di thang qua CDN, khong qua day: ?v= cua
+// chung do tools/stamp-assets.js ghi san vao file (dau noi dung, phai chay lai
+// sau moi lan sua lesson-engine/CSS/du lieu bai) — xem phienBanHopLe.
+const stampAssets = require('./tools/stamp-assets');
+const ASSET_TIME = Date.now();
+function dauThuMucTaiNguyen() {
+  const h = crypto.createHash('sha1');
+  const duyet = (dir) => {
+    let ds;
+    try { ds = fs.readdirSync(dir, { withFileTypes: true }); } catch (e) { return; }
+    ds.sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0)).forEach((d) => {
+      const p = path.join(dir, d.name);
+      if (d.isDirectory()) return duyet(p);
+      if (!/\.(?:js|css)$/i.test(d.name)) return;
+      h.update(path.relative(PUBLIC_DIR, p).split(path.sep).join('/') + '\0');
+      h.update(fs.readFileSync(p));
+    });
+  };
+  ['js', 'css', 'exam'].forEach((d) => duyet(path.join(PUBLIC_DIR, d)));
+  return 'a' + h.digest('hex').slice(0, 10);
+}
+const ASSET_VERSION = dauThuMucTaiNguyen();
 const ASSET_REF_RE = /(<(?:script|link)\b[^>]*?\b(?:src|href)=")(\/(?:js|css|exam)\/[^"?#]+\.(?:js|css))(")/g;
+
+// ?v= gan vao 1 URL trong HTML. File bi sua SAU khi server khoi dong (luc dang
+// phat trien) thi them dau thoi gian de URL doi ngay, va khong duoc immutable.
+function dauChoUrl(url) {
+  try {
+    const st = fs.statSync(path.join(PUBLIC_DIR, url));
+    if (st.mtimeMs > ASSET_TIME) return ASSET_VERSION + '-' + Math.floor(st.mtimeMs).toString(36);
+  } catch (e) { /* file khong co: giu ma chung */ }
+  return ASSET_VERSION;
+}
+
+// Dau noi dung tung file (giong het tools/stamp-assets.js), nho theo mtime+size
+const LESSON_SHARED = new Set(stampAssets.SHARED.map((r) => path.join(PUBLIC_DIR, r)));
+const dauFileNho = new Map();
+function dauFileHienTai(filePath, stat) {
+  const k = stat.mtimeMs + ':' + stat.size;
+  const c = dauFileNho.get(filePath);
+  if (c && c.k === k) return c.v;
+  let v = '';
+  try { v = stampAssets.dauFile(fs.readFileSync(filePath)); } catch (e) { /* bo qua */ }
+  dauFileNho.set(filePath, { k, v });
+  return v;
+}
+let dauChungNho = { k: null, v: '' };
+function dauChungHienTai() {
+  const k = stampAssets.SHARED.map((r) => {
+    try { const s = fs.statSync(path.join(PUBLIC_DIR, r)); return s.mtimeMs + ':' + s.size; } catch (e) { return '-'; }
+  }).join('|');
+  if (k !== dauChungNho.k) dauChungNho = { k, v: stampAssets.dauChung(PUBLIC_DIR) };
+  return dauChungNho.v;
+}
+// ?v= nay co dung la phien ban cua noi dung file dang phuc vu khong?
+function phienBanHopLe(v, filePath, stat) {
+  if (typeof v !== 'string' || !v) return false;
+  // Ma do server gan vao HTML: dung neu file chua bi sua tu luc tinh ma
+  if (v === ASSET_VERSION) return stat.mtimeMs <= ASSET_TIME;
+  // Ma do tools/stamp-assets.js ghi vao trang bai hoc
+  if (/^rd[0-9a-f]{10}$/.test(v)) {
+    if (LESSON_SHARED.has(filePath) && v === dauChungHienTai()) return true;
+    return v === dauFileHienTai(filePath, stat);
+  }
+  return false;
+}
 
 // Hai nut noi (Tro ly AI + Tin nhan) duoc gan vao MOI trang HTML ngay tai may chu,
 // nen khong phai sua tung file bai hoc. Bo qua phong thi HSK (/exam/test/) de hoc
@@ -88,7 +170,7 @@ function sendVersionedHtml(res, filePath) {
     const at = html.lastIndexOf('</body>');
     html = html.slice(0, at) + WIDGET_TAGS + html.slice(at);
   }
-  html = html.replace(ASSET_REF_RE, (m, before, url, after) => before + url + '?v=' + ASSET_VERSION + after);
+  html = html.replace(ASSET_REF_RE, (m, before, url, after) => before + url + '?v=' + dauChoUrl(url) + after);
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('X-Asset-Version', ASSET_VERSION);
   res.type('html').send(html);
@@ -121,9 +203,11 @@ app.use(
     extensions: ['html'],
     etag: true,
     lastModified: true,
-    setHeaders(res, filePath) {
+    setHeaders(res, filePath, stat) {
       const ext = path.extname(filePath).toLowerCase();
-      if (REVALIDATE_EXT.has(ext)) {
+      if (IMMUTABLE_EXT.has(ext) && res.req && phienBanHopLe(res.req.query.v, filePath, stat)) {
+        res.setHeader('Cache-Control', CACHE_IMMUTABLE);
+      } else if (REVALIDATE_EXT.has(ext)) {
         res.setHeader('Cache-Control', 'no-cache');
       } else {
         res.setHeader('Cache-Control', 'public, max-age=2592000');
@@ -3926,6 +4010,16 @@ app.post('/api/speech-assess', async (req, res) => {
 });
 
 app.get('*', (req, res) => {
+  // Duong dan co duoi file (.png, .js, .html, .txt...) ma khong co file that thi
+  // tra 404 that. Truoc day /x.png cung nhan index.html voi ma 200: bot tim kiem
+  // tuong la mot trang that, con anh/script hong thi trinh duyet khong bao loi.
+  // Duong dan khong co duoi (route cua trang chu SPA) van tra index.html.
+  // (robots.txt va sitemap.xml la file that trong public/, express.static phuc vu
+  // truoc khi toi day.)
+  if (/\.[A-Za-z0-9]{1,8}$/.test(req.path)) {
+    res.setHeader('Cache-Control', 'no-cache');
+    return res.status(404).type('text/plain').send('404 Not Found');
+  }
   sendVersionedHtml(res, path.join(PUBLIC_DIR, 'index.html'));
 });
 

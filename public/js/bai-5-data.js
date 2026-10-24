@@ -5,7 +5,7 @@ var vocabData = [
   {
     "n": 1,
     "zh": "外面",
-    "py": "wàimian",
+    "py": "wàimiàn",
     "pos": "Danh từ",
     "vn": "bên ngoài",
     "hv": "ngoại diện",
@@ -1316,7 +1316,7 @@ const wuData = [
   {img:'☕',label:'咖啡',py:'kāfēi',letter:'B'},
   {img:'👕',label:'件',py:'jiàn',letter:'C'},
   {img:'📝',label:'考试',py:'kǎoshì',letter:'D'},
-  {img:'🌳',label:'外面',py:'wàimian',letter:'E'},
+  {img:'🌳',label:'外面',py:'wàimiàn',letter:'E'},
   {img:'📝',label:'准备',py:'zhǔnbèi',letter:'F'},
 ];
 

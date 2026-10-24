@@ -131,7 +131,7 @@
     var streak = computeStreak(studyDays);
     var reviewWrongWords = readJSON(STORAGE_KEYS.reviewWrongWords, {});
 
-    fetch('/api/scores/sync', {
+    return fetch('/api/scores/sync', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + auth.token },
       body: JSON.stringify({
@@ -211,6 +211,13 @@
       'v-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2);
     try { localStorage.setItem(STORAGE_KEYS.visitorId, id); } catch (e) {}
     return id;
+  }
+
+  // Cac khoa luu tien do RIENG cua nguoi dang hoc — xoa khi dang xuat
+  var KHOA_TIEN_DO = ['hyv_visited_lessons', 'hyv_study_days', 'hyv_lesson_scores', 'hyv_review_wrong_words', 'hyv_srs',
+    'hyv_daily_tasks', 'hyv_day_sec', 'hyv_last_lesson', 'hyv_resume', 'hyv_quick_review', 'hyv_wb_answers', 'hyv_khoi_dong', 'hyv_level_pick'];
+  function xoaTienDoTrenMay() {
+    KHOA_TIEN_DO.forEach(function (k) { try { localStorage.removeItem(k); } catch (e) { /* bo qua */ } });
   }
 
   function currentUserId() {
@@ -3325,6 +3332,9 @@
       q[ans] = thuTu.indexOf(q[ans]);
     }
     (data.errorFixData || []).forEach(function (q) { dao(q, 'opts', 'ans', q.wrong || ''); });
+    // Trac nghiem: du lieu goc luon de dap an dung o vi tri dau (A) — phai xao,
+    // khong hoc sinh cu bam A la dung (ap dung cho bai tap, tro choi, kiem tra cuoi bai)
+    (data.mcData || []).forEach(function (q) { dao(q, 'opts', 'ans', q.q || ''); });
     (data.dialogData || []).forEach(function (sc) {
       (sc.preQuiz || []).forEach(function (q) { dao(q, 'opts', 'ans', q.q || ''); });
     });
@@ -14839,6 +14849,8 @@
 
     function setSession(token, user, progress) {
       writeJSON(STORAGE_KEYS.auth, { token: token, user: user });
+      var baiDo = readJSON(LAST_LESSON_KEY, null);
+      if (baiDo && !baiDo.uid && user && user.id) { baiDo.uid = user.id; writeJSON(LAST_LESSON_KEY, baiDo); }
       renderUserChip();
       renderAuthBanner();
       if (progress) mergeProgressFromServer(progress);
@@ -14908,13 +14920,14 @@
       var auth = readJSON(STORAGE_KEYS.auth, null);
       if (auth) {
         if (!window.confirm('Đăng xuất khỏi tài khoản?')) return;
-        if (auth.token) {
-          fetch('/api/auth/logout', { method: 'POST', headers: { 'Authorization': 'Bearer ' + auth.token } }).catch(function () {});
-        }
-        // Bai lam do thuoc ve tai khoan nay: gui not len may chu roi xoa khoi may
-        // (may dung chung — hoc sinh khac dang nhap sau khong lam tiep nham bai cua ban).
+        // Tien do thuoc ve tai khoan nay: gui not len may chu (khi phien con hieu luc),
+        // huy phien, roi XOA khoi may — may dung chung (lop hoc, dien thoai gia dinh)
+        // thi ban dang nhap sau khong bi gop nham chuoi ngay hoc / diem cua ban truoc.
+        var tokenCu = auth.token;
+        clearTimeout(syncProgressTimer);
         rsFlush(true);
-        localStorage.removeItem(RESUME_KEY);
+        var guiNot = Promise.resolve(doSyncProgressToServer()).catch(function () {});
+        xoaTienDoTrenMay();
         localStorage.removeItem(STORAGE_KEYS.auth);
         renderUserChip();
         renderAuthBanner();
@@ -14922,6 +14935,12 @@
         assignPick = null;
         renderAssignCard();
         showToast('Đã đăng xuất.');
+        var taiLai = function () { location.reload(); };
+        guiNot.then(function () {
+          if (!tokenCu) return;
+          return fetch('/api/auth/logout', { method: 'POST', headers: { 'Authorization': 'Bearer ' + tokenCu } }).catch(function () {});
+        }).then(function () { setTimeout(taiLai, 500); });
+        setTimeout(taiLai, 4000); // mang cham: van tai lai de man hinh sach du lieu cu
       } else {
         openModal('login');
       }

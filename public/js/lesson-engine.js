@@ -1433,6 +1433,24 @@ if(typeof dialogData!=='undefined'){buildDialogs();hideDialogAudioIfMissing();}
 if(typeof fillData!=='undefined')buildFill();
 if(typeof sortData!=='undefined')buildSort();
 if(typeof matchData!=='undefined')buildMatch();
+// Xao thu tu dap an trac nghiem / sua loi sai: du lieu goc hay de dap an dung o vi tri
+// dau. Xao co dinh theo noi dung cau (lan nao mo cung mot thu tu) — cung cach app.js.
+function tronDapAn(ds,khoa){
+  if(!Array.isArray(ds))return;
+  ds.forEach(function(q){
+    if(!q||!Array.isArray(q.opts)||q.opts.length<2||typeof q.ans!=='number')return;
+    var s=String(q[khoa]||'')+'|'+q.opts.join('|'),h=2166136261;
+    for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}
+    h=h>>>0;
+    var thu=q.opts.map(function(_,k){return k;});
+    for(var k=thu.length-1;k>0;k--){h=Math.imul(h^(h>>>15),2246822519)>>>0;var j=h%(k+1),t=thu[k];thu[k]=thu[j];thu[j]=t;}
+    var cu=q.opts.slice();
+    q.opts=thu.map(function(x){return cu[x];});
+    q.ans=thu.indexOf(q.ans);
+  });
+}
+if(typeof mcData!=='undefined')tronDapAn(mcData,'q');
+if(typeof errorFixData!=='undefined')tronDapAn(errorFixData,'wrong');
 if(typeof mcData!=='undefined')buildMC();
 if(typeof speakingData!=='undefined')buildSpeaking(1);
 if(typeof listenData!=='undefined')buildListen();

@@ -300,10 +300,8 @@ async function migrateJsonToDbIfNeeded() {
   );
 }
 
-async function loadUsers() {
-  if (!USE_DB) return readJsonFile(USERS_FILE) || [];
-  const [rows] = await dbPool.query('SELECT * FROM users');
-  return rows.map((r) => ({
+function userFromRow(r) {
+  return {
     id: r.id,
     name: r.name,
     email: r.email,
@@ -311,7 +309,35 @@ async function loadUsers() {
     passwordSalt: r.password_salt,
     passwordHash: r.password_hash,
     createdAt: r.created_at,
-  }));
+  };
+}
+async function loadUsers() {
+  if (!USE_DB) return readJsonFile(USERS_FILE) || [];
+  const [rows] = await dbPool.query('SELECT * FROM users');
+  return rows.map(userFromRow);
+}
+// Tra DUNG MOT nguoi (moi yeu cau cua hoc sinh da dang nhap deu can) — khong doc ca bang
+async function findUserById(id) {
+  if (!USE_DB) return (readJsonFile(USERS_FILE) || []).find((u) => u.id === id) || null;
+  const [rows] = await dbPool.query('SELECT * FROM users WHERE id = ? LIMIT 1', [id]);
+  return rows[0] ? userFromRow(rows[0]) : null;
+}
+async function findUserByEmail(email) {
+  if (!USE_DB) return (readJsonFile(USERS_FILE) || []).find((u) => u.email === email) || null;
+  const [rows] = await dbPool.query('SELECT * FROM users WHERE email = ? LIMIT 1', [email]);
+  return rows[0] ? userFromRow(rows[0]) : null;
+}
+// Them mot tai khoan moi (truoc day ghi lai ca danh sach nguoi dung)
+async function insertUser(u) {
+  if (!USE_DB) {
+    const all = readJsonFile(USERS_FILE) || [];
+    all.push(u);
+    return writeJsonFile(USERS_FILE, all);
+  }
+  await dbPool.query(
+    'INSERT INTO users (id,name,email,level,password_salt,password_hash,created_at) VALUES (?,?,?,?,?,?,?)',
+    [u.id, u.name, u.email, u.level, u.passwordSalt, u.passwordHash, u.createdAt]
+  );
 }
 async function saveUsers(users) {
   if (!USE_DB) return writeJsonFile(USERS_FILE, users);
@@ -338,13 +364,23 @@ async function createSession(userId) {
   await dbPool.query('INSERT INTO sessions (token, user_id, created_at) VALUES (?,?,?)', [token, userId, new Date()]);
   return token;
 }
+// Phien dang nhap het han sau 180 ngay (truoc day khong bao gio het han)
+const SESSION_MAX_MS = 180 * 24 * 3600 * 1000;
 async function findUserIdBySession(token) {
   if (!USE_DB) {
     const sessions = readJsonFile(SESSIONS_FILE) || {};
-    return sessions[token] ? sessions[token].userId : null;
+    const ss = sessions[token];
+    if (!ss) return null;
+    if (ss.createdAt && Date.now() - new Date(ss.createdAt).getTime() > SESSION_MAX_MS) return null;
+    return ss.userId;
   }
-  const [rows] = await dbPool.query('SELECT user_id FROM sessions WHERE token = ? LIMIT 1', [token]);
-  return rows[0] ? rows[0].user_id : null;
+  const [rows] = await dbPool.query('SELECT user_id, created_at FROM sessions WHERE token = ? LIMIT 1', [token]);
+  if (!rows[0]) return null;
+  if (rows[0].created_at && Date.now() - new Date(rows[0].created_at).getTime() > SESSION_MAX_MS) {
+    dbPool.query('DELETE FROM sessions WHERE token = ?', [token]).catch(() => {});
+    return null;
+  }
+  return rows[0].user_id;
 }
 async function deleteSession(token) {
   if (!USE_DB) {
@@ -364,44 +400,102 @@ async function deleteUserSessions(userId) {
   }
   await dbPool.query('DELETE FROM sessions WHERE user_id = ?', [userId]);
 }
+// Mot dong diem trong MySQL -> doi tuong diem
+function scoreFromRow(r) {
+  return {
+    name: r.name,
+    level: r.level,
+    totalCorrect: r.total_correct,
+    totalQuestions: r.total_questions,
+    streak: r.streak,
+    lessonsDone: r.lessons_done,
+    studyDays: JSON.parse(r.study_days || '[]'),
+    lessonScores: JSON.parse(r.lesson_scores || '{}'),
+    reviewWrongWords: JSON.parse(r.review_wrong_words || '{}'),
+    srs: JSON.parse(r.srs || '{}'),
+    peakCorrect: r.peak_correct == null ? null : r.peak_correct,
+    updatedAt: r.updated_at,
+  };
+}
 async function loadScores() {
   if (!USE_DB) return readJsonFile(SCORES_FILE) || {};
   const [rows] = await dbPool.query('SELECT * FROM scores');
   const out = {};
-  rows.forEach((r) => {
-    out[r.user_id] = {
-      name: r.name,
-      level: r.level,
-      totalCorrect: r.total_correct,
-      totalQuestions: r.total_questions,
-      streak: r.streak,
-      lessonsDone: r.lessons_done,
-      studyDays: JSON.parse(r.study_days || '[]'),
-      lessonScores: JSON.parse(r.lesson_scores || '{}'),
-      reviewWrongWords: JSON.parse(r.review_wrong_words || '{}'),
-      srs: JSON.parse(r.srs || '{}'),
-      peakCorrect: r.peak_correct == null ? null : r.peak_correct,
-      updatedAt: r.updated_at,
-    };
-  });
+  rows.forEach((r) => { out[r.user_id] = scoreFromRow(r); });
   return out;
+}
+// Doc / ghi diem cua DUNG MOT hoc sinh. Truoc day moi lan dong bo doc ca bang
+// roi ghi lai ca bang: hai em luu cung luc thi ban ghi sau chep ban cu cua em
+// kia de len (mat tien do), va cang nhieu hoc sinh cang cham.
+async function loadScoreOf(userId) {
+  if (!USE_DB) return (readJsonFile(SCORES_FILE) || {})[userId] || null;
+  const [rows] = await dbPool.query('SELECT * FROM scores WHERE user_id = ? LIMIT 1', [userId]);
+  return rows[0] ? scoreFromRow(rows[0]) : null;
+}
+async function saveScoreOf(userId, s) {
+  if (!USE_DB) {
+    const all = readJsonFile(SCORES_FILE) || {};
+    all[userId] = s;
+    return writeJsonFile(SCORES_FILE, all);
+  }
+  await dbPool.query(
+    'INSERT INTO scores (user_id,name,level,total_correct,total_questions,streak,lessons_done,study_days,lesson_scores,review_wrong_words,srs,peak_correct,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?) ' +
+      'ON DUPLICATE KEY UPDATE name=VALUES(name), level=VALUES(level), total_correct=VALUES(total_correct), ' +
+      'total_questions=VALUES(total_questions), streak=VALUES(streak), lessons_done=VALUES(lessons_done), ' +
+      'study_days=VALUES(study_days), lesson_scores=VALUES(lesson_scores), review_wrong_words=VALUES(review_wrong_words), srs=VALUES(srs), peak_correct=VALUES(peak_correct), updated_at=VALUES(updated_at)',
+    [
+      userId, s.name, s.level, s.totalCorrect, s.totalQuestions, s.streak, s.lessonsDone,
+      JSON.stringify(s.studyDays || []), JSON.stringify(s.lessonScores || {}), JSON.stringify(s.reviewWrongWords || {}), JSON.stringify(s.srs || {}),
+      s.peakCorrect == null ? null : s.peakCorrect, s.updatedAt,
+    ]
+  );
 }
 async function saveScores(scores) {
   if (!USE_DB) return writeJsonFile(SCORES_FILE, scores);
-  for (const userId of Object.keys(scores)) {
-    const s = scores[userId];
-    await dbPool.query(
-      'INSERT INTO scores (user_id,name,level,total_correct,total_questions,streak,lessons_done,study_days,lesson_scores,review_wrong_words,srs,peak_correct,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?) ' +
-        'ON DUPLICATE KEY UPDATE name=VALUES(name), level=VALUES(level), total_correct=VALUES(total_correct), ' +
-        'total_questions=VALUES(total_questions), streak=VALUES(streak), lessons_done=VALUES(lessons_done), ' +
-        'study_days=VALUES(study_days), lesson_scores=VALUES(lesson_scores), review_wrong_words=VALUES(review_wrong_words), srs=VALUES(srs), peak_correct=VALUES(peak_correct), updated_at=VALUES(updated_at)',
-      [
-        userId, s.name, s.level, s.totalCorrect, s.totalQuestions, s.streak, s.lessonsDone,
-        JSON.stringify(s.studyDays || []), JSON.stringify(s.lessonScores || {}), JSON.stringify(s.reviewWrongWords || {}), JSON.stringify(s.srs || {}),
-        s.peakCorrect == null ? null : s.peakCorrect, s.updatedAt,
-      ]
-    );
-  }
+  for (const userId of Object.keys(scores)) await saveScoreOf(userId, scores[userId]);
+}
+
+// Cung mot hoc sinh dong bo tu 2 may cung luc: xep hang lan luot de khong de nhau
+const hangDoiHs = new Map();
+function theoLuot(key, fn) {
+  const truoc = hangDoiHs.get(key) || Promise.resolve();
+  const lan = truoc.then(fn, fn);
+  const giu = lan.catch(() => {});
+  hangDoiHs.set(key, giu);
+  giu.then(() => { if (hangDoiHs.get(key) === giu) hangDoiHs.delete(key); });
+  return lan;
+}
+
+// Gioi han so lan: dem lan sai (dang nhap) va so lan goi dich vu tra phi theo IP
+const demLan = new Map(); // "loai|khoa" -> [ms ...]
+function soLanGanDay(k, ms) {
+  const now = Date.now();
+  const ds = (demLan.get(k) || []).filter((t) => now - t < ms);
+  if (ds.length) demLan.set(k, ds); else demLan.delete(k);
+  return ds;
+}
+const SAI_MS = 15 * 60 * 1000;
+function biKhoa(loai, key, toiDa) { return soLanGanDay(loai + '|' + key, SAI_MS).length >= toiDa; }
+function ghiSai(loai, key) {
+  const k = loai + '|' + key;
+  const ds = soLanGanDay(k, SAI_MS); ds.push(Date.now()); demLan.set(k, ds.slice(-50));
+}
+// true = da qua so lan cho phep trong cua so thoi gian (lan nay khong tinh)
+function quaNhieu(loai, key, toiDa, ms) {
+  const k = loai + '|' + key;
+  const ds = soLanGanDay(k, ms);
+  if (ds.length >= toiDa) return true;
+  ds.push(Date.now()); demLan.set(k, ds);
+  return false;
+}
+setInterval(() => {
+  const now = Date.now();
+  for (const [k, ds] of demLan) if (!ds.length || now - ds[ds.length - 1] > 2 * 3600 * 1000) demLan.delete(k);
+}, 10 * 60 * 1000).unref();
+// So mat khau khong lo thoi gian (chong do tung ky tu)
+function bangNhau(a, b) {
+  const x = Buffer.from(String(a)), y = Buffer.from(String(b));
+  return x.length === y.length && crypto.timingSafeEqual(x, y);
 }
 
 function hashPassword(password, salt) {
@@ -423,8 +517,7 @@ const requireAuth = asyncRoute(async (req, res, next) => {
   if (!token) return res.status(401).json({ error: 'Chưa đăng nhập.' });
   const userId = await findUserIdBySession(token);
   if (!userId) return res.status(401).json({ error: 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.' });
-  const users = await loadUsers();
-  const user = users.find((u) => u.id === userId);
+  const user = await findUserById(userId);
   if (!user) return res.status(401).json({ error: 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.' });
   req.user = user;
   req.sessionToken = token;
@@ -440,8 +533,7 @@ function publicUser(user) {
 // thoai...), khong chi con so streak ma ca danh sach ngay hoc that va
 // diem tung bai, de tai khoan dong nhat tren moi thiet bi.
 async function userProgress(userId) {
-  const scores = await loadScores();
-  const sc = scores[userId];
+  const sc = await loadScoreOf(userId);
   const resumeState = await loadResume(userId);
   if (!sc) return { studyDays: [], lessonScores: {}, reviewWrongWords: {}, srs: {}, resumeState, streak: 0, totalCorrect: 0, totalQuestions: 0, lessonsDone: 0 };
   return {
@@ -462,12 +554,15 @@ app.post('/api/auth/register', asyncRoute(async (req, res) => {
   const email = typeof req.body?.email === 'string' ? req.body.email.trim().toLowerCase() : '';
   // bo dau cach 2 dau (ban phim dien thoai hay tu them) de lan sau dang nhap tren may khac van khop
   const password = typeof req.body?.password === 'string' ? req.body.password.trim() : '';
-  const level = typeof req.body?.level === 'string' ? req.body.level : 'hsk1';
-  if (!name || !email || !password || password.length < 4) {
-    return res.status(400).json({ error: 'Thiếu họ tên, email hoặc mật khẩu (tối thiểu 4 ký tự).' });
+  const level = typeof req.body?.level === 'string' ? req.body.level.slice(0, 20) : 'hsk1';
+  if (!name || !email || !password || password.length < 6) {
+    return res.status(400).json({ error: 'Thiếu họ tên, email hoặc mật khẩu (tối thiểu 6 ký tự).' });
   }
-  const users = await loadUsers();
-  if (users.some((u) => u.email === email)) {
+  if (name.length > 60 || email.length > 120) return res.status(400).json({ error: 'Họ tên hoặc email dài quá.' });
+  if (quaNhieu('dk', clientIp(req), 10, 3600 * 1000)) {
+    return res.status(429).json({ error: 'Máy này tạo nhiều tài khoản quá, đợi một lúc rồi thử lại nhé.' });
+  }
+  if (await findUserByEmail(email)) {
     return res.status(409).json({ error: 'Email này đã được đăng ký.' });
   }
   const salt = crypto.randomBytes(16).toString('hex');
@@ -480,8 +575,7 @@ app.post('/api/auth/register', asyncRoute(async (req, res) => {
     passwordHash: hashPassword(password, salt),
     createdAt: new Date().toISOString(),
   };
-  users.push(user);
-  await saveUsers(users);
+  await insertUser(user);
   const token = await createSession(user.id);
   res.json({ token, user: publicUser(user), progress: await userProgress(user.id) });
 }));
@@ -490,8 +584,12 @@ app.post('/api/auth/login', asyncRoute(async (req, res) => {
   const email = typeof req.body?.email === 'string' ? req.body.email.trim().toLowerCase() : '';
   const password = typeof req.body?.password === 'string' ? req.body.password : '';
   if (!email || !password) return res.status(400).json({ error: 'Thiếu email hoặc mật khẩu.' });
-  const users = await loadUsers();
-  const user = users.find((u) => u.email === email);
+  const ipDn = clientIp(req);
+  if (biKhoa('dn-ip', ipDn, 30) || biKhoa('dn-em', email, 8)) {
+    return res.status(429).json({ error: 'Đăng nhập sai nhiều lần quá. Em đợi khoảng 15 phút rồi thử lại, hoặc nhờ thầy/cô đặt lại mật khẩu.' });
+  }
+  const user = await findUserByEmail(email);
+  if (!user) ghiSai('dn-ip', ipDn);
   // Bao ro email chua dang ky hay sai mat khau de hoc sinh biet phai sua cho nao
   // (trang dang ky von da bao "Email nay da duoc dang ky" nen khong lo them gi).
   if (!user) {
@@ -500,6 +598,7 @@ app.post('/api/auth/login', asyncRoute(async (req, res) => {
   // Ban phim dien thoai hay tu them dau cach o cuoi -> chap nhan ca mat khau da bo dau cach 2 dau
   const khop = (p) => hashPassword(p, user.passwordSalt) === user.passwordHash;
   if (!khop(password) && !(password.trim() !== password && khop(password.trim()))) {
+    ghiSai('dn-ip', ipDn); ghiSai('dn-em', email);
     return res.status(401).json({ error: 'Mật khẩu không đúng. Lưu ý chữ hoa/chữ thường. Nếu quên mật khẩu, em nhờ thầy/cô đặt lại mật khẩu mới.' });
   }
   const token = await createSession(user.id);
@@ -560,9 +659,10 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
       incomingSrs[k] = { url: typeof e.url === 'string' ? e.url.slice(0, 80) : '', box, due, at };
     });
   }
-  const scores = await loadScores();
-  const hadRecord = !!scores[req.user.id];
-  const existing = scores[req.user.id] || {};
+  await theoLuot('sc:' + req.user.id, async () => {
+  const truocDo = await loadScoreOf(req.user.id);
+  const hadRecord = !!truocDo;
+  const existing = truocDo || {};
   const mergedSrs = Object.assign({}, existing.srs || {});
   Object.keys(incomingSrs).forEach((k) => { if (!mergedSrs[k] || (mergedSrs[k].at || 0) < incomingSrs[k].at) mergedSrs[k] = incomingSrs[k]; });
   // Diem "hom nay" = so cau dung vuot qua MUC CAO NHAT tung dat (peakCorrect),
@@ -578,7 +678,7 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
   const mergedDays = Array.from(new Set((existing.studyDays || []).concat(incomingDays))).sort();
   const mergedLessonScores = Object.assign({}, existing.lessonScores || {}, incomingLessonScores);
   const mergedReviewWrongWords = Object.assign({}, existing.reviewWrongWords || {}, incomingReviewWrongWords);
-  scores[req.user.id] = {
+  const banMoi = {
     name: req.user.name,
     level: req.user.level,
     totalCorrect: Math.max(0, Math.round(totalCorrect)),
@@ -592,9 +692,10 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
     peakCorrect: newPeak,
     updatedAt: new Date().toISOString(),
   };
-  await saveScores(scores);
+  await saveScoreOf(req.user.id, banMoi);
   // Bai nao da lam Kiem tra cuoi -> ghi thoi diem (de biet bai giao dung han hay nop muon)
   try { await recordPartsDone(req.user.id, mergedLessonScores); } catch (err) { console.error('recordLessonDone', err.message); }
+  });
   res.json({ ok: true, progress: await userProgress(req.user.id) });
 }));
 
@@ -609,7 +710,10 @@ app.post('/api/resume/sync', requireAuth, asyncRoute(async (req, res) => {
   res.json({ ok: true });
 }));
 
+// Bang xep hang cong khai: nho 60 giay (truoc day moi lan mo deu doc diem cua moi hoc sinh)
+let bxhNho = { t: 0, data: null };
 app.get('/api/leaderboard', asyncRoute(async (req, res) => {
+  if (bxhNho.data && Date.now() - bxhNho.t < 60000) return res.json(bxhNho.data);
   const scores = await loadScores();
   const rows = Object.keys(scores).map((userId) => scores[userId]);
   rows.sort((a, b) => b.totalCorrect - a.totalCorrect || b.streak - a.streak);
@@ -621,6 +725,7 @@ app.get('/api/leaderboard', asyncRoute(async (req, res) => {
     totalQuestions: row.totalQuestions,
     streak: row.streak,
   }));
+  bxhNho = { t: Date.now(), data: { leaderboard: top } };
   res.json({ leaderboard: top });
 }));
 
@@ -1468,9 +1573,10 @@ app.get('/api/exam/leaderboard', asyncRoute(async (req, res) => {
 // Thu tu mac dinh groq -> gemini -> anthropic, doi bang AI_PROVIDERS="gemini,groq".
 // Nha dau het luot / loi truoc khi kip tra chu nao thi tu chuyen sang nha tiep theo.
 // ══════════════════════════════════════════════════════════════════
-// So cau hoi moi ngay cho moi nguoi: 0 = KHONG GIOI HAN (mac dinh). Muon gioi han lai thi
-// dat AI_DAILY_LIMIT_GUEST / AI_DAILY_LIMIT_USER trong bien moi truong cua hPanel.
-const AI_DAILY_LIMIT_GUEST = (Number.isFinite(parseInt(process.env.AI_DAILY_LIMIT_GUEST, 10)) ? Math.max(0, parseInt(process.env.AI_DAILY_LIMIT_GUEST, 10)) : 0);
+// So cau hoi moi ngay cho moi nguoi: 0 = KHONG GIOI HAN. Khach chua dang nhap mac dinh
+// 30 cau/ngay (theo IP) de nguoi la khong dot het han muc; hoc sinh da dang nhap mac
+// dinh khong gioi han. Doi bang AI_DAILY_LIMIT_GUEST / AI_DAILY_LIMIT_USER trong hPanel.
+const AI_DAILY_LIMIT_GUEST = (Number.isFinite(parseInt(process.env.AI_DAILY_LIMIT_GUEST, 10)) ? Math.max(0, parseInt(process.env.AI_DAILY_LIMIT_GUEST, 10)) : 30);
 const AI_DAILY_LIMIT_USER = (Number.isFinite(parseInt(process.env.AI_DAILY_LIMIT_USER, 10)) ? Math.max(0, parseInt(process.env.AI_DAILY_LIMIT_USER, 10)) : 0);
 // Chong spam: toi da bao nhieu cau trong 1 phut cho moi nguoi (0 = tat), de mot nguoi
 // hoac may tu dong khong dot het han muc mien phi chung cua ca website.
@@ -2467,14 +2573,18 @@ app.post('/api/track/heartbeat', (req, res) => {
 function requireAdmin(req, res, next) {
   if (!ADMIN_PASSWORD) return res.status(503).json({ error: 'Trang quản trị chưa được cấu hình (thiếu ADMIN_PASSWORD trên server).' });
   const provided = req.headers['x-admin-password'] || '';
-  if (provided !== ADMIN_PASSWORD) return res.status(401).json({ error: 'Sai mật khẩu quản trị.' });
+  const ipQt = clientIp(req);
+  if (biKhoa('qt', ipQt, 10)) return res.status(429).json({ error: 'Sai mật khẩu quản trị nhiều lần, đợi 15 phút rồi thử lại.' });
+  if (!bangNhau(provided, ADMIN_PASSWORD)) { ghiSai('qt', ipQt); return res.status(401).json({ error: 'Sai mật khẩu quản trị.' }); }
   next();
 }
 
 app.post('/api/admin/login', (req, res) => {
   if (!ADMIN_PASSWORD) return res.status(503).json({ error: 'Trang quản trị chưa được cấu hình (thiếu ADMIN_PASSWORD trên server).' });
   const password = typeof req.body?.password === 'string' ? req.body.password : '';
-  if (password !== ADMIN_PASSWORD) return res.status(401).json({ error: 'Sai mật khẩu quản trị.' });
+  const ipQt = clientIp(req);
+  if (biKhoa('qt', ipQt, 10)) return res.status(429).json({ error: 'Sai mật khẩu quản trị nhiều lần, đợi 15 phút rồi thử lại.' });
+  if (!bangNhau(password, ADMIN_PASSWORD)) { ghiSai('qt', ipQt); return res.status(401).json({ error: 'Sai mật khẩu quản trị.' }); }
   res.json({ ok: true });
 });
 
@@ -3524,6 +3634,10 @@ app.post('/api/tts', async (req, res) => {
   if (!GOOGLE_TTS_API_KEY) {
     return res.status(503).json({ error: 'TTS chưa được cấu hình (thiếu GOOGLE_TTS_API_KEY).' });
   }
+  // Moi IP toi da 300 lan doc / gio (ca lop dung chung wifi van du) — chong goi lien tuc lam tang hoa don
+  if (quaNhieu('tts', clientIp(req), 300, 3600 * 1000)) {
+    return res.status(429).json({ error: 'Đọc mẫu nhiều quá, đợi một lúc rồi nghe tiếp nhé.' });
+  }
   const text = typeof req.body?.text === 'string' ? req.body.text.trim() : '';
   if (!text || text.length > 200) {
     return res.status(400).json({ error: 'Thiếu hoặc sai định dạng "text".' });
@@ -3592,6 +3706,10 @@ app.get('/api/tts/voices', async (req, res) => {
 app.post('/api/speech-assess', async (req, res) => {
   if (!AZURE_SPEECH_KEY || !AZURE_SPEECH_REGION) {
     return res.status(503).json({ error: 'Chấm điểm AI chưa được cấu hình (thiếu AZURE_SPEECH_KEY / AZURE_SPEECH_REGION).' });
+  }
+  // Moi IP toi da 120 lan cham / gio (moi lan cham deu ton phi)
+  if (quaNhieu('cpa', clientIp(req), 120, 3600 * 1000)) {
+    return res.status(429).json({ error: 'Em chấm phát âm nhiều quá, nghỉ một lúc rồi luyện tiếp nhé.' });
   }
   const { audioBase64, mimeType, referenceText } = req.body || {};
   if (typeof audioBase64 !== 'string' || !audioBase64 || typeof referenceText !== 'string' || !referenceText.trim()) {

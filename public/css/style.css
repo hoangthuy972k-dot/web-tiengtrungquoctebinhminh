@@ -983,7 +983,7 @@ button {
 }
 
 .app-nav-submenu.is-open {
-  max-height: 400px;
+  max-height: 900px;
   margin-top: 2px;
 }
 
@@ -9437,3 +9437,7 @@ html.ho-tro-toi[data-theme="dark"] { --kdp-accent: var(--color-red-500); --kdp-o
 .ox-intro { margin: 0 0 var(--space-3); padding: 8px 12px; border-radius: var(--radius-md); background: var(--color-gold-50); font-size: 0.9rem; line-height: 1.5; color: var(--fg-gray-700); }
 .ox-src { display: inline-block; margin-right: 6px; padding: 1px 8px; border-radius: var(--radius-pill); background: var(--color-gold-50); color: var(--fg-gold-600); font-family: var(--font-latin); font-size: 0.72rem; font-weight: 700; vertical-align: middle; }
 .ox-redo { margin-top: var(--space-4); }
+
+/* ===== Toi gian trang chu (2026-10): bo the "Nhiem vu hom nay" va the do "Hoc bai" theo y co; the Tien do chiem ca hang ===== */
+#continueCard, #homeResume { display: none !important; }
+.dash-row { grid-template-columns: minmax(0, 1fr) !important; }

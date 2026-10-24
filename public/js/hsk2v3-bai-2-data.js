@@ -1773,13 +1773,13 @@ var matchData = [
 
 var fillData = [
   { pre: '这儿有到北京大学的', blank: '公交车', post: '吗？', hint: '(xe buýt)', ans: '公交车' },
-  { pre: '有，', blank: '但', post: '车站有点儿远。', hint: '(nhưng)', ans: '但' },
-  { pre: '我们', blank: '还是', post: '打车去吧。', hint: '(vẫn nên)', ans: '还是' },
-  { pre: '北京大学有四万', blank: '多', post: '名学生。', hint: '(hơn, có lẻ)', ans: '多' },
-  { pre: '那边就有一', blank: '间', post: '教室。', hint: '(lượng từ: gian phòng)', ans: '间' },
+  { pre: '有，', blank: '但', post: '车站有点儿远。', hint: '(nhưng)', ans: '但', exp: '但 = nhưng, nối hai vế trái ý: có xe buýt, nhưng bến hơi xa.' },
+  { pre: '我们', blank: '还是', post: '打车去吧。', hint: '(vẫn nên)', ans: '还是', exp: '还是…吧 = thôi thì cứ… đi, dùng khi cân nhắc rồi chọn một cách: 我们还是打车去吧.' },
+  { pre: '北京大学有四万', blank: '多', post: '名学生。', hint: '(hơn, có lẻ)', ans: '多', exp: 'Số tròn (四万) + 多 + lượng từ = hơn…: 四万多名学生; 多 đứng trước lượng từ 名.' },
+  { pre: '那边就有一', blank: '间', post: '教室。', hint: '(lượng từ: gian phòng)', ans: '间', exp: '间 là lượng từ cho phòng: 一间教室.' },
   { pre: '是', blank: '网上', post: '说的。', hint: '(trên mạng)', ans: '网上' },
-  { pre: '还是', blank: '别', post: '看电影了。', hint: '(đừng)', ans: '别' },
-  { pre: '我们有时间还想再', blank: '过来', post: '看个电影。', hint: '(qua đây)', ans: '过来' }
+  { pre: '还是', blank: '别', post: '看电影了。', hint: '(đừng)', ans: '别', exp: '别 + động từ + 了 = thôi đừng… nữa: 还是别看电影了.' },
+  { pre: '我们有时间还想再', blank: '过来', post: '看个电影。', hint: '(qua đây)', ans: '过来', exp: '过来 = qua đây (hướng về phía người nói): 再过来看个电影.' }
 ];
 
 var sortData = [
@@ -1792,14 +1792,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '你家太远了，我们是＿＿过来的。', opts: ['打车', '车站', '间', '但'], ans: 0 },
-  { q: '那是一＿＿大教室，我们明天要去那儿上课。', opts: ['名', '间', '票', '万'], ans: 1 },
-  { q: '李文让我去接他的朋友，＿＿我太忙了，没时间。', opts: ['还是', '但', '别', '过来'], ans: 1 },
-  { q: '请问，去北京大学的＿＿在哪儿？', opts: ['教室', '网上', '车站', '电影院'], ans: 2 },
-  { q: '“北京大学有四万多名学生” nghĩa là gì?', opts: ['Hơn 40 000 sinh viên', 'Đúng 40 000 sinh viên', 'Gần 4 000 sinh viên', 'Hơn 400 sinh viên'], ans: 0 },
-  { q: '“还是……吧” dùng để làm gì?', opts: ['Nêu lựa chọn thiên về một hướng', 'Hỏi thời gian', 'Phủ định hoàn toàn', 'Nhấn mạnh quá khứ'], ans: 0 },
-  { q: 'Câu nào có cụm động từ làm định ngữ?', opts: ['他们卖的电影票很便宜。', '他们很便宜卖电影票。', '电影票他们卖很便宜。', '便宜的他们卖电影票。'], ans: 0 },
-  { q: '“二十多个学生” và “二十个多学生”, câu nào đúng?', opts: ['二十多个学生', '二十个多学生', 'Cả hai đều đúng', 'Cả hai đều sai'], ans: 0 }
+  { q: '你家太远了，我们是＿＿过来的。', opts: ['打车', '车站', '间', '但'], ans: 0, exp: '打车 = đi taxi; 是打车过来的 nhấn mạnh cách đến (cấu trúc 是…的).' },
+  { q: '那是一＿＿大教室，我们明天要去那儿上课。', opts: ['名', '间', '票', '万'], ans: 1, exp: '间 là lượng từ cho phòng: 一间大教室; 名 dùng cho người, 票 là vé, 万 là số.' },
+  { q: '李文让我去接他的朋友，＿＿我太忙了，没时间。', opts: ['还是', '但', '别', '过来'], ans: 1, exp: 'Hai vế trái ngược nhau (được nhờ đón nhưng không có thời gian) nên dùng 但 = nhưng.' },
+  { q: '请问，去北京大学的＿＿在哪儿？', opts: ['教室', '网上', '车站', '电影院'], ans: 2, exp: '车站 = bến xe; người hỏi tìm bến xe buýt đi Đại học Bắc Kinh. 教室 là phòng học, 网上 là trên mạng.' },
+  { q: '“北京大学有四万多名学生” nghĩa là gì?', opts: ['Hơn 40 000 sinh viên', 'Đúng 40 000 sinh viên', 'Gần 4 000 sinh viên', 'Hơn 400 sinh viên'], ans: 0, exp: 'Số + 多 + lượng từ = hơn số đó: 四万多 = hơn 40 000.' },
+  { q: '“还是……吧” dùng để làm gì?', opts: ['Nêu lựa chọn thiên về một hướng', 'Hỏi thời gian', 'Phủ định hoàn toàn', 'Nhấn mạnh quá khứ'], ans: 0, exp: '还是…吧 dùng khi cân nhắc rồi chọn một phương án: 我们还是打车去吧.' },
+  { q: 'Câu nào có cụm động từ làm định ngữ?', opts: ['他们卖的电影票很便宜。', '他们很便宜卖电影票。', '电影票他们卖很便宜。', '便宜的他们卖电影票。'], ans: 0, exp: 'Cụm động từ làm định ngữ phải có 的 và đứng trước danh từ: 他们卖的电影票 = vé xem phim họ bán.' },
+  { q: '“二十多个学生” và “二十个多学生”, câu nào đúng?', opts: ['二十多个学生', '二十个多学生', 'Cả hai đều đúng', 'Cả hai đều sai'], ans: 0, exp: 'Với số tròn chục, 多 đứng sau số và trước lượng từ: 二十多个学生; không đặt 多 sau 个.' }
 ];
 
 var speakingData = {

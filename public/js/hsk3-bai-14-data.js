@@ -1920,13 +1920,13 @@ var matchData = [
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'你怎么还不',blank:'打扫',post:'房间啊？',hint:'(quét dọn)',ans:'打扫'},
-  {pre:'他们会把房间打扫',blank:'干净',post:'。',hint:'(sạch sẽ)',ans:'干净'},
-  {pre:'我们先把桌子打扫干净，',blank:'然后',post:'把西瓜拿出来吃。',hint:'(sau đó)',ans:'然后'},
+  {pre:'他们会把房间打扫',blank:'干净',post:'。',hint:'(sạch sẽ)',ans:'干净',exp:'把 + vật + động từ + bổ ngữ kết quả: 把房间打扫干净 = quét dọn phòng sạch sẽ.'},
+  {pre:'我们先把桌子打扫干净，',blank:'然后',post:'把西瓜拿出来吃。',hint:'(sau đó)',ans:'然后',exp:'先…，然后… = trước…, sau đó…, nêu thứ tự các hành động.'},
   {pre:'我还是先把',blank:'冰箱',post:'里的西瓜拿出来吧。',hint:'(tủ lạnh)',ans:'冰箱'},
   {pre:'弟弟每天早上起床以后都要',blank:'洗澡',post:'，然后才去上班。',hint:'(tắm, tắm rửa)',ans:'洗澡'},
   {pre:'你先把这个',blank:'节目',post:'看完吧。',hint:'(chương trình truyền hình)',ans:'节目'},
   {pre:'今晚的',blank:'月亮',post:'真漂亮。',hint:'(mặt trăng)',ans:'月亮'},
-  {pre:'',blank:'像',post:'白色的盘子一样。',hint:'(giống)',ans:'像'},
+  {pre:'',blank:'像',post:'白色的盘子一样。',hint:'(giống)',ans:'像',exp:'像…一样 = giống như…: 像白色的盘子一样.'},
   {pre:'这两个',blank:'盘子',post:'都要洗干净。',hint:'(đĩa, mâm)',ans:'盘子'},
   {pre:'外边也不',blank:'刮风',post:'。',hint:'(nổi gió)',ans:'刮风'},
   {pre:'我们听',blank:'叔叔',post:'阿姨讲故事。',hint:'(chú)',ans:'叔叔'},

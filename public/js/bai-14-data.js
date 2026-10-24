@@ -905,8 +905,8 @@ var listenData = {
 var fillData = [
   {pre:'你吃',blank:'过',post:'四川菜吗？',hint:'(đã từng — kinh nghiệm)',ans:'过',exp:'Động từ + 过 = đã từng làm việc gì.'},
   {pre:'吃过，',blank:'虽然',post:'很贵，但是很有意思。',hint:'(mặc dù)',ans:'虽然',exp:'虽然……但是……dùng để nêu hai vế tương phản.'},
-  {pre:'吃过，虽然很贵，',blank:'但是',post:'很有意思，我很喜欢。',hint:'(nhưng)',ans:'但是'},
-  {pre:'我们上次去吃了一',blank:'次',post:'，这次要不要再去？',hint:'(lần, lượt)',ans:'次'},
+  {pre:'吃过，虽然很贵，',blank:'但是',post:'很有意思，我很喜欢。',hint:'(nhưng)',ans:'但是',exp:'虽然…，但是… = tuy… nhưng…; vế trước có 虽然 thì vế sau dùng 但是.'},
+  {pre:'我们上次去吃了一',blank:'次',post:'，这次要不要再去？',hint:'(lần, lượt)',ans:'次',exp:'次 là lượng từ đếm số lần, đứng sau số: 吃了一次 = ăn một lần.'},
   {pre:'好啊，我们去',blank:'玩儿',post:'一下吧。',hint:'(chơi)',ans:'玩儿'},
   {pre:'今天天气很',blank:'晴',post:'，吃完米饭正好去外面走走。',hint:'(trời quang, nắng đẹp)',ans:'晴'},
   {pre:'我学了一',blank:'百',post:'个小时汉语了。',hint:'(trăm)',ans:'百'},

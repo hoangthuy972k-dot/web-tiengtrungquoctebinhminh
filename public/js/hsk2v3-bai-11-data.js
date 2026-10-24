@@ -1328,11 +1328,11 @@ var fillData = [
   { pre: '我', blank: '头', post: '疼，不太舒服。', hint: '(đầu)', ans: '头' },
   { pre: '你这几天', blank: '经常', post: '头疼，去医院看看吧。', hint: '(thường xuyên)', ans: '经常' },
   { pre: '现在不能', blank: '动', post: '，一动就疼。', hint: '(cử động)', ans: '动' },
-  { pre: '那你在这儿坐', blank: '着', post: '，我去开车。', hint: '(trợ từ duy trì)', ans: '着' },
+  { pre: '那你在这儿坐', blank: '着', post: '，我去开车。', hint: '(trợ từ duy trì)', ans: '着', exp: 'Động từ + 着 chỉ trạng thái được duy trì: 坐着 = (cứ) ngồi đấy.' },
   { pre: '现在', blank: '路上', post: '车多，还下着雪。', hint: '(trên đường)', ans: '路上' },
   { pre: '李文，快请', blank: '进', post: '！', hint: '(vào)', ans: '进' },
   { pre: '医生开了一些', blank: '药', post: '，吃完就好多了。', hint: '(thuốc)', ans: '药' },
-  { pre: '你', blank: '最', post: '喜欢吃中国菜。', hint: '(nhất)', ans: '最' }
+  { pre: '你', blank: '最', post: '喜欢吃中国菜。', hint: '(nhất)', ans: '最', exp: '最 + động từ tâm lý/tính từ = nhất: 最喜欢 = thích nhất.' }
 ];
 
 var sortData = [
@@ -1345,14 +1345,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '教室的门＿＿，你进去吧。', opts: ['开着', '开了着', '着开', '开着了'], ans: 0 },
-  { q: '她穿＿＿白色的裤子。', opts: ['着', '了', '过', '得'], ans: 0 },
+  { q: '教室的门＿＿，你进去吧。', opts: ['开着', '开了着', '着开', '开着了'], ans: 0, exp: '着 đặt ngay sau động từ, chỉ trạng thái đang duy trì: 门开着 = cửa đang mở; không đi cùng 了.' },
+  { q: '她穿＿＿白色的裤子。', opts: ['着', '了', '过', '得'], ans: 0, exp: '穿着 = đang mặc (trạng thái duy trì); 穿了 là đã mặc, 穿过 là đã từng mặc.' },
   { q: 'Phủ định của 门开着 là gì?', opts: ['门没开着', '门不开着', '门开着不', '门没有开'], ans: 0 },
-  { q: '在我们家，爸爸＿＿高。', opts: ['最', '比', '还', '更'], ans: 0 },
-  { q: '你们班谁中文说得＿＿好？', opts: ['最', '很', '非常', '比'], ans: 0 },
-  { q: '“一动就疼” dùng mẫu câu nào?', opts: ['一……就……', '虽然……但是……', '因为……所以……', '还是……'], ans: 0 },
-  { q: '“身体不舒服时” có nghĩa giống với cách nói nào?', opts: ['身体不舒服的时候', '身体不舒服以后', '身体不舒服以前', '身体不舒服因为'], ans: 0 },
-  { q: 'Câu hỏi nào KHÔNG dùng được cho câu có 着?', opts: ['门开着不开着？', '门开着吗？', '门开着没有？', '门开没开着？'], ans: 0 }
+  { q: '在我们家，爸爸＿＿高。', opts: ['最', '比', '还', '更'], ans: 0, exp: 'Trong một phạm vi (在我们家) muốn nói ai cao nhất thì dùng 最; 比 cần có đối tượng so sánh.' },
+  { q: '你们班谁中文说得＿＿好？', opts: ['最', '很', '非常', '比'], ans: 0, exp: 'Hỏi ai nói giỏi nhất trong lớp dùng 最; 很/非常 không dùng để so sánh trong nhóm.' },
+  { q: '“一动就疼” dùng mẫu câu nào?', opts: ['一……就……', '虽然……但是……', '因为……所以……', '还是……'], ans: 0, exp: '一…就… = hễ… là…: 一动就疼 = hễ cử động là đau.' },
+  { q: '“身体不舒服时” có nghĩa giống với cách nói nào?', opts: ['身体不舒服的时候', '身体不舒服以后', '身体不舒服以前', '身体不舒服因为'], ans: 0, exp: '…时 = …的时候 = khi…: 身体不舒服时 = lúc không khỏe.' },
+  { q: 'Câu hỏi nào KHÔNG dùng được cho câu có 着?', opts: ['门开着不开着？', '门开着吗？', '门开着没有？', '门开没开着？'], ans: 0, exp: '着 phủ định bằng 没, không dùng 不, nên câu hỏi 开着不开着 là sai.' }
 ];
 
 var speakingData = {

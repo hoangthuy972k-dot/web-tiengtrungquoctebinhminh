@@ -2038,12 +2038,12 @@ var listenData = [];
 var fillData = [
   {pre:'我是', blank:'中国', post:'人。', hint:'(Trung Quốc)', ans:'中国'},
   {pre:'这是我', blank:'女朋友', post:'。', hint:'(bạn gái)', ans:'女朋友'},
-  {pre:'你女朋友是哪', blank:'国', post:'人？', hint:'(quốc gia — nước nào)', ans:'国'},
+  {pre:'你女朋友是哪', blank:'国', post:'人？', hint:'(quốc gia — nước nào)', ans:'国', exp:'哪国人 = người nước nào: 哪 (nào) + 国 (nước) + 人, dùng để hỏi quốc tịch.'},
   {pre:'她也是', blank:'泰国', post:'人。', hint:'(Thái Lan)', ans:'泰国'},
-  {pre:'你工作还忙', blank:'吗', post:'？', hint:'(trợ từ nghi vấn cuối câu)', ans:'吗'},
-  {pre:'我不', blank:'太', post:'忙。', hint:'(quá, lắm)', ans:'太'},
+  {pre:'你工作还忙', blank:'吗', post:'？', hint:'(trợ từ nghi vấn cuối câu)', ans:'吗', exp:'Thêm 吗 vào cuối câu trần thuật để thành câu hỏi có/không: 你工作还忙吗？'},
+  {pre:'我不', blank:'太', post:'忙。', hint:'(quá, lắm)', ans:'太', exp:'不太 + tính từ = không … lắm: 不太忙 = không bận lắm (nhẹ nhàng hơn 不忙).'},
   {pre:'我们很', blank:'想', post:'你。', hint:'(nhớ)', ans:'想'},
-  {pre:'你', blank:'也', post:'很忙吗？', hint:'(cũng)', ans:'也'},
+  {pre:'你', blank:'也', post:'很忙吗？', hint:'(cũng)', ans:'也', exp:'也 đứng sau chủ ngữ 你 và trước 很忙: 你也很忙吗？'},
 ];
 
 // ══════════════════════════════════════════
@@ -2062,14 +2062,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"我是中国人" nghĩa là gì?', opts:['Tôi là người Trung Quốc', 'Tôi là người Pháp', 'Tôi là người Thái Lan', 'Tôi là giáo viên'], ans:0},
-  {q:'Muốn hỏi "đây là ai", bạn nói?', opts:['这是谁？', '你好吗？', '你叫什么名字？', '再见！'], ans:0},
-  {q:'"女朋友" nghĩa là gì?', opts:['bạn gái', 'bạn trai', 'bạn học', 'giáo viên'], ans:0},
-  {q:'Muốn hỏi quốc tịch, dùng cấu trúc nào?', opts:['哪国人', '什么名字', '怎么样', '多大'], ans:0},
-  {q:'Trợ từ "吗" dùng để làm gì?', opts:['tạo câu hỏi có/không ở cuối câu', 'phủ định', 'chỉ số nhiều', 'chỉ sở hữu'], ans:0},
-  {q:'"还很忙" nghĩa là gì?', opts:['vẫn còn rất bận', 'không bận nữa', 'rất rảnh', 'đã xong việc'], ans:0},
-  {q:'"我们很想你" nghĩa là gì?', opts:['Chúng tôi rất nhớ bạn', 'Chúng tôi không thích bạn', 'Bạn rất bận', 'Bạn phải làm việc'], ans:0},
-  {q:'Trợ từ "的" dùng để làm gì?', opts:['nối định ngữ với danh từ trung tâm, biểu thị sở hữu', 'tạo câu hỏi', 'phủ định', 'chỉ số nhiều'], ans:0},
+  {q:'"我是中国人" nghĩa là gì?', opts:['Tôi là người Trung Quốc', 'Tôi là người Pháp', 'Tôi là người Thái Lan', 'Tôi là giáo viên'], ans:0, exp:'Tên nước + 人 = người nước đó: 中国人 = người Trung Quốc.'},
+  {q:'Muốn hỏi "đây là ai", bạn nói?', opts:['这是谁？', '你好吗？', '你叫什么名字？', '再见！'], ans:0, exp:'谁 = ai. Muốn hỏi người nào thì đặt 谁 vào đúng chỗ của người đó: 这是谁？'},
+  {q:'"女朋友" nghĩa là gì?', opts:['bạn gái', 'bạn trai', 'bạn học', 'giáo viên'], ans:0, exp:'女 = nữ, 朋友 = bạn, nên 女朋友 là bạn gái; bạn học là 同学, giáo viên là 老师.'},
+  {q:'Muốn hỏi quốc tịch, dùng cấu trúc nào?', opts:['哪国人', '什么名字', '怎么样', '多大'], ans:0, exp:'哪国人 = người nước nào, dùng để hỏi quốc tịch; 什么名字 dùng để hỏi tên.'},
+  {q:'Trợ từ "吗" dùng để làm gì?', opts:['tạo câu hỏi có/không ở cuối câu', 'phủ định', 'chỉ số nhiều', 'chỉ sở hữu'], ans:0, exp:'吗 đặt cuối câu trần thuật để tạo câu hỏi có/không, ví dụ 你忙吗？'},
+  {q:'"还很忙" nghĩa là gì?', opts:['vẫn còn rất bận', 'không bận nữa', 'rất rảnh', 'đã xong việc'], ans:0, exp:'还 = vẫn, còn; 还很忙 = vẫn còn rất bận (tình trạng vẫn tiếp diễn), không phải hết bận.'},
+  {q:'"我们很想你" nghĩa là gì?', opts:['Chúng tôi rất nhớ bạn', 'Chúng tôi không thích bạn', 'Bạn rất bận', 'Bạn phải làm việc'], ans:0, exp:'想 ở đây nghĩa là “nhớ”; 我们很想你 = chúng tôi rất nhớ bạn.'},
+  {q:'Trợ từ "的" dùng để làm gì?', opts:['nối định ngữ với danh từ trung tâm, biểu thị sở hữu', 'tạo câu hỏi', 'phủ định', 'chỉ số nhiều'], ans:0, exp:'的 nối định ngữ với danh từ, thường chỉ sở hữu: 我的朋友 = bạn của tôi.'},
 ];
 
 // ══════════════════════════════════════════

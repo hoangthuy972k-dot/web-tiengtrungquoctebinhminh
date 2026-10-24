@@ -2019,7 +2019,7 @@ var matchData = [
 var fillData = [
   {pre:'只要你参加',blank:'比赛',post:'，就会更快乐。',hint:'(cuộc thi đấu)',ans:'比赛'},
   {pre:'虽然我们不是一个',blank:'年级',post:'，但是经常一起复习。',hint:'(lớp/khối)',ans:'年级'},
-  {pre:'那家',blank:'又',post:'便宜又好吃的蛋糕店，就在超市旁边。',hint:'(vừa…vừa…)',ans:'又'},
+  {pre:'那家',blank:'又',post:'便宜又好吃的蛋糕店，就在超市旁边。',hint:'(vừa…vừa…)',ans:'又',exp:'又…又… = vừa… vừa…, nối hai tính từ: 又便宜又好吃.'},
   {pre:'虽然妹妹很',blank:'聪明',post:'，但是复习总是不认真。',hint:'(thông minh)',ans:'聪明'},
   {pre:'只要服务员对客人',blank:'热情',post:'，客人就会常来。',hint:'(nhiệt tình)',ans:'热情'},
   {pre:'如果你不认真听，就不能',blank:'回答',post:'老师的问题。',hint:'(trả lời)',ans:'回答'},

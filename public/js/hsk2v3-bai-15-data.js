@@ -1216,14 +1216,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '我想再吃＿＿烤鸭。', opts: ['一次', '次一', '一个次', '一次的'], ans: 0 },
-  { q: '我想找他＿＿。', opts: ['一次', '一次他', '次一', '他一次'], ans: 0 },
-  { q: '安妮来过这儿＿＿。', opts: ['两次', '次两', '两个次', '第两次'], ans: 0 },
-  { q: '你女儿今年＿＿10岁了吗？', opts: ['有', '是', '在', '过'], ans: 0 },
-  { q: '我＿＿一个月没给家里打电话了。', opts: ['有', '是', '过', '在'], ans: 0 },
-  { q: 'Khi tân ngữ là ĐẠI TỪ, bổ ngữ động lượng đặt ở đâu?', opts: ['Sau đại từ', 'Trước đại từ', 'Đầu câu', 'Cuối câu, sau 了'], ans: 0 },
-  { q: '“有+数量短语” biểu thị điều gì?', opts: ['Đạt tới một số lượng nhất định', 'Sở hữu một vật', 'Phủ định', 'So sánh'], ans: 0 },
-  { q: '“多个朋友多条路” nghĩa là gì?', opts: ['Thêm một người bạn là thêm một con đường', 'Bạn bè nhiều thì đường xa', 'Đường nhiều bạn ít', 'Đi nhiều đường gặp nhiều bạn'], ans: 0 }
+  { q: '我想再吃＿＿烤鸭。', opts: ['一次', '次一', '一个次', '一次的'], ans: 0, exp: 'Động lượng 一次 đứng sau động từ, trước tân ngữ chỉ vật: 再吃一次烤鸭.' },
+  { q: '我想找他＿＿。', opts: ['一次', '一次他', '次一', '他一次'], ans: 0, exp: 'Tân ngữ là đại từ thì động lượng đặt sau đại từ: 找他一次.' },
+  { q: '安妮来过这儿＿＿。', opts: ['两次', '次两', '两个次', '第两次'], ans: 0, exp: 'Số + 次 đặt sau 过: 来过这儿两次; 次 không đi với 个.' },
+  { q: '你女儿今年＿＿10岁了吗？', opts: ['有', '是', '在', '过'], ans: 0, exp: '有 + số lượng = đạt tới mức đó: 有10岁了吗？= đã được 10 tuổi chưa?' },
+  { q: '我＿＿一个月没给家里打电话了。', opts: ['有', '是', '过', '在'], ans: 0, exp: '有 + thời lượng nhấn mạnh thời gian đã khá lâu: 有一个月没打电话了.' },
+  { q: 'Khi tân ngữ là ĐẠI TỪ, bổ ngữ động lượng đặt ở đâu?', opts: ['Sau đại từ', 'Trước đại từ', 'Đầu câu', 'Cuối câu, sau 了'], ans: 0, exp: 'Tân ngữ là đại từ: động từ + đại từ + số + 次, ví dụ 找他一次.' },
+  { q: '“有+数量短语” biểu thị điều gì?', opts: ['Đạt tới một số lượng nhất định', 'Sở hữu một vật', 'Phủ định', 'So sánh'], ans: 0, exp: '有 + cụm số lượng biểu thị đạt tới một con số nhất định, ví dụ 有10岁了.' },
+  { q: '“多个朋友多条路” nghĩa là gì?', opts: ['Thêm một người bạn là thêm một con đường', 'Bạn bè nhiều thì đường xa', 'Đường nhiều bạn ít', 'Đi nhiều đường gặp nhiều bạn'], ans: 0, exp: 'Câu tục ngữ: có thêm một người bạn là có thêm một con đường (thêm người giúp đỡ).' }
 ];
 
 var speakingData = {

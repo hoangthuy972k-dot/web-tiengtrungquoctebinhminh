@@ -1705,8 +1705,8 @@ var fillData = [
   { pre: '我们在商场买了很多东西，', blank: '花', post: '了很多钱。', hint: '(tiêu tiền)', ans: '花' },
   { pre: '我昨天看的那个电影很', blank: '有意思', post: '。', hint: '(hay, thú vị)', ans: '有意思' },
   { pre: '我也觉得', blank: '左边', post: '的比右边的好看。', hint: '(bên trái)', ans: '左边' },
-  { pre: '今天', blank: '比', post: '昨天冷。', hint: '(so với)', ans: '比' },
-  { pre: '', blank: '虽然', post: '你忘了，但是我记得。', hint: '(mặc dù)', ans: '虽然' },
+  { pre: '今天', blank: '比', post: '昨天冷。', hint: '(so với)', ans: '比', exp: 'A + 比 + B + tính từ = A … hơn B: 今天比昨天冷.' },
+  { pre: '', blank: '虽然', post: '你忘了，但是我记得。', hint: '(mặc dù)', ans: '虽然', exp: '虽然…，但是… = tuy… nhưng…; 虽然 đứng ở vế đầu.' },
   { pre: '丈夫请妻子去', blank: '饭馆', post: '吃饭。', hint: '(nhà hàng)', ans: '饭馆' }
 ];
 
@@ -1720,14 +1720,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '我觉得奶茶比牛奶＿＿好喝。', opts: ['还', '很', '非常', '太'], ans: 0 },
-  { q: '今天＿＿昨天更热。', opts: ['比', '跟', '和', '从'], ans: 0 },
-  { q: '＿＿你忘了，但是我记得。', opts: ['虽然', '因为', '所以', '如果'], ans: 0 },
-  { q: 'A：这个人是你妹妹吗？ B：是我姐姐，她＿＿我大。', opts: ['比', '跟', '很', '更'], ans: 0 },
-  { q: 'Câu nào SAI?', opts: ['左边的比右边的很好看。', '左边的比右边的好看。', '左边的比右边的更好看。', '左边的比右边的还好看。'], ans: 0 },
-  { q: '“花钱” nghĩa là gì?', opts: ['Tiêu tiền', 'Kiếm tiền', 'Đổi tiền', 'Mượn tiền'], ans: 0 },
-  { q: '在饭馆我们要先做什么？', opts: ['点菜', '买票', '买手表', '跑步'], ans: 0 },
-  { q: '“记得” trái nghĩa với từ nào?', opts: ['忘', '想', '看', '花'], ans: 0 }
+  { q: '我觉得奶茶比牛奶＿＿好喝。', opts: ['还', '很', '非常', '太'], ans: 0, exp: 'Câu 比 không dùng 很/非常/太 trước tính từ; muốn nhấn mạnh thì dùng 还 hoặc 更.' },
+  { q: '今天＿＿昨天更热。', opts: ['比', '跟', '和', '从'], ans: 0, exp: 'A + 比 + B + 更 + tính từ: 今天比昨天更热; 跟/和 không dùng để so hơn kém.' },
+  { q: '＿＿你忘了，但是我记得。', opts: ['虽然', '因为', '所以', '如果'], ans: 0, exp: 'Vế sau có 但是 nên vế trước dùng 虽然: 虽然…，但是… = tuy… nhưng….' },
+  { q: 'A：这个人是你妹妹吗？ B：是我姐姐，她＿＿我大。', opts: ['比', '跟', '很', '更'], ans: 0, exp: 'A + 比 + B + tính từ: 她比我大 = chị ấy lớn hơn tôi; 更 không thay được 比.' },
+  { q: 'Câu nào SAI?', opts: ['左边的比右边的很好看。', '左边的比右边的好看。', '左边的比右边的更好看。', '左边的比右边的还好看。'], ans: 0, exp: 'Câu 比 không dùng 很 trước tính từ; có thể dùng 更 hoặc 还 để nhấn mạnh.' },
+  { q: '“花钱” nghĩa là gì?', opts: ['Tiêu tiền', 'Kiếm tiền', 'Đổi tiền', 'Mượn tiền'], ans: 0, exp: '花 ở đây là động từ “tiêu (tiền, thời gian)”: 花钱 = tiêu tiền.' },
+  { q: '在饭馆我们要先做什么？', opts: ['点菜', '买票', '买手表', '跑步'], ans: 0, exp: 'Vào 饭馆 thì trước hết phải gọi món (点菜) rồi mới ăn.' },
+  { q: '“记得” trái nghĩa với từ nào?', opts: ['忘', '想', '看', '花'], ans: 0, exp: '记得 = nhớ, còn nhớ; trái nghĩa là 忘 = quên.' }
 ];
 
 var speakingData = {

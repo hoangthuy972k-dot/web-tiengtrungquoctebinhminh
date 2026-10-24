@@ -1918,23 +1918,23 @@ var matchData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我想',blank:'向',post:'你借点儿钱。',hint:'(đối với, về phía)',ans:'向'},
+  {pre:'我想',blank:'向',post:'你借点儿钱。',hint:'(đối với, về phía)',ans:'向',exp:'向 + người + 借 = mượn của ai: 向你借点儿钱.'},
   {pre:'虽然那辆车很贵，但是我们已经有三',blank:'万',post:'块钱了。',hint:'(vạn, mười nghìn)',ans:'万'},
-  {pre:'你看那',blank:'只',post:'狗多可爱。',hint:'(con, lượng từ)',ans:'只'},
+  {pre:'你看那',blank:'只',post:'狗多可爱。',hint:'(con, lượng từ)',ans:'只',exp:'只 là lượng từ cho động vật: 那只狗.'},
   {pre:'他的',blank:'嘴',post:'更像他爸爸。',hint:'(miệng)',ans:'嘴'},
   {pre:'虽然',blank:'动物',post:'不会说话，但是它们也需要人照顾。',hint:'(động vật)',ans:'动物'},
-  {pre:'这',blank:'段',post:'时间你自己的衣服都没洗。',hint:'(khoảng, quãng)',ans:'段'},
-  {pre:'这家宾馆',blank:'不但',post:'环境安静，而且很方便。',hint:'(không những)',ans:'不但'},
+  {pre:'这',blank:'段',post:'时间你自己的衣服都没洗。',hint:'(khoảng, quãng)',ans:'段',exp:'段 là lượng từ cho một khoảng thời gian: 这段时间.'},
+  {pre:'这家宾馆',blank:'不但',post:'环境安静，而且很方便。',hint:'(không những)',ans:'不但',exp:'不但…，而且… = không những… mà còn….'},
   {pre:'他的画都非常',blank:'有名',post:'。',hint:'(có tiếng, nổi tiếng)',ans:'有名'},
   {pre:'你家人',blank:'同意',post:'吗？',hint:'(đồng ý, tán thành)',ans:'同意'},
   {pre:'我',blank:'相信',post:'他们就会同意的。',hint:'(tin, tin tưởng)',ans:'相信'},
-  {pre:'',blank:'关于',post:'这次考试，你还有什么想问的吗？',hint:'(về)',ans:'关于'},
+  {pre:'',blank:'关于',post:'这次考试，你还有什么想问的吗？',hint:'(về)',ans:'关于',exp:'关于 + vấn đề đặt đầu câu = về…: 关于这次考试.'},
   {pre:'谢谢您给我这个',blank:'机会',post:'。',hint:'(cơ hội)',ans:'机会'},
   {pre:'不同的',blank:'国家',post:'有不同的文化。',hint:'(đất nước, quốc gia)',ans:'国家'},
-  {pre:'每',blank:'种',post:'文化都有自己的特点。',hint:'(loại)',ans:'种'},
+  {pre:'每',blank:'种',post:'文化都有自己的特点。',hint:'(loại)',ans:'种',exp:'种 là lượng từ “loại”: 每种文化 = mỗi nền văn hóa.'},
   {pre:'每个地方都有自己的',blank:'特点',post:'，我们应该了解它们。',hint:'(đặc điểm)',ans:'特点'},
   {pre:'你会觉得有点',blank:'奇怪',post:'。',hint:'(kỳ lạ, lạ lùng)',ans:'奇怪'},
-  {pre:'就会慢慢',blank:'地',post:'习惯。',hint:'(trợ từ nối trạng ngữ)',ans:'地'},
+  {pre:'就会慢慢',blank:'地',post:'习惯。',hint:'(trợ từ nối trạng ngữ)',ans:'地',exp:'地 nối trạng ngữ với động từ: 慢慢地习惯.'},
 ];
 
 // ══════════════════════════════════════════

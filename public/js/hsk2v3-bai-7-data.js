@@ -1536,14 +1536,14 @@ var matchData = [
 ];
 
 var fillData = [
-  { pre: '你是什么时候', blank: '从', post: '北京回来的？', hint: '(từ – giới từ)', ans: '从' },
-  { pre: '你怎么一下课就', blank: '往', post: '外跑？', hint: '(về phía)', ans: '往' },
-  { pre: '我跟同学说好了，一起去', blank: '打', post: '篮球。', hint: '(chơi bằng tay)', ans: '打' },
-  { pre: '我还喜欢', blank: '踢', post: '足球。', hint: '(đá)', ans: '踢' },
-  { pre: '我踢', blank: '得', post: '还可以。', hint: '(trợ từ bổ ngữ)', ans: '得' },
+  { pre: '你是什么时候', blank: '从', post: '北京回来的？', hint: '(từ – giới từ)', ans: '从', exp: '从 + nơi chốn = từ đâu: 从北京回来 = từ Bắc Kinh về.' },
+  { pre: '你怎么一下课就', blank: '往', post: '外跑？', hint: '(về phía)', ans: '往', exp: '往 + phương hướng + động từ = về phía…: 往外跑 = chạy ra ngoài.' },
+  { pre: '我跟同学说好了，一起去', blank: '打', post: '篮球。', hint: '(chơi bằng tay)', ans: '打', exp: 'Môn bóng chơi bằng tay dùng 打: 打篮球; bóng đá dùng 踢.' },
+  { pre: '我还喜欢', blank: '踢', post: '足球。', hint: '(đá)', ans: '踢', exp: '足球 chơi bằng chân nên dùng 踢: 踢足球; bóng rổ dùng 打.' },
+  { pre: '我踢', blank: '得', post: '还可以。', hint: '(trợ từ bổ ngữ)', ans: '得', exp: 'Động từ + 得 + bổ ngữ trạng thái để đánh giá hành động: 踢得还可以 = đá cũng tạm được.' },
   { pre: '我跑得不快，也不太喜欢', blank: '跑步', post: '。', hint: '(chạy bộ)', ans: '跑步' },
   { pre: '我的', blank: '爱好', post: '是运动。', hint: '(sở thích)', ans: '爱好' },
-  { pre: '从上小学', blank: '开始', post: '，我每天都跟爸爸去运动。', hint: '(bắt đầu)', ans: '开始' }
+  { pre: '从上小学', blank: '开始', post: '，我每天都跟爸爸去运动。', hint: '(bắt đầu)', ans: '开始', exp: '从 + thời điểm + 开始 = bắt đầu từ…: 从上小学开始.' }
 ];
 
 var sortData = [
@@ -1556,14 +1556,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '你看过她＿＿吗？游得怎么样？', opts: ['游泳', '跑步', '运动', '开始'], ans: 0 },
-  { q: '我们9点＿＿上课，你别来晚了。', opts: ['开始', '从', '往', '球'], ans: 0 },
-  { q: '你＿＿跑得快不快？我想跟你一起去运动。', opts: ['跑步', '游泳', '篮球', '足球'], ans: 0 },
-  { q: 'A：你喜欢什么＿＿？ B：足球、篮球什么的都喜欢。', opts: ['运动', '爱好', '开始', '球'], ans: 0 },
-  { q: 'A：你喜欢学中文吗？ B：喜欢，我＿＿8岁就开始学中文了。', opts: ['从', '往', '得', '一'], ans: 0 },
-  { q: 'Môn thể thao nào đi với động từ 踢?', opts: ['足球', '篮球', '游泳', '跑步'], ans: 0 },
-  { q: '我一到家，妈妈＿＿打来电话了。', opts: ['就', '才', '还', '也'], ans: 0 },
-  { q: 'Câu nào đúng khi nói "Tôi bơi không nhanh"?', opts: ['我游泳游得不快。', '我游泳得不快。', '我不快游泳。', '我游泳不得快。'], ans: 0 }
+  { q: '你看过她＿＿吗？游得怎么样？', opts: ['游泳', '跑步', '运动', '开始'], ans: 0, exp: 'Câu sau hỏi 游得怎么样, vậy hoạt động là bơi: 游泳.' },
+  { q: '我们9点＿＿上课，你别来晚了。', opts: ['开始', '从', '往', '球'], ans: 0, exp: '开始 + động từ = bắt đầu làm gì: 9点开始上课.' },
+  { q: '你＿＿跑得快不快？我想跟你一起去运动。', opts: ['跑步', '游泳', '篮球', '足球'], ans: 0, exp: 'Động từ có tân ngữ + 得 thì lặp lại động từ: (你)跑步跑得快不快, nên chỗ trống là 跑步.' },
+  { q: 'A：你喜欢什么＿＿？ B：足球、篮球什么的都喜欢。', opts: ['运动', '爱好', '开始', '球'], ans: 0, exp: '运动 = môn thể thao; câu trả lời nêu bóng đá, bóng rổ nên hỏi 什么运动.' },
+  { q: 'A：你喜欢学中文吗？ B：喜欢，我＿＿8岁就开始学中文了。', opts: ['从', '往', '得', '一'], ans: 0, exp: '从 + thời điểm + 就开始… = bắt đầu từ (lúc)…: 从8岁就开始学中文了.' },
+  { q: 'Môn thể thao nào đi với động từ 踢?', opts: ['足球', '篮球', '游泳', '跑步'], ans: 0, exp: '踢 là đá bằng chân, nên đi với 足球; 篮球 đi với 打.' },
+  { q: '我一到家，妈妈＿＿打来电话了。', opts: ['就', '才', '还', '也'], ans: 0, exp: '一…就… = vừa… là… ngay: 我一到家，妈妈就打来电话了.' },
+  { q: 'Câu nào đúng khi nói "Tôi bơi không nhanh"?', opts: ['我游泳游得不快。', '我游泳得不快。', '我不快游泳。', '我游泳不得快。'], ans: 0, exp: 'Động từ có tân ngữ + bổ ngữ trạng thái thì lặp động từ: 游泳游得不快; 不 đặt sau 得.' }
 ];
 
 var speakingData = {

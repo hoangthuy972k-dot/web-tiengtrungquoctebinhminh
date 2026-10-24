@@ -1562,9 +1562,9 @@ var matchData = [
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'虽然弟弟只是有点儿',blank:'发烧',post:'，但是妈妈还是带他去了医院。',hint:'(sốt)',ans:'发烧'},
-  {pre:'这是我',blank:'为',post:'你买的蛋糕。',hint:'(cho, vì)',ans:'为'},
+  {pre:'这是我',blank:'为',post:'你买的蛋糕。',hint:'(cho, vì)',ans:'为',exp:'为 + người + động từ = vì/cho ai mà làm: 为你买的蛋糕.'},
   {pre:'因为奶奶生病了，所以我今天要请假回家',blank:'照顾',post:'她。',hint:'(chăm sóc)',ans:'照顾'},
-  {pre:'不',blank:'用',post:'去医院。',hint:'(cần)',ans:'用'},
+  {pre:'不',blank:'用',post:'去医院。',hint:'(cần)',ans:'用',exp:'不用 + động từ = không cần…: 不用去医院.'},
   {pre:'因为最近感冒的人很多，所以大家都去药店买了',blank:'感冒',post:'药。',hint:'(cảm)',ans:'感冒'},
   {pre:'如果只能选择一个',blank:'季节',post:'，你会选择春天还是秋天？',hint:'(mùa)',ans:'季节'},
   {pre:'',blank:'当然',post:'要多穿衣服，不然容易感冒。',hint:'(đương nhiên)',ans:'当然'},
@@ -1573,7 +1573,7 @@ var fillData = [
   {pre:'虽然最近越来越热，但是我还是最喜欢',blank:'夏',post:'天。',hint:'(mùa hè)',ans:'夏'},
   {pre:'虽然这条',blank:'裙子',post:'有点儿贵，但是我还是买了。',hint:'(váy)',ans:'裙子'},
   {pre:'因为工作忙，我',blank:'最近',post:'很少运动，也很少出去玩儿。',hint:'(gần đây, dạo này)',ans:'最近'},
-  {pre:'因为她开始运动了，所以身体',blank:'越',post:'来越好了。',hint:'(càng)',ans:'越'},
+  {pre:'因为她开始运动了，所以身体',blank:'越',post:'来越好了。',hint:'(càng)',ans:'越',exp:'越来越 + tính từ = càng ngày càng…: 越来越好.'},
 ];
 
 // ══════════════════════════════════════════

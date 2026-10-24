@@ -1645,8 +1645,8 @@ var listenData = {
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ở cửa hàng mua đồng hồ, hỏi màu
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你好，这块手表',blank:'多',post:'少钱？',hint:'(hỏi giá: bao nhiêu tiền?)',ans:'多'},
-  {pre:'3000',blank:'多',post:'块，不贵。',hint:'(hơn — ôn Bài 1)',ans:'多'},
+  {pre:'你好，这块手表',blank:'多',post:'少钱？',hint:'(hỏi giá: bao nhiêu tiền?)',ans:'多',exp:'多少钱 = bao nhiêu tiền, là cách hỏi giá cố định.'},
+  {pre:'3000',blank:'多',post:'块，不贵。',hint:'(hơn — ôn Bài 1)',ans:'多',exp:'3000 là số tròn nên 多 đứng sau số, trước lượng từ 块: 3000多块 = hơn 3000 đồng.'},
   {pre:'这块手表真',blank:'漂亮',post:'！',hint:'(đẹp)',ans:'漂亮'},
   {pre:'是啊，这是我',blank:'昨天',post:'买的。',hint:'(hôm qua)',ans:'昨天',exp:'的 sau động từ để danh hoá cả cụm "hành động + thời gian".'},
   {pre:'这是谁',blank:'的',post:'房间？',hint:'(trợ từ sở hữu/danh hoá)',ans:'的',exp:'的 dùng để danh hoá: 谁的 = của ai.'},

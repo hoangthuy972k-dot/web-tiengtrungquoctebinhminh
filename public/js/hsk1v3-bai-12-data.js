@@ -2360,13 +2360,13 @@ var listenData = [];
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'', blank:'今天天气', post:'怎么样？', hint:'(thời tiết hôm nay)', ans:'今天天气'},
-  {pre:'这里的天不太好，', blank:'下雨了', post:'。', hint:'(mưa rồi)', ans:'下雨了'},
-  {pre:'有点儿大，我', blank:'觉得很冷', post:'。', hint:'(cảm thấy rất lạnh)', ans:'觉得很冷'},
-  {pre:'', blank:'昨天下雪了', post:'。', hint:'(hôm qua tuyết rơi)', ans:'昨天下雪了'},
-  {pre:'你昨天没来公司，', blank:'生病了', post:'？', hint:'(bị ốm)', ans:'生病了'},
-  {pre:'对，我昨天去医院', blank:'看病了', post:'。', hint:'(khám bệnh)', ans:'看病了'},
-  {pre:'好的，吃一点儿药，今天', blank:'休息半天', post:'吧。', hint:'(nghỉ nửa ngày)', ans:'休息半天'},
-  {pre:'回家后再', blank:'喝些热水', post:'。', hint:'(uống ít nước ấm)', ans:'喝些热水'},
+  {pre:'这里的天不太好，', blank:'下雨了', post:'。', hint:'(mưa rồi)', ans:'下雨了', exp:'了 cuối câu báo một tình huống mới xuất hiện: 下雨了 = trời mưa rồi.'},
+  {pre:'有点儿大，我', blank:'觉得很冷', post:'。', hint:'(cảm thấy rất lạnh)', ans:'觉得很冷', exp:'觉得 + tính từ = cảm thấy…; tính từ thường có 很 đi trước: 觉得很冷.'},
+  {pre:'', blank:'昨天下雪了', post:'。', hint:'(hôm qua tuyết rơi)', ans:'昨天下雪了', exp:'了 cuối câu xác nhận sự việc đã xảy ra; từ chỉ thời gian 昨天 đứng đầu câu.'},
+  {pre:'你昨天没来公司，', blank:'生病了', post:'？', hint:'(bị ốm)', ans:'生病了', exp:'生病了 = bị ốm rồi; 了 báo tình trạng mới (trước khỏe, giờ ốm).'},
+  {pre:'对，我昨天去医院', blank:'看病了', post:'。', hint:'(khám bệnh)', ans:'看病了', exp:'了 cuối câu xác nhận việc đã xảy ra: 去医院看病了 = đã đi bệnh viện khám bệnh.'},
+  {pre:'好的，吃一点儿药，今天', blank:'休息半天', post:'吧。', hint:'(nghỉ nửa ngày)', ans:'休息半天', exp:'Thời lượng (半天) đặt sau động từ: 休息半天 = nghỉ nửa ngày.'},
+  {pre:'回家后再', blank:'喝些热水', post:'。', hint:'(uống ít nước ấm)', ans:'喝些热水', exp:'些 = một ít, đặt trước danh từ: 喝些热水 = uống ít nước ấm.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2385,14 +2385,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"今天天气怎么样？" nghĩa là gì?', opts:['Hôm nay thời tiết thế nào?', 'Hôm nay thứ mấy?', 'Hôm nay bạn đi đâu?', 'Hôm nay mấy giờ rồi?'], ans:0},
-  {q:'"下雨了" nghĩa là gì?', opts:['Trời mưa rồi', 'Trời nắng rồi', 'Trời tuyết rồi', 'Trời lạnh rồi'], ans:0},
-  {q:'Trợ từ ngữ khí "了(1)" dùng để biểu thị điều gì?', opts:['sự thay đổi hoặc xuất hiện tình huống mới', 'sự phủ định', 'câu hỏi', 'mệnh lệnh'], ans:0},
-  {q:'"你昨天没来公司，生病了？" nghĩa là gì?', opts:['Hôm qua bạn không đến công ty, bị ốm à?', 'Hôm qua bạn đến công ty làm việc.', 'Hôm nay bạn không đến công ty.', 'Bạn thích công ty này không?'], ans:0},
-  {q:'"太冷了！" thuộc cấu trúc nào?', opts:['太……了 (cảm thán mức độ cao)', '正反问', '存现句', '疑问代词'], ans:0},
-  {q:'"我很冷。" — "冷" thuộc từ loại gì?', opts:['tính từ', 'danh từ', 'động từ', 'phó từ'], ans:0},
-  {q:'"回家后再喝些热水。" nghĩa là gì?', opts:['Sau khi về nhà nhớ uống thêm ít nước ấm.', 'Trước khi về nhà hãy uống nước.', 'Đừng uống nước khi về nhà.', 'Về nhà rồi mới nấu nước.'], ans:0},
-  {q:'Câu phi chủ vị (非主谓句) thường dùng khi nào?', opts:['trong khẩu ngữ, câu ngắn không rõ chủ-vị', 'chỉ dùng trong văn viết trang trọng', 'chỉ dùng khi hỏi', 'chỉ dùng khi phủ định'], ans:0},
+  {q:'"今天天气怎么样？" nghĩa là gì?', opts:['Hôm nay thời tiết thế nào?', 'Hôm nay thứ mấy?', 'Hôm nay bạn đi đâu?', 'Hôm nay mấy giờ rồi?'], ans:0, exp:'天气 = thời tiết; 怎么样 hỏi tình hình thế nào.'},
+  {q:'"下雨了" nghĩa là gì?', opts:['Trời mưa rồi', 'Trời nắng rồi', 'Trời tuyết rồi', 'Trời lạnh rồi'], ans:0, exp:'下雨 = mưa; 了 cuối câu báo tình huống mới: trời mưa rồi.'},
+  {q:'Trợ từ ngữ khí "了(1)" dùng để biểu thị điều gì?', opts:['sự thay đổi hoặc xuất hiện tình huống mới', 'sự phủ định', 'câu hỏi', 'mệnh lệnh'], ans:0, exp:'了(1) cuối câu cho biết có sự thay đổi hoặc tình huống mới: 下雨了, 我生病了.'},
+  {q:'"你昨天没来公司，生病了？" nghĩa là gì?', opts:['Hôm qua bạn không đến công ty, bị ốm à?', 'Hôm qua bạn đến công ty làm việc.', 'Hôm nay bạn không đến công ty.', 'Bạn thích công ty này không?'], ans:0, exp:'没来 = không đến (việc đã qua); 生病了？ dùng ngữ điệu hỏi để đoán lý do: bị ốm à?'},
+  {q:'"太冷了！" thuộc cấu trúc nào?', opts:['太……了 (cảm thán mức độ cao)', '正反问', '存现句', '疑问代词'], ans:0, exp:'太 + tính từ + 了 diễn đạt mức độ rất cao, mang tính cảm thán: 太冷了！'},
+  {q:'"我很冷。" — "冷" thuộc từ loại gì?', opts:['tính từ', 'danh từ', 'động từ', 'phó từ'], ans:0, exp:'冷 là tính từ, làm vị ngữ trực tiếp cùng 很: 我很冷.'},
+  {q:'"回家后再喝些热水。" nghĩa là gì?', opts:['Sau khi về nhà nhớ uống thêm ít nước ấm.', 'Trước khi về nhà hãy uống nước.', 'Đừng uống nước khi về nhà.', 'Về nhà rồi mới nấu nước.'], ans:0, exp:'回家后 = sau khi về nhà; 再 ở đây là “rồi hãy”; 喝些热水 = uống chút nước ấm.'},
+  {q:'Câu phi chủ vị (非主谓句) thường dùng khi nào?', opts:['trong khẩu ngữ, câu ngắn không rõ chủ-vị', 'chỉ dùng trong văn viết trang trọng', 'chỉ dùng khi hỏi', 'chỉ dùng khi phủ định'], ans:0, exp:'Câu phi chủ vị là câu ngắn không tách được chủ ngữ – vị ngữ, rất hay dùng trong khẩu ngữ: 下雨了！'},
 ];
 
 // ══════════════════════════════════════════

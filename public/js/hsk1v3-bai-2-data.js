@@ -1471,9 +1471,9 @@ var fillData = [
   {pre:'我', blank:'叫', post:'陈天中。', hint:'(tên là)', ans:'叫'},
   {pre:'Nhận ra mình gọi nhầm tên bạn, bạn xin lỗi: “', blank:'对不起', post:'！”', hint:'(xin lỗi)', ans:'对不起'},
   {pre:'Đáp lại lời xin lỗi, bạn nói: “', blank:'没关系', post:'！”', hint:'(không sao)', ans:'没关系'},
-  {pre:'我不', blank:'是', post:'安妮。', hint:'(là — phủ định)', ans:'是'},
+  {pre:'我不', blank:'是', post:'安妮。', hint:'(là — phủ định)', ans:'是', exp:'是 là động từ “là”; phủ định thì đặt 不 trước 是: 不是 = không phải là.'},
   {pre:'很', blank:'高兴', post:'认识你。', hint:'(vui)', ans:'高兴'},
-  {pre:'认识你我', blank:'也', post:'很高兴。', hint:'(cũng)', ans:'也'},
+  {pre:'认识你我', blank:'也', post:'很高兴。', hint:'(cũng)', ans:'也', exp:'也 (cũng) đứng sau chủ ngữ, trước động từ/tính từ: 我也很高兴; không đặt cuối câu như tiếng Việt.'},
 ];
 
 // ══════════════════════════════════════════
@@ -1492,14 +1492,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Muốn hỏi tên ai đó một cách lịch sự, bạn nói?', opts:['请问，你叫什么名字？', '你好！', '谢谢！', '再见！'], ans:0},
-  {q:'"我叫李文" có nghĩa là gì?', opts:['Tôi tên là Lý Văn', 'Tôi là học sinh', 'Tôi rất vui', 'Xin lỗi bạn'], ans:0},
-  {q:'Gọi nhầm tên người khác, câu xin lỗi đúng là?', opts:['对不起', '没关系', '谢谢', '你好'], ans:0},
-  {q:'Đáp lại lời xin lỗi một cách phù hợp là?', opts:['没关系', '对不起', '认识你', '高兴'], ans:0},
-  {q:'"我不是安妮" nghĩa là gì?', opts:['Tôi không phải là Annie', 'Tôi là Annie', 'Bạn là Annie', 'Annie rất vui'], ans:0},
-  {q:'Câu nào dùng để bày tỏ niềm vui khi làm quen ai đó?', opts:['很高兴认识你', '请问你叫什么名字', '对不起', '没关系'], ans:0},
-  {q:'Trật tự từ cơ bản của câu tiếng Trung là gì?', opts:['Chủ ngữ + Vị ngữ + Tân ngữ', 'Vị ngữ + Chủ ngữ + Tân ngữ', 'Tân ngữ + Chủ ngữ + Vị ngữ', 'Không có trật tự cố định'], ans:0},
-  {q:'Trong câu "我叫陈天中" đâu là Vị ngữ (động từ)?', opts:['叫', '我', '陈天中', 'Không có'], ans:0},
+  {q:'Muốn hỏi tên ai đó một cách lịch sự, bạn nói?', opts:['请问，你叫什么名字？', '你好！', '谢谢！', '再见！'], ans:0, exp:'请问 (xin hỏi) đặt đầu câu cho lịch sự, rồi hỏi tên bằng 你叫什么名字？; các câu còn lại không phải để hỏi tên.'},
+  {q:'"我叫李文" có nghĩa là gì?', opts:['Tôi tên là Lý Văn', 'Tôi là học sinh', 'Tôi rất vui', 'Xin lỗi bạn'], ans:0, exp:'叫 = gọi là, tên là; 我叫李文 = Tôi tên là Lý Văn. Câu này chỉ nói tên, không nói nghề nghiệp hay cảm xúc.'},
+  {q:'Gọi nhầm tên người khác, câu xin lỗi đúng là?', opts:['对不起', '没关系', '谢谢', '你好'], ans:0, exp:'对不起 = xin lỗi (người làm sai nói); 没关系 = không sao (người kia đáp lại).'},
+  {q:'Đáp lại lời xin lỗi một cách phù hợp là?', opts:['没关系', '对不起', '认识你', '高兴'], ans:0, exp:'Người kia nói 对不起 thì ta đáp 没关系 = không sao đâu; nói lại 对不起 là sai tình huống.'},
+  {q:'"我不是安妮" nghĩa là gì?', opts:['Tôi không phải là Annie', 'Tôi là Annie', 'Bạn là Annie', 'Annie rất vui'], ans:0, exp:'不 đặt trước 是 tạo phủ định: 不是 = không phải là. Vậy 我不是安妮 = tôi không phải là Annie.'},
+  {q:'Câu nào dùng để bày tỏ niềm vui khi làm quen ai đó?', opts:['很高兴认识你', '请问你叫什么名字', '对不起', '没关系'], ans:0, exp:'很高兴认识你 = rất vui được quen bạn; 认识 = quen biết. 对不起 và 没关系 dùng khi xin lỗi.'},
+  {q:'Trật tự từ cơ bản của câu tiếng Trung là gì?', opts:['Chủ ngữ + Vị ngữ + Tân ngữ', 'Vị ngữ + Chủ ngữ + Tân ngữ', 'Tân ngữ + Chủ ngữ + Vị ngữ', 'Không có trật tự cố định'], ans:0, exp:'Câu tiếng Trung cơ bản theo trật tự Chủ ngữ + Vị ngữ (động từ) + Tân ngữ, giống tiếng Việt: 我叫陈天中.'},
+  {q:'Trong câu "我叫陈天中" đâu là Vị ngữ (động từ)?', opts:['叫', '我', '陈天中', 'Không có'], ans:0, exp:'叫 là động từ nên làm vị ngữ; 我 là chủ ngữ, 陈天中 là tân ngữ.'},
 ];
 
 // ══════════════════════════════════════════

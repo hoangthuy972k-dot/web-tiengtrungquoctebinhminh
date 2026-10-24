@@ -1217,14 +1217,14 @@ var listenData = {
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ngày đầu tiên đi làm
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你好，欢迎你来上班！这是你',blank:'第一',post:'次来吧？',hint:'(đầu tiên, thứ nhất)',ans:'第一'},
+  {pre:'你好，欢迎你来上班！这是你',blank:'第一',post:'次来吧？',hint:'(đầu tiên, thứ nhất)',ans:'第一',exp:'第 + số = số thứ tự: 第一次 = lần đầu tiên.'},
   {pre:'是的，谢谢，我',blank:'希望',post:'能在这儿工作得很好。',hint:'(hy vọng)',ans:'希望'},
-  {pre:'你',blank:'从',post:'什么时候开始学习汉语的？',hint:'(từ)',ans:'从'},
-  {pre:'我从去年开始学的，现在',blank:'已经',post:'懂一点儿了。',hint:'(đã — ôn Bài 4)',ans:'已经'},
+  {pre:'你',blank:'从',post:'什么时候开始学习汉语的？',hint:'(từ)',ans:'从',exp:'从 + thời điểm + 开始 = bắt đầu từ…; câu hỏi 从什么时候开始.'},
+  {pre:'我从去年开始学的，现在',blank:'已经',post:'懂一点儿了。',hint:'(đã — ôn Bài 4)',ans:'已经',exp:'已经 + động từ = đã…: 已经懂一点儿了 = đã hiểu một chút rồi.'},
   {pre:'老师说的话你都听',blank:'懂',post:'了吗？',hint:'(hiểu — bổ ngữ kết quả)',ans:'懂',exp:'听懂 = nghe HIỂU (bổ ngữ kết quả chỉ kết quả của hành động nghe).'},
   {pre:'',blank:'懂',post:'了，可是题太多。',hint:'(hiểu)',ans:'懂'},
   {pre:'我没做',blank:'完',post:'。',hint:'(xong — bổ ngữ kết quả)',ans:'完',exp:'做完 = làm XONG.'},
-  {pre:'对不起，我写',blank:'错',post:'字了。',hint:'(nhầm — bổ ngữ kết quả)',ans:'错'},
+  {pre:'对不起，我写',blank:'错',post:'字了。',hint:'(nhầm — bổ ngữ kết quả)',ans:'错',exp:'错 là bổ ngữ kết quả đứng sau động từ: 写错 = viết sai.'},
 ];
 
 // ══════════════════════════════════════════

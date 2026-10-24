@@ -930,7 +930,7 @@ var listenData = {
 var fillData = [
   {pre:'公司新年晚会的票，大家',blank:'都',post:'买好了。',hint:'(nhấn mạnh TẤT CẢ mọi người, không sót ai)',ans:'都',exp:'都……了 nhấn mạnh TẤT CẢ đều đạt trạng thái/kết quả.'},
   {pre:'新年',blank:'就',post:'要到了，你准备好了吗？',hint:'(sắp đến rồi — phó từ đứng trước 要……了)',ans:'就',exp:'就要……了 diễn tả việc sắp xảy ra.'},
-  {pre:'晚会',blank:'快',post:'要开始了，大家快过来吧！',hint:'(sắp bắt đầu — phó từ đứng trước 要……了, chữ này còn nghĩa là "nhanh")',ans:'快'},
+  {pre:'晚会',blank:'快',post:'要开始了，大家快过来吧！',hint:'(sắp bắt đầu — phó từ đứng trước 要……了, chữ này còn nghĩa là "nhanh")',ans:'快',exp:'快要…了 = sắp… rồi: 晚会快要开始了.'},
   {pre:'今天阴，比昨天',blank:'更',post:'冷了。',hint:'(càng, hơn)',ans:'更',exp:'更 nhấn mạnh mức độ tăng thêm khi so sánh.'},
   {pre:'我',blank:'妹妹',post:'坐公共汽车去火车站接同事了。',hint:'(em gái)',ans:'妹妹'},
   {pre:'她坐',blank:'公共汽车',post:'去，说一会儿就到。',hint:'(xe buýt)',ans:'公共汽车'},

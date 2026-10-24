@@ -1780,14 +1780,14 @@ var matchData = [
 ];
 
 var fillData = [
-  { pre: '家月，快', blank: '下来', post: '吧。', hint: '(xuống đây)', ans: '下来' },
-  { pre: '我不', blank: '上去', post: '了，就在下面等你。', hint: '(lên trên)', ans: '上去' },
-  { pre: '那我', blank: '一会儿', post: '就下去。', hint: '(một lát)', ans: '一会儿' },
-  { pre: '家月、安妮，快', blank: '进来', post: '！', hint: '(vào đây)', ans: '进来' },
+  { pre: '家月，快', blank: '下来', post: '吧。', hint: '(xuống đây)', ans: '下来', exp: 'Người gọi đứng ở dưới, muốn người kia xuống chỗ mình nên dùng 下来 (来 = hướng về người nói).' },
+  { pre: '我不', blank: '上去', post: '了，就在下面等你。', hint: '(lên trên)', ans: '上去', exp: 'Người nói ở dưới và không đi lên (rời chỗ mình) nên dùng 上去.' },
+  { pre: '那我', blank: '一会儿', post: '就下去。', hint: '(một lát)', ans: '一会儿', exp: '一会儿 + 就 + động từ = lát nữa là…: 一会儿就下去.' },
+  { pre: '家月、安妮，快', blank: '进来', post: '！', hint: '(vào đây)', ans: '进来', exp: 'Chủ nhà ở trong nhà mời khách vào chỗ mình nên dùng 进来.' },
   { pre: '这是送你们的', blank: '礼物', post: '。', hint: '(quà)', ans: '礼物' },
   { pre: '这是给孩子们', blank: '准备', post: '的礼物。', hint: '(chuẩn bị)', ans: '准备' },
-  { pre: '吃完饭你们可以', blank: '跟', post: '我去看看。', hint: '(cùng, với)', ans: '跟' },
-  { pre: '我们吃完饭是', blank: '走', post: '回酒店的。', hint: '(đi bộ)', ans: '走' }
+  { pre: '吃完饭你们可以', blank: '跟', post: '我去看看。', hint: '(cùng, với)', ans: '跟', exp: '跟 + người + động từ = cùng ai làm gì: 跟我去看看.' },
+  { pre: '我们吃完饭是', blank: '走', post: '回酒店的。', hint: '(đi bộ)', ans: '走', exp: '是…的 nhấn mạnh cách thức: 是走回酒店的 = (là) đi bộ về khách sạn.' }
 ];
 
 var sortData = [
@@ -1800,14 +1800,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '这就是我家，＿＿看看吧。', opts: ['进来', '上去', '下去', '出去'], ans: 0 },
-  { q: '我在楼上，你＿＿吧。', opts: ['上来', '下来', '过去', '回去'], ans: 0 },
-  { q: '＿＿12点了，我们吃饭吧。', opts: ['都', '还', '就', '才'], ans: 0 },
-  { q: '这是给孩子们＿＿的礼物。', opts: ['准备', '等', '走', '跟'], ans: 0 },
-  { q: '“我不上去了，就在下面等你” — người nói đang ở đâu?', opts: ['Ở dưới', 'Ở trên', 'Ở ngoài', 'Ở trong'], ans: 0 },
-  { q: 'Câu nào đúng khi tân ngữ là nơi chốn?', opts: ['你们快进教室来吧。', '你们快进来教室吧。', '你们快来进教室吧。', '你们教室快进来吧。'], ans: 0 },
-  { q: '“都……了” diễn đạt sắc thái gì?', opts: ['Nhấn mạnh, đôi khi sốt ruột', 'Nghi vấn', 'Phủ định', 'Cầu khiến nhẹ nhàng'], ans: 0 },
-  { q: '“奶茶是爷爷买的” nhấn mạnh điều gì?', opts: ['Ai mua trà sữa', 'Khi nào mua', 'Mua bao nhiêu', 'Mua ở đâu'], ans: 0 }
+  { q: '这就是我家，＿＿看看吧。', opts: ['进来', '上去', '下去', '出去'], ans: 0, exp: 'Người nói ở trong nhà mời khách vào: hướng về phía người nói nên dùng 进来.' },
+  { q: '我在楼上，你＿＿吧。', opts: ['上来', '下来', '过去', '回去'], ans: 0, exp: 'Người nói ở trên lầu, muốn người kia lên chỗ mình nên dùng 上来 (来 = hướng về người nói).' },
+  { q: '＿＿12点了，我们吃饭吧。', opts: ['都', '还', '就', '才'], ans: 0, exp: '都…了 = đã… rồi, nhấn mạnh thời gian đã muộn: 都12点了.' },
+  { q: '这是给孩子们＿＿的礼物。', opts: ['准备', '等', '走', '跟'], ans: 0, exp: 'Động từ + 的 làm định ngữ: 给孩子们准备的礼物 = quà chuẩn bị cho các con.' },
+  { q: '“我不上去了，就在下面等你” — người nói đang ở đâu?', opts: ['Ở dưới', 'Ở trên', 'Ở ngoài', 'Ở trong'], ans: 0, exp: '不上去了，就在下面等 → người nói không lên mà ở dưới chờ, vậy đang ở dưới.' },
+  { q: 'Câu nào đúng khi tân ngữ là nơi chốn?', opts: ['你们快进教室来吧。', '你们快进来教室吧。', '你们快来进教室吧。', '你们教室快进来吧。'], ans: 0, exp: 'Tân ngữ chỉ nơi chốn đặt giữa động từ và 来/去: 进 + 教室 + 来.' },
+  { q: '“都……了” diễn đạt sắc thái gì?', opts: ['Nhấn mạnh, đôi khi sốt ruột', 'Nghi vấn', 'Phủ định', 'Cầu khiến nhẹ nhàng'], ans: 0, exp: '都…了 nhấn mạnh đã đến mức nào đó (thường là muộn), đôi khi kèm ý sốt ruột.' },
+  { q: '“奶茶是爷爷买的” nhấn mạnh điều gì?', opts: ['Ai mua trà sữa', 'Khi nào mua', 'Mua bao nhiêu', 'Mua ở đâu'], ans: 0, exp: '是…的 nhấn mạnh thành phần đứng ngay sau 是: 是爷爷买的 → nhấn mạnh ai mua.' }
 ];
 
 var speakingData = {

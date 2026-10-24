@@ -2135,12 +2135,12 @@ var listenData = [];
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'王一飞老师有', blank:'二十', post:'个学生。', hint:'(20)', ans:'二十'},
-  {pre:'杨同乐家有四', blank:'口', post:'人。', hint:'(lượng từ đếm người)', ans:'口'},
-  {pre:'王一雪：我有两个孩子，你', blank:'呢', post:'？ 杨同乐：我', ans:'呢'},
-  {pre:'杨同乐：我', blank:'没', post:'孩子。', hint:'(không — phủ định của 有)', ans:'没'},
-  {pre:'杨同乐：您女儿今年多', blank:'大', post:'？', hint:'(hỏi tuổi người lớn)', ans:'大'},
-  {pre:'您儿子', blank:'几', post:'岁？', hint:'(mấy — hỏi tuổi trẻ em)', ans:'几'},
-  {pre:'我家有四口人，爸爸、妈妈、妹妹', blank:'和', post:'我。', hint:'(và)', ans:'和'},
+  {pre:'杨同乐家有四', blank:'口', post:'人。', hint:'(lượng từ đếm người)', ans:'口', exp:'口 là lượng từ đếm số thành viên trong gia đình: 家有四口人; đếm người nói chung thì dùng 个.'},
+  {pre:'王一雪：我有两个孩子，你', blank:'呢', post:'？ 杨同乐：我', ans:'呢', exp:'“…，你呢？” = còn bạn thì sao? 呢 dùng để hỏi lại người kia về cùng chuyện vừa nói.'},
+  {pre:'杨同乐：我', blank:'没', post:'孩子。', hint:'(không — phủ định của 有)', ans:'没', exp:'Phủ định của 有 luôn là 没 (没有): 我没孩子; không bao giờ nói 不有.'},
+  {pre:'杨同乐：您女儿今年多', blank:'大', post:'？', hint:'(hỏi tuổi người lớn)', ans:'大', exp:'Hỏi tuổi người lớn dùng 多大; 几岁 chỉ dùng để hỏi tuổi trẻ nhỏ.'},
+  {pre:'您儿子', blank:'几', post:'岁？', hint:'(mấy — hỏi tuổi trẻ em)', ans:'几', exp:'Hỏi tuổi trẻ nhỏ (thường dưới 10 tuổi) dùng 几岁; 几 dùng để hỏi số nhỏ.'},
+  {pre:'我家有四口人，爸爸、妈妈、妹妹', blank:'和', post:'我。', hint:'(và)', ans:'和', exp:'和 = và, nối các danh từ; khi liệt kê, 和 đứng trước thành phần cuối cùng: 妈妈、妹妹和我.'},
   {pre:'我有两个孩子，一个儿子，一个', blank:'女儿', post:'。', hint:'(con gái)', ans:'女儿'},
 ];
 
@@ -2160,14 +2160,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Phủ định của "有" (có) là gì?', opts:['没/没有', '不有', '不是', '没是'], ans:0},
-  {q:'"你家有几口人？" — "口" ở đây dùng để làm gì?', opts:['Lượng từ đếm người trong gia đình', 'Lượng từ đếm sách', 'Danh từ chỉ cái miệng', 'Động từ ăn uống'], ans:0},
-  {q:'"我有两个哥哥，你呢？" — "呢" dùng để làm gì?', opts:['Hỏi lại về tình huống tương tự đã nêu', 'Phủ định câu trước', 'Kết thúc câu trần thuật', 'Nhấn mạnh số nhiều'], ans:0},
-  {q:'Hỏi tuổi một em bé dưới 10 tuổi, dùng cụm từ nào?', opts:['几岁', '多大', '多少岁', '几年'], ans:0},
-  {q:'Hỏi tuổi một người trên 10 tuổi, dùng cụm từ nào?', opts:['多大', '几岁', '几年', '多少'], ans:0},
-  {q:'Số "2" khi đứng trước lượng từ (như 个) được đọc là gì?', opts:['两 (liǎng)', '二 (èr)', 'Cả hai đều được, không phân biệt', '贰 (đại tự)'], ans:0},
-  {q:'"我家有四口人，爸爸、妈妈、妹妹和我" — có bao nhiêu người trong câu?', opts:['4', '3', '5', '2'], ans:0},
-  {q:'"孩子" và "儿子" khác nhau thế nào?', opts:['孩子 = con nói chung, 儿子 = con trai cụ thể', 'Không khác gì cả', '孩子 chỉ dùng cho con gái', '儿子 chỉ dùng số nhiều'], ans:0},
+  {q:'Phủ định của "有" (có) là gì?', opts:['没/没有', '不有', '不是', '没是'], ans:0, exp:'有 chỉ phủ định bằng 没/没有: 我没有孩子. 不有 là sai; 不是 là phủ định của 是.'},
+  {q:'"你家有几口人？" — "口" ở đây dùng để làm gì?', opts:['Lượng từ đếm người trong gia đình', 'Lượng từ đếm sách', 'Danh từ chỉ cái miệng', 'Động từ ăn uống'], ans:0, exp:'Ở đây 口 là lượng từ đếm thành viên trong gia đình: 你家有几口人？= nhà bạn có mấy người?'},
+  {q:'"我有两个哥哥，你呢？" — "呢" dùng để làm gì?', opts:['Hỏi lại về tình huống tương tự đã nêu', 'Phủ định câu trước', 'Kết thúc câu trần thuật', 'Nhấn mạnh số nhiều'], ans:0, exp:'“…，你呢？” = còn bạn thì sao? 呢 hỏi lại về tình huống tương tự vừa nêu ở câu trước.'},
+  {q:'Hỏi tuổi một em bé dưới 10 tuổi, dùng cụm từ nào?', opts:['几岁', '多大', '多少岁', '几年'], ans:0, exp:'Trẻ nhỏ thì hỏi tuổi bằng 几岁 vì 几 dùng cho số nhỏ; 多大 dùng cho người lớn hơn.'},
+  {q:'Hỏi tuổi một người trên 10 tuổi, dùng cụm từ nào?', opts:['多大', '几岁', '几年', '多少'], ans:0, exp:'Người trên 10 tuổi hỏi bằng 多大; 几岁 chỉ dùng để hỏi trẻ nhỏ.'},
+  {q:'Số "2" khi đứng trước lượng từ (như 个) được đọc là gì?', opts:['两 (liǎng)', '二 (èr)', 'Cả hai đều được, không phân biệt', '贰 (đại tự)'], ans:0, exp:'Trước lượng từ, số 2 đọc là 两: 两个孩子, không nói 二个.'},
+  {q:'"我家有四口人，爸爸、妈妈、妹妹和我" — có bao nhiêu người trong câu?', opts:['4', '3', '5', '2'], ans:0, exp:'Đếm 爸爸、妈妈、妹妹 và 我 là 4 người, khớp với 四口人.'},
+  {q:'"孩子" và "儿子" khác nhau thế nào?', opts:['孩子 = con nói chung, 儿子 = con trai cụ thể', 'Không khác gì cả', '孩子 chỉ dùng cho con gái', '儿子 chỉ dùng số nhiều'], ans:0, exp:'孩子 là “con, trẻ con” nói chung (cả trai lẫn gái); 儿子 là con trai, 女儿 là con gái.'},
 ];
 
 // ══════════════════════════════════════════

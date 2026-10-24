@@ -1445,11 +1445,11 @@ var fillData = [
   { pre: '小雪，你们什么时候', blank: '开学', post: '？你准备好了吗？', hint: '(khai giảng)', ans: '开学' },
   { pre: '我们公司', blank: '后面', post: '有一个商店。', hint: '(phía sau)', ans: '后面' },
   { pre: '不好意思，你能', blank: '帮', post: '我叫一下白家月吗？', hint: '(giúp)', ans: '帮' },
-  { pre: '这个字写', blank: '错', post: '了，左边是“口”，不是“日”。', hint: '(sai)', ans: '错' },
+  { pre: '这个字写', blank: '错', post: '了，左边是“口”，不是“日”。', hint: '(sai)', ans: '错', exp: '错 là bổ ngữ kết quả: 写错了 = viết sai rồi.' },
   { pre: '看到生日礼物，儿子高兴地', blank: '笑', post: '了。', hint: '(cười)', ans: '笑' },
   { pre: '明天', blank: '考试', post: '，我在看书呢。', hint: '(thi)', ans: '考试' },
-  { pre: '饭菜', blank: '快要', post: '做好了。', hint: '(sắp)', ans: '快要' },
-  { pre: '是您准备考试', blank: '还是', post: '我准备考试？', hint: '(hay là)', ans: '还是' }
+  { pre: '饭菜', blank: '快要', post: '做好了。', hint: '(sắp)', ans: '快要', exp: '快要…了 = sắp… rồi: 饭菜快要做好了.' },
+  { pre: '是您准备考试', blank: '还是', post: '我准备考试？', hint: '(hay là)', ans: '还是', exp: 'Câu hỏi lựa chọn: A 还是 B？= A hay B?' }
 ];
 
 var sortData = [
@@ -1462,14 +1462,14 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '看到生日礼物，儿子高兴地＿＿了。', opts: ['笑', '帮', '考', '错'], ans: 0 },
-  { q: '这个字写＿＿了，左边是“口”，不是“日”。', opts: ['错', '好', '完', '对'], ans: 0 },
-  { q: '火车＿＿开了。', opts: ['快要', '很要', '太要', '真要'], ans: 0 },
-  { q: '我们下星期＿＿考试了。', opts: ['就要', '快要', '要快', '就快'], ans: 0 },
-  { q: 'Câu nào là câu hỏi lựa chọn?', opts: ['你喝奶茶还是喝咖啡？', '你喝奶茶吗？', '你喝不喝奶茶？', '你喝什么？'], ans: 0 },
-  { q: '“弟弟手很小。” là loại câu gì?', opts: ['Câu có cụm chủ vị làm vị ngữ', 'Câu so sánh', 'Câu hỏi lựa chọn', 'Câu chữ 把'], ans: 0 },
-  { q: 'Khi trong câu có trạng ngữ chỉ thời gian (下星期) thì thường dùng cấu trúc nào?', opts: ['就要……了', '快要……了', '快……了', '要……了'], ans: 0 },
-  { q: '“不错” nghĩa là gì?', opts: ['Khá tốt', 'Không sai', 'Rất tệ', 'Không biết'], ans: 0 }
+  { q: '看到生日礼物，儿子高兴地＿＿了。', opts: ['笑', '帮', '考', '错'], ans: 0, exp: '高兴地 là trạng ngữ chỉ cách cười; 笑 = cười.' },
+  { q: '这个字写＿＿了，左边是“口”，不是“日”。', opts: ['错', '好', '完', '对'], ans: 0, exp: '错 là bổ ngữ kết quả: 写错了 = viết sai, câu sau giải thích chỗ sai.' },
+  { q: '火车＿＿开了。', opts: ['快要', '很要', '太要', '真要'], ans: 0, exp: '快要…了 = sắp… rồi; không nói 很要/太要/真要.' },
+  { q: '我们下星期＿＿考试了。', opts: ['就要', '快要', '要快', '就快'], ans: 0, exp: 'Có từ chỉ thời gian (下星期) thì dùng 就要…了, không dùng 快要…了.' },
+  { q: 'Câu nào là câu hỏi lựa chọn?', opts: ['你喝奶茶还是喝咖啡？', '你喝奶茶吗？', '你喝不喝奶茶？', '你喝什么？'], ans: 0, exp: 'Câu hỏi lựa chọn dùng A 还是 B, đưa ra hai khả năng: 喝奶茶还是喝咖啡？' },
+  { q: '“弟弟手很小。” là loại câu gì?', opts: ['Câu có cụm chủ vị làm vị ngữ', 'Câu so sánh', 'Câu hỏi lựa chọn', 'Câu chữ 把'], ans: 0, exp: 'Vị ngữ là một cụm chủ vị: 弟弟 (chủ ngữ lớn) + 手很小 (cụm chủ vị).' },
+  { q: 'Khi trong câu có trạng ngữ chỉ thời gian (下星期) thì thường dùng cấu trúc nào?', opts: ['就要……了', '快要……了', '快……了', '要……了'], ans: 0, exp: '快要…了 không đi với từ chỉ thời gian cụ thể; có 下星期 thì dùng 就要…了.' },
+  { q: '“不错” nghĩa là gì?', opts: ['Khá tốt', 'Không sai', 'Rất tệ', 'Không biết'], ans: 0, exp: '不错 = khá tốt, được đấy (lời khen), không hiểu theo nghĩa đen “không sai”.' }
 ];
 
 var speakingData = {

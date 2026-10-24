@@ -2821,14 +2821,14 @@ var listenData = [];
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你们', blank:'上火车后', post:'看见王老师了吗？', hint:'(sau khi lên tàu)', ans:'上火车后'},
-  {pre:'', blank:'我看了一个电影', post:'。', hint:'(đã xem một bộ phim)', ans:'我看了一个电影'},
-  {pre:'你们会说汉语了，也', blank:'会写汉字了', post:'吗？', hint:'(cũng biết viết chữ Hán)', ans:'会写汉字了'},
-  {pre:'请大家', blank:'不要说话', post:'！', hint:'(đừng nói chuyện)', ans:'不要说话'},
-  {pre:'我会写', blank:'这些字了', post:'，您看！', hint:'(những chữ này rồi)', ans:'这些字了'},
+  {pre:'你们', blank:'上火车后', post:'看见王老师了吗？', hint:'(sau khi lên tàu)', ans:'上火车后', exp:'…后 = sau khi…; cụm thời gian 上火车后 đứng trước động từ 看见.'},
+  {pre:'', blank:'我看了一个电影', post:'。', hint:'(đã xem một bộ phim)', ans:'我看了一个电影', exp:'了 đứng ngay sau động từ (看了), trước tân ngữ có số lượng (一个电影), chỉ hành động đã hoàn thành.'},
+  {pre:'你们会说汉语了，也', blank:'会写汉字了', post:'吗？', hint:'(cũng biết viết chữ Hán)', ans:'会写汉字了', exp:'会 + động từ = biết làm; 了 cuối câu báo thay đổi: trước chưa biết, giờ đã biết viết chữ Hán.'},
+  {pre:'请大家', blank:'不要说话', post:'！', hint:'(đừng nói chuyện)', ans:'不要说话', exp:'不要 + động từ = đừng làm gì (nhắc nhở, cấm): 不要说话 = đừng nói chuyện.'},
+  {pre:'我会写', blank:'这些字了', post:'，您看！', hint:'(những chữ này rồi)', ans:'这些字了', exp:'了 cuối câu báo thay đổi: giờ đã biết viết những chữ này rồi; 这些 = những… này.'},
   {pre:'明年女儿', blank:'上中学', post:'。', hint:'(lên trung học)', ans:'上中学'},
-  {pre:'我们家', blank:'有了一个中学生', post:'。', hint:'(có một học sinh trung học)', ans:'有了一个中学生'},
-  {pre:'上学后，他们', blank:'都忙了', post:'。', hint:'(đều bận rộn)', ans:'都忙了'},
+  {pre:'我们家', blank:'有了一个中学生', post:'。', hint:'(có một học sinh trung học)', ans:'有了一个中学生', exp:'了 sau động từ 有 chỉ sự việc đã xảy ra, kèm tân ngữ có số lượng: 有了一个中学生.'},
+  {pre:'上学后，他们', blank:'都忙了', post:'。', hint:'(đều bận rộn)', ans:'都忙了', exp:'都 đứng sau chủ ngữ 他们 và trước tính từ; 了 báo tình huống mới: giờ đều bận cả.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2847,14 +2847,14 @@ var sortData = [
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"我看了一个电影。" nghĩa là gì?', opts:['Tôi đã xem một bộ phim.', 'Tôi đang xem phim.', 'Tôi muốn xem phim.', 'Tôi không xem phim.'], ans:0},
-  {q:'Trợ từ động thái "了(2)" đứng ở vị trí nào?', opts:['sau động từ, biểu thị hành động đã hoàn thành', 'cuối câu, biểu thị tình huống mới', 'trước động từ', 'sau tính từ'], ans:0},
-  {q:'"我们都会写了。" nghĩa là gì?', opts:['Chúng tôi đều biết viết rồi.', 'Chúng tôi chưa biết viết.', 'Chỉ có một người biết viết.', 'Chúng tôi không muốn viết.'], ans:0},
-  {q:'Phó từ phạm vi "都" có đặc điểm gì?', opts:['đối tượng được bao quát đứng trước 都', 'đối tượng được bao quát đứng sau 都', 'chỉ dùng trong câu hỏi', 'chỉ dùng với danh từ riêng'], ans:0},
-  {q:'"上课、下课、睡觉" được gọi là loại từ gì?', opts:['từ ly hợp (离合词)', 'từ láy', 'từ mượn', 'lượng từ'], ans:0},
-  {q:'"明年女儿上中学。" nghĩa là gì?', opts:['Sang năm con gái lên trung học.', 'Năm ngoái con gái học trung học.', 'Con gái không muốn học.', 'Con gái đã tốt nghiệp trung học.'], ans:0},
-  {q:'"上学后，他们都忙了。" nghĩa là gì?', opts:['Sau khi vào học, các con đều bận rộn cả.', 'Trước khi vào học, các con rất rảnh.', 'Các con không thích đi học.', 'Các con vẫn chưa đi học.'], ans:0},
-  {q:'Khi phủ định trợ từ động thái "了(2)", dùng từ nào và có giữ "了" không?', opts:['dùng "没", bỏ "了"', 'dùng "不", giữ "了"', 'dùng "没", giữ "了"', 'dùng "别", bỏ "了"'], ans:0},
+  {q:'"我看了一个电影。" nghĩa là gì?', opts:['Tôi đã xem một bộ phim.', 'Tôi đang xem phim.', 'Tôi muốn xem phim.', 'Tôi không xem phim.'], ans:0, exp:'了 sau động từ 看 chỉ hành động đã hoàn thành: 看了一个电影 = đã xem một bộ phim.'},
+  {q:'Trợ từ động thái "了(2)" đứng ở vị trí nào?', opts:['sau động từ, biểu thị hành động đã hoàn thành', 'cuối câu, biểu thị tình huống mới', 'trước động từ', 'sau tính từ'], ans:0, exp:'了(2) đứng ngay sau động từ, chỉ hành động đã hoàn thành; 了 ở cuối câu báo tình huống mới là 了(1).'},
+  {q:'"我们都会写了。" nghĩa là gì?', opts:['Chúng tôi đều biết viết rồi.', 'Chúng tôi chưa biết viết.', 'Chỉ có một người biết viết.', 'Chúng tôi không muốn viết.'], ans:0, exp:'都 = đều (bao quát 我们); 会写了 = đã biết viết rồi (了 chỉ sự thay đổi).'},
+  {q:'Phó từ phạm vi "都" có đặc điểm gì?', opts:['đối tượng được bao quát đứng trước 都', 'đối tượng được bao quát đứng sau 都', 'chỉ dùng trong câu hỏi', 'chỉ dùng với danh từ riêng'], ans:0, exp:'都 bao quát những người/vật đứng TRƯỚC nó: 我们都会写了; không đặt 都 trước 我们.'},
+  {q:'"上课、下课、睡觉" được gọi là loại từ gì?', opts:['từ ly hợp (离合词)', 'từ láy', 'từ mượn', 'lượng từ'], ans:0, exp:'上课、下课、睡觉 là từ ly hợp: gồm động từ + tân ngữ, có thể tách ra chen thành phần khác vào giữa.'},
+  {q:'"明年女儿上中学。" nghĩa là gì?', opts:['Sang năm con gái lên trung học.', 'Năm ngoái con gái học trung học.', 'Con gái không muốn học.', 'Con gái đã tốt nghiệp trung học.'], ans:0, exp:'明年 = sang năm; 上中学 = vào học trung học.'},
+  {q:'"上学后，他们都忙了。" nghĩa là gì?', opts:['Sau khi vào học, các con đều bận rộn cả.', 'Trước khi vào học, các con rất rảnh.', 'Các con không thích đi học.', 'Các con vẫn chưa đi học.'], ans:0, exp:'上学后 = sau khi đi học; 都忙了 = đều bận rồi (了 báo sự thay đổi).'},
+  {q:'Khi phủ định trợ từ động thái "了(2)", dùng từ nào và có giữ "了" không?', opts:['dùng "没", bỏ "了"', 'dùng "不", giữ "了"', 'dùng "没", giữ "了"', 'dùng "别", bỏ "了"'], ans:0, exp:'Phủ định việc đã hoàn thành dùng 没 + động từ và bỏ 了: 我没看电影, không nói 没看了.'},
 ];
 
 // ══════════════════════════════════════════

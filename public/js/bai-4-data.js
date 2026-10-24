@@ -1432,12 +1432,12 @@ var listenData = {
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'生日',blank:'快乐',post:'！',hint:'(vui vẻ)',ans:'快乐'},
-  {pre:'谢谢，这本书是你送',blank:'给',post:'我的吗？',hint:'(cho, tặng)',ans:'给'},
+  {pre:'谢谢，这本书是你送',blank:'给',post:'我的吗？',hint:'(cho, tặng)',ans:'给',exp:'送给 + người = tặng cho ai; 给 đứng ngay sau động từ 送.'},
   {pre:'对，是我',blank:'昨天',post:'买的。',hint:'(hôm qua — ôn Bài 3)',ans:'昨天'},
-  {pre:'你',blank:'非常',post:'喜欢踢足球，是不是？',hint:'(vô cùng, cực kỳ)',ans:'非常'},
+  {pre:'你',blank:'非常',post:'喜欢踢足球，是不是？',hint:'(vô cùng, cực kỳ)',ans:'非常',exp:'非常 + động từ tâm lý/tính từ = vô cùng, rất: 非常喜欢.'},
   {pre:'对，我是8岁',blank:'的时候',post:'开始踢足球的。',hint:'(khi, lúc)',ans:'的时候',exp:'……的时候 chỉ thời điểm một việc xảy ra.'},
-  {pre:'你',blank:'已经',post:'踢了多长时间了？',hint:'(đã)',ans:'已经'},
-  {pre:'',blank:'已经',post:'两年多了。',hint:'(đã)',ans:'已经'},
+  {pre:'你',blank:'已经',post:'踢了多长时间了？',hint:'(đã)',ans:'已经',exp:'已经 + động từ + 了 = đã… rồi; 已经 đứng trước động từ 踢.'},
+  {pre:'',blank:'已经',post:'两年多了。',hint:'(đã)',ans:'已经',exp:'已经 + thời lượng + 了 = đã được… rồi: 已经两年多了.'},
   {pre:'这个工作是谁',blank:'帮',post:'你介绍的？',hint:'(giúp)',ans:'帮'},
 ];
 

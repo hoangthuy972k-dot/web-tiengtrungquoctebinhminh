@@ -1561,19 +1561,19 @@ var matchData = [
 var fillData = [
   {pre:'老鼠',blank:'厌倦',post:'了宠物的生活，于是向山神请假。',hint:'(chán ngán)',ans:'厌倦'},
   {pre:'他总是在背后说别人坏话，同学们都很',blank:'厌恶',post:'他。',hint:'(chán ghét)',ans:'厌恶'},
-  {pre:'',blank:'倘若',post:'你还想回来，必须战胜大象，否则，你就永远留在动物世界吧。',hint:'(nếu như — văn viết)',ans:'倘若'},
+  {pre:'',blank:'倘若',post:'你还想回来，必须战胜大象，否则，你就永远留在动物世界吧。',hint:'(nếu như — văn viết)',ans:'倘若',exp:'倘若…，… = nếu như (văn viết, như 如果).'},
   {pre:'走出教室以后，我才',blank:'发觉',post:'手机忘在桌子上了。',hint:'(nhận ra)',ans:'发觉'},
   {pre:'他一向说话算数，从来没有违背过自己的',blank:'承诺',post:'。',hint:'(lời hứa)',ans:'承诺'},
   {pre:'选专业是大事，千万不能',blank:'草率',post:'决定。',hint:'(vội vàng, qua loa)',ans:'草率'},
   {pre:'它是那么弱小，丝毫没有',blank:'对抗',post:'大象的力量。',hint:'(chống lại, đối đầu)',ans:'对抗'},
   {pre:'这道拿手菜我是第一次',blank:'尝试',post:'，没想到大家都说好吃。',hint:'(thử)',ans:'尝试'},
   {pre:'网上的消息不一定都是真的，千万别',blank:'盲目',post:'相信。',hint:'(mù quáng)',ans:'盲目'},
-  {pre:'我可以',blank:'乘',post:'大象不注意，进到大象鼻子里去。',hint:'(nhân lúc)',ans:'乘'},
+  {pre:'我可以',blank:'乘',post:'大象不注意，进到大象鼻子里去。',hint:'(nhân lúc)',ans:'乘',exp:'乘 + cơ hội/lúc = nhân lúc (như 趁): 乘大象不注意.'},
   {pre:'他一口气跑上了十楼，站在门口直',blank:'喘气',post:'。',hint:'(thở dốc)',ans:'喘气'},
   {pre:'孩子已经认识到错误了，你就',blank:'饶恕',post:'他这一次吧。',hint:'(tha thứ)',ans:'饶恕'},
   {pre:'倘若你对一件事毫无兴趣，那么有人',blank:'强迫',post:'你做时，你会觉得痛苦。',hint:'(ép buộc)',ans:'强迫'},
   {pre:'新的交通规定从下个月起正式',blank:'实施',post:'。',hint:'(thực thi)',ans:'实施'},
-  {pre:'我只想和她开个玩笑，',blank:'不料',post:'她却生气了。',hint:'(không ngờ)',ans:'不料'},
+  {pre:'我只想和她开个玩笑，',blank:'不料',post:'她却生气了。',hint:'(không ngờ)',ans:'不料',exp:'不料 = không ngờ (kết quả trái với dự tính), thường mở đầu vế sau: 不料她却生气了.'},
   {pre:'下半场我们发起了',blank:'猛烈',post:'的进攻，终于攻入了一球。',hint:'(dữ dội)',ans:'猛烈'},
   {pre:'老鼠像',blank:'子弹',post:'一样被射了出来。',hint:'(viên đạn)',ans:'子弹'},
   {pre:'不要',blank:'蔑视',post:'任何一个对手，哪怕他看起来很弱小。',hint:'(coi thường)',ans:'蔑视'},
@@ -1589,7 +1589,7 @@ var fillData = [
   {pre:'我们坐在海边，静静地看着',blank:'夕阳',post:'慢慢落下。',hint:'(mặt trời chiều)',ans:'夕阳'},
   {pre:'一不',blank:'留神',post:'，猫还会上老鼠的当。',hint:'(chú ý, coi chừng)',ans:'留神'},
   {pre:'为了保护野生动物，这里已经禁止',blank:'打猎',post:'了。',hint:'(đi săn)',ans:'打猎'},
-  {pre:'他',blank:'不顾',post:'危险，跳进河里救起了落水的孩子。',hint:'(bất chấp)',ans:'不顾'},
+  {pre:'他',blank:'不顾',post:'危险，跳进河里救起了落水的孩子。',hint:'(bất chấp)',ans:'不顾',exp:'不顾 + danh từ = bất chấp, không đoái hoài đến: 不顾危险.'},
   {pre:'小鸟在网里拼命',blank:'挣扎',post:'，可怎么也飞不出去。',hint:'(vùng vẫy)',ans:'挣扎'}
 ];
 

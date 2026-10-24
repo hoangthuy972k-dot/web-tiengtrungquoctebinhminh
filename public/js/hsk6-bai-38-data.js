@@ -1765,8 +1765,8 @@ var matchData = [
 // ĐIỀN TỪ — mỗi từ của bài ít nhất một câu (fill + chọn từ)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这位运动员',blank:'屡次',post:'在国际比赛中获得冠军，是全国人民的骄傲。',hint:'(nhiều lần)',ans:'屡次'},
-  {pre:'夏天，冰箱里总放着几',blank:'罐',post:'啤酒和可乐。',hint:'(lon)',ans:'罐'},
+  {pre:'这位运动员',blank:'屡次',post:'在国际比赛中获得冠军，是全国人民的骄傲。',hint:'(nhiều lần)',ans:'屡次',exp:'屡次 = nhiều lần (văn viết): 屡次获得冠军.'},
+  {pre:'夏天，冰箱里总放着几',blank:'罐',post:'啤酒和可乐。',hint:'(lon)',ans:'罐',exp:'罐 là lượng từ cho lon, hộp: 几罐啤酒.'},
   {pre:'这笔奖学金的',blank:'数额',post:'虽然不大，但对我来说意义重大。',hint:'(khoản, mức tiền)',ans:'数额'},
   {pre:'母爱是文学作品中',blank:'永恒',post:'的主题。',hint:'(vĩnh hằng, muôn thuở)',ans:'永恒'},
   {pre:'他觉得这份工作太简单，',blank:'不屑',post:'去做，结果一直找不到工作。',hint:'(chẳng thèm)',ans:'不屑'},

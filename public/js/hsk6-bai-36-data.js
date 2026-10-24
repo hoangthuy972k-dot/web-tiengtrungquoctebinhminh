@@ -5639,6 +5639,7 @@ var fillData = [
   "blank": "截止",
   "post": "日期是下周五，别忘了交材料。",
   "hint": "(hết hạn)",
+  "exp": "截止日期 = hạn chót (截止 = hết hạn, dừng ở một mốc). Khác 截至 (tính đến…) đi với mốc thời gian.",
   "ans": "截止"
  },
  {
@@ -5646,6 +5647,7 @@ var fillData = [
   "blank": "终止",
   "post": "。",
   "hint": "(kết thúc, dừng)",
+  "exp": "终止 = chấm dứt, dừng hẳn một hoạt động đang diễn ra. 截止 chỉ dùng cho hạn chót (截止日期).",
   "ans": "终止"
  },
  {

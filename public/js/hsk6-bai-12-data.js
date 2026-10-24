@@ -1467,7 +1467,7 @@ var fillData = [
   {pre:'这种鸟',blank:'雌雄',post:'很难分辨，连专家也常常认错。',hint:'(đực cái)',ans:'雌雄'},
   {pre:'据说狗的',blank:'祖先',post:'是狼。',hint:'(tổ tiên)',ans:'祖先'},
   {pre:'这是上一任经理',blank:'遗留',post:'下来的问题，处理起来很麻烦。',hint:'(để lại)',ans:'遗留'},
-  {pre:'你别生气',blank:'嘛',post:'，我不是故意的。',hint:'(trợ từ: … mà)',ans:'嘛'},
+  {pre:'你别生气',blank:'嘛',post:'，我不是故意的。',hint:'(trợ từ: … mà)',ans:'嘛',exp:'嘛 = trợ từ cuối câu, mang ý khuyên nhủ, nũng nịu hoặc "điều hiển nhiên": 你别生气嘛.'},
   {pre:'这个传统已经',blank:'延续',post:'了几百年。',hint:'(kéo dài, tiếp nối)',ans:'延续'},
   {pre:'保护环境，就是为子孙',blank:'后代',post:'着想。',hint:'(đời sau)',ans:'后代'},
   {pre:'妈妈站在门口，大声',blank:'呼唤',post:'着孩子的名字。',hint:'(gọi to)',ans:'呼唤'},

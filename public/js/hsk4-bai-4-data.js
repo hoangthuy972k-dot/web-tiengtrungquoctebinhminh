@@ -3510,7 +3510,7 @@ var matchData = [
 ];
 
 var fillData = [
-  {pre:'别提了！我',blank:'',post:'新工作比以前的好，没想到还没有以前好呢。',hint:'yǐwéi',ans:'以为'},
+  {pre:'别提了！我',blank:'',post:'新工作比以前的好，没想到还没有以前好呢。',hint:'yǐwéi',ans:'以为',exp:'以为 = tưởng (nhưng thực tế sai). Vế sau 没想到还没有以前好 cho thấy suy nghĩ ban đầu sai.'},
   {pre:'完全',blank:'',post:'一个新的工作需要一年时间。',hint:'shìyìng',ans:'适应'},
   {pre:'你才到新公司，不要太急着',blank:'',post:'，多学习才是最重要的。',hint:'zhuàn qián',ans:'赚钱'},
   {pre:'按',blank:'',post:'的计划应该是两周，但是我们可以提前完成。',hint:'yuánlái',ans:'原来'},
@@ -3519,10 +3519,10 @@ var fillData = [
   {pre:'谢谢你的',blank:'',post:'，我差点儿忘记了。',hint:'tíxǐng',ans:'提醒'},
   {pre:'这样我就不会手忙脚',blank:'',post:'了。',hint:'luàn',ans:'乱'},
   {pre:'我们和上次那个公司的',blank:'',post:'终于谈成了。',hint:'shēngyi',ans:'生意'},
-  {pre:'我原来以为做生意很简单，后来才发现其实',blank:'',post:'不容易。',hint:'bìng',ans:'并'},
+  {pre:'我原来以为做生意很简单，后来才发现其实',blank:'',post:'不容易。',hint:'bìng',ans:'并',exp:'并 + 不/没 = hoàn toàn không (phủ nhận điều người ta tưởng): 其实并不容易.'},
   {pre:'重要的是要多',blank:'',post:'经验。',hint:'jīlěi',ans:'积累'},
   {pre:'我相信经过大家的努力，一切都会好的，这是',blank:'',post:'。',hint:'yíqiè',ans:'一切'},
-  {pre:'我们今年的工作都已经',blank:'',post:'计划完成了。',hint:'ànzhào',ans:'按照'},
+  {pre:'我们今年的工作都已经',blank:'',post:'计划完成了。',hint:'ànzhào',ans:'按照',exp:'按照 + kế hoạch/quy định = theo, dựa theo: 按照计划完成.'},
   {pre:'公司决定这个月给每人多发三千元',blank:'',post:'。',hint:'jiǎngjīn',ans:'奖金'},
   {pre:'如果对工作没有',blank:'',post:'心，也很难把工作做好。',hint:'zérèn',ans:'责任'},
 ];

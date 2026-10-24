@@ -1470,9 +1470,9 @@ var fillData = [
   {pre:'你喜欢吃什么',blank:'馅儿',post:'的饺子？',hint:'(nhân bánh)',ans:'馅儿'},
   {pre:'听说要去旅游，妹妹笑得别提多',blank:'灿烂',post:'了。',hint:'(rạng rỡ)',ans:'灿烂'},
   {pre:'他太爱',blank:'面子',post:'了，明明不懂也不肯问别人。',hint:'(thể diện, sĩ diện)',ans:'面子'},
-  {pre:'我花了三天时间，把那篇文章从头到尾研究了一',blank:'番',post:'。',hint:'(lượng từ: lượt)',ans:'番'},
-  {pre:'按时上课，这是对学生',blank:'起码',post:'的要求。',hint:'(tối thiểu — làm định ngữ)',ans:'起码'},
-  {pre:'考试前别',blank:'过于',post:'紧张，只要正常发挥就行。',hint:'(quá — văn viết)',ans:'过于'},
+  {pre:'我花了三天时间，把那篇文章从头到尾研究了一',blank:'番',post:'。',hint:'(lượng từ: lượt)',ans:'番',exp:'V + 了一番 = làm một lượt (công phu, tốn sức): 研究了一番.'},
+  {pre:'按时上课，这是对学生',blank:'起码',post:'的要求。',hint:'(tối thiểu — làm định ngữ)',ans:'起码',exp:'起码 = tối thiểu, ít nhất; 起码的要求 = yêu cầu tối thiểu.'},
+  {pre:'考试前别',blank:'过于',post:'紧张，只要正常发挥就行。',hint:'(quá — văn viết)',ans:'过于',exp:'过于 + tính từ = quá (văn viết): 过于紧张.'},
   {pre:'父母对孩子的',blank:'期望',post:'太高，有时会给孩子带来很大压力。',hint:'(kỳ vọng)',ans:'期望'}
 ];
 

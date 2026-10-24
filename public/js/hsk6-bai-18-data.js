@@ -1561,9 +1561,9 @@ var matchData = [
 var fillData = [
   {pre:'一粒小小的种子能长成参天大树，大自然真是太',blank:'神奇',post:'了！',hint:'(kỳ diệu)',ans:'神奇'},
   {pre:'夏天喝一碗',blank:'丝瓜',post:'汤，又清淡又解暑。',hint:'(mướp)',ans:'丝瓜'},
-  {pre:'他答应了一声，',blank:'随即',post:'把手里的东西递给我。',hint:'(ngay sau đó)',ans:'随即'},
-  {pre:'石头缝里长出了一',blank:'株',post:'小草，显得生机勃勃。',hint:'(lượng từ: khóm, cây)',ans:'株'},
-  {pre:'医生让我每天饭后吃两',blank:'粒',post:'药。',hint:'(viên)',ans:'粒'},
+  {pre:'他答应了一声，',blank:'随即',post:'把手里的东西递给我。',hint:'(ngay sau đó)',ans:'随即',exp:'随即 = ngay sau đó, liền (văn viết): 随即把东西递给我.'},
+  {pre:'石头缝里长出了一',blank:'株',post:'小草，显得生机勃勃。',hint:'(lượng từ: khóm, cây)',ans:'株',exp:'株 là lượng từ cho cây, cỏ (văn viết): 一株小草.'},
+  {pre:'医生让我每天饭后吃两',blank:'粒',post:'药。',hint:'(viên)',ans:'粒',exp:'粒 là lượng từ cho vật nhỏ dạng hạt, viên: 两粒药.'},
   {pre:'化肥用得太多，会致使',blank:'土壤',post:'越来越差。',hint:'(đất)',ans:'土壤'},
   {pre:'湄公河三角洲土地',blank:'肥沃',post:'，是越南重要的粮食产区。',hint:'(màu mỡ)',ans:'肥沃'},
   {pre:'春雨',blank:'滋润',post:'着大地，田野里一片生机。',hint:'(tưới tắm)',ans:'滋润'},
@@ -1571,10 +1571,10 @@ var fillData = [
   {pre:'听说他放弃了留学的机会，大家都感到很',blank:'惊讶',post:'。',hint:'(bất ngờ, ngạc nhiên)',ans:'惊讶'},
   {pre:'大家都劝他别熬夜，他',blank:'愣',post:'是不听。',hint:'(cứ, khăng khăng)',ans:'愣'},
   {pre:'让三岁的孩子每天学五个小时，简直是',blank:'拔苗助长',post:'。',hint:'(nóng vội hỏng việc)',ans:'拔苗助长'},
-  {pre:'他就是这样，',blank:'宁愿',post:'吃苦受累，也决不求人。',hint:'(thà)',ans:'宁愿'},
+  {pre:'他就是这样，',blank:'宁愿',post:'吃苦受累，也决不求人。',hint:'(thà)',ans:'宁愿',exp:'宁愿A，也(决)不B = thà A chứ nhất định không B.'},
   {pre:'放学后，我看到了满脸',blank:'疲倦',post:'的妈妈。',hint:'(mệt mỏi)',ans:'疲倦'},
   {pre:'那一根细细的',blank:'茎',post:'怎么承担得住两个大瓜呢？',hint:'(cọng, thân dây)',ans:'茎'},
-  {pre:'那',blank:'幢',post:'红色的小楼就是我们的图书馆。',hint:'(lượng từ: tòa)',ans:'幢'},
+  {pre:'那',blank:'幢',post:'红色的小楼就是我们的图书馆。',hint:'(lượng từ: tòa)',ans:'幢',exp:'幢 là lượng từ cho tòa nhà (như 栋): 那幢小楼.'},
   {pre:'这条山路又窄又',blank:'陡峭',post:'，大家一定要留神。',hint:'(dốc đứng)',ans:'陡峭'},
   {pre:'路两旁是一排排高大',blank:'挺拔',post:'的白杨树。',hint:'(thẳng tắp)',ans:'挺拔'},
   {pre:'下了几场雨，山上的草木更加',blank:'茂盛',post:'了。',hint:'(xanh tốt)',ans:'茂盛'},
@@ -1601,12 +1601,12 @@ var fillData = [
   {pre:'天花板上',blank:'吊',post:'着一盏漂亮的灯。',hint:'(treo)',ans:'吊'},
   {pre:'船',blank:'晃',post:'得很厉害，好几个人都晕船了。',hint:'(chao đảo)',ans:'晃'},
   {pre:'只凭一张照片，还很难',blank:'断定',post:'他就是那个人。',hint:'(khẳng định)',ans:'断定'},
-  {pre:'货物',blank:'连同',post:'清单一并送过去。',hint:'(cùng với, kể cả)',ans:'连同'},
+  {pre:'货物',blank:'连同',post:'清单一并送过去。',hint:'(cùng với, kể cả)',ans:'连同',exp:'A连同B = A cùng với B (gộp chung): 货物连同清单一并送过去.'},
   {pre:'这条山路',blank:'凹凸',post:'不平，骑车的时候要特别小心。',hint:'(lồi lõm)',ans:'凹凸'},
   {pre:'为了方便村民出行，政府在河上',blank:'修建',post:'了一座大桥。',hint:'(xây dựng)',ans:'修建'},
   {pre:'一个十岁的孩子能解出这道题，简直',blank:'不可思议',post:'。',hint:'(khó tin nổi)',ans:'不可思议'},
   {pre:'最近几天，气温一直',blank:'徘徊',post:'在三十度左右。',hint:'(dao động quanh)',ans:'徘徊'},
-  {pre:'不管遇到什么困难，我们都会',blank:'一如既往',post:'地努力下去。',hint:'(trước sau như một)',ans:'一如既往'}
+  {pre:'不管遇到什么困难，我们都会',blank:'一如既往',post:'地努力下去。',hint:'(trước sau như một)',ans:'一如既往',exp:'一如既往 = trước sau như một, vẫn như xưa: 一如既往地努力.'}
 ];
 
 // ══════════════════════════════════════════

@@ -1495,7 +1495,7 @@ var fillData = [
   {pre:'台下几百双眼睛都在',blank:'注视',post:'着他，他紧张得手心直冒汗。',hint:'(nhìn chăm chú)',ans:'注视'},
   {pre:'这只小猫身上有黑色的花',blank:'斑',post:'，特别可爱。',hint:'(đốm, vằn)',ans:'斑'},
   {pre:'由于过度捕杀，这种动物已经',blank:'濒临',post:'灭绝。',hint:'(đứng bên bờ, kề sát)',ans:'濒临'},
-  {pre:'毕业以后，她回到家乡，',blank:'致力',post:'于山区儿童的教育事业。',hint:'(dốc sức)',ans:'致力'},
+  {pre:'毕业以后，她回到家乡，',blank:'致力',post:'于山区儿童的教育事业。',hint:'(dốc sức)',ans:'致力',exp:'致力于 + lĩnh vực = dốc sức vào: 致力于教育事业.'},
   {pre:'他虽然只是个高中生，却很有',blank:'领袖',post:'风范，同学们都愿意听他的。',hint:'(lãnh tụ, thủ lĩnh)',ans:'领袖'},
   {pre:'二十年没见，老同学变化大得我几乎',blank:'辨认',post:'不出来了。',hint:'(nhận ra)',ans:'辨认'},
   {pre:'年轻人不应该满足于',blank:'现状',post:'，而应该勇于挑战自己。',hint:'(hiện trạng)',ans:'现状'},

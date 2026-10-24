@@ -1550,7 +1550,7 @@ var fillData = [
   {pre:'乱砍树木会破坏',blank:'生态',post:'平衡，最终伤害的是人类自己。',hint:'(sinh thái)',ans:'生态'},
   {pre:'多参观博物馆，可以提高孩子的',blank:'审美',post:'能力。',hint:'(thẩm mỹ)',ans:'审美'},
   {pre:'下龙湾早在1994年就被列入了世界自然',blank:'遗产',post:'名录。',hint:'(di sản)',ans:'遗产'},
-  {pre:'看了这部纪录片，同学们',blank:'无不',post:'为哈尼人的智慧感到惊叹。',hint:'(không ai không, đều)',ans:'无不'}
+  {pre:'看了这部纪录片，同学们',blank:'无不',post:'为哈尼人的智慧感到惊叹。',hint:'(không ai không, đều)',ans:'无不',exp:'无不 = không ai/cái gì không… = đều (phủ định kép, văn viết).'}
 ];
 
 // ══════════════════════════════════════════

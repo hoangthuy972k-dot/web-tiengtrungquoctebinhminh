@@ -880,7 +880,7 @@ var fillData = [
   {pre:'每到',blank:'黄昏',post:'，爷爷都会坐在门口，等孙子放学回家。',hint:'(lúc chạng vạng)',ans:'黄昏'},
   {pre:'夜幕',blank:'降临',post:'，城市的灯一盏一盏地亮了起来。',hint:'(buông xuống, đến)',ans:'降临'},
   {pre:'每年清明节，我们全家都去祖先的',blank:'坟墓',post:'前扫墓。',hint:'(phần mộ)',ans:'坟墓'},
-  {pre:'这地方',blank:'向来',post:'热闹，买东西的、逛街的、看热闹的，人山人海。',hint:'(xưa nay, luôn luôn)',ans:'向来'},
+  {pre:'这地方',blank:'向来',post:'热闹，买东西的、逛街的、看热闹的，人山人海。',hint:'(xưa nay, luôn luôn)',ans:'向来',exp:'向来 = xưa nay, từ trước đến giờ vẫn vậy.'},
   {pre:'猫跳上桌子，把我的杯子摔了个',blank:'粉碎',post:'。',hint:'(tan tành, vỡ vụn)',ans:'粉碎'}
 ];
 

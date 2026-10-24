@@ -1313,17 +1313,17 @@ var fillData = [
   {pre:'他嘴上说支持我，心里却不这么想，真',blank:'虚伪',post:'！',hint:'(giả dối)',ans:'虚伪'},
   {pre:'请不要把你的',blank:'思想',post:'强加给我。',hint:'(suy nghĩ, tư tưởng)',ans:'思想'},
   {pre:'考试失败以后，我认真',blank:'反省',post:'了自己的学习方法。',hint:'(tự kiểm điểm)',ans:'反省'},
-  {pre:'',blank:'据说',post:'这家饭馆的烤鸭特别好吃，我们去尝尝吧。',hint:'(nghe nói)',ans:'据说'},
+  {pre:'',blank:'据说',post:'这家饭馆的烤鸭特别好吃，我们去尝尝吧。',hint:'(nghe nói)',ans:'据说',exp:'据说 = nghe nói, tương truyền; đặt đầu câu dẫn thông tin không trực tiếp.'},
   {pre:'她的穿着很有',blank:'个性',post:'，大家一眼就能认出她。',hint:'(cá tính)',ans:'个性'},
   {pre:'一个人去原始丛林太',blank:'冒险',post:'了。',hint:'(mạo hiểm)',ans:'冒险'},
   {pre:'这些动物生活在热带',blank:'丛林',post:'里。',hint:'(rừng rậm)',ans:'丛林'},
   {pre:'中国是世界上的',blank:'文明',post:'古国之一。',hint:'(văn minh)',ans:'文明'},
   {pre:'学校带我们看了一部有关古代文明的',blank:'纪录',post:'片。',hint:'(tài liệu — phim tài liệu)',ans:'纪录'},
   {pre:'爸爸妈妈工作太忙，就',blank:'雇',post:'了一位阿姨来照顾奶奶。',hint:'(thuê)',ans:'雇'},
-  {pre:'按照老人教的方法，他几乎每天都能钓到5斤',blank:'来',post:'重的大鱼。',hint:'(khoảng, chừng)',ans:'来'},
-  {pre:'学校今年又来了一',blank:'批',post:'新老师。',hint:'(tốp, đợt — lượng từ)',ans:'批'},
+  {pre:'按照老人教的方法，他几乎每天都能钓到5斤',blank:'来',post:'重的大鱼。',hint:'(khoảng, chừng)',ans:'来',exp:'Số + 来 + lượng từ = khoảng, hơn kém một chút: 5斤来重 = chừng 5 cân.'},
+  {pre:'学校今年又来了一',blank:'批',post:'新老师。',hint:'(tốp, đợt — lượng từ)',ans:'批',exp:'批 là lượng từ cho một tốp, một đợt (người/hàng): 一批新老师.'},
   {pre:'爷爷七十多岁了，爬山的时候还',blank:'健步如飞',post:'。',hint:'(bước đi thoăn thoắt)',ans:'健步如飞'},
-  {pre:'',blank:'一连',post:'下了一个星期的雨，衣服都干不了。',hint:'(liên tiếp, liền)',ans:'一连'},
+  {pre:'',blank:'一连',post:'下了一个星期的雨，衣服都干不了。',hint:'(liên tiếp, liền)',ans:'一连',exp:'一连 + V/số lượng = liền, liên tiếp: 一连下了一个星期的雨.'},
   {pre:'很多外国公司纷纷来这里',blank:'投资',post:'。',hint:'(đầu tư)',ans:'投资'},
   {pre:'孔子是中国历史上非常重要的',blank:'人物',post:'。',hint:'(nhân vật)',ans:'人物'},
   {pre:'他说话太直，经常',blank:'得罪',post:'人。',hint:'(làm mất lòng)',ans:'得罪'},
@@ -1338,7 +1338,7 @@ var fillData = [
   {pre:'她有些',blank:'寂寞',post:'，想让我到她那儿陪她聊聊天。',hint:'(cô đơn)',ans:'寂寞'},
   {pre:'晚上睡不好，第二天的学习',blank:'效率',post:'就很低。',hint:'(hiệu suất, hiệu quả)',ans:'效率'},
   {pre:'这批当地人个个都表现',blank:'出色',post:'。',hint:'(xuất sắc)',ans:'出色'},
-  {pre:'经过沟通，大导演',blank:'总算',post:'搞明白了。',hint:'(cuối cùng cũng)',ans:'总算'}
+  {pre:'经过沟通，大导演',blank:'总算',post:'搞明白了。',hint:'(cuối cùng cũng)',ans:'总算',exp:'总算 = cuối cùng cũng (sau nhiều cố gắng, chờ đợi): 总算搞明白了.'}
 ];
 
 // ══════════════════════════════════════════

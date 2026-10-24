@@ -3511,13 +3511,13 @@ var matchData = [
 ];
 
 var fillData = [
-  {pre:'怎么又买了这么多饼干和巧克力？',blank:'',post:'你不减肥了？',hint:'nándào',ans:'难道'},
-  {pre:'如果你想减肥，就',blank:'',post:'少吃东西，而且要多运动。',hint:'děi',ans:'得'},
+  {pre:'怎么又买了这么多饼干和巧克力？',blank:'',post:'你不减肥了？',hint:'nándào',ans:'难道',exp:'难道…吗/？ = lẽ nào…, câu phản vấn tỏ ý ngạc nhiên: lẽ nào cậu không giảm cân nữa?'},
+  {pre:'如果你想减肥，就',blank:'',post:'少吃东西，而且要多运动。',hint:'děi',ans:'得',exp:'得 đọc děi = phải (khẩu ngữ): 就得少吃东西. Không đọc de như trợ từ bổ ngữ.'},
   {pre:'要想减肥成功，只能',blank:'',post:'，才会慢慢有效果。',hint:'jiānchí',ans:'坚持'},
   {pre:'我本来已经打算',blank:'',post:'了，但是你刚才的话让我改变了主意。',hint:'fàngqì',ans:'放弃'},
-  {pre:'每次看你比赛，感觉你',blank:'',post:'就赢了。',hint:'qīngqīngsōngsōng',ans:'轻轻松松'},
-  {pre:'任何成功都要',blank:'',post:'努力才能得到。',hint:'tōngguò',ans:'通过'},
-  {pre:'当时她的父母和亲戚都不支持她，',blank:'',post:'她坚持自己的选择。',hint:'kěshì',ans:'可是'},
+  {pre:'每次看你比赛，感觉你',blank:'',post:'就赢了。',hint:'qīngqīngsōngsōng',ans:'轻轻松松',exp:'Lặp tính từ AABB: 轻轻松松 = rất nhẹ nhàng, dễ dàng; làm trạng ngữ trước động từ 赢.'},
+  {pre:'任何成功都要',blank:'',post:'努力才能得到。',hint:'tōngguò',ans:'通过',exp:'通过 + cách thức = thông qua, bằng: 要通过努力才能得到.'},
+  {pre:'当时她的父母和亲戚都不支持她，',blank:'',post:'她坚持自己的选择。',hint:'kěshì',ans:'可是',exp:'可是 = nhưng; nối hai vế trái ngược: bố mẹ không ủng hộ, nhưng cô ấy vẫn kiên trì.'},
   {pre:'现在终于向所有人证明了她的选择是',blank:'',post:'的。',hint:'zhèngquè',ans:'正确'},
   {pre:'不要担心',blank:'',post:'，不要考虑会不会失败。',hint:'jiéguǒ',ans:'结果'},
   {pre:'即使最后',blank:'',post:'了也没有关系，因为至少你已经努力过。',hint:'shībài',ans:'失败'},

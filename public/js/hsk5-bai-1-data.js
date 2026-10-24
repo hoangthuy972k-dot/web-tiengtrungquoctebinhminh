@@ -592,12 +592,12 @@ var fillData = [
   {pre:'画画儿的时候我们要注意',blank:'细节',post:'。',hint:'(chi tiết)',ans:'细节'},
   {pre:'对比后，有三对夫妻',blank:'入围',post:'。',hint:'(lọt vào vòng trong)',ans:'入围'},
   {pre:'他几年如一日地照顾她，从不',blank:'抱怨',post:'。',hint:'(than phiền)',ans:'抱怨'},
-  {pre:'评委们听了',blank:'暗暗',post:'点头。',hint:'(thầm)',ans:'暗暗'},
+  {pre:'评委们听了',blank:'暗暗',post:'点头。',hint:'(thầm)',ans:'暗暗',exp:'暗暗 = thầm, lặng lẽ (không nói ra): 暗暗点头, 暗暗高兴. Làm trạng ngữ trước động từ.'},
   {pre:'男人的头',blank:'靠',post:'在女人的肩膀上，睡着了。',hint:'(tựa)',ans:'靠'},
-  {pre:'这个女人为了不影响丈夫睡觉，',blank:'居然',post:'放弃这次机会！',hint:'(không ngờ lại)',ans:'居然'},
-  {pre:'今天',blank:'轮',post:'到我打扫教室了。',hint:'(đến lượt)',ans:'轮'},
+  {pre:'这个女人为了不影响丈夫睡觉，',blank:'居然',post:'放弃这次机会！',hint:'(không ngờ lại)',ans:'居然',exp:'居然 = không ngờ lại (việc vượt ngoài dự đoán, như 竟然): 居然放弃这次机会.'},
+  {pre:'今天',blank:'轮',post:'到我打扫教室了。',hint:'(đến lượt)',ans:'轮',exp:'轮到 + người + V = đến lượt ai làm gì: 今天轮到我打扫教室.'},
   {pre:'昨晚半夜我被蚊子',blank:'叮',post:'醒了。',hint:'(muỗi đốt)',ans:'叮'},
-  {pre:'这个问题该',blank:'如何',post:'解决？',hint:'(như thế nào — văn viết)',ans:'如何'},
+  {pre:'这个问题该',blank:'如何',post:'解决？',hint:'(như thế nào — văn viết)',ans:'如何',exp:'如何 = như thế nào (văn viết, như 怎么): 该如何解决. 如何 không dùng để hỏi nguyên nhân.'},
   {pre:'机会是留给耐心',blank:'等待',post:'的人的。',hint:'(chờ đợi)',ans:'等待'}
 ];
 

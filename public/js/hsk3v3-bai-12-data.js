@@ -2552,16 +2552,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '今天是＿＿，公园里人应该不多。', opts: ['工作日', '季节', '新闻', '地方'], ans: 0 },
-  { q: '我车里有一＿＿伞和一件雨衣。', opts: ['件', '条', '把', '张'], ans: 2 },
-  { q: '好像＿＿里说今天有雨。', opts: ['季节', '新闻', '雨衣', '叶子'], ans: 1 },
-  { q: '我今天下午有课，不能去太远的＿＿。', opts: ['刚才', '常常', '季节', '地方'], ans: 3 },
-  { q: '夏天白天很热，但是晚上比较＿＿。', opts: ['凉快', '变化', '关注', '刚才'], ans: 0 },
-  { q: '秋天树上的叶子都＿＿了红色、黄色。', opts: ['变', '变成', '变化', '借'], ans: 1 },
-  { q: '我没＿＿过北京的天气，但是新闻里说过……', opts: ['开花', '刮', '关注', '借'], ans: 2 },
-  { q: 'Chọn câu đúng: "Hoặc là ngày mai, hoặc là ngày kia, cô sẽ gọi điện cho em."', opts: ['还是明天去，还是后天去，我给你打电话。', '或者明天去，或者后天去，我给你打电话。', '明天或者去，后天或者去，我给你打电话。', '或者明天去，后天去或者，我给你打电话。'], ans: 1 },
-  { q: 'Chọn câu đúng: "Sao bỗng nhiên lại nổi gió thế?"', opts: ['怎么突然就刮风起来了？', '怎么突然就起来刮风了？', '怎么突然就刮风来起了？', '怎么突然就刮起风来了？'], ans: 3 },
-  { q: '"我每天书包里都放着雨伞，就今天没带。" — 「就」 ở đây biểu thị gì?', opts: ['Ngay lập tức (sắp xảy ra)', 'Số lượng nhiều', 'Tình huống ngoại lệ — chỉ riêng hôm nay', 'Thời gian sớm hơn dự kiến'], ans: 2 }
+  { q: '今天是＿＿，公园里人应该不多。', opts: ['工作日', '季节', '新闻', '地方'], ans: 0, exp: '工作日 = ngày làm việc, nên công viên ít người. 季节, 新闻 không hợp.' },
+  { q: '我车里有一＿＿伞和一件雨衣。', opts: ['件', '条', '把', '张'], ans: 2, exp: '把 còn là lượng từ cho vật có tay cầm: 一把伞. 件 dùng cho áo, 条 cho vật dài.' },
+  { q: '好像＿＿里说今天有雨。', opts: ['季节', '新闻', '雨衣', '叶子'], ans: 1, exp: '新闻里说 = trên bản tin nói. 季节, 叶子 không "nói" được.' },
+  { q: '我今天下午有课，不能去太远的＿＿。', opts: ['刚才', '常常', '季节', '地方'], ans: 3, exp: '太远的地方 = nơi quá xa. 刚才, 常常 là từ chỉ thời gian/tần suất.' },
+  { q: '夏天白天很热，但是晚上比较＿＿。', opts: ['凉快', '变化', '关注', '刚才'], ans: 0, exp: '晚上比较凉快 — đối lập với ban ngày nóng. 变化, 关注 không phải tính từ.' },
+  { q: '秋天树上的叶子都＿＿了红色、黄色。', opts: ['变', '变成', '变化', '借'], ans: 1, exp: '变成 + kết quả = biến thành: 变成了红色、黄色. 变化 không mang tân ngữ kết quả kiểu này.' },
+  { q: '我没＿＿过北京的天气，但是新闻里说过……', opts: ['开花', '刮', '关注', '借'], ans: 2, exp: '关注 + sự việc = quan tâm, theo dõi: 关注天气. 开花, 刮 không mang tân ngữ 天气.' },
+  { q: 'Chọn câu đúng: "Hoặc là ngày mai, hoặc là ngày kia, cô sẽ gọi điện cho em."', opts: ['还是明天去，还是后天去，我给你打电话。', '或者明天去，或者后天去，我给你打电话。', '明天或者去，后天或者去，我给你打电话。', '或者明天去，后天去或者，我给你打电话。'], ans: 1, exp: '或者…或者… = hoặc… hoặc… trong câu trần thuật. 还是 dùng cho câu hỏi lựa chọn.' },
+  { q: 'Chọn câu đúng: "Sao bỗng nhiên lại nổi gió thế?"', opts: ['怎么突然就刮风起来了？', '怎么突然就起来刮风了？', '怎么突然就刮风来起了？', '怎么突然就刮起风来了？'], ans: 3, exp: 'Bổ ngữ 起来 có tân ngữ: V + 起 + tân ngữ + 来 → 刮起风来.' },
+  { q: '"我每天书包里都放着雨伞，就今天没带。" — 「就」 ở đây biểu thị gì?', opts: ['Ngay lập tức (sắp xảy ra)', 'Số lượng nhiều', 'Tình huống ngoại lệ — chỉ riêng hôm nay', 'Thời gian sớm hơn dự kiến'], ans: 2, exp: '就 ở đây = chỉ (riêng): ngày nào cũng mang ô, chỉ hôm nay không mang → tình huống ngoại lệ.' }
 ];
 
 var speakingData = {

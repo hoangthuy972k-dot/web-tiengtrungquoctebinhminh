@@ -5531,6 +5531,7 @@ var fillData = [
   "blank": "截至",
   "post": "目前，已有三千多名学生报名参加这次比赛。",
   "hint": "(tính đến)",
+  "exp": "截至 + mốc thời gian = tính đến…: 截至目前. Khác 截止 = hết hạn, dừng ở hạn chót (截止日期).",
   "ans": "截至"
  },
  {
@@ -5538,6 +5539,7 @@ var fillData = [
   "blank": "力争",
   "post": "第一名，不能输给对手。",
   "hint": "(cố gắng giành)",
+  "exp": "力争 + mục tiêu = ra sức tranh thủ, cố giành: 力争第一名.",
   "ans": "力争"
  },
  {

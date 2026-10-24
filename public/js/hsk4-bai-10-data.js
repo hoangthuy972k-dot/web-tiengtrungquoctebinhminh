@@ -3378,11 +3378,11 @@ var matchData = [
 var fillData = [
   {pre:'礼拜天有',blank:'',post:'吗？陪我去逛街怎么样？',hint:'kòngr',ans:'空儿'},
   {pre:'除了工作以外，家里还有',blank:'',post:'和儿子需要照顾。',hint:'mǔqīn',ans:'母亲'},
-  {pre:'',blank:'',post:'现在我很幸福。',hint:'búguò',ans:'不过'},
+  {pre:'',blank:'',post:'现在我很幸福。',hint:'búguò',ans:'不过',exp:'不过 = nhưng mà, có điều (nhẹ hơn 但是); đưa ra ý ngược lại phía trước.'},
   {pre:'在母亲面前我可以做一个',blank:'',post:'长不大的孩子。',hint:'yǒngyuǎn',ans:'永远'},
   {pre:'这让我有了努力的',blank:'',post:'。',hint:'fāngxiàng',ans:'方向'},
   {pre:'硕士毕业后就当了',blank:'',post:'。',hint:'fānyì',ans:'翻译'},
-  {pre:'我女儿',blank:'',post:'不错。',hint:'quèshí',ans:'确实'},
+  {pre:'我女儿',blank:'',post:'不错。',hint:'quèshí',ans:'确实',exp:'确实 = quả thật, xác nhận điều người khác nói là đúng.'},
   {pre:'就',blank:'',post:'地拉着我和她爸俩去商场。',hint:'xīngfèn',ans:'兴奋'},
   {pre:'正想听听你的',blank:'',post:'。',hint:'jiànyì',ans:'建议'},
   {pre:'兴趣才是',blank:'',post:'。',hint:'guānjiàn',ans:'关键'},

@@ -1261,11 +1261,11 @@ var matchData = [
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'作家老舍先生爱花，他',blank:'养',post:'的花很多，满满摆了一院子。',hint:'(trồng, nuôi)',ans:'养'},
-  {pre:'可',blank:'除非',post:'是那些好种易活的花草，否则他是不养的。',hint:'(trừ phi)',ans:'除非'},
+  {pre:'可',blank:'除非',post:'是那些好种易活的花草，否则他是不养的。',hint:'(trừ phi)',ans:'除非',exp:'除非A，否则B = trừ phi A, nếu không thì B.'},
   {pre:'为了考上理想的大学，他每天都在努力',blank:'奋斗',post:'。',hint:'(phấn đấu)',ans:'奋斗'},
   {pre:'老舍把养花当作一种生活',blank:'乐趣',post:'。',hint:'(thú vui)',ans:'乐趣'},
   {pre:'老李对儿子面试没被录取的事显得满不',blank:'在乎',post:'。',hint:'(để tâm)',ans:'在乎'},
-  {pre:'他用剪刀剪出了一',blank:'朵',post:'美丽的花。',hint:'(bông — lượng từ)',ans:'朵'},
+  {pre:'他用剪刀剪出了一',blank:'朵',post:'美丽的花。',hint:'(bông — lượng từ)',ans:'朵',exp:'朵 là lượng từ cho hoa, mây: 一朵花.'},
   {pre:'这个袋子很结实，用手撕不开，去拿把',blank:'剪刀',post:'。',hint:'(cái kéo)',ans:'剪刀'},
   {pre:'有时蹲下',blank:'捡',post:'几块小石头放在花盆里。',hint:'(nhặt)',ans:'捡'},
   {pre:'新年快到了，我们用彩灯把教室',blank:'装饰',post:'得很漂亮。',hint:'(trang trí)',ans:'装饰'},
@@ -1275,8 +1275,8 @@ var fillData = [
   {pre:'情况紧急，他就得',blank:'劳驾',post:'全家人抢救花草。',hint:'(làm phiền)',ans:'劳驾'},
   {pre:'经过医生们的全力',blank:'抢救',post:'，病人终于脱离了危险。',hint:'(cấp cứu)',ans:'抢救'},
   {pre:'又做了个两小时的手术，累得我',blank:'腰',post:'都直不起来了。',hint:'(lưng)',ans:'腰'},
-  {pre:'父亲听说儿子卖了房子，气得',blank:'直',post:'发抖。',hint:'(liên tục, cứ)',ans:'直'},
-  {pre:'多亏了这条铁路，',blank:'不然',post:'这么多煤炭怎么运出去？',hint:'(nếu không thì)',ans:'不然'},
+  {pre:'父亲听说儿子卖了房子，气得',blank:'直',post:'发抖。',hint:'(liên tục, cứ)',ans:'直',exp:'直 + V = cứ…, liên tục: 气得直发抖.'},
+  {pre:'多亏了这条铁路，',blank:'不然',post:'这么多煤炭怎么运出去？',hint:'(nếu không thì)',ans:'不然',exp:'不然 = nếu không thì; nêu hậu quả khi không có điều kiện ở vế trước.'},
   {pre:'任何事都要有付出，不然怎么会有',blank:'回报',post:'？',hint:'(sự đền đáp)',ans:'回报'},
   {pre:'科学家们一生都在追求',blank:'真理',post:'。',hint:'(chân lý)',ans:'真理'},
   {pre:'有的花喜干，就别多',blank:'浇',post:'水。',hint:'(tưới)',ans:'浇'},
@@ -1295,7 +1295,7 @@ var fillData = [
   {pre:'秋天到了，公园里的',blank:'菊花',post:'都开了。',hint:'(hoa cúc)',ans:'菊花'},
   {pre:'树上掉下来一个苹果，正好',blank:'砸',post:'在他的头上。',hint:'(đập trúng)',ans:'砸'},
   {pre:'听到这个',blank:'悲伤',post:'的消息，大家都哭了。',hint:'(đau buồn)',ans:'悲伤'},
-  {pre:'不管你们谁去，',blank:'反正',post:'我不会去。',hint:'(dù sao)',ans:'反正'},
+  {pre:'不管你们谁去，',blank:'反正',post:'我不会去。',hint:'(dù sao)',ans:'反正',exp:'不管…，反正… = dù… thì dù sao…; 反正 nhấn mạnh kết luận không thay đổi.'},
   {pre:'老舍是一个',blank:'热爱',post:'生活、热爱大自然的人。',hint:'(yêu tha thiết)',ans:'热爱'},
   {pre:'北京有个',blank:'老舍',post:'茶馆，是以他的名字命名的。',hint:'(Lão Xá)',ans:'老舍'}
 ];

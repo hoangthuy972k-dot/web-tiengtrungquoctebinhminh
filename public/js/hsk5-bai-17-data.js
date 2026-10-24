@@ -1066,11 +1066,11 @@ var fillData = [
   {pre:'这位老师上课很有',blank:'魅力',post:'，学生们都喜欢他。',hint:'(sức cuốn hút)',ans:'魅力'},
   {pre:'',blank:'糟糕',post:'！我把钥匙忘在家里了。',hint:'(Chết rồi! — câu cảm thán)',ans:'糟糕'},
   {pre:'他们打算明年春天举行',blank:'婚礼',post:'。',hint:'(lễ cưới)',ans:'婚礼'},
-  {pre:'成绩好不',blank:'等于',post:'能力强。',hint:'(bằng; có nghĩa là)',ans:'等于'},
+  {pre:'成绩好不',blank:'等于',post:'能力强。',hint:'(bằng; có nghĩa là)',ans:'等于',exp:'A不等于B = A không có nghĩa là B: 成绩好不等于能力强.'},
   {pre:'我在外公外婆身边',blank:'度过',post:'了美好的童年。',hint:'(trải qua)',ans:'度过'},
   {pre:'毕业那天，我们一一向老师',blank:'告别',post:'。',hint:'(chào từ biệt)',ans:'告别'},
   {pre:'他',blank:'平常',post:'总是来得很早，今天却迟到了。',hint:'(ngày thường)',ans:'平常'},
-  {pre:'十几年过去了，她',blank:'依然',post:'那么美丽。',hint:'(vẫn)',ans:'依然'},
+  {pre:'十几年过去了，她',blank:'依然',post:'那么美丽。',hint:'(vẫn)',ans:'依然',exp:'依然 = vẫn như cũ (văn viết, như 仍然): 依然那么美丽.'},
   {pre:'你能给我',blank:'推荐',post:'几本适合高中生看的书吗？',hint:'(giới thiệu)',ans:'推荐'},
   {pre:'比赛中，他把自己的水平发挥得',blank:'淋漓尽致',post:'。',hint:'(trọn vẹn, hết mức)',ans:'淋漓尽致'},
   {pre:'大家对这位新老师的',blank:'评价',post:'都很高。',hint:'(đánh giá)',ans:'评价'},
@@ -1078,12 +1078,12 @@ var fillData = [
   {pre:'今天的会议由王经理',blank:'主持',post:'。',hint:'(chủ trì)',ans:'主持'},
   {pre:'学知识不能死记硬背，要懂得灵活地',blank:'运用',post:'。',hint:'(vận dụng)',ans:'运用'},
   {pre:'运动会的',blank:'开幕式',post:'将在下周一举行。',hint:'(lễ khai mạc)',ans:'开幕式'},
-  {pre:'我',blank:'宁可',post:'多花点儿钱，也要买一个质量好点儿的。',hint:'(thà)',ans:'宁可'},
+  {pre:'我',blank:'宁可',post:'多花点儿钱，也要买一个质量好点儿的。',hint:'(thà)',ans:'宁可',exp:'宁可A，也要B = thà A còn hơn, cũng phải B; chọn phương án chịu thiệt để đạt mục đích.'},
   {pre:'你复习时要',blank:'集中',post:'注意力，效果才会好。',hint:'(tập trung)',ans:'集中'},
   {pre:'当了父母以后，才能',blank:'体会',post:'到父母的辛苦。',hint:'(thấm thía)',ans:'体会'},
   {pre:'因为这个认知而获得',blank:'诺贝尔奖',post:'的，是一位心理学家。',hint:'(giải Nô-ben)',ans:'诺贝尔奖'},
   {pre:'“峰终定律”是心理学家',blank:'丹尼尔·卡内曼',post:'提出来的。',hint:'(Daniel Kahneman)',ans:'丹尼尔·卡内曼'},
-  {pre:'我们准备服装、道具，',blank:'以',post:'创造良好的效果。',hint:'(để, nhằm)',ans:'以'}
+  {pre:'我们准备服装、道具，',blank:'以',post:'创造良好的效果。',hint:'(để, nhằm)',ans:'以',exp:'以 + mục đích = để, nhằm (văn viết), nối vế sau chỉ mục đích.'}
 ];
 
 // ══════════════════════════════════════════

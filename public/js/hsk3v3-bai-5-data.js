@@ -2549,16 +2549,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '这个星期＿＿是阴天，今天终于晴了。', opts: ['总是', '终于', '已经', '比较'], ans: 0 },
-  { q: '又能＿＿身体，又能照好看的照片。', opts: ['照', '锻炼', '爬', '穿'], ans: 1 },
+  { q: '这个星期＿＿是阴天，今天终于晴了。', opts: ['总是', '终于', '已经', '比较'], ans: 0, exp: '总是 = lúc nào cũng, suốt; vế sau 今天终于晴了 cho thấy trước đó toàn trời âm u. 终于 đã dùng ở vế sau.' },
+  { q: '又能＿＿身体，又能照好看的照片。', opts: ['照', '锻炼', '爬', '穿'], ans: 1, exp: '锻炼身体 = rèn luyện thân thể (kết hợp cố định). 照, 爬, 穿 không đi với 身体.' },
   { q: '我回去穿上运动＿＿，拿上大衣。', opts: ['衣', '山', '树', '鞋'], ans: 3 },
-  { q: '她对拍照一直很＿＿。', opts: ['兴趣', '感兴趣', '难过', '水平'], ans: 1 },
-  { q: '啊，手机没＿＿了。', opts: ['电', '太阳', '树', '邮件'], ans: 0 },
-  { q: '我＿＿了你的那封邮件，也看到了你给我照的照片。', opts: ['比较', '收到', '结束', '锻炼'], ans: 1 },
-  { q: '音乐会七点多＿＿，你听完了音乐会就来我家吃饭。', opts: ['终于', '收到', '难过', '结束'], ans: 3 },
-  { q: 'Chọn cách nói đúng: "Bây giờ thời tiết đẹp lắm!"', opts: ['现在天气很好得很！', '现在天气好得很！', '现在天气得很好！', '现在天气好很得！'], ans: 1 },
-  { q: 'Chọn câu đúng: "Những quả táo này quả nào cũng rất to."', opts: ['这些苹果都个个很大。', '这些个个苹果都很大。', '这些苹果个个都很大。', '这些苹果很大个个都。'], ans: 2 },
-  { q: 'Chọn câu tồn hiện đúng: "Phía trước có rất nhiều xe chạy tới."', opts: ['很多车前面开过来。', '在前面开过来很多车。', '开过来很多车前面。', '前面开过来很多车。'], ans: 3 }
+  { q: '她对拍照一直很＿＿。', opts: ['兴趣', '感兴趣', '难过', '水平'], ans: 1, exp: '对…感兴趣 = có hứng thú với…; 兴趣 là danh từ, không đứng thẳng sau 很. Có thể nói 很有兴趣 hoặc 很感兴趣.' },
+  { q: '啊，手机没＿＿了。', opts: ['电', '太阳', '树', '邮件'], ans: 0, exp: '手机没电了 = điện thoại hết pin. 电 ở đây là điện/pin.' },
+  { q: '我＿＿了你的那封邮件，也看到了你给我照的照片。', opts: ['比较', '收到', '结束', '锻炼'], ans: 1, exp: '收到邮件 = nhận được email. 结束, 锻炼 không mang tân ngữ 邮件.' },
+  { q: '音乐会七点多＿＿，你听完了音乐会就来我家吃饭。', opts: ['终于', '收到', '难过', '结束'], ans: 3, exp: '音乐会…结束 = buổi hòa nhạc kết thúc; vế sau 听完了 khớp với ý kết thúc.' },
+  { q: 'Chọn cách nói đúng: "Bây giờ thời tiết đẹp lắm!"', opts: ['现在天气很好得很！', '现在天气好得很！', '现在天气得很好！', '现在天气好很得！'], ans: 1, exp: 'Tính từ + 得很 = rất… (bổ ngữ mức độ): 好得很. Không thêm 很 trước tính từ.' },
+  { q: 'Chọn câu đúng: "Những quả táo này quả nào cũng rất to."', opts: ['这些苹果都个个很大。', '这些个个苹果都很大。', '这些苹果个个都很大。', '这些苹果很大个个都。'], ans: 2, exp: 'Lượng từ lặp 个个 = cái nào cũng; đứng sau chủ ngữ 这些苹果 và trước 都.' },
+  { q: 'Chọn câu tồn hiện đúng: "Phía trước có rất nhiều xe chạy tới."', opts: ['很多车前面开过来。', '在前面开过来很多车。', '开过来很多车前面。', '前面开过来很多车。'], ans: 3, exp: 'Câu tồn hiện: nơi chốn + động từ + bổ ngữ xu hướng + người/vật xuất hiện: 前面开过来很多车. Không cần 在 ở đầu.' }
 ];
 
 var speakingData = {

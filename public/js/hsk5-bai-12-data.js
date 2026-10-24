@@ -1561,7 +1561,7 @@ var fillData = [
   {pre:'上海是中国的经济',blank:'中心',post:'。',hint:'(trung tâm)',ans:'中心'},
   {pre:'有问题的话，请联系',blank:'相关',post:'部门。',hint:'(liên quan)',ans:'相关'},
   {pre:'他',blank:'业务',post:'能力很强，很快就当上了经理。',hint:'(chuyên môn, nghiệp vụ)',ans:'业务'},
-  {pre:'学校的领导、教师',blank:'以及',post:'一些学生代表观看了演出。',hint:'(và, cùng với — văn viết)',ans:'以及'},
+  {pre:'学校的领导、教师',blank:'以及',post:'一些学生代表观看了演出。',hint:'(và, cùng với — văn viết)',ans:'以及',exp:'以及 = và, cùng với (văn viết), nối các danh từ, thường đứng trước thành phần cuối.'},
   {pre:'问题已经发展到了十分严重的',blank:'程度',post:'。',hint:'(mức độ)',ans:'程度'},
   {pre:'一家企业如果不',blank:'创新',post:'，很快就会被市场淘汰。',hint:'(đổi mới)',ans:'创新'},
   {pre:'这家公司在手机市场上一直处于',blank:'领导',post:'地位。',hint:'(dẫn đầu)',ans:'领导'},
@@ -1570,7 +1570,7 @@ var fillData = [
   {pre:'这家公司花了很多钱请明星来',blank:'代言',post:'。',hint:'(làm đại diện)',ans:'代言'},
   {pre:'他是',blank:'华裔',post:'美国人，爷爷奶奶都是广东人。',hint:'(người gốc Hoa)',ans:'华裔'},
   {pre:'他们一家十年前',blank:'移民',post:'到了澳大利亚。',hint:'(di cư)',ans:'移民'},
-  {pre:'本店销售电视、冰箱、洗衣机',blank:'以及',post:'其他电器。',hint:'(và — đứng trước thành phần cuối)',ans:'以及'},
+  {pre:'本店销售电视、冰箱、洗衣机',blank:'以及',post:'其他电器。',hint:'(và — đứng trước thành phần cuối)',ans:'以及',exp:'A、B、C以及D: 以及 nối thành phần cuối cùng trong một chuỗi liệt kê (văn viết).'},
   {pre:'在很大',blank:'程度',post:'上，一个人的未来取决于他所受的教育。',hint:'(mức độ)',ans:'程度'}
 ];
 

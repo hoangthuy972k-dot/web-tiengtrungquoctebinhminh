@@ -1492,7 +1492,7 @@ var fillData = [
   {pre:'刚转学的时候，我总觉得自己被',blank:'边缘',post:'化了。',hint:'(rìa, bên lề)',ans:'边缘'},
   {pre:'妈妈向我使了个',blank:'眼色',post:'，让我别再说下去了。',hint:'(ánh mắt ra hiệu)',ans:'眼色'},
   {pre:'这个月的销售',blank:'指标',post:'我们提前完成了。',hint:'(chỉ tiêu)',ans:'指标'},
-  {pre:'你',blank:'成天',post:'玩手机，眼睛还要不要了？',hint:'(suốt ngày)',ans:'成天'},
+  {pre:'你',blank:'成天',post:'玩手机，眼睛还要不要了？',hint:'(suốt ngày)',ans:'成天',exp:'成天 = suốt ngày (khẩu ngữ, thường mang ý chê trách): 成天玩手机.'},
   {pre:'从技术上讲，这两个队根本不是一个',blank:'等级',post:'。',hint:'(đẳng cấp)',ans:'等级'},
   {pre:'他觉得不公平，要去找经理讨',blank:'公道',post:'。',hint:'(lẽ công bằng)',ans:'公道'},
   {pre:'明明是你的错，还怪别人，真',blank:'不像话',post:'！',hint:'(quá đáng, vô lý)',ans:'不像话'},

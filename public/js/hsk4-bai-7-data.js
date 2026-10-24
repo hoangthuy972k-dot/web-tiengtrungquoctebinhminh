@@ -3636,7 +3636,7 @@ var matchData = [
 ];
 
 var fillData = [
-  {pre:'你的鼻子怎么流血了？快用纸',blank:'',post:'擦。',hint:'cāca',ans:'擦'},
+  {pre:'你的鼻子怎么流血了？快用纸',blank:'',post:'擦。',hint:'cāca',ans:'擦',exp:'Lặp động từ 擦擦 = lau qua một chút; 用纸擦擦.'},
   {pre:'我还不习惯北方的',blank:'',post:'，估计是天气太干。',hint:'qìhòu',ans:'气候'},
   {pre:'没有，我只是',blank:'',post:'，有点儿头疼，不严重。',hint:'késou',ans:'咳嗽'},
   {pre:'最好经常打开',blank:'',post:'换换空气。',hint:'chuānghu',ans:'窗户'},
@@ -3647,8 +3647,8 @@ var fillData = [
   {pre:'医生也这么说，他还告诉我要多向远处看看，尤其是多看看绿色的',blank:'',post:'。',hint:'zhíwù',ans:'植物'},
   {pre:'',blank:'',post:'发现，如果人一天静坐超过6小时，就会影响身体健康。',hint:'yánjiū',ans:'研究'},
   {pre:'有一位',blank:'',post:'用数字来说明健康有多么重要。',hint:'jiàoshòu',ans:'教授'},
-  {pre:'',blank:'',post:'健康是1，其他都是1后面的0。',hint:'yàoshi',ans:'要是'},
-  {pre:'散步',blank:'',post:'可以活动身体，又可以减肥。',hint:'jì',ans:'既'},
+  {pre:'',blank:'',post:'健康是1，其他都是1后面的0。',hint:'yàoshi',ans:'要是',exp:'要是 = nếu (khẩu ngữ, như 如果): 要是健康是1，其他都是0.'},
+  {pre:'散步',blank:'',post:'可以活动身体，又可以减肥。',hint:'jì',ans:'既',exp:'既A，又B = vừa A vừa B; 既 đứng trước động từ thứ nhất, 又 trước động từ thứ hai.'},
   {pre:'而且不会像跑步那样',blank:'',post:'。',hint:'xīnkǔ',ans:'辛苦'},
   {pre:'一天的',blank:'',post:'就都跑掉了。',hint:'fánnǎo',ans:'烦恼'},
 ];

@@ -1489,7 +1489,7 @@ var fillData = [
   {pre:'工厂想方设法降低',blank:'成本',post:'，产品价格才降了下来。',hint:'(giá thành)',ans:'成本'},
   {pre:'学外语不能',blank:'急躁',post:'，得一步一步来。',hint:'(nôn nóng)',ans:'急躁'},
   {pre:'你有什么',blank:'顾虑',post:'就说出来，别憋在心里。',hint:'(băn khoăn, lo ngại)',ans:'顾虑'},
-  {pre:'',blank:'过度',post:'使用手机，对眼睛伤害很大。',hint:'(quá mức)',ans:'过度'},
+  {pre:'',blank:'过度',post:'使用手机，对眼睛伤害很大。',hint:'(quá mức)',ans:'过度',exp:'过度 + V = quá mức (gây hại): 过度使用手机.'},
   {pre:'在知识更新这么快的时代，每个人都需要',blank:'终身',post:'学习。',hint:'(suốt đời)',ans:'终身'},
   {pre:'想起当年对父母说的那些话，他',blank:'悔恨',post:'不已。',hint:'(ân hận)',ans:'悔恨'},
   {pre:'以后再遇到',blank:'类似',post:'的问题，你就知道怎么办了。',hint:'(tương tự)',ans:'类似'},
@@ -1499,8 +1499,8 @@ var fillData = [
   {pre:'军训虽然很苦，但能磨炼我们的',blank:'意志',post:'。',hint:'(ý chí)',ans:'意志'},
   {pre:'这位记者很',blank:'敏锐',post:'，一下子就发现了问题所在。',hint:'(nhạy bén)',ans:'敏锐'},
   {pre:'面对强大的对手，他毫不',blank:'畏惧',post:'。',hint:'(sợ hãi)',ans:'畏惧'},
-  {pre:'这把小提琴',blank:'伴随',post:'了爷爷一生。',hint:'(đi theo, song hành)',ans:'伴随'},
-  {pre:'',blank:'昔日',post:'的小渔村，如今已经变成了热闹的旅游城市。',hint:'(ngày xưa)',ans:'昔日'},
+  {pre:'这把小提琴',blank:'伴随',post:'了爷爷一生。',hint:'(đi theo, song hành)',ans:'伴随',exp:'伴随 = đi theo, gắn bó cùng: 伴随了爷爷一生.'},
+  {pre:'',blank:'昔日',post:'的小渔村，如今已经变成了热闹的旅游城市。',hint:'(ngày xưa)',ans:'昔日',exp:'昔日 = ngày xưa (văn viết), đối lập với 如今 ở vế sau.'},
   {pre:'他考上了名牌大学，全家人都觉得很',blank:'风光',post:'。',hint:'(vẻ vang)',ans:'风光'},
   {pre:'这家商店连年',blank:'亏损',post:'，老板不得不把它卖了。',hint:'(thua lỗ)',ans:'亏损'},
   {pre:'学校门口那家书店面临',blank:'倒闭',post:'，同学们都很舍不得。',hint:'(phá sản, đóng cửa)',ans:'倒闭'},
@@ -1511,7 +1511,7 @@ var fillData = [
   {pre:'听说公司要',blank:'裁员',post:'，大家都人心惶惶。',hint:'(cắt giảm nhân sự)',ans:'裁员'},
   {pre:'事实证明，当初换专业是一个',blank:'英明',post:'的决定。',hint:'(sáng suốt)',ans:'英明'},
   {pre:'现在想找一个',blank:'称心如意',post:'的房子本来就很难。',hint:'(như ý)',ans:'称心如意'},
-  {pre:'图书馆',blank:'除',post:'周一外，每天都开放。',hint:'(trừ … ra)',ans:'除'}
+  {pre:'图书馆',blank:'除',post:'周一外，每天都开放。',hint:'(trừ … ra)',ans:'除',exp:'除…外，… = trừ… ra: 除周一外，每天都开放.'}
 ];
 
 // ══════════════════════════════════════════

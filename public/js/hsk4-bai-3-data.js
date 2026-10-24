@@ -3484,21 +3484,21 @@ var matchData = [
 ];
 
 var fillData = [
-  {pre:'这几天',blank:'',post:'冷的，你不用穿这么多衣服。',hint:'tǐng',ans:'挺'},
-  {pre:'第一次跟女朋友见面的时候，他',blank:'',post:'得脸和耳朵都红了。',hint:'jǐnzhāng',ans:'紧张'},
+  {pre:'这几天',blank:'',post:'冷的，你不用穿这么多衣服。',hint:'tǐng',ans:'挺',exp:'挺 + tính từ + 的 = khá…, khẩu ngữ: 挺冷的. 挺 thường đi với 的 ở cuối.'},
+  {pre:'第一次跟女朋友见面的时候，他',blank:'',post:'得脸和耳朵都红了。',hint:'jǐnzhāng',ans:'紧张',exp:'Tính từ + 得 + kết quả: 紧张得脸都红了 = hồi hộp đến mức đỏ cả mặt. 得 nối với bổ ngữ trình độ.'},
   {pre:'面试的时候，一定要对自己有',blank:'',post:'。',hint:'xìnxīn',ans:'信心'},
   {pre:'要相信自己的',blank:'',post:'，能做好这份工作。',hint:'nénglì',ans:'能力'},
   {pre:'学校体育馆还有一个',blank:'',post:'会，你去吗？',hint:'zhāopìn',ans:'招聘'},
   {pre:'这次招聘会',blank:'',post:'的工作机会很多。',hint:'tígōng',ans:'提供'},
   {pre:'这件事本来是他',blank:'',post:'的，现在交给我了。',hint:'fùzé',ans:'负责'},
-  {pre:'',blank:'',post:'是他负责的，但是他生病了。',hint:'běnlái',ans:'本来'},
+  {pre:'',blank:'',post:'是他负责的，但是他生病了。',hint:'běnlái',ans:'本来',exp:'本来 = vốn dĩ, lúc đầu (sau đó thay đổi): vốn là anh ấy phụ trách, nhưng anh ấy ốm.'},
   {pre:'这次来',blank:'',post:'的一共有十五人。',hint:'yìngpìn',ans:'应聘'},
   {pre:'这是他们的',blank:'',post:'，您看看。',hint:'cáiliào',ans:'材料'},
   {pre:'他的能力比较',blank:'',post:'我们的要求。',hint:'fúhé',ans:'符合'},
   {pre:'公司说下个星期会发邮件',blank:'',post:'。',hint:'tōngzhī',ans:'通知'},
   {pre:'她大学学的是法律专业，梦想是当一名',blank:'',post:'。',hint:'lǜshī',ans:'律师'},
   {pre:'我学的就是法律',blank:'',post:'。',hint:'zhuānyè',ans:'专业'},
-  {pre:'',blank:'',post:'，收入也不错。',hint:'lìngwài',ans:'另外'},
+  {pre:'',blank:'',post:'，收入也不错。',hint:'lìngwài',ans:'另外',exp:'另外 = ngoài ra, đặt đầu câu để bổ sung thêm một ý: 另外，收入也不错.'},
 ];
 
 var sortData = [

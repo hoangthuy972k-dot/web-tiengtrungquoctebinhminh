@@ -5937,6 +5937,7 @@ var fillData = [
   "blank": "不时",
   "post": "能听到海鸥的叫声。",
   "hint": "(chốc chốc, thỉnh thoảng)",
+  "exp": "不时 = chốc chốc, thỉnh thoảng lại: 不时能听到….",
   "ans": "不时"
  },
  {
@@ -6056,6 +6057,7 @@ var fillData = [
   "blank": "总而言之",
   "post": "，只有养成良好的作息习惯，才能睡个好觉。",
   "hint": "(tóm lại)",
+  "exp": "总而言之 = tóm lại, nói tóm lại (tổng kết, văn viết).",
   "ans": "总而言之"
  },
  {

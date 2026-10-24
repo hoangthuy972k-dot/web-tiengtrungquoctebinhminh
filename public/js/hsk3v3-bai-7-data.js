@@ -2549,16 +2549,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '这＿＿自行车是小雪八岁的时候买的。', opts: ['条', '辆', '张', '件'], ans: 1 },
-  { q: '她现在长高了，这辆车已经太＿＿了。', opts: ['矮', '旧', '甜', '新鲜'], ans: 0 },
-  { q: '大小＿＿，但我觉得那条裙子比短裤更好看。', opts: ['决定', '一共', '合适', '结婚'], ans: 2 },
-  { q: '我多看看再＿＿。你看，那边有买二送一！', opts: ['结婚', '开机', '合适', '决定'], ans: 3 },
-  { q: '西瓜又大又＿＿，不甜不要钱！', opts: ['新鲜', '矮', '旧', '黄色'], ans: 0 },
-  { q: '＿＿五十八块五毛。', opts: ['更', '一共', '极', '而且'], ans: 1 },
-  { q: '有的电视叫它一＿＿就能开机。', opts: ['斤', '毛', '声', '辆'], ans: 2 },
-  { q: 'Chọn câu đúng: "Chúng mình có thể đi bộ đến đó."', opts: ['咱们可以走去着。', '咱们可以着走去。', '咱们可以走着去。', '咱们可以去走着。'], ans: 2 },
-  { q: 'Chọn câu đúng: "Tiếng Trung của anh ấy cũng chẳng giỏi hơn bạn."', opts: ['他的中文不比你好。', '他的中文比你不好。', '他的中文比不你好。', '他的中文不比你很好。'], ans: 0 },
-  { q: 'Chọn cách nói đúng: "Miếng dưa hấu ướp lạnh này ngọt cực kỳ."', opts: ['这块冰西瓜很甜极了。', '这块冰西瓜极了甜。', '这块冰西瓜甜极。', '这块冰西瓜甜极了。'], ans: 3 }
+  { q: '这＿＿自行车是小雪八岁的时候买的。', opts: ['条', '辆', '张', '件'], ans: 1, exp: '辆 là lượng từ cho xe: 一辆自行车, 一辆汽车. 条 cho vật dài mềm, 张 cho vật phẳng, 件 cho áo.' },
+  { q: '她现在长高了，这辆车已经太＿＿了。', opts: ['矮', '旧', '甜', '新鲜'], ans: 0, exp: 'Cô bé đã cao lên nên chiếc xe trở nên thấp so với cô → 太矮了. 旧, 甜, 新鲜 không liên quan việc cao lên.' },
+  { q: '大小＿＿，但我觉得那条裙子比短裤更好看。', opts: ['决定', '一共', '合适', '结婚'], ans: 2, exp: '大小合适 = kích cỡ vừa vặn; vế sau 但 vẫn thích váy hơn. 决定, 结婚 là động từ, không đi sau 大小.' },
+  { q: '我多看看再＿＿。你看，那边有买二送一！', opts: ['结婚', '开机', '合适', '决定'], ans: 3, exp: '多看看再决定 = xem thêm rồi mới quyết định; 再 = rồi mới (việc sau).' },
+  { q: '西瓜又大又＿＿，不甜不要钱！', opts: ['新鲜', '矮', '旧', '黄色'], ans: 0, exp: '又大又新鲜 = vừa to vừa tươi. 矮, 旧 không dùng để quảng cáo dưa hấu.' },
+  { q: '＿＿五十八块五毛。', opts: ['更', '一共', '极', '而且'], ans: 1, exp: '一共 + số tiền = tổng cộng. 更, 极, 而且 không đứng trước số tiền.' },
+  { q: '有的电视叫它一＿＿就能开机。', opts: ['斤', '毛', '声', '辆'], ans: 2, exp: '声 là động lượng từ cho âm thanh: 叫一声 = gọi một tiếng. 斤, 毛, 辆 không dùng với 叫.' },
+  { q: 'Chọn câu đúng: "Chúng mình có thể đi bộ đến đó."', opts: ['咱们可以走去着。', '咱们可以着走去。', '咱们可以走着去。', '咱们可以去走着。'], ans: 2, exp: 'V1着 + V2: V1 chỉ cách thức của V2 → 走着去 = đi bộ đến đó.' },
+  { q: 'Chọn câu đúng: "Tiếng Trung của anh ấy cũng chẳng giỏi hơn bạn."', opts: ['他的中文不比你好。', '他的中文比你不好。', '他的中文比不你好。', '他的中文不比你很好。'], ans: 0, exp: 'A 不比 B + tính từ = A không hơn B (có thể ngang nhau). 不 đặt trước 比; câu 比 không dùng 很.' },
+  { q: 'Chọn cách nói đúng: "Miếng dưa hấu ướp lạnh này ngọt cực kỳ."', opts: ['这块冰西瓜很甜极了。', '这块冰西瓜极了甜。', '这块冰西瓜甜极。', '这块冰西瓜甜极了。'], ans: 3, exp: 'Tính từ + 极了 = cực kỳ: 甜极了. 极了 phải có 了 và không dùng chung với 很.' }
 ];
 
 var speakingData = {

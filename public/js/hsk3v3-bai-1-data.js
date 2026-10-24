@@ -2548,16 +2548,16 @@ var sortData = [
 ];
 
 var mcData = [
-  { q: '是一个黑色的箱子，上面写着我的名字和电话＿＿。', opts: ['号码', '护照', '照片', '身高'], ans: 0 },
-  { q: '＿＿着急，我们去服务台问问吧。(đừng)', opts: ['不', '没', '别', '很'], ans: 2 },
-  { q: '他的＿＿有一米八，比他哥哥高。', opts: ['头发', '身高', '号码', '中间'], ans: 1 },
-  { q: '我＿＿他是中国人，可是他说他是泰国人。', opts: ['以为', '好像', '应该', '发现'], ans: 0 },
-  { q: '坐飞机别忘了＿＿护照。', opts: ['接', '站', '带', '丢'], ans: 2 },
-  { q: '飞机早就到了，他们＿＿快出来了。', opts: ['以为', '帮助', '发现', '应该'], ans: 3 },
-  { q: '我们一出来就看见了王老师的姐姐，她看起来比照片上＿＿。', opts: ['重要', '年轻', '着急', '中间'], ans: 1 },
-  { q: 'Chọn cách nói đúng: "Những món này trông đều rất ngon."', opts: ['这些菜看起来都很好吃。', '这些菜看上来都很好吃。', '这些菜都很好吃看起来。', '这些菜看都很好吃。'], ans: 0 },
-  { q: '"我好像在哪儿见过他。" — 「哪儿」 ở đây có nghĩa là gì?', opts: ['Ở đâu? (đang hỏi)', 'Ở đâu đó (không rõ chỗ nào)', 'Ở chỗ này', 'Ở khắp mọi nơi'], ans: 1 },
-  { q: 'Chọn trật tự định ngữ đúng: "Chiếc áo trắng mới mua của tôi"', opts: ['我新买的白色的那衣服件', '白色的衣服我那件新买的', '我那件新买的衣服白色的', '我那件新买的白色的衣服'], ans: 3 }
+  { q: '是一个黑色的箱子，上面写着我的名字和电话＿＿。', opts: ['号码', '护照', '照片', '身高'], ans: 0, exp: '电话号码 = số điện thoại (cụm cố định). 护照, 照片, 身高 không đi được với 电话.' },
+  { q: '＿＿着急，我们去服务台问问吧。(đừng)', opts: ['不', '没', '别', '很'], ans: 2, exp: '别 + động từ/tính từ = đừng…, dùng để khuyên. 不着急 chỉ trần thuật "không vội"; 没 phủ định việc đã xảy ra.' },
+  { q: '他的＿＿有一米八，比他哥哥高。', opts: ['头发', '身高', '号码', '中间'], ans: 1, exp: '身高有一米八 = cao 1m80; vế sau "比他哥哥高" nói về chiều cao. 头发 là tóc, 号码 là con số.' },
+  { q: '我＿＿他是中国人，可是他说他是泰国人。', opts: ['以为', '好像', '应该', '发现'], ans: 0, exp: '以为 = tưởng (nhưng thực tế không phải). Vế sau 可是他说他是泰国人 cho thấy nghĩ sai, nên không dùng 发现 hay 好像.' },
+  { q: '坐飞机别忘了＿＿护照。', opts: ['接', '站', '带', '丢'], ans: 2, exp: '带 + đồ vật = mang theo: 带护照. 接 là đón, 站 là đứng, 丢 là đánh mất.' },
+  { q: '飞机早就到了，他们＿＿快出来了。', opts: ['以为', '帮助', '发现', '应该'], ans: 3, exp: '应该 ở đây = chắc là (suy đoán có lý do): máy bay đến lâu rồi nên chắc họ sắp ra. 以为 là "tưởng nhầm".' },
+  { q: '我们一出来就看见了王老师的姐姐，她看起来比照片上＿＿。', opts: ['重要', '年轻', '着急', '中间'], ans: 1, exp: '看起来比照片上 + tính từ: so sánh dáng vẻ bên ngoài → 年轻 (trẻ). 重要, 着急 không dùng để tả ngoại hình.' },
+  { q: 'Chọn cách nói đúng: "Những món này trông đều rất ngon."', opts: ['这些菜看起来都很好吃。', '这些菜看上来都很好吃。', '这些菜都很好吃看起来。', '这些菜看都很好吃。'], ans: 0, exp: '看起来 = trông có vẻ, đứng sau chủ ngữ, trước phần nhận xét. Không có cách nói 看上来; 看起来 không đặt cuối câu.' },
+  { q: '"我好像在哪儿见过他。" — 「哪儿」 ở đây có nghĩa là gì?', opts: ['Ở đâu? (đang hỏi)', 'Ở đâu đó (không rõ chỗ nào)', 'Ở chỗ này', 'Ở khắp mọi nơi'], ans: 1, exp: '哪儿 trong câu trần thuật (好像在哪儿见过) là phiếm chỉ = ở đâu đó, không phải câu hỏi.' },
+  { q: 'Chọn trật tự định ngữ đúng: "Chiếc áo trắng mới mua của tôi"', opts: ['我新买的白色的那衣服件', '白色的衣服我那件新买的', '我那件新买的衣服白色的', '我那件新买的白色的衣服'], ans: 3, exp: 'Trật tự định ngữ: 我 (sở hữu) + 那件 (chỉ thị + lượng từ) + 新买的 + 白色的 + 衣服. Lượng từ 件 phải đứng ngay sau 那.' }
 ];
 
 var speakingData = {

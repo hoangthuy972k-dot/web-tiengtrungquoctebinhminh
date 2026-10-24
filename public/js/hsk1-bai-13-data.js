@@ -19,6 +19,11 @@ var vocabData = [
         "zh": "喂，你在做什么呢？",
         "py": "Wèi, nǐ zài zuò shénme ne?",
         "vn": "A lô, anh đang làm gì vậy?"
+      },
+      {
+        "zh": "喂，李老师在吗？",
+        "py": "Wèi, Lǐ lǎoshī zài ma?",
+        "vn": "A lô, cô Lý có ở đó không ạ?"
       }
     ],
     "hanzi": [
@@ -97,6 +102,11 @@ var vocabData = [
         "zh": "大卫也在看书吗？",
         "py": "Dàwèi yě zài kàn shū ma?",
         "vn": "David cũng đang đọc sách à?"
+      },
+      {
+        "zh": "我也是学生。",
+        "py": "Wǒ yě shì xuésheng.",
+        "vn": "Tôi cũng là học sinh."
       }
     ],
     "hanzi": [
@@ -180,6 +190,11 @@ var vocabData = [
         "zh": "我在学习汉语。",
         "py": "Wǒ zài xuéxí Hànyǔ.",
         "vn": "Tôi đang học tiếng Trung."
+      },
+      {
+        "zh": "你在哪儿学习汉语？",
+        "py": "Nǐ zài nǎr xuéxí Hànyǔ?",
+        "vn": "Bạn học tiếng Trung ở đâu?"
       }
     ],
     "hanzi": [
@@ -264,6 +279,11 @@ var vocabData = [
         "zh": "昨天上午你在做什么呢？",
         "py": "Zuótiān shàngwǔ nǐ zài zuò shénme ne?",
         "vn": "Chị làm gì vào sáng hôm qua vậy?"
+      },
+      {
+        "zh": "我上午在家，下午去学校。",
+        "py": "Wǒ shàngwǔ zài jiā, xiàwǔ qù xuéxiào.",
+        "vn": "Buổi sáng tôi ở nhà, buổi chiều đến trường."
       }
     ],
     "hanzi": [],
@@ -334,6 +354,11 @@ var vocabData = [
         "zh": "我在睡觉呢。",
         "py": "Wǒ zài shuì jiào ne.",
         "vn": "Tôi đang ngủ."
+      },
+      {
+        "zh": "我十点睡觉。",
+        "py": "Wǒ shí diǎn shuì jiào.",
+        "vn": "Tôi đi ngủ lúc 10 giờ."
       }
     ],
     "hanzi": [
@@ -430,6 +455,11 @@ var vocabData = [
         "zh": "我在家看电视呢。",
         "py": "Wǒ zài jiā kàn diànshì ne.",
         "vn": "Tôi xem tivi ở nhà."
+      },
+      {
+        "zh": "爸爸在看电视呢。",
+        "py": "Bàba zài kàn diànshì ne.",
+        "vn": "Bố đang xem tivi."
       }
     ],
     "hanzi": [
@@ -513,6 +543,11 @@ var vocabData = [
         "zh": "你喜欢看电视吗？",
         "py": "Nǐ xǐhuan kàn diànshì ma?",
         "vn": "Chị có thích xem tivi không?"
+      },
+      {
+        "zh": "我喜欢喝茶。",
+        "py": "Wǒ xǐhuan hē chá.",
+        "vn": "Tôi thích uống trà."
       }
     ],
     "hanzi": [
@@ -608,6 +643,11 @@ var vocabData = [
         "zh": "我现在给她打电话。",
         "py": "Wǒ xiànzài gěi tā dǎ diànhuà.",
         "vn": "Bây giờ tôi gọi điện cho cô ấy đây."
+      },
+      {
+        "zh": "我给妈妈打电话。",
+        "py": "Wǒ gěi māma dǎ diànhuà.",
+        "vn": "Tôi gọi điện cho mẹ."
       }
     ],
     "hanzi": [
@@ -691,6 +731,11 @@ var vocabData = [
         "zh": "我现在给她打电话。",
         "py": "Wǒ xiànzài gěi tā dǎ diànhuà.",
         "vn": "Bây giờ tôi gọi điện cho cô ấy đây."
+      },
+      {
+        "zh": "明天给我打电话吧。",
+        "py": "Míngtiān gěi wǒ dǎ diànhuà ba.",
+        "vn": "Ngày mai gọi điện cho tôi nhé."
       }
     ],
     "hanzi": [
@@ -787,6 +832,11 @@ var vocabData = [
         "zh": "你下午打吧。",
         "py": "Nǐ xiàwǔ dǎ ba.",
         "vn": "Buổi chiều anh hãy gọi."
+      },
+      {
+        "zh": "我们去看电影吧！",
+        "py": "Wǒmen qù kàn diànyǐng ba!",
+        "vn": "Chúng mình đi xem phim đi!"
       }
     ],
     "hanzi": [
@@ -890,14 +940,14 @@ var dialogData = [
 
 // Điền từ — đổi hoạt động so với bài khoá
 var fillData = [
-  {pre:'Nghe điện thoại reo, bạn bắt máy nói: “',blank:'喂',post:'，你好！”',hint:'(a lô)',ans:'喂'},
-  {pre:'Bạn nói mình cũng đang đọc sách: “我',blank:'也',post:'在看书。”',hint:'(cũng)',ans:'也'},
-  {pre:'Bạn nói mình đang ngủ: “我在',blank:'睡觉',post:'。”',hint:'(ngủ)',ans:'睡觉'},
-  {pre:'Bạn hỏi ai đó có thích xem phim không: “你',blank:'喜欢',post:'看电影吗？”',hint:'(thích)',ans:'喜欢'},
-  {pre:'Bạn nói mình đang xem tivi: “我在看',blank:'电视',post:'。”',hint:'(tivi)',ans:'电视'},
-  {pre:'Bạn nói sẽ gọi điện cho ai đó: “我',blank:'给',post:'她打电话。”',hint:'(cho, hướng về)',ans:'给'},
-  {pre:'Bạn đề nghị nhẹ nhàng ai đó gọi vào buổi chiều: “你下午打',blank:'吧',post:'。”',hint:'(trợ từ đề nghị)',ans:'吧'},
-  {pre:'Bạn nói mình đang học tiếng Trung: “我在',blank:'学习',post:'汉语。”',hint:'(học, học tập)',ans:'学习'},
+  {pre:'Nghe điện thoại reo, bạn bắt máy nói: “',blank:'喂',post:'，你好！”',hint:'(a lô)',ans:'喂',exp:'喂 dùng khi nghe hoặc gọi điện thoại: a lô.'},
+  {pre:'Bạn nói mình cũng đang đọc sách: “我',blank:'也',post:'在看书。”',hint:'(cũng)',ans:'也',exp:'也 đứng trước động từ: 我也在看书 = tôi cũng đang đọc sách.'},
+  {pre:'Bạn nói mình đang ngủ: “我在',blank:'睡觉',post:'。”',hint:'(ngủ)',ans:'睡觉',exp:'在 + 睡觉 = đang ngủ.'},
+  {pre:'Bạn hỏi ai đó có thích xem phim không: “你',blank:'喜欢',post:'看电影吗？”',hint:'(thích)',ans:'喜欢',exp:'喜欢 + động từ = thích làm gì.'},
+  {pre:'Bạn nói mình đang xem tivi: “我在看',blank:'电视',post:'。”',hint:'(tivi)',ans:'电视',exp:'看电视 = xem tivi.'},
+  {pre:'Bạn nói sẽ gọi điện cho ai đó: “我',blank:'给',post:'她打电话。”',hint:'(cho, hướng về)',ans:'给',exp:'给 + người + 打电话 = gọi điện cho ai.'},
+  {pre:'Bạn đề nghị nhẹ nhàng ai đó gọi vào buổi chiều: “你下午打',blank:'吧',post:'。”',hint:'(trợ từ đề nghị)',ans:'吧',exp:'吧 làm lời đề nghị nhẹ nhàng hơn.'},
+  {pre:'Bạn nói mình đang học tiếng Trung: “我在',blank:'学习',post:'汉语。”',hint:'(học, học tập)',ans:'学习',exp:'学习 + môn học: 学习汉语 = học tiếng Trung.'},
 ];
 
 // Sắp xếp — đổi hoạt động so với bài khoá
@@ -920,16 +970,16 @@ var matchData = [
 
 // Trắc nghiệm — trọng tâm 在……呢 (đang tiếp diễn), 吧, số điện thoại, không audio
 var mcData = [
-  {q:'喂，你在做什么＿＿？',opts:['呢','吗','吧','了'],ans:0},
-  {q:'我在睡觉＿＿。(diễn tả hành động đang tiếp diễn)',opts:['呢','吗','吧','了'],ans:0},
-  {q:'Phủ định của hành động đang tiếp diễn dùng cấu trúc nào?',opts:['没(在) + Động từ','不 + Động từ','别 + Động từ','无 + Động từ'],ans:0},
-  {q:'Số điện thoại "1" đọc như thế nào trong tiếng Trung?',opts:['yāo','yī','yì','yí'],ans:0},
-  {q:'"喜欢" nghĩa là gì?',opts:['thích, ưa thích','ghét','sợ','buồn'],ans:0},
-  {q:'"睡觉" nghĩa là gì?',opts:['ngủ','thức dậy','ăn cơm','đọc sách'],ans:0},
-  {q:'"打电话" nghĩa là gì?',opts:['gọi điện thoại','xem tivi','nghe nhạc','chơi game'],ans:0},
-  {q:'Trợ từ nào đặt cuối câu để làm dịu giọng, đưa ra lời khuyên?',opts:['吧','呢','吗','了'],ans:0},
-  {q:'"电视" nghĩa là gì?',opts:['tivi','điện thoại','máy tính','radio'],ans:0},
-  {q:'"给" trong "给她打电话" nghĩa là gì?',opts:['cho, hướng về (đối tượng)','và','ở','là'],ans:0},
+  {q:'喂，你在做什么＿＿？',opts:['呢','吗','吧','了'],ans:0,exp:'在 + động từ + 呢 diễn tả hành động đang diễn ra: 你在做什么呢？'},
+  {q:'我在睡觉＿＿。(diễn tả hành động đang tiếp diễn)',opts:['呢','吗','吧','了'],ans:0,exp:'在……呢 = đang…: 我在睡觉呢 — tôi đang ngủ.'},
+  {q:'Phủ định của hành động đang tiếp diễn dùng cấu trúc nào?',opts:['没(在) + Động từ','不 + Động từ','别 + Động từ','无 + Động từ'],ans:0,exp:'Phủ định hành động đang diễn ra dùng 没(在) + động từ: 他没看书.'},
+  {q:'Số điện thoại "1" đọc như thế nào trong tiếng Trung?',opts:['yāo','yī','yì','yí'],ans:0,exp:'Trong số điện thoại, 1 thường đọc là yāo để khỏi nhầm với 7 (qī).'},
+  {q:'"喜欢" nghĩa là gì?',opts:['thích, ưa thích','ghét','sợ','buồn'],ans:0,exp:'喜欢 = thích: 我喜欢看电影.'},
+  {q:'"睡觉" nghĩa là gì?',opts:['ngủ','thức dậy','ăn cơm','đọc sách'],ans:0,exp:'睡觉 = ngủ.'},
+  {q:'"打电话" nghĩa là gì?',opts:['gọi điện thoại','xem tivi','nghe nhạc','chơi game'],ans:0,exp:'打电话 = gọi điện thoại; 给 + người + 打电话 = gọi cho ai.'},
+  {q:'Trợ từ nào đặt cuối câu để làm dịu giọng, đưa ra lời khuyên?',opts:['吧','呢','吗','了'],ans:0,exp:'吧 cuối câu làm lời nói nhẹ nhàng, mang ý đề nghị/khuyên: 你下午打吧.'},
+  {q:'"电视" nghĩa là gì?',opts:['tivi','điện thoại','máy tính','radio'],ans:0,exp:'电视 = tivi; 看电视 = xem tivi.'},
+  {q:'"给" trong "给她打电话" nghĩa là gì?',opts:['cho, hướng về (đối tượng)','và','ở','là'],ans:0,exp:'给 + người + động từ: hướng hành động tới ai — 给她打电话 = gọi cho cô ấy.'},
 ];
 
 var speakingData = {
@@ -993,4 +1043,31 @@ var translateDataRev = [
   {vi:'Tôi thích xem tivi, cũng thích đọc sách.', zh:'我喜欢看电视，也喜欢看书。', py:'Wǒ xǐhuan kàn diànshì, yě xǐhuan kàn shū.'},
   {vi:'Chiều nay bạn gọi điện cho tôi nhé, được không?', zh:'你下午给我打电话，好吗？', py:'Nǐ xiàwǔ gěi wǒ dǎ diànhuà, hǎoma?'},
   {vi:'Anh ấy cũng là bạn cùng lớp của tôi.', zh:'他也是我的同学。', py:'Tā yě shì wǒ de tóngxué.'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'喂，你在做什么呢？我在看电视呢。',
+   questions:[
+     {q:'Người trả lời đang làm gì?',opts:['Đọc sách','Xem tivi','Ngủ'],ans:1},
+   ]},
+  {audio:'李月在家吗？她在睡觉呢。你下午给她打电话吧。',
+   questions:[
+     {q:'Lý Nguyệt đang làm gì?',opts:['Làm việc','Ngủ','Học bài'],ans:1},
+     {q:'Người nói khuyên gọi lại vào lúc nào?',opts:['Buổi sáng','Buổi trưa','Buổi chiều'],ans:2},
+   ]},
+  {audio:'你喜欢看电影吗？我很喜欢，我也喜欢看电视。',
+   questions:[
+     {q:'Người trả lời thích gì?',opts:['Chỉ thích xem phim','Thích xem phim và xem tivi','Không thích xem tivi'],ans:1},
+   ]},
+  {audio:'上午你在学习吗？我没学习，我在打电话呢。',
+   questions:[
+     {q:'Buổi sáng người trả lời làm gì?',opts:['Học bài','Gọi điện thoại','Xem tivi'],ans:1},
+   ]},
+  {audio:'大卫的电话是多少？他的电话是83405126。',
+   questions:[
+     {q:'Số điện thoại của David là bao nhiêu?',opts:['83405126','83405162','83045126'],ans:0},
+   ]},
 ];

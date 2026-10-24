@@ -19,6 +19,11 @@ var vocabData = [
         "zh": "桌子上有什么？",
         "py": "Zhuōzi shang yǒu shénme?",
         "vn": "Trên bàn có gì vậy?"
+      },
+      {
+        "zh": "我的书在桌子上。",
+        "py": "Wǒ de shū zài zhuōzi shang.",
+        "vn": "Sách của tôi ở trên bàn."
       }
     ],
     "hanzi": [
@@ -103,6 +108,11 @@ var vocabData = [
         "zh": "桌子上有什么？",
         "py": "Zhuōzi shang yǒu shénme?",
         "vn": "Trên bàn có gì vậy?"
+      },
+      {
+        "zh": "桌子上有一个杯子。",
+        "py": "Zhuōzi shang yǒu yí ge bēizi.",
+        "vn": "Trên bàn có một cái cốc."
       }
     ],
     "hanzi": [
@@ -187,6 +197,11 @@ var vocabData = [
         "zh": "桌子上有一个电脑和一本书。",
         "py": "Zhuōzi shang yǒu yí ge diànnǎo hé yì běn shū.",
         "vn": "Có một chiếc máy vi tính và một quyển sách."
+      },
+      {
+        "zh": "我想买一个电脑。",
+        "py": "Wǒ xiǎng mǎi yí ge diànnǎo.",
+        "vn": "Tôi muốn mua một cái máy tính."
       }
     ],
     "hanzi": [
@@ -283,6 +298,11 @@ var vocabData = [
         "zh": "桌子上有一个电脑和一本书。",
         "py": "Zhuōzi shang yǒu yí ge diànnǎo hé yì běn shū.",
         "vn": "Có một chiếc máy vi tính và một quyển sách."
+      },
+      {
+        "zh": "我和妈妈去商店。",
+        "py": "Wǒ hé māma qù shāngdiàn.",
+        "vn": "Tôi và mẹ đi cửa hàng."
       }
     ],
     "hanzi": [
@@ -366,6 +386,11 @@ var vocabData = [
         "zh": "桌子上有一本书。",
         "py": "Zhuōzi shang yǒu yì běn shū.",
         "vn": "Trên bàn có một quyển sách."
+      },
+      {
+        "zh": "我想买三本书。",
+        "py": "Wǒ xiǎng mǎi sān běn shū.",
+        "vn": "Tôi muốn mua ba quyển sách."
       }
     ],
     "hanzi": [
@@ -449,6 +474,11 @@ var vocabData = [
         "zh": "杯子在桌子里。",
         "py": "Bēizi zài zhuōzi li.",
         "vn": "Cái ly ở trong bàn."
+      },
+      {
+        "zh": "小猫在家里。",
+        "py": "Xiǎo māo zài jiā li.",
+        "vn": "Con mèo ở trong nhà."
       }
     ],
     "hanzi": [
@@ -533,6 +563,11 @@ var vocabData = [
         "zh": "前面那个人叫什么名字？",
         "py": "Qiánmiàn nàge rén jiào shénme míngzi?",
         "vn": "Người ở phía trước tên gì vậy?"
+      },
+      {
+        "zh": "学校前面有一个商店。",
+        "py": "Xuéxiào qiánmiàn yǒu yí ge shāngdiàn.",
+        "vn": "Phía trước trường có một cửa hàng."
       }
     ],
     "hanzi": [
@@ -617,6 +652,11 @@ var vocabData = [
         "zh": "后面那个人呢？",
         "py": "Hòumiàn nàge rén ne?",
         "vn": "Còn người ở phía sau?"
+      },
+      {
+        "zh": "小狗在我后面。",
+        "py": "Xiǎo gǒu zài wǒ hòumiàn.",
+        "vn": "Con chó nhỏ ở phía sau tôi."
       }
     ],
     "hanzi": [
@@ -700,6 +740,11 @@ var vocabData = [
         "zh": "我能坐这儿吗？",
         "py": "Wǒ néng zuò zhèr ma?",
         "vn": "Tôi có thể ngồi ở đây được không?"
+      },
+      {
+        "zh": "你的杯子在这儿。",
+        "py": "Nǐ de bēizi zài zhèr.",
+        "vn": "Cốc của bạn ở đây."
       }
     ],
     "hanzi": [],
@@ -770,6 +815,11 @@ var vocabData = [
         "zh": "这儿有人吗？没有。",
         "py": "Zhèr yǒu rén ma? Méiyǒu.",
         "vn": "Chỗ này có ai ngồi chưa? Chưa."
+      },
+      {
+        "zh": "桌子上没有书。",
+        "py": "Zhuōzi shang méiyǒu shū.",
+        "vn": "Trên bàn không có sách."
       }
     ],
     "hanzi": [
@@ -853,6 +903,11 @@ var vocabData = [
         "zh": "我能坐这儿吗？",
         "py": "Wǒ néng zuò zhèr ma?",
         "vn": "Tôi có thể ngồi ở đây được không?"
+      },
+      {
+        "zh": "我能看看你的书吗？",
+        "py": "Wǒ néng kànkan nǐ de shū ma?",
+        "vn": "Tôi xem sách của bạn một chút được không?"
       }
     ],
     "hanzi": [
@@ -936,6 +991,11 @@ var vocabData = [
         "zh": "请坐。",
         "py": "Qǐng zuò.",
         "vn": "Mời ngồi."
+      },
+      {
+        "zh": "请坐，请喝茶。",
+        "py": "Qǐng zuò, qǐng hē chá.",
+        "vn": "Mời ngồi, mời uống trà."
       }
     ],
     "hanzi": [
@@ -1039,14 +1099,14 @@ var dialogData = [
 
 // Điền từ — đổi đồ vật/địa điểm so với bài khoá
 var fillData = [
-  {pre:'Bạn hỏi trên bàn có gì: “桌子',blank:'上',post:'有什么？”',hint:'(trên, phía trên)',ans:'上'},
-  {pre:'Bạn nói có sách và máy tính: “桌子上有一本书',blank:'和',post:'一个电脑。”',hint:'(và)',ans:'和'},
-  {pre:'Bạn nói tiền để trong ngăn bàn: “钱在桌子',blank:'里',post:'。”',hint:'(trong, bên trong)',ans:'里'},
-  {pre:'Bạn hỏi tên người đứng phía trước: “',blank:'前面',post:'那个人叫什么名字？”',hint:'(phía trước)',ans:'前面'},
-  {pre:'Bạn hỏi tên người đứng phía sau: “',blank:'后面',post:'那个人叫什么名字？”',hint:'(phía sau)',ans:'后面'},
-  {pre:'Bạn nói chỗ này chưa có ai: “这儿',blank:'没有',post:'人。”',hint:'(không có)',ans:'没有'},
-  {pre:'Bạn xin phép ngồi: “我',blank:'能',post:'坐这儿吗？”',hint:'(có thể)',ans:'能'},
-  {pre:'Bạn mời người khác ngồi: “请',blank:'坐',post:'。”',hint:'(ngồi)',ans:'坐'},
+  {pre:'Bạn hỏi trên bàn có gì: “桌子',blank:'上',post:'有什么？”',hint:'(trên, phía trên)',ans:'上',exp:'桌子上 = trên mặt bàn.'},
+  {pre:'Bạn nói có sách và máy tính: “桌子上有一本书',blank:'和',post:'一个电脑。”',hint:'(và)',ans:'和',exp:'和 nối hai danh từ: 一本书和一个电脑.'},
+  {pre:'Bạn nói tiền để trong ngăn bàn: “钱在桌子',blank:'里',post:'。”',hint:'(trong, bên trong)',ans:'里',exp:'桌子里 = trong ngăn bàn.'},
+  {pre:'Bạn hỏi tên người đứng phía trước: “',blank:'前面',post:'那个人叫什么名字？”',hint:'(phía trước)',ans:'前面',exp:'前面那个人 = người ở phía trước kia.'},
+  {pre:'Bạn hỏi tên người đứng phía sau: “',blank:'后面',post:'那个人叫什么名字？”',hint:'(phía sau)',ans:'后面',exp:'后面那个人 = người ở phía sau kia.'},
+  {pre:'Bạn nói chỗ này chưa có ai: “这儿',blank:'没有',post:'人。”',hint:'(không có)',ans:'没有',exp:'Phủ định 有 là 没有: 这儿没有人.'},
+  {pre:'Bạn xin phép ngồi: “我',blank:'能',post:'坐这儿吗？”',hint:'(có thể)',ans:'能',exp:'能 + động từ…吗？ dùng để xin phép.'},
+  {pre:'Bạn mời người khác ngồi: “请',blank:'坐',post:'。”',hint:'(ngồi)',ans:'坐',exp:'请坐 = mời ngồi.'},
 ];
 
 // Sắp xếp — đổi câu chữ/đồ vật so với bài khoá
@@ -1069,16 +1129,16 @@ var matchData = [
 
 // Trắc nghiệm — trọng tâm 和/没有/能, không audio
 var mcData = [
-  {q:'桌子＿＿有什么？',opts:['上','下','里','和'],ans:0},
-  {q:'桌子上有一本书＿＿一个电脑。',opts:['和','是','有','在'],ans:0},
-  {q:'钱在桌子＿＿。',opts:['里','上','和','能'],ans:0},
-  {q:'"能" nghĩa là gì?',opts:['có thể','muốn','biết','cần'],ans:0},
-  {q:'"没有" là phủ định của từ nào?',opts:['有','是','在','能'],ans:0},
-  {q:'"这儿有人吗？" — trả lời phủ định đúng là?',opts:['没有','不有','不是','没是'],ans:0},
-  {q:'"前面" nghĩa là gì?',opts:['phía trước','phía sau','bên trong','bên trên'],ans:0},
-  {q:'"后面" nghĩa là gì?',opts:['phía sau','phía trước','bên trong','bên dưới'],ans:0},
-  {q:'Xin phép ngồi lịch sự dùng cấu trúc nào?',opts:['能……吗？','要……吗？','是……吗？','有……吗？'],ans:0},
-  {q:'"电脑" nghĩa là gì?',opts:['máy vi tính','điện thoại','sách','bàn'],ans:0},
+  {q:'桌子＿＿有什么？',opts:['上','下','里','和'],ans:0,exp:'桌子上 = trên bàn; danh từ + 上 chỉ vị trí phía trên.'},
+  {q:'桌子上有一本书＿＿一个电脑。',opts:['和','是','有','在'],ans:0,exp:'和 nối hai danh từ: 一本书和一个电脑; 和 không dùng để nối hai câu.'},
+  {q:'钱在桌子＿＿。',opts:['里','上','和','能'],ans:0,exp:'在桌子里 = ở trong (ngăn) bàn; 里 chỉ bên trong.'},
+  {q:'"能" nghĩa là gì?',opts:['có thể','muốn','biết','cần'],ans:0,exp:'能 = có thể (có khả năng hoặc được phép): 我能坐这儿吗？'},
+  {q:'"没有" là phủ định của từ nào?',opts:['有','是','在','能'],ans:0,exp:'没有 là phủ định của 有; không nói 不有.'},
+  {q:'"这儿有人吗？" — trả lời phủ định đúng là?',opts:['没有','不有','不是','没是'],ans:0,exp:'Phủ định 有 luôn dùng 没有; 不有 là sai.'},
+  {q:'"前面" nghĩa là gì?',opts:['phía trước','phía sau','bên trong','bên trên'],ans:0,exp:'前面 = phía trước; 后面 = phía sau.'},
+  {q:'"后面" nghĩa là gì?',opts:['phía sau','phía trước','bên trong','bên dưới'],ans:0,exp:'后面 = phía sau; 前面 = phía trước.'},
+  {q:'Xin phép ngồi lịch sự dùng cấu trúc nào?',opts:['能……吗？','要……吗？','是……吗？','有……吗？'],ans:0,exp:'能……吗？ dùng để xin phép lịch sự: 我能坐这儿吗？'},
+  {q:'"电脑" nghĩa là gì?',opts:['máy vi tính','điện thoại','sách','bàn'],ans:0,exp:'电脑 = 电 (điện) + 脑 (não): máy vi tính.'},
 ];
 
 var speakingData = {
@@ -1142,4 +1202,31 @@ var translateDataRev = [
   {vi:'Tôi có thể ngồi đây không? Mời ngồi!', zh:'我能坐这儿吗？请坐！', py:'Wǒ néng zuò zhèr ma? Qǐng zuò!'},
   {vi:'Phía trước bệnh viện có cửa hàng máy tính.', zh:'医院前面有电脑商店。', py:'Yīyuàn qiánmiàn yǒu diànnǎo shāngdiàn.'},
   {vi:'Sách và cốc của bạn ở trên bàn.', zh:'你的书和杯子在桌子上。', py:'Nǐ de shū hé bēizi zài zhuōzi shang.'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'桌子上有什么？桌子上有三本书和一个杯子。',
+   questions:[
+     {q:'Trên bàn có gì?',opts:['Ba quyển sách và một cái cốc','Một cái máy tính và một quyển sách','Ba cái cốc'],ans:0},
+   ]},
+  {audio:'请问，这儿有人吗？有，我朋友坐这儿。',
+   questions:[
+     {q:'Chỗ này có người ngồi không?',opts:['Không có ai','Có, bạn của người trả lời ngồi','Có, giáo viên ngồi'],ans:1},
+   ]},
+  {audio:'我的电脑在哪儿？你的电脑在桌子上。',
+   questions:[
+     {q:'Máy tính ở đâu?',opts:['Trên bàn','Dưới ghế','Trong ngăn bàn'],ans:0},
+   ]},
+  {audio:'学校前面有一个商店，后面有一个医院。',
+   questions:[
+     {q:'Phía trước trường học có gì?',opts:['Bệnh viện','Cửa hàng','Nhà'],ans:1},
+     {q:'Phía sau trường có gì?',opts:['Bệnh viện','Cửa hàng','Trường học'],ans:0},
+   ]},
+  {audio:'王方在哪儿工作？她在医院工作。谢朋呢？他在学校工作，他是老师。',
+   questions:[
+     {q:'Tạ Bằng làm việc ở đâu?',opts:['Bệnh viện','Cửa hàng','Trường học'],ans:2},
+   ]},
 ];

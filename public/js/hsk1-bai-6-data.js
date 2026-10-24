@@ -107,6 +107,11 @@ var vocabData = [
         "zh": "我会说汉语。",
         "py": "Wǒ huì shuō Hànyǔ.",
         "vn": "Tôi biết nói tiếng Trung."
+      },
+      {
+        "zh": "我妈妈不会说汉语。",
+        "py": "Wǒ māma bú huì shuō Hànyǔ.",
+        "vn": "Mẹ tôi không biết nói tiếng Trung."
       }
     ],
     "hanzi": [
@@ -190,6 +195,11 @@ var vocabData = [
         "zh": "你妈妈会说汉语吗？",
         "py": "Nǐ māma huì shuō Hànyǔ ma?",
         "vn": "Mẹ em biết nói tiếng Trung Quốc không?"
+      },
+      {
+        "zh": "我妈妈会做中国菜。",
+        "py": "Wǒ māma huì zuò Zhōngguó cài.",
+        "vn": "Mẹ tôi biết nấu món Trung Quốc."
       }
     ],
     "hanzi": [
@@ -274,6 +284,11 @@ var vocabData = [
         "zh": "中国菜很好吃。",
         "py": "Zhōngguó cài hěn hǎochī.",
         "vn": "Món ăn Trung Quốc rất ngon."
+      },
+      {
+        "zh": "这个菜很好吃。",
+        "py": "Zhège cài hěn hǎochī.",
+        "vn": "Món này rất ngon."
       }
     ],
     "hanzi": [
@@ -357,6 +372,11 @@ var vocabData = [
         "zh": "中国菜很好吃。",
         "py": "Zhōngguó cài hěn hǎochī.",
         "vn": "Món ăn Trung Quốc rất ngon."
+      },
+      {
+        "zh": "我很好，谢谢！",
+        "py": "Wǒ hěn hǎo, xièxie!",
+        "vn": "Tôi rất khỏe, cảm ơn!"
       }
     ],
     "hanzi": [
@@ -441,6 +461,11 @@ var vocabData = [
         "zh": "中国菜很好吃。",
         "py": "Zhōngguó cài hěn hǎochī.",
         "vn": "Món ăn Trung Quốc rất ngon."
+      },
+      {
+        "zh": "中国菜好吃吗？",
+        "py": "Zhōngguó cài hǎochī ma?",
+        "vn": "Món Trung Quốc có ngon không?"
       }
     ],
     "hanzi": [
@@ -520,6 +545,11 @@ var vocabData = [
         "zh": "你会做中国菜吗？",
         "py": "Nǐ huì zuò Zhōngguó cài ma?",
         "vn": "Anh có biết nấu món Trung Quốc không?"
+      },
+      {
+        "zh": "你妈妈会做中国菜吗？",
+        "py": "Nǐ māma huì zuò Zhōngguó cài ma?",
+        "vn": "Mẹ bạn có biết nấu món Trung Quốc không?"
       }
     ],
     "hanzi": [
@@ -603,6 +633,11 @@ var vocabData = [
         "zh": "你会写汉字吗？",
         "py": "Nǐ huì xiě Hànzì ma?",
         "vn": "Anh có biết viết chữ Hán không?"
+      },
+      {
+        "zh": "你的名字怎么写？",
+        "py": "Nǐ de míngzi zěnme xiě?",
+        "vn": "Tên bạn viết thế nào?"
       }
     ],
     "hanzi": [
@@ -686,6 +721,11 @@ var vocabData = [
         "zh": "你会写汉字吗？",
         "py": "Nǐ huì xiě Hànzì ma?",
         "vn": "Anh có biết viết chữ Hán không?"
+      },
+      {
+        "zh": "我会写汉字。",
+        "py": "Wǒ huì xiě Hànzì.",
+        "vn": "Tôi biết viết chữ Hán."
       }
     ],
     "hanzi": [],
@@ -757,6 +797,11 @@ var vocabData = [
         "zh": "这个字怎么写？",
         "py": "Zhège zì zěnme xiě?",
         "vn": "Vậy chữ này anh viết thế nào?"
+      },
+      {
+        "zh": "这个字我不会读。",
+        "py": "Zhège zì wǒ bú huì dú.",
+        "vn": "Chữ này tôi không biết đọc."
       }
     ],
     "hanzi": [],
@@ -827,6 +872,11 @@ var vocabData = [
         "zh": "这个字怎么写？",
         "py": "Zhège zì zěnme xiě?",
         "vn": "Vậy chữ này anh viết thế nào?"
+      },
+      {
+        "zh": "这个字怎么读？",
+        "py": "Zhège zì zěnme dú?",
+        "vn": "Chữ này đọc thế nào?"
       }
     ],
     "hanzi": [
@@ -905,6 +955,11 @@ var vocabData = [
         "zh": "这个字我会读，不会写。",
         "py": "Zhège zì wǒ huì dú, bú huì xiě.",
         "vn": "Chữ này tôi biết đọc chứ không biết viết."
+      },
+      {
+        "zh": "你会读这个字吗？",
+        "py": "Nǐ huì dú zhège zì ma?",
+        "vn": "Bạn có biết đọc chữ này không?"
       }
     ],
     "hanzi": [
@@ -1008,14 +1063,14 @@ var dialogData = [
 
 // Điền từ — đổi chủ ngữ/đối tượng so với bài khoá
 var fillData = [
-  {pre:'Bạn khẳng định mình biết nói tiếng Trung: “我',blank:'会',post:'说汉语。”',hint:'(biết — qua học tập)',ans:'会'},
-  {pre:'Bạn phủ định mẹ mình biết nói tiếng Trung: “我妈妈不',blank:'会',post:'说汉语。”',hint:'(biết)',ans:'会'},
-  {pre:'Bạn khen món ăn ngon: “这个菜',blank:'很',post:'好吃。”',hint:'(rất)',ans:'很'},
-  {pre:'Bạn hỏi ai đó có biết nấu món Việt Nam không: “你会',blank:'做',post:'越南菜吗？”',hint:'(làm, nấu)',ans:'做'},
-  {pre:'Bạn hỏi ai đó có biết viết chữ Hán không: “你会',blank:'写',post:'汉字吗？”',hint:'(viết)',ans:'写'},
-  {pre:'Bạn hỏi cách viết một chữ cụ thể: “这个字',blank:'怎么',post:'写？”',hint:'(như thế nào)',ans:'怎么'},
-  {pre:'Bạn nói mình biết đọc nhưng không biết viết: “这个字我会读，',blank:'不',post:'会写。”',hint:'(không, chẳng)',ans:'不'},
-  {pre:'Bạn hỏi mẹ có biết đọc chữ Hán không: “你',blank:'妈妈',post:'会读汉字吗？”',hint:'(mẹ)',ans:'妈妈'},
+  {pre:'Bạn khẳng định mình biết nói tiếng Trung: “我',blank:'会',post:'说汉语。”',hint:'(biết — qua học tập)',ans:'会',exp:'会 = biết (do học mà có): 我会说汉语.'},
+  {pre:'Bạn phủ định mẹ mình biết nói tiếng Trung: “我妈妈不',blank:'会',post:'说汉语。”',hint:'(biết)',ans:'会',exp:'Phủ định của 会 là 不会.'},
+  {pre:'Bạn khen món ăn ngon: “这个菜',blank:'很',post:'好吃。”',hint:'(rất)',ans:'很',exp:'很 đứng trước tính từ 好吃: 很好吃 = rất ngon.'},
+  {pre:'Bạn hỏi ai đó có biết nấu món Việt Nam không: “你会',blank:'做',post:'越南菜吗？”',hint:'(làm, nấu)',ans:'做',exp:'做 + 菜 = nấu món ăn.'},
+  {pre:'Bạn hỏi ai đó có biết viết chữ Hán không: “你会',blank:'写',post:'汉字吗？”',hint:'(viết)',ans:'写',exp:'写 + 汉字 = viết chữ Hán.'},
+  {pre:'Bạn hỏi cách viết một chữ cụ thể: “这个字',blank:'怎么',post:'写？”',hint:'(như thế nào)',ans:'怎么',exp:'怎么 + 写 = viết như thế nào (hỏi cách làm).'},
+  {pre:'Bạn nói mình biết đọc nhưng không biết viết: “这个字我会读，',blank:'不',post:'会写。”',hint:'(không, chẳng)',ans:'不',exp:'会读，不会写: phủ định 会 bằng 不.'},
+  {pre:'Bạn hỏi mẹ có biết đọc chữ Hán không: “你',blank:'妈妈',post:'会读汉字吗？”',hint:'(mẹ)',ans:'妈妈',exp:'妈妈 là mẹ: 你妈妈 = mẹ bạn.'},
 ];
 
 // Sắp xếp — đổi ngôi/đối tượng so với bài khoá
@@ -1038,16 +1093,16 @@ var matchData = [
 
 // Trắc nghiệm — trọng tâm 会/很/怎么, không audio
 var mcData = [
-  {q:'我＿＿说汉语。(biết, qua học tập)',opts:['会','是','有','叫'],ans:0},
-  {q:'Câu vị ngữ tính từ (Chủ ngữ + 很 + Tính từ). Câu nào ĐÚNG?',opts:['中国菜很好吃','中国菜好吃很','很中国菜好吃','中国菜很吃好'],ans:0},
-  {q:'这个字＿＿写？(hỏi cách thức)',opts:['怎么','什么','谁','哪'],ans:0},
-  {q:'Phủ định của "会" là gì?',opts:['不会','没会','不是会','别会'],ans:0},
-  {q:'"写" nghĩa là gì?',opts:['viết','đọc','nói','làm'],ans:0},
-  {q:'"读" nghĩa là gì?',opts:['đọc','viết','nói','nghe'],ans:0},
-  {q:'"做" nghĩa là gì?',opts:['làm, nấu','ăn','uống','mua'],ans:0},
-  {q:'Muốn phủ định "好吃" (ngon), câu đúng là?',opts:['不好吃','不很好吃','没好吃','别好吃'],ans:0},
-  {q:'"妈妈" nghĩa là gì?',opts:['mẹ','bố','chị gái','em gái'],ans:0},
-  {q:'Câu nào đúng khi nói "Tôi biết đọc nhưng không biết viết"?',opts:['我会读，不会写','我会读，没写','我读会，不写会','我不会读也不会写'],ans:0},
+  {q:'我＿＿说汉语。(biết, qua học tập)',opts:['会','是','有','叫'],ans:0,exp:'会 + động từ: biết làm gì nhờ học tập, rèn luyện — 我会说汉语.'},
+  {q:'Câu vị ngữ tính từ (Chủ ngữ + 很 + Tính từ). Câu nào ĐÚNG?',opts:['中国菜很好吃','中国菜好吃很','很中国菜好吃','中国菜很吃好'],ans:0,exp:'Câu vị ngữ tính từ: Chủ ngữ + 很 + Tính từ → 中国菜很好吃; 很 phải đứng trước tính từ.'},
+  {q:'这个字＿＿写？(hỏi cách thức)',opts:['怎么','什么','谁','哪'],ans:0,exp:'怎么 + động từ dùng để hỏi cách thức: 怎么写 = viết thế nào.'},
+  {q:'Phủ định của "会" là gì?',opts:['不会','没会','不是会','别会'],ans:0,exp:'Phủ định của 会 là 不会 (bú huì); không nói 没会.'},
+  {q:'"写" nghĩa là gì?',opts:['viết','đọc','nói','làm'],ans:0,exp:'写 (xiě) là viết; đọc là 读, nói là 说.'},
+  {q:'"读" nghĩa là gì?',opts:['đọc','viết','nói','nghe'],ans:0,exp:'读 (dú) là đọc thành tiếng; viết là 写.'},
+  {q:'"做" nghĩa là gì?',opts:['làm, nấu','ăn','uống','mua'],ans:0,exp:'做 (zuò) là làm, nấu: 做菜 = nấu ăn.'},
+  {q:'Muốn phủ định "好吃" (ngon), câu đúng là?',opts:['不好吃','不很好吃','没好吃','别好吃'],ans:0,exp:'Phủ định tính từ thì đặt 不 ngay trước nó: 不好吃; không dùng 没 và không kèm 很.'},
+  {q:'"妈妈" nghĩa là gì?',opts:['mẹ','bố','chị gái','em gái'],ans:0,exp:'妈妈 (māma) là mẹ; bố là 爸爸.'},
+  {q:'Câu nào đúng khi nói "Tôi biết đọc nhưng không biết viết"?',opts:['我会读，不会写','我会读，没写','我读会，不写会','我不会读也不会写'],ans:0,exp:'我会读，不会写 = biết đọc nhưng không biết viết; phủ định 会 là 不会.'},
 ];
 
 var speakingData = {
@@ -1110,4 +1165,31 @@ var translateDataRev = [
   {vi:'Cô giáo biết viết rất nhiều chữ Hán.', zh:'老师会写很多汉字。', py:'Lǎoshī huì xiě hěn duō Hànzì.'},
   {vi:'Bạn tôi biết nói tiếng Trung.', zh:'我朋友会说汉语。', py:'Wǒ péngyou huì shuō Hànyǔ.'},
   {vi:'Bạn có biết viết chữ Hán không?', zh:'你会写汉字吗？', py:'Nǐ huì xiě Hànzì ma?'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'你会说汉语吗？我会说。你会写汉字吗？我不会写。',
+   questions:[
+     {q:'Người trả lời biết làm gì?',opts:['Nói và viết tiếng Trung','Chỉ biết nói, không biết viết','Chỉ biết viết'],ans:1},
+   ]},
+  {audio:'中国菜好吃吗？很好吃。你妈妈会做中国菜吗？她会做。',
+   questions:[
+     {q:'Mẹ của người trả lời có biết nấu món Trung Quốc không?',opts:['Có','Không','Không nói'],ans:0},
+   ]},
+  {audio:'老师，这个字怎么读？这个字读“好”。',
+   questions:[
+     {q:'Người hỏi muốn biết điều gì?',opts:['Cách viết một chữ','Cách đọc một chữ','Tên của giáo viên'],ans:1},
+   ]},
+  {audio:'我妈妈是美国人，她会说汉语，她不会写汉字。',
+   questions:[
+     {q:'Mẹ người nói là người nước nào?',opts:['Trung Quốc','Mỹ','Không nói'],ans:1},
+     {q:'Mẹ người nói KHÔNG biết làm gì?',opts:['Nói tiếng Trung','Viết chữ Hán','Nấu ăn'],ans:1},
+   ]},
+  {audio:'你的名字怎么写？对不起，我不会写。',
+   questions:[
+     {q:'Người thứ hai trả lời thế nào?',opts:['Viết tên ra ngay','Xin lỗi vì không biết viết','Đọc to tên lên'],ans:1},
+   ]},
 ];

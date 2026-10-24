@@ -19,6 +19,11 @@ var vocabData = [
         "zh": "我去商店买东西了。",
         "py": "Wǒ qù shāngdiàn mǎi dōngxi le.",
         "vn": "Mình đến cửa hàng để mua đồ."
+      },
+      {
+        "zh": "你想买什么东西？",
+        "py": "Nǐ xiǎng mǎi shénme dōngxi?",
+        "vn": "Bạn muốn mua đồ gì?"
       }
     ],
     "hanzi": [
@@ -115,6 +120,11 @@ var vocabData = [
         "zh": "我买了一点儿苹果。",
         "py": "Wǒ mǎile yìdiǎnr píngguǒ.",
         "vn": "Mình mua một ít táo."
+      },
+      {
+        "zh": "我会说一点儿汉语。",
+        "py": "Wǒ huì shuō yìdiǎnr Hànyǔ.",
+        "vn": "Tôi biết nói một chút tiếng Trung."
       }
     ],
     "hanzi": [],
@@ -186,6 +196,11 @@ var vocabData = [
         "zh": "我买了一点儿苹果。",
         "py": "Wǒ mǎile yìdiǎnr píngguǒ.",
         "vn": "Mình mua một ít táo."
+      },
+      {
+        "zh": "这些苹果多少钱？",
+        "py": "Zhèxiē píngguǒ duōshao qián?",
+        "vn": "Mấy quả táo này bao nhiêu tiền?"
       }
     ],
     "hanzi": [
@@ -269,6 +284,11 @@ var vocabData = [
         "zh": "你看见张先生了吗？",
         "py": "Nǐ kànjiàn Zhāng xiānsheng le ma?",
         "vn": "Anh có thấy ông Trương không?"
+      },
+      {
+        "zh": "我没看见你的书。",
+        "py": "Wǒ méi kànjiàn nǐ de shū.",
+        "vn": "Tôi không thấy sách của bạn."
       }
     ],
     "hanzi": [],
@@ -339,6 +359,11 @@ var vocabData = [
         "zh": "你看见张先生了吗？",
         "py": "Nǐ kànjiàn Zhāng xiānsheng le ma?",
         "vn": "Anh có thấy ông Trương không?"
+      },
+      {
+        "zh": "张先生是医生。",
+        "py": "Zhāng xiānsheng shì yīshēng.",
+        "vn": "Ông Trương là bác sĩ."
       }
     ],
     "hanzi": [
@@ -422,6 +447,11 @@ var vocabData = [
         "zh": "他去学开车了。",
         "py": "Tā qù xué kāi chē le.",
         "vn": "Ông ấy đi học lái xe rồi."
+      },
+      {
+        "zh": "你会开车吗？",
+        "py": "Nǐ huì kāi chē ma?",
+        "vn": "Bạn có biết lái xe không?"
       }
     ],
     "hanzi": [
@@ -505,6 +535,11 @@ var vocabData = [
         "zh": "他去学开车了。",
         "py": "Tā qù xué kāi chē le.",
         "vn": "Ông ấy đi học lái xe rồi."
+      },
+      {
+        "zh": "这是我的车。",
+        "py": "Zhè shì wǒ de chē.",
+        "vn": "Đây là xe của tôi."
       }
     ],
     "hanzi": [
@@ -588,6 +623,11 @@ var vocabData = [
         "zh": "40分钟后回来。",
         "py": "Sìshí fēnzhōng hòu huílai.",
         "vn": "40 phút nữa quay lại."
+      },
+      {
+        "zh": "妈妈什么时候回来？",
+        "py": "Māma shénme shíhou huílai?",
+        "vn": "Khi nào mẹ về?"
       }
     ],
     "hanzi": [],
@@ -658,6 +698,11 @@ var vocabData = [
         "zh": "40分钟后回来。",
         "py": "Sìshí fēnzhōng hòu huílai.",
         "vn": "40 phút nữa quay lại."
+      },
+      {
+        "zh": "他十分钟后来。",
+        "py": "Tā shí fēnzhōng hòu lái.",
+        "vn": "Mười phút nữa anh ấy đến."
       }
     ],
     "hanzi": [
@@ -741,6 +786,11 @@ var vocabData = [
         "zh": "40分钟后回来。",
         "py": "Sìshí fēnzhōng hòu huílai.",
         "vn": "40 phút nữa quay lại."
+      },
+      {
+        "zh": "吃饭后我们去看电影。",
+        "py": "Chī fàn hòu wǒmen qù kàn diànyǐng.",
+        "vn": "Ăn cơm xong chúng ta đi xem phim."
       }
     ],
     "hanzi": [],
@@ -811,6 +861,11 @@ var vocabData = [
         "zh": "王方的衣服太漂亮了！",
         "py": "Wáng Fāng de yīfu tài piàoliang le!",
         "vn": "Quần áo của Vương Phương đẹp quá!"
+      },
+      {
+        "zh": "我去商店买衣服了。",
+        "py": "Wǒ qù shāngdiàn mǎi yīfu le.",
+        "vn": "Tôi đi cửa hàng mua quần áo rồi."
       }
     ],
     "hanzi": [
@@ -907,6 +962,11 @@ var vocabData = [
         "zh": "王方的衣服太漂亮了！",
         "py": "Wáng Fāng de yīfu tài piàoliang le!",
         "vn": "Quần áo của Vương Phương đẹp quá!"
+      },
+      {
+        "zh": "你的杯子很漂亮。",
+        "py": "Nǐ de bēizi hěn piàoliang.",
+        "vn": "Cái cốc của bạn rất đẹp."
       }
     ],
     "hanzi": [
@@ -1002,6 +1062,11 @@ var vocabData = [
         "zh": "是啊，她买了不少衣服。",
         "py": "Shì a, tā mǎile bùshǎo yīfu.",
         "vn": "Đúng vậy. Cô ấy mua nhiều quần áo lắm."
+      },
+      {
+        "zh": "是啊，今天太热了。",
+        "py": "Shì a, jīntiān tài rè le.",
+        "vn": "Đúng vậy, hôm nay nóng quá."
       }
     ],
     "hanzi": [
@@ -1085,6 +1150,11 @@ var vocabData = [
         "zh": "她买了不少衣服。",
         "py": "Tā mǎile bùshǎo yīfu.",
         "vn": "Cô ấy mua nhiều quần áo lắm."
+      },
+      {
+        "zh": "我们学校的学生不少。",
+        "py": "Wǒmen xuéxiào de xuésheng bùshǎo.",
+        "vn": "Trường chúng tôi có khá nhiều học sinh."
       }
     ],
     "hanzi": [],
@@ -1156,6 +1226,11 @@ var vocabData = [
         "zh": "这些都是王方的东西。",
         "py": "Zhèxiē dōu shì Wáng Fāng de dōngxi.",
         "vn": "Những thứ này đều là đồ của Vương Phương."
+      },
+      {
+        "zh": "这些书是谁的？",
+        "py": "Zhèxiē shū shì shéi de?",
+        "vn": "Những quyển sách này là của ai?"
       }
     ],
     "hanzi": [],
@@ -1226,6 +1301,11 @@ var vocabData = [
         "zh": "这些都是王方的东西。",
         "py": "Zhèxiē dōu shì Wáng Fāng de dōngxi.",
         "vn": "Những thứ này đều là đồ của Vương Phương."
+      },
+      {
+        "zh": "我们都是学生。",
+        "py": "Wǒmen dōu shì xuésheng.",
+        "vn": "Chúng tôi đều là học sinh."
       }
     ],
     "hanzi": [
@@ -1329,14 +1409,14 @@ var dialogData = [
 
 // Điền từ — đổi đồ vật/tình huống so với bài khoá
 var fillData = [
-  {pre:'Bạn hỏi hôm qua ai đó đi đâu: “昨天你去',blank:'哪儿',post:'了？”',hint:'(đâu, chỗ nào)',ans:'哪儿'},
-  {pre:'Bạn nói mình đi mua đồ: “我去商店买',blank:'东西',post:'了。”',hint:'(đồ đạc, đồ dùng)',ans:'东西'},
-  {pre:'Bạn nói mình mua một ít táo: “我买了一点儿',blank:'苹果',post:'。”',hint:'(táo)',ans:'苹果'},
-  {pre:'Bạn nói có thấy ai đó: “我',blank:'看见',post:'他了。”',hint:'(nhìn thấy)',ans:'看见'},
-  {pre:'Bạn hỏi khi nào ai đó quay lại: “他什么时候',blank:'回来',post:'？”',hint:'(quay về)',ans:'回来'},
-  {pre:'Bạn khen quần áo ai đó đẹp: “你的衣服太',blank:'漂亮',post:'了！”',hint:'(đẹp)',ans:'漂亮'},
-  {pre:'Bạn nói mua khá nhiều đồ: “我买了不',blank:'少',post:'东西。”',hint:'("không ít" = nhiều)',ans:'少'},
-  {pre:'Bạn nói những thứ này đều là của mình: “这些',blank:'都',post:'是我的。”',hint:'(đều)',ans:'都'},
+  {pre:'Bạn hỏi hôm qua ai đó đi đâu: “昨天你去',blank:'哪儿',post:'了？”',hint:'(đâu, chỗ nào)',ans:'哪儿',exp:'去哪儿了？ hỏi ai đó đã đi đâu.'},
+  {pre:'Bạn nói mình đi mua đồ: “我去商店买',blank:'东西',post:'了。”',hint:'(đồ đạc, đồ dùng)',ans:'东西',exp:'买东西 = mua đồ, mua sắm.'},
+  {pre:'Bạn nói mình mua một ít táo: “我买了一点儿',blank:'苹果',post:'。”',hint:'(táo)',ans:'苹果',exp:'一点儿 + danh từ = một ít: 一点儿苹果.'},
+  {pre:'Bạn nói có thấy ai đó: “我',blank:'看见',post:'他了。”',hint:'(nhìn thấy)',ans:'看见',exp:'看见 = nhìn thấy (kết quả của 看).'},
+  {pre:'Bạn hỏi khi nào ai đó quay lại: “他什么时候',blank:'回来',post:'？”',hint:'(quay về)',ans:'回来',exp:'回来 = quay về (chỗ người nói).'},
+  {pre:'Bạn khen quần áo ai đó đẹp: “你的衣服太',blank:'漂亮',post:'了！”',hint:'(đẹp)',ans:'漂亮',exp:'太漂亮了 = đẹp quá.'},
+  {pre:'Bạn nói mua khá nhiều đồ: “我买了不',blank:'少',post:'东西。”',hint:'("không ít" = nhiều)',ans:'少',exp:'不少 = không ít, tức là nhiều.'},
+  {pre:'Bạn nói những thứ này đều là của mình: “这些',blank:'都',post:'是我的。”',hint:'(đều)',ans:'都',exp:'都 đặt trước động từ: 这些都是我的.'},
 ];
 
 // Sắp xếp — đổi đồ vật/tình huống so với bài khoá
@@ -1359,16 +1439,16 @@ var matchData = [
 
 // Trắc nghiệm — trọng tâm 了 (hoàn thành), 都, 不少, không audio
 var mcData = [
-  {q:'我去商店买东西＿＿。(hành động đã hoàn thành)',opts:['了','吗','呢','吧'],ans:0},
-  {q:'我买＿＿一点儿苹果。',opts:['了','吗','呢','吧'],ans:0},
-  {q:'Phủ định của "了" (đã làm gì) dùng cấu trúc nào?',opts:['没 + Động từ (bỏ 了)','不 + Động từ + 了','没 + Động từ + 了','别 + Động từ + 了'],ans:0},
-  {q:'"40分钟后" nghĩa là gì?',opts:['sau 40 phút','trước 40 phút','trong 40 phút','mỗi 40 phút'],ans:0},
-  {q:'"漂亮" nghĩa là gì?',opts:['đẹp, xinh đẹp','xấu','to lớn','nhỏ bé'],ans:0},
-  {q:'"不少" nghĩa là gì?',opts:['nhiều, khá nhiều','ít','không có','một ít'],ans:0},
-  {q:'"都" nghĩa là gì?',opts:['đều','cũng','rất','quá'],ans:0},
-  {q:'"东西" nghĩa là gì?',opts:['đồ đạc, đồ dùng','phương hướng','quần áo','thức ăn'],ans:0},
-  {q:'Câu nào ĐÚNG khi nói "Anh ấy đi học lái xe rồi"?',opts:['他去学开车了。','他学去开车了。','他开车去学了。','他了去学开车。'],ans:0},
-  {q:'"衣服" nghĩa là gì?',opts:['quần áo','giày dép','túi xách','mũ nón'],ans:0},
+  {q:'我去商店买东西＿＿。(hành động đã hoàn thành)',opts:['了','吗','呢','吧'],ans:0,exp:'了 ở cuối câu cho biết hành động đã xảy ra: 我去商店买东西了.'},
+  {q:'我买＿＿一点儿苹果。',opts:['了','吗','呢','吧'],ans:0,exp:'Động từ + 了 + tân ngữ có số lượng: 买了一点儿苹果 (đã mua một ít táo).'},
+  {q:'Phủ định của "了" (đã làm gì) dùng cấu trúc nào?',opts:['没 + Động từ (bỏ 了)','不 + Động từ + 了','没 + Động từ + 了','别 + Động từ + 了'],ans:0,exp:'Phủ định hành động đã xảy ra dùng 没 + động từ và bỏ 了: 我没买.'},
+  {q:'"40分钟后" nghĩa là gì?',opts:['sau 40 phút','trước 40 phút','trong 40 phút','mỗi 40 phút'],ans:0,exp:'Khoảng thời gian + 后 = sau khoảng thời gian đó: 40分钟后 = 40 phút sau.'},
+  {q:'"漂亮" nghĩa là gì?',opts:['đẹp, xinh đẹp','xấu','to lớn','nhỏ bé'],ans:0,exp:'漂亮 = đẹp, xinh đẹp.'},
+  {q:'"不少" nghĩa là gì?',opts:['nhiều, khá nhiều','ít','không có','một ít'],ans:0,exp:'不少 = "không ít", tức là nhiều, khá nhiều.'},
+  {q:'"都" nghĩa là gì?',opts:['đều','cũng','rất','quá'],ans:0,exp:'都 = đều, đứng trước động từ: 这些都是我的.'},
+  {q:'"东西" nghĩa là gì?',opts:['đồ đạc, đồ dùng','phương hướng','quần áo','thức ăn'],ans:0,exp:'东西 (dōngxi, xi đọc thanh nhẹ) = đồ đạc; đọc dōngxī thì là "đông tây" (phương hướng).'},
+  {q:'Câu nào ĐÚNG khi nói "Anh ấy đi học lái xe rồi"?',opts:['他去学开车了。','他学去开车了。','他开车去学了。','他了去学开车。'],ans:0,exp:'Câu liên động: 去 + 学开车 + 了 → 他去学开车了.'},
+  {q:'"衣服" nghĩa là gì?',opts:['quần áo','giày dép','túi xách','mũ nón'],ans:0,exp:'衣服 = quần áo.'},
 ];
 
 var speakingData = {
@@ -1432,4 +1512,32 @@ var translateDataRev = [
   {vi:'Bốn mươi phút sau, anh ấy đã về.', zh:'四十分钟后，他回来了。', py:'Sìshí fēnzhōng hòu, tā huílái le.'},
   {vi:'Những thứ này đều rất ít, đều là của tôi.', zh:'这些东西都很少，都是我的。', py:'Zhèxiē dōngxi dōu hěn shǎo, dōu shì wǒ de.'},
   {vi:'Ôi! Những bộ quần áo này đều đẹp quá!', zh:'啊！这些衣服都很漂亮！', py:'A! Zhèxiē yīfu dōu hěn piàoliang!'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'昨天你去哪儿了？我去商店买衣服了。',
+   questions:[
+     {q:'Hôm qua người trả lời đi đâu?',opts:['Đến trường','Đến cửa hàng','Đến bệnh viện'],ans:1},
+     {q:'Người đó đã mua gì?',opts:['Táo','Quần áo','Cốc'],ans:1},
+   ]},
+  {audio:'你看见我的书了吗？看见了，在桌子上。',
+   questions:[
+     {q:'Quyển sách ở đâu?',opts:['Trên bàn','Dưới ghế','Trong ngăn bàn'],ans:0},
+   ]},
+  {audio:'张先生在吗？他不在，他去学开车了，二十分钟后回来。',
+   questions:[
+     {q:'Ông Trương đi đâu?',opts:['Đi mua đồ','Đi học lái xe','Đi làm'],ans:1},
+     {q:'Bao lâu nữa ông ấy về?',opts:['10 phút','20 phút','40 phút'],ans:1},
+   ]},
+  {audio:'这些苹果多少钱？这些苹果二十块。',
+   questions:[
+     {q:'Mấy quả táo giá bao nhiêu?',opts:['12 đồng','20 đồng','22 đồng'],ans:1},
+   ]},
+  {audio:'你的衣服太漂亮了！谢谢！昨天我和妈妈去商店买了不少衣服。',
+   questions:[
+     {q:'Người thứ hai đi mua quần áo cùng ai?',opts:['Bạn bè','Mẹ','Bố'],ans:1},
+   ]},
 ];

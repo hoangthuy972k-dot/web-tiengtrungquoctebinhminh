@@ -107,6 +107,11 @@ var vocabData = [
         "zh": "我家有三口人。",
         "py": "Wǒ jiā yǒu sān kǒu rén.",
         "vn": "Nhà tôi có ba người."
+      },
+      {
+        "zh": "你有中国朋友吗？",
+        "py": "Nǐ yǒu Zhōngguó péngyou ma?",
+        "vn": "Bạn có bạn người Trung Quốc không?"
       }
     ],
     "hanzi": [
@@ -190,6 +195,11 @@ var vocabData = [
         "zh": "我家有三口人。",
         "py": "Wǒ jiā yǒu sān kǒu rén.",
         "vn": "Nhà tôi có ba người."
+      },
+      {
+        "zh": "她家有四口人。",
+        "py": "Tā jiā yǒu sì kǒu rén.",
+        "vn": "Nhà cô ấy có bốn người."
       }
     ],
     "hanzi": [
@@ -268,6 +278,11 @@ var vocabData = [
         "zh": "你女儿几岁了？",
         "py": "Nǐ nǚ'ér jǐ suì le?",
         "vn": "Con gái của cô mấy tuổi rồi?"
+      },
+      {
+        "zh": "我女儿今年三岁了。",
+        "py": "Wǒ nǚ'ér jīnnián sān suì le.",
+        "vn": "Con gái tôi năm nay ba tuổi rồi."
       }
     ],
     "hanzi": [
@@ -364,6 +379,11 @@ var vocabData = [
         "zh": "你女儿几岁了？",
         "py": "Nǐ nǚ'ér jǐ suì le?",
         "vn": "Con gái của cô mấy tuổi rồi?"
+      },
+      {
+        "zh": "她女儿几岁了？",
+        "py": "Tā nǚ'ér jǐ suì le?",
+        "vn": "Con gái cô ấy mấy tuổi rồi?"
       }
     ],
     "hanzi": [
@@ -530,6 +550,11 @@ var vocabData = [
         "zh": "她今年50岁了。",
         "py": "Tā jīnnián wǔshí suì le.",
         "vn": "Năm nay cô ấy 50 tuổi rồi."
+      },
+      {
+        "zh": "李老师的女儿今年20岁了。",
+        "py": "Lǐ lǎoshī de nǚ'ér jīnnián èrshí suì le.",
+        "vn": "Con gái cô Lý năm nay 20 tuổi rồi."
       }
     ],
     "hanzi": [
@@ -608,6 +633,11 @@ var vocabData = [
         "zh": "她女儿今年20岁。",
         "py": "Tā nǚ'ér jīnnián èrshí suì.",
         "vn": "Con gái cô ấy năm nay 20 tuổi."
+      },
+      {
+        "zh": "你今年多大了？",
+        "py": "Nǐ jīnnián duō dà le?",
+        "vn": "Năm nay bạn bao nhiêu tuổi rồi?"
       }
     ],
     "hanzi": [
@@ -699,6 +729,11 @@ var vocabData = [
         "zh": "李老师多大了？",
         "py": "Lǐ lǎoshī duō dà le?",
         "vn": "Cô Lý bao nhiêu tuổi rồi?"
+      },
+      {
+        "zh": "您今年多大了？",
+        "py": "Nín jīnnián duō dà le?",
+        "vn": "Năm nay bác bao nhiêu tuổi ạ?"
       }
     ],
     "hanzi": [
@@ -772,6 +807,11 @@ var vocabData = [
         "zh": "李老师多大了？",
         "py": "Lǐ lǎoshī duō dà le?",
         "vn": "Cô Lý bao nhiêu tuổi rồi?"
+      },
+      {
+        "zh": "你朋友多大了？",
+        "py": "Nǐ péngyou duō dà le?",
+        "vn": "Bạn của bạn bao nhiêu tuổi rồi?"
       }
     ],
     "hanzi": [
@@ -866,14 +906,14 @@ var dialogData = [
 
 // Điền từ — thay đổi số liệu/đối tượng so với bài khoá
 var fillData = [
-  {pre:'Bạn hỏi số thành viên trong gia đình bạn mới quen: “你',blank:'家',post:'有几口人？”',hint:'(nhà, gia đình)',ans:'家'},
-  {pre:'Bạn hỏi có bao nhiêu người trong nhà: “你家',blank:'有',post:'几口人？”',hint:'(có)',ans:'有'},
-  {pre:'Nhà bạn có 4 người: “我家有四',blank:'口',post:'人。”',hint:'(lượng từ đếm người trong nhà)',ans:'口'},
-  {pre:'Bạn giới thiệu con gái mình: “这是我',blank:'女儿',post:'。”',hint:'(con gái)',ans:'女儿'},
-  {pre:'Bạn hỏi tuổi một em bé: “她',blank:'几',post:'岁了？”',hint:'(mấy — số nhỏ dưới 10)',ans:'几'},
-  {pre:'Bạn hỏi tuổi một người lớn tuổi: “您',blank:'多',post:'大了？”',hint:'(bao nhiêu — hỏi mức độ)',ans:'多'},
-  {pre:'Diễn tả tình huống mới (vừa lên tuổi): “她今年五岁',blank:'了',post:'。”',hint:'(trợ từ chỉ sự thay đổi)',ans:'了'},
-  {pre:'Nói về thời điểm hiện tại: “去年我十九岁，',blank:'今年',post:'我二十岁。”',hint:'(năm nay)',ans:'今年'},
+  {pre:'Bạn hỏi số thành viên trong gia đình bạn mới quen: “你',blank:'家',post:'有几口人？”',hint:'(nhà, gia đình)',ans:'家',exp:'家 là nhà, gia đình: 你家有几口人？'},
+  {pre:'Bạn hỏi có bao nhiêu người trong nhà: “你家',blank:'有',post:'几口人？”',hint:'(có)',ans:'有',exp:'有 (có) — hỏi số người trong nhà: 你家有几口人？'},
+  {pre:'Nhà bạn có 4 người: “我家有四',blank:'口',post:'人。”',hint:'(lượng từ đếm người trong nhà)',ans:'口',exp:'Đếm người trong gia đình dùng lượng từ 口: 四口人.'},
+  {pre:'Bạn giới thiệu con gái mình: “这是我',blank:'女儿',post:'。”',hint:'(con gái)',ans:'女儿',exp:'女儿 là con gái.'},
+  {pre:'Bạn hỏi tuổi một em bé: “她',blank:'几',post:'岁了？”',hint:'(mấy — số nhỏ dưới 10)',ans:'几',exp:'Em bé tuổi nhỏ → hỏi bằng 几岁.'},
+  {pre:'Bạn hỏi tuổi một người lớn tuổi: “您',blank:'多',post:'大了？”',hint:'(bao nhiêu — hỏi mức độ)',ans:'多',exp:'Người lớn tuổi → hỏi bằng 多大 (lịch sự hơn thì dùng 您).'},
+  {pre:'Diễn tả tình huống mới (vừa lên tuổi): “她今年五岁',blank:'了',post:'。”',hint:'(trợ từ chỉ sự thay đổi)',ans:'了',exp:'了 cuối câu cho biết đã có thay đổi: năm nay lên năm tuổi rồi.'},
+  {pre:'Nói về thời điểm hiện tại: “去年我十九岁，',blank:'今年',post:'我二十岁。”',hint:'(năm nay)',ans:'今年',exp:'今年 (năm nay) đối lại với 去年 (năm ngoái).'},
 ];
 
 // Sắp xếp — thay đổi số liệu/đối tượng so với bài khoá
@@ -896,16 +936,16 @@ var matchData = [
 
 // Trắc nghiệm — trọng tâm 几/多/了, không audio
 var mcData = [
-  {q:'你女儿＿＿岁了？(hỏi số nhỏ dưới 10)',opts:['几','多','怎么','什么'],ans:0},
-  {q:'你爸爸＿＿大了？(hỏi tuổi người lớn)',opts:['多','几','怎么','什么'],ans:0},
-  {q:'"了" đặt cuối câu dùng để biểu thị điều gì?',opts:['sự thay đổi/tình huống mới','sự phủ định','câu hỏi','số nhiều'],ans:0},
-  {q:'Số "88" đọc là gì?',opts:['bāshíbā','bāshíèr','bāzhěngbā','shíbā'],ans:0},
-  {q:'"大" nghĩa là gì?',opts:['to, lớn','nhỏ, bé','nhiều','ít'],ans:0},
-  {q:'"口" trong "三口人" dùng để làm gì?',opts:['lượng từ đếm người trong nhà','động từ ăn uống','danh từ chỉ cái miệng','tính từ chỉ kích thước'],ans:0},
-  {q:'"女儿" nghĩa là gì?',opts:['con gái','con trai','cháu gái','em gái'],ans:0},
-  {q:'Câu nào dùng ĐÚNG để hỏi tuổi một em bé nhỏ?',opts:['她几岁了？','她多大了？','她几大了？','她多岁了？'],ans:0},
-  {q:'"今年" nghĩa là gì?',opts:['năm nay','năm ngoái','năm sau','mỗi năm'],ans:0},
-  {q:'"有" nghĩa là gì?',opts:['có','không có','là','muốn'],ans:0},
+  {q:'你女儿＿＿岁了？(hỏi số nhỏ dưới 10)',opts:['几','多','怎么','什么'],ans:0,exp:'Số tuổi nhỏ (dưới 10, thường hỏi trẻ em) dùng 几: 你女儿几岁了？'},
+  {q:'你爸爸＿＿大了？(hỏi tuổi người lớn)',opts:['多','几','怎么','什么'],ans:0,exp:'Hỏi tuổi người lớn dùng 多大: 你爸爸多大了？ — 几 chỉ dùng cho số nhỏ.'},
+  {q:'"了" đặt cuối câu dùng để biểu thị điều gì?',opts:['sự thay đổi/tình huống mới','sự phủ định','câu hỏi','số nhiều'],ans:0,exp:'了 cuối câu báo hiệu tình huống mới, sự thay đổi: 她四岁了 — cô bé đã bốn tuổi rồi.'},
+  {q:'Số "88" đọc là gì?',opts:['bāshíbā','bāshíèr','bāzhěngbā','shíbā'],ans:0,exp:'88 = 八十八: bā + shí + bā → bāshíbā.'},
+  {q:'"大" nghĩa là gì?',opts:['to, lớn','nhỏ, bé','nhiều','ít'],ans:0,exp:'大 (dà) nghĩa là to, lớn; 多大 dùng để hỏi tuổi.'},
+  {q:'"口" trong "三口人" dùng để làm gì?',opts:['lượng từ đếm người trong nhà','động từ ăn uống','danh từ chỉ cái miệng','tính từ chỉ kích thước'],ans:0,exp:'口 là lượng từ đếm số người trong gia đình: 三口人 = ba người.'},
+  {q:'"女儿" nghĩa là gì?',opts:['con gái','con trai','cháu gái','em gái'],ans:0,exp:'女儿 (nǚ\'ér) là con gái; con trai là 儿子.'},
+  {q:'Câu nào dùng ĐÚNG để hỏi tuổi một em bé nhỏ?',opts:['她几岁了？','她多大了？','她几大了？','她多岁了？'],ans:0,exp:'Hỏi tuổi em bé dùng 几岁; 多大 dùng cho người lớn, còn 几大/多岁 là sai.'},
+  {q:'"今年" nghĩa là gì?',opts:['năm nay','năm ngoái','năm sau','mỗi năm'],ans:0,exp:'今年 = 今 (nay) + 年 (năm): năm nay.'},
+  {q:'"有" nghĩa là gì?',opts:['có','không có','là','muốn'],ans:0,exp:'有 (yǒu) nghĩa là có; phủ định là 没有.'},
 ];
 
 var speakingData = {
@@ -969,4 +1009,31 @@ var translateDataRev = [
   {vi:'Thưa cô, năm nay cô bao nhiêu tuổi ạ?', zh:'老师，您今年多大了？', py:'Lǎoshī, nín jīnnián duō dà le?'},
   {vi:'Bạn cùng lớp của tôi năm nay mười lăm tuổi rồi.', zh:'我的同学今年十五岁了。', py:'Wǒ de tóngxué jīnnián shíwǔ suì le.'},
   {vi:'Nhà anh ấy có mấy người? Nhà anh ấy có bốn người.', zh:'他家有几口人？他家有四口人。', py:'Tā jiā yǒu jǐ kǒu rén? Tā jiā yǒu sì kǒu rén.'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'你家有几口人？我家有四口人。',
+   questions:[
+     {q:'Nhà người trả lời có mấy người?',opts:['3','4','5'],ans:1},
+   ]},
+  {audio:'你女儿几岁了？她今年三岁了。',
+   questions:[
+     {q:'Con gái bao nhiêu tuổi?',opts:['3 tuổi','4 tuổi','13 tuổi'],ans:0},
+   ]},
+  {audio:'李老师今年多大了？她今年40岁了。',
+   questions:[
+     {q:'Cô Lý năm nay bao nhiêu tuổi?',opts:['14','40','50'],ans:1},
+   ]},
+  {audio:'我叫李月，我是中国人。我家有三口人，我女儿今年四岁了。',
+   questions:[
+     {q:'Nhà Lý Nguyệt có mấy người?',opts:['3','4','5'],ans:0},
+     {q:'Con gái chị ấy mấy tuổi?',opts:['3 tuổi','4 tuổi','Không nói'],ans:1},
+   ]},
+  {audio:'你多大了？我今年20岁。你呢？我今年24岁。',
+   questions:[
+     {q:'Người hỏi đầu tiên bao nhiêu tuổi?',opts:['20','24','42'],ans:1},
+   ]},
 ];

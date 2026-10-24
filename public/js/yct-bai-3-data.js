@@ -4,7 +4,7 @@
 var vocabData = [
   {n:1,zh:'他',py:'tā',pos:'Đại từ',vn:'anh ấy, bạn ấy', hv: 'tha',em:'👦',lesson:1,
    ex_zh:'他是谁？',ex_py:'Tā shì shéi?',ex_vn:'Anh ấy là ai vậy?',
-   exList:[{zh:'他是谁？',py:'Tā shì shéi?',vn:'Anh ấy là ai vậy?'}],
+   exList:[{zh:'他是谁？',py:'Tā shì shéi?',vn:'Anh ấy là ai vậy?'},{zh:'他叫明明。',py:'Tā jiào Míngming.',vn:'Bạn ấy tên là Minh Minh.'}],
    hanzi:[
      {c:'他',p:'tā',type:'左右结构 · Trái-phải',st:5,ord:'亻(nhân) trái → 也(dã) phải',rad:'亻 (nhân – người)',mean:'anh ấy, bạn ấy',
       tip:'亻(người nam) + 也(đại từ cổ) → chỉ NGƯỜI NAM đang được nhắc đến.',
@@ -14,6 +14,7 @@ var vocabData = [
    ex_zh:'我是乐乐。',ex_py:'Wǒ shì Lèle.',ex_vn:'Mình là Lạc Lạc.',
    exList:[
      {zh:'我是乐乐。',py:'Wǒ shì Lèle.',vn:'Mình là Lạc Lạc.'},
+     {zh:'她是老师。',py:'Tā shì lǎoshī.',vn:'Cô ấy là cô giáo.'},
    ],
    hanzi:[
      {c:'是',p:'shì',type:'上下结构 · Trên-dưới',st:9,ord:'日(nhật) trên → 正(biến thể) dưới',rad:'日 (nhật – mặt trời)',mean:'là',
@@ -24,6 +25,7 @@ var vocabData = [
    ex_zh:'她是谁？',ex_py:'Tā shì shéi?',ex_vn:'Bạn ấy là ai?',
    exList:[
      {zh:'她是谁？',py:'Tā shì shéi?',vn:'Bạn ấy là ai?'},
+     {zh:'你是谁？',py:'Nǐ shì shéi?',vn:'Bạn là ai?'},
    ],
    hanzi:[
      {c:'谁',p:'shéi',type:'左右结构 · Trái-phải',st:10,ord:'讠(ngôn) trái → 隹(chuy) phải',rad:'讠 (ngôn – lời nói)',mean:'ai',
@@ -32,7 +34,7 @@ var vocabData = [
    ]},
   {n:4,zh:'哪',py:'nǎ',pos:'Đại từ',vn:'nào, cái nào', hv: 'na',em:'🧭',lesson:2,
    ex_zh:'明明是哪国人？',ex_py:'Míngming shì nǎ guó rén?',ex_vn:'Minh Minh là người nước nào?',
-   exList:[{zh:'明明是哪国人？',py:'Míngming shì nǎ guó rén?',vn:'Minh Minh là người nước nào?'}],
+   exList:[{zh:'明明是哪国人？',py:'Míngming shì nǎ guó rén?',vn:'Minh Minh là người nước nào?'},{zh:'她是哪国人？',py:'Tā shì nǎ guó rén?',vn:'Bạn ấy là người nước nào?'}],
    hanzi:[
      {c:'哪',p:'nǎ',type:'左右结构 · Trái-phải',st:9,ord:'口(khẩu) trái → 那(na) phải',rad:'口 (khẩu – miệng)',mean:'nào, cái nào',
       tip:'口(miệng hỏi) + 那(kia) → hỏi xem là CÁI NÀO trong số đó.',
@@ -42,6 +44,7 @@ var vocabData = [
    ex_zh:'你是哪国人？',ex_py:'Nǐ shì nǎ guó rén?',ex_vn:'Bạn là người nước nào?',
    exList:[
      {zh:'你是哪国人？',py:'Nǐ shì nǎ guó rén?',vn:'Bạn là người nước nào?'},
+     {zh:'老师是哪国人？',py:'Lǎoshī shì nǎ guó rén?',vn:'Cô giáo là người nước nào?'},
    ],
    hanzi:[
      {c:'国',p:'guó',type:'全包围结构 · Bao vây hoàn toàn',st:8,ord:'囗(vi) ngoài → 玉(biến thể) trong',rad:'囗 (vi – vây quanh)',mean:'nước, quốc gia',
@@ -52,6 +55,7 @@ var vocabData = [
    ex_zh:'她是中国人吗？',ex_py:'Tā shì Zhōngguó rén ma?',ex_vn:'Bạn ấy là người Trung Quốc phải không?',
    exList:[
      {zh:'她是中国人吗？',py:'Tā shì Zhōngguó rén ma?',vn:'Bạn ấy là người Trung Quốc phải không?'},
+     {zh:'他不是中国人。',py:'Tā bú shì Zhōngguó rén.',vn:'Bạn ấy không phải người Trung Quốc.'},
    ],
    hanzi:[
      {c:'人',p:'rén',type:'独体字 · Tượng hình',st:2,ord:'丿→㇏',rad:'人 (nhân – tự thành bộ)',mean:'người',
@@ -60,7 +64,7 @@ var vocabData = [
    ]},
   {n:7,zh:'中国人',py:'Zhōngguó rén',pos:'Danh từ',vn:'người Trung Quốc', hv: 'Trung Quốc nhân',em:'🇨🇳',lesson:2,
    ex_zh:'他是中国人。',ex_py:'Tā shì Zhōngguó rén.',ex_vn:'Bạn ấy là người Trung Quốc.',
-   exList:[{zh:'他是中国人。',py:'Tā shì Zhōngguó rén.',vn:'Bạn ấy là người Trung Quốc.'}],
+   exList:[{zh:'他是中国人。',py:'Tā shì Zhōngguó rén.',vn:'Bạn ấy là người Trung Quốc.'},{zh:'老师是中国人吗？',py:'Lǎoshī shì Zhōngguó rén ma?',vn:'Cô giáo là người Trung Quốc phải không?'}],
    hanzi:[
      {c:'中',p:'zhōng',type:'独体字 · Chữ đơn',st:4,ord:'丨(cổn) xuyên qua 口(khẩu)',rad:'丨 (cổn – nét sổ)',mean:'giữa, trung tâm',
       tip:'Một nét thẳng xuyên qua giữa ô vuông → chỉ vị trí TRUNG TÂM, Ở GIỮA.',
@@ -99,14 +103,14 @@ var dialogData = [
 
 // Điền từ — tình huống hỏi về người & quốc tịch
 var fillData = [
-  {pre:'Con hỏi một người trong ảnh là ai: “他是',blank:'谁',post:'？”',hint:'(ai)',ans:'谁'},
-  {pre:'Con hỏi bạn ấy đến từ nước nào: “他是',blank:'哪',post:'国人？”',hint:'(nào, cái nào)',ans:'哪'},
-  {pre:'Con khẳng định bạn ấy là người Trung Quốc: “他是中国',blank:'人',post:'。”',hint:'(người)',ans:'人'},
-  {pre:'Con nói mình là người Trung Quốc: “我',blank:'是',post:'中国人。”',hint:'(là)',ans:'是'},
-  {pre:'Con hỏi một bạn nam là ai: “',blank:'他',post:'是谁？”',hint:'(anh ấy, bạn ấy)',ans:'他'},
-  {pre:'Con xác nhận lại quốc tịch: “你是中国人',blank:'吗',post:'？”',hint:'(trợ từ hỏi — ôn Bài 2)',ans:'吗'},
-  {pre:'Con nói phần "nước" trong từ quốc gia: “中',blank:'国',post:'人”',hint:'(nước, quốc gia)',ans:'国'},
-  {pre:'Con hỏi một bạn nữ là ai: “她',blank:'是',post:'谁？”',hint:'(là)',ans:'是'},
+  {pre:'Con hỏi một người trong ảnh là ai: “他是',blank:'谁',post:'？”',hint:'(ai)',ans:'谁',exp:'谁 (ai) dùng để hỏi về người.'},
+  {pre:'Con hỏi bạn ấy đến từ nước nào: “他是',blank:'哪',post:'国人？”',hint:'(nào, cái nào)',ans:'哪',exp:'哪 + 国人 = người nước nào.'},
+  {pre:'Con khẳng định bạn ấy là người Trung Quốc: “他是中国',blank:'人',post:'。”',hint:'(người)',ans:'人',exp:'中国 + 人 = người Trung Quốc.'},
+  {pre:'Con nói mình là người Trung Quốc: “我',blank:'是',post:'中国人。”',hint:'(là)',ans:'是',exp:'是 (là) nối chủ ngữ 我 với 中国人.'},
+  {pre:'Con hỏi một bạn nam là ai: “',blank:'他',post:'是谁？”',hint:'(anh ấy, bạn ấy)',ans:'他',exp:'他 chỉ một bạn nam: 他是谁？'},
+  {pre:'Con xác nhận lại quốc tịch: “你是中国人',blank:'吗',post:'？”',hint:'(trợ từ hỏi — ôn Bài 2)',ans:'吗',exp:'吗 cuối câu tạo câu hỏi Có/Không (đã học ở Bài 2).'},
+  {pre:'Con nói phần "nước" trong từ quốc gia: “中',blank:'国',post:'人”',hint:'(nước, quốc gia)',ans:'国',exp:'中国 = Trung Quốc; 国 là nước.'},
+  {pre:'Con hỏi một bạn nữ là ai: “她',blank:'是',post:'谁？”',hint:'(là)',ans:'是',exp:'是 + 谁: hỏi "là ai".'},
 ];
 
 // Sắp xếp — câu hỏi về người & quốc tịch
@@ -129,21 +133,21 @@ var matchData = [
 
 // Trắc nghiệm — không audio
 var mcData = [
-  {q:'他是＿＿？(hỏi về người)',opts:['谁','什么','哪','怎么样'],ans:0},
-  {q:'他是＿＿国人？(hỏi quốc tịch)',opts:['哪','什么','谁','这'],ans:0},
-  {q:'"是" nghĩa là gì?',opts:['là','có','muốn','đi'],ans:0},
-  {q:'"人" nghĩa là gì?',opts:['người','nước','bạn','thầy'],ans:0},
-  {q:'"国" nghĩa là gì?',opts:['nước, quốc gia','người','thành phố','làng'],ans:0},
-  {q:'"他" dùng để chỉ ai?',opts:['một bạn nam','một bạn nữ','chính mình','thầy cô'],ans:0},
-  {q:'"中国人" nghĩa là gì?',opts:['người Trung Quốc','nước Trung Quốc','tiếng Trung Quốc','bạn Trung Quốc'],ans:0},
-  {q:'Câu nào ĐÚNG khi hỏi ai đó là người nước nào?',opts:['你是哪国人？','你哪是国人？','哪你是国人？','国你是哪人？'],ans:0},
-  {q:'Từ nào dùng để hỏi "ai"?',opts:['谁','哪','什么','怎么'],ans:0},
-  {q:'Câu nào ĐÚNG khi nói "Cô ấy là ai?"',opts:['她是谁？','她谁是？','谁她是？','是她谁？'],ans:0},
-  {q:'"哪" nghĩa là gì?',opts:['nào, cái nào','đó, kia','ai','gì'],ans:0},
-  {q:'Câu nào ĐÚNG khi nói "Bạn ấy là Minh Minh."?',opts:['他是明明。','明明是他。','他明明是。','是他明明。'],ans:0},
-  {q:'Trong câu "他是中国人", chữ nào chỉ QUỐC TỊCH?',opts:['中国人','他','是','谁'],ans:0},
-  {q:'Muốn hỏi "Bạn là người nước nào?", con nói gì?',opts:['你是哪国人？','你是谁？','你是中国人吗？','他是谁？'],ans:0},
-  {q:'"她" và "他" khác nhau ở đâu?',opts:['她 chỉ bạn nữ, 他 chỉ bạn nam','cả hai đều chỉ bạn nam','cả hai đều chỉ bạn nữ','không khác nhau'],ans:0},
+  {q:'他是＿＿？(hỏi về người)',opts:['谁','什么','哪','怎么样'],ans:0,exp:'谁 (shéi) dùng để hỏi về người: 他是谁？ — Bạn ấy là ai?'},
+  {q:'他是＿＿国人？(hỏi quốc tịch)',opts:['哪','什么','谁','这'],ans:0,exp:'哪国人 hỏi quốc tịch: 哪 (nào) + 国 (nước) + 人 (người).'},
+  {q:'"是" nghĩa là gì?',opts:['là','có','muốn','đi'],ans:0,exp:'是 (shì) nghĩa là "là": 我是乐乐。'},
+  {q:'"人" nghĩa là gì?',opts:['người','nước','bạn','thầy'],ans:0,exp:'人 (rén) là người — chữ giống hình một người đang đứng.'},
+  {q:'"国" nghĩa là gì?',opts:['nước, quốc gia','người','thành phố','làng'],ans:0,exp:'国 (guó) là nước, quốc gia: 中国 = Trung Quốc.'},
+  {q:'"他" dùng để chỉ ai?',opts:['một bạn nam','một bạn nữ','chính mình','thầy cô'],ans:0,exp:'他 có bộ 亻 (người), dùng chỉ bạn nam; bạn nữ dùng 她.'},
+  {q:'"中国人" nghĩa là gì?',opts:['người Trung Quốc','nước Trung Quốc','tiếng Trung Quốc','bạn Trung Quốc'],ans:0,exp:'中国人 = 中国 (Trung Quốc) + 人 (người): người Trung Quốc.'},
+  {q:'Câu nào ĐÚNG khi hỏi ai đó là người nước nào?',opts:['你是哪国人？','你哪是国人？','哪你是国人？','国你是哪人？'],ans:0,exp:'Từ để hỏi đứng đúng chỗ của câu trả lời: 我是中国人 → 你是哪国人？'},
+  {q:'Từ nào dùng để hỏi "ai"?',opts:['谁','哪','什么','怎么'],ans:0,exp:'谁 hỏi "ai"; 哪 hỏi "nào", 什么 hỏi "gì".'},
+  {q:'Câu nào ĐÚNG khi nói "Cô ấy là ai?"',opts:['她是谁？','她谁是？','谁她是？','是她谁？'],ans:0,exp:'Trật tự: 她 + 是 + 谁 — từ để hỏi 谁 đứng cuối câu.'},
+  {q:'"哪" nghĩa là gì?',opts:['nào, cái nào','đó, kia','ai','gì'],ans:0,exp:'哪 (nǎ) nghĩa là nào: 哪国人 = người nước nào.'},
+  {q:'Câu nào ĐÚNG khi nói "Bạn ấy là Minh Minh."?',opts:['他是明明。','明明是他。','他明明是。','是他明明。'],ans:0,exp:'Trật tự câu: chủ ngữ 他 + 是 + 明明.'},
+  {q:'Trong câu "他是中国人", chữ nào chỉ QUỐC TỊCH?',opts:['中国人','他','是','谁'],ans:0,exp:'中国人 (người Trung Quốc) cho biết quốc tịch của bạn ấy.'},
+  {q:'Muốn hỏi "Bạn là người nước nào?", con nói gì?',opts:['你是哪国人？','你是谁？','你是中国人吗？','他是谁？'],ans:0,exp:'你是哪国人？ hỏi quốc tịch; 你是谁？ chỉ hỏi bạn là ai.'},
+  {q:'"她" và "他" khác nhau ở đâu?',opts:['她 chỉ bạn nữ, 他 chỉ bạn nam','cả hai đều chỉ bạn nam','cả hai đều chỉ bạn nữ','không khác nhau'],ans:0,exp:'Hai chữ cùng đọc tā: 她 có bộ 女 chỉ bạn nữ, 他 có bộ 亻 chỉ bạn nam.'},
 ];
 
 var speakingData = {
@@ -206,4 +210,31 @@ var translateDataRev = [
   {vi:"Đó là Điềm Điềm.", zh:"她是甜甜。", py:"Tā shì Tiántian."},
   {vi:"Bạn là người Trung Quốc phải không?", zh:"你是中国人吗？", py:"Nǐ shì Zhōngguó rén ma?"},
   {vi:"Mình là người Trung Quốc.", zh:"我是中国人。", py:"Wǒ shì Zhōngguó rén."},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'他是谁？他是明明。',
+   questions:[
+     {q:'Bạn nam đó là ai?',opts:['乐乐','明明','甜甜'],ans:1},
+   ]},
+  {audio:'她是谁？她是老师。',
+   questions:[
+     {q:'Người đó là ai?',opts:['Một bạn học','Cô giáo','Mẹ'],ans:1},
+   ]},
+  {audio:'你是哪国人？我是中国人。',
+   questions:[
+     {q:'Bạn ấy là người nước nào?',opts:['Việt Nam','Trung Quốc','Mỹ'],ans:1},
+   ]},
+  {audio:'他是中国人吗？他不是中国人。',
+   questions:[
+     {q:'Bạn nam đó có phải người Trung Quốc không?',opts:['Phải','Không phải','Không biết'],ans:1},
+   ]},
+  {audio:'你好！我叫甜甜，我是中国人。你是谁？我是乐乐。',
+   questions:[
+     {q:'Bạn nữ tên là gì?',opts:['甜甜','乐乐','明明'],ans:0},
+     {q:'Bạn nữ là người nước nào?',opts:['Việt Nam','Không nói','Trung Quốc'],ans:2},
+   ]},
 ];

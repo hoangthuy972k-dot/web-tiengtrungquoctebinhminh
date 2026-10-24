@@ -19,6 +19,11 @@ var vocabData = [
         "zh": "请问，今天几号？",
         "py": "Qǐngwèn, jīntiān jǐ hào?",
         "vn": "Xin hỏi hôm nay là ngày mấy?"
+      },
+      {
+        "zh": "请说汉语。",
+        "py": "Qǐng shuō Hànyǔ.",
+        "vn": "Xin hãy nói tiếng Trung."
       }
     ],
     "hanzi": [
@@ -102,6 +107,11 @@ var vocabData = [
         "zh": "请问，今天几号？",
         "py": "Qǐngwèn, jīntiān jǐ hào?",
         "vn": "Xin hỏi hôm nay là ngày mấy?"
+      },
+      {
+        "zh": "请问，你叫什么名字？",
+        "py": "Qǐngwèn, nǐ jiào shénme míngzi?",
+        "vn": "Xin hỏi, bạn tên là gì?"
       }
     ],
     "hanzi": [
@@ -185,6 +195,11 @@ var vocabData = [
         "zh": "今天9月1号。",
         "py": "Jīntiān jiǔ yuè yī hào.",
         "vn": "Hôm nay ngày 1 tháng 9."
+      },
+      {
+        "zh": "今天星期三。",
+        "py": "Jīntiān xīngqī sān.",
+        "vn": "Hôm nay là thứ Tư."
       }
     ],
     "hanzi": [
@@ -268,6 +283,11 @@ var vocabData = [
         "zh": "今天9月1号。",
         "py": "Jīntiān jiǔ yuè yī hào.",
         "vn": "Hôm nay ngày 1 tháng 9."
+      },
+      {
+        "zh": "明天几号？",
+        "py": "Míngtiān jǐ hào?",
+        "vn": "Ngày mai là ngày mấy?"
       }
     ],
     "hanzi": [
@@ -351,6 +371,11 @@ var vocabData = [
         "zh": "今天9月1号。",
         "py": "Jīntiān jiǔ yuè yī hào.",
         "vn": "Hôm nay ngày 1 tháng 9."
+      },
+      {
+        "zh": "今天是几月几号？",
+        "py": "Jīntiān shì jǐ yuè jǐ hào?",
+        "vn": "Hôm nay là ngày mấy tháng mấy?"
       }
     ],
     "hanzi": [
@@ -434,6 +459,11 @@ var vocabData = [
         "zh": "今天星期几？",
         "py": "Jīntiān xīngqī jǐ?",
         "vn": "Hôm nay là thứ mấy?"
+      },
+      {
+        "zh": "明天星期几？",
+        "py": "Míngtiān xīngqī jǐ?",
+        "vn": "Ngày mai là thứ mấy?"
       }
     ],
     "hanzi": [
@@ -529,6 +559,11 @@ var vocabData = [
         "zh": "昨天是8月31号，星期二。",
         "py": "Zuótiān shì bā yuè sānshíyī hào, xīngqī èr.",
         "vn": "Hôm qua là thứ ba, ngày 31 tháng 8."
+      },
+      {
+        "zh": "昨天是星期二。",
+        "py": "Zuótiān shì xīngqī èr.",
+        "vn": "Hôm qua là thứ Ba."
       }
     ],
     "hanzi": [
@@ -613,6 +648,11 @@ var vocabData = [
         "zh": "明天是9月2号，星期四。",
         "py": "Míngtiān shì jiǔ yuè èr hào, xīngqī sì.",
         "vn": "Ngày mai là thứ năm, ngày 2 tháng 9."
+      },
+      {
+        "zh": "明天你去学校吗？",
+        "py": "Míngtiān nǐ qù xuéxiào ma?",
+        "vn": "Ngày mai bạn có đến trường không?"
       }
     ],
     "hanzi": [
@@ -697,6 +737,11 @@ var vocabData = [
         "zh": "我去学校。",
         "py": "Wǒ qù xuéxiào.",
         "vn": "Tôi đến trường."
+      },
+      {
+        "zh": "你去学校做什么？",
+        "py": "Nǐ qù xuéxiào zuò shénme?",
+        "vn": "Bạn đến trường làm gì?"
       }
     ],
     "hanzi": [
@@ -780,6 +825,11 @@ var vocabData = [
         "zh": "我去学校看书。",
         "py": "Wǒ qù xuéxiào kàn shū.",
         "vn": "Tôi đến trường đọc sách."
+      },
+      {
+        "zh": "明天我不去学校。",
+        "py": "Míngtiān wǒ bú qù xuéxiào.",
+        "vn": "Ngày mai tôi không đến trường."
       }
     ],
     "hanzi": [
@@ -864,6 +914,11 @@ var vocabData = [
         "zh": "我去学校看书。",
         "py": "Wǒ qù xuéxiào kàn shū.",
         "vn": "Tôi đến trường đọc sách."
+      },
+      {
+        "zh": "你看，这个字怎么读？",
+        "py": "Nǐ kàn, zhège zì zěnme dú?",
+        "vn": "Bạn xem này, chữ này đọc thế nào?"
       }
     ],
     "hanzi": [
@@ -947,6 +1002,11 @@ var vocabData = [
         "zh": "我去学校看书。",
         "py": "Wǒ qù xuéxiào kàn shū.",
         "vn": "Tôi đến trường đọc sách."
+      },
+      {
+        "zh": "我看汉语书。",
+        "py": "Wǒ kàn Hànyǔ shū.",
+        "vn": "Tôi đọc sách tiếng Trung."
       }
     ],
     "hanzi": [
@@ -1051,14 +1111,14 @@ var dialogData = [
 
 // Điền từ — đổi ngày/thứ so với bài khoá
 var fillData = [
-  {pre:'Bạn hỏi lịch sự về ngày hôm nay: “',blank:'请',post:'问，今天几号？”',hint:'(mời, xin — lịch sự)',ans:'请'},
-  {pre:'Bạn hỏi thứ trong tuần: “今天',blank:'星期',post:'几？”',hint:'(tuần, thứ)',ans:'星期'},
-  {pre:'Nói hôm nay là ngày 5 tháng 10: “今天10',blank:'月',post:'5号。”',hint:'(tháng)',ans:'月'},
-  {pre:'Nói hôm qua là thứ hai: “',blank:'昨',post:'天是星期一。”',hint:'(hôm qua)',ans:'昨'},
-  {pre:'Nói ngày mai là thứ sáu: “',blank:'明',post:'天是星期五。”',hint:'(ngày mai)',ans:'明'},
-  {pre:'Bạn hỏi ai đó có đi học không: “你',blank:'去',post:'学校吗？”',hint:'(đi, đi đến)',ans:'去'},
-  {pre:'Bạn nói mục đích đến trường là đọc sách: “我去学校看',blank:'书',post:'。”',hint:'(sách)',ans:'书'},
-  {pre:'Bạn hỏi ngày cụ thể: “今天几',blank:'号',post:'？”',hint:'(ngày, mồng)',ans:'号'},
+  {pre:'Bạn hỏi lịch sự về ngày hôm nay: “',blank:'请',post:'问，今天几号？”',hint:'(mời, xin — lịch sự)',ans:'请',exp:'请问 (xin hỏi) dùng mở đầu câu hỏi một cách lịch sự.'},
+  {pre:'Bạn hỏi thứ trong tuần: “今天',blank:'星期',post:'几？”',hint:'(tuần, thứ)',ans:'星期',exp:'星期几 hỏi thứ mấy trong tuần.'},
+  {pre:'Nói hôm nay là ngày 5 tháng 10: “今天10',blank:'月',post:'5号。”',hint:'(tháng)',ans:'月',exp:'Nói ngày tháng: số + 月 (tháng) + số + 号 (ngày).'},
+  {pre:'Nói hôm qua là thứ hai: “',blank:'昨',post:'天是星期一。”',hint:'(hôm qua)',ans:'昨',exp:'昨天 = hôm qua.'},
+  {pre:'Nói ngày mai là thứ sáu: “',blank:'明',post:'天是星期五。”',hint:'(ngày mai)',ans:'明',exp:'明天 = ngày mai.'},
+  {pre:'Bạn hỏi ai đó có đi học không: “你',blank:'去',post:'学校吗？”',hint:'(đi, đi đến)',ans:'去',exp:'去 + nơi chốn: 去学校 = đến trường.'},
+  {pre:'Bạn nói mục đích đến trường là đọc sách: “我去学校看',blank:'书',post:'。”',hint:'(sách)',ans:'书',exp:'看书 = đọc sách.'},
+  {pre:'Bạn hỏi ngày cụ thể: “今天几',blank:'号',post:'？”',hint:'(ngày, mồng)',ans:'号',exp:'几号 hỏi ngày mấy trong tháng.'},
 ];
 
 // Sắp xếp — đổi ngày/thứ so với bài khoá
@@ -1081,16 +1141,16 @@ var matchData = [
 
 // Trắc nghiệm — trọng tâm ngày tháng & câu liên động 去, không audio
 var mcData = [
-  {q:'请问，今天＿＿号？',opts:['几','什么','怎么','哪'],ans:0},
-  {q:'今天＿＿几？(hỏi thứ)',opts:['星期','号','月','今天'],ans:0},
-  {q:'Thứ tự đúng khi nói ngày tháng trong tiếng Trung là?',opts:['Tháng → Ngày → Thứ','Thứ → Ngày → Tháng','Ngày → Tháng → Thứ','Thứ → Tháng → Ngày'],ans:0},
-  {q:'Trong khẩu ngữ, từ nào thường dùng thay cho "日" khi nói ngày?',opts:['号','月','星期','天'],ans:0},
-  {q:'Câu liên động với "去": Chủ ngữ + 去 + Nơi chốn + ＿＿ + Tân ngữ',opts:['Động từ 2','Tính từ','Danh từ','Trợ từ'],ans:0},
-  {q:'"学校" nghĩa là gì?',opts:['trường học','thư viện','ngân hàng','quán cà phê'],ans:0},
-  {q:'"书" nghĩa là gì?',opts:['sách','bút','bàn','ghế'],ans:0},
-  {q:'Câu nào ĐÚNG khi nói "Tôi đi trường học đọc sách"?',opts:['我去学校看书','我看书去学校','我学校去看书','看书我去学校'],ans:0},
-  {q:'"昨天" nghĩa là gì?',opts:['hôm qua','hôm nay','ngày mai','tuần trước'],ans:0},
-  {q:'"明天" nghĩa là gì?',opts:['ngày mai','hôm qua','hôm nay','tuần sau'],ans:0},
+  {q:'请问，今天＿＿号？',opts:['几','什么','怎么','哪'],ans:0,exp:'几 + 号 dùng để hỏi ngày trong tháng: 今天几号？'},
+  {q:'今天＿＿几？(hỏi thứ)',opts:['星期','号','月','今天'],ans:0,exp:'星期几 hỏi thứ trong tuần; trả lời 星期一…星期六, chủ nhật là 星期天.'},
+  {q:'Thứ tự đúng khi nói ngày tháng trong tiếng Trung là?',opts:['Tháng → Ngày → Thứ','Thứ → Ngày → Tháng','Ngày → Tháng → Thứ','Thứ → Tháng → Ngày'],ans:0,exp:'Tiếng Trung nói từ lớn đến nhỏ: tháng → ngày → thứ, ví dụ 9月1号星期三.'},
+  {q:'Trong khẩu ngữ, từ nào thường dùng thay cho "日" khi nói ngày?',opts:['号','月','星期','天'],ans:0,exp:'Khẩu ngữ dùng 号 để nói ngày, văn viết dùng 日.'},
+  {q:'Câu liên động với "去": Chủ ngữ + 去 + Nơi chốn + ＿＿ + Tân ngữ',opts:['Động từ 2','Tính từ','Danh từ','Trợ từ'],ans:0,exp:'Câu liên động: 去 + nơi chốn + động từ 2 (+ tân ngữ), ví dụ 去学校看书.'},
+  {q:'"学校" nghĩa là gì?',opts:['trường học','thư viện','ngân hàng','quán cà phê'],ans:0,exp:'学校 (xuéxiào) là trường học.'},
+  {q:'"书" nghĩa là gì?',opts:['sách','bút','bàn','ghế'],ans:0,exp:'书 (shū) là sách; 看书 = đọc sách.'},
+  {q:'Câu nào ĐÚNG khi nói "Tôi đi trường học đọc sách"?',opts:['我去学校看书','我看书去学校','我学校去看书','看书我去学校'],ans:0,exp:'Trật tự đúng: 我 + 去学校 (đi đâu) + 看书 (để làm gì).'},
+  {q:'"昨天" nghĩa là gì?',opts:['hôm qua','hôm nay','ngày mai','tuần trước'],ans:0,exp:'昨天 = hôm qua; 今天 là hôm nay, 明天 là ngày mai.'},
+  {q:'"明天" nghĩa là gì?',opts:['ngày mai','hôm qua','hôm nay','tuần sau'],ans:0,exp:'明天 = ngày mai; 昨天 là hôm qua, 今天 là hôm nay.'},
 ];
 
 var speakingData = {
@@ -1153,4 +1213,31 @@ var translateDataRev = [
   {vi:'Hôm nay bạn có đi học không?', zh:'你今天去学校吗？', py:'Nǐ jīntiān qù xuéxiào ma?'},
   {vi:'Ngày mai là thứ mấy?', zh:'明天是星期几？', py:'Míngtiān shì xīngqī jǐ?'},
   {vi:'Hôm qua cô giáo mời tôi xem sách.', zh:'昨天老师请我看书。', py:'Zuótiān lǎoshī qǐng wǒ kàn shū.'},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// ══════════════════════════════════════════
+var listenData = [
+  {audio:'请问，今天几号？今天10月6号。',
+   questions:[
+     {q:'Hôm nay là ngày nào?',opts:['Ngày 6 tháng 10','Ngày 10 tháng 6','Ngày 16 tháng 10'],ans:0},
+   ]},
+  {audio:'今天星期几？今天星期四。昨天呢？昨天星期三。',
+   questions:[
+     {q:'Hôm nay là thứ mấy?',opts:['Thứ Ba','Thứ Tư','Thứ Năm'],ans:2},
+     {q:'Hôm qua là thứ mấy?',opts:['Thứ Tư','Thứ Năm','Thứ Sáu'],ans:0},
+   ]},
+  {audio:'明天星期六，我不去学校，我去看我妈妈。',
+   questions:[
+     {q:'Ngày mai người nói làm gì?',opts:['Đến trường','Đi thăm mẹ','Đọc sách ở nhà'],ans:1},
+   ]},
+  {audio:'李月，你看，这是什么书？这是汉语书。',
+   questions:[
+     {q:'Đó là sách gì?',opts:['Sách tiếng Trung','Sách tiếng Anh','Sách nấu ăn'],ans:0},
+   ]},
+  {audio:'请问，昨天是几月几号？昨天是3月2号。',
+   questions:[
+     {q:'Hôm qua là ngày nào?',opts:['Ngày 2 tháng 3','Ngày 3 tháng 2','Ngày 3 tháng 3'],ans:0},
+   ]},
 ];

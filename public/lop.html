@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/lop.css">
+<link rel="stylesheet" href="/css/lop-ufo.css">
 <script>
 // CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
 // va trinh duyet giu mai ban CSS/JS cu. Chuyen sang /lop de luon qua may chu.
@@ -78,6 +79,12 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
     <div class="lop-field">
       <label>4 · Kiểm tra đầu giờ (có chấm điểm)</label>
       <div class="lop-tests">
+        <button type="button" class="lop-test-card lop-ufo-card" id="lopUfoOpen">
+          <span class="lop-game-emoji">🛸</span>
+          <span class="lop-game-name">UFO gọi trả bài</span>
+          <span class="lop-game-desc">Chiếu cả lớp lên màn hình, đĩa bay lượn qua rồi “hút” một bạn lên bảng — ưu tiên bạn lâu chưa được gọi. Chấm điểm ngay, điểm lên cột Miệng. Dùng lớp trên hệ thống hoặc dán nhanh danh sách tên.</span>
+          <span class="lop-game-count">đầu giờ</span>
+        </button>
         <button type="button" class="lop-test-card" data-test="dictation">
           <span class="lop-game-emoji">✍️</span>
           <span class="lop-game-name">Đọc chính tả Hán tự 听写</span>
@@ -291,7 +298,7 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       <button type="button" class="lop-bar-btn lop-bar-next" id="lopNextRound" hidden>Vòng tiếp ▶</button>
       <button type="button" class="lop-bar-btn" id="lopAward" title="Kết thúc và trao giải">🏁 Trao giải</button>
       <button type="button" class="lop-bar-btn" id="lopBuild">✋ Xây dựng bài</button>
-      <button type="button" class="lop-bar-btn" id="lopCall">🙋 Gọi tên</button>
+      <button type="button" class="lop-bar-btn" id="lopCall" title="Đĩa bay gọi học sinh lên bảng trả bài">🛸 Gọi trả bài</button>
     </div>
   </header>
 
@@ -328,42 +335,6 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
   </div>
 </div>
 
-<!-- Goi ten hoc sinh len bang · uu tien em lau chua duoc goi -->
-<div id="lopCallBox" class="lop-roll-box" hidden>
-  <div class="lop-call-card">
-    <div class="lop-call-head">
-      <span>Kiểm tra đầu giờ</span>
-      <select id="lopCallClass" class="lop-call-class"></select>
-      <button type="button" class="lop-mini-btn" id="lopCallClose">Đóng</button>
-    </div>
-
-    <div id="lopCallGate" class="lop-call-gate" hidden>
-      <p>Nhập mật khẩu quản trị để lấy danh sách lớp.</p>
-      <form id="lopCallLogin">
-        <input type="password" id="lopCallPw" placeholder="Mật khẩu quản trị" autocomplete="current-password">
-        <button type="submit" class="btn btn-primary">Mở danh sách</button>
-      </form>
-      <p class="lop-call-err" id="lopCallErr" hidden></p>
-    </div>
-
-    <div id="lopCallMain" hidden>
-      <div class="lop-call-name" id="lopCallName">—</div>
-      <div class="lop-call-meta" id="lopCallMeta"></div>
-
-      <div class="lop-call-score" id="lopCallScore" hidden>
-        <span>Chấm điểm: <small>điểm này lên cột “Miệng” ở bảng lớp cho học sinh xem</small></span>
-        <div class="lop-call-nums" id="lopCallNums"></div>
-        <button type="button" class="lop-mini-btn" id="lopCallSkip">Vắng / bỏ qua</button>
-      </div>
-
-      <div class="lop-call-actions">
-        <button type="button" class="lop-act" id="lopCallPick">🙋 Gọi em tiếp theo</button>
-      </div>
-      <div class="lop-call-hint" id="lopCallHint"></div>
-    </div>
-  </div>
-</div>
-
 <!-- De giay in ra — 4 ma de + bang dap an -->
 <div id="lopPaper" class="lop-paper-wrap" hidden>
   <div class="lop-paper-bar">
@@ -394,6 +365,7 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/phat-am-bai.js"></script>
 <script src="/js/phat-am-de.js"></script>
 <script src="/js/vendor/qrcode.js"></script>
+<script src="/js/lop-ufo.js"></script>
 <script src="/js/lop.js"></script>
 </body>
 </html>

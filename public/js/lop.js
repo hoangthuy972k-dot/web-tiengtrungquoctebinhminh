@@ -2240,11 +2240,9 @@
     });
   }
 
-  /* ---------------- goi ten hoc sinh len bang ----------------
-     Khong quay ngau nhien thuan: uu tien em LAU CHUA duoc goi, roi den em it
-     bi goi nhat. Ten hoc sinh lay tu danh sach lop tren may chu, can mat khau
-     quan tri, va khong luu vao trinh duyet ngoai phien lam viec.            */
-  var call = { pw: '', classes: [], roster: [], classId: '', cur: null, session: {} };
+  /* ---------------- mat khau quan tri cho cac hop goi danh sach lop ----------------
+     Goi hoc sinh len bang nay nam o lop-ufo.js (man UFO goi tra bai).        */
+  var call = { pw: '' };
 
   function adminPw() {
     if (call.pw) return call.pw;
@@ -2260,106 +2258,6 @@
         return d;
       });
     });
-  }
-
-  function openCall() {
-    $('#lopCallBox').hidden = false;
-    if (!adminPw()) {
-      $('#lopCallGate').hidden = false;
-      $('#lopCallMain').hidden = true;
-      return;
-    }
-    loadCallRoster();
-  }
-  function loadCallRoster() {
-    $('#lopCallGate').hidden = true;
-    $('#lopCallMain').hidden = false;
-    $('#lopCallHint').textContent = 'Đang tải danh sách…';
-    return apiAdmin('/api/admin/oral?classId=' + encodeURIComponent(call.classId))
-      .then(function (d) {
-        call.classes = d.classes || [];
-        call.roster = d.roster || [];
-        var sel = $('#lopCallClass');
-        sel.innerHTML = call.classes.map(function (c) {
-          return '<option value="' + c.id + '"' + (c.id === call.classId ? ' selected' : '') + '>' +
-            esc(c.name) + ' (' + c.size + ')</option>';
-        }).join('');
-        if (!call.classId && call.classes.length) {
-          call.classId = call.classes[0].id;
-          sel.value = call.classId;
-          return loadCallRoster();
-        }
-        $('#lopCallHint').textContent = call.roster.length
-          ? call.roster.length + ' học sinh · em chưa được gọi lần nào sẽ ra trước'
-          : 'Lớp này chưa có danh sách. Vào trang Báo cáo → Lớp & bài giao để dán danh sách.';
-      })
-      .catch(function (e) {
-        $('#lopCallGate').hidden = false;
-        $('#lopCallMain').hidden = true;
-        $('#lopCallErr').hidden = false;
-        $('#lopCallErr').textContent = e.message;
-      });
-  }
-
-  // Diem uu tien: chua goi lan nao > lau chua goi > it lan bi goi.
-  // Them chut ngau nhien de hai em ngang nhau khong phai lan nao cung cung thu tu.
-  function callPick() {
-    if (!call.roster.length) return null;
-    var now = Date.now();
-    // Trong cung mot buoi khong goi lai em da goi, ke ca khi chua kip cham diem
-    var fresh = call.roster.filter(function (r) { return !call.session[r.id]; });
-    var pool = fresh.length ? fresh : call.roster;
-    if (!fresh.length) call.session = {};   // het luot thi bat dau vong moi
-    var scored = pool.map(function (r) {
-      var days = r.lastMs ? (now - r.lastMs) / 86400000 : 999;
-      return { r: r, w: days * 10 - r.times * 3 + Math.random() * 6 };
-    });
-    scored.sort(function (a, b) { return b.w - a.w; });
-    call.session[scored[0].r.id] = 1;
-    return scored[0].r;
-  }
-
-  function renderCall() {
-    var r = call.cur;
-    if (!r) return;
-    var meta = [];
-    if (r.no) meta.push('Số ' + r.no);
-    if (r.lastMs) {
-      var d = Math.floor((Date.now() - r.lastMs) / 86400000);
-      meta.push('gọi gần nhất ' + (d <= 0 ? 'hôm nay' : d + ' ngày trước'));
-    } else meta.push('chưa được gọi lần nào');
-    if (r.times) meta.push('đã gọi ' + r.times + ' lần');
-    if (r.avg !== null && r.avg !== undefined) meta.push('điểm TB ' + r.avg);
-
-    $('#lopCallName').textContent = r.name;
-    $('#lopCallMeta').textContent = meta.join(' · ');
-    $('#lopCallScore').hidden = false;
-    $('#lopCallNums').innerHTML = [0,1,2,3,4,5,6,7,8,9,10].map(function (n) {
-      return '<button type="button" class="lop-call-num" data-n="' + n + '">' + n + '</button>';
-    }).join('');
-    $all('#lopCallNums .lop-call-num').forEach(function (b) {
-      b.addEventListener('click', function () { saveCall(parseInt(b.getAttribute('data-n'), 10)); });
-    });
-  }
-
-  function saveCall(score) {
-    var r = call.cur;
-    if (!r) return;
-    $('#lopCallHint').textContent = 'Đang lưu…';
-    apiAdmin('/api/admin/oral', { method: 'POST', body: JSON.stringify({ classId: call.classId, rosterId: r.id, score: score }) })
-      .then(function () {
-        // Diem nay len thang cot "Miệng" o bang lop, hoc sinh mo trang chu la thay
-        flashNote(score === null ? ('Đã ghi: ' + r.name + ' vắng/bỏ qua')
-          : ('✓ ' + r.name + ' — ' + score + ' điểm · đã lên bảng lớp'));
-        return loadCallRoster();
-      })
-      .then(function () {
-        call.cur = null;
-        $('#lopCallName').textContent = '—';
-        $('#lopCallMeta').textContent = '';
-        $('#lopCallScore').hidden = true;
-      })
-      .catch(function (e) { $('#lopCallHint').textContent = e.message; });
   }
 
   /* ================= KIEM TRA DAU GIO =================
@@ -3386,7 +3284,7 @@
     if (g0) g0.textContent = paSoTu;
     $('#lopPaStart').addEventListener('click', paBatDau);
 
-    $all('.lop-test-card').forEach(function (c) {
+    $all('.lop-test-card[data-test]').forEach(function (c) {
       c.addEventListener('click', function () { startTest(c.getAttribute('data-test')); });
     });
     $('#lopPaperClose').addEventListener('click', closePaper);
@@ -3402,31 +3300,8 @@
     $('#lopTimerSet').addEventListener('click', cycleTimerSecs);
     $('#lopSound').addEventListener('click', toggleSound);
     $('#lopBuild').addEventListener('click', openBuild);
-    $('#lopCall').addEventListener('click', openCall);
-    $('#lopCallClose').addEventListener('click', function () { $('#lopCallBox').hidden = true; });
-    $('#lopCallClass').addEventListener('change', function () {
-      call.classId = this.value;
-      call.cur = null;
-      call.session = {};
-      $('#lopCallName').textContent = '—';
-      $('#lopCallMeta').textContent = '';
-      $('#lopCallScore').hidden = true;
-      loadCallRoster();
-    });
-    $('#lopCallPick').addEventListener('click', function () {
-      var r = callPick();
-      if (!r) { $('#lopCallHint').textContent = 'Lớp này chưa có danh sách học sinh.'; return; }
-      call.cur = r;
-      renderCall();
-    });
-    $('#lopCallSkip').addEventListener('click', function () { saveCall(null); });
-    $('#lopCallLogin').addEventListener('submit', function (e) {
-      e.preventDefault();
-      call.pw = $('#lopCallPw').value;
-      try { sessionStorage.setItem('hyv_admin_pw', call.pw); } catch (err) { /* bo qua */ }
-      $('#lopCallErr').hidden = true;
-      loadCallRoster();
-    });
+    $('#lopCall').addEventListener('click', function () { if (window.LopUfo) window.LopUfo.mo(); });
+    $('#lopUfoOpen').addEventListener('click', function () { if (window.LopUfo) window.LopUfo.mo(); });
     $('#lopBuildClose').addEventListener('click', function () { $('#lopBuildBox').hidden = true; });
     $('#lopBuildClass').addEventListener('change', function () { build.classId = this.value; loadBuild(); });
     $('#lopBuildFind').addEventListener('input', function () { build.loc = this.value; renderBuild(); });

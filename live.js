@@ -2,12 +2,14 @@
 // hoc sinh vao /choi bang ma phong tren dien thoai (khong can tai khoan),
 // bam A/B/C/D, giao vien lat dap an, may cham diem theo toc do.
 // Phong chi luu trong bo nho — tat may chu la mat, du cho mot tiet hoc.
-// Hai kieu phong: 'gv' (giao vien dieu khien tung cau, mac dinh) va 'nhip'
-// (moi em tu lam lan luot ca bo cau theo toc do cua minh).
+// Ba kieu phong: 'gv' (giao vien dieu khien tung cau, mac dinh), 'nhip'
+// (moi em tu lam lan luot ca bo cau theo toc do cua minh) va 'the' (hoc sinh
+// gio the giay in ma, giao vien quet ca lop bang camera dien thoai — /quet).
 const crypto = require('crypto');
 
 const MAX_PHONG = 300;
 const MAX_HS = 80;
+const MAX_THE = 100;  // so the in san (public/js/the-ma.js)
 const HET_HAN_MS = 4 * 60 * 60 * 1000;   // phong bo khong qua 4 tieng thi xoa
 const TAO_MOI_GIO = 12;                   // moi IP tao toi da 12 phong / gio
 
@@ -128,10 +130,13 @@ module.exports = function gan(app) {
     const ma = maMoi();
     if (!ma) return res.status(503).json({ error: 'Chưa tạo được mã phòng, thử lại nhé.' });
     ds.push(Date.now()); taoTheoIp.set(ip, ds);
-    const kieu = (req.body || {}).kieu === 'nhip' ? 'nhip' : 'gv';
+    const k0 = (req.body || {}).kieu;
+    const kieu = k0 === 'nhip' || k0 === 'the' ? k0 : 'gv';
     const p = { ma, kieu, khoa: token(), tao: Date.now(), cham: Date.now(), pha: 'cho', qid: 0, cau: null, dung: -1, batDau: 0, hs: new Map(), soVao: 0, ds: null };
+    // Kieu 'the': khoa quet rieng cho dien thoai (nam trong ma QR) — chi quet va bam lat/tiep
+    if (kieu === 'the') { p.quet = token(); p.theTl = {}; p.theDs = []; p.lenh = { seq: 0, loai: '' }; p.quetLuc = 0; }
     phong.set(ma, p);
-    res.json({ ma, khoa: p.khoa });
+    res.json(kieu === 'the' ? { ma, khoa: p.khoa, quet: p.quet } : { ma, khoa: p.khoa });
   });
 
   app.post('/api/live/:ma/cau', (req, res) => {
@@ -146,6 +151,10 @@ module.exports = function gan(app) {
     p.dung = Number.isInteger(dung) && dung >= 0 && dung < opts.length ? dung : -1;
     p.batDau = Date.now();
     for (const h of p.hs.values()) { h.tl = null; h.cong = 0; }
+    if (p.kieu === 'the') {
+      p.theTl = {};
+      if (Array.isArray(b.theDs)) p.theDs = [...new Set(b.theDs.map(Number).filter((n) => Number.isInteger(n) && n >= 1 && n <= MAX_THE))].slice(0, MAX_THE);
+    }
     res.json({ ok: true, qid: p.qid });
   });
 
@@ -210,6 +219,7 @@ module.exports = function gan(app) {
 
   app.get('/api/live/:ma/gv', (req, res) => {
     const p = layPhong(req, res); if (!p || !laGv(p, req, res)) return;
+    if (p.kieu === 'the') return res.json({ kieu: 'the', pha: p.pha, qid: p.qid, tl: p.theTl, lenh: p.lenh, quetLuc: p.quetLuc, may: !!p.may, mayLuc: p.mayLuc || 0 });
     const phanBo = p.cau ? p.cau.opts.map(() => 0) : [];
     let daTL = 0;
     for (const h of p.hs.values()) {
@@ -229,9 +239,61 @@ module.exports = function gan(app) {
     });
   });
 
+  // ---- dien thoai quet the (kieu 'the') ----
+  // Chi MOT dien thoai duoc quet moi phong: may dau tien mo trang quet giu cho;
+  // hoc sinh co chup lai ma QR cung khong gui dap an gia duoc.
+  function laMayQuet(p, src, res) {
+    if (p.kieu !== 'the' || !src || src.quet !== p.quet) { res.status(403).json({ error: 'Mã quét không đúng hoặc đã đổi. Quét lại mã QR trên màn chiếu nhé.' }); return false; }
+    const may = chuoi(src.may, 40);
+    if (!may) { res.status(400).json({ error: 'Thiếu mã thiết bị.' }); return false; }
+    if (!p.may) p.may = may;
+    else if (p.may !== may) { res.status(403).json({ error: 'Đã có một điện thoại khác đang quét phòng này. Trên màn chiếu bấm “Đổi điện thoại” nếu cô muốn dùng máy này.' }); return false; }
+    p.mayLuc = Date.now();
+    return true;
+  }
+  app.post('/api/live/:ma/doimay', (req, res) => {
+    const p = layPhong(req, res); if (!p || !laGv(p, req, res)) return;
+    if (p.kieu !== 'the') return res.status(400).json({ error: 'Phòng này không dùng thẻ.' });
+    p.quet = token(); p.may = null; p.mayLuc = 0;
+    res.json({ ok: true, quet: p.quet });
+  });
+  app.get('/api/live/:ma/quet', (req, res) => {
+    const p = layPhong(req, res); if (!p || !laMayQuet(p, req.query, res)) return;
+    const out = { pha: p.pha, qid: p.qid, theDs: p.theDs, tl: p.theTl, lenh: p.lenh.seq };
+    if (p.cau && (p.pha === 'hoi' || p.pha === 'lat')) out.cau = { zh: p.cau.zh, opts: p.cau.opts, so: p.cau.so, tong: p.cau.tong };
+    if (p.pha === 'lat') out.dung = p.dung;
+    res.json(out);
+  });
+  // Gui cac the vua doc duoc: { quet, qid, the: { '12': 0..3, ... } } — doc lai thi lay lan moi nhat
+  app.post('/api/live/:ma/quet', (req, res) => {
+    const p = layPhong(req, res); const b = req.body || {}; if (!p || !laMayQuet(p, b, res)) return;
+    if (p.pha !== 'hoi' || Number(b.qid) !== p.qid) return res.status(409).json({ error: 'Câu hỏi đã đổi.', qid: p.qid, pha: p.pha });
+    const soDa = p.cau ? p.cau.opts.length : 4;
+    const dsThe = p.theDs.length ? new Set(p.theDs) : null;
+    let moi = 0;
+    Object.keys(b.the || {}).slice(0, MAX_THE).forEach((k) => {
+      const id = Number(k), chon = Number(b.the[k]);
+      if (!Number.isInteger(id) || id < 1 || id > MAX_THE || (dsThe && !dsThe.has(id))) return;
+      if (!Number.isInteger(chon) || chon < 0 || chon >= soDa) return;
+      if (p.theTl[id] !== chon) moi++;
+      p.theTl[id] = chon;
+    });
+    if (moi) p.quetLuc = Date.now();
+    res.json({ ok: true, n: Object.keys(p.theTl).length });
+  });
+  // Dien thoai bam 'Lat dap an' / 'Cau tiep' — man chieu doc lenh moi qua /gv roi tu lam
+  app.post('/api/live/:ma/dieu', (req, res) => {
+    const p = layPhong(req, res); const b = req.body || {}; if (!p || !laMayQuet(p, b, res)) return;
+    const loai = ['lat', 'tiep', 'xong'].indexOf(b.lenh) >= 0 ? b.lenh : '';
+    if (!loai) return res.status(400).json({ error: 'Lệnh không hợp lệ.' });
+    p.lenh = { seq: p.lenh.seq + 1, loai };
+    res.json({ ok: true, seq: p.lenh.seq });
+  });
+
   // ---- hoc sinh ----
   app.post('/api/live/:ma/vao', (req, res) => {
     const p = layPhong(req, res); if (!p) return;
+    if (p.kieu === 'the') return res.status(400).json({ error: 'Phòng này dùng thẻ giấy, không vào bằng điện thoại.' });
     if (p.pha === 'het') return res.status(410).json({ error: 'Phòng này đã kết thúc.' });
     let ten = sachTen((req.body || {}).ten);
     if (!ten) return res.status(400).json({ error: 'Em nhập tên trước nhé.' });

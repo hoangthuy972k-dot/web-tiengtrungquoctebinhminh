@@ -1,0 +1,241 @@
+/* ================= The tra loi (kieu Plickers) — man chieu + trang in =================
+   Man chieu dung bang mau am cua trang (kem, do gach, vang ho phach); chu to
+   de doc tu cuoi lop. Trang in: giay A4 trang, ma den, khong mau.            */
+html.lt-open, html.lt-open body { overflow: hidden; }
+
+.lt, .lt-in {
+  --lt-nen: #fbf5ea;
+  --lt-the: #fffdf8;
+  --lt-chu: #3a2a24;
+  --lt-mo: #7a6558;
+  --lt-vien: #eadbc8;
+  --lt-do: #b8432f;
+  --lt-do-dam: #8e2f22;
+  --lt-vang: #e9a23b;
+  --lt-xanh: #2f8a57;
+  --lt-sai: #c4442f;
+}
+.lt {
+  position: fixed; inset: 0; z-index: 80;
+  display: flex; flex-direction: column;
+  background: var(--lt-nen);
+  color: var(--lt-chu);
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+}
+.lt[hidden] { display: none; }
+
+.lt-bar {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
+  padding: 10px 18px;
+  background: var(--lt-the);
+  border-bottom: 1px solid var(--lt-vien);
+}
+.lt-title { font-size: 1.1rem; color: var(--lt-do-dam); white-space: nowrap; }
+.lt-bar-sub { color: var(--lt-mo); font-weight: 600; }
+.lt-bar-gap { flex: 1; }
+.lt-may-dot { width: 12px; height: 12px; border-radius: 50%; background: #cbbfb2; }
+.lt-may-dot.is-on { background: var(--lt-xanh); box-shadow: 0 0 0 4px rgba(47, 138, 87, .18); }
+
+.lt-btn {
+  min-height: 42px; padding: 8px 14px;
+  border-radius: 12px; border: 1px solid var(--lt-vien);
+  background: #f3e8da; color: var(--lt-chu);
+  font: inherit; font-size: .95rem; font-weight: 600;
+  cursor: pointer; white-space: nowrap;
+}
+.lt-btn:hover { background: #ecdcc8; }
+.lt-btn-sang { background: #fff; }
+.lt-go {
+  min-height: 52px; padding: 10px 26px;
+  border: 0; border-radius: 999px;
+  background: var(--lt-do); color: #fff;
+  font: inherit; font-size: clamp(1rem, 1.5vw, 1.15rem); font-weight: 800;
+  box-shadow: 0 8px 22px rgba(184, 67, 47, .25);
+  cursor: pointer; white-space: nowrap;
+}
+.lt-go:hover { background: var(--lt-do-dam); }
+.lt-go kbd { margin-left: 8px; padding: 1px 7px; border-radius: 6px; background: rgba(255, 255, 255, .2); font: inherit; font-size: .75em; }
+.lt-go-sm { min-height: 44px; padding: 8px 20px; font-size: 1rem; }
+.lt-btn:focus-visible, .lt-go:focus-visible, .lt-opt:focus-visible, .lt select:focus-visible, .lt input:focus-visible, .lt-link:focus-visible {
+  outline: 3px solid var(--lt-vang); outline-offset: 2px;
+}
+.lt-link { border: 0; background: none; color: var(--lt-do); font: inherit; font-weight: 700; cursor: pointer; padding: 6px 0; text-decoration: underline; }
+
+.lt-man { flex: 1; min-height: 0; overflow-y: auto; padding: clamp(14px, 2.4vw, 32px); }
+.lt-may-cho { text-align: center; color: var(--lt-mo); margin-top: 20vh; }
+.lt-loi { color: var(--lt-sai); font-weight: 600; min-height: 1.3em; margin: 8px 0 0; }
+
+/* ---------- sanh ---------- */
+.lt-sanh { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); gap: clamp(16px, 3vw, 40px); max-width: 1200px; margin: 0 auto; }
+.lt-sanh-trai, .lt-sanh-phai {
+  background: var(--lt-the); border: 1px solid var(--lt-vien); border-radius: 22px;
+  padding: clamp(18px, 2.6vw, 32px);
+  box-shadow: 0 10px 30px rgba(90, 60, 30, .07);
+}
+.lt-sanh h2 { margin: 0 0 12px; font-size: clamp(1.3rem, 2.4vw, 1.8rem); color: var(--lt-do-dam); text-wrap: balance; }
+.lt-buoc { margin: 0 0 18px; padding-left: 1.3em; color: var(--lt-chu); line-height: 1.6; display: grid; gap: 4px; }
+.lt-truong { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+.lt-truong label { font-weight: 700; min-width: 120px; }
+.lt-truong select, .lt-truong input, .lt-khoa input {
+  min-height: 42px; padding: 8px 12px; border-radius: 12px;
+  border: 1px solid var(--lt-vien); background: #fff; color: var(--lt-chu);
+  font: inherit; font-size: 1rem; max-width: 100%;
+}
+.lt-truong input[type="number"] { width: 100px; }
+.lt-khoa { display: flex; gap: 8px; flex-wrap: wrap; }
+.lt-hs { margin-top: 12px; color: var(--lt-mo); font-size: .92rem; }
+.lt-hs p { margin: 0 0 8px; }
+.lt-hs-ds { display: flex; flex-wrap: wrap; gap: 6px; max-height: 180px; overflow-y: auto; }
+.lt-hs-ds span { padding: 3px 9px; border-radius: 999px; background: #f6ecdf; color: var(--lt-chu); font-size: .85rem; }
+.lt-hs-ds b { color: var(--lt-do); margin-right: 2px; font-variant-numeric: tabular-nums; }
+.lt-sanh-nut { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 18px; }
+.lt-sanh-phai { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+.lt-qr { width: min(300px, 70%); aspect-ratio: 1; background: #fff; border-radius: 14px; padding: 6px; border: 1px solid var(--lt-vien); }
+.lt-qr svg { width: 100%; height: 100%; display: block; }
+.lt-may-t { margin: 0; font-weight: 700; font-size: 1.05rem; }
+.lt-may-mo { margin: 0; color: var(--lt-mo); font-size: .9rem; line-height: 1.5; max-width: 32ch; }
+.lt-may-ok { font-size: 3.4rem; line-height: 1; }
+
+/* ---------- cau hoi ---------- */
+.lt-cau { max-width: 1200px; margin: 0 auto; text-align: center; }
+.lt-cau-pt { display: inline-block; padding: 4px 12px; border-radius: 999px; background: #f6ecdf; color: var(--lt-do-dam); font-weight: 600; font-size: .95rem; margin-bottom: 8px; }
+.lt-cau-ctx { color: var(--lt-mo); font-size: clamp(1rem, 1.8vw, 1.3rem); margin-bottom: 8px; }
+.lt-cau-zh {
+  font-family: 'Noto Sans SC', 'Be Vietnam Pro', sans-serif;
+  font-size: clamp(1.8rem, 4.6vw, 3.4rem); font-weight: 700; line-height: 1.35;
+  margin: 6px 0 clamp(14px, 2.4vw, 26px); text-wrap: balance;
+}
+.lt-cau-tudo { font-family: 'Be Vietnam Pro', sans-serif; font-size: clamp(1.4rem, 3vw, 2.2rem); color: var(--lt-mo); }
+.lt-trong { color: var(--lt-do); }
+.lt-opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; text-align: left; }
+.lt-opt {
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; gap: 14px;
+  min-height: 70px; padding: 12px 16px;
+  border-radius: 18px; border: 2px solid var(--lt-vien);
+  background: var(--lt-the); color: var(--lt-chu);
+  font: inherit; text-align: left; cursor: pointer;
+}
+.lt-opt-k {
+  flex: none; width: 48px; height: 48px; border-radius: 14px;
+  display: grid; place-items: center;
+  background: #f3e8da; color: var(--lt-do-dam);
+  font-size: 1.5rem; font-weight: 800;
+}
+.lt-opt-t { position: relative; z-index: 1; flex: 1; font-family: 'Noto Sans SC', 'Be Vietnam Pro', sans-serif; font-size: clamp(1.2rem, 2.6vw, 1.9rem); font-weight: 600; }
+.lt-opts.is-tudo .lt-opt { justify-content: center; }
+.lt-opts.is-tudo .lt-opt-k { width: 64px; height: 64px; font-size: 2rem; }
+.lt-opt-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; pointer-events: none; }
+.lt-opt-bar i { display: block; height: 100%; width: 0; background: rgba(233, 162, 59, .18); transition: width .6s cubic-bezier(.2, .8, .2, 1); }
+.lt-opt-n { position: relative; z-index: 1; margin-left: auto; font-size: 1.4rem; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--lt-mo); }
+.lt-opt.is-dung { border-color: var(--lt-xanh); background: #eef8f1; }
+.lt-opt.is-dung .lt-opt-k { background: var(--lt-xanh); color: #fff; }
+.lt-opt.is-dung .lt-opt-bar i { background: rgba(47, 138, 87, .2); }
+.lt-opt.is-mo { opacity: .55; }
+.lt-why { margin: 14px auto 0; max-width: 70ch; padding: 12px 16px; border-radius: 14px; background: #fff7e6; border: 1px solid #f1d9a8; text-align: left; line-height: 1.55; }
+.lt-why[hidden] { display: none; }
+
+.lt-day { max-width: 1200px; margin: clamp(16px, 2.6vw, 28px) auto 0; }
+.lt-dem { text-align: center; font-size: clamp(1.05rem, 1.8vw, 1.35rem); color: var(--lt-mo); margin-bottom: 10px; }
+.lt-dem b { color: var(--lt-do-dam); font-size: 1.5em; font-variant-numeric: tabular-nums; }
+.lt-du { color: var(--lt-xanh); font-weight: 700; }
+.lt-luoi { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 6px; }
+.lt-luoi.is-nho { grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); }
+.lt-chip {
+  position: relative; display: flex; align-items: center; gap: 6px;
+  min-height: 38px; padding: 4px 8px; border-radius: 10px;
+  background: #efe5d8; color: #9a887a;
+  font-size: .9rem; overflow: hidden;
+  transition: background .25s ease, color .25s ease;
+}
+.lt-chip b { font-variant-numeric: tabular-nums; min-width: 1.6em; }
+.lt-chip i { font-style: normal; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lt-chip u { margin-left: auto; text-decoration: none; font-weight: 800; }
+.lt-chip.is-co { background: var(--lt-do); color: #fff; }
+.lt-chip.is-dung { background: var(--lt-xanh); color: #fff; }
+.lt-chip.is-sai { background: #f6d9d2; color: var(--lt-sai); }
+.lt-nut { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+.lt-nut [hidden] { display: none; }
+
+/* ---------- tong ket ---------- */
+.lt-tk { max-width: 1100px; margin: 0 auto; }
+.lt-tk-dau { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 18px; }
+.lt-tk-so { background: var(--lt-the); border: 1px solid var(--lt-vien); border-radius: 18px; padding: 16px; text-align: center; }
+.lt-tk-so b { display: block; font-size: clamp(2rem, 4vw, 3rem); color: var(--lt-do-dam); font-variant-numeric: tabular-nums; }
+.lt-tk-so span { color: var(--lt-mo); }
+.lt-tk-cau { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px 18px; margin-bottom: 18px; }
+.lt-tk-c { display: grid; grid-template-columns: 64px 1fr 48px; align-items: center; gap: 8px; font-size: .92rem; }
+.lt-tk-c b { text-align: right; font-variant-numeric: tabular-nums; }
+.lt-tk-bar { height: 10px; border-radius: 5px; background: #efe5d8; overflow: hidden; }
+.lt-tk-bar i { display: block; height: 100%; background: var(--lt-xanh); }
+.lt-tk-bar i.is-thap { background: var(--lt-vang); }
+.lt-tk-hs { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px; }
+.lt-tk-r { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 12px; background: var(--lt-the); border: 1px solid var(--lt-vien); }
+.lt-tk-hang { width: 2em; color: var(--lt-mo); font-variant-numeric: tabular-nums; }
+.lt-tk-ten { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lt-tk-ten b { color: var(--lt-do); margin-right: 4px; }
+.lt-tk-d { font-weight: 800; font-variant-numeric: tabular-nums; }
+.lt-tk-r.is-thap { background: #fff3e2; border-color: #f1d3a3; }
+.lt-tk-r.is-vang { opacity: .55; }
+.lt-tk-note { margin: 14px 0 0; padding: 10px 14px; border-radius: 12px; background: #fff3e2; line-height: 1.55; }
+.lt-tk-note.is-mo { background: #f3ece4; color: var(--lt-mo); }
+.lt-tk-trong { color: var(--lt-mo); text-align: center; }
+
+@media (max-width: 820px) {
+  .lt-sanh { grid-template-columns: 1fr; }
+  .lt-opts { grid-template-columns: 1fr; }
+  .lt-tk-dau { grid-template-columns: 1fr; }
+}
+
+/* ---------- trang in the ---------- */
+.lt-in { position: fixed; inset: 0; z-index: 90; overflow-y: auto; background: #d9d2c8; }
+.lt-in[hidden] { display: none; }
+.lt-in-bar {
+  position: sticky; top: 0; z-index: 1;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 12px;
+  padding: 10px 16px; background: #fffdf8; border-bottom: 1px solid #eadbc8;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #3a2a24;
+}
+.lt-in-chon { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; }
+.lt-in-chon button { min-height: 38px; padding: 4px 12px; border-radius: 10px; border: 1px solid #eadbc8; background: #fff; font: inherit; cursor: pointer; }
+.lt-in-chon button.is-on { background: #b8432f; color: #fff; border-color: transparent; }
+.lt-in-goi { flex: 1; min-width: 220px; color: #7a6558; font-size: .88rem; }
+.lt-in-giay { padding: 20px 0 40px; display: grid; justify-content: center; gap: 20px; }
+.lt-to {
+  width: 210mm; height: 297mm; background: #fff; box-shadow: 0 4px 18px rgba(0, 0, 0, .15);
+  display: grid; overflow: hidden;
+}
+.lt-to-1 { grid-template: 1fr / 1fr; }
+.lt-to-2 { grid-template: 1fr 1fr / 1fr; }
+.lt-to-4 { grid-template: 1fr 1fr / 1fr 1fr; }
+.lt-the {
+  position: relative; display: grid; place-items: center;
+  border: 0.3mm dashed #c9c9c9;
+  color: #000; font-family: 'Be Vietnam Pro', Arial, sans-serif;
+}
+.lt-the-ma { width: var(--ma); aspect-ratio: 1; }
+.lt-the-ma svg { width: 100%; height: 100%; display: block; }
+.lt-to-1 .lt-the { --ma: 140mm; --chu: 9mm; --so: 14mm; }
+.lt-to-2 .lt-the { --ma: 95mm; --chu: 7mm; --so: 10mm; }
+.lt-to-4 .lt-the { --ma: 68mm; --chu: 5mm; --so: 7mm; }
+/* Chu cai o tung canh: xoay sao cho dung chieu khi canh do huong len tren */
+.lt-the-chu { position: absolute; font-size: var(--chu); font-weight: 700; color: #555; line-height: 1; }
+.lt-the-chu.c0 { top: calc(50% - var(--ma) / 2 - var(--ma) / 7 - var(--chu)); left: 50%; transform: translateX(-50%); }
+.lt-the-chu.c1 { left: calc(50% + var(--ma) / 2 + var(--ma) / 7); top: 50%; transform: translateY(-50%) rotate(90deg); }
+.lt-the-chu.c2 { top: calc(50% + var(--ma) / 2 + var(--ma) / 7); left: 50%; transform: translateX(-50%) rotate(180deg); }
+.lt-the-chu.c3 { right: calc(50% + var(--ma) / 2 + var(--ma) / 7); top: 50%; transform: translateY(-50%) rotate(-90deg); }
+.lt-the-so { position: absolute; left: 6mm; bottom: 5mm; font-size: var(--so); font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.lt-the-ten { position: absolute; right: 6mm; bottom: 5mm; max-width: 55%; font-size: calc(var(--chu) * .7); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lt-the-web { position: absolute; right: 6mm; top: 5mm; font-size: 2.6mm; color: #999; }
+
+@media print {
+  @page { size: A4 portrait; margin: 0; }
+  html.lt-dang-in body > *:not(#ltInTrang) { display: none !important; }
+  html.lt-dang-in, html.lt-dang-in body { overflow: visible !important; background: #fff !important; }
+  html.lt-dang-in .lt-in { position: static; overflow: visible; background: #fff; }
+  html.lt-dang-in .lt-in-bar { display: none; }
+  html.lt-dang-in .lt-in-giay { display: block; padding: 0; }
+  html.lt-dang-in .lt-to { box-shadow: none; break-after: page; page-break-after: always; }
+  html.lt-dang-in .lt-to:last-child { break-after: auto; page-break-after: auto; }
+  html.lt-dang-in .lt-the { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

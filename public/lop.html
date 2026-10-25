@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/lop.css">
 <link rel="stylesheet" href="/css/lop-ufo.css">
+<link rel="stylesheet" href="/css/lop-the.css">
 <script>
 // CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
 // va trinh duyet giu mai ban CSS/JS cu. Chuyen sang /lop de luon qua may chu.
@@ -84,6 +85,12 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <span class="lop-game-name">UFO gọi trả bài</span>
           <span class="lop-game-desc">Chiếu cả lớp lên màn hình, đĩa bay lượn qua rồi “hút” một bạn lên bảng — ưu tiên bạn lâu chưa được gọi. Chấm điểm ngay, điểm lên cột Miệng. Dùng lớp trên hệ thống hoặc dán nhanh danh sách tên.</span>
           <span class="lop-game-count">đầu giờ</span>
+        </button>
+        <button type="button" class="lop-test-card lop-the-card" id="lopTheOpen">
+          <span class="lop-game-emoji">📇</span>
+          <span class="lop-game-name">Thẻ trả lời — quét bằng điện thoại</span>
+          <span class="lop-game-desc">Mỗi bạn một thẻ giấy in mã riêng, xoay thẻ để chọn A/B/C/D rồi giơ lên. Cô quét cả lớp bằng camera điện thoại, màn chiếu hiện ngay ai đúng ai sai và tổng kết cuối giờ. Học sinh không cần thiết bị.</span>
+          <span class="lop-game-count" id="lopCountThe">câu tự do</span>
         </button>
         <button type="button" class="lop-test-card" data-test="dictation">
           <span class="lop-game-emoji">✍️</span>
@@ -366,6 +373,8 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/phat-am-de.js"></script>
 <script src="/js/vendor/qrcode.js"></script>
 <script src="/js/lop-ufo.js"></script>
+<script src="/js/the-ma.js"></script>
+<script src="/js/lop-the.js"></script>
 <script src="/js/lop.js"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@ Disallow: /bao-cao
 Disallow: /admin.html
 Disallow: /lop
 Disallow: /choi
+Disallow: /quet
 Disallow: /hsk30
 
 Sitemap: https://hihanchinese.online/sitemap.xml

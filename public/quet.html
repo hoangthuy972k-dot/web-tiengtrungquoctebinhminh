@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Quét thẻ trả lời · Hi Hán 喜汉</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#14111c">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700&family=Be+Vietnam+Pro:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/quet.css">
+</head>
+<body>
+<main class="qt" id="qt">
+  <video class="qt-video" id="qtVideo" playsinline muted autoplay></video>
+  <canvas class="qt-ve" id="qtVe" aria-hidden="true"></canvas>
+
+  <header class="qt-tren">
+    <div class="qt-cau" id="qtCau">Đang kết nối…</div>
+    <div class="qt-dem" id="qtDem"><b>0</b><span>/0 thẻ</span></div>
+  </header>
+
+  <section class="qt-giua" id="qtMo">
+    <div class="qt-logo">喜汉</div>
+    <h1>Quét thẻ trả lời</h1>
+    <p id="qtMoTxt">Giơ điện thoại về phía lớp, quét chậm từ trái sang phải. Thẻ nào đã nhận sẽ hiện khung xanh.</p>
+    <button type="button" class="qt-nut" id="qtBat">📷 Bật camera</button>
+    <p class="qt-loi" id="qtLoi" role="alert"></p>
+  </section>
+
+  <footer class="qt-duoi">
+    <button type="button" class="qt-thieu" id="qtThieu" aria-expanded="false">Còn thiếu: <b id="qtThieuSo">—</b></button>
+    <div class="qt-thieu-ds" id="qtThieuDs" hidden></div>
+    <div class="qt-dk">
+      <button type="button" class="qt-nut qt-nut-phu" id="qtLat">👁 Lật đáp án</button>
+      <button type="button" class="qt-nut" id="qtTiep">Câu tiếp ▶</button>
+    </div>
+  </footer>
+</main>
+<script src="/js/the-ma.js"></script>
+<script src="/js/the-quet-cv.js"></script>
+<script src="/js/quet.js"></script>
+</body>
+</html>

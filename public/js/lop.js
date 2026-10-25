@@ -193,6 +193,7 @@
     // Kiem tra dau gio
     var total = m + s + n;
     $('#lopCountQuiz').textContent = m ? Math.min(10, m) + ' câu' : 'chọn bài';
+    $('#lopCountThe').textContent = m ? m + ' câu' : 'câu tự do';
     $('.lop-test-card[data-test="quiz"]').disabled = m < 1;
     $('#lopCountPaper').textContent = total ? total + ' câu' : 'chọn bài';
     $('.lop-test-card[data-test="paper"]').disabled = total < 1;
@@ -3302,6 +3303,10 @@
     $('#lopBuild').addEventListener('click', openBuild);
     $('#lopCall').addEventListener('click', function () { if (window.LopUfo) window.LopUfo.mo(); });
     $('#lopUfoOpen').addEventListener('click', function () { if (window.LopUfo) window.LopUfo.mo(); });
+    // The tra loi: dung cau A/B/C cua cac bai dang chon; chua chon bai thi la cau hoi tu do
+    $('#lopTheOpen').addEventListener('click', function () {
+      if (window.LopThe) window.LopThe.mo({ cau: pickedMcs(), nhan: pickedLabel() });
+    });
     $('#lopBuildClose').addEventListener('click', function () { $('#lopBuildBox').hidden = true; });
     $('#lopBuildClass').addEventListener('change', function () { build.classId = this.value; loadBuild(); });
     $('#lopBuildFind').addEventListener('input', function () { build.loc = this.value; renderBuild(); });

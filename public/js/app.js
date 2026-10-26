@@ -16782,6 +16782,12 @@
     if (authBannerLoginBtn) authBannerLoginBtn.addEventListener('click', function () { openModal('login'); });
     // Nut 'Dang nhap' trong khung Tin nhan / Tro ly AI o cac trang khac dan ve /#dang-nhap
     function openLoginFromHash() {
+      // Link trong email dat lai mat khau: mo thang khung "Quen mat khau"
+      if (location.hash === '#quen-mat-khau') {
+        openModal('forgot');
+        try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* ignore */ }
+        return;
+      }
       if (location.hash !== '#dang-nhap') return;
       // da chu dong bam Dang nhap: khong tu mo them khung Dang ky ben duoi nua
       try { sessionStorage.setItem(STORAGE_KEYS.authPrompted, '1'); } catch (e) { /* ignore */ }
@@ -16930,7 +16936,9 @@
         .then(function (x) {
           if (!x.ok) { setFormError(form, x.d.error || 'Chưa gửi được, thử lại nhé.'); return; }
           ok.hidden = false;
-          ok.innerHTML = '✅ Đã gửi yêu cầu cho cô. Khi nhận được <b>mã 6 số</b>, em nhập vào ô bên dưới nhé (mã dùng được 48 giờ).';
+          ok.innerHTML = x.d.kenh === 'email'
+            ? '📧 Nếu email này đã đăng ký, <b>mã 6 số</b> vừa được gửi vào hộp thư của em (xem cả mục <b>Thư rác / Spam</b>). Mã dùng được 1 giờ. Không thấy email thì báo cô nhé.'
+            : '✅ Đã gửi yêu cầu cho cô. Khi nhận được <b>mã 6 số</b>, em nhập vào ô bên dưới nhé (mã dùng được 48 giờ).';
           if (nhap.indexOf('@') > 0 && !$('#resetEmail').value) $('#resetEmail').value = nhap;
         })
         .catch(function () { setFormError(form, 'Không kết nối được máy chủ, thử lại sau.'); });

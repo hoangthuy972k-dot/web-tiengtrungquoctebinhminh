@@ -60,14 +60,30 @@
   function kqHtml(d) {
     var tn = tinNhan(d);
     return '<div class="qmk-ma-hop">' +
+      (d.daGui ? '<div class="qmk-da-gui">📧 Đã gửi mã vào email ' + esc(d.email) + '.</div>' : '') +
+      (d.loiGui ? '<div class="qmk-loi-gui">⚠ Chưa gửi được email (' + esc(d.loiGui) + ') — cô gửi tin nhắn Zalo bên dưới nhé.</div>' : '') +
       '<div class="qmk-ma-so">' + esc(d.ma) + '</div>' +
       '<div class="qmk-ma-phu">Mã của <b>' + esc(d.ten) + '</b> · ' + esc(d.email) + ' · hết hạn ' + new Date(d.het).toLocaleString('vi-VN') + '</div>' +
       '<textarea class="qmk-ma-tn" rows="4" readonly>' + esc(tn) + '</textarea>' +
       '<button type="button" class="btn btn-primary qmk-chep">📋 Sao chép tin nhắn Zalo</button>' +
     '</div>';
   }
-  function capMa(userId, requestId) {
-    return goi('POST', '/api/admin/reset-code', { userId: userId, requestId: requestId || '' });
+  function capMa(userId, requestId, guiEmail) {
+    return goi('POST', '/api/admin/reset-code', { userId: userId, requestId: requestId || '', guiEmail: !!guiEmail });
+  }
+  // Trang thai dich vu email (Brevo / Resend) — tu may chu
+  var mail = null;
+  function taiMail() {
+    return goi('GET', '/api/admin/mail-status').then(function (d) { mail = d; return d; }).catch(function () { mail = { bat: false }; return mail; });
+  }
+  function mailHtml() {
+    if (!mail) return '';
+    if (!mail.bat) {
+      return '<div class="qmk-mail is-tat">📧 <b>Gửi mã qua email: chưa bật.</b> Học sinh gửi yêu cầu sẽ hiện ở đây để cô cấp mã. ' +
+        'Muốn học sinh tự nhận mã qua email, thêm <code>BREVO_API_KEY</code> (hoặc <code>RESEND_API_KEY</code>) và <code>MAIL_FROM</code> vào biến môi trường của máy chủ rồi khởi động lại.</div>';
+    }
+    return '<div class="qmk-mail">📧 <b>Gửi mã qua email: đang bật</b> (' + esc(mail.dv) + ', gửi từ ' + esc(mail.from) + '). Học sinh nhập đúng email sẽ tự nhận mã — chỉ những em quên cả email mới hiện ở đây.' +
+      '<form class="qmk-thu" id="qmkThu"><input type="email" id="qmkThuTo" placeholder="email của cô để gửi thử" required> <button type="submit" class="btn btn-outline">Gửi email thử</button> <span id="qmkThuKq"></span></form></div>';
   }
 
   // Nut cap ma dung o noi khac (trang chi tiet hoc sinh)
@@ -76,7 +92,7 @@
     if (b) {
       var o = b.parentNode.querySelector('.qmk-kq');
       b.disabled = true;
-      capMa(b.getAttribute('data-qmk-cap')).then(function (d) {
+      capMa(b.getAttribute('data-qmk-cap'), '', b.hasAttribute('data-qmk-email')).then(function (d) {
         if (o) o.innerHTML = kqHtml(d);
       }).catch(function (err) { if (o) o.textContent = '⚠ ' + err.message; })
         .then(function () { b.disabled = false; });
@@ -102,18 +118,28 @@
     var box = $('#trQmk');
     if (!box) return;
     box.innerHTML = '<p class="tr-hint">Đang tải…</p>';
-    tai().then(function () {
+    Promise.all([tai(), mail ? mail : taiMail()]).then(function () {
       var khop = ds.filter(function (r) { return r.userId; });
       box.innerHTML =
         '<section class="admin-section">' +
           '<div class="tr-toolbar"><div class="admin-section-title">🔑 Yêu cầu quên mật khẩu</div>' +
           (khop.length > 1 ? '<button type="button" class="btn btn-outline" id="qmkTatCa">Cấp mã cho cả ' + khop.length + ' em đã khớp</button>' : '') + '</div>' +
           '<p class="tr-hint">Học sinh bấm “Quên mật khẩu?” ở khung đăng nhập sẽ hiện ở đây. Cô bấm <b>Cấp mã</b>, sao chép tin nhắn gửi em qua Zalo — em tự nhập mã và đặt mật khẩu mới (mã dùng 48 giờ, sai 5 lần tự huỷ). Cũng có thể cấp mã cho bất kỳ em nào trong trang chi tiết học sinh.</p>' +
+          mailHtml() +
           '<div id="qmkTatCaKq"></div>' +
           (ds.length ? '<div class="qmk-ds">' + ds.map(dongHtml).join('') + '</div>'
             : '<p class="admin-empty">Chưa có yêu cầu nào. 🎉</p>') +
         '</section>';
       $all('.qmk-dong', box).forEach(ganDong);
+      var thu = $('#qmkThu', box);
+      if (thu) thu.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var kq = $('#qmkThuKq', box);
+        kq.textContent = 'Đang gửi…';
+        goi('POST', '/api/admin/mail-test', { to: $('#qmkThuTo', box).value.trim() })
+          .then(function () { kq.textContent = '✅ Đã gửi — cô xem hộp thư (cả mục Spam).'; })
+          .catch(function (err) { kq.textContent = '⚠ ' + err.message; });
+      });
       var tc = $('#qmkTatCa', box);
       if (tc) tc.addEventListener('click', function () {
         tc.disabled = true;
@@ -144,22 +170,25 @@
       '<div class="qmk-dau"><div>' + ai + (r.userId ? '<div class="qmk-phu">Em ghi: “' + esc(r.nhap) + '”</div>' : '') + '</div>' +
       '<span class="qmk-luc">' + luc(r.luc) + '</span></div>' + chon +
       '<div class="qmk-nut"><button type="button" class="btn btn-primary qmk-cap"' + (r.userId ? '' : ' disabled') + '>🔑 ' + (r.daCap ? 'Cấp lại mã' : 'Cấp mã') + '</button>' +
+      (mail && mail.bat ? '<button type="button" class="btn btn-outline qmk-cap-mail"' + (r.userId ? '' : ' disabled') + '>📧 Cấp &amp; gửi qua email</button>' : '') +
       '<button type="button" class="btn btn-ghost qmk-bo">Bỏ qua</button></div>' +
       '<div class="qmk-kq"></div></div>';
   }
   function ganDong(el) {
-    var cap = $('.qmk-cap', el), sel = $('.qmk-sel', el);
-    if (sel) sel.addEventListener('change', function () { cap.disabled = !sel.value; });
-    cap.addEventListener('click', function () {
+    var cap = $('.qmk-cap', el), capMail = $('.qmk-cap-mail', el), sel = $('.qmk-sel', el);
+    if (sel) sel.addEventListener('change', function () { cap.disabled = !sel.value; if (capMail) capMail.disabled = !sel.value; });
+    function bam(nut, guiEmail) {
       var uid = el.getAttribute('data-uid') || (sel && sel.value);
       if (!uid) return;
-      cap.disabled = true;
+      nut.disabled = true;
       // yeu cau ghi bang ten: cap xong thi dong yeu cau luon (da gan dung em)
-      capMa(uid, el.getAttribute('data-uid') ? '' : el.getAttribute('data-id')).then(function (d) {
+      capMa(uid, el.getAttribute('data-uid') ? '' : el.getAttribute('data-id'), guiEmail).then(function (d) {
         $('.qmk-kq', el).innerHTML = kqHtml(d);
       }).catch(function (err) { $('.qmk-kq', el).textContent = '⚠ ' + err.message; })
-        .then(function () { cap.disabled = false; });
-    });
+        .then(function () { nut.disabled = false; });
+    }
+    cap.addEventListener('click', function () { bam(cap, false); });
+    if (capMail) capMail.addEventListener('click', function () { bam(capMail, true); });
     $('.qmk-bo', el).addEventListener('click', function () {
       if (!window.confirm('Bỏ qua yêu cầu này?')) return;
       goi('POST', '/api/admin/pw-requests/xong', { id: el.getAttribute('data-id') }).then(function () {

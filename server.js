@@ -826,20 +826,116 @@ async function datMatKhau(user, password) {
 }
 function chuanTen(t) { return String(t || '').normalize('NFC').toLowerCase().replace(/\s+/g, ' ').trim(); }
 
+// ---------------- Gui email (ma dat lai mat khau) ----------------
+// Bat khi co BREVO_API_KEY hoac RESEND_API_KEY trong bien moi truong (.env / Hostinger),
+// cung MAIL_FROM dang "Hi Hán <no-reply@ten-mien-cua-co>" (dia chi da xac minh o dich vu).
+// SITE_URL (tuy chon) = dia chi web dat trong email, mac dinh lay theo yeu cau.
+// Chua cau hinh thi moi thu van chay nhu cu: co cap ma tren trang Bao cao.
+const QMK_EMAIL_HAN_MS = 60 * 60 * 1000; // ma tu gui qua email dung 1 gio
+function cauHinhEmail() {
+  const from = String(process.env.MAIL_FROM || '').trim();
+  const m = from.match(/^\s*(.*?)\s*<\s*([^<>\s]+@[^<>\s]+)\s*>\s*$/) || from.match(/^()([^<>\s]+@[^<>\s]+)$/);
+  if (!m) return null;
+  const nguoiGui = { ten: (m[1] || 'Hi Hán').replace(/^"|"$/g, ''), email: m[2] };
+  if (process.env.BREVO_API_KEY) return { dv: 'brevo', khoa: process.env.BREVO_API_KEY, nguoiGui };
+  if (process.env.RESEND_API_KEY) return { dv: 'resend', khoa: process.env.RESEND_API_KEY, nguoiGui };
+  return null;
+}
+async function guiEmail(to, tenNhan, tieuDe, html, text) {
+  const ch = cauHinhEmail();
+  if (!ch) throw new Error('Chưa cấu hình dịch vụ email.');
+  const ctrl = new AbortController();
+  const hen = setTimeout(() => ctrl.abort(), 15000);
+  try {
+    let r;
+    if (ch.dv === 'brevo') {
+      r = await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST', signal: ctrl.signal,
+        headers: { 'api-key': ch.khoa, 'content-type': 'application/json', accept: 'application/json' },
+        body: JSON.stringify({ sender: { name: ch.nguoiGui.ten, email: ch.nguoiGui.email }, to: [{ email: to, name: tenNhan || to }], subject: tieuDe, htmlContent: html, textContent: text }),
+      });
+    } else {
+      r = await fetch('https://api.resend.com/emails', {
+        method: 'POST', signal: ctrl.signal,
+        headers: { Authorization: 'Bearer ' + ch.khoa, 'content-type': 'application/json' },
+        body: JSON.stringify({ from: ch.nguoiGui.ten + ' <' + ch.nguoiGui.email + '>', to: [to], subject: tieuDe, html, text }),
+      });
+    }
+    if (!r.ok) {
+      const loi = await r.text().catch(() => '');
+      // khong ghi dia chi nguoi nhan vao log
+      console.error('Gui email loi (' + ch.dv + '): HTTP ' + r.status + ' ' + loi.slice(0, 200));
+      throw new Error('Dịch vụ email báo lỗi ' + r.status + '.');
+    }
+  } finally { clearTimeout(hen); }
+}
+function diaChiWeb(req) {
+  const env = String(process.env.SITE_URL || '').trim().replace(/\/+$/, '');
+  if (env) return env;
+  return (req.headers['x-forwarded-proto'] || req.protocol || 'https') + '://' + req.get('host');
+}
+function escHtml(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+// Tao ma moi cho em (thay ma cu neu co), tra ve ma that de gui di
+async function taoMaDatLai(user, hanMs) {
+  const ma = String(crypto.randomInt(0, 1000000)).padStart(6, '0');
+  const salt = crypto.randomBytes(16).toString('hex');
+  const het = Date.now() + hanMs;
+  await qmkGhiMa(user.id, { salt, hash: hashPassword(ma, salt), het, sai: 0, luc: Date.now() });
+  return { ma, het };
+}
+async function guiMaQuaEmail(req, user, ma, hanMs) {
+  const web = diaChiWeb(req);
+  const ten = String(user.name || '').trim().split(/\s+/).pop() || 'em';
+  const gio = Math.round(hanMs / 3600000);
+  const han = gio >= 1 ? gio + ' giờ' : Math.round(hanMs / 60000) + ' phút';
+  const link = web + '/#quen-mat-khau';
+  const text = 'Chào ' + ten + ',\n\nMã đặt lại mật khẩu Hi Hán của em là: ' + ma + ' (dùng được trong ' + han + ').\n\n' +
+    'Em vào ' + link + ' → mục "Đã có mã 6 số" → nhập email ' + user.email + ', mã trên và mật khẩu mới.\n\n' +
+    'Nếu em không yêu cầu đổi mật khẩu thì cứ bỏ qua email này, mật khẩu cũ vẫn dùng bình thường.\n\nHi Hán 喜汉';
+  const html = '<div style="font-family:Arial,Helvetica,sans-serif;max-width:480px;margin:auto;color:#3a2a24;line-height:1.6">' +
+    '<h2 style="color:#a8321f;margin:0 0 12px">Hi Hán 喜汉 — đặt lại mật khẩu</h2>' +
+    '<p>Chào <b>' + escHtml(ten) + '</b>,</p>' +
+    '<p>Mã đặt lại mật khẩu của em là:</p>' +
+    '<p style="font-size:34px;font-weight:bold;letter-spacing:8px;color:#a8321f;background:#fff6dc;border-radius:12px;padding:14px;text-align:center;margin:8px 0">' + escHtml(ma) + '</p>' +
+    '<p>Mã dùng được trong <b>' + han + '</b>. Em bấm nút dưới đây, nhập email <b>' + escHtml(user.email) + '</b>, mã trên và mật khẩu mới:</p>' +
+    '<p style="text-align:center"><a href="' + escHtml(link) + '" style="display:inline-block;background:#c8372d;color:#fff;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:bold">Đặt mật khẩu mới</a></p>' +
+    '<p style="color:#7a6558;font-size:13px">Nếu em không yêu cầu đổi mật khẩu thì cứ bỏ qua email này — mật khẩu cũ vẫn dùng bình thường.</p></div>';
+  await guiEmail(user.email, user.name, 'Mã đặt lại mật khẩu Hi Hán: ' + ma, html, text);
+}
+
 // Hoc sinh gui yeu cau. Luon tra loi giong nhau (khong lo email nao co tai khoan).
 app.post('/api/auth/forgot', asyncRoute(async (req, res) => {
   const nhap = String(req.body?.nhap || '').replace(/[\u0000-\u001f<>]/g, '').trim().slice(0, 120);
   if (nhap.length < 3) return res.status(400).json({ error: 'Em nhập email (hoặc họ tên đầy đủ) nhé.' });
   if (quaNhieu('qmk-ip', clientIp(req), 8, 3600000)) return res.status(429).json({ error: 'Em gửi nhiều lần quá, đợi một lúc rồi thử lại hoặc nhắn trực tiếp cho cô.' });
   let user = null;
-  if (nhap.indexOf('@') > 0) user = await findUserByEmail(nhap.toLowerCase());
+  const laEmail = nhap.indexOf('@') > 0;
+  if (laEmail) user = await findUserByEmail(nhap.toLowerCase());
   else {
     const ten = chuanTen(nhap);
     const trung = (await loadUsers()).filter((u) => chuanTen(u.name) === ten);
     if (trung.length === 1) user = trung[0];
   }
+  // Co dich vu email va em nhap dung email da dang ky: gui ma thang vao hop thu.
+  // Tra loi "kenh: email" cho moi email (ke ca chua dang ky) de khong lo tai khoan nao ton tai.
+  if (laEmail && cauHinhEmail()) {
+    if (user && !quaNhieu('qmk-mail', user.id, 3, 3600000)) {
+      try {
+        const m = await taoMaDatLai(user, QMK_EMAIL_HAN_MS);
+        await guiMaQuaEmail(req, user, m.ma, QMK_EMAIL_HAN_MS);
+        return res.json({ ok: true, kenh: 'email' });
+      } catch (e) {
+        // gui loi: yeu cau hien o trang Bao cao de co cap ma. Van tra loi "email" nhu moi
+        // truong hop khac de khong lo email nao co tai khoan (thong bao da dan "khong thay thi bao co").
+        await qmkThemYeuCau(user.id, nhap);
+        return res.json({ ok: true, kenh: 'email' });
+      }
+    }
+    if (user) await qmkThemYeuCau(user.id, nhap); // gui email qua nhieu lan trong 1 gio
+    return res.json({ ok: true, kenh: 'email' });
+  }
   await qmkThemYeuCau(user ? user.id : '', nhap);
-  res.json({ ok: true });
+  res.json({ ok: true, kenh: 'co' });
 }));
 
 // Hoc sinh nhap email + ma co cap + mat khau moi -> doi xong dang nhap luon
@@ -903,13 +999,28 @@ app.get('/api/admin/pw-requests', requireAdmin, asyncRoute(async (req, res) => {
 app.post('/api/admin/reset-code', requireAdmin, asyncRoute(async (req, res) => {
   const user = await findUserById(String(req.body?.userId || ''));
   if (!user) return res.status(404).json({ error: 'Không tìm thấy học sinh.' });
-  const ma = String(crypto.randomInt(0, 1000000)).padStart(6, '0');
-  const salt = crypto.randomBytes(16).toString('hex');
-  const het = Date.now() + QMK_HAN_MS;
-  await qmkGhiMa(user.id, { salt, hash: hashPassword(ma, salt), het, sai: 0, luc: Date.now() });
+  const { ma, het } = await taoMaDatLai(user, QMK_HAN_MS);
   // yeu cau go bang ho ten ma co da chon dung em -> gan vao em do
   if (req.body?.requestId) await qmkXongYeuCau({ id: String(req.body.requestId) });
-  res.json({ ma, het, ten: user.name, email: user.email });
+  // Co chon "gui qua email": gui luon vao hop thu cua em
+  let daGui = false, loiGui = '';
+  if (req.body?.guiEmail) {
+    try { await guiMaQuaEmail(req, user, ma, QMK_HAN_MS); daGui = true; } catch (e) { loiGui = e.message; }
+  }
+  res.json({ ma, het, ten: user.name, email: user.email, daGui, loiGui });
+}));
+// Trang Bao cao: dich vu email da bat chua + gui thu
+app.get('/api/admin/mail-status', requireAdmin, (req, res) => {
+  const ch = cauHinhEmail();
+  res.json(ch ? { bat: true, dv: ch.dv, from: ch.nguoiGui.email } : { bat: false });
+});
+app.post('/api/admin/mail-test', requireAdmin, asyncRoute(async (req, res) => {
+  const to = String(req.body?.to || '').trim();
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(to)) return res.status(400).json({ error: 'Email nhận thử chưa đúng.' });
+  try {
+    await guiEmail(to, '', 'Hi Hán — email thử', '<p>Email thử từ trang Báo cáo Hi Hán: dịch vụ gửi email đã chạy. 🎉</p>', 'Email thử từ trang Báo cáo Hi Hán: dịch vụ gửi email đã chạy.');
+    res.json({ ok: true });
+  } catch (e) { res.status(502).json({ error: e.message }); }
 }));
 app.post('/api/admin/pw-requests/xong', requireAdmin, asyncRoute(async (req, res) => {
   await qmkXongYeuCau({ id: String(req.body?.id || '') });

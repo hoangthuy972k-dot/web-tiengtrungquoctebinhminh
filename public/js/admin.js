@@ -444,7 +444,8 @@
           '<p class="tr-hint" id="trPwMsg">Em đăng nhập bằng email <b>' + esc(s.email) + '</b> và mật khẩu mới này. Các máy đang đăng nhập của em sẽ bị đăng xuất.</p>' +
         '</form>' +
         '<div class="qmk-o-hs"><p class="tr-hint">Hoặc cấp <b>mã 6 số</b> để em tự đặt mật khẩu mới (cô không cần biết mật khẩu của em):</p>' +
-          '<button type="button" class="btn btn-outline" data-qmk-cap="' + esc(s.id) + '">🔑 Cấp mã để em tự đặt lại</button><div class="qmk-kq"></div></div>' +
+          '<button type="button" class="btn btn-outline" data-qmk-cap="' + esc(s.id) + '">🔑 Cấp mã để em tự đặt lại</button> ' +
+          '<button type="button" class="btn btn-outline" data-qmk-cap="' + esc(s.id) + '" data-qmk-email>📧 Cấp &amp; gửi qua email</button><div class="qmk-kq"></div></div>' +
         '</details>' +
       '<section class="admin-cards">' + tiles.map(function (c) {
         return '<div class="admin-card"><div class="admin-card-label">' + c.label + '</div><div class="admin-card-value is-sm">' + c.value + '</div>' +

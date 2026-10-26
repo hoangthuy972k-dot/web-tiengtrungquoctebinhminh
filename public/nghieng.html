@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Quiz nghiêng đầu · Hi Hán 喜汉</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2b1d3d">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700&family=Be+Vietnam+Pro:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/nghieng.css">
+</head>
+<body>
+<div class="nh" id="nh">
+  <header class="nh-bar">
+    <a class="nh-btn" id="nhThoat" href="/game">← Thoát</a>
+    <div class="nh-bar-t"><b>🙆 Quiz nghiêng đầu</b><span id="nhNhan"></span></div>
+    <div class="nh-bar-phai">
+      <span class="nh-diem" id="nhDiem" hidden>0</span>
+      <button type="button" class="nh-btn nh-ic" id="nhTieng" title="Bật/tắt âm thanh">🔊</button>
+      <button type="button" class="nh-btn nh-ic" id="nhFull" title="Toàn màn hình">⛶</button>
+    </div>
+  </header>
+
+  <!-- Sanh -->
+  <section class="nh-sanh" id="nhSanh">
+    <div class="nh-sanh-the">
+      <div class="nh-sanh-ic" aria-hidden="true">🙆</div>
+      <h1>Quiz nghiêng đầu</h1>
+      <p class="nh-sanh-phu" id="nhSanhPhu">Trả lời bằng cái đầu — theo đúng nghĩa đen!</p>
+      <div class="nh-cach">
+        <p class="nh-cach-t">Cách chơi</p>
+        <div class="nh-buoc"><span>📷</span><div><b>Cho phép dùng camera</b><small>Trình duyệt hỏi thì bấm “Cho phép”. Hình ảnh chỉ xử lý ngay trên máy, không gửi đi đâu.</small></div></div>
+        <div class="nh-buoc" id="nhBuoc2"><span>↔️</span><div><b>Nghiêng đầu để chọn đáp án</b><small>Nghiêng sang trái hoặc phải và giữ một chút cho đến khi ô đáp án đầy màu.</small></div></div>
+        <div class="nh-buoc" id="nhBuocLop" hidden><span>🏫</span><div><b>Mỗi câu một bạn (tuỳ chọn)</b><small>Sau mỗi câu, bạn tiếp theo lên thay. Cô bấm “Câu tiếp” để chuyển.</small></div></div>
+        <div class="nh-buoc"><span>📋</span><div><b id="nhSoCauTxt">—</b></div></div>
+      </div>
+      <div class="nh-chedo" role="group" aria-label="Cách chọn đáp án">
+        <button type="button" data-k="nghieng" class="is-on">↔️ Nghiêng đầu</button>
+        <button type="button" data-k="bieucam">😄 Biểu cảm mặt</button>
+      </div>
+      <label class="nh-moiban" id="nhMoiBanO" hidden><input type="checkbox" id="nhMoiBan"> Mỗi câu mời một bạn khác lên</label>
+      <button type="button" class="nh-go" id="nhBatDau">▶ Bắt đầu</button>
+      <p class="nh-loi" id="nhLoi" role="alert"></p>
+    </div>
+  </section>
+
+  <!-- Choi -->
+  <section class="nh-choi" id="nhChoi" hidden>
+    <div class="nh-hoi">
+      <div class="nh-hoi-dau"><span id="nhSo">Câu 1/10</span><span class="nh-chuoi" id="nhChuoi"></span></div>
+      <div class="nh-gio"><i id="nhGio"></i></div>
+      <div class="nh-hoi-t" id="nhHoi"></div>
+    </div>
+    <div class="nh-san">
+      <button type="button" class="nh-opt trai" id="nhTrai" data-i="0"><span class="nh-opt-huong" id="nhHuongTrai">⬅ Nghiêng trái</span><span class="nh-opt-t"></span><span class="nh-opt-day" aria-hidden="true"></span></button>
+      <div class="nh-cam">
+        <video id="nhVideo" playsinline muted autoplay></video>
+        <div class="nh-cam-dau" id="nhDau" aria-hidden="true">🙂</div>
+        <div class="nh-cam-tb" id="nhTb">Đang mở camera…</div>
+      </div>
+      <button type="button" class="nh-opt phai" id="nhPhai" data-i="1"><span class="nh-opt-huong" id="nhHuongPhai">Nghiêng phải ➡</span><span class="nh-opt-t"></span><span class="nh-opt-day" aria-hidden="true"></span></button>
+    </div>
+    <div class="nh-duoi" id="nhDuoi"></div>
+  </section>
+
+  <!-- Ket qua -->
+  <section class="nh-kq" id="nhKq" hidden></section>
+</div>
+<script type="module" src="/js/nghieng-mp.js"></script>
+<script src="/js/nghieng.js"></script>
+</body>
+</html>

@@ -8,6 +8,7 @@ Disallow: /admin.html
 Disallow: /lop
 Disallow: /choi
 Disallow: /quet
+Disallow: /nghieng
 Disallow: /hsk30
 
 Sitemap: https://hihanchinese.online/sitemap.xml

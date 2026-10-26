@@ -2261,6 +2261,25 @@
     });
   }
 
+  /* ---------------- quiz nghieng dau (trang /nghieng, mo tab moi) ----------------
+     Moi cau A/B/C rut gon con 2 phuong an: dap an dung + 1 phuong an sai ngau nhien,
+     dat ngau nhien trai / phai. Cau hoi chuyen qua localStorage 'hyv_nghieng'.   */
+  function moNghieng() {
+    var cau = shuffle(pickedMcs()).slice(0, 10).map(function (q) {
+      var sai = shuffle(q.options.map(function (_, i) { return i; }).filter(function (i) { return i !== q.answer; }))[0];
+      var dung = Math.random() < 0.5 ? 0 : 1;
+      var dd = q.options[q.answer], ss = q.options[sai];
+      return {
+        hoi: (q.pre || '') + (q.noBlank ? '' : '＿＿') + (q.post || ''), ctx: q.context || '', why: q.why || '',
+        trai: dung === 0 ? dd : ss, phai: dung === 0 ? ss : dd, dung: dung, zhOpt: true,
+        docSau: q.noBlank ? '' : (q.pre || '') + dd + (q.post || '')
+      };
+    }).filter(function (c) { return c.trai && c.phai; });
+    if (!cau.length) return;
+    try { localStorage.setItem('hyv_nghieng', JSON.stringify({ nguon: 'lop', nhan: pickedLabel(), cau: cau, luc: Date.now() })); } catch (e) { return; }
+    window.open('/nghieng', '_blank');
+  }
+
   /* ================= KIEM TRA DAU GIO =================
      Khac voi tro choi o cho CA LOP cung lam va co diem: hoc sinh viet vao vo
      (hoac lam de giay), xong thi chieu bang dap an len de doi vo cham cheo.  */
@@ -2875,6 +2894,7 @@
   };
 
   function startGame(game) {
+    if (game === 'nghieng') { moNghieng(); return; }
     if (!VOCAB_GAMES[game]) {
       var n = game === 'abc' || MC_GAMES[game] ? pickedMcs().length : game === 'sort' ? pickedSorts().length : pickedJudges().length;
       if (!n || (game === 'errfix' && n < 3)) return;
@@ -3158,7 +3178,7 @@
 
   /* ---- sap xep lai man hinh chuan bi: nhom tro choi + nhan thoi luong / cach choi ---- */
   var GAME_GROUPS = [
-    { ten: '⚡ Khởi động nhanh — cả lớp cùng chơi', g: ['abc', 'listen', 'match', 'hv'] },
+    { ten: '⚡ Khởi động nhanh — cả lớp cùng chơi', g: ['abc', 'nghieng', 'listen', 'match', 'hv'] },
     { ten: '🏆 Đấu tổ kịch tính', g: ['tug', 'train', 'mine'] },
     { ten: '📱 Học sinh dùng điện thoại', g: ['nhip'] },
     { ten: '📚 Ôn từ vựng', g: ['bingo', 'guess', 'tiles', 'hanzi', 'chain'] },
@@ -3166,7 +3186,7 @@
     { ten: '🎤 Nói – viết', g: ['taboo', 'role', 'write'] }
   ];
   var GAME_TAGS = {
-    abc: ['3–5′', 'cả lớp'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
+    abc: ['3–5′', 'cả lớp'], nghieng: ['5′', 'webcam', 'từng bạn'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
     bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
     errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],
     taboo: ['5′', 'nói'], role: ['5–7′', 'đóng vai'], write: ['5′', 'lên bảng'],

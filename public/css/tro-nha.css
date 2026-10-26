@@ -118,3 +118,13 @@
 /* Choi xong van tu 5 cau = 1 ngay hoc (giu chuoi) */
 .tn-kq-ngay { margin-top: 6px; font-size: .86rem; font-weight: 700; color: var(--fg-green-600, #1a7d44); }
 .tn-kq-ngay.is-chua { color: var(--color-text-muted); font-weight: 600; }
+
+/* Quiz nghieng dau: o mo trang /nghieng */
+.tn-nghieng-mo { display: grid; justify-items: center; gap: 12px; padding: 32px 16px; text-align: center; }
+.tn-nghieng-ic { font-size: 3.4rem; }
+.tn-nghieng-mo p { margin: 0; max-width: 40ch; line-height: 1.6; }
+.tn-nghieng-go {
+  display: inline-flex; align-items: center; min-height: 52px; padding: 10px 28px;
+  border-radius: 14px; background: #c2412d; color: #fff; font-weight: 800; font-size: 1.1rem; text-decoration: none;
+}
+.tn-nghieng-go:hover { background: #a8321f; }

@@ -1152,6 +1152,12 @@ const STAR_TICK_MAX_SEC = 90;  // moi lan client bao toi da 90 giay
 // Gioi han/ngay chan viec tu che khoa gia.
 const STAR_ANSWER_DAY_CAP = 300;
 const STAR_TASKS = 10;         // sao khi xong ca 3 "nhiem vu hom nay" (1 lan / ngay)
+// +1 sao moi cau dung trong tro choi (/game, quiz nghieng dau, van dong, choi tren lop).
+// Game sinh cau ngau nhien nen khong nho khoa tung cau nhu bai tap — chi dem, co tran
+// rieng moi ngay de hoc sinh van phai hoc bai moi co nhieu sao.
+const STAR_GAME_DAY_CAP = 80;
+const STAR_GAME_MIN_MS = 700;  // it nhat 0,7 giay moi cau — chan gui so ao
+const starGameLuc = new Map(); // userId -> lan cuoi cong sao game (ms)
 const STAR_ANSWERS_FILE = path.join(DATA_DIR, 'star_answers.json');
 const STAR_KEY_RE = /^[\w\/.:|㐀-鿿-]{3,160}$/u;
 
@@ -1179,7 +1185,8 @@ async function initStarsTable() {
     ')'
   );
   for (const col of ['answer_peak INT NULL', 'day_answer INT NOT NULL DEFAULT 0', 'day_tasks TINYINT NOT NULL DEFAULT 0', 'day_sec INT NOT NULL DEFAULT 0',
-    'week CHAR(10) NULL', 'week_stars INT NOT NULL DEFAULT 0', 'prev_week CHAR(10) NULL', 'prev_week_stars INT NOT NULL DEFAULT 0']) {
+    'week CHAR(10) NULL', 'week_stars INT NOT NULL DEFAULT 0', 'prev_week CHAR(10) NULL', 'prev_week_stars INT NOT NULL DEFAULT 0',
+    'day_game INT NOT NULL DEFAULT 0']) {
     try {
       await dbPool.query('ALTER TABLE stars ADD COLUMN ' + col);
     } catch (err) {
@@ -1188,7 +1195,7 @@ async function initStarsTable() {
   }
 }
 function blankStar() {
-  return { total: 0, carrySec: 0, day: '', dayVisit: 0, dayStars: 0, dayAnswer: 0, dayTasks: 0, daySec: 0, week: '', weekStars: 0, prevWeek: '', prevWeekStars: 0, answerPeak: null, lastTickMs: 0, updatedMs: 0 };
+  return { total: 0, carrySec: 0, day: '', dayVisit: 0, dayStars: 0, dayAnswer: 0, dayTasks: 0, daySec: 0, dayGame: 0, week: '', weekStars: 0, prevWeek: '', prevWeekStars: 0, answerPeak: null, lastTickMs: 0, updatedMs: 0 };
 }
 async function loadStar(userId) {
   if (!USE_DB) {
@@ -1200,7 +1207,7 @@ async function loadStar(userId) {
   const r = rows[0];
   return {
     total: r.total, carrySec: r.carry_sec, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars,
-    dayAnswer: r.day_answer || 0, dayTasks: r.day_tasks || 0, daySec: r.day_sec || 0, week: r.week || '', weekStars: r.week_stars || 0,
+    dayAnswer: r.day_answer || 0, dayTasks: r.day_tasks || 0, daySec: r.day_sec || 0, dayGame: r.day_game || 0, week: r.week || '', weekStars: r.week_stars || 0,
     prevWeek: r.prev_week || '', prevWeekStars: r.prev_week_stars || 0,
     answerPeak: r.answer_peak == null ? null : r.answer_peak,
     lastTickMs: Number(r.last_tick_ms), updatedMs: Number(r.updated_ms),
@@ -1215,11 +1222,11 @@ async function saveStar(userId, s) {
     return;
   }
   await dbPool.query(
-    'INSERT INTO stars (user_id,total,carry_sec,day,day_visit,day_stars,day_answer,day_tasks,day_sec,week,week_stars,prev_week,prev_week_stars,answer_peak,last_tick_ms,updated_ms) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ' +
+    'INSERT INTO stars (user_id,total,carry_sec,day,day_visit,day_stars,day_answer,day_tasks,day_sec,day_game,week,week_stars,prev_week,prev_week_stars,answer_peak,last_tick_ms,updated_ms) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ' +
       'ON DUPLICATE KEY UPDATE total=VALUES(total), carry_sec=VALUES(carry_sec), day=VALUES(day), day_visit=VALUES(day_visit), ' +
-      'day_stars=VALUES(day_stars), day_answer=VALUES(day_answer), day_tasks=VALUES(day_tasks), day_sec=VALUES(day_sec), week=VALUES(week), week_stars=VALUES(week_stars), prev_week=VALUES(prev_week), prev_week_stars=VALUES(prev_week_stars), ' +
+      'day_stars=VALUES(day_stars), day_answer=VALUES(day_answer), day_tasks=VALUES(day_tasks), day_sec=VALUES(day_sec), day_game=VALUES(day_game), week=VALUES(week), week_stars=VALUES(week_stars), prev_week=VALUES(prev_week), prev_week_stars=VALUES(prev_week_stars), ' +
       'answer_peak=VALUES(answer_peak), last_tick_ms=VALUES(last_tick_ms), updated_ms=VALUES(updated_ms)',
-    [userId, s.total, s.carrySec, s.day, s.dayVisit, s.dayStars, s.dayAnswer || 0, s.dayTasks || 0, s.daySec || 0, s.week || null, s.weekStars || 0, s.prevWeek || null, s.prevWeekStars || 0,
+    [userId, s.total, s.carrySec, s.day, s.dayVisit, s.dayStars, s.dayAnswer || 0, s.dayTasks || 0, s.daySec || 0, s.dayGame || 0, s.week || null, s.weekStars || 0, s.prevWeek || null, s.prevWeekStars || 0,
       s.answerPeak == null ? null : s.answerPeak, s.lastTickMs, s.updatedMs]
   );
 }
@@ -1228,9 +1235,9 @@ async function loadAllStars() {
     const all = readJsonFile(STARS_FILE) || {};
     return Object.keys(all).map((id) => Object.assign({ userId: id }, blankStar(), all[id]));
   }
-  const [rows] = await dbPool.query('SELECT user_id, total, day, day_visit, day_stars, day_answer, day_tasks, week, week_stars, prev_week, prev_week_stars, updated_ms FROM stars WHERE total > 0 ORDER BY total DESC, updated_ms ASC LIMIT 2000');
+  const [rows] = await dbPool.query('SELECT user_id, total, day, day_visit, day_stars, day_answer, day_tasks, day_game, week, week_stars, prev_week, prev_week_stars, updated_ms FROM stars WHERE total > 0 ORDER BY total DESC, updated_ms ASC LIMIT 2000');
   return rows.map((r) => ({ userId: r.user_id, total: r.total, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars, dayAnswer: r.day_answer || 0,
-    dayTasks: r.day_tasks || 0, week: r.week || '', weekStars: r.week_stars || 0,
+    dayTasks: r.day_tasks || 0, dayGame: r.day_game || 0, week: r.week || '', weekStars: r.week_stars || 0,
     prevWeek: r.prev_week || '', prevWeekStars: r.prev_week_stars || 0, updatedMs: Number(r.updated_ms) }));
 }
 // Tuan tinh tu thu Hai (gio VN); khoa = ngay thu Hai dau tuan
@@ -1246,7 +1253,7 @@ function secondsToVnWeekEnd() {
 // Sang ngay / tuan moi (gio VN) thi dat lai phan "hom nay" / "tuan nay"
 function rollStarDay(s) {
   const day = vnDayKey();
-  if (s.day !== day) { s.day = day; s.dayVisit = 0; s.dayStars = 0; s.dayAnswer = 0; s.dayTasks = 0; s.daySec = 0; }
+  if (s.day !== day) { s.day = day; s.dayVisit = 0; s.dayStars = 0; s.dayAnswer = 0; s.dayTasks = 0; s.daySec = 0; s.dayGame = 0; }
   const week = vnWeekKey();
   // giu lai so sao tuan truoc de tinh "Tien bo nhat tuan"
   if (s.week !== week) { s.prevWeek = s.week || ''; s.prevWeekStars = s.weekStars || 0; s.week = week; s.weekStars = 0; }
@@ -1264,7 +1271,7 @@ function addStars(s, n) {
   s.weekStars = (s.weekStars || 0) + n;
 }
 function starsToday(s) {
-  return s.dayStars + (s.dayAnswer || 0) + (s.dayVisit ? STAR_VISIT : 0) + (s.dayTasks ? STAR_TASKS : 0);
+  return s.dayStars + (s.dayAnswer || 0) + (s.dayGame || 0) + (s.dayVisit ? STAR_VISIT : 0) + (s.dayTasks ? STAR_TASKS : 0);
 }
 function starView(s, awarded, answerAwarded) {
   return {
@@ -1279,6 +1286,8 @@ function starView(s, awarded, answerAwarded) {
     awarded: awarded || 0,
     blockSec: STAR_BLOCK_SEC,
     perBlock: STAR_PER_BLOCK,
+    gameToday: s.dayGame || 0,
+    gameCap: STAR_GAME_DAY_CAP,
   };
 }
 
@@ -1336,6 +1345,25 @@ app.post('/api/stars/correct', requireAuth, asyncRoute(async (req, res) => {
     if (gained) await saveStar(req.user.id, s);
   }
   res.json(starView(s, 0, gained));
+}));
+
+// Tro choi: client gom cac cau dung roi gui { n } (1–10). Khong cho nhanh hon 0,7 giay / cau
+// tinh tu lan cong truoc, va khong qua tran STAR_GAME_DAY_CAP moi ngay.
+app.post('/api/stars/game', requireAuth, asyncRoute(async (req, res) => {
+  let n = Math.max(0, Math.min(10, Math.floor(Number(req.body?.n) || 0)));
+  const now = Date.now();
+  const truoc = starGameLuc.get(req.user.id) || 0;
+  if (truoc) n = Math.min(n, Math.floor((now - truoc) / STAR_GAME_MIN_MS));
+  const s = await loadStar(req.user.id);
+  rollStarDay(s);
+  const gained = Math.max(0, Math.min(n, STAR_GAME_DAY_CAP - (s.dayGame || 0)));
+  if (gained) {
+    starGameLuc.set(req.user.id, now);
+    addStars(s, gained);
+    s.dayGame = (s.dayGame || 0) + gained;
+    await saveStar(req.user.id, s);
+  } else if (!truoc) starGameLuc.set(req.user.id, now);
+  res.json(Object.assign(starView(s, 0), { gameAwarded: gained }));
 }));
 
 // Xong ca 3 "nhiem vu hom nay" (on tu cu + hoc tiep + doc thanh ngu): +10 sao, 1 lan / ngay.

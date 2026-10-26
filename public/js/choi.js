@@ -154,10 +154,17 @@
     paint();
     s.dem = setInterval(paint, 250);
   }
+  // Cong sao tro choi (sao-game.js) — moi cau chi mot lan du man ket qua ve lai nhieu lan
+  function saoCau(id, dung) {
+    if (!window.SaoGame || s.saoDa === id) return;
+    s.saoDa = id;
+    if (dung) window.SaoGame.dung(); else window.SaoGame.sai();
+  }
   function veKq(d) {
     clearInterval(s.dem);
     var c = d.cau || s.cau || { opts: [] };
     var dung = d.chon >= 0 && d.chon === d.dung;
+    if (d.chon >= 0) saoCau('q' + (d.qid || s.qid), dung);
     $('manKq').className = 'ch-man ch-kq ' + (dung ? 'dung' : 'sai');
     $('kqIc').textContent = dung ? '✓' : d.chon < 0 ? '⏱' : '✗';
     $('kqTit').textContent = dung ? 'Chính xác!' : d.chon < 0 ? 'Chưa kịp chọn' : 'Chưa đúng rồi';
@@ -271,6 +278,7 @@
     api('POST', '/api/live/' + s.ma + '/tl', { pid: s.pid, tok: s.tok, i: s.nhipI, chon: i }).then(function (r) {
       $('chanDiem').textContent = r.diem;
       if (r.dung == null) { s.dangPh = false; s.nhipI = -1; return; }
+      saoCau('n' + s.nhipI, r.dung);
       $('manKq').className = 'ch-man ch-kq ' + (r.dung ? 'dung' : 'sai');
       $('kqIc').textContent = r.dung ? '✓' : '✗';
       $('kqTit').textContent = r.dung ? 'Chính xác!' : 'Chưa đúng rồi';
@@ -386,6 +394,7 @@
     clearInterval(s.dem);
     var c = d.cau || s.cau || { opts: [] }, kq = d.kq || {};
     var dung = !!kq.dung, tot = false, ic, tit, cong = '', phu = '';
+    if (kq.tinh) saoCau('c' + (d.qid || s.qid), dung);
     if (c.cuu) {
       if (kq.ve) { tot = true; ic = '🛟'; tit = 'Em được cứu trợ, trở lại sàn!'; phu = 'Cố lên — trả lời đúng để ở lại sàn nhé!'; }
       else if (d.con) { tot = true; ic = '🟡'; tit = 'Em vẫn trên sàn'; phu = d.soVe ? d.soVe + ' bạn vừa được cứu trợ trở lại sàn.' : 'Chưa bạn nào được cứu lần này.'; }

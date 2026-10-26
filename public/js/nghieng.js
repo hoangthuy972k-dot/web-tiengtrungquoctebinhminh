@@ -158,6 +158,7 @@
       S.cau = lop ? ds : tron(ds).slice(0, 12);
       S.moiBan = lop && $('nhMoiBan').checked;
       S.i = 0; S.diem = 0; S.dung = 0; S.chuoi = 0; S.chuoiMax = 0;
+      if (window.SaoGame) window.SaoGame.batDauVan();
       $('nhSanh').hidden = true;
       $('nhKq').hidden = true;
       $('nhChoi').hidden = false;
@@ -295,6 +296,7 @@
     var c = S.cau[S.i];
     var dung = ben === c.dung;
     var conLai = Math.max(0, S.hetLuc - performance.now());
+    if (window.SaoGame) { if (dung) window.SaoGame.dung(); else window.SaoGame.sai(); }
     if (dung) {
       S.dung++; S.chuoi++; S.chuoiMax = Math.max(S.chuoiMax, S.chuoi);
       S.diem += 100 + Math.round(50 * conLai / S.conMs) + Math.min(5, S.chuoi - 1) * 10;
@@ -345,6 +347,7 @@
       '<h2>' + (sao >= 3 ? 'Xuất sắc!' : sao >= 2 ? 'Giỏi lắm!' : sao >= 1 ? 'Khá lắm!' : 'Cố lên nhé!') + '</h2>' +
       '<div class="nh-kq-diem">' + S.diem + ' <small>điểm</small></div>' +
       '<p>Đúng ' + S.dung + '/' + S.cau.length + (S.chuoiMax > 1 ? ' · chuỗi dài nhất ' + S.chuoiMax : '') + (moi ? ' · 🏆 Kỷ lục mới!' : '') + '</p>' +
+      (window.SaoGame ? window.SaoGame.tongKetHtml() : '') +
       '<div class="nh-kq-nut"><button type="button" class="nh-go" id="nhLai">↺ Chơi lại</button>' +
       '<a class="nh-btn" href="' + (lop ? '/lop' : '/game') + '">Thoát</a></div></div>';
     $('nhLai').addEventListener('click', function () {

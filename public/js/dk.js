@@ -205,6 +205,7 @@
     api('POST', '/api/dk/' + s.ma + '/tl', { pid: s.pid, tok: s.tok, i: s.i, chon: k }).then(function (r) {
       s.gui = false;
       s.ver++;
+      if (window.SaoGame) { if (r.dung) window.SaoGame.dung(); else window.SaoGame.sai(); }
       phanHoi(r.dung, r.dung ? '' : (CHU[r.dap] + '. ' + (cau && cau.opts[r.dap] || '')), r.dung ? 450 : 1500);
       if (r.tt) { s.tt = r.tt; if (r.tt.cap) veDay(r.tt.cap); }
     }).catch(function (e) {

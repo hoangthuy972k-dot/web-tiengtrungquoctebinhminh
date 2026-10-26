@@ -137,7 +137,7 @@
         });
         roi.addEventListener('click', function () {
           if (!st.lan[v.zh]) { st.ngay++; sk.diem(st.ngay * 10); }
-          T.keuDung();
+          T.keuDung(true); // tu cham nen khong cong sao
           st.chong.shift();
           ve();
         });

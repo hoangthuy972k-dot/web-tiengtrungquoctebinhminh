@@ -64,6 +64,8 @@
   }
   function keuDung() { keu(660, 0.1); keu(990, 0.14, 'sine', 0.08); }
   function keuSai() { keu(180, 0.22, 'square'); }
+  // Moi cau dung +1 sao (sao-game.js); sai thi dat lai chuoi dung lien tiep
+  function ghiSao(dung) { if (window.SaoGame) { if (dung) window.SaoGame.dung(); else window.SaoGame.sai(); } }
   function keuThang() { [523, 659, 784, 1047].forEach(function (f, i) { keu(f, 0.18, 'triangle', i * 0.11); }); }
   function rung(ms) { try { if (navigator.vibrate) navigator.vibrate(ms); } catch (e) { /* bo qua */ } }
   var itChuyenDong = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -116,6 +118,7 @@
         if (xong) return;
         xong = true;
         var dung = i === q.dung;
+        ghiSao(dung);
         if (!tuy.khongToMau) {
           Array.prototype.forEach.call(luoi.children, function (x, k) {
             x.disabled = true;
@@ -251,6 +254,11 @@
       }).join(''));
       b.appendChild(on);
     }
+    if (window.SaoGame) {
+      var saoHtml = window.SaoGame.tongKetHtml();
+      if (saoHtml) b.insertAdjacentHTML('beforeend', saoHtml);
+      window.SaoGame.batDauVan();
+    }
     sk.san.appendChild(b);
     if (sao >= 2) keuThang();
     setTimeout(function () { try { nut.focus(); } catch (e) { /* */ } }, 50);
@@ -276,7 +284,8 @@
   /* ---------------- dang ky ---------------- */
   var KHO = {}, THU_TU = [];
   window.TroNha = {
-    tao: tao, tron: tron, esc: esc, doc: doc, keu: keu, keuDung: keuDung, keuSai: keuSai, keuThang: keuThang, rung: rung,
+    tao: tao, tron: tron, esc: esc, doc: doc, keu: keu, keuDung: function (khongSao) { keuDung(); if (!khongSao) ghiSao(true); },
+    keuSai: function () { keuSai(); ghiSao(false); }, keuThang: keuThang, rung: rung,
     itChuyenDong: itChuyenDong,
     cauHoi: cauHoi, boCau: boCau, oDapAn: oDapAn, khung: khung, demNguoc: demNguoc, ketQua: ketQua, manMoi: manMoi,
     docKyLuc: docKyLuc,
@@ -298,6 +307,7 @@
         return { dung: function () { } };
       }
       o.vocab = vocab;
+      if (window.SaoGame) window.SaoGame.batDauVan();
       return g.mo(hop, o);
     }
   };

@@ -338,6 +338,7 @@
       S.moiBan = lop && S.tro !== 'ngoisao' && $('vdMoiBan').checked;
       S.muc = S.tro === 'ngoisao' ? (+$('vdMuc').value || 0) : 0;
       S.i = 0; S.diem = 0; S.dung = 0; S.chuoi = 0; S.chuoiMax = 0;
+      if (window.SaoGame) window.SaoGame.batDauVan();
       S.p = [nguoiMoi(ten[0]), nguoiMoi(ten[1])];
       S.vat = []; S.hat = []; S.nguoi = null; S.tay = [null, null];
       var g = $('vd');
@@ -865,6 +866,7 @@
     });
     var tb2;
     if (k >= 0) {
+      if (window.SaoGame) window.SaoGame.dung();
       sSao();
       gan(c.dung, '⭐ ' + S.p[k].ten, k);
       $('vdP' + k).classList.add('is-sao');
@@ -990,6 +992,7 @@
     S.pha = 'xong';
     var c = S.cau[S.i], dung = chon === c.dung, lan2 = S.saiCau > 0, cong = 0;
     var conLai = Math.max(0, S.hetLuc - performance.now());
+    if (window.SaoGame) { if (dung) window.SaoGame.dung(); else window.SaoGame.sai(); }
     if (dung && !lan2) {
       S.dung++; S.chuoi++; S.chuoiMax = Math.max(S.chuoiMax, S.chuoi);
       cong = 100 + Math.round(50 * conLai / S.conMs) + Math.min(5, S.chuoi - 1) * 10;
@@ -1043,7 +1046,7 @@
     $('vd').classList.remove('is-choi');
     var k = $('vdKq');
     k.hidden = false;
-    k.innerHTML = '<div class="vd-kq-the">' + html +
+    k.innerHTML = '<div class="vd-kq-the">' + html + (window.SaoGame ? window.SaoGame.tongKetHtml() : '') +
       '<div class="vd-kq-nut"><button type="button" class="vd-go" id="vdLai">↺ Chơi lại</button>' +
       '<a class="vd-btn" href="' + (lop ? '/lop' : '/game') + '">Thoát</a></div></div>';
     $('vdLai').addEventListener('click', function () {

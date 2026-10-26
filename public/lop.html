@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/lop.css">
 <link rel="stylesheet" href="/css/lop-ufo.css">
+<link rel="stylesheet" href="/css/lop-kiemtra.css">
 <link rel="stylesheet" href="/css/lop-the.css">
 <link rel="stylesheet" href="/css/lop-zombie.css">
 <link rel="stylesheet" href="/css/lop-ghep.css">
@@ -90,6 +91,12 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
     <div class="lop-field">
       <label>4 · Kiểm tra đầu giờ (có chấm điểm)</label>
       <div class="lop-tests">
+        <button type="button" class="lop-test-card lop-kt-card" id="lopKiemTraOpen">
+          <span class="lop-game-emoji">📝</span>
+          <span class="lop-game-name">Kiểm tra bài cũ — gọi từng bạn</span>
+          <span class="lop-game-desc">Gọi từng em lên bảng, chơi Hộp quà bí mật · Leo thang triệu phú · Ghế nóng 60 giây · Bốc thăm nhiệm vụ với câu hỏi tự sinh từ bài đã chọn. Cô bấm đúng/sai, web gợi ý điểm và lưu vào cột Miệng.</span>
+          <span class="lop-game-count" id="lopCountKt">chọn bài</span>
+        </button>
         <button type="button" class="lop-test-card lop-ufo-card" id="lopUfoOpen">
           <span class="lop-game-emoji">🛸</span>
           <span class="lop-game-name">UFO gọi trả bài</span>
@@ -464,6 +471,7 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/phat-am-de.js"></script>
 <script src="/js/vendor/qrcode.js"></script>
 <script src="/js/lop-ufo.js"></script>
+<script src="/js/lop-kiemtra.js"></script>
 <script src="/js/the-ma.js"></script>
 <script src="/js/lop-the.js"></script>
 <script src="/js/lop-zombie.js"></script>

@@ -194,6 +194,8 @@
     var total = m + s + n;
     $('#lopCountQuiz').textContent = m ? Math.min(10, m) + ' câu' : 'chọn bài';
     $('#lopCountThe').textContent = m ? m + ' câu' : 'câu tự do';
+    $('#lopCountKt').textContent = label ? label : 'chọn bài';
+    $('#lopKiemTraOpen').disabled = !label;
     $('#lopCountBay').textContent = s ? s + ' câu' : 'chọn bài';
     $('.lop-game-card[data-game="bay"]').disabled = s < 1;
     $('.lop-test-card[data-test="quiz"]').disabled = m < 1;
@@ -3362,6 +3364,14 @@
     $('#lopRongBar').addEventListener('click', function () { moRong(true); });
     $('#lopDongHo').addEventListener('click', function () { if (window.LopDongHo) window.LopDongHo.mo({ giay: 60, nho: true }); });
     $('#lopUfoOpen').addEventListener('click', function () { if (window.LopUfo) window.LopUfo.mo(); });
+    // Kiem tra bai cu: can ca tu vung + cau dich + hoi thoai cua cac bai da chon (nap bat dong bo)
+    $('#lopKiemTraOpen').addEventListener('click', function () {
+      if (!window.LopKiemTra || !pickedLabel()) return;
+      loadPickedVocab().then(function (v) {
+        window.LopKiemTra.mo({ nhan: pickedLabel(), vocab: v, mcs: pickedMcs(), sorts: pickedSorts(),
+          trans: state.trans || [], dialogs: state.dialogs || [] });
+      });
+    });
     // The tra loi: dung cau A/B/C cua cac bai dang chon; chua chon bai thi la cau hoi tu do
     $('#lopTheOpen').addEventListener('click', function () {
       if (window.LopThe) window.LopThe.mo({ cau: pickedMcs(), nhan: pickedLabel() });

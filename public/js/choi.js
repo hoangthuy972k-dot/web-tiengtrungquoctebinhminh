@@ -6,8 +6,11 @@
   var $ = function (s) { return document.getElementById(s); };
   var MAN = ['manVao', 'manCho', 'manHoi', 'manDaChon', 'manKq', 'manHet', 'manXong'];
   var HINH = ['▲', '◆', '●', '■'];
+  var CHU = ['A', 'B', 'C', 'D']; // Rung Chuong Vang dung chu cai nhu tren man chieu
   var KEY = 'hyv_choi';
-  var s = { ma: '', pid: '', tok: '', qid: -1, pha: '', daChon: -1, poll: 0, dem: 0, conLai: 0, tai: 0, nhip: false, nhipI: -1, dangPh: false };
+  var s = { ma: '', pid: '', tok: '', qid: -1, pha: '', daChon: -1, poll: 0, dem: 0, conLai: 0, tai: 0, nhip: false, nhipI: -1, dangPh: false,
+    chuong: false, cuuSeq: null, rcKhoa: '', rcNghi: false, rcVeQid: -1 };
+  function kyHieu(i) { return (s.chuong ? CHU : HINH)[i]; }
 
   function hien(id) {
     MAN.forEach(function (m) { $(m).hidden = m !== id; });
@@ -44,6 +47,7 @@
     if (ma.length !== 6) { $('loiVao').textContent = 'Mã phòng gồm 6 chữ số.'; return; }
     if (!ten) { $('loiVao').textContent = 'Em nhập tên nhé.'; return; }
     $('nutVao').disabled = true;
+    boChuong();
     api('POST', '/api/live/' + ma + '/vao', { ten: ten }).then(function (d) {
       s.ma = ma; s.pid = d.pid; s.tok = d.tok;
       try { localStorage.setItem('hyv_choi_ten', ten); } catch (e) { /* bo qua */ }
@@ -80,6 +84,8 @@
   }
 
   function ve(d) {
+    if (d.kieu === 'chuong') { veChuong(d); return; }
+    if (s.chuong) boChuong();
     $('chanDiem').textContent = d.diem;
     $('chanTen').textContent = d.ten;
     if (d.kieu === 'nhip') { s.nhip = true; veNhip(d); return; }
@@ -105,7 +111,7 @@
     o.className = 'ch-opts n' + c.opts.length;
     o.innerHTML = c.opts.map(function (t, i) {
       return '<button type="button" class="ch-opt o' + i + '" data-i="' + i + '">' +
-        '<span class="ch-hinh" aria-hidden="true">' + HINH[i] + '</span>' +
+        '<span class="ch-hinh" aria-hidden="true">' + kyHieu(i) + '</span>' +
         '<span class="ch-opt-t">' + esc(t) + '</span></button>';
     }).join('');
     Array.prototype.forEach.call(o.querySelectorAll('button'), function (b) {
@@ -133,7 +139,7 @@
     var c = d.cau || s.cau || { opts: [] };
     var i = d.chon;
     $('oDaChon').className = 'ch-chon-o o' + i;
-    $('oDaChon').innerHTML = '<span class="ch-hinh">' + HINH[i] + '</span><span>' + esc(c.opts[i] || '') + '</span>';
+    $('oDaChon').innerHTML = '<span class="ch-hinh">' + kyHieu(i) + '</span><span>' + esc(c.opts[i] || '') + '</span>';
     hien('manDaChon');
   }
   function demNguoc(ms) {
@@ -291,7 +297,149 @@
     batDauPoll(); // hoi may ngay de lay cau tiep
   });
 
-  $('nutLai').addEventListener('click', function () { $('oMa').value = ''; hien('manVao'); });
+  $('nutLai').addEventListener('click', function () {
+    // Rung Chuong Vang van hoi tiep sau khi ket thuc (co the choi lai) — vao phong khac thi dung han
+    clearTimeout(s.poll); s.ma = ''; xoaLuu();
+    $('oMa').value = ''; hien('manVao');
+  });
+
+  /* ---- Rung Chuong Vang (phong kieu 'chuong'): tren san / roi san / cuu tro ---- */
+  function boChuong() {
+    if (!s.chuong) return;
+    s.chuong = false; s.cuuSeq = null; s.rcKhoa = ''; s.rcNghi = false; s.rcVeQid = -1;
+    document.body.classList.remove('ch-rc');
+    $('rcTrang').hidden = true; $('rcBang').hidden = true; $('rcCuu').hidden = true;
+    $('icCho').textContent = '👀'; $('titCho').textContent = 'Em đã vào lớp!';
+    $('moCho').textContent = 'Nhìn lên bảng, câu hỏi sắp hiện ra…';
+    $('moDaChon').textContent = 'Chờ cô lật đáp án nhé…';
+    $('hetIc').textContent = '🏁'; $('hetTit').textContent = 'Kết thúc!';
+    $('manHet').className = 'ch-man';
+  }
+  function veChuong(d) {
+    if (!s.chuong) { s.chuong = true; document.body.classList.add('ch-rc'); }
+    $('chanTen').textContent = d.ten;
+    $('chanDiem').textContent = d.diem + 'đ';
+    var tr = $('rcTrang');
+    tr.hidden = false;
+    tr.textContent = d.vang ? '🔔 Chuông vàng' : d.con ? '🟡 Trên sàn' : 'Đã rời sàn';
+    tr.className = 'ch-rc-trang' + (d.con ? ' is-con' : '');
+    // duoc dua tro lai san (cuu tro / phao / ca san cung sai / co cho len)
+    var seq = d.cuu ? d.cuu.seq : 0;
+    var cuuMoi = s.cuuSeq !== null && seq > s.cuuSeq;
+    s.cuuSeq = seq;
+    // vua duoc cuu o chinh cau cuu tro nay: man ket qua da bao roi, khong hien them lop phu
+    var boQuaBao = d.pha === 'lat' && d.kq && d.kq.ve && s.rcVeQid !== d.qid;
+    if (boQuaBao) s.rcVeQid = d.qid;
+    if (cuuMoi && !boQuaBao) baoCuu(d.cuu.ly);
+
+    var khoa = d.pha + ':' + d.qid;
+    var moi = khoa !== s.rcKhoa;
+    s.rcKhoa = khoa;
+    s.pha = d.pha;
+    if (d.pha === 'cho') { clearInterval(s.dem); veChoChuong(d, ''); s.qid = d.qid; return; }
+    if (d.pha === 'hoi') {
+      var c = d.cau || { opts: [] };
+      if (c.cuu && d.con) { clearInterval(s.dem); veChoChuong(d, 'cuu'); s.qid = d.qid; s.daChon = -1; s.rcNghi = true; return; }
+      if (d.qid !== s.qid || s.rcNghi) { s.rcNghi = false; s.qid = d.qid; s.daChon = -1; veCau(d); }
+      veBangChuong(d);
+      if (d.chon >= 0 && s.daChon < 0) { s.daChon = d.chon; veDaChon(d); }
+      $('moDaChon').textContent = (!d.con && !c.cuu ? 'Luyện tập — không tính điểm. ' : '') + 'Chờ cô lật đáp án nhé…';
+      if (d.khoa) {
+        clearInterval(s.dem);
+        $('demGio').textContent = '⏰';
+        Array.prototype.forEach.call($('opts').querySelectorAll('button'), function (b) { b.disabled = true; });
+      } else if (d.tam) { clearInterval(s.dem); $('demGio').textContent = '⏸'; }
+      else demNguoc(d.conLai);
+      return;
+    }
+    if (d.pha === 'lat') { if (moi || $('manKq').hidden) veKqChuong(d); return; }
+    if (d.pha === 'het') {
+      if (moi) veHetChuong(d);
+      if (d.dong) { clearTimeout(s.poll); s.ma = ''; xoaLuu(); }
+    }
+  }
+  function veChoChuong(d, vi) {
+    var ic, tit, mo;
+    if (vi === 'cuu') { ic = '🛟'; tit = 'Câu cứu trợ'; mo = 'Câu này dành cho các bạn đã rời sàn. Em đang trên sàn — nghỉ một chút nhé!'; }
+    else if (!d.daBatDau) { ic = '🔔'; tit = 'Em đã lên sàn thi đấu!'; mo = 'Nhìn lên bảng — Rung Chuông Vàng sắp bắt đầu…'; }
+    else if (d.con) { ic = '🟡'; tit = 'Em đang trên sàn!'; mo = 'Chờ câu hỏi tiếp theo…'; }
+    else if (d.muon) { ic = '👀'; tit = 'Em vào muộn'; mo = 'Em đứng ngoài sàn nhưng vẫn được trả lời để luyện tập (không tính điểm). Cô có thể cho em lên sàn.'; }
+    else { ic = '💺'; tit = 'Em đã rời sàn'; mo = 'Em vẫn được trả lời các câu tiếp theo để luyện tập (không tính điểm). Biết đâu sẽ có cứu trợ!'; }
+    $('tenCho').textContent = d.ten;
+    $('icCho').textContent = ic;
+    $('titCho').textContent = tit;
+    $('moCho').textContent = mo;
+    if ($('manCho').hidden) hien('manCho');
+  }
+  function veBangChuong(d) {
+    var c = d.cau || {}, b = $('rcBang'), t, cls;
+    if (c.cuu) { t = '🛟 CÂU CỨU TRỢ — đúng và nhanh để trở lại sàn!'; cls = 'is-cuu'; }
+    else if (c.cuoi) { t = '🔔 CÂU CHUÔNG VÀNG' + (d.con ? '' : ' · luyện tập, không tính điểm'); cls = 'is-vang'; }
+    else if (d.con) { t = '🟡 Em đang trên sàn — trả lời đúng để ở lại!'; cls = 'is-con'; }
+    else { t = 'Em đã rời sàn — luyện tập, không tính điểm'; cls = 'is-luyen'; }
+    if (d.khoa) t += ' · ⏰ Hết giờ';
+    b.textContent = t;
+    b.className = 'ch-rc-bang ' + cls;
+    b.hidden = false;
+  }
+  function veKqChuong(d) {
+    clearInterval(s.dem);
+    var c = d.cau || s.cau || { opts: [] }, kq = d.kq || {};
+    var dung = !!kq.dung, tot = false, ic, tit, cong = '', phu = '';
+    if (c.cuu) {
+      if (kq.ve) { tot = true; ic = '🛟'; tit = 'Em được cứu trợ, trở lại sàn!'; phu = 'Cố lên — trả lời đúng để ở lại sàn nhé!'; }
+      else if (d.con) { tot = true; ic = '🟡'; tit = 'Em vẫn trên sàn'; phu = d.soVe ? d.soVe + ' bạn vừa được cứu trợ trở lại sàn.' : 'Chưa bạn nào được cứu lần này.'; }
+      else if (dung) { ic = '⏱'; tit = 'Đúng rồi, nhưng chưa kịp được cứu'; phu = 'Các bạn đúng nhanh hơn đã đủ suất cứu trợ.'; }
+      else { ic = d.chon < 0 ? '⏱' : '✗'; tit = 'Chưa được cứu lần này'; }
+    } else if (kq.tinh) {
+      if (dung) { tot = true; ic = c.cuoi ? '🔔' : '✓'; tit = c.cuoi ? 'Em đã rung chuông vàng!' : '✓ Đúng — em vẫn trên sàn'; cong = '+10'; }
+      else { ic = d.chon < 0 ? '⏱' : '✗'; tit = 'Em đã rời sàn'; phu = (d.chon < 0 ? 'Em chưa kịp chọn đáp án. ' : '') + 'Em vẫn được làm tiếp để luyện tập (không tính điểm).'; }
+    } else {
+      tot = dung; ic = dung ? '✓' : '✗';
+      tit = (dung ? 'Đúng rồi' : 'Chưa đúng') + ' — luyện tập, không tính điểm';
+    }
+    $('manKq').className = 'ch-man ch-kq ch-rc-kq ' + (tot ? 'dung' : 'sai') + (c.cuoi && kq.tinh && dung ? ' is-vang' : '');
+    $('kqIc').textContent = ic;
+    $('kqTit').textContent = tit;
+    $('kqCong').textContent = cong;
+    $('kqDung').innerHTML = !dung && d.dung >= 0 && c.opts[d.dung] != null ? 'Đáp án: <b>' + CHU[d.dung] + '. ' + esc(c.opts[d.dung]) + '</b>' : '';
+    $('kqHang').innerHTML = 'Trên sàn còn <b>' + d.soCon + '</b> / ' + d.soHs + ' bạn' + (d.soRoi ? ' · ' + d.soRoi + ' bạn vừa rời sàn' : '');
+    $('kqViTri').innerHTML = '';
+    $('kqWhy').textContent = phu;
+    $('nutTiep').hidden = true;
+    hien('manKq');
+    rung(tot ? [30, 40, 30] : 120);
+  }
+  function veHetChuong(d) {
+    clearInterval(s.dem);
+    $('hetIc').textContent = d.vang ? '🔔' : '🏁';
+    $('hetTit').textContent = d.vang ? 'Em đã rung chuông vàng!' : 'Kết thúc!';
+    $('manHet').className = 'ch-man' + (d.vang ? ' ch-rc-vang' : '');
+    $('hetHang').innerHTML = 'Em xếp hạng <b>' + d.hang + '</b> / ' + d.soHs + ' · ' + d.diem + ' điểm' +
+      (d.vang ? '' : d.con ? ' · trụ đến cuối' : d.roiCau ? ' · rời sàn ở câu ' + d.roiCau : '');
+    $('hetBxh').innerHTML = (d.bxh || []).map(function (r, i) {
+      return '<li><span>' + ['🥇', '🥈', '🥉', '4', '5'][i] + '</span><b>' + esc(r.ten) + (r.vang ? ' 🔔' : '') + '</b><i>' + r.diem + 'đ</i></li>';
+    }).join('');
+    hien('manHet');
+    rung(d.vang ? [60, 40, 60, 40, 200] : 60);
+  }
+  var henCuu = 0;
+  function baoCuu(ly) {
+    var t = {
+      cuu: ['🛟', 'Em được cứu trợ, trở lại sàn!', 'Cố lên — trả lời đúng để ở lại sàn nhé!'],
+      phao: ['✈️', 'Máy bay giấy đưa em trở lại sàn!', 'Em được cứu trợ, trở lại sàn! Cơ hội có một không hai — cố lên!'],
+      tatcasai: ['↩️', 'Cả sàn cùng sai — em được quay lại sàn!', 'Em được cứu trợ, trở lại sàn! Thi tiếp nào!'],
+      gv: ['🟡', 'Cô đã cho em lên sàn!', 'Em được cứu trợ, trở lại sàn!']
+    }[ly] || ['🛟', 'Em được cứu trợ, trở lại sàn!', ''];
+    $('rcCuuIc').textContent = t[0];
+    $('rcCuuTit').textContent = t[1];
+    $('rcCuuMo').textContent = t[2];
+    $('rcCuu').hidden = false;
+    rung([40, 30, 40, 30, 120]);
+    clearTimeout(henCuu);
+    henCuu = setTimeout(function () { $('rcCuu').hidden = true; }, 5000);
+  }
+  $('rcCuuOk').addEventListener('click', function () { $('rcCuu').hidden = true; });
 
   /* ---- khoi tao ---- */
   var q = new URLSearchParams(location.search);

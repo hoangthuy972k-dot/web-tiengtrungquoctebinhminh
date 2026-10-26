@@ -30,8 +30,8 @@
   <!-- Cho cau hoi -->
   <section class="ch-man" id="manCho" hidden>
     <div class="ch-ten" id="tenCho"></div>
-    <div class="ch-cho-ic" aria-hidden="true">👀</div>
-    <h2 class="ch-tit">Em đã vào lớp!</h2>
+    <div class="ch-cho-ic" id="icCho" aria-hidden="true">👀</div>
+    <h2 class="ch-tit" id="titCho">Em đã vào lớp!</h2>
     <p class="ch-mo" id="moCho">Nhìn lên bảng, câu hỏi sắp hiện ra…</p>
   </section>
 
@@ -41,6 +41,7 @@
       <span id="soCau"></span>
       <span class="ch-dem" id="demGio"></span>
     </div>
+    <div class="ch-rc-bang" id="rcBang" hidden></div>
     <div class="ch-cau" id="cauZh"></div>
     <div class="ch-opts" id="opts"></div>
   </section>
@@ -49,7 +50,7 @@
   <section class="ch-man" id="manDaChon" hidden>
     <div class="ch-chon-o" id="oDaChon"></div>
     <h2 class="ch-tit">Đã chọn!</h2>
-    <p class="ch-mo">Chờ cô lật đáp án nhé…</p>
+    <p class="ch-mo" id="moDaChon">Chờ cô lật đáp án nhé…</p>
   </section>
 
   <!-- Ket qua cau -->
@@ -76,17 +77,28 @@
 
   <!-- Ket thuc -->
   <section class="ch-man" id="manHet" hidden>
-    <div class="ch-cho-ic" aria-hidden="true">🏁</div>
-    <h2 class="ch-tit">Kết thúc!</h2>
+    <div class="ch-cho-ic" id="hetIc" aria-hidden="true">🏁</div>
+    <h2 class="ch-tit" id="hetTit">Kết thúc!</h2>
     <div class="ch-kq-hang" id="hetHang"></div>
     <ol class="ch-bxh" id="hetBxh"></ol>
     <button type="button" class="ch-nut ch-nut-phu" id="nutLai">Vào phòng khác</button>
   </section>
 
+  <!-- Rung Chuong Vang: duoc cuu tro tro lai san -->
+  <div class="ch-rc-cuu" id="rcCuu" role="alert" hidden>
+    <div class="ch-rc-cuu-the">
+      <div class="ch-rc-cuu-ic" id="rcCuuIc" aria-hidden="true">🛟</div>
+      <h2 class="ch-tit" id="rcCuuTit"></h2>
+      <p class="ch-mo" id="rcCuuMo"></p>
+      <button type="button" class="ch-nut" id="rcCuuOk">Lên sàn thôi! 💪</button>
+    </div>
+  </div>
+
   <div class="ch-toast" id="toast" role="status" aria-live="polite" hidden></div>
 
   <footer class="ch-chan" id="chan" hidden>
     <span id="chanTen"></span>
+    <span class="ch-rc-trang" id="rcTrang" hidden></span>
     <b id="chanDiem">0</b>
   </footer>
 </main>

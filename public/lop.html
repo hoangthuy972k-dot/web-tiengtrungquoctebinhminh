@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="/css/lop-bay.css">
 <link rel="stylesheet" href="/css/lop-doantau.css">
 <link rel="stylesheet" href="/css/lop-doikhang.css">
+<link rel="stylesheet" href="/css/lop-chuong.css">
 <script>
 // CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
 // va trinh duyet giu mai ban CSS/JS cu. Chuyen sang /lop de luon qua may chu.
@@ -220,6 +221,12 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <span class="lop-game-emoji">⚔️</span>
           <span class="lop-game-name">Game đối kháng 1–1</span>
           <span class="lop-game-desc">Học sinh quét mã QR, web ghép cặp ngẫu nhiên, mỗi cặp kéo co trên điện thoại riêng. Màn chiếu hiện tất cả các cặp trực tiếp.</span>
+          <span class="lop-game-count lop-count-mc">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="chuong">
+          <span class="lop-game-emoji">🔔</span>
+          <span class="lop-game-name">Rung Chuông Vàng</span>
+          <span class="lop-game-desc">Cả lớp lên sàn thi đấu, trả lời sai rời sàn — có Cứu trợ, Phao máy bay giấy và Câu Chuông Vàng. Chơi bằng bảng con (cô bấm loại) hoặc mỗi em một điện thoại.</span>
           <span class="lop-game-count lop-count-mc">—</span>
         </button>
         <button type="button" class="lop-game-card" data-game="nhip">
@@ -485,6 +492,7 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/lop-bay.js"></script>
 <script src="/js/lop-doantau.js"></script>
 <script src="/js/lop-doikhang.js"></script>
+<script src="/js/lop-chuong.js"></script>
 <script src="/js/lop.js"></script>
 </body>
 </html>

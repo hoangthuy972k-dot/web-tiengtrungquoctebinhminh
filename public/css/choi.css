@@ -147,3 +147,46 @@ body {
 }
 .ch-toast[hidden] { display: none; }
 @media (prefers-reduced-motion: reduce) { .ch-vt-dau, .ch-toast { animation: none; } .ch-nui-em { transition: none; } }
+
+/* ---- Rung Chuong Vang (phong kieu 'chuong'): nen xanh hoang gia, vang ---- */
+body.ch-rc {
+  background: radial-gradient(700px 420px at 50% -10%, rgba(245, 197, 24, .28) 0%, transparent 60%),
+              repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0 50px, transparent 50px 140px),
+              linear-gradient(160deg, #1b2a8a 0%, #14206b 100%);
+  background-attachment: fixed;
+}
+body.ch-rc .ch-opt { background: linear-gradient(180deg, #2c3fb0, #1b2a8a); border: 2px solid rgba(245, 197, 24, .65); box-shadow: 0 7px 0 rgba(0,0,0,.3); }
+body.ch-rc .ch-hinh {
+  width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center;
+  background: #f5c518; color: #2a1c00; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 900; font-size: 1.4rem;
+}
+body.ch-rc .ch-chon-o { background: linear-gradient(180deg, #2c3fb0, #1b2a8a); border: 2px solid #f5c518; }
+body.ch-rc .ch-dem { color: #f5c518; }
+body.ch-rc .ch-chan b { background: #f5c518; color: #2a1c00; }
+.ch-rc-trang { font-size: .8rem; font-weight: 800; border-radius: 999px; padding: 3px 10px; background: rgba(255,255,255,.12); color: rgba(255,255,255,.75); white-space: nowrap; }
+.ch-rc-trang.is-con { background: rgba(245, 197, 24, .25); color: #ffe680; }
+.ch-rc-bang { width: 100%; border-radius: 12px; padding: 8px 12px; font-weight: 800; font-size: .95rem; text-align: center; }
+.ch-rc-bang.is-con { background: rgba(245, 197, 24, .2); border: 1px solid rgba(245, 197, 24, .6); color: #fff1a6; }
+.ch-rc-bang.is-luyen { background: rgba(255,255,255,.08); border: 1px dashed rgba(255,255,255,.35); color: rgba(255,255,255,.8); }
+.ch-rc-bang.is-cuu { background: rgba(77, 212, 255, .2); border: 1px solid #4dd4ff; color: #c9f4ff; }
+.ch-rc-bang.is-vang {
+  background: linear-gradient(180deg, #fff1a6, #f5c518); color: #2a1c00; font-size: 1.1rem; letter-spacing: .04em;
+  box-shadow: 0 0 22px rgba(245, 197, 24, .6); animation: chPop .35s ease, chLac 1.2s ease .35s;
+}
+.ch-rc-kq.dung .ch-kq-ic { background: #f5c518; color: #2a1c00; box-shadow: 0 0 0 10px rgba(245, 197, 24, .25); }
+.ch-rc-kq.is-vang .ch-kq-ic { font-size: 4rem; animation: chPop .35s ease, chChuong .9s ease-in-out .35s infinite; }
+.ch-rc-kq .ch-kq-hang b { color: #f5c518; }
+.ch-man.ch-rc-vang .ch-cho-ic { font-size: 5.5rem; transform-origin: 50% 10%; animation: chChuong .9s ease-in-out infinite; filter: drop-shadow(0 0 22px rgba(245, 197, 24, .8)); }
+.ch-man.ch-rc-vang .ch-tit { color: #f5c518; text-shadow: 0 3px 0 rgba(0,0,0,.3); }
+@keyframes chChuong { 25% { transform: rotate(14deg); } 75% { transform: rotate(-14deg); } }
+.ch-rc-cuu {
+  position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 20px;
+  background: radial-gradient(circle at 50% 40%, rgba(245, 197, 24, .45), rgba(14, 20, 80, .94) 65%);
+}
+.ch-rc-cuu[hidden] { display: none; }
+.ch-rc-cuu-the { max-width: 420px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; animation: chPop .35s ease; }
+.ch-rc-cuu-ic { font-size: 5rem; animation: chNhun 1.2s ease-in-out infinite; }
+.ch-rc-cuu .ch-tit { color: #f5c518; }
+@media (prefers-reduced-motion: reduce) {
+  .ch-rc-bang.is-vang, .ch-rc-kq.is-vang .ch-kq-ic, .ch-man.ch-rc-vang .ch-cho-ic, .ch-rc-cuu-the, .ch-rc-cuu-ic { animation: none; }
+}

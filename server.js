@@ -371,6 +371,7 @@ async function initDb() {
   await initGopYTable();
   await initStarsTable();
   await initClassTables();
+  await initQuenMkTables();
   console.log('MySQL: da san sang (bang users/scores/exam_attempts).');
   await migrateJsonToDbIfNeeded();
 }
@@ -720,7 +721,7 @@ app.post('/api/auth/login', asyncRoute(async (req, res) => {
   const khop = (p) => hashPassword(p, user.passwordSalt) === user.passwordHash;
   if (!khop(password) && !(password.trim() !== password && khop(password.trim()))) {
     ghiSai('dn-ip', ipDn); ghiSai('dn-em', email);
-    return res.status(401).json({ error: 'Mật khẩu không đúng. Lưu ý chữ hoa/chữ thường. Nếu quên mật khẩu, em nhờ thầy/cô đặt lại mật khẩu mới.' });
+    return res.status(401).json({ error: 'Mật khẩu không đúng. Lưu ý chữ hoa/chữ thường. Nếu quên mật khẩu, em bấm "Quên mật khẩu?" ngay bên dưới.', quenMk: true });
   }
   const token = await createSession(user.id);
   res.json({ token, user: publicUser(user), progress: await userProgress(user.id) });
@@ -728,6 +729,190 @@ app.post('/api/auth/login', asyncRoute(async (req, res) => {
 
 app.post('/api/auth/logout', requireAuth, asyncRoute(async (req, res) => {
   await deleteSession(req.sessionToken);
+  res.json({ ok: true });
+}));
+
+
+// ---------------- Quen mat khau ----------------
+// Web khong gui email duoc, nen: hoc sinh gui yeu cau (email, hoac ho ten neu quen ca
+// email) -> trang Bao cao hien yeu cau -> co bam "Cap ma" duoc ma 6 so (het han sau 48
+// gio, sai 5 lan thi huy) -> co nhan ma qua Zalo / tren lop -> hoc sinh nhap email + ma
+// + mat khau moi la tu doi duoc, khong ai phai biet mat khau cua em.
+// Chi luu BAM cua ma (giong mat khau), khong luu ma that.
+const QMK_FILE = path.join(DATA_DIR, 'quen_mk.json');
+const QMK_HAN_MS = 48 * 3600 * 1000;
+const QMK_SAI_TOI_DA = 5;
+async function initQuenMkTables() {
+  if (!USE_DB) return;
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS pw_resets (' +
+      'user_id VARCHAR(36) PRIMARY KEY, code_salt VARCHAR(64) NOT NULL, code_hash VARCHAR(255) NOT NULL, ' +
+      'expires_ms BIGINT NOT NULL, tries INT NOT NULL DEFAULT 0, issued_ms BIGINT NOT NULL, ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE)'
+  );
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS pw_requests (' +
+      'id VARCHAR(16) PRIMARY KEY, user_id VARCHAR(36) NULL, nhap VARCHAR(120) NOT NULL, ' +
+      'created_ms BIGINT NOT NULL, done TINYINT NOT NULL DEFAULT 0)'
+  );
+}
+function qmkFile() {
+  const d = readJsonFile(QMK_FILE) || {};
+  return { resets: d.resets || {}, requests: d.requests || [] };
+}
+async function qmkLayMa(userId) {
+  if (!USE_DB) return qmkFile().resets[userId] || null;
+  const [rows] = await dbPool.query('SELECT * FROM pw_resets WHERE user_id = ?', [userId]);
+  if (!rows.length) return null;
+  const r = rows[0];
+  return { salt: r.code_salt, hash: r.code_hash, het: Number(r.expires_ms), sai: r.tries, luc: Number(r.issued_ms) };
+}
+async function qmkGhiMa(userId, m) {
+  if (!USE_DB) {
+    const d = qmkFile();
+    if (m) d.resets[userId] = m; else delete d.resets[userId];
+    writeJsonFile(QMK_FILE, d);
+    return;
+  }
+  if (!m) { await dbPool.query('DELETE FROM pw_resets WHERE user_id = ?', [userId]); return; }
+  await dbPool.query(
+    'INSERT INTO pw_resets (user_id, code_salt, code_hash, expires_ms, tries, issued_ms) VALUES (?,?,?,?,?,?) ' +
+      'ON DUPLICATE KEY UPDATE code_salt=VALUES(code_salt), code_hash=VALUES(code_hash), expires_ms=VALUES(expires_ms), tries=VALUES(tries), issued_ms=VALUES(issued_ms)',
+    [userId, m.salt, m.hash, m.het, m.sai, m.luc]
+  );
+}
+async function qmkDsYeuCau() {
+  if (!USE_DB) return qmkFile().requests;
+  const [rows] = await dbPool.query('SELECT * FROM pw_requests WHERE done = 0 ORDER BY created_ms DESC LIMIT 300');
+  return rows.map((r) => ({ id: r.id, userId: r.user_id || '', nhap: r.nhap, luc: Number(r.created_ms), xong: !!r.done }));
+}
+async function qmkThemYeuCau(userId, nhap) {
+  const now = Date.now();
+  if (!USE_DB) {
+    const d = qmkFile();
+    // trung yeu cau chua xu ly trong 24 gio thi chi cap nhat gio, khong them dong moi
+    const cu = d.requests.find((r) => !r.xong && (userId ? r.userId === userId : r.nhap.toLowerCase() === nhap.toLowerCase()) && now - r.luc < 86400000);
+    if (cu) cu.luc = now; else d.requests.unshift({ id: newShortId(), userId, nhap, luc: now, xong: false });
+    d.requests = d.requests.filter((r) => !r.xong || now - r.luc < 30 * 86400000).slice(0, 500);
+    writeJsonFile(QMK_FILE, d);
+    return;
+  }
+  const [cu] = await dbPool.query(
+    userId ? 'SELECT id FROM pw_requests WHERE done = 0 AND user_id = ? AND created_ms > ?' : 'SELECT id FROM pw_requests WHERE done = 0 AND user_id IS NULL AND nhap = ? AND created_ms > ?',
+    [userId || nhap, now - 86400000]
+  );
+  if (cu.length) await dbPool.query('UPDATE pw_requests SET created_ms = ? WHERE id = ?', [now, cu[0].id]);
+  else await dbPool.query('INSERT INTO pw_requests (id, user_id, nhap, created_ms, done) VALUES (?,?,?,?,0)', [newShortId(), userId || null, nhap, now]);
+}
+async function qmkXongYeuCau(loc) { // loc: { id } hoac { userId }
+  if (!USE_DB) {
+    const d = qmkFile();
+    d.requests.forEach((r) => { if ((loc.id && r.id === loc.id) || (loc.userId && r.userId === loc.userId)) { r.xong = true; } });
+    writeJsonFile(QMK_FILE, d);
+    return;
+  }
+  if (loc.id) await dbPool.query('UPDATE pw_requests SET done = 1 WHERE id = ?', [loc.id]);
+  if (loc.userId) await dbPool.query('UPDATE pw_requests SET done = 1 WHERE user_id = ?', [loc.userId]);
+}
+async function datMatKhau(user, password) {
+  user.passwordSalt = crypto.randomBytes(16).toString('hex');
+  user.passwordHash = hashPassword(password, user.passwordSalt);
+  if (USE_DB) await dbPool.query('UPDATE users SET password_salt = ?, password_hash = ? WHERE id = ?', [user.passwordSalt, user.passwordHash, user.id]);
+  else {
+    const users = await loadUsers();
+    const u = users.find((x) => x.id === user.id);
+    if (u) { u.passwordSalt = user.passwordSalt; u.passwordHash = user.passwordHash; await saveUsers(users); }
+  }
+}
+function chuanTen(t) { return String(t || '').normalize('NFC').toLowerCase().replace(/\s+/g, ' ').trim(); }
+
+// Hoc sinh gui yeu cau. Luon tra loi giong nhau (khong lo email nao co tai khoan).
+app.post('/api/auth/forgot', asyncRoute(async (req, res) => {
+  const nhap = String(req.body?.nhap || '').replace(/[\u0000-\u001f<>]/g, '').trim().slice(0, 120);
+  if (nhap.length < 3) return res.status(400).json({ error: 'Em nhập email (hoặc họ tên đầy đủ) nhé.' });
+  if (quaNhieu('qmk-ip', clientIp(req), 8, 3600000)) return res.status(429).json({ error: 'Em gửi nhiều lần quá, đợi một lúc rồi thử lại hoặc nhắn trực tiếp cho cô.' });
+  let user = null;
+  if (nhap.indexOf('@') > 0) user = await findUserByEmail(nhap.toLowerCase());
+  else {
+    const ten = chuanTen(nhap);
+    const trung = (await loadUsers()).filter((u) => chuanTen(u.name) === ten);
+    if (trung.length === 1) user = trung[0];
+  }
+  await qmkThemYeuCau(user ? user.id : '', nhap);
+  res.json({ ok: true });
+}));
+
+// Hoc sinh nhap email + ma co cap + mat khau moi -> doi xong dang nhap luon
+app.post('/api/auth/reset', asyncRoute(async (req, res) => {
+  const email = String(req.body?.email || '').trim().toLowerCase();
+  const ma = String(req.body?.ma || '').replace(/\D/g, '');
+  const password = typeof req.body?.password === 'string' ? req.body.password.trim() : '';
+  if (!email || ma.length !== 6) return res.status(400).json({ error: 'Em nhập email và mã 6 số cô gửi nhé.' });
+  if (password.length < 6) return res.status(400).json({ error: 'Mật khẩu mới cần ít nhất 6 ký tự.' });
+  const ip = clientIp(req);
+  if (biKhoa('qmk-dl', ip, 20)) return res.status(429).json({ error: 'Nhập sai nhiều lần quá. Em đợi 15 phút rồi thử lại.' });
+  const sai = (msg) => { ghiSai('qmk-dl', ip); return res.status(400).json({ error: msg }); };
+  const user = await findUserByEmail(email);
+  if (!user) return sai('Email này chưa đăng ký. Em kiểm tra lại từng chữ của email nhé.');
+  const m = await qmkLayMa(user.id);
+  if (!m) return sai('Tài khoản này chưa được cấp mã. Em bấm "Gửi yêu cầu" rồi chờ cô gửi mã nhé.');
+  if (Date.now() > m.het) { await qmkGhiMa(user.id, null); return sai('Mã đã hết hạn (48 giờ). Em gửi yêu cầu lại để cô cấp mã mới nhé.'); }
+  if (!bangNhau(hashPassword(ma, m.salt), m.hash)) {
+    m.sai = (m.sai || 0) + 1;
+    if (m.sai >= QMK_SAI_TOI_DA) { await qmkGhiMa(user.id, null); return sai('Nhập sai mã ' + QMK_SAI_TOI_DA + ' lần nên mã đã bị huỷ. Em gửi yêu cầu lại để cô cấp mã mới.'); }
+    await qmkGhiMa(user.id, m);
+    return sai('Mã chưa đúng. Em còn ' + (QMK_SAI_TOI_DA - m.sai) + ' lần thử.');
+  }
+  await datMatKhau(user, password);
+  await qmkGhiMa(user.id, null);
+  await qmkXongYeuCau({ userId: user.id });
+  await deleteUserSessions(user.id);
+  const token = await createSession(user.id);
+  res.json({ token, user: publicUser(user), progress: await userProgress(user.id) });
+}));
+
+// Dang dang nhap: doi mat khau (can mat khau cu). Dang xuat cac may khac.
+app.post('/api/auth/change-password', requireAuth, asyncRoute(async (req, res) => {
+  const cu = typeof req.body?.cu === 'string' ? req.body.cu : '';
+  const moi = typeof req.body?.moi === 'string' ? req.body.moi.trim() : '';
+  if (moi.length < 6) return res.status(400).json({ error: 'Mật khẩu mới cần ít nhất 6 ký tự.' });
+  if (biKhoa('dmk', req.user.id, 8)) return res.status(429).json({ error: 'Sai nhiều lần quá, em đợi 15 phút rồi thử lại.' });
+  const user = await findUserById(req.user.id);
+  const khop = (p) => hashPassword(p, user.passwordSalt) === user.passwordHash;
+  if (!khop(cu) && !khop(cu.trim())) { ghiSai('dmk', req.user.id); return res.status(400).json({ error: 'Mật khẩu hiện tại chưa đúng.' }); }
+  await datMatKhau(user, moi);
+  await deleteUserSessions(user.id);
+  const token = await createSession(user.id);
+  res.json({ ok: true, token });
+}));
+
+// Trang Bao cao: danh sach yeu cau + cap ma
+app.get('/api/admin/pw-requests', requireAdmin, asyncRoute(async (req, res) => {
+  const ds = (await qmkDsYeuCau()).filter((r) => !r.xong);
+  const users = await loadUsers();
+  const theoId = new Map(users.map((u) => [u.id, u]));
+  const out = [];
+  for (const r of ds) {
+    const u = r.userId ? theoId.get(r.userId) : null;
+    const m = u ? await qmkLayMa(u.id) : null;
+    out.push({ id: r.id, nhap: r.nhap, luc: r.luc, userId: u ? u.id : '', ten: u ? u.name : '', email: u ? u.email : '',
+      daCap: !!(m && m.het > Date.now()), hetLuc: m ? m.het : 0 });
+  }
+  res.json({ ds: out });
+}));
+app.post('/api/admin/reset-code', requireAdmin, asyncRoute(async (req, res) => {
+  const user = await findUserById(String(req.body?.userId || ''));
+  if (!user) return res.status(404).json({ error: 'Không tìm thấy học sinh.' });
+  const ma = String(crypto.randomInt(0, 1000000)).padStart(6, '0');
+  const salt = crypto.randomBytes(16).toString('hex');
+  const het = Date.now() + QMK_HAN_MS;
+  await qmkGhiMa(user.id, { salt, hash: hashPassword(ma, salt), het, sai: 0, luc: Date.now() });
+  // yeu cau go bang ho ten ma co da chon dung em -> gan vao em do
+  if (req.body?.requestId) await qmkXongYeuCau({ id: String(req.body.requestId) });
+  res.json({ ma, het, ten: user.name, email: user.email });
+}));
+app.post('/api/admin/pw-requests/xong', requireAdmin, asyncRoute(async (req, res) => {
+  await qmkXongYeuCau({ id: String(req.body?.id || '') });
   res.json({ ok: true });
 }));
 

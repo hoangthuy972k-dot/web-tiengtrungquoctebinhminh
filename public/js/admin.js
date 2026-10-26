@@ -442,7 +442,10 @@
           '<label>Mật khẩu mới cho em <input type="text" id="trPwNew" minlength="4" autocomplete="off" spellcheck="false" required></label>' +
           '<button type="submit" class="btn btn-primary">Lưu mật khẩu mới</button>' +
           '<p class="tr-hint" id="trPwMsg">Em đăng nhập bằng email <b>' + esc(s.email) + '</b> và mật khẩu mới này. Các máy đang đăng nhập của em sẽ bị đăng xuất.</p>' +
-        '</form></details>' +
+        '</form>' +
+        '<div class="qmk-o-hs"><p class="tr-hint">Hoặc cấp <b>mã 6 số</b> để em tự đặt mật khẩu mới (cô không cần biết mật khẩu của em):</p>' +
+          '<button type="button" class="btn btn-outline" data-qmk-cap="' + esc(s.id) + '">🔑 Cấp mã để em tự đặt lại</button><div class="qmk-kq"></div></div>' +
+        '</details>' +
       '<section class="admin-cards">' + tiles.map(function (c) {
         return '<div class="admin-card"><div class="admin-card-label">' + c.label + '</div><div class="admin-card-value is-sm">' + c.value + '</div>' +
           (c.sub ? '<div class="admin-card-sub">' + c.sub + '</div>' : '') + '</div>';
@@ -513,16 +516,19 @@
       b.classList.toggle('active', on);
       b.setAttribute('aria-selected', on ? 'true' : 'false');
     });
-    var classes = name === 'classes', gopy = name === 'gopy', nhac = name === 'nhac';
+    var classes = name === 'classes', gopy = name === 'gopy', nhac = name === 'nhac', qmk = name === 'qmk';
+    var qb = $('#trQmk');
+    if (qb) qb.hidden = !qmk;
     $('#trClasses').hidden = !classes;
     var gy = $('#trGopY');
     if (gy) gy.hidden = !gopy;
     var nh = $('#trNhac');
     if (nh) nh.hidden = !nhac;
-    if (classes || gopy || nhac) { $('#trClass').hidden = true; $('#trDetail').hidden = true; }
+    if (classes || gopy || nhac || qmk) { $('#trClass').hidden = true; $('#trDetail').hidden = true; }
     else { closeStudent(); }
     if (gopy && window.__trGopY) window.__trGopY.render();
     if (nhac && window.__trNhac) window.__trNhac.render();
+    if (qmk && window.__trQmk) window.__trQmk.render();
   }
   $all('.tr-tab').forEach(function (b) {
     b.addEventListener('click', function () { showTab(b.getAttribute('data-tab')); });

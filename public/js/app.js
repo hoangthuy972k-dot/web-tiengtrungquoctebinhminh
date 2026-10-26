@@ -16806,7 +16806,22 @@
       $all('.auth-panel').forEach(function (p) {
         p.classList.toggle('is-active', p.getAttribute('data-auth-panel') === tab);
       });
-      if (tab === 'register') {
+      // Quen mat khau / tai khoan: an hang tab Dang nhap – Dang ky
+      var tabs = $('.auth-tabs');
+      if (tabs) tabs.hidden = tab === 'forgot' || tab === 'account';
+      if (tab === 'forgot') {
+        $('#authModalTitle').textContent = 'Quên mật khẩu';
+        $('#authModalSub').textContent = 'Không sao cả! Làm theo 3 bước dưới đây để đặt mật khẩu mới.';
+        var em = ($('#loginEmail').value || '').trim();
+        if (em && !$('#forgotNhap').value) $('#forgotNhap').value = em;
+        if (em && !$('#resetEmail').value) $('#resetEmail').value = em;
+      } else if (tab === 'account') {
+        var au = readJSON(STORAGE_KEYS.auth, null);
+        $('#authModalTitle').textContent = 'Tài khoản của em';
+        $('#authModalSub').textContent = 'Đổi mật khẩu hoặc đăng xuất.';
+        $('#accountInfo').innerHTML = au && au.user ? '👤 <b>' + lbEsc(au.user.name || '') + '</b><br><span>' + lbEsc(au.user.email || '') + '</span>' : '';
+        $('#changePwOk').hidden = true;
+      } else if (tab === 'register') {
         $('#authModalTitle').textContent = 'Tạo tài khoản học sinh';
         $('#authModalSub').textContent = 'Đăng ký để lưu tiến độ học và chuỗi ngày học của bạn.';
       } else {
@@ -16904,10 +16919,79 @@
         .catch(function () { setFormError(form, 'Không kết nối được máy chủ, thử lại sau.'); });
     });
 
+    // ---- Quen mat khau: gui yeu cau cho co ----
+    $('#forgotReqForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var form = e.target, nhap = $('#forgotNhap').value.trim(), ok = $('#forgotReqOk');
+      setFormError(form, '');
+      ok.hidden = true;
+      fetch('/api/auth/forgot', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nhap: nhap }) })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (x) {
+          if (!x.ok) { setFormError(form, x.d.error || 'Chưa gửi được, thử lại nhé.'); return; }
+          ok.hidden = false;
+          ok.innerHTML = '✅ Đã gửi yêu cầu cho cô. Khi nhận được <b>mã 6 số</b>, em nhập vào ô bên dưới nhé (mã dùng được 48 giờ).';
+          if (nhap.indexOf('@') > 0 && !$('#resetEmail').value) $('#resetEmail').value = nhap;
+        })
+        .catch(function () { setFormError(form, 'Không kết nối được máy chủ, thử lại sau.'); });
+    });
+    // ---- Quen mat khau: nhap ma + mat khau moi ----
+    $('#forgotResetForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var form = e.target, pw = $('#resetPw').value;
+      setFormError(form, '');
+      if (pw !== $('#resetPw2').value) { setFormError(form, 'Hai lần nhập mật khẩu mới chưa giống nhau.'); return; }
+      fetch('/api/auth/reset', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: $('#resetEmail').value.trim(), ma: $('#resetMa').value, password: pw })
+      }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (x) {
+          if (!x.ok) { setFormError(form, x.d.error || 'Chưa đổi được, thử lại nhé.'); return; }
+          setSession(x.d.token, x.d.user, x.d.progress);
+          form.reset();
+          closeModal();
+          showToast('Đã đặt mật khẩu mới! Chào mừng trở lại, ' + x.d.user.name + '. Em nhớ ghi lại mật khẩu nhé.');
+        })
+        .catch(function () { setFormError(form, 'Không kết nối được máy chủ, thử lại sau.'); });
+    });
+    // ---- Tai khoan: doi mat khau ----
+    $('#changePwForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var form = e.target, moi = $('#changePwNew').value, ok = $('#changePwOk');
+      var au = readJSON(STORAGE_KEYS.auth, null);
+      setFormError(form, '');
+      ok.hidden = true;
+      if (!au) return;
+      if (moi !== $('#changePwNew2').value) { setFormError(form, 'Hai lần nhập mật khẩu mới chưa giống nhau.'); return; }
+      fetch('/api/auth/change-password', {
+        method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + au.token },
+        body: JSON.stringify({ cu: $('#changePwOld').value, moi: moi })
+      }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (x) {
+          if (!x.ok) { setFormError(form, x.d.error || 'Chưa đổi được, thử lại nhé.'); return; }
+          // phien cu bi huy de may khac phai dang nhap lai; giu dang nhap tren may nay bang phien moi
+          au.token = x.d.token;
+          writeJSON(STORAGE_KEYS.auth, au);
+          form.reset();
+          ok.hidden = false;
+          ok.textContent = '✅ Đã đổi mật khẩu. Các máy khác sẽ cần đăng nhập lại bằng mật khẩu mới.';
+        })
+        .catch(function () { setFormError(form, 'Không kết nối được máy chủ, thử lại sau.'); });
+    });
+    $('#accountLogout').addEventListener('click', function () {
+      if (!window.confirm('Đăng xuất khỏi tài khoản?')) return;
+      closeModal();
+      dangXuat();
+    });
+
     sidebarUserBtn.addEventListener('click', function () {
+      if (readJSON(STORAGE_KEYS.auth, null)) openModal('account');
+      else openModal('login');
+    });
+
+    function dangXuat() {
       var auth = readJSON(STORAGE_KEYS.auth, null);
       if (auth) {
-        if (!window.confirm('Đăng xuất khỏi tài khoản?')) return;
         // Tien do thuoc ve tai khoan nay: gui not len may chu (khi phien con hieu luc),
         // huy phien, roi XOA khoi may — may dung chung (lop hoc, dien thoai gia dinh)
         // thi ban dang nhap sau khong bi gop nham chuoi ngay hoc / diem cua ban truoc.
@@ -16929,10 +17013,8 @@
           return fetch('/api/auth/logout', { method: 'POST', headers: { 'Authorization': 'Bearer ' + tokenCu } }).catch(function () {});
         }).then(function () { setTimeout(taiLai, 500); });
         setTimeout(taiLai, 4000); // mang cham: van tai lai de man hinh sach du lieu cu
-      } else {
-        openModal('login');
       }
-    });
+    }
 
     renderUserChip();
     syncProgressToServer();

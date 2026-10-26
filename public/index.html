@@ -641,8 +641,69 @@
           <input type="password" id="loginPassword" required autocomplete="current-password" minlength="4" />
         </div>
         <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
-        <p class="form-note">Chưa có tài khoản? <a href="#" data-auth-switch="register">Đăng ký ngay</a></p>
+        <p class="form-note"><a href="#" data-auth-switch="forgot" class="auth-quen">Quên mật khẩu?</a> · Chưa có tài khoản? <a href="#" data-auth-switch="register">Đăng ký ngay</a></p>
       </form>
+
+      <!-- Quen mat khau: gui yeu cau cho co -> nhap ma 6 so co gui -> dat mat khau moi -->
+      <div class="auth-panel" id="forgotPanel" data-auth-panel="forgot">
+        <ol class="qmk-buoc">
+          <li>Gửi yêu cầu cho cô bên dưới.</li>
+          <li>Cô gửi em <b>mã 6 số</b> (qua Zalo hoặc trên lớp).</li>
+          <li>Nhập mã và đặt mật khẩu mới — xong là vào học luôn.</li>
+        </ol>
+        <form id="forgotReqForm" class="qmk-form">
+          <div class="form-field">
+            <label for="forgotNhap">Email em đã đăng ký</label>
+            <input type="text" id="forgotNhap" required autocomplete="email" maxlength="120" placeholder="vd: an123@gmail.com" />
+            <small class="qmk-goi-y">Quên cả email? Ghi <b>họ tên đầy đủ</b> và lớp, cô sẽ tìm giúp.</small>
+          </div>
+          <button class="btn btn-outline btn-block" type="submit">📨 Gửi yêu cầu cho cô</button>
+          <p class="qmk-ok" id="forgotReqOk" hidden></p>
+        </form>
+        <div class="qmk-chia"><span>Đã có mã 6 số từ cô?</span></div>
+        <form id="forgotResetForm" class="qmk-form">
+          <div class="form-field">
+            <label for="resetEmail">Email</label>
+            <input type="email" id="resetEmail" required autocomplete="email" />
+          </div>
+          <div class="form-field">
+            <label for="resetMa">Mã 6 số</label>
+            <input type="text" id="resetMa" required inputmode="numeric" pattern="[0-9 ]{6,7}" maxlength="7" autocomplete="one-time-code" placeholder="123456" class="qmk-ma" />
+          </div>
+          <div class="form-field">
+            <label for="resetPw">Mật khẩu mới (ít nhất 6 ký tự)</label>
+            <input type="password" id="resetPw" required minlength="6" autocomplete="new-password" />
+          </div>
+          <div class="form-field">
+            <label for="resetPw2">Nhập lại mật khẩu mới</label>
+            <input type="password" id="resetPw2" required minlength="6" autocomplete="new-password" />
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Đặt mật khẩu mới &amp; đăng nhập</button>
+        </form>
+        <p class="form-note"><a href="#" data-auth-switch="login">← Quay lại đăng nhập</a></p>
+      </div>
+
+      <!-- Tai khoan (dang dang nhap): doi mat khau + dang xuat -->
+      <div class="auth-panel" id="accountPanel" data-auth-panel="account">
+        <p class="qmk-tk" id="accountInfo"></p>
+        <form id="changePwForm" class="qmk-form">
+          <div class="form-field">
+            <label for="changePwOld">Mật khẩu hiện tại</label>
+            <input type="password" id="changePwOld" required autocomplete="current-password" />
+          </div>
+          <div class="form-field">
+            <label for="changePwNew">Mật khẩu mới (ít nhất 6 ký tự)</label>
+            <input type="password" id="changePwNew" required minlength="6" autocomplete="new-password" />
+          </div>
+          <div class="form-field">
+            <label for="changePwNew2">Nhập lại mật khẩu mới</label>
+            <input type="password" id="changePwNew2" required minlength="6" autocomplete="new-password" />
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">🔑 Đổi mật khẩu</button>
+          <p class="qmk-ok" id="changePwOk" hidden></p>
+        </form>
+        <button class="btn btn-ghost btn-block qmk-dx" id="accountLogout" type="button">Đăng xuất</button>
+      </div>
 
       <form class="auth-panel" id="registerPanel" data-auth-panel="register">
         <div class="form-field">

@@ -398,3 +398,23 @@
   .nh-site input { min-width: 0; width: 100%; }
   .nh-site { flex-basis: 100%; }
 }
+
+
+/* ===== Tab Quen mat khau ===== */
+.qmk-ds { display: grid; gap: 10px; margin-top: 12px; }
+.qmk-dong { padding: 14px 16px; border-radius: 14px; border: 1px solid var(--color-gray-200, #e6dccf); background: #fff; }
+.qmk-dau { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.qmk-em { color: var(--color-text-muted, #6b574b); }
+.qmk-phu { color: var(--color-text-muted, #6b574b); font-size: .88rem; margin-top: 2px; }
+.qmk-luc { flex: none; color: var(--color-text-muted, #6b574b); font-size: .85rem; }
+.qmk-chua { color: #a8321f; font-weight: 600; }
+.qmk-nhan { display: inline-block; padding: 1px 8px; border-radius: 999px; background: #fff3d6; color: #8a5a00; font-size: .78rem; font-weight: 700; }
+.qmk-chon { display: block; margin-top: 8px; font-size: .9rem; }
+.qmk-chon select { max-width: 100%; margin-top: 4px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--color-gray-200, #e6dccf); font: inherit; }
+.qmk-nut { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.qmk-ma-hop { margin-top: 12px; padding: 14px; border-radius: 14px; background: #fff8e6; border: 1px solid #f1d38a; display: grid; gap: 8px; }
+.qmk-ma-so { font-size: 2.2rem; font-weight: 800; letter-spacing: .25em; color: #a8321f; font-variant-numeric: tabular-nums; }
+.qmk-ma-phu { color: #6b574b; font-size: .9rem; }
+.qmk-ma-tn { width: 100%; box-sizing: border-box; padding: 10px; border-radius: 10px; border: 1px solid #ead9b8; font: inherit; font-size: .92rem; line-height: 1.5; resize: vertical; background: #fff; }
+.qmk-ma-hop .btn { justify-self: start; }
+.qmk-o-hs { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--color-gray-200, #e6dccf); }

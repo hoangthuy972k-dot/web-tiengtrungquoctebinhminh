@@ -9441,3 +9441,20 @@ html.ho-tro-toi[data-theme="dark"] { --kdp-accent: var(--color-red-500); --kdp-o
 /* ===== Toi gian trang chu (2026-10): bo the "Nhiem vu hom nay" va the do "Hoc bai" theo y co; the Tien do chiem ca hang ===== */
 #continueCard, #homeResume { display: none !important; }
 .dash-row { grid-template-columns: minmax(0, 1fr) !important; }
+
+
+/* ===== Quen mat khau / tai khoan (khung dang nhap) ===== */
+.auth-tabs[hidden] { display: none !important; }
+.auth-quen { font-weight: 700; }
+.qmk-buoc { margin: 0 0 14px; padding-left: 1.3em; display: grid; gap: 4px; color: var(--color-text-muted, #6b574b); font-size: .92rem; line-height: 1.5; }
+.qmk-buoc b { color: var(--color-red-700, #a82d24); }
+.qmk-form { display: grid; gap: 2px; }
+.qmk-goi-y { display: block; margin-top: 4px; color: var(--color-text-muted, #6b574b); font-size: .82rem; line-height: 1.45; }
+.qmk-ok { margin: 10px 0 0; padding: 10px 12px; border-radius: 12px; background: #e7f6ec; color: #1f6b3f; font-size: .9rem; line-height: 1.5; }
+.qmk-ok[hidden] { display: none; }
+.qmk-chia { display: flex; align-items: center; gap: 10px; margin: 18px 0 10px; color: var(--color-text-muted, #6b574b); font-size: .88rem; font-weight: 700; }
+.qmk-chia::before, .qmk-chia::after { content: ''; flex: 1; height: 1px; background: var(--color-gray-200, #e6dccf); }
+.qmk-ma { font-size: 1.4rem !important; letter-spacing: .35em; font-variant-numeric: tabular-nums; text-align: center; }
+.qmk-tk { margin: 0 0 14px; padding: 12px 14px; border-radius: 12px; background: var(--color-gray-100, #f6efe6); line-height: 1.5; }
+.qmk-tk span { color: var(--color-text-muted, #6b574b); font-size: .9rem; }
+.qmk-dx { margin-top: 12px; }

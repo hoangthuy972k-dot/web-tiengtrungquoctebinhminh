@@ -14,6 +14,12 @@
 <link rel="stylesheet" href="/css/lop-ghep.css">
 <link rel="stylesheet" href="/css/lop-ochu.css">
 <link rel="stylesheet" href="/css/lop-dongho.css">
+<link rel="stylesheet" href="/css/lop-goiten.css">
+<link rel="stylesheet" href="/css/lop-luot.css">
+<link rel="stylesheet" href="/css/lop-rong.css">
+<link rel="stylesheet" href="/css/lop-bay.css">
+<link rel="stylesheet" href="/css/lop-doantau.css">
+<link rel="stylesheet" href="/css/lop-doikhang.css">
 <script>
 // CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
 // va trinh duyet giu mai ban CSS/JS cu. Chuyen sang /lop de luon qua may chu.
@@ -89,6 +95,18 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <span class="lop-game-name">UFO gọi trả bài</span>
           <span class="lop-game-desc">Chiếu cả lớp lên màn hình, đĩa bay lượn qua rồi “hút” một bạn lên bảng — ưu tiên bạn lâu chưa được gọi. Chấm điểm ngay, điểm lên cột Miệng. Dùng lớp trên hệ thống hoặc dán nhanh danh sách tên.</span>
           <span class="lop-game-count">đầu giờ</span>
+        </button>
+        <button type="button" class="lop-test-card" id="lopGoiTenOpen">
+          <span class="lop-game-emoji">🎡</span>
+          <span class="lop-game-name">Gọi tên vui</span>
+          <span class="lop-game-desc">Vòng quay, đua vịt, đua bi, ống kính may mắn — hoặc chia cặp / chia nhóm ngẫu nhiên từ danh sách lớp.</span>
+          <span class="lop-game-count">công cụ</span>
+        </button>
+        <button type="button" class="lop-test-card" id="lopRongOpen">
+          <span class="lop-game-emoji">🐉</span>
+          <span class="lop-game-name">Rồng ngủ — giữ lớp yên lặng</span>
+          <span class="lop-game-desc">Micro máy chiếu đo độ ồn: lớp yên thì rồng ngủ và tích sao, ồn quá rồng thức dậy. Không ghi âm, không gửi đi đâu.</span>
+          <span class="lop-game-count">công cụ</span>
         </button>
         <button type="button" class="lop-test-card lop-the-card" id="lopTheOpen">
           <span class="lop-game-emoji">📇</span>
@@ -172,6 +190,30 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <span class="lop-game-name">Ô chữ</span>
           <span class="lop-game-desc">Web tự xếp từ vựng của bài thành ô chữ (chữ Hán hoặc pinyin), gợi ý bằng nghĩa tiếng Việt.</span>
           <span class="lop-game-count lop-count-vocab">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="luot">
+          <span class="lop-game-emoji">🎲</span>
+          <span class="lop-game-name">Game theo lượt</span>
+          <span class="lop-game-desc">Bàn cờ tung xúc xắc cho 2–4 tổ: đi tới ô nào trả lời câu hỏi ô đó, có ô thưởng, ô thử thách. Tổ nào về đích trước thắng.</span>
+          <span class="lop-game-count lop-count-mc">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="bay">
+          <span class="lop-game-emoji">🦋</span>
+          <span class="lop-game-name">Từ ngữ biết bay</span>
+          <span class="lop-game-desc">Các từ của câu bay khắp màn hình, học sinh bắt đúng thứ tự để ghép thành câu hoàn chỉnh.</span>
+          <span class="lop-game-count " id="lopCountBay">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="doantau">
+          <span class="lop-game-emoji">🚂</span>
+          <span class="lop-game-name">Đoàn tàu tri thức</span>
+          <span class="lop-game-desc">Kéo các toa nối đúng: đáp án ở đầu toa phải khớp câu hỏi ở toa trước. Nối xong tàu kéo còi chạy.</span>
+          <span class="lop-game-count lop-count-mc">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="doikhang">
+          <span class="lop-game-emoji">⚔️</span>
+          <span class="lop-game-name">Game đối kháng 1–1</span>
+          <span class="lop-game-desc">Học sinh quét mã QR, web ghép cặp ngẫu nhiên, mỗi cặp kéo co trên điện thoại riêng. Màn chiếu hiện tất cả các cặp trực tiếp.</span>
+          <span class="lop-game-count lop-count-mc">—</span>
         </button>
         <button type="button" class="lop-game-card" data-game="nhip">
           <span class="lop-game-emoji">📱</span>
@@ -351,6 +393,8 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       <button type="button" class="lop-bar-btn lop-bar-next" id="lopNextRound" hidden>Vòng tiếp ▶</button>
       <button type="button" class="lop-bar-btn" id="lopAward" title="Kết thúc và trao giải">🏁 Trao giải</button>
       <button type="button" class="lop-bar-btn" id="lopBuild">✋ Xây dựng bài</button>
+      <button type="button" class="lop-bar-btn" id="lopGoiTenBar" title="Gọi tên ngẫu nhiên">🎡 Gọi tên</button>
+      <button type="button" class="lop-bar-btn" id="lopRongBar" title="Rồng ngủ — đo độ ồn">🐉 Rồng</button>
       <button type="button" class="lop-bar-btn" id="lopDongHo" title="Đồng hồ đếm ngược vui">⏳ Đồng hồ</button>
       <button type="button" class="lop-bar-btn" id="lopCall" title="Đĩa bay gọi học sinh lên bảng trả bài">🛸 Gọi trả bài</button>
     </div>
@@ -427,6 +471,12 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/lop-ghep.js"></script>
 <script src="/js/lop-ochu.js"></script>
 <script src="/js/lop-dongho.js"></script>
+<script src="/js/lop-goiten.js"></script>
+<script src="/js/lop-luot.js"></script>
+<script src="/js/lop-rong.js"></script>
+<script src="/js/lop-bay.js"></script>
+<script src="/js/lop-doantau.js"></script>
+<script src="/js/lop-doikhang.js"></script>
 <script src="/js/lop.js"></script>
 </body>
 </html>

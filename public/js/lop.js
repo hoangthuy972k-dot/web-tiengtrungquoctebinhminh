@@ -194,6 +194,8 @@
     var total = m + s + n;
     $('#lopCountQuiz').textContent = m ? Math.min(10, m) + ' câu' : 'chọn bài';
     $('#lopCountThe').textContent = m ? m + ' câu' : 'câu tự do';
+    $('#lopCountBay').textContent = s ? s + ' câu' : 'chọn bài';
+    $('.lop-game-card[data-game="bay"]').disabled = s < 1;
     $('.lop-test-card[data-test="quiz"]').disabled = m < 1;
     $('#lopCountPaper').textContent = total ? total + ' câu' : 'chọn bài';
     $('.lop-test-card[data-test="paper"]').disabled = total < 1;
@@ -2912,6 +2914,10 @@
   function startGame(game) {
     if (game === 'nghieng') { moNghieng(); return; }
     if (game === 'chem' || game === 'theduc' || game === 'ngoisao') { moVanDong(game); return; }
+    if (game === 'luot' && window.LopLuot) { window.LopLuot.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
+    if (game === 'bay' && window.LopBay) { window.LopBay.mo({ cau: pickedSorts(), nhan: pickedLabel() }); return; }
+    if (game === 'doantau' && window.LopDoanTau) { window.LopDoanTau.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
+    if (game === 'doikhang' && window.LopDoiKhang) { window.LopDoiKhang.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
     if (game === 'zombie' && window.LopZombie) { window.LopZombie.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
     if (game === 'ghep' && window.LopGhep) { window.LopGhep.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
     if (game === 'ochu' && window.LopOChu) {
@@ -3203,15 +3209,16 @@
   var GAME_GROUPS = [
     { ten: '⚡ Khởi động nhanh — cả lớp cùng chơi', g: ['abc', 'zombie', 'listen', 'match', 'hv'] },
     { ten: '🤸 Vận động trước webcam', g: ['nghieng', 'chem', 'theduc', 'ngoisao'] },
-    { ten: '🏆 Đấu tổ kịch tính', g: ['tug', 'train', 'mine', 'ghep'] },
-    { ten: '📱 Học sinh dùng điện thoại', g: ['nhip'] },
+    { ten: '🏆 Đấu tổ kịch tính', g: ['tug', 'train', 'mine', 'ghep', 'luot'] },
+    { ten: '📱 Học sinh dùng điện thoại', g: ['nhip', 'doikhang'] },
     { ten: '📚 Ôn từ vựng', g: ['bingo', 'ochu', 'guess', 'tiles', 'hanzi', 'chain'] },
-    { ten: '🧩 Câu & ngữ pháp', g: ['errfix', 'sort', 'trans'] },
+    { ten: '🧩 Câu & ngữ pháp', g: ['errfix', 'sort', 'bay', 'doantau', 'trans'] },
     { ten: '🎤 Nói – viết', g: ['taboo', 'role', 'write'] }
   ];
   var GAME_TAGS = {
     abc: ['3–5′', 'cả lớp'], nghieng: ['5′', 'webcam', 'từng bạn'], chem: ['5′', 'webcam', 'từng bạn'], theduc: ['5′', 'webcam', 'vận động'], ngoisao: ['5′', 'webcam', '2 bạn đấu'],
-    zombie: ['3–5′', 'cả lớp'], ghep: ['10′', 'theo tổ'], ochu: ['5–10′', 'cả lớp / tổ'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
+    zombie: ['3–5′', 'cả lớp'], luot: ['10–15′', '2–4 tổ'], bay: ['5′', 'bảng tương tác'], doantau: ['5′', 'kéo thả'], doikhang: ['5–10′', 'quét mã QR', '1–1'],
+    ghep: ['10′', 'theo tổ'], ochu: ['5–10′', 'cả lớp / tổ'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
     bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
     errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],
     taboo: ['5′', 'nói'], role: ['5–7′', 'đóng vai'], write: ['5′', 'lên bảng'],
@@ -3347,6 +3354,12 @@
     $('#lopSound').addEventListener('click', toggleSound);
     $('#lopBuild').addEventListener('click', openBuild);
     $('#lopCall').addEventListener('click', function () { if (window.LopUfo) window.LopUfo.mo(); });
+    function moGoiTen() { if (window.LopGoiTen) window.LopGoiTen.mo(); }
+    function moRong(nho) { if (window.LopRong) window.LopRong.mo({ nho: nho }); }
+    $('#lopGoiTenOpen').addEventListener('click', moGoiTen);
+    $('#lopGoiTenBar').addEventListener('click', moGoiTen);
+    $('#lopRongOpen').addEventListener('click', function () { moRong(false); });
+    $('#lopRongBar').addEventListener('click', function () { moRong(true); });
     $('#lopDongHo').addEventListener('click', function () { if (window.LopDongHo) window.LopDongHo.mo({ giay: 60, nho: true }); });
     $('#lopUfoOpen').addEventListener('click', function () { if (window.LopUfo) window.LopUfo.mo(); });
     // The tra loi: dung cau A/B/C cua cac bai dang chon; chua chon bai thi la cau hoi tu do

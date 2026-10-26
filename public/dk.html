@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Đối kháng kéo co · Hi Hán 喜汉</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1a1446">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700&family=Be+Vietnam+Pro:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/dk.css">
+</head>
+<body>
+<main class="dk" id="dk">
+
+  <!-- Vao phong -->
+  <section class="dk-man" id="manVao">
+    <div class="dk-logo" aria-hidden="true">⚔️</div>
+    <h1 class="dk-tit">Đối kháng kéo co</h1>
+    <p class="dk-mo">Nhập mã phòng trên bảng và tên của em.</p>
+    <form class="dk-form" id="formVao" autocomplete="off">
+      <label for="oMa">Mã phòng</label>
+      <input id="oMa" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="123456" required>
+      <label for="oTen">Tên của em</label>
+      <input id="oTen" maxlength="20" placeholder="Ví dụ: Minh Anh" required>
+      <button type="submit" class="dk-nut" id="nutVao">Vào đấu ▶</button>
+      <p class="dk-loi" id="loiVao" role="alert"></p>
+    </form>
+  </section>
+
+  <!-- Cho ghep cap -->
+  <section class="dk-man" id="manCho" hidden>
+    <div class="dk-ten" id="tenCho"></div>
+    <div class="dk-cho-ic" aria-hidden="true">💪</div>
+    <h2 class="dk-tit" id="titCho">Em đã vào phòng!</h2>
+    <p class="dk-mo" id="moCho">Chờ cô ghép cặp và bắt đầu…</p>
+    <p class="dk-mo dk-nho" id="soCho"></p>
+  </section>
+
+  <!-- Dang dau -->
+  <section class="dk-man dk-man-dau" id="manDau" hidden>
+    <div class="dk-dau-tren">
+      <span class="dk-vong" id="dauVong"></span>
+      <span class="dk-gio" id="dauGio"></span>
+    </div>
+    <div class="dk-san" id="san">
+      <div class="dk-nguoi toi">
+        <span class="dk-av" aria-hidden="true">😎</span>
+        <b id="tenToi">Em</b>
+        <i id="keoToi">0</i>
+      </div>
+      <div class="dk-day" id="day" role="img" aria-label="Dây kéo co">
+        <span class="dk-day-vach" aria-hidden="true"></span>
+        <span class="dk-day-thung" aria-hidden="true"></span>
+        <span class="dk-day-co" id="dayCo" aria-hidden="true">🎀</span>
+      </div>
+      <div class="dk-nguoi ban">
+        <span class="dk-av" id="avBan" aria-hidden="true">😤</span>
+        <b id="tenBan"></b>
+        <i id="keoBan">0</i>
+      </div>
+    </div>
+    <div class="dk-nac" id="nac" aria-hidden="true"></div>
+    <div class="dk-vung">
+      <div class="dk-hoi" id="hoi">
+        <div class="dk-so" id="soCau"></div>
+        <div class="dk-cau" id="cauZh"></div>
+        <div class="dk-opts" id="opts"></div>
+      </div>
+      <div class="dk-het-cau" id="hetCau" hidden>
+        <div class="dk-cho-ic" aria-hidden="true">⏳</div>
+        <p class="dk-mo">Em đã làm hết câu hỏi — chờ kết quả trận nhé!</p>
+      </div>
+      <div class="dk-fx" id="fx" hidden>
+        <div class="dk-fx-ic" id="fxIc"></div>
+        <div class="dk-fx-t" id="fxT"></div>
+        <div class="dk-fx-dap" id="fxDap"></div>
+        <div class="dk-fx-khoa" id="fxKhoa"><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ket qua tran -->
+  <section class="dk-man dk-kq" id="manKq" hidden>
+    <div class="dk-kq-ic" id="kqIc"></div>
+    <h2 class="dk-tit" id="kqTit"></h2>
+    <p class="dk-mo" id="kqLy"></p>
+    <div class="dk-kq-so" id="kqSo"></div>
+    <p class="dk-mo" id="kqTong"></p>
+    <p class="dk-mo dk-nho">Chờ cô bắt đầu vòng mới…</p>
+  </section>
+
+  <!-- Ket thuc -->
+  <section class="dk-man" id="manHet" hidden>
+    <div class="dk-cho-ic" aria-hidden="true">🏁</div>
+    <h2 class="dk-tit">Kết thúc!</h2>
+    <div class="dk-kq-so" id="hetHang"></div>
+    <ol class="dk-bxh" id="hetBxh"></ol>
+    <button type="button" class="dk-nut dk-nut-phu" id="nutLai">Vào phòng khác</button>
+  </section>
+
+  <footer class="dk-chan" id="chan" hidden>
+    <span id="chanTen"></span>
+    <b id="chanThang">🏆 0</b>
+  </footer>
+</main>
+<script src="/js/dk.js"></script>
+</body>
+</html>

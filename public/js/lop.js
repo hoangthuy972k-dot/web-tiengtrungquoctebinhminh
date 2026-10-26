@@ -2280,6 +2280,22 @@
     window.open('/nghieng', '_blank');
   }
 
+  // Tro van dong truoc webcam (trang /van-dong, mo tab moi): cau A–D giu toi da 4 phuong an
+  function moVanDong(tro) {
+    var cau = shuffle(pickedMcs()).slice(0, 10).map(function (q) {
+      var sai = shuffle(q.options.map(function (_, i) { return i; }).filter(function (i) { return i !== q.answer; })).slice(0, 3);
+      var thu = shuffle(sai.concat([q.answer]));
+      return {
+        hoi: (q.pre || '') + (q.noBlank ? '' : '＿＿') + (q.post || ''), ctx: q.context || '', why: q.why || '',
+        opts: thu.map(function (i) { return q.options[i]; }), dung: thu.indexOf(q.answer), zhOpt: true,
+        docSau: q.noBlank ? '' : (q.pre || '') + q.options[q.answer] + (q.post || '')
+      };
+    });
+    if (!cau.length) return;
+    try { localStorage.setItem('hyv_vandong', JSON.stringify({ nguon: 'lop', nhan: pickedLabel(), tro: tro, cau: cau, luc: Date.now() })); } catch (e) { return; }
+    window.open('/van-dong?tro=' + tro, '_blank');
+  }
+
   /* ================= KIEM TRA DAU GIO =================
      Khac voi tro choi o cho CA LOP cung lam va co diem: hoc sinh viet vao vo
      (hoac lam de giay), xong thi chieu bang dap an len de doi vo cham cheo.  */
@@ -2895,6 +2911,13 @@
 
   function startGame(game) {
     if (game === 'nghieng') { moNghieng(); return; }
+    if (game === 'chem' || game === 'theduc' || game === 'ngoisao') { moVanDong(game); return; }
+    if (game === 'zombie' && window.LopZombie) { window.LopZombie.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
+    if (game === 'ghep' && window.LopGhep) { window.LopGhep.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
+    if (game === 'ochu' && window.LopOChu) {
+      loadPickedVocab().then(function (v) { window.LopOChu.mo({ vocab: v, nhan: pickedLabel() }); });
+      return;
+    }
     if (!VOCAB_GAMES[game]) {
       var n = game === 'abc' || MC_GAMES[game] ? pickedMcs().length : game === 'sort' ? pickedSorts().length : pickedJudges().length;
       if (!n || (game === 'errfix' && n < 3)) return;
@@ -3178,15 +3201,17 @@
 
   /* ---- sap xep lai man hinh chuan bi: nhom tro choi + nhan thoi luong / cach choi ---- */
   var GAME_GROUPS = [
-    { ten: '⚡ Khởi động nhanh — cả lớp cùng chơi', g: ['abc', 'nghieng', 'listen', 'match', 'hv'] },
-    { ten: '🏆 Đấu tổ kịch tính', g: ['tug', 'train', 'mine'] },
+    { ten: '⚡ Khởi động nhanh — cả lớp cùng chơi', g: ['abc', 'zombie', 'listen', 'match', 'hv'] },
+    { ten: '🤸 Vận động trước webcam', g: ['nghieng', 'chem', 'theduc', 'ngoisao'] },
+    { ten: '🏆 Đấu tổ kịch tính', g: ['tug', 'train', 'mine', 'ghep'] },
     { ten: '📱 Học sinh dùng điện thoại', g: ['nhip'] },
-    { ten: '📚 Ôn từ vựng', g: ['bingo', 'guess', 'tiles', 'hanzi', 'chain'] },
+    { ten: '📚 Ôn từ vựng', g: ['bingo', 'ochu', 'guess', 'tiles', 'hanzi', 'chain'] },
     { ten: '🧩 Câu & ngữ pháp', g: ['errfix', 'sort', 'trans'] },
     { ten: '🎤 Nói – viết', g: ['taboo', 'role', 'write'] }
   ];
   var GAME_TAGS = {
-    abc: ['3–5′', 'cả lớp'], nghieng: ['5′', 'webcam', 'từng bạn'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
+    abc: ['3–5′', 'cả lớp'], nghieng: ['5′', 'webcam', 'từng bạn'], chem: ['5′', 'webcam', 'từng bạn'], theduc: ['5′', 'webcam', 'vận động'], ngoisao: ['5′', 'webcam', '2 bạn đấu'],
+    zombie: ['3–5′', 'cả lớp'], ghep: ['10′', 'theo tổ'], ochu: ['5–10′', 'cả lớp / tổ'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
     bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
     errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],
     taboo: ['5′', 'nói'], role: ['5–7′', 'đóng vai'], write: ['5′', 'lên bảng'],
@@ -3322,6 +3347,7 @@
     $('#lopSound').addEventListener('click', toggleSound);
     $('#lopBuild').addEventListener('click', openBuild);
     $('#lopCall').addEventListener('click', function () { if (window.LopUfo) window.LopUfo.mo(); });
+    $('#lopDongHo').addEventListener('click', function () { if (window.LopDongHo) window.LopDongHo.mo({ giay: 60, nho: true }); });
     $('#lopUfoOpen').addEventListener('click', function () { if (window.LopUfo) window.LopUfo.mo(); });
     // The tra loi: dung cau A/B/C cua cac bai dang chon; chua chon bai thi la cau hoi tu do
     $('#lopTheOpen').addEventListener('click', function () {

@@ -9,6 +9,7 @@ Disallow: /lop
 Disallow: /choi
 Disallow: /quet
 Disallow: /nghieng
+Disallow: /van-dong
 Disallow: /hsk30
 
 Sitemap: https://hihanchinese.online/sitemap.xml

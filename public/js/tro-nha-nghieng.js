@@ -48,4 +48,43 @@
       return { dung: function () { /* khong co gi phai dung */ } };
     }
   });
+
+  /* Ba tro van dong truoc camera (trang /van-dong): cau 4 dap an tu tu vung,
+     xen ke nhin chu Han chon nghia / nhin nghia chon chu Han. Ky luc: hyv_tn_kl_vd_<tro>. */
+  function boCau4(vocab) {
+    return tron(vocab).slice(0, 12).map(function (v, i) {
+      var khac = tron(vocab.filter(function (x) { return x.zh !== v.zh && x.vn !== v.vn; })).slice(0, 3);
+      if (khac.length < 1) return null;
+      var ds = tron([v].concat(khac));
+      if (i % 2 === 0) {
+        return { hoi: v.zh, hoiZh: true, py: v.py, opts: ds.map(function (x) { return x.vn; }), dung: ds.indexOf(v),
+          docTruoc: v.zh, why: v.zh + ' (' + v.py + ') = ' + v.vn };
+      }
+      return { hoi: v.vn, opts: ds.map(function (x) { return x.zh; }), dung: ds.indexOf(v), zhOpt: true,
+        docSau: v.zh, why: v.vn + ' = ' + v.zh + ' (' + v.py + ')' };
+    }).filter(Boolean);
+  }
+  [
+    { tro: 'chem', ten: 'Chém hoa quả', emoji: '🍉', chu: '切', nen: 'linear-gradient(160deg,#7ed957 0%,#2f8a57 100%)',
+      moTa: 'Bật camera, vung ngón tay để chém quả (hoặc chọc bóng) mang đáp án đúng.' },
+    { tro: 'theduc', ten: 'Thể dục ABC', emoji: '🤸', chu: '动', nen: 'linear-gradient(160deg,#6bc5ff 0%,#2b6fb8 100%)',
+      moTa: 'Mỗi đáp án là một động tác — giơ tay, dang tay… làm đúng động tác để trả lời.' },
+    { tro: 'ngoisao', ten: 'Cuộc đua ngôi sao', emoji: '⭐', chu: '星', nen: 'linear-gradient(160deg,#ffd166 0%,#e08a1e 100%)',
+      moTa: 'Chơi hai người trước camera: giơ 1–4 ngón tay để chọn A–D, ai đúng trước lấy sao.' }
+  ].forEach(function (g) {
+    T.dangKy({
+      key: 'vd_' + g.tro, ten: g.ten, emoji: g.emoji, chu: g.chu, nen: g.nen, moTa: g.moTa, canToiThieu: 4,
+      mo: function (hop, o) {
+        var cau = boCau4(o.vocab || []);
+        try { localStorage.setItem('hyv_vandong', JSON.stringify({ nguon: 'nha', nhan: '', tro: g.tro, cau: cau, luc: Date.now() })); } catch (e) { /* bo qua */ }
+        hop.innerHTML =
+          '<div class="tn-nghieng-mo">' +
+            '<div class="tn-nghieng-ic" aria-hidden="true">' + g.emoji + '</div>' +
+            '<p><b>' + cau.length + ' câu</b> đã sẵn sàng. Trò chơi cần <b>camera</b> và mở ở trang riêng.</p>' +
+            '<a class="tn-nghieng-go" href="/van-dong?tro=' + g.tro + '">▶ Mở ' + g.ten + '</a>' +
+          '</div>';
+        return { dung: function () { /* khong co gi phai dung */ } };
+      }
+    });
+  });
 })();

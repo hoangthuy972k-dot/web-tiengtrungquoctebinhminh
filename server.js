@@ -56,7 +56,7 @@ app.use(
     },
   })
 );
-// Quiz nghieng dau (/nghieng) nhan dien khuon mat bang MediaPipe nap tu CDN: rieng trang
+// Quiz nghieng dau (/nghieng) va tro van dong (/van-dong) nhan dien mat / tay / dang nguoi bang MediaPipe nap tu CDN: rieng hai trang
 // nay duoc phep tai script + wasm tu cdn.jsdelivr.net va mo hinh tu storage.googleapis.com.
 const CSP_NGHIENG = [
   "default-src 'self'",
@@ -74,7 +74,7 @@ const CSP_NGHIENG = [
   "worker-src 'self' blob:",
 ].join('; ');
 app.use((req, res, next) => {
-  if (req.path === '/nghieng' || req.path === '/nghieng.html') res.setHeader('Content-Security-Policy', CSP_NGHIENG);
+  if (/^\/(nghieng|van-dong)(\.html)?$/.test(req.path)) res.setHeader('Content-Security-Policy', CSP_NGHIENG);
   next();
 });
 app.use(compression());
@@ -183,7 +183,7 @@ function phienBanHopLe(v, filePath, stat) {
 // sinh khong hoi AI trong luc thi, va bo qua trang quan tri.
 const WIDGET_TAGS = '<link rel="stylesheet" href="/css/widgets.css" />\n<script src="/js/widgets.js" defer></script>\n';
 // Trang lop.html la man hinh chieu len lop — khong gan nut noi cho do roi mat.
-const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html|lop\.html|choi\.html|quet\.html|nghieng\.html|hsk30\.html)$/;
+const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html|lop\.html|choi\.html|quet\.html|nghieng\.html|van-dong\.html|hsk30\.html)$/;
 
 function sendVersionedHtml(res, filePath) {
   let html = fs.readFileSync(filePath, 'utf8');
@@ -200,7 +200,7 @@ function sendVersionedHtml(res, filePath) {
 // CDN cua Hostinger phuc vu thang cac duong dan co duoi .html nen chung khong di
 // qua day, khong duoc dong dau ?v= va trinh duyet giu mai ban CSS/JS cu. Cac trang
 // dung thuong xuyen co them duong dan khong duoi file de luon qua Node.
-const CLEAN_PAGES = { '/lop': 'lop.html', '/choi': 'choi.html', '/quet': 'quet.html', '/nghieng': 'nghieng.html', '/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html' };
+const CLEAN_PAGES = { '/lop': 'lop.html', '/choi': 'choi.html', '/quet': 'quet.html', '/nghieng': 'nghieng.html', '/van-dong': 'van-dong.html', '/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html' };
 
 // Trang Phat am da bo: ai con giu duong dan cu thi dua ve trang chu
 app.get(['/phat-am', '/phat-am.html'], (req, res) => res.redirect(301, '/'));

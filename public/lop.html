@@ -10,6 +10,10 @@
 <link rel="stylesheet" href="/css/lop.css">
 <link rel="stylesheet" href="/css/lop-ufo.css">
 <link rel="stylesheet" href="/css/lop-the.css">
+<link rel="stylesheet" href="/css/lop-zombie.css">
+<link rel="stylesheet" href="/css/lop-ghep.css">
+<link rel="stylesheet" href="/css/lop-ochu.css">
+<link rel="stylesheet" href="/css/lop-dongho.css">
 <script>
 // CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
 // va trinh duyet giu mai ban CSS/JS cu. Chuyen sang /lop de luon qua may chu.
@@ -132,6 +136,42 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <span class="lop-game-name">Quiz nghiêng đầu</span>
           <span class="lop-game-desc">Mời từng bạn lên trước webcam: nghiêng đầu trái/phải (hoặc cười / há miệng) để chọn 1 trong 2 đáp án. Có đếm giờ, âm thanh, điểm và chuỗi đúng.</span>
           <span class="lop-game-count lop-count-mc">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="chem">
+          <span class="lop-game-emoji">🍉</span>
+          <span class="lop-game-name">Chém hoa quả / Bắt bóng</span>
+          <span class="lop-game-desc">Học sinh vung tay trước webcam để chém quả (hoặc chọc bóng) mang đáp án đúng.</span>
+          <span class="lop-game-count lop-count-mc">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="theduc">
+          <span class="lop-game-emoji">🤸</span>
+          <span class="lop-game-name">Thể dục ABC</span>
+          <span class="lop-game-desc">Mỗi đáp án là một động tác: giơ hai tay, giơ tay phải, giơ tay trái, dang tay. Làm đúng động tác để trả lời.</span>
+          <span class="lop-game-count lop-count-mc">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="ngoisao">
+          <span class="lop-game-emoji">⭐</span>
+          <span class="lop-game-name">Cuộc đua ngôi sao</span>
+          <span class="lop-game-desc">Hai bạn đấu nhau trước webcam, giơ 1–4 ngón tay để chọn A–D. Ai đúng trước lấy sao.</span>
+          <span class="lop-game-count lop-count-mc">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="zombie">
+          <span class="lop-game-emoji">🧟</span>
+          <span class="lop-game-name">Chặn Zombie</span>
+          <span class="lop-game-desc">Zombie mang đáp án tiến về hàng rào, cả lớp hô đáp án, cô bấm bắn zombie đúng trước khi chúng tràn qua.</span>
+          <span class="lop-game-count lop-count-mc">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="ghep">
+          <span class="lop-game-emoji">🧩</span>
+          <span class="lop-game-name">Lật mảnh ghép</span>
+          <span class="lop-game-desc">Các tổ chọn ô, trả lời đúng thì lật mảnh ghép. Đoán đúng bức tranh văn hoá Trung Quốc để ghi điểm lớn.</span>
+          <span class="lop-game-count lop-count-mc">—</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="ochu">
+          <span class="lop-game-emoji">🔠</span>
+          <span class="lop-game-name">Ô chữ</span>
+          <span class="lop-game-desc">Web tự xếp từ vựng của bài thành ô chữ (chữ Hán hoặc pinyin), gợi ý bằng nghĩa tiếng Việt.</span>
+          <span class="lop-game-count lop-count-vocab">—</span>
         </button>
         <button type="button" class="lop-game-card" data-game="nhip">
           <span class="lop-game-emoji">📱</span>
@@ -311,6 +351,7 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       <button type="button" class="lop-bar-btn lop-bar-next" id="lopNextRound" hidden>Vòng tiếp ▶</button>
       <button type="button" class="lop-bar-btn" id="lopAward" title="Kết thúc và trao giải">🏁 Trao giải</button>
       <button type="button" class="lop-bar-btn" id="lopBuild">✋ Xây dựng bài</button>
+      <button type="button" class="lop-bar-btn" id="lopDongHo" title="Đồng hồ đếm ngược vui">⏳ Đồng hồ</button>
       <button type="button" class="lop-bar-btn" id="lopCall" title="Đĩa bay gọi học sinh lên bảng trả bài">🛸 Gọi trả bài</button>
     </div>
   </header>
@@ -381,6 +422,11 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/lop-ufo.js"></script>
 <script src="/js/the-ma.js"></script>
 <script src="/js/lop-the.js"></script>
+<script src="/js/lop-zombie.js"></script>
+<script src="/js/lop-ghep-tranh.js"></script>
+<script src="/js/lop-ghep.js"></script>
+<script src="/js/lop-ochu.js"></script>
+<script src="/js/lop-dongho.js"></script>
 <script src="/js/lop.js"></script>
 </body>
 </html>

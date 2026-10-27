@@ -8350,6 +8350,10 @@ body.pinyin-hidden .py-inline {
 /* Diem mieng — mau ngoc rieng, de phan biet voi diem thi (do) va diem
    xay dung bai (vang), vi ba cot nay nam canh nhau.                        */
 .ab-table td.ab-s.is-oral, .ab-table tr.is-me td.ab-s.is-oral { color: var(--fg-teal-600); background: var(--color-teal-50); }
+/* So sao: cong khai voi ca lop; 3 ban nhieu sao nhat co huy chuong */
+.ab-table td.ab-s.is-star, .ab-table tr.is-me td.ab-s.is-star { color: var(--fg-gold-600); background: var(--color-gold-50); white-space: nowrap; }
+.ab-sao i { display: block; margin-top: 2px; }
+.ab-huy { margin-right: 4px; }
 @media (max-width: 640px) {
   .ab-s { min-width: 56px; font-size: 0.85rem; }
 }

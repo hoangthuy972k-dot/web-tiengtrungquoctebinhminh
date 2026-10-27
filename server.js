@@ -1536,6 +1536,23 @@ async function loadAllStars() {
     dayTasks: r.day_tasks || 0, dayGame: r.day_game || 0, week: r.week || '', weekStars: r.week_stars || 0,
     prevWeek: r.prev_week || '', prevWeekStars: r.prev_week_stars || 0, updatedMs: Number(r.updated_ms) }));
 }
+// So sao cua mot nhom hoc sinh (bang lop / so diem): { userId: { total, week } }
+async function loadStarsFor(userIds) {
+  const ids = (userIds || []).filter(Boolean);
+  const out = {};
+  if (!ids.length) return out;
+  const week = vnWeekKey();
+  let rows;
+  if (!USE_DB) {
+    const all = readJsonFile(STARS_FILE) || {};
+    rows = ids.filter((id) => all[id]).map((id) => Object.assign({ userId: id }, blankStar(), all[id]));
+  } else {
+    const [r] = await dbPool.query('SELECT user_id, total, week, week_stars FROM stars WHERE user_id IN (?)', [ids]);
+    rows = r.map((x) => ({ userId: x.user_id, total: x.total, week: x.week || '', weekStars: x.week_stars || 0 }));
+  }
+  rows.forEach((x) => { out[x.userId] = { total: x.total || 0, week: x.week === week ? (x.weekStars || 0) : 0 }; });
+  return out;
+}
 // Tuan tinh tu thu Hai (gio VN); khoa = ngay thu Hai dau tuan
 function vnWeekKey(ms) {
   const d = new Date((ms || Date.now()) + VN_OFFSET_MS);
@@ -3504,6 +3521,7 @@ async function classBoard(st, classId, meId) {
   const linked = new Set(roster.map((r) => r.userId).filter(Boolean));
   const nameById = await loadUserNames();
   const done = await loadPartDone(memberIds);
+  const sao = await loadStarsFor(memberIds);
   const now = Date.now();
   function marks(userId) {
     if (!userId || !st.members[userId] || st.members[userId].classId !== classId) return null;
@@ -3530,7 +3548,9 @@ async function classBoard(st, classId, meId) {
     return { chuyenCan, build: p.build, mid: p.mid, final: p.final,
       mieng: o.mieng, miengSo: o.so, miengLan: o.lan };
   }
-  const rows = roster.map((r) => ({ name: r.name, me: !!meId && r.userId === meId, joined: !!(r.userId && st.members[r.userId] && st.members[r.userId].classId === classId), marks: marks(r.userId), diem: diem(r) }));
+  // So sao cong khai voi ca lop (bang xep hang sao von da cong khai)
+  const saoCua = (u) => (u && st.members[u] && st.members[u].classId === classId && sao[u]) || { total: 0, week: 0 };
+  const rows = roster.map((r) => ({ name: r.name, me: !!meId && r.userId === meId, joined: !!(r.userId && st.members[r.userId] && st.members[r.userId].classId === classId), marks: marks(r.userId), diem: diem(r), sao: saoCua(r.userId) }));
   // Hoc sinh da vao lop nhung chua co ten trong danh sach (hoac lop chua co danh sach)
   memberIds.filter((u) => !linked.has(u) && nameById[u]).sort((a, b) => nameById[a].localeCompare(nameById[b], 'vi'))
     .forEach((u) => {
@@ -3539,7 +3559,7 @@ async function classBoard(st, classId, meId) {
       // nhung chuyen can van tinh duoc tu bai da lam.
       const cc = m ? m.filter((x) => x.s === 'done' || x.s === 'late').length : 0;
       rows.push({
-        name: nameById[u], me: u === meId, joined: true, extra: roster.length > 0, marks: m,
+        name: nameById[u], me: u === meId, joined: true, extra: roster.length > 0, marks: m, sao: saoCua(u),
         diem: u === meId ? { chuyenCan: cc, build: 0, mid: null, final: null, mieng: null, miengSo: 0, miengLan: null } : { chuyenCan: cc, rieng: true }
       });
     });
@@ -3999,6 +4019,7 @@ app.get('/api/admin/points', requireAdmin, asyncRoute(async (req, res) => {
   const points = await readClassPoints();
   const tong = sumPoints(points, classId);
   const mieng = sumOral(await readOralChecks(), classId);
+  const sao = await loadStarsFor(memberIds);
   const now = Date.now();
 
   const out = roster.map((r, i) => {
@@ -4019,7 +4040,8 @@ app.get('/api/admin/points', requireAdmin, asyncRoute(async (req, res) => {
       joined: !!d,
       chuyenCan, tongBai: list.length,
       build: p.build, mid: p.mid, final: p.final,
-      mieng: o.mieng, miengSo: o.so, miengLan: o.lan
+      mieng: o.mieng, miengSo: o.so, miengLan: o.lan,
+      sao: (d && sao[r.userId]) || { total: 0, week: 0 }
     };
   });
   res.json({ classes, classId, sessions: list.length, roster: out });

@@ -17264,7 +17264,16 @@
      Chuyen can tu dong theo so bai da lam; Xay dung do thay/co cong tay o
      che do lop hoc; Mieng la diem goi len bang dau gio (trung binh cac lan);
      Giua ki / Cuoi ki do thay/co nhap o trang bao cao. */
-  function boardScoreCells(r, soBuoi) {
+  // O sao: tong sao + sao tuan nay; 3 ban nhieu sao nhat lop co huy chuong
+  var BOARD_HUY = ['🥇', '🥈', '🥉'];
+  function boardStarCell(r, hang) {
+    var s = r.sao || { total: 0, week: 0 };
+    if (!r.joined) return '<td class="ab-s ab-sao is-out">—</td>';
+    return '<td class="ab-s ab-sao' + (s.total > 0 ? ' is-star' : '') + '" title="' + s.total + ' sao tích luỹ · tuần này +' + s.week + '">' +
+      (hang >= 0 && hang < 3 && s.total > 0 ? '<span class="ab-huy" aria-label="Hạng ' + (hang + 1) + ' về sao trong lớp">' + BOARD_HUY[hang] + '</span>' : '') +
+      '⭐ ' + s.total + (s.week > 0 ? '<i>+' + s.week + ' tuần này</i>' : '') + '</td>';
+  }
+  function boardScoreCells(r, soBuoi, oSao) {
     var d = r.diem || {};
     var cc = d.chuyenCan || 0;
     var xd = d.build || 0;
@@ -17273,6 +17282,7 @@
     }
     var chuyenCan = o(soBuoi ? cc + '<i>/' + soBuoi + '</i>' : '—', cc > 0 ? 'is-ok' : '', 'Đã hoàn thành ' + cc + '/' + soBuoi + ' bài được giao');
     // Ban khac: may chu khong gui diem, chi co tien do lam bai
+    chuyenCan += oSao || '';
     if (d.rieng) return chuyenCan + '<td class="ab-s is-private" colspan="4" title="Điểm của mỗi bạn chỉ bạn ấy xem được">🔒 riêng</td>';
     return chuyenCan +
       o(xd > 0 ? '+' + xd : '—', xd > 0 ? 'is-plus' : '', xd > 0 ? 'Được cộng ' + xd + ' điểm xây dựng bài' : 'Chưa có điểm xây dựng bài') +
@@ -17296,6 +17306,9 @@
       }).length;
     });
     var joined = b.rows.filter(function (r) { return r.joined; }).length;
+    // Xep hang sao trong lop (bang nhau cung hang)
+    var saoDs = b.rows.map(function (r) { return r.joined && r.sao ? r.sao.total : 0; }).sort(function (x, y) { return y - x; });
+    function hangSao(r) { return r.joined && r.sao ? saoDs.indexOf(r.sao.total) : -1; }
     var head = '<tr><th class="ab-name">Học sinh <small>(' + joined + '/' + b.rows.length + ' đã vào lớp)</small></th>' +
       ses.map(function (s, i) {
         var info = lessonByUrl(s.lessonUrl);
@@ -17303,6 +17316,7 @@
           '<small>' + counts[i] + '/' + b.rows.length + '</small></th>';
       }).join('') +
       '<th class="ab-sep" title="Mỗi bài tập làm xong được +1">Chuyên cần<small>/' + ses.length + '</small></th>' +
+      '<th title="Sao tích luỹ khi học và chơi trên web — cả lớp đều xem được">⭐ Sao<small>tích luỹ</small></th>' +
       '<th title="Thầy/cô cộng khi em giơ tay xây dựng bài">Xây dựng<small>điểm</small></th>' +
       '<th title="Điểm những lần được gọi lên bảng kiểm tra đầu giờ — lấy trung bình">Miệng<small>/10</small></th>' +
       '<th>Giữa kì<small>/10</small></th>' +
@@ -17322,14 +17336,14 @@
           var nhan = diem || m[1];
           var chuThich = m[2] + (diem ? ' · đúng ' + diem + ' câu' : '');
           return '<td class="ab-c ' + m[0] + (diem ? ' has-score' : '') + '" title="' + chuThich + '">' + nhan + '</td>';
-        }).join('') + boardScoreCells(r, ses.length) + '</tr>';
+        }).join('') + boardScoreCells(r, ses.length, boardStarCell(r, hangSao(r))) + '</tr>';
     }).join('');
     return (ses.length ? '' : '<p class="assign-empty">Thầy cô chưa giao bài nào. Khi có bài, cột Buổi 1, Buổi 2… sẽ hiện ở đây.</p>') +
       '<div class="ab-wrap"><table class="ab-table"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>' +
       '<p class="ab-hint">↔ Kéo ngang bảng để xem các buổi khác.</p>' +
       '<p class="ab-legend"><span class="ab-c is-done">✓</span> Đã làm <span class="ab-c is-late">✓</span> Nộp muộn · Ô trống: chưa làm · ' +
         'Số trong ô là <b>số câu đúng / tổng số câu</b></p>' +
-      '<p class="ab-legend">🔒 Điểm số chỉ hiện ở dòng của em. Các bạn khác chỉ thấy em đã làm bài hay chưa.</p>';
+      '<p class="ab-legend">🔒 Điểm số chỉ hiện ở dòng của em. Các bạn khác chỉ thấy em đã làm bài hay chưa và số ⭐ sao.</p>';
   }
 
   function renderAssignCard() {

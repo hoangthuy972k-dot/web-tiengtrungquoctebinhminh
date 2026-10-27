@@ -148,6 +148,8 @@
         '<td class="dm-no">' + s.no + '</td>' +
         '<td class="dm-name">' + esc(s.name) + (s.joined ? '' : ' <small class="dm-out">chưa vào lớp</small>') + '</td>' +
         '<td class="dm-auto">' + s.chuyenCan + '<i>/' + s.tongBai + '</i></td>' +
+        '<td class="dm-auto dm-sao" title="Tuần này +' + ((s.sao && s.sao.week) || 0) + ' sao">' +
+          (s.joined ? '⭐ ' + ((s.sao && s.sao.total) || 0) + (s.sao && s.sao.week ? ' <i>+' + s.sao.week + '</i>' : '') : '—') + '</td>' +
         '<td class="dm-auto' + (s.build > 0 ? ' is-plus' : '') + '">' + (s.build > 0 ? '+' + s.build : '—') + '</td>' +
         '<td class="dm-auto' + (s.mieng != null ? ' is-oral' : '') + '" title="' +
           (s.mieng == null ? 'Chưa gọi lên bảng lần nào'
@@ -165,7 +167,7 @@
         '<b>Miệng</b> là trung bình các lần thầy/cô gọi em lên bảng đầu giờ ở Chế độ lớp học. ' +
         'Hai cột kiểm tra thì thầy/cô gõ vào đây, gõ xong bấm ra ngoài là tự lưu.</p>' +
       '<div class="admin-table-wrap"><table class="admin-table dm-table">' +
-        '<thead><tr><th>#</th><th>Học sinh</th><th>Chuyên cần</th><th>Xây dựng</th><th>Miệng</th><th>Giữa kì</th><th>Cuối kì</th></tr></thead>' +
+        '<thead><tr><th>#</th><th>Học sinh</th><th>Chuyên cần</th><th title="Sao tích luỹ · số nhỏ là sao tuần này">⭐ Sao</th><th>Xây dựng</th><th>Miệng</th><th>Giữa kì</th><th>Cuối kì</th></tr></thead>' +
         '<tbody>' + rows + '</tbody>' +
       '</table></div>' +
       '<p class="tc-hint" id="dmSaved"></p>' +

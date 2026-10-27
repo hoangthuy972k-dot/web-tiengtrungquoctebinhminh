@@ -1153,3 +1153,57 @@ var listenData = [
      {q:'Câu nào đúng với đoạn nghe?',opts:['Người nói là học sinh','Người nói là giáo viên','Người nói là người Mỹ'],ans:1},
    ]},
 ];
+
+// Sach bai tap bai 3 (Doc + Chu Han, khong pinyin)
+var wbData = { sections: [
+  { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+    { type: 'mocktest',
+      note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài viết chữ theo thứ tự nét (Chữ Hán – Phần 2) không chấm được trên máy, hãy luyện viết vào vở.',
+      listening: [],
+      reading: [
+        { n: 13, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-3-wb/q13.jpg', prompt: '中国人', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '中国人: người Trung Quốc. Tranh là hai người phụ nữ phương Tây đang uống trà trò chuyện → Sai.' },
+        { n: 14, img: '/images/hsk1-bai-3-wb/q14.jpg', prompt: '老师', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '老师: giáo viên. Tranh là các em học sinh ngồi trong lớp (学生) → Sai.' },
+        { n: 15, img: '/images/hsk1-bai-3-wb/q15.jpg', prompt: '你好', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '你好: xin chào. Tranh hai người bắt tay chào nhau → Đúng.' },
+        { n: 16, img: '/images/hsk1-bai-3-wb/q16.jpg', prompt: '再见', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '再见: tạm biệt. Tranh cậu bé đeo ba lô quay lại vẫy tay chào ra về → Đúng.' },
+        { n: 17, img: '/images/hsk1-bai-3-wb/q17.jpg', prompt: '学生', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '学生: học sinh. Tranh cô giáo đang viết lên bảng, dạy học (老师) → Sai.' },
+        { n: 18, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+          { key: 'A', text: '不是，我是中国人。' },
+          { key: 'B', text: '我不是学生，我是老师。' },
+          { key: 'C', text: '你好，我叫大卫。' },
+          { key: 'D', text: '是，我是老师。' },
+          { key: 'E', text: '我叫李心。' },
+          { key: 'F', text: '好的，谢谢！' }
+        ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你叫什么名字？', answer: 'E', vn: 'Bạn tên là gì? — E: Tôi tên là Lý Tâm. (Hỏi tên bằng 叫什么名字 → trả lời 我叫…)' },
+        { n: 19, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '您是老师吗？', answer: 'D', vn: 'Ông/bà là giáo viên phải không? — D: Vâng, tôi là giáo viên. (Câu hỏi 是…吗 → trả lời 是 hoặc 不是)' },
+        { n: 20, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你好，我叫李月。', answer: 'C', vn: 'Xin chào, tôi tên là Lý Nguyệt. — C: Xin chào, tôi tên là David. (Chào lại 你好 và giới thiệu tên mình)' },
+        { n: 21, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你是美国人吗？', answer: 'A', vn: 'Bạn là người Mỹ phải không? — A: Không phải, tôi là người Trung Quốc.' },
+        { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你是学生吗？', answer: 'B', vn: 'Bạn là học sinh phải không? — B: Tôi không phải học sinh, tôi là giáo viên.' },
+        { n: 23, part: 'Phần 3 · Chọn từ điền vào chỗ trống', bank: [
+          { key: 'A', text: '什么' },
+          { key: 'B', text: '是' },
+          { key: 'C', text: '不' },
+          { key: 'D', text: '名字' },
+          { key: 'E', text: '吗' }
+        ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我（　）是中国人，我是美国人。', answer: 'C', vn: 'Tôi không phải người Trung Quốc, tôi là người Mỹ. — Phủ định 是 bằng 不: 不是.' },
+        { n: 24, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '您是老师（　）？', answer: 'E', vn: 'Ông/bà là giáo viên phải không? — Câu hỏi có/không → thêm 吗 cuối câu.' },
+        { n: 25, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '他叫（　）？', answer: 'A', vn: 'Anh ấy tên là gì? — 叫什么: tên là gì (giống 你叫什么名字？).' },
+        { n: 26, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '李月（　）中国人，她是老师。', answer: 'B', vn: 'Lý Nguyệt là người Trung Quốc, cô ấy là giáo viên. — A 是 B: A là B.' },
+        { n: 27, bank: [
+          { key: 'F', text: '老师' },
+          { key: 'G', text: '学生' },
+          { key: 'H', text: '中国' },
+          { key: 'I', text: '美国' }
+        ], letters: ['F', 'G', 'H', 'I'], prompt: '大卫不是老师，他是（　）。', answer: 'G', vn: 'David không phải giáo viên, anh ấy là học sinh. — Không phải 老师 thì là 学生.' },
+        { n: 28, letters: ['F', 'G', 'H', 'I'], prompt: '（　），谢谢您！', answer: 'F', vn: 'Thưa thầy/cô, cảm ơn thầy/cô! — Gọi 老师 ở đầu câu; dùng 您 để tỏ sự kính trọng.' },
+        { n: 29, letters: ['F', 'G', 'H', 'I'], prompt: '我不是中国人，我是（　）人。', answer: 'I', vn: 'Tôi không phải người Trung Quốc, tôi là người Mỹ. — Đã nói “không phải 中国人” nên chọn 美国 (美国人: người Mỹ).' },
+        { n: 30, letters: ['F', 'G', 'H', 'I'], prompt: '你们好，你们是（　）学生吗？', answer: 'H', vn: 'Chào các bạn, các bạn là học sinh Trung Quốc phải không? — 中国学生: học sinh Trung Quốc (美国 đã dùng ở câu 29).' }
+      ],
+      writing: [
+        { n: '1a', part: 'Chữ Hán · Phần 1 · Chữ nào có nét cho sẵn?', prompt: 'Chữ nào dưới đây có nét ngang gập móc 横折钩 (㇆)?', options: [{ key: 'A', text: '人' }, { key: 'B', text: '门' }, { key: 'C', text: '心' }, { key: 'D', text: '中' }], answer: 'B', vn: '门: nét thứ ba là nét ngang gập móc (㇆) bên phải. 人, 心 không có nét này; 中 chỉ có nét ngang gập 横折, không có móc.' },
+        { n: '1b', prompt: 'Chữ nào dưới đây có nét ngang gập móc 横折钩 (㇆)?', options: [{ key: 'A', text: '月' }, { key: 'B', text: '人' }, { key: 'C', text: '中' }, { key: 'D', text: '心' }], answer: 'A', vn: '月: nét thứ hai là nét ngang gập móc (㇆). 人, 中, 心 không có nét này.' },
+        { n: '2a', prompt: 'Chữ nào dưới đây có nét móc nằm 卧钩 (㇃)?', options: [{ key: 'A', text: '门' }, { key: 'B', text: '人' }, { key: 'C', text: '心' }, { key: 'D', text: '月' }], answer: 'C', vn: '心: nét thứ hai là nét móc nằm (㇃), cong như cái chảo rồi móc lên. 门, 人, 月 không có nét này.' },
+        { n: '2b', prompt: 'Chữ nào dưới đây có nét móc nằm 卧钩 (㇃)?', options: [{ key: 'A', text: '你' }, { key: 'B', text: '们' }, { key: 'C', text: '中' }, { key: 'D', text: '您' }], answer: 'D', vn: '您 = 你 + 心; bộ 心 ở dưới có nét móc nằm (㇃). 你, 们, 中 không có nét này.' }
+      ]
+    }
+  ]}
+] };

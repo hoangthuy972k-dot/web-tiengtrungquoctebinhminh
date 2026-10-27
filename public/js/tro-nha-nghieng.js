@@ -20,11 +20,11 @@
       if (!khac) return null;
       var dung = Math.random() < 0.5 ? 0 : 1;
       if (i % 2 === 0) {
-        return { hoi: v.zh, hoiZh: true, py: v.py, trai: dung === 0 ? v.vn : khac.vn, phai: dung === 0 ? khac.vn : v.vn,
-          dung: dung, docTruoc: v.zh, why: v.zh + ' (' + v.py + ') = ' + v.vn };
+        return { hoi: v.zh, hoiZh: true, trai: dung === 0 ? v.vn : khac.vn, phai: dung === 0 ? khac.vn : v.vn,
+          dung: dung, docTruoc: v.zh, why: v.zh + ' = ' + v.vn };
       }
       return { hoi: v.vn, trai: dung === 0 ? v.zh : khac.zh, phai: dung === 0 ? khac.zh : v.zh, zhOpt: true,
-        dung: dung, docSau: v.zh, why: v.vn + ' = ' + v.zh + ' (' + v.py + ')' };
+        dung: dung, docSau: v.zh, why: v.vn + ' = ' + v.zh + '' };
     }).filter(Boolean);
   }
 
@@ -57,11 +57,11 @@
       if (khac.length < 1) return null;
       var ds = tron([v].concat(khac));
       if (i % 2 === 0) {
-        return { hoi: v.zh, hoiZh: true, py: v.py, opts: ds.map(function (x) { return x.vn; }), dung: ds.indexOf(v),
-          docTruoc: v.zh, why: v.zh + ' (' + v.py + ') = ' + v.vn };
+        return { hoi: v.zh, hoiZh: true, opts: ds.map(function (x) { return x.vn; }), dung: ds.indexOf(v),
+          docTruoc: v.zh, why: v.zh + ' = ' + v.vn };
       }
       return { hoi: v.vn, opts: ds.map(function (x) { return x.zh; }), dung: ds.indexOf(v), zhOpt: true,
-        docSau: v.zh, why: v.vn + ' = ' + v.zh + ' (' + v.py + ')' };
+        docSau: v.zh, why: v.vn + ' = ' + v.zh + '' };
     }).filter(Boolean);
   }
   [

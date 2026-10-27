@@ -1529,3 +1529,59 @@ var listenData = [
      {q:'Món ăn giá bao nhiêu?',opts:['3 đồng','14 đồng','40 đồng'],ans:2},
    ]},
 ];
+
+// Sach bai tap bai 8 (Doc + Chu Han, khong pinyin)
+var wbData = { sections: [
+  { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+    { type: 'mocktest',
+      note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài viết chữ theo thứ tự nét (Chữ Hán – Phần 2) không chấm được trên máy, hãy luyện viết vào vở.',
+      listening: [],
+      reading: [
+        { n: 13, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-8-wb/q13.jpg', prompt: '茶', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '茶: trà. Tranh là tách cà phê sữa vẽ hình trái tim → Sai.' },
+        { n: 14, img: '/images/hsk1-bai-8-wb/q14.jpg', prompt: '吃饭', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '吃饭: ăn cơm. Tranh mọi người đang dùng đũa gắp thức ăn → Đúng.' },
+        { n: 15, img: '/images/hsk1-bai-8-wb/q15.jpg', prompt: '米饭', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '米饭: cơm (gạo nấu chín). Tranh là đĩa rau thịt xào, không phải cơm → Sai.' },
+        { n: 16, img: '/images/hsk1-bai-8-wb/q16.jpg', prompt: '四个学生', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '四个学生: bốn học sinh. Tranh có bốn bạn đang cùng học bài → Đúng.' },
+        { n: 17, img: '/images/hsk1-bai-8-wb/q17.jpg', prompt: '喝茶', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '喝茶: uống trà. Tranh bốn người đang nâng cốc bia → Sai.' },
+        { n: 18, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+          { key: 'A', text: '我喝茶，谢谢。' },
+          { key: 'B', text: '这个菜18块。' },
+          { key: 'C', text: '25块。' },
+          { key: 'D', text: '我想去商店买个杯子。' },
+          { key: 'E', text: '不去，明天我去朋友家。' },
+          { key: 'F', text: '好的，谢谢！' }
+        ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '请问，这个杯子多少钱？', answer: 'C', vn: 'Xin hỏi, cái cốc này bao nhiêu tiền? — C: 25 đồng. (B cũng là giá tiền nhưng nói về 菜 – món ăn)' },
+        { n: 19, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你想喝什么？', answer: 'A', vn: 'Bạn muốn uống gì? — A: Tôi uống trà, cảm ơn.' },
+        { n: 20, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你好，这个菜多少钱？', answer: 'B', vn: 'Chào bạn, món này bao nhiêu tiền? — B: Món này 18 đồng.' },
+        { n: 21, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '下午你想去哪儿？', answer: 'D', vn: 'Buổi chiều bạn muốn đi đâu? — D: Tôi muốn đến cửa hàng mua một cái cốc.' },
+        { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '明天你去学校吗？', answer: 'E', vn: 'Ngày mai bạn có đến trường không? — E: Không đi, mai tôi đến nhà bạn. (去…吗 → trả lời 不去)' },
+        { n: 23, part: 'Phần 3 · Chọn từ điền vào chỗ trống', bank: [
+          { key: 'A', text: '吃' },
+          { key: 'B', text: '喝' },
+          { key: 'C', text: '买' },
+          { key: 'D', text: '名字' },
+          { key: 'E', text: '做' }
+        ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我想（　）米饭。', answer: 'A', vn: 'Tôi muốn ăn cơm. — 吃米饭: ăn cơm (想 + động từ: muốn làm gì).' },
+        { n: 24, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '您好，您（　）茶吗？', answer: 'B', vn: 'Chào ông/bà, ông/bà uống trà không ạ? — 喝茶: uống trà.' },
+        { n: 25, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我妈妈会（　）中国菜。', answer: 'E', vn: 'Mẹ tôi biết nấu món Trung Quốc. — 做中国菜: nấu món Trung Quốc (会 + động từ, bài 6).' },
+        { n: 26, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你想去商店（　）什么？', answer: 'C', vn: 'Bạn muốn đến cửa hàng mua gì? — 去商店买东西: đến cửa hàng mua đồ.' },
+        { n: 27, bank: [
+          { key: 'F', text: '几' },
+          { key: 'G', text: '多少' }
+        ], letters: ['F', 'G'], prompt: '你家有（　）口人？', answer: 'F', vn: 'Nhà bạn có mấy người? — 几口人: mấy người (số nhỏ, 几 + lượng từ 口).' },
+        { n: 28, letters: ['F', 'G'], prompt: '你们学校有（　）学生？', answer: 'G', vn: 'Trường các bạn có bao nhiêu học sinh? — Số lượng lớn, không có lượng từ → dùng 多少.' },
+        { n: 29, letters: ['F', 'G'], prompt: '你好，这个杯子（　）钱？', answer: 'G', vn: 'Chào bạn, cái cốc này bao nhiêu tiền? — Hỏi giá: 多少钱.' },
+        { n: 30, letters: ['F', 'G'], prompt: 'A：你有（　）个中国朋友？\nB：两个。', answer: 'F', vn: 'A: Bạn có mấy người bạn Trung Quốc? B: Hai người. — Số nhỏ (dưới 10) và có lượng từ 个 → dùng 几.' }
+      ],
+      writing: [
+        { n: '1a', part: 'Chữ Hán · Phần 1 · Tìm chữ có bộ cho sẵn (A 吃 · B 唱 · C 钱 · D 针 · E 叫 · F 喝 · G 钉 · H 钓)', prompt: 'Chữ nào dưới đây có bộ 钅 (bộ kim – kim loại)?', options: [{ key: 'A', text: '吃' }, { key: 'B', text: '钱' }, { key: 'C', text: '唱' }, { key: 'D', text: '叫' }], answer: 'B', vn: '钱 (tiền) có bộ 钅 — liên quan đến kim loại (tiền xu). 吃, 唱, 叫 có bộ 口.' },
+        { n: '1b', prompt: 'Chữ nào dưới đây có bộ 钅 (bộ kim – kim loại)?', options: [{ key: 'A', text: '针' }, { key: 'B', text: '喝' }, { key: 'C', text: '吃' }, { key: 'D', text: '唱' }], answer: 'A', vn: '针 (cây kim) có bộ 钅. 喝, 吃, 唱 có bộ 口.' },
+        { n: '1c', prompt: 'Chữ nào dưới đây có bộ 钅 (bộ kim – kim loại)?', options: [{ key: 'A', text: '叫' }, { key: 'B', text: '喝' }, { key: 'C', text: '吃' }, { key: 'D', text: '钉' }], answer: 'D', vn: '钉 (cái đinh) có bộ 钅. 叫, 喝, 吃 có bộ 口.' },
+        { n: '1d', prompt: 'Chữ nào dưới đây có bộ 钅 (bộ kim – kim loại)?', options: [{ key: 'A', text: '唱' }, { key: 'B', text: '叫' }, { key: 'C', text: '钓' }, { key: 'D', text: '喝' }], answer: 'C', vn: '钓 (câu cá – lưỡi câu bằng kim loại) có bộ 钅. 唱, 叫, 喝 có bộ 口.' },
+        { n: '2a', prompt: 'Chữ nào dưới đây có bộ 口 (bộ khẩu – cái miệng)?', options: [{ key: 'A', text: '钱' }, { key: 'B', text: '针' }, { key: 'C', text: '吃' }, { key: 'D', text: '钓' }], answer: 'C', vn: '吃 (ăn) có bộ 口 — hoạt động của miệng. 钱, 针, 钓 có bộ 钅.' },
+        { n: '2b', prompt: 'Chữ nào dưới đây có bộ 口 (bộ khẩu – cái miệng)?', options: [{ key: 'A', text: '唱' }, { key: 'B', text: '钉' }, { key: 'C', text: '钱' }, { key: 'D', text: '针' }], answer: 'A', vn: '唱 (hát) có bộ 口. 钉, 钱, 针 có bộ 钅.' },
+        { n: '2c', prompt: 'Chữ nào dưới đây có bộ 口 (bộ khẩu – cái miệng)?', options: [{ key: 'A', text: '钓' }, { key: 'B', text: '叫' }, { key: 'C', text: '钉' }, { key: 'D', text: '钱' }], answer: 'B', vn: '叫 (gọi, tên là) có bộ 口. 钓, 钉, 钱 có bộ 钅.' },
+        { n: '2d', prompt: 'Chữ nào dưới đây có bộ 口 (bộ khẩu – cái miệng)?', options: [{ key: 'A', text: '针' }, { key: 'B', text: '钓' }, { key: 'C', text: '钉' }, { key: 'D', text: '喝' }], answer: 'D', vn: '喝 (uống) có bộ 口. 针, 钓, 钉 có bộ 钅.' }
+      ]
+    }
+  ]}
+] };

@@ -1071,3 +1071,67 @@ var listenData = [
      {q:'Số điện thoại của David là bao nhiêu?',opts:['83405126','83405162','83045126'],ans:0},
    ]},
 ];
+
+// Sach bai tap (khong pinyin): Doc + Chu Han; Nghe / Ngu am can file nghe nen bo qua
+var wbData = {
+  sections: [
+    { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+      { type: 'mocktest',
+        note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài tập viết chữ theo thứ tự nét và so sánh chữ gần giống hãy luyện trực tiếp trong sách.',
+        listening: [],
+        reading: [
+          { n: 16, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-13-wb/q16.jpg', prompt: '水', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '水: nước. Tranh là một cốc sữa (牛奶), không phải nước → Sai.' },
+          { n: 17, img: '/images/hsk1-bai-13-wb/q17.jpg', prompt: '菜', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '菜: rau, món ăn. Tranh là rau củ (ớt chuông, tỏi, cà chua…) → Đúng.' },
+          { n: 18, img: '/images/hsk1-bai-13-wb/q18.jpg', prompt: '学校', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '学校: trường học. Tranh là các tòa nhà của một ngôi trường → Đúng.' },
+          { n: 19, img: '/images/hsk1-bai-13-wb/q19.jpg', prompt: '家', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '家: nhà. Tranh là phòng bệnh có giường bệnh (ở 医院 bệnh viện) → Sai.' },
+          { n: 20, img: '/images/hsk1-bai-13-wb/q20.jpg', prompt: '电脑', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '电脑: máy tính. Tranh là một chiếc máy tính xách tay → Đúng.' },
+          { n: 21, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+            { key: 'A', text: '在下雨呢。' },
+            { key: 'B', text: '我和朋友在看书呢。' },
+            { key: 'C', text: '我没看电视，我在学习呢。' },
+            { key: 'D', text: '在家吃吧。' },
+            { key: 'E', text: '我喜欢喝水。' },
+            { key: 'F', text: '好的，谢谢！' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '今天我们去哪儿吃饭？', answer: 'D', vn: 'Hôm nay chúng ta đi đâu ăn cơm? — D: Ăn ở nhà đi.' },
+          { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '昨天下午你在家做什么呢？', answer: 'B', vn: 'Chiều hôm qua bạn ở nhà làm gì thế? — B: Tôi và bạn đang đọc sách. (在…呢: đang làm gì.)' },
+          { n: 23, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你喜欢喝茶吗？', answer: 'E', vn: 'Bạn có thích uống trà không? — E: Tôi thích uống nước.' },
+          { n: 24, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '今天天气怎么样？', answer: 'A', vn: 'Thời tiết hôm nay thế nào? — A: Đang mưa đấy.' },
+          { n: 25, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你在看电视吗？', answer: 'C', vn: 'Bạn đang xem ti vi à? — C: Tôi không xem ti vi, tôi đang học.' },
+          { n: 26, part: 'Phần 3 · Chọn từ thích hợp điền vào chỗ trống', bank: [
+            { key: 'A', text: '在' },
+            { key: 'B', text: '呢' },
+            { key: 'C', text: '没' },
+            { key: 'D', text: '名字' },
+            { key: 'E', text: '也' },
+            { key: 'F', text: '吧' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我（　）打电话呢。', answer: 'A', vn: 'Tôi đang gọi điện thoại. — 在 + động từ + 呢: đang làm gì.' },
+          { n: 27, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '爸爸（　）看电视，他在工作呢。', answer: 'C', vn: 'Bố không xem ti vi, bố đang làm việc. — 没 + động từ: không (làm), phủ định việc đã/đang xảy ra.' },
+          { n: 28, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我家的小狗在吃饭（　）。', answer: 'B', vn: 'Con chó nhà tôi đang ăn. — 在…呢: đang…; 呢 đứng cuối câu.' },
+          { n: 29, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '中国菜很好吃，我们做中国菜（　）。', answer: 'F', vn: 'Món Trung Quốc rất ngon, chúng mình nấu món Trung Quốc đi. — 吧 cuối câu: đề nghị.' },
+          { n: 30, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我会写汉字，我妈妈（　）会写汉字。', answer: 'E', vn: 'Tôi biết viết chữ Hán, mẹ tôi cũng biết viết chữ Hán. — 也: cũng (đứng trước động từ).' },
+          { n: 31, part: 'Phần 3 (tiếp) · Chọn từ G–K điền vào chỗ trống', bank: [
+            { key: 'G', text: '喜欢' },
+            { key: 'H', text: '看' },
+            { key: 'I', text: '做' },
+            { key: 'J', text: '电话' },
+            { key: 'K', text: '会' }
+          ], letters: ['G', 'H', 'I', 'J', 'K'], prompt: '我想学习（　）中国菜。', answer: 'I', vn: 'Tôi muốn học nấu món Trung Quốc. — 做菜: nấu món ăn.' },
+          { n: 32, letters: ['G', 'H', 'I', 'J', 'K'], prompt: '我没有你的（　）。', answer: 'J', vn: 'Tôi không có số điện thoại của bạn. — 你的电话: điện thoại (số điện thoại) của bạn.' },
+          { n: 33, letters: ['G', 'H', 'I', 'J', 'K'], prompt: '我不（　）看电影。', answer: 'G', vn: 'Tôi không thích xem phim. — 喜欢 + động từ: thích làm gì.' },
+          { n: 34, letters: ['G', 'H', 'I', 'J', 'K'], prompt: '我昨天下午四点在家（　）电视呢。', answer: 'H', vn: '4 giờ chiều hôm qua tôi đang xem ti vi ở nhà. — 看电视: xem ti vi.' },
+          { n: 35, letters: ['G', 'H', 'I', 'J', 'K'], prompt: '我不（　）写汉字，我很想学。', answer: 'K', vn: 'Tôi không biết viết chữ Hán, tôi rất muốn học. — 会: biết (làm gì nhờ học mà có).' }
+        ],
+        writing: [
+          { n: '2a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 日 (bộ Nhật)?', prompt: '日', options: [{ key: 'A', text: '着' }, { key: 'B', text: '明' }, { key: 'C', text: '睡' }, { key: 'D', text: '眼' }], answer: 'B', vn: '明 (sáng; 明天: ngày mai) có bộ 日 (bộ Nhật). Các chữ có bộ 日 trong bài: 明, 晴, 时, 昨, 晚.' },
+          { n: '2b', prompt: '日', options: [{ key: 'A', text: '晴' }, { key: 'B', text: '睡' }, { key: 'C', text: '眼' }, { key: 'D', text: '着' }], answer: 'A', vn: '晴 (trời nắng) có bộ 日 (bộ Nhật). Các chữ có bộ 日 trong bài: 明, 晴, 时, 昨, 晚.' },
+          { n: '2c', prompt: '日', options: [{ key: 'A', text: '眼' }, { key: 'B', text: '着' }, { key: 'C', text: '睡' }, { key: 'D', text: '时' }], answer: 'D', vn: '时 (thời gian; 时候) có bộ 日 (bộ Nhật). Các chữ có bộ 日 trong bài: 明, 晴, 时, 昨, 晚.' },
+          { n: '2d', prompt: '日', options: [{ key: 'A', text: '着' }, { key: 'B', text: '睡' }, { key: 'C', text: '昨' }, { key: 'D', text: '眼' }], answer: 'C', vn: '昨 (昨天: hôm qua) có bộ 日 (bộ Nhật). Các chữ có bộ 日 trong bài: 明, 晴, 时, 昨, 晚.' },
+          { n: '2e', prompt: '日', options: [{ key: 'A', text: '睡' }, { key: 'B', text: '晚' }, { key: 'C', text: '眼' }, { key: 'D', text: '着' }], answer: 'B', vn: '晚 (tối) có bộ 日 (bộ Nhật). Các chữ có bộ 日 trong bài: 明, 晴, 时, 昨, 晚.' },
+          { n: '3a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 目 (bộ Mục)?', prompt: '目', options: [{ key: 'A', text: '明' }, { key: 'B', text: '着' }, { key: 'C', text: '晴' }, { key: 'D', text: '时' }], answer: 'B', vn: '着 (trợ từ; 睡着: ngủ say) có bộ 目 (bộ Mục). Các chữ có bộ 目 trong bài: 着, 睡, 眼.' },
+          { n: '3b', prompt: '目', options: [{ key: 'A', text: '睡' }, { key: 'B', text: '晴' }, { key: 'C', text: '时' }, { key: 'D', text: '昨' }], answer: 'A', vn: '睡 (ngủ) có bộ 目 (bộ Mục). Các chữ có bộ 目 trong bài: 着, 睡, 眼.' },
+          { n: '3c', prompt: '目', options: [{ key: 'A', text: '时' }, { key: 'B', text: '昨' }, { key: 'C', text: '晚' }, { key: 'D', text: '眼' }], answer: 'D', vn: '眼 (mắt) có bộ 目 (bộ Mục). Các chữ có bộ 目 trong bài: 着, 睡, 眼.' }
+        ]
+      }
+    ] }
+  ]
+};

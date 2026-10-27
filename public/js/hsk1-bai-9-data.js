@@ -1367,3 +1367,101 @@ var listenData = [
      {q:'Người thứ nhất tìm cái gì?',opts:['Cái ghế','Cái cốc','Quyển sách'],ans:1},
    ]},
 ];
+
+// ===== Sach bai tap (phan Doc + Chu Han, khong pinyin) =====
+var wbData = { sections: [
+  { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+    { type: 'mocktest',
+      note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài tập chép chữ theo thứ tự nét (在, 子, 工) hãy luyện trong vở.',
+      listening: [],
+      reading: [
+        { n: 13, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-9-wb/q13.jpg', prompt: '茶',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B',
+          vn: '茶 là trà. Tranh là một cốc nước cam (bên cạnh quả cam), không phải trà → Sai.' },
+        { n: 14, img: '/images/hsk1-bai-9-wb/q14.jpg', prompt: '老师',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B',
+          vn: '老师 là thầy/cô giáo. Tranh là nữ bác sĩ đeo ống nghe (医生), không phải giáo viên → Sai.' },
+        { n: 15, img: '/images/hsk1-bai-9-wb/q15.jpg', prompt: '在医院',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A',
+          vn: '在医院: ở bệnh viện. Tranh là y tá chăm sóc bệnh nhân nằm trên giường bệnh → Đúng.' },
+        { n: 16, img: '/images/hsk1-bai-9-wb/q16.jpg', prompt: '爸爸、儿子',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A',
+          vn: '爸爸、儿子: bố và con trai. Tranh là người bố cõng cậu con trai nhỏ → Đúng.' },
+        { n: 17, img: '/images/hsk1-bai-9-wb/q17.jpg', prompt: '杯子',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B',
+          vn: '杯子 là cái cốc. Tranh là cái ghế (椅子) → Sai.' },
+
+        { n: 18, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+            { key: 'A', text: '我是学生，我不工作。' },
+            { key: 'B', text: '不在，李老师在医院。' },
+            { key: 'C', text: '在那儿，椅子下面。' },
+            { key: 'D', text: '她是老师，在学校工作。' },
+            { key: 'E', text: '杯子在这儿。' },
+            { key: 'F', text: '好的，谢谢！' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你在哪儿工作？', answer: 'A',
+          vn: 'Bạn làm việc ở đâu? → A: Tôi là học sinh, tôi không đi làm.' },
+        { n: 19, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我的小狗在哪儿？', answer: 'C',
+          vn: 'Con chó nhỏ của tôi ở đâu? → C: Ở đằng kia, dưới cái ghế. (hỏi vị trí 在哪儿 → trả lời 在那儿 + vị trí)' },
+        { n: 20, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我的杯子呢？', answer: 'E',
+          vn: 'Cái cốc của tôi đâu? → E: Cái cốc ở đây. (danh từ + 呢？ hỏi đồ vật ở đâu)' },
+        { n: 21, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你女儿在哪儿工作？', answer: 'D',
+          vn: 'Con gái bạn làm việc ở đâu? → D: Nó là giáo viên, làm việc ở trường học. (女儿 → dùng 她)' },
+        { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '请问，李老师在吗？', answer: 'B',
+          vn: 'Xin hỏi, thầy Lý có ở đây không? → B: Không có ở đây, thầy Lý ở bệnh viện.' },
+
+        { n: 23, part: 'Phần 3 · Chọn từ thích hợp điền vào chỗ trống', bank: [
+            { key: 'A', text: '在' },
+            { key: 'B', text: '哪儿' },
+            { key: 'C', text: '呢' },
+            { key: 'D', text: '名字' },
+            { key: 'E', text: '什么' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你爸爸做（　）工作？', answer: 'E',
+          vn: 'Bố bạn làm công việc gì? — 做什么工作: làm nghề gì.' },
+        { n: 24, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你好，请问王老师在（　）？', answer: 'B',
+          vn: 'Chào bạn, xin hỏi thầy Vương ở đâu? — 在哪儿: ở đâu.' },
+        { n: 25, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我儿子是医生，（　）医院工作。', answer: 'A',
+          vn: 'Con trai tôi là bác sĩ, làm việc ở bệnh viện. — 在 + nơi chốn + 工作: làm việc ở đâu.' },
+        { n: 26, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你的猫（　）？', answer: 'C',
+          vn: 'Con mèo của bạn đâu? — danh từ + 呢？: hỏi người/vật đang ở đâu.' },
+        { n: 27, part: 'Phần 3 (tiếp) · Chọn từ thích hợp điền vào chỗ trống', bank: [
+            { key: 'F', text: '家' },
+            { key: 'G', text: '学校' },
+            { key: 'H', text: '医院' },
+            { key: 'I', text: '商店' }
+          ], letters: ['F', 'G', 'H', 'I'], prompt: '你（　）有几口人？', answer: 'F',
+          vn: 'Nhà bạn có mấy người? — 你家有几口人？' },
+        { n: 28, letters: ['F', 'G', 'H', 'I'], prompt: '我想去（　）买一个杯子。', answer: 'I',
+          vn: 'Tôi muốn đến cửa hàng mua một cái cốc. — mua đồ thì đến 商店 (cửa hàng).' },
+        { n: 29, letters: ['F', 'G', 'H', 'I'], prompt: '明天下午我想去（　）看书。', answer: 'G',
+          vn: 'Chiều mai tôi muốn đến trường đọc sách. — 去学校看书.' },
+        { n: 30, letters: ['F', 'G', 'H', 'I'], prompt: '他爸爸是医生，在（　）工作。', answer: 'H',
+          vn: 'Bố anh ấy là bác sĩ, làm việc ở bệnh viện. — 医生 → 医院.' }
+      ],
+      writing: [
+        { n: '1a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 辶?', prompt: 'Chữ nào có bộ 辶?', options: [
+            { key: 'A', text: '问' }, { key: 'B', text: '道' }, { key: 'C', text: '闪' }, { key: 'D', text: '间' }
+          ], answer: 'B', vn: '道 (con đường) có bộ 辶 (bộ sước – liên quan đến đi lại). 问, 闪, 间 đều có bộ 门.' },
+        { n: '1b', prompt: 'Chữ nào có bộ 辶?', options: [
+            { key: 'A', text: '边' }, { key: 'B', text: '闷' }, { key: 'C', text: '问' }, { key: 'D', text: '闪' }
+          ], answer: 'A', vn: '边 (bên, cạnh) có bộ 辶. 闷, 问, 闪 đều có bộ 门.' },
+        { n: '1c', prompt: 'Chữ nào có bộ 辶?', options: [
+            { key: 'A', text: '间' }, { key: 'B', text: '闪' }, { key: 'C', text: '送' }, { key: 'D', text: '闷' }
+          ], answer: 'C', vn: '送 (tặng, tiễn) có bộ 辶. 间, 闪, 闷 đều có bộ 门.' },
+        { n: '1d', prompt: 'Chữ nào có bộ 辶?', options: [
+            { key: 'A', text: '闷' }, { key: 'B', text: '间' }, { key: 'C', text: '问' }, { key: 'D', text: '这' }
+          ], answer: 'D', vn: '这 (này, đây) có bộ 辶. 闷, 间, 问 đều có bộ 门. → Các chữ có bộ 辶: 道, 边, 送, 这.' },
+        { n: '2a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 门?', prompt: 'Chữ nào có bộ 门?', options: [
+            { key: 'A', text: '道' }, { key: 'B', text: '这' }, { key: 'C', text: '问' }, { key: 'D', text: '送' }
+          ], answer: 'C', vn: '问 (hỏi – 请问) có bộ 门 (bộ môn – cái cửa) bao bên ngoài. 道, 这, 送 có bộ 辶.' },
+        { n: '2b', prompt: 'Chữ nào có bộ 门?', options: [
+            { key: 'A', text: '闪' }, { key: 'B', text: '边' }, { key: 'C', text: '送' }, { key: 'D', text: '道' }
+          ], answer: 'A', vn: '闪 (lóe, chớp) có bộ 门. 边, 送, 道 có bộ 辶.' },
+        { n: '2c', prompt: 'Chữ nào có bộ 门?', options: [
+            { key: 'A', text: '这' }, { key: 'B', text: '间' }, { key: 'C', text: '道' }, { key: 'D', text: '边' }
+          ], answer: 'B', vn: '间 (gian, khoảng) có bộ 门. 这, 道, 边 có bộ 辶.' },
+        { n: '2d', prompt: 'Chữ nào có bộ 门?', options: [
+            { key: 'A', text: '送' }, { key: 'B', text: '边' }, { key: 'C', text: '这' }, { key: 'D', text: '闷' }
+          ], answer: 'D', vn: '闷 (ngột ngạt, buồn bực) có bộ 门. → Các chữ có bộ 门: 问, 闪, 间, 闷.' }
+      ] }
+  ] }
+] };

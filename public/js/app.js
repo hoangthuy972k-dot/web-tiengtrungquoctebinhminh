@@ -938,7 +938,7 @@
       var steps = ps.filter(function (s) { return pathStepDone(lesson, s); }).length;
       return Math.round(steps / ps.length * 100);
     }
-    var tabIds = LEVEL_HUB_TABS[levelId] || [];
+    var tabIds = hubTabsOf(levelId, lesson);
     if (!tabIds.length) return 0;
     var done = tabIds.filter(function (t) { return isHubTileDone(lesson, t); }).length;
     return Math.round((done / tabIds.length) * 100);
@@ -2489,8 +2489,16 @@
   };
 
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
+  // Bai chua co sach bai tap (HSK1 bai 1–2 toan luyen pinyin nen khong dua len) -> an o 'Sach bai tap'
+  var KHONG_SBT = { hsk1: [1, 2] };
+  function hubTabsOf(levelId, lesson) {
+    var ds = LEVEL_HUB_TABS[levelId] || [];
+    var bo = KHONG_SBT[levelId];
+    if (!bo || !lesson || bo.indexOf(Number(lesson.number)) < 0) return ds;
+    return ds.filter(function (k) { return k !== 'workbook'; });
+  }
   var LEVEL_HUB_TABS = {
-    hsk1: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'hanviet'],
+    hsk1: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook', 'hanviet'],
     hsk1v3: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook', 'hanviet'],
     hsk2v3: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook', 'hanviet'],
     hsk3v3: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook', 'hanviet'],
@@ -2541,7 +2549,7 @@
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
-    var tabIds = LEVEL_HUB_TABS[levelId] || [];
+    var tabIds = hubTabsOf(levelId, lesson);
     var doneCount = tabIds.filter(function (t) { return isHubTileDone(lesson, t); }).length;
     var pct = tabIds.length ? Math.round((doneCount / tabIds.length) * 100) : 0;
     $('#hubProgressFill').style.width = pct + '%';
@@ -2733,9 +2741,9 @@
   }
 
   // Luyen them = cac o cua cap do khong nam trong 7 buoc (flash, nghe, dich, sach bai tap...)
-  function pathExtras(levelId) {
+  function pathExtras(levelId, lesson) {
     var inPath = pathStepsOfLevel(levelId).map(function (s) { return s.key; });
-    return (LEVEL_HUB_TABS[levelId] || []).filter(function (k) { return inPath.indexOf(k) === -1 && HUB_TAB_DEFS[k]; });
+    return hubTabsOf(levelId, lesson).filter(function (k) { return inPath.indexOf(k) === -1 && HUB_TAB_DEFS[k]; });
   }
 
   // Buoc ma bai khong co noi dung (vd HSK 1 (3.0) bai 1 la bai mo dau, khong co ngu phap)
@@ -2843,7 +2851,7 @@
     });
 
     // Luyen them + che do giao vien + ket qua
-    var extra = pathExtras(levelId).map(function (k) {
+    var extra = pathExtras(levelId, lesson).map(function (k) {
       var d = HUB_TAB_DEFS[k];
       return '<button type="button" class="lp-extra-btn" data-path-extra="' + k + '">' + uiIcon(k) + d.label + (isHubTileDone(lesson, k) ? ' ✓' : '') + '</button>';
     }).join('');
@@ -4023,6 +4031,9 @@
   function showWorkbookPractice(levelId, lesson) {
     currentHubLevelId = levelId;
     currentHubLesson = lesson;
+    // Ten sach bai tap theo cap (truoc day co dinh 'New HSK Course 1' cho moi cap)
+    var WB_TEN = { hsk1: 'Giáo trình chuẩn HSK 1 – Sách bài tập', hsk1v3: 'New HSK Course 1 Workbook', hsk2v3: 'New HSK Course 2 Workbook', hsk3v3: 'New HSK Course 3 Workbook' };
+    if ($('#wbSubtitle')) $('#wbSubtitle').textContent = 'Nội dung từ ' + (WB_TEN[levelId] || 'sách bài tập');
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
@@ -4520,6 +4531,8 @@
   }
 
   function mtQuestionHtml(q, qKey) {
+    // q.img: tranh rieng cua cau (vd HSK1 doc: nhin tranh, doan tu dung hay sai)
+    var imgHtml = q.img ? '<img class="mt-q-img" src="' + q.img + '" alt="" loading="lazy">' : '';
     var promptHtml = q.prompt
       ? '<div class="mt-q-prompt">' + (q.promptPy ? '<div class="mt-q-py">' + q.promptPy.replace(/\n/g, '<br>') + '</div>' : '') + '<div class="hanzi">' + q.prompt.replace(/\n/g, '<br>') + '</div></div>'
       : '';
@@ -4537,7 +4550,7 @@
       : '';
     return mtPartHtml(q) + '<div class="mt-q" data-mt-qkey="' + qKey + '">' +
       '<div class="mt-q-num">' + q.n + '</div>' +
-      '<div class="mt-q-body">' + promptHtml + optsHtml +
+      '<div class="mt-q-body">' + imgHtml + promptHtml + optsHtml +
       pendingTag + explainHtml +
       '</div></div>';
   }
@@ -4549,10 +4562,10 @@
     var writingHtml = writing.map(function (q) { return mtQuestionHtml(q, 'W' + q.n); }).join('');
     var hasPending = mtAll(block).some(function (q) { return !q.answer; });
     return '<div class="wb-block mt-wrap" data-wbq-base="' + wbQid(si, bi, '') + '">' +
-      '<div class="mt-part-title">🎧 Nghe (câu ' + mtRange(block.listening) + ')</div>' +
+      (block.listening.length ? '<div class="mt-part-title">🎧 Nghe (câu ' + mtRange(block.listening) + ')</div>' : '') +
       (hasPending ? '<p class="wb-note">Phần này chưa có đáp án chính thức từ sách, tạm thời chưa chấm điểm — vẫn có thể chọn để luyện tập.</p>' : '') +
       (block.note ? '<p class="wb-note">' + block.note + '</p>' : '') +
-      '<div class="mt-q-list">' + listeningHtml + '</div>' +
+      (block.listening.length ? '<div class="mt-q-list">' + listeningHtml + '</div>' : '') +
       '<div class="mt-part-title">📖 Đọc (câu ' + mtRange(block.reading) + ')</div>' +
       '<div class="mt-q-list">' + readingHtml + '</div>' +
       (writing.length ? '<div class="mt-part-title">✍️ Viết (câu ' + mtRange(writing) + ')</div><div class="mt-q-list">' + writingHtml + '</div>' : '') +

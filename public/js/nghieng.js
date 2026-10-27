@@ -262,7 +262,7 @@
     $('nhChuoi').textContent = S.chuoi >= 2 ? '🔥 ' + S.chuoi + ' câu đúng liên tiếp' : '';
     $('nhHoi').innerHTML = (c.ctx ? '<div class="nh-ctx">' + esc(c.ctx) + '</div>' : '') +
       '<div class="nh-hoi-chu' + (c.hoiZh ? ' is-zh' : '') + '">' + esc(c.hoi).replace('＿＿', '<span class="nh-trong">＿＿</span>') + '</div>' +
-      (c.py ? '<div class="nh-py">' + esc(c.py) + '</div>' : '');
+      '';
     [['nhTrai', c.trai], ['nhPhai', c.phai]].forEach(function (x) {
       var el = $(x[0]);
       el.className = 'nh-opt ' + (x[0] === 'nhTrai' ? 'trai' : 'phai') + (c.zhOpt ? ' is-zh' : '');

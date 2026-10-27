@@ -1230,3 +1230,101 @@ var listenData = [
      {q:'Tạ Bằng làm việc ở đâu?',opts:['Bệnh viện','Cửa hàng','Trường học'],ans:2},
    ]},
 ];
+
+// ===== Sach bai tap (phan Doc + Chu Han, khong pinyin) =====
+var wbData = { sections: [
+  { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+    { type: 'mocktest',
+      note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài tập chép chữ theo thứ tự nét (上, 下, 本, 末) hãy luyện trong vở.',
+      listening: [],
+      reading: [
+        { n: 13, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-10-wb/q13.jpg', prompt: '工作',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A',
+          vn: '工作: làm việc. Tranh là nhân viên cửa hàng mặc đồng phục, đeo bảng tên đang làm việc (nhận thẻ của khách) → Đúng.' },
+        { n: 14, img: '/images/hsk1-bai-10-wb/q14.jpg', prompt: '电脑',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B',
+          vn: '电脑 là máy tính. Tranh là một quyển sách (书) → Sai.' },
+        { n: 15, img: '/images/hsk1-bai-10-wb/q15.jpg', prompt: '请喝茶',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A',
+          vn: '请喝茶: mời uống trà. Tranh là ấm trà và hai chén trà đã rót sẵn → Đúng.' },
+        { n: 16, img: '/images/hsk1-bai-10-wb/q16.jpg', prompt: '在学校',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B',
+          vn: '在学校: ở trường học. Tranh là cô gái đứng giữa các kệ hàng trong siêu thị/cửa hàng (商店) → Sai.' },
+        { n: 17, img: '/images/hsk1-bai-10-wb/q17.jpg', prompt: '桌子上',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A',
+          vn: '桌子上: trên bàn. Tranh là cốc, máy tính bảng, giấy và bút đặt trên mặt bàn → Đúng.' },
+
+        { n: 18, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+            { key: 'A', text: '在那儿，桌子里面。' },
+            { key: 'B', text: '好，请坐。' },
+            { key: 'C', text: '一个电脑和一本书。' },
+            { key: 'D', text: '她叫李月，是我的汉语老师。' },
+            { key: 'E', text: '不是，我后面那个人是李朋。' },
+            { key: 'F', text: '好的，谢谢！' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你好，我能坐这儿吗？', answer: 'B',
+          vn: 'Chào bạn, tôi có thể ngồi đây không? → B: Được, mời ngồi.' },
+        { n: 19, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你的杯子呢？', answer: 'A',
+          vn: 'Cái cốc của bạn đâu? → A: Ở đằng kia, trong cái bàn.' },
+        { n: 20, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你的桌子上有什么？', answer: 'C',
+          vn: 'Trên bàn của bạn có gì? → C: Một cái máy tính và một quyển sách. (nơi chốn + 有 + vật)' },
+        { n: 21, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你后面那个人是谁？', answer: 'D',
+          vn: 'Người phía sau bạn là ai? → D: Cô ấy tên là Lý Nguyệt, là cô giáo tiếng Trung của tôi.' },
+        { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你前面那个人是李朋吗？', answer: 'E',
+          vn: 'Người phía trước bạn là Lý Bằng phải không? → E: Không phải, người phía sau tôi mới là Lý Bằng. (câu hỏi 吗 → trả lời 不是…)' },
+
+        { n: 23, part: 'Phần 3 · Chọn từ thích hợp điền vào chỗ trống', bank: [
+            { key: 'A', text: '有' },
+            { key: 'B', text: '在' },
+            { key: 'C', text: '请' },
+            { key: 'D', text: '名字' },
+            { key: 'E', text: '能' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我（　）看看你的汉语书吗？', answer: 'E',
+          vn: 'Tôi có thể xem sách tiếng Trung của bạn không? — 能 + động từ: có thể (xin phép).' },
+        { n: 24, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我爸爸今天不（　）家。', answer: 'B',
+          vn: 'Hôm nay bố tôi không ở nhà. — 在家: ở nhà; phủ định 不在家.' },
+        { n: 25, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '您好，（　）喝茶。', answer: 'C',
+          vn: 'Chào ông/bà, mời uống trà. — 请 + động từ: mời (làm gì).' },
+        { n: 26, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '学校里（　）一个商店。', answer: 'A',
+          vn: 'Trong trường có một cửa hàng. — nơi chốn + 有 + số lượng + vật: ở đâu có cái gì.' },
+        { n: 27, part: 'Phần 3 (tiếp) · Chọn từ thích hợp điền vào chỗ trống', bank: [
+            { key: 'F', text: '不' },
+            { key: 'G', text: '没' },
+            { key: 'H', text: '很' },
+            { key: 'I', text: '多' }
+          ], letters: ['F', 'G', 'H', 'I'], prompt: '你爸爸今年（　）大了？', answer: 'I',
+          vn: 'Năm nay bố bạn bao nhiêu tuổi rồi? — 多大: bao nhiêu tuổi (hỏi người lớn).' },
+        { n: 28, letters: ['F', 'G', 'H', 'I'], prompt: '请坐，这儿的中国菜（　）好吃。', answer: 'H',
+          vn: 'Mời ngồi, món Trung Quốc ở đây rất ngon. — 很 + tính từ: rất…' },
+        { n: 29, letters: ['F', 'G', 'H', 'I'], prompt: '他（　）是学生，他是老师。', answer: 'F',
+          vn: 'Anh ấy không phải là học sinh, anh ấy là giáo viên. — 是 phủ định bằng 不: 不是.' },
+        { n: 30, letters: ['F', 'G', 'H', 'I'], prompt: '我的桌子上（　）有电脑。', answer: 'G',
+          vn: 'Trên bàn của tôi không có máy tính. — 有 phủ định bằng 没: 没有 (không dùng 不有).' }
+      ],
+      writing: [
+        { n: '1a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 囗?', prompt: 'Chữ nào có bộ 囗?', options: [
+            { key: 'A', text: '视' }, { key: 'B', text: '团' }, { key: 'C', text: '祝' }, { key: 'D', text: '礼' }
+          ], answer: 'B', vn: '团 (đoàn) có bộ 囗 (bộ vi – khung vây kín bốn phía). 视, 祝, 礼 đều có bộ 礻.' },
+        { n: '1b', prompt: 'Chữ nào có bộ 囗?', options: [
+            { key: 'A', text: '园' }, { key: 'B', text: '祥' }, { key: 'C', text: '视' }, { key: 'D', text: '祝' }
+          ], answer: 'A', vn: '园 (vườn) có bộ 囗. 祥, 视, 祝 đều có bộ 礻.' },
+        { n: '1c', prompt: 'Chữ nào có bộ 囗?', options: [
+            { key: 'A', text: '礼' }, { key: 'B', text: '祝' }, { key: 'C', text: '因' }, { key: 'D', text: '祥' }
+          ], answer: 'C', vn: '因 (vì, nguyên nhân) có bộ 囗. 礼, 祝, 祥 đều có bộ 礻.' },
+        { n: '1d', prompt: 'Chữ nào có bộ 囗?', options: [
+            { key: 'A', text: '祥' }, { key: 'B', text: '礼' }, { key: 'C', text: '视' }, { key: 'D', text: '国' }
+          ], answer: 'D', vn: '国 (nước – 中国) có bộ 囗. → Các chữ có bộ 囗: 团, 园, 因, 国.' },
+        { n: '2a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 礻?', prompt: 'Chữ nào có bộ 礻?', options: [
+            { key: 'A', text: '团' }, { key: 'B', text: '国' }, { key: 'C', text: '视' }, { key: 'D', text: '园' }
+          ], answer: 'C', vn: '视 (nhìn – trong 电视) có bộ 礻 (bộ thị) bên trái. 团, 国, 园 có bộ 囗.' },
+        { n: '2b', prompt: 'Chữ nào có bộ 礻?', options: [
+            { key: 'A', text: '祝' }, { key: 'B', text: '因' }, { key: 'C', text: '园' }, { key: 'D', text: '团' }
+          ], answer: 'A', vn: '祝 (chúc) có bộ 礻. 因, 园, 团 có bộ 囗.' },
+        { n: '2c', prompt: 'Chữ nào có bộ 礻?', options: [
+            { key: 'A', text: '国' }, { key: 'B', text: '礼' }, { key: 'C', text: '团' }, { key: 'D', text: '因' }
+          ], answer: 'B', vn: '礼 (lễ, quà – 礼物) có bộ 礻. 国, 团, 因 có bộ 囗.' },
+        { n: '2d', prompt: 'Chữ nào có bộ 礻?', options: [
+            { key: 'A', text: '因' }, { key: 'B', text: '园' }, { key: 'C', text: '国' }, { key: 'D', text: '祥' }
+          ], answer: 'D', vn: '祥 (tốt lành, may mắn) có bộ 礻. → Các chữ có bộ 礻: 视, 祝, 礼, 祥.' }
+      ] }
+  ] }
+] };

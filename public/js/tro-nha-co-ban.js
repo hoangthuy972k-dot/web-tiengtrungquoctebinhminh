@@ -116,7 +116,7 @@
           '<span class="tn-tl-mat tn-tl-sau">' + (v.em ? '<span class="tn-tl-em">' + T.esc(v.em) + '</span>' : '') +
             '<span class="tn-tl-vn">' + T.esc(v.vn) + '</span>' +
             (v.hv ? '<span class="tn-tl-hv">Hán Việt: ' + T.esc(v.hv) + '</span>' : '') +
-            '<span class="tn-tl-zh2">' + T.esc(v.zh) + ' · ' + T.esc(v.py || '') + '</span></span>';
+            '<span class="tn-tl-zh2">' + T.esc(v.zh) + '</span></span>';
         the.addEventListener('click', function () {
           the.classList.toggle('lat');
           if (the.classList.contains('lat')) T.doc(v.zh);

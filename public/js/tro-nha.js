@@ -71,7 +71,7 @@
   var itChuyenDong = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   /* ---------------- cau hoi trac nghiem tu tu vung ----------------
-     kieu 'zh': hien chu Han (+pinyin) -> chon nghia tieng Viet
+     kieu 'zh': hien chu Han (khong pinyin) -> chon nghia tieng Viet
      kieu 'vn': hien nghia tieng Viet -> chon chu Han
      Mac dinh xen ke ngau nhien hai kieu. Dap an nhieu nhat 4 lua chon. */
   function cauHoi(vocab, tu, kieu, soLua) {
@@ -250,7 +250,7 @@
     b.appendChild(nut);
     if (kq.saiDs && kq.saiDs.length) {
       var on = tao('div', 'tn-kq-on', '<b>Ôn lại các từ em làm sai:</b>' + kq.saiDs.slice(0, 8).map(function (v) {
-        return '<span><em>' + esc(v.zh) + '</em> ' + esc(v.py || '') + ' · ' + esc(v.vn) + '</span>';
+        return '<span><em>' + esc(v.zh) + '</em> · ' + esc(v.vn) + '</span>';
       }).join(''));
       b.appendChild(on);
     }
@@ -306,7 +306,8 @@
           ' từ — trò “' + esc(g.ten) + '” cần ít nhất ' + (g.canToiThieu || 4) + ' từ. Chọn thêm bài rồi chơi lại nhé.</p>';
         return { dung: function () { } };
       }
-      o.vocab = vocab;
+      // Tro choi khong hien pinyin (co yeu cau hoc sinh doc chu Han) — bo py ngay tu dau vao
+      o.vocab = vocab.map(function (v) { var c = {}; for (var k in v) c[k] = v[k]; c.py = ''; return c; });
       if (window.SaoGame) window.SaoGame.batDauVan();
       return g.mo(hop, o);
     }

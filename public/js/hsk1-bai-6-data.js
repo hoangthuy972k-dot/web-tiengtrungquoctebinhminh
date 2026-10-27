@@ -1193,3 +1193,59 @@ var listenData = [
      {q:'Người thứ hai trả lời thế nào?',opts:['Viết tên ra ngay','Xin lỗi vì không biết viết','Đọc to tên lên'],ans:1},
    ]},
 ];
+
+// Sach bai tap bai 6 (Doc + Chu Han, khong pinyin)
+var wbData = { sections: [
+  { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+    { type: 'mocktest',
+      note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài viết chữ theo thứ tự nét (Chữ Hán – Phần 2) không chấm được trên máy, hãy luyện viết vào vở.',
+      listening: [],
+      reading: [
+        { n: 13, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-6-wb/q13.jpg', prompt: '说汉语', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '说汉语: nói tiếng Trung. Tranh hai người phụ nữ Trung Quốc đang trò chuyện → Đúng.' },
+        { n: 14, img: '/images/hsk1-bai-6-wb/q14.jpg', prompt: '中国菜', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '中国菜: món ăn Trung Quốc. Tranh là đĩa bít tết kiểu Tây → Sai.' },
+        { n: 15, img: '/images/hsk1-bai-6-wb/q15.jpg', prompt: '妈妈', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '妈妈: mẹ. Tranh là bố (người đàn ông) và con gái → Sai.' },
+        { n: 16, img: '/images/hsk1-bai-6-wb/q16.jpg', prompt: '写汉字', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '写汉字: viết chữ Hán. Tranh cậu bé đang viết chữ Hán lên bảng → Đúng.' },
+        { n: 17, img: '/images/hsk1-bai-6-wb/q17.jpg', prompt: '做中国菜', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '做中国菜: nấu món Trung Quốc. Tranh đầu bếp đang xào nấu bằng chảo → Đúng.' },
+        { n: 18, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+          { key: 'A', text: '对不起，这个汉字我会读，不会写。' },
+          { key: 'B', text: '会，李老师是中国人。' },
+          { key: 'C', text: '中国菜很好吃。' },
+          { key: 'D', text: '我会说汉语，不会写汉字。' },
+          { key: 'E', text: '她不会做。' },
+          { key: 'F', text: '好的，谢谢！' }
+        ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你妈妈会做中国菜吗？', answer: 'E', vn: 'Mẹ bạn có biết nấu món Trung Quốc không? — E: Bà ấy không biết nấu. (她 thay cho 妈妈, 做 = nấu)' },
+        { n: 19, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '这个汉字怎么写？', answer: 'A', vn: 'Chữ Hán này viết thế nào? — A: Xin lỗi, chữ này tôi biết đọc, không biết viết.' },
+        { n: 20, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '李老师会说汉语吗？', answer: 'B', vn: 'Thầy Lý có biết nói tiếng Trung không? — B: Có, thầy Lý là người Trung Quốc.' },
+        { n: 21, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你会写汉字吗？', answer: 'D', vn: 'Bạn có biết viết chữ Hán không? — D: Tôi biết nói tiếng Trung, không biết viết chữ Hán.' },
+        { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '中国菜好吃吗？', answer: 'C', vn: 'Món Trung Quốc có ngon không? — C: Món Trung Quốc rất ngon.' },
+        { n: 23, part: 'Phần 3 · Chọn từ điền vào chỗ trống', bank: [
+          { key: 'A', text: '很' },
+          { key: 'B', text: '会' },
+          { key: 'C', text: '怎么' },
+          { key: 'D', text: '名字' },
+          { key: 'E', text: '不' }
+        ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我（　）会写我的汉语名字。', answer: 'E', vn: 'Tôi không biết viết tên tiếng Trung của mình. — 不会: không biết (làm gì); 不 đứng trước 会.' },
+        { n: 24, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你（　）做中国菜吗？', answer: 'B', vn: 'Bạn có biết nấu món Trung Quốc không? — 会 + động từ: biết (làm gì); câu hỏi với 吗.' },
+        { n: 25, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我朋友会说汉语，他的汉语（　）好。', answer: 'A', vn: 'Bạn tôi biết nói tiếng Trung, tiếng Trung của anh ấy rất giỏi. — 很 + tính từ (很好: rất tốt/giỏi).' },
+        { n: 26, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '老师，这个汉字（　）读？', answer: 'C', vn: 'Thưa thầy, chữ Hán này đọc thế nào ạ? — 怎么 + động từ: (làm) thế nào; giống 怎么写.' },
+        { n: 27, bank: [
+          { key: 'F', text: '吗' },
+          { key: 'G', text: '呢' },
+          { key: 'H', text: '哪' },
+          { key: 'I', text: '的' }
+        ], letters: ['F', 'G', 'H', 'I'], prompt: '你的中国朋友会做中国菜（　）？', answer: 'F', vn: 'Bạn người Trung Quốc của bạn có biết nấu món Trung Quốc không? — Câu hỏi có/không → thêm 吗 cuối câu.' },
+        { n: 28, letters: ['F', 'G', 'H', 'I'], prompt: '我会说汉语。你（　）？', answer: 'G', vn: 'Tôi biết nói tiếng Trung. Còn bạn? — 你呢: hỏi lại “còn bạn thì sao?”.' },
+        { n: 29, letters: ['F', 'G', 'H', 'I'], prompt: '我妈妈（　）朋友会说汉语。', answer: 'I', vn: 'Bạn của mẹ tôi biết nói tiếng Trung. — 的 nối người sở hữu: 妈妈的朋友 (bạn của mẹ).' },
+        { n: 30, letters: ['F', 'G', 'H', 'I'], prompt: '你同学是（　）国人？', answer: 'H', vn: 'Bạn học của bạn là người nước nào? — 哪国人: người nước nào (như 你是哪国人？ ở bài 4).' }
+      ],
+      writing: [
+        { n: '1a', part: 'Chữ Hán · Phần 1 · Chữ nào có nét cho sẵn?', prompt: 'Chữ nào dưới đây có nét phẩy gập 撇折 (㇜)?', options: [{ key: 'A', text: '我' }, { key: 'B', text: '打' }, { key: 'C', text: '去' }, { key: 'D', text: '西' }], answer: 'C', vn: '去 = 土 + 厶; trong 厶 có nét phẩy gập (㇜). 我, 打, 西 không có nét này.' },
+        { n: '1b', prompt: 'Chữ nào dưới đây có nét phẩy gập 撇折 (㇜)?', options: [{ key: 'A', text: '东' }, { key: 'B', text: '五' }, { key: 'C', text: '打' }, { key: 'D', text: '我' }], answer: 'A', vn: '东: nét thứ hai là nét phẩy gập (㇜). 五, 打, 我 không có nét này.' },
+        { n: '2a', prompt: 'Chữ nào dưới đây có nét móc nghiêng 斜钩 (㇂)?', options: [{ key: 'A', text: '东' }, { key: 'B', text: '我' }, { key: 'C', text: '去' }, { key: 'D', text: '打' }], answer: 'B', vn: '我: nét móc nghiêng (㇂) kéo dài chéo xuống bên phải. 东, 去, 打 không có nét này (东, 打 có móc thẳng 竖钩).' },
+        { n: '2b', prompt: 'Chữ nào dưới đây có nét móc nghiêng 斜钩 (㇂)?', options: [{ key: 'A', text: '去' }, { key: 'B', text: '打' }, { key: 'C', text: '西' }, { key: 'D', text: '钱' }], answer: 'D', vn: '钱: phần bên phải (giống 戈) có nét móc nghiêng (㇂). 去, 打, 西 không có nét này.' },
+        { n: '3a', prompt: 'Chữ nào dưới đây có nét hất 提 (㇀)?', options: [{ key: 'A', text: '去' }, { key: 'B', text: '东' }, { key: 'C', text: '我' }, { key: 'D', text: '西' }], answer: 'C', vn: '我: nét thứ tư là nét hất (㇀) đi chéo lên bên phải. 去, 东, 西 không có nét này.' },
+        { n: '3b', prompt: 'Chữ nào dưới đây có nét hất 提 (㇀)?', options: [{ key: 'A', text: '西' }, { key: 'B', text: '打' }, { key: 'C', text: '东' }, { key: 'D', text: '去' }], answer: 'B', vn: '打: bộ 扌 (tay) có nét hất (㇀) ở cuối. 西, 东, 去 không có nét này.' }
+      ]
+    }
+  ]}
+] };

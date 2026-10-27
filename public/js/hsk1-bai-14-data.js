@@ -1541,3 +1541,56 @@ var listenData = [
      {q:'Người thứ hai đi mua quần áo cùng ai?',opts:['Bạn bè','Mẹ','Bố'],ans:1},
    ]},
 ];
+
+// Sach bai tap (khong pinyin): Doc + Chu Han; Nghe / Ngu am can file nghe nen bo qua
+var wbData = {
+  sections: [
+    { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+      { type: 'mocktest',
+        note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài tập viết chữ theo thứ tự nét hãy luyện trực tiếp trong sách.',
+        listening: [],
+        reading: [
+          { n: 16, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-14-wb/q16.jpg', prompt: '一点儿', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '一点儿: một chút, một ít. Tranh có rất nhiều quả táo → Sai.' },
+          { n: 17, img: '/images/hsk1-bai-14-wb/q17.jpg', prompt: '漂亮', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '漂亮: xinh đẹp. Tranh là một cô gái xinh đẹp → Đúng.' },
+          { n: 18, img: '/images/hsk1-bai-14-wb/q18.jpg', prompt: '买东西', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '买东西: mua đồ. Tranh là cảnh khách đang mua hàng, nhận túi đồ ở cửa hàng → Đúng.' },
+          { n: 19, img: '/images/hsk1-bai-14-wb/q19.jpg', prompt: '不少', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '不少: không ít, khá nhiều. Đĩa gần như đã ăn hết, chỉ còn rất ít → Sai.' },
+          { n: 20, img: '/images/hsk1-bai-14-wb/q20.jpg', prompt: '衣服', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '衣服: quần áo. Tranh là một giỏ quần áo → Đúng.' },
+          { n: 21, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+            { key: 'A', text: '我去了。' },
+            { key: 'B', text: '我买了一点儿苹果。' },
+            { key: 'C', text: '是，这些都是她的东西。' },
+            { key: 'D', text: '谢谢，我喜欢买漂亮的衣服。' },
+            { key: 'E', text: '看见了，他开车去学校了。' },
+            { key: 'F', text: '好的，谢谢！' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '昨天下午你去商店了吗？', answer: 'A', vn: 'Chiều hôm qua bạn có đi cửa hàng không? — A: Tôi đi rồi. (Hỏi …了吗 → trả lời động từ + 了.)' },
+          { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我没买水果，你呢？', answer: 'B', vn: 'Tôi không mua hoa quả, còn bạn? — B: Tôi mua một ít táo.' },
+          { n: 23, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你看见小王了吗？', answer: 'E', vn: 'Bạn có thấy Tiểu Vương không? — E: Thấy rồi, cậu ấy lái xe đến trường rồi.' },
+          { n: 24, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你的衣服太漂亮了！', answer: 'D', vn: 'Quần áo của bạn đẹp quá! — D: Cảm ơn, tôi thích mua quần áo đẹp.' },
+          { n: 25, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '这些东西是王老师的吗？', answer: 'C', vn: 'Những đồ này là của cô Vương à? — C: Vâng, những thứ này đều là đồ của cô ấy.' },
+          { n: 26, part: 'Phần 3 · Chọn từ thích hợp điền vào chỗ trống', bank: [
+            { key: 'A', text: '一点儿' },
+            { key: 'B', text: '不少' },
+            { key: 'C', text: '都' },
+            { key: 'D', text: '名字' },
+            { key: 'E', text: '回来' },
+            { key: 'F', text: '看见' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你们都来我家吃饭吧，我做了（　）菜。', answer: 'B', vn: 'Các bạn đến nhà tôi ăn cơm nhé, tôi nấu khá nhiều món. — 不少 + danh từ: không ít, nhiều.' },
+          { n: 27, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '今天星期五，我想看电影，你什么时候（　）？', answer: 'E', vn: 'Hôm nay thứ Sáu, tôi muốn xem phim, khi nào bạn về? — 回来: trở về.' },
+          { n: 28, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我没（　）王老师的女朋友，很漂亮吧？', answer: 'F', vn: 'Tôi chưa nhìn thấy bạn gái của thầy Vương, chắc xinh lắm nhỉ? — 没看见: không / chưa nhìn thấy.' },
+          { n: 29, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '张小姐住在这儿，小猫和小狗（　）是她的。', answer: 'C', vn: 'Cô Trương sống ở đây, con mèo và con chó đều là của cô ấy. — 都: đều (đứng trước động từ, tổng kết nhiều người / vật).' },
+          { n: 30, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你吃的太少了，多吃（　）吧。', answer: 'A', vn: 'Bạn ăn ít quá, ăn thêm một chút đi. — 多吃一点儿: ăn thêm chút nữa.' }
+        ],
+        writing: [
+          { n: '1a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 月 (bộ Nguyệt)?', prompt: '月', options: [{ key: 'A', text: '打' }, { key: 'B', text: '胖' }, { key: 'C', text: '接' }, { key: 'D', text: '抓' }], answer: 'B', vn: '胖 (béo) có bộ 月 (bộ Nguyệt). Các chữ có bộ 月 trong bài: 胖, 肚, 肤, 服.' },
+          { n: '1b', prompt: '月', options: [{ key: 'A', text: '肚' }, { key: 'B', text: '接' }, { key: 'C', text: '抓' }, { key: 'D', text: '抄' }], answer: 'A', vn: '肚 (bụng) có bộ 月 (bộ Nguyệt). Các chữ có bộ 月 trong bài: 胖, 肚, 肤, 服.' },
+          { n: '1c', prompt: '月', options: [{ key: 'A', text: '抓' }, { key: 'B', text: '抄' }, { key: 'C', text: '打' }, { key: 'D', text: '肤' }], answer: 'D', vn: '肤 (da) có bộ 月 (bộ Nguyệt). Các chữ có bộ 月 trong bài: 胖, 肚, 肤, 服.' },
+          { n: '1d', prompt: '月', options: [{ key: 'A', text: '抄' }, { key: 'B', text: '打' }, { key: 'C', text: '服' }, { key: 'D', text: '接' }], answer: 'C', vn: '服 (衣服: quần áo) có bộ 月 (bộ Nguyệt). Các chữ có bộ 月 trong bài: 胖, 肚, 肤, 服.' },
+          { n: '2a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 扌 (bộ Thủ – tay)?', prompt: '扌', options: [{ key: 'A', text: '胖' }, { key: 'B', text: '打' }, { key: 'C', text: '肚' }, { key: 'D', text: '肤' }], answer: 'B', vn: '打 (đánh; 打电话: gọi điện) có bộ 扌 (bộ Thủ – tay). Các chữ có bộ 扌 trong bài: 打, 接, 抓, 抄.' },
+          { n: '2b', prompt: '扌', options: [{ key: 'A', text: '接' }, { key: 'B', text: '肚' }, { key: 'C', text: '肤' }, { key: 'D', text: '服' }], answer: 'A', vn: '接 (đón) có bộ 扌 (bộ Thủ – tay). Các chữ có bộ 扌 trong bài: 打, 接, 抓, 抄.' },
+          { n: '2c', prompt: '扌', options: [{ key: 'A', text: '肤' }, { key: 'B', text: '服' }, { key: 'C', text: '胖' }, { key: 'D', text: '抓' }], answer: 'D', vn: '抓 (bắt, nắm) có bộ 扌 (bộ Thủ – tay). Các chữ có bộ 扌 trong bài: 打, 接, 抓, 抄.' },
+          { n: '2d', prompt: '扌', options: [{ key: 'A', text: '服' }, { key: 'B', text: '胖' }, { key: 'C', text: '抄' }, { key: 'D', text: '肚' }], answer: 'C', vn: '抄 (chép) có bộ 扌 (bộ Thủ – tay). Các chữ có bộ 扌 trong bài: 打, 接, 抓, 抄.' }
+        ]
+      }
+    ] }
+  ]
+};

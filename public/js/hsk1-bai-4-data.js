@@ -957,3 +957,57 @@ var listenData = [
      {q:'Giáo viên là người nước nào?',opts:['Mỹ','Việt Nam','Trung Quốc'],ans:2},
    ]},
 ];
+
+// Sach bai tap bai 4 (Doc + Chu Han, khong pinyin)
+var wbData = { sections: [
+  { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+    { type: 'mocktest',
+      note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài viết chữ theo thứ tự nét (Chữ Hán – Phần 2) không chấm được trên máy, hãy luyện viết vào vở.',
+      listening: [],
+      reading: [
+        { n: 13, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-4-wb/q13.jpg', prompt: '对不起', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '对不起: xin lỗi. Tranh cô gái kéo vali, vẫy tay chào (再见 / 你好), không phải đang xin lỗi → Sai.' },
+        { n: 14, img: '/images/hsk1-bai-4-wb/q14.jpg', prompt: '她', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '她: cô ấy (chỉ nữ). Tranh là một người phụ nữ → Đúng.' },
+        { n: 15, img: '/images/hsk1-bai-4-wb/q15.jpg', prompt: '美国', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '美国: nước Mỹ. Tranh là lá cờ ba sọc dọc (cờ Pháp), không phải cờ Mỹ (sọc ngang và ngôi sao) → Sai.' },
+        { n: 16, img: '/images/hsk1-bai-4-wb/q16.jpg', prompt: '同学', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '同学: bạn học. Tranh là một gia đình nhiều thế hệ (ông bà, bố mẹ, con cái) → Sai.' },
+        { n: 17, img: '/images/hsk1-bai-4-wb/q17.jpg', prompt: '他们', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '他们: họ (có nam). Tranh chỉ có ba cô gái → phải dùng 她们 (các cô ấy) → Sai.' },
+        { n: 18, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+          { key: 'A', text: '是，他是我的美国朋友。' },
+          { key: 'B', text: '她是李月，她是我的中国朋友。' },
+          { key: 'C', text: '他是我同学，他叫大卫。' },
+          { key: 'D', text: '不是，她是我的汉语老师。' },
+          { key: 'E', text: '我是美国人。' },
+          { key: 'F', text: '好的，谢谢！' }
+        ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你是哪国人？', answer: 'E', vn: 'Bạn là người nước nào? — E: Tôi là người Mỹ. (哪国人 → trả lời tên nước + 人)' },
+        { n: 19, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '他是谁？', answer: 'C', vn: 'Anh ấy là ai? — C: Anh ấy là bạn học của tôi, anh ấy tên là David.' },
+        { n: 20, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '她是你同学吗？', answer: 'D', vn: 'Cô ấy là bạn học của bạn phải không? — D: Không phải, cô ấy là cô giáo dạy tiếng Trung của tôi.' },
+        { n: 21, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '谁是李月？', answer: 'B', vn: 'Ai là Lý Nguyệt? — B: Cô ấy là Lý Nguyệt, cô ấy là bạn người Trung Quốc của tôi.' },
+        { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '他是你的朋友吗？', answer: 'A', vn: 'Anh ấy là bạn của bạn phải không? — A: Đúng, anh ấy là bạn người Mỹ của tôi. (Câu hỏi 吗 → trả lời 是)' },
+        { n: 23, part: 'Phần 3 · Chọn từ điền vào chỗ trống', bank: [
+          { key: 'A', text: '哪' },
+          { key: 'B', text: '叫' },
+          { key: 'C', text: '的' },
+          { key: 'D', text: '名字' },
+          { key: 'E', text: '呢' }
+        ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你妈妈（　）什么？', answer: 'B', vn: 'Mẹ bạn tên là gì? — 叫什么: tên là gì (như 你叫什么名字？ ở bài 3).' },
+        { n: 24, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '您是（　）国人？', answer: 'A', vn: 'Ông/bà là người nước nào? — 哪国人: người nước nào.' },
+        { n: 25, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '他不是我同学，他是我（　）中国朋友。', answer: 'C', vn: 'Anh ấy không phải bạn học của tôi, anh ấy là bạn người Trung Quốc của tôi. — 我的…朋友: 的 chỉ sở hữu.' },
+        { n: 26, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我是美国人。你（　）？', answer: 'E', vn: 'Tôi là người Mỹ. Còn bạn? — 你呢: hỏi lại “còn bạn thì sao?”.' },
+        { n: 27, bank: [
+          { key: 'F', text: '是' },
+          { key: 'G', text: '不' },
+          { key: 'H', text: '吗' },
+          { key: 'I', text: '谁' }
+        ], letters: ['F', 'G', 'H', 'I'], prompt: '他是（　）？', answer: 'I', vn: 'Anh ấy là ai? — 谁: ai (đứng ở vị trí người cần hỏi).' },
+        { n: 28, letters: ['F', 'G', 'H', 'I'], prompt: '我（　）是中国人，我是美国人。', answer: 'G', vn: 'Tôi không phải người Trung Quốc, tôi là người Mỹ. — 不是: không phải.' },
+        { n: 29, letters: ['F', 'G', 'H', 'I'], prompt: '他是你的汉语老师（　）？', answer: 'H', vn: 'Anh ấy là thầy giáo dạy tiếng Trung của bạn phải không? — Câu hỏi có/không → thêm 吗 cuối câu.' },
+        { n: 30, letters: ['F', 'G', 'H', 'I'], prompt: '他不是我同学，他（　）我的好朋友。', answer: 'F', vn: 'Anh ấy không phải bạn học của tôi, anh ấy là bạn thân của tôi. — A 是 B: A là B.' }
+      ],
+      writing: [
+        { n: '1a', part: 'Chữ Hán · Phần 1 · Chữ nào có nét cho sẵn?', prompt: 'Chữ nào dưới đây có nét sổ cong móc 竖弯钩 (㇟)?', options: [{ key: 'A', text: '九' }, { key: 'B', text: '七' }, { key: 'C', text: '几' }, { key: 'D', text: '人' }], answer: 'B', vn: '七: nét thứ hai là nét sổ cong móc (㇟), đi xuống rồi cong sang phải và móc lên. 九, 几 có nét ngang gập cong móc (㇈), khác nét này; 人 không có móc.' },
+        { n: '1b', prompt: 'Chữ nào dưới đây có nét sổ cong móc 竖弯钩 (㇟)?', options: [{ key: 'A', text: '儿' }, { key: 'B', text: '几' }, { key: 'C', text: '九' }, { key: 'D', text: '人' }], answer: 'A', vn: '儿: nét thứ hai là nét sổ cong móc (㇟). 几, 九 có nét ngang gập cong móc (㇈) – bắt đầu bằng nét ngang; 人 không có móc.' },
+        { n: '2a', prompt: 'Chữ nào dưới đây có nét ngang gập cong móc 横折弯钩 (㇈)?', options: [{ key: 'A', text: '七' }, { key: 'B', text: '儿' }, { key: 'C', text: '人' }, { key: 'D', text: '九' }], answer: 'D', vn: '九: nét thứ hai là nét ngang gập cong móc (㇈): ngang → gập xuống → cong → móc lên. 七, 儿 chỉ có nét sổ cong móc (㇟); 人 không có móc.' },
+        { n: '2b', prompt: 'Chữ nào dưới đây có nét ngang gập cong móc 横折弯钩 (㇈)?', options: [{ key: 'A', text: '儿' }, { key: 'B', text: '七' }, { key: 'C', text: '几' }, { key: 'D', text: '中' }], answer: 'C', vn: '几: nét thứ hai là nét ngang gập cong móc (㇈) – có nét ngang ở trên. 儿 giống 几 nhưng không có nét ngang (nét sổ cong móc ㇟); 七 cũng là ㇟; 中 không có móc.' }
+      ]
+    }
+  ]}
+] };

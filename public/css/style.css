@@ -9458,3 +9458,6 @@ html.ho-tro-toi[data-theme="dark"] { --kdp-accent: var(--color-red-500); --kdp-o
 .qmk-tk { margin: 0 0 14px; padding: 12px 14px; border-radius: 12px; background: var(--color-gray-100, #f6efe6); line-height: 1.5; }
 .qmk-tk span { color: var(--color-text-muted, #6b574b); font-size: .9rem; }
 .qmk-dx { margin-top: 12px; }
+
+/* Tranh rieng cua mot cau trong de luyen tap sach bai tap (HSK1: nhin tranh doan dung/sai) */
+.mt-q-img { display: block; max-width: min(260px, 100%); max-height: 180px; object-fit: contain; border-radius: 10px; border: 1px solid var(--color-gray-200, #e6dccf); background: #fff; margin: 0 0 8px; }

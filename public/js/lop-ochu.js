@@ -251,14 +251,14 @@
     $('#ocMoi').hidden = true;
     $('#ocTatCa').hidden = true;
     $('#ocSub').textContent = S.nhan;
-    var nHan = chuanBi(S.vocab, 'han').length, nPy = chuanBi(S.vocab, 'py').length;
+    S.kieu = 'han'; // tro choi khong dung pinyin
+    var nHan = chuanBi(S.vocab, 'han').length;
     $('#ocMan').innerHTML =
       '<div class="oc-sanh">' +
         '<h2>Ô chữ từ vựng</h2>' +
         '<p>Web tự xếp các từ của bài đã chọn thành ô chữ. Cô chọn một gợi ý, cả lớp đoán, bấm <b>Hiện từ</b> để lật.</p>' +
         '<div class="oc-truong"><span>Mỗi ô là</span><div class="oc-chon" id="ocKieu">' +
-          '<button type="button" data-k="han">一 Một chữ Hán <small>' + nHan + ' từ</small></button>' +
-          '<button type="button" data-k="py">pīn Một âm tiết pinyin <small>' + nPy + ' từ</small></button></div></div>' +
+          '<button type="button" data-k="han">一 Một chữ Hán <small>' + nHan + ' từ</small></button></div></div>' +
         '<div class="oc-truong"><span>Chia tổ</span><div class="oc-chon" id="ocTo">' +
           [0, 2, 3, 4].map(function (n) { return '<button type="button" data-n="' + n + '">' + (n ? n + ' tổ' : 'Không') + '</button>'; }).join('') + '</div></div>' +
         '<label class="oc-hv"><input type="checkbox" id="ocHv"' + (S.hv ? ' checked' : '') + '> Gợi ý thêm âm Hán Việt</label>' +

@@ -1241,3 +1241,61 @@ var listenData = [
      {q:'Hôm qua là ngày nào?',opts:['Ngày 2 tháng 3','Ngày 3 tháng 2','Ngày 3 tháng 3'],ans:0},
    ]},
 ];
+
+// Sach bai tap bai 7 (Doc + Chu Han, khong pinyin)
+var wbData = { sections: [
+  { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+    { type: 'mocktest',
+      note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài viết chữ theo thứ tự nét (Chữ Hán – Phần 2) không chấm được trên máy, hãy luyện viết vào vở.',
+      listening: [],
+      reading: [
+        { n: 13, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-7-wb/q13.jpg', prompt: '看书', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '看书: đọc sách. Tranh chàng trai đang cầm sách đọc → Đúng.' },
+        { n: 14, img: '/images/hsk1-bai-7-wb/q14.jpg', prompt: '学校', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '学校: trường học. Tranh là một chi nhánh ngân hàng (biển 中国银行), không phải trường học → Sai.' },
+        { n: 15, img: '/images/hsk1-bai-7-wb/q15.jpg', prompt: '六月六号', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '六月六号: ngày 6 tháng 6. Lịch ghi June (tháng 6), ngày 6 → Đúng.' },
+        { n: 16, img: '/images/hsk1-bai-7-wb/q16.jpg', prompt: '吃中国菜', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '吃中国菜: ăn món Trung Quốc. Tranh cô gái ngồi quán cà phê với máy tính, không có món Trung Quốc → Sai.' },
+        { n: 17, img: '/images/hsk1-bai-7-wb/q17.jpg', prompt: '去学校', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '去学校: đi đến trường. Tranh ba cô gái xách túi đi dạo trung tâm mua sắm → Sai.' },
+        { n: 18, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+          { key: 'A', text: '她29岁。' },
+          { key: 'B', text: '今天星期日。' },
+          { key: 'C', text: '我去同学家看书。' },
+          { key: 'D', text: '我不会，我爸爸会。' },
+          { key: 'E', text: '今天是10月5号。' },
+          { key: 'F', text: '好的，谢谢！' }
+        ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '今天星期几？', answer: 'B', vn: 'Hôm nay thứ mấy? — B: Hôm nay Chủ nhật. (星期几 hỏi thứ → trả lời 星期日)' },
+        { n: 19, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '今天是几月几号？', answer: 'E', vn: 'Hôm nay là ngày mấy tháng mấy? — E: Hôm nay là ngày 5 tháng 10. (几月几号 → 10月5号)' },
+        { n: 20, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你的汉语老师多大了？', answer: 'A', vn: 'Cô giáo tiếng Trung của bạn bao nhiêu tuổi rồi? — A: Cô ấy 29 tuổi. (多大了 hỏi tuổi người lớn, như ở bài 5)' },
+        { n: 21, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '明天你做什么？', answer: 'C', vn: 'Ngày mai bạn làm gì? — C: Tôi đến nhà bạn học đọc sách.' },
+        { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你会说汉语吗？', answer: 'D', vn: 'Bạn có biết nói tiếng Trung không? — D: Tôi không biết, bố tôi biết. (会 của bài 6)' },
+        { n: 23, part: 'Phần 3 · Chọn từ điền vào chỗ trống', bank: [
+          { key: 'A', text: '几' },
+          { key: 'B', text: '月' },
+          { key: 'C', text: '号' },
+          { key: 'D', text: '名字' },
+          { key: 'E', text: '星期' }
+        ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '昨天是（　）三。', answer: 'E', vn: 'Hôm qua là thứ Tư. — 星期三: thứ Tư (星期 + số).' },
+        { n: 24, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '明天星期（　）？', answer: 'A', vn: 'Ngày mai thứ mấy? — 星期几: thứ mấy (几 hỏi số nhỏ).' },
+        { n: 25, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '今天是9（　）31号，星期六。', answer: 'B', vn: 'Hôm nay là ngày 31 tháng 9, thứ Bảy. — Thứ tự trong tiếng Trung: tháng (月) trước, ngày (号) sau, rồi đến thứ.' },
+        { n: 26, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你10月几（　）去中国？', answer: 'C', vn: 'Ngày mấy tháng 10 bạn đi Trung Quốc? — 几号: ngày mấy; thời gian đứng trước động từ 去.' },
+        { n: 27, bank: [
+          { key: 'F', text: '问' },
+          { key: 'G', text: '去' },
+          { key: 'H', text: '做' },
+          { key: 'I', text: '会' }
+        ], letters: ['F', 'G', 'H', 'I'], prompt: '明天我（　）一个中国朋友家吃饭。', answer: 'G', vn: 'Ngày mai tôi đến nhà một người bạn Trung Quốc ăn cơm. — 去 + nơi chốn + làm gì.' },
+        { n: 28, letters: ['F', 'G', 'H', 'I'], prompt: '明天星期六，你（　）什么？', answer: 'H', vn: 'Ngày mai thứ Bảy, bạn làm gì? — 做什么: làm gì.' },
+        { n: 29, letters: ['F', 'G', 'H', 'I'], prompt: '我（　）说汉语，不（　）写汉字。', answer: 'I', vn: 'Tôi biết nói tiếng Trung, không biết viết chữ Hán. — Cả hai chỗ trống đều là 会 (会 / 不会 + động từ).' },
+        { n: 30, letters: ['F', 'G', 'H', 'I'], prompt: '请（　），这个汉字怎么读？', answer: 'F', vn: 'Xin hỏi, chữ Hán này đọc thế nào? — 请问: xin hỏi (mở đầu câu hỏi lịch sự).' }
+      ],
+      writing: [
+        { n: '1a', part: 'Chữ Hán · Phần 1 · Tìm chữ có bộ cho sẵn (A 酒 · B 说 · C 谁 · D 让 · E 海 · F 认 · G 没 · H 河)', prompt: 'Chữ nào dưới đây có bộ 氵 (ba chấm thủy)?', options: [{ key: 'A', text: '酒' }, { key: 'B', text: '说' }, { key: 'C', text: '谁' }, { key: 'D', text: '认' }], answer: 'A', vn: '酒 (rượu) có bộ 氵 bên trái — liên quan đến nước, chất lỏng. 说, 谁, 认 có bộ 讠.' },
+        { n: '1b', prompt: 'Chữ nào dưới đây có bộ 氵 (ba chấm thủy)?', options: [{ key: 'A', text: '让' }, { key: 'B', text: '海' }, { key: 'C', text: '说' }, { key: 'D', text: '谁' }], answer: 'B', vn: '海 (biển) có bộ 氵. 让, 说, 谁 có bộ 讠.' },
+        { n: '1c', prompt: 'Chữ nào dưới đây có bộ 氵 (ba chấm thủy)?', options: [{ key: 'A', text: '认' }, { key: 'B', text: '让' }, { key: 'C', text: '没' }, { key: 'D', text: '说' }], answer: 'C', vn: '没 (không có) có bộ 氵. 认, 让, 说 có bộ 讠.' },
+        { n: '1d', prompt: 'Chữ nào dưới đây có bộ 氵 (ba chấm thủy)?', options: [{ key: 'A', text: '谁' }, { key: 'B', text: '认' }, { key: 'C', text: '让' }, { key: 'D', text: '河' }], answer: 'D', vn: '河 (sông) có bộ 氵. 谁, 认, 让 có bộ 讠.' },
+        { n: '2a', prompt: 'Chữ nào dưới đây có bộ 讠 (bộ ngôn – lời nói)?', options: [{ key: 'A', text: '说' }, { key: 'B', text: '酒' }, { key: 'C', text: '海' }, { key: 'D', text: '河' }], answer: 'A', vn: '说 (nói) có bộ 讠 — liên quan đến lời nói. 酒, 海, 河 có bộ 氵.' },
+        { n: '2b', prompt: 'Chữ nào dưới đây có bộ 讠 (bộ ngôn – lời nói)?', options: [{ key: 'A', text: '没' }, { key: 'B', text: '谁' }, { key: 'C', text: '河' }, { key: 'D', text: '酒' }], answer: 'B', vn: '谁 (ai) có bộ 讠. 没, 河, 酒 có bộ 氵.' },
+        { n: '2c', prompt: 'Chữ nào dưới đây có bộ 讠 (bộ ngôn – lời nói)?', options: [{ key: 'A', text: '海' }, { key: 'B', text: '没' }, { key: 'C', text: '让' }, { key: 'D', text: '河' }], answer: 'C', vn: '让 (để, bảo) có bộ 讠. 海, 没, 河 có bộ 氵.' },
+        { n: '2d', prompt: 'Chữ nào dưới đây có bộ 讠 (bộ ngôn – lời nói)?', options: [{ key: 'A', text: '酒' }, { key: 'B', text: '海' }, { key: 'C', text: '没' }, { key: 'D', text: '认' }], answer: 'D', vn: '认 (nhận biết, như 认识) có bộ 讠. 酒, 海, 没 có bộ 氵.' }
+      ]
+    }
+  ]}
+] };

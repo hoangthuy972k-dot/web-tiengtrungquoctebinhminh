@@ -951,7 +951,7 @@
     $('vdChuoi').textContent = S.tro !== 'ngoisao' && S.chuoi >= 2 ? '🔥 ' + S.chuoi + ' câu đúng liên tiếp' : '';
     $('vdHoi').innerHTML = (c.ctx ? '<div class="vd-ctx">' + esc(c.ctx) + '</div>' : '') +
       '<div class="vd-hoi-chu' + (c.hoiZh ? ' is-zh' : '') + '">' + esc(c.hoi).replace('＿＿', '<span class="vd-trong">＿＿</span>') + '</div>' +
-      (c.py ? '<div class="vd-py">' + esc(c.py) + '</div>' : '');
+      '';
     veThe();
     S.conMs = (S.tro === 'chem' ? (lop ? 25 : 20) : (lop ? 20 : 15)) * 1000;
     S.hetLuc = now + S.conMs;

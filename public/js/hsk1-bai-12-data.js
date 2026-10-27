@@ -1316,3 +1316,56 @@ var listenData = [
      {q:'Cô Vương đến lúc mấy giờ?',opts:['3 giờ sáng','3 giờ chiều','Không đến'],ans:1},
    ]},
 ];
+
+// Sach bai tap (khong pinyin): Doc + Chu Han; Nghe / Ngu am can file nghe nen bo qua
+var wbData = {
+  sections: [
+    { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+      { type: 'mocktest',
+        note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài tập viết chữ theo thứ tự nét và so sánh chữ gần giống hãy luyện trực tiếp trong sách.',
+        listening: [],
+        reading: [
+          { n: 16, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-12-wb/q16.jpg', prompt: '水', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '水: nước. Tranh là một cốc nước → Đúng.' },
+          { n: 17, img: '/images/hsk1-bai-12-wb/q17.jpg', prompt: '下雨', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '下雨: trời mưa. Tranh là cảnh trời đang mưa → Đúng.' },
+          { n: 18, img: '/images/hsk1-bai-12-wb/q18.jpg', prompt: '水果', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '水果: hoa quả. Tranh là một giỏ hoa quả (nho, táo, anh đào…) → Đúng.' },
+          { n: 19, img: '/images/hsk1-bai-12-wb/q19.jpg', prompt: '小姐', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '小姐: cô (dùng gọi phụ nữ trẻ). Tranh là một người đàn ông → Sai.' },
+          { n: 20, img: '/images/hsk1-bai-12-wb/q20.jpg', prompt: '医生', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '医生: bác sĩ. Tranh là người mặc áo blouse, đeo ống nghe → Đúng.' },
+          { n: 21, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+            { key: 'A', text: '不会。' },
+            { key: 'B', text: '多喝水，多吃水果。' },
+            { key: 'C', text: '她很好，谢谢。' },
+            { key: 'D', text: '太热了，我一会儿去。' },
+            { key: 'E', text: '不冷不热。' },
+            { key: 'F', text: '好的，谢谢！' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '下午会不会下雨？', answer: 'A', vn: 'Chiều nay có mưa không? — A: Không đâu. (Hỏi 会不会 thì trả lời 会 / 不会.)' },
+          { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '昨天天气怎么样？', answer: 'E', vn: 'Thời tiết hôm qua thế nào? — E: Không lạnh cũng không nóng.' },
+          { n: 23, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '王小姐身体怎么样？', answer: 'C', vn: 'Sức khỏe cô Vương thế nào? — C: Cô ấy rất khỏe, cảm ơn.' },
+          { n: 24, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你什么时候去学校？', answer: 'D', vn: 'Khi nào bạn đến trường? — D: Nóng quá, lát nữa tôi đi. (一会儿 trả lời cho 什么时候.)' },
+          { n: 25, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '医生说什么？', answer: 'B', vn: 'Bác sĩ nói gì? — B: Uống nhiều nước, ăn nhiều hoa quả.' },
+          { n: 26, part: 'Phần 3 · Chọn từ thích hợp điền vào chỗ trống', bank: [
+            { key: 'A', text: '太……了' },
+            { key: 'B', text: '多' },
+            { key: 'C', text: '爱' },
+            { key: 'D', text: '名字' },
+            { key: 'E', text: '些' },
+            { key: 'F', text: '怎么样' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '北京的天气（　）？', answer: 'F', vn: 'Thời tiết Bắc Kinh thế nào? — 怎么样: thế nào (hỏi tình hình, đứng cuối câu).' },
+          { n: 27, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你（　）喝水，天气太热了。', answer: 'B', vn: 'Bạn uống nhiều nước vào, trời nóng quá. — 多 + động từ: (làm gì) nhiều hơn.' },
+          { n: 28, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '他们不想住这儿，这儿（　）冷（　）。', answer: 'A', vn: 'Họ không muốn ở đây, ở đây lạnh quá. — 太 + tính từ + 了: quá…' },
+          { n: 29, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '这个星期我身体不太好，不（　）吃饭。', answer: 'C', vn: 'Tuần này tôi không khỏe lắm, không thích ăn. — 不爱 + động từ: không thích làm gì.' },
+          { n: 30, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '天气很热，你多吃（　）水果。', answer: 'E', vn: 'Trời rất nóng, bạn ăn thêm ít hoa quả nhé. — 多吃些: ăn nhiều thêm một chút (些: một ít).' }
+        ],
+        writing: [
+          { n: '2a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 女 (bộ Nữ)?', prompt: '女', options: [{ key: 'A', text: '饮' }, { key: 'B', text: '妈' }, { key: 'C', text: '饭' }, { key: 'D', text: '饿' }], answer: 'B', vn: '妈 (mẹ) có bộ 女 (bộ Nữ). Các chữ có bộ 女 trong bài: 妈, 她, 好, 姐.' },
+          { n: '2b', prompt: '女', options: [{ key: 'A', text: '她' }, { key: 'B', text: '饭' }, { key: 'C', text: '饿' }, { key: 'D', text: '饥' }], answer: 'A', vn: '她 (cô ấy) có bộ 女 (bộ Nữ). Các chữ có bộ 女 trong bài: 妈, 她, 好, 姐.' },
+          { n: '2c', prompt: '女', options: [{ key: 'A', text: '饿' }, { key: 'B', text: '饥' }, { key: 'C', text: '饮' }, { key: 'D', text: '好' }], answer: 'D', vn: '好 (tốt) có bộ 女 (bộ Nữ). Các chữ có bộ 女 trong bài: 妈, 她, 好, 姐.' },
+          { n: '2d', prompt: '女', options: [{ key: 'A', text: '饥' }, { key: 'B', text: '饮' }, { key: 'C', text: '姐' }, { key: 'D', text: '饭' }], answer: 'C', vn: '姐 (chị) có bộ 女 (bộ Nữ). Các chữ có bộ 女 trong bài: 妈, 她, 好, 姐.' },
+          { n: '3a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 饣 (bộ Thực)?', prompt: '饣', options: [{ key: 'A', text: '妈' }, { key: 'B', text: '饮' }, { key: 'C', text: '她' }, { key: 'D', text: '好' }], answer: 'B', vn: '饮 (uống) có bộ 饣 (bộ Thực). Các chữ có bộ 饣 trong bài: 饮, 饭, 饿, 饥.' },
+          { n: '3b', prompt: '饣', options: [{ key: 'A', text: '饭' }, { key: 'B', text: '她' }, { key: 'C', text: '好' }, { key: 'D', text: '姐' }], answer: 'A', vn: '饭 (cơm) có bộ 饣 (bộ Thực). Các chữ có bộ 饣 trong bài: 饮, 饭, 饿, 饥.' },
+          { n: '3c', prompt: '饣', options: [{ key: 'A', text: '好' }, { key: 'B', text: '姐' }, { key: 'C', text: '妈' }, { key: 'D', text: '饿' }], answer: 'D', vn: '饿 (đói) có bộ 饣 (bộ Thực). Các chữ có bộ 饣 trong bài: 饮, 饭, 饿, 饥.' },
+          { n: '3d', prompt: '饣', options: [{ key: 'A', text: '姐' }, { key: 'B', text: '妈' }, { key: 'C', text: '饥' }, { key: 'D', text: '她' }], answer: 'C', vn: '饥 (đói) có bộ 饣 (bộ Thực). Các chữ có bộ 饣 trong bài: 饮, 饭, 饿, 饥.' }
+        ]
+      }
+    ] }
+  ]
+};

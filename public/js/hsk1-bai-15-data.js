@@ -977,3 +977,56 @@ var listenData = [
      {q:'Ông Lý làm nghề gì?',opts:['Giáo viên','Bác sĩ','Lái taxi'],ans:1},
    ]},
 ];
+
+// Sach bai tap (khong pinyin): Doc + Chu Han; Nghe / Ngu am can file nghe nen bo qua
+var wbData = {
+  sections: [
+    { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+      { type: 'mocktest',
+        note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài tập viết chữ theo thứ tự nét hãy luyện trực tiếp trong sách.',
+        listening: [],
+        reading: [
+          { n: 16, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-15-wb/q16.jpg', prompt: '开出租车', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '开出租车: lái taxi. Tranh là phi công đang ngồi trong buồng lái máy bay (开飞机) → Sai.' },
+          { n: 17, img: '/images/hsk1-bai-15-wb/q17.jpg', prompt: '高兴', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '高兴: vui. Tranh là em bé đang khóc → Sai.' },
+          { n: 18, img: '/images/hsk1-bai-15-wb/q18.jpg', prompt: '一起学习', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '一起学习: cùng nhau học. Tranh là nhóm bạn đang ngồi học chung → Đúng.' },
+          { n: 19, img: '/images/hsk1-bai-15-wb/q19.jpg', prompt: '开飞机', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '开飞机: lái máy bay. Tranh là hành khách trong khoang máy bay đang với tay lên ngăn hành lý, không phải lái máy bay → Sai.' },
+          { n: 20, img: '/images/hsk1-bai-15-wb/q20.jpg', prompt: '大学同学', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '大学同学: bạn học đại học. Tranh là hai bạn mặc lễ phục tốt nghiệp đại học → Đúng.' },
+          { n: 21, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+            { key: 'A', text: '我们是大学同学。' },
+            { key: 'B', text: '我也很高兴。' },
+            { key: 'C', text: '在一个小商店买的。' },
+            { key: 'D', text: '明天吧，小王是今天去的。' },
+            { key: 'E', text: '我看见他开车回家了。' },
+            { key: 'F', text: '好的，谢谢！' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你们是怎么认识的？', answer: 'A', vn: 'Các bạn quen nhau thế nào? — A: Chúng tôi là bạn học đại học.' },
+          { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你的衣服是在哪儿买的？', answer: 'C', vn: 'Quần áo của bạn mua ở đâu thế? — C: Mua ở một cửa hàng nhỏ. (是…的 nhấn mạnh nơi chốn.)' },
+          { n: 23, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '小王回家了吗？', answer: 'E', vn: 'Tiểu Vương về nhà chưa? — E: Tôi thấy cậu ấy lái xe về nhà rồi.' },
+          { n: 24, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我很高兴你来我们学校。', answer: 'B', vn: 'Tôi rất vui vì bạn đến trường chúng tôi. — B: Tôi cũng rất vui.' },
+          { n: 25, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你想什么时候去？', answer: 'D', vn: 'Bạn muốn khi nào đi? — D: Ngày mai đi, Tiểu Vương thì đi hôm nay rồi. (是…的 nhấn mạnh thời gian.)' },
+          { n: 26, part: 'Phần 3 · Chọn từ thích hợp điền vào chỗ trống', bank: [
+            { key: 'A', text: '认识' },
+            { key: 'B', text: '坐' },
+            { key: 'C', text: '一起' },
+            { key: 'D', text: '名字' },
+            { key: 'E', text: '高兴' },
+            { key: 'F', text: '听' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '（　）老师说，明天我们去看电影。', answer: 'F', vn: 'Nghe thầy giáo nói, ngày mai chúng ta đi xem phim. — 听…说: nghe … nói.' },
+          { n: 27, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我们是在飞机上（　）的。', answer: 'A', vn: 'Chúng tôi quen nhau trên máy bay. — 是 + nơi chốn + 认识的: nhấn mạnh quen nhau ở đâu.' },
+          { n: 28, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我不喜欢（　）出租车，我喜欢开车。', answer: 'B', vn: 'Tôi không thích đi taxi, tôi thích tự lái xe. — 坐出租车: đi taxi.' },
+          { n: 29, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你想不想和我们（　）去商店买衣服？', answer: 'C', vn: 'Bạn có muốn cùng chúng tôi đi cửa hàng mua quần áo không? — 和…一起: cùng với…' },
+          { n: 30, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '今天天气很好，我很（　）。', answer: 'E', vn: 'Hôm nay thời tiết rất đẹp, tôi rất vui. — 很高兴: rất vui.' }
+        ],
+        writing: [
+          { n: '1a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 艹 (bộ Thảo)?', prompt: '艹', options: [{ key: 'A', text: '家' }, { key: 'B', text: '菜' }, { key: 'C', text: '它' }, { key: 'D', text: '室' }], answer: 'B', vn: '菜 (rau, món ăn) có bộ 艹 (bộ Thảo). Các chữ có bộ 艹 trong bài: 菜, 草, 节, 苹.' },
+          { n: '1b', prompt: '艹', options: [{ key: 'A', text: '草' }, { key: 'B', text: '它' }, { key: 'C', text: '室' }, { key: 'D', text: '安' }], answer: 'A', vn: '草 (cỏ) có bộ 艹 (bộ Thảo). Các chữ có bộ 艹 trong bài: 菜, 草, 节, 苹.' },
+          { n: '1c', prompt: '艹', options: [{ key: 'A', text: '室' }, { key: 'B', text: '安' }, { key: 'C', text: '家' }, { key: 'D', text: '节' }], answer: 'D', vn: '节 (ngày lễ) có bộ 艹 (bộ Thảo). Các chữ có bộ 艹 trong bài: 菜, 草, 节, 苹.' },
+          { n: '1d', prompt: '艹', options: [{ key: 'A', text: '安' }, { key: 'B', text: '家' }, { key: 'C', text: '苹' }, { key: 'D', text: '它' }], answer: 'C', vn: '苹 (苹果: quả táo) có bộ 艹 (bộ Thảo). Các chữ có bộ 艹 trong bài: 菜, 草, 节, 苹.' },
+          { n: '2a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 宀 (bộ Miên – mái nhà)?', prompt: '宀', options: [{ key: 'A', text: '菜' }, { key: 'B', text: '家' }, { key: 'C', text: '草' }, { key: 'D', text: '节' }], answer: 'B', vn: '家 (nhà) có bộ 宀 (bộ Miên – mái nhà). Các chữ có bộ 宀 trong bài: 家, 它, 室, 安.' },
+          { n: '2b', prompt: '宀', options: [{ key: 'A', text: '它' }, { key: 'B', text: '草' }, { key: 'C', text: '节' }, { key: 'D', text: '苹' }], answer: 'A', vn: '它 (nó) có bộ 宀 (bộ Miên – mái nhà). Các chữ có bộ 宀 trong bài: 家, 它, 室, 安.' },
+          { n: '2c', prompt: '宀', options: [{ key: 'A', text: '节' }, { key: 'B', text: '苹' }, { key: 'C', text: '菜' }, { key: 'D', text: '室' }], answer: 'D', vn: '室 (phòng; 教室: lớp học) có bộ 宀 (bộ Miên – mái nhà). Các chữ có bộ 宀 trong bài: 家, 它, 室, 安.' },
+          { n: '2d', prompt: '宀', options: [{ key: 'A', text: '苹' }, { key: 'B', text: '菜' }, { key: 'C', text: '安' }, { key: 'D', text: '草' }], answer: 'C', vn: '安 (yên ổn) có bộ 宀 (bộ Miên – mái nhà). Các chữ có bộ 宀 trong bài: 家, 它, 室, 安.' }
+        ]
+      }
+    ] }
+  ]
+};

@@ -1102,3 +1102,91 @@ var listenData = [
      {q:'Ngày mai họ đi xem phim lúc mấy giờ?',opts:['6 giờ chiều','6 giờ sáng','5 giờ chiều'],ans:0},
    ]},
 ];
+
+// ===== Sach bai tap (phan Doc + Chu Han, khong pinyin) =====
+var wbData = { sections: [
+  { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+    { type: 'mocktest',
+      note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài tập chép chữ theo thứ tự nét (午, 电) hãy luyện trong vở.',
+      listening: [],
+      reading: [
+        { n: 16, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-11-wb/q16.jpg', prompt: '我们',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A',
+          vn: '我们: chúng tôi, chúng ta. Tranh là một nhóm bạn đứng chụm vào nhau → Đúng.' },
+        { n: 17, img: '/images/hsk1-bai-11-wb/q17.jpg', prompt: '米饭',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B',
+          vn: '米饭 là cơm (gạo trắng nấu chín). Tranh là một đĩa thức ăn chiên (món mặn), không phải cơm trắng → Sai.' },
+        { n: 18, img: '/images/hsk1-bai-11-wb/q18.jpg', prompt: '中午',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A',
+          vn: '中午: buổi trưa. Tranh là hai đồng hồ đều chỉ 12 giờ, đồng hồ bên phải có mặt trời → 12 giờ trưa → Đúng.' },
+        { n: 19, img: '/images/hsk1-bai-11-wb/q19.jpg', prompt: '工作',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B',
+          vn: '工作: làm việc. Tranh là mấy ông cụ đang ngồi chơi bài, không phải đang làm việc → Sai.' },
+        { n: 20, img: '/images/hsk1-bai-11-wb/q20.jpg', prompt: '电影',
+          options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B',
+          vn: '电影 là phim (điện ảnh). Tranh là một cái máy tính xách tay (电脑) → Sai.' },
+
+        { n: 21, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+            { key: 'A', text: '不去学校，我在家。' },
+            { key: 'B', text: '我不去，没有时间。' },
+            { key: 'C', text: '不工作，你12点来吧。' },
+            { key: 'D', text: '星期五前。' },
+            { key: 'E', text: '他不想去。' },
+            { key: 'F', text: '好的，谢谢！' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '下午三点你去学校吗？', answer: 'A',
+          vn: '3 giờ chiều bạn có đến trường không? → A: Không đến trường, tôi ở nhà.' },
+        { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你什么时候回北京？', answer: 'D',
+          vn: 'Khi nào bạn về Bắc Kinh? → D: Trước thứ Sáu. (什么时候 hỏi thời gian → trả lời bằng mốc thời gian)' },
+        { n: 23, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '中午你工作吗？', answer: 'C',
+          vn: 'Buổi trưa bạn có làm việc không? → C: Không làm việc, 12 giờ bạn đến nhé.' },
+        { n: 24, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你中午去吃饭吗？', answer: 'B',
+          vn: 'Trưa nay bạn có đi ăn cơm không? → B: Tôi không đi, không có thời gian.' },
+        { n: 25, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '大卫去看电影吗？', answer: 'E',
+          vn: 'David có đi xem phim không? → E: Cậu ấy không muốn đi. (hỏi về 大卫 → trả lời bằng 他)' },
+
+        { n: 26, part: 'Phần 3 · Chọn từ thích hợp điền vào chỗ trống', bank: [
+            { key: 'A', text: '点' },
+            { key: 'B', text: '分' },
+            { key: 'C', text: '时候' },
+            { key: 'D', text: '名字' },
+            { key: 'E', text: '前' },
+            { key: 'F', text: '住' }
+          ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我在王方家（　）一个星期，星期六回家。', answer: 'F',
+          vn: 'Tôi ở nhà Vương Phương một tuần, thứ Bảy về nhà. — 住: ở, lưu trú; 住 + khoảng thời gian.' },
+        { n: 27, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你什么（　）有时间？我们去看电影。', answer: 'C',
+          vn: 'Khi nào bạn có thời gian? Chúng ta đi xem phim. — 什么时候: khi nào.' },
+        { n: 28, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '现在中午十二（　），你去吃饭吗？', answer: 'A',
+          vn: 'Bây giờ là 12 giờ trưa, bạn có đi ăn cơm không? — 十二点: 12 giờ.' },
+        { n: 29, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我现在工作，十二点十（　）去吃饭。', answer: 'B',
+          vn: 'Bây giờ tôi đang làm việc, 12 giờ 10 phút đi ăn cơm. — 十二点十分: 12 giờ 10 phút.' },
+        { n: 30, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '我八点（　）在家。', answer: 'E',
+          vn: 'Trước 8 giờ tôi ở nhà. — mốc thời gian + 前: trước…' }
+      ],
+      writing: [
+        { n: '1a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 阝?', prompt: 'Chữ nào có bộ 阝?', options: [
+            { key: 'A', text: '你' }, { key: 'B', text: '院' }, { key: 'C', text: '他' }, { key: 'D', text: '们' }
+          ], answer: 'B', vn: '院 (viện – 医院) có bộ 阝 bên trái (bộ phụ – gò đất). 你, 他, 们 đều có bộ 亻.' },
+        { n: '1b', prompt: 'Chữ nào có bộ 阝?', options: [
+            { key: 'A', text: '阳' }, { key: 'B', text: '住' }, { key: 'C', text: '你' }, { key: 'D', text: '他' }
+          ], answer: 'A', vn: '阳 (mặt trời, dương) có bộ 阝. 住, 你, 他 đều có bộ 亻.' },
+        { n: '1c', prompt: 'Chữ nào có bộ 阝?', options: [
+            { key: 'A', text: '们' }, { key: 'B', text: '他' }, { key: 'C', text: '阴' }, { key: 'D', text: '住' }
+          ], answer: 'C', vn: '阴 (râm, âm u) có bộ 阝. 们, 他, 住 đều có bộ 亻.' },
+        { n: '1d', prompt: 'Chữ nào có bộ 阝?', options: [
+            { key: 'A', text: '住' }, { key: 'B', text: '们' }, { key: 'C', text: '你' }, { key: 'D', text: '阵' }
+          ], answer: 'D', vn: '阵 (trận, đợt) có bộ 阝. → Các chữ có bộ 阝: 院, 阵, 阴, 阳.' },
+        { n: '2a', part: 'Chữ Hán · Chữ nào dưới đây có bộ 亻?', prompt: 'Chữ nào có bộ 亻?', options: [
+            { key: 'A', text: '院' }, { key: 'B', text: '阵' }, { key: 'C', text: '你' }, { key: 'D', text: '阳' }
+          ], answer: 'C', vn: '你 (bạn) có bộ 亻 (nhân đứng – người). 院, 阵, 阳 có bộ 阝.' },
+        { n: '2b', prompt: 'Chữ nào có bộ 亻?', options: [
+            { key: 'A', text: '他' }, { key: 'B', text: '阴' }, { key: 'C', text: '阳' }, { key: 'D', text: '院' }
+          ], answer: 'A', vn: '他 (anh ấy) có bộ 亻. 阴, 阳, 院 có bộ 阝.' },
+        { n: '2c', prompt: 'Chữ nào có bộ 亻?', options: [
+            { key: 'A', text: '阵' }, { key: 'B', text: '们' }, { key: 'C', text: '院' }, { key: 'D', text: '阴' }
+          ], answer: 'B', vn: '们 (chỉ số nhiều – 我们) có bộ 亻. 阵, 院, 阴 có bộ 阝.' },
+        { n: '2d', prompt: 'Chữ nào có bộ 亻?', options: [
+            { key: 'A', text: '阳' }, { key: 'B', text: '阴' }, { key: 'C', text: '阵' }, { key: 'D', text: '住' }
+          ], answer: 'D', vn: '住 (ở, sống) có bộ 亻. → Các chữ có bộ 亻: 你, 他, 们, 住.' }
+      ] }
+  ] }
+] };

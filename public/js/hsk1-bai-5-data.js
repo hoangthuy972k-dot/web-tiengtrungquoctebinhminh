@@ -1037,3 +1037,57 @@ var listenData = [
      {q:'Người hỏi đầu tiên bao nhiêu tuổi?',opts:['20','24','42'],ans:1},
    ]},
 ];
+
+// Sach bai tap bai 5 (Doc + Chu Han, khong pinyin)
+var wbData = { sections: [
+  { title: 'Sách bài tập · Đọc & Chữ Hán', blocks: [
+    { type: 'mocktest',
+      note: 'Phần Nghe và Ngữ âm của sách cần file nghe nên chưa có ở đây. Bài viết chữ theo thứ tự nét (Chữ Hán – Phần 2) không chấm được trên máy, hãy luyện viết vào vở.',
+      listening: [],
+      reading: [
+        { n: 13, part: 'Phần 1 · Nhìn tranh: từ dưới tranh đúng hay sai?', img: '/images/hsk1-bai-5-wb/q13.jpg', prompt: '七十岁', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '七十岁: 70 tuổi. Tranh là một người đàn ông trung niên mặc vest đang gọi điện thoại, chưa đến 70 tuổi → Sai.' },
+        { n: 14, img: '/images/hsk1-bai-5-wb/q14.jpg', prompt: '女儿', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '女儿: con gái. Tranh một bé gái đang ngồi viết bài → Đúng.' },
+        { n: 15, img: '/images/hsk1-bai-5-wb/q15.jpg', prompt: '三口人', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '三口人: ba người (trong gia đình). Tranh chỉ có hai người: cô gái ôm người mẹ → Sai.' },
+        { n: 16, img: '/images/hsk1-bai-5-wb/q16.jpg', prompt: '她们', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'A', vn: '她们: các cô ấy (toàn nữ). Tranh ba cô gái cầm túi mua sắm → Đúng.' },
+        { n: 17, img: '/images/hsk1-bai-5-wb/q17.jpg', prompt: '五口人', options: [{ key: 'A', text: '✓ Đúng' }, { key: 'B', text: '✗ Sai' }], answer: 'B', vn: '五口人: năm người. Đếm trong tranh có sáu người (ông, bà, bố, mẹ và hai con) → Sai.' },
+        { n: 18, part: 'Phần 2 · Đọc câu hỏi, chọn câu trả lời đúng', bank: [
+          { key: 'A', text: '她今年七岁了。' },
+          { key: 'B', text: '不是，他是学生，他今年21岁。' },
+          { key: 'C', text: '他是中国人。' },
+          { key: 'D', text: '我今年38岁了。' },
+          { key: 'E', text: '我家有四口人。' },
+          { key: 'F', text: '好的，谢谢！' }
+        ], letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你家有几口人？', answer: 'E', vn: 'Nhà bạn có mấy người? — E: Nhà tôi có bốn người. (几口人 → số + 口人)' },
+        { n: 19, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '李老师的女儿几岁了？', answer: 'A', vn: 'Con gái của cô giáo Lý mấy tuổi rồi? — A: Cô bé năm nay 7 tuổi rồi. (几岁 hỏi tuổi trẻ nhỏ; 她 thay cho 女儿)' },
+        { n: 20, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '他是老师吗？', answer: 'B', vn: 'Anh ấy là giáo viên phải không? — B: Không phải, anh ấy là học sinh, năm nay 21 tuổi.' },
+        { n: 21, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你今年多大了？', answer: 'D', vn: 'Năm nay bạn bao nhiêu tuổi? — D: Năm nay tôi 38 tuổi rồi. (多大 hỏi tuổi người lớn; trả lời bằng 我…)' },
+        { n: 22, letters: ['A', 'B', 'C', 'D', 'E', 'F'], prompt: '你的汉语老师是哪国人？', answer: 'C', vn: 'Giáo viên tiếng Trung của bạn là người nước nào? — C: Thầy ấy là người Trung Quốc. (哪国人 ở bài 4)' },
+        { n: 23, part: 'Phần 3 · Chọn từ điền vào chỗ trống', bank: [
+          { key: 'A', text: '大' },
+          { key: 'B', text: '几' },
+          { key: 'C', text: '岁' },
+          { key: 'D', text: '名字' },
+          { key: 'E', text: '口' }
+        ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我的中国朋友家有三（　）人。', answer: 'E', vn: 'Nhà người bạn Trung Quốc của tôi có ba người. — Đếm người trong gia đình dùng lượng từ 口: 三口人.' },
+        { n: 24, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你们老师今年多（　）？', answer: 'A', vn: 'Năm nay thầy/cô của các bạn bao nhiêu tuổi? — 多大: bao nhiêu tuổi (hỏi người lớn).' },
+        { n: 25, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我是美国人，我是学生，我19（　）。', answer: 'C', vn: 'Tôi là người Mỹ, tôi là học sinh, tôi 19 tuổi. — Số + 岁: … tuổi.' },
+        { n: 26, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你家有（　）口人？', answer: 'B', vn: 'Nhà bạn có mấy người? — 几: mấy (hỏi số lượng nhỏ), 几口人.' },
+        { n: 27, bank: [
+          { key: 'F', text: '呢' },
+          { key: 'G', text: '了' },
+          { key: 'H', text: '吗' },
+          { key: 'I', text: '哪' }
+        ], letters: ['F', 'G', 'H', 'I'], prompt: '他是（　）国人？', answer: 'I', vn: 'Anh ấy là người nước nào? — 哪国人: người nước nào.' },
+        { n: 28, letters: ['F', 'G', 'H', 'I'], prompt: '我今年29岁。你（　）？', answer: 'F', vn: 'Năm nay tôi 29 tuổi. Còn bạn? — 你呢: hỏi lại “còn bạn thì sao?”.' },
+        { n: 29, letters: ['F', 'G', 'H', 'I'], prompt: '这是你女儿（　）？', answer: 'H', vn: 'Đây là con gái của bạn phải không? — Câu hỏi có/không → thêm 吗 cuối câu.' },
+        { n: 30, letters: ['F', 'G', 'H', 'I'], prompt: '他是我的好朋友，他今年30岁（　）。', answer: 'G', vn: 'Anh ấy là bạn thân của tôi, năm nay anh ấy 30 tuổi rồi. — … 岁了: (đã) … tuổi rồi, 了 ở cuối câu.' }
+      ],
+      writing: [
+        { n: '1a', part: 'Chữ Hán · Phần 1 · Chữ nào có nét cho sẵn?', prompt: 'Chữ nào dưới đây có nét ngang phẩy 横撇 (㇇)?', options: [{ key: 'A', text: '大' }, { key: 'B', text: '女' }, { key: 'C', text: '水' }, { key: 'D', text: '人' }], answer: 'C', vn: '水: nét thứ hai (bên trái) là nét ngang phẩy (㇇): đi ngang rồi gập chéo xuống trái. 大, 女, 人 không có nét này.' },
+        { n: '1b', prompt: 'Chữ nào dưới đây có nét ngang phẩy 横撇 (㇇)?', options: [{ key: 'A', text: '又' }, { key: 'B', text: '大' }, { key: 'C', text: '儿' }, { key: 'D', text: '中' }], answer: 'A', vn: '又: nét đầu tiên là nét ngang phẩy (㇇), sau đó là nét mác. 大, 儿, 中 không có nét này.' },
+        { n: '2a', prompt: 'Chữ nào dưới đây có nét phẩy chấm 撇点 (㇛)?', options: [{ key: 'A', text: '大' }, { key: 'B', text: '女' }, { key: 'C', text: '水' }, { key: 'D', text: '又' }], answer: 'B', vn: '女: nét đầu tiên là nét phẩy chấm (㇛): phẩy xuống trái rồi gập sang phải. 大, 水, 又 không có nét này.' },
+        { n: '2b', prompt: 'Chữ nào dưới đây có nét phẩy chấm 撇点 (㇛)?', options: [{ key: 'A', text: '你' }, { key: 'B', text: '他' }, { key: 'C', text: '们' }, { key: 'D', text: '好' }], answer: 'D', vn: '好 = 女 + 子; bộ 女 bên trái có nét phẩy chấm (㇛). 你, 他, 们 không có nét này.' }
+      ]
+    }
+  ]}
+] };

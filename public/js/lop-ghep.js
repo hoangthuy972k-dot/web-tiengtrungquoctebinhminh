@@ -654,7 +654,7 @@
         '<div class="gp-cuoi-ben">' +
           '<div class="gp-ten">' +
             (t.zh ? '<div class="gp-ten-zh" lang="zh">' + esc(t.zh) + '</div>' : '') +
-            (t.py ? '<div class="gp-ten-py">' + esc(t.py) + '</div>' : '') +
+
             (t.vn ? '<div class="gp-ten-vn">' + esc(t.vn) + '</div>' : '') +
             (t.zh ? '<button type="button" class="gp-btn gp-btn-sang gp-doc" id="gpDoc">🔊 Đọc lại <kbd>S</kbd></button>' : '') +
           '</div>' +

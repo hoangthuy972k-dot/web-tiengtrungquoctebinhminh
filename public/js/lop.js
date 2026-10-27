@@ -150,12 +150,77 @@
     });
     return out;
   }
+  /* ---------------- tro choi khong hien pinyin ----------------
+     Co yeu cau: moi tro choi chi co chu Han (va tieng Viet). Goi y / giai thich trong
+     du lieu bai tap doi khi kem pinyin (vd goi y "yíqiè", "两点 (liǎng diǎn)") —
+     bo cac tu pinyin, giu phan tieng Viet. Pinyin rieng: chu co dau ngang / dau mu
+     (ā ǎ …); tu chi co dau sac / huyen ma khong co chu rieng cua tieng Viet cung la pinyin. */
+  var PY_RIENG = /[āǎēěīǐōǒūǔǖǘǚǜĀǍĒĚĪǏŌǑŪǓ]/;
+  var VIET_RIENG = /[ăâđêôơưạảãầấậẩẫằắặẳẵẹẻẽềếệểễịỉĩọỏõồốộổỗờớợởỡụủũừứựửữỳỷỹỵ]/i;
+  var KHONG_DAU_PY = { 'á': 'a', 'à': 'a', 'é': 'e', 'è': 'e', 'í': 'i', 'ì': 'i', 'ó': 'o', 'ò': 'o', 'ú': 'u', 'ù': 'u', 'ā': 'a', 'ǎ': 'a', 'ē': 'e', 'ě': 'e', 'ī': 'i', 'ǐ': 'i', 'ō': 'o', 'ǒ': 'o', 'ū': 'u', 'ǔ': 'u', 'ǖ': 'v', 'ǘ': 'v', 'ǚ': 'v', 'ǜ': 'v', 'ü': 'v' };
+  var AM_PY = /^(zh|ch|sh|[bpmfdtnlgkhjqxrzcsyw])?(iang|iong|uang|ueng|ang|eng|ing|ong|ian|iao|uai|uan|van|ai|ei|ao|ou|an|en|er|ia|ie|in|iu|ua|uo|ui|un|vn|ue|ve|a|o|e|i|u|v)r?$/;
+  // so am tiet pinyin hop le ghep thanh tu nay (0 = khong phai pinyin)
+  function soAmPy(w) {
+    var t = w.toLowerCase().replace(/[áàéèíìóòúùāǎēěīǐōǒūǔǖǘǚǜü]/g, function (c) { return KHONG_DAU_PY[c]; }).replace(/'/g, '');
+    if (!/^[a-z]+$/.test(t)) return 0;
+    var tot = new Array(t.length + 1); tot[0] = 0;
+    // Bang am tiet that (phat-am-de.js) chat hon mau AM_PY — "noi" khong tach thanh "no"+"i"
+    var P = window.PhatAmDe;
+    var hopLe = P && P.laAmTiet ? function (x) { return P.laAmTiet(x.replace(/v/g, 'ü')); } : function (x) { return AM_PY.test(x); };
+    for (var i = 1; i <= t.length; i++) {
+      for (var k = Math.max(0, i - 6); k < i; k++) {
+        if (tot[k] != null && hopLe(t.slice(k, i)) && (tot[i] == null || tot[k] + 1 < tot[i])) tot[i] = tot[k] + 1;
+      }
+    }
+    return tot[t.length] || 0;
+  }
+  function boPinyin(s) {
+    if (!s) return s;
+    var tok = String(s).split(/([A-Za-zÀ-ỹāǎēěīǐōǒūǔǖǘǚǜü']+)/);
+    // chac chan la pinyin: co dau rieng cua pinyin, hoac pinyin hop le tu 2 am tiet (yíqiè)
+    var la = tok.map(function (w, i) {
+      if (i % 2 !== 1 || VIET_RIENG.test(w)) return false;
+      return (PY_RIENG.test(w) && soAmPy(w) > 0) || (/[áàéèíìóòúù]/i.test(w) && soAmPy(w) >= 2);
+    });
+    // lan sang tu ben canh (chi cach dau cach) neu tu do cung la pinyin hop le: nǐ hǎo ma
+    for (var lap = 0; lap < 4; lap++) {
+      tok.forEach(function (w, i) {
+        if (i % 2 !== 1 || la[i] || VIET_RIENG.test(w) || !soAmPy(w)) return;
+        var truoc = i >= 2 && la[i - 2] && /^ +$/.test(tok[i - 1]), sau = i + 2 < tok.length && la[i + 2] && /^ +$/.test(tok[i + 1]);
+        if (truoc || sau) la[i] = true;
+      });
+    }
+    var out = tok.map(function (w, i) { return la[i] ? '' : w; }).join('');
+    out = out.replace(/[（(]\s*[,·\-–—\s]*[)）]/g, '').replace(/\s+([,.;:!?)）])/g, '$1').replace(/([(（])\s+/g, '$1')
+      .replace(/\s{2,}/g, ' ').replace(/^[\s·,–—=-]+|[\s·,–—:=-]+$/g, '');
+    return out.trim();
+  }
+  function boPyMc(q) {
+    var c = {};
+    for (var k in q) c[k] = q[k];
+    if (c.hint) c.hint = boPinyin(c.hint);
+    if (c.why) c.why = boPinyin(c.why);
+    if (c.context) c.context = boPinyin(c.context);
+    return c;
+  }
+  // ban sao khong pinyin cua tu / cau / hoi thoai (cho Kiem tra bai cu, O chu…)
+  function boPy(o) {
+    var c = {};
+    for (var k in o) c[k] = o[k];
+    if ('py' in c) c.py = '';
+    if ('ex_py' in c) c.ex_py = '';
+    if (Array.isArray(c.lines)) c.lines = c.lines.map(boPy);
+    return c;
+  }
   function pickedMcs() {
     var out = [];
     state.lessons.forEach(function (l) {
       if (state.picked[l.url]) out = out.concat(l.mcs || []);
     });
-    return out;
+    // cau hoi ve phat am (dap an / de bai la pinyin) khong dung cho tro choi
+    return out.filter(function (q) {
+      return !PY_RIENG.test((q.options || []).join(' ') + ' ' + (q.pre || '') + ' ' + (q.post || ''));
+    }).map(boPyMc);
   }
   function pickedSorts() {
     var out = [];
@@ -1411,7 +1476,7 @@
         '<div class="lop-bingo-list">' + state.bingoWords.map(function (v, i) {
           return '<div class="lop-bingo-word"><span class="lop-bingo-no">' + (i + 1) + '</span>' +
             '<span class="lop-bingo-zh">' + esc(v.zh) + '</span>' +
-            '<span class="lop-bingo-py">' + esc(v.py) + '</span></div>';
+            '</div>';
         }).join('') + '</div>' +
         '<div class="lop-stage-actions">' +
           '<button type="button" class="lop-act" id="lopBingoGo">Cả lớp viết xong → Bắt đầu gọi từ</button>' +
@@ -1434,7 +1499,7 @@
             '<div class="lop-bingo-vn">' + esc(cur.vn) + '</div>' +
             '<div class="lop-bingo-reveal" id="lopBingoReveal" hidden>' +
               '<span class="lop-bingo-big">' + esc(cur.zh) + '</span>' +
-              '<span class="lop-bingo-bigpy">' + esc(cur.py) + '</span>' +
+              
             '</div>' +
           '</div>'
         : '<div class="lop-bingo-call"><div class="lop-bingo-vn">Bấm “Gọi từ” để bắt đầu</div></div>') +
@@ -1490,7 +1555,7 @@
       '<div class="lop-guess-em">' + esc(v.em) + '</div>' +
       '<div class="lop-guess-answer" id="lopGuessAns" hidden>' +
         '<div class="lop-guess-zh">' + esc(v.zh) + '</div>' +
-        '<div class="lop-guess-py">' + esc(v.py) + '</div>' +
+        
         '<div class="lop-guess-vn">' + esc(v.vn) + '</div>' +
       '</div>' +
       '<div class="lop-stage-actions">' +
@@ -1555,7 +1620,7 @@
       '</div>' +
       '<div class="lop-guess-answer" id="lopTileAns"' + (state.tileShown ? '' : ' hidden') + '>' +
         '<div class="lop-guess-zh">' + esc(v.zh) + '</div>' +
-        '<div class="lop-guess-py">' + esc(v.py) + '</div>' +
+        
         '<div class="lop-guess-vn">' + esc(v.vn) + '</div>' +
       '</div>' +
       '<div class="lop-stage-actions">' +
@@ -1626,7 +1691,7 @@
       '</div>' +
       '<div class="lop-taboo-card">' +
         '<div class="lop-taboo-zh">' + esc(v.zh) + '</div>' +
-        '<div class="lop-taboo-py">' + esc(v.py) + '</div>' +
+        
         '<div class="lop-taboo-vn">' + esc(v.vn) + '</div>' +
       '</div>' +
       '<div class="lop-stage-actions">' +
@@ -1663,7 +1728,7 @@
       '<div class="lop-trans-vi">' + esc(t.vi) + '</div>' +
       '<div class="lop-trans-answer" id="lopTransAns" hidden>' +
         '<div class="lop-trans-zh">' + esc(t.zh) + '</div>' +
-        (t.py ? '<div class="lop-trans-py">' + esc(t.py) + '</div>' : '') +
+        
       '</div>' +
       '<div class="lop-stage-actions">' +
         '<button type="button" class="lop-act" id="lopTransReveal">Lật đáp án (Space)</button>' +
@@ -1877,7 +1942,7 @@
       '</div>' +
       '<div class="lop-hv-answer" id="lopHvAns" hidden>' +
         '<div class="lop-hv-zh">' + esc(v.zh) + '</div>' +
-        '<div class="lop-hv-py">' + esc(v.py) + '</div>' +
+        
       '</div>' +
       '<div class="lop-stage-actions">' +
         '<button type="button" class="lop-act" id="lopHvReveal">Lật đáp án (Space)</button>' +
@@ -2063,7 +2128,7 @@
           ? '<div class="lop-chain-hint">Bấm vào từ học sinh vừa nói để nối tiếp · còn ' + opt.list.length + ' từ nối được</div>' +
             '<div class="lop-chain-opts">' + opt.list.slice(0, 24).map(function (v, i) {
               return '<button type="button" class="lop-chain-opt" data-i="' + i + '">' +
-                esc(v.zh) + '<small>' + esc(v.py) + '</small></button>';
+                esc(v.zh) + '</button>';
             }).join('') + '</div>'
           : '<div class="lop-chain-hint">Hết từ nối được trong các bài đã chọn — bấm “Chữ khác” để sang lượt mới.</div>') +
       '</div>' +
@@ -2924,7 +2989,7 @@
     if (game === 'zombie' && window.LopZombie) { window.LopZombie.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
     if (game === 'ghep' && window.LopGhep) { window.LopGhep.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
     if (game === 'ochu' && window.LopOChu) {
-      loadPickedVocab().then(function (v) { window.LopOChu.mo({ vocab: v, nhan: pickedLabel() }); });
+      loadPickedVocab().then(function (v) { window.LopOChu.mo({ vocab: v.map(boPy), nhan: pickedLabel() }); });
       return;
     }
     if (!VOCAB_GAMES[game]) {
@@ -3369,8 +3434,8 @@
     $('#lopKiemTraOpen').addEventListener('click', function () {
       if (!window.LopKiemTra || !pickedLabel()) return;
       loadPickedVocab().then(function (v) {
-        window.LopKiemTra.mo({ nhan: pickedLabel(), vocab: v, mcs: pickedMcs(), sorts: pickedSorts(),
-          trans: state.trans || [], dialogs: state.dialogs || [] });
+        window.LopKiemTra.mo({ nhan: pickedLabel(), vocab: v.map(boPy), mcs: pickedMcs(), sorts: pickedSorts(),
+          trans: (state.trans || []).map(boPy), dialogs: (state.dialogs || []).map(boPy) });
       });
     });
     // The tra loi: dung cau A/B/C cua cac bai dang chon; chua chon bai thi la cau hoi tu do

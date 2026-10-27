@@ -42,6 +42,15 @@ const DUOI = {
   hsk2v3: ['hsk1v3'], hsk3v3: ['hsk1v3', 'hsk2v3'],
 };
 
+// Cap duoc lay cau trong sach bai tap (wbData) lam cau hoi tro choi
+const SBT_VAO_GAME = ['hsk1'];
+// Cau SBT tach khoi sach thi co hon mot dap an hop ly (trong sach moi tu chi dung 1 lan nen hoc
+// sinh loai tru duoc) hoac noi dung loi -> khong dua vao tro choi. Khoa = pre + '＿' + post.
+const SBT_BO = new Set([
+  '我＿会写我的汉语名字。', '今天是9＿31号，星期六。', '明天星期六，你＿什么？', '我想＿米饭。', '您好，您＿茶吗？',
+  '请坐，这儿的中国菜＿好吃。', '中国菜很好吃，我们做中国菜＿。', '你们都来我家吃饭吧，我做了＿菜。',
+]);
+
 const HAN = /[㐀-鿿]/g;
 const han = (s) => String(s || '').match(HAN) || [];
 
@@ -51,7 +60,7 @@ function bai(url) {
   const code = doc(url.replace('/lessons/', 'js/').replace('.html', '-data.js'));
   const g = (n) => 'typeof ' + n + '!=="undefined"?' + n + ':null';
   const w = chay(code, ';window.D={vocab:' + g('vocabData') + ',dialog:' + g('dialogData') + ',fill:' + g('fillData') +
-    ',sort:' + g('sortData') + ',mc:' + g('mcData') + ',err:' + g('errorFixData') + ',errMode:' + g('errorFixMode') + '};');
+    ',sort:' + g('sortData') + ',mc:' + g('mcData') + ',err:' + g('errorFixData') + ',errMode:' + g('errorFixMode') + ',wb:' + g('wbData') + '};');
   const D = w.D || {};
   const chu = new Set();
   (D.vocab || []).forEach((v) => han(v && v.zh).forEach((h) => chu.add(h)));
@@ -189,6 +198,30 @@ function dungCap(level) {
       }
       thongKe.rieng++;
     });
+
+    /* ---- 1b) sach bai tap (wbData, phan Doc): cau dien tu vao cho trong.
+       Cau nhin tranh / dung–sai khong lay. Chi cap trong SBT_VAO_GAME. ---- */
+    if (SBT_VAO_GAME.indexOf(level) >= 0 && D.wb && Array.isArray(D.wb.sections)) {
+      D.wb.sections.forEach((sec) => (sec.blocks || []).forEach((b) => {
+        if (b.type !== 'mocktest') return;
+        let bank = null;
+        (b.reading || []).forEach((q) => {
+          if (q.bank) bank = q.bank;
+          if (q.part && !q.bank) bank = null;
+          if (q.img || !q.answer || !q.prompt) return;
+          const ds = (q.options || (q.letters ? (bank || []).filter((x) => q.letters.indexOf(x.key) >= 0) : [])).filter((o) => o && o.text);
+          const dung = ds.find((o) => o.key === q.answer);
+          if (!dung || ds.length < 3 || ds.some((o) => /[✓✗]/.test(o.text))) return;
+          const opts = [dung.text].concat(ds.filter((o) => o !== dung).map((o) => o.text).slice(0, 2));
+          const cat = String(q.prompt).split(/（\s*）|\(\s*\)/);
+          if (cat.length === 2 && SBT_BO.has(cat[0].trim() + '＿' + cat[1].trim())) return;
+          if (cat.length === 2) themM({ pre: cat[0].trim(), post: cat[1].trim(), options: opts, answer: 0, context: '', why: q.vn || '', point: '', src: 'sbt' });
+          // cau ghep hoi–dap khong lay: dap an nhieu lay tu ngan chung de co cau cung hop ly (hai dap an dung)
+          else return;
+          thongKe.rieng++;
+        });
+      }));
+    }
 
     /* ---- 2) bai tap ngu phap chung — chi cau toan chu da hoc ---- */
     const loc = (t) => { if (hocRoi(t)) { thongKe.chung++; return true; } thongKe.boChung++; return false; };

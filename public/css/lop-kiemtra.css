@@ -216,6 +216,15 @@ html.kt-open, html.kt-open body { overflow: hidden; }
   animation: kt-pop .35s cubic-bezier(.2, 1.4, .4, 1);
 }
 .kt-lop-the.is-kq { width: min(940px, 100%); }
+.kt-lop-the.is-banner { position: relative; }
+.kt-x {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: rgba(58, 42, 36, .08); color: var(--kt-chu);
+  font: 700 1.25rem/1 inherit; cursor: pointer;
+}
+.kt-x:hover { background: rgba(58, 42, 36, .16); }
+.kt-x:focus-visible { outline: 3px solid var(--kt-do); outline-offset: 2px; }
 @keyframes kt-pop { from { transform: scale(.86); opacity: 0; } to { transform: none; opacity: 1; } }
 .kt-banner-moi { margin: 0; color: var(--kt-do); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: clamp(.95rem, 1.6vw, 1.15rem); }
 .kt-banner-ten {

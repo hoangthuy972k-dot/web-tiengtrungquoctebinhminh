@@ -17,6 +17,7 @@
     <div class="vd-bar-t"><b id="vdTieuDe">🤸 Vận động trả lời</b><span id="vdNhan"></span></div>
     <div class="vd-bar-phai">
       <span class="vd-diem" id="vdDiem" hidden>0</span>
+      <button type="button" class="vd-btn vd-ic" id="vdNhac" title="Bật/tắt nhạc nền" aria-pressed="true">🎵</button>
       <button type="button" class="vd-btn vd-ic" id="vdTieng" title="Bật/tắt âm thanh">🔊</button>
       <button type="button" class="vd-btn vd-ic" id="vdFull" title="Toàn màn hình">⛶</button>
     </div>
@@ -38,10 +39,23 @@
         <button type="button" data-da="bong">🎈 Bong bóng</button>
       </div>
       <div class="vd-ten" id="vdTenO" hidden>
-        <label class="trai"><span>👈 Bên trái</span><input type="text" id="vdTen0" maxlength="16" autocomplete="off" spellcheck="false"></label>
-        <label class="phai"><span>Bên phải 👉</span><input type="text" id="vdTen1" maxlength="16" autocomplete="off" spellcheck="false"></label>
-        <label class="vd-muc"><span>Thắng khi đạt</span>
-          <select id="vdMuc"><option value="3">3 ngôi sao</option><option value="5" selected>5 ngôi sao</option><option value="0">Chơi hết câu hỏi</option></select>
+        <!-- Danh sach lop: boc ngau nhien 2 ban moi vong -->
+        <div class="vd-lop">
+          <label class="vd-lop-chon"><span>📋 Danh sách lớp</span>
+            <select id="vdLop"><option value="">Tự nhập tên hai bạn</option></select>
+          </label>
+          <button type="button" class="vd-boc" id="vdBoc" hidden>🎲 Bốc 2 bạn ngẫu nhiên</button>
+          <div class="vd-lop-ds" id="vdLopDsO" hidden>
+            <div class="vd-lop-dau"><span><span id="vdLopDem">0</span> bạn có mặt · bấm tên để</span>
+              <span class="vd-lop-che" role="group" aria-label="Bấm tên để"><button type="button" data-che="chon" class="is-on">Chọn bạn lên chơi</button><button type="button" data-che="vang">Đánh dấu vắng</button></span></div>
+            <div id="vdLopDs"></div>
+          </div>
+          <p class="vd-lop-goi" id="vdLopGoi" hidden></p>
+        </div>
+        <label class="trai"><span id="vdTen0Nhan">👈 Bên trái</span><input type="text" id="vdTen0" maxlength="24" autocomplete="off" spellcheck="false"></label>
+        <label class="phai" id="vdTen1O"><span>Bên phải 👉</span><input type="text" id="vdTen1" maxlength="24" autocomplete="off" spellcheck="false"></label>
+        <label class="vd-muc"><span id="vdMucNhan">Mỗi vòng</span>
+          <select id="vdMuc"><option value="3">3 câu</option><option value="5" selected>5 câu</option><option value="7">7 câu</option><option value="10">10 câu</option></select>
         </label>
       </div>
       <div class="vd-cach">
@@ -80,6 +94,7 @@
 <div class="vd-hoa" id="vdHoa" aria-hidden="true"></div>
 <script type="module" src="/js/van-dong-mp.js"></script>
 <script src="/js/sao-game.js"></script>
+<script src="/js/nhac-nen.js"></script>
 <script src="/js/van-dong.js"></script>
 </body>
 </html>

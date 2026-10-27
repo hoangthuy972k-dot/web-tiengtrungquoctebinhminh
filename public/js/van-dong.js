@@ -167,7 +167,11 @@
     vat: [], hat: [], vet: [{ d: [] }, { d: [] }, { d: [] }], saiCau: 0, lo: false, khongTay: 0, troDang: false,
     tay: [null, null], tayLuc: 0,
     p: [nguoiMoi('Bạn trái'), nguoiMoi('Bạn phải')],
-    tieng: docLS('hyv_vandong_tieng', true) !== false
+    // cuoc dua ngoi sao theo vong: ds = ten ca lop, vang/daChoi theo ten, vong = { n cau, tu cau so }
+    ds: [], vang: {}, daChoi: {}, vong: { n: 5, tu: 0, so: 0 }, lichSu: [], camSan: false,
+    cheBam: 'chon', oChon: 0, luot: false, // luot: chem / theduc theo tung ban, moi luot N cau
+    tieng: docLS('hyv_vandong_tieng', true) !== false,
+    nhac: docLS('hyv_vandong_nhac', true) !== false
   };
 
   /* ================= am thanh + doc ================= */
@@ -216,6 +220,16 @@
       speechSynthesis.speak(u);
     } catch (e) { /* bo qua */ }
   }
+  // Nhac nen: chay tu luc dem nguoc den man ket qua; tat khi tat tieng
+  function nhac(bat) {
+    if (!window.NhacNen) return;
+    if (bat && S.tieng && S.nhac) window.NhacNen.bat(ac); else window.NhacNen.tat();
+  }
+  function dangChoi() { return $('vd').classList.contains('is-choi'); }
+  function veNhac() {
+    $('vdNhac').classList.toggle('is-off', !S.nhac);
+    $('vdNhac').setAttribute('aria-pressed', S.nhac ? 'true' : 'false');
+  }
   function veTieng() {
     $('vdTieng').textContent = S.tieng ? '🔊' : '🔇';
     $('vdTieng').classList.toggle('is-off', !S.tieng);
@@ -239,14 +253,21 @@
     } else {
       ds.push(buoc('👫', 'Hai bạn đứng cạnh nhau', 'Một bạn ở nửa trái màn hình, một bạn ở nửa phải. Mỗi bạn giơ một bàn tay.'));
       ds.push(buoc('✌️', 'Giơ ngón tay để trả lời', '1 ngón = A · 2 ngón = B · 3 ngón = C · 4 ngón = D. Giữ yên đến khi khoá. Nắm tay lại trước mỗi câu.'));
-      ds.push(buoc('⭐', 'Ai đúng trước được sao', 'Trả lời sai thì bị khoá ở câu đó. Ai đủ sao trước (hoặc nhiều sao hơn) là thắng!'));
+      ds.push(buoc('⭐', 'Ai đúng trước được sao', 'Trả lời sai thì bị khoá ở câu đó. Mỗi vòng ' + (+$('vdMuc').value || 5) + ' câu, bạn nhiều sao hơn thắng vòng.'));
+      ds.push(buoc('🎲', 'Chọn danh sách lớp để bốc thăm', 'Web bốc ngẫu nhiên 2 bạn chưa chơi; hết vòng bấm “Vòng tiếp” là bốc 2 bạn mới, camera vẫn bật.'));
     }
     ds.push(buoc('📋', n ? 'Gồm ' + Math.min(n, lop ? n : 12) + ' câu hỏi' : 'Chưa có câu hỏi'));
     $('vdCachDs').innerHTML = ds.join('');
     $('vdSanhIc').textContent = S.tro === 'chem' ? (S.da === 'qua' ? '🍉' : '🎈') : S.tro === 'theduc' ? '🤸' : '⭐';
     $('vdDa').hidden = S.tro !== 'chem';
-    $('vdTenO').hidden = S.tro !== 'ngoisao';
-    $('vdMoiBanO').hidden = !lop || S.tro === 'ngoisao';
+    var ns = S.tro === 'ngoisao';
+    $('vdTenO').hidden = !ns && !lop && !S.ds.length && !$('vdLop').value;
+    $('vdTen1O').hidden = !ns;
+    $('vdTen0Nhan').textContent = ns ? '👈 Bên trái' : '🙋 Bạn lên chơi';
+    $('vdMucNhan').textContent = ns ? 'Mỗi vòng' : 'Mỗi lượt (khi dùng danh sách lớp)';
+    $('vdBoc').textContent = ns ? '🎲 Bốc 2 bạn ngẫu nhiên' : '🎲 Gọi ngẫu nhiên 1 bạn';
+    $('vdMoiBanO').hidden = !lop || ns || !!S.ds.length;
+    if (!ns && $('vdTen0').value === 'Bạn trái') $('vdTen0').value = '';
     Array.prototype.forEach.call(document.querySelectorAll('.vd-tro button'), function (b) {
       b.classList.toggle('is-on', b.getAttribute('data-tro') === S.tro);
       b.setAttribute('aria-pressed', b.getAttribute('data-tro') === S.tro ? 'true' : 'false');
@@ -255,6 +276,106 @@
       b.classList.toggle('is-on', b.getAttribute('data-da') === S.da);
     });
   }
+  /* ---------------- danh sach lop cho Cuoc dua ngoi sao ----------------
+     Hai nguon giong man UFO goi tra bai: danh sach nhanh tren may (hyv_ufo_lists) va lop
+     tren he thong (/api/admin/oral, mat khau quan tri trong sessionStorage neu co da nhap
+     o Che do lop hoc). Chi doc ten, khong ghi gi len may chu. */
+  function tenNgan(ten) {
+    var w = String(ten || '').trim().split(/\s+/);
+    return (w.length > 2 ? w.slice(-2).join(' ') : w.join(' ')).slice(0, 24);
+  }
+  function napNguonLop() {
+    var sel = $('vdLop'), o = ['<option value="">Tự nhập tên hai bạn</option>'];
+    var ds = docLS('hyv_ufo_lists', []);
+    if (Array.isArray(ds)) ds.forEach(function (l) {
+      if (l && l.kids && l.kids.length) o.push('<option value="ls:' + esc(l.id) + '">📋 ' + esc(l.name) + ' (' + l.kids.length + ')</option>');
+    });
+    sel.innerHTML = o.join('');
+    var pw = '';
+    try { pw = sessionStorage.getItem('hyv_admin_pw') || ''; } catch (e) { /* bo qua */ }
+    var xong = function () {
+      var luu = docLS('hyv_vandong_lop', '');
+      if (luu && sel.querySelector('option[value="' + luu + '"]')) { sel.value = luu; chonNguonLop(luu); }
+    };
+    if (!pw) { xong(); return; }
+    fetch('/api/admin/oral', { headers: { 'X-Admin-Password': pw } }).then(function (r) { return r.ok ? r.json() : { classes: [] }; })
+      .then(function (d) {
+        (d.classes || []).forEach(function (c) {
+          sel.insertAdjacentHTML('beforeend', '<option value="sv:' + esc(c.id) + '">🏫 ' + esc(c.name) + ' (' + c.size + ')</option>');
+        });
+      }).catch(function () { /* bo qua */ }).then(xong);
+  }
+  function chonNguonLop(v) {
+    ghiLS('hyv_vandong_lop', v);
+    S.ds = []; S.vang = {}; S.daChoi = {}; S.lichSu = [];
+    var xong = function () { veLop(); veCach(); if (S.ds.length >= 2) { if (S.tro === 'ngoisao') bocHaiBan(); else bocMotBan(); } };
+    if (!v) { veLop(); veCach(); return; }
+    if (v.indexOf('ls:') === 0) {
+      var l = (docLS('hyv_ufo_lists', []) || []).filter(function (x) { return 'ls:' + x.id === v; })[0];
+      S.ds = l ? l.kids.map(function (k) { return k.name; }) : [];
+      xong();
+      return;
+    }
+    var pw = '';
+    try { pw = sessionStorage.getItem('hyv_admin_pw') || ''; } catch (e) { /* bo qua */ }
+    $('vdLopGoi').hidden = false;
+    $('vdLopGoi').textContent = 'Đang tải danh sách lớp…';
+    fetch('/api/admin/oral?classId=' + encodeURIComponent(v.slice(3)), { headers: { 'X-Admin-Password': pw } })
+      .then(function (r) { return r.ok ? r.json() : { roster: [] }; })
+      .then(function (d) { S.ds = (d.roster || []).map(function (r) { return r.name; }); })
+      .catch(function () { S.ds = []; }).then(xong);
+  }
+  function coMat() { return S.ds.filter(function (t) { return !S.vang[t]; }); }
+  function veLop() {
+    var co = !!S.ds.length;
+    $('vdBoc').hidden = !co;
+    $('vdLopDsO').hidden = !co;
+    $('vdLopDem').textContent = coMat().length;
+    $('vdLopDs').innerHTML = S.ds.map(function (t, i) {
+      var dangChon = (S.cap || []).indexOf(t) >= 0;
+      return '<button type="button" class="vd-hs' + (S.vang[t] ? ' is-vang' : dangChon ? ' is-chon' : S.daChoi[t] ? ' is-da' : '') + '" data-i="' + i + '">' + esc(t) + '</button>';
+    }).join('');
+    var g = $('vdLopGoi');
+    if (!$('vdLop').value) { g.hidden = true; return; }
+    g.hidden = false;
+    var chua = coMat().filter(function (t) { return !S.daChoi[t]; }).length;
+    g.textContent = co ? (S.ds.length + ' bạn · còn ' + chua + ' bạn chưa lên chơi') : 'Danh sách này chưa có tên nào.';
+  }
+  // Boc 2 ban co mat, uu tien ban chua choi; het luot thi bat dau vong boc moi
+  function bocHaiBan() {
+    var co = coMat();
+    if (co.length < 2) { $('vdLopGoi').hidden = false; $('vdLopGoi').textContent = 'Cần ít nhất 2 bạn có mặt.'; return null; }
+    var chua = co.filter(function (t) { return !S.daChoi[t]; });
+    var chon = tron(chua).slice(0, 2);
+    if (chon.length < 2) {
+      S.daChoi = {};
+      chon = chon.concat(tron(co.filter(function (t) { return chon.indexOf(t) < 0; })).slice(0, 2 - chon.length));
+    }
+    $('vdTen0').value = tenNgan(chon[0]);
+    $('vdTen1').value = tenNgan(chon[1]);
+    $('vdTen0').title = chon[0];
+    $('vdTen1').title = chon[1];
+    S.cap = chon;
+    veLop();
+    tone(660, 0.08, 'triangle', 0.12); tone(990, 0.12, 'triangle', 0.12, 0.08);
+    return chon;
+  }
+
+  // Goi ngau nhien 1 ban co mat, uu tien ban chua len choi
+  function bocMotBan() {
+    var co = coMat();
+    if (!co.length) { $('vdLopGoi').hidden = false; $('vdLopGoi').textContent = 'Chưa có bạn nào có mặt.'; return null; }
+    var chua = co.filter(function (t) { return !S.daChoi[t]; });
+    if (!chua.length) { S.daChoi = {}; chua = co; }
+    var t = tron(chua)[0];
+    $('vdTen0').value = tenNgan(t);
+    $('vdTen0').title = t;
+    S.cap = [t];
+    veLop();
+    tone(660, 0.08, 'triangle', 0.12); tone(990, 0.12, 'triangle', 0.12, 0.08);
+    return t;
+  }
+
   function veSanh() {
     $('vdThoat').href = lop ? '/lop' : '/game';
     $('vdNhan').textContent = cfg && cfg.nhan ? ' · ' + cfg.nhan : '';
@@ -328,17 +449,27 @@
     tone(1, 0.01); // mo khoa am thanh trong cu bam
     b.textContent = 'Đang mở camera…';
     var ten = [$('vdTen0').value.trim() || 'Bạn trái', $('vdTen1').value.trim() || 'Bạn phải'];
-    if (S.tro === 'ngoisao') ghiLS('hyv_vandong_ten', ten);
+    S.luot = S.tro !== 'ngoisao' && S.ds.length > 0;
+    if (S.luot) { (S.cap || []).forEach(function (t) { S.daChoi[t] = 1; }); S.cap = null; S.tenLuot = $('vdTen0').value.trim() || 'Bạn lên chơi'; }
+    if (S.tro === 'ngoisao') {
+      ghiLS('hyv_vandong_ten', ten);
+      // ten nhap tay khop voi danh sach -> danh dau da choi
+      (S.cap || []).forEach(function (t) { S.daChoi[t] = 1; });
+      S.cap = null;
+    }
     moCamera().then(function () {
       b.textContent = S.tro === 'theduc' ? 'Đang tải bộ nhận diện dáng người…' : 'Đang tải bộ nhận diện bàn tay…';
       return taiMoHinh(S.tro === 'theduc' ? 'nguoi' : 'tay');
     }).then(function () {
       var ds = dsCau.slice();
-      S.cau = lop ? ds : tron(ds).slice(0, 12);
-      S.moiBan = lop && S.tro !== 'ngoisao' && $('vdMoiBan').checked;
-      S.muc = S.tro === 'ngoisao' ? (+$('vdMuc').value || 0) : 0;
+      S.cau = S.tro === 'ngoisao' || S.luot ? tron(ds) : lop ? ds : tron(ds).slice(0, 12);
+      S.moiBan = lop && S.tro !== 'ngoisao' && !S.luot && $('vdMoiBan').checked;
+      S.muc = 0; // cuoc dua ngoi sao: thang theo vong N cau, khong dung som
+      S.vong = { n: +$('vdMuc').value || 5, tu: 0, so: 1 };
+      if (S.luot && S.tro !== 'ngoisao') S.lichSu = [];
+      S.lichSu = [];
       S.i = 0; S.diem = 0; S.dung = 0; S.chuoi = 0; S.chuoiMax = 0;
-      if (window.SaoGame) window.SaoGame.batDauVan();
+      if (window.SaoGame && !lop) window.SaoGame.batDauVan();
       S.p = [nguoiMoi(ten[0]), nguoiMoi(ten[1])];
       S.vat = []; S.hat = []; S.nguoi = null; S.tay = [null, null];
       var g = $('vd');
@@ -373,6 +504,7 @@
 
   function demNguoc() {
     S.pha = 'dem';
+    nhac(true);
     $('vdHoi').innerHTML = '<span class="vd-dem" id="vdDemSo">3</span>';
     $('vdDuoi').textContent = S.tro === 'theduc' ? 'Lùi lại cho camera thấy từ đầu đến bụng nhé!'
       : S.tro === 'ngoisao' ? 'Hai bạn đứng hai bên, giơ tay lên nào!' : 'Giơ bàn tay lên trước camera nhé!';
@@ -866,7 +998,7 @@
     });
     var tb2;
     if (k >= 0) {
-      if (window.SaoGame) window.SaoGame.dung();
+      if (window.SaoGame && !lop) window.SaoGame.dung();
       sSao();
       gan(c.dung, '⭐ ' + S.p[k].ten, k);
       $('vdP' + k).classList.add('is-sao');
@@ -879,7 +1011,7 @@
     $('vdDuoi').innerHTML = '<b class="' + (k >= 0 ? 'is-dung' : 'is-sai') + '">' + tb2 + '</b>' + (c.why ? '<span>' + esc(c.why) + '</span>' : '');
     veNguoi(0); veNguoi(1);
     setTimeout(function () { docZh(c.docSau); }, 700);
-    var xong = S.i + 1 >= S.cau.length || (S.muc && Math.max(S.p[0].sao, S.p[1].sao) >= S.muc);
+    var xong = S.i + 1 - S.vong.tu >= S.vong.n || S.i + 1 >= S.cau.length;
     setTimeout(xong ? ketThucNS : tiep, xong ? 2400 : 2800);
   }
   function veNguoi(k) {
@@ -947,7 +1079,10 @@
     var c = S.cau[S.i], now = performance.now();
     S.pha = 'hoi';
     S.ben = -1; S.canThang = true; S.thangTu = 0; S.goiY = null; S.saiCau = 0;
-    $('vdSo').textContent = 'Câu ' + (S.i + 1) + '/' + S.cau.length;
+    $('vdSo').textContent = S.tro === 'ngoisao'
+      ? 'Vòng ' + S.vong.so + ' · Câu ' + (S.i - S.vong.tu + 1) + '/' + S.vong.n
+      : S.luot ? '🙋 ' + S.tenLuot + ' · Câu ' + (S.i - S.vong.tu + 1) + '/' + S.vong.n
+      : 'Câu ' + (S.i + 1) + '/' + S.cau.length;
     $('vdChuoi').textContent = S.tro !== 'ngoisao' && S.chuoi >= 2 ? '🔥 ' + S.chuoi + ' câu đúng liên tiếp' : '';
     $('vdHoi').innerHTML = (c.ctx ? '<div class="vd-ctx">' + esc(c.ctx) + '</div>' : '') +
       '<div class="vd-hoi-chu' + (c.hoiZh ? ' is-zh' : '') + '">' + esc(c.hoi).replace('＿＿', '<span class="vd-trong">＿＿</span>') + '</div>' +
@@ -992,7 +1127,7 @@
     S.pha = 'xong';
     var c = S.cau[S.i], dung = chon === c.dung, lan2 = S.saiCau > 0, cong = 0;
     var conLai = Math.max(0, S.hetLuc - performance.now());
-    if (window.SaoGame) { if (dung) window.SaoGame.dung(); else window.SaoGame.sai(); }
+    if (window.SaoGame && !lop) { if (dung) window.SaoGame.dung(); else window.SaoGame.sai(); }
     if (dung && !lan2) {
       S.dung++; S.chuoi++; S.chuoiMax = Math.max(S.chuoiMax, S.chuoi);
       cong = 100 + Math.round(50 * conLai / S.conMs) + Math.min(5, S.chuoi - 1) * 10;
@@ -1020,7 +1155,8 @@
     $('vdDuoi').innerHTML = '<b class="' + (dung ? 'is-dung' : 'is-sai') + '">' + tb2 + (dung ? '' : ' Đáp án: ' + CHU[c.dung]) + '</b>' +
       (c.why ? '<span>' + esc(c.why) + '</span>' : '');
     setTimeout(function () { docZh(c.docSau); }, 700);
-    var cuoi = S.i + 1 >= S.cau.length;
+    var cuoi = S.luot ? S.i + 1 - S.vong.tu >= S.vong.n : S.i + 1 >= S.cau.length;
+    if (S.luot && cuoi) { S.pha = 'cho-luot'; setTimeout(ketThucLuot, 2200); return cong; }
     if (S.moiBan && !cuoi) {
       $('vdDuoi').insertAdjacentHTML('beforeend', '<div class="vd-moi">👉 Mời bạn tiếp theo lên! <button type="button" class="vd-go vd-go-sm" id="vdTiep">Câu tiếp ▶</button></div>');
       $('vdTiep').addEventListener('click', tiep);
@@ -1040,13 +1176,14 @@
   /* ================= ket qua ================= */
   function veKq(html) {
     S.pha = 'het';
+    nhac(false);
     S.vat = []; S.hat = [];
     cx.clearRect(0, 0, KH.w, KH.h);
     $('vdChoi').hidden = true;
     $('vd').classList.remove('is-choi');
     var k = $('vdKq');
     k.hidden = false;
-    k.innerHTML = '<div class="vd-kq-the">' + html + (window.SaoGame ? window.SaoGame.tongKetHtml() : '') +
+    k.innerHTML = '<div class="vd-kq-the">' + html + (window.SaoGame && !lop ? window.SaoGame.tongKetHtml() : '') +
       '<div class="vd-kq-nut"><button type="button" class="vd-go" id="vdLai">↺ Chơi lại</button>' +
       '<a class="vd-btn" href="' + (lop ? '/lop' : '/game') + '">Thoát</a></div></div>';
     $('vdLai').addEventListener('click', function () {
@@ -1079,17 +1216,98 @@
       (S.chuoiMax > 1 ? ' · chuỗi dài nhất ' + S.chuoiMax : '') + (moi ? ' · 🏆 Kỷ lục mới!' : '') + '</p>');
     if (sao >= 2) phaoGiay();
   }
+  // Het luot cua mot ban (Chem hoa qua / The duc ABC dung danh sach lop)
+  function ketThucLuot() {
+    sHet();
+    S.lichSu.push({ ten: S.tenLuot, dung: S.dung, n: S.vong.n, diem: S.diem });
+    var bxh = S.lichSu.slice().sort(function (a, b) { return b.diem - a.diem; });
+    var pt = S.dung / S.vong.n, sao = pt >= 0.9 ? 3 : pt >= 0.6 ? 2 : pt >= 0.3 ? 1 : 0;
+    var chua = coMat().filter(function (t) { return !S.daChoi[t]; });
+    veKq('<div class="vd-kq-sao">' + [0, 1, 2].map(function (i) { return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.2) + 's">★</span>'; }).join('') + '</div>' +
+      '<h2>' + esc(S.tenLuot) + (sao >= 2 ? ' giỏi lắm!' : ' cố lên nhé!') + '</h2>' +
+      '<div class="vd-kq-diem">' + S.diem + ' <small>điểm</small></div>' +
+      '<p>Đúng ' + S.dung + '/' + S.vong.n + ' câu</p>' +
+      (bxh.length > 1 ? '<div class="vd-vong-ds"><b>Bảng điểm các bạn đã chơi</b>' + bxh.map(function (r, i) {
+        return '<div><span>' + (i + 1) + '.</span><span class="' + (i === 0 ? 'is-thang' : '') + '">' + esc(r.ten) + '</span><i>' + r.dung + '/' + r.n + '</i><span>' + r.diem + ' điểm</span></div>';
+      }).join('') + '</div>' : '') +
+      '<div class="vd-vong-nut"><button type="button" class="vd-go" id="vdLuotNgau">🎲 Gọi ngẫu nhiên bạn tiếp</button></div>' +
+      '<div class="vd-xp"><b>👆 Hoặc chọn bạn xung phong</b><div class="vd-xp-ds">' + coMat().map(function (t) {
+        return '<button type="button" class="vd-hs' + (S.daChoi[t] ? ' is-da' : '') + '" data-ten="' + esc(t) + '">' + esc(t) + '</button>';
+      }).join('') + '</div><small>' + chua.length + ' bạn chưa lên chơi (tên mờ là bạn đã chơi)</small></div>');
+    if (sao >= 2) phaoGiay();
+    $('vdLuotNgau').addEventListener('click', function () { var t = bocMotBan(); if (t) luotMoi(t); });
+    Array.prototype.forEach.call(document.querySelectorAll('.vd-xp .vd-hs'), function (b) {
+      b.addEventListener('click', function () { luotMoi(b.getAttribute('data-ten')); });
+    });
+  }
+  function luotMoi(t) {
+    S.daChoi[t] = 1;
+    S.cap = null;
+    S.tenLuot = tenNgan(t);
+    $('vdTen0').value = S.tenLuot;
+    veLop();
+    var tu = S.i + 1;
+    if (tu + S.vong.n > S.cau.length) S.cau = S.cau.concat(tron(dsCau.slice()));
+    S.vong = { n: S.vong.n, tu: tu, so: S.vong.so + 1 };
+    S.diem = 0; S.dung = 0; S.chuoi = 0; S.chuoiMax = 0;
+    if (window.SaoGame && !lop) window.SaoGame.batDauVan();
+    S.vat = []; S.hat = []; S.nguoi = null; S.tay = [null, null];
+    $('vdHoa').innerHTML = '';
+    $('vdKq').hidden = true;
+    $('vdChoi').hidden = false;
+    $('vd').classList.add('is-choi');
+    $('vdDiem').hidden = false;
+    $('vdDiem').textContent = '0';
+    $('vdDap').innerHTML = '';
+    $('vdChuoi').textContent = '';
+    $('vdHoi').innerHTML = '<div class="vd-hoi-chu">🙋 Mời ' + esc(S.tenLuot) + ' lên!</div>';
+    demNguoc().then(function () { S.i = tu; moCau(); });
+  }
+
   function ketThucNS() {
     sHet();
     var a = S.p[0], b = S.p[1], hoa = a.sao === b.sao, thang = a.sao > b.sao ? 0 : 1, moi = kyLuc(Math.max(a.sao, b.sao));
+    S.lichSu.push({ so: S.vong.so, a: a.ten, b: b.ten, sa: a.sao, sb: b.sao });
     veKq('<div class="vd-kq-cup" aria-hidden="true">' + (hoa ? '🤝' : '🏆') + '</div>' +
       '<h2>' + (hoa ? 'Hoà nhau rồi!' : esc(S.p[thang].ten) + ' thắng!') + '</h2>' +
       '<div class="vd-kq-ty">' +
       '<div class="k0' + (!hoa && thang === 0 ? ' is-thang' : '') + '"><span>' + esc(a.ten) + '</span><b>⭐ ' + a.sao + '</b></div>' +
       '<i>–</i>' +
       '<div class="k1' + (!hoa && thang === 1 ? ' is-thang' : '') + '"><span>' + esc(b.ten) + '</span><b>⭐ ' + b.sao + '</b></div></div>' +
-      '<p>' + (hoa ? 'Hai bạn ngang tài ngang sức!' : 'Chúc mừng nhà vô địch!') + (moi ? ' · 🏆 Kỷ lục mới!' : '') + '</p>');
+      '<p>' + (hoa ? 'Hai bạn ngang tài ngang sức!' : 'Chúc mừng nhà vô địch!') + (moi ? ' · 🏆 Kỷ lục mới!' : '') + '</p>' +
+      (S.lichSu.length > 1 ? '<div class="vd-vong-ds"><b>Các vòng đã đấu</b>' + S.lichSu.map(function (r) {
+        return '<div><span>Vòng ' + r.so + '</span><span class="' + (r.sa > r.sb ? 'is-thang' : '') + '">' + esc(r.a) + ' ⭐' + r.sa + '</span><i>–</i><span class="' + (r.sb > r.sa ? 'is-thang' : '') + '">⭐' + r.sb + ' ' + esc(r.b) + '</span></div>';
+      }).join('') + '</div>' : '') +
+      '<div class="vd-vong-nut"><button type="button" class="vd-go" id="vdVongTiep">' + (S.ds.length >= 2 ? '🎲 Vòng tiếp: bốc 2 bạn mới' : '▶ Vòng tiếp (đổi tên ở sảnh)') + '</button></div>');
     phaoGiay();
+    $('vdVongTiep').addEventListener('click', vongTiep);
+  }
+  // Vong moi: camera va bo nhan dien van chay, boc 2 ban moi (neu co danh sach) roi choi N cau tiep
+  function vongTiep() {
+    var chon = S.ds.length >= 2 ? bocHaiBan() : null;
+    if (S.ds.length >= 2 && !chon) return;
+    if (!chon) {
+      // khong co danh sach: quay ve sanh de co nhap ten hai ban moi
+      $('vdLai').click();
+      return;
+    }
+    chon.forEach(function (t) { S.daChoi[t] = 1; });
+    S.cap = null;
+    veLop();
+    var tu = S.i + 1;
+    if (tu + S.vong.n > S.cau.length) S.cau = S.cau.concat(tron(dsCau.slice()));
+    S.vong = { n: S.vong.n, tu: tu, so: S.vong.so + 1 };
+    S.p = [nguoiMoi(tenNgan(chon[0])), nguoiMoi(tenNgan(chon[1]))];
+    S.tay = [null, null];
+    $('vdHoa').innerHTML = '';
+    $('vdKq').hidden = true;
+    $('vdChoi').hidden = false;
+    $('vd').classList.add('is-choi');
+    $('vdDap').innerHTML = '';
+    veNguoi(0); veNguoi(1);
+    $('vdHoi').innerHTML = '<div class="vd-hoi-chu">🎲 ' + esc(tenNgan(chon[0])) + ' ⚔️ ' + esc(tenNgan(chon[1])) + '</div>';
+    S.pha = 'dem';
+    demNguoc().then(function () { S.i = tu; moCau(); });
   }
   function phaoGiay() {
     var o = $('vdHoa');
@@ -1106,13 +1324,48 @@
 
   /* ================= khoi dong ================= */
   veTieng();
+  veNhac();
   veSanh();
   $('vdBatDau').addEventListener('click', batDau);
+  napNguonLop();
+  $('vdLop').addEventListener('change', function () { chonNguonLop(this.value); });
+  $('vdBoc').addEventListener('click', function () { if (S.tro === 'ngoisao') bocHaiBan(); else bocMotBan(); });
+  Array.prototype.forEach.call(document.querySelectorAll('.vd-lop-che button'), function (b) {
+    b.addEventListener('click', function () {
+      S.cheBam = b.getAttribute('data-che');
+      Array.prototype.forEach.call(document.querySelectorAll('.vd-lop-che button'), function (x) { x.classList.toggle('is-on', x === b); });
+    });
+  });
+  $('vdMuc').addEventListener('change', veCach);
+  $('vdLopDs').addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('.vd-hs') : null;
+    if (!b) return;
+    var t = S.ds[+b.getAttribute('data-i')];
+    if (S.cheBam === 'vang') { if (S.vang[t]) delete S.vang[t]; else S.vang[t] = 1; veLop(); return; }
+    if (S.vang[t]) delete S.vang[t];
+    // ban xung phong: tro mot nguoi -> vao o ten; cuoc dua ngoi sao -> lan luot o trai, o phai
+    if (S.tro === 'ngoisao') {
+      var k = S.oChon;
+      $('vdTen' + k).value = tenNgan(t); $('vdTen' + k).title = t;
+      S.cap = (S.cap || []).slice(0, 2); S.cap[k] = t;
+      S.oChon = 1 - k;
+    } else { $('vdTen0').value = tenNgan(t); $('vdTen0').title = t; S.cap = [t]; }
+    tone(880, 0.08, 'triangle', 0.12);
+    veLop();
+  });
   $('vdTieng').addEventListener('click', function () {
     S.tieng = !S.tieng;
     ghiLS('hyv_vandong_tieng', S.tieng);
     veTieng();
     if (S.tieng) sDung();
+    nhac(S.tieng && dangChoi());
+  });
+  $('vdNhac').addEventListener('click', function () {
+    S.nhac = !S.nhac;
+    ghiLS('hyv_vandong_nhac', S.nhac);
+    veNhac();
+    if (S.nhac) tone(1, 0.01); // mo khoa am thanh trong cu bam
+    nhac(S.nhac && dangChoi());
   });
   $('vdFull').addEventListener('click', function () {
     if (document.fullscreenElement) document.exitFullscreen();

@@ -1351,7 +1351,9 @@
 
   /* ---------------- lop phu (banner / ket qua / tong ket) ---------------- */
   function moLop(html, cls) {
-    $('#ktLopThe').innerHTML = html;
+    // Man goi ten che mat thanh tren: them nut X de ve sanh
+    var x = cls === 'is-banner' ? '<button type="button" class="kt-x" data-k="veSanh" title="Đóng (Esc)" aria-label="Đóng, về sảnh">✕</button>' : '';
+    $('#ktLopThe').innerHTML = x + html;
     $('#ktLopThe').className = 'kt-lop-the' + (cls ? ' ' + cls : '');
     lop.hidden = false;
   }

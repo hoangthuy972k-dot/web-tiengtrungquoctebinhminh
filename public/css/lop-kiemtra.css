@@ -136,7 +136,7 @@ html.kt-open, html.kt-open body { overflow: hidden; }
 .kt-h1 small:empty { display: none; }
 .kt-kho { margin: 6px 0 14px; color: var(--kt-nhat); font-size: .95rem; }
 .kt-h2 { margin: 16px 0 10px; font-size: 1rem; text-transform: uppercase; letter-spacing: .06em; color: #9a6b3c; }
-.kt-modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.kt-modes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .kt-mode {
   position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
   padding: 14px 14px 16px; border-radius: 18px; text-align: left;
@@ -788,6 +788,50 @@ button.kt-hop[disabled] { cursor: default; filter: saturate(.6); opacity: .7; }
   .kt-quay { --w: min(86vw, 460px); }
   .kt-noi { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ---------- 7. do min ---------- */
+.kt-choi-min { background: linear-gradient(180deg, #e9dcc0 0%, #d9c49b 100%); }
+.kt-min {
+  --o: min(calc((100vh - 330px) / 6), 13vw, 96px);
+  flex: 1; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: clamp(16px, 4vw, 56px); padding: 18px;
+}
+.kt-min-bai { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 18px; border-radius: 22px; background: #8a6a3e; box-shadow: inset 0 0 0 4px #6e5230, 0 12px 30px rgba(58, 42, 36, .25); }
+.kt-min-dich, .kt-min-dau { padding: 4px 16px; border-radius: 999px; background: #fffdf8; font-weight: 800; color: var(--kt-chu); }
+.kt-min-hang { display: flex; align-items: center; gap: 10px; padding: 4px 8px; border-radius: 16px; }
+.kt-min-hang.is-dang { background: rgba(255, 217, 138, .35); box-shadow: 0 0 0 3px #ffd98a; }
+.kt-min-so { width: 26px; color: #fbe9d0; font-weight: 800; text-align: center; }
+.kt-min-o {
+  display: grid; place-items: center; width: var(--o); height: var(--o); border-radius: 16px;
+  border: 0; background: #c9a56d; color: #5a3d1c; font-size: calc(var(--o) * .4); font-weight: 800;
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .18);
+}
+button.kt-min-o { cursor: pointer; background: #f2d9a6; transition: transform .15s ease; }
+button.kt-min-o:hover:not([disabled]) { transform: translateY(-3px); background: #ffe7b8; }
+button.kt-min-o[disabled] { cursor: default; opacity: .7; }
+.kt-min-o.is-kin { opacity: .55; }
+.kt-min-o.is-co { background: #dff0e4; animation: kt-pop .35s ease; }
+.kt-min-o.is-no { background: #f6c9bd; animation: kt-no .5s ease; }
+@keyframes kt-no { 0% { transform: scale(.6); } 40% { transform: scale(1.25) rotate(-6deg); } 100% { transform: none; } }
+.kt-min-ben { width: min(300px, 100%); display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.kt-min-tim { margin: 0; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: 4px; }
+.kt-min-tt { margin: 0; font-size: 1.15rem; color: var(--kt-nhat); }
+.kt-min-tt b { font-size: 1.6em; color: var(--kt-do); }
+
+/* ---------- 8. san kho bau ---------- */
+.kt-choi-kb { background: radial-gradient(circle at 15% 15%, rgba(242, 201, 76, .25), transparent 40%), linear-gradient(180deg, #fbf3df, #f3e3bd); }
+.kt-kb { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 18px; }
+.kt-kb-dau { display: flex; align-items: center; gap: clamp(12px, 3vw, 28px); padding: 14px 22px; border-radius: 22px; background: #3a2a24; color: #fbf1e2; box-shadow: 0 12px 30px rgba(58, 42, 36, .25); }
+.kt-kb-ruong { font-size: clamp(3rem, 7vw, 5rem); line-height: 1; }
+.kt-kb-tit { margin: 0 0 6px; font-weight: 800; color: #ffd98a; }
+.kt-kb-tt { margin: 6px 0 0; color: #e8cfae; font-size: .95rem; }
+.kt-kb-tt b { color: #fff; }
+.kt-kb-khoa { display: flex; flex-wrap: wrap; gap: 8px; }
+.kt-kb-o {
+  display: grid; place-items: center; width: clamp(48px, 7vw, 76px); height: clamp(48px, 7vw, 76px); border-radius: 14px;
+  background: #5a463c; border: 3px dashed #a88b6c; font-size: clamp(1.6rem, 3.6vw, 2.6rem); color: #a88b6c;
+}
+.kt-kb-o.is-mo { background: #ffd98a; border: 3px solid #e9a23b; color: #3a2a24; }
+.kt-kb-o.is-vua { animation: kt-pop .5s cubic-bezier(.2, 1.4, .4, 1); box-shadow: 0 0 0 5px rgba(255, 217, 138, .5); }
 
 /* ---------- man hep ---------- */
 @media (max-width: 1100px) {

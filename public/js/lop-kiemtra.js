@@ -1,8 +1,9 @@
 /* Kiem tra bai cu — man chieu goi tung hoc sinh len bang on lai cac bai truoc.
    Thay/co chon lop (lop tren he thong hoac danh sach nhanh dung chung voi
    "UFO goi tra bai"), may goi uu tien em lau chua duoc goi, em len bang choi
-   mot trong bon tro: Hop qua bi mat · Leo thang trieu phu · Ghe nong ·
-   Boc tham nhiem vu. Xong luot may goi y diem 0-10, thay/co chinh lai roi luu
+   mot trong tam tro: Hop qua bi mat · Leo thang trieu phu · Ghe nong ·
+   Boc tham nhiem vu · Kiem tra theo dang · Vong quay · Do min · San kho bau.
+   Xong luot may goi y diem 0-10, thay/co chinh lai roi luu
    (lop he thong -> cot "Mieng"; danh sach nhanh -> chi luu tren may nay).
    Mo bang window.LopKiemTra.mo({ nhan, vocab, mcs, sorts, trans, dialogs }).
    Phan sinh cau hoi (LopKiemTra._taoCau) khong dung DOM, chay duoc trong Node. */
@@ -418,9 +419,11 @@
     ghe: { ic: '🔥', ten: 'Ghế nóng', mo: 'Thẻ từ vựng dồn dập — trả lời được bao nhiêu từ trước khi hết giờ?' },
     boc: { ic: '🎴', ten: 'Bốc thăm nhiệm vụ', mo: 'Bốc lá thăm từ 4 chồng nhiệm vụ, mỗi lá chấm 0–3 điểm.' },
     dang: { ic: '📋', ten: 'Kiểm tra theo dạng', mo: 'Cô chọn dạng bài (xếp câu, dịch câu, điền từ…) và số câu — hỏi lần lượt.' },
-    quay: { ic: '🎡', ten: 'Vòng quay dạng câu', mo: 'Quay bánh xe: dừng ở dạng nào làm dạng đó, có ô ⭐ nhân đôi.' }
+    quay: { ic: '🎡', ten: 'Vòng quay dạng câu', mo: 'Quay bánh xe: dừng ở dạng nào làm dạng đó, có ô ⭐ nhân đôi.' },
+    min: { ic: '💣', ten: 'Dò mìn', mo: 'Vượt bãi mìn từng hàng: đúng cắm cờ tiến lên, sai thì 💥 mất 1 trong 3 mạng.' },
+    kb: { ic: '💎', ten: 'Săn kho báu', mo: 'Mỗi câu đúng lật 1 chữ Hán của từ khoá bí mật — giải được từ khoá là mở rương.' }
   };
-  var MODE_DS = ['hop', 'thang', 'ghe', 'boc', 'dang', 'quay'];
+  var MODE_DS = ['hop', 'thang', 'ghe', 'boc', 'dang', 'quay', 'min', 'kb'];
   // Mau tung dang tren vong quay
   var MAU_LOAI = { doc: '#3f7fb5', nghia: '#2fa3a0', viet: '#6c7fd8', noi: '#4f9d69', nghe: '#9b6bc7', nguphap: '#d48a1f',
     dien: '#e0644f', xepcau: '#c77d3a', sualoi: '#b8432f', dichtv: '#2f8a57', dich: '#3d7f68', datcau: '#d4588f', hoidap: '#8e5a3c' };
@@ -449,7 +452,7 @@
     built: false, sound: true,
     goc: null, P: null, loai: [], nhan: '', ky: '',
     src: '', roundSrc: '', classes: [], kids: [], round: {}, absent: {}, dangTai: false, loiDs: '',
-    mode: 'hop', hopSo: 3, gheGiay: 60, gheMuc: 8, bocSo: 3, dangSo: 5, dangLoai: ['xepcau', 'dich'], quaySo: 4,
+    mode: 'hop', hopSo: 3, gheGiay: 60, gheMuc: 8, bocSo: 3, dangSo: 5, dangLoai: ['xepcau', 'dich'], quaySo: 4, minHang: 4,
     nho: { da: {}, luot: {}, loai: {} }, log: [], luotSo: 0,
     pha: 'sanh', cur: null, van: 0, dk: [], busy: false, soCu: '', soMs: 0
   };
@@ -586,7 +589,7 @@
   /* ---------------- luu lua chon ---------------- */
   function luuPref() {
     ghiLS(PREF_KEY, { src: S.src, mode: S.mode, hopSo: S.hopSo, gheGiay: S.gheGiay, gheMuc: S.gheMuc, bocSo: S.bocSo,
-      dangSo: S.dangSo, dangLoai: S.dangLoai, quaySo: S.quaySo, sound: S.sound });
+      dangSo: S.dangSo, dangLoai: S.dangLoai, quaySo: S.quaySo, minHang: S.minHang, sound: S.sound });
   }
   function napPref() {
     var p = docLS(PREF_KEY, {});
@@ -600,6 +603,7 @@
     S.dangLoai = Array.isArray(p.dangLoai) && p.dangLoai.length ? p.dangLoai.filter(function (l) { return TEN_LOAI[l]; }) : ['xepcau', 'dich'];
     if (!S.dangLoai.length) S.dangLoai = ['xepcau', 'dich'];
     S.quaySo = p.quaySo >= 3 && p.quaySo <= 5 ? p.quaySo : 4;
+    S.minHang = p.minHang >= 3 && p.minHang <= 5 ? p.minHang : 4;
     S.sound = p.sound !== false;
   }
 
@@ -1660,13 +1664,219 @@
     }
   };
 
-  var GAME = { hop: HOP, thang: THANG, ghe: GHE, boc: BOC, dang: DANG, quay: QUAY };
+  /* =================== TRO 7: DO MIN =================== */
+  // Bai min nhieu hang, moi hang 3 o. Em chon 1 o -> tra loi: dung thi cam co, len hang tren;
+  // sai thi min no, mat 1 mang va chon o khac cung hang. Het 3 mang la dung cuoc.
+  var MANG = 3;
+  var MIN = {
+    bat: function () {
+      var h = [];
+      for (var i = 0; i < S.minHang; i++) h.push([0, 0, 0]); // 0 chua mo, 1 co (dung), 2 min no
+      S.cur.g = { hang: h, n: S.minHang, tren: 0, mang: MANG, dang: -1, q: null, lo: false, chon: -1, khoa: false, cho: false, het: false, ds: [] };
+      MIN.ve();
+    },
+    kho: function (g) { return Math.min(3, 1 + Math.floor(g.tren * 3 / g.n)); },
+    ve: function (moi) {
+      var g = S.cur.g, tim = '';
+      for (var t = 0; t < MANG; t++) tim += t < g.mang ? '❤️' : '🖤';
+      var bai = '<div class="kt-min-bai"><div class="kt-min-dich">🏁 Đích</div>';
+      for (var r = g.n - 1; r >= 0; r--) {
+        var dangO = r === g.tren && !g.het;
+        bai += '<div class="kt-min-hang' + (dangO ? ' is-dang' : r < g.tren ? ' is-qua' : '') + '"><span class="kt-min-so">' + (r + 1) + '</span>';
+        g.hang[r].forEach(function (v, c) {
+          if (v === 1) bai += '<div class="kt-min-o is-co">🚩</div>';
+          else if (v === 2) bai += '<div class="kt-min-o is-no">💥</div>';
+          else if (dangO) bai += '<button type="button" class="kt-min-o" data-k="oMin" data-v="' + c + '"' + (g.dang >= 0 || g.khoa ? ' disabled' : '') + '>' + 'ABC'.charAt(c) + '</button>';
+          else bai += '<div class="kt-min-o is-kin">' + (r < g.tren ? '·' : '?') + '</div>';
+        });
+        bai += '</div>';
+      }
+      bai += '<div class="kt-min-dau">🧒 Xuất phát</div></div>';
+      var ben = '<div class="kt-min-ben"><p class="kt-min-tim" aria-label="Còn ' + g.mang + ' mạng">' + tim + '</p>' +
+        '<p class="kt-min-tt">Đã vượt <b>' + g.tren + '</b>/' + g.n + ' hàng</p>' +
+        (g.dang < 0 && !g.het ? '<p class="kt-hop-moi">Chọn một ô ở hàng ' + (g.tren + 1) + '!<br><small>Bấm ô hoặc gõ A / B / C</small></p>' : '') +
+        '<p class="kt-quay-luat">Trả lời đúng: cắm cờ 🚩 và tiến lên. Trả lời sai: 💥 mìn nổ, mất 1 mạng, chọn ô khác cùng hàng. Câu khó dần theo hàng.</p></div>';
+      var cau = '';
+      if (g.dang >= 0) {
+        cau = '<div class="kt-boc-cau"><div class="kt-boc-the"><p class="kt-boc-nhan">Hàng ' + (g.tren + 1) + ' · ô ' + 'ABC'.charAt(g.dang) + '</p>' +
+          htmlCau(g.q, { lo: g.lo, chon: g.chon, moi: moi, khoa: g.khoa }) + thanhCham(g, 'thang') + '</div></div>';
+      }
+      man.innerHTML = khung('min', '<div class="kt-min">' + bai + ben + '</div>' + cau,
+        'Mạng: <b>' + g.mang + '</b> · Hàng <b>' + g.tren + '</b>/' + g.n);
+      cuonCham('.kt-boc-cau', g);
+      phimTat();
+    },
+    mo: function (c) {
+      var g = S.cur.g;
+      if (g.het || g.dang >= 0 || g.khoa || g.hang[g.tren][c] !== 0) return;
+      var q = cauTheo(MIN.kho(g), null);
+      if (!q) return;
+      g.dang = c; g.q = q; g.lo = false; g.chon = -1;
+      sndLat();
+      MIN.ve(true);
+      if (q.tuDoc === 'de') sau(400, function () { docTrung(q.doc); });
+    },
+    cham: function (v) {
+      var g = S.cur.g;
+      if (g.dang < 0 || g.khoa || g.cho) return;
+      var daLo = g.lo, dung = v >= 1, c = g.dang;
+      g.ds.push({ q: g.q, dung: dung, hang: g.tren });
+      if (!g.lo) { g.lo = true; if (g.q.tuDoc === 'dap') docTrung(g.q.doc); }
+      if (dung) sndDung(); else { noise(0.6, 0.35, 0, 300); sndSai(); }
+      var xong;
+      if (dung) { g.hang[g.tren][c] = 1; g.tren++; xong = g.tren >= g.n; }
+      else { g.hang[g.tren][c] = 2; g.mang--; xong = g.mang <= 0 || g.hang[g.tren].every(function (x) { return x === 2; }); }
+      sauCham(g, daLo, function () {
+        g.dang = -1; g.q = null; g.lo = false; g.chon = -1;
+        if (xong) { g.het = true; MIN.ve(); if (g.tren >= g.n) sndKen(); sau(700, ketThuc); } else MIN.ve();
+      }, xong ? 'Xem kết quả' : dung ? 'Lên hàng tiếp' : 'Chọn ô khác');
+    },
+    ket: function () {
+      var g = S.cur.g;
+      var d = Math.round(10 * g.tren / g.n);
+      if (g.tren >= g.n && g.mang === MANG) d = 10;
+      var ct = '<p class="kt-kq-cong">' + (g.tren >= g.n ? '🏁 Về đích' : '💥 Dừng ở hàng ' + (g.tren + 1)) + ' · vượt <b>' + g.tren + '</b>/' + g.n + ' hàng · còn ' + g.mang + ' mạng</p>' +
+        '<ul class="kt-kq-ds">' + g.ds.map(function (x) {
+          return '<li><span>Hàng ' + (x.hang + 1) + ' · ' + esc(x.q.tieuDe) + '</span><b>' + (x.dung ? '🚩 Đúng' : '💥 Sai') + '</b></li>';
+        }).join('') + '</ul>';
+      return { diem: d, ct: ct };
+    },
+    phim: function (e, k, g) {
+      if (g.dang < 0) {
+        var c = 'abc'.indexOf(k);
+        if (k.length === 1 && c >= 0) { MIN.mo(c); return true; }
+        return false;
+      }
+      return phimCau(e, k, g, function (v) { MIN.cham(v); }, false);
+    }
+  };
+
+  /* =================== TRO 8: SAN KHO BAU =================== */
+  // Tu khoa bi mat (mot tu / cau ngan trong bai). Moi cau dung lat them mot chu Han;
+  // cuoi cung (hoac bat cu luc nao) em doan tu khoa va nghia.
+  function chonKhoa() {
+    var P = S.P, ung = [];
+    P.sorts.forEach(function (s) { var k = khoaZh(s.answer); if (k.length >= 3 && k.length <= 7) ung.push({ zh: k, vn: (P.nghia[k] || {}).vn || '' }); });
+    P.vocab.forEach(function (v) {
+      var k = khoaZh(v.ex_zh);
+      if (k.length >= 3 && k.length <= 6) ung.push({ zh: k, vn: v.ex_vn || '' });
+      if (khoaZh(v.zh).length >= 2) ung.push({ zh: khoaZh(v.zh), vn: v.vn });
+    });
+    // uu tien cau 3–6 chu cho du so luot lat; khong co thi lay tu
+    var dai = ung.filter(function (x) { return x.zh.length >= 3; });
+    var ds = dai.length ? dai : ung;
+    return ds.length ? ds[Math.floor(Math.random() * ds.length)] : null;
+  }
+  var KHOBAU = {
+    bat: function () {
+      var bi = chonKhoa();
+      var n = bi ? Math.min(bi.zh.length, 6) : 0;
+      S.cur.g = { bi: bi, n: Math.max(n, 2), i: 0, dung: 0, mo: {}, conAn: bi ? tron(bi.zh.split('').map(function (_, i) { return i; })) : [],
+        q: null, lo: false, chon: -1, khoa: false, cho: false, doan: false, doanKq: null, moi: -1, ds: [] };
+      if (!bi) { ketThuc(); return; }
+      KHOBAU.cau();
+    },
+    cau: function () {
+      var g = S.cur.g;
+      g.q = cauTheo(1 + (g.i % 3), null);
+      g.lo = false; g.chon = -1;
+      if (!g.q) { KHOBAU.doan(); return; }
+      KHOBAU.ve(true);
+      if (g.q.tuDoc === 'de') docTrung(g.q.doc);
+    },
+    o: function (g) {
+      return '<div class="kt-kb-khoa" aria-label="Từ khoá bí mật">' + g.bi.zh.split('').map(function (ch, i) {
+        var hien = g.mo[i] || g.doanKq !== null;
+        return '<span class="kt-kb-o' + (hien ? ' is-mo' : '') + (i === g.moi ? ' is-vua' : '') + '"><b class="zh">' + (hien ? esc(ch) : '?') + '</b></span>';
+      }).join('') + '</div>';
+    },
+    ve: function (moi) {
+      var g = S.cur.g, soMo = Object.keys(g.mo).length;
+      var dau = '<div class="kt-kb-dau"><span class="kt-kb-ruong" aria-hidden="true">' + (g.doanKq ? '💎' : '🧰') + '</span><div>' +
+        '<p class="kt-kb-tit">Từ khoá bí mật — ' + g.bi.zh.length + ' chữ</p>' + KHOBAU.o(g) +
+        '<p class="kt-kb-tt">Đã lật <b>' + soMo + '</b>/' + g.bi.zh.length + ' chữ · câu ' + Math.min(g.i + 1, g.n) + '/' + g.n + '</p></div></div>';
+      var than;
+      if (g.doan) {
+        than = '<div class="kt-cau kt-kho3' + (moi ? ' is-moi' : '') + '"><div class="kt-cau-hd"><span class="kt-cau-loai">🗝️ Giải từ khoá</span></div>' +
+          '<p class="kt-cau-lenh">Em đọc to từ khoá bí mật và nói nghĩa tiếng Việt</p>' +
+          (g.doanKq !== null || g.lo ? '<div class="kt-dap"><p class="kt-dap-nhan">Đáp án</p><p class="kt-dap-zh zh">' + esc(g.bi.zh) + '</p>' +
+            (g.bi.vn ? '<p class="kt-dap-vn">' + esc(g.bi.vn) + '</p>' : '') + '</div>' : '') + '</div>' +
+          (g.doanKq === null ? thanhCham(g, 'thang') : '');
+      } else {
+        than = htmlCau(g.q, { lo: g.lo, chon: g.chon, moi: moi, khoa: g.khoa, nhan: 'Câu ' + (g.i + 1) + '/' + g.n }) + thanhCham(g, 'thang') +
+          (!g.cho ? '<button type="button" class="kt-doi kt-doi-toi" data-k="doanKho">🗝️ Em đoán được rồi — giải từ khoá ngay <kbd>G</kbd></button>' : '');
+      }
+      man.innerHTML = khung('kb', '<div class="kt-kb">' + dau + '<div class="kt-dang-the">' + than + '</div></div>',
+        'Đúng: <b>' + g.dung + '</b>/' + g.i);
+      phimTat();
+    },
+    doan: function () {
+      var g = S.cur.g;
+      if (g.doan || g.cho) return;
+      g.doan = true; g.lo = false; g.q = null;
+      sndMo();
+      KHOBAU.ve(true);
+    },
+    cham: function (v) {
+      var g = S.cur.g;
+      if (g.khoa || g.cho) return;
+      var dung = v >= 1;
+      if (g.doan) {
+        g.doanKq = dung;
+        g.lo = true;
+        if (dung) sndKen(); else sndSai();
+        docTrung(g.bi.zh);
+        KHOBAU.ve();
+        sau(1600, ketThuc);
+        return;
+      }
+      if (!g.q) return;
+      var daLo = g.lo;
+      g.ds.push({ q: g.q, dung: dung });
+      if (!g.lo) { g.lo = true; if (g.q.tuDoc === 'dap') docTrung(g.q.doc); }
+      g.moi = -1;
+      if (dung) {
+        g.dung++;
+        var i = g.conAn.shift();
+        if (i != null) { g.mo[i] = 1; g.moi = i; }
+        sndXong();
+      } else sndSai();
+      g.i++;
+      var xong = g.i >= g.n || !g.conAn.length;
+      sauCham(g, daLo, function () { if (xong) KHOBAU.doan(); else KHOBAU.cau(); }, xong ? 'Giải từ khoá' : 'Câu tiếp');
+    },
+    ket: function () {
+      var g = S.cur.g;
+      if (!g.bi) return { diem: 0, ct: '<p class="kt-kq-cong">Bài chưa có câu để làm từ khoá.</p>' };
+      var d = Math.round(7 * g.dung / g.n + (g.doanKq ? 3 : 0));
+      var ct = '<p class="kt-kq-cong">Từ khoá: <b class="zh">' + esc(g.bi.zh) + '</b>' + (g.bi.vn ? ' — ' + esc(g.bi.vn) : '') +
+        ' · ' + (g.doanKq ? '💎 Giải đúng (+3)' : g.doanKq === false ? 'Chưa giải được' : 'Chưa giải') + '</p>' +
+        '<ul class="kt-kq-ds">' + g.ds.map(function (x, i) {
+          return '<li><span>Câu ' + (i + 1) + ' · ' + esc(x.q.tieuDe) + '</span><b>' + (x.dung ? '✓ lật 1 chữ' : '✗') + '</b></li>';
+        }).join('') + '</ul><p class="kt-kq-cong">Đúng ' + g.dung + '/' + g.n + ' câu (7 điểm) + giải từ khoá (3 điểm)</p>';
+      return { diem: d, ct: ct };
+    },
+    phim: function (e, k, g) {
+      if (k === 'g' && !g.doan && !g.cho) { KHOBAU.doan(); return true; }
+      if (g.doan) {
+        if (g.doanKq !== null) return true;
+        if (e.key === 'Enter') { g.lo = true; KHOBAU.ve(); return true; }
+        if (e.key === 'ArrowRight') { KHOBAU.cham(1); return true; }
+        if (e.key === 'ArrowLeft') { KHOBAU.cham(0); return true; }
+        return false;
+      }
+      return phimCau(e, k, g, function (v) { KHOBAU.cham(v); }, false);
+    }
+  };
+
+  var GAME = { hop: HOP, thang: THANG, ghe: GHE, boc: BOC, dang: DANG, quay: QUAY, min: MIN, kb: KHOBAU };
 
   function coMode(m) {
     if (!S.P || !S.loai.length) return false;
     if (m === 'ghe') return S.P.vocab.length >= 3;
     if (m === 'boc') return CHONG.some(chongCo);
-    if (m === 'quay') return loaiCo(S.P).length > 0;
+    if (m === 'quay' || m === 'min') return loaiCo(S.P).length > 0;
+    if (m === 'kb') return S.P.vocab.length > 0 || S.P.sorts.length > 0;
     return true;
   }
   function modeDau() { for (var i = 0; i < MODE_DS.length; i++) if (coMode(MODE_DS[i])) return MODE_DS[i]; return 'hop'; }
@@ -1710,6 +1920,9 @@
         nhomNut('Số câu mỗi bạn', 'dangSo', [3, 5, 7, 10], S.dangSo, ' câu') +
         '<p class="kt-cai-mo">Chọn một hay nhiều dạng — máy hỏi xoay vòng các dạng đã chọn. Chấm ✓ đúng · ½ gần đúng · ✗ sai; điểm = số câu đúng quy ra thang 10. Mỗi bạn được đổi câu 1 lần.</p>';
     }
+    if (m === 'min') return nhomNut('Số hàng mìn', 'minHang', [3, 4, 5], S.minHang, ' hàng') +
+      '<p class="kt-cai-mo">Mỗi hàng 3 ô A · B · C. Em chọn ô rồi trả lời: đúng cắm cờ 🚩 lên hàng trên, sai thì 💥 mất 1 mạng và chọn ô khác. Câu khó dần theo hàng; có 3 mạng. Điểm theo số hàng vượt qua.</p>';
+    if (m === 'kb') return '<p class="kt-cai-mo">Máy giấu một từ / câu ngắn trong bài làm từ khoá. Mỗi câu trả lời đúng lật 1 chữ Hán. Hết câu (hoặc khi em bấm “Đoán được rồi”) em đọc to từ khoá và nói nghĩa. Điểm: câu đúng 7 điểm + giải từ khoá 3 điểm.</p>';
     if (m === 'quay') return nhomNut('Số lượt quay', 'quaySo', [3, 4, 5], S.quaySo, ' lượt') +
       '<p class="kt-cai-mo">Bánh xe chia theo các dạng câu của bài (đọc, nghe, nối từ, điền từ, xếp câu, sửa câu sai, dịch, đặt câu…). Dạng dễ 1 điểm, vừa 2, khó 3; ô ⭐ nhân đôi.</p>';
     return nhomNut('Số lá được bốc', 'bocSo', [2, 3, 4], S.bocSo, ' lá') +
@@ -2095,7 +2308,7 @@
     },
     cai: function (v) {
       var p = String(v).split(':'), n = +p[1];
-      if (['hopSo', 'gheGiay', 'gheMuc', 'bocSo', 'dangSo', 'quaySo'].indexOf(p[0]) < 0 || !n) return;
+      if (['hopSo', 'gheGiay', 'gheMuc', 'bocSo', 'dangSo', 'quaySo', 'minHang'].indexOf(p[0]) < 0 || !n) return;
       S[p[0]] = n;
       luuPref();
       veSanh();
@@ -2135,17 +2348,24 @@
     chamLuon: function () { dongPanel(); ketThuc(); },
     // trong tro choi
     nghe: function () { var g = gHien(); var q = g && (g.q || g.the); if (q && q.doc) { var s = S.sound; S.sound = true; docTrung(q.doc); S.sound = s; } },
-    lo: function () { var g = gHien(); if (g) loCau(g); },
+    lo: function () {
+      var g = gHien();
+      if (g && S.cur.mode === 'kb' && g.doan) { g.lo = true; KHOBAU.ve(); return; }
+      if (g) loCau(g);
+    },
     opt: function (v) { var g = gHien(); if (g) chonDa(g, +v); },
     tiep: function () { var g = gHien(); if (g && g.cho) boCho(g); },
     cham: function (v) {
       var m = S.cur && S.cur.mode;
       if (m === 'hop') HOP.cham(+v); else if (m === 'thang') THANG.cham(+v); else if (m === 'boc') BOC.cham(+v);
       else if (m === 'dang') DANG.cham(+v); else if (m === 'quay') QUAY.cham(+v);
+      else if (m === 'min') MIN.cham(+v); else if (m === 'kb') KHOBAU.cham(+v);
     },
     hop: function (v) { HOP.mo(+v); },
     doiCau: function () { if (S.cur && S.cur.mode === 'dang') DANG.doiCau(); else HOP.doiCau(); },
     quay: function () { QUAY.quay(); },
+    oMin: function (v) { MIN.mo(+v); },
+    doanKho: function () { KHOBAU.doan(); },
     tg50: function () { THANG.tg50(); },
     tgBan: function () { THANG.tgBan(); },
     dungLai: function () { THANG.dungLai(); },
@@ -2180,8 +2400,8 @@
   /* ---------------- phim tat ---------------- */
   function phimTat() {
     var t = '', g = gHien();
-    if (S.pha === 'sanh') t = S.loai.length ? 'Space gọi học sinh · 1–6 chọn trò · F toàn màn hình · M tắt/bật tiếng · Esc đóng' : 'Esc đóng';
-    else if (S.pha === 'banner') t = 'Space bắt đầu · 1–6 đổi trò · Esc về sảnh';
+    if (S.pha === 'sanh') t = S.loai.length ? 'Space gọi học sinh · 1–8 chọn trò · F toàn màn hình · M tắt/bật tiếng · Esc đóng' : 'Esc đóng';
+    else if (S.pha === 'banner') t = 'Space bắt đầu · 1–8 đổi trò · Esc về sảnh';
     else if (S.pha === 'kq') t = 'Space ' + (S.cur && S.cur.kid ? 'lưu & gọi bạn tiếp' : 'lượt tiếp') + ' · Enter ' + (S.cur && S.cur.kid ? 'lưu' : 'về sảnh') + ' · gõ 0–9 (1 rồi 0 = 10) để đổi điểm · Esc về sảnh';
     else if (S.pha === 'tong') t = 'Space về sảnh · Esc về sảnh';
     else if (S.pha === 'choi' && g) {
@@ -2193,6 +2413,8 @@
       else if (m === 'boc') t = g.dang < 0 ? '1–4 bốc lá ở chồng tương ứng' : 'Enter xem đáp án · 0–3 chấm điểm · A–D chọn đáp án · S đọc to';
       else if (m === 'dang') t = 'Enter xem đáp án · → đúng · ↓ gần đúng · ← sai · A–D chọn đáp án · X đổi câu · S đọc to';
       else if (m === 'quay') t = g.dang < 0 ? 'Space quay bánh xe' : 'Enter xem đáp án · → đúng · ↓ gần đúng · ← sai · A–D chọn đáp án · S đọc to';
+      else if (m === 'min') t = g.dang < 0 ? 'A / B / C chọn ô' : 'Enter xem đáp án · → đúng · ← sai · A–D chọn đáp án · S đọc to';
+      else if (m === 'kb') t = g.doan ? 'Enter xem từ khoá · → giải đúng · ← chưa đúng' : 'Enter xem đáp án · → đúng · ← sai · A–D chọn đáp án · G đoán từ khoá · S đọc to';
       t += ' · Esc dừng lượt';
     }
     $('#ktPhim').textContent = t;

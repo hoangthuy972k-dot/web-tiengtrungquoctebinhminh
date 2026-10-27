@@ -178,6 +178,7 @@
     return '<span class="dt-logo-tau"><i class="is-dau"></i><i></i><i></i></span>';
   }
   function veSanh() {
+    if (window.NhacNen) window.NhacNen.tat();
     S.pha = 'sanh';
     S.van++;
     clearInterval(S.dongHo);
@@ -387,6 +388,7 @@
     S.daDung = {};
     if (S.soTo > 1) veCho();
     else batDauTau();
+    if (window.NhacNen) window.NhacNen.bat({ kieu: 'gap' });
   }
 
   function veCho() {
@@ -618,6 +620,7 @@
 
   /* ---------------- tau chay ---------------- */
   function thang() {
+    if (window.NhacNen) window.NhacNen.tat();
     S.pha = 'chay';
     clearInterval(S.dongHo);
     S.giay = Math.max(0, Math.round((Date.now() - S.t0) / 1000));
@@ -807,6 +810,7 @@
     if (b) b.focus();
   }
   function dong() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (!root) return;
     S.van++;
     clearInterval(S.dongHo);

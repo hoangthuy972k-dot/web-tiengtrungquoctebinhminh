@@ -225,7 +225,10 @@
   }
 
   // kq: { diem, dung, tong, chuoi, thang (true/false/undefined), loi }
+  // Nhac nen: bat khi vao tro / bam Bat dau / Choi lai, tat o man ket qua va khi thoat
+  function nhac() { if (window.NhacNen) window.NhacNen.bat({ kieu: 'vui' }); }
   function ketQua(sk, key, kq, choiLai) {
+    if (window.NhacNen) window.NhacNen.tat();
     sk.san.innerHTML = '';
     sk.duoi.innerHTML = '';
     var pt = kq.tong ? kq.dung / kq.tong : 0;
@@ -246,7 +249,7 @@
         : '<div class="tn-kq-ngay is-chua">Làm từ ' + SO_CAU_NGAY_HOC + ' câu trở lên để tính 1 ngày học</div>');
     var nut = tao('button', 'tn-nut tn-nut-chinh', '↻ Chơi lại');
     nut.type = 'button';
-    nut.addEventListener('click', choiLai);
+    nut.addEventListener('click', function () { nhac(); choiLai(); });
     b.appendChild(nut);
     if (kq.saiDs && kq.saiDs.length) {
       var on = tao('div', 'tn-kq-on', '<b>Ôn lại các từ em làm sai:</b>' + kq.saiDs.slice(0, 8).map(function (v) {
@@ -275,7 +278,7 @@
       '<h2>' + esc(t.ten) + '</h2><p>' + (t.luat || '') + '</p>');
     var nut = tao('button', 'tn-nut tn-nut-chinh', esc(t.nut || 'Bắt đầu ▶'));
     nut.type = 'button';
-    nut.addEventListener('click', batDau);
+    nut.addEventListener('click', function () { nhac(); batDau(); });
     b.appendChild(nut);
     sk.san.appendChild(b);
     setTimeout(function () { try { nut.focus(); } catch (e) { /* */ } }, 50);
@@ -309,6 +312,7 @@
       // Tro choi khong hien pinyin (co yeu cau hoc sinh doc chu Han) — bo py ngay tu dau vao
       o.vocab = vocab.map(function (v) { var c = {}; for (var k in v) c[k] = v[k]; c.py = ''; return c; });
       if (window.SaoGame) window.SaoGame.batDauVan();
+      nhac();
       return g.mo(hop, o);
     }
   };

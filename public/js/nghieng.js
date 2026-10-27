@@ -179,6 +179,7 @@
 
   function demNguoc() {
     S.pha = 'dem';
+    if (window.NhacNen && S.tieng) window.NhacNen.bat({ ctx: ac, kieu: 'vui' });
     $('nhHoi').innerHTML = '<span class="nh-dem" id="nhDemSo">3</span>';
     $('nhDuoi').textContent = 'Ngồi thẳng, nhìn vào camera nhé!';
     return cho(100).then(function () { sDem(); return cho(900); })
@@ -331,6 +332,7 @@
 
   function ketThuc() {
     S.pha = 'het';
+    if (window.NhacNen) window.NhacNen.tat();
     sHet();
     var pt = S.cau.length ? S.dung / S.cau.length : 0;
     var sao = pt >= 0.9 ? 3 : pt >= 0.7 ? 2 : pt >= 0.4 ? 1 : 0;

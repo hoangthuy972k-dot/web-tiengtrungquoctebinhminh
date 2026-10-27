@@ -151,6 +151,7 @@
     return S.soCau === 'het' ? n : Math.min(+S.soCau || 8, n);
   }
   function veSanh() {
+    if (window.NhacNen) window.NhacNen.tat();
     S.pha = 'sanh';
     S.van++;
     dungLap();
@@ -300,6 +301,7 @@
     S.kq = [];
     veChoi();
     batDauCau();
+    if (window.NhacNen) window.NhacNen.bat({ kieu: 'vui' });
   }
 
   function veChoi() {
@@ -740,6 +742,7 @@
 
   /* ---------------- ket thuc ---------------- */
   function veCuoi() {
+    if (window.NhacNen) window.NhacNen.tat();
     S.pha = 'cuoi';
     S.van++;
     dungLap();
@@ -880,6 +883,7 @@
   function soCauHop(v) { return v === '5' || v === '8' || v === '10' || v === 'het'; }
 
   function dong() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (!root) return;
     S.van++;
     dungLap();

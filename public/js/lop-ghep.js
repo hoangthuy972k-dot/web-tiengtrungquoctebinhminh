@@ -160,6 +160,7 @@
     return '<button type="button" class="gp-opt' + (on ? ' is-on' : '') + '" data-k="' + k + '" data-v="' + v + '">' + nhan + '</button>';
   }
   function veSanh() {
+    if (window.NhacNen) window.NhacNen.tat();
     S.pha = 'sanh';
     S.van++;
     dongModal();
@@ -337,6 +338,7 @@
     S.so = '';
     S.pha = 'chon';
     veChoi();
+    if (window.NhacNen) window.NhacNen.bat({ kieu: 'em' });
   }
 
   function hinhTranh(t) {
@@ -635,6 +637,7 @@
 
   /* ---------------- ket thuc: tranh lon + ten ---------------- */
   function veCuoi() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (S.pha !== 'lo' && S.pha !== 'lo-cho') return;
     S.pha = 'cuoi';
     dongModal();
@@ -814,6 +817,7 @@
     if (b) b.focus();
   }
   function dong() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (!root) return;
     S.van++;
     clearTimeout(S.soT);

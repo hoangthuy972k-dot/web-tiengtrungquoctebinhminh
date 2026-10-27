@@ -245,6 +245,7 @@
     return '<button type="button" class="zb-opt' + (on ? ' is-on' : '') + '" data-k="' + k + '" data-v="' + v + '">' + nhan + '</button>';
   }
   function veSanh() {
+    if (window.NhacNen) window.NhacNen.tat();
     S.pha = 'sanh';
     S.van++;
     dungVong();
@@ -355,6 +356,7 @@
       if (b) ban(+b.getAttribute('data-i'));
     });
     batDauCau();
+    if (window.NhacNen) window.NhacNen.bat({ kieu: 'gap' });
   }
 
   function cauHtml(c, hien) {
@@ -651,6 +653,7 @@
 
   /* ---------------- tong ket ---------------- */
   function ketThuc() {
+    if (window.NhacNen) window.NhacNen.tat();
     S.van++;
     S.pha = 'het';
     dungVong();
@@ -768,6 +771,7 @@
     if (b) b.focus();
   }
   function dong() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (!root) return;
     S.van++;
     dungVong();

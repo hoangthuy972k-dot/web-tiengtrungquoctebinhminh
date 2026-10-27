@@ -424,6 +424,7 @@
     '</ul>';
   }
   function veSanh() {
+    if (window.NhacNen) window.NhacNen.tat();
     var c = $('#rcChinh');
     c.setAttribute('data-man', 'sanh');
     if (!online()) S.ds = dsOffline();
@@ -834,6 +835,7 @@
         mo();
       }).catch(function (e) { S.ban = false; if (loi) loi.textContent = e.message; });
     } else mo();
+    if (window.NhacNen) window.NhacNen.bat({ kieu: 'gap' });
   }
 
   function cauTiep() {
@@ -1192,6 +1194,7 @@
     return { tit: 'Chưa ai rung chuông — trụ lâu nhất', ds: max ? xh.filter(function (x) { return x.roiLuc === max; }) : [] };
   }
   function veHet() {
+    if (window.NhacNen) window.NhacNen.tat();
     var c = $('#rcChinh');
     c.setAttribute('data-man', 'het');
     var xh = xepHang(), vd = vinhDanh(xh);
@@ -1601,6 +1604,7 @@
     });
   }
   function dong() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (!root) return;
     dungDem();
     dongPhong();

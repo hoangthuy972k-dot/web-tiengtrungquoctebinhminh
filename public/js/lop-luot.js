@@ -206,6 +206,7 @@
     return '<button type="button" class="lu-opt' + (on ? ' is-on' : '') + '" data-k="' + k + '" data-v="' + v + '">' + nhan + '</button>';
   }
   function veSanh() {
+    if (window.NhacNen) window.NhacNen.tat();
     S.pha = 'sanh';
     S.van++;
     S.o = [];
@@ -447,6 +448,7 @@
     $('#luPhu').addEventListener('click', bamPhu);
     datBan();
     batDauLuot(true);
+    if (window.NhacNen) window.NhacNen.bat({ kieu: 'vui' });
   }
 
   function veDoi() {
@@ -774,6 +776,7 @@
   }
 
   function veDich(t) {
+    if (window.NhacNen) window.NhacNen.tat();
     S.van++;
     S.pha = 'het';
     S.buoc = 'het';
@@ -900,6 +903,7 @@
     if (b) b.focus();
   }
   function dong() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (!root) return;
     S.van++;
     S.pha = 'sanh';

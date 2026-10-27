@@ -2998,6 +2998,7 @@
     } else if (!pickedLabel()) return;
 
     state.game = game;
+    nhacNen(game);
     $('#lopTitle').textContent = GAME_TITLE[game];
     $('#lopSub').textContent = (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel();
     if (!state.show || state.scores.length !== state.teams) { resetScores(); if (!state.show) resetFx(); }
@@ -3043,7 +3044,15 @@
     else if (game === 'sort') { dealSort(); renderSort(); }
     else { dealRows(); renderErrfix(); }
   }
+  // Nhac nen khi choi: tro dua / doi khang nhac gap, tro can nghi (viet, xep cau, dong vai) nhac em
+  var NHAC_GAP = { tug: 1, train: 1, match: 1, nhip: 1 };
+  var NHAC_EM = { errfix: 1, sort: 1, role: 1, write: 1, chain: 1, taboo: 1, trans: 1 };
+  function nhacNen(game) {
+    if (!window.NhacNen) return;
+    window.NhacNen.bat({ kieu: NHAC_GAP[game] ? 'gap' : NHAC_EM[game] ? 'em' : 'vui' });
+  }
   function exitGame() {
+    if (window.NhacNen) window.NhacNen.tat();
     endShow();
     liveKetThuc(false);
     clearInterval(state.timer.id);

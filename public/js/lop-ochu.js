@@ -248,6 +248,7 @@
   }
 
   function veSanh() {
+    if (window.NhacNen) window.NhacNen.tat();
     $('#ocMoi').hidden = true;
     $('#ocTatCa').hidden = true;
     $('#ocSub').textContent = S.nhan;
@@ -337,6 +338,7 @@
     veTo();
     coO();
     ve();
+    if (window.NhacNen) window.NhacNen.bat({ kieu: 'em' });
   }
   function coO() {
     var l = S.luoi, t = $('.oc-trai');
@@ -412,6 +414,7 @@
     ve();
   }
   function xongHet() {
+    if (window.NhacNen) window.NhacNen.tat();
     [523, 659, 784, 1047].forEach(function (f, i) { tone(f, 0.3, 'triangle', 0.2, i * 0.12); });
     var box = $('#ocToDs');
     if (box && S.to.length) {
@@ -451,6 +454,7 @@
     veSanh();
   }
   function dong() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen();
     if (window.speechSynthesis) speechSynthesis.cancel();
     root.hidden = true;

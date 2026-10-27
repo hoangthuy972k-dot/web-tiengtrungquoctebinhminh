@@ -230,6 +230,7 @@
   }
 
   function thoat() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (state.phien) { state.phien.dung(); state.phien = null; }
     $('#ghStage').innerHTML = '';
     $('#ghPlay').hidden = true;

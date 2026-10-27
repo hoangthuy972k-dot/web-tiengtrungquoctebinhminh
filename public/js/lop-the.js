@@ -151,6 +151,7 @@
 
   /* ---------------- sanh: chon lop, in the, ma QR cho dien thoai ---------------- */
   function veSanh() {
+    if (window.NhacNen) window.NhacNen.tat();
     S.pha = 'sanh';
     $('#ltKetThuc').hidden = true;
     $('#ltSub').textContent = S.tuDo ? 'Câu hỏi tự do' : (S.nhan + ' · ' + S.goc.length + ' câu');
@@ -330,6 +331,7 @@
     S.kq = [];
     S.i = -1;
     tiep();
+    if (window.NhacNen) window.NhacNen.bat({ kieu: 'vui' });
   }
 
   function tiep() {
@@ -459,6 +461,7 @@
 
   /* ---------------- tong ket ---------------- */
   function ketThuc() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (S.pha === 'hoi' && S.kq[S.i] == null && Object.keys(tlHienTai()).length) {
       // dang hoi do thi chot cau nay luon
       var tl = {}, n = tlHienTai();
@@ -551,6 +554,7 @@
     });
   }
   function dong() {
+    if (window.NhacNen) window.NhacNen.tat();
     dongIn();
     dongPhong();
     root.hidden = true;

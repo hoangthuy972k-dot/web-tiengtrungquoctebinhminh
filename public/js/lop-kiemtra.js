@@ -1411,6 +1411,7 @@
     }).join('') + '</ul>';
   }
   function veSanh() {
+    if (window.NhacNen) window.NhacNen.tat();
     huyHen();
     S.pha = 'sanh';
     S.cur = null;
@@ -1547,6 +1548,7 @@
     root.setAttribute('data-pha', 'choi');
     root.setAttribute('data-mode', S.cur.mode);
     GAME[S.cur.mode].bat();
+    if (window.NhacNen) window.NhacNen.bat({ kieu: 'vui' });
   }
 
   /* ---------------- ket qua ---------------- */
@@ -1565,6 +1567,7 @@
     if (S.cur.goiY >= 8) sndKen(); else sndXong();
   }
   function veKq() {
+    if (window.NhacNen) window.NhacNen.tat();
     var c = S.cur, so = '';
     for (var n = 0; n <= 10; n++) {
       so += '<button type="button" class="kt-num' + (n === c.chon ? ' is-chon' : '') + (n === c.goiY ? ' is-goiy' : '') + '" data-k="diem" data-v="' + n + '"' +
@@ -1950,6 +1953,7 @@
     napLop().then(chonDau);
   }
   function dong() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (!root) return;
     huyHen();
     if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen();

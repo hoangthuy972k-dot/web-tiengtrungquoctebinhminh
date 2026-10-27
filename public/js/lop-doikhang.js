@@ -193,6 +193,7 @@
     } catch (e) { return ''; }
   }
   function veSanh() {
+    if (window.NhacNen) window.NhacNen.tat();
     S.pha = 'sanh';
     S.dsKy = '';
     veThanh();
@@ -256,6 +257,7 @@
       var l = $('#ldkLoi');
       if (l) l.textContent = e.message; else alert(e.message);
     });
+    if (window.NhacNen) window.NhacNen.bat({ kieu: 'gap' });
   }
   function dungVong() {
     if (!S.room) return;
@@ -401,6 +403,7 @@
     }).catch(function (e) { alert(e.message); });
   }
   function veHet(bxh) {
+    if (window.NhacNen) window.NhacNen.tat();
     S.pha = 'het';
     clearInterval(S.poll);
     clearInterval(S.dem);
@@ -487,6 +490,7 @@
     batDauMo();
   }
   function dong() {
+    if (window.NhacNen) window.NhacNen.tat();
     if (!root) return;
     if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen();
     dongPhong();

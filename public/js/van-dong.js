@@ -171,7 +171,7 @@
     ds: [], vang: {}, daChoi: {}, vong: { n: 5, tu: 0, so: 0 }, lichSu: [], camSan: false,
     cheBam: 'chon', oChon: 0, luot: false, // luot: chem / theduc theo tung ban, moi luot N cau
     tieng: docLS('hyv_vandong_tieng', true) !== false,
-    nhac: docLS('hyv_vandong_nhac', true) !== false
+    nhac: window.NhacNen ? window.NhacNen.batDuoc() : false
   };
 
   /* ================= am thanh + doc ================= */
@@ -223,7 +223,8 @@
   // Nhac nen: chay tu luc dem nguoc den man ket qua; tat khi tat tieng
   function nhac(bat) {
     if (!window.NhacNen) return;
-    if (bat && S.tieng && S.nhac) window.NhacNen.bat(ac); else window.NhacNen.tat();
+    // chem / theduc: nhac vui; cuoc dua ngoi sao: nhac gap; nut bat/tat rieng tren thanh tren
+    if (bat && S.tieng) window.NhacNen.bat({ ctx: ac, kieu: S.tro === 'ngoisao' ? 'gap' : 'vui', nut: false }); else window.NhacNen.tat();
   }
   function dangChoi() { return $('vd').classList.contains('is-choi'); }
   function veNhac() {
@@ -1361,11 +1362,11 @@
     nhac(S.tieng && dangChoi());
   });
   $('vdNhac').addEventListener('click', function () {
+    if (!window.NhacNen) return;
     S.nhac = !S.nhac;
-    ghiLS('hyv_vandong_nhac', S.nhac);
     veNhac();
     if (S.nhac) tone(1, 0.01); // mo khoa am thanh trong cu bam
-    nhac(S.nhac && dangChoi());
+    window.NhacNen.datBat(S.nhac);
   });
   $('vdFull').addEventListener('click', function () {
     if (document.fullscreenElement) document.exitFullscreen();

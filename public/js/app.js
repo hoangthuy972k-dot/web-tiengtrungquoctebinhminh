@@ -16819,6 +16819,8 @@
     });
 
     function setAuthTab(tab) {
+      // Doi tab / mo lai: cuon khung ve dau (khung dai cuon trong lop phu)
+      overlay.scrollTop = 0;
       $all('.auth-tab').forEach(function (t) {
         t.classList.toggle('is-active', t.getAttribute('data-auth') === tab);
       });

@@ -2907,11 +2907,18 @@ body.idiom-open { overflow: hidden; }
   inset: 0;
   background: rgba(32, 30, 28, 0.55);
   display: none;
-  align-items: center;
+  /* Khung cao hon man hinh (vd quen mat khau tren laptop) thi cuon ngay trong lop phu,
+     khong cuon trang phia sau; ngan thi van nam giua nho margin: auto cua .modal */
+  align-items: flex-start;
   justify-content: center;
   padding: var(--space-4);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   z-index: 200;
 }
+
+/* Dang mo hop thoai thi khoa cuon trang phia sau */
+html:has(.modal-overlay.is-open) { overflow: hidden; }
 
 .modal-overlay.is-open {
   display: flex;
@@ -2926,6 +2933,8 @@ body.idiom-open { overflow: hidden; }
   position: relative;
   box-shadow: var(--shadow-lg);
   overflow: hidden;
+  margin: auto;
+  flex-shrink: 0;
 }
 
 .modal-banner {

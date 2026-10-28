@@ -411,6 +411,19 @@
     }
 
     /* ---------------- cap nhat trang thai tung cau ---------------- */
+    // +1 sao khi hoc sinh VUA tu lam dung ngay lan dau (khong goi luc ve lai trang;
+    // da sai mot lan thi lan sua dung khong tinh). May chu chi thuong 1 lan moi cau.
+    var daSai = {};
+    function thuongSao(id) {
+      if (!window.hwStarAnswer) return;
+      var c = cauCua(id), v = st.a[id];
+      if (!c || !v || c.kieu === 'vandung' || !daLam(c, v)) return;
+      var ok;
+      if (c.kieu === 'dien' || c.kieu === 'vitri' || c.kieu === 'dungsai' || c.kieu === 'xep' || c.kieu === 'go') ok = laDung(c, v);
+      else { var kn = khungNhap(c); ok = khop(v.tra, c.dap, kn.truoc, kn.sau); }
+      if (!ok) { daSai[id] = 1; return; }
+      if (!daSai[id]) window.hwStarAnswer(key + '|np|' + id);
+    }
     function giaiHtml(c) { return c.giai ? '<div class="npt-giai-ngan">💡 ' + esc(c.giai) + '</div>' : ''; }
 
     function capNhat(id) {
@@ -731,6 +744,7 @@
           if (o) { o.innerHTML = x ? esc(x) : '&nbsp;'; o.classList.toggle('co', !!x); }
         });
         capNhat(id);
+        thuongSao(id);
         sauThayDoi(tach(id).pi, tach(id).so);
         return;
       }
@@ -755,6 +769,7 @@
         vv.chon = t.getAttribute('data-w');
         st.a[id] = vv;
         capNhat(id);
+        thuongSao(id);
         sauThayDoi(tach(id).pi, tach(id).so);
         return;
       }
@@ -762,6 +777,7 @@
       if ((id = t.getAttribute('data-npt-lay')) != null) {
         st.a[id].chon.push(+t.getAttribute('data-i'));
         veManh(id);
+        thuongSao(id);
         sauThayDoi(tach(id).pi, tach(id).so);
         return;
       }
@@ -779,6 +795,7 @@
         v5.kt = !!v5.tra;
         st.a[id] = v5;
         capNhat(id);
+        thuongSao(id);
         if (!v5.tra && inp) inp.focus();
         sauThayDoi(tach(id).pi, tach(id).so);
         return;

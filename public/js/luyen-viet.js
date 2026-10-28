@@ -389,10 +389,13 @@
         var cau = st.sx[i].chon.map(function (k2) { return it.manh[k2]; }).join('');
         var dap = [it.dap].concat(it.chap || []).map(boDau);
         st.sx[i].kq = dap.indexOf(boDau(cau)) >= 0 ? 'dung' : 'sai';
+        // +1 sao khi dung ngay lan dau (da sai roi lam lai thi khong tinh); may chu chi thuong 1 lan / cau
+        if (st.sx[i].kq === 'sai') st.sx[i].tungSai = true;
+        else if (!st.sx[i].tungSai && window.hwStarAnswer) window.hwStarAnswer(key + '|lv|' + i);
         luu(); veSX();
         baoXong();
       } else if (b.hasAttribute('data-sx-lai')) {
-        st.sx[i] = { chon: [] }; luu(); veSX();
+        st.sx[i] = { chon: [], tungSai: !!st.sx[i].tungSai }; luu(); veSX();
       } else if (b.hasAttribute('data-lv-go')) {
         chonTab(b.getAttribute('data-lv-go'));
         hop.scrollIntoView({ behavior: 'smooth', block: 'start' });

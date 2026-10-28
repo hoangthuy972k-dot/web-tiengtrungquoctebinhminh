@@ -168,7 +168,11 @@
       if (b && !b.disabled) {
         var row = b.closest('.pb-q');
         var chon = +b.getAttribute('data-o');
-        st.chon[row.getAttribute('data-g') + '_' + row.getAttribute('data-q')] = chon;
+        var kc = row.getAttribute('data-g') + '_' + row.getAttribute('data-q');
+        st.chon[kc] = chon;
+        // +1 sao khi chon dung (nut khoa sau lan chon dau nen chi tinh lan dau)
+        var qc = data[+row.getAttribute('data-g')].quiz[+row.getAttribute('data-q')];
+        if (qc && chon === qc.answer && window.hwStarAnswer) window.hwStarAnswer(key + '|pb|' + kc);
         luu(); hienCau(row, chon); tongKet();
         return;
       }
@@ -183,7 +187,13 @@
         st.tich[k] = arr; luu(); ve();
         return;
       }
-      if (e.target.closest('.pb-kt')) { st.xong[k] = true; luu(); ve(); }
+      if (e.target.closest('.pb-kt')) {
+        st.xong[k] = true;
+        var cT = (data[+tr.getAttribute('data-g')].sgk.lamThu || [])[+tr.getAttribute('data-q')];
+        var tichT = st.tich[k] || [];
+        if (cT && dungHet(tichT, cT.dap) && window.hwStarAnswer) window.hwStarAnswer(key + '|pbt|' + k);
+        luu(); ve();
+      }
     };
 
     ve();

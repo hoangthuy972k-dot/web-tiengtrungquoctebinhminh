@@ -285,7 +285,7 @@
               (v.vn ? '<div class="npt-vd-vn">' + esc(v.vn) + '</div>' : '') + '</li>';
           }).join('') + '</ol></section>' : '') +
 
-        (p.loi && p.loi.length ? '<section class="npt-khoi npt-loi"><h3 class="npt-h">Lỗi học sinh Việt hay mắc</h3>' +
+        (p.loi && p.loi.length ? '<section class="npt-khoi npt-loi"><h3 class="npt-h">Lỗi học sinh hay mắc</h3>' +
           p.loi.map(function (l) {
             return '<div class="npt-loi-mot">' +
               '<div class="npt-loi-sai hanzi"><span aria-hidden="true">✗</span> ' + esc(l.sai) + '</div>' +

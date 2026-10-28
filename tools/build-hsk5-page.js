@@ -34,7 +34,7 @@ function grammarCard(n, g) {
     '      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>\n' +
     '      <tbody>\n' + rows + '\n      </tbody>\n' +
     '    </table>\n' +
-    (errs ? '    <div class="g-errors">\n      <div class="g-errors-title">⚠️ Lỗi học sinh Việt hay mắc</div>\n' + errs + '\n    </div>\n' : '') +
+    (errs ? '    <div class="g-errors">\n      <div class="g-errors-title">⚠️ Lỗi học sinh hay mắc</div>\n' + errs + '\n    </div>\n' : '') +
     '  </div>';
 }
 

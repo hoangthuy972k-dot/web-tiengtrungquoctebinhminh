@@ -43,7 +43,7 @@ function closeOf(html, openIdx) {
 
 function errorsHtml(errors) {
   if (!errors || !errors.length) return '';
-  return '\n    <div class="g-errors">\n      <div class="g-errors-title">⚠️ Lỗi học sinh Việt hay mắc</div>\n' +
+  return '\n    <div class="g-errors">\n      <div class="g-errors-title">⚠️ Lỗi học sinh hay mắc</div>\n' +
     errors.map((e) =>
       '      <div class="g-err">' +
       '<div class="g-err-wrong">✗ ' + esc(e.wrong) + '</div>' +

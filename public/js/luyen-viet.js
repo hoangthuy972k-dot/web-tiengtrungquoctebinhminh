@@ -293,7 +293,7 @@
       '<div><b>Thân · 40–50 chữ</b><span>Diễn biến, lồng 5 từ, có từ nối</span><span class="lv-zh">后来 · 于是 · 没想到 · 结果 · 虽然……但是……</span></div>' +
       '<div><b>Kết · 10–15 chữ</b><span>Cảm nghĩ / bài học</span><span class="lv-zh">这件事让我明白了…… / 我觉得……</span></div>' +
     '</div></div>' +
-    '<div class="lv-card"><h3>Lỗi học sinh Việt hay mắc</h3><ul class="lv-list">' +
+    '<div class="lv-card"><h3>Lỗi học sinh hay mắc</h3><ul class="lv-list">' +
       '<li>Trạng ngữ thời gian, nơi chốn đặt cuối câu như tiếng Việt → phải đặt TRƯỚC động từ.</li>' +
       '<li>是 + tính từ (他是很高兴) → bỏ 是.</li>' +
       '<li>和 dùng để nối hai vế câu → dùng 而且 / 并且 / 还.</li>' +

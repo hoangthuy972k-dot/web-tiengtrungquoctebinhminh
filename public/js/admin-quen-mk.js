@@ -83,6 +83,7 @@
         'Muốn học sinh tự nhận mã qua email, thêm <code>BREVO_API_KEY</code> (hoặc <code>RESEND_API_KEY</code>) và <code>MAIL_FROM</code> vào biến môi trường của máy chủ rồi khởi động lại.</div>';
     }
     return '<div class="qmk-mail">📧 <b>Gửi mã qua email: đang bật</b> (' + esc(mail.dv) + ', gửi từ ' + esc(mail.from) + '). Học sinh nhập đúng email sẽ tự nhận mã — chỉ những em quên cả email mới hiện ở đây.' +
+      (mail.canhBao ? '<p class="qmk-canh">⚠️ ' + esc(mail.canhBao) + '</p>' : '') +
       '<form class="qmk-thu" id="qmkThu"><input type="email" id="qmkThuTo" placeholder="email của cô để gửi thử" required> <button type="submit" class="btn btn-outline">Gửi email thử</button> <span id="qmkThuKq"></span></form></div>';
   }
 

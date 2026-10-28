@@ -837,9 +837,18 @@ function cauHinhEmail() {
   const m = from.match(/^\s*(.*?)\s*<\s*([^<>\s]+@[^<>\s]+)\s*>\s*$/) || from.match(/^()([^<>\s]+@[^<>\s]+)$/);
   if (!m) return null;
   const nguoiGui = { ten: (m[1] || 'Hi Hán').replace(/^"|"$/g, ''), email: m[2] };
-  if (process.env.BREVO_API_KEY) return { dv: 'brevo', khoa: process.env.BREVO_API_KEY, nguoiGui };
-  if (process.env.RESEND_API_KEY) return { dv: 'resend', khoa: process.env.RESEND_API_KEY, nguoiGui };
+  // Khoa dan vao Hostinger hay dinh dau cach / dau ngoac kep -> bo di
+  const sach = (k) => String(k || '').trim().replace(/^["']+|["']+$/g, '').trim();
+  if (sach(process.env.BREVO_API_KEY)) return { dv: 'brevo', khoa: sach(process.env.BREVO_API_KEY), nguoiGui };
+  if (sach(process.env.RESEND_API_KEY)) return { dv: 'resend', khoa: sach(process.env.RESEND_API_KEY), nguoiGui };
   return null;
+}
+// Loi thuong gap khi cau hinh khoa (hien o trang Bao cao, khong lo khoa)
+function canhBaoKhoa(ch) {
+  if (!ch) return '';
+  if (ch.dv === 'brevo' && /^xsmtpsib-/.test(ch.khoa)) return 'Đang dùng SMTP key (xsmtpsib-…). Cần API key bắt đầu bằng xkeysib-… (Brevo → SMTP & API → API Keys).';
+  if (ch.dv === 'brevo' && !/^xkeysib-/.test(ch.khoa)) return 'Khoá Brevo thường bắt đầu bằng xkeysib-… — kiểm tra lại khoá đã dán đủ chưa.';
+  return '';
 }
 async function guiEmail(to, tenNhan, tieuDe, html, text) {
   const ch = cauHinhEmail();
@@ -865,7 +874,11 @@ async function guiEmail(to, tenNhan, tieuDe, html, text) {
       const loi = await r.text().catch(() => '');
       // khong ghi dia chi nguoi nhan vao log
       console.error('Gui email loi (' + ch.dv + '): HTTP ' + r.status + ' ' + loi.slice(0, 200));
-      throw new Error('Dịch vụ email báo lỗi ' + r.status + '.');
+      // Kem ly do cua dich vu (vd "Key not found") de co biet sua gi
+      let lyDo = '';
+      try { const j = JSON.parse(loi); lyDo = String(j.message || j.error || '').slice(0, 160); } catch (e) { /* bo qua */ }
+      const goiY = r.status === 401 ? ' Khoá API không đúng hoặc đã bị xoá — tạo API key mới (xkeysib-…) trên Brevo, dán lại vào Hostinger rồi khởi động lại.' : '';
+      throw new Error('Dịch vụ email báo lỗi ' + r.status + (lyDo ? ' (' + lyDo + ')' : '') + '.' + goiY);
     }
   } finally { clearTimeout(hen); }
 }
@@ -1012,7 +1025,7 @@ app.post('/api/admin/reset-code', requireAdmin, asyncRoute(async (req, res) => {
 // Trang Bao cao: dich vu email da bat chua + gui thu
 app.get('/api/admin/mail-status', requireAdmin, (req, res) => {
   const ch = cauHinhEmail();
-  res.json(ch ? { bat: true, dv: ch.dv, from: ch.nguoiGui.email } : { bat: false });
+  res.json(ch ? { bat: true, dv: ch.dv, from: ch.nguoiGui.email, canhBao: canhBaoKhoa(ch) } : { bat: false });
 });
 app.post('/api/admin/mail-test', requireAdmin, asyncRoute(async (req, res) => {
   const to = String(req.body?.to || '').trim();

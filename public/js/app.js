@@ -670,7 +670,8 @@
   var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2v3: ['HSK 3.0', '2'], hsk3v3: ['HSK 3.0', '3'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], hsk6: ['HSK', '6'], yct: ['YCT', '1'] };
   var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2v3: 'HSK 2 · 3.0', hsk3v3: 'HSK 3 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT Thiếu nhi' };
   var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2v3: true, hsk3v3: true, hsk2: true, hsk3: true, hsk4: true, hsk5: true, hsk6: true, yct: true };
-  var practiceLevel = 'hsk2';
+  // Cap dang hoc: chua hoc bai nao thi de trong (khong mac dinh to dam cap nao, hoc sinh tu chon)
+  var practiceLevel = null;
 
   // Dem so bai da hoc (da mo hoac co diem) trong 1 cap do
   function levelProgress(id) {
@@ -1929,7 +1930,13 @@
     }
 
     var bnLearn = $('#bnLearn');
-    if (bnLearn) bnLearn.addEventListener('click', function () { selectLevel(practiceLevel); });
+    if (bnLearn) bnLearn.addEventListener('click', function () {
+      if (practiceLevel) { selectLevel(practiceLevel); return; }
+      // Chua chon cap: ve trang chu, cuon toi danh sach cap do de hoc sinh tu chon
+      showDashboard();
+      var head = $('#levelsHead');
+      if (head) setTimeout(function () { head.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+    });
     var bnLeaderboard = $('#bnLeaderboard');
     if (bnLeaderboard) bnLeaderboard.addEventListener('click', function (e) { e.preventDefault(); showLeaderboard(); });
     var bnMenu = $('#bnMenu');

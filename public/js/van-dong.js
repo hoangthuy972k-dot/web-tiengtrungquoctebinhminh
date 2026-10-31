@@ -93,7 +93,36 @@
   var CHU = ['A', 'B', 'C', 'D'];
   var MAU = ['#ef6a4f', '#1fa89a', '#e9a21f', '#8a5cd6'];
   var MAU_NG = ['#ef6a4f', '#1fa89a']; // ban trai / ban phai
-  var QUA = [{ em: '🍉', nuoc: '#e8394d' }, { em: '🍊', nuoc: '#ff9a1f' }, { em: '🍎', nuoc: '#d62f2f' }, { em: '🍇', nuoc: '#8a3fc4' }];
+  // Hinh ve SVG (/images/game/cam-*.svg): nap mot lan, ve san ra canvas 512px de drawImage nhanh.
+  // Chua nap xong thi cac ham ve dung lai emoji / hinh tron cu.
+  var ANH = '/images/game/cam-';
+  function taiAnh(ten) {
+    var o = { im: new Image(), cv: null };
+    o.im.onload = function () {
+      try {
+        var w = o.im.naturalWidth || 100, h = o.im.naturalHeight || 100, k = 512 / Math.max(w, h);
+        var c = document.createElement('canvas');
+        c.width = Math.round(w * k); c.height = Math.round(h * k);
+        c.getContext('2d').drawImage(o.im, 0, 0, c.width, c.height);
+        o.cv = c;
+      } catch (e) { o.cv = null; }
+    };
+    o.im.src = ANH + ten + '.svg';
+    return o;
+  }
+  function hinh(o) { return o ? o.cv || (o.im.complete && o.im.naturalWidth ? o.im : null) : null; }
+  function anhTag(ten, lop2) { return '<img class="' + (lop2 || 'vd-anh') + '" src="' + ANH + ten + '.svg" alt="" draggable="false">'; }
+  var QUA = [
+    { em: '🍉', nuoc: '#e8394d', anh: taiAnh('watermelon'), nua: taiAnh('watermelon-half'), te: taiAnh('splash-red') },
+    { em: '🍊', nuoc: '#ff9a1f', anh: taiAnh('orange'), nua: taiAnh('orange-half'), te: taiAnh('splash-orange') },
+    { em: '🍎', nuoc: '#d62f2f', anh: taiAnh('apple'), nua: taiAnh('apple-half'), te: taiAnh('splash-red') },
+    { em: '🍇', nuoc: '#8a3fc4', anh: taiAnh('grape'), nua: null, te: taiAnh('splash-purple') }];
+  var BONG = ['a', 'b', 'c', 'd'].map(function (k) { return taiAnh('balloon-' + k); });
+  var BONG_OK = taiAnh('balloon-ok');
+  // hinh DOM: nap truoc de khong nhap nhay lan dau hien
+  ['heart', 'heart-empty', 'hand-open', 'fist', 'star', 'star-empty', 'pose-idle', 'trophy', 'star-pair'].forEach(function (t) {
+    new Image().src = ANH + t + '.svg';
+  });
   var EMOJI = '"Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif';
   var TU_THE = ['Hai tay chụm trên đầu', 'Giơ tay phải', 'Giơ tay trái', 'Dang hai tay ngang vai'];
   var TEN_TRO = { chem: '🍉 Chém hoa quả', theduc: '🤸 Thể dục ABC', ngoisao: '⭐ Cuộc đua ngôi sao' };
@@ -101,17 +130,10 @@
   var NOI_TAY = [[0, 1], [1, 2], [2, 3], [3, 4], [0, 5], [5, 6], [6, 7], [7, 8], [5, 9], [9, 10], [10, 11], [11, 12],
     [9, 13], [13, 14], [14, 15], [15, 16], [13, 17], [17, 18], [18, 19], [19, 20], [0, 17]];
 
-  // hinh nguoi que (nhin nhu trong guong) cho 4 dang the duc
-  function hinhNguoi(tay) {
-    return '<svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">' +
-      '<circle cx="50" cy="22" r="10"/><path d="M50 33 V64 M50 64 L38 92 M50 64 L62 92 M38 40 H62"/><path d="' + tay + '"/></g></svg>';
-  }
-  var HINH_TT = [
-    hinhNguoi('M38 40 L30 20 L46 4 M62 40 L70 20 L54 4'),
-    hinhNguoi('M38 40 L32 56 L30 72 M62 40 L72 24 L76 6'),
-    hinhNguoi('M62 40 L68 56 L70 72 M38 40 L28 24 L24 6'),
-    hinhNguoi('M38 40 L22 40 L6 40 M62 40 L78 40 L94 40')
-  ];
+  // ban nho tao dang (nhin nhu trong guong) cho 4 dang the duc
+  var HINH_TT = ['a', 'b', 'c', 'd'].map(function (k) { return anhTag('pose-' + k); });
+  var IMG_DUNG = anhTag('pose-idle'), IMG_TAY = anhTag('hand-open'), IMG_NAM = anhTag('fist');
+  var IMG_SAO = anhTag('star', 'vd-anh-sao');
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -259,7 +281,7 @@
     }
     ds.push(buoc('📋', n ? 'Gồm ' + Math.min(n, lop ? n : 12) + ' câu hỏi' : 'Chưa có câu hỏi'));
     $('vdCachDs').innerHTML = ds.join('');
-    $('vdSanhIc').textContent = S.tro === 'chem' ? (S.da === 'qua' ? '🍉' : '🎈') : S.tro === 'theduc' ? '🤸' : '⭐';
+    $('vdSanhIc').innerHTML = anhTag(S.tro === 'chem' ? (S.da === 'qua' ? 'watermelon' : 'balloon-a') : S.tro === 'theduc' ? 'pose-d' : 'star');
     $('vdDa').hidden = S.tro !== 'chem';
     var ns = S.tro === 'ngoisao';
     $('vdTenO').hidden = !ns && !lop && !S.ds.length && !$('vdLop').value;
@@ -674,9 +696,13 @@
       cx.lineWidth = 5; cx.strokeStyle = '#7ee2a2'; cx.stroke();
     }
     cx.translate(v.x, v.y); cx.rotate(v.rot);
-    cx.font = Math.round(v.r * 1.9) + 'px ' + EMOJI;
-    cx.textAlign = 'center'; cx.textBaseline = 'middle';
-    cx.fillText(v.em, 0, v.r * 0.1);
+    var im = hinh(QUA[v.i] && QUA[v.i].anh), s = v.r * 2.4;
+    if (im) cx.drawImage(im, -s / 2, -s / 2, s, s);
+    else {
+      cx.font = Math.round(v.r * 1.9) + 'px ' + EMOJI;
+      cx.textAlign = 'center'; cx.textBaseline = 'middle';
+      cx.fillText(v.em, 0, v.r * 0.1);
+    }
     cx.restore();
     // nhan dap an duoi qua, luon nam ngang
     var nh = v.nhan, lh = nh.co * 1.2, hh = lh * nh.d.length + 12, br = Math.max(10, nh.co * 0.62), ww = 0, i;
@@ -698,15 +724,27 @@
     var r = v.r, m = MAU[v.i], i;
     cx.save();
     cx.globalAlpha = Math.max(0, Math.min(1, v.mo));
-    var g = cx.createRadialGradient(v.x - r * 0.35, v.y - r * 0.4, r * 0.1, v.x, v.y, r);
-    g.addColorStop(0, 'rgba(255,255,255,.75)');
-    g.addColorStop(0.55, v.sang ? 'rgba(47,163,95,.45)' : m + '66');
-    g.addColorStop(1, v.sang ? 'rgba(47,163,95,.85)' : m + 'cc');
-    cx.beginPath(); cx.arc(v.x, v.y, r * (v.sang && !itDong ? 1 + Math.sin(now / 150) * 0.04 : 1), 0, Math.PI * 2);
-    cx.fillStyle = g; cx.fill();
-    cx.lineWidth = v.sang ? 5 : 3; cx.strokeStyle = v.sang ? '#7ee2a2' : 'rgba(255,255,255,.85)'; cx.stroke();
-    cx.beginPath(); cx.arc(v.x - r * 0.38, v.y - r * 0.38, r * 0.16, 0, Math.PI * 2);
-    cx.fillStyle = 'rgba(255,255,255,.8)'; cx.fill();
+    var im = hinh(v.sang ? BONG_OK : BONG[v.i]);
+    if (im) {
+      // than bong trong hinh: tam (50,52), ban kinh ~44 tren khung 100x150
+      var rr = r * (v.sang && !itDong ? 1 + Math.sin(now / 150) * 0.04 : 1), k = rr / 44;
+      if (v.sang) {
+        cx.beginPath(); cx.arc(v.x, v.y, r * 1.3 + (itDong ? 0 : Math.sin(now / 150) * 4), 0, Math.PI * 2);
+        cx.fillStyle = 'rgba(47,163,95,.35)'; cx.fill();
+        cx.lineWidth = 5; cx.strokeStyle = '#7ee2a2'; cx.stroke();
+      }
+      cx.drawImage(im, v.x - 50 * k, v.y - 52 * k, 100 * k, 150 * k);
+    } else {
+      var g = cx.createRadialGradient(v.x - r * 0.35, v.y - r * 0.4, r * 0.1, v.x, v.y, r);
+      g.addColorStop(0, 'rgba(255,255,255,.75)');
+      g.addColorStop(0.55, v.sang ? 'rgba(47,163,95,.45)' : m + '66');
+      g.addColorStop(1, v.sang ? 'rgba(47,163,95,.85)' : m + 'cc');
+      cx.beginPath(); cx.arc(v.x, v.y, r * (v.sang && !itDong ? 1 + Math.sin(now / 150) * 0.04 : 1), 0, Math.PI * 2);
+      cx.fillStyle = g; cx.fill();
+      cx.lineWidth = v.sang ? 5 : 3; cx.strokeStyle = v.sang ? '#7ee2a2' : 'rgba(255,255,255,.85)'; cx.stroke();
+      cx.beginPath(); cx.arc(v.x - r * 0.38, v.y - r * 0.38, r * 0.16, 0, Math.PI * 2);
+      cx.fillStyle = 'rgba(255,255,255,.8)'; cx.fill();
+    }
     veHuy(v.x, v.y - r * 0.62, Math.max(9, r * 0.2), m, CHU[v.i]);
     var nh = v.nhan, lh = nh.co * 1.15, y0 = v.y + r * 0.08 - lh * (nh.d.length - 1) / 2;
     cx.font = nh.f; cx.textAlign = 'center'; cx.textBaseline = 'middle';
@@ -720,8 +758,10 @@
     var so = itDong ? 6 : 18, k, a, sp, mau = S.da === 'qua' ? (dung ? QUA[v.i].nuoc : '#9b8a7a') : (dung ? MAU[v.i] : '#b9aec4');
     if (S.da === 'qua') {
       var nx = Math.sin(goc), ny = -Math.cos(goc), tach = v.r * 2.2;
+      // vet nuoc ban (s) ve truoc, nam duoi hai nua qua
+      if (dung) S.hat.push({ l: 's', q: QUA[v.i], x: v.x, y: v.y, r: v.r, rot: Math.random() * Math.PI * 2, t: 0, het: 0.9 });
       [-1, 1].forEach(function (b) {
-        S.hat.push({ l: 'n', em: v.em, x: v.x, y: v.y, r: v.r, c: goc - Math.PI / 2, rot: v.rot - (goc - Math.PI / 2), ben: b,
+        S.hat.push({ l: 'n', em: v.em, q: QUA[v.i], x: v.x, y: v.y, r: v.r, c: goc - Math.PI / 2, rot: v.rot - (goc - Math.PI / 2), ben: b,
           vx: (v.vx || 0) * 0.4 + b * nx * tach, vy: Math.min(0, v.vy || 0) * 0.3 + b * ny * tach - v.r, vr: b * ngau(2, 4), t: 0, het: 1.3 });
       });
     } else {
@@ -748,10 +788,22 @@
       } else if (p.l === 'n') {
         p.vy += g * dt; p.x += p.vx * dt; p.y += p.vy * dt; p.c += p.vr * dt;
         cx.translate(p.x, p.y); cx.rotate(p.c);
-        cx.beginPath(); cx.rect(p.ben < 0 ? -p.r * 1.3 : 0, -p.r * 1.3, p.r * 1.3, p.r * 2.6); cx.clip();
-        cx.rotate(p.rot);
-        cx.font = Math.round(p.r * 1.9) + 'px ' + EMOJI; cx.textAlign = 'center'; cx.textBaseline = 'middle';
-        cx.fillText(p.em, 0, p.r * 0.1);
+        var nua = hinh(p.q && p.q.nua), ca = hinh(p.q && p.q.anh), s = p.r * 2.4;
+        if (nua) { // hinh nua qua: mat cat nam doc theo truc y (x = 0), nua phai lat guong
+          if (p.ben > 0) cx.scale(-1, 1);
+          cx.drawImage(nua, -s / 2, -s / 2, s, s);
+        } else {
+          cx.beginPath(); cx.rect(p.ben < 0 ? -p.r * 1.3 : 0, -p.r * 1.3, p.r * 1.3, p.r * 2.6); cx.clip();
+          cx.rotate(p.rot);
+          if (ca) cx.drawImage(ca, -s / 2, -s / 2, s, s);
+          else {
+            cx.font = Math.round(p.r * 1.9) + 'px ' + EMOJI; cx.textAlign = 'center'; cx.textBaseline = 'middle';
+            cx.fillText(p.em, 0, p.r * 0.1);
+          }
+        }
+      } else if (p.l === 's') {
+        var te = hinh(p.q && p.q.te), k2 = p.r * 2.6 * (0.75 + 0.5 * (1 - a));
+        if (te) { cx.translate(p.x, p.y); cx.rotate(p.rot); cx.drawImage(te, -k2 / 2, -k2 / 2, k2, k2); }
       } else if (p.l === 'v') {
         cx.beginPath(); cx.arc(p.x, p.y, p.r * (1 + (1 - a) * 0.7), 0, Math.PI * 2);
         cx.lineWidth = 6 * a + 1; cx.strokeStyle = p.mau; cx.stroke();
@@ -827,7 +879,7 @@
   }
   function veTim() {
     var c = S.cau[S.i], co = c.opts.length > 2 ? 2 : 1;
-    $('vdTim').textContent = lap('❤️', Math.max(0, co - S.saiCau)) + lap('🤍', Math.min(co, S.saiCau));
+    $('vdTim').innerHTML = lap(anhTag('heart'), Math.max(0, co - S.saiCau)) + lap(anhTag('heart-empty'), Math.min(co, S.saiCau));
   }
   function loChem() {
     S.lo = true;
@@ -896,7 +948,7 @@
     else tb('');
     if (ben !== S.benHien) {
       S.benHien = ben;
-      $('vdDau').textContent = ben >= 0 ? CHU[ben] : '🧍';
+      $('vdDau').innerHTML = ben >= 0 ? CHU[ben] : IMG_DUNG;
       $('vdDau').style.background = ben >= 0 ? MAU[ben] : '';
     }
     giuChon(ben, now);
@@ -1018,10 +1070,10 @@
   function veNguoi(k) {
     var P = S.p[k], el = $('vdP' + k), c = S.cau[S.i], n = P.n, trang = '', so, nhan;
     if (c && P.khoa !== -1) { trang = P.khoa === c.dung ? 'dung' : 'sai'; so = CHU[P.khoa]; nhan = trang === 'dung' ? 'Chính xác!' : 'Sai — chờ câu sau'; }
-    else if (!c || S.pha !== 'hoi') { so = '✋'; nhan = 'Chuẩn bị…'; }
+    else if (!c || S.pha !== 'hoi') { so = IMG_TAY; nhan = 'Chuẩn bị…'; }
     else if (P.canThang && n >= 1) { so = n; nhan = 'Nắm tay lại trước đã ✊'; }
-    else if (n < 0) { so = '✋'; nhan = 'Giơ tay lên'; }
-    else if (n === 0) { so = '✊'; nhan = 'Sẵn sàng!'; }
+    else if (n < 0) { so = IMG_TAY; nhan = 'Giơ tay lên'; }
+    else if (n === 0) { so = IMG_NAM; nhan = 'Sẵn sàng!'; }
     else if (n > c.opts.length) { so = n; nhan = n === 5 ? 'Gập ngón cái lại' : 'Chỉ có ' + c.opts.length + ' đáp án'; }
     else { so = n; nhan = '→ ' + CHU[n - 1]; trang = 'giu'; }
     el.style.setProperty('--p', P.p.toFixed(3));
@@ -1031,7 +1083,7 @@
     el.classList.remove('is-dung', 'is-sai', 'is-giu');
     if (trang) el.classList.add('is-' + trang);
     el.innerHTML = '<div class="vd-nguoi-ten">' + esc(P.ten) + '</div>' +
-      '<div class="vd-nguoi-sao">⭐ <b>' + P.sao + '</b>' + (S.muc ? '<small>/' + S.muc + '</small>' : '') + '</div>' +
+      '<div class="vd-nguoi-sao">' + IMG_SAO + ' <b>' + P.sao + '</b>' + (S.muc ? '<small>/' + S.muc + '</small>' : '') + '</div>' +
       '<div class="vd-nguoi-ngon"><b>' + so + '</b></div><div class="vd-nguoi-nhan">' + nhan + '</div>';
   }
   function veNgoiSao() {
@@ -1210,7 +1262,7 @@
     sHet();
     var n = S.cau.length, pt = n ? S.dung / n : 0;
     var sao = pt >= 0.9 ? 3 : pt >= 0.7 ? 2 : pt >= 0.4 ? 1 : 0, moi = kyLuc(S.diem);
-    veKq('<div class="vd-kq-sao">' + [0, 1, 2].map(function (i) { return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.2) + 's">★</span>'; }).join('') + '</div>' +
+    veKq('<div class="vd-kq-sao">' + [0, 1, 2].map(function (i) { return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.2) + 's">' + anhTag(i < sao ? 'star' : 'star-empty') + '</span>'; }).join('') + '</div>' +
       '<h2>' + (sao >= 3 ? 'Xuất sắc!' : sao >= 2 ? 'Giỏi lắm!' : sao >= 1 ? 'Khá lắm!' : 'Cố lên nhé!') + '</h2>' +
       '<div class="vd-kq-diem">' + S.diem + ' <small>điểm</small></div>' +
       '<p>' + (S.tro === 'chem' ? 'Đúng ngay lần đầu ' : 'Đúng ') + S.dung + '/' + n +
@@ -1224,7 +1276,7 @@
     var bxh = S.lichSu.slice().sort(function (a, b) { return b.diem - a.diem; });
     var pt = S.dung / S.vong.n, sao = pt >= 0.9 ? 3 : pt >= 0.6 ? 2 : pt >= 0.3 ? 1 : 0;
     var chua = coMat().filter(function (t) { return !S.daChoi[t]; });
-    veKq('<div class="vd-kq-sao">' + [0, 1, 2].map(function (i) { return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.2) + 's">★</span>'; }).join('') + '</div>' +
+    veKq('<div class="vd-kq-sao">' + [0, 1, 2].map(function (i) { return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.2) + 's">' + anhTag(i < sao ? 'star' : 'star-empty') + '</span>'; }).join('') + '</div>' +
       '<h2>' + esc(S.tenLuot) + (sao >= 2 ? ' giỏi lắm!' : ' cố lên nhé!') + '</h2>' +
       '<div class="vd-kq-diem">' + S.diem + ' <small>điểm</small></div>' +
       '<p>Đúng ' + S.dung + '/' + S.vong.n + ' câu</p>' +
@@ -1269,7 +1321,7 @@
     sHet();
     var a = S.p[0], b = S.p[1], hoa = a.sao === b.sao, thang = a.sao > b.sao ? 0 : 1, moi = kyLuc(Math.max(a.sao, b.sao));
     S.lichSu.push({ so: S.vong.so, a: a.ten, b: b.ten, sa: a.sao, sb: b.sao });
-    veKq('<div class="vd-kq-cup" aria-hidden="true">' + (hoa ? '🤝' : '🏆') + '</div>' +
+    veKq('<div class="vd-kq-cup" aria-hidden="true">' + anhTag(hoa ? 'star-pair' : 'trophy') + '</div>' +
       '<h2>' + (hoa ? 'Hoà nhau rồi!' : esc(S.p[thang].ten) + ' thắng!') + '</h2>' +
       '<div class="vd-kq-ty">' +
       '<div class="k0' + (!hoa && thang === 0 ? ' is-thang' : '') + '"><span>' + esc(a.ten) + '</span><b>⭐ ' + a.sao + '</b></div>' +

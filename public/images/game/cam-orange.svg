@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+<defs><circle cx="60" cy="66" r="46" id="cor-s"/><clipPath id="cor-c"><use href="#cor-s"/></clipPath></defs>
+<g clip-path="url(#cor-c)"><rect width="120" height="120" fill="#f07f0a"/><use href="#cor-s" fill="#ffa31a" transform="translate(-7 -7)"/></g>
+<g fill="#e06d00"><circle cx="80" cy="74" r="1.9"/><circle cx="66" cy="92" r="1.9"/><circle cx="88" cy="92" r="1.9"/><circle cx="46" cy="88" r="1.9"/><circle cx="82" cy="52" r="1.9"/><circle cx="60" cy="72" r="1.9"/><circle cx="34" cy="70" r="1.9"/><circle cx="96" cy="70" r="1.9"/></g>
+<ellipse cx="41" cy="45" rx="12" ry="7" fill="#fff8ec" opacity="0.8" transform="rotate(-40 41 45)"/>
+<circle cx="57" cy="33" r="3" fill="#fff8ec" opacity="0.85"/>
+<use href="#cor-s" fill="none" stroke="#2b1d3a" stroke-width="4" stroke-linejoin="round"/>
+<path d="M60 21 L58 12" stroke="#2b1d3a" stroke-width="4" stroke-linecap="round"/>
+<path d="M60 16 Q74 0 93 8 Q79 25 60 16 Z" fill="#4cc35a" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round"/>
+<path d="M65 15 Q77 9 87 10" fill="none" stroke="#2f8f45" stroke-width="2" stroke-linecap="round"/>
+</svg>

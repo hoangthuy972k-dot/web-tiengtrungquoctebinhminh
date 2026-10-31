@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+<defs><g id="cgr-g"><circle r="12.5" fill="#8a5cd6"/><path d="M9.6 -8 A12.5 12.5 0 0 1 -8 9.6 A14 14 0 0 0 9.6 -8 Z" fill="#6538ad"/><ellipse cx="-4.5" cy="-5" rx="3.6" ry="2.2" fill="#fff8ec" opacity="0.85" transform="rotate(-40 -4.5 -5)"/><circle r="12.5" fill="none" stroke="#2b1d3a" stroke-width="3"/></g></defs>
+<path d="M60 34 Q62 22 58 10" fill="none" stroke="#2b1d3a" stroke-width="6" stroke-linecap="round"/>
+<path d="M60 34 Q62 22 58 10" fill="none" stroke="#8a5a2b" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M62 26 Q80 9 101 19 Q87 40 62 26 Z" fill="#4cc35a" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round"/>
+<path d="M67 25 Q81 18 93 20" fill="none" stroke="#2f8f45" stroke-width="2" stroke-linecap="round"/>
+<use href="#cgr-g" transform="translate(26 46)"/><use href="#cgr-g" transform="translate(49 46)"/><use href="#cgr-g" transform="translate(72 46)"/><use href="#cgr-g" transform="translate(95 46)"/><use href="#cgr-g" transform="translate(37.5 67)"/><use href="#cgr-g" transform="translate(60.5 67)"/><use href="#cgr-g" transform="translate(83.5 67)"/><use href="#cgr-g" transform="translate(49 88)"/><use href="#cgr-g" transform="translate(72 88)"/><use href="#cgr-g" transform="translate(60.5 108)"/>
+</svg>

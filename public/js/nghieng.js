@@ -28,6 +28,18 @@
     return a;
   }
   function docLS(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
+  // Hinh SVG /images/game/cam-*.svg thay emoji (mat ban nho, sao ket qua); nap truoc de khong nhap nhay
+  var ANH = '/images/game/cam-';
+  function anhTag(ten) { return '<img class="nh-anh" src="' + ANH + ten + '.svg" alt="" draggable="false">'; }
+  ['face-happy', 'face-tilt-l', 'face-tilt-r', 'face-smile', 'face-wow', 'face-meh', 'star', 'star-empty'].forEach(function (t) {
+    new Image().src = ANH + t + '.svg';
+  });
+  var matHien = '';
+  function veMat(ten) { // chi doi hinh khi net mat doi (vong lap chay moi khung hinh)
+    if (ten === matHien) return;
+    matHien = ten;
+    $('nhDau').innerHTML = anhTag('face-' + ten);
+  }
 
   var cfg = docLS('hyv_nghieng', null);
   var lop = !!(cfg && cfg.nguon === 'lop');
@@ -217,7 +229,7 @@
       if (S.cheDo === 'nghieng') {
         // nghieng ve vai trai cua minh -> goc duong -> tren man hinh (da lat guong) nghieng sang trai
         if (g > GOC) ben = 0; else if (g < -GOC) ben = 1;
-        $('nhDau').textContent = ben === 0 ? '😜' : ben === 1 ? '😝' : '🙂';
+        veMat(ben === 0 ? 'tilt-l' : ben === 1 ? 'tilt-r' : 'happy');
       } else {
         var bs = kq.faceBlendshapes && kq.faceBlendshapes[0] ? kq.faceBlendshapes[0].categories : [];
         var cuoi = 0, ha = 0;
@@ -226,7 +238,7 @@
           if (c.categoryName === 'jawOpen') ha = c.score;
         });
         if (ha > 0.45) ben = 1; else if (cuoi > 0.55) ben = 0;
-        $('nhDau').textContent = ben === 0 ? '😄' : ben === 1 ? '😮' : '😐';
+        veMat(ben === 0 ? 'smile' : ben === 1 ? 'wow' : 'meh');
         $('nhDau').style.transform = 'none';
       }
     }
@@ -345,7 +357,7 @@
     var k = $('nhKq');
     k.hidden = false;
     k.innerHTML = '<div class="nh-kq-the">' +
-      '<div class="nh-kq-sao">' + [0, 1, 2].map(function (i) { return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.2) + 's">★</span>'; }).join('') + '</div>' +
+      '<div class="nh-kq-sao">' + [0, 1, 2].map(function (i) { return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.2) + 's">' + anhTag(i < sao ? 'star' : 'star-empty') + '</span>'; }).join('') + '</div>' +
       '<h2>' + (sao >= 3 ? 'Xuất sắc!' : sao >= 2 ? 'Giỏi lắm!' : sao >= 1 ? 'Khá lắm!' : 'Cố lên nhé!') + '</h2>' +
       '<div class="nh-kq-diem">' + S.diem + ' <small>điểm</small></div>' +
       '<p>Đúng ' + S.dung + '/' + S.cau.length + (S.chuoiMax > 1 ? ' · chuỗi dài nhất ' + S.chuoiMax : '') + (moi ? ' · 🏆 Kỷ lục mới!' : '') + '</p>' +

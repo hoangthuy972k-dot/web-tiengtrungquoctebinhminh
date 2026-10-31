@@ -222,6 +222,21 @@
       return !PY_RIENG.test((q.options || []).join(' ') + ' ' + (q.pre || '') + ' ' + (q.post || ''));
     }).map(boPyMc);
   }
+  // Cau dich cho Kiem tra bai cu: cua cac bai dang chon + cac bai TRUOC do trong cap (on lai).
+  // Moi cau co cu = [[tu, so bai], ...] la tu cua bai truoc dung lai trong cau.
+  function cauDichOn() {
+    var chon = state.lessons.filter(function (l) { return state.picked[l.url]; });
+    if (!chon.length) return [];
+    var maxN = Math.max.apply(null, chon.map(function (l) { return l.n; }));
+    var out = [];
+    state.lessons.forEach(function (l) {
+      if (l.n > maxN) return;
+      (l.dich || []).forEach(function (d) {
+        out.push({ zh: d.zh, vn: d.vn, cu: d.cu || [], moi: !!d.moi, n: l.n, chon: !!state.picked[l.url] });
+      });
+    });
+    return out;
+  }
   function pickedSorts() {
     var out = [];
     state.lessons.forEach(function (l) {
@@ -3543,7 +3558,7 @@
       if (!window.LopKiemTra || !pickedLabel()) return;
       loadPickedVocab().then(function (v) {
         window.LopKiemTra.mo({ nhan: pickedLabel(), vocab: v.map(boPy), mcs: pickedMcs(), sorts: pickedSorts(),
-          trans: (state.trans || []).map(boPy), dialogs: (state.dialogs || []).map(boPy) });
+          trans: (state.trans || []).map(boPy), dialogs: (state.dialogs || []).map(boPy), cauDich: cauDichOn() });
       });
     });
     // The tra loi: dung cau A/B/C cua cac bai dang chon; chua chon bai thi la cau hoi tu do

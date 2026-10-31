@@ -44,7 +44,7 @@
   // Gom du lieu tho thanh cac "kho" cau hoi da loc sach
   function chuanHoa(opt) {
     opt = opt || {};
-    var P = { vocab: [], mcs: [], sorts: [], dtv: [[], []], dich: [[], []], dat: [[], []], hd: [[], []], nghia: {}, soTrans: 0, soHt: 0,
+    var P = { vocab: [], mcs: [], sorts: [], dtv: [[], [], []], dich: [[], [], []], dat: [[], []], hd: [[], []], nghia: {}, soTrans: 0, soHt: 0,
       dien: [], sl: [], nghe: [[], []] };
     var map = P.nghia;
     function ghiMap(zh, py, vn) {
@@ -105,18 +105,31 @@
       P.sorts.push({ id: 'c' + k, tu: tu, answer: str(s.answer), context: str(s.context), why: str(s.why), point: str(s.point) });
     });
 
+    var thayD = {}, thayN = {};
+    // Co bo cau dich theo bai thi cau dich cu (khong biet tu bai nao) xep sau cau on xoan oc
+    var t0 = mang(opt.cauDich).length ? 1 : 0;
+    // Cau dich gom tu cac bai (lop.js cauDichOn): nhom 0 = cau cua bai dang kiem tra CO dung lai tu
+    // bai truoc (on xoan oc), nhom 1 = cau khac cua bai dang kiem tra, nhom 2 = cau cua bai truoc (on lai)
+    mang(opt.cauDich).forEach(function (d) {
+      if (!d || !coHan(d.zh) || !str(d.vn)) return;
+      var k = khoaZh(d.zh);
+      var x = { id: 'c' + k, zh: str(d.zh), py: '', vn: str(d.vn), cu: mang(d.cu), n: d.n, chon: !!d.chon };
+      var tier = !x.chon ? 2 : x.cu.length ? 0 : 1;
+      ghiMap(x.zh, '', x.vn);
+      if (!thayN[k]) { thayN[k] = 1; P.dich[tier].push(x); }
+      if (!thayD[k]) { thayD[k] = 1; P.dtv[tier].push(x); }
+    });
+
     // Dich Trung -> Viet: cau dich co san, cau xep tu biet nghia, roi cau vi du cua tu vung
-    var thayD = {};
     function themDtv(x, tier) { var k = khoaZh(x.zh); if (!k || thayD[k]) return; thayD[k] = 1; P.dtv[tier].push(x); }
-    trans.forEach(function (t) { themDtv(t, 0); });
+    trans.forEach(function (t) { themDtv(t, t0); });
     P.sorts.forEach(function (s) {
       var m = map[khoaZh(s.answer)];
-      if (m) themDtv({ id: s.id, zh: s.answer, py: m.py, vn: m.vn }, 0);
+      if (m) themDtv({ id: s.id, zh: s.answer, py: m.py, vn: m.vn }, t0);
     });
     P.vocab.forEach(function (v) { if (v.ex_zh && v.ex_vn) themDtv({ id: 'c' + khoaZh(v.ex_zh), zh: v.ex_zh, py: v.ex_py, vn: v.ex_vn }, 1); });
     // Dich Viet -> Trung
-    var thayN = {};
-    trans.forEach(function (t) { var k = khoaZh(t.zh); if (thayN[k]) return; thayN[k] = 1; P.dich[0].push(t); });
+    trans.forEach(function (t) { var k = khoaZh(t.zh); if (thayN[k]) return; thayN[k] = 1; P.dich[t0].push(t); });
     P.vocab.forEach(function (v) {
       var k = khoaZh(v.ex_zh);
       if (!v.ex_zh || !v.ex_vn || thayN[k]) return;
@@ -182,8 +195,8 @@
       case 'doc': case 'nghia': case 'viet': return P.vocab.length > 0;
       case 'nguphap': return P.mcs.length > 0;
       case 'xepcau': return P.sorts.length > 0;
-      case 'dichtv': return P.dtv[0].length + P.dtv[1].length > 0;
-      case 'dich': return P.dich[0].length + P.dich[1].length > 0;
+      case 'dichtv': return P.dtv[0].length + P.dtv[1].length + P.dtv[2].length > 0;
+      case 'dich': return P.dich[0].length + P.dich[1].length + P.dich[2].length > 0;
       case 'datcau': return P.dat[0].length + P.dat[1].length > 0;
       case 'hoidap': return P.hd[0].length + P.hd[1].length > 0;
       case 'noi': return P.vocab.length >= 4;
@@ -204,11 +217,22 @@
   }
 
   // Uu tien: chua hoi em nay > chua hoi trong buoi > nhom uu tien dau, them chut ngau nhien
+  // Ghi chu cho cau dich: cau on cua bai truoc / co tu cua bai truoc (khong lo chu Han tren de)
+  function phuDich(x) {
+    if (!x || !x.n) return '';
+    if (!x.chon) return '🔁 Ôn lại câu của bài ' + x.n;
+    var bai = [];
+    mang(x.cu).forEach(function (c) { if (bai.indexOf(c[1]) < 0) bai.push(c[1]); });
+    return bai.length ? '🔁 Câu có từ của bài ' + bai.sort(function (a, b) { return a - b; }).join(', ') : '';
+  }
+  function tuCu(x) {
+    return mang(x && x.cu).length ? 'Từ đã học: ' + x.cu.map(function (c) { return c[0] + ' (bài ' + c[1] + ')'; }).join(' · ') : '';
+  }
   function chonMuc(tiers, loai, nho) {
     var best = null, bw = -1;
     tiers.forEach(function (list, ti) {
       list.forEach(function (x) {
-        var w = (nho.luot[x.id] ? 0 : 4) + (nho.da[loai + '|' + x.id] ? 0 : 2) + (ti === 0 ? 1 : 0) + Math.random() * 0.9;
+        var w = (nho.luot[x.id] ? 0 : 4) + (nho.da[loai + '|' + x.id] ? 0 : 2) + (ti === 0 ? 1 : ti === 1 ? 0.5 : 0) + Math.random() * 0.9;
         if (w > bw) { bw = w; best = x; }
       });
     });
@@ -266,13 +290,13 @@
         break;
       case 'dichtv':
         x = chonMuc(P.dtv, loai, nho);
-        if (x) q = { lenh: 'Dịch câu này sang tiếng Việt', de: { lon: x.zh, zh: true, phu: x.py },
-          dap: { vn: x.vn }, doc: x.zh, tuDoc: '', goiY: 'Câu dịch bắt đầu: «' + dauCau(x.vn, 3) + '»' };
+        if (x) q = { lenh: 'Dịch câu này sang tiếng Việt', de: { lon: x.zh, zh: true, phu: [x.py, phuDich(x)].filter(Boolean).join(' · ') },
+          dap: { vn: x.vn, them: tuCu(x) }, doc: x.zh, tuDoc: '', goiY: 'Câu dịch bắt đầu: «' + dauCau(x.vn, 3) + '»' };
         break;
       case 'dich':
         x = chonMuc(P.dich, loai, nho);
-        if (x) q = { lenh: 'Dịch câu này sang tiếng Trung', de: { lon: x.vn },
-          dap: { zh: x.zh, py: x.py }, doc: x.zh, tuDoc: 'dap',
+        if (x) q = { lenh: 'Dịch câu này sang tiếng Trung', de: { lon: x.vn, phu: phuDich(x) },
+          dap: { zh: x.zh, py: x.py, them: tuCu(x) }, doc: x.zh, tuDoc: 'dap',
           goiY: 'Câu bắt đầu: ' + x.zh.slice(0, 2) + '…' + (x.py ? ' (' + dauCau(x.py, 2) + ')' : '') };
         break;
       case 'datcau':

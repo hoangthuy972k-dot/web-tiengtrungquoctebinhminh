@@ -69,7 +69,8 @@ function bai(url) {
   const code = doc(url.replace('/lessons/', 'js/').replace('.html', '-data.js'));
   const g = (n) => 'typeof ' + n + '!=="undefined"?' + n + ':null';
   const w = chay(code, ';window.D={vocab:' + g('vocabData') + ',dialog:' + g('dialogData') + ',fill:' + g('fillData') +
-    ',sort:' + g('sortData') + ',mc:' + g('mcData') + ',err:' + g('errorFixData') + ',errMode:' + g('errorFixMode') + ',wb:' + g('wbData') + '};');
+    ',sort:' + g('sortData') + ',mc:' + g('mcData') + ',err:' + g('errorFixData') + ',errMode:' + g('errorFixMode') + ',wb:' + g('wbData') +
+    ',trans:' + g('translateData') + '};');
   const D = w.D || {};
   const chu = new Set();
   (D.vocab || []).forEach((v) => han(v && v.zh).forEach((h) => chu.add(h)));
@@ -144,6 +145,8 @@ function dungCap(level) {
   (DUOI[level] || []).forEach((d) => (APP.lessons[d] || []).forEach((L) => bai(L.fullPageUrl).chu.forEach((h) => duoi.add(h))));
 
   const daHoc = new Set(duoi);
+  // Tu (>= 2 chu) cua tung bai trong cap — de biet cau dich dung lai tu cua bai nao
+  const tuCuaBai = [];
   const thongKe = { rieng: 0, chung: 0, boChung: 0, tu: 0, hk: 0, np: 0 };
   const out = lessons.map((L) => {
     const url = L.fullPageUrl;
@@ -311,6 +314,35 @@ function dungCap(level) {
       thongKe.np++;
     });
 
+    /* ---- 1f) cau dich (cho Kiem tra bai cu): cau dich cua bai, cau dich phan Ngu phap, cau vi du
+       cua tu vung, cau bai khoa. Chi giu cau toan chu da hoc toi bai nay; ghi lai tu cua cac bai
+       TRUOC co trong cau (on xoan oc: bai 3 dung lai tu bai 1, 2). ---- */
+    const tuBaiNay = tuNghia.map((v) => v.zh).filter((w) => han(w).length >= 2);
+    const dich = [], thayD = {};
+    const themD = (zh, vn) => {
+      zh = String(zh || '').split('／')[0].trim(); vn = String(vn || '').trim();
+      const k = han(zh).join('');
+      if (!zh || !vn || thayD[k] || han(zh).length < 3 || han(zh).length > 30 || LATIN.test(zh) || !hocRoi(zh)) return;
+      thayD[k] = 1;
+      const cu = [];
+      tuCuaBai.forEach((b) => b.tu.forEach((w) => { if (cu.length < 4 && zh.indexOf(w) >= 0 && !cu.some((x) => x[0] === w)) cu.push([w, b.n]); }));
+      dich.push({ zh, vn, cu, moi: tuBaiNay.some((w) => zh.indexOf(w) >= 0) ? 1 : 0 });
+    };
+    (D.trans || []).forEach((t) => t && themD(t.zh, t.vi));
+    (NPT[url] || []).forEach((p) => (p.bt || []).forEach((b) => (b.cau || []).forEach((c) => {
+      if (c && c.kieu === 'dich' && c.dap && c.dap[0]) themD(c.dap[0], c.vn);
+    })));
+    (D.vocab || []).forEach((v) => {
+      if (!v) return;
+      (Array.isArray(v.exList) && v.exList.length ? v.exList : [{ zh: v.ex_zh, vn: v.ex_vn }]).forEach((e) => e && themD(e.zh, e.vn));
+    });
+    (D.dialog || []).forEach((d) => ((d && d.lines) || []).forEach((l) => l && themD(l.zh, l.vn)));
+    // Uu tien: vua co tu bai nay vua co tu bai truoc > co tu bai nay > con lai; giu toi da 40 cau
+    dich.sort((a, b) => (b.moi * 2 + (b.cu.length ? 1 : 0)) - (a.moi * 2 + (a.cu.length ? 1 : 0)));
+    dich.splice(40);
+    dich.forEach((d) => { if (!d.cu.length) delete d.cu; if (!d.moi) delete d.moi; });
+    tuCuaBai.push({ n: L.number, tu: tuBaiNay });
+
     /* ---- 2) bai tap ngu phap chung — chi cau toan chu da hoc ---- */
     const loc = (t) => { if (hocRoi(t)) { thongKe.chung++; return true; } thongKe.boChung++; return false; };
     (bank[url] || []).forEach((g) => (g.items || []).forEach((q) => {
@@ -337,7 +369,7 @@ function dungCap(level) {
       themJ({ sentence: r.text, note: r.note, isCorrect: true, fix: '', why: '', point: e.point || '' });
     });
 
-    return { n: L.number, url, title: L.titleHanzi || L.title || '', judges, mcs, sorts };
+    return { n: L.number, url, title: L.titleHanzi || L.title || '', judges, mcs, sorts, dich };
   });
   return { out, thongKe };
 }

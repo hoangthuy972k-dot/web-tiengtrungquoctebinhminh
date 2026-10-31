@@ -2569,6 +2569,77 @@ app.post('/api/ai/cham-cau', asyncRoute(async (req, res) => {
   res.status(502).json({ error: msg });
 }));
 
+// ---------------- Cham cau NOI trong Hoi thoai phan xa ----------------
+// Hoc sinh dap lai mot cau trong hoi thoai bang giong noi (may nhan dien -> chu Han). Khong so voi
+// cau trong bai khoa: moi em tra loi mot kieu (vd nha em co 5 nguoi), chi can dung y cuoc hoi thoai
+// va dung ngu phap. Cau bai khoa chi de tham khao.
+const CHAM_NOI_SYS = [
+  'Bạn là giáo viên tiếng Trung, chấm câu NÓI của học sinh Việt Nam mới học (HSK 1–2) trong bài luyện hội thoại phản xạ.',
+  'Bạn nhận: câu người kia vừa nói, ý học sinh cần diễn đạt (tiếng Việt), câu trong bài khoá (CHỈ để tham khảo), và câu học sinh nói (do máy nhận dạng giọng nói chuyển thành chữ).',
+  'KHÔNG bắt học sinh nói giống bài khoá. Mỗi người có câu trả lời riêng: thông tin khác bài (số người trong nhà, tên, tuổi, nghề, quốc tịch, thời gian...) vẫn ĐÚNG nếu câu hợp với câu người kia vừa nói và đúng ngữ pháp.',
+  'Câu do máy nhận dạng giọng nói nên có thể sai chữ đồng âm (他/她/它, 在/再, 的/得...), thiếu dấu câu: hiểu theo ý hợp lý nhất, KHÔNG trừ điểm vì những lỗi đó.',
+  'Thang điểm 10:',
+  '- 9–10: trả lời / đáp lại đúng ý câu người kia, tự nhiên, đúng ngữ pháp.',
+  '- 7–8: đúng ý, còn lỗi nhỏ (thiếu 了/的, chọn từ chưa hay) nhưng vẫn hiểu rõ.',
+  '- 5–6: hiểu được nhưng sai ngữ pháp rõ (sai trật tự từ, sai lượng từ...) hoặc chỉ trả lời được một phần.',
+  '- 3–4: không trả lời đúng câu hỏi / lạc ý cuộc hội thoại.',
+  '- 0–2: không phải tiếng Trung hoặc không hiểu được.',
+  '"dungCauTruc" = true nếu câu hợp với cuộc hội thoại (đúng ý), false nếu lạc ý.',
+  'Liệt kê TỪNG lỗi ngữ pháp thật sự (đoạn sai, sửa thành gì, giải thích một câu tiếng Việt). Câu đúng thì "loi" là mảng rỗng — không bịa lỗi, không coi khác bài khoá là lỗi.',
+  '"cauSua": câu của học sinh sau khi sửa, giữ thông tin của em; câu đúng thì chép lại nguyên câu.',
+  '"nhanXet": một câu tiếng Việt ngắn, khích lệ.',
+  'Chỉ trả về DUY NHẤT một đối tượng JSON, không thêm chữ nào khác, không bọc trong ```:',
+  '{"diem": 0-10, "dungCauTruc": true|false, "loi": [{"sai": "...", "sua": "...", "giai": "..."}], "cauSua": "...", "nhanXet": "..."}',
+].join('\n');
+
+app.post('/api/ai/cham-noi', asyncRoute(async (req, res) => {
+  const b = req.body || {};
+  const cat = (x, n) => String(x == null ? '' : x).trim().slice(0, n);
+  const tra = cat(b.tra, 200);
+  if (!tra || !/[㐀-鿿]/.test(tra)) return res.status(400).json({ error: 'Máy chưa nghe được câu tiếng Trung.' });
+  const providers = aiProviders();
+  if (!providers.length) return res.status(503).json({ error: 'AI chấm chưa được bật trên máy chủ.' });
+  const q = await aiQuotaFor(req);
+  if (!q.unlimited && q.remaining <= 0) return res.status(429).json({ error: 'Hôm nay đã hết lượt AI — máy chấm theo câu trong bài.' });
+  if (AI_PER_MINUTE > 0) {
+    const now = Date.now();
+    // noi lien tuc ca doan: cho phep gap doi han muc moi phut cua chat
+    const recent = (aiBurst.get(q.key) || []).filter((t) => now - t < 60000);
+    if (recent.length >= AI_PER_MINUTE * 2) return res.status(429).json({ error: 'Nói nhanh quá, đợi một chút — máy chấm theo câu trong bài.' });
+    recent.push(now);
+    aiBurst.set(q.key, recent);
+  }
+  if (!q.unlimited) aiUsage.set(q.mapKey, q.used + 1);
+  const refund = () => { if (!q.unlimited) aiUsage.set(q.mapKey, Math.max(0, (aiUsage.get(q.mapKey) || 1) - 1)); };
+  const noiDung = [
+    b.hoi ? 'NGƯỜI KIA VỪA NÓI: ' + cat(b.hoi, 200) : 'NGƯỜI KIA: (chưa nói gì — học sinh mở đầu cuộc hội thoại)',
+    b.vn ? 'Ý HỌC SINH CẦN DIỄN ĐẠT: ' + cat(b.vn, 200) : '',
+    b.mau ? 'CÂU TRONG BÀI KHOÁ (chỉ tham khảo): ' + cat(b.mau, 200) : '',
+    'CÂU HỌC SINH NÓI: ' + tra,
+  ].filter(Boolean).join('\n');
+  let lastErr = null;
+  for (const p of providers) {
+    const ctl = new AbortController();
+    const timer = setTimeout(() => ctl.abort(), 20000);
+    try {
+      let text = '';
+      for await (const t of p.stream([{ role: 'user', content: noiDung }], ctl.signal, { sys: CHAM_NOI_SYS, temperature: 0.2 })) text += t;
+      clearTimeout(timer);
+      const kq = docKetQuaCham(text);
+      if (kq) return res.json(Object.assign(kq, { nguon: p.name }));
+      lastErr = new AiProviderError(p.name, 502, 'không đọc được JSON');
+    } catch (err) {
+      clearTimeout(timer);
+      lastErr = err;
+      console.error('Cham noi AI: ' + p.name + ' loi', err.status != null ? err.status : '', err.message);
+    }
+  }
+  refund();
+  const ma = lastErr && lastErr.status;
+  res.status(502).json({ error: ma === 402 ? 'AI chấm đang tạm dừng (khoá AI của website hết hạn mức) — máy chấm theo câu trong bài.'
+    : ma === 429 ? 'AI đang quá tải — máy chấm theo câu trong bài.' : 'AI đang bận — máy chấm theo câu trong bài.' });
+}));
+
 // ---------------- Cham doan van viet (HSK 5 · 书写 cau 99) ----------------
 // Hoc sinh nop doan ~80 chu dung 5 tu cho san -> AI cham theo 4 tieu chi,
 // liet ke tung loi (sai -> sua -> vi sao), goi y cau truc nen dung, tra ve

@@ -9498,3 +9498,13 @@ html.ho-tro-toi[data-theme="dark"] { --kdp-accent: var(--color-red-500); --kdp-o
 @keyframes htpLen { from { transform: translateY(6px); opacity: 0; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .htp-diem { animation: none; } .htp-tg i { transition: none; } }
 .htp-on { display: inline-block; margin-bottom: 4px; padding: 1px 8px; border-radius: 999px; background: var(--color-gold-50); color: var(--xt-7a4f12); font-size: 0.75rem; font-weight: 700; }
+
+.htp-em-noi { font-size: 0.78rem; font-weight: 700; color: var(--fg-gray-500); }
+.htp-mau { margin-top: 4px; font-size: 0.85rem; color: var(--fg-gray-500); }
+.htp-diem.is-cho { background: var(--color-gray-100); color: var(--fg-gray-600); }
+.htp-ai { padding: 10px 16px; border-radius: var(--radius-md); background: var(--color-white); border: 1px solid var(--color-gray-200); color: var(--fg-gray-800); line-height: 1.55; }
+.htp-ai p { margin: 0 0 4px; }
+.htp-ai ul { margin: 4px 0; padding-left: 20px; }
+.htp-ai s { color: var(--xt-a51f1f); }
+.htp-ai b { color: var(--xt-1f6b3d); }
+.htp-ai.is-du { background: var(--color-gold-50); border-color: transparent; font-size: 0.9rem; }

@@ -12846,7 +12846,8 @@
       var sp = l.sp || 0, mine = sp === st.role, now = li === st.step;
       var sc = st.results[li], h = st.heard[li];
       var zh = l.zh;
-      if (mine && h && h.cmp) {
+      var coAi = mine && h && h.ai && !h.ai.dang && !h.ai.hong;
+      if (mine && h && h.cmp && !coAi) {
         var k = 0;
         zh = l.zh.split('').map(function (ch) {
           if (!/[㐀-鿿A-Za-z0-9]/.test(ch)) return ch;
@@ -12863,6 +12864,10 @@
       } else if (!mine && now && st.dang === 'doc') {
         noiDung = '<div class="rp-speaking">' + uiIcon('loa') + 'Vai ' + letter(sp) + ' đang nói…</div>' +
           (st.hint === 'none' ? '' : '<div class="hanzi rp-zh">' + l.zh + '</div><div class="rp-vn">' + l.vn + '</div>');
+      } else if (coAi) {
+        // AI cham theo y: hien cau em noi la chinh, cau bai khoa chi de tham khao
+        noiDung = '<div class="htp-em-noi">Em nói:</div><div class="hanzi rp-zh">' + spEsc(h.text) + '</div>' +
+          '<div class="htp-mau">Câu trong bài: <span class="hanzi">' + l.zh + '</span> · ' + l.vn + '</div>';
       } else {
         noiDung = '<div class="hanzi rp-zh">' + zh + '</div>' +
           (mine && h && h.text && h.cmp ? '<div class="htp-nghe-duoc">Máy nghe: <span class="hanzi">「' + spEsc(h.text) + '」</span></div>' : '') +
@@ -12876,10 +12881,23 @@
         '</div></div>';
     }).join('');
     var cur = lines[st.step], mineNow = (cur.sp || 0) === st.role, h = st.heard[st.step];
-    var ketQua = mineNow && h && h.cmp
-      ? '<div class="htp-diem ' + (h.cmp.score >= RP_PASS ? 'is-ok' : 'is-low') + '"><b>' + h.cmp.score + '%</b> ' +
-          (h.cmp.score >= 90 ? 'Xuất sắc!' : h.cmp.score >= RP_PASS ? 'Tốt lắm!' : 'Chưa rõ — chữ đỏ là chỗ còn thiếu') + '</div>'
-      : '';
+    var ketQua = '';
+    if (mineNow && h && h.ai && h.ai.dang) {
+      ketQua = '<div class="htp-diem is-cho">🤖 AI đang chấm câu của em…</div>';
+    } else if (mineNow && h && h.ai && !h.ai.hong) {
+      var a = h.ai, d = a.diem * 10;
+      ketQua = '<div class="htp-diem ' + (d >= RP_PASS ? 'is-ok' : 'is-low') + '"><b>' + d + '%</b> ' +
+          (d >= 90 ? 'Xuất sắc — đúng ý, đúng ngữ pháp!' : d >= RP_PASS ? 'Tốt — đúng ý cuộc hội thoại.' : a.dungCauTruc ? 'Đúng ý nhưng còn lỗi ngữ pháp.' : 'Chưa trả lời đúng ý câu vừa nghe.') + '</div>' +
+        '<div class="htp-ai">' + (a.nhanXet ? '<p>💬 ' + spEsc(a.nhanXet) + '</p>' : '') +
+          (a.loi && a.loi.length ? '<ul>' + a.loi.map(function (x) {
+            return '<li><s class="hanzi">' + spEsc(x.sai) + '</s> → <b class="hanzi">' + spEsc(x.sua) + '</b>' + (x.giai ? ' — ' + spEsc(x.giai) : '') + '</li>';
+          }).join('') + '</ul>' : '') +
+          (a.cauSua && rpClean(a.cauSua) !== rpClean(h.text) ? '<p>✏️ Nói đúng: <b class="hanzi">' + spEsc(a.cauSua) + '</b></p>' : '') + '</div>';
+    } else if (mineNow && h && h.cmp) {
+      ketQua = '<div class="htp-diem ' + (h.cmp.score >= RP_PASS ? 'is-ok' : 'is-low') + '"><b>' + h.cmp.score + '%</b> ' +
+          (h.cmp.score >= 90 ? 'Xuất sắc!' : h.cmp.score >= RP_PASS ? 'Tốt lắm!' : 'Chưa rõ — chữ đỏ là chỗ còn thiếu') + '</div>' +
+        (h.ai && h.ai.hong ? '<div class="htp-ai is-du"><p>ℹ️ ' + spEsc(h.ai.hong) + '</p></div>' : '');
+    }
     var nut = '<div class="rp-actions">' +
       (mineNow && h ? '<button type="button" class="rp-btn" id="htpLai">🔁 Nói lại câu này</button>' : '') +
       (mineNow && !h && st.dang === 'nghe' ? '<button type="button" class="rp-btn is-main" id="htpXong">⏹ Em nói xong</button>' : '') +
@@ -12971,11 +12989,28 @@
       var said = finalText || interim;
       if (said) {
         var cmp = rpCompare(cur.zh, said);
-        st.heard[buoc] = { text: said, cmp: cmp };
-        if (typeof st.results[buoc] !== 'number' || cmp.score > st.results[buoc]) st.results[buoc] = cmp.score;
-        if (cmp.score >= RP_PASS && window.hwStarAnswer && currentHubLesson) {
-          window.hwStarAnswer(currentHubLesson.fullPageUrl + '|htp|' + st.sceneIdx + '|' + buoc);
-        }
+        var hh = { text: said, cmp: cmp, ai: { dang: true } };
+        st.heard[buoc] = hh;
+        st.dang = '';
+        htpVe(wrap);
+        // AI cham theo y + ngu phap (moi em mot cau tra loi); AI loi thi cham theo cau bai khoa
+        var truoc = buoc > 0 ? st.scene.lines[buoc - 1] : null;
+        htpChamAi(truoc && (truoc.sp || 0) !== st.role ? truoc.zh : '', cur, said).then(function (kq) {
+          hh.ai = kq;
+          return kq.diem * 10;
+        }, function (e) {
+          hh.ai = { hong: (e && e.message) || 'AI đang bận — máy chấm theo câu trong bài.' };
+          return cmp.score;
+        }).then(function (diem) {
+          if (htp !== st || st.heard[buoc] !== hh) return;
+          if (typeof st.results[buoc] !== 'number' || diem > st.results[buoc]) st.results[buoc] = diem;
+          if (diem >= RP_PASS && window.hwStarAnswer && currentHubLesson) {
+            window.hwStarAnswer(currentHubLesson.fullPageUrl + '|htp|' + st.sceneIdx + '|' + buoc);
+          }
+          htpVe(wrap);
+          if (!st.tam && st.step === buoc) htpSau(diem >= RP_PASS ? 2200 : 4500, function () { if (htp === st && st.step === buoc && !st.tam) htpTiep(wrap); });
+        });
+        return;
       } else if (!st.heard[buoc]) {
         st.heard[buoc] = { text: '⏰ Hết giờ — máy chưa nghe thấy em nói. Bấm "Nói lại câu này" để thử lại, hoặc Tiếp.' };
         if (typeof st.results[buoc] !== 'number') st.results[buoc] = 0;
@@ -12995,6 +13030,20 @@
       if (tg) { tg.style.width = (con * 100).toFixed(1) + '%'; tg.classList.toggle('is-gap', con < 0.3); }
       if (con <= 0) { clearInterval(st.dem); st.dem = null; try { rec.stop(); } catch (e) { /* */ } }
     }, 100);
+  }
+
+  // Goi AI cham cau noi: hoi = cau nguoi kia vua noi, cur = dong cua em trong bai khoa (tham khao)
+  function htpChamAi(hoi, cur, said) {
+    var h = { 'Content-Type': 'application/json' };
+    var au = readJSON(STORAGE_KEYS.auth, null);
+    if (au && au.token) h.Authorization = 'Bearer ' + au.token;
+    return fetch('/api/ai/cham-noi', { method: 'POST', headers: h, body: JSON.stringify({ hoi: hoi, vn: cur.vn, mau: cur.zh, tra: said }) })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (!r.ok || typeof j.diem !== 'number') throw new Error(j.error || 'AI đang bận — máy chấm theo câu trong bài.');
+          return j;
+        });
+      });
   }
 
   function htpKetThuc(wrap) {
@@ -13023,7 +13072,8 @@
         (t.avg >= 85 ? ' Tuyệt vời, phản xạ rất tốt!' : t.avg >= RP_PASS ? ' Tốt lắm!' : ' Luyện thêm một lượt nữa nhé!') + '</div>' +
       '<div class="rp-done-list">' + t.mine.map(function (li) {
         var sc = st.results[li];
-        return '<div class="rp-done-row"><span class="hanzi">' + lines[li].zh + (lines[li].on ? ' <small class="htp-on">ôn bài ' + lines[li].on + '</small>' : '') + '</span><span class="rp-score ' + (sc >= RP_PASS ? 'is-ok' : 'is-low') + '">' + (sc || 0) + '%</span></div>';
+        var nghe = st.heard[li] && st.heard[li].text;
+        return '<div class="rp-done-row"><span class="hanzi">' + (nghe ? spEsc(nghe) : lines[li].zh) + (lines[li].on ? ' <small class="htp-on">ôn bài ' + lines[li].on + '</small>' : '') + '</span><span class="rp-score ' + (sc >= RP_PASS ? 'is-ok' : 'is-low') + '">' + (sc || 0) + '%</span></div>';
       }).join('') + '</div>' +
       '<div class="rp-actions"><button type="button" class="rp-btn" id="htpLaiHet">↻ Nói lại đoạn này</button>' +
         '<button type="button" class="rp-btn" id="htpDoiVai">⇄ Đổi vai</button>' +

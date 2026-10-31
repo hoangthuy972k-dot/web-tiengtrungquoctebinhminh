@@ -20,7 +20,7 @@
   var S = {
     built: false, goc: [], nhan: '', tuDo: false,
     // cai dat (luu tren may)
-    cheDo: 'off', src: 'so', soNum: 30, soCau: 10, giay: 20, nguong: 0, toiDa: 10, luotCuu: 2,
+    cheDo: 'off', src: 'so', soNum: 30, soCau: 10, giay: 20, nguong: 0, toiDa: 10, luotCuu: 2, tuDong: 1,
     tieuDe: TIEU_DE, sound: true,
     // danh sach lop
     classes: [], kids: [], vang: {}, dangTaiDs: false,
@@ -96,7 +96,7 @@
   /* ---------------- tuy chon giao vien ---------------- */
   function luuPref() {
     ghiLS(PREF_KEY, { cheDo: S.cheDo, src: S.src, soNum: S.soNum, soCau: S.soCau, giay: S.giay, nguong: S.nguong,
-      toiDa: S.toiDa, luotCuu: S.luotCuu, tieuDe: S.tieuDe, sound: S.sound });
+      toiDa: S.toiDa, luotCuu: S.luotCuu, tieuDe: S.tieuDe, sound: S.sound, tuDong: S.tuDong });
   }
   function napPref() {
     var p = docLS(PREF_KEY, {}) || {};
@@ -110,6 +110,7 @@
     S.luotCuu = [1, 2, 3].indexOf(p.luotCuu) >= 0 ? p.luotCuu : 2;
     S.tieuDe = typeof p.tieuDe === 'string' && p.tieuDe.trim() ? p.tieuDe.slice(0, 60) : TIEU_DE;
     S.sound = p.sound !== false;
+    S.tuDong = p.tuDong === 0 ? 0 : 1;   // mac dinh: online tu chay cau
   }
 
   /* ---------------- danh sach lop ---------------- */
@@ -439,6 +440,7 @@
             '<p class="rc-sanh-mo">' + (S.tuDo ? 'Câu hỏi tự do — cô đọc câu hỏi, cả lớp trả lời A/B/C/D' : esc(S.nhan ? S.nhan + ' · ' : '') + S.goc.length + ' câu trắc nghiệm') + '</p>' +
           '</div></div>' +
           '<div class="rc-truong"><span>Chế độ</span>' + nutChon('cheDo', [['off', '📝 Offline — bảng con'], ['on', '📱 Online — điện thoại']], S.cheDo) + '</div>' +
+          (online() ? '<div class="rc-truong"><span>Chạy câu hỏi</span>' + nutChon('tuDong', [[1, '⚡ Tự động'], [0, '🎛️ Cô bấm từng bước']], S.tuDong) + '</div>' : '') +
           '<div class="rc-truong"><span>Số câu</span>' + nutChon('soCau', soCau.map(function (n) { return [n, n + ' câu']; }), cur) + '</div>' +
           '<div class="rc-truong"><span>Thời gian mỗi câu</span>' + nutChon('giay', [[10, '10 giây'], [15, '15 giây'], [20, '20 giây'], [30, '30 giây']], S.giay) + '</div>' +
           '<div class="rc-truong"><span>Cứu trợ khi trên sàn ≤</span>' + nutChon('nguong', [[0, 'Tự động (' + nTuDong + ')'], [3, '3'], [5, '5'], [10, '10'], [16, '16'], [20, '20']], S.nguong) + '</div>' +
@@ -667,8 +669,66 @@
       else if (soCon() === 0) b = nut('ket', '🏁 Kết thúc') + (coTheCuu() && coThePhao() ? '' : '<small class="rc-gio-goi">Sàn trống — dùng phao cứu trợ bên phải?</small>');
       else b = nut('space', (S.i + 2 === S.cau.length ? '🔔 Câu Chuông Vàng ▶' : 'Câu tiếp ▶') + ' <kbd>Space</kbd>', true);
     }
+    if (online() && S.pha !== 'moi' && S.pha !== 'sanh' && S.pha !== 'het') {
+      var conTd = tdConLai();
+      if (S.tuDong && conTd > 0) tt = (tt ? tt + ' · ' : '') + '⚡ ' + tdNhan() + ' sau ' + conTd + ' giây';
+      b += nut('tudong', S.tuDong ? '⏸ Dừng tự động' : '⚡ Tự động chạy');
+    } else if (online() && S.pha === 'moi') {
+      if (S.tuDong) tt = '⚡ Câu 1 bắt đầu sau ' + Math.max(1, tdConLai()) + ' giây';
+      b += nut('tudong', S.tuDong ? '⏸ Dừng tự động' : '⚡ Tự động chạy');
+    }
     $('#rcGioTt').textContent = tt;
     $('#rcGioNut').innerHTML = b;
+  }
+
+  /* ---------------- tu dong chay cau (online) ----------------
+     Moi pha cho mot quang roi tu lam buoc tiep theo — thay/co khong can bam:
+     moi (4s) -> doc: chieu cau hoi (4s) -> chay: gui cau len dien thoai + tinh gio
+     (ca san tra loi xong thi khoa som) -> khoa (2s) -> lat dap an -> xong (6s) -> cau tiep.
+     Bang "ca san cung sai" / le rung chuong tu chon nut mac dinh sau vai giay.
+     Cau tu do (co phai bam dap an dung) va san trong thi dung lai cho co. */
+  var TD_CHO = { moi: 4000, doc: 4000, khoa: 2000, xong: 6000 };
+  function tdNhan() {
+    return S.pha === 'doc' ? 'gửi câu lên điện thoại' : S.pha === 'khoa' ? 'lật đáp án'
+      : S.pha === 'xong' ? (cauCuoiXong() ? 'kết thúc' : 'câu tiếp') : '';
+  }
+  function tdConLai() {
+    var cho = TD_CHO[S.pha];
+    if (!cho) return 0;
+    if (S.pha !== S.tdPha || !S.tdLuc) return Math.ceil(cho / 1000); // vua doi pha, chua kip ghi moc
+    return Math.max(0, Math.ceil((S.tdLuc + cho - Date.now()) / 1000));
+  }
+  function tuDongTick() {
+    if (!root || root.hidden || !online() || !S.tuDong) { S.tdPha = S.pha; S.tdLuc = Date.now(); return; }
+    var now = Date.now();
+    if (S.pha !== S.tdPha) { S.tdPha = S.pha; S.tdLuc = now; S.tdGiay = -1; }
+    if (S.ban) return;
+    var t = now - S.tdLuc;
+    // Bang do tro choi tu mo (ca san cung sai): chon nut mac dinh
+    if (!$('#rcPanel').hidden) {
+      if (S.panelKhoa && t > 4000) { var m = $('#rcPanelCard [data-mac]'); if (m) { S.tdLuc = now; m.click(); } }
+      return;
+    }
+    if (S.le) { if (t > 8000) ketThuc(); return; }
+    // cap nhat dong dem nguoc moi giay
+    var g = tdConLai();
+    if (g !== S.tdGiay) { S.tdGiay = g; if (S.pha !== 'chay') veGio(); }
+    if (S.pha === 'moi' && t > TD_CHO.moi) cauTiep();
+    else if (S.pha === 'doc' && t > TD_CHO.doc) batDauGio();
+    else if (S.pha === 'chay') {
+      // ca san da tra loi het -> khoa som cho do cho
+      var i = S.info;
+      if (i && i.pha === 'hoi' && i.canTL > 0 && i.daTL >= i.canTL && t > 2000) hetGio();
+    } else if (S.pha === 'khoa' && !S.choDapAn && t > TD_CHO.khoa) latCau();
+    else if (S.pha === 'xong' && t > TD_CHO.xong) {
+      if (!cauCuoiXong() && soCon() === 0) {
+        // san trong: dung tu dong, de co chon cuu tro / phao / ket thuc
+        S.tuDong = 0; luuPref(); veGio();
+        baoNhanh('⏸ Đã dừng tự động: không còn ai trên sàn — cô dùng Cứu trợ (C), Phao (P) hoặc Kết thúc.');
+        return;
+      }
+      phimSpace();
+    }
   }
   function veGioDem() {
     var d = $('#rcGioDem');
@@ -1261,6 +1321,7 @@
     else if (act === 'space') phimSpace();
     else if (act === 'enter') phimEnter();
     else if (act === 'ket') ketThuc();
+    else if (act === 'tudong') { S.tuDong = S.tuDong ? 0 : 1; luuPref(); S.tdLuc = Date.now(); veGio(); baoNhanh(S.tuDong ? '⚡ Tự động chạy câu hỏi' : '🎛️ Cô bấm từng bước'); }
     else if (act === 'cuu') moCuu();
     else if (act === 'phao') moPhao();
     else if (act === 'chep') chepKetQua();
@@ -1268,6 +1329,7 @@
     else if (act === 'dong') dong();
   }
   function doiCaiDat(k, v) {
+    if (k === 'tuDong') { S.tuDong = +v ? 1 : 0; luuPref(); S.tdLuc = Date.now(); veChinh(); return; }
     if (S.pha !== 'sanh') return;
     if (k === 'cheDo') {
       if (v === S.cheDo) return;
@@ -1577,6 +1639,7 @@
   function mo(opt) {
     opt = opt || {};
     if (!S.built) dung();
+    if (!S.tdHen) S.tdHen = setInterval(tuDongTick, 300);
     napPref();
     S.goc = (opt.cau || []).filter(function (q) {
       return q && Array.isArray(q.options) && q.options.length >= 2 && typeof q.answer === 'number' && q.answer >= 0 && q.answer < q.options.length;

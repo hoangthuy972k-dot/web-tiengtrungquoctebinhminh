@@ -2685,7 +2685,7 @@
       open: function (l, s) { showWarmupPractice(l, s); } },
     { key: 'vocab', title: 'Học từ', stage: '懂', desc: 'Thẻ từ có tranh, âm thanh và âm Hán Việt', min: 5, icon: '📚', section: 'vocabPractice',
       open: function (l, s) { showVocabPractice(l, s); } },
-    { key: 'dialog', title: 'Hội thoại', stage: '懂', desc: 'Nghe → đọc theo → đóng vai', min: 5, icon: '💬', section: 'dialoguePractice',
+    { key: 'dialog', title: 'Hội thoại', stage: '懂', desc: 'Nghe hiểu → đọc theo → đóng vai → áp dụng nói về em', min: 8, icon: '💬', section: 'dialoguePractice',
       open: function (l, s) { showDialoguePractice(l, s); } },
     { key: 'grammar', title: 'Ngữ pháp', stage: '会', desc: 'Xem ví dụ, rút ra công thức, luyện ngay', min: 5, icon: '📐', section: 'grammarPractice',
       open: function (l, s) { showGrammarPractice(l, s); } },
@@ -12270,6 +12270,10 @@
     var hasQuiz = scene.preQuiz && scene.preQuiz.length;
     if (!dpQuizState[dpIndex]) dpQuizState[dpIndex] = { answers: {}, revealed: !hasQuiz };
     var state = dpQuizState[dpIndex];
+    // Hoi thoai (khong phai bai doc lien HSK 5–6): 4 nhiem vu ro rang, moi luc lam mot buoc
+    var dungBuoc = !laBaiKhoaDp;
+    var buoc = dungBuoc ? (dpBuoc[dpIndex] || 1) : 0;
+    if (buoc >= 2) state.revealed = true;
 
     var quizHtml = '';
     if (hasQuiz) {
@@ -12305,7 +12309,8 @@
         var lineShown = dpHideVn && shownSet[li];
         return '<div class="dp-line' + (isB ? ' is-b' : '') + ' dp-sp' + spIdx + (lineShown ? ' show-vn' : '') + '" data-li="' + li + '">' +
           '<div class="dp-avatar">' + ('ABCD'.charAt(spIdx) || 'A') + '</div>' +
-          '<div class="dp-bubble"><div class="dp-zh hanzi">' + line.zh + '</div><div class="dp-py">' + line.py + '</div><div class="dp-vn">' + line.vn + '</div></div>' +
+          '<div class="dp-bubble">' + (dungBuoc ? '<button type="button" class="vp-speak-btn dp-say" data-speak="' + spEsc(line.zh) + '" aria-label="Nghe câu này">🔊</button>' : '') +
+            '<div class="dp-zh hanzi">' + line.zh + '</div><div class="dp-py">' + line.py + '</div><div class="dp-vn">' + line.vn + '</div></div>' +
           '</div>';
       }).join('');
       var isHsk4Dp = /\/hsk4-bai-\d+\.html/.test((currentHubLesson && currentHubLesson.fullPageUrl) || '');
@@ -12360,8 +12365,11 @@
         });
       }
     }
-    body.innerHTML = quizHtml + linesHtml;
-    if (state.revealed) rpMount(body, scene, dpIndex);
+    if (dungBuoc) dpVeBuoc(body, scene, buoc, quizHtml, linesHtml, hasQuiz);
+    else {
+      body.innerHTML = quizHtml + linesHtml;
+      if (state.revealed) rpMount(body, scene, dpIndex);
+    }
     var ndHop = $('#dpNgheDien', body);
     if (ndHop && window.NgheDien) {
       var ndData = lessonDataCache[currentHubLesson.fullPageUrl] || {};
@@ -12409,8 +12417,136 @@
         });
       });
       var skipBtn = $('#dpQuizSkip', wrap);
-      if (skipBtn) skipBtn.addEventListener('click', function () { state.revealed = true; renderDialogueScene(); dpSave(); });
+      if (skipBtn) skipBtn.addEventListener('click', function () { state.revealed = true; if (dungBuoc) dpBuoc[dpIndex] = 2; renderDialogueScene(); dpSave(); });
     }
+  }
+
+  /* ---------------- Hoi thoai: 4 nhiem vu (Nghe hieu · Doc theo · Dong vai · Ap dung) ----------------
+     Moi doan hoi thoai lam lan luot 4 buoc, thanh buoc o tren cho hoc sinh biet minh dang lam gi.
+     Buoc Ap dung: tra loi cac cau hoi trong bai khoa bang thong tin THAT cua em (noi hoac go),
+     AI cham theo y + ngu phap (/api/ai/cham-noi) — van dung bai khoa vao ban than. */
+  var dpBuoc = {};   // doan -> buoc dang lam
+  var DP_BUOC = [
+    { ic: '🎧', ten: 'Nghe hiểu', mo: 'Nghe audio của đoạn hội thoại (ở trên) rồi trả lời câu hỏi.' },
+    { ic: '📖', ten: 'Đọc theo', mo: 'Bấm 🔊 từng câu, nghe rồi đọc to theo cho trôi chảy.' },
+    { ic: '🎭', ten: 'Đóng vai', mo: 'Chọn một vai, máy đóng vai còn lại — đến lượt em thì nói câu của mình.' },
+    { ic: '🗣️', ten: 'Áp dụng', mo: 'Trả lời các câu hỏi trong bài bằng thông tin thật của em — AI chấm đúng ý, đúng ngữ pháp.' }
+  ];
+  function dpVeBuoc(body, scene, buoc, quizHtml, linesHtml, hasQuiz) {
+    var steps = '<ol class="dpb-steps">' + DP_BUOC.map(function (b, i) {
+      var n = i + 1;
+      return '<li><button type="button" class="dpb-step' + (n === buoc ? ' is-now' : n < buoc ? ' is-xong' : '') + '" data-dpb="' + n + '"' + (n === buoc ? ' aria-current="step"' : '') + '>' +
+        '<span class="dpb-so">' + (n < buoc ? '✓' : n) + '</span><span class="dpb-ten">' + b.ic + ' ' + b.ten + '</span></button></li>';
+    }).join('') + '</ol>';
+    var B = DP_BUOC[buoc - 1];
+    var noiDung = buoc === 1 ? (hasQuiz ? quizHtml : '<div class="dpb-meo">🎧 Nghe audio ở trên 1–2 lần. Đoán xem các nhân vật đang nói chuyện gì, rồi bấm Tiếp.</div>')
+      : buoc === 2 ? linesHtml
+      : buoc === 4 ? dpApDungHtml(scene) : '';
+    var conDoan = dpIndex + 1 < dpScenes.length;
+    var tiep = buoc < 4 ? 'Tiếp: ' + DP_BUOC[buoc].ic + ' ' + DP_BUOC[buoc].ten + ' →' : conDoan ? 'Sang đoạn hội thoại ' + (dpIndex + 2) + ' →' : '';
+    body.innerHTML = steps +
+      '<div class="dpb-nv"><b>Nhiệm vụ ' + buoc + '/4 · ' + B.ic + ' ' + B.ten + '</b><span>' + B.mo + '</span></div>' +
+      '<div class="dpb-than" id="dpbThan">' + noiDung + '</div>' +
+      '<div class="dpb-nav">' + (buoc > 1 ? '<button type="button" class="btn btn-outline" data-dpb="' + (buoc - 1) + '">← Bước trước</button>' : '<span></span>') +
+        (tiep ? '<button type="button" class="btn btn-primary" data-dpb-tiep="1">' + tiep + '</button>' : '<span class="dpb-het">🎉 Em đã làm xong phần Hội thoại của bài!</span>') + '</div>';
+    if (buoc === 3) rpMount($('#dpbThan', body), scene, dpIndex);
+    if (buoc === 4) dpApDungGan(body, scene);
+    $all('[data-speak]', body).forEach(function (b) { b.addEventListener('click', function () { vpSpeak(b.getAttribute('data-speak')); }); });
+    $all('[data-dpb]', body).forEach(function (b) { b.addEventListener('click', function () { dpDoiBuoc(+b.getAttribute('data-dpb')); }); });
+    var t = $('[data-dpb-tiep]', body);
+    if (t) t.addEventListener('click', function () {
+      if (buoc < 4) { dpDoiBuoc(buoc + 1); return; }
+      rpStopRec();
+      dpIndex++;
+      renderDialogueTabs();
+      renderDialogueScene();
+      dpSave();
+      $('#dialoguePractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+  function dpDoiBuoc(n) {
+    rpStopRec();
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    dpBuoc[dpIndex] = n;
+    if (n >= 2 && dpQuizState[dpIndex]) dpQuizState[dpIndex].revealed = true;
+    renderDialogueScene();
+    dpSave();
+    var c = $('#dpContent');
+    if (c) c.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  function dpApDungHtml(scene) {
+    var cap = htpCapHoiDap([scene]);
+    if (!cap.length) return '<div class="dpb-meo">Đoạn này không có câu hỏi để áp dụng. Em sang đoạn tiếp theo, hoặc luyện thêm ở bước 🗣️ Nói của bài.</div>';
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    return '<p class="dpb-meo">Trả lời <b>bằng thông tin thật của em</b> — không cần giống bài khoá. ' + (SR ? 'Bấm 🎙️ để nói, hoặc gõ chữ Hán' : 'Gõ câu trả lời bằng chữ Hán') + ', rồi bấm <b>Chấm</b>.</p>' +
+      cap.map(function (p, i) {
+        return '<div class="dpa-the" data-dpa="' + i + '">' +
+          '<div class="dpa-hoi"><button type="button" class="vp-speak-btn" data-speak="' + spEsc(p[0].zh) + '" aria-label="Nghe câu hỏi">🔊</button>' +
+            '<span class="hanzi">' + p[0].zh + '</span></div>' +
+          (p[0].vn ? '<div class="dpa-vn">' + spEsc(p[0].vn) + '</div>' : '') +
+          '<div class="dpa-nhap"><input type="text" class="dpa-in hanzi" lang="zh" autocomplete="off" placeholder="Câu trả lời của em…" aria-label="Câu trả lời của em">' +
+            (SR ? '<button type="button" class="rp-btn dpa-mic">🎙️ Nói</button>' : '') +
+            '<button type="button" class="rp-btn is-main dpa-cham">Chấm</button></div>' +
+          '<details class="dpa-mau"><summary>Xem câu trả lời trong bài</summary><span class="hanzi">' + p[1].zh + '</span>' + (p[1].vn ? ' · ' + spEsc(p[1].vn) : '') + '</details>' +
+          '<div class="dpa-kq" aria-live="polite"></div></div>';
+      }).join('');
+  }
+  function dpApDungGan(body, scene) {
+    var cap = htpCapHoiDap([scene]);
+    $all('.dpa-the', body).forEach(function (the) {
+      var i = +the.getAttribute('data-dpa'), p = cap[i];
+      var inp = $('.dpa-in', the), kq = $('.dpa-kq', the), mic = $('.dpa-mic', the), cham = $('.dpa-cham', the);
+      function chamNgay() {
+        var tra = inp.value.trim();
+        if (!/[㐀-鿿]/.test(tra)) { kq.innerHTML = '<div class="htp-ai is-du"><p>Em nói hoặc gõ câu trả lời bằng chữ Hán nhé.</p></div>'; return; }
+        cham.disabled = true;
+        kq.innerHTML = '<div class="htp-diem is-cho">🤖 AI đang chấm câu của em…</div>';
+        htpChamAi(p[0].zh, { vn: 'Trả lời câu hỏi bằng thông tin thật của học sinh', zh: p[1].zh }, tra).then(function (a) {
+          var d = a.diem * 10;
+          kq.innerHTML = '<div class="htp-diem ' + (d >= RP_PASS ? 'is-ok' : 'is-low') + '"><b>' + d + '%</b> ' +
+              (d >= 90 ? 'Xuất sắc — đúng ý, đúng ngữ pháp!' : d >= RP_PASS ? 'Tốt — trả lời đúng ý.' : a.dungCauTruc ? 'Đúng ý nhưng còn lỗi ngữ pháp.' : 'Chưa trả lời đúng câu hỏi.') + '</div>' +
+            '<div class="htp-ai">' + (a.nhanXet ? '<p>💬 ' + spEsc(a.nhanXet) + '</p>' : '') +
+              (a.loi && a.loi.length ? '<ul>' + a.loi.map(function (x) {
+                return '<li><s class="hanzi">' + spEsc(x.sai) + '</s> → <b class="hanzi">' + spEsc(x.sua) + '</b>' + (x.giai ? ' — ' + spEsc(x.giai) : '') + '</li>';
+              }).join('') + '</ul>' : '') +
+              (a.cauSua && rpClean(a.cauSua) !== rpClean(tra) ? '<p>✏️ Nói đúng: <b class="hanzi">' + spEsc(a.cauSua) + '</b></p>' : '') + '</div>';
+          if (d >= RP_PASS && window.hwStarAnswer && currentHubLesson) window.hwStarAnswer(currentHubLesson.fullPageUrl + '|dpa|' + dpIndex + '|' + i);
+        }, function (e) {
+          kq.innerHTML = '<div class="htp-ai is-du"><p>ℹ️ ' + spEsc((e && e.message) || 'AI đang bận.') + ' Em so với câu trả lời trong bài nhé.</p></div>';
+          var mau = $('.dpa-mau', the);
+          if (mau) mau.open = true;
+        }).then(function () { cham.disabled = false; });
+      }
+      cham.addEventListener('click', chamNgay);
+      inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); chamNgay(); } });
+      if (mic) mic.addEventListener('click', function () {
+        if (rpRec) { try { rpRec.stop(); } catch (e) { /* */ } return; }
+        var SRc = window.SpeechRecognition || window.webkitSpeechRecognition, rec;
+        try { rec = new SRc(); } catch (e) { return; }
+        rec.lang = 'zh-CN'; rec.continuous = false; rec.interimResults = true; rec.maxAlternatives = 1;
+        var finalText = '', interim = '';
+        rec.onresult = function (e) {
+          interim = '';
+          for (var k = e.resultIndex; k < e.results.length; k++) {
+            if (e.results[k].isFinal) finalText += e.results[k][0].transcript; else interim += e.results[k][0].transcript;
+          }
+          inp.value = finalText + interim;
+        };
+        rec.onerror = function (e) {
+          if (e && (e.error === 'not-allowed' || e.error === 'service-not-allowed')) kq.innerHTML = '<div class="htp-ai is-du"><p>Chưa có quyền dùng micro — cho phép micro cho trang này, hoặc gõ câu trả lời.</p></div>';
+        };
+        rec.onend = function () {
+          rpRec = null;
+          mic.textContent = '🎙️ Nói';
+          mic.classList.remove('is-rec');
+          if ((finalText || interim).trim()) { inp.value = (finalText || interim).trim(); chamNgay(); }
+        };
+        try { rec.start(); } catch (e) { return; }
+        rpRec = rec;
+        mic.textContent = '⏹ Nói xong';
+        mic.classList.add('is-rec');
+      });
+    });
   }
 
   /* ---------------- Nhap vai hoi thoai (moi bai HSK 1-4 va YCT) ----------------

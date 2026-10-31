@@ -38,6 +38,15 @@
     return n >= 1 && n <= 9 ? n : 0;
   }
   function go(el) { if (el && el.parentNode) el.parentNode.removeChild(el); }
+  // Hinh ve (sprite SVG) trong /images/game/
+  var ANH = '/images/game/';
+  function anh(cls, ten) {
+    return '<img' + (cls ? ' class="' + cls + '"' : '') + ' src="' + ANH + ten + '.svg" alt="" draggable="false">';
+  }
+  // Tai truoc hinh de luc chem / ha guc khong bi nhay trong
+  function napTruoc(ds) {
+    ds.forEach(function (ten) { var i = new Image(); i.src = ANH + ten + '.svg'; });
+  }
 
   /* ══════════════ CHAN ZOMBIE ══════════════
      Nha ben trai, 3-4 lan duong. Zombie cam bien chu Han di tu phai sang.
@@ -92,7 +101,7 @@
         sk.san.innerHTML = '';
         sk.duoi.innerHTML = '';
         san = T.tao('div', 'tn-zb-san');
-        nhaEl = T.tao('div', 'tn-zb-nha', '<span class="tn-zb-mai" aria-hidden="true">🏡</span>');
+        nhaEl = T.tao('div', 'tn-zb-nha', anh('tn-zb-mai', 'zombie-house'));
         raoEl = T.tao('div', 'tn-zb-rao');
         san.appendChild(nhaEl);
         san.appendChild(raoEl);
@@ -137,7 +146,7 @@
         var dai = tu.zh.length;
         z.el = T.tao('button', 'tn-zb-z tn-zb-moi',
           '<span class="tn-zb-bien' + (dai >= 5 ? ' rat-dai' : dai >= 3 ? ' dai' : '') + '" lang="zh">' + T.esc(tu.zh) + '</span>' +
-          '<span class="tn-zb-em" aria-hidden="true">🧟</span>');
+          anh('tn-zb-em', 'zombie-' + (1 + z.id % 3)) + anh('tn-zb-khoi', 'zombie-poof'));
         z.el.type = 'button';
         z.el.setAttribute('data-id', String(z.id));
         z.el.setAttribute('aria-label', tu.zh);
@@ -197,7 +206,6 @@
         sk.bay('+' + cong + (st.chuoi >= 3 ? ' 🔥' + st.chuoi : ''));
         T.keuDung();
         T.doc(z.tu.zh);
-        z.em.textContent = '💨';
         z.el.disabled = true;
         z.el.classList.add('tn-zb-poof');
         sau(function () { go(z.el); }, 500);
@@ -299,7 +307,6 @@
         if (thang) {
           st.ds.slice().forEach(function (z) {
             boZ(z);
-            z.em.textContent = '💨';
             z.el.disabled = true;
             z.el.classList.add('tn-zb-poof');
           });
@@ -362,8 +369,9 @@
       document.addEventListener('visibilitychange', anHien);
       window.addEventListener('resize', doKich);
 
+      napTruoc(['zombie-1', 'zombie-2', 'zombie-3', 'zombie-poof', 'zombie-house']);
       T.manMoi(sk, {
-        ic: '🧟',
+        ic: anh('tn-moi-anh', 'zombie-1'),
         ten: 'Chặn Zombie',
         luat: 'Zombie cầm biển <b>chữ Hán</b> đang tiến về nhà em! Đọc nghĩa tiếng Việt ở trên rồi <b>chạm đúng zombie</b> mang chữ đó. ' +
           'Chạm nhầm bị trừ điểm, để zombie vào nhà mất ❤️. Chặn đủ <b>' + THANG + ' con</b> là thắng. ' +
@@ -400,7 +408,9 @@
     canToiThieu: 4,
     mo: function (hop, o) {
       var GIAY = 60, TIM = 3, TOI_DA = 4;
-      var QUA = ['🍉', '🍊', '🍎', '🍍', '🥝', '🍇', '🍑', '🍋', '🥭', '🍓', '🍐', '🥥'];
+      // [ten hinh, mau nuoc khi chem]
+      var QUA = [['watermelon', 'red'], ['orange', 'orange'], ['apple', 'yellow'], ['strawberry', 'red'],
+        ['kiwi', 'green'], ['lemon', 'yellow'], ['peach', 'orange'], ['pear', 'green']];
       var cham = T.itChuyenDong ? 0.65 : 1;     // giam chuyen dong -> qua bay cham hon
       var sk = T.khung(hop, this, { tim: TIM, gio: true });
       var layTu = hangTu(o.vocab);
@@ -471,9 +481,9 @@
       function taoQua(tu) {
         var bom = !tu, dai = tu ? tu.zh.length : 0;
         var f = { tu: tu, so: soTrong(), x: 0.5, y: 1.2, y0: 1.2, vx: 0, vy: 0, g: 1, rot: 0, vr: 0 };
-        f.emoji = bom ? '💣' : QUA[Math.floor(Math.random() * QUA.length)];
+        f.qua = bom ? null : QUA[Math.floor(Math.random() * QUA.length)];
         f.el = T.tao('div', 'tn-cq-qua' + (bom ? ' bom' : ''),
-          '<span class="tn-cq-em" aria-hidden="true">' + f.emoji + '</span>' +
+          anh('tn-cq-em', bom ? 'fruit-bomb' : 'fruit-' + f.qua[0]) +
           (bom ? '' : '<span class="tn-cq-chu' + (dai >= 5 ? ' rat-dai' : dai >= 3 ? ' dai' : '') + '" lang="zh">' + T.esc(tu.zh) + '</span>') +
           '<span class="tn-cq-so" aria-hidden="true">' + f.so + '</span>');
         f.em = f.el.firstChild;
@@ -569,9 +579,11 @@
       }
       // Qua vo doi (hoac bom no)
       function vo(f) {
-        var m = T.tao('div', 'tn-cq-manh' + (f.tu ? '' : ' no'),
-          f.tu ? '<span class="tn-cq-nua trai">' + f.emoji + '</span><span class="tn-cq-nua phai">' + f.emoji + '</span>'
-            : '<span class="tn-cq-nua">💥</span>');
+        var nua = f.qua ? 'fruit-' + f.qua[0] + '-half' : '';
+        var m = T.tao('div', 'tn-cq-manh' + (f.qua ? '' : ' no'),
+          f.qua ? anh('tn-cq-nuoc', 'fruit-splash-' + f.qua[1]) +
+            '<span class="tn-cq-nua trai">' + anh('', nua) + '</span><span class="tn-cq-nua phai">' + anh('', nua) + '</span>'
+            : '<span class="tn-cq-nua">' + anh('', 'fruit-boom') + '</span>');
         m.setAttribute('aria-hidden', 'true');
         m.style.transform = 'translate3d(' + (f.x * W - KT / 2).toFixed(1) + 'px,' + (f.y * H - KT / 2).toFixed(1) + 'px,0)';
         san.appendChild(m);
@@ -760,8 +772,11 @@
       document.addEventListener('visibilitychange', anHien);
       window.addEventListener('resize', doiCo);
 
+      var hinh = ['fruit-bomb', 'fruit-boom', 'fruit-splash-red', 'fruit-splash-orange', 'fruit-splash-green', 'fruit-splash-yellow'];
+      QUA.forEach(function (q) { hinh.push('fruit-' + q[0], 'fruit-' + q[0] + '-half'); });
+      napTruoc(hinh);
       T.manMoi(sk, {
-        ic: '🍉',
+        ic: anh('tn-moi-anh', 'fruit-watermelon'),
         ten: 'Chém hoa quả',
         luat: 'Hoa quả mang <b>chữ Hán</b> bay lên. Đọc nghĩa tiếng Việt ở trên rồi <b>vuốt (hoặc chạm)</b> chém đúng quả đó. ' +
           'Chém nhầm quả sai hay bom 💣 mất ❤️. Chém nhanh liên tiếp được <b>combo</b>. Có <b>60 giây</b>! ' +

@@ -106,71 +106,104 @@
     for (var i = 0; i < 80; i++) {
       var x = Math.round(Math.random() * 2400), y = Math.round(Math.random() * 520);
       var a = (0.3 + Math.random() * 0.6).toFixed(2);
-      s.push(x + 'px ' + y + 'px 0 ' + (Math.random() < 0.15 ? '1px' : '0') + ' rgba(230,255,220,' + a + ')');
+      s.push(x + 'px ' + y + 'px 0 ' + (Math.random() < 0.15 ? '1px' : '0') + ' rgba(255,248,236,' + a + ')');
     }
     return s.join(',');
   }
 
   // Bong nghia trang phia xa: doi, cay kho, bia mo tron, ngoi nha co cua so sang
+  // Cung net ve voi sprite trong /images/game/ (vien #2b1d3a, to bong 2 tong).
+  // Giu SVG nhung truc tiep o day vi chan / tay / mau ao cua zombie duoc CSS dieu khien rieng.
+  var VIEN = '#2b1d3a';
   var XA_SVG =
     '<svg viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true">' +
-      '<path fill="#1b2a2c" d="M0 220V120Q150 70 320 112T640 100T960 92T1200 110V220z"/>' +
-      '<path fill="#16211f" d="M820 112V64l46-34 46 34v48z"/>' +
-      '<path fill="#16211f" d="M806 68l60-48 60 48z"/>' +
-      '<rect x="852" y="72" width="16" height="16" fill="#f5d76e" opacity=".85"/>' +
-      '<rect x="880" y="78" width="12" height="12" fill="#f5d76e" opacity=".6"/>' +
-      '<path fill="none" stroke="#16211f" stroke-width="7" stroke-linecap="round" d="M190 120V52M190 80l-26-22M190 66l24-24M214 42l12 4M164 58l-10-12"/>' +
-      '<path fill="none" stroke="#16211f" stroke-width="6" stroke-linecap="round" d="M1060 112V60M1060 84l22-18M1060 72l-20-20M1082 66l10-10"/>' +
-      '<g fill="#22302f">' +
+      '<path fill="#2c5568" opacity=".55" d="M0 220V100Q200 62 420 92T860 80T1200 90V220z"/>' +
+      '<path fill="#24503a" d="M0 220V120Q150 74 320 112T640 100T960 92T1200 110V220z"/>' +
+      // ngoi nha xa co cua so sang
+      '<path fill="#1f3b3a" d="M822 108V68l44-30 44 30v40z"/>' +
+      '<path fill="#5b3f5e" d="M806 72l60-46 60 46z"/>' +
+      '<rect x="852" y="74" width="16" height="16" rx="3" fill="#ffd23f" opacity=".9"/>' +
+      '<rect x="880" y="78" width="12" height="12" rx="2" fill="#ffd23f" opacity=".65"/>' +
+      // cay kho
+      '<path fill="none" stroke="#1c3b30" stroke-width="7" stroke-linecap="round" d="M190 120V54M190 82l-24-20M190 68l22-22M212 46l12 4M166 62l-10-12"/>' +
+      '<path fill="none" stroke="#1c3b30" stroke-width="6" stroke-linecap="round" d="M1060 112V62M1060 86l20-16M1060 74l-18-18M1080 70l10-10"/>' +
+      // bia mo tron
+      '<g fill="#5d6b96" opacity=".8">' +
         '<path d="M300 130v-30a14 14 0 0 1 28 0v30z"/><path d="M350 128v-22a11 11 0 0 1 22 0v22z"/>' +
         '<path d="M470 126v-28a14 14 0 0 1 28 0v28z"/><path d="M560 124v-20a10 10 0 0 1 20 0v20z"/>' +
         '<path d="M660 122v-26a13 13 0 0 1 26 0v26z"/><path d="M990 120v-22a11 11 0 0 1 22 0v22z"/>' +
         '<path d="M60 136v-24a12 12 0 0 1 24 0v24z"/><path d="M1120 126v-28a14 14 0 0 1 28 0v28z"/>' +
       '</g>' +
+      '<g fill="#8a97c0" opacity=".55">' +
+        '<rect x="306" y="98" width="6" height="3" rx="1.5"/><rect x="476" y="96" width="6" height="3" rx="1.5"/>' +
+        '<rect x="666" y="94" width="6" height="3" rx="1.5"/><rect x="1126" y="96" width="6" height="3" rx="1.5"/>' +
+      '</g>' +
     '</svg>';
 
-  // Zombie xanh ngo ngo, quay mat sang trai (huong di)
+  // Zombie xanh de thuong, quay mat sang trai (huong di)
   var ZOMBIE_SVG =
     '<svg viewBox="0 0 100 130" aria-hidden="true">' +
-      '<ellipse cx="50" cy="125" rx="30" ry="4.5" fill="#000" opacity=".28"/>' +
-      '<g class="zb-chan zb-c1"><rect x="38" y="88" width="11" height="31" rx="5" fill="#4a5a7a"/><ellipse cx="40" cy="121" rx="10" ry="5" fill="#3a2f2a"/></g>' +
-      '<g class="zb-chan zb-c2"><rect x="53" y="88" width="11" height="31" rx="5" fill="#3f4e6c"/><ellipse cx="55" cy="121" rx="10" ry="5" fill="#3a2f2a"/></g>' +
-      '<path class="zb-ao" d="M30 62Q50 54 72 62L76 96L68 92L62 98L55 92L48 98L40 92L31 97z"/>' +
-      '<path d="M44 70l4 6M58 74l-3 6" stroke="#000" stroke-opacity=".25" stroke-width="2"/>' +
-      '<g class="zb-tay"><path d="M40 66L10 62" stroke="#7cc35a" stroke-width="9" stroke-linecap="round"/><circle cx="9" cy="62" r="6" fill="#8fd16a"/>' +
-        '<path d="M48 74L16 74" stroke="#6fb44f" stroke-width="9" stroke-linecap="round"/><circle cx="15" cy="74" r="6" fill="#7cc35a"/></g>' +
-      '<path d="M70 70L84 78" stroke="#6fb44f" stroke-width="8" stroke-linecap="round"/>' +
-      '<circle cx="50" cy="35" r="27" fill="#8fd16a" stroke="#4f8a3a" stroke-width="2.5"/>' +
-      '<path d="M48 9q4-10 12-6q-6 2-6 8M56 10q8-6 12 0" fill="none" stroke="#3e5a2e" stroke-width="3" stroke-linecap="round"/>' +
-      '<path d="M60 18l12 8M63 16l-2 5M67 19l-2 5M71 22l-2 5" stroke="#4f8a3a" stroke-width="2" stroke-linecap="round"/>' +
-      '<circle cx="37" cy="31" r="9" fill="#fff" stroke="#4f8a3a" stroke-width="1.5"/><circle cx="34" cy="32" r="3.6" fill="#222"/>' +
-      '<circle cx="56" cy="29" r="5.5" fill="#fff" stroke="#4f8a3a" stroke-width="1.5"/><circle cx="54" cy="30" r="2.3" fill="#222"/>' +
-      '<circle cx="62" cy="44" r="5" fill="#ff9aa2" opacity=".55"/>' +
-      '<path d="M28 47Q40 55 53 46" fill="none" stroke="#2f4a22" stroke-width="3" stroke-linecap="round"/>' +
-      '<rect x="39" y="49" width="6" height="6" rx="1.5" fill="#fff" stroke="#2f4a22" stroke-width="1"/>' +
+      '<ellipse cx="50" cy="125" rx="30" ry="4.5" fill="' + VIEN + '" opacity=".3"/>' +
+      // tay sau (cam gay bien)
+      '<path d="M66 72L86 78" stroke="' + VIEN + '" stroke-width="11" stroke-linecap="round"/>' +
+      '<path d="M66 72L86 78" stroke="#9ad48a" stroke-width="5.5" stroke-linecap="round"/>' +
+      '<circle cx="87" cy="78" r="6.5" fill="#9ad48a" stroke="' + VIEN + '" stroke-width="3"/>' +
+      '<g class="zb-chan zb-c1"><rect x="36" y="90" width="12" height="27" rx="5" fill="#4a5a8a" stroke="' + VIEN + '" stroke-width="3"/>' +
+        '<ellipse cx="39" cy="120" rx="10.5" ry="5.5" fill="#5b4a7a" stroke="' + VIEN + '" stroke-width="3"/></g>' +
+      '<g class="zb-chan zb-c2"><rect x="53" y="90" width="12" height="27" rx="5" fill="#3f4e7a" stroke="' + VIEN + '" stroke-width="3"/>' +
+        '<ellipse cx="56" cy="120" rx="10.5" ry="5.5" fill="#5b4a7a" stroke="' + VIEN + '" stroke-width="3"/></g>' +
+      // than + ao (mau ao theo dap an A-D qua --ao)
+      '<rect class="zb-ao" x="27" y="58" width="48" height="40" rx="14"/>' +
+      '<rect x="30" y="82" width="42" height="13" rx="6" fill="' + VIEN + '" opacity=".18"/>' +
+      '<path d="M31 94l5-5 5 5 5-5 5 5 5-5 5 5" fill="none" stroke="' + VIEN + '" stroke-opacity=".3" stroke-width="2"/>' +
+      '<rect x="33" y="62" width="14" height="5" rx="2.5" fill="#fff8ec" opacity=".35"/>' +
+      '<rect x="27" y="58" width="48" height="40" rx="14" fill="none" stroke="' + VIEN + '" stroke-width="3.5"/>' +
+      // dau
+      '<circle cx="50" cy="35" r="27" fill="#9ad48a"/>' +
+      '<path d="M63.5 11.6A27 27 0 0 1 63.5 58.4A9 24 0 0 0 63.5 11.6Z" fill="#7bbd6c"/>' +
+      '<ellipse cx="38" cy="19" rx="8" ry="5" fill="#c9f0bc" transform="rotate(-20 38 19)"/>' +
+      '<circle cx="50" cy="35" r="27" fill="none" stroke="' + VIEN + '" stroke-width="3.5"/>' +
+      '<path d="M56 10Q59 0 63 8Q67 0 70 11" fill="none" stroke="' + VIEN + '" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path d="M28 24H39M31 20V28M36 20V28" stroke="' + VIEN + '" stroke-width="2" stroke-linecap="round"/>' +
+      '<circle cx="37" cy="34" r="5.5" fill="' + VIEN + '"/><circle cx="38.6" cy="32.2" r="1.7" fill="#fff8ec"/>' +
+      '<circle cx="56" cy="34" r="4" fill="' + VIEN + '"/>' +
+      '<ellipse cx="29" cy="45" rx="5" ry="3" fill="#ff8fa3" opacity=".75"/><ellipse cx="62" cy="45" rx="5" ry="3" fill="#ff8fa3" opacity=".75"/>' +
+      '<path d="M39 47Q45 53 51 47" fill="none" stroke="' + VIEN + '" stroke-width="2.6" stroke-linecap="round"/>' +
+      '<rect x="42.5" y="48.5" width="4.5" height="4.5" rx="1" fill="#fff8ec" stroke="' + VIEN + '" stroke-width="1.5"/>' +
+      // tay truoc gio ra phia truoc
+      '<g class="zb-tay">' +
+        '<path d="M40 66L12 62M46 76L17 75" stroke="' + VIEN + '" stroke-width="11" stroke-linecap="round"/>' +
+        '<path d="M40 66L12 62M46 76L17 75" stroke="#9ad48a" stroke-width="5.5" stroke-linecap="round"/>' +
+        '<circle cx="11" cy="62" r="6.5" fill="#9ad48a" stroke="' + VIEN + '" stroke-width="3"/>' +
+        '<circle cx="16" cy="75" r="6.5" fill="#9ad48a" stroke="' + VIEN + '" stroke-width="3"/>' +
+      '</g>' +
     '</svg>';
 
-  // Sung bong nuoc hoat hinh (ben trai, sau hang rao)
+  // Sung nuoc tren banh xe (ben trai, sau hang rao); voi phun o mep phai
   var SUNG_SVG =
     '<svg viewBox="0 0 90 60" aria-hidden="true">' +
-      '<rect x="40" y="18" width="42" height="16" rx="7" fill="#3f88c5" stroke="#1f4f7a" stroke-width="3"/>' +
-      '<rect x="76" y="15" width="10" height="22" rx="4" fill="#ffcf6b" stroke="#a8742a" stroke-width="2.5"/>' +
-      '<circle cx="34" cy="28" r="22" fill="#5aa8e0" stroke="#1f4f7a" stroke-width="3"/>' +
-      '<circle cx="28" cy="22" r="6" fill="#fff" opacity=".55"/>' +
-      '<circle cx="22" cy="50" r="9" fill="#ffcf6b" stroke="#a8742a" stroke-width="2.5"/>' +
-      '<circle cx="46" cy="50" r="9" fill="#ffcf6b" stroke="#a8742a" stroke-width="2.5"/>' +
+      '<circle cx="26" cy="15" r="11" fill="#8fe0ff" stroke="' + VIEN + '" stroke-width="3"/>' +
+      '<ellipse cx="22" cy="11" rx="4" ry="2.5" fill="#e6f8ff"/>' +
+      '<rect x="6" y="18" width="62" height="24" rx="12" fill="#4fb3ff"/>' +
+      '<rect x="11" y="33" width="52" height="6" rx="3" fill="#2f8fe0"/>' +
+      '<rect x="14" y="22" width="28" height="5" rx="2.5" fill="#bfe6ff"/>' +
+      '<rect x="6" y="18" width="62" height="24" rx="12" fill="none" stroke="' + VIEN + '" stroke-width="3" stroke-linejoin="round"/>' +
+      '<rect x="66" y="21" width="17" height="18" rx="6" fill="#ffd23f" stroke="' + VIEN + '" stroke-width="3" stroke-linejoin="round"/>' +
+      '<circle cx="20" cy="49" r="9" fill="#5b4a7a" stroke="' + VIEN + '" stroke-width="3"/><circle cx="20" cy="49" r="3" fill="#fff8ec"/>' +
+      '<circle cx="50" cy="49" r="9" fill="#5b4a7a" stroke="' + VIEN + '" stroke-width="3"/><circle cx="50" cy="49" r="3" fill="#fff8ec"/>' +
     '</svg>';
 
   // Mot doan hang rao go cho moi lan; vet nut hien dan theo so tim mat
   var RAO_SVG =
     '<svg viewBox="0 0 40 70" preserveAspectRatio="none" aria-hidden="true">' +
-      '<g fill="#b98a55" stroke="#6b4a2a" stroke-width="2">' +
-        '<path d="M3 70V14l5-8 5 8v56z"/><path d="M16 70V10l5-8 5 8v60z"/><path d="M29 70V14l5-8 5 8v56z"/>' +
+      '<g fill="#d9a066" stroke="' + VIEN + '" stroke-width="2.5" stroke-linejoin="round">' +
+        '<path d="M3 69V15l5-8 5 8v54z"/><path d="M16 69V11l5-8 5 8v58z"/><path d="M29 69V15l5-8 5 8v54z"/>' +
       '</g>' +
-      '<rect x="0" y="24" width="40" height="7" fill="#a47645" stroke="#6b4a2a" stroke-width="2"/>' +
-      '<rect x="0" y="50" width="40" height="7" fill="#a47645" stroke="#6b4a2a" stroke-width="2"/>' +
-      '<path class="zb-vet zb-vet1" d="M21 12l-3 10 4 6-3 9" fill="none" stroke="#3a2412" stroke-width="2"/>' +
-      '<path class="zb-vet zb-vet2" d="M8 40l-4 8 4 6-3 8M33 30l3 9-4 7 3 10" fill="none" stroke="#3a2412" stroke-width="2"/>' +
+      '<g fill="#f3c48e"><rect x="5" y="17" width="2" height="46" rx="1"/><rect x="18" y="13" width="2" height="50" rx="1"/><rect x="31" y="17" width="2" height="46" rx="1"/></g>' +
+      '<rect x="0" y="24" width="40" height="7" rx="3" fill="#b37a45" stroke="' + VIEN + '" stroke-width="2.5"/>' +
+      '<rect x="0" y="50" width="40" height="7" rx="3" fill="#b37a45" stroke="' + VIEN + '" stroke-width="2.5"/>' +
+      '<path class="zb-vet zb-vet1" d="M21 12l-3 10 4 6-3 9" fill="none" stroke="' + VIEN + '" stroke-width="2"/>' +
+      '<path class="zb-vet zb-vet2" d="M8 40l-4 8 4 6-3 8M33 30l3 9-4 7 3 10" fill="none" stroke="' + VIEN + '" stroke-width="2"/>' +
     '</svg>';
 
   /* ---------------- dung khung ---------------- */

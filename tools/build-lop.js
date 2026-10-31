@@ -341,6 +341,42 @@ function dungCap(level) {
     dich.sort((a, b) => (b.moi * 2 + (b.cu.length ? 1 : 0)) - (a.moi * 2 + (a.cu.length ? 1 : 0)));
     dich.splice(40);
     dich.forEach((d) => { if (!d.cu.length) delete d.cu; if (!d.moi) delete d.moi; });
+
+    /* ---- 1g) cau hoi NOI (Kiem tra noi — may doc, hoc sinh tra loi bang loi):
+       hd = cau hoi trong bai khoa + cau dap cua nguoi kia; bk = cau hoi doc hieu bai khoa + dap an.
+       Cung loc chu da hoc va ghi tu cua bai truoc nhu cau dich. ---- */
+    const laHoi = (zh) => /[？?]\s*$/.test(zh) || /(吗|呢|什么|谁|哪|几|多少|怎么|为什么|是不是|好不好|对不对)/.test(zh);
+    const noi = [], thayNoi = {};
+    const tuCu = (t) => {
+      const cu = [];
+      tuCuaBai.forEach((b) => b.tu.forEach((w) => { if (cu.length < 4 && t.indexOf(w) >= 0 && !cu.some((x) => x[0] === w)) cu.push([w, b.n]); }));
+      return cu;
+    };
+    const themNoi = (k, q, a, qvn, avn) => {
+      q = String(q || '').trim(); a = String(a || '').trim();
+      const kk = han(q).join('');
+      if (!q || !a || thayNoi[kk] || han(q).length < 2 || han(q).length > 30 || LATIN.test(q + a) || !hocRoi(q + a)) return;
+      thayNoi[kk] = 1;
+      const x = { k, q, a };
+      if (qvn) x.qvn = String(qvn).trim();
+      if (avn) x.avn = String(avn).trim();
+      const cu = tuCu(q + a);
+      if (cu.length) x.cu = cu;
+      if (tuBaiNay.some((w) => (q + a).indexOf(w) >= 0)) x.moi = 1;
+      noi.push(x);
+    };
+    (D.dialog || []).forEach((d) => {
+      const ls = ((d && d.lines) || []).filter((l) => l && l.zh);
+      for (let i = 0; i + 1 < ls.length; i++) {
+        if (!laHoi(ls[i].zh) || (ls[i].sp || 0) === (ls[i + 1].sp || 0)) continue;
+        themNoi('hd', ls[i].zh, ls[i + 1].zh, ls[i].vn, ls[i + 1].vn);
+      }
+      ((d && d.preQuiz) || []).forEach((q) => {
+        if (q && Array.isArray(q.opts) && typeof q.ans === 'number' && q.opts[q.ans]) themNoi('bk', q.q, q.opts[q.ans], '', '');
+      });
+    });
+    noi.sort((a, b) => ((b.moi ? 2 : 0) + (b.cu ? 1 : 0)) - ((a.moi ? 2 : 0) + (a.cu ? 1 : 0)));
+    noi.splice(30);
     tuCuaBai.push({ n: L.number, tu: tuBaiNay });
 
     /* ---- 2) bai tap ngu phap chung — chi cau toan chu da hoc ---- */
@@ -369,7 +405,7 @@ function dungCap(level) {
       themJ({ sentence: r.text, note: r.note, isCorrect: true, fix: '', why: '', point: e.point || '' });
     });
 
-    return { n: L.number, url, title: L.titleHanzi || L.title || '', judges, mcs, sorts, dich };
+    return { n: L.number, url, title: L.titleHanzi || L.title || '', judges, mcs, sorts, dich, noi };
   });
   return { out, thongKe };
 }

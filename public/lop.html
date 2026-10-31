@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="/css/lop-doantau.css">
 <link rel="stylesheet" href="/css/lop-doikhang.css">
 <link rel="stylesheet" href="/css/lop-chuong.css">
+<link rel="stylesheet" href="/css/lop-noi.css">
 <link rel="stylesheet" href="/css/lop-chu-to.css">
 <script>
 // CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
@@ -98,6 +99,12 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <span class="lop-game-name">Kiểm tra bài cũ — gọi từng bạn</span>
           <span class="lop-game-desc">Gọi từng em lên bảng, chơi Hộp quà bí mật · Leo thang triệu phú · Ghế nóng 60 giây · Bốc thăm nhiệm vụ với câu hỏi tự sinh từ bài đã chọn. Cô bấm đúng/sai, web gợi ý điểm và lưu vào cột Miệng.</span>
           <span class="lop-game-count" id="lopCountKt">chọn bài</span>
+        </button>
+        <button type="button" class="lop-test-card lop-noi-card" id="lopNoiOpen">
+          <span class="lop-game-emoji">🎤</span>
+          <span class="lop-game-name">Kiểm tra nói — nghe &amp; phản xạ</span>
+          <span class="lop-game-desc">Máy đọc câu hỏi trong bài (hỏi – đáp, hỏi về bài khoá, nghe nói nghĩa, nhắc lại câu), học sinh trả lời bằng lời trong thời gian giới hạn. Câu của bài đang học ưu tiên câu dùng lại từ các bài trước, kèm câu ôn bài cũ.</span>
+          <span class="lop-game-count">nghe · nói</span>
         </button>
         <button type="button" class="lop-test-card lop-ufo-card" id="lopUfoOpen">
           <span class="lop-game-emoji">🛸</span>
@@ -481,6 +488,7 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/nhac-nen.js"></script>
 <script src="/js/lop-ufo.js"></script>
 <script src="/js/lop-kiemtra.js"></script>
+<script src="/js/lop-noi.js"></script>
 <script src="/js/the-ma.js"></script>
 <script src="/js/lop-the.js"></script>
 <script src="/js/lop-zombie.js"></script>

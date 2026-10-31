@@ -116,7 +116,8 @@
   function collectLessons(level) {
     var list = (window.LOP_DATA && window.LOP_DATA[level]) || [];
     return list.map(function (l) {
-      return { n: l.n, url: l.url, title: l.title || '', judges: l.judges || [], mcs: l.mcs || [], sorts: l.sorts || [] };
+      return { n: l.n, url: l.url, title: l.title || '', judges: l.judges || [], mcs: l.mcs || [], sorts: l.sorts || [],
+        dich: l.dich || [], noi: l.noi || [] };
     }).sort(function (a, b) { return a.n - b.n; });
   }
 
@@ -3554,6 +3555,18 @@
     $('#lopDongHo').addEventListener('click', function () { if (window.LopDongHo) window.LopDongHo.mo({ giay: 60, nho: true }); });
     $('#lopUfoOpen').addEventListener('click', function () { if (window.LopUfo) window.LopUfo.mo(); });
     // Kiem tra bai cu: can ca tu vung + cau dich + hoi thoai cua cac bai da chon (nap bat dong bo)
+    // Kiem tra noi: cau cua cac bai dang chon + cac bai truoc do (on xoan oc)
+    $('#lopNoiOpen').addEventListener('click', function () {
+      if (!window.LopNoi || !pickedLabel()) return;
+      var chon = state.lessons.filter(function (l) { return state.picked[l.url]; });
+      var maxN = Math.max.apply(null, chon.map(function (l) { return l.n; }));
+      window.LopNoi.mo({
+        nhan: (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel(),
+        bai: state.lessons.filter(function (l) { return l.n <= maxN; }).map(function (l) {
+          return { n: l.n, chon: !!state.picked[l.url], noi: l.noi || [], dich: l.dich || [] };
+        })
+      });
+    });
     $('#lopKiemTraOpen').addEventListener('click', function () {
       if (!window.LopKiemTra || !pickedLabel()) return;
       loadPickedVocab().then(function (v) {

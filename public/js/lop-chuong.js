@@ -304,18 +304,10 @@
   function cauCuoiXong() { return S.pha === 'xong' && !S.cuu && S.i === S.cau.length - 1; }
 
   /* ---------------- dung khung ---------------- */
-  var CHUONG_SVG =
-    '<svg viewBox="0 0 100 110" aria-hidden="true"><defs><linearGradient id="rcVangG" x1="0" y1="0" x2="1" y2="1">' +
-      '<stop offset="0" stop-color="#fff6b8"/><stop offset=".45" stop-color="#f5c518"/><stop offset="1" stop-color="#a87a06"/></linearGradient></defs>' +
-      '<circle cx="50" cy="10" r="7" fill="url(#rcVangG)" stroke="#7a5804" stroke-width="2"/>' +
-      '<path d="M50 15c-19 0-29 15-29 33v20L11 82h78L79 68V48c0-18-10-33-29-33z" fill="url(#rcVangG)" stroke="#7a5804" stroke-width="2.5"/>' +
-      '<path d="M33 40c2-9 8-14 15-15" fill="none" stroke="#fffbe0" stroke-width="5" stroke-linecap="round" opacity=".75"/>' +
-      '<rect x="7" y="80" width="86" height="9" rx="4.5" fill="#d9a514" stroke="#7a5804" stroke-width="2"/>' +
-      '<circle cx="50" cy="98" r="9" fill="url(#rcVangG)" stroke="#7a5804" stroke-width="2"/>' +
-    '</svg>';
-  var MAYBAY_SVG =
-    '<svg viewBox="0 0 80 60" aria-hidden="true"><path d="M2 30 78 2 52 58 38 36z" fill="#fff" stroke="#9fb3ff" stroke-width="2" stroke-linejoin="round"/>' +
-      '<path d="M38 36 78 2 30 32z" fill="#dfe6ff"/><path d="M38 36l-3 17 11-11z" fill="#c4d0ff"/></svg>';
+  // Hinh ve SVG (public/images/game/bell-*.svg): chuong vang, may bay giay, phao cuu sinh, cup, lap lanh
+  function hinh(ten, cls) { return '<img class="' + cls + '" src="/images/game/' + ten + '.svg" alt="" draggable="false">'; }
+  var CHUONG_SVG = hinh('bell-chuong', 'rc-chuong-img');
+  var MAYBAY_SVG = hinh('bell-maybay', 'rc-maybay-img');
 
   function dung() {
     root = document.createElement('div');
@@ -390,7 +382,7 @@
   function veBar() {
     var sc = $('#rcSoCau');
     if (S.pha === 'sanh' || !S.cau.length) sc.textContent = 'Câu 0 / ' + (S.cau.length || soCauChon());
-    else if (S.cuu) sc.textContent = '🛟 Cứu trợ · sau câu ' + (S.i + 1);
+    else if (S.cuu) sc.textContent = 'Cứu trợ · sau câu ' + (S.i + 1);
     else sc.textContent = 'Câu ' + Math.max(0, S.i + 1) + ' / ' + S.cau.length;
     var sel = $('#rcSrc');
     sel.hidden = online();
@@ -417,10 +409,10 @@
         '. Đúng <b>+10 điểm</b> và ở lại sàn; sai hoặc không trả lời thì <b>rời sàn</b>.</li>' +
       '<li>Bạn đã rời sàn vẫn được làm tiếp để luyện tập, nhưng <b>không tính điểm</b>.</li>' +
       '<li><b>Cả sàn cùng sai</b> một câu: tất cả các bạn vừa rời sàn ở câu đó được quay lại (không cộng điểm câu đó). Không áp dụng cho Câu Chuông Vàng.</li>' +
-      '<li>🛟 <b>Cứu trợ</b> (' + S.luotCuu + ' lượt): khi trên sàn còn ≤ ' + nguong() + ' bạn, cô mở một câu cứu trợ <b>chỉ dành cho các bạn đã rời sàn</b>; ai đúng thì trở lại sàn — ' + td +
+      '<li>' + hinh('bell-phao', 'rc-chu-img') + ' <b>Cứu trợ</b> (' + S.luotCuu + ' lượt): khi trên sàn còn ≤ ' + nguong() + ' bạn, cô mở một câu cứu trợ <b>chỉ dành cho các bạn đã rời sàn</b>; ai đúng thì trở lại sàn — ' + td +
         (online() ? ' (ai đúng nhanh hơn được ưu tiên)' : ' (cô chọn trong số các bạn viết đúng)') + '. Câu cứu trợ không tính điểm.</li>' +
-      '<li>✈️ <b>Phao máy bay giấy</b> (1 lần): khi trên sàn chỉ còn 1 bạn (hoặc không còn ai), cô phóng máy bay giấy đưa 1 bạn đã rời sàn trở lại.</li>' +
-      '<li>🔔 Câu cuối là <b>Câu Chuông Vàng</b> (' + Math.ceil(S.giay * 1.5 / 5) * 5 + ' giây). Ai còn trên sàn và trả lời đúng là đã <b>rung chuông vàng</b>!</li>' +
+      '<li>' + hinh('bell-maybay', 'rc-chu-img') + ' <b>Phao máy bay giấy</b> (1 lần): khi trên sàn chỉ còn 1 bạn (hoặc không còn ai), cô phóng máy bay giấy đưa 1 bạn đã rời sàn trở lại.</li>' +
+      '<li>' + hinh('bell-chuong', 'rc-chu-img') + ' Câu cuối là <b>Câu Chuông Vàng</b> (' + Math.ceil(S.giay * 1.5 / 5) * 5 + ' giây). Ai còn trên sàn và trả lời đúng là đã <b>rung chuông vàng</b>!</li>' +
       '<li>Xếp hạng: còn trên sàn trước, rồi theo điểm, rồi ai rời sàn muộn hơn xếp trên.</li>' +
     '</ul>';
   }
@@ -561,7 +553,7 @@
     var lat = S.pha === 'lat' || S.pha === 'xong';
     var info = S.info && S.info.pha === 'lat' && online() ? S.info : null;
     var tag, phu;
-    if (S.cuu) { tag = '🛟 CÂU CỨU TRỢ'; phu = 'Dành cho các bạn đã rời sàn — đúng thì trở lại sàn' + (S.toiDa ? ' (tối đa ' + S.toiDa + ' bạn)' : ''); }
+    if (S.cuu) { tag = hinh('bell-phao', 'rc-chu-img') + ' CÂU CỨU TRỢ'; phu = 'Dành cho các bạn đã rời sàn — đúng thì trở lại sàn' + (S.toiDa ? ' (tối đa ' + S.toiDa + ' bạn)' : ''); }
     else if (q.cuoi) { tag = 'CÂU CHUÔNG VÀNG'; phu = 'Câu ' + (S.i + 1) + ' / ' + S.cau.length + ' · ' + giayCau() + ' giây'; }
     else { tag = 'CÂU ' + (S.i + 1); phu = 'Câu ' + (S.i + 1) + ' / ' + S.cau.length + ' · ' + giayCau() + ' giây'; }
     var zh;
@@ -790,6 +782,7 @@
       var dem = demTen(ds);
       luoi.innerHTML = ds.map(function (x) {
         return '<button type="button" class="rc-o" data-id="' + esc(x.id) + '">' +
+          '<span class="rc-o-hinh" aria-hidden="true"></span>' +
           '<span class="rc-o-so">' + x.so + '</span>' +
           '<span class="rc-o-ten">' + esc(tenNgan(x.ten, dem)) + '</span>' +
           '<span class="rc-o-diem"></span><span class="rc-o-dau" aria-hidden="true"></span>' +
@@ -838,10 +831,10 @@
       '<div class="rc-thang"><h3>' + CHUONG_SVG + 'CHUÔNG VÀNG</h3><ol>' + thang + '</ol></div>' +
       '<div class="rc-phao">' +
         '<button type="button" class="rc-tg' + (lyCuu ? ' is-khoa' : ' is-san') + (S.cuuCon <= 0 ? ' is-het' : '') + '" data-act="cuu" title="' + esc(lyCuu || 'Bấm để mở câu cứu trợ') + '">' +
-          '<span class="rc-tg-ic">🛟</span><span><b>Cứu trợ: ' + (S.cuuCon > 0 ? 'còn ' + S.cuuCon + ' lượt' : 'hết lượt') + '</b>' +
+          '<span class="rc-tg-ic">' + hinh('bell-phao', 'rc-tg-img') + '</span><span><b>Cứu trợ: ' + (S.cuuCon > 0 ? 'còn ' + S.cuuCon + ' lượt' : 'hết lượt') + '</b>' +
           '<small>Khi trên sàn ≤ ' + nguong() + ' bạn · phím C</small></span></button>' +
         '<button type="button" class="rc-tg' + (lyPhao ? ' is-khoa' : ' is-san') + (S.phaoCon <= 0 ? ' is-het' : '') + '" data-act="phao" title="' + esc(lyPhao || 'Bấm để phóng máy bay giấy') + '">' +
-          '<span class="rc-tg-ic">✈️</span><span><b>Phao máy bay giấy: ' + (S.phaoCon > 0 ? 'còn 1 lần' : 'đã dùng') + '</b>' +
+          '<span class="rc-tg-ic">' + hinh('bell-maybay', 'rc-tg-img') + '</span><span><b>Phao máy bay giấy: ' + (S.phaoCon > 0 ? 'còn 1 lần' : 'đã dùng') + '</b>' +
           '<small>Khi trên sàn còn 1 bạn · phím P</small></span></button>' +
       '</div>' +
       '<p class="rc-phim"><kbd>Space</kbd> giờ / tiếp · <kbd>Enter</kbd> lật / chốt · <kbd>C</kbd> <kbd>P</kbd> <kbd>F</kbd> <kbd>M</kbd> · <kbd>Esc</kbd></p>';
@@ -1009,7 +1002,7 @@
     S.pha = 'xong';
     S.roiVua = roi.length;
     if (S.cuu) {
-      S.tin = ve.length ? '🛟 ' + ve.length + ' bạn được cứu trợ, trở lại sàn: ' + tenDs(ve, 8) : 'Câu cứu trợ: chưa bạn nào trở lại sàn lần này.';
+      S.tin = ve.length ? 'Cứu trợ: ' + ve.length + ' bạn được cứu trợ, trở lại sàn: ' + tenDs(ve, 8) : 'Câu cứu trợ: chưa bạn nào trở lại sàn lần này.';
       if (ve.length) sndCuu();
     } else if (S.q.cuoi) {
       S.tin = vang.length ? '🔔 ' + vang.length + ' bạn rung chuông vàng: ' + tenDs(vang, 8) : 'Câu Chuông Vàng: chưa bạn nào trả lời đúng.';
@@ -1068,7 +1061,7 @@
     var ly = coTheCuu();
     var td = S.toiDa > 0 ? 'tối đa <b>' + S.toiDa + ' bạn</b>' : '<b>không giới hạn</b> số bạn';
     moPanel(
-      '<h2>🛟 Cứu trợ — ' + (S.cuuCon > 0 ? 'còn ' + S.cuuCon + ' lượt' : 'đã hết lượt') + '</h2>' +
+      '<h2>' + hinh('bell-phao', 'rc-h2-img') + 'Cứu trợ — ' + (S.cuuCon > 0 ? 'còn ' + S.cuuCon + ' lượt' : 'đã hết lượt') + '</h2>' +
       '<p class="rc-luat-p"><b>Luật:</b> dùng khi trên sàn còn ≤ ' + nguong() + ' bạn. Tất cả <b>' + soRoi() + ' bạn đã rời sàn</b> cùng trả lời một câu cứu trợ; ' +
         'trả lời đúng thì trở lại sàn — ' + td + (online() ? ' (ai đúng <b>nhanh hơn</b> được ưu tiên).' : ' (cô bấm chọn trong số các bạn viết đúng).') +
         ' Các bạn đang trên sàn nghỉ câu này; câu cứu trợ không tính điểm.</p>' +
@@ -1094,7 +1087,7 @@
     q.cuoi = false;
     S.q = q;
     S.danh = {}; S.choDapAn = false; S.roiVua = 0;
-    S.tin = '🛟 Câu cứu trợ cho ' + soRoi() + ' bạn đã rời sàn';
+    S.tin = 'Câu cứu trợ cho ' + soRoi() + ' bạn đã rời sàn';
     S.pha = 'doc';
     datGio(S.giay);
     veChinh();
@@ -1107,7 +1100,7 @@
     var ly = coThePhao();
     var roi = S.ds.filter(function (x) { return !x.con; });
     moPanel(
-      '<h2>✈️ Phao máy bay giấy</h2>' +
+      '<h2>' + hinh('bell-maybay', 'rc-h2-img') + 'Phao máy bay giấy</h2>' +
       '<p class="rc-luat-p"><b>Luật:</b> chỉ dùng 1 lần, khi trên sàn còn 1 bạn (hoặc không còn ai). Cô chọn <b>1 bạn đã rời sàn</b> — máy bay giấy sẽ đưa bạn ấy trở lại sàn thi đấu.</p>' +
       (ly ? '<p class="rc-loi">⚠ ' + esc(ly) + '</p>' :
         '<div class="rc-phao-ds">' + roi.map(function (x) {
@@ -1209,7 +1202,8 @@
     var le = $('#rcLe');
     le.innerHTML =
       '<div class="rc-le-the">' +
-        '<div class="rc-le-chuong">' + CHUONG_SVG + '</div>' +
+        '<div class="rc-le-chuong">' + CHUONG_SVG +
+          hinh('bell-sao', 'rc-le-sao s1') + hinh('bell-sao', 'rc-le-sao s2') + hinh('bell-sao', 'rc-le-sao s3') + hinh('bell-sao', 'rc-le-sao s4') + '</div>' +
         '<h2>RUNG CHUÔNG VÀNG!</h2>' +
         '<p class="rc-le-tieude">' + esc(S.tieuDe) + (S.nhan ? ' · ' + esc(S.nhan) : '') + '</p>' +
         '<div class="rc-le-ten">' + vang.map(function (x) { return '<span><b>' + x.so + '</b>' + esc(tenNg(x)) + '</span>'; }).join('') + '</div>' +
@@ -1260,7 +1254,7 @@
     var xh = xepHang(), vd = vinhDanh(xh);
     c.innerHTML =
       '<div class="rc-het">' +
-        '<h2 class="rc-het-tit">🏆 Kết quả · ' + esc(S.tieuDe) + '</h2>' +
+        '<h2 class="rc-het-tit">' + hinh('bell-cup', 'rc-het-cup') + 'Kết quả · ' + esc(S.tieuDe) + '</h2>' +
         '<div class="rc-het-vinh"><h3>' + vd.tit + '</h3><div class="rc-le-ten">' +
           (vd.ds.length ? vd.ds.map(function (x) { return '<span><b>' + x.so + '</b>' + esc(tenNg(x)) + '</span>'; }).join('') : '<em>—</em>') +
         '</div></div>' +

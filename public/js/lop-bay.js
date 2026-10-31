@@ -13,7 +13,9 @@
 
   var PREF_KEY = 'hyv_bay_pref';
   var MAU_TO = ['#e0573f', '#3f88c5', '#4f9d69', '#e8a33d'];
-  var MAU_TU = ['#ffb38a', '#ffe08a', '#a8e6b8', '#9fd4f5', '#d6b8f7', '#ffb3d1', '#ffc98a', '#8fe3d8'];
+  // Mau vien the chu, khop voi 6 bo canh buom SVG (public/images/game/bay-canh-0..5.svg)
+  var MAU_TU = ['#f06292', '#f5a623', '#35b36b', '#1e88e5', '#7e57c2', '#f57c00'];
+  var BUOM = '<img class="by-buom" src="/images/game/bay-buom.svg" alt="" draggable="false">';
   var TOC = { cham: 30, vua: 56, nhanh: 96 }; // px/giay tren man rong ~1100px
   var RE_DAU = /^[\s，。？！、；：,.?!;:“”"'‘’《》〈〉「」『』（）()\[\]…—\-·~～]+$/;
   var TOI_DA_TU = 30; // gioi han cho mat na bit khi kiem tra cach ghep
@@ -113,7 +115,7 @@
         '<span class="by-may m1"></span><span class="by-may m2"></span><span class="by-may m3"></span>' +
         '<span class="by-doi"></span></div>' +
       '<header class="by-bar">' +
-        '<b class="by-title">🦋 Từ ngữ biết bay</b>' +
+        '<b class="by-title">' + BUOM + 'Từ ngữ biết bay</b>' +
         '<span class="by-sub" id="bySub"></span>' +
         '<span class="by-bar-gap"></span>' +
         '<button type="button" class="by-btn by-ic" id="bySound"></button>' +
@@ -161,7 +163,7 @@
       $('#bySub').textContent = '';
       $('#byMan').innerHTML =
         '<div class="by-the by-trong">' +
-          '<div class="by-logo" aria-hidden="true">🦋</div>' +
+          '<div class="by-logo" aria-hidden="true">' + BUOM + '</div>' +
           '<h2>Chưa có câu nào để thả bay!</h2>' +
           '<p>Trò chơi cần các câu <b>sắp xếp từ thành câu</b>. Hãy tích chọn bài có phần sắp xếp câu ở màn chuẩn bị, rồi mở lại nhé.</p>' +
           '<div class="by-nut"><button type="button" class="by-go" id="byVe">← Về chọn bài</button></div>' +
@@ -180,7 +182,7 @@
     $('#byMan').innerHTML =
       '<div class="by-the by-sanh">' +
         '<div class="by-sanh-dau">' +
-          '<div class="by-logo" aria-hidden="true">🦋</div>' +
+          '<div class="by-logo" aria-hidden="true">' + BUOM + '</div>' +
           '<div><h2>Từ ngữ biết bay</h2>' +
           '<p class="by-luat">Các từ của câu bay lượn khắp màn hình như những chú bướm. Bấm vào từng từ <b>theo đúng thứ tự</b> để xếp thành câu ở khay bên dưới. ' +
           'Bấm sai: từ rung lên và bay tiếp (tính 1 lỗi). Dấu câu tự vào chỗ. ' +
@@ -322,6 +324,7 @@
           '<div class="by-kq" id="byKq" hidden></div>' +
         '</div>' +
         '<div class="by-khay" id="byKhay">' +
+          '<img class="by-khay-vot" src="/images/game/bay-vot.svg" alt="" draggable="false">' +
           '<div class="by-khay-tu" id="byKhayTu" lang="zh" aria-live="polite"></div>' +
           '<div class="by-khay-nut">' +
             '<span class="by-con" id="byCon"></span>' +
@@ -449,7 +452,7 @@
   function taoBay(d, k) {
     var el = document.createElement('button');
     el.type = 'button';
-    el.className = 'by-tu';
+    el.className = 'by-tu by-m' + (k % MAU_TU.length);
     el.setAttribute('data-id', d.id);
     el.setAttribute('lang', 'zh');
     el.style.setProperty('--c', MAU_TU[k % MAU_TU.length]);

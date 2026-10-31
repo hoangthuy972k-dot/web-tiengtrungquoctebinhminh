@@ -18,15 +18,17 @@
   var PREF_KEY = 'hyv_luot_pref';
   var CHU = ['A', 'B', 'C', 'D'];
   var MAU_TO = ['#e0453a', '#2f7fd0', '#3d9a52', '#e39a1f'];
-  var CON = ['🐼', '🐯', '🐰', '🐵'];
+  // Hinh ve SVG (public/images/game/) thay cho emoji: con vat cua tung doi, icon o dac biet
+  var IMG = '/images/game/';
+  var CON_HINH = ['luot-gautruc', 'luot-ho', 'luot-tho', 'luot-khi'];
   var DAI = { ngan: 20, vua: 30 };
   var DAI_TEN = { ngan: '🏃 Ngắn · 20 ô', vua: '🛤️ Vừa · 30 ô' };
   var LOAI = {
-    sao: { ic: '⭐', ten: 'Ô may mắn', mo: 'Tiến thêm 2 ô' },
-    lui: { ic: '🌀', ten: 'Gió lốc', mo: 'Lùi 3 ô' },
-    cau: { ic: '🌉', ten: 'Qua cầu', mo: 'Trả lời đúng mới được qua cầu (+3 ô)' },
-    doi: { ic: '🔄', ten: 'Đổi chỗ', mo: 'Đổi chỗ với đội ngay phía trước' },
-    qua: { ic: '🎁', ten: 'Thẻ thử thách', mo: 'Làm thử thách vui — làm được thì +1 ô' }
+    sao: { ic: '⭐', hinh: 'luot-sao', ten: 'Ô may mắn', mo: 'Tiến thêm 2 ô' },
+    lui: { ic: '🌀', hinh: 'luot-loc', ten: 'Gió lốc', mo: 'Lùi 3 ô' },
+    cau: { ic: '🌉', hinh: 'luot-cau', ten: 'Qua cầu', mo: 'Trả lời đúng mới được qua cầu (+3 ô)' },
+    doi: { ic: '🔄', hinh: 'luot-doi', ten: 'Đổi chỗ', mo: 'Đổi chỗ với đội ngay phía trước' },
+    qua: { ic: '🎁', hinh: 'luot-qua', ten: 'Thẻ thử thách', mo: 'Làm thử thách vui — làm được thì +1 ô' }
   };
   var SO_DAC_BIET = {
     20: { sao: 2, qua: 2, lui: 1, cau: 1, doi: 1 },
@@ -74,6 +76,8 @@
   function docLS(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
   function ghiLS(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* bo qua */ } }
   function giamChuyenDong() { return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  function hinh(ten, cls) { return '<img class="' + cls + '" src="' + IMG + ten + '.svg" alt="" draggable="false">'; }
+  function con(t, cls) { return hinh(CON_HINH[t], cls || 'lu-con-nho'); }
   function tenTo(i) { return S.ten[i] || ('Đội ' + (i + 1)); }
   function dich() { return S.o.length - 1; }
   // Hen gio gan voi van choi hien tai: dong / choi lai thi chuoi hanh dong cu dung luon
@@ -216,7 +220,7 @@
       $('#luSub').textContent = '';
       $('#luMan').innerHTML =
         '<div class="lu-the lu-trong">' +
-          '<div class="lu-trong-hinh" aria-hidden="true">🐼🎲</div>' +
+          '<div class="lu-trong-hinh" aria-hidden="true">' + hinh('luot-gautruc', 'lu-trong-img') + hinh('luot-co', 'lu-trong-img') + '</div>' +
           '<h2>Chưa có câu hỏi nào cho bàn cờ!</h2>' +
           '<p>Hãy chọn bài muốn ôn ở màn chuẩn bị (tích vào các bài), rồi mở lại trò chơi nhé.</p>' +
           '<div class="lu-nut"><button type="button" class="lu-go" id="luVe">← Về chọn bài</button></div>' +
@@ -226,17 +230,17 @@
     }
     var ten = '';
     for (var i = 0; i < 4; i++) {
-      ten += '<label class="lu-ten-to" style="--c:' + MAU_TO[i] + '"' + (i < S.soTo ? '' : ' hidden') + '><span aria-hidden="true">' + CON[i] + '</span>' +
+      ten += '<label class="lu-ten-to" style="--c:' + MAU_TO[i] + '"' + (i < S.soTo ? '' : ' hidden') + '>' + con(i, 'lu-ten-con') +
         '<input type="text" maxlength="20" data-i="' + i + '" value="' + esc(tenTo(i)) + '" aria-label="Tên đội ' + (i + 1) + '"></label>';
     }
     var chu = '';
     Object.keys(LOAI).forEach(function (k) {
-      chu += '<li><span class="lu-chu-ic lu-o--' + k + '">' + LOAI[k].ic + '</span><b>' + LOAI[k].ten + '</b> ' + LOAI[k].mo + '</li>';
+      chu += '<li><span class="lu-chu-ic lu-o--' + k + '">' + hinh(LOAI[k].hinh, 'lu-chu-img') + '</span><b>' + LOAI[k].ten + '</b> ' + LOAI[k].mo + '</li>';
     });
     $('#luMan').innerHTML =
       '<div class="lu-the lu-sanh">' +
         '<div class="lu-sanh-dau">' +
-          '<div class="lu-sanh-hinh" aria-hidden="true"><span>🏮</span>' + XUC_HTML.replace('id="luXuc"', '').replace('id="luXucKhoi"', '') + '</div>' +
+          '<div class="lu-sanh-hinh" aria-hidden="true">' + hinh('luot-den', 'lu-sanh-den') + XUC_HTML.replace('id="luXuc"', '').replace('id="luXucKhoi"', '') + '</div>' +
           '<div><h2>Đua về <span lang="zh">终点</span></h2>' +
           '<p class="lu-luat">Các đội lần lượt tung xúc xắc, đi từ <b lang="zh">起点</b> đến <b lang="zh">终点</b>. ' +
           'Dừng ở ô thường thì trả lời câu hỏi: đúng đứng vững, sai lùi 2 ô. Đội về đích đầu tiên thắng — tung dư cũng tính về đích.</p></div>' +
@@ -304,14 +308,14 @@
     S.o.forEach(function (loai, i) {
       var noi;
       if (loai === 'dau') noi = '<span class="lu-o-chu" lang="zh">起点</span>';
-      else if (loai === 'dich') noi = '<span class="lu-o-ic">🏮</span><span class="lu-o-chu" lang="zh">终点</span>';
+      else if (loai === 'dich') noi = hinh('luot-co', 'lu-o-ic') + '<span class="lu-o-chu" lang="zh">终点</span>';
       else if (loai === 'thuong') noi = '<span class="lu-o-so">' + i + '</span>';
-      else noi = '<span class="lu-o-ic">' + LOAI[loai].ic + '</span><span class="lu-o-nho">' + i + '</span>';
+      else noi = hinh(LOAI[loai].hinh, 'lu-o-ic') + '<span class="lu-o-nho">' + i + '</span>';
       var tieuDe = LOAI[loai] ? LOAI[loai].ten + ': ' + LOAI[loai].mo : loai === 'thuong' ? 'Ô ' + i + ': câu hỏi' : '';
       h += '<div class="lu-o lu-o--' + loai + '" data-i="' + i + '"' + (tieuDe ? ' title="' + esc(tieuDe) + '"' : '') + '>' + noi + '</div>';
     });
     S.doi.forEach(function (d, t) {
-      h += '<div class="lu-quan" data-t="' + t + '" style="--c:' + MAU_TO[t] + '"><span class="lu-quan-in">' + CON[t] + '<i class="lu-quan-cau" aria-hidden="true">🌉</i></span></div>';
+      h += '<div class="lu-quan" data-t="' + t + '" style="--c:' + MAU_TO[t] + '"><span class="lu-quan-in">' + con(t, 'lu-quan-con') + '<i class="lu-quan-cau" aria-hidden="true">' + hinh('luot-cau', 'lu-quan-cau-img') + '</i></span></div>';
     });
     return h;
   }
@@ -456,7 +460,7 @@
     $('#luDsDoi').innerHTML = S.doi.map(function (d, t) {
       var pt = Math.round(d.vi / N * 100);
       return '<li class="' + (t === S.luot && S.pha === 'choi' ? 'is-luot' : '') + '" style="--c:' + MAU_TO[t] + '">' +
-        '<span class="lu-ds-con" aria-hidden="true">' + CON[t] + '</span>' +
+        '<span class="lu-ds-con" aria-hidden="true">' + con(t, 'lu-con-img') + '</span>' +
         '<span class="lu-ds-ten">' + esc(tenTo(t)) + (d.ket ? ' <small>🌉 kẹt cầu</small>' : '') + '</span>' +
         '<span class="lu-ds-o">' + (d.vi >= N ? '🏁' : 'Ô ' + d.vi) + '</span>' +
         '<span class="lu-ds-thanh"><i style="width:' + pt + '%"></i></span>' +
@@ -467,7 +471,7 @@
     var t = S.luot, d = S.doi[t];
     $('#luLuot').style.setProperty('--c', MAU_TO[t]);
     $('#luLuot').innerHTML =
-      '<span class="lu-luot-con" aria-hidden="true">' + CON[t] + '</span>' +
+      '<span class="lu-luot-con" aria-hidden="true">' + con(t, 'lu-con-img') + '</span>' +
       '<span class="lu-luot-chu"><small>Lượt của</small><b>' + esc(tenTo(t)) + '</b></span>';
     var nut = $('#luTung');
     nut.innerHTML = d.ket ? '🌉 Trả lời để qua cầu <kbd>Space</kbd>' : '🎲 Tung xúc xắc <kbd>Space</kbd>';
@@ -610,7 +614,7 @@
   function bao(loai, tieuDe, moTa) {
     moPhu(
       '<div class="lu-bao lu-o--' + loai + '">' +
-        '<div class="lu-bao-ic" aria-hidden="true">' + LOAI[loai].ic + '</div>' +
+        '<div class="lu-bao-ic" aria-hidden="true">' + hinh(LOAI[loai].hinh, 'lu-bao-img') + '</div>' +
         '<p class="lu-bao-tieu">' + tieuDe + '</p>' +
         '<p class="lu-bao-mo">' + moTa + '</p>' +
       '</div>', 'bao');
@@ -634,7 +638,7 @@
     moPhu(
       '<div class="lu-hoi">' +
         '<div class="lu-hoi-dau">' +
-          '<span class="lu-hoi-to" style="--c:' + MAU_TO[t] + '">' + CON[t] + ' ' + esc(tenTo(t)) + '</span>' +
+          '<span class="lu-hoi-to" style="--c:' + MAU_TO[t] + '">' + con(t) + ' ' + esc(tenTo(t)) + '</span>' +
           '<span class="lu-hoi-nhan">' + nhan + '</span>' +
         '</div>' +
         (c.ctx ? '<div class="lu-hoi-ctx">🗣️ ' + esc(c.ctx) + '</div>' : '') +
@@ -649,7 +653,7 @@
           '<span class="lu-hoi-meo">Cô bấm đáp án của đội, hoặc gõ <kbd>A</kbd> <kbd>B</kbd> <kbd>C</kbd> <kbd>D</kbd></span>' +
         '</div>' +
       '</div>', 'hoi');
-    tin(CON[t] + ' ' + esc(tenTo(t)) + ' trả lời câu hỏi…');
+    tin(con(t) + ' ' + esc(tenTo(t)) + ' trả lời câu hỏi…');
   }
 
   function goiY() {
@@ -724,7 +728,7 @@
     moPhu(
       '<div class="lu-qua">' +
         '<div class="lu-qua-the">' +
-          '<div class="lu-qua-dau"><span class="lu-hoi-to" style="--c:' + MAU_TO[t] + '">' + CON[t] + ' ' + esc(tenTo(t)) + '</span><span>🎁 Thẻ thử thách</span></div>' +
+          '<div class="lu-qua-dau"><span class="lu-hoi-to" style="--c:' + MAU_TO[t] + '">' + con(t) + ' ' + esc(tenTo(t)) + '</span><span>🎁 Thẻ thử thách</span></div>' +
           '<div class="lu-qua-ic" aria-hidden="true">' + nv.ic + '</div>' +
           '<p class="lu-qua-nv">' + esc(nv.t) + '</p>' +
           (cau ? '<p class="lu-qua-cau" lang="zh">' + esc(cau) + '</p>' : '') +
@@ -792,7 +796,7 @@
       if (i > 0 && x.vi < ds[i - 1].vi) hang = i;
       return '<div class="lu-bxh-r' + (i === 0 ? ' is-nhat' : '') + '" style="--c:' + MAU_TO[x.t] + '">' +
         '<span class="lu-bxh-h">' + huy[hang] + '</span>' +
-        '<span class="lu-bxh-con" aria-hidden="true">' + CON[x.t] + '</span>' +
+        '<span class="lu-bxh-con" aria-hidden="true">' + con(x.t, 'lu-con-img') + '</span>' +
         '<span class="lu-bxh-ten">' + esc(tenTo(x.t)) + '<small>✅ ' + x.d.dung + ' câu đúng · ❌ ' + x.d.sai + ' câu sai</small></span>' +
         '<b>' + (x.t === t ? '🏁 <span lang="zh">终点</span>' : 'Ô ' + x.d.vi) + '</b>' +
       '</div>';
@@ -800,7 +804,7 @@
     moPhu(
       phaoGiay() +
       '<div class="lu-het">' +
-        '<div class="lu-het-con" aria-hidden="true">' + CON[t] + '</div>' +
+        '<div class="lu-het-con" aria-hidden="true">' + con(t, 'lu-het-img') + '</div>' +
         '<h2>🏆 ' + esc(tenTo(t)) + ' về <span lang="zh">终点</span> đầu tiên!</h2>' +
         '<div class="lu-bxh">' + bang + '</div>' +
         '<div class="lu-nut">' +

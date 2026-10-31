@@ -174,8 +174,12 @@
   function chipNut(k, v, nhan, on, tat) {
     return '<button type="button" class="dt-opt' + (on ? ' is-on' : '') + '" data-k="' + k + '" data-v="' + v + '"' + (tat ? ' disabled' : '') + '>' + nhan + '</button>';
   }
+  // Anh sprite trong /images/game
+  function hinh(ten, lop) {
+    return '<img' + (lop ? ' class="' + lop + '"' : '') + ' src="/images/game/' + ten + '.svg" alt="" draggable="false">';
+  }
   function logo() {
-    return '<span class="dt-logo-tau"><i class="is-dau"></i><i></i><i></i></span>';
+    return '<span class="dt-logo-tau">' + hinh('train-engine') + hinh('train-wagon-blue') + '</span>';
   }
   function veSanh() {
     if (window.NhacNen) window.NhacNen.tat();
@@ -321,12 +325,12 @@
   }
   function htmlToa(t) {
     var trai = t.loai === 'dau'
-      ? '<div class="dt-may" aria-hidden="true"><span class="dt-ong"><i></i><i></i><i></i><i></i></span><span class="dt-den"></span><span class="dt-ca-bin"></span></div>'
+      ? '<div class="dt-may" aria-hidden="true"><span class="dt-ong"><i></i><i></i><i></i><i></i></span>' + hinh('train-engine-face', 'dt-may-mat') + '</div>'
       : '<div class="dt-toa-trai" lang="zh">' + esc(t.trai) + '</div>';
     var phai = t.cau
       ? '<div class="dt-toa-phai" lang="zh"><span class="dt-cau">' + cauHtml(t.cau) + '</span>' +
           (S.muc === 'de' ? '<span class="dt-lua">' + t.cau.opts.map(esc).join(' · ') + '</span>' : '') + '</div>'
-      : '<div class="dt-toa-phai is-co"><span class="dt-co" aria-hidden="true">🚩</span><small>Toa cuối</small></div>';
+      : '<div class="dt-toa-phai is-co"><span class="dt-co" aria-hidden="true">' + hinh('train-flag') + '</span><small>Toa cuối</small></div>';
     var nhan = t.loai === 'dau' ? 'Đầu tàu' : (t.cau ? 'Toa ' : 'Toa cuối ') + t.trai;
     return '<div class="dt-toa is-' + t.loai + '" data-id="' + t.id + '"' +
       (t.loai !== 'dau' ? ' tabindex="0" role="button" aria-label="' + esc(nhan) + '"' : '') + ' style="--m:' + t.mau + '">' +

@@ -988,20 +988,31 @@
   function tugPct() { var t = state.tug; return 50 + t.pos * (42 / t.max); }
   function renderTug() {
     var t = state.tug, q = mcCur();
+    // Ban nho keo co mac ao mau to, deo bang dau theo linh vat (thu tu nhu TEAM_DEF)
+    var KID = ['rong', 'ho', 'gau-truc', 'cao', 'ca-heo', 'khong-tuoc'];
+    // Nhan ten to phia tren moi ben (o chon to, to mau theo to)
+    var nhan = function (s) {
+      return '<span class="lop-tug-ten ' + s + '" style="--tc:' + teamColor(t[s]) + '">' +
+        '<select class="lop-tug-sel" data-side="' + s + '" aria-label="Chọn tổ bên ' + (s === 'L' ? 'trái' : 'phải') + '">' + teamOpts(t[s]) + '</select></span>';
+    };
+    // Ban nho dung tren co trong canh san; ben thang/thua chi doi hieu ung
     var ben = function (s) {
       var i = t[s];
-      return '<div class="lop-tug-side ' + s + '" style="--tc:' + teamColor(i) + '">' +
-        '<span class="lop-tug-m">' + teamMascot(i) + '</span>' +
-        '<select class="lop-tug-sel" data-side="' + s + '" aria-label="Chọn tổ bên ' + (s === 'L' ? 'trái' : 'phải') + '">' + teamOpts(i) + '</select></div>';
+      return '<div class="lop-tug-side ' + s + (t.xong >= 0 ? (t.xong === i ? ' thang' : ' thua') : '') + '" style="--tc:' + teamColor(i) + '">' +
+        '<span class="lop-tug-m"><img src="/images/game/tug-kid-' + (KID[i] || KID[0]) + '.svg" alt="" draggable="false"></span>' +
+        '<img class="lop-tug-bui" src="/images/game/tug-dust.svg" alt="" draggable="false"></div>';
     };
     var nac = '';
     for (var k = -t.max; k <= t.max; k++) nac += '<i style="left:' + (50 + k * (42 / t.max)) + '%"></i>';
     $('#lopStage').innerHTML =
       '<div class="lop-stage-head"><span>Kéo co · tổ nào trả lời đúng trước kéo dây về phía mình — kéo ' + t.max + ' nấc là thắng</span></div>' +
-      '<div class="lop-tug">' + ben('L') +
-        '<div class="lop-tug-track"><div class="lop-tug-nac">' + nac + '</div><div class="lop-tug-rope"></div>' +
-          '<div class="lop-tug-knot" id="lopTugKnot" style="left:' + tugPct() + '%">🎀</div></div>' +
-        ben('R') + '</div>' +
+      '<div class="lop-tug" style="--tl:' + teamColor(t.L) + ';--tr:' + teamColor(t.R) + '">' +
+        '<div class="lop-tug-nhan">' + nhan('L') + nhan('R') + '</div>' +
+        '<div class="lop-tug-bai" role="img" aria-label="Sân kéo co">' +
+          '<div class="lop-tug-rope"></div>' + ben('L') + ben('R') +
+          '<div class="lop-tug-track"><div class="lop-tug-nac">' + nac + '</div>' +
+            '<img class="lop-tug-knot" id="lopTugKnot" src="/images/game/tug-flag.svg" alt="" draggable="false" style="left:' + tugPct() + '%"></div>' +
+        '</div></div>' +
       (t.xong >= 0
         ? '<div class="lop-tug-win" style="--tc:' + teamColor(t.xong) + '">' + teamMascot(t.xong) + ' <b>' + esc(teamName(t.xong)) + '</b> thắng kéo co!</div>' +
           '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopTugNew">Ván mới ▶</button></div>'

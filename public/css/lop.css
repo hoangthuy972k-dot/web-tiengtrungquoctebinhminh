@@ -1947,25 +1947,82 @@ body.lop-playing .lop-fx-card .lop-act.ghost { background: var(--color-gray-100)
 .lop-act.lop-team-act { background: var(--tc); color: #fff; box-shadow: 0 6px 0 color-mix(in srgb, var(--tc) 60%, #000); border: none; }
 .lop-act.lop-team-act:disabled { opacity: .4; }
 
-/* Keo co */
-.lop-tug { width: 100%; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: clamp(10px, 1.6vw, 22px); }
-.lop-tug-side { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.lop-tug-m {
-  width: clamp(64px, 8vw, 104px); height: clamp(64px, 8vw, 104px); border-radius: 50%; display: grid; place-items: center;
-  font-size: clamp(2.2rem, 4.4vw, 3.6rem); background: #fff; border: 5px solid var(--tc); box-shadow: 0 10px 24px rgba(0,0,0,.25);
+/* Keo co: canh san giong ban o nha (troi, doi, co, vach giua sang, day thung day, no vang).
+   --k = chieu cao sprite ban nho (viewBox 162 don vi; tay cach chan 60.5 = .3735k).
+   San cao 1.12k, chan cach day san .03k -> day (tam tay) o .7165k = 64% tu tren xuong.
+   Vach keo (noi no chay) nam giua hai ban nho: thut vao moi ben 1% + .78k. */
+.lop-tug {
+  --k: clamp(100px, min(13vw, 21vh), 210px);
+  --tl: #c9971c; --tr: #d2452f;
+  width: 100%; display: flex; flex-direction: column; gap: clamp(6px, 1vh, 12px);
 }
+.lop-tug-nhan { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.lop-tug-ten { display: inline-flex; min-width: 0; max-width: 48%; }
+.lop-tug-sel {
+  -webkit-appearance: none; appearance: none; max-width: 100%; min-width: 0; text-overflow: ellipsis; cursor: pointer;
+  font: inherit; font-weight: 800; font-size: clamp(1rem, 1.8vw, 1.6rem); line-height: 1.2;
+  color: #fff; background: var(--tc); border: 3px solid #2b1d3a; border-radius: 999px; padding: .3em 1.1em;
+  box-shadow: 0 4px 0 #2b1d3a; text-shadow: 0 2px 0 rgba(43,29,58,.35);
+}
+.lop-tug-sel option { color: #2b1d3a; background: #fff; text-shadow: none; }
+.lop-tug-sel:focus-visible { outline: 3px solid #ffcf5c; outline-offset: 3px; }
+.lop-tug-bai {
+  position: relative; height: calc(var(--k) * 1.12); overflow: hidden;
+  border: 4px solid #2b1d3a; border-radius: 26px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--tl) 16%, transparent) 0 50%, color-mix(in srgb, var(--tr) 16%, transparent) 50% 100%),
+    linear-gradient(180deg, transparent 0 64%, #8bc34a 64% 84%, #689f38 84%),
+    radial-gradient(ellipse 30% 30% at 18% 66%, #a5d6a7 0 98%, transparent 100%),
+    radial-gradient(ellipse 36% 36% at 80% 68%, #9ccc65 0 98%, transparent 100%),
+    radial-gradient(ellipse 7% 9% at 36% 20%, rgba(255,255,255,.92) 0 96%, transparent 100%),
+    radial-gradient(ellipse 4.5% 7% at 40.5% 14%, rgba(255,255,255,.92) 0 96%, transparent 100%),
+    radial-gradient(ellipse 6% 8% at 66% 26%, rgba(255,255,255,.85) 0 96%, transparent 100%),
+    linear-gradient(180deg, #7fccff 0%, #d9f2ff 64%);
+  box-shadow: 0 16px 40px rgba(0,0,0,.3);
+}
+.lop-tug-bai::before {
+  /* vach giua sang mau */
+  content: ''; position: absolute; left: 50%; top: 44%; bottom: 3%; width: 6px; margin-left: -3px;
+  border-radius: 3px; background: #fff8ec; opacity: .9;
+}
+.lop-tug-rope {
+  position: absolute; z-index: 1; left: 0; right: 0; top: 64%;
+  height: calc(var(--k) * .1); transform: translateY(-50%);
+  background: url(/images/game/tug-rope.svg) 0 0 / calc(var(--k) * .17) 100% repeat-x;
+  filter: drop-shadow(0 4px 0 rgba(43,29,58,.2));
+}
+.lop-tug-side { position: absolute; z-index: 2; bottom: 3%; height: var(--k); }
+.lop-tug-side.L { left: 1%; }
+.lop-tug-side.R { right: 1%; }
+.lop-tug-m { display: block; height: 100%; transform-origin: 50% 100%; }
+.lop-tug-m img { display: block; height: 100%; width: auto; user-select: none; -webkit-user-select: none; }
+.lop-tug-side.R .lop-tug-m img { transform: scaleX(-1); }
 .lop-tug-side.keo .lop-tug-m { animation: lopKeoL .5s ease; }
 .lop-tug-side.R.keo .lop-tug-m { animation-name: lopKeoR; }
 @keyframes lopKeoL { 40% { transform: translateX(-14px) rotate(-10deg); } }
 @keyframes lopKeoR { 40% { transform: translateX(14px) rotate(10deg); } }
-.lop-tug-sel { font: inherit; font-weight: 700; border-radius: 10px; padding: 4px 8px; border: 2px solid var(--tc); color: var(--color-gray-900); background: #fff; max-width: 170px; }
-.lop-tug-track { position: relative; height: clamp(70px, 10vh, 100px); }
-.lop-tug-nac i { position: absolute; top: 18%; bottom: 18%; width: 2px; background: rgba(255,255,255,.18); transform: translateX(-1px); }
-.lop-tug-nac i:first-child, .lop-tug-nac i:last-child { width: 6px; background: #ffcf5c; transform: translateX(-3px); border-radius: 3px; }
-.lop-tug-nac i:nth-child(6) { width: 4px; background: rgba(255,255,255,.6); transform: translateX(-2px); }
-.lop-tug-rope { position: absolute; left: 0; right: 0; top: 50%; height: 12px; transform: translateY(-50%); border-radius: 6px;
-  background: repeating-linear-gradient(120deg, #c89b5a 0 10px, #a0763c 10px 20px); box-shadow: 0 4px 10px rgba(0,0,0,.3); }
-.lop-tug-knot { position: absolute; top: 50%; transform: translate(-50%, -50%); font-size: clamp(2.2rem, 4vw, 3.2rem); transition: left .6s cubic-bezier(.3, 1.4, .5, 1); filter: drop-shadow(0 4px 6px rgba(0,0,0,.35)); }
+/* Bui tung len truoc chan, phong to khi vua keo */
+.lop-tug-bui { position: absolute; z-index: 3; bottom: -3%; width: calc(var(--k) * .3); height: auto; pointer-events: none; opacity: .9; transform-origin: 50% 100%; }
+.lop-tug-side.L .lop-tug-bui { left: calc(var(--k) * .55); }
+.lop-tug-side.R .lop-tug-bui { right: calc(var(--k) * .55); transform: scaleX(-1); }
+.lop-tug-side.keo .lop-tug-bui { animation: lopTugBui .6s ease-out; }
+.lop-tug-side.R.keo .lop-tug-bui { animation-name: lopTugBuiR; }
+@keyframes lopTugBui { 0% { transform: scale(.4); opacity: .3; } 50% { transform: scale(1.35); opacity: 1; } }
+@keyframes lopTugBuiR { 0% { transform: scaleX(-1) scale(.4); opacity: .3; } 50% { transform: scaleX(-1) scale(1.35); opacity: 1; } }
+.lop-tug-side.thang .lop-tug-m { animation: lopTugNhay .5s ease 3; }
+.lop-tug-side.thua { opacity: .6; }
+@keyframes lopTugNhay { 50% { transform: translateY(-14%); } }
+.lop-tug-track {
+  position: absolute; z-index: 3; top: 64%; height: calc(var(--k) * .44); transform: translateY(-50%);
+  left: calc(1% + var(--k) * .78); right: calc(1% + var(--k) * .78);
+}
+.lop-tug-nac i { position: absolute; top: 24%; bottom: 24%; width: 3px; background: rgba(255,255,255,.8); transform: translateX(-1.5px); border-radius: 2px; }
+.lop-tug-nac i:first-child, .lop-tug-nac i:last-child { top: 4%; bottom: 4%; width: 7px; background: #ffcf5c; transform: translateX(-3.5px); border-radius: 4px; box-shadow: 0 0 0 2.5px #2b1d3a; }
+.lop-tug-nac i:nth-child(6) { display: none; }
+.lop-tug-knot {
+  position: absolute; z-index: 1; top: 50%; width: calc(var(--k) * .3); height: auto; transform: translate(-50%, -23%);
+  transition: left .6s cubic-bezier(.3, 1.4, .5, 1); filter: drop-shadow(0 4px 3px rgba(0,0,0,.25));
+}
 .lop-tug-win {
   font-size: clamp(1.6rem, 3.6vw, 2.8rem); font-weight: 900; text-align: center; padding: 18px 28px; border-radius: 22px;
   background: #fff; color: var(--color-gray-900); box-shadow: 0 0 0 5px var(--tc, #ffcf5c), 0 20px 50px rgba(0,0,0,.35); animation: lopRise .5s ease both;
@@ -2010,11 +2067,12 @@ body.lop-playing .lop-fx-card .lop-act.ghost { background: var(--color-gray-100)
 
 @media (max-width: 800px) {
   .lop-mine { grid-template-columns: 1fr; }
-  .lop-tug { grid-template-columns: 1fr; }
+  .lop-tug { --k: clamp(72px, 17vw, 120px); }
+  .lop-tug-sel { font-size: .95rem; padding: .25em .8em; }
 }
 @media (prefers-reduced-motion: reduce) {
   .lop-tug-knot, .lop-train-car { transition: none; }
-  .lop-mine-cell, .lop-tug-side.keo .lop-tug-m { animation: none !important; }
+  .lop-mine-cell, .lop-tug-side.keo .lop-tug-m, .lop-tug-side.keo .lop-tug-bui, .lop-tug-side.thang .lop-tug-m { animation: none !important; }
 }
 .lop-mine > *, .lop-tug > *, .lop-train-row > * { min-width: 0; }
 

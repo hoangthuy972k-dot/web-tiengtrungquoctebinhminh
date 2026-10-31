@@ -13,6 +13,10 @@
     d.classList.add(lop);
   }
   function soVN(n) { return String(n).replace('.', ','); }
+  // Anh sprite trong /images/game (khong keo tha duoc, doc man hinh bo qua)
+  function hinh(ten, lop) {
+    return '<img class="' + (lop || '') + '" src="/images/game/' + ten + '.svg" alt="" draggable="false">';
+  }
   function themSai(ds, v) {
     for (var i = 0; i < ds.length; i++) if (ds[i].zh === v.zh) return;
     ds.push(v);
@@ -44,7 +48,7 @@
       function gioiThieu() {
         dungHen();
         T.manMoi(sk, {
-          ic: '💪',
+          ic: '<span class="tn-kc-moi">' + hinh('tug-kid') + hinh('tug-robot') + '</span>',
           ten: 'Kéo co',
           luat: 'Em 🧒 kéo co với Máy 🤖. Trả lời <b>đúng</b> thì nút dây dịch về phía em, <b>sai</b> thì về phía Máy. ' +
             'Máy cũng tự kéo sau mỗi vài giây — trả lời càng nhanh càng tốt! Kéo đủ <b>5 nấc</b> là thắng.',
@@ -87,12 +91,12 @@
             '" style="left:' + (50 + k * BUOC) + '%"></span>';
         }
         el.dau = T.tao('div', 'tn-kc-dau',
-          '<div class="tn-kc-nhan"><span class="tn-kc-nhan-em">🧒 Em</span><span class="tn-kc-muc-nho">' + T.esc(MUC[chon].ten) +
-            '</span><span class="tn-kc-nhan-may">Máy 🤖</span></div>' +
+          '<div class="tn-kc-nhan"><span class="tn-kc-nhan-em">' + hinh('tug-kid', 'tn-kc-nhan-ic') + ' Em</span><span class="tn-kc-muc-nho">' + T.esc(MUC[chon].ten) +
+            '</span><span class="tn-kc-nhan-may">Máy ' + hinh('tug-robot', 'tn-kc-nhan-ic') + '</span></div>' +
           '<div class="tn-kc-bai" role="img" aria-label="Sân kéo co">' + vach +
             '<div class="tn-kc-day"><span class="tn-kc-nut"></span></div>' +
-            '<span class="tn-kc-nguoi tn-kc-em" aria-hidden="true">🧒</span>' +
-            '<span class="tn-kc-nguoi tn-kc-may" aria-hidden="true">🤖</span>' +
+            hinh('tug-kid', 'tn-kc-nguoi tn-kc-em') +
+            hinh('tug-robot', 'tn-kc-nguoi tn-kc-may') +
           '</div>' +
           '<div class="tn-kc-dem"><span>Máy sắp kéo</span><i><b></b></i></div>');
         el.day = el.dau.querySelector('.tn-kc-day');
@@ -231,8 +235,9 @@
         sk.duoi.innerHTML = '';
         el = {};
         el.ray = T.tao('div', 'tn-dt-ray' + (T.itChuyenDong ? '' : ' chay'),
-          '<div class="tn-dt-dem" aria-live="polite">🚃 <b>0</b> toa</div>' +
-          '<div class="tn-dt-tau"><span class="tn-dt-dau" aria-hidden="true">🚂</span><div class="tn-dt-toas"></div></div>' +
+          '<div class="tn-dt-dem" aria-live="polite">' + hinh('train-wagon-red', 'tn-dt-dem-ic') + ' <b>0</b> toa</div>' +
+          '<div class="tn-dt-tau"><span class="tn-dt-dau" aria-hidden="true">' + hinh('train-engine') +
+            '<i class="tn-dt-khoi"></i><i class="tn-dt-khoi k2"></i><i class="tn-dt-khoi k3"></i></span><div class="tn-dt-toas"></div></div>' +
           '<div class="tn-dt-duong" aria-hidden="true"></div>');
         el.dem = el.ray.querySelector('.tn-dt-dem b');
         el.toas = el.ray.querySelector('.tn-dt-toas');
@@ -322,7 +327,7 @@
       }
 
       T.manMoi(sk, {
-        ic: '🚂',
+        ic: hinh('train-engine', 'tn-moi-hinh'),
         ten: 'Đoàn tàu tri thức',
         luat: 'Em có <b>60 giây</b>. Mỗi câu đúng gắn thêm <b>một toa</b> 🚃 vào đoàn tàu, câu sai làm <b>rớt toa cuối</b>. ' +
           'Trả lời nhanh và đúng liên tiếp được thưởng thêm 🔥.',
@@ -629,7 +634,7 @@
       }
 
       T.manMoi(sk, {
-        ic: '🧩',
+        ic: hinh('puzzle-piece', 'tn-moi-hinh'),
         ten: 'Lật mảnh ghép',
         luat: (laHinh ? 'Một bức tranh bí ẩn' : 'Một chữ Hán bí ẩn') + ' bị che bởi <b>9 mảnh ghép</b>. Chạm một mảnh, trả lời đúng để lật nó ra. ' +
           'Bấm <b>Đoán từ bí ẩn</b> bất cứ lúc nào — đoán càng sớm càng nhiều điểm, nhưng đoán sai mất 1 ❤️. Có <b>3 hình</b> và <b>3 tim</b>.' +

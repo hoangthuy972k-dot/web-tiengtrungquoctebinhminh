@@ -45,12 +45,17 @@ html.dt-open, html.dt-open body { overflow: hidden; }
 .dt-may.m2 { top: 26%; left: 55%; width: 12vw; animation-duration: 120s; animation-delay: -60s; opacity: .8; }
 @keyframes dt-may { from { transform: translateX(-30vw); } to { transform: translateX(110vw); } }
 .dt-doi {
-  position: absolute; left: -5%; right: -5%; bottom: 0; height: 40%;
+  position: absolute; left: -5%; right: -5%; bottom: 0; height: 44%;
   background:
-    radial-gradient(ellipse 40% 55% at 20% 100%, #7fbf5e 0 60%, transparent 61%),
-    radial-gradient(ellipse 50% 65% at 75% 100%, #6aad4c 0 60%, transparent 61%);
-  opacity: .7;
+    linear-gradient(180deg, transparent 0 82%, #689f38 82%),
+    radial-gradient(ellipse 34% 46% at 14% 100%, #7cb85a 0 98%, transparent 100%),
+    radial-gradient(ellipse 30% 40% at 52% 100%, #8bc34a 0 98%, transparent 100%),
+    radial-gradient(ellipse 40% 56% at 86% 100%, #6aad4c 0 98%, transparent 100%),
+    radial-gradient(ellipse 46% 74% at 32% 100%, #a5d6a7 0 98%, transparent 100%),
+    radial-gradient(ellipse 44% 70% at 72% 100%, #b5dfa0 0 98%, transparent 100%);
+  opacity: .85;
 }
+.dt-mat-troi { border: 3px solid rgba(43, 29, 58, .35); }
 
 /* ---------- thanh tren ---------- */
 .dt-bar {
@@ -120,20 +125,10 @@ html.dt-open, html.dt-open body { overflow: hidden; }
   width: clamp(86px, 10vw, 120px); aspect-ratio: 1; border-radius: 50%;
   background: radial-gradient(circle at 40% 35%, #e9f7ff, #b9e2f5 70%);
 }
-.dt-logo-tau { display: flex; align-items: flex-end; gap: 3px; }
-.dt-logo-tau i {
-  position: relative; display: block; width: clamp(18px, 2.2vw, 26px); height: clamp(14px, 1.7vw, 20px);
-  border-radius: 4px; background: #3f88c5;
-}
-.dt-logo-tau i:nth-child(3) { background: #4f9d69; }
-.dt-logo-tau i.is-dau { background: var(--dt-do); height: clamp(20px, 2.4vw, 28px); }
-.dt-logo-tau i.is-dau::before {
-  content: ''; position: absolute; left: 25%; bottom: 100%; width: 30%; height: 45%; background: #333; border-radius: 2px 2px 0 0;
-}
-.dt-logo-tau i::after {
-  content: ''; position: absolute; left: 12%; right: 12%; bottom: -5px; height: 6px;
-  background: radial-gradient(circle, #333 0 2.6px, transparent 3px) 0 0 / 50% 100% repeat-x;
-}
+.dt-logo-tau { display: flex; align-items: flex-end; gap: 1px; width: 82%; }
+.dt-logo-tau img { display: block; height: auto; min-width: 0; }
+.dt-logo-tau img:first-child { width: 62%; }
+.dt-logo-tau img + img { width: 36%; }
 .dt-luat { margin: 0; color: #5a4a36; line-height: 1.65; font-size: clamp(.98rem, 1.5vw, 1.12rem); }
 .dt-hang {
   display: grid; grid-template-columns: 120px 1fr; gap: 12px; align-items: center;
@@ -217,9 +212,8 @@ html.dt-open, html.dt-open body { overflow: hidden; }
 .dt-ga .dt-ray:last-child { margin-bottom: 0; }
 .dt-ray::after {
   /* ray thep + ta vet go */
-  content: ''; position: absolute; left: -8px; right: -8px; bottom: 2px; height: 12px; z-index: 0;
-  border-top: 3px solid #8b939c; border-bottom: 3px solid #8b939c;
-  background: repeating-linear-gradient(90deg, #7a5536 0 9px, transparent 9px 24px);
+  content: ''; position: absolute; left: -8px; right: -8px; bottom: -2px; height: 18px; z-index: 0;
+  background: url(/images/game/train-track.svg) 0 0 / 25px 18px repeat-x;
 }
 .dt-cho {
   position: relative; z-index: 1; min-width: 0;
@@ -241,13 +235,13 @@ html.dt-open, html.dt-open body { overflow: hidden; }
 /* moc noi giua hai toa */
 .dt-noi {
   position: absolute; z-index: 2; left: -18px; bottom: 24px;
-  width: 20px; height: 7px; border-radius: 3px; background: #3b3f45;
+  width: 20px; height: 8px; border-radius: 4px; background: #546e7a; box-shadow: 0 0 0 2.5px #2b1d3a;
 }
 .dt-noi b {
   position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%);
   width: 30px; height: 30px; border-radius: 50%;
   display: grid; place-items: center;
-  font-size: 1.1rem; color: #fff;
+  font-size: 1.1rem; color: #fff; border: 3px solid #2b1d3a;
 }
 .dt-noi b:empty { display: none; }
 .dt-cho.is-dung .dt-noi { background: #2f9a52; }
@@ -278,20 +272,22 @@ html.dt-open, html.dt-open body { overflow: hidden; }
   display: flex; gap: 6px;
   min-height: clamp(74px, 12.5vh, 140px); box-sizing: border-box;
   padding: 7px;
-  border-radius: 12px 12px 6px 6px;
+  border-radius: 14px 14px 8px 8px;
   background: var(--m);
-  box-shadow: inset 0 -7px 0 rgba(0, 0, 0, .2), 0 8px 16px rgba(20, 40, 60, .25);
+  border: 3px solid #2b1d3a;
+  box-shadow: inset 0 -8px 0 rgba(0, 0, 0, .2), inset 0 3px 0 rgba(255, 255, 255, .28), 0 8px 16px rgba(20, 40, 60, .25);
 }
 .dt-toa-than::before {
   /* mai toa */
-  content: ''; position: absolute; left: 5%; right: 5%; top: -8px; height: 9px;
-  border-radius: 6px 6px 0 0; background: var(--m); filter: brightness(.78);
+  content: ''; position: absolute; left: 5%; right: 5%; top: -12px; height: 9px;
+  border-radius: 7px 7px 0 0; background: var(--m); filter: brightness(.78);
+  border: 3px solid #2b1d3a; border-bottom: 0;
 }
 .dt-toa-trai {
   flex: 0 0 36%; min-width: 0;
   display: grid; place-items: center;
   padding: 4px; border-radius: 8px;
-  background: #fffbe6; color: #8e1f14;
+  background: #fff8ec; color: #8e1f14; box-shadow: inset 0 0 0 2px rgba(43, 29, 58, .3);
   font-family: 'Noto Sans SC', 'Be Vietnam Pro', sans-serif;
   font-size: clamp(1.1rem, 2.1vw, 2rem); font-weight: 800; line-height: 1.15;
   text-align: center; overflow-wrap: anywhere;
@@ -300,7 +296,7 @@ html.dt-open, html.dt-open body { overflow: hidden; }
   flex: 1; min-width: 0;
   display: flex; flex-direction: column; justify-content: center; gap: 3px;
   padding: 4px 7px; border-radius: 8px;
-  background: rgba(255, 255, 255, .94); color: #2b1a12;
+  background: rgba(255, 255, 255, .95); color: #2b1a12; box-shadow: inset 0 0 0 2px rgba(43, 29, 58, .2);
   font-family: 'Noto Sans SC', 'Be Vietnam Pro', sans-serif;
   font-size: clamp(.85rem, 1.3vw, 1.3rem); font-weight: 600; line-height: 1.3;
   overflow-wrap: anywhere;
@@ -310,20 +306,18 @@ html.dt-open, html.dt-open body { overflow: hidden; }
 .dt-o.is-dung { color: #fff; background: #2f7a4a; border-radius: .2em; padding: 0 .2em; }
 .dt-mui { color: #9a8468; font-weight: 400; }
 .dt-lua { font-size: .78em; color: #7a6650; font-weight: 500; border-top: 1px dashed #d9ccb4; padding-top: 2px; }
-.dt-toa-phai.is-co { align-items: center; text-align: center; background: rgba(255, 255, 255, .25); color: #fff; font-family: 'Be Vietnam Pro', sans-serif; }
-.dt-co { font-size: clamp(1.6rem, 3vw, 2.6rem); line-height: 1; animation: dt-co 1.6s ease-in-out infinite alternate; transform-origin: 20% 90%; }
+.dt-toa-phai.is-co { align-items: center; text-align: center; background: rgba(255, 255, 255, .25); color: #fff; font-family: 'Be Vietnam Pro', sans-serif; text-shadow: 0 2px 0 rgba(43, 29, 58, .45); }
+.dt-co { display: block; line-height: 0; animation: dt-co 1.6s ease-in-out infinite alternate; transform-origin: 15% 95%; }
+.dt-co img { display: block; height: clamp(30px, 4.4vh, 52px); width: auto; }
 @keyframes dt-co { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
 .dt-toa-phai.is-co small { font-weight: 700; font-size: .85rem; }
 .dt-banh {
   display: flex; justify-content: space-between;
-  padding: 0 12%; margin-top: -9px; position: relative; z-index: 1;
+  padding: 0 12%; margin-top: -11px; position: relative; z-index: 1;
 }
 .dt-banh i {
-  width: clamp(18px, 2.1vw, 28px); aspect-ratio: 1; border-radius: 50%;
-  background:
-    linear-gradient(90deg, transparent 45%, #9aa1a8 45% 55%, transparent 55%),
-    radial-gradient(circle, #c9ced3 0 22%, #2c3036 24% 64%, #5b6168 66%);
-  border: 2px solid #1f2226;
+  width: clamp(22px, 2.4vw, 32px); aspect-ratio: 1;
+  background: url(/images/game/train-wheel.svg) center / contain no-repeat;
 }
 .dt-toa:not(.is-dau):hover .dt-toa-than { filter: brightness(1.07); }
 .dt-toa.is-keo { opacity: .3; }
@@ -331,24 +325,28 @@ html.dt-open, html.dt-open body { overflow: hidden; }
 /* dau tau */
 .dt-toa.is-dau .dt-toa-than { background: linear-gradient(180deg, #d8432f, #a92519); }
 .dt-toa.is-dau .dt-toa-than::before { left: 34%; background: #7a1a14; filter: none; }
-.dt-may { position: relative; flex: 0 0 30%; min-width: 0; }
-.dt-ca-bin {
-  position: absolute; right: 6%; top: 8%; width: 46%; height: 42%;
-  border-radius: 6px; background: #ffe8a8; box-shadow: inset 0 0 0 3px #7a1a14;
-}
-.dt-den {
-  position: absolute; left: 4%; bottom: 14%; width: 22%; aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle, #fffbe0 0 40%, #ffd34d 70%); box-shadow: 0 0 16px 6px rgba(255, 220, 100, .55);
+.dt-toa.is-dau .dt-toa-than { box-shadow: inset 0 -8px 0 rgba(0, 0, 0, .2), inset 0 3px 0 rgba(255, 255, 255, .3), 0 8px 16px rgba(20, 40, 60, .25); }
+/* .dt-may trung ten voi dam may o nen: bo kieu dam may (nen trang, troi ngang) cho phan may cua dau tau */
+.dt-toa .dt-may { position: relative; flex: 0 0 30%; min-width: 0; height: auto; border-radius: 0; background: none; animation: none; }
+.dt-toa .dt-may::before, .dt-toa .dt-may::after { content: none; }
+.dt-may-mat {
+  position: absolute; left: 0; right: 0; bottom: -2px; top: 0; width: 100%; height: calc(100% + 2px);
+  object-fit: contain; object-position: center bottom; user-select: none; -webkit-user-select: none;
 }
 .dt-ong {
   position: absolute; left: 12%; bottom: 100%; margin-bottom: 7px;
-  width: 22%; height: 26px; border-radius: 4px 4px 0 0;
-  background: #2c3036; box-shadow: inset 0 4px 0 #555b62;
+  width: 22%; min-width: 14px; height: 26px; border-radius: 3px 3px 0 0; box-sizing: border-box;
+  background: #37474f; border: 3px solid #2b1d3a; border-bottom: 0; box-shadow: inset 3px 0 0 #607d8b;
+}
+.dt-ong::before {
+  /* mu ong khoi */
+  content: ''; position: absolute; left: -7px; right: -7px; top: -9px; height: 9px;
+  border-radius: 4px; background: #455a64; border: 3px solid #2b1d3a;
 }
 .dt-ong i {
   position: absolute; left: 50%; bottom: 100%;
-  width: 18px; height: 18px; margin-left: -9px; border-radius: 50%;
-  background: rgba(255, 255, 255, .85);
+  width: 30px; height: 23px; margin-left: -15px; margin-bottom: 6px;
+  background: url(/images/game/train-smoke.svg) center / contain no-repeat;
   opacity: 0;
   animation: dt-khoi 2.6s ease-out infinite;
 }
@@ -370,7 +368,7 @@ html.dt-open, html.dt-open body { overflow: hidden; }
 }
 
 /* ---------- tau chay ---------- */
-.dt-tau.is-chay .dt-ong i { animation-duration: .9s; width: 26px; height: 26px; margin-left: -13px; }
+.dt-tau.is-chay .dt-ong i { animation-duration: .9s; width: 38px; height: 29px; margin-left: -19px; }
 .dt-tau.is-chay .dt-toa { cursor: default; }
 .dt-tau.is-di .dt-banh i { animation: dt-quay .35s linear infinite; }
 @keyframes dt-quay { to { transform: rotate(360deg); } }
@@ -473,6 +471,7 @@ html.dt-open, html.dt-open body { overflow: hidden; }
   .dt-bai-hd { display: none; }
   .dt-tin { text-align: left; }
   .dt-noi { left: -12px; width: 14px; }
+  .dt-ong::before { left: -5px; right: -5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

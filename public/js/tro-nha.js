@@ -69,6 +69,10 @@
   function keuThang() { [523, 659, 784, 1047].forEach(function (f, i) { keu(f, 0.18, 'triangle', i * 0.11); }); }
   function rung(ms) { try { if (navigator.vibrate) navigator.vibrate(ms); } catch (e) { /* bo qua */ } }
   var itChuyenDong = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  // Hinh ve SVG cua tro choi (public/images/game/<ten>.svg) — thay cho emoji
+  function anh(ten, cls) {
+    return '<img class="' + (cls || 'tn-ic') + '" src="/images/game/' + ten + '.svg" alt="" draggable="false">';
+  }
 
   /* ---------------- cau hoi trac nghiem tu tu vung ----------------
      kieu 'zh': hien chu Han (khong pinyin) -> chon nghia tieng Viet
@@ -144,7 +148,8 @@
     var deBai = tao('div', 'tn-de', '&nbsp;');
     var meta = tao('div', 'tn-meta');
     var oDiem = tao('span', 'tn-chip tn-chip-diem', '<i>Điểm</i><b>0</b>');
-    var oTim = tao('span', 'tn-chip tn-chip-tim', '<b></b>');
+    var oTim = tao('span', 'tn-chip tn-chip-tim', '<b role="img"></b>');
+    var timTruoc = -1;
     var oGio = tao('span', 'tn-chip tn-chip-gio', '<i>Giây</i><b>—</b>');
     meta.appendChild(oDiem);
     if (tuy.tim) meta.appendChild(oTim);
@@ -163,9 +168,14 @@
         if (b.textContent !== String(n)) { b.textContent = n; oDiem.classList.remove('nhun'); void oDiem.offsetWidth; oDiem.classList.add('nhun'); }
       },
       tim: function (n, toiDa) {
-        var s = '';
-        for (var i = 0; i < (toiDa || 3); i++) s += i < n ? '❤️' : '🤍';
-        oTim.querySelector('b').textContent = s;
+        var s = '', max = toiDa || 3, b = oTim.querySelector('b');
+        for (var i = 0; i < max; i++) {
+          // tim vua mat thi nhun nhe cho de thay
+          s += anh(i < n ? 'ui-heart' : 'ui-heart-empty', 'tn-tim' + (i >= n && i < timTruoc ? ' vua-mat' : ''));
+        }
+        timTruoc = n;
+        b.innerHTML = s;
+        b.setAttribute('aria-label', 'Còn ' + Math.max(0, n) + '/' + max + ' tim');
       },
       gio: function (n) { oGio.querySelector('b').textContent = n; oGio.classList.toggle('thap', n <= 5); },
       // Hien tam mot dong chu bay len giua san (vd "+10", "Chuỗi 3!")
@@ -239,12 +249,12 @@
     var b = tao('div', 'tn-ketqua');
     b.innerHTML =
       '<div class="tn-kq-sao" aria-label="' + sao + ' sao">' + [0, 1, 2].map(function (i) {
-        return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.18) + 's">★</span>';
+        return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.18) + 's">' + anh(i < sao ? 'ui-star' : 'ui-star-empty', 'tn-kq-saoh') + '</span>';
       }).join('') + '</div>' +
       '<div class="tn-kq-tit">' + esc(kq.loi || (kq.thang === false ? 'Suýt nữa rồi!' : sao >= 3 ? 'Xuất sắc!' : sao >= 2 ? 'Giỏi lắm!' : 'Cố lên nhé!')) + '</div>' +
       '<div class="tn-kq-diem">' + kq.diem + ' <small>điểm</small></div>' +
       '<div class="tn-kq-chi">Đúng ' + kq.dung + '/' + kq.tong + (kq.chuoi > 1 ? ' · chuỗi dài nhất ' + kq.chuoi : '') + '</div>' +
-      '<div class="tn-kq-kl">' + (kl.moi ? '🏆 Kỷ lục mới!' : 'Kỷ lục của em: ' + Math.max(kl.cu, kq.diem)) + '</div>' +
+      '<div class="tn-kq-kl">' + (kl.moi ? anh('ui-trophy') + ' Kỷ lục mới!' : 'Kỷ lục của em: ' + Math.max(kl.cu, kq.diem)) + '</div>' +
       (tinhNgay ? '<div class="tn-kq-ngay">🔥 Đã tính 1 ngày học — giữ chuỗi ngày học của em</div>'
         : '<div class="tn-kq-ngay is-chua">Làm từ ' + SO_CAU_NGAY_HOC + ' câu trở lên để tính 1 ngày học</div>');
     var nut = tao('button', 'tn-nut tn-nut-chinh', '↻ Chơi lại');
@@ -287,7 +297,7 @@
   /* ---------------- dang ky ---------------- */
   var KHO = {}, THU_TU = [];
   window.TroNha = {
-    tao: tao, tron: tron, esc: esc, doc: doc, keu: keu, keuDung: function (khongSao) { keuDung(); if (!khongSao) ghiSao(true); },
+    tao: tao, tron: tron, esc: esc, doc: doc, anh: anh, keu: keu, keuDung: function (khongSao) { keuDung(); if (!khongSao) ghiSao(true); },
     keuSai: function () { keuSai(); ghiSao(false); }, keuThang: keuThang, rung: rung,
     itChuyenDong: itChuyenDong,
     cauHoi: cauHoi, boCau: boCau, oDapAn: oDapAn, khung: khung, demNguoc: demNguoc, ketQua: ketQua, manMoi: manMoi,

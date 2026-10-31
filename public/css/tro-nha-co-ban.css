@@ -1,32 +1,102 @@
-/* Tro choi tu choi o nha — Thu thach toc do, The lat */
+/* Tro choi tu choi o nha — Thu thach toc do, The lat
+   Hinh ve SVG o public/images/game/ (speed-*, flip-*). */
+
+/* ══════════════ THU THACH TOC DO ══════════════ */
+.tn-tocdo .tn-san {
+  background:
+    repeating-linear-gradient(115deg, rgba(124, 77, 255, .05) 0 14px, transparent 14px 36px),
+    radial-gradient(circle at 92% 8%, rgba(124, 77, 255, .18) 0 90px, transparent 91px),
+    var(--color-surface);
+}
 .tn-td-so { font-size: .85rem; font-weight: 800; color: var(--fg-text-muted); background: var(--color-gray-100); border-radius: 999px; padding: 2px 10px; }
-.tn-td-thanh { height: 10px; border-radius: 999px; background: var(--color-gray-100); overflow: hidden; }
-.tn-td-thanh i { display: block; height: 100%; width: 100%; border-radius: 999px; background: linear-gradient(90deg, #7c4dff, #e5484d); }
+/* Thanh thoi gian: dong ho + ray co vien dam, tia set o dau thanh */
+.tn-td-thanh { display: flex; align-items: center; gap: 10px; padding-right: 12px; }
+.tn-td-dh { flex: none; display: block; width: 46px; height: 46px; -webkit-user-drag: none; user-select: none; }
+.tn-td-thanh.thap .tn-td-dh { animation: tnTdRung .45s ease-in-out infinite; }
+.tn-td-ray {
+  position: relative; flex: 1; height: 20px; border-radius: 999px;
+  background: #ece6f7; border: 3px solid #2b1d3a; box-shadow: inset 0 3px 0 rgba(43, 29, 58, .12);
+}
+.tn-td-ray i {
+  position: relative; display: block; height: 100%; width: 100%; border-radius: 999px;
+  background: linear-gradient(180deg, #a98bff, #7c4dff); box-shadow: inset 0 -4px 0 #5b34d6, inset 0 3px 0 rgba(255, 255, 255, .35);
+  transition: width 1s linear, background .3s ease;
+}
+.tn-td-thanh.thap .tn-td-ray i { background: linear-gradient(180deg, #ff8a8f, #e5484d); box-shadow: inset 0 -4px 0 #b8323a, inset 0 3px 0 rgba(255, 255, 255, .35); }
+.tn-td-set {
+  position: absolute; right: -13px; top: 50%; width: 26px; height: 32px; margin-top: -16px;
+  pointer-events: none; -webkit-user-drag: none; user-select: none;
+}
+@keyframes tnTdRung { 25% { transform: rotate(-10deg); } 75% { transform: rotate(10deg); } }
 .tn-tocdo .tn-lua { flex: 1; }
 .tn-tocdo .tn-o { min-height: 90px; }
 
-.tn-thelat .tn-san { align-items: center; justify-content: center; }
+/* ══════════════ THE LAT ══════════════
+   The kem vien dam (goc trang tri kieu hoa van), mat sau do son;
+   phia sau la chong the up (flip-back.svg) cho cam giac bo bai. */
+.tn-thelat .tn-san {
+  align-items: center; justify-content: center;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(255, 184, 107, .24) 0 90px, transparent 91px),
+    radial-gradient(circle at 90% 90%, rgba(224, 112, 42, .16) 0 120px, transparent 121px),
+    var(--color-surface);
+}
 .tn-tl-dem { font-size: .95rem; font-weight: 800; color: var(--fg-gray-700); }
 .tn-tl-the {
-  position: relative; width: min(420px, 100%); aspect-ratio: 4 / 3; border: none; padding: 0; background: none; cursor: pointer;
-  perspective: 1200px; font: inherit;
+  position: relative; isolation: isolate; width: min(420px, calc(100% - 18px)); aspect-ratio: 4 / 3; margin: 0 0 12px;
+  border: none; padding: 0; background: none; cursor: pointer;
+  perspective: 1200px; font: inherit; -webkit-tap-highlight-color: transparent;
 }
+.tn-tl-the::before, .tn-tl-the::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; border-radius: 24px; border: 3.5px solid #2b1d3a;
+  background: url(/images/game/flip-back.svg) center / 100% 100% no-repeat, #5c6bc0;
+  box-shadow: 0 5px 0 #2b1d3a;
+}
+.tn-tl-the::before { transform: translate(12px, 12px) rotate(3.5deg); }
+.tn-tl-the::after { transform: translate(-7px, 9px) rotate(-2.5deg); }
+.tn-tl-the.cuoi::before, .tn-tl-the.cuoi::after { display: none; }
+.tn-tl-the:focus-visible { outline: none; }
+.tn-tl-the:focus-visible .tn-tl-mat { outline: 3px solid #ffd23f; outline-offset: 3px; }
 .tn-tl-mat {
   position: absolute; inset: 0; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
   backface-visibility: hidden; -webkit-backface-visibility: hidden; transition: transform .5s cubic-bezier(.3, 1.2, .5, 1);
-  box-shadow: 0 6px 0 var(--color-gray-300), var(--shadow-md); padding: 16px;
+  border: 3.5px solid #2b1d3a; padding: 16px;
 }
-.tn-tl-truoc { background: var(--color-surface); border: 2px solid var(--color-gray-200); }
-.tn-tl-sau { background: linear-gradient(150deg, #c84a33, #9e2f22); color: #fff; transform: rotateY(180deg); box-shadow: 0 6px 0 #6e2116, var(--shadow-md); }
+.tn-tl-truoc { background: #fff8ec; color: #2b1d3a; box-shadow: inset 0 -9px 0 #f3d6b3, 0 6px 0 #2b1d3a; }
+/* goc hoa van tren-trai va duoi-phai */
+.tn-tl-truoc::before, .tn-tl-truoc::after {
+  content: ''; position: absolute; width: clamp(34px, 10vw, 46px); height: clamp(34px, 10vw, 46px); pointer-events: none;
+  background: url(/images/game/flip-corner.svg) center / contain no-repeat;
+}
+.tn-tl-truoc::before { top: 12px; left: 12px; }
+.tn-tl-truoc::after { bottom: 18px; right: 12px; transform: rotate(180deg); }
+.tn-tl-sau {
+  background: linear-gradient(150deg, #e0603f, #b23a26); color: #fff; transform: rotateY(180deg);
+  box-shadow: inset 0 -9px 0 #8e2a1c, 0 6px 0 #2b1d3a;
+}
+.tn-tl-sau::before {
+  content: ''; position: absolute; inset: 10px 10px 18px; border-radius: 16px; pointer-events: none;
+  border: 2px solid rgba(255, 248, 236, .4);
+}
 .tn-tl-the.lat .tn-tl-truoc { transform: rotateY(-180deg); }
 .tn-tl-the.lat .tn-tl-sau { transform: rotateY(0deg); }
-.tn-tl-zh { font-family: var(--font-hanzi); font-size: clamp(3rem, 12vw, 4.6rem); font-weight: 700; color: var(--fg-gray-900); line-height: 1.1; }
-.tn-tl-py { font-size: 1.2rem; font-weight: 600; color: var(--fg-pinyin); }
-.tn-tl-goi { position: absolute; bottom: 12px; font-size: .8rem; font-weight: 700; color: var(--fg-text-muted); }
+.tn-tl-lap { position: absolute; top: 12px; right: 14px; width: clamp(40px, 12vw, 56px); height: auto; pointer-events: none; -webkit-user-drag: none; }
+.tn-tl-the.lat .tn-tl-lap { animation: tnTlLap .6s .2s cubic-bezier(.3, 1.5, .5, 1) both; }
+@keyframes tnTlLap { from { transform: scale(0) rotate(-60deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.tn-tl-zh { font-family: var(--font-hanzi); font-size: clamp(3rem, 12vw, 4.6rem); font-weight: 700; color: #2b1d3a; line-height: 1.1; }
+.tn-tl-py { font-size: 1.2rem; font-weight: 600; color: #b4451f; }
+.tn-tl-goi {
+  position: absolute; bottom: 18px; display: inline-flex; align-items: center; gap: 4px;
+  font-size: .82rem; font-weight: 800; color: #7a6450;
+}
+.tn-tl-goi .tn-ic { width: 1.7em; height: 1.7em; }
 .tn-tl-em { font-size: 2.6rem; line-height: 1; }
-.tn-tl-vn { font-size: clamp(1.4rem, 5vw, 1.9rem); font-weight: 800; text-align: center; }
+.tn-tl-vn { font-size: clamp(1.4rem, 5vw, 1.9rem); font-weight: 800; text-align: center; text-shadow: 0 2px 0 rgba(43, 29, 58, .25); }
 .tn-tl-hv { font-size: .95rem; font-weight: 700; color: #ffe2b8; }
-.tn-tl-zh2 { font-family: var(--font-hanzi); font-size: 1.05rem; opacity: .85; }
-.tn-tl-nghe { padding: 8px 16px; }
-@media (prefers-reduced-motion: reduce) { .tn-tl-mat { transition: none; } }
-.tn-td-thanh i { transition: width 1s linear; }
+.tn-tl-zh2 { font-family: var(--font-hanzi); font-size: 1.05rem; opacity: .9; }
+.tn-tl-nghe { padding: 8px 16px; display: inline-flex; align-items: center; gap: 6px; }
+.tn-tl-nghe .tn-ic { width: 1.5em; height: 1.5em; }
+@media (prefers-reduced-motion: reduce) {
+  .tn-tl-mat { transition: none; }
+  .tn-tl-the.lat .tn-tl-lap, .tn-td-thanh.thap .tn-td-dh { animation: none; }
+}

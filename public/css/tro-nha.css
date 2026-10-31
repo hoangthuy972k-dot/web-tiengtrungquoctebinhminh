@@ -26,7 +26,12 @@
 .tn-chip-diem i { color: #6b4405; }
 .tn-chip-diem b { color: #3a2410; }
 .tn-chip-diem.nhun { animation: tnNhun .35s ease; }
-.tn-chip-tim b { font-size: 1rem; letter-spacing: 2px; }
+.tn-chip-tim b { display: flex; align-items: center; gap: 3px; font-size: 1rem; line-height: 1; padding: 3px 0; }
+.tn-tim { display: block; width: 26px; height: 26px; -webkit-user-drag: none; user-select: none; }
+.tn-tim.vua-mat { animation: tnTimMat .5s ease; }
+@keyframes tnTimMat { 0% { transform: scale(1.35) rotate(-12deg); } 40% { transform: scale(.8) rotate(10deg); } 100% { transform: none; } }
+/* Bieu tuong SVG nho dat giua dong chu (thay emoji) */
+.tn-ic { display: inline-block; width: 1.3em; height: 1.3em; vertical-align: -.3em; -webkit-user-drag: none; user-select: none; pointer-events: none; }
 .tn-chip-gio.thap b { color: var(--fg-red-600); }
 @keyframes tnNhun { 50% { transform: scale(1.14); } }
 
@@ -74,9 +79,13 @@
 
 /* Man ket qua */
 .tn-ketqua { margin: auto; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; padding: 18px 0; }
-.tn-kq-sao { display: flex; gap: 6px; font-size: clamp(2.6rem, 9vw, 3.6rem); line-height: 1; }
-.tn-kq-sao span { color: var(--color-gray-200); }
-.tn-kq-sao span.on { color: #f2b33d; text-shadow: 0 3px 0 #b06f12; animation: tnSao .45s ease both; }
+.tn-kq-sao { display: flex; align-items: flex-end; gap: 4px; line-height: 1; }
+.tn-kq-sao span { display: block; }
+.tn-kq-sao span.on { animation: tnSao .45s ease both; }
+.tn-kq-saoh { display: block; width: clamp(54px, 15vw, 74px); height: auto; -webkit-user-drag: none; }
+.tn-kq-sao span:nth-child(1) .tn-kq-saoh { transform: rotate(-12deg); }
+.tn-kq-sao span:nth-child(2) .tn-kq-saoh { width: clamp(68px, 19vw, 94px); margin-bottom: 12px; }
+.tn-kq-sao span:nth-child(3) .tn-kq-saoh { transform: rotate(12deg); }
 @keyframes tnSao { from { transform: scale(0) rotate(-40deg); } 70% { transform: scale(1.25); } to { transform: none; } }
 .tn-kq-tit { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; color: var(--fg-gray-900); }
 .tn-kq-diem { font-size: clamp(2.2rem, 7vw, 3rem); font-weight: 900; color: var(--fg-red-600); font-variant-numeric: tabular-nums; line-height: 1; }
@@ -100,6 +109,8 @@
 /* Man gioi thieu truoc khi choi */
 .tn-moi { margin: auto; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; max-width: 520px; padding: 10px 0; }
 .tn-moi-ic { font-size: clamp(3rem, 12vw, 4.6rem); line-height: 1; }
+.tn-moi-ic .tn-moi-hinh { display: block; width: clamp(96px, 26vw, 136px); height: auto; animation: tnMoiNhun 2.4s ease-in-out infinite; -webkit-user-drag: none; }
+@keyframes tnMoiNhun { 50% { transform: translateY(-6px) rotate(-3deg); } }
 .tn-moi h2 { margin: 0; font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2rem); }
 .tn-moi p { margin: 0; color: var(--fg-gray-700); line-height: 1.6; }
 
@@ -112,7 +123,7 @@
   .tn-o-hinh { width: 28px; height: 28px; font-size: .9rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .tn-chip-diem.nhun, .tn-o.is-sai, .tn-bay, .tn-kq-sao span.on { animation: none !important; }
+  .tn-chip-diem.nhun, .tn-o.is-sai, .tn-bay, .tn-kq-sao span.on, .tn-tim.vua-mat, .tn-moi-ic .tn-moi-hinh { animation: none !important; }
 }
 
 /* Choi xong van tu 5 cau = 1 ngay hoc (giu chuoi) */

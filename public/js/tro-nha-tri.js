@@ -100,8 +100,8 @@
         luoi.addEventListener('keydown', onPhim);
         khung.appendChild(luoi);
         sk.san.appendChild(khung);
-        sk.san.appendChild(T.tao('p', 'tn-dm-meo', '🚩 Cắm cờ: giữ lâu · chuột phải · phím <b>F</b>'));
-        nutCo = T.tao('button', 'tn-nut tn-dm-nutco', '🚩 Cắm cờ');
+        sk.san.appendChild(T.tao('p', 'tn-dm-meo', T.anh('mine-flag') + ' Cắm cờ: giữ lâu · chuột phải · phím <b>F</b>'));
+        nutCo = T.tao('button', 'tn-nut tn-dm-nutco', T.anh('mine-flag') + ' Cắm cờ');
         nutCo.type = 'button';
         nutCo.addEventListener('click', function () {
           if (st.xong) return;
@@ -119,18 +119,18 @@
         var hang = Math.floor(i / CO) + 1, cot = i % CO + 1, ten = 'Ô hàng ' + hang + ' cột ' + cot;
         var cls = 'tn-dm-o', chu = '', nhan = ten;
         if (st.mo[i] && st.no[i]) {
-          cls += ' is-no'; chu = '💥'; nhan += ': mìn nổ';
+          cls += ' is-no'; chu = T.anh('mine-boom', 'tn-dm-hinh'); nhan += ': mìn nổ';
         } else if (st.mo[i]) {
           var k = st.ke[i];
           cls += ' is-mo' + (k ? ' n' + k : '');
           chu = k ? String(k) : '';
           nhan += k ? ': ' + k + ' mìn xung quanh' : ': trống';
         } else if (st.lo && st.min && st.min[i]) {
-          cls += ' is-lo'; chu = st.co[i] ? '🚩' : '💣'; nhan += ': có mìn';
+          cls += ' is-lo'; chu = T.anh(st.co[i] ? 'mine-flag' : 'mine-bomb', 'tn-dm-hinh'); nhan += ': có mìn';
         } else if (st.lo && st.co[i]) {
-          cls += ' is-cosai'; chu = '✖'; nhan += ': cắm cờ nhầm';
+          cls += ' is-cosai'; chu = T.anh('mine-flag-wrong', 'tn-dm-hinh'); nhan += ': cắm cờ nhầm';
         } else if (st.co[i]) {
-          cls += ' is-co'; chu = '🚩'; nhan += ': đã cắm cờ';
+          cls += ' is-co'; chu = T.anh('mine-flag', 'tn-dm-hinh'); nhan += ': đã cắm cờ';
         } else {
           nhan += ': chưa mở';
         }
@@ -144,7 +144,7 @@
         var co = 0, no = 0;
         for (var i = 0; i < TONG; i++) { if (st.co[i] && !st.mo[i]) co++; if (st.no[i]) no++; }
         var con = SO_MIN - co - no;
-        sk.deBai('<span class="tn-dm-dem" title="Số mìn chưa đánh dấu">💣 ' + con + '</span>' +
+        sk.deBai('<span class="tn-dm-dem" title="Số mìn chưa đánh dấu">' + T.anh('mine-bomb') + ' ' + con + '</span>' +
           '<span class="tn-dm-goi">' + (st.xong ? '' : st.coCo ? 'Chạm ô để cắm / gỡ cờ' : 'Chạm một ô để mở') + '</span>');
         sk.tim(st.tim, TIM);
         if (nutCo) {
@@ -309,7 +309,7 @@
         st.xong = true; st.lo = true; st.coCo = false;
         for (var i = 0; i < TONG; i++) veO(i);
         capNhat();
-        sk.deBai('<span class="tn-dm-goi">💥 Hết tim rồi — mìn nằm ở đây!</span>');
+        sk.deBai('<span class="tn-dm-goi">' + T.anh('mine-boom') + ' Hết tim rồi — mìn nằm ở đây!</span>');
         hen(function () {
           T.ketQua(sk, 'domin', {
             diem: st.diem, dung: st.dung, tong: st.tong, thang: false,
@@ -335,9 +335,9 @@
       }
 
       T.manMoi(sk, {
-        ic: '💣', ten: 'Dò mìn',
+        ic: T.anh('mine-bomb', 'tn-moi-hinh'), ten: 'Dò mìn',
         luat: 'Bãi mìn 5×5 giấu <b>5 quả mìn</b>. Chạm một ô rồi trả lời đúng để mở ô — số trên ô là số mìn ở 8 ô xung quanh. ' +
-          'Trả lời sai hoặc mở trúng mìn mất 1 ❤️. Giữ lâu / chuột phải / nút 🚩 để cắm cờ chỗ nghi có mìn. Mở hết ô an toàn là thắng!'
+          'Trả lời sai hoặc mở trúng mìn mất 1 ' + T.anh('ui-heart') + '. Giữ lâu / chuột phải / nút ' + T.anh('mine-flag') + ' để cắm cờ chỗ nghi có mìn. Mở hết ô an toàn là thắng!'
       }, moi);
       return {
         dung: function () {
@@ -642,7 +642,7 @@
       }
 
       T.manMoi(sk, {
-        ic: '🔗', ten: 'Kéo thả',
+        ic: T.anh('match-link', 'tn-moi-hinh'), ten: 'Kéo thả',
         luat: 'Kéo mỗi chữ Hán thả vào đúng <b>nghĩa tiếng Việt</b> — hoặc chạm chữ rồi chạm nghĩa. ' +
           'Có ' + Math.max(1, Math.min(SO_VONG, Math.floor(o.vocab.length / SO_TU))) + ' vòng, tổng <b>' + GIAY + ' giây</b>; ghép sai bị trừ ' + PHAT + ' giây, xong sớm được thưởng điểm.'
       }, moi);

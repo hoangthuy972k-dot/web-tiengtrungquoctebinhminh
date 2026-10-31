@@ -35,7 +35,9 @@
         var batDau = Date.now();
         sk.deBai('<span class="tn-td-so">Câu ' + st.i + '/' + SO_CAU + '</span>' + q.hoi);
         sk.san.innerHTML = '';
-        var thanh = T.tao('div', 'tn-td-thanh', '<i></i>');
+        // thanh thoi gian: dong ho ben trai, tia set chay o dau thanh
+        var thanh = T.tao('div', 'tn-td-thanh',
+          T.anh('speed-stopwatch', 'tn-td-dh') + '<span class="tn-td-ray"><i>' + T.anh('speed-bolt', 'tn-td-set') + '</i></span>');
         sk.san.appendChild(thanh);
         var go = T.oDapAn(sk.san, q, function (dung) {
           if (dh) dh.dung();
@@ -48,6 +50,7 @@
         dh = T.demNguoc(GIAY, function (con) {
           sk.gio(con);
           i.style.width = Math.max(0, con / GIAY * 100) + '%';
+          thanh.classList.toggle('thap', con <= 3);
         }, function () {
           go();
           T.keuSai();
@@ -73,7 +76,7 @@
         sk.deBai('');
         T.ketQua(sk, 'tocdo', { diem: st.diem, dung: st.dung, tong: SO_CAU, chuoi: st.dai, saiDs: st.sai }, moi);
       }
-      T.manMoi(sk, { ic: '⏱️', ten: 'Thử thách tốc độ', luat: '15 câu hỏi, mỗi câu <b>10 giây</b>. Trả lời đúng càng nhanh càng nhiều điểm, đúng liên tiếp được thưởng thêm 🔥.' }, moi);
+      T.manMoi(sk, { ic: T.anh('speed-stopwatch', 'tn-moi-hinh'), ten: 'Thử thách tốc độ', luat: '15 câu hỏi, mỗi câu <b>10 giây</b>. Trả lời đúng càng nhanh càng nhiều điểm, đúng liên tiếp được thưởng thêm 🔥.' }, moi);
       return { dung: function () { dang = false; clearTimeout(hen); if (dh) dh.dung(); } };
     }
   });
@@ -107,13 +110,14 @@
         sk.deBai('<span class="tn-tl-dem">Đã thuộc ' + thuoc + '/' + st.tong + '</span>');
         sk.san.innerHTML = '';
         sk.duoi.innerHTML = '';
-        var the = T.tao('button', 'tn-tl-the');
+        // chong the phia sau (chi la hinh trang tri): het chong thi bo
+        var the = T.tao('button', 'tn-tl-the' + (st.chong.length < 2 ? ' cuoi' : ''));
         the.type = 'button';
         the.setAttribute('aria-label', 'Lật thẻ');
         the.innerHTML =
           '<span class="tn-tl-mat tn-tl-truoc"><span class="tn-tl-zh">' + T.esc(v.zh) + '</span>' +
-            (v.py ? '<span class="tn-tl-py">' + T.esc(v.py) + '</span>' : '') + '<span class="tn-tl-goi">Chạm để lật</span></span>' +
-          '<span class="tn-tl-mat tn-tl-sau">' + (v.em ? '<span class="tn-tl-em">' + T.esc(v.em) + '</span>' : '') +
+            (v.py ? '<span class="tn-tl-py">' + T.esc(v.py) + '</span>' : '') + '<span class="tn-tl-goi">' + T.anh('flip-tap') + ' Chạm để lật</span></span>' +
+          '<span class="tn-tl-mat tn-tl-sau">' + T.anh('flip-sparkle', 'tn-tl-lap') + (v.em ? '<span class="tn-tl-em">' + T.esc(v.em) + '</span>' : '') +
             '<span class="tn-tl-vn">' + T.esc(v.vn) + '</span>' +
             (v.hv ? '<span class="tn-tl-hv">Hán Việt: ' + T.esc(v.hv) + '</span>' : '') +
             '<span class="tn-tl-zh2">' + T.esc(v.zh) + '</span></span>';
@@ -121,7 +125,7 @@
           the.classList.toggle('lat');
           if (the.classList.contains('lat')) T.doc(v.zh);
         });
-        var nghe = T.tao('button', 'tn-nut tn-tl-nghe', '🔊 Nghe');
+        var nghe = T.tao('button', 'tn-nut tn-tl-nghe', T.anh('flip-speaker') + ' Nghe');
         nghe.type = 'button';
         nghe.addEventListener('click', function () { T.doc(v.zh); });
         sk.san.appendChild(the);

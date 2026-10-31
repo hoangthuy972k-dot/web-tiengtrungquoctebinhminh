@@ -701,15 +701,29 @@ button.kt-hop[disabled] { cursor: default; filter: saturate(.6); opacity: .7; }
 /* ---------- dang cau moi: noi tu, nghe, sua cau sai ---------- */
 .kt-noi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 3vw, 40px); margin: 12px 0; text-align: left; }
 .kt-noi ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.kt-noi li {
-  display: flex; align-items: center; gap: 12px; min-height: 58px; padding: 8px 14px;
-  border-radius: 14px; border: 2px solid var(--kt-vien); background: #fff;
-  font-size: clamp(1.05rem, 2vw, 1.45rem); font-weight: 600;
+.kt-noi li { display: block; }
+.kt-noi-o {
+  --m: var(--kt-xanh);
+  width: 100%; display: flex; align-items: center; gap: 12px; min-height: 58px; padding: 8px 14px;
+  border-radius: 14px; border: 2px solid var(--kt-vien); background: #fff; color: var(--kt-chu);
+  font: inherit; font-size: inherit; font-weight: 600; text-align: left;
+  transition: border-color .15s ease, background .15s ease, transform .15s ease;
 }
-.kt-noi li b { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #3a2a24; color: #ffd98a; font-size: .95rem; }
+.kt-noi.is-bam .kt-noi-o:not([disabled]) { cursor: pointer; }
+.kt-noi.is-bam .kt-noi-o:not([disabled]):hover { border-color: var(--kt-vang); transform: translateY(-1px); }
+.kt-noi-o:focus-visible { outline: 3px solid var(--kt-vang); outline-offset: 2px; }
+.kt-noi-o[disabled] { cursor: default; }
+.kt-noi-o.is-chon { border-color: var(--kt-vang); background: #fff4dc; box-shadow: 0 0 0 4px rgba(233, 162, 59, .3); }
+.kt-noi-o.is-cap { border-color: var(--m); background: color-mix(in srgb, var(--m) 14%, #fff); }
+.kt-noi-o.is-cap b { background: var(--m); color: #fff; }
+.kt-noi-o.is-sai { border-color: var(--kt-do); background: #fbe7e2; animation: kt-rung .4s ease; }
+@keyframes kt-rung { 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
+.kt-noi-o b { flex: none; display: grid; place-items: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: #3a2a24; color: #ffd98a; font-size: .62em; }
 .kt-noi-trai .zh { font-size: 1.35em; }
-.kt-noi-phai li b { background: #6b4a2e; }
-.kt-noi-dap { margin-left: auto; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--kt-xanh); color: #fff; font-style: normal; font-weight: 800; animation: kt-pop .35s ease; }
+.kt-noi-phai .kt-noi-o b { background: #6b4a2e; }
+.kt-noi-tt { margin: 4px 0 0; color: var(--kt-nhat); font-weight: 600; }
+.kt-noi-tt b { color: var(--kt-chu); }
+.kt-noi-dap { margin-left: auto; display: grid; place-items: center; min-width: 1.6em; height: 1.6em; padding: 0 .3em; font-size: .7em; border-radius: 50%; background: var(--kt-xanh); color: #fff; font-style: normal; font-weight: 800; animation: kt-pop .35s ease; }
 .kt-nghe-to {
   display: inline-flex; flex-direction: column; align-items: center; gap: 6px; margin: 10px auto;
   padding: 18px 34px; border-radius: 24px; border: 3px dashed #c9a8e6; background: #f6effc; color: #5b3a80;
@@ -864,3 +878,4 @@ button.kt-min-o[disabled] { cursor: default; opacity: .7; }
   .kt *, .kt *::before, .kt *::after { animation: none !important; transition: none !important; }
 }
 @media print { .kt { display: none !important; } }
+.kt-noi-o.is-cap .kt-noi-dap { background: var(--m); }

@@ -23,6 +23,7 @@
     noi: '🔗 Nối từ – nghĩa', nghe: '🎧 Nghe – hiểu', dien: '🕳️ Điền từ vào câu', sualoi: '🔍 Sửa câu sai'
   };
   var CHU = ['A', 'B', 'C', 'D', 'E', 'F'];
+  var MAU_NOI = ['#3f7fb5', '#2f8a57', '#c77d3a', '#9b6bc7'];
 
   function str(s) { return s == null ? '' : String(s).replace(/\s+/g, ' ').trim(); }
   function mang(a) { return Array.isArray(a) ? a : []; }
@@ -311,7 +312,7 @@
         if (bon.length < 3) break;
         x = bon[0];
         var phai = tron(bon.map(function (v, i) { return i; }));
-        q = { lenh: 'Nối mỗi từ với nghĩa đúng (nói: 1 – C…)',
+        q = { lenh: 'Bấm một từ rồi bấm nghĩa của nó để nối (hoặc nói: 1 – C…)',
           de: { noi: { trai: bon.map(function (v) { return v.zh; }), phai: phai.map(function (i) { return bon[i].vn; }), dap: bon.map(function (v, i) { return phai.indexOf(i); }) } },
           dap: { them: bon.map(function (v, i) { return (i + 1) + ' – ' + CHU[phai.indexOf(i)]; }).join('   ·   ') },
           doc: '', tuDoc: '', goiY: 'Từ số 1 «' + bon[0].zh + '» nghĩa là «' + bon[0].vn + '»' };
@@ -875,13 +876,30 @@
         ? '<p class="kt-cau-mc' + coDai(d.mc.pre, false) + '">' + esc(d.mc.pre) + '</p>'
         : '<p class="kt-cau-mc zh">' + esc(d.mc.pre) + '<span class="kt-trong' + (dien ? ' is-dien' : '') + '">' + (dien ? esc(dien) : '＿＿') + '</span>' + esc(d.mc.post) + '</p>';
     } else if (d.noi) {
-      // Hai cot; lat dap an thi moi tu hien chu cai nghia dung ben canh
-      h += '<div class="kt-noi"><ol class="kt-noi-trai">' + d.noi.trai.map(function (t, i) {
-        return '<li><b>' + (i + 1) + '</b><span class="zh">' + esc(t) + '</span>' +
-          (o.lo ? '<em class="kt-noi-dap">' + CHU[d.noi.dap[i]] + '</em>' : '') + '</li>';
-      }).join('') + '</ol><ol class="kt-noi-phai">' + d.noi.phai.map(function (t, i) {
-        return '<li><b>' + CHU[i] + '</b><span>' + esc(t) + '</span></li>';
-      }).join('') + '</ol></div>';
+      // Hai cot bam duoc: bam tu ben trai roi nghia ben phai (hoac nguoc lai) de noi.
+      // Noi dung -> hai o cung mau + nhan "→ C"; lat dap an thi hien het cap dung.
+      var tt = q.noiTT || {}, cap = tt.cap || {}, nh = tt.nhay || {};
+      var capP = {};
+      Object.keys(cap).forEach(function (k) { capP[cap[k]] = +k; });
+      var khoaNoi = o.khoa || o.lo;
+      h += '<div class="kt-noi' + (khoaNoi ? '' : ' is-bam') + '"><ol class="kt-noi-trai">' + d.noi.trai.map(function (t, i) {
+        var da = cap[i] != null;
+        var cls = (da ? ' is-cap' : '') + (tt.chonT === i ? ' is-chon' : '') + (nh.t === i ? ' is-sai' : '');
+        return '<li><button type="button" class="kt-noi-o' + cls + '" data-k="noiTrai" data-v="' + i + '"' +
+          (da ? ' style="--m:' + MAU_NOI[i % 4] + '"' : '') + (khoaNoi || da ? ' disabled' : '') + '>' +
+          '<b>' + (i + 1) + '</b><span class="zh">' + esc(t) + '</span>' +
+          (da ? '<em class="kt-noi-dap">→ ' + CHU[cap[i]] + '</em>' : o.lo ? '<em class="kt-noi-dap">' + CHU[d.noi.dap[i]] + '</em>' : '') +
+          '</button></li>';
+      }).join('') + '</ol><ol class="kt-noi-phai">' + d.noi.phai.map(function (t, j) {
+        var da = capP[j] != null;
+        var cls = (da ? ' is-cap' : '') + (tt.chonP === j ? ' is-chon' : '') + (nh.p === j ? ' is-sai' : '');
+        return '<li><button type="button" class="kt-noi-o' + cls + '" data-k="noiPhai" data-v="' + j + '"' +
+          (da ? ' style="--m:' + MAU_NOI[capP[j] % 4] + '"' : '') + (khoaNoi || da ? ' disabled' : '') + '>' +
+          '<b>' + CHU[j] + '</b><span>' + esc(t) + '</span></button></li>';
+      }).join('') + '</ol></div>' +
+        (tt.sai || Object.keys(cap).length ? '<p class="kt-noi-tt">Đã nối đúng <b>' + Object.keys(cap).length + '</b>/' + d.noi.trai.length +
+          (tt.sai ? ' · nối nhầm <b>' + tt.sai + '</b> lần' : '') + '</p>' : '');
+      tt.nhay = null;
     } else if (d.nghe) {
       h += '<button type="button" class="kt-nghe-to" data-k="nghe" title="Nghe lại (S)"><span aria-hidden="true">🎧</span>' +
         'Nghe ' + esc(d.nghe) + ' — bấm để nghe lại</button>';
@@ -917,6 +935,8 @@
     if (g.cho) return h + '<button type="button" class="kt-go kt-go-sm" data-k="tiep">' + esc(g.choNhan || 'Tiếp tục') + ' ▶ <kbd>Space</kbd></button></div>';
     if (!g.lo) h += '<button type="button" class="kt-btn2 kt-lo" data-k="lo">👁 Xem đáp án <kbd>Enter</kbd></button>';
     var goi = g.q && g.q.luaChon && g.chon >= 0 ? (g.chon === g.q.luaChon.dung ? 'dung' : 'sai') : '';
+    var nt = g.q && g.q.de && g.q.de.noi && g.q.noiTT;
+    if (nt && Object.keys(nt.cap || {}).length === g.q.de.noi.trai.length) goi = !nt.sai ? 'dung' : nt.sai >= 2 ? 'sai' : '';
     if (kieu === 'boc') {
       h += '<span class="kt-cham-nhan">Chấm lá này:</span>';
       for (var n = 0; n <= 3; n++) {
@@ -955,6 +975,21 @@
     if (el && g.lo) el.scrollTop = el.scrollHeight;
   }
   function boCho(g) { g.cho = false; g.choNhan = ''; g.khoa = false; var t = g.tiep; g.tiep = null; if (t) t(); }
+
+  // Noi tu – nghia: bam mot o moi ben; du hai ben thi kiem tra cap
+  function noiBam(ben, v) {
+    var g = gHien(), q = g && g.q;
+    if (!q || !q.de || !q.de.noi || g.khoa || g.cho || g.lo) return;
+    var tt = q.noiTT || (q.noiTT = { cap: {}, sai: 0, chonT: -1, chonP: -1 });
+    if (ben === 'T') tt.chonT = tt.chonT === v ? -1 : v; else tt.chonP = tt.chonP === v ? -1 : v;
+    if (tt.chonT >= 0 && tt.chonP >= 0) {
+      if (q.de.noi.dap[tt.chonT] === tt.chonP) { tt.cap[tt.chonT] = tt.chonP; sndDung(); }
+      else { tt.sai++; tt.nhay = { t: tt.chonT, p: tt.chonP }; sndSai(); }
+      tt.chonT = -1; tt.chonP = -1;
+      if (Object.keys(tt.cap).length === q.de.noi.trai.length) sndXong();
+    } else sndChon();
+    GAME[S.cur.mode].ve();
+  }
 
   function loCau(g) {
     if (!g.q || g.lo) return;
@@ -2354,6 +2389,8 @@
       if (g) loCau(g);
     },
     opt: function (v) { var g = gHien(); if (g) chonDa(g, +v); },
+    noiTrai: function (v) { noiBam('T', +v); },
+    noiPhai: function (v) { noiBam('P', +v); },
     tiep: function () { var g = gHien(); if (g && g.cho) boCho(g); },
     cham: function (v) {
       var m = S.cur && S.cur.mode;

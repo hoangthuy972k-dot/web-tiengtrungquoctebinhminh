@@ -291,6 +291,8 @@ module.exports = function gan(app) {
     }).filter((c) => c.opts.length >= 2 && c.dung >= 0);
     if (!ds.length) return res.status(400).json({ error: 'Chưa có câu hỏi nào.' });
     p.ds = ds;
+    // Thong ke chua bai: moi cau dem so ban chon tung dap an
+    p.tk = ds.map((c) => c.opts.map(() => 0));
     p.pha = 'choi';
     p.batDau = Date.now();
     for (const h of p.hs.values()) { h.diem = 0; h.chuoi = 0; giaoBo(p, h); }
@@ -336,7 +338,7 @@ module.exports = function gan(app) {
     const p = layPhong(req, res); if (!p || !laGv(p, req, res)) return;
     if (p.kieu === 'chuong' && (req.body || {}).dong) p.dong = true;
     p.pha = 'het';
-    res.json({ ok: true, bxh: bangXepHang(p).slice(0, 10) });
+    res.json({ ok: true, bxh: bangXepHang(p).slice(0, 10), tk: p.kieu === 'nhip' ? (p.tk || null) : undefined });
   });
 
   app.post('/api/live/:ma/duoi', (req, res) => {
@@ -374,7 +376,7 @@ module.exports = function gan(app) {
       const bxh = bangXepHang(p);
       return res.json({ kieu: 'nhip', pha: p.pha, soHs: p.hs.size, tong: p.ds ? p.ds.length : 0, batDau: p.batDau,
         ds: [...p.hs.values()].sort((a, b) => a.vao - b.vao).map((h) => ({ pid: h.pid, ten: h.ten })),
-        soXong: bxh.filter((r) => r.xong).length, bxh, su: p.su || [] });
+        soXong: bxh.filter((r) => r.xong).length, bxh, su: p.su || [], tk: p.tk || null });
     }
     res.json({
       pha: p.pha, qid: p.qid, soHs: p.hs.size, daTL,
@@ -470,6 +472,7 @@ module.exports = function gan(app) {
       const chon = Number(b.chon);
       if (!Number.isInteger(chon) || chon < 0 || chon >= c.opts.length) return res.status(400).json({ error: 'Đáp án không hợp lệ.' });
       const dung = chon === c.dung;
+      if (p.tk && p.tk[h.thuTu[h.i]]) p.tk[h.thuTu[h.i]][chon]++;
       const truoc = thuTuPid(p);
       let cong = 0;
       if (dung) {

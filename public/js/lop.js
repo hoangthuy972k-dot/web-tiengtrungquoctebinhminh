@@ -880,6 +880,10 @@
     clearInterval(l.poll);
     var p = liveApi('POST', 'xong'); // liveApi doc state.live nen goi truoc khi xoa
     state.live = null;
+    // Thi dua tren dien thoai: so lieu chot cuoi cung cho man chua bai
+    p.then(function (d) {
+      if (d && d.tk && state.nhipChua) { state.nhipChua.tk = d.tk; if ($('#lopChua')) veChua(); }
+    }).catch(function () { /* */ });
     if (!hienBxh) { p.catch(function () { /* */ }); return; }
     p.then(function (d) { veBxhCuoi(d.bxh || []); }).catch(function () { /* */ });
   }
@@ -1173,6 +1177,7 @@
     catch (e) { return ''; }
   }
   function startNhip() {
+    state.nhipChua = null;
     $('#lopScorebar').hidden = true;
     stopTimer();
     state.nhipSo = state.nhipSo || 10;
@@ -1195,15 +1200,21 @@
     liveApi('GET', 'gv').then(function (d) {
       if (state.live !== l || state.game !== 'nhip') return;
       l.info = d;
+      // Dang xem thong ke giua cuoc thi: cap nhat so lieu, giu nguyen cau dang xem
+      if ($('#lopChua') && state.nhipChua && state.nhipChua.dangChoi) { state.nhipChua.tk = d.tk || []; veChua(); return; }
       renderNhip();
     }).catch(function () { /* mang chap chon: lan sau thu lai */ });
   }
   function renderNhip() {
     var l = state.live;
     if (!l) {
+      var cc = state.nhipChua && state.nhipChua.cau.length ? state.nhipChua : null;
       $('#lopStage').innerHTML = '<div class="lop-tug-win">Phiên thi đã kết thúc</div>' +
-        '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopNhipMoi">Mở phòng mới ▶</button></div>';
+        '<div class="lop-stage-actions">' +
+          (cc ? '<button type="button" class="lop-act" id="lopNhipChuaXem">📊 Chữa bài — xem lại ' + cc.cau.length + ' câu và số bạn chọn từng đáp án</button>' : '') +
+          '<button type="button" class="lop-act' + (cc ? ' ghost' : '') + '" id="lopNhipMoi">Mở phòng mới ▶</button></div>';
       $('#lopNhipMoi').addEventListener('click', startNhip);
+      if (cc) $('#lopNhipChuaXem').addEventListener('click', function () { cc.xem = 'tong'; veChua(); });
       return;
     }
     var d = l.info || { pha: 'cho', ds: [], bxh: [], soHs: 0 };
@@ -1267,6 +1278,7 @@
           '<div class="lop-nhip-bxh" id="lopNhipBxh" hidden></div>' +
           '<div class="lop-stage-actions">' +
             '<button type="button" class="lop-act ghost" id="lopNhipXem">📋 Xem dạng danh sách</button>' +
+            '<button type="button" class="lop-act ghost" id="lopNhipChua">📊 Thống kê từng câu</button>' +
             '<button type="button" class="lop-act" id="lopNhipEnd">🏁 Kết thúc &amp; trao giải</button>' +
           '</div>';
         l.cham = {}; l.suMoi = 0; l.xem = 'nui';
@@ -1276,9 +1288,16 @@
           $('#lopNhipBxh').hidden = l.xem === 'nui';
           this.textContent = l.xem === 'nui' ? '📋 Xem dạng danh sách' : '⛰️ Xem đoàn leo núi';
         });
+        $('#lopNhipChua').addEventListener('click', function () {
+          var moi = (state.live && state.live.info) || d;
+          state.nhipChua = { cau: l.cau || [], tk: moi.tk || [], i: 0, lo: false, xem: 'tong', dangChoi: true };
+          veChua();
+        });
         $('#lopNhipEnd').addEventListener('click', function () {
           var moi = (state.live && state.live.info) || d; // so lieu moi nhat, khong phai luc dung khung
           if (moi.soXong < moi.soHs && !confirm('Còn bạn chưa làm xong. Kết thúc luôn?')) return;
+          // Giu bo cau + thong ke de chua bai sau khi ket thuc (so lieu chot khi may chu tra ve)
+          state.nhipChua = { cau: l.cau || [], tk: moi.tk || [], i: 0, lo: false, xem: 'tong' };
           liveKetThuc(true);
           renderNhip();
         });
@@ -1374,6 +1393,85 @@
     });
     if (su[0]) l.suMoi = Math.max(l.suMoi, su[0].id);
   }
+  /* ---- Chua bai sau Thi dua tren dien thoai: tung cau + so ban chon moi dap an ---- */
+  function chuaSo(c, t) {
+    t = t || [];
+    var tong = t.reduce(function (a, b) { return a + b; }, 0);
+    return { tong: tong, dung: t[c.dung] || 0, pt: tong ? Math.round(100 * (t[c.dung] || 0) / tong) : 0 };
+  }
+  function veChua() {
+    var cc = state.nhipChua;
+    if (!cc) return;
+    var CH = ['A', 'B', 'C', 'D'];
+    var nut = '<div class="lop-chua-nut">' +
+      (cc.xem === 'cau' ? '<button type="button" class="lop-act ghost" data-chua="tong">☰ Tất cả câu</button>' : '') +
+      '<button type="button" class="lop-act ghost" data-chua="dong">' + (cc.dangChoi ? '← Quay lại cuộc thi' : '← Xong') + '</button></div>';
+    var h;
+    if (cc.xem === 'tong') {
+      // Tong quan: moi cau mot o, mau theo ti le dung; co the dua cau sai nhieu len truoc
+      var ds = cc.cau.map(function (c, i) { return { i: i, c: c, s: chuaSo(c, cc.tk[i]) }; });
+      if (cc.sapSai) ds.sort(function (a, b) { return (a.s.tong ? a.s.pt : 101) - (b.s.tong ? b.s.pt : 101); });
+      h = '<div class="lop-chua-dau"><b>📊 Chữa bài</b><span>' + cc.cau.length + ' câu · bấm vào câu để chữa</span>' +
+        '<label class="lop-chua-sap"><input type="checkbox" id="lopChuaSap"' + (cc.sapSai ? ' checked' : '') + '> Câu sai nhiều lên trước</label>' + nut + '</div>' +
+        '<div class="lop-chua-luoi">' + ds.map(function (x) {
+          var cls = !x.s.tong ? 'is-chua' : x.s.pt >= 80 ? 'is-tot' : x.s.pt >= 50 ? 'is-vua' : 'is-kem';
+          return '<button type="button" class="lop-chua-o ' + cls + '" data-chua-i="' + x.i + '">' +
+            '<span class="lop-chua-so">Câu ' + (x.i + 1) + '</span>' +
+            '<span class="lop-chua-cau">' + esc(x.c.zh) + '</span>' +
+            '<b>' + (x.s.tong ? x.s.pt + '% đúng' : 'chưa ai làm') + '</b><small>' + (x.s.tong ? x.s.dung + '/' + x.s.tong + ' bạn' : '') + '</small></button>';
+        }).join('') + '</div>';
+    } else {
+      var i = Math.max(0, Math.min(cc.cau.length - 1, cc.i)), c = cc.cau[i];
+      var t = cc.tk[i] || c.opts.map(function () { return 0; });
+      var s = chuaSo(c, t), max = Math.max.apply(null, t.concat([1]));
+      h = '<div class="lop-chua-dau"><b>📊 Chữa bài · Câu ' + (i + 1) + '/' + cc.cau.length + '</b>' +
+        '<span>' + (s.tong ? s.tong + ' bạn đã làm câu này' + (cc.lo ? ' · <b>' + s.dung + ' bạn đúng (' + s.pt + '%)</b>' : '') : 'Chưa bạn nào làm câu này') + '</span>' + nut + '</div>' +
+        '<div class="lop-chua-the">' +
+          (c.ctx ? '<p class="lop-chua-ctx">' + esc(c.ctx) + '</p>' : '') +
+          '<p class="lop-chua-q">' + esc(c.zh) + '</p>' +
+          '<div class="lop-chua-dap">' + c.opts.map(function (o, k) {
+            var n = t[k] || 0, pt = s.tong ? Math.round(100 * n / s.tong) : 0;
+            var cls = cc.lo ? (k === c.dung ? ' is-dung' : (n && n === max ? ' is-nham' : '')) : '';
+            return '<div class="lop-chua-opt' + cls + '"><span class="lop-chua-chu">' + CH[k] + '</span>' +
+              '<span class="lop-chua-txt">' + esc(o) + (cc.lo && k === c.dung ? ' ✓' : '') + '</span>' +
+              '<span class="lop-chua-thanh"><i style="width:' + (s.tong ? Math.round(100 * n / max) : 0) + '%"></i></span>' +
+              '<span class="lop-chua-n"><b>' + n + '</b> bạn<small>' + pt + '%</small></span></div>';
+          }).join('') + '</div>' +
+          (cc.lo && c.why ? '<p class="lop-chua-why">💡 ' + esc(c.why) + '</p>' : '') +
+        '</div>' +
+        '<div class="lop-stage-actions">' +
+          '<button type="button" class="lop-act ghost" data-chua="truoc"' + (i ? '' : ' disabled') + '>← Câu trước</button>' +
+          (cc.lo ? '' : '<button type="button" class="lop-act" data-chua="lo">👁 Hiện đáp án (Space)</button>') +
+          '<button type="button" class="lop-act' + (cc.lo ? '' : ' ghost') + '" data-chua="sau"' + (i < cc.cau.length - 1 ? '' : ' disabled') + '>Câu sau →</button>' +
+        '</div>';
+      cc.i = i;
+    }
+    $('#lopStage').innerHTML = '<div class="lop-chua" id="lopChua">' + h + '</div>';
+    var sap = $('#lopChuaSap');
+    if (sap) sap.addEventListener('change', function () { cc.sapSai = sap.checked; veChua(); });
+    $all('#lopChua [data-chua-i]').forEach(function (b) {
+      b.addEventListener('click', function () { cc.i = +b.getAttribute('data-chua-i'); cc.xem = 'cau'; cc.lo = false; veChua(); });
+    });
+    $all('#lopChua [data-chua]').forEach(function (b) {
+      b.addEventListener('click', function () { chuaLam(b.getAttribute('data-chua')); });
+    });
+  }
+  function chuaLam(k) {
+    var cc = state.nhipChua;
+    if (!cc) return;
+    if (k === 'dong') {
+      // Dang thi: ve lai khung leo nui; da ket thuc: ve man ket thuc
+      if (cc.dangChoi && state.live) state.live.ve = '';
+      renderNhip();
+      return;
+    }
+    if (k === 'tong') cc.xem = 'tong';
+    else if (k === 'lo') { cc.lo = true; try { sndUp(); } catch (e) { /* */ } }
+    else if (k === 'truoc' && cc.i > 0) { cc.i--; cc.lo = false; }
+    else if (k === 'sau' && cc.i < cc.cau.length - 1) { cc.i++; cc.lo = false; }
+    veChua();
+  }
+
   function nhipBatDau() {
     var l = state.live;
     if (!l) return;
@@ -1390,6 +1488,7 @@
     });
     liveApi('POST', 'batdau', { cau: cau }).then(function () {
       l.bd = Date.now();
+      l.cau = cau;
       try { sndFanfare(); } catch (e) { /* */ }
       nhipTai();
     }).catch(function (e) { b.disabled = false; alert(e.message); });
@@ -3468,6 +3567,16 @@
       chamBuild(row.getAttribute('data-id'), parseInt(b.getAttribute('data-d'), 10));
     });
 
+    // Man chua bai (Thi dua tren dien thoai): ← → doi cau, Space / Enter hien dap an roi sang cau sau
+    document.addEventListener('keydown', function (e) {
+      if ($('#lopPlay').hidden || !$('#lopChua') || !state.nhipChua || state.nhipChua.xem !== 'cau') return;
+      if (e.target && /input|select|textarea/i.test(e.target.tagName)) return;
+      var k = e.code === 'Space' || e.key === 'Enter' ? 'lo' : e.key === 'ArrowRight' ? 'sau' : e.key === 'ArrowLeft' ? 'truoc' : '';
+      if (!k) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      chuaLam(k === 'lo' && state.nhipChua.lo ? 'sau' : k);
+    }, true);
     document.addEventListener('keydown', function (e) {
       if ($('#lopPlay').hidden) return;
       if (e.target && /input|select|textarea/i.test(e.target.tagName)) return;

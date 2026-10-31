@@ -60,7 +60,7 @@
 
   // Doc tieng Trung: giong Google qua /api/tts (co bo nho dem), loi thi giong trinh duyet.
   // Goi xong(cb) khi doc het de bat dau tinh gio.
-  var dem = {};
+  var dem = {}, ttsHong = false; // may chu chua co giong Google (503) thi dung giong trinh duyet ca buoi
   function imLang() {
     if (S.audio) { try { S.audio.pause(); } catch (e) { /* */ } S.audio = null; }
     if (window.speechSynthesis) window.speechSynthesis.cancel();
@@ -86,8 +86,9 @@
       if (p && p.catch) p.catch(trinhDuyet);
     }
     if (dem[text]) { phat(dem[text]); return; }
+    if (ttsHong) { trinhDuyet(); return; }
     fetch('/api/tts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: text.slice(0, 200) }) })
-      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (r) { if (r.status === 503) ttsHong = true; return r.ok ? r.json() : Promise.reject(); })
       .then(function (d) { if (!d.audioContent) throw new Error(); dem[text] = d.audioContent; phat(d.audioContent); })
       .catch(trinhDuyet);
   }

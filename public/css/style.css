@@ -9508,3 +9508,59 @@ html.ho-tro-toi[data-theme="dark"] { --kdp-accent: var(--color-red-500); --kdp-o
 .htp-ai s { color: var(--xt-a51f1f); }
 .htp-ai b { color: var(--xt-1f6b3d); }
 .htp-ai.is-du { background: var(--color-gold-50); border-color: transparent; font-size: 0.9rem; }
+
+/* ══ Đồng bộ cỡ chữ câu hỏi / đáp án trong các mục của bài học ══════════════
+   Mọi dạng bài (trắc nghiệm, điền từ, xếp câu, nối từ, hội thoại, nghe, dịch,
+   sách bài tập, ôn nhanh, kiểm tra cuối bài, ngữ pháp) dùng chung 2 cỡ:
+   --bh-cau cho câu hỏi, --bh-dap cho đáp án. Co theo màn hình.            */
+:root {
+  --bh-cau: clamp(1.25rem, 1.05rem + 0.8vw, 1.6rem);
+  --bh-dap: clamp(1.15rem, 1rem + 0.6vw, 1.45rem);
+}
+/* Câu hỏi */
+body .mc-prompt,
+body .dp-quiz-qtext,
+body .lp-question-text,
+body .mt-q-prompt .hanzi,
+body .fg-text,
+body .fq-q,
+body .lq-q,
+body .qr-question,
+body .qr-prompt,
+body .npt-cau,
+body .tp-prompt-vi {
+  font-size: var(--bh-cau);
+  line-height: 1.55;
+}
+/* Đáp án / thẻ chữ */
+body .vp-option-btn,
+body .vp-option-btn.hanzi,
+body .dp-quiz-opt,
+body .lp-opt-btn,
+body .mt-opt-body .hanzi,
+body .qr-opt-text,
+body .qr-opts.is-zh .qr-opt-text,
+body .lq-opt,
+body .mg-item,
+body .sg-chip,
+body .sg-placed,
+body .npt-chip,
+body .fg-input,
+body .tp-input {
+  font-size: var(--bh-dap);
+  line-height: 1.4;
+}
+/* Bố cục: câu hỏi tách rõ khỏi đáp án, đáp án cao đều, số câu to theo chữ */
+body .mc-prompt { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; margin-bottom: var(--space-3); font-weight: 600; }
+body .mc-prompt .mc-sub { flex-basis: 100%; margin: 2px 0 0; }
+body .mc-prompt .fg-num, body .fg-num { min-width: 1.7em; height: 1.7em; font-size: calc(var(--bh-cau) * .55); }
+body .mc-sub { font-size: 0.9rem; }
+body .mc-opts { gap: var(--space-3); }
+body .vp-option-btn { min-height: 64px; padding: 12px 18px; text-align: left; }
+body .mt-opt-py, body .mt-q-py { font-size: 0.85rem; }
+body .mt-opt-key { font-size: 0.85rem; }
+body .dp-quiz-qtext { font-weight: 600; }
+body .lq-opt { min-height: 56px; }
+@media (max-width: 640px) {
+  body .vp-option-btn { min-height: 56px; padding: 10px 14px; }
+}

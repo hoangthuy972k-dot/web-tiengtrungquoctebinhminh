@@ -14639,11 +14639,19 @@
         best = (Number(r.correct) || 0) / r.total;
         if (r.bt > 0) best = Math.max(best, (Number(r.bc) || 0) / r.bt);
       }
-      return '<button type="button" class="game-picker-card"' + (count ? ' data-game-type="' + type + '"' : ' disabled') + '>' +
+      // The ngang: bieu tuong trai, ten + mo ta + nhan (so cau, ket qua tot nhat) ben phai
+      return '<button type="button" class="game-picker-card' + (best !== null ? (best >= 0.7 ? ' is-dat' : ' is-chua') : '') + '"' + (count ? ' data-game-type="' + type + '"' : ' disabled') + '>' +
         '<div class="game-picker-icon">' + uiIcon(type) + '</div>' +
-        '<div class="game-picker-title">' + def.label + '</div>' +
-        '<div class="game-picker-desc">' + (count ? def.desc : 'Chưa có nội dung') + '</div>' +
-        (best !== null ? '<div class="game-picker-best' + (best >= 0.7 ? ' is-ok' : '') + '">Đã làm · tốt nhất ' + Math.round(best * 100) + '%</div>' : '') +
+        '<div class="game-picker-body">' +
+          '<div class="game-picker-title">' + def.label + '</div>' +
+          '<div class="game-picker-desc">' + (count ? def.desc : 'Chưa có nội dung') + '</div>' +
+          '<div class="game-picker-tags">' +
+            (count ? '<span class="game-picker-so">' + count + ' câu</span>' : '') +
+            (best !== null ? '<span class="game-picker-best' + (best >= 0.7 ? ' is-ok' : '') + '">' + (best >= 0.7 ? '✓ ' : '') + 'Tốt nhất ' + Math.round(best * 100) + '%</span>'
+              : count ? '<span class="game-picker-moi">Chưa làm</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<span class="game-picker-go" aria-hidden="true">›</span>' +
       '</button>';
     }).join('') + '</div>';
 

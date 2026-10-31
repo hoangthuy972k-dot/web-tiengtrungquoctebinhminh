@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Hai bạn nhỏ giơ ngón tay đua giành ngôi sao vàng ở vạch đích">
+  <defs>
+    <linearGradient id="vdsao-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd166"/>
+      <stop offset="1" stop-color="#e08a1e"/>
+    </linearGradient>
+    <pattern id="vdsao-chk" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#fff8ec"/>
+      <rect width="8" height="8" fill="#2b1d3a"/>
+      <rect x="8" y="8" width="8" height="8" fill="#2b1d3a"/>
+    </pattern>
+    <path id="vdsao-s" d="M0 -10 L2.6 -3.6 L9.5 -3.1 L4.2 1.4 L5.9 8.1 L0 4.4 L-5.9 8.1 L-4.2 1.4 L-9.5 -3.1 L-2.6 -3.6 Z" fill="#fff3a6" stroke="#2b1d3a" stroke-width="2.2" stroke-linejoin="round"/>
+    <path id="vdsao-spark" d="M0 -7 Q1 -1 7 0 Q1 1 0 7 Q-1 1 -7 0 Q-1 -1 0 -7 Z" fill="#fff8ec"/>
+    <g id="vdsao-body">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M92 132 Q74 114 70 84" stroke="#2b1d3a" stroke-width="15"/>
+        <path d="M118 132 Q130 144 128 156" stroke="#2b1d3a" stroke-width="15"/>
+        <path d="M92 132 Q74 114 70 84" stroke="#ffd7b5" stroke-width="8.5"/>
+        <path d="M118 132 Q130 144 128 156" stroke="#ffd7b5" stroke-width="8.5"/>
+      </g>
+      <g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round">
+        <circle cx="128" cy="158" r="6.5" fill="#ffd7b5"/>
+        <rect x="93" y="154" width="9" height="26" rx="4.5" fill="#ffd7b5"/>
+        <rect x="108" y="154" width="9" height="26" rx="4.5" fill="#ffd7b5"/>
+        <ellipse cx="95" cy="182" rx="10" ry="6" fill="#ff5a6e"/>
+        <ellipse cx="115" cy="182" rx="10" ry="6" fill="#ff5a6e"/>
+      </g>
+    </g>
+    <g id="vdsao-face">
+      <circle cx="96" cy="102" r="3.2" fill="#2b1d3a"/>
+      <circle cx="114" cy="102" r="3.2" fill="#2b1d3a"/>
+      <ellipse cx="89" cy="110" rx="5" ry="3" fill="#ff9fae"/>
+      <ellipse cx="121" cy="110" rx="5" ry="3" fill="#ff9fae"/>
+      <path d="M100 110 Q105 115 110 110" fill="none" stroke="#2b1d3a" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+  </defs>
+
+  <rect width="400" height="240" fill="url(#vdsao-bg)"/>
+  <circle cx="55" cy="45" r="70" fill="#fff8ec" opacity="0.15"/>
+  <circle cx="360" cy="60" r="55" fill="#fff8ec" opacity="0.12"/>
+  <circle cx="200" cy="92" r="82" fill="#fff8ec" opacity="0.16"/>
+  <circle cx="200" cy="92" r="62" fill="#fff8ec" opacity="0.22"/>
+
+  <path d="M0 186 Q200 174 400 186 V240 H0 Z" fill="#d9771a"/>
+  <path d="M0 186 Q200 174 400 186" fill="none" stroke="#ffe08a" stroke-width="3" opacity="0.6"/>
+  <rect x="0" y="198" width="400" height="16" fill="url(#vdsao-chk)" opacity="0.85"/>
+
+  <!-- finish ribbon -->
+  <g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round">
+    <rect x="22" y="128" width="9" height="60" rx="4.5" fill="#fff8ec"/>
+    <rect x="369" y="128" width="9" height="60" rx="4.5" fill="#fff8ec"/>
+  </g>
+  <path d="M28 140 Q200 166 372 140" fill="none" stroke="#2b1d3a" stroke-width="10" stroke-linecap="round"/>
+  <path d="M28 140 Q200 166 372 140" fill="none" stroke="#ff4d6d" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- left kid (3 fingers) -->
+  <use href="#vdsao-body"/>
+  <g stroke="#2b1d3a" stroke-width="2.5" stroke-linejoin="round" fill="#ffd7b5">
+    <rect x="58.5" y="52" width="6.5" height="20" rx="3.2"/>
+    <rect x="65.5" y="49" width="6.5" height="22" rx="3.2"/>
+    <rect x="72.5" y="52" width="6.5" height="20" rx="3.2"/>
+    <rect x="57" y="66" width="23" height="19" rx="7"/>
+    <rect x="59" y="73" width="14" height="6" rx="3"/>
+  </g>
+  <rect x="82" y="122" width="46" height="42" rx="16" fill="#2ec4b6" stroke="#2b1d3a" stroke-width="3.5"/>
+  <rect x="110" y="127" width="12" height="32" rx="6" fill="#20a396"/>
+  <rect x="88" y="130" width="5" height="12" rx="2.5" fill="#fff8ec" opacity="0.6"/>
+  <path d="M97 124 L105 133 L113 124" fill="none" stroke="#fff8ec" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="105" cy="98" r="27" fill="#ffd7b5" stroke="#2b1d3a" stroke-width="3.5"/>
+  <path d="M78 96 Q78 70 105 70 Q132 70 132 96 Q122 84 112 86 Q104 80 96 86 Q86 84 78 96 Z" fill="#3b2a20" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M94 76 Q102 72 110 74" fill="none" stroke="#6b5040" stroke-width="3" stroke-linecap="round"/>
+  <use href="#vdsao-face"/>
+
+  <!-- right kid (2 fingers), mirrored -->
+  <g transform="matrix(-1 0 0 1 400 0)">
+    <use href="#vdsao-body"/>
+    <g stroke="#2b1d3a" stroke-width="2.5" stroke-linejoin="round" fill="#ffd7b5">
+      <rect x="61" y="50" width="6.5" height="22" rx="3.2" transform="rotate(-8 64 70)"/>
+      <rect x="69" y="50" width="6.5" height="22" rx="3.2" transform="rotate(8 72 70)"/>
+      <rect x="57" y="66" width="23" height="19" rx="7"/>
+      <rect x="59" y="73" width="16" height="6" rx="3"/>
+    </g>
+    <circle cx="105" cy="56" r="12" fill="#8a4b2a" stroke="#2b1d3a" stroke-width="3.5"/>
+    <rect x="82" y="122" width="46" height="42" rx="16" fill="#9b6bff" stroke="#2b1d3a" stroke-width="3.5"/>
+    <rect x="110" y="127" width="12" height="32" rx="6" fill="#7c4fe0"/>
+    <rect x="88" y="130" width="5" height="12" rx="2.5" fill="#fff8ec" opacity="0.6"/>
+    <path d="M97 124 L105 133 L113 124" fill="none" stroke="#fff8ec" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="105" cy="98" r="27" fill="#ffd7b5" stroke="#2b1d3a" stroke-width="3.5"/>
+    <path d="M78 100 Q76 68 105 68 Q134 68 132 100 Q124 84 104 86 Q88 86 78 100 Z" fill="#8a4b2a" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M94 76 Q102 73 110 75" fill="none" stroke="#b56d43" stroke-width="3" stroke-linecap="round"/>
+    <rect x="95" y="63" width="20" height="7" rx="3.5" fill="#ff5a8a" stroke="#2b1d3a" stroke-width="2.5"/>
+    <use href="#vdsao-face"/>
+  </g>
+
+  <!-- big star with face -->
+  <path d="M200 42 L212.9 74.2 L247.6 76.5 L220.9 98.8 L229.4 132.5 L200 114 L170.6 132.5 L179.1 98.8 L152.4 76.5 L187.1 74.2 Z" fill="#ffe04a"/>
+  <path d="M200 42 L212.9 74.2 L247.6 76.5 L220.9 98.8 L229.4 132.5 L200 114 Z" fill="#f5b52e"/>
+  <path d="M188 66 L195 50 L198 58 L192 72 Z" fill="#fff8ec" opacity="0.85"/>
+  <path d="M200 42 L212.9 74.2 L247.6 76.5 L220.9 98.8 L229.4 132.5 L200 114 L170.6 132.5 L179.1 98.8 L152.4 76.5 L187.1 74.2 Z" fill="none" stroke="#2b1d3a" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="191" cy="90" r="3.4" fill="#2b1d3a"/>
+  <circle cx="209" cy="90" r="3.4" fill="#2b1d3a"/>
+  <ellipse cx="184" cy="98" rx="5" ry="3" fill="#ff9f7a"/>
+  <ellipse cx="216" cy="98" rx="5" ry="3" fill="#ff9f7a"/>
+  <path d="M194 98 Q200 105 206 98" fill="none" stroke="#2b1d3a" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- small stars flying up -->
+  <g stroke="#fff8ec" stroke-width="3" stroke-linecap="round" opacity="0.8" fill="none">
+    <path d="M146 58 L138 72"/>
+    <path d="M258 52 L266 66"/>
+    <path d="M300 28 L306 40"/>
+    <path d="M104 32 L98 44"/>
+  </g>
+  <use href="#vdsao-s" transform="translate(150 44) rotate(-12) scale(1.15)"/>
+  <use href="#vdsao-s" transform="translate(254 36) rotate(14) scale(1.3)"/>
+  <use href="#vdsao-s" transform="translate(296 18) rotate(10) scale(0.8)"/>
+  <use href="#vdsao-s" transform="translate(108 20) rotate(-10) scale(0.8)"/>
+
+  <!-- sparkles -->
+  <use href="#vdsao-spark" transform="translate(166 150) scale(0.9)"/>
+  <use href="#vdsao-spark" transform="translate(240 160) scale(0.8)"/>
+  <use href="#vdsao-spark" transform="translate(200 24) scale(0.9)"/>
+  <use href="#vdsao-spark" transform="translate(40 92) scale(0.8)"/>
+  <circle cx="360" cy="100" r="3" fill="#fff8ec" opacity="0.8"/>
+  <circle cx="176" cy="30" r="2.5" fill="#fff8ec" opacity="0.8"/>
+  <circle cx="226" cy="150" r="2.5" fill="#fff8ec" opacity="0.8"/>
+</svg>

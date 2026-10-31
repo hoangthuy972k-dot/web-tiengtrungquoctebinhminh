@@ -174,26 +174,36 @@
   }
 
   /* ---------------- danh sach tro choi ---------------- */
+  // Tranh minh hoa ve rieng cho tung tro (public/images/tro-choi/<key>.svg); tro moi chua co tranh thi dung emoji
+  var TRANH = { tocdo: 1, thelat: 1, keoco: 1, doantau: 1, manhghep: 1, zombie: 1, chemqua: 1, nghieng: 1, domin: 1, keotha: 1,
+    vd_chem: 1, vd_theduc: 1, vd_ngoisao: 1 };
+  var TRANH_V = '2';
   function veTro() {
     var wrap = $('#ghGames');
     var soBai = state.lessons.filter(function (l) { return state.picked[l.url]; }).length;
     wrap.innerHTML = window.Arcade.danhSach().map(function (g) {
       var moTa = state.cheDo === 'lop' ? (g.moTaLop || g.moTa) : g.moTa;
       // Tro nao co tranh rieng thi dung tranh, khong thi dung emoji co lon.
-      var hinh = g.anh
+      var coTranh = TRANH[g.key];
+      var hinh = coTranh
+        ? '<img class="gh-game-anh" src="/images/tro-choi/' + g.key + '.svg?v=' + TRANH_V + '" alt="" loading="lazy" decoding="async">'
+        : g.anh
         ? '<span class="gh-game-hinh" style="background-image:url(\'' + g.anh + '\')"></span>'
         : '<span class="gh-game-emoji">' + g.emoji + '</span>';
       // Ky luc ca nhan cua tro nay (tro-nha.js luu khi ket thuc van)
       var kl = window.TroNha && window.TroNha.docKyLuc ? window.TroNha.docKyLuc(g.key) : 0;
       return '<button type="button" class="gh-game" data-game="' + g.key + '"' + (soBai ? '' : ' disabled') + '>' +
-        '<span class="gh-game-tranh" style="--nen:' + (g.nen || '') + '">' +
-          '<span class="gh-game-chu" aria-hidden="true">' + (g.chu || '') + '</span>' +
+        '<span class="gh-game-tranh' + (coTranh ? ' co-tranh' : '') + '" style="--nen:' + (g.nen || '') + '">' +
+          (coTranh ? '' : '<span class="gh-game-chu" aria-hidden="true">' + (g.chu || '') + '</span>') +
           hinh +
         '</span>' +
         '<span class="gh-game-duoi">' +
           '<span class="gh-game-ten">' + g.ten + '</span>' +
           '<span class="gh-game-mo">' + moTa + '</span>' +
-          '<span class="gh-game-kl' + (kl > 0 ? ' has-kl' : '') + '">' + (kl > 0 ? '🏆 Kỷ lục của em: <b>' + kl + '</b> điểm' : 'Chưa có kỷ lục — chơi thử nhé!') + '</span>' +
+          '<span class="gh-game-chan">' +
+            '<span class="gh-game-kl' + (kl > 0 ? ' has-kl' : '') + '">' + (kl > 0 ? '🏆 Kỷ lục <b>' + kl + '</b>' : '✨ Chưa chơi') + '</span>' +
+            '<span class="gh-game-choi" aria-hidden="true">Chơi ngay ▶</span>' +
+          '</span>' +
         '</span>' +
       '</button>';
     }).join('');
@@ -202,6 +212,15 @@
     }
     $all('.gh-game[data-game]', wrap).forEach(function (b) {
       b.addEventListener('click', function () { batDau(b.getAttribute('data-game')); });
+    });
+    // Tranh loi tai (mang yeu) thi ve lai emoji tren nen mau
+    $all('.gh-game-anh', wrap).forEach(function (img) {
+      img.addEventListener('error', function () {
+        var g = window.Arcade.kho[img.closest('.gh-game').getAttribute('data-game')];
+        var khung = img.parentNode;
+        khung.classList.remove('co-tranh');
+        khung.innerHTML = '<span class="gh-game-chu" aria-hidden="true">' + (g.chu || '') + '</span><span class="gh-game-emoji">' + g.emoji + '</span>';
+      });
     });
   }
 

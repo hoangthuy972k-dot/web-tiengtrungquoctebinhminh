@@ -2,6 +2,8 @@
    Moi bai gom 3 bo cau cho cac tro "Bat loi sai", "Gio the A/B/C", "Xep cau" (va de kiem tra):
      1) bai tap RIENG cua chinh bai do (fillData, sortData, mcData, errorFixData trong /js/<bai>-data.js)
         — giu het vi day la noi dung cua bai;
+        + tu vung (nghia <-> chu Han), bai khoa (doc hieu preQuiz + dien tu vao cau bai khoa),
+          bai tap phan Ngu phap chia theo diem (ngu-phap-tab-<cap>.js) — de cau hoi phu het noi dung bai;
      2) bai tap ngu phap chung cua cap (grammar-*.js, grammar-errors-*.js) — CHI giu cau ma moi chu Han
         deu da hoc tinh den bai do (tu vung + bai khoa cac bai truoc va cap duoi).
    Cau A/B/C luon co 3 phuong an va dap an nam trong 3 phuong an do.
@@ -52,6 +54,13 @@ const SBT_BO = new Set([
 ]);
 
 const HAN = /[㐀-鿿]/g;
+const LATIN = /[A-Za-zÀ-ỹ]/;
+// Nghia ngan cho phuong an A/B/C: lay nghia dau tien, dai qua thi cat theo dau phay
+function nghiaNgan(vn) {
+  let s = String(vn || '').split(/[;；]/)[0].trim();
+  if (s.length > 30) s = s.split(/[,，]/)[0].trim();
+  return s.length > 40 ? '' : s;
+}
 const han = (s) => String(s || '').match(HAN) || [];
 
 const baiCache = {};
@@ -127,13 +136,15 @@ function dungCap(level) {
   (GRAMMAR[level] || []).forEach((f) => { gw = Object.assign(gw, chay(doc(f))); });
   const bank = Object.assign({}, gw.GRAMMAR_EXTRA || {}, gw.HSK2_GRAMMAR_EXERCISES || {});
   const errBank = gw.GRAMMAR_ERRORS || {};
+  // Phan Ngu phap chia theo diem cua tung bai
+  const NPT = chay(doc('js/ngu-phap-tab-' + level + '.js')).NGU_PHAP_TAB || {};
 
   // chu da hoc cua cac cap duoi
   const duoi = new Set();
   (DUOI[level] || []).forEach((d) => (APP.lessons[d] || []).forEach((L) => bai(L.fullPageUrl).chu.forEach((h) => duoi.add(h))));
 
   const daHoc = new Set(duoi);
-  const thongKe = { rieng: 0, chung: 0, boChung: 0 };
+  const thongKe = { rieng: 0, chung: 0, boChung: 0, tu: 0, hk: 0, np: 0 };
   const out = lessons.map((L) => {
     const url = L.fullPageUrl;
     const B = bai(url);
@@ -223,6 +234,83 @@ function dungCap(level) {
       }));
     }
 
+    /* ---- 1c) tu vung cua bai: nghia <-> chu Han, xen ke hai chieu ---- */
+    const tuNghia = [];
+    const thayTu = {};
+    (D.vocab || []).forEach((v) => {
+      const zh = String(v && v.zh || '').trim(), vn = nghiaNgan(v && v.vn);
+      if (!zh || !vn || !han(zh).length || LATIN.test(zh) || thayTu[zh]) return;
+      thayTu[zh] = 1;
+      tuNghia.push({ zh, vn });
+    });
+    tuNghia.forEach((v, i) => {
+      const khac = tuNghia.filter((x) => x.zh !== v.zh && x.vn !== v.vn);
+      const xuoi = i % 2 === 0;
+      const opts = baPhuongAn(xuoi ? v.vn : v.zh, khac.map((x) => (xuoi ? x.vn : x.zh)));
+      if (opts.length < 3) return;
+      themM({ pre: xuoi ? '«' + v.zh + '» nghĩa là gì?' : '«' + v.vn + '» — chữ Hán là gì?', post: '', noBlank: true,
+        options: opts, answer: 0, context: 'Từ vựng', why: '', point: '', src: 'tu' });
+      thongKe.tu++;
+    });
+
+    /* ---- 1d) bai khoa: cau hoi doc hieu (preQuiz) + dien tu vung vao cau cua bai khoa ---- */
+    const tuDai = tuNghia.map((v) => v.zh).sort((a, b) => b.length - a.length);
+    let soDien = 0;
+    (D.dialog || []).forEach((d) => {
+      ((d && d.preQuiz) || []).forEach((q) => {
+        if (!q || !Array.isArray(q.opts) || typeof q.ans !== 'number' || !q.opts[q.ans] || LATIN.test(String(q.q) + q.opts.join(''))) return;
+        const opts = [q.opts[q.ans]].concat(q.opts.filter((o, i) => i !== q.ans).slice(0, 2));
+        if (opts.length < 3) return;
+        themM({ pre: String(q.q).trim(), post: '', noBlank: true, options: opts, answer: 0, context: 'Đọc hiểu bài khoá', why: '', point: '', src: 'hk' });
+        thongKe.hk++;
+      });
+      ((d && d.lines) || []).forEach((l) => {
+        if (soDien >= 20 || !l || !l.zh || LATIN.test(l.zh) || han(l.zh).length < 5) return;
+        const w = tuDai.find((x) => l.zh.indexOf(x) >= 0);
+        if (!w) return;
+        const i = l.zh.indexOf(w);
+        const opts = baPhuongAn(w, tuDai.filter((x) => x !== w && l.zh.indexOf(x) < 0));
+        if (opts.length < 3) return;
+        themM({ pre: l.zh.slice(0, i), post: l.zh.slice(i + w.length), options: opts, answer: 0, context: 'Câu trong bài khoá',
+          hint: nghiaNgan(l.vn) ? String(l.vn).trim() : '', why: '', point: '', src: 'hk' });
+        soDien++;
+        thongKe.hk++;
+      });
+    });
+
+    /* ---- 1e) phan Ngu phap chia theo diem: dien -> A/B/C, dungsai -> dung/sai, xep -> xep cau,
+       dich -> chon cau dich dung (bo cau co pinyin; cau viet tu do khong lay) ---- */
+    const dichDs = [];
+    (NPT[url] || []).forEach((p) => (p.bt || []).forEach((b) => (b.cau || []).forEach((c) => {
+      if (!c) return;
+      const diemNP = p.ten || '';
+      if (c.kieu === 'dien' && Array.isArray(c.phan) && c.phan.length === 2 && Array.isArray(c.dap) && c.dap.length === 1 && Array.isArray(c.chon)) {
+        const nhan = [].concat(c.dap[0] || []);
+        if (!nhan[0]) return;
+        const opts = baPhuongAn(nhan[0], c.chon.filter((x) => nhan.indexOf(x) < 0));
+        if (opts.length < 3 || LATIN.test(opts.join('') + c.phan.join(''))) return;
+        themM({ pre: c.phan[0], post: c.phan[1], options: opts, answer: 0, context: '', hint: c.goiY || '', why: c.giai || '', point: diemNP, src: 'np' });
+        thongKe.np++;
+      } else if (c.kieu === 'dungsai' && c.cau && !LATIN.test(c.cau)) {
+        const cs = cauHan(c.cau);
+        if (!cs) return;
+        const sua = c.sua ? cauHan(c.sua) : null;
+        themJ({ sentence: cs.text, note: '', isCorrect: !!c.dung, fix: sua ? sua.text : '', why: c.giai || '', point: diemNP, src: 'np' });
+        thongKe.np++;
+      } else if (c.kieu === 'xep' && Array.isArray(c.manh) && c.manh.length >= 3 && c.dap && c.dap[0] && !LATIN.test(c.manh.join(''))) {
+        themS({ words: c.manh.slice(), answer: String(c.dap[0]).trim(), context: c.goiY || '', why: c.giai || '', point: diemNP, src: 'np' });
+        thongKe.np++;
+      } else if (c.kieu === 'dich' && c.vn && c.dap && c.dap[0] && !LATIN.test(c.dap[0])) {
+        dichDs.push({ vn: String(c.vn).trim(), zh: String(c.dap[0]).trim(), why: c.giai || '', point: diemNP });
+      }
+    })));
+    dichDs.forEach((x) => {
+      const opts = baPhuongAn(x.zh, dichDs.filter((y) => y.zh !== x.zh).map((y) => y.zh));
+      if (opts.length < 3) return;
+      themM({ pre: '«' + x.vn + '» — dịch sang tiếng Trung là?', post: '', noBlank: true, options: opts, answer: 0, context: 'Dịch câu', why: x.why, point: x.point, src: 'np' });
+      thongKe.np++;
+    });
+
     /* ---- 2) bai tap ngu phap chung — chi cau toan chu da hoc ---- */
     const loc = (t) => { if (hocRoi(t)) { thongKe.chung++; return true; } thongKe.boChung++; return false; };
     (bank[url] || []).forEach((g) => (g.items || []).forEach((q) => {
@@ -265,6 +353,7 @@ Object.keys(APP.lessons).forEach((level) => {
   const t = r.out.reduce((a, l) => ({ j: a.j + l.judges.length, m: a.m + l.mcs.length, s: a.s + l.sorts.length }), { j: 0, m: 0, s: 0 });
   const it = r.out.filter((l) => l.mcs.length < 3 || l.sorts.length < 1).map((l) => l.n);
   console.log(level + ': ' + r.out.length + ' bai · ' + t.j + ' dung/sai · ' + t.m + ' A/B/C · ' + t.s + ' xep · bai tap rieng ' + r.thongKe.rieng +
+    ' · tu vung ' + r.thongKe.tu + ' · bai khoa ' + r.thongKe.hk + ' · ngu phap theo diem ' + r.thongKe.np +
     ' · ngu phap chung giu ' + r.thongKe.chung + ', bo ' + r.thongKe.boChung + ' (co chu chua hoc)' + (it.length ? ' · bai it cau: ' + it.join(',') : '') +
     ' · ' + (fs.statSync(f).size / 1024).toFixed(0) + ' KB');
 });

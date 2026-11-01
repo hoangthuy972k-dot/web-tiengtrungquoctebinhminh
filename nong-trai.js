@@ -127,6 +127,8 @@ function nongTraiMoi() {
     nk: [], nkXem: 0, // nhat ky + lan cuoi em xem
     giup: { d: '', n: 0 }, // so lan giup ban hom nay
     chao: { d: '', ids: [] }, // da gui loi chao cho ai hom nay
+    tin: { d: '', dem: {}, tong: 0 }, // tin nhan da gui hom nay (theo ban)
+    qua: { d: '', ids: [] }, // da tang qua cho ai hom nay
   };
 }
 
@@ -207,7 +209,73 @@ const LOI_CHAO = [
   { zh: '你的动物很可爱！', py: 'Nǐ de dòngwù hěn kě\'ài!', vn: 'Vật nuôi của bạn dễ thương quá!' },
   { zh: '欢迎来我的农场！', py: 'Huānyíng lái wǒ de nóngchǎng!', vn: 'Mời bạn sang nông trại mình chơi!' },
   { zh: '明天见！', py: 'Míngtiān jiàn!', vn: 'Mai gặp lại nhé!' },
+  // (8 cau tren giu nguyen thu tu: nhat ky cu luu theo so thu tu)
+  { zh: '早上好！', py: 'Zǎoshang hǎo!', vn: 'Chào buổi sáng!' },
+  { zh: '晚上好！', py: 'Wǎnshang hǎo!', vn: 'Chào buổi tối!' },
+  { zh: '好久不见！', py: 'Hǎojiǔ bú jiàn!', vn: 'Lâu rồi không gặp!' },
+  { zh: '你真棒！', py: 'Nǐ zhēn bàng!', vn: 'Bạn giỏi quá!' },
+  { zh: '生日快乐！', py: 'Shēngrì kuàilè!', vn: 'Chúc mừng sinh nhật!' },
+  { zh: '考试加油！', py: 'Kǎoshì jiāyóu!', vn: 'Thi tốt nhé!' },
+  { zh: '对不起！', py: 'Duìbuqǐ!', vn: 'Xin lỗi bạn!' },
+  { zh: '我们是好朋友！', py: 'Wǒmen shì hǎo péngyou!', vn: 'Chúng mình là bạn tốt!' },
 ];
+
+// ---- Noi chuyen bang tieng Trung (chon mau, khong go chu tu do) ----
+// Ghep cau: mau cau + 1 tu dien vao cho trong {x}. Tu lay tu danh sach o (slot).
+const TIN_TU = {
+  viec: [
+    { k: 'hoc', zh: '学习', py: 'xuéxí', vn: 'học bài' },
+    { k: 'choi', zh: '玩', py: 'wán', vn: 'chơi' },
+    { k: 'trongrau', zh: '种菜', py: 'zhòng cài', vn: 'trồng rau' },
+    { k: 'choan', zh: '喂动物', py: 'wèi dòngwù', vn: 'cho vật nuôi ăn' },
+    { k: 'hat', zh: '唱歌', py: 'chàng gē', vn: 'hát' },
+    { k: 'docsach', zh: '看书', py: 'kàn shū', vn: 'đọc sách' },
+    { k: 'congvien', zh: '去公园', py: 'qù gōngyuán', vn: 'đi công viên' },
+    { k: 'vietchu', zh: '写汉字', py: 'xiě Hànzì', vn: 'viết chữ Hán' },
+    { k: 'dabong', zh: '踢足球', py: 'tī zúqiú', vn: 'đá bóng' },
+  ],
+  giup: [
+    { k: 'tuoi', zh: '浇水', py: 'jiāo shuǐ', vn: 'tưới nước' },
+    { k: 'choan', zh: '喂动物', py: 'wèi dòngwù', vn: 'cho vật nuôi ăn' },
+    { k: 'thu', zh: '收菜', py: 'shōu cài', vn: 'thu hoạch' },
+    { k: 'hoc', zh: '学习汉语', py: 'xuéxí Hànyǔ', vn: 'học tiếng Trung' },
+  ],
+};
+// slot 'mon' = vat nuoi / do trang tri (CON, TT); 'sp' = nong san (SP)
+const TIN_MAU = [
+  { zh: '你的{x}真漂亮！', py: 'Nǐ de {x} zhēn piàoliang!', vn: '{x} của bạn đẹp quá!', o: 'mon' },
+  { zh: '我们一起{x}吧！', py: 'Wǒmen yìqǐ {x} ba!', vn: 'Mình cùng {x} nhé!', o: 'viec' },
+  { zh: '谢谢你帮我{x}！', py: 'Xièxie nǐ bāng wǒ {x}!', vn: 'Cảm ơn bạn đã giúp mình {x}!', o: 'giup' },
+  { zh: '我想买你的{x}。', py: 'Wǒ xiǎng mǎi nǐ de {x}.', vn: 'Mình muốn mua {x} của bạn.', o: 'sp' },
+  { zh: '我很喜欢{x}！', py: 'Wǒ hěn xǐhuan {x}!', vn: 'Mình rất thích {x}!', o: 'mon' },
+  { zh: '明天我们去{x}，好吗？', py: 'Míngtiān wǒmen qù {x}, hǎo ma?', vn: 'Mai mình đi {x} nhé, được không?', o: 'viec' },
+];
+// Hoi ban: ban tra loi bang 1 trong cac cau co san -> thanh 1 doan hoi thoai nho trong nhat ky 2 ben
+const TIN_HOI = [
+  { zh: '你今天学习了吗？', py: 'Nǐ jīntiān xuéxí le ma?', vn: 'Hôm nay bạn học bài chưa?', a: [
+    { zh: '学了！', py: 'Xué le!', vn: 'Học rồi!' }, { zh: '还没有。', py: 'Hái méiyǒu.', vn: 'Chưa.' }, { zh: '我正在学习。', py: 'Wǒ zhèngzài xuéxí.', vn: 'Mình đang học.' }] },
+  { zh: '你喜欢什么动物？', py: 'Nǐ xǐhuan shénme dòngwù?', vn: 'Bạn thích con vật gì?', a: [
+    { zh: '我喜欢鸡。', py: 'Wǒ xǐhuan jī.', vn: 'Mình thích gà.' }, { zh: '我喜欢牛。', py: 'Wǒ xǐhuan niú.', vn: 'Mình thích bò.' },
+    { zh: '我喜欢羊。', py: 'Wǒ xǐhuan yáng.', vn: 'Mình thích cừu.' }, { zh: '我喜欢猫。', py: 'Wǒ xǐhuan māo.', vn: 'Mình thích mèo.' }] },
+  { zh: '你有几只鸡？', py: 'Nǐ yǒu jǐ zhī jī?', vn: 'Bạn có mấy con gà?', a: [
+    { zh: '我有一只鸡。', py: 'Wǒ yǒu yì zhī jī.', vn: 'Mình có một con gà.' }, { zh: '我有两只鸡。', py: 'Wǒ yǒu liǎng zhī jī.', vn: 'Mình có hai con gà.' },
+    { zh: '我有很多鸡。', py: 'Wǒ yǒu hěn duō jī.', vn: 'Mình có nhiều gà lắm.' }, { zh: '我没有鸡。', py: 'Wǒ méiyǒu jī.', vn: 'Mình không có gà.' }] },
+  { zh: '你喜欢我的农场吗？', py: 'Nǐ xǐhuan wǒ de nóngchǎng ma?', vn: 'Bạn thích nông trại của mình không?', a: [
+    { zh: '很喜欢！', py: 'Hěn xǐhuan!', vn: 'Thích lắm!' }, { zh: '非常漂亮！', py: 'Fēicháng piàoliang!', vn: 'Đẹp vô cùng!' }, { zh: '还可以。', py: 'Hái kěyǐ.', vn: 'Cũng được.' }] },
+  { zh: '你在做什么？', py: 'Nǐ zài zuò shénme?', vn: 'Bạn đang làm gì thế?', a: [
+    { zh: '我在种菜。', py: 'Wǒ zài zhòng cài.', vn: 'Mình đang trồng rau.' }, { zh: '我在学习汉语。', py: 'Wǒ zài xuéxí Hànyǔ.', vn: 'Mình đang học tiếng Trung.' },
+    { zh: '我在喂动物。', py: 'Wǒ zài wèi dòngwù.', vn: 'Mình đang cho vật nuôi ăn.' }] },
+  { zh: '你最喜欢吃什么？', py: 'Nǐ zuì xǐhuan chī shénme?', vn: 'Bạn thích ăn gì nhất?', a: [
+    { zh: '我喜欢吃草莓。', py: 'Wǒ xǐhuan chī cǎoméi.', vn: 'Mình thích ăn dâu tây.' }, { zh: '我喜欢吃玉米。', py: 'Wǒ xǐhuan chī yùmǐ.', vn: 'Mình thích ăn ngô.' },
+    { zh: '我喜欢吃鸡蛋。', py: 'Wǒ xǐhuan chī jīdàn.', vn: 'Mình thích ăn trứng.' }] },
+  { zh: '明天一起玩，好吗？', py: 'Míngtiān yìqǐ wán, hǎo ma?', vn: 'Mai mình chơi cùng nhé, được không?', a: [
+    { zh: '好啊！', py: 'Hǎo a!', vn: 'Được thôi!' }, { zh: '明天我很忙。', py: 'Míngtiān wǒ hěn máng.', vn: 'Mai mình bận lắm.' }, { zh: '好，明天见！', py: 'Hǎo, míngtiān jiàn!', vn: 'Ừ, mai gặp nhé!' }] },
+  { zh: '你会写汉字吗？', py: 'Nǐ huì xiě Hànzì ma?', vn: 'Bạn biết viết chữ Hán không?', a: [
+    { zh: '会一点儿。', py: 'Huì yìdiǎnr.', vn: 'Biết một chút.' }, { zh: '我会写很多汉字！', py: 'Wǒ huì xiě hěn duō Hànzì!', vn: 'Mình viết được nhiều chữ Hán lắm!' }, { zh: '还不会。', py: 'Hái bú huì.', vn: 'Chưa biết.' }] },
+];
+const TIN_BAN_NGAY = 3;   // moi ban toi da 3 tin moi ngay
+const TIN_NGAY = 20;      // tong so tin moi ngay
+const QUA_NGAY = 3;       // tang toi da 3 mon qua moi ngay (moi ban 1 mon)
 // Nhat ky nong trai: ai da tha tim, tuoi giup, mua hang, gui loi chao (giu 30 dong moi nhat)
 function ghiNk(f, e) {
   e.t = Date.now();
@@ -559,7 +627,8 @@ module.exports = function ganNongTrai(app, d) {
     return { ok: true, them, lenCap: st.lv > lvCu ? st.lv : 0, st };
   }
 
-  const CATALOG = { CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO };
+  const CATALOG = { CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO,
+    TIN_TU, TIN_MAU, TIN_HOI, TIN_BAN_NGAY, QUA_NGAY };
 
   app.get('/api/farm', d.requireAuth, d.asyncRoute(async (req, res) => {
     const st = await lanLuot(req.user.id, async () => {
@@ -619,6 +688,8 @@ module.exports = function ganNongTrai(app, d) {
       daTim: fm.tham.d === ngay && fm.tham.ids.indexOf(id) >= 0,
       daChao: !!(fm.chao && fm.chao.d === ngay && fm.chao.ids.indexOf(id) >= 0),
       conGiup: GIUP_NGAY - (fm.giup && fm.giup.d === ngay ? fm.giup.n : 0),
+      conTin: TIN_BAN_NGAY - (fm.tin && fm.tin.d === ngay ? fm.tin.dem[id] || 0 : 0),
+      daTang: !!(fm.qua && fm.qua.d === ngay && fm.qua.ids.indexOf(id) >= 0),
     });
   }));
 
@@ -759,6 +830,84 @@ module.exports = function ganNongTrai(app, d) {
       await ghi(id, ff);
       await ghi(me, fm);
       return { ok: true, them, o: { id: o.id, k: o.k, x: o.x, y: o.y, c: o.c, h: o.h, t: o.t }, st: await trangThai(me, fm), conGiup: GIUP_NGAY - fm.giup.n };
+    })));
+  }));
+
+  // Kiem tra 1 tin nhan theo mau -> du lieu ghi vao nhat ky ban (chi so, khong luu chu tu do)
+  function kiemTin(b) {
+    const t = String(b.t || '');
+    // kt = loai tin (khong dung 't': ghiNk dung 't' cho thoi diem)
+    if (t === 'chao') { const c = Math.floor(Number(b.c)); if (LOI_CHAO[c]) return { kt: t, c }; }
+    if (t === 'cau') {
+      const m = Math.floor(Number(b.m)), x = String(b.x || ''), mau = TIN_MAU[m];
+      if (mau) {
+        const ok = mau.o === 'mon' ? !!(CON[x] || TT[x]) : mau.o === 'sp' ? !!SP[x] : (TIN_TU[mau.o] || []).some((w) => w.k === x);
+        if (ok) return { kt: t, m, x };
+      }
+    }
+    if (t === 'hoi') { const q = Math.floor(Number(b.q)); if (TIN_HOI[q]) return { kt: t, q, hid: Date.now().toString(36) + Math.random().toString(36).slice(2, 6) }; }
+    return null;
+  }
+  // Gui 1 tin cho ban: moi ban toi da 3 tin / ngay; tin dau tien moi ngay cho moi ban +1 xu
+  app.post('/api/farm/tin/:id', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, id = String(req.params.id);
+    await traLoi(res, cungLop(me, id).then(() => {
+      const tin = kiemTin(req.body || {});
+      if (!tin) throw loi('Tin nhắn chưa hợp lệ.');
+      return haiLuot(me, id, async () => {
+        const fm = await doc(me), ff = await doc(id);
+        const ngay = d.vnDayKey();
+        if (!fm.tin || fm.tin.d !== ngay) fm.tin = { d: ngay, dem: {}, tong: 0 };
+        const n = fm.tin.dem[id] || 0;
+        if (n >= TIN_BAN_NGAY) throw loi('Hôm nay em đã nhắn bạn này ' + TIN_BAN_NGAY + ' tin rồi — mai nói chuyện tiếp nhé!');
+        if (fm.tin.tong >= TIN_NGAY) throw loi('Hôm nay em đã gửi ' + TIN_NGAY + ' tin rồi.');
+        fm.tin.dem[id] = n + 1;
+        fm.tin.tong++;
+        const them = { xu: n === 0 ? 1 : 0 };
+        fm.xu += them.xu;
+        ghiNk(ff, Object.assign({ ai: me, l: 'tin' }, tin));
+        await ghi(id, ff);
+        await ghi(me, fm);
+        return { ok: true, them, conTin: TIN_BAN_NGAY - n - 1, st: await trangThai(me, fm) };
+      });
+    }));
+  }));
+  // Tra loi cau hoi ban gui (trong nhat ky cua em) -> cau tra loi hien trong nhat ky ban
+  app.post('/api/farm/traloi/:id', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, id = String(req.params.id), hid = String((req.body && req.body.hid) || ''), a = Math.floor(Number(req.body && req.body.a));
+    await traLoi(res, cungLop(me, id).then(() => haiLuot(me, id, async () => {
+      const fm = await doc(me), ff = await doc(id);
+      const e = (fm.nk || []).find((x) => x.l === 'tin' && x.kt === 'hoi' && x.hid === hid && x.ai === id);
+      if (!e) throw loi('Không tìm thấy câu hỏi này.');
+      if (e.ta != null) throw loi('Em đã trả lời câu này rồi.');
+      if (!TIN_HOI[e.q] || !TIN_HOI[e.q].a[a]) throw loi('Câu trả lời chưa hợp lệ.');
+      e.ta = a;
+      fm.xu += 1;
+      ghiNk(ff, { ai: me, l: 'dap', q: e.q, a });
+      await ghi(id, ff);
+      await ghi(me, fm);
+      return { ok: true, them: { xu: 1 }, st: await trangThai(me, fm) };
+    })));
+  }));
+  // Tang ban 1 nong san kem thiep "送给你！" (moi ban 1 mon / ngay, toi da 3 mon / ngay)
+  app.post('/api/farm/tang/:id', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, id = String(req.params.id), k = String((req.body && req.body.k) || '');
+    await traLoi(res, cungLop(me, id).then(() => haiLuot(me, id, async () => {
+      const fm = await doc(me), ff = await doc(id);
+      const ngay = d.vnDayKey();
+      if (!SP[k] || !(fm.kho[k] > 0)) throw loi('Kho không còn món này.');
+      if (!fm.qua || fm.qua.d !== ngay) fm.qua = { d: ngay, ids: [] };
+      if (fm.qua.ids.indexOf(id) >= 0) throw loi('Hôm nay em đã tặng quà bạn này rồi.');
+      if (fm.qua.ids.length >= QUA_NGAY) throw loi('Mỗi ngày tặng tối đa ' + QUA_NGAY + ' món quà.');
+      fm.qua.ids.push(id);
+      fm.kho[k]--;
+      if (!fm.kho[k]) delete fm.kho[k];
+      fm.xp += 2;
+      ff.kho[k] = (ff.kho[k] || 0) + 1;
+      ghiNk(ff, { ai: me, l: 'qua', k });
+      await ghi(id, ff);
+      await ghi(me, fm);
+      return { ok: true, them: { xp: 2 }, st: await trangThai(me, fm) };
     })));
   }));
 

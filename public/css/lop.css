@@ -2476,3 +2476,29 @@ body.lop-playing #lopStage .lop-bingo-done { color: rgba(255,255,255,.8); }
   #lopStage .lop-row:hover { transform: none; }
 }
 a.lop-test-card { text-decoration: none; }
+
+/* Nut lon "Thi thu HSK tren lop" o dau man chuan bi (/thi-lop) */
+.lop-thi-bang {
+  display: flex; align-items: center; gap: 16px;
+  margin: -6px 0 24px; padding: 16px 20px;
+  background: var(--color-red-600); color: #fff; text-decoration: none;
+  border-radius: var(--radius-lg); box-shadow: 0 5px 0 #8f241c;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.lop-thi-bang:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #8f241c; }
+.lop-thi-bang:active { transform: translateY(3px); box-shadow: 0 2px 0 #8f241c; }
+.lop-thi-bang:focus-visible { outline: 3px solid var(--color-gold-400); outline-offset: 3px; }
+.lop-thi-bang-ic {
+  flex: none; width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center;
+  background: #fff6e9; color: var(--color-red-600); font-family: 'Noto Serif SC', serif; font-size: 1.7rem; font-weight: 900;
+}
+.lop-thi-bang-chu { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.lop-thi-bang-chu b { font-size: 1.2rem; }
+.lop-thi-bang-chu small { font-size: 0.92rem; opacity: 0.92; line-height: 1.4; }
+.lop-thi-bang-mui { margin-left: auto; font-size: 1.6rem; font-weight: 800; }
+@media (max-width: 520px) {
+  .lop-thi-bang { gap: 12px; padding: 14px; }
+  .lop-thi-bang-ic { width: 44px; height: 44px; font-size: 1.4rem; }
+  .lop-thi-bang-mui { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .lop-thi-bang { transition: none; } }

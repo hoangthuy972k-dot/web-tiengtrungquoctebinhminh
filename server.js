@@ -1743,6 +1743,105 @@ const nongTrai = require('./nong-trai')(app, {
   loadStar, vnDayKey, loadClassState, loadUserNames,
 });
 
+// ---------- Bai on cho nong trai ----------
+// Cau hoi cho vat nuoi an lay tu SO LIEU LAM BAI THAT cua hoc sinh tren may chu
+// (diem tung bai, cau da tra loi dung, phan dang lam do) -> dung cap, dung bai em dang hoc,
+// may nao cung giong nhau.
+const MUC_LUC_BAI = (() => {
+  const theoUrl = {}, theoCap = {}, tenCap = {};
+  try {
+    const d = vm.runInNewContext(
+      fs.readFileSync(path.join(PUBLIC_DIR, 'js', 'data.js'), 'utf8') + '\n;({ levels: APP_DATA.levels, lessons: APP_DATA.lessons })',
+      {}, { timeout: 2000 }
+    );
+    (d.levels || []).forEach((l) => { tenCap[l.id] = l.name; });
+    Object.keys(d.lessons || {}).forEach((lv) => {
+      theoCap[lv] = (d.lessons[lv] || []).filter((b) => b && b.fullPageUrl).map((b, i) => {
+        const x = { url: b.fullPageUrl, lv, i, so: b.number };
+        theoUrl[x.url] = x;
+        return x;
+      });
+    });
+  } catch (err) { console.error('Khong doc duoc muc luc bai tu data.js:', err.message); }
+  return { theoUrl, theoCap, tenCap };
+})();
+
+async function loadStarAnswerKeys(userId) {
+  if (!USE_DB) return Object.keys((readJsonFile(STAR_ANSWERS_FILE) || {})[userId] || {});
+  const [rows] = await dbPool.query('SELECT qkey FROM star_answers WHERE user_id = ?', [userId]);
+  return rows.map((r) => r.qkey);
+}
+
+function tenNguonOn(ds, loai) {
+  if (!ds.length) return '';
+  const so = ds.map((x) => x.so).filter((n) => n != null).sort((a, b) => a - b);
+  const bai = so.length ? (so[0] === so[so.length - 1] ? 'Bài ' + so[0] : 'Bài ' + so[0] + '–' + so[so.length - 1]) : '';
+  return 'Ôn từ ' + [bai, MUC_LUC_BAI.tenCap[ds[0].lv] || ''].filter(Boolean).join(' · ') + ' (' + loai + ')';
+}
+
+app.get('/api/farm/on', requireAuth, asyncRoute(async (req, res) => {
+  const uid = req.user.id;
+  const [sc, rs, keys] = await Promise.all([loadScoreOf(uid), loadResume(uid), loadStarAnswerKeys(uid)]);
+  // hd[url] = { cau: so cau/luot da lam, t: lan cuoi lam (neu biet) }
+  const hd = {};
+  function them(url, cau, t) {
+    if (!MUC_LUC_BAI.theoUrl[url]) return;
+    const h = hd[url] || (hd[url] = { cau: 0, t: 0 });
+    h.cau += cau;
+    if (t > h.t) h.t = t;
+  }
+  function demCau(v) {
+    if (!v || typeof v !== 'object') return v ? 1 : 0;
+    if (typeof v.total === 'number') return v.total;
+    return Object.values(v).reduce((s, x) => s + (x && typeof x === 'object' && typeof x.total === 'number' ? x.total : 0), 0) || 1;
+  }
+  Object.entries((sc && sc.lessonScores) || {}).forEach(([url, phan]) => {
+    them(url, Object.values(phan || {}).reduce((s, v) => s + demCau(v), 0), 0);
+  });
+  Object.entries(rs || {}).forEach(([url, phan]) => {
+    let t = 0;
+    Object.values(phan || {}).forEach((v) => { if (v && v.t > t) t = v.t; });
+    them(url, 0, t);
+  });
+  keys.forEach((k) => them(String(k).split('|')[0], 1, 0));
+
+  // Tu em hay sai o cac bai on (dong bo tu moi may)
+  const sai = [];
+  Object.values((sc && sc.reviewWrongWords) || {}).forEach((ds) => {
+    (Array.isArray(ds) ? ds : []).forEach((z) => { if (typeof z === 'string' && sai.length < 80 && sai.indexOf(z) < 0) sai.push(z); });
+  });
+
+  const daLam = Object.keys(hd).map((u) => Object.assign({}, MUC_LUC_BAI.theoUrl[u], hd[u]));
+  if (daLam.length) {
+    // Cap em dang hoc: cap cua bai lam GAN NHAT (neu biet thoi diem), khong thi cap em lam nhieu nhat
+    const ganNhat = daLam.filter((x) => x.t > 0).sort((a, b) => b.t - a.t)[0];
+    let lv = ganNhat && ganNhat.lv;
+    if (!lv) {
+      const tong = {};
+      daLam.forEach((x) => { tong[x.lv] = (tong[x.lv] || 0) + x.cau; });
+      lv = Object.keys(tong).sort((a, b) => tong[b] - tong[a])[0];
+    }
+    // 4 bai em lam gan day nhat trong cap do (chua biet thoi diem thi lay bai sau cung)
+    const ds = daLam.filter((x) => x.lv === lv).sort((a, b) => (b.t - a.t) || (b.i - a.i)).slice(0, 4).sort((a, b) => a.i - b.i);
+    return res.json({ urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài em đã làm'), sai, cap: lv });
+  }
+  // Chua lam bai nao: bai thay co giao cho lop, roi den dau cap em chon luc dang ky
+  const st = await loadClassState();
+  const mem = st.members[uid];
+  if (mem) {
+    const giao = numberedAssignments(st, mem.classId).reverse().map((a) => MUC_LUC_BAI.theoUrl[a.lessonUrl]).filter(Boolean);
+    const ds = [];
+    giao.forEach((x) => { if (ds.length < 4 && ds.indexOf(x) < 0 && x.lv === giao[0].lv) ds.push(x); });
+    if (ds.length) {
+      ds.sort((a, b) => a.i - b.i);
+      return res.json({ urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài thầy cô giao'), sai, cap: ds[0].lv });
+    }
+  }
+  const lv = MUC_LUC_BAI.theoCap[req.user.level] ? req.user.level : 'hsk1';
+  const ds = (MUC_LUC_BAI.theoCap[lv] || []).slice(0, 3);
+  res.json({ urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài đầu cấp của em'), sai, cap: lv });
+}));
+
 // Bang xep hang "nguoi cham chi nhat": tong sao, kem so sao hom nay.
 app.get('/api/leaderboard/stars', asyncRoute(async (req, res) => {
   const meId = await optionalUserId(req);

@@ -852,11 +852,8 @@
   }
 
   /* ---------------- cau hoi on tu vung ---------------- */
-  // Tu vung hop voi DUNG cap em dang hoc (khong lay theo may dang mo):
-  //  1. lop co giao bai -> 4 bai thay co giao gan nhat
-  //  2. bai em vua hoc (cua chinh tai khoan nay) + 3 bai truoc do cung cap (on xoan oc)
-  //  3. cac bai em da hoc trong cap cua em (4 bai sau cung)
-  //  4. 3 bai dau cap em chon luc dang ky
+  // Tu vung hop voi DUNG cap em dang hoc: may chu chon bai tu so lieu lam bai that cua em
+  // (cap cua bai lam gan nhat, 4 bai gan day nhat); chua lam bai nao thi bai thay co giao / dau cap.
   var tuVung = null;
   var nguonTu = '';
   var khoBai = {};
@@ -896,55 +893,13 @@
   function docJson(k, md) {
     try { var v = JSON.parse(localStorage.getItem(k) || 'null'); return v == null ? md : v; } catch (e) { return md; }
   }
-  // Tra cuu bai theo duong dan: { lv, i, bai } trong APP_DATA.lessons
-  function timBai(D, url) {
-    var lvs = Object.keys(D.lessons || {});
-    for (var k = 0; k < lvs.length; k++) {
-      var ds = D.lessons[lvs[k]] || [];
-      for (var i = 0; i < ds.length; i++) if (ds[i] && ds[i].fullPageUrl === url) return { lv: lvs[k], i: i, bai: ds[i] };
-    }
-    return null;
-  }
-  function tenNguon(D, urls, loai) {
-    var bs = urls.map(function (u) { return timBai(D, u); }).filter(Boolean);
-    if (!bs.length) return '';
-    var lv = (D.levels || []).filter(function (l) { return l.id === bs[0].lv; })[0];
-    var so = bs.map(function (b) { return b.bai.number; }).filter(function (n) { return n != null; }).sort(function (a, b) { return a - b; });
-    var bai = so.length ? (so[0] === so[so.length - 1] ? 'Bài ' + so[0] : 'Bài ' + so[0] + '–' + so[so.length - 1]) : '';
-    return 'Ôn từ ' + [bai, lv ? lv.name : ''].filter(Boolean).join(' · ') + (loai ? ' (' + loai + ')' : '');
-  }
+  // May chu chon bai on theo so lieu lam bai that cua em (moi may nhu nhau)
   function baiOn() {
-    var D = typeof APP_DATA !== 'undefined' ? APP_DATA : {};
-    var a = auth();
-    var uid = a && a.user && a.user.id;
-    var lvEm = (a && a.user && a.user.level) || 'hsk1';
-    function cuaCap(lv) { return ((D.lessons && D.lessons[lv]) || []).filter(function (b) { return b && b.fullPageUrl; }); }
-    function xong(urls, loai) { nguonTu = tenNguon(D, urls, loai); return urls; }
-    // 1. bai thay co giao cho lop
-    var lop = a ? goi('/api/class/me').then(function (d) {
-      var ds = ((d && d.assignments) || []).slice().sort(function (x, y) { return (x.session || 0) - (y.session || 0); });
-      var urls = [];
-      ds.reverse().forEach(function (x) { if (x.lessonUrl && urls.indexOf(x.lessonUrl) < 0 && timBai(D, x.lessonUrl)) urls.push(x.lessonUrl); });
-      return urls.slice(0, 4);
-    }, function () { return []; }) : Promise.resolve([]);
-    return lop.then(function (urls) {
-      if (urls.length) return xong(urls, 'bài thầy cô giao');
-      // 2. bai em vua hoc — chi khi la bai cua chinh tai khoan nay
-      var bai = docJson('hyv_last_lesson', null);
-      var tb = bai && bai.url && (!bai.uid || !uid || bai.uid === uid) ? timBai(D, bai.url) : null;
-      if (tb) {
-        var ds2 = cuaCap(tb.lv);
-        return xong(ds2.slice(Math.max(0, tb.i - 3), tb.i + 1).map(function (b) { return b.fullPageUrl; }), 'bài em đang học');
-      }
-      // 3. cac bai em da hoc (diem luu theo tai khoan, dong bo tu may chu)
-      var diem = docJson('hyv_lesson_scores', {});
-      var daHoc = cuaCap(lvEm).filter(function (b) { return diem[b.fullPageUrl]; });
-      if (daHoc.length) return xong(daHoc.slice(-4).map(function (b) { return b.fullPageUrl; }), 'bài em đã học');
-      // 4. dau cap cua em
-      var ds4 = cuaCap(lvEm);
-      if (!ds4.length) ds4 = cuaCap('hsk1');
-      return xong(ds4.slice(0, 3).map(function (b) { return b.fullPageUrl; }), '');
-    });
+    return goi('/api/farm/on').then(function (d) {
+      nguonTu = d.nguon || '';
+      (d.sai || []).forEach(function (z) { tuHaySai[z] = 1; });
+      return d.urls || [];
+    }, function () { return []; });
   }
   function layTuVung() {
     if (tuVung && tuVung.length >= 4) return Promise.resolve(tuVung);

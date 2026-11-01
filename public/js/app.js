@@ -17125,13 +17125,44 @@
     return '⏳ Đang dở ' + r.i + '/' + r.n;
   }
 
+  // Bang ron minh hoa: hoang hon tren Van Ly Truong Thanh (nui xa, tuong thanh, thap canh)
+  var QR_CANH = '<svg class="qr-entry-canh" viewBox="0 0 640 160" preserveAspectRatio="xMaxYMax slice" aria-hidden="true">' +
+    '<defs><linearGradient id="qrTroi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd98a"/><stop offset=".6" stop-color="#f3a35f"/><stop offset="1" stop-color="#e0764a"/></linearGradient></defs>' +
+    '<rect width="640" height="160" fill="url(#qrTroi)"/>' +
+    '<circle cx="470" cy="62" r="30" fill="#fff3cf" opacity=".9"/><circle cx="470" cy="62" r="44" fill="#fff3cf" opacity=".25"/>' +
+    '<g fill="#fff8ea" opacity=".75"><ellipse cx="330" cy="34" rx="34" ry="8"/><ellipse cx="352" cy="28" rx="20" ry="9"/><ellipse cx="580" cy="46" rx="30" ry="7"/><ellipse cx="598" cy="40" rx="16" ry="8"/></g>' +
+    '<path d="M180 160L260 70L320 118L400 52L470 112L540 64L640 120V160Z" fill="#c9653f" opacity=".55"/>' +
+    '<path d="M200 160L290 98L360 132L440 88L520 128L600 96L640 112V160Z" fill="#a8442c" opacity=".8"/>' +
+    // tuong thanh uon theo song nui + rang cua
+    '<path d="M210 160C260 132 300 118 350 124S440 104 490 112S590 98 640 104V160Z" fill="#7d2616"/>' +
+    '<path d="M210 146C260 120 300 108 350 114S440 94 490 102S590 88 640 94" fill="none" stroke="#f2c98c" stroke-width="9"/>' +
+    '<path d="M210 146C260 120 300 108 350 114S440 94 490 102S590 88 640 94" fill="none" stroke="#5a1a0e" stroke-width="2.5" stroke-dasharray="7 6" transform="translate(0 -6)"/>' +
+    // thap canh vuong co rang cua (kieu Truong Thanh) + linh vat den long dang di tren mat tuong
+    qrThap(336, 118, 30, 30) + qrThap(566, 98, 30, 34) +
+    '<g class="qr-canh-di"><svg x="500" y="58" width="32" height="38" viewBox="0 0 64 70">' + QR_MASCOT.replace(/^<svg[^>]*>/, '') + '</g>' +
+    '</svg>';
+
+  function qrThap(x, day, w, h) {
+    var y = day - h, rang = '';
+    for (var i = 0; i < 4; i++) rang += '<rect x="' + (x - 2 + i * (w + 4) / 4) + '" y="' + (y - 7) + '" width="' + ((w + 4) / 4 - 2.5) + '" height="7"/>';
+    return '<g fill="#f2c98c" stroke="#5a1a0e" stroke-width="2.5" stroke-linejoin="round"><rect x="' + (x - 2) + '" y="' + y + '" width="' + (w + 4) + '" height="' + h + '"/>' + rang + '</g>' +
+      '<rect x="' + (x + w / 2 - 3) + '" y="' + (y + 8) + '" width="6" height="11" rx="3" fill="#5a1a0e"/>';
+  }
+
   function qrHubEntryHtml(lesson) {
     var st = qrLessonStats(lesson);
-    return '<button type="button" class="qr-entry" id="qrEntry">' +
-      '<span class="qr-entry-art" aria-hidden="true">' + QR_MASCOT + '</span>' +
-      '<span class="qr-entry-text"><b>⚡ Ôn tập nhanh 10 phút</b>' +
-      '<span>Vượt Vạn Lý Trường Thành · ôn toàn bộ bài trong một lượt chơi</span></span>' +
-      '<span class="qr-entry-status">' + (qrResumeInfo(lesson) || (st.doneToday ? '✓ Hôm nay đã ôn' : 'Hôm nay chưa ôn')) + (st.streak ? '<em>🔥 ' + st.streak + ' ngày</em>' : '') + '</span>' +
+    var dang = qrResumeInfo(lesson);
+    var chips = '<span class="qr-chip' + (st.doneToday ? ' is-ok' : '') + '">' + (dang || (st.doneToday ? '✓ Hôm nay đã ôn' : '○ Hôm nay chưa ôn')) + '</span>' +
+      (st.streak ? '<span class="qr-chip is-lua">🔥 ' + st.streak + ' ngày liền</span>' : '') +
+      (st.best ? '<span class="qr-chip">🏆 Kỷ lục ' + st.best + ' điểm</span>' : '');
+    return '<button type="button" class="qr-entry" id="qrEntry">' + QR_CANH +
+      '<span class="qr-entry-text">' +
+        '<span class="qr-entry-nhan">⚡ 10 phút · <span lang="zh">复习</span> fùxí</span>' +
+        '<b>Ôn tập nhanh</b>' +
+        '<span class="qr-entry-phu">Vượt Vạn Lý Trường Thành <span lang="zh">长城</span> — ôn toàn bộ bài trong một lượt chơi</span>' +
+        '<span class="qr-entry-chips">' + chips + '</span>' +
+        '<span class="qr-entry-go">' + (dang ? 'Chơi tiếp' : st.doneToday ? 'Ôn lại' : 'Bắt đầu') + ' <span aria-hidden="true">▶</span></span>' +
+      '</span>' +
       '</button>';
   }
 

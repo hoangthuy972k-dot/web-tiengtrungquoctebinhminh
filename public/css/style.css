@@ -7737,53 +7737,62 @@ body.pinyin-hidden .py-inline {
 
 /* ---------- On tap nhanh 10 phut: Vuot Van Ly Truong Thanh ---------- */
 .qr-entry {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   align-items: center;
   gap: var(--space-4);
   width: 100%;
+  min-height: 148px;
   margin: 0 0 var(--space-5);
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-5) var(--space-6);
   border: none;
   border-radius: var(--radius-lg);
-  background:
-    radial-gradient(120% 140% at 0% 0%, rgba(236, 179, 101, 0.35), transparent 55%),
-    linear-gradient(135deg, #7d2616, var(--color-red-700));
-  color: var(--fg-gold-50);
+  background: #7d2616;
+  color: #fff4df;
   font: inherit;
   text-align: left;
   cursor: pointer;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 10px 24px rgba(125, 38, 22, 0.28);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.qr-entry:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+/* tranh nen ben phai, chu ben trai tren nen do tram */
+.qr-entry-canh { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; }
+.qr-entry::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, #7d2616 0%, rgba(125, 38, 22, 0.94) 38%, rgba(125, 38, 22, 0.55) 58%, rgba(125, 38, 22, 0) 78%);
+}
+.qr-entry:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(125, 38, 22, 0.34); }
 .qr-entry:focus-visible { outline: 3px solid var(--color-gold-400); outline-offset: 3px; }
-.qr-entry-art {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-lg);
-  background: var(--color-gold-50);
+.qr-entry-text { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; max-width: 520px; }
+.qr-entry-nhan {
+  padding: 2px 10px; border-radius: 99px;
+  background: rgba(255, 217, 138, 0.18); border: 1px solid rgba(255, 217, 138, 0.45);
+  color: #ffd98a; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.02em;
 }
-.qr-entry-art svg { width: 46px; height: 50px; }
-.qr-entry-art .qr-legs { display: none; }
-.qr-entry-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
-.qr-entry-text b { font-size: 1.12rem; color: var(--xt-ffe19a); }
-.qr-entry-text span { font-size: 0.88rem; color: rgba(255, 244, 223, 0.85); }
-.qr-entry-status {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-  flex-shrink: 0;
-  padding: 6px 12px;
-  border-radius: var(--radius-md);
-  background: rgba(0, 0, 0, 0.2);
-  font-size: 0.8rem;
-  font-weight: 700;
+.qr-entry-text b { font-size: 1.55rem; line-height: 1.15; color: #fff4df; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); }
+.qr-entry-phu { font-size: 0.9rem; color: rgba(255, 244, 223, 0.88); text-wrap: balance; }
+.qr-entry-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.qr-chip {
+  padding: 3px 10px; border-radius: 99px;
+  background: rgba(0, 0, 0, 0.28); color: #fff4df;
+  font-size: 0.78rem; font-weight: 700; white-space: nowrap;
 }
-.qr-entry-status em { font-style: normal; color: var(--xt-ffe19a); }
+.qr-chip.is-ok { background: #2e8b57; }
+.qr-chip.is-lua { background: rgba(255, 140, 50, 0.35); }
+.qr-entry-go {
+  flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px; margin-top: 8px;
+  padding: 10px 22px; border-radius: 99px;
+  background: linear-gradient(180deg, #ffe08a, #f2b544); color: #5a1a0e;
+  font-weight: 900; font-size: 1rem;
+  box-shadow: 0 4px 0 #b9761d, 0 8px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease;
+}
+.qr-entry:hover .qr-entry-go { transform: translateY(-1px) scale(1.03); }
+/* linh vat den long dang di tren tuong thanh (nam trong tranh) */
+.qr-canh-di { transform-box: fill-box; transform-origin: 50% 100%; animation: qr-di-buoc 1.4s ease-in-out infinite; }
+@keyframes qr-di-buoc { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-3px) rotate(4deg); } }
 
 /* Canh tuong thanh */
 .qr-scene {
@@ -8004,9 +8013,14 @@ body.pinyin-hidden .py-inline {
 @keyframes qrPop { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: none; } }
 
 @media (max-width: 640px) {
-  .qr-entry { padding: var(--space-3) var(--space-4); gap: var(--space-3); }
-  .qr-entry-art { width: 52px; height: 52px; }
-  .qr-entry-status { display: none; }
+  .qr-entry { flex-direction: column; align-items: flex-start; min-height: 0; padding: var(--space-4); gap: var(--space-3); }
+  /* dien thoai: tranh thanh dai rieng o tren, chu + nut ben duoi tren nen do */
+  .qr-entry::before { content: none; }
+  .qr-entry-canh { position: static; display: block; width: calc(100% + 2 * var(--space-4)); height: 118px; margin: calc(-1 * var(--space-4)) calc(-1 * var(--space-4)) 0; }
+  .qr-entry-text b { font-size: 1.3rem; }
+  .qr-entry-go { align-self: stretch; justify-content: center; }
+  .qr-entry-text { max-width: none; align-self: stretch; }
+
   .qr-scene { height: 160px; }
   .qr-runner { left: 40px; }
   .qr-title { font-size: 1.4rem; }
@@ -9654,4 +9668,7 @@ body .game-picker-go { font-size: 2rem; line-height: 1; color: var(--fg-gray-400
 @media (max-width: 640px) {
   .dpb-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dpb-ten { font-size: 0.92rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .qr-canh-di { animation: none; }
 }

@@ -66,6 +66,13 @@
       hien('manCho');
       batDauPoll();
     }).catch(function (e) {
+      // Ma cua phong Thi tren lop (/thi) chu khong phai phong choi -> chuyen sang phong thi
+      if (e.status === 404) {
+        return fetch('/api/thi-lop/' + ma + '/thong-tin').then(function (r) {
+          if (r.ok) { location.href = '/thi?ma=' + ma; return; }
+          $('loiVao').textContent = e.message;
+        }, function () { $('loiVao').textContent = e.message; });
+      }
       $('loiVao').textContent = e.message;
     }).then(function () { $('nutVao').disabled = false; });
   });

@@ -2475,3 +2475,4 @@ body.lop-playing #lopStage .lop-bingo-done { color: rgba(255,255,255,.8); }
   .lop-train-car img { animation: none; }
   #lopStage .lop-row:hover { transform: none; }
 }
+a.lop-test-card { text-decoration: none; }

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thi trên lớp · Hi Hán 喜汉</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%225%22 y=%225%22 width=%2290%22 height=%2290%22 rx=%2222%22 fill=%22%23c8372d%22/><text x=%2250%22 y=%2268%22 font-size=%2250%22 text-anchor=%22middle%22 fill=%22%23fff6e9%22 font-family=%22sans-serif%22 font-weight=%22700%22>考</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/css/thi-lop.css" />
+</head>
+<body>
+  <header class="tl-top">
+    <a class="tl-pill" href="/lop" id="tlVeLop"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>Chế độ lớp học</a>
+    <h1 id="tlTieuDe">Thi trên lớp</h1>
+    <div class="tl-top-r"><button type="button" class="tl-pill" id="tlManHinh" hidden>⛶ Toàn màn hình</button></div>
+  </header>
+
+  <main class="tl-main">
+    <!-- Mat khau quan tri -->
+    <section id="tlDangNhap" class="tl-the tl-hep" hidden>
+      <h2>Đăng nhập thầy cô</h2>
+      <p>Nhập mật khẩu quản trị (giống trang Báo cáo) để tạo phòng thi và xem điểm.</p>
+      <form id="tlDnForm" class="tl-dn">
+        <input type="password" id="tlMk" autocomplete="current-password" placeholder="Mật khẩu quản trị" aria-label="Mật khẩu quản trị" required />
+        <button type="submit" class="tl-nut tl-nut-chinh">Vào</button>
+      </form>
+      <p class="tl-loi" id="tlDnLoi" hidden></p>
+    </section>
+
+    <!-- Tao phong thi + lich su -->
+    <section id="tlTao" hidden>
+      <div class="tl-tao">
+        <div class="tl-the">
+          <h2>Tạo bài thi trên lớp</h2>
+          <div class="tl-buoc">
+            <h3>1 · Chọn đề</h3>
+            <div class="tl-cap" id="tlCap" role="tablist" aria-label="Cấp độ"></div>
+            <div class="tl-de-ds" id="tlDeDs"></div>
+          </div>
+          <div class="tl-buoc" id="tlBuocPhan" hidden>
+            <h3>2 · Phần thi và thời gian</h3>
+            <div class="tl-phan" id="tlPhan"></div>
+            <label class="tl-dong">Thời gian làm bài
+              <span class="tl-phut"><input type="number" id="tlPhut" min="1" max="240" value="40" /> phút</span>
+            </label>
+            <p class="tl-goi-y" id="tlPhutGoiY"></p>
+          </div>
+          <div class="tl-buoc" id="tlBuocLop" hidden>
+            <h3>3 · Học sinh và kết quả</h3>
+            <label class="tl-dong">Lớp
+              <select id="tlLop"><option value="">Không chọn — học sinh tự gõ họ tên</option></select>
+            </label>
+            <div class="tl-chon-kq">
+              <label><input type="radio" name="tlKq" value="sau" checked /> <span><b>Chờ tôi công bố</b> — nộp xong học sinh chỉ thấy “Đã nộp bài”</span></label>
+              <label><input type="radio" name="tlKq" value="ngay" /> <span><b>Hiện điểm ngay</b> khi từng em nộp bài (kèm đáp án)</span></label>
+            </div>
+          </div>
+          <div class="tl-hanh-dong" id="tlHanhDong" hidden>
+            <button type="button" class="tl-nut tl-nut-chinh tl-nut-lon" id="tlTaoBtn">Tạo phòng thi · mã QR</button>
+            <div class="tl-in">
+              <span>In ra giấy:</span>
+              <button type="button" class="tl-nut" data-in="de">Đề thi</button>
+              <button type="button" class="tl-nut" data-in="phieu">Phiếu trả lời</button>
+              <button type="button" class="tl-nut" data-in="dapan">Đáp án + lời bài nghe</button>
+            </div>
+            <p class="tl-loi" id="tlTaoLoi" hidden></p>
+          </div>
+        </div>
+
+        <div class="tl-the tl-lich-su">
+          <h2>Các bài thi đã tổ chức</h2>
+          <div id="tlLichSu"><p class="tl-mo">Đang tải…</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phong thi -->
+    <section id="tlPhong" hidden>
+      <div class="tl-phong-dau">
+        <div class="tl-ma-nho" id="tlMaNho"></div>
+        <div class="tl-tab" role="tablist">
+          <button type="button" role="tab" data-tab="theo" class="on">Theo dõi</button>
+          <button type="button" role="tab" data-tab="kq">Kết quả <span id="tlSoNop"></span></button>
+        </div>
+        <button type="button" class="tl-nut" id="tlRaNgoai">← Danh sách bài thi</button>
+      </div>
+
+      <div id="tlTheoDoi">
+        <!-- cho: QR lon -->
+        <div class="tl-sanh" id="tlSanh" hidden>
+          <div class="tl-qr-the">
+            <div class="tl-qr" id="tlQr"></div>
+            <div class="tl-qr-chu">
+              <p>Quét mã hoặc vào</p>
+              <b class="tl-url" id="tlUrl"></b>
+              <p>rồi nhập mã phòng</p>
+              <div class="tl-ma-to" id="tlMaTo"></div>
+            </div>
+          </div>
+          <div class="tl-sanh-r">
+            <h2 id="tlSanhDe"></h2>
+            <p class="tl-mo" id="tlSanhTt"></p>
+            <button type="button" class="tl-nut tl-nut-chinh tl-nut-lon" id="tlBatDau">Bắt đầu làm bài</button>
+            <p class="tl-goi-y">Bấm khi cả lớp đã vào. Đồng hồ chạy từ lúc bấm; ai vào muộn vẫn làm được nhưng hết giờ chung.</p>
+          </div>
+        </div>
+
+        <!-- lam: dong ho + bai nghe -->
+        <div class="tl-dang" id="tlDang" hidden>
+          <div class="tl-dh-the">
+            <div class="tl-dh" id="tlDh">--:--</div>
+            <div class="tl-dh-nut">
+              <button type="button" class="tl-nut" data-gio="-5">− 5 phút</button>
+              <button type="button" class="tl-nut" data-gio="5">+ 5 phút</button>
+              <button type="button" class="tl-nut tl-nut-do" id="tlThu">Thu bài ngay</button>
+            </div>
+            <div class="tl-qr-mini" id="tlQrMini" title="Mã để học sinh vào muộn"></div>
+          </div>
+          <div class="tl-nghe" id="tlNghe" hidden>
+            <div class="tl-nghe-dau">
+              <span class="tl-nghe-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
+              <div><b>Phần Nghe — phát qua loa lớp</b><span id="tlNgheCau">Bấm ▶ để phát bài nghe</span></div>
+            </div>
+            <audio id="tlAudio" controls preload="auto"></audio>
+            <div class="tl-nghe-cau" id="tlNgheDs" aria-label="Nhảy tới câu"></div>
+            <div class="tl-nghe-het" id="tlNgheHet">
+              <span id="tlNgheHetChu">Hết bài nghe thì bấm nút này — máy học sinh tự sang phần tiếp theo.</span>
+              <button type="button" class="tl-nut tl-nut-chinh" id="tlMoDoc">Mở phần Đọc cho cả lớp</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-hs-dau">
+          <h3>Học sinh <span id="tlSoHs"></span></h3>
+          <span class="tl-chu-giai"><i class="lam"></i>đang làm <i class="nop"></i>đã nộp <i class="mat"></i>mất kết nối</span>
+        </div>
+        <div class="tl-hs" id="tlHs"></div>
+        <div class="tl-chua-vao" id="tlChuaVao" hidden></div>
+      </div>
+
+      <div id="tlKetQua" hidden>
+        <div class="tl-kq-nut">
+          <label class="tl-cong-bo"><input type="checkbox" id="tlCongBo" /> <span>Công bố điểm và đáp án cho học sinh</span></label>
+          <button type="button" class="tl-nut" id="tlTaiCsv">Tải bảng điểm (Excel)</button>
+          <button type="button" class="tl-nut" id="tlInKq">In bảng điểm</button>
+        </div>
+        <div class="tl-tong" id="tlTong"></div>
+        <div class="tl-the tl-bang-the">
+          <div class="tl-bang-cuon"><table class="tl-bang" id="tlBang"></table></div>
+        </div>
+        <div class="tl-the">
+          <h3>Thống kê từng câu <small>— màu càng đỏ, càng nhiều bạn sai. Bấm vào câu để xem các em chọn gì.</small></h3>
+          <div class="tl-cau-tk" id="tlCauTk"></div>
+          <div class="tl-cau-ct" id="tlCauCt" hidden></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="tlHop"></div>
+  <script src="/js/vendor/qrcode.js"></script>
+  <script src="/js/thi-lop.js"></script>
+</body>
+</html>

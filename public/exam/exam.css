@@ -659,3 +659,111 @@ body { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org
 .ex-btn-primary:active { transform: translateY(3px); box-shadow: 0 1px 0 #1b2452; }
 .ex-btn-ghost { box-shadow: 0 3px 0 var(--ex-line); }
 .ex-btn-ghost:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--ex-line); }
+
+/* ============================================================
+   Thi trên lớp (/thi?ma=...) — vào phòng, chờ, đã nộp, thanh "nghe loa"
+   ============================================================ */
+.ex-lop-vao { max-width: 640px; margin: 24px auto; padding: 28px 28px 30px; text-align: center; }
+.ex-lop-vao h2 { margin: 6px 0 10px; font-size: 1.45rem; text-wrap: balance; }
+.ex-lop-vao p { color: var(--ex-mid); margin: 8px 0; }
+.ex-lop-vao .ex-input { width: 100%; max-width: 380px; margin: 6px auto 14px; display: block; font-size: 1.1rem; text-align: center; }
+.ex-lop-vao .ex-btn-primary { min-width: 200px; }
+.ex-lop-ma {
+  display: inline-block; padding: 5px 14px; border-radius: 999px;
+  background: var(--ex-red-soft); color: var(--ex-red); font-weight: 800; letter-spacing: 0.06em; font-size: 0.85rem;
+}
+.ex-lop-vao .ex-lop-o-ma { font-size: 2rem; letter-spacing: 0.3em; font-weight: 800; }
+.ex-lop-hd { display: block; font-weight: 700; color: var(--ex-ink); margin: 18px 0 8px; }
+.ex-lop-vao p.ex-lop-hd { color: var(--ex-ink); margin: 18px 0 8px; }
+.ex-lop-ten { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; text-align: left; max-height: 52vh; overflow-y: auto; padding: 2px; }
+.ex-lop-ten button {
+  border: 2px solid var(--ex-line); background: var(--ex-card); border-radius: 14px; padding: 10px 12px;
+  font-weight: 600; font-size: 1rem; color: var(--ex-ink); display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-height: 48px;
+}
+.ex-lop-ten button:hover, .ex-lop-ten button:focus-visible { border-color: var(--ex-navy); outline: none; }
+.ex-lop-ten button.goi-y { border-color: var(--ex-green); background: var(--ex-green-soft); }
+.ex-lop-ten button.da { color: var(--ex-soft); background: var(--ex-chip); }
+.ex-lop-ten small { font-size: 0.75rem; font-weight: 500; color: var(--ex-soft); }
+.ex-lop-vao .ex-lop-err, .ex-lop-err { color: var(--ex-red); font-weight: 600; }
+.ex-lop-vao .ex-lop-nho { font-size: 0.88rem; }
+.ex-lop-doi { margin-top: 14px; background: none; border: none; color: var(--ex-navy); text-decoration: underline; font-size: 0.9rem; }
+.ex-lop-cho { display: flex; justify-content: center; gap: 10px; margin: 18px 0 8px; }
+.ex-lop-cho i { width: 14px; height: 14px; border-radius: 50%; background: var(--ex-red); animation: exLopNhay 1.2s ease-in-out infinite; }
+.ex-lop-cho i:nth-child(2) { animation-delay: 0.2s; background: #e0a100; }
+.ex-lop-cho i:nth-child(3) { animation-delay: 0.4s; background: var(--ex-navy); }
+@keyframes exLopNhay { 0%, 100% { transform: translateY(0); opacity: 0.5; } 50% { transform: translateY(-10px); opacity: 1; } }
+.ex-lop-tick { width: 64px; height: 64px; margin: 0 auto 6px; border-radius: 50%; background: var(--ex-green-soft); color: var(--ex-green); display: grid; place-items: center; }
+.ex-lop-tick svg { width: 34px; height: 34px; }
+
+.ex-lop-loa {
+  position: sticky; top: 66px; z-index: 30;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: var(--ex-card); border-radius: var(--ex-radius-sm); box-shadow: var(--ex-shadow);
+  padding: 10px 16px; margin: -6px 0 16px; border: 2px solid var(--ex-navy-soft);
+}
+.ex-lop-loa-ic { width: 40px; height: 40px; border-radius: 50%; background: var(--ex-navy); color: #fff; display: grid; place-items: center; flex-shrink: 0; }
+.ex-lop-loa-ic svg { width: 22px; height: 22px; }
+.ex-lop-loa-t { display: flex; flex-direction: column; line-height: 1.3; }
+.ex-lop-loa-t span { color: var(--ex-navy); font-weight: 700; font-size: 1.05rem; }
+.ex-lop-cuon { margin-left: auto; font-size: 0.85rem; color: var(--ex-mid); display: inline-flex; align-items: center; gap: 6px; }
+.ex-card.ex-dang-nghe { box-shadow: 0 0 0 3px #e0a100 inset, var(--ex-shadow); }
+.ex-row.ex-dang-nghe { background: #fff6dc; border-radius: 12px; }
+.ex-lop-toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 30px); opacity: 0; pointer-events: none;
+  background: var(--ex-ink); color: #fff; padding: 12px 20px; border-radius: 999px; font-weight: 600; z-index: 90;
+  transition: opacity 0.25s, transform 0.25s; max-width: calc(100vw - 32px); text-align: center;
+}
+.ex-lop-toast.on { opacity: 1; transform: translate(-50%, 0); }
+body.ex-lop #exSpeed, body.ex-lop #exSpeed + label, body.ex-lop .ex-menu label:first-of-type { display: none; }
+@media (max-width: 720px) {
+  .ex-lop-vao { margin: 10px 0; padding: 22px 16px; }
+  .ex-lop-loa { top: 58px; padding: 8px 12px; }
+  .ex-lop-cuon { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .ex-lop-cho i { animation: none; opacity: 1; } }
+
+/* ============================================================
+   Bản in (/thi?in=1&...) — đề giấy, phiếu trả lời, đáp án
+   ============================================================ */
+body.ex-in .ex-layout { grid-template-columns: minmax(0, 1fr); max-width: 980px; }
+body.ex-in .ex-side, body.ex-in #exSpeed, body.ex-in .ex-menu label:first-of-type { display: none; }
+body.ex-in .ex-flag, body.ex-in .ex-arrange-ph, body.ex-in .ex-arrange-clear, body.ex-in .ex-sum-start, body.ex-in .ex-sum-clock, body.ex-in .ex-essay-count { display: none !important; }
+body.ex-in .ex-sum-write { display: block !important; }
+body.ex-in .ex-arrange-line { min-height: 44px; border: none; border-bottom: 1.5px solid #9a948c; border-radius: 0; background: none; }
+body.ex-in .ex-textarea, body.ex-in .ex-input { background: repeating-linear-gradient(transparent 0 33px, #c9c3ba 33px 34px); border: none; resize: none; }
+.ex-in-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--ex-navy-soft); border-radius: var(--ex-radius-sm); padding: 10px 16px; margin-bottom: 16px; font-weight: 700; }
+.ex-in-dau { text-align: center; margin-bottom: 18px; }
+.ex-in-dau h1 { font-size: 1.4rem; margin: 0 0 10px; text-wrap: balance; }
+.ex-in-dau p { color: var(--ex-mid); margin: 6px 0 0; }
+.ex-in-ttin { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; font-weight: 600; }
+.ex-in-ttin i { display: inline-block; width: 150px; border-bottom: 1.5px dotted #8b857c; vertical-align: bottom; }
+.ex-in-ttin span:first-child i { width: 230px; }
+.ex-in-khoi { background: var(--ex-card); border-radius: var(--ex-radius); box-shadow: var(--ex-shadow); padding: 16px 20px; margin-bottom: 16px; }
+.ex-in-khoi h3 { margin: 0 0 12px; font-size: 1.1rem; }
+.ex-in-luoi { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: 8px 18px; }
+.ex-in-o { display: flex; align-items: center; gap: 5px; min-height: 32px; font-variant-numeric: tabular-nums; }
+.ex-in-rong, .ex-in-vua { flex-wrap: wrap; }
+.ex-in-o > b { width: 30px; text-align: right; flex-shrink: 0; }
+.ex-in-vua { grid-column: span 2; }
+.ex-in-rong { grid-column: 1 / -1; }
+.ex-in-k { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid #6f6a66; display: inline-grid; place-items: center; font-size: 0.85rem; font-weight: 700; }
+.ex-in-dong { flex: 1 1 100%; min-width: 120px; height: 30px; border-bottom: 1.5px solid #9a948c; }
+.ex-in-o > b + .ex-in-dong { flex: 1 1 0; }
+.ex-in-da .ex-in-dung { font-weight: 800; color: var(--ex-red); font-size: 1.05rem; }
+.ex-in-loi { margin: 0; padding-left: 2.4em; }
+.ex-in-loi li { margin-bottom: 10px; }
+.ex-in-loi .vn { color: var(--ex-mid); font-size: 0.9rem; }
+@media (max-width: 720px) { .ex-in-vua { grid-column: 1 / -1; } }
+@media print {
+  @page { margin: 14mm 12mm; }
+  body { background: #fff; font-size: 13px; }
+  .ex-top, .ex-in-bar, .ex-side { display: none !important; }
+  .ex-layout { padding: 0; display: block; }
+  .ex-card, .ex-in-khoi { box-shadow: none !important; border: 1px solid #cfc9c0; break-inside: avoid; border-radius: 10px; padding: 10px 14px; }
+  .ex-group { break-inside: auto; }
+  .ex-sec-head { background: none; border-bottom: 2px solid #333; border-radius: 0; padding: 6px 0; }
+  .ex-sec-icon { background: #333; }
+  .ex-opt, .ex-tf, .ex-letter, .ex-chip { box-shadow: none !important; }
+  .ex-judge img, .ex-pic img { max-width: 150px; }
+  .ex-in-k { border-color: #333; }
+}

@@ -190,7 +190,7 @@ function phienBanHopLe(v, filePath, stat) {
 // sinh khong hoi AI trong luc thi, va bo qua trang quan tri.
 const WIDGET_TAGS = '<link rel="stylesheet" href="/css/widgets.css" />\n<script src="/js/widgets.js" defer></script>\n';
 // Trang lop.html la man hinh chieu len lop — khong gan nut noi cho do roi mat.
-const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html|lop\.html|choi\.html|quet\.html|nghieng\.html|van-dong\.html|dk\.html|hsk30\.html)$/;
+const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html|lop\.html|choi\.html|quet\.html|nghieng\.html|van-dong\.html|dk\.html|hsk30\.html|thi-lop\.html)$/;
 
 function sendVersionedHtml(res, filePath) {
   let html = fs.readFileSync(filePath, 'utf8');
@@ -207,7 +207,7 @@ function sendVersionedHtml(res, filePath) {
 // CDN cua Hostinger phuc vu thang cac duong dan co duoi .html nen chung khong di
 // qua day, khong duoc dong dau ?v= va trinh duyet giu mai ban CSS/JS cu. Cac trang
 // dung thuong xuyen co them duong dan khong duoi file de luon qua Node.
-const CLEAN_PAGES = { '/lop': 'lop.html', '/choi': 'choi.html', '/quet': 'quet.html', '/nghieng': 'nghieng.html', '/van-dong': 'van-dong.html', '/dk': 'dk.html','/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html', '/nong-trai': 'nong-trai.html' };
+const CLEAN_PAGES = { '/lop': 'lop.html', '/choi': 'choi.html', '/quet': 'quet.html', '/nghieng': 'nghieng.html', '/van-dong': 'van-dong.html', '/dk': 'dk.html','/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html', '/nong-trai': 'nong-trai.html', '/thi-lop': 'thi-lop.html', '/thi': 'exam/test/index.html' };
 
 // Trang Phat am da bo: ai con giu duong dan cu thi dua ve trang chu
 app.get(['/phat-am', '/phat-am.html'], (req, res) => res.redirect(301, '/'));
@@ -381,6 +381,7 @@ async function initDb() {
   await initGopYTable();
   await initStarsTable();
   await nongTrai.initTable();
+  await thiLop.initTable();
   await initClassTables();
   await initQuenMkTables();
   console.log('MySQL: da san sang (bang users/scores/exam_attempts).');
@@ -1788,6 +1789,11 @@ const nongTrai = require('./nong-trai')(app, {
   DATA_DIR, USE_DB, db: () => dbPool, readJsonFile, writeJsonFile, requireAuth, asyncRoute,
   loadStar, vnDayKey, loadClassState, loadUserNames,
 });
+// Thi tren lop (/thi-lop giao vien, /thi hoc sinh): de lay tu kho thi thu HSK — xem thi-lop.js
+const thiLop = require('./thi-lop')(app, {
+  DATA_DIR, USE_DB, db: () => dbPool, readJsonFile, writeJsonFile, requireAdmin, asyncRoute,
+  loadClassState, loadUserNames, optionalUserId, loadExamDef, listExamDefs, gradeExam, cleanExamAnswers,
+});
 
 // ---------- Bai on cho nong trai ----------
 // Cau hoi cho vat nuoi an lay tu SO LIEU LAM BAI THAT cua hoc sinh tren may chu
@@ -2008,12 +2014,23 @@ function normExamText(v) {
   return String(v == null ? '' : v).replace(/[\s，。！？、,.!?；;：:“”"'‘’（）()]/g, '');
 }
 
+// Tra them diem tung phan (sec) va dung/sai tung cau (dung) — phong thi tren lop (thi-lop.js) dung de thong ke.
 function gradeExam(def, answers) {
   let correct = 0, score = 0;
   const perSection = def.maxScore / def.sections.length;
-  def.sections.forEach((sec) => {
+  const sec = [], dung = {};
+  def.sections.forEach((sec0) => {
     let c = 0;
-    sec.answers.forEach(([n, ans, isText]) => {
+    sec0.answers.forEach(([n, ans, isText]) => {
+      const c0 = c;
+      chamCau(n, ans, isText);
+      dung[n] = c > c0;
+    });
+    const sc = Math.round(sec0.answers.length ? (c / sec0.answers.length) * perSection : 0);
+    sec.push({ id: sec0.id, c, t: sec0.answers.length, score: sc });
+    correct += c;
+    score += sc;
+    function chamCau(n, ans, isText) {
       if (!Object.prototype.hasOwnProperty.call(answers, n)) return;
       if (isText === 'summary') {
         const got = typeof answers[n] === 'string' ? normExamText(answers[n]) : '';
@@ -2035,11 +2052,9 @@ function gradeExam(def, answers) {
         if (got !== '' && ans.some((a) => got === normExamText(a))) c++;
       }
       else if (answers[n] === ans) c++;
-    });
-    correct += c;
-    score += Math.round(sec.answers.length ? (c / sec.answers.length) * perSection : 0);
+    }
   });
-  return { correct, total: def.total, score };
+  return { correct, total: def.total, score, sec, dung };
 }
 
 function examRankPoints(score, maxScore, usedSec, durationSec) {
@@ -2057,7 +2072,8 @@ function cleanExamAnswers(raw) {
   Object.keys(raw).slice(0, 400).forEach((k) => {
     if (!/^\d{1,3}$/.test(k)) return;
     const v = raw[k];
-    if (typeof v === 'boolean' || (typeof v === 'string' && v.length <= 60)) out[k] = v;
+    // bai viet doan HSK 5 (~80 chu) / tom tat HSK 6 (~400 chu) dai hon nhieu so voi 1 dap an
+    if (typeof v === 'boolean' || (typeof v === 'string' && v.length <= 1500)) out[k] = v;
   });
   return out;
 }

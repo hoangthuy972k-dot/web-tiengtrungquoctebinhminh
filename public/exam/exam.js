@@ -25,8 +25,16 @@
     cross: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
   };
 
-  var id = new URLSearchParams(location.search).get('id') || 'hsk2-test-1';
-  var STORE = 'hyv_exam_' + id;
+  var QS = new URLSearchParams(location.search);
+  // Thi tren lop (/thi?ma=123456): de, dong ho, phan Nghe do may giao vien dieu khien — xem thi-lop.js
+  var LOP = /^\d{6}$/.test(QS.get('ma') || '') ? QS.get('ma') : '';
+  // Ban in (/thi?in=1&id=...&phan=listen,read&kem=de|phieu|dapan): de giay, phieu tra loi, dap an
+  var IN = !LOP && QS.get('in') === '1';
+  var id = QS.get('id') || 'hsk2-test-1';
+  var STORE = LOP ? 'hyv_thilop_' + LOP : 'hyv_exam_' + id;
+  // phong: trang thai phong tu may chu, lech: gio may chu - gio may em, tlMay: bai da luu tren may chu (doi may)
+  var lop = { pid: '', tok: '', phong: null, lech: 0, daTai: false, poll: null, luu: null, tlMay: null, daHien: false, roi: false, cauNghe: -1 };
+  var ID_LOP = 'hyv_thilop_id_' + LOP; // pid + tok cua em trong phong (tai lai trang van vao lai duoc)
   var RESULTS = 'hyv_exam_results';
   var data = null;
   var state = { answers: {}, startedAt: 0, submitted: false, result: null };
@@ -35,21 +43,32 @@
   var allQuestions = [];
 
   // ---------- Tải đề ----------
-  var s = document.createElement('script');
-  s.src = '/exam/tests/' + encodeURIComponent(id) + '.js';
-  s.onload = function () { data = window.EXAM_DATA; init(); };
-  s.onerror = function () { $('#exMain').innerHTML = '<div class="ex-card"><h3>Không tìm thấy đề thi</h3><p><a href="/exam/">← Quay lại danh sách đề</a></p></div>'; };
-  document.head.appendChild(s);
+  function taiDe(deId) {
+    var s = document.createElement('script');
+    s.src = '/exam/tests/' + encodeURIComponent(deId) + '.js';
+    s.onload = function () { data = window.EXAM_DATA; init(); };
+    s.onerror = function () { $('#exMain').innerHTML = '<div class="ex-card"><h3>Không tìm thấy đề thi</h3><p><a href="/exam/">← Quay lại danh sách đề</a></p></div>'; };
+    document.head.appendChild(s);
+  }
+  if (LOP) lopKhoiDong();
+  else if (!IN && /^\/thi\/?$/.test(location.pathname)) lopNhapMa();
+  else taiDe(id);
 
   function init() {
-    document.title = data.title + ' — Thi thử HSK';
+    if (LOP) lopChuanBiDe();
+    if (IN) chonPhanIn();
+    document.title = data.title + (LOP ? ' — Thi trên lớp' : ' — Thi thử HSK');
     $('#exTitle').textContent = data.title;
     indexQuestions();
+    if (IN) { initIn(); return; }
     loadState();
+    if (LOP) lopGopBai();
     var fresh = !state.startedAt;
-    if (fresh) { state.startedAt = Date.now(); saveState(); startAttempt(); }
+    if (fresh) { state.startedAt = LOP ? lop.phong.batDau : Date.now(); saveState(); if (!LOP) startAttempt(); }
+    if (LOP && !state.submitted) lopQuaPhanNghe(true);
     render();
     bindTop();
+    if (LOP) { if (state.submitted) lopDaNop(); else { startTimer(); lopNghe(); } return; }
     if (state.submitted) { showResult(); sendRank(state.result && state.result.auto); } else startTimer();
   }
 
@@ -87,6 +106,7 @@
     return m + ':' + (s2 < 10 ? '0' : '') + s2;
   }
   function rankNoteHtml() {
+    if (LOP) return '<b>📝 Thi trên lớp</b> · Phòng ' + LOP + (lop.phong && lop.phong.ten ? ' · ' + esc(lop.phong.ten) : '') + '<br>Bài làm tự lưu lên máy thầy cô.';
     if (state.attemptId) {
       return state.attemptCounts
         ? '<b>🏆 Lượt này được tính xếp hạng.</b> Điểm càng cao, nộp càng sớm thì hạng càng cao.'
@@ -215,7 +235,11 @@
       if (raw) { var st = JSON.parse(raw); if (st && st.answers) state = st; }
     } catch (e) { /* ignore */ }
   }
-  function saveState() { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) { /* ignore */ } }
+  function saveState() {
+    if (IN) return;
+    try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) { /* ignore */ }
+    if (LOP && !state.submitted) lopHenLuu();
+  }
   function clearState() { try { localStorage.removeItem(STORE); } catch (e) { /* ignore */ } }
 
   // ---------- Render ----------
@@ -225,15 +249,25 @@
       var total = countSection(sec);
       // Moi phan thi la mot "trang" rieng: dang thi chi hien phan dang lam (state.sec);
       // sang phan sau thi phan truoc bi khoa, khong xem lai duoc. Nop bai xong thi hien het de xem lai.
-      html += '<div class="ex-sec" data-sec="' + sec.id + '"' + (!state.submitted && si !== curSec() ? ' hidden' : '') + '>';
+      html += '<div class="ex-sec" data-sec="' + sec.id + '"' + (!IN && !state.submitted && si !== curSec() ? ' hidden' : '') + '>';
+      // Thi tren lop / ban in: khong co nut nghe — bai nghe phat qua loa cua thay co
+      var coAudio = sec.audio && !LOP && !IN;
       html += '<div class="ex-sec-head" id="sec-' + sec.id + '"><span class="ex-sec-icon">' + (ICONS[sec.icon] || '') + '</span>' +
         '<span class="ex-sec-title">' + esc(sec.name) + ': (' + total + ' câu)</span>' +
-        (sec.audio ? '<audio id="exAudio" class="ex-sec-audio" controls preload="metadata" src="' + esc(sec.audio) + '" aria-label="Audio cả phần ' + esc(sec.name) + '"></audio>' : '') +
-        '<span class="ex-info" title="' + esc(sec.note || '') + '">' + ICONS.info + '</span></div>';
-      if (sec.audio && sec.note) html += '<p class="ex-audio-note">🎧 ' + esc(sec.note) + '</p>';
+        (coAudio ? '<audio id="exAudio" class="ex-sec-audio" controls preload="metadata" src="' + esc(sec.audio) + '" aria-label="Audio cả phần ' + esc(sec.name) + '"></audio>' : '') +
+        (IN ? '' : '<span class="ex-info" title="' + esc(sec.note || '') + '">' + ICONS.info + '</span>') + '</div>';
+      if (coAudio && sec.note) html += '<p class="ex-audio-note">🎧 ' + esc(sec.note) + '</p>';
+      if (LOP && sec.audio) {
+        html += '<div class="ex-lop-loa" id="exLopLoa"><span class="ex-lop-loa-ic">' + ICONS.speaker + '</span>' +
+          '<span class="ex-lop-loa-t"><b>Nghe loa của thầy cô</b><span id="exLopCau">Chờ thầy cô phát bài nghe…</span></span>' +
+          '<label class="ex-lop-cuon"><input type="checkbox" id="exLopCuon" checked /> Tự cuộn tới câu đang đọc</label></div>';
+      }
       sec.parts.forEach(function (part) { html += renderPart(part, sec); });
-      var next = data.sections[si + 1];
-      if (next) {
+      var next = IN ? null : data.sections[si + 1];
+      if (next && LOP && sec.id === 'listen' && !state.submitted) {
+        html += '<div class="ex-next ex-lop-cho-doc"><span class="ex-sec-icon">' + (ICONS[next.icon] || '') + '</span>' +
+          '<span class="ex-next-t">' + esc(next.name) + ': (' + countSection(next) + ' câu)<small>Hết bài nghe, thầy cô sẽ mở phần ' + esc(next.name) + ' cho cả lớp — em không cần bấm gì.</small></span></div>';
+      } else if (next) {
         html += '<div class="ex-next"' + (state.submitted ? ' hidden' : '') + '><span class="ex-sec-icon">' + (ICONS[next.icon] || '') + '</span>' +
           '<span class="ex-next-t">' + esc(next.name) + ': (' + countSection(next) + ' câu)<small>Sang phần ' + esc(next.name) + ' thì không quay lại phần ' + esc(sec.name) + ' được nữa.</small></span>' +
           '<button type="button" data-next-sec="' + (si + 1) + '">Chuyển tới phần ' + esc(next.name) + ' ›</button></div>';
@@ -298,16 +332,17 @@
     var left = sectionQs(sec).filter(function (q) { return !hasAnswer(q.n); }).length;
     openModal('Chuyển sang phần ' + next.name,
       (left ? 'Phần ' + sec.name + ' còn ' + left + ' câu chưa làm. ' : '') + 'Sau khi chuyển sang phần ' + next.name + ', bạn sẽ không thể quay lại xem hay sửa phần ' + sec.name + ' nữa.',
-      'Chuyển sang phần ' + next.name, function () {
-        stopClip();
-        var a = $('#exAudio'); if (a) a.pause();
-        state.sec = si; sumEnter(); saveState();
-        $all('#exMain .ex-sec').forEach(function (el, i) { el.hidden = i !== si; });
-        renderSide();
-        applyAnswersToDom();
-        $('#exTimerTxt').textContent = fmt(remainingSec());
-        window.scrollTo({ top: 0, behavior: 'auto' });
-      });
+      'Chuyển sang phần ' + next.name, function () { chuyenPhan(si); });
+  }
+  function chuyenPhan(si) {
+    stopClip();
+    var a = $('#exAudio'); if (a) a.pause();
+    state.sec = si; sumEnter(); saveState();
+    $all('#exMain .ex-sec').forEach(function (el, i) { el.hidden = i !== si; });
+    renderSide();
+    applyAnswersToDom();
+    $('#exTimerTxt').textContent = fmt(remainingSec());
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }
 
   // Cuon bang cau hoi ben phai toi phan thi dang lam (Nghe / Doc / Viet)
@@ -344,7 +379,7 @@
     return '<div class="ex-text ' + (cls || '') + '">' + (q.py ? '<div class="py">' + esc(q.py) + '</div>' : '') + '<div class="zh">' + zhHtml(q.zh, q.n) + '</div></div>';
   }
   function playBtn(q) {
-    if (!q.audio) return '';
+    if (!q.audio || LOP || IN) return '';
     return '<button type="button" class="ex-play" data-play="' + q.n + '" aria-label="Nghe câu ' + q.n + '">' + ICONS.speaker + '</button>';
   }
   function cardHead(label, q) {
@@ -767,6 +802,11 @@
 
   function bindTop() {
     $('#exBack').addEventListener('click', function () {
+      if (LOP) {
+        if (state.submitted) { location.href = '/'; return; }
+        openModal('Rời phòng thi', 'Bài làm đã được lưu lên máy thầy cô. Em có thể vào lại bằng mã phòng ' + LOP + ' để làm tiếp, đồng hồ vẫn chạy.', 'Rời phòng', function () { lop.roi = true; location.href = '/'; });
+        return;
+      }
       if (state.submitted) { location.href = '/exam/'; return; }
       openModal('Thoát bài thi', 'Bạn có chắc chắn muốn thoát không? Bài làm hiện tại sẽ được lưu lại để bạn làm tiếp sau.', 'Thoát', function () { location.href = '/exam/'; });
     });
@@ -779,13 +819,16 @@
     });
     $('#exPy').addEventListener('change', function () { document.body.classList.toggle('py-off', !this.checked); });
     window.addEventListener('beforeunload', function (e) {
-      if (state.submitted) return;
+      if (state.submitted || lop.roi) return;
       e.preventDefault(); e.returnValue = '';
     });
   }
 
   // ---------- Đồng hồ ----------
-  function remainingSec() { return Math.max(0, data.durationSec - Math.floor((Date.now() - state.startedAt) / 1000)); }
+  function remainingSec() {
+    if (LOP) return Math.max(0, Math.ceil((lop.phong.hetLuc - (Date.now() + lop.lech)) / 1000));
+    return Math.max(0, data.durationSec - Math.floor((Date.now() - state.startedAt) / 1000));
+  }
   function fmt(sec) {
     var h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60), s2 = sec % 60;
     return [h, m, s2].map(function (x) { return (x < 10 ? '0' : '') + x; }).join(':');
@@ -838,6 +881,7 @@
     });
     res.pass = res.score >= data.passScore;
     state.submitted = true; state.result = res; saveState();
+    if (LOP) { lopNop(); return; }
     try {
       var hist = JSON.parse(localStorage.getItem(RESULTS) || '{}');
       hist[id] = { score: res.score, max: res.max, correct: res.correct, total: res.total, pass: res.pass, at: res.at };
@@ -921,7 +965,8 @@
       '<div class="ex-ring' + (res.pass ? ' pass' : '') + '"><svg viewBox="0 0 190 190"><circle class="track" cx="95" cy="95" r="80"/><circle class="bar" cx="95" cy="95" r="80" stroke-dasharray="' + C + '" stroke-dashoffset="' + (C * (1 - pct / 100)) + '"/></svg>' +
       '<div class="ex-ring-txt"><b>' + pct + '%</b><span>' + (res.pass ? 'Đạt' : 'Chưa đạt') + '</span></div></div>' +
       '<div class="ex-stats"><div><small>Chính xác</small><b>' + res.correct + '</b></div><div><small>Số điểm</small><b>' + res.score + '</b><small>/ ' + res.max + '</small></div><div><small>Câu hỏi</small><b>' + res.total + '</b></div></div>' +
-      '<div class="ex-result-actions"><button type="button" class="ex-btn-primary" id="exRetry">Làm lại</button><a class="ex-btn-ghost" href="/exam/">Đề khác</a></div></div>';
+      (LOP ? '<div class="ex-result-actions"><a class="ex-btn-ghost" href="/">Về trang chủ</a></div></div>'
+        : '<div class="ex-result-actions"><button type="button" class="ex-btn-primary" id="exRetry">Làm lại</button><a class="ex-btn-ghost" href="/exam/">Đề khác</a></div></div>');
     h2 += '<div class="ex-rankbox" id="exRankBox"></div>';
     h2 += '<div class="ex-breakdown">';
     res.sections.forEach(function (sr) {
@@ -948,6 +993,7 @@
     });
     h2 += '</div>';
     $('#exSide').innerHTML = h2;
+    if (LOP) return;
     renderRankBox();
     $('#exRetry').addEventListener('click', function () {
       var retryMsg = 'Kết quả hiện tại sẽ được giữ trong lịch sử, bài làm sẽ bắt đầu lại từ đầu với thời gian đầy đủ.' +
@@ -956,5 +1002,332 @@
         clearState(); location.reload();
       });
     });
+  }
+
+  /* ============================================================
+     Thi trên lớp (/thi?ma=123456) — phòng do thầy cô tạo ở /thi-lop
+     Vào phòng (tên / danh sách lớp) → chờ bắt đầu → làm bài như phòng thi thường,
+     phần Nghe nghe loa của thầy cô → nộp → điểm hiện ngay hoặc khi thầy cô công bố.
+     ============================================================ */
+  function lopApi(method, path, body) {
+    var h = { 'Content-Type': 'application/json' };
+    var tk = authToken(); if (tk) h.Authorization = 'Bearer ' + tk;
+    return fetch('/api/thi-lop/' + LOP + path, { method: method, headers: h, body: body ? JSON.stringify(body) : undefined })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (!r.ok) { var e = new Error(j.error || 'Lỗi máy chủ (' + r.status + ').'); e.raKhoi = !!j.raKhoi; throw e; }
+          return j;
+        });
+      });
+  }
+  function lopNhoMay(pid, tok) {
+    lop.pid = pid; lop.tok = tok;
+    STORE = 'hyv_thilop_' + LOP + '_' + pid; // may dung chung (phong may): moi ban mot bai lam rieng
+    try { localStorage.setItem(ID_LOP, JSON.stringify({ pid: pid, tok: tok })); } catch (e) { /* bo qua */ }
+  }
+  function lopTheTrong(html) {
+    $('#exSide').innerHTML = '';
+    $('#exMain').innerHTML = '<div class="ex-card ex-lop-vao">' + html + '</div>';
+  }
+
+  // /thi khong co ma: o nhap ma phong
+  function lopNhapMa() {
+    document.body.classList.add('ex-lop');
+    $('#exTitle').textContent = 'Thi trên lớp';
+    lopTheTrong('<div class="ex-lop-ma">Thi trên lớp</div><h2>Nhập mã phòng thi</h2><p>Mã gồm 6 số, thầy cô chiếu trên bảng.</p>' +
+      '<input id="exLopMa" class="ex-input ex-lop-o-ma" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="123456" aria-label="Mã phòng thi" />' +
+      '<button type="button" class="ex-btn-primary" id="exLopMaBtn">Vào phòng</button><p class="ex-lop-err" id="exLopErr" hidden></p>');
+    var o = $('#exLopMa');
+    var di = function () {
+      var m = o.value.replace(/\D/g, '');
+      if (m.length !== 6) { $('#exLopErr').textContent = 'Mã phòng có 6 số.'; $('#exLopErr').hidden = false; return; }
+      location.href = '/thi?ma=' + m;
+    };
+    $('#exLopMaBtn').addEventListener('click', di);
+    o.addEventListener('keydown', function (e) { if (e.key === 'Enter') di(); });
+    o.focus();
+  }
+
+  function lopKhoiDong() {
+    document.body.classList.add('ex-lop');
+    $('#exTitle').textContent = 'Thi trên lớp · Phòng ' + LOP;
+    var nho = null;
+    try { nho = JSON.parse(localStorage.getItem(ID_LOP) || 'null'); } catch (e) { /* bo qua */ }
+    if (!nho || !nho.pid) { lopVeVao(); return; }
+    lopNhoMay(nho.pid, nho.tok);
+    lopApi('GET', '/hs?pid=' + encodeURIComponent(lop.pid) + '&tok=' + encodeURIComponent(lop.tok))
+      .then(function (ph) { lopCapNhat(ph); lopPoll(); })
+      .catch(function (e) {
+        if (e.raKhoi) { lopQuenMay(); lopVeVao(); return; }
+        lopLoi(e.message);
+      });
+  }
+  function lopQuenMay() {
+    try { localStorage.removeItem(ID_LOP); } catch (e) { /* bo qua */ }
+    lop.pid = ''; lop.tok = '';
+    clearInterval(lop.poll);
+  }
+  function lopLoi(msg) {
+    lopTheTrong('<div class="ex-lop-ma">Phòng thi ' + LOP + '</div><h2>Chưa vào được phòng thi</h2><p class="ex-lop-err">' + esc(msg) + '</p>' +
+      '<button type="button" class="ex-btn-primary" id="exLopThu">Thử lại</button>');
+    $('#exLopThu').addEventListener('click', function () { location.reload(); });
+  }
+
+  function lopVeVao() {
+    lopTheTrong('<p>Đang tải phòng thi…</p>');
+    lopApi('GET', '/thong-tin').then(function (t) {
+      var h = '<div class="ex-lop-ma">Phòng thi ' + LOP + '</div><h2>' + esc(t.tieuDe) + '</h2>' + (t.tenLop ? '<p><b>' + esc(t.tenLop) + '</b></p>' : '');
+      if (t.pha === 'xong') h += '<p class="ex-lop-err">Bài thi này đã thu bài. Nếu em đã làm trên máy khác, chọn tên mình để xem lại.</p>';
+      if (t.ds) {
+        h += '<p class="ex-lop-hd">Chọn tên của em:</p><div class="ex-lop-ten">' + t.ds.map(function (r) {
+          return '<button type="button" data-ros="' + esc(r.id) + '" class="' + (r.id === t.goiY ? 'goi-y' : '') + (r.da ? ' da' : '') + '">' + esc(r.ten) + (r.da ? '<small>đã vào</small>' : '') + '</button>';
+        }).join('') + '</div>';
+      } else {
+        h += '<label class="ex-lop-hd" for="exLopTen">Họ và tên của em</label>' +
+          '<input id="exLopTen" class="ex-input" maxlength="40" autocomplete="name" value="' + esc(t.tk) + '" placeholder="Ví dụ: Nguyễn Gia My" />' +
+          '<button type="button" class="ex-btn-primary" id="exLopVaoBtn">Vào phòng thi</button>';
+      }
+      if (t.tk) h += '<p class="ex-lop-nho">Đang đăng nhập: <b>' + esc(t.tk) + '</b> — đổi máy giữa giờ vẫn vào lại đúng bài đang làm.</p>';
+      h += '<p class="ex-lop-err" id="exLopErr" hidden></p>';
+      lopTheTrong(h);
+      $all('[data-ros]').forEach(function (b) {
+        b.addEventListener('click', function () { lopVao({ rosterId: b.getAttribute('data-ros') }); });
+      });
+      var o = $('#exLopTen');
+      if (o) {
+        $('#exLopVaoBtn').addEventListener('click', function () { lopVao({ ten: o.value }); });
+        o.addEventListener('keydown', function (e) { if (e.key === 'Enter') lopVao({ ten: o.value }); });
+      }
+      var gy = $('.ex-lop-ten .goi-y'); if (gy) gy.scrollIntoView({ block: 'center' });
+    }).catch(function (e) { lopLoi(e.message); });
+  }
+  function lopVao(body) {
+    lopApi('POST', '/vao', body).then(function (r) {
+      lopNhoMay(r.pid, r.tok);
+      lop.tlMay = r.tl; lop.secMay = r.sec;
+      lopCapNhat(r.phong);
+      lopPoll();
+    }).catch(function (e) {
+      var el = $('#exLopErr'); if (el) { el.textContent = e.message; el.hidden = false; }
+    });
+  }
+  function lopPoll() {
+    clearInterval(lop.poll);
+    lop.poll = setInterval(function () {
+      if (!lop.pid) return;
+      lopApi('GET', '/hs?pid=' + encodeURIComponent(lop.pid) + '&tok=' + encodeURIComponent(lop.tok))
+        .then(lopCapNhat)
+        .catch(function (e) { if (e.raKhoi) lopBiDay(); });
+    }, 3000);
+  }
+  // Ma cua may nay bi thay (em vao lai tren may khac)
+  function lopBiDay() {
+    clearInterval(lop.poll); clearInterval(timerId); clearTimeout(lop.luu);
+    lop.roi = true;
+    lopTheTrong('<div class="ex-lop-ma">Phòng thi ' + LOP + '</div><h2>Máy này đã dừng</h2>' +
+      '<p>Em đã vào phòng thi bằng một máy khác, nên bài làm tiếp tục ở máy đó. Muốn quay lại làm ở máy này, nhờ thầy cô bấm <b>“Cho vào lại”</b> cạnh tên em rồi bấm nút dưới đây.</p>' +
+      '<button type="button" class="ex-btn-primary" id="exLopLai">Vào lại phòng thi</button>');
+    $('#exLopLai').addEventListener('click', function () { lopQuenMay(); location.reload(); });
+  }
+  function lopDoiTenNut() {
+    var b = $('#exLopDoi');
+    if (b) b.addEventListener('click', function () { lopQuenMay(); lop.roi = true; location.reload(); });
+  }
+
+  function lopCapNhat(ph) {
+    var cu = lop.phong;
+    lop.phong = ph;
+    lop.lech = ph.now - Date.now();
+    if (ph.pha === 'cho') { lopVeCho(); return; }
+    if (!lop.daTai) { lop.daTai = true; id = ph.examId; taiDe(ph.examId); return; }
+    if (!data || !allQuestions.length) return;
+    if (!state.submitted) {
+      if (ph.pha === 'xong' || ph.daNop) { submit(true); return; }
+      lopQuaPhanNghe(false);
+      lopNghe();
+      if (cu && cu.hetLuc && cu.hetLuc !== ph.hetLuc) lopThongBao(ph.hetLuc > cu.hetLuc ? 'Thầy cô đã cộng thêm giờ làm bài ⏰' : 'Thầy cô đã đổi giờ làm bài');
+    } else if (ph.kq && state.lopDaGui && !lop.daHien) lopHienKetQua();
+  }
+  function lopVeCho() {
+    var ph = lop.phong;
+    var so = $('#exLopSoHs');
+    if (so) { so.textContent = ph.soHs; return; }
+    lopTheTrong('<div class="ex-lop-ma">Phòng thi ' + LOP + '</div><h2>' + esc(ph.tieuDe) + '</h2>' +
+      '<p>Chào <b>' + esc(ph.ten || '') + '</b>, em đã vào phòng thi.</p>' +
+      '<div class="ex-lop-cho"><i></i><i></i><i></i></div>' +
+      '<p>Chờ thầy cô bấm <b>Bắt đầu</b>… Trong phòng có <b id="exLopSoHs">' + ph.soHs + '</b> bạn.</p>' +
+      '<p class="ex-lop-nho">Đề sẽ hiện ra ngay tại đây. Phần Nghe: em nghe loa của thầy cô và chọn đáp án trên máy của mình.</p>' +
+      '<button type="button" class="ex-lop-doi" id="exLopDoi">Không phải em? Vào bằng tên khác</button>');
+    lopDoiTenNut();
+  }
+  // De chi gom cac phan thay co chon; moi phan van 100 diem nhu de that
+  function lopChuanBiDe() {
+    var ph = lop.phong, all = data.sections.length, per = data.maxScore / all;
+    data.sections = data.sections.filter(function (s) { return ph.phan.indexOf(s.id) !== -1; });
+    data.passScore = Math.round(data.passScore / data.maxScore * per * data.sections.length);
+    data.maxScore = Math.round(per * data.sections.length);
+    data.title = ph.tieuDe;
+  }
+  // Doi may giua gio: may moi chua co gi thi lay bai da luu tren may chu
+  function lopGopBai() {
+    if (lop.tlMay && Object.keys(lop.tlMay).length && !Object.keys(state.answers || {}).length) {
+      state.answers = lop.tlMay;
+      state.sec = lop.secMay || 0;
+    }
+    lop.tlMay = null;
+  }
+  // Thay co bam "Mo phan Doc": ca lop tu sang phan sau
+  function lopQuaPhanNghe(truocKhiVe) {
+    var si = curSec(), sec = data.sections[si];
+    if (!sec || sec.id !== 'listen' || !lop.phong.ngheXong || !data.sections[si + 1]) return;
+    if (truocKhiVe) { state.sec = si + 1; return; }
+    chuyenPhan(si + 1);
+    lopThongBao('Hết phần Nghe — chuyển sang phần ' + data.sections[si + 1].name);
+  }
+  // "Dang doc cau 5" theo may thay co, to sang va cuon toi cau do
+  function lopNghe() {
+    var el = $('#exLopCau');
+    if (!el) return;
+    var ng = lop.phong.nghe;
+    if (lop.phong.ngheXong) { el.textContent = 'Bài nghe đã kết thúc.'; return; }
+    if (!ng || !ng.cau) el.textContent = ng && ng.phat ? 'Đang phát phần hướng dẫn…' : 'Chờ thầy cô phát bài nghe…';
+    else el.textContent = (ng.phat ? 'Đang đọc câu ' : 'Tạm dừng ở câu ') + ng.cau;
+    var cau = ng ? ng.cau : 0;
+    if (cau === lop.cauNghe) return;
+    lop.cauNghe = cau;
+    $all('.ex-dang-nghe').forEach(function (x) { x.classList.remove('ex-dang-nghe'); });
+    var c = cau && document.getElementById('q-' + cau);
+    if (!c) return;
+    c.classList.add('ex-dang-nghe');
+    var cb = $('#exLopCuon'), sec = data.sections[curSec()];
+    if (cb && cb.checked && sec && sec.id === 'listen') c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  function lopHenLuu() {
+    clearTimeout(lop.luu);
+    lop.luu = setTimeout(function () {
+      if (state.submitted || !lop.pid) return;
+      lopApi('POST', '/luu', { pid: lop.pid, tok: lop.tok, tl: state.answers, sec: curSec() })
+        .then(lopCapNhat)
+        .catch(function (e) { if (e.raKhoi) lopBiDay(); });
+    }, 1200);
+  }
+  function lopNop() {
+    clearTimeout(lop.luu);
+    lopVeDaNop();
+    if (lop.dangGui) return;
+    lop.dangGui = true;
+    (function gui() {
+      lopApi('POST', '/nop', { pid: lop.pid, tok: lop.tok, tl: state.answers, auto: !!(state.result && state.result.auto) })
+        .then(function (ph) { lop.dangGui = false; state.lopDaGui = true; saveState(); lopCapNhat(ph); lopVeDaNop(); })
+        .catch(function (e) {
+          if (e.raKhoi) { lop.dangGui = false; lopBiDay(); return; }
+          lopVeDaNop('Chưa gửi được bài lên máy thầy cô — đang thử lại…');
+          setTimeout(gui, 4000);
+        });
+    })();
+  }
+  function lopDaNop() {
+    if (!state.lopDaGui) lopNop(); else lopVeDaNop();
+  }
+  function lopVeDaNop(loi) {
+    if (lop.daHien) return;
+    if (state.lopDaGui && lop.phong && lop.phong.kq) { lopHienKetQua(); return; }
+    clearInterval(timerId);
+    $all('#exMain .ex-sec').forEach(function (el) { el.hidden = true; });
+    var box = $('#exLopXong');
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'exLopXong'; box.className = 'ex-card ex-lop-vao';
+      $('#exMain').insertBefore(box, $('#exMain').firstChild);
+    }
+    var lam = allQuestions.filter(function (it) { return hasAnswer(it.q.n); }).length;
+    box.innerHTML = '<div class="ex-lop-tick">' + ICONS.check + '</div>' +
+      '<h2>' + (state.lopDaGui ? 'Em đã nộp bài' : 'Đang nộp bài…') + '</h2>' +
+      '<p>Em đã làm <b>' + lam + '/' + allQuestions.length + '</b> câu' + (state.result && state.result.auto ? ' (hết giờ, máy tự nộp)' : '') + '.</p>' +
+      (loi ? '<p class="ex-lop-err">' + esc(loi) + '</p>' : state.lopDaGui ? '<p>Chờ thầy cô công bố kết quả — điểm và đáp án sẽ hiện ngay tại đây.</p>' : '') +
+      '<button type="button" class="ex-lop-doi" id="exLopDoi">Không phải em? Vào bằng tên khác</button>';
+    lopDoiTenNut();
+    $('#exSide').innerHTML = '<div class="ex-rank-note">' + rankNoteHtml() + '</div>';
+  }
+  function lopHienKetQua() {
+    lop.daHien = true;
+    clearInterval(lop.poll);
+    var box = $('#exLopXong'); if (box) box.remove();
+    showResult();
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+  function lopThongBao(t) {
+    var el = $('#exLopToast');
+    if (!el) { el = document.createElement('div'); el.id = 'exLopToast'; el.className = 'ex-lop-toast'; el.setAttribute('role', 'status'); document.body.appendChild(el); }
+    el.textContent = t;
+    el.classList.add('on');
+    clearTimeout(lop.toast);
+    lop.toast = setTimeout(function () { el.classList.remove('on'); }, 4000);
+  }
+
+  /* ============================================================
+     Bản in (/thi?in=1&id=...&phan=listen,read&kem=de|phieu|dapan)
+     de: đề giấy cho học sinh · phieu: phiếu tô đáp án · dapan: đáp án + lời bài nghe
+     ============================================================ */
+  function chonPhanIn() {
+    var ph = (QS.get('phan') || '').split(',').filter(Boolean);
+    if (ph.length) data.sections = data.sections.filter(function (s) { return ph.indexOf(s.id) !== -1; });
+    if (!data.sections.length) data.sections = window.EXAM_DATA.sections;
+  }
+  function khoaCau(it) {
+    var t = it.part.type, q = it.q, g = it.group;
+    if (t === 'judge-pic' || t === 'judge-text') return ['✓', '✗'];
+    if (t === 'pic-mc') return Object.keys(q.pics);
+    if (t === 'pic-match') return Object.keys(g.pics);
+    if (t === 'mc') return q.options.map(function (o, i) { return 'ABCDEF'[i]; });
+    if (t === 'word-fill') return (g ? g.words : it.part.words).map(function (w) { return w.k; });
+    if (t === 'sent-match') return g.options.map(function (o) { return o.k; });
+    return null;
+  }
+  function itsCuaPhan(sec) { return allQuestions.filter(function (it) { return it.section === sec; }); }
+  function phieuHtml() {
+    return data.sections.map(function (sec) {
+      return '<section class="ex-in-khoi"><h3>' + esc(sec.name) + '</h3><div class="ex-in-luoi">' + itsCuaPhan(sec).map(function (it) {
+        var k = khoaCau(it);
+        var dai = it.essay || it.sum ? ' ex-in-rong' : it.pw || it.text ? ' ex-in-vua' : '';
+        return '<div class="ex-in-o' + dai + '"><b>' + it.q.n + '</b>' + (k
+          ? k.map(function (x) { return '<span class="ex-in-k">' + esc(x) + '</span>'; }).join('')
+          : '<span class="ex-in-dong"></span>' + (it.essay || it.sum ? new Array(it.sum ? 12 : 5).join('<span class="ex-in-dong"></span>') : '')) + '</div>';
+      }).join('') + '</div></section>';
+    }).join('');
+  }
+  function dapAnHtml() {
+    var h = data.sections.map(function (sec) {
+      return '<section class="ex-in-khoi"><h3>Đáp án · ' + esc(sec.name) + '</h3><div class="ex-in-luoi ex-in-da">' + itsCuaPhan(sec).map(function (it) {
+        var a = it.q.answer, dai = it.text || it.pw || it.essay || it.sum;
+        var txt = typeof a === 'boolean' ? (a ? '✓' : '✗') : String(a == null ? '' : a);
+        return '<div class="ex-in-o' + (dai ? ' ex-in-rong' : '') + '"><b>' + it.q.n + '</b><span class="' + (dai ? 'hanzi' : 'ex-in-dung') + '">' + (dai && (it.pw || it.essay || it.sum) ? 'Câu mẫu: ' : '') + esc(txt) + '</span></div>';
+      }).join('') + '</div></section>';
+    }).join('');
+    var nghe = allQuestions.filter(function (it) { return it.section.id === 'listen' && it.q.script; });
+    if (nghe.length) {
+      h += '<section class="ex-in-khoi"><h3>Lời bài nghe</h3><ol class="ex-in-loi">' + nghe.map(function (it) {
+        return '<li value="' + it.q.n + '"><div class="hanzi">' + esc(it.q.script).replace(/\n/g, '<br>') + '</div>' + (it.q.scriptVn ? '<div class="vn">' + esc(it.q.scriptVn) + '</div>' : '') + '</li>';
+      }).join('') + '</ol></section>';
+    }
+    return h;
+  }
+  function initIn() {
+    document.body.classList.add('ex-in');
+    var kem = ['de', 'phieu', 'dapan'].indexOf(QS.get('kem')) !== -1 ? QS.get('kem') : 'de';
+    var ten = { de: 'Đề thi', phieu: 'Phiếu trả lời', dapan: 'Đáp án' }[kem];
+    var phut = parseInt(QS.get('phut'), 10);
+    var bar = '<div class="ex-in-bar"><span>Bản in · ' + ten + '</span><button type="button" class="ex-btn-primary" id="exInBtn">In</button></div>';
+    var dau = '<div class="ex-in-dau"><h1>' + esc(data.title) + ' · ' + esc(data.sections.map(function (s) { return s.name; }).join(' + ')) + '</h1>' +
+      (kem === 'dapan' ? '<p>' + ten + ' — dành cho thầy cô</p>'
+        : '<div class="ex-in-ttin"><span>Họ và tên: <i></i></span><span>Lớp: <i></i></span><span>Điểm: <i></i></span></div>' +
+          '<p>' + allQuestions.length + ' câu' + (phut > 0 ? ' · ' + phut + ' phút' : '') + (kem === 'phieu' ? ' · Khoanh tròn hoặc tô đáp án em chọn, câu viết thì viết vào dòng kẻ.' : '') + '</p>') + '</div>';
+    if (kem === 'de') { render(); $('#exMain').insertAdjacentHTML('afterbegin', bar + dau); }
+    else $('#exMain').innerHTML = bar + dau + (kem === 'phieu' ? phieuHtml() : dapAnHtml());
+    $('#exSide').innerHTML = '';
+    document.title = ten + ' — ' + data.title;
+    $('#exInBtn').addEventListener('click', function () { window.print(); });
+    $('#exBack').addEventListener('click', function () { if (history.length > 1) history.back(); else window.close(); });
+    $('#exPy').addEventListener('change', function () { document.body.classList.toggle('py-off', !this.checked); });
   }
 })();

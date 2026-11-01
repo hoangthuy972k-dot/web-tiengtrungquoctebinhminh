@@ -715,3 +715,7 @@ body.o-thi-tran .nt-zoom, body.o-thi-tran .nt-thu-het { display: none !important
   /* man hep: nut nhan vat xuong duoi nut ve, cum dong ho giu 1 dong */
   .nt-nv-nut { position: absolute; left: 10px; top: 62px; width: 42px; height: 42px; }
 }
+.nt-nvs-gt { display: grid; grid-template-columns: repeat(2, minmax(0, 200px)); gap: 12px; }
+.nt-nvs-gt .nt-nvs-mon { padding: 10px; }
+.nt-nvs-gt .nv-svg { width: 110px; height: auto; }
+.nt-nvs-gt .nt-nvs-mon b { font-size: 1rem; }

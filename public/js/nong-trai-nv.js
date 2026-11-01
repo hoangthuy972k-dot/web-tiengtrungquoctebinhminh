@@ -12,6 +12,10 @@
 
   // Lua chon + ten tieng Trung (bam vao la nghe doc: vua chon do vua hoc tu)
   var KIEU = {
+    gt: [
+      { k: 'nam', vn: 'Bạn nam', zh: '男孩', py: 'nánhái' },
+      { k: '', vn: 'Bạn nữ', zh: '女孩', py: 'nǚhái' },
+    ],
     toc: [
       { k: 'ngan', vn: 'Tóc ngắn', zh: '短发', py: 'duǎnfà' },
       { k: 'xu', vn: 'Tóc húi cua', zh: '寸头', py: 'cùntóu' },
@@ -19,12 +23,18 @@
       { k: 'dai', vn: 'Tóc dài', zh: '长发', py: 'chángfà' },
       { k: 'duoi', vn: 'Buộc đuôi ngựa', zh: '马尾辫', py: 'mǎwěibiàn' },
       { k: 'bui', vn: 'Búi hai bên', zh: '丸子头', py: 'wánzitóu' },
+      { k: 'renngoi', vn: 'Tóc rẽ ngôi', zh: '偏分', py: 'piānfēn' },
+      { k: 'xoan', vn: 'Tóc xoăn', zh: '卷发', py: 'juǎnfà' },
+      { k: 'dinh', vn: 'Đầu đinh', zh: '平头', py: 'píngtóu' },
     ],
     ao: [
       { k: 'thun', vn: 'Áo phông', zh: 'T恤', py: 'T xù' },
       { k: 'khoac', vn: 'Áo khoác', zh: '外套', py: 'wàitào' },
       { k: 'somi', vn: 'Áo sơ mi', zh: '衬衫', py: 'chènshān' },
       { k: 'aodai', vn: 'Áo dài', zh: '奥黛', py: 'àodài' },
+      { k: 'thethao', vn: 'Áo thể thao', zh: '运动服', py: 'yùndòngfú' },
+      { k: 'vest', vn: 'Áo vest', zh: '西装', py: 'xīzhuāng' },
+      { k: 'bexin', vn: 'Áo ba lỗ', zh: '背心', py: 'bèixīn' },
     ],
     duoi: [
       { k: 'dai', vn: 'Quần dài', zh: '裤子', py: 'kùzi' },
@@ -45,6 +55,8 @@
       { k: 'hoa', vn: 'Vòng hoa', zh: '花环', py: 'huāhuán' },
       { k: 'bep', vn: 'Mũ đầu bếp', zh: '厨师帽', py: 'chúshīmào' },
       { k: 'kep', vn: 'Kẹp tóc sao', zh: '发夹', py: 'fàjiā' },
+      { k: 'tainghe', vn: 'Tai nghe', zh: '耳机', py: 'ěrjī' },
+      { k: 'nguoc', vn: 'Mũ đội ngược', zh: '反戴帽', py: 'fǎndài mào' },
     ],
     kinh: [
       { k: '', vn: 'Không đeo', zh: '', py: '' },
@@ -67,6 +79,8 @@
       { k: 'denlong', vn: 'Đèn lồng', zh: '灯笼', py: 'dēnglong' },
       { k: 'tui', vn: 'Túi xách', zh: '包', py: 'bāo' },
       { k: 'gau', vn: 'Gấu bông', zh: '玩具熊', py: 'wánjùxióng' },
+      { k: 'bongda', vn: 'Quả bóng đá', zh: '足球', py: 'zúqiú' },
+      { k: 'vot', vn: 'Vợt cầu lông', zh: '球拍', py: 'qiúpāi' },
     ],
     mat: [
       { k: '', vn: 'Mỉm cười', zh: '微笑', py: 'wēixiào' },
@@ -95,7 +109,8 @@
     av = av || macDinh('');
     var da = DA[av.da] || DA[0], toc = MAU_TOC[av.mt] || MAU_TOC[0];
     var ao = MAU[av.ma] || MAU[0], duoi = MAU[av.md] || MAU[4], mu = MAU[av.mm] || MAU[0], pk = MAU[av.mp] || MAU[0];
-    var laAoDai = av.ao === 'aodai';
+    var laAoDai = av.ao === 'aodai', nam = av.gt === 'nam';
+    var THAN = nam ? 'M35 74Q50 71 65 74Q69.5 76 69.5 82L69 105Q50 108.5 31 105L30.5 82Q30.5 76 35 74Z' : 'M37 74Q50 70.5 63 74Q67 76 67.5 82L69 104Q50 109 31 104L32.5 82Q33 76 37 74Z';
     var s = '<svg class="' + (cls || 'nv-svg') + '" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">';
     s += '<ellipse cx="50" cy="131" rx="21" ry="4.2" fill="#000" opacity=".16"/>';
     // --- toc phia sau dau ---
@@ -120,9 +135,19 @@
       s += '<path d="M62 78Q67 84 68 118" fill="none" stroke="' + BONG + '" stroke-width="5" stroke-linecap="round"/>';
       s += p('M44 72.5H56V77.5Q50 79 44 77.5Z', ao, 2.4) + '<path d="M33 106L36 120M67 106L64 120" stroke="' + V + '" stroke-width="1.6" opacity=".45"/>';
     } else {
-      s += p('M37 74Q50 70.5 63 74Q67 76 67.5 82L69 104Q50 109 31 104L32.5 82Q33 76 37 74Z', ao);
+      s += p(THAN, ao);
       s += '<path d="M62 78Q67 86 67.5 103" fill="none" stroke="' + BONG + '" stroke-width="5" stroke-linecap="round"/>';
-      if (av.ao === 'khoac') {
+      if (av.ao === 'thethao') {
+        // ao dau: so 10 + soc 2 ben
+        s += '<path d="M35.5 80V103M64.5 80V103" stroke="#fff8ec" stroke-width="2.6"/>' + p('M44 73.5Q50 79 56 73.5', 'none', 2.2) +
+          '<text x="50" y="98" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="15" fill="#fff8ec" stroke="' + V + '" stroke-width="1.2" paint-order="stroke">10</text>';
+      } else if (av.ao === 'vest') {
+        s += p('M43.5 73L50 94L56.5 73Z', '#fff8ec', 2.2) + p('M47.5 76H52.5L51.6 79L53.5 90L50 94L46.5 90L48.4 79Z', '#e5533d', 1.8) +
+          p('M43.5 73L50 94L41 84L43 80Z', ao, 2.2) + p('M56.5 73L50 94L59 84L57 80Z', ao, 2.2) +
+          '<circle cx="50" cy="99" r="1.6" fill="' + V + '"/><path d="M36 91H43" stroke="' + V + '" stroke-width="1.8" opacity=".5"/>';
+      } else if (av.ao === 'bexin') {
+        s += '<path d="M43 72.5Q50 83 57 72.5Z" fill="' + da + '"/>' + p('M43 72.5Q50 83 57 72.5', 'none', 2.2) + '<path d="M38 74Q41 80 34 84M62 74Q59 80 66 84" fill="none" stroke="' + V + '" stroke-width="2" opacity=".5"/>';
+      } else if (av.ao === 'khoac') {
         s += '<path d="M50 77V106" stroke="' + V + '" stroke-width="2.2"/>' + p('M38 73Q50 84 62 73', 'none', 2.4);
         s += p('M37.5 93H45V99.5H37.5Z', 'none', 1.8) + p('M55 93H62.5V99.5H55Z', 'none', 1.8);
       } else if (av.ao === 'somi') {
@@ -133,9 +158,9 @@
       }
     }
     // --- tay: buong cong tu nhien, ao phong thi tay ao ngan ---
-    var tayDai = av.ao !== 'thun';
+    var tayDai = ['thun', 'thethao', 'bexin'].indexOf(av.ao) < 0, tayNgan = av.ao === 'thun' || av.ao === 'thethao';
     s += chi('M36.5 79Q30 88 29.5 99', tayDai ? ao : da) + chi('M63.5 79Q70 88 70.5 99', tayDai ? ao : da);
-    if (!tayDai) s += chi('M36.5 79Q34 82 32.6 86', ao, 9) + chi('M63.5 79Q66 82 67.4 86', ao, 9);
+    if (tayNgan) s += chi('M36.5 79Q34 82 32.6 86', ao, 9) + chi('M63.5 79Q66 82 67.4 86', ao, 9);
     s += tron(29.5, 100.5, 4.6, da, 2.6) + tron(70.5, 100.5, 4.6, da, 2.6);
     if (av.pk !== 'bongbay') s += phuKien(av.pk, pk);
     // --- tai, dau, mat ---
@@ -143,9 +168,18 @@
     s += '<path d="M21 51Q23 49 24.5 52M79 51Q77 49 75.5 52" fill="none" stroke="' + V + '" stroke-width="1.6" opacity=".45" stroke-linecap="round"/>';
     s += tron(50, 48, 28, da);
     s += '<path d="M28 60Q38 74 50 75Q62 74 72 60" fill="none" stroke="' + BONG + '" stroke-width="3"/>';
-    s += matNv(av.mat);
+    s += matNv(av.mat, nam);
     // --- toc phia truoc (mai) + anh bong ---
     if (av.toc === 'xu') s += p('M22 50Q19 26 30 20L31 10L40 17L46 6L54 15.5L62 8L65 18.5Q80 24 78 50Q74 37 64 34.5Q50 30.5 36 34.5Q26 37.5 22 50Z', toc);
+    else if (av.toc === 'renngoi') s += p('M22 50Q19 16 50 15.5Q81 16 78 50Q77 36 70 29Q60 38 40 37Q30 37 26 42Q23 45 22 50Z', toc) + '<path d="M62 18Q61 24 69 29.5" fill="none" stroke="' + V + '" stroke-width="2" opacity=".55"/>';
+    else if (av.toc === 'dinh') s += p('M22.5 47Q21 18 50 18Q79 18 77.5 47Q72 35 50 33.5Q28 35 22.5 47Z', toc) + '<path d="M32 27Q50 21 68 27" fill="none" stroke="' + SANG + '" stroke-width="1.6" stroke-dasharray="1.5 3"/>';
+    else if (av.toc === 'xoan') {
+      var xo = [[24, 44], [25, 32], [32, 22], [42, 16.5], [53, 15.5], [64, 19], [72.5, 27], [76, 38], [76.5, 48]];
+      s += xo.map(function (c) { return tron(c[0], c[1], 8.5, toc); }).join('') +
+        xo.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="6.4" fill="' + toc + '"/>'; }).join('') +
+        '<path d="M28 42Q30 24 50 24Q70 24 72 42Q62 33 50 34Q38 33 28 42Z" fill="' + toc + '"/>' +
+        '<path d="M36 33Q41 29 46 33M54 33Q59 29 64 33" fill="none" stroke="' + V + '" stroke-width="1.8" opacity=".45" stroke-linecap="round"/>';
+    }
     else if (av.toc === 'ngan') s += p('M22 50Q19 16 50 16Q81 16 78 50Q75 38 70 36Q64 30.5 56 33Q48 26.5 40 33Q30 33 26 40Q23 44 22 50Z', toc);
     else s += p('M22 52Q19 16 50 16Q81 16 78 52Q76 40 68 35Q62 44.5 47 42Q54 37 53 30.5Q42 41 30 41.5Q25 45 22 52Z', toc);
     s += '<path d="M33 25Q41 19 50 19.5" fill="none" stroke="' + SANG + '" stroke-width="3" stroke-linecap="round"/>';
@@ -163,10 +197,12 @@
     return d + 'Z';
   }
   // Mat + long may + mui + mieng theo bieu cam
-  function matNv(m) {
+  function matNv(m, nam) {
     var MAT = '#3b2a40';
-    var may = '<path d="M35.5 44.5Q40 42 44.5 44.5M55.5 44.5Q60 42 64.5 44.5" fill="none" stroke="' + V + '" stroke-width="1.8" stroke-linecap="round" opacity=".7"/>';
-    var mo = '<ellipse cx="32.5" cy="59.5" rx="4.6" ry="2.7" fill="#ff8fa3" opacity=".55"/><ellipse cx="67.5" cy="59.5" rx="4.6" ry="2.7" fill="#ff8fa3" opacity=".55"/>';
+    var may = nam
+      ? '<path d="M35 44.6L44.5 43.4M55.5 43.4L65 44.6" fill="none" stroke="' + V + '" stroke-width="2.8" stroke-linecap="round" opacity=".85"/>'
+      : '<path d="M35.5 44.5Q40 42 44.5 44.5M55.5 44.5Q60 42 64.5 44.5" fill="none" stroke="' + V + '" stroke-width="1.8" stroke-linecap="round" opacity=".7"/>';
+    var mo = '<ellipse cx="32.5" cy="59.5" rx="4.6" ry="2.7" fill="#ff8fa3" opacity="' + (nam ? '.28' : '.55') + '"/><ellipse cx="67.5" cy="59.5" rx="4.6" ry="2.7" fill="#ff8fa3" opacity="' + (nam ? '.28' : '.55') + '"/>';
     var mui = '<ellipse cx="50" cy="57" rx="1.3" ry=".9" fill="#c98463" opacity=".6"/>';
     var matMo = function (x, to) {
       return '<ellipse cx="' + x + '" cy="52" rx="' + (to ? 5 : 4.1) + '" ry="' + (to ? 6 : 5.2) + '" fill="' + MAT + '"/>' +
@@ -203,6 +239,11 @@
       }).join('');
     if (k === 'bep') return p('M31 33V22Q16 20 22 8Q30 -2 40 4Q50 -5 60 4Q70 -2 78 8Q84 20 69 22V33Z', '#ffffff') + '<rect x="30" y="26" width="40" height="9" rx="2" fill="#ffffff"' + net(2.4) + '/>';
     if (k === 'kep') return p(sao5(69, 25, 7.5, 3.3), mu, 2.4);
+    if (k === 'tainghe') return '<path d="M23 44Q21 11 50 11Q79 11 77 44" fill="none" stroke="' + V + '" stroke-width="7.5" stroke-linecap="round"/>' +
+      '<path d="M23 44Q21 11 50 11Q79 11 77 44" fill="none" stroke="' + mu + '" stroke-width="3.5" stroke-linecap="round"/>' +
+      '<rect x="15" y="43" width="12" height="18" rx="5" fill="' + mu + '"' + net(2.6) + '/><rect x="73" y="43" width="12" height="18" rx="5" fill="' + mu + '"' + net(2.6) + '/>';
+    if (k === 'nguoc') return p('M14 38Q10 45 19 45.5H30L28 37Z', mu) + p('M22 40Q22 13 50 13Q78 13 78 40Z', mu) + tron(50, 13.5, 2.6, mu, 2.2) +
+      '<path d="M44 38.5Q50 33.5 56 38.5" fill="none" stroke="' + V + '" stroke-width="2" opacity=".5"/>';
     return '';
   }
   function kinhNv(k) {
@@ -235,6 +276,11 @@
     if (k === 'gau') return tron(18.5, 93.5, 3.8, '#c98a4b', 2) + tron(29.5, 93.5, 3.8, '#c98a4b', 2) +
       '<ellipse cx="24" cy="110.5" rx="9" ry="9.5" fill="#c98a4b"' + net(2.4) + '/>' + tron(24, 99.5, 7.5, '#c98a4b', 2.4) +
       '<circle cx="21.3" cy="98.6" r="1.25" fill="' + V + '"/><circle cx="26.7" cy="98.6" r="1.25" fill="' + V + '"/><ellipse cx="24" cy="102.3" rx="2.6" ry="1.9" fill="#f3d27a"/><ellipse cx="24" cy="111" rx="4.5" ry="5" fill="#f3d27a" opacity=".7"/>';
+    if (k === 'bongda') return tron(80, 118, 9.5, '#fff8ec') + p(sao5(80, 118, 4.4, 3.4), V, 1) +
+      '<path d="M80 113.6L80 108.6M84.2 116.6L89 115M82.6 121.6L85.6 125.6M77.4 121.6L74.4 125.6M75.8 116.6L71 115" stroke="' + V + '" stroke-width="1.6"/>';
+    if (k === 'vot') return '<path d="M72 99L80 82" stroke="' + V + '" stroke-width="5" stroke-linecap="round"/><path d="M72 99L80 82" stroke="' + c + '" stroke-width="2.4" stroke-linecap="round"/>' +
+      '<ellipse cx="85" cy="70" rx="8" ry="11" transform="rotate(25 85 70)" fill="#fff" fill-opacity=".35"' + net(2.6) + '/>' +
+      '<path d="M79 66L91 72M80.5 62L90 66.5M80 71L89 76.5M83 61L80 75M87.5 63L84 78" stroke="' + V + '" stroke-width="1" opacity=".45"/>';
     return '';
   }
 
@@ -244,12 +290,26 @@
     for (var i = 0; i < String(str).length; i++) h = (h * 31 + String(str).charCodeAt(i)) >>> 0;
     return h;
   }
+  var TOC_NAM = ['ngan', 'xu', 'renngoi', 'dinh', 'xoan'], TOC_NU = ['dai', 'bob', 'duoi', 'bui', 'ngan', 'xoan'];
   function macDinh(id) {
-    var h = bam(id || 'x');
+    var h = bam(id || 'x'), nam = (h >>> 17) % 2 === 1;
+    var toc = nam ? TOC_NAM : TOC_NU, duoi = nam ? ['dai', 'short'] : ['vay', 'dai', 'short'];
     return {
-      da: h % 2, toc: KIEU.toc[(h >>> 3) % 6].k, mt: (h >>> 6) % 3, ao: 'thun', ma: (h >>> 9) % 6,
-      duoi: KIEU.duoi[(h >>> 12) % 3].k, md: [4, 7, 5, 0][(h >>> 14) % 4], mu: '', mm: 0, kinh: '',
+      gt: nam ? 'nam' : '', da: h % 2, toc: toc[(h >>> 3) % toc.length], mt: (h >>> 6) % 3, ao: nam && (h >>> 20) % 2 ? 'thethao' : 'thun', ma: (h >>> 9) % 6,
+      duoi: duoi[(h >>> 12) % duoi.length], md: [4, 7, 5, 0][(h >>> 14) % 4], mu: '', mm: 0, kinh: '', pk: '', mp: 0, mat: '',
     };
+  }
+  // Doi nam / nu: doi luon vai mon de nhan vat hop dang (em van chon lai tu do duoc)
+  function doiGioiTinh(av, gt) {
+    var x = Object.assign({}, av, { gt: gt });
+    if (gt === 'nam') {
+      if (TOC_NAM.indexOf(x.toc) < 0) x.toc = 'renngoi';
+      if (x.duoi === 'vay') x.duoi = 'dai';
+      if (x.ao === 'aodai') x.ao = 'thun';
+      if (['no', 'hoa', 'tho', 'kep'].indexOf(x.mu) >= 0) x.mu = '';
+      if (['tui', 'gau'].indexOf(x.pk) >= 0) x.pk = '';
+    } else if (TOC_NU.indexOf(x.toc) < 0) x.toc = 'dai';
+    return x;
   }
   // "Nguyen Gia My" -> "Gia My": the ten tren dau nhan vat gon
   function tenNgan(t) {
@@ -258,7 +318,7 @@
   }
 
   window.NhanVat = {
-    svg: svg, macDinh: macDinh, tenNgan: tenNgan, KIEU: KIEU,
+    svg: svg, macDinh: macDinh, doiGioiTinh: doiGioiTinh, tenNgan: tenNgan, KIEU: KIEU,
     DA: DA, MAU_TOC: MAU_TOC, MAU: MAU, TEN_MAU: TEN_MAU, TEN_MAU_TOC: TEN_MAU_TOC,
   };
 })();

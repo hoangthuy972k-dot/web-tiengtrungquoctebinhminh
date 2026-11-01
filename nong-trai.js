@@ -217,12 +217,13 @@ function ghiNk(f, e) {
 // ---- Nhan vat ao cua moi em (dung tren nong trai, hien khi sang nha ban, tren lo dat thi tran) ----
 // av = { da, toc, mt, ao, ma, duoi, md, mu, mm, kinh }: kieu la chu, mau la so thu tu bang mau o client.
 const NV_KIEU = {
-  toc: ['ngan', 'xu', 'bob', 'dai', 'duoi', 'bui'],
-  ao: ['thun', 'khoac', 'somi', 'aodai'],
+  gt: ['', 'nam'], // '' = ban nu (nhan vat luu truoc khi co lua chon nay)
+  toc: ['ngan', 'xu', 'bob', 'dai', 'duoi', 'bui', 'renngoi', 'xoan', 'dinh'],
+  ao: ['thun', 'khoac', 'somi', 'aodai', 'thethao', 'vest', 'bexin'],
   duoi: ['dai', 'short', 'vay'],
-  mu: ['', 'luoi', 'nonla', 'len', 'no', 'vuong', 'bao', 'coi', 'tho', 'meo', 'hoa', 'bep', 'kep'],
+  mu: ['', 'luoi', 'nonla', 'len', 'no', 'vuong', 'bao', 'coi', 'tho', 'meo', 'hoa', 'bep', 'kep', 'tainghe', 'nguoc'],
   kinh: ['', 'den', 'tron', 'tim', 'sao', 'boi', 'vuong'],
-  pk: ['', 'balo', 'khan', 'cavat', 'noco', 'quat', 'bongbay', 'sach', 'denlong', 'tui', 'gau'],
+  pk: ['', 'balo', 'khan', 'cavat', 'noco', 'quat', 'bongbay', 'sach', 'denlong', 'tui', 'gau', 'bongda', 'vot'],
   mat: ['', 'tit', 'nhay', 'sao', 'le'],
 };
 const NV_SO_MAU = { da: 4, mt: 6, ma: 8, md: 8, mm: 8, mp: 8 };

@@ -944,7 +944,7 @@
   var nvDs = [];        // nhan vat dang dung tren ban do: { key, el, x, y, sau, av, ten }
   var nvBoi = '';       // ban do nao (nha em / nha ban id) -> doi ban do thi dat lai vi tri
   function idEm() { var a = auth(); return a && a.user ? a.user.id : ''; }
-  function avEm() { return Object.assign({ pk: '', mat: '', mp: 0 }, (S.st && S.st.av) || NV.macDinh(idEm())); }
+  function avEm() { return Object.assign({ gt: '', pk: '', mat: '', mp: 0 }, (S.st && S.st.av) || NV.macDinh(idEm())); }
   function tenEm() { var a = auth(); return (S.st && S.st.ten) || (a && a.user && a.user.name) || ''; }
   function oTrong(d) {
     var ban = {};
@@ -1023,10 +1023,10 @@
 
   // --- Bang thiet ke nhan vat ---
   var nvSua = null;
-  var NV_TAB = [['toc', '头发 Tóc'], ['ao', '衣服 Áo'], ['duoi', '裤子 Quần váy'], ['mu', '帽子 Mũ'], ['kinh', '眼镜 Kính'], ['pk', '配饰 Phụ kiện'], ['mat', '表情 Biểu cảm'], ['da', 'Màu da']];
+  var NV_TAB = [['gt', 'Bạn là'], ['toc', '头发 Tóc'], ['ao', '衣服 Áo'], ['duoi', '裤子 Quần váy'], ['mu', '帽子 Mũ'], ['kinh', '眼镜 Kính'], ['pk', '配饰 Phụ kiện'], ['mat', '表情 Biểu cảm'], ['da', 'Màu da']];
   var NV_MAU_CUA = { toc: 'mt', ao: 'ma', duoi: 'md', mu: 'mm', pk: 'mp' };
   // mu / phu kien co mau co dinh (khong hien bang mau)
-  var NV_KHONG_MAU = { mu: ['', 'nonla', 'vuong', 'tho', 'hoa', 'bep'], pk: ['', 'denlong', 'gau'] };
+  var NV_KHONG_MAU = { mu: ['', 'nonla', 'vuong', 'tho', 'hoa', 'bep'], pk: ['', 'denlong', 'gau', 'bongda'] };
   function giaNv(k, v) {
     var key = k + ':' + v, sao = (S.cat.NV_SAO || {})[key];
     return sao && (S.st.avMua || []).indexOf(key) < 0 ? sao : 0;
@@ -1036,7 +1036,7 @@
   }
   function moNhanVat(lanDau) {
     nvSua = Object.assign({}, avEm());
-    moBang('nhanvat', 'toc');
+    moBang('nhanvat', lanDau ? 'gt' : 'toc');
     if (lanDau) bao('Chào em! Thiết kế nhân vật của em trước khi vào nông trại nhé.');
   }
   function veNhanVatBang(than) {
@@ -1045,7 +1045,13 @@
     datTab(NV_TAB, tab);
     var html = '<div class="nt-nvs"><div class="nt-nvs-xem"><span class="nt-nv-ten">' + esc(NV.tenNgan(tenEm())) + '</span>' + NV.svg(av, 'nv-svg to') +
       '<button type="button" class="nt-nut" data-nvngau>🎲 Ngẫu nhiên</button></div><div class="nt-nvs-chon">';
-    if (tab !== 'da') {
+    if (tab === 'gt') {
+      // chon ban nam / ban nu: doi luon dang nguoi + vai mon cho hop (van doi tu do duoc)
+      html += '<div class="nt-nvs-gt">' + NV.KIEU.gt.map(function (m) {
+        return '<button type="button" class="nt-nvs-mon' + ((av.gt || '') === m.k ? ' bat' : '') + '" data-nvgt="' + m.k + '" data-doc="' + esc(m.zh) + '">' +
+          NV.svg(NV.doiGioiTinh(av, m.k), 'nv-svg') + '<b>' + esc(m.vn) + '</b><small lang="zh">' + esc(m.zh) + ' <i>' + esc(m.py) + '</i></small></button>';
+      }).join('') + '</div><p class="nt-meo">Chọn xong, sang các mục Tóc, Áo, Mũ… để thay đồ. Món nào bạn nam, bạn nữ cũng chọn được.</p>';
+    } else if (tab !== 'da') {
       html += '<div class="nt-nvs-kieu">' + NV.KIEU[tab].map(function (m) {
         var thu = Object.assign({}, av); thu[tab] = m.k;
         if (tab === 'ao' && m.k === 'aodai') thu.duoi = 'dai';
@@ -1073,14 +1079,18 @@
     $all('[data-nvk]', than).forEach(function (b) {
       b.addEventListener('click', function () { nvSua[tab] = b.getAttribute('data-nvk'); veBang(); });
     });
+    $all('[data-nvgt]', than).forEach(function (b) {
+      b.addEventListener('click', function () { nvSua = NV.doiGioiTinh(nvSua, b.getAttribute('data-nvgt')); veBang(); });
+    });
     $all('[data-nvm]', than).forEach(function (b) {
       b.addEventListener('click', function () { nvSua[mk] = +b.getAttribute('data-nvm'); veBang(); });
     });
     $('[data-nvngau]', than).addEventListener('click', function () {
       var r = function (n) { return Math.floor(Math.random() * n); };
       var chon = function (k) { var ds = NV.KIEU[k].filter(function (m) { return !giaNv(k, m.k); }); return ds[r(ds.length)].k; };
-      nvSua = { da: nvSua.da, toc: chon('toc'), mt: r(6), ao: chon('ao'), ma: r(8), duoi: chon('duoi'), md: r(8), mu: r(2) ? '' : chon('mu'), mm: r(8),
+      nvSua = { gt: nvSua.gt || '', da: nvSua.da, toc: chon('toc'), mt: r(6), ao: chon('ao'), ma: r(8), duoi: chon('duoi'), md: r(8), mu: r(2) ? '' : chon('mu'), mm: r(8),
         kinh: r(3) ? '' : chon('kinh'), pk: r(2) ? '' : chon('pk'), mp: r(8), mat: r(2) ? '' : chon('mat') };
+      nvSua = NV.doiGioiTinh(nvSua, nvSua.gt); // ngau nhien van giu dang ban nam / ban nu
       tieng('mua');
       veBang();
     });

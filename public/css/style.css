@@ -9959,3 +9959,102 @@ body .sp-sample-vn, body .sp-q-vn, body .npt-vd-vn, body .lp-dict-answer-vn, bod
   .wu-emoji { min-height: 64px; }
   .wu-emoji .wu-tranh { width: 64px; height: 64px; }
 }
+
+/* ---------- Trang lo trinh bai hoc + danh sach bai: cung kieu the "Kiem tra tren lop" ---------- */
+/* thanh "Buoc 1/7" + tien do */
+.hub-progress-label {
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--lop-nhan);
+  color: var(--lop-nhan-chu);
+  font-weight: 800;
+}
+.hub-progress-bar {
+  height: 16px;
+  border: 3px solid var(--lop-vien);
+  background: var(--lop-giay);
+  box-shadow: 0 3px 0 var(--lop-bong);
+}
+.hub-progress-fill { background: linear-gradient(90deg, #e9a23b, var(--lop-dung)); border-radius: 999px; }
+.hub-progress-pct { padding: 2px 10px; border-radius: 999px; border: 2px solid var(--lop-o); background: var(--lop-giay); }
+/* "Hoc xong bai nay, em se co the..." */
+.cando-line { border: 2px solid #e6cfa8; border-radius: 16px; }
+
+/* cac buoc: the giay kem, vien dam, bong day */
+.lesson-path { gap: 14px; }
+.lesson-path::before { left: 37px; width: 4px; background: repeating-linear-gradient(180deg, var(--lop-o) 0 8px, transparent 8px 14px); }
+.lp-btn {
+  min-height: 78px;
+  padding: 14px 18px 14px 16px;
+  border: 3px solid var(--lop-vien);
+  border-radius: 22px;
+  background: var(--lop-giay);
+  box-shadow: 0 5px 0 var(--lop-bong);
+}
+.lp-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 var(--lop-bong); }
+.lp-btn:focus-visible { outline: 3px solid var(--lop-chon); outline-offset: 3px; }
+.lp-node {
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--lop-vien);
+  background: var(--lop-nhan);
+  color: var(--lop-nhan-chu);
+  font-size: 1.05rem;
+}
+.lp-top b { font-size: 1.15rem; }
+.lp-min { padding: 2px 9px; border-radius: 999px; background: var(--lop-nhan); color: var(--lop-nhan-chu); font-size: 0.78rem; }
+.lp-desc { font-size: 0.95rem; }
+.lp-badge { font-size: 0.82rem; }
+/* buoc dang hoc: vach vang tren dau + o so vang nhu "cau dang lam" tren lop */
+.lp-step.is-current .lp-btn { border: 3px solid var(--lop-vien); border-top: 10px solid #e9a23b; background: var(--lop-giay); box-shadow: 0 6px 0 var(--lop-bong), 0 14px 30px rgba(30, 18, 12, 0.10); }
+.lp-step.is-current .lp-node { background: #ffd23f; border-color: var(--lop-vien); color: #2b1d3a; }
+.lp-step.is-current .lp-go {
+  color: #fff;
+  background: var(--lop-sai);
+  border: 3px solid var(--lop-vien);
+  border-radius: 999px;
+  padding: 8px 16px;
+  box-shadow: 0 3px 0 var(--lop-vien);
+}
+/* da xong: vach xanh + dau tich xanh */
+.lp-step.is-done .lp-btn { border-top: 10px solid var(--lop-vach); }
+.lp-step.is-done .lp-node { background: var(--lop-dung); border-color: var(--lop-vien); color: #fff; }
+.lp-step.is-skipped .lp-btn { border-top-width: 3px; opacity: 0.75; }
+.lp-step.is-skipped .lp-node { background: var(--lop-o); color: var(--lop-nhan); }
+.lp-step.is-later .lp-btn { background: var(--lop-giay); }
+.lp-step.is-later .lp-node { opacity: 0.8; }
+.lp-step.is-retry .lp-node { background: #e9a23b; color: #2b1d3a; }
+/* luyen them: the chu nen kem, day dam */
+.lp-extra-btn {
+  min-height: 46px;
+  border: 2px solid #e6cfa8;
+  border-bottom-width: 5px;
+  border-radius: 14px;
+  background: #fff8ea;
+  font-weight: 700;
+}
+.lp-extra-btn:hover { border-color: var(--lop-chon); }
+
+/* danh sach bai trong 1 cap */
+.lesson-card-link {
+  border: 3px solid var(--lop-vien);
+  border-radius: 20px;
+  background: var(--lop-giay);
+  box-shadow: 0 5px 0 var(--lop-bong);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.lesson-card-link:hover { transform: translateY(-2px); box-shadow: 0 7px 0 var(--lop-bong); }
+.lesson-card-num { border-radius: 50%; background: var(--lop-nhan); color: var(--lop-nhan-chu); border: 3px solid var(--lop-vien); }
+@media (prefers-color-scheme: dark) {
+  html.ho-tro-toi:not([data-theme="light"]) .lp-extra-btn { background: #3a3029; border-color: #6a5440; color: #f5ead8; }
+  html.ho-tro-toi:not([data-theme="light"]) .cando-line { border-color: #6a5440; }
+}
+html.ho-tro-toi[data-theme="dark"] .lp-extra-btn { background: #3a3029; border-color: #6a5440; color: #f5ead8; }
+html.ho-tro-toi[data-theme="dark"] .cando-line { border-color: #6a5440; }
+@media (max-width: 640px) {
+  .lp-btn { padding: 12px 12px 12px 12px; border-radius: 18px; }
+  .lp-node { width: 38px; height: 38px; }
+  .lesson-path::before { left: 31px; }
+  .lp-top b { font-size: 1.05rem; }
+}

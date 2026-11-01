@@ -17751,14 +17751,40 @@
     var q = foldVn(assignPickFilter);
     var list = p.roster.filter(function (r) { return !q || foldVn(r.name).indexOf(q) !== -1; });
     return '<div class="assign-head"><div><h2>👋 Em là ai trong lớp ' + assignEsc(p.cls.name) + '?</h2>' +
-        '<p>Chọn đúng <b>tên của em</b> trong danh sách lớp. Thầy cô sẽ biết em đã vào lớp.</p></div>' +
+        '<p>Chọn đúng <b>tên của em</b> trong danh sách lớp. Thầy cô sẽ biết em đã vào lớp.</p>' + pickAccHtml() + '</div>' +
         (p.mode === 'join' ? '<button type="button" class="assign-switch" id="assignPickCancel">Huỷ</button>' : '') + '</div>' +
       '<input type="search" class="assign-pick-search" id="assignPickSearch" placeholder="Gõ tên để tìm nhanh…" value="' + assignEsc(assignPickFilter) + '" aria-label="Tìm tên">' +
       '<ul class="assign-pick">' + list.map(function (r) {
-        return '<li><button type="button" class="assign-pick-btn" data-rid="' + assignEsc(r.id) + '"' + (r.taken ? ' disabled' : '') + '>' +
+        // Ten da co tai khoan khac chon: van bam duoc de xem email cua tai khoan do
+        return '<li><button type="button" class="assign-pick-btn' + (r.taken ? ' is-taken' : '') + '" data-rid="' + assignEsc(r.id) + '">' +
           assignEsc(r.name) + (r.taken ? ' <small>· đã có bạn chọn</small>' : '') + '</button></li>';
       }).join('') + (list.length ? '' : '<li class="assign-pick-empty">Không thấy tên em? Báo thầy cô thêm vào danh sách nhé.</li>') + '</ul>' +
+      (p.roster.some(function (r) { return r.taken; }) ? '<p class="assign-pick-note">Tên em ghi <b>«đã có bạn chọn»</b>? Có thể em đã chọn tên bằng <b>một tài khoản khác</b> (ví dụ trên điện thoại). <b>Bấm vào tên em</b> để xem đó là email nào, rồi đăng nhập bằng email ấy là vào thẳng lớp — không cần chọn lại.</p>' : '') +
+      '<div class="assign-pick-taken" id="assignPickTaken" hidden></div>' +
       '<p class="assign-join-err" id="assignJoinErr" hidden></p>';
+  }
+
+  // Hoc sinh thay minh dang dang nhap tai khoan nao: tranh chon ten bang tai khoan thu hai
+  // (vd dang ky email khac tren may tinh) roi bao ten minh 'da co ban chon'
+  function pickAccHtml() {
+    var auth = assignAuth();
+    var u = auth && auth.user;
+    if (!u) return '';
+    return '<p class="assign-pick-acc">Em đang đăng nhập: <b>' + assignEsc(u.name || '') + '</b>' + (u.email ? ' · ' + assignEsc(u.email) : '') + '</p>';
+  }
+
+  // Bam vao ten da co tai khoan khac chon: chi email (che bot) cua tai khoan do + nut dang nhap.
+  // Dang nhap dung tai khoan la vao thang lop voi ten minh, tren may nao cung vay.
+  function moTenDaChon(box, r) {
+    var o = $('#assignPickTaken', box);
+    o.innerHTML = '<p>Tên <b>' + assignEsc(r.name) + '</b> đã được chọn bằng tài khoản ' +
+        (r.goiY ? '<b class="assign-pick-mail">' + assignEsc(r.goiY) + '</b>' : 'khác') + '.</p>' +
+      '<p>Nếu đó là <b>tài khoản của em</b> (ví dụ em đã chọn tên trên điện thoại), đăng nhập bằng email đó là vào thẳng lớp, mọi máy đều giống nhau.</p>' +
+      '<div class="assign-pick-taken-act"><button type="button" class="btn btn-primary" id="assignPickLogin">Đăng nhập tài khoản đó</button></div>' +
+      '<p class="assign-pick-small">Không phải tài khoản của em? Báo thầy cô gỡ tên giúp.</p>';
+    o.hidden = false;
+    $('#assignPickLogin', o).addEventListener('click', function () { openAuthModal('login'); });
+    o.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }
 
   function bindPick(box) {
@@ -17776,7 +17802,10 @@
     $all('.assign-pick-btn', box).forEach(function (b) {
       b.addEventListener('click', function () {
         var p = assignPick;
-        var name = b.textContent;
+        var rid = b.getAttribute('data-rid');
+        var r = p.roster.filter(function (x) { return x.id === rid; })[0] || {};
+        var name = r.name || b.textContent;
+        if (r.taken) { moTenDaChon(box, r); return; }
         if (!window.confirm('Em là "' + name + '" đúng không?')) return;
         b.disabled = true;
         var req = p.mode === 'join'

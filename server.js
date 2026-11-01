@@ -3686,16 +3686,35 @@ app.get('/api/class/me', requireAuth, asyncRoute(async (req, res) => {
   // Lop co danh sach ma em chua chon ten minh -> hien o chon ten
   if (roster.length && !mine) {
     out.needPick = true;
-    out.roster = roster.sort((a, b) => a.sort - b.sort).map((r) => ({ id: r.id, name: r.name, taken: !!r.userId }));
+    out.roster = await rosterChoHocSinh(roster.sort((a, b) => a.sort - b.sort), req.user.id);
   }
   res.json(out);
 }));
+
+// Email che bot (ng•••@gmail.com) cua tai khoan da chon ten: hoc sinh dang nhap nham tai khoan
+// (vd dang ky email khac tren may tinh) nhan ra minh can dang nhap bang email nao
+function cheEmail(email) {
+  const [ten, mien] = String(email || '').split('@');
+  if (!ten || !mien) return '';
+  return ten.slice(0, ten.length > 3 ? 2 : 1) + '•••@' + mien;
+}
+async function rosterChoHocSinh(roster, userId) {
+  const goiY = {};
+  await Promise.all([...new Set(roster.filter((r) => r.userId && r.userId !== userId).map((r) => r.userId))].map(async (id) => {
+    const u = await findUserById(id);
+    goiY[id] = u ? cheEmail(u.email) : '';
+  }));
+  return roster.map((r) => {
+    const taken = !!r.userId && r.userId !== userId;
+    return taken ? { id: r.id, name: r.name, taken, goiY: goiY[r.userId] || '' } : { id: r.id, name: r.name, taken };
+  });
+}
 
 // Gan 1 ten trong danh sach lop cho tai khoan (ten da co nguoi chon thi khong chon duoc)
 async function claimRoster(st, userId, classId, rosterId) {
   const r = st.roster.find((x) => x.id === rosterId && x.classId === classId);
   if (!r) return 'Không tìm thấy tên này trong danh sách lớp.';
-  if (r.userId && r.userId !== userId) return 'Tên này đã có bạn khác chọn. Nếu đó là tên của em, báo thầy cô để gỡ nhé.';
+  if (r.userId && r.userId !== userId) return 'Tên này đã gắn với một tài khoản khác. Nếu em đã chọn tên này trên máy khác (ví dụ điện thoại), hãy đăng xuất rồi đăng nhập bằng đúng email đó. Nếu không phải, báo thầy cô gỡ tên giúp nhé.';
   if (!USE_DB) {
     const d = readClassFile();
     d.roster.forEach((x) => { if (x.userId === userId) x.userId = null; });
@@ -3741,7 +3760,7 @@ app.post('/api/class/join', requireAuth, asyncRoute(async (req, res) => {
   const rosterId = req.body?.rosterId ? String(req.body.rosterId) : '';
   if (roster.length && !rosterId) {
     return res.json({ needPick: true, class: { id: cls.id, name: cls.name },
-      roster: roster.map((r) => ({ id: r.id, name: r.name, taken: !!r.userId && r.userId !== req.user.id })) });
+      roster: await rosterChoHocSinh(roster, req.user.id) });
   }
   if (roster.length) {
     const err = await claimRoster(st, req.user.id, cls.id, rosterId);

@@ -8280,6 +8280,15 @@ body.pinyin-hidden .py-inline {
 .assign-pick-btn:disabled { color: var(--fg-text-muted); cursor: not-allowed; }
 .assign-pick-btn small { font-size: 0.78rem; }
 .assign-pick-empty { color: var(--fg-gray-600); font-size: 0.9rem; padding: 6px 0; }
+.assign-pick-btn.is-taken { color: var(--fg-text-muted); border-style: dashed; }
+.assign-pick-taken { margin: var(--space-3) 0 0; padding: 12px 14px; border: 1.5px solid var(--color-red-500); border-radius: var(--radius-md); background: var(--color-red-50); font-size: 0.92rem; line-height: 1.5; }
+.assign-pick-taken p { margin: 0 0 6px; }
+.assign-pick-mail { font-family: ui-monospace, Consolas, monospace; }
+.assign-pick-taken-act { margin: 8px 0; }
+.assign-pick-small { font-size: 0.82rem; color: var(--fg-gray-600); }
+.assign-pick-acc { margin: 6px 0 0; font-size: 0.88rem; color: var(--fg-gray-600); }
+.assign-pick-acc b { color: var(--fg-gray-900); }
+.assign-pick-note { margin: var(--space-3) 0 0; padding: 10px 12px; border-radius: var(--radius-md); background: var(--color-gold-50, #fff8e6); color: var(--fg-gray-900); font-size: 0.88rem; line-height: 1.5; }
 .ab-wrap { margin-top: var(--space-3); overflow: auto; max-height: 520px; border: 1px solid var(--color-gray-100); border-radius: var(--radius-md); }
 .ab-table { border-collapse: separate; border-spacing: 0; font-size: 0.9rem; min-width: 100%; }
 .ab-table th, .ab-table td { padding: 7px 10px; border-bottom: 1px solid var(--color-gray-100); white-space: nowrap; }

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Bạn nhỏ nghiêng đầu trước webcam để chọn thẻ đúng bên trái hoặc thẻ sai bên phải">
+  <defs>
+    <linearGradient id="nghieng-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a6b"/>
+      <stop offset="1" stop-color="#c2412d"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#nghieng-bg)"/>
+  <circle cx="60" cy="190" r="80" fill="#fff8ec" opacity="0.08"/>
+  <circle cx="350" cy="40" r="70" fill="#ffd27a" opacity="0.14"/>
+  <circle cx="200" cy="120" r="96" fill="#fff8ec" opacity="0.07"/>
+  <path d="M0 206 Q200 188 400 206 V240 H0Z" fill="#a8321f" opacity="0.45"/>
+
+  <!-- camera view cone -->
+  <path d="M190 40 L128 196 L272 196 L210 40Z" fill="#fff8ec" opacity="0.1"/>
+
+  <!-- left card (check) -->
+  <circle cx="69" cy="100" r="54" fill="#fff8ec" opacity="0.18"/>
+  <rect x="30" y="64" width="78" height="72" rx="16" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M88 133 L114 156 L102 133" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+  <rect x="36" y="122" width="66" height="8" rx="4" fill="#f1e2c6"/>
+  <circle cx="69" cy="99" r="22" fill="#3bb273" stroke="#2b1d3a" stroke-width="3.5"/>
+  <path d="M57 100 L66 109 L81 92" fill="none" stroke="#fff8ec" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- right card (cross) -->
+  <rect x="292" y="64" width="78" height="72" rx="16" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M312 133 L286 156 L298 133" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+  <rect x="298" y="122" width="66" height="8" rx="4" fill="#f1e2c6"/>
+  <circle cx="331" cy="99" r="22" fill="#e5484d" stroke="#2b1d3a" stroke-width="3.5"/>
+  <path d="M323 91 L339 107 M339 91 L323 107" fill="none" stroke="#fff8ec" stroke-width="5.5" stroke-linecap="round"/>
+
+  <!-- kid body -->
+  <path d="M118 242 Q120 192 200 186 Q280 192 282 242Z" fill="#3bb3a0"/>
+  <path d="M242 194 Q278 204 282 242 H254 Q254 212 242 194Z" fill="#2a9483"/>
+  <path d="M118 242 Q120 192 200 186 Q280 192 282 242Z" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M180 189 L200 206 L220 189" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- kid head (tilted) -->
+  <g transform="rotate(-16 200 184)">
+    <rect x="188" y="164" width="24" height="28" rx="8" fill="#f4b98e" stroke="#2b1d3a" stroke-width="3"/>
+    <circle cx="150" cy="134" r="10" fill="#ffd7b5" stroke="#2b1d3a" stroke-width="3.5"/>
+    <circle cx="250" cy="134" r="10" fill="#ffd7b5" stroke="#2b1d3a" stroke-width="3.5"/>
+    <circle cx="200" cy="126" r="46" fill="#ffd7b5"/>
+    <path d="M223 86 A46 46 0 0 1 223 166 A14 40 0 0 0 223 86Z" fill="#f4b98e"/>
+    <ellipse cx="174" cy="112" rx="9" ry="5" fill="#fff1e2"/>
+    <circle cx="200" cy="126" r="46" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    <path d="M154 122 A46 46 0 0 1 246 122 Q236 98 212 102 Q198 88 178 100 Q160 106 154 122Z" fill="#4a2c2a" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M172 92 Q184 84 196 86" fill="none" stroke="#7a4c46" stroke-width="3" stroke-linecap="round"/>
+    <path d="M196 80 Q200 68 212 72" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="184" cy="134" r="5.5" fill="#2b1d3a"/>
+    <circle cx="216" cy="134" r="5.5" fill="#2b1d3a"/>
+    <circle cx="186" cy="132" r="1.8" fill="#fff8ec"/>
+    <circle cx="218" cy="132" r="1.8" fill="#fff8ec"/>
+    <ellipse cx="171" cy="148" rx="7" ry="4" fill="#ff8fa3" opacity="0.75"/>
+    <ellipse cx="229" cy="148" rx="7" ry="4" fill="#ff8fa3" opacity="0.75"/>
+    <path d="M190 150 Q200 160 210 150" fill="none" stroke="#2b1d3a" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- tilt arrows -->
+  <g fill="none" stroke="#fff8ec" stroke-width="5" stroke-linecap="round">
+    <path d="M138 74 Q118 92 120 122"/>
+    <path d="M262 132 Q264 100 244 80"/>
+  </g>
+  <path d="M113 122 L127 122 L120.5 133Z" fill="#fff8ec" stroke="#fff8ec" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M250 75 L239 86 L236 72Z" fill="#fff8ec" stroke="#fff8ec" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- webcam -->
+  <rect x="190" y="36" width="20" height="8" rx="3" fill="#3d3550" stroke="#2b1d3a" stroke-width="3"/>
+  <rect x="174" y="12" width="52" height="28" rx="14" fill="#3d3550" stroke="#2b1d3a" stroke-width="3.5"/>
+  <rect x="180" y="15" width="14" height="4" rx="2" fill="#6b6085"/>
+  <circle cx="200" cy="26" r="10" fill="#6ec6ff" stroke="#2b1d3a" stroke-width="3"/>
+  <circle cx="200" cy="26" r="4.5" fill="#2b1d3a"/>
+  <circle cx="197" cy="23" r="2" fill="#fff8ec"/>
+  <circle cx="217" cy="20" r="2.5" fill="#ff5a5a"/>
+
+  <!-- sparkles -->
+  <path d="M30 40 Q30 47 37 47 Q30 47 30 54 Q30 47 23 47 Q30 47 30 40Z" fill="#fff8ec"/>
+  <path d="M118 50 Q118 54 122 54 Q118 54 118 58 Q118 54 114 54 Q118 54 118 50Z" fill="#fff8ec" opacity="0.9"/>
+  <path d="M372 160 Q372 165 377 165 Q372 165 372 170 Q372 165 367 165 Q372 165 372 160Z" fill="#fff8ec" opacity="0.8"/>
+  <circle cx="44" cy="160" r="2.5" fill="#fff8ec" opacity="0.8"/>
+  <circle cx="300" cy="30" r="2" fill="#fff8ec" opacity="0.7"/>
+  <circle cx="340" cy="190" r="2" fill="#fff8ec" opacity="0.6"/>
+</svg>

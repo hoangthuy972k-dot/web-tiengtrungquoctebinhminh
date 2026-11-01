@@ -1,0 +1,928 @@
+[
+ {
+  "so": "1",
+  "ten": "「以来」",
+  "tenVn": "",
+  "cauTruc": [
+   "(自从) + mốc thời gian / sự việc + 以来，……",
+   "……以来，Chủ ngữ + 一直 / 越来越 / 很少 + ……"
+  ],
+  "giaiThich": "以来 là danh từ, đứng SAU một mốc thời gian hoặc một sự việc: “……以来” chỉ khoảng thời gian tính từ một thời điểm trong quá khứ kéo dài đến hiện tại. Vế sau thường có 一直, 越来越, 很少… để nói tình hình suốt quãng thời gian đó.",
+  "viDu": [
+   {
+    "zh": "改革开放以来，中国发生了巨大的变化。",
+    "py": "Gǎigé kāifàng yǐlái, Zhōngguó fāshēngle jùdà de biànhuà.",
+    "vn": "Từ khi cải cách mở cửa đến nay, Trung Quốc đã có những thay đổi to lớn."
+   },
+   {
+    "zh": "因此长年以来，父母很少离开老屋。",
+    "py": "Yīncǐ chángnián yǐlái, fùmǔ hěn shǎo líkāi lǎowū.",
+    "vn": "Vì thế bao năm nay, bố mẹ rất ít khi rời ngôi nhà cũ."
+   },
+   {
+    "zh": "一直以来，“80后”这个词儿都含有年轻的味道。",
+    "py": "Yìzhí yǐlái, “bālínghòu” zhège cír dōu hányǒu niánqīng de wèidao.",
+    "vn": "Từ trước đến nay, từ “thế hệ 8x” luôn mang hơi hướng trẻ trung."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "以来毕业，他一直在北京工作。",
+    "why": "以来 phải đứng SAU mốc thời gian / sự việc — ngược với trật tự “từ khi…” của tiếng Việt.",
+    "dung": "毕业以来，他一直在北京工作。"
+   },
+   {
+    "sai": "来中国以来，我明年要去上海旅行。",
+    "why": "以来 chỉ quãng thời gian ĐÃ QUA kéo dài tới nay — vế sau không nói về kế hoạch tương lai.",
+    "dung": "来中国以来，我去过很多地方旅行。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "毕业",
+       "，他一直在北京工作。"
+      ],
+      "dap": [
+       [
+        "以来"
+       ]
+      ],
+      "chon": [
+       "以来",
+       "以前",
+       "的时候"
+      ],
+      "goiY": "Từ khi tốt nghiệp ĐẾN NAY, anh ấy luôn làm việc ở Bắc Kinh.",
+      "giai": "Có 一直 kéo dài tới hiện tại → 以来. 以前 là trước khi tốt nghiệp — mâu thuẫn với 一直 đến nay."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "因此长年",
+       "，父母很少离开老屋。"
+      ],
+      "dap": [
+       [
+        "以来"
+       ]
+      ],
+      "chon": [
+       "以来",
+       "以前",
+       "临"
+      ],
+      "goiY": "Câu trong bài: “Vì thế bao năm nay bố mẹ rất ít khi rời ngôi nhà cũ.”",
+      "giai": "长年以来 = bao năm nay (từ trước đến giờ)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "自从搬到城里",
+       "，姥姥一次也没回过老家。"
+      ],
+      "dap": [
+       [
+        "以来"
+       ]
+      ],
+      "chon": [
+       "以来",
+       "以前",
+       "前"
+      ],
+      "goiY": "“Từ khi dọn lên thành phố đến nay, bà ngoại chưa về quê lần nào.”",
+      "giai": "自从……以来: từ mốc quá khứ đến hiện tại; ôn 一次也没……过."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "来中国以来，他",
+       "在学汉语，现在说得很流利。"
+      ],
+      "dap": [
+       [
+        "一直"
+       ]
+      ],
+      "chon": [
+       "一直",
+       "已经",
+       "立刻"
+      ],
+      "goiY": "“Từ khi đến Trung Quốc, anh ấy LUÔN học tiếng Trung.”",
+      "giai": "……以来 thường đi với 一直 ở vế sau để nói tình trạng kéo dài."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "去年",
+       "，这个县的变化越来越大。"
+      ],
+      "dap": [
+       [
+        "以来"
+       ]
+      ],
+      "chon": [
+       "以来",
+       "以前",
+       "临"
+      ],
+      "goiY": "“Từ năm ngoái đến nay, huyện này thay đổi ngày càng nhiều.”",
+      "giai": "Mốc 去年 + 以来; vế sau 越来越 nói sự thay đổi dần đến hiện tại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "以来，“80后”这个词儿都含有年轻的味道。"
+      ],
+      "dap": [
+       [
+        "一直"
+       ]
+      ],
+      "chon": [
+       "一直",
+       "立刻",
+       "马上"
+      ],
+      "goiY": "Câu của sách: “TỪ TRƯỚC ĐẾN NAY, từ “8x” luôn mang hơi hướng trẻ trung.”",
+      "giai": "一直以来 = từ trước đến nay, là cụm cố định."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "毕业以来",
+       "他",
+       "一直",
+       "在北京",
+       "工作"
+      ],
+      "dap": [
+       "毕业以来，他一直在北京工作。",
+       "他毕业以来一直在北京工作。"
+      ],
+      "goiY": "Từ khi tốt nghiệp, anh ấy luôn làm việc ở Bắc Kinh.",
+      "giai": "……以来 đứng đầu câu (hoặc sau chủ ngữ); 一直 trước cụm 在 + nơi chốn + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "来到中国",
+       "以来",
+       "我",
+       "交了",
+       "很多朋友"
+      ],
+      "dap": [
+       "来到中国以来，我交了很多朋友。",
+       "我来到中国以来，交了很多朋友。"
+      ],
+      "goiY": "Từ khi đến Trung Quốc, tôi đã kết bạn với rất nhiều người.",
+      "giai": "以来 đứng ngay sau sự việc làm mốc 来到中国."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "长年以来",
+       "很少",
+       "父母",
+       "离开老屋"
+      ],
+      "dap": [
+       "长年以来，父母很少离开老屋。",
+       "父母长年以来很少离开老屋。"
+      ],
+      "goiY": "Bao năm nay, bố mẹ rất ít khi rời ngôi nhà cũ.",
+      "giai": "很少 là trạng ngữ, đứng trước động từ 离开."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "以来上大学，我一直住在学校。",
+      "dung": false,
+      "sua": "上大学以来，我一直住在学校。",
+      "giai": "以来 phải đứng SAU sự việc làm mốc."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "改革开放以来，中国发生了巨大的变化。",
+      "dung": true,
+      "giai": "Câu của sách: mốc sự việc + 以来, vế sau nói sự thay đổi đến nay — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "来北京以来，我下个月要去长城。",
+      "dung": false,
+      "sua": "来北京以来，我已经去过两次长城了。",
+      "giai": "以来 nói quãng thời gian ĐÃ QUA đến nay, vế sau không nói kế hoạch tương lai."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Từ khi dọn vào nhà mới, sức khoẻ của bà ngoại ngày càng tốt.",
+      "dap": [
+       "搬到新房以来，姥姥的身体越来越好了。",
+       "搬进新房以来，姥姥的身体越来越好了。",
+       "自从搬到新房以来，姥姥的身体越来越好了。",
+       "自从搬进新房以来，姥姥的身体越来越好了。"
+      ],
+      "py": "Bāndào xīnfáng yǐlái, lǎolao de shēntǐ yuè lái yuè hǎo le.",
+      "goiY": "Dịch sang tiếng Trung, dùng ……以来 và 越来越.",
+      "giai": "以来 đứng sau sự việc làm mốc 搬到新房; ôn 越来越 + Adj + 了."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Từ năm ngoái đến nay, anh ấy luôn làm thuê ở thành phố.",
+      "dap": [
+       "去年以来，他一直在城里打工。",
+       "从去年以来，他一直在城里打工。",
+       "去年以来，他一直在城市里打工。",
+       "他去年以来一直在城里打工。"
+      ],
+      "py": "Qùnián yǐlái, tā yìzhí zài chéng li dǎgōng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 以来 + 一直.",
+      "giai": "Mốc 去年 + 以来; 一直 + 在 + nơi chốn + 打工."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：他们夫妻俩的关系怎么样？ B：＿＿＿。",
+      "goiY": "từ khi kết hôn đến nay họ chưa từng cãi nhau (dùng 以来, ôn 从来没……过)",
+      "mau": "结婚以来，他们从来没吵过架。",
+      "can": [
+       [
+        "以来"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：最近这几年空气污染比较严重。 B：＿＿＿。",
+      "goiY": "đồng ý, và nói từ mấy năm nay số người đi xe đạp / đeo khẩu trang ngày càng nhiều (dùng 以来)",
+      "mau": "是啊，这几年以来，戴口罩出门的人越来越多了。",
+      "can": [
+       [
+        "以来"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「以来」 nói về em hoặc gia đình em (từ một mốc nào đó đến nay)",
+      "mau": "上高中以来，我一直住在姥姥家。",
+      "can": [
+       [
+        "以来"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「临」",
+  "tenVn": "",
+  "cauTruc": [
+   "临 + nơi chốn (临街 / 临江)",
+   "临 + Động từ + (时 / 的时候 / 前)"
+  ],
+  "giaiThich": "临 là động từ, nghĩa là sát gần, hướng ra (临街: sát mặt đường, 临江: bên sông). 临 còn làm giới từ: “临……(时/前)” chỉ thời điểm NGAY TRƯỚC khi một hành động sắp xảy ra.",
+  "viDu": [
+   {
+    "zh": "我想买一套不临街的房子，这样不会太吵。",
+    "py": "Wǒ xiǎng mǎi yí tào bù lín jiē de fángzi, zhèyàng bú huì tài chǎo.",
+    "vn": "Tôi muốn mua một căn nhà không sát mặt đường, như vậy sẽ không quá ồn."
+   },
+   {
+    "zh": "这是我临离开北京的时候买的。",
+    "py": "Zhè shì wǒ lín líkāi Běijīng de shíhou mǎi de.",
+    "vn": "Cái này tôi mua ngay trước lúc rời Bắc Kinh."
+   },
+   {
+    "zh": "临走那天，父亲从老家赶来送我们。",
+    "py": "Lín zǒu nà tiān, fùqīn cóng lǎojiā gǎnlái sòng wǒmen.",
+    "vn": "Hôm sắp đi, bố từ quê vội vã lên tiễn chúng tôi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我临走以后给你打电话。",
+    "why": "临 chỉ thời điểm NGAY TRƯỚC khi làm việc gì, không đi với 以后.",
+    "dung": "我临走前给你打电话。"
+   },
+   {
+    "sai": "临明天考试，我很紧张。",
+    "why": "临 đi với ĐỘNG TỪ (临考试), không đi với từ chỉ thời gian như 明天.",
+    "dung": "临考试前，我很紧张。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "走那天，父亲从老家赶来送我们。"
+      ],
+      "dap": [
+       [
+        "临"
+       ]
+      ],
+      "chon": [
+       "临",
+       "以来",
+       "立刻"
+      ],
+      "goiY": "Câu trong bài: “Hôm SẮP đi, bố từ quê vội lên tiễn chúng tôi.”",
+      "giai": "临 + V (临走) = ngay trước lúc đi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我想买一套不",
+       "街的房子，这样不会太吵。"
+      ],
+      "dap": [
+       [
+        "临"
+       ]
+      ],
+      "chon": [
+       "临",
+       "在",
+       "对"
+      ],
+      "goiY": "“Tôi muốn mua một căn nhà không SÁT mặt đường.”",
+      "giai": "临 làm động từ: sát, hướng ra — 临街, 临江."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "临睡",
+       "，别喝太多水。"
+      ],
+      "dap": [
+       [
+        "前"
+       ]
+      ],
+      "chon": [
+       "前",
+       "以后",
+       "以来"
+      ],
+      "goiY": "“Ngay TRƯỚC khi ngủ, đừng uống nhiều nước.”",
+      "giai": "临 + V + 前: ngay trước khi. 临 không đi với 以后, 以来."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这是我临离开北京的",
+       "买的。"
+      ],
+      "dap": [
+       [
+        "时候"
+       ]
+      ],
+      "chon": [
+       "时候",
+       "以后",
+       "以来"
+      ],
+      "goiY": "Câu của sách: “Cái này tôi mua lúc sắp rời Bắc Kinh.”",
+      "giai": "临 + V + 的时候 — ôn 是……的 nhấn mạnh thời gian."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "考试前，他每天都复习到半夜。"
+      ],
+      "dap": [
+       [
+        "临"
+       ]
+      ],
+      "chon": [
+       "临",
+       "以来",
+       "立刻"
+      ],
+      "goiY": "“Ngay trước kỳ thi, ngày nào anh ấy cũng ôn đến nửa đêm.”",
+      "giai": "临 + 考试 + 前."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "临出发",
+       "，妈妈又检查了一遍门锁。"
+      ],
+      "dap": [
+       [
+        "前",
+        "时"
+       ]
+      ],
+      "chon": [
+       "前",
+       "以后",
+       "以来"
+      ],
+      "goiY": "“Lúc sắp xuất phát, mẹ lại kiểm tra ổ khoá một lượt.”",
+      "giai": "临 + V + 前 / 时. Không nói 临……以后."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "临走",
+       "那天",
+       "父亲",
+       "来送我们",
+       "从老家"
+      ],
+      "dap": [
+       "临走那天，父亲从老家来送我们。"
+      ],
+      "goiY": "Hôm sắp đi, bố từ quê lên tiễn chúng tôi.",
+      "giai": "Thời gian 临走那天 đứng đầu câu; 从 + nơi chốn đứng trước động từ 来."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "临睡前",
+       "别",
+       "玩手机",
+       "在卧室里"
+      ],
+      "dap": [
+       "临睡前别在卧室里玩手机。"
+      ],
+      "goiY": "Trước khi ngủ đừng chơi điện thoại trong phòng ngủ.",
+      "giai": "别 + 在 + nơi chốn + V; 临睡前 đứng đầu."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "临离开北京的时候",
+       "买的",
+       "这是"
+      ],
+      "dap": [
+       "这是我临离开北京的时候买的。"
+      ],
+      "goiY": "Cái này tôi mua ngay trước lúc rời Bắc Kinh.",
+      "giai": "是 + (người) + 临……的时候 + V + 的: ôn 是……的."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "临走以后，他给我打了电话。",
+      "dung": false,
+      "sua": "临走前，他给我打了电话。",
+      "giai": "临 chỉ lúc NGAY TRƯỚC khi đi, không đi với 以后."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "临睡前别喝太多咖啡。",
+      "dung": true,
+      "giai": "临 + V + 前 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "临明天出发，我还没收拾行李。",
+      "dung": false,
+      "sua": "临出发前，我才开始收拾行李。",
+      "giai": "临 đi với ĐỘNG TỪ, không đi với từ chỉ thời gian 明天."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Ngay trước lúc đi, mẹ đưa chìa khoá nhà cho tôi.",
+      "dap": [
+       "临走的时候，妈妈把家里的钥匙给了我。",
+       "临走时，妈妈把家里的钥匙给了我。",
+       "临走前，妈妈把家里的钥匙给了我。",
+       "临走的时候，妈妈把家里的钥匙交给了我。",
+       "临走时，妈妈把家里的钥匙交给了我。"
+      ],
+      "py": "Lín zǒu de shíhou, māma bǎ jiā li de yàoshi gěile wǒ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 临 + V + 的时候 và câu 把.",
+      "giai": "临走的时候 đứng đầu câu; ôn câu 把: 把钥匙给了我."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tôi muốn thuê một căn nhà không sát mặt đường.",
+      "dap": [
+       "我想租一套不临街的房子。",
+       "我想租一套不临街的房。"
+      ],
+      "py": "Wǒ xiǎng zū yí tào bù lín jiē de fángzi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 临 làm động từ.",
+      "giai": "临街 = sát mặt đường; 一套 + 房子."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你觉得这套房子怎么样？ B：＿＿＿。",
+      "goiY": "nhà sát mặt đường, sợ sẽ ồn (dùng 临)",
+      "mau": "这套房子临街，我怕太吵了。",
+      "can": [
+       [
+        "临"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你一个人来中国，你的爸爸妈妈放心吗？ B：＿＿＿。",
+      "goiY": "không yên tâm lắm, lúc sắp đi bố mẹ dặn đi dặn lại (dùng 临)",
+      "mau": "不太放心，临走的时候，他们让我每天给家里打电话。",
+      "can": [
+       [
+        "临"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「临」 (临 + động từ + 前 / 的时候), nói về em hoặc gia đình em",
+      "mau": "临睡前，妈妈总是悄悄地来看我一眼。",
+      "can": [
+       [
+        "临"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「立刻」",
+  "tenVn": "",
+  "cauTruc": [
+   "Việc 1，Chủ ngữ + 立刻 + Động từ",
+   "一……就 + 立刻 + Động từ"
+  ],
+  "giaiThich": "立刻 là phó từ: “立刻 + động từ” nghĩa là ngay lập tức, nhấn mạnh một động tác xảy ra liền ngay sau động tác trước, không có khoảng cách thời gian.",
+  "viDu": [
+   {
+    "zh": "上了楼，开门的竟是微笑着的父母，温暖的气息立刻扑面而来……",
+    "py": "Shàngle lóu, kāi mén de jìng shì wēixiàozhe de fùmǔ, wēnnuǎn de qìxī lìkè pū miàn ér lái……",
+    "vn": "Lên đến nhà, người ra mở cửa lại là bố mẹ đang mỉm cười, hơi ấm lập tức ùa vào mặt…"
+   },
+   {
+    "zh": "原来父母要我留下串钥匙，只是为了让我们回来时，能立刻感受到家的温暖！",
+    "py": "Yuánlái fùmǔ yào wǒ liúxià chuàn yàoshi, zhǐshì wèile ràng wǒmen huílai shí, néng lìkè gǎnshòu dào jiā de wēnnuǎn!",
+    "vn": "Hoá ra bố mẹ bảo tôi để lại chùm chìa khoá chỉ là để khi chúng tôi trở về, có thể lập tức cảm nhận hơi ấm gia đình!"
+   },
+   {
+    "zh": "那两只羊一见到青草，就立刻去吃草了，哪还有心思打架呢？",
+    "py": "Nà liǎng zhī yáng yí jiàndào qīngcǎo, jiù lìkè qù chī cǎo le, nǎ hái yǒu xīnsi dǎjià ne?",
+    "vn": "Hai con dê ấy vừa thấy cỏ non là lập tức đi ăn cỏ, còn đâu tâm trí mà đánh nhau?"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他听到这个消息，立刻他哭了。",
+    "why": "立刻 là phó từ, phải đứng SAU chủ ngữ, TRƯỚC động từ.",
+    "dung": "他听到这个消息，立刻哭了。"
+   },
+   {
+    "sai": "只有一个星期了，春节立刻就要到了。",
+    "why": "Việc SẮP xảy ra trong tương lai gần dùng 马上就要……了; 立刻 chỉ phản ứng tức thì sau một việc.",
+    "dung": "只有一个星期了，春节马上就要到了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "上了楼，温暖的气息",
+       "扑面而来。"
+      ],
+      "dap": [
+       [
+        "立刻"
+       ]
+      ],
+      "chon": [
+       "立刻",
+       "马上就要",
+       "以来"
+      ],
+      "goiY": "Câu trong bài: hơi ấm LẬP TỨC ùa vào mặt.",
+      "giai": "立刻 + V: động tác xảy ra ngay, nối liền việc trước (上了楼)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只有一个星期了，春节",
+       "就要到了。"
+      ],
+      "dap": [
+       [
+        "马上"
+       ]
+      ],
+      "chon": [
+       "马上",
+       "立刻",
+       "临"
+      ],
+      "goiY": "“Chỉ còn một tuần, Tết SẮP đến rồi.”",
+      "giai": "Việc sắp đến dùng 马上就要……了; 立刻 không đi với 就要."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他病了，老师和同学们",
+       "把他送进了医院。"
+      ],
+      "dap": [
+       [
+        "立刻"
+       ]
+      ],
+      "chon": [
+       "立刻",
+       "以来",
+       "一辈子"
+      ],
+      "goiY": "“Cậu ấy ốm, thầy cô và các bạn LẬP TỨC đưa cậu vào viện.”",
+      "giai": "立刻 đứng sau chủ ngữ, trước cả cụm 把 + tân ngữ + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那两只羊一见到青草，就",
+       "去吃草了。"
+      ],
+      "dap": [
+       [
+        "立刻"
+       ]
+      ],
+      "chon": [
+       "立刻",
+       "以来",
+       "临"
+      ],
+      "goiY": "Câu của sách: hai con dê vừa thấy cỏ là lập tức đi ăn.",
+      "giai": "一……就立刻……: hai động tác nối liền nhau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一下课，他就",
+       "跑出了教室。"
+      ],
+      "dap": [
+       [
+        "立刻"
+       ]
+      ],
+      "chon": [
+       "立刻",
+       "临",
+       "以来"
+      ],
+      "goiY": "“Vừa tan học, cậu ấy lập tức chạy ra khỏi lớp.”",
+      "giai": "一……就 + 立刻 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "——你什么时候到？——",
+       "到！"
+      ],
+      "dap": [
+       [
+        "马上"
+       ]
+      ],
+      "chon": [
+       "马上",
+       "立刻",
+       "临"
+      ],
+      "goiY": "Trả lời nhanh trong khẩu ngữ: “Đến ngay!”",
+      "giai": "Câu trả lời ngắn khẩu ngữ dùng 马上; 立刻 nghe như mệnh lệnh."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "老师",
+       "一进教室",
+       "学生们",
+       "立刻",
+       "安静下来了"
+      ],
+      "dap": [
+       "老师一进教室，学生们立刻安静下来了。"
+      ],
+      "goiY": "Thầy vừa vào lớp, học sinh lập tức im lặng.",
+      "giai": "Việc 1 (老师一进教室) → chủ ngữ 学生们 → 立刻 → V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "听到这个消息",
+       "他",
+       "立刻",
+       "回了老家"
+      ],
+      "dap": [
+       "听到这个消息，他立刻回了老家。",
+       "他听到这个消息，立刻回了老家。"
+      ],
+      "goiY": "Nghe tin này, anh ấy lập tức về quê.",
+      "giai": "立刻 đứng ngay trước động từ 回."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "立刻",
+       "我们",
+       "能",
+       "感受到家的温暖"
+      ],
+      "dap": [
+       "我们能立刻感受到家的温暖。",
+       "我们立刻能感受到家的温暖。"
+      ],
+      "goiY": "Chúng tôi có thể lập tức cảm nhận hơi ấm gia đình.",
+      "giai": "Trong bài: 能立刻感受到 — động từ năng nguyện 能 thường đứng trước 立刻."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "听到铃声，立刻他站了起来。",
+      "dung": false,
+      "sua": "听到铃声，他立刻站了起来。",
+      "giai": "立刻 là phó từ, phải đứng SAU chủ ngữ 他."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "一开门，温暖的气息立刻扑面而来。",
+      "dung": true,
+      "giai": "一 + V, Sub + 立刻 + V — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "天阴了，立刻就要下雨了。",
+      "dung": false,
+      "sua": "天阴了，马上就要下雨了。",
+      "giai": "Việc SẮP xảy ra dùng 马上就要……了."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Vừa tan học, em trai lập tức chạy về nhà.",
+      "dap": [
+       "一下课，弟弟就立刻跑回家了。",
+       "一下课，弟弟立刻跑回家了。",
+       "一下课，弟弟就立刻跑回了家。",
+       "弟弟一下课就立刻跑回家了。",
+       "弟弟一下课就立刻跑回了家。"
+      ],
+      "py": "Yí xiàkè, dìdi jiù lìkè pǎo huí jiā le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一……就 + 立刻.",
+      "giai": "一 + V1，(Sub) + 就 + 立刻 + V2."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Nghe tin mẹ ốm, anh ấy lập tức về quê.",
+      "dap": [
+       "听说妈妈病了，他立刻回老家了。",
+       "听说妈妈病了，他立刻回了老家。",
+       "他听说妈妈病了，立刻回老家了。",
+       "他听说妈妈病了，立刻回了老家。",
+       "听说妈妈生病了，他立刻回老家了。"
+      ],
+      "py": "Tīngshuō māma bìng le, tā lìkè huí lǎojiā le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 立刻.",
+      "giai": "立刻 đứng sau chủ ngữ 他, trước động từ 回."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "一下课，＿＿＿。",
+      "goiY": "các bạn lập tức chạy đến căng tin (dùng 立刻)",
+      "mau": "一下课，同学们就立刻跑去食堂了。",
+      "can": [
+       [
+        "立刻"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你能帮我通知他这件事吗？ B：＿＿＿。",
+      "goiY": "đồng ý và nói sẽ gọi điện cho anh ấy ngay (dùng 立刻)",
+      "mau": "没问题，我立刻给他打电话。",
+      "can": [
+       [
+        "立刻"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「立刻」 kể một phản ứng tức thì của em hoặc người thân",
+      "mau": "我一到家，妈妈就立刻给我端来一碗热汤。",
+      "can": [
+       [
+        "立刻"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

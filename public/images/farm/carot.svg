@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs>
+<g id="carot-t"><circle cx="-11" cy="-23" r="5"/><circle cx="-7" cy="-27" r="4.2"/><circle cx="-14" cy="-18" r="3.8"/><circle cx="1" cy="-30" r="5"/><circle cx="-2" cy="-25" r="3.8"/><circle cx="4" cy="-25" r="3.8"/><circle cx="12" cy="-22" r="5"/><circle cx="9" cy="-27" r="4"/><circle cx="15" cy="-17" r="3.8"/></g>
+<g id="carot-c">
+<ellipse cy="3" rx="10" ry="2.6" fill="#6b3f22"/>
+<path d="M0-6Q-5-14-10-20M0-6Q0-18 1-26M0-6Q5-14 11-19" fill="none" stroke="#2b1d3a" stroke-width="5" stroke-linecap="round"/>
+<use href="#carot-t" fill="#2b1d3a" stroke="#2b1d3a" stroke-width="5.5"/>
+<use href="#carot-t" fill="#5cb83f"/>
+<path d="M0-6Q-5-14-10-20M0-6Q0-18 1-26M0-6Q5-14 11-19" fill="none" stroke="#4a9a32" stroke-width="2.2" stroke-linecap="round"/>
+<g fill="#9fdc78"><circle cx="-12" cy="-25" r="1.8"/><circle cx="0" cy="-32" r="1.8"/><circle cx="11" cy="-24" r="1.8"/></g>
+<path d="M-8 3Q-9-6 0-7Q9-6 8 3Z" fill="#ff8a3d" stroke="#2b1d3a" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M2-5Q7-4 6.5 2.5H3Q4-2 2-5Z" fill="#ec6f25"/>
+<path d="M-4 0H0M-1-3H2" stroke="#d9601e" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M-5.5 0Q-5.5-3-3-4.5" stroke="#ffd2a8" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+</g></defs>
+<ellipse cx="50" cy="86" rx="40" ry="7" fill="#000" opacity=".15"/>
+<rect x="11" y="47" width="78" height="38" rx="13" fill="#8a5430" stroke="#2b1d3a" stroke-width="3"/>
+<rect x="12.5" y="48.5" width="75" height="28" rx="11" fill="#a8693f"/>
+<path d="M20 59H80M19 68H81" stroke="#8a5430" stroke-width="3" stroke-linecap="round"/>
+<path d="M22 56H48M24 65H40" stroke="#c98a5a" stroke-width="2" stroke-linecap="round"/>
+<use href="#carot-c" x="28" y="59"/>
+<use href="#carot-c" x="53" y="59"/>
+<use href="#carot-c" x="76" y="60"/>
+<use href="#carot-c" x="40" y="70"/>
+<use href="#carot-c" x="65" y="70"/>
+</svg>

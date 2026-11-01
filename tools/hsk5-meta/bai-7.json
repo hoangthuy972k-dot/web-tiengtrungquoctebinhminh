@@ -1,0 +1,146 @@
+{
+ "zh": "成语故事两则",
+ "py": "Chéngyǔ gùshi liǎng zé",
+ "vn": "Hai câu chuyện thành ngữ",
+ "topic": "Unit 3 倾听故事 · Truyện thành ngữ &amp; đạo lý",
+ "vocabCount": 48,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "瞎",
+   "explain": "瞎 vốn là ĐỘNG TỪ: mắt không nhìn thấy, bị mù (眼睛瞎了). Khi làm PHÓ TỪ (khẩu ngữ), 瞎 đứng trước động từ, biểu thị làm việc gì KHÔNG có lý do, không có căn cứ hoặc không có tác dụng: 瞎说 (nói bậy), 瞎担心 (lo hão), 瞎着急 (cuống lên vô ích), 瞎猜 (đoán mò).",
+   "rule": "① (眼睛) + <strong style=\"color:var(--sky-d)\">瞎</strong> + 了 — động từ: bị mù　② <strong style=\"color:var(--sky-d)\">瞎</strong> + Động từ — phó từ: bừa, vô ích",
+   "examples": [
+    {
+     "zh": "一天，他让士兵们去找一头大象和一些出生时眼睛就瞎了的人回来。",
+     "py": "Yì tiān, tā ràng shìbīngmen qù zhǎo yì tóu dàxiàng hé yìxiē chūshēng shí yǎnjing jiù xiā le de rén huílái.",
+     "vn": "Một hôm, ông sai binh lính đi tìm về một con voi và mấy người bị mù từ lúc mới sinh."
+    },
+    {
+     "zh": "别听他瞎说，不用害怕。我们不会这么倒霉的。",
+     "py": "Bié tīng tā xiā shuō, búyòng hàipà. Wǒmen bú huì zhème dǎoméi de.",
+     "vn": "Đừng nghe cậu ta nói bậy, không cần sợ. Chúng ta không xui xẻo thế đâu."
+    },
+    {
+     "zh": "他自己的问题，他会想办法的，你就别替他瞎担心了。",
+     "py": "Tā zìjǐ de wèntí, tā huì xiǎng bànfǎ de, nǐ jiù bié tì tā xiā dānxīn le.",
+     "vn": "Chuyện của cậu ấy thì cậu ấy sẽ tự tìm cách, cậu đừng lo hão thay cậu ấy nữa."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "你别担心瞎了。",
+     "why": "Phó từ 瞎 phải đứng TRƯỚC động từ, không đứng sau.",
+     "right": "你别瞎担心了。"
+    },
+    {
+     "wrong": "他的眼睛很瞎。",
+     "why": "瞎 (bị mù) là động từ chỉ sự việc đã xảy ra, không đi với 很; nói 瞎了.",
+     "right": "他的眼睛瞎了。"
+    }
+   ]
+  },
+  {
+   "point": "分别",
+   "explain": "分别 có ba cách dùng. ① ĐỘNG TỪ: chia tay, xa nhau (= 离别). ② PHÓ TỪ: mỗi người / mỗi bên làm riêng (= 分头、各自), hoặc lần lượt nêu từng cái một (分别是……). ③ DANH TỪ: chỗ khác nhau (= 区别). Lưu ý bẫy Hán–Việt: \"phân biệt (nhận ra chỗ khác)\" tiếng Trung là 区分/分辨.",
+   "rule": "① A 和 B + <strong style=\"color:var(--sky-d)\">分别</strong> (+ thời gian)　② Chủ ngữ số nhiều + <strong style=\"color:var(--sky-d)\">分别</strong> + V / ……，<strong style=\"color:var(--sky-d)\">分别</strong>是……　③ 有 / 没有 + 什么 + <strong style=\"color:var(--sky-d)\">分别</strong>",
+   "examples": [
+    {
+     "zh": "分别是暂时的，我们以后一定会再见。",
+     "py": "Fēnbié shì zànshí de, wǒmen yǐhòu yídìng huì zài jiàn.",
+     "vn": "Chia tay chỉ là tạm thời, sau này chúng ta nhất định sẽ gặp lại."
+    },
+    {
+     "zh": "士兵们分别去不同地方寻找，把找到的大象和盲人带到他面前。",
+     "py": "Shìbīngmen fēnbié qù bù tóng dìfang xúnzhǎo, bǎ zhǎodào de dàxiàng hé mángrén dàidào tā miànqián.",
+     "vn": "Binh lính chia nhau đi tìm ở những nơi khác nhau, rồi đưa con voi và những người mù tìm được đến trước mặt vua."
+    },
+    {
+     "zh": "我不知道这两种做法有什么分别。",
+     "py": "Wǒ bù zhīdào zhè liǎng zhǒng zuòfǎ yǒu shénme fēnbié.",
+     "vn": "Tôi không biết hai cách làm này có gì khác nhau."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他们去分别不同的城市。",
+     "why": "Phó từ 分别 đứng sau chủ ngữ, TRƯỚC động từ 去.",
+     "right": "他们分别去不同的城市。"
+    },
+    {
+     "wrong": "我分别不出这两个字的意思。",
+     "why": "Bẫy Hán–Việt: \"phân biệt được / nhận ra chỗ khác\" là 分辨 / 区分, không dùng 分别 + bổ ngữ khả năng.",
+     "right": "我分辨不出这两个字的意思。"
+    }
+   ]
+  },
+  {
+   "point": "根",
+   "explain": "根 ① DANH TỪ: rễ cây — phần mọc xuống dưới đất. ② DANH TỪ: gốc, nền tảng của sự vật (牙根, 从根上解决). ③ LƯỢNG TỪ: dùng cho vật DÀI và MẢNH: 一根绳子, 一根尾巴, 一根筷子, 几根箭, 一根头发.",
+   "rule": "① N + 的 + <strong style=\"color:var(--sky-d)\">根</strong> (rễ)　② 从<strong style=\"color:var(--sky-d)\">根</strong>上 + V (tận gốc)　③ Số từ + <strong style=\"color:var(--sky-d)\">根</strong> + N (vật dài, mảnh)",
+   "examples": [
+    {
+     "zh": "这棵树的根又粗又长。",
+     "py": "Zhè kē shù de gēn yòu cū yòu cháng.",
+     "vn": "Rễ của cái cây này vừa to vừa dài."
+    },
+    {
+     "zh": "这件事还是得从根上解决，只解决表面问题是不行的。",
+     "py": "Zhè jiàn shì háishi děi cóng gēn shang jiějué, zhǐ jiějué biǎomiàn wèntí shì bù xíng de.",
+     "vn": "Việc này vẫn phải giải quyết tận gốc, chỉ giải quyết bề mặt là không được."
+    },
+    {
+     "zh": "可是，这次他连续换了几根箭，都没能再射进去。",
+     "py": "Kěshì, zhè cì tā liánxù huànle jǐ gēn jiàn, dōu méi néng zài shè jìnqù.",
+     "vn": "Thế nhưng lần này ông liên tiếp thay mấy mũi tên mà đều không bắn ngập vào được nữa."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我买了一根书。",
+     "why": "根 chỉ dùng cho vật dài, mảnh; sách dùng lượng từ 本.",
+     "right": "我买了一本书。"
+    },
+    {
+     "wrong": "桌子上放着三根杯子。",
+     "why": "Cốc không phải vật dài mảnh; dùng 个.",
+     "right": "桌子上放着三个杯子。"
+    }
+   ]
+  },
+  {
+   "point": "便",
+   "explain": "便 là PHÓ TỪ, nghĩa như 就, thường dùng trong VĂN VIẾT. Biểu thị việc xảy ra một cách tự nhiên trong một điều kiện hoặc hoàn cảnh nào đó. 便 đứng SAU chủ ngữ, TRƯỚC động từ; hay đi với 一……便……, 只要/如果……便…….",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">便</strong> + V　|　一……，<strong style=\"color:var(--sky-d)\">便</strong>……　|　只要 / 如果……，<strong style=\"color:var(--sky-d)\">便</strong>……",
+   "examples": [
+    {
+     "zh": "楼上新买了一架钢琴，我们家便多了一些不安静。",
+     "py": "Lóu shàng xīn mǎile yí jià gāngqín, wǒmen jiā biàn duōle yìxiē bù ānjìng.",
+     "vn": "Nhà tầng trên mới mua một cây đàn piano, nhà chúng tôi thế là bớt yên tĩnh hẳn."
+    },
+    {
+     "zh": "很多时候，仅仅是换一种心情，换一个角度，便可以从困境中走出来。",
+     "py": "Hěn duō shíhou, jǐnjǐn shì huàn yì zhǒng xīnqíng, huàn yí ge jiǎodù, biàn kěyǐ cóng kùnjìng zhōng zǒu chūlái.",
+     "vn": "Nhiều khi chỉ cần đổi tâm trạng, đổi góc nhìn là có thể bước ra khỏi khốn cảnh."
+    },
+    {
+     "zh": "“精诚所至，金石为开”这一成语也便由此流传下来。",
+     "py": "\"Jīngchéng suǒ zhì, jīnshí wéi kāi\" zhè yì chéngyǔ yě biàn yóucǐ liúchuán xiàlái.",
+     "vn": "Thành ngữ \"lòng thành cảm động đá vàng\" cũng từ đó mà lưu truyền lại."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "便他转身回去拿钥匙。",
+     "why": "便 là phó từ, phải đứng SAU chủ ngữ, trước động từ.",
+     "right": "他便转身回去拿钥匙。"
+    },
+    {
+     "wrong": "他一到学校，老师便就来了。",
+     "why": "便 đã có nghĩa là 就, dùng cả hai là thừa.",
+     "right": "他一到学校，老师便来了。"
+    }
+   ]
+  }
+ ]
+}

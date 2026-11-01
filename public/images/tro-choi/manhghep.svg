@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Bức tranh núi, mặt trời và ngôi chùa bị che một phần bởi các mảnh ghép tím">
+  <defs>
+    <linearGradient id="manhghep-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b388ff"/>
+      <stop offset="1" stop-color="#6a1b9a"/>
+    </linearGradient>
+    <linearGradient id="manhghep-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#81d4fa"/>
+      <stop offset="1" stop-color="#fff3e0"/>
+    </linearGradient>
+    <clipPath id="manhghep-clip">
+      <rect x="113" y="33" width="174" height="174" rx="6"/>
+    </clipPath>
+  </defs>
+  <rect width="400" height="240" fill="url(#manhghep-bg)"/>
+  <circle cx="50" cy="50" r="74" fill="#ffffff" opacity="0.12"/>
+  <circle cx="360" cy="190" r="90" fill="#ffffff" opacity="0.08"/>
+  <circle cx="352" cy="44" r="36" fill="#e1bee7" opacity="0.35"/>
+  <circle cx="44" cy="196" r="30" fill="#4a148c" opacity="0.25"/>
+  <path d="M0 214 Q200 200 400 214 L400 240 L0 240 Z" fill="#4a148c" opacity="0.35"/>
+
+  <!-- frame -->
+  <ellipse cx="200" cy="222" rx="104" ry="8" fill="#2b1d3a" opacity="0.28"/>
+  <rect x="105" y="25" width="190" height="190" rx="14" fill="#e8d5b5"/>
+  <rect x="105" y="25" width="190" height="184" rx="14" fill="#fff8ec"/>
+  <rect x="105" y="25" width="190" height="190" rx="14" fill="none" stroke="#2b1d3a" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- hidden picture -->
+  <g clip-path="url(#manhghep-clip)">
+    <rect x="113" y="33" width="174" height="174" fill="url(#manhghep-sky)"/>
+    <circle cx="258" cy="62" r="20" fill="#ffe082" opacity="0.6"/>
+    <circle cx="258" cy="62" r="14" fill="#ffca28" stroke="#2b1d3a" stroke-width="2.5"/>
+    <path d="M113 150 L150 102 L182 138 L222 92 L287 154 L287 207 L113 207 Z" fill="#7986cb"/>
+    <path d="M150 102 L141 114 L150 111 L158 116 Z M222 92 L211 104 L222 101 L232 106 Z" fill="#fff8ec"/>
+    <path d="M113 172 Q160 152 200 170 Q245 188 287 166 L287 207 L113 207 Z" fill="#66bb6a"/>
+    <path d="M113 190 Q200 180 287 192 L287 207 L113 207 Z" fill="#43a047"/>
+    <g stroke="#2b1d3a" stroke-width="2.5" stroke-linejoin="round">
+      <line x1="200" y1="116" x2="200" y2="102"/>
+      <circle cx="200" cy="100" r="3.5" fill="#ffca28"/>
+      <rect x="186" y="170" width="28" height="22" fill="#ef5350"/>
+      <rect x="196" y="178" width="8" height="14" rx="4" fill="#5d4037"/>
+      <path d="M175 172 Q200 166 225 172 L215 161 L185 161 Z" fill="#b71c1c"/>
+      <rect x="189" y="146" width="22" height="15" fill="#ef5350"/>
+      <path d="M179 148 Q200 142 221 148 L212 138 L188 138 Z" fill="#b71c1c"/>
+      <rect x="192" y="125" width="16" height="13" fill="#ef5350"/>
+      <path d="M183 127 Q200 121 217 127 L209 116 L191 116 Z" fill="#b71c1c"/>
+    </g>
+    <rect x="197" y="129" width="6" height="6" rx="1.5" fill="#ffe082"/>
+    <rect x="197" y="150" width="6" height="7" rx="1.5" fill="#ffe082"/>
+    <!-- shadow where the lifting tile sat -->
+    <rect x="231" y="151" width="54" height="54" rx="8" fill="#2b1d3a" opacity="0.22"/>
+  </g>
+
+  <!-- tiles -->
+  <g stroke-linejoin="round">
+    <!-- (0,0) -->
+    <rect x="115" y="35" width="54" height="54" rx="8" fill="#7b1fa2"/>
+    <rect x="115" y="35" width="54" height="47" rx="8" fill="#9c4dcc"/>
+    <rect x="121" y="40" width="16" height="5" rx="2.5" fill="#ffffff" opacity="0.4"/>
+    <circle cx="142" cy="62" r="5" fill="#e1bee7" opacity="0.7"/>
+    <rect x="115" y="35" width="54" height="54" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    <!-- (1,0) question tile -->
+    <rect x="173" y="35" width="54" height="54" rx="8" fill="#f9a825"/>
+    <rect x="173" y="35" width="54" height="47" rx="8" fill="#ffca28"/>
+    <rect x="179" y="40" width="16" height="5" rx="2.5" fill="#ffffff" opacity="0.6"/>
+    <rect x="173" y="35" width="54" height="54" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    <path d="M191 54 Q191 45 200 45 Q209 45 209 53 Q209 58 203 61 Q200 63 200 68" fill="none" stroke="#2b1d3a" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="200" cy="77" r="3.5" fill="#2b1d3a"/>
+    <!-- (0,1) -->
+    <circle cx="142" cy="93" r="8" fill="#9c4dcc" stroke="#2b1d3a" stroke-width="3.5"/>
+    <rect x="115" y="93" width="54" height="54" rx="8" fill="#7b1fa2"/>
+    <rect x="115" y="93" width="54" height="47" rx="8" fill="#9c4dcc"/>
+    <rect x="121" y="98" width="16" height="5" rx="2.5" fill="#ffffff" opacity="0.4"/>
+    <circle cx="142" cy="120" r="5" fill="#e1bee7" opacity="0.7"/>
+    <rect x="115" y="93" width="54" height="54" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    <!-- (2,1) -->
+    <circle cx="258" cy="93" r="8" fill="#9c4dcc" stroke="#2b1d3a" stroke-width="3.5"/>
+    <rect x="231" y="93" width="54" height="54" rx="8" fill="#7b1fa2"/>
+    <rect x="231" y="93" width="54" height="47" rx="8" fill="#9c4dcc"/>
+    <rect x="237" y="98" width="16" height="5" rx="2.5" fill="#ffffff" opacity="0.4"/>
+    <circle cx="258" cy="120" r="5" fill="#e1bee7" opacity="0.7"/>
+    <rect x="231" y="93" width="54" height="54" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    <!-- (1,2) -->
+    <circle cx="200" cy="151" r="8" fill="#9c4dcc" stroke="#2b1d3a" stroke-width="3.5"/>
+    <rect x="173" y="151" width="54" height="54" rx="8" fill="#7b1fa2"/>
+    <rect x="173" y="151" width="54" height="47" rx="8" fill="#9c4dcc"/>
+    <rect x="179" y="156" width="16" height="5" rx="2.5" fill="#ffffff" opacity="0.4"/>
+    <circle cx="200" cy="178" r="5" fill="#e1bee7" opacity="0.7"/>
+    <rect x="173" y="151" width="54" height="54" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    <!-- (2,2) lifting -->
+    <g transform="translate(3 -4) rotate(-17 231 205)">
+      <circle cx="258" cy="151" r="8" fill="#9c4dcc" stroke="#2b1d3a" stroke-width="3.5"/>
+      <rect x="231" y="151" width="54" height="54" rx="8" fill="#7b1fa2"/>
+      <rect x="231" y="151" width="54" height="47" rx="8" fill="#9c4dcc"/>
+      <rect x="237" y="156" width="16" height="5" rx="2.5" fill="#ffffff" opacity="0.4"/>
+      <circle cx="258" cy="178" r="5" fill="#e1bee7" opacity="0.7"/>
+      <rect x="231" y="151" width="54" height="54" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    </g>
+  </g>
+  <path d="M296 150 Q306 140 304 128" fill="none" stroke="#fff8ec" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- flying pieces -->
+  <g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round">
+    <g transform="translate(64 78) rotate(-20)">
+      <circle cx="0" cy="-15" r="5.5" fill="#ce93d8"/>
+      <rect x="-15" y="-15" width="30" height="30" rx="6" fill="#ce93d8"/>
+      <rect x="-10" y="-10" width="9" height="4" rx="2" fill="#ffffff" stroke="none" opacity="0.6"/>
+    </g>
+    <g transform="translate(338 168) rotate(16)">
+      <circle cx="-14" cy="0" r="5" fill="#ce93d8"/>
+      <rect x="-14" y="-14" width="28" height="28" rx="6" fill="#ce93d8"/>
+    </g>
+  </g>
+
+  <!-- sparkles -->
+  <g fill="#fff8ec">
+    <path transform="translate(330 70) scale(0.9)" d="M0 -9 Q1.6 -1.6 9 0 Q1.6 1.6 0 9 Q-1.6 1.6 -9 0 Q-1.6 -1.6 0 -9 Z"/>
+    <path transform="translate(72 150) scale(0.75)" d="M0 -9 Q1.6 -1.6 9 0 Q1.6 1.6 0 9 Q-1.6 1.6 -9 0 Q-1.6 -1.6 0 -9 Z"/>
+    <path transform="translate(92 32) scale(0.6)" d="M0 -9 Q1.6 -1.6 9 0 Q1.6 1.6 0 9 Q-1.6 1.6 -9 0 Q-1.6 -1.6 0 -9 Z"/>
+    <circle cx="316" cy="110" r="2.5"/>
+    <circle cx="40" cy="120" r="2.5"/>
+    <circle cx="364" cy="128" r="3"/>
+  </g>
+</svg>

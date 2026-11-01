@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="86" rx="28" ry="5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M50 18Q30 19 30 48Q30 76 50 84Q70 76 70 48Q70 19 50 18Z" fill="#f2f7d9"/>
+<path d="M31 40Q36 31 42 35Q46 28 50 32Q54 28 58 35Q64 31 69 40Q68 21 50 18Q32 21 31 40Z" fill="#b7dc6e"/>
+<path d="M50 84Q22 81 23 54Q24 38 35 32Q34 60 50 84Z" fill="#6cbf4f"/>
+<path d="M50 84Q78 81 77 54Q76 38 65 32Q66 60 50 84Z" fill="#5aa845"/>
+</g>
+<g fill="none" stroke-linecap="round">
+<path d="M50 36V78" stroke="#dce9b8" stroke-width="2.4"/>
+<path d="M29 50Q31 66 44 78M71 50Q69 66 56 78" stroke="#a5dc84" stroke-width="1.8"/>
+<path d="M43 40Q41 52 43 64" stroke="#fff8ec" stroke-width="3.4"/>
+<path d="M40 24Q44 22 48 22" stroke="#e2f4b0" stroke-width="2.2"/>
+</g>
+</svg>

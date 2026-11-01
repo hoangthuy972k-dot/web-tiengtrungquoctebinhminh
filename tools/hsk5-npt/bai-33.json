@@ -1,0 +1,958 @@
+[
+ {
+  "so": "1",
+  "ten": "「照常」",
+  "tenVn": "",
+  "cauTruc": [
+   "(Hoàn cảnh đặc biệt)，一切 / N + 照常 (động từ, cuối câu)",
+   "S + (还是) + 照常 + V (phó từ: 照常举行 / 营业 / 上班)"
+  ],
+  "giaiThich": "照常 có hai cách dùng. (1) Động từ: giống như bình thường, không có gì thay đổi — thường làm vị ngữ ở cuối câu: 一切照常, 区内商业活动照常. (2) Phó từ: tình hình vẫn tiếp tục như cũ, không bị ảnh hưởng — đứng trước động từ: 照常举行, 照常营业, 照常上班, 照常提前出门. Hay xuất hiện khi có một hoàn cảnh đặc biệt (chiến tranh, cháy, mưa bão, Tết, thi cử…) mà mọi việc VẪN như thường, nên thường đi với 虽然……但…… / 还是. Khác 经常 / 通常 (chỉ tần suất: thường xuyên, thông thường).",
+  "viDu": [
+   {
+    "zh": "虽然战争临近，但这里的日常生活，一切照常。",
+    "py": "Suīrán zhànzhēng línjìn, dàn zhèli de rìcháng shēnghuó, yíqiè zhàocháng.",
+    "vn": "Tuy chiến tranh đến gần, nhưng cuộc sống hằng ngày ở đây vẫn như thường."
+   },
+   {
+    "zh": "在东方广场的迎新活动照常举行。",
+    "py": "Zài Dōngfāng Guǎngchǎng de yíngxīn huódòng zhàocháng jǔxíng.",
+    "vn": "Hoạt động đón năm mới ở quảng trường Phương Đông vẫn diễn ra như thường."
+   },
+   {
+    "zh": "九月中旬的一天早晨，詹森照常提前出门赶在早高峰之前去交通部。",
+    "py": "Jiǔ yuè zhōngxún de yì tiān zǎochen, Zhānsēn zhàocháng tíqián chūmén gǎn zài zǎo gāofēng zhīqián qù jiāotōngbù.",
+    "vn": "Một buổi sáng trung tuần tháng Chín, Jensen như thường lệ ra khỏi nhà sớm để kịp đến Ban Giao thông trước giờ cao điểm."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我照常去图书馆看书，一个星期去三四次。",
+    "why": "照常 không chỉ tần suất (\"thường xuyên\"). Nói thói quen lặp lại dùng 经常 / 常常.",
+    "dung": "我经常去图书馆看书，一个星期去三四次。"
+   },
+   {
+    "sai": "虽然下大雨，比赛照常地举行了。",
+    "why": "照常 là phó từ đứng thẳng trước động từ, không thêm 地.",
+    "dung": "虽然下大雨，比赛还是照常举行了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "虽然战争临近，但这里的日常生活，一切",
+       "。"
+      ],
+      "dap": [
+       [
+        "照常"
+       ]
+      ],
+      "chon": [
+       "照常",
+       "经常",
+       "通常"
+      ],
+      "goiY": "“Cuộc sống hằng ngày vẫn như thường.” — câu của sách",
+      "giai": "Động từ cuối câu: 一切照常 = mọi thứ vẫn như thường."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大火对东区的商业活动没有造成大的影响，区内商业活动",
+       "。"
+      ],
+      "dap": [
+       [
+        "照常"
+       ]
+      ],
+      "chon": [
+       "照常",
+       "平常",
+       "经常"
+      ],
+      "goiY": "“Hoạt động thương mại vẫn như thường.” — câu của sách",
+      "giai": "照常 làm vị ngữ cuối câu; 平常 là \"bình thường\", không đứng cuối câu kiểu này."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在东方广场的迎新活动",
+       "举行。"
+      ],
+      "dap": [
+       [
+        "照常"
+       ]
+      ],
+      "chon": [
+       "照常",
+       "常常",
+       "通常"
+      ],
+      "goiY": "“Vẫn tổ chức như thường.” — câu của sách",
+      "giai": "Phó từ trước động từ: 照常 + 举行."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我每个周末都",
+       "去奶奶家。"
+      ],
+      "dap": [
+       [
+        "常常",
+        "经常"
+       ]
+      ],
+      "chon": [
+       "常常",
+       "照常",
+       "平常"
+      ],
+      "goiY": "“Cuối tuần nào tôi cũng thường đến nhà bà.”",
+      "giai": "Nói tần suất (thường xuyên) → 常常 / 经常; 照常 không chỉ tần suất."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "虽然下了大雪，但是学校",
+       "上课。"
+      ],
+      "dap": [
+       [
+        "照常"
+       ]
+      ],
+      "chon": [
+       "照常",
+       "经常",
+       "正常"
+      ],
+      "goiY": "“Trường vẫn học như thường.”",
+      "giai": "Hoàn cảnh đặc biệt (tuyết lớn) mà vẫn như thường → 照常 + 上课."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "春节期间，那家超市",
+       "营业。"
+      ],
+      "dap": [
+       [
+        "照常"
+       ]
+      ],
+      "chon": [
+       "照常",
+       "平时",
+       "经常"
+      ],
+      "goiY": "“Siêu thị vẫn mở cửa như thường.”",
+      "giai": "照常营业 — cụm cố định."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "虽然",
+       "下雨了",
+       "，",
+       "但是",
+       "比赛",
+       "还是",
+       "照常",
+       "举行",
+       "。"
+      ],
+      "dap": [
+       "虽然下雨了，但是比赛还是照常举行。"
+      ],
+      "goiY": "Tuy trời mưa nhưng trận đấu vẫn diễn ra như thường.",
+      "giai": "还是 + 照常 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "第二天",
+       "早晨",
+       "他",
+       "还是",
+       "照常",
+       "第一个",
+       "来到",
+       "单位",
+       "。"
+      ],
+      "dap": [
+       "第二天早晨他还是照常第一个来到单位。",
+       "他第二天早晨还是照常第一个来到单位。"
+      ],
+      "goiY": "Sáng hôm sau anh ấy vẫn như thường lệ là người đầu tiên đến cơ quan.",
+      "giai": "Câu 30 sách bài tập."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这里的",
+       "生活",
+       "，",
+       "一切",
+       "照常",
+       "。"
+      ],
+      "dap": [
+       "这里的生活，一切照常。"
+      ],
+      "goiY": "Cuộc sống ở đây, mọi thứ vẫn như thường.",
+      "giai": "一切照常 đứng cuối câu."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我照常去图书馆，一个星期去三次。",
+      "dung": false,
+      "sua": "我经常去图书馆，一个星期去三次。",
+      "giai": "照常 không chỉ tần suất; \"thường xuyên\" là 经常."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "考试周到了，但他照常每天去打球。",
+      "dung": true,
+      "giai": "Đúng: có hoàn cảnh đặc biệt (tuần thi) mà vẫn làm như thường → 照常 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "虽然老师病了，但是我们的课照常地进行。",
+      "dung": false,
+      "sua": "虽然老师病了，但是我们的课照常进行。",
+      "giai": "照常 là phó từ, đứng thẳng trước động từ, không thêm 地."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tuy trời mưa to, nhưng buổi biểu diễn vẫn diễn ra như thường.",
+      "dap": [
+       "虽然下大雨，但是演出还是照常举行。",
+       "虽然下大雨，但演出照常举行。",
+       "虽然下着大雨，但是演出照常进行。"
+      ],
+      "py": "Suīrán xià dà yǔ, dànshì yǎnchū háishi zhàocháng jǔxíng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 照常.",
+      "giai": "虽然……但是……还是照常 + V."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Bị ốm nhẹ, anh ấy vẫn đi làm như thường.",
+      "dap": [
+       "他有点儿生病，但还是照常上班。",
+       "他虽然有点儿病，但还是照常去上班。",
+       "他生了点儿小病，还是照常上班。"
+      ],
+      "py": "Tā yǒudiǎnr shēngbìng, dàn háishi zhàocháng shàngbān.",
+      "goiY": "Dịch sang tiếng Trung, dùng 照常.",
+      "giai": "照常 + 上班."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "刘老师从北京回来后，＿＿＿。",
+      "goiY": "nói thầy Lưu vẫn lên lớp như thường (dùng 照常) — bài 练一练 của sách",
+      "mau": "刘老师从北京回来后，照常给我们上课。",
+      "can": [
+       [
+        "照常"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：快过年了，不知道胡同口的那家超市春节还开不开？　B：＿＿＿。",
+      "goiY": "trả lời rằng siêu thị vẫn mở cửa (dùng 照常) — bài 练一练 của sách",
+      "mau": "放心吧，那家超市春节照常营业。",
+      "can": [
+       [
+        "照常"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「照常」 kể một việc vẫn diễn ra bình thường dù có hoàn cảnh đặc biệt",
+      "mau": "虽然昨天晚上停电了，但是今天早上我还是照常六点起床跑步。",
+      "can": [
+       [
+        "照常"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「难怪」",
+  "tenVn": "",
+  "cauTruc": [
+   "Nguyên nhân，难怪 + (S) + hiện tượng (phó từ: thảo nào)",
+   "这也难怪，+ lời giải thích (động từ: cũng dễ hiểu)"
+  ],
+  "giaiThich": "难怪 có hai cách dùng. (1) Động từ: \"không nên trách, có thể thông cảm\" — mang giọng thấu hiểu, tha thứ; hay dùng thành 这也难怪 / 也难怪, rồi nói tiếp lý do: 这也难怪，他每天那么忙…… (2) Phó từ: đã hiểu ra nguyên nhân nên không còn thấy lạ nữa — \"thảo nào, hèn chi\": vế trước (hoặc câu trước) nêu nguyên nhân, 难怪 dẫn ra hiện tượng; 难怪 có thể đứng trước hoặc sau chủ ngữ, hay đi với 原来 (hoá ra). Khác 难道 (chẳng lẽ — câu hỏi tu từ, cuối câu có 吗).",
+  "viDu": [
+   {
+    "zh": "这也难怪，他每天那么忙，哪儿有时间操心孩子的事啊！",
+    "py": "Zhè yě nánguài, tā měi tiān nàme máng, nǎr yǒu shíjiān cāoxīn háizi de shì a!",
+    "vn": "Chuyện này cũng khó trách, ngày nào anh ấy cũng bận thế, lấy đâu thời gian lo chuyện con cái!"
+   },
+   {
+    "zh": "你的抽屉真乱，难怪总是找不到东西。",
+    "py": "Nǐ de chōuti zhēn luàn, nánguài zǒngshì zhǎo bu dào dōngxi.",
+    "vn": "Ngăn kéo của cậu bừa bộn thật, thảo nào lúc nào cũng không tìm được đồ."
+   },
+   {
+    "zh": "他都18岁了，还不敢一个人走夜路，难怪大家都叫他胆小鬼。",
+    "py": "Tā dōu shíbā suì le, hái bù gǎn yí ge rén zǒu yèlù, nánguài dàjiā dōu jiào tā dǎnxiǎoguǐ.",
+    "vn": "Cậu ta 18 tuổi rồi mà vẫn không dám một mình đi đường đêm, thảo nào mọi người đều gọi cậu ta là đồ nhát gan."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "难怪他会说汉语？",
+    "why": "难怪 không dùng để hỏi. Câu hỏi tu từ \"chẳng lẽ\" dùng 难道……吗?",
+    "dung": "难道他会说汉语吗？"
+   },
+   {
+    "sai": "他每天练习口语，难怪口语进步得很快吗？",
+    "why": "难怪 dẫn ra một câu TRẦN THUẬT (hiện tượng đã hiểu nguyên nhân), không thêm 吗 để thành câu hỏi.",
+    "dung": "他每天练习口语，难怪口语进步得很快。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "你的抽屉真乱，",
+       "总是找不到东西。"
+      ],
+      "dap": [
+       [
+        "难怪"
+       ]
+      ],
+      "chon": [
+       "难怪",
+       "难道",
+       "难免"
+      ],
+      "goiY": "“Thảo nào lúc nào cũng không tìm được đồ.” — câu của sách",
+      "giai": "Nguyên nhân (ngăn kéo bừa) → 难怪 + kết quả."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他都18岁了，还不敢一个人走夜路，",
+       "大家都叫他胆小鬼。"
+      ],
+      "dap": [
+       [
+        "难怪"
+       ]
+      ],
+      "chon": [
+       "难怪",
+       "难道",
+       "可是"
+      ],
+      "goiY": "“Thảo nào mọi người đều gọi cậu ta là đồ nhát gan.” — câu của sách",
+      "giai": "Hiểu ra nguyên nhân → 难怪."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这也",
+       "，他每天那么忙，哪儿有时间操心孩子的事啊！"
+      ],
+      "dap": [
+       [
+        "难怪"
+       ]
+      ],
+      "chon": [
+       "难怪",
+       "难道",
+       "难过"
+      ],
+      "goiY": "“Chuyện này cũng khó trách.” — câu của sách",
+      "giai": "Động từ: 这也难怪 = điều này cũng dễ hiểu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "你连这么简单的题都不会做吗？"
+      ],
+      "dap": [
+       [
+        "难道"
+       ]
+      ],
+      "chon": [
+       "难道",
+       "难怪",
+       "难免"
+      ],
+      "goiY": "“Chẳng lẽ cậu đến bài dễ thế này cũng không làm được?”",
+      "giai": "Câu hỏi tu từ, cuối có 吗 → 难道; 难怪 không dùng để hỏi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "汽油明天要涨价了，",
+       "加油站又有车在排队加油呢。"
+      ],
+      "dap": [
+       [
+        "难怪"
+       ]
+      ],
+      "chon": [
+       "难怪",
+       "难道",
+       "于是"
+      ],
+      "goiY": "“Thảo nào cây xăng lại có xe xếp hàng.” — bài tập 2 của sách",
+      "giai": "Nguyên nhân (xăng tăng giá) → 难怪 + hiện tượng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "原来他在中国住过十年，",
+       "汉语说得那么好。"
+      ],
+      "dap": [
+       [
+        "难怪"
+       ]
+      ],
+      "chon": [
+       "难怪",
+       "难道",
+       "所以说"
+      ],
+      "goiY": "“Hoá ra … thảo nào nói tiếng Trung giỏi thế.”",
+      "giai": "原来……，难怪…… — cặp hay đi cùng nhau."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "你的",
+       "抽屉",
+       "真乱",
+       "，",
+       "难怪",
+       "总是",
+       "找不到",
+       "东西",
+       "。"
+      ],
+      "dap": [
+       "你的抽屉真乱，难怪总是找不到东西。"
+      ],
+      "goiY": "Ngăn kéo của cậu bừa thật, thảo nào lúc nào cũng không tìm được đồ.",
+      "giai": "Nguyên nhân trước, 难怪 + kết quả sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "原来",
+       "他",
+       "感冒了",
+       "，",
+       "难怪",
+       "今天",
+       "没来",
+       "上课",
+       "。"
+      ],
+      "dap": [
+       "原来他感冒了，难怪今天没来上课。"
+      ],
+      "goiY": "Hoá ra cậu ấy bị cảm, thảo nào hôm nay không đến lớp.",
+      "giai": "原来……，难怪……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这",
+       "也",
+       "难怪",
+       "，",
+       "他",
+       "才",
+       "学了",
+       "三个月",
+       "汉语",
+       "。"
+      ],
+      "dap": [
+       "这也难怪，他才学了三个月汉语。"
+      ],
+      "goiY": "Điều này cũng dễ hiểu, cậu ấy mới học tiếng Trung ba tháng.",
+      "giai": "这也难怪 + lời giải thích."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "难怪你明天不去学校吗？",
+      "dung": false,
+      "sua": "难道你明天不去学校吗？",
+      "giai": "难怪 không dùng trong câu hỏi; câu hỏi tu từ dùng 难道……吗?"
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "外面下大雪了，难怪这么冷。",
+      "dung": true,
+      "giai": "Đúng: nguyên nhân (tuyết rơi) → 难怪 + hiện tượng (lạnh thế)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他每天练习口语，难怪他的口语进步得很快吗？",
+      "dung": false,
+      "sua": "他每天练习口语，难怪他的口语进步得很快。",
+      "giai": "难怪 dẫn câu trần thuật, không thêm 吗."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Hoá ra hôm nay là Chủ nhật, thảo nào trên đường ít xe thế.",
+      "dap": [
+       "原来今天是星期天，难怪路上车这么少。",
+       "原来今天是周日，难怪路上的车这么少。",
+       "今天是星期天，难怪路上车这么少。"
+      ],
+      "py": "Yuánlái jīntiān shì xīngqītiān, nánguài lù shang chē zhème shǎo.",
+      "goiY": "Dịch sang tiếng Trung, dùng 难怪.",
+      "giai": "原来……，难怪……."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Điều này cũng dễ hiểu thôi, cậu ấy mới đến Việt Nam một tháng.",
+      "dap": [
+       "这也难怪，他才来越南一个月。",
+       "这也难怪，他来越南才一个月。",
+       "也难怪，他刚来越南一个月。"
+      ],
+      "py": "Zhè yě nánguài, tā cái lái Yuènán yí ge yuè.",
+      "goiY": "Dịch sang tiếng Trung, dùng 难怪.",
+      "giai": "这也难怪 + lời giải thích."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这也难怪，＿＿＿。",
+      "goiY": "giải thích vì sao một người hay đến muộn (dùng 这也难怪) — bài 练一练 của sách",
+      "mau": "这也难怪，他家离学校那么远，路上又经常堵车。",
+      "can": [
+       [
+        "难怪"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：李岩和我是小学同学，我们认识快20年了。　B：＿＿＿。",
+      "goiY": "nói ra điều em đã thấy lạ trước đó (dùng 难怪) — bài 练一练 của sách",
+      "mau": "难怪你们关系这么好，原来是老同学啊！",
+      "can": [
+       [
+        "难怪"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「难怪」 về một hiện tượng em vừa hiểu ra nguyên nhân",
+      "mau": "原来她每天早上都跑步，难怪身体那么好。",
+      "can": [
+       [
+        "难怪"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「与其」",
+  "tenVn": "",
+  "cauTruc": [
+   "与其 + A (bỏ)，(倒 / 还) + 不如 + B (chọn)",
+   "与其 + A，S + 宁可 + B",
+   "与其说 A，不如说 B"
+  ],
+  "giaiThich": "与其 là liên từ, dùng khi so sánh hai lựa chọn: 与其 đặt ở vế BỊ BỎ (không chọn), vế sau dùng 不如 / 倒不如 / 还不如 / 宁可 để dẫn ra lựa chọn ĐƯỢC CHỌN. 与其 A，不如 B = thay vì A, chẳng thà B; 与其 A，(S) 宁可 B = thà B còn hơn A (ý chí người nói mạnh hơn, 宁可 đứng sau chủ ngữ). Mẫu cố định 与其说 A，不如说 B = nói là A, chẳng bằng nói là B. Vế sau không dùng 还是 / 而是 / 但是.",
+  "viDu": [
+   {
+    "zh": "与其说是采访，不如说是向他学习。",
+    "py": "Yǔqí shuō shì cǎifǎng, bùrú shuō shì xiàng tā xuéxí.",
+    "vn": "Nói là phỏng vấn, chẳng bằng nói là học hỏi ông ấy."
+   },
+   {
+    "zh": "与其找个不认真的小时工，我宁可自己打扫。",
+    "py": "Yǔqí zhǎo ge bú rènzhēn de xiǎoshígōng, wǒ nìngkě zìjǐ dǎsǎo.",
+    "vn": "Thà tôi tự dọn còn hơn thuê một người giúp việc theo giờ làm không cẩn thận."
+   },
+   {
+    "zh": "这也难怪，与其堵在路上浪费时间和汽油，污染环境，倒不如改乘公交出行。",
+    "py": "Zhè yě nánguài, yǔqí dǔ zài lù shang làngfèi shíjiān hé qìyóu, wūrǎn huánjìng, dào bùrú gǎi chéng gōngjiāo chūxíng.",
+    "vn": "Điều này cũng dễ hiểu thôi: thay vì tắc trên đường, lãng phí thời gian và xăng, lại gây ô nhiễm môi trường, chẳng thà chuyển sang đi xe buýt."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "与其在家看电视，还是出去走走。",
+    "why": "Vế sau của 与其 phải dùng 不如 / 倒不如 / 宁可, không dùng 还是.",
+    "dung": "与其在家看电视，不如出去走走。"
+   },
+   {
+    "sai": "与其坐公交车，不如堵在路上。",
+    "why": "与其 đặt ở lựa chọn BỊ BỎ, 不如 ở lựa chọn ĐƯỢC CHỌN. Câu này đảo ngược ý (chọn tắc đường).",
+    "dung": "与其堵在路上，不如坐公交车。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "说是采访，不如说是向他学习。"
+      ],
+      "dap": [
+       [
+        "与其"
+       ]
+      ],
+      "chon": [
+       "与其",
+       "尽管",
+       "即使"
+      ],
+      "goiY": "“Nói là phỏng vấn, chẳng bằng nói là học hỏi.” — câu của sách",
+      "giai": "与其说……，不如说…… — mẫu cố định."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "与其找个不认真的小时工，我",
+       "自己打扫。"
+      ],
+      "dap": [
+       [
+        "宁可"
+       ]
+      ],
+      "chon": [
+       "宁可",
+       "而是",
+       "还是"
+      ],
+      "goiY": "“Thà tôi tự dọn còn hơn.” — câu của sách",
+      "giai": "与其……，S + 宁可……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "与其堵在路上浪费时间，倒",
+       "改乘公交出行。"
+      ],
+      "dap": [
+       [
+        "不如"
+       ]
+      ],
+      "chon": [
+       "不如",
+       "而是",
+       "还是"
+      ],
+      "goiY": "“Chẳng thà chuyển sang đi xe buýt.” — câu của bài khoá",
+      "giai": "与其……，倒不如……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "在家看电视，不如出去走走。"
+      ],
+      "dap": [
+       [
+        "与其"
+       ]
+      ],
+      "chon": [
+       "与其",
+       "不但",
+       "因为"
+      ],
+      "goiY": "“Thay vì ở nhà xem tivi, chẳng thà ra ngoài đi dạo.”",
+      "giai": "与其 đặt ở lựa chọn bị bỏ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "与其抱怨别人，",
+       "改变自己。"
+      ],
+      "dap": [
+       [
+        "不如"
+       ]
+      ],
+      "chon": [
+       "不如",
+       "但是",
+       "就是"
+      ],
+      "goiY": "“Chẳng thà thay đổi chính mình.”",
+      "giai": "Vế sau của 与其 dùng 不如."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这么近，与其等公交车，还",
+       "走过去呢。"
+      ],
+      "dap": [
+       [
+        "不如"
+       ]
+      ],
+      "chon": [
+       "不如",
+       "是",
+       "要"
+      ],
+      "goiY": "“Gần thế, thay vì đợi xe buýt, còn chẳng bằng đi bộ qua.”",
+      "giai": "与其……，还不如……."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "与其",
+       "在这儿",
+       "等车",
+       "，",
+       "不如",
+       "走",
+       "过去",
+       "。"
+      ],
+      "dap": [
+       "与其在这儿等车，不如走过去。"
+      ],
+      "goiY": "Thay vì đợi xe ở đây, chẳng thà đi bộ qua.",
+      "giai": "与其 + A，不如 + B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "与其",
+       "抱怨",
+       "别人",
+       "，",
+       "不如",
+       "改变",
+       "自己",
+       "。"
+      ],
+      "dap": [
+       "与其抱怨别人，不如改变自己。"
+      ],
+      "goiY": "Thay vì phàn nàn người khác, chẳng thà thay đổi chính mình.",
+      "giai": "Vế bị bỏ đứng sau 与其."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "与其",
+       "说",
+       "他",
+       "是",
+       "老师",
+       "，",
+       "不如",
+       "说",
+       "他",
+       "是",
+       "朋友",
+       "。"
+      ],
+      "dap": [
+       "与其说他是老师，不如说他是朋友。"
+      ],
+      "goiY": "Nói ông ấy là thầy, chẳng bằng nói ông ấy là bạn.",
+      "giai": "与其说……，不如说……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "与其开车堵在路上，还是坐地铁吧。",
+      "dung": false,
+      "sua": "与其开车堵在路上，不如坐地铁。",
+      "giai": "Vế sau của 与其 phải là 不如 / 倒不如 / 宁可, không dùng 还是."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "与其花钱买新的，我宁可把旧的修一修。",
+      "dung": true,
+      "giai": "Đúng: 与其 + vế bỏ, S + 宁可 + vế chọn."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "与其坐公交车，不如堵在路上浪费时间。",
+      "dung": false,
+      "sua": "与其堵在路上浪费时间，不如坐公交车。",
+      "giai": "Đảo ngược: 与其 phải đặt ở lựa chọn BỊ BỎ (tắc đường), 不如 ở lựa chọn được chọn."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Thay vì thức khuya ôn bài, chẳng thà ngủ sớm dậy sớm.",
+      "dap": [
+       "与其熬夜复习，不如早睡早起。",
+       "与其熬夜复习，倒不如早睡早起。",
+       "与其开夜车复习，不如早睡早起。"
+      ],
+      "py": "Yǔqí áoyè fùxí, bùrú zǎo shuì zǎo qǐ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 与其……不如…….",
+      "giai": "与其 + vế bỏ，不如 + vế chọn."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Thà tôi đi bộ còn hơn ngồi xe tắc trên đường.",
+      "dap": [
+       "与其坐车堵在路上，我宁可走路。",
+       "与其坐车堵在路上，我宁可走着去。",
+       "与其堵在路上，我宁可走路。"
+      ],
+      "py": "Yǔqí zuò chē dǔ zài lù shang, wǒ nìngkě zǒulù.",
+      "goiY": "Dịch sang tiếng Trung, dùng 与其……宁可…….",
+      "giai": "与其……，S + 宁可……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "那些赶时髦的消费者，＿＿＿，不如说是买牌子。",
+      "goiY": "hoàn thành vế \"nói là mua quần áo\" (dùng 与其说) — bài 练一练 của sách",
+      "mau": "那些赶时髦的消费者，与其说是买衣服，不如说是买牌子。",
+      "can": [
+       [
+        "与其"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：我们在这儿等公交车吧，下站就是物美超市。　B：这么近，＿＿＿。",
+      "goiY": "đề nghị đi bộ thay vì đợi xe (dùng 与其) — bài 练一练 của sách",
+      "mau": "这么近，与其在这儿等车，不如走过去。",
+      "can": [
+       [
+        "与其"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「与其……不如 / 宁可……」 so sánh hai cách đi học của em",
+      "mau": "与其每天让妈妈开车送我，不如我自己骑自行车上学。",
+      "can": [
+       [
+        "与其"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

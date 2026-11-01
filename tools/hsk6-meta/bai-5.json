@@ -1,0 +1,112 @@
+{
+ "zh": "学一门外语需要理由吗？",
+ "py": "Xué yì mén wàiyǔ xūyào lǐyóu ma?",
+ "vn": "Học ngoại ngữ cần lý do ư?",
+ "topic": "第二单元 不甘平庸 · Không cam chịu tầm thường — Động lực &amp; cách học ngoại ngữ",
+ "vocabCount": 44,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "而已",
+   "explain": "而已 là TRỢ TỪ, đặt ở CUỐI câu trần thuật, mang ý làm nhỏ đi, làm nhẹ đi sự việc (\"chỉ… mà thôi\"). Thường phối hợp với 不过, 只, 只是, 仅, 仅仅 ở phía trước. Nghĩa tương đương 罢了, 就是了 (khẩu ngữ).",
+   "rule": "不过 / 只（是）/ 仅仅 + …… + <strong style=\"color:var(--sky-d)\">而已</strong>。",
+   "examples": [
+    {
+     "zh": "你怎么做的，谁心里都明白，大家不过嘴上说说而已。",
+     "py": "Nǐ zěnme zuò de, shéi xīnli dōu míngbai, dàjiā búguò zuǐ shang shuōshuo éryǐ.",
+     "vn": "Cậu làm thế nào thì ai trong lòng cũng rõ, mọi người chỉ nói ngoài miệng mà thôi."
+    },
+    {
+     "zh": "他的工作是警察，写小说仅仅是他的业余爱好而已。",
+     "py": "Tā de gōngzuò shì jǐngchá, xiě xiǎoshuō jǐnjǐn shì tā de yèyú àihào éryǐ.",
+     "vn": "Công việc của anh ấy là cảnh sát, viết tiểu thuyết chỉ là sở thích lúc rảnh mà thôi."
+    },
+    {
+     "zh": "我没什么具体目标。就是找一个班插班听课，随意学学而已。",
+     "py": "Wǒ méi shénme jùtǐ mùbiāo. Jiùshì zhǎo yí ge bān chābān tīng kè, suíyì xuéxue éryǐ.",
+     "vn": "Tôi chẳng có mục tiêu cụ thể gì. Chỉ là tìm một lớp để học xen vào, học tùy thích mà thôi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他而已是开个玩笑。",
+     "why": "而已 là trợ từ, chỉ đứng CUỐI câu, không đứng trước động từ.",
+     "right": "他只是开个玩笑而已。"
+    },
+    {
+     "wrong": "你只是随便问问而已吗？",
+     "why": "而已 dùng trong câu trần thuật, không dùng trong câu hỏi.",
+     "right": "我只是随便问问而已。"
+    }
+   ]
+  },
+  {
+   "point": "固然",
+   "explain": "固然 là LIÊN TỪ, dùng ở vế TRƯỚC để xác nhận một sự thật. ① Vế sau CHUYỂN Ý, nêu một sự thật đối lập, thường có 可是, 但是, 却, 然而. ② Vế sau THUẬN THEO, nêu thêm một sự thật khác cũng phải thừa nhận; ý chuyển nhẹ, nhấn vào vế sau, thường dùng 也 (đôi khi 但是, 可是).",
+   "rule": "① A <strong style=\"color:var(--sky-d)\">固然</strong>……，可是 / 但是 / 却 / 然而 B……　② A <strong style=\"color:var(--sky-d)\">固然</strong>……，B 也……",
+   "examples": [
+    {
+     "zh": "没有目标就缺乏动力，这道理我固然懂，可是，我的确说不出她所说的目标。",
+     "py": "Méiyǒu mùbiāo jiù quēfá dònglì, zhè dàolǐ wǒ gùrán dǒng, kěshì, wǒ díquè shuō bu chū tā suǒ shuō de mùbiāo.",
+     "vn": "Không có mục tiêu thì thiếu động lực, đạo lý này tất nhiên tôi hiểu, nhưng quả thật tôi không nói ra được cái mục tiêu mà cô ấy nói."
+    },
+    {
+     "zh": "这么做，好固然是好，可是又费时间，成本又高，肯定不行。",
+     "py": "Zhème zuò, hǎo gùrán shì hǎo, kěshì yòu fèi shíjiān, chéngběn yòu gāo, kěndìng bù xíng.",
+     "vn": "Làm như vậy tốt thì tất nhiên là tốt, nhưng vừa tốn thời gian, chi phí lại cao, chắc chắn không được."
+    },
+    {
+     "zh": "考上大学固然好，没考上大学也不是就没有出路了。",
+     "py": "Kǎoshàng dàxué gùrán hǎo, méi kǎoshàng dàxué yě bú shì jiù méiyǒu chūlù le.",
+     "vn": "Đỗ đại học tất nhiên là tốt, không đỗ đại học cũng không phải là hết đường."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这个方法固然好，所以我们就用它吧。",
+     "why": "固然 cần vế sau CHUYỂN Ý (可是 / 但是) hoặc bổ sung (也), không đi với 所以.",
+     "right": "这个方法固然好，可是太费时间了。"
+    },
+    {
+     "wrong": "考上大学固然好，没考上大学固然也不错。",
+     "why": "固然 chỉ dùng ở vế TRƯỚC; vế sau dùng 也 hoặc 可是 / 但是.",
+     "right": "考上大学固然好，没考上大学也不错。"
+    }
+   ]
+  },
+  {
+   "point": "无非",
+   "explain": "无非 là PHÓ TỪ, biểu thị không vượt ra ngoài một phạm vi nhất định, nghĩa là \"chỉ, chẳng qua\" (只, 不过), mang ý làm nhỏ, làm nhẹ sự việc. Thường dùng 无非是; có thể kết hợp với 而已 / 罢了 ở cuối câu.",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">无非</strong>（是）+ V / N（+ 而已 / 罢了）",
+   "examples": [
+    {
+     "zh": "他这么努力地工作，无非想多挣些钱，让妻子、孩子生活得更舒适。",
+     "py": "Tā zhème nǔlì de gōngzuò, wúfēi xiǎng duō zhèng xiē qián, ràng qīzi, háizi shēnghuó de gèng shūshì.",
+     "vn": "Anh ấy làm việc chăm chỉ như vậy chẳng qua là muốn kiếm thêm ít tiền để vợ con sống thoải mái hơn."
+    },
+    {
+     "zh": "我喜欢这个国家的文化，学习语言无非是为了看原文电影、读文学作品……",
+     "py": "Wǒ xǐhuan zhège guójiā de wénhuà, xuéxí yǔyán wúfēi shì wèile kàn yuánwén diànyǐng, dú wénxué zuòpǐn……",
+     "vn": "Tôi thích văn hóa của đất nước này, học ngôn ngữ chẳng qua là để xem phim nguyên bản, đọc tác phẩm văn học…"
+    },
+    {
+     "zh": "我们把汉语口语称作“说的汉语”，把汉语书面语称作“看的汉语”，无非是强调汉语两种不同的语言形式具有不同的特性和使用场合。",
+     "py": "Wǒmen bǎ Hànyǔ kǒuyǔ chēngzuò “shuō de Hànyǔ”, bǎ Hànyǔ shūmiànyǔ chēngzuò “kàn de Hànyǔ”, wúfēi shì qiángdiào Hànyǔ liǎng zhǒng bù tóng de yǔyán xíngshì jùyǒu bù tóng de tèxìng hé shǐyòng chǎnghé.",
+     "vn": "Chúng ta gọi khẩu ngữ tiếng Hán là \"tiếng Hán để nói\", gọi văn viết là \"tiếng Hán để đọc\", chẳng qua là để nhấn mạnh hai hình thức ngôn ngữ khác nhau có đặc tính và hoàn cảnh sử dụng khác nhau."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他学汉语是为了看电影无非。",
+     "why": "无非 là phó từ, đứng TRƯỚC động từ / cụm vị ngữ, không đứng cuối câu (đứng cuối là 而已).",
+     "right": "他学汉语无非是为了看电影。"
+    },
+    {
+     "wrong": "他无非是全班最聪明的学生。",
+     "why": "无非 làm NHẸ sự việc (\"chẳng qua chỉ\"), không dùng để khen, nhấn mạnh điều to lớn.",
+     "right": "他是全班最聪明的学生。"
+    }
+   ]
+  }
+ ]
+}

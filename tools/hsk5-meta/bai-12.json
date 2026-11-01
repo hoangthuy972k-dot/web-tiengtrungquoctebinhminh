@@ -1,0 +1,78 @@
+{
+ "zh": "海外用户玩儿微信",
+ "py": "Hǎiwài yònghù wánr Wēixìn",
+ "vn": "Người dùng WeChat ở nước ngoài",
+ "topic": "Unit 4 走近科学 · Công nghệ &amp; Internet di động",
+ "vocabCount": 48,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "以及",
+   "explain": "以及 là liên từ, dùng để nối các từ hoặc cụm từ có quan hệ NGANG HÀNG. Các thành phần được nối thường có phân biệt chính – phụ hoặc trước – sau: phần chính / phần trước đứng trước 以及, phần phụ / phần sau đứng sau. 以及 đặt trước thành phần CUỐI của chuỗi liệt kê và mang sắc thái văn viết.",
+   "rule": "A、B <strong style=\"color:var(--sky-d)\">以及</strong> C　(C thường là phần phụ / xếp sau)",
+   "examples": [
+    {
+     "zh": "吃饭时不要用筷子敲打碗、盘子以及桌面。",
+     "py": "Chīfàn shí búyào yòng kuàizi qiāodǎ wǎn, pánzi yǐjí zhuōmiàn.",
+     "vn": "Khi ăn đừng dùng đũa gõ vào bát, đĩa và mặt bàn."
+    },
+    {
+     "zh": "学校的领导、教师以及一些学生代表观看了演出。",
+     "py": "Xuéxiào de lǐngdǎo, jiàoshī yǐjí yìxiē xuésheng dàibiǎo guānkànle yǎnchū.",
+     "vn": "Lãnh đạo nhà trường, giáo viên cùng một số đại diện học sinh đã xem buổi biểu diễn."
+    },
+    {
+     "zh": "由于中国互联网的用户数量以及市场成熟程度等都低于发达国家，在产品创新上难有领导地位。",
+     "py": "Yóuyú Zhōngguó hùliánwǎng de yònghù shùliàng yǐjí shìchǎng chéngshú chéngdù děng dōu dīyú fādá guójiā, zài chǎnpǐn chuàngxīn shang nán yǒu lǐngdǎo dìwèi.",
+     "vn": "Do số người dùng Internet cũng như mức độ trưởng thành thị trường của Trung Quốc đều thấp hơn các nước phát triển, nên khó giành vị trí dẫn đầu về đổi mới sản phẩm."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他聪明以及努力。",
+     "why": "以及 chỉ nối từ / cụm từ ngang hàng kiểu liệt kê, không nối hai tính từ làm vị ngữ.",
+     "right": "他又聪明又努力。"
+    },
+    {
+     "wrong": "本店销售其他电器以及电视、冰箱。",
+     "why": "phần chính (电视、冰箱) phải đứng TRƯỚC 以及, phần phụ / khái quát (其他电器) đứng sau.",
+     "right": "本店销售电视、冰箱以及其他电器。"
+    }
+   ]
+  },
+  {
+   "point": "程度",
+   "explain": "程度 là danh từ, chỉ mức, tầng bậc mà một mặt nào đó đạt tới. Hay gặp ba cách dùng: N + 程度 (成熟程度, 文化程度); ……到了……的程度 (đến mức …); 在很大程度上 (ở mức độ lớn). Chú ý: nói năng lực ngoại ngữ thì dùng 水平, không dùng 程度.",
+   "rule": "① N + <strong style=\"color:var(--sky-d)\">程度</strong>　② V / Adj + 到了 + ……的<strong style=\"color:var(--sky-d)\">程度</strong>　③ 在很大<strong style=\"color:var(--sky-d)\">程度</strong>上",
+   "examples": [
+    {
+     "zh": "由于中国互联网的用户数量以及市场成熟程度等都低于发达国家，在产品创新上难有领导地位。",
+     "py": "Yóuyú Zhōngguó hùliánwǎng de yònghù shùliàng yǐjí shìchǎng chéngshú chéngdù děng dōu dīyú fādá guójiā, zài chǎnpǐn chuàngxīn shang nán yǒu lǐngdǎo dìwèi.",
+     "vn": "Do số người dùng Internet cũng như mức độ trưởng thành thị trường của Trung Quốc đều thấp hơn các nước phát triển, nên khó giành vị trí dẫn đầu về đổi mới sản phẩm."
+    },
+    {
+     "zh": "问题已经发展到了十分严重的程度。",
+     "py": "Wèntí yǐjīng fāzhǎn dàole shífēn yánzhòng de chéngdù.",
+     "vn": "Vấn đề đã phát triển đến mức hết sức nghiêm trọng."
+    },
+    {
+     "zh": "在很大程度上，一个人的未来取决于他所受的教育。",
+     "py": "Zài hěn dà chéngdù shang, yí ge rén de wèilái qǔjué yú tā suǒ shòu de jiàoyù.",
+     "vn": "Ở mức độ lớn, tương lai của một người phụ thuộc vào nền giáo dục mà người đó nhận được."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "问题已经发展到了十分严重。",
+     "why": "thiếu 的程度 — sau 到了 phải có danh từ chỉ mức độ.",
+     "right": "问题已经发展到了十分严重的程度。"
+    },
+    {
+     "wrong": "他的汉语程度很高。",
+     "why": "năng lực ngôn ngữ dùng 水平; 程度 chỉ mức độ (严重的程度, 成熟程度).",
+     "right": "他的汉语水平很高。"
+    }
+   ]
+  }
+ ]
+}

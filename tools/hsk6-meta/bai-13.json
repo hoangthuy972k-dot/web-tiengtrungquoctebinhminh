@@ -1,0 +1,112 @@
+{
+ "zh": "从旅游指南看世事变迁",
+ "py": "Cóng lǚyóu zhǐnán kàn shìshì biànqiān",
+ "vn": "Nhìn thế sự đổi thay qua sách hướng dẫn du lịch",
+ "topic": "第四单元 走遍天下 · Sách hướng dẫn du lịch và những đổi thay của xã hội",
+ "vocabCount": 51,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "便于",
+   "explain": "便于 là ĐỘNG TỪ, biểu thị (làm việc gì đó) tương đối dễ dàng, thuận tiện (较容易做某事). Phía sau 便于 phần lớn là từ ngữ mang tính động từ: 便于理解, 便于携带, 便于管理, 便于利用. Sắc thái văn viết. Hay gặp hai cách dùng: ① làm vị ngữ: A (很 / 更 / 不) 便于 + V; ② đứng sau 为 / 为了 ở đầu câu để nêu mục đích: 为(了)便于……，……. Khác với 方便: 方便 là tính từ, đứng một mình được (很方便) và có thể mang tân ngữ chỉ người (方便大家); 便于 thì bắt buộc có động từ theo sau.",
+   "rule": "A + (很 / 更 / 不) <strong style=\"color:var(--sky-d)\">便于</strong> + V　|　为(了) + <strong style=\"color:var(--sky-d)\">便于</strong> + V，……",
+   "examples": [
+    {
+     "zh": "科普文章应该写得简明易懂、便于理解。",
+     "py": "Kēpǔ wénzhāng yīnggāi xiě de jiǎnmíng yì dǒng, biànyú lǐjiě.",
+     "vn": "Bài viết phổ biến khoa học nên viết ngắn gọn dễ hiểu, thuận tiện cho người đọc nắm bắt."
+    },
+    {
+     "zh": "多数学者认为目前图书分类太过繁杂，不便于利用。",
+     "py": "Duōshù xuézhě rènwéi mùqián túshū fēnlèi tài guò fánzá, bú biànyú lìyòng.",
+     "vn": "Đa số học giả cho rằng cách phân loại sách hiện nay quá rườm rà, không tiện sử dụng."
+    },
+    {
+     "zh": "为便于外地人出行，他搜集了当地文化习俗以及车船码头等信息，做了简要介绍。",
+     "py": "Wèi biànyú wàidìrén chūxíng, tā sōujíle dāngdì wénhuà xísú yǐjí chē chuán mǎtou děng xìnxī, zuòle jiǎnyào jièshào.",
+     "vn": "Để người nơi khác đi lại thuận tiện, ông đã thu thập thông tin về văn hoá, phong tục địa phương cùng xe, thuyền, bến bãi…, giới thiệu một cách ngắn gọn."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这个地方交通很便于。",
+     "why": "便于 là động từ, bắt buộc có động từ theo sau; muốn nói \"thuận tiện\" đứng một mình thì dùng tính từ 方便.",
+     "right": "这个地方交通很方便。"
+    },
+    {
+     "wrong": "这样安排便于大家。",
+     "why": "Sau 便于 là động từ, không phải danh từ / đại từ chỉ người. \"Thuận tiện cho ai\" dùng 方便 + người, hoặc thêm động từ sau 便于.",
+     "right": "这样安排便于大家参加。/ 这样安排方便大家。"
+    }
+   ]
+  },
+  {
+   "point": "犹如",
+   "explain": "犹如 là ĐỘNG TỪ, nghĩa là \"好像、如同\" (như, giống như). Dùng trong VĂN VIẾT, chủ yếu để ví von bằng hình ảnh: A 犹如 B. Phía sau thường có 一般 / 般 để hô ứng (犹如火山爆发般, 犹如白天一般). Tân ngữ của 犹如 có thể là danh từ (犹如家常便饭) hoặc cụm động từ (犹如有位随身的向导). Không dùng 犹如 để phỏng đoán (\"hình như\" → 好像) hay so sánh mức độ giữa hai người, vật cùng loại (→ 跟……一样).",
+   "rule": "A + <strong style=\"color:var(--sky-d)\">犹如</strong> + B (+ 一般 / 般 + Adj)　|　……变得 / 都 + <strong style=\"color:var(--sky-d)\">犹如</strong> + B",
+   "examples": [
+    {
+     "zh": "公司的劣质产品气坏了消费者，顾客的愤怒情绪犹如火山爆发般难以控制。",
+     "py": "Gōngsī de lièzhì chǎnpǐn qìhuàile xiāofèizhě, gùkè de fènnù qíngxù yóurú huǒshān bàofā bān nányǐ kòngzhì.",
+     "vn": "Sản phẩm kém chất lượng của công ty khiến người tiêu dùng tức điên, cơn giận của khách hàng như núi lửa phun trào, khó mà kiềm chế."
+    },
+    {
+     "zh": "1999年以后，中国人逐渐成为游客中的主流，国内旅游和出国旅游都变得犹如家常便饭。",
+     "py": "Yī jiǔ jiǔ jiǔ nián yǐhòu, Zhōngguórén zhújiàn chéngwéi yóukè zhōng de zhǔliú, guónèi lǚyóu hé chūguó lǚyóu dōu biàn de yóurú jiāchángbiànfàn.",
+     "vn": "Sau năm 1999, người Trung Quốc dần trở thành bộ phận chủ yếu trong du khách, du lịch trong nước và du lịch nước ngoài đều trở nên như chuyện cơm bữa."
+    },
+    {
+     "zh": "卫星导航系统的广泛应用，使得人们不管走到哪儿，都犹如有位随身的向导。",
+     "py": "Wèixīng dǎoháng xìtǒng de guǎngfàn yìngyòng, shǐde rénmen bùguǎn zǒudào nǎr, dōu yóurú yǒu wèi suíshēn de xiàngdǎo.",
+     "vn": "Hệ thống định vị vệ tinh được ứng dụng rộng rãi khiến người ta dù đi đến đâu cũng như có một người dẫn đường bên mình."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他犹如他哥哥一样高。",
+     "why": "So sánh bằng về mức độ giữa hai người dùng 跟 / 和……一样; 犹如 dành cho phép ví von bằng hình ảnh (văn viết).",
+     "right": "他跟他哥哥一样高。"
+    },
+    {
+     "wrong": "外面犹如要下雨了，带把伞吧。",
+     "why": "犹如 không mang nghĩa phỏng đoán \"hình như\"; phỏng đoán dùng 好像.",
+     "right": "外面好像要下雨了，带把伞吧。"
+    }
+   ]
+  },
+  {
+   "point": "和……相比",
+   "explain": "Dạng đầy đủ của 和……相比 là \"A 和 B 相比，A……\": hai chữ A chỉ cùng một sự vật, trọng tâm của câu là trình bày, miêu tả đầy đủ về A (B chỉ là mốc để so sánh). Thường gặp nhất là đặt \"和 B 相比\" ở ĐẦU câu, vế sau nói về A. Cũng nói 与……相比 (văn viết hơn), 同……相比. Vế sau phải thể hiện kết quả so sánh (更, 多了, 得多, 一些, 不再……) — không lặp lại 比 + B.",
+   "rule": "<strong style=\"color:var(--sky-d)\">和</strong> B <strong style=\"color:var(--sky-d)\">相比</strong>，A + (更 / Adj + 多了 / 不再……)　|　A <strong style=\"color:var(--sky-d)\">和 / 与 / 同</strong> B <strong style=\"color:var(--sky-d)\">相比</strong>，A……",
+   "examples": [
+    {
+     "zh": "由于经济环境的不确定，企业的寿命越来越短，和10年前相比，人们要经历更多次的职业选择。",
+     "py": "Yóuyú jīngjì huánjìng de bú quèdìng, qǐyè de shòumìng yuè lái yuè duǎn, hé shí nián qián xiāngbǐ, rénmen yào jīnglì gèng duō cì de zhíyè xuǎnzé.",
+     "vn": "Do môi trường kinh tế bất ổn, tuổi thọ doanh nghiệp ngày càng ngắn, so với 10 năm trước, người ta phải trải qua nhiều lần chọn nghề hơn."
+    },
+    {
+     "zh": "走出书店的大门，他眼前一亮，和昏暗、冷清的书店相比，外面的大街既明亮又热闹。",
+     "py": "Zǒuchū shūdiàn de dàmén, tā yǎnqián yí liàng, hé hūn'àn, lěngqīng de shūdiàn xiāngbǐ, wàimiàn de dàjiē jì míngliàng yòu rènao.",
+     "vn": "Bước ra khỏi cửa hiệu sách, trước mắt anh sáng bừng lên: so với hiệu sách tối tăm, vắng vẻ, con phố bên ngoài vừa sáng sủa vừa náo nhiệt."
+    },
+    {
+     "zh": "和过去相比，游客不再仅关注著名旅游城市，偏僻省份、沿海城市、秀美的乡镇，都成了游客感兴趣的地方。",
+     "py": "Hé guòqù xiāngbǐ, yóukè bú zài jǐn guānzhù zhùmíng lǚyóu chéngshì, piānpì shěngfèn, yánhǎi chéngshì, xiùměi de xiāngzhèn, dōu chéngle yóukè gǎn xìngqù de dìfang.",
+     "vn": "So với trước đây, du khách không còn chỉ quan tâm đến những thành phố du lịch nổi tiếng; những tỉnh xa xôi, thành phố ven biển, thị trấn xinh đẹp đều trở thành nơi du khách quan tâm."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "和他相比，我比他高。",
+     "why": "和……相比 đã nêu mốc so sánh; vế sau không lặp lại 比 + đối tượng mà chỉ nói kết quả (更 / Adj + 一些).",
+     "right": "和他相比，我更高一些。"
+    },
+    {
+     "wrong": "和去年相比，今年很热。",
+     "why": "Vế sau phải thể hiện KẾT QUẢ so sánh (更, 多了, 得多…); 很 không mang nghĩa so sánh.",
+     "right": "和去年相比，今年热多了。"
+    }
+   ]
+  }
+ ]
+}

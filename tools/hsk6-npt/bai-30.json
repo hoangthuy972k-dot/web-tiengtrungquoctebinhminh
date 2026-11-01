@@ -1,0 +1,624 @@
+[
+ {
+  "so": "1",
+  "ten": "「不时」",
+  "tenVn": "",
+  "cauTruc": [
+   "不时（地）+ V: 不时（地）大声叫喊",
+   "nơi chốn + 不时 + 传来 / 传出 + N: 窗外不时传来几声鸟叫"
+  ],
+  "giaiThich": "不时 (phó từ) biểu thị động tác, hành vi LẶP LẠI hoặc thường xảy ra trong một khoảng thời gian tương đối ngắn — \"chốc chốc lại, thỉnh thoảng lại\". Có thể thêm 地 (不时地). Dùng trong văn viết. 不时 đứng sau chủ ngữ / trạng ngữ nơi chốn và trước động từ; hay đi với 传来 / 传出 / 扑面而来 / 响起 / 回头 / 张望. Không dùng cho việc chỉ xảy ra MỘT lần.",
+  "viDu": [
+   {
+    "zh": "入睡后噩梦连连，一会儿蹬腿，一会儿挥拳头，不时（地）大声叫喊，也是睡眠障碍的典型症状。",
+    "py": "Rùshuì hòu èmèng liánlián, yíhuìr dēng tuǐ, yíhuìr huī quántou, bùshí (de) dàshēng jiàohǎn, yě shì shuìmián zhàng'ài de diǎnxíng zhèngzhuàng.",
+    "vn": "Sau khi ngủ thì ác mộng liên miên, lúc đạp chân, lúc vung nắm đấm, thỉnh thoảng lại hét to — đó cũng là triệu chứng điển hình của rối loạn giấc ngủ."
+   },
+   {
+    "zh": "这里的八月，秋高气爽，不冷不热，走在街上，阵阵桂花香不时扑面而来。",
+    "py": "Zhèlǐ de bāyuè, qiū gāo qì shuǎng, bù lěng bú rè, zǒu zài jiē shang, zhènzhèn guìhuā xiāng bùshí pū miàn ér lái.",
+    "vn": "Tháng tám ở đây trời thu trong mát, không lạnh không nóng; đi trên phố, từng đợt hương hoa quế chốc chốc lại phả vào mặt."
+   },
+   {
+    "zh": "天刚蒙蒙亮，世界还没有睡醒，只有不时传来的几声鸟叫提醒我们，新的一天又开始了。",
+    "py": "Tiān gāng méngméng liàng, shìjiè hái méiyǒu shuìxǐng, zhǐyǒu bùshí chuánlái de jǐ shēng niǎo jiào tíxǐng wǒmen, xīn de yì tiān yòu kāishǐ le.",
+    "vn": "Trời vừa tờ mờ sáng, thế giới còn chưa tỉnh giấc, chỉ có vài tiếng chim chốc chốc vọng lại nhắc chúng ta rằng một ngày mới lại bắt đầu."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "不时窗外传来几声鸟叫。",
+    "why": "不时 là phó từ, phải đứng sau chủ ngữ / trạng ngữ nơi chốn (窗外) và trước động từ, không đứng đầu câu.",
+    "dung": "窗外不时传来几声鸟叫。"
+   },
+   {
+    "sai": "我上个月不时去了一次上海。",
+    "why": "不时 chỉ hành động lặp lại nhiều lần trong một quãng ngắn, không dùng với việc chỉ xảy ra một lần (一次).",
+    "dung": "我上个月去了一次上海。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "入睡后噩梦连连，一会儿蹬腿，一会儿挥拳头，",
+       "大声叫喊。"
+      ],
+      "dap": [
+       [
+        "不时"
+       ]
+      ],
+      "chon": [
+       "不时",
+       "按时",
+       "临时"
+      ],
+      "goiY": "\"Ngủ rồi thì ác mộng liên miên, lúc đạp chân, lúc vung nắm đấm, thỉnh thoảng lại hét to.\" (câu bài khoá)",
+      "giai": "不时 = chốc chốc lại (lặp lại trong quãng ngắn). 按时 = đúng giờ, 临时 = tạm thời."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "天刚蒙蒙亮，只有",
+       "传来的几声鸟叫提醒我们，新的一天又开始了。"
+      ],
+      "dap": [
+       [
+        "不时"
+       ]
+      ],
+      "chon": [
+       "不时",
+       "及时",
+       "准时"
+      ],
+      "goiY": "\"Trời tờ mờ sáng, chỉ có vài tiếng chim chốc chốc vọng lại…\" (ví dụ của sách)",
+      "giai": "不时传来的…… làm định ngữ; 及时 = kịp thời, 准时 = đúng giờ — không hợp nghĩa."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "房门大开着，说笑声不时",
+       "。"
+      ],
+      "dap": [
+       [
+        "传出"
+       ]
+      ],
+      "chon": [
+       "传出",
+       "传过",
+       "传完"
+      ],
+      "goiY": "\"Cửa phòng mở toang, tiếng cười nói chốc chốc lại vọng ra.\" (练一练 (1))",
+      "giai": "不时 hay đi với 传出 / 传来 (âm thanh vọng ra / vọng tới)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他一边走，一边",
+       "向身后张望。"
+      ],
+      "dap": [
+       [
+        "不时"
+       ]
+      ],
+      "chon": [
+       "不时",
+       "同时",
+       "按时"
+      ],
+      "goiY": "\"Anh ấy vừa đi vừa chốc chốc lại ngoái nhìn phía sau.\" (练习2 ④)",
+      "giai": "一边……一边不时 + V: hành động thứ hai lặp lại nhiều lần."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "开会的时候，他",
+       "地看看手表，好像有什么急事。"
+      ],
+      "dap": [
+       [
+        "不时"
+       ]
+      ],
+      "chon": [
+       "不时",
+       "临时",
+       "当时"
+      ],
+      "goiY": "\"Trong cuộc họp, anh ấy chốc chốc lại xem đồng hồ, dường như có việc gấp.\"",
+      "giai": "不时地 + V: có thể thêm 地."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "窗台上，妈妈放下的一碗小米",
+       "吸引着觅食的鸟儿。"
+      ],
+      "dap": [
+       [
+        "不时"
+       ]
+      ],
+      "chon": [
+       "不时",
+       "及时",
+       "暂时"
+      ],
+      "goiY": "\"Bát kê mẹ để trên bệ cửa sổ chốc chốc lại thu hút lũ chim đi kiếm ăn.\" (练一练 (3))",
+      "giai": "不时 + V + 着: hành động lặp đi lặp lại."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "走在海边",
+       "，",
+       "不时",
+       "能听到",
+       "海鸥的",
+       "叫声",
+       "。"
+      ],
+      "dap": [
+       "走在海边，不时能听到海鸥的叫声。"
+      ],
+      "goiY": "Đi dạo bên bờ biển, chốc chốc lại nghe thấy tiếng hải âu.",
+      "giai": "不时 đứng trước cụm động từ 能听到."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "不时",
+       "地",
+       "看看",
+       "手机",
+       "，",
+       "好像",
+       "在等消息",
+       "。"
+      ],
+      "dap": [
+       "他不时地看看手机，好像在等消息。"
+      ],
+      "goiY": "Anh ấy chốc chốc lại xem điện thoại, dường như đang đợi tin.",
+      "giai": "不时地 + VV."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "入睡后",
+       "噩梦连连",
+       "，",
+       "不时",
+       "大声",
+       "叫喊",
+       "。"
+      ],
+      "dap": [
+       "入睡后噩梦连连，不时大声叫喊。"
+      ],
+      "goiY": "Ngủ rồi thì ác mộng liên miên, thỉnh thoảng lại hét to.",
+      "giai": "不时 + trạng ngữ (大声) + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "不时窗外传来几声鸟叫。",
+      "dung": false,
+      "sua": "窗外不时传来几声鸟叫。",
+      "giai": "不时 là phó từ, phải đứng sau trạng ngữ nơi chốn (窗外) và trước động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "走在街上，阵阵花香不时扑面而来。",
+      "dung": true,
+      "giai": "Đúng: 不时 + V, hương hoa chốc chốc lại phả vào mặt (ví dụ của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我上个月不时去了一次上海。",
+      "dung": false,
+      "sua": "我上个月去了一次上海。",
+      "giai": "不时 chỉ hành động lặp lại nhiều lần, không dùng với việc chỉ xảy ra một lần (一次)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trong giờ học, cậu ấy chốc chốc lại nhìn ra ngoài cửa sổ.",
+      "dap": [
+       "上课的时候，他不时地往窗外看。",
+       "上课时，他不时向窗外看。",
+       "上课的时候，他不时看看窗外。"
+      ],
+      "py": "Shàngkè de shíhou, tā bùshí de wǎng chuāng wài kàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不时.",
+      "giai": "不时（地）+ V; 往 / 向 + phương hướng + 看."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Đêm khuya, trong ký túc xá chốc chốc lại vọng ra tiếng cười.",
+      "dap": [
+       "深夜，宿舍里不时传出笑声。",
+       "深夜，宿舍里不时传来笑声。",
+       "夜深了，宿舍里不时响起笑声。"
+      ],
+      "py": "Shēnyè, sùshè lǐ bùshí chuánchū xiàoshēng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不时 + 传出 / 传来.",
+      "giai": "Nơi chốn + 不时 + 传出 / 传来 + âm thanh."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "房门大开着，说笑声＿＿＿。",
+      "goiY": "Hoàn thành câu bằng 不时 (练一练 (1) của sách).",
+      "mau": "房门大开着，说笑声不时传出。",
+      "can": [
+       [
+        "不时"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "会场上＿＿＿各种各样的问题，他便耐心地一一回答。",
+      "goiY": "Hoàn thành câu bằng 不时 (练一练 (2) của sách).",
+      "mau": "会场上不时提出各种各样的问题，他便耐心地一一回答。",
+      "can": [
+       [
+        "不时"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "窗台上，妈妈放下的一碗小米＿＿＿觅食的鸟儿。",
+      "goiY": "Hoàn thành câu bằng 不时 (练一练 (3) của sách).",
+      "mau": "窗台上，妈妈放下的一碗小米不时吸引着觅食的鸟儿。",
+      "can": [
+       [
+        "不时"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「多多少少」",
+  "tenVn": "",
+  "cauTruc": [
+   "多多少少 + (也 / 还是) + V + 一点儿 / 一些: 多多少少还是吃了一点儿",
+   "A + 多多少少 + 与 B 有关: 根源多多少少与不健康的生活方式有关"
+  ],
+  "giaiThich": "多多少少 là dạng lặp của phó từ 多少, nghĩa là \"hoặc nhiều hoặc ít\" — ÍT NHIỀU, dù sao cũng có một chút. Đứng trước động từ / cụm động từ (多多少少说出了……), trước động từ năng nguyện (多多少少会……) hoặc trước 与……有关 / 是……. Hay đi với 也 / 还是 / 都 và với các từ chỉ lượng nhỏ (一点儿, 一些, 有些). Không đi với các từ chỉ mức độ cao (很, 非常, 很多).",
+  "viDu": [
+   {
+    "zh": "不可否认的是，很多人原本睡眠是没有问题的，导致问题的根源多多少少与不健康的生活方式有关。",
+    "py": "Bùkě fǒurèn de shì, hěn duō rén yuánběn shuìmián shì méiyǒu wèntí de, dǎozhì wèntí de gēnyuán duōduōshǎoshǎo yǔ bú jiànkāng de shēnghuó fāngshì yǒuguān.",
+    "vn": "Không thể phủ nhận rằng nhiều người vốn ngủ không có vấn đề gì; căn nguyên gây ra vấn đề ít nhiều đều liên quan đến lối sống không lành mạnh."
+   },
+   {
+    "zh": "春天遭了雹灾，别人家的桃子都没有收成，我家的果园在山后，多多少少还收了一些。",
+    "py": "Chūntiān zāole báozāi, biérén jiā de táozi dōu méiyǒu shōucheng, wǒ jiā de guǒyuán zài shān hòu, duōduōshǎoshǎo hái shōule yìxiē.",
+    "vn": "Mùa xuân gặp mưa đá, đào nhà người khác đều mất mùa; vườn nhà tôi ở sau núi nên ít nhiều vẫn thu hoạch được một ít."
+   },
+   {
+    "zh": "在火车开动的一刹那，我才发现，尽管自己很想去外面闯荡，可离开父母多多少少还是让自己有些感伤。",
+    "py": "Zài huǒchē kāidòng de yíchànà, wǒ cái fāxiàn, jǐnguǎn zìjǐ hěn xiǎng qù wàimiàn chuǎngdàng, kě líkāi fùmǔ duōduōshǎoshǎo háishi ràng zìjǐ yǒuxiē gǎnshāng.",
+    "vn": "Vào khoảnh khắc đoàn tàu lăn bánh, tôi mới nhận ra: dù rất muốn ra ngoài bươn chải, nhưng xa bố mẹ ít nhiều vẫn khiến mình có chút buồn."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "虽然没什么胃口，但我多多少少吃了很多。",
+    "why": "多多少少 nhấn \"ít nhiều, một chút\" — mâu thuẫn với 很多; phía sau thường là lượng nhỏ: 一点儿 / 一些.",
+    "dung": "虽然没什么胃口，但我多多少少还是吃了一点儿。"
+   },
+   {
+    "sai": "这本书对我多多少少很有帮助。",
+    "why": "多多少少 không đi với phó từ chỉ mức độ cao (很 / 非常); dùng 有些 / 有一点儿.",
+    "dung": "这本书对我多多少少有些帮助。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "导致问题的根源",
+       "与不健康的生活方式有关。"
+      ],
+      "dap": [
+       [
+        "多多少少"
+       ]
+      ],
+      "chon": [
+       "多多少少",
+       "大大",
+       "远远"
+      ],
+      "goiY": "\"Căn nguyên gây ra vấn đề ít nhiều đều liên quan đến lối sống không lành mạnh.\" (câu bài khoá)",
+      "giai": "多多少少 + 与……有关 = ít nhiều liên quan đến …. 大大 / 远远 (ôn bài 23) không hợp nghĩa."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我家的果园在山后，多多少少",
+       "收了一些。"
+      ],
+      "dap": [
+       [
+        "还"
+       ]
+      ],
+      "chon": [
+       "还",
+       "才",
+       "再"
+      ],
+      "goiY": "\"Vườn nhà tôi ở sau núi, ít nhiều vẫn thu hoạch được một ít.\" (ví dụ của sách)",
+      "giai": "多多少少 + 还 / 还是 + V: dù sao vẫn có được chút ít."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "虽然没什么胃口，但我多多少少还是吃了",
+       "。"
+      ],
+      "dap": [
+       [
+        "一点儿"
+       ]
+      ],
+      "chon": [
+       "一点儿",
+       "很多",
+       "不少"
+      ],
+      "goiY": "\"Dù không muốn ăn, tôi ít nhiều vẫn ăn một chút.\" (练习2 ⑥)",
+      "giai": "Sau 多多少少 là lượng NHỎ (一点儿 / 一些), không dùng 很多 / 不少."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这点儿钱数量不多，",
+       "是个意思。"
+      ],
+      "dap": [
+       [
+        "多多少少"
+       ]
+      ],
+      "chon": [
+       "多多少少",
+       "多多益善",
+       "多种多样"
+      ],
+      "goiY": "\"Số tiền này không nhiều, ít nhiều cũng là chút tấm lòng.\" (练一练 (2))",
+      "giai": "多多少少是个意思 — lời khiêm tốn khi giúp đỡ, tặng quà."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我虽然不是医生，但",
+       "也懂一点儿养生知识。"
+      ],
+      "dap": [
+       [
+        "多多少少"
+       ]
+      ],
+      "chon": [
+       "多多少少",
+       "越来越",
+       "多么"
+      ],
+      "goiY": "\"Tôi tuy không phải bác sĩ, nhưng ít nhiều cũng hiểu chút kiến thức dưỡng sinh.\"",
+      "giai": "虽然……，但多多少少也……: ít nhiều cũng …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件事我",
+       "也听说了一些。"
+      ],
+      "dap": [
+       [
+        "多多少少"
+       ]
+      ],
+      "chon": [
+       "多多少少",
+       "远远",
+       "大大"
+      ],
+      "goiY": "\"Chuyện này tôi ít nhiều cũng có nghe nói.\"",
+      "giai": "多多少少 + 也 + V + 了一些."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这本书",
+       "多多少少",
+       "说出了",
+       "老百姓",
+       "想说的话",
+       "。"
+      ],
+      "dap": [
+       "这本书多多少少说出了老百姓想说的话。"
+      ],
+      "goiY": "Cuốn sách này ít nhiều đã nói lên điều người dân muốn nói.",
+      "giai": "多多少少 + V (练一练 (1))."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "大多数人",
+       "都",
+       "多多少少",
+       "会",
+       "讲究",
+       "说话的方式",
+       "。"
+      ],
+      "dap": [
+       "大多数人都多多少少会讲究说话的方式。"
+      ],
+      "goiY": "Đa số người ít nhiều đều biết chú ý cách nói năng.",
+      "giai": "都 + 多多少少 + 会 + V (练一练 (3))."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "离开父母",
+       "多多少少",
+       "还是",
+       "让我",
+       "有些感伤",
+       "。"
+      ],
+      "dap": [
+       "离开父母多多少少还是让我有些感伤。"
+      ],
+      "goiY": "Xa bố mẹ ít nhiều vẫn khiến tôi có chút buồn.",
+      "giai": "多多少少 + 还是 + 让…… + 有些……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我多多少少吃了很多。",
+      "dung": false,
+      "sua": "我多多少少吃了一点儿。",
+      "giai": "多多少少 = ít nhiều (một chút) — mâu thuẫn với 很多."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "离开家乡，我多多少少还是有些舍不得。",
+      "dung": true,
+      "giai": "Đúng: 多多少少 + 还是 + 有些 + tâm trạng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这本书对我多多少少很有帮助。",
+      "dung": false,
+      "sua": "这本书对我多多少少有些帮助。",
+      "giai": "多多少少 không đi với 很 (mức độ cao); dùng 有些 / 有一点儿."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tuy tôi không học y, nhưng ít nhiều cũng biết thức khuya có hại cho sức khoẻ.",
+      "dap": [
+       "虽然我不是学医的，但多多少少也知道熬夜对健康有害。",
+       "虽然我没学过医，但是多多少少也知道熬夜对身体不好。",
+       "我虽然不是学医的，可多多少少也知道熬夜对健康有害。"
+      ],
+      "py": "Suīrán wǒ bú shì xué yī de, dàn duōduōshǎoshǎo yě zhīdào áoyè duì jiànkāng yǒuhài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 虽然……但…… và 多多少少也…….",
+      "giai": "多多少少 đứng trước 也 + V; \"có hại cho\" = 对……有害."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mỗi người ít nhiều đều có vài thói quen xấu.",
+      "dap": [
+       "每个人多多少少都有一些坏习惯。",
+       "每个人都多多少少有一些坏习惯。",
+       "每个人多多少少都有些坏习惯。"
+      ],
+      "py": "Měi ge rén duōduōshǎoshǎo dōu yǒu yìxiē huài xíguàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 多多少少.",
+      "giai": "每……都…… kết hợp 多多少少; \"vài\" = 一些 (lượng nhỏ)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这本书真实地反映了老百姓关心的社会问题，＿＿＿想说的话。",
+      "goiY": "Hoàn thành câu bằng 多多少少 (练一练 (1) của sách).",
+      "mau": "这本书真实地反映了老百姓关心的社会问题，多多少少说出了老百姓想说的话。",
+      "can": [
+       [
+        "多多少少"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "别人有困难，我们理应帮助，这点儿钱数量不多，＿＿＿。",
+      "goiY": "Hoàn thành câu bằng 多多少少 (练一练 (2) của sách).",
+      "mau": "别人有困难，我们理应帮助，这点儿钱数量不多，多多少少是个意思。",
+      "can": [
+       [
+        "多多少少"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "一般人都没有专门研究过说话的艺术，但也不能说对于说话一窍不通，大多数人都＿＿＿。",
+      "goiY": "Hoàn thành câu bằng 多多少少 (练一练 (3) của sách).",
+      "mau": "一般人都没有专门研究过说话的艺术，但也不能说对于说话一窍不通，大多数人都多多少少会讲究说话的方式方法。",
+      "can": [
+       [
+        "多多少少"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

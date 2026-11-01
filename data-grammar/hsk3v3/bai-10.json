@@ -1,0 +1,575 @@
+{
+ "/lessons/hsk3v3-bai-10.html": {
+  "points": [
+   {
+    "title": "Câu chữ 「把」 (1) — 把 + tân ngữ + V + 在/到 + địa điểm",
+    "errors": [
+     {
+      "wrong": "我放书在桌子上。",
+      "why": "dịch theo trật tự tiếng Việt “đặt sách lên bàn”; muốn nói vật đổi vị trí phải dùng câu chữ 把: 把 + vật + 放在 + nơi chốn.",
+      "right": "我把书放在桌子上。"
+     },
+     {
+      "wrong": "你把名字不能写在这里。",
+      "why": "phó từ phủ định (不/没) và động từ năng nguyện (能、会…) phải đứng TRƯỚC 把.",
+      "right": "你不能把名字写在这里。"
+     },
+     {
+      "wrong": "我把这些题记。",
+      "why": "động từ sau 把 không đứng một mình; phải có thành phần khác theo sau, ở đây là 在 + địa điểm.",
+      "right": "我把这些题记在本子上。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Hình như mình để quên thẻ sinh viên ở nhà rồi.” (忘 – ôn HSK2 Bài 6)",
+      "pre": "我好像把校园卡",
+      "blank": "忘在家里了",
+      "post": "。",
+      "options": [
+       "忘在家里了",
+       "忘家里了在",
+       "在家里忘了"
+      ],
+      "answer": 0,
+      "explanation": "把 + O + V + 在 + nơi chốn; 好像 (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "Sách: “Tài xế đã đặt hành lý của chúng tôi lên xe.” (司机 – ôn HSK3 Bài 4)",
+      "pre": "司机把我们的行李",
+      "blank": "放到车上了",
+      "post": "。",
+      "options": [
+       "放到车上了",
+       "放车上到了",
+       "到车上放了"
+      ],
+      "answer": 0,
+      "explanation": "V + 到 + nơi chốn: vật chuyển đến chỗ mới; 行李 (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "Sách: “Đến lúc soát vé tôi mới phát hiện mình không để hộ chiếu trong túi.”",
+      "pre": "检票的时候我才发现，没把护照",
+      "blank": "放在包里",
+      "post": "。",
+      "options": [
+       "放在包里",
+       "包里放在",
+       "放包里"
+      ],
+      "answer": 0,
+      "explanation": "没 đứng trước 把; 才 (ôn HSK3 Bài 3), 发现 (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "“Mình sẽ ghi hết những bài này vào vở.”",
+      "pre": "我",
+      "blank": "会把这些题",
+      "post": "都记在本子上。",
+      "options": [
+       "会把这些题",
+       "把这些题会",
+       "把会这些题"
+      ],
+      "answer": 0,
+      "explanation": "Động từ năng nguyện 会 đứng trước 把."
+     },
+     {
+      "context": "“Bạn không được viết tên ở đây.”",
+      "pre": "你",
+      "blank": "不能把名字",
+      "post": "写在这里。",
+      "options": [
+       "不能把名字",
+       "把名字不能",
+       "把不能名字"
+      ],
+      "answer": 0,
+      "explanation": "不能 đứng trước 把."
+     },
+     {
+      "context": "“Cô giáo đặt vở bài tập lên bàn rồi.”",
+      "pre": "老师把作业本",
+      "blank": "放到",
+      "post": "桌子上了。",
+      "options": [
+       "放到",
+       "放",
+       "放给"
+      ],
+      "answer": 0,
+      "explanation": "Động từ + 到 + nơi chốn; không dùng 放 trơn, cũng không dùng 给 (给 chỉ người nhận)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我放书在桌子上。",
+      "isCorrect": false,
+      "correctVersion": "我把书放在桌子上。",
+      "explanation": "Muốn nói vật đổi vị trí phải dùng câu chữ 把."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "妈妈把蛋糕放到冰箱里了。",
+      "isCorrect": true,
+      "explanation": "Đúng: 把 + 蛋糕 + 放到 + 冰箱里. 蛋糕 (ôn HSK2 Bài 6), 冰箱 (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mình sẽ ghi hết những bài này vào vở.”",
+      "words": [
+       "我",
+       "会",
+       "把",
+       "这些",
+       "题",
+       "都",
+       "记在",
+       "本子上",
+       "。"
+      ],
+      "answer": "我会把这些题都记在本子上。",
+      "explanation": "会 + 把 + O + 都 + 记在 + nơi chốn."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn không được viết tên ở đây.”",
+      "words": [
+       "你",
+       "不能",
+       "把",
+       "名字",
+       "写在",
+       "这里",
+       "。"
+      ],
+      "answer": "你不能把名字写在这里。",
+      "explanation": "不能 + 把 + O + 写在 + nơi chốn."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô giáo đặt vở bài tập lên bàn rồi.”",
+      "words": [
+       "老师",
+       "把",
+       "作业本",
+       "放到",
+       "桌子上",
+       "了",
+       "。"
+      ],
+      "answer": "老师把作业本放到桌子上了。",
+      "explanation": "把 + 作业本 + 放到 + 桌子上 + 了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hãy để va li của bạn ở cửa.”",
+      "words": [
+       "请",
+       "把",
+       "你的",
+       "箱子",
+       "放在",
+       "门口",
+       "。"
+      ],
+      "answer": "请把你的箱子放在门口。",
+      "explanation": "箱子 (ôn HSK3 Bài 1), 门口 (ôn HSK2 Bài 9)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng câu chữ 把.",
+      "promptLang": "vi",
+      "prompt": "Đừng để điện thoại trên giường.",
+      "answer": "别把手机放在床上。",
+      "answerPy": "Bié bǎ shǒujī fàng zài chuáng shang.",
+      "explanation": "别 đứng trước 把 (ôn HSK2 Bài 2); 床 (ôn HSK2 Bài 6)."
+     }
+    ]
+   },
+   {
+    "title": "Cấu trúc cố định 「在……上 / 中 / 下」",
+    "errors": [
+     {
+      "wrong": "在老师的下帮助，我的成绩提高很快。",
+      "why": "tiếng Việt nói “dưới sự giúp đỡ của thầy”, nhưng tiếng Trung đặt 下 ở CUỐI cụm: 在 + 老师的帮助 + 下.",
+      "right": "在老师的帮助下，我的成绩提高很快。"
+     },
+     {
+      "wrong": "在学习里，遇到什么问题都可以问我。",
+      "why": "“về mặt / trong việc học” (phương diện) dùng 在……上, không dùng 里.",
+      "right": "在学习上，遇到什么问题都可以问我。"
+     },
+     {
+      "wrong": "在她的影响，我开始喜欢拍照。",
+      "why": "biểu thị điều kiện phải dùng đủ khung 在……下; thiếu 下 thì câu không trọn.",
+      "right": "在她的影响下，我开始喜欢拍照。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Do ảnh hưởng của bố, tôi và em trai đều có hứng thú với bóng đá.”",
+      "pre": "在",
+      "blank": "爸爸的影响下",
+      "post": "，我和弟弟都对足球感兴趣了。",
+      "options": [
+       "爸爸的影响下",
+       "下爸爸的影响",
+       "爸爸下的影响"
+      ],
+      "answer": 0,
+      "explanation": "在 + định ngữ + 影响 + 下 = điều kiện; 对……感兴趣 (ôn HSK3 Bài 5)."
+     },
+     {
+      "context": "Sách: “Trong cuộc sống tôi giúp cô ấy; trong việc học cô ấy giúp tôi.”",
+      "pre": "在生活上，我帮助她；",
+      "blank": "在学习上",
+      "post": "，她帮助我。",
+      "options": [
+       "在学习上",
+       "在学习下",
+       "在学习里"
+      ],
+      "answer": 0,
+      "explanation": "Phương diện → 在……上; 帮助 (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "Sách: “Anh ấy rất nhiệt tình, nhờ có anh ấy giúp đỡ, chúng tôi chơi rất vui.”",
+      "pre": "他非常热情，",
+      "blank": "在他的帮助下",
+      "post": "，我们玩得很开心。",
+      "options": [
+       "在他的帮助下",
+       "在他的帮助上",
+       "在下他的帮助"
+      ],
+      "answer": 0,
+      "explanation": "Điều kiện → 在……的帮助下; 热情 (ôn HSK3 Bài 2)."
+     },
+     {
+      "context": "“Trong trận đấu, anh ấy ghi điểm cao nhất.”",
+      "pre": "",
+      "blank": "在比赛中",
+      "post": "，他得分最高。",
+      "options": [
+       "在比赛中",
+       "在比赛下",
+       "比赛在中"
+      ],
+      "answer": 0,
+      "explanation": "Môi trường xảy ra hành động → 在……中; 最 (ôn HSK2 Bài 11)."
+     },
+     {
+      "context": "“Trong kỳ nghỉ, tôi đã quen mấy người bạn mới.” (假期 – ôn HSK3 Bài 4)",
+      "pre": "在",
+      "blank": "假期中",
+      "post": "，我认识了几个新朋友。",
+      "options": [
+       "假期中",
+       "假期下",
+       "中假期"
+      ],
+      "answer": 0,
+      "explanation": "Thời gian → 在……中."
+     },
+     {
+      "context": "“Trong công việc, anh ấy luôn giúp đỡ tôi rất nhiều.”",
+      "pre": "",
+      "blank": "在工作上",
+      "post": "，他总是能给我很多帮助。",
+      "options": [
+       "在工作上",
+       "在工作下",
+       "在上工作"
+      ],
+      "answer": 0,
+      "explanation": "Phương diện → 在……上; 总是 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "在老师的下帮助，我的成绩提高很快。",
+      "isCorrect": false,
+      "correctVersion": "在老师的帮助下，我的成绩提高很快。",
+      "explanation": "下 phải đứng cuối cụm: 在 + 老师的帮助 + 下."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "在学习上，遇到什么问题都可以问我。",
+      "isCorrect": true,
+      "explanation": "Đúng: 在学习上 = về mặt học tập; 什么……都…… (ôn HSK3 Bài 2)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nhờ sự giúp đỡ của thầy cô, thành tích của tôi tiến bộ rất nhanh.”",
+      "words": [
+       "在",
+       "老师的",
+       "帮助",
+       "下",
+       "，",
+       "我的",
+       "成绩",
+       "提高",
+       "很快",
+       "。"
+      ],
+      "answer": "在老师的帮助下，我的成绩提高很快。",
+      "explanation": "在 + 老师的帮助 + 下 đứng đầu câu."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trong việc học, gặp vấn đề gì cũng có thể hỏi mình.”",
+      "words": [
+       "在",
+       "学习",
+       "上",
+       "，",
+       "遇到",
+       "什么",
+       "问题",
+       "都",
+       "可以",
+       "问我",
+       "。"
+      ],
+      "answer": "在学习上，遇到什么问题都可以问我。",
+      "explanation": "在学习上 + 遇到什么问题都……."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Do ảnh hưởng của cô ấy, tôi bắt đầu thích chụp ảnh.”",
+      "words": [
+       "在",
+       "她的",
+       "影响",
+       "下",
+       "，",
+       "我",
+       "开始",
+       "喜欢",
+       "拍照",
+       "。"
+      ],
+      "answer": "在她的影响下，我开始喜欢拍照。",
+      "explanation": "开始 (ôn HSK2 Bài 7), 拍照 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trong kỳ nghỉ, tôi đã quen mấy người bạn mới.”",
+      "words": [
+       "在",
+       "假期",
+       "中",
+       "，",
+       "我",
+       "认识了",
+       "几个",
+       "新",
+       "朋友",
+       "。"
+      ],
+      "answer": "在假期中，我认识了几个新朋友。",
+      "explanation": "在 + 假期 + 中."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 在……下.",
+      "promptLang": "vi",
+      "prompt": "Nhờ sự giúp đỡ của mọi người, cuối cùng tôi cũng tìm được va li.",
+      "answer": "在大家的帮助下，我终于找到了行李箱。",
+      "answerPy": "Zài dàjiā de bāngzhù xià, wǒ zhōngyú zhǎodàole xínglixiāng.",
+      "explanation": "终于 (ôn HSK3 Bài 5); 行李箱 (ôn HSK3 Bài 1)."
+     }
+    ]
+   },
+   {
+    "title": "Câu chữ 「把」 (2) — 把 + tân ngữ₁ + V + 给 + tân ngữ₂",
+    "errors": [
+     {
+      "wrong": "你明天再把书还我给。",
+      "why": "给 phải đứng ngay sau động từ: 还给 + người.",
+      "right": "你明天再把书还给我。"
+     },
+     {
+      "wrong": "我把一本书还给老师了。",
+      "why": "tân ngữ của 把 phải là vật đã xác định (这本书、那本书), không dùng cụm số lượng không xác định như 一本书.",
+      "right": "我把那本书还给老师了。"
+     },
+     {
+      "wrong": "我没把礼物送给她了。",
+      "why": "câu phủ định với 没 thì cuối câu không thêm 了.",
+      "right": "我没把礼物送给她。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Tôi muốn đem những đồ ăn này biếu bà.” (奶奶 – ôn HSK2 Bài 5)",
+      "pre": "我想把这些吃的",
+      "blank": "送给奶奶",
+      "post": "。",
+      "options": [
+       "送给奶奶",
+       "给奶奶送",
+       "送奶奶给"
+      ],
+      "answer": 0,
+      "explanation": "把 + O + 送给 + người; 想 đứng trước 把."
+     },
+     {
+      "context": "Sách: “Mình đã đưa vở ghi bài hôm nay cho bạn cùng lớp rồi.”",
+      "pre": "我把今天上课的笔记",
+      "blank": "拿给同学了",
+      "post": "。",
+      "options": [
+       "拿给同学了",
+       "给同学拿了",
+       "拿同学给了"
+      ],
+      "answer": 0,
+      "explanation": "拿 (ôn HSK2 Bài 3) + 给 + người."
+     },
+     {
+      "context": "Sách: “Hôm nay là sinh nhật mẹ, tôi muốn tặng những bông hoa này cho mẹ.”",
+      "pre": "今天是妈妈的生日，我要把这些花",
+      "blank": "送给妈妈",
+      "post": "。",
+      "options": [
+       "送给妈妈",
+       "给妈妈送",
+       "送妈妈给"
+      ],
+      "answer": 0,
+      "explanation": "生日 (ôn HSK2 Bài 6); 把 + 这些花 + 送给 + người."
+     },
+     {
+      "context": "“Ngày mai em trả lại sách cho cô nhé.”",
+      "pre": "你明天再把书",
+      "blank": "还给",
+      "post": "我。",
+      "options": [
+       "还给",
+       "给还",
+       "还"
+      ],
+      "answer": 0,
+      "explanation": "还 huán (ôn HSK3 Bài 3) + 给 + người."
+     },
+     {
+      "context": "“Bạn mang cuốn sách này cho thầy giáo giúp mình nhé.”",
+      "pre": "请你",
+      "blank": "把这本书带给",
+      "post": "老师。",
+      "options": [
+       "把这本书带给",
+       "带给把这本书",
+       "把带给这本书"
+      ],
+      "answer": 0,
+      "explanation": "带 (ôn HSK3 Bài 1) + 给 + người."
+     },
+     {
+      "context": "“Tôi đã tặng quà cho cô ấy rồi.”",
+      "pre": "我",
+      "blank": "把礼物送给她",
+      "post": "了。",
+      "options": [
+       "把礼物送给她",
+       "把她送给礼物",
+       "送给她把礼物"
+      ],
+      "answer": 0,
+      "explanation": "Vật (礼物) đứng sau 把, người (她) đứng sau 给; 礼物 (ôn HSK2 Bài 5)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你明天再把书还我给。",
+      "isCorrect": false,
+      "correctVersion": "你明天再把书还给我。",
+      "explanation": "给 đứng ngay sau động từ: 还给我."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我把那个红色的箱子送给妹妹了。",
+      "isCorrect": true,
+      "explanation": "Đúng: tân ngữ xác định (那个红色的箱子) + 送给 + người. 红色 (ôn HSK2 Bài 4)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ngày mai em trả lại sách cho cô nhé.”",
+      "words": [
+       "你",
+       "明天",
+       "再",
+       "把",
+       "书",
+       "还给",
+       "我",
+       "。"
+      ],
+      "answer": "你明天再把书还给我。",
+      "explanation": "再 đứng trước 把."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đã tặng quà cho cô ấy rồi.”",
+      "words": [
+       "我",
+       "把",
+       "礼物",
+       "送给",
+       "她",
+       "了",
+       "。"
+      ],
+      "answer": "我把礼物送给她了。",
+      "explanation": "把 + 礼物 + 送给 + 她 + 了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn mang cuốn sách này cho thầy giáo giúp mình nhé.”",
+      "words": [
+       "请",
+       "你",
+       "把",
+       "这本书",
+       "带给",
+       "老师",
+       "。"
+      ],
+      "answer": "请你把这本书带给老师。",
+      "explanation": "请 + người + 把…… (ôn HSK2 Bài 1)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đã đưa vở bài tập cho cô giáo rồi.”",
+      "words": [
+       "我",
+       "已经",
+       "把",
+       "作业本",
+       "拿给",
+       "老师",
+       "了",
+       "。"
+      ],
+      "answer": "我已经把作业本拿给老师了。",
+      "explanation": "已经 đứng trước 把; 已经……了 (ôn HSK2 Bài 1)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng câu chữ 把 (2).",
+      "promptLang": "vi",
+      "prompt": "Bạn trả điện thoại lại cho tôi đi.",
+      "answer": "你把手机还给我吧。",
+      "answerPy": "Nǐ bǎ shǒujī huán gěi wǒ ba.",
+      "explanation": "把 + 手机 + 还给 + 我; 吧 đề nghị."
+     }
+    ]
+   }
+  ]
+ }
+}

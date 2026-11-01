@@ -1,0 +1,78 @@
+{
+ "zh": "登门槛效应",
+ "py": "Dēng Ménkǎn Xiàoyìng",
+ "vn": "Hiệu ứng “bước chân qua ngưỡng cửa”",
+ "topic": "Unit 11 观察社会 · Quan sát xã hội",
+ "vocabCount": 29,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "嗯",
+   "explain": "嗯 là THÁN TỪ; cùng một chữ nhưng đọc ba thanh khác nhau tuỳ nghĩa. ① Đọc ńg (thanh 2): biểu thị nghi vấn, hỏi lại — sau 嗯 thường là dấu ？. ② Đọc ňg (thanh 3): biểu thị cảm thấy bất ngờ hoặc cho rằng không nên như vậy — sau 嗯 thường là dấu ！. ③ Đọc ǹg (thanh 4): biểu thị nhận lời hoặc đồng tình — sau 嗯 thường là dấu ，. Phải dựa vào ngữ cảnh để chọn thanh điệu và dấu câu cho đúng.",
+   "rule": "① <strong style=\"color:var(--sky-d)\">嗯 (ńg)</strong>？ + câu hỏi　② <strong style=\"color:var(--sky-d)\">嗯 (ňg)</strong>！ + câu tỏ ý bất ngờ　③ <strong style=\"color:var(--sky-d)\">嗯 (ǹg)</strong>， + lời đồng ý",
+   "examples": [
+    {
+     "zh": "嗯？不是28号，难道是我记错了？",
+     "py": "Ńg? Bú shì èrshíbā hào, nándào shì wǒ jìcuò le?",
+     "vn": "Hả? Không phải ngày 28 à, chẳng lẽ tôi nhớ nhầm?"
+    },
+    {
+     "zh": "嗯！你的房间为什么这么冷？",
+     "py": "Ňg! Nǐ de fángjiān wèi shénme zhème lěng?",
+     "vn": "Ơ! Phòng cậu sao lạnh thế?"
+    },
+    {
+     "zh": "嗯，如果您心情好，我就说件事；心情不好就改天再说。",
+     "py": "Ǹg, rúguǒ nín xīnqíng hǎo, wǒ jiù shuō jiàn shì; xīnqíng bù hǎo jiù gǎitiān zài shuō.",
+     "vn": "Dạ, nếu tâm trạng anh tốt thì em xin nói một việc; tâm trạng không tốt thì hôm khác em nói."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "嗯！我记住了，明天给你发邮件。",
+     "why": "Câu nhận lời, đồng ý → đọc ǹg, sau 嗯 dùng dấu phẩy. Dấu ！ dành cho nghĩa bất ngờ (ňg).",
+     "right": "嗯，我记住了，明天给你发邮件。"
+    },
+    {
+     "wrong": "嗯，我的手机怎么不见了？",
+     "why": "Đang thắc mắc, hỏi lại → đọc ńg, sau 嗯 dùng dấu ？. Dấu phẩy biểu thị đồng ý, không hợp với câu này.",
+     "right": "嗯？我的手机怎么不见了？"
+    }
+   ]
+  },
+  {
+   "point": "轻易",
+   "explain": "轻易 có hai cách dùng. ① TÍNH TỪ, nghĩa là “đơn giản, dễ dàng”, thường làm TRẠNG NGỮ đứng trước động từ: 轻易地请好了, 轻易得到. ② PHÓ TỪ, biểu thị thái độ làm việc không thận trọng, tuỳ tiện; thường dùng trong câu phủ định tạo khung “轻易不……” (hoặc 不轻易……), nghĩa là “rất ít khi (làm) …”, “không dễ gì (làm) …”. Lưu ý: nói nội dung một việc không khó (làm vị ngữ độc lập) thì dùng 容易, không dùng 轻易.",
+   "rule": "① <strong style=\"color:var(--sky-d)\">轻易</strong> (地) + V　② <strong style=\"color:var(--sky-d)\">轻易不</strong> / 不<strong style=\"color:var(--sky-d)\">轻易</strong> + V",
+   "examples": [
+    {
+     "zh": "领导有了兴趣，假，就这样轻易地请好了。",
+     "py": "Lǐngdǎo yǒule xìngqù, jià, jiù zhèyàng qīngyì de qǐnghǎo le.",
+     "vn": "Sếp thấy tò mò, thế là việc xin nghỉ được giải quyết dễ dàng như vậy."
+    },
+    {
+     "zh": "任何胜利都不是轻易得到的，背后都要付出艰辛的努力。",
+     "py": "Rènhé shènglì dōu bú shì qīngyì dédào de, bèihòu dōu yào fùchū jiānxīn de nǔlì.",
+     "vn": "Bất kỳ thắng lợi nào cũng không dễ dàng có được, phía sau đều phải bỏ ra nỗ lực gian khổ."
+    },
+    {
+     "zh": "他为人好强，轻易不求人，这次向咱们借钱，一定是遇到什么难事了。",
+     "py": "Tā wéirén hàoqiáng, qīngyì bù qiú rén, zhè cì xiàng zánmen jiè qián, yídìng shì yùdào shénme nánshì le.",
+     "vn": "Anh ấy tính hiếu thắng, rất ít khi nhờ vả ai, lần này hỏi vay tiền chúng ta, chắc chắn là gặp chuyện gì khó khăn rồi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "今天的考试很轻易。",
+     "why": "Làm vị ngữ độc lập, nói nội dung bài thi không khó → phải dùng 容易. 轻易 thường đứng trước động từ làm trạng ngữ.",
+     "right": "今天的考试很容易。"
+    },
+    {
+     "wrong": "他这个人容易不求人。",
+     "why": "Nghĩa “rất ít khi …” là cách dùng phó từ của 轻易: 轻易不 + V. 容易 không có cách dùng này.",
+     "right": "他这个人轻易不求人。"
+    }
+   ]
+  }
+ ]
+}

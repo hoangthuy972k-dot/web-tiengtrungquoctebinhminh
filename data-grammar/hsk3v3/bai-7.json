@@ -1,0 +1,753 @@
+{
+ "/lessons/hsk3v3-bai-7.html": {
+  "points": [
+   {
+    "title": "Câu liên động (2) 「động từ₁ + 着 + động từ₂」 — làm việc 2 theo cách / trạng thái 1",
+    "errors": [
+     {
+      "wrong": "咱们可以走去着。",
+      "why": "着 đi sau động từ thứ nhất (cách thức), không đặt ở cuối câu.",
+      "right": "咱们可以走着去。"
+     },
+     {
+      "wrong": "他们坐看电视。",
+      "why": "dịch thẳng “ngồi xem ti vi” nên thiếu 着: động từ chỉ cách thức phải có 着 (坐着).",
+      "right": "他们坐着看电视。"
+     },
+     {
+      "wrong": "我们走路着去商场吧。",
+      "why": "着 phải đứng ngay sau động từ 走, không đứng sau cả cụm 走路 (nói 走着去 hoặc 走路去).",
+      "right": "我们走着去商场吧。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: nhìn tranh hoàn thành câu (Vương Nhất Tuyết đứng trong bếp nấu ăn).",
+      "pre": "王一雪",
+      "blank": "站着做饭",
+      "post": "。",
+      "options": [
+       "站着做饭",
+       "站做饭着",
+       "做饭站着"
+      ],
+      "answer": 0,
+      "explanation": "站着 (cách thức) + 做饭 (hành động chính); 站 (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "Sách: nhìn tranh hoàn thành câu (Lưu Tiểu Tuyết ngồi trên ghế sofa bưng bát ăn cơm).",
+      "pre": "刘小雪",
+      "blank": "坐着吃饭",
+      "post": "。",
+      "options": [
+       "坐着吃饭",
+       "坐吃着饭",
+       "吃饭坐着"
+      ],
+      "answer": 0,
+      "explanation": "坐着 + 吃饭: ngồi ăn cơm."
+     },
+     {
+      "context": "Sách: nhìn tranh hoàn thành câu (người phục vụ mỉm cười ghi món cho khách).",
+      "pre": "服务员",
+      "blank": "笑着帮他点菜",
+      "post": "。",
+      "options": [
+       "笑着帮他点菜",
+       "笑帮他着点菜",
+       "帮他点菜笑着"
+      ],
+      "answer": 0,
+      "explanation": "笑着 + V: vừa cười vừa làm; 点菜 (ôn HSK3 Bài 2)."
+     },
+     {
+      "context": "“Chúng mình có thể đi bộ đến đó.”",
+      "pre": "咱们可以",
+      "blank": "走着",
+      "post": "去。",
+      "options": [
+       "走着",
+       "走路着",
+       "着走"
+      ],
+      "answer": 0,
+      "explanation": "走着去 = đi bộ đi; 咱们 (ôn HSK3 Bài 3)."
+     },
+     {
+      "context": "“Em trai vừa ăn táo vừa làm bài tập.”",
+      "pre": "弟弟",
+      "blank": "吃着苹果",
+      "post": "写作业。",
+      "options": [
+       "吃着苹果",
+       "吃苹果着",
+       "着吃苹果"
+      ],
+      "answer": 0,
+      "explanation": "V₁ + 着 + O₁ + V₂ + O₂: 着 đứng ngay sau 吃."
+     },
+     {
+      "context": "“Cô ấy thích vừa nghe nhạc vừa chạy bộ.”",
+      "pre": "她喜欢",
+      "blank": "听着音乐",
+      "post": "跑步。",
+      "options": [
+       "听着音乐",
+       "听音乐着",
+       "着听音乐"
+      ],
+      "answer": 0,
+      "explanation": "音乐 (ôn HSK3 Bài 5); 跑步 (HSK2 Bài 7)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们走路着去商场吧。",
+      "isCorrect": false,
+      "correctVersion": "我们走着去商场吧。",
+      "explanation": "着 đi ngay sau động từ 走: 走着去."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "妈妈笑着说：“你长高了！”",
+      "isCorrect": true,
+      "explanation": "笑着 + 说 — cách thức của hành động nói; 长高 (ôn HSK3 Bài 1)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Họ ngồi xem ti vi.”",
+      "words": [
+       "他们",
+       "坐",
+       "着",
+       "看",
+       "电视",
+       "。"
+      ],
+      "answer": "他们坐着看电视。",
+      "explanation": "V₁ + 着 + V₂ + O."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng mình đi bộ đến siêu thị nhé.”",
+      "words": [
+       "咱们",
+       "走",
+       "着",
+       "去",
+       "超市",
+       "吧",
+       "。"
+      ],
+      "answer": "咱们走着去超市吧。",
+      "explanation": "走着 + 去 + nơi chốn; 吧 đề nghị."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô ấy mặc chiếc váy màu vàng đi nghe hoà nhạc.”",
+      "words": [
+       "她",
+       "穿",
+       "着",
+       "黄色的",
+       "裙子",
+       "去",
+       "听",
+       "音乐会",
+       "。"
+      ],
+      "answer": "她穿着黄色的裙子去听音乐会。",
+      "explanation": "穿着 + O₁ + 去 + V₂ + O₂; 音乐会 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bố tôi thích ngồi đọc sách.”",
+      "words": [
+       "我",
+       "爸爸",
+       "喜欢",
+       "坐",
+       "着",
+       "看书",
+       "。"
+      ],
+      "answer": "我爸爸喜欢坐着看书。",
+      "explanation": "坐着 + 看书."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 着.",
+      "promptLang": "vi",
+      "prompt": "Hôm qua tôi đi xe đạp đến trường.",
+      "answer": "昨天我骑着自行车去学校了。",
+      "answerPy": "Zuótiān wǒ qízhe zìxíngchē qù xuéxiào le.",
+      "explanation": "骑着自行车 (cách thức) + 去学校; 骑 (ôn HSK3 Bài 4)."
+     }
+    ]
+   },
+   {
+    "title": "Câu so sánh (10) 「A 不比 B + tính từ」 — A cũng chẳng hơn B (là mấy)",
+    "errors": [
+     {
+      "wrong": "裙子不比短裤很贵。",
+      "why": "sau “不比 B” dùng tính từ trơn (có thể thêm 多少), không thêm 很.",
+      "right": "裙子不比短裤贵多少。"
+     },
+     {
+      "wrong": "我不比他高。（muốn nói: Tôi thấp hơn anh ấy）",
+      "why": "不比 không có nghĩa “kém hơn”, chỉ có nghĩa “không hơn, xấp xỉ”; muốn nói thấp hơn thì dùng 没有……高 hoặc 比……矮.",
+      "right": "我没有他高。／我比他矮。"
+     },
+     {
+      "wrong": "裙子比短裤不贵多少。",
+      "why": "不 đặt TRƯỚC 比 (A 不比 B + Adj), không đặt trước tính từ.",
+      "right": "裙子不比短裤贵多少。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: A: 天中学中文的时间更长，他的中文水平比家月高吗？",
+      "pre": "他的中文水平",
+      "blank": "不比家月高多少",
+      "post": "。",
+      "options": [
+       "不比家月高多少",
+       "比家月不高多少",
+       "不比家月很高"
+      ],
+      "answer": 0,
+      "explanation": "Phản bác ý kiến: A 不比 B + Adj + 多少; 水平 (ôn HSK3 Bài 5)."
+     },
+     {
+      "context": "Sách: A: 你姐姐一个人住，她一定比你更会做饭吧？",
+      "pre": "她做饭",
+      "blank": "不比我好多少",
+      "post": "。",
+      "options": [
+       "不比我好多少",
+       "比我不好多少",
+       "不比我很好"
+      ],
+      "answer": 0,
+      "explanation": "Phản bác: chị ấy nấu cũng chẳng hơn tôi là mấy; 一定 (ôn HSK3 Bài 4)."
+     },
+     {
+      "context": "Sách: A: 我觉得篮球比足球更有意思，你觉得呢？",
+      "pre": "篮球",
+      "blank": "不比足球有意思",
+      "post": "，你多跟我去踢一踢足球就知道了。",
+      "options": [
+       "不比足球有意思",
+       "比足球不有意思",
+       "不比足球很有意思"
+      ],
+      "answer": 0,
+      "explanation": "Phản bác ý kiến người khác bằng 不比; 篮球、足球 (HSK2 Bài 7)."
+     },
+     {
+      "context": "“Váy cũng không đắt hơn quần soóc bao nhiêu.”",
+      "pre": "裙子",
+      "blank": "不比",
+      "post": "短裤贵多少。",
+      "options": [
+       "不比",
+       "比不",
+       "不是比"
+      ],
+      "answer": 0,
+      "explanation": "Thứ tự đúng: 不 + 比."
+     },
+     {
+      "context": "“Anh ấy chạy cũng không nhanh hơn tôi là mấy.”",
+      "pre": "他跑得",
+      "blank": "不比我快多少",
+      "post": "。",
+      "options": [
+       "不比我快多少",
+       "比我不快多少",
+       "不比我很快"
+      ],
+      "answer": 0,
+      "explanation": "Bổ ngữ trạng thái (HSK2 Bài 7) + 不比."
+     },
+     {
+      "context": "“Anh thấy chiếc váy kia đẹp hơn quần soóc.”",
+      "pre": "我觉得那条裙子比短裤",
+      "blank": "更",
+      "post": "好看。",
+      "options": [
+       "更",
+       "很",
+       "非常"
+      ],
+      "answer": 0,
+      "explanation": "Trong câu 比, trước tính từ chỉ dùng 更 / 还 (HSK2 Bài 8), không dùng 很 / 非常."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个西瓜不比那个很甜。",
+      "isCorrect": false,
+      "correctVersion": "这个西瓜不比那个甜。",
+      "explanation": "Sau 不比 B dùng tính từ trơn, bỏ 很."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "坐地铁不比打车慢多少，而且便宜多了。",
+      "isCorrect": true,
+      "explanation": "不比 + B + Adj + 多少 — đúng; 地铁 (HSK2 Bài 12), 打车 (HSK2 Bài 2), 便宜多了 (HSK2 Bài 12)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Váy cũng không đắt hơn quần soóc bao nhiêu.”",
+      "words": [
+       "裙子",
+       "不",
+       "比",
+       "短裤",
+       "贵",
+       "多少",
+       "。"
+      ],
+      "answer": "裙子不比短裤贵多少。",
+      "explanation": "A + 不比 + B + Adj + 多少."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tiếng Trung của anh ấy cũng chẳng giỏi hơn bạn.”",
+      "words": [
+       "他的",
+       "中文",
+       "不",
+       "比",
+       "你",
+       "好",
+       "。"
+      ],
+      "answer": "他的中文不比你好。",
+      "explanation": "A + 不比 + B + Adj."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm nay cũng không nóng hơn hôm qua là mấy.”",
+      "words": [
+       "今天",
+       "不",
+       "比",
+       "昨天",
+       "热",
+       "多少",
+       "。"
+      ],
+      "answer": "今天不比昨天热多少。",
+      "explanation": "不比……热多少."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Váy đẹp hơn quần soóc.”",
+      "words": [
+       "裙子",
+       "比",
+       "短裤",
+       "更",
+       "好看",
+       "。"
+      ],
+      "answer": "裙子比短裤更好看。",
+      "explanation": "比 + 更 + Adj."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 不比.",
+      "promptLang": "vi",
+      "prompt": "Khách sạn này cũng không đắt hơn khách sạn kia bao nhiêu, hơn nữa còn sạch hơn.",
+      "answer": "这家宾馆不比那家贵多少，而且更干净。",
+      "answerPy": "Zhè jiā bīnguǎn bù bǐ nà jiā guì duōshao, érqiě gèng gānjìng.",
+      "explanation": "宾馆、干净 (ôn HSK3 Bài 4); 而且 (từ mới bài này)."
+     }
+    ]
+   },
+   {
+    "title": "Bổ ngữ trình độ (3) 「极了」 — … cực kỳ, … vô cùng",
+    "errors": [
+     {
+      "wrong": "这块西瓜很甜极了。",
+      "why": "đã dùng 极了 thì không thêm 很 / 非常 trước tính từ.",
+      "right": "这块西瓜甜极了。"
+     },
+     {
+      "wrong": "今年夏天热极。",
+      "why": "bổ ngữ trình độ phải là 极了 — không bỏ 了.",
+      "right": "今年夏天热极了。"
+     },
+     {
+      "wrong": "我极了喜欢这本书。",
+      "why": "dịch theo trật tự “cực kỳ thích”: 极了 là bổ ngữ, phải đứng SAU động từ tâm lý / tính từ.",
+      "right": "这本书我喜欢极了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: hoàn thành câu “她做的中国菜……”",
+      "pre": "她做的中国菜",
+      "blank": "好吃极了",
+      "post": "。",
+      "options": [
+       "好吃极了",
+       "很好吃极了",
+       "极了好吃"
+      ],
+      "answer": 0,
+      "explanation": "Adj + 极了; định ngữ 她做的 (HSK2 Bài 2)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “我昨天晚上睡得……”",
+      "pre": "我昨天晚上睡得",
+      "blank": "好极了",
+      "post": "。",
+      "options": [
+       "好极了",
+       "极了好",
+       "很好极了"
+      ],
+      "answer": 0,
+      "explanation": "Bổ ngữ trạng thái 睡得 (HSK2 Bài 7) + 好极了."
+     },
+     {
+      "context": "Sách: hoàn thành câu “这些水果五块钱，真是……”",
+      "pre": "这些水果五块钱，真是",
+      "blank": "便宜极了",
+      "post": "。",
+      "options": [
+       "便宜极了",
+       "便宜极",
+       "很便宜极了"
+      ],
+      "answer": 0,
+      "explanation": "便宜 (HSK1 Bài 10) + 极了."
+     },
+     {
+      "context": "“Mùa hè năm nay nóng vô cùng.”",
+      "pre": "今年夏天",
+      "blank": "热极了",
+      "post": "。",
+      "options": [
+       "热极了",
+       "热极",
+       "很热极了"
+      ],
+      "answer": 0,
+      "explanation": "Adj + 极了 (có 了)."
+     },
+     {
+      "context": "“Cuốn sách này tôi thích vô cùng.”",
+      "pre": "这本书我",
+      "blank": "喜欢极了",
+      "post": "。",
+      "options": [
+       "喜欢极了",
+       "极了喜欢",
+       "很喜欢极了"
+      ],
+      "answer": 0,
+      "explanation": "Động từ tâm lý + 极了."
+     },
+     {
+      "context": "“Nghe nói con thi rất tốt, mẹ vui cực kỳ.”",
+      "pre": "听说你考得很好，妈妈",
+      "blank": "高兴极了",
+      "post": "。",
+      "options": [
+       "高兴极了",
+       "高兴极",
+       "非常高兴极了"
+      ],
+      "answer": 0,
+      "explanation": "听说 (ôn HSK3 Bài 3); không dùng 非常 cùng 极了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这块冰西瓜非常甜极了。",
+      "isCorrect": false,
+      "correctVersion": "这块冰西瓜甜极了。",
+      "explanation": "Bỏ 非常: đã có 极了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你的照片照得漂亮极了！",
+      "isCorrect": true,
+      "explanation": "Bổ ngữ trạng thái + 极了 — đúng; 照 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Miếng dưa hấu ướp lạnh này ngọt cực kỳ.”",
+      "words": [
+       "这块",
+       "冰",
+       "西瓜",
+       "甜",
+       "极了",
+       "。"
+      ],
+      "answer": "这块冰西瓜甜极了。",
+      "explanation": "甜 + 极了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mùa hè năm nay nóng vô cùng.”",
+      "words": [
+       "今年",
+       "夏天",
+       "热",
+       "极了",
+       "。"
+      ],
+      "answer": "今年夏天热极了。",
+      "explanation": "热极了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Món ăn mẹ nấu ngon cực kỳ.”",
+      "words": [
+       "妈妈",
+       "做",
+       "的",
+       "菜",
+       "好吃",
+       "极了",
+       "。"
+      ],
+      "answer": "妈妈做的菜好吃极了。",
+      "explanation": "Định ngữ 妈妈做的 + 好吃极了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm nay được nghỉ, tôi vui vô cùng.”",
+      "words": [
+       "今天",
+       "休息",
+       "，",
+       "我",
+       "高兴",
+       "极了",
+       "。"
+      ],
+      "answer": "今天休息，我高兴极了。",
+      "explanation": "高兴极了; 休息 (HSK1 Bài 5)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 极了.",
+      "promptLang": "vi",
+      "prompt": "Khu dân cư mới của chúng tôi đẹp vô cùng.",
+      "answer": "我们的新小区漂亮极了。",
+      "answerPy": "Wǒmen de xīn xiǎoqū piàoliang jí le.",
+      "explanation": "小区 (ôn HSK3 Bài 3) + 漂亮极了; không thêm 很."
+     }
+    ]
+   },
+   {
+    "title": "Câu ghép tăng tiến 「不但……，而且……」 — không những… mà còn…",
+    "errors": [
+     {
+      "wrong": "不但家月喜欢唱歌，而且唱得很好听。",
+      "why": "hai vế cùng chủ ngữ (家月) → 不但 đặt SAU chủ ngữ.",
+      "right": "家月不但喜欢唱歌，而且唱得很好听。"
+     },
+     {
+      "wrong": "家月不但会说汉语，而且天中也会说汉语。",
+      "why": "hai vế khác chủ ngữ → 不但 đặt TRƯỚC chủ ngữ thứ nhất.",
+      "right": "不但家月会说汉语，而且天中也会说汉语。"
+     },
+     {
+      "wrong": "这个西瓜不但大，但是很甜。",
+      "why": "vế sau dùng 而且 (tăng tiến), không dùng 但是 (chuyển ý) — người Việt hay nhầm vì chữ “mà” vừa là “nhưng” vừa là “mà còn”.",
+      "right": "这个西瓜不但大，而且很甜。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: A: 为什么很多人喜欢坐高铁？",
+      "pre": "因为高铁",
+      "blank": "不但很快，而且很舒服",
+      "post": "。",
+      "options": [
+       "不但很快，而且很舒服",
+       "不但很快，但是很舒服",
+       "而且很快，不但很舒服"
+      ],
+      "answer": 0,
+      "explanation": "Cùng chủ ngữ 高铁 → 不但 sau chủ ngữ; 高铁 (ôn HSK3 Bài 6), 舒服 (HSK2 Bài 6)."
+     },
+     {
+      "context": "Sách: A: 你为什么喜欢在网上买东西？",
+      "pre": "因为在网上买东西",
+      "blank": "不但便宜，而且很方便",
+      "post": "。",
+      "options": [
+       "不但便宜，而且很方便",
+       "便宜不但，而且很方便",
+       "不但便宜，所以很方便"
+      ],
+      "answer": 0,
+      "explanation": "网上 (HSK2 Bài 2); 方便 (ôn HSK3 Bài 2)."
+     },
+     {
+      "context": "Sách: A: 你们班谁会打篮球？",
+      "pre": "你们班谁会打篮球？——",
+      "blank": "不但天中会打篮球，而且家月也会打",
+      "post": "。",
+      "options": [
+       "不但天中会打篮球，而且家月也会打",
+       "天中不但会打篮球，而且家月也会打",
+       "不但天中会打篮球，而且家月会也打"
+      ],
+      "answer": 0,
+      "explanation": "Khác chủ ngữ → 不但 trước 天中, vế sau có 也; 打篮球 (HSK2 Bài 7)."
+     },
+     {
+      "context": "“Ti vi bây giờ không những rẻ mà còn dùng rất tiện.”",
+      "pre": "现在的电视",
+      "blank": "不但",
+      "post": "便宜，而且用着非常方便。",
+      "options": [
+       "不但",
+       "但是",
+       "虽然"
+      ],
+      "answer": 0,
+      "explanation": "不但……而且…… — tăng tiến."
+     },
+     {
+      "context": "“Gia Nguyệt không những thích hát mà còn hát rất hay.”",
+      "pre": "家月不但喜欢唱歌，",
+      "blank": "而且",
+      "post": "唱得很好听。",
+      "options": [
+       "而且",
+       "但是",
+       "所以"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau dùng 而且; bổ ngữ trạng thái 唱得很好听 (HSK2 Bài 7)."
+     },
+     {
+      "context": "“Ở lớp chúng tôi, không những Gia Nguyệt biết nói tiếng Hán mà Thiên Trung cũng biết.”",
+      "pre": "在我们班，",
+      "blank": "不但家月",
+      "post": "会说汉语，而且天中也会说汉语。",
+      "options": [
+       "不但家月",
+       "家月不但",
+       "家月但是"
+      ],
+      "answer": 0,
+      "explanation": "Khác chủ ngữ → 不但 + 家月."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这家饭馆的菜不但好吃，但是很便宜。",
+      "isCorrect": false,
+      "correctVersion": "这家饭馆的菜不但好吃，而且很便宜。",
+      "explanation": "Tăng tiến dùng 而且, không dùng 但是."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "不但我喜欢这个小区，而且我爸爸妈妈也很喜欢。",
+      "isCorrect": true,
+      "explanation": "Khác chủ ngữ: 不但 + 我…，而且 + 爸爸妈妈 + 也… — đúng; 小区 (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ti vi bây giờ không những rẻ mà còn dùng rất tiện.”",
+      "words": [
+       "现在的",
+       "电视",
+       "不但",
+       "便宜",
+       "，",
+       "而且",
+       "用着",
+       "非常",
+       "方便",
+       "。"
+      ],
+      "answer": "现在的电视不但便宜，而且用着非常方便。",
+      "explanation": "Cùng chủ ngữ: S + 不但 A，而且 B."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô ấy không những biết nấu ăn mà còn nấu rất ngon.”",
+      "words": [
+       "她",
+       "不但",
+       "会",
+       "做饭",
+       "，",
+       "而且",
+       "做",
+       "得",
+       "很",
+       "好吃",
+       "。"
+      ],
+      "answer": "她不但会做饭，而且做得很好吃。",
+      "explanation": "不但 sau chủ ngữ 她; 做得很好吃 (HSK2 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Không những tôi muốn đi, mà em gái tôi cũng muốn đi.”",
+      "words": [
+       "不但",
+       "我",
+       "想",
+       "去",
+       "，",
+       "而且",
+       "我",
+       "妹妹",
+       "也",
+       "想",
+       "去",
+       "。"
+      ],
+      "answer": "不但我想去，而且我妹妹也想去。",
+      "explanation": "Khác chủ ngữ: 不但 + S₁…，而且 + S₂ + 也…."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Dưa hấu ở đây không những to mà còn rất ngọt.”",
+      "words": [
+       "这里的",
+       "西瓜",
+       "不但",
+       "大",
+       "，",
+       "而且",
+       "很",
+       "甜",
+       "。"
+      ],
+      "answer": "这里的西瓜不但大，而且很甜。",
+      "explanation": "Cùng chủ ngữ 西瓜."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 不但……，而且…….",
+      "promptLang": "vi",
+      "prompt": "Mua đồ trên mạng không những rẻ mà còn rất tiện.",
+      "answer": "在网上买东西不但便宜，而且很方便。",
+      "answerPy": "Zài wǎngshang mǎi dōngxi búdàn piányi, érqiě hěn fāngbiàn.",
+      "explanation": "Cùng chủ ngữ (在网上买东西) → 不但 sau chủ ngữ."
+     }
+    ]
+   }
+  ]
+ }
+}

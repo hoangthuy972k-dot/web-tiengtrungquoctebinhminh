@@ -1,0 +1,931 @@
+[
+ {
+  "so": "1",
+  "ten": "「何况」",
+  "tenVn": "",
+  "cauTruc": [
+   "连 A 都……，(更) 何况 B 呢？",
+   "……，(又) 何况 ……(bổ sung lý do)"
+  ],
+  "giaiThich": "何况 là liên từ, dùng giọng PHẢN VẤN để tiến thêm một bước: vế trước nêu trường hợp A, vế sau “huống chi” B — kết luận hiển nhiên, có ý “khỏi phải nói”. Ngoài ra 何况 còn dùng để BỔ SUNG thêm một lý do (= hơn nữa).",
+  "viDu": [
+   {
+    "zh": "……缺少了激烈紧张的气氛，连运动员都不满意，更何况看比赛的球迷呢？",
+    "py": "…… quēshǎole jīliè jǐnzhāng de qìfēn, lián yùndòngyuán dōu bù mǎnyì, gèng hékuàng kàn bǐsài de qiúmí ne?",
+    "vn": "… thiếu hẳn bầu không khí sôi nổi căng thẳng, ngay cả vận động viên cũng không hài lòng, huống chi là người hâm mộ xem trận đấu?"
+   },
+   {
+    "zh": "北京的发展变化太快，我这个土生土长的老北京还常迷路呢，何况你一个外地人。",
+    "py": "Běijīng de fāzhǎn biànhuà tài kuài, wǒ zhège tǔ shēng tǔ zhǎng de lǎo Běijīng hái cháng mílù ne, hékuàng nǐ yí ge wàidì rén.",
+    "vn": "Bắc Kinh thay đổi nhanh quá, dân Bắc Kinh gốc như tôi còn hay lạc đường, huống chi bạn là người nơi khác."
+   },
+   {
+    "zh": "这辆车外观漂亮，安全性高，又何况价钱也就比上次看的那辆贵了几千块，小王有点儿动心了。",
+    "py": "Zhè liàng chē wàiguān piàoliang, ānquánxìng gāo, yòu hékuàng jiàqian yě jiù bǐ shàng cì kàn de nà liàng guìle jǐ qiān kuài, Xiǎo Wáng yǒudiǎnr dòngxīn le.",
+    "vn": "Chiếc xe này dáng đẹp, độ an toàn cao, hơn nữa giá cũng chỉ đắt hơn chiếc lần trước xem vài nghìn tệ, Tiểu Vương hơi xiêu lòng rồi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "连老师都不会做这道题。何况我们。",
+    "why": "何况 nối vế sau với vế trước trong CÙNG một câu, không tách thành câu riêng; câu phản vấn nên có 呢？.",
+    "dung": "连老师都不会做这道题，何况我们呢？"
+   },
+   {
+    "sai": "这道题连我们都会做，何况老师不会做呢？",
+    "why": "Vế sau của 何况 phải cùng chiều với vế trước (A còn làm được → B càng làm được), không lật ngược nghĩa.",
+    "dung": "这道题连我们都会做，何况老师呢？"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "连运动员都不满意，更",
+       "看比赛的球迷呢？"
+      ],
+      "dap": [
+       [
+        "何况"
+       ]
+      ],
+      "chon": [
+       "何况",
+       "何必",
+       "多亏"
+      ],
+      "goiY": "“Ngay cả vận động viên còn không hài lòng, huống chi người hâm mộ?”",
+      "giai": "连 A 都……，更何况 B 呢？ — tiến thêm một bước."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这道题连老师都觉得难，",
+       "我们呢？"
+      ],
+      "dap": [
+       [
+        "何况"
+       ]
+      ],
+      "chon": [
+       "何况",
+       "何必",
+       "仿佛"
+      ],
+      "goiY": "Vế trước có 连……都……, vế sau kết thúc bằng 呢？",
+      "giai": "Mẫu 连……都……，何况……呢？ (ôn 连……都 của HSK 4)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件衣服太贵了，",
+       "颜色我也不喜欢。"
+      ],
+      "dap": [
+       [
+        "何况"
+       ]
+      ],
+      "chon": [
+       "何况",
+       "何必",
+       "连忙"
+      ],
+      "goiY": "Bổ sung thêm một lý do: “hơn nữa màu tôi cũng không thích”.",
+      "giai": "Cách dùng thứ hai: 何况 bổ sung lý do (= hơn nữa)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "年轻人都受不了这么激烈的运动，",
+       "一个有病的老人呢？"
+      ],
+      "dap": [
+       [
+        "何况"
+       ]
+      ],
+      "chon": [
+       "何况",
+       "多亏",
+       "何必"
+      ],
+      "goiY": "“Người trẻ còn chịu không nổi, huống chi một ông cụ bị bệnh?”",
+      "giai": "Kết luận hiển nhiên → 何况."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "外面下着大雨，",
+       "你还没带伞，今天就别出去了。"
+      ],
+      "dap": [
+       [
+        "何况"
+       ]
+      ],
+      "chon": [
+       "何况",
+       "何必",
+       "多亏"
+      ],
+      "goiY": "Hai lý do để khuyên ở nhà: trời mưa + không mang ô.",
+      "giai": "何况 nối lý do thứ hai, mạnh hơn lý do thứ nhất."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这个周末我要复习考试，",
+       "我还答应了帮妈妈做饭，恐怕没时间去打球。"
+      ],
+      "dap": [
+       [
+        "何况"
+       ]
+      ],
+      "chon": [
+       "何况",
+       "何必",
+       "仿佛"
+      ],
+      "goiY": "“Cuối tuần phải ôn thi, hơn nữa còn hứa giúp mẹ nấu cơm.”",
+      "giai": "Bổ sung lý do bằng 何况 (ôn 答应, 恐怕)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "连运动员",
+       "都不满意",
+       "，",
+       "更何况",
+       "球迷呢",
+       "？"
+      ],
+      "dap": [
+       "连运动员都不满意，更何况球迷呢？"
+      ],
+      "goiY": "Ngay cả vận động viên còn không hài lòng, huống chi là người hâm mộ?",
+      "giai": "连……都…… ở vế trước, 更何况……呢 ở vế sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这么冷的天",
+       "大人都",
+       "受不了",
+       "，",
+       "何况",
+       "孩子呢",
+       "？"
+      ],
+      "dap": [
+       "这么冷的天大人都受不了，何况孩子呢？"
+      ],
+      "goiY": "Trời lạnh thế này người lớn còn chịu không nổi, huống chi trẻ con?",
+      "giai": "A 都……，何况 B 呢？"
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这家饭馆",
+       "菜很好吃",
+       "，",
+       "何况",
+       "离学校",
+       "也很近",
+       "。"
+      ],
+      "dap": [
+       "这家饭馆菜很好吃，何况离学校也很近。"
+      ],
+      "goiY": "Quán này món ngon, hơn nữa lại gần trường.",
+      "giai": "何况 bổ sung thêm lý do."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这道题连我都会做，何况你呢？",
+      "dung": true,
+      "giai": "Đúng: “tôi còn làm được, huống chi bạn” — hai vế cùng chiều."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "何况他是你的朋友，你应该帮他。",
+      "dung": false,
+      "sua": "一般人你都愿意帮，何况他是你的朋友呢？",
+      "giai": "何况 không mở đầu câu độc lập; ở đây ý là “huống chi anh ấy là bạn bạn” nên phải có vế trước."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他不满意，何况我也满意。",
+      "dung": false,
+      "sua": "连他都不满意，何况我呢？",
+      "giai": "Hai vế của 何况 phải cùng chiều, không được ngược nghĩa."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tiếng Anh tôi còn nói chưa tốt, huống chi là tiếng Trung?",
+      "dap": [
+       "我连英语都说不好，何况汉语呢？",
+       "我英语都说不好，何况汉语呢？",
+       "连英语我都说不好，何况汉语呢？"
+      ],
+      "py": "Wǒ lián Yīngyǔ dōu shuō bu hǎo, hékuàng Hànyǔ ne?",
+      "goiY": "Dịch sang tiếng Trung, dùng 连……都……，何况……呢？",
+      "giai": "A còn chưa làm được, huống chi B khó hơn."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Trời đã tối, hơn nữa bạn lại không quen đường, để tôi đưa bạn về.",
+      "dap": [
+       "天已经黑了，何况你又不认识路，我送你回去吧。",
+       "天已经黑了，何况你也不认识路，我送你回去吧。",
+       "天已经黑了，何况你不认识路，我送你回去吧。"
+      ],
+      "py": "Tiān yǐjīng hēi le, hékuàng nǐ yòu bú rènshi lù, wǒ sòng nǐ huíqu ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 何况 bổ sung lý do.",
+      "giai": "何况 + lý do thứ hai."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这段山路比较危险，＿＿＿，还是让我来开吧。",
+      "goiY": "thêm lý do: bạn mới học lái xe (dùng 何况) — câu của sách",
+      "mau": "这段山路比较危险，何况你刚学会开车，还是让我来开吧。",
+      "can": [
+       [
+        "何况"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：这烤鸭不是你最爱吃的吗？今天怎么一口都不吃？　B：我正在减肥，连＿＿＿？",
+      "goiY": "ngay cả cơm cũng không dám ăn nhiều, huống chi là vịt quay (dùng 何况) — câu của sách",
+      "mau": "我正在减肥，连米饭都不敢多吃，何况烤鸭呢？",
+      "can": [
+       [
+        "何况"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「何况」 (连……都……，何况……呢？ hoặc bổ sung lý do), nói về việc học hoặc thể thao của em",
+      "mau": "这项运动连运动员都觉得累，何况我们这些初学者呢？",
+      "can": [
+       [
+        "何况"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「何必」",
+  "tenVn": "",
+  "cauTruc": [
+   "何必 + V / 这么 + Adj + 呢？",
+   "何必……呢？……不就行了吗？"
+  ],
+  "giaiThich": "何必 là phó từ, dùng giọng PHẢN VẤN để nói “không cần phải …” (= 不必). Cuối câu thường có 呢, hay đi kèm vế “……不就行了吗？” để đưa ra cách đơn giản hơn.",
+  "viDu": [
+   {
+    "zh": "何必这么麻烦呢？把篮筐的底去掉不就行了吗？",
+    "py": "Hébì zhème máfan ne? Bǎ lánkuāng de dǐ qùdiào bú jiù xíng le ma?",
+    "vn": "Sao phải phiền phức thế? Bỏ đáy giỏ đi chẳng phải là xong sao?"
+   },
+   {
+    "zh": "食堂楼下就有个小超市，何必去学校外边呢？",
+    "py": "Shítáng lóu xià jiù yǒu ge xiǎo chāoshì, hébì qù xuéxiào wàibian ne?",
+    "vn": "Ngay dưới nhà ăn có siêu thị nhỏ, cần gì phải ra ngoài trường?"
+   },
+   {
+    "zh": "你何必亲自送一趟呢？叫个快递不就行了？",
+    "py": "Nǐ hébì qīnzì sòng yí tàng ne? Jiào ge kuàidì bú jiù xíng le?",
+    "vn": "Bạn cần gì phải tự mang đi một chuyến? Gọi chuyển phát nhanh chẳng phải là xong sao?"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "——要我帮忙吗？——何必了，谢谢。",
+    "why": "何必 không đứng một mình để trả lời; câu trần thuật từ chối dùng 不必.",
+    "dung": "——要我帮忙吗？——不必了，谢谢。"
+   },
+   {
+    "sai": "何必你亲自去呢？",
+    "why": "何必 là phó từ, đứng SAU chủ ngữ, trước động từ.",
+    "dung": "你何必亲自去呢？"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "这么麻烦呢？把篮筐的底去掉不就行了吗？"
+      ],
+      "dap": [
+       [
+        "何必"
+       ]
+      ],
+      "chon": [
+       "何必",
+       "何况",
+       "多亏"
+      ],
+      "goiY": "“Cần gì phải phiền phức thế?”",
+      "giai": "Phản vấn “không cần phải” → 何必……呢？"
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "食堂楼下就有个小超市，",
+       "去学校外边呢？"
+      ],
+      "dap": [
+       [
+        "何必"
+       ]
+      ],
+      "chon": [
+       "何必",
+       "何况",
+       "连忙"
+      ],
+      "goiY": "“Dưới nhà ăn có siêu thị, cần gì phải ra ngoài trường?”",
+      "giai": "何必 + V + 呢？"
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只是一次小考试，你",
+       "那么紧张呢？"
+      ],
+      "dap": [
+       [
+        "何必"
+       ]
+      ],
+      "chon": [
+       "何必",
+       "不必",
+       "何况"
+      ],
+      "goiY": "Câu có 呢？ — giọng phản vấn.",
+      "giai": "Có 呢 và dấu hỏi → 何必; 不必 dùng cho câu trần thuật."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "谢谢，",
+       "送了，我自己回去吧。"
+      ],
+      "dap": [
+       [
+        "不必"
+       ]
+      ],
+      "chon": [
+       "不必",
+       "何必",
+       "何况"
+      ],
+      "goiY": "Câu trần thuật, từ chối lịch sự, kết thúc bằng dấu chấm.",
+      "giai": "Không phải câu phản vấn → 不必 (so sánh với 何必)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你把这件事告诉他不就行了，",
+       "自己着急呢？"
+      ],
+      "dap": [
+       [
+        "何必"
+       ]
+      ],
+      "chon": [
+       "何必",
+       "何况",
+       "多亏"
+      ],
+      "goiY": "“… chẳng phải là xong sao, cần gì tự mình sốt ruột?”",
+      "giai": "何必……呢？ khuyên người khác đừng làm điều không cần thiết (ôn câu 把)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "走过去只要五分钟，",
+       "打车呢？"
+      ],
+      "dap": [
+       [
+        "何必"
+       ]
+      ],
+      "chon": [
+       "何必",
+       "何况",
+       "仿佛"
+      ],
+      "goiY": "“Đi bộ chỉ năm phút, cần gì phải bắt taxi?”",
+      "giai": "何必 + V + 呢？"
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "何必",
+       "亲自",
+       "送一趟",
+       "呢",
+       "？"
+      ],
+      "dap": [
+       "你何必亲自送一趟呢？"
+      ],
+      "goiY": "Bạn cần gì phải tự mang đi một chuyến?",
+      "giai": "Chủ ngữ + 何必 + V + 呢？"
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "何必",
+       "这么",
+       "麻烦",
+       "呢",
+       "？"
+      ],
+      "dap": [
+       "何必这么麻烦呢？"
+      ],
+      "goiY": "Cần gì phiền phức thế?",
+      "giai": "何必 + 这么 + Adj + 呢？"
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "大家",
+       "都是",
+       "朋友",
+       "，",
+       "何必",
+       "生气",
+       "呢",
+       "？"
+      ],
+      "dap": [
+       "大家都是朋友，何必生气呢？"
+      ],
+      "goiY": "Mọi người đều là bạn bè, cần gì phải giận?",
+      "giai": "Vế trước nêu lý do, vế sau 何必……呢？"
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你何必这么着急呢？",
+      "dung": true,
+      "giai": "Đúng: chủ ngữ + 何必 + 这么 + Adj + 呢？"
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "——要我帮你吗？——何必了。",
+      "dung": false,
+      "sua": "——要我帮你吗？——不必了。",
+      "giai": "何必 không đứng một mình trả lời; từ chối dùng 不必."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "何必你每天都去健身房呢？",
+      "dung": false,
+      "sua": "你何必每天都去健身房呢？",
+      "giai": "何必 là phó từ, đứng sau chủ ngữ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chuyện nhỏ thế này, cần gì phải giận?",
+      "dap": [
+       "这么小的事，何必生气呢？",
+       "这点小事，何必生气呢？",
+       "这么小的事，何必生这么大的气呢？"
+      ],
+      "py": "Zhème xiǎo de shì, hébì shēngqì ne?",
+      "goiY": "Dịch sang tiếng Trung, dùng 何必……呢？",
+      "giai": "Phản vấn → 何必 + V + 呢？"
+     },
+     {
+      "kieu": "dich",
+      "vn": "Gọi điện là được rồi, cần gì phải đích thân đi?",
+      "dap": [
+       "打个电话就行了，何必亲自去呢？",
+       "打电话就行了，何必亲自去呢？",
+       "打个电话不就行了，何必亲自去呢？"
+      ],
+      "py": "Dǎ ge diànhuà jiù xíng le, hébì qīnzì qù ne?",
+      "goiY": "Dịch sang tiếng Trung, dùng 何必.",
+      "giai": "Đưa ra cách đơn giản rồi dùng 何必 khuyên."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "早知道你就有这本书，＿＿＿？",
+      "goiY": "thì tôi cần gì phải đi mua (dùng 何必) — câu của sách",
+      "mau": "早知道你就有这本书，我何必去书店买呢？",
+      "can": [
+       [
+        "何必"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "既然她已经拒绝了你，你＿＿＿呢？",
+      "goiY": "cần gì phải buồn mãi (dùng 何必) — câu của sách",
+      "mau": "既然她已经拒绝了你，你何必还这么难过呢？",
+      "can": [
+       [
+        "何必"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「何必……呢？」, khuyên một người bạn đừng làm việc gì quá phức tạp",
+      "mau": "你何必把整本书都抄一遍呢？把重点记下来不就行了吗？",
+      "can": [
+       [
+        "何必"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「多亏」",
+  "tenVn": "",
+  "cauTruc": [
+   "多亏 (了) + người / việc，……",
+   "多亏……，要不 / 不然……"
+  ],
+  "giaiThich": "多亏 là động từ: nhờ sự giúp đỡ của người khác hoặc một yếu tố thuận lợi mà tránh được điều không may hoặc được lợi. Mang ý biết ơn, may mắn; vế sau hay có 要不 / 不然 (nếu không thì …). Chỉ dùng cho kết quả TỐT.",
+  "viDu": [
+   {
+    "zh": "多亏了他这句话，人们如梦初醒。",
+    "py": "Duōkuīle tā zhè jù huà, rénmen rú mèng chū xǐng.",
+    "vn": "Nhờ câu nói ấy của cậu bé, mọi người như bừng tỉnh."
+   },
+   {
+    "zh": "赵老师，谢谢您，多亏您给我那瓶药，很管用。",
+    "py": "Zhào lǎoshī, xièxie nín, duōkuī nín gěi wǒ nà píng yào, hěn guǎnyòng.",
+    "vn": "Cô Triệu, cảm ơn cô, may mà cô cho em lọ thuốc ấy, rất hiệu nghiệm."
+   },
+   {
+    "zh": "今天搬家多亏有你在，你可帮我大忙了。",
+    "py": "Jīntiān bānjiā duōkuī yǒu nǐ zài, nǐ kě bāng wǒ dà máng le.",
+    "vn": "Hôm nay chuyển nhà may mà có bạn, bạn giúp tôi nhiều lắm."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "多亏下大雨，比赛取消了，我们都很失望。",
+    "why": "多亏 chỉ dùng khi kết quả TỐT, có ý biết ơn. Kết quả xấu dùng 因为 / 由于.",
+    "dung": "因为下大雨，比赛取消了，我们都很失望。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "了他这句话，人们如梦初醒。"
+      ],
+      "dap": [
+       [
+        "多亏"
+       ]
+      ],
+      "chon": [
+       "多亏",
+       "何况",
+       "仿佛"
+      ],
+      "goiY": "“Nhờ câu nói ấy mà mọi người bừng tỉnh.”",
+      "giai": "Nhờ có … mà được kết quả tốt → 多亏."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "今天搬家",
+       "有你在，你可帮我大忙了。"
+      ],
+      "dap": [
+       [
+        "多亏"
+       ]
+      ],
+      "chon": [
+       "多亏",
+       "何必",
+       "连忙"
+      ],
+      "goiY": "“Hôm nay chuyển nhà may có bạn.”",
+      "giai": "多亏 + 有 + người + 在: may mà có ai ở đây."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "你提醒，要不我肯定忘了下午还要开会。"
+      ],
+      "dap": [
+       [
+        "多亏"
+       ]
+      ],
+      "chon": [
+       "多亏",
+       "何必",
+       "何况"
+      ],
+      "goiY": "Vế sau có 要不 (nếu không thì).",
+      "giai": "多亏……，要不…… — may mà …, nếu không thì …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "下大雨，比赛取消了，大家都很失望。"
+      ],
+      "dap": [
+       [
+        "因为"
+       ]
+      ],
+      "chon": [
+       "因为",
+       "多亏",
+       "何况"
+      ],
+      "goiY": "Kết quả ở vế sau là XẤU (mọi người thất vọng).",
+      "giai": "多亏 chỉ dùng cho kết quả tốt; nguyên nhân dẫn đến kết quả xấu dùng 因为."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "赵老师，谢谢您，",
+       "您给我那瓶药，很管用。"
+      ],
+      "dap": [
+       [
+        "多亏"
+       ]
+      ],
+      "chon": [
+       "多亏",
+       "何必",
+       "仿佛"
+      ],
+      "goiY": "Lời cảm ơn cô giáo.",
+      "giai": "多亏 + người + việc, mang ý biết ơn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "医生及时抢救，爷爷才脱离了危险。"
+      ],
+      "dap": [
+       [
+        "多亏"
+       ]
+      ],
+      "chon": [
+       "多亏",
+       "何况",
+       "连忙"
+      ],
+      "goiY": "Vế sau có 才 và kết quả tốt (thoát nguy hiểm).",
+      "giai": "多亏……，(主语)才…… — nhờ có … mới …."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "多亏",
+       "你",
+       "帮我",
+       "，",
+       "要不",
+       "我",
+       "就",
+       "迟到了",
+       "。"
+      ],
+      "dap": [
+       "多亏你帮我，要不我就迟到了。"
+      ],
+      "goiY": "May mà bạn giúp tôi, nếu không tôi đã muộn rồi.",
+      "giai": "多亏……，要不……就……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "多亏了",
+       "他这句话",
+       "，",
+       "人们",
+       "如梦初醒",
+       "。"
+      ],
+      "dap": [
+       "多亏了他这句话，人们如梦初醒。"
+      ],
+      "goiY": "Nhờ câu nói ấy, mọi người như bừng tỉnh.",
+      "giai": "多亏了 + nguyên nhân tốt đứng đầu câu."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这次",
+       "比赛",
+       "多亏",
+       "大家",
+       "的",
+       "努力",
+       "。"
+      ],
+      "dap": [
+       "这次比赛多亏大家的努力。"
+      ],
+      "goiY": "Trận đấu lần này nhờ cả vào sự cố gắng của mọi người.",
+      "giai": "Chủ đề + 多亏 + danh từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "多亏你提醒，要不我就忘了。",
+      "dung": true,
+      "giai": "Đúng: 多亏……，要不…… và kết quả tốt (không quên)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "多亏他生病了，今天没来上课。",
+      "dung": false,
+      "sua": "因为他生病了，今天没来上课。",
+      "giai": "Sinh bệnh là chuyện không may, không dùng 多亏."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "今天很多亏你了。",
+      "dung": false,
+      "sua": "今天真是多亏你了。",
+      "giai": "多亏 không đi sau 很; muốn nhấn mạnh nói 真是多亏你了."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "May mà có bạn giúp, nếu không bài tập này tôi không làm xong được.",
+      "dap": [
+       "多亏你帮我，要不这些作业我做不完。",
+       "多亏你帮忙，要不这些作业我做不完。",
+       "多亏有你帮我，要不这些作业我做不完。"
+      ],
+      "py": "Duōkuī nǐ bāng wǒ, yàobù zhèxiē zuòyè wǒ zuò bu wán.",
+      "goiY": "Dịch sang tiếng Trung, dùng 多亏……，要不……",
+      "giai": "多亏 đầu câu, vế sau 要不 nêu hậu quả nếu không được giúp."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Nhờ thầy giáo huấn luyện nghiêm khắc, đội chúng tôi mới thắng.",
+      "dap": [
+       "多亏老师严格地训练我们，我们队才赢了。",
+       "多亏老师的严格训练，我们队才赢了。",
+       "多亏了老师严格的训练，我们队才赢了。"
+      ],
+      "py": "Duōkuī lǎoshī yángé de xùnliàn wǒmen, wǒmen duì cái yíng le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 多亏……才…… và từ 训练.",
+      "giai": "多亏 + nguyên nhân tốt, vế sau 才 + kết quả."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，要不今天的飞机我准赶不上了。",
+      "goiY": "may mà bạn lái xe đưa tôi (dùng 多亏) — câu của sách",
+      "mau": "多亏你开车送我，要不今天的飞机我准赶不上了。",
+      "can": [
+       [
+        "多亏"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：星期五晚上你不是和朋友约好了见面吗？　B：哎呀！＿＿＿。",
+      "goiY": "may mà bạn nhắc, nếu không tôi quên mất (dùng 多亏) — câu của sách",
+      "mau": "哎呀！多亏你提醒我，要不我就忘了。",
+      "can": [
+       [
+        "多亏"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「多亏」 để cảm ơn một người đã giúp em (kết quả phải TỐT)",
+      "mau": "多亏同学们每天陪我练习，我才学会了投篮。",
+      "can": [
+       [
+        "多亏"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

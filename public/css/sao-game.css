@@ -1,0 +1,52 @@
+/* Sao tro choi: "+1 ⭐" bay len, nhan dem sao goc duoi trai, dong tong ket o man ket qua */
+.sg-bay {
+  position: fixed; z-index: 2147483000; pointer-events: none;
+  transform: translate(-50%, -50%);
+  font: 800 1.35rem/1 'Be Vietnam Pro', system-ui, sans-serif;
+  color: #ffcf3d; white-space: nowrap;
+  text-shadow: 0 2px 0 #9a5b00, 0 0 14px rgba(255, 190, 40, .7);
+  animation: sg-bay 1.2s cubic-bezier(.2, .8, .3, 1) forwards;
+}
+.sg-bay.is-chuoi { font-size: 1.15rem; color: #ff8a3d; text-shadow: 0 2px 0 #8a2e00, 0 0 14px rgba(255, 120, 40, .7); }
+@keyframes sg-bay {
+  0% { opacity: 0; transform: translate(-50%, -30%) scale(.6); }
+  15% { opacity: 1; transform: translate(-50%, -60%) scale(1.15); }
+  100% { opacity: 0; transform: translate(-50%, -260%) scale(1); }
+}
+.sg-nhan {
+  position: fixed; left: 14px; bottom: 14px; z-index: 2147482999;
+  display: none; align-items: center; gap: 8px;
+  padding: 8px 14px 8px 10px; border-radius: 999px;
+  background: rgba(40, 24, 10, .88); color: #fff6e0;
+  font: 600 .92rem/1.2 'Be Vietnam Pro', system-ui, sans-serif;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .3);
+  pointer-events: none;
+}
+.sg-nhan.is-hien { display: inline-flex; }
+.sg-nhan b { color: #ffcf3d; font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+.sg-nhan.is-khach { background: rgba(60, 40, 90, .9); }
+.sg-sao { font-size: 1.2rem; }
+.sg-nhan.is-nay .sg-sao { display: inline-block; animation: sg-nay .5s cubic-bezier(.2, 1.6, .4, 1); }
+@keyframes sg-nay { 0% { transform: scale(.4) rotate(-30deg); } 100% { transform: none; } }
+.sg-tb {
+  position: fixed; left: 50%; top: 18px; transform: translateX(-50%); z-index: 2147483001;
+  max-width: min(560px, calc(100vw - 32px)); padding: 12px 18px; border-radius: 16px;
+  background: #fff8e6; color: #5a3a10; border: 2px solid #f1c14e;
+  font: 500 1rem/1.5 'Be Vietnam Pro', system-ui, sans-serif; text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+  transition: opacity .4s ease, transform .4s ease;
+}
+.sg-tb.is-di { opacity: 0; transform: translate(-50%, -12px); }
+.sg-kq {
+  margin: 12px auto 0; max-width: 460px; padding: 10px 14px; border-radius: 14px;
+  background: #fff6dc; color: #5a3a10; border: 1px solid #f1d38a;
+  font: 500 1rem/1.5 'Be Vietnam Pro', system-ui, sans-serif; text-align: center;
+}
+.sg-kq b { color: #b8660a; }
+.sg-kq small { color: #8a6a40; }
+.sg-kq.is-khach { background: #f3ecff; border-color: #d6c6f5; color: #3d2a6b; }
+.sg-kq.is-khach b { color: #6a3fc0; }
+@media (prefers-reduced-motion: reduce) {
+  .sg-bay { animation-duration: .6s; }
+  .sg-nhan.is-nay .sg-sao { animation: none; }
+}

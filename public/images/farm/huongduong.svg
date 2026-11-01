@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs>
+<g id="huongduong-p"><ellipse cy="-9" rx="3.8" ry="6"/><ellipse cy="-9" rx="3.8" ry="6" transform="rotate(36)"/><ellipse cy="-9" rx="3.8" ry="6" transform="rotate(72)"/><ellipse cy="-9" rx="3.8" ry="6" transform="rotate(108)"/><ellipse cy="-9" rx="3.8" ry="6" transform="rotate(144)"/><ellipse cy="-9" rx="3.8" ry="6" transform="rotate(180)"/><ellipse cy="-9" rx="3.8" ry="6" transform="rotate(216)"/><ellipse cy="-9" rx="3.8" ry="6" transform="rotate(252)"/><ellipse cy="-9" rx="3.8" ry="6" transform="rotate(288)"/><ellipse cy="-9" rx="3.8" ry="6" transform="rotate(324)"/></g>
+<g id="huongduong-f" stroke-linejoin="round" stroke-linecap="round">
+<ellipse cy="1" rx="7" ry="2.4" fill="#6b3f22"/>
+<path d="M0 0V-36" stroke="#2b1d3a" stroke-width="6.5"/>
+<path d="M0 0V-36" stroke="#5aa845" stroke-width="3"/>
+<path d="M0-12Q-14-20-16-10Q-8-4 0-12Z" fill="#6cbf4f" stroke="#2b1d3a" stroke-width="2.5"/>
+<path d="M0-20Q14-28 16-17Q8-12 0-20Z" fill="#5aa845" stroke="#2b1d3a" stroke-width="2.5"/>
+<g transform="translate(0 -38)">
+<use href="#huongduong-p" fill="#2b1d3a" stroke="#2b1d3a" stroke-width="5.5"/>
+<use href="#huongduong-p" fill="#ffcf33"/>
+<circle r="6.8" fill="#f6a623"/>
+<circle r="5.8" fill="#7a4a2a" stroke="#2b1d3a" stroke-width="2.5"/>
+<g fill="#a8743f"><circle cx="-2" cy="-1.5" r="1"/><circle cx="1.8" cy="-2" r="1"/><circle cy="1.6" r="1"/><circle cx="2.6" cy="1.8" r=".9"/><circle cx="-2.8" cy="2" r=".9"/></g>
+<path d="M-3-12Q-1-14 1-13" stroke="#fff3c4" stroke-width="1.6" fill="none"/>
+</g></g></defs>
+<ellipse cx="50" cy="86" rx="40" ry="7" fill="#000" opacity=".15"/>
+<rect x="11" y="47" width="78" height="38" rx="13" fill="#8a5430" stroke="#2b1d3a" stroke-width="3"/>
+<rect x="12.5" y="48.5" width="75" height="28" rx="11" fill="#a8693f"/>
+<path d="M20 59H80M19 68H81" stroke="#8a5430" stroke-width="3" stroke-linecap="round"/>
+<path d="M22 56H48M24 65H40" stroke="#c98a5a" stroke-width="2" stroke-linecap="round"/>
+<use href="#huongduong-f" x="30" y="60"/>
+<use href="#huongduong-f" transform="translate(70 59) scale(1.1)"/>
+<use href="#huongduong-f" transform="translate(50 72) scale(.92)"/>
+</svg>

@@ -1,0 +1,937 @@
+[
+ {
+  "so": "1",
+  "ten": "「总之」",
+  "tenVn": "",
+  "cauTruc": [
+   "(ý 1，ý 2，ý 3)，总之，+ kết luận chung",
+   "不管……，总之 + điều không thay đổi",
+   "总之 đứng ở phần kết, không mở đầu đoạn văn"
+  ],
+  "giaiThich": "总之 là LIÊN TỪ, dùng để khái quát, tổng kết nội dung đã nói ở phía trước (= 总的来说, 总而言之). Hay gặp hai tình huống: ① sau khi trình bày nhiều ý, dùng 总之 để rút ra kết luận chung (总之，在鸟儿的生活中，羽毛充当着十分重要的角色); ② sau khi liệt kê nhiều khả năng mà chưa nói rõ được, dùng 总之 để nêu điều chắc chắn (……还有杭州，总之，想去南方几个城市转转). Thường đứng đầu câu hoặc đầu vế sau, có dấu phẩy phía sau; đứng ở PHẦN KẾT, không dùng để mở đầu đoạn văn. Sau 总之 phải là ý KHÁI QUÁT hơn các ý trước.",
+  "viDu": [
+   {
+    "zh": "暑假我可能去上海、南京，还有杭州，总之，想去南方几个城市转转。",
+    "py": "Shǔjià wǒ kěnéng qù Shànghǎi, Nánjīng, hái yǒu Hángzhōu, zǒngzhī, xiǎng qù nánfāng jǐ ge chéngshì zhuànzhuan.",
+    "vn": "Kỳ nghỉ hè có thể tôi sẽ đi Thượng Hải, Nam Kinh, còn cả Hàng Châu nữa, nói chung là muốn đi dạo một vòng mấy thành phố phía nam."
+   },
+   {
+    "zh": "总之，网络的确带给我们以前无法想象的方便，但同时它也带来了一定的危害。",
+    "py": "Zǒngzhī, wǎngluò díquè dài gěi wǒmen yǐqián wúfǎ xiǎngxiàng de fāngbiàn, dàn tóngshí tā yě dàiláile yídìng de wēihài.",
+    "vn": "Tóm lại, mạng internet quả thật đem lại cho chúng ta sự tiện lợi mà trước kia không thể tưởng tượng nổi, nhưng đồng thời nó cũng mang đến những tác hại nhất định."
+   },
+   {
+    "zh": "总之，在鸟儿的生活中，羽毛充当着十分重要的角色。",
+    "py": "Zǒngzhī, zài niǎor de shēnghuó zhōng, yǔmáo chōngdāngzhe shífēn zhòngyào de juésè.",
+    "vn": "Tóm lại, trong cuộc sống của loài chim, lông vũ đóng vai trò vô cùng quan trọng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "总之，今天我想跟大家谈谈养宠物的好处。",
+    "why": "总之 khái quát những gì đã nói TRƯỚC đó, không dùng để mở đầu, giới thiệu đề tài.",
+    "dung": "今天我想跟大家谈谈养宠物的好处。"
+   },
+   {
+    "sai": "他会说英语、法语，还会说汉语，总之，他会说英语。",
+    "why": "Phần sau 总之 phải là kết luận khái quát hơn các ý trước, không lặp lại một ý nhỏ.",
+    "dung": "他会说英语、法语，还会说汉语，总之，他会好几种语言。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "羽毛既可以保暖，又可以保护皮肤，还有助于飞行。",
+       "，羽毛在鸟儿的生活中十分重要。"
+      ],
+      "dap": [
+       [
+        "总之"
+       ]
+      ],
+      "chon": [
+       "总之",
+       "比如",
+       "首先"
+      ],
+      "goiY": "Nêu nhiều tác dụng rồi khái quát lại.",
+      "giai": "Liệt kê các ý → 总之 + kết luận chung."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "暑假我可能去上海、南京，还有杭州，",
+       "，想去南方几个城市转转。"
+      ],
+      "dap": [
+       [
+        "总之"
+       ]
+      ],
+      "chon": [
+       "总之",
+       "比如",
+       "而且"
+      ],
+      "goiY": "Câu ví dụ (1) của sách.",
+      "giai": "Liệt kê nhiều khả năng → 总之 nêu điều chắc chắn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "，网络的确带给我们以前无法想象的方便，但同时它也带来了一定的危害。"
+      ],
+      "dap": [
+       [
+        "总之"
+       ]
+      ],
+      "chon": [
+       "总之",
+       "比如",
+       "于是"
+      ],
+      "goiY": "Câu ví dụ (2) của sách — câu tổng kết.",
+      "giai": "总之 đứng đầu câu kết luận, sau có dấu phẩy."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "不管你去不去，",
+       "我一定要去。"
+      ],
+      "dap": [
+       [
+        "总之"
+       ]
+      ],
+      "chon": [
+       "总之",
+       "所以",
+       "比如"
+      ],
+      "goiY": "Bài 练一练 (1) của sách.",
+      "giai": "不管……，总之 + điều không thay đổi. 不管 không đi với 所以."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "中国菜可以炒，可以蒸，还可以做汤，",
+       "，有很多做法。"
+      ],
+      "dap": [
+       [
+        "总之"
+       ]
+      ],
+      "chon": [
+       "总之",
+       "比如",
+       "但是"
+      ],
+      "goiY": "Bài 练一练 (3) của sách.",
+      "giai": "Liệt kê các cách nấu → 总之 + khái quát."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他又会唱歌，又会跳舞，还会画画儿，",
+       "，他是个多才多艺的人。"
+      ],
+      "dap": [
+       [
+        "总之"
+       ]
+      ],
+      "chon": [
+       "总之",
+       "比如",
+       "虽然"
+      ],
+      "goiY": "Nêu nhiều tài năng rồi nhận xét chung.",
+      "giai": "Sau 总之 là ý khái quát (多才多艺)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "总之",
+       "，",
+       "羽毛",
+       "充当着",
+       "十分重要的",
+       "角色",
+       "。"
+      ],
+      "dap": [
+       "总之，羽毛充当着十分重要的角色。"
+      ],
+      "goiY": "Tóm lại, lông vũ đóng vai trò vô cùng quan trọng.",
+      "giai": "总之 đứng đầu câu kết luận."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "不管你去不去",
+       "，",
+       "总之",
+       "我",
+       "一定要去",
+       "。"
+      ],
+      "dap": [
+       "不管你去不去，总之我一定要去。"
+      ],
+      "goiY": "Dù cậu có đi hay không, tóm lại tớ nhất định phải đi.",
+      "giai": "不管……，总之……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "可能去上海",
+       "，",
+       "也可能去杭州",
+       "，",
+       "总之",
+       "想去南方",
+       "。"
+      ],
+      "dap": [
+       "可能去上海，也可能去杭州，总之想去南方。",
+       "也可能去杭州，可能去上海，总之想去南方。"
+      ],
+      "goiY": "Có thể đi Thượng Hải, cũng có thể đi Hàng Châu, nói chung là muốn đi miền Nam.",
+      "giai": "Liệt kê khả năng → 总之 + điều chắc chắn."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他学习认真，又常常帮助同学，总之，他是个好学生。",
+      "dung": true,
+      "giai": "Đúng: nêu các ý cụ thể rồi 总之 + kết luận khái quát."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "总之，今天我给大家介绍一下我的家乡。",
+      "dung": false,
+      "sua": "今天我给大家介绍一下我的家乡。",
+      "giai": "总之 không dùng để mở đầu, giới thiệu đề tài."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这件衣服颜色好看，价格也便宜，总之，颜色好看。",
+      "dung": false,
+      "sua": "这件衣服颜色好看，价格也便宜，总之，很值得买。",
+      "giai": "Sau 总之 phải là kết luận khái quát, không lặp lại một ý nhỏ đã nói."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Dù trời có mưa hay không, tóm lại ngày mai chúng ta nhất định phải xuất phát.",
+      "dap": [
+       "不管下不下雨，总之明天我们一定要出发。",
+       "不管下不下雨，总之，我们明天一定要出发。",
+       "不管明天下不下雨，总之我们一定要出发。"
+      ],
+      "py": "Bùguǎn xià bu xià yǔ, zǒngzhī míngtiān wǒmen yídìng yào chūfā.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不管……，总之…….",
+      "giai": "不管 + khẳng định–phủ định，总之 + điều không đổi."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Anh ấy vừa biết nấu ăn, vừa biết sửa máy tính, tóm lại việc gì cũng làm được.",
+      "dap": [
+       "他既会做饭，又会修电脑，总之，什么都会做。",
+       "他会做饭，也会修电脑，总之什么都会做。",
+       "他既会做饭又会修电脑，总之，什么事都能做。"
+      ],
+      "py": "Tā jì huì zuò fàn, yòu huì xiū diànnǎo, zǒngzhī, shénme dōu huì zuò.",
+      "goiY": "Dịch sang tiếng Trung, dùng 总之 (có thể thêm 既……又……).",
+      "giai": "Liệt kê + 总之 + 什么都……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "不管你去不去，＿＿＿。",
+      "goiY": "nêu quyết định không đổi của em (dùng 总之) — bài 练一练 (1) của sách",
+      "mau": "不管你去不去，总之我一定要去",
+      "can": [
+       [
+        "总之"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你怎么能把汉语学得这么好？　B：＿＿＿。",
+      "goiY": "kể vài cách học rồi khái quát (dùng 总之) — bài 练一练 (2) của sách",
+      "mau": "我每天听中文歌、看中国电影，总之，就是多听多说",
+      "can": [
+       [
+        "总之"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿，总之，中国菜有很多做法。",
+      "goiY": "Tự viết phần liệt kê phía trước (dùng 「总之」) — bài 练一练 (3) của sách",
+      "mau": "中国菜可以炒，可以蒸，还可以煮，总之，中国菜有很多做法。",
+      "can": [
+       [
+        "总之"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「动词 + 过」",
+  "tenVn": "",
+  "cauTruc": [
+   "V (转 / 回 / 背) + 过 + 身 / 头 (+ 来 / 去) — đổi hướng",
+   "V (接 / 递 / 闪) + 过 + N — dời vị trí",
+   "Tân ngữ đứng sau 过, trước 来 / 去: 背过头去"
+  ],
+  "giaiThich": "过 đứng sau động từ làm BỔ NGỮ XU HƯỚNG (đọc nhẹ guo), khác với trợ từ động thái 过 (đã từng). Bài này học hai nghĩa: ① qua động tác, người hoặc vật ĐỔI HƯỚNG — hay đi với 身 / 头 / 脸: 转过身, 回过头, 背过头去; ② qua động tác, người hoặc vật DI CHUYỂN VỊ TRÍ (từ tay người này sang tay người kia, lướt qua một chỗ): 接过书, 递过一块毛巾, 闪过很多想法. 过 đứng NGAY SAU động từ; tân ngữ đứng sau 过, và đứng trước 来 / 去 nếu có: 背过头去, 回过头来.",
+  "viDu": [
+   {
+    "zh": "他转过身，一句话也不说。",
+    "py": "Tā zhuǎnguo shēn, yí jù huà yě bù shuō.",
+    "vn": "Anh ấy quay người lại, không nói một lời nào."
+   },
+   {
+    "zh": "……它们只要有时间，就会情不自禁地背过头去，反复地啄着羽毛，……",
+    "py": "……Tāmen zhǐyào yǒu shíjiān, jiù huì qíngbúzìjīn de bèiguo tóu qu, fǎnfù de zhuózhe yǔmáo, ……",
+    "vn": "…Hễ có thời gian là chúng lại bất giác ngoảnh đầu ra sau, rỉa lông hết lần này đến lần khác, …"
+   },
+   {
+    "zh": "接过书的那一刻，老王突然明白了自己失败的原因。",
+    "py": "Jiēguo shū de nà yí kè, Lǎo Wáng tūrán míngbaile zìjǐ shībài de yuányīn.",
+    "vn": "Khoảnh khắc đón lấy cuốn sách, ông Vương chợt hiểu ra nguyên nhân thất bại của mình."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "你回头过就可以看见我了。",
+    "why": "过 là bổ ngữ, đứng NGAY SAU động từ, trước tân ngữ 头: 回过头.",
+    "dung": "你回过头就可以看见我了。"
+   },
+   {
+    "sai": "他背过去头，不想看我。",
+    "why": "Khi có 来 / 去, tân ngữ chỉ bộ phận cơ thể đứng giữa 过 và 去: 背过头去.",
+    "dung": "他背过头去，不想看我。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他转",
+       "身，一句话也不说。"
+      ],
+      "dap": [
+       [
+        "过"
+       ]
+      ],
+      "chon": [
+       "过",
+       "开",
+       "起"
+      ],
+      "goiY": "Câu ví dụ (1) của sách: quay người lại.",
+      "giai": "转过身: đổi hướng qua động tác."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "它们只要有时间，就会情不自禁地背",
+       "头去，反复地啄着羽毛。"
+      ],
+      "dap": [
+       [
+        "过"
+       ]
+      ],
+      "chon": [
+       "过",
+       "开",
+       "上"
+      ],
+      "goiY": "Câu bài khoá: ngoảnh đầu ra sau.",
+      "giai": "背过头去: tân ngữ 头 đứng giữa 过 và 去."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "接",
+       "书的那一刻，老王突然明白了自己失败的原因。"
+      ],
+      "dap": [
+       [
+        "过"
+       ]
+      ],
+      "chon": [
+       "过",
+       "开",
+       "着"
+      ],
+      "goiY": "Câu ví dụ (3) của sách: đón lấy cuốn sách.",
+      "giai": "接过 + N: vật chuyển vị trí sang tay mình."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "短短的几分钟里，我的脑子里闪",
+       "了很多想法。"
+      ],
+      "dap": [
+       [
+        "过"
+       ]
+      ],
+      "chon": [
+       "过",
+       "开",
+       "起"
+      ],
+      "goiY": "Câu ví dụ (4) của sách: lướt qua đầu.",
+      "giai": "闪过: di chuyển, lướt qua."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你回",
+       "头就可以看见我了。"
+      ],
+      "dap": [
+       [
+        "过"
+       ]
+      ],
+      "chon": [
+       "过",
+       "开",
+       "着"
+      ],
+      "goiY": "Bài 练一练 (1) của sách.",
+      "giai": "回过头: đổi hướng; 过 đứng trước tân ngữ 头."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他递",
+       "一块毛巾给我擦汗。"
+      ],
+      "dap": [
+       [
+        "过"
+       ]
+      ],
+      "chon": [
+       "过",
+       "开",
+       "着"
+      ],
+      "goiY": "Bài 练一练 (2) của sách.",
+      "giai": "递过 + N: đưa vật từ tay mình sang người khác."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "转过身",
+       "，",
+       "一句话",
+       "也不说",
+       "。"
+      ],
+      "dap": [
+       "他转过身，一句话也不说。"
+      ],
+      "goiY": "Anh ấy quay người lại, không nói một lời nào.",
+      "giai": "转过身 + 一……也不……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "回过头",
+       "就可以",
+       "看见我了",
+       "。"
+      ],
+      "dap": [
+       "你回过头就可以看见我了。"
+      ],
+      "goiY": "Cậu quay đầu lại là có thể thấy tớ.",
+      "giai": "回过头 + 就……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "青年",
+       "走到门口",
+       "，",
+       "转过身",
+       "说",
+       "：",
+       "“我们会再见的。”"
+      ],
+      "dap": [
+       "青年走到门口，转过身说：“我们会再见的。”"
+      ],
+      "goiY": "Chàng thanh niên đi đến cửa, quay người lại nói: \"Chúng ta sẽ gặp lại.\"",
+      "giai": "Bài 练一练 (3) của sách: 转过身 + 说."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他接过我手里的书，看了起来。",
+      "dung": true,
+      "giai": "Đúng: 接过 + N — vật chuyển từ tay tôi sang tay anh ấy."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你回头过就能看见我。",
+      "dung": false,
+      "sua": "你回过头就能看见我。",
+      "giai": "过 đứng ngay sau động từ, trước tân ngữ 头."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他递一块毛巾过给我。",
+      "dung": false,
+      "sua": "他递过一块毛巾给我。",
+      "giai": "Bổ ngữ 过 đứng liền sau 递, tân ngữ 一块毛巾 đứng sau 过."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cô ấy quay mặt đi, không muốn để tôi thấy cô ấy khóc.",
+      "dap": [
+       "她转过脸去，不想让我看见她哭。",
+       "她转过脸，不想让我看到她哭。",
+       "她背过脸去，不想让我看见她在哭。"
+      ],
+      "py": "Tā zhuǎnguo liǎn qu, bù xiǎng ràng wǒ kànjiàn tā kū.",
+      "goiY": "Dịch sang tiếng Trung, dùng V + 过 (转过 / 背过).",
+      "giai": "转过脸去: đổi hướng qua động tác."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Anh ấy đón lấy tấm bản đồ, nhìn rất lâu.",
+      "dap": [
+       "他接过地图，看了很久。",
+       "他接过地图，看了很长时间。",
+       "他接过那张地图，看了很久。"
+      ],
+      "py": "Tā jiēguo dìtú, kànle hěn jiǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 接过.",
+      "giai": "接过 + N: vật chuyển vị trí sang tay mình."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你在哪儿呢？我怎么看不见你？　B：＿＿＿。",
+      "goiY": "bảo bạn quay đầu lại (dùng 回过头) — dựa vào bài 练一练 (1)",
+      "mau": "我就在你后面，你回过头就可以看见我了",
+      "can": [
+       [
+        "回过",
+        "转过"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "听到有人叫他的名字，他马上＿＿＿。",
+      "goiY": "tả động tác quay người lại (dùng 转过身 / 回过头)",
+      "mau": "听到有人叫他的名字，他马上转过身来",
+      "can": [
+       [
+        "转过",
+        "回过"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "我把作业本递给同桌，他＿＿＿。",
+      "goiY": "Tự hoàn thành câu, dùng 「接过」 — tả vật chuyển vị trí",
+      "mau": "我把作业本递给同桌，他接过作业本看了起来。",
+      "can": [
+       [
+        "接过"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「动词 + 开」",
+  "tenVn": "",
+  "cauTruc": [
+   "V (张 / 展 / 铺 / 打) + 开 + N — dang ra, mở ra",
+   "把 + N + V + 开",
+   "N + 传开了 — lan rộng ra"
+  ],
+  "giaiThich": "开 đứng sau động từ làm BỔ NGỮ; bài này học nghĩa \"舒展\" — DANG RA, MỞ RỘNG RA, TRẢI RA: 张开手臂, 张开双翅, 展开, 铺开. Ngoài ra V + 开 còn có nghĩa lan rộng ra (消息传开了) và tách rời ra (区分开, 打开). 开 đứng ngay sau động từ; tân ngữ đứng sau 开 (张开双臂) hoặc đưa lên trước bằng 把 (把纸铺开). Phủ định khả năng: V + 不开 (张不开, 打不开).",
+  "viDu": [
+   {
+    "zh": "猴子突然站了起来，张开手臂，抱住了管理员。",
+    "py": "Hóuzi tūrán zhànle qilai, zhāngkāi shǒubì, bàozhùle guǎnlǐyuán.",
+    "vn": "Con khỉ đột nhiên đứng dậy, dang rộng cánh tay, ôm chầm lấy người quản lý."
+   },
+   {
+    "zh": "《清明上河图》在我们的面前慢慢展开。",
+    "py": "\"Qīngmíng Shàng Hé Tú\" zài wǒmen de miànqián mànman zhǎnkāi.",
+    "vn": "Bức \"Thanh minh thượng hà đồ\" từ từ mở ra trước mắt chúng tôi."
+   },
+   {
+    "zh": "而老鹰的洗澡方式更是直接，它们会在雨中张开双翅痛快地迎接洗礼！",
+    "py": "Ér lǎoyīng de xǐzǎo fāngshì gèng shì zhíjiē, tāmen huì zài yǔ zhōng zhāngkāi shuāng chì tòngkuài de yíngjiē xǐlǐ!",
+    "vn": "Còn cách tắm của diều hâu thì càng trực tiếp hơn, chúng dang rộng đôi cánh trong mưa, sảng khoái đón nhận \"lễ tẩy rửa\"!"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "妈妈张双臂开迎接我。",
+    "why": "开 là bổ ngữ, đứng ngay sau động từ 张, trước tân ngữ: 张开双臂.",
+    "dung": "妈妈张开双臂迎接我。"
+   },
+   {
+    "sai": "他把纸铺，准备练习书法。",
+    "why": "Câu 把 cần thành phần khác sau động từ; ở đây cần bổ ngữ 开 (trải ra): 把纸铺开.",
+    "dung": "他把纸铺开，准备练习书法。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "猴子突然站了起来，张",
+       "手臂，抱住了管理员。"
+      ],
+      "dap": [
+       [
+        "开"
+       ]
+      ],
+      "chon": [
+       "开",
+       "过",
+       "起"
+      ],
+      "goiY": "Câu ví dụ (1) của sách: dang rộng cánh tay.",
+      "giai": "张开 + 手臂: V + 开 biểu thị dang ra."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "《清明上河图》在我们的面前慢慢展",
+       "。"
+      ],
+      "dap": [
+       [
+        "开"
+       ]
+      ],
+      "chon": [
+       "开",
+       "过",
+       "着"
+      ],
+      "goiY": "Câu ví dụ (2) của sách: bức tranh từ từ mở ra.",
+      "giai": "展开: trải rộng ra."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老鹰会在雨中张",
+       "双翅痛快地迎接洗礼。"
+      ],
+      "dap": [
+       [
+        "开"
+       ]
+      ],
+      "chon": [
+       "开",
+       "过",
+       "上"
+      ],
+      "goiY": "Câu bài khoá: dang đôi cánh.",
+      "giai": "张开双翅: dang rộng đôi cánh."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "回家时，妈妈张",
+       "双臂迎接我。"
+      ],
+      "dap": [
+       [
+        "开"
+       ]
+      ],
+      "chon": [
+       "开",
+       "过",
+       "起"
+      ],
+      "goiY": "Bài 练一练 (1) của sách.",
+      "giai": "张开双臂: 开 đứng ngay sau 张."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他把纸铺",
+       "，笔拿好，准备练习书法。"
+      ],
+      "dap": [
+       [
+        "开"
+       ]
+      ],
+      "chon": [
+       "开",
+       "过",
+       "着"
+      ],
+      "goiY": "Bài 练一练 (2) của sách: trải giấy ra.",
+      "giai": "把纸铺开: câu 把 cần bổ ngữ 开."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那件事情已经都传",
+       "了，大家都知道了。"
+      ],
+      "dap": [
+       [
+        "开"
+       ]
+      ],
+      "chon": [
+       "开",
+       "过",
+       "起"
+      ],
+      "goiY": "Bài 练一练 (3) của sách: tin đồn lan ra.",
+      "giai": "传开了: lan rộng khắp nơi."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "妈妈",
+       "张开",
+       "双臂",
+       "迎接我",
+       "。"
+      ],
+      "dap": [
+       "妈妈张开双臂迎接我。"
+      ],
+      "goiY": "Mẹ dang rộng hai tay đón tôi.",
+      "giai": "张开 + tân ngữ + V2 (liên động)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "把纸",
+       "铺开",
+       "，",
+       "准备",
+       "练习书法",
+       "。"
+      ],
+      "dap": [
+       "他把纸铺开，准备练习书法。"
+      ],
+      "goiY": "Anh ấy trải giấy ra, chuẩn bị luyện thư pháp.",
+      "giai": "把 + N + 铺开."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "小鸟",
+       "张开",
+       "翅膀",
+       "飞走了",
+       "。"
+      ],
+      "dap": [
+       "小鸟张开翅膀飞走了。"
+      ],
+      "goiY": "Chú chim nhỏ dang cánh bay mất.",
+      "giai": "张开翅膀 + 飞走了."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这个消息很快就在学校里传开了。",
+      "dung": true,
+      "giai": "Đúng: 传开 = lan rộng ra khắp nơi."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "老鹰张翅膀开，在雨中洗澡。",
+      "dung": false,
+      "sua": "老鹰张开翅膀，在雨中洗澡。",
+      "giai": "开 đứng ngay sau động từ 张, trước tân ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "请大家把书打，看第二十页。",
+      "dung": false,
+      "sua": "请大家把书打开，看第二十页。",
+      "giai": "Câu 把 cần bổ ngữ sau động từ: 打开 (mở ra)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Con chim nhỏ dang rộng đôi cánh, bay lên bầu trời.",
+      "dap": [
+       "小鸟张开翅膀，飞向了天空。",
+       "小鸟张开双翅，飞上了天空。",
+       "小鸟张开翅膀飞向天空。"
+      ],
+      "py": "Xiǎo niǎo zhāngkāi chìbǎng, fēi xiàngle tiānkōng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 张开.",
+      "giai": "张开 + 翅膀: V + 开 biểu thị dang ra."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tin anh ấy thi đỗ đại học đã nhanh chóng lan ra khắp làng.",
+      "dap": [
+       "他考上大学的消息很快就在村里传开了。",
+       "他考上大学的消息很快在村子里传开了。",
+       "他考上大学的消息很快就在全村传开了。"
+      ],
+      "py": "Tā kǎoshang dàxué de xiāoxi hěn kuài jiù zài cūn li chuánkāi le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 传开.",
+      "giai": "N + 传开了: lan rộng ra."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "看到好久不见的奶奶，小明＿＿＿。",
+      "goiY": "tả động tác dang tay ra đón (dùng 张开)",
+      "mau": "看到好久不见的奶奶，小明张开双臂跑了过去",
+      "can": [
+       [
+        "张开"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你知道小王要出国的事吗？　B：＿＿＿。",
+      "goiY": "nói tin đã lan ra, ai cũng biết (dùng 传开) — dựa vào bài 练一练 (3)",
+      "mau": "知道，这件事早就在班里传开了，大家都知道了",
+      "can": [
+       [
+        "传开"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "上书法课的时候，＿＿＿。",
+      "goiY": "Tự hoàn thành câu, dùng 「铺开」 hoặc 「打开」",
+      "mau": "上书法课的时候，我们先把纸铺开，再拿好毛笔。",
+      "can": [
+       [
+        "铺开",
+        "打开"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

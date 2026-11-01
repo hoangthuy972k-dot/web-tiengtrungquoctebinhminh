@@ -1,0 +1,761 @@
+{
+ "/lessons/hsk3v3-bai-17.html": {
+  "points": [
+   {
+    "title": "Giới từ 「向」 — 向 + phương hướng / đối tượng + động từ",
+    "errors": [
+     {
+      "wrong": "以后我要多学习向认真的人。",
+      "why": "tiếng Việt nói “học hỏi TỪ những người cẩn thận” (cụm đối tượng đứng sau); trong tiếng Trung cụm 向 + đối tượng là trạng ngữ, phải đứng TRƯỚC động từ.",
+      "right": "以后我要多向认真的人学习。"
+     },
+     {
+      "wrong": "孩子一看见妈妈，就跑过去向她。",
+      "why": "dịch từng chữ “chạy về phía mẹ” nên đặt 向她 sau động từ; cụm 向 + người / hướng phải đứng trước động từ, bổ ngữ xu hướng 过去 đặt sau động từ.",
+      "right": "孩子一看见妈妈，就向她跑过去了。"
+     },
+     {
+      "wrong": "他向我很好。",
+      "why": "“tốt với ai” trong tiếng Việt dễ bị dịch bằng 向; 向 chỉ hướng / đối tượng của một HÀNH ĐỘNG (走、跑、学习、请假…), không đi với tính từ — thái độ với ai dùng 对 (ôn HSK3 Bài 5).",
+      "right": "他对我很好。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成句子): “Nếu có việc không thể lên lớp, bạn nên xin phép thầy cô nghỉ.”",
+      "pre": "如果有事不能上课，你就应该",
+      "blank": "向老师请假",
+      "post": "。",
+      "options": [
+       "向老师请假",
+       "请假向老师",
+       "老师向请假"
+      ],
+      "answer": 0,
+      "explanation": "向 + người + 请假 (请假 – ôn HSK3 Bài 11); 如果……就…… (ôn HSK3 Bài 6)."
+     },
+     {
+      "context": "Sách (完成句子): “Trời đột nhiên mưa, anh ấy vừa xuống xe đã chạy về phía siêu thị đằng trước.”",
+      "pre": "突然下雨了，他一下车就",
+      "blank": "向前面的超市跑过去了",
+      "post": "。",
+      "options": [
+       "向前面的超市跑过去了",
+       "跑过去向前面的超市了",
+       "向跑过去前面的超市了"
+      ],
+      "answer": 0,
+      "explanation": "向 + nơi chốn + V + 过去 (bổ ngữ xu hướng – ôn HSK2 Bài 4); 突然 (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "Sách (完成句子): “Tôi là người mới đến, những gì chưa hiểu tôi sẽ học hỏi mọi người nhiều.”",
+      "pre": "我是新来的，不懂的东西我会多",
+      "blank": "向大家学习",
+      "post": "。",
+      "options": [
+       "向大家学习",
+       "学习向大家",
+       "大家向学习"
+      ],
+      "answer": 0,
+      "explanation": "多 + 向 + người + 学习; 懂 (ôn HSK2 Bài 1)."
+     },
+     {
+      "context": "“Đừng đi về phía trước nữa, văn phòng cô Lý đến rồi.”",
+      "pre": "别再",
+      "blank": "向前",
+      "post": "走了，李老师的办公室已经到了。",
+      "options": [
+       "向前",
+       "前向",
+       "走向"
+      ],
+      "answer": 0,
+      "explanation": "向 + phương hướng (前、后、左、右) + V; 办公室 (ôn HSK3 Bài 10)."
+     },
+     {
+      "context": "“Đứa bé vừa nhìn thấy mẹ liền chạy về phía mẹ.”",
+      "pre": "孩子一看见妈妈，就",
+      "blank": "向她跑过去了",
+      "post": "。",
+      "options": [
+       "向她跑过去了",
+       "跑过去向她了",
+       "她向跑过去了"
+      ],
+      "answer": 0,
+      "explanation": "向 + người + V + 过去; 一……就…… — vừa… liền…."
+     },
+     {
+      "context": "“Đi về bên trái khoảng 5 phút là đến thư viện.”",
+      "pre": "",
+      "blank": "向左",
+      "post": "走五分钟就到图书馆了。",
+      "options": [
+       "向左",
+       "左向",
+       "在左"
+      ],
+      "answer": 0,
+      "explanation": "向 + 左 / 右 (ôn HSK2 Bài 8) chỉ hướng di chuyển; 图书馆 (ôn HSK3 Bài 14)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "以后我要多学习向认真的人。",
+      "isCorrect": false,
+      "correctVersion": "以后我要多向认真的人学习。",
+      "explanation": "Cụm 向 + đối tượng phải đứng trước động từ 学习."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "明天我得向经理请一天假。",
+      "isCorrect": true,
+      "explanation": "Đúng: 向 + người + 请假; 请假 là từ ly hợp nên chen 一天 vào giữa (ôn HSK3 Bài 8, 11); 经理 (ôn HSK3 Bài 11)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Sau này mình sẽ học hỏi nhiều từ những người cẩn thận.”",
+      "words": [
+       "以后",
+       "我",
+       "要",
+       "多",
+       "向",
+       "认真的人",
+       "学习",
+       "。"
+      ],
+      "answer": "以后我要多向认真的人学习。",
+      "explanation": "Câu của Bài khoá 1: 多 + 向 + người + 学习."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng ta đi về phía trước thêm một chút nữa nhé.”",
+      "words": [
+       "我们",
+       "再",
+       "向前",
+       "走",
+       "一点儿",
+       "吧",
+       "。"
+      ],
+      "answer": "我们再向前走一点儿吧。",
+      "explanation": "再 + 向前 + 走; 一点儿 (ôn HSK1 Bài 12)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn nên học hỏi bạn ấy.”",
+      "words": [
+       "你",
+       "应该",
+       "向",
+       "他",
+       "学习",
+       "。"
+      ],
+      "answer": "你应该向他学习。",
+      "explanation": "应该 (ôn HSK3 Bài 1) đứng trước cụm 向."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy mỉm cười đi về phía tôi.”",
+      "words": [
+       "他",
+       "笑着",
+       "向",
+       "我",
+       "走",
+       "过来",
+       "了",
+       "。"
+      ],
+      "answer": "他笑着向我走过来了。",
+      "explanation": "V1 + 着 + V2 (ôn HSK2 Bài 11); 笑 (ôn HSK2 Bài 10); 过来 (ôn HSK2 Bài 2)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng giới từ 向.",
+      "promptLang": "vi",
+      "prompt": "Thấy chúng tôi đến, bọn trẻ đều chạy về phía chúng tôi.",
+      "answer": "看见我们来了，孩子们都向我们跑过来了。",
+      "answerPy": "Kànjiàn wǒmen lái le, háizimen dōu xiàng wǒmen pǎo guòlai le.",
+      "explanation": "向 + người + V + 过来 (bổ ngữ xu hướng – ôn HSK2 Bài 2, 4); 看见 (ôn HSK1 Bài 8)."
+     }
+    ]
+   },
+   {
+    "title": "Câu phản vấn 「不是……吗？」 — chẳng phải… sao?",
+    "errors": [
+     {
+      "wrong": "你不是喜欢玩电脑？",
+      "why": "thiếu 吗 cuối câu: câu phản vấn phải đủ khung 不是……吗？",
+      "right": "你不是喜欢玩电脑吗？"
+     },
+     {
+      "wrong": "你没是说今天有事吗？",
+      "why": "tiếng Việt “chẳng phải đã nói…” dễ làm người học dùng 没; nhưng 是 luôn phủ định bằng 不, không bao giờ dùng 没.",
+      "right": "你不是说今天有事吗？"
+     },
+     {
+      "wrong": "你是不是不喜欢玩电脑吗？",
+      "why": "lẫn hai kiểu câu hỏi: 是不是 (câu hỏi chính phản) đã là câu hỏi, không thêm 吗; muốn nói “chẳng phải bạn thích… sao” thì dùng 不是……吗.",
+      "right": "你不是喜欢玩电脑吗？"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成对话): A: Kỳ nghỉ năm nay mình vẫn muốn đi Nam Kinh. B: “Chẳng phải bạn đã đi Nam Kinh rồi sao?”",
+      "pre": "A：今年放假我还想去南京。B：",
+      "blank": "你不是去过南京吗",
+      "post": "？",
+      "options": [
+       "你不是去过南京吗",
+       "你没是去过南京吗",
+       "你是不去过南京吗"
+      ],
+      "answer": 0,
+      "explanation": "不是 + V过 + 吗 — nhắc điều mình biết (bạn đi rồi mà); V过 (ôn HSK2 Bài 4); 放假 (ôn HSK3 Bài 6)."
+     },
+     {
+      "context": "Sách (完成对话): A: “…?” B: Xin lỗi, em không mang. Em để bài tập ở nhà rồi. — A: “Chẳng phải em nói hôm nay mang bài tập đến sao?”",
+      "pre": "A：",
+      "blank": "你不是说今天把作业带来吗",
+      "post": "？B：对不起，我没带。我把作业放在家里了。",
+      "options": [
+       "你不是说今天把作业带来吗",
+       "你没是说今天把作业带来吗",
+       "你不是说今天把作业带来"
+      ],
+      "answer": 0,
+      "explanation": "不是……吗 nhắc nhở / trách nhẹ; câu chữ 把 (ôn HSK3 Bài 10); 带 (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "Sách (完成对话): A: Chiều nay tôi đi làm, chuyện này mai nói tiếp nhé. B: Hôm nay là chủ nhật, “chẳng phải anh không phải đi làm sao?”",
+      "pre": "A：我下午上班，这件事明天再说吧。B：今天是星期天，",
+      "blank": "你不是不用上班吗",
+      "post": "？",
+      "options": [
+       "你不是不用上班吗",
+       "你不用上班不是",
+       "你不是不用上班"
+      ],
+      "answer": 0,
+      "explanation": "不是 + 不用 + V + 吗 → khẳng định: anh không phải đi làm mà; 不用 (ôn HSK3 Bài 2)."
+     },
+     {
+      "context": "“Chẳng phải bạn nói hôm nay có việc sao? Sao lại đến?”",
+      "pre": "你",
+      "blank": "不是说今天有事吗",
+      "post": "？为什么来了？",
+      "options": [
+       "不是说今天有事吗",
+       "没是说今天有事吗",
+       "是不说今天有事吗"
+      ],
+      "answer": 0,
+      "explanation": "Người nói không hiểu vì sao bạn lại đến → dùng 不是……吗; 为什么 (ôn HSK2 Bài 3)."
+     },
+     {
+      "context": "“Kỳ thi chẳng phải tháng sau sao? Sao hôm nay bạn đã bắt đầu ôn tập rồi?”",
+      "pre": "考试",
+      "blank": "不是下个月吗",
+      "post": "？你怎么今天就开始复习了？",
+      "options": [
+       "不是下个月吗",
+       "是下个月不吗",
+       "不下个月吗"
+      ],
+      "answer": 0,
+      "explanation": "不是 + thời gian + 吗; 复习 (ôn HSK3 Bài 10); 就 = sớm (ôn HSK3 Bài 3)."
+     },
+     {
+      "context": "“Chẳng phải bạn thích chơi máy tính sao? Bạn có thể đọc sách liên quan đến máy tính.”",
+      "pre": "你不是喜欢玩电脑",
+      "blank": "吗",
+      "post": "？你可以去看看跟电脑有关系的书。",
+      "options": [
+       "吗",
+       "呢",
+       "吧"
+      ],
+      "answer": 0,
+      "explanation": "Khung cố định 不是……吗, cuối câu dùng 吗; 关系 (ôn HSK3 Bài 15)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你不是说今天有事？为什么来了？",
+      "isCorrect": false,
+      "correctVersion": "你不是说今天有事吗？为什么来了？",
+      "explanation": "Thiếu 吗: khung phản vấn là 不是……吗？"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你不是会说汉语吗？你去问问吧。",
+      "isCorrect": true,
+      "explanation": "Đúng: 不是……吗 nhắc điều người nghe biết (bạn biết nói tiếng Trung mà) để đề nghị; 会 (ôn HSK1 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chẳng phải bạn thích chơi máy tính sao?”",
+      "words": [
+       "你",
+       "不是",
+       "喜欢",
+       "玩",
+       "电脑",
+       "吗",
+       "？"
+      ],
+      "answer": "你不是喜欢玩电脑吗？",
+      "explanation": "Câu của Bài khoá 2."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chẳng phải bạn nói hôm nay có việc sao?”",
+      "words": [
+       "你",
+       "不是",
+       "说",
+       "今天",
+       "有事",
+       "吗",
+       "？"
+      ],
+      "answer": "你不是说今天有事吗？",
+      "explanation": "不是 + 说 + nội dung + 吗."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm nay chẳng phải chủ nhật sao? Sao bạn còn đi làm?”",
+      "words": [
+       "今天",
+       "不是",
+       "星期天",
+       "吗",
+       "？",
+       "你",
+       "怎么",
+       "还",
+       "去上班",
+       "？"
+      ],
+      "answer": "今天不是星期天吗？你怎么还去上班？",
+      "explanation": "星期天 (ôn HSK1 Bài 5); 怎么 hỏi lý do (ôn HSK1 Bài 6)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chẳng phải bạn đã học tiếng Trung hai năm rồi sao?”",
+      "words": [
+       "你",
+       "不是",
+       "已经",
+       "学了",
+       "两年",
+       "汉语",
+       "了",
+       "吗",
+       "？"
+      ],
+      "answer": "你不是已经学了两年汉语了吗？",
+      "explanation": "已经……了 (ôn HSK2 Bài 1); bổ ngữ thời lượng (ôn HSK3 Bài 8)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 不是……吗.",
+      "promptLang": "vi",
+      "prompt": "Chẳng phải bạn rất hứng thú với văn hoá Trung Quốc sao? Bạn có thể sang Trung Quốc du học.",
+      "answer": "你不是对中国文化很感兴趣吗？你可以去中国留学。",
+      "answerPy": "Nǐ bú shì duì Zhōngguó wénhuà hěn gǎn xìngqù ma? Nǐ kěyǐ qù Zhōngguó liúxué.",
+      "explanation": "对……感兴趣 (ôn HSK3 Bài 5); 文化 (ôn HSK3 Bài 13); 留学 của bài này."
+     }
+    ]
+   },
+   {
+    "title": "Câu ghép tăng tiến 「……，更……」",
+    "errors": [
+     {
+      "wrong": "我还没想好学什么，没更想好去哪个国家。",
+      "why": "更 là phó từ chỉ mức độ, phải đứng TRƯỚC 没 / 不 / động từ năng nguyện: 更没想好、更不会、更要…….",
+      "right": "我还没想好学什么，更没想好去哪个国家。"
+     },
+     {
+      "wrong": "来中国学习，我学会了中文，更我了解了中国文化。",
+      "why": "dịch theo kiểu “hơn nữa, tôi còn…” nên đặt 更 trước chủ ngữ; 更 là phó từ, phải đứng SAU chủ ngữ, trước động từ (chủ ngữ giống vế trước thì lược đi).",
+      "right": "来中国学习，我学会了中文，更了解了中国文化。"
+     },
+     {
+      "wrong": "我喜欢学中文，更很喜欢中国文化。",
+      "why": "tiếng Việt nói “càng rất thích”; nhưng 更 đã là phó từ chỉ mức độ, không thêm 很 / 非常 phía sau.",
+      "right": "我喜欢学中文，更喜欢中国文化。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成句子): “Lúc tìm việc cần sự giúp đỡ của người khác, càng cần sự cố gắng của bản thân.”",
+      "pre": "找工作的时候需要别人的帮助，更需要",
+      "blank": "自己的努力",
+      "post": "。",
+      "options": [
+       "自己的努力",
+       "别人的帮助",
+       "很努力"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau nêu điều quan trọng hơn; 努力 (ôn HSK3 Bài 10), 帮助 (ôn HSK3 Bài 1), 别人 (ôn HSK3 Bài 11)."
+     },
+     {
+      "context": "Sách (完成句子): “Muốn khỏe mạnh thì nên vận động nhiều, càng nên ngủ sớm.”",
+      "pre": "要想身体健康，应该",
+      "blank": "多运动，更应该早点儿睡觉",
+      "post": "。",
+      "options": [
+       "多运动，更应该早点儿睡觉",
+       "多运动，应该更很早睡觉",
+       "更多运动，应该早点儿睡觉"
+      ],
+      "answer": 0,
+      "explanation": "更 đứng trước 应该, không thêm 很; 健康 (ôn HSK3 Bài 8), 运动 (ôn HSK2 Bài 7)."
+     },
+     {
+      "context": "Sách (完成句子): “Ngày mai thi đấu trận quan trọng, hôm nay phải luyện tập kỹ, càng phải nghỉ ngơi cho tốt.”",
+      "pre": "明天参加重要的比赛，今天要",
+      "blank": "好好练习，更要好好休息",
+      "post": "。",
+      "options": [
+       "好好练习，更要好好休息",
+       "好好练习，要更好好休息",
+       "更好好练习，要好好休息"
+      ],
+      "answer": 0,
+      "explanation": "更 + 要 + V; 参加、比赛、练习 (ôn HSK3 Bài 9); 休息 (ôn HSK1 Bài 5)."
+     },
+     {
+      "context": "“Mình vẫn chưa nghĩ kỹ học gì, càng chưa nghĩ kỹ đi nước nào.”",
+      "pre": "我还没想好学什么，",
+      "blank": "更没想好",
+      "post": "去哪个国家。",
+      "options": [
+       "更没想好",
+       "没更想好",
+       "更很没想好"
+      ],
+      "answer": 0,
+      "explanation": "更 đứng trước 没; 想好 — bổ ngữ kết quả."
+     },
+     {
+      "context": "“Muốn nâng cao trình độ tiếng Trung thì phải nghe nhiều đọc nhiều, càng phải nói nhiều luyện nhiều.”",
+      "pre": "想提高中文水平要多听多看，",
+      "blank": "更要",
+      "post": "多说多练。",
+      "options": [
+       "更要",
+       "要更",
+       "更很"
+      ],
+      "answer": 0,
+      "explanation": "更 + 要 + V; 提高 (ôn HSK3 Bài 10), 水平 (ôn HSK3 Bài 5), 练 (ôn HSK3 Bài 9)."
+     },
+     {
+      "context": "“Đến Trung Quốc học, tôi học được tiếng Trung, hơn nữa còn hiểu thêm văn hoá Trung Quốc.”",
+      "pre": "来中国学习，我学会了中文，",
+      "blank": "更了解了",
+      "post": "中国文化。",
+      "options": [
+       "更了解了",
+       "了解更了",
+       "更很了解"
+      ],
+      "answer": 0,
+      "explanation": "了解 (ôn HSK3 Bài 15); 文化 (ôn HSK3 Bài 13); 学会 — bổ ngữ kết quả."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我喜欢学中文，更很喜欢中国文化。",
+      "isCorrect": false,
+      "correctVersion": "我喜欢学中文，更喜欢中国文化。",
+      "explanation": "更 không đi cùng 很."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个问题老师都不会回答，我更不会了。",
+      "isCorrect": true,
+      "explanation": "Đúng: vế sau mức độ cao hơn (thầy còn không trả lời được thì tôi càng không); 更 đứng trước 不."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mình vẫn chưa nghĩ kỹ học gì, càng chưa nghĩ kỹ đi nước nào.”",
+      "words": [
+       "我",
+       "还没",
+       "想好",
+       "学什么",
+       "，",
+       "更",
+       "没想好",
+       "去哪个",
+       "国家",
+       "。"
+      ],
+      "answer": "我还没想好学什么，更没想好去哪个国家。",
+      "explanation": "Câu của Bài khoá 3."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Muốn học tốt tiếng Trung phải nghe nhiều, càng phải nói nhiều.”",
+      "words": [
+       "想",
+       "学好",
+       "中文",
+       "要",
+       "多听",
+       "，",
+       "更要",
+       "多说",
+       "。"
+      ],
+      "answer": "想学好中文要多听，更要多说。",
+      "explanation": "更要 + V; 学好 — bổ ngữ kết quả."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tìm việc cần sự giúp đỡ của người khác, càng cần sự cố gắng của bản thân.”",
+      "words": [
+       "找工作",
+       "需要",
+       "别人的",
+       "帮助",
+       "，",
+       "更",
+       "需要",
+       "自己的",
+       "努力",
+       "。"
+      ],
+      "answer": "找工作需要别人的帮助，更需要自己的努力。",
+      "explanation": "需要 (ôn HSK3 Bài 3); 自己 (ôn HSK2 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi thích mùa xuân, càng thích mùa thu hơn.”",
+      "words": [
+       "我",
+       "喜欢",
+       "春天",
+       "，",
+       "更",
+       "喜欢",
+       "秋天",
+       "。"
+      ],
+      "answer": "我喜欢春天，更喜欢秋天。",
+      "explanation": "春天、秋天 (ôn HSK3 Bài 12)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng “……，更……”.",
+      "promptLang": "vi",
+      "prompt": "Ông bà tôi không biết dùng máy tính, càng không biết lên mạng.",
+      "answer": "我爷爷奶奶不会用电脑，更不会上网。",
+      "answerPy": "Wǒ yéye nǎinai bú huì yòng diànnǎo, gèng bú huì shàngwǎng.",
+      "explanation": "爷爷、奶奶 (ôn HSK2 Bài 5); 上网 (ôn HSK2 Bài 13)."
+     }
+    ]
+   },
+   {
+    "title": "Câu ghép điều kiện 「只有……，才……」",
+    "errors": [
+     {
+      "wrong": "只有每天锻炼身体，就会越来越健康。",
+      "why": "nhầm 才 thành 就: 只有 (điều kiện DUY NHẤT) luôn đi với 才; 就 đi với 如果 (ôn HSK3 Bài 6).",
+      "right": "只有每天锻炼身体，才会越来越健康。"
+     },
+     {
+      "wrong": "只有多听、多说、多看，才你的中文水平能提高。",
+      "why": "才 là phó từ, phải đứng SAU chủ ngữ của vế sau, trước động từ năng nguyện 能.",
+      "right": "只有多听、多说、多看，你的中文水平才能提高。"
+     },
+     {
+      "wrong": "只有想清楚自己真正喜欢什么，能做出最合适的选择。",
+      "why": "tiếng Việt có thể nói “chỉ khi nghĩ rõ… thì đưa ra được…” mà không cần “mới”; nhưng tiếng Trung đã có 只有 thì vế sau bắt buộc có 才.",
+      "right": "只有想清楚自己真正喜欢什么，才能做出最合适的选择。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成对话): A: Ngày nào bạn cũng ra sân luyện tập à? B: Ừ, “chỉ có luyện tập mỗi ngày mới chơi tốt hơn được”.",
+      "pre": "A：你每天都去球场练习吗？B：对，只有每天练习，",
+      "blank": "才能打得更好",
+      "post": "。",
+      "options": [
+       "才能打得更好",
+       "就能打得更好",
+       "能才打得更好"
+      ],
+      "answer": 0,
+      "explanation": "只有……才……; bổ ngữ trạng thái 得 (ôn HSK2 Bài 7); 球场、练习 (ôn HSK3 Bài 9)."
+     },
+     {
+      "context": "Sách (完成对话): A: Bạn thấy làm thế nào mới tìm được công việc ưng ý? B: “Chỉ có học hành chăm chỉ mới tìm được công việc ưng ý.”",
+      "pre": "A：你觉得怎么才能找到满意的工作？B：",
+      "blank": "只有努力学习，才能找到满意的工作",
+      "post": "。",
+      "options": [
+       "只有努力学习，才能找到满意的工作",
+       "只有努力学习，就能找到满意的工作",
+       "努力学习只有，才能找到满意的工作"
+      ],
+      "answer": 0,
+      "explanation": "满意 (ôn HSK3 Bài 4); 努力 (ôn HSK3 Bài 10)."
+     },
+     {
+      "context": "Sách (完成对话): A: Nghe nói dạo này mẹ bạn không cho bạn chơi điện thoại à? B: “Ừ, chỉ khi điểm thi tiến bộ, mẹ mới cho mình chơi.”",
+      "pre": "A：听说你妈妈最近不让你玩手机了？B：",
+      "blank": "是啊，只有考试成绩提高了，她才让我玩",
+      "post": "。",
+      "options": [
+       "是啊，只有考试成绩提高了，她才让我玩",
+       "是啊，只有考试成绩提高了，才她让我玩",
+       "是啊，只有考试成绩提高了，她就让我玩"
+      ],
+      "answer": 0,
+      "explanation": "才 đứng sau chủ ngữ 她; 成绩 (ôn HSK3 Bài 9), 提高 (ôn HSK3 Bài 10), 让 (ôn HSK2 Bài 1)."
+     },
+     {
+      "context": "“Chỉ có rèn luyện thân thể mỗi ngày mới ngày càng khỏe mạnh.”",
+      "pre": "只有每天锻炼身体，",
+      "blank": "才",
+      "post": "会越来越健康。",
+      "options": [
+       "才",
+       "就",
+       "都"
+      ],
+      "answer": 0,
+      "explanation": "只有 đi với 才; 越来越 (ôn HSK3 Bài 6), 锻炼 (ôn HSK3 Bài 5)."
+     },
+     {
+      "context": "“Chỉ có nghe nhiều, nói nhiều, đọc nhiều, trình độ tiếng Trung của bạn mới nâng cao được.”",
+      "pre": "只有多听、多说、多看，",
+      "blank": "你的中文水平才能提高",
+      "post": "。",
+      "options": [
+       "你的中文水平才能提高",
+       "才你的中文水平能提高",
+       "你的中文水平能才提高"
+      ],
+      "answer": 0,
+      "explanation": "才 đứng sau chủ ngữ, trước 能."
+     },
+     {
+      "context": "“Chỉ khi nghĩ rõ bản thân thực sự thích gì, mới có thể đưa ra lựa chọn phù hợp nhất.”",
+      "pre": "",
+      "blank": "只有",
+      "post": "想清楚自己真正喜欢什么，才能做出最合适的选择。",
+      "options": [
+       "只有",
+       "虽然",
+       "可是"
+      ],
+      "answer": 0,
+      "explanation": "Câu của Bài khoá 4; 合适 (ôn HSK3 Bài 7), 选择 (ôn HSK3 Bài 6)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "只有每天锻炼身体，就会越来越健康。",
+      "isCorrect": false,
+      "correctVersion": "只有每天锻炼身体，才会越来越健康。",
+      "explanation": "只有 phải đi với 才, không đi với 就."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "只有你去请他，他才会来。",
+      "isCorrect": true,
+      "explanation": "Đúng: chủ ngữ vế sau 他 đứng trước 才; 请 (ôn HSK1 Bài 13)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chỉ có luyện tập mỗi ngày mới chơi tốt hơn được.”",
+      "words": [
+       "只有",
+       "每天",
+       "练习",
+       "，",
+       "才能",
+       "打得",
+       "更好",
+       "。"
+      ],
+      "answer": "只有每天练习，才能打得更好。",
+      "explanation": "Câu 完成对话 của sách."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chỉ có học hành chăm chỉ mới tìm được công việc ưng ý.”",
+      "words": [
+       "只有",
+       "努力",
+       "学习",
+       "，",
+       "才能",
+       "找到",
+       "满意的",
+       "工作",
+       "。"
+      ],
+      "answer": "只有努力学习，才能找到满意的工作。",
+      "explanation": "找到 — bổ ngữ kết quả; 满意 (ôn HSK3 Bài 4)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chỉ khi trời nắng, chúng ta mới đi leo núi được.”",
+      "words": [
+       "只有",
+       "天",
+       "晴了",
+       "，",
+       "我们",
+       "才能",
+       "去",
+       "爬山",
+       "。"
+      ],
+      "answer": "只有天晴了，我们才能去爬山。",
+      "explanation": "晴 (ôn HSK2 Bài 12); 爬山 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chỉ có bạn mới giúp được tôi.”",
+      "words": [
+       "只有",
+       "你",
+       "才能",
+       "帮",
+       "我",
+       "。"
+      ],
+      "answer": "只有你才能帮我。",
+      "explanation": "只有 + người + 才……; 帮 (ôn HSK2 Bài 10)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 只有……才…….",
+      "promptLang": "vi",
+      "prompt": "Chỉ khi làm xong bài tập, con mới được chơi game.",
+      "answer": "只有写完作业，你才可以玩游戏。",
+      "answerPy": "Zhǐyǒu xiěwán zuòyè, nǐ cái kěyǐ wán yóuxì.",
+      "explanation": "作业 (ôn HSK3 Bài 10); 游戏 (ôn HSK3 Bài 15); 写完 — bổ ngữ kết quả."
+     }
+    ]
+   }
+  ]
+ }
+}

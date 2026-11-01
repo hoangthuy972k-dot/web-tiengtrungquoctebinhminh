@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Hai chú zombie dễ thương cầm biển 对 và 错 tiến về hàng rào gỗ dưới trăng, bên trái là súng nước">
+  <defs>
+    <linearGradient id="zombie-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b244d"/>
+      <stop offset="0.6" stop-color="#2c5568"/>
+      <stop offset="1" stop-color="#2f6b45"/>
+    </linearGradient>
+    <linearGradient id="zombie-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7bc96f"/>
+      <stop offset="1" stop-color="#2f6b45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#zombie-bg)"/>
+  <circle cx="40" cy="30" r="80" fill="#ffffff" opacity="0.05"/>
+  <circle cx="150" cy="78" r="46" fill="#7bc96f" opacity="0.08"/>
+  <!-- moon -->
+  <circle cx="318" cy="60" r="56" fill="#fff8ec" opacity="0.07"/>
+  <circle cx="318" cy="60" r="44" fill="#fff8ec" opacity="0.12"/>
+  <circle cx="318" cy="60" r="32" fill="#fff3c4"/>
+  <circle cx="307" cy="51" r="7" fill="#f3df9c"/>
+  <circle cx="330" cy="70" r="5" fill="#f3df9c"/>
+  <circle cx="329" cy="47" r="3" fill="#f3df9c"/>
+  <!-- stars -->
+  <path d="M96 28 Q96 34 102 34 Q96 34 96 40 Q96 34 90 34 Q96 34 96 28Z" fill="#fff8ec"/>
+  <path d="M240 20 Q240 25 245 25 Q240 25 240 30 Q240 25 235 25 Q240 25 240 20Z" fill="#fff8ec"/>
+  <path d="M378 22 Q378 26 382 26 Q378 26 378 30 Q378 26 374 26 Q378 26 378 22Z" fill="#fff8ec" opacity="0.8"/>
+  <circle cx="58" cy="72" r="2" fill="#fff8ec" opacity="0.8"/>
+  <circle cx="182" cy="40" r="1.8" fill="#fff8ec" opacity="0.7"/>
+  <circle cx="372" cy="108" r="2" fill="#fff8ec" opacity="0.7"/>
+  <circle cx="262" cy="92" r="1.6" fill="#fff8ec" opacity="0.6"/>
+  <!-- far hill + tombstones -->
+  <path d="M0 168 Q90 138 200 156 T400 146 V240 H0Z" fill="#2f6b45" opacity="0.75"/>
+  <rect x="110" y="128" width="22" height="30" rx="11" fill="#5d6b96" opacity="0.7"/>
+  <rect x="350" y="132" width="20" height="28" rx="10" fill="#5d6b96" opacity="0.7"/>
+  <path d="M0 182 Q200 160 400 182 V240 H0Z" fill="url(#zombie-ground)"/>
+
+  <!-- zombie 2 (back) -->
+  <g transform="translate(296 130) scale(0.86) rotate(5)">
+    <path d="M-8 -45 Q-4 -56 2 -47 Q6 -56 12 -46" fill="none" stroke="#2b1d3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-24" y="10" width="48" height="66" rx="16" fill="#f08a5d"/>
+    <rect x="-20" y="56" width="40" height="16" rx="6" fill="#d2693f"/>
+    <rect x="-24" y="10" width="48" height="66" rx="16" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="-16" r="30" fill="#9ad48a"/>
+    <path d="M15 -42A30 30 0 0 1 15 10A8 26 0 0 0 15 -42Z" fill="#7bbd6c"/>
+    <ellipse cx="-13" cy="-33" rx="8" ry="5" fill="#c9f0bc"/>
+    <circle cx="0" cy="-16" r="30" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    <circle cx="-11" cy="-15" r="5.5" fill="#2b1d3a"/>
+    <circle cx="11" cy="-15" r="4" fill="#2b1d3a"/>
+    <circle cx="-9.5" cy="-17" r="1.6" fill="#fff8ec"/>
+    <ellipse cx="-19" cy="-4" rx="5" ry="3" fill="#ff8fa3" opacity="0.75"/>
+    <ellipse cx="19" cy="-4" rx="5" ry="3" fill="#ff8fa3" opacity="0.75"/>
+    <path d="M-6 -3 Q0 3 6 -3" fill="none" stroke="#2b1d3a" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="-27" y="16" width="54" height="40" rx="9" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    <rect x="-22" y="46" width="44" height="6" rx="3" fill="#efe2c8"/>
+    <text x="0" y="47" font-family="Noto Sans SC, sans-serif" font-weight="bold" font-size="28" text-anchor="middle" fill="#d6336c">错</text>
+    <circle cx="-28" cy="32" r="7" fill="#9ad48a" stroke="#2b1d3a" stroke-width="3"/>
+    <circle cx="28" cy="32" r="7" fill="#9ad48a" stroke="#2b1d3a" stroke-width="3"/>
+  </g>
+
+  <!-- zombie 1 (front) -->
+  <g transform="translate(196 112) rotate(-4)">
+    <path d="M-8 -45 Q-4 -56 2 -47 Q6 -56 12 -46" fill="none" stroke="#2b1d3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-24" y="10" width="48" height="66" rx="16" fill="#8f7ad8"/>
+    <rect x="-20" y="56" width="40" height="16" rx="6" fill="#7562c2"/>
+    <rect x="-24" y="10" width="48" height="66" rx="16" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    <circle cx="0" cy="-16" r="30" fill="#9ad48a"/>
+    <path d="M15 -42A30 30 0 0 1 15 10A8 26 0 0 0 15 -42Z" fill="#7bbd6c"/>
+    <ellipse cx="-13" cy="-33" rx="8" ry="5" fill="#c9f0bc"/>
+    <circle cx="0" cy="-16" r="30" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    <path d="M-8 -36 H8 M-4 -40 V-32 M3 -40 V-32" stroke="#2b1d3a" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="-11" cy="-15" r="4" fill="#2b1d3a"/>
+    <circle cx="11" cy="-15" r="5.5" fill="#2b1d3a"/>
+    <circle cx="12.5" cy="-17" r="1.6" fill="#fff8ec"/>
+    <ellipse cx="-19" cy="-4" rx="5" ry="3" fill="#ff8fa3" opacity="0.75"/>
+    <ellipse cx="19" cy="-4" rx="5" ry="3" fill="#ff8fa3" opacity="0.75"/>
+    <path d="M-6 -3 Q0 3 6 -3" fill="none" stroke="#2b1d3a" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="-27" y="16" width="54" height="40" rx="9" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    <rect x="-22" y="46" width="44" height="6" rx="3" fill="#efe2c8"/>
+    <text x="0" y="47" font-family="Noto Sans SC, sans-serif" font-weight="bold" font-size="28" text-anchor="middle" fill="#2f8a4f">对</text>
+    <circle cx="-28" cy="32" r="7" fill="#9ad48a" stroke="#2b1d3a" stroke-width="3"/>
+    <circle cx="28" cy="32" r="7" fill="#9ad48a" stroke="#2b1d3a" stroke-width="3"/>
+  </g>
+
+  <!-- fence -->
+  <g fill="#d9a066" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round">
+    <path d="M2 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M32 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M62 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M92 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M122 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M152 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M182 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M212 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M242 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M272 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M302 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M332 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M362 192 l9 -10 l9 10 v50 h-18Z"/>
+    <path d="M392 192 l9 -10 l9 10 v50 h-18Z"/>
+    <rect x="-4" y="200" width="408" height="9" rx="3" fill="#b37a45"/>
+    <rect x="-4" y="222" width="408" height="9" rx="3" fill="#b37a45"/>
+  </g>
+  <g fill="#f3c48e">
+    <rect x="5" y="188" width="3" height="10" rx="1.5"/><rect x="65" y="188" width="3" height="10" rx="1.5"/>
+    <rect x="155" y="188" width="3" height="10" rx="1.5"/><rect x="245" y="188" width="3" height="10" rx="1.5"/>
+    <rect x="335" y="188" width="3" height="10" rx="1.5"/>
+  </g>
+
+  <!-- water stream -->
+  <circle cx="124" cy="160" r="4" fill="#bfe8ff"/>
+  <circle cx="136" cy="156" r="5" fill="#8fd3ff"/>
+  <circle cx="149" cy="151" r="4" fill="#bfe8ff"/>
+  <circle cx="159" cy="147" r="3" fill="#8fd3ff"/>
+  <circle cx="163" cy="136" r="2.5" fill="#bfe8ff"/>
+  <circle cx="156" cy="140" r="2" fill="#bfe8ff"/>
+  <circle cx="160" cy="156" r="2" fill="#bfe8ff"/>
+
+  <!-- water blaster -->
+  <g transform="translate(70 176)">
+    <g transform="rotate(-14)">
+      <circle cx="-8" cy="-20" r="13" fill="#8fe0ff" stroke="#2b1d3a" stroke-width="3.5"/>
+      <ellipse cx="-12" cy="-24" rx="4" ry="2.5" fill="#e6f8ff"/>
+      <rect x="-30" y="-14" width="64" height="28" rx="14" fill="#4fb3ff"/>
+      <rect x="-25" y="3" width="54" height="8" rx="4" fill="#2f8fe0"/>
+      <rect x="-20" y="-9" width="28" height="5" rx="2.5" fill="#bfe6ff"/>
+      <rect x="-30" y="-14" width="64" height="28" rx="14" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+      <rect x="30" y="-10" width="16" height="20" rx="6" fill="#ffd23f" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    </g>
+    <circle cx="-16" cy="22" r="11" fill="#5b4a7a" stroke="#2b1d3a" stroke-width="3.5"/>
+    <circle cx="18" cy="22" r="11" fill="#5b4a7a" stroke="#2b1d3a" stroke-width="3.5"/>
+    <circle cx="-16" cy="22" r="3.5" fill="#fff8ec"/>
+    <circle cx="18" cy="22" r="3.5" fill="#fff8ec"/>
+  </g>
+</svg>

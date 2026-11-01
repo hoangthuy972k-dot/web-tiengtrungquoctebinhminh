@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="58" cy="85" rx="27" ry="5" fill="#000" opacity=".15"/>
+<ellipse cx="19" cy="85.5" rx="14" ry="3" fill="#000" opacity=".15"/>
+<g transform="translate(10 1)">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M42 75V83M38 84.5L42 83L46 84.5M58 75V83M54 84.5L58 83L62 84.5" stroke="#2b1d3a" stroke-width="6.5"/>
+<path d="M42 75V83M38 84.5L42 83L46 84.5M58 75V83M54 84.5L58 83L62 84.5" stroke="#ffa726" stroke-width="2.5"/>
+</g>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M33 60Q17 58 18 42Q25 48 30 47Q25 37 33 31Q36 44 43 50Z" fill="#fff8ec"/>
+<ellipse cx="50" cy="65" rx="26" ry="18" fill="#fff8ec" stroke="none"/>
+<path d="M24.5 67Q29 82 50 83Q71 82 75.5 67Q67 77 50 77Q33 77 24.5 67Z" fill="#ead8c0" stroke="none"/>
+<ellipse cx="50" cy="65" rx="26" ry="18" fill="none"/>
+<path d="M33 63Q44 58 54 66Q50 76 40 75Q32 71 33 63Z" fill="#ead8c0"/>
+<path d="M46 34Q40 26 47 24Q46 16 54 21Q58 15 63 25Z" fill="#e53935"/>
+<circle cx="57" cy="43" r="16" fill="#fff8ec" stroke="none"/>
+<path d="M72.8 46Q70 58 57 59Q67 55 72.8 46Z" fill="#ead8c0" stroke="none"/>
+<circle cx="57" cy="43" r="16" fill="none"/>
+<path d="M53.5 47L57.5 53L61.5 47Z" fill="#ffb300" stroke-width="2"/>
+<path d="M55.5 53Q57.5 58 59.5 53" fill="#e53935" stroke-width="2"/>
+<path d="M47 41.5H56M60 41.5H69" fill="none" stroke-width="2.5"/>
+<path d="M48 38.5Q51 36.5 54 35.5M66 38.5Q63 36.5 60 35.5" fill="none" stroke-width="1.8"/>
+</g>
+<path d="M48.5 42A3 3 0 0 0 54.5 42Z" fill="#2b1d3a"/><path d="M61.5 42A3 3 0 0 0 67.5 42Z" fill="#2b1d3a"/>
+<ellipse cx="46.5" cy="49" rx="3.6" ry="2.2" fill="#ff8fa3" opacity=".8"/><ellipse cx="68.5" cy="49" rx="3.6" ry="2.2" fill="#ff8fa3" opacity=".8"/>
+<circle cx="72" cy="52" r="4.5" fill="#b3e5fc" opacity=".85" stroke="#2b1d3a" stroke-width="1.5"/>
+<circle cx="70.5" cy="50.5" r="1.2" fill="#fff"/>
+</g>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M6 76Q7 86 19 86Q31 86 32 76Z" fill="#4fa3e0"/>
+<ellipse cx="19" cy="76" rx="13" ry="4" fill="#2f6fa8"/>
+</g>
+<path d="M10 80Q12 83 16 83.5" stroke="#a9d8f8" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>

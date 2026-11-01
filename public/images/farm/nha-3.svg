@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs><g id="nha-3-l" stroke="#2b1d3a" stroke-linejoin="round" stroke-linecap="round">
+<path d="M0 0V8" stroke-width="3"/>
+<path d="M0 32V42" stroke-width="6"/>
+<path d="M0 32V42" stroke="#ffc928" stroke-width="3"/>
+<ellipse cy="20" rx="11" ry="10" fill="#e53935" stroke-width="4"/>
+<path d="M-4 11Q-7 20-4 29M4 11Q7 20 4 29" stroke="#b71c1c" stroke-width="2" fill="none"/>
+<path d="M-7 15Q-8 20-6 24" stroke="#ff8a80" stroke-width="2.5" fill="none"/>
+<rect x="-5" y="7" width="10" height="5" rx="1.5" fill="#ffc928" stroke-width="3"/>
+<rect x="-5" y="28" width="10" height="5" rx="1.5" fill="#ffc928" stroke-width="3"/>
+</g></defs>
+<ellipse cx="100" cy="171" rx="90" ry="13" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<rect x="14" y="154" width="172" height="16" rx="4" fill="#c9bfae"/>
+<rect x="28" y="112" width="144" height="44" fill="#fff1d6"/>
+<rect x="54" y="54" width="92" height="40" fill="#fff1d6"/>
+</g>
+<path d="M18 160H182" stroke="#e3dccd" stroke-width="3" stroke-linecap="round"/>
+<g fill="#d43a2f" stroke="#2b1d3a" stroke-width="5" stroke-linejoin="round">
+<rect x="28" y="112" width="10" height="44"/><rect x="72" y="112" width="10" height="44"/><rect x="118" y="112" width="10" height="44"/><rect x="162" y="112" width="10" height="44"/>
+<rect x="54" y="56" width="9" height="36"/><rect x="137" y="56" width="9" height="36"/>
+</g>
+<g stroke="#2b1d3a" stroke-width="5" stroke-linejoin="round">
+<rect x="84" y="120" width="32" height="36" fill="#c62f26"/>
+<rect x="44" y="122" width="22" height="24" fill="#ffe7b0"/>
+<rect x="134" y="122" width="22" height="24" fill="#ffe7b0"/>
+<circle cx="100" cy="72" r="12" fill="#ffe7b0"/>
+<rect x="68" y="64" width="14" height="16" fill="#ffe7b0"/>
+<rect x="118" y="64" width="14" height="16" fill="#ffe7b0"/>
+</g>
+<g fill="none" stroke="#8e3b2e" stroke-width="2.5">
+<path d="M51 122V146M59 122V146M44 130H66M44 138H66M141 122V146M149 122V146M134 130H156M134 138H156M100 60V84M88 72H112M94 62V82M106 62V82M75 64V80M68 72H82M125 64V80M118 72H132"/>
+</g>
+<path d="M100 120V156" stroke="#2b1d3a" stroke-width="3"/>
+<g fill="#ffc928"><circle cx="90" cy="128" r="1.8"/><circle cx="90" cy="138" r="1.8"/><circle cx="90" cy="148" r="1.8"/><circle cx="110" cy="128" r="1.8"/><circle cx="110" cy="138" r="1.8"/><circle cx="110" cy="148" r="1.8"/></g>
+<g fill="none" stroke="#ffc928" stroke-width="2.5"><circle cx="96" cy="138" r="3"/><circle cx="104" cy="138" r="3"/></g>
+<g stroke="#2b1d3a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M38 88H162Q170 104 184 106Q192 106 196 96Q196 114 178 118H22Q4 114 4 96Q8 106 16 106Q30 104 38 88Z" fill="#2f8a74"/>
+<path d="M66 24H134Q142 46 164 52Q174 52 180 42Q180 60 162 62H38Q20 60 20 42Q26 52 36 52Q58 46 66 24Z" fill="#2f8a74"/>
+</g>
+<g fill="none" stroke-linecap="round">
+<path d="M50 91L40 115M66 91L60 115M82 91L80 115M100 91V115M118 91L120 115M134 91L140 115M150 91L160 115M78 28L64 58M92 28L86 58M100 28V58M108 28L114 58M122 28L136 58" stroke="#226b5a" stroke-width="3"/>
+<path d="M24 115H176M40 59H160" stroke="#1d5a4d" stroke-width="5" stroke-dasharray="0 8"/>
+<path d="M44 92H110M70 30H104" stroke="#5fbfa5" stroke-width="3"/>
+</g>
+<g stroke="#2b1d3a" stroke-linecap="round" stroke-linejoin="round">
+<path d="M60 21Q46 21 48 8M140 21Q154 21 152 8" fill="none" stroke-width="10"/>
+<path d="M60 21Q46 21 48 8M140 21Q154 21 152 8" fill="none" stroke="#226b5a" stroke-width="4"/>
+<rect x="56" y="16" width="88" height="10" rx="5" fill="#226b5a" stroke-width="6"/>
+<circle cx="100" cy="12" r="6" fill="#ffc928" stroke-width="5"/>
+</g>
+<use href="#nha-3-l" x="22" y="116"/>
+<use href="#nha-3-l" x="178" y="116"/>
+<use href="#nha-3-l" transform="translate(44 60) scale(.8)"/>
+<use href="#nha-3-l" transform="translate(156 60) scale(.8)"/>
+<g stroke="#2b1d3a" stroke-width="5" stroke-linejoin="round"><rect x="78" y="156" width="44" height="8" fill="#b5aa96"/><rect x="72" y="163" width="56" height="8" fill="#a8997f"/></g>
+</svg>

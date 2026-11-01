@@ -1,0 +1,112 @@
+{
+ "zh": "山脉上的雕刻",
+ "py": "Shānmài shang de diāokè",
+ "vn": "Tác phẩm điêu khắc trên dãy núi",
+ "topic": "第四单元 走遍天下 · Danh thắng &amp; ruộng bậc thang Hà Nhì",
+ "vocabCount": 47,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "时而",
+   "explain": "时而 là PHÓ TỪ, dùng trong văn viết. Có hai cách dùng: ① Hai (hoặc hơn hai) 时而 dùng liền nhau tạo thành câu ghép song song, biểu thị nhiều tình huống THAY PHIÊN nhau xảy ra (lúc thì…, lúc thì…). ② Dùng MỘT 时而: biểu thị một hành động lặp lại, xuất hiện không theo thời gian cố định (thỉnh thoảng lại…); thường đứng trước cụm động từ.",
+   "rule": "<strong style=\"color:var(--sky-d)\">时而</strong> A，<strong style=\"color:var(--sky-d)\">时而</strong> B (，<strong style=\"color:var(--sky-d)\">时而</strong> C)　→ các tình huống luân phiên　|　Chủ ngữ + <strong style=\"color:var(--sky-d)\">时而</strong> + cụm động từ　→ thỉnh thoảng lại …",
+   "examples": [
+    {
+     "zh": "我们的车在大山里沿着公路盘旋而行，时而行驶在深深的谷底，时而爬升到海拔一千多米高的山腰。",
+     "py": "Wǒmen de chē zài dà shān li yánzhe gōnglù pánxuán ér xíng, shí'ér xíngshǐ zài shēnshēn de gǔdǐ, shí'ér páshēng dào hǎibá yìqiān duō mǐ gāo de shānyāo.",
+     "vn": "Xe chúng tôi men theo con đường vòng vèo trong núi lớn, lúc thì chạy dưới đáy thung lũng sâu, lúc thì leo lên lưng chừng núi cao hơn một nghìn mét so với mặt biển."
+    },
+    {
+     "zh": "五彩的蝴蝶颜色鲜艳极了，尤其是在阳光下，时而金黄，时而翠绿，时而由紫变蓝。",
+     "py": "Wǔcǎi de húdié yánsè xiānyàn jí le, yóuqí shì zài yángguāng xià, shí'ér jīnhuáng, shí'ér cuìlǜ, shí'ér yóu zǐ biàn lán.",
+     "vn": "Những con bướm ngũ sắc màu sắc rực rỡ vô cùng, nhất là dưới ánh mặt trời, lúc thì vàng óng, lúc thì xanh biếc, lúc lại từ tím chuyển sang xanh lam."
+    },
+    {
+     "zh": "主人去世以后，那狗没有了往日的精神，一点儿东西不吃，时而发出令人伤心的叫声。",
+     "py": "Zhǔrén qùshì yǐhòu, nà gǒu méiyǒule wǎngrì de jīngshen, yìdiǎnr dōngxi bù chī, shí'ér fāchū lìng rén shāngxīn de jiàoshēng.",
+     "vn": "Sau khi chủ mất, con chó ấy không còn tinh thần như trước, chẳng ăn gì cả, thỉnh thoảng lại phát ra tiếng kêu khiến người ta đau lòng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他们时而唱歌，一会儿跳舞。",
+     "why": "Cặp song song phải cùng dạng: 时而……，时而…… (văn viết) hoặc 一会儿……，一会儿…… (khẩu ngữ), không trộn lẫn.",
+     "right": "他们时而唱歌，时而跳舞。"
+    },
+    {
+     "wrong": "我时而每个周末都去爬山。",
+     "why": "时而 = thỉnh thoảng, không theo thời gian cố định — mâu thuẫn với 每个周末都 (đều đặn).",
+     "right": "我每个周末都去爬山。"
+    }
+   ]
+  },
+  {
+   "point": "不禁",
+   "explain": "不禁 là PHÓ TỪ, nghĩa là \"không tự chủ được, không kìm được\" (不由自主地、无法控制地). Diễn tả phản ứng tự nhiên bật ra khi gặp một tình huống nào đó. Sau 不禁 có thể là cụm động từ (不禁问自己), cụm chủ vị (不禁心里有些发慌) hoặc tính từ (不禁兴奋起来). Thường có một vế nêu tình huống / nguyên nhân đứng trước. Gần nghĩa 忍不住, 不由得 (bài 2), nhưng 不禁 mang sắc thái văn viết hơn.",
+   "rule": "(Tình huống / nguyên nhân)，chủ ngữ + <strong style=\"color:var(--sky-d)\">不禁</strong> + cụm động từ / cụm chủ vị / tính từ (+ 起来)",
+   "examples": [
+    {
+     "zh": "它比万里长城更让我震撼，它比历史悠久的宫殿更让我感动。我不禁问自己，这里的人为什么选择了梯田？",
+     "py": "Tā bǐ Wànlǐ Chángchéng gèng ràng wǒ zhènhàn, tā bǐ lìshǐ yōujiǔ de gōngdiàn gèng ràng wǒ gǎndòng. Wǒ bùjīn wèn zìjǐ, zhèlǐ de rén wèi shénme xuǎnzéle tītián?",
+     "vn": "Nó khiến tôi choáng ngợp hơn cả Vạn Lý Trường Thành, xúc động hơn cả những cung điện lâu đời. Tôi không khỏi tự hỏi: vì sao người ở đây lại chọn ruộng bậc thang?"
+    },
+    {
+     "zh": "那是我第一次用汉语演讲，走上讲台，不禁心里有些发慌。",
+     "py": "Nà shì wǒ dì-yī cì yòng Hànyǔ yǎnjiǎng, zǒushàng jiǎngtái, bùjīn xīnli yǒuxiē fāhuāng.",
+     "vn": "Đó là lần đầu tôi diễn thuyết bằng tiếng Trung, bước lên bục, trong lòng không khỏi có chút hoảng."
+    },
+    {
+     "zh": "听到这个消息，大家不禁兴奋起来。",
+     "py": "Tīngdào zhège xiāoxi, dàjiā bùjīn xīngfèn qilai.",
+     "vn": "Nghe tin này, mọi người không kìm được mà phấn khích hẳn lên."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我不禁决定明天去图书馆。",
+     "why": "不禁 chỉ dùng cho phản ứng tự nhiên, không chủ ý (cười, khóc, hỏi, cảm thán…), không dùng cho hành động có kế hoạch như 决定.",
+     "right": "我决定明天去图书馆。"
+    },
+    {
+     "wrong": "看到这么美的风景，不禁我拿出了相机。",
+     "why": "不禁 là phó từ, đứng SAU chủ ngữ, trước động từ.",
+     "right": "看到这么美的风景，我不禁拿出了相机。"
+    }
+   ]
+  },
+  {
+   "point": "无不",
+   "explain": "无不 là PHÓ TỪ, nghĩa là \"没有一个不\" — không một ai / không một cái nào không…, tức là TẤT CẢ ĐỀU. Đây là phủ định kép, khẳng định mạnh hơn 都. Thường đứng trước động từ, cụm động từ; chủ ngữ phải là SỐ NHIỀU hoặc mang nghĩa toàn bộ (百姓, 这里的一切, 人人…). Dùng trong văn viết.",
+   "rule": "Chủ ngữ số nhiều / toàn thể + <strong style=\"color:var(--sky-d)\">无不</strong> + động từ / cụm động từ　(= 都 …, không ai / không gì không …)",
+   "examples": [
+    {
+     "zh": "坏人受到了应有的惩罚，百姓无不拍手称快。",
+     "py": "Huàirén shòudàole yīngyǒu de chéngfá, bǎixìng wúbù pāishǒu chēngkuài.",
+     "vn": "Kẻ xấu đã phải chịu sự trừng phạt đích đáng, dân chúng ai nấy đều vỗ tay hả hê."
+    },
+    {
+     "zh": "哈尼梯田的美景让人陶醉，这里的一切无不体现着当地百姓与自然和谐相处的智慧。",
+     "py": "Hāní tītián de měijǐng ràng rén táozuì, zhèlǐ de yíqiè wúbù tǐxiànzhe dāngdì bǎixìng yǔ zìrán héxié xiāngchǔ de zhìhuì.",
+     "vn": "Cảnh đẹp của ruộng bậc thang Hà Nhì khiến người ta ngây ngất, mọi thứ ở đây đều thể hiện trí tuệ chung sống hài hoà với thiên nhiên của người dân địa phương."
+    },
+    {
+     "zh": "在人们的学习、生活、工作中，任何人的一言一行，一举一动，无不影响着你周围的人们。",
+     "py": "Zài rénmen de xuéxí, shēnghuó, gōngzuò zhōng, rènhé rén de yì yán yì xíng, yì jǔ yí dòng, wúbù yǐngxiǎngzhe nǐ zhōuwéi de rénmen.",
+     "vn": "Trong học tập, cuộc sống, công việc, mỗi lời nói việc làm, mỗi cử chỉ hành động của bất kỳ ai đều ảnh hưởng tới những người xung quanh."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他无不喜欢这本书。",
+     "why": "无不 cần chủ ngữ số nhiều / toàn thể; chủ ngữ số ít 他 thì dùng 很 / 非常.",
+     "right": "同学们无不喜欢这本书。"
+    },
+    {
+     "wrong": "看过这部电影的人无不都很感动。",
+     "why": "无不 đã mang nghĩa \"đều\", thêm 都 là thừa (thành phần dư — xem 扩展 bài này).",
+     "right": "看过这部电影的人无不很感动。"
+    }
+   ]
+  }
+ ]
+}

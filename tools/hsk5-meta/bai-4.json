@@ -1,0 +1,146 @@
+{
+ "zh": "子路背米",
+ "py": "Zǐlù bēi mǐ",
+ "vn": "Tử Lộ vác gạo",
+ "topic": "Unit 2 谈古说今 · Truyện xưa &amp; lòng hiếu thảo",
+ "vocabCount": 44,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "至今",
+   "explain": "至今 là phó từ, nghĩa là “cho đến tận bây giờ”. Thường đứng đầu phân câu hoặc trước động từ. Còn kết hợp với một số từ tạo cấu trúc cố định: 从古至今 (từ xưa đến nay), 流传至今 (lưu truyền đến nay). Không dùng cho tương lai, không thêm 到 phía trước.",
+   "rule": "① <strong style=\"color:var(--sky-d)\">至今</strong> + (还 / 仍) + V　② 从古<strong style=\"color:var(--sky-d)\">至今</strong> / 流传<strong style=\"color:var(--sky-d)\">至今</strong>",
+   "examples": [
+    {
+     "zh": "我在北京出生、长大，至今还没离开过呢。",
+     "py": "Wǒ zài Běijīng chūshēng, zhǎngdà, zhìjīn hái méi líkāiguo ne.",
+     "vn": "Tôi sinh ra và lớn lên ở Bắc Kinh, đến giờ vẫn chưa rời khỏi đó."
+    },
+    {
+     "zh": "至今，很多国家并没有规定什么才是健康食品。",
+     "py": "Zhìjīn, hěn duō guójiā bìng méiyǒu guīdìng shénme cái shì jiànkāng shípǐn.",
+     "vn": "Đến nay nhiều nước vẫn chưa hề quy định thế nào mới là thực phẩm lành mạnh."
+    },
+    {
+     "zh": "流传至今的“百里背米”讲的就是他孝敬父母的故事。",
+     "py": "Liúchuán zhìjīn de “bǎi lǐ bēi mǐ” jiǎng de jiù shì tā xiàojìng fùmǔ de gùshi.",
+     "vn": "Câu chuyện “vác gạo trăm dặm” lưu truyền đến nay kể chính về việc ông hiếu kính cha mẹ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他到至今还没结婚。",
+     "why": "至今 đã mang nghĩa “đến nay”; tiếng Việt nói “ĐẾN nay” nên hay thêm 到 — thừa.",
+     "right": "他至今还没结婚。"
+    },
+    {
+     "wrong": "这件事我至今会记住。",
+     "why": "至今 chỉ khoảng thời gian từ quá khứ đến HIỆN TẠI, không đi với 会 chỉ tương lai.",
+     "right": "这件事我至今还记得。"
+    }
+   ]
+  },
+  {
+   "point": "顶",
+   "explain": "顶 có ba cách dùng. ① Danh từ: phần cao nhất của người hoặc vật (头顶, 山顶). ② Động từ: đội, đẩy, húc bằng đầu (用头顶起, 头顶着头); còn có nghĩa đón lấy, chống chọi (顶着大雪, 顶着压力) — khi làm kèm một động tác khác thì dùng 顶着. ③ Lượng từ: dùng cho mũ, ô lớn và vật hình ô (一顶帽子).",
+   "rule": "Danh từ: 头<strong style=\"color:var(--sky-d)\">顶</strong> / 山<strong style=\"color:var(--sky-d)\">顶</strong>　|　Động từ: <strong style=\"color:var(--sky-d)\">顶着</strong> + 风 / 雪 / 压力　|　Lượng từ: 一<strong style=\"color:var(--sky-d)\">顶</strong> + 帽子 / 伞",
+   "examples": [
+    {
+     "zh": "请把手举过头顶。",
+     "py": "Qǐng bǎ shǒu jǔguò tóudǐng.",
+     "vn": "Hãy giơ tay lên quá đầu."
+    },
+    {
+     "zh": "天气非常寒冷，子路顶着大雪往前走。",
+     "py": "Tiānqì fēicháng hánlěng, Zǐlù dǐngzhe dàxuě wǎng qián zǒu.",
+     "vn": "Trời rét buốt, Tử Lộ đội tuyết lớn đi về phía trước."
+    },
+    {
+     "zh": "我这顶新帽子怎么样？",
+     "py": "Wǒ zhè dǐng xīn màozi zěnmeyàng?",
+     "vn": "Chiếc mũ mới này của tôi thế nào?"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "子路顶大雪往前走。",
+     "why": "顶 (chống chọi) đi kèm động tác khác (往前走) phải thêm 着 để chỉ trạng thái kéo dài.",
+     "right": "子路顶着大雪往前走。"
+    },
+    {
+     "wrong": "这顶计划将成为儿童健康的一项保护伞。",
+     "why": "Hai lượng từ bị đảo: 项 dùng cho kế hoạch, hạng mục (一项计划 — bài 1); 顶 dùng cho mũ, ô (一顶保护伞).",
+     "right": "这项计划将成为儿童健康的一顶保护伞。"
+    }
+   ]
+  },
+  {
+   "point": "……得 + 不行",
+   "explain": "Cấu trúc “Adj/V + 得 + 不行” biểu thị MỨC ĐỘ rất cao (… đến mức không chịu nổi). Ở đây 不行 không còn nghĩa “không được”. Cũng có thể dùng “Adj/V + 得 + 很 / 不得了”. Đã có bổ ngữ mức độ thì không thêm 很 trước tính từ.",
+   "rule": "Adj / V (tâm lý) + <strong style=\"color:var(--sky-d)\">得</strong> + <strong style=\"color:var(--sky-d)\">不行 / 很 / 不得了</strong>",
+   "examples": [
+    {
+     "zh": "他顶着大雪往前走，扶着米袋的双手冻得不行，就停下来暖暖，再继续赶路。",
+     "py": "Tā dǐngzhe dàxuě wǎng qián zǒu, fúzhe mǐdài de shuāng shǒu dòng de bùxíng, jiù tíng xialai nuǎnnuan, zài jìxù gǎnlù.",
+     "vn": "Ông đội tuyết lớn đi về phía trước, hai tay giữ bao gạo lạnh cóng không chịu nổi, bèn dừng lại sưởi cho ấm rồi lại tiếp tục lên đường."
+    },
+    {
+     "zh": "这个地方这么热闹，孩子们高兴得不得了！",
+     "py": "Zhège dìfang zhème rènao, háizimen gāoxìng de bùdéliǎo!",
+     "vn": "Chỗ này náo nhiệt thế, bọn trẻ vui không tả xiết!"
+    },
+    {
+     "zh": "他心里烦得很，自言自语地抱怨：“怎么还有那么远啊！”",
+     "py": "Tā xīnli fán de hěn, zì yán zì yǔ de bàoyuàn: “Zěnme hái yǒu nàme yuǎn a!”",
+     "vn": "Trong lòng anh ấy bực bội lắm, lẩm bẩm than: “Sao vẫn còn xa thế!”"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我今天很累得不行。",
+     "why": "Đã có bổ ngữ mức độ 得不行 thì không thêm 很 trước tính từ.",
+     "right": "我今天累得不行。"
+    },
+    {
+     "wrong": "今天冷不行，多穿点儿衣服吧。",
+     "why": "Thiếu 得 — bổ ngữ mức độ phải nối bằng 得.",
+     "right": "今天冷得不行，多穿点儿衣服吧。"
+    }
+   ]
+  },
+  {
+   "point": "反而",
+   "explain": "反而 là phó từ, dùng ở giữa hai phân câu (đầu phân câu sau), biểu thị kết quả NGƯỢC với điều mong đợi hoặc lẽ thường. Hay đi với “不但不/没……，反而……” hoặc “没有……，反而……”. 反而 đứng SAU chủ ngữ.",
+   "rule": "(<strong style=\"color:var(--sky-d)\">不但</strong>) 不 / 没 + A，(Chủ ngữ) + <strong style=\"color:var(--sky-d)\">反而</strong> + B",
+   "examples": [
+    {
+     "zh": "这样不但不能提高他们的阅读能力，反而有可能降低他们的阅读兴趣和热情。",
+     "py": "Zhèyàng búdàn bù néng tígāo tāmen de yuèdú nénglì, fǎn'ér yǒu kěnéng jiàngdī tāmen de yuèdú xìngqù hé rèqíng.",
+     "vn": "Làm vậy chẳng những không nâng cao được khả năng đọc của các em, trái lại còn có thể làm giảm hứng thú và nhiệt tình đọc sách."
+    },
+    {
+     "zh": "大城市的生活虽然很精彩，但一辈子生活在农村的父母反而会不适应。",
+     "py": "Dà chéngshì de shēnghuó suīrán hěn jīngcǎi, dàn yíbèizi shēnghuó zài nóngcūn de fùmǔ fǎn'ér huì bú shìyìng.",
+     "vn": "Cuộc sống thành phố lớn tuy rất sôi động, nhưng cha mẹ cả đời sống ở nông thôn trái lại sẽ không quen."
+    },
+    {
+     "zh": "但他并没有因为物质条件好而感到欢喜，反而常常诚恳地说：“多么希望父母能和我一起过好日子！……”",
+     "py": "Dàn tā bìng méiyǒu yīnwèi wùzhì tiáojiàn hǎo ér gǎndào huānxǐ, fǎn'ér chángcháng chéngkěn de shuō: “Duōme xīwàng fùmǔ néng hé wǒ yìqǐ guò hǎo rìzi! ……”",
+     "vn": "Nhưng ông không hề vì điều kiện vật chất tốt mà thấy vui mừng, trái lại thường thành khẩn nói: “Ước gì cha mẹ được cùng tôi sống những ngày tốt đẹp!…”"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他不但不帮我，反而他笑我。",
+     "why": "反而 là phó từ, phải đứng SAU chủ ngữ. Hai vế cùng chủ ngữ thì vế sau bỏ luôn chủ ngữ.",
+     "right": "他不但不帮我，反而笑我。"
+    },
+    {
+     "wrong": "他很努力，反而考得很好。",
+     "why": "Kết quả CÙNG CHIỀU với mong đợi (chăm → điểm tốt) thì không dùng 反而; 反而 chỉ dùng khi kết quả NGƯỢC lẽ thường.",
+     "right": "他很努力，所以考得很好。"
+    }
+   ]
+  }
+ ]
+}

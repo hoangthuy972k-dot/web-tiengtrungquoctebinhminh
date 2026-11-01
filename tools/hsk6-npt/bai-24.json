@@ -1,0 +1,931 @@
+[
+ {
+  "so": "1",
+  "ten": "「紧缩句」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + (S) + 也 + B　(= 即使 / 就算 A，也 B)",
+   "A + (S) + 就 + B　(= 只要 / 如果 A，就 B)",
+   "Khuôn cố định: 一……就…… · 再……也…… · 不……不……"
+  ],
+  "giaiThich": "紧缩句 (câu co) dùng HÌNH THỨC câu đơn để diễn đạt NỘI DUNG câu phức: bỏ ngắt quãng (dấu phẩy) giữa các vế, bỏ liên từ ở vế đầu (即使 / 就算 / 只要 / 如果 / 要是…), thậm chí bỏ bớt thành phần (chủ ngữ), nhưng thường GIỮ phó từ quan hệ ở vế sau: 也, 就, 都, 才, 还. Khẩu ngữ rất hay dùng: 想赢球也不能…… (= 即使想赢球，也不能……), 她一回来我就告诉你 (= 只要她一回来，我就告诉你), 不站住就开枪了 (= 你要是不站住，我就开枪了). Các khuôn câu co quen thuộc đã học: 一……就……, 再……也……, 越……越……, 不……不…… (不见不散), 非……不…… (非去不可). Khi dịch sang tiếng Việt phải THÊM lại từ nối (dù, hễ, nếu…) cho rõ quan hệ.",
+  "viDu": [
+   {
+    "zh": "想赢球也不能置猫头鹰的生命于不顾。（即使想赢球，也不能置猫头鹰的生命于不顾。）",
+    "py": "Xiǎng yíng qiú yě bù néng zhì māotóuyīng de shēngmìng yú bú gù. (Jíshǐ xiǎng yíng qiú, yě bù néng zhì māotóuyīng de shēngmìng yú bú gù.)",
+    "vn": "Dù muốn thắng cũng không thể bất chấp mạng sống của con cú mèo."
+   },
+   {
+    "zh": "她一回来我就告诉你。（只要她一回来，我就告诉你。）",
+    "py": "Tā yì huílái wǒ jiù gàosu nǐ. (Zhǐyào tā yì huílái, wǒ jiù gàosu nǐ.)",
+    "vn": "Cô ấy vừa về là tôi báo cho bạn ngay."
+   },
+   {
+    "zh": "站住！不站住就开枪了。（站住！你要是不站住，我就开枪了。）",
+    "py": "Zhànzhù! Bú zhànzhù jiù kāi qiāng le. (Zhànzhù! Nǐ yàoshi bú zhànzhù, wǒ jiù kāi qiāng le.)",
+    "vn": "Đứng lại! Không đứng lại là tao bắn đấy."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "你不说我能知道。",
+    "why": "Bỏ luôn cả 也 → mất quan hệ nhượng bộ, câu thành \"cậu không nói thì tôi biết được\" rất khó hiểu. Câu co bỏ liên từ đầu nhưng phải GIỮ phó từ quan hệ ở vế sau.",
+    "dung": "你不说我也能知道。"
+   },
+   {
+    "sai": "不站住开枪了。",
+    "why": "Thiếu 就 nối điều kiện – kết quả; câu co vẫn cần 就 để người nghe hiểu \"nếu không … thì …\".",
+    "dung": "不站住就开枪了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "想赢球",
+       "不能置猫头鹰的生命于不顾。"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "就",
+       "才"
+      ],
+      "goiY": "\"Dù muốn thắng cũng không thể bất chấp mạng sống của con cú.\" (câu bài khoá)",
+      "giai": "Câu co nhượng bộ = 即使想赢球，也不能…… → giữ 也."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她一回来我",
+       "告诉你。"
+      ],
+      "dap": [
+       [
+        "就"
+       ]
+      ],
+      "chon": [
+       "就",
+       "也",
+       "才"
+      ],
+      "goiY": "\"Cô ấy vừa về là tôi báo bạn ngay.\" (ví dụ của sách)",
+      "giai": "一……就…… hai việc nối tiếp tức thì."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "站住！不站住",
+       "开枪了。"
+      ],
+      "dap": [
+       [
+        "就"
+       ]
+      ],
+      "chon": [
+       "就",
+       "也",
+       "都"
+      ],
+      "goiY": "\"Đứng lại! Không đứng lại là tao bắn.\" (ví dụ của sách)",
+      "giai": "Điều kiện – kết quả (= 你要是不站住，我就……) → 就."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你不说我",
+       "能知道。"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "就",
+       "还"
+      ],
+      "goiY": "\"Cậu không nói tôi cũng biết.\" (练一练 (2))",
+      "giai": "= 就算你不说，我也能知道 → giữ 也."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件事再难",
+       "要做完。"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "就",
+       "才"
+      ],
+      "goiY": "\"Việc này khó đến mấy cũng phải làm xong.\"",
+      "giai": "Khuôn co 再……也…… (ôn HSK 5)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "明天早上八点，我们不见",
+       "散。"
+      ],
+      "dap": [
+       [
+        "不"
+       ]
+      ],
+      "chon": [
+       "不",
+       "没",
+       "别"
+      ],
+      "goiY": "\"8 giờ sáng mai, không gặp không về.\"",
+      "giai": "Khuôn co 不见不散 = 如果不见面，就不散."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "得罪她",
+       "咱",
+       "也",
+       "不怕"
+      ],
+      "dap": [
+       "得罪她咱也不怕。"
+      ],
+      "goiY": "Có đắc tội với cô ta thì ta cũng chẳng sợ.",
+      "giai": "Câu co: bỏ 即使 và dấu phẩy, giữ 也 (练一练 (1))."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "不喜欢",
+       "就",
+       "不买"
+      ],
+      "dap": [
+       "你不喜欢就不买。"
+      ],
+      "goiY": "Cậu không thích thì không mua.",
+      "giai": "Câu co điều kiện với 就 (练一练 (3))."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "一",
+       "看书",
+       "就",
+       "想睡觉"
+      ],
+      "dap": [
+       "他一看书就想睡觉。"
+      ],
+      "goiY": "Cậu ấy hễ đọc sách là buồn ngủ.",
+      "giai": "Khuôn 一……就……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "得罪她咱也不怕。",
+      "dung": true,
+      "giai": "Đúng: câu co của 即使得罪她，咱也不怕 — không cần dấu phẩy."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你不说我能知道。",
+      "dung": false,
+      "sua": "你不说我也能知道。",
+      "giai": "Thiếu 也 → mất quan hệ nhượng bộ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "即使想赢球，也不能不顾动物的生命。",
+      "dung": true,
+      "giai": "Đúng: đây là câu phức đầy đủ; dạng co là 想赢球也不能不顾动物的生命."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Có mệt đến mấy tớ cũng phải làm xong bài tập.",
+      "dap": [
+       "再累我也要把作业做完。",
+       "我再累也要把作业做完。",
+       "再累我也得把作业写完。"
+      ],
+      "py": "Zài lèi wǒ yě yào bǎ zuòyè zuòwán.",
+      "goiY": "Dịch sang tiếng Trung bằng câu co, dùng 再……也…….",
+      "giai": "Câu co = 即使再累，我也要……; bỏ liên từ và dấu phẩy."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mẹ vừa về là tớ gọi cho cậu ngay.",
+      "dap": [
+       "妈妈一回来我就给你打电话。",
+       "我妈一回来我就给你打电话。",
+       "妈妈一回来，我就给你打电话。"
+      ],
+      "py": "Māma yì huílái wǒ jiù gěi nǐ dǎ diànhuà.",
+      "goiY": "Dịch sang tiếng Trung bằng câu co 一……就…….",
+      "giai": "Giống ví dụ sách 她一回来我就告诉你."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Đổi câu phức thành câu co (练一练 của sách)",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "即使得罪她，咱也不怕。→ ＿＿＿",
+      "goiY": "Đổi câu phức thành câu co (练一练 (1) của sách).",
+      "mau": "得罪她咱也不怕。",
+      "can": [
+       [
+        "得罪她咱也不怕",
+        "得罪她我们也不怕"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "就算你不说，我也能知道。→ ＿＿＿",
+      "goiY": "Đổi câu phức thành câu co (练一练 (2) của sách).",
+      "mau": "你不说我也能知道。",
+      "can": [
+       [
+        "不说我也能知道",
+        "不说我也知道"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "如果你不喜欢，咱们就不买。→ ＿＿＿",
+      "goiY": "Đổi câu phức thành câu co (练一练 (3) của sách).",
+      "mau": "要是你不喜欢就不买。",
+      "can": [
+       [
+        "不喜欢就不买",
+        "不喜欢咱们就不买",
+        "不喜欢我们就不买"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「特意」",
+  "tenVn": "",
+  "cauTruc": [
+   "S + 特意 + V (+ O) — cất công, chuyên vì việc đó mà làm",
+   "特意 + 为 + người + V / 是……特意……的",
+   "Phân biệt: 故意 (biết không nên mà vẫn làm, nghĩa xấu; làm được danh từ)"
+  ],
+  "giaiThich": "\"特意\" là PHÓ TỪ, biểu thị CHUYÊN VÌ một việc nào đó mà làm (专门为了某一件事), thường là bỏ tâm sức, có ý tốt với người khác: 特意来看你, 特意为你准备的, 特意绕道北京. Đứng trước động từ / cụm động từ, hay đi với 为 + người, 从……来 / 赶来. Phân biệt với 故意 (词语辨析 của bài): 故意 = biết không nên / không cần mà vẫn làm, thường mang nghĩa xấu; 故意 còn làm danh từ trong pháp luật (存在伤害对方的故意), 特意 thì không. Gần nghĩa: 专门, 专程 (HSK 6 bài 5 — cất công đi một chuyến).",
+  "viDu": [
+   {
+    "zh": "一次赛前热身，主办方特意做了警示牌，警告运动员不要在球门里训练。",
+    "py": "Yí cì sài qián rèshēn, zhǔbànfāng tèyì zuòle jǐngshìpái, jǐnggào yùndòngyuán búyào zài qiúmén li xùnliàn.",
+    "vn": "Một lần khởi động trước trận, ban tổ chức đã cất công làm biển cảnh báo, nhắc vận động viên không được tập trong khung thành."
+   },
+   {
+    "zh": "那一年我出差去天津，特意绕道北京，去了趟圆明园。",
+    "py": "Nà yì nián wǒ chūchāi qù Tiānjīn, tèyì ràodào Běijīng, qùle tàng Yuánmíngyuán.",
+    "vn": "Năm đó tôi đi công tác Thiên Tân, đã cố ý đi vòng qua Bắc Kinh, ghé Viên Minh Viên một chuyến."
+   },
+   {
+    "zh": "城市生活的忙乱、嘈杂使人们渴望安静，因此地处边城的我的故乡就成了人们特意要来的旅游胜地了。",
+    "py": "Chéngshì shēnghuó de mángluàn, cáozá shǐ rénmen kěwàng ānjìng, yīncǐ dì chǔ biānchéng de wǒ de gùxiāng jiù chéngle rénmen tèyì yào lái de lǚyóu shèngdì le.",
+    "vn": "Sự bận rộn, ồn ào của cuộc sống thành thị khiến người ta khao khát yên tĩnh, vì thế quê hương nơi biên thành của tôi đã trở thành điểm du lịch mà người ta cất công tìm đến."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他特意把我的杯子打碎了。",
+    "why": "Làm việc xấu, biết không nên mà vẫn làm → phải dùng 故意. 特意 dùng cho việc bỏ công làm tốt.",
+    "dung": "他故意把我的杯子打碎了。"
+   },
+   {
+    "sai": "法院认为他存在伤害对方的特意。",
+    "why": "特意 chỉ là phó từ, không làm danh từ; danh từ trong pháp luật là 故意.",
+    "dung": "法院认为他存在伤害对方的故意。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "一次赛前热身，主办方",
+       "做了警示牌。"
+      ],
+      "dap": [
+       [
+        "特意"
+       ]
+      ],
+      "chon": [
+       "特意",
+       "故意",
+       "成心"
+      ],
+      "goiY": "\"Ban tổ chức đã cất công làm biển cảnh báo.\" (câu bài khoá)",
+      "giai": "Việc làm vì người khác, có ích → 特意."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你看见红灯亮了还不停，是",
+       "的吧！"
+      ],
+      "dap": [
+       [
+        "故意"
+       ]
+      ],
+      "chon": [
+       "故意",
+       "特意",
+       "专门"
+      ],
+      "goiY": "\"Thấy đèn đỏ mà không dừng, cố tình phải không!\" (做一做 ②)",
+      "giai": "Biết không nên mà vẫn làm → 故意."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为了写好论文，他",
+       "拜访了那位有名的学者。"
+      ],
+      "dap": [
+       [
+        "特意"
+       ]
+      ],
+      "chon": [
+       "特意",
+       "故意",
+       "当场"
+      ],
+      "goiY": "\"Để viết tốt luận văn, anh ấy cất công đến thăm vị học giả.\" (ví dụ của sách)",
+      "giai": "Bỏ công sức làm tốt một việc → 特意."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "借钱不还。"
+      ],
+      "dap": [
+       [
+        "故意"
+       ]
+      ],
+      "chon": [
+       "故意",
+       "特意",
+       "专程"
+      ],
+      "goiY": "\"Anh ta cố tình vay tiền không trả.\" (ví dụ của sách)",
+      "giai": "Nghĩa xấu → 故意."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这是我特意",
+       "你准备的房间。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "被",
+       "对"
+      ],
+      "goiY": "\"Đây là phòng tôi chuẩn bị riêng cho bạn.\" (练一练 (3))",
+      "giai": "特意 + 为 + người + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那一年我出差去天津，",
+       "绕道北京，去了趟圆明园。"
+      ],
+      "dap": [
+       [
+        "特意"
+       ]
+      ],
+      "chon": [
+       "特意",
+       "成心",
+       "故意"
+      ],
+      "goiY": "\"Tôi đã cố ý đi vòng qua Bắc Kinh.\" (ví dụ của sách)",
+      "giai": "Chuyên vì muốn thăm Viên Minh Viên mà đi vòng → 特意 (không mang nghĩa xấu)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "特意",
+       "从上海",
+       "来到北京",
+       "参加这次会议"
+      ],
+      "dap": [
+       "他特意从上海来到北京参加这次会议。"
+      ],
+      "goiY": "Anh ấy cất công từ Thượng Hải đến Bắc Kinh dự hội nghị.",
+      "giai": "特意 đứng trước cụm giới từ 从上海."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "妈妈",
+       "特意",
+       "为我",
+       "准备了",
+       "家乡菜"
+      ],
+      "dap": [
+       "妈妈特意为我准备了家乡菜。"
+      ],
+      "goiY": "Mẹ đặc biệt chuẩn bị món quê cho tôi.",
+      "giai": "特意 + 为 + người + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "小明",
+       "故意",
+       "把椅子",
+       "撞倒了"
+      ],
+      "dap": [
+       "小明故意把椅子撞倒了。"
+      ],
+      "goiY": "Tiểu Minh cố tình xô đổ cái ghế.",
+      "giai": "故意 + 把 + O + V (nghĩa xấu)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "对不起，我不是故意弄坏你的手表的。",
+      "dung": true,
+      "giai": "Đúng (做一做 ①): làm hỏng đồ là việc xấu → 故意."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他故意为大家准备了丰盛的午餐，我们非常感动。",
+      "dung": false,
+      "sua": "他特意为大家准备了丰盛的午餐，我们非常感动。",
+      "giai": "Việc tốt, làm mọi người cảm động → 特意 (做一做 ④)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "虽然造成了死伤5人的后果，但他并没有主观上的特意。",
+      "dung": false,
+      "sua": "虽然造成了死伤5人的后果，但他并没有主观上的故意。",
+      "giai": "Làm danh từ (pháp luật) → chỉ 故意 (做一做 ③)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Biết tôi thích đọc sách, bạn ấy đã cất công mua tặng tôi một cuốn tiểu thuyết.",
+      "dap": [
+       "知道我喜欢看书，他特意买了一本小说送给我。",
+       "知道我爱看书，他特意送了我一本小说。",
+       "他知道我喜欢读书，特意给我买了一本小说。"
+      ],
+      "py": "Zhīdào wǒ xǐhuan kàn shū, tā tèyì mǎile yì běn xiǎoshuō sòng gěi wǒ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 特意.",
+      "giai": "Việc tốt, bỏ công vì người khác → 特意."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Anh ta cố tình không nghe điện thoại của tôi.",
+      "dap": [
+       "他故意不接我的电话。",
+       "他是故意不接我电话的。",
+       "他故意不接我打的电话。"
+      ],
+      "py": "Tā gùyì bù jiē wǒ de diànhuà.",
+      "goiY": "Dịch sang tiếng Trung — cân nhắc 特意 hay 故意.",
+      "giai": "Việc xấu, cố tình → 故意, không dùng 特意."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "为了完成这次采访，＿＿＿。（查阅）",
+      "goiY": "Dùng 特意 hoàn thành câu (练一练 (1) của sách).",
+      "mau": "为了完成这次采访，我特意查阅了被采访者的资料。",
+      "can": [
+       [
+        "特意查阅"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "在动笔写这本书之前，＿＿＿。（调查）",
+      "goiY": "Dùng 特意 hoàn thành câu (练一练 (2) của sách).",
+      "mau": "在动笔写这本书之前，我特意调查了相关数据。",
+      "can": [
+       [
+        "特意调查"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这是＿＿＿，知道你换了地方睡不好觉。（准备）",
+      "goiY": "Dùng 特意 hoàn thành câu (练一练 (3) của sách).",
+      "mau": "这是我特意为你准备的房间，知道你换了地方睡不好觉。",
+      "can": [
+       [
+        "特意"
+       ],
+       [
+        "准备的"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「修辞（2）比拟」",
+  "tenVn": "",
+  "cauTruc": [
+   "拟人: viết vật như người (太阳露出了笑脸)",
+   "拟物: viết người như vật / vật này như vật kia (飞出了小女儿, 猫头鹰“迫降”)",
+   "Phân tích: 把 A 比作 B　·　khác 比喻 (có 像 / 好像)"
+  ],
+  "giaiThich": "比拟 là một phép tu từ (phần 篇章修辞 của quyển 下): dựa vào trí tưởng tượng, VIẾT VẬT NHƯ NGƯỜI (拟人 — nhân hoá: 太阳露出了笑脸), hoặc VIẾT NGƯỜI NHƯ VẬT (拟物: 他们就夹着尾巴跑 — coi người như con vật cụp đuôi chạy), hoặc VIẾT VẬT NÀY NHƯ VẬT KIA (猫头鹰“迫降”球场 — coi con cú như máy bay). Khác 比喻 (so sánh, ôn HSK 6 bài 8): 比喻 thường nêu cả hai sự vật và có từ so sánh (像, 好像, 仿佛…); 比拟 KHÔNG nêu vật được mượn, chỉ gán động tác, tình cảm, tính chất của nó cho đối tượng. Khi phân tích dùng khung: 把 A 比作 B. Tu từ (1) là 仿词 (bài 23).",
+  "viDu": [
+   {
+    "zh": "雨停了，天晴了，太阳露出了笑脸。（“太阳”被比拟成人，具有和人一样的思想情感、动作情态。）",
+    "py": "Yǔ tíng le, tiān qíng le, tàiyáng lùchūle xiàoliǎn. (“Tàiyáng” bèi bǐnǐ chéng rén, jùyǒu hé rén yíyàng de sīxiǎng qínggǎn, dòngzuò qíngtài.)",
+    "vn": "Mưa tạnh, trời quang, mặt trời hé nụ cười. (Mặt trời được nhân hoá, có tình cảm, động tác giống con người.)"
+   },
+   {
+    "zh": "这帮人就是欺软怕硬，你老实，他们就欺负你；你厉害，他们就夹着尾巴跑。",
+    "py": "Zhè bāng rén jiù shì qīruǎn-pàyìng, nǐ lǎoshi, tāmen jiù qīfu nǐ; nǐ lìhai, tāmen jiù jiāzhe wěiba pǎo.",
+    "vn": "Bọn này chuyên bắt nạt kẻ yếu, sợ kẻ mạnh: cậu hiền thì chúng bắt nạt cậu; cậu dữ thì chúng cụp đuôi chạy mất. (Coi người như con vật.)"
+   },
+   {
+    "zh": "球赛进行得正激烈时，一只很可能是因受伤而“迫降”球场的猫头鹰遮挡住了球员的视线。",
+    "py": "Qiúsài jìnxíng de zhèng jīliè shí, yì zhī hěn kěnéng shì yīn shòushāng ér “pòjiàng” qiúchǎng de māotóuyīng zhēdǎng zhùle qiúyuán de shìxiàn.",
+    "vn": "Khi trận đấu đang quyết liệt, một con cú mèo — rất có thể vì bị thương mà \"hạ cánh khẩn cấp\" xuống sân — đã che khuất tầm nhìn của cầu thủ. (Coi con cú như máy bay.)"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "“她的脸红得像苹果一样。”——这句用了比拟。",
+    "why": "Có từ so sánh 像 và nêu cả hai sự vật (脸, 苹果) → đây là 比喻 (so sánh), không phải 比拟.",
+    "dung": "“她的脸红得像苹果一样。”用的是比喻；“花儿羞答答地垂下头来。”用的才是比拟。"
+   },
+   {
+    "sai": "“太阳照进了窗子，亮得有些晃眼。”——这句用了比拟。",
+    "why": "Câu chỉ tả thực ánh nắng, không gán động tác, tình cảm của người hay vật khác cho mặt trời (đáp án 练一练 của sách).",
+    "dung": "“太阳照进了窗子，亮得有些晃眼。”没有使用比拟。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "雨停了，天晴了，太阳露出了",
+       "。"
+      ],
+      "dap": [
+       [
+        "笑脸"
+       ]
+      ],
+      "chon": [
+       "笑脸",
+       "光芒",
+       "云彩"
+      ],
+      "goiY": "\"Mưa tạnh, trời quang, mặt trời hé nụ cười.\" — câu nhân hoá (ví dụ của sách)",
+      "giai": "笑脸 là của người → mặt trời được nhân hoá."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "啄木鸟在给树",
+       "。"
+      ],
+      "dap": [
+       [
+        "治病"
+       ]
+      ],
+      "chon": [
+       "治病",
+       "打洞",
+       "找虫子"
+      ],
+      "goiY": "\"Chim gõ kiến đang chữa bệnh cho cây.\" — câu nhân hoá (练一练 (2))",
+      "giai": "治病 là việc của bác sĩ → coi chim như người."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "满天的星星都在",
+       "欢笑。"
+      ],
+      "dap": [
+       [
+        "眨眼"
+       ]
+      ],
+      "chon": [
+       "眨眼",
+       "闪烁",
+       "发光"
+      ],
+      "goiY": "\"Sao đầy trời đều đang chớp mắt cười vui.\" — câu nhân hoá (练习4 ①)",
+      "giai": "眨眼 (chớp mắt) là động tác của người; 闪烁 chỉ tả thực."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你厉害，他们就夹着",
+       "跑。"
+      ],
+      "dap": [
+       [
+        "尾巴"
+       ]
+      ],
+      "chon": [
+       "尾巴",
+       "书包",
+       "脑袋"
+      ],
+      "goiY": "\"Cậu dữ thì chúng cụp đuôi chạy.\" — coi người như vật (ví dụ của sách)",
+      "giai": "夹着尾巴 là hình ảnh con vật → 拟物."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一只很可能是因受伤而“",
+       "”球场的猫头鹰遮挡住了球员的视线。"
+      ],
+      "dap": [
+       [
+        "迫降"
+       ]
+      ],
+      "chon": [
+       "迫降",
+       "飞进",
+       "来到"
+      ],
+      "goiY": "\"… con cú \"hạ cánh khẩn cấp\" xuống sân …\" (câu bài khoá)",
+      "giai": "迫降 vốn dùng cho máy bay → coi con cú như máy bay."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我的母亲已经迎着出来了，接着便",
+       "出了八岁的小女儿。"
+      ],
+      "dap": [
+       [
+        "飞"
+       ]
+      ],
+      "chon": [
+       "飞",
+       "走",
+       "跑"
+      ],
+      "goiY": "\"… rồi cô con gái tám tuổi \"bay\" ra.\" (练习4 ③)",
+      "giai": "飞 vốn dùng cho chim → coi người như chim; 走, 跑 chỉ tả thực."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "太阳",
+       "露出了",
+       "笑脸",
+       "天晴了",
+       "，"
+      ],
+      "dap": [
+       "天晴了，太阳露出了笑脸。"
+      ],
+      "goiY": "Trời quang rồi, mặt trời hé nụ cười.",
+      "giai": "Nhân hoá mặt trời."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "啄木鸟",
+       "给树",
+       "在",
+       "治病"
+      ],
+      "dap": [
+       "啄木鸟在给树治病。"
+      ],
+      "goiY": "Chim gõ kiến đang chữa bệnh cho cây.",
+      "giai": "在 + 给 + O + V: đang làm gì cho ai."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "星星",
+       "都在",
+       "满天的",
+       "眨眼欢笑"
+      ],
+      "dap": [
+       "满天的星星都在眨眼欢笑。"
+      ],
+      "goiY": "Sao đầy trời đều đang chớp mắt cười vui.",
+      "giai": "Định ngữ 满天的 đứng trước 星星."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "“太阳照进了窗子，亮得有些晃眼。”这句话使用了比拟。",
+      "dung": false,
+      "sua": "“太阳照进了窗子，亮得有些晃眼。”这句话没有使用比拟。",
+      "giai": "Chỉ tả thực — đáp án 练一练 của sách là câu (3)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "“孩子们竖起耳朵听得认真。”这句话把孩子们比作了动物。",
+      "dung": true,
+      "giai": "Đúng: 竖起耳朵 (vểnh tai) là động tác của con vật → 拟物."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "“她的脸红得像苹果。”这句话使用的是比拟。",
+      "dung": false,
+      "sua": "“她的脸红得像苹果。”这句话使用的是比喻。",
+      "giai": "Có 像 và nêu cả hai vật → 比喻, không phải 比拟."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Gió thu thổi qua, những chiếc lá vàng nhảy múa trên không trung.",
+      "dap": [
+       "秋风吹过，黄叶在空中跳舞。",
+       "秋风吹过，金黄的树叶在空中跳着舞。",
+       "秋风一吹，黄叶在空中跳起舞来。"
+      ],
+      "py": "Qiūfēng chuīguò, huángyè zài kōngzhōng tiàowǔ.",
+      "goiY": "Dịch sang tiếng Trung, giữ phép nhân hoá (lá \"nhảy múa\").",
+      "giai": "跳舞 là động tác của người → nhân hoá chiếc lá."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chiếc đồng hồ báo thức cứ réo gọi tôi dậy mãi.",
+      "dap": [
+       "闹钟一直在叫我起床。",
+       "闹钟不停地喊我起床。",
+       "闹钟一个劲儿地叫我起床。"
+      ],
+      "py": "Nàozhōng yìzhí zài jiào wǒ qǐchuáng.",
+      "goiY": "Dịch sang tiếng Trung, giữ phép nhân hoá (đồng hồ \"gọi\" người).",
+      "giai": "叫 / 喊 + người + 起床 là việc của người → nhân hoá đồng hồ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Phân tích phép 比拟 bằng khung 把……比作…… (练习4 của sách)",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这时，春风送来扑鼻的花香，满天的星星都在眨眼欢笑。→ 把＿＿比作＿＿。",
+      "goiY": "Nói câu này dùng 比拟 thế nào (练习4 ① của sách).",
+      "mau": "把星星比作眨眼欢笑的人。",
+      "can": [
+       [
+        "星星"
+       ],
+       [
+        "人"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "我到了自家的房外，我的母亲已经迎着出来了，接着便飞出了八岁的小女儿。→ 把＿＿比作＿＿。",
+      "goiY": "Nói câu này dùng 比拟 thế nào (练习4 ③ của sách).",
+      "mau": "把小女儿比作会飞的鸟儿。",
+      "can": [
+       [
+        "小女儿",
+        "女儿"
+       ],
+       [
+        "鸟"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "花儿羞答答地垂下头来。→ 把＿＿比作＿＿。",
+      "goiY": "Nói câu này dùng 比拟 thế nào (练习4 ④ của sách).",
+      "mau": "把花儿比作害羞低头的人。",
+      "can": [
+       [
+        "花"
+       ],
+       [
+        "人"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

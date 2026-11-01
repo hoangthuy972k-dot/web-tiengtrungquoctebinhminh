@@ -1,0 +1,936 @@
+[
+ {
+  "so": "1",
+  "ten": "「以」",
+  "tenVn": "",
+  "cauTruc": [
+   "以 + N + V (giới từ: dùng, bằng)",
+   "以 A 为 B (lấy A làm B)",
+   "Vế 1，以 + V (liên từ: để, nhằm)"
+  ],
+  "giaiThich": "以 là từ VĂN VIẾT, có hai cách dùng. ① Giới từ: “dùng, lấy, bằng, dựa vào” (= 用、拿、凭借), hay gặp khuôn 以 A 为 B (lấy A làm B). ② Liên từ: đứng đầu VẾ SAU, nêu MỤC ĐÍCH của hành động ở vế trước (= để, nhằm).",
+  "viDu": [
+   {
+    "zh": "同年4月，（微信）以英文名WeChat正式进入国际市场。",
+    "py": "Tóngnián sì yuè, (Wēixìn) yǐ Yīngwénmíng WeChat zhèngshì jìnrù guójì shìchǎng.",
+    "vn": "Tháng 4 cùng năm, (Weixin) chính thức bước vào thị trường quốc tế với tên tiếng Anh WeChat."
+   },
+   {
+    "zh": "虽然我们已经老了，但还要坚持学习，以适应社会的发展。",
+    "py": "Suīrán wǒmen yǐjīng lǎo le, dàn hái yào jiānchí xuéxí, yǐ shìyìng shèhuì de fāzhǎn.",
+    "vn": "Tuy chúng tôi đã già, nhưng vẫn phải kiên trì học tập, để thích ứng với sự phát triển của xã hội."
+   },
+   {
+    "zh": "比如说为了一场戏剧演出，我们会投入很多时间，准备服装、化妆、道具、舞台美术，以创造良好的效果……",
+    "py": "Bǐrú shuō wèile yì chǎng xìjù yǎnchū, wǒmen huì tóurù hěn duō shíjiān, zhǔnbèi fúzhuāng, huà zhuāng, dàojù, wǔtái měishù, yǐ chuàngzào liánghǎo de xiàoguǒ……",
+    "vn": "Chẳng hạn, vì một buổi diễn kịch, chúng ta bỏ ra rất nhiều thời gian chuẩn bị trang phục, hoá trang, đạo cụ, mỹ thuật sân khấu, để tạo ra hiệu quả tốt…"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我每天以筷子吃饭。",
+    "why": "以 là từ văn viết, trang trọng; việc cụ thể hằng ngày dùng 用.",
+    "dung": "我每天用筷子吃饭。"
+   },
+   {
+    "sai": "以适应社会的发展，我们还要坚持学习。",
+    "why": "以 (liên từ) đứng đầu VẾ SAU, không mở đầu câu như 为了.",
+    "dung": "我们还要坚持学习，以适应社会的发展。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们准备服装、化妆、道具，",
+       "创造良好的效果。"
+      ],
+      "dap": [
+       [
+        "以"
+       ]
+      ],
+      "chon": [
+       "以",
+       "用",
+       "把"
+      ],
+      "goiY": "“… để tạo ra hiệu quả tốt” — vế sau chỉ mục đích.",
+      "giai": "Liên từ 以 đứng đầu vế sau, nêu mục đích (câu của bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "虽然我们已经老了，但还要坚持学习，",
+       "适应社会的发展。"
+      ],
+      "dap": [
+       [
+        "以"
+       ]
+      ],
+      "chon": [
+       "以",
+       "为",
+       "被"
+      ],
+      "goiY": "Vế sau là mục đích: “để thích ứng với sự phát triển xã hội”.",
+      "giai": "Vế 1，以 + V (mục đích) — câu ví dụ của sách."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "学生分为甲乙两队，",
+       "足球为比赛工具。"
+      ],
+      "dap": [
+       [
+        "以"
+       ]
+      ],
+      "chon": [
+       "以",
+       "用",
+       "拿"
+      ],
+      "goiY": "Khuôn “lấy … làm …” (ôn bài 13).",
+      "giai": "以 A 为 B = lấy A làm B. 用 / 拿 không đi với 为."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "微信",
+       "英文名WeChat正式进入国际市场。"
+      ],
+      "dap": [
+       [
+        "以"
+       ]
+      ],
+      "chon": [
+       "以",
+       "把",
+       "为"
+      ],
+      "goiY": "“với tên tiếng Anh WeChat” — giới từ, văn viết (bài 12).",
+      "giai": "Giới từ 以 + N = bằng, với (cách thức, danh nghĩa)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这一个月来，我天天训练，",
+       "在比赛中取得好成绩。"
+      ],
+      "dap": [
+       [
+        "以"
+       ]
+      ],
+      "chon": [
+       "以",
+       "用",
+       "被"
+      ],
+      "goiY": "Luyện tập hằng ngày là để đạt thành tích tốt.",
+      "giai": "Liên từ 以 chỉ mục đích — bài 练一练 (2) của sách."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他把闹钟调早了半个小时，",
+       "保证第二天不迟到。"
+      ],
+      "dap": [
+       [
+        "以"
+       ]
+      ],
+      "chon": [
+       "以",
+       "用",
+       "被"
+      ],
+      "goiY": "Chỉnh đồng hồ sớm hơn là để đảm bảo không đi muộn (ôn câu 把).",
+      "giai": "Liên từ 以 + mục đích, đứng đầu vế sau."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "准备了",
+       "服装和道具",
+       "，",
+       "以",
+       "创造",
+       "良好的效果",
+       "。"
+      ],
+      "dap": [
+       "我们准备了服装和道具，以创造良好的效果。"
+      ],
+      "goiY": "Chúng tôi chuẩn bị trang phục và đạo cụ để tạo hiệu quả tốt.",
+      "giai": "Vế hành động trước, 以 + mục đích sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他每天",
+       "坚持锻炼",
+       "，",
+       "以",
+       "保持健康",
+       "。"
+      ],
+      "dap": [
+       "他每天坚持锻炼，以保持健康。"
+      ],
+      "goiY": "Ngày nào anh ấy cũng kiên trì tập luyện để giữ sức khoẻ.",
+      "giai": "以 đứng đầu vế sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "学生们",
+       "以",
+       "足球",
+       "为",
+       "比赛工具",
+       "。"
+      ],
+      "dap": [
+       "学生们以足球为比赛工具。"
+      ],
+      "goiY": "Học sinh lấy quả bóng đá làm dụng cụ thi đấu.",
+      "giai": "Khuôn 以 A 为 B."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这个月我天天练习口语，以参加下个月的演讲比赛。",
+      "dung": true,
+      "giai": "Đúng: vế trước là hành động, vế sau 以 + mục đích."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "以提高汉语水平，我每天看中文电影。",
+      "dung": false,
+      "sua": "我每天看中文电影，以提高汉语水平。",
+      "giai": "Liên từ 以 không đứng đầu câu như 为了; hoặc đổi thành 为了, hoặc đưa vế 以 ra sau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我每天以筷子吃饭。",
+      "dung": false,
+      "sua": "我每天用筷子吃饭。",
+      "giai": "以 là từ văn viết; việc cụ thể hằng ngày dùng 用."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chúng tôi đã đưa cuộc họp lên sớm một tiếng, để tiết kiệm thời gian cho mọi người.",
+      "dap": [
+       "我们把会议提前了一个小时，以节省大家的时间。",
+       "我们把会议提前了一个小时，以节约大家的时间。",
+       "会议提前了一个小时，以节省大家的时间。"
+      ],
+      "py": "Wǒmen bǎ huìyì tíqiánle yí ge xiǎoshí, yǐ jiéshěng dàjiā de shíjiān.",
+      "goiY": "Dịch sang tiếng Trung, dùng 以 (liên từ, chỉ mục đích).",
+      "giai": "Vế hành động (câu 把) trước, 以 + mục đích sau."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Anh ấy lấy việc giúp đỡ người khác làm niềm vui.",
+      "dap": [
+       "他以帮助别人为快乐。",
+       "他以帮助别人为乐。"
+      ],
+      "py": "Tā yǐ bāngzhù biérén wéi kuàilè.",
+      "goiY": "Dịch sang tiếng Trung, dùng khuôn 以……为…….",
+      "giai": "以 A 为 B = lấy A làm B."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你知道济南的泉水是怎么命名的吗？　B：＿＿＿。",
+      "goiY": "nhiều con suối được đặt tên theo hình dáng, âm thanh của nó (dùng 以 — giới từ) — câu của sách",
+      "mau": "很多泉水是以它们的样子或者声音来命名的。",
+      "can": [
+       [
+        "以"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "虽然他不回信，但我还是坚持给他写，＿＿＿。",
+      "goiY": "để anh ấy biết tôi vẫn luôn nhớ tới anh ấy (dùng 以 — liên từ) — câu của sách",
+      "mau": "虽然他不回信，但我还是坚持给他写，以让他知道我一直想着他。",
+      "can": [
+       [
+        "以"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「以」 (liên từ chỉ mục đích), nói về việc học hoặc chuẩn bị cho kỳ thi của em",
+      "mau": "我每天做一套练习题，以熟悉HSK考试的题型。",
+      "can": [
+       [
+        "以"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「平常」",
+  "tenVn": "",
+  "cauTruc": [
+   "很 / 不 + 平常 · 平常的 + N (tính từ)",
+   "平平常常 (dạng lặp)",
+   "Chủ ngữ + 平常 + (总是 / 一般) + V · 像平常一样 (danh từ)"
+  ],
+  "giaiThich": "平常 có hai cách dùng. ① Tính từ: bình thường, không có gì đặc biệt (lặp lại: 平平常常; phủ định: 不平常). ② Danh từ: ngày thường, lúc bình thường (= 平时), làm trạng ngữ thời gian. Chú ý: 平时 chỉ là danh từ, không thay được 平常 khi làm tính từ.",
+  "viDu": [
+   {
+    "zh": "对小王来说，今天是一个不平常的日子，因为他今天第一天上班。",
+    "py": "Duì Xiǎo Wáng lái shuō, jīntiān shì yí ge bù píngcháng de rìzi, yīnwèi tā jīntiān dì-yī tiān shàngbān.",
+    "vn": "Với Tiểu Vương, hôm nay là một ngày không bình thường, vì hôm nay là ngày đầu tiên anh ấy đi làm."
+   },
+   {
+    "zh": "一部电影，开始虽然剧情平平常常，如果最后半个小时能使我们感动，我们依然会向别人推荐它。",
+    "py": "Yí bù diànyǐng, kāishǐ suīrán jùqíng píngpíngchángcháng, rúguǒ zuìhòu bàn ge xiǎoshí néng shǐ wǒmen gǎndòng, wǒmen yīrán huì xiàng biérén tuījiàn tā.",
+    "vn": "Một bộ phim, lúc đầu tuy tình tiết bình bình, nhưng nếu nửa tiếng cuối làm ta cảm động, ta vẫn sẽ giới thiệu nó cho người khác."
+   },
+   {
+    "zh": "他平常总是来得很早，今天却迟到了。",
+    "py": "Tā píngcháng zǒngshì lái de hěn zǎo, jīntiān què chídào le.",
+    "vn": "Ngày thường anh ấy luôn đến rất sớm, hôm nay lại đến muộn."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这部电影很平时，没什么意思。",
+    "why": "平时 chỉ là danh từ, không đứng sau 很. Nghĩa “bình thường, tầm thường” phải dùng 平常.",
+    "dung": "这部电影很平常，没什么意思。"
+   },
+   {
+    "sai": "我平常的时候一般自己做饭。",
+    "why": "平常 (danh từ) đã có nghĩa “lúc thường”, không thêm 的时候.",
+    "dung": "我平常一般自己做饭。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这本书的内容很",
+       "，没什么特别的。"
+      ],
+      "dap": [
+       [
+        "平常"
+       ]
+      ],
+      "chon": [
+       "平常",
+       "平时",
+       "依然"
+      ],
+      "goiY": "Sau 很 cần tính từ: “rất bình thường”.",
+      "giai": "平常 là tính từ; 平时 chỉ là danh từ, không đi sau 很."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "对小王来说，今天是一个不",
+       "的日子。"
+      ],
+      "dap": [
+       [
+        "平常"
+       ]
+      ],
+      "chon": [
+       "平常",
+       "平时",
+       "良好"
+      ],
+      "goiY": "“một ngày không bình thường”.",
+      "giai": "不平常的 + N — tính từ 平常."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一部电影，开始虽然剧情",
+       "，如果最后半个小时能使我们感动，我们依然会推荐它。"
+      ],
+      "dap": [
+       [
+        "平平常常"
+       ]
+      ],
+      "chon": [
+       "平平常常",
+       "平平安安",
+       "清清楚楚"
+      ],
+      "goiY": "Dạng lặp của 平常 — câu của bài khoá.",
+      "giai": "平常 lặp thành AABB: 平平常常 = bình bình, thường thường."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "总是来得很早，今天却迟到了。"
+      ],
+      "dap": [
+       [
+        "平常",
+        "平时"
+       ]
+      ],
+      "chon": [
+       "平常",
+       "依然",
+       "深刻"
+      ],
+      "goiY": "“Ngày thường anh ấy luôn đến sớm”.",
+      "giai": "平常 làm danh từ = 平时, làm trạng ngữ thời gian."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "对待这些孩子，要像",
+       "一样，不要让他们知道自己是被选出来的。"
+      ],
+      "dap": [
+       [
+        "平常",
+        "平时"
+       ]
+      ],
+      "chon": [
+       "平常",
+       "依然",
+       "宁可"
+      ],
+      "goiY": "像……一样 = như mọi khi.",
+      "giai": "像平常一样 — 平常 là danh từ (câu của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "多练习，考试前就不用这么紧张了。"
+      ],
+      "dap": [
+       [
+        "平常",
+        "平时"
+       ]
+      ],
+      "chon": [
+       "平常",
+       "依然",
+       "迅速"
+      ],
+      "goiY": "“Ngày thường luyện nhiều thì trước kỳ thi khỏi căng thẳng” — bài 练一练 (2).",
+      "giai": "平常 (danh từ) đứng đầu câu làm trạng ngữ thời gian."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他平常",
+       "总是",
+       "来得",
+       "很早",
+       "。"
+      ],
+      "dap": [
+       "他平常总是来得很早。"
+      ],
+      "goiY": "Ngày thường anh ấy luôn đến rất sớm.",
+      "giai": "Chủ ngữ + 平常 + 总是 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这部电影的",
+       "剧情",
+       "平平常常",
+       "，",
+       "没什么",
+       "特别的",
+       "。"
+      ],
+      "dap": [
+       "这部电影的剧情平平常常，没什么特别的。"
+      ],
+      "goiY": "Tình tiết bộ phim này bình bình, chẳng có gì đặc biệt.",
+      "giai": "平平常常 làm vị ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "今天",
+       "对我来说",
+       "是一个",
+       "不平常的",
+       "日子",
+       "。"
+      ],
+      "dap": [
+       "今天对我来说是一个不平常的日子。",
+       "对我来说今天是一个不平常的日子。"
+      ],
+      "goiY": "Với tôi, hôm nay là một ngày không bình thường.",
+      "giai": "不平常的 + 日子."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他平常一般七点起床，今天睡到了九点。",
+      "dung": true,
+      "giai": "Đúng: 平常 là danh từ = ngày thường."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这是一份很平时的工作。",
+      "dung": false,
+      "sua": "这是一份很平常的工作。",
+      "giai": "平时 chỉ là danh từ; nghĩa “bình thường” dùng 平常."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "虽然这是一份平常的工作，你也要认真做好。",
+      "dung": true,
+      "giai": "Đúng: 平常的 + N — tính từ làm định ngữ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Ngày thường tôi thường tự nấu cơm ăn.",
+      "dap": [
+       "我平常一般都是自己做饭吃。",
+       "我平常一般自己做饭吃。",
+       "平常我一般都是自己做饭吃。"
+      ],
+      "py": "Wǒ píngcháng yìbān dōu shì zìjǐ zuò fàn chī.",
+      "goiY": "Dịch sang tiếng Trung, dùng 平常 (danh từ).",
+      "giai": "平常 = 平时, đứng sau chủ ngữ hoặc đầu câu."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Câu chuyện này rất bình thường, chẳng có gì đặc biệt.",
+      "dap": [
+       "这个故事很平常，没什么特别的。",
+       "这个故事很平常，没有什么特别的。"
+      ],
+      "py": "Zhège gùshi hěn píngcháng, méi shénme tèbié de.",
+      "goiY": "Dịch sang tiếng Trung, dùng 平常 (tính từ).",
+      "giai": "很 + 平常."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你觉得这本书怎么样？　B：＿＿＿。",
+      "goiY": "nội dung bình thường, không hay lắm (dùng 平常 — tính từ) — câu của sách",
+      "mau": "这本书的内容很平常，没什么意思。",
+      "can": [
+       [
+        "平常"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：＿＿＿？　B：我一般都是自己做饭吃。",
+      "goiY": "hỏi ngày thường bạn ăn cơm thế nào (dùng 平常 — danh từ) — câu của sách",
+      "mau": "你平常怎么吃饭？",
+      "can": [
+       [
+        "平常"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「平常」 (danh từ hoặc tính từ), so sánh ngày thường với cuối tuần / ngày lễ của em",
+      "mau": "我平常六点就起床了，周末可以睡到八点。",
+      "can": [
+       [
+        "平常"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「宁可」",
+  "tenVn": "",
+  "cauTruc": [
+   "宁可 + A，也要 + B",
+   "宁可 + A，也不 + B"
+  ],
+  "giaiThich": "宁可 là phó từ: sau khi SO SÁNH hai mặt (thường đều không hay), người nói CHỌN mặt có lợi hơn, chấp nhận được hơn. Hay đi thành cặp: 宁可 A，也要 B (thà chịu A để đạt được B) · 宁可 A，也不 B (thà A chứ không B). 宁 đọc nìng.",
+  "viDu": [
+   {
+    "zh": "作为母亲，她宁可自己累一点儿，也不想委屈了孩子。",
+    "py": "Zuòwéi mǔqīn, tā nìngkě zìjǐ lèi yìdiǎnr, yě bù xiǎng wěiqu le háizi.",
+    "vn": "Là mẹ, cô ấy thà mình vất vả một chút, chứ không muốn để con thiệt thòi."
+   },
+   {
+    "zh": "为什么大家宁可挤成一团，也不去没人的那边？",
+    "py": "Wèi shénme dàjiā nìngkě jǐ chéng yì tuán, yě bú qù méi rén de nà biān?",
+    "vn": "Sao mọi người thà chen chúc thành một đám, chứ không sang phía không có ai?"
+   },
+   {
+    "zh": "……做节目时，与开幕式相比，我们宁可把更多的精力集中在闭幕式上……",
+    "py": "…… zuò jiémù shí, yǔ kāimùshì xiāngbǐ, wǒmen nìngkě bǎ gèng duō de jīnglì jízhōng zài bìmùshì shang……",
+    "vn": "… khi làm chương trình, so với lễ khai mạc, chúng tôi thà dồn nhiều tâm sức hơn vào lễ bế mạc…"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我宁可多花点儿钱，但是也要买质量好的。",
+    "why": "宁可 đi cặp với 也 (也要 / 也不), không đi với 但是.",
+    "dung": "我宁可多花点儿钱，也要买质量好的。"
+   },
+   {
+    "sai": "我宁可走路去，也要不坐出租车。",
+    "why": "Vế “chứ không …” dùng 也不 + V, không nói 也要不.",
+    "dung": "我宁可走路去，也不坐出租车。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "作为母亲，她",
+       "自己累一点儿，也不想委屈了孩子。"
+      ],
+      "dap": [
+       [
+        "宁可"
+       ]
+      ],
+      "chon": [
+       "宁可",
+       "依然",
+       "平常"
+      ],
+      "goiY": "“thà mình vất vả chứ không để con thiệt thòi”.",
+      "giai": "宁可 A，也不 B — câu của sách."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我宁可多花点儿钱，",
+       "要买一个质量好点儿的。"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "但",
+       "就"
+      ],
+      "goiY": "Vế sau đi cặp với 宁可.",
+      "giai": "宁可……也要…… — không dùng 但是."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为什么大家宁可挤成一团，也",
+       "去没人的那边？"
+      ],
+      "dap": [
+       [
+        "不"
+       ]
+      ],
+      "chon": [
+       "不",
+       "要",
+       "没"
+      ],
+      "goiY": "“thà chen chúc chứ KHÔNG sang bên kia”.",
+      "giai": "宁可 A，也不 B."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "做节目时，我们",
+       "把更多的精力集中在闭幕式上。"
+      ],
+      "dap": [
+       [
+        "宁可"
+       ]
+      ],
+      "chon": [
+       "宁可",
+       "依然",
+       "迅速"
+      ],
+      "goiY": "Câu của bài khoá: so với lễ khai mạc thì chọn lễ bế mạc.",
+      "giai": "宁可 đứng sau chủ ngữ, trước cụm 把."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为了把这篇文章写好，我宁可不睡觉，",
+       "要今天写完。"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "就",
+       "才"
+      ],
+      "goiY": "Bài 练一练 (2) của sách.",
+      "giai": "宁可 A，也要 B."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我宁可走路去学校，也",
+       "坐那么挤的公共汽车。"
+      ],
+      "dap": [
+       [
+        "不"
+       ]
+      ],
+      "chon": [
+       "不",
+       "要",
+       "没"
+      ],
+      "goiY": "“thà đi bộ chứ không đi xe buýt chật chội”.",
+      "giai": "也不 + V — lựa chọn loại bỏ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "宁可",
+       "自己累一点儿",
+       "，",
+       "也不想",
+       "麻烦别人",
+       "。"
+      ],
+      "dap": [
+       "我宁可自己累一点儿，也不想麻烦别人。"
+      ],
+      "goiY": "Tôi thà mình mệt một chút chứ không muốn làm phiền người khác.",
+      "giai": "宁可 A，也不 B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我宁可",
+       "多花点儿钱",
+       "，",
+       "也要",
+       "买",
+       "质量好的",
+       "。"
+      ],
+      "dap": [
+       "我宁可多花点儿钱，也要买质量好的。"
+      ],
+      "goiY": "Tôi thà tốn thêm chút tiền cũng phải mua đồ chất lượng tốt.",
+      "giai": "宁可 A，也要 B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "宁可",
+       "把更多的精力",
+       "集中在",
+       "闭幕式上",
+       "。"
+      ],
+      "dap": [
+       "我们宁可把更多的精力集中在闭幕式上。"
+      ],
+      "goiY": "Chúng tôi thà dồn nhiều tâm sức hơn vào lễ bế mạc.",
+      "giai": "宁可 + cụm 把."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我宁可晚点儿睡，也要把作业做完。",
+      "dung": true,
+      "giai": "Đúng: 宁可 A，也要 B (ôn câu 把)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我宁可多等一会儿，但是也不坐出租车。",
+      "dung": false,
+      "sua": "我宁可多等一会儿，也不坐出租车。",
+      "giai": "宁可 đi cặp với 也, bỏ 但是."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他宁可被爸爸骂，也要不说谎。",
+      "dung": false,
+      "sua": "他宁可被爸爸骂，也不说谎。",
+      "giai": "Ý “chứ không nói dối” phải dùng 也不 + V."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi thà ngủ ít một chút cũng phải xem hết trận bóng.",
+      "dap": [
+       "我宁可少睡一点儿，也要看完这场球赛。",
+       "我宁可少睡一会儿，也要看完这场球赛。",
+       "我宁可少睡一点儿，也要把这场球赛看完。"
+      ],
+      "py": "Wǒ nìngkě shǎo shuì yìdiǎnr, yě yào kànwán zhè chǎng qiúsài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 宁可……也要…….",
+      "giai": "宁可 + điều phải chịu，也要 + điều muốn đạt."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy thà ở nhà một mình chứ không muốn đến bữa tiệc đó.",
+      "dap": [
+       "他宁可一个人待在家里，也不想去那个聚会。",
+       "他宁可一个人在家，也不想去那个聚会。",
+       "他宁可一个人待在家里，也不愿意去那个聚会。"
+      ],
+      "py": "Tā nìngkě yí ge rén dāi zài jiā li, yě bù xiǎng qù nàge jùhuì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 宁可……也不…….",
+      "giai": "宁可 A，也不 B."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我宁可花钱去餐厅吃，＿＿＿。",
+      "goiY": "chứ không muốn tự nấu (dùng 也不……) — câu của sách",
+      "mau": "我宁可花钱去餐厅吃，也不想自己做饭。",
+      "can": [
+       [
+        "也不"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：这次旅行，你觉得我们是坐飞机去好还是坐火车去好？　B：＿＿＿。",
+      "goiY": "thà tốn tiền đi máy bay để tiết kiệm thời gian (dùng 宁可) — câu của sách",
+      "mau": "我宁可多花点儿钱坐飞机，也要节省时间。",
+      "can": [
+       [
+        "宁可"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「宁可……也要 / 也不……」, nói về một lựa chọn của em trong học tập hoặc cuộc sống",
+      "mau": "我宁可每天早起半个小时，也不想上课迟到。",
+      "can": [
+       [
+        "宁可"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

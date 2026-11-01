@@ -1,0 +1,935 @@
+[
+ {
+  "so": "1",
+  "ten": "「预先」",
+  "tenVn": "",
+  "cauTruc": [
+   "预先 + V (+ 好 / 过) — làm sẵn từ trước",
+   "预先 + 没(有) / 未 + V — trước đó không …",
+   "预先 + V + 好的 + N — làm định ngữ"
+  ],
+  "giaiThich": "\"预先\" là PHÓ TỪ, nghĩa là \"trước, sẵn từ trước\": trước khi sự việc xảy ra hoặc động tác được tiến hành thì đã có một hành động nào đó (chuẩn bị, thông báo, đặt chỗ, dự tính…). Đứng trước động từ: 预先订好 / 准备 / 通知 / 告知 / 安排 / 想到; đứng được trước phủ định: 预先没有想到, 预先未被告知 (văn viết). Hay đi với bổ ngữ kết quả 好: 预先准备好的马. Gần nghĩa 事先, 提前 (练习2: 提前 → 预先). Không đứng sau động từ và không làm vị ngữ độc lập.",
+  "viDu": [
+   {
+    "zh": "那里一年四季都是旅游旺季，到那里去旅行，一定要预先订好旅馆。",
+    "py": "Nàlǐ yì nián sìjì dōu shì lǚyóu wàngjì, dào nàlǐ qù lǚxíng, yídìng yào yùxiān dìnghǎo lǚguǎn.",
+    "vn": "Nơi đó quanh năm đều là mùa du lịch cao điểm, đi du lịch ở đó nhất định phải đặt sẵn khách sạn trước."
+   },
+   {
+    "zh": "大家预先都没有想到，本届绘画展览竟然这么受欢迎。",
+    "py": "Dàjiā yùxiān dōu méiyǒu xiǎngdào, běn jiè huìhuà zhǎnlǎn jìngrán zhème shòu huānyíng.",
+    "vn": "Trước đó mọi người đều không ngờ triển lãm tranh kỳ này lại được hoan nghênh đến thế."
+   },
+   {
+    "zh": "志愿者在预先未被告知测试目的的情况下，仅凭直觉就能准确地分辨出假笑声。",
+    "py": "Zhìyuànzhě zài yùxiān wèi bèi gàozhī cèshì mùdì de qíngkuàng xià, jǐn píng zhíjué jiù néng zhǔnquè de fēnbiàn chū jiǎ xiàoshēng.",
+    "vn": "Dù không được báo trước mục đích thử nghiệm, chỉ dựa vào trực giác, tình nguyện viên đã có thể phân biệt chính xác tiếng cười giả."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我订好预先了旅馆。",
+    "why": "预先 là phó từ, phải đứng TRƯỚC động từ, không đứng sau.",
+    "dung": "我预先订好了旅馆。"
+   },
+   {
+    "sai": "这件事很预先。",
+    "why": "预先 không làm vị ngữ, không đi với 很 (không phải tính từ).",
+    "dung": "这件事要预先准备。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "那里一年四季都是旅游旺季，一定要",
+       "订好旅馆。"
+      ],
+      "dap": [
+       [
+        "预先"
+       ]
+      ],
+      "chon": [
+       "预先",
+       "曾经",
+       "刚才"
+      ],
+      "goiY": "\"Nhất định phải đặt sẵn khách sạn trước.\" (ví dụ của sách)",
+      "giai": "Việc làm TRƯỚC khi đi du lịch → 预先; 曾经, 刚才 chỉ quá khứ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家",
+       "都没有想到，本届绘画展览竟然这么受欢迎。"
+      ],
+      "dap": [
+       [
+        "预先"
+       ]
+      ],
+      "chon": [
+       "预先",
+       "已经",
+       "终于"
+      ],
+      "goiY": "\"Trước đó mọi người đều không ngờ …\" (ví dụ của sách)",
+      "giai": "预先 + 都没有 + V: trước khi triển lãm mở không ai ngờ tới."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我已经预先",
+       "了计划，所以实施起来很顺利。"
+      ],
+      "dap": [
+       [
+        "做好"
+       ]
+      ],
+      "chon": [
+       "做好",
+       "做完",
+       "做过"
+      ],
+      "goiY": "\"Tôi đã lên sẵn kế hoạch từ trước.\" (练习2)",
+      "giai": "预先 + V + 好 = làm xong sẵn để dùng về sau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "志愿者在预先",
+       "被告知测试目的的情况下，仅凭直觉就分辨出了假笑声。"
+      ],
+      "dap": [
+       [
+        "未"
+       ]
+      ],
+      "chon": [
+       "未",
+       "不",
+       "别"
+      ],
+      "goiY": "\"Không được báo trước mục đích thử nghiệm.\" (câu bài khoá)",
+      "giai": "预先 + 未被 + V: bị động phủ định, văn viết (未 = 没)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "送公文的到了，换一匹预先准备",
+       "的马，继续赶路。"
+      ],
+      "dap": [
+       [
+        "好"
+       ]
+      ],
+      "chon": [
+       "好",
+       "着",
+       "过"
+      ],
+      "goiY": "\"Đổi một con ngựa đã chuẩn bị sẵn.\" (练一练 3)",
+      "giai": "预先准备好的马: 预先 + V + 好的 + N làm định ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这事她",
+       "通知过我，我最近忙糊涂了，忘了告诉你。"
+      ],
+      "dap": [
+       [
+        "预先"
+       ]
+      ],
+      "chon": [
+       "预先",
+       "然后",
+       "后来"
+      ],
+      "goiY": "\"Chuyện này cô ấy đã báo trước cho tôi.\" (练一练 1)",
+      "giai": "Hành động xảy ra trước → 预先; 然后, 后来 chỉ thứ tự sau."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "预先",
+       "订好",
+       "我们",
+       "了",
+       "旅馆"
+      ],
+      "dap": [
+       "我们预先订好了旅馆。"
+      ],
+      "goiY": "Chúng tôi đã đặt sẵn khách sạn.",
+      "giai": "预先 đứng trước động từ 订好."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "没有想到",
+       "预先",
+       "的是"
+      ],
+      "dap": [
+       "他预先没有想到的是"
+      ],
+      "goiY": "Điều trước đó anh ấy không ngờ tới là …",
+      "giai": "预先 + 没有 + V: phó từ đứng trước phủ định."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "的马",
+       "一匹",
+       "换",
+       "预先准备好"
+      ],
+      "dap": [
+       "换一匹预先准备好的马"
+      ],
+      "goiY": "Đổi một con ngựa đã chuẩn bị sẵn.",
+      "giai": "Cụm 预先准备好的 làm định ngữ cho 马."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我订好预先了旅馆。",
+      "dung": false,
+      "sua": "我预先订好了旅馆。",
+      "giai": "预先 là phó từ, phải đứng trước động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "如果来不了，记得预先通知我一声。",
+      "dung": true,
+      "giai": "Đúng: 预先 + 通知 = báo trước."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这件事很预先。",
+      "dung": false,
+      "sua": "这件事要预先准备。",
+      "giai": "预先 không làm vị ngữ, không đi với 很."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Đi xem phim cuối tuần thì phải mua vé trước, nếu không sẽ hết chỗ.",
+      "dap": [
+       "周末去看电影得预先买票，不然就没有座位了。",
+       "周末看电影要预先买好票，否则就没座位了。",
+       "周末去看电影一定要预先买票，要不然就没位置了。"
+      ],
+      "py": "Zhōumò qù kàn diànyǐng děi yùxiān mǎi piào, bùrán jiù méiyǒu zuòwèi le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 预先.",
+      "giai": "预先 + V; 不然 / 否则 = nếu không thì (ôn HSK 4–5)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Trước đó không ai ngờ lớp mình lại giành giải nhất.",
+      "dap": [
+       "大家预先都没有想到，我们班竟然得了第一名。",
+       "谁也没预先想到我们班会得第一名。",
+       "大家预先都没想到我们班居然拿了第一。"
+      ],
+      "py": "Dàjiā yùxiān dōu méiyǒu xiǎngdào, wǒmen bān jìngrán déle dì-yī míng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 预先.",
+      "giai": "预先 + 都没有想到 + 竟然 / 居然 (bất ngờ) — giống ví dụ (2) của sách."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这事她＿＿＿，我最近都忙糊涂了，忘了告诉你了。",
+      "goiY": "Dùng 预先 hoàn thành câu (练一练 (1) của sách).",
+      "mau": "这事她预先通知过我，我最近都忙糊涂了，忘了告诉你了。",
+      "can": [
+       [
+        "预先通知",
+        "预先告诉",
+        "预先说"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他＿＿＿的是，居然有那么多朋友，在他最困难的时候向他伸出了援手。",
+      "goiY": "Dùng 预先 hoàn thành câu (练一练 (2) của sách).",
+      "mau": "他预先没有想到的是，居然有那么多朋友，在他最困难的时候向他伸出了援手。",
+      "can": [
+       [
+        "预先没有想到",
+        "预先没想到",
+        "预先没料到"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "送公文的到了，吃饱喝足，稍稍休息一下，换一匹＿＿＿，继续赶路。",
+      "goiY": "Dùng 预先 hoàn thành câu (练一练 (3) của sách).",
+      "mau": "送公文的到了，吃饱喝足，稍稍休息一下，换一匹预先准备好的马，继续赶路。",
+      "can": [
+       [
+        "预先准备好的马",
+        "预先准备的马",
+        "预先备好的马"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「……也好，……也罢」",
+  "tenVn": "",
+  "cauTruc": [
+   "A也好，B也罢，(都 / 也)…… — dù A hay B cũng …",
+   "A也好，B也好 / A也罢，B也罢",
+   "Viết lại: 是 / 无论 A 还是 B, A 或者 B → A也好，B也罢"
+  ],
+  "giaiThich": "\"A也好，B也罢\" dùng để LIỆT KÊ (thường hai khả năng, có khi đối lập: 好 / 不好, 刮风 / 下雨), biểu thị trong BẤT KỲ trường hợp nào kết quả cũng vậy. Có thể nói \"……也好，……也好\" hoặc \"……也罢，……也罢\". Vế sau thường có 都 / 也 hô ứng. A, B có thể là danh từ, động từ, tính từ hoặc cụm từ. Khi viết lại câu có 是 A 还是 B / 无论 A 还是 B / A 或者 B → bỏ 是 / 无论 / 还是 / 或者, đặt 也好 / 也罢 sau mỗi vế.",
+  "viDu": [
+   {
+    "zh": "中国人深信开怀大笑也好，哈哈傻笑也罢，哪怕是私下里偷偷地笑，都会是生活中最通用，而且管用的治病良方。",
+    "py": "Zhōngguórén shēnxìn kāihuái dà xiào yě hǎo, hāhā shǎxiào yě bà, nǎpà shì sīxià li tōutōu de xiào, dōu huì shì shēnghuó zhōng zuì tōngyòng, érqiě guǎnyòng de zhì bìng liángfāng.",
+    "vn": "Người Trung Quốc tin chắc rằng dù cười sảng khoái hay cười ha hả ngây ngô, thậm chí là lén cười một mình, đều sẽ là phương thuốc chữa bệnh thông dụng nhất mà lại hiệu nghiệm."
+   },
+   {
+    "zh": "退休以后别人都养养花，喂喂鸟，可是花也好，鸟也好，都引不起他的兴趣。",
+    "py": "Tuìxiū yǐhòu biérén dōu yǎngyang huā, wèiwei niǎo, kěshì huā yě hǎo, niǎo yě hǎo, dōu yǐn bu qǐ tā de xìngqù.",
+    "vn": "Nghỉ hưu rồi người khác đều trồng hoa, nuôi chim, nhưng hoa cũng vậy mà chim cũng vậy, đều chẳng khơi dậy được hứng thú của ông."
+   },
+   {
+    "zh": "开汽车也罢，骑自行车也罢，行进中打电话都会影响注意力与反应能力。",
+    "py": "Kāi qìchē yě bà, qí zìxíngchē yě bà, xíngjìn zhōng dǎ diànhuà dōu huì yǐngxiǎng zhùyìlì yǔ fǎnyìng nénglì.",
+    "vn": "Dù lái ô tô hay đi xe đạp, vừa di chuyển vừa gọi điện đều ảnh hưởng đến sự chú ý và khả năng phản ứng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "上学也好还是工作也罢，只要你自己愿意就行。",
+    "why": "也好……也罢 đã thay cho 是……还是……, không giữ 还是 (lỗi này có cả trong bản đáp án in của sách).",
+    "dung": "上学也好，工作也罢，只要你自己愿意就行。"
+   },
+   {
+    "sai": "刮风也好，下雨也罢，我们六点准时出发不能影响。",
+    "why": "Vế sau phải nêu kết quả không đổi, thường có 都 / 也 hô ứng và trật tự câu bình thường.",
+    "dung": "刮风也好，下雨也罢，都不能影响我们六点准时出发。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "开怀大笑也好，哈哈傻笑",
+       "，都会是最管用的治病良方。"
+      ],
+      "dap": [
+       [
+        "也罢"
+       ]
+      ],
+      "chon": [
+       "也罢",
+       "还是",
+       "或者"
+      ],
+      "goiY": "\"Dù cười sảng khoái hay cười ha hả…\" (câu bài khoá)",
+      "giai": "A也好，B也罢 — vế thứ hai dùng 也罢."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "花也好，鸟也好，",
+       "引不起他的兴趣。"
+      ],
+      "dap": [
+       [
+        "都"
+       ]
+      ],
+      "chon": [
+       "都",
+       "就",
+       "才"
+      ],
+      "goiY": "\"Hoa hay chim đều không khơi dậy hứng thú.\" (ví dụ của sách)",
+      "giai": "Vế sau thường có 都 hô ứng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "开汽车也罢，骑自行车",
+       "，行进中打电话都会影响注意力。"
+      ],
+      "dap": [
+       [
+        "也罢"
+       ]
+      ],
+      "chon": [
+       "也罢",
+       "而已",
+       "罢了"
+      ],
+      "goiY": "\"Lái ô tô hay đi xe đạp…\" (ví dụ của sách)",
+      "giai": "Dạng A也罢，B也罢."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "富贵",
+       "贫穷也罢，我对他的爱不会改变。"
+      ],
+      "dap": [
+       [
+        "也好"
+       ]
+      ],
+      "chon": [
+       "也好",
+       "还是",
+       "或者"
+      ],
+      "goiY": "\"Giàu sang hay nghèo khó…\" (练习2)",
+      "giai": "Vế đầu dùng 也好."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "考得好也好，",
+       "也罢，再想也没用了。"
+      ],
+      "dap": [
+       [
+        "不好"
+       ]
+      ],
+      "chon": [
+       "不好",
+       "好",
+       "很好"
+      ],
+      "goiY": "\"Thi tốt hay không tốt…\" (练一练 2)",
+      "giai": "Hai khả năng đối lập: 好 / 不好."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "刮风也好下雨也罢，",
+       "不能影响我们六点准时出发。"
+      ],
+      "dap": [
+       [
+        "都"
+       ]
+      ],
+      "chon": [
+       "都",
+       "才",
+       "只"
+      ],
+      "goiY": "\"Gió hay mưa đều không ảnh hưởng…\" (练一练 3)",
+      "giai": "Kết quả không đổi → 都."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "上学也好，",
+       "工作也罢，",
+       "只要你自己愿意就行"
+      ],
+      "dap": [
+       "上学也好，工作也罢，只要你自己愿意就行"
+      ],
+      "goiY": "Đi học hay đi làm, chỉ cần con muốn là được.",
+      "giai": "A也好，B也罢 đứng đầu, sau là kết luận."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你喜欢也好，",
+       "不喜欢也罢，",
+       "都得去"
+      ],
+      "dap": [
+       "你喜欢也好，不喜欢也罢，都得去"
+      ],
+      "goiY": "Cậu thích hay không thích thì cũng phải đi.",
+      "giai": "Vế sau có 都 hô ứng."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "晴天也好，",
+       "都要坚持跑步",
+       "雨天也罢，"
+      ],
+      "dap": [
+       "晴天也好，雨天也罢，都要坚持跑步"
+      ],
+      "goiY": "Trời nắng hay trời mưa đều phải kiên trì chạy bộ.",
+      "giai": "Trật tự: A也好 → B也罢 → kết quả."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "上学也好还是工作也罢，只要你自己愿意就行。",
+      "dung": false,
+      "sua": "上学也好，工作也罢，只要你自己愿意就行。",
+      "giai": "Không giữ 还是 khi đã dùng 也好……也罢."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "开汽车也罢，骑自行车也罢，行进中打电话都会影响注意力。",
+      "dung": true,
+      "giai": "Đúng: dạng A也罢，B也罢 + 都."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "无论富贵也好贫穷也罢，我对他的爱不会改变。",
+      "dung": false,
+      "sua": "富贵也好贫穷也罢，我对他的爱不会改变。",
+      "giai": "Đã dùng 也好……也罢 thì bỏ 无论 (thừa, lặp ý)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Học tiếng Anh hay học tiếng Trung đều phải luyện nói mỗi ngày.",
+      "dap": [
+       "学英语也好，学汉语也罢，都要每天练习口语。",
+       "学英语也好，学汉语也好，都得每天练口语。",
+       "学英语也罢，学汉语也罢，都要天天练习说。"
+      ],
+      "py": "Xué Yīngyǔ yě hǎo, xué Hànyǔ yě bà, dōu yào měi tiān liànxí kǒuyǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng ……也好，……也罢.",
+      "giai": "A也好，B也罢 + 都……."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Thắng hay thua thì các em cũng đã cố gắng hết sức rồi.",
+      "dap": [
+       "赢也好，输也罢，你们都已经尽力了。",
+       "赢也好，输也好，你们都已经尽了最大的努力。",
+       "赢也罢，输也罢，你们都已经尽全力了。"
+      ],
+      "py": "Yíng yě hǎo, shū yě bà, nǐmen dōu yǐjīng jìnlì le.",
+      "goiY": "Dịch sang tiếng Trung, dùng ……也好，……也罢.",
+      "giai": "Hai khả năng đối lập 赢 / 输; 尽力 = cố hết sức."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để viết lại câu (练一练 của sách)",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "是上学还是工作，只要你自己愿意就行。→ ＿＿＿",
+      "goiY": "Dùng ……也好，……也罢 viết lại câu (练一练 (1) của sách).",
+      "mau": "上学也好，工作也罢，只要你自己愿意就行。",
+      "can": [
+       [
+        "上学也好",
+        "上学也罢"
+       ],
+       [
+        "工作也罢",
+        "工作也好"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "考试已经完了，考得好不好，再想也没用了。→ ＿＿＿",
+      "goiY": "Dùng ……也好，……也罢 viết lại câu (练一练 (2) của sách).",
+      "mau": "考试已经完了，考得好也好，不好也罢，再想也没用了。",
+      "can": [
+       [
+        "好也好",
+        "好也罢"
+       ],
+       [
+        "不好也罢",
+        "不好也好"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "不管明天是什么天气，刮风或者下雨，都不能影响我们六点准时出发。→ ＿＿＿",
+      "goiY": "Dùng ……也好，……也罢 viết lại câu (练一练 (3) của sách).",
+      "mau": "不管明天是什么天气，刮风也好下雨也罢，都不能影响我们六点准时出发。",
+      "can": [
+       [
+        "刮风也好",
+        "刮风也罢"
+       ],
+       [
+        "下雨也罢",
+        "下雨也好"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「修辞（6）设问」",
+  "tenVn": "",
+  "cauTruc": [
+   "Tự nêu câu hỏi (……吗？/ 什么？/ 如何？) + tự trả lời",
+   "Tác dụng: gây chú ý, gợi suy nghĩ; chuyển ý tự nhiên, gọn",
+   "Khác 反问: 反问 không cần trả lời"
+  ],
+  "giaiThich": "Phần 篇章修辞 thứ sáu của quyển 下. \"设问\" (thiết vấn) là KHÔNG CÓ NGHI VẤN MÀ VẪN HỎI: người viết tự nêu câu hỏi rồi tự trả lời (无疑而问，自问自答). Tác dụng: ① gây sự chú ý, gợi người đọc suy nghĩ; ② giúp tổ chức bài văn, chuyển ý tự nhiên và gọn — như câu 笑，真的是人生旅途中的最佳良药吗？答案似乎不是那么肯定 mở phần tác hại của tiếng cười. Cách viết lại câu trần thuật thành câu thiết vấn: đem ý đầu biến thành câu hỏi (thêm 吗 / 真的……吗 / 什么 / 如何…), sau đó tự trả lời (不一定 / 没错 / 是的 / 不是…). Khác 反问 (câu hỏi tu từ, không cần trả lời, đáp án nằm sẵn trong câu).",
+  "viDu": [
+   {
+    "zh": "难道我们听到庸俗、不上档次的笑话假笑两声、敷衍一下也不可以吗？可是，好像确实不行。",
+    "py": "Nándào wǒmen tīngdào yōngsú, bú shàng dàngcì de xiàohua jiǎ xiào liǎng shēng, fūyǎn yíxià yě bù kěyǐ ma? Kěshì, hǎoxiàng quèshí bù xíng.",
+    "vn": "Lẽ nào nghe chuyện cười tầm thường mà cười giả vài tiếng, đối phó một chút cũng không được sao? Thế nhưng, hình như quả thật là không được."
+   },
+   {
+    "zh": "笑，真的是人生旅途中的最佳良药吗？答案似乎不是那么肯定。",
+    "py": "Xiào, zhēn de shì rénshēng lǚtú zhōng de zuì jiā liángyào ma? Dá'àn sìhū bú shì nàme kěndìng.",
+    "vn": "Cười có thật là liều thuốc tốt nhất trên hành trình cuộc đời không? Câu trả lời dường như không chắc chắn đến vậy."
+   },
+   {
+    "zh": "离开了手机，难道会死吗？何不尝试一下一周关机一天？说干就干，索性这礼拜就开始。",
+    "py": "Líkāile shǒujī, nándào huì sǐ ma? Hébù chángshì yíxià yì zhōu guān jī yì tiān? Shuō gàn jiù gàn, suǒxìng zhè lǐbài jiù kāishǐ.",
+    "vn": "Rời điện thoại ra thì chết chắc? Sao không thử mỗi tuần tắt máy một ngày? Nói là làm, dứt khoát bắt đầu ngay tuần này."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "有钱一定幸福吗？",
+    "why": "Chỉ nêu câu hỏi mà không tự trả lời thì chưa phải 设问 (设问 = tự hỏi TỰ ĐÁP).",
+    "dung": "有钱一定幸福吗？不一定，有朋友，有健康，有自己的事业才会幸福。"
+   },
+   {
+    "sai": "气候真的变暖了吗？没错吗？我们的地球每一天都在变化。",
+    "why": "Phần tự trả lời phải là câu khẳng định / phủ định rõ ràng, không đặt thêm câu hỏi.",
+    "dung": "气候真的变暖了吗？没错，我们的地球每一天都在变化。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "笑，真的是人生旅途中的最佳良药",
+       "？答案似乎不是那么肯定。"
+      ],
+      "dap": [
+       [
+        "吗"
+       ]
+      ],
+      "chon": [
+       "吗",
+       "吧",
+       "呢"
+      ],
+      "goiY": "Câu hỏi có – không trong câu 设问 của bài khoá.",
+      "giai": "Câu hỏi có/không dùng 吗; phần sau là câu tự trả lời."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "有钱一定幸福吗？",
+       "，有朋友，有健康，有自己的事业才会幸福。"
+      ],
+      "dap": [
+       [
+        "不一定"
+       ]
+      ],
+      "chon": [
+       "不一定",
+       "一定",
+       "没关系"
+      ],
+      "goiY": "Tự trả lời phủ định (练一练 1).",
+      "giai": "不一定 = chưa chắc — câu tự đáp."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "气候真的变暖了吗？",
+       "，我们的地球每一天都在变化。"
+      ],
+      "dap": [
+       [
+        "没错"
+       ]
+      ],
+      "chon": [
+       "没错",
+       "没事",
+       "没用"
+      ],
+      "goiY": "Tự trả lời khẳng định (练一练 2).",
+      "giai": "没错 = đúng vậy."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "奋斗的人生是最美好的吗？",
+       "，因为奋斗之中快乐无穷。"
+      ],
+      "dap": [
+       [
+        "是的"
+       ]
+      ],
+      "chon": [
+       "是的",
+       "不是",
+       "难道"
+      ],
+      "goiY": "Tự trả lời khẳng định + lý do (练一练 3).",
+      "giai": "是的 + 因为……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "人是通过",
+       "途径识别“笑”背后的真实情感呢？研究者发现……"
+      ],
+      "dap": [
+       [
+        "什么"
+       ]
+      ],
+      "chon": [
+       "什么",
+       "哪儿",
+       "谁"
+      ],
+      "goiY": "Câu hỏi có đại từ nghi vấn (bài khoá).",
+      "giai": "通过什么途径 = bằng con đường nào; phần 研究者发现 là câu trả lời."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "如何定义“文明”？",
+       "是人类所创造的财富的总和。"
+      ],
+      "dap": [
+       [
+        "它"
+       ]
+      ],
+      "chon": [
+       "它",
+       "他",
+       "这儿"
+      ],
+      "goiY": "Câu trả lời cho câu hỏi 设问 (练习4).",
+      "giai": "它 thay cho 文明 — chủ ngữ của câu trả lời."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "有钱一定幸福吗？",
+       "不一定，",
+       "有健康才会幸福"
+      ],
+      "dap": [
+       "有钱一定幸福吗？不一定，有健康才会幸福"
+      ],
+      "goiY": "Có tiền nhất định hạnh phúc sao? Chưa chắc, có sức khoẻ mới hạnh phúc.",
+      "giai": "Câu hỏi trước, câu tự đáp sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "答案",
+       "笑真的是最佳良药吗？",
+       "似乎不是那么肯定"
+      ],
+      "dap": [
+       "笑真的是最佳良药吗？答案似乎不是那么肯定"
+      ],
+      "goiY": "Cười có thật là liều thuốc tốt nhất không? Câu trả lời dường như không chắc chắn đến vậy.",
+      "giai": "Câu 设问 mở phần tác hại của tiếng cười (bài khoá)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "是的，",
+       "奋斗的人生是最美好的吗？",
+       "因为奋斗之中快乐无穷"
+      ],
+      "dap": [
+       "奋斗的人生是最美好的吗？是的，因为奋斗之中快乐无穷"
+      ],
+      "goiY": "Cuộc đời phấn đấu là đẹp nhất sao? Đúng vậy, vì trong phấn đấu có niềm vui vô tận.",
+      "giai": "Hỏi → 是的 → lý do."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "有钱一定幸福吗？",
+      "dung": false,
+      "sua": "有钱一定幸福吗？不一定，有朋友，有健康才会幸福。",
+      "giai": "Chỉ hỏi mà không tự trả lời thì chưa phải 设问."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "气候真的变暖了吗？没错，我们的地球每一天都在变化。",
+      "dung": true,
+      "giai": "Đúng: tự hỏi rồi tự đáp 没错."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "气候真的变暖了吗？没错吗？我们的地球每一天都在变化。",
+      "dung": false,
+      "sua": "气候真的变暖了吗？没错，我们的地球每一天都在变化。",
+      "giai": "Phần tự trả lời phải là câu trần thuật, không đặt thêm câu hỏi."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Học ngoại ngữ có khó không? Khó, nhưng chỉ cần kiên trì thì nhất định sẽ học tốt.",
+      "dap": [
+       "学外语难吗？难，但是只要坚持，就一定能学好。",
+       "学外语难不难？难，不过只要坚持下去，就一定能学好。",
+       "学外语很难吗？是很难，但只要坚持，一定能学好。"
+      ],
+      "py": "Xué wàiyǔ nán ma? Nán, dànshì zhǐyào jiānchí, jiù yídìng néng xuéhǎo.",
+      "goiY": "Dịch sang tiếng Trung, viết thành câu 设问 (tự hỏi tự đáp).",
+      "giai": "Câu hỏi 吗 + tự trả lời 难 + 只要……就……."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Điện thoại có thật sự không thể thiếu không? Không phải, ta hoàn toàn có thể mỗi tuần tắt máy một ngày.",
+      "dap": [
+       "手机真的离不开吗？不是，我们完全可以一周关机一天。",
+       "真的离不开手机吗？不是的，我们完全可以每周关机一天。",
+       "手机真的不能没有吗？不是，我们完全可以一个星期关一天机。"
+      ],
+      "py": "Shǒujī zhēn de lí bu kāi ma? Bú shì, wǒmen wánquán kěyǐ yì zhōu guān jī yì tiān.",
+      "goiY": "Dịch sang tiếng Trung, dùng câu 设问.",
+      "giai": "离不开 = không thể thiếu; câu hỏi 真的……吗 + tự đáp 不是."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Viết lại thành câu 设问 (练一练 của sách)",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "有钱不一定幸福，有朋友，有健康，有自己的事业才会幸福。→ ＿＿＿",
+      "goiY": "Viết lại thành câu 设问 (练一练 (1) của sách).",
+      "mau": "有钱一定幸福吗？不一定，有朋友，有健康，有自己的事业才会幸福。",
+      "can": [
+       [
+        "吗？"
+       ],
+       [
+        "不一定"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "气候真的变暖了，没错，我们的地球每一天都在变化。→ ＿＿＿",
+      "goiY": "Viết lại thành câu 设问 (练一练 (2) của sách).",
+      "mau": "气候真的变暖了吗？没错，我们的地球每一天都在变化。",
+      "can": [
+       [
+        "变暖了吗"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "奋斗的人生是最美好的，因为奋斗之中快乐无穷。→ ＿＿＿",
+      "goiY": "Viết lại thành câu 设问 (练一练 (3) của sách).",
+      "mau": "奋斗的人生是最美好的吗？是的，因为奋斗之中快乐无穷。",
+      "can": [
+       [
+        "最美好的吗"
+       ],
+       [
+        "是的",
+        "对",
+        "没错"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

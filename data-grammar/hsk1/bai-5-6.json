@@ -1,0 +1,171 @@
+{
+ "/lessons/hsk1-bai-5.html": {
+  "points": [
+   {
+    "title": "Đại từ nghi vấn 「几」 (Mấy)",
+    "errors": [
+     { "wrong": "你家有几人？", "why": "几 phải đi kèm LƯỢNG TỪ: 几口人 / 几个人.", "right": "你家有几口人？" },
+     { "wrong": "你家有几口人吗？", "why": "câu đã có 几 thì không dùng 吗.", "right": "你家有几口人？" },
+     { "wrong": "几你家有口人？", "why": "几 đứng ở vị trí của số lượng cần hỏi.", "right": "你家有几口人？" }
+    ],
+    "items": [
+     { "context": "“Nhà bạn có mấy người?”", "pre": "你家有", "blank": "几口人", "post": "？", "options": ["几口人", "几人", "几口人吗"], "answer": 0, "explanation": "几 + lượng từ + danh từ; không dùng 吗." },
+     { "context": "“Bây giờ là mấy giờ?”", "pre": "现在", "blank": "几点", "post": "？", "options": ["几点", "几点吗", "点几"], "answer": 0, "explanation": "几点 = mấy giờ." },
+     { "context": "“Bạn có mấy quyển sách?”", "pre": "你有", "blank": "几本书", "post": "？", "options": ["几本书", "几书", "几本书吗"], "answer": 0, "explanation": "几 + 本 + 书." },
+     { "context": "Trả lời 「你家有几口人？」", "pre": "我家有", "blank": "四口人", "post": "。", "options": ["四口人", "几口人四", "四口人吗"], "answer": 0, "explanation": "Thay 几 bằng con số." },
+     { "context": "几 dùng cho số lượng NHỎ (dưới 10).", "pre": "你们班有", "blank": "多少", "post": "个学生？", "options": ["多少", "几", "几个"], "answer": 0, "explanation": "Số lớn thì dùng 多少; 几 cho số nhỏ." },
+     { "context": "“Hôm nay là thứ mấy?”", "pre": "今天", "blank": "星期几", "post": "？", "options": ["星期几", "几星期", "星期几吗"], "answer": 0, "explanation": "星期几 = thứ mấy." },
+     { "type": "sort", "context": "Sắp xếp: “Nhà bạn có mấy người?”", "words": ["你", "家", "有", "几", "口", "人", "？"], "answer": "你家有几口人？", "explanation": "几口人？" },
+     { "type": "sort", "context": "Sắp xếp: “Nhà tôi có bốn người.”", "words": ["我", "家", "有", "四", "口", "人", "。"], "answer": "我家有四口人。", "explanation": "四口人." },
+     { "type": "sort", "context": "Sắp xếp: “Bây giờ là mấy giờ?”", "words": ["现在", "几", "点", "？"], "answer": "现在几点？", "explanation": "几点？" },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay là thứ mấy?”", "words": ["今天", "星期", "几", "？"], "answer": "今天星期几？", "explanation": "星期几？" },
+     { "context": "Tình huống: Bạn muốn biết gia đình bạn mới có bao nhiêu người. Bạn hỏi:", "pre": "", "blank": "你家有几口人？", "post": "", "options": ["你家有几口人？", "你家有几人？", "你家有几口人吗？"], "answer": 0, "explanation": "几 cần lượng từ, không dùng 吗." },
+     { "context": "Tình huống: Có người hỏi 「你家有几口人？」, nhà bạn có 4 người. Bạn đáp:", "pre": "", "blank": "我家有四口人。", "post": "", "options": ["我家有四口人。", "我家有四人。", "我家有几口人。"], "answer": 0, "explanation": "Số + lượng từ + danh từ." },
+     { "context": "Tình huống: Bạn muốn biết giờ. Bạn hỏi:", "pre": "", "blank": "现在几点？", "post": "", "options": ["现在几点？", "现在几点吗？", "现在点几？"], "answer": 0, "explanation": "现在几点？" }
+    ]
+   },
+   {
+    "title": "Các số dưới 100",
+    "errors": [
+     { "wrong": "二十五 đọc là “二五”", "why": "phải có 十 ở giữa: 二十五.", "right": "二十五 (èrshíwǔ)" },
+     { "wrong": "十二 và 二十 là như nhau", "why": "十二 = 12, 二十 = 20 — trật tự khác nghĩa khác.", "right": "十二 = 12 ／ 二十 = 20" },
+     { "wrong": "两十 người", "why": "số 20 đọc là 二十, không dùng 两 ở vị trí này.", "right": "二十个人" }
+    ],
+    "items": [
+     { "context": "Số 12 viết là:", "pre": "", "blank": "十二", "post": "", "options": ["十二", "二十", "两十"], "answer": 0, "explanation": "十二 = 12; 二十 = 20." },
+     { "context": "Số 20 viết là:", "pre": "", "blank": "二十", "post": "", "options": ["二十", "十二", "两十"], "answer": 0, "explanation": "二十 = 20." },
+     { "context": "Số 25 viết là:", "pre": "", "blank": "二十五", "post": "", "options": ["二十五", "二五", "五二十"], "answer": 0, "explanation": "chục + 十 + đơn vị." },
+     { "context": "Số 99 viết là:", "pre": "", "blank": "九十九", "post": "", "options": ["九十九", "九九", "十九九"], "answer": 0, "explanation": "九十九 = 99." },
+     { "context": "“hai người” dùng 两 hay 二?", "pre": "", "blank": "两个人", "post": "", "options": ["两个人", "二个人", "两人个"], "answer": 0, "explanation": "两 dùng trước lượng từ; 二 dùng khi đếm số." },
+     { "context": "“Tôi 18 tuổi.”", "pre": "我", "blank": "十八岁", "post": "。", "options": ["十八岁", "八十岁", "十八岁的"], "answer": 0, "explanation": "十八 = 18; 八十 = 80." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi mười tám tuổi.”", "words": ["我", "十八", "岁", "。"], "answer": "我十八岁。", "explanation": "Tuổi không cần 是." },
+     { "type": "sort", "context": "Sắp xếp: “Lớp chúng tôi có hai mươi lăm học sinh.”", "words": ["我们", "班", "有", "二十五", "个", "学生", "。"], "answer": "我们班有二十五个学生。", "explanation": "二十五个学生." },
+     { "type": "sort", "context": "Sắp xếp: “Nhà tôi có hai người.”", "words": ["我", "家", "有", "两", "口", "人", "。"], "answer": "我家有两口人。", "explanation": "两 + lượng từ." },
+     { "type": "sort", "context": "Sắp xếp: “Bây giờ là mười hai giờ.”", "words": ["现在", "十二", "点", "。"], "answer": "现在十二点。", "explanation": "十二点 = 12 giờ." },
+     { "context": "Tình huống: Bạn 18 tuổi, có người hỏi tuổi. Bạn nói:", "pre": "", "blank": "我十八岁。", "post": "", "options": ["我十八岁。", "我八十岁。", "我是十八岁。"], "answer": 0, "explanation": "十八 = 18, câu tuổi không cần 是." },
+     { "context": "Tình huống: Nhà bạn có 2 người. Bạn nói:", "pre": "", "blank": "我家有两口人。", "post": "", "options": ["我家有两口人。", "我家有二口人。", "我家有两人口。"], "answer": 0, "explanation": "两 + lượng từ 口." },
+     { "context": "Tình huống: Lớp bạn có 25 học sinh. Bạn nói:", "pre": "", "blank": "我们班有二十五个学生。", "post": "", "options": ["我们班有二十五个学生。", "我们班有二五个学生。", "我们班有五二十个学生。"], "answer": 0, "explanation": "二十五 = 25." }
+    ]
+   },
+   {
+    "title": "Trợ từ ngữ khí 「了」 biểu thị sự thay đổi",
+    "errors": [
+     { "wrong": "我十八岁。（muốn nói vừa tròn 18）", "why": "muốn nhấn mạnh sự THAY ĐỔI thì thêm 了.", "right": "我十八岁了。" },
+     { "wrong": "了我十八岁。", "why": "了 đứng ở CUỐI câu.", "right": "我十八岁了。" },
+     { "wrong": "我不忙了吗不？", "why": "trộn 吗 với dạng hỏi chính-phản.", "right": "你不忙了吗？" }
+    ],
+    "items": [
+     { "context": "“Tôi đã 18 tuổi rồi.” (vừa thay đổi)", "pre": "我", "blank": "十八岁了", "post": "。", "options": ["十八岁了", "了十八岁", "十八了岁"], "answer": 0, "explanation": "了 ở cuối câu, biểu thị sự thay đổi." },
+     { "context": "“Bây giờ tôi không bận nữa.”", "pre": "我", "blank": "不忙了", "post": "。", "options": ["不忙了", "了不忙", "不了忙"], "answer": 0, "explanation": "不……了 = không… nữa." },
+     { "context": "“Trời nóng rồi.”", "pre": "", "blank": "天气热了", "post": "。", "options": ["天气热了", "了天气热", "天气了热"], "answer": 0, "explanation": "Tính từ + 了 = đã trở nên…" },
+     { "context": "“Cậu ấy là học sinh rồi.”", "pre": "他", "blank": "是学生了", "post": "。", "options": ["是学生了", "了是学生", "是了学生"], "answer": 0, "explanation": "了 ở cuối câu." },
+     { "context": "Câu hỏi: “Bạn không bận nữa à?”", "pre": "你", "blank": "不忙了吗", "post": "？", "options": ["不忙了吗", "不忙吗了", "了不忙吗"], "answer": 0, "explanation": "……了 + 吗？" },
+     { "context": "Chưa có thay đổi thì KHÔNG dùng 了.", "pre": "我", "blank": "很忙", "post": "。", "options": ["很忙", "很忙了吗", "了很忙"], "answer": 0, "explanation": "Trạng thái bình thường không cần 了." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đã mười tám tuổi rồi.”", "words": ["我", "十八", "岁", "了", "。"], "answer": "我十八岁了。", "explanation": "十八岁了." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không bận nữa.”", "words": ["我", "不", "忙", "了", "。"], "answer": "我不忙了。", "explanation": "不忙了." },
+     { "type": "sort", "context": "Sắp xếp: “Trời nóng rồi.”", "words": ["天气", "热", "了", "。"], "answer": "天气热了。", "explanation": "热了." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn không bận nữa à?”", "words": ["你", "不", "忙", "了", "吗", "？"], "answer": "你不忙了吗？", "explanation": "了 + 吗？" },
+     { "context": "Tình huống: Hôm qua bạn rất bận, hôm nay đã rảnh. Bạn nói:", "pre": "", "blank": "我不忙了。", "post": "", "options": ["我不忙了。", "我不忙。", "我了不忙。"], "answer": 0, "explanation": "了 nêu sự thay đổi." },
+     { "context": "Tình huống: Hôm nay bạn vừa tròn 18 tuổi. Bạn nói:", "pre": "", "blank": "我十八岁了。", "post": "", "options": ["我十八岁了。", "我十八岁。", "我了十八岁。"], "answer": 0, "explanation": "十八岁了 = vừa tròn 18." },
+     { "context": "Tình huống: Trời vừa chuyển sang nóng. Bạn nói:", "pre": "", "blank": "天气热了。", "post": "", "options": ["天气热了。", "天气很热。", "天气了热。"], "answer": 0, "explanation": "热了 = đã trở nên nóng." }
+    ]
+   },
+   {
+    "title": "Hỏi tuổi tác bằng cấu trúc 「多 + 大」",
+    "errors": [
+     { "wrong": "你多大吗？", "why": "câu đã có từ nghi vấn 多大 thì không dùng 吗.", "right": "你多大？" },
+     { "wrong": "你几大了？", "why": "hỏi tuổi người lớn dùng 多大, không dùng 几大.", "right": "你多大了？" },
+     { "wrong": "我是十八岁。", "why": "câu nói tuổi KHÔNG dùng 是.", "right": "我十八岁。" }
+    ],
+    "items": [
+     { "context": "Hỏi tuổi người cùng trang lứa.", "pre": "你", "blank": "多大", "post": "？", "options": ["多大", "多大吗", "几大"], "answer": 0, "explanation": "多大 = bao nhiêu tuổi." },
+     { "context": "Thêm 了 để hỏi tự nhiên hơn.", "pre": "你", "blank": "多大了", "post": "？", "options": ["多大了", "了多大", "多了大"], "answer": 0, "explanation": "多大了？= bạn bao nhiêu tuổi rồi?" },
+     { "context": "Hỏi tuổi TRẺ NHỎ (dưới 10) thì dùng 几岁.", "pre": "他", "blank": "几岁", "post": "了？", "options": ["几岁", "多大岁", "几大"], "answer": 0, "explanation": "几岁 dùng cho trẻ nhỏ." },
+     { "context": "Trả lời: “Tôi 18 tuổi.”", "pre": "我", "blank": "十八岁", "post": "。", "options": ["十八岁", "是十八岁", "十八岁吗"], "answer": 0, "explanation": "Câu tuổi không dùng 是." },
+     { "context": "Hỏi tuổi người lớn tuổi thì lịch sự hơn.", "pre": "您", "blank": "多大年纪", "post": "了？", "options": ["多大年纪", "几岁", "多大吗"], "answer": 0, "explanation": "多大年纪 dùng với người cao tuổi." },
+     { "context": "“Cậu ấy cũng 18 tuổi.”", "pre": "他", "blank": "也十八岁", "post": "。", "options": ["也十八岁", "十八岁也", "也是十八岁"], "answer": 0, "explanation": "也 đứng trước cụm số tuổi." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn bao nhiêu tuổi rồi?”", "words": ["你", "多", "大", "了", "？"], "answer": "你多大了？", "explanation": "多大了？" },
+     { "type": "sort", "context": "Sắp xếp: “Tôi mười tám tuổi.”", "words": ["我", "十八", "岁", "。"], "answer": "我十八岁。", "explanation": "Không dùng 是." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy mấy tuổi rồi?”", "words": ["他", "几", "岁", "了", "？"], "answer": "他几岁了？", "explanation": "几岁了？(trẻ nhỏ)." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy cũng mười tám tuổi.”", "words": ["他", "也", "十八", "岁", "。"], "answer": "他也十八岁。", "explanation": "也 + số tuổi." },
+     { "context": "Tình huống: Bạn muốn hỏi tuổi bạn cùng lớp. Bạn hỏi:", "pre": "", "blank": "你多大了？", "post": "", "options": ["你多大了？", "你多大吗？", "你几大了？"], "answer": 0, "explanation": "多大了？dùng cho người cùng trang lứa." },
+     { "context": "Tình huống: Bạn hỏi tuổi một em bé. Bạn hỏi:", "pre": "", "blank": "你几岁了？", "post": "", "options": ["你几岁了？", "你多大年纪了？", "你几大了？"], "answer": 0, "explanation": "几岁 dùng cho trẻ nhỏ." },
+     { "context": "Tình huống: Có người hỏi 「你多大了？」, bạn 18 tuổi. Bạn đáp:", "pre": "", "blank": "我十八岁。", "post": "", "options": ["我十八岁。", "我是十八岁。", "我十八岁吗。"], "answer": 0, "explanation": "Câu tuổi không dùng 是." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1-bai-6.html": {
+  "points": [
+   {
+    "title": "Động từ năng nguyện 「会」 (1) — biết làm (do học mà có)",
+    "errors": [
+     { "wrong": "我会说汉语吗不？", "why": "trộn 吗 với dạng hỏi chính-phản.", "right": "你会说汉语吗？／你会不会说汉语？" },
+     { "wrong": "我没会说汉语。", "why": "phủ định của 会 là 不会.", "right": "我不会说汉语。" },
+     { "wrong": "我说会汉语。", "why": "会 đứng TRƯỚC động từ.", "right": "我会说汉语。" }
+    ],
+    "items": [
+     { "context": "“Tôi biết nói tiếng Trung.”", "pre": "我", "blank": "会说汉语", "post": "。", "options": ["会说汉语", "说会汉语", "会汉语说"], "answer": 0, "explanation": "会 + động từ." },
+     { "context": "Phủ định: “Tôi không biết nói tiếng Trung.”", "pre": "我", "blank": "不会说汉语", "post": "。", "options": ["不会说汉语", "没会说汉语", "会不说汉语"], "answer": 0, "explanation": "Phủ định của 会 là 不会." },
+     { "context": "Câu hỏi: “Bạn biết nói tiếng Trung không?”", "pre": "你", "blank": "会说汉语吗", "post": "？", "options": ["会说汉语吗", "会说汉语吗不", "会不会说汉语吗"], "answer": 0, "explanation": "……吗？hoặc 会不会……？chọn một." },
+     { "context": "Dạng hỏi chính-phản.", "pre": "你", "blank": "会不会说汉语", "post": "？", "options": ["会不会说汉语", "会说不会汉语", "会不会说汉语吗"], "answer": 0, "explanation": "会不会 + động từ？" },
+     { "context": "“Cậu ấy cũng biết nói tiếng Trung.”", "pre": "他", "blank": "也会说汉语", "post": "。", "options": ["也会说汉语", "会也说汉语", "也说会汉语"], "answer": 0, "explanation": "也 đứng trước 会." },
+     { "context": "“Tôi biết viết chữ Hán.”", "pre": "我", "blank": "会写汉字", "post": "。", "options": ["会写汉字", "写会汉字", "会汉字写"], "answer": 0, "explanation": "会 + 写 + tân ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi biết nói tiếng Trung.”", "words": ["我", "会", "说", "汉语", "。"], "answer": "我会说汉语。", "explanation": "会说汉语." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không biết viết chữ Hán.”", "words": ["我", "不", "会", "写", "汉字", "。"], "answer": "我不会写汉字。", "explanation": "不会写." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn biết nói tiếng Trung không?”", "words": ["你", "会", "说", "汉语", "吗", "？"], "answer": "你会说汉语吗？", "explanation": "会说汉语吗？" },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy cũng biết nói tiếng Trung.”", "words": ["他", "也", "会", "说", "汉语", "。"], "answer": "他也会说汉语。", "explanation": "也会说." },
+     { "context": "Tình huống: Bạn muốn biết người kia có nói được tiếng Trung không:", "pre": "", "blank": "你会说汉语吗？", "post": "", "options": ["你会说汉语吗？", "你会说汉语吗不？", "你说会汉语吗？"], "answer": 0, "explanation": "会 + động từ + 吗？" },
+     { "context": "Tình huống: Bạn chưa học viết chữ Hán. Bạn nói:", "pre": "", "blank": "我不会写汉字。", "post": "", "options": ["我不会写汉字。", "我没会写汉字。", "我会不写汉字。"], "answer": 0, "explanation": "不会 = không biết (chưa học)." },
+     { "context": "Tình huống: Bạn học tiếng Trung được một năm và nói được. Bạn nói:", "pre": "", "blank": "我会说汉语。", "post": "", "options": ["我会说汉语。", "我说会汉语。", "我很会说汉语吗。"], "answer": 0, "explanation": "会说汉语." }
+    ]
+   },
+   {
+    "title": "Câu vị ngữ tính từ",
+    "errors": [
+     { "wrong": "我是很忙。", "why": "vị ngữ tính từ KHÔNG dùng 是.", "right": "我很忙。" },
+     { "wrong": "我忙。", "why": "câu khẳng định cần bổ ngữ trình độ 很.", "right": "我很忙。" },
+     { "wrong": "我不很忙。", "why": "câu phủ định không dùng 很; 不 đứng ngay trước tính từ.", "right": "我不忙。" }
+    ],
+    "items": [
+     { "context": "“Tôi rất bận.”", "pre": "我", "blank": "很忙", "post": "。", "options": ["很忙", "是很忙", "忙"], "answer": 0, "explanation": "Chủ ngữ + 很 + tính từ, không dùng 是." },
+     { "context": "Phủ định: “Tôi không bận.”", "pre": "我", "blank": "不忙", "post": "。", "options": ["不忙", "不很忙", "是不忙"], "answer": 0, "explanation": "不 + tính từ." },
+     { "context": "Câu hỏi: “Bạn có bận không?” (dùng 吗)", "pre": "你", "blank": "忙吗", "post": "？", "options": ["忙吗", "很忙吗不", "是忙吗"], "answer": 0, "explanation": "Câu hỏi với 吗 không cần 很." },
+     { "context": "Dạng hỏi chính-phản.", "pre": "你", "blank": "忙不忙", "post": "？", "options": ["忙不忙", "很忙不忙", "忙不忙吗"], "answer": 0, "explanation": "Tính từ + 不 + tính từ？" },
+     { "context": "“Món này rất ngon.”", "pre": "这个菜", "blank": "很好吃", "post": "。", "options": ["很好吃", "是很好吃", "好吃"], "answer": 0, "explanation": "很 + tính từ." },
+     { "context": "“Cậu ấy cũng rất bận.”", "pre": "他", "blank": "也很忙", "post": "。", "options": ["也很忙", "很也忙", "也是很忙"], "answer": 0, "explanation": "也 đứng trước 很." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi rất bận.”", "words": ["我", "很", "忙", "。"], "answer": "我很忙。", "explanation": "很忙." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không bận.”", "words": ["我", "不", "忙", "。"], "answer": "我不忙。", "explanation": "不忙." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn có bận không?”", "words": ["你", "忙", "不", "忙", "？"], "answer": "你忙不忙？", "explanation": "Hỏi chính-phản." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy cũng rất bận.”", "words": ["他", "也", "很", "忙", "。"], "answer": "他也很忙。", "explanation": "也很忙." },
+     { "context": "Tình huống: Bạn muốn nói mình đang rất bận. Bạn nói:", "pre": "", "blank": "我很忙。", "post": "", "options": ["我很忙。", "我是很忙。", "我忙。"], "answer": 0, "explanation": "很 + tính từ, không dùng 是." },
+     { "context": "Tình huống: Bạn thấy món ăn rất ngon. Bạn nói:", "pre": "", "blank": "这个菜很好吃。", "post": "", "options": ["这个菜很好吃。", "这个菜是很好吃。", "这个菜好吃。"], "answer": 0, "explanation": "很好吃." },
+     { "context": "Tình huống: Bạn muốn hỏi bạn cùng lớp có bận không:", "pre": "", "blank": "你忙吗？", "post": "", "options": ["你忙吗？", "你是忙吗？", "你很忙吗不？"], "answer": 0, "explanation": "Tính từ + 吗？" }
+    ]
+   },
+   {
+    "title": "Đại từ nghi vấn 「怎么」 (1) — như thế nào",
+    "errors": [
+     { "wrong": "这个字怎么写吗？", "why": "câu đã có 怎么 thì không dùng 吗.", "right": "这个字怎么写？" },
+     { "wrong": "这个字写怎么？", "why": "怎么 đứng TRƯỚC động từ.", "right": "这个字怎么写？" },
+     { "wrong": "怎么这个字写？", "why": "sai trật tự; chủ đề đứng đầu, 怎么 trước động từ.", "right": "这个字怎么写？" }
+    ],
+    "items": [
+     { "context": "“Chữ này viết như thế nào?”", "pre": "这个字", "blank": "怎么写", "post": "？", "options": ["怎么写", "写怎么", "怎么写吗"], "answer": 0, "explanation": "怎么 + động từ; không dùng 吗." },
+     { "context": "“Chữ này đọc như thế nào?”", "pre": "这个字", "blank": "怎么读", "post": "？", "options": ["怎么读", "读怎么", "怎么读吗"], "answer": 0, "explanation": "怎么 + 读." },
+     { "context": "“Cái này tiếng Trung nói thế nào?”", "pre": "这个汉语", "blank": "怎么说", "post": "？", "options": ["怎么说", "说怎么", "怎么说吗"], "answer": 0, "explanation": "怎么说 = nói thế nào." },
+     { "context": "“Bạn đi bằng cách nào?”", "pre": "你", "blank": "怎么去", "post": "？", "options": ["怎么去", "去怎么", "怎么去吗"], "answer": 0, "explanation": "怎么 hỏi cách thức." },
+     { "context": "Không dùng 怎么 cùng 吗.", "pre": "这个菜", "blank": "怎么做", "post": "？", "options": ["怎么做", "怎么做吗", "做怎么吗"], "answer": 0, "explanation": "Có từ nghi vấn thì bỏ 吗." },
+     { "context": "“Bạn thế nào rồi?” (hỏi tình trạng)", "pre": "你", "blank": "怎么了", "post": "？", "options": ["怎么了", "了怎么", "怎么吗了"], "answer": 0, "explanation": "怎么了？= có chuyện gì / sao vậy?" },
+     { "type": "sort", "context": "Sắp xếp: “Chữ này viết như thế nào?”", "words": ["这个", "字", "怎么", "写", "？"], "answer": "这个字怎么写？", "explanation": "怎么写？" },
+     { "type": "sort", "context": "Sắp xếp: “Cái này tiếng Trung nói thế nào?”", "words": ["这个", "汉语", "怎么", "说", "？"], "answer": "这个汉语怎么说？", "explanation": "怎么说？" },
+     { "type": "sort", "context": "Sắp xếp: “Bạn đi bằng cách nào?”", "words": ["你", "怎么", "去", "？"], "answer": "你怎么去？", "explanation": "怎么去？" },
+     { "type": "sort", "context": "Sắp xếp: “Bạn sao vậy?”", "words": ["你", "怎么", "了", "？"], "answer": "你怎么了？", "explanation": "怎么了？" },
+     { "context": "Tình huống: Bạn không biết viết một chữ Hán. Bạn hỏi thầy:", "pre": "", "blank": "老师，这个字怎么写？", "post": "", "options": ["老师，这个字怎么写？", "老师，这个字怎么写吗？", "老师，这个字写怎么？"], "answer": 0, "explanation": "怎么 + động từ, không dùng 吗." },
+     { "context": "Tình huống: Bạn muốn biết cách nói một từ bằng tiếng Trung. Bạn hỏi:", "pre": "", "blank": "这个汉语怎么说？", "post": "", "options": ["这个汉语怎么说？", "这个汉语说怎么？", "这个汉语怎么说吗？"], "answer": 0, "explanation": "怎么说？" },
+     { "context": "Tình huống: Bạn thấy bạn mình trông không vui. Bạn hỏi:", "pre": "", "blank": "你怎么了？", "post": "", "options": ["你怎么了？", "你怎么吗？", "你了怎么？"], "answer": 0, "explanation": "怎么了？= sao vậy?" }
+    ]
+   }
+  ]
+ }
+}

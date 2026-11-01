@@ -1,0 +1,631 @@
+[
+ {
+  "so": "1",
+  "ten": "「动词 + 下来」",
+  "tenVn": "",
+  "cauTruc": [
+   "V + 下来 (hoàn thành: 定下来 / 几局下来)",
+   "V + 下来 (tách rời: 撕下来 / 脱下来)",
+   "V + 下来 (cố định, dừng hẳn: 记下来 / 录下来 / 停下来)"
+  ],
+  "giaiThich": "\"Động từ + 下来\" chỉ động tác đã HOÀN THÀNH sau một quá trình, có khi kèm nghĩa TÁCH RỜI (lấy ra khỏi chỗ cũ) hoặc CỐ ĐỊNH lại (giữ lại, ghi lại, chốt lại). ① Hoàn thành: 定下来 (chốt xong), 几局下来 (sau mấy ván). ② Tách rời: 撕下来 (xé ra), 脱下来 (cởi ra). ③ Cố định, dừng hẳn: 记下来 / 录下来 (ghi lại), 停下来 (dừng lại). Đừng nhầm với 下去 (tiếp tục: 说下去, 坚持下去) và 起来 (bắt đầu).",
+  "viDu": [
+   {
+    "zh": "你的论文大概什么时候发表？定下来了吗？",
+    "py": "Nǐ de lùnwén dàgài shénme shíhou fābiǎo? Dìng xiàlai le ma?",
+    "vn": "Luận văn của bạn khoảng bao giờ công bố? Đã chốt chưa?"
+   },
+   {
+    "zh": "你看，那张纸是从这本书里撕下来的。",
+    "py": "Nǐ kàn, nà zhāng zhǐ shì cóng zhè běn shū li sī xiàlai de.",
+    "vn": "Bạn xem, tờ giấy đó là xé ra từ cuốn sách này."
+   },
+   {
+    "zh": "几局下来，基本上都是不到10分钟我就败下阵来。",
+    "py": "Jǐ jú xiàlai, jīběnshang dōu shì bú dào shí fēnzhōng wǒ jiù bàixià zhèn lai.",
+    "vn": "Mấy ván trôi qua, gần như ván nào chưa đến 10 phút tôi cũng đã thua trận."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "请把老师的话记下去。",
+    "why": "Ghi lại để giữ cố định dùng 下来; 下去 chỉ sự tiếp tục (说下去, 坚持下去).",
+    "dung": "请把老师的话记下来。"
+   },
+   {
+    "sai": "说到这，父亲停起来，把棋子重新摆好。",
+    "why": "停 đi với 下来 (dừng hẳn lại); 起来 chỉ động tác bắt đầu.",
+    "dung": "说到这，父亲停下来，把棋子重新摆好。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "你的论文大概什么时候发表？定",
+       "了吗？"
+      ],
+      "dap": [
+       [
+        "下来"
+       ]
+      ],
+      "chon": [
+       "下来",
+       "下去",
+       "起来"
+      ],
+      "goiY": "“Đã CHỐT xong chưa?”",
+      "giai": "Câu ví dụ (1) của sách: 定下来 = quyết định xong, cố định lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你看，那张纸是从这本书里撕",
+       "的。"
+      ],
+      "dap": [
+       [
+        "下来"
+       ]
+      ],
+      "chon": [
+       "下来",
+       "上去",
+       "出去"
+      ],
+      "goiY": "“… là XÉ RA từ cuốn sách này.”",
+      "giai": "Câu ví dụ (2) của sách: 撕下来 — tách rời khỏi vật gốc."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "几局",
+       "，基本上都是不到10分钟我就败下阵来。"
+      ],
+      "dap": [
+       [
+        "下来"
+       ]
+      ],
+      "chon": [
+       "下来",
+       "下去",
+       "过来"
+      ],
+      "goiY": "“Mấy ván TRÔI QUA …”",
+      "giai": "Câu ví dụ (3) — câu của bài khoá: 几局下来 = sau mấy ván (hoàn thành một quá trình)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "说到这，父亲停",
+       "，把棋子重新摆好。"
+      ],
+      "dap": [
+       [
+        "下来"
+       ]
+      ],
+      "chon": [
+       "下来",
+       "起来",
+       "上来"
+      ],
+      "goiY": "“Nói đến đây, bố DỪNG LẠI …”",
+      "giai": "Câu của bài khoá: 停下来 = dừng hẳn lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老师说的重点，你都记",
+       "了吗？"
+      ],
+      "dap": [
+       [
+        "下来"
+       ]
+      ],
+      "chon": [
+       "下来",
+       "下去",
+       "出去"
+      ],
+      "goiY": "“Những điểm quan trọng thầy nói, bạn GHI LẠI hết chưa?”",
+      "giai": "记下来 = ghi lại để giữ cố định. 记下去 sai nghĩa."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "房间里太热了，把外套脱",
+       "吧。"
+      ],
+      "dap": [
+       [
+        "下来"
+       ]
+      ],
+      "chon": [
+       "下来",
+       "上来",
+       "起来"
+      ],
+      "goiY": "“… CỞI áo khoác RA đi.”",
+      "giai": "脱下来 = cởi ra khỏi người (tách rời). Đúng ý câu 练一练 (1) của sách."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "那张纸",
+       "是",
+       "从这本书里",
+       "撕下来",
+       "的",
+       "。"
+      ],
+      "dap": [
+       "那张纸是从这本书里撕下来的。"
+      ],
+      "goiY": "Tờ giấy đó là xé ra từ cuốn sách này.",
+      "giai": "是 + 从…… + V下来 + 的 nhấn mạnh nguồn gốc."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "把",
+       "老师说的话",
+       "都",
+       "记下来了",
+       "。"
+      ],
+      "dap": [
+       "我把老师说的话都记下来了。"
+      ],
+      "goiY": "Tôi đã ghi lại hết những lời thầy nói.",
+      "giai": "Câu 把: 把 + tân ngữ + 都 + V下来 + 了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "几局",
+       "下来",
+       "，",
+       "我",
+       "一局",
+       "也没赢",
+       "。"
+      ],
+      "dap": [
+       "几局下来，我一局也没赢。"
+      ],
+      "goiY": "Mấy ván trôi qua, tôi không thắng được ván nào.",
+      "giai": "Số lượng + 下来 đứng đầu câu = sau (từng ấy) …"
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这套房子不错，我们就定下来吧。",
+      "dung": true,
+      "giai": "Đúng: 定下来 = chốt, quyết định xong."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "请把会议的内容录下去。",
+      "dung": false,
+      "sua": "请把会议的内容录下来。",
+      "giai": "Ghi âm lại để lưu giữ → 录下来; 下去 chỉ tiếp tục."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "车一停起来，他就跳下了车。",
+      "dung": false,
+      "sua": "车一停下来，他就跳下了车。",
+      "giai": "Xe dừng hẳn → 停下来; 起来 chỉ bắt đầu."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Căn nhà này không tệ, chúng ta chốt luôn đi.",
+      "dap": [
+       "这套房子不错，我们就定下来吧。",
+       "这套房子不错，我们定下来吧。",
+       "这套房子挺不错的，我们就定下来吧。",
+       "这套房子不错，就定下来吧。"
+      ],
+      "py": "Zhè tào fángzi búcuò, wǒmen jiù dìng xiàlai ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng V + 下来.",
+      "giai": "定下来 = quyết định xong — câu 练一练 (2) của sách."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tôi dùng điện thoại ghi âm lại lời thầy nói.",
+      "dap": [
+       "我用手机把老师的话录下来了。",
+       "我用手机把老师说的话录下来了。",
+       "我把老师的话用手机录下来了。",
+       "我把老师说的话用手机录下来了。"
+      ],
+      "py": "Wǒ yòng shǒujī bǎ lǎoshī de huà lù xiàlai le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 把 và V + 下来.",
+      "giai": "录下来 = ghi âm lại (cố định lại)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "房间里太热了，＿＿＿。",
+      "goiY": "đề nghị một việc, dùng động từ + 下来 — câu 练一练 (1) của sách",
+      "mau": "房间里太热了，把外套脱下来吧。",
+      "can": [
+       [
+        "下来"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：为什么你跟他们说话的时候要带个录音机呢？　B：＿＿＿。",
+      "goiY": "giải thích mục đích, dùng 录下来 — câu 练一练 (3) của sách",
+      "mau": "我想把他们说的话都录下来，回去再仔细听。",
+      "can": [
+       [
+        "下来"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có động từ + 下来 kể về việc em đã ghi lại / chốt xong (lịch học, kế hoạch nghỉ hè…)",
+      "mau": "我已经把暑假的学习计划定下来了。",
+      "can": [
+       [
+        "下来"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「舍不得」",
+  "tenVn": "",
+  "cauTruc": [
+   "S + 舍不得 + N (舍不得你)",
+   "S + 舍不得 + V (舍不得花 / 穿 / 离开)",
+   "S + 舍得 + V + 吗？(hỏi / đáp / so sánh)"
+  ],
+  "giaiThich": "舍不得 là động từ: không nỡ bỏ, không nỡ rời xa, tiếc không muốn dùng hay tiêu. Phía sau có thể là danh từ (舍不得你) hoặc động từ (舍不得花 / 穿 / 离开 / 扔). Dạng khẳng định 舍得 thường dùng trong câu hỏi, câu trả lời hoặc so sánh: 你舍得吗？/ 他比我舍得花钱. 舍不得 đã là phủ định: không viết 舍得不, không thêm 没 phía trước — \"đã không nỡ\" nói 没舍得 + V.",
+  "viDu": [
+   {
+    "zh": "把你最喜欢的玩具送给小朋友，你舍得吗？",
+    "py": "Bǎ nǐ zuì xǐhuan de wánjù sòng gěi xiǎopéngyou, nǐ shěde ma?",
+    "vn": "Tặng món đồ chơi bạn thích nhất cho em nhỏ, bạn có nỡ không?"
+   },
+   {
+    "zh": "有些人对于把钱花在为家庭和自己的生活增加乐趣的事情上，总是有些舍不得。",
+    "py": "Yǒuxiē rén duìyú bǎ qián huā zài wèi jiātíng hé zìjǐ de shēnghuó zēngjiā lèqù de shìqing shang, zǒngshì yǒuxiē shěbude.",
+    "vn": "Có những người luôn thấy hơi tiếc khi tiêu tiền vào những việc làm tăng thêm niềm vui cho gia đình và cuộc sống của chính mình."
+   },
+   {
+    "zh": "可惜，大部分人都像你这样，开始不考虑得失，等到后来失去得多了，又开始舍不得，后果就是屡下屡败。",
+    "py": "Kěxī, dà bùfen rén dōu xiàng nǐ zhèyàng, kāishǐ bù kǎolǜ déshī, děngdào hòulái shīqù de duō le, yòu kāishǐ shěbude, hòuguǒ jiù shì lǚ xià lǚ bài.",
+    "vn": "Tiếc là phần lớn mọi người đều giống con: lúc đầu không tính đến được mất, đến khi mất nhiều rồi lại bắt đầu tiếc, hậu quả là đánh ván nào thua ván ấy."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "奶奶买了新衣服，舍得不穿。",
+    "why": "Dạng phủ định là 舍不得 (不 xen giữa 舍 và 得), không viết 舍得不.",
+    "dung": "奶奶买了新衣服，舍不得穿。"
+   },
+   {
+    "sai": "上次去旅行，我没舍不得买纪念品。",
+    "why": "舍不得 đã mang nghĩa phủ định, không thêm 没; \"đã không nỡ mua\" nói 没舍得买.",
+    "dung": "上次去旅行，我没舍得买纪念品。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "把你最喜欢的玩具送给小朋友，你",
+       "吗？"
+      ],
+      "dap": [
+       [
+        "舍得"
+       ]
+      ],
+      "chon": [
+       "舍得",
+       "舍不得",
+       "不得不"
+      ],
+      "goiY": "“… bạn có NỠ không?”",
+      "giai": "Câu ví dụ (1) của sách: dạng khẳng định 舍得 dùng trong câu hỏi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "奶奶很节省，买了新衣服也",
+       "穿。"
+      ],
+      "dap": [
+       [
+        "舍不得"
+       ]
+      ],
+      "chon": [
+       "舍不得",
+       "舍得",
+       "不得不"
+      ],
+      "goiY": "“… mua quần áo mới cũng KHÔNG NỠ mặc.”",
+      "giai": "舍不得 + V (穿)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "等到后来失去得多了，又开始",
+       "。"
+      ],
+      "dap": [
+       [
+        "舍不得"
+       ]
+      ],
+      "chon": [
+       "舍不得",
+       "舍得",
+       "不得了"
+      ],
+      "goiY": "“… lại bắt đầu TIẾC.”",
+      "giai": "Câu ví dụ (3) — câu của bài khoá: 舍不得 đứng cuối câu làm vị ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "要毕业了，我真",
+       "离开老师和同学们。"
+      ],
+      "dap": [
+       [
+        "舍不得"
+       ]
+      ],
+      "chon": [
+       "舍不得",
+       "不得不",
+       "舍得"
+      ],
+      "goiY": "“… tôi thật KHÔNG NỠ xa thầy cô và các bạn.”",
+      "giai": "舍不得 + 离开 + người. 不得不 = buộc phải, sai nghĩa."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "A：这么好的工作，你怎么舍得辞职？　B：我也",
+       "，可是我想去国外读书。"
+      ],
+      "dap": [
+       [
+        "舍不得"
+       ]
+      ],
+      "chon": [
+       "舍不得",
+       "舍得",
+       "不得不"
+      ],
+      "goiY": "“Tôi cũng TIẾC lắm, nhưng …”",
+      "giai": "Trả lời câu hỏi 舍得 bằng 舍不得 — câu 练一练 (1) của sách."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他比我",
+       "花钱，一个月的工资几天就花完了。"
+      ],
+      "dap": [
+       [
+        "舍得"
+       ]
+      ],
+      "chon": [
+       "舍得",
+       "舍不得",
+       "不得不"
+      ],
+      "goiY": "“Cậu ấy DÁM tiêu tiền hơn tôi …”",
+      "giai": "So sánh dùng dạng khẳng định: A 比 B 舍得 + V."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "奶奶",
+       "买了",
+       "新衣服",
+       "也",
+       "舍不得",
+       "穿",
+       "。"
+      ],
+      "dap": [
+       "奶奶买了新衣服也舍不得穿。"
+      ],
+      "goiY": "Bà nội mua quần áo mới cũng không nỡ mặc.",
+      "giai": "也 + 舍不得 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "真",
+       "舍不得",
+       "离开",
+       "老师和同学们",
+       "。"
+      ],
+      "dap": [
+       "我真舍不得离开老师和同学们。"
+      ],
+      "goiY": "Tôi thật không nỡ xa thầy cô và các bạn.",
+      "giai": "真 đứng trước 舍不得 nhấn mạnh cảm xúc."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "把你最喜欢的玩具",
+       "送给",
+       "小朋友",
+       "，",
+       "你",
+       "舍得吗",
+       "？"
+      ],
+      "dap": [
+       "把你最喜欢的玩具送给小朋友，你舍得吗？"
+      ],
+      "goiY": "Tặng món đồ chơi bạn thích nhất cho em nhỏ, bạn có nỡ không?",
+      "giai": "Cụm 把 nêu việc trước, câu hỏi 你舍得吗 đặt sau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这个礼物太珍贵了，我舍不得把它送给别人。",
+      "dung": true,
+      "giai": "Đúng: 舍不得 đứng trước cả cụm 把."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "奶奶买了新衣服，舍得不穿。",
+      "dung": false,
+      "sua": "奶奶买了新衣服，舍不得穿。",
+      "giai": "Phủ định là 舍不得, không viết 舍得不."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "上次去旅行，我没舍不得买纪念品。",
+      "dung": false,
+      "sua": "上次去旅行，我没舍得买纪念品。",
+      "giai": "舍不得 đã là phủ định; \"đã không nỡ\" nói 没舍得."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Sắp tốt nghiệp rồi, tôi thật không nỡ xa các bạn cùng lớp.",
+      "dap": [
+       "要毕业了，我真舍不得离开同学们。",
+       "快毕业了，我真舍不得离开同学们。",
+       "快要毕业了，我真舍不得离开同学们。",
+       "要毕业了，我真舍不得和同学们分开。",
+       "快毕业了，我真舍不得和同学们分开。"
+      ],
+      "py": "Yào bìyè le, wǒ zhēn shěbude líkāi tóngxuémen.",
+      "goiY": "Dịch sang tiếng Trung, dùng 舍不得.",
+      "giai": "舍不得 + 离开 + người."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Món đồ chơi này bạn có nỡ tặng cho em trai không?",
+      "dap": [
+       "这个玩具你舍得送给弟弟吗？",
+       "你舍得把这个玩具送给弟弟吗？",
+       "这个玩具你舍得送给你弟弟吗？",
+       "你舍得把这个玩具送给你弟弟吗？"
+      ],
+      "py": "Zhège wánjù nǐ shěde sòng gěi dìdi ma?",
+      "goiY": "Dịch sang tiếng Trung, dùng 舍得.",
+      "giai": "Câu hỏi dùng dạng khẳng định 舍得 + V + 吗."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：这么好的工作，你怎么舍得辞职？！　B：＿＿＿。",
+      "goiY": "trả lời, dùng 舍不得 — câu 练一练 (1) của sách",
+      "mau": "我也舍不得，可是我想去国外读书。",
+      "can": [
+       [
+        "舍不得"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：我们真的要花这么多钱去做新产品的推广吗？　B：＿＿＿。",
+      "goiY": "thuyết phục, dùng 舍不得 / 舍得 — câu 练一练 (3) của sách",
+      "mau": "现在舍不得花钱做推广，以后就可能失去更多的客户。",
+      "can": [
+       [
+        "舍不得",
+        "舍得"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 舍不得 kể về một món đồ hoặc một người em không nỡ rời xa",
+      "mau": "这是爷爷送我的第一本书，我一直舍不得扔。",
+      "can": [
+       [
+        "舍不得"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

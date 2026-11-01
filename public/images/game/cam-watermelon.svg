@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+<defs><ellipse cx="60" cy="64" rx="50" ry="46" id="cwm-s"/><clipPath id="cwm-c"><use href="#cwm-s"/></clipPath></defs>
+<g clip-path="url(#cwm-c)"><rect width="120" height="120" fill="#2f8f45"/><use href="#cwm-s" fill="#5cc25f" transform="translate(-7 -7)"/></g>
+<g clip-path="url(#cwm-c)" fill="none" stroke="#1f6b35" stroke-width="7" stroke-linecap="round"><path d="M24 18 Q14 42 22 64 Q30 88 20 114"/><path d="M46 14 Q38 40 46 64 Q54 90 44 118"/><path d="M70 14 Q62 40 70 64 Q78 90 68 118"/><path d="M94 18 Q86 42 94 64 Q102 88 92 114"/></g>
+<ellipse cx="36" cy="40" rx="13" ry="7" fill="#fff8ec" opacity="0.75" transform="rotate(-35 36 40)"/>
+<circle cx="52" cy="29" r="3" fill="#fff8ec" opacity="0.85"/>
+<use href="#cwm-s" fill="none" stroke="#2b1d3a" stroke-width="4" stroke-linejoin="round"/>
+<path d="M60 19 Q58 10 64 6" fill="none" stroke="#2b1d3a" stroke-width="4" stroke-linecap="round"/>
+<path d="M63 12 Q74 1 86 9 Q75 21 63 12 Z" fill="#7ed957" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round"/>
+</svg>

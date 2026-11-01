@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs><g id="sp-carot-c" stroke-linejoin="round" stroke-linecap="round">
+<g stroke="#2b1d3a" stroke-width="3">
+<path d="M0 0Q-12-10-9-24Q-2-12 0 0Z" fill="#6cc552"/>
+<path d="M0 0Q-2-16 5-27Q8-12 0 0Z" fill="#5cb83f"/>
+<path d="M0 0Q10-8 15-19Q7-12 0 0Z" fill="#4fa83d"/>
+<path d="M-9 0Q-10 8-6 20L-1 46Q0 49 1 46L6 20Q10 8 9 0Q0-3-9 0Z" fill="#ff8a3d"/>
+</g>
+<path d="M8 2Q9 9 5.5 20L1.5 41Q2.5 22 4 2Z" fill="#ec6f25"/>
+<path d="M-7 10H-2M3 17H6M-5 25H-1M1 33H3" stroke="#d9601e" stroke-width="1.8"/>
+<path d="M-5 4Q-6 10-4 16" stroke="#ffd2a8" stroke-width="2.4" fill="none"/>
+<path d="M-6-8Q-6-14-7-18" stroke="#a5e07f" stroke-width="1.5" fill="none"/>
+</g></defs>
+<ellipse cx="50" cy="86" rx="28" ry="5" fill="#000" opacity=".15"/>
+<use href="#sp-carot-c" transform="translate(60 38) rotate(26)"/>
+<use href="#sp-carot-c" transform="translate(40 36) rotate(-26)"/>
+</svg>

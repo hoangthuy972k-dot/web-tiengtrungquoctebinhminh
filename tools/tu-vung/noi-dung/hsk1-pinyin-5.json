@@ -1,0 +1,22 @@
+{
+"家|0": "Wǒ jiā yǒu wǔ kǒu rén.",
+"家|1": "Nǐ jiā yǒu jǐ kǒu rén?",
+"有|0": "Wǒ yǒu Zhōngguó péngyou.",
+"有|1": "Lǎoshī yǒu nǚ'ér ma?",
+"口|0": "Tā jiā yǒu sān kǒu rén.",
+"口|1": "Lǎoshī jiā yǒu jǐ kǒu rén?",
+"女儿|0": "Tā yǒu nǚ'ér.",
+"女儿|1": "Lǎoshī de nǚ'ér jīnnián jǐ suì?",
+"几|0": "Nǐ de nǚ'ér jīnnián jǐ suì?",
+"几|1": "Nǐmen jiā yǒu jǐ kǒu rén?",
+"岁|0": "Tā liù suì le.",
+"岁|1": "Tā bú shì shí suì.",
+"了|0": "Wǒ de nǚ'ér shí suì le.",
+"了|1": "Tā shì xuésheng le.",
+"今年|0": "Nǐ jīnnián duō dà?",
+"今年|1": "Tā de nǚ'ér jīnnián wǔ suì.",
+"多|0": "Lǎoshī, nín jīnnián duō dà?",
+"多|1": "Nǐ de tóngxué duō dà le?",
+"大|0": "Tā dà le.",
+"大|1": "Nǐ de nǚ'ér bú dà."
+}

@@ -1,0 +1,112 @@
+{
+ "zh": "完美的胜利",
+ "py": "Wánměi de shènglì",
+ "vn": "Chiến thắng hoàn hảo",
+ "topic": "第一单元 生活点滴 · Ngụ ngôn: biến kẻ thù thành bạn",
+ "vocabCount": 48,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "乘机",
+   "explain": "乘机 là PHÓ TỪ, nghĩa là \"lợi dụng cơ hội\" (= 利用机会): nhân lúc có điều kiện, thời cơ thuận lợi thì làm ngay việc gì. Đứng SAU chủ ngữ, ngay TRƯỚC động từ. 乘机 đã chứa sẵn \"机 (cơ hội)\" nên không mang tân ngữ 机会; muốn nói rõ cơ hội nào thì dùng 乘 / 利用 + ……的机会.",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">乘机</strong> + Động từ　(= 利用这个机会 + V)　·　<strong style=\"color:var(--sky-d)\">乘</strong> + ……的机会 / ai + 不注意 + V",
+   "examples": [
+    {
+     "zh": "这次出差去北京，我们可以乘机游览一下长城。",
+     "py": "Zhè cì chūchāi qù Běijīng, wǒmen kěyǐ chéngjī yóulǎn yíxià Chángchéng.",
+     "vn": "Lần này đi công tác Bắc Kinh, chúng ta có thể nhân dịp tham quan Vạn Lý Trường Thành."
+    },
+    {
+     "zh": "这天，大象正在吃树叶，老鼠乘机跑进大象的鼻子中，准备实施它的计划。",
+     "py": "Zhè tiān, dàxiàng zhèngzài chī shùyè, lǎoshǔ chéngjī pǎojìn dàxiàng de bízi zhōng, zhǔnbèi shíshī tā de jìhuà.",
+     "vn": "Hôm ấy, voi đang ăn lá cây, chuột nhân cơ hội chạy vào vòi voi, chuẩn bị thực hiện kế hoạch của nó."
+    },
+    {
+     "zh": "因为一些法律法规还不完善，让犯罪分子乘机钻了空子。",
+     "py": "Yīnwèi yìxiē fǎlǜ fǎguī hái bù wánshàn, ràng fànzuì fènzǐ chéngjī zuānle kòngzi.",
+     "vn": "Vì một số luật lệ, quy định còn chưa hoàn thiện nên kẻ phạm tội đã nhân cơ hội lách luật."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "乘机我们游览了一下长城。",
+     "why": "乘机 là phó từ, phải đứng SAU chủ ngữ, trước động từ.",
+     "right": "我们乘机游览了一下长城。"
+    },
+    {
+     "wrong": "他乘机这个机会出国留学了。",
+     "why": "乘机 đã có sẵn nghĩa \"cơ hội\", không mang tân ngữ 机会. Có tân ngữ thì dùng 乘 / 利用.",
+     "right": "他乘这个机会出国留学了。"
+    }
+   ]
+  },
+  {
+   "point": "不料",
+   "explain": "不料 là LIÊN TỪ, nghĩa là \"không ngờ\" (= 没想到). Vế trước nói tình huống hoặc ý định dự tính; vế sau dùng 不料 dẫn ra tình huống không ngờ tới. Thường đi với 却, 竟, 竟然, 倒, 还. 不料 đứng đầu vế SAU, không đứng ở vế nêu dự tính. Đọc búliào.",
+   "rule": "Vế 1 (dự tính / ý định)，<strong style=\"color:var(--sky-d)\">不料</strong> + (chủ ngữ) + 却 / 竟 / 竟然 / 倒 / 还 + điều bất ngờ",
+   "examples": [
+    {
+     "zh": "我只想和她开个玩笑，不料她却生气了。",
+     "py": "Wǒ zhǐ xiǎng hé tā kāi ge wánxiào, búliào tā què shēngqì le.",
+     "vn": "Tôi chỉ muốn đùa với cô ấy một chút, không ngờ cô ấy lại giận."
+    },
+    {
+     "zh": "我们做好了一切准备，下个星期就去旅行，不料他竟病倒了。",
+     "py": "Wǒmen zuòhǎole yíqiè zhǔnbèi, xià ge xīngqī jiù qù lǚxíng, búliào tā jìng bìngdǎo le.",
+     "vn": "Chúng tôi đã chuẩn bị xong xuôi, tuần sau là đi du lịch, chẳng ngờ anh ấy lại đổ bệnh."
+    },
+    {
+     "zh": "老鼠乘机跑进大象的鼻子中，准备实施它的计划。不料，刚进去，大象痒得难受，猛烈地打起了喷嚏。",
+     "py": "Lǎoshǔ chéngjī pǎojìn dàxiàng de bízi zhōng, zhǔnbèi shíshī tā de jìhuà. Búliào, gāng jìnqu, dàxiàng yǎng de nánshòu, měngliè de dǎqǐle pēntì.",
+     "vn": "Chuột nhân cơ hội chạy vào vòi voi, chuẩn bị thực hiện kế hoạch. Chẳng ngờ vừa vào, voi ngứa không chịu nổi, hắt hơi dữ dội."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "不料我只想和她开个玩笑，她却生气了。",
+     "why": "不料 đứng đầu vế SAU (vế nêu điều bất ngờ), không đứng ở vế nêu dự tính.",
+     "right": "我只想和她开个玩笑，不料她却生气了。"
+    },
+    {
+     "wrong": "我们本来打算明天去爬山，不料明天会下雨。",
+     "why": "不料 nêu điều ĐÃ xảy ra ngoài dự tính, không dùng cho dự đoán tương lai (会下雨).",
+     "right": "我们本来打算明天去爬山，不料今天就下起了大雨。"
+    }
+   ]
+  },
+  {
+   "point": "未免",
+   "explain": "未免 là PHÓ TỪ, biểu thị người nói KHÔNG TÁN THÀNH, chỉ có thể nói là… — một cách nhận xét, chê nhẹ nhàng, uyển chuyển (\"có phần…, có hơi… quá\"). Phần lớn bổ nghĩa cho TÍNH TỪ mang nghĩa tiêu cực, ít khi đứng trước động từ. Hay đi với 太, 过于, 有些, 不大 và số lượng từ 一点儿, 一些.",
+   "rule": "<strong style=\"color:var(--sky-d)\">未免</strong> + 太 / 过于 / 有些 / 不大 + Tính từ (tiêu cực)　·　<strong style=\"color:var(--sky-d)\">未免</strong> + Tính từ + 了一点儿 / 一些",
+   "examples": [
+    {
+     "zh": "他这个人也未免太不会关心人了。",
+     "py": "Tā zhège rén yě wèimiǎn tài bú huì guānxīn rén le.",
+     "vn": "Con người anh ta cũng có hơi quá vô tâm với người khác."
+    },
+    {
+     "zh": "看到大象悲惨的样子，老鼠不忍下手，它觉得那样未免太过残忍。",
+     "py": "Kàndào dàxiàng bēicǎn de yàngzi, lǎoshǔ bù rěn xiàshǒu, tā juéde nàyàng wèimiǎn tài guò cánrěn.",
+     "vn": "Nhìn dáng vẻ thảm thương của voi, chuột không nỡ ra tay, nó thấy làm vậy có phần quá tàn nhẫn."
+    },
+    {
+     "zh": "举办展览的想法是不错，只是现在能够展出的展品未免少了一些。",
+     "py": "Jǔbàn zhǎnlǎn de xiǎngfǎ shì búcuò, zhǐshì xiànzài nénggòu zhǎnchū de zhǎnpǐn wèimiǎn shǎole yìxiē.",
+     "vn": "Ý tưởng tổ chức triển lãm thì hay, có điều hiện giờ hiện vật có thể trưng bày hơi ít."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这个房间未免太干净了。",
+     "why": "未免 biểu thị không tán thành nên đi với tính từ nghĩa TIÊU CỰC; 干净 là nghĩa tích cực, câu trở nên vô lý.",
+     "right": "这个房间未免太小了。"
+    },
+    {
+     "wrong": "他未免来晚。",
+     "why": "Sau 未免 cần 太 / 有些… hoặc 了一点儿 để trọn ý đánh giá; động từ trơn đứng sau 未免 không tự nhiên.",
+     "right": "他未免来得太晚了。"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,112 @@
+{
+ "zh": "别样鲁迅",
+ "py": "Biéyàng Lǔ Xùn",
+ "vn": "Một Lỗ Tấn khác",
+ "topic": "Unit 3 倾听故事 · Người nổi tiếng &amp; văn hoá ẩm thực",
+ "vocabCount": 46,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "算",
+   "explain": "算 là động từ, nghĩa “认作，当作” — coi là, xem như là: A 算(是) B. Sau 算 có thể thêm 了 (算了) để biểu thị thôi, bỏ qua, không so đo nữa. Dạng bổ ngữ: 算得上 / 算不上 — đáng / không đáng được coi là.",
+   "rule": "① A + <strong style=\"color:var(--sky-d)\">算(是)</strong> + B　② ……<strong style=\"color:var(--sky-d)\">算了</strong>(吧)　③ A + <strong style=\"color:var(--sky-d)\">算得上 / 算不上</strong> + B",
+   "examples": [
+    {
+     "zh": "例如著名的文学家鲁迅，在吃喝这件事上，就算是个地道的行家。",
+     "py": "Lìrú zhùmíng de wénxuéjiā Lǔ Xùn, zài chīhē zhè jiàn shì shang, jiù suàn shì ge dìdao de hángjia.",
+     "vn": "Ví dụ như nhà văn nổi tiếng Lỗ Tấn, trong chuyện ăn uống cũng được coi là một người sành sỏi thực thụ."
+    },
+    {
+     "zh": "这钱就算我借给你的，将来你有了的时候再还我。",
+     "py": "Zhè qián jiù suàn wǒ jiè gěi nǐ de, jiānglái nǐ yǒule de shíhou zài huán wǒ.",
+     "vn": "Tiền này coi như tớ cho cậu mượn, sau này khi nào có thì trả tớ."
+    },
+    {
+     "zh": "不就是一个空瓶子吗？扔掉算了。",
+     "py": "Bú jiù shì yí ge kōng píngzi ma? Rēngdiào suàn le.",
+     "vn": "Chẳng phải chỉ là một cái chai rỗng thôi sao? Vứt đi cho xong."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "广和居不算上豪华。",
+     "why": "dạng bổ ngữ phải là 算不上 — 不 chen vào giữa 算 và 上.",
+     "right": "广和居算不上豪华。"
+    },
+    {
+     "wrong": "不就是一个空瓶子吗？扔掉算。",
+     "why": "nghĩa “thôi, bỏ đi cho xong” phải có 了: 算了.",
+     "right": "不就是一个空瓶子吗？扔掉算了。"
+    }
+   ]
+  },
+  {
+   "point": "作为",
+   "explain": "作为 làm động từ nghĩa “看作，认为是……” — coi là, lấy làm: 把 A 作为 B. Làm giới từ, 作为 dẫn ra THÂN PHẬN của người hoặc TÍNH CHẤT của sự vật, thường đứng đầu câu; chủ ngữ của vế sau phải chính là người/vật mang thân phận đó.",
+   "rule": "① 把 A + <strong style=\"color:var(--sky-d)\">作为</strong> + B　② <strong style=\"color:var(--sky-d)\">作为</strong> + thân phận / tính chất，Chủ ngữ + ……",
+   "examples": [
+    {
+     "zh": "北海公园离家最近，所以我把那儿作为每晚散步的去处。",
+     "py": "Běihǎi Gōngyuán lí jiā zuì jìn, suǒyǐ wǒ bǎ nàr zuòwéi měi wǎn sànbù de qùchù.",
+     "vn": "Công viên Bắc Hải gần nhà nhất, nên tôi lấy đó làm nơi đi dạo mỗi tối."
+    },
+    {
+     "zh": "经理要请我去吃顿饭，说是作为我加班的表扬。",
+     "py": "Jīnglǐ yào qǐng wǒ qù chī dùn fàn, shuō shì zuòwéi wǒ jiābān de biǎoyáng.",
+     "vn": "Giám đốc muốn mời tôi đi ăn một bữa, nói là để khen việc tôi làm thêm giờ."
+    },
+    {
+     "zh": "作为大作家、大学问家，鲁迅对吃很讲究，吃的内容在他的日记里占了很大一部分。",
+     "py": "Zuòwéi dà zuòjiā, dà xuéwenjiā, Lǔ Xùn duì chī hěn jiǎngjiu, chī de nèiróng zài tā de rìjì li zhànle hěn dà yí bùfen.",
+     "vn": "Là nhà văn lớn, nhà học giả lớn, Lỗ Tấn rất cầu kỳ chuyện ăn, chuyện ăn uống chiếm một phần rất lớn trong nhật ký của ông."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "作为一个学生，老师要求我们每天复习。",
+     "why": "vế sau phải có chủ ngữ CHÍNH LÀ người mang thân phận “học sinh” (我们), không phải 老师.",
+     "right": "作为学生，我们应该每天复习。"
+    },
+    {
+     "wrong": "作为是一名医生，他工作非常忙。",
+     "why": "作为 đã có nghĩa “với tư cách là”, không thêm 是 phía sau.",
+     "right": "作为一名医生，他工作非常忙。"
+    }
+   ]
+  },
+  {
+   "point": "曾经",
+   "explain": "曾经 là phó từ, biểu thị TRƯỚC ĐÂY đã từng có một hành vi nào đó hoặc từng xuất hiện một tình huống nào đó (nay thường đã kết thúc). Sau động từ thường có 过 (đôi khi 了). Phủ định dùng 没(有)……过 hoặc 不曾, không nói 曾经没.",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">曾经</strong> + Động từ + 过 / 了 (+ Tân ngữ)",
+   "examples": [
+    {
+     "zh": "郁达夫在1933年曾经作诗形容他：“醉眼蒙眬上酒楼，彷徨呐喊两悠悠”，描写得十分形象。",
+     "py": "Yù Dáfū zài yī jiǔ sān sān nián céngjīng zuò shī xíngróng tā: “Zuì yǎn ménglóng shàng jiǔlóu, Pánghuáng Nàhǎn liǎng yōuyōu”, miáoxiě de shífēn xíngxiàng.",
+     "vn": "Năm 1933 Úc Đạt Phu từng làm thơ miêu tả ông: “Mắt say lờ đờ lên lầu rượu, ‘Bàng hoàng’, ‘Gào thét’ hai điều thong dong”, miêu tả vô cùng sinh động."
+    },
+    {
+     "zh": "鲁迅曾经说他是将别人喝牛奶、咖啡的时间用来学习。",
+     "py": "Lǔ Xùn céngjīng shuō tā shì jiāng biérén hē niúnǎi, kāfēi de shíjiān yònglái xuéxí.",
+     "vn": "Lỗ Tấn từng nói ông đem thời gian người khác uống sữa, uống cà phê ra để học."
+    },
+    {
+     "zh": "孔子曾经带着学生周游各国14年，传播他的思想。",
+     "py": "Kǒngzǐ céngjīng dàizhe xuésheng zhōuyóu gè guó shísì nián, chuánbō tā de sīxiǎng.",
+     "vn": "Khổng Tử từng dẫn học trò chu du các nước 14 năm, truyền bá tư tưởng của mình."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我曾经没去过北京。",
+     "why": "曾经 không đi với phủ định 没; muốn phủ định thì bỏ 曾经 hoặc dùng 不曾.",
+     "right": "我没去过北京。/ 我不曾去过北京。"
+    },
+    {
+     "wrong": "快走吧，电影曾经开始了！",
+     "why": "việc vừa xảy ra, trạng thái còn kéo dài đến hiện tại phải dùng 已经; 曾经 chỉ chuyện đã qua.",
+     "right": "快走吧，电影已经开始了！"
+    }
+   ]
+  }
+ ]
+}

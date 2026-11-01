@@ -1,0 +1,934 @@
+[
+ {
+  "so": "1",
+  "ten": "「不如」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + 不如 + B (+ Adj tích cực)",
+   "A + 还 + 不如 + B",
+   "连 + B + 都不如",
+   "(làm X)，不如 + (làm Y) — chi bằng"
+  ],
+  "giaiThich": "不如 là ĐỘNG TỪ, biểu thị \"so không bằng\" (比不上): A 不如 B = A kém B. Sau B có thể thêm tính từ mang nghĩa TÍCH CỰC (好 / 高 / 快 / 便宜) hoặc kết thúc câu luôn (求人不如求己, 我的发音不如她). Hay đi với 还 / 连……都 để nhấn mạnh: 还不如, 连……都不如. Ngoài ra, ……，不如…… dùng để đề xuất một lựa chọn tốt hơn (= chi bằng): 在房间睡觉不如出去走走. Không dùng chung với 比, không đặt tính từ tiêu cực sau B.",
+  "viDu": [
+   {
+    "zh": "求人不如求己。",
+    "py": "Qiú rén bùrú qiú jǐ.",
+    "vn": "Nhờ người không bằng tự mình lo liệu."
+   },
+   {
+    "zh": "……由于受到了建伟书店的影响，这三家书店的经营空间越来越小，三家的营业额加起来还不如他一家高。",
+    "py": "……Yóuyú shòudàole Jiànwěi shūdiàn de yǐngxiǎng, zhè sān jiā shūdiàn de jīngyíng kōngjiān yuè lái yuè xiǎo, sān jiā de yíngyè'é jiā qilai hái bùrú tā yì jiā gāo.",
+    "vn": "…Do bị hiệu sách của Kiến Vĩ ảnh hưởng, không gian kinh doanh của ba hiệu sách ấy ngày càng thu hẹp, doanh thu của cả ba cộng lại còn không bằng một mình hiệu của anh."
+   },
+   {
+    "zh": "如果找一个棋艺不如你或者和你差不多的人下棋，虽然你可能会轻易地战胜对手，但并不能使你的棋艺得到提高。",
+    "py": "Rúguǒ zhǎo yí ge qíyì bùrú nǐ huòzhě hé nǐ chàbuduō de rén xiàqí, suīrán nǐ kěnéng huì qīngyì de zhànshèng duìshǒu, dàn bìng bù néng shǐ nǐ de qíyì dédào tígāo.",
+    "vn": "Nếu tìm một người đánh cờ kém bạn hoặc ngang bạn để chơi, tuy bạn có thể dễ dàng thắng đối thủ, nhưng không thể giúp tài đánh cờ của bạn được nâng cao."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我的发音不如她差。",
+    "why": "Sau 不如 + B chỉ dùng tính từ mang nghĩa tích cực (好, 高, 快…). Muốn nói \"tôi kém\" thì đảo: 我的发音不如她好.",
+    "dung": "我的发音不如她好。"
+   },
+   {
+    "sai": "他的成绩不如我比较高。",
+    "why": "不如 đã mang nghĩa so sánh, không dùng thêm 比 / 比较.",
+    "dung": "他的成绩不如我高。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "三家的营业额加起来还",
+       "他一家高。"
+      ],
+      "dap": [
+       [
+        "不如"
+       ]
+      ],
+      "chon": [
+       "不如",
+       "没有",
+       "比"
+      ],
+      "goiY": "Câu của bài khoá: cả ba cộng lại còn không bằng một nhà.",
+      "giai": "A 还不如 B + 高: 不如 = không bằng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "求人",
+       "求己。"
+      ],
+      "dap": [
+       [
+        "不如"
+       ]
+      ],
+      "chon": [
+       "不如",
+       "比",
+       "不是"
+      ],
+      "goiY": "Câu ví dụ của sách: nhờ người không bằng tự lo.",
+      "giai": "A 不如 B, kết thúc câu ngay sau B."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她的汉语说得很好，我的发音",
+       "她。"
+      ],
+      "dap": [
+       [
+        "不如"
+       ]
+      ],
+      "chon": [
+       "不如",
+       "没有",
+       "比较"
+      ],
+      "goiY": "Bài tập 2 của sách — câu kết thúc ngay sau 她.",
+      "giai": "没有 so sánh phải có tính từ (没有她好); 不如 thì không cần."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "今天阳光真好，在房间睡觉",
+       "出去走走。"
+      ],
+      "dap": [
+       [
+        "不如"
+       ]
+      ],
+      "chon": [
+       "不如",
+       "不但",
+       "比"
+      ],
+      "goiY": "Đề xuất lựa chọn tốt hơn: chi bằng …",
+      "giai": "……，不如…… = chi bằng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我跑得连弟弟都",
+       "。"
+      ],
+      "dap": [
+       [
+        "不如"
+       ]
+      ],
+      "chon": [
+       "不如",
+       "没有",
+       "不比"
+      ],
+      "goiY": "Tôi chạy còn thua cả em trai.",
+      "giai": "连 + B + 都不如: ngay cả B cũng không bằng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "爷爷年纪大了，身体",
+       "以前了。"
+      ],
+      "dap": [
+       [
+        "不如"
+       ]
+      ],
+      "chon": [
+       "不如",
+       "没有",
+       "不比"
+      ],
+      "goiY": "Sức khoẻ ông không bằng trước đây nữa.",
+      "giai": "不如 + 以前 + 了: kết thúc câu sau B, không cần tính từ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "三家的",
+       "营业额",
+       "加起来",
+       "还不如",
+       "他一家",
+       "高",
+       "。"
+      ],
+      "dap": [
+       "三家的营业额加起来还不如他一家高。"
+      ],
+      "goiY": "Doanh thu cả ba cộng lại còn không bằng một mình hiệu của anh.",
+      "giai": "A + 还不如 + B + 高."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我的",
+       "发音",
+       "不如",
+       "她",
+       "。"
+      ],
+      "dap": [
+       "我的发音不如她。"
+      ],
+      "goiY": "Phát âm của tôi không bằng cô ấy.",
+      "giai": "A 不如 B — kết thúc câu ngay sau B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "在房间睡觉",
+       "不如",
+       "出去",
+       "走走",
+       "。"
+      ],
+      "dap": [
+       "在房间睡觉不如出去走走。"
+      ],
+      "goiY": "Ngủ trong phòng chi bằng ra ngoài đi dạo.",
+      "giai": "X 不如 Y: đề xuất lựa chọn tốt hơn."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这家店的书不如那家便宜。",
+      "dung": true,
+      "giai": "Đúng: A 不如 B + tính từ tích cực (便宜)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我的汉语不如他差。",
+      "dung": false,
+      "sua": "我的汉语不如他好。",
+      "giai": "Sau 不如 + B không dùng tính từ tiêu cực (差)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他的成绩不如我比较高。",
+      "dung": false,
+      "sua": "他的成绩不如我高。",
+      "giai": "不如 đã là so sánh, không thêm 比较."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Thành tích học kỳ này của tôi còn không bằng học kỳ trước.",
+      "dap": [
+       "我这学期的成绩还不如上学期。",
+       "这学期我的成绩还不如上学期。",
+       "我这学期的成绩还不如上学期好。"
+      ],
+      "py": "Wǒ zhè xuéqī de chéngjì hái bùrú shàng xuéqī.",
+      "goiY": "Dịch sang tiếng Trung, dùng 还不如.",
+      "giai": "A + 还不如 + B (+ 好)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cuối tuần đông quá, chi bằng chúng ta đi vào thứ hai.",
+      "dap": [
+       "周末人太多了，不如我们星期一去吧。",
+       "周末人太多了，我们不如星期一去吧。",
+       "周末人太多了，不如星期一去。"
+      ],
+      "py": "Zhōumò rén tài duō le, bùrú wǒmen xīngqīyī qù ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不如 để đề xuất.",
+      "giai": "……，不如 + đề xuất (+ 吧)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：周末咱们去趟长城怎么样？　B：＿＿＿。",
+      "goiY": "cuối tuần đông, đề xuất đi lúc khác (dùng 不如) — bài 练一练 (1) của sách",
+      "mau": "周末人太多了，不如下周一请一天假再去吧",
+      "can": [
+       [
+        "不如"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：与上学期相比，你这学期的成绩有进步吗？　B：＿＿＿。",
+      "goiY": "không tiến bộ, còn kém hơn (dùng 不如) — bài 练一练 (2) của sách",
+      "mau": "没有进步，这学期的成绩还不如上学期呢",
+      "can": [
+       [
+        "不如"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "今天阳光真好，在房间睡觉＿＿＿。",
+      "goiY": "Hoàn thành câu theo ý em, dùng 「不如」 — bài 练一练 (3) của sách",
+      "mau": "今天阳光真好，在房间睡觉不如去公园打打球。",
+      "can": [
+       [
+        "不如"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「干脆」",
+  "tenVn": "",
+  "cauTruc": [
+   "S + 很干脆 / V + 得很干脆 (tính từ)",
+   "(……，) S + 干脆 + V (phó từ)",
+   "干脆 + 把……V / 不 + V"
+  ],
+  "giaiThich": "干脆 có hai cách dùng. ① TÍNH TỪ: nói năng, làm việc gọn gàng, dứt khoát, không do dự (痛快、不犹豫) — làm vị ngữ (他这人很干脆) hoặc bổ ngữ (答应得很干脆). ② PHÓ TỪ: đơn giản, quả quyết mà làm luôn (简单、果断地) — đứng trước động từ, thường đưa ra một cách giải quyết triệt để sau khi đã thử cách khác không được: 干脆放弃, 干脆把……挤垮, 干脆不来了. Phó từ 干脆 đứng TRƯỚC 把 / 不 / 别.",
+  "viDu": [
+   {
+    "zh": "他这人很干脆，说行就行，说不行就不行。",
+    "py": "Tā zhè rén hěn gāncuì, shuō xíng jiù xíng, shuō bù xíng jiù bù xíng.",
+    "vn": "Anh ấy là người rất dứt khoát, nói được là được, nói không là không."
+   },
+   {
+    "zh": "我已经试了六次了，还是不行，我看我干脆放弃好了。",
+    "py": "Wǒ yǐjīng shìle liù cì le, háishi bù xíng, wǒ kàn wǒ gāncuì fàngqì hǎo le.",
+    "vn": "Tôi đã thử sáu lần rồi mà vẫn không được, tôi thấy thôi dứt khoát bỏ cho xong."
+   },
+   {
+    "zh": "这时，许多亲朋好友便建议他干脆把另三家书店挤垮，垄断这个市场。",
+    "py": "Zhè shí, xǔduō qīnpéng hǎoyǒu biàn jiànyì tā gāncuì bǎ lìng sān jiā shūdiàn jǐkuǎ, lǒngduàn zhège shìchǎng.",
+    "vn": "Lúc này, nhiều người thân bạn bè liền khuyên anh dứt khoát chèn cho ba hiệu sách kia sập, độc chiếm thị trường này."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "你把这件事干脆忘了吧。",
+    "why": "Phó từ 干脆 đứng TRƯỚC 把, không chen giữa 把 + tân ngữ và động từ.",
+    "dung": "你干脆把这件事忘了吧。"
+   },
+   {
+    "sai": "他答应很干脆。",
+    "why": "干脆 làm bổ ngữ trạng thái phải có 得: V + 得 + 很干脆.",
+    "dung": "他答应得很干脆。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "许多亲朋好友便建议他",
+       "把另三家书店挤垮。"
+      ],
+      "dap": [
+       [
+        "干脆"
+       ]
+      ],
+      "chon": [
+       "干脆",
+       "万一",
+       "不如"
+      ],
+      "goiY": "Câu của bài khoá: khuyên anh dứt khoát chèn cho sập.",
+      "giai": "干脆 (phó từ) đứng trước 把."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我已经试了六次了，还是不行，我看我",
+       "放弃好了。"
+      ],
+      "dap": [
+       [
+        "干脆"
+       ]
+      ],
+      "chon": [
+       "干脆",
+       "万一",
+       "不见得"
+      ],
+      "goiY": "Câu ví dụ của sách: thôi dứt khoát bỏ luôn.",
+      "giai": "干脆 + V: đưa ra cách giải quyết triệt để."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我求他帮忙，他答应得很",
+       "。"
+      ],
+      "dap": [
+       [
+        "干脆"
+       ]
+      ],
+      "chon": [
+       "干脆",
+       "热心地",
+       "适当"
+      ],
+      "goiY": "Anh ấy nhận lời rất dứt khoát.",
+      "giai": "V + 得很干脆: tính từ làm bổ ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他这人很",
+       "，说行就行，说不行就不行。"
+      ],
+      "dap": [
+       [
+        "干脆"
+       ]
+      ],
+      "chon": [
+       "干脆",
+       "合理",
+       "倒霉"
+      ],
+      "goiY": "Người làm việc dứt khoát.",
+      "giai": "很 + 干脆: tính từ làm vị ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他上周迟到，这周",
+       "不来了！"
+      ],
+      "dap": [
+       [
+        "干脆"
+       ]
+      ],
+      "chon": [
+       "干脆",
+       "万一",
+       "不如"
+      ],
+      "goiY": "Bài tập 3 của sách: tuần này dứt khoát không đến luôn.",
+      "giai": "干脆 đứng trước 不 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "雨太大了，我们",
+       "在家看电影吧。"
+      ],
+      "dap": [
+       [
+        "干脆"
+       ]
+      ],
+      "chon": [
+       "干脆",
+       "万一",
+       "不见得"
+      ],
+      "goiY": "Mưa to quá, thôi ở nhà.",
+      "giai": "干脆 + V + 吧: đề xuất dứt khoát."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我看",
+       "我",
+       "干脆",
+       "放弃",
+       "好了",
+       "。"
+      ],
+      "dap": [
+       "我看我干脆放弃好了。"
+      ],
+      "goiY": "Tôi thấy thôi dứt khoát bỏ cho xong.",
+      "giai": "干脆 + V + 好了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我求他帮忙",
+       "，",
+       "他",
+       "答应得",
+       "很干脆",
+       "。"
+      ],
+      "dap": [
+       "我求他帮忙，他答应得很干脆。"
+      ],
+      "goiY": "Tôi nhờ anh ấy giúp, anh ấy nhận lời rất dứt khoát.",
+      "giai": "V + 得 + 很干脆."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "亲朋好友",
+       "建议他",
+       "干脆",
+       "把书店",
+       "卖了",
+       "。"
+      ],
+      "dap": [
+       "亲朋好友建议他干脆把书店卖了。"
+      ],
+      "goiY": "Người thân khuyên anh ấy dứt khoát bán hiệu sách đi.",
+      "giai": "干脆 đứng trước 把."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这辆旧自行车老是坏，干脆把它卖了吧。",
+      "dung": true,
+      "giai": "Đúng: 干脆 + 把 + tân ngữ + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你把这件事干脆忘了吧。",
+      "dung": false,
+      "sua": "你干脆把这件事忘了吧。",
+      "giai": "Phó từ 干脆 phải đứng trước 把."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他答应很干脆。",
+      "dung": false,
+      "sua": "他答应得很干脆。",
+      "giai": "Làm bổ ngữ trạng thái phải có 得."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Việc này bạn đã suy nghĩ một tháng rồi, sao không dứt khoát quyết định luôn?",
+      "dap": [
+       "这件事你已经考虑了一个月了，干脆决定吧？",
+       "这件事你已经考虑了一个月了，为什么不干脆决定呢？",
+       "这件事你已经考虑一个月了，干脆做决定吧？"
+      ],
+      "py": "Zhè jiàn shì nǐ yǐjīng kǎolǜle yí ge yuè le, gāncuì juédìng ba?",
+      "goiY": "Dịch sang tiếng Trung, dùng 干脆 (phó từ).",
+      "giai": "干脆 + V: dứt khoát làm luôn."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Anh ấy làm việc rất dứt khoát, chưa bao giờ do dự.",
+      "dap": [
+       "他做事很干脆，从来不犹豫。",
+       "他做事很干脆，从来没犹豫过。",
+       "他办事很干脆，从来不犹豫。"
+      ],
+      "py": "Tā zuò shì hěn gāncuì, cónglái bù yóuyù.",
+      "goiY": "Dịch sang tiếng Trung, dùng 干脆 (tính từ).",
+      "giai": "很 + 干脆: tính từ làm vị ngữ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：现在这工作真没意思，又累挣得又少！　B：＿＿＿。",
+      "goiY": "khuyên dứt khoát đổi việc (dùng 干脆) — bài 练一练 (1) của sách",
+      "mau": "那你干脆换个工作吧",
+      "can": [
+       [
+        "干脆"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这件事你已经考虑了一个月了，＿＿＿？",
+      "goiY": "giục người kia quyết luôn (dùng 干脆) — bài 练一练 (2) của sách",
+      "mau": "这件事你已经考虑了一个月了，干脆早点儿做决定吧？",
+      "can": [
+       [
+        "干脆"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "A：＿＿＿。　B：行，那我们叫大家明天一起开个会吧。",
+      "goiY": "Tự viết câu A có dùng 「干脆」 để B trả lời như trên — bài 练一练 (3) của sách",
+      "mau": "这个问题在网上说不清楚，我们干脆开个会讨论吧",
+      "can": [
+       [
+        "干脆"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「万一」",
+  "tenVn": "",
+  "cauTruc": [
+   "万一 + (S) + việc xấu，(那) + 就 + hậu quả",
+   "……，万一……呢？",
+   "以防万一 / 就怕万一 (danh từ)"
+  ],
+  "giaiThich": "万一 có hai cách dùng. ① LIÊN TỪ: nêu một khả năng rất nhỏ, thường là chuyện ngoài ý muốn, BẤT LỢI (lỡ như, ngộ nhỡ) — đứng đầu vế giả thiết, trước hoặc sau chủ ngữ; vế sau hay có (那)就 / 怎么办, hoặc hỏi 万一……呢？ ② DANH TỪ: tình huống bất ngờ hiếm gặp, thường trong cụm cố định 就怕万一, 以防万一. Chỉ dùng cho việc không mong muốn — việc tốt dùng 如果 / 要是.",
+  "viDu": [
+   {
+    "zh": "……万一他们自己跑到其他图书市场去“货比三家”，那我的生意就完了。",
+    "py": "……Wànyī tāmen zìjǐ pǎodào qítā túshū shìchǎng qù \"huò bǐ sān jiā\", nà wǒ de shēngyi jiù wán le.",
+    "vn": "…Lỡ như họ tự chạy sang chợ sách khác để \"so hàng ba nhà\", thì việc làm ăn của tôi coi như xong."
+   },
+   {
+    "zh": "不要将所有的鸡蛋都放在一个篮子里，因为万一不小心，鸡蛋就有可能全部打碎。",
+    "py": "Bú yào jiāng suǒyǒu de jīdàn dōu fàng zài yí ge lánzi li, yīnwèi wànyī bù xiǎoxīn, jīdàn jiù yǒu kěnéng quánbù dǎsuì.",
+    "vn": "Đừng bỏ tất cả trứng vào một giỏ, vì lỡ không cẩn thận thì trứng có thể vỡ hết."
+   },
+   {
+    "zh": "不怕一万，就怕万一。",
+    "py": "Bú pà yíwàn, jiù pà wànyī.",
+    "vn": "Không sợ vạn lần, chỉ sợ một lần bất trắc (cẩn tắc vô áy náy)."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "万一我考上了大学，我就请你吃饭。",
+    "why": "万一 chỉ dùng cho khả năng XẤU, không mong muốn. Việc tốt dùng 如果 / 要是.",
+    "dung": "如果我考上了大学，我就请你吃饭。"
+   },
+   {
+    "sai": "万一下雨，所以我带了伞。",
+    "why": "万一 là giả thiết, vế sau không dùng 所以. Nói: 带上伞，万一下雨呢？ hoặc 我带了伞，以防万一.",
+    "dung": "我带了伞，以防万一。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "他们自己跑到其他图书市场去“货比三家”，那我的生意就完了。"
+      ],
+      "dap": [
+       [
+        "万一"
+       ]
+      ],
+      "chon": [
+       "万一",
+       "干脆",
+       "不如"
+      ],
+      "goiY": "Câu của bài khoá: lỡ như họ tự đi so hàng.",
+      "giai": "万一 + việc xấu，那……就……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "拿把伞吧，",
+       "下雨呢？"
+      ],
+      "dap": [
+       [
+        "万一"
+       ]
+      ],
+      "chon": [
+       "万一",
+       "干脆",
+       "不见得"
+      ],
+      "goiY": "Lỡ trời mưa thì sao?",
+      "giai": "万一……呢？ = lỡ … thì sao."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "不怕一万，就怕",
+       "。"
+      ],
+      "dap": [
+       [
+        "万一"
+       ]
+      ],
+      "chon": [
+       "万一",
+       "一万",
+       "一般"
+      ],
+      "goiY": "Câu ví dụ của sách.",
+      "giai": "就怕万一: 万一 làm danh từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她总是带着一把伞，以防",
+       "。"
+      ],
+      "dap": [
+       [
+        "万一"
+       ]
+      ],
+      "chon": [
+       "万一",
+       "干脆",
+       "一下"
+      ],
+      "goiY": "Để phòng bất trắc.",
+      "giai": "以防万一 là cụm cố định."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你小心一点，",
+       "受伤就麻烦了。"
+      ],
+      "dap": [
+       [
+        "万一"
+       ]
+      ],
+      "chon": [
+       "万一",
+       "如果说",
+       "干脆"
+      ],
+      "goiY": "Bài tập 3 của sách: lỡ bị thương thì phiền.",
+      "giai": "万一 đứng đầu vế giả thiết xấu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们还是早点出发吧，",
+       "堵车就来不及了。"
+      ],
+      "dap": [
+       [
+        "万一"
+       ]
+      ],
+      "chon": [
+       "万一",
+       "不如",
+       "不见得"
+      ],
+      "goiY": "Lỡ tắc đường thì không kịp.",
+      "giai": "万一 + việc xấu + 就 + hậu quả."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "拿把伞吧",
+       "，",
+       "万一",
+       "下雨",
+       "呢",
+       "？"
+      ],
+      "dap": [
+       "拿把伞吧，万一下雨呢？"
+      ],
+      "goiY": "Cầm theo ô đi, lỡ mưa thì sao?",
+      "giai": "……，万一……呢？"
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "小心一点",
+       "，",
+       "万一",
+       "受伤",
+       "就麻烦了",
+       "。"
+      ],
+      "dap": [
+       "你小心一点，万一受伤就麻烦了。"
+      ],
+      "goiY": "Cậu cẩn thận chút, lỡ bị thương thì phiền.",
+      "giai": "万一 + việc xấu + 就 + hậu quả."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "她",
+       "总是",
+       "带着",
+       "一把伞",
+       "，",
+       "以防万一",
+       "。"
+      ],
+      "dap": [
+       "她总是带着一把伞，以防万一。"
+      ],
+      "goiY": "Cô ấy luôn mang theo một chiếc ô để phòng bất trắc.",
+      "giai": "以防万一 đứng cuối câu."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "万一明天下大雨，运动会怎么办？",
+      "dung": true,
+      "giai": "Đúng: 万一 + việc xấu，……怎么办？"
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "万一我考上了大学，我就请你吃饭。",
+      "dung": false,
+      "sua": "如果我考上了大学，我就请你吃饭。",
+      "giai": "Việc tốt không dùng 万一; dùng 如果 / 要是."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "万一下雨，所以我带了伞。",
+      "dung": false,
+      "sua": "我带了伞，以防万一。",
+      "giai": "万一 là giả thiết, không nối với 所以."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Đừng bỏ tất cả trứng vào một giỏ, lỡ không cẩn thận thì sẽ vỡ hết.",
+      "dap": [
+       "不要把所有的鸡蛋都放在一个篮子里，万一不小心，就会全部打碎。",
+       "别把所有的鸡蛋都放在一个篮子里，万一不小心，就全打碎了。",
+       "不要把鸡蛋都放在一个篮子里，万一不小心，就会全部打碎。"
+      ],
+      "py": "Bú yào bǎ suǒyǒu de jīdàn dōu fàng zài yí ge lánzi li, wànyī bù xiǎoxīn, jiù huì quánbù dǎsuì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 万一.",
+      "giai": "万一 + 不小心，就……."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mang theo hộ chiếu đi, lỡ cần dùng thì sao?",
+      "dap": [
+       "把护照带上吧，万一要用呢？",
+       "带上护照吧，万一要用呢？",
+       "把护照带着吧，万一需要呢？"
+      ],
+      "py": "Bǎ hùzhào dàishang ba, wànyī yào yòng ne?",
+      "goiY": "Dịch sang tiếng Trung, dùng 万一……呢？",
+      "giai": "……吧，万一……呢？"
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我们还是早点出发吧，＿＿＿。",
+      "goiY": "nêu rủi ro nếu đi muộn (dùng 万一) — bài 练一练 (1) của sách",
+      "mau": "我们还是早点出发吧，万一路上堵车就来不及了。",
+      "can": [
+       [
+        "万一"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：天气看起来不错，不用带伞了。　B：＿＿＿。",
+      "goiY": "thuyết phục mang ô (dùng 万一) — bài 练一练 (3) của sách",
+      "mau": "还是带上吧，万一下雨呢",
+      "can": [
+       [
+        "万一"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "A：今天晚上你回家吃饭吗？　B：＿＿＿。",
+      "goiY": "Trả lời theo ý em, dùng 「万一」 — bài 练一练 (2) của sách",
+      "mau": "回来，不过万一加班，我就给你打电话",
+      "can": [
+       [
+        "万一"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

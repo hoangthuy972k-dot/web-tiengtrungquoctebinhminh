@@ -1,0 +1,585 @@
+{
+ "/lessons/hsk3v3-bai-6.html": {
+  "points": [
+   {
+    "title": "Cấu trúc cố định 「该……了」 — đến lúc phải … rồi",
+    "errors": [
+     {
+      "wrong": "八点了，该上课。",
+      "why": "thiếu 了 cuối câu: cấu trúc cố định là 该 + V + 了 — chính 了 mang nghĩa “đã đến lúc”.",
+      "right": "八点了，该上课了。"
+     },
+     {
+      "wrong": "现在该是吃饭了。",
+      "why": "dịch từng chữ “bây giờ là lúc ăn cơm” nên thừa 是: sau 该 dùng thẳng động từ.",
+      "right": "现在该吃饭了。"
+     },
+     {
+      "wrong": "你该了去上学。",
+      "why": "了 không đứng ngay sau 该 mà đứng cuối câu: 该 + V + (tân ngữ) + 了.",
+      "right": "你该去上学了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: hoàn thành câu “天已经黑了，……。”",
+      "pre": "天已经黑了，",
+      "blank": "我们该回家了",
+      "post": "。",
+      "options": [
+       "我们该回家了",
+       "我们该回家",
+       "我们了该回家"
+      ],
+      "answer": 0,
+      "explanation": "该 + V + 了: đã đến lúc về nhà; 黑 (HSK2 Bài 4 – 黑色)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “电影就要开始了，……。”",
+      "pre": "电影就要开始了，",
+      "blank": "我们该进去了",
+      "post": "。",
+      "options": [
+       "我们该进去了",
+       "我们该进去",
+       "该了我们进去"
+      ],
+      "answer": 0,
+      "explanation": "就要……了 — sắp (HSK2 Bài 10); 进去 (HSK2 Bài 4)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “他下个星期过生日，……。”",
+      "pre": "他下个星期过生日，",
+      "blank": "我们该给他准备礼物了",
+      "post": "。",
+      "options": [
+       "我们该给他准备礼物了",
+       "我们该给他准备礼物",
+       "我们该了给他准备礼物"
+      ],
+      "answer": 0,
+      "explanation": "该 + 给他 + 准备礼物 + 了; 准备、礼物 (HSK2 Bài 5); 过生日 (HSK2 Bài 6)."
+     },
+     {
+      "context": "Sách: chọn từ “飞机马上就要起飞了，你的手机……关机了。” (关机 guānjī – tắt máy)",
+      "pre": "飞机马上就要起飞了，你的手机",
+      "blank": "该",
+      "post": "关机了。",
+      "options": [
+       "该",
+       "后来",
+       "以前"
+      ],
+      "answer": 0,
+      "explanation": "该……了 — đến lúc phải tắt máy; 起飞 (ôn HSK3 Bài 4)."
+     },
+     {
+      "context": "Sách (miêu tả tranh): “还有半个多小时，你……。” — tiễn bạn ở ga",
+      "pre": "还有半个多小时，你",
+      "blank": "该进站了",
+      "post": "。",
+      "options": [
+       "该进站了",
+       "进站该了",
+       "该进站"
+      ],
+      "answer": 0,
+      "explanation": "该 + 进站 + 了: đến lúc vào ga rồi."
+     },
+     {
+      "context": "“Chúng ta nên mua vé đi Thượng Hải rồi.”",
+      "pre": "咱们",
+      "blank": "该买去上海的票了",
+      "post": "。",
+      "options": [
+       "该买去上海的票了",
+       "买去上海的票该了",
+       "该了买去上海的票"
+      ],
+      "answer": 0,
+      "explanation": "该 + V + tân ngữ + 了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "已经很晚了，我该睡觉了。",
+      "isCorrect": true,
+      "explanation": "该 + 睡觉 + 了 — đúng; 已经……了 (HSK2 Bài 1)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "现在该是吃饭了。",
+      "isCorrect": false,
+      "correctVersion": "现在该吃饭了。",
+      "explanation": "Sau 该 dùng thẳng động từ, bỏ 是."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đã muộn lắm rồi, tôi phải đi ngủ thôi.”",
+      "words": [
+       "已经",
+       "很",
+       "晚",
+       "了",
+       "，",
+       "我",
+       "该",
+       "睡觉",
+       "了",
+       "。"
+      ],
+      "answer": "已经很晚了，我该睡觉了。",
+      "explanation": "我 + 该 + 睡觉 + 了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng ta nên mua vé đi Thượng Hải rồi.”",
+      "words": [
+       "咱们",
+       "该",
+       "买",
+       "去",
+       "上海",
+       "的",
+       "票",
+       "了",
+       "。"
+      ],
+      "answer": "咱们该买去上海的票了。",
+      "explanation": "该 + 买 + (去上海的) 票 + 了; 咱们 (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Còn nửa tiếng nữa, bạn phải vào ga rồi.”",
+      "words": [
+       "还有",
+       "半个",
+       "小时",
+       "，",
+       "你",
+       "该",
+       "进站",
+       "了",
+       "。"
+      ],
+      "answer": "还有半个小时，你该进站了。",
+      "explanation": "还有 + thời gian; 该进站了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trời lạnh rồi, bạn nên mua áo khoác mới thôi.”",
+      "words": [
+       "天",
+       "冷",
+       "了",
+       "，",
+       "你",
+       "该",
+       "买",
+       "新",
+       "大衣",
+       "了",
+       "。"
+      ],
+      "answer": "天冷了，你该买新大衣了。",
+      "explanation": "该 + 买新大衣 + 了; 大衣 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 该……了.",
+      "promptLang": "vi",
+      "prompt": "Sáu giờ rồi, chúng ta phải về nhà thôi.",
+      "answer": "六点了，我们该回家了。",
+      "answerPy": "Liù diǎn le, wǒmen gāi huí jiā le.",
+      "explanation": "该 + 回家 + 了; 了 cuối câu không được thiếu."
+     }
+    ]
+   },
+   {
+    "title": "Câu ghép giả định 「如果……，就……」 — nếu … thì …",
+    "errors": [
+     {
+      "wrong": "如果有时间，就我去上海玩几天。",
+      "why": "chủ ngữ của mệnh đề thứ hai phải đặt TRƯỚC 就 (就 là phó từ, đứng ngay trước động từ).",
+      "right": "如果有时间，我就去上海玩几天。"
+     },
+     {
+      "wrong": "如果你需要帮忙，所以给我打电话。",
+      "why": "không ghép 如果 với 所以 (所以 đi với 因为 – HSK2 Bài 4); giả thiết → kết quả dùng 就.",
+      "right": "如果你需要帮忙，就给我打电话。"
+     },
+     {
+      "wrong": "我就去旅游，如果放假。",
+      "why": "theo trật tự tiếng Việt “tôi sẽ đi… nếu…”; tiếng Trung đặt mệnh đề 如果 ở TRƯỚC, 就 ở vế sau.",
+      "right": "如果放假，我就去旅游。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: hoàn thành câu “如果明天下雨，……。”",
+      "pre": "如果明天下雨，",
+      "blank": "我们就不去爬山了",
+      "post": "。",
+      "options": [
+       "我们就不去爬山了",
+       "就我们不去爬山了",
+       "所以我们不去爬山了"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ 我们 đứng trước 就; 爬山 (ôn HSK3 Bài 5)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “如果我觉得太累了，……。”",
+      "pre": "如果我觉得太累了，",
+      "blank": "就休息一会儿",
+      "post": "。",
+      "options": [
+       "就休息一会儿",
+       "所以休息一会儿",
+       "休息就一会儿"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau cùng chủ ngữ 我 nên lược; 一会儿 (HSK2 Bài 5); 累 (HSK2 Bài 3)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “……，就跟朋友一起去旅游。”",
+      "pre": "",
+      "blank": "如果放假了",
+      "post": "，就跟朋友一起去旅游。",
+      "options": [
+       "如果放假了",
+       "虽然放假了",
+       "放假了如果"
+      ],
+      "answer": 0,
+      "explanation": "如果 đứng đầu mệnh đề giả thiết; 虽然 (HSK2 Bài 8) không đi với 就; 跟 (HSK2 Bài 5)."
+     },
+     {
+      "context": "Sách (miêu tả tranh): “……，就给我们打电话。” — dặn bạn khi đến nơi",
+      "pre": "",
+      "blank": "如果到了上海",
+      "post": "，就给我们打电话。",
+      "options": [
+       "如果到了上海",
+       "因为到了上海",
+       "到了上海如果"
+      ],
+      "answer": 0,
+      "explanation": "Giả thiết (chưa xảy ra) dùng 如果; 给 + người + 打电话 (HSK2 Bài 1)."
+     },
+     {
+      "context": "“Nếu không đi nhầm thì đã đến từ hai mươi phút trước rồi.”",
+      "pre": "如果没走错，",
+      "blank": "二十分钟以前就到了",
+      "post": "。",
+      "options": [
+       "二十分钟以前就到了",
+       "就二十分钟以前到了",
+       "二十分钟就以前到了"
+      ],
+      "answer": 0,
+      "explanation": "就 đứng ngay trước động từ 到; 以前 — từ mới bài này."
+     },
+     {
+      "context": "“Nếu bạn cần giúp đỡ thì gọi điện cho tôi.”",
+      "pre": "如果你需要帮忙，",
+      "blank": "就给我打电话",
+      "post": "。",
+      "options": [
+       "就给我打电话",
+       "给我就打电话",
+       "所以给我打电话"
+      ],
+      "answer": 0,
+      "explanation": "就 + cụm giới từ 给我 + V; 需要 (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "如果有时间，我就去上海玩几天。",
+      "isCorrect": true,
+      "explanation": "Chủ ngữ 我 đứng trước 就 — đúng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "如果明天不下雨，就我们去爬山。",
+      "isCorrect": false,
+      "correctVersion": "如果明天不下雨，我们就去爬山。",
+      "explanation": "Chủ ngữ vế sau đặt trước 就."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nếu có thời gian, tôi sẽ đi Thượng Hải chơi vài ngày.”",
+      "words": [
+       "如果",
+       "有",
+       "时间",
+       "，",
+       "我",
+       "就",
+       "去",
+       "上海",
+       "玩",
+       "几天",
+       "。"
+      ],
+      "answer": "如果有时间，我就去上海玩几天。",
+      "explanation": "如果 + giả thiết，我 + 就 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nếu bạn không khoẻ thì ở nhà nghỉ ngơi đi.”",
+      "words": [
+       "如果",
+       "你",
+       "不",
+       "舒服",
+       "，",
+       "就",
+       "在家",
+       "休息",
+       "吧",
+       "。"
+      ],
+      "answer": "如果你不舒服，就在家休息吧。",
+      "explanation": "舒服 (HSK2 Bài 6); 吧 — lời khuyên."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nếu ngày mai trời đẹp, chúng ta sẽ đi leo núi.”",
+      "words": [
+       "如果",
+       "明天",
+       "天气",
+       "好",
+       "，",
+       "我们",
+       "就",
+       "去",
+       "爬山",
+       "。"
+      ],
+      "answer": "如果明天天气好，我们就去爬山。",
+      "explanation": "我们 + 就 + 去爬山."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nếu bạn đói thì đặt đồ ăn giao tận nơi đi.”",
+      "words": [
+       "如果",
+       "你",
+       "饿",
+       "了",
+       "，",
+       "就",
+       "点",
+       "外卖",
+       "吧",
+       "。"
+      ],
+      "answer": "如果你饿了，就点外卖吧。",
+      "explanation": "饿、外卖 (ôn HSK3 Bài 2)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 如果……，就…….",
+      "promptLang": "vi",
+      "prompt": "Nếu bạn không mang tiền thì có thể quẹt thẻ tín dụng.",
+      "answer": "如果你没带钱，就可以刷信用卡。",
+      "answerPy": "Rúguǒ nǐ méi dài qián, jiù kěyǐ shuā xìnyòngkǎ.",
+      "explanation": "刷 — từ mới bài này; 信用卡 (ôn HSK3 Bài 3)."
+     }
+    ]
+   },
+   {
+    "title": "Cụm từ cố định 「越来越」 — càng ngày càng …",
+    "errors": [
+     {
+      "wrong": "前面的人越来越很多。",
+      "why": "sau 越来越 không thêm phó từ mức độ (很、非常、太…) — mức độ đã nằm trong 越来越.",
+      "right": "前面的人越来越多。"
+     },
+     {
+      "wrong": "现在越来越人喜欢坐高铁。",
+      "why": "dịch từng chữ “ngày càng có nhiều người…”: 越来越 đứng trước TÍNH TỪ làm vị ngữ, không đứng trước danh từ.",
+      "right": "现在喜欢坐高铁的人越来越多。"
+     },
+     {
+      "wrong": "他越来越跑快了。",
+      "why": "越来越 không đứng trước động từ hành động; dùng bổ ngữ trạng thái: V + 得 + 越来越 + Adj.",
+      "right": "他跑得越来越快了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: hoàn thành câu “这些年的天气……。”",
+      "pre": "这些年的天气",
+      "blank": "越来越热了",
+      "post": "。",
+      "options": [
+       "越来越热了",
+       "越来越很热了",
+       "很越来越热了"
+      ],
+      "answer": 0,
+      "explanation": "越来越 + Adj + 了 — không thêm 很."
+     },
+     {
+      "context": "Sách: hoàn thành câu “他每天都运动，现在……。”",
+      "pre": "他每天都运动，现在",
+      "blank": "身体越来越好了",
+      "post": "。",
+      "options": [
+       "身体越来越好了",
+       "身体越来越非常好了",
+       "越来越身体好了"
+      ],
+      "answer": 0,
+      "explanation": "运动 (HSK2 Bài 7); 身体 (HSK2 Bài 11)."
+     },
+     {
+      "context": "Sách: hoàn thành câu “孩子还没有到家，妈妈……。”",
+      "pre": "孩子还没有到家，妈妈",
+      "blank": "越来越着急了",
+      "post": "。",
+      "options": [
+       "越来越着急了",
+       "越来越很着急了",
+       "着急越来越了"
+      ],
+      "answer": 0,
+      "explanation": "着急 zháojí (ôn HSK3 Bài 1) — tính từ chỉ tâm trạng."
+     },
+     {
+      "context": "Sách (miêu tả tranh): “现在路上的车……，我觉得咱们可能会迟到。”",
+      "pre": "现在路上的车",
+      "blank": "越来越多",
+      "post": "，我觉得咱们可能会迟到。",
+      "options": [
+       "越来越多",
+       "越来越很多",
+       "多越来越"
+      ],
+      "answer": 0,
+      "explanation": "可能 (HSK2 Bài 13); 迟到 — từ mới bài này."
+     },
+     {
+      "context": "“Tôi ngày càng thích cuộc sống ở đây.” (生活 shēnghuó – cuộc sống)",
+      "pre": "我",
+      "blank": "越来越喜欢",
+      "post": "这里的生活了。",
+      "options": [
+       "越来越喜欢",
+       "越来越很喜欢",
+       "喜欢越来越"
+      ],
+      "answer": 0,
+      "explanation": "越来越 + động từ tâm lý 喜欢."
+     },
+     {
+      "context": "“Cậu ấy chạy ngày càng nhanh.”",
+      "pre": "他跑得",
+      "blank": "越来越快",
+      "post": "了。",
+      "options": [
+       "越来越快",
+       "越来越很快",
+       "快越来越"
+      ],
+      "answer": 0,
+      "explanation": "V + 得 + 越来越 + Adj (bổ ngữ trạng thái – HSK2 Bài 7)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "她越来越高，也越来越漂亮了。",
+      "isCorrect": true,
+      "explanation": "Hai lần 越来越 + Adj — đúng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "现在越来越人喜欢坐高铁。",
+      "isCorrect": false,
+      "correctVersion": "现在喜欢坐高铁的人越来越多。",
+      "explanation": "越来越 không đứng trước danh từ; đưa “người thích đi tàu cao tốc” lên làm chủ ngữ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Phía trước ngày càng nhiều người.”",
+      "words": [
+       "前面",
+       "的",
+       "人",
+       "越来越",
+       "多",
+       "。"
+      ],
+      "answer": "前面的人越来越多。",
+      "explanation": "越来越 + 多."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tiếng Trung của em ngày càng tốt.”",
+      "words": [
+       "你的",
+       "汉语",
+       "越来越",
+       "好",
+       "了",
+       "。"
+      ],
+      "answer": "你的汉语越来越好了。",
+      "explanation": "越来越好了 — 了 chỉ sự thay đổi."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trời ngày càng lạnh, bạn mặc áo khoác vào đi.”",
+      "words": [
+       "天气",
+       "越来越",
+       "冷",
+       "了",
+       "，",
+       "你",
+       "穿上",
+       "大衣",
+       "吧",
+       "。"
+      ],
+      "answer": "天气越来越冷了，你穿上大衣吧。",
+      "explanation": "穿上、大衣 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ngày càng có nhiều người thích đi tàu cao tốc.”",
+      "words": [
+       "喜欢",
+       "坐",
+       "高铁",
+       "的",
+       "人",
+       "越来越",
+       "多",
+       "了",
+       "。"
+      ],
+      "answer": "喜欢坐高铁的人越来越多了。",
+      "explanation": "Định ngữ dài + 的 + 人 (ôn HSK3 Bài 1) + 越来越多."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 越来越.",
+      "promptLang": "vi",
+      "prompt": "Khu dân cư này ngày càng sạch sẽ.",
+      "answer": "这个小区越来越干净了。",
+      "answerPy": "Zhège xiǎoqū yuè lái yuè gānjìng le.",
+      "explanation": "小区 (ôn HSK3 Bài 3); 干净 (ôn HSK3 Bài 4)."
+     }
+    ]
+   }
+  ]
+ }
+}

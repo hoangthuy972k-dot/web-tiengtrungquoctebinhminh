@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+<defs><path id="cah-f" d="M60 40 C50 32 22 32 21 58 C20 86 40 103 52 102 C56 101.5 58 100 60 100 Z"/><clipPath id="cah-c"><use href="#cah-f"/></clipPath></defs>
+<path d="M60 34 C50 24 18 24 15 56 C12 88 36 112 52 110 C56 109.5 58 107 60 107 Z" fill="#ec4f55"/>
+<g clip-path="url(#cah-c)"><rect width="120" height="120" fill="#f3d9a4"/><use href="#cah-f" fill="#fff3d6" transform="translate(4 -5)"/></g>
+<path d="M60 54 Q46 60 46 72 Q46 84 60 90" fill="none" stroke="#e9cf96" stroke-width="3" stroke-linecap="round"/>
+<path d="M53 61 Q46 67 50 74 Q57 70 53 61 Z" fill="#5a3420"/><path d="M53 75 Q46 81 50 88 Q57 84 53 75 Z" fill="#5a3420"/>
+<ellipse cx="36" cy="50" rx="5" ry="3" fill="#fff8ec" opacity="0.9" transform="rotate(-40 36 50)"/>
+<path d="M60 36 Q59 27 62 21" fill="none" stroke="#2b1d3a" stroke-width="6" stroke-linecap="round"/>
+<path d="M60 34 C50 24 18 24 15 56 C12 88 36 112 52 110 C56 109.5 58 107 60 107 Z" fill="none" stroke="#2b1d3a" stroke-width="4" stroke-linejoin="round"/>
+</svg>

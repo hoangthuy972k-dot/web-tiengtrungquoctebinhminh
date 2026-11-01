@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="88" rx="40" ry="6" fill="#2b1d3a" opacity=".22"/>
+<path d="M12 50 V68 Q12 82 50 82 Q88 82 88 68 V50 Z" fill="#ffc94d"/>
+<path d="M66 56 Q88 54 88 50 V68 Q88 80 64 81.5 Q70 70 66 56 Z" fill="#e8a21a"/>
+<path d="M12 50 V68 Q12 82 50 82 Q88 82 88 68 V50" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+<ellipse cx="50" cy="50" rx="38" ry="13" fill="#ffe08a" stroke="#2b1d3a" stroke-width="3.5"/>
+<ellipse cx="50" cy="50" rx="25" ry="7.5" fill="none" stroke="#fff8ec" stroke-width="3" opacity=".8"/>
+<path d="M50 59 L53 65.5 L60 66.2 L54.8 70.8 L56.3 77.6 L50 74 L43.7 77.6 L45.2 70.8 L40 66.2 L47 65.5 Z" fill="#fff8ec" stroke="#2b1d3a" stroke-width="2" stroke-linejoin="round"/>
+<g fill="#ffcf5c" stroke="#2b1d3a" stroke-width="2" stroke-linejoin="round">
+<path d="M50 8 Q52 16 59 18 Q52 20 50 28 Q48 20 41 18 Q48 16 50 8 Z"/>
+<path d="M22 22 Q23 26.5 27 27.5 Q23 28.5 22 33 Q21 28.5 17 27.5 Q21 26.5 22 22 Z"/>
+<path d="M79 24 Q80 28.5 84 29.5 Q80 30.5 79 35 Q78 30.5 74 29.5 Q78 28.5 79 24 Z"/>
+</g>
+</svg>

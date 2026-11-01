@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax slice">
+<path d="M0 120 Q150 40 320 100 Q480 150 640 80 Q820 10 980 90 Q1100 140 1200 70 L1200 220 L0 220Z" fill="#7cc46a"/>
+<path d="M0 120 Q150 40 320 100 Q480 150 640 80 Q820 10 980 90 Q1100 140 1200 70" fill="none" stroke="#4f9a45" stroke-width="5"/>
+<path d="M0 170 Q200 110 420 160 Q640 200 820 140 Q1000 90 1200 150 L1200 220 L0 220Z" fill="#5fae52"/>
+<path d="M0 170 Q200 110 420 160 Q640 200 820 140 Q1000 90 1200 150" fill="none" stroke="#3f8a3a" stroke-width="5"/>
+<g fill="#fff8ec" stroke="#2b1d3a" stroke-width="2"><circle cx="120" cy="150" r="5"/><circle cx="380" cy="168" r="5"/><circle cx="700" cy="170" r="5"/><circle cx="960" cy="128" r="5"/><circle cx="1110" cy="160" r="5"/></g>
+<g fill="#ffd23f"><circle cx="120" cy="150" r="2.2"/><circle cx="380" cy="168" r="2.2"/><circle cx="700" cy="170" r="2.2"/><circle cx="960" cy="128" r="2.2"/><circle cx="1110" cy="160" r="2.2"/></g>
+<g fill="#ff8fb1" stroke="#2b1d3a" stroke-width="2"><circle cx="250" cy="190" r="5"/><circle cx="560" cy="196" r="5"/><circle cx="880" cy="184" r="5"/></g>
+</svg>

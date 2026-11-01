@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+<defs><clipPath id="fh-watermelon-c"><rect x="0" y="0" width="60" height="120"/></clipPath></defs>
+<g clip-path="url(#fh-watermelon-c)">
+<ellipse cx="60" cy="62" rx="50" ry="42" fill="#3fae5a"/>
+<path d="M22 39.7 Q17 62 22 84.3" fill="none" stroke="#25803f" stroke-width="7" stroke-linecap="round"/>
+<path d="M41 28.2 Q36 62 41 95.8" fill="none" stroke="#25803f" stroke-width="7" stroke-linecap="round"/>
+<path d="M60 25 Q60 62 60 99" fill="none" stroke="#25803f" stroke-width="7" stroke-linecap="round"/>
+<path d="M79 28.2 Q84 62 79 95.8" fill="none" stroke="#25803f" stroke-width="7" stroke-linecap="round"/>
+<path d="M98 39.7 Q103 62 98 84.3" fill="none" stroke="#25803f" stroke-width="7" stroke-linecap="round"/>
+<path d="M60 20 A50 42 0 0 1 60 104 A32 42 0 0 0 60 20Z" fill="#1f6a35" opacity=".3"/>
+<ellipse cx="38" cy="36" rx="12" ry="5" fill="#c9f0bc" transform="rotate(-28 38 36)"/>
+<ellipse cx="60" cy="62" rx="50" ry="42" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+</g>
+<ellipse cx="60" cy="62" rx="16" ry="41" fill="#3fae5a"/>
+<ellipse cx="60" cy="62" rx="13" ry="37" fill="#e8f8d8"/>
+<ellipse cx="60" cy="62" rx="11" ry="34" fill="#ff4d6d"/>
+<ellipse cx="57" cy="48" rx="3" ry="9" fill="#ff8fa3"/>
+<ellipse cx="62" cy="44" rx="1.6" ry="2.6" fill="#2b1d3a"/>
+<ellipse cx="56" cy="62" rx="1.6" ry="2.6" fill="#2b1d3a"/>
+<ellipse cx="63" cy="72" rx="1.6" ry="2.6" fill="#2b1d3a"/>
+<ellipse cx="58" cy="84" rx="1.6" ry="2.6" fill="#2b1d3a"/>
+<ellipse cx="63" cy="58" rx="1.6" ry="2.6" fill="#2b1d3a"/>
+<ellipse cx="60" cy="62" rx="16" ry="41" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+</svg>

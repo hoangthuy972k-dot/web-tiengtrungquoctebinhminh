@@ -1,0 +1,757 @@
+{
+ "/lessons/hsk3v3-bai-11.html": {
+  "points": [
+   {
+    "title": "「还是」 và 「或者」 — hỏi để chọn / nêu khả năng",
+    "errors": [
+     {
+      "wrong": "你想喝茶或者咖啡？",
+      "why": "tiếng Việt dùng “hay” cho cả câu hỏi; nhưng câu hỏi lựa chọn trong tiếng Trung phải dùng 还是, 或者 chỉ dùng trong câu trần thuật.",
+      "right": "你想喝茶还是咖啡？"
+     },
+     {
+      "wrong": "我们明天还是后天去都可以。",
+      "why": "câu trần thuật nêu các khả năng (“… hay … đều được”) phải dùng 或者, không dùng 还是.",
+      "right": "我们明天或者后天去都可以。"
+     },
+     {
+      "wrong": "你是老师还是学生吗？",
+      "why": "câu có 还是 đã là câu hỏi lựa chọn, cuối câu không thêm 吗.",
+      "right": "你是老师还是学生？"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “A: Bữa tối hôm nay bạn muốn ăn gì? B: Tôi muốn ăn sủi cảo hoặc mì.”",
+      "pre": "今天的晚饭我想吃饺子",
+      "blank": "或者",
+      "post": "面条儿。",
+      "options": [
+       "或者",
+       "还是",
+       "都"
+      ],
+      "answer": 0,
+      "explanation": "Câu trần thuật nêu khả năng → 或者; 饺子、面条儿 (ôn HSK1 Bài 5)."
+     },
+     {
+      "context": "Sách: “A: Kỳ nghỉ tuần sau bạn có dự định gì? B: Tôi muốn đi Tây An hoặc Bắc Kinh du lịch.”",
+      "pre": "我想去西安",
+      "blank": "或者",
+      "post": "北京旅游。",
+      "options": [
+       "或者",
+       "还是",
+       "吗"
+      ],
+      "answer": 0,
+      "explanation": "Câu trần thuật → 或者; 打算 (ôn HSK3 Bài 6), 旅游 (ôn HSK2 Bài 1)."
+     },
+     {
+      "context": "Sách: “A: …? B: Là ngày mai, 2 giờ chiều ở Phòng họp số 1.” (A hỏi họp ngày mai hay ngày kia)",
+      "pre": "会议是明天",
+      "blank": "还是",
+      "post": "后天？",
+      "options": [
+       "还是",
+       "或者",
+       "或"
+      ],
+      "answer": 0,
+      "explanation": "Câu hỏi để người nghe chọn → 还是; B trả lời 是明天."
+     },
+     {
+      "context": "“Chúng ta dùng máy tính của phòng họp hay máy tính xách tay của mình?”",
+      "pre": "我们用会议室的电脑",
+      "blank": "还是",
+      "post": "自己的笔记本电脑？",
+      "options": [
+       "还是",
+       "或者",
+       "或"
+      ],
+      "answer": 0,
+      "explanation": "Câu hỏi lựa chọn → 还是 (ôn HSK2 Bài 2)."
+     },
+     {
+      "context": "“Bạn có thể đi tàu điện ngầm hoặc bắt taxi đến trường.”",
+      "pre": "你可以坐地铁",
+      "blank": "或者",
+      "post": "打车去学校。",
+      "options": [
+       "或者",
+       "还是",
+       "跟"
+      ],
+      "answer": 0,
+      "explanation": "Câu trần thuật → 或者; 地铁 (ôn HSK2 Bài 12), 打车 (ôn HSK2 Bài 2)."
+     },
+     {
+      "context": "“Bạn đi một mình hay đi với bạn bè?”",
+      "pre": "你一个人去",
+      "blank": "还是",
+      "post": "跟朋友一起去？",
+      "options": [
+       "还是",
+       "或者",
+       "也"
+      ],
+      "answer": 0,
+      "explanation": "还是 nối hai cụm động từ trong câu hỏi; 跟……一起 (ôn HSK2 Bài 5)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你喝茶或者咖啡？",
+      "isCorrect": false,
+      "correctVersion": "你喝茶还是咖啡？",
+      "explanation": "Câu hỏi lựa chọn phải dùng 还是."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "星期六或者星期天我都有时间。",
+      "isCorrect": true,
+      "explanation": "Đúng: câu trần thuật, A 或者 B + 都."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng ta đi hôm nay, ngày mai hay ngày kia?”",
+      "words": [
+       "我们",
+       "今天去",
+       "、",
+       "明天去",
+       "还是",
+       "后天去",
+       "？"
+      ],
+      "answer": "我们今天去、明天去还是后天去？",
+      "explanation": "Câu hỏi nhiều phương án: A、B 还是 C？"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Máy tính của phòng họp hoặc máy tính của mình đều được.”",
+      "words": [
+       "会议室的电脑",
+       "或者",
+       "自己的电脑",
+       "都",
+       "可以",
+       "。"
+      ],
+      "answer": "会议室的电脑或者自己的电脑都可以。",
+      "explanation": "A 或者 B + 都可以."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn muốn đi xem phim hay ở nhà nghỉ ngơi?”",
+      "words": [
+       "你",
+       "想",
+       "去看电影",
+       "还是",
+       "在家",
+       "休息",
+       "？"
+      ],
+      "answer": "你想去看电影还是在家休息？",
+      "explanation": "还是 nối hai cụm động từ; 休息 (ôn HSK1 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn có thể gọi điện hoặc gửi email cho tôi.”",
+      "words": [
+       "你",
+       "可以",
+       "给我",
+       "打电话",
+       "或者",
+       "发邮件",
+       "。"
+      ],
+      "answer": "你可以给我打电话或者发邮件。",
+      "explanation": "给 + người + V (ôn HSK2 Bài 1); câu trần thuật → 或者."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, chú ý chọn 还是 / 或者.",
+      "promptLang": "vi",
+      "prompt": "Bạn muốn mua cái màu đỏ hay cái màu trắng?",
+      "answer": "你想买红色的还是白色的？",
+      "answerPy": "Nǐ xiǎng mǎi hóngsè de háishi báisè de?",
+      "explanation": "Câu hỏi → 还是; 红色、白色 (ôn HSK2 Bài 4)."
+     }
+    ]
+   },
+   {
+    "title": "Cụm từ cố định 「看来」 — xem ra (suy đoán, kết luận)",
+    "errors": [
+     {
+      "wrong": "我看来他今天不会来了。",
+      "why": "tiếng Việt nói “theo tôi thấy”, nhưng không nói 我看来; dùng 看来 đứng đầu mệnh đề (hoặc nói 我看……).",
+      "right": "看来他今天不会来了。"
+     },
+     {
+      "wrong": "看出我没办法解决这个问题。",
+      "why": "dịch từng chữ “xem ra” thành 看出 là sai — 看出 nghĩa là “nhận ra, nhìn ra (điều gì)”; muốn nêu suy đoán, kết luận phải dùng 看来.",
+      "right": "看来我没办法解决这个问题。"
+     },
+     {
+      "wrong": "看来他很忙吗？",
+      "why": "看来 nêu kết luận, suy đoán của chính người nói — dùng trong câu trần thuật, không thêm 吗 thành câu hỏi.",
+      "right": "他一直没接电话，看来很忙。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Bây giờ bên ngoài trời âm u lắm, …” (得很 – ôn HSK3 Bài 5)",
+      "pre": "现在外面天阴得很，",
+      "blank": "看来要下雨了",
+      "post": "。",
+      "options": [
+       "看来要下雨了",
+       "看来要下雨吗",
+       "看起来下雨了吗"
+      ],
+      "answer": 0,
+      "explanation": "看来 + suy đoán; 要……了 — sắp (ôn HSK2 Bài 10); 阴 (ôn HSK2 Bài 12)."
+     },
+     {
+      "context": "Sách: “Dạo này anh ấy bận quá, …”",
+      "pre": "他最近工作太忙了，",
+      "blank": "看来没时间跟我们去旅游了",
+      "post": "。",
+      "options": [
+       "看来没时间跟我们去旅游了",
+       "看来有时间跟我们去旅游吗",
+       "看起来他去旅游了"
+      ],
+      "answer": 0,
+      "explanation": "Kết luận hợp lý từ tình hình “quá bận”; 最近 (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "Sách: “Anh ấy mãi không nghe điện thoại, …”",
+      "pre": "他一直没接电话，",
+      "blank": "看来在开会呢",
+      "post": "。",
+      "options": [
+       "看来在开会呢",
+       "看来接电话了",
+       "看起来很高"
+      ],
+      "answer": 0,
+      "explanation": "Suy đoán lý do: đang họp; 一直 (ôn HSK3 Bài 4), 在……呢 (ôn HSK1 Bài 11)."
+     },
+     {
+      "context": "“Muộn thế này rồi, xem ra hôm nay anh ấy sẽ không đến nữa.”",
+      "pre": "这么晚了，",
+      "blank": "看来",
+      "post": "他今天不会来了。",
+      "options": [
+       "看来",
+       "看起来",
+       "看见"
+      ],
+      "answer": 0,
+      "explanation": "看来 đứng đầu mệnh đề, rút ra kết luận."
+     },
+     {
+      "context": "“Thang máy hỏng rồi, xem ra chúng ta chỉ có thể đi bộ xuống.”",
+      "pre": "电梯坏了，看来咱们",
+      "blank": "只能",
+      "post": "走下去了。",
+      "options": [
+       "只能",
+       "愿意",
+       "怕"
+      ],
+      "answer": 0,
+      "explanation": "只能 + V; 电梯 (ôn HSK3 Bài 6), 坏 (ôn HSK2 Bài 9)."
+     },
+     {
+      "context": "“Cô ấy cứ cười suốt, xem ra rất vui.”",
+      "pre": "她一直在笑，",
+      "blank": "看来",
+      "post": "很开心。",
+      "options": [
+       "看来",
+       "来看",
+       "看见"
+      ],
+      "answer": 0,
+      "explanation": "笑 (ôn HSK2 Bài 10), 开心 (ôn HSK3 Bài 8)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我看来他今天不会来了。",
+      "isCorrect": false,
+      "correctVersion": "看来他今天不会来了。",
+      "explanation": "Không nói 我看来; dùng 看来 đứng đầu mệnh đề."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "已经十点了，看来他已经睡觉了。",
+      "isCorrect": true,
+      "explanation": "Đúng: tình hình (已经十点了) → kết luận với 看来; 已经……了 (ôn HSK2 Bài 1)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Xem ra em không thể giải quyết vấn đề này.”",
+      "words": [
+       "看来",
+       "我",
+       "没",
+       "办法",
+       "解决",
+       "这个",
+       "问题",
+       "。"
+      ],
+      "answer": "看来我没办法解决这个问题。",
+      "explanation": "看来 + kết luận; 没办法 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Muộn thế này rồi, xem ra hôm nay anh ấy không đến nữa.”",
+      "words": [
+       "这么晚了",
+       "，",
+       "看来",
+       "他",
+       "今天",
+       "不会",
+       "来了",
+       "。"
+      ],
+      "answer": "这么晚了，看来他今天不会来了。",
+      "explanation": "这么 (ôn HSK2 Bài 3) + Adj + 了，看来……."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trời âm u lắm, xem ra sắp mưa rồi.”",
+      "words": [
+       "天",
+       "阴得很",
+       "，",
+       "看来",
+       "要",
+       "下雨",
+       "了",
+       "。"
+      ],
+      "answer": "天阴得很，看来要下雨了。",
+      "explanation": "阴得很 (ôn HSK3 Bài 5); 要……了 (ôn HSK2 Bài 10)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Thang máy hỏng rồi, xem ra chúng ta chỉ có thể đi bộ lên.”",
+      "words": [
+       "电梯",
+       "坏了",
+       "，",
+       "看来",
+       "咱们",
+       "只能",
+       "走上去",
+       "了",
+       "。"
+      ],
+      "answer": "电梯坏了，看来咱们只能走上去了。",
+      "explanation": "走上去 — bổ ngữ xu hướng (ôn HSK2 Bài 5); 咱们 (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 看来.",
+      "promptLang": "vi",
+      "prompt": "Đã hơn 12 giờ rồi, xem ra anh ấy không về ăn cơm nữa.",
+      "answer": "十二点多了，看来他不回来吃饭了。",
+      "answerPy": "Shí'èr diǎn duō le, kànlái tā bù huílai chīfàn le.",
+      "explanation": "十二点多 — hơn mười hai giờ (câu Bài khoá 3); 回来 (ôn HSK2 Bài 3)."
+     }
+    ]
+   },
+   {
+    "title": "Câu chữ 「把」 (3) — 把 + tân ngữ + V + bổ ngữ kết quả",
+    "errors": [
+     {
+      "wrong": "我把作业写。",
+      "why": "động từ sau 把 không đứng trơn; phải có bổ ngữ kết quả cho biết kết quả: 写完、写好.",
+      "right": "我把作业写完了。"
+     },
+     {
+      "wrong": "他把电脑没接好。",
+      "why": "phó từ phủ định 没 (và 不, động từ năng nguyện) phải đứng TRƯỚC 把.",
+      "right": "他没把电脑接好。"
+     },
+     {
+      "wrong": "我把一件衣服洗干净了。",
+      "why": "tân ngữ của 把 phải là vật đã xác định (这件、那件、我的…), không dùng cụm số lượng chưa xác định như 一件衣服.",
+      "right": "我把这件衣服洗干净了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “A: Trước khi cuộc họp bắt đầu, chúng ta phải… B: Được, tôi giúp bạn.” (打扫 – ôn HSK3 Bài 3)",
+      "pre": "会议开始前，我们得把",
+      "blank": "会议室打扫干净",
+      "post": "。",
+      "options": [
+       "会议室打扫干净",
+       "打扫会议室干净",
+       "会议室打扫"
+      ],
+      "answer": 0,
+      "explanation": "把 + O + V + 干净 (干净 – ôn HSK3 Bài 4); 得 děi = phải."
+     },
+     {
+      "context": "Sách: “A: Mẹ ơi, con đói rồi, bây giờ ăn tối được chưa? B: Đợi một lát, mẹ còn…”",
+      "pre": "再等一会儿，我还",
+      "blank": "没把菜做好呢",
+      "post": "。",
+      "options": [
+       "没把菜做好呢",
+       "把菜没做好呢",
+       "没把菜做呢"
+      ],
+      "answer": 0,
+      "explanation": "没 đứng trước 把; V + 好; 还没……呢 — vẫn chưa; 饿 (ôn HSK3 Bài 2)."
+     },
+     {
+      "context": "Sách: “A: Có thời gian thì cậu qua văn phòng tôi một chút. B: Vâng, giám đốc Lưu. Tôi … rồi sẽ đến văn phòng ngài ngay.”",
+      "pre": "好的，刘经理。我把",
+      "blank": "这封邮件发完",
+      "post": "就去您的办公室。",
+      "options": [
+       "这封邮件发完",
+       "发完这封邮件",
+       "这封邮件发"
+      ],
+      "answer": 0,
+      "explanation": "V + 完 + 就…… (……了……就 – ôn HSK3 Bài 5); 封 (ôn HSK3 Bài 5)."
+     },
+     {
+      "context": "“Em sẽ cùng chị làm xong những việc này.”",
+      "pre": "我跟您一起把这些工作",
+      "blank": "做完",
+      "post": "。",
+      "options": [
+       "做完",
+       "做",
+       "完做"
+      ],
+      "answer": 0,
+      "explanation": "Bổ ngữ kết quả 完 đứng ngay sau động từ (ôn HSK2 Bài 3)."
+     },
+     {
+      "context": "“Mẹ đã giặt sạch quần áo rồi.”",
+      "pre": "妈妈把衣服",
+      "blank": "洗干净了",
+      "post": "。",
+      "options": [
+       "洗干净了",
+       "干净洗了",
+       "洗了干净"
+      ],
+      "answer": 0,
+      "explanation": "洗 (ôn HSK2 Bài 3) + 干净 (ôn HSK3 Bài 4)."
+     },
+     {
+      "context": "“Anh ấy vẫn chưa kết nối xong máy tính xách tay.”",
+      "pre": "他还",
+      "blank": "没把笔记本电脑",
+      "post": "接好呢。",
+      "options": [
+       "没把笔记本电脑",
+       "把笔记本电脑没",
+       "把没笔记本电脑"
+      ],
+      "answer": 0,
+      "explanation": "没 + 把 + O + V + 好."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我把作业写。",
+      "isCorrect": false,
+      "correctVersion": "我把作业写完了。",
+      "explanation": "Thiếu bổ ngữ kết quả sau động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "请你把这个句子写清楚。",
+      "isCorrect": true,
+      "explanation": "Đúng: 把 + 这个句子 + 写 + 清楚 (清楚、句子 – ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Em sẽ cùng chị làm xong những việc này.”",
+      "words": [
+       "我",
+       "跟您",
+       "一起",
+       "把",
+       "这些",
+       "工作",
+       "做完",
+       "。"
+      ],
+      "answer": "我跟您一起把这些工作做完。",
+      "explanation": "跟……一起 đứng trước 把."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Em kết nối máy tính giúp chị nhé.”",
+      "words": [
+       "你",
+       "帮我",
+       "把",
+       "电脑",
+       "接好",
+       "吧",
+       "。"
+      ],
+      "answer": "你帮我把电脑接好吧。",
+      "explanation": "帮 + người + 把…… (帮 – ôn HSK2 Bài 10)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi vẫn chưa làm xong bài tập.”",
+      "words": [
+       "我",
+       "还",
+       "没",
+       "把",
+       "作业",
+       "写完",
+       "呢",
+       "。"
+      ],
+      "answer": "我还没把作业写完呢。",
+      "explanation": "没 đứng trước 把; 作业 (ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn phải nghe rõ câu hỏi của cô giáo.”",
+      "words": [
+       "你",
+       "要",
+       "把",
+       "老师的",
+       "问题",
+       "听",
+       "清楚",
+       "。"
+      ],
+      "answer": "你要把老师的问题听清楚。",
+      "explanation": "V + 清楚 (ôn HSK3 Bài 10); 要 đứng trước 把."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng câu chữ 把 (3).",
+      "promptLang": "vi",
+      "prompt": "Em trai tôi đã ăn hết chỗ bánh kem rồi.",
+      "answer": "弟弟把蛋糕吃完了。",
+      "answerPy": "Dìdi bǎ dàngāo chīwán le.",
+      "explanation": "蛋糕 (ôn HSK2 Bài 6); 吃 + 完."
+     }
+    ]
+   },
+   {
+    "title": "Cấu trúc cố định 「对……来说」 — đối với… mà nói",
+    "errors": [
+     {
+      "wrong": "对我说，生活也很重要。",
+      "why": "thiếu 来: khung đầy đủ là 对……来说; 对我说 nghĩa là “nói với tôi”.",
+      "right": "对我来说，生活也很重要。"
+     },
+     {
+      "wrong": "我来说，家人比工作更重要。",
+      "why": "thiếu 对 ở đầu khung.",
+      "right": "对我来说，家人比工作更重要。"
+     },
+     {
+      "wrong": "对我来说很喜欢运动。",
+      "why": "sau 对……来说 phải là một nhận định đầy đủ (có chủ ngữ riêng); muốn nói sở thích thì nói thẳng 我很喜欢运动, hoặc nêu nhận định: 运动很重要.",
+      "right": "对我来说，运动很重要。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “A: Đối với bạn, công việc như thế nào thì phù hợp? B: …” (合适 – ôn HSK3 Bài 7)",
+      "pre": "对我来说，",
+      "blank": "离家近的工作比较合适",
+      "post": "。",
+      "options": [
+       "离家近的工作比较合适",
+       "我很合适离家近的工作",
+       "离家近的工作吗"
+      ],
+      "answer": 0,
+      "explanation": "离 (ôn HSK2 Bài 9); 比较 (ôn HSK3 Bài 5)."
+     },
+     {
+      "context": "Sách: “A: Với người trẻ, lúc tìm việc điều gì quan trọng nhất? B: …”",
+      "pre": "对年轻人来说，找工作的时候",
+      "blank": "机会最重要",
+      "post": "。",
+      "options": [
+       "机会最重要",
+       "最重要机会",
+       "机会重要最"
+      ],
+      "answer": 0,
+      "explanation": "最 + Adj (ôn HSK2 Bài 11); 年轻 (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "Sách: “A: Tôi thấy khi làm việc vui vẻ là quan trọng nhất. B: Tôi không giống bạn, …”",
+      "pre": "我跟你不一样，",
+      "blank": "对我来说，工作的环境最重要",
+      "post": "。",
+      "options": [
+       "对我来说，工作的环境最重要",
+       "对我说，工作的环境最重要",
+       "我来说，工作的环境最重要"
+      ],
+      "answer": 0,
+      "explanation": "跟……不一样 (ôn HSK3 Bài 4); 环境 (ôn HSK3 Bài 3)."
+     },
+     {
+      "context": "“Đối với cô ấy, học tiếng Trung rất thú vị.”",
+      "pre": "",
+      "blank": "对她来说",
+      "post": "，学习汉语很有意思。",
+      "options": [
+       "对她来说",
+       "对她说",
+       "她来说"
+      ],
+      "answer": 0,
+      "explanation": "Khung đầy đủ 对 + người + 来说; 有意思 (ôn HSK2 Bài 8)."
+     },
+     {
+      "context": "“Đối với trẻ con, chơi cũng là một cách học.”",
+      "pre": "对",
+      "blank": "孩子",
+      "post": "来说，玩也是一种学习。",
+      "options": [
+       "孩子",
+       "给孩子",
+       "孩子说"
+      ],
+      "answer": 0,
+      "explanation": "Giữa 对 và 来说 là người / nhóm người; 种 (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "“Đối với tôi, gia đình quan trọng hơn công việc.”",
+      "pre": "对我来说，家人",
+      "blank": "比工作更重要",
+      "post": "。",
+      "options": [
+       "比工作更重要",
+       "比工作很重要",
+       "更重要比工作"
+      ],
+      "answer": 0,
+      "explanation": "A 比 B 更 + Adj (ôn HSK3 Bài 7); không dùng 很 trong câu so sánh 比."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "对我说，生活也很重要。",
+      "isCorrect": false,
+      "correctVersion": "对我来说，生活也很重要。",
+      "explanation": "Thiếu 来: 对……来说."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "对学生来说，考试很重要。",
+      "isCorrect": true,
+      "explanation": "Đúng: 对 + 学生 + 来说 + nhận định; 考试 (ôn HSK2 Bài 10)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đối với tôi, gia đình quan trọng hơn công việc.”",
+      "words": [
+       "对我",
+       "来说",
+       "，",
+       "家人",
+       "比",
+       "工作",
+       "更",
+       "重要",
+       "。"
+      ],
+      "answer": "对我来说，家人比工作更重要。",
+      "explanation": "比……更 (ôn HSK3 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đối với cô ấy, học tiếng Trung rất thú vị.”",
+      "words": [
+       "对",
+       "她",
+       "来说",
+       "，",
+       "学习",
+       "汉语",
+       "很",
+       "有意思",
+       "。"
+      ],
+      "answer": "对她来说，学习汉语很有意思。",
+      "explanation": "对 + người + 来说 đứng đầu câu."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đối với ông bà, sức khoẻ là quan trọng nhất.”",
+      "words": [
+       "对",
+       "爷爷奶奶",
+       "来说",
+       "，",
+       "身体",
+       "健康",
+       "最",
+       "重要",
+       "。"
+      ],
+      "answer": "对爷爷奶奶来说，身体健康最重要。",
+      "explanation": "健康 (ôn HSK3 Bài 8); 最 (ôn HSK2 Bài 11); 爷爷奶奶 (ôn HSK2 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đối với tôi, công việc này hơi khó.”",
+      "words": [
+       "对",
+       "我",
+       "来说",
+       "，",
+       "这个",
+       "工作",
+       "有点儿",
+       "难",
+       "。"
+      ],
+      "answer": "对我来说，这个工作有点儿难。",
+      "explanation": "有点儿 + Adj (ôn HSK1 Bài 12); 难 (ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 对……来说.",
+      "promptLang": "vi",
+      "prompt": "Đối với tôi, cơ hội này rất quan trọng.",
+      "answer": "对我来说，这个机会很重要。",
+      "answerPy": "Duì wǒ lái shuō, zhège jīhuì hěn zhòngyào.",
+      "explanation": "机会 của bài này; 重要 (ôn HSK3 Bài 1)."
+     }
+    ]
+   }
+  ]
+ }
+}

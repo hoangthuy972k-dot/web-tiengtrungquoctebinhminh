@@ -1,0 +1,112 @@
+{
+ "zh": "你属于哪一种“忙”？",
+ "py": "Nǐ shǔyú nǎ yì zhǒng “máng”?",
+ "vn": "Bạn thuộc kiểu “bận rộn” nào?",
+ "topic": "Unit 9 感受人生 · Cảm nhận cuộc sống",
+ "vocabCount": 37,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "来",
+   "explain": "来 ở đây là TRỢ TỪ. ① Đứng sau số chẵn chục 十、百、千… hoặc sau số lượng từ, biểu thị số ƯỚC LƯỢNG — khoảng, chừng, xấp xỉ: 20来个 (khoảng hai mươi), 一千来块钱, 5斤来重. ② Đứng sau 一、二、三 tạo khung “一来……，二来……” để LIỆT KÊ LÝ DO: một là …, hai là ….",
+   "rule": "① 十 / 百 / 千 + <strong style=\"color:var(--sky-d)\">来</strong> + lượng từ + N　② số + lượng từ + <strong style=\"color:var(--sky-d)\">来</strong> + 重 / 长　③ <strong style=\"color:var(--sky-d)\">一来</strong>……，<strong style=\"color:var(--sky-d)\">二来</strong>……",
+   "examples": [
+    {
+     "zh": "他雇了20来个当地人为他带路和搬运行李。",
+     "py": "Tā gùle èrshí lái ge dāngdìrén wèi tā dài lù hé bānyùn xíngli.",
+     "vn": "Ông thuê khoảng hai mươi người địa phương dẫn đường và khuân vác hành lý cho mình."
+    },
+    {
+     "zh": "按照老人教的方法，他几乎每天都能钓到5斤来重的大鱼。",
+     "py": "Ànzhào lǎorén jiāo de fāngfǎ, tā jīhū měi tiān dōu néng diàodào wǔ jīn lái zhòng de dà yú.",
+     "vn": "Theo cách ông lão dạy, gần như ngày nào anh ấy cũng câu được cá to nặng chừng 5 cân."
+    },
+    {
+     "zh": "我对上海很有感情，一来上大学时在那里住过几年，二来我太太也是上海人。",
+     "py": "Wǒ duì Shànghǎi hěn yǒu gǎnqíng, yī lái shàng dàxué shí zài nàli zhùguo jǐ nián, èr lái wǒ tàitai yě shì Shànghǎirén.",
+     "vn": "Tôi rất có tình cảm với Thượng Hải, một là hồi đại học từng sống ở đó mấy năm, hai là vợ tôi cũng là người Thượng Hải."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他雇了20个来当地人。",
+     "why": "Với số chẵn chục, 来 đứng GIỮA số và lượng từ: 20来个. Không đặt 来 sau lượng từ.",
+     "right": "他雇了20来个当地人。"
+    },
+    {
+     "wrong": "我们班有二十五来个学生。",
+     "why": "来 chỉ dùng sau số CHẴN chục (十、二十、一百…) để ước lượng; 25 là số cụ thể, không dùng 来.",
+     "right": "我们班有二十来个学生。"
+    }
+   ]
+  },
+  {
+   "point": "至于",
+   "explain": "至于 có hai cách dùng. ① ĐỘNG TỪ: biểu thị đạt tới một mức độ nào đó, phần lớn dùng trong câu PHẢN VẤN (你至于……吗？/ 哪至于……？) hoặc dạng phủ định 不至于 (chưa đến mức). ② GIỚI TỪ: dùng trong khung “(A)……，至于(B)……”, nói xong việc A rồi chuyển sang nhắc tới một việc B có liên quan — “còn về B thì …”.",
+   "rule": "① (不 / 哪) + <strong style=\"color:var(--sky-d)\">至于</strong> + V (+ 吗？)　② A……，<strong style=\"color:var(--sky-d)\">至于</strong> + B，……",
+   "examples": [
+    {
+     "zh": "我只是和你开个玩笑，你至于生那么大的气吗？",
+     "py": "Wǒ zhǐshì hé nǐ kāi ge wánxiào, nǐ zhìyú shēng nàme dà de qì ma?",
+     "vn": "Tôi chỉ đùa với cậu thôi, có đến mức phải giận dữ thế không?"
+    },
+    {
+     "zh": "……至于这部影片的投资人，可是一位大人物，他可不敢得罪。",
+     "py": "…… zhìyú zhè bù yǐngpiàn de tóuzīrén, kě shì yí wèi dà rénwù, tā kě bù gǎn dézuì.",
+     "vn": "… còn nhà đầu tư của bộ phim này thì đúng là một nhân vật lớn, ông không dám làm phật lòng."
+    },
+    {
+     "zh": "我只知道他是六班的学生，至于住在哪儿，我就不清楚了。",
+     "py": "Wǒ zhǐ zhīdào tā shì liù bān de xuésheng, zhìyú zhù zài nǎr, wǒ jiù bù qīngchu le.",
+     "vn": "Tôi chỉ biết cậu ấy là học sinh lớp 6, còn ở đâu thì tôi không rõ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他只是感冒，至于不能来上课吧。",
+     "why": "Câu trần thuật “chưa đến mức” phải dùng 不至于. 至于 (động từ) dạng khẳng định chỉ dùng trong câu phản vấn (至于……吗？).",
+     "right": "他只是感冒，不至于不能来上课吧。"
+    },
+    {
+     "wrong": "我喜欢数学，至于我也喜欢物理。",
+     "why": "至于 dùng để chuyển sang một việc KHÁC, sau đó nói nhận xét riêng về việc ấy; thêm ý song song thì dùng 也 / 而且.",
+     "right": "我喜欢数学，也喜欢物理。"
+    }
+   ]
+  },
+  {
+   "point": "总算",
+   "explain": "总算 là PHÓ TỪ. ① Biểu thị sau một thời gian khá dài (chờ đợi, cố gắng), một mong muốn cuối cùng cũng thành hiện thực: 总算搞明白了, 总算干完了. ② Biểu thị nhìn chung cũng tạm được, cũng coi là qua được: 总算有个睡觉的地方了, 总算不错了. 总算 chỉ dùng cho kết quả MONG MUỐN; kết quả không như ý phải dùng 终于.",
+   "rule": "① (经过……，) <strong style=\"color:var(--sky-d)\">总算</strong> + V + 了　② (虽然……，但) <strong style=\"color:var(--sky-d)\">总算</strong> + 有 / 不错 / 没白……",
+   "examples": [
+    {
+     "zh": "经过沟通，大导演总算搞明白了，……",
+     "py": "Jīngguò gōutōng, dà dǎoyǎn zǒngsuàn gǎo míngbai le, ……",
+     "vn": "Qua trao đổi, vị đạo diễn lớn cuối cùng cũng hiểu ra, …"
+    },
+    {
+     "zh": "总算把活儿干完了，可把我累坏了。",
+     "py": "Zǒngsuàn bǎ huór gànwán le, kě bǎ wǒ lèihuài le.",
+     "vn": "Cuối cùng cũng làm xong việc, mệt muốn chết."
+    },
+    {
+     "zh": "虽然我对这家宾馆不太满意，但总算有个睡觉的地方了。",
+     "py": "Suīrán wǒ duì zhè jiā bīnguǎn bú tài mǎnyì, dàn zǒngsuàn yǒu ge shuìjiào de dìfang le.",
+     "vn": "Tuy tôi không hài lòng lắm với khách sạn này, nhưng dù sao cũng có chỗ ngủ rồi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我担心的事总算发生了。",
+     "why": "总算 chỉ dùng cho điều MONG MUỐN. Điều lo lắng xảy ra là không như ý → 终于 (还是).",
+     "right": "我担心的事终于还是发生了。"
+    },
+    {
+     "wrong": "我们等了一个小时，他总算来。",
+     "why": "Việc đã thành hiện thực, sau 总算 + V cần 了.",
+     "right": "我们等了一个小时，他总算来了。"
+    }
+   ]
+  }
+ ]
+}

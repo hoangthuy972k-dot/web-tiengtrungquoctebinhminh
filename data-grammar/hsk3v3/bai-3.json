@@ -1,0 +1,564 @@
+{
+ "/lessons/hsk3v3-bai-3.html": {
+  "points": [
+   {
+    "title": "Phó từ chỉ mức độ 「挺」 — khá, rất",
+    "errors": [
+     {
+      "wrong": "我挺很喜欢这个颜色的。",
+      "why": "挺 và 很 đều là phó từ chỉ mức độ — chỉ dùng một trong hai.",
+      "right": "我挺喜欢这个颜色的。"
+     },
+     {
+      "wrong": "我喜欢挺这个房子的。",
+      "why": "tiếng Việt nói “thích lắm” nên hay đặt từ mức độ ra sau; 挺 phải đứng TRƯỚC động từ tâm lý / tính từ.",
+      "right": "我挺喜欢这个房子的。"
+     },
+     {
+      "wrong": "他挺学习的。",
+      "why": "挺 chỉ đi với tính từ hoặc động từ chỉ tâm lý (喜欢、爱、想…), không đi thẳng với động từ hành động như 学习、吃.",
+      "right": "他挺喜欢学习的。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “你爱游泳吗？” — trả lời bằng 挺……的 (游泳 – HSK2 Bài 7)",
+      "pre": "我",
+      "blank": "挺爱游泳的",
+      "post": "。",
+      "options": [
+       "挺爱游泳的",
+       "爱挺游泳的",
+       "挺很爱游泳的"
+      ],
+      "answer": 0,
+      "explanation": "挺 + 爱 (động từ tâm lý) + tân ngữ + 的."
+     },
+     {
+      "context": "Sách: “你的床舒服吗？” (床、舒服 – HSK2 Bài 6)",
+      "pre": "我的床",
+      "blank": "挺舒服的",
+      "post": "。",
+      "options": [
+       "挺舒服的",
+       "舒服挺的",
+       "很挺舒服的"
+      ],
+      "answer": 0,
+      "explanation": "挺 + tính từ + 的; không dùng chung với 很."
+     },
+     {
+      "context": "Sách: “你觉得现在的天气怎么样？” (天气 – HSK1 Bài 12)",
+      "pre": "我觉得现在的天气",
+      "blank": "挺好的",
+      "post": "，不冷也不热。",
+      "options": [
+       "挺好的",
+       "好挺的",
+       "挺很好的"
+      ],
+      "answer": 0,
+      "explanation": "挺好的 — khá đẹp; không thêm 很."
+     },
+     {
+      "context": "“Món ăn của quán này khá ngon.” (饭馆 – HSK2 Bài 8)",
+      "pre": "这家饭馆的菜",
+      "blank": "挺好吃的",
+      "post": "。",
+      "options": [
+       "挺好吃的",
+       "好吃挺的",
+       "挺吃好的"
+      ],
+      "answer": 0,
+      "explanation": "挺 đứng ngay trước tính từ 好吃."
+     },
+     {
+      "context": "“Mua cái này đi, mình khá thích màu này.” (颜色 – HSK2 Bài 4)",
+      "pre": "买这个吧，我",
+      "blank": "挺喜欢这个颜色的",
+      "post": "。",
+      "options": [
+       "挺喜欢这个颜色的",
+       "喜欢挺这个颜色的",
+       "挺这个颜色喜欢的"
+      ],
+      "answer": 0,
+      "explanation": "挺 + 喜欢 + tân ngữ + 的."
+     },
+     {
+      "context": "“Môi trường khá tốt, cũng không xa ga tàu điện ngầm lắm.” (离 – HSK2 Bài 9)",
+      "pre": "环境",
+      "blank": "挺好的",
+      "post": "，离地铁站还不远。",
+      "options": [
+       "挺好的",
+       "挺很好",
+       "很挺好的"
+      ],
+      "answer": 0,
+      "explanation": "挺……的; 离 + nơi chốn + 远/近."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我挺很喜欢这个颜色的。",
+      "isCorrect": false,
+      "correctVersion": "我挺喜欢这个颜色的。",
+      "explanation": "挺 và 很 đều là phó từ mức độ, chỉ dùng một."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这家饭馆的服务挺不错的。",
+      "isCorrect": true,
+      "explanation": "挺 + 不错 + 的 — đúng. 服务 (HSK3 Bài 2), 不错 (HSK2 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Môi trường của khu dân cư này khá tốt.”",
+      "words": [
+       "这个",
+       "小区",
+       "环境",
+       "挺",
+       "好",
+       "的",
+       "。"
+      ],
+      "answer": "这个小区环境挺好的。",
+      "explanation": "挺 + 好 + 的."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mình khá thích màu này.”",
+      "words": [
+       "我",
+       "挺",
+       "喜欢",
+       "这个",
+       "颜色",
+       "的",
+       "。"
+      ],
+      "answer": "我挺喜欢这个颜色的。",
+      "explanation": "挺 đứng trước 喜欢."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Món ăn của quán này khá ngon.”",
+      "words": [
+       "这家",
+       "饭馆",
+       "的",
+       "菜",
+       "挺",
+       "好吃",
+       "的",
+       "。"
+      ],
+      "answer": "这家饭馆的菜挺好吃的。",
+      "explanation": "挺好吃的."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mấy ngày nay anh ấy khá bận.”",
+      "words": [
+       "他",
+       "这几天",
+       "挺",
+       "忙",
+       "的",
+       "。"
+      ],
+      "answer": "他这几天挺忙的。",
+      "explanation": "Thời gian đứng sau chủ ngữ, trước 挺."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 挺……的.",
+      "promptLang": "vi",
+      "prompt": "Căn nhà này khá to, cũng khá rẻ.",
+      "answer": "这个房子挺大的，也挺便宜的。",
+      "answerPy": "Zhège fángzi tǐng dà de, yě tǐng piányi de.",
+      "explanation": "也 đứng trước 挺; 便宜 (HSK1 Bài 10)."
+     }
+    ]
+   },
+   {
+    "title": "Bổ ngữ trình độ (1) — 「tính từ + 坏了」",
+    "errors": [
+     {
+      "wrong": "我这几天很忙坏了。",
+      "why": "đã có 坏了 chỉ mức độ rất cao thì không thêm 很 / 非常 trước tính từ.",
+      "right": "我这几天忙坏了。"
+     },
+     {
+      "wrong": "今天搬家，我累得坏了。",
+      "why": "không chen 得 vào giữa — 累坏了 khác với bổ ngữ trạng thái V + 得 + tính từ (HSK2 Bài 7).",
+      "right": "今天搬家，我累坏了。"
+     },
+     {
+      "wrong": "我坏饿了。",
+      "why": "tiếng Việt nói “đói lả” nhưng tiếng Trung đặt 坏了 SAU tính từ.",
+      "right": "我饿坏了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “Hôm nay chuyển nhà, tôi và Lưu Minh đều mệt rã rời.”",
+      "pre": "今天搬家，我和刘明都",
+      "blank": "累坏了",
+      "post": "。",
+      "options": [
+       "累坏了",
+       "坏累了",
+       "很累坏了"
+      ],
+      "answer": 0,
+      "explanation": "Tính từ + 坏了; không thêm 很."
+     },
+     {
+      "context": "Sách: “Hôm nay tôi chưa ăn trưa và tối, đói lả cả người.” (饿 – HSK3 Bài 2)",
+      "pre": "我今天没吃午饭和晚饭，",
+      "blank": "饿坏了",
+      "post": "。",
+      "options": [
+       "饿坏了",
+       "饿得坏",
+       "坏饿了"
+      ],
+      "answer": 0,
+      "explanation": "饿 + 坏了."
+     },
+     {
+      "context": "Sách: “Trong phòng không có điều hoà, chúng tôi đều nóng muốn chết.”",
+      "pre": "房间里没有空调，我们都",
+      "blank": "热坏了",
+      "post": "。",
+      "options": [
+       "热坏了",
+       "热得坏了",
+       "非常热坏了"
+      ],
+      "answer": 0,
+      "explanation": "热坏了; không chen 得, không thêm 非常."
+     },
+     {
+      "context": "“Mấy ngày nay anh bận tối mắt tối mũi, chắc lúc đi quên tắt rồi.”",
+      "pre": "我这几天",
+      "blank": "忙坏了",
+      "post": "，可能走的时候忘关了。",
+      "options": [
+       "忙坏了",
+       "很忙坏了",
+       "坏忙了"
+      ],
+      "answer": 0,
+      "explanation": "Câu trong Bài khoá 2."
+     },
+     {
+      "context": "“Tôi khát muốn chết, ở đâu mua được nước nhỉ?” (渴 – HSK3 Bài 2)",
+      "pre": "我",
+      "blank": "渴坏了",
+      "post": "，哪里能买水？",
+      "options": [
+       "渴坏了",
+       "渴坏",
+       "坏渴了"
+      ],
+      "answer": 0,
+      "explanation": "Luôn có 了 sau 坏."
+     },
+     {
+      "context": "“Ngoài trời có tuyết, tôi đợi nửa tiếng, lạnh cóng cả người.” (下雪 – HSK1 Bài 12)",
+      "pre": "外面下雪了，我等了半个小时，",
+      "blank": "冷坏了",
+      "post": "。",
+      "options": [
+       "冷坏了",
+       "冷坏",
+       "很冷坏了"
+      ],
+      "answer": 0,
+      "explanation": "冷 + 坏了; bổ ngữ thời lượng 半个小时 (HSK2 Bài 9)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我今天很累坏了。",
+      "isCorrect": false,
+      "correctVersion": "我今天累坏了。",
+      "explanation": "Đã có 坏了 thì bỏ 很."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这几天非常忙，大家都累坏了。",
+      "isCorrect": true,
+      "explanation": "非常 bổ nghĩa cho 忙 ở vế trước; vế sau 累坏了 — đúng."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mấy ngày nay tôi bận tối mắt tối mũi.”",
+      "words": [
+       "我",
+       "这几天",
+       "忙",
+       "坏了",
+       "。"
+      ],
+      "answer": "我这几天忙坏了。",
+      "explanation": "Tính từ + 坏了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi khát muốn chết, ở đâu mua được nước?”",
+      "words": [
+       "我",
+       "渴",
+       "坏了",
+       "，",
+       "哪里",
+       "能",
+       "买",
+       "水",
+       "？"
+      ],
+      "answer": "我渴坏了，哪里能买水？",
+      "explanation": "渴坏了 + câu hỏi."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Không có điều hoà, mọi người đều nóng muốn chết.”",
+      "words": [
+       "没有",
+       "空调",
+       "，",
+       "大家",
+       "都",
+       "热",
+       "坏了",
+       "。"
+      ],
+      "answer": "没有空调，大家都热坏了。",
+      "explanation": "都 + 热坏了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Dọn nhà mới cả một ngày, tôi mệt rã rời.”",
+      "words": [
+       "打扫",
+       "了",
+       "一天",
+       "新家",
+       "，",
+       "我",
+       "累",
+       "坏了",
+       "。"
+      ],
+      "answer": "打扫了一天新家，我累坏了。",
+      "explanation": "Bổ ngữ thời lượng 一天 (HSK2 Bài 9) + 累坏了."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 坏了.",
+      "promptLang": "vi",
+      "prompt": "Cả ngày chưa ăn gì, tôi đói lả rồi.",
+      "answer": "我一天没吃东西，饿坏了。",
+      "answerPy": "Wǒ yì tiān méi chī dōngxi, è huài le.",
+      "explanation": "Thời gian + 没 + V; 饿 (HSK3 Bài 2) + 坏了."
+     }
+    ]
+   },
+   {
+    "title": "Phó từ 「就」 và 「才」 — sớm/nhanh và muộn/chậm",
+    "errors": [
+     {
+      "wrong": "我昨天十点才起床了。",
+      "why": "câu có 才 (muộn) KHÔNG dùng 了 ở cuối câu.",
+      "right": "我昨天十点才起床。"
+     },
+     {
+      "wrong": "坐火车去北京，五个小时就能到，太慢了。",
+      "why": "“太慢了” cho thấy người nói thấy CHẬM → phải dùng 才, không dùng 就.",
+      "right": "坐火车去北京，五个小时才能到，太慢了。"
+     },
+     {
+      "wrong": "他才九点到公司。",
+      "why": "才 đứng SAU từ chỉ thời gian, ngay trước động từ: thời gian + 才 + V.",
+      "right": "他九点才到公司。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: “你昨天几点回的家？” — trả lời: về muộn (是……的 – HSK2 Bài 1)",
+      "pre": "我昨天晚上十一点",
+      "blank": "才回家",
+      "post": "。",
+      "options": [
+       "才回家",
+       "才回家了",
+       "就回家了"
+      ],
+      "answer": 0,
+      "explanation": "Muộn → 才, cuối câu không có 了."
+     },
+     {
+      "context": "Sách: “这本书你是什么时候看完的？” — trả lời: đọc rất nhanh",
+      "pre": "我两天",
+      "blank": "就看完了",
+      "post": "。",
+      "options": [
+       "就看完了",
+       "才看完了",
+       "看完就了"
+      ],
+      "answer": 0,
+      "explanation": "Nhanh → 就 + V + 了; 看完 — bổ ngữ kết quả (HSK2 Bài 3)."
+     },
+     {
+      "context": "Sách: “你觉得搬家要准备多长时间？” — trả lời: cần lâu",
+      "pre": "最少需要一个星期",
+      "blank": "才能准备好",
+      "post": "。",
+      "options": [
+       "才能准备好",
+       "就能准备好了",
+       "才能准备好了"
+      ],
+      "answer": 0,
+      "explanation": "最少…… → lâu → 才, không có 了."
+     },
+     {
+      "context": "“Ngân hàng Trung Quốc rất gần, đi bộ vài phút là tới.”",
+      "pre": "中国银行很近，走路几分钟",
+      "blank": "就能到",
+      "post": "。",
+      "options": [
+       "就能到",
+       "才能到",
+       "能就到"
+      ],
+      "answer": 0,
+      "explanation": "很近 → nhanh → 就, đứng trước 能."
+     },
+     {
+      "context": "“Đi tàu hoả đến Bắc Kinh, năm tiếng mới tới.” (火车 – HSK1 Bài 14)",
+      "pre": "坐火车去北京，五个小时",
+      "blank": "才能到",
+      "post": "。",
+      "options": [
+       "才能到",
+       "就能到了",
+       "才能到了"
+      ],
+      "answer": 0,
+      "explanation": "Người nói thấy lâu → 才, không có 了."
+     },
+     {
+      "context": "“Phim tám giờ bắt đầu, bảy giờ rưỡi anh ấy đã đến rồi.” (电影 – HSK1 Bài 7)",
+      "pre": "电影八点开始，他七点半",
+      "blank": "就到了",
+      "post": "。",
+      "options": [
+       "就到了",
+       "才到",
+       "才到了"
+      ],
+      "answer": 0,
+      "explanation": "Đến sớm hơn giờ hẹn → 就……了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我昨天十点才起床了。",
+      "isCorrect": false,
+      "correctVersion": "我昨天十点才起床。",
+      "explanation": "Câu có 才 không dùng 了 cuối câu."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我早上五点就起床了。",
+      "isCorrect": true,
+      "explanation": "就 + V + 了 — dậy sớm, đúng."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chiều nay anh phải đi bệnh viện, rất muộn mới về được.”",
+      "words": [
+       "我",
+       "下午",
+       "要",
+       "去",
+       "医院",
+       "，",
+       "很晚",
+       "才",
+       "能",
+       "回来",
+       "。"
+      ],
+      "answer": "我下午要去医院，很晚才能回来。",
+      "explanation": "很晚 + 才 + 能回来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đi bộ vài phút là tới.”",
+      "words": [
+       "走路",
+       "几分钟",
+       "就",
+       "能",
+       "到",
+       "。"
+      ],
+      "answer": "走路几分钟就能到。",
+      "explanation": "Thời gian ngắn + 就."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Em nghĩ phải tháng sau mới chuyển nhà được.”",
+      "words": [
+       "我",
+       "觉得",
+       "下个月",
+       "才",
+       "能",
+       "搬家",
+       "。"
+      ],
+      "answer": "我觉得下个月才能搬家。",
+      "explanation": "Thời gian + 才 + 能 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy mười phút đã làm xong rồi.”",
+      "words": [
+       "他",
+       "十分钟",
+       "就",
+       "做",
+       "完",
+       "了",
+       "。"
+      ],
+      "answer": "他十分钟就做完了。",
+      "explanation": "Thời gian ngắn + 就 + V完 + 了."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 才.",
+      "promptLang": "vi",
+      "prompt": "Sao bây giờ bạn mới đến? Chúng tôi đợi bạn nửa tiếng rồi.",
+      "answer": "你怎么现在才来？我们等了你半个小时了。",
+      "answerPy": "Nǐ zěnme xiànzài cái lái? Wǒmen děngle nǐ bàn ge xiǎoshí le.",
+      "explanation": "才 — đến muộn; bổ ngữ thời lượng + 了 (HSK2 Bài 9)."
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+<defs><clipPath id="fh-apple-c"><rect x="0" y="0" width="60" height="120"/></clipPath></defs>
+<g clip-path="url(#fh-apple-c)">
+<path d="M60 32 C48 22 18 24 16 56 C14 88 38 112 52 110 C56 109 58 107 60 107 C62 107 64 109 68 110 C82 112 106 88 104 56 C102 24 72 22 60 32Z" fill="#ff4d5e"/>
+<path d="M84 27 C104 34 108 70 92 96 C84 106 74 111 68 110 C88 96 98 62 84 27Z" fill="#d6234a"/>
+<ellipse cx="36" cy="50" rx="7" ry="12" fill="#ffb3bd" transform="rotate(20 36 50)"/>
+<path d="M60 32 C48 22 18 24 16 56 C14 88 38 112 52 110 C56 109 58 107 60 107 C62 107 64 109 68 110 C82 112 106 88 104 56 C102 24 72 22 60 32Z" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+</g>
+<ellipse cx="60" cy="70" rx="14" ry="37" fill="#fff3d0"/>
+<ellipse cx="60" cy="70" rx="6" ry="14" fill="#f5dca0"/>
+<path d="M59 64 q-3 4 0 8 q3 -4 0 -8Z M61 72 q-3 4 0 8 q3 -4 0 -8Z" fill="#6b3f1f"/>
+<ellipse cx="60" cy="70" rx="14" ry="37" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+</svg>

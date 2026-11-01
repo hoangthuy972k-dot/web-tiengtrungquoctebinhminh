@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs><g id="mam-s">
+<ellipse cy="0.5" rx="5" ry="2" fill="#6b3f22"/>
+<path d="M0 0V-9" stroke="#2b1d3a" stroke-width="5" stroke-linecap="round"/>
+<path d="M0 0V-9" stroke="#7cc456" stroke-width="2" stroke-linecap="round"/>
+<g stroke="#2b1d3a" stroke-width="2.4" stroke-linejoin="round">
+<path d="M0-8Q-9-17-12-9Q-5-4 0-8Z" fill="#8fd16a"/>
+<path d="M0-9Q9-19 13-11Q7-5 0-9Z" fill="#6cb648"/>
+</g>
+<path d="M-3-10Q-6-11-8-10" stroke="#c9f0a8" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+</g></defs>
+<ellipse cx="50" cy="86" rx="40" ry="7" fill="#000" opacity=".15"/>
+<rect x="11" y="47" width="78" height="38" rx="13" fill="#8a5430" stroke="#2b1d3a" stroke-width="3"/>
+<rect x="12.5" y="48.5" width="75" height="28" rx="11" fill="#a8693f"/>
+<path d="M20 59H80M19 68H81" stroke="#8a5430" stroke-width="3" stroke-linecap="round"/>
+<path d="M22 56H48M24 65H40" stroke="#c98a5a" stroke-width="2" stroke-linecap="round"/>
+<use href="#mam-s" x="28" y="60"/>
+<use href="#mam-s" x="50" y="59"/>
+<use href="#mam-s" x="72" y="60"/>
+<use href="#mam-s" x="39" y="69"/>
+<use href="#mam-s" x="61" y="69"/>
+</svg>

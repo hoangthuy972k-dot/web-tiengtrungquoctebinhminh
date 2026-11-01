@@ -1,0 +1,945 @@
+[
+ {
+  "so": "1",
+  "ten": "「过」",
+  "tenVn": "",
+  "cauTruc": [
+   "V + 得 + 过 + người / vật (hơn được)",
+   "V + 不 + 过 + người / vật (không hơn được)"
+  ],
+  "giaiThich": "过 ở đây là động từ xu hướng, đọc guò, dùng theo dạng “Động từ + 得 / 不 + 过” làm bổ ngữ, biểu thị HƠN ĐƯỢC / KHÔNG HƠN ĐƯỢC ai trong một việc (thắng nổi, bì kịp). Người / vật bị so đứng SAU 过: 说得过他 (nói lại được hắn), 比不过你们 (không bằng các bạn). Dạng phủ định 不过 dùng nhiều hơn.",
+  "viDu": [
+   {
+    "zh": "……跟别人谈论起军事来，没有人说得过他，……",
+    "py": "…… gēn biéren tánlùn qǐ jūnshì lai, méiyǒu rén shuō de guò tā, ……",
+    "vn": "… hễ bàn chuyện quân sự với người khác thì không ai nói lại được hắn, …"
+   },
+   {
+    "zh": "年轻人记忆力好，这一点我比不过你们。",
+    "py": "Niánqīngrén jìyìlì hǎo, zhè yì diǎn wǒ bǐ bu guò nǐmen.",
+    "vn": "Người trẻ trí nhớ tốt, điểm này tôi không bì được với các bạn."
+   },
+   {
+    "zh": "我们的原材料贵，人工费用高，产品在价格上肯定竞争不过他们。",
+    "py": "Wǒmen de yuáncáiliào guì, réngōng fèiyòng gāo, chǎnpǐn zài jiàgé shang kěndìng jìngzhēng bu guò tāmen.",
+    "vn": "Nguyên liệu của chúng ta đắt, chi phí nhân công cao, về giá cả sản phẩm chắc chắn không cạnh tranh nổi với họ."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我不过比他。",
+    "why": "过 là BỔ NGỮ, đứng sau động từ: V + 不 + 过. Không đặt 不过 trước động từ.",
+    "dung": "我比不过他。"
+   },
+   {
+    "sai": "在价格上我们竞争他们不过。",
+    "why": "Người / vật bị so đứng SAU 不过, không chen giữa động từ và bổ ngữ.",
+    "dung": "在价格上我们竞争不过他们。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "跟别人谈论起军事来，没有人说得",
+       "他。"
+      ],
+      "dap": [
+       [
+        "过"
+       ]
+      ],
+      "chon": [
+       "过",
+       "完",
+       "起"
+      ],
+      "goiY": "“Bàn chuyện quân sự thì không ai nói LẠI được hắn.”",
+      "giai": "V + 得 + 过 + người = hơn được ai (câu bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "年轻人记忆力好，这一点我比",
+       "你们。"
+      ],
+      "dap": [
+       [
+        "不过"
+       ]
+      ],
+      "chon": [
+       "不过",
+       "不了",
+       "不起"
+      ],
+      "goiY": "“Điểm này tôi không BÌ được với các bạn.”",
+      "giai": "V + 不 + 过 + người = không hơn được ai. 比不了 cũng có nhưng bài này học 比不过."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们的产品在价格上肯定竞争",
+       "他们。"
+      ],
+      "dap": [
+       [
+        "不过"
+       ]
+      ],
+      "chon": [
+       "不过",
+       "不完",
+       "不动"
+      ],
+      "goiY": "“Về giá cả chắc chắn không cạnh tranh NỔI với họ.”",
+      "giai": "竞争不过 + đối thủ (câu của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "别跟他吵了，你根本吵",
+       "他。"
+      ],
+      "dap": [
+       [
+        "不过"
+       ]
+      ],
+      "chon": [
+       "不过",
+       "不完",
+       "不起"
+      ],
+      "goiY": "“Cậu căn bản cãi không LẠI anh ta.”",
+      "giai": "吵不过 + người — câu trong bài nghe 练习册."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他下棋下得特别好，全班没有人下得",
+       "他。"
+      ],
+      "dap": [
+       [
+        "过"
+       ]
+      ],
+      "chon": [
+       "过",
+       "完",
+       "好"
+      ],
+      "goiY": "“Cả lớp không ai đánh cờ THẮNG được cậu ấy.”",
+      "giai": "Khẳng định có khả năng hơn: V + 得 + 过 (ở đây trong câu phủ định 没有人……)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你是哥哥，就算打得",
+       "妹妹，也得让着她点儿。"
+      ],
+      "dap": [
+       [
+        "过"
+       ]
+      ],
+      "chon": [
+       "过",
+       "完",
+       "起"
+      ],
+      "goiY": "“Dù có đánh THẮNG được em gái thì cũng phải nhường em.”",
+      "giai": "打得过 = đánh thắng được (ôn 就算……也…… và 让着)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "年轻人",
+       "记忆力好",
+       "，",
+       "这一点",
+       "我",
+       "比不过",
+       "你们",
+       "。"
+      ],
+      "dap": [
+       "年轻人记忆力好，这一点我比不过你们。",
+       "年轻人记忆力好，我这一点比不过你们。"
+      ],
+      "goiY": "Người trẻ trí nhớ tốt, điểm này tôi không bằng các bạn.",
+      "giai": "Người bị so (你们) đứng sau 比不过."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "打篮球",
+       "我",
+       "打不过",
+       "哥哥",
+       "。"
+      ],
+      "dap": [
+       "打篮球我打不过哥哥。",
+       "我打篮球打不过哥哥。"
+      ],
+      "goiY": "Chơi bóng rổ tôi không thắng được anh trai.",
+      "giai": "Chủ đề 打篮球 có thể đứng đầu câu hoặc sau chủ ngữ; 打不过 + người."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "说起",
+       "理论",
+       "来",
+       "，",
+       "谁也",
+       "说不过",
+       "他",
+       "。"
+      ],
+      "dap": [
+       "说起理论来，谁也说不过他。"
+      ],
+      "goiY": "Hễ nói đến lý thuyết, ai cũng không nói lại được anh ta.",
+      "giai": "说起……来 (ôn bổ ngữ 起来) + 谁也 + V不过 + người."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他跑得太快了，我跑不过他。",
+      "dung": true,
+      "giai": "Đúng: 跑不过他 = chạy không lại anh ấy."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我不过比他。",
+      "dung": false,
+      "sua": "我比不过他。",
+      "giai": "过 là bổ ngữ, phải đứng sau động từ: 比不过."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "在价格上我们的产品竞争他们不过。",
+      "dung": false,
+      "sua": "在价格上我们的产品竞争不过他们。",
+      "giai": "Người / vật bị so đứng SAU 不过, không chen giữa."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chơi cờ tôi không thắng nổi ông nội.",
+      "dap": [
+       "下棋我下不过爷爷。",
+       "我下棋下不过爷爷。",
+       "我下不过爷爷。"
+      ],
+      "py": "Xià qí wǒ xià bu guò yéye.",
+      "goiY": "Dịch sang tiếng Trung, dùng V + 不 + 过.",
+      "giai": "Động từ 下 (棋) lặp lại trước 不过: 下不过 + người."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Bàn về lý thuyết quân sự thì không ai nói lại được Triệu Quát.",
+      "dap": [
+       "谈论起军事理论来，没有人说得过赵括。",
+       "说起军事理论来，谁也说不过赵括。",
+       "谈军事理论，没有人说得过赵括。"
+      ],
+      "py": "Tánlùn qǐ jūnshì lǐlùn lai, méiyǒu rén shuō de guò Zhào Kuò.",
+      "goiY": "Dịch sang tiếng Trung, dùng 说得过 hoặc 说不过.",
+      "giai": "Câu phủ định 没有人 + 说得过; hoặc 谁也 + 说不过."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "老张尽管是五十多岁的人了，可干起活儿来，＿＿＿。",
+      "goiY": "làm việc thì thanh niên cũng không bì được ông ấy (dùng 过) — câu của sách",
+      "mau": "老张尽管是五十多岁的人了，可干起活儿来，年轻人都干不过他。",
+      "can": [
+       [
+        "不过",
+        "得过"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：＿＿＿。　B：你是哥哥，妹妹还小，不懂事，你得让着她点儿。",
+      "goiY": "phàn nàn cãi không lại em gái (dùng 动词 + 不 + 过) — câu của sách",
+      "mau": "妈，我怎么说也说不过妹妹，她太不讲道理了！",
+      "can": [
+       [
+        "不过"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「V + 得 / 不 + 过」 để so em với anh chị em hoặc bạn bè (thể thao, học tập…)",
+      "mau": "跑步我跑不过姐姐，可是游泳她游不过我。",
+      "can": [
+       [
+        "不过",
+        "得过"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「迟早」",
+  "tenVn": "",
+  "cauTruc": [
+   "Sub + 迟早 + 会 / 要 + V (+ 的)",
+   "……是迟早的事"
+  ],
+  "giaiThich": "迟早 là phó từ (= 早晚), nghĩa “sớm muộn gì, trước sau gì”: khẳng định một hành động, sự việc CHẮC CHẮN SẼ xảy ra, chỉ là sớm hay muộn. Đứng sau chủ ngữ, trước động từ, thường đi với 会 / 要 / 都会, cuối câu hay có 的. Không dùng cho việc đã xảy ra.",
+  "viDu": [
+   {
+    "zh": "如果让他当了大将，迟早会害了赵国。",
+    "py": "Rúguǒ ràng tā dāngle dàjiàng, chízǎo huì hài le Zhàoguó.",
+    "vn": "Nếu để nó làm đại tướng, sớm muộn gì cũng hại nước Triệu."
+   },
+   {
+    "zh": "随着网络技术的发展，这些问题迟早都会得到解决。",
+    "py": "Suízhe wǎngluò jìshù de fāzhǎn, zhèxiē wèntí chízǎo dōu huì dédào jiějué.",
+    "vn": "Cùng với sự phát triển của công nghệ mạng, những vấn đề này sớm muộn đều sẽ được giải quyết."
+   },
+   {
+    "zh": "如果不重视技术研究和产品开发，我们迟早会被别人挤出市场。",
+    "py": "Rúguǒ bú zhòngshì jìshù yánjiū hé chǎnpǐn kāifā, wǒmen chízǎo huì bèi biéren jǐchū shìchǎng.",
+    "vn": "Nếu không coi trọng nghiên cứu kỹ thuật và phát triển sản phẩm, sớm muộn gì chúng ta cũng bị người khác đẩy ra khỏi thị trường."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这个问题昨天迟早解决了。",
+    "why": "迟早 nói việc CHẮC CHẮN SẼ xảy ra, không dùng cho việc đã xảy ra (昨天……了).",
+    "dung": "这个问题迟早会解决的。"
+   },
+   {
+    "sai": "你迟早后悔。",
+    "why": "迟早 thường đi với 会 / 要 (cuối câu hay có 的); thiếu 会 câu nghe cụt.",
+    "dung": "你迟早会后悔的。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "如果让他当了大将，",
+       "会害了赵国。"
+      ],
+      "dap": [
+       [
+        "迟早"
+       ]
+      ],
+      "chon": [
+       "迟早",
+       "终于",
+       "曾经"
+      ],
+      "goiY": "“Nếu để nó làm đại tướng, SỚM MUỘN gì cũng hại nước Triệu.”",
+      "giai": "迟早 + 会: việc chắc chắn sẽ xảy ra (câu bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "随着网络技术的发展，这些问题",
+       "都会得到解决。"
+      ],
+      "dap": [
+       [
+        "迟早"
+       ]
+      ],
+      "chon": [
+       "迟早",
+       "已经",
+       "刚才"
+      ],
+      "goiY": "“Những vấn đề này sớm muộn đều sẽ được giải quyết.”",
+      "giai": "迟早都会 — việc tương lai, nên không dùng 已经 / 刚才."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "如果不重视产品开发，我们",
+       "会被别人挤出市场。"
+      ],
+      "dap": [
+       [
+        "迟早"
+       ]
+      ],
+      "chon": [
+       "迟早",
+       "终于",
+       "从来"
+      ],
+      "goiY": "Hậu quả chắc chắn sẽ đến nếu không thay đổi.",
+      "giai": "迟早 + 会 + 被: phó từ đứng trước động từ năng nguyện và 被."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "谎话",
+       "会被人发现的，你还是说实话吧。"
+      ],
+      "dap": [
+       [
+        "迟早"
+       ]
+      ],
+      "chon": [
+       "迟早",
+       "曾经",
+       "刚刚"
+      ],
+      "goiY": "“Lời nói dối trước sau gì cũng bị phát hiện.”",
+      "giai": "迟早会……的 — khẳng định chắc chắn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只要坚持练习，你",
+       "会说得很流利。"
+      ],
+      "dap": [
+       [
+        "迟早"
+       ]
+      ],
+      "chon": [
+       "迟早",
+       "已经",
+       "从来"
+      ],
+      "goiY": "“Chỉ cần kiên trì, sớm muộn gì cậu cũng nói lưu loát.”",
+      "giai": "Ôn 只要……就……; 迟早 đứng sau chủ ngữ 你."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件事",
+       "是要解决的，还不如先拿出一个方案。"
+      ],
+      "dap": [
+       [
+        "迟早"
+       ]
+      ],
+      "chon": [
+       "迟早",
+       "刚才",
+       "曾经"
+      ],
+      "goiY": "Câu trong bài nghe 练习册: việc này trước sau gì cũng phải giải quyết.",
+      "giai": "迟早是要……的 — biến thể nhấn mạnh của 迟早要."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这些问题",
+       "迟早",
+       "会",
+       "得到",
+       "解决",
+       "。"
+      ],
+      "dap": [
+       "这些问题迟早会得到解决。"
+      ],
+      "goiY": "Những vấn đề này sớm muộn sẽ được giải quyết.",
+      "giai": "Sub + 迟早 + 会 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "这样",
+       "下去",
+       "，",
+       "迟早",
+       "会",
+       "生病的",
+       "。"
+      ],
+      "dap": [
+       "你这样下去，迟早会生病的。"
+      ],
+      "goiY": "Cậu cứ thế này mãi, sớm muộn gì cũng sẽ ốm.",
+      "giai": "这样下去 (cứ thế này mãi) + 迟早会……的."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这个秘密",
+       "迟早",
+       "会",
+       "被",
+       "别人",
+       "发现",
+       "。"
+      ],
+      "dap": [
+       "这个秘密迟早会被别人发现。"
+      ],
+      "goiY": "Bí mật này sớm muộn sẽ bị người khác phát hiện.",
+      "giai": "迟早 + 会 đứng trước 被 (ôn câu bị động)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他迟早会明白父母的一片苦心。",
+      "dung": true,
+      "giai": "Đúng: 迟早会 + V, nói việc chắc chắn sẽ xảy ra."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这个问题昨天迟早解决了。",
+      "dung": false,
+      "sua": "这个问题迟早会解决的。",
+      "giai": "迟早 không dùng cho việc ĐÃ xảy ra."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他迟早已经来了。",
+      "dung": false,
+      "sua": "他迟早会来的。",
+      "giai": "迟早 chỉ việc chưa xảy ra, không đi với 已经……了."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nếu cậu cứ lười như thế, sớm muộn gì cũng sẽ thi trượt.",
+      "dap": [
+       "如果你一直这么懒，迟早会考不及格的。",
+       "你要是一直这么懒，迟早会考不及格。",
+       "如果你总是这么懒，迟早会考试不及格的。"
+      ],
+      "py": "Rúguǒ nǐ yìzhí zhème lǎn, chízǎo huì kǎo bu jígé de.",
+      "goiY": "Dịch sang tiếng Trung, dùng 迟早会……的.",
+      "giai": "迟早 đứng sau vế điều kiện, trước 会."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chuyện du học sớm muộn gì cũng phải nói với bố mẹ.",
+      "dap": [
+       "留学的事迟早要告诉父母。",
+       "留学的事迟早要跟父母说。",
+       "留学的事迟早是要告诉父母的。"
+      ],
+      "py": "Liúxué de shì chízǎo yào gàosu fùmǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 迟早要.",
+      "giai": "Chủ đề 留学的事 đứng đầu câu, 迟早要 + V."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "王教练可严格了，你这种不认真的态度＿＿＿。",
+      "goiY": "thái độ đó sớm muộn gì cũng bị thầy phê bình (dùng 迟早) — câu của sách",
+      "mau": "王教练可严格了，你这种不认真的态度迟早会挨批评的。",
+      "can": [
+       [
+        "迟早"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你说刘方为什么就不能原谅我呢？　B：你别难过，＿＿＿。",
+      "goiY": "an ủi: sớm muộn gì cô ấy cũng tha thứ (dùng 迟早) — câu của sách",
+      "mau": "你别难过，她迟早会原谅你的。",
+      "can": [
+       [
+        "迟早"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「迟早」 để khuyên một người bạn bỏ một thói quen xấu",
+      "mau": "你天天熬夜玩手机，迟早会把身体搞坏的。",
+      "can": [
+       [
+        "迟早"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「再三」",
+  "tenVn": "",
+  "cauTruc": [
+   "再三 + V (+ O)",
+   "V (không tân ngữ) + 再三"
+  ],
+  "giaiThich": "再三 là phó từ, nghĩa “一次又一次” — hết lần này đến lần khác, nhiều lần. Thường đứng TRƯỚC động từ (再三阻止, 再三邀请); khi động từ KHÔNG mang tân ngữ thì còn có thể đứng SAU động từ (考虑再三, 犹豫再三).",
+  "viDu": [
+   {
+    "zh": "赵括的母亲再三阻止赵王任命儿子为大将，……",
+    "py": "Zhào Kuò de mǔqīn zàisān zǔzhǐ Zhào wáng rènmìng érzi wéi dàjiàng, ……",
+    "vn": "Mẹ Triệu Quát nhiều lần can ngăn vua Triệu bổ nhiệm con mình làm đại tướng, …"
+   },
+   {
+    "zh": "我最近这段时间特别忙，实在没时间参加小王的活动，可他再三邀请，出于礼貌，我只好答应了。",
+    "py": "Wǒ zuìjìn zhè duàn shíjiān tèbié máng, shízài méi shíjiān cānjiā Xiǎo Wáng de huódòng, kě tā zàisān yāoqǐng, chūyú lǐmào, wǒ zhǐhǎo dāying le.",
+    "vn": "Dạo này tôi đặc biệt bận, thật sự không có thời gian tham gia hoạt động của Tiểu Vương, nhưng cậu ấy mời đi mời lại, vì phép lịch sự tôi đành nhận lời."
+   },
+   {
+    "zh": "朋友请他做公司的总经理，他考虑再三，最后还是客气地拒绝了。",
+    "py": "Péngyou qǐng tā zuò gōngsī de zǒngjīnglǐ, tā kǎolǜ zàisān, zuìhòu háishi kèqi de jùjué le.",
+    "vn": "Bạn mời anh ấy làm tổng giám đốc công ty, anh cân nhắc nhiều lần, cuối cùng vẫn lịch sự từ chối."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他考虑了再三这个问题。",
+    "why": "V + 再三 chỉ dùng khi động từ KHÔNG mang tân ngữ. Có tân ngữ thì 再三 đứng trước động từ.",
+    "dung": "他再三考虑这个问题。"
+   },
+   {
+    "sai": "明天我再三给你打电话。",
+    "why": "再三 = hết lần này đến lần khác (việc lặp đi lặp lại), không dùng để hẹn làm lại MỘT lần.",
+    "dung": "明天我再给你打个电话。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "赵括的母亲",
+       "阻止赵王任命儿子为大将，可是赵王就是不听。"
+      ],
+      "dap": [
+       [
+        "再三"
+       ]
+      ],
+      "chon": [
+       "再三",
+       "迟早",
+       "绝对"
+      ],
+      "goiY": "Bà can ngăn hết lần này đến lần khác.",
+      "giai": "再三 + V: 再三阻止 (câu bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我实在没时间，可他",
+       "邀请，我只好答应了。"
+      ],
+      "dap": [
+       [
+        "再三"
+       ]
+      ],
+      "chon": [
+       "再三",
+       "迟早",
+       "绝对"
+      ],
+      "goiY": "“Anh ấy mời đi mời lại, tôi đành nhận lời.”",
+      "giai": "再三邀请 — câu ví dụ của sách."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "朋友请他做总经理，他考虑",
+       "，最后还是拒绝了。"
+      ],
+      "dap": [
+       [
+        "再三"
+       ]
+      ],
+      "chon": [
+       "再三",
+       "一再",
+       "迟早"
+      ],
+      "goiY": "Phó từ đứng SAU động từ không mang tân ngữ.",
+      "giai": "考虑再三. 一再 chỉ đứng trước động từ (一再考虑), không đứng sau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老师",
+       "强调，考试的时候一定要仔细检查。"
+      ],
+      "dap": [
+       [
+        "再三"
+       ]
+      ],
+      "chon": [
+       "再三",
+       "迟早",
+       "绝对"
+      ],
+      "goiY": "Cô nhấn mạnh nhiều lần.",
+      "giai": "再三强调 = nhấn mạnh đi nhấn mạnh lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我犹豫",
+       "，还是决定不去了。"
+      ],
+      "dap": [
+       [
+        "再三"
+       ]
+      ],
+      "chon": [
+       "再三",
+       "一再",
+       "终于"
+      ],
+      "goiY": "Do dự mãi — phó từ đứng sau động từ.",
+      "giai": "犹豫再三: 犹豫 không mang tân ngữ nên 再三 đứng sau được; 一再 thì không."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "妈妈",
+       "提醒我出门带伞，我还是忘了。"
+      ],
+      "dap": [
+       [
+        "再三"
+       ]
+      ],
+      "chon": [
+       "再三",
+       "迟早",
+       "终于"
+      ],
+      "goiY": "Mẹ nhắc đi nhắc lại mà vẫn quên.",
+      "giai": "再三提醒 — nhiều lần, trái với kết quả ở vế sau."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "赵括的母亲",
+       "再三",
+       "阻止",
+       "赵王",
+       "任命",
+       "儿子",
+       "为大将",
+       "。"
+      ],
+      "dap": [
+       "赵括的母亲再三阻止赵王任命儿子为大将。"
+      ],
+      "goiY": "Mẹ Triệu Quát nhiều lần can ngăn vua Triệu bổ nhiệm con làm đại tướng.",
+      "giai": "再三 đứng trước động từ 阻止."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "考虑",
+       "再三",
+       "，",
+       "最后",
+       "还是",
+       "拒绝了",
+       "。"
+      ],
+      "dap": [
+       "他考虑再三，最后还是拒绝了。"
+      ],
+      "goiY": "Anh ấy cân nhắc nhiều lần, cuối cùng vẫn từ chối.",
+      "giai": "考虑 không mang tân ngữ → 考虑再三."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "在妈妈的",
+       "再三",
+       "要求下",
+       "，",
+       "他",
+       "终于",
+       "去看医生了",
+       "。"
+      ],
+      "dap": [
+       "在妈妈的再三要求下，他终于去看医生了。"
+      ],
+      "goiY": "Trước yêu cầu hết lần này đến lần khác của mẹ, cuối cùng anh ấy cũng đi khám bác sĩ.",
+      "giai": "在……的再三要求下: 再三 bổ nghĩa cho 要求."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "之前我就再三地阻止你，你就是不听。",
+      "dung": true,
+      "giai": "Đúng: 再三(地) + V — câu trong bài nghe 练习册."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他考虑了再三这个问题。",
+      "dung": false,
+      "sua": "他再三考虑这个问题。",
+      "giai": "Động từ có tân ngữ thì 再三 phải đứng TRƯỚC động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "明天我再三给你打电话。",
+      "dung": false,
+      "sua": "明天我再给你打个电话。",
+      "giai": "再三 = nhiều lần lặp lại, không dùng để hẹn làm lại một lần."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Bạn tôi mời đi mời lại, tôi đành nhận lời.",
+      "dap": [
+       "朋友再三邀请，我只好答应了。",
+       "朋友再三邀请我，我只好答应了。",
+       "在朋友的再三邀请下，我只好答应了。"
+      ],
+      "py": "Péngyou zàisān yāoqǐng, wǒ zhǐhǎo dāying le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 再三 và 只好.",
+      "giai": "再三 + 邀请; ôn 只好 (đành)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Anh ấy cân nhắc nhiều lần, cuối cùng quyết định đi du học.",
+      "dap": [
+       "他考虑再三，最后决定去留学。",
+       "他再三考虑，最后决定出国留学。",
+       "他考虑再三，最后决定出国留学。"
+      ],
+      "py": "Tā kǎolǜ zàisān, zuìhòu juédìng qù liúxué.",
+      "goiY": "Dịch sang tiếng Trung, dùng 考虑再三.",
+      "giai": "Không có tân ngữ nên dùng được cả 考虑再三 lẫn 再三考虑."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，他只好答应周末带她去玩儿。",
+      "goiY": "con gái xin đi xin lại (dùng 再三) — câu của sách",
+      "mau": "女儿再三请求，他只好答应周末带她去玩儿。",
+      "can": [
+       [
+        "再三"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：这么有名的大专家居然也让你们校长请来了？　B：＿＿＿。",
+      "goiY": "hiệu trưởng mời nhiều lần nên chuyên gia mới đến (dùng 再三) — câu của sách",
+      "mau": "是啊，校长再三邀请，他才答应来的。",
+      "can": [
+       [
+        "再三"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「再三」 kể một lần em được người khác khuyên hoặc mời nhiều lần",
+      "mau": "同学再三劝我参加演讲比赛，我最后报了名。",
+      "can": [
+       [
+        "再三"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

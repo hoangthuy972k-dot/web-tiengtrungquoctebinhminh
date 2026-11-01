@@ -1,0 +1,175 @@
+{
+ "/lessons/hsk1v3-bai-13.html": {
+  "points": [
+   {
+    "title": "Động từ năng nguyện 「可以」 (có thể, được phép)",
+    "errors": [
+     { "wrong": "我可以问您一个问题不可以？", "why": "ghép mẫu chính phản sai; phải để 可不可以 liền nhau ở trước động từ.", "right": "我可不可以问您一个问题？" },
+     { "wrong": "我没可以去。", "why": "dùng 没 phủ định 可以.", "right": "我不能去。" },
+     { "wrong": "你可以这本书。", "why": "可以 phải đi với động từ, không đứng trước danh từ.", "right": "你可以看这本书。" }
+    ],
+    "items": [
+     { "context": "“Em có thể hỏi thầy một câu được không?”", "pre": "我", "blank": "可以", "post": "再问您一个问题吗？", "options": ["可以", "会", "想"], "answer": 0, "explanation": "可以 dùng khi xin phép lịch sự." },
+     { "context": "“Các bạn có thể xem quyển sách này.”", "pre": "你们", "blank": "可以看", "post": "这本书。", "options": ["可以看", "可以", "看可以"], "answer": 0, "explanation": "可以 + ĐỘNG TỪ." },
+     { "context": "Từ chối lời xin phép: “Không được.”", "pre": "", "blank": "不可以", "post": "。", "options": ["不可以", "没可以", "不会"], "answer": 0, "explanation": "Phủ định là 不可以 / 不能, không dùng 没." },
+     { "context": "“Ở đây có thể chụp ảnh không?”", "pre": "这儿", "blank": "可以", "post": "照相吗？", "options": ["可以", "会", "要"], "answer": 0, "explanation": "Hỏi phép: 可以 + động từ + 吗." },
+     { "context": "Hỏi chính phản: “Tôi ngồi đây được không?”", "pre": "我", "blank": "可不可以", "post": "坐这儿？", "options": ["可不可以", "可以不可", "不可以吗"], "answer": 0, "explanation": "可不可以 đứng liền trước động từ." },
+     { "context": "Nói về kỹ năng đã học thì dùng 会.", "pre": "我", "blank": "会", "post": "做饭。", "options": ["会", "可以", "要"], "answer": 0, "explanation": "会 = biết làm; 可以 = được phép/có thể." },
+     { "type": "sort", "context": "Sắp xếp: “Em có thể hỏi cô một câu được không?”", "words": ["我", "可以", "问", "您", "一个", "问题", "吗", "？"], "answer": "我可以问您一个问题吗？", "explanation": "可以 + động từ + tân ngữ kép + 吗." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn có thể nghỉ một chút.”", "words": ["你", "可以", "休息", "一下", "。"], "answer": "你可以休息一下。", "explanation": "可以 + động từ + 一下." },
+     { "type": "sort", "context": "Sắp xếp: “Ở đây không được ăn cơm.”", "words": ["这儿", "不可以", "吃饭", "。"], "answer": "这儿不可以吃饭。", "explanation": "不可以 = không được phép." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi ngồi đây được không?”", "words": ["我", "可以", "坐", "这儿", "吗", "？"], "answer": "我可以坐这儿吗？", "explanation": "Xin phép lịch sự." },
+     { "context": "Em muốn xin phép hỏi cô giáo một câu. Chọn câu lịch sự nhất.", "pre": "", "blank": "老师，我可以问您一个问题吗？", "post": "", "options": ["老师，我可以问您一个问题吗？", "老师，我会问您一个问题吗？", "老师，我要问您一个问题。"], "answer": 0, "explanation": "可以…吗 là cách xin phép lịch sự." },
+     { "context": "Bạn hỏi có được ăn ở đây không, câu trả lời là không. Chọn câu đúng.", "pre": "", "blank": "对不起，这儿不可以吃饭。", "post": "", "options": ["对不起，这儿不可以吃饭。", "对不起，这儿没可以吃饭。", "对不起，这儿不会吃饭。"], "answer": 0, "explanation": "Không được phép dùng 不可以/不能." },
+     { "context": "Nói em biết nấu ăn (kỹ năng). Chọn câu đúng.", "pre": "", "blank": "我会做饭。", "post": "", "options": ["我会做饭。", "我可以做饭。", "我要做饭吗。"], "answer": 0, "explanation": "Kỹ năng học được dùng 会." }
+    ]
+   },
+   {
+    "title": "Cấu trúc 「động từ + 一下」",
+    "errors": [
+     { "wrong": "你一下问。", "why": "đặt 一下 trước động từ.", "right": "你问一下。" },
+     { "wrong": "请休息一下吧一下。", "why": "lặp 一下 do quen nói “một chút” hai lần trong tiếng Việt.", "right": "请休息一下吧。" },
+     { "wrong": "我看一下书一下。", "why": "cùng lỗi lặp trên.", "right": "我看一下书。" }
+    ],
+    "items": [
+     { "context": "“Bạn gọi điện hỏi một chút xem.”", "pre": "你可以打电话问", "blank": "一下", "post": "。", "options": ["一下", "一点儿", "一个"], "answer": 0, "explanation": "一下 đứng SAU động từ, làm câu nhẹ nhàng hơn." },
+     { "context": "“Mời nghỉ một lát.”", "pre": "请休息", "blank": "一下", "post": "。", "options": ["一下", "一点儿", "了"], "answer": 0, "explanation": "请 + động từ + 一下 rất lịch sự." },
+     { "context": "“Cho tôi xem một chút.”", "pre": "给我看", "blank": "一下", "post": "。", "options": ["一下", "一点儿", "一次下"], "answer": 0, "explanation": "看一下 = xem qua một chút." },
+     { "context": "“Bạn thử làm một chút xem.”", "pre": "你做", "blank": "一下", "post": "吧。", "options": ["一下", "一点儿", "一下儿的"], "answer": 0, "explanation": "一下 giảm mức độ yêu cầu, nghe đỡ ra lệnh." },
+     { "context": "Nói về SỐ LƯỢNG ít thì dùng 一点儿, không dùng 一下.", "pre": "我想喝", "blank": "一点儿", "post": "水。", "options": ["一点儿", "一下", "一下儿"], "answer": 0, "explanation": "一点儿 + danh từ (số lượng ít); 一下 + sau động từ (thời gian ngắn)." },
+     { "context": "“Đợi một chút nhé.”", "pre": "请等", "blank": "一下", "post": "。", "options": ["一下", "一点儿", "了一下"], "answer": 0, "explanation": "等一下 = đợi một lát." },
+     { "type": "sort", "context": "Sắp xếp: “Mời bạn nghỉ một chút.”", "words": ["请", "你", "休息", "一下", "。"], "answer": "请你休息一下。", "explanation": "请 + người + động từ + 一下." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn gọi điện hỏi một chút đi.”", "words": ["你", "打", "电话", "问", "一下", "吧", "。"], "answer": "你打电话问一下吧。", "explanation": "Chuỗi động từ + 一下 + 吧." },
+     { "type": "sort", "context": "Sắp xếp: “Đợi một chút nhé.”", "words": ["请", "等", "一下", "。"], "answer": "请等一下。", "explanation": "Câu đề nghị lịch sự." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi muốn uống một chút nước.”", "words": ["我", "想", "喝", "一点儿", "水", "。"], "answer": "我想喝一点儿水。", "explanation": "一点儿 + danh từ." },
+     { "context": "Em muốn nhờ bạn đợi một lát. Chọn câu đúng.", "pre": "", "blank": "请等一下。", "post": "", "options": ["请等一下。", "请一下等。", "请等一点儿。"], "answer": 0, "explanation": "一下 đứng sau động từ." },
+     { "context": "Em muốn xin một chút nước. Chọn câu đúng.", "pre": "", "blank": "我想喝一点儿水。", "post": "", "options": ["我想喝一点儿水。", "我想喝一下水。", "我想一点儿喝水。"], "answer": 0, "explanation": "Số lượng ít dùng 一点儿 + danh từ." },
+     { "context": "Nhờ bạn xem giúp một chút cho lịch sự. Chọn câu đúng.", "pre": "", "blank": "你看一下，好吗？", "post": "", "options": ["你看一下，好吗？", "你一下看，好吗？", "你看一点儿，好吗？"], "answer": 0, "explanation": "动词 + 一下 làm lời nhờ nhẹ nhàng hơn." }
+    ]
+   },
+   {
+    "title": "Câu có hai tân ngữ (1) — 给 / 问",
+    "errors": [
+     { "wrong": "请给一杯牛奶我。", "why": "tiếng Việt “cho một cốc sữa cho tôi”, học sinh để người nhận ở cuối.", "right": "请给我一杯牛奶。" },
+     { "wrong": "白家月给一个苹果安妮。", "why": "cùng lỗi trật tự: người nhận phải đứng TRƯỚC vật.", "right": "白家月给安妮一个苹果。" },
+     { "wrong": "我问一个问题老师。", "why": "đảo người được hỏi xuống sau.", "right": "我问老师一个问题。" }
+    ],
+    "items": [
+     { "context": "“Cho tôi một cốc sữa.”", "pre": "请给", "blank": "我一杯牛奶", "post": "。", "options": ["我一杯牛奶", "一杯牛奶我", "牛奶一杯我"], "answer": 0, "explanation": "给 + NGƯỜI + VẬT (người nhận đứng trước)." },
+     { "context": "“Bạch Gia Nguyệt cho Annie một quả táo.”", "pre": "白家月给", "blank": "安妮一个苹果", "post": "。", "options": ["安妮一个苹果", "一个苹果安妮", "苹果一个安妮"], "answer": 0, "explanation": "Thứ tự cố định: người rồi mới đến vật." },
+     { "context": "“Tôi hỏi cô giáo một câu hỏi.”", "pre": "我问", "blank": "老师一个问题", "post": "。", "options": ["老师一个问题", "一个问题老师", "问题老师一个"], "answer": 0, "explanation": "问 + người + việc/câu hỏi." },
+     { "context": "“Mẹ cho tôi hai mươi tệ.”", "pre": "妈妈给", "blank": "我二十块钱", "post": "。", "options": ["我二十块钱", "二十块钱我", "钱二十块我"], "answer": 0, "explanation": "给 + tôi + số tiền." },
+     { "context": "“Cô giáo cho chúng tôi một quyển sách.”", "pre": "老师给", "blank": "我们一本书", "post": "。", "options": ["我们一本书", "一本书我们", "书一本我们"], "answer": 0, "explanation": "Người nhận (我们) trước, vật (一本书) sau." },
+     { "context": "“Cho tôi xem một chút được không?”", "pre": "给我看", "blank": "一下", "post": "，好吗？", "options": ["一下", "一点儿", "一个"], "answer": 0, "explanation": "给我 + động từ + 一下 (nhờ vả lịch sự)." },
+     { "type": "sort", "context": "Sắp xếp: “Cho tôi một cốc sữa.”", "words": ["请", "给", "我", "一", "杯", "牛奶", "。"], "answer": "请给我一杯牛奶。", "explanation": "给 + người + số lượng + vật." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn ấy cho tôi một quả táo.”", "words": ["她", "给", "我", "一个", "苹果", "。"], "answer": "她给我一个苹果。", "explanation": "Người nhận đứng trước vật." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi hỏi cô giáo một câu.”", "words": ["我", "问", "老师", "一个", "问题", "。"], "answer": "我问老师一个问题。", "explanation": "问 + người + câu hỏi." },
+     { "type": "sort", "context": "Sắp xếp: “Mẹ cho em gái hai mươi tệ.”", "words": ["妈妈", "给", "妹妹", "二十", "块", "钱", "。"], "answer": "妈妈给妹妹二十块钱。", "explanation": "给 + người + số tiền." },
+     { "context": "Gọi đồ uống cho mình. Chọn câu đúng.", "pre": "", "blank": "请给我一杯牛奶。", "post": "", "options": ["请给我一杯牛奶。", "请给一杯牛奶我。", "请我给一杯牛奶。"], "answer": 0, "explanation": "给 + người nhận + vật." },
+     { "context": "Em muốn hỏi cô giáo một câu. Chọn câu đúng.", "pre": "", "blank": "老师，我想问您一个问题。", "post": "", "options": ["老师，我想问您一个问题。", "老师，我想问一个问题您。", "老师，我想一个问题问您。"], "answer": 0, "explanation": "问 + 您 (người) + 一个问题 (việc)." },
+     { "context": "Kể việc mẹ cho em tiền. Chọn câu đúng.", "pre": "", "blank": "妈妈给我二十块钱。", "post": "", "options": ["妈妈给我二十块钱。", "妈妈给二十块钱我。", "妈妈二十块钱给我。"], "answer": 0, "explanation": "Người nhận đứng ngay sau 给." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1v3-bai-14.html": {
+  "points": [
+   {
+    "title": "Trợ từ động thái 「了」(2) — việc đã hoàn thành",
+    "errors": [
+     { "wrong": "我看电影了一个。", "why": "tách 了 khỏi động từ; 了 (động thái) đứng NGAY SAU động từ.", "right": "我看了一个电影。" },
+     { "wrong": "我没买了一个电脑。", "why": "đã dùng 没 thì bỏ 了.", "right": "我没买电脑。" },
+     { "wrong": "昨天我了去学校。", "why": "đặt 了 trước động từ.", "right": "昨天我去学校了。" }
+    ],
+    "items": [
+     { "context": "“Tôi đã xem một bộ phim.”", "pre": "我看", "blank": "了", "post": "一个电影。", "options": ["了", "过", "在"], "answer": 0, "explanation": "了 đứng NGAY SAU động từ, trước tân ngữ có số lượng." },
+     { "context": "“Tôi đã mua một cái máy tính mới.”", "pre": "我买", "blank": "了", "post": "一个新电脑。", "options": ["了", "在", "的"], "answer": 0, "explanation": "V + 了 + số lượng + danh từ." },
+     { "context": "Phủ định: “Tôi không mua máy tính.” (bỏ 了)", "pre": "我", "blank": "没买", "post": "电脑。", "options": ["没买", "没买了", "不买了"], "answer": 0, "explanation": "Dùng 没 thì KHÔNG dùng 了." },
+     { "context": "“Hôm qua tôi đã ăn cơm ở nhà hàng.”", "pre": "昨天我在饭店吃", "blank": "了", "post": "饭。", "options": ["了", "在", "会"], "answer": 0, "explanation": "V + 了 diễn đạt việc đã hoàn thành." },
+     { "context": "“Bạn đã mua gì?”", "pre": "你买", "blank": "了", "post": "什么？", "options": ["了", "吗", "的"], "answer": 0, "explanation": "Hỏi việc đã làm: V + 了 + từ hỏi." },
+     { "context": "“Tôi đã uống hai cốc sữa.”", "pre": "我喝", "blank": "了", "post": "两杯牛奶。", "options": ["了", "过", "着"], "answer": 0, "explanation": "V + 了 + số lượng + vật." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đã xem một bộ phim.”", "words": ["我", "看", "了", "一个", "电影", "。"], "answer": "我看了一个电影。", "explanation": "了 ngay sau động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm qua tôi mua một quyển sách.”", "words": ["昨天", "我", "买", "了", "一", "本", "书", "。"], "answer": "昨天我买了一本书。", "explanation": "Thời gian + chủ ngữ + V + 了 + số lượng." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không mua máy tính.”", "words": ["我", "没", "买", "电脑", "。"], "answer": "我没买电脑。", "explanation": "没 + động từ, bỏ 了." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn đã ăn gì?”", "words": ["你", "吃", "了", "什么", "？"], "answer": "你吃了什么？", "explanation": "V + 了 + 什么." },
+     { "context": "Kể rằng em vừa xem một bộ phim. Chọn câu đúng.", "pre": "", "blank": "我看了一个电影。", "post": "", "options": ["我看了一个电影。", "我看电影了一个。", "我了看一个电影。"], "answer": 0, "explanation": "了 đứng ngay sau động từ 看." },
+     { "context": "Nói em chưa mua máy tính. Chọn câu đúng.", "pre": "", "blank": "我没买电脑。", "post": "", "options": ["我没买电脑。", "我没买了电脑。", "我不买了电脑。"], "answer": 0, "explanation": "没 và 了 không dùng cùng nhau." },
+     { "context": "Hỏi bạn hôm qua đã mua gì. Chọn câu đúng.", "pre": "", "blank": "你昨天买了什么？", "post": "", "options": ["你昨天买了什么？", "你昨天买什么了吗？", "你昨天了买什么？"], "answer": 0, "explanation": "V + 了 + 什么." }
+    ]
+   },
+   {
+    "title": "Từ ly hợp (1) — 睡觉 / 上课 / 下班",
+    "errors": [
+     { "wrong": "我睡觉了两个小时。", "why": "coi 睡觉 là một khối nên nhét 了 ra sau cả từ.", "right": "我睡了两个小时觉。" },
+     { "wrong": "我上课了两次。", "why": "cùng lỗi trên với 上课.", "right": "我上了两次课。" },
+     { "wrong": "他下班了没有下班？", "why": "lặp cả từ ly hợp khi hỏi chính phản.", "right": "他下班了没有？" }
+    ],
+    "items": [
+     { "context": "“Tôi đã ngủ rồi.”", "pre": "我", "blank": "睡觉了", "post": "。", "options": ["睡觉了", "睡了觉了吗", "了睡觉"], "answer": 0, "explanation": "Khi không có số lượng thì 了 đặt cuối câu, giữ nguyên 睡觉." },
+     { "context": "“Tôi đã ngủ hai tiếng.” (có số lượng thì TÁCH từ)", "pre": "我睡", "blank": "了两个小时觉", "post": "。", "options": ["了两个小时觉", "觉了两个小时", "两个小时了觉"], "answer": 0, "explanation": "睡 + 了 + thời lượng + 觉: chen thành phần vào GIỮA từ ly hợp." },
+     { "context": "“Tôi đã học hai tiết.”", "pre": "我上", "blank": "了两节课", "post": "。", "options": ["了两节课", "课了两节", "两节了课"], "answer": 0, "explanation": "上 + 了 + số lượng + 课." },
+     { "context": "“Bạn ấy tan làm chưa?”", "pre": "他", "blank": "下班了没有", "post": "？", "options": ["下班了没有", "下班了没有下班", "没有下班了吗"], "answer": 0, "explanation": "Hỏi chính phản: V + 了 + 没有." },
+     { "context": "“Tôi lên lớp lúc 8 giờ.”", "pre": "我八点", "blank": "上课", "post": "。", "options": ["上课", "上了课", "课上"], "answer": 0, "explanation": "Không có số lượng thì giữ nguyên từ ly hợp." },
+     { "context": "“Hôm qua tôi ngủ rất muộn.”", "pre": "昨天我", "blank": "睡觉睡得很晚", "post": "。", "options": ["睡觉睡得很晚", "睡得很晚觉", "觉睡很晚得"], "answer": 0, "explanation": "Khi cần bổ sung, động từ 睡 được lặp lại." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi ngủ rồi.”", "words": ["我", "睡觉", "了", "。"], "answer": "我睡觉了。", "explanation": "了 cuối câu, từ ly hợp giữ nguyên." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đã ngủ hai tiếng.”", "words": ["我", "睡", "了", "两个", "小时", "觉", "。"], "answer": "我睡了两个小时觉。", "explanation": "Chen thời lượng vào giữa 睡…觉." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay tôi học ba tiết.”", "words": ["今天", "我", "上", "了", "三", "节", "课", "。"], "answer": "今天我上了三节课。", "explanation": "上 + 了 + số lượng + 课." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn ấy tan làm chưa?”", "words": ["他", "下班", "了", "没有", "？"], "answer": "他下班了没有？", "explanation": "V + 了 + 没有 để hỏi." },
+     { "context": "Nói em đã ngủ 8 tiếng. Chọn câu đúng.", "pre": "", "blank": "我睡了八个小时觉。", "post": "", "options": ["我睡了八个小时觉。", "我睡觉了八个小时。", "我八个小时睡了觉。"], "answer": 0, "explanation": "Có số lượng thì tách 睡…觉." },
+     { "context": "Nói đơn giản “em đi ngủ đây”. Chọn câu đúng.", "pre": "", "blank": "我睡觉了。", "post": "", "options": ["我睡觉了。", "我睡了觉。", "我了睡觉。"], "answer": 0, "explanation": "Không có số lượng thì giữ nguyên, 了 ở cuối." },
+     { "context": "Hỏi bạn tan làm chưa. Chọn câu đúng.", "pre": "", "blank": "你下班了没有？", "post": "", "options": ["你下班了没有？", "你下班了没有下班？", "你没有下班了吗？"], "answer": 0, "explanation": "Mẫu hỏi V + 了 + 没有." }
+    ]
+   },
+   {
+    "title": "Phó từ phạm vi 「都」 (đều)",
+    "errors": [
+     { "wrong": "都我们会写了。", "why": "đưa 都 lên đầu câu; 都 phải đứng SAU chủ ngữ.", "right": "我们都会写了。" },
+     { "wrong": "我和朋友去都。", "why": "đẩy 都 xuống cuối như tiếng Việt “đều” có thể đứng sau.", "right": "我和朋友都去。" },
+     { "wrong": "我们都不都去。", "why": "lặp 都 khi phủ định.", "right": "我们都不去。" }
+    ],
+    "items": [
+     { "context": "“Chúng tôi đều biết viết rồi.”", "pre": "我们", "blank": "都", "post": "会写了。", "options": ["都", "也", "还"], "answer": 0, "explanation": "都 đứng sau chủ ngữ, trước động từ/năng nguyện." },
+     { "context": "“Tôi và các bạn tôi đều đi.”", "pre": "我和我的朋友们", "blank": "都", "post": "去。", "options": ["都", "也", "很"], "answer": 0, "explanation": "都 tổng kết các đối tượng đã nêu TRƯỚC nó." },
+     { "context": "“Chúng tôi đều không đi.”", "pre": "我们", "blank": "都不", "post": "去。", "options": ["都不", "不都", "都没不"], "answer": 0, "explanation": "都不 = tất cả đều không (phủ định hoàn toàn)." },
+     { "context": "“Chúng tôi không phải ai cũng đi.” (phủ định một phần)", "pre": "我们", "blank": "不都", "post": "去。", "options": ["不都", "都不", "没都"], "answer": 0, "explanation": "不都 = không phải tất cả; khác hẳn 都不." },
+     { "context": "“Món nào cũng ngon.”", "pre": "这些菜", "blank": "都", "post": "很好吃。", "options": ["都", "也", "太"], "answer": 0, "explanation": "都 đứng trước 很 + tính từ." },
+     { "context": "“Chúng tôi đều là học sinh.”", "pre": "我们", "blank": "都是", "post": "学生。", "options": ["都是", "是都", "都不是"], "answer": 0, "explanation": "都 đứng trước 是." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng tôi đều biết viết rồi.”", "words": ["我们", "都", "会", "写", "了", "。"], "answer": "我们都会写了。", "explanation": "都 trước động từ năng nguyện 会." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi và bạn tôi đều đi siêu thị.”", "words": ["我", "和", "朋友", "都", "去", "超市", "。"], "answer": "我和朋友都去超市。", "explanation": "都 sau cụm chủ ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng tôi đều không bận.”", "words": ["我们", "都", "不", "忙", "。"], "answer": "我们都不忙。", "explanation": "都不 + tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Mấy món này đều rất ngon.”", "words": ["这些", "菜", "都", "很", "好吃", "。"], "answer": "这些菜都很好吃。", "explanation": "都 + 很 + tính từ." },
+     { "context": "Cả lớp đều đi. Chọn câu đúng.", "pre": "", "blank": "我们都去。", "post": "", "options": ["我们都去。", "都我们去。", "我们去都。"], "answer": 0, "explanation": "都 đứng sau chủ ngữ, trước động từ." },
+     { "context": "Không ai trong nhóm đi cả. Chọn câu đúng.", "pre": "", "blank": "我们都不去。", "post": "", "options": ["我们都不去。", "我们不都去。", "我们不去都。"], "answer": 0, "explanation": "都不 = tất cả đều không." },
+     { "context": "Trong nhóm có người đi, có người không. Chọn câu đúng.", "pre": "", "blank": "我们不都去。", "post": "", "options": ["我们不都去。", "我们都不去。", "我们都没去。"], "answer": 0, "explanation": "不都 = không phải tất cả đều đi." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1v3-bai-15.html": {
+  "points": [
+   {
+    "title": "Câu ghép đẳng lập 「……，还/也……」",
+    "errors": [
+     { "wrong": "我喜欢这个，那个也喜欢我。", "why": "lặp lại chủ ngữ sai vị trí khiến câu tối nghĩa.", "right": "我喜欢这个，也喜欢那个。" },
+     { "wrong": "王老师是北京人，李文是北京人也。", "why": "đẩy 也 xuống cuối câu.", "right": "王老师是北京人，李文也是北京人。" },
+     { "wrong": "我买了书，还买书了。", "why": "lặp thừa tân ngữ, câu không tự nhiên.", "right": "我买了书，还买了一个电脑。" }
+    ],
+    "items": [
+     { "context": "“Tôi thích cái này, cũng thích cái kia.”", "pre": "我喜欢这个，", "blank": "也喜欢", "post": "那个。", "options": ["也喜欢", "喜欢也", "也是喜欢"], "answer": 0, "explanation": "也 đứng TRƯỚC động từ ở vế sau." },
+     { "context": "“Cô Vương là người Bắc Kinh, Lý Văn cũng là người Bắc Kinh.”", "pre": "王老师是北京人，李文", "blank": "也是", "post": "北京人。", "options": ["也是", "是也", "也"], "answer": 0, "explanation": "Chủ ngữ mới + 也 + 是." },
+     { "context": "“Tôi mua sách, còn mua thêm một cái máy tính.”", "pre": "我买了书，", "blank": "还", "post": "买了一个电脑。", "options": ["还", "也是", "都"], "answer": 0, "explanation": "还 = thêm nữa, nhấn mạnh việc bổ sung." },
+     { "context": "“Bạn ấy biết nói tiếng Trung, cũng biết viết chữ Hán.”", "pre": "她会说中文，", "blank": "也会", "post": "写汉字。", "options": ["也会", "会也", "都会也"], "answer": 0, "explanation": "也 + 会 + động từ." },
+     { "context": "“Hôm nay tôi đi siêu thị, còn đi hiệu sách nữa.”", "pre": "今天我去了超市，", "blank": "还", "post": "去了书店。", "options": ["还", "也是", "太"], "answer": 0, "explanation": "还 nối thêm hành động thứ hai." },
+     { "context": "“Món này ngon, cũng không đắt.”", "pre": "这个菜很好吃，", "blank": "也", "post": "不贵。", "options": ["也", "还是", "都"], "answer": 0, "explanation": "也 + 不 + tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi thích cái này, cũng thích cái kia.”", "words": ["我", "喜欢", "这个", "，", "也", "喜欢", "那个", "。"], "answer": "我喜欢这个，也喜欢那个。", "explanation": "也 trước động từ vế sau." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn ấy là học sinh, tôi cũng là học sinh.”", "words": ["她", "是", "学生", "，", "我", "也", "是", "学生", "。"], "answer": "她是学生，我也是学生。", "explanation": "Chủ ngữ mới + 也是." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi mua sách, còn mua cả máy tính.”", "words": ["我", "买", "了", "书", "，", "还", "买", "了", "电脑", "。"], "answer": "我买了书，还买了电脑。", "explanation": "还 nối hành động bổ sung." },
+     { "type": "sort", "context": "Sắp xếp: “Món này ngon, cũng rẻ.”", "words": ["这个", "菜", "好吃", "，", "也", "便宜", "。"], "answer": "这个菜好吃，也便宜。", "explanation": "Hai vế cùng chủ ngữ, vế sau dùng 也." },
+     { "context": "Em thích cả hai món đồ. Chọn câu đúng.", "pre": "", "blank": "我喜欢这个，也喜欢那个。", "post": "", "options": ["我喜欢这个，也喜欢那个。", "我喜欢这个，喜欢那个也。", "我喜欢这个，那个也喜欢我。"], "answer": 0, "explanation": "也 đứng trước động từ ở vế sau." },
+     { "context": "Cô giáo và bạn Lý Văn đều là người Bắc Kinh. Chọn câu đúng.", "pre": "", "blank": "王老师是北京人，李文也是北京人。", "post": "", "options": ["王老师是北京人，李文也是北京人。", "王老师是北京人，李文是北京人也。", "王老师也是北京人，李文是北京人也。"], "answer": 0, "explanation": "Chủ ngữ mới + 也 + 是 + danh từ." },
+     { "context": "Hôm nay em đi siêu thị và đi cả hiệu sách. Chọn câu đúng.", "pre": "", "blank": "今天我去了超市，还去了书店。", "post": "", "options": ["今天我去了超市，还去了书店。", "今天我去了超市，去了书店还。", "今天我还去了超市，去了书店。"], "answer": 0, "explanation": "还 đứng đầu vế sau, trước động từ." }
+    ]
+   }
+  ]
+ }
+}

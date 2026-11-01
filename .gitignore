@@ -1,0 +1,14 @@
+node_modules/
+npm-debug.log*
+.env
+.DS_Store
+Thumbs.db
+.claude/
+data/
+
+# Khoa service account cua Google Cloud - tuyet doi khong day len GitHub
+gcloud-key.json
+*-service-account*.json
+
+# Am thanh bai hoc nam tren ten mien phu amthanh.hihanchinese.online (kho git qua nang)
+public/audio/

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="85" rx="27" ry="5" fill="#000" opacity=".15"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M42 75V84M38 85.5L42 84L46 85.5M58 75V84M54 85.5L58 84L62 85.5" stroke="#2b1d3a" stroke-width="6.5"/>
+<path d="M42 75V84M38 85.5L42 84L46 85.5M58 75V84M54 85.5L58 84L62 85.5" stroke="#ffa726" stroke-width="2.5"/>
+</g>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M33 58Q15 53 19 35Q25 43 30 43Q26 31 36 25Q37 40 43 48Z" fill="#fff8ec"/>
+<path d="M27 50Q23 47 22 42" fill="none" stroke="#ead8c0" stroke-width="2.5"/>
+<ellipse cx="50" cy="64" rx="26" ry="19" fill="#fff8ec" stroke="none"/>
+<path d="M24.5 66Q29 82 50 83Q71 82 75.5 66Q67 77 50 77Q33 77 24.5 66Z" fill="#ead8c0" stroke="none"/>
+<ellipse cx="34" cy="55" rx="5" ry="2.6" fill="#fff" stroke="none" transform="rotate(-35 34 55)"/>
+<ellipse cx="50" cy="64" rx="26" ry="19" fill="none"/>
+<path d="M33 60Q44 53 55 62Q51 74 40 72Q32 68 33 60Z" fill="#ead8c0"/>
+<path d="M39 64Q44 66 48 64M38 68Q42 70 46 68" fill="none" stroke-width="2"/>
+<path d="M48 29Q45 17 54 21Q56 11 62 19Q69 13 68 28Z" fill="#e53935"/>
+<path d="M51 21Q52 18 54 19" fill="none" stroke="#ff8a80" stroke-width="2"/>
+<circle cx="58" cy="40" r="16" fill="#fff8ec" stroke="none"/>
+<path d="M73.8 43Q71 55 58 56Q68 52 73.8 43Z" fill="#ead8c0" stroke="none"/>
+<circle cx="58" cy="40" r="16" fill="none"/>
+<path d="M54.5 43L58.5 49.5L62.5 43Z" fill="#ffb300" stroke-width="2"/>
+<path d="M56.5 49.5Q58.5 56 60.5 49.5" fill="#e53935" stroke-width="2"/>
+</g>
+<ellipse cx="51" cy="31" rx="4" ry="2.2" fill="#fff" transform="rotate(-25 51 31)"/>
+<circle cx="52" cy="39" r="3.2" fill="#2b1d3a"/><circle cx="65" cy="39" r="3.2" fill="#2b1d3a"/>
+<circle cx="53.1" cy="37.9" r="1.2" fill="#fff"/><circle cx="66.1" cy="37.9" r="1.2" fill="#fff"/>
+<ellipse cx="47.5" cy="46" rx="3.6" ry="2.2" fill="#ff8fa3" opacity=".8"/><ellipse cx="69.5" cy="46" rx="3.6" ry="2.2" fill="#ff8fa3" opacity=".8"/>
+</svg>

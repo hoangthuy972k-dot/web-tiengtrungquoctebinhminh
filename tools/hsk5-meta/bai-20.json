@@ -1,0 +1,112 @@
+{
+ "zh": "小人书摊",
+ "py": "Xiǎorénshū tān",
+ "vn": "Quầy truyện tranh",
+ "topic": "Unit 7 交流文化 · Ký ức văn hoá &amp; tuổi thơ",
+ "vocabCount": 38,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "动词 + 得 / 不 + 起",
+   "explain": "起 ở đây là bổ ngữ khả năng: “Động từ + 得 / 不 + 起” biểu thị về mặt CHỦ QUAN có (hoặc không có) năng lực, điều kiện để thực hiện — hoặc để CHỊU ĐỰNG — một động tác. Hay gặp nhất là chuyện tiền bạc: 买得起 / 买不起 (mua nổi / không mua nổi), 吃不起, 住不起; còn có 经得起 (chịu được thử thách), 看不起 (coi thường). Dạng phủ định 不起 dùng nhiều hơn.",
+   "rule": "① V + 得 + <strong style=\"color:var(--sky-d)\">起</strong> (có khả năng, đủ điều kiện)　② V + 不 + <strong style=\"color:var(--sky-d)\">起</strong> (không đủ khả năng, điều kiện)",
+   "examples": [
+    {
+     "zh": "……这对于那些想看又买不起书的人来说，毫无疑问是件大好事。",
+     "py": "…… zhè duìyú nàxiē xiǎng kàn yòu mǎi bu qǐ shū de rén lái shuō, háowú yíwèn shì jiàn dà hǎoshì.",
+     "vn": "… với những người muốn đọc mà không mua nổi sách, đây không nghi ngờ gì là một điều cực kỳ tốt."
+    },
+    {
+     "zh": "古时候，有个十分好学的年轻人，但他家里很穷，买不起灯，一到晚上就不能读书。",
+     "py": "Gǔ shíhou, yǒu ge shífēn hàoxué de niánqīng rén, dàn tā jiā li hěn qióng, mǎi bu qǐ dēng, yí dào wǎnshang jiù bù néng dú shū.",
+     "vn": "Ngày xưa có một chàng trai rất ham học, nhưng nhà anh rất nghèo, không mua nổi đèn, cứ tối đến là không đọc sách được."
+    },
+    {
+     "zh": "只有经得起困难和时间考验的朋友才算是真正的朋友。",
+     "py": "Zhǐyǒu jīng de qǐ kùnnan hé shíjiān kǎoyàn de péngyou cái suàn shì zhēnzhèng de péngyou.",
+     "vn": "Chỉ những người bạn chịu được thử thách của khó khăn và thời gian mới được coi là bạn thật sự."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这本书太贵了，我不买起。",
+     "why": "起 là BỔ NGỮ khả năng, 不 phải chen giữa động từ và 起: V + 不 + 起. Không nói 不买起.",
+     "right": "这本书太贵了，我买不起。"
+    },
+    {
+     "wrong": "商店里的面包卖完了，我买不起。",
+     "why": "买不起 = không đủ TIỀN mua. Hết hàng nên không mua được thì dùng 买不到.",
+     "right": "商店里的面包卖完了，我买不到。"
+    }
+   ]
+  },
+  {
+   "point": "支",
+   "explain": "支 có hai cách dùng. ① ĐỘNG TỪ: dùng một vật chống, đỡ cho vật khác không rơi, không đổ: 支着脑袋 (chống đầu), 用砖头支着木头板子 (kê gạch đỡ ván gỗ); hay đi với 着 hoặc 起来. ② LƯỢNG TỪ: dùng cho tác phẩm âm nhạc (一支曲子, 一支歌), đội ngũ (一支军队, 一支球队) và vật hình que dài (一支笔, 一支枪, 一支烟).",
+   "rule": "① (用 A) + <strong style=\"color:var(--sky-d)\">支</strong> + 着 / 起来 + B　② 数词 + <strong style=\"color:var(--sky-d)\">支</strong> + 曲子 / 军队 / 笔 / 枪",
+   "examples": [
+    {
+     "zh": "他的两只手放在桌上，支着脑袋，正在想事情。",
+     "py": "Tā de liǎng zhī shǒu fàng zài zhuō shang, zhīzhe nǎodai, zhèngzài xiǎng shìqing.",
+     "vn": "Anh ấy đặt hai tay lên bàn, chống đầu, đang nghĩ ngợi."
+    },
+    {
+     "zh": "……里面用几块砖头支着粗糙的木头板子供人们坐着看书。",
+     "py": "…… lǐmiàn yòng jǐ kuài zhuāntóu zhīzhe cūcāo de mùtou bǎnzi gōng rénmen zuòzhe kàn shū.",
+     "vn": "… bên trong kê mấy viên gạch đỡ những tấm ván gỗ thô ráp cho mọi người ngồi đọc sách."
+    },
+    {
+     "zh": "给他十支枪，他就能拉起一支军队来。",
+     "py": "Gěi tā shí zhī qiāng, tā jiù néng lā qǐ yì zhī jūnduì lai.",
+     "vn": "Cho anh ta mười khẩu súng, anh ta có thể dựng lên cả một đội quân."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我买了两支书。",
+     "why": "支 dùng cho vật hình que dài (bút, súng, thuốc lá), bản nhạc, đội ngũ. Sách dùng 本 / 册.",
+     "right": "我买了两本书。"
+    },
+    {
+     "wrong": "桌子要倒了，快用砖头支。",
+     "why": "支 (động từ) thường cần tân ngữ hoặc bổ ngữ đi kèm: 支着 / 支起来 / 把它支住.",
+     "right": "桌子要倒了，快用砖头把它支起来。"
+    }
+   ]
+  },
+  {
+   "point": "凭",
+   "explain": "凭 ① ĐỘNG TỪ: dựa vào, nhờ vào (依靠): 全凭信用, 光凭经验. ② GIỚI TỪ: căn cứ vào, bằng — cấu trúc thường gặp “凭 + tân ngữ + động từ”: 凭票进站 (vào ga bằng vé), 凭身份证领取. 凭什么 + V? là câu chất vấn “dựa vào đâu mà…”, giọng không hài lòng.",
+   "rule": "① (全 / 光) <strong style=\"color:var(--sky-d)\">凭</strong> + N　② <strong style=\"color:var(--sky-d)\">凭</strong> + N + V　|　<strong style=\"color:var(--sky-d)\">凭</strong>什么 + V？",
+   "examples": [
+    {
+     "zh": "干工作不能光凭经验，还要有创新。",
+     "py": "Gàn gōngzuò bù néng guāng píng jīngyàn, hái yào yǒu chuàngxīn.",
+     "vn": "Làm việc không thể chỉ dựa vào kinh nghiệm, còn phải có sự đổi mới."
+    },
+    {
+     "zh": "印象中似乎没有什么押金，全凭信用。",
+     "py": "Yìnxiàng zhōng sìhū méiyǒu shénme yājīn, quán píng xìnyòng.",
+     "vn": "Trong ấn tượng của tôi hình như chẳng có tiền đặt cọc gì cả, hoàn toàn dựa vào chữ tín."
+    },
+    {
+     "zh": "请旅客们准备好车票，凭票进站。",
+     "py": "Qǐng lǚkèmen zhǔnbèi hǎo chēpiào, píng piào jìn zhàn.",
+     "vn": "Mời hành khách chuẩn bị sẵn vé, vào ga bằng vé."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "请旅客们进站凭票。",
+     "why": "凭 là giới từ: cụm 凭 + tân ngữ đứng TRƯỚC động từ chính.",
+     "right": "请旅客们凭票进站。"
+    },
+    {
+     "wrong": "你凭什么怀疑我偷了东西。",
+     "why": "凭什么 là câu hỏi chất vấn, cuối câu phải dùng dấu hỏi (？), đọc với giọng hỏi vặn.",
+     "right": "你凭什么怀疑我偷了东西？"
+    }
+   ]
+  }
+ ]
+}

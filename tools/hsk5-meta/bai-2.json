@@ -1,0 +1,112 @@
+{
+ "zh": "留串钥匙给父母",
+ "py": "Liú chuàn yàoshi gěi fùmǔ",
+ "vn": "Để chìa khoá cho bố mẹ",
+ "topic": "Unit 1 了解生活 · Tình cảm gia đình &amp; tình yêu của cha mẹ",
+ "vocabCount": 39,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "以来",
+   "explain": "以来 là danh từ, đứng SAU một mốc thời gian hoặc một sự việc: “……以来” chỉ khoảng thời gian tính từ một thời điểm trong quá khứ kéo dài đến hiện tại. Vế sau thường có 一直, 越来越, 很少… để nói tình hình suốt quãng thời gian đó.",
+   "rule": "(自从) + mốc thời gian / sự việc + <strong style=\"color:var(--sky-d)\">以来</strong>，Chủ ngữ + (一直) + ……",
+   "examples": [
+    {
+     "zh": "改革开放以来，中国发生了巨大的变化。",
+     "py": "Gǎigé kāifàng yǐlái, Zhōngguó fāshēngle jùdà de biànhuà.",
+     "vn": "Từ khi cải cách mở cửa đến nay, Trung Quốc đã có những thay đổi to lớn."
+    },
+    {
+     "zh": "因此长年以来，父母很少离开老屋。",
+     "py": "Yīncǐ chángnián yǐlái, fùmǔ hěn shǎo líkāi lǎowū.",
+     "vn": "Vì thế bao năm nay, bố mẹ rất ít khi rời ngôi nhà cũ."
+    },
+    {
+     "zh": "一直以来，“80后”这个词儿都含有年轻的味道。",
+     "py": "Yìzhí yǐlái, “bālínghòu” zhège cír dōu hányǒu niánqīng de wèidao.",
+     "vn": "Từ trước đến nay, từ “thế hệ 8x” luôn mang hơi hướng trẻ trung."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "以来毕业，他一直在北京工作。",
+     "why": "以来 phải đứng SAU mốc thời gian / sự việc — ngược với trật tự “từ khi…” của tiếng Việt.",
+     "right": "毕业以来，他一直在北京工作。"
+    },
+    {
+     "wrong": "来中国以来，我明年要去上海旅行。",
+     "why": "以来 chỉ quãng thời gian ĐÃ QUA kéo dài tới nay — vế sau không nói về kế hoạch tương lai.",
+     "right": "来中国以来，我去过很多地方旅行。"
+    }
+   ]
+  },
+  {
+   "point": "临",
+   "explain": "临 là động từ, nghĩa là sát gần, hướng ra (临街: sát mặt đường, 临江: bên sông). 临 còn làm giới từ: “临……(时/前)” chỉ thời điểm NGAY TRƯỚC khi một hành động sắp xảy ra.",
+   "rule": "① <strong style=\"color:var(--sky-d)\">临</strong> + nơi chốn (临街 / 临江)　② <strong style=\"color:var(--sky-d)\">临</strong> + Động từ + (时 / 的时候 / 前)",
+   "examples": [
+    {
+     "zh": "我想买一套不临街的房子，这样不会太吵。",
+     "py": "Wǒ xiǎng mǎi yí tào bù lín jiē de fángzi, zhèyàng bú huì tài chǎo.",
+     "vn": "Tôi muốn mua một căn nhà không sát mặt đường, như vậy sẽ không quá ồn."
+    },
+    {
+     "zh": "这是我临离开北京的时候买的。",
+     "py": "Zhè shì wǒ lín líkāi Běijīng de shíhou mǎi de.",
+     "vn": "Cái này tôi mua ngay trước lúc rời Bắc Kinh."
+    },
+    {
+     "zh": "临走那天，父亲从老家赶来送我们。",
+     "py": "Lín zǒu nà tiān, fùqīn cóng lǎojiā gǎnlái sòng wǒmen.",
+     "vn": "Hôm sắp đi, bố từ quê vội vã lên tiễn chúng tôi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我临走以后给你打电话。",
+     "why": "临 chỉ thời điểm NGAY TRƯỚC khi làm việc gì, không đi với 以后.",
+     "right": "我临走前给你打电话。"
+    },
+    {
+     "wrong": "临明天考试，我很紧张。",
+     "why": "临 đi với ĐỘNG TỪ (临考试), không đi với từ chỉ thời gian như 明天.",
+     "right": "临考试前，我很紧张。"
+    }
+   ]
+  },
+  {
+   "point": "立刻",
+   "explain": "立刻 là phó từ: “立刻 + động từ” nghĩa là ngay lập tức, nhấn mạnh một động tác xảy ra liền ngay sau động tác trước, không có khoảng cách thời gian.",
+   "rule": "Việc 1，Chủ ngữ + <strong style=\"color:var(--sky-d)\">立刻</strong> + Động từ　|　一……就 + <strong style=\"color:var(--sky-d)\">立刻</strong> + Động từ",
+   "examples": [
+    {
+     "zh": "上了楼，开门的竟是微笑着的父母，温暖的气息立刻扑面而来……",
+     "py": "Shàngle lóu, kāi mén de jìng shì wēixiàozhe de fùmǔ, wēnnuǎn de qìxī lìkè pū miàn ér lái……",
+     "vn": "Lên đến nhà, người ra mở cửa lại là bố mẹ đang mỉm cười, hơi ấm lập tức ùa vào mặt…"
+    },
+    {
+     "zh": "原来父母要我留下串钥匙，只是为了让我们回来时，能立刻感受到家的温暖！",
+     "py": "Yuánlái fùmǔ yào wǒ liúxià chuàn yàoshi, zhǐshì wèile ràng wǒmen huílai shí, néng lìkè gǎnshòu dào jiā de wēnnuǎn!",
+     "vn": "Hoá ra bố mẹ bảo tôi để lại chùm chìa khoá chỉ là để khi chúng tôi trở về, có thể lập tức cảm nhận hơi ấm gia đình!"
+    },
+    {
+     "zh": "那两只羊一见到青草，就立刻去吃草了，哪还有心思打架呢？",
+     "py": "Nà liǎng zhī yáng yí jiàndào qīngcǎo, jiù lìkè qù chī cǎo le, nǎ hái yǒu xīnsi dǎjià ne?",
+     "vn": "Hai con dê ấy vừa thấy cỏ non là lập tức đi ăn cỏ, còn đâu tâm trí mà đánh nhau?"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他听到这个消息，立刻他哭了。",
+     "why": "立刻 là phó từ, phải đứng SAU chủ ngữ, TRƯỚC động từ.",
+     "right": "他听到这个消息，立刻哭了。"
+    },
+    {
+     "wrong": "只有一个星期了，春节立刻就要到了。",
+     "why": "Việc SẮP xảy ra trong tương lai gần dùng 马上就要……了; 立刻 chỉ phản ứng tức thì sau một việc.",
+     "right": "只有一个星期了，春节马上就要到了。"
+    }
+   ]
+  }
+ ]
+}

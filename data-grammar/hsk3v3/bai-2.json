@@ -1,0 +1,571 @@
+{
+ "/lessons/hsk3v3-bai-2.html": {
+  "points": [
+   {
+    "title": "Câu ghép đẳng lập 「又……又……」 — vừa… vừa…",
+    "errors": [
+     {
+      "wrong": "这个饭馆的菜又很便宜又很好吃。",
+      "why": "sau 又 dùng thẳng tính từ, không thêm 很 (tiếng Việt “vừa rất rẻ vừa rất ngon” không tự nhiên, tiếng Trung thì sai).",
+      "right": "这个饭馆的菜又便宜又好吃。"
+     },
+     {
+      "wrong": "那个女孩儿又高和漂亮。",
+      "why": "和 không nối hai tính từ làm vị ngữ; “vừa… vừa…” phải lặp lại 又 trước mỗi tính từ.",
+      "right": "那个女孩儿又高又漂亮。"
+     },
+     {
+      "wrong": "这个菜又便宜又不好吃。",
+      "why": "hai đặc điểm của 又……又…… phải cùng chiều (cùng khen hoặc cùng chê); một khen một chê thì dùng 虽然……但是…… (ôn HSK2 Bài 8).",
+      "right": "这个菜虽然便宜，但是不好吃。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (改写句子): “Nhà mới của anh ấy vừa rộng vừa sạch sẽ.” (干净 gānjìng – sạch sẽ)",
+      "pre": "他的新家",
+      "blank": "又大又干净",
+      "post": "。",
+      "options": [
+       "又大又干净",
+       "又很大又很干净",
+       "又大和干净"
+      ],
+      "answer": 0,
+      "explanation": "Gộp “很大，也很干净” thành 又大又干净 — bỏ 很."
+     },
+     {
+      "context": "Sách (改写句子): “Anh ấy viết chữ Hán vừa nhanh vừa đẹp.”",
+      "pre": "他写汉字写得",
+      "blank": "又快又漂亮",
+      "post": "。",
+      "options": [
+       "又快又漂亮",
+       "又快也漂亮",
+       "很快又漂亮"
+      ],
+      "answer": 0,
+      "explanation": "又……又…… làm bổ ngữ trạng thái sau 得 (ôn HSK2 Bài 7)."
+     },
+     {
+      "context": "Sách (改写句子): “Đồ trong siêu thị này vừa nhiều vừa rẻ.”",
+      "pre": "这个超市里的东西",
+      "blank": "又多又便宜",
+      "post": "。",
+      "options": [
+       "又多又便宜",
+       "又多和便宜",
+       "又很多又很便宜"
+      ],
+      "answer": 0,
+      "explanation": "Gộp “很多，也很便宜” thành 又多又便宜."
+     },
+     {
+      "context": "“Sau chuyến bay dài như vậy, em thực sự vừa đói vừa khát.”",
+      "pre": "飞了这么远，现在还真是",
+      "blank": "又饿又渴",
+      "post": "。",
+      "options": [
+       "又饿又渴",
+       "又饿和渴",
+       "很饿又渴"
+      ],
+      "answer": 0,
+      "explanation": "Mỗi tính từ đều có 又 đứng trước."
+     },
+     {
+      "context": "“Lúc sắp thi vừa bận vừa mệt.” (快要 – HSK2 Bài 10; 累 – HSK2 Bài 3)",
+      "pre": "快要考试的时候",
+      "blank": "又忙又累",
+      "post": "，没时间出去吃饭。",
+      "options": [
+       "又忙又累",
+       "又忙也累",
+       "忙又又累"
+      ],
+      "answer": 0,
+      "explanation": "又忙又累 — hai đặc điểm cùng chiều (đều vất vả)."
+     },
+     {
+      "context": "“Cái túi này vừa đẹp vừa rẻ, tôi muốn mua một cái.” (包 – HSK2 Bài 14)",
+      "pre": "这个包",
+      "blank": "又好看又便宜",
+      "post": "，我想买一个。",
+      "options": [
+       "又好看又便宜",
+       "好看又又便宜",
+       "又好看和便宜"
+      ],
+      "answer": 0,
+      "explanation": "又 + 好看 + 又 + 便宜."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个饭馆的菜又很便宜又很好吃。",
+      "isCorrect": false,
+      "correctVersion": "这个饭馆的菜又便宜又好吃。",
+      "explanation": "Sau 又 không thêm 很."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "那个女孩儿又高又漂亮。",
+      "isCorrect": true,
+      "explanation": "Đúng: 又 + 高 + 又 + 漂亮, hai đặc điểm cùng là lời khen."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bây giờ tôi vừa đói vừa khát.”",
+      "words": [
+       "我",
+       "现在",
+       "又",
+       "饿",
+       "又",
+       "渴",
+       "。"
+      ],
+      "answer": "我现在又饿又渴。",
+      "explanation": "Thời gian 现在 đứng sau chủ ngữ, trước 又."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đồ ăn ở đây vừa rẻ vừa ngon.”",
+      "words": [
+       "这里",
+       "的",
+       "饭菜",
+       "又",
+       "便宜",
+       "又",
+       "好吃",
+       "。"
+      ],
+      "answer": "这里的饭菜又便宜又好吃。",
+      "explanation": "这里的饭菜 làm chủ ngữ; 这里 (HSK1 Bài 12)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô gái kia vừa cao vừa xinh.”",
+      "words": [
+       "那个",
+       "女孩儿",
+       "又",
+       "高",
+       "又",
+       "漂亮",
+       "。"
+      ],
+      "answer": "那个女孩儿又高又漂亮。",
+      "explanation": "又高又漂亮; 女孩儿 (HSK2 Bài 14)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy viết chữ Hán vừa nhanh vừa đẹp.”",
+      "words": [
+       "他",
+       "写",
+       "汉字",
+       "写",
+       "得",
+       "又",
+       "快",
+       "又",
+       "漂亮",
+       "。"
+      ],
+      "answer": "他写汉字写得又快又漂亮。",
+      "explanation": "Lặp động từ 写 khi có tân ngữ + 得 (ôn HSK2 Bài 7)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 又……又…….",
+      "promptLang": "vi",
+      "prompt": "Hôm nay tôi vừa bận vừa mệt.",
+      "answer": "我今天又忙又累。",
+      "answerPy": "Wǒ jīntiān yòu máng yòu lèi.",
+      "explanation": "Thời gian 今天 đứng sau chủ ngữ; 又忙又累 — không thêm 很."
+     }
+    ]
+   },
+   {
+    "title": "Đại từ nghi vấn không dùng để hỏi (2) — chỉ “bất kỳ”, đi với 都",
+    "errors": [
+     {
+      "wrong": "哪个菜好吃。",
+      "why": "thiếu 都 thì câu thành câu hỏi “món nào ngon?”; muốn nói “món nào cũng ngon” phải có 都.",
+      "right": "哪个菜都好吃。"
+     },
+     {
+      "wrong": "我都什么菜喜欢吃。",
+      "why": "tiếng Việt “món gì tôi cũng thích” dễ đặt 都 sai chỗ; 都 đứng SAU cụm đại từ nghi vấn (什么菜), TRƯỚC động từ.",
+      "right": "我什么菜都喜欢吃。"
+     },
+     {
+      "wrong": "今天我什么不想吃。",
+      "why": "ý phủ định “không … gì cả” vẫn cần 都 (hoặc 也): 什么都不…",
+      "right": "今天我什么都不想吃。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (改写句子, dùng 什么): “Món Trung Quốc hay món nước ngoài mình đều thích — món gì mình cũng thích ăn.”",
+      "pre": "我",
+      "blank": "什么菜都喜欢吃",
+      "post": "。",
+      "options": [
+       "什么菜都喜欢吃",
+       "都什么菜喜欢吃",
+       "什么菜喜欢吃都"
+      ],
+      "answer": 0,
+      "explanation": "什么菜 + 都 + 喜欢吃."
+     },
+     {
+      "context": "Sách (改写句子, dùng 谁): “Tiểu Lý nấu ăn rất giỏi, ai cũng thích ăn cơm anh ấy nấu.”",
+      "pre": "小李很会做饭，",
+      "blank": "谁都喜欢吃",
+      "post": "他做的饭。",
+      "options": [
+       "谁都喜欢吃",
+       "都谁喜欢吃",
+       "谁喜欢吃都"
+      ],
+      "answer": 0,
+      "explanation": "谁 = bất kỳ ai; 谁 + 都 + V."
+     },
+     {
+      "context": "Sách (改写句子, dùng 怎么): “Nhà hàng không xa lắm, chúng ta đi cách nào cũng được.”",
+      "pre": "饭馆不太远，我们",
+      "blank": "怎么去都可以",
+      "post": "。",
+      "options": [
+       "怎么去都可以",
+       "都怎么去可以",
+       "怎么都去可以"
+      ],
+      "answer": 0,
+      "explanation": "怎么去 = đi bằng cách nào (bất kỳ) + 都可以; thay cho “打车、坐公交车、走路去都可以”."
+     },
+     {
+      "context": "“Món nào cũng ngon.”",
+      "pre": "",
+      "blank": "哪个菜都",
+      "post": "好吃。",
+      "options": [
+       "哪个菜都",
+       "哪个菜",
+       "都哪个菜"
+      ],
+      "answer": 0,
+      "explanation": "哪个菜 + 都 + 好吃; thiếu 都 sẽ thành câu hỏi."
+     },
+     {
+      "context": "“Chuyến du lịch lần này, đi đâu em cũng được.” (旅游 – HSK2 Bài 1)",
+      "pre": "这次旅游，我",
+      "blank": "去哪儿都可以",
+      "post": "。",
+      "options": [
+       "去哪儿都可以",
+       "都去哪儿可以",
+       "去哪儿可以都"
+      ],
+      "answer": 0,
+      "explanation": "去哪儿 + 都可以."
+     },
+     {
+      "context": "“Hôm nay tôi không muốn ăn gì cả.”",
+      "pre": "今天我",
+      "blank": "什么都不想吃",
+      "post": "。",
+      "options": [
+       "什么都不想吃",
+       "什么不想吃",
+       "不想吃都什么"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định: 什么 + 都 + 不 + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我都什么菜喜欢吃。",
+      "isCorrect": false,
+      "correctVersion": "我什么菜都喜欢吃。",
+      "explanation": "都 phải đứng sau 什么菜."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我下午有时间，你想什么时候来都没问题。",
+      "isCorrect": true,
+      "explanation": "Đúng: 什么时候 = bất kỳ lúc nào, hô ứng với 都."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Món nào cũng ngon.”",
+      "words": [
+       "哪个",
+       "菜",
+       "都",
+       "好吃",
+       "。"
+      ],
+      "answer": "哪个菜都好吃。",
+      "explanation": "哪个菜 + 都 + 好吃."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ai cũng thích ăn cơm Tiểu Lý nấu.”",
+      "words": [
+       "谁",
+       "都",
+       "喜欢",
+       "吃",
+       "小李",
+       "做",
+       "的",
+       "饭",
+       "。"
+      ],
+      "answer": "谁都喜欢吃小李做的饭。",
+      "explanation": "谁都 + V; 小李做的饭 — cụm chủ vị làm định ngữ (ôn HSK2 Bài 2)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đi đâu tôi cũng được.”",
+      "words": [
+       "我",
+       "去",
+       "哪儿",
+       "都",
+       "可以",
+       "。"
+      ],
+      "answer": "我去哪儿都可以。",
+      "explanation": "去哪儿 + 都可以."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Không có gì ngon bằng cơm mẹ nấu.”",
+      "words": [
+       "什么",
+       "都",
+       "没有",
+       "妈妈",
+       "做",
+       "的",
+       "饭",
+       "好吃",
+       "。"
+      ],
+      "answer": "什么都没有妈妈做的饭好吃。",
+      "explanation": "什么都 + câu so sánh 没有 (ôn HSK2 Bài 9)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 什么……都…….",
+      "promptLang": "vi",
+      "prompt": "Em ăn gì cũng được, chị gọi món đi.",
+      "answer": "我吃什么都可以，你点吧。",
+      "answerPy": "Wǒ chī shénme dōu kěyǐ, nǐ diǎn ba.",
+      "explanation": "吃什么 + 都可以; 点 — gọi món (HSK2 Bài 8)."
+     }
+    ]
+   },
+   {
+    "title": "Đại từ nghi vấn không dùng để hỏi (3) — hai đại từ hô ứng 「……什么，就……什么」",
+    "errors": [
+     {
+      "wrong": "你想吃什么就点那个。",
+      "why": "tiếng Việt “gì … nấy/đó” dễ dịch vế sau thành 那个; tiếng Trung phải lặp lại CÙNG đại từ nghi vấn: 什么……什么.",
+      "right": "你想吃什么就点什么。"
+     },
+     {
+      "wrong": "你想去哪儿，就我们去哪儿。",
+      "why": "hai vế có chủ ngữ khác nhau (你 / 我们) thì chủ ngữ thứ hai đặt TRƯỚC 就.",
+      "right": "你想去哪儿，我们就去哪儿。"
+     },
+     {
+      "wrong": "你想吃什么点什么。",
+      "why": "thiếu 就 nối hai vế; 就 là cầu nối bắt buộc trong cấu trúc này.",
+      "right": "你想吃什么就点什么。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成对话): A：这是菜单，我们点什么？ B: “Em muốn ăn gì thì gọi món đó.”",
+      "pre": "",
+      "blank": "你想吃什么就点什么",
+      "post": "。",
+      "options": [
+       "你想吃什么就点什么",
+       "你想吃什么就点那个",
+       "你想吃什么点就什么"
+      ],
+      "answer": 0,
+      "explanation": "Hai 什么 hô ứng, cùng chỉ một món."
+     },
+     {
+      "context": "Sách (完成对话): A：我们怎么去电影院？ B: “Bạn muốn đi bằng cách nào thì chúng ta đi cách đó.”",
+      "pre": "",
+      "blank": "你想怎么去，我们就怎么去",
+      "post": "。",
+      "options": [
+       "你想怎么去，我们就怎么去",
+       "你想怎么去，就我们怎么去",
+       "你想怎么去，我们就那样去"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ khác nhau → 我们 đứng trước 就; lặp lại 怎么."
+     },
+     {
+      "context": "Sách (完成对话): A：我什么时候去找你？ B: “Lúc nào bạn có thời gian thì lúc đó đến tìm mình.”",
+      "pre": "",
+      "blank": "你什么时候有时间，就什么时候来",
+      "post": "找我吧。",
+      "options": [
+       "你什么时候有时间，就什么时候来",
+       "你什么时候有时间，就那时候来",
+       "你有时间什么时候，就来什么时候"
+      ],
+      "answer": 0,
+      "explanation": "Cùng chủ ngữ 你 → vế sau lược chủ ngữ; 什么时候……什么时候."
+     },
+     {
+      "context": "“Bạn thấy cái nào đẹp thì mua cái đó.”",
+      "pre": "你觉得",
+      "blank": "哪个好看就买哪个",
+      "post": "。",
+      "options": [
+       "哪个好看就买哪个",
+       "哪个好看就买这个",
+       "哪个好看买就哪个"
+      ],
+      "answer": 0,
+      "explanation": "哪个……哪个; 就 đứng trước động từ vế sau."
+     },
+     {
+      "context": "“Bạn muốn đi đâu thì chúng ta đi đó.”",
+      "pre": "你想去哪儿，",
+      "blank": "我们就去哪儿",
+      "post": "。",
+      "options": [
+       "我们就去哪儿",
+       "就我们去哪儿",
+       "我们去就哪儿"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ thứ hai (我们) + 就 + V + 哪儿."
+     },
+     {
+      "context": "“Bạn muốn ăn bao nhiêu thì gọi bấy nhiêu.”",
+      "pre": "你想吃多少",
+      "blank": "就点多少",
+      "post": "。",
+      "options": [
+       "就点多少",
+       "就点很多",
+       "点就多少"
+      ],
+      "answer": 0,
+      "explanation": "多少 cũng là đại từ nghi vấn: 多少……多少."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你想去哪儿，就我们去哪儿。",
+      "isCorrect": false,
+      "correctVersion": "你想去哪儿，我们就去哪儿。",
+      "explanation": "Chủ ngữ 我们 phải đứng trước 就."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你们想吃什么就点什么。",
+      "isCorrect": true,
+      "explanation": "Đúng: cùng chủ ngữ 你们 nên vế sau lược chủ ngữ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Các em muốn ăn gì thì gọi món đó.”",
+      "words": [
+       "你们",
+       "想",
+       "吃",
+       "什么",
+       "就",
+       "点",
+       "什么",
+       "。"
+      ],
+      "answer": "你们想吃什么就点什么。",
+      "explanation": "什么……就……什么."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn thấy cái nào đẹp thì mua cái đó.”",
+      "words": [
+       "你",
+       "觉得",
+       "哪个",
+       "好看",
+       "就",
+       "买",
+       "哪个",
+       "。"
+      ],
+      "answer": "你觉得哪个好看就买哪个。",
+      "explanation": "哪个……就……哪个."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn muốn đi đâu thì chúng ta đi đó.”",
+      "words": [
+       "你",
+       "想",
+       "去",
+       "哪儿",
+       "，",
+       "我们",
+       "就",
+       "去",
+       "哪儿",
+       "。"
+      ],
+      "answer": "你想去哪儿，我们就去哪儿。",
+      "explanation": "Chủ ngữ khác nhau: 我们 + 就."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Lúc nào bạn có thời gian thì lúc đó đến nhé.”",
+      "words": [
+       "你",
+       "什么时候",
+       "有",
+       "时间",
+       "，",
+       "就",
+       "什么时候",
+       "来",
+       "吧",
+       "。"
+      ],
+      "answer": "你什么时候有时间，就什么时候来吧。",
+      "explanation": "Cùng chủ ngữ 你 → vế sau không lặp lại 你."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng hai đại từ nghi vấn hô ứng.",
+      "promptLang": "vi",
+      "prompt": "Bạn muốn uống gì thì gọi đồ đó, đừng khách sáo.",
+      "answer": "你想喝什么就点什么，别客气。",
+      "answerPy": "Nǐ xiǎng hē shénme jiù diǎn shénme, bié kèqi.",
+      "explanation": "什么……就……什么; 别客气 — từ mới bài này (别 – HSK2 Bài 2)."
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "zh": "抽象艺术美不美？",
+ "py": "Chōuxiàng yìshù měi bu měi?",
+ "vn": "Nghệ thuật trừu tượng đẹp hay xấu?",
+ "topic": "Unit 6 修身养性 · Nghệ thuật trừu tượng &amp; cách não bộ cảm nhận cái đẹp",
+ "vocabCount": 40,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "极其",
+   "explain": "极其 là phó từ, nghĩa như 非常 (vô cùng, hết sức), thường dùng trong VĂN VIẾT. 极其 chỉ bổ nghĩa cho tính từ (hoặc động từ tâm lý) HAI âm tiết trở lên — không đứng trước từ một âm tiết như 好, 丑, 美.",
+   "rule": "<strong style=\"color:var(--sky-d)\">极其</strong> + tính từ / động từ hai âm tiết trở lên　(极其重要 · 极其少见 · 极其神秘 · 极其欣赏)",
+   "examples": [
+    {
+     "zh": "在中国，餐桌上放一把刀是极其少见的现象。",
+     "py": "Zài Zhōngguó, cānzhuō shang fàng yì bǎ dāo shì jíqí shǎojiàn de xiànxiàng.",
+     "vn": "Ở Trung Quốc, đặt một con dao trên bàn ăn là hiện tượng cực kỳ hiếm gặp."
+    },
+    {
+     "zh": "每天说“太糟糕了”“太讨厌了”“真倒霉”的人，遇到的困难也格外多，运气也显得极其糟糕。",
+     "py": "Měi tiān shuō “tài zāogāo le” “tài tǎoyàn le” “zhēn dǎoméi” de rén, yùdào de kùnnan yě géwài duō, yùnqi yě xiǎnde jíqí zāogāo.",
+     "vn": "Người ngày nào cũng nói \"tệ quá\", \"ghét quá\", \"xui thật\" thì gặp khó khăn cũng đặc biệt nhiều, vận may cũng có vẻ vô cùng tệ."
+    },
+    {
+     "zh": "抽象派画家的作品中经常见到好像随便洒上颜料而形成的画作，在有人看来极其神秘甚至丑陋。",
+     "py": "Chōuxiàngpài huàjiā de zuòpǐn zhōng jīngcháng jiàndào hǎoxiàng suíbiàn sǎshàng yánliào ér xíngchéng de huàzuò, zài yǒu rén kànlái jíqí shénmì shènzhì chǒulòu.",
+     "vn": "Trong tác phẩm của hoạ sĩ trường phái trừu tượng thường gặp những bức tranh như được vẩy màu tuỳ tiện, trong mắt có người chúng vô cùng bí ẩn, thậm chí xấu xí."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "那个人长得极其丑。",
+     "why": "丑 là tính từ MỘT âm tiết, 极其 không bổ nghĩa được. Dùng 非常 hoặc đổi thành từ hai âm tiết 丑陋.",
+     "right": "那个人长得非常丑。／那个人长得极其丑陋。"
+    },
+    {
+     "wrong": "这道题很极其难。",
+     "why": "极其 đã là phó từ mức độ, không chồng thêm 很; và 难 là từ một âm tiết.",
+     "right": "这道题极其困难。"
+    }
+   ]
+  },
+  {
+   "point": "其余",
+   "explain": "其余 là đại từ, chỉ phần CÒN LẠI, phần khác ngoài phần đã nói trước đó. Vế trước nêu một phần (只有……, 其中……), vế sau dùng 其余(的) để nói về phần còn lại; hay đi với 都 hoặc 则.",
+   "rule": "只有 / 其中 + một phần……，<strong style=\"color:var(--sky-d)\">其余</strong>(的) + N + 都……　|　……，而<strong style=\"color:var(--sky-d)\">其余</strong>的则……",
+   "examples": [
+    {
+     "zh": "怎么只有你们两个人？其余的同学呢？",
+     "py": "Zěnme zhǐ yǒu nǐmen liǎng ge rén? Qíyú de tóngxué ne?",
+     "vn": "Sao chỉ có hai em thôi? Các bạn còn lại đâu?"
+    },
+    {
+     "zh": "只有一个房间亮着灯，其余窗户都是黑的。",
+     "py": "Zhǐ yǒu yí ge fángjiān liàngzhe dēng, qíyú chuānghu dōu shì hēi de.",
+     "vn": "Chỉ có một phòng sáng đèn, các cửa sổ còn lại đều tối om."
+    },
+    {
+     "zh": "其中三分之一的画作作者没有签名，而其余的则标明了身份。",
+     "py": "Qízhōng sān fēn zhī yī de huàzuò zuòzhě méiyǒu qiānmíng, ér qíyú de zé biāomíngle shēnfèn.",
+     "vn": "Trong đó một phần ba số tranh không có chữ ký tác giả, số còn lại thì ghi rõ thân phận."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我们班有四十个同学，其余的同学都参加了比赛。",
+     "why": "其余 phải có \"phần đã nêu\" ở trước để đối chiếu; câu này chưa tách ra phần nào nên không có \"phần còn lại\".",
+     "right": "我们班除了小王，其余的同学都参加了比赛。"
+    },
+    {
+     "wrong": "我只认识这两个字，其余字的我都不认识。",
+     "why": "其余 đứng trước danh từ (其余的字) hoặc dùng 其余的 thay cho danh từ; không nói 其余字的.",
+     "right": "我只认识这两个字，其余的都不认识。"
+    }
+   ]
+  },
+  {
+   "point": "可见",
+   "explain": "可见 là liên từ, thường dùng theo mẫu \"……，(由此)可见……\": căn cứ vào tình hình đã nói ở phía trước để đưa ra phán đoán, kết luận. Phần căn cứ luôn đứng TRƯỚC 可见.",
+   "rule": "Căn cứ / sự việc……，(由此) <strong style=\"color:var(--sky-d)\">可见</strong> + kết luận",
+   "examples": [
+    {
+     "zh": "他已经住院好几天了，一直诊断不出是什么问题，可见情况不太好。",
+     "py": "Tā yǐjīng zhùyuàn hǎo jǐ tiān le, yìzhí zhěnduàn bu chū shì shénme wèntí, kějiàn qíngkuàng bú tài hǎo.",
+     "vn": "Anh ấy nằm viện mấy ngày rồi mà vẫn chưa chẩn đoán ra bệnh gì, có thể thấy tình hình không tốt lắm."
+    },
+    {
+     "zh": "汉语中有个成语叫“自知之明”，把“自知”称为“明”，可见“自知”是一种智慧。",
+     "py": "Hànyǔ zhōng yǒu ge chéngyǔ jiào “zì zhī zhī míng”, bǎ “zìzhī” chēngwéi “míng”, kějiàn “zìzhī” shì yì zhǒng zhìhuì.",
+     "vn": "Tiếng Hán có thành ngữ \"tự tri chi minh\", gọi \"biết mình\" là \"sáng suốt\", có thể thấy \"biết mình\" là một loại trí tuệ."
+    },
+    {
+     "zh": "由此可见，志愿者能够从画作中感知艺术家的用心，哪怕他们不能够解释原因。",
+     "py": "Yóucǐ kějiàn, zhìyuànzhě nénggòu cóng huàzuò zhōng gǎnzhī yìshùjiā de yòngxīn, nǎpà tāmen bù nénggòu jiěshì yuányīn.",
+     "vn": "Từ đó có thể thấy, tình nguyện viên có thể cảm nhận tâm huyết của người nghệ sĩ qua bức tranh, dù họ không giải thích được lý do."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "可见他很努力，他每天学习到十二点。",
+     "why": "Căn cứ phải đứng TRƯỚC, 可见 + kết luận đứng SAU.",
+     "right": "他每天学习到十二点，可见他很努力。"
+    },
+    {
+     "wrong": "我可见他很累。",
+     "why": "可见 là liên từ, không làm động từ \"nhìn thấy\" và không có chủ ngữ người đứng trước.",
+     "right": "他一直打哈欠，可见他很累。"
+    }
+   ]
+  }
+ ]
+}

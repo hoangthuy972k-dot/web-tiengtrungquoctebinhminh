@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+<defs><clipPath id="fh-peach-c"><rect x="0" y="0" width="60" height="120"/></clipPath></defs>
+<g clip-path="url(#fh-peach-c)">
+<path d="M60 26 C30 18 12 44 14 70 C16 98 40 112 60 112 C80 112 104 98 106 70 C108 44 90 18 60 26Z" fill="#ffb07a"/>
+<path d="M64 28 C92 22 108 46 106 70 C104 98 80 112 60 112 C76 102 90 84 88 62 C86 46 76 34 64 28Z" fill="#ff8a80"/>
+<path d="M61 29 Q48 62 57 106" fill="none" stroke="#e8735f" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="34" cy="54" rx="7" ry="12" fill="#ffe0c4" transform="rotate(20 34 54)"/>
+<path d="M60 26 C30 18 12 44 14 70 C16 98 40 112 60 112 C80 112 104 98 106 70 C108 44 90 18 60 26Z" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+</g>
+<ellipse cx="60" cy="69" rx="15" ry="42" fill="#ffd27a"/>
+<ellipse cx="60" cy="69" rx="7" ry="18" fill="#b5562e" stroke="#2b1d3a" stroke-width="2.5"/>
+<path d="M58 59 q3 4 0 8 M62 71 q-3 4 0 8" fill="none" stroke="#7a3518" stroke-width="1.8" stroke-linecap="round"/>
+<ellipse cx="60" cy="69" rx="15" ry="42" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+</svg>

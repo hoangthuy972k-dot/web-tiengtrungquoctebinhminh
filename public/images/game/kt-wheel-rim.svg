@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="94.5" fill="none" stroke="#ffb347" stroke-width="8"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#ffd98a" stroke-width="1.6" opacity="0.8"/>
+  <circle cx="100" cy="100" r="98.4" fill="none" stroke="#2b1d3a" stroke-width="2.8"/>
+  <circle cx="100" cy="100" r="90.5" fill="none" stroke="#2b1d3a" stroke-width="2.8"/>
+  <g stroke="#2b1d3a" stroke-width="1.5">
+    <circle cx="100" cy="5.5" r="3" fill="#fff8ec"/>
+    <circle cx="100" cy="5.5" r="3" fill="#ff5a6e" transform="rotate(22.5 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#fff8ec" transform="rotate(45 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#ff5a6e" transform="rotate(67.5 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#fff8ec" transform="rotate(90 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#ff5a6e" transform="rotate(112.5 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#fff8ec" transform="rotate(135 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#ff5a6e" transform="rotate(157.5 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#fff8ec" transform="rotate(180 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#ff5a6e" transform="rotate(202.5 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#fff8ec" transform="rotate(225 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#ff5a6e" transform="rotate(247.5 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#fff8ec" transform="rotate(270 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#ff5a6e" transform="rotate(292.5 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#fff8ec" transform="rotate(315 100 100)"/>
+    <circle cx="100" cy="5.5" r="3" fill="#ff5a6e" transform="rotate(337.5 100 100)"/>
+  </g>
+</svg>

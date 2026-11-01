@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+<defs><path d="M60 34 C50 24 18 24 15 56 C12 88 36 112 52 110 C56 109.5 58 107 60 107 C62 107 64 109.5 68 110 C84 112 108 88 105 56 C102 24 70 24 60 34 Z" id="cap-s"/><clipPath id="cap-c"><use href="#cap-s"/></clipPath></defs>
+<g clip-path="url(#cap-c)"><rect width="120" height="120" fill="#c12f3a"/><use href="#cap-s" fill="#ec4f55" transform="translate(-7 -7)"/></g>
+<ellipse cx="34" cy="56" rx="7" ry="13" fill="#fff8ec" opacity="0.8" transform="rotate(20 34 56)"/>
+<circle cx="43" cy="39" r="3" fill="#fff8ec" opacity="0.85"/>
+<use href="#cap-s" fill="none" stroke="#2b1d3a" stroke-width="4" stroke-linejoin="round"/>
+<path d="M60 36 Q58 22 64 12" fill="none" stroke="#2b1d3a" stroke-width="7" stroke-linecap="round"/>
+<path d="M60 36 Q58 22 64 12" fill="none" stroke="#8a5a2b" stroke-width="3" stroke-linecap="round"/>
+<path d="M64 23 Q80 6 97 14 Q83 33 64 23 Z" fill="#4cc35a" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round"/>
+<path d="M69 21 Q80 15 90 15" fill="none" stroke="#2f8f45" stroke-width="2" stroke-linecap="round"/>
+</svg>

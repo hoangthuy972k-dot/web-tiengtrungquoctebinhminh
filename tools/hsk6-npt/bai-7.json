@@ -1,0 +1,916 @@
+[
+ {
+  "so": "1",
+  "ten": "「于」",
+  "tenVn": "",
+  "cauTruc": [
+   "V / adj + 于 + thời gian / nơi chốn (= 在): 毕业于……, 产于……, 出版于……",
+   "V / adj + 于 + phương diện / nguyên nhân / mục đích: 苦于……, 忙于……, 勇于……"
+  ],
+  "giaiThich": "于 là GIỚI TỪ, dùng trong văn viết. ① Biểu thị thời gian, nơi chốn, nghĩa tương đương 在: 毕业于3年前, 产于浙江. ② Biểu thị phương diện, nguyên nhân, mục đích: 苦于没有时间 (khổ vì không có thời gian), 勇于承担 (dám gánh vác — dũng cảm về mặt …), 忙于工作 (bận vì công việc). 于 thường đứng NGAY SAU động từ / tính từ một âm tiết, tạo thành khối V于 + tân ngữ.",
+  "viDu": [
+   {
+    "zh": "毕业于3年前的他，一直做会计，成天和数字打交道，枯燥而且压力大。",
+    "py": "Bìyè yú sān nián qián de tā, yìzhí zuò kuàijì, chéngtiān hé shùzì dǎ jiāodao, kūzào érqiě yālì dà.",
+    "vn": "Tốt nghiệp từ ba năm trước, anh ấy làm kế toán suốt, cả ngày giao du với những con số, vừa nhàm chán vừa áp lực lớn."
+   },
+   {
+    "zh": "著名的西湖龙井茶产于浙江省的西湖一带。",
+    "py": "Zhùmíng de Xīhú Lóngjǐng chá chǎn yú Zhèjiāng Shěng de Xīhú yídài.",
+    "vn": "Trà Long Tỉnh Tây Hồ nổi tiếng được sản xuất ở vùng Tây Hồ, tỉnh Chiết Giang."
+   },
+   {
+    "zh": "我一直想和他一起去旅行，只是苦于没有时间。",
+    "py": "Wǒ yìzhí xiǎng hé tā yìqǐ qù lǚxíng, zhǐshì kǔyú méiyǒu shíjiān.",
+    "vn": "Tôi vẫn luôn muốn cùng anh ấy đi du lịch, chỉ khổ nỗi không có thời gian."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他毕业了于2015年。",
+    "why": "于 đứng NGAY sau động từ, không chen 了 vào giữa.",
+    "dung": "他毕业于2015年。"
+   },
+   {
+    "sai": "于上海，他住了十年。",
+    "why": "于 là văn viết, thường đi sau động từ (V于 + nơi); đầu câu khẩu ngữ phải dùng 在.",
+    "dung": "他在上海住了十年。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "毕业",
+       "3年前的他，一直做会计。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "对",
+       "给"
+      ],
+      "goiY": "\"Tốt nghiệp từ ba năm trước, anh ấy làm kế toán suốt.\" (câu bài khoá)",
+      "giai": "毕业于 + thời gian: 于 = 在, văn viết."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "著名的西湖龙井茶产",
+       "浙江省的西湖一带。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "从",
+       "往"
+      ],
+      "goiY": "\"Trà Long Tỉnh sản xuất ở vùng Tây Hồ, Chiết Giang.\"",
+      "giai": "产于 + nơi chốn = được sản xuất ở …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我一直想和他一起去旅行，只是苦",
+       "没有时间。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "在",
+       "把"
+      ],
+      "goiY": "\"Tôi muốn đi du lịch cùng anh ấy, chỉ khổ nỗi không có thời gian.\"",
+      "giai": "苦于 + nguyên nhân = khổ vì …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这座古城建",
+       "明朝。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "对",
+       "向"
+      ],
+      "goiY": "\"Toà cổ thành này được xây vào thời Minh.\"",
+      "giai": "建于 + thời gian = được xây vào …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们应该勇",
+       "承担责任。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "给",
+       "向"
+      ],
+      "goiY": "\"Chúng ta nên dám gánh vác trách nhiệm.\"",
+      "giai": "勇于 + động từ: 于 chỉ phương diện."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他最近正忙",
+       "准备考试，没时间出去玩。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "对",
+       "把"
+      ],
+      "goiY": "\"Dạo này anh ấy đang bận chuẩn bị thi, không có thời gian đi chơi.\"",
+      "giai": "忙于 + việc = bận vào việc gì."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "著名的龙井茶",
+       "产于",
+       "浙江省",
+       "西湖一带"
+      ],
+      "dap": [
+       "著名的龙井茶产于浙江省西湖一带。"
+      ],
+      "goiY": "Trà Long Tỉnh nổi tiếng được sản xuất ở vùng Tây Hồ, Chiết Giang.",
+      "giai": "V于 + nơi chốn là một khối, đứng sau chủ ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "毕业于",
+       "北京大学的",
+       "他",
+       "一直",
+       "在银行工作"
+      ],
+      "dap": [
+       "毕业于北京大学的他一直在银行工作。"
+      ],
+      "goiY": "Tốt nghiệp Đại học Bắc Kinh, anh ấy vẫn luôn làm ở ngân hàng.",
+      "giai": "Cụm 毕业于…… làm định ngữ trước 他 (giống câu bài khoá)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "只是",
+       "苦于",
+       "我很想去旅行",
+       "，",
+       "没有时间"
+      ],
+      "dap": [
+       "我很想去旅行，只是苦于没有时间。"
+      ],
+      "goiY": "Tôi rất muốn đi du lịch, chỉ khổ nỗi không có thời gian.",
+      "giai": "只是 (chỉ là) đứng đầu vế sau, rồi 苦于 + nguyên nhân."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这本小说出版于2010年。",
+      "dung": true,
+      "giai": "V于 + thời gian — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他毕业了于2015年。",
+      "dung": false,
+      "sua": "他毕业于2015年。",
+      "giai": "于 đứng ngay sau động từ, không chen 了."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "于上海，他住了十年。",
+      "dung": false,
+      "sua": "他在上海住了十年。",
+      "giai": "Đầu câu khẩu ngữ dùng 在; 于 thường đi sau động từ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nhà thơ ấy sinh năm 1920.",
+      "dap": [
+       "这位诗人生于1920年。",
+       "这位诗人出生于1920年。",
+       "那位诗人生于1920年。"
+      ],
+      "py": "Zhè wèi shīrén shēng yú yī-jiǔ-èr-líng nián.",
+      "goiY": "Dịch sang tiếng Trung, dùng 于.",
+      "giai": "生于 / 出生于 + năm (văn viết)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Anh ấy luôn bận công việc, không có thời gian chăm sóc gia đình.",
+      "dap": [
+       "他一直忙于工作，没有时间照顾家庭。",
+       "他总是忙于工作，没有时间照顾家庭。",
+       "他一直忙于工作，没时间照顾家庭。"
+      ],
+      "py": "Tā yìzhí mángyú gōngzuò, méiyǒu shíjiān zhàogù jiātíng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 忙于.",
+      "giai": "忙于 + việc: bận vì việc gì."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我已经开始写论文了，最近正忙＿＿＿。",
+      "goiY": "bận thu thập tài liệu (dùng 于) — 练一练 (1) của sách",
+      "mau": "我已经开始写论文了，最近正忙于收集资料。",
+      "can": [
+       [
+        "于"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "那时候，人们苦＿＿＿，渴望政治统一。",
+      "goiY": "khổ vì chiến tranh loạn lạc kéo dài (dùng 于) — 练一练 (2) của sách",
+      "mau": "那时候，人们苦于长期战乱，渴望政治统一。",
+      "can": [
+       [
+        "于"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "第三届茅盾文学奖获奖小说《平凡的世界》出版＿＿＿。",
+      "goiY": "xuất bản năm 1986 (dùng 于) — 练一练 (3) của sách",
+      "mau": "第三届茅盾文学奖获奖小说《平凡的世界》出版于1986年。",
+      "can": [
+       [
+        "于"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「致使」",
+  "tenVn": "",
+  "cauTruc": [
+   "Nguyên nhân + 致使 + người/vật + kết quả (động từ)",
+   "由于 / 因为……，致使 + kết quả (liên từ, kết quả thường tiêu cực)"
+  ],
+  "giaiThich": "致使 ① là ĐỘNG TỪ: do nguyên nhân nào đó mà làm cho (khiến cho) một kết quả xảy ra — chủ ngữ là nguyên nhân: 他的粗心致使试验失败. ② cũng là LIÊN TỪ: đứng đầu phân câu sau, nêu kết quả do nguyên nhân ở trên gây ra; thường đi với 由于 / 因为 ở vế trước. Kết quả phần lớn là TIÊU CỰC hoặc người nói không mong muốn. Dùng trong văn viết.",
+  "viDu": [
+   {
+    "zh": "他的粗心致使试验失败。",
+    "py": "Tā de cūxīn zhìshǐ shìyàn shībài.",
+    "vn": "Sự cẩu thả của anh ấy khiến thí nghiệm thất bại."
+   },
+   {
+    "zh": "对自己缺乏信心，对未来过度悲观致使小王出现以上现象。",
+    "py": "Duì zìjǐ quēfá xìnxīn, duì wèilái guòdù bēiguān zhìshǐ Xiǎo Wáng chūxiàn yǐshàng xiànxiàng.",
+    "vn": "Thiếu tự tin vào bản thân, bi quan quá mức về tương lai đã khiến Tiểu Vương xuất hiện những hiện tượng trên."
+   },
+   {
+    "zh": "由于新产品研发能力有限，致使企业逐渐失去竞争力。",
+    "py": "Yóuyú xīn chǎnpǐn yánfā nénglì yǒuxiàn, zhìshǐ qǐyè zhújiàn shīqù jìngzhēnglì.",
+    "vn": "Do năng lực nghiên cứu phát triển sản phẩm mới có hạn nên doanh nghiệp dần mất sức cạnh tranh."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "由于大家的努力，致使我们取得了好成绩。",
+    "why": "致使 dẫn kết quả tiêu cực, không mong muốn; kết quả tốt thì không dùng 致使.",
+    "dung": "由于大家的努力，我们取得了好成绩。"
+   },
+   {
+    "sai": "致使他迟到了，因为路上堵车。",
+    "why": "Liên từ 致使 đứng đầu VẾ SAU (kết quả), sau vế nguyên nhân.",
+    "dung": "因为路上堵车，致使他迟到了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的粗心",
+       "试验失败。"
+      ],
+      "dap": [
+       [
+        "致使"
+       ]
+      ],
+      "chon": [
+       "致使",
+       "以致",
+       "于是"
+      ],
+      "goiY": "\"Sự cẩu thả của anh ấy khiến thí nghiệm thất bại.\"",
+      "giai": "Sau chủ ngữ danh từ cần động từ → 致使; 以致, 于是 chỉ là liên từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "因为地址不清楚，",
+       "信件无法送达。"
+      ],
+      "dap": [
+       [
+        "致使"
+       ]
+      ],
+      "chon": [
+       "致使",
+       "即使",
+       "除非"
+      ],
+      "goiY": "\"Vì địa chỉ không rõ nên thư không gửi tới được.\" (练习2 ①)",
+      "giai": "致使 đứng đầu vế kết quả. 即使 = dù cho; 除非 = trừ phi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "对未来过度悲观",
+       "小王出现以上现象。"
+      ],
+      "dap": [
+       [
+        "致使"
+       ]
+      ],
+      "chon": [
+       "致使",
+       "并非",
+       "于是"
+      ],
+      "goiY": "\"Bi quan quá mức về tương lai khiến Tiểu Vương như vậy.\" (bài khoá)",
+      "giai": "Chủ ngữ là cả một cụm nguyên nhân + 致使."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "由于新产品研发能力有限，",
+       "企业逐渐失去竞争力。"
+      ],
+      "dap": [
+       [
+        "致使"
+       ]
+      ],
+      "chon": [
+       "致使",
+       "甚至",
+       "而且"
+      ],
+      "goiY": "\"Do năng lực nghiên cứu có hạn nên doanh nghiệp dần mất sức cạnh tranh.\"",
+      "giai": "由于……，致使…… — kết quả tiêu cực."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "暖冬",
+       "流感病人大量增加。"
+      ],
+      "dap": [
+       [
+        "致使"
+       ]
+      ],
+      "chon": [
+       "致使",
+       "因此",
+       "于是"
+      ],
+      "goiY": "\"Mùa đông ấm khiến người mắc cúm tăng mạnh.\"",
+      "giai": "暖冬 là chủ ngữ → cần động từ 致使."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "连日大雨",
+       "交通中断。"
+      ],
+      "dap": [
+       [
+        "致使"
+       ]
+      ],
+      "chon": [
+       "致使",
+       "即使",
+       "假使"
+      ],
+      "goiY": "\"Mưa lớn nhiều ngày khiến giao thông gián đoạn.\"",
+      "giai": "即使, 假使 là liên từ giả thiết, sai nghĩa."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他的粗心",
+       "致使",
+       "试验",
+       "失败"
+      ],
+      "dap": [
+       "他的粗心致使试验失败。"
+      ],
+      "goiY": "Sự cẩu thả của anh ấy khiến thí nghiệm thất bại.",
+      "giai": "Nguyên nhân + 致使 + sự việc + kết quả."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "由于",
+       "连日暴风雪",
+       "，",
+       "致使",
+       "几千名乘客",
+       "滞留机场"
+      ],
+      "dap": [
+       "由于连日暴风雪，致使几千名乘客滞留机场。"
+      ],
+      "goiY": "Do bão tuyết nhiều ngày, mấy nghìn hành khách bị kẹt ở sân bay.",
+      "giai": "由于 ở vế trước, 致使 đầu vế sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "致使",
+       "由于经营管理不善",
+       "，",
+       "这家工厂",
+       "倒闭了"
+      ],
+      "dap": [
+       "由于经营管理不善，致使这家工厂倒闭了。"
+      ],
+      "goiY": "Do kinh doanh quản lý kém nên nhà máy này phá sản.",
+      "giai": "Nguyên nhân trước, 致使 + kết quả sau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他的粗心致使试验失败了。",
+      "dung": true,
+      "giai": "致使 làm động từ, kết quả tiêu cực — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "由于大家的努力，致使我们取得了好成绩。",
+      "dung": false,
+      "sua": "由于大家的努力，我们取得了好成绩。",
+      "giai": "致使 không dùng cho kết quả tốt."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "致使他迟到了，因为路上堵车。",
+      "dung": false,
+      "sua": "因为路上堵车，致使他迟到了。",
+      "giai": "致使 phải đứng đầu vế SAU, sau vế nguyên nhân."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Do mưa lớn liên tục, nhiều chuyến bay bị huỷ.",
+      "dap": [
+       "由于连日大雨，致使很多航班被取消了。",
+       "由于连续下大雨，致使很多航班被取消了。",
+       "因为连日大雨，致使很多航班被取消了。"
+      ],
+      "py": "Yóuyú liánrì dàyǔ, zhìshǐ hěn duō hángbān bèi qǔxiāo le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 由于……，致使…….",
+      "giai": "Kết quả tiêu cực → 致使 đầu vế sau."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Sự cẩu thả của cậu ấy khiến cả nhóm thua cuộc thi.",
+      "dap": [
+       "他的粗心致使全组输了比赛。",
+       "他的粗心致使我们组输了比赛。",
+       "他的粗心致使整个小组输了比赛。"
+      ],
+      "py": "Tā de cūxīn zhìshǐ quán zǔ shūle bǐsài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 致使 làm động từ.",
+      "giai": "Chủ ngữ nguyên nhân (他的粗心) + 致使 + người + kết quả."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "暖冬致使流感病人＿＿＿。",
+      "goiY": "người mắc cúm tăng mạnh — 练一练 (1) của sách",
+      "mau": "暖冬致使流感病人大量增加。",
+      "can": [
+       [
+        "致使"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "由于连日暴风雪，致使＿＿＿，几千名乘客滞留机场。",
+      "goiY": "nhiều chuyến bay bị huỷ — 练一练 (2) của sách",
+      "mau": "由于连日暴风雪，致使大量航班被取消，几千名乘客滞留机场。",
+      "can": [
+       [
+        "致使"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "由于经营管理不善，致使＿＿＿。",
+      "goiY": "doanh nghiệp thua lỗ rồi phá sản — 练一练 (3) của sách",
+      "mau": "由于经营管理不善，致使这家企业连年亏损，最终倒闭了。",
+      "can": [
+       [
+        "致使"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「并非」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + 并非 + B (= 并不是, bác bỏ)",
+   "并非……，而是……　|　事实并非如此"
+  ],
+  "giaiThich": "并非 là ĐỘNG TỪ, nghĩa là \"并不是\" (hoàn toàn không phải). 并 đứng trước từ phủ định 非, làm TĂNG CƯỜNG ngữ khí phủ định — thường dùng để bác bỏ một cách nghĩ, một nhận định mà người ta cho là đúng. Hay gặp: 并非少数, 并非坏事, 并非如此, 并非……而是……. Văn phong viết.",
+  "viDu": [
+   {
+    "zh": "类似小王这样的年轻人并非少数。",
+    "py": "Lèisì Xiǎo Wáng zhèyàng de niánqīngrén bìngfēi shǎoshù.",
+    "vn": "Những người trẻ giống như Tiểu Vương không phải là số ít."
+   },
+   {
+    "zh": "这意味着，原本英明的决定今天看来可能并非如此了。",
+    "py": "Zhè yìwèizhe, yuánběn yīngmíng de juédìng jīntiān kànlái kěnéng bìngfēi rúcǐ le.",
+    "vn": "Điều này có nghĩa là quyết định vốn sáng suốt, ngày nay nhìn lại có thể không còn như vậy nữa."
+   },
+   {
+    "zh": "不要怕犯错，不要害怕走弯路，犯些小错并非坏事，它会增加我们的心灵免疫力。",
+    "py": "Bú yào pà fàn cuò, bú yào hàipà zǒu wānlù, fàn xiē xiǎo cuò bìngfēi huàishì, tā huì zēngjiā wǒmen de xīnlíng miǎnyìlì.",
+    "vn": "Đừng sợ mắc lỗi, đừng sợ đi đường vòng, phạm vài lỗi nhỏ hoàn toàn không phải chuyện xấu, nó sẽ tăng sức đề kháng cho tâm hồn chúng ta."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他非并想去，只是没办法。",
+    "why": "并 là phó từ tăng cường, phải đứng TRƯỚC từ phủ định 非: 并非.",
+    "dung": "他并非想去，只是没办法。"
+   },
+   {
+    "sai": "并非少数类似小王这样的年轻人。",
+    "why": "并非 làm vị ngữ, đứng sau chủ ngữ (cái bị bác bỏ đứng sau 并非).",
+    "dung": "类似小王这样的年轻人并非少数。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "类似小王这样的年轻人",
+       "少数。"
+      ],
+      "dap": [
+       [
+        "并非"
+       ]
+      ],
+      "chon": [
+       "并非",
+       "无非",
+       "是非"
+      ],
+      "goiY": "\"Người trẻ giống Tiểu Vương không phải số ít.\" (bài khoá)",
+      "giai": "并非 = 并不是. 无非 (bài 5) = chẳng qua là; 是非 = phải trái."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "犯些小错",
+       "坏事，它会增加我们的心灵免疫力。"
+      ],
+      "dap": [
+       [
+        "并非"
+       ]
+      ],
+      "chon": [
+       "并非",
+       "并且",
+       "无非"
+      ],
+      "goiY": "\"Phạm vài lỗi nhỏ không phải chuyện xấu.\" (bài khoá)",
+      "giai": "并且 = và; 无非 nghĩa ngược lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "原本英明的决定今天看来可能",
+       "如此了。"
+      ],
+      "dap": [
+       [
+        "并非"
+       ]
+      ],
+      "chon": [
+       "并非",
+       "而是",
+       "除非"
+      ],
+      "goiY": "\"Quyết định vốn sáng suốt, nay có thể không còn như vậy.\" (bài khoá)",
+      "giai": "并非如此 = không phải như vậy."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "真相其实",
+       "跟你想象的一样。"
+      ],
+      "dap": [
+       [
+        "并非"
+       ]
+      ],
+      "chon": [
+       "并非",
+       "并且",
+       "莫非"
+      ],
+      "goiY": "\"Sự thật thực ra không giống như cậu tưởng.\" (练习2 ③)",
+      "giai": "莫非 = lẽ nào (câu hỏi đoán)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "学好一门外语",
+       "易事。"
+      ],
+      "dap": [
+       [
+        "并非"
+       ]
+      ],
+      "chon": [
+       "并非",
+       "除非",
+       "莫非"
+      ],
+      "goiY": "\"Học giỏi một ngoại ngữ không phải việc dễ.\"",
+      "giai": "并非易事 — cụm hay gặp."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "不想帮你，而是实在没有时间。"
+      ],
+      "dap": [
+       [
+        "并非"
+       ]
+      ],
+      "chon": [
+       "并非",
+       "除非",
+       "无非"
+      ],
+      "goiY": "\"Anh ấy không phải không muốn giúp cậu, mà là thật sự không có thời gian.\"",
+      "giai": "并非……，而是……."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "并非",
+       "少数",
+       "类似小王这样的",
+       "年轻人"
+      ],
+      "dap": [
+       "类似小王这样的年轻人并非少数。"
+      ],
+      "goiY": "Người trẻ giống Tiểu Vương không phải số ít.",
+      "giai": "Chủ ngữ + 并非 + điều bị bác bỏ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "并非",
+       "坏事",
+       "，",
+       "犯些小错",
+       "它会增加我们的免疫力"
+      ],
+      "dap": [
+       "犯些小错并非坏事，它会增加我们的免疫力。"
+      ],
+      "goiY": "Phạm vài lỗi nhỏ không phải chuyện xấu, nó tăng sức đề kháng cho ta.",
+      "giai": "Vế đầu bác bỏ, vế sau giải thích lý do."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "并非",
+       "不想帮你",
+       "，",
+       "而是",
+       "实在太忙了"
+      ],
+      "dap": [
+       "他并非不想帮你，而是实在太忙了。"
+      ],
+      "goiY": "Anh ấy không phải không muốn giúp cậu, mà là quá bận.",
+      "giai": "并非……，而是…… bác bỏ rồi khẳng định."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "真相其实并非跟你想象的一样。",
+      "dung": true,
+      "giai": "并非 + cụm so sánh — đúng (đáp án 练习2 ③)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他非并想去，只是没办法。",
+      "dung": false,
+      "sua": "他并非想去，只是没办法。",
+      "giai": "并 phải đứng trước 非."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "并非少数类似小王这样的年轻人。",
+      "dung": false,
+      "sua": "类似小王这样的年轻人并非少数。",
+      "giai": "并非 làm vị ngữ, đứng sau chủ ngữ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Học tốt tiếng Trung hoàn toàn không phải việc dễ.",
+      "dap": [
+       "学好汉语并非易事。",
+       "学好中文并非易事。",
+       "学好汉语并非容易的事。"
+      ],
+      "py": "Xuéhǎo Hànyǔ bìngfēi yìshì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 并非.",
+      "giai": "并非易事 = hoàn toàn không phải việc dễ."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Anh ấy không phải không muốn đến, mà là thật sự quá bận.",
+      "dap": [
+       "他并非不想来，而是实在太忙了。",
+       "他并非不想来，而是真的太忙了。",
+       "他并非不愿意来，而是实在太忙了。"
+      ],
+      "py": "Tā bìngfēi bù xiǎng lái, ér shì shízài tài máng le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 并非……，而是…….",
+      "giai": "Bác bỏ nguyên nhân sai, khẳng định nguyên nhân đúng."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "城里人心里的农村特别美，而农民眼中的农村却＿＿＿。",
+      "goiY": "lại không phải như vậy (dùng 并非) — 练一练 (1) của sách",
+      "mau": "城里人心里的农村特别美，而农民眼中的农村却并非如此。",
+      "can": [
+       [
+        "并非"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "原本以为他结婚了，就会安心过日子，可事实并非＿＿＿，他还像个孩子似的，天天心里想的就是玩儿。",
+      "goiY": "sự thật không phải như vậy — 练一练 (2) của sách",
+      "mau": "原本以为他结婚了，就会安心过日子，可事实并非如此，他还像个孩子似的，天天心里想的就是玩儿。",
+      "can": [
+       [
+        "并非"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "你以为我只是教训你吗？其实＿＿＿，我是希望你＿＿＿。",
+      "goiY": "thật ra không phải thế, mà là mong em nhận ra lỗi sai (dùng 并非) — 练一练 (3) của sách",
+      "mau": "你以为我只是教训你吗？其实并非如此，我是希望你能认识到自己的错误。",
+      "can": [
+       [
+        "并非"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

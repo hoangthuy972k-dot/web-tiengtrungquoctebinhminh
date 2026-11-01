@@ -1,0 +1,112 @@
+{
+ "zh": "我们都爱白噪音。",
+ "py": "Wǒmen dōu ài bái zàoyīn.",
+ "vn": "Chúng ta đều yêu tiếng ồn trắng.",
+ "topic": "第三单元 多彩社会 · Tiếng ồn trắng và bản năng an toàn",
+ "vocabCount": 44,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "不妨",
+   "explain": "不妨 là PHÓ TỪ, biểu thị có thể làm như vậy, không có gì trở ngại (没有妨碍). Hàm ý người nói cho rằng làm như vậy thì TỐT HƠN, nên dùng trong lời khuyến khích, gợi ý (鼓励、建议). Đứng sau chủ ngữ, trước động từ; động từ phía sau hay ở dạng lặp (试试, 试一试) hoặc kèm 一下. Sắc thái nhẹ nhàng, lịch sự hơn 应该 / 必须.",
+   "rule": "(Chủ ngữ +) <strong style=\"color:var(--sky-d)\">不妨</strong> + V (试试 / V一下 / V一V)　|　有……，你<strong style=\"color:var(--sky-d)\">不妨</strong>……",
+   "examples": [
+    {
+     "zh": "有什么意见，你不妨直说。",
+     "py": "Yǒu shénme yìjiàn, nǐ bùfáng zhí shuō.",
+     "vn": "Có ý kiến gì thì anh cứ nói thẳng."
+    },
+    {
+     "zh": "什么是白噪音？我们不妨形象地描绘一下。",
+     "py": "Shénme shì bái zàoyīn? Wǒmen bùfáng xíngxiàng de miáohuì yíxià.",
+     "vn": "Tiếng ồn trắng là gì? Chúng ta thử miêu tả một cách hình ảnh xem."
+    },
+    {
+     "zh": "改变人们的传统观念可能不容易，但我们不妨试一试。",
+     "py": "Gǎibiàn rénmen de chuántǒng guānniàn kěnéng bù róngyì, dàn wǒmen bùfáng shì yi shì.",
+     "vn": "Thay đổi quan niệm truyền thống của mọi người có thể không dễ, nhưng chúng ta cứ thử xem."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "考试的时候，你不妨必须带准考证。",
+     "why": "不妨 là lời gợi ý nhẹ nhàng, không đi với ý bắt buộc (必须); việc bắt buộc thì dùng 务必.",
+     "right": "考试的时候，你务必带准考证。"
+    },
+    {
+     "wrong": "不妨你试试这个办法。",
+     "why": "不妨 là phó từ, đứng SAU chủ ngữ, trước động từ.",
+     "right": "你不妨试试这个办法。"
+    }
+   ]
+  },
+  {
+   "point": "务必",
+   "explain": "务必 là PHÓ TỪ, biểu thị thái độ kiên quyết: nhất định phải, nhất thiết phải (必须、一定要). Thường tu sức động từ, cụm động từ; hay đi với 要 (务必要). Dùng nhiều trong lời dặn dò, yêu cầu, thông báo (请务必……). Mạnh và trang trọng hơn 一定要; không dùng để phỏng đoán.",
+   "rule": "(Chủ ngữ +) <strong style=\"color:var(--sky-d)\">务必</strong>(要) + V　|　请<strong style=\"color:var(--sky-d)\">务必</strong> + V",
+   "examples": [
+    {
+     "zh": "鸟叫停止，意味着有了险情，务必要提高警惕了。",
+     "py": "Niǎo jiào tíngzhǐ, yìwèizhe yǒule xiǎnqíng, wùbì yào tígāo jǐngtì le.",
+     "vn": "Chim ngừng hót có nghĩa là đã có nguy hiểm, nhất thiết phải nâng cao cảnh giác."
+    },
+    {
+     "zh": "50岁以上的人容易骨折，因此进行跳跃或其他剧烈活动时务必注意了。",
+     "py": "Wǔshí suì yǐshàng de rén róngyì gǔzhé, yīncǐ jìnxíng tiàoyuè huò qítā jùliè huódòng shí wùbì zhùyì le.",
+     "vn": "Người trên 50 tuổi dễ gãy xương, vì vậy khi nhảy hoặc vận động mạnh khác nhất thiết phải chú ý."
+    },
+    {
+     "zh": "海带凉拌菜做法超级简单，不过务必将海带多泡些时间，不然不易消化。",
+     "py": "Hǎidài liángbàncài zuòfǎ chāojí jiǎndān, búguò wùbì jiāng hǎidài duō pào xiē shíjiān, bùrán bú yì xiāohuà.",
+     "vn": "Món rong biển trộn làm cực kỳ đơn giản, nhưng nhất thiết phải ngâm rong biển lâu hơn một chút, nếu không sẽ khó tiêu."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "明天务必会下雨。",
+     "why": "务必 là yêu cầu con người PHẢI làm gì, không dùng để phỏng đoán; phỏng đoán chắc chắn dùng 一定 / 肯定.",
+     "right": "明天一定会下雨。"
+    },
+    {
+     "wrong": "务必大家要准时到。",
+     "why": "务必 là phó từ, đứng sau chủ ngữ, trước động từ.",
+     "right": "大家务必要准时到。"
+    }
+   ]
+  },
+  {
+   "point": "鉴于",
+   "explain": "鉴于 ① là GIỚI TỪ, nghĩa là \"觉察到、考虑到\" (nhận thấy, xét đến): 鉴于 + danh từ / cụm từ. ② là LIÊN TỪ, dùng ở ĐẦU phân câu trước của câu phức nhân quả, chỉ ra căn cứ, nguyên nhân hay lý do cho hành động ở phân câu sau. Vế sau thường là một quyết định, biện pháp (决定……, 成了……). Dùng trong văn viết.",
+   "rule": "<strong style=\"color:var(--sky-d)\">鉴于</strong> + tình hình / lý do，(chủ ngữ) + quyết định / biện pháp　|　<strong style=\"color:var(--sky-d)\">鉴于</strong>以上情况，……决定……",
+   "examples": [
+    {
+     "zh": "鉴于农村教师严重缺乏，他决定大学毕业以后，到农村去当老师。",
+     "py": "Jiànyú nóngcūn jiàoshī yánzhòng quēfá, tā juédìng dàxué bìyè yǐhòu, dào nóngcūn qù dāng lǎoshī.",
+     "vn": "Xét thấy giáo viên nông thôn thiếu trầm trọng, anh ấy quyết định sau khi tốt nghiệp đại học sẽ về nông thôn dạy học."
+    },
+    {
+     "zh": "鉴于白噪音有这样的功效，它理所当然地成了医生的好帮手。",
+     "py": "Jiànyú bái zàoyīn yǒu zhèyàng de gōngxiào, tā lǐsuǒdāngrán de chéngle yīshēng de hǎo bāngshǒu.",
+     "vn": "Xét thấy tiếng ồn trắng có công hiệu như vậy, nó đương nhiên trở thành trợ thủ đắc lực của bác sĩ."
+    },
+    {
+     "zh": "鉴于中国的娱乐片起步较晚，创作人员在把握观众心理、掌握特定技巧等方面尚有欠缺，这样的研讨会无疑给创作者提供了极大的帮助。",
+     "py": "Jiànyú Zhōngguó de yúlèpiàn qǐbù jiào wǎn, chuàngzuò rényuán zài bǎwò guānzhòng xīnlǐ, zhǎngwò tèdìng jìqiǎo děng fāngmiàn shàng yǒu qiànquē, zhèyàng de yántǎohuì wúyí gěi chuàngzuòzhě tígōngle jí dà de bāngzhù.",
+     "vn": "Xét thấy phim giải trí Trung Quốc khởi đầu khá muộn, người sáng tác còn thiếu sót ở các mặt như nắm bắt tâm lý khán giả, làm chủ những kỹ xảo đặc thù, những hội thảo như thế này chắc chắn đã giúp ích rất nhiều cho người sáng tác."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "公司决定让他担任经理，鉴于他出色的表现。",
+     "why": "鉴于 đứng ĐẦU phân câu TRƯỚC (nêu căn cứ), không đặt ra sau như 因为.",
+     "right": "鉴于他出色的表现，公司决定让他担任经理。"
+    },
+    {
+     "wrong": "鉴于今天下雨了，我很不开心。",
+     "why": "Vế sau của 鉴于 phải là quyết định / biện pháp có căn cứ, không phải cảm xúc; câu thường ngày dùng 因为.",
+     "right": "因为今天下雨了，我很不开心。"
+    }
+   ]
+  }
+ ]
+}

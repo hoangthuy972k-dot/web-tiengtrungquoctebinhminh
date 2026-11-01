@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="85" rx="22" ry="4.5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="46.5" y="40" width="7" height="46" rx="2" fill="#a86b45"/>
+<path d="M17 47L9 42M17 47L7 48M17 47L10 53M83 47L91 42M83 47L93 48M83 47L90 53" fill="none" stroke-width="6"/>
+<path d="M17 47L9 42M17 47L7 48M17 47L10 53M83 47L91 42M83 47L93 48M83 47L90 53" fill="none" stroke="#f3c76a" stroke-width="2.5"/>
+<path d="M35 72L37 80L40 75L43 82L46 75L50 82L54 75L57 82L60 75L63 80L65 72Z" fill="#f3c76a"/>
+<path d="M18 41H82Q85 47 82 53H64L66 74H34L36 53H18Q15 47 18 41Z" fill="#4a90d9" stroke="none"/>
+<path d="M34.6 67H65.4L66 74H34Z" fill="#3a73b5" stroke="none"/>
+<path d="M18 49H36V53H18ZM64 49H82V53H64Z" fill="#3a73b5" stroke="none"/>
+<path d="M18 41H82Q85 47 82 53H64L66 74H34L36 53H18Q15 47 18 41Z" fill="none"/>
+<path d="M35.3 63H64.7" stroke="#c98a4f" stroke-width="3"/>
+<rect x="54" y="53" width="8" height="8" rx="1" fill="#ffc93c" stroke-width="2"/>
+<path d="M56 55L60 59M60 55L56 59" stroke="#e08a00" stroke-width="1.2"/>
+<path d="M22 44H32" stroke="#8cc0f0" stroke-width="2"/>
+<circle cx="50" cy="32" r="12" fill="#f5deb3"/>
+<path d="M58 23Q61 32 57 41Q63 34 58 23Z" fill="#e4c48e" stroke="none"/>
+<path d="M45 37Q50 41.5 55 37" fill="none" stroke-width="2"/>
+<path d="M50 2.5L76 21Q50 29 24 21Z" fill="#f3d38a"/>
+<path d="M50 2.5L76 21Q66 24 56 24.5Q60 12 50 2.5Z" fill="#e0b860" stroke="none"/>
+<path d="M50 2.5L76 21Q50 29 24 21Z" fill="none"/>
+<path d="M34 16Q50 20 66 16M41.5 10Q50 12.5 58.5 10" fill="none" stroke="#c99a3e" stroke-width="1.8"/>
+</g>
+<circle cx="45" cy="31" r="2.6" fill="#2b1d3a"/><circle cx="55" cy="31" r="2.6" fill="#2b1d3a"/>
+<circle cx="45.9" cy="30.1" r="1" fill="#fff"/><circle cx="55.9" cy="30.1" r="1" fill="#fff"/>
+<ellipse cx="41" cy="36" rx="2.8" ry="1.8" fill="#ff8fa3" opacity=".85"/><ellipse cx="59" cy="36" rx="2.8" ry="1.8" fill="#ff8fa3" opacity=".85"/>
+</svg>

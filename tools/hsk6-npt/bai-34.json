@@ -1,0 +1,924 @@
+[
+ {
+  "so": "1",
+  "ten": "「尚且」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + 尚且 + V，何况 + B + 呢？",
+   "A + 尚且……，B + 就更 / 更别说……了",
+   "……尚且如此，…… (vế sau: kết luận hiển nhiên)"
+  ],
+  "giaiThich": "\"尚且\" là liên từ, dùng ở VẾ TRƯỚC của câu phức: nêu ra một sự việc rõ ràng (thường là trường hợp \"dễ hơn / có ưu thế hơn\") để so sánh; VẾ SAU rút ra kết luận hiển nhiên cho một sự việc cùng loại nhưng khác về mức độ. Nghĩa ≈ \"A còn …, huống chi B\" / \"A còn …, B thì càng …\". Vế sau hay dùng: 何况……（呢）？ / 更…… / 就更……了 / 更别说……了 / 也就不难想象了. Vị trí: 尚且 đứng SAU chủ ngữ, TRƯỚC vị ngữ (小学生尚且明白; 你作为中国人尚且不认识); hay đi với 如此: ……尚且如此. Phân biệt 况且 (bài 20): 况且 = \"hơn nữa\", bổ sung thêm lý do, đứng ở vế sau.",
+  "viDu": [
+   {
+    "zh": "尽管当年家中私藏丰厚，但他们生活却非常简朴，甚至有些吝啬，举个例子吧，过年时孩子们吃的糖葫芦都是孙瀛洲自制的。他对孩子尚且如此，对自己的那份节俭也就不难想象了。",
+    "py": "Jǐnguǎn dāngnián jiā zhōng sīcáng fēnghòu, dàn tāmen shēnghuó què fēicháng jiǎnpǔ, shènzhì yǒuxiē lìnsè, jǔ ge lìzi ba, guònián shí háizimen chī de tánghúlu dōu shì Sūn Yíngzhōu zìzhì de. Tā duì háizi shàngqiě rúcǐ, duì zìjǐ de nà fèn jiéjiǎn yě jiù bù nán xiǎngxiàng le.",
+    "vn": "Dù năm ấy trong nhà cất giữ nhiều của quý, nhưng họ sống vô cùng giản dị, thậm chí có phần keo kiệt; lấy ví dụ nhé, kẹo hồ lô bọn trẻ ăn dịp Tết cũng do Tôn Doanh Châu tự làm. Với con cái ông còn như vậy, thì sự tiết kiệm với bản thân cũng dễ hình dung rồi."
+   },
+   {
+    "zh": "经济增长强劲时，这个企业尚且如此，经济衰退时，企业肯定会出现生存问题。",
+    "py": "Jīngjì zēngzhǎng qiángjìng shí, zhège qǐyè shàngqiě rúcǐ, jīngjì shuāituì shí, qǐyè kěndìng huì chūxiàn shēngcún wèntí.",
+    "vn": "Khi kinh tế tăng trưởng mạnh doanh nghiệp này còn như vậy, thì khi kinh tế suy thoái, chắc chắn doanh nghiệp sẽ gặp vấn đề sống còn."
+   },
+   {
+    "zh": "“人”和“入”这么简单的两个字他尚且分不清楚，何况其他呢？",
+    "py": "“Rén” hé “rù” zhème jiǎndān de liǎng ge zì tā shàngqiě fēn bu qīngchu, hékuàng qítā ne?",
+    "vn": "Hai chữ đơn giản như \"人\" và \"入\" mà cậu ta còn không phân biệt được, huống chi những chữ khác?"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "尚且小学生明白这些道理，何况大学生呢？",
+    "why": "尚且 là liên từ nhưng đứng SAU chủ ngữ, trước vị ngữ — không đặt ở đầu câu.",
+    "dung": "小学生尚且明白这些道理，何况大学生呢？"
+   },
+   {
+    "sai": "大人尚且撑不住，孩子也撑不住。",
+    "why": "Vế sau phải rút ra kết luận \"càng hơn\" bằng 何况 / 更 / 更别说……了, không chỉ lặp lại bằng 也.",
+    "dung": "大人尚且撑不住，更别说孩子了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他对孩子",
+       "如此，对自己的那份节俭也就不难想象了。"
+      ],
+      "dap": [
+       [
+        "尚且"
+       ]
+      ],
+      "chon": [
+       "尚且",
+       "况且",
+       "而且"
+      ],
+      "goiY": "\"Với con cái ông còn như vậy…\" (câu bài khoá)",
+      "giai": "尚且 + 如此 ở vế trước."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "“人”和“入”这么简单的两个字他尚且分不清楚，",
+       "其他呢？"
+      ],
+      "dap": [
+       [
+        "何况"
+       ]
+      ],
+      "chon": [
+       "何况",
+       "况且",
+       "而且"
+      ],
+      "goiY": "\"… huống chi những chữ khác?\" (ví dụ của sách)",
+      "giai": "尚且……，何况……呢？"
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "小学生",
+       "明白这些道理，何况大学生呢？"
+      ],
+      "dap": [
+       [
+        "尚且"
+       ]
+      ],
+      "chon": [
+       "尚且",
+       "并且",
+       "而且"
+      ],
+      "goiY": "Luyện tập (1) của sách.",
+      "giai": "尚且 đứng sau chủ ngữ 小学生, trước động từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "钱钟书先生尚且如此，对于一般人来说，读书做笔记就",
+       "有必要了。"
+      ],
+      "dap": [
+       [
+        "更"
+       ]
+      ],
+      "chon": [
+       "更",
+       "还",
+       "也"
+      ],
+      "goiY": "Luyện tập (2) của sách.",
+      "giai": "Vế sau dùng 更 để nói mức độ càng hơn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大人尚且撑不住，",
+       "说孩子了。"
+      ],
+      "dap": [
+       [
+        "更别"
+       ]
+      ],
+      "chon": [
+       "更别",
+       "更不",
+       "还要"
+      ],
+      "goiY": "\"Người lớn còn không chịu nổi, nói gì trẻ con.\" (练习2 (3))",
+      "giai": "……尚且……，更别说……了."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "经济增长强劲时，这个企业",
+       "如此，经济衰退时，企业肯定会出现生存问题。"
+      ],
+      "dap": [
+       [
+        "尚且"
+       ]
+      ],
+      "chon": [
+       "尚且",
+       "仍然",
+       "已经"
+      ],
+      "goiY": "Ví dụ (2) của sách.",
+      "giai": "……尚且如此 + vế sau là kết luận hiển nhiên."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "何况",
+       "这个字",
+       "你尚且不认识",
+       "我呢",
+       "，",
+       "？"
+      ],
+      "dap": [
+       "这个字你尚且不认识，何况我呢？"
+      ],
+      "goiY": "Chữ này cậu còn không biết, huống chi tớ?",
+      "giai": "A 尚且……，何况 B 呢？"
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "更别说",
+       "尚且撑不住",
+       "大人",
+       "，",
+       "孩子了",
+       "。"
+      ],
+      "dap": [
+       "大人尚且撑不住，更别说孩子了。"
+      ],
+      "goiY": "Người lớn còn không chịu nổi, nói gì trẻ con.",
+      "giai": "尚且……，更别说……了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "对自己就更不用说了",
+       "他对孩子",
+       "尚且如此节俭",
+       "，",
+       "。"
+      ],
+      "dap": [
+       "他对孩子尚且如此节俭，对自己就更不用说了。"
+      ],
+      "goiY": "Với con cái ông còn tiết kiệm như thế, với bản thân thì càng khỏi nói.",
+      "giai": "尚且……，就更不用说了."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "专家尚且会看错，何况我们这些外行呢？",
+      "dung": true,
+      "giai": "Đúng: A 尚且……，何况 B 呢？"
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "尚且老师也不知道答案，何况学生呢？",
+      "dung": false,
+      "sua": "老师尚且不知道答案，何况学生呢？",
+      "giai": "尚且 đứng sau chủ ngữ, không đứng đầu câu; không cần 也."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这么简单的题他尚且做错了，况且难题呢？",
+      "dung": false,
+      "sua": "这么简单的题他尚且做错了，何况难题呢？",
+      "giai": "Vế sau dùng 何况, không dùng 况且 (况且 = hơn nữa, bổ sung lý do)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chữ này người Trung Quốc còn thấy khó, huống chi du học sinh chúng tôi?",
+      "dap": [
+       "这个字中国人尚且觉得难，何况我们留学生呢？",
+       "中国人尚且觉得这个字难，何况我们留学生呢？",
+       "这个字中国人尚且觉得难，更何况我们留学生呢？"
+      ],
+      "py": "Zhège zì Zhōngguórén shàngqiě juéde nán, hékuàng wǒmen liúxuéshēng ne?",
+      "goiY": "Dịch sang tiếng Trung, dùng 尚且……何况…….",
+      "giai": "A 尚且……，何况 B 呢？"
+     },
+     {
+      "kieu": "dich",
+      "vn": "Với con cái ông còn tiết kiệm như vậy, với bản thân thì càng khỏi phải nói.",
+      "dap": [
+       "他对孩子尚且如此节俭，对自己就更不用说了。",
+       "他对孩子尚且这么节俭，对自己就更不用说了。",
+       "他对孩子尚且如此节俭，对自己更别说了。"
+      ],
+      "py": "Tā duì háizi shàngqiě rúcǐ jiéjiǎn, duì zìjǐ jiù gèng búyòng shuō le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 尚且……就更不用说了.",
+      "giai": "尚且 ở vế trước, 就更不用说了 ở vế sau."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "大人＿＿＿，更别说孩子了。",
+      "goiY": "Dùng 尚且 hoàn thành câu (练习2 (3) của sách).",
+      "mau": "大人尚且撑不住，更别说孩子了。",
+      "can": [
+       [
+        "尚且"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这么简单的道理小学生＿＿＿，何况大学生呢？",
+      "goiY": "Dùng 尚且 hoàn thành câu (练一练 (1) của sách).",
+      "mau": "这么简单的道理小学生尚且明白，何况大学生呢？",
+      "can": [
+       [
+        "尚且"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这个字你作为中国人＿＿＿，我这个留学生就更不认识了。",
+      "goiY": "Dùng 尚且 hoàn thành câu (练一练 (3) của sách).",
+      "mau": "这个字你作为中国人尚且不认识，我这个留学生就更不认识了。",
+      "can": [
+       [
+        "尚且不认识"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「当」",
+  "tenVn": "",
+  "cauTruc": [
+   "当年 / 当时 / 当天 — chính thời điểm ấy (quá khứ)",
+   "当代 / 当今 — thời nay",
+   "当地 / 当场 / 当面 / 当众 — chính nơi ấy, tại chỗ"
+  ],
+  "giaiThich": "\"当\" là giới từ, nghĩa \"đang ở (lúc đó, nơi đó)\" — chỉ chính thời điểm / địa điểm mà sự việc xảy ra. Nghĩa này hay gặp trong các từ ghép \"当 + danh từ\": 当年 (năm ấy, hồi đó), 当时 (lúc đó), 当天 (ngay hôm đó), 当代 (thời nay), 当今 (ngày nay), 当地 (địa phương đó), 当场 (ngay tại chỗ), 当面 (trước mặt), 当众 (trước đám đông). Cách chọn: THỜI GIAN quá khứ → 当年 / 当时; thời HIỆN TẠI → 当代 / 当今; NƠI CHỐN → 当地; ngay TẠI CHỖ lúc sự việc đang diễn ra → 当场. Khuôn giới từ đầy đủ: 当……的时候 / 当……时 (khi …).",
+  "viDu": [
+   {
+    "zh": "孙瀛洲的女儿孙女士至今仍记得当年的情景。",
+    "py": "Sūn Yíngzhōu de nǚ'ér Sūn nǚshì zhìjīn réng jìde dāngnián de qíngjǐng.",
+    "vn": "Con gái của Tôn Doanh Châu là bà Tôn đến nay vẫn còn nhớ cảnh tượng năm ấy."
+   },
+   {
+    "zh": "由于经营有方，又收藏有大量珍贵文物，孙瀛洲在当时的古董经营者中很有威望。",
+    "py": "Yóuyú jīngyíng yǒu fāng, yòu shōucáng yǒu dàliàng zhēnguì wénwù, Sūn Yíngzhōu zài dāngshí de gǔdǒng jīngyíngzhě zhōng hěn yǒu wēiwàng.",
+    "vn": "Nhờ kinh doanh có phương pháp, lại sưu tầm được rất nhiều văn vật quý, Tôn Doanh Châu rất có uy danh trong giới buôn đồ cổ thời bấy giờ."
+   },
+   {
+    "zh": "当代社会，被称为“专家”容易，称为“著名专家”也不难，但称得上“大家”的不多。",
+    "py": "Dāngdài shèhuì, bèi chēngwéi “zhuānjiā” róngyì, chēngwéi “zhùmíng zhuānjiā” yě bù nán, dàn chēng de shàng “dàjiā” de bù duō.",
+    "vn": "Xã hội ngày nay, được gọi là \"chuyên gia\" thì dễ, được gọi là \"chuyên gia nổi tiếng\" cũng không khó, nhưng người xứng đáng được gọi là \"bậc thầy\" thì không nhiều."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "当年的社会，年轻人都离不开手机。",
+    "why": "当年 chỉ \"năm ấy, hồi đó\" (quá khứ); nói về thời hiện nay phải dùng 当今 / 当代.",
+    "dung": "当今社会，年轻人都离不开手机。"
+   },
+   {
+    "sai": "小偷被警察当地抓获了。",
+    "why": "\"Bắt quả tang, ngay tại chỗ\" là 当场; 当地 chỉ \"địa phương đó\".",
+    "dung": "小偷被警察当场抓获了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "孙瀛洲的女儿孙女士至今仍记得",
+       "的情景。"
+      ],
+      "dap": [
+       [
+        "当年"
+       ]
+      ],
+      "chon": [
+       "当年",
+       "当地",
+       "当场"
+      ],
+      "goiY": "\"… vẫn nhớ cảnh tượng năm ấy.\" (câu bài khoá)",
+      "giai": "当年 = năm ấy, hồi đó."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "孙瀛洲在",
+       "的古董经营者中很有威望。"
+      ],
+      "dap": [
+       [
+        "当时"
+       ]
+      ],
+      "chon": [
+       "当时",
+       "当场",
+       "当面"
+      ],
+      "goiY": "\"… trong giới buôn đồ cổ thời bấy giờ.\" (câu bài khoá)",
+      "giai": "当时 = lúc đó, thời bấy giờ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "社会，被称为“专家”容易，但称得上“大家”的不多。"
+      ],
+      "dap": [
+       [
+        "当代"
+       ]
+      ],
+      "chon": [
+       "当代",
+       "当年",
+       "当地"
+      ],
+      "goiY": "\"Xã hội ngày nay…\" (câu bài khoá)",
+      "giai": "当代 = thời nay."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "洪水淹没了村庄，给",
+       "人民的生活造成了很大的损失。"
+      ],
+      "dap": [
+       [
+        "当地"
+       ]
+      ],
+      "chon": [
+       "当地",
+       "当今",
+       "当场"
+      ],
+      "goiY": "Luyện tập (1) của sách.",
+      "giai": "当地 = địa phương đó."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "所有这些，与",
+       "社会提倡的“以人为本”的价值观显然是背道而驰的。"
+      ],
+      "dap": [
+       [
+        "当今"
+       ]
+      ],
+      "chon": [
+       "当今",
+       "当场",
+       "当地"
+      ],
+      "goiY": "Luyện tập (2) của sách.",
+      "giai": "当今 = ngày nay."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他刚把手伸到别人的书包里，就被警察",
+       "抓获。"
+      ],
+      "dap": [
+       [
+        "当场"
+       ]
+      ],
+      "chon": [
+       "当场",
+       "当今",
+       "当年"
+      ],
+      "goiY": "Luyện tập (3) của sách.",
+      "giai": "当场 = ngay tại chỗ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "仍记得",
+       "孙女士",
+       "当年的情景",
+       "至今",
+       "。"
+      ],
+      "dap": [
+       "孙女士至今仍记得当年的情景。"
+      ],
+      "goiY": "Bà Tôn đến nay vẫn nhớ cảnh tượng năm ấy.",
+      "giai": "当年 + 的 + N."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "当场",
+       "小偷",
+       "被警察",
+       "抓获了",
+       "。"
+      ],
+      "dap": [
+       "小偷被警察当场抓获了。"
+      ],
+      "goiY": "Tên trộm bị cảnh sát bắt quả tang.",
+      "giai": "当场 đứng trước động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "当地的",
+       "我们",
+       "品尝了",
+       "特色小吃",
+       "。"
+      ],
+      "dap": [
+       "我们品尝了当地的特色小吃。"
+      ],
+      "goiY": "Chúng tôi đã nếm thử các món ăn vặt đặc sắc của địa phương.",
+      "giai": "当地 + 的 + N."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "当今社会，年轻人都离不开手机。",
+      "dung": true,
+      "giai": "Đúng: 当今 = ngày nay."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "当年的社会，年轻人都离不开手机。",
+      "dung": false,
+      "sua": "当今社会，年轻人都离不开手机。",
+      "giai": "当年 = hồi đó (quá khứ); hiện nay dùng 当今 / 当代."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他当场的时候就答应了。",
+      "dung": false,
+      "sua": "他当场就答应了。",
+      "giai": "当场 đã là \"ngay lúc đó\", không thêm 的时候."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Năm ấy tôi mới 13 tuổi, lúc đó hoàn toàn không hiểu vì sao bố lại tặng không văn vật đi.",
+      "dap": [
+       "当年我才13岁，当时完全不明白爸爸为什么要把文物无偿送出去。",
+       "当年我才十三岁，当时根本不明白父亲为什么要无偿捐出文物。",
+       "当年我才13岁，当时完全不明白爸爸为什么要把文物无偿捐出去。"
+      ],
+      "py": "Dāngnián wǒ cái shísān suì, dāngshí wánquán bù míngbai bàba wèi shénme yào bǎ wénwù wúcháng sòng chuqu.",
+      "goiY": "Dịch sang tiếng Trung, dùng 当年 và 当时.",
+      "giai": "当年 = năm ấy; 当时 = lúc đó."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chúng tôi đến nơi thì trời đã tối, người dân địa phương rất nhiệt tình giúp chúng tôi tìm khách sạn.",
+      "dap": [
+       "我们到的时候天已经黑了，当地人很热情地帮我们找宾馆。",
+       "我们到那儿时天已经黑了，当地人热情地帮我们找了宾馆。",
+       "我们到达时天已经黑了，当地人很热情地帮我们找旅馆。"
+      ],
+      "py": "Wǒmen dào de shíhou tiān yǐjīng hēi le, dāngdìrén hěn rèqíng de bāng wǒmen zhǎo bīnguǎn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 当地.",
+      "giai": "当地人 = người địa phương."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "洪水淹没了村庄，给＿＿＿人民的生活造成了很大的损失。",
+      "goiY": "Chọn từ có 当 điền vào (练一练 (1) của sách).",
+      "mau": "洪水淹没了村庄，给当地人民的生活造成了很大的损失。",
+      "can": [
+       [
+        "当地"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "所有这些，与＿＿＿社会提倡的“可持续发展”“以人为本”的价值观显然是背道而驰的。",
+      "goiY": "Chọn từ có 当 điền vào (练一练 (2) của sách).",
+      "mau": "所有这些，与当今社会提倡的“可持续发展”“以人为本”的价值观显然是背道而驰的。",
+      "can": [
+       [
+        "当今",
+        "当代"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他刚把手伸到别人的书包里，钱包还没拿出来，就被警察＿＿＿抓获。",
+      "goiY": "Chọn từ có 当 điền vào (练一练 (3) của sách).",
+      "mau": "他刚把手伸到别人的书包里，钱包还没拿出来，就被警察当场抓获。",
+      "can": [
+       [
+        "当场"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「篇章：过渡」",
+  "tenVn": "",
+  "cauTruc": [
+   "过渡词：可是 / 但是 / 反之 / 总而言之 / 拿……来说",
+   "过渡句：承上启下，或用问句引出下文",
+   "过渡段：也许有人要问，……？"
+  ],
+  "giaiThich": "Phần 篇章修辞 của bài: \"过渡\" (chuyển tiếp) là khi bài văn chuyển từ ý này sang ý khác, hoặc từ đoạn này sang đoạn khác, người viết dùng một số từ, câu hoặc đoạn văn để hai ý / hai đoạn nối với nhau tự nhiên, làm cho trên dưới liền mạch thành một khối. Hầu hết bài văn đều có ngôn ngữ chuyển tiếp, gồm ba loại: ① 过渡词 (từ chuyển tiếp): 可是, 但是, 反之, 总而言之, 拿……来说…; ② 过渡句 (câu chuyển tiếp): thường vừa tóm ý trên vừa mở ý dưới (承上启下), hoặc là một câu hỏi dẫn sang nội dung mới — 鲸的身子这么大，它们吃什么呢？; ③ 过渡段 (đoạn chuyển tiếp): cả một đoạn ngắn làm nhiệm vụ nối — trong bài khoá: 也许有人要问，这孙瀛洲到底什么来历？家藏竟然如此丰厚？ nối từ chuyện hiến tặng sang cuộc đời ông.",
+  "viDu": [
+   {
+    "zh": "……他对孩子尚且如此，对自己的那份节俭也就不难想象了。可是，为了收购绝世珍品斗彩三秋杯，他却是不惜重金。（“可是”为过渡词）",
+    "py": "…… Tā duì háizi shàngqiě rúcǐ, duì zìjǐ de nà fèn jiéjiǎn yě jiù bù nán xiǎngxiàng le. Kěshì, wèile shōugòu juéshì zhēnpǐn dòucǎi sānqiūbēi, tā què shì bùxī zhòngjīn.",
+    "vn": "… Với con cái ông còn như vậy, sự tiết kiệm với bản thân cũng dễ hình dung. Thế nhưng, để mua được báu vật tuyệt thế là chén Tam Thu đấu thái, ông lại không tiếc tiền lớn. — \"可是\" là từ chuyển tiếp."
+   },
+   {
+    "zh": "鲸的身子这么大，它们吃什么呢？须鲸主要吃虾和小鱼。（“鲸的身子这么大，它们吃什么呢？”为过渡句）",
+    "py": "Jīng de shēnzi zhème dà, tāmen chī shénme ne? Xūjīng zhǔyào chī xiā hé xiǎo yú.",
+    "vn": "Cá voi to như vậy, chúng ăn gì? Cá voi tấm sừng chủ yếu ăn tôm và cá nhỏ. — Câu hỏi đầu là câu chuyển tiếp."
+   },
+   {
+    "zh": "也许有人要问，这孙瀛洲到底什么来历？家藏竟然如此丰厚？（为过渡段）",
+    "py": "Yěxǔ yǒu rén yào wèn, zhè Sūn Yíngzhōu dàodǐ shénme láilì? Jiācáng jìngrán rúcǐ fēnghòu?",
+    "vn": "Có lẽ sẽ có người hỏi: ông Tôn Doanh Châu này rốt cuộc lai lịch thế nào? Đồ cất giữ trong nhà sao lại phong phú đến vậy? — Đoạn chuyển tiếp, nối chuyện hiến tặng với cuộc đời ông."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他对孩子非常节俭。他为了收购斗彩三秋杯不惜重金。",
+    "why": "Hai ý trái ngược (tiết kiệm ↔ không tiếc tiền) đặt cạnh nhau mà không có từ chuyển tiếp → đọc bị hẫng, không rõ quan hệ.",
+    "dung": "他对孩子非常节俭。可是，为了收购斗彩三秋杯，他却不惜重金。"
+   },
+   {
+    "sai": "赵州桥非常坚固……反之，桥面两侧有石栏，栏板上雕刻着精美的图案。",
+    "why": "反之 dùng khi ý sau NGƯỢC với ý trước; ở đây ý sau là bổ sung (không những kiên cố mà còn đẹp) → phải dùng câu chuyển tiếp tăng tiến.",
+    "dung": "赵州桥非常坚固……这座桥不但坚固，而且美观。桥面两侧有石栏……"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他对孩子尚且如此，对自己的那份节俭也就不难想象了。",
+       "，为了收购斗彩三秋杯，他却是不惜重金。"
+      ],
+      "dap": [
+       [
+        "可是"
+       ]
+      ],
+      "chon": [
+       "可是",
+       "所以",
+       "而且"
+      ],
+      "goiY": "Từ chuyển tiếp trong bài khoá.",
+      "giai": "可是 chuyển từ \"tiết kiệm\" sang \"không tiếc tiền\" (ý trái ngược)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们班的同学学习都非常努力，",
+       "小丽来说，她上课从来不迟到。"
+      ],
+      "dap": [
+       [
+        "拿"
+       ]
+      ],
+      "chon": [
+       "拿",
+       "把",
+       "被"
+      ],
+      "goiY": "练习4 (1) của sách.",
+      "giai": "拿……来说 = lấy … làm ví dụ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "采取恰当的措施，工作就会取得良好效果。",
+       "，工作就会遭受挫折，甚至失败。"
+      ],
+      "dap": [
+       [
+        "反之"
+       ]
+      ],
+      "chon": [
+       "反之",
+       "总之",
+       "因此"
+      ],
+      "goiY": "练习4 (2) của sách.",
+      "giai": "反之 = ngược lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "市场、资金和人才都来自城市，",
+       "，脱离了城市，农村经济就无法得到发展。"
+      ],
+      "dap": [
+       [
+        "总而言之"
+       ]
+      ],
+      "chon": [
+       "总而言之",
+       "反之",
+       "但是"
+      ],
+      "goiY": "练习4 (3) của sách.",
+      "giai": "总而言之 = tóm lại (tổng kết các ý trước)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "“三高”食品本身无罪，",
+       "俗话说“过犹不及”，吃得过量对身体危害极大。"
+      ],
+      "dap": [
+       [
+        "但"
+       ]
+      ],
+      "chon": [
+       "但",
+       "所以",
+       "而且"
+      ],
+      "goiY": "练习4 (4) của sách.",
+      "giai": "但 chuyển sang ý ngược lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "鲸的身子这么大，它们吃什么",
+       "？须鲸主要吃虾和小鱼。"
+      ],
+      "dap": [
+       [
+        "呢"
+       ]
+      ],
+      "chon": [
+       "呢",
+       "吗",
+       "吧"
+      ],
+      "goiY": "Câu hỏi làm câu chuyển tiếp (ví dụ của sách).",
+      "giai": "Đại từ nghi vấn + 呢 dẫn sang nội dung mới."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "为了收购斗彩三秋杯",
+       "，",
+       "可是",
+       "他却不惜重金",
+       "，",
+       "。"
+      ],
+      "dap": [
+       "可是，为了收购斗彩三秋杯，他却不惜重金。"
+      ],
+      "goiY": "Thế nhưng, để mua chén Tam Thu đấu thái, ông lại không tiếc tiền lớn.",
+      "giai": "Từ chuyển tiếp 可是 đứng đầu câu."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "到底",
+       "什么来历",
+       "这孙瀛洲",
+       "也许有人要问",
+       "，",
+       "？"
+      ],
+      "dap": [
+       "也许有人要问，这孙瀛洲到底什么来历？"
+      ],
+      "goiY": "Có lẽ sẽ có người hỏi, ông Tôn Doanh Châu này rốt cuộc lai lịch thế nào?",
+      "giai": "Đoạn chuyển tiếp dạng câu hỏi."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "而且美观",
+       "这座桥",
+       "不但坚固",
+       "，",
+       "。"
+      ],
+      "dap": [
+       "这座桥不但坚固，而且美观。"
+      ],
+      "goiY": "Cây cầu này không những kiên cố mà còn đẹp.",
+      "giai": "Câu chuyển tiếp 承上启下."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "赵州桥非常坚固。这座桥不但坚固，而且美观。桥面两侧有石栏，栏板上雕刻着精美的图案。",
+      "dung": true,
+      "giai": "Câu giữa tóm ý trên (坚固), mở ý dưới (美观) → câu chuyển tiếp đặt đúng chỗ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他生活非常简朴。反之，他为了收购瓷器不惜重金。",
+      "dung": false,
+      "sua": "他生活非常简朴。可是，为了收购瓷器，他却不惜重金。",
+      "giai": "反之 = ngược lại (hai trường hợp giả định trái nhau); chuyển ý đối lập khi kể chuyện dùng 可是 / 但是."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "市场、资金、人才都来自城市，总而言之，离开城市，农村经济就难以发展。",
+      "dung": true,
+      "giai": "总而言之 tổng kết các ý trước → đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Anh ấy thường ngày rất tiết kiệm. Thế nhưng, để mua sách, anh ấy lại không tiếc tiền.",
+      "dap": [
+       "他平时非常节俭。可是，为了买书，他却不惜花钱。",
+       "他平时很节俭。但是为了买书，他却不惜花钱。",
+       "他平时非常节俭。可是为了买书，他却舍得花钱。"
+      ],
+      "py": "Tā píngshí fēicháng jiéjiǎn. Kěshì, wèile mǎi shū, tā què bùxī huā qián.",
+      "goiY": "Dịch sang tiếng Trung, dùng từ chuyển tiếp 可是 / 但是.",
+      "giai": "可是……却…… chuyển ý đối lập."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Có lẽ sẽ có người hỏi: vì sao ông ấy lại hiến tặng tất cả văn vật?",
+      "dap": [
+       "也许有人要问，他为什么要把所有文物都捐出去？",
+       "也许有人会问，他为什么要捐出所有的文物？",
+       "也许有人要问：他为什么把所有的文物都捐了？"
+      ],
+      "py": "Yěxǔ yǒu rén yào wèn, tā wèi shénme yào bǎ suǒyǒu wénwù dōu juān chuqu?",
+      "goiY": "Dịch sang tiếng Trung, dùng câu chuyển tiếp dạng câu hỏi 也许有人要问…….",
+      "giai": "Câu hỏi dẫn sang nội dung mới."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我们班的同学学习都非常努力，拿小丽来说，她上课从来不迟到。——过渡词语是“＿＿＿”。",
+      "goiY": "Tìm từ ngữ chuyển tiếp (练习4 (1) của sách).",
+      "mau": "过渡词语是“拿小丽来说”。",
+      "can": [
+       [
+        "拿小丽来说"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "……我们的教育工作就会取得良好效果。反之，教育工作就会迷失方向，遭受挫折。——过渡词是“＿＿＿”。",
+      "goiY": "Tìm từ chuyển tiếp (练习4 (2) của sách).",
+      "mau": "过渡词是“反之”。",
+      "can": [
+       [
+        "反之"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "……技术和人才也来自城市，总而言之，脱离了城市，农村经济就无法得到发展。——过渡词是“＿＿＿”。",
+      "goiY": "Tìm từ chuyển tiếp (练习4 (3) của sách).",
+      "mau": "过渡词是“总而言之”。",
+      "can": [
+       [
+        "总而言之"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

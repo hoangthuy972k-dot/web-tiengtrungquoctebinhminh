@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Quả cam bị chém đôi bởi vệt sáng trắng, dưa hấu và dâu tây bay lên cùng giọt nước ép">
+  <defs>
+    <linearGradient id="chemqua-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a5a"/>
+      <stop offset="1" stop-color="#d6336c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#chemqua-bg)"/>
+  <circle cx="70" cy="40" r="72" fill="#fff8ec" opacity="0.12"/>
+  <circle cx="352" cy="188" r="92" fill="#ffd27a" opacity="0.14"/>
+  <circle cx="330" cy="40" r="34" fill="#fff8ec" opacity="0.1"/>
+  <circle cx="230" cy="200" r="40" fill="#fff8ec" opacity="0.06"/>
+  <path d="M0 206 Q200 190 400 206 V240 H0Z" fill="#a8234f" opacity="0.5"/>
+  <path d="M0 220 Q200 208 400 220 V240 H0Z" fill="#8f1d45" opacity="0.6"/>
+
+  <!-- flight arcs -->
+  <g fill="none" stroke="#fff8ec" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 10" opacity="0.7">
+    <path d="M28 214 Q38 134 82 106"/>
+    <path d="M384 222 Q376 190 330 170"/>
+    <path d="M150 232 Q158 170 182 132"/>
+  </g>
+
+  <!-- watermelon slice -->
+  <g transform="translate(92 92) rotate(-18)">
+    <path d="M-38 -6 A38 38 0 0 0 38 -6Z" fill="#3fae5a"/>
+    <path d="M-34 -6 A34 34 0 0 0 34 -6Z" fill="#d8f5c0"/>
+    <path d="M-30 -6 A30 30 0 0 0 30 -6Z" fill="#ff4d6d"/>
+    <path d="M-22.4 14 A30 30 0 0 0 22.4 14 A40 12 0 0 1 -22.4 14Z" fill="#e63958"/>
+    <ellipse cx="-17" cy="0" rx="6" ry="3" fill="#ff8fa3"/>
+    <path d="M-38 -6 A38 38 0 0 0 38 -6Z" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    <circle cx="-8" cy="2" r="3" fill="#2b1d3a"/>
+    <circle cx="8" cy="2" r="3" fill="#2b1d3a"/>
+    <path d="M-4 8 Q0 12 4 8" fill="none" stroke="#2b1d3a" stroke-width="2.2" stroke-linecap="round"/>
+    <ellipse cx="-15" cy="8" rx="3.5" ry="2" fill="#ffc2cf"/>
+    <ellipse cx="15" cy="8" rx="3.5" ry="2" fill="#ffc2cf"/>
+    <ellipse cx="-20" cy="-1" rx="1.6" ry="2.6" fill="#2b1d3a"/>
+    <ellipse cx="20" cy="-1" rx="1.6" ry="2.6" fill="#2b1d3a"/>
+    <ellipse cx="0" cy="17" rx="1.6" ry="2.6" fill="#2b1d3a"/>
+    <ellipse cx="-11" cy="15" rx="1.6" ry="2.6" fill="#2b1d3a"/>
+    <ellipse cx="11" cy="15" rx="1.6" ry="2.6" fill="#2b1d3a"/>
+  </g>
+
+  <!-- strawberry -->
+  <g transform="translate(318 150) rotate(14)">
+    <path d="M0 30 C-26 14 -30 -12 -14 -18 C-6 -21 0 -17 0 -17 C0 -17 6 -21 14 -18 C30 -12 26 14 0 30Z" fill="#ff3b5c"/>
+    <path d="M12 -17 C26 -10 22 12 2 27 C14 12 18 -2 12 -17Z" fill="#d6234a"/>
+    <ellipse cx="-13" cy="-6" rx="4" ry="6" fill="#ff8fa3"/>
+    <path d="M0 30 C-26 14 -30 -12 -14 -18 C-6 -21 0 -17 0 -17 C0 -17 6 -21 14 -18 C30 -12 26 14 0 30Z" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    <g fill="#fff3c4">
+      <ellipse cx="-18" cy="4" rx="1.4" ry="2.2"/>
+      <ellipse cx="-9" cy="17" rx="1.4" ry="2.2"/>
+      <ellipse cx="9" cy="17" rx="1.4" ry="2.2"/>
+      <ellipse cx="17" cy="4" rx="1.4" ry="2.2"/>
+      <ellipse cx="0" cy="23" rx="1.4" ry="2.2"/>
+      <ellipse cx="-6" cy="-9" rx="1.4" ry="2.2"/>
+      <ellipse cx="7" cy="-9" rx="1.4" ry="2.2"/>
+    </g>
+    <circle cx="-7" cy="2" r="3" fill="#2b1d3a"/>
+    <circle cx="7" cy="2" r="3" fill="#2b1d3a"/>
+    <ellipse cx="-12" cy="9" rx="3.5" ry="2" fill="#ffb3c1"/>
+    <ellipse cx="12" cy="9" rx="3.5" ry="2" fill="#ffb3c1"/>
+    <path d="M-3 8 Q0 11 3 8" fill="none" stroke="#2b1d3a" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M-15 -17 L-9 -27 L-3 -20 L0 -31 L4 -20 L10 -27 L15 -17 Q0 -11 -15 -17Z" fill="#4cbf63" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M0 -30 V-36" stroke="#2b1d3a" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- orange half A (top) -->
+  <g transform="translate(193 101) rotate(-30)">
+    <path d="M-34 0 A34 34 0 0 1 34 0Z" fill="#ff9f1c"/>
+    <path d="M17 -29.4 A34 34 0 0 1 34 0 H26 A30 30 0 0 0 17 -29.4Z" fill="#f07f12"/>
+    <ellipse cx="-14" cy="-20" rx="7" ry="4" fill="#ffd08a" transform="rotate(-35 -14 -20)"/>
+    <path d="M-34 0 A34 34 0 0 1 34 0" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    <ellipse cx="0" cy="0" rx="34" ry="10" fill="#f07f12" stroke="#2b1d3a" stroke-width="3.5"/>
+    <ellipse cx="0" cy="0" rx="29" ry="7" fill="#ffc65a"/>
+    <path d="M-25 0 H25 M-16 -5 L16 5 M-16 5 L16 -5 M0 -6.5 V6.5" stroke="#fff3d0" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <!-- orange half B (bottom) -->
+  <g transform="translate(208 131) rotate(-20)">
+    <path d="M-34 0 A34 34 0 0 0 34 0Z" fill="#ff9f1c"/>
+    <path d="M17 29.4 A34 34 0 0 0 34 0 H26 A30 30 0 0 1 17 29.4Z" fill="#f07f12"/>
+    <path d="M-34 0 A34 34 0 0 0 34 0" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    <ellipse cx="0" cy="0" rx="34" ry="10" fill="#f07f12" stroke="#2b1d3a" stroke-width="3.5"/>
+    <ellipse cx="0" cy="0" rx="29" ry="7" fill="#ffc65a"/>
+    <path d="M-25 0 H25 M-16 -5 L16 5 M-16 5 L16 -5 M0 -6.5 V6.5" stroke="#fff3d0" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+
+  <!-- juice -->
+  <g fill="#ffb347">
+    <circle cx="168" cy="90" r="4"/>
+    <circle cx="232" cy="148" r="5"/>
+    <circle cx="246" cy="122" r="3"/>
+    <circle cx="156" cy="128" r="3"/>
+    <circle cx="218" cy="80" r="2.5"/>
+    <path d="M150 104 Q144 112 150 116 Q156 112 150 104Z"/>
+    <path d="M252 140 Q246 148 252 152 Q258 148 252 140Z"/>
+  </g>
+  <circle cx="176" cy="148" r="2.5" fill="#ffd27a"/>
+  <circle cx="238" cy="96" r="2" fill="#ffd27a"/>
+
+  <!-- slash -->
+  <path d="M64 179 Q192 102 336 53 Q208 130 64 179Z" fill="#fff8ec" opacity="0.35"/>
+  <path d="M64 179 Q198 112 336 53 Q202 120 64 179Z" fill="#ffffff"/>
+  <path d="M338 41 Q338 53 350 53 Q338 53 338 65 Q338 53 326 53 Q338 53 338 41Z" fill="#ffffff"/>
+
+  <!-- sparkles -->
+  <path d="M46 150 Q46 156 52 156 Q46 156 46 162 Q46 156 40 156 Q46 156 46 150Z" fill="#fff8ec" opacity="0.9"/>
+  <path d="M262 26 Q262 31 267 31 Q262 31 262 36 Q262 31 257 31 Q262 31 262 26Z" fill="#fff8ec" opacity="0.9"/>
+  <circle cx="140" cy="40" r="2.5" fill="#fff8ec" opacity="0.7"/>
+  <circle cx="370" cy="96" r="2" fill="#fff8ec" opacity="0.7"/>
+  <circle cx="276" cy="196" r="2" fill="#fff8ec" opacity="0.6"/>
+</svg>

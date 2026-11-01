@@ -1,0 +1,78 @@
+{
+ "zh": "大数据时代",
+ "py": "Dà shùjù shídài",
+ "vn": "Thời đại dữ liệu lớn",
+ "topic": "第六单元 趣味世界 · Dữ liệu lớn: dự đoán tương lai và y tế thông minh",
+ "vocabCount": 51,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "加以",
+   "explain": "加以 là ĐỘNG TỪ HÌNH THỨC, biểu thị thái độ hoặc cách xử lý đối với sự vật đã được nhắc đến ở phía trước. Sau 加以 BẮT BUỘC là một ĐỘNG TỪ SONG ÂM TIẾT làm tân ngữ (研究, 说明, 利用, 改正, 分析…); động tác thực sự là động từ phía sau, 加以 không mang nghĩa cụ thể. Đối tượng được xử lý thường đã nêu ở trước (làm chủ đề) hoặc đưa lên bằng 对 / 对于, nên động từ sau 加以 KHÔNG mang tân ngữ nữa. Trước 加以 hay có 认真, 好好, 必须, 应该, 不妨…. Dùng trong văn viết.",
+   "rule": "对 / 对于 + N，（phó từ）+ <strong style=\"color:var(--sky-d)\">加以</strong> + V song âm tiết　|　N (đã nêu)，…… + <strong style=\"color:var(--sky-d)\">加以</strong> + V song âm tiết",
+   "examples": [
+    {
+     "zh": "对于你的意见和建议，我们会认真加以研究。",
+     "py": "Duìyú nǐ de yìjiàn hé jiànyì, wǒmen huì rènzhēn jiāyǐ yánjiū.",
+     "vn": "Đối với ý kiến và đề xuất của bạn, chúng tôi sẽ nghiêm túc nghiên cứu."
+    },
+    {
+     "zh": "大数据如何连接未来？我们不妨以大数据与健康为例加以说明。",
+     "py": "Dà shùjù rúhé liánjiē wèilái? Wǒmen bùfáng yǐ dà shùjù yǔ jiànkāng wéi lì jiāyǐ shuōmíng.",
+     "vn": "Dữ liệu lớn kết nối với tương lai như thế nào? Chúng ta thử lấy dữ liệu lớn và sức khoẻ làm ví dụ để giải thích."
+    },
+    {
+     "zh": "学校为我们提供了这么好的图书馆和自习室，我们应该好好加以利用。",
+     "py": "Xuéxiào wèi wǒmen tígōngle zhème hǎo de túshūguǎn hé zìxíshì, wǒmen yīnggāi hǎohāo jiāyǐ lìyòng.",
+     "vn": "Nhà trường cung cấp cho chúng ta thư viện và phòng tự học tốt như vậy, chúng ta nên tận dụng thật tốt."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "老师对这个问题加以说。",
+     "why": "Sau 加以 phải là động từ SONG ÂM TIẾT; 说 là động từ đơn âm tiết.",
+     "right": "老师对这个问题加以说明。"
+    },
+    {
+     "wrong": "我们要加以研究这个问题。",
+     "why": "Động từ sau 加以 không mang tân ngữ; đưa đối tượng lên trước bằng 对.",
+     "right": "我们要对这个问题加以研究。"
+    }
+   ]
+  },
+  {
+   "point": "大大、远远",
+   "explain": "大大 và 远远 đều là PHÓ TỪ, là dạng lặp của tính từ đơn âm tiết 大 và 远. 大大 biểu thị mức độ rất sâu hoặc số lượng rất lớn (\"rất nhiều, đáng kể\"), thường bổ nghĩa cho ĐỘNG TỪ SONG ÂM TIẾT hoặc CỤM ĐỘNG TỪ (提高, 增加, 减少, 改变, 避免了分歧), dùng nhiều trong văn viết. 远远 sau khi lặp lại nghĩa cơ bản không đổi (\"xa, vượt xa, còn xa mới\"), hay đi với 超出, 超过, 高于, 不如, 不能, 落后. Sau 大大, 远远 đều có thể thêm 地.",
+   "rule": "<strong style=\"color:var(--sky-d)\">大大</strong>（地）+ V song âm tiết / cụm động từ (提高 / 增加 / 减少)　|　<strong style=\"color:var(--sky-d)\">远远</strong>（地）+ 超出 / 超过 / 不如 / 不能 + ……",
+   "examples": [
+    {
+     "zh": "大数据的优越之处就在于，能够大大（地）提高医生的工作效率，将医生的能量发挥到最大。",
+     "py": "Dà shùjù de yōuyuè zhī chù jiù zàiyú, nénggòu dàdà (de) tígāo yīshēng de gōngzuò xiàolǜ, jiāng yīshēng de néngliàng fāhuī dào zuì dà.",
+     "vn": "Điểm ưu việt của dữ liệu lớn chính là có thể nâng cao đáng kể hiệu suất làm việc của bác sĩ, phát huy tối đa năng lực của bác sĩ."
+    },
+    {
+     "zh": "实事求是地讲，即便仅仅做到这一点，大数据为人类做出的贡献也远远（地）超出了我们的期盼。",
+     "py": "Shíshì-qiúshì de jiǎng, jíbiàn jǐnjǐn zuòdào zhè yì diǎn, dà shùjù wèi rénlèi zuòchū de gòngxiàn yě yuǎnyuǎn (de) chāochūle wǒmen de qīpàn.",
+     "vn": "Nói một cách khách quan, cho dù chỉ làm được điều này, đóng góp của dữ liệu lớn cho nhân loại cũng đã vượt xa sự mong đợi của chúng ta."
+    },
+    {
+     "zh": "你现在的任务就是认真读书，因为你现在的知识、能力都远远不能胜任你理想中的工作。",
+     "py": "Nǐ xiànzài de rènwu jiù shì rènzhēn dúshū, yīnwèi nǐ xiànzài de zhīshi, nénglì dōu yuǎnyuǎn bù néng shèngrèn nǐ lǐxiǎng zhōng de gōngzuò.",
+     "vn": "Nhiệm vụ hiện giờ của em chính là chăm chỉ học hành, vì kiến thức và năng lực hiện nay của em còn lâu mới đảm đương được công việc mơ ước."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他的成绩大大好。",
+     "why": "大大 bổ nghĩa cho động từ / cụm động từ, không đứng trước một tính từ đơn như 好.",
+     "right": "他的成绩大大提高了。"
+    },
+    {
+     "wrong": "我的水平大大不能胜任这份工作。",
+     "why": "Ý \"còn xa mới …\" (phủ định) dùng 远远不能; 大大 không đi với 不能.",
+     "right": "我的水平远远不能胜任这份工作。"
+    }
+   ]
+  }
+ ]
+}

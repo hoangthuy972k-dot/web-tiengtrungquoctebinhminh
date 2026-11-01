@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+<g fill="none" stroke="#5aa346" stroke-width="3" stroke-linecap="round" opacity="0.55">
+  <path d="M18 40 Q20 30 24 26 M24 40 Q24 30 28 24 M30 40 Q30 32 35 28"/>
+  <path d="M108 120 Q110 110 114 106 M114 120 Q114 110 118 104 M120 120 Q120 112 125 108"/>
+  <path d="M120 30 Q121 24 124 21 M126 30 Q126 24 129 20"/>
+  <path d="M40 128 Q41 122 44 119 M46 128 Q46 122 49 118"/>
+</g>
+<g stroke="#2b1d3a" stroke-width="2" opacity="0.75">
+  <circle cx="74" cy="64" r="4" fill="#fff8ec"/><circle cx="80" cy="60" r="4" fill="#fff8ec"/><circle cx="80" cy="68" r="4" fill="#fff8ec"/><circle cx="86" cy="64" r="4" fill="#fff8ec"/>
+  <circle cx="80" cy="64" r="3" fill="#ffd23f"/>
+  <circle cx="140" cy="140" r="3.2" fill="#ff8fb1"/><circle cx="146" cy="136" r="3.2" fill="#ff8fb1"/><circle cx="146" cy="144" r="3.2" fill="#ff8fb1"/><circle cx="152" cy="140" r="3.2" fill="#ff8fb1"/>
+  <circle cx="146" cy="140" r="2.4" fill="#ffd23f"/>
+</g>
+<g fill="#ffffff" opacity="0.35"><circle cx="60" cy="18" r="3"/><circle cx="12" cy="100" r="2.5"/><circle cx="100" cy="150" r="2.5"/></g>
+</svg>

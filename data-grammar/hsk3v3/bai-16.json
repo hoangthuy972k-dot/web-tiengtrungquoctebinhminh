@@ -1,0 +1,757 @@
+{
+ "/lessons/hsk3v3-bai-16.html": {
+  "points": [
+   {
+    "title": "Câu ghép đẳng lập 「一会儿……，一会儿……」 — lúc thì…, lúc thì…",
+    "errors": [
+     {
+      "wrong": "他进来一会儿，出去一会儿，忙得很。",
+      "why": "nhầm với “V + 一会儿” = làm gì một lát (ôn HSK2 Bài 5); muốn nói “lúc thì… lúc thì…” phải đặt 一会儿 TRƯỚC động từ.",
+      "right": "他一会儿进来，一会儿出去，忙得很。"
+     },
+     {
+      "wrong": "最近天气一会儿冷，一下儿热。",
+      "why": "hai vế phải cùng dùng 一会儿; 一下儿 chỉ động tác ngắn đặt sau động từ (看一下儿), không dùng trong khung này.",
+      "right": "最近天气一会儿冷，一会儿热。"
+     },
+     {
+      "wrong": "小猫一会儿在沙发上睡觉，也一会儿在我脚边玩。",
+      "why": "dịch theo kiểu “lúc thì…, (cũng) lúc thì…” nên thêm 也; hai vế 一会儿 ngang hàng, chỉ nối bằng dấu phẩy.",
+      "right": "小猫一会儿在沙发上睡觉，一会儿在我脚边玩。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成句子): “Suy nghĩ của cô ấy luôn thay đổi, lúc thì nói muốn học vẽ, lúc thì nói muốn học múa.”",
+      "pre": "她的想法总是变，",
+      "blank": "一会儿说想学画画",
+      "post": "，一会儿说想学跳舞。",
+      "options": [
+       "一会儿说想学画画",
+       "说想学画画一会儿",
+       "一下儿说想学画画"
+      ],
+      "answer": 0,
+      "explanation": "一会儿 + V, hai vế đối nhau; 总是 (ôn HSK3 Bài 5), 画 (ôn HSK2 Bài 6), 跳舞 (ôn HSK2 Bài 14)."
+     },
+     {
+      "context": "Sách (完成句子): “Ở hội thao, cậu ấy lúc thì tham gia thi chạy, lúc thì tham gia thi bơi.”",
+      "pre": "运动会上，他一会儿参加跑步比赛，",
+      "blank": "一会儿参加游泳比赛",
+      "post": "。",
+      "options": [
+       "一会儿参加游泳比赛",
+       "也一会儿参加游泳比赛",
+       "参加游泳比赛一会儿"
+      ],
+      "answer": 0,
+      "explanation": "运动会、参加、比赛 (ôn HSK3 Bài 9); 跑步、游泳 (ôn HSK2 Bài 7)."
+     },
+     {
+      "context": "Sách (完成句子): “Con mèo này rất đáng yêu, lúc thì nằm ngủ trên sofa, lúc thì chơi cạnh chân tôi.”",
+      "pre": "这只猫很可爱，一会儿躺在沙发上睡觉，",
+      "blank": "一会儿在我脚边玩",
+      "post": "。",
+      "options": [
+       "一会儿在我脚边玩",
+       "在我脚边玩一会儿",
+       "一下儿在我脚边玩"
+      ],
+      "answer": 0,
+      "explanation": "沙发 (ôn HSK3 Bài 6); 脚、可爱 của bài này."
+     },
+     {
+      "context": "Sách (miêu tả tranh): “Hôm nay có mấy chú mèo ốm mới đến, lúc thì đòi ăn, lúc thì đòi uống nước.”",
+      "pre": "今天新来了几只生病的小猫，一会儿要吃东西，",
+      "blank": "一会儿要喝水",
+      "post": "。",
+      "options": [
+       "一会儿要喝水",
+       "要喝水一会儿",
+       "也一会儿要喝水"
+      ],
+      "answer": 0,
+      "explanation": "Bài miêu tả tranh của sách; 生病 (ôn HSK1 Bài 12), 只 (ôn HSK1 Bài 8)."
+     },
+     {
+      "context": "“Dạo này thời tiết thay đổi rất nhanh, lúc thì lạnh, lúc thì nóng.”",
+      "pre": "最近天气变化很快，",
+      "blank": "一会儿冷，一会儿热",
+      "post": "。",
+      "options": [
+       "一会儿冷，一会儿热",
+       "一会儿冷，一下儿热",
+       "冷一会儿，热一会儿"
+      ],
+      "answer": 0,
+      "explanation": "Sau 一会儿 có thể là tính từ; 变化 (ôn HSK3 Bài 12), 最近 (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "“Anh ấy lúc thì đi vào, lúc thì đi ra, bận lắm.”",
+      "pre": "他一会儿进来，一会儿",
+      "blank": "出去",
+      "post": "，忙得很。",
+      "options": [
+       "出去",
+       "出去一会儿",
+       "一下儿出去"
+      ],
+      "answer": 0,
+      "explanation": "进来 / 出去 — bổ ngữ xu hướng (ôn HSK2 Bài 4, 5); 忙得很 — bổ ngữ trình độ (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "最近天气一会儿冷，一下儿热。",
+      "isCorrect": false,
+      "correctVersion": "最近天气一会儿冷，一会儿热。",
+      "explanation": "Hai vế phải cùng dùng 一会儿."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "孩子们一会儿唱歌，一会儿跳舞，高兴极了。",
+      "isCorrect": true,
+      "explanation": "Đúng: 一会儿 + V1，一会儿 + V2; 唱歌 (ôn HSK1 Bài 9), 极了 (ôn HSK3 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nó lúc thì ngủ cạnh chân bạn, lúc thì trèo lên người bạn.”",
+      "words": [
+       "它",
+       "一会儿",
+       "在你脚边",
+       "睡觉",
+       "，",
+       "一会儿",
+       "在你身上",
+       "爬",
+       "。"
+      ],
+      "answer": "它一会儿在你脚边睡觉，一会儿在你身上爬。",
+      "explanation": "Câu của Bài khoá 1; 爬 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chú gấu trúc này lúc thì trèo lên, lúc thì nhảy xuống.”",
+      "words": [
+       "这只",
+       "大熊猫",
+       "一会儿",
+       "爬上去",
+       "，",
+       "一会儿",
+       "跳下来",
+       "。"
+      ],
+      "answer": "这只大熊猫一会儿爬上去，一会儿跳下来。",
+      "explanation": "Câu của Bài khoá 3; 跳 (ôn HSK3 Bài 14), 上去 / 下来 (ôn HSK2 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Em trai lúc thì xem ti vi, lúc thì chơi game.”",
+      "words": [
+       "弟弟",
+       "一会儿",
+       "看电视",
+       "，",
+       "一会儿",
+       "玩游戏",
+       "。"
+      ],
+      "answer": "弟弟一会儿看电视，一会儿玩游戏。",
+      "explanation": "游戏 (ôn HSK3 Bài 15); 电视 (ôn HSK1 Bài 9)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trời lúc thì nắng, lúc thì mưa.”",
+      "words": [
+       "天",
+       "一会儿",
+       "晴",
+       "，",
+       "一会儿",
+       "下雨",
+       "。"
+      ],
+      "answer": "天一会儿晴，一会儿下雨。",
+      "explanation": "晴 (ôn HSK2 Bài 12); 下雨 (ôn HSK1 Bài 12)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 一会儿……，一会儿…….",
+      "promptLang": "vi",
+      "prompt": "Mẹ lúc thì nấu cơm, lúc thì dọn phòng, bận suốt cả buổi sáng.",
+      "answer": "妈妈一会儿做饭，一会儿打扫房间，忙了一个上午。",
+      "answerPy": "Māma yíhuìr zuò fàn, yíhuìr dǎsǎo fángjiān, mángle yí ge shàngwǔ.",
+      "explanation": "做饭 (ôn HSK1 Bài 5); 打扫 (ôn HSK3 Bài 3); bổ ngữ thời lượng 忙了一个上午 (ôn HSK3 Bài 8)."
+     }
+    ]
+   },
+   {
+    "title": "Giới từ 「关于」 — 关于 + N，……  /  关于 + N + 的 + danh từ",
+    "errors": [
+     {
+      "wrong": "我关于这件事还不太了解。",
+      "why": "tiếng Việt nói “Tôi về việc này…”; cụm 关于 + N làm trạng ngữ chỉ đứng ĐẦU câu, không đặt sau chủ ngữ.",
+      "right": "关于这件事，我还不太了解。"
+     },
+     {
+      "wrong": "我想看一本关于中国历史书。",
+      "why": "cụm 关于 + N làm định ngữ phải có 的 trước danh từ trung tâm.",
+      "right": "我想看一本关于中国历史的书。"
+     },
+     {
+      "wrong": "关于他的帮助，我很快就学会了游泳。",
+      "why": "nhầm 关于 (về – nội dung được nói đến) với “nhờ vào”; nhờ sự giúp đỡ của ai dùng 在……的帮助下 (ôn HSK3 Bài 10).",
+      "right": "在他的帮助下，我很快就学会了游泳。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成句子): “Về chuyến du lịch ngày mai, tôi còn có một vài câu hỏi muốn hỏi bạn.”",
+      "pre": "",
+      "blank": "关于明天的旅游",
+      "post": "，我还有一些问题想问你。",
+      "options": [
+       "关于明天的旅游",
+       "明天的旅游关于",
+       "我关于明天的旅游"
+      ],
+      "answer": 0,
+      "explanation": "关于 + N đứng đầu câu, có dấu phẩy; 旅游 (ôn HSK2 Bài 1), 问题 (ôn HSK1 Bài 13)."
+     },
+     {
+      "context": "Sách (完成句子): “Giám đốc muốn nói chuyện với bạn về việc bạn xin nghỉ.”",
+      "pre": "经理要跟你谈一谈",
+      "blank": "关于你请假",
+      "post": "的事情。",
+      "options": [
+       "关于你请假",
+       "你请假关于",
+       "根据你请假"
+      ],
+      "answer": 0,
+      "explanation": "关于 + N + 的 + 事情 làm định ngữ; 经理、请假 (ôn HSK3 Bài 11); 根据 = căn cứ (ôn HSK3 Bài 15)."
+     },
+     {
+      "context": "Sách (完成句子): “Bạn đi tìm thầy Lý đi, thầy ấy có thể cho bạn biết một vài phương pháp học tiếng Trung.”",
+      "pre": "你去找李老师吧，他可以告诉你一些",
+      "blank": "关于学习汉语",
+      "post": "的方法。",
+      "options": [
+       "关于学习汉语",
+       "学习汉语关于",
+       "在学习汉语"
+      ],
+      "answer": 0,
+      "explanation": "方法 (ôn HSK3 Bài 8); 告诉 (ôn HSK2 Bài 13)."
+     },
+     {
+      "context": "“Về vấn đề này, mẹ phải từ từ kể cho con nghe.”",
+      "pre": "",
+      "blank": "关于",
+      "post": "这个问题，我得慢慢给你讲。",
+      "options": [
+       "关于",
+       "根据",
+       "在"
+      ],
+      "answer": 0,
+      "explanation": "关于 dẫn ra nội dung được nói đến; 根据 = căn cứ vào (ôn HSK3 Bài 15); 得 děi (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "“Về yêu cầu của anh ấy, chúng ta còn phải họp xong rồi mới quyết định.”",
+      "pre": "",
+      "blank": "关于他的要求",
+      "post": "，我们还要开会以后再决定。",
+      "options": [
+       "关于他的要求",
+       "他的要求关于",
+       "我们关于他的要求"
+      ],
+      "answer": 0,
+      "explanation": "要求 (ôn HSK3 Bài 10); 开会 (ôn HSK3 Bài 11); ……以后再 + V (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "“Tôi muốn mượn một cuốn sách về động vật.”",
+      "pre": "我想借一本",
+      "blank": "关于动物的",
+      "post": "书。",
+      "options": [
+       "关于动物的",
+       "关于动物",
+       "动物关于的"
+      ],
+      "answer": 0,
+      "explanation": "Làm định ngữ phải có 的; 借 (ôn HSK3 Bài 12)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我关于这件事还不太了解。",
+      "isCorrect": false,
+      "correctVersion": "关于这件事，我还不太了解。",
+      "explanation": "Cụm 关于 làm trạng ngữ phải đứng đầu câu."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "关于比赛的时间，我明天一定告诉大家。",
+      "isCorrect": true,
+      "explanation": "Đúng: 关于 + N đứng đầu câu; 比赛 (ôn HSK3 Bài 9), 一定 (ôn HSK3 Bài 4)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Về vấn đề này, mẹ phải từ từ kể cho con nghe.”",
+      "words": [
+       "关于",
+       "这个问题",
+       "，",
+       "我",
+       "得",
+       "慢慢",
+       "给你",
+       "讲",
+       "。"
+      ],
+      "answer": "关于这个问题，我得慢慢给你讲。",
+      "explanation": "Câu của Bài khoá 2; 讲 (ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi muốn đọc một cuốn sách về lịch sử Trung Quốc.”",
+      "words": [
+       "我",
+       "想看",
+       "一本",
+       "关于",
+       "中国历史",
+       "的",
+       "书",
+       "。"
+      ],
+      "answer": "我想看一本关于中国历史的书。",
+      "explanation": "历史 (ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Về thời gian thi đấu, ngày mai tôi nhất định báo cho mọi người.”",
+      "words": [
+       "关于",
+       "比赛的",
+       "时间",
+       "，",
+       "我",
+       "明天",
+       "一定",
+       "告诉",
+       "大家",
+       "。"
+      ],
+      "answer": "关于比赛的时间，我明天一定告诉大家。",
+      "explanation": "一定 (ôn HSK3 Bài 4); 告诉 (ôn HSK2 Bài 13)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô giáo cho chúng tôi xem một video về gấu trúc.”",
+      "words": [
+       "老师",
+       "给我们",
+       "看了",
+       "一个",
+       "关于",
+       "大熊猫的",
+       "视频",
+       "。"
+      ],
+      "answer": "老师给我们看了一个关于大熊猫的视频。",
+      "explanation": "视频 (ôn HSK3 Bài 14)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 关于.",
+      "promptLang": "vi",
+      "prompt": "Về chuyện chuyển nhà, cuối tuần chúng ta hãy bàn tiếp nhé.",
+      "answer": "关于搬家的事情，我们周末再说吧。",
+      "answerPy": "Guānyú bānjiā de shìqing, wǒmen zhōumò zài shuō ba.",
+      "explanation": "搬家 (ôn HSK3 Bài 3); 事情 (ôn HSK2 Bài 12); 周末 của bài này."
+     }
+    ]
+   },
+   {
+    "title": "Cụm từ cố định 「一般来说」 — nói chung, thông thường",
+    "errors": [
+     {
+      "wrong": "我一般来说七点起床。",
+      "why": "nhầm với 一般 (ôn HSK3 Bài 10) đứng trước động từ; 一般来说 là cụm cố định đặt ĐẦU câu, có dấu phẩy.",
+      "right": "一般来说，我七点起床。（hoặc: 我一般七点起床。）"
+     },
+     {
+      "wrong": "经常来说，这种树每年开一次花。",
+      "why": "dịch “thường thì, thông thường mà nói” thành 经常来说 / 常常来说 — không có cách nói này; cụm cố định là 一般来说.",
+      "right": "一般来说，这种树每年开一次花。"
+     },
+     {
+      "wrong": "一般来说，昨天我十点就睡了。",
+      "why": "一般来说 nêu quy luật, thói quen chung; không dùng cho một việc cụ thể chỉ xảy ra một lần.",
+      "right": "昨天我十点就睡了。（thói quen: 一般来说，我十点就睡了。）"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成对话): A: Bạn thích tập thể dục buổi sáng hay buổi tối? B: “Nói chung là buổi sáng, vì buổi sáng tôi dậy rất sớm.”",
+      "pre": "",
+      "blank": "一般来说，我早上锻炼",
+      "post": "，因为我早上起床起得很早。",
+      "options": [
+       "一般来说，我早上锻炼",
+       "我一般来说早上锻炼",
+       "经常来说，我早上锻炼"
+      ],
+      "answer": 0,
+      "explanation": "锻炼 (ôn HSK3 Bài 5); 还是 trong câu hỏi lựa chọn (ôn HSK3 Bài 11); 起床起得很早 — lặp động từ + bổ ngữ trình độ."
+     },
+     {
+      "context": "Sách (完成对话): A: Bạn thấy lúc tan làm đi tàu điện ngầm hay đi taxi nhanh hơn? B: “Nói chung đi tàu điện ngầm nhanh hơn.”",
+      "pre": "",
+      "blank": "一般来说，坐地铁更快",
+      "post": "。",
+      "options": [
+       "一般来说，坐地铁更快",
+       "坐地铁一般来说更快的",
+       "一般来说，坐地铁快更"
+      ],
+      "answer": 0,
+      "explanation": "更 + Adj (ôn HSK2 Bài 4); 地铁 (ôn HSK2 Bài 12), 出租车 (ôn HSK1 Bài 6)."
+     },
+     {
+      "context": "Sách (完成对话): A: Cuối tuần bạn thích làm gì? B: “Thông thường, cuối tuần tôi thích ở nhà đọc sách.”",
+      "pre": "",
+      "blank": "一般来说，周末我喜欢在家看书",
+      "post": "。",
+      "options": [
+       "一般来说，周末我喜欢在家看书",
+       "周末我一般来说喜欢在家看书",
+       "一般来说，周末我喜欢看书在家"
+      ],
+      "answer": 0,
+      "explanation": "在 + nơi chốn + V (ôn HSK1 Bài 7); 周末 của bài này."
+     },
+     {
+      "context": "“Nói chung, gấu trúc mỗi ngày phải ngủ rất nhiều giấc.”",
+      "pre": "",
+      "blank": "一般来说",
+      "post": "，熊猫每天要睡很多次觉。",
+      "options": [
+       "一般来说",
+       "一会儿",
+       "关于"
+      ],
+      "answer": 0,
+      "explanation": "Câu của Bài khoá 3; 睡觉 là từ ly hợp: 睡很多次觉 (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "“Thông thường, loại cây này mỗi năm ra hoa một lần.”",
+      "pre": "一般来说，这种树每年",
+      "blank": "开一次花",
+      "post": "。",
+      "options": [
+       "开一次花",
+       "开花一次",
+       "一次开花"
+      ],
+      "answer": 0,
+      "explanation": "Từ ly hợp 开花: số lần chen vào giữa (ôn HSK3 Bài 8, 12); 种 (ôn HSK3 Bài 8), 树 (ôn HSK3 Bài 5)."
+     },
+     {
+      "context": "“Nói chung, học ngoại ngữ cần luyện tập nhiều.”",
+      "pre": "一般来说，学习外语",
+      "blank": "需要多练习",
+      "post": "。",
+      "options": [
+       "需要多练习",
+       "需要练习多",
+       "多需要练习"
+      ],
+      "answer": 0,
+      "explanation": "多 + V = làm nhiều hơn; 外语 (ôn HSK3 Bài 10), 练习 (ôn HSK3 Bài 9), 需要 (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我一般来说七点起床。",
+      "isCorrect": false,
+      "correctVersion": "一般来说，我七点起床。",
+      "explanation": "一般来说 đặt đầu câu; hoặc dùng 一般 trước động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "一般来说，北方的冬天比南方冷。",
+      "isCorrect": true,
+      "explanation": "Đúng: 一般来说 đầu câu nêu quy luật chung; 北方、南方 (ôn HSK3 Bài 13), câu so sánh 比 (ôn HSK2 Bài 8)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nói chung, gấu trúc mỗi ngày phải ngủ rất nhiều giấc.”",
+      "words": [
+       "一般来说",
+       "，",
+       "熊猫",
+       "每天",
+       "要睡",
+       "很多次",
+       "觉",
+       "。"
+      ],
+      "answer": "一般来说，熊猫每天要睡很多次觉。",
+      "explanation": "Câu của Bài khoá 3."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Thông thường, loại cây này mỗi năm ra hoa một lần.”",
+      "words": [
+       "一般来说",
+       "，",
+       "这种树",
+       "每年",
+       "开",
+       "一次",
+       "花",
+       "。"
+      ],
+      "answer": "一般来说，这种树每年开一次花。",
+      "explanation": "开花 (ôn HSK3 Bài 12)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nói chung, học ngoại ngữ cần luyện tập nhiều.”",
+      "words": [
+       "一般来说",
+       "，",
+       "学习",
+       "外语",
+       "需要",
+       "多",
+       "练习",
+       "。"
+      ],
+      "answer": "一般来说，学习外语需要多练习。",
+      "explanation": "外语 (ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nói chung, mùa hè ở đây rất nóng.”",
+      "words": [
+       "一般来说",
+       "，",
+       "这里的",
+       "夏天",
+       "很",
+       "热",
+       "。"
+      ],
+      "answer": "一般来说，这里的夏天很热。",
+      "explanation": "夏天 (ôn HSK3 Bài 12); 热 (ôn HSK1 Bài 12)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 一般来说.",
+      "promptLang": "vi",
+      "prompt": "Nói chung, cuối tuần du khách ở sở thú đông hơn ngày thường.",
+      "answer": "一般来说，周末动物园的游客比平时多。",
+      "answerPy": "Yìbān lái shuō, zhōumò dòngwùyuán de yóukè bǐ píngshí duō.",
+      "explanation": "游客、平时 (ôn HSK3 Bài 15); câu so sánh 比 (ôn HSK2 Bài 8)."
+     }
+    ]
+   },
+   {
+    "title": "Câu so sánh (11) 「A 比 B + 多/少/早/晚 + động từ + cụm số lượng」",
+    "errors": [
+     {
+      "wrong": "哥哥比弟弟吃了多三个饺子。",
+      "why": "theo tiếng Việt “ăn nhiều hơn ba cái” nên đặt 多 sau động từ; phải đặt 多 TRƯỚC động từ: 多吃了三个.",
+      "right": "哥哥比弟弟多吃了三个饺子。"
+     },
+     {
+      "wrong": "我比他到了晚十分钟。",
+      "why": "晚 phải đứng trước động từ, cụm số lượng đứng sau động từ.",
+      "right": "我比他晚到了十分钟。"
+     },
+     {
+      "wrong": "冬天比夏天很早关门一个小时。",
+      "why": "câu so sánh 比 không dùng 很 / 非常 trước 多/少/早/晚 (ôn HSK2 Bài 8).",
+      "right": "冬天比夏天早关门一个小时。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成对话): A: Sao hôm nay bạn đến sớm thế? B: “Tôi đi tàu điện ngầm đến, nên đến sớm hơn ngày thường hai mươi phút.”",
+      "pre": "我是坐地铁来的，所以",
+      "blank": "比平时早到了二十分钟",
+      "post": "。",
+      "options": [
+       "比平时早到了二十分钟",
+       "比平时到了早二十分钟",
+       "比平时很早到二十分钟"
+      ],
+      "answer": 0,
+      "explanation": "是……的 nhấn mạnh cách thức (ôn HSK2 Bài 1); 平时 (ôn HSK3 Bài 15)."
+     },
+     {
+      "context": "Sách (完成对话): A: Đã 11 giờ rồi, sao bạn còn chưa ngủ? B: “Mai không phải đi học, tôi muốn ngủ muộn hơn ngày thường một tiếng.”",
+      "pre": "明天不上课，我想",
+      "blank": "比平时晚睡一个小时",
+      "post": "。",
+      "options": [
+       "比平时晚睡一个小时",
+       "比平时睡晚一个小时",
+       "晚睡比平时一个小时"
+      ],
+      "answer": 0,
+      "explanation": "晚 + V + thời lượng; 上课 (ôn HSK1 Bài 7)."
+     },
+     {
+      "context": "Sách (完成对话): A: Chúng ta đến lúc trả tiền thẻ tín dụng rồi. B: “Đúng, tháng này tiêu nhiều hơn tháng trước hai nghìn tệ.”",
+      "pre": "对，这个月",
+      "blank": "比上个月多花了两千块钱",
+      "post": "。",
+      "options": [
+       "比上个月多花了两千块钱",
+       "比上个月花了多两千块钱",
+       "比上个月花了两千块钱多"
+      ],
+      "answer": 0,
+      "explanation": "花 = tiêu tiền (ôn HSK2 Bài 8); 该……了 (ôn HSK3 Bài 6); 信用卡、还 (ôn HSK3 Bài 3)."
+     },
+     {
+      "context": "Sách (miêu tả tranh): “Đã 11 giờ đêm rồi, bạn về muộn hơn trước hai tiếng đấy.”",
+      "pre": "已经晚上十一点了，你比以前",
+      "blank": "晚回来了两个小时",
+      "post": "。",
+      "options": [
+       "晚回来了两个小时",
+       "回来了晚两个小时",
+       "很晚回来两个小时"
+      ],
+      "answer": 0,
+      "explanation": "以前 (ôn HSK3 Bài 6); 回来 (ôn HSK2 Bài 3)."
+     },
+     {
+      "context": "Sách (miêu tả tranh): A: Đã năm giờ rồi, sở thú sắp đóng cửa chưa? B: “Mùa hè đóng cửa muộn hơn mùa đông một tiếng. Chúng ta đi ngay bây giờ.”",
+      "pre": "夏天比冬天",
+      "blank": "晚关门一个小时",
+      "post": "。咱们现在就去。",
+      "options": [
+       "晚关门一个小时",
+       "关门了晚一个小时",
+       "很晚关门一个小时"
+      ],
+      "answer": 0,
+      "explanation": "夏天、冬天 (ôn HSK3 Bài 12); 关门 (关 – ôn HSK3 Bài 3)."
+     },
+     {
+      "context": "“Anh trai ăn nhiều hơn em trai ba cái sủi cảo.”",
+      "pre": "哥哥比弟弟",
+      "blank": "多",
+      "post": "吃了三个饺子。",
+      "options": [
+       "多",
+       "很多",
+       "更"
+      ],
+      "answer": 0,
+      "explanation": "多 đứng trước động từ; không dùng 很多 / 更 trong mẫu này (更 – ôn HSK2 Bài 4)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我比他到了晚十分钟。",
+      "isCorrect": false,
+      "correctVersion": "我比他晚到了十分钟。",
+      "explanation": "晚 đặt trước động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "今天我比昨天多跑了半个小时。",
+      "isCorrect": true,
+      "explanation": "Đúng: 多 + V + thời lượng; 跑 (ôn HSK2 Bài 7), 半 (ôn HSK1 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mùa đông đóng cửa sớm hơn mùa hè một tiếng.”",
+      "words": [
+       "冬天",
+       "比",
+       "夏天",
+       "早",
+       "关门",
+       "一个小时",
+       "。"
+      ],
+      "answer": "冬天比夏天早关门一个小时。",
+      "explanation": "Ví dụ của sách: A 比 B + 早 + V + thời lượng."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh trai ăn nhiều hơn em trai ba cái sủi cảo.”",
+      "words": [
+       "哥哥",
+       "比",
+       "弟弟",
+       "多",
+       "吃了",
+       "三个",
+       "饺子",
+       "。"
+      ],
+      "answer": "哥哥比弟弟多吃了三个饺子。",
+      "explanation": "饺子 (ôn HSK1 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đến muộn hơn anh ấy mười phút.”",
+      "words": [
+       "我",
+       "比",
+       "他",
+       "晚",
+       "到了",
+       "十分钟",
+       "。"
+      ],
+      "answer": "我比他晚到了十分钟。",
+      "explanation": "分钟 (ôn HSK1 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tháng này tôi tiêu ít hơn tháng trước năm trăm tệ.”",
+      "words": [
+       "这个月",
+       "我",
+       "比",
+       "上个月",
+       "少",
+       "花了",
+       "五百块钱",
+       "。"
+      ],
+      "answer": "这个月我比上个月少花了五百块钱。",
+      "explanation": "块 (ôn HSK1 Bài 10); 花 (ôn HSK2 Bài 8)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng câu so sánh 比 + 早/晚 + động từ.",
+      "promptLang": "vi",
+      "prompt": "Hôm nay tôi dậy sớm hơn ngày thường một tiếng.",
+      "answer": "今天我比平时早起了一个小时。",
+      "answerPy": "Jīntiān wǒ bǐ píngshí zǎo qǐle yí ge xiǎoshí.",
+      "explanation": "平时 (ôn HSK3 Bài 15); 起床 (ôn HSK1 Bài 11)."
+     }
+    ]
+   }
+  ]
+ }
+}

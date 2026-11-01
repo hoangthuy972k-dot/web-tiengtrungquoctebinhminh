@@ -1,0 +1,146 @@
+{
+ "zh": "闹钟的危害",
+ "py": "Nàozhōng de wēihài",
+ "vn": "Tác hại của đồng hồ báo thức",
+ "topic": "Unit 4 走近科学 · Giấc ngủ &amp; sức khỏe",
+ "vocabCount": 45,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "来 / 过来",
+   "explain": "来 / 过来 là động từ xu hướng, dạng thường gặp \"Động từ + 来 / 过来\". Đứng sau động từ 醒, chúng chỉ sự chuyển từ trạng thái ngủ sang tỉnh (醒来, 醒过来). 过来 đứng sau động từ còn chỉ việc TRỞ LẠI trạng thái bình thường, vốn có (清醒过来, 活过来). Dạng \"Động từ + 得 / 不 + 过来\" chỉ có (hoặc không có) khả năng làm xuể một việc, thường dùng ở dạng phủ định.",
+   "rule": "① 醒 + <strong style=\"color:var(--sky-d)\">来 / 过来</strong>　② V + <strong style=\"color:var(--sky-d)\">过来</strong> (trở lại trạng thái bình thường)　③ V + 得 / 不 + <strong style=\"color:var(--sky-d)\">过来</strong> (làm xuể / không xuể)",
+   "examples": [
+    {
+     "zh": "早晨醒来，我发现窗外正下着大雪。",
+     "py": "Zǎochen xǐnglái, wǒ fāxiàn chuāng wài zhèng xiàzhe dàxuě.",
+     "vn": "Sáng sớm tỉnh dậy, tôi thấy ngoài cửa sổ tuyết đang rơi dày."
+    },
+    {
+     "zh": "我被一阵吵闹声突然惊醒，过了半天，脑子才清醒过来。",
+     "py": "Wǒ bèi yí zhèn chǎonào shēng tūrán jīngxǐng, guòle bàntiān, nǎozi cái qīngxǐng guòlái.",
+     "vn": "Tôi đột ngột bị một tràng tiếng ồn làm giật mình tỉnh giấc, mãi một lúc lâu đầu óc mới tỉnh táo lại."
+    },
+    {
+     "zh": "最近手头的工作太多了，我都忙不过来了。",
+     "py": "Zuìjìn shǒutóu de gōngzuò tài duō le, wǒ dōu máng bu guòlái le.",
+     "vn": "Dạo này việc trong tay nhiều quá, tôi bận không xuể."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我被闹钟叫醒，过了半天才清醒过去。",
+     "why": "Trở lại trạng thái bình thường (tỉnh táo) phải dùng 过来; 过去 chỉ MẤT trạng thái bình thường (昏过去 = ngất đi).",
+     "right": "我被闹钟叫醒，过了半天才清醒过来。"
+    },
+    {
+     "wrong": "星星太多了，我数不了过来。",
+     "why": "Bổ ngữ khả năng là V + 不 + 过来, không chèn 了 vào giữa.",
+     "right": "星星太多了，我数不过来。"
+    }
+   ]
+  },
+  {
+   "point": "所",
+   "explain": "所 là trợ từ, đặt trước động từ trong cụm chủ–vị: \"(A) 所 V (的)\" chỉ SỰ VẬT là đối tượng của hành động, làm định ngữ hoặc chủ ngữ (所表现的 = cái được thể hiện). Dạng \"有 / 无 + 所 + V\": cụm 所 + V làm tân ngữ của 有 / 无 (有所提高 = có phần nâng cao, 无所不谈 = chuyện gì cũng nói). 所 còn là lượng từ cho trường học, bệnh viện, cơ quan: 一所大学.",
+   "rule": "① (Chủ ngữ) + <strong style=\"color:var(--sky-d)\">所</strong> + V + 的 (+ N)　② 有 / 无 + <strong style=\"color:var(--sky-d)\">所</strong> + V　③ 一 + <strong style=\"color:var(--sky-d)\">所</strong> + 大学 / 医院 (lượng từ)",
+   "examples": [
+    {
+     "zh": "山水画所表现的是人与自然的关系。",
+     "py": "Shānshuǐhuà suǒ biǎoxiàn de shì rén yǔ zìrán de guānxi.",
+     "vn": "Điều mà tranh sơn thủy thể hiện là mối quan hệ giữa con người và thiên nhiên."
+    },
+    {
+     "zh": "调查显示，随着年龄的增大，女性的职场幸福感有所提高。",
+     "py": "Diàochá xiǎnshì, suízhe niánlíng de zēngdà, nǚxìng de zhíchǎng xìngfúgǎn yǒu suǒ tígāo.",
+     "vn": "Điều tra cho thấy, cùng với tuổi tác tăng lên, cảm giác hạnh phúc nơi công sở của phụ nữ có phần tăng lên."
+    },
+    {
+     "zh": "学校附近就有一所幼儿园，你可以把孩子送到那儿去。",
+     "py": "Xuéxiào fùjìn jiù yǒu yì suǒ yòu'éryuán, nǐ kěyǐ bǎ háizi sòngdào nàr qù.",
+     "vn": "Gần trường có ngay một trường mẫu giáo, anh có thể gửi con ở đó."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这是我所的知道的情况。",
+     "why": "所 đứng NGAY TRƯỚC động từ, còn 的 đứng sau động từ.",
+     "right": "这是我所知道的情况。"
+    },
+    {
+     "wrong": "他的汉语水平有所提高很多。",
+     "why": "有所 + V đã mang nghĩa \"có phần…\" (mức độ nhẹ), không thêm bổ ngữ mức độ 很多 phía sau.",
+     "right": "他的汉语水平有所提高。"
+    }
+   ]
+  },
+  {
+   "point": "相当",
+   "explain": "相当 là động từ, chỉ hai bên (số lượng, điều kiện, tình hình…) xấp xỉ, ngang nhau: A 与 / 跟 B 相当, hoặc A 相当于 B. 相当 còn làm phó từ, chỉ mức độ khá cao, đứng trước tính từ / động từ tâm lý: 相当满意 (khá hài lòng), 相当一部分人 (một bộ phận khá lớn).",
+   "rule": "① A + 与 / 跟 + B + <strong style=\"color:var(--sky-d)\">相当</strong>　② A + <strong style=\"color:var(--sky-d)\">相当于</strong> + B　③ <strong style=\"color:var(--sky-d)\">相当</strong> + Tính từ (phó từ: khá)",
+   "examples": [
+    {
+     "zh": "这些能力最多为正常状态的65%，与醉酒者相当。",
+     "py": "Zhèxiē nénglì zuì duō wéi zhèngcháng zhuàngtài de bǎi fēn zhī liùshíwǔ, yǔ zuìjiǔzhě xiāngdāng.",
+     "vn": "Những khả năng này nhiều nhất chỉ bằng 65% trạng thái bình thường, tương đương với người say rượu."
+    },
+    {
+     "zh": "这种鸟一天所食的害虫相当于自己的体重。",
+     "py": "Zhè zhǒng niǎo yì tiān suǒ shí de hàichóng xiāngdāng yú zìjǐ de tǐzhòng.",
+     "vn": "Lượng sâu bọ mà loài chim này ăn trong một ngày tương đương với trọng lượng cơ thể nó."
+    },
+    {
+     "zh": "菜的味道好极了，服务也挺周到，我相当满意。",
+     "py": "Cài de wèidào hǎo jí le, fúwù yě tǐng zhōudào, wǒ xiāngdāng mǎnyì.",
+     "vn": "Món ăn ngon tuyệt, phục vụ cũng rất chu đáo, tôi khá hài lòng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他的水平相当我。",
+     "why": "Động từ 相当 không mang thẳng tân ngữ: phải là 跟 / 与 + B + 相当, hoặc 相当于 + B.",
+     "right": "他的水平跟我相当。"
+    },
+    {
+     "wrong": "这次考试相当很难。",
+     "why": "相当 đã là phó từ chỉ mức độ, không dùng chồng với 很.",
+     "right": "这次考试相当难。"
+    }
+   ]
+  },
+  {
+   "point": "数",
+   "explain": "数 (shǔ) là động từ: đếm, hoặc lần lượt nói ra từng con số. Cấu trúc \"数……(最)……\" hoặc \"(最)……的 (要 / 就) 数……\" nghĩa là tính ra, so ra thì … là nhất. 数 (shù) còn là số từ, nghĩa \"vài, mấy\" (= 几), dùng nhiều trong văn viết: 数天, 数小时, 数百人.",
+   "rule": "① <strong style=\"color:var(--sky-d)\">数 (shǔ)</strong> + (số lượng): đếm　② (最)……的 + 要 / 就 + <strong style=\"color:var(--sky-d)\">数</strong> + N: kể ra thì … là nhất　③ <strong style=\"color:var(--sky-d)\">数 (shù)</strong> + lượng từ / thời gian: vài",
+   "examples": [
+    {
+     "zh": "我大概数了一下，车上有32个学生。",
+     "py": "Wǒ dàgài shǔle yíxià, chē shang yǒu sānshí'èr ge xuésheng.",
+     "vn": "Tôi đếm sơ qua, trên xe có 32 học sinh."
+    },
+    {
+     "zh": "要说我们班跑得最快的，那就数李阳了。",
+     "py": "Yào shuō wǒmen bān pǎo de zuì kuài de, nà jiù shǔ Lǐ Yáng le.",
+     "vn": "Nói đến người chạy nhanh nhất lớp mình thì phải kể đến Lý Dương."
+    },
+    {
+     "zh": "这种状态如果持续数天、数周、数月，将导致高血压、失眠和一些精神问题等。",
+     "py": "Zhè zhǒng zhuàngtài rúguǒ chíxù shù tiān, shù zhōu, shù yuè, jiāng dǎozhì gāo xuèyā, shīmián hé yìxiē jīngshén wèntí děng.",
+     "vn": "Trạng thái này nếu kéo dài vài ngày, vài tuần, vài tháng sẽ dẫn đến cao huyết áp, mất ngủ và một số vấn đề về tinh thần."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我们班最高的是数小王了。",
+     "why": "Cấu trúc là (最)……的 + 要 / 就 + 数 + N — không thêm 是 trước 数.",
+     "right": "我们班最高的要数小王了。"
+    },
+    {
+     "wrong": "他在北京住了数年多。",
+     "why": "数 (shù) đã là con số ước lượng \"vài\", không đi với 多 phía sau.",
+     "right": "他在北京住了数年。"
+    }
+   ]
+  }
+ ]
+}

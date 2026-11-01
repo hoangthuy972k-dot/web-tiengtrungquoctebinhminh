@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs><g id="sp-huongduong-p"><ellipse cy="-22" rx="6.5" ry="11"/><ellipse cy="-22" rx="6.5" ry="11" transform="rotate(30)"/><ellipse cy="-22" rx="6.5" ry="11" transform="rotate(60)"/><ellipse cy="-22" rx="6.5" ry="11" transform="rotate(90)"/><ellipse cy="-22" rx="6.5" ry="11" transform="rotate(120)"/><ellipse cy="-22" rx="6.5" ry="11" transform="rotate(150)"/><ellipse cy="-22" rx="6.5" ry="11" transform="rotate(180)"/><ellipse cy="-22" rx="6.5" ry="11" transform="rotate(210)"/><ellipse cy="-22" rx="6.5" ry="11" transform="rotate(240)"/><ellipse cy="-22" rx="6.5" ry="11" transform="rotate(270)"/><ellipse cy="-22" rx="6.5" ry="11" transform="rotate(300)"/><ellipse cy="-22" rx="6.5" ry="11" transform="rotate(330)"/></g></defs>
+<ellipse cx="50" cy="86" rx="28" ry="5" fill="#000" opacity=".15"/>
+<path d="M66 70Q84 64 88 76Q76 86 66 70Z" fill="#5aa845" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round"/>
+<g transform="translate(50 50)">
+<use href="#sp-huongduong-p" fill="#2b1d3a" stroke="#2b1d3a" stroke-width="6"/>
+<use href="#sp-huongduong-p" fill="#f6a623" transform="rotate(15) scale(.86)"/>
+<use href="#sp-huongduong-p" fill="#ffcf33" transform="scale(.97)"/>
+<circle r="16" fill="#2b1d3a"/>
+<circle r="14.5" fill="#7a4a2a"/>
+<circle cx="1.5" cy="1.5" r="10" fill="#5d3a1a"/>
+<g fill="#a8743f"><circle cx="-5" cy="-6" r="1.6"/><circle cx="1" cy="-8" r="1.6"/><circle cx="6" cy="-4" r="1.6"/><circle cx="-7" cy="1" r="1.6"/><circle cx="0" cy="-1" r="1.6"/><circle cx="7" cy="3" r="1.6"/><circle cx="-3" cy="6" r="1.6"/><circle cx="3" cy="8" r="1.6"/></g>
+<path d="M-9-7Q-6-11-1-12" stroke="#c99a6a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<path d="M-20-22Q-16-26-12-27" stroke="#fff3c4" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+</g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs>
+<g id="ong-b" stroke="#2b1d3a" stroke-linejoin="round" stroke-linecap="round">
+<ellipse cx="-2" cy="-6" rx="3.5" ry="5" fill="#e3f4ff" stroke-width="1.5" transform="rotate(-20 -2 -6)"/>
+<ellipse cx="3" cy="-6" rx="3.5" ry="5" fill="#e3f4ff" stroke-width="1.5" transform="rotate(20 3 -6)"/>
+<path d="M7 0H9.5" stroke-width="2"/>
+<ellipse cx="0" cy="0" rx="7" ry="5.5" fill="#ffd23f" stroke-width="2"/>
+<path d="M0.5 -5.2V5.2M4 -4V4" fill="none" stroke-width="2.2"/>
+<circle cx="-3.5" cy="-1" r="1.3" fill="#2b1d3a" stroke="none"/>
+<circle cx="-4.6" cy="1.8" r="1.1" fill="#ff8fa3" stroke="none"/>
+</g>
+</defs>
+<ellipse cx="50" cy="85" rx="31" ry="5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M14 85V70" fill="none" stroke="#4f9e3a"/>
+<path d="M14 78Q8 74 9 70Q14 72 14 78Z" fill="#7cc95b" stroke-width="2"/>
+<g fill="#ff8fb1" stroke-width="1.6"><circle cx="14" cy="62.5" r="3.5"/><circle cx="18.5" cy="66" r="3.5"/><circle cx="16.8" cy="71" r="3.5"/><circle cx="11.2" cy="71" r="3.5"/><circle cx="9.5" cy="66" r="3.5"/></g>
+<circle cx="14" cy="67" r="2.8" fill="#ffd23f" stroke-width="1.6"/>
+<rect x="29" y="73" width="7" height="12" rx="2" fill="#7a4a2c"/>
+<rect x="64" y="73" width="7" height="12" rx="2" fill="#7a4a2c"/>
+<rect x="24" y="70" width="52" height="6" rx="2" fill="#a86b45"/>
+<rect x="27" y="52" width="46" height="19" rx="3" fill="#f2b356" stroke="none"/>
+<rect x="27" y="34" width="46" height="19" rx="3" fill="#f2b356" stroke="none"/>
+<path d="M28.5 64.5H71.5V69.5H28.5ZM28.5 46.5H71.5V51.5H28.5Z" fill="#d9963a" stroke="none"/>
+<path d="M31 37V46M31 55V63" stroke="#ffd89a" stroke-width="3"/>
+<rect x="27" y="52" width="46" height="19" rx="3" fill="none"/>
+<rect x="27" y="34" width="46" height="19" rx="3" fill="none"/>
+<rect x="43" y="40" width="14" height="4" rx="2" fill="#a86b45" stroke-width="2"/>
+<rect x="40" y="61" width="20" height="5" rx="2.5" fill="#2b1d3a"/>
+<path d="M25 28L30 20H70L75 28Z" fill="#e08a50"/>
+<rect x="23" y="27" width="54" height="8" rx="2.5" fill="#c06a3a"/>
+<path d="M33 23H55" stroke="#f5b07a" stroke-width="2"/>
+<g fill="none" stroke-width="1.5" stroke-dasharray="2 3" opacity=".55"><path d="M24 26Q30 16 22 10"/><path d="M78 26Q72 34 80 42"/></g>
+</g>
+<use href="#ong-b" transform="translate(18 14)"/>
+<use href="#ong-b" transform="translate(84 18) scale(-1 1)"/>
+<use href="#ong-b" transform="translate(86 50) scale(-1 1)"/>
+</svg>

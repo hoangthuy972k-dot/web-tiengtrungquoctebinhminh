@@ -1,0 +1,210 @@
+{
+ "/lessons/hsk3-bai-9.html": {
+  "points": [
+   {
+    "title": "「越A越B」 — B thay đổi theo A",
+    "errors": [
+     { "wrong": "雨越大越下。", "why": "đảo vị trí động từ và tính từ trong khung 越…越…", "right": "雨越下越大。" },
+     { "wrong": "他越说越很快。", "why": "khung 越…越… đã mang nghĩa mức độ, không thêm 很.", "right": "他越说越快。" },
+     { "wrong": "我越来越学汉语喜欢。", "why": "trộn 越来越 với 越…越… và đặt sai trật tự.", "right": "我越来越喜欢学汉语。" }
+    ],
+    "items": [
+     { "context": "“Mưa càng lúc càng to.”", "pre": "雨", "blank": "越下越大", "post": "。", "options": ["越下越大", "越大越下", "越来越下大"], "answer": 0, "explanation": "越 + ĐỘNG TỪ + 越 + TÍNH TỪ." },
+     { "context": "“Anh ấy càng nói càng nhanh.”", "pre": "他", "blank": "越说越快", "post": "。", "options": ["越说越快", "越说越很快", "越快越说"], "answer": 0, "explanation": "Không thêm 很 vào khung 越…越…" },
+     { "context": "“Càng học càng thấy thú vị.”", "pre": "汉语", "blank": "越学越有意思", "post": "。", "options": ["越学越有意思", "越有意思越学", "越来越学有意思"], "answer": 0, "explanation": "Vế trước là việc làm, vế sau là kết quả thay đổi." },
+     { "context": "Chỉ nói mức độ TĂNG DẦN theo thời gian thì dùng 越来越.", "pre": "天气", "blank": "越来越冷", "post": "了。", "options": ["越来越冷", "越冷越", "越天气越冷"], "answer": 0, "explanation": "越来越 + tính từ; 越A越B cần hai vế A, B." },
+     { "context": "“Bạn càng nói tôi càng không hiểu.”", "pre": "你越说，我", "blank": "越不明白", "post": "。", "options": ["越不明白", "不越明白", "越明白不"], "answer": 0, "explanation": "Hai vế có chủ ngữ khác nhau thì mỗi vế một 越." },
+     { "context": "“Càng nhiều người càng vui.”", "pre": "", "blank": "人越多越热闹", "post": "。", "options": ["人越多越热闹", "人越热闹越多", "越人多越热闹"], "answer": 0, "explanation": "越 đứng sau chủ ngữ, trước tính từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "雨越大越下。", "isCorrect": false, "correctVersion": "雨越下越大。", "explanation": "越 + động từ + 越 + tính từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他越说越快。", "isCorrect": true, "explanation": "Đúng khung 越A越B, không thêm 很." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "天气越冷了。", "isCorrect": false, "correctVersion": "天气越来越冷了。", "explanation": "Chỉ có một vế thì phải dùng 越来越." },
+     { "type": "sort", "context": "Sắp xếp: “Mưa càng lúc càng to.”", "words": ["雨", "越", "下", "越", "大", "了", "。"], "answer": "雨越下越大了。", "explanation": "越下越大 + 了." },
+     { "type": "sort", "context": "Sắp xếp: “Tiếng Trung càng học càng thú vị.”", "words": ["汉语", "越", "学", "越", "有意思", "。"], "answer": "汉语越学越有意思。", "explanation": "Chủ đề + 越 + V + 越 + tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn càng nói tôi càng không hiểu.”", "words": ["你", "越", "说", "，", "我", "越", "不", "明白", "。"], "answer": "你越说，我越不明白。", "explanation": "Hai chủ ngữ khác nhau, mỗi vế một 越." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 越……越…….", "promptLang": "vi", "prompt": "Anh ấy càng nói càng nhanh.", "answer": "他越说越快。", "answerPy": "Tā yuè shuō yuè kuài.", "explanation": "越 + động từ + 越 + tính từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 越……越…….", "promptLang": "vi", "prompt": "Càng đông người càng vui.", "answer": "人越多越热闹。", "answerPy": "Rén yuè duō yuè rènao.", "explanation": "越多越热闹." }
+    ]
+   },
+   {
+    "title": "Câu so sánh bằng 「A 跟 B 一样」",
+    "errors": [
+     { "wrong": "我跟他一样很高。", "why": "一样 đã nêu mức độ ngang nhau, thêm 很 là thừa.", "right": "我跟他一样高。" },
+     { "wrong": "我跟他不一样高吗？", "why": "trộn phủ định với câu hỏi sai cách.", "right": "你跟他一样高吗？" },
+     { "wrong": "我一样跟他高。", "why": "đặt 一样 sai chỗ; thứ tự là A 跟 B 一样 + tính từ.", "right": "我跟他一样高。" }
+    ],
+    "items": [
+     { "context": "“Tôi cao bằng anh ấy.”", "pre": "我", "blank": "跟他一样高", "post": "。", "options": ["跟他一样高", "跟他一样很高", "一样跟他高"], "answer": 0, "explanation": "A + 跟 + B + 一样 + tính từ, KHÔNG thêm 很." },
+     { "context": "“Chiếc áo này giống chiếc kia.”", "pre": "这件衣服", "blank": "跟那件一样", "post": "。", "options": ["跟那件一样", "一样跟那件", "跟一样那件"], "answer": 0, "explanation": "一样 có thể đứng cuối khi không nêu tính từ." },
+     { "context": "Phủ định: “Tôi không cao bằng anh ấy.”", "pre": "我", "blank": "跟他不一样高", "post": "。", "options": ["跟他不一样高", "不跟他一样高", "跟不他一样高"], "answer": 0, "explanation": "不 đứng ngay trước 一样." },
+     { "context": "“Tiếng Trung của bạn giỏi như người Trung Quốc.”", "pre": "你的汉语", "blank": "跟中国人一样好", "post": "。", "options": ["跟中国人一样好", "一样中国人跟好", "跟中国人好一样"], "answer": 0, "explanation": "Khung cố định A 跟 B 一样 + tính từ." },
+     { "context": "So sánh HƠN thì dùng 比.", "pre": "他", "blank": "比我高", "post": "。", "options": ["比我高", "跟我一样高一点儿", "比我一样高"], "answer": 0, "explanation": "比 dùng khi hai bên KHÁC nhau; 跟…一样 khi bằng nhau." },
+     { "context": "Câu hỏi: “Bạn cao bằng anh ấy không?”", "pre": "你", "blank": "跟他一样高吗", "post": "？", "options": ["跟他一样高吗", "跟他一样吗高", "一样跟他高吗"], "answer": 0, "explanation": "Thêm 吗 vào cuối câu so sánh bằng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我跟他一样很高。", "isCorrect": false, "correctVersion": "我跟他一样高。", "explanation": "一样 đã nêu mức độ, không thêm 很." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件衣服跟那件不一样。", "isCorrect": true, "explanation": "不 đứng trước 一样 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我一样跟他高。", "isCorrect": false, "correctVersion": "我跟他一样高。", "explanation": "Trật tự: A 跟 B 一样 + tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi cao bằng anh trai tôi.”", "words": ["我", "跟", "我", "哥哥", "一样", "高", "。"], "answer": "我跟我哥哥一样高。", "explanation": "A 跟 B 一样 + tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Chiếc áo này không giống chiếc kia.”", "words": ["这", "件", "衣服", "跟", "那", "件", "不", "一样", "。"], "answer": "这件衣服跟那件不一样。", "explanation": "不一样 = không giống." },
+     { "type": "sort", "context": "Sắp xếp: “Tiếng Trung của bạn giỏi như người Trung Quốc.”", "words": ["你", "的", "汉语", "跟", "中国人", "一样", "好", "。"], "answer": "你的汉语跟中国人一样好。", "explanation": "Cụm danh từ + 跟…一样 + tính từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 跟……一样.", "promptLang": "vi", "prompt": "Tôi cao bằng anh ấy.", "answer": "我跟他一样高。", "answerPy": "Wǒ gēn tā yíyàng gāo.", "explanation": "Không thêm 很 vào sau 一样." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 跟……不一样.", "promptLang": "vi", "prompt": "Món này không giống món hôm qua.", "answer": "这个菜跟昨天的不一样。", "answerPy": "Zhège cài gēn zuótiān de bù yíyàng.", "explanation": "不 đứng trước 一样." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk3-bai-10.html": {
+  "points": [
+   {
+    "title": "Câu so sánh (2): 「A 比 B + tính từ + 一点儿/得多」",
+    "errors": [
+     { "wrong": "他比我很高。", "why": "câu chữ 比 KHÔNG dùng 很 trước tính từ.", "right": "他比我高。" },
+     { "wrong": "他比我高一点儿多了。", "why": "dùng cùng lúc hai mức chênh lệch.", "right": "他比我高得多。" },
+     { "wrong": "这件比那件很便宜一些。", "why": "cùng lỗi thêm 很.", "right": "这件比那件便宜一些。" }
+    ],
+    "items": [
+     { "context": "“Anh ấy cao hơn tôi.”", "pre": "他", "blank": "比我高", "post": "。", "options": ["比我高", "比我很高", "跟我一样高"], "answer": 0, "explanation": "Câu chữ 比 không dùng 很, 非常 trước tính từ." },
+     { "context": "“Anh ấy cao hơn tôi một chút.”", "pre": "他比我", "blank": "高一点儿", "post": "。", "options": ["高一点儿", "很高一点儿", "一点儿高"], "answer": 0, "explanation": "Chênh lệch NHỎ: tính từ + 一点儿/一些." },
+     { "context": "“Anh ấy cao hơn tôi nhiều.”", "pre": "他比我", "blank": "高得多", "post": "。", "options": ["高得多", "很高多", "多高得"], "answer": 0, "explanation": "Chênh lệch LỚN: tính từ + 得多/多了." },
+     { "context": "“Anh ấy hơn tôi ba tuổi.”", "pre": "他比我", "blank": "大三岁", "post": "。", "options": ["大三岁", "三岁大", "大得三岁"], "answer": 0, "explanation": "Chênh lệch cụ thể đứng ngay sau tính từ." },
+     { "context": "Phủ định: “Tôi không cao bằng anh ấy.”", "pre": "我", "blank": "没有他高", "post": "。", "options": ["没有他高", "不比他高很", "比他不高"], "answer": 0, "explanation": "Phủ định câu so sánh thường dùng 没有 + B + tính từ." },
+     { "context": "“Hôm nay lạnh hơn hôm qua nhiều.”", "pre": "今天", "blank": "比昨天冷多了", "post": "。", "options": ["比昨天冷多了", "比昨天很冷了", "跟昨天冷多了"], "answer": 0, "explanation": "冷多了 = lạnh hơn nhiều." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他比我很高。", "isCorrect": false, "correctVersion": "他比我高。", "explanation": "Câu 比 không dùng 很." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他比我大三岁。", "isCorrect": true, "explanation": "Chênh lệch cụ thể đứng sau tính từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件比那件便宜一点儿多了。", "isCorrect": false, "correctVersion": "这件比那件便宜得多。", "explanation": "Không dùng đồng thời hai mức chênh lệch." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy hơn tôi ba tuổi.”", "words": ["他", "比", "我", "大", "三", "岁", "。"], "answer": "他比我大三岁。", "explanation": "A 比 B + tính từ + chênh lệch." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay lạnh hơn hôm qua nhiều.”", "words": ["今天", "比", "昨天", "冷", "多", "了", "。"], "answer": "今天比昨天冷多了。", "explanation": "冷多了 = chênh lệch lớn." },
+     { "type": "sort", "context": "Sắp xếp: “Chiếc áo này rẻ hơn chiếc kia một chút.”", "words": ["这", "件", "衣服", "比", "那", "件", "便宜", "一点儿", "。"], "answer": "这件衣服比那件便宜一点儿。", "explanation": "一点儿 = chênh lệch nhỏ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu chữ 比.", "promptLang": "vi", "prompt": "Anh ấy cao hơn tôi nhiều.", "answer": "他比我高得多。", "answerPy": "Tā bǐ wǒ gāo de duō.", "explanation": "得多 = hơn nhiều." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu chữ 比.", "promptLang": "vi", "prompt": "Hôm nay nóng hơn hôm qua một chút.", "answer": "今天比昨天热一点儿。", "answerPy": "Jīntiān bǐ zuótiān rè yìdiǎnr.", "explanation": "一点儿 = hơn một chút." }
+    ]
+   },
+   {
+    "title": "Số ước lượng (1): hai số liên tiếp ghép lại",
+    "errors": [
+     { "wrong": "三和四个人", "why": "thêm 和 vào giữa hai số; số ước lượng ghép trực tiếp.", "right": "三四个人" },
+     { "wrong": "五七天", "why": "hai số phải LIỀN NHAU (五六, 六七), không nhảy cóc.", "right": "五六天" },
+     { "wrong": "十几二十个", "why": "ghép hai cách nói ước lượng khác nhau.", "right": "二十几个" }
+    ],
+    "items": [
+     { "context": "“ba bốn người”", "pre": "", "blank": "三四个人", "post": "", "options": ["三四个人", "三和四个人", "三或四个人"], "answer": 0, "explanation": "Hai số LIỀN NHAU ghép trực tiếp, không cần 和." },
+     { "context": "“năm sáu ngày”", "pre": "", "blank": "五六天", "post": "", "options": ["五六天", "五七天", "五和六天"], "answer": 0, "explanation": "Chỉ ghép hai số liền nhau." },
+     { "context": "“mười mấy người”", "pre": "", "blank": "十几个人", "post": "", "options": ["十几个人", "几十个人", "十多几个人"], "answer": 0, "explanation": "十几 = 11–19; 几十 = mấy chục." },
+     { "context": "“mấy chục quyển sách”", "pre": "", "blank": "几十本书", "post": "", "options": ["几十本书", "十几本书", "几本十书"], "answer": 0, "explanation": "几十 = 20–90." },
+     { "context": "“hai mươi mấy người”", "pre": "", "blank": "二十几个人", "post": "", "options": ["二十几个人", "十几二十个人", "几二十个人"], "answer": 0, "explanation": "二十几 = 21–29." },
+     { "context": "“hơn một trăm tệ”", "pre": "", "blank": "一百多块", "post": "", "options": ["一百多块", "多一百块", "一百几块"], "answer": 0, "explanation": "多 đứng sau số tròn trăm." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "教室里有三和四个人。", "isCorrect": false, "correctVersion": "教室里有三四个人。", "explanation": "Số ước lượng ghép trực tiếp, không dùng 和." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我在北京住了五六天。", "isCorrect": true, "explanation": "五六 là hai số liền nhau — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们班有十几二十个学生。", "isCorrect": false, "correctVersion": "我们班有二十几个学生。", "explanation": "Không ghép hai cách ước lượng khác nhau." },
+     { "type": "sort", "context": "Sắp xếp: “Trong phòng có ba bốn người.”", "words": ["房间", "里", "有", "三四", "个", "人", "。"], "answer": "房间里有三四个人。", "explanation": "Số ước lượng + lượng từ + danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi ở Bắc Kinh năm sáu ngày.”", "words": ["我", "在", "北京", "住", "了", "五六", "天", "。"], "answer": "我在北京住了五六天。", "explanation": "Thời lượng ước lượng sau 了." },
+     { "type": "sort", "context": "Sắp xếp: “Lớp chúng tôi có hai mươi mấy học sinh.”", "words": ["我们", "班", "有", "二十几", "个", "学生", "。"], "answer": "我们班有二十几个学生。", "explanation": "二十几 = hai mươi mấy." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng số ước lượng.", "promptLang": "vi", "prompt": "Trong phòng có ba bốn người.", "answer": "房间里有三四个人。", "answerPy": "Fángjiān lǐ yǒu sān sì ge rén.", "explanation": "三四 ghép trực tiếp." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng số ước lượng.", "promptLang": "vi", "prompt": "Tôi đợi khoảng năm sáu phút.", "answer": "我等了五六分钟。", "answerPy": "Wǒ děng le wǔ liù fēnzhōng.", "explanation": "五六分钟 = khoảng 5-6 phút." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk3-bai-11.html": {
+  "points": [
+   {
+    "title": "Câu chữ 「把」(1): 「A 把 B + động từ + ……」",
+    "errors": [
+     { "wrong": "我把书看。", "why": "sau động từ trong câu 把 phải có thành phần khác (了/在/到/bổ ngữ), không để trống.", "right": "我把书看完了。" },
+     { "wrong": "我把一本书拿来了。", "why": "tân ngữ của 把 phải là vật XÁC ĐỊNH (cái đó), không phải “một quyển bất kỳ”.", "right": "我把那本书拿来了。" },
+     { "wrong": "我把作业没做完。", "why": "phủ định phải đứng TRƯỚC 把.", "right": "我没把作业做完。" }
+    ],
+    "items": [
+     { "context": "“Tôi đã đọc xong quyển sách đó.”", "pre": "我", "blank": "把那本书看完了", "post": "。", "options": ["把那本书看完了", "把那本书看", "看完把那本书了"], "answer": 0, "explanation": "Sau động từ phải có thành phần khác: 完了." },
+     { "context": "“Bạn mang cái ghế này vào đi.”", "pre": "你", "blank": "把这个椅子拿进来", "post": "吧。", "options": ["把这个椅子拿进来", "把拿进来这个椅子", "拿进来把这个椅子"], "answer": 0, "explanation": "把 + tân ngữ xác định + động từ + bổ ngữ xu hướng." },
+     { "context": "Phủ định: “Tôi chưa làm xong bài tập.”", "pre": "我", "blank": "没把作业做完", "post": "。", "options": ["没把作业做完", "把作业没做完", "把没作业做完"], "answer": 0, "explanation": "没/别/不 đứng TRƯỚC 把." },
+     { "context": "Tân ngữ của 把 phải XÁC ĐỊNH.", "pre": "请", "blank": "把这杯水", "post": "喝了。", "options": ["把这杯水", "把一杯水", "把水一杯"], "answer": 0, "explanation": "这/那 + lượng từ + danh từ là vật xác định." },
+     { "context": "“Đừng để quên điện thoại nhé.”", "pre": "", "blank": "别把手机忘了", "post": "。", "options": ["别把手机忘了", "把别手机忘了", "把手机别忘了"], "answer": 0, "explanation": "别 đứng trước 把." },
+     { "context": "“Cô ấy đã dịch bài văn đó sang tiếng Việt.”", "pre": "她", "blank": "把那篇文章翻译成越南语了", "post": "。", "options": ["把那篇文章翻译成越南语了", "翻译成越南语把那篇文章了", "把翻译那篇文章成越南语了"], "answer": 0, "explanation": "把 + B + V + 成 + kết quả." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我把书看。", "isCorrect": false, "correctVersion": "我把书看完了。", "explanation": "Sau động từ trong câu 把 phải có thành phần bổ sung." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我没把作业做完。", "isCorrect": true, "explanation": "没 đứng trước 把 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我把一本书拿来了。", "isCorrect": false, "correctVersion": "我把那本书拿来了。", "explanation": "Tân ngữ của 把 phải xác định." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đã đọc xong quyển sách đó.”", "words": ["我", "把", "那", "本", "书", "看", "完", "了", "。"], "answer": "我把那本书看完了。", "explanation": "把 + tân ngữ + V + bổ ngữ + 了." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn đừng quên điện thoại nhé.”", "words": ["你", "别", "把", "手机", "忘", "了", "。"], "answer": "你别把手机忘了。", "explanation": "别 trước 把." },
+     { "type": "sort", "context": "Sắp xếp: “Mời bạn uống cốc nước này.”", "words": ["请", "你", "把", "这", "杯", "水", "喝", "了", "。"], "answer": "请你把这杯水喝了。", "explanation": "Câu đề nghị với 把." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu chữ 把.", "promptLang": "vi", "prompt": "Tôi đã làm xong bài tập rồi.", "answer": "我把作业做完了。", "answerPy": "Wǒ bǎ zuòyè zuò wán le.", "explanation": "把 + tân ngữ + V + 完 + 了." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu chữ 把.", "promptLang": "vi", "prompt": "Bạn đừng quên mang quyển sách đó nhé.", "answer": "你别把那本书忘了。", "answerPy": "Nǐ bié bǎ nà běn shū wàng le.", "explanation": "别 + 把 + tân ngữ xác định." }
+    ]
+   },
+   {
+    "title": "Số ước lượng (2): 「左右」",
+    "errors": [
+     { "wrong": "左右三十个人", "why": "左右 đứng SAU con số, không đứng trước.", "right": "三十个人左右" },
+     { "wrong": "三十多个人左右", "why": "dùng cùng lúc 多 và 左右 là thừa.", "right": "三十个人左右" },
+     { "wrong": "两点左右钟", "why": "chen 钟 vào sau 左右.", "right": "两点左右" }
+    ],
+    "items": [
+     { "context": "“khoảng ba mươi người”", "pre": "", "blank": "三十个人左右", "post": "", "options": ["三十个人左右", "左右三十个人", "三十左右个人"], "answer": 0, "explanation": "左右 đứng SAU cụm số lượng." },
+     { "context": "“khoảng 2 giờ”", "pre": "", "blank": "两点左右", "post": "", "options": ["两点左右", "左右两点", "两点左右钟"], "answer": 0, "explanation": "左右 sau thời điểm." },
+     { "context": "“khoảng 100 tệ”", "pre": "", "blank": "一百块左右", "post": "", "options": ["一百块左右", "左右一百块", "一百多块左右"], "answer": 0, "explanation": "Không dùng 多 cùng 左右." },
+     { "context": "“khoảng nửa tiếng”", "pre": "", "blank": "半个小时左右", "post": "", "options": ["半个小时左右", "左右半个小时", "半左右个小时"], "answer": 0, "explanation": "左右 sau cụm thời lượng." },
+     { "context": "Nói “hơn” (nhiều hơn con số) thì dùng 多.", "pre": "教室里有", "blank": "三十多", "post": "个人。", "options": ["三十多", "三十左右多", "多三十"], "answer": 0, "explanation": "多 = hơn; 左右 = xấp xỉ (có thể hơn hoặc kém)." },
+     { "context": "“Tôi đợi khoảng mười phút.”", "pre": "我等了", "blank": "十分钟左右", "post": "。", "options": ["十分钟左右", "左右十分钟", "十左右分钟"], "answer": 0, "explanation": "Thời lượng + 左右." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "教室里有左右三十个人。", "isCorrect": false, "correctVersion": "教室里有三十个人左右。", "explanation": "左右 đứng sau cụm số lượng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们两点左右见吧。", "isCorrect": true, "explanation": "两点左右 = khoảng 2 giờ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这件衣服三百多块左右。", "isCorrect": false, "correctVersion": "这件衣服三百块左右。", "explanation": "多 và 左右 không dùng cùng nhau." },
+     { "type": "sort", "context": "Sắp xếp: “Lớp có khoảng ba mươi học sinh.”", "words": ["班", "里", "有", "三十", "个", "学生", "左右", "。"], "answer": "班里有三十个学生左右。", "explanation": "左右 ở cuối cụm số lượng." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng ta gặp nhau khoảng 2 giờ nhé.”", "words": ["我们", "两点", "左右", "见", "吧", "。"], "answer": "我们两点左右见吧。", "explanation": "Thời điểm + 左右." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đợi khoảng nửa tiếng.”", "words": ["我", "等", "了", "半", "个", "小时", "左右", "。"], "answer": "我等了半个小时左右。", "explanation": "Thời lượng + 左右." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 左右.", "promptLang": "vi", "prompt": "Chiếc áo này khoảng ba trăm tệ.", "answer": "这件衣服三百块左右。", "answerPy": "Zhè jiàn yīfu sānbǎi kuài zuǒyòu.", "explanation": "Số tiền + 左右." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 左右.", "promptLang": "vi", "prompt": "Tôi đợi anh ấy khoảng mười phút.", "answer": "我等了他十分钟左右。", "answerPy": "Wǒ děng le tā shí fēnzhōng zuǒyòu.", "explanation": "Thời lượng + 左右." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk3-bai-12.html": {
+  "points": [
+   {
+    "title": "Phân biệt 「才」 và 「就」",
+    "errors": [
+     { "wrong": "他八点就来了，我们等了很久。", "why": "ý muốn nói “mãi 8 giờ mới đến” thì phải dùng 才.", "right": "他八点才来，我们等了很久。" },
+     { "wrong": "我五点才起床，所以很早到公司。", "why": "才 mang nghĩa muộn, mâu thuẫn với “rất sớm”.", "right": "我五点就起床，所以很早到公司。" },
+     { "wrong": "他昨天才来了。", "why": "câu có 才 thường KHÔNG dùng 了.", "right": "他昨天才来。" }
+    ],
+    "items": [
+     { "context": "“Anh ấy 5 giờ đã dậy rồi.” (sớm hơn mong đợi)", "pre": "他五点", "blank": "就", "post": "起床了。", "options": ["就", "才", "还"], "answer": 0, "explanation": "就 = sớm/nhanh hơn dự kiến." },
+     { "context": "“Mãi 8 giờ anh ấy mới đến.” (muộn hơn mong đợi)", "pre": "他八点", "blank": "才", "post": "来。", "options": ["才", "就", "都"], "answer": 0, "explanation": "才 = muộn/chậm hơn dự kiến." },
+     { "context": "Câu có 才 thường KHÔNG dùng 了.", "pre": "他昨天", "blank": "才来", "post": "。", "options": ["才来", "才来了", "就来了才"], "answer": 0, "explanation": "才 nhấn mạnh muộn, không cần 了." },
+     { "context": "“Tôi học một năm đã nói được rồi.”", "pre": "我学了一年", "blank": "就", "post": "会说了。", "options": ["就", "才", "再"], "answer": 0, "explanation": "就 nhấn mạnh nhanh, ít thời gian." },
+     { "context": "“Tôi học ba năm mới nói được.”", "pre": "我学了三年", "blank": "才", "post": "会说。", "options": ["才", "就", "还"], "answer": 0, "explanation": "才 nhấn mạnh tốn nhiều thời gian." },
+     { "context": "“Ăn cơm xong là tôi đi ngay.”", "pre": "我吃了饭", "blank": "就", "post": "走。", "options": ["就", "才", "再说"], "answer": 0, "explanation": "就 nối hai việc xảy ra liền nhau." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai (ý: mãi 8 giờ mới đến).", "sentence": "他八点就来了。", "isCorrect": false, "correctVersion": "他八点才来。", "explanation": "Muộn hơn mong đợi thì dùng 才." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我学了一年就会说汉语了。", "isCorrect": true, "explanation": "就 nhấn mạnh học nhanh — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他昨天才来了。", "isCorrect": false, "correctVersion": "他昨天才来。", "explanation": "Câu có 才 thường không dùng 了." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy 5 giờ đã dậy rồi.”", "words": ["他", "五点", "就", "起床", "了", "。"], "answer": "他五点就起床了。", "explanation": "就 + động từ + 了." },
+     { "type": "sort", "context": "Sắp xếp: “Mãi 9 giờ anh ấy mới về nhà.”", "words": ["他", "九点", "才", "回", "家", "。"], "answer": "他九点才回家。", "explanation": "才 không kèm 了." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi học ba năm mới nói được tiếng Trung.”", "words": ["我", "学", "了", "三", "年", "才", "会", "说", "汉语", "。"], "answer": "我学了三年才会说汉语。", "explanation": "才 nhấn mạnh tốn thời gian." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chú ý chọn 就 hay 才.", "promptLang": "vi", "prompt": "Mãi 8 giờ anh ấy mới đến.", "answer": "他八点才来。", "answerPy": "Tā bā diǎn cái lái.", "explanation": "Muộn hơn mong đợi → 才, không dùng 了." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chú ý chọn 就 hay 才.", "promptLang": "vi", "prompt": "Tôi học nửa năm đã nói được rồi.", "answer": "我学了半年就会说了。", "answerPy": "Wǒ xué le bàn nián jiù huì shuō le.", "explanation": "Nhanh hơn dự kiến → 就." }
+    ]
+   },
+   {
+    "title": "Câu chữ 「把」(2): 「把 B + động từ + 在/到/给……」",
+    "errors": [
+     { "wrong": "我放书在桌子上。", "why": "khi nêu ĐÍCH ĐẾN của vật, tiếng Trung bắt buộc dùng câu chữ 把.", "right": "我把书放在桌子上。" },
+     { "wrong": "我把书放桌子上在。", "why": "đặt 在 sai chỗ; 在 + nơi chốn đứng ngay sau động từ.", "right": "我把书放在桌子上。" },
+     { "wrong": "我把这本书给了他吗没有？", "why": "trộn 吗 với mẫu 没有.", "right": "你把书给他了没有？" }
+    ],
+    "items": [
+     { "context": "“Tôi đặt sách lên bàn.”", "pre": "我", "blank": "把书放在桌子上", "post": "。", "options": ["把书放在桌子上", "放书在桌子上", "把书在桌子上放"], "answer": 0, "explanation": "把 + vật + V + 在 + nơi chốn." },
+     { "context": "“Tôi gửi bức thư đó đến Bắc Kinh.”", "pre": "我", "blank": "把那封信寄到北京", "post": "了。", "options": ["把那封信寄到北京", "寄那封信到北京把", "把寄那封信到北京"], "answer": 0, "explanation": "把 + vật + V + 到 + đích đến." },
+     { "context": "“Tôi đưa quyển sách cho anh ấy rồi.”", "pre": "我", "blank": "把书给他", "post": "了。", "options": ["把书给他", "给书把他", "把给他书"], "answer": 0, "explanation": "把 + vật + 给 + người." },
+     { "context": "“Bạn để hành lý vào phòng nhé.”", "pre": "你", "blank": "把行李放到房间里", "post": "吧。", "options": ["把行李放到房间里", "放行李到房间里把", "把放行李到房间里"], "answer": 0, "explanation": "到 + nơi chốn chỉ đích đến." },
+     { "context": "Phủ định: “Tôi chưa đưa sách cho anh ấy.”", "pre": "我", "blank": "没把书给他", "post": "。", "options": ["没把书给他", "把书没给他", "把没书给他"], "answer": 0, "explanation": "没 đứng trước 把." },
+     { "context": "“Xin viết tên bạn lên đây.”", "pre": "请", "blank": "把你的名字写在这儿", "post": "。", "options": ["把你的名字写在这儿", "写你的名字在这儿", "把写你的名字这儿"], "answer": 0, "explanation": "把 + vật + 写 + 在 + nơi chốn." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我放书在桌子上。", "isCorrect": false, "correctVersion": "我把书放在桌子上。", "explanation": "Nêu đích đến của vật thì dùng câu chữ 把." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "请把你的名字写在这儿。", "isCorrect": true, "explanation": "把 + vật + V + 在 + nơi chốn — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我把书放桌子上在。", "isCorrect": false, "correctVersion": "我把书放在桌子上。", "explanation": "在 + nơi chốn đứng ngay sau động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đặt quyển sách lên bàn rồi.”", "words": ["我", "把", "书", "放", "在", "桌子", "上", "了", "。"], "answer": "我把书放在桌子上了。", "explanation": "把 + vật + 放在 + nơi chốn + 了." },
+     { "type": "sort", "context": "Sắp xếp: “Xin viết tên bạn vào đây.”", "words": ["请", "把", "你", "的", "名字", "写", "在", "这儿", "。"], "answer": "请把你的名字写在这儿。", "explanation": "Câu đề nghị với 把." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đưa quyển sách đó cho cô ấy rồi.”", "words": ["我", "把", "那", "本", "书", "给", "她", "了", "。"], "answer": "我把那本书给她了。", "explanation": "把 + vật + 给 + người + 了." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu chữ 把.", "promptLang": "vi", "prompt": "Tôi để điện thoại trên bàn rồi.", "answer": "我把手机放在桌子上了。", "answerPy": "Wǒ bǎ shǒujī fàng zài zhuōzi shàng le.", "explanation": "把 + vật + 放在 + nơi chốn." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu chữ 把.", "promptLang": "vi", "prompt": "Bạn đưa quyển sách này cho thầy nhé.", "answer": "你把这本书给老师吧。", "answerPy": "Nǐ bǎ zhè běn shū gěi lǎoshī ba.", "explanation": "把 + vật + 给 + người + 吧." }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "zh": "在最美好的时刻离开",
+ "py": "Zài zuì měihǎo de shíkè líkāi",
+ "vn": "Rời đi vào thời khắc tốt đẹp nhất",
+ "topic": "Unit 6 修身养性 · Quy luật cao điểm – điểm cuối &amp; nghệ thuật kết thúc",
+ "vocabCount": 36,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "以",
+   "explain": "以 là từ VĂN VIẾT, có hai cách dùng. ① Giới từ: “dùng, lấy, bằng, dựa vào” (= 用、拿、凭借), hay gặp khuôn 以 A 为 B (lấy A làm B). ② Liên từ: đứng đầu VẾ SAU, nêu MỤC ĐÍCH của hành động ở vế trước (= để, nhằm).",
+   "rule": "① <strong style=\"color:var(--sky-d)\">以</strong> + N + V　|　<strong style=\"color:var(--sky-d)\">以</strong> A 为 B　② Vế 1 (hành động)，<strong style=\"color:var(--sky-d)\">以</strong> + V (mục đích)",
+   "examples": [
+    {
+     "zh": "同年4月，（微信）以英文名WeChat正式进入国际市场。",
+     "py": "Tóngnián sì yuè, (Wēixìn) yǐ Yīngwénmíng WeChat zhèngshì jìnrù guójì shìchǎng.",
+     "vn": "Tháng 4 cùng năm, (Weixin) chính thức bước vào thị trường quốc tế với tên tiếng Anh WeChat."
+    },
+    {
+     "zh": "虽然我们已经老了，但还要坚持学习，以适应社会的发展。",
+     "py": "Suīrán wǒmen yǐjīng lǎo le, dàn hái yào jiānchí xuéxí, yǐ shìyìng shèhuì de fāzhǎn.",
+     "vn": "Tuy chúng tôi đã già, nhưng vẫn phải kiên trì học tập, để thích ứng với sự phát triển của xã hội."
+    },
+    {
+     "zh": "比如说为了一场戏剧演出，我们会投入很多时间，准备服装、化妆、道具、舞台美术，以创造良好的效果……",
+     "py": "Bǐrú shuō wèile yì chǎng xìjù yǎnchū, wǒmen huì tóurù hěn duō shíjiān, zhǔnbèi fúzhuāng, huà zhuāng, dàojù, wǔtái měishù, yǐ chuàngzào liánghǎo de xiàoguǒ……",
+     "vn": "Chẳng hạn, vì một buổi diễn kịch, chúng ta bỏ ra rất nhiều thời gian chuẩn bị trang phục, hoá trang, đạo cụ, mỹ thuật sân khấu, để tạo ra hiệu quả tốt…"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我每天以筷子吃饭。",
+     "why": "以 là từ văn viết, trang trọng; việc cụ thể hằng ngày dùng 用.",
+     "right": "我每天用筷子吃饭。"
+    },
+    {
+     "wrong": "以适应社会的发展，我们还要坚持学习。",
+     "why": "以 (liên từ) đứng đầu VẾ SAU, không mở đầu câu như 为了.",
+     "right": "我们还要坚持学习，以适应社会的发展。"
+    }
+   ]
+  },
+  {
+   "point": "平常",
+   "explain": "平常 có hai cách dùng. ① Tính từ: bình thường, không có gì đặc biệt (lặp lại: 平平常常; phủ định: 不平常). ② Danh từ: ngày thường, lúc bình thường (= 平时), làm trạng ngữ thời gian. Chú ý: 平时 chỉ là danh từ, không thay được 平常 khi làm tính từ.",
+   "rule": "① 很 / 不 + <strong style=\"color:var(--sky-d)\">平常</strong>　|　<strong style=\"color:var(--sky-d)\">平常</strong>的 + N　② Chủ ngữ + <strong style=\"color:var(--sky-d)\">平常</strong> + (总是 / 一般) + V　|　像<strong style=\"color:var(--sky-d)\">平常</strong>一样",
+   "examples": [
+    {
+     "zh": "对小王来说，今天是一个不平常的日子，因为他今天第一天上班。",
+     "py": "Duì Xiǎo Wáng lái shuō, jīntiān shì yí ge bù píngcháng de rìzi, yīnwèi tā jīntiān dì-yī tiān shàngbān.",
+     "vn": "Với Tiểu Vương, hôm nay là một ngày không bình thường, vì hôm nay là ngày đầu tiên anh ấy đi làm."
+    },
+    {
+     "zh": "一部电影，开始虽然剧情平平常常，如果最后半个小时能使我们感动，我们依然会向别人推荐它。",
+     "py": "Yí bù diànyǐng, kāishǐ suīrán jùqíng píngpíngchángcháng, rúguǒ zuìhòu bàn ge xiǎoshí néng shǐ wǒmen gǎndòng, wǒmen yīrán huì xiàng biérén tuījiàn tā.",
+     "vn": "Một bộ phim, lúc đầu tuy tình tiết bình bình, nhưng nếu nửa tiếng cuối làm ta cảm động, ta vẫn sẽ giới thiệu nó cho người khác."
+    },
+    {
+     "zh": "他平常总是来得很早，今天却迟到了。",
+     "py": "Tā píngcháng zǒngshì lái de hěn zǎo, jīntiān què chídào le.",
+     "vn": "Ngày thường anh ấy luôn đến rất sớm, hôm nay lại đến muộn."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这部电影很平时，没什么意思。",
+     "why": "平时 chỉ là danh từ, không đứng sau 很. Nghĩa “bình thường, tầm thường” phải dùng 平常.",
+     "right": "这部电影很平常，没什么意思。"
+    },
+    {
+     "wrong": "我平常的时候一般自己做饭。",
+     "why": "平常 (danh từ) đã có nghĩa “lúc thường”, không thêm 的时候.",
+     "right": "我平常一般自己做饭。"
+    }
+   ]
+  },
+  {
+   "point": "宁可",
+   "explain": "宁可 là phó từ: sau khi SO SÁNH hai mặt (thường đều không hay), người nói CHỌN mặt có lợi hơn, chấp nhận được hơn. Hay đi thành cặp: 宁可 A，也要 B (thà chịu A để đạt được B) · 宁可 A，也不 B (thà A chứ không B). 宁 đọc nìng.",
+   "rule": "(Chủ ngữ) + <strong style=\"color:var(--sky-d)\">宁可</strong> + A，也要 + B　|　(Chủ ngữ) + <strong style=\"color:var(--sky-d)\">宁可</strong> + A，也不 + B",
+   "examples": [
+    {
+     "zh": "作为母亲，她宁可自己累一点儿，也不想委屈了孩子。",
+     "py": "Zuòwéi mǔqīn, tā nìngkě zìjǐ lèi yìdiǎnr, yě bù xiǎng wěiqu le háizi.",
+     "vn": "Là mẹ, cô ấy thà mình vất vả một chút, chứ không muốn để con thiệt thòi."
+    },
+    {
+     "zh": "为什么大家宁可挤成一团，也不去没人的那边？",
+     "py": "Wèi shénme dàjiā nìngkě jǐ chéng yì tuán, yě bú qù méi rén de nà biān?",
+     "vn": "Sao mọi người thà chen chúc thành một đám, chứ không sang phía không có ai?"
+    },
+    {
+     "zh": "……做节目时，与开幕式相比，我们宁可把更多的精力集中在闭幕式上……",
+     "py": "…… zuò jiémù shí, yǔ kāimùshì xiāngbǐ, wǒmen nìngkě bǎ gèng duō de jīnglì jízhōng zài bìmùshì shang……",
+     "vn": "… khi làm chương trình, so với lễ khai mạc, chúng tôi thà dồn nhiều tâm sức hơn vào lễ bế mạc…"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我宁可多花点儿钱，但是也要买质量好的。",
+     "why": "宁可 đi cặp với 也 (也要 / 也不), không đi với 但是.",
+     "right": "我宁可多花点儿钱，也要买质量好的。"
+    },
+    {
+     "wrong": "我宁可走路去，也要不坐出租车。",
+     "why": "Vế “chứ không …” dùng 也不 + V, không nói 也要不.",
+     "right": "我宁可走路去，也不坐出租车。"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Bàn thẻ lật với hai thẻ chữ Hán đã mở và bàn tay đang lật thẻ">
+  <defs>
+    <linearGradient id="thelat-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb86b"/>
+      <stop offset="1" stop-color="#e0702a"/>
+    </linearGradient>
+    <linearGradient id="thelat-mat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4dbfa9"/>
+      <stop offset="1" stop-color="#2f9c88"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#thelat-bg)"/>
+  <circle cx="40" cy="48" r="70" fill="#fff8ec" opacity="0.14"/>
+  <circle cx="372" cy="196" r="88" fill="#fff8ec" opacity="0.1"/>
+  <circle cx="356" cy="40" r="34" fill="#ffd8a8" opacity="0.4"/>
+  <circle cx="34" cy="204" r="26" fill="#c75b1c" opacity="0.25"/>
+  <path d="M0 214 Q200 198 400 214 L400 240 L0 240 Z" fill="#c95f1f" opacity="0.45"/>
+
+  <!-- table mat -->
+  <ellipse cx="200" cy="212" rx="140" ry="10" fill="#2b1d3a" opacity="0.22"/>
+  <rect x="72" y="36" width="256" height="172" rx="20" fill="#24766a"/>
+  <rect x="72" y="28" width="256" height="172" rx="20" fill="url(#thelat-mat)"/>
+  <rect x="82" y="36" width="90" height="6" rx="3" fill="#ffffff" opacity="0.25"/>
+
+  <!-- face-down cards -->
+  <g stroke-linejoin="round">
+    <g>
+      <rect x="101" y="44" width="58" height="66" rx="8" fill="#3949ab"/>
+      <rect x="101" y="44" width="58" height="59" rx="8" fill="#5c6bc0"/>
+      <rect x="108" y="51" width="44" height="52" rx="5" fill="none" stroke="#fff8ec" stroke-width="2" opacity="0.55"/>
+      <path d="M130 64 L140 77 L130 90 L120 77 Z" fill="#fff8ec" opacity="0.85"/>
+      <circle cx="114" cy="57" r="2" fill="#fff8ec" opacity="0.7"/><circle cx="146" cy="97" r="2" fill="#fff8ec" opacity="0.7"/>
+      <rect x="101" y="44" width="58" height="66" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    </g>
+    <g>
+      <rect x="241" y="44" width="58" height="66" rx="8" fill="#3949ab"/>
+      <rect x="241" y="44" width="58" height="59" rx="8" fill="#5c6bc0"/>
+      <rect x="248" y="51" width="44" height="52" rx="5" fill="none" stroke="#fff8ec" stroke-width="2" opacity="0.55"/>
+      <path d="M270 64 L280 77 L270 90 L260 77 Z" fill="#fff8ec" opacity="0.85"/>
+      <circle cx="254" cy="57" r="2" fill="#fff8ec" opacity="0.7"/><circle cx="286" cy="97" r="2" fill="#fff8ec" opacity="0.7"/>
+      <rect x="241" y="44" width="58" height="66" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    </g>
+    <g>
+      <rect x="171" y="122" width="58" height="66" rx="8" fill="#3949ab"/>
+      <rect x="171" y="122" width="58" height="59" rx="8" fill="#5c6bc0"/>
+      <rect x="178" y="129" width="44" height="52" rx="5" fill="none" stroke="#fff8ec" stroke-width="2" opacity="0.55"/>
+      <path d="M200 142 L210 155 L200 168 L190 155 Z" fill="#fff8ec" opacity="0.85"/>
+      <circle cx="184" cy="135" r="2" fill="#fff8ec" opacity="0.7"/><circle cx="216" cy="175" r="2" fill="#fff8ec" opacity="0.7"/>
+      <rect x="171" y="122" width="58" height="66" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    </g>
+  </g>
+
+  <!-- face-up cards -->
+  <g stroke-linejoin="round">
+    <rect x="171" y="44" width="58" height="66" rx="8" fill="#f3d6b3"/>
+    <rect x="171" y="44" width="58" height="59" rx="8" fill="#fff8ec"/>
+    <rect x="176" y="49" width="16" height="4" rx="2" fill="#ffb86b" opacity="0.7"/>
+    <rect x="171" y="44" width="58" height="66" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    <text x="200" y="91" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-weight="bold" font-size="38" fill="#d84315">你</text>
+
+    <rect x="241" y="122" width="58" height="66" rx="8" fill="#f3d6b3"/>
+    <rect x="241" y="122" width="58" height="59" rx="8" fill="#fff8ec"/>
+    <rect x="246" y="127" width="16" height="4" rx="2" fill="#ffb86b" opacity="0.7"/>
+    <rect x="241" y="122" width="58" height="66" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
+    <text x="270" y="169" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-weight="bold" font-size="38" fill="#d84315">好</text>
+  </g>
+
+  <!-- card mid-flip -->
+  <rect x="101" y="122" width="58" height="66" rx="8" fill="#2b1d3a" opacity="0.16"/>
+  <path d="M104 134 Q95 155 104 176" fill="none" stroke="#fff8ec" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+  <path d="M156 132 Q165 152 158 172" fill="none" stroke="#fff8ec" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+  <path d="M118 124 L144 116 L144 182 L118 190 Z" fill="#5c6bc0" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M118 182 L144 175 L144 182 L118 190 Z" fill="#3949ab"/>
+  <path d="M124 134 L138 130" stroke="#fff8ec" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M131 145 L136 153 L131 162 L126 155 Z" fill="#fff8ec" opacity="0.85"/>
+  <path d="M118 124 L144 116 L144 182 L118 190 Z" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+
+  <!-- pointing hand -->
+  <g transform="translate(152 194) rotate(-30)" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round">
+    <rect x="-5.5" y="-28" width="11" height="32" rx="5.5" fill="#ffd7b5"/>
+    <ellipse cx="-11" cy="10" rx="6" ry="8" fill="#ffd7b5"/>
+    <rect x="-10" y="-2" width="30" height="28" rx="11" fill="#ffd7b5"/>
+    <path d="M6 4 L6 14 M13 5 L13 14" fill="none" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+    <rect x="-2" y="-25" width="4" height="10" rx="2" fill="#fff8ec" stroke="none" opacity="0.7"/>
+    <rect x="-12" y="22" width="34" height="12" rx="5" fill="#7c4dff"/>
+  </g>
+
+  <!-- sparkles -->
+  <g fill="#fff8ec">
+    <path transform="translate(236 36) scale(0.85)" d="M0 -9 Q1.6 -1.6 9 0 Q1.6 1.6 0 9 Q-1.6 1.6 -9 0 Q-1.6 -1.6 0 -9 Z"/>
+    <path transform="translate(312 116) scale(0.75)" d="M0 -9 Q1.6 -1.6 9 0 Q1.6 1.6 0 9 Q-1.6 1.6 -9 0 Q-1.6 -1.6 0 -9 Z"/>
+    <path transform="translate(54 120) scale(0.9)" d="M0 -9 Q1.6 -1.6 9 0 Q1.6 1.6 0 9 Q-1.6 1.6 -9 0 Q-1.6 -1.6 0 -9 Z"/>
+    <path transform="translate(350 82) scale(0.6)" d="M0 -9 Q1.6 -1.6 9 0 Q1.6 1.6 0 9 Q-1.6 1.6 -9 0 Q-1.6 -1.6 0 -9 Z"/>
+    <circle cx="164" cy="36" r="2.5"/>
+    <circle cx="44" cy="160" r="3" opacity="0.8"/>
+    <circle cx="356" cy="150" r="2.5"/>
+  </g>
+</svg>

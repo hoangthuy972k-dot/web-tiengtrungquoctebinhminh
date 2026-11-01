@@ -1,0 +1,759 @@
+{
+ "/lessons/hsk3v3-bai-18.html": {
+  "points": [
+   {
+    "title": "Cách diễn đạt số ước lượng 「概数」 — hai số liền kề + lượng từ",
+    "errors": [
+     {
+      "wrong": "春节大概放七或八天假。",
+      "why": "tiếng Việt nói “bảy hoặc tám ngày”; số ước lượng tiếng Trung chỉ cần đặt hai số liền kề cạnh nhau, không thêm 或 / 或者.",
+      "right": "春节大概放七八天假。"
+     },
+     {
+      "wrong": "教室里来了五个六个学生。",
+      "why": "lặp lượng từ theo kiểu “năm người sáu người”; hai số liền kề dùng chung MỘT lượng từ, đặt sau số thứ hai.",
+      "right": "教室里来了五六个学生。"
+     },
+     {
+      "wrong": "我们大概等了二十三十分钟。",
+      "why": "tiếng Việt nói “hai ba mươi phút”, nhưng với hàng chục tiếng Trung ghép hai chữ số trước rồi mới thêm 十: 二三十, không nói 二十三十.",
+      "right": "我们大概等了二三十分钟。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (用概数回答问题): “你一般晚上几点睡觉？” — Tôi thường ngủ khoảng mười một, mười hai giờ đêm.",
+      "pre": "我一般晚上",
+      "blank": "十一二点",
+      "post": "睡觉。",
+      "options": [
+       "十一二点",
+       "十一十二点",
+       "十一或十二点"
+      ],
+      "answer": 0,
+      "explanation": "11–12 giờ: ghép 十一 + 二 → 十一二点; không lặp 十, không thêm 或. Đáp án mở — tuỳ giờ ngủ của bạn."
+     },
+     {
+      "context": "Sách (用概数回答问题): “你每天学习多长时间汉语？” — Mỗi ngày tôi học tiếng Trung khoảng một hai tiếng.",
+      "pre": "我每天学习",
+      "blank": "一两个小时",
+      "post": "汉语。",
+      "options": [
+       "一两个小时",
+       "一二个小时",
+       "一个两个小时"
+      ],
+      "answer": 0,
+      "explanation": "Trước lượng từ dùng 两, không dùng 二 (ôn HSK1): 一两个; thời lượng đứng giữa động từ và tân ngữ (ôn HSK3 Bài 8). Đáp án mở."
+     },
+     {
+      "context": "Sách (用概数回答问题): “你们国家新年一般放几天假？” — Ở nước tôi Tết thường được nghỉ khoảng bảy tám ngày.",
+      "pre": "我们国家新年一般放",
+      "blank": "七八天",
+      "post": "假。",
+      "options": [
+       "七八天",
+       "七天八天",
+       "八七天"
+      ],
+      "answer": 0,
+      "explanation": "Hai số liền kề theo thứ tự nhỏ → lớn; 放假 là từ ly hợp, thời lượng chen giữa: 放七八天假 (ôn HSK3 Bài 6, Bài 8). Đáp án mở."
+     },
+     {
+      "context": "“Trong lớp học có năm sáu học sinh đến.”",
+      "pre": "教室里来了",
+      "blank": "五六个",
+      "post": "学生。",
+      "options": [
+       "五六个",
+       "五个六个",
+       "五六"
+      ],
+      "answer": 0,
+      "explanation": "Dùng chung một lượng từ 个 sau số thứ hai; không bỏ lượng từ. 教室 (ôn HSK2 Bài 2)."
+     },
+     {
+      "context": "“Những bức ảnh này chụp khoảng ba bốn năm trước nhỉ?”",
+      "pre": "这些照片是",
+      "blank": "三四年",
+      "post": "前照的吧？",
+      "options": [
+       "三四年",
+       "三年四年",
+       "三四个年"
+      ],
+      "answer": 0,
+      "explanation": "年 đi thẳng sau số, không cần lượng từ 个; 是……的 nhấn mạnh thời gian; 照片 (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "“Lớp chúng tôi có khoảng hai ba mươi học sinh.”",
+      "pre": "我们班大概有",
+      "blank": "二三十",
+      "post": "个学生。",
+      "options": [
+       "二三十",
+       "二十三十",
+       "三二十"
+      ],
+      "answer": 0,
+      "explanation": "Hàng chục: 二三十 = 20–30; 大概 + số ước lượng; 班 (ôn HSK2 Bài 13)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "春节大概放七或八天假。",
+      "isCorrect": false,
+      "correctVersion": "春节大概放七八天假。",
+      "explanation": "Số ước lượng không dùng 或: hai số liền kề đặt sát nhau."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我昨天晚上大概睡了五六个小时。",
+      "isCorrect": true,
+      "explanation": "Đúng: 大概 + 五六个小时; bổ ngữ thời lượng (ôn HSK3 Bài 8)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tết được nghỉ khoảng bảy tám ngày.”",
+      "words": [
+       "春节",
+       "大概",
+       "放",
+       "七八天",
+       "假",
+       "。"
+      ],
+      "answer": "春节大概放七八天假。",
+      "explanation": "Câu của Bài khoá 1; 放……假 (ôn HSK3 Bài 6)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trong lớp học có năm sáu học sinh đến.”",
+      "words": [
+       "教室里",
+       "来了",
+       "五六个",
+       "学生",
+       "。"
+      ],
+      "answer": "教室里来了五六个学生。",
+      "explanation": "Câu tồn hiện: nơi chốn + V + 了 + người (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cuốn sách này tôi đã đọc hai ba lượt rồi.”",
+      "words": [
+       "这本书",
+       "我",
+       "看了",
+       "两三遍",
+       "了",
+       "。"
+      ],
+      "answer": "这本书我看了两三遍了。",
+      "explanation": "遍 (ôn HSK3 Bài 10); trước lượng từ dùng 两三, không dùng 二三."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mỗi ngày tôi đi bộ đi học, mất khoảng mười lăm mười sáu phút.”",
+      "words": [
+       "我",
+       "每天",
+       "走路",
+       "上学",
+       "，",
+       "大概",
+       "要",
+       "十五六",
+       "分钟",
+       "。"
+      ],
+      "answer": "我每天走路上学，大概要十五六分钟。",
+      "explanation": "十五六 = 15–16; 走路 (ôn HSK2 Bài 9), 上学 (ôn HSK1 Bài 14)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng số ước lượng.",
+      "promptLang": "vi",
+      "prompt": "Hôm qua có khoảng ba bốn mươi người đến tham gia buổi liên hoan.",
+      "answer": "昨天大概有三四十个人来参加晚会。",
+      "answerPy": "Zuótiān dàgài yǒu sān-sìshí ge rén lái cānjiā wǎnhuì.",
+      "explanation": "三四十 = 30–40; 参加 (ôn HSK3 Bài 9); 晚会 (ôn HSK3 Bài 13)."
+     }
+    ]
+   },
+   {
+    "title": "「刚才」 và 「刚刚」 — danh từ thời gian và phó từ thời gian",
+    "errors": [
+     {
+      "wrong": "刚刚的电话是谁打来的？",
+      "why": "刚刚 là phó từ, không làm định ngữ với 的; muốn nói “cuộc điện thoại lúc nãy” phải dùng danh từ 刚才.",
+      "right": "刚才的电话是谁打来的？"
+     },
+     {
+      "wrong": "我刚才来北京两个月。",
+      "why": "tiếng Việt đều nói “vừa mới”, nhưng 刚才 chỉ vài phút trước lúc nói, không đi với thời lượng dài; việc mới xảy ra vài ngày, vài tháng dùng 刚刚 / 刚.",
+      "right": "我刚刚来北京两个月。"
+     },
+     {
+      "wrong": "我刚刚到家了。",
+      "why": "tiếng Việt hay thêm “rồi” ở cuối; câu có 刚 / 刚刚 đã mang nghĩa “vừa xảy ra”, cuối câu thường không thêm 了 nữa.",
+      "right": "我刚刚到家。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (用“刚刚”或者“刚才”填空): “Bạn nói lại một lần câu hỏi lúc nãy nhé.”",
+      "pre": "请你再说一遍",
+      "blank": "刚才",
+      "post": "的问题。",
+      "options": [
+       "刚才",
+       "刚刚",
+       "刚"
+      ],
+      "answer": 0,
+      "explanation": "刚才 là danh từ, làm định ngữ được (刚才的问题); 刚刚 / 刚 là phó từ, không đi với 的. 遍 (ôn HSK3 Bài 10)."
+     },
+     {
+      "context": "Sách (用“刚刚”或者“刚才”填空): “Bạn mới đến được hai ba ngày đã muốn đi, vì sao vậy?”",
+      "pre": "你",
+      "blank": "刚刚",
+      "post": "来了两三天就要走，为什么？",
+      "options": [
+       "刚刚",
+       "刚才",
+       "以前"
+      ],
+      "answer": 0,
+      "explanation": "刚刚 + V + thời lượng (两三天 — số ước lượng, ngữ pháp 1); 刚才 chỉ vài phút trước, không hợp với “hai ba ngày”."
+     },
+     {
+      "context": "Sách (用“刚刚”或者“刚才”填空): “Tôi không phải mới bắt đầu học tiếng Trung, tôi đã học một năm rồi.”",
+      "pre": "我不是",
+      "blank": "刚刚",
+      "post": "开始学习中文的，我已经学了一年了。",
+      "options": [
+       "刚刚",
+       "刚才",
+       "马上"
+      ],
+      "answer": 0,
+      "explanation": "Mốc “một năm” không hợp với 刚才 (vài phút trước); 刚刚 đứng trước động từ 开始; 已经……了 (ôn HSK2 Bài 1)."
+     },
+     {
+      "context": "“Cuộc điện thoại lúc nãy là mẹ tôi gọi đến.”",
+      "pre": "",
+      "blank": "刚才",
+      "post": "的电话是我妈妈打来的。",
+      "options": [
+       "刚才",
+       "刚刚",
+       "刚"
+      ],
+      "answer": 0,
+      "explanation": "刚才的 + N; 是……的 nhấn mạnh người thực hiện; 打电话 (ôn HSK1 Bài 13)."
+     },
+     {
+      "context": "“Anh ấy vừa mới đến Bắc Kinh được hai tháng.”",
+      "pre": "他",
+      "blank": "刚刚",
+      "post": "来北京两个月。",
+      "options": [
+       "刚刚",
+       "刚才",
+       "不久"
+      ],
+      "answer": 0,
+      "explanation": "刚刚 + V + thời lượng dài; 不久 là tính từ, không đứng thẳng trước động từ như vậy."
+     },
+     {
+      "context": "“Lúc nãy tôi nghe không rõ, bạn nói lại lần nữa nhé.”",
+      "pre": "我",
+      "blank": "刚才",
+      "post": "没听清楚，请你再说一遍。",
+      "options": [
+       "刚才",
+       "刚",
+       "以后"
+      ],
+      "answer": 0,
+      "explanation": "刚才 là danh từ, phía sau dùng được phủ định 没 / 不; phó từ 刚 không đi với phủ định; 清楚 (ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "刚刚的电话是谁打来的？",
+      "isCorrect": false,
+      "correctVersion": "刚才的电话是谁打来的？",
+      "explanation": "刚刚 là phó từ, không làm định ngữ; dùng 刚才的 + N."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我刚刚搬到这个小区两个星期。",
+      "isCorrect": true,
+      "explanation": "Đúng: 刚刚 + V + thời lượng; 搬、小区 (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi vừa mới xem video học được cách gói sủi cảo.”",
+      "words": [
+       "我",
+       "刚刚",
+       "看视频",
+       "学会了",
+       "包饺子",
+       "。"
+      ],
+      "answer": "我刚刚看视频学会了包饺子。",
+      "explanation": "Câu của Bài khoá 2: chủ ngữ + 刚刚 + V; 视频 (ôn HSK3 Bài 14)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cuộc điện thoại lúc nãy là mẹ tôi gọi đến.”",
+      "words": [
+       "刚才的",
+       "电话",
+       "是",
+       "我妈妈",
+       "打来的",
+       "。"
+      ],
+      "answer": "刚才的电话是我妈妈打来的。",
+      "explanation": "刚才 làm định ngữ: 刚才的电话."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy vừa mới đến Bắc Kinh được hai tháng.”",
+      "words": [
+       "他",
+       "刚刚",
+       "来",
+       "北京",
+       "两个月",
+       "。"
+      ],
+      "answer": "他刚刚来北京两个月。",
+      "explanation": "刚刚 + V + nơi chốn + thời lượng."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Lúc nãy tôi đã xem một lượt rồi, không muốn xem lại nữa.”",
+      "words": [
+       "我",
+       "刚才",
+       "看过",
+       "一遍",
+       "，",
+       "不想",
+       "再看了",
+       "。"
+      ],
+      "answer": "我刚才看过一遍，不想再看了。",
+      "explanation": "刚才 đứng sau chủ ngữ, trước động từ; 再 (ôn HSK1 Bài 12)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 刚才 hoặc 刚刚.",
+      "promptLang": "vi",
+      "prompt": "Em gái tôi vừa mới tốt nghiệp đại học tháng trước.",
+      "answer": "我妹妹上个月刚刚大学毕业。",
+      "answerPy": "Wǒ mèimei shàng ge yuè gānggāng dàxué bìyè.",
+      "explanation": "Việc xảy ra cách đây một tháng → 刚刚, không dùng 刚才; 毕业 của bài này."
+     }
+    ]
+   },
+   {
+    "title": "Câu ghép điều kiện 「只要……，就……」",
+    "errors": [
+     {
+      "wrong": "只要你努力，就老师会帮你。",
+      "why": "câu có hai chủ ngữ khác nhau: chủ ngữ thứ hai (老师) phải đứng TRƯỚC 就, không đặt sau 就.",
+      "right": "只要你努力，老师就会帮你。"
+     },
+     {
+      "wrong": "只要你每天练习，你才能说好汉语。",
+      "why": "nhầm với 只有……才…… (ôn HSK3 Bài 17): 只要 (chỉ cần) đi với 就, không đi với 才.",
+      "right": "只要你每天练习，就能说好汉语。"
+     },
+     {
+      "wrong": "我就去看你，只要有时间。",
+      "why": "tiếng Việt hay nói “Tôi sẽ đến thăm bạn, chỉ cần có thời gian” (điều kiện đặt sau); trong câu 只要……就……, vế 只要 đứng TRƯỚC, 就 nằm ở vế kết quả phía sau.",
+      "right": "只要有时间，我就去看你。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成对话): A: Sao bạn đối xử tốt với mọi người thế? B: “Mình tin rằng chỉ cần mình tốt với người khác, người khác cũng sẽ tốt với mình.”",
+      "pre": "我相信只要我对别人好，",
+      "blank": "别人就会对我好",
+      "post": "。",
+      "options": [
+       "别人就会对我好",
+       "就别人会对我好",
+       "别人才会对我好"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ thứ hai 别人 đứng trước 就; 只要 không đi với 才; 相信 (ôn HSK3 Bài 14), 别人 (ôn HSK3 Bài 11). Đáp án mở."
+     },
+     {
+      "context": "Sách (完成对话): A: “Chỉ cần em chăm chỉ học, thành tích nhất định sẽ được nâng cao.” B: Thưa thầy, em nhất định sẽ cố gắng.",
+      "pre": "只要你努力学习，",
+      "blank": "成绩就一定会提高",
+      "post": "。",
+      "options": [
+       "成绩就一定会提高",
+       "就成绩一定会提高",
+       "成绩才一定会提高"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ 成绩 đứng trước 就; 成绩 (ôn HSK3 Bài 9), 提高、努力 (ôn HSK3 Bài 10). Đáp án mở."
+     },
+     {
+      "context": "Sách (完成对话): A: Cô Trương, cảm ơn cô đã nấu nhiều món thế này, chắc cô mệt lắm. B: “Không mệt, chỉ cần các cháu thích ăn là cô không thấy mệt.”",
+      "pre": "不累，",
+      "blank": "只要你们喜欢吃",
+      "post": "，我就不觉得累。",
+      "options": [
+       "只要你们喜欢吃",
+       "只有你们喜欢吃",
+       "你们喜欢吃只要"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau có 就 → dùng 只要 (只有 phải đi với 才); vế 只要 đứng trước. 觉得 (ôn HSK1 Bài 12). Đáp án mở."
+     },
+     {
+      "context": "“Chỉ cần vài ngày không gọi video cho nó là cô rất nhớ nó.”",
+      "pre": "我",
+      "blank": "只要",
+      "post": "几天不跟他视频，就很想他。",
+      "options": [
+       "只要",
+       "只有",
+       "只是"
+      ],
+      "answer": 0,
+      "explanation": "只要……就……; 只有 đi với 才 (ôn HSK3 Bài 17); 只是 = chỉ là (ôn HSK3 Bài 9)."
+     },
+     {
+      "context": "“Chỉ cần bạn kiên trì ngủ sớm mỗi ngày, sức khỏe nhất định sẽ tốt lên.”",
+      "pre": "只要你坚持每天早睡，身体",
+      "blank": "就",
+      "post": "一定会好起来。",
+      "options": [
+       "就",
+       "才",
+       "都"
+      ],
+      "answer": 0,
+      "explanation": "只要 đi với 就; 好起来 — bổ ngữ xu hướng nghĩa mở rộng (ôn HSK3 Bài 8); 坚持 của bài này."
+     },
+     {
+      "context": "“Chỉ cần có thời gian, tôi sẽ đến thăm bạn.”",
+      "pre": "只要有时间，",
+      "blank": "我就去看你",
+      "post": "。",
+      "options": [
+       "我就去看你",
+       "就我去看你",
+       "我去看你就"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ 我 đứng trước 就, 就 đứng trước động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "只要你每天练习，你才能说好汉语。",
+      "isCorrect": false,
+      "correctVersion": "只要你每天练习，就能说好汉语。",
+      "explanation": "只要 đi với 就, không đi với 才."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "只要明天不下雨，我们就去爬山。",
+      "isCorrect": true,
+      "explanation": "Đúng: chủ ngữ thứ hai 我们 đứng trước 就; 下雨 (ôn HSK1 Bài 12), 爬山 (ôn HSK3 Bài 5)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chỉ cần luôn kiên trì là có thể hoàn thành mục tiêu của mình.”",
+      "words": [
+       "只要",
+       "一直",
+       "坚持",
+       "，",
+       "就",
+       "能",
+       "完成",
+       "自己的",
+       "目标",
+       "。"
+      ],
+      "answer": "只要一直坚持，就能完成自己的目标。",
+      "explanation": "Câu của Bài khoá 4; 一直 (ôn HSK3 Bài 4)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chỉ cần con thích, mẹ sẽ nấu cho con.”",
+      "words": [
+       "只要",
+       "你",
+       "喜欢",
+       "，",
+       "妈妈",
+       "就",
+       "给你",
+       "做",
+       "。"
+      ],
+      "answer": "只要你喜欢，妈妈就给你做。",
+      "explanation": "Hai chủ ngữ: 妈妈 đứng trước 就; 给 + người + V (ôn HSK2 Bài 1)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chỉ cần có thời gian, ông tôi sẽ ra công viên đi bộ.”",
+      "words": [
+       "只要",
+       "有时间",
+       "，",
+       "爷爷",
+       "就",
+       "去",
+       "公园",
+       "走走",
+       "。"
+      ],
+      "answer": "只要有时间，爷爷就去公园走走。",
+      "explanation": "公园 (ôn HSK3 Bài 12); 爷爷 (ôn HSK2 Bài 5); lặp động từ 走走."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi chỉ cần nghe nhạc là vui ngay.”",
+      "words": [
+       "我",
+       "只要",
+       "听",
+       "音乐",
+       "，",
+       "就",
+       "很",
+       "开心",
+       "。"
+      ],
+      "answer": "我只要听音乐，就很开心。",
+      "explanation": "Một chủ ngữ đặt trước 只要; 音乐 (ôn HSK3 Bài 5), 开心 (ôn HSK3 Bài 8)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 只要……就…….",
+      "promptLang": "vi",
+      "prompt": "Chỉ cần ngày mai trời đẹp, chúng ta sẽ ra biển chơi.",
+      "answer": "只要明天天气好，我们就去海边玩儿。",
+      "answerPy": "Zhǐyào míngtiān tiānqì hǎo, wǒmen jiù qù hǎi biān wánr.",
+      "explanation": "海 (ôn HSK3 Bài 4); 天气 (ôn HSK1 Bài 12)."
+     }
+    ]
+   },
+   {
+    "title": "Cấu trúc cố định 「从……起」 — bắt đầu từ…",
+    "errors": [
+     {
+      "wrong": "我从那天就起努力学习。",
+      "why": "đặt 起 sai chỗ: 起 phải đi liền sau mốc thời gian (从 + mốc + 起), sau đó mới đến 就 + động từ.",
+      "right": "我从那天起就努力学习。"
+     },
+     {
+      "wrong": "起从明天，我每天早上跑步。",
+      "why": "dịch theo trật tự “bắt đầu từ ngày mai”: khung đúng là 从 + mốc thời gian + 起, 起 đứng sau.",
+      "right": "从明天起，我每天早上跑步。"
+     },
+     {
+      "wrong": "从那天以后起，我们就变成了好朋友。",
+      "why": "dịch “từ sau hôm đó trở đi” nên dùng cả 以后 lẫn 起; chỉ chọn một: 从那天起 hoặc 那天以后.",
+      "right": "从那天起，我们就变成了好朋友。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách (完成句子): “Từ khi chuyển đến Bắc Kinh, tôi bắt đầu đi tàu điện ngầm đi làm.”",
+      "pre": "从搬到北京起，",
+      "blank": "我就开始坐地铁上班了",
+      "post": "。",
+      "options": [
+       "我就开始坐地铁上班了",
+       "就我开始坐地铁上班了",
+       "我开始就坐地铁上班了"
+      ],
+      "answer": 0,
+      "explanation": "从 + sự việc + 起，chủ ngữ + 就 + V; 地铁 (ôn HSK2 Bài 12), 搬 (ôn HSK3 Bài 3). Đáp án mở — đây là một cách hoàn thành."
+     },
+     {
+      "context": "Sách (完成句子): “Từ tháng trước, ngày nào tôi cũng tập thể dục hai ba mươi phút.”",
+      "pre": "从",
+      "blank": "上个月",
+      "post": "起，我每天都锻炼二三十分钟。",
+      "options": [
+       "上个月",
+       "上个月以后",
+       "上个月开始"
+      ],
+      "answer": 0,
+      "explanation": "Giữa 从 và 起 chỉ đặt mốc thời gian, không thêm 以后 / 开始; 锻炼 (ôn HSK3 Bài 5); 二三十 — số ước lượng (ngữ pháp 1). Đáp án mở."
+     },
+     {
+      "context": "Sách (完成句子): “Từ khi mua chiếc máy ảnh mới, tôi bắt đầu thích chụp ảnh.”",
+      "pre": "",
+      "blank": "从买了新相机起",
+      "post": "，我就开始喜欢拍照了。",
+      "options": [
+       "从买了新相机起",
+       "起买了新相机",
+       "从起买了新相机"
+      ],
+      "answer": 0,
+      "explanation": "Mốc là một sự việc: 从 + 买了新相机 + 起; 相机 (ôn HSK3 Bài 4), 拍照 (ôn HSK3 Bài 5). Đáp án mở."
+     },
+     {
+      "context": "“Từ lúc đó anh ấy đã cố gắng học tập.”",
+      "pre": "他从那时",
+      "blank": "起",
+      "post": "就努力学习。",
+      "options": [
+       "起",
+       "以前",
+       "去"
+      ],
+      "answer": 0,
+      "explanation": "Câu của Bài khoá 4: 从那时起 = từ lúc đó; 努力 (ôn HSK3 Bài 10)."
+     },
+     {
+      "context": "“Từ hôm đó, chúng tôi đã trở thành bạn tốt.”",
+      "pre": "",
+      "blank": "从那天起",
+      "post": "，我们就变成了好朋友。",
+      "options": [
+       "从那天起",
+       "那天从起",
+       "从那天以后起"
+      ],
+      "answer": 0,
+      "explanation": "从 + 那天 + 起 đứng đầu câu; 变成 (ôn HSK3 Bài 12)."
+     },
+     {
+      "context": "“Từ chuyến du lịch lần đó, tôi càng có hứng thú với văn hoá Trung Quốc hơn.”",
+      "pre": "从那次旅游",
+      "blank": "起",
+      "post": "，我对中国文化更有兴趣了。",
+      "options": [
+       "起",
+       "开",
+       "去"
+      ],
+      "answer": 0,
+      "explanation": "从 + sự việc + 起; 对……有兴趣 (ôn HSK3 Bài 5); 文化 (ôn HSK3 Bài 13); 更 (ôn HSK3 Bài 7)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "起从明天，我每天早上跑步。",
+      "isCorrect": false,
+      "correctVersion": "从明天起，我每天早上跑步。",
+      "explanation": "Khung đúng: 从 + mốc thời gian + 起."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "从下个星期起，我们每天八点上课。",
+      "isCorrect": true,
+      "explanation": "Đúng: 从 + 下个星期 + 起 đầu câu; 上课 (ôn HSK1 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Từ lúc đó anh ấy đã cố gắng học tập.”",
+      "words": [
+       "他",
+       "从",
+       "那时",
+       "起",
+       "就",
+       "努力",
+       "学习",
+       "。"
+      ],
+      "answer": "他从那时起就努力学习。",
+      "explanation": "Câu của Bài khoá 4: chủ ngữ + 从……起 + 就 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Từ hôm đó, chúng tôi đã trở thành bạn tốt.”",
+      "words": [
+       "从",
+       "那天",
+       "起",
+       "，",
+       "我们",
+       "就",
+       "变成了",
+       "好朋友",
+       "。"
+      ],
+      "answer": "从那天起，我们就变成了好朋友。",
+      "explanation": "从……起 đầu câu, có dấu phẩy."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Từ ngày mai, tôi phải dậy sớm chạy bộ.”",
+      "words": [
+       "从",
+       "明天",
+       "起",
+       "，",
+       "我",
+       "要",
+       "早点儿",
+       "起床",
+       "跑步",
+       "。"
+      ],
+      "answer": "从明天起，我要早点儿起床跑步。",
+      "explanation": "起床 (ôn HSK1 Bài 11); 跑步 (ôn HSK2 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Từ tháng trước, mẹ đã bắt đầu chuẩn bị cho Tết.”",
+      "words": [
+       "从",
+       "上个月",
+       "起",
+       "，",
+       "妈妈",
+       "就",
+       "开始",
+       "为",
+       "春节",
+       "做准备",
+       "了",
+       "。"
+      ],
+      "answer": "从上个月起，妈妈就开始为春节做准备了。",
+      "explanation": "Câu 选词填空 của sách; 为 (ôn HSK3 Bài 11), 准备 (ôn HSK2 Bài 5)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 从……起.",
+      "promptLang": "vi",
+      "prompt": "Từ năm ngoái, tôi đã bắt đầu học tiếng Trung.",
+      "answer": "从去年起，我就开始学习汉语了。",
+      "answerPy": "Cóng qùnián qǐ, wǒ jiù kāishǐ xuéxí Hànyǔ le.",
+      "explanation": "去年 (ôn HSK1 Bài 15); 开始 (ôn HSK2 Bài 7)."
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs>
+<g id="rao-p" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M0 84V48L6 41L12 48V84Z" fill="#f0c27b"/>
+<path d="M9 49V81" stroke="#d39a52" stroke-width="3"/>
+<path d="M3.2 50V60" stroke="#fde3b8" stroke-width="2"/>
+<path d="M0 84V48L6 41L12 48V84Z" fill="none"/>
+<circle cx="6" cy="57.5" r="1" fill="#8d5a3b" stroke="none"/><circle cx="6" cy="73.5" r="1" fill="#8d5a3b" stroke="none"/>
+</g>
+</defs>
+<ellipse cx="50" cy="84.5" rx="48" ry="3.5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="2" y="54" width="96" height="7" rx="2.5" fill="#d9a05a"/>
+<rect x="2" y="70" width="96" height="7" rx="2.5" fill="#d9a05a"/>
+<path d="M5 56.5H95M5 72.5H95" stroke="#efc184" stroke-width="1.8"/>
+</g>
+<use href="#rao-p" x="6"/>
+<use href="#rao-p" x="25"/>
+<use href="#rao-p" x="44"/>
+<use href="#rao-p" x="63"/>
+<use href="#rao-p" x="82"/>
+<g fill="#5cb85c" stroke="#2b1d3a" stroke-width="1.5" stroke-linejoin="round"><path d="M18 86L20 80L22 84L24 79L26 86Z"/><path d="M57 86L59 81L61 84L63 80L65 86Z"/></g>
+</svg>

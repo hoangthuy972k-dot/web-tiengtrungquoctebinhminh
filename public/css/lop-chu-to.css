@@ -1,0 +1,44 @@
+/* Co chu cau hoi + dap an dong bo cho moi tro o Che do lop hoc (chieu len lop).
+   Nap SAU cac file CSS cua tung tro; selector co tien to "body" de thang cac quy tac rieng.
+   Co theo ca be ngang (vw) va be cao (vh) de may chieu thap van khong tran. */
+:root {
+  --lop-cau: clamp(1.9rem, min(4.2vw, 6.4vh), 3.6rem);   /* cau hoi */
+  --lop-dap: clamp(1.5rem, min(3vw, 4.6vh), 2.6rem);     /* dap an / lua chon */
+}
+
+/* ---- Cau hoi ---- */
+body .lop-abc-sentence,
+body .lop-abc-sentence.is-q,
+body .lop-mc .lop-abc-sentence,
+body .lop-row-zh,
+body .lop-sort-zh,
+body .lt-cau-zh,
+body .zb-hoi-cau,
+body .gp-q-cau,
+body .lu-hoi-cau,
+body .rc-cau-zh,
+body .kt-cau-mc,
+body .kt-cau-mc.zh,
+body .lop-chua-q {
+  font-size: var(--lop-cau);
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+/* ---- Dap an / lua chon ---- */
+body .lop-abc-text,
+body .lop-mc .lop-abc-text,
+body .lop-row-fix .fix-zh,
+body .lt-opt-t,
+body .gp-opt-q,
+body .lu-dap-nut span,
+body .rc-opt,
+body .kt-opt,
+body .kt-noi li,
+body .lop-chua-txt {
+  font-size: var(--lop-dap);
+  line-height: 1.3;
+}
+/* Chu cai A/B/C/D canh dap an lon theo cho can doi */
+body .lop-abc-key { width: 1.9em; height: 1.9em; font-size: calc(var(--lop-dap) * .62); }
+body .lu-dap-nut, body .gp-opt-q, body .lop-abc-opt, body .kt-opt { min-height: calc(var(--lop-dap) * 2.2); }

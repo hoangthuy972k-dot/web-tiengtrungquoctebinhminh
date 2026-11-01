@@ -1,0 +1,1352 @@
+{
+ "id": "hsk30-3-1",
+ "capDo": 3,
+ "de": 1,
+ "tenZh": "HSK 3.0（三级）全真模拟试卷 1",
+ "pinyin": false,
+ "sections": [
+  {
+   "id": "nghe",
+   "ten": "Nghe",
+   "tenZh": "听力",
+   "phut": 23,
+   "parts": [
+    {
+     "ten": "Phần 1",
+     "tenZh": "第一部分",
+     "kieu": "chon",
+     "huongDan": "Nghe hội thoại, chọn hình phù hợp nhất. Mỗi câu nghe hai lần.",
+     "huongDanZh": "请选出匹配的图片。",
+     "viDu": "Ví dụ: 男：喂，请问张经理在吗？ 女：他正在开会，您半个小时以后再打，好吗？ → D",
+     "viDuDung": "D",
+     "chung": {
+      "A": {
+       "anh": "l1g1-A.jpg"
+      },
+      "B": {
+       "anh": "l1g1-B.jpg"
+      },
+      "C": {
+       "anh": "l1g1-C.jpg"
+      },
+      "D": {
+       "anh": "l1g1-D.jpg"
+      },
+      "E": {
+       "anh": "l1g1-E.jpg"
+      },
+      "F": {
+       "anh": "l1g1-F.jpg"
+      }
+     },
+     "cau": [
+      {
+       "n": 1,
+       "dap": "C",
+       "loiThoai": "男：您今天觉得舒服一点儿了吗？\n女：还是有一点儿头疼，可以再帮我检查一下吗？",
+       "giai": "Người nam hỏi \"hôm nay chị thấy dễ chịu hơn chưa?\", người nữ nói vẫn còn hơi đau đầu và nhờ \"khám lại giúp\" (再帮我检查一下) → cảnh bác sĩ thăm bệnh nhân trên giường bệnh, hình C."
+      },
+      {
+       "n": 2,
+       "dap": "A",
+       "loiThoai": "女：你今天好像不太开心，怎么了？\n男：我丢了银行卡，现在心里很难过。",
+       "giai": "我丢了银行卡，心里很难过 = Tôi làm mất thẻ ngân hàng, trong lòng rất buồn → hình A (chàng trai ôm mặt, vẻ buồn bực)."
+      },
+      {
+       "n": 3,
+       "dap": "F",
+       "loiThoai": "男：你想吃什么？我帮你点。\n女：我想吃米饭和鱼。",
+       "giai": "你想吃什么？我帮你点 = Bạn muốn ăn gì? Để mình gọi món cho. → hai người đang xem thực đơn chọn món, hình F."
+      },
+      {
+       "n": 4,
+       "dap": "E",
+       "loiThoai": "男：你最近怎么总是很晚才睡觉？\n女：我在准备考试，每天都要复习到很晚。",
+       "giai": "我在准备考试，每天都要复习到很晚 = Tôi đang chuẩn bị thi, ngày nào cũng ôn bài đến khuya → hình E (cô gái ngồi học bài)."
+      },
+      {
+       "n": 5,
+       "dap": "B",
+       "loiThoai": "女：你觉得这条裙子怎么样？\n男：我觉得很好看，你穿上试试吧。",
+       "giai": "这条裙子怎么样？……你穿上试试吧 = Cái váy này thế nào? — Đẹp đấy, em mặc thử đi → cảnh chọn quần áo ở cửa hàng, hình B."
+      }
+     ]
+    },
+    {
+     "ten": "Phần 1",
+     "tenZh": "第一部分",
+     "kieu": "chon",
+     "huongDan": "Nghe hội thoại, chọn hình phù hợp nhất. Mỗi câu nghe hai lần.",
+     "huongDanZh": "请选出匹配的图片。",
+     "chung": {
+      "A": {
+       "anh": "l1g2-A.jpg"
+      },
+      "B": {
+       "anh": "l1g2-B.jpg"
+      },
+      "C": {
+       "anh": "l1g2-C.jpg"
+      },
+      "D": {
+       "anh": "l1g2-D.jpg"
+      },
+      "E": {
+       "anh": "l1g2-E.jpg"
+      }
+     },
+     "cau": [
+      {
+       "n": 6,
+       "dap": "E",
+       "loiThoai": "女：你站在那儿，我帮你拍张照片。\n男：好的，这儿太漂亮了！",
+       "giai": "我帮你拍张照片 = Để mình chụp cho bạn một tấm ảnh → hình E (một người cầm máy ảnh chụp bạn nam)."
+      },
+      {
+       "n": 7,
+       "dap": "A",
+       "loiThoai": "男：这个礼物我选了很久，希望你会喜欢。\n女：你总是知道我喜欢什么。",
+       "giai": "这个礼物我选了很久，希望你会喜欢 = Món quà này anh chọn rất lâu, mong em sẽ thích → hình A (chàng trai tặng hộp quà)."
+      },
+      {
+       "n": 8,
+       "dap": "D",
+       "loiThoai": "女：听说你对体育很感兴趣？\n男：是啊，我周末经常跟朋友一起打网球。",
+       "giai": "我周末经常跟朋友一起打网球 = Cuối tuần tôi thường chơi quần vợt với bạn → hình D (cầm vợt tennis)."
+      },
+      {
+       "n": 9,
+       "dap": "C",
+       "loiThoai": "女：这本书你看了这么久，还没看完吗？\n男：这本书很有意思，我想再读一遍。",
+       "giai": "Hội thoại nói về việc đọc sách (这本书很有意思，我想再读一遍 = cuốn sách này rất hay, tôi muốn đọc lại một lần nữa) → hình C (hai bạn ngồi cầm sách đọc)."
+      },
+      {
+       "n": 10,
+       "dap": "B",
+       "loiThoai": "男：你能帮我一下吗？\n女：没问题，我们一起把这些书搬到三楼去吧。",
+       "giai": "我们一起把这些书搬到三楼去吧 = Chúng ta cùng chuyển chỗ sách này lên tầng ba nhé → hình B (chàng trai bê chồng sách, cô gái giúp một tay)."
+      }
+     ]
+    },
+    {
+     "ten": "Phần 2",
+     "tenZh": "第二部分",
+     "kieu": "chon",
+     "huongDan": "Nghe hội thoại ngắn và câu hỏi, chọn đáp án đúng. Mỗi câu nghe hai lần.",
+     "huongDanZh": "请选出正确答案。",
+     "viDu": "Ví dụ: 女：你最近在忙什么？ 男：我奶奶住院了，我每天一下班就去医院照顾她。 问：男的的奶奶怎么了？ → A 住院了",
+     "cau": [
+      {
+       "n": 11,
+       "dap": "C",
+       "chon": {
+        "A": {
+         "zh": "去游泳"
+        },
+        "B": {
+         "zh": "去打羽毛球"
+        },
+        "C": {
+         "zh": "在家休息"
+        }
+       },
+       "loiThoai": "女：周末你想去游泳还是打羽毛球？\n男：最近我左腿有点儿疼，医生说最好不要运动。\n问：男的周末可能做什么？",
+       "giai": "Người nam bị đau chân, \"bác sĩ nói tốt nhất đừng vận động\" (医生说最好不要运动) → cuối tuần có lẽ sẽ ở nhà nghỉ ngơi. Bơi (A) và cầu lông (B) đều là vận động nên bị loại."
+      },
+      {
+       "n": 12,
+       "dap": "B",
+       "chon": {
+        "A": {
+         "zh": "网上"
+        },
+        "B": {
+         "zh": "商场"
+        },
+        "C": {
+         "zh": "超市"
+        }
+       },
+       "loiThoai": "男：你买的这件新衣服真好看，是在网上买的吗？\n女：不是，是在商场里买的。\n问：女的在哪儿买的新衣服？",
+       "giai": "Người nữ trả lời \"不是，是在商场里买的\" = Không, mua ở trung tâm thương mại → B. Bẫy: 网上 do người nam hỏi nhưng bị phủ định; siêu thị không được nhắc tới."
+      },
+      {
+       "n": 13,
+       "dap": "A",
+       "chon": {
+        "A": {
+         "zh": "很担心考试"
+        },
+        "B": {
+         "zh": "复习得不好"
+        },
+        "C": {
+         "zh": "没准备考试"
+        }
+       },
+       "loiThoai": "女：明天就要考试了，我心里有点儿害怕。\n男：别担心，你已经复习得很好了。\n问：关于女的，可以知道什么？",
+       "giai": "明天就要考试了，我心里有点儿害怕 = Mai thi rồi, tôi hơi sợ → cô ấy lo lắng về kỳ thi (A). Người nam nói \"你已经复习得很好了\" nên B, C sai."
+      },
+      {
+       "n": 14,
+       "dap": "A",
+       "chon": {
+        "A": {
+         "zh": "去年夏天"
+        },
+        "B": {
+         "zh": "今年夏天"
+        },
+        "C": {
+         "zh": "去年秋天"
+        }
+       },
+       "loiThoai": "女：这张照片是你什么时候拍的？\n男：是我去年夏天去海边旅游时拍的。\n问：照片是什么时候拍的？",
+       "giai": "是我去年夏天去海边旅游时拍的 = Chụp khi tôi đi biển du lịch mùa hè năm ngoái → A. Chú ý nghe đủ cả năm (去年) lẫn mùa (夏天)."
+      },
+      {
+       "n": 15,
+       "dap": "C",
+       "chon": {
+        "A": {
+         "zh": "生病了"
+        },
+        "B": {
+         "zh": "爱做饭"
+        },
+        "C": {
+         "zh": "工作忙"
+        }
+       },
+       "loiThoai": "男：你今天怎么自己做饭了？\n女：我妈妈今天工作很忙，要很晚才回家。\n问：关于女的的妈妈，可以知道什么？",
+       "giai": "我妈妈今天工作很忙，要很晚才回家 = Hôm nay mẹ tôi bận việc, rất muộn mới về → C. Hội thoại không nói mẹ bị ốm hay thích nấu ăn."
+      }
+     ]
+    },
+    {
+     "ten": "Phần 2",
+     "tenZh": "第二部分",
+     "kieu": "chon",
+     "huongDan": "Nghe hội thoại (4 lượt) và câu hỏi, chọn đáp án đúng. Mỗi câu nghe hai lần.",
+     "huongDanZh": "请选出正确答案。",
+     "viDu": "Ví dụ: 女：你在读什么书？ 男：《上下五千年》，是介绍中国历史的，很有意思。 女：能不能借我看看？ 男：那你要等几天，我还没看完呢。 问：关于那本书，可以知道什么？ → B 和历史有关",
+     "cau": [
+      {
+       "n": 16,
+       "dap": "C",
+       "chon": {
+        "A": {
+         "zh": "去超市"
+        },
+        "B": {
+         "zh": "坐飞机"
+        },
+        "C": {
+         "zh": "接朋友"
+        }
+       },
+       "loiThoai": "女：你今天下午有时间吗？我们一起去超市吧。\n男：不行，我下午四点要去机场接一个朋友。\n女：你朋友的飞机几点到？\n男：四点半，我还要跟他一起吃晚饭。\n问：男的今天下午要做什么？",
+       "giai": "我下午四点要去机场接一个朋友 = Chiều 4 giờ tôi phải ra sân bay đón một người bạn → C. Bẫy: 坐飞机 là người bạn đi máy bay, không phải người nam; lời rủ đi siêu thị đã bị từ chối (不行)."
+      },
+      {
+       "n": 17,
+       "dap": "C",
+       "chon": {
+        "A": {
+         "zh": "坐地铁"
+        },
+        "B": {
+         "zh": "骑自行车"
+        },
+        "C": {
+         "zh": "坐爸爸的车"
+        }
+       },
+       "loiThoai": "男：你今天是骑自行车来的吗？\n女：我的自行车坏了，不能骑了。\n男：那你怎么来的？坐地铁吗？\n女：不是，我爸爸开车送我来的。\n问：女的今天是怎么来学校的？",
+       "giai": "我爸爸开车送我来的 = Bố tôi lái xe đưa tôi đến → C. Xe đạp bị hỏng (B sai), hỏi \"坐地铁吗？\" thì cô ấy trả lời \"不是\" (A sai)."
+      },
+      {
+       "n": 18,
+       "dap": "B",
+       "chon": {
+        "A": {
+         "zh": "生病了"
+        },
+        "B": {
+         "zh": "工作忙"
+        },
+        "C": {
+         "zh": "常运动"
+        }
+       },
+       "loiThoai": "男：你最近好像瘦了，生病了吗？\n女：没有，我最近工作太忙了，常常忘记了吃饭。\n男：这样对身体不好，再忙也要好好吃饭。\n女：谢谢，我知道了。\n问：女的为什么瘦了？",
+       "giai": "Cô ấy gầy đi vì \"最近工作太忙了，常常忘记了吃饭\" (dạo này quá bận, hay quên ăn) → B. Hỏi \"生病了吗？\" thì cô trả lời \"没有\" nên A sai; không nhắc đến vận động."
+      },
+      {
+       "n": 19,
+       "dap": "C",
+       "chon": {
+        "A": {
+         "zh": "可以早睡觉"
+        },
+        "B": {
+         "zh": "同事不热情"
+        },
+        "C": {
+         "zh": "公司离家近"
+        }
+       },
+       "loiThoai": "女：听说你换工作了？\n男：对，现在的公司离我家很近。\n女：那太好了，每天可以多睡一会儿了。\n男：是的，而且新公司的同事也很热情。\n问：关于男的的新工作，可以知道什么？",
+       "giai": "现在的公司离我家很近 = Công ty bây giờ rất gần nhà tôi → C. Bẫy A: \"多睡一会儿\" là được ngủ thêm chút (buổi sáng), không phải \"đi ngủ sớm\"; B sai vì đồng nghiệp mới \"很热情\" (rất nhiệt tình)."
+      },
+      {
+       "n": 20,
+       "dap": "B",
+       "chon": {
+        "A": {
+         "zh": "女的读完了"
+        },
+        "B": {
+         "zh": "女的觉得难"
+        },
+        "C": {
+         "zh": "男的很喜欢"
+        }
+       },
+       "loiThoai": "男：这本书你看了快一个月了。\n女：因为里面有很多字我不认识，所以读得比较慢。\n男：需要我帮你吗？我读完了。\n女：太好了，有些句子我不太明白是什么意思。\n问：关于这本书，可以知道什么？",
+       "giai": "Người nữ nói có nhiều chữ không biết nên đọc chậm, lại có câu không hiểu nghĩa → cô thấy cuốn sách khó (B). A sai: chỉ biết cô đọc gần một tháng, không biết đã đọc xong chưa (người đọc xong là người nam); C: không nói người nam thích cuốn sách."
+      }
+     ]
+    },
+    {
+     "ten": "Phần 3",
+     "tenZh": "第三部分",
+     "kieu": "chon",
+     "huongDan": "Nghe một đoạn nói và câu hỏi, chọn đáp án đúng. Mỗi câu nghe hai lần.",
+     "huongDanZh": "请选出正确答案。",
+     "viDu": "Ví dụ: 这里的夏天没那么热，春天和秋天很凉快，冬天也不太冷，一年四季都很舒服。 问：那里秋季的天气怎么样？ → A 凉快",
+     "cau": [
+      {
+       "n": 21,
+       "dap": "C",
+       "chon": {
+        "A": {
+         "zh": "家"
+        },
+        "B": {
+         "zh": "咖啡馆"
+        },
+        "C": {
+         "zh": "图书馆"
+        }
+       },
+       "loiThoai": "我周末一般不在家学习，我喜欢去图书馆，很方便，而且那里也安静。\n问：说话人周末喜欢在哪儿学习？",
+       "giai": "我喜欢去图书馆 = Tôi thích đến thư viện → C. Bẫy A: \"一般不在家学习\" = thường KHÔNG học ở nhà; quán cà phê không được nhắc tới."
+      },
+      {
+       "n": 22,
+       "dap": "C",
+       "chon": {
+        "A": {
+         "zh": "坐飞机"
+        },
+        "B": {
+         "zh": "坐地铁"
+        },
+        "C": {
+         "zh": "坐高铁"
+        }
+       },
+       "loiThoai": "下个月我打算坐高铁去上海，坐高铁比坐飞机便宜，也很舒服。\n问：说话人下个月怎么去上海？",
+       "giai": "我打算坐高铁去上海 = Tôi định đi tàu cao tốc đến Thượng Hải → C. 飞机 chỉ xuất hiện trong câu so sánh (坐高铁比坐飞机便宜)."
+      },
+      {
+       "n": 23,
+       "dap": "A",
+       "chon": {
+        "A": {
+         "zh": "很热情"
+        },
+        "B": {
+         "zh": "很满意"
+        },
+        "C": {
+         "zh": "不关心"
+        }
+       },
+       "loiThoai": "王老师不但是我们的中文老师，也是我们的朋友，她对学生总是很热情。\n问：王老师对学生怎么样？",
+       "giai": "她对学生总是很热情 = Cô ấy luôn rất nhiệt tình với học sinh → A. C (không quan tâm) trái nghĩa; B không được nhắc tới."
+      },
+      {
+       "n": 24,
+       "dap": "B",
+       "chon": {
+        "A": {
+         "zh": "很担心"
+        },
+        "B": {
+         "zh": "很高兴"
+        },
+        "C": {
+         "zh": "不放心"
+        }
+       },
+       "loiThoai": "李阿姨的儿子上初中了，他这个学期的考试成绩不错，李阿姨和丈夫都很开心。\n问：关于李阿姨，可以知道什么？",
+       "giai": "Con trai thi học kỳ được điểm tốt, \"李阿姨和丈夫都很开心\" → cô Lý rất vui (开心 = 高兴) → B. Không có chuyện lo lắng hay không yên tâm."
+      },
+      {
+       "n": 25,
+       "dap": "A",
+       "chon": {
+        "A": {
+         "zh": "雨伞"
+        },
+        "B": {
+         "zh": "上衣"
+        },
+        "C": {
+         "zh": "手机"
+        }
+       },
+       "loiThoai": "这个季节有时候会突然下雨，所以我出门的时候习惯带上雨衣或者雨伞。\n问：说话人现在出门时习惯带什么？",
+       "giai": "Mùa này hay mưa bất chợt nên \"出门的时候习惯带上雨衣或者雨伞\" (ra ngoài quen mang áo mưa hoặc ô) → A 雨伞. Bẫy: 上衣 (áo) ≠ 雨衣 (áo mưa)."
+      },
+      {
+       "n": 26,
+       "dap": "C",
+       "chon": {
+        "A": {
+         "zh": "看电影"
+        },
+        "B": {
+         "zh": "去买票"
+        },
+        "C": {
+         "zh": "在家休息"
+        }
+       },
+       "loiThoai": "今天晚上我想去看电影，但是票已经卖完了，所以还是在家休息吧，明天再去看。\n问：说话人今天晚上可能做什么？",
+       "giai": "Muốn đi xem phim nhưng \"票已经卖完了，所以还是在家休息吧\" (vé bán hết rồi, thôi ở nhà nghỉ vậy) → C. Chú ý 但是 và 所以还是: dự định ban đầu đã thay đổi."
+      },
+      {
+       "n": 27,
+       "dap": "B",
+       "chon": {
+        "A": {
+         "zh": "十五分钟后"
+        },
+        "B": {
+         "zh": "三十分钟后"
+        },
+        "C": {
+         "zh": "六十分钟后"
+        }
+       },
+       "loiThoai": "我中午经常点外卖。今天我用手机点了一碗牛肉面，外卖员说大概半小时能送到我家。\n问：说话人点的牛肉面大概什么时候能送到？",
+       "giai": "大概半小时能送到 = khoảng nửa tiếng sẽ giao tới; 半小时 = 三十分钟 → B. Cần đổi \"nửa tiếng\" ra \"30 phút\"."
+      },
+      {
+       "n": 28,
+       "dap": "C",
+       "chon": {
+        "A": {
+         "zh": "公园"
+        },
+        "B": {
+         "zh": "校园"
+        },
+        "C": {
+         "zh": "动物园"
+        }
+       },
+       "loiThoai": "这个季节很凉快，我常带孩子出去玩，这个周末我们准备去动物园看大熊猫。\n问：说话人这个周末要去哪儿？",
+       "giai": "这个周末我们准备去动物园看大熊猫 = Cuối tuần này chúng tôi định đến sở thú xem gấu trúc → C. Ba đáp án đều có chữ 园, phải nghe rõ 动物园."
+      },
+      {
+       "n": 29,
+       "dap": "B",
+       "chon": {
+        "A": {
+         "zh": "画家"
+        },
+        "B": {
+         "zh": "医生"
+        },
+        "C": {
+         "zh": "大学老师"
+        }
+       },
+       "loiThoai": "我姐姐是医生，她在大学的医院工作。她平时工作很忙，但也很喜欢旅游，每年放假都会去不同的城市。她还喜欢画画儿，有空儿的时候会到外面画风景。最近，她打算去北京参加一个画画儿比赛，希望能认识更多喜欢画画儿的朋友。\n29. 问：说话人姐姐做什么工作？",
+       "giai": "我姐姐是医生 = Chị tôi là bác sĩ → B. A: vẽ tranh chỉ là sở thích, không phải nghề; C: chị làm ở bệnh viện của trường đại học, không phải giảng viên đại học."
+      },
+      {
+       "n": 30,
+       "dap": "C",
+       "chon": {
+        "A": {
+         "zh": "体育电影"
+        },
+        "B": {
+         "zh": "手机游戏"
+        },
+        "C": {
+         "zh": "旅游和画画儿"
+        }
+       },
+       "loiThoai": "我姐姐是医生，她在大学的医院工作。她平时工作很忙，但也很喜欢旅游，每年放假都会去不同的城市。她还喜欢画画儿，有空儿的时候会到外面画风景。最近，她打算去北京参加一个画画儿比赛，希望能认识更多喜欢画画儿的朋友。\n30. 问：说话人姐姐喜欢什么？",
+       "giai": "Bài nói: chị \"很喜欢旅游\" và \"还喜欢画画儿\" → thích du lịch và vẽ tranh (C). Phim thể thao, trò chơi điện thoại không được nhắc tới."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "doc",
+   "ten": "Đọc",
+   "tenZh": "阅读",
+   "phut": 30,
+   "parts": [
+    {
+     "ten": "Phần 1",
+     "tenZh": "第一部分",
+     "kieu": "chon",
+     "huongDan": "Chọn câu đáp (A–F) phù hợp với mỗi câu. Mỗi lựa chọn chỉ dùng một lần.",
+     "huongDanZh": "请选出正确答案。",
+     "viDu": "Ví dụ: 他休假了，你有事可以给他发邮件。 → D 经理怎么不在办公室？",
+     "viDuDung": "D",
+     "chung": {
+      "A": {
+       "zh": "太好了，谢谢！"
+      },
+      "B": {
+       "zh": "已经做完了，放在书包里了。"
+      },
+      "C": {
+       "zh": "不，我更想在家看书。"
+      },
+      "D": {
+       "zh": "经理怎么不在办公室？"
+      },
+      "E": {
+       "zh": "因为那里的衣服又便宜又好看。"
+      },
+      "F": {
+       "zh": "没问题，我下午要跟他见面。"
+      }
+     },
+     "cau": [
+      {
+       "n": 31,
+       "dap": "B",
+       "de": {
+        "zh": "昨天的作业你做完了吗？"
+       },
+       "giai": "Hỏi \"bài tập hôm qua làm xong chưa?\" → B \"làm xong rồi, để trong cặp rồi\". Câu hỏi có 做完了吗, câu đáp có 已经做完了."
+      },
+      {
+       "n": 32,
+       "dap": "E",
+       "de": {
+        "zh": "你为什么喜欢去那家商店买衣服？"
+       },
+       "giai": "Hỏi 为什么 (tại sao) thích mua quần áo ở cửa hàng đó → trả lời bằng 因为: \"vì quần áo ở đó vừa rẻ vừa đẹp\" (又……又……) → E."
+      },
+      {
+       "n": 33,
+       "dap": "A",
+       "de": {
+        "zh": "这是我用过的汉语词典，送给你吧。"
+       },
+       "giai": "\"Đây là cuốn từ điển tiếng Hán tôi từng dùng, tặng bạn nhé.\" → đáp lại lời tặng: \"太好了，谢谢！\" (A)."
+      },
+      {
+       "n": 34,
+       "dap": "F",
+       "de": {
+        "zh": "你能帮我把这本书给李老师吗？"
+       },
+       "giai": "Nhờ \"mang giúp cuốn sách này cho thầy Lý\" → F \"không vấn đề gì, chiều nay tôi sẽ gặp thầy ấy\" (他 = 李老师)."
+      },
+      {
+       "n": 35,
+       "dap": "C",
+       "de": {
+        "zh": "周末你想去爬山吗？"
+       },
+       "giai": "Hỏi \"cuối tuần muốn đi leo núi không?\" → C \"không, tôi muốn ở nhà đọc sách hơn\" (更想 = muốn … hơn)."
+      }
+     ]
+    },
+    {
+     "ten": "Phần 1",
+     "tenZh": "第一部分",
+     "kieu": "chon",
+     "huongDan": "Chọn câu đáp (A–E) phù hợp với mỗi câu. Mỗi lựa chọn chỉ dùng một lần.",
+     "huongDanZh": "请选出正确答案。",
+     "chung": {
+      "A": {
+       "zh": "我觉得爬楼梯可以锻炼身体。"
+      },
+      "B": {
+       "zh": "他是我们公司新来的经理，很年轻。"
+      },
+      "C": {
+       "zh": "我去图书馆复习了，准备明天的考试。"
+      },
+      "D": {
+       "zh": "冰箱里还有牛奶和鸡蛋。"
+      },
+      "E": {
+       "zh": "你可以查一下手机地图，或者问问旁边的人。"
+      }
+     },
+     "cau": [
+      {
+       "n": 36,
+       "dap": "A",
+       "de": {
+        "zh": "电梯快下来了，你不等了吗？"
+       },
+       "giai": "\"Thang máy sắp xuống rồi, bạn không đợi à?\" → A \"tôi thấy leo cầu thang có thể rèn luyện sức khỏe\" (giải thích vì sao không đi thang máy). 电梯 ↔ 楼梯."
+      },
+      {
+       "n": 37,
+       "dap": "E",
+       "de": {
+        "zh": "我找不到去火车站的路了。"
+       },
+       "giai": "\"Tôi không tìm được đường đến ga tàu.\" → E khuyên \"tra bản đồ trên điện thoại, hoặc hỏi người bên cạnh\"."
+      },
+      {
+       "n": 38,
+       "dap": "C",
+       "de": {
+        "zh": "今天下午你去哪儿了？打电话也没接。"
+       },
+       "giai": "Hỏi \"chiều nay bạn đi đâu? gọi điện cũng không nghe\" → C \"tôi đến thư viện ôn bài, chuẩn bị cho bài thi ngày mai\"."
+      },
+      {
+       "n": 39,
+       "dap": "D",
+       "de": {
+        "zh": "家里还有什么吃的吗？我有点儿饿。"
+       },
+       "giai": "\"Nhà còn gì ăn không? Tôi hơi đói.\" → D \"trong tủ lạnh còn sữa và trứng\"."
+      },
+      {
+       "n": 40,
+       "dap": "B",
+       "de": {
+        "zh": "照片上站在你旁边的那个人是谁？"
+       },
+       "giai": "Hỏi 是谁 (là ai) → B giới thiệu người: \"anh ấy là giám đốc mới đến của công ty chúng tôi, rất trẻ\"."
+      }
+     ]
+    },
+    {
+     "ten": "Phần 2",
+     "tenZh": "第二部分",
+     "kieu": "chon",
+     "huongDan": "Chọn từ thích hợp điền vào chỗ trống.",
+     "huongDanZh": "请选出正确答案。",
+     "viDu": "Ví dụ: 洗手间（ A ）小，放不下那么大的洗衣机。 → A 地方",
+     "viDuDung": "A",
+     "chung": {
+      "A": {
+       "zh": "地方"
+      },
+      "B": {
+       "zh": "遇到"
+      },
+      "C": {
+       "zh": "健康"
+      },
+      "D": {
+       "zh": "检查"
+      },
+      "E": {
+       "zh": "结束"
+      },
+      "F": {
+       "zh": "坚持"
+      }
+     },
+     "cau": [
+      {
+       "n": 41,
+       "dap": "C",
+       "de": {
+        "zh": "他每天都运动，所以身体很（　）。"
+       },
+       "giai": "Mỗi ngày đều vận động nên cơ thể rất khỏe mạnh: 身体很健康. Sau 很 cần tính từ → 健康."
+      },
+      {
+       "n": 42,
+       "dap": "E",
+       "de": {
+        "zh": "这次考试的时间比较长，下午5点才（　）。"
+       },
+       "giai": "Kỳ thi khá dài, 5 giờ chiều mới kết thúc: 才结束. 考试 + 结束 là kết hợp quen thuộc."
+      },
+      {
+       "n": 43,
+       "dap": "B",
+       "de": {
+        "zh": "我刚学中文的时候（　）过一些问题，后来都解决了。"
+       },
+       "giai": "遇到过一些问题 = đã từng gặp một số vấn đề; 遇到 + 问题, và sau đó \"都解决了\" (đều giải quyết được)."
+      },
+      {
+       "n": 44,
+       "dap": "D",
+       "de": {
+        "zh": "我最近看东西有点儿不太清楚，要去（　）一下眼睛。"
+       },
+       "giai": "Nhìn không rõ nên phải đi khám mắt: 检查一下眼睛 (检查 = kiểm tra, khám)."
+      },
+      {
+       "n": 45,
+       "dap": "F",
+       "de": {
+        "zh": "你如果每天都（　）学习，你的中文一定会越来越好。"
+       },
+       "giai": "坚持学习 = kiên trì học; \"每天都坚持学习\" thì tiếng Trung chắc chắn ngày càng tốt (越来越好)."
+      }
+     ]
+    },
+    {
+     "ten": "Phần 2",
+     "tenZh": "第二部分",
+     "kieu": "chon",
+     "huongDan": "Chọn từ thích hợp điền vào chỗ trống trong hội thoại.",
+     "huongDanZh": "请选出正确答案。",
+     "viDu": "Ví dụ: A：我去洗个澡，然后跟你们（ B ）聊天儿。 B：好，快去吧。 → B 一块儿",
+     "viDuDung": "B",
+     "chung": {
+      "A": {
+       "zh": "忘记"
+      },
+      "B": {
+       "zh": "一块儿"
+      },
+      "C": {
+       "zh": "习惯"
+      },
+      "D": {
+       "zh": "练习"
+      },
+      "E": {
+       "zh": "新鲜"
+      },
+      "F": {
+       "zh": "安静"
+      }
+     },
+     "cau": [
+      {
+       "n": 46,
+       "dap": "E",
+       "de": {
+        "dong": [
+         {
+          "ai": "A",
+          "zh": "你买的水果看起来很（　）。"
+         },
+         {
+          "ai": "B",
+          "zh": "是的，今天早上我刚从超市买的。"
+         }
+        ]
+       },
+       "giai": "B nói \"sáng nay tôi vừa mua ở siêu thị\" → hoa quả trông rất tươi: 很新鲜."
+      },
+      {
+       "n": 47,
+       "dap": "F",
+       "de": {
+        "dong": [
+         {
+          "ai": "A",
+          "zh": "请大家（　），老师要讲课了。"
+         },
+         {
+          "ai": "B",
+          "zh": "好的，我们不说话了。"
+         }
+        ]
+       },
+       "giai": "请大家安静 = Mời mọi người trật tự, thầy sắp giảng bài; B đáp \"chúng em không nói chuyện nữa\" → 安静."
+      },
+      {
+       "n": 48,
+       "dap": "A",
+       "de": {
+        "dong": [
+         {
+          "ai": "A",
+          "zh": "你的作业呢？"
+         },
+         {
+          "ai": "B",
+          "zh": "真对不起，老师，我昨天（　）写了。"
+         }
+        ]
+       },
+       "giai": "Xin lỗi thầy vì hôm qua quên làm bài: 忘记写了 (忘记 + động từ = quên làm việc gì)."
+      },
+      {
+       "n": 49,
+       "dap": "C",
+       "de": {
+        "dong": [
+         {
+          "ai": "A",
+          "zh": "我刚来中国，还不太（　）这里的天气。"
+         },
+         {
+          "ai": "B",
+          "zh": "慢慢来，过一段时间就好了。"
+         }
+        ]
+       },
+       "giai": "Mới đến Trung Quốc, chưa quen thời tiết ở đây: 不太习惯 + 这里的天气 (习惯 dùng như động từ = quen với)."
+      },
+      {
+       "n": 50,
+       "dap": "D",
+       "de": {
+        "dong": [
+         {
+          "ai": "A",
+          "zh": "你经常去体育馆吗？"
+         },
+         {
+          "ai": "B",
+          "zh": "对啊，我是篮球运动员，每天都要（　）打篮球。"
+         }
+        ]
+       },
+       "giai": "Là vận động viên bóng rổ nên ngày nào cũng phải luyện tập: 练习打篮球."
+      }
+     ]
+    },
+    {
+     "ten": "Phần 3",
+     "tenZh": "第三部分",
+     "kieu": "chon",
+     "huongDan": "Đọc đoạn văn, trả lời câu hỏi ★.",
+     "huongDanZh": "请选出正确答案。",
+     "viDu": "Ví dụ: 我把名单发给大家了，请再检查一下自己的姓名、电话、邮箱，如果有问题，请在星期日中午前找我。 ★他让大家检查： → A 电话号码",
+     "cau": [
+      {
+       "n": 51,
+       "dap": "A",
+       "de": {
+        "zh": "我在网上看了两件衬衫，红色的更好看，但是蓝色的便宜一些，我最后买了蓝色的。"
+       },
+       "hoi": {
+        "zh": "说话人为什么买了蓝色的衬衫？"
+       },
+       "chon": {
+        "A": {
+         "zh": "更便宜"
+        },
+        "B": {
+         "zh": "更好看"
+        },
+        "C": {
+         "zh": "更舒服"
+        }
+       },
+       "giai": "\"蓝色的便宜一些\" = cái màu xanh rẻ hơn một chút → mua vì rẻ hơn (A). Bẫy B: \"更好看\" là cái màu đỏ; C không được nhắc tới."
+      },
+      {
+       "n": 52,
+       "dap": "B",
+       "de": {
+        "zh": "我每天早上先骑自行车到地铁站，然后坐地铁去公司。"
+       },
+       "hoi": {
+        "zh": "说话人早上怎么去地铁站？"
+       },
+       "chon": {
+        "A": {
+         "zh": "走路"
+        },
+        "B": {
+         "zh": "骑车"
+        },
+        "C": {
+         "zh": "开车"
+        }
+       },
+       "giai": "先骑自行车到地铁站 = trước tiên đạp xe đến ga tàu điện ngầm → B 骑车. Đi tàu điện ngầm là chặng sau (đến công ty)."
+      },
+      {
+       "n": 53,
+       "dap": "C",
+       "de": {
+        "zh": "虽然这家饭馆有点儿贵，但是因为菜做得特别好吃，所以客人还是很多。"
+       },
+       "hoi": {
+        "zh": "这家饭馆的菜："
+       },
+       "chon": {
+        "A": {
+         "zh": "很便宜"
+        },
+        "B": {
+         "zh": "不好吃"
+        },
+        "C": {
+         "zh": "有点儿贵"
+        }
+       },
+       "giai": "虽然这家饭馆有点儿贵 = tuy quán này hơi đắt → C. A sai (không rẻ); B sai vì \"菜做得特别好吃\" (món ăn rất ngon)."
+      },
+      {
+       "n": 54,
+       "dap": "C",
+       "de": {
+        "zh": "哥哥打算下个月搬家，新房子附近有公园，去超市也很方便，他非常满意。"
+       },
+       "hoi": {
+        "zh": "哥哥为什么对新房子很满意？"
+       },
+       "chon": {
+        "A": {
+         "zh": "很干净"
+        },
+        "B": {
+         "zh": "很便宜"
+        },
+        "C": {
+         "zh": "附近有公园"
+        }
+       },
+       "giai": "新房子附近有公园，去超市也很方便，他非常满意 → một lý do anh hài lòng là gần nhà có công viên (C). Đoạn văn không nói nhà sạch hay rẻ."
+      },
+      {
+       "n": 55,
+       "dap": "A",
+       "de": {
+        "zh": "我知道下午的会议很重要，但是我感冒了，头很疼，得去看医生。"
+       },
+       "hoi": {
+        "zh": "说话人下午可能："
+       },
+       "chon": {
+        "A": {
+         "zh": "去医院"
+        },
+        "B": {
+         "zh": "去开会"
+        },
+        "C": {
+         "zh": "去考试"
+        }
+       },
+       "giai": "但是我感冒了，头很疼，得去看医生 = nhưng tôi bị cảm, đau đầu, phải đi khám bác sĩ → đi bệnh viện (A). Sau 但是 là ý chính: sẽ không đi họp (B sai)."
+      },
+      {
+       "n": 56,
+       "dap": "A",
+       "de": {
+        "zh": "周末我们班要开一个晚会，时间、地点我已经发到大家的电子邮箱里了，欢迎你们都来参加。"
+       },
+       "hoi": {
+        "zh": "晚会的时间、地点在哪里可以看到？"
+       },
+       "chon": {
+        "A": {
+         "zh": "邮件里"
+        },
+        "B": {
+         "zh": "黑板上"
+        },
+        "C": {
+         "zh": "电话里"
+        }
+       },
+       "giai": "时间、地点我已经发到大家的电子邮箱里了 = thời gian, địa điểm đã gửi vào hộp thư điện tử của mọi người → xem trong email (A)."
+      }
+     ]
+    },
+    {
+     "ten": "Phần 3",
+     "tenZh": "第三部分",
+     "kieu": "chon",
+     "huongDan": "Đọc đoạn văn, trả lời hai câu hỏi ★.",
+     "huongDanZh": "请选出正确答案。",
+     "viDu": "Ví dụ: 兴趣是最好的老师。如果对一件事情很感兴趣，人们一般会花更多时间学习，也更容易坚持。比如我对照相很感兴趣，为了提高自己的水平，我常常去外边拍照，还会在网上学习不同的拍照方法。 ★根据这段话，感兴趣的事情： → A 不难坚持 ★为了提高拍照水平，他是怎么做的？ → B 常出门拍照",
+     "doan": {
+      "57-58": {
+       "zh": "我们下个月9号就考完试了，我打算和朋友一起去北京旅游。飞机票有点儿贵，所以我们准备坐高铁去。北京有很多有名的公园，也有很多有名的大学，我们打算都去看看。当然，我们还要尝一下好吃的北京菜。"
+      },
+      "59-60": {
+       "zh": "好的生活习惯对身体健康很重要。每天早点儿睡觉，多吃水果和蔬菜，少吃甜的东西，经常运动，这些都是好习惯。我爸爸就是这样，他每天早上六点就起床去公园跑步。虽然我也想去，但是六点起床太难了！"
+      }
+     },
+     "cau": [
+      {
+       "n": 57,
+       "dap": "B",
+       "doanId": "57-58",
+       "hoi": {
+        "zh": "说话人下个月要去北京做什么？"
+       },
+       "chon": {
+        "A": {
+         "zh": "考试"
+        },
+        "B": {
+         "zh": "旅游"
+        },
+        "C": {
+         "zh": "上大学"
+        }
+       },
+       "giai": "我打算和朋友一起去北京旅游 → mục đích chính là đi du lịch (B). A sai: thi xong (考完试了) rồi mới đi; C sai: chỉ định đi tham quan các trường đại học nổi tiếng, không phải vào học đại học."
+      },
+      {
+       "n": 58,
+       "dap": "A",
+       "doanId": "57-58",
+       "hoi": {
+        "zh": "说话人打算怎么去北京？"
+       },
+       "chon": {
+        "A": {
+         "zh": "坐高铁"
+        },
+        "B": {
+         "zh": "坐飞机"
+        },
+        "C": {
+         "zh": "坐汽车"
+        }
+       },
+       "giai": "飞机票有点儿贵，所以我们准备坐高铁去 = vé máy bay hơi đắt nên định đi tàu cao tốc → A. Máy bay được nhắc tới nhưng bị loại vì đắt."
+      },
+      {
+       "n": 59,
+       "dap": "B",
+       "doanId": "59-60",
+       "hoi": {
+        "zh": "说话人主要想告诉我们什么？"
+       },
+       "chon": {
+        "A": {
+         "zh": "怎样能学好中文"
+        },
+        "B": {
+         "zh": "健康的生活习惯"
+        },
+        "C": {
+         "zh": "爸爸的工作很忙"
+        }
+       },
+       "giai": "Câu mở đầu nêu ý chính: \"好的生活习惯对身体健康很重要\", sau đó kể các thói quen tốt và lấy bố làm ví dụ → chủ đề là thói quen sống lành mạnh (B)."
+      },
+      {
+       "n": 60,
+       "dap": "A",
+       "doanId": "59-60",
+       "hoi": {
+        "zh": "关于说话人的爸爸，可以知道什么？"
+       },
+       "chon": {
+        "A": {
+         "zh": "经常运动"
+        },
+        "B": {
+         "zh": "起床很难"
+        },
+        "C": {
+         "zh": "爱吃甜的"
+        }
+       },
+       "giai": "Bố \"每天早上六点就起床去公园跑步\" (6 giờ sáng dậy chạy bộ ở công viên) → thường xuyên vận động (A). Bẫy B: người thấy dậy 6 giờ khó là người nói, không phải bố; C: \"少吃甜的东西\" là thói quen tốt, không nói bố thích đồ ngọt."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "viet",
+   "ten": "Viết",
+   "tenZh": "书写",
+   "phut": 20,
+   "parts": [
+    {
+     "ten": "Phần 1",
+     "tenZh": "第一部分",
+     "kieu": "vietchu",
+     "huongDan": "Viết chữ Hán đúng vào chỗ trống theo pinyin gợi ý.",
+     "huongDanZh": "请写出正确答案。",
+     "viDu": "Ví dụ: 她们出发了，咱们（yě）打出租车吧。 → 也",
+     "cau": [
+      {
+       "n": 61,
+       "dap": "汽",
+       "de": {
+        "zh": "她买了一辆红色的（　）车，很好看。",
+        "py": "qì"
+       },
+       "giai": "汽车 qìchē = ô tô; lượng từ 辆 dùng cho xe. Chữ 汽 có bộ 氵 (hơi nước)."
+      },
+      {
+       "n": 62,
+       "dap": "图",
+       "de": {
+        "zh": "明天我要去（　）书馆借一本书。",
+        "py": "tú"
+       },
+       "giai": "图书馆 túshūguǎn = thư viện (đến thư viện mượn sách). Chữ 图: bộ 囗 bao ngoài, bên trong là 冬."
+      },
+      {
+       "n": 63,
+       "dap": "空",
+       "de": {
+        "zh": "太热了，咱们把（　）调打开吧。",
+        "py": "kōng"
+       },
+       "giai": "空调 kōngtiáo = điều hòa; \"nóng quá, bật điều hòa lên đi\". Chữ 空: 穴 ở trên, 工 ở dưới."
+      },
+      {
+       "n": 64,
+       "dap": "方",
+       "de": {
+        "zh": "今天午饭我只吃了一包（　）便面。",
+        "py": "fāng"
+       },
+       "giai": "方便面 fāngbiànmiàn = mì ăn liền; lượng từ 包 (gói). Chú ý viết 方, không nhầm với 万 hay 放."
+      },
+      {
+       "n": 65,
+       "dap": "礼",
+       "de": {
+        "zh": "这是我送给你的生日（　）物。",
+        "py": "lǐ"
+       },
+       "giai": "礼物 lǐwù = quà; 生日礼物 = quà sinh nhật. Chữ 礼 bộ 礻 bên trái (không phải 衤)."
+      }
+     ]
+    },
+    {
+     "ten": "Phần 2",
+     "tenZh": "第二部分",
+     "kieu": "datcau",
+     "huongDan": "Nhìn tranh, dùng từ cho sẵn đặt một câu.",
+     "huongDanZh": "看图，用词造句。",
+     "viDu": "Ví dụ: (tranh cô gái cầm vợt cầu lông) 羽毛球 → 她每周末都去打羽毛球。",
+     "cau": [
+      {
+       "n": 66,
+       "dap": "",
+       "deAnh": "w-66.jpg",
+       "tu": "电话",
+       "mau": "她在给妈妈打电话。",
+       "giai": "Câu mẫu: 她在给妈妈打电话。= Cô ấy đang gọi điện cho mẹ. Cấu trúc: 在 + 给 + người + 打电话 (đang gọi điện cho ai)."
+      },
+      {
+       "n": 67,
+       "dap": "",
+       "deAnh": "w-67.jpg",
+       "tu": "聊天儿",
+       "mau": "她正在和朋友聊天儿。",
+       "giai": "Câu mẫu: 她正在和朋友聊天儿。= Cô ấy đang trò chuyện với bạn. Cấu trúc: 正在 + 和 + người + 聊天儿."
+      },
+      {
+       "n": 68,
+       "dap": "",
+       "deAnh": "w-68.jpg",
+       "tu": "环境",
+       "mau": "这家咖啡店的环境很好。",
+       "giai": "Câu mẫu: 这家咖啡店的环境很好。= Quán cà phê này có không gian rất đẹp. Cấu trúc: 地点 + 的 + 环境 + 很 + tính từ (好/安静/舒服)."
+      },
+      {
+       "n": 69,
+       "dap": "",
+       "deAnh": "w-69.jpg",
+       "tu": "洗衣机",
+       "mau": "妈妈每个周末都用洗衣机洗衣服。",
+       "giai": "Câu mẫu: 妈妈每个周末都用洗衣机洗衣服。= Cuối tuần nào mẹ cũng dùng máy giặt giặt quần áo. Cấu trúc: 用 + công cụ + động từ; 每……都……."
+      },
+      {
+       "n": 70,
+       "dap": "",
+       "deAnh": "w-70.jpg",
+       "tu": "放学",
+       "mau": "放学后，男孩儿自己回家。",
+       "giai": "Câu mẫu: 放学后，男孩儿自己回家。= Tan học, cậu bé tự đi về nhà. Cấu trúc: 放学后，…… (sau khi tan học thì …)."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "catAnh": [
+  {
+   "ten": "l1g1-A",
+   "trang": "img/HSK3-10/006_1260x1788.jpg",
+   "hop": [
+    335,
+    436,
+    480,
+    642
+   ]
+  },
+  {
+   "ten": "l1g1-B",
+   "trang": "img/HSK3-10/006_1260x1788.jpg",
+   "hop": [
+    848,
+    450,
+    1075,
+    652
+   ]
+  },
+  {
+   "ten": "l1g1-C",
+   "trang": "img/HSK3-10/006_1260x1788.jpg",
+   "hop": [
+    258,
+    678,
+    566,
+    862
+   ]
+  },
+  {
+   "ten": "l1g1-D",
+   "trang": "img/HSK3-10/006_1260x1788.jpg",
+   "hop": [
+    842,
+    664,
+    1066,
+    868
+   ]
+  },
+  {
+   "ten": "l1g1-E",
+   "trang": "img/HSK3-10/006_1260x1788.jpg",
+   "hop": [
+    258,
+    878,
+    562,
+    1082
+   ]
+  },
+  {
+   "ten": "l1g1-F",
+   "trang": "img/HSK3-10/006_1260x1788.jpg",
+   "hop": [
+    836,
+    884,
+    1064,
+    1090
+   ]
+  },
+  {
+   "ten": "l1g2-A",
+   "trang": "img/HSK3-10/007_1260x1830.jpg",
+   "hop": [
+    260,
+    292,
+    462,
+    500
+   ]
+  },
+  {
+   "ten": "l1g2-B",
+   "trang": "img/HSK3-10/007_1260x1830.jpg",
+   "hop": [
+    760,
+    285,
+    1045,
+    496
+   ]
+  },
+  {
+   "ten": "l1g2-C",
+   "trang": "img/HSK3-10/007_1260x1830.jpg",
+   "hop": [
+    172,
+    565,
+    560,
+    782
+   ]
+  },
+  {
+   "ten": "l1g2-D",
+   "trang": "img/HSK3-10/007_1260x1830.jpg",
+   "hop": [
+    740,
+    555,
+    1096,
+    786
+   ]
+  },
+  {
+   "ten": "l1g2-E",
+   "trang": "img/HSK3-10/007_1260x1830.jpg",
+   "hop": [
+    275,
+    850,
+    460,
+    1070
+   ]
+  },
+  {
+   "ten": "w-66",
+   "trang": "img/HSK3-10/021_1260x1842.jpg",
+   "hop": [
+    150,
+    770,
+    320,
+    990
+   ]
+  },
+  {
+   "ten": "w-67",
+   "trang": "img/HSK3-10/021_1260x1842.jpg",
+   "hop": [
+    716,
+    783,
+    910,
+    1000
+   ]
+  },
+  {
+   "ten": "w-68",
+   "trang": "img/HSK3-10/021_1260x1842.jpg",
+   "hop": [
+    143,
+    1100,
+    470,
+    1316
+   ]
+  },
+  {
+   "ten": "w-69",
+   "trang": "img/HSK3-10/021_1260x1842.jpg",
+   "hop": [
+    712,
+    1115,
+    878,
+    1320
+   ]
+  },
+  {
+   "ten": "w-70",
+   "trang": "img/HSK3-10/021_1260x1842.jpg",
+   "hop": [
+    182,
+    1435,
+    298,
+    1642
+   ]
+  }
+ ],
+ "ghiChu": "Câu 3: đáp án sách là F; hình F là hai học sinh cùng xem một tờ giấy lớn (có lẽ thực đơn ở căng-tin), khớp lời thoại gọi món \"你想吃什么？我帮你点。\" nhưng ảnh không thể hiện rõ là thực đơn. Nhóm 6–10 và 36–40 trên đề không có câu ví dụ. Sách không có 解析 cho các câu 1–10, 31–50, 61–70; phần giải thích các câu này là tự soạn."
+}

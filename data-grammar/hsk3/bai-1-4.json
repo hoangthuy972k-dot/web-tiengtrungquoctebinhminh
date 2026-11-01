@@ -1,0 +1,282 @@
+{
+ "/lessons/hsk3-bai-1.html": {
+  "points": [
+   {
+    "title": "Bổ ngữ kết quả 「好」",
+    "errors": [
+     { "wrong": "我早就好想了。", "why": "học sinh tách bổ ngữ khỏi động từ, đặt 好 trước động từ như trạng ngữ tiếng Việt “đã nghĩ kỹ”.", "right": "我早就想好了。" },
+     { "wrong": "饭还没做好了。", "why": "đã dùng 没 thì không dùng 了 ở cuối.", "right": "饭还没做好。" },
+     { "wrong": "电影票买完了。（ý muốn nói mua xong xuôi, hài lòng）", "why": "完 chỉ nói việc kết thúc, không diễn đạt “xong và ổn thoả” như 好.", "right": "电影票买好了。" }
+    ],
+    "items": [
+     { "context": "“Vé xem phim đã mua xong rồi.”", "pre": "电影票已经", "blank": "买好", "post": "了。", "options": ["买好", "好买", "买得好"], "answer": 0, "explanation": "好 đứng NGAY SAU động từ: 买 + 好 = mua xong và ổn thoả." },
+     { "context": "“Cơm vẫn chưa nấu xong.”", "pre": "饭还", "blank": "没做好", "post": "。", "options": ["没做好", "没做好了", "不做好"], "answer": 0, "explanation": "Phủ định dùng 没 + V + 好, KHÔNG kèm 了." },
+     { "context": "“Đồ đi du lịch chuẩn bị xong chưa?”", "pre": "去旅游的东西", "blank": "准备好", "post": "了吗？", "options": ["准备好", "好准备", "准备着"], "answer": 0, "explanation": "准备好 = chuẩn bị xong xuôi, sẵn sàng." },
+     { "context": "“Tôi đã nghĩ kỹ rồi.”", "pre": "我早就", "blank": "想好", "post": "了。", "options": ["想好", "好想", "想得好"], "answer": 0, "explanation": "想好 = nghĩ xong, đã quyết." },
+     { "context": "Nhấn mạnh chỉ “làm hết, kết thúc” (không kèm ý hài lòng) thì dùng 完.", "pre": "这本书我已经看", "blank": "完", "post": "了。", "options": ["完", "好", "着"], "answer": 0, "explanation": "看完 = đọc hết; 看好 nghe không tự nhiên với sách." },
+     { "context": "“Bàn ghế đã kê xong rồi.”", "pre": "桌子椅子都", "blank": "放好", "post": "了。", "options": ["放好", "好放", "放完好"], "answer": 0, "explanation": "放好 = đặt đâu vào đấy." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我早就好想了。", "isCorrect": false, "correctVersion": "我早就想好了。", "explanation": "Bổ ngữ kết quả 好 phải đứng SAU động từ 想." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "电影票买好了吗？", "isCorrect": true, "explanation": "V + 好 + 了 + 吗 hỏi việc đã hoàn thành ổn thoả chưa." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "饭还没做好了。", "isCorrect": false, "correctVersion": "饭还没做好。", "explanation": "没 và 了 không dùng cùng nhau." },
+     { "type": "sort", "context": "Sắp xếp: “Những thứ này hôm qua tôi đã chuẩn bị xong.”", "words": ["这些", "我", "昨天", "就", "准备", "好", "了", "。"], "answer": "这些我昨天就准备好了。", "explanation": "就 nhấn mạnh sớm; 准备好了 = V + 好 + 了." },
+     { "type": "sort", "context": "Sắp xếp: “Mẹ đã nấu xong bữa tối.”", "words": ["妈妈", "已经", "做好", "晚饭", "了", "。"], "answer": "妈妈已经做好晚饭了。", "explanation": "做好 + tân ngữ + 了." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn nghĩ kỹ chưa, có đi cùng tôi không?”", "words": ["你", "想好", "了", "吗", "，", "跟", "我", "一起", "去", "？"], "answer": "你想好了吗，跟我一起去？", "explanation": "想好了吗 = đã quyết chưa." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng bổ ngữ kết quả 好.", "promptLang": "vi", "prompt": "Bài tập của tôi đã làm xong rồi.", "answer": "我的作业写好了。", "answerPy": "Wǒ de zuòyè xiěhǎo le.", "explanation": "写 + 好 + 了 = viết xong xuôi." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng bổ ngữ kết quả 好.", "promptLang": "vi", "prompt": "Cơm vẫn chưa nấu xong, đợi một lát nhé.", "answer": "饭还没做好，请等一会儿。", "answerPy": "Fàn hái méi zuòhǎo, qǐng děng yíhuìr.", "explanation": "没 + V + 好, không dùng 了." }
+    ]
+   },
+   {
+    "title": "「一……也/都 + 不/没……」 — phủ định hoàn toàn",
+    "errors": [
+     { "wrong": "我一个人不认识。", "why": "quên 也/都 — khung phủ định hoàn toàn bắt buộc có 也 hoặc 都.", "right": "我一个人也不认识。" },
+     { "wrong": "他一点儿也不吃了饭。", "why": "chen 了 vào giữa khung phủ định.", "right": "他一点儿饭也没吃。" },
+     { "wrong": "我也一句话不想说。", "why": "đặt 也 sai chỗ; 也 phải đứng NGAY TRƯỚC 不/没.", "right": "我一句话也不想说。" }
+    ],
+    "items": [
+     { "context": "“Tôi không quen một ai cả.”", "pre": "我", "blank": "一个人也不", "post": "认识。", "options": ["一个人也不", "一个人不也", "也一个人不"], "answer": 0, "explanation": "一 + lượng từ + danh từ + 也/都 + 不/没." },
+     { "context": "“Anh ấy chẳng ăn chút cơm nào.”", "pre": "他", "blank": "一点儿饭也没", "post": "吃。", "options": ["一点儿饭也没", "一点儿也饭没", "没一点儿饭也"], "answer": 0, "explanation": "Việc đã xảy ra dùng 没; 也 ngay trước 没." },
+     { "context": "“Tôi một câu cũng không muốn nói.”", "pre": "我", "blank": "一句话也不", "post": "想说。", "options": ["一句话也不", "也一句话不", "一句话不也"], "answer": 0, "explanation": "也 luôn đứng ngay trước phần phủ định." },
+     { "context": "Có thể thay 也 bằng 都.", "pre": "这些菜我", "blank": "一个都没", "post": "吃。", "options": ["一个都没", "都一个没", "一个没都"], "answer": 0, "explanation": "都 dùng như 也 trong khung phủ định hoàn toàn." },
+     { "context": "“Hôm nay tôi chẳng bận chút nào.”", "pre": "今天我", "blank": "一点儿也不", "post": "忙。", "options": ["一点儿也不", "一点也不儿", "不一点儿也"], "answer": 0, "explanation": "一点儿也不 + tính từ." },
+     { "context": "“Tiền tôi một xu cũng không có.”", "pre": "我", "blank": "一分钱也没", "post": "有。", "options": ["一分钱也没", "一分也钱没", "没一分钱也"], "answer": 0, "explanation": "Khung này rất hay gặp khi nhấn mạnh “không hề”." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我一个人不认识。", "isCorrect": false, "correctVersion": "我一个人也不认识。", "explanation": "Thiếu 也/都 thì khung phủ định hoàn toàn không thành lập." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他一点儿饭也没吃。", "isCorrect": true, "explanation": "Đúng khung: 一点儿 + danh từ + 也 + 没 + động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我也一句话不想说。", "isCorrect": false, "correctVersion": "我一句话也不想说。", "explanation": "也 phải đứng ngay trước 不/没, không đứng sau chủ ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Ở đây tôi không quen một ai cả.”", "words": ["在", "这儿", "我", "一个人", "也", "不", "认识", "。"], "answer": "在这儿我一个人也不认识。", "explanation": "Nơi chốn đầu câu, khung phủ định ở vị ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm qua anh ấy chẳng ăn chút gì.”", "words": ["昨天", "他", "一点儿", "东西", "也", "没", "吃", "。"], "answer": "昨天他一点儿东西也没吃。", "explanation": "Việc đã qua dùng 没." },
+     { "type": "sort", "context": "Sắp xếp: “Mấy quyển sách này tôi chưa đọc quyển nào.”", "words": ["这些", "书", "我", "一", "本", "都", "没", "看", "。"], "answer": "这些书我一本都没看。", "explanation": "一 + 本 + 都 + 没 + động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng khung 一……也/都 + 不/没.", "promptLang": "vi", "prompt": "Tôi chẳng quen một ai ở đây cả.", "answer": "我一个人也不认识。", "answerPy": "Wǒ yí ge rén yě bú rènshi.", "explanation": "Khung phủ định hoàn toàn." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng khung 一……也/都 + 不/没.", "promptLang": "vi", "prompt": "Hôm nay tôi chẳng bận chút nào.", "answer": "今天我一点儿也不忙。", "answerPy": "Jīntiān wǒ yìdiǎnr yě bù máng.", "explanation": "一点儿也不 + tính từ." }
+    ]
+   },
+   {
+    "title": "Liên từ 「那」 đứng đầu câu (vậy thì)",
+    "errors": [
+     { "wrong": "那么我们八点见吧。（trong hội thoại ngắn）", "why": "那么 nghe trang trọng/dài dòng; khẩu ngữ dùng 那 gọn hơn.", "right": "那我们八点见吧。" },
+     { "wrong": "我们那八点见吧。", "why": "那 (liên từ) phải đứng ĐẦU câu, không chen giữa.", "right": "那我们八点见吧。" },
+     { "wrong": "那你不去，我也不去。", "why": "dùng 那 khi chưa có tiền đề ở lượt nói trước nghe rất lạc lõng.", "right": "你不去，那我也不去。" }
+    ],
+    "items": [
+     { "context": "Bạn nói bận sáng, em đề nghị buổi chiều.", "pre": "", "blank": "那", "post": "我们下午去吧。", "options": ["那", "就", "还"], "answer": 0, "explanation": "那 đứng đầu câu, nối tiếp điều người kia vừa nói." },
+     { "context": "“Vậy thì 8 giờ gặp nhé.”", "pre": "", "blank": "那", "post": "我们八点见吧。", "options": ["那", "那么什么", "还是那"], "answer": 0, "explanation": "Khẩu ngữ dùng 那 gọn, tự nhiên." },
+     { "context": "“Bạn không đi, vậy tôi cũng không đi.”", "pre": "你不去，", "blank": "那", "post": "我也不去。", "options": ["那", "就", "才"], "answer": 0, "explanation": "那 đứng đầu VẾ SAU, sau khi đã có tiền đề." },
+     { "context": "“Vậy bạn muốn ăn gì?”", "pre": "", "blank": "那", "post": "你想吃什么？", "options": ["那", "还", "就"], "answer": 0, "explanation": "那 mở đầu câu hỏi tiếp nối." },
+     { "context": "“Vậy để mai nói tiếp.”", "pre": "", "blank": "那", "post": "明天再说吧。", "options": ["那", "又", "才"], "answer": 0, "explanation": "那 + đề nghị mới dựa trên tình hình vừa biết." },
+     { "context": "“Hôm nay mưa. Vậy chúng ta ở nhà vậy.”", "pre": "今天下雨了。", "blank": "那", "post": "我们在家吧。", "options": ["那", "就是", "还是那么"], "answer": 0, "explanation": "那 nối hai lượt lời một cách tự nhiên." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们那八点见吧。", "isCorrect": false, "correctVersion": "那我们八点见吧。", "explanation": "那 (liên từ) đứng ĐẦU câu." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你很忙，那我自己去。", "isCorrect": true, "explanation": "Có tiền đề ở vế trước, 那 mở đầu vế sau." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "那你想吃什么？", "isCorrect": true, "explanation": "那 mở đầu câu hỏi tiếp nối lời người kia." },
+     { "type": "sort", "context": "Sắp xếp: “Vậy chiều nay chúng ta đi nhé.”", "words": ["那", "我们", "下午", "去", "吧", "。"], "answer": "那我们下午去吧。", "explanation": "那 + chủ ngữ + thời gian + động từ + 吧." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn không thích, vậy tôi đổi cái khác.”", "words": ["你", "不", "喜欢", "，", "那", "我", "换", "一个", "。"], "answer": "你不喜欢，那我换一个。", "explanation": "那 mở đầu vế sau." },
+     { "type": "sort", "context": "Sắp xếp: “Vậy để mai nói tiếp nhé.”", "words": ["那", "明天", "再", "说", "吧", "。"], "answer": "那明天再说吧。", "explanation": "再 = rồi hãy, đứng trước động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng liên từ 那.", "promptLang": "vi", "prompt": "Bạn bận à? Vậy chúng ta gặp nhau ngày mai nhé.", "answer": "你很忙吗？那我们明天见吧。", "answerPy": "Nǐ hěn máng ma? Nà wǒmen míngtiān jiàn ba.", "explanation": "那 nối lượt lời, 吧 làm lời đề nghị." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng liên từ 那.", "promptLang": "vi", "prompt": "Trời mưa rồi, vậy chúng ta ở nhà đi.", "answer": "下雨了，那我们在家吧。", "answerPy": "Xià yǔ le, nà wǒmen zài jiā ba.", "explanation": "Tiền đề trước, 那 mở đầu đề nghị." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk3-bai-2.html": {
+  "points": [
+   {
+    "title": "Bổ ngữ xu hướng đơn 「V + 来 / 去」",
+    "errors": [
+     { "wrong": "老师进去教室了。（người nói đang Ở TRONG lớp）", "why": "chọn sai hướng: người nói ở trong thì phải dùng 来.", "right": "老师进来了。" },
+     { "wrong": "他回来家了。", "why": "tân ngữ chỉ NƠI CHỐN phải đứng giữa động từ và 来/去.", "right": "他回家来了。" },
+     { "wrong": "请进来去吧。", "why": "dùng cùng lúc hai hướng ngược nhau.", "right": "请进来吧。" }
+    ],
+    "items": [
+     { "context": "Em đang ở trong phòng, thầy bước vào.", "pre": "老师", "blank": "进来", "post": "了。", "options": ["进来", "进去", "来进"], "answer": 0, "explanation": "Hướng về PHÍA người nói dùng 来." },
+     { "context": "Em đang ở ngoài, nhìn bạn bước vào phòng.", "pre": "他", "blank": "进去", "post": "了。", "options": ["进去", "进来", "去进"], "answer": 0, "explanation": "Hướng RỜI XA người nói dùng 去." },
+     { "context": "“Anh ấy về nhà rồi.” (người nói ở nhà)", "pre": "他", "blank": "回家来", "post": "了。", "options": ["回家来", "回来家", "来回家"], "answer": 0, "explanation": "Tân ngữ nơi chốn đứng GIỮA: 回 + 家 + 来." },
+     { "context": "“Bạn mang quyển sách lên đây nhé.”", "pre": "你把书", "blank": "拿上来", "post": "。", "options": ["拿上来", "上拿来", "拿来上"], "answer": 0, "explanation": "Động từ + hướng (上) + 来." },
+     { "context": "“Mời vào.”", "pre": "请", "blank": "进来", "post": "。", "options": ["进来", "进来去", "来进去"], "answer": 0, "explanation": "Chủ nhà mời khách vào chỗ mình → 来." },
+     { "context": "“Bạn ấy chạy ra ngoài rồi.” (người nói ở trong)", "pre": "她", "blank": "跑出去", "post": "了。", "options": ["跑出去", "跑出来", "出跑去"], "answer": 0, "explanation": "Ra xa người nói → 去." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai (người nói đang ở trong lớp).", "sentence": "老师进去了。", "isCorrect": false, "correctVersion": "老师进来了。", "explanation": "Người nói ở trong thì hướng vào là 来." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他回来家了。", "isCorrect": false, "correctVersion": "他回家来了。", "explanation": "Tân ngữ nơi chốn chen vào giữa động từ và 来." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "请进来吧。", "isCorrect": true, "explanation": "Lời mời vào chỗ người nói." },
+     { "type": "sort", "context": "Sắp xếp: “Thầy giáo bước vào lớp rồi.” (em ở trong lớp)", "words": ["老师", "走", "进", "教室", "来", "了", "。"], "answer": "老师走进教室来了。", "explanation": "V + 进 + nơi chốn + 来." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn ấy mang một quyển sách đến.”", "words": ["她", "拿", "来", "了", "一", "本", "书", "。"], "answer": "她拿来了一本书。", "explanation": "Tân ngữ chỉ vật có thể đứng sau 来了." },
+     { "type": "sort", "context": "Sắp xếp: “Mẹ tôi về nhà rồi.”", "words": ["我", "妈妈", "回", "家", "来", "了", "。"], "answer": "我妈妈回家来了。", "explanation": "回 + 家 + 来." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung (em đang ở trong phòng).", "promptLang": "vi", "prompt": "Mời thầy vào ạ.", "answer": "老师，请进来。", "answerPy": "Lǎoshī, qǐng jìnlái.", "explanation": "Hướng về phía người nói dùng 来." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung.", "promptLang": "vi", "prompt": "Anh ấy chạy ra ngoài rồi.", "answer": "他跑出去了。", "answerPy": "Tā pǎo chūqù le.", "explanation": "Rời xa người nói dùng 去." }
+    ]
+   },
+   {
+    "title": "Hai hành động liên tiếp 「V了……就V……」",
+    "errors": [
+     { "wrong": "我吃饭了就去学校。", "why": "đặt 了 sau tân ngữ; trong khung này 了 đi liền sau động từ thứ nhất.", "right": "我吃了饭就去学校。" },
+     { "wrong": "我下了课就去了图书馆。（nói về kế hoạch ngày mai）", "why": "việc chưa xảy ra thì vế sau không dùng 了.", "right": "我下了课就去图书馆。" },
+     { "wrong": "我吃了饭才去学校。（ý muốn nói ăn xong là đi ngay）", "why": "才 mang nghĩa muộn/mới, trái ý “ngay lập tức” của 就.", "right": "我吃了饭就去学校。" }
+    ],
+    "items": [
+     { "context": "“Tôi ăn cơm xong là đi học ngay.”", "pre": "我", "blank": "吃了饭就", "post": "去学校。", "options": ["吃了饭就", "吃饭了就", "就吃了饭"], "answer": 0, "explanation": "V + 了 + tân ngữ + 就 + V." },
+     { "context": "“Tan học xong tôi về nhà luôn.”", "pre": "我", "blank": "下了课就", "post": "回家。", "options": ["下了课就", "下课了就", "就下了课"], "answer": 0, "explanation": "了 đi liền sau động từ thứ nhất." },
+     { "context": "Nhấn mạnh việc xảy ra MUỘN thì dùng 才.", "pre": "他昨天十一点", "blank": "才", "post": "回家。", "options": ["才", "就", "还"], "answer": 0, "explanation": "才 = mãi mới; 就 = ngay lập tức." },
+     { "context": "“Mua xong đồ là tôi về ngay.”", "pre": "我", "blank": "买了东西就", "post": "回来。", "options": ["买了东西就", "买东西了就", "就买了东西"], "answer": 0, "explanation": "Khung V了…就V… diễn tả hai việc nối tiếp nhanh." },
+     { "context": "Kế hoạch tương lai: vế sau KHÔNG dùng 了.", "pre": "明天我下了班就", "blank": "去", "post": "你家。", "options": ["去", "去了", "了去"], "answer": 0, "explanation": "Việc chưa xảy ra thì không dùng 了 ở vế sau." },
+     { "context": "“Nghe xong là hiểu ngay.”", "pre": "我", "blank": "听了就", "post": "明白了。", "options": ["听了就", "听就了", "就听了"], "answer": 0, "explanation": "V了 + 就 + kết quả." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我吃饭了就去学校。", "isCorrect": false, "correctVersion": "我吃了饭就去学校。", "explanation": "了 phải đứng ngay sau động từ 吃." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai (nói về kế hoạch ngày mai).", "sentence": "明天我下了课就去图书馆。", "isCorrect": true, "explanation": "Vế sau chỉ việc chưa xảy ra, không dùng 了 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai (ý: ăn xong đi ngay).", "sentence": "我吃了饭才去学校。", "isCorrect": false, "correctVersion": "我吃了饭就去学校。", "explanation": "才 mang nghĩa muộn, ngược với ý “ngay”." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi ăn cơm xong là đi học ngay.”", "words": ["我", "吃", "了", "饭", "就", "去", "学校", "。"], "answer": "我吃了饭就去学校。", "explanation": "V + 了 + O + 就 + V." },
+     { "type": "sort", "context": "Sắp xếp: “Tan làm xong tôi đến nhà bạn ngay.”", "words": ["我", "下", "了", "班", "就", "去", "你", "家", "。"], "answer": "我下了班就去你家。", "explanation": "下了班 = tan làm xong." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy về đến nhà là ngủ luôn.”", "words": ["他", "回", "了", "家", "就", "睡觉", "了", "。"], "answer": "他回了家就睡觉了。", "explanation": "Việc đã xảy ra thì vế sau có thể có 了." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng khung V了……就……", "promptLang": "vi", "prompt": "Tôi ăn cơm xong là đi làm ngay.", "answer": "我吃了饭就去上班。", "answerPy": "Wǒ chī le fàn jiù qù shàngbān.", "explanation": "了 liền sau 吃, 就 trước động từ thứ hai." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng khung V了……就……", "promptLang": "vi", "prompt": "Ngày mai tan học xong tôi sẽ đến tìm bạn.", "answer": "明天我下了课就去找你。", "answerPy": "Míngtiān wǒ xià le kè jiù qù zhǎo nǐ.", "explanation": "Kế hoạch tương lai, vế sau không có 了." }
+    ]
+   },
+   {
+    "title": "Câu phản vấn 「能……吗？」",
+    "errors": [
+     { "wrong": "这个事情能不能不做吗？", "why": "trộn mẫu chính phản với 吗 trong câu phản vấn.", "right": "这个事情能不做吗？" },
+     { "wrong": "我能不去吗不？", "why": "thêm 不 thừa ở cuối.", "right": "我能不去吗？" },
+     { "wrong": "你能帮我吗？（khi muốn nói “làm sao mà không giúp được”）", "why": "câu này là câu hỏi thường, không mang sắc thái phản vấn.", "right": "我能不帮你吗？" }
+    ],
+    "items": [
+     { "context": "“Chuyện này làm sao mà không làm được?” (ý: nhất định phải làm)", "pre": "这个事情", "blank": "能不做", "post": "吗？", "options": ["能不做", "能不能做", "不能做不"], "answer": 0, "explanation": "能 + 不 + V + 吗 = câu phản vấn, khẳng định mạnh." },
+     { "context": "“Tôi làm sao không giúp bạn được?” (nhất định giúp)", "pre": "我", "blank": "能不帮", "post": "你吗？", "options": ["能不帮", "不能帮", "能帮不"], "answer": 0, "explanation": "Hình thức hỏi nhưng ý là khẳng định." },
+     { "context": "Câu hỏi THẬT (xin phép) thì dùng 能…吗.", "pre": "我", "blank": "能", "post": "用一下你的电脑吗？", "options": ["能", "能不", "不能"], "answer": 0, "explanation": "能…吗 hỏi xin phép; 能不…吗 mới là phản vấn." },
+     { "context": "“Chuyện quan trọng thế, sao có thể quên được?”", "pre": "这么重要的事，我", "blank": "能忘", "post": "吗？", "options": ["能忘", "不能忘", "能不忘"], "answer": 0, "explanation": "能 + V + 吗 cũng dùng phản vấn khi ngữ cảnh rõ: “sao quên được”." },
+     { "context": "“Bạn ốm thế này, làm sao đi làm được?”", "pre": "你病了，", "blank": "能去", "post": "上班吗？", "options": ["能去", "能不去", "不能去"], "answer": 0, "explanation": "Câu phản vấn phủ định ý “đi làm”." },
+     { "context": "“Việc này ai mà không biết?”", "pre": "这件事，谁", "blank": "不知道", "post": "呢？", "options": ["不知道", "知道不", "能知道"], "answer": 0, "explanation": "谁不…呢 cũng là khung phản vấn quen thuộc." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这个事情能不能不做吗？", "isCorrect": false, "correctVersion": "这个事情能不做吗？", "explanation": "Không dùng đồng thời mẫu chính phản và 吗." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我能不帮你吗？", "isCorrect": true, "explanation": "Câu phản vấn: hình thức hỏi, ý khẳng định “chắc chắn giúp”." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai (ý xin phép mượn máy tính).", "sentence": "我能用一下你的电脑吗？", "isCorrect": true, "explanation": "能…吗 dùng để xin phép, hoàn toàn đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Chuyện quan trọng thế, tôi sao quên được?”", "words": ["这么", "重要", "的", "事", "，", "我", "能", "忘", "吗", "？"], "answer": "这么重要的事，我能忘吗？", "explanation": "Câu phản vấn nhấn mạnh “không thể quên”." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn ốm rồi, sao còn đi làm được?”", "words": ["你", "病", "了", "，", "能", "去", "上班", "吗", "？"], "answer": "你病了，能去上班吗？", "explanation": "Tiền đề + câu phản vấn." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi có thể mượn quyển sách này không?”", "words": ["我", "能", "借", "这", "本", "书", "吗", "？"], "answer": "我能借这本书吗？", "explanation": "Câu hỏi xin phép thật sự." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung bằng câu phản vấn.", "promptLang": "vi", "prompt": "Bạn ốm thế này, làm sao mà đi làm được?", "answer": "你病成这样，能去上班吗？", "answerPy": "Nǐ bìng chéng zhèyàng, néng qù shàngbān ma?", "explanation": "Hình thức hỏi nhưng ý phủ định." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung bằng câu phản vấn.", "promptLang": "vi", "prompt": "Bạn nhờ rồi, tôi làm sao mà không giúp được?", "answer": "你说了，我能不帮你吗？", "answerPy": "Nǐ shuō le, wǒ néng bù bāng nǐ ma?", "explanation": "能不 + V + 吗 = nhất định sẽ làm." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk3-bai-3.html": {
+  "points": [
+   {
+    "title": "「还是」và「或者」— HAY / HOẶC",
+    "errors": [
+     { "wrong": "你喝茶或者喝咖啡？", "why": "câu HỎI lựa chọn phải dùng 还是, không dùng 或者.", "right": "你喝茶还是喝咖啡？" },
+     { "wrong": "我喝茶还是咖啡都可以。", "why": "câu TRẦN THUẬT nêu lựa chọn phải dùng 或者.", "right": "我喝茶或者咖啡都可以。" },
+     { "wrong": "你想去北京还是吗？", "why": "câu đã có 还是 thì không thêm 吗.", "right": "你想去北京还是上海？" }
+    ],
+    "items": [
+     { "context": "Câu HỎI lựa chọn: “Bạn uống trà hay cà phê?”", "pre": "你喝茶", "blank": "还是", "post": "喝咖啡？", "options": ["还是", "或者", "和"], "answer": 0, "explanation": "还是 dùng trong câu hỏi lựa chọn." },
+     { "context": "Câu TRẦN THUẬT: “Trà hoặc cà phê đều được.”", "pre": "茶", "blank": "或者", "post": "咖啡都可以。", "options": ["或者", "还是", "也"], "answer": 0, "explanation": "或者 dùng trong câu kể." },
+     { "context": "“Bạn muốn đi Bắc Kinh hay Thượng Hải?”", "pre": "你想去北京", "blank": "还是", "post": "上海？", "options": ["还是", "或者", "以及"], "answer": 0, "explanation": "Hai lựa chọn trong câu hỏi." },
+     { "context": "“Cuối tuần tôi thường đọc sách hoặc xem phim.”", "pre": "周末我常常看书", "blank": "或者", "post": "看电影。", "options": ["或者", "还是", "又"], "answer": 0, "explanation": "Câu kể về thói quen, dùng 或者." },
+     { "context": "Câu hỏi có 还是 thì KHÔNG thêm 吗.", "pre": "你今天去", "blank": "还是明天去", "post": "？", "options": ["还是明天去", "还是明天去吗", "或者明天去吗"], "answer": 0, "explanation": "还是 đã tạo câu hỏi lựa chọn." },
+     { "context": "“Ai đi cũng được, bạn hoặc tôi.”", "pre": "你", "blank": "或者", "post": "我去都行。", "options": ["或者", "还是", "都"], "answer": 0, "explanation": "Câu kể nêu hai khả năng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你喝茶或者喝咖啡？", "isCorrect": false, "correctVersion": "你喝茶还是喝咖啡？", "explanation": "Câu hỏi lựa chọn phải dùng 还是." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "周末我看书或者看电影。", "isCorrect": true, "explanation": "Câu kể dùng 或者 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我喝茶还是咖啡都可以。", "isCorrect": false, "correctVersion": "我喝茶或者咖啡都可以。", "explanation": "Câu trần thuật dùng 或者." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn đi hôm nay hay ngày mai?”", "words": ["你", "今天", "去", "还是", "明天", "去", "？"], "answer": "你今天去还是明天去？", "explanation": "还是 nối hai lựa chọn trong câu hỏi." },
+     { "type": "sort", "context": "Sắp xếp: “Cuối tuần tôi thường đọc sách hoặc nghe nhạc.”", "words": ["周末", "我", "常常", "看书", "或者", "听音乐", "。"], "answer": "周末我常常看书或者听音乐。", "explanation": "或者 trong câu kể." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn muốn ăn cơm hay ăn mì?”", "words": ["你", "想", "吃", "米饭", "还是", "吃", "面条", "？"], "answer": "你想吃米饭还是吃面条？", "explanation": "Câu hỏi lựa chọn." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung.", "promptLang": "vi", "prompt": "Bạn uống trà hay uống cà phê?", "answer": "你喝茶还是喝咖啡？", "answerPy": "Nǐ hē chá háishi hē kāfēi?", "explanation": "Câu hỏi lựa chọn dùng 还是." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung.", "promptLang": "vi", "prompt": "Thứ bảy hoặc chủ nhật tôi đều rảnh.", "answer": "星期六或者星期日我都有时间。", "answerPy": "Xīngqīliù huòzhě xīngqīrì wǒ dōu yǒu shíjiān.", "explanation": "Câu kể dùng 或者, có 都 tổng kết." }
+    ]
+   },
+   {
+    "title": "Câu tồn tại 「Nơi chốn + V着 + số lượng + danh từ」",
+    "errors": [
+     { "wrong": "一本书放着桌子上。", "why": "tiếng Việt “một quyển sách đặt trên bàn”, học sinh để nơi chốn xuống cuối.", "right": "桌子上放着一本书。" },
+     { "wrong": "桌子上放了着一本书。", "why": "dùng cùng lúc 了 và 着.", "right": "桌子上放着一本书。" },
+     { "wrong": "门开着了。", "why": "着 chỉ trạng thái kéo dài, không dùng chung với 了 ở cuối.", "right": "门开着呢。" }
+    ],
+    "items": [
+     { "context": "“Trên bàn có đặt một quyển sách.”", "pre": "桌子上", "blank": "放着", "post": "一本书。", "options": ["放着", "放了", "着放"], "answer": 0, "explanation": "Nơi chốn + V着 + số lượng + danh từ." },
+     { "context": "“Ngoài cửa đứng một người.”", "pre": "门外", "blank": "站着", "post": "一个人。", "options": ["站着", "站了", "在站"], "answer": 0, "explanation": "着 biểu thị trạng thái đang tồn tại." },
+     { "context": "“Trên tường treo mấy bức ảnh.”", "pre": "墙上", "blank": "挂着", "post": "几张照片。", "options": ["挂着", "挂了", "挂过"], "answer": 0, "explanation": "Câu tồn tại với 着." },
+     { "context": "“Cửa đang mở đấy.”", "pre": "门", "blank": "开着", "post": "呢。", "options": ["开着", "开了着", "着开"], "answer": 0, "explanation": "V着 + 呢 = trạng thái đang duy trì." },
+     { "context": "“Trong phòng ngồi rất nhiều người.”", "pre": "房间里", "blank": "坐着", "post": "很多人。", "options": ["坐着", "坐了", "在坐"], "answer": 0, "explanation": "Nơi chốn đứng đầu câu tồn tại." },
+     { "context": "Nhấn mạnh việc ĐÃ XẢY RA thì dùng 了.", "pre": "他把书", "blank": "放", "post": "在桌子上了。", "options": ["放", "放着", "着放"], "answer": 0, "explanation": "Câu nhấn mạnh hành động dùng 了; câu tả cảnh dùng 着." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "一本书放着桌子上。", "isCorrect": false, "correctVersion": "桌子上放着一本书。", "explanation": "Nơi chốn phải đứng ĐẦU câu tồn tại." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "门外站着一个人。", "isCorrect": true, "explanation": "Đúng khung: nơi chốn + V着 + số lượng + danh từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "桌子上放了着一本书。", "isCorrect": false, "correctVersion": "桌子上放着一本书。", "explanation": "Không dùng 了 và 着 cùng lúc." },
+     { "type": "sort", "context": "Sắp xếp: “Trên bàn đặt hai quyển sách.”", "words": ["桌子", "上", "放", "着", "两", "本", "书", "。"], "answer": "桌子上放着两本书。", "explanation": "Nơi chốn + V着 + số lượng." },
+     { "type": "sort", "context": "Sắp xếp: “Ngoài cửa đứng mấy người.”", "words": ["门", "外", "站", "着", "几", "个", "人", "。"], "answer": "门外站着几个人。", "explanation": "几个人 = mấy người." },
+     { "type": "sort", "context": "Sắp xếp: “Trên tường treo một bức tranh.”", "words": ["墙", "上", "挂", "着", "一", "张", "画", "。"], "answer": "墙上挂着一张画。", "explanation": "挂着 = đang treo." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu tồn tại với 着.", "promptLang": "vi", "prompt": "Trên bàn đặt một chiếc máy tính.", "answer": "桌子上放着一个电脑。", "answerPy": "Zhuōzi shàng fàngzhe yí ge diànnǎo.", "explanation": "Nơi chốn + 放着 + số lượng + vật." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng câu tồn tại với 着.", "promptLang": "vi", "prompt": "Ngoài cửa đứng một người.", "answer": "门外站着一个人。", "answerPy": "Mén wài zhànzhe yí ge rén.", "explanation": "站着 = đang đứng." }
+    ]
+   },
+   {
+    "title": "Trợ động từ 「会」 biểu thị khả năng sẽ xảy ra",
+    "errors": [
+     { "wrong": "明天不会下雨吧不？", "why": "thêm 不 thừa ở cuối câu.", "right": "明天不会下雨吧？" },
+     { "wrong": "明天会下雨了。", "why": "会 nói việc CHƯA xảy ra, không dùng với 了.", "right": "明天会下雨。" },
+     { "wrong": "他会来吗不会？", "why": "trộn 吗 với mẫu chính phản.", "right": "他会不会来？" }
+    ],
+    "items": [
+     { "context": "“Ngày mai trời sẽ mưa.”", "pre": "明天", "blank": "会", "post": "下雨。", "options": ["会", "能", "可以"], "answer": 0, "explanation": "会 = khả năng sẽ xảy ra trong tương lai." },
+     { "context": "“Anh ấy sẽ không đến đâu.”", "pre": "他", "blank": "不会", "post": "来的。", "options": ["不会", "没会", "不能"], "answer": 0, "explanation": "Phủ định là 不会; cuối câu hay thêm 的 để khẳng định." },
+     { "context": "Hỏi chính phản: “Ngày mai trời có mưa không?”", "pre": "明天", "blank": "会不会", "post": "下雨？", "options": ["会不会", "会吗不", "能不能"], "answer": 0, "explanation": "会不会 + động từ." },
+     { "context": "Nói về KỸ NĂNG học được cũng dùng 会.", "pre": "我", "blank": "会", "post": "说一点儿汉语。", "options": ["会", "能", "要"], "answer": 0, "explanation": "会 có hai nghĩa: biết làm và sẽ xảy ra." },
+     { "context": "Nói về ĐIỀU KIỆN cho phép thì dùng 能.", "pre": "明天我有事，不", "blank": "能", "post": "去。", "options": ["能", "会", "可以吗"], "answer": 0, "explanation": "不能去 = bận nên không đi được; 不会去 = sẽ không đi." },
+     { "context": "“Tôi nghĩ anh ấy sẽ thích món quà này.”", "pre": "我想他", "blank": "会", "post": "喜欢这个礼物。", "options": ["会", "能", "要"], "answer": 0, "explanation": "Dự đoán dùng 会." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "明天会下雨了。", "isCorrect": false, "correctVersion": "明天会下雨。", "explanation": "会 nói việc chưa xảy ra, không dùng với 了." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他会不会来？", "isCorrect": true, "explanation": "Mẫu chính phản 会不会 + động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai (ý: bận nên không đi được).", "sentence": "明天我有事，不会去。", "isCorrect": false, "correctVersion": "明天我有事，不能去。", "explanation": "Vì điều kiện không cho phép thì dùng 不能." },
+     { "type": "sort", "context": "Sắp xếp: “Ngày mai chắc trời sẽ mưa.”", "words": ["明天", "可能", "会", "下雨", "。"], "answer": "明天可能会下雨。", "explanation": "可能 + 会 tăng sắc thái phỏng đoán." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy sẽ không đến đâu.”", "words": ["他", "不", "会", "来", "的", "。"], "answer": "他不会来的。", "explanation": "不会…的 = chắc chắn sẽ không." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn nghĩ cô ấy có đến không?”", "words": ["你", "想", "她", "会不会", "来", "？"], "answer": "你想她会不会来？", "explanation": "会不会 trong câu hỏi lồng." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 会.", "promptLang": "vi", "prompt": "Ngày mai trời sẽ không mưa đâu.", "answer": "明天不会下雨。", "answerPy": "Míngtiān bú huì xià yǔ.", "explanation": "不会 + động từ (dự đoán phủ định)." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 会.", "promptLang": "vi", "prompt": "Tôi nghĩ anh ấy sẽ thích món quà này.", "answer": "我想他会喜欢这个礼物。", "answerPy": "Wǒ xiǎng tā huì xǐhuan zhège lǐwù.", "explanation": "会 dùng cho dự đoán." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk3-bai-4.html": {
+  "points": [
+   {
+    "title": "「又……又……」 — hai đặc điểm cùng tồn tại",
+    "errors": [
+     { "wrong": "这个菜又好吃，又便宜的。", "why": "thêm 的 thừa ở cuối khung 又…又…", "right": "这个菜又好吃又便宜。" },
+     { "wrong": "这个菜又好吃又很便宜。", "why": "trong khung 又…又… không thêm 很 vào vế sau.", "right": "这个菜又好吃又便宜。" },
+     { "wrong": "他又高又是学生。", "why": "hai vế phải CÙNG LOẠI (đều tính từ hoặc đều động từ), không ghép tính từ với 是 + danh từ.", "right": "他又高又瘦。" }
+    ],
+    "items": [
+     { "context": "“Món này vừa ngon vừa rẻ.”", "pre": "这个菜", "blank": "又好吃又便宜", "post": "。", "options": ["又好吃又便宜", "又好吃又很便宜", "好吃又便宜又"], "answer": 0, "explanation": "Hai vế cùng là tính từ, không thêm 很." },
+     { "context": "“Anh ấy vừa cao vừa gầy.”", "pre": "他", "blank": "又高又瘦", "post": "。", "options": ["又高又瘦", "又高瘦又", "又是高又瘦"], "answer": 0, "explanation": "又 + tính từ + 又 + tính từ." },
+     { "context": "“Cô ấy vừa biết hát vừa biết nhảy.”", "pre": "她", "blank": "又会唱歌又会跳舞", "post": "。", "options": ["又会唱歌又会跳舞", "又唱歌又会跳舞", "会又唱歌又跳舞"], "answer": 0, "explanation": "Hai vế cùng cấu trúc 会 + động từ." },
+     { "context": "Nói hai việc xảy ra LẦN LƯỢT thì dùng 一边……一边…….", "pre": "他", "blank": "一边吃饭一边看电视", "post": "。", "options": ["一边吃饭一边看电视", "又吃饭又看电视了", "又一边吃饭又看电视"], "answer": 0, "explanation": "一边…一边… = vừa làm A vừa làm B cùng lúc." },
+     { "context": "“Phòng này vừa to vừa sáng.”", "pre": "这个房间", "blank": "又大又亮", "post": "。", "options": ["又大又亮", "又大亮又", "大又亮又"], "answer": 0, "explanation": "Khung cố định 又…又…" },
+     { "context": "“Hôm nay tôi vừa mệt vừa đói.”", "pre": "今天我", "blank": "又累又饿", "post": "。", "options": ["又累又饿", "又累又很饿", "累又饿又"], "answer": 0, "explanation": "Không chen 很 vào khung." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这个菜又好吃又很便宜。", "isCorrect": false, "correctVersion": "这个菜又好吃又便宜。", "explanation": "Khung 又…又… không dùng thêm 很." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "她又会唱歌又会跳舞。", "isCorrect": true, "explanation": "Hai vế cùng dạng 会 + động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他又高又是学生。", "isCorrect": false, "correctVersion": "他又高又瘦。", "explanation": "Hai vế phải cùng loại từ." },
+     { "type": "sort", "context": "Sắp xếp: “Món này vừa ngon vừa rẻ.”", "words": ["这个", "菜", "又", "好吃", "又", "便宜", "。"], "answer": "这个菜又好吃又便宜。", "explanation": "又 + tính từ + 又 + tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Phòng này vừa to vừa sạch.”", "words": ["这个", "房间", "又", "大", "又", "干净", "。"], "answer": "这个房间又大又干净。", "explanation": "Khung 又…又… tả hai đặc điểm." },
+     { "type": "sort", "context": "Sắp xếp: “Cô ấy vừa biết tiếng Trung vừa biết tiếng Anh.”", "words": ["她", "又", "会", "汉语", "又", "会", "英语", "。"], "answer": "她又会汉语又会英语。", "explanation": "Hai vế cùng cấu trúc." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 又……又…….", "promptLang": "vi", "prompt": "Món này vừa ngon vừa rẻ.", "answer": "这个菜又好吃又便宜。", "answerPy": "Zhège cài yòu hǎochī yòu piányi.", "explanation": "Không thêm 很 vào khung." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 又……又…….", "promptLang": "vi", "prompt": "Hôm nay tôi vừa mệt vừa đói.", "answer": "今天我又累又饿。", "answerPy": "Jīntiān wǒ yòu lèi yòu è.", "explanation": "Hai tính từ cùng loại." }
+    ]
+   },
+   {
+    "title": "Động tác đi kèm 「V1着(O1) + V2(O2)」",
+    "errors": [
+     { "wrong": "他笑看着我。", "why": "đặt 着 nhầm động từ: 着 phải gắn với động tác ĐI KÈM (笑).", "right": "他笑着看我。" },
+     { "wrong": "他站听着音乐。", "why": "cùng lỗi trên: động tác nền là 站 nên 着 gắn vào 站.", "right": "他站着听音乐。" },
+     { "wrong": "他笑着着说。", "why": "lặp 着.", "right": "他笑着说。" }
+    ],
+    "items": [
+     { "context": "“Anh ấy vừa cười vừa nhìn tôi.” (cười là động tác kèm theo)", "pre": "他", "blank": "笑着看", "post": "我。", "options": ["笑着看", "看着笑", "笑看着"], "answer": 0, "explanation": "着 gắn vào động tác ĐI KÈM (V1), động tác chính đứng sau." },
+     { "context": "“Cô ấy đứng nghe nhạc.”", "pre": "她", "blank": "站着听", "post": "音乐。", "options": ["站着听", "听着站", "站听着"], "answer": 0, "explanation": "站着 là tư thế, 听音乐 là việc chính." },
+     { "context": "“Đừng vừa đi vừa xem điện thoại.”", "pre": "别", "blank": "走着看", "post": "手机。", "options": ["走着看", "看着走", "走看着"], "answer": 0, "explanation": "走着 = trong lúc đi." },
+     { "context": "“Thầy cầm sách giảng bài.”", "pre": "老师", "blank": "拿着书", "post": "讲课。", "options": ["拿着书", "书拿着", "讲着书"], "answer": 0, "explanation": "V1着 + O1 + V2 + O2." },
+     { "context": "“Mẹ vừa nấu cơm vừa nghe nhạc.” (hai việc song song, cùng mức)", "pre": "妈妈", "blank": "一边做饭一边听音乐", "post": "。", "options": ["一边做饭一边听音乐", "做着饭着听音乐", "做饭着听音乐着"], "answer": 0, "explanation": "Hai việc cùng mức dùng 一边…一边…; V着 dùng khi một việc làm nền cho việc kia." },
+     { "context": "“Anh ấy ngồi đọc báo.”", "pre": "他", "blank": "坐着看", "post": "报纸。", "options": ["坐着看", "看着坐", "坐看着"], "answer": 0, "explanation": "坐着 là tư thế nền." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他笑看着我。", "isCorrect": false, "correctVersion": "他笑着看我。", "explanation": "着 gắn với động tác đi kèm 笑." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "老师拿着书讲课。", "isCorrect": true, "explanation": "V1着 + O1 + V2: đúng khung." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "别走着看手机。", "isCorrect": true, "explanation": "走着 làm nền cho 看手机 — lời nhắc rất tự nhiên." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy cười nói với tôi.”", "words": ["他", "笑", "着", "对", "我", "说", "。"], "answer": "他笑着对我说。", "explanation": "笑着 + 对我说." },
+     { "type": "sort", "context": "Sắp xếp: “Cô ấy đứng đợi bạn.”", "words": ["她", "站", "着", "等", "朋友", "。"], "answer": "她站着等朋友。", "explanation": "站着 là tư thế nền." },
+     { "type": "sort", "context": "Sắp xếp: “Thầy cầm sách bước vào lớp.”", "words": ["老师", "拿", "着", "书", "走", "进", "教室", "。"], "answer": "老师拿着书走进教室。", "explanation": "V1着 + O1 + V2 + nơi chốn." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng V着.", "promptLang": "vi", "prompt": "Anh ấy vừa cười vừa nhìn tôi.", "answer": "他笑着看我。", "answerPy": "Tā xiàozhe kàn wǒ.", "explanation": "着 gắn với động tác đi kèm." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng V着.", "promptLang": "vi", "prompt": "Đừng vừa đi vừa xem điện thoại.", "answer": "别走着看手机。", "answerPy": "Bié zǒuzhe kàn shǒujī.", "explanation": "走着 làm nền, 看手机 là việc chính." }
+    ]
+   }
+  ]
+ }
+}

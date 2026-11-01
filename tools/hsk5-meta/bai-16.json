@@ -1,0 +1,112 @@
+{
+ "zh": "体重与节食",
+ "py": "Tǐzhòng yǔ jiéshí",
+ "vn": "Cân nặng và ăn kiêng",
+ "topic": "Unit 6 修身养性 · Cân nặng &amp; chuyện ăn kiêng",
+ "vocabCount": 41,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "即",
+   "explain": "即 là từ VĂN VIẾT. ① Động từ = 就是 (tức là, nghĩa là): vế sau giải thích, cụ thể hoá cho vế trước. ② Phó từ = 就, 便 (liền, ngay): đứng trước động từ thứ hai, hay gặp trong các cụm bốn chữ như 不懂即问, 一学即会, 一拍即合. Đừng nhầm với 既 jì (既……又……).",
+   "rule": "① A，<strong style=\"color:var(--sky-d)\">即</strong> B (B giải thích A)　② (一) V₁ + <strong style=\"color:var(--sky-d)\">即</strong> + V₂ (= 就)",
+   "examples": [
+    {
+     "zh": "“旦”是象形字，即太阳从地平线上升起。",
+     "py": "“Dàn” shì xiàngxíngzì, jí tàiyáng cóng dìpíngxiàn shang shēngqǐ.",
+     "vn": "“旦” là chữ tượng hình, tức là mặt trời mọc lên từ đường chân trời."
+    },
+    {
+     "zh": "这些人的体重变化表现出清晰的模式，即周末之后体重升高，在工作日体重减轻（周五达到最低点）。",
+     "py": "Zhèxiē rén de tǐzhòng biànhuà biǎoxiàn chū qīngxī de móshì, jí zhōumò zhīhòu tǐzhòng shēnggāo, zài gōngzuòrì tǐzhòng jiǎnqīng (zhōuwǔ dádào zuì dī diǎn).",
+     "vn": "Sự thay đổi cân nặng của những người này thể hiện một mô hình rõ ràng, tức là sau cuối tuần cân nặng tăng lên, còn ngày làm việc thì giảm (thứ Sáu thấp nhất)."
+    },
+    {
+     "zh": "不懂即问是他最大的优点，也是他成功的主要原因。",
+     "py": "Bù dǒng jí wèn shì tā zuì dà de yōudiǎn, yě shì tā chénggōng de zhǔyào yuányīn.",
+     "vn": "Không hiểu là hỏi ngay là ưu điểm lớn nhất của anh ấy, cũng là nguyên nhân chính khiến anh ấy thành công."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他可聪明了，什么东西一学即就会。",
+     "why": "即 (phó từ) đã có nghĩa là 就, dùng cả hai là thừa.",
+     "right": "他可聪明了，什么东西一学即会。"
+    },
+    {
+     "wrong": "这些人的体重变化有清晰的模式，既周末之后体重升高。",
+     "why": "Nhầm 既 jì (既……又……) với 即 jí (tức là).",
+     "right": "这些人的体重变化有清晰的模式，即周末之后体重升高。"
+    }
+   ]
+  },
+  {
+   "point": "个别",
+   "explain": "个别 là tính từ (thuộc tính), thường đứng ngay trước danh từ / động từ, không làm vị ngữ, không đi với 很. ① = 单个、各个: riêng lẻ, riêng từng người — 个别谈话, 个别训练. ② Chỉ số rất ít, hiếm có — 个别人, 个别地区; hay dùng trong khung 除了个别……以外，……都…….",
+   "rule": "① <strong style=\"color:var(--sky-d)\">个别</strong> + 谈话 / 训练 / 辅导 (riêng từng người)　② <strong style=\"color:var(--sky-d)\">个别</strong> + 人 / 地区 / 现象 (số ít) · 除了<strong style=\"color:var(--sky-d)\">个别</strong>……以外，……都……",
+   "examples": [
+    {
+     "zh": "他经常采取个别谈话的方式了解情况和解决问题。",
+     "py": "Tā jīngcháng cǎiqǔ gèbié tánhuà de fāngshì liǎojiě qíngkuàng hé jiějué wèntí.",
+     "vn": "Anh ấy thường dùng cách nói chuyện riêng để nắm tình hình và giải quyết vấn đề."
+    },
+    {
+     "zh": "……除了个别人以外，多数人体重的增加会从周六开始，……",
+     "py": "…… chúle gèbié rén yǐwài, duōshù rén tǐzhòng de zēngjiā huì cóng zhōuliù kāishǐ, ……",
+     "vn": "… ngoài một vài người cá biệt, cân nặng của đa số người bắt đầu tăng từ thứ Bảy, …"
+    },
+    {
+     "zh": "天气预报说今晚有小到中雨，个别地区可能有大雨。",
+     "py": "Tiānqì yùbào shuō jīnwǎn yǒu xiǎo dào zhōng yǔ, gèbié dìqū kěnéng yǒu dà yǔ.",
+     "vn": "Dự báo thời tiết nói tối nay có mưa nhỏ đến vừa, một vài khu vực có thể mưa to."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这种问题很个别，大家不用担心。",
+     "why": "个别 là tính từ thuộc tính, không làm vị ngữ và không đi với 很.",
+     "right": "这只是个别问题，大家不用担心。"
+    },
+    {
+     "wrong": "我们班个别同学都没交作业。",
+     "why": "个别 = số rất ít; 都 nhấn mạnh toàn bộ — hai ý mâu thuẫn.",
+     "right": "我们班只有个别同学没交作业。"
+    }
+   ]
+  },
+  {
+   "point": "非",
+   "explain": "非 có ba cách dùng. ① Tiền tố đứng trước thành phần danh từ: \"không thuộc phạm vi này\" — 非语言, 非专业人员, 非工作人员. ② Động từ (văn viết) = 不是: hay gặp trong 而非 (chứ không phải), 并非 (hoàn toàn không phải). ③ Phó từ: chủ quan khăng khăng, nhất định làm (非要……); khung 非 + V + 不可 = 必须 (nhất định phải).",
+   "rule": "① <strong style=\"color:var(--sky-d)\">非</strong> + N (非工作人员)　② A，而<strong style=\"color:var(--sky-d)\">非</strong> B · 并<strong style=\"color:var(--sky-d)\">非</strong>……　③ <strong style=\"color:var(--sky-d)\">非</strong>(要) + V · <strong style=\"color:var(--sky-d)\">非</strong> + V + 不可",
+   "examples": [
+    {
+     "zh": "在非语言的交流中，眼睛起着重要的作用。",
+     "py": "Zài fēi yǔyán de jiāoliú zhōng, yǎnjing qǐzhe zhòngyào de zuòyòng.",
+     "vn": "Trong giao tiếp phi ngôn ngữ, đôi mắt đóng vai trò quan trọng."
+    },
+    {
+     "zh": "……工作日和周末体重的临时变化应该被视为正常现象，而非真正的体重增加，……",
+     "py": "…… gōngzuòrì hé zhōumò tǐzhòng de línshí biànhuà yīnggāi bèi shìwéi zhèngcháng xiànxiàng, ér fēi zhēnzhèng de tǐzhòng zēngjiā, ……",
+     "vn": "… những thay đổi tạm thời của cân nặng giữa ngày làm việc và cuối tuần nên được coi là hiện tượng bình thường, chứ không phải tăng cân thật sự, …"
+    },
+    {
+     "zh": "补办学生证的事非你本人去不可。",
+     "py": "Bǔbàn xuéshengzhèng de shì fēi nǐ běnrén qù bùkě.",
+     "vn": "Việc làm lại thẻ học sinh nhất định phải chính em đi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他非要去不，谁也拦不住。",
+     "why": "Khung \"nhất định phải\" là 非……不可, không kết thúc bằng 不.",
+     "right": "他非要去不可，谁也拦不住。"
+    },
+    {
+     "wrong": "成功有时候非想象中那么难。",
+     "why": "Nghĩa \"không phải\" dùng 并非 (hoặc 而非); 非 đứng trơ trọi trước cụm so sánh nghe cụt, sai văn phong.",
+     "right": "成功有时候并非想象中那么难。"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Nông trại của em · Hi Hán 喜汉</title>
+<meta name="description" content="Nông trại của em — học bài, kiếm sao rồi mua gà, bò, hoa, đèn lồng để trang trí nông trại đẹp nhất lớp. Mỗi món đều có tên chữ Hán.">
+<meta name="theme-color" content="#7cc4f2">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700&family=Be+Vietnam+Pro:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/nong-trai.css">
+</head>
+<body class="nt">
+
+<header class="nt-top">
+  <a class="nt-ve" href="/" aria-label="Về trang học"><span aria-hidden="true">←</span><b>Học bài</b></a>
+  <div class="nt-hud">
+    <button type="button" class="nt-chip nt-chip-lv" id="ntLv" aria-label="Cấp nông trại">
+      <img src="/images/farm/ic-xp.svg" alt="" draggable="false">
+      <span class="nt-lv-so" id="ntLvSo">1</span>
+      <span class="nt-xp"><i id="ntXpThanh"></i></span>
+    </button>
+    <button type="button" class="nt-chip" id="ntSao" aria-label="Sao học tập">
+      <img src="/images/farm/ic-sao.svg" alt="" draggable="false">
+      <b id="ntSaoSo">0</b>
+      <span class="nt-chip-cong" aria-hidden="true">+</span>
+    </button>
+    <div class="nt-chip" id="ntXu" title="Xu nông trại">
+      <img src="/images/farm/ic-xu.svg" alt="" draggable="false">
+      <b id="ntXuSo">0</b>
+    </div>
+  </div>
+</header>
+
+<div class="nt-tham" id="ntTham" hidden>
+  <div class="nt-tham-chu">
+    <b id="ntThamTen"></b>
+    <span id="ntThamPhu"></span>
+  </div>
+  <button type="button" class="nt-nut nt-nut-hong" id="ntThamTim">❤ Thả tim</button>
+  <button type="button" class="nt-nut" id="ntThamVe">Về nông trại của em</button>
+</div>
+
+<main class="nt-khung" id="ntKhung">
+  <div class="nt-dat" id="ntDat"></div>
+</main>
+
+<div class="nt-noi" id="ntNoi" hidden></div>
+
+<div class="nt-thanh-dat" id="ntThanhDat" hidden>
+  <span id="ntThanhDatChu"></span>
+  <button type="button" class="nt-nut nt-nut-xanh" id="ntDatXong">Xong</button>
+</div>
+
+<nav class="nt-duoi" id="ntDuoi" aria-label="Công cụ nông trại">
+  <button type="button" class="nt-cu" data-mo="cuahang"><img src="/images/farm/tb-cuahang.svg" alt="" draggable="false"><span>Cửa hàng</span></button>
+  <button type="button" class="nt-cu" data-mo="kho"><img src="/images/farm/tb-kho.svg" alt="" draggable="false"><span>Kho</span></button>
+  <button type="button" class="nt-cu" data-mo="don"><img src="/images/farm/tb-don.svg" alt="" draggable="false"><span>Đơn hàng</span><i class="nt-cham" id="ntDonCham" hidden></i></button>
+  <button type="button" class="nt-cu" data-mo="sapxep" id="ntSapXep"><img src="/images/farm/tb-sapxep.svg" alt="" draggable="false"><span>Sắp xếp</span></button>
+  <button type="button" class="nt-cu" data-mo="ban"><img src="/images/farm/tb-ban.svg" alt="" draggable="false"><span>Bạn lớp</span></button>
+  <button type="button" class="nt-cu nt-cu-hoc" data-mo="hoc"><img src="/images/farm/tb-hoc.svg" alt="" draggable="false"><span>Kiếm sao</span></button>
+</nav>
+
+<div class="nt-zoom" aria-label="Phóng to thu nhỏ">
+  <button type="button" id="ntZoomCong" aria-label="Phóng to">+</button>
+  <button type="button" id="ntZoomTru" aria-label="Thu nhỏ">−</button>
+</div>
+
+<!-- Bang truot (cua hang, kho, don hang...) -->
+<div class="nt-lop" id="ntLop" hidden>
+  <section class="nt-bang" id="ntBang" role="dialog" aria-modal="true" aria-labelledby="ntBangTit">
+    <header class="nt-bang-dau">
+      <h2 id="ntBangTit"></h2>
+      <button type="button" class="nt-dong" id="ntBangDong" aria-label="Đóng">✕</button>
+    </header>
+    <div class="nt-tab" id="ntBangTab"></div>
+    <div class="nt-bang-than" id="ntBangThan"></div>
+  </section>
+</div>
+
+<!-- Cau hoi on tu (cho an / tuoi nuoc) -->
+<div class="nt-lop" id="ntHoi" hidden>
+  <section class="nt-hoi" role="dialog" aria-modal="true" aria-labelledby="ntHoiTit">
+    <header class="nt-hoi-dau">
+      <img id="ntHoiAnh" src="" alt="" draggable="false">
+      <div>
+        <h2 id="ntHoiTit"></h2>
+        <p id="ntHoiPhu"></p>
+      </div>
+      <button type="button" class="nt-dong" id="ntHoiDong" aria-label="Đóng">✕</button>
+    </header>
+    <div class="nt-hoi-tien" id="ntHoiTien"></div>
+    <div class="nt-hoi-cau" id="ntHoiCau"></div>
+    <div class="nt-hoi-chon" id="ntHoiChon"></div>
+    <p class="nt-hoi-bao" id="ntHoiBao" role="status"></p>
+  </section>
+</div>
+
+<!-- Chua dang nhap -->
+<div class="nt-lop nt-lop-dac" id="ntCong" hidden>
+  <section class="nt-cong">
+    <img src="/images/farm/nha-1.svg" alt="" draggable="false">
+    <h1>Nông trại của em</h1>
+    <p>Đăng nhập để có nông trại riêng. Học bài kiếm sao, rồi dùng sao mua gà, bò, hoa, đèn lồng… trang trí nông trại đẹp nhất lớp!</p>
+    <a class="nt-nut nt-nut-xanh nt-nut-to" href="/#dang-nhap">Đăng nhập</a>
+  </section>
+</div>
+
+<div class="nt-bao" id="ntBao" role="status" aria-live="polite"></div>
+
+<script src="/js/nhac-nen.js"></script>
+<script src="/js/data.js"></script>
+<script src="/js/nong-trai.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+{
+ "zh": "神奇的丝瓜",
+ "py": "Shénqí de sīguā",
+ "vn": "Quả mướp thần kỳ",
+ "topic": "第五单元 美丽家园 · Sức sống kỳ diệu của cây mướp",
+ "vocabCount": 48,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "随即",
+   "explain": "随即 là PHÓ TỪ, biểu thị việc thứ hai xảy ra NGAY SAU việc thứ nhất (紧跟着就发生) — \"ngay sau đó, liền\". Đứng trước động từ ở VẾ SAU (có thể lược chủ ngữ): 他答应了一声，随即把东西递给我. Dùng trong văn viết; gần nghĩa 立即, 马上 nhưng nhấn sự NỐI TIẾP giữa hai hành động / hai sự việc. Phải có một việc xảy ra trước làm mốc; không dùng cho kế hoạch tương lai xa.",
+   "rule": "Việc 1，(S +) <strong style=\"color:var(--sky-d)\">随即</strong> + V (việc 2)　|　S + V1 + 了……，<strong style=\"color:var(--sky-d)\">随即</strong> + (又) + V2",
+   "examples": [
+    {
+     "zh": "缺乏父母之爱的孩子，不安全感也会随即产生。",
+     "py": "Quēfá fùmǔ zhī ài de háizi, bù ānquángǎn yě huì suíjí chǎnshēng.",
+     "vn": "Đứa trẻ thiếu tình thương của cha mẹ, cảm giác bất an cũng sẽ theo đó mà nảy sinh ngay."
+    },
+    {
+     "zh": "在公司的内部会议上，大家对这个产品一致看好，总经理更是信心百倍，随即开始制定市场开拓方案。",
+     "py": "Zài gōngsī de nèibù huìyì shang, dàjiā duì zhège chǎnpǐn yízhì kànhǎo, zǒngjīnglǐ gèng shì xìnxīn bǎibèi, suíjí kāishǐ zhìdìng shìchǎng kāituò fāng'àn.",
+     "vn": "Trong cuộc họp nội bộ của công ty, mọi người đều đánh giá cao sản phẩm này, tổng giám đốc lại càng tự tin gấp bội, lập tức bắt tay xây dựng phương án mở rộng thị trường."
+    },
+    {
+     "zh": "春天，孩子们在楼旁空地上开出一个小小的花园，随即种上了一棵树、几株花和几粒丝瓜种子。",
+     "py": "Chūntiān, háizimen zài lóu páng kòngdì shang kāichū yí ge xiǎoxiǎo de huāyuán, suíjí zhòngshangle yì kē shù, jǐ zhū huā hé jǐ lì sīguā zhǒngzi.",
+     "vn": "Mùa xuân, bọn trẻ vỡ ra một khu vườn nho nhỏ trên khoảnh đất trống cạnh tòa nhà, rồi ngay sau đó trồng lên một cái cây, mấy khóm hoa và gieo mấy hạt mướp."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "随即，他把手里的东西递给了我。",
+     "why": "随即 là phó từ chỉ \"ngay sau một việc khác\" — phải có việc thứ nhất đi trước, và 随即 đứng trước động từ, không tách bằng dấu phẩy như liên từ.",
+     "right": "他答应了一声，随即把手里的东西递给了我。"
+    },
+    {
+     "wrong": "我明年随即去中国留学。",
+     "why": "随即 không dùng cho kế hoạch tương lai xa, không có hành động làm mốc ngay trước đó; nói về tương lai dùng 就 / 将.",
+     "right": "我明年就去中国留学。"
+    }
+   ]
+  },
+  {
+   "point": "宁愿",
+   "explain": "宁愿 là PHÓ TỪ, dùng trong câu ghép LỰA CHỌN: sau khi so sánh lợi – hại, được – mất, chọn lấy một cách làm (thường là cách chịu thiệt hơn) — \"thà\". Khung thường gặp: 宁愿……也要…… (thà chịu A cũng phải đạt B) và 宁愿……也不…… (thà A chứ không B). Có thể nói 宁可, 宁肯. Vế sau dùng 也, không dùng 但是. 宁 ở đây đọc nìng.",
+   "rule": "<strong style=\"color:var(--sky-d)\">宁愿</strong> + A (chấp nhận)，<strong style=\"color:var(--sky-d)\">也要</strong> + B (mục đích)　|　<strong style=\"color:var(--sky-d)\">宁愿</strong> + A，<strong style=\"color:var(--sky-d)\">也不</strong> + B (điều loại bỏ)",
+   "examples": [
+    {
+     "zh": "我心中难免不解：古人是怎么想的，愣是编出个拔苗助长的故事来？要是我，宁愿用别的比喻。",
+     "py": "Wǒ xīn zhōng nánmiǎn bùjiě: gǔrén shì zěnme xiǎng de, lèng shì biānchū ge bámiáo-zhùzhǎng de gùshi lái? Yàoshi wǒ, nìngyuàn yòng biéde bǐyù.",
+     "vn": "Trong lòng tôi không khỏi thắc mắc: người xưa nghĩ thế nào mà lại cứ bịa ra câu chuyện kéo mạ cho mau lớn? Nếu là tôi, tôi thà dùng một phép so sánh khác."
+    },
+    {
+     "zh": "咱们宁愿多花点儿钱，也要买个质量好的。",
+     "py": "Zánmen nìngyuàn duō huā diǎnr qián, yě yào mǎi ge zhìliàng hǎo de.",
+     "vn": "Chúng mình thà tốn thêm chút tiền, cũng phải mua cái chất lượng tốt."
+    },
+    {
+     "zh": "他就是这样，宁愿吃苦受累，也决不求人。",
+     "py": "Tā jiù shì zhèyàng, nìngyuàn chīkǔ shòulèi, yě jué bù qiú rén.",
+     "vn": "Anh ấy là vậy đó, thà chịu khổ chịu mệt chứ nhất quyết không cầu cạnh ai."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我宁愿走路去学校，也坐公共汽车。",
+     "why": "Thiếu 不: muốn loại bỏ phương án B phải nói 宁愿 A，也不 B.",
+     "right": "我宁愿走路去学校，也不坐公共汽车。"
+    },
+    {
+     "wrong": "他宁愿吃苦受累，但是决不求人。",
+     "why": "Vế sau của 宁愿 dùng 也 (也不 / 也要 / 也决不), không dùng 但是.",
+     "right": "他宁愿吃苦受累，也决不求人。"
+    }
+   ]
+  },
+  {
+   "point": "A归A",
+   "explain": "A归A là cách nói khẩu ngữ. \"A\" liên quan về nghĩa với câu trước: là từ ngữ đã xuất hiện (toàn bộ hoặc một phần) ở phía trước, có khi là sự khái quát ý câu trên — như 不解 trong bài khoá đã xuất hiện ở câu trước. A归A làm mạnh ý NHƯỢNG BỘ (\"A thì A thật\"), vế sau biểu thị ý đối ứng hoặc CHUYỂN NGƯỢC lại (thường có 但 / 可 / 还是 / 也 / 都). Hai chữ A phải giống hệt nhau.",
+   "rule": "<strong style=\"color:var(--sky-d)\">A归A</strong>，(但 / 可) + S + 还是 / 也 / 都 + ……　(A = từ ngữ vừa nhắc đến ở trước)",
+   "examples": [
+    {
+     "zh": "不解归不解，我每天工作疲倦了，都要去看看那几棵丝瓜。",
+     "py": "Bùjiě guī bùjiě, wǒ měi tiān gōngzuò píjuàn le, dōu yào qù kànkan nà jǐ kē sīguā.",
+     "vn": "Thắc mắc thì thắc mắc, ngày nào làm việc mệt rồi tôi cũng đều ra ngắm mấy cây mướp ấy."
+    },
+    {
+     "zh": "老张心里很不满意：大家都有意见，为什么偏叫我去说？不满归不满，老张也只能去，谁让他是长辈呢！",
+     "py": "Lǎo Zhāng xīnli hěn bù mǎnyì: dàjiā dōu yǒu yìjiàn, wèi shénme piān jiào wǒ qù shuō? Bùmǎn guī bùmǎn, Lǎo Zhāng yě zhǐ néng qù, shéi ràng tā shì zhǎngbèi ne!",
+     "vn": "Ông Trương trong lòng rất không vui: mọi người ai cũng có ý kiến, sao lại cứ bắt tôi đi nói? Không vui thì không vui, ông Trương cũng đành phải đi, ai bảo ông là bậc bề trên chứ!"
+    },
+    {
+     "zh": "朋友之间，开玩笑归开玩笑，但千万别过了头。",
+     "py": "Péngyou zhījiān, kāi wánxiào guī kāi wánxiào, dàn qiānwàn bié guòle tóu.",
+     "vn": "Giữa bạn bè với nhau, đùa thì đùa, nhưng tuyệt đối đừng quá trớn."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "不解归不理解，我每天都要去看看那几棵丝瓜。",
+     "why": "Hai chữ A trong A归A phải lặp lại y hệt nhau.",
+     "right": "不解归不解，我每天都要去看看那几棵丝瓜。"
+    },
+    {
+     "wrong": "喜欢归喜欢，他买了那件很贵的衣服。",
+     "why": "Vế sau phải có ý chuyển ngược so với A (thích — nhưng không mua); \"thích nên mua\" không có sự đối ứng, không dùng A归A.",
+     "right": "喜欢归喜欢，那件衣服太贵了，他还是没买。"
+    }
+   ]
+  }
+ ]
+}

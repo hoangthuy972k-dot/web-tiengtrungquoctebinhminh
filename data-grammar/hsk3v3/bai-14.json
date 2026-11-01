@@ -1,0 +1,583 @@
+{
+ "/lessons/hsk3v3-bai-14.html": {
+  "points": [
+   {
+    "title": "Câu bị động (1) — Chủ ngữ + 被 + (tân ngữ) + V + thành phần khác",
+    "errors": [
+     {
+      "wrong": "这本书被别人借。",
+      "why": "động từ sau 被 không đứng một mình; phải có thành phần khác cho biết kết quả (了、走了、完了、在 + nơi chốn…).",
+      "right": "这本书被别人借走了。"
+     },
+     {
+      "wrong": "水果被弟弟可能吃了。",
+      "why": "phó từ và động từ năng nguyện (可能、经常、已经、没…) phải đặt TRƯỚC 被.",
+      "right": "水果可能被弟弟吃了。"
+     },
+     {
+      "wrong": "一本书被别人借走了。",
+      "why": "chủ ngữ của câu 被 phải là người / vật đã xác định (这本书、我的书), không dùng cụm số lượng không xác định như 一本书.",
+      "right": "这本书被别人借走了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: A: 你的自行车呢？ B: “Bị anh trai mình đi mất rồi.” (自行车 – ôn HSK3 Bài 7)",
+      "pre": "我的自行车",
+      "blank": "被哥哥骑走了",
+      "post": "。",
+      "options": [
+       "被哥哥骑走了",
+       "哥哥被骑走了",
+       "被骑哥哥走了"
+      ],
+      "answer": 0,
+      "explanation": "被 + người + 骑 + 走了; 骑 (ôn HSK3 Bài 4), 走 cho biết kết quả."
+     },
+     {
+      "context": "Sách: A: 你怎么没带照相机？ B: “Máy ảnh bị bạn mình mượn đi rồi.” (相机 – ôn HSK3 Bài 4)",
+      "pre": "照相机",
+      "blank": "被朋友借走了",
+      "post": "。",
+      "options": [
+       "被朋友借走了",
+       "朋友被借走了",
+       "被借朋友走了"
+      ],
+      "answer": 0,
+      "explanation": "被 + người + V + 走了; 借 (ôn HSK3 Bài 12)."
+     },
+     {
+      "context": "Sách: A: 我刚买的咖啡呢？ B: “Có lẽ bị em gái bạn uống mất rồi.” (咖啡 – ôn HSK2 Bài 9)",
+      "pre": "咖啡",
+      "blank": "可能被你妹妹喝了",
+      "post": "。",
+      "options": [
+       "可能被你妹妹喝了",
+       "被你妹妹可能喝了",
+       "被可能你妹妹喝了"
+      ],
+      "answer": 0,
+      "explanation": "可能 (ôn HSK2 Bài 13) đứng TRƯỚC 被."
+     },
+     {
+      "context": "“Hoa quả có lẽ đã bị em trai ăn mất rồi.”",
+      "pre": "水果",
+      "blank": "可能被弟弟",
+      "post": "吃了。",
+      "options": [
+       "可能被弟弟",
+       "被弟弟可能",
+       "被可能弟弟"
+      ],
+      "answer": 0,
+      "explanation": "Phó từ / động từ năng nguyện đứng trước 被; 水果 (ôn HSK1 Bài 10)."
+     },
+     {
+      "context": "“Hai đứa mình thường bị gọi nhầm tên.” (俩 = hai người)",
+      "pre": "我们俩经常被叫",
+      "blank": "错",
+      "post": "名字。",
+      "options": [
+       "错",
+       "在",
+       "给"
+      ],
+      "answer": 0,
+      "explanation": "V + 错 — bổ ngữ kết quả “nhầm” (错 – ôn HSK2 Bài 10); 经常 (ôn HSK2 Bài 11) đứng trước 被."
+     },
+     {
+      "context": "“Mình không nhớ nữa, có thể bị mình để ở nhà rồi.”",
+      "pre": "我忘记了，可能被我",
+      "blank": "放在家里了",
+      "post": "。",
+      "options": [
+       "放在家里了",
+       "放家里在了",
+       "在家里放"
+      ],
+      "answer": 0,
+      "explanation": "Sau 被 + người + V cần thành phần khác: 放 + 在家里 + 了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这本书被别人借。",
+      "isCorrect": false,
+      "correctVersion": "这本书被别人借走了。",
+      "explanation": "Động từ 借 sau 被 không đứng một mình, phải thêm 走了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我的校园卡没被别人拿走，还在我的书包里。",
+      "isCorrect": true,
+      "explanation": "Đúng: 没 đứng trước 被. 书包 (ôn HSK2 Bài 4), 校园卡 (ôn HSK3 Bài 9)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Quyển sách này đã bị người khác mượn mất rồi.”",
+      "words": [
+       "这本书",
+       "被",
+       "别人",
+       "借走",
+       "了",
+       "。"
+      ],
+      "answer": "这本书被别人借走了。",
+      "explanation": "这本书 + 被 + 别人 + 借走了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bánh kem bị em trai ăn mất rồi.”",
+      "words": [
+       "蛋糕",
+       "被",
+       "弟弟",
+       "吃",
+       "了",
+       "。"
+      ],
+      "answer": "蛋糕被弟弟吃了。",
+      "explanation": "蛋糕 (ôn HSK2 Bài 6)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Thầy cô và hiệu trưởng cũng được mời lên nhảy cùng.”",
+      "words": [
+       "老师",
+       "和",
+       "校长",
+       "也",
+       "被",
+       "叫",
+       "起来",
+       "一块儿",
+       "跳",
+       "。"
+      ],
+      "answer": "老师和校长也被叫起来一块儿跳。",
+      "explanation": "也 đứng trước 被; câu của Bài khoá 4."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hộ chiếu của tôi bị tôi để quên ở khách sạn rồi.”",
+      "words": [
+       "我的",
+       "护照",
+       "被",
+       "我",
+       "忘在",
+       "宾馆",
+       "了",
+       "。"
+      ],
+      "answer": "我的护照被我忘在宾馆了。",
+      "explanation": "忘 (ôn HSK2 Bài 6), 宾馆 (ôn HSK3 Bài 4), 护照 (ôn HSK3 Bài 1)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng câu bị động 被.",
+      "promptLang": "vi",
+      "prompt": "Điện thoại của tôi bị em gái lấy đi rồi.",
+      "answer": "我的手机被妹妹拿走了。",
+      "answerPy": "Wǒ de shǒujī bèi mèimei názǒu le.",
+      "explanation": "拿 (ôn HSK2 Bài 3) + 走 cho biết kết quả."
+     }
+    ]
+   },
+   {
+    "title": "Câu ghép tiếp nối 「先……，再 / 然后……」",
+    "errors": [
+     {
+      "wrong": "我去先图书馆借书，然后去游泳。",
+      "why": "先 là phó từ, phải đứng trước động từ (先 + 去), không chen giữa động từ và tân ngữ.",
+      "right": "我先去图书馆借书，然后去游泳。"
+     },
+     {
+      "wrong": "你先去买门票，再你来这里找我。",
+      "why": "再 là phó từ, phải đứng sau chủ ngữ, ngay trước động từ: (你) 再来.",
+      "right": "你先去买门票，你再来这里找我。"
+     },
+     {
+      "wrong": "我先去图书馆借书，以后去游泳。",
+      "why": "“sau đó” nối hai hành động liên tiếp dùng 然后 hoặc 再; 以后 không đứng một mình đầu mệnh đề sau để nối trình tự.",
+      "right": "我先去图书馆借书，然后去游泳。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: A: 下课以后，你做什么？ B: …",
+      "pre": "我先去图书馆看书，",
+      "blank": "然后",
+      "post": "去游泳。",
+      "options": [
+       "然后",
+       "以后",
+       "先"
+      ],
+      "answer": 0,
+      "explanation": "先……，然后…… — trước… sau đó…; 游泳 (ôn HSK2 Bài 7)."
+     },
+     {
+      "context": "Sách: A: 考完试了，你有什么打算？ B: …",
+      "pre": "我打算先好好休息几天，",
+      "blank": "再",
+      "post": "去旅游。",
+      "options": [
+       "再",
+       "先",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "再 + V = rồi mới…; 打算 (ôn HSK3 Bài 6), 旅游 (ôn HSK2 Bài 1)."
+     },
+     {
+      "context": "Sách: A: 听说你妈妈要来北京，你打算带她去哪儿玩？ B: …",
+      "pre": "我打算",
+      "blank": "先带她去北京大学看看，然后去吃饺子",
+      "post": "。",
+      "options": [
+       "先带她去北京大学看看，然后去吃饺子",
+       "然后带她去北京大学看看，先去吃饺子",
+       "带她去北京大学先看看，以后先去吃饺子"
+      ],
+      "answer": 0,
+      "explanation": "先 + V₁，然后 + V₂; 北京大学 (ôn HSK2 Bài 2), 带 (ôn HSK3 Bài 1)."
+     },
+     {
+      "context": "“Bạn đi mua vé vào cửa trước, rồi hãy đến đây tìm mình.”",
+      "pre": "你先去买门票，",
+      "blank": "再来",
+      "post": "这里找我。",
+      "options": [
+       "再来",
+       "来再",
+       "先来"
+      ],
+      "answer": 0,
+      "explanation": "再 đứng ngay trước động từ 来; 门票 (ôn HSK2 Bài 15)."
+     },
+     {
+      "context": "“Các bạn về phòng nghỉ một lát trước, sau đó hẵng ra ăn tối.”",
+      "pre": "你们",
+      "blank": "先回房间",
+      "post": "休息一会儿，然后再出来吃晚饭。",
+      "options": [
+       "先回房间",
+       "回先房间",
+       "回房间先"
+      ],
+      "answer": 0,
+      "explanation": "先 đứng trước động từ 回; 一会儿 (ôn HSK2 Bài 5)."
+     },
+     {
+      "context": "“Hôm nay mình rất bận, phải đến thư viện mượn sách trước, sau đó đi bơi.”",
+      "pre": "我今天忙得很，要",
+      "blank": "先去图书馆借书",
+      "post": "，然后去游泳。",
+      "options": [
+       "先去图书馆借书",
+       "去先图书馆借书",
+       "去图书馆借书先"
+      ],
+      "answer": 0,
+      "explanation": "要 + 先 + V; câu của Bài khoá 2."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我先去超市买东西，然后回家做饭。",
+      "isCorrect": true,
+      "explanation": "Đúng: 先 + V₁，然后 + V₂. 超市 (ôn HSK1 Bài 6)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你先吃饭，再你去写作业。",
+      "isCorrect": false,
+      "correctVersion": "你先吃饭，再去写作业。",
+      "explanation": "再 đứng sau chủ ngữ, trước động từ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mình phải đến thư viện mượn sách trước, sau đó đi bơi.”",
+      "words": [
+       "我",
+       "要",
+       "先",
+       "去",
+       "图书馆",
+       "借书",
+       "，",
+       "然后",
+       "去",
+       "游泳",
+       "。"
+      ],
+      "answer": "我要先去图书馆借书，然后去游泳。",
+      "explanation": "先 + 去图书馆借书，然后 + 去游泳."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn đi mua vé vào cửa trước, rồi hãy đến đây tìm mình.”",
+      "words": [
+       "你",
+       "先",
+       "去",
+       "买",
+       "门票",
+       "，",
+       "再",
+       "来",
+       "这里",
+       "找我",
+       "。"
+      ],
+      "answer": "你先去买门票，再来这里找我。",
+      "explanation": "再 + 来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng ta ăn cơm trước rồi đi xem phim nhé.”",
+      "words": [
+       "我们",
+       "先",
+       "吃饭",
+       "，",
+       "然后",
+       "去",
+       "看",
+       "电影",
+       "吧",
+       "。"
+      ],
+      "answer": "我们先吃饭，然后去看电影吧。",
+      "explanation": "吧 đề nghị (ôn HSK1 Bài 7)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Con làm bài tập trước, rồi hãy xem tivi.”",
+      "words": [
+       "你",
+       "先",
+       "写",
+       "作业",
+       "，",
+       "再",
+       "看",
+       "电视",
+       "。"
+      ],
+      "answer": "你先写作业，再看电视。",
+      "explanation": "作业 (ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 先……，然后…….",
+      "promptLang": "vi",
+      "prompt": "Tôi về nhà nghỉ một lát trước, sau đó đi siêu thị.",
+      "answer": "我先回家休息一会儿，然后去超市。",
+      "answerPy": "Wǒ xiān huí jiā xiūxi yíhuìr, ránhòu qù chāoshì.",
+      "explanation": "一会儿 (ôn HSK2 Bài 5); 超市 (ôn HSK1 Bài 6)."
+     }
+    ]
+   },
+   {
+    "title": "Cấu trúc cố định 「× 什么（啊）」 — phản bác, an ủi",
+    "errors": [
+     {
+      "wrong": "紧张什么啊？",
+      "why": "đây không phải câu hỏi mà là câu phản bác / an ủi — không dùng dấu hỏi, thường nói tiếp lý do phía sau.",
+      "right": "紧张什么啊，我们都相信你。"
+     },
+     {
+      "wrong": "什么紧张啊，我们都相信你。",
+      "why": "“×” (tính từ / động từ) đứng TRƯỚC 什么, không đặt 什么 lên đầu.",
+      "right": "紧张什么啊，我们都相信你。"
+     },
+     {
+      "wrong": "你很紧张什么啊，我们都相信你。",
+      "why": "trước “× 什么” không thêm 很; chỉ lặp lại đúng tính từ / động từ của người kia.",
+      "right": "你紧张什么啊，我们都相信你。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Sách: A: 这个地方太远了，走过去要很久。 B: “… , đi bộ mười mấy phút là đến.”",
+      "pre": "",
+      "blank": "远什么啊",
+      "post": "，走路十几分钟就到了。",
+      "options": [
+       "远什么啊",
+       "什么远啊",
+       "很远什么啊"
+      ],
+      "answer": 0,
+      "explanation": "× = 远, lặp lại từ câu A; 走路 (ôn HSK2 Bài 9), 久 (ôn HSK3 Bài 4)."
+     },
+     {
+      "context": "Sách: A: 这家饭馆的菜挺贵的，咱们换一家吧。 B: …",
+      "pre": "",
+      "blank": "贵什么啊",
+      "post": "，今天你生日，想吃什么就吃什么。",
+      "options": [
+       "贵什么啊",
+       "什么贵啊",
+       "贵不贵啊"
+      ],
+      "answer": 0,
+      "explanation": "想吃什么就吃什么 (ôn HSK3 Bài 2); 换 (ôn HSK3 Bài 3)."
+     },
+     {
+      "context": "Sách: A: 明天就要考试了，我好紧张。 B: …",
+      "pre": "",
+      "blank": "紧张什么啊",
+      "post": "，我们都相信你。",
+      "options": [
+       "紧张什么啊",
+       "什么紧张啊",
+       "紧张吗"
+      ],
+      "answer": 0,
+      "explanation": "紧张 (ôn HSK3 Bài 9); 相信 của bài này."
+     },
+     {
+      "context": "A: 我最近胖了很多，不想拍照了。 B: “Béo gì mà béo, …”",
+      "pre": "",
+      "blank": "胖什么啊",
+      "post": "，你看起来不胖也不瘦。",
+      "options": [
+       "胖什么啊",
+       "什么胖啊",
+       "胖了什么啊"
+      ],
+      "answer": 0,
+      "explanation": "看起来 (ôn HSK3 Bài 1); 胖 (ôn HSK3 Bài 8)."
+     },
+     {
+      "context": "A: 还有十分钟，快点儿走吧。 B: “Vội gì chứ, …”",
+      "pre": "",
+      "blank": "急什么啊",
+      "post": "，马上就到了。",
+      "options": [
+       "急什么啊",
+       "什么急啊",
+       "很急什么啊"
+      ],
+      "answer": 0,
+      "explanation": "急 (ôn HSK3 Bài 6); 马上 (ôn HSK3 Bài 2)."
+     },
+     {
+      "context": "A: 这个题太难了，我不会做。 B: “Khó gì mà khó, …”",
+      "pre": "",
+      "blank": "难什么啊",
+      "post": "，老师上课讲过，你再想想。",
+      "options": [
+       "难什么啊",
+       "什么难啊",
+       "很难什么啊"
+      ],
+      "answer": 0,
+      "explanation": "难, 讲 (ôn HSK3 Bài 10)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "什么冷啊，今天一点儿也不冷。",
+      "isCorrect": false,
+      "correctVersion": "冷什么啊，今天一点儿也不冷。",
+      "explanation": "× (冷) phải đứng trước 什么."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "A: 这件衣服太贵了。B: 贵什么啊，才一百块。",
+      "isCorrect": true,
+      "explanation": "Đúng: phản bác ý “đắt”; 才 = chỉ có (ôn HSK3 Bài 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Có gì mà phải căng thẳng chứ, bạn phải tin vào bản thân.”",
+      "words": [
+       "紧张",
+       "什么",
+       "啊",
+       "，",
+       "你",
+       "要",
+       "相信",
+       "自己",
+       "。"
+      ],
+      "answer": "紧张什么啊，你要相信自己。",
+      "explanation": "紧张什么啊 + lời động viên."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Vội gì chứ, sắp đến nơi rồi.”",
+      "words": [
+       "急",
+       "什么",
+       "啊",
+       "，",
+       "马上",
+       "就",
+       "到",
+       "了",
+       "。"
+      ],
+      "answer": "急什么啊，马上就到了。",
+      "explanation": "马上就……了 (ôn HSK3 Bài 2)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đắt gì mà đắt, quán này rất rẻ.”",
+      "words": [
+       "贵",
+       "什么",
+       "啊",
+       "，",
+       "这家",
+       "饭馆",
+       "很",
+       "便宜",
+       "。"
+      ],
+      "answer": "贵什么啊，这家饭馆很便宜。",
+      "explanation": "便宜 (ôn HSK1 Bài 10); 饭馆 (ôn HSK2 Bài 8)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Xa gì mà xa, đi bộ mười phút là đến.”",
+      "words": [
+       "远",
+       "什么",
+       "啊",
+       "，",
+       "走路",
+       "十",
+       "分钟",
+       "就",
+       "到",
+       "了",
+       "。"
+      ],
+      "answer": "远什么啊，走路十分钟就到了。",
+      "explanation": "远 (ôn HSK2 Bài 2); 就 (ôn HSK2 Bài 1)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng “× 什么啊”.",
+      "promptLang": "vi",
+      "prompt": "(A: Mình mệt quá.) Mệt gì mà mệt, chúng ta mới đi được mười phút thôi.",
+      "answer": "累什么啊，我们才走了十分钟。",
+      "answerPy": "Lèi shénme a, wǒmen cái zǒule shí fēnzhōng.",
+      "explanation": "才 = mới (ôn HSK3 Bài 3); 累 (ôn HSK2 Bài 3)."
+     }
+    ]
+   }
+  ]
+ }
+}

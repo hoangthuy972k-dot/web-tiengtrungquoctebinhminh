@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<defs><clipPath id="cicd-co"><path d="M18 8 C26 4 32 12 40 9 C46 7 50 6 56 8 V36 C50 34 46 35 40 37 C32 40 26 32 18 36Z"/></clipPath></defs>
+<ellipse cx="22" cy="59" rx="12" ry="3" fill="#2b1d3a" opacity="0.15"/>
+<g clip-path="url(#cicd-co)">
+<rect x="16" y="2" width="42" height="40" fill="#fff8ec"/>
+<g fill="#2b1d3a" transform="skewY(-4)">
+<rect x="18" y="5" width="9.5" height="9"/><rect x="37" y="5" width="9.5" height="9"/>
+<rect x="27.5" y="14" width="9.5" height="9"/><rect x="46.5" y="14" width="9.5" height="9"/>
+<rect x="18" y="23" width="9.5" height="9"/><rect x="37" y="23" width="9.5" height="9"/>
+<rect x="27.5" y="32" width="9.5" height="9"/><rect x="46.5" y="32" width="9.5" height="9"/>
+</g>
+</g>
+<path d="M18 8 C26 4 32 12 40 9 C46 7 50 6 56 8 V36 C50 34 46 35 40 37 C32 40 26 32 18 36Z" fill="none" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round"/>
+<rect x="13" y="4" width="6" height="56" rx="3" fill="#8a93b8" stroke="#2b1d3a" stroke-width="3"/>
+<circle cx="16" cy="5" r="4" fill="#ffd23f" stroke="#2b1d3a" stroke-width="2.6"/>
+</svg>

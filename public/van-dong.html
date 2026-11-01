@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Vận động trả lời · Hi Hán 喜汉</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2b1d3d">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700&family=Be+Vietnam+Pro:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/van-dong.css">
+<link rel="stylesheet" href="/css/sao-game.css">
+</head>
+<body>
+<div class="vd" id="vd" data-tro="chem">
+  <header class="vd-bar">
+    <a class="vd-btn" id="vdThoat" href="/game">← Thoát</a>
+    <div class="vd-bar-t"><b id="vdTieuDe">🤸 Vận động trả lời</b><span id="vdNhan"></span></div>
+    <div class="vd-bar-phai">
+      <span class="vd-diem" id="vdDiem" hidden>0</span>
+      <button type="button" class="vd-btn vd-ic" id="vdNhac" title="Bật/tắt nhạc nền" aria-pressed="true">🎵</button>
+      <button type="button" class="vd-btn vd-ic" id="vdTieng" title="Bật/tắt âm thanh">🔊</button>
+      <button type="button" class="vd-btn vd-ic" id="vdFull" title="Toàn màn hình">⛶</button>
+    </div>
+  </header>
+
+  <!-- Sanh -->
+  <section class="vd-sanh" id="vdSanh">
+    <div class="vd-sanh-the">
+      <div class="vd-sanh-ic" id="vdSanhIc" aria-hidden="true"><img class="vd-anh" src="/images/game/cam-watermelon.svg" alt="" draggable="false"></div>
+      <h1>Vận động trả lời</h1>
+      <p class="vd-sanh-phu">Dùng tay và cả cơ thể để chọn đáp án trước camera!</p>
+      <div class="vd-tro" role="group" aria-label="Chọn trò chơi">
+        <button type="button" data-tro="chem"><span aria-hidden="true"><img src="/images/game/cam-watermelon.svg" alt="" draggable="false"></span><b>Chém hoa quả</b><small>Ngón trỏ làm dao</small></button>
+        <button type="button" data-tro="theduc"><span aria-hidden="true"><img src="/images/game/cam-pose-d.svg" alt="" draggable="false"></span><b>Thể dục ABC</b><small>Tạo dáng chọn đáp án</small></button>
+        <button type="button" data-tro="ngoisao"><span aria-hidden="true"><img src="/images/game/cam-star.svg" alt="" draggable="false"></span><b>Cuộc đua ngôi sao</b><small>Hai bạn thi giơ ngón tay</small></button>
+      </div>
+      <div class="vd-chedo" id="vdDa" role="group" aria-label="Kiểu đồ vật">
+        <button type="button" data-da="qua" class="is-on"><img src="/images/game/cam-orange.svg" alt="" draggable="false"> Hoa quả</button>
+        <button type="button" data-da="bong"><img src="/images/game/cam-balloon-b.svg" alt="" draggable="false"> Bong bóng</button>
+      </div>
+      <div class="vd-ten" id="vdTenO" hidden>
+        <!-- Danh sach lop: boc ngau nhien 2 ban moi vong -->
+        <div class="vd-lop">
+          <label class="vd-lop-chon"><span>📋 Danh sách lớp</span>
+            <select id="vdLop"><option value="">Tự nhập tên hai bạn</option></select>
+          </label>
+          <button type="button" class="vd-boc" id="vdBoc" hidden>🎲 Bốc 2 bạn ngẫu nhiên</button>
+          <div class="vd-lop-ds" id="vdLopDsO" hidden>
+            <div class="vd-lop-dau"><span><span id="vdLopDem">0</span> bạn có mặt · bấm tên để</span>
+              <span class="vd-lop-che" role="group" aria-label="Bấm tên để"><button type="button" data-che="chon" class="is-on">Chọn bạn lên chơi</button><button type="button" data-che="vang">Đánh dấu vắng</button></span></div>
+            <div id="vdLopDs"></div>
+          </div>
+          <p class="vd-lop-goi" id="vdLopGoi" hidden></p>
+        </div>
+        <label class="trai"><span id="vdTen0Nhan">👈 Bên trái</span><input type="text" id="vdTen0" maxlength="24" autocomplete="off" spellcheck="false"></label>
+        <label class="phai" id="vdTen1O"><span>Bên phải 👉</span><input type="text" id="vdTen1" maxlength="24" autocomplete="off" spellcheck="false"></label>
+        <label class="vd-muc"><span id="vdMucNhan">Mỗi vòng</span>
+          <select id="vdMuc"><option value="3">3 câu</option><option value="5" selected>5 câu</option><option value="7">7 câu</option><option value="10">10 câu</option></select>
+        </label>
+      </div>
+      <div class="vd-cach">
+        <p class="vd-cach-t">Cách chơi</p>
+        <div class="vd-cach-ds" id="vdCachDs"></div>
+      </div>
+      <label class="vd-moiban" id="vdMoiBanO" hidden><input type="checkbox" id="vdMoiBan"> Mỗi câu mời một bạn khác lên</label>
+      <button type="button" class="vd-go" id="vdBatDau">▶ Bắt đầu</button>
+      <p class="vd-loi" id="vdLoi" role="alert"></p>
+    </div>
+  </section>
+
+  <!-- Choi -->
+  <section class="vd-choi" id="vdChoi" hidden>
+    <div class="vd-hoi">
+      <div class="vd-hoi-dau"><span id="vdSo">Câu 1/10</span><span class="vd-tim" id="vdTim"></span><span class="vd-chuoi" id="vdChuoi"></span></div>
+      <div class="vd-gio"><i id="vdGio"></i></div>
+      <div class="vd-hoi-t" id="vdHoi"></div>
+    </div>
+    <div class="vd-san" id="vdSan">
+      <video id="vdVideo" playsinline muted autoplay></video>
+      <canvas id="vdCv"></canvas>
+      <div class="vd-chia" aria-hidden="true"></div>
+      <div class="vd-nguoi trai" id="vdP0" hidden></div>
+      <div class="vd-nguoi phai" id="vdP1" hidden></div>
+      <div class="vd-dau" id="vdDau" hidden aria-hidden="true"><img class="vd-anh" src="/images/game/cam-pose-idle.svg" alt="" draggable="false"></div>
+      <div class="vd-tb" id="vdTb">Đang mở camera…</div>
+    </div>
+    <div class="vd-dap" id="vdDap"></div>
+    <div class="vd-duoi" id="vdDuoi" aria-live="polite"></div>
+  </section>
+
+  <!-- Ket qua -->
+  <section class="vd-kq" id="vdKq" hidden></section>
+</div>
+<div class="vd-hoa" id="vdHoa" aria-hidden="true"></div>
+<script type="module" src="/js/van-dong-mp.js"></script>
+<script src="/js/sao-game.js"></script>
+<script src="/js/nhac-nen.js"></script>
+<script src="/js/van-dong.js"></script>
+</body>
+</html>

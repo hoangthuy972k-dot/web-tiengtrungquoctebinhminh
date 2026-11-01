@@ -1,0 +1,78 @@
+{
+ "zh": "给自己加满水",
+ "py": "Gěi zìjǐ jiāmǎn shuǐ",
+ "vn": "Bơm nước vào tàu",
+ "topic": "Unit 9 感受人生 · Áp lực, trách nhiệm và bản lĩnh vượt sóng gió",
+ "vocabCount": 40,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "朝",
+   "explain": "朝 có hai cách dùng. ĐỘNG TỪ: quay mặt về phía, hướng về (坐西朝东, 脸朝里). GIỚI TỪ: chỉ phương hướng của động tác — 朝 + phương hướng / người + động từ (朝里面放水, 朝我们走来). Khác 向: 朝 KHÔNG làm bổ ngữ đứng sau động từ — nói 走向未来, không nói 走朝未来. Cụm 朝 + … luôn đứng TRƯỚC động từ chính.",
+   "rule": "(Động từ) N + <strong style=\"color:var(--sky-d)\">朝</strong> + phương hướng　|　(Giới từ) <strong style=\"color:var(--sky-d)\">朝</strong> + phương hướng / người + V　|　V + 向 + N (không dùng V + <strong style=\"color:var(--sky-d)\">朝</strong>)",
+   "examples": [
+    {
+     "zh": "我们学校的正门坐西朝东。",
+     "py": "Wǒmen xuéxiào de zhèngmén zuò xī cháo dōng.",
+     "vn": "Cổng chính trường chúng tôi quay mặt về hướng đông."
+    },
+    {
+     "zh": "……老船长命令水手们立刻打开货舱，使劲儿朝里面放水。",
+     "py": "…… lǎo chuánzhǎng mìnglìng shuǐshǒumen lìkè dǎkāi huòcāng, shǐjìnr cháo lǐmiàn fàng shuǐ.",
+     "vn": "… ông thuyền trưởng già ra lệnh cho các thủy thủ lập tức mở khoang hàng, ra sức xả nước vào trong."
+    },
+    {
+     "zh": "我仿佛看到胜利正朝我们走来。",
+     "py": "Wǒ fǎngfú kàndào shènglì zhèng cháo wǒmen zǒulai.",
+     "vn": "Tôi như thấy chiến thắng đang tiến về phía chúng ta."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我们一起走朝美好的未来。",
+     "why": "朝 không làm bổ ngữ đứng sau động từ. Muốn đặt sau động từ phải dùng 向.",
+     "right": "我们一起走向美好的未来。"
+    },
+    {
+     "wrong": "他笑朝我。",
+     "why": "Cụm giới từ 朝 + người phải đứng TRƯỚC động từ, không đặt sau như tiếng Việt “cười với tôi”.",
+     "right": "他朝我笑了笑。"
+    }
+   ]
+  },
+  {
+   "point": "简直",
+   "explain": "简直 là phó từ, biểu thị gần như hoàn toàn là như vậy (nhưng thực ra chưa hẳn), mang giọng PHÓNG ĐẠI, nhấn mạnh. Hay đi với 是 / 像 / 太……了 / 不敢…… / 没法……. Đứng sau chủ ngữ, trước vị ngữ. Không dùng cùng phó từ mức độ 很 / 非常, và không dùng cho câu kể sự thật khách quan.",
+   "rule": "<strong style=\"color:var(--sky-d)\">简直</strong> + (是 / 像) + N / cụm từ　|　<strong style=\"color:var(--sky-d)\">简直</strong> + 太 + Adj + 了　|　<strong style=\"color:var(--sky-d)\">简直</strong> + 不 / 没 + V (不敢相信 · 没法儿比)",
+   "examples": [
+    {
+     "zh": "听到刘方离婚的消息时，我简直不敢相信自己的耳朵。",
+     "py": "Tīngdào Liú Fāng líhūn de xiāoxi shí, wǒ jiǎnzhí bù gǎn xiāngxìn zìjǐ de ěrduo.",
+     "vn": "Khi nghe tin Lưu Phương ly hôn, tôi quả thực không dám tin vào tai mình."
+    },
+    {
+     "zh": "这次张小姐变得格外客气、礼貌，与从前相比，简直像换了个人。",
+     "py": "Zhè cì Zhāng xiǎojiě biàn de géwài kèqi, lǐmào, yǔ cóngqián xiāngbǐ, jiǎnzhí xiàng huànle ge rén.",
+     "vn": "Lần này cô Trương trở nên đặc biệt khách sáo, lịch sự, so với trước kia cứ như biến thành người khác."
+    },
+    {
+     "zh": "“船长简直是疯了，这样做只会增加船的压力，船就会下沉得更快，这不是找死吗？”",
+     "py": "\"Chuánzhǎng jiǎnzhí shì fēng le, zhèyàng zuò zhǐ huì zēngjiā chuán de yālì, chuán jiù huì xiàchén de gèng kuài, zhè bú shì zhǎo sǐ ma?\"",
+     "vn": "\"Thuyền trưởng đúng là điên rồi, làm thế chỉ tăng thêm sức ép cho tàu, tàu sẽ chìm nhanh hơn, thế chẳng phải tự tìm đường chết sao?\""
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这道题简直很难。",
+     "why": "简直 đã mang giọng phóng đại, không đi cùng 很 / 非常. Dùng 简直太……了 hoặc bỏ 简直.",
+     "right": "这道题简直太难了。"
+    },
+    {
+     "wrong": "他简直是我们班的学生。",
+     "why": "Đây là sự thật khách quan, không có ý phóng đại “gần như là” → không dùng 简直.",
+     "right": "他是我们班的学生。"
+    }
+   ]
+  }
+ ]
+}

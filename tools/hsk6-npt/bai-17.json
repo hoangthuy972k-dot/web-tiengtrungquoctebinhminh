@@ -1,0 +1,917 @@
+[
+ {
+  "so": "1",
+  "ten": "「东A西B」",
+  "tenVn": "",
+  "cauTruc": [
+   "东 + A + 西 + B (A, B gần nghĩa): 东张西望, 东拉西扯, 东躲西藏",
+   "Làm vị ngữ / định ngữ (……的) / trạng ngữ (……地)",
+   "东一……西一……: 东一句西一句"
+  ],
+  "giaiThich": "\"东张西望\" được tạo thành từ khuôn \"东A西B\", biểu thị \"chỗ này … , chỗ kia …\" (这里……，那里……) — hành động lặp đi lặp lại ở nhiều nơi, theo nhiều hướng, thường có vẻ lộn xộn, không tập trung. A và B sau 东, 西 thường là hai từ GẦN NGHĨA (张 — 望 đều là nhìn; 拉 — 扯 đều là kéo; 躲 — 藏 đều là trốn). Cả cụm có thể làm vị ngữ, định ngữ (东张西望的苍蝇) hoặc trạng ngữ (东拉西扯地闲聊). Khuôn này còn có dạng 东一句西一句 (câu này câu kia, nói không đầu không cuối).",
+  "viDu": [
+   {
+    "zh": "大家吃完饭没事干，只好东拉西扯地闲聊天儿。",
+    "py": "Dàjiā chīwán fàn méi shì gàn, zhǐhǎo dōnglā-xīchě de xián liáotiānr.",
+    "vn": "Ăn cơm xong chẳng có việc gì làm, mọi người đành tán gẫu đủ thứ chuyện trên trời dưới đất."
+   },
+   {
+    "zh": "有人端来一个盛着菜的盘子，立刻飞来一只东张西望的苍蝇，企图落在盘子上，人动手去打，却总是打不中。",
+    "py": "Yǒu rén duānlái yí ge chéngzhe cài de pánzi, lìkè fēilái yì zhī dōngzhāng-xīwàng de cāngying, qǐtú luò zài pánzi shang, rén dòng shǒu qù dǎ, què zǒngshì dǎ bu zhòng.",
+    "vn": "Có người bưng ra một chiếc đĩa đựng thức ăn, lập tức một con ruồi nhìn ngang nhìn dọc bay tới, toan đậu xuống đĩa; người ta giơ tay đập nhưng lần nào cũng không trúng."
+   },
+   {
+    "zh": "客人还不走，我只好跟他东一句西一句地没话找话说。",
+    "py": "Kèrén hái bù zǒu, wǒ zhǐhǎo gēn tā dōng yí jù xī yí jù de méi huà zhǎo huà shuō.",
+    "vn": "Khách vẫn chưa về, tôi đành nói với ông ấy câu này câu kia, cố kiếm chuyện để nói."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他在门口东看西张。",
+    "why": "Thành ngữ cố định là 东张西望 (东 + 张, 西 + 望), không tự đảo hay thay chữ.",
+    "dung": "他在门口东张西望。"
+   },
+   {
+    "sai": "大家东拉西扯地认真讨论了这个问题。",
+    "why": "东拉西扯 = nói lan man, không vào trọng tâm — mâu thuẫn với 认真讨论.",
+    "dung": "大家东拉西扯地闲聊了一个下午。（或：大家认真讨论了这个问题。）"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "立刻飞来一只",
+       "的苍蝇，企图落在盘子上。"
+      ],
+      "dap": [
+       [
+        "东张西望"
+       ]
+      ],
+      "chon": [
+       "东张西望",
+       "东拉西扯",
+       "东躲西藏"
+      ],
+      "goiY": "\"Lập tức một con ruồi nhìn ngang nhìn dọc bay tới.\" (câu bài khoá)",
+      "giai": "张, 望 đều là \"nhìn\" → 东张西望 = nhìn quanh quất."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家吃完饭没事干，只好",
+       "地闲聊天儿。"
+      ],
+      "dap": [
+       [
+        "东拉西扯"
+       ]
+      ],
+      "chon": [
+       "东拉西扯",
+       "东张西望",
+       "东奔西走"
+      ],
+      "goiY": "\"Ăn xong không có việc gì, mọi người đành tán gẫu lan man.\" (ví dụ của sách)",
+      "giai": "拉, 扯 đều là \"kéo\" → nói chuyện kéo sang đủ đề tài: 东拉西扯."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "小偷怕被警察发现，整天",
+       "的，不敢回家。"
+      ],
+      "dap": [
+       [
+        "东躲西藏"
+       ]
+      ],
+      "chon": [
+       "东躲西藏",
+       "东张西望",
+       "东拉西扯"
+      ],
+      "goiY": "\"Tên trộm sợ bị cảnh sát phát hiện, suốt ngày trốn chỗ này chỗ kia, không dám về nhà.\"",
+      "giai": "躲, 藏 đều là \"trốn\" → 东躲西藏."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为了找工作，他每天",
+       "，累得要命。"
+      ],
+      "dap": [
+       [
+        "东奔西走"
+       ]
+      ],
+      "chon": [
+       "东奔西走",
+       "东拉西扯",
+       "东躲西藏"
+      ],
+      "goiY": "\"Để tìm việc, ngày nào anh ấy cũng chạy ngược chạy xuôi, mệt muốn chết.\"",
+      "giai": "奔, 走 đều là di chuyển → 东奔西走 = bôn ba khắp nơi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "客人还不走，我只好跟他",
+       "地没话找话说。"
+      ],
+      "dap": [
+       [
+        "东一句西一句"
+       ]
+      ],
+      "chon": [
+       "东一句西一句",
+       "一句一句",
+       "东句西句"
+      ],
+      "goiY": "\"Khách chưa về, tôi đành nói câu này câu kia với ông ấy.\" (ví dụ của sách)",
+      "giai": "Dạng 东一 + LT + 西一 + LT: 东一句西一句 = câu này câu kia, không đầu không cuối."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "上课的时候别",
+       "，要专心听讲。"
+      ],
+      "dap": [
+       [
+        "东张西望"
+       ]
+      ],
+      "chon": [
+       "东张西望",
+       "东躲西藏",
+       "东奔西走"
+      ],
+      "goiY": "\"Trong giờ học đừng nhìn ngang nhìn dọc, phải chuyên tâm nghe giảng.\"",
+      "giai": "Không tập trung, mắt nhìn khắp nơi → 东张西望."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "东张西望的",
+       "一只",
+       "飞来",
+       "苍蝇",
+       "立刻"
+      ],
+      "dap": [
+       "立刻飞来一只东张西望的苍蝇。"
+      ],
+      "goiY": "Lập tức một con ruồi nhìn ngang nhìn dọc bay tới.",
+      "giai": "东张西望的 làm định ngữ cho 苍蝇."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "只好",
+       "东拉西扯地",
+       "大家",
+       "闲聊天儿"
+      ],
+      "dap": [
+       "大家只好东拉西扯地闲聊天儿。"
+      ],
+      "goiY": "Mọi người đành tán gẫu lan man.",
+      "giai": "东拉西扯地 làm trạng ngữ trước động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "被大黄猫",
+       "追得",
+       "黑猫",
+       "东躲西藏"
+      ],
+      "dap": [
+       "黑猫被大黄猫追得东躲西藏。"
+      ],
+      "goiY": "Con mèo đen bị con mèo vàng đuổi chạy trốn khắp nơi.",
+      "giai": "V得 + 东躲西藏 làm bổ ngữ trạng thái."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "那孩子站在路口，东望西张，显得很着急。",
+      "dung": false,
+      "sua": "那孩子站在路口，东张西望，显得很着急。",
+      "giai": "Thành ngữ cố định là 东张西望, không đảo chữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "坐在火车上，大家天南海北、东拉西扯地闲聊起来。",
+      "dung": true,
+      "giai": "东拉西扯 + 闲聊 hợp nghĩa (nói chuyện lan man) — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "开会时他东拉西扯，很快就把问题说清楚了。",
+      "dung": false,
+      "sua": "开会时他东拉西扯，半天也没把问题说清楚。",
+      "giai": "东拉西扯 là nói lan man, không vào trọng tâm — mâu thuẫn với 很快就把问题说清楚了."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Thằng bé đứng ở cổng trường nhìn ngang nhìn dọc, hình như đang tìm mẹ.",
+      "dap": [
+       "那个男孩站在校门口东张西望，好像在找妈妈。",
+       "小男孩在学校门口东张西望，像是在找妈妈。",
+       "那个孩子站在校门口东张西望的，好像在找他妈妈。"
+      ],
+      "py": "Nàge nánhái zhàn zài xiào ménkǒu dōngzhāng-xīwàng, hǎoxiàng zài zhǎo māma.",
+      "goiY": "Dịch sang tiếng Trung, dùng 东张西望.",
+      "giai": "东张西望 làm vị ngữ sau cụm nơi chốn; 好像在…… = hình như đang …."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chúng tôi tán gẫu lan man cả buổi chiều, chẳng làm được việc gì.",
+      "dap": [
+       "我们东拉西扯地聊了一下午，什么事也没做成。",
+       "我们东拉西扯了一个下午，一件事也没干成。",
+       "一个下午我们都在东拉西扯，什么事都没做。"
+      ],
+      "py": "Wǒmen dōnglā-xīchě de liáole yí xiàwǔ, shénme shì yě méi zuòchéng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 东拉西扯.",
+      "giai": "东拉西扯地 + V; 什么……也没…… phủ định hoàn toàn."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "那孩子像是找不到家了，站在路口，＿＿＿，显得有些着急。",
+      "goiY": "Chọn 东拉西扯 / 东张西望 / 东躲西藏 điền vào chỗ trống (练一练 (1) của sách).",
+      "mau": "那孩子像是找不到家了，站在路口，东张西望，显得有些着急。",
+      "can": [
+       [
+        "东张西望"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "黑猫被打败了，被大黄猫追得＿＿＿，跳上跳下。",
+      "goiY": "Chọn 东拉西扯 / 东张西望 / 东躲西藏 điền vào chỗ trống (练一练 (2) của sách).",
+      "mau": "黑猫被打败了，被大黄猫追得东躲西藏，跳上跳下。",
+      "can": [
+       [
+        "东躲西藏"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "坐在火车上，大家都没事，便天南海北、＿＿＿地闲聊起来。",
+      "goiY": "Chọn 东拉西扯 / 东张西望 / 东躲西藏 điền vào chỗ trống (练一练 (3) của sách).",
+      "mau": "坐在火车上，大家都没事，便天南海北、东拉西扯地闲聊起来。",
+      "can": [
+       [
+        "东拉西扯"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「中（zhòng）」",
+  "tenVn": "",
+  "cauTruc": [
+   "V + 中 (trúng, đúng vào): 打中, 猜中, 看中, 选中",
+   "V + 不中 (không … trúng): 打不中",
+   "中 + N (bị, mắc phải): 中暑, 中毒, 中计"
+  ],
+  "giaiThich": "\"中\" đọc thanh 4 (zhòng) là ĐỘNG TỪ, có hai nghĩa chính: ① \"trúng, đúng vào, vừa khớp\" (正对上、恰好合上): 打中, 猜中, 看中, 选中, 射中; phủ định bằng bổ ngữ khả năng: 打不中 = đánh không trúng. ② \"chịu, bị, mắc phải\" (受到、遭受) một điều không may: 中暑 (say nắng), 中毒 (trúng độc), 中计 (mắc mưu), 中弹 (trúng đạn). Chú ý phân biệt với 中 zhōng (giữa, trong).",
+  "viDu": [
+   {
+    "zh": "有人端来一个盛着菜的盘子，立刻飞来一只东张西望的苍蝇，企图落在盘子上，人动手去打，却总是打不中。",
+    "py": "Yǒu rén duānlái yí ge chéngzhe cài de pánzi, lìkè fēilái yì zhī dōngzhāng-xīwàng de cāngying, qǐtú luò zài pánzi shang, rén dòng shǒu qù dǎ, què zǒngshì dǎ bu zhòng.",
+    "vn": "Có người bưng ra một chiếc đĩa đựng thức ăn, lập tức một con ruồi bay tới toan đậu xuống đĩa; người ta giơ tay đập nhưng lần nào cũng đập không trúng."
+   },
+   {
+    "zh": "今天的谜语，猜中了有奖。",
+    "py": "Jīntiān de míyǔ, cāizhòngle yǒu jiǎng.",
+    "vn": "Câu đố hôm nay, đoán trúng thì có thưởng."
+   },
+   {
+    "zh": "晚上再出去吧，中午太热，小心出门中暑。",
+    "py": "Wǎnshang zài chūqù ba, zhōngwǔ tài rè, xiǎoxīn chūmén zhòngshǔ.",
+    "vn": "Tối hẵng ra ngoài, buổi trưa nóng quá, ra đường coi chừng say nắng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这种蘑菇有毒，吃了会中（zhōng）毒的。",
+    "why": "中毒 (trúng độc) đọc zhòng (thanh 4) vì 中 ở đây là động từ \"bị, mắc phải\".",
+    "dung": "这种蘑菇有毒，吃了会中（zhòng）毒的。"
+   },
+   {
+    "sai": "我打了好几次都没打得中。",
+    "why": "Phủ định bổ ngữ kết quả dùng 没 + V中 (没打中) hoặc bổ ngữ khả năng V不中 (打不中); không nói 没打得中.",
+    "dung": "我打了好几次都没打中。（或：我怎么打都打不中。）"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "人动手去打，却总是打不",
+       "。"
+      ],
+      "dap": [
+       [
+        "中"
+       ]
+      ],
+      "chon": [
+       "中",
+       "完",
+       "开"
+      ],
+      "goiY": "\"Người giơ tay đập, nhưng lần nào cũng đập không trúng.\" (câu bài khoá)",
+      "giai": "打不中 = đập không trúng (中 zhòng = trúng đích)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "今天的谜语，猜",
+       "了有奖。"
+      ],
+      "dap": [
+       [
+        "中"
+       ]
+      ],
+      "chon": [
+       "中",
+       "起",
+       "开"
+      ],
+      "goiY": "\"Câu đố hôm nay, đoán trúng thì có thưởng.\" (ví dụ của sách)",
+      "giai": "猜中 = đoán trúng (đúng đáp án)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "中午太热，小心出门",
+       "。"
+      ],
+      "dap": [
+       [
+        "中暑"
+       ]
+      ],
+      "chon": [
+       "中暑",
+       "中午",
+       "热暑"
+      ],
+      "goiY": "\"Buổi trưa nóng quá, ra đường coi chừng say nắng.\" (ví dụ của sách)",
+      "giai": "中暑 (zhòngshǔ) = bị say nắng — 中 nghĩa \"bị, mắc phải\"."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这种蘑菇不能吃，吃了会",
+       "的。"
+      ],
+      "dap": [
+       [
+        "中毒"
+       ]
+      ],
+      "chon": [
+       "中毒",
+       "有毒",
+       "毒中"
+      ],
+      "goiY": "\"Loại nấm này không ăn được, ăn vào sẽ trúng độc.\" (ví dụ của sách)",
+      "giai": "中毒 = bị ngộ độc; 有毒 là \"có độc\" (tính chất của nấm), không hợp với 吃了会……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "逛了一下午，她终于看",
+       "了一条红裙子。"
+      ],
+      "dap": [
+       [
+        "中"
+       ]
+      ],
+      "chon": [
+       "中",
+       "完",
+       "懂"
+      ],
+      "goiY": "\"Đi dạo cả buổi chiều, cuối cùng cô ấy ưng một chiếc váy đỏ.\"",
+      "giai": "看中 = xem và ưng ý, chọn trúng; 看完 / 看懂 không có nghĩa \"ưng ý\"."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他一箭就射",
+       "了目标，大家都为他鼓掌。"
+      ],
+      "dap": [
+       [
+        "中"
+       ]
+      ],
+      "chon": [
+       "中",
+       "完",
+       "好"
+      ],
+      "goiY": "\"Anh ấy chỉ một mũi tên đã bắn trúng mục tiêu, mọi người đều vỗ tay.\"",
+      "giai": "射中 = bắn trúng."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "打不中",
+       "却",
+       "人动手去打",
+       "总是",
+       "，"
+      ],
+      "dap": [
+       "人动手去打，却总是打不中。"
+      ],
+      "goiY": "Người giơ tay đập, nhưng lần nào cũng không trúng.",
+      "giai": "却 + 总是 + V不中."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "会",
+       "的",
+       "吃了",
+       "中毒"
+      ],
+      "dap": [
+       "吃了会中毒的。"
+      ],
+      "goiY": "Ăn vào sẽ bị ngộ độc.",
+      "giai": "会……的 khẳng định khả năng xảy ra."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "看中了",
+       "她",
+       "那件",
+       "白衬衫",
+       "最后"
+      ],
+      "dap": [
+       "她最后看中了那件白衬衫。",
+       "最后她看中了那件白衬衫。"
+      ],
+      "goiY": "Cuối cùng cô ấy ưng chiếc áo sơ mi trắng đó.",
+      "giai": "看中 + 了 + tân ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我打了好几次都没打得中。",
+      "dung": false,
+      "sua": "我打了好几次都没打中。",
+      "giai": "Phủ định: 没打中 hoặc 打不中, không nói 没打得中."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "天气太热，他在路上中暑了。",
+      "dung": true,
+      "giai": "中暑 = bị say nắng — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这道题太难了，我一个也没猜中午。",
+      "dung": false,
+      "sua": "这些谜语太难了，我一个也没猜中。",
+      "giai": "猜中 = đoán trúng; 中午 là buổi trưa, không liên quan."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi đập mấy lần liền mà không trúng, con ruồi lại bay mất rồi.",
+      "dap": [
+       "我连着打了好几次都没打中，苍蝇又飞走了。",
+       "我打了好几次都打不中，苍蝇又飞走了。",
+       "我一连打了几次都没打中，那只苍蝇又飞了。"
+      ],
+      "py": "Wǒ liánzhe dǎle hǎo jǐ cì dōu méi dǎzhòng, cāngying yòu fēizǒu le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 打中 / 打不中.",
+      "giai": "没打中 (thực tế không trúng) / 打不中 (không thể trúng)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mùa hè ra ngoài phải uống nhiều nước, kẻo bị say nắng.",
+      "dap": [
+       "夏天出门要多喝水，免得中暑。",
+       "夏天出去要多喝点儿水，免得中暑。",
+       "夏天外出一定要多喝水，免得中暑了。"
+      ],
+      "py": "Xiàtiān chūmén yào duō hē shuǐ, miǎnde zhòngshǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 中暑 và 免得 (ôn bài 14).",
+      "giai": "中暑 là điều muốn tránh → đặt sau 免得."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他的腿被＿＿＿了，走不了了。",
+      "goiY": "Dùng từ có chữ 中 hoàn thành câu (练一练 (1) của sách).",
+      "mau": "他的腿被打中了，走不了了。",
+      "can": [
+       [
+        "打中",
+        "击中",
+        "射中"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "六几年我自学英语，＿＿＿一套英国Longman出版社的《基础英语》，我就是靠这套书学会了英语。",
+      "goiY": "Dùng từ có chữ 中 hoàn thành câu (练一练 (2) của sách).",
+      "mau": "六几年我自学英语，选中一套英国Longman出版社的《基础英语》，我就是靠这套书学会了英语。",
+      "can": [
+       [
+        "选中",
+        "看中"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "那是我第一次自己做主买衣服，妈妈陪我左看右看，最后我＿＿＿的竟然是一件白衬衫。",
+      "goiY": "Dùng từ có chữ 中 hoàn thành câu (练一练 (3) của sách).",
+      "mau": "那是我第一次自己做主买衣服，妈妈陪我左看右看，最后我看中的竟然是一件白衬衫。",
+      "can": [
+       [
+        "看中",
+        "选中"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「姑且」",
+  "tenVn": "",
+  "cauTruc": [
+   "姑且 + (先) + V (+ 吧): tạm thời làm vậy đã",
+   "A 姑且不论，但……: tạm chưa bàn A"
+  ],
+  "giaiThich": "\"姑且\" là PHÓ TỪ, biểu thị trong tình huống bất đắc dĩ thì TẠM THỜI làm như vậy, sau này sẽ tính cách khác; mang ý MIỄN CƯỠNG, NHƯỢNG BỘ (cứ tạm …, tạm thời …). Đứng trước động từ, hay đi cùng 先 và trợ từ 吧 cuối câu. Cụm cố định: \"A 姑且不论 / 姑且不说\" = tạm chưa bàn đến A (để nói điều quan trọng hơn ở vế sau, thường có 但). Văn viết hơn 暂且 / 先.",
+  "viDu": [
+   {
+    "zh": "狗，哦，我们姑且换一个文雅的称呼吧，犬的CFF为80HZ。",
+    "py": "Gǒu, ò, wǒmen gūqiě huàn yí ge wényǎ de chēnghu ba, quǎn de CFF wéi bāshí HZ.",
+    "vn": "Chó — ồ, chúng ta tạm đổi sang một cách gọi văn nhã vậy — CFF của \"khuyển\" là 80 Hz."
+   },
+   {
+    "zh": "这件事，你姑且先答应下来，然后再慢慢想办法。",
+    "py": "Zhè jiàn shì, nǐ gūqiě xiān dāying xiàlái, ránhòu zài mànmàn xiǎng bànfǎ.",
+    "vn": "Việc này, cậu cứ tạm nhận lời đã, rồi từ từ nghĩ cách."
+   },
+   {
+    "zh": "别让你妈妈着急了，你姑且按她说的做吧。",
+    "py": "Bié ràng nǐ māma zháojí le, nǐ gūqiě àn tā shuō de zuò ba.",
+    "vn": "Đừng để mẹ cậu sốt ruột nữa, cậu cứ tạm làm theo lời mẹ đi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他姑且是我最好的朋友。",
+    "why": "姑且 chỉ hành động tạm thời, miễn cưỡng (đi với động từ hành động), không dùng để khẳng định một sự thật lâu dài.",
+    "dung": "他一直是我最好的朋友。"
+   },
+   {
+    "sai": "姑且我们先在这儿住一晚吧。",
+    "why": "姑且 là phó từ, đứng SAU chủ ngữ, trước động từ.",
+    "dung": "我们姑且先在这儿住一晚吧。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "狗，哦，我们",
+       "换一个文雅的称呼吧。"
+      ],
+      "dap": [
+       [
+        "姑且"
+       ]
+      ],
+      "chon": [
+       "姑且",
+       "势必",
+       "一定"
+      ],
+      "goiY": "\"Chó — ồ, chúng ta tạm đổi một cách gọi văn nhã vậy.\" (câu bài khoá)",
+      "giai": "姑且 + V + 吧: tạm thời, miễn cưỡng. 势必, 一定 = chắc chắn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件事，你",
+       "先答应下来，然后再慢慢想办法。"
+      ],
+      "dap": [
+       [
+        "姑且"
+       ]
+      ],
+      "chon": [
+       "姑且",
+       "终于",
+       "果然"
+      ],
+      "goiY": "\"Việc này cậu cứ tạm nhận lời đã.\" (ví dụ của sách)",
+      "giai": "姑且先……，然后再…… = tạm … đã, sau hẵng …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "别让你妈妈着急了，你姑且按她说的做",
+       "。"
+      ],
+      "dap": [
+       [
+        "吧"
+       ]
+      ],
+      "chon": [
+       "吧",
+       "吗",
+       "呢"
+      ],
+      "goiY": "\"Đừng để mẹ sốt ruột, cậu cứ tạm làm theo lời mẹ đi.\" (ví dụ của sách)",
+      "giai": "姑且 hay đi với 吧 cuối câu (khuyên nhủ, đề nghị)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的看法是否正确",
+       "不论，但有一点可以肯定。"
+      ],
+      "dap": [
+       [
+        "姑且"
+       ]
+      ],
+      "chon": [
+       "姑且",
+       "尽管",
+       "即使"
+      ],
+      "goiY": "\"Quan điểm của ông ấy đúng hay không tạm chưa bàn, nhưng có một điều chắc chắn.\" (练一练 (3))",
+      "giai": "Cụm cố định ……姑且不论，但……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "房子还没找到，我们",
+       "在朋友家住几天吧。"
+      ],
+      "dap": [
+       [
+        "姑且"
+       ]
+      ],
+      "chon": [
+       "姑且",
+       "势必",
+       "何必"
+      ],
+      "goiY": "\"Chưa tìm được nhà, chúng ta cứ tạm ở nhà bạn vài hôm.\"",
+      "giai": "姑且 + V: tạm thời, bất đắc dĩ. 何必 = hà tất."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这台洗衣机旧是旧了点儿，你",
+       "先用着吧。"
+      ],
+      "dap": [
+       [
+        "姑且"
+       ]
+      ],
+      "chon": [
+       "姑且",
+       "一定",
+       "肯定"
+      ],
+      "goiY": "\"Máy giặt này cũ thì cũ thật, cậu cứ tạm dùng đi.\" (theo 练习2 ④)",
+      "giai": "Không hài lòng nhưng tạm dùng → 姑且."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "姑且",
+       "我们",
+       "换一个",
+       "文雅的称呼吧"
+      ],
+      "dap": [
+       "我们姑且换一个文雅的称呼吧。"
+      ],
+      "goiY": "Chúng ta tạm đổi một cách gọi văn nhã vậy.",
+      "giai": "Chủ ngữ + 姑且 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "姑且",
+       "先",
+       "你",
+       "答应下来"
+      ],
+      "dap": [
+       "你姑且先答应下来。"
+      ],
+      "goiY": "Cậu cứ tạm nhận lời đã.",
+      "giai": "姑且 đứng trước 先."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "姑且不论",
+       "是否正确",
+       "他的看法"
+      ],
+      "dap": [
+       "他的看法是否正确姑且不论。"
+      ],
+      "goiY": "Quan điểm của ông ấy đúng hay không tạm chưa bàn.",
+      "giai": "A + 姑且不论."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "姑且我们先在这儿住一晚吧。",
+      "dung": false,
+      "sua": "我们姑且先在这儿住一晚吧。",
+      "giai": "姑且 là phó từ, đứng sau chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "说的随便说说，听的姑且听听，都不必认真。",
+      "dung": true,
+      "giai": "听的姑且听听 = người nghe cứ tạm nghe — đúng (练一练 (2))."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他姑且是我最好的朋友。",
+      "dung": false,
+      "sua": "他一直是我最好的朋友。",
+      "giai": "姑且 dùng cho hành động tạm thời, không khẳng định sự thật lâu dài."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chưa có tin chính xác, chúng ta cứ tạm chờ thêm vài ngày đã.",
+      "dap": [
+       "还没有确切的消息，我们姑且再等几天吧。",
+       "确切的消息还没有，我们姑且先等几天吧。",
+       "还没有确切消息，我们姑且再等几天。"
+      ],
+      "py": "Hái méiyǒu quèqiè de xiāoxi, wǒmen gūqiě zài děng jǐ tiān ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 姑且 và 确切.",
+      "giai": "姑且 + 再 / 先 + V + 吧."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Ai đúng ai sai tạm chưa bàn, cậu ra tay đánh người trước là không đúng.",
+      "dap": [
+       "谁对谁错姑且不论，你先动手打人就是不对。",
+       "谁对谁错姑且不说，你先动手打人就不对。",
+       "谁是谁非姑且不论，你先动手打人是不对的。"
+      ],
+      "py": "Shéi duì shéi cuò gūqiě bú lùn, nǐ xiān dòng shǒu dǎ rén jiù shì bú duì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 姑且不论 và 动手.",
+      "giai": "A 姑且不论 + nhận định quan trọng hơn."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A最后怎么处理，B等我了解了解情况再说C。（这件事姑且先这么办，）",
+      "goiY": "Đặt phần trong ngoặc vào vị trí thích hợp A / B / C rồi viết lại cả câu (练一练 (1) của sách).",
+      "mau": "这件事姑且先这么办，最后怎么处理，等我了解了解情况再说。",
+      "can": [
+       [
+        "这件事姑且先这么办"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A说的随便说说，B都不必认真C。（听的姑且听听，）",
+      "goiY": "Đặt phần trong ngoặc vào vị trí thích hợp A / B / C rồi viết lại cả câu (练一练 (2) của sách).",
+      "mau": "说的随便说说，听的姑且听听，都不必认真。",
+      "can": [
+       [
+        "听的姑且听听"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A但有一点可以肯定：B腐败不得人心C。（他的看法是否正确姑且不论，）",
+      "goiY": "Đặt phần trong ngoặc vào vị trí thích hợp A / B / C rồi viết lại cả câu (练一练 (3) của sách).",
+      "mau": "他的看法是否正确姑且不论，但有一点可以肯定：腐败不得人心。",
+      "can": [
+       [
+        "姑且不论"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1136,3 +1136,56 @@ body.dang-tham .nt-chuhan-nut { display: none; }
 .nt-the-chu.dang { background: #f3eee6; border-style: dashed; box-shadow: none; opacity: 0.8; }
 .nt-the-chu i { position: absolute; top: -6px; right: -4px; font-style: normal; font-size: 0.65rem; font-weight: 900; padding: 0 5px; border-radius: 99px; background: var(--vang); border: 1.5px solid var(--vien); }
 @media (max-width: 420px) { .nt-bst-mocs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ---------- mac ca ---------- */
+.nt-mc { display: flex; flex-direction: column; gap: 10px; text-align: center; }
+.nt-mc h3 { margin: 0; font-size: 1.15rem; }
+.nt-mc-gia { margin: 0; color: var(--mo); font-weight: 600; font-size: 0.9rem; }
+.nt-mc-gia b { color: var(--chu); }
+.nt-mc-cham { display: flex; justify-content: center; gap: 6px; }
+.nt-mc-cham i { width: 12px; height: 12px; border-radius: 50%; background: #e7dcc6; border: 2px solid var(--vien); }
+.nt-mc-cham i.qua { background: var(--xanh); }
+.nt-mc-cham i.dang { background: var(--vang); }
+.nt-mc-hoi { margin: 4px 0 0; font-weight: 800; }
+.nt-mc-lua { display: grid; gap: 8px; }
+.nt-mc-lua button {
+  min-height: 52px; padding: 8px 12px; border-radius: 14px; border: 3px solid var(--vien); background: var(--kem);
+  box-shadow: 0 4px 0 var(--vien); font-family: 'Noto Serif SC', serif; font-weight: 800; font-size: 1.2rem; color: var(--chu); cursor: pointer;
+}
+.nt-mc-lua button:hover { background: #fff3c4; }
+.nt-mc-lua button:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--vien); }
+.nt-mc-kq { display: flex; flex-direction: column; gap: 6px; padding: 10px 12px; border-radius: 14px; border: 2px solid var(--vien); text-align: left; }
+.nt-mc-kq.dung { background: #e3f6d6; }
+.nt-mc-kq.sai { background: #ffe3dc; }
+.nt-mc-kq b { font-family: 'Noto Serif SC', serif; }
+.nt-mc-kq small { color: var(--mo); font-weight: 600; }
+.nt-mc-ban { align-self: flex-end; padding: 6px 12px; border-radius: 14px 14px 2px 14px; background: #fff; border: 2px solid var(--vien); }
+.nt-mc-bo { align-self: center; background: none; border: 0; color: var(--mo); text-decoration: underline; font: inherit; font-size: 0.85rem; cursor: pointer; }
+.nt-mc-chot { display: flex; flex-direction: column; gap: 4px; align-items: center; }
+.nt-mc-chot b { font-size: 1.6rem; }
+.nt-mc-chot small { color: var(--mo); font-weight: 700; }
+.nt-giam { display: block; color: var(--do); font-weight: 700; font-size: 0.72rem; }
+
+/* ---------- bep ---------- */
+.nt-link { background: none; border: 0; padding: 0; font: inherit; font-weight: 800; color: var(--do); text-decoration: underline; cursor: pointer; }
+.nt-mon .nt-the-anh img { width: 76px; height: 76px; }
+.nt-mon-moi { background: var(--do) !important; color: #fff !important; }
+.nt-mon-vn { font-size: 1rem; }
+.nt-ct { list-style: none; margin: 4px 0; padding: 0; display: grid; gap: 3px; width: 100%; }
+.nt-ct li { display: flex; justify-content: space-between; gap: 6px; padding: 3px 8px; border-radius: 8px; font-size: 0.95rem; }
+.nt-ct li span { font-family: 'Noto Serif SC', serif; font-weight: 800; }
+.nt-ct li small { color: var(--mo); font-weight: 700; }
+.nt-ct li.co { background: #e3f6d6; }
+.nt-ct li.thieu { background: #ffe3dc; }
+.nt-mon-to { width: 96px; height: 96px; }
+
+/* ---------- don dac biet ---------- */
+.nt-dondb { margin-bottom: 14px; padding: 12px 14px; border-radius: 18px; border: 3px solid var(--vien); box-shadow: 0 4px 0 var(--vien);
+  background: repeating-linear-gradient(0deg, #fff8e6 0 28px, #f3e3c3 28px 29px); }
+.nt-dondb.xong { background: #e3f6d6; }
+.nt-dondb-dau { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-weight: 800; }
+.nt-dondb-dau span { display: inline-flex; align-items: center; gap: 4px; }
+.nt-dondb-dau img { width: 22px; height: 22px; }
+.nt-dondb-zh { margin: 8px 0; font-family: 'Noto Serif SC', serif; font-size: clamp(1.4rem, 5vw, 1.8rem); font-weight: 900; text-align: center; }
+.nt-dondb-py { margin: -4px 0 6px; text-align: center; color: var(--mo); font-weight: 700; }
+.nt-dondb-goi, .nt-dondb-vn { margin: 0 0 8px; color: var(--mo); font-weight: 600; font-size: 0.88rem; text-align: center; }

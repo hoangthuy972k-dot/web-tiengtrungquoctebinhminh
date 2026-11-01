@@ -136,17 +136,17 @@
           <h2 id="welcomeTitle">Học tiếng Trung mỗi ngày 15 phút, nhớ lâu nhờ âm Hán Việt</h2>
           <p class="welcome-sub">Hi Hán là trang học tiếng Trung của <b>cô Hoàng Thùy</b> — Thạc sĩ chuyên ngành Giáo dục Hán ngữ Quốc tế tại Trung Quốc — dành cho người Việt. Học thử miễn phí, không cần đăng ký.</p>
           <div class="welcome-actions">
-            <button type="button" class="btn btn-primary" id="welcomeQuiz">🧭 Mình nên học cấp nào?</button>
+            <button type="button" class="btn btn-primary" id="welcomeQuiz">Mình nên học cấp nào?</button>
             <button type="button" class="btn btn-ghost" id="welcomeTry">Học thử HSK 1 · bài 1</button>
           </div>
         </div>
         <ul class="welcome-points">
-          <li><span aria-hidden="true">🀄</span><b>Âm Hán Việt cho từng từ</b><small>Hơn 1.900 từ có âm Hán Việt — cách nhớ chữ Hán nhanh nhất cho người Việt.</small></li>
-          <li><span aria-hidden="true">🧭</span><b>Mỗi bài một lộ trình 7 bước</b><small>Khởi động → từ mới → hội thoại → ngữ pháp → luyện tập → nói → kiểm tra.</small></li>
-          <li><span aria-hidden="true">🧠</span><b>Ôn đúng lúc sắp quên</b><small>Ôn tập ngắt quãng nhắc lại từ cũ đúng hạn, học ít mà nhớ lâu.</small></li>
-          <li><span aria-hidden="true">📚</span><b>HSK 1–6, HSK 3.0 mới và YCT</b><small>Theo giáo trình thi HSK từ 07/2026 và chương trình thiếu nhi.</small></li>
+          <li><span class="wp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h13l-3-3M17 17H4l3 3"/></svg></span><b>Âm Hán Việt cho từng từ</b><small>Hơn 1.900 từ có âm Hán Việt — cách nhớ chữ Hán nhanh nhất cho người Việt.</small></li>
+          <li><span class="wp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h6"/></svg></span><b>Mỗi bài một lộ trình 6–7 bước</b><small>(Khởi động) → từ mới → hội thoại → ngữ pháp → luyện tập → nói → kiểm tra.</small></li>
+          <li><span class="wp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/><path d="M12 8v4l3 2"/></svg></span><b>Ôn đúng lúc sắp quên</b><small>Ôn tập ngắt quãng nhắc lại từ cũ đúng hạn, học ít mà nhớ lâu.</small></li>
+          <li><span class="wp-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 8h4M12 12h4"/></svg></span><b>HSK 1–6, HSK 3.0 mới và YCT</b><small>Theo giáo trình thi HSK từ 07/2026 và chương trình thiếu nhi.</small></li>
         </ul>
-        <a class="welcome-zalo" href="https://zalo.me/0377527486" target="_blank" rel="noopener">💬 Muốn học lớp cùng cô? Nhắn Zalo để được tư vấn</a>
+        <a class="welcome-zalo" href="https://zalo.me/0377527486" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg> Muốn học lớp cùng cô? Nhắn Zalo để được tư vấn</a>
       </section>
 
       <section class="assign-card" id="assignCard" hidden aria-live="polite"></section>
@@ -205,6 +205,7 @@
             <span class="dash-star-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></span>
             <span class="dash-star-text"><strong id="starTotal">Tích sao chăm chỉ</strong><span id="starHint">Đăng nhập để bắt đầu tích sao</span></span>
           </button>
+          <button type="button" class="dash-stats-link" id="saoHoi">Sao để làm gì?</button>
           <button type="button" class="dash-stats-link" id="statsOpen">Xem thống kê và huy hiệu</button>
           <button class="btn btn-dark btn-block" id="ctaStreak" type="button" hidden>Học ngay hôm nay</button>
         </div>
@@ -615,6 +616,35 @@
 </nav>
 
 <!-- AUTH MODAL -->
+<div class="modal-overlay" id="saoModal" role="dialog" aria-modal="true" aria-labelledby="saoModalTitle">
+  <div class="modal sao-modal">
+    <button class="modal-close" id="saoModalClose" type="button" aria-label="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="modal-body">
+      <p class="sao-eyebrow">星星 · xīngxing</p>
+      <h2 id="saoModalTitle">Sao để làm gì?</h2>
+      <p class="modal-sub">Sao là điểm chăm chỉ: chỉ có khi bạn thật sự học. Cần đăng nhập để tích sao.</p>
+      <h3 class="sao-h">Nhận sao khi</h3>
+      <ul class="sao-ds">
+        <li><b>+1</b><span>mỗi câu trả lời đúng lần đầu trong bài học, bài tập<small>tối đa 300 sao/ngày · làm lại câu cũ không được thêm</small></span></li>
+        <li><b>+5</b><span>mỗi 5 phút học trên trang<small>tối đa 120 sao/ngày (khoảng 2 tiếng)</small></span></li>
+        <li><b>+5</b><span>mỗi ngày mở web học</span></li>
+        <li><b>+1</b><span>mỗi câu đúng trong trò chơi<small>tối đa 80 sao/ngày</small></span></li>
+      </ul>
+      <h3 class="sao-h">Sao dùng để</h3>
+      <ul class="sao-ds sao-dung">
+        <li><span class="sao-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6"/></svg></span><span><b>Lên Bảng vàng</b> — bảng "Sao chăm chỉ" theo tuần, tháng và toàn thời gian.</span></li>
+        <li><span class="sao-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 10 12 4l10 6M5 9v10h14V9M10 19v-5h4v5"/></svg></span><span><b>Đổi xu ở Nông trại</b> — 1 sao = 1 xu để mua con vật, đồ trang trí. Đổi xu không làm giảm thứ hạng.</span></li>
+        <li><span class="sao-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><span><b>Thăng học vị</b> — <span class="sao-zh">童生</span> Đồng sinh → <span class="sao-zh">秀才</span> Tú tài (100 sao) → … → <span class="sao-zh">状元</span> Trạng nguyên (3.000 sao).</span></li>
+        <li><span class="sao-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v4H3zM5 7v13h14V7M9 11h6"/></svg></span><span><b>Bán được nhiều hơn</b> — hôm nay học càng nhiều sao, nông trại bán được càng nhiều hàng.</span></li>
+      </ul>
+      <div class="sao-nut">
+        <button type="button" class="btn btn-primary" id="saoXemBxh">Xem bảng Sao chăm chỉ</button>
+        <a class="btn btn-ghost" href="/nong-trai">Vào Nông trại</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal-overlay" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
   <div class="modal">
     <div class="modal-banner">

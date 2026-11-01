@@ -572,3 +572,30 @@ body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 /* Khoi dong: tranh 3D (Fluent Emoji) thay emoji */
 .wu-emoji .wu-tranh { width: 84px; height: 84px; object-fit: contain; filter: drop-shadow(0 4px 4px rgba(43, 29, 58, 0.18)); }
 @media (max-width: 640px) { .wu-emoji .wu-tranh { width: 64px; height: 64px; } }
+
+/* Dien thoai: noi dung bai len som hon — bo loc bai khoa mot hang cuon ngang, bo cac dong huong dan trung nhau */
+@media (max-width:640px){
+  .lesson-tabs{flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:0 -16px 14px 0;padding:0 16px 4px 0;scrollbar-width:none;}
+  .lesson-tabs::-webkit-scrollbar{display:none;}
+  .lesson-tab{flex:none;white-space:nowrap;padding:7px 14px;}
+  .flip-tip,.h4-tools-hint{display:none;}
+  .sec-head{margin-bottom:12px;}
+  .sec-sub{font-size:0.82rem;line-height:1.45;}
+  .site-header::before{display:none;}
+}
+
+/* Icon net thay emoji (lesson-engine.js) */
+.sec-ico{width:24px;height:24px;flex-shrink:0;color:var(--sky);}
+.sec-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;flex-shrink:0;border-radius:50%;background:var(--sky-l);color:var(--sky-d);font-size:0.9rem;font-weight:700;letter-spacing:0;}
+.h-chip{display:inline-flex;align-items:center;gap:6px;}
+.h-ico{width:14px;height:14px;flex-shrink:0;}
+.h-chip-py{font:inherit;font-size:0.8rem;cursor:pointer;}
+.h-chip-py:hover{background:rgba(255,255,255,0.24);}
+.h-chip-py:focus-visible{outline:2px solid #fff;outline-offset:2px;}
+
+/* Pinyin giam dan: pinyin cua cau mo di, cham de xem */
+body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py):not(.py-lo){filter:blur(4px);opacity:0.6;cursor:pointer;user-select:none;transition:filter .2s ease,opacity .2s ease;}
+body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py):not(.py-lo):hover{opacity:0.85;}
+.py-goi-y{margin:8px 0 0;font-size:0.84rem;color:var(--mid);line-height:1.45;}
+@media (prefers-reduced-motion:reduce){body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py){transition:none;}}
+.py-hien-het{margin-left:4px;padding:0;border:0;background:none;font:inherit;font-weight:700;color:var(--sky-d);text-decoration:underline;text-underline-offset:2px;cursor:pointer;}

@@ -1637,3 +1637,82 @@ document.addEventListener('DOMContentLoaded',function(){
   cards.forEach(function(c){c.remove();});
   window.hwGrammarDiscover.render(box,points,{key:location.pathname,speak:function(t){if(typeof speakZh==='function')speakZh(t);}});
 });
+
+// ══════════════════════════════════════════
+// BIỂU TƯỢNG: thay emoji ở tiêu đề mục / chip đầu trang bằng icon nét của thanh tab
+// ══════════════════════════════════════════
+(function(){
+  var EMO=/^(?:\p{Extended_Pictographic}|\uFE0F|\u200D|\s)+/u;
+  function svgTab(id){ var s=document.querySelector('.tab-btn[data-tab="'+id+'"] svg'); return s?s.cloneNode(true):null; }
+  function boEmoji(el){
+    var n=el.firstChild;
+    while(n&&n.nodeType===3&&!n.nodeValue.trim()) n=n.nextSibling;
+    if(!n||n.nodeType!==3) return null;
+    var so=n.nodeValue.match(/^\s*(\d)\uFE0F?\u20E3\s*/);
+    if(so){ n.nodeValue=n.nodeValue.slice(so[0].length); return {so:so[1]}; }
+    var m=n.nodeValue.match(EMO);
+    if(!m||!m[0].trim()) return null;
+    n.nodeValue=n.nodeValue.slice(m[0].length);
+    return {emo:m[0].trim()};
+  }
+  document.querySelectorAll('.sec-title').forEach(function(t){
+    var r=boEmoji(t); if(!r) return;
+    if(r.so){ var b=document.createElement('span'); b.className='sec-num'; b.textContent=r.so; t.insertBefore(b,t.firstChild); return; }
+    var sec=t.closest('.section');
+    var dau=sec&&sec.querySelector('.sec-title')===t;
+    var ic=dau&&svgTab(sec.id);
+    if(ic){ ic.setAttribute('class','sec-ico'); t.insertBefore(ic,t.firstChild); }
+  });
+  var CHIP={'📚':'vocab','💬':'dialog','📖':'dialog','📐':'grammar'};
+  document.querySelectorAll('.header-meta .h-chip, .lesson-tab').forEach(function(c){
+    var r=boEmoji(c); if(!r||!r.emo) return;
+    var ic=c.classList.contains('h-chip')&&CHIP[r.emo]&&svgTab(CHIP[r.emo]);
+    if(ic){ ic.setAttribute('class','h-ico'); c.insertBefore(ic,c.firstChild); }
+  });
+})();
+
+// ══════════════════════════════════════════
+// PINYIN GIẢM DẦN: 5 bài đầu HSK1 / YCT hiện đủ pinyin; từ bài 6 (và HSK2 trở lên)
+// pinyin của câu mờ đi để tập đọc chữ Hán — chạm vào dòng pinyin để xem.
+// Pinyin của từ mới (thẻ từ) luôn hiện. Chọn tay lưu ở hyv_py_bai.
+// ══════════════════════════════════════════
+(function(){
+  var m=location.pathname.match(/\/(?:([a-z0-9]+)-)?bai-(\d+)\.html/);
+  var meta=document.querySelector('.header-meta');
+  if(!m||!meta) return;
+  var KEY='hyv_py_bai', cap=m[1]||'hsk2', so=+m[2];
+  var tuDong=/^(hsk1|hsk1v3|yct)$/.test(cap)?so>5:true;
+  var chon=null; try{ chon=localStorage.getItem(KEY); }catch(e){}
+  var mo=chon==='mo'?true:chon==='hien'?false:tuDong;
+  var PY='.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py';
+  var nut=document.createElement('button');
+  nut.type='button'; nut.className='h-chip h-chip-py';
+  var goiY=document.createElement('p');
+  goiY.className='py-goi-y';
+  goiY.innerHTML='Pinyin của câu đang mờ để em tập đọc chữ Hán — chạm vào dòng pinyin để xem. <button type="button" class="py-hien-het">Hiện tất cả</button>';
+  goiY.querySelector('button').addEventListener('click',function(){ nut.click(); });
+  var dlgHead=document.querySelector('#dialog .sec-head');
+  if(dlgHead) dlgHead.appendChild(goiY);
+  function ap(){
+    document.body.classList.toggle('py-mo',mo);
+    nut.textContent=mo?'Pinyin câu: mờ · bấm để hiện':'Pinyin câu: hiện · bấm để làm mờ';
+    nut.setAttribute('aria-pressed',mo?'false':'true');
+    goiY.hidden=!mo;
+  }
+  nut.addEventListener('click',function(){
+    mo=!mo;
+    try{ localStorage.setItem(KEY,mo?'mo':'hien'); }catch(e){}
+    document.querySelectorAll('.py-lo').forEach(function(e){ e.classList.remove('py-lo'); });
+    ap();
+  });
+  meta.insertBefore(nut,meta.firstChild); // dau hang: tren dien thoai hang chip cuon ngang
+  ap();
+  // chạm vào pinyin đang mờ: hiện dòng đó (bắt sớm để không lật thẻ / chọn đáp án)
+  document.addEventListener('click',function(e){
+    if(!mo) return;
+    var el=e.target.closest&&e.target.closest(PY);
+    if(!el||el.classList.contains('py-lo')) return;
+    e.stopPropagation(); e.preventDefault();
+    el.classList.add('py-lo');
+  },true);
+})();

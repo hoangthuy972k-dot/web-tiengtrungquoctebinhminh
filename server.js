@@ -1200,8 +1200,17 @@ app.post('/api/resume/sync', requireAuth, asyncRoute(async (req, res) => {
 
 // Bang xep hang cong khai: nho 60 giay (truoc day moi lan mo deu doc diem cua moi hoc sinh)
 let bxhNho = { t: 0, data: null };
+// Khach chua dang nhap chi thay ten goi + chu cai dau cua ho ("Nguyen Thanh Huyen" -> "Huyen N."):
+// bang vang nam ngay tren trang chu cong khai, khong de lo ho ten day du cua hoc sinh.
+function tenCongKhai(name, daDangNhap) {
+  const t = String(name || '').trim().split(/\s+/).filter(Boolean);
+  if (daDangNhap || t.length < 2) return String(name || '');
+  return t[t.length - 1] + ' ' + t[0].charAt(0).toUpperCase() + '.';
+}
 app.get('/api/leaderboard', asyncRoute(async (req, res) => {
-  if (bxhNho.data && Date.now() - bxhNho.t < 60000) return res.json(bxhNho.data);
+  const xem = !!(await optionalUserId(req));
+  const anTen = (d) => (xem ? d : { leaderboard: d.leaderboard.map((r) => Object.assign({}, r, { name: tenCongKhai(r.name, false) })) });
+  if (bxhNho.data && Date.now() - bxhNho.t < 60000) return res.json(anTen(bxhNho.data));
   const scores = await loadScores();
   const rows = Object.keys(scores).map((userId) => scores[userId]);
   rows.sort((a, b) => b.totalCorrect - a.totalCorrect || b.streak - a.streak);
@@ -1214,7 +1223,7 @@ app.get('/api/leaderboard', asyncRoute(async (req, res) => {
     streak: row.streak,
   }));
   bxhNho = { t: Date.now(), data: { leaderboard: top } };
-  res.json({ leaderboard: top });
+  res.json(anTen({ leaderboard: top }));
 }));
 
 // ══════════════════════════════════════════════════════════════════
@@ -1478,7 +1487,7 @@ app.get('/api/leaderboard/today', asyncRoute(async (req, res) => {
     .sort((a, b) => b.points - a.points || (prev ? b.thisWeek - a.thisWeek : 0) || b.streak - a.streak || a.updatedMs - b.updatedMs);
   const toRow = (r, i) => {
     const row = {
-      rank: i + 1, name: r.name, level: r.level, points: r.points,
+      rank: i + 1, name: tenCongKhai(r.name, !!meId), level: r.level, points: r.points,
       lessonCorrect: r.lessonCorrect, examCorrect: r.examCorrect, streak: r.streak, isMe: r.userId === meId,
     };
     if (prev) { row.gain = r.points; row.thisWeek = r.thisWeek; row.lastWeek = r.lastWeek; }
@@ -1939,7 +1948,7 @@ app.get('/api/leaderboard/stars', asyncRoute(async (req, res) => {
     .sort((a, b) => score(b) - score(a) || (improve ? weekOf(b) - weekOf(a) : 0) || a.updatedMs - b.updatedMs);
   const toRow = (s, i) => {
     const row = {
-      rank: i + 1, name: byId[s.userId].name, level: byId[s.userId].level, total: score(s),
+      rank: i + 1, name: tenCongKhai(byId[s.userId].name, !!meId), level: byId[s.userId].level, total: score(s),
       today: s.day === today ? starsToday(s) : 0, isMe: s.userId === meId,
     };
     if (improve) { row.gain = score(s); row.thisWeek = weekOf(s); row.lastWeek = lastOf(s); }
@@ -2318,7 +2327,7 @@ app.get('/api/exam/leaderboard', asyncRoute(async (req, res) => {
     if (!def) return res.status(404).json({ error: 'Không tìm thấy đề thi.' });
     const board = sortExamRows(await listRankedExamAttempts({ examId: def.id }));
     const toRow = (a, i) => ({
-      rank: i + 1, name: a.name, isMe: a.userId === meId, rankPoints: a.rankPoints, timeBonus: a.timeBonus,
+      rank: i + 1, name: tenCongKhai(a.name, !!meId), isMe: a.userId === meId, rankPoints: a.rankPoints, timeBonus: a.timeBonus,
       score: a.score, maxScore: a.maxScore, correct: a.correct, total: a.total, usedSec: a.usedSec,
       pass: a.score >= def.passScore, submittedAt: a.submittedMs,
     });
@@ -2333,7 +2342,7 @@ app.get('/api/exam/leaderboard', asyncRoute(async (req, res) => {
   const exams = listExamDefs(level);
   const board = aggregateExamRows(await listRankedExamAttempts({ level }));
   const toRow = (u, i) => ({
-    rank: i + 1, name: u.name, isMe: u.userId === meId, rankPoints: u.rankPoints, exams: u.exams,
+    rank: i + 1, name: tenCongKhai(u.name, !!meId), isMe: u.userId === meId, rankPoints: u.rankPoints, exams: u.exams,
     score: u.score, maxScore: u.maxScore, usedSec: u.usedSec,
   });
   const meIdx = meId ? board.findIndex((u) => u.userId === meId) : -1;

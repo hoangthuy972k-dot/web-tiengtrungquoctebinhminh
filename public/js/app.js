@@ -710,13 +710,36 @@
   }
 
   var LEVEL_PICK_KEY = 'hyv_level_pick';
+  // Trang chu chia cap do thanh nhom de khong chon nham giao trinh moi / cu
+  var NHOM_CAP = [
+    { key: 'v3', ten: 'HSK 3.0 — giáo trình mới', phu: 'Thi theo chuẩn mới từ 07/2026 · nên chọn nếu bạn mới bắt đầu', ids: ['hsk1v3', 'hsk2v3', 'hsk3v3'] },
+    { key: 'cao', ten: 'HSK 4 – 6 · nâng cao', phu: 'Học tiếp sau HSK 3', ids: ['hsk4', 'hsk5', 'hsk6'] },
+    { key: 'cu', ten: 'HSK 1 – 3 · giáo trình cũ (2.0)', phu: 'Dành cho lớp đang học giáo trình HSK cũ', ids: ['hsk1', 'hsk2', 'hsk3'], gon: true },
+    { key: 'yct', ten: 'Thiếu nhi', phu: 'Trẻ em 6–12 tuổi', ids: ['yct'] }
+  ];
+  var NHOM_CU_KEY = 'hyv_cap_cu_mo';
 
   function renderLevelCards() {
     var grid = $('#levelGrid');
     grid.innerHTML = '';
     var pick = readJSON(LEVEL_PICK_KEY, null);
     var pickId = pick && pick.id;
-    DASHBOARD_LEVEL_IDS.forEach(function (id) {
+    NHOM_CAP.forEach(function (nh) {
+      var ids = nh.ids.filter(function (id) { return DASHBOARD_LEVEL_IDS.indexOf(id) >= 0; });
+      if (!ids.length) return;
+      // nhom thu gon: mo san neu em dang hoc / da chon cap trong nhom
+      var dangHoc = ids.some(function (id) { return levelProgress(id).done > 0 || id === pickId; });
+      var mo = !nh.gon || dangHoc || readJSON(NHOM_CU_KEY, false);
+      var dau = document.createElement(nh.gon ? 'button' : 'div');
+      dau.className = 'level-nhom' + (nh.gon ? ' level-nhom-gon' : '');
+      if (nh.gon) { dau.type = 'button'; dau.setAttribute('aria-expanded', mo ? 'true' : 'false'); }
+      dau.innerHTML = '<span class="level-nhom-t"><b>' + nh.ten + '</b><small>' + nh.phu + '</small></span>' +
+        (nh.gon ? '<span class="level-nhom-mo">' + (mo ? 'Thu gọn' : 'Xem ' + ids.length + ' cấp') + '</span>' : '');
+      if (nh.gon) dau.addEventListener('click', function () { writeJSON(NHOM_CU_KEY, !mo); renderLevelCards(); });
+      grid.appendChild(dau);
+      if (mo) ids.forEach(veTheCap);
+    });
+    function veTheCap(id) {
       var level = APP_DATA.levels.find(function (l) { return l.id === id; });
       if (!level) return;
       var isReady = !!READY_LEVELS[id];
@@ -755,7 +778,7 @@
         selectLevel(id);
       });
       grid.appendChild(card);
-    });
+    }
   }
 
   /* ---------------- "Minh nen hoc cap nao?" — 3 cau hoi → goi y cap do ---------------- */
@@ -814,7 +837,7 @@
         html += '<p class="lq-step">Gợi ý cho bạn</p>' +
           '<h2 class="lq-result">' + (PRACTICE_LEVEL_LABEL[r.id] || r.id) + '</h2>' +
           '<p class="lq-why">' + r.why + '</p>' +
-          '<p class="lq-meta">' + lessons.length + ' bài · ' + words + ' từ vựng · mỗi bài khoảng 30 phút theo lộ trình 7 bước</p>' +
+          '<p class="lq-meta">' + lessons.length + ' bài · ' + words + ' từ vựng · mỗi bài khoảng 30 phút theo lộ trình 6–7 bước</p>' +
           '<div class="lq-actions"><button type="button" class="btn btn-primary" data-lq-go>Học thử bài 1 ngay</button>' +
           '<button type="button" class="btn btn-ghost" data-lq-list>Xem danh sách bài</button></div>' +
           '<button type="button" class="lq-back" data-lq-redo>↻ Trả lời lại</button>';
@@ -1012,7 +1035,7 @@
         '<div class="dash-cta-text">' +
           '<p class="dash-cta-eyebrow">Bắt đầu học</p>' +
           '<h2 id="resumeTitle">Học bài đầu tiên của bạn</h2>' +
-          '<p class="dash-cta-sub">Mỗi bài là một lộ trình 7 bước, khoảng 30 phút. Chưa biết học cấp nào? Làm bài kiểm tra nhanh 2 phút.</p>' +
+          '<p class="dash-cta-sub">Mỗi bài là một lộ trình 6–7 bước, khoảng 30 phút. Chưa biết học cấp nào? Làm bài kiểm tra nhanh 2 phút.</p>' +
           '<div class="resume-actions">' +
             '<button type="button" class="btn btn-white" data-resume="start">Học thử ' + (PRACTICE_LEVEL_LABEL[tryId] || tryId) + ' · bài 1</button>' +
             '<button type="button" class="btn btn-outline-white" data-resume="quiz">Mình nên học cấp nào?</button>' +
@@ -1022,9 +1045,13 @@
       box.querySelector('[data-resume="quiz"]').addEventListener('click', openLevelQuiz);
       return;
     }
+    // Da co bai dang hoc: dua the len DAU trang chu (truoc nhiem vu, cap do) — viec quan trong nhat
+    var home = $('#home'), dauTrang = home && home.querySelector('.home-head');
+    if (dauTrang && dauTrang.nextElementSibling !== box) { dauTrang.insertAdjacentElement('afterend', box); box.classList.add('resume-top'); }
     var l = target.lesson;
     var levelName = PRACTICE_LEVEL_LABEL[target.levelId] || target.levelId.toUpperCase();
     var lps = pathStepsOf(l);
+    var srs = srsStats();
     var done = target.isNext ? 0 : lps.filter(function (st) { return pathStepDone(l, st); }).length;
     var pct = Math.round(done / lps.length * 100);
     var eyebrow = target.finished ? 'Đã học xong ' + levelName : (target.isNext ? 'Bài tiếp theo' : 'Tiếp tục học');
@@ -1042,10 +1069,13 @@
         '<p class="dash-cta-sub">' + next + '</p>' +
         '<div class="resume-actions">' +
           '<button type="button" class="btn btn-white" data-resume="go">' + (target.finished ? 'Ôn lại bài ' + l.number : 'Học tiếp') + uiIcon('arrow') + '</button>' +
+          (srs.total >= 4 ? '<button type="button" class="btn btn-outline-white" data-resume="review">' + (srs.due ? 'Ôn ' + Math.min(srs.due, 15) + ' từ hôm nay' : 'Ôn nhanh 10 từ') + '</button>' : '') +
           '<button type="button" class="btn btn-outline-white" data-resume="levels">Chọn bài khác</button>' +
         '</div>' +
       '</div>';
     box.querySelector('[data-resume="go"]').addEventListener('click', function () { runTask('learn'); });
+    var on = box.querySelector('[data-resume="review"]');
+    if (on) on.addEventListener('click', function () { runTask('review'); });
     box.querySelector('[data-resume="levels"]').addEventListener('click', function () {
       practiceLevel = target.levelId;
       selectLevel(target.levelId);
@@ -15952,6 +15982,35 @@
     }
     openStarsFromHash();
     window.addEventListener('hashchange', openStarsFromHash);
+    initSaoModal();
+  }
+
+  // Hop "Sao de lam gi?": giai thich cach nhan sao va sao dung vao dau (mo tu dong sao, hoac /#sao)
+  function initSaoModal() {
+    var hop = $('#saoModal'), nut = $('#saoHoi');
+    if (!hop) return;
+    var truoc = null;
+    function mo() {
+      truoc = document.activeElement;
+      hop.classList.add('is-open');
+      setTimeout(function () { $('#saoModalClose').focus(); }, 30);
+    }
+    function dong() {
+      hop.classList.remove('is-open');
+      if (truoc && truoc.focus) truoc.focus();
+    }
+    if (nut) nut.addEventListener('click', mo);
+    $('#saoModalClose').addEventListener('click', dong);
+    hop.addEventListener('click', function (e) { if (e.target === hop) dong(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && hop.classList.contains('is-open')) dong(); });
+    $('#saoXemBxh').addEventListener('click', function () { dong(); lbTab = 'stars'; showLeaderboard(); });
+    function tuHash() {
+      if (location.hash !== '#sao') return;
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* ignore */ }
+      mo();
+    }
+    tuHash();
+    window.addEventListener('hashchange', tuHash);
   }
 
   /* ---------------- Bang xep hang "hom nay" tren trang chu ---------------- */

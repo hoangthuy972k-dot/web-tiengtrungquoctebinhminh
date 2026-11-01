@@ -10056,3 +10056,46 @@ html.ho-tro-toi[data-theme="dark"] .cando-line { border-color: #6a5440; }
   .lesson-path::before { left: 31px; }
   .lp-top b { font-size: 1.05rem; }
 }
+
+/* ===== Trang chu (2026-11): nhom cap do + the "Hoc tiep" tren cung ===== */
+.level-nhom { grid-column: 1 / -1; display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-3); margin: var(--space-3) 0 calc(-1 * var(--space-1)); padding: 0; background: none; border: 0; color: inherit; font: inherit; text-align: left; }
+.level-nhom:first-child { margin-top: 0; }
+.level-nhom-t { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.level-nhom-t b { font-size: 0.98rem; font-weight: 800; color: var(--fg-gray-900); }
+.level-nhom-t small { font-size: 0.8rem; color: var(--fg-gray-600); line-height: 1.4; }
+.level-nhom-gon { cursor: pointer; padding: var(--space-3) var(--space-4); border: 1px dashed var(--color-gray-300); border-radius: var(--radius-md); align-items: center; min-height: 44px; }
+.level-nhom-gon:hover { border-color: var(--color-red-500); background: var(--color-red-50); }
+.level-nhom-gon:focus-visible { outline: 2px solid var(--color-red-500); outline-offset: 2px; }
+.level-nhom-mo { flex: none; font-size: 0.84rem; font-weight: 700; color: var(--fg-red-600); }
+.level-nhom-gon[aria-expanded="true"] { border-style: solid; border-color: var(--color-gray-200); }
+
+#homeResume.resume-top { display: flex !important; min-height: 0; margin-bottom: var(--space-4); padding-top: var(--space-4); padding-bottom: var(--space-4); }
+#homeResume.resume-top h2 { font-size: clamp(1.15rem, 2.2vw, 1.4rem); }
+#homeResume.resume-top .dash-cta-sub { margin-bottom: var(--space-3); }
+@media (max-width: 900px) { #home #homeResume.resume-top { order: 0; } }
+
+/* Icon net thay emoji o phan gioi thieu */
+.welcome-points .wp-ico { display: flex; align-items: flex-start; justify-content: center; width: 36px; height: 36px; border-radius: var(--radius-md); background: var(--color-red-50); color: var(--fg-red-600); padding: 7px; }
+.welcome-points .wp-ico svg { width: 22px; height: 22px; }
+.welcome-zalo { display: inline-flex; align-items: center; gap: 6px; }
+.welcome-zalo svg { width: 18px; height: 18px; flex: none; }
+
+/* Hop "Sao de lam gi?" */
+.sao-modal { max-width: 460px; }
+.sao-modal .modal-close { background: var(--color-gray-100); }
+.sao-modal .modal-close svg { width: 18px; height: 18px; }
+.sao-eyebrow { margin: 0 0 4px; font-family: var(--font-hanzi); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; color: var(--fg-gold-600); }
+.sao-h { margin: var(--space-4) 0 var(--space-2); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-gray-600); }
+.sao-ds { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.sao-ds li { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: start; font-size: 0.92rem; line-height: 1.45; color: var(--fg-gray-800); }
+.sao-ds li > b { display: flex; align-items: center; justify-content: center; height: 28px; border-radius: var(--radius-pill); background: var(--color-gold-50); color: var(--fg-gold-600); font-size: 0.86rem; font-variant-numeric: tabular-nums; }
+.sao-ds small { display: block; font-size: 0.78rem; color: var(--fg-gray-600); }
+.sao-dung li > span > b { color: var(--fg-gray-900); }
+.sao-ico { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: var(--radius-md); background: var(--color-red-50); color: var(--fg-red-600); }
+.sao-ico svg { width: 20px; height: 20px; }
+.sao-dung li { grid-template-columns: 36px 1fr; }
+.sao-zh { font-family: var(--font-hanzi); font-weight: 700; color: var(--fg-red-600); }
+.sao-nut { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-5); }
+.sao-nut .btn { flex: 1 1 180px; justify-content: center; }
+#saoHoi + #statsOpen { margin-top: 0; }
+html:has(.modal-overlay.is-open) .hw-fab-stack { display: none; }

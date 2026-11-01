@@ -631,6 +631,7 @@ module.exports = function ganNongTrai(app, d) {
     const lvCu = lv;
     f.xp += them.xp;
     await ghi(userId, f);
+    if (a === 'sap' || a === 'gosap') boNhoCongDong(); // cho cong dong thay hang moi ngay
     const st = await trangThai(userId, f);
     return { ok: true, them, lenCap: st.lv > lvCu ? st.lv : 0, st };
   }
@@ -667,6 +668,76 @@ module.exports = function ganNongTrai(app, d) {
     return { ten: cls ? cls.name : '', ids };
   }
 
+  // Cong dong: ai co tai khoan va da mo nong trai deu thay nhau, tham, mua ban, nhan tin duoc
+  // (thi tran / cho lop van chi gom ban cung lop). Danh sach giu trong bo nho 20 giay.
+  async function coNongTrai(id) {
+    if (!d.USE_DB) return !!(d.readJsonFile(FILE) || {})[id];
+    const [rows] = await d.db().query('SELECT 1 FROM farms WHERE user_id = ? LIMIT 1', [id]);
+    return rows.length > 0;
+  }
+  async function coTheChoi(me, id) {
+    if (!id || id === me) return false;
+    const lop = await banCungLop(me);
+    if (lop && lop.ids.indexOf(id) >= 0) return true;
+    return coNongTrai(id);
+  }
+  let congDong = null, congDongLuc = 0;
+  function boNhoCongDong() { congDong = null; }
+  async function taiCongDong() {
+    if (congDong && Date.now() - congDongLuc < 20000) return congDong;
+    let ds = [];
+    if (!d.USE_DB) {
+      const all = d.readJsonFile(FILE) || {};
+      ds = Object.keys(all).map((id) => ({ id, f: Object.assign(nongTraiMoi(), all[id]) }));
+    } else {
+      const [rows] = await d.db().query('SELECT user_id, data FROM farms ORDER BY dep DESC LIMIT 2000');
+      rows.forEach((r) => { try { ds.push({ id: r.user_id, f: Object.assign(nongTraiMoi(), JSON.parse(r.data)) }); } catch (e) { /* bo qua */ } });
+    }
+    const [ten, st] = await Promise.all([d.loadUserNames(), d.loadClassState()]);
+    const tenLop = {};
+    st.classes.forEach((c) => { tenLop[c.id] = c.name; });
+    congDong = ds.filter((x) => ten[x.id]).map((x) => ({
+      id: x.id, ten: ten[x.id], lop: st.members[x.id] ? tenLop[st.members[x.id].classId] || '' : '',
+      lv: lvTuXp(x.f.xp), dep: diemDep(x.f), tim: x.f.tim || 0, av: x.f.av || null, sap: x.f.sap || [],
+    })).sort((a, b) => b.dep - a.dep || b.lv - a.lv || a.ten.localeCompare(b.ten, 'vi'));
+    congDongLuc = Date.now();
+    return congDong;
+  }
+  const boDau = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd');
+
+  app.get('/api/farm/congdong', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id;
+    const q = boDau(String(req.query.q || '').slice(0, 40)).trim();
+    const tu = Math.max(0, Math.min(5000, parseInt(req.query.tu, 10) || 0));
+    const all = await taiCongDong();
+    const loc = all.filter((x) => !q || boDau(x.ten).indexOf(q) >= 0 || boDau(x.lop).indexOf(q) >= 0);
+    const f = await doc(me);
+    const ngay = d.vnDayKey();
+    const daTham = f.tham.d === ngay ? f.tham.ids : [];
+    res.json({
+      tong: all.length, soLoc: loc.length, tu,
+      ds: loc.slice(tu, tu + 30).map((x) => ({
+        id: x.id, ten: x.ten, lop: x.lop, la: x.id === me, lv: x.lv, dep: x.dep, tim: x.tim, av: x.av,
+        sap: x.sap.length, daTim: daTham.indexOf(x.id) >= 0, hang: all.indexOf(x) + 1,
+      })),
+    });
+  }));
+
+  // Cho cong dong: hang ca web bay ban (moi nhat cua tung ban), loc theo mon
+  app.get('/api/farm/chocongdong', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, k = String(req.query.k || '');
+    const all = await taiCongDong();
+    const ds = [];
+    all.forEach((x) => {
+      if (x.id === me) return;
+      x.sap.forEach((o) => { if (!k || o.k === k) ds.push({ id: x.id, ten: x.ten, lop: x.lop, sid: o.id, k: o.k, n: o.n, gia: o.gia }); });
+    });
+    ds.sort((a, b) => a.gia / a.n - b.gia / b.n || (a.k < b.k ? -1 : 1));
+    const loai = {};
+    all.forEach((x) => { if (x.id !== me) x.sap.forEach((o) => { loai[o.k] = (loai[o.k] || 0) + 1; }); });
+    res.json({ ds: ds.slice(0, 200), soMon: ds.length, loai });
+  }));
+
   app.get('/api/farm/lop', d.requireAuth, d.asyncRoute(async (req, res) => {
     const lop = await banCungLop(req.user.id);
     if (!lop) return res.json({ lop: null, ds: [] });
@@ -683,9 +754,8 @@ module.exports = function ganNongTrai(app, d) {
   }));
 
   app.get('/api/farm/xem/:id', d.requireAuth, d.asyncRoute(async (req, res) => {
-    const lop = await banCungLop(req.user.id);
     const id = String(req.params.id);
-    if (!lop || lop.ids.indexOf(id) < 0) return res.status(403).json({ error: 'Chỉ thăm được nông trại của bạn cùng lớp.' });
+    if (!(await coTheChoi(req.user.id, id))) return res.status(403).json({ error: 'Bạn này chưa mở nông trại.' });
     const [f, ten, fm] = await Promise.all([doc(id), d.loadUserNames(), doc(req.user.id)]);
     const now = Date.now(), ngay = d.vnDayKey();
     res.json({
@@ -706,8 +776,7 @@ module.exports = function ganNongTrai(app, d) {
     const id = String(req.params.id);
     const me = req.user.id;
     if (id === me) return res.status(400).json({ error: 'Không tự thả tim cho mình được.' });
-    const lop = await banCungLop(me);
-    if (!lop || lop.ids.indexOf(id) < 0) return res.status(403).json({ error: 'Chỉ thăm được nông trại của bạn cùng lớp.' });
+    if (!(await coTheChoi(me, id))) return res.status(403).json({ error: 'Bạn này chưa mở nông trại.' });
     const ngay = d.vnDayKey();
     const kq = await lanLuot(me, async () => {
       const f = await doc(me);
@@ -749,8 +818,7 @@ module.exports = function ganNongTrai(app, d) {
   }
   async function cungLop(me, id) {
     if (id === me) throw loi('Đây là nông trại của em mà.');
-    const lop = await banCungLop(me);
-    if (!lop || lop.ids.indexOf(id) < 0) throw loi('Chỉ chơi được với bạn cùng lớp.');
+    if (!(await coTheChoi(me, id))) throw loi('Bạn này chưa mở nông trại.');
   }
   // Loi nong trai -> 400 kem thong bao; loi khac de server xu ly
   function traLoi(res, p) {
@@ -805,6 +873,7 @@ module.exports = function ganNongTrai(app, d) {
       ghiNk(fs, { ai: me, l: 'mua', k: o.k, n: o.n, xu: o.gia });
       await ghi(id, fs);
       await ghi(me, fb);
+      boNhoCongDong();
       return { ok: true, them: { sp: { [o.k]: o.n } }, st: await trangThai(me, fb), sap: fs.sap };
     })));
   }));

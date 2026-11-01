@@ -795,3 +795,28 @@ body.o-thi-tran .nt-zoom, body.o-thi-tran .nt-thu-het { display: none !important
 .nt-doi-nhanh button:hover { background: var(--vang); }
 .nt-doi-nut { width: 100%; }
 .nt-doi-nut:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ---------- cong dong ---------- */
+.nt-cd-tim input {
+  width: 100%; height: 46px; padding: 0 16px; margin-bottom: 8px;
+  font: inherit; font-weight: 700; color: var(--chu);
+  border: 3px solid var(--vien); border-radius: 14px; background: #fff;
+}
+.nt-cd-ds li { align-items: center; }
+.nt-cd-nv { flex: none; width: 44px; height: 52px; display: grid; place-items: center; overflow: hidden; }
+.nt-cd-nv svg { width: 44px; height: 52px; }
+.nt-cd-loc { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.nt-cd-loc button {
+  display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px 4px 6px; min-height: 36px;
+  border-radius: 999px; border: 2px solid var(--vien); background: #fff;
+  font: inherit; font-weight: 800; font-size: 0.85rem; color: var(--chu); cursor: pointer;
+}
+.nt-cd-loc button img { width: 24px; height: 24px; }
+.nt-cd-loc button small { color: var(--mo); font-weight: 700; }
+.nt-cd-loc button.bat { background: var(--vang); }
+@media (max-width: 640px) {
+  /* 7 nut duoi chia deu chieu ngang dien thoai */
+  .nt-duoi { gap: 2px; padding: 6px; }
+  .nt-cu { width: auto; flex: 1 1 0; min-width: 0; font-size: 0.6rem; line-height: 1.15; }
+  .nt-cu img { width: 32px; height: 32px; }
+}

@@ -17,7 +17,7 @@
   --hw-green: #1f9254;
   --hw-shadow: 0 18px 48px rgba(43, 36, 32, 0.22);
   --hw-font: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --hw-font-zh: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', var(--hw-font);
+  --hw-font-zh: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   font-family: var(--hw-font);
   color: var(--hw-ink);
   font-size: 15px;
@@ -632,7 +632,7 @@
 .gd-key{background:var(--xb-fde68a, #fde68a);color:var(--xt-8a1c14, #8a1c14);font-weight:700;border-radius:4px;padding:0 2px;}
 .gd-exs{display:grid;gap:10px;}
 .gd-ex{background:var(--xb-faf8f5, #faf8f5);border:1px solid var(--xv-eee8de, #eee8de);border-radius:12px;padding:12px 16px;}
-.gd-ex-zh{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:var(--zh-text,1.3rem);color:var(--xt-1f1a17, #1f1a17);line-height:1.6;}
+.gd-ex-zh{font-family:var(--hw-font-zh);font-size:var(--zh-text,1.3rem);color:var(--xt-1f1a17, #1f1a17);line-height:1.6;}
 .gd-ex-py{color:var(--xt-a8691a, #a8691a);font-size:0.88rem;margin-top:2px;}
 .gd-ex-vn{color:var(--xt-5f5952, #5f5952);font-size:0.9rem;margin-top:2px;}
 .gd-say{border:none;background:none;cursor:pointer;font-size:1rem;padding:2px 6px;border-radius:8px;vertical-align:middle;}
@@ -648,11 +648,11 @@
 .gd-sub{color:var(--xt-5f5952, #5f5952);font-size:0.9rem;line-height:1.65;margin-top:10px;}
 .gd-try{margin-top:6px;border-top:1px dashed var(--xv-e6e2da, #e6e2da);padding-top:4px;}
 .gd-try-q{color:var(--xt-5f5952, #5f5952);font-size:0.9rem;margin-bottom:6px;}
-.gd-try-zh{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:var(--zh-text,1.3rem);color:var(--xt-1f1a17, #1f1a17);line-height:1.6;}
+.gd-try-zh{font-family:var(--hw-font-zh);font-size:var(--zh-text,1.3rem);color:var(--xt-1f1a17, #1f1a17);line-height:1.6;}
 .gd-blank{display:inline-block;min-width:2.2em;text-align:center;border-bottom:2px solid #c8372d;color:var(--xt-c8372d, #c8372d);margin:0 2px;}
 .gd-blank.is-filled{color:var(--xt-1f8a4c, #1f8a4c);border-color:#1f8a4c;font-weight:700;}
 .gd-opts{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
-.gd-opt{min-width:56px;min-height:44px;padding:8px 18px;border:2px solid var(--xv-e6e2da, #e6e2da);border-radius:12px;background:var(--color-white, #fff);cursor:pointer;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:var(--zh-text,1.3rem);color:var(--xt-1f1a17, #1f1a17);transition:border-color .15s,background .15s;}
+.gd-opt{min-width:56px;min-height:44px;padding:8px 18px;border:2px solid var(--xv-e6e2da, #e6e2da);border-radius:12px;background:var(--color-white, #fff);cursor:pointer;font-family:var(--hw-font-zh);font-size:var(--zh-text,1.3rem);color:var(--xt-1f1a17, #1f1a17);transition:border-color .15s,background .15s;}
 .gd-opt.is-vn{font-family:inherit;font-size:0.92rem;text-align:left;flex:1 1 220px;}
 .gd-opt:hover:not(:disabled){border-color:#c8372d;color:var(--xt-c8372d, #c8372d);}
 .gd-opt.is-ok{border-color:#1f8a4c;background:var(--xb-e9f6ee, #e9f6ee);color:var(--xt-1f8a4c, #1f8a4c);}
@@ -670,9 +670,9 @@
 .gd-errs-h { font-weight: 700; color: var(--xt-8a5a12, #8a5a12); font-size: 0.92rem; margin-bottom: 8px; }
 .gd-err { padding: 8px 0; border-top: 1px dashed var(--xv-f1d9a8, #f1d9a8); }
 .gd-err:first-of-type { border-top: none; padding-top: 0; }
-.gd-err-bad { font-family: 'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; font-size: var(--zh-small, 1.1rem); color: var(--xt-c62828, #c62828); text-decoration: line-through; text-decoration-color: rgba(198,40,40,0.4); }
+.gd-err-bad { font-family: var(--hw-font-zh); font-size: var(--zh-small, 1.1rem); color: var(--xt-c62828, #c62828); text-decoration: line-through; text-decoration-color: rgba(198,40,40,0.4); }
 .gd-err-why { font-size: 0.86rem; color: var(--xt-5f5952, #5f5952); margin: 2px 0; }
-.gd-err-ok { font-family: 'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; font-size: var(--zh-small, 1.1rem); color: var(--xt-1f8a4c, #1f8a4c); font-weight: 600; }
+.gd-err-ok { font-family: var(--hw-font-zh); font-size: var(--zh-small, 1.1rem); color: var(--xt-1f8a4c, #1f8a4c); font-weight: 600; }
 
 /* ============================================================
    MOT NUT "TRO GIUP" (thay ba nut noi cu) + MENU + GOP Y

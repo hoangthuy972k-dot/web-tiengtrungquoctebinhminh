@@ -64,8 +64,10 @@
   --color-error-bg: #fdefec;
 
   --font-latin: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  /* Chu Han trong cau, o nhap, nut chon: sans cho ro net o co nho. */
-  --font-hanzi: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', var(--font-latin);
+  /* Chu Han: kieu chu Tong (SimSun tren Windows, Songti tren may Apple, Noto Serif SC tai tu web
+     cho dien thoai). Chu Latin / dau tieng Viet / pinyin dung Times New Roman dung truoc —
+     SimSun khong co du dau tieng Viet nen chi nhan phan chu Han. */
+  --font-hanzi: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   /* Chu Han co lon: DUNG CHUNG phong voi chu Han trong cau de ca bai hoc
      mot kieu chu. Serif chi con o con dau trang tri (--font-seal). */
   --font-hanzi-display: var(--font-hanzi);
@@ -9811,4 +9813,140 @@ html.ho-tro-toi[data-theme="dark"] {
   .vp-option-btn { min-height: 54px; padding-left: 54px; }
   .vp-option-btn::before { left: 12px; width: 30px; height: 30px; margin-top: -15px; font-size: 0.85rem; }
   .pgb-seg { width: 13px; height: 13px; }
+}
+
+/* ---------- Kieu lop hoc cho cac man con lai: the, o dap an, the bai, tu ghep ---------- */
+/* The / khung cau hoi */
+.qr-card,
+.spai-card,
+.dp-quiz-box,
+.lp-passage,
+.mt-q {
+  background: var(--lop-giay);
+  border: 3px solid var(--lop-vien);
+  border-radius: 22px;
+  box-shadow: 0 6px 0 var(--lop-bong), 0 14px 30px rgba(30, 18, 12, 0.08);
+}
+.qr-card, .spai-card, .dp-quiz-box, .lp-passage { border-top: 10px solid var(--lop-vach); }
+.qr-card.is-correct-card { border-color: var(--lop-dung); }
+.qr-card.is-wrong-card { border-color: var(--lop-sai); }
+.lp-passage { padding: clamp(16px, 2.6vw, 26px); margin-bottom: var(--space-5); }
+.dp-quiz-title { display: inline-flex; padding: 4px 14px; border-radius: 999px; background: var(--lop-nhan); color: var(--lop-nhan-chu); font-weight: 800; }
+.mt-q { border-width: 2px; box-shadow: 0 4px 0 var(--lop-mo); }
+
+/* O dap an dung chung kieu: vien kem, bong day, vong chu A B C D */
+.dp-quiz-opts, .lp-question-opts { counter-reset: dapan; }
+.dp-quiz-opt,
+.lp-opt-btn {
+  position: relative;
+  min-height: 52px;
+  padding: 10px 14px 10px 52px;
+  border: 2px solid var(--lop-o);
+  border-radius: 14px;
+  background: var(--color-white);
+  box-shadow: 0 3px 0 var(--lop-mo);
+  text-align: left;
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+.dp-quiz-opt::before,
+.lp-opt-btn::before {
+  counter-increment: dapan;
+  content: counter(dapan, upper-alpha);
+  position: absolute; left: 11px; top: 50%;
+  display: grid; place-items: center;
+  width: 30px; height: 30px; margin-top: -15px; border-radius: 50%;
+  background: var(--lop-nhan); color: var(--lop-nhan-chu);
+  font-family: var(--font-latin); font-size: 0.85rem; font-weight: 800;
+}
+.dp-quiz-opt:hover:not(:disabled),
+.lp-opt-btn:hover:not(:disabled) { border-color: var(--lop-chon); transform: translateY(-1px); }
+.dp-quiz-opt.is-correct, .lp-opt-btn.is-correct { border-color: var(--lop-dung); background: var(--color-green-50); }
+.dp-quiz-opt.is-correct::before, .lp-opt-btn.is-correct::before { content: '✓'; background: var(--lop-dung); color: #fff; }
+.dp-quiz-opt.is-wrong, .lp-opt-btn.is-wrong { border-color: var(--lop-sai); background: var(--color-red-50); }
+.dp-quiz-opt.is-wrong::before, .lp-opt-btn.is-wrong::before { content: '✗'; background: var(--lop-sai); color: #fff; }
+
+/* On tap nhanh: o dap an da co nut chu (qr-opt-key) -> to mau nhu tren lop */
+.qr-opt { border: 2px solid var(--lop-o); border-radius: 16px; box-shadow: 0 3px 0 var(--lop-mo); }
+.qr-opt:hover:not(:disabled) { border-color: var(--lop-chon); }
+.qr-opt-key { width: 32px; height: 32px; background: var(--lop-nhan); color: var(--lop-nhan-chu); font-size: 0.9rem; }
+.qr-opt.is-right { border-color: var(--lop-dung); }
+.qr-opt.is-right .qr-opt-key { background: var(--lop-dung); }
+.qr-opt.is-bad { border-color: var(--lop-sai); }
+.qr-opt.is-bad .qr-opt-key { background: var(--lop-sai); }
+
+/* Thi thu: giu bo cuc de thi, chi doi vien + nut chu */
+.mt-opt { border: 2px solid var(--lop-o); border-radius: 12px; }
+.mt-opt:hover:not(:disabled) { border-color: var(--lop-chon); }
+.mt-opt-key { background: var(--lop-nhan); color: var(--lop-nhan-chu); }
+.mt-opt.is-selected { border-color: var(--lop-chon); }
+
+/* The bai / o ghep: nen kem, vien day, day dam nhu the chu tren bang */
+.wu-card,
+.mg-item {
+  border: 2px solid var(--lop-o);
+  border-bottom-width: 4px;
+  border-radius: 14px;
+  background: var(--color-white);
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+.wu-card:hover, .mg-item:hover:not(:disabled):not(.is-correct) { border-color: var(--lop-chon); transform: translateY(-1px); }
+.wu-card.is-sel, .mg-item.is-sel { border-color: var(--lop-chon); background: #fff6e2; }
+.wu-card.matched, .mg-item.is-correct { border-color: var(--lop-dung); background: var(--color-green-50); }
+.wu-opt,
+.sg-chip,
+.sg-placed {
+  border: 2px solid #e6cfa8;
+  border-bottom-width: 5px;
+  background: #fff8ea;
+  border-radius: 14px;
+  color: var(--color-gray-900, #3a2a24);
+}
+.wu-opt:hover:not(:disabled), .sg-chip:hover:not(:disabled) { border-color: var(--lop-chon); }
+.wu-opt.is-correct { border-color: var(--lop-dung); background: var(--color-green-50); }
+.wu-opt.is-wrong { border-color: var(--lop-sai); background: var(--color-red-50); }
+.sg-placed { background: #fff3d6; border-color: var(--lop-chon); }
+
+/* The lat (flashcard): vien dam + bong day nhu the tren lop, giu mau do / xanh */
+.fc-face { border: 3px solid var(--lop-vien); border-radius: 26px; box-shadow: 0 8px 0 var(--lop-bong), 0 18px 36px rgba(30, 18, 12, 0.18); }
+@media (prefers-color-scheme: dark) {
+  html.ho-tro-toi:not([data-theme="light"]) .wu-opt,
+  html.ho-tro-toi:not([data-theme="light"]) .sg-chip,
+  html.ho-tro-toi:not([data-theme="light"]) .sg-placed { background: #3a3029; border-color: #6a5440; color: #f5ead8; }
+  html.ho-tro-toi:not([data-theme="light"]) .wu-card.is-sel,
+  html.ho-tro-toi:not([data-theme="light"]) .mg-item.is-sel { background: #45351f; }
+}
+html.ho-tro-toi[data-theme="dark"] .wu-opt,
+html.ho-tro-toi[data-theme="dark"] .sg-chip,
+html.ho-tro-toi[data-theme="dark"] .sg-placed { background: #3a3029; border-color: #6a5440; color: #f5ead8; }
+html.ho-tro-toi[data-theme="dark"] .wu-card.is-sel,
+html.ho-tro-toi[data-theme="dark"] .mg-item.is-sel { background: #45351f; }
+
+/* ---------- Chu tieng Viet trong noi dung bai: Times New Roman (Tinos tai tu web cho
+   may khong co san, vd Android) va to hon cho can voi chu Han. Chu Han lan trong cau
+   tu roi ve kieu chu Tong (SimSun / Songti / Noto Serif SC). ---------- */
+:root { --font-viet: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; }
+body .h4-vn, body .h4-card-vn, body .h4-ex-vn, body .h4-tr-vn, body .h4-tb-vn,
+body .dp-vn, body .vp-ex-vn, body .rp-vn, body .vp-word-vn, body .vp-quiz-prompt-vn,
+body .tp-prompt-vi, body .tp-answer-vi, body .spai-sample-vn, body .spai-q-vn, body .sp-sample-vn,
+body .sp-q-vn, body .sp-model-vn, body .sp-drill-vn, body .qr-big-vn, body .npt-vd-vn, body .mt-q-vn,
+body .lp-dict-answer-vn, body .kdp-vn, body .idiom-vn, body .gr-example-vn, body .fq-vi, body .fc-vn, body .dpa-vn,
+body .vp-option-btn:not(.hanzi), body .lp-opt-btn, body .dp-quiz-opt, body .lp-question-text, body .dp-quiz-qtext,
+body .fq-q, body .mc-prompt, body .qr-opt-text {
+  font-family: var(--font-viet);
+  font-weight: 400;
+}
+/* o dap an + cau hoi: chu dam cho de doc tu xa (Times chi co thuong / dam) */
+body .vp-option-btn:not(.hanzi), body .lp-opt-btn, body .dp-quiz-opt, body .qr-opt-text,
+body .lp-question-text, body .dp-quiz-qtext, body .fq-q, body .mc-prompt { font-weight: 700; }
+/* nghia trong danh sach tu (truoc 0,95rem — nho hon han chu Han, pinyin) */
+body .h4-vn { font-size: clamp(1.2rem, 1.05rem + 0.5vw, 1.4rem); color: var(--ink, var(--fg-gray-800)); }
+body .h4-card-vn { font-size: 1.4rem; }
+body .h4-ex-vn { font-size: 1.15rem; }
+body .h4-tr-vn { font-size: 1.25rem; }
+/* cac dong nghia / dich con nho khac */
+body .dp-vn, body .rp-vn, body .spai-sample-vn, body .spai-q-vn, body .sp-model-vn, body .sp-drill-vn,
+body .kdp-vn, body .idiom-vn, body .fq-vi, body .vp-ex-vn, body .gr-example-vn { font-size: 1.18rem; }
+body .sp-sample-vn, body .sp-q-vn, body .npt-vd-vn, body .lp-dict-answer-vn, body .tp-answer-vi, body .qr-big-vn { font-size: 1.28rem; }
+@media (max-width: 640px) {
+  body .h4-vn { font-size: 1.12rem; }
 }

@@ -4,7 +4,7 @@
   --lv-tint: #faf6ef; --lv-accent: #c8372d; --lv-accent-d: #a82d24; --lv-accent-l: #fdefec; --lv-on-accent: #fff;
   --lv-ok: #1f7a45; --lv-ok-l: #e8f5ec; --lv-bad: #b3261e; --lv-bad-l: #fdecea;
   --lv-warn: #8a5a00; --lv-warn-l: #fff4d6; --lv-mark: #ffe58a; --lv-py: #8a5a0f;
-  --lv-hanzi: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --lv-hanzi: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
 }
 @media (prefers-color-scheme: dark) {
   html.ho-tro-toi:not([data-theme="light"]) {

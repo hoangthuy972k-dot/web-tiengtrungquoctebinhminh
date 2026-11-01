@@ -79,15 +79,79 @@
       });
     } catch (e) { /* bo qua */ }
   }
-  function doc(zh) {
-    if (!window.speechSynthesis || !zh) return;
+  // Doc tieng Trung bang giong cua trinh duyet (giong cach trang bai hoc lam):
+  //  - CHON HAN giong tieng Trung: nhieu dien thoai Android chi dat lang='zh-CN' thi im lang
+  //  - "mo khoa" o lan cham dau tien: iPhone chan doc tu dong neu chua tung doc khi em cham
+  //  - may khong co giong Trung: thu giong Google cua may chu (/api/tts, neu da cau hinh)
+  var loa = typeof Audio !== 'undefined' ? new Audio() : null;
+  var demTts = {}, ttsHong = false, daMoKhoa = false, giongZh = null;
+  function chonGiongZh() {
+    if (!window.speechSynthesis) return null;
+    var ds = (speechSynthesis.getVoices() || []).filter(function (v) {
+      var l = (v.lang || '').toLowerCase().replace('_', '-');
+      return /^zh/.test(l) && !/^(yue|zh-hk)/.test(l);
+    });
+    function diem(v) {
+      var l = (v.lang || '').toLowerCase().replace('_', '-'), t = (v.name || '').toLowerCase();
+      return (/^zh-cn|^zh-hans/.test(l) ? 100 : 0) + (/google/.test(t) ? 40 : 0) + (/natural|online|neural/.test(t) ? 30 : 0);
+    }
+    return ds.sort(function (a, b) { return diem(b) - diem(a); })[0] || null;
+  }
+  // true / false / null (chua biet: danh sach giong chua nap xong)
+  function coGiongZh() {
+    if (!window.speechSynthesis) return false;
+    if (!giongZh) giongZh = chonGiongZh();
+    if (giongZh) return true;
+    return (speechSynthesis.getVoices() || []).length ? false : null;
+  }
+  if (window.speechSynthesis) {
+    try { speechSynthesis.addEventListener('voiceschanged', function () { giongZh = chonGiongZh(); }); } catch (e) { /* bo qua */ }
+  }
+  function moKhoa() {
+    if (daMoKhoa) return;
+    daMoKhoa = true;
+    try { if (window.speechSynthesis) { var u = new SpeechSynthesisUtterance(' '); u.volume = 0; speechSynthesis.speak(u); } } catch (e) { /* bo qua */ }
+    try { if (loa) { loa.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA='; var p = loa.play(); if (p && p.catch) p.catch(function () {}); } } catch (e) { /* bo qua */ }
+  }
+  document.addEventListener('pointerdown', moKhoa, true);
+  document.addEventListener('touchstart', moKhoa, true);
+  function layTts(zh) {
+    if (demTts[zh]) return Promise.resolve(demTts[zh]);
+    if (ttsHong) return Promise.reject();
+    return fetch('/api/tts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: zh.slice(0, 200) }) })
+      .then(function (r) { if (r.status === 503) ttsHong = true; return r.ok ? r.json() : Promise.reject(); })
+      .then(function (d) { if (!d || !d.audioContent) throw new Error(); demTts[zh] = d.audioContent; return d.audioContent; });
+  }
+  function docTrinhDuyet(zh, loi) {
+    if (!window.speechSynthesis) { if (loi) loi(); return; }
     try {
       speechSynthesis.cancel();
       var u = new SpeechSynthesisUtterance(zh);
       u.lang = 'zh-CN'; u.rate = 0.85;
+      if (giongZh) u.voice = giongZh;
+      u.onerror = function (e) { if (loi && e && e.error !== 'interrupted' && e.error !== 'canceled') loi(); };
       speechSynthesis.speak(u);
-    } catch (e) { /* bo qua */ }
+    } catch (e) { if (loi) loi(); }
   }
+  function docMayChu(zh, loi) {
+    layTts(zh).then(function (b64) {
+      if (!loa) throw new Error();
+      loa.pause();
+      loa.src = 'data:audio/mp3;base64,' + b64;
+      var p = loa.play();
+      if (p && p.catch) p.catch(function () { if (loi) loi(); });
+    }).catch(function () { if (loi) loi(); });
+  }
+  // loi(): may nay khong phat duoc tieng (cau "nghe" se hien pinyin de van lam duoc)
+  function doc(zh, loi) {
+    if (!zh) return;
+    var co = coGiongZh();
+    if (co === false) { docMayChu(zh, loi); return; }
+    // goi NGAY (dong bo) de giu "luot cham" cua em — iPhone moi cho doc
+    docTrinhDuyet(zh, function () { docMayChu(zh, loi); });
+  }
+  // May chac chan khong doc duoc (khong co giong Trung, may chu cung khong co giong) -> bo kieu cau nghe
+  function nghiDuoc() { return coGiongZh() !== false || !ttsHong; }
 
   /* ---------------- thong bao ---------------- */
   var baoHen = 0;
@@ -965,7 +1029,7 @@
     var sai = cungLoai.slice(0, 3);
     tron(khac).forEach(function (v) { if (sai.length < 3 && sai.indexOf(v) < 0) sai.push(v); });
     var chon = tron([dap].concat(sai));
-    var kieu = Math.floor(Math.random() * 3); // 0: Han -> Viet, 1: Viet -> Han, 2: nghe -> Han
+    var kieu = Math.floor(Math.random() * (nghiDuoc() ? 3 : 2)); // 0: Han -> Viet, 1: Viet -> Han, 2: nghe -> Han
     var cau;
     if (kieu === 0) cau = '<p class="nt-hoi-hd">Nghĩa của từ này là gì?</p><button type="button" class="nt-hoi-zh" data-doc="' + esc(dap.zh) + '" lang="zh">' + esc(dap.zh) + '</button><p class="nt-hoi-py">' + esc(dap.py) + '</p>';
     else if (kieu === 1) cau = '<p class="nt-hoi-hd">Chọn chữ Hán đúng</p><p class="nt-hoi-vn">' + esc(dap.vn) + '</p>';
@@ -978,7 +1042,17 @@
     hoi.khoa = false;
     hoi.dap = dap;
     hoi.chon = chon;
-    if (kieu === 2) setTimeout(function () { doc(dap.zh); }, 250);
+    if (kieu === 2) {
+      // may khong phat duoc tieng: hien pinyin de cau van lam duoc
+      var hienPy = function () {
+        var c = $('#ntHoiCau');
+        if (hoi && hoi.dap === dap && c && !c.querySelector('.nt-hoi-py')) c.insertAdjacentHTML('beforeend', '<p class="nt-hoi-py">' + esc(dap.py) + '</p>');
+      };
+      hoi.hienPy = hienPy;
+      setTimeout(function () { doc(dap.zh, hienPy); }, 250);
+    } else {
+      hoi.hienPy = null;
+    }
   }
   function traLoi(i, nut) {
     if (!hoi || hoi.khoa) return;
@@ -1112,7 +1186,7 @@
     });
     document.addEventListener('click', function (e) {
       var d = e.target.closest('[data-doc]');
-      if (d) doc(d.getAttribute('data-doc'));
+      if (d) doc(d.getAttribute('data-doc'), d.classList.contains('nt-hoi-loa') && hoi ? hoi.hienPy : null);
     });
     $('#ntThamVe').addEventListener('click', veNha);
     $('#ntThamTim').addEventListener('click', thaTim);

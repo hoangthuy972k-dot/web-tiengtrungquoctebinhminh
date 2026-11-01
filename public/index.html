@@ -638,6 +638,7 @@
       <div class="auth-tabs">
         <button class="auth-tab is-active" data-auth="login" type="button">Đăng nhập</button>
         <button class="auth-tab" data-auth="register" type="button">Đăng ký</button>
+        <button class="auth-tab" data-auth="lop" type="button">Mã lớp</button>
       </div>
 
       <form class="auth-panel is-active" id="loginPanel" data-auth-panel="login">
@@ -651,7 +652,35 @@
         </div>
         <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
         <p class="form-note"><a href="#" data-auth-switch="forgot" class="auth-quen">Quên mật khẩu?</a> · Chưa có tài khoản? <a href="#" data-auth-switch="register">Đăng ký ngay</a></p>
+        <p class="form-note auth-lop-goi">Quên email? <a href="#" data-auth-switch="lop">Đăng nhập bằng <b>mã lớp</b></a></p>
       </form>
+
+      <!-- Dang nhap bang ma lop: ma lop -> chon ten -> mat khau (khong can nho email) -->
+      <div class="auth-panel" id="lopPanel" data-auth-panel="lop">
+        <form id="lopMaForm" class="qmk-form">
+          <div class="form-field">
+            <label for="lopMa">Mã lớp thầy cô đưa</label>
+            <div class="auth-lop-row"><input type="text" id="lopMa" required maxlength="12" autocomplete="off" autocapitalize="characters" placeholder="VD: K7M2QX" /><button class="btn btn-outline" type="submit">Tìm lớp</button></div>
+          </div>
+          <p class="form-error" id="lopMaErr" hidden></p>
+        </form>
+        <div id="lopChon" hidden>
+          <p class="auth-lop-tit" id="lopTen"></p>
+          <input type="search" class="auth-lop-tim" id="lopTim" placeholder="Gõ tên để tìm nhanh…" aria-label="Tìm tên" />
+          <ul class="auth-lop-ds" id="lopDs"></ul>
+        </div>
+        <form id="lopMkForm" class="qmk-form" hidden>
+          <p class="auth-lop-tit">Em là <b id="lopTenEm"></b> · <a href="#" id="lopDoiTen">chọn lại</a></p>
+          <div class="form-field">
+            <label for="lopMk">Mật khẩu của em</label>
+            <input type="password" id="lopMk" required autocomplete="current-password" />
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
+          <p class="form-error" id="lopMkErr" hidden></p>
+        </form>
+        <p class="form-note">Dùng được khi em <b>đã chọn tên mình trong lớp</b> (trên điện thoại hay máy tính đều được). Lần đầu: đăng nhập bằng email rồi nhập mã lớp, chọn tên.</p>
+        <p class="form-note"><a href="#" data-auth-switch="forgot">Quên mật khẩu?</a> · <a href="#" data-auth-switch="login">Đăng nhập bằng email</a></p>
+      </div>
 
       <!-- Quen mat khau: gui yeu cau cho co -> nhap ma 6 so co gui -> dat mat khau moi -->
       <div class="auth-panel" id="forgotPanel" data-auth-panel="forgot">
@@ -744,6 +773,7 @@
         </div>
         <button class="btn btn-primary btn-block" type="submit">Tạo tài khoản</button>
         <p class="form-note">Đã có tài khoản? <a href="#" data-auth-switch="login">Đăng nhập</a></p>
+        <p class="form-note auth-lop-goi">Đã có tài khoản trên máy khác mà quên email? <b>Đừng tạo mới</b> — <a href="#" data-auth-switch="lop">đăng nhập bằng mã lớp</a></p>
       </form>
 
       <p class="modal-demo-note">Tài khoản thật — mật khẩu được mã hoá, tiến độ học đồng bộ trên mọi thiết bị bạn đăng nhập.</p>

@@ -738,6 +738,52 @@ app.post('/api/auth/login', asyncRoute(async (req, res) => {
   res.json({ token, user: publicUser(user), progress: await userProgress(user.id) });
 }));
 
+// ---------- Dang nhap bang ma lop ----------
+// Hoc sinh hay quen email (dang ky email khac tren may tinh -> 2 tai khoan). Cach nay:
+// nhap ma lop -> chon ten minh -> nhap mat khau => vao DUNG tai khoan da gan voi ten do,
+// tren may nao cung vay. Ten chua gan tai khoan thi phai dang nhap/dang ky bang email truoc.
+function maLop(v) { return String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12); }
+
+app.post('/api/auth/lop-ds', asyncRoute(async (req, res) => {
+  if (quaNhieu('lopds', clientIp(req), 30, 10 * 60 * 1000)) {
+    return res.status(429).json({ error: 'Em thử nhiều lần quá. Đợi 10 phút rồi thử lại nhé.' });
+  }
+  const code = maLop(req.body?.code);
+  const st = await loadClassState();
+  const cls = code && st.classes.find((c) => c.code === code);
+  if (!cls) return res.status(404).json({ error: 'Không tìm thấy lớp có mã này. Kiểm tra lại mã thầy cô đưa nhé.' });
+  const roster = st.roster.filter((r) => r.classId === cls.id).sort((a, b) => a.sort - b.sort);
+  if (!roster.length) return res.status(400).json({ error: 'Lớp này chưa có danh sách tên. Em đăng nhập bằng email nhé.' });
+  res.json({ class: { name: cls.name }, roster: roster.map((r) => ({ id: r.id, name: r.name, coTk: !!r.userId })) });
+}));
+
+app.post('/api/auth/login-lop', asyncRoute(async (req, res) => {
+  const code = maLop(req.body?.code);
+  const rosterId = String(req.body?.rosterId || '');
+  const password = typeof req.body?.password === 'string' ? req.body.password : '';
+  if (!code || !rosterId || !password) return res.status(400).json({ error: 'Thiếu mã lớp, tên hoặc mật khẩu.' });
+  const ip = clientIp(req);
+  if (biKhoa('dn-ip', ip, 30) || biKhoa('dn-lop', rosterId, 8)) {
+    return res.status(429).json({ error: 'Đăng nhập sai nhiều lần quá. Em đợi khoảng 15 phút rồi thử lại, hoặc nhờ thầy/cô đặt lại mật khẩu.' });
+  }
+  const st = await loadClassState();
+  const cls = st.classes.find((c) => c.code === code);
+  const r = cls && st.roster.find((x) => x.id === rosterId && x.classId === cls.id);
+  if (!r) { ghiSai('dn-ip', ip); return res.status(404).json({ error: 'Không tìm thấy tên này trong lớp.' }); }
+  const user = r.userId ? await findUserById(r.userId) : null;
+  if (!user) {
+    return res.status(409).json({ chuaCo: true, error: 'Tên này chưa gắn với tài khoản nào. Em đăng nhập (hoặc đăng ký) bằng email, rồi nhập mã lớp và chọn tên mình — lần sau là đăng nhập bằng mã lớp được.' });
+  }
+  const khop = (p) => hashPassword(p, user.passwordSalt) === user.passwordHash;
+  if (!khop(password) && !(password.trim() !== password && khop(password.trim()))) {
+    ghiSai('dn-ip', ip); ghiSai('dn-lop', rosterId);
+    return res.status(401).json({ quenMk: true, goiY: cheEmail(user.email),
+      error: 'Mật khẩu không đúng. Đây là mật khẩu em đặt lúc tạo tài khoản ' + cheEmail(user.email) + '.' });
+  }
+  const token = await createSession(user.id);
+  res.json({ token, user: publicUser(user), progress: await userProgress(user.id) });
+}));
+
 app.post('/api/auth/logout', requireAuth, asyncRoute(async (req, res) => {
   await deleteSession(req.sessionToken);
   res.json({ ok: true });

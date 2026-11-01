@@ -17386,6 +17386,9 @@
         $('#authModalSub').textContent = 'Đổi mật khẩu hoặc đăng xuất.';
         $('#accountInfo').innerHTML = au && au.user ? '👤 <b>' + lbEsc(au.user.name || '') + '</b><br><span>' + lbEsc(au.user.email || '') + '</span>' : '';
         $('#changePwOk').hidden = true;
+      } else if (tab === 'lop') {
+        $('#authModalTitle').textContent = 'Đăng nhập bằng mã lớp';
+        $('#authModalSub').textContent = 'Không cần nhớ email: nhập mã lớp, bấm tên em, rồi nhập mật khẩu.';
       } else if (tab === 'register') {
         $('#authModalTitle').textContent = 'Tạo tài khoản học sinh';
         $('#authModalSub').textContent = 'Đăng ký để lưu tiến độ học và chuỗi ngày học của bạn.';
@@ -17482,6 +17485,75 @@
           showToast('Tạo tài khoản thành công! Chào mừng ' + res.data.user.name + '.');
         })
         .catch(function () { setFormError(form, 'Không kết nối được máy chủ, thử lại sau.'); });
+    });
+
+    // ---- Dang nhap bang ma lop: ma lop -> chon ten -> mat khau ----
+    // bo dau de tim ten khong can go dau
+    function foldVnAuth(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase(); }
+    var lopDn = { code: '', roster: [], rid: '' };
+    function lopLoi(id, msg) { var e = $(id); e.textContent = msg || ''; e.hidden = !msg; }
+    function veLopDs() {
+      var q = foldVnAuth($('#lopTim').value || '');
+      $('#lopDs').innerHTML = lopDn.roster.filter(function (r) {
+        return !q || foldVnAuth(r.name).indexOf(q) !== -1;
+      }).map(function (r) {
+        return '<li><button type="button" class="auth-lop-ten' + (r.coTk ? '' : ' is-chua') + '" data-lop-rid="' + lbEsc(r.id) + '">' + lbEsc(r.name) +
+          (r.coTk ? '' : ' <small>· chưa có tài khoản</small>') + '</button></li>';
+      }).join('') || '<li class="auth-lop-trong">Không thấy tên em? Báo thầy cô nhé.</li>';
+    }
+    $('#lopMaForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      lopLoi('#lopMaErr', '');
+      var code = $('#lopMa').value.trim();
+      fetch('/api/auth/lop-ds', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: code }) })
+        .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (res) {
+          if (!res.ok) { lopLoi('#lopMaErr', res.d.error || 'Không tìm được lớp.'); return; }
+          lopDn.code = code; lopDn.roster = res.d.roster || [];
+          $('#lopTen').innerHTML = '👋 Lớp <b>' + lbEsc(res.d.class.name) + '</b> — bấm vào <b>tên của em</b>:';
+          $('#lopTim').value = '';
+          veLopDs();
+          $('#lopChon').hidden = false;
+          $('#lopMkForm').hidden = true;
+        })
+        .catch(function () { lopLoi('#lopMaErr', 'Không kết nối được máy chủ, thử lại sau.'); });
+    });
+    $('#lopTim').addEventListener('input', veLopDs);
+    $('#lopDs').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-lop-rid]');
+      if (!b) return;
+      var r = lopDn.roster.filter(function (x) { return x.id === b.getAttribute('data-lop-rid'); })[0];
+      if (!r) return;
+      if (!r.coTk) { lopLoi('#lopMaErr', 'Tên "' + r.name + '" chưa gắn tài khoản. Lần đầu em đăng nhập (hoặc đăng ký) bằng email, nhập mã lớp và chọn tên mình — từ lần sau đăng nhập bằng mã lớp được.'); return; }
+      lopLoi('#lopMaErr', '');
+      lopDn.rid = r.id;
+      $('#lopTenEm').textContent = r.name;
+      $('#lopChon').hidden = true;
+      $('#lopMkForm').hidden = false;
+      lopLoi('#lopMkErr', '');
+      $('#lopMk').value = '';
+      setTimeout(function () { $('#lopMk').focus(); }, 50);
+    });
+    $('#lopDoiTen').addEventListener('click', function (e) {
+      e.preventDefault();
+      $('#lopMkForm').hidden = true;
+      $('#lopChon').hidden = false;
+    });
+    $('#lopMkForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      lopLoi('#lopMkErr', '');
+      fetch('/api/auth/login-lop', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code: lopDn.code, rosterId: lopDn.rid, password: $('#lopMk').value })
+      }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (res) {
+          if (!res.ok) { lopLoi('#lopMkErr', res.d.error || 'Đăng nhập thất bại.'); return; }
+          setSession(res.d.token, res.d.user, res.d.progress);
+          closeModal();
+          showToast('Đăng nhập thành công! Chào mừng trở lại, ' + res.d.user.name + '.');
+        })
+        .catch(function () { lopLoi('#lopMkErr', 'Không kết nối được máy chủ, thử lại sau.'); });
     });
 
     // ---- Quen mat khau: gui yeu cau cho co ----

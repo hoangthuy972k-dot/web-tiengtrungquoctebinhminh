@@ -245,7 +245,9 @@
     var h = '<button type="button" class="' + cls + '" data-id="' + o.id + '" style="left:' + o.x * T + 'px;top:' + o.y * T +
       'px;width:' + w * T + 'px;height:' + w * T + 'px;z-index:' + (phang ? 1 : (o.y + w) * 10) + '" aria-label="' + esc(tenMon(o.k, o.n).vn) + '">';
     h += '<img class="nt-hinh" src="' + anh(t.hinh) + '" alt="" draggable="false">';
-    if (t.bong && !S.tham) h += '<span class="nt-bong">' + img(t.bong) + '</span>';
+    // dang tham ban: bong bong chi cho viec giup duoc (tuoi cay, cho an)
+    var bong = S.tham ? (o.k === 'o' && t.loai === 'lon' && !o.t ? 'ic-tuoi' : t.loai === 'doi' ? 'ic-doi' : null) : t.bong;
+    if (bong) h += '<span class="nt-bong">' + img(bong) + '</span>';
     if (t.con != null) h += '<span class="nt-thoi"><i style="width:' + Math.round(t.tile * 100) + '%"></i></span>';
     if (t.tuoi) h += '<span class="nt-giot" aria-hidden="true"></span>';
     h += '</button>';
@@ -292,6 +294,7 @@
     $('#ntLv').title = 'Cấp ' + s.lv + ' · ' + (s.xp - s.xpLv) + '/' + (s.xpSau - s.xpLv) + ' kinh nghiệm';
     var conDon = s.don.some(function (dn) { return !dn.xong && duHang(dn.can); });
     $('#ntDonCham').hidden = !conDon;
+    $('#ntBanCham').hidden = !(s.nkMoi > 0);
   }
   function duHang(can) {
     return Object.keys(can).every(function (k) { return (S.st.kho[k] || 0) >= can[k]; });
@@ -363,7 +366,7 @@
     if (keo.daKeo) return;
     var vatEl = e.target.closest('.nt-vat');
     if (S.tham) {
-      if (vatEl) gioiThieu(timVat(vatEl), vatEl);
+      if (vatEl) { var ov = timVat(vatEl); if (ov && !giupBan(ov, vatEl)) gioiThieu(ov, vatEl); }
       return;
     }
     if (S.che === 'dat') {
@@ -704,6 +707,8 @@
     else if (l === 'don') veDon(than);
     else if (l === 'ban') veBan(than);
     else if (l === 'hoc') veKiemSao(than);
+    else if (l === 'sapban') veSapBan(than);
+    else if (l === 'chao') veChao(than);
     $all('img', than).forEach(ganLoiAnh);
   }
 
@@ -778,7 +783,8 @@
   function veKho(than) {
     var tab = bangDang.tab || 'sp';
     $('#ntBangTit').textContent = 'Kho của em';
-    datTab([['sp', 'Nông sản'], ['tui', 'Túi đồ']], tab);
+    datTab([['sp', 'Nông sản'], ['sap', 'Sạp của em (' + S.st.sap.length + ')'], ['tui', 'Túi đồ']], tab);
+    if (tab === 'sap') { veSapEm(than); return; }
     var c = S.cat, s = S.st, html = '';
     if (tab === 'sp') {
       var ks = Object.keys(s.kho).filter(function (k) { return s.kho[k] > 0; });
@@ -789,9 +795,10 @@
           var m = c.SP[k];
           html += theMon(k, m, 'sp-' + k, '<p class="nt-the-phu">Có <b>' + s.kho[k] + '</b> · ' + img('ic-xu') + m.ban + ' / cái</p>', 0,
             '<div class="nt-ban-nut"><button type="button" class="nt-mua" data-ban="' + k + '" data-n="1">Bán 1</button>' +
-            (s.kho[k] > 1 ? '<button type="button" class="nt-mua" data-ban="' + k + '" data-n="' + s.kho[k] + '">Bán hết</button>' : '') + '</div>');
+            (s.kho[k] > 1 ? '<button type="button" class="nt-mua" data-ban="' + k + '" data-n="' + s.kho[k] + '">Bán hết</button>' : '') +
+            '<button type="button" class="nt-mua" data-baysan="' + k + '">Bày sạp</button></div>');
         });
-        html += '</div><p class="nt-meo">💡 Giữ lại nông sản để giao <b>Đơn hàng</b> — được nhiều xu hơn bán lẻ.</p>';
+        html += '</div><p class="nt-meo">💡 Giữ lại nông sản để giao <b>Đơn hàng</b> — được nhiều xu hơn bán lẻ. Hoặc <b>bày sạp</b> bán cho bạn cùng lớp.</p>';
       }
     } else {
       var kt = Object.keys(s.tui).filter(function (k) { return s.tui[k] > 0; });
@@ -811,6 +818,9 @@
         var k = b.getAttribute('data-ban');
         lam({ a: 'ban', k: k, n: +b.getAttribute('data-n') }, b).then(function () { tieng('xu'); veBang(); }, function () {});
       });
+    });
+    $all('[data-baysan]', than).forEach(function (b) {
+      b.addEventListener('click', function () { chonBay(b.getAttribute('data-baysan')); bangDang.tab = 'sap'; veBang(); });
     });
     $all('[data-datra]', than).forEach(function (b) {
       b.addEventListener('click', function () { batDauDat(b.getAttribute('data-datra'), 'dat'); });
@@ -844,13 +854,17 @@
   }
 
   function veBan(than) {
-    $('#ntBangTit').textContent = 'Nông trại bạn cùng lớp';
-    datTab([], '');
+    var tab = bangDang.tab || (S.st.nkMoi ? 'thu' : 'ban');
+    bangDang.tab = tab;
+    $('#ntBangTit').textContent = 'Bạn cùng lớp';
+    datTab([['ban', 'Nông trại các bạn'], ['cho', 'Chợ lớp'], ['thu', 'Nhật ký' + (S.st.nkMoi ? ' (' + S.st.nkMoi + ' mới)' : '')]], tab);
+    if (tab === 'cho') { veCho(than); return; }
+    if (tab === 'thu') { veThu(than); return; }
     than.innerHTML = '<p class="nt-trong">Đang tải…</p>';
     goi('/api/farm/lop').then(function (r) {
-      if (!bangDang || bangDang.loai !== 'ban') return;
+      if (!bangDang || bangDang.loai !== 'ban' || bangDang.tab !== 'ban') return;
       if (!r.lop) { than.innerHTML = '<p class="nt-trong">Em chưa vào lớp nào. Nhập mã lớp cô giáo cho ở trang học để thăm nông trại các bạn.</p>'; return; }
-      var html = '<p class="nt-meo">Lớp <b>' + esc(r.lop) + '</b> · xếp theo điểm đẹp. Thả tim cho bạn được +3 xu (tối đa 10 bạn mỗi ngày).</p><ol class="nt-ban-ds">';
+      var html = '<p class="nt-meo">Lớp <b>' + esc(r.lop) + '</b> · xếp theo điểm đẹp. Sang chơi để thả tim, tưới cây giúp, cho vật nuôi ăn giúp, mua hàng ở sạp và gửi lời chào tiếng Trung!</p><ol class="nt-ban-ds">';
       r.ds.forEach(function (b, i) {
         html += '<li class="' + (b.la ? 'la' : '') + '"><span class="nt-ban-hang">' + (i + 1) + '</span>' +
           '<span class="nt-ban-ten"><b>' + esc(b.ten) + (b.la ? ' (em)' : '') + '</b><small>' + (b.co ? 'Cấp ' + b.lv + ' · đẹp ' + b.dep + ' · ❤ ' + b.tim : 'Chưa mở nông trại') + '</small></span>' +
@@ -883,12 +897,12 @@
     goi('/api/farm/xem/' + encodeURIComponent(id)).then(function (r) {
       dongBang();
       thoatDat();
-      S.tham = { id: id, ten: r.ten, kich: r.kich, o: r.o, lv: r.lv, dep: r.dep, tim: r.tim };
+      S.tham = { id: id, ten: r.ten, kich: r.kich, o: r.o, lv: r.lv, dep: r.dep, tim: r.tim, sap: r.sap || [], daTim: r.daTim, daChao: r.daChao, conGiup: r.conGiup };
       S.lechTham = r.now - Date.now();
       $('#ntThamTen').textContent = 'Nông trại của ' + r.ten;
       $('#ntThamPhu').textContent = 'Cấp ' + r.lv + ' · điểm đẹp ' + r.dep + ' · ❤ ' + r.tim;
       $('#ntTham').hidden = false;
-      $('#ntThamTim').disabled = false;
+      veThamGoi();
       document.body.classList.add('dang-tham');
       veBanDo();
       $('#ntKhung').scrollTo(0, 0);
@@ -908,11 +922,255 @@
     goi('/api/farm/tim/' + encodeURIComponent(S.tham.id), {}).then(function (r) {
       S.st.xu = r.xu;
       S.tham.tim = r.tim;
+      S.tham.daTim = true;
+      veThamGoi();
       $('#ntThamPhu').textContent = 'Cấp ' + S.tham.lv + ' · điểm đẹp ' + S.tham.dep + ' · ❤ ' + r.tim;
       veHud();
       tieng('xu');
       bayLen(b, '+3', 'ic-xu');
     }, function (err) { bao(err.message, 'loi'); });
+  }
+
+  /* ---------------- choi cung ban ---------------- */
+  // Sap hang cua em, cho lop, giup ban khi den choi, loi chao co san, nhat ky nong trai.
+  function tenSp(k) { return S.cat.SP[k] || { zh: '', py: '', vn: k }; }
+  function khoangGia(k, n) {
+    var goc = S.cat.SP[k].ban * n;
+    return { min: Math.max(1, Math.ceil(goc * 0.5)), max: goc * 2, goc: goc, buoc: Math.max(1, Math.round(goc * 0.1)) };
+  }
+  function theSap(o, nut, ai) {
+    var m = tenSp(o.k);
+    return '<div class="nt-sap-o"><span class="nt-sap-sl">×' + o.n + '</span>' + img('sp-' + o.k) +
+      '<b lang="zh">' + esc(m.zh) + '</b><small>' + esc(m.py) + ' · ' + esc(m.vn) + '</small>' +
+      (ai ? '<span class="nt-sap-ai">Sạp của ' + esc(ai) + '</span>' : '') + nut + '</div>';
+  }
+  function nutMua(o, id) {
+    var du = S.st.xu >= o.gia;
+    return '<button type="button" class="nt-mua" data-muasap="' + o.id + '" data-ban-id="' + esc(id) + '"' + (du ? '' : ' disabled') + '>' +
+      '<span class="nt-gia xu">' + img('ic-xu') + o.gia + '</span>' + (du ? ' Mua' : '') + '</button>';
+  }
+  // Mua 1 o sap cua ban; xong goi xong(r) de ve lai danh sach
+  function muaSap(id, sid, el, xong) {
+    if (S.ban) return;
+    S.ban = true;
+    var vt = el && el.getBoundingClientRect ? el.getBoundingClientRect() : null;
+    goi('/api/farm/muasap/' + encodeURIComponent(id), { sid: sid }).then(function (r) {
+      S.ban = false;
+      nhanTrangThai(r.st);
+      hienThem(r.them, vt);
+      tieng('xu');
+      var k = Object.keys(r.them.sp)[0];
+      if (k) { var m = tenSp(k); bao('Đã mua ' + r.them.sp[k] + ' ' + m.vn + ' · ' + m.zh + ' ' + m.py); doc(m.zh); }
+      if (xong) xong(r);
+    }, function (err) { S.ban = false; bao(err.message, 'loi'); tieng('sai'); if (xong) xong(null); });
+  }
+
+  // --- Sap cua em (trong Kho) ---
+  var baySap = { k: null, n: 1, gia: 0 };
+  function chonBay(k) {
+    baySap.k = k;
+    baySap.n = Math.min(S.st.kho[k] || 1, k && S.cat.CAY[k] ? 4 : 2);
+    baySap.gia = khoangGia(k, baySap.n).goc;
+  }
+  function veSapEm(than) {
+    var s = S.st, c = S.cat;
+    var html = '<p class="nt-meo">Bày nông sản lên sạp để <b>bạn cùng lớp</b> mua bằng xu (trong mục <b>Bạn lớp → Chợ lớp</b> hoặc khi đến chơi). Mỗi lần bán được +2 kinh nghiệm.</p><div class="nt-sap-ds">';
+    s.sap.forEach(function (o) {
+      html += theSap(o, '<span class="nt-gia xu">' + img('ic-xu') + o.gia + '</span><button type="button" class="nt-mua" data-gosap="' + o.id + '">Lấy lại</button>');
+    });
+    for (var i = s.sap.length; i < s.soOSap; i++) html += '<div class="nt-sap-trong">Ô trống</div>';
+    html += '</div>';
+    var ks = Object.keys(s.kho).filter(function (k) { return s.kho[k] > 0; });
+    if (s.sap.length >= s.soOSap) html += '<p class="nt-meo">Sạp đã đầy. Đợi bạn mua, hoặc “Lấy lại” một món để bày món khác.</p>';
+    else if (!ks.length) html += '<p class="nt-trong">Kho trống — thu hoạch rồi bày lên sạp nhé.</p>';
+    else {
+      if (!baySap.k || !(s.kho[baySap.k] > 0)) chonBay(ks[0]);
+      baySap.n = Math.max(1, Math.min(baySap.n, s.kho[baySap.k], c.SAP_SL_TOI_DA));
+      var kg = khoangGia(baySap.k, baySap.n);
+      baySap.gia = Math.max(kg.min, Math.min(kg.max, baySap.gia || kg.goc));
+      html += '<div class="nt-bay-sap"><h3>Bày thêm lên sạp</h3><div class="nt-bay-hang">' + ks.map(function (k) {
+        return '<button type="button" data-bay="' + k + '"' + (k === baySap.k ? ' class="bat"' : '') + '>' + img('sp-' + k) + esc(tenSp(k).vn) + ' ×' + s.kho[k] + '</button>';
+      }).join('') + '</div>' +
+        '<div class="nt-buoc"><span>Số lượng</span><button type="button" data-sl="-1" aria-label="Bớt">−</button><output>' + baySap.n + '</output><button type="button" data-sl="1" aria-label="Thêm">+</button></div>' +
+        '<div class="nt-buoc"><span>Giá (xu)</span><button type="button" data-gia="-1" aria-label="Giảm giá">−</button><output>' + baySap.gia + '</output><button type="button" data-gia="1" aria-label="Tăng giá">+</button>' +
+        '<small>cửa hàng mua ' + kg.goc + ' xu · được đặt ' + kg.min + '–' + kg.max + '</small></div>' +
+        '<button type="button" class="nt-nut nt-nut-xanh" data-baysap>Bày lên sạp</button></div>';
+    }
+    than.innerHTML = html;
+    $all('[data-gosap]', than).forEach(function (b) {
+      b.addEventListener('click', function () { lam({ a: 'gosap', id: +b.getAttribute('data-gosap') }, b).then(function () { veBang(); }, function () { veBang(); }); });
+    });
+    $all('[data-bay]', than).forEach(function (b) {
+      b.addEventListener('click', function () { chonBay(b.getAttribute('data-bay')); doc(tenSp(baySap.k).zh); veBang(); });
+    });
+    $all('[data-sl]', than).forEach(function (b) {
+      b.addEventListener('click', function () {
+        baySap.n += +b.getAttribute('data-sl');
+        baySap.gia = 0; // doi so luong: ve lai gia goc
+        veBang();
+      });
+    });
+    $all('[data-gia]', than).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var kg2 = khoangGia(baySap.k, baySap.n);
+        baySap.gia = Math.max(kg2.min, Math.min(kg2.max, baySap.gia + kg2.buoc * +b.getAttribute('data-gia')));
+        veBang();
+      });
+    });
+    var nb = $('[data-baysap]', than);
+    if (nb) nb.addEventListener('click', function () {
+      var m = tenSp(baySap.k), n = baySap.n;
+      lam({ a: 'sap', k: baySap.k, n: n, gia: baySap.gia }, nb).then(function () {
+        tieng('mua');
+        bao('Đã bày ' + n + ' ' + m.vn + ' lên sạp · ' + m.zh + ' ' + m.py);
+        baySap.k = null;
+        veBang();
+      }, function () {});
+    });
+  }
+
+  // --- Cho lop ---
+  function veCho(than) {
+    than.innerHTML = '<p class="nt-trong">Đang tải…</p>';
+    goi('/api/farm/cho').then(function (r) {
+      if (!bangDang || bangDang.loai !== 'ban' || bangDang.tab !== 'cho') return;
+      if (!r.lop) { than.innerHTML = '<p class="nt-trong">Em chưa vào lớp nào. Nhập mã lớp cô giáo cho ở trang học để mua bán với các bạn.</p>'; return; }
+      var html = '<p class="nt-meo">Chợ lớp <b>' + esc(r.lop) + '</b>: nông sản các bạn bày bán. Mua về để giao <b>Đơn hàng</b> nhanh hơn. Em đang có ' + img('ic-xu') + '<b>' + S.st.xu + '</b> xu.</p>';
+      if (!r.ds.length) html += '<p class="nt-trong">Chợ chưa có gì. Em bày hàng trước đi — vào <b>Kho → Sạp của em</b>!</p>';
+      else html += '<div class="nt-sap-ds">' + r.ds.map(function (o) { return theSap({ id: o.sid, k: o.k, n: o.n, gia: o.gia }, nutMua({ id: o.sid, gia: o.gia }, o.id), o.ten); }).join('') + '</div>';
+      than.innerHTML = html;
+      $all('img', than).forEach(ganLoiAnh);
+      $all('[data-muasap]', than).forEach(function (b) {
+        b.addEventListener('click', function () { b.disabled = true; muaSap(b.getAttribute('data-ban-id'), +b.getAttribute('data-muasap'), b, function () { veBang(); }); });
+      });
+    }, function (err) { than.innerHTML = '<p class="nt-trong">' + esc(err.message) + '</p>'; });
+  }
+
+  // --- Nhat ky ---
+  function luc(t) {
+    var p = Math.max(0, Math.floor((bayGio() - t) / 60000));
+    if (p < 1) return 'vừa xong';
+    if (p < 60) return p + ' phút trước';
+    if (p < 1440) return Math.floor(p / 60) + ' giờ trước';
+    return Math.floor(p / 1440) + ' ngày trước';
+  }
+  function dongNk(e, moi) {
+    var c = S.cat, ai = '<b>' + esc(e.ten) + '</b>', chu = '', hinh = 'ic-tim';
+    if (e.l === 'tim') chu = ai + ' thả tim ❤ cho nông trại của em.';
+    else if (e.l === 'tuoi') { hinh = 'ic-tuoi'; var cay = c.CAY[e.c] || {}; chu = ai + ' tưới giúp ô <b>' + esc(cay.vn || '') + '</b> <span lang="zh">' + esc(cay.zh || '') + '</span>.'; }
+    else if (e.l === 'choan') { hinh = e.k; var con = c.CON[e.k] || {}; chu = ai + ' cho <b>' + esc((con.vn || '').toLowerCase()) + '</b> <span lang="zh">' + esc(con.zh || '') + '</span> của em ăn.'; }
+    else if (e.l === 'mua') { hinh = 'sp-' + e.k; chu = ai + ' mua ' + e.n + ' <b>' + esc(tenSp(e.k).vn) + '</b> ở sạp của em · +' + e.xu + ' xu.'; }
+    else if (e.l === 'chao') {
+      hinh = 'ic-chao';
+      var lc = c.LOI_CHAO[e.c] || { zh: '', py: '', vn: '' };
+      chu = ai + ' gửi lời chào:<br><button type="button" class="nt-nk-chao" data-doc="' + esc(lc.zh) + '"><b lang="zh">' + esc(lc.zh) + '</b> ' + esc(lc.py) + ' — ' + esc(lc.vn) + ' 🔊</button>';
+    }
+    return '<li class="' + (moi ? 'moi' : '') + '">' + img(hinh) + '<p>' + chu + '<small>' + luc(e.t) + '</small></p></li>';
+  }
+  function veThu(than) {
+    var s = S.st, ds = s.nk || [], soMoi = s.nkMoi || 0;
+    than.innerHTML = ds.length
+      ? '<p class="nt-meo">Các bạn đã ghé nông trại của em. Đến chơi lại, giúp bạn và gửi lời chào nhé!</p><ul class="nt-nk">' + ds.map(function (e, i) { return dongNk(e, i < soMoi); }).join('') + '</ul>'
+      : '<p class="nt-trong">Chưa có bạn nào ghé chơi. Em hãy sang thăm, thả tim và gửi lời chào các bạn trước nhé!</p>';
+    if (soMoi) goi('/api/farm/act', { a: 'xemnk' }).then(function () { S.st.nkMoi = 0; veHud(); }, function () {});
+  }
+
+  // --- Khi dang tham ban ---
+  function veThamGoi() {
+    var t = S.tham;
+    if (!t) return;
+    $('#ntThamTim').disabled = !!t.daTim;
+    $('#ntThamTim').textContent = t.daTim ? '❤ Đã thả tim' : '❤ Thả tim';
+    $('#ntThamChao').disabled = !!t.daChao;
+    $('#ntThamChao').textContent = t.daChao ? '💬 Đã chào' : '💬 Lời chào';
+    $('#ntThamSap').textContent = '🛒 Sạp của bạn (' + t.sap.length + ')';
+    $('#ntThamGoi').textContent = t.conGiup > 0
+      ? 'Chạm cây có giọt nước 💧 để tưới giúp, vật nuôi đói để cho ăn giúp · còn ' + t.conGiup + ' lượt giúp hôm nay'
+      : 'Hôm nay em đã giúp đủ lượt rồi — mai giúp bạn tiếp nhé!';
+    nutThuHet(); // an nut thu hoach cua em ngay khi sang nha ban
+  }
+  // true = da xu ly (cay / vat nuoi can giup)
+  function giupBan(o, el) {
+    var t = trangThai(o), c = S.cat, ten = S.tham.ten;
+    var laCay = o.k === 'o' && t.loai === 'lon' && !o.t, laCon = !!c.CON[o.k] && t.loai === 'doi';
+    if (!laCay && !laCon) return false;
+    if (S.tham.conGiup <= 0) { bao('Hôm nay em đã giúp đủ lượt rồi — mai giúp tiếp nhé!', 'loi'); return true; }
+    var m = laCay ? c.CAY[o.c] : c.CON[o.k];
+    moHoi(laCay
+      ? { so: 1, anh: 'ic-tuoi', tit: 'Tưới giúp ' + ten, phu: m.zh + ' ' + m.py + ' (' + m.vn.toLowerCase() + ') khát nước! Trả lời đúng 1 câu để tưới giúp bạn.' }
+      : { so: 3, anh: o.k + '-doi', tit: 'Cho ăn giúp ' + ten, phu: m.zh + ' ' + m.py + ' của bạn đói rồi! Trả lời đúng 3 câu để cho ăn giúp.' },
+    function () {
+      var id = S.tham && S.tham.id;
+      if (!id) return;
+      goi('/api/farm/giup/' + encodeURIComponent(id), { oid: o.id }).then(function (r) {
+        if (!S.tham || S.tham.id !== id) return;
+        S.tham.o = S.tham.o.map(function (x) { return x.id === r.o.id ? Object.assign({}, x, r.o) : x; });
+        S.tham.conGiup = r.conGiup;
+        nhanTrangThai(r.st);
+        veBanDo();
+        veThamGoi();
+        tieng('dung');
+        hienThem(r.them, document.querySelector('.nt-vat[data-id="' + r.o.id + '"]'));
+        bao(laCay ? 'Em đã tưới giúp ' + ten + '! Cây sẽ lớn nhanh hơn.' : 'Em đã cho ' + m.vn.toLowerCase() + ' của ' + ten + ' ăn!');
+      }, function (err) { bao(err.message, 'loi'); tieng('sai'); });
+    });
+    return true;
+  }
+  function veSapBan(than) {
+    var t = S.tham;
+    if (!t) { dongBang(); return; }
+    $('#ntBangTit').textContent = 'Sạp hàng của ' + t.ten;
+    datTab([], '');
+    than.innerHTML = t.sap.length
+      ? '<p class="nt-meo">Em đang có ' + img('ic-xu') + '<b>' + S.st.xu + '</b> xu.</p><div class="nt-sap-ds">' + t.sap.map(function (o) { return theSap(o, nutMua(o, t.id)); }).join('') + '</div>'
+      : '<p class="nt-trong">Sạp của ' + esc(t.ten) + ' đang trống. Gửi lời chào rủ bạn bày hàng nhé!</p>';
+    $all('[data-muasap]', than).forEach(function (b) {
+      b.addEventListener('click', function () {
+        b.disabled = true;
+        muaSap(t.id, +b.getAttribute('data-muasap'), b, function (r) {
+          if (r && S.tham && S.tham.id === t.id) { S.tham.sap = r.sap; veThamGoi(); }
+          veBang();
+        });
+      });
+    });
+  }
+  function veChao(than) {
+    var t = S.tham, ds = S.cat.LOI_CHAO;
+    if (!t) { dongBang(); return; }
+    $('#ntBangTit').textContent = 'Gửi lời chào cho ' + t.ten;
+    datTab([], '');
+    than.innerHTML = '<p class="nt-meo">Chọn một câu tiếng Trung để gửi (mỗi bạn 1 lần mỗi ngày, +1 xu). Bạn sẽ đọc được trong <b>Nhật ký</b>.</p><ul class="nt-chao-ds">' +
+      ds.map(function (lc, i) {
+        return '<li><button type="button" data-chao="' + i + '"' + (t.daChao ? ' disabled' : '') + '><b lang="zh">' + esc(lc.zh) + '</b><i>' + esc(lc.py) + '</i><span>' + esc(lc.vn) + '</span></button></li>';
+      }).join('') + '</ul>';
+    $all('[data-chao]', than).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var i = +b.getAttribute('data-chao'), lc = ds[i];
+        doc(lc.zh);
+        $all('[data-chao]', than).forEach(function (x) { x.disabled = true; });
+        goi('/api/farm/chao/' + encodeURIComponent(t.id), { c: i }).then(function (r) {
+          t.daChao = true;
+          nhanTrangThai(r.st);
+          veThamGoi();
+          tieng('xu');
+          dongBang();
+          bao('Đã gửi “' + lc.zh + '” cho ' + t.ten + ' · +1 xu');
+        }, function (err) { bao(err.message, 'loi'); veBang(); });
+      });
+    });
+  }
+
+  // Moi phut cap nhat nong trai cua em (ban vua mua hang, tuoi giup, gui loi chao...)
+  function lamMoiDinhKy() {
+    setInterval(function () {
+      if (document.hidden || S.ban || S.tham || S.che !== 'xem' || hoi || bangDang || noiCua) return;
+      var cu = S.st.nkMoi || 0;
+      goi('/api/farm').then(function (st) {
+        if (S.ban || S.tham || S.che !== 'xem' || hoi || bangDang || noiCua) return;
+        nhanTrangThai(st);
+        if ((st.nkMoi || 0) > cu) { tieng('xu'); bao('Có tin mới từ bạn cùng lớp — xem ở Bạn lớp → Nhật ký!'); }
+      }, function () {});
+    }, 60000);
   }
 
   /* ---------------- cau hoi on tu vung ---------------- */
@@ -1190,6 +1448,8 @@
     });
     $('#ntThamVe').addEventListener('click', veNha);
     $('#ntThamTim').addEventListener('click', thaTim);
+    $('#ntThamChao').addEventListener('click', function () { if (S.tham) moBang('chao'); });
+    $('#ntThamSap').addEventListener('click', function () { if (S.tham) moBang('sapban'); });
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
       if (!$('#ntHoi').hidden) dongHoi();
@@ -1215,6 +1475,7 @@
       k.scrollLeft = (k.scrollWidth - k.clientWidth) / 2;
       ganNhac();
       setInterval(nhip, 1000);
+      lamMoiDinhKy();
       nhip();
       if (r.quaHomNay) setTimeout(quaDiemDanh, 500);
       else setTimeout(huongDan, 500);

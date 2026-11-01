@@ -123,6 +123,10 @@ function nongTraiMoi() {
     don: { d: '', x: [] },
     tham: { d: '', ids: [] },
     tim: 0,
+    sap: [], // o sap hang: { id, k, n, gia }
+    nk: [], nkXem: 0, // nhat ky + lan cuoi em xem
+    giup: { d: '', n: 0 }, // so lan giup ban hom nay
+    chao: { d: '', ids: [] }, // da gui loi chao cho ai hom nay
   };
 }
 
@@ -180,6 +184,34 @@ function donHomNay(f, userId, ngay) {
     return { ds: f.don.ds, moi: true };
   }
   return { ds: f.don.ds, moi: false };
+}
+
+// ---- Choi cung ban ----
+// Sap hang: bay nong san cho ban cung lop mua bang xu. Gia moi o trong khoang
+// 0,5x - 2x gia ban cho cua hang (khong "chuyen xu" qua lon giua cac ban).
+function soOSap(lv) { return lv >= 5 ? 6 : 4; }
+const SAP_SL_TOI_DA = 20;
+function khoangGia(k, n) {
+  const goc = SP[k].ban * n;
+  return { min: Math.max(1, Math.ceil(goc * 0.5)), max: goc * 2, goc };
+}
+// Giup ban (tuoi cay / cho vat nuoi an — phai tra loi cau on tu): toi da moi ngay
+const GIUP_NGAY = 6;
+// Loi chao co san (khong go chu tu do): vua choi vua doc tieng Trung
+const LOI_CHAO = [
+  { zh: '你好！', py: 'Nǐ hǎo!', vn: 'Chào bạn!' },
+  { zh: '你的农场真漂亮！', py: 'Nǐ de nóngchǎng zhēn piàoliang!', vn: 'Nông trại của bạn đẹp quá!' },
+  { zh: '加油！', py: 'Jiāyóu!', vn: 'Cố lên nhé!' },
+  { zh: '谢谢你！', py: 'Xièxie nǐ!', vn: 'Cảm ơn bạn!' },
+  { zh: '我们一起学习吧！', py: 'Wǒmen yìqǐ xuéxí ba!', vn: 'Mình cùng học nhé!' },
+  { zh: '你的动物很可爱！', py: 'Nǐ de dòngwù hěn kě\'ài!', vn: 'Vật nuôi của bạn dễ thương quá!' },
+  { zh: '欢迎来我的农场！', py: 'Huānyíng lái wǒ de nóngchǎng!', vn: 'Mời bạn sang nông trại mình chơi!' },
+  { zh: '明天见！', py: 'Míngtiān jiàn!', vn: 'Mai gặp lại nhé!' },
+];
+// Nhat ky nong trai: ai da tha tim, tuoi giup, mua hang, gui loi chao (giu 30 dong moi nhat)
+function ghiNk(f, e) {
+  e.t = Date.now();
+  f.nk = [e].concat(Array.isArray(f.nk) ? f.nk : []).slice(0, 30);
 }
 
 module.exports = function ganNongTrai(app, d) {
@@ -256,6 +288,14 @@ module.exports = function ganNongTrai(app, d) {
     return Math.max(0, (s.total || 0) - (f.saoTieu || 0));
   }
 
+  // Nhat ky kem ten ban (ten lay tu tai khoan, khong luu vao du lieu nong trai)
+  async function nhatKy(f) {
+    const ds = Array.isArray(f.nk) ? f.nk : [];
+    if (!ds.length) return [];
+    const ten = await d.loadUserNames();
+    return ds.map((e) => Object.assign({}, e, { ten: ten[e.ai] || 'Một bạn' }));
+  }
+
   async function trangThai(userId, f) {
     const ngay = d.vnDayKey();
     const lv = lvTuXp(f.xp);
@@ -268,6 +308,8 @@ module.exports = function ganNongTrai(app, d) {
       quaHomNay: f.ngay !== ngay, chuoi: f.chuoi,
       don, dep: diemDep(f), tim: f.tim || 0,
       oToiDa: oToiDa(lv), soO: f.o.filter((o) => o.k === 'o').length + (f.tui.o || 0),
+      sap: f.sap, soOSap: soOSap(lv),
+      nk: await nhatKy(f), nkMoi: (f.nk || []).filter((e) => e.t > (f.nkXem || 0)).length,
     };
   }
 
@@ -440,6 +482,25 @@ module.exports = function ganNongTrai(app, d) {
       them.xu = ds[i].xu;
       f.xu += them.xu;
       them.xp += ds[i].xp;
+    } else if (a === 'sap') {
+      // bay nong san len sap: hang roi kho ngay (khong ban 2 lan)
+      const k = String(b.k || '');
+      const n = Math.floor(Number(b.n) || 0);
+      const gia = Math.floor(Number(b.gia) || 0);
+      if (!SP[k] || n < 1 || n > SAP_SL_TOI_DA || (f.kho[k] || 0) < n) throw loi('Không đủ hàng để bày sạp.');
+      if (f.sap.length >= soOSap(lv)) throw loi('Sạp đã đầy ' + soOSap(lv) + ' ô' + (lv < 5 ? ' — lên cấp 5 có thêm 2 ô.' : '.'));
+      const kg = khoangGia(k, n);
+      if (gia < kg.min || gia > kg.max) throw loi('Giá phải từ ' + kg.min + ' đến ' + kg.max + ' xu.');
+      f.kho[k] -= n;
+      if (!f.kho[k]) delete f.kho[k];
+      f.sap.push({ id: f.nid++, k, n, gia });
+    } else if (a === 'gosap') {
+      const o = f.sap.find((x) => x.id === Number(b.id));
+      if (!o) throw loi('Món này đã được bán rồi.');
+      f.sap = f.sap.filter((x) => x !== o);
+      f.kho[o.k] = (f.kho[o.k] || 0) + o.n;
+    } else if (a === 'xemnk') {
+      f.nkXem = now;
     } else {
       throw loi('Hành động không hợp lệ.');
     }
@@ -450,7 +511,7 @@ module.exports = function ganNongTrai(app, d) {
     return { ok: true, them, lenCap: st.lv > lvCu ? st.lv : 0, st };
   }
 
-  const CATALOG = { CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI };
+  const CATALOG = { CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA };
 
   app.get('/api/farm', d.requireAuth, d.asyncRoute(async (req, res) => {
     const st = await lanLuot(req.user.id, async () => {
@@ -500,12 +561,16 @@ module.exports = function ganNongTrai(app, d) {
     const lop = await banCungLop(req.user.id);
     const id = String(req.params.id);
     if (!lop || lop.ids.indexOf(id) < 0) return res.status(403).json({ error: 'Chỉ thăm được nông trại của bạn cùng lớp.' });
-    const [f, ten] = await Promise.all([doc(id), d.loadUserNames()]);
-    const now = Date.now();
+    const [f, ten, fm] = await Promise.all([doc(id), d.loadUserNames(), doc(req.user.id)]);
+    const now = Date.now(), ngay = d.vnDayKey();
     res.json({
       ten: ten[id] || '', lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], now,
-      // chi gui hinh dang nong trai, khong gui xu / kho
-      o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h })),
+      // chi gui hinh dang nong trai + sap hang, khong gui xu / kho
+      o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t })),
+      sap: f.sap || [],
+      daTim: fm.tham.d === ngay && fm.tham.ids.indexOf(id) >= 0,
+      daChao: !!(fm.chao && fm.chao.d === ngay && fm.chao.ids.indexOf(id) >= 0),
+      conGiup: GIUP_NGAY - (fm.giup && fm.giup.d === ngay ? fm.giup.n : 0),
     });
   }));
 
@@ -531,10 +596,125 @@ module.exports = function ganNongTrai(app, d) {
     const tim = await lanLuot(id, async () => {
       const g = await doc(id);
       g.tim = (g.tim || 0) + 1;
+      ghiNk(g, { ai: me, l: 'tim' });
       await ghi(id, g);
       return g.tim;
     });
     res.json({ ok: true, xu: kq, tim, them: 3 });
+  }));
+
+  // Hai nguoi cung luc (mua hang, giup ban): khoa theo thu tu id de khong ket khoa
+  function haiLuot(a, b, fn) {
+    const [x, y] = a < b ? [a, b] : [b, a];
+    return lanLuot(x, () => lanLuot(y, fn));
+  }
+  async function docNhieu(ids) {
+    const out = {};
+    if (!ids.length) return out;
+    if (!d.USE_DB) {
+      const all = d.readJsonFile(FILE) || {};
+      ids.forEach((id) => { if (all[id]) out[id] = Object.assign(nongTraiMoi(), all[id]); });
+      return out;
+    }
+    const [rows] = await d.db().query('SELECT user_id, data FROM farms WHERE user_id IN (?)', [ids]);
+    rows.forEach((r) => { try { out[r.user_id] = Object.assign(nongTraiMoi(), JSON.parse(r.data)); } catch (e) { /* bo qua */ } });
+    return out;
+  }
+  async function cungLop(me, id) {
+    if (id === me) throw loi('Đây là nông trại của em mà.');
+    const lop = await banCungLop(me);
+    if (!lop || lop.ids.indexOf(id) < 0) throw loi('Chỉ chơi được với bạn cùng lớp.');
+  }
+  // Loi nong trai -> 400 kem thong bao; loi khac de server xu ly
+  function traLoi(res, p) {
+    return p.then((kq) => res.json(kq), (err) => { if (!err.farm) throw err; res.status(400).json({ error: err.message }); });
+  }
+
+  // Cho lop: tat ca o sap cua cac ban cung lop
+  app.get('/api/farm/cho', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const lop = await banCungLop(req.user.id);
+    if (!lop) return res.json({ lop: null, ds: [] });
+    const ids = lop.ids.filter((id) => id !== req.user.id);
+    const [farms, ten] = await Promise.all([docNhieu(ids), d.loadUserNames()]);
+    const ds = [];
+    Object.keys(farms).forEach((id) => {
+      (farms[id].sap || []).forEach((o) => ds.push({ id, ten: ten[id] || '', sid: o.id, k: o.k, n: o.n, gia: o.gia }));
+    });
+    ds.sort((a, b) => (a.k < b.k ? -1 : a.k > b.k ? 1 : a.gia / a.n - b.gia / b.n));
+    res.json({ lop: lop.ten, ds });
+  }));
+
+  // Mua 1 o sap cua ban: xu cua em -> ban, hang -> kho em
+  app.post('/api/farm/muasap/:id', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, id = String(req.params.id), sid = Number(req.body && req.body.sid);
+    await traLoi(res, cungLop(me, id).then(() => haiLuot(me, id, async () => {
+      const fb = await doc(me), fs = await doc(id);
+      const o = (fs.sap || []).find((x) => x.id === sid);
+      if (!o) throw loi('Món này vừa có bạn khác mua mất rồi.');
+      if (fb.xu < o.gia) throw loi('Em chưa đủ xu — cần ' + o.gia + ' xu.');
+      fb.xu -= o.gia;
+      fb.kho[o.k] = (fb.kho[o.k] || 0) + o.n;
+      fb.xp += 1;
+      fs.sap = fs.sap.filter((x) => x !== o);
+      fs.xu += o.gia;
+      fs.xp += 2;
+      ghiNk(fs, { ai: me, l: 'mua', k: o.k, n: o.n, xu: o.gia });
+      await ghi(id, fs);
+      await ghi(me, fb);
+      return { ok: true, them: { sp: { [o.k]: o.n } }, st: await trangThai(me, fb), sap: fs.sap };
+    })));
+  }));
+
+  // Giup ban: tuoi cay (cay dang lon, chua tuoi) hoac cho vat nuoi dang doi an
+  app.post('/api/farm/giup/:id', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, id = String(req.params.id), oid = Number(req.body && req.body.oid);
+    await traLoi(res, cungLop(me, id).then(() => haiLuot(me, id, async () => {
+      const fm = await doc(me), ff = await doc(id);
+      const ngay = d.vnDayKey(), now = Date.now();
+      if (!fm.giup || fm.giup.d !== ngay) fm.giup = { d: ngay, n: 0 };
+      if (fm.giup.n >= GIUP_NGAY) throw loi('Hôm nay em đã giúp bạn ' + GIUP_NGAY + ' lần rồi — mai giúp tiếp nhé!');
+      const o = ff.o.find((x) => x.id === oid);
+      if (!o) throw loi('Không tìm thấy ô này.');
+      const them = { xu: 0, xp: 0 };
+      if (o.k === 'o') {
+        if (!o.c || o.h <= now || o.t) throw loi('Ô này không cần tưới nữa.');
+        o.t = 1;
+        o.h = now + Math.round((o.h - now) * 0.6);
+        ghiNk(ff, { ai: me, l: 'tuoi', c: o.c });
+        them.xu = 2; them.xp = 1;
+      } else if (CON[o.k]) {
+        if (o.h) throw loi('Con vật này đã được cho ăn rồi.');
+        o.h = now + CON[o.k].phut * PHUT;
+        ghiNk(ff, { ai: me, l: 'choan', k: o.k });
+        them.xu = 4; them.xp = 2;
+      } else throw loi('Món này không cần giúp.');
+      fm.giup.n++;
+      fm.xu += them.xu;
+      fm.xp += them.xp;
+      await ghi(id, ff);
+      await ghi(me, fm);
+      return { ok: true, them, o: { id: o.id, k: o.k, x: o.x, y: o.y, c: o.c, h: o.h, t: o.t }, st: await trangThai(me, fm), conGiup: GIUP_NGAY - fm.giup.n };
+    })));
+  }));
+
+  // Gui loi chao co san: moi ban 1 lan / ngay, nguoi gui +1 xu
+  app.post('/api/farm/chao/:id', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, id = String(req.params.id), c = Math.floor(Number(req.body && req.body.c));
+    await traLoi(res, cungLop(me, id).then(() => {
+      if (!LOI_CHAO[c]) throw loi('Không có lời chào này.');
+      return haiLuot(me, id, async () => {
+        const fm = await doc(me), ff = await doc(id);
+        const ngay = d.vnDayKey();
+        if (!fm.chao || fm.chao.d !== ngay) fm.chao = { d: ngay, ids: [] };
+        if (fm.chao.ids.indexOf(id) >= 0) throw loi('Hôm nay em đã chào bạn này rồi.');
+        fm.chao.ids.push(id);
+        fm.xu += 1;
+        ghiNk(ff, { ai: me, l: 'chao', c });
+        await ghi(id, ff);
+        await ghi(me, fm);
+        return { ok: true, them: { xu: 1 }, st: await trangThai(me, fm) };
+      });
+    }));
   }));
 
   return { initTable };

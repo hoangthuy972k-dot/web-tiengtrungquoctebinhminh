@@ -501,3 +501,46 @@ body.dang-tham .nt-khung { padding-top: 140px; }
 /* dang mo bang / cau hoi: an nut noi cua widgets cho khoi de len */
 body.co-bang .hw-fab-stack, body.co-hoi .hw-fab-stack { display: none !important; }
 .nt-hd { text-align: left; grid-template-columns: 1fr; margin: 6px 0 10px; width: 100%; }
+
+/* ---------- choi cung ban: sap hang, cho lop, giup ban, loi chao, nhat ky ---------- */
+.nt-tham-nut { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.nt-tham-goi { flex-basis: 100%; margin: 0; text-align: center; font-size: 0.82rem; font-weight: 700; color: var(--mo); }
+.nt-tham-goi:empty { display: none; }
+body.dang-tham .nt-khung { padding-top: 180px; }
+.nt-sap-ds { display: grid; grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 12px; }
+.nt-sap-o { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px; border: 3px solid var(--vien); border-radius: 16px; background: #fff; box-shadow: 0 4px 0 var(--vien); text-align: center; }
+.nt-sap-o > img { width: 64px; height: 64px; }
+.nt-sap-o .nt-gia img { width: 22px; height: 22px; }
+.nt-sap-o b[lang] { font-size: 1.1rem; }
+.nt-sap-o .nt-sap-sl { position: absolute; top: 6px; right: 8px; font-weight: 900; background: var(--vang); border: 2px solid var(--vien); border-radius: 10px; padding: 0 6px; }
+.nt-sap-o .nt-sap-ai { font-size: 0.8rem; font-weight: 700; color: var(--mo); }
+.nt-sap-trong { display: flex; align-items: center; justify-content: center; min-height: 150px; border: 3px dashed #c9b8a6; border-radius: 16px; color: var(--mo); font-weight: 700; padding: 10px; text-align: center; }
+.nt-bay-sap { display: grid; gap: 10px; padding: 12px; margin-top: 14px; border: 3px solid var(--vien); border-radius: 16px; background: #fff8ec; }
+.nt-bay-sap h3 { margin: 0; font-size: 1rem; }
+.nt-bay-hang { display: flex; flex-wrap: wrap; gap: 6px; }
+.nt-bay-hang button { display: flex; align-items: center; gap: 4px; padding: 4px 10px 4px 4px; border: 2px solid var(--vien); border-radius: 12px; background: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+.nt-bay-hang button img { width: 30px; height: 30px; }
+.nt-bay-hang button.bat { background: var(--vang); }
+.nt-buoc { display: flex; align-items: center; gap: 8px; font-weight: 800; }
+.nt-buoc span { min-width: 92px; }
+.nt-buoc button { width: 40px; height: 40px; border: 2px solid var(--vien); border-radius: 12px; background: #fff; font: inherit; font-size: 1.2rem; font-weight: 900; cursor: pointer; }
+.nt-buoc output { min-width: 56px; text-align: center; font-size: 1.15rem; }
+.nt-buoc small { font-weight: 700; color: var(--mo); }
+.nt-chao-ds { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.nt-chao-ds button { width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 10px 14px; border: 3px solid var(--vien); border-radius: 14px; background: #fff; font: inherit; text-align: left; cursor: pointer; box-shadow: 0 3px 0 var(--vien); }
+.nt-chao-ds button:disabled { opacity: 0.55; cursor: not-allowed; }
+.nt-chao-ds b[lang] { font-size: 1.15rem; }
+.nt-chao-ds i { font-style: normal; color: #c0392b; font-weight: 700; }
+.nt-chao-ds span { color: var(--mo); font-weight: 700; font-size: 0.9rem; }
+.nt-nk { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.nt-nk li { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 2px solid #e4d6c6; border-radius: 14px; background: #fff; }
+.nt-nk li.moi { border-color: var(--vien); background: #fff4c9; }
+.nt-nk li > img { width: 36px; height: 36px; flex: none; }
+.nt-nk p { margin: 0; line-height: 1.45; }
+.nt-nk small { display: block; color: var(--mo); font-weight: 700; font-size: 0.78rem; }
+.nt-nk .nt-nk-chao { display: inline-block; margin-top: 2px; padding: 2px 8px; border-radius: 10px; background: #eef7ff; border: 1.5px solid #9cc7ea; font: inherit; cursor: pointer; }
+@media (max-width: 640px) {
+  .nt-sap-ds { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+  .nt-tham-nut { gap: 6px; }
+  body.dang-tham .nt-khung { padding-top: 220px; }
+}

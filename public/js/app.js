@@ -3585,6 +3585,33 @@
     rsSet('warmup', { cards: wpOrder.cards, opts: wpOrder.opts, done: done });
   }
 
+  // Tranh 3D (bo Fluent Emoji cua Microsoft, MIT — public/images/wu, ten file = ma Unicode bo FE0F)
+  // thay cho emoji cua he dieu hanh (tren Windows trong cung, "nhu robot"). Thieu tranh -> giu emoji.
+  function wuMaEmoji(e) {
+    return Array.from(e).map(function (c) { return c.codePointAt(0).toString(16); }).filter(function (h) { return h !== 'fe0f'; }).join('-');
+  }
+  function wuTachEmoji(str) {
+    str = String(str || '').trim();
+    if (window.Intl && Intl.Segmenter) {
+      return Array.from(new Intl.Segmenter('vi', { granularity: 'grapheme' }).segment(str)).map(function (x) { return x.segment; }).filter(function (x) { return x.trim(); });
+    }
+    return [str];
+  }
+  function wuTranh(str) {
+    return wuTachEmoji(str).map(function (e) {
+      return '<img class="wu-tranh" src="/images/wu/' + wuMaEmoji(e) + '.png" alt="" loading="lazy" draggable="false" data-emoji="' + e + '">';
+    }).join('');
+  }
+  function wuGanLoiTranh(box) {
+    $all('img.wu-tranh', box).forEach(function (im) {
+      im.addEventListener('error', function () {
+        var sp = document.createElement('span');
+        sp.textContent = im.getAttribute('data-emoji') || '';
+        im.replaceWith(sp);
+      }, { once: true });
+    });
+  }
+
   function renderWarmupPractice(saved) {
     var wrap = $('#wpContent');
     if (!wpItems.length) {
@@ -3603,7 +3630,7 @@
         shuffledCards.map(function (w) {
           var media = /^\//.test(w.img)
             ? '<div class="wu-photo"><img src="' + w.img + '" alt="" loading="lazy"></div>'
-            : '<div class="wu-emoji">' + w.img + '</div>';
+            : '<div class="wu-emoji">' + wuTranh(w.img) + '</div>';
           return '<div class="wu-card" id="wpc_' + w.letter + '" data-letter="' + w.letter + '">' +
             media + '<div class="wu-label">（ ？ ）</div></div>';
         }).join('') +
@@ -3616,6 +3643,7 @@
       '</div>' +
       '<div style="min-height:24px;font-size:0.9rem;margin-top:var(--space-3);" id="wpFb"></div>';
     pgbPaint('wpq');
+    wuGanLoiTranh(wrap);
 
     $all('.wu-card', wrap).forEach(function (card) {
       card.addEventListener('click', function () { wpSelectCard(card.dataset.letter, card); });

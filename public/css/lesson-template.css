@@ -568,3 +568,7 @@ body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 /* Giai thich sau khi tra loi (exp/why/giai): chu thuong, mau trung tinh, xuong dong gon tren dien thoai */
 .q-fb .q-exp{margin-top:6px;padding-top:6px;border-top:1px dashed var(--border);font-weight:400;font-size:0.84rem;line-height:1.55;color:var(--ink2);overflow-wrap:anywhere;}
 .q-fb .q-exp.is-ngan{color:var(--mid);}
+
+/* Khoi dong: tranh 3D (Fluent Emoji) thay emoji */
+.wu-emoji .wu-tranh { width: 84px; height: 84px; object-fit: contain; filter: drop-shadow(0 4px 4px rgba(43, 29, 58, 0.18)); }
+@media (max-width: 640px) { .wu-emoji .wu-tranh { width: 64px; height: 64px; } }

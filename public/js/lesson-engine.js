@@ -157,6 +157,15 @@ function showTab(id,btn){
 // ══════════════════════════════════════════
 let wuCardSel=null,wuDone=new Set();
 function buildWarmup(){
+  // Tranh 3D (Fluent Emoji, /images/wu/<ma unicode>.png) thay emoji; anh loi -> hien lai emoji
+  function veTranhWu(box,img){
+    if(img.charAt(0)==="/"){box.innerHTML='<img src="'+img+'" alt="">';return;}
+    var ma=Array.from(String(img).trim()).map(function(c){return c.codePointAt(0).toString(16);}).filter(function(h){return h!=='fe0f';}).join('-');
+    var im=document.createElement('img');
+    im.className='wu-tranh';im.alt='';im.src='/images/wu/'+ma+'.png';
+    im.addEventListener('error',function(){box.textContent=img;},{once:true});
+    box.appendChild(im);
+  }
   const grid=document.getElementById('wu-grid');
   const opts=document.getElementById('wu-opts');
   grid.innerHTML='';opts.innerHTML='';
@@ -165,7 +174,8 @@ function buildWarmup(){
   shuffled.forEach(function(w){
     const d=document.createElement('div');
     d.className='wu-card';d.id='wuc_'+w.letter;
-    d.innerHTML='<div class="wu-emoji">'+w.img+'</div><div class="wu-label">（ ？ ）</div>';
+    d.innerHTML='<div class="wu-emoji"></div><div class="wu-label">（ ？ ）</div>';
+    veTranhWu(d.firstChild,w.img);
     d.onclick=function(){selectWuCard(w.letter,d);};
     grid.appendChild(d);
   });

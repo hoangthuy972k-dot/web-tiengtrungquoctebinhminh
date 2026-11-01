@@ -9950,3 +9950,12 @@ body .sp-sample-vn, body .sp-q-vn, body .npt-vd-vn, body .lp-dict-answer-vn, bod
 @media (max-width: 640px) {
   body .h4-vn { font-size: 1.12rem; }
 }
+
+/* ---------- Khoi dong: tranh 3D (Fluent Emoji) thay emoji ---------- */
+.wu-emoji { display: flex; justify-content: center; gap: 4px; min-height: 84px; align-items: center; }
+.wu-emoji .wu-tranh { width: 84px; height: 84px; object-fit: contain; filter: drop-shadow(0 4px 4px rgba(43, 29, 58, 0.18)); transition: transform 0.2s ease; }
+.wu-card:hover .wu-tranh { transform: translateY(-3px) scale(1.04); }
+@media (max-width: 640px) {
+  .wu-emoji { min-height: 64px; }
+  .wu-emoji .wu-tranh { width: 64px; height: 64px; }
+}

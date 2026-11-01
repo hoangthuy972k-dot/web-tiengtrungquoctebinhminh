@@ -852,9 +852,15 @@
   }
 
   /* ---------------- cau hoi on tu vung ---------------- */
-  // Tu vung lay tu bai dang hoc + 3 bai truoc do cung cap (on xoan oc).
+  // Tu vung hop voi DUNG cap em dang hoc (khong lay theo may dang mo):
+  //  1. lop co giao bai -> 4 bai thay co giao gan nhat
+  //  2. bai em vua hoc (cua chinh tai khoan nay) + 3 bai truoc do cung cap (on xoan oc)
+  //  3. cac bai em da hoc trong cap cua em (4 bai sau cung)
+  //  4. 3 bai dau cap em chon luc dang ky
   var tuVung = null;
+  var nguonTu = '';
   var khoBai = {};
+  var tuHaySai = null; // chu Han em hay lam sai o cac bai on -> hoi lai nhieu hon
   function napBai(url) {
     if (khoBai[url]) return Promise.resolve(khoBai[url]);
     var src = url.replace('/lessons/', '/js/').replace('.html', '-data.js');
@@ -875,8 +881,11 @@
       sc.src = src;
       sc.onload = function () {
         var raw = (ifr.contentWindow && ifr.contentWindow.vocabData) || [];
-        tra(raw.filter(function (v) { return v && v.zh && v.vn; }).map(function (v) {
-          return { zh: v.zh, py: v.py || '', vn: String(v.vn).split(/[;；]/)[0].trim() };
+        tra(raw.filter(function (v) {
+          // bo ten rieng (ten nhan vat trong bai): hoi "Ton Nguyet (ten nguoi)" khong giup on tu
+          return v && v.zh && v.vn && !/riêng/i.test(v.pos || '') && !/\(tên|tên người|tên riêng/i.test(v.vn);
+        }).map(function (v) {
+          return { zh: v.zh, py: v.py || '', vn: String(v.vn).split(/[;；]/)[0].trim(), pos: v.pos || '' };
         }));
       };
       sc.onerror = function () { tra([]); };
@@ -884,27 +893,74 @@
       setTimeout(function () { tra([]); }, 8000);
     });
   }
+  function docJson(k, md) {
+    try { var v = JSON.parse(localStorage.getItem(k) || 'null'); return v == null ? md : v; } catch (e) { return md; }
+  }
+  // Tra cuu bai theo duong dan: { lv, i, bai } trong APP_DATA.lessons
+  function timBai(D, url) {
+    var lvs = Object.keys(D.lessons || {});
+    for (var k = 0; k < lvs.length; k++) {
+      var ds = D.lessons[lvs[k]] || [];
+      for (var i = 0; i < ds.length; i++) if (ds[i] && ds[i].fullPageUrl === url) return { lv: lvs[k], i: i, bai: ds[i] };
+    }
+    return null;
+  }
+  function tenNguon(D, urls, loai) {
+    var bs = urls.map(function (u) { return timBai(D, u); }).filter(Boolean);
+    if (!bs.length) return '';
+    var lv = (D.levels || []).filter(function (l) { return l.id === bs[0].lv; })[0];
+    var so = bs.map(function (b) { return b.bai.number; }).filter(function (n) { return n != null; }).sort(function (a, b) { return a - b; });
+    var bai = so.length ? (so[0] === so[so.length - 1] ? 'Bài ' + so[0] : 'Bài ' + so[0] + '–' + so[so.length - 1]) : '';
+    return 'Ôn từ ' + [bai, lv ? lv.name : ''].filter(Boolean).join(' · ') + (loai ? ' (' + loai + ')' : '');
+  }
   function baiOn() {
     var D = typeof APP_DATA !== 'undefined' ? APP_DATA : {};
-    var bai = null;
-    try { bai = JSON.parse(localStorage.getItem('hyv_last_lesson') || 'null'); } catch (e) { /* bo qua */ }
     var a = auth();
-    var lv = (bai && bai.levelId) || (a && a.user && a.user.level) || 'hsk1';
-    var ds = ((D.lessons && D.lessons[lv]) || []).filter(function (b) { return b && b.fullPageUrl; });
-    if (!ds.length) ds = ((D.lessons && D.lessons.hsk1) || []).filter(function (b) { return b && b.fullPageUrl; });
-    var i = bai ? ds.map(function (b) { return b.fullPageUrl; }).indexOf(bai.url) : -1;
-    if (i < 0) i = Math.min(2, ds.length - 1);
-    return ds.slice(Math.max(0, i - 3), i + 1).map(function (b) { return b.fullPageUrl; });
+    var uid = a && a.user && a.user.id;
+    var lvEm = (a && a.user && a.user.level) || 'hsk1';
+    function cuaCap(lv) { return ((D.lessons && D.lessons[lv]) || []).filter(function (b) { return b && b.fullPageUrl; }); }
+    function xong(urls, loai) { nguonTu = tenNguon(D, urls, loai); return urls; }
+    // 1. bai thay co giao cho lop
+    var lop = a ? goi('/api/class/me').then(function (d) {
+      var ds = ((d && d.assignments) || []).slice().sort(function (x, y) { return (x.session || 0) - (y.session || 0); });
+      var urls = [];
+      ds.reverse().forEach(function (x) { if (x.lessonUrl && urls.indexOf(x.lessonUrl) < 0 && timBai(D, x.lessonUrl)) urls.push(x.lessonUrl); });
+      return urls.slice(0, 4);
+    }, function () { return []; }) : Promise.resolve([]);
+    return lop.then(function (urls) {
+      if (urls.length) return xong(urls, 'bài thầy cô giao');
+      // 2. bai em vua hoc — chi khi la bai cua chinh tai khoan nay
+      var bai = docJson('hyv_last_lesson', null);
+      var tb = bai && bai.url && (!bai.uid || !uid || bai.uid === uid) ? timBai(D, bai.url) : null;
+      if (tb) {
+        var ds2 = cuaCap(tb.lv);
+        return xong(ds2.slice(Math.max(0, tb.i - 3), tb.i + 1).map(function (b) { return b.fullPageUrl; }), 'bài em đang học');
+      }
+      // 3. cac bai em da hoc (diem luu theo tai khoan, dong bo tu may chu)
+      var diem = docJson('hyv_lesson_scores', {});
+      var daHoc = cuaCap(lvEm).filter(function (b) { return diem[b.fullPageUrl]; });
+      if (daHoc.length) return xong(daHoc.slice(-4).map(function (b) { return b.fullPageUrl; }), 'bài em đã học');
+      // 4. dau cap cua em
+      var ds4 = cuaCap(lvEm);
+      if (!ds4.length) ds4 = cuaCap('hsk1');
+      return xong(ds4.slice(0, 3).map(function (b) { return b.fullPageUrl; }), '');
+    });
   }
   function layTuVung() {
     if (tuVung && tuVung.length >= 4) return Promise.resolve(tuVung);
-    return Promise.all(baiOn().map(napBai)).then(function (phan) {
+    if (!tuHaySai) {
+      tuHaySai = {};
+      var sai = docJson('hyv_review_wrong_words', {});
+      Object.keys(sai || {}).forEach(function (k) { (Array.isArray(sai[k]) ? sai[k] : []).forEach(function (z) { tuHaySai[z] = 1; }); });
+    }
+    return baiOn().then(function (urls) { return Promise.all(urls.map(napBai)); }).then(function (phan) {
       var ra = [], thay = {};
       phan.forEach(function (ds) { ds.forEach(function (v) { if (!thay[v.zh]) { thay[v.zh] = 1; ra.push(v); } }); });
       // du phong: ten cac mon trong nong trai
       if (ra.length < 4) {
+        nguonTu = 'Ôn tên các món trong nông trại';
         ['CAY', 'CON', 'TT'].forEach(function (n) {
-          Object.keys(S.cat[n]).forEach(function (k) { var m = S.cat[n][k]; if (!thay[m.zh]) { thay[m.zh] = 1; ra.push({ zh: m.zh, py: m.py, vn: m.vn }); } });
+          Object.keys(S.cat[n]).forEach(function (k) { var m = S.cat[n][k]; if (!thay[m.zh]) { thay[m.zh] = 1; ra.push({ zh: m.zh, py: m.py, vn: m.vn, pos: '' }); } });
         });
       }
       tuVung = ra;
@@ -929,7 +985,11 @@
     $('#ntHoiChon').innerHTML = '';
     $('#ntHoiBao').textContent = '';
     veTienHoi();
-    layTuVung().then(function () { if (hoi) cauMoi(); });
+    layTuVung().then(function () {
+      if (!hoi) return;
+      $('#ntHoiNguon').textContent = nguonTu;
+      cauMoi();
+    });
   }
   function veTienHoi() {
     var h = '';
@@ -939,9 +999,16 @@
   function cauMoi() {
     var ds = tuVung.filter(function (v) { return !hoi.daHoi[v.zh]; });
     if (ds.length < 1) { hoi.daHoi = {}; ds = tuVung.slice(); }
+    // Mot nua so cau hoi lai tu em hay sai (neu trong bai on co)
+    var haySai = ds.filter(function (v) { return tuHaySai && tuHaySai[v.zh]; });
+    if (haySai.length && Math.random() < 0.5) ds = haySai;
     var dap = ds[Math.floor(Math.random() * ds.length)];
     hoi.daHoi[dap.zh] = 1;
-    var sai = tron(tuVung.filter(function (v) { return v.zh !== dap.zh && v.vn !== dap.vn; })).slice(0, 3);
+    // Dap an nhieu uu tien cung tu loai (dong tu voi dong tu...) de em phai nho nghia that
+    var khac = tuVung.filter(function (v) { return v.zh !== dap.zh && v.vn !== dap.vn; });
+    var cungLoai = dap.pos ? tron(khac.filter(function (v) { return v.pos === dap.pos; })) : [];
+    var sai = cungLoai.slice(0, 3);
+    tron(khac).forEach(function (v) { if (sai.length < 3 && sai.indexOf(v) < 0) sai.push(v); });
     var chon = tron([dap].concat(sai));
     var kieu = Math.floor(Math.random() * 3); // 0: Han -> Viet, 1: Viet -> Han, 2: nghe -> Han
     var cau;

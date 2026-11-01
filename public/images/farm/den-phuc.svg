@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="90" rx="22" ry="4" fill="#000" opacity=".15"/>
+<circle cx="50" cy="48" r="34" fill="#ffd54f" opacity=".22"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M50 6V14" fill="none"/>
+<rect x="38" y="13" width="24" height="7" rx="2.5" fill="#ffc93c"/>
+<ellipse cx="50" cy="47" rx="30" ry="27" fill="#e53935"/>
+<path d="M50 20V74M33 23Q22 47 33 71M67 23Q78 47 67 71" fill="none" stroke="#b71c1c" stroke-width="2"/>
+<ellipse cx="50" cy="47" rx="30" ry="27" fill="none"/>
+<rect x="38" y="73" width="24" height="7" rx="2.5" fill="#ffc93c"/>
+<path d="M46 80L42 95M50 80V96M54 80L58 95" fill="none" stroke="#e53935" stroke-width="2.5"/>
+<rect x="34" y="31" width="32" height="32" rx="4" transform="rotate(45 50 47)" fill="#ffd54f"/>
+</g>
+<text x="50" y="57" font-size="27" font-weight="900" text-anchor="middle" fill="#b71c1c" font-family="'Noto Serif SC','SimSun',serif">福</text>
+<ellipse cx="33" cy="36" rx="4" ry="8" fill="#ff8a80" opacity=".8"/>
+</svg>

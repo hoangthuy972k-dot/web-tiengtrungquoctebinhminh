@@ -1072,3 +1072,67 @@ body.dang-tham .nt-chuhan-nut { display: none; }
 .nt-qua-hiem.h-Đẹp { background: #c8e9ff; }
 .nt-qua-hiem.h-Quý { background: #e5c8ff; }
 .nt-qua-hiem.h-Hiếm { background: var(--vang); }
+
+/* ---------- hoc vi (danh hieu khoa cu) ---------- */
+.nt-hv {
+  display: inline-grid; place-items: center; padding: 1px 7px; margin-right: 5px; border-radius: 8px;
+  border: 2px solid var(--vien); font-style: normal; font-family: 'Noto Serif SC', serif; font-weight: 900; font-size: 0.95rem;
+  background: #e7dcc6; color: var(--chu); vertical-align: middle; line-height: 1.25;
+}
+.nt-hv.nho { font-size: 0.72rem; padding: 0 4px; border-width: 1.5px; border-radius: 6px; margin-right: 3px; }
+.nt-hv.hv1 { background: #d8f0c8; }
+.nt-hv.hv2 { background: #c8e9ff; }
+.nt-hv.hv3 { background: #e5d4ff; }
+.nt-hv.hv4 { background: #ffd8a8; }
+.nt-hv.hv5 { background: #ffc9de; }
+.nt-hv.hv6 { background: #ffe08a; }
+.nt-hv.hv7 { background: linear-gradient(135deg, #ffd34d, #ff8a3d); color: #7a1c00; }
+.nt-hv-the { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; background: #fff; border: 2px solid var(--vien); }
+.nt-hv-the .nt-hv { font-size: 1.4rem; padding: 4px 10px; border-width: 3px; border-radius: 12px; }
+.nt-hv-the span { display: flex; flex-direction: column; min-width: 0; }
+.nt-hv-the small { color: var(--mo); font-weight: 600; }
+
+/* ---------- ban hang: han muc + goi ten ---------- */
+.nt-han-muc { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding: 10px 12px; border-radius: 14px; background: #fff4c4; border: 2px solid var(--vien); }
+.nt-han-muc > div { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.nt-han-muc small { color: var(--mo); font-weight: 600; font-size: 0.8rem; }
+.nt-han-muc .nt-nut { flex: none; padding: 6px 12px; }
+.nt-bst-thanh { display: block; height: 10px; margin-top: 4px; border-radius: 99px; background: #e7dcc6; border: 2px solid var(--vien); overflow: hidden; }
+.nt-bst-thanh > i { display: block; height: 100%; background: linear-gradient(180deg, #ffd85c, #f0a417); }
+.nt-ban-nut button:disabled { opacity: 0.5; cursor: not-allowed; }
+.nt-goi { display: flex; flex-direction: column; gap: 12px; text-align: center; }
+.nt-goi h3 { margin: 0; font-size: 1.15rem; }
+.nt-goi-mon { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.nt-goi-mon img { width: 72px; height: 72px; }
+.nt-goi-mon span { display: flex; flex-direction: column; text-align: left; }
+.nt-goi-mon b { font-size: 1.25rem; }
+.nt-goi-mon small { color: var(--mo); font-weight: 700; }
+.nt-goi-luat { margin: 0; color: var(--mo); font-weight: 600; font-size: 0.9rem; }
+
+/* ---------- bo suu tap chu Han ---------- */
+.nt-bst { width: 100%; display: flex; flex-direction: column; gap: 8px; margin-top: 8px; padding: 12px; border-radius: 16px; background: #fff; border: 2px dashed var(--vien); text-align: left; }
+.nt-bst-dau { display: flex; flex-direction: column; }
+.nt-bst-dau small { color: var(--mo); font-weight: 600; }
+.nt-bst-moc { display: flex; align-items: center; gap: 10px; }
+.nt-bst-moc img { width: 56px; height: 56px; flex: none; }
+.nt-bst-moc > span { flex: 1; font-size: 0.88rem; font-weight: 600; }
+.nt-bst .nt-nut { align-self: flex-start; padding: 6px 14px; }
+.nt-bst-ds h3 { margin: 14px 0 8px; font-size: 1rem; }
+.nt-bst-mocs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.nt-bst-mo { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; padding: 8px 4px; border-radius: 14px; border: 2px solid #e4d6c6; background: #fff; }
+.nt-bst-mo img { width: 52px; height: 52px; filter: grayscale(1); opacity: 0.45; }
+.nt-bst-mo.mo { border-color: var(--vien); background: #fff4c4; }
+.nt-bst-mo.mo img { filter: none; opacity: 1; }
+.nt-bst-mo b { font-size: 0.78rem; line-height: 1.2; }
+.nt-bst-mo small { font-size: 0.7rem; color: var(--mo); font-weight: 700; }
+.nt-the-luoi { display: grid; grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 6px; }
+.nt-the-chu {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 4px 6px;
+  border-radius: 12px; border: 2.5px solid var(--vien); background: linear-gradient(180deg, #fff8ec, #ffe9c2);
+  box-shadow: 0 3px 0 var(--vien); font: inherit; color: var(--chu); cursor: pointer;
+}
+.nt-the-chu b { font-family: 'Noto Serif SC', serif; font-size: 1.35rem; line-height: 1.1; }
+.nt-the-chu small { font-size: 0.7rem; color: var(--mo); font-weight: 700; }
+.nt-the-chu.dang { background: #f3eee6; border-style: dashed; box-shadow: none; opacity: 0.8; }
+.nt-the-chu i { position: absolute; top: -6px; right: -4px; font-style: normal; font-size: 0.65rem; font-weight: 900; padding: 0 5px; border-radius: 99px; background: var(--vang); border: 1.5px solid var(--vien); }
+@media (max-width: 420px) { .nt-bst-mocs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

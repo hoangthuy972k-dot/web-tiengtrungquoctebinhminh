@@ -295,6 +295,7 @@
     var conDon = s.don.some(function (dn) { return !dn.xong && duHang(dn.can); });
     $('#ntDonCham').hidden = !conDon;
     $('#ntBanCham').hidden = !(s.nkMoi > 0);
+    veNutThu();
   }
   function duHang(can) {
     return Object.keys(can).every(function (k) { return (S.st.kho[k] || 0) >= can[k]; });
@@ -896,6 +897,7 @@
   function thamBan(id) {
     goi('/api/farm/xem/' + encodeURIComponent(id)).then(function (r) {
       dongBang();
+      dongThiTran();
       thoatDat();
       S.tham = { id: id, ten: r.ten, kich: r.kich, o: r.o, lv: r.lv, dep: r.dep, tim: r.tim, sap: r.sap || [], daTim: r.daTim, daChao: r.daChao, conGiup: r.conGiup };
       S.lechTham = r.now - Date.now();
@@ -1173,6 +1175,68 @@
     }, 60000);
   }
 
+  /* ---------------- thi tran cua lop ---------------- */
+  // Moi ban trong lop la 1 lo dat doc theo duong pho; lo nao cung ve thu nho dung nong trai that.
+  // Bam vao lo -> sang choi nha ban (giup, mua sap, gui loi chao).
+  var thiTran = null;
+  function moThiTran() {
+    dongNoi();
+    dongBang();
+    if (S.che !== 'xem') thoatDat();
+    if (S.tham) veNha();
+    $('#ntThiTran').hidden = false;
+    document.body.classList.add('o-thi-tran');
+    veNutThu();
+    if (!thiTran) $('#ntTtLuoi').innerHTML = '<p class="nt-trong">Đang vẽ thị trấn…</p>';
+    goi('/api/farm/thitran').then(function (r) {
+      thiTran = r;
+      S.lech = r.now - Date.now();
+      if (!$('#ntThiTran').hidden) veThiTran();
+    }, function (err) { $('#ntTtLuoi').innerHTML = '<p class="nt-trong">' + esc(err.message) + '</p>'; });
+  }
+  function dongThiTran() {
+    $('#ntThiTran').hidden = true;
+    document.body.classList.remove('o-thi-tran');
+  }
+  function veNutThu() {
+    var n = S.st ? S.st.nkMoi || 0 : 0;
+    $('#ntTtThu').textContent = '📜 Nhật ký' + (n ? ' (' + n + ' mới)' : '');
+  }
+  function veThiTran() {
+    var r = thiTran;
+    if (!r.lop) {
+      $('#ntTtTen').textContent = 'Thị trấn của lớp em';
+      $('#ntTtPhu').textContent = 'chưa có bạn nào';
+      $('#ntTtLuoi').innerHTML = '<p class="nt-trong">Em chưa vào lớp nào. Nhập mã lớp cô giáo cho ở trang học — nông trại của em sẽ có một lô đất trong thị trấn của lớp.</p>';
+      return;
+    }
+    var tong = r.ds.reduce(function (s, b) { return s + (b.dep || 0); }, 0);
+    $('#ntTtTen').textContent = 'Thị trấn ' + r.lop;
+    $('#ntTtPhu').textContent = r.ds.length + ' nông trại · tổng điểm đẹp ' + tong;
+    $('#ntTtLuoi').innerHTML = r.ds.map(loDat).join('');
+    $all('img', $('#ntTtLuoi')).forEach(ganLoiAnh);
+  }
+  var HUY_TT = ['🥇', '🥈', '🥉'];
+  function loDat(b, hang) {
+    var huy = hang < 3 && b.dep > 0 ? HUY_TT[hang] + ' ' : '';
+    return '<button type="button" class="nt-lo' + (b.la ? ' la' : '') + '" data-lo="' + esc(b.id) + '" aria-label="Nông trại của ' + esc(b.ten) + '">' +
+      '<div class="nt-lo-dat">' + (b.co ? farmNho(b) : '<div class="nt-lo-trong">Đất trống — chờ ' + esc(b.ten) + ' mở nông trại</div>') + '</div>' +
+      '<div class="nt-lo-bien"><b>' + huy + esc(b.ten) + (b.la ? ' (em)' : '') + '</b><small>' +
+      (b.co ? 'Cấp ' + b.lv + ' · đẹp ' + b.dep + ' · ❤ ' + b.tim + (b.sap ? ' · 🛒 ' + b.sap : '') : 'Chưa mở nông trại') + '</small></div></button>';
+  }
+  // Ve thu nho: vi tri tinh theo % kich thuoc dat nen lo nao cung vua khung
+  function farmNho(b) {
+    var w = b.kich.w, h = b.kich.h;
+    var html = '<div class="nt-nho" style="aspect-ratio:' + w + '/' + h + ';background-size:' + (200 / w) + '% ' + (200 / h) + '%">';
+    b.o.slice().sort(function (a, c) { return (a.y + rong(a)) - (c.y + rong(c)) || a.x - c.x; }).forEach(function (o) {
+      var r = rong(o), t = trangThai(o);
+      var phang = o.k === 'o' || (S.cat.TT[o.k] && S.cat.TT[o.k].phang);
+      html += '<img src="' + anh(t.hinh) + '" alt="" loading="lazy" draggable="false" style="left:' + (o.x * 100 / w) + '%;top:' + (o.y * 100 / h) + '%;width:' + (r * 100 / w) +
+        '%;height:' + (r * 100 / h) + '%;z-index:' + (phang ? 1 : o.y + r + 1) + '">';
+    });
+    return html + '</div>';
+  }
+
   /* ---------------- cau hoi on tu vung ---------------- */
   // Tu vung hop voi DUNG cap em dang hoc: may chu chon bai tu so lieu lam bai that cua em
   // (cap cua bai lam gan nhat, 4 bai gan day nhat); chua lam bai nao thi bai thay co giao / dau cap.
@@ -1422,6 +1486,8 @@
       if (!b) return;
       if (S.tham) veNha();
       var m = b.getAttribute('data-mo');
+      if (m === 'thitran') return moThiTran();
+      dongThiTran();
       if (m === 'sapxep') return batSapXep();
       if (S.che !== 'xem') thoatDat();
       moBang(m);
@@ -1450,10 +1516,27 @@
     $('#ntThamTim').addEventListener('click', thaTim);
     $('#ntThamChao').addEventListener('click', function () { if (S.tham) moBang('chao'); });
     $('#ntThamSap').addEventListener('click', function () { if (S.tham) moBang('sapban'); });
+    $('#ntThamTt').addEventListener('click', moThiTran);
+    $('#ntThiTran').addEventListener('click', function (e) {
+      var lo = e.target.closest('[data-lo]');
+      if (lo) {
+        var id = lo.getAttribute('data-lo');
+        dongThiTran();
+        if (S.st && thiTran && thiTran.ds.some(function (b) { return b.id === id && b.la; })) return; // lo cua em: ve nong trai
+        thamBan(id);
+        return;
+      }
+      var t = e.target.closest('[data-tt]');
+      if (!t) return;
+      var k = t.getAttribute('data-tt');
+      if (k === 've') dongThiTran();
+      else moBang('ban', k);
+    });
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
       if (!$('#ntHoi').hidden) dongHoi();
       else if (bangDang) dongBang();
+      else if (!$('#ntThiTran').hidden) dongThiTran();
       else if (noiCua) dongNoi();
       else if (S.che !== 'xem') thoatDat();
     });

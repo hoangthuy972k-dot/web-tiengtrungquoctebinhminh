@@ -544,3 +544,51 @@ body.dang-tham .nt-khung { padding-top: 180px; }
   .nt-tham-nut { gap: 6px; }
   body.dang-tham .nt-khung { padding-top: 220px; }
 }
+
+/* ---------- thi tran cua lop ---------- */
+.nt-tt {
+  position: fixed; inset: 0; z-index: 48; overflow: auto;
+  padding: 84px 20px 130px;
+  background: linear-gradient(180deg, #8fd3f7 0, #bfe8fb 260px, #9fd86c 260px, #8fd35e 100%);
+}
+.nt-tt[hidden] { display: none; }
+body.o-thi-tran .nt-zoom, body.o-thi-tran .nt-thu-het { display: none !important; }
+.nt-tt-dau { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 0 auto 18px; text-align: center; }
+.nt-tt-cong { width: 150px; height: 150px; margin-bottom: -36px; }
+.nt-tt-bien { position: relative; padding: 10px 26px; background: #c98a4b; border: 4px solid var(--vien); border-radius: 16px; box-shadow: 0 6px 0 var(--vien); color: #fff8ec; }
+.nt-tt-bien h1 { margin: 0; font-size: clamp(1.3rem, 4vw, 2rem); font-weight: 900; text-shadow: 0 2px 0 var(--vien); text-wrap: balance; }
+.nt-tt-bien p { margin: 2px 0 0; font-weight: 700; font-size: 0.9rem; }
+.nt-tt-nut { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+/* duong pho: nen cua luoi la mat duong, khe giua cac lo la duong */
+.nt-tt-luoi {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 30px;
+  max-width: 1240px; margin: 0 auto; padding: 30px;
+  background-color: #d9c49f;
+  border: 4px solid var(--vien); border-radius: 22px; box-shadow: 0 8px 0 rgba(43, 29, 58, 0.35);
+}
+.nt-lo {
+  display: flex; flex-direction: column; gap: 6px; padding: 8px; margin: 0;
+  background: #6fb247; border: 4px solid var(--vien); border-radius: 18px; box-shadow: 0 5px 0 var(--vien);
+  font: inherit; color: var(--chu); text-align: center; cursor: pointer; transition: transform 0.15s;
+}
+.nt-lo:hover { transform: translateY(-3px); }
+.nt-lo:focus-visible { outline: 4px solid var(--vang); outline-offset: 3px; }
+.nt-lo.la { background: #ffc83d; }
+.nt-lo-dat { border: 3px solid var(--vien); border-radius: 12px; overflow: hidden; background: #8fd35e; }
+.nt-nho {
+  position: relative; width: 100%;
+  background-color: #8fd35e; background-image: url('/images/farm/co.svg?v=1');
+}
+.nt-nho img { position: absolute; pointer-events: none; }
+.nt-lo-trong { display: flex; align-items: center; justify-content: center; aspect-ratio: 10 / 8; color: #2e5d1b; font-weight: 800; padding: 10px; background: repeating-linear-gradient(45deg, #9bd76f 0 12px, #8fd35e 12px 24px); }
+.nt-lo-bien { display: flex; flex-direction: column; padding: 4px 8px; background: #fff8ec; border: 3px solid var(--vien); border-radius: 12px; }
+.nt-lo-bien b { font-size: 1rem; line-height: 1.25; }
+.nt-lo-bien small { font-weight: 700; color: var(--mo); }
+@media (max-width: 640px) {
+  .nt-tt { padding: 70px 10px 120px; }
+  .nt-tt-cong { width: 110px; height: 110px; margin-bottom: -28px; }
+  .nt-tt-luoi { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 16px; border-radius: 16px; }
+  .nt-lo { padding: 5px; border-radius: 14px; }
+  .nt-lo-bien b { font-size: 0.85rem; }
+  .nt-lo-bien small { font-size: 0.72rem; }
+}

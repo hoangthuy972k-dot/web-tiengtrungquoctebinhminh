@@ -644,6 +644,23 @@ module.exports = function ganNongTrai(app, d) {
     res.json({ lop: lop.ten, ds });
   }));
 
+  // Thi tran cua lop: moi ban 1 lo dat, ve thu nho hinh dang nong trai that (khong gui xu / kho)
+  app.get('/api/farm/thitran', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const lop = await banCungLop(req.user.id);
+    if (!lop) return res.json({ lop: null, ds: [] });
+    const [farms, ten] = await Promise.all([docNhieu(lop.ids), d.loadUserNames()]);
+    const ds = lop.ids.filter((id) => ten[id]).map((id) => {
+      const f = farms[id];
+      const x = { id, ten: ten[id], la: id === req.user.id, co: !!f };
+      if (f) Object.assign(x, {
+        lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], sap: (f.sap || []).length,
+        o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t })),
+      });
+      return x;
+    }).sort((a, b) => (b.dep || 0) - (a.dep || 0) || (b.lv || 0) - (a.lv || 0) || a.ten.localeCompare(b.ten, 'vi'));
+    res.json({ lop: lop.ten, now: Date.now(), ds });
+  }));
+
   // Mua 1 o sap cua ban: xu cua em -> ban, hang -> kho em
   app.post('/api/farm/muasap/:id', d.requireAuth, d.asyncRoute(async (req, res) => {
     const me = req.user.id, id = String(req.params.id), sid = Number(req.body && req.body.sid);

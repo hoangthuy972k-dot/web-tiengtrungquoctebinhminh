@@ -40,6 +40,7 @@
     <button type="button" class="nt-nut nt-nut-hong" id="ntThamTim">❤ Thả tim</button>
     <button type="button" class="nt-nut" id="ntThamChao">💬 Lời chào</button>
     <button type="button" class="nt-nut nt-nut-vang" id="ntThamSap">🛒 Sạp của bạn</button>
+    <button type="button" class="nt-nut" id="ntThamTt">🏘 Thị trấn</button>
   </div>
   <p class="nt-tham-goi" id="ntThamGoi"></p>
   <button type="button" class="nt-nut" id="ntThamVe">Về nông trại của em</button>
@@ -56,12 +57,29 @@
   <button type="button" class="nt-nut nt-nut-xanh" id="ntDatXong">Xong</button>
 </div>
 
+<!-- Thi tran cua lop: moi ban 1 lo dat, ve thu nho nong trai that -->
+<section class="nt-tt" id="ntThiTran" hidden aria-labelledby="ntTtTen">
+  <header class="nt-tt-dau">
+    <img class="nt-tt-cong" src="/images/farm/cong.svg" alt="" draggable="false">
+    <div class="nt-tt-bien">
+      <h1 id="ntTtTen">Thị trấn</h1>
+      <p><span lang="zh">小镇</span> xiǎozhèn · <span id="ntTtPhu"></span></p>
+    </div>
+    <div class="nt-tt-nut">
+      <button type="button" class="nt-nut nt-nut-vang" data-tt="cho">🛒 Chợ lớp</button>
+      <button type="button" class="nt-nut" data-tt="thu" id="ntTtThu">📜 Nhật ký</button>
+      <button type="button" class="nt-nut nt-nut-xanh" data-tt="ve">🏡 Về nông trại</button>
+    </div>
+  </header>
+  <div class="nt-tt-luoi" id="ntTtLuoi"></div>
+</section>
+
 <nav class="nt-duoi" id="ntDuoi" aria-label="Công cụ nông trại">
   <button type="button" class="nt-cu" data-mo="cuahang"><img src="/images/farm/tb-cuahang.svg" alt="" draggable="false"><span>Cửa hàng</span></button>
   <button type="button" class="nt-cu" data-mo="kho"><img src="/images/farm/tb-kho.svg" alt="" draggable="false"><span>Kho</span></button>
   <button type="button" class="nt-cu" data-mo="don"><img src="/images/farm/tb-don.svg" alt="" draggable="false"><span>Đơn hàng</span><i class="nt-cham" id="ntDonCham" hidden></i></button>
   <button type="button" class="nt-cu" data-mo="sapxep" id="ntSapXep"><img src="/images/farm/tb-sapxep.svg" alt="" draggable="false"><span>Sắp xếp</span></button>
-  <button type="button" class="nt-cu" data-mo="ban"><img src="/images/farm/tb-ban.svg" alt="" draggable="false"><span>Bạn lớp</span><i class="nt-cham" id="ntBanCham" hidden></i></button>
+  <button type="button" class="nt-cu" data-mo="thitran"><img src="/images/farm/tb-ban.svg" alt="" draggable="false"><span>Thị trấn</span><i class="nt-cham" id="ntBanCham" hidden></i></button>
   <button type="button" class="nt-cu nt-cu-hoc" data-mo="hoc"><img src="/images/farm/tb-hoc.svg" alt="" draggable="false"><span>Kiếm sao</span></button>
 </nav>
 

@@ -1890,16 +1890,37 @@
     var d = S.st.donDb;
     if (!d) return '';
     var du = Object.keys(d.can).every(function (k) { return (S.st.kho[k] || 0) >= d.can[k]; });
+    var M = S.cat.MON || {};
+    // Don co mon an: hien cong thuc (nguyen lieu x so phan) de em biet can mua / chuan bi gi
+    var monDs = Object.keys(d.can).filter(function (k) { return M[k]; });
+    var cachNau = monDs.map(function (k) {
+      var m = M[k], so = d.can[k], coMon = S.st.kho[k] || 0;
+      var nl = Object.keys(m.can).map(function (x) {
+        var can = m.can[x] * Math.max(0, so - coMon), co = S.st.kho[x] || 0, sp = S.cat.SP[x];
+        return '<li class="' + (co >= can ? 'co' : 'thieu') + '">' + img('sp-' + x) +
+          '<span><b lang="zh">' + esc(chuSo(m.can[x], x) + sp.zh) + '</b><small>' + esc(sp.py) + ' · ' + esc(sp.vn) + '</small></span>' +
+          '<em>' + (can ? 'cần ' + can + ' · có ' + co : 'đủ') + '</em></li>';
+      }).join('');
+      return '<div class="nt-dondb-nau"><div class="nt-dondb-mon">' + img('sp-' + k) +
+        '<span><b>Cách nấu <span lang="zh">' + esc(m.zh) + '</span></b><small>' + esc(m.py) + ' · ' + esc(m.vn) + ' — mỗi phần cần:</small></span></div>' +
+        '<ul>' + nl + '</ul>' +
+        (coMon ? '<p class="nt-dondb-co">Trong kho đã có ' + coMon + ' phần ' + esc(m.zh) + '.</p>' : '') + '</div>';
+    }).join('');
     return '<div class="nt-dondb' + (d.xong ? ' xong' : '') + '"><div class="nt-dondb-dau"><b>📜 Đơn đặc biệt</b><span>' + img('ic-xu') + '+' + d.xu + ' xu</span></div>' +
       '<p class="nt-dondb-zh" lang="zh">' + esc(d.cau) + '</p>' +
       (d.xong ? '<p class="nt-dondb-vn">✔ Đã giao — ' + esc(d.vn) + '</p>'
         : '<p class="nt-dondb-py" id="ntDbPy" hidden>' + esc(d.py) + '</p>' +
-          '<p class="nt-dondb-goi">Đọc đơn bằng chữ Hán, tìm mua hàng ở chợ của các bạn rồi giao. Đơn này cần hàng em chưa tự làm ra được!</p>' +
+          '<p class="nt-dondb-goi">' + (monDs.length
+            ? 'Đơn này cần <b>món ăn</b> — mua nguyên liệu (của em hoặc ở chợ các bạn) rồi vào <b>Bếp</b> nấu, đủ phần thì giao.'
+            : 'Đọc đơn bằng chữ Hán, tìm mua hàng ở chợ của các bạn rồi giao. Đơn này cần hàng em chưa tự làm ra được!') + '</p>' +
+          cachNau +
+          (monDs.length ? '<div class="nt-hang-nut"><button type="button" class="nt-nut" data-vao-bep>👩‍🍳 Vào bếp nấu</button></div>' : '') +
           '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh" data-dondb' + (du ? '' : ' disabled') + '>' + (du ? 'Giao hàng' : 'Chưa đủ hàng') + '</button>' +
           '<button type="button" class="nt-nut" data-mo-cho>Tìm ở chợ cộng đồng</button><button type="button" class="nt-nut" data-dbpy>Xem pinyin</button></div>') + '</div>';
   }
   function ganDonDb(than) {
     $all('[data-mo-cho]', than).forEach(function (b) { b.addEventListener('click', function () { moBang('congdong', 'cho'); }); });
+    $all('[data-vao-bep]', than).forEach(function (b) { b.addEventListener('click', function () { moBang('kho', 'bep'); }); });
     $all('[data-dbpy]', than).forEach(function (b) { b.addEventListener('click', function () { var p = $('#ntDbPy', than); if (p) p.hidden = !p.hidden; doc(S.st.donDb.cau); }); });
     $all('[data-dondb]', than).forEach(function (b) {
       b.addEventListener('click', function () {

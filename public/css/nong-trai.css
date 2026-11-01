@@ -1189,3 +1189,21 @@ body.dang-tham .nt-chuhan-nut { display: none; }
 .nt-dondb-zh { margin: 8px 0; font-family: 'Noto Serif SC', serif; font-size: clamp(1.4rem, 5vw, 1.8rem); font-weight: 900; text-align: center; }
 .nt-dondb-py { margin: -4px 0 6px; text-align: center; color: var(--mo); font-weight: 700; }
 .nt-dondb-goi, .nt-dondb-vn { margin: 0 0 8px; color: var(--mo); font-weight: 600; font-size: 0.88rem; text-align: center; }
+
+/* ---------- don dac biet: cach nau mon ---------- */
+.nt-dondb-nau { margin: 0 0 10px; padding: 10px 12px; border-radius: 14px; background: #fff; border: 2px solid var(--vien); }
+.nt-dondb-mon { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.nt-dondb-mon > img { width: 48px; height: 48px; flex: none; }
+.nt-dondb-mon span { display: flex; flex-direction: column; }
+.nt-dondb-mon span b span { display: inline; font-family: 'Noto Serif SC', serif; }
+.nt-dondb-mon small { color: var(--mo); font-weight: 600; }
+.nt-dondb-nau ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.nt-dondb-nau li { display: flex; align-items: center; gap: 8px; padding: 5px 10px; border-radius: 10px; }
+.nt-dondb-nau li.co { background: #e3f6d6; }
+.nt-dondb-nau li.thieu { background: #ffe3dc; }
+.nt-dondb-nau li img { width: 34px; height: 34px; flex: none; }
+.nt-dondb-nau li span { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.nt-dondb-nau li b { font-family: 'Noto Serif SC', serif; font-size: 1.1rem; }
+.nt-dondb-nau li small { color: var(--mo); font-weight: 600; font-size: 0.78rem; }
+.nt-dondb-nau li em { font-style: normal; font-weight: 800; font-size: 0.82rem; white-space: nowrap; }
+.nt-dondb-co { margin: 6px 0 0; color: var(--xanh-dam); font-weight: 700; font-size: 0.85rem; }

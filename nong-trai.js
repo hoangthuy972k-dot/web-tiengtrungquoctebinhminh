@@ -20,6 +20,7 @@ const CAY = {
   bido: { zh: '南瓜', py: 'nánguā', vn: 'Bí ngô', lv: 6, gia: 30, phut: 480, ban: 52, xp: 10 },
 };
 const THU_MOI_O = 2; // moi o dat thu duoc 2 nong san
+const XU_MOI_SAO = 5; // doi 1 sao hoc tap = 5 xu nong trai
 
 const CON = {
   ga: { zh: '鸡', py: 'jī', vn: 'Gà', lv: 1, sao: 15, sp: 'trung', phut: 30, xp: 2 },
@@ -617,6 +618,13 @@ module.exports = function ganNongTrai(app, d) {
       f.avMua = mua;
     } else if (a === 'xemnk') {
       f.nkXem = now;
+    } else if (a === 'doisao') {
+      // Doi sao lay xu (mot chieu: xu khong doi nguoc ra sao — sao chi kiem duoc bang hoc bai)
+      const n = Number(b.n);
+      if (!Number.isInteger(n) || n < 1 || n > 100000) throw loi('Số sao muốn đổi chưa hợp lệ.');
+      await tieuSao(n);
+      f.xu += n * XU_MOI_SAO;
+      them.xu += n * XU_MOI_SAO;
     } else {
       throw loi('Hành động không hợp lệ.');
     }
@@ -627,7 +635,7 @@ module.exports = function ganNongTrai(app, d) {
     return { ok: true, them, lenCap: st.lv > lvCu ? st.lv : 0, st };
   }
 
-  const CATALOG = { CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO,
+  const CATALOG = { CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO,
     TIN_TU, TIN_MAU, TIN_HOI, TIN_BAN_NGAY, QUA_NGAY };
 
   app.get('/api/farm', d.requireAuth, d.asyncRoute(async (req, res) => {

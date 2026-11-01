@@ -885,8 +885,10 @@
   }
 
   function veKiemSao(than) {
-    $('#ntBangTit').textContent = 'Kiếm thêm sao';
-    datTab([], '');
+    var tab = bangDang.tab || 'kiem';
+    $('#ntBangTit').textContent = tab === 'doi' ? 'Đổi sao lấy xu' : 'Kiếm thêm sao';
+    datTab([['kiem', 'Kiếm sao'], ['doi', 'Đổi sao → xu']], tab);
+    if (tab === 'doi') { veDoiSao(than); return; }
     than.innerHTML =
       '<div class="nt-sao-to">' + img('ic-sao') + '<b>' + S.st.sao + '</b><span>sao đang có</span></div>' +
       '<ul class="nt-cach">' +
@@ -897,6 +899,52 @@
       '<li>' + img('ic-xp') + '<span><b>Mở web mỗi ngày</b>+5 sao</span></li>' +
       '</ul>' +
       '<div class="nt-hang-nut"><a class="nt-nut nt-nut-xanh nt-nut-to" href="/">Ôn bài ngay</a><a class="nt-nut nt-nut-to" href="/game">Trò chơi tự học</a></div>';
+  }
+
+  // Doi sao hoc tap lay xu nong trai (mot chieu). Ti gia lay tu may chu (XU_MOI_SAO).
+  var doiSo = 10;
+  function veDoiSao(than) {
+    var ti = S.cat.XU_MOI_SAO || 5, co = S.st.sao;
+    doiSo = Math.max(co ? 1 : 0, Math.min(doiSo, co));
+    var nhanh = [10, 50, 100].filter(function (n) { return n < co; });
+    than.innerHTML =
+      '<div class="nt-doi">' +
+        '<div class="nt-doi-ti">' + img('ic-sao') + '<b>1</b><span class="nt-doi-mui" aria-hidden="true">→</span>' + img('ic-xu') + '<b>' + ti + '</b></div>' +
+        '<p class="nt-doi-co">Em đang có <b>' + co + ' sao</b> và <b>' + S.st.xu + ' xu</b>.</p>' +
+        '<div class="nt-doi-chon">' +
+          '<button type="button" class="nt-doi-bot" data-doi-them="-1" aria-label="Bớt 1 sao">−</button>' +
+          '<input type="number" id="ntDoiSo" min="1" max="' + co + '" value="' + doiSo + '" inputmode="numeric" aria-label="Số sao muốn đổi">' +
+          '<button type="button" class="nt-doi-bot" data-doi-them="1" aria-label="Thêm 1 sao">+</button>' +
+        '</div>' +
+        '<div class="nt-doi-nhanh">' + nhanh.map(function (n) { return '<button type="button" data-doi-dat="' + n + '">' + n + ' sao</button>'; }).join('') +
+          (co ? '<button type="button" data-doi-dat="' + co + '">Tất cả</button>' : '') + '</div>' +
+        '<button type="button" class="nt-nut nt-nut-xanh nt-nut-to nt-doi-nut" id="ntDoiNut"' + (co ? '' : ' disabled') + '></button>' +
+        '<p class="nt-meo">' + img('ic-sao') + ' Sao chỉ kiếm được khi học bài, nên xu <u>không</u> đổi ngược lại thành sao. Đổi sao không làm tụt hạng trên bảng xếp hạng.</p>' +
+      '</div>';
+    var o = $('#ntDoiSo', than);
+    var capNhat = function () {
+      var n = Math.max(0, Math.min(co, Math.floor(+o.value || 0)));
+      doiSo = n;
+      $('#ntDoiNut', than).innerHTML = co ? 'Đổi ' + n + ' sao → nhận ' + (n * ti) + ' xu' : 'Chưa có sao để đổi';
+      $('#ntDoiNut', than).disabled = !n;
+    };
+    o.addEventListener('input', capNhat);
+    $all('[data-doi-them]', than).forEach(function (b) {
+      b.addEventListener('click', function () { o.value = Math.max(1, Math.min(co, (+o.value || 0) + +b.getAttribute('data-doi-them'))); capNhat(); });
+    });
+    $all('[data-doi-dat]', than).forEach(function (b) {
+      b.addEventListener('click', function () { o.value = b.getAttribute('data-doi-dat'); capNhat(); });
+    });
+    $('#ntDoiNut', than).addEventListener('click', function () {
+      var n = doiSo;
+      if (!n) return;
+      lam({ a: 'doisao', n: n }, this).then(function () {
+        tieng('xu');
+        bao('Đã đổi ' + n + ' sao lấy ' + (n * ti) + ' xu!');
+        veBang();
+      }, function () { /* lam() da bao loi */ });
+    });
+    capNhat();
   }
 
   /* ---------------- tham nong trai ban ---------------- */
@@ -1933,6 +1981,7 @@
       moBang(m);
     });
     $('#ntSao').addEventListener('click', function () { moBang('hoc'); });
+    $('#ntXu').addEventListener('click', function () { moBang('hoc', 'doi'); });
     $('#ntNvNut').addEventListener('click', function () { dongThiTran(); if (S.tham) veNha(); moNhanVat(); });
     $('#ntLv').addEventListener('click', function () {
       var s = S.st;

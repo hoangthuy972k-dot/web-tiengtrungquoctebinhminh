@@ -54,7 +54,7 @@
      Zombie khac dung lai truoc hang rao (khong pha nha), chi con dang
      duoc hoi moi treo rao vao nha -> mat 1 tim. Moi con duoc hoi luon
      dung dau lan cua no nen phim 1-4 chon dung con dau lan.
-     Ha 25 con la thang, het 3 tim la thua. Cu 5 con len mot dot.     */
+     Ha 35 con la thang, het 3 tim la thua. Cu 5 con len mot dot.     */
   T.dangKy({
     key: 'zombie',
     ten: 'Chặn Zombie',
@@ -64,7 +64,7 @@
     moTa: 'Zombie cầm biển chữ Hán tiến về nhà — chạm đúng con mang chữ có nghĩa ở đề bài để chặn nó lại.',
     canToiThieu: 4,
     mo: function (hop, o) {
-      var THANG = 25, TIM = 3;
+      var THANG = 35, TIM = 3;
       var cham = T.itChuyenDong ? 1.35 : 1;     // giam chuyen dong -> zombie di cham hon
       var sk = T.khung(hop, this, { tim: TIM });
       var layTu = hangTu(o.vocab);
@@ -121,9 +121,9 @@
 
       /* ----- thong so theo dot ----- */
       function dot() { return 1 + Math.floor(st.giet / 5); }
-      function tocDo() { return 85 / (Math.max(6, 15 - (dot() - 1) * 2.2) * cham); }   // % / giay
-      function khoangSinh() { return Math.max(1.2, 3.2 - (dot() - 1) * 0.5) * cham * (0.8 + Math.random() * 0.4); }
-      function toiDa() { return Math.min(o.vocab.length, L * 2, 2 + dot()); }
+      function tocDo() { return 85 / (Math.max(4.5, 12 - (dot() - 1) * 2) * cham); }   // % / giay
+      function khoangSinh() { return Math.max(0.9, 2.6 - (dot() - 1) * 0.45) * cham * (0.8 + Math.random() * 0.4); }
+      function toiDa() { return Math.min(o.vocab.length, L * 2, 3 + dot()); }
 
       function trongLan(l) {
         return st.ds.filter(function (z) { return z.lan === l; }).sort(function (a, b) { return a.x - b.x; });
@@ -171,7 +171,7 @@
         var m = ung[Math.floor(Math.random() * ung.length)];
         m.muc = true;
         // con o gan nha duoc di cham lai de em kip doc
-        var minT = Math.max(2.6, 4.8 - (dot() - 1) * 0.45) * cham;
+        var minT = Math.max(2, 3.8 - (dot() - 1) * 0.4) * cham;
         m.vMuc = Math.min(tocDo(), Math.max(1, (m.x - nha) / minT));
         if (m.cho) { m.cho = false; m.el.classList.remove('tn-zb-cho'); }
         st.muc = m;
@@ -407,7 +407,7 @@
     moTa: 'Hoa quả mang chữ Hán bay lên — vuốt chém đúng quả có nghĩa ở đề bài, tránh quả sai và bom 💣.',
     canToiThieu: 4,
     mo: function (hop, o) {
-      var GIAY = 60, TIM = 3, TOI_DA = 4;
+      var GIAY = 60, TIM = 3, TOI_DA = 5;
       // [ten hinh, mau nuoc khi chem]
       var QUA = [['watermelon', 'red'], ['orange', 'orange'], ['apple', 'yellow'], ['strawberry', 'red'],
         ['kiwi', 'green'], ['lemon', 'yellow'], ['peach', 'orange'], ['pear', 'green']];
@@ -463,7 +463,7 @@
       function chanMenu(e) { e.preventDefault(); }
 
       /* ----- qua ----- */
-      function trongLuc() { return 1.15 * cham * (1 + Math.min(0.3, st.t / GIAY * 0.3)); }   // don vi: H / giay^2
+      function trongLuc() { return 1.4 * cham * (1 + Math.min(0.3, st.t / GIAY * 0.3)); }   // don vi: H / giay^2
       function tuTren() {
         var a = st.ds.filter(function (f) { return f.tu; }).map(function (f) { return f.tu; });
         if (st.muc) a.push(st.muc);
@@ -689,12 +689,12 @@
         var co = coMuc();
         if (!co && st.muc && st.choMuc <= 0 && st.ds.length < TOI_DA) { taoQua(st.muc); co = true; }
         if (st.cho <= 0) {
-          st.cho = (Math.max(0.8, 1.7 - st.t / GIAY) + Math.random() * 0.5) / cham;
-          var toiDa = st.t < 12 ? 2 : st.t < 32 ? 3 : 4;
+          st.cho = (Math.max(0.6, 1.3 - st.t / GIAY) + Math.random() * 0.4) / cham;
+          var toiDa = st.t < 10 ? 3 : st.t < 30 ? 4 : 5;
           if (!co) toiDa--;                       // chua cho cho qua dung
           if (st.ds.length < toiDa) {
             var coBom = st.ds.some(function (f) { return !f.tu; });
-            if (st.t > 8 && !coBom && Math.random() < 0.18) taoQua(null);
+            if (st.t > 6 && !coBom && Math.random() < 0.26) taoQua(null);
             else {
               var tu = layTu(tuTren());
               if (tu) taoQua(tu);
@@ -780,7 +780,7 @@
         ten: 'Chém hoa quả',
         luat: 'Hoa quả mang <b>chữ Hán</b> bay lên. Đọc nghĩa tiếng Việt ở trên rồi <b>vuốt (hoặc chạm)</b> chém đúng quả đó. ' +
           'Chém nhầm quả sai hay bom 💣 mất ❤️. Chém nhanh liên tiếp được <b>combo</b>. Có <b>60 giây</b>! ' +
-          '<br><small>Máy tính: bấm phím 1–4 theo số trên quả.</small>'
+          '<br><small>Máy tính: bấm phím 1–' + TOI_DA + ' theo số trên quả.</small>'
       }, moi);
 
       return {

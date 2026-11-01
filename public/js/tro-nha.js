@@ -78,10 +78,31 @@
      kieu 'zh': hien chu Han (khong pinyin) -> chon nghia tieng Viet
      kieu 'vn': hien nghia tieng Viet -> chon chu Han
      Mac dinh xen ke ngau nhien hai kieu. Dap an nhieu nhat 4 lua chon. */
+  /* Dap an nhieu "gan giong" dap an dung (de kho hon chon bua): uu tien tu
+     co chung chu Han, cung so chu, nghia tieng Viet co chung tu; van tron
+     ngau nhien mot chut de moi lan mot khac.                              */
+  var TU_THUONG = { 'cái': 1, 'con': 1, 'người': 1, 'của': 1, 'là': 1, 'có': 1, 'không': 1, 'được': 1, 'một': 1, 'đi': 1, 'làm': 1, 'rất': 1, 'và': 1 };
+  function tuNghia(vn) {
+    return String(vn || '').toLowerCase().split(/[\s,;/()（）.·…-]+/).filter(function (w) { return w.length > 1 && !TU_THUONG[w]; });
+  }
+  function giongNhau(a, b) {
+    var d = 0, za = String(a.zh || ''), zb = String(b.zh || '');
+    for (var i = 0; i < za.length; i++) if (zb.indexOf(za.charAt(i)) !== -1) { d += 3; break; }
+    if (za.length === zb.length) d += 2;
+    var wa = tuNghia(a.vn), wb = tuNghia(b.vn);
+    if (wa.some(function (w) { return wb.indexOf(w) !== -1; })) d += 2;
+    return d + Math.random() * 2.5;
+  }
+  function nhieu(vocab, tu, n) {
+    return vocab.filter(function (v) { return v.zh !== tu.zh && v.vn !== tu.vn; })
+      .map(function (v) { return { v: v, d: giongNhau(tu, v) }; })
+      .sort(function (a, b) { return b.d - a.d; })
+      .slice(0, n).map(function (x) { return x.v; });
+  }
   function cauHoi(vocab, tu, kieu, soLua) {
     kieu = kieu || (Math.random() < 0.5 ? 'zh' : 'vn');
     soLua = Math.min(soLua || 4, vocab.length);
-    var khac = tron(vocab.filter(function (v) { return v.zh !== tu.zh && v.vn !== tu.vn; })).slice(0, soLua - 1);
+    var khac = tron(nhieu(vocab, tu, soLua - 1));
     var lua = tron([tu].concat(khac));
     return {
       tu: tu,
@@ -300,7 +321,7 @@
     tao: tao, tron: tron, esc: esc, doc: doc, anh: anh, keu: keu, keuDung: function (khongSao) { keuDung(); if (!khongSao) ghiSao(true); },
     keuSai: function () { keuSai(); ghiSao(false); }, keuThang: keuThang, rung: rung,
     itChuyenDong: itChuyenDong,
-    cauHoi: cauHoi, boCau: boCau, oDapAn: oDapAn, khung: khung, demNguoc: demNguoc, ketQua: ketQua, manMoi: manMoi,
+    cauHoi: cauHoi, boCau: boCau, nhieu: nhieu, oDapAn: oDapAn, khung: khung, demNguoc: demNguoc, ketQua: ketQua, manMoi: manMoi,
     docKyLuc: docKyLuc,
     dangKy: function (g) { if (!KHO[g.key]) THU_TU.push(g.key); KHO[g.key] = g; }
   };

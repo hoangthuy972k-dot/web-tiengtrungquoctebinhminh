@@ -20,7 +20,7 @@
     moTa: 'Chạm một ô trên bãi mìn 5×5 và trả lời đúng để mở ô — số trên ô cho biết quanh đó có mấy quả mìn, hãy cắm cờ 🚩 chỗ nghi có mìn.',
     canToiThieu: 4,
     mo: function (hop, o) {
-      var CO = 5, SO_MIN = 5, TIM = 3, TONG = CO * CO;
+      var CO = 5, SO_MIN = 7, TIM = 3, TONG = CO * CO;
       var sk = T.khung(hop, this, { tim: TIM });
       var lay = T.boCau(o.vocab);
       var dang = true, hens = [], giuId = null, giu = null, loaiTro = '', boQuaDen = 0;
@@ -336,7 +336,7 @@
 
       T.manMoi(sk, {
         ic: T.anh('mine-bomb', 'tn-moi-hinh'), ten: 'Dò mìn',
-        luat: 'Bãi mìn 5×5 giấu <b>5 quả mìn</b>. Chạm một ô rồi trả lời đúng để mở ô — số trên ô là số mìn ở 8 ô xung quanh. ' +
+        luat: 'Bãi mìn 5×5 giấu <b>' + SO_MIN + ' quả mìn</b>. Chạm một ô rồi trả lời đúng để mở ô — số trên ô là số mìn ở 8 ô xung quanh. ' +
           'Trả lời sai hoặc mở trúng mìn mất 1 ' + T.anh('ui-heart') + '. Giữ lâu / chuột phải / nút ' + T.anh('mine-flag') + ' để cắm cờ chỗ nghi có mìn. Mở hết ô an toàn là thắng!'
       }, moi);
       return {
@@ -360,10 +360,10 @@
     emoji: '🔗',
     chu: '连',
     nen: 'linear-gradient(160deg,#5ab0ff 0%,#3f51b5 100%)',
-    moTa: 'Kéo từng chữ Hán thả vào đúng nghĩa tiếng Việt (hoặc chạm chữ rồi chạm nghĩa) — 4 vòng trong 90 giây, ghép sai bị trừ giờ.',
+    moTa: 'Kéo từng chữ Hán thả vào đúng nghĩa tiếng Việt (hoặc chạm chữ rồi chạm nghĩa) — 4 vòng trong 70 giây, ghép sai bị trừ 8 giây.',
     canToiThieu: 5,
     mo: function (hop, o) {
-      var SO_TU = 5, SO_VONG = 4, GIAY = 90, PHAT = 5;
+      var SO_TU = 6, SO_VONG = 4, GIAY = 70, PHAT = 8;
       var sk = T.khung(hop, this, { gio: true });
       var dang = true, hens = [], dh = null, keo = null, boQuaDen = 0;
       var st, ban, khuChu, khuNghia, tuVong = [];

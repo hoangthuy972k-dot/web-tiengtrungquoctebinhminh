@@ -36,7 +36,7 @@
     canToiThieu: 4,
     mo: function (hop, o) {
       var NAC = 5, BUOC = 7; // moi nac = 7% chieu ngang san keo
-      var MUC = [{ ten: 'Dễ', giay: 8 }, { ten: 'Vừa', giay: 6 }, { ten: 'Khó', giay: 4.5 }];
+      var MUC = [{ ten: 'Dễ', giay: 6 }, { ten: 'Vừa', giay: 4.5 }, { ten: 'Khó', giay: 3.2 }];
       var sk = T.khung(hop, this, {});
       var lay = T.boCau(o.vocab);
       var dang = true, chon = 1, henCau = null, henMay = null, henHet = null, henThanh = null, go = null, st, el;
@@ -162,7 +162,7 @@
           if (dung) {
             var giay = (Date.now() - t0) / 1000;
             st.dung++; st.chuoi++; st.dai = Math.max(st.dai, st.chuoi);
-            var cong = 10 + Math.round(10 * Math.max(0, 1 - giay / 5)) + Math.min(5, st.chuoi - 1) * 2;
+            var cong = 10 + Math.round(10 * Math.max(0, 1 - giay / 4)) + Math.min(5, st.chuoi - 1) * 2;
             st.diem += cong;
             sk.diem(st.diem);
             sk.bay('+' + cong + (st.chuoi >= 3 ? ' 🔥' + st.chuoi : ''));
@@ -205,7 +205,7 @@
   });
 
   /* ══════════════ DOAN TAU TRI THUC ══════════════
-     60 giay. Moi cau dung gan them mot toa (ghi chu Han) sau dau tau,
+     45 giay. Moi cau dung gan them mot toa (ghi chu Han) sau dau tau,
      cau sai rot toa cuoi. Diem = so toa x 10 + thuong nhanh/chuoi.    */
   T.dangKy({
     key: 'doantau',
@@ -213,10 +213,10 @@
     emoji: '🚂',
     chu: '车',
     nen: 'linear-gradient(160deg,#4fc3f7 0%,#1565c0 100%)',
-    moTa: 'Trong 60 giây, mỗi câu đúng gắn thêm một toa vào đoàn tàu, câu sai làm rớt toa cuối — tàu càng dài càng nhiều điểm.',
+    moTa: 'Trong 45 giây, mỗi câu đúng gắn thêm một toa vào đoàn tàu, câu sai làm rớt toa cuối — tàu càng dài càng nhiều điểm.',
     canToiThieu: 4,
     mo: function (hop, o) {
-      var GIAY = 60;
+      var GIAY = 45;
       var sk = T.khung(hop, this, { gio: true });
       var lay = T.boCau(o.vocab);
       var dang = true, hen = null, henRoi = null, dh = null, go = null, st, el;
@@ -284,7 +284,7 @@
           if (dung) {
             var giay = (Date.now() - t0) / 1000;
             st.dung++; st.chuoi++; st.dai = Math.max(st.dai, st.chuoi);
-            var thuong = (giay < 2.5 ? 5 : giay < 5 ? 2 : 0) + (st.chuoi >= 3 ? Math.min(10, (st.chuoi - 2) * 2) : 0);
+            var thuong = (giay < 2 ? 5 : giay < 4 ? 2 : 0) + (st.chuoi >= 3 ? Math.min(10, (st.chuoi - 2) * 2) : 0);
             st.thuong += thuong;
             st.toa.push({ tu: q.tu, m: st.mau++ % 4 });
             ve(true);
@@ -329,7 +329,7 @@
       T.manMoi(sk, {
         ic: hinh('train-engine', 'tn-moi-hinh'),
         ten: 'Đoàn tàu tri thức',
-        luat: 'Em có <b>60 giây</b>. Mỗi câu đúng gắn thêm <b>một toa</b> 🚃 vào đoàn tàu, câu sai làm <b>rớt toa cuối</b>. ' +
+        luat: 'Em chỉ có <b>' + GIAY + ' giây</b>. Mỗi câu đúng gắn thêm <b>một toa</b> 🚃 vào đoàn tàu, câu sai làm <b>rớt toa cuối</b>. ' +
           'Trả lời nhanh và đúng liên tiếp được thưởng thêm 🔥.',
         nut: 'Cho tàu chạy ▶'
       }, moi);
@@ -352,7 +352,7 @@
     moTa: 'Trả lời đúng để lật từng mảnh ghép, rồi đoán xem bức tranh bí ẩn là từ nào — đoán càng sớm càng nhiều điểm.',
     canToiThieu: 4,
     mo: function (hop, o) {
-      var SO_HINH = 3, TIM = 3, SO_O = 9;
+      var SO_HINH = 4, TIM = 3, SO_O = 9;
       var NEN = [
         'linear-gradient(135deg,#ffe29a,#ffa36c)',
         'linear-gradient(135deg,#a8edea,#5fb3f2)',
@@ -393,7 +393,7 @@
       function chonDoan(bi) {
         var nhieu = o.vocab.filter(function (v) { return v.zh !== bi.zh && v.vn !== bi.vn; });
         var it = laHinh ? nhieu.filter(function (v) { return v.em !== bi.em; }) : nhieu;
-        var khac = T.tron(it.length >= 3 ? it : nhieu).slice(0, 3);
+        var khac = T.nhieu(it.length >= 3 ? it : nhieu, bi, 3); // phuong an doan gan giong tu bi an
         return T.tron([bi].concat(khac));
       }
       function deBai(them) {
@@ -637,7 +637,7 @@
         ic: hinh('puzzle-piece', 'tn-moi-hinh'),
         ten: 'Lật mảnh ghép',
         luat: (laHinh ? 'Một bức tranh bí ẩn' : 'Một chữ Hán bí ẩn') + ' bị che bởi <b>9 mảnh ghép</b>. Chạm một mảnh, trả lời đúng để lật nó ra. ' +
-          'Bấm <b>Đoán từ bí ẩn</b> bất cứ lúc nào — đoán càng sớm càng nhiều điểm, nhưng đoán sai mất 1 ❤️. Có <b>3 hình</b> và <b>3 tim</b>.' +
+          'Bấm <b>Đoán từ bí ẩn</b> bất cứ lúc nào — đoán càng sớm càng nhiều điểm, nhưng đoán sai mất 1 ❤️. Có <b>' + SO_HINH + ' hình</b> và <b>' + TIM + ' tim</b>.' +
           (laHinh ? '' : '<br><small>💡 Các bài đã chọn chưa đủ từ có hình minh hoạ, nên lần này em sẽ đoán nghĩa của chữ Hán.</small>'),
         nut: 'Bắt đầu ▶'
       }, moi);

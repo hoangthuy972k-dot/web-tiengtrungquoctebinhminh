@@ -15,8 +15,8 @@
 
   // Xen ke hai kieu: nhin chu Han chon nghia / nhin nghia chon chu Han
   function boCau(vocab) {
-    return tron(vocab).slice(0, 12).map(function (v, i) {
-      var khac = tron(vocab.filter(function (x) { return x.zh !== v.zh && x.vn !== v.vn; }))[0];
+    return tron(vocab).slice(0, 15).map(function (v, i) {
+      var khac = T.nhieu(vocab, v, 1)[0];
       if (!khac) return null;
       var dung = Math.random() < 0.5 ? 0 : 1;
       if (i % 2 === 0) {
@@ -52,8 +52,8 @@
   /* Ba tro van dong truoc camera (trang /van-dong): cau 4 dap an tu tu vung,
      xen ke nhin chu Han chon nghia / nhin nghia chon chu Han. Ky luc: hyv_tn_kl_vd_<tro>. */
   function boCau4(vocab) {
-    return tron(vocab).slice(0, 12).map(function (v, i) {
-      var khac = tron(vocab.filter(function (x) { return x.zh !== v.zh && x.vn !== v.vn; })).slice(0, 3);
+    return tron(vocab).slice(0, 15).map(function (v, i) {
+      var khac = tron(T.nhieu(vocab, v, 3));
       if (khac.length < 1) return null;
       var ds = tron([v].concat(khac));
       if (i % 2 === 0) {

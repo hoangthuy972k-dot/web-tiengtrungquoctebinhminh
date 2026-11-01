@@ -14,10 +14,10 @@
     emoji: '⏱️',
     chu: '快',
     nen: 'linear-gradient(160deg,#7c4dff 0%,#4527a0 100%)',
-    moTa: '15 câu, mỗi câu 10 giây — trả lời càng nhanh càng nhiều điểm, đúng liên tiếp được thưởng chuỗi.',
+    moTa: '20 câu, mỗi câu 7 giây — trả lời càng nhanh càng nhiều điểm, đúng liên tiếp được thưởng chuỗi.',
     canToiThieu: 4,
     mo: function (hop, o) {
-      var SO_CAU = 15, GIAY = 10;
+      var SO_CAU = 20, GIAY = 7;
       var sk = T.khung(hop, this, { gio: true });
       var lay = T.boCau(o.vocab);
       var dang = true, hen = null, dh = null, st;
@@ -76,7 +76,7 @@
         sk.deBai('');
         T.ketQua(sk, 'tocdo', { diem: st.diem, dung: st.dung, tong: SO_CAU, chuoi: st.dai, saiDs: st.sai }, moi);
       }
-      T.manMoi(sk, { ic: T.anh('speed-stopwatch', 'tn-moi-hinh'), ten: 'Thử thách tốc độ', luat: '15 câu hỏi, mỗi câu <b>10 giây</b>. Trả lời đúng càng nhanh càng nhiều điểm, đúng liên tiếp được thưởng thêm 🔥.' }, moi);
+      T.manMoi(sk, { ic: T.anh('speed-stopwatch', 'tn-moi-hinh'), ten: 'Thử thách tốc độ', luat: '20 câu hỏi, mỗi câu chỉ <b>7 giây</b>. Trả lời đúng càng nhanh càng nhiều điểm, đúng liên tiếp được thưởng thêm 🔥.' }, moi);
       return { dung: function () { dang = false; clearTimeout(hen); if (dh) dh.dung(); } };
     }
   });
@@ -98,7 +98,7 @@
       var st;
 
       function moi() {
-        st = { chong: T.tron(o.vocab).slice(0, 20), tong: 0, ngay: 0, lan: {}, sai: [] };
+        st = { chong: T.tron(o.vocab).slice(0, 30), tong: 0, ngay: 0, lan: {}, sai: [] };
         st.tong = st.chong.length;
         sk.diem(0);
         ve();

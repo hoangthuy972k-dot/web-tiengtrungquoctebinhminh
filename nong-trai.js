@@ -20,7 +20,7 @@ const CAY = {
   bido: { zh: '南瓜', py: 'nánguā', vn: 'Bí ngô', lv: 6, gia: 30, phut: 480, ban: 52, xp: 10 },
 };
 const THU_MOI_O = 2; // moi o dat thu duoc 2 nong san
-const XU_MOI_SAO = 5; // doi 1 sao hoc tap = 5 xu nong trai
+const XU_MOI_SAO = 1; // doi 1 sao hoc tap = 1 xu nong trai
 
 const CON = {
   ga: { zh: '鸡', py: 'jī', vn: 'Gà', lv: 1, sao: 15, sp: 'trung', phut: 30, xp: 2 },

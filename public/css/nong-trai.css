@@ -820,3 +820,28 @@ body.o-thi-tran .nt-zoom, body.o-thi-tran .nt-thu-het { display: none !important
   .nt-cu { width: auto; flex: 1 1 0; min-width: 0; font-size: 0.6rem; line-height: 1.15; }
   .nt-cu img { width: 32px; height: 32px; }
 }
+
+/* ---------- dien thoai: khong tran vien ---------- */
+@media (max-width: 640px) {
+  /* bang truot cach mep 8px, vien hai ben khong bi cat; bang nho (qua, hoi) nam giua */
+  .nt-lop { padding: 8px 8px 0; }
+  .nt-lop.nho, .nt-lop#ntHoi, .nt-lop-dac { padding: 12px; }
+  .nt-lop.nho .nt-bang, .nt-lop#ntHoi .nt-bang, .nt-lop-dac .nt-bang { border-radius: 22px; max-height: calc(100vh - 24px); max-height: calc(100dvh - 24px); }
+  .nt-bang { width: 100%; max-height: calc(100vh - 16px); max-height: calc(100dvh - 16px); }
+  .nt-bang-than { padding-bottom: max(18px, env(safe-area-inset-bottom)); }
+}
+@media (max-width: 420px) {
+  /* cum cap / sao / xu / nhac gon lai de nam tren 1 dong, chua le 8px ben phai */
+  .nt-top { padding: 8px 8px 0; }
+  .nt-hud { gap: 4px; flex-wrap: nowrap; min-width: 0; }
+  .nt-chip { height: 34px; font-size: 0.9rem; padding: 0 8px 0 3px; gap: 3px; border-width: 2.5px; box-shadow: 0 3px 0 var(--vien); }
+  .nt-chip img { width: 26px; height: 26px; }
+  .nt-lv-so { left: 3px; width: 26px; font-size: 0.82rem; }
+  .nt-xp { width: 20px; height: 10px; }
+  .nt-chip-nhac { width: 34px; padding: 0; font-size: 1rem; }
+  .nt-ve { padding: 6px 10px; }
+}
+@media (max-width: 340px) {
+  .nt-xp { display: none; }
+  .nt-chip-lv { padding-right: 3px; }
+}

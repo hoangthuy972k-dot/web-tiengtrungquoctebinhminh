@@ -289,8 +289,11 @@
   /* ---------------- HUD ---------------- */
   function veHud() {
     var s = S.st;
-    $('#ntSaoSo').textContent = s.sao;
-    $('#ntXuSo').textContent = s.xu;
+    // so lon rut gon (12345 -> 12,3k) de cum sao / xu khong tran man dien thoai
+    $('#ntSaoSo').textContent = soGon(s.sao);
+    $('#ntXuSo').textContent = soGon(s.xu);
+    $('#ntSao').title = s.sao + ' sao';
+    $('#ntXu').title = s.xu + ' xu — đổi sao lấy xu';
     $('#ntLvSo').textContent = s.lv;
     var tile = s.xpSau > s.xpLv ? (s.xp - s.xpLv) / (s.xpSau - s.xpLv) : 1;
     $('#ntXpThanh').style.width = Math.round(Math.max(0, Math.min(1, tile)) * 100) + '%';
@@ -343,6 +346,11 @@
       if (err.message !== 'ban') { bao(err.message, 'loi'); tieng('sai'); }
       throw err;
     });
+  }
+  function soGon(n) {
+    if (n < 10000) return String(n);
+    var k = n / 1000;
+    return (k < 100 ? String(Math.floor(k * 10) / 10).replace('.', ',') : String(Math.floor(k))) + 'k';
   }
   function nhanTrangThai(st) {
     S.lech = st.now - Date.now();
@@ -905,7 +913,7 @@
   // Doi sao hoc tap lay xu nong trai (mot chieu). Ti gia lay tu may chu (XU_MOI_SAO).
   var doiSo = 10;
   function veDoiSao(than) {
-    var ti = S.cat.XU_MOI_SAO || 5, co = S.st.sao;
+    var ti = S.cat.XU_MOI_SAO || 1, co = S.st.sao;
     doiSo = Math.max(co ? 1 : 0, Math.min(doiSo, co));
     var nhanh = [10, 50, 100].filter(function (n) { return n < co; });
     than.innerHTML =

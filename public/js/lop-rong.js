@@ -217,7 +217,7 @@
           '<circle class="k2" cx="358" cy="184" r="13" fill="#f2f0f8"/>' +
           '<circle class="k3" cx="300" cy="192" r="9" fill="#e9e6f2"/>' +
         '</g>' +
-        '<g class="rg-z" font-family="Times New Roman, Tinos, Times, SimSun, Songti SC, STSong, Noto Serif SC, serif" font-weight="800" fill="#ffffff">' +
+        '<g class="rg-z" font-family="Noto Serif, Noto Serif SC, serif" font-weight="800" fill="#ffffff">' +
           '<text class="z1" x="366" y="128" font-size="22">Z</text>' +
           '<text class="z2" x="384" y="100" font-size="28">z</text>' +
           '<text class="z3" x="400" y="70" font-size="34">z</text>' +

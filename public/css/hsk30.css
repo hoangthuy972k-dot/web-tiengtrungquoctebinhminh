@@ -19,8 +19,8 @@
   --t3-bar: #231d19;
   --t3-r: 14px;
   --t3-shadow: 0 1px 2px rgba(31, 26, 23, 0.06), 0 6px 18px -8px rgba(31, 26, 23, 0.18);
-  --t3-vn: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
-  --t3-zh-f: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  --t3-vn: 'Noto Serif', 'Noto Serif SC', serif;
+  --t3-zh-f: 'Noto Serif', 'Noto Serif SC', serif;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; }

@@ -63,15 +63,14 @@
   --color-error: #c8372d;
   --color-error-bg: #fdefec;
 
-  --font-latin: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
-  /* Chu Han: kieu chu Tong (SimSun tren Windows, Songti tren may Apple, Noto Serif SC tai tu web
-     cho dien thoai). Chu Latin / dau tieng Viet / pinyin dung Times New Roman dung truoc —
-     SimSun khong co du dau tieng Viet nen chi nhan phan chu Han. */
-  --font-hanzi: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  --font-latin: 'Noto Serif', 'Noto Serif SC', serif;
+  /* Ca web mot bo font: chu Viet / Latin / pinyin = Noto Serif (co chan, du dau tieng Viet),
+     chu Han = Noto Serif SC (kieu chu Tong) — hai font cung ho nen dung canh nhau hai hoa. */
+  --font-hanzi: 'Noto Serif', 'Noto Serif SC', serif;
   /* Chu Han co lon: DUNG CHUNG phong voi chu Han trong cau de ca bai hoc
      mot kieu chu. Serif chi con o con dau trang tri (--font-seal). */
   --font-hanzi-display: var(--font-hanzi);
-  --font-seal: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  --font-seal: 'Noto Serif', 'Noto Serif SC', serif;
   /* Bon bac co chu Han trong man hoc — moi noi dung chung, khong tu dat so rieng:
      tieu diem (mot tu dang hoi) · cap tu · cap cau · phu (kem loi nhan xet). */
   --zh-hero: 2.4rem;
@@ -79,7 +78,7 @@
   --zh-text: 1.3rem;
   --zh-small: 1.1rem;
   /* Font serif cho tieu de — cung font YouHSK dung, tao net bao chi cho trang. */
-  --font-display: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  --font-display: 'Noto Serif', 'Noto Serif SC', serif;
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -3680,7 +3679,7 @@ html:has(.modal-overlay.is-open) { overflow: hidden; }
   border-radius: var(--radius-md);
   background: var(--color-white);
   color: var(--fg-red-600);
-  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  font-family: 'Noto Serif', 'Noto Serif SC', serif;
   font-size: 0.83rem;
   font-weight: 600;
   cursor: pointer;
@@ -3740,7 +3739,7 @@ html:has(.modal-overlay.is-open) { overflow: hidden; }
   border-radius: var(--radius-pill);
   background: var(--color-gold-50);
   color: var(--fg-red-700);
-  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  font-family: 'Noto Serif', 'Noto Serif SC', serif;
   font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
@@ -3779,7 +3778,7 @@ html:has(.modal-overlay.is-open) { overflow: hidden; }
   color: var(--fg-gray-800);
   margin-top: var(--space-2);
 }
-.hz-wl { font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; font-size: 0.72rem; color: var(--fg-text-muted); font-weight: 600; margin-right: 5px; }
+.hz-wl { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 0.72rem; color: var(--fg-text-muted); font-weight: 600; margin-right: 5px; }
 
 .vp-quiz-progress {
   display: flex;
@@ -9921,10 +9920,9 @@ html.ho-tro-toi[data-theme="dark"] .sg-placed { background: #3a3029; border-colo
 html.ho-tro-toi[data-theme="dark"] .wu-card.is-sel,
 html.ho-tro-toi[data-theme="dark"] .mg-item.is-sel { background: #45351f; }
 
-/* ---------- Chu tieng Viet trong noi dung bai: Times New Roman (Tinos tai tu web cho
-   may khong co san, vd Android) va to hon cho can voi chu Han. Chu Han lan trong cau
-   tu roi ve kieu chu Tong (SimSun / Songti / Noto Serif SC). ---------- */
-:root { --font-viet: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; }
+/* ---------- Chu tieng Viet trong noi dung bai: Noto Serif (chu Han roi ve Noto Serif SC),
+   co to hon cho can voi chu Han. ---------- */
+:root { --font-viet: 'Noto Serif', 'Noto Serif SC', serif; }
 body .h4-vn, body .h4-card-vn, body .h4-ex-vn, body .h4-tr-vn, body .h4-tb-vn,
 body .dp-vn, body .vp-ex-vn, body .rp-vn, body .vp-word-vn, body .vp-quiz-prompt-vn,
 body .tp-prompt-vi, body .tp-answer-vi, body .spai-sample-vn, body .spai-q-vn, body .sp-sample-vn,
@@ -9935,9 +9933,9 @@ body .fq-q, body .mc-prompt, body .qr-opt-text {
   font-family: var(--font-viet);
   font-weight: 400;
 }
-/* o dap an + cau hoi: chu dam cho de doc tu xa (Times chi co thuong / dam) */
+/* o dap an + cau hoi: chu dam vua (Noto Serif 600) cho de doc tu xa */
 body .vp-option-btn:not(.hanzi), body .lp-opt-btn, body .dp-quiz-opt, body .qr-opt-text,
-body .lp-question-text, body .dp-quiz-qtext, body .fq-q, body .mc-prompt { font-weight: 700; }
+body .lp-question-text, body .dp-quiz-qtext, body .fq-q, body .mc-prompt { font-weight: 600; }
 /* nghia trong danh sach tu (truoc 0,95rem — nho hon han chu Han, pinyin) */
 body .h4-vn { font-size: clamp(1.2rem, 1.05rem + 0.5vw, 1.4rem); color: var(--ink, var(--fg-gray-800)); }
 body .h4-card-vn { font-size: 1.4rem; }

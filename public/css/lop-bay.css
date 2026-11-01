@@ -17,7 +17,7 @@ html.by-open, html.by-open body { overflow: hidden; }
   /* bau troi ban ngay: xanh dam o tren (thanh HUD chu trang van ro), sang dan xuong doi co */
   background: linear-gradient(180deg, #2f45a8 0%, #4a73d6 30%, #7fb4ef 60%, #bfe3fb 82%, #fff1c9 100%);
   color: var(--by-ink);
-  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  font-family: 'Noto Serif', 'Noto Serif SC', serif;
   display: flex; flex-direction: column;
 }
 .by[hidden] { display: none; }
@@ -194,7 +194,7 @@ html.by-open, html.by-open body { overflow: hidden; }
   margin: 0; align-self: center; max-width: 100%;
   padding: 6px 18px; border-radius: 14px;
   background: rgba(22, 26, 84, .62);
-  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  font-family: 'Noto Serif', 'Noto Serif SC', serif;
   font-size: clamp(1.05rem, 1.9vw, 1.6rem); line-height: 1.4; text-align: center;
 }
 .by-ctx[hidden] { display: none; }
@@ -211,7 +211,7 @@ html.by-open, html.by-open body { overflow: hidden; }
   --d: 0s;
   position: absolute; left: 0; top: 0;
   margin: 0; padding: 0 1em; border: 0; background: none;
-  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  font-family: 'Noto Serif', 'Noto Serif SC', serif;
   font-size: clamp(1.5rem, 2.9vw, 3rem); font-weight: 700; line-height: 1.2;
   color: #2b1d3a;
   cursor: pointer;
@@ -305,7 +305,7 @@ html.by-open, html.by-open body { overflow: hidden; }
 .by-khay-tu {
   flex: 1 1 320px; min-width: 0;
   display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px;
-  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  font-family: 'Noto Serif', 'Noto Serif SC', serif;
   font-size: clamp(1.6rem, 3.2vw, 3rem); font-weight: 700; line-height: 1.25;
 }
 .by-k {
@@ -390,7 +390,7 @@ html.by-open, html.by-open body { overflow: hidden; }
 }
 .by-ds li.is-bo { opacity: .7; }
 .by-ds-so { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: #f3e6f3; color: #6b4b78; font-weight: 800; flex: 0 0 auto; }
-.by-ds-cau { flex: 1 1 260px; font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 600; }
+.by-ds-cau { flex: 1 1 260px; font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 600; }
 .by-ds-to { --c: #e0573f; padding: 1px 10px; border-radius: 999px; background: var(--c); color: #fff; font-size: .85rem; font-weight: 700; }
 .by-ds-ct { color: #8a7090; font-size: .92rem; white-space: nowrap; }
 .by-ds-d { color: #2f7a4a; font-size: 1.2rem; min-width: 3em; text-align: right; }

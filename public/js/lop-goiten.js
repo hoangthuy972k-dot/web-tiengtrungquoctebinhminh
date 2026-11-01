@@ -19,7 +19,7 @@
     { id: 'kinh', ic: '🔍', ten: 'Ống kính may mắn', mota: 'Kính lúp lượn trên thẻ tên rồi dừng ở một bạn.', nut: 'Soi', phim: 'K' },
     { id: 'nhom', ic: '👥', ten: 'Chia cặp / nhóm', mota: 'Xáo cả lớp rồi chia bài vào từng nhóm.', nut: 'Chia nhóm', phim: 'N' }
   ];
-  var FONT = "'Times New Roman', Tinos, Times, SimSun, 'Songti SC', 'Noto Serif SC', serif";
+  var FONT = "'Noto Serif', 'Noto Serif SC', serif";
   var TAU = Math.PI * 2;
 
   var S = {

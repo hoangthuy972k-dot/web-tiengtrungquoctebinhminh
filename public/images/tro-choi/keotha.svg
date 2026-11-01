@@ -50,7 +50,7 @@
   </g>
 
   <!-- hanzi -->
-  <g font-family="Times New Roman, Tinos, Times, SimSun, Songti SC, STSong, Noto Serif SC, serif" font-weight="bold" font-size="30" text-anchor="middle" fill="#3f51b5">
+  <g font-family="Noto Serif, Noto Serif SC, serif" font-weight="bold" font-size="30" text-anchor="middle" fill="#3f51b5">
     <text x="92" y="77">书</text>
     <text x="92" y="131">水</text>
     <text x="92" y="185">猫</text>

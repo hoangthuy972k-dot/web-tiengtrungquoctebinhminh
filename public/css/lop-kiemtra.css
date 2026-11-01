@@ -23,10 +23,10 @@ html.kt-open, html.kt-open body { overflow: hidden; }
   display: flex; flex-direction: column;
   background: var(--kt-kem);
   color: var(--kt-chu);
-  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  font-family: 'Noto Serif', 'Noto Serif SC', serif;
 }
 .kt[hidden] { display: none; }
-.kt .zh { font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; }
+.kt .zh { font-family: 'Noto Serif', 'Noto Serif SC', serif; }
 .kt-nen {
   position: absolute; inset: 0; pointer-events: none;
   background:

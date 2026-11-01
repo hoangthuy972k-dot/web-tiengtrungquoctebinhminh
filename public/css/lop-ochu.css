@@ -11,7 +11,7 @@ html.oc-open, html.oc-open body { overflow: hidden; }
     radial-gradient(circle at 12px 12px, rgba(43, 29, 58, .07) 2px, transparent 2.6px) 0 0 / 26px 26px,
     linear-gradient(180deg, #fff4de 0%, #ffe6c4 100%);
   color: var(--oc-chu);
-  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  font-family: 'Noto Serif', 'Noto Serif SC', serif;
 }
 .oc[hidden] { display: none; }
 .oc-bar {
@@ -98,17 +98,17 @@ html.oc-open, html.oc-open body { overflow: hidden; }
   background: linear-gradient(180deg, #fff 0%, #fff 72%, #f3e3c8 72%);
   border: max(2px, calc(var(--o) * .045)) solid var(--oc-vien); border-radius: 22%; cursor: pointer;
   box-shadow: 0 3px 0 var(--oc-vien);
-  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; font-weight: 800;
+  font-family: 'Noto Serif', 'Noto Serif SC', serif; font-weight: 800;
   font-size: calc(var(--o) * .56); color: var(--oc-chu);
   transition: background .2s ease, transform .15s ease;
 }
 .oc-o:hover { transform: translateY(-1px); }
-.oc-choi.is-py .oc-o { font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; font-size: calc(var(--o) * .3); }
+.oc-choi.is-py .oc-o { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: calc(var(--o) * .3); }
 .oc-o i {
   position: absolute; left: 2px; top: 2px; z-index: 1;
   min-width: 1.15em; padding: .12em .2em; box-sizing: border-box; border-radius: 999px;
   background: var(--oc-do); color: #fff; text-align: center;
-  font-style: normal; font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; font-size: max(10px, calc(var(--o) * .2)); font-weight: 800; line-height: 1;
+  font-style: normal; font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: max(10px, calc(var(--o) * .2)); font-weight: 800; line-height: 1;
 }
 .oc-o.is-sang { background: linear-gradient(180deg, #fff1b8 0%, var(--oc-o-sang) 72%, #f5c24a 72%); transform: translateY(-2px); box-shadow: 0 5px 0 var(--oc-vien); }
 .oc-o.is-hien { background: linear-gradient(180deg, #d8f6e2 0%, var(--oc-o-hien) 72%, #7fcf9c 72%); }

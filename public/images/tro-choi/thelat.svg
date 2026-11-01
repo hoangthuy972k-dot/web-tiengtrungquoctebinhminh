@@ -56,13 +56,13 @@
     <rect x="171" y="44" width="58" height="59" rx="8" fill="#fff8ec"/>
     <rect x="176" y="49" width="16" height="4" rx="2" fill="#ffb86b" opacity="0.7"/>
     <rect x="171" y="44" width="58" height="66" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
-    <text x="200" y="91" text-anchor="middle" font-family="Times New Roman, Tinos, Times, SimSun, Songti SC, STSong, Noto Serif SC, serif" font-weight="bold" font-size="38" fill="#d84315">你</text>
+    <text x="200" y="91" text-anchor="middle" font-family="Noto Serif, Noto Serif SC, serif" font-weight="bold" font-size="38" fill="#d84315">你</text>
 
     <rect x="241" y="122" width="58" height="66" rx="8" fill="#f3d6b3"/>
     <rect x="241" y="122" width="58" height="59" rx="8" fill="#fff8ec"/>
     <rect x="246" y="127" width="16" height="4" rx="2" fill="#ffb86b" opacity="0.7"/>
     <rect x="241" y="122" width="58" height="66" rx="8" fill="none" stroke="#2b1d3a" stroke-width="3.5"/>
-    <text x="270" y="169" text-anchor="middle" font-family="Times New Roman, Tinos, Times, SimSun, Songti SC, STSong, Noto Serif SC, serif" font-weight="bold" font-size="38" fill="#d84315">好</text>
+    <text x="270" y="169" text-anchor="middle" font-family="Noto Serif, Noto Serif SC, serif" font-weight="bold" font-size="38" fill="#d84315">好</text>
   </g>
 
   <!-- card mid-flip -->

@@ -597,7 +597,7 @@
 
   /* ================= tro 1: chem hoa qua / bat bong bong ================= */
   function kichVat() { return Math.max(32, Math.min(110, Math.min(KH.w, KH.h) * (S.da === 'qua' ? 0.1 : 0.115), KH.w / (S.cau[S.i].opts.length * 2.5))); }
-  function phong(zh, co) { return zh ? '700 ' + co + 'px "Times New Roman",Tinos,Times,SimSun,"Songti SC",STSong,"Noto Serif SC",serif' : '800 ' + co + 'px "Times New Roman",Tinos,Times,SimSun,"Songti SC",STSong,"Noto Serif SC",serif'; }
+  function phong(zh, co) { return zh ? '700 ' + co + 'px "Noto Serif","Noto Serif SC",serif' : '800 ' + co + 'px "Noto Serif","Noto Serif SC",serif'; }
   // chon co chu vua khung (toi da 2 dong)
   function doChu(chu, zh, maxW, co0, coMin) {
     var co, f, i, tu, a, b, tot, rong;
@@ -683,7 +683,7 @@
     cx.beginPath(); cx.arc(x, y, r, 0, Math.PI * 2);
     cx.fillStyle = mau; cx.fill();
     cx.lineWidth = 2; cx.strokeStyle = '#fff'; cx.stroke();
-    cx.fillStyle = '#fff'; cx.font = '800 ' + Math.round(r * 1.2) + 'px "Times New Roman",Tinos,Times,SimSun,"Songti SC",STSong,"Noto Serif SC",serif';
+    cx.fillStyle = '#fff'; cx.font = '800 ' + Math.round(r * 1.2) + 'px "Noto Serif","Noto Serif SC",serif';
     cx.textAlign = 'center'; cx.textBaseline = 'middle';
     cx.fillText(chu, x, y + r * 0.06);
   }
@@ -809,7 +809,7 @@
         cx.lineWidth = 6 * a + 1; cx.strokeStyle = p.mau; cx.stroke();
       } else if (p.l === 'c') {
         p.y -= KH.h * 0.12 * dt;
-        cx.font = '800 ' + Math.round(p.co) + 'px "Times New Roman",Tinos,Times,SimSun,"Songti SC",STSong,"Noto Serif SC",serif'; cx.textAlign = 'center'; cx.textBaseline = 'middle';
+        cx.font = '800 ' + Math.round(p.co) + 'px "Noto Serif","Noto Serif SC",serif'; cx.textAlign = 'center'; cx.textBaseline = 'middle';
         cx.lineWidth = 5; cx.strokeStyle = 'rgba(40,24,50,.8)'; cx.strokeText(p.chu, p.x, p.y);
         cx.fillStyle = p.mau; cx.fillText(p.chu, p.x, p.y);
       }
@@ -1100,7 +1100,7 @@
       var r = Math.max(18, KH.w * 0.025);
       cx.beginPath(); cx.arc(d[0].x, d[0].y + r * 1.2, r, 0, Math.PI * 2);
       cx.fillStyle = MAU_NG[k]; cx.fill();
-      cx.fillStyle = '#fff'; cx.font = '800 ' + Math.round(r * 1.2) + 'px "Times New Roman",Tinos,Times,SimSun,"Songti SC",STSong,"Noto Serif SC",serif';
+      cx.fillStyle = '#fff'; cx.font = '800 ' + Math.round(r * 1.2) + 'px "Noto Serif","Noto Serif SC",serif';
       cx.textAlign = 'center'; cx.textBaseline = 'middle';
       cx.fillText(t.n < 0 ? '?' : String(t.n), d[0].x, d[0].y + r * 1.25);
     });

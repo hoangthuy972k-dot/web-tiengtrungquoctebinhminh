@@ -114,6 +114,85 @@
     }).join('');
     $('#tlBuocPhan').hidden = $('#tlBuocLop').hidden = $('#tlHanhDong').hidden = false;
     tinhPhut();
+    // giao trinh mac dinh theo cap de (HSK 1–3: giao trinh 3.0)
+    var mac = { hsk1: 'hsk1v3', hsk2: 'hsk2v3', hsk3: 'hsk3v3' }[T.chon.level] || T.chon.level;
+    if ($('#tlKhoa').value !== mac && $('#tlKhoa').querySelector('option[value="' + mac + '"]')) { $('#tlKhoa').value = mac; T.bai = []; }
+    boSoan();
+    veSoanKhung();
+  }
+
+  /* ---------------- may soan phan Doc / Viet tu bai da hoc (public/js/soan-de.js) ---------------- */
+  T.bai = []; T.soan = null; T.dsBaiKhoa = '';
+  function nguonSoan() { return ($('input[name="tlNguon"]:checked') || {}).value === 'soan'; }
+  function boSoan() {
+    T.soan = null;
+    $('#tlSoanKq').hidden = true;
+    $('#tlSoanTt').textContent = 'Chưa soạn.';
+    $('#tlSoanBtn').textContent = 'Soạn đề';
+  }
+  function veSoanKhung() {
+    if (!T.chon) return;
+    var coViet = window.SoanDe && SoanDe.coViet(T.chon.level) && T.chon.sections.some(function (s) { return s.id === 'write'; });
+    $('#tlSoanViet').hidden = !coViet;
+    $all('.tl-soan-v').forEach(function (e) { e.hidden = !coViet; });
+    $('#tlSoanCt').hidden = !nguonSoan();
+    if (nguonSoan()) taiDsBai();
+  }
+  function taiDsBai() {
+    var khoa = $('#tlKhoa').value;
+    if (T.dsBaiKhoa === khoa && $('#tlBai .tl-bai-o')) { veBai(); return; }
+    $('#tlBai').innerHTML = '<p class="tl-mo">Đang tải danh sách bài…</p>';
+    SoanDe.dsBai(khoa).then(function (ds) {
+      T.dsBaiKhoa = khoa;
+      T.dsBai = ds;
+      T.bai = T.bai.filter(function (n) { return ds.some(function (b) { return b.n === n; }); });
+      veBai();
+    }, function (e) { $('#tlBai').innerHTML = '<p class="tl-loi">' + esc(e.message) + '</p>'; });
+  }
+  function veBai() {
+    var ds = T.dsBai || [];
+    $('#tlBai').innerHTML = ds.map(function (b) {
+      return '<button type="button" class="tl-bai-o' + (T.bai.indexOf(b.n) >= 0 ? ' on' : '') + '" data-bai="' + b.n + '" title="' + esc(b.ten) + '" aria-pressed="' + (T.bai.indexOf(b.n) >= 0) + '">Bài ' + b.n + '</button>';
+    }).join('');
+    var nhanh = [5, 10, 15, 20].filter(function (k) { return k < ds.length; });
+    $('#tlBaiNhanh').innerHTML = nhanh.map(function (k) { return '<button type="button" data-den="' + k + '">Bài 1–' + k + '</button>'; }).join('') +
+      '<button type="button" data-den="' + ds.length + '">Tất cả</button><button type="button" data-den="0">Bỏ chọn</button>';
+  }
+  function soanDe() {
+    if (!T.chon) return Promise.reject(new Error('Chọn đề trước.'));
+    if (!T.bai.length) return Promise.reject(new Error('Chọn ít nhất một bài đã học.'));
+    var ph = phanChon();
+    var phanSoan = ph.filter(function (p) { return p !== 'listen'; });
+    if (!phanSoan.length) return Promise.reject(new Error('Đề chỉ có phần Nghe — không cần máy soạn.'));
+    // giu cach danh so cua de goc: Doc tiep sau Nghe, Viet tiep sau Doc
+    var so = {}; T.chon.sections.forEach(function (s) { so[s.id] = s.so; });
+    var dauDoc = (ph.indexOf('listen') >= 0 ? so.listen || 0 : 0) + 1;
+    var batDau = { read: dauDoc, write: dauDoc + (ph.indexOf('read') >= 0 ? so.read || 0 : 0) };
+    $('#tlSoanBtn').disabled = true;
+    $('#tlSoanTt').textContent = 'Máy đang soạn…';
+    return SoanDe.soan({ cap: T.chon.level, khoa: $('#tlKhoa').value, bai: T.bai.slice().sort(function (a, b) { return a - b; }), phan: phanSoan, batDau: batDau })
+      .then(function (kq) {
+        if (!kq.read && !kq.write) throw new Error(kq.bao.join(' ') || 'Không soạn được đề từ các bài đã chọn.');
+        T.soan = kq;
+        veKetQuaSoan();
+        return kq;
+      }).then(function (kq) { $('#tlSoanBtn').disabled = false; return kq; }, function (e) { $('#tlSoanBtn').disabled = false; $('#tlSoanTt').textContent = e.message; throw e; });
+  }
+  function veKetQuaSoan() {
+    var k = T.soan, h = '';
+    ['read', 'write'].forEach(function (id) {
+      var sec = k[id];
+      if (!sec) return;
+      h += '<div class="tl-soan-phan"><b>' + esc(sec.name) + ' · ' + k.dem[id] + ' câu</b><ul>' + sec.parts.map(function (p) {
+        return '<li>' + esc(p.name) + ': ' + esc(SoanDe.tenDang[p.type] || p.type) + ' <small>(câu ' + p.range[0] + '–' + p.range[1] + ')</small></li>';
+      }).join('') + '</ul></div>';
+    });
+    if (k.bao.length) h += '<ul class="tl-soan-bao">' + k.bao.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+    h += '<button type="button" class="tl-nut" data-in="de">Xem trước đề</button>';
+    $('#tlSoanKq').innerHTML = h;
+    $('#tlSoanKq').hidden = false;
+    $('#tlSoanTt').textContent = 'Đã soạn từ ' + k.nguon + '. Bấm “Soạn lại” để đổi câu khác.';
+    $('#tlSoanBtn').textContent = 'Soạn lại';
   }
   function phanChon() { return $all('#tlPhan input:checked').map(function (i) { return i.value; }); }
   function tinhPhut() {
@@ -127,16 +206,30 @@
     if (!T.chon) return;
     var ph = phanChon();
     if (!ph.length) { baoLoi('#tlTaoLoi', 'Chọn ít nhất một phần thi.'); return; }
-    window.open('/thi?in=1&id=' + encodeURIComponent(T.chon.id) + '&phan=' + ph.join(',') + '&kem=' + kem + '&phut=' + (parseInt($('#tlPhut').value, 10) || ''), '_blank');
+    var duongDan = function (soan) {
+      // ban in doc phan may soan tu localStorage (khong dua dap an len duong dan)
+      if (soan) { try { localStorage.setItem('hyv_thilop_in', JSON.stringify({ id: T.chon.id, soan: { read: soan.read || null, write: soan.write || null } })); } catch (e) { /* bo qua */ } }
+      return '/thi?in=1&id=' + encodeURIComponent(T.chon.id) + '&phan=' + ph.join(',') + '&kem=' + kem + '&phut=' + (parseInt($('#tlPhut').value, 10) || '') + (soan ? '&soan=1' : '');
+    };
+    if (!nguonSoan()) { window.open(duongDan(null), '_blank'); return; }
+    if (T.soan) { window.open(duongDan(T.soan), '_blank'); return; }
+    var w = window.open('about:blank', '_blank'); // mo cua so truoc (dang trong luot bam) de khoi bi chan popup
+    soanDe().then(function (k) {
+      var url = duongDan(k);
+      if (w) w.location.href = url; else window.open(url, '_blank');
+    }, function (e) { if (w) w.close(); baoLoi('#tlTaoLoi', e.message); });
   }
   function taoPhong() {
     if (!T.chon) return;
     var b = $('#tlTaoBtn');
     b.disabled = true;
     baoLoi('#tlTaoLoi', '');
-    api('POST', '/api/thi-lop/tao', {
-      examId: T.chon.id, phan: phanChon(), phut: parseInt($('#tlPhut').value, 10) || 0,
-      classId: $('#tlLop').value || '', hienKq: ($('input[name="tlKq"]:checked') || {}).value
+    (nguonSoan() ? (T.soan ? Promise.resolve(T.soan) : soanDe()) : Promise.resolve(null)).then(function (k) {
+      return api('POST', '/api/thi-lop/tao', {
+        examId: T.chon.id, phan: phanChon(), phut: parseInt($('#tlPhut').value, 10) || 0,
+        classId: $('#tlLop').value || '', hienKq: ($('input[name="tlKq"]:checked') || {}).value,
+        soan: k ? { read: k.read || null, write: k.write || null } : null
+      });
     }).then(function (r) { moPhong(r.ma); })
       .catch(function (e) { baoLoi('#tlTaoLoi', e.message); })
       .then(function () { b.disabled = false; });
@@ -211,7 +304,7 @@
   }
   function lapCau() {
     T.cau = [];
-    T.exam.sections.forEach(function (sec) {
+    T.exam.sections.map(function (sec) { return (T.ph.soan && T.ph.soan[sec.id]) || sec; }).forEach(function (sec) {
       if (T.ph.phan.indexOf(sec.id) === -1) return;
       sec.parts.forEach(function (part) {
         (part.groups || [{ questions: part.questions }]).forEach(function (g) {
@@ -496,7 +589,24 @@
       return;
     }
   });
-  $('#tlPhan').addEventListener('change', tinhPhut);
+  $('#tlPhan').addEventListener('change', function () { tinhPhut(); boSoan(); });
+  $all('input[name="tlNguon"]').forEach(function (r) { r.addEventListener('change', function () { boSoan(); veSoanKhung(); }); });
+  $('#tlKhoa').addEventListener('change', function () { T.bai = []; boSoan(); taiDsBai(); });
+  $('#tlSoanBtn').addEventListener('click', function () { soanDe().catch(function () { /* da bao */ }); });
+  $('#tlBai').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-bai]');
+    if (!b) return;
+    var n = +b.getAttribute('data-bai'), i = T.bai.indexOf(n);
+    if (i >= 0) T.bai.splice(i, 1); else T.bai.push(n);
+    boSoan(); veBai();
+  });
+  $('#tlBaiNhanh').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-den]');
+    if (!b) return;
+    var k = +b.getAttribute('data-den');
+    T.bai = (T.dsBai || []).filter(function (x, i) { return i < k; }).map(function (x) { return x.n; });
+    boSoan(); veBai();
+  });
   $('#tlTaoBtn').addEventListener('click', taoPhong);
   $('#tlRaNgoai').addEventListener('click', raNgoai);
   $('#tlBatDau').addEventListener('click', function () {

@@ -406,8 +406,9 @@
     return '<div class="ex-explain" data-explain="' + n + '" hidden></div>';
   }
 
+  function anhDe(f) { return /^(\/|data:)/.test(f || '') ? f : data.img + f; }
   function passageImg(g) {
-    return g.img ? '<img class="ex-passage-img" src="' + data.img + g.img + '" alt="" loading="lazy" />' : '';
+    return g.img ? '<img class="ex-passage-img" src="' + anhDe(g.img) + '" alt="" loading="lazy" />' : '';
   }
   function renderWordFillGroup(g) {
     var keysW = g.words.map(function (w) { return w.k; });
@@ -430,7 +431,7 @@
       // HSK 1 phan Doc 1: tranh kem mot tu (chu + pinyin) — dung hay sai
       part.questions.forEach(function (q) {
         h += '<div class="ex-card" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n, q) +
-          '<div class="ex-judge"><img src="' + data.img + q.img + '" alt="Hình câu ' + q.n + '" loading="lazy" />' +
+          '<div class="ex-judge"><img src="' + anhDe(q.img) + '" alt="Hình câu ' + q.n + '" loading="lazy" />' +
           (q.zh ? '<div class="ex-judge-tu">' + textBlock(q) + '</div>' : '') + tfBtns(q.n) + '</div>' +
           explainBox(q.n) + '</div>';
       });
@@ -440,14 +441,14 @@
         var keys = Object.keys(q.pics);
         h += '<div class="ex-card" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n, q) +
           '<div class="ex-opts ex-opts-pic">' + keys.map(function (k) {
-            return '<button type="button" class="ex-opt ex-opt-pic" data-n="' + q.n + '" data-v="' + k + '"><span class="ex-opt-k">' + k + '</span><img src="' + data.img + q.pics[k] + '" alt="Hình ' + k + '" /></button>';
+            return '<button type="button" class="ex-opt ex-opt-pic" data-n="' + q.n + '" data-v="' + k + '"><span class="ex-opt-k">' + k + '</span><img src="' + anhDe(q.pics[k]) + '" alt="Hình ' + k + '" /></button>';
           }).join('') + '</div>' + explainBox(q.n) + '</div>';
       });
     } else if (part.type === 'pic-match') {
       part.groups.forEach(function (g) {
         var keys = Object.keys(g.pics);
         h += '<div class="ex-card" id="q-' + g.range[0] + '" data-group="' + g.range[0] + '">' + cardHead('Câu ' + g.range[0] + ' - ' + g.range[1]) +
-          '<div class="ex-pics">' + keys.map(function (k) { return '<div class="ex-pic"><img src="' + data.img + g.pics[k] + '" alt="Hình ' + k + '" loading="lazy" /><span class="ex-pic-k">' + k + '</span></div>'; }).join('') + '</div>' +
+          '<div class="ex-pics">' + keys.map(function (k) { return '<div class="ex-pic"><img src="' + anhDe(g.pics[k]) + '" alt="Hình ' + k + '" loading="lazy" /><span class="ex-pic-k">' + k + '</span></div>'; }).join('') + '</div>' +
           (g.example ? '<p class="ex-example">' + esc(g.example) + '</p>' : '');
         g.questions.forEach(function (q) {
           h += '<div class="ex-row' + (q.zh ? '' : ' no-text') + '" id="q-' + q.n + '" data-n="' + q.n + '">' + rowNum(q) + '<div class="ex-row-text">' + (q.zh ? textBlock(q) : '') +
@@ -542,7 +543,7 @@
       // HSK 4 viet 96–100: nhin tranh, dung tu cho san viet mot cau
       part.questions.forEach(function (q) {
         h += '<div class="ex-card" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n) +
-          '<div class="ex-picwrite"><img src="' + data.img + q.img + '" alt="Hình câu ' + q.n + '" loading="lazy" /><div class="ex-picwrite-tu zh">' + esc(q.word) + '</div></div>' +
+          '<div class="ex-picwrite"><img src="' + anhDe(q.img) + '" alt="Hình câu ' + q.n + '" loading="lazy" /><div class="ex-picwrite-tu zh">' + esc(q.word) + '</div></div>' +
           '<textarea class="ex-input ex-textarea" data-input="' + q.n + '" rows="3" autocomplete="off" spellcheck="false" lang="zh" placeholder="Nhập vào câu trả lời của bạn..." aria-label="Câu trả lời câu ' + q.n + '"></textarea>' +
           explainBox(q.n) + '</div>';
       });
@@ -551,7 +552,7 @@
       part.questions.forEach(function (q) {
         h += '<div class="ex-card" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n) +
           (q.words ? '<div class="ex-essay-words zh">' + q.words.map(function (w) { return '<span>' + esc(w) + '</span>'; }).join('') + '</div>' : '') +
-          (q.img ? '<div class="ex-picwrite ex-essay-pic"><img src="' + data.img + q.img + '" alt="Hình câu ' + q.n + '" loading="lazy" /></div>' : '') +
+          (q.img ? '<div class="ex-picwrite ex-essay-pic"><img src="' + anhDe(q.img) + '" alt="Hình câu ' + q.n + '" loading="lazy" /></div>' : '') +
           (q.prompt ? '<p class="ex-essay-de">' + esc(q.prompt) + '</p>' : '') +
           '<textarea class="ex-input ex-textarea ex-essay-ta" data-input="' + q.n + '" rows="6" autocomplete="off" spellcheck="false" lang="zh" placeholder="Nhập vào câu trả lời của bạn..." aria-label="Bài viết câu ' + q.n + '"></textarea>' +
           '<div class="ex-essay-count" data-count="' + q.n + '">0 chữ</div>' +
@@ -867,7 +868,17 @@
     if (state.submitted) return;
     clearInterval(timerId);
     stopClip();
-    var res = { sections: [], correct: 0, total: allQuestions.length, score: 0, max: data.maxScore, at: Date.now(), auto: !!auto, usedSec: Math.min(data.durationSec, Math.floor((Date.now() - state.startedAt) / 1000)) };
+    var res = tinhKetQua(auto, Date.now());
+    state.submitted = true; state.result = res; saveState();
+    if (LOP) { lopNop(); return; }
+    luuLichSu(res);
+    showResult();
+    sendRank(auto);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  // Cham tren may em (thi tren lop: tinh lai khi may chu gui dap an phan may soan)
+  function tinhKetQua(auto, at) {
+    var res = { sections: [], correct: 0, total: allQuestions.length, score: 0, max: data.maxScore, at: at, auto: !!auto, usedSec: Math.min(data.durationSec, Math.floor((at - state.startedAt) / 1000)) };
     data.sections.forEach(function (sec) {
       var sr = { id: sec.id, name: sec.name, correct: 0, total: 0, parts: [] };
       sec.parts.forEach(function (part) {
@@ -880,16 +891,14 @@
       res.correct += sr.correct; res.score += sr.score; res.sections.push(sr);
     });
     res.pass = res.score >= data.passScore;
-    state.submitted = true; state.result = res; saveState();
-    if (LOP) { lopNop(); return; }
+    return res;
+  }
+  function luuLichSu(res) {
     try {
       var hist = JSON.parse(localStorage.getItem(RESULTS) || '{}');
       hist[id] = { score: res.score, max: res.max, correct: res.correct, total: res.total, pass: res.pass, at: res.at };
       localStorage.setItem(RESULTS, JSON.stringify(hist));
     } catch (e) { /* ignore */ }
-    showResult();
-    sendRank(auto);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function showResult() {
@@ -1163,7 +1172,8 @@
   // De chi gom cac phan thay co chon; moi phan van 100 diem nhu de that
   function lopChuanBiDe() {
     var ph = lop.phong, all = data.sections.length, per = data.maxScore / all;
-    data.sections = data.sections.filter(function (s) { return ph.phan.indexOf(s.id) !== -1; });
+    data.sections = data.sections.filter(function (s) { return ph.phan.indexOf(s.id) !== -1; })
+      .map(function (s) { return (ph.soan && ph.soan[s.id]) || s; });
     data.passScore = Math.round(data.passScore / data.maxScore * per * data.sections.length);
     data.maxScore = Math.round(per * data.sections.length);
     data.title = ph.tieuDe;
@@ -1251,6 +1261,28 @@
   }
   function lopHienKetQua() {
     lop.daHien = true;
+    var sv = lop.phong && lop.phong.soan;
+    if (sv) Object.keys(sv).forEach(function (id) {
+      (sv[id].parts || []).forEach(function (p) {
+        (p.groups || [p]).forEach(function (g) {
+          (g.options || []).forEach(function (o) {
+            var it = g.questions && g.questions[0] && questionIndex[g.questions[0].n];
+            var go = it && it.group && (it.group.options || []).filter(function (x) { return x.k === o.k; })[0];
+            if (go && o.vn) go.vn = o.vn;
+          });
+          (g.questions || []).forEach(function (q) {
+            var it = questionIndex[q.n];
+            if (!it) return;
+            if (q.answer !== undefined) it.q.answer = q.answer;
+            if (q.accept) it.q.accept = q.accept;
+            if (q.vn) it.q.vn = q.vn;
+          });
+        });
+      });
+      // gio moi co dap an -> cham lai tren may em cho khop voi diem may chu
+      state.result = tinhKetQua(state.result && state.result.auto, (state.result && state.result.at) || Date.now());
+      saveState();
+    });
     clearInterval(lop.poll);
     var box = $('#exLopXong'); if (box) box.remove();
     showResult();
@@ -1270,6 +1302,14 @@
      de: đề giấy cho học sinh · phieu: phiếu tô đáp án · dapan: đáp án + lời bài nghe
      ============================================================ */
   function chonPhanIn() {
+    if (QS.get('soan') === '1') {
+      var sv = null;
+      try { sv = JSON.parse(localStorage.getItem('hyv_thilop_in') || 'null'); } catch (e) { /* bo qua */ }
+      if (sv && sv.id === id && sv.soan) {
+        data.sections = data.sections.map(function (s) { return sv.soan[s.id] || s; });
+        data.title += ' · ' + (sv.soan.read || sv.soan.write).nguon;
+      }
+    }
     var ph = (QS.get('phan') || '').split(',').filter(Boolean);
     if (ph.length) data.sections = data.sections.filter(function (s) { return ph.indexOf(s.id) !== -1; });
     if (!data.sections.length) data.sections = window.EXAM_DATA.sections;
@@ -1322,7 +1362,12 @@
       (kem === 'dapan' ? '<p>' + ten + ' — dành cho thầy cô</p>'
         : '<div class="ex-in-ttin"><span>Họ và tên: <i></i></span><span>Lớp: <i></i></span><span>Điểm: <i></i></span></div>' +
           '<p>' + allQuestions.length + ' câu' + (phut > 0 ? ' · ' + phut + ' phút' : '') + (kem === 'phieu' ? ' · Khoanh tròn hoặc tô đáp án em chọn, câu viết thì viết vào dòng kẻ.' : '') + '</p>') + '</div>';
-    if (kem === 'de') { render(); $('#exMain').insertAdjacentHTML('afterbegin', bar + dau); }
+    if (kem === 'de') {
+      render();
+      $('#exMain').insertAdjacentHTML('afterbegin', bar + dau);
+      // ban in: tai het hinh ngay (anh "lazy" o cuoi trang chua tai thi trang in bi thieu hinh)
+      $all('#exMain img').forEach(function (im) { im.loading = 'eager'; });
+    }
     else $('#exMain').innerHTML = bar + dau + (kem === 'phieu' ? phieuHtml() : dapAnHtml());
     $('#exSide').innerHTML = '';
     document.title = ten + ' — ' + data.title;

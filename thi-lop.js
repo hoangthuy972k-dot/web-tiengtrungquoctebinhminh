@@ -24,6 +24,95 @@ const PHUT_CHUAN = {
 };
 
 function token() { return crypto.randomBytes(12).toString('hex'); }
+
+// ---------- phan thi do may soan tu bai da hoc (public/js/soan-de.js tren may giao vien) ----------
+// Cung dang du lieu voi de goc (EXAM_DATA.sections[i]); may chu chi nhan cac dang cau ben duoi.
+const DANG_SOAN = { 'judge-pic': 'tf', 'judge-text': 'tf', 'pic-match': 'chu', 'sent-match': 'chu', 'word-fill': 'chu', mc: 'chu', arrange: 'viet', write: 'viet' };
+const ANH_SOAN = /^(\/images\/wu\/[a-z0-9-]{1,60}\.png|data:image\/svg\+xml,[A-Za-z0-9%._~!*()-]{1,1500})$/;
+function chuoiSoan(v, n) { return String(v == null ? '' : v).replace(/[\u0000-\u001f]/g, ' ').slice(0, n || 300); }
+function cauCuaPhan(part) { return part.groups ? [].concat(...part.groups.map((g) => g.questions || [])) : part.questions || []; }
+function kiemPhanSoan(sec, id) {
+  if (!sec || typeof sec !== 'object' || !Array.isArray(sec.parts) || !sec.parts.length || sec.parts.length > 8) return null;
+  const thay = {};
+  let tong = 0;
+  const kiemCau = (q, loai, khoa) => {
+    const n = Number(q && q.n);
+    if (!Number.isInteger(n) || n < 1 || n > 300 || thay[n]) return null;
+    thay[n] = 1; tong++;
+    const o = { n, zh: chuoiSoan(q.zh), py: chuoiSoan(q.py), vn: chuoiSoan(q.vn) };
+    if (loai === 'tf') { if (typeof q.answer !== 'boolean') return null; o.answer = q.answer; }
+    else if (loai === 'chu') { if (khoa.indexOf(q.answer) < 0) return null; o.answer = q.answer; }
+    else { o.answer = chuoiSoan(q.answer, 120); if (!o.answer) return null; o.accept = (Array.isArray(q.accept) ? q.accept : []).slice(0, 4).map((x) => chuoiSoan(x, 120)); }
+    if (q.star != null) o.star = chuoiSoan(q.star);
+    if (q.img != null) { if (!ANH_SOAN.test(String(q.img))) return null; o.img = String(q.img); }
+    if (Array.isArray(q.options)) o.options = q.options.slice(0, 4).map((x) => ({ zh: chuoiSoan(x && x.zh, 120) }));
+    if (Array.isArray(q.words)) o.words = q.words.slice(0, 12).map((x) => chuoiSoan(x, 20));
+    if (q.pre != null) { o.pre = chuoiSoan(q.pre); o.post = chuoiSoan(q.post); }
+    return o;
+  };
+  const parts = [];
+  for (const p of sec.parts) {
+    const loai = DANG_SOAN[p && p.type];
+    if (!loai) return null;
+    const part = { name: chuoiSoan(p.name, 40), type: p.type, intro: chuoiSoan(p.intro, 200), range: [0, 0] };
+    const bo = (g) => {
+      const x = {};
+      if (Array.isArray(g.words)) x.words = g.words.slice(0, 8).map((w) => ({ k: chuoiSoan(w.k, 2), zh: chuoiSoan(w.zh, 20), py: chuoiSoan(w.py, 40) }));
+      if (Array.isArray(g.options)) x.options = g.options.slice(0, 8).map((w) => ({ k: chuoiSoan(w.k, 2), zh: chuoiSoan(w.zh, 200), py: chuoiSoan(w.py, 200), vn: chuoiSoan(w.vn, 200) }));
+      if (g.pics && typeof g.pics === 'object') {
+        x.pics = {};
+        for (const k of Object.keys(g.pics).slice(0, 8)) { if (!/^[A-F]$/.test(k) || !ANH_SOAN.test(String(g.pics[k]))) return null; x.pics[k] = String(g.pics[k]); }
+      }
+      return x;
+    };
+    const khoaCua = (x, q) => (p.type === 'pic-match' ? Object.keys(x.pics || {}) : p.type === 'sent-match' ? (x.options || []).map((o) => o.k)
+      : p.type === 'word-fill' ? (x.words || []).map((w) => w.k) : p.type === 'mc' ? ['A', 'B', 'C', 'D'].slice(0, (q.options || []).length) : []);
+    if (Array.isArray(p.groups)) {
+      part.groups = [];
+      for (const g of p.groups.slice(0, 6)) {
+        const x = bo(g);
+        if (!x) return null;
+        x.range = [0, 0];
+        x.questions = [];
+        for (const q of (g.questions || []).slice(0, 12)) { const c = kiemCau(q, loai, khoaCua(x, q)); if (!c) return null; x.questions.push(c); }
+        if (!x.questions.length) return null;
+        x.range = [x.questions[0].n, x.questions[x.questions.length - 1].n];
+        part.groups.push(x);
+      }
+    } else {
+      const x = bo(p);
+      if (!x) return null;
+      Object.assign(part, x);
+      part.questions = [];
+      for (const q of (p.questions || []).slice(0, 40)) { const c = kiemCau(q, loai, khoaCua(x, q)); if (!c) return null; part.questions.push(c); }
+    }
+    const qs = cauCuaPhan(part);
+    if (!qs.length) return null;
+    part.range = [qs[0].n, qs[qs.length - 1].n];
+    parts.push(part);
+  }
+  if (tong > 60) return null;
+  return { id, name: id === 'read' ? 'Đọc' : 'Viết', icon: id === 'read' ? 'book' : 'pencil', soan: true, nguon: chuoiSoan(sec.nguon, 120), parts };
+}
+// Dap an theo dang cua loadExamDef (server.js) de gradeExam cham duoc
+function dapAnPhanSoan(sec) {
+  const answers = [];
+  sec.parts.forEach((part) => {
+    const isText = part.type === 'arrange' || part.type === 'write';
+    cauCuaPhan(part).forEach((q) => answers.push([String(q.n), isText ? [q.answer].concat(q.accept || []) : q.answer, isText]));
+  });
+  return { id: sec.id, name: sec.name, answers };
+}
+// Ban gui hoc sinh khi chua duoc xem ket qua: bo dap an + loi dich
+function anDapAn(sec) {
+  const bo = (q) => { const o = Object.assign({}, q); delete o.answer; delete o.accept; delete o.vn; return o; };
+  return Object.assign({}, sec, { parts: sec.parts.map((p) => {
+    const x = Object.assign({}, p);
+    if (p.groups) x.groups = p.groups.map((g) => Object.assign({}, g, { options: g.options ? g.options.map((o) => ({ k: o.k, zh: o.zh, py: o.py })) : undefined, questions: g.questions.map(bo) }));
+    else x.questions = p.questions.map(bo);
+    return x;
+  }) });
+}
 function sachTen(s) {
   return String(s || '').replace(/[\u0000-\u001f<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, 40);
 }
@@ -119,7 +208,8 @@ module.exports = function ganThiLop(app, d) {
     const def = d.loadExamDef(p.examId);
     if (!def) return null;
     const per = def.maxScore / def.sections.length;
-    const sections = def.sections.filter((s) => p.phan.indexOf(s.id) !== -1);
+    const sections = def.sections.filter((s) => p.phan.indexOf(s.id) !== -1)
+      .map((s) => (p.soan && p.soan[s.id] ? dapAnPhanSoan(p.soan[s.id]) : s));
     return Object.assign({}, def, {
       sections,
       maxScore: Math.round(per * sections.length),
@@ -164,6 +254,10 @@ module.exports = function ganThiLop(app, d) {
     if (h) {
       o.ten = h.ten; o.daNop = !!h.nop;
       if (h.nop && (p.hienKq === 'ngay' || p.congBo)) o.kq = { correct: h.kq.correct, total: h.kq.total, score: h.kq.score, max: h.kq.max, pass: h.kq.pass, auto: h.auto };
+    }
+    if (p.soan && p.pha !== 'cho') {
+      o.soan = {};
+      Object.keys(p.soan).forEach((k) => { o.soan[k] = o.kq ? p.soan[k] : anDapAn(p.soan[k]); });
     }
     return o;
   }
@@ -305,8 +399,19 @@ module.exports = function ganThiLop(app, d) {
       if (!ds.length) return res.status(400).json({ error: 'Lớp ' + lop.name + ' chưa có danh sách học sinh.' });
     }
     const phut = Math.max(1, Math.min(240, Math.round(Number(b.phut) || def.durationSec / 60 || 60)));
+    let soan = null;
+    if (b.soan && typeof b.soan === 'object') {
+      for (const k of ['read', 'write']) {
+        if (!b.soan[k] || phan.indexOf(k) < 0) continue;
+        const sec = kiemPhanSoan(b.soan[k], k);
+        if (!sec) return res.status(400).json({ error: 'Phần ' + (k === 'read' ? 'Đọc' : 'Viết') + ' máy soạn chưa hợp lệ, bấm “Soạn lại” thử nhé.' });
+        (soan = soan || {})[k] = sec;
+      }
+    }
     const p = {
-      ma, examId: def.id, tieuDe: def.title + (phan.length < coPhan.length ? ' · ' + def.sections.filter((s) => phan.indexOf(s.id) !== -1).map((s) => s.name).join(' + ') : ''),
+      ma, examId: def.id, tieuDe: def.title + (phan.length < coPhan.length ? ' · ' + def.sections.filter((s) => phan.indexOf(s.id) !== -1).map((s) => s.name).join(' + ') : '') +
+        (soan ? ' · ' + Object.keys(soan).map((k) => soan[k].name).join(' + ') + ' soạn theo ' + (Object.values(soan)[0].nguon || 'bài đã học') : ''),
+      soan,
       phan, phut, tao: Date.now(), cham: Date.now(), pha: 'cho', batDau: 0, hetLuc: 0, thuLuc: 0,
       ngheXong: phan[0] !== 'listen', nghe: null, hienKq: b.hienKq === 'ngay' ? 'ngay' : 'sau', congBo: false,
       classId: ds ? String(b.classId) : null, tenLop, ds, hs: new Map(),
@@ -346,7 +451,7 @@ module.exports = function ganThiLop(app, d) {
     return {
       ma: p.ma, examId: p.examId, tieuDe: p.tieuDe, phan: p.phan, phut: p.phut, pha: p.pha, now,
       tao: p.tao, batDau: p.batDau, hetLuc: p.hetLuc, thuLuc: p.thuLuc, ngheXong: !!p.ngheXong, nghe: p.nghe,
-      hienKq: p.hienKq, congBo: !!p.congBo, tenLop: p.tenLop || '', classId: p.classId,
+      hienKq: p.hienKq, congBo: !!p.congBo, tenLop: p.tenLop || '', classId: p.classId, soan: p.soan || null,
       max: def ? def.maxScore : 0, dat: def ? def.passScore : 0, tong: def ? def.total : 0,
       chuaVao: p.ds ? p.ds.filter((r) => ![...p.hs.values()].some((h) => h.rosterId === r.id)).map((r) => r.ten) : [],
       hs: [...p.hs.values()].sort((a, b) => a.vao - b.vao).map((h) => {

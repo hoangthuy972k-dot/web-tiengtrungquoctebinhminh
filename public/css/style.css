@@ -9590,13 +9590,13 @@ body .mc-prompt .mc-sub { flex-basis: 100%; margin: 2px 0 0; }
 body .mc-prompt .fg-num, body .fg-num { min-width: 1.7em; height: 1.7em; font-size: calc(var(--bh-cau) * .55); }
 body .mc-sub { font-size: 0.9rem; }
 body .mc-opts { gap: var(--space-3); }
-body .vp-option-btn { min-height: 64px; padding: 12px 18px; text-align: left; }
+body .vp-option-btn { min-height: 64px; padding: 12px 18px 12px 60px; text-align: left; } /* 60px: cho vong chu A B C D */
 body .mt-opt-py, body .mt-q-py { font-size: 0.85rem; }
 body .mt-opt-key { font-size: 0.85rem; }
 body .dp-quiz-qtext { font-weight: 600; }
 body .lq-opt { min-height: 56px; }
 @media (max-width: 640px) {
-  body .vp-option-btn { min-height: 56px; padding: 10px 14px; }
+  body .vp-option-btn { min-height: 56px; padding: 10px 14px 10px 52px; }
 }
 
 /* ══ Bảng chọn trò "Game ôn tập": thẻ ngang, chữ lớn, nhãn số câu / kết quả ══ */
@@ -9671,4 +9671,144 @@ body .game-picker-go { font-size: 2rem; line-height: 1; color: var(--fg-gray-400
 }
 @media (prefers-reduced-motion: reduce) {
   .qr-canh-di { animation: none; }
+}
+
+/* =====================================================================
+   Luyen tap tu hoc theo kieu man "Kiem tra bai cu" tren lop (lop-kiemtra.css):
+   the giay kem vien dam + vach mau tren dau + bong do, nhan "Cau x/y" nen nau,
+   dap an co vong chu A B C D, thanh tien do hat tron. Ap cho bo cau hoi dung
+   chung (vp-quiz-*, sp-card, pgb-*) nen moi man luyen tap deu doi theo.
+   ===================================================================== */
+:root {
+  --lop-vien: #2b1d3a;
+  --lop-giay: #fffdf8;
+  --lop-bong: rgba(43, 29, 58, 0.38);
+  --lop-mo: rgba(43, 29, 58, 0.12);
+  --lop-nhan: #3a2a24;
+  --lop-nhan-chu: #ffd98a;
+  --lop-vach: #6aa36f;
+  --lop-o: #eadbc6;
+  --lop-chon: #e9a23b;
+  --lop-dung: #2f8a57;
+  --lop-sai: #b8432f;
+}
+@media (prefers-color-scheme: dark) {
+  html.ho-tro-toi:not([data-theme="light"]) {
+    --lop-vien: #120d17;
+    --lop-giay: var(--color-white);
+    --lop-bong: rgba(0, 0, 0, 0.55);
+    --lop-mo: rgba(0, 0, 0, 0.35);
+    --lop-nhan: #f2bf6b;
+    --lop-nhan-chu: #2a1c12;
+    --lop-o: #4a403a;
+    --lop-dung: #4cb47c;
+    --lop-sai: #e0654f;
+  }
+}
+html.ho-tro-toi[data-theme="dark"] {
+  --lop-vien: #120d17;
+  --lop-giay: var(--color-white);
+  --lop-bong: rgba(0, 0, 0, 0.55);
+  --lop-mo: rgba(0, 0, 0, 0.35);
+  --lop-nhan: #f2bf6b;
+  --lop-nhan-chu: #2a1c12;
+  --lop-o: #4a403a;
+  --lop-dung: #4cb47c;
+  --lop-sai: #e0654f;
+}
+
+/* the cau hoi */
+.vp-quiz-card,
+.sp-card {
+  position: relative;
+  background: var(--lop-giay);
+  border: 3px solid var(--lop-vien);
+  border-top: 10px solid var(--lop-vach);
+  border-radius: 24px;
+  box-shadow: 0 7px 0 var(--lop-bong), 0 18px 40px rgba(30, 18, 12, 0.10);
+}
+.vp-quiz-card { padding: clamp(18px, 3vw, 30px); }
+.vp-quiz-card.is-correct, .sp-card.is-correct { border-color: var(--lop-dung); }
+.vp-quiz-card.is-wrong, .sp-card.is-wrong { border-color: var(--lop-sai); }
+
+/* "Cau 1/27 · Trac nghiem" -> nhan nen nau chu vang nhu tren lop */
+.vp-quiz-counter {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 var(--space-4);
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--lop-nhan);
+  color: var(--lop-nhan-chu);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+/* dap an: o bo tron + vong chu A B C D */
+.vp-quiz-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 10px;
+  counter-reset: dapan;
+}
+.vp-option-btn {
+  position: relative;
+  min-height: 60px;
+  padding: 12px 16px 12px 60px;
+  border: 2px solid var(--lop-o);
+  border-radius: 16px;
+  background: var(--color-white);
+  box-shadow: 0 3px 0 var(--lop-mo);
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+.vp-option-btn::before {
+  counter-increment: dapan;
+  content: counter(dapan, upper-alpha);
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-top: -17px;
+  border-radius: 50%;
+  background: var(--lop-nhan);
+  color: var(--lop-nhan-chu);
+  font-family: var(--font-latin);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+.vp-option-btn:hover:not(:disabled) { border-color: var(--lop-chon); transform: translateY(-1px); }
+.vp-option-btn:focus-visible { outline: 3px solid var(--lop-chon); outline-offset: 2px; }
+.vp-option-btn.is-correct { border-color: var(--lop-dung); background: var(--color-green-50); }
+.vp-option-btn.is-correct::before { content: '✓'; background: var(--lop-dung); color: #fff; }
+.vp-option-btn.is-wrong { border-color: var(--lop-sai); background: var(--color-red-50); }
+.vp-option-btn.is-wrong::before { content: '✗'; background: var(--lop-sai); color: #fff; }
+
+/* thanh tien do: hat tron co vien, dung xanh / sai do */
+.pgb-wrap {
+  background: var(--lop-giay);
+  border: 3px solid var(--lop-vien);
+  border-radius: 20px;
+  box-shadow: 0 4px 0 var(--lop-bong);
+}
+.pgb-score { font-weight: 800; }
+.pgb-track { gap: 6px; }
+.pgb-seg {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--lop-o);
+  background: var(--color-white);
+}
+.pgb-seg-correct { background: var(--lop-dung); border-color: var(--lop-dung); }
+.pgb-seg-wrong { background: var(--lop-sai); border-color: var(--lop-sai); }
+.pgb-seg-empty { background: var(--color-white); }
+@media (max-width: 640px) {
+  .vp-quiz-card, .sp-card { border-radius: 18px; border-top-width: 8px; box-shadow: 0 5px 0 var(--lop-bong); }
+  .vp-option-btn { min-height: 54px; padding-left: 54px; }
+  .vp-option-btn::before { left: 12px; width: 30px; height: 30px; margin-top: -15px; font-size: 0.85rem; }
+  .pgb-seg { width: 13px; height: 13px; }
 }

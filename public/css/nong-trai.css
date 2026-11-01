@@ -1222,3 +1222,42 @@ body.dang-tham .nt-chuhan-nut { display: none; }
 .nt-nl.co em { color: var(--xanh-dam); }
 .nt-nl.thieu em { color: var(--do); }
 .nt-nl-chu small { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; }
+
+/* ---------- bang Can mua ---------- */
+.nt-cm-dang { padding: 12px 14px; border-radius: 18px; background: #fff; border: 3px solid var(--vien); box-shadow: 0 4px 0 var(--vien); margin-bottom: 14px; }
+.nt-cm-dang h3 { margin: 0 0 6px; font-size: 1.1rem; }
+.nt-cm-hang { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 6px; margin: 8px 0 10px; }
+.nt-cm-mon {
+  display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 6px 4px; border-radius: 12px;
+  border: 2px solid #e4d6c6; background: var(--kem); font: inherit; color: var(--chu); cursor: pointer;
+}
+.nt-cm-mon img { width: 38px; height: 38px; }
+.nt-cm-mon b { font-family: 'Noto Serif SC', serif; font-size: 0.95rem; }
+.nt-cm-mon small { font-size: 0.66rem; color: var(--mo); font-weight: 600; }
+.nt-cm-mon.bat { border-color: var(--vien); background: var(--vang); }
+.nt-cm-so { display: inline-flex; flex-direction: column; align-items: center; min-width: 40px; line-height: 1.1; font-weight: 700; }
+.nt-cm-so b { font-family: 'Noto Serif SC', serif; font-size: 1.05rem; }
+.nt-cm-so.bat { background: var(--vang) !important; }
+.nt-cm-cau { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 8px 0; padding: 10px; border-radius: 14px; background: #fff4c4; border: 2px dashed var(--vien); text-align: center; }
+.nt-cm-cau b { font-family: 'Noto Serif SC', serif; font-size: clamp(1.3rem, 5vw, 1.7rem); }
+.nt-cm-cau small { flex-basis: 100%; order: 2; color: var(--mo); font-weight: 700; }
+.nt-cm-cau .nt-nut { padding: 4px 10px; }
+.nt-cm-h { margin: 14px 0 8px; font-size: 1.02rem; }
+.nt-cm-ds { display: grid; gap: 8px; }
+.nt-cm-tin { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 14px; background: #fff; border: 2px solid var(--vien); }
+.nt-cm-tin.la { background: #fff4c4; }
+.nt-cm-tin > img { width: 44px; height: 44px; flex: none; }
+.nt-cm-tin > span { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.nt-cm-tin b { font-family: 'Noto Serif SC', serif; font-size: 1.15rem; }
+.nt-cm-tin small { color: var(--mo); font-weight: 600; font-size: 0.78rem; }
+.nt-cm-ai .nt-link { font-size: 0.78rem; }
+.nt-cm-vn { font-style: normal; color: var(--chu); }
+.nt-cm-tin em { display: inline-flex; align-items: center; gap: 3px; font-style: normal; font-weight: 900; white-space: nowrap; }
+.nt-cm-tin em img { width: 20px; height: 20px; }
+.nt-cm-tin .nt-mua { flex: none; }
+@media (max-width: 420px) {
+  .nt-cm-tin { flex-wrap: wrap; }
+  .nt-cm-tin .nt-mua { margin-left: auto; }
+}
+.nt-buoc .nt-cm-so { width: auto; height: auto; min-width: 42px; padding: 3px 8px; font-size: 0.78rem; gap: 1px; }
+.nt-buoc .nt-cm-so b { font-size: 1.1rem; line-height: 1.1; }

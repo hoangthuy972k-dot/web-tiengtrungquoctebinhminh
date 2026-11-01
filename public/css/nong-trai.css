@@ -1207,3 +1207,18 @@ body.dang-tham .nt-chuhan-nut { display: none; }
 .nt-dondb-nau li small { color: var(--mo); font-weight: 600; font-size: 0.78rem; }
 .nt-dondb-nau li em { font-style: normal; font-weight: 800; font-size: 0.82rem; white-space: nowrap; }
 .nt-dondb-co { margin: 6px 0 0; color: var(--xanh-dam); font-weight: 700; font-size: 0.85rem; }
+
+/* ---------- nguyen lieu de hieu (tranh + chu Han + pinyin + tieng Viet) ---------- */
+.nt-ct li.nt-nl, .nt-dondb-nau li.nt-nl {
+  display: grid; grid-template-columns: 34px minmax(0, 1fr); column-gap: 8px; row-gap: 0; align-items: center;
+  padding: 6px 8px; border-radius: 10px; text-align: left;
+}
+.nt-nl > img { grid-row: 1 / 3; width: 34px; height: 34px; }
+.nt-nl-chu { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
+.nt-nl-chu b { font-family: 'Noto Serif SC', serif; font-size: 1.05rem; font-weight: 900; }
+.nt-nl-chu small { color: var(--mo); font-weight: 600; font-size: 0.74rem; }
+.nt-nl-chu .nt-nl-vn { color: var(--chu); font-weight: 800; font-size: 0.8rem; }
+.nt-nl em { grid-column: 2; font-style: normal; font-weight: 800; font-size: 0.74rem; }
+.nt-nl.co em { color: var(--xanh-dam); }
+.nt-nl.thieu em { color: var(--do); }
+.nt-nl-chu small { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; }

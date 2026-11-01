@@ -1835,15 +1835,29 @@
 
   /* ---------------- Bep: nau mon Trung Hoa ---------------- */
   function chuSo(n, k) { var so = ['', '一', '两', '三', '四', '五'][n] || n; return so + ((S.cat.LUONG || {})[k] || '个'); }
+  // pinyin ca cum "so + luong tu + ten": 两斤水稻 -> liǎng jīn shuǐdào (一 doc yí truoc 个/份)
+  function pyCan(n, k) {
+    var l = (S.cat.LUONG || {})[k] || '个', lp = (S.cat.LUONG_PY || {})[l] || '';
+    var so = n === 1 ? (l === '个' || l === '份' ? 'yí' : 'yì') : ['', '', 'liǎng', 'sān', 'sì', 'wǔ'][n] || String(n);
+    return so + ' ' + lp + ' ' + ((S.cat.SP[k] || {}).py || '');
+  }
+  // 1 dong nguyen lieu: tranh · chu Han · pinyin · "2 × Lua" · co bao nhieu
+  function dongNl(x, can, co, conCan) {
+    var sp = S.cat.SP[x], du = co >= conCan;
+    return '<li class="nt-nl ' + (du ? 'co' : 'thieu') + '">' + img('sp-' + x) +
+      '<span class="nt-nl-chu"><b lang="zh">' + esc(chuSo(can, x) + sp.zh) + '</b><small>' + esc(pyCan(can, x)) + '</small>' +
+      '<small class="nt-nl-vn">' + can + ' × ' + esc(sp.vn) + '</small></span>' +
+      '<em>' + (du ? '✓' : '✗') + ' có ' + co + '</em></li>';
+  }
   function veBep(than) {
     var c = S.cat, s = S.st, M = c.MON || {};
-    var html = '<p class="nt-meo">👩‍🍳 Nấu món Trung Hoa từ nông sản — món ăn bán được nhiều xu hơn. Thiếu nguyên liệu? Mua ở <button type="button" class="nt-link" data-mo-cho>Chợ cộng đồng</button>. Công thức chỉ viết bằng chữ Hán!</p><div class="nt-luoi-the">';
+    var html = '<p class="nt-meo">👩‍🍳 Nấu món Trung Hoa từ nông sản — món ăn bán được nhiều xu hơn. Thiếu nguyên liệu? Mua ở <button type="button" class="nt-link" data-mo-cho>Chợ cộng đồng</button>. Mỗi nguyên liệu có tranh, chữ Hán, pinyin và nghĩa — đọc to chữ Hán để nhớ nhé!</p><div class="nt-luoi-the">';
     Object.keys(M).forEach(function (k) {
       var m = M[k], du = true;
       var ct = Object.keys(m.can).map(function (x) {
         var co = s.kho[x] || 0, ok = co >= m.can[x];
         if (!ok) du = false;
-        return '<li class="' + (ok ? 'co' : 'thieu') + '"><span lang="zh">' + esc(chuSo(m.can[x], x) + c.SP[x].zh) + '</span><small>có ' + co + '</small></li>';
+        return dongNl(x, m.can[x], co, m.can[x]);
       }).join('');
       var lan = (s.daNau || {})[k] || 0;
       html += '<div class="nt-the nt-mon"><div class="nt-the-anh">' + img('sp-' + k) + (lan ? '' : '<span class="nt-khoa nt-mon-moi">Món mới</span>') + '</div>' +
@@ -1896,10 +1910,8 @@
     var cachNau = monDs.map(function (k) {
       var m = M[k], so = d.can[k], coMon = S.st.kho[k] || 0;
       var nl = Object.keys(m.can).map(function (x) {
-        var can = m.can[x] * Math.max(0, so - coMon), co = S.st.kho[x] || 0, sp = S.cat.SP[x];
-        return '<li class="' + (co >= can ? 'co' : 'thieu') + '">' + img('sp-' + x) +
-          '<span><b lang="zh">' + esc(chuSo(m.can[x], x) + sp.zh) + '</b><small>' + esc(sp.py) + ' · ' + esc(sp.vn) + '</small></span>' +
-          '<em>' + (can ? 'cần ' + can + ' · có ' + co : 'đủ') + '</em></li>';
+        var can = m.can[x] * Math.max(0, so - coMon), co = S.st.kho[x] || 0;
+        return dongNl(x, m.can[x], co, can).replace('</em>', can ? ' / cần ' + can + '</em>' : '</em>');
       }).join('');
       return '<div class="nt-dondb-nau"><div class="nt-dondb-mon">' + img('sp-' + k) +
         '<span><b>Cách nấu <span lang="zh">' + esc(m.zh) + '</span></b><small>' + esc(m.py) + ' · ' + esc(m.vn) + ' — mỗi phần cần:</small></span></div>' +

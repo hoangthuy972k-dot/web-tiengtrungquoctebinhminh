@@ -14,12 +14,12 @@
   display: flex; flex-direction: column;
   background: radial-gradient(circle at 20% 10%, rgba(63, 136, 197, .35), transparent 45%), linear-gradient(180deg, var(--kn-nen), var(--kn-nen2));
   color: #f2f6fa;
-  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
 }
 .kn[hidden] { display: none; }
 html.kn-open { overflow: hidden; }
-.kn .zh { font-family: 'Noto Sans SC', 'Be Vietnam Pro', sans-serif; }
-.kn kbd { display: inline-block; margin-left: 6px; padding: 1px 6px; border-radius: 6px; border: 1px solid rgba(0, 0, 0, .18); background: rgba(255, 255, 255, .55); color: inherit; font: 600 .72em/1.4 system-ui, sans-serif; }
+.kn .zh { font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; }
+.kn kbd { display: inline-block; margin-left: 6px; padding: 1px 6px; border-radius: 6px; border: 1px solid rgba(0, 0, 0, .18); background: rgba(255, 255, 255, .55); color: inherit; font: 600 .72em/1.4 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; }
 
 .kn-bar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 10px 18px; background: rgba(0, 0, 0, .25); }
 .kn-title { font-size: clamp(1.05rem, 1.8vw, 1.35rem); }

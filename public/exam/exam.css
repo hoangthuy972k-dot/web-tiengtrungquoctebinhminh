@@ -18,8 +18,8 @@
   --ex-radius: 22px;
   --ex-radius-sm: 14px;
   --ex-shadow: 0 8px 24px rgba(32, 30, 28, 0.08);
-  --font-vn: 'Be Vietnam Pro', 'Segoe UI', system-ui, sans-serif;
-  --font-zh: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-vn: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  --font-zh: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
 }
 
 * { box-sizing: border-box; }

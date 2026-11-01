@@ -2,7 +2,7 @@
 .sg-bay {
   position: fixed; z-index: 2147483000; pointer-events: none;
   transform: translate(-50%, -50%);
-  font: 800 1.35rem/1 'Be Vietnam Pro', system-ui, sans-serif;
+  font: 800 1.35rem/1 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   color: #ffcf3d; white-space: nowrap;
   text-shadow: 0 2px 0 #9a5b00, 0 0 14px rgba(255, 190, 40, .7);
   animation: sg-bay 1.2s cubic-bezier(.2, .8, .3, 1) forwards;
@@ -18,7 +18,7 @@
   display: none; align-items: center; gap: 8px;
   padding: 8px 14px 8px 10px; border-radius: 999px;
   background: rgba(40, 24, 10, .88); color: #fff6e0;
-  font: 600 .92rem/1.2 'Be Vietnam Pro', system-ui, sans-serif;
+  font: 600 .92rem/1.2 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   box-shadow: 0 6px 20px rgba(0, 0, 0, .3);
   pointer-events: none;
 }
@@ -32,7 +32,7 @@
   position: fixed; left: 50%; top: 18px; transform: translateX(-50%); z-index: 2147483001;
   max-width: min(560px, calc(100vw - 32px)); padding: 12px 18px; border-radius: 16px;
   background: #fff8e6; color: #5a3a10; border: 2px solid #f1c14e;
-  font: 500 1rem/1.5 'Be Vietnam Pro', system-ui, sans-serif; text-align: center;
+  font: 500 1rem/1.5 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; text-align: center;
   box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
   transition: opacity .4s ease, transform .4s ease;
 }
@@ -40,7 +40,7 @@
 .sg-kq {
   margin: 12px auto 0; max-width: 460px; padding: 10px 14px; border-radius: 14px;
   background: #fff6dc; color: #5a3a10; border: 1px solid #f1d38a;
-  font: 500 1rem/1.5 'Be Vietnam Pro', system-ui, sans-serif; text-align: center;
+  font: 500 1rem/1.5 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; text-align: center;
 }
 .sg-kq b { color: #b8660a; }
 .sg-kq small { color: #8a6a40; }

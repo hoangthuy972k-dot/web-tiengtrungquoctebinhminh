@@ -87,7 +87,7 @@
         '<ellipse cx="200" cy="165" rx="44" ry="60" fill="none" stroke="#a8231a" stroke-width="3"/>' +
         '<ellipse cx="200" cy="165" rx="18" ry="60" fill="none" stroke="#a8231a" stroke-width="3"/>' +
         '<circle cx="200" cy="165" r="27" fill="#ffd56b"/>' +
-        '<text x="200" y="178" font-size="36" text-anchor="middle" fill="#c22a1f" font-family="Noto Sans SC, sans-serif" font-weight="700">福</text>' +
+        '<text x="200" y="178" font-size="36" text-anchor="middle" fill="#c22a1f" font-family="Times New Roman, Tinos, Times, SimSun, Songti SC, STSong, Noto Serif SC, serif" font-weight="700">福</text>' +
         '<rect x="178" y="223" width="44" height="12" rx="3" fill="#f2c14e"/>' +
         '<path d="M188 235v44M200 235v54M212 235v44" stroke="#f2c14e" stroke-width="3"/>' +
         '<ellipse cx="78" cy="132" rx="9" ry="16" fill="#fff" opacity=".25"/><ellipse cx="172" cy="140" rx="10" ry="20" fill="#fff" opacity=".22"/><ellipse cx="278" cy="132" rx="9" ry="16" fill="#fff" opacity=".25"/>'
@@ -216,7 +216,7 @@
         '<rect x="120" y="40" width="160" height="230" rx="12" fill="#d92b2b"/>' +
         '<path d="M120 52Q200 142 280 52A12 12 0 0 0 268 40H132A12 12 0 0 0 120 52z" fill="#b81f1f"/>' +
         '<circle cx="200" cy="122" r="29" fill="#f5c542" stroke="#c9971d" stroke-width="3"/>' +
-        '<text x="200" y="134" font-size="32" text-anchor="middle" fill="#b81f1f" font-family="Noto Sans SC, sans-serif" font-weight="700">福</text>' +
+        '<text x="200" y="134" font-size="32" text-anchor="middle" fill="#b81f1f" font-family="Times New Roman, Tinos, Times, SimSun, Songti SC, STSong, Noto Serif SC, serif" font-weight="700">福</text>' +
         '<path d="M140 228h120M140 244h120" stroke="#f5c542" stroke-width="3"/>' +
         '<path d="M150 200q10-12 20 0q10-12 20 0M210 200q10-12 20 0q10-12 20 0" stroke="#f5c542" stroke-width="3" fill="none"/>' +
         '<circle cx="70" cy="220" r="26" fill="#f5c542" stroke="#c9971d" stroke-width="3"/><rect x="62" y="212" width="16" height="16" fill="#ffe1a8" stroke="#c9971d" stroke-width="2"/>' +

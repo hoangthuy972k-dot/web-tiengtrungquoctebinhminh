@@ -15,7 +15,7 @@ html.ufo-open, html.ufo-open body { overflow: hidden; }
   overflow: hidden;
   background: linear-gradient(180deg, #141a33 0%, #2a2347 42%, #533150 70%, #7a3d3a 100%);
   color: var(--ufo-ink);
-  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   display: flex; flex-direction: column;
 }
 .ufo[hidden] { display: none; }

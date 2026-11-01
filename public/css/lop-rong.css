@@ -16,7 +16,7 @@ html.rg-open, html.rg-open body { overflow: hidden; }
   overflow: hidden;
   background: linear-gradient(180deg, #121a3d 0%, #1f2b62 50%, #33407e 100%);
   color: var(--rg-ink);
-  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   display: flex; flex-direction: column;
 }
 .rg[hidden] { display: none; }

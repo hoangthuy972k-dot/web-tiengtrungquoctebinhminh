@@ -63,7 +63,7 @@
   --color-error: #c8372d;
   --color-error-bg: #fdefec;
 
-  --font-latin: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-latin: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   /* Chu Han: kieu chu Tong (SimSun tren Windows, Songti tren may Apple, Noto Serif SC tai tu web
      cho dien thoai). Chu Latin / dau tieng Viet / pinyin dung Times New Roman dung truoc —
      SimSun khong co du dau tieng Viet nen chi nhan phan chu Han. */
@@ -71,7 +71,7 @@
   /* Chu Han co lon: DUNG CHUNG phong voi chu Han trong cau de ca bai hoc
      mot kieu chu. Serif chi con o con dau trang tri (--font-seal). */
   --font-hanzi-display: var(--font-hanzi);
-  --font-seal: 'Noto Serif SC', 'Noto Sans SC', 'PingFang SC', serif;
+  --font-seal: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   /* Bon bac co chu Han trong man hoc — moi noi dung chung, khong tu dat so rieng:
      tieu diem (mot tu dang hoi) · cap tu · cap cau · phu (kem loi nhan xet). */
   --zh-hero: 2.4rem;
@@ -79,7 +79,7 @@
   --zh-text: 1.3rem;
   --zh-small: 1.1rem;
   /* Font serif cho tieu de — cung font YouHSK dung, tao net bao chi cho trang. */
-  --font-display: 'Newsreader', 'Be Vietnam Pro', Georgia, serif;
+  --font-display: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -3680,7 +3680,7 @@ html:has(.modal-overlay.is-open) { overflow: hidden; }
   border-radius: var(--radius-md);
   background: var(--color-white);
   color: var(--fg-red-600);
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   font-size: 0.83rem;
   font-weight: 600;
   cursor: pointer;
@@ -3740,7 +3740,7 @@ html:has(.modal-overlay.is-open) { overflow: hidden; }
   border-radius: var(--radius-pill);
   background: var(--color-gold-50);
   color: var(--fg-red-700);
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
@@ -3779,7 +3779,7 @@ html:has(.modal-overlay.is-open) { overflow: hidden; }
   color: var(--fg-gray-800);
   margin-top: var(--space-2);
 }
-.hz-wl { font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.72rem; color: var(--fg-text-muted); font-weight: 600; margin-right: 5px; }
+.hz-wl { font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; font-size: 0.72rem; color: var(--fg-text-muted); font-weight: 600; margin-right: 5px; }
 
 .vp-quiz-progress {
   display: flex;

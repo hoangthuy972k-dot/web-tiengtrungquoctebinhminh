@@ -50,7 +50,7 @@
   <g stroke-linejoin="round">
     <g transform="rotate(-5 68 117)">
       <rect x="48" y="96" width="40" height="42" rx="6" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3"/>
-      <text x="68" y="127" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-weight="bold" font-size="27" fill="#d84315">学</text>
+      <text x="68" y="127" text-anchor="middle" font-family="Times New Roman, Tinos, Times, SimSun, Songti SC, STSong, Noto Serif SC, serif" font-weight="bold" font-size="27" fill="#d84315">学</text>
     </g>
     <rect x="36" y="134" width="64" height="44" rx="8" fill="#e64a19"/>
     <rect x="36" y="134" width="64" height="37" rx="8" fill="#ff8a65"/>
@@ -59,7 +59,7 @@
 
     <g transform="rotate(4 142 117)">
       <rect x="122" y="96" width="40" height="42" rx="6" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3"/>
-      <text x="142" y="127" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-weight="bold" font-size="27" fill="#1565c0">中</text>
+      <text x="142" y="127" text-anchor="middle" font-family="Times New Roman, Tinos, Times, SimSun, Songti SC, STSong, Noto Serif SC, serif" font-weight="bold" font-size="27" fill="#1565c0">中</text>
     </g>
     <rect x="110" y="134" width="64" height="44" rx="8" fill="#f9a825"/>
     <rect x="110" y="134" width="64" height="37" rx="8" fill="#ffca28"/>
@@ -68,7 +68,7 @@
 
     <g transform="rotate(-3 216 117)">
       <rect x="196" y="96" width="40" height="42" rx="6" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3"/>
-      <text x="216" y="127" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-weight="bold" font-size="27" fill="#6a1b9a">文</text>
+      <text x="216" y="127" text-anchor="middle" font-family="Times New Roman, Tinos, Times, SimSun, Songti SC, STSong, Noto Serif SC, serif" font-weight="bold" font-size="27" fill="#6a1b9a">文</text>
     </g>
     <rect x="184" y="134" width="64" height="44" rx="8" fill="#8e24aa"/>
     <rect x="184" y="134" width="64" height="37" rx="8" fill="#ba68c8"/>

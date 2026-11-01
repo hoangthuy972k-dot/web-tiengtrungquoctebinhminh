@@ -13,7 +13,7 @@
   --bg:#fafaf7;--sky:#c8372d;--sky-l:#fdefec;--sky-d:#a82d24;
   --warm:#c2410c;--green:#1f8a4c;--green-l:#e9f6ee;
   --gold:#b7791f;--teal:#0b7a71;--py:#a8691a;
-  --font-hanzi-display:'Times New Roman',Tinos,Times,'SimSun','Songti SC','STSong','Noto Serif SC',serif;
+  --font-hanzi-display: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
 }
 .h4-list{display:flex;flex-direction:column;gap:10px;}
 .h4-tools{display:flex;gap:8px;align-items:center;margin-bottom:4px;flex-wrap:wrap;}

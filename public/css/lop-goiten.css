@@ -19,7 +19,7 @@ html.gt-open, html.gt-open body { overflow: hidden; }
     radial-gradient(ellipse 55% 45% at 85% 95%, rgba(255, 90, 150, .22), transparent 70%),
     linear-gradient(180deg, #17153a 0%, #221b4d 55%, #2c1d4f 100%);
   color: var(--gt-ink);
-  font-family: 'Be Vietnam Pro', 'Noto Sans SC', system-ui, sans-serif;
+  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   /* co chu goc lon dan theo man chieu: 16px o 1280, ~21px o 1920 */
   font-size: clamp(16px, 1.1vw, 22px);
 }

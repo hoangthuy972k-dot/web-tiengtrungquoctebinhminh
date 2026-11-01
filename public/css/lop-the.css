@@ -26,7 +26,7 @@ html.lt-open, html.lt-open body { overflow: hidden; }
     radial-gradient(circle at 12px 12px, rgba(124, 77, 255, .08) 2px, transparent 2.6px) 0 0 / 26px 26px,
     linear-gradient(180deg, #f1f4ff 0%, #fff4e4 100%);
   color: var(--lt-chu);
-  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
 }
 .lt[hidden] { display: none; }
 
@@ -126,13 +126,13 @@ html.lt-open, html.lt-open body { overflow: hidden; }
 .lt-cau-pt { display: inline-block; padding: 4px 14px; border-radius: 999px; background: #fff; border: 2px solid var(--lt-vien); color: var(--lt-chu); font-weight: 700; font-size: .95rem; margin-bottom: 8px; }
 .lt-cau-ctx { color: var(--lt-mo); font-size: clamp(1rem, 1.8vw, 1.3rem); font-weight: 600; margin-bottom: 8px; }
 .lt-cau-zh {
-  font-family: 'Noto Sans SC', 'Be Vietnam Pro', sans-serif;
+  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
   font-size: clamp(1.8rem, 4.6vw, 3.4rem); font-weight: 800; line-height: 1.35;
   margin: 6px auto clamp(14px, 2.4vw, 26px); text-wrap: balance;
   max-width: max-content; padding: .2em .8em; border-radius: 24px;
   background: var(--lt-the); border: 3px solid var(--lt-vien); box-shadow: 0 6px 0 var(--lt-vien);
 }
-.lt-cau-tudo { font-family: 'Be Vietnam Pro', sans-serif; font-size: clamp(1.4rem, 3vw, 2.2rem); color: var(--lt-mo); }
+.lt-cau-tudo { font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; font-size: clamp(1.4rem, 3vw, 2.2rem); color: var(--lt-mo); }
 .lt-trong { color: var(--lt-do); }
 .lt-opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; text-align: left; }
 .lt-opt {
@@ -158,7 +158,7 @@ html.lt-open, html.lt-open body { overflow: hidden; }
   box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .15);
   font-size: 1.6rem; font-weight: 900; text-shadow: 0 2px 0 rgba(43, 29, 58, .35);
 }
-.lt-opt-t { position: relative; z-index: 1; flex: 1; font-family: 'Noto Sans SC', 'Be Vietnam Pro', sans-serif; font-size: clamp(1.2rem, 2.6vw, 1.9rem); font-weight: 700; }
+.lt-opt-t { position: relative; z-index: 1; flex: 1; font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; font-size: clamp(1.2rem, 2.6vw, 1.9rem); font-weight: 700; }
 .lt-opts.is-tudo .lt-opt { justify-content: center; }
 .lt-opts.is-tudo .lt-opt-k { width: 68px; height: 68px; font-size: 2.1rem; border-radius: 20px; }
 .lt-opt-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; pointer-events: none; }
@@ -248,7 +248,7 @@ html.lt-open, html.lt-open body { overflow: hidden; }
   position: sticky; top: 0; z-index: 1;
   display: flex; align-items: center; flex-wrap: wrap; gap: 12px;
   padding: 10px 16px; background: #fffdf8; border-bottom: 1px solid #eadbc8;
-  font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #3a2a24;
+  font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif; color: #3a2a24;
 }
 .lt-in-chon { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; }
 .lt-in-chon button { min-height: 38px; padding: 4px 12px; border-radius: 10px; border: 1px solid #eadbc8; background: #fff; font: inherit; cursor: pointer; }
@@ -265,7 +265,7 @@ html.lt-open, html.lt-open body { overflow: hidden; }
 .lt-the {
   position: relative; display: grid; place-items: center;
   border: 0.3mm dashed #c9c9c9;
-  color: #000; font-family: 'Be Vietnam Pro', Arial, sans-serif;
+  color: #000; font-family: 'Times New Roman', Tinos, Times, 'SimSun', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
 }
 .lt-the-ma { width: var(--ma); aspect-ratio: 1; }
 .lt-the-ma svg { width: 100%; height: 100%; display: block; }

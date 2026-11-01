@@ -1213,9 +1213,57 @@
     var tong = r.ds.reduce(function (s, b) { return s + (b.dep || 0); }, 0);
     $('#ntTtTen').textContent = 'Thị trấn ' + r.lop;
     $('#ntTtPhu').textContent = r.ds.length + ' nông trại · tổng điểm đẹp ' + tong;
-    $('#ntTtLuoi').innerHTML = r.ds.map(loDat).join('');
-    $all('img', $('#ntTtLuoi')).forEach(ganLoiAnh);
+    var luoi = $('#ntTtLuoi');
+    veQuangTruong();
+    // so lo moi hang theo be rong man hinh -> chen 1 con pho truoc moi hang
+    var cot = soCotTt = soCot(luoi), html = '';
+    r.ds.forEach(function (b, i) {
+      if (i % cot === 0) html += hangPho(i / cot);
+      html += oPho(b, i);
+    });
+    luoi.innerHTML = html + hangPho(Math.ceil(r.ds.length / cot));
+    $all('img', luoi).forEach(ganLoiAnh);
   }
+  // Duong pho: moi hang lo dat la 1 con pho mang ten tieng Trung (bam vao bien de nghe doc)
+  var PHO = [
+    { zh: '学习路', py: 'Xuéxí Lù', vn: 'Đường Học Tập' },
+    { zh: '友谊街', py: 'Yǒuyì Jiē', vn: 'Phố Hữu Nghị' },
+    { zh: '幸福路', py: 'Xìngfú Lù', vn: 'Đường Hạnh Phúc' },
+    { zh: '春天街', py: 'Chūntiān Jiē', vn: 'Phố Mùa Xuân' },
+    { zh: '汉字路', py: 'Hànzì Lù', vn: 'Đường Chữ Hán' },
+    { zh: '熊猫街', py: 'Xióngmāo Jiē', vn: 'Phố Gấu Trúc' },
+    { zh: '花园路', py: 'Huāyuán Lù', vn: 'Đường Vườn Hoa' },
+    { zh: '月亮街', py: 'Yuèliang Jiē', vn: 'Phố Mặt Trăng' },
+  ];
+  var VEN_DUONG = ['tung', 'chau-hoa', 'hoa-do', 'truc', 'cay-dao', 'ghe', 'hoa-vang', 'cay-cam', 'hoa-tim', 'bu-nhin'];
+  var DI_DAO = ['ga', 'vit', 'cuu', 'bo'];
+  var QUANG_TRUONG = ['tung', 'den-long', 'hoa-do', 'chau-hoa', 'gieng', 'dinh', 'xich-du', 'chau-hoa', 'hoa-vang', 'den-long', 'truc'];
+  var soCotTt = 0;
+  function hangPho(i) {
+    var p = PHO[i % PHO.length];
+    // vai con pho co con vat di dao qua (moi pho mot con, lech nhip cho tu nhien)
+    var dao = i % 2 === 0 ? '<span class="nt-pho-dao' + (i % 4 === 2 ? ' nguoc' : '') + '" style="animation-delay:-' + (i * 7 % 23) + 's">' + img(DI_DAO[(i / 2) % DI_DAO.length]) + '</span>' : '';
+    return '<div class="nt-pho"><i class="nt-pho-vach" aria-hidden="true"></i>' +
+      '<button type="button" class="nt-pho-bien" data-doc="' + esc(p.zh) + '" aria-label="' + esc(p.vn) + ' — nghe đọc"><b lang="zh">' + esc(p.zh) + '</b><small>' + esc(p.py) + ' · ' + esc(p.vn) + '</small></button>' +
+      dao + '</div>';
+  }
+  function oPho(b, i) {
+    // ven duong: den long goc tren, cay / chau hoa goc duoi (moi lo mot kieu)
+    return '<div class="nt-o-pho">' + loDat(b, i) +
+      '<img class="nt-vd nt-vd-den" src="' + anh('den-long') + '" alt="" draggable="false">' +
+      '<img class="nt-vd nt-vd-cay" src="' + anh(VEN_DUONG[(i * 3 + 1) % VEN_DUONG.length]) + '" alt="" draggable="false"></div>';
+  }
+  function veQuangTruong() {
+    var q = $('#ntTtQuang');
+    if (q.childElementCount) return;
+    q.innerHTML = QUANG_TRUONG.map(function (k) {
+      return '<img class="' + (S.cat.TT[k] && S.cat.TT[k].w ? 'lon' : '') + '" src="' + anh(k) + '" alt="" draggable="false">';
+    }).join('');
+  }
+  function soCot(luoi) {
+    return (getComputedStyle(luoi).gridTemplateColumns || '').split(' ').filter(Boolean).length || 1;
+  }
+
   var HUY_TT = ['🥇', '🥈', '🥉'];
   function loDat(b, hang) {
     var huy = hang < 3 && b.dep > 0 ? HUY_TT[hang] + ' ' : '';
@@ -1541,6 +1589,9 @@
       else if (S.che !== 'xem') thoatDat();
     });
     window.addEventListener('resize', datViTriNoi);
+    window.addEventListener('resize', function () {
+      if (thiTran && thiTran.lop && !$('#ntThiTran').hidden && soCot($('#ntTtLuoi')) !== soCotTt) veThiTran();
+    });
     // dong bang nho thi bo kieu "nho"
     new MutationObserver(function () { if ($('#ntLop').hidden) $('#ntLop').classList.remove('nho'); })
       .observe($('#ntLop'), { attributes: true, attributeFilter: ['hidden'] });

@@ -561,9 +561,10 @@ body.o-thi-tran .nt-zoom, body.o-thi-tran .nt-thu-het { display: none !important
 .nt-tt-nut { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
 /* duong pho: nen cua luoi la mat duong, khe giua cac lo la duong */
 .nt-tt-luoi {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 30px;
-  max-width: 1240px; margin: 0 auto; padding: 30px;
-  background-color: #d9c49f;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); column-gap: 40px; row-gap: 12px;
+  max-width: 1240px; margin: 0 auto; padding: 0 40px;
+  background-color: #d9c7a5; background-image: url('/images/farm/duong.svg?v=1'); background-size: 48px 48px;
+  overflow: hidden;
   border: 4px solid var(--vien); border-radius: 22px; box-shadow: 0 8px 0 rgba(43, 29, 58, 0.35);
 }
 .nt-lo {
@@ -587,8 +588,66 @@ body.o-thi-tran .nt-zoom, body.o-thi-tran .nt-thu-het { display: none !important
 @media (max-width: 640px) {
   .nt-tt { padding: 70px 10px 120px; }
   .nt-tt-cong { width: 110px; height: 110px; margin-bottom: -28px; }
-  .nt-tt-luoi { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 16px; border-radius: 16px; }
+  .nt-tt-luoi { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 26px; row-gap: 8px; padding: 0 22px; border-radius: 16px; }
+  .nt-vd { width: 26px; height: 26px; }
+  .nt-vd-den { left: -24px; top: -6px; width: 24px; height: 32px; }
+  .nt-vd-cay { right: -25px; bottom: -4px; }
+  .nt-pho { height: 46px; }
+  .nt-pho-bien b { font-size: 0.95rem; }
+  .nt-pho-bien small { font-size: 0.66rem; }
+  .nt-pho-dao img { width: 30px; height: 30px; }
+  .nt-tt-quang img { width: 34px; height: 34px; }
+  .nt-tt-quang img.lon { width: 62px; height: 62px; }
+  .nt-tt-quang img:nth-child(1), .nt-tt-quang img:nth-child(11), .nt-tt-quang img:nth-child(3), .nt-tt-quang img:nth-child(9) { display: none; }
   .nt-lo { padding: 5px; border-radius: 14px; }
   .nt-lo-bien b { font-size: 0.85rem; }
   .nt-lo-bien small { font-size: 0.72rem; }
+}
+
+/* duong pho: con pho ngang (vach ke, bien ten tieng Trung, con vat di dao) + do ven duong */
+.nt-pho { grid-column: 1 / -1; position: relative; height: 58px; margin: 0 -40px; display: flex; align-items: center; padding-left: 14px; overflow: hidden; background: linear-gradient(180deg, transparent 6px, rgba(96, 74, 58, 0.28) 6px, rgba(96, 74, 58, 0.28) calc(100% - 6px), transparent calc(100% - 6px)); }
+.nt-pho-vach { position: absolute; left: 0; right: 0; top: 50%; height: 5px; margin-top: -2px; background: repeating-linear-gradient(90deg, #fff8ec 0 26px, transparent 26px 52px); opacity: 0.9; }
+.nt-pho-bien {
+  position: relative; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding: 3px 12px;
+  background: #c98a4b; color: #fff8ec; border: 3px solid var(--vien); border-radius: 10px; box-shadow: 0 3px 0 var(--vien);
+  font: inherit; text-align: left; cursor: pointer; line-height: 1.2;
+}
+.nt-pho-bien:hover { transform: translateY(-1px); }
+.nt-pho-bien:focus-visible { outline: 3px solid var(--vang); outline-offset: 2px; }
+.nt-pho-bien b { font-size: 1.1rem; text-shadow: 0 1px 0 var(--vien); }
+.nt-pho-bien small { font-size: 0.72rem; font-weight: 700; }
+.nt-pho-dao { position: absolute; bottom: 4px; left: -60px; z-index: 1; animation: nt-di-dao 34s linear infinite; pointer-events: none; }
+.nt-pho-dao img { width: 42px; height: 42px; display: block; animation: nt-lac-buoc 0.5s ease-in-out infinite alternate; }
+.nt-pho-dao.nguoc { animation-name: nt-di-nguoc; }
+.nt-pho-dao.nguoc img { transform: scaleX(-1); }
+@keyframes nt-di-dao { from { left: -60px; } to { left: 100%; } }
+@keyframes nt-di-nguoc { from { left: 100%; } to { left: -60px; } }
+@keyframes nt-lac-buoc { from { translate: 0 0; } to { translate: 0 -3px; } }
+.nt-o-pho { position: relative; display: flex; }
+.nt-o-pho > .nt-lo { flex: 1; min-width: 0; }
+.nt-vd { position: absolute; width: 40px; height: 40px; pointer-events: none; z-index: 2; }
+.nt-vd-den { left: -38px; top: -10px; width: 36px; height: 48px; }
+.nt-vd-cay { right: -39px; bottom: -6px; }
+.nt-tt-quang {
+  display: flex; justify-content: center; align-items: flex-end; gap: 6px; flex-wrap: nowrap; overflow: hidden;
+  max-width: 1240px; margin: 0 auto 14px; padding: 10px 14px 6px;
+  background-color: #d9c7a5; background-image: url('/images/farm/duong.svg?v=1'); background-size: 48px 48px;
+  border: 4px solid var(--vien); border-radius: 22px; box-shadow: 0 6px 0 rgba(43, 29, 58, 0.35);
+}
+.nt-tt-quang:empty { display: none; }
+.nt-tt-quang img { width: 54px; height: 54px; flex: none; }
+.nt-tt-quang img.lon { width: 104px; height: 104px; }
+@media (max-width: 640px) {
+  .nt-pho { margin: 0 -22px; height: 46px; padding-left: 8px; }
+  .nt-vd { width: 26px; height: 26px; }
+  .nt-vd-den { left: -24px; top: -6px; width: 24px; height: 32px; }
+  .nt-vd-cay { right: -25px; bottom: -4px; }
+  .nt-pho-bien { padding: 2px 8px; }
+  .nt-pho-bien b { font-size: 0.95rem; }
+  .nt-pho-bien small { font-size: 0.66rem; }
+  .nt-pho-dao img { width: 30px; height: 30px; }
+  .nt-tt-quang { padding: 6px 8px 4px; gap: 4px; border-radius: 16px; }
+  .nt-tt-quang img { width: 34px; height: 34px; }
+  .nt-tt-quang img.lon { width: 62px; height: 62px; }
+  .nt-tt-quang img:nth-child(1), .nt-tt-quang img:nth-child(3), .nt-tt-quang img:nth-child(9), .nt-tt-quang img:nth-child(11) { display: none; }
 }

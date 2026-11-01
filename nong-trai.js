@@ -21,6 +21,13 @@ const CAY = {
 };
 const THU_MOI_O = 2; // moi o dat thu duoc 2 nong san
 const XU_MOI_SAO = 1; // doi 1 sao hoc tap = 1 xu nong trai
+// Ruong hoc tap: hoc du so sao trong ngay (lam bai, hoc du gio, tro choi tu hoc...) thi mo ruong lay xu.
+// Ruong go con cong them theo chuoi ngay hoc lien tiep (toi da +10 xu).
+const RUONG = [
+  { sao: 20, xu: 15, xp: 3, ten: 'Rương gỗ' },
+  { sao: 50, xu: 30, xp: 6, ten: 'Rương bạc' },
+  { sao: 100, xu: 60, xp: 12, ten: 'Rương vàng' },
+];
 
 const CON = {
   ga: { zh: '鸡', py: 'jī', vn: 'Gà', lv: 1, sao: 15, sp: 'trung', phut: 30, xp: 2 },
@@ -399,13 +406,24 @@ module.exports = function ganNongTrai(app, d) {
     return ds.map((e) => Object.assign({}, e, { ten: ten[e.ai] || 'Một bạn' }));
   }
 
+  // Sao hoc duoc hom nay / tuan nay (doc tu bang sao hoc tap, khong tinh sao da tieu)
+  function saoHoc(s) {
+    return {
+      homNay: s.day === d.vnDayKey() ? d.starsToday(s) : 0,
+      tuan: s.week === d.vnWeekKey() ? s.weekStars || 0 : 0,
+    };
+  }
+  function ruongDaMo(f) { return f.ruong && f.ruong.d === d.vnDayKey() ? f.ruong.ds : []; }
   async function trangThai(userId, f) {
     const ngay = d.vnDayKey();
     const lv = lvTuXp(f.xp);
     const don = donHomNay(f, userId, ngay).ds.map((x, i) => Object.assign({}, x, { xong: !!f.don.x[i] }));
+    const sv = await d.loadStar(userId);
+    const sh = saoHoc(sv);
     return {
       now: Date.now(),
-      sao: await saoCo(userId, f),
+      sao: Math.max(0, (sv.total || 0) - (f.saoTieu || 0)),
+      hoc: { homNay: sh.homNay, tuan: sh.tuan, ruong: ruongDaMo(f) },
       xu: f.xu, xp: f.xp, lv, xpLv: xpCuaLv(lv), xpSau: xpCuaLv(lv + 1),
       dat: f.dat, kich: DAT[f.dat], o: f.o, kho: f.kho, tui: f.tui,
       quaHomNay: f.ngay !== ngay, chuoi: f.chuoi,
@@ -618,6 +636,23 @@ module.exports = function ganNongTrai(app, d) {
       f.avMua = mua;
     } else if (a === 'xemnk') {
       f.nkXem = now;
+    } else if (a === 'ruong') {
+      const i = Number(b.i);
+      const r = RUONG[i];
+      if (!r) throw loi('Không có rương này.');
+      const da = ruongDaMo(f);
+      if (da.indexOf(i) >= 0) throw loi('Hôm nay em đã mở ' + r.ten.toLowerCase() + ' rồi.');
+      const homNay = saoHoc(await d.loadStar(userId)).homNay;
+      if (homNay < r.sao) throw loi('Cần học được ' + r.sao + ' sao hôm nay — em mới có ' + homNay + ' sao.');
+      let them1 = r.xu;
+      if (i === 0) {
+        const sc = await d.loadScoreOf(userId);
+        them1 += Math.min(10, (sc && sc.streak) || 0);
+      }
+      f.ruong = { d: ngay, ds: da.concat(i) };
+      f.xu += them1;
+      them.xu += them1;
+      them.xp += r.xp;
     } else if (a === 'doisao') {
       // Doi sao lay xu (mot chieu: xu khong doi nguoc ra sao — sao chi kiem duoc bang hoc bai)
       const n = Number(b.n);
@@ -636,7 +671,7 @@ module.exports = function ganNongTrai(app, d) {
     return { ok: true, them, lenCap: st.lv > lvCu ? st.lv : 0, st };
   }
 
-  const CATALOG = { CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO,
+  const CATALOG = { CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO, RUONG,
     TIN_TU, TIN_MAU, TIN_HOI, TIN_BAN_NGAY, QUA_NGAY };
 
   app.get('/api/farm', d.requireAuth, d.asyncRoute(async (req, res) => {
@@ -693,12 +728,14 @@ module.exports = function ganNongTrai(app, d) {
       const [rows] = await d.db().query('SELECT user_id, data FROM farms ORDER BY dep DESC LIMIT 2000');
       rows.forEach((r) => { try { ds.push({ id: r.user_id, f: Object.assign(nongTraiMoi(), JSON.parse(r.data)) }); } catch (e) { /* bo qua */ } });
     }
-    const [ten, st] = await Promise.all([d.loadUserNames(), d.loadClassState()]);
+    const [ten, st, sao] = await Promise.all([d.loadUserNames(), d.loadClassState(), d.loadAllStars()]);
+    const tuanCua = {};
+    sao.forEach((x) => { tuanCua[x.userId] = saoHoc(x).tuan; });
     const tenLop = {};
     st.classes.forEach((c) => { tenLop[c.id] = c.name; });
     congDong = ds.filter((x) => ten[x.id]).map((x) => ({
       id: x.id, ten: ten[x.id], lop: st.members[x.id] ? tenLop[st.members[x.id].classId] || '' : '',
-      lv: lvTuXp(x.f.xp), dep: diemDep(x.f), tim: x.f.tim || 0, av: x.f.av || null, sap: x.f.sap || [],
+      lv: lvTuXp(x.f.xp), dep: diemDep(x.f), tim: x.f.tim || 0, av: x.f.av || null, sap: x.f.sap || [], tuan: tuanCua[x.id] || 0,
     })).sort((a, b) => b.dep - a.dep || b.lv - a.lv || a.ten.localeCompare(b.ten, 'vi'));
     congDongLuc = Date.now();
     return congDong;
@@ -718,7 +755,7 @@ module.exports = function ganNongTrai(app, d) {
       tong: all.length, soLoc: loc.length, tu,
       ds: loc.slice(tu, tu + 30).map((x) => ({
         id: x.id, ten: x.ten, lop: x.lop, la: x.id === me, lv: x.lv, dep: x.dep, tim: x.tim, av: x.av,
-        sap: x.sap.length, daTim: daTham.indexOf(x.id) >= 0, hang: all.indexOf(x) + 1,
+        sap: x.sap.length, daTim: daTham.indexOf(x.id) >= 0, hang: all.indexOf(x) + 1, tuan: x.tuan,
       })),
     });
   }));
@@ -736,6 +773,40 @@ module.exports = function ganNongTrai(app, d) {
     const loai = {};
     all.forEach((x) => { if (x.id !== me) x.sap.forEach((o) => { loai[o.k] = (loai[o.k] || 0) + 1; }); });
     res.json({ ds: ds.slice(0, 200), soMon: ds.length, loai });
+  }));
+
+  // Thi dua tuan: xep hang theo SAO HOC TAP kiem duoc tu thu Hai (khong phai do dep nong trai)
+  // pham 'lop' = ban cung lop, 'cd' = moi ban co nong trai tren web
+  app.get('/api/farm/thidua', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id;
+    const pham = req.query.pham === 'cd' ? 'cd' : 'lop';
+    const cd = await taiCongDong();
+    const theoId = {};
+    cd.forEach((x) => { theoId[x.id] = x; });
+    let ids, tenPham = '';
+    if (pham === 'lop') {
+      const lop = await banCungLop(me);
+      if (!lop) return res.json({ pham, lop: null, ds: [] });
+      ids = lop.ids; tenPham = lop.ten;
+    } else ids = cd.map((x) => x.id);
+    if (ids.indexOf(me) < 0) ids = ids.concat(me);
+    const [sao, ten, sc] = await Promise.all([d.loadAllStars(), d.loadUserNames(), d.loadScoreOf(me)]);
+    const theoSao = {};
+    sao.forEach((x) => { theoSao[x.userId] = x; });
+    const bang = ids.filter((id) => ten[id]).map((id) => {
+      const sh = theoSao[id] ? saoHoc(theoSao[id]) : { homNay: 0, tuan: 0 };
+      const x = theoId[id];
+      return { id, ten: ten[id], tuan: sh.tuan, homNay: sh.homNay, la: id === me, av: x ? x.av : null, lv: x ? x.lv : 0, lop: x ? x.lop : '' };
+    }).sort((a, b) => b.tuan - a.tuan || b.homNay - a.homNay || a.ten.localeCompare(b.ten, 'vi'));
+    bang.forEach((r, i) => { r.hang = i + 1; });
+    const k = bang.findIndex((r) => r.la);
+    const em = bang[k];
+    const tren = k > 0 ? bang[k - 1] : null;
+    res.json({
+      pham, lop: tenPham, tong: bang.length, conGiay: d.secondsToVnWeekEnd(),
+      ds: bang.slice(0, 30),
+      em: em ? Object.assign({}, em, { chuoi: (sc && sc.streak) || 0, tren: tren ? { ten: tren.ten, tuan: tren.tuan, can: tren.tuan - em.tuan + 1 } : null }) : null,
+    });
   }));
 
   app.get('/api/farm/lop', d.requireAuth, d.asyncRoute(async (req, res) => {
@@ -843,10 +914,12 @@ module.exports = function ganNongTrai(app, d) {
   app.get('/api/farm/thitran', d.requireAuth, d.asyncRoute(async (req, res) => {
     const lop = await banCungLop(req.user.id);
     if (!lop) return res.json({ lop: null, ds: [] });
-    const [farms, ten] = await Promise.all([docNhieu(lop.ids), d.loadUserNames()]);
+    const [farms, ten, sao] = await Promise.all([docNhieu(lop.ids), d.loadUserNames(), d.loadAllStars()]);
+    const tuanCua = {};
+    sao.forEach((x) => { tuanCua[x.userId] = saoHoc(x).tuan; });
     const ds = lop.ids.filter((id) => ten[id]).map((id) => {
       const f = farms[id];
-      const x = { id, ten: ten[id], la: id === req.user.id, co: !!f };
+      const x = { id, ten: ten[id], la: id === req.user.id, co: !!f, tuan: tuanCua[id] || 0 };
       if (f) Object.assign(x, {
         lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], sap: (f.sap || []).length, av: f.av || null,
         o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t })),

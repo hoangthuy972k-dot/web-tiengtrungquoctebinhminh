@@ -33,6 +33,12 @@
   </div>
 </header>
 
+<!-- Muc tieu hoc hom nay: sao hoc duoc -> mo ruong; bam de xem thi dua tuan -->
+<button type="button" class="nt-muc" id="ntMuc" aria-label="Mục tiêu học hôm nay">
+  <span class="nt-muc-vong" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" class="nt-muc-nen"/><circle cx="18" cy="18" r="15" class="nt-muc-dat" id="ntMucVong" pathLength="100" stroke-dasharray="0 100"/></svg><img src="/images/farm/ic-sao.svg" alt="" draggable="false"></span>
+  <span class="nt-muc-chu"><b id="ntMucSo">0/20</b><small id="ntMucPhu">sao hôm nay</small></span>
+</button>
+
 <div class="nt-tham" id="ntTham" hidden>
   <div class="nt-tham-chu">
     <b id="ntThamTen"></b>
@@ -84,7 +90,7 @@
   <button type="button" class="nt-cu" data-mo="sapxep" id="ntSapXep"><img src="/images/farm/tb-sapxep.svg" alt="" draggable="false"><span>Sắp xếp</span></button>
   <button type="button" class="nt-cu" data-mo="thitran"><img src="/images/farm/tb-ban.svg" alt="" draggable="false"><span>Thị trấn</span><i class="nt-cham" id="ntBanCham" hidden></i></button>
   <button type="button" class="nt-cu" data-mo="congdong"><img src="/images/farm/tb-congdong.svg" alt="" draggable="false"><span>Cộng đồng</span></button>
-  <button type="button" class="nt-cu nt-cu-hoc" data-mo="hoc"><img src="/images/farm/tb-hoc.svg" alt="" draggable="false"><span>Kiếm sao</span></button>
+  <button type="button" class="nt-cu nt-cu-hoc" data-mo="hoc"><img src="/images/farm/tb-hoc.svg" alt="" draggable="false"><span>Thi đua</span><i class="nt-cham" id="ntHocCham" hidden></i></button>
 </nav>
 
 <div class="nt-zoom" aria-label="Phóng to thu nhỏ">

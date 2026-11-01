@@ -651,3 +651,67 @@ body.o-thi-tran .nt-zoom, body.o-thi-tran .nt-thu-het { display: none !important
   .nt-tt-quang img.lon { width: 62px; height: 62px; }
   .nt-tt-quang img:nth-child(1), .nt-tt-quang img:nth-child(3), .nt-tt-quang img:nth-child(9), .nt-tt-quang img:nth-child(11) { display: none; }
 }
+
+/* ---------- nhan vat ao ---------- */
+.nt-nv-nut {
+  width: 50px; height: 50px; margin-right: auto; padding: 0; overflow: hidden;
+  border-radius: 50%; border: 3px solid var(--vien); background: #bfe8fb; box-shadow: var(--bong); cursor: pointer;
+}
+.nt-nv-nut .nv-svg.mat { width: 100%; height: auto; transform: translateY(6%) scale(1.75); transform-origin: 50% 25%; display: block; }
+.nt-nv-nut.moi { animation: nt-nhay-nv 1.2s ease-in-out infinite; }
+@keyframes nt-nhay-nv { 50% { transform: scale(1.12); box-shadow: 0 0 0 6px rgba(255, 200, 61, 0.7), var(--bong); } }
+.nt-nv {
+  position: absolute; transform: translate(-50%, -100%); pointer-events: none;
+  display: flex; flex-direction: column; align-items: center;
+  transition-property: left, top; transition-timing-function: linear;
+}
+.nt-nv-hinh { width: 100%; }
+.nt-nv-hinh .nv-svg { display: block; width: 100%; height: auto; }
+.nt-nv.trai .nt-nv-hinh { transform: scaleX(-1); }
+.nt-nv.di .nt-nv-hinh .nv-svg { animation: nt-buoc 0.32s ease-in-out infinite alternate; }
+@keyframes nt-buoc { from { transform: translateY(0) rotate(-3deg); } to { transform: translateY(-6%) rotate(3deg); } }
+.nt-nv-ten {
+  margin-bottom: -2px; padding: 1px 8px; white-space: nowrap;
+  background: #fff8ec; border: 2px solid var(--vien); border-radius: 99px;
+  font-size: 0.75rem; font-weight: 800; color: var(--chu); line-height: 1.3;
+}
+.nt-nv-ten.khach { background: #ffe1ea; }
+.nt-lo-dat { position: relative; }
+.nt-lo-nv { position: absolute; left: 4%; bottom: 2%; width: 20%; z-index: 30; pointer-events: none; }
+.nt-lo-nv .nv-svg { display: block; width: 100%; height: auto; }
+/* bang thiet ke */
+.nt-nvs { display: grid; grid-template-columns: 220px 1fr; gap: 16px; align-items: start; }
+.nt-nvs-xem { position: sticky; top: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px; background: linear-gradient(180deg, #bfe8fb, #9fd86c); border: 3px solid var(--vien); border-radius: 18px; }
+.nt-nvs-xem .nv-svg.to { width: 160px; height: auto; }
+.nt-nvs-xem .nt-nv-ten { font-size: 0.95rem; }
+.nt-nvs-kieu { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 8px; }
+.nt-nvs-mon {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px;
+  background: #fff; border: 3px solid #e4d6c6; border-radius: 14px; font: inherit; cursor: pointer; color: var(--chu);
+}
+.nt-nvs-mon.bat { border-color: var(--vien); background: #fff4c9; box-shadow: 0 3px 0 var(--vien); }
+.nt-nvs-mon .nv-svg.nho { width: 64px; height: auto; }
+.nt-nvs-mon b { font-size: 0.82rem; }
+.nt-nvs-mon small { font-size: 0.78rem; }
+.nt-nvs-mon small i { font-style: normal; color: #c0392b; }
+.nt-nvs-gia { position: absolute; top: 4px; right: 4px; display: inline-flex; align-items: center; gap: 2px; padding: 0 6px; background: var(--vang); border: 2px solid var(--vien); border-radius: 10px; font-weight: 900; font-size: 0.78rem; }
+.nt-nvs-gia img { width: 14px; height: 14px; }
+.nt-nvs-nhan { margin: 12px 0 6px; font-weight: 800; }
+.nt-nvs-mau { display: flex; flex-wrap: wrap; gap: 8px; }
+.nt-nvs-mau button { width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--vien); cursor: pointer; }
+.nt-nvs-mau button.bat { box-shadow: 0 0 0 4px #fff, 0 0 0 7px var(--vien); }
+.nt-nvs-luu { position: sticky; bottom: -1px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 14px; padding: 10px 0 2px; background: var(--kem); border-top: 2px dashed #e4d6c6; font-weight: 700; }
+.nt-nvs-luu img { width: 18px; height: 18px; vertical-align: -3px; }
+@media (max-width: 640px) {
+  .nt-nv-nut { width: 42px; height: 42px; }
+  .nt-nvs { grid-template-columns: 1fr; }
+  .nt-nvs-xem { position: static; flex-direction: row; justify-content: center; padding: 8px; }
+  .nt-nvs-xem .nv-svg.to { width: 96px; }
+  .nt-nvs-kieu { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .nt-nvs-mon .nv-svg.nho { width: 52px; }
+  .nt-nv-ten { font-size: 0.68rem; padding: 0 6px; }
+}
+@media (max-width: 420px) {
+  /* man hep: nut nhan vat xuong duoi nut ve, cum dong ho giu 1 dong */
+  .nt-nv-nut { position: absolute; left: 10px; top: 62px; width: 42px; height: 42px; }
+}

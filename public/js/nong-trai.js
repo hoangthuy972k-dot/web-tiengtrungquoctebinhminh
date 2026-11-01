@@ -231,6 +231,7 @@
     if (S.che === 'dat') html += '<div class="nt-bong-dat" id="ntBongDat" hidden>' + img(hinhDat(S.dat.k)) + '</div>';
     dat.innerHTML = html;
     $all('img', dat).forEach(ganLoiAnh);
+    veNhanVat();
     if (!S.tham) veHud();
   }
   function hinhDat(k) {
@@ -281,6 +282,7 @@
     });
     capNhatNoi();
     nutThuHet();
+    nvDiDao();
   }
 
   /* ---------------- HUD ---------------- */
@@ -295,6 +297,7 @@
     var conDon = s.don.some(function (dn) { return !dn.xong && duHang(dn.can); });
     $('#ntDonCham').hidden = !conDon;
     $('#ntBanCham').hidden = !(s.nkMoi > 0);
+    veNutNv();
     veNutThu();
   }
   function duHang(can) {
@@ -710,6 +713,7 @@
     else if (l === 'hoc') veKiemSao(than);
     else if (l === 'sapban') veSapBan(than);
     else if (l === 'chao') veChao(than);
+    else if (l === 'nhanvat') veNhanVatBang(than);
     $all('img', than).forEach(ganLoiAnh);
   }
 
@@ -899,7 +903,7 @@
       dongBang();
       dongThiTran();
       thoatDat();
-      S.tham = { id: id, ten: r.ten, kich: r.kich, o: r.o, lv: r.lv, dep: r.dep, tim: r.tim, sap: r.sap || [], daTim: r.daTim, daChao: r.daChao, conGiup: r.conGiup };
+      S.tham = { id: id, ten: r.ten, kich: r.kich, o: r.o, lv: r.lv, dep: r.dep, tim: r.tim, sap: r.sap || [], av: r.av, daTim: r.daTim, daChao: r.daChao, conGiup: r.conGiup };
       S.lechTham = r.now - Date.now();
       $('#ntThamTen').textContent = 'Nông trại của ' + r.ten;
       $('#ntThamPhu').textContent = 'Cấp ' + r.lv + ' · điểm đẹp ' + r.dep + ' · ❤ ' + r.tim;
@@ -931,6 +935,167 @@
       tieng('xu');
       bayLen(b, '+3', 'ic-xu');
     }, function (err) { bao(err.message, 'loi'); });
+  }
+
+  /* ---------------- nhan vat ao ---------------- */
+  // Moi em 1 nhan vat (toc, ao, quan/vay, mu, kinh) co ten tren dau. Di dao tren nong trai cua em;
+  // sang nha ban thi ca chu nha lan em cung di dao o do. Thiet ke trong bang "Nhân vật của em".
+  var NV = window.NhanVat;
+  var nvDs = [];        // nhan vat dang dung tren ban do: { key, el, x, y, sau, av, ten }
+  var nvBoi = '';       // ban do nao (nha em / nha ban id) -> doi ban do thi dat lai vi tri
+  function idEm() { var a = auth(); return a && a.user ? a.user.id : ''; }
+  function avEm() { return (S.st && S.st.av) || NV.macDinh(idEm()); }
+  function tenEm() { var a = auth(); return (S.st && S.st.ten) || (a && a.user && a.user.name) || ''; }
+  function oTrong(d) {
+    var ban = {};
+    d.o.forEach(function (o) {
+      var r = rong(o);
+      for (var i = 0; i < r; i++) for (var j = 0; j < r; j++) ban[(o.x + i) + ',' + (o.y + j)] = 1;
+    });
+    return ban;
+  }
+  function choTrongGan(d, x, y, xa) {
+    var ban = oTrong(d), ds = [];
+    for (var i = 0; i < d.kich.w; i++) for (var j = 0; j < d.kich.h; j++) {
+      if (ban[i + ',' + j]) continue;
+      var kc = Math.abs(i - x) + Math.abs(j - y);
+      if (kc <= xa) ds.push([i, j]);
+    }
+    return ds.length ? ds[Math.floor(Math.random() * ds.length)] : [x, y];
+  }
+  function htmlNv(av, ten, khach) {
+    return '<span class="nt-nv-ten' + (khach ? ' khach' : '') + '">' + esc(NV.tenNgan(ten)) + '</span><div class="nt-nv-hinh">' + NV.svg(av) + '</div>';
+  }
+  function datViTriNv(n) {
+    var T = S.o;
+    n.el.style.left = (n.x + 0.5) * T + 'px';
+    n.el.style.top = (n.y + 1) * T + 'px';
+    n.el.style.zIndex = (n.y + 1) * 10 + 5;
+  }
+  // Goi sau moi lan ve ban do (innerHTML thay het) -> gan lai nhan vat
+  function veNhanVat() {
+    var d = duLieuBanDo();
+    if (!d || !NV) return;
+    var boi = S.tham ? 'tham:' + S.tham.id : 'nha';
+    var can = S.tham
+      ? [{ key: 'chu', av: S.tham.av || NV.macDinh(S.tham.id), ten: S.tham.ten }, { key: 'em', av: avEm(), ten: tenEm(), khach: true }]
+      : [{ key: 'em', av: avEm(), ten: tenEm() }];
+    if (boi !== nvBoi) {
+      // ban do moi: chu nha dung canh nha, khach vao tu cong (giua mep duoi)
+      nvBoi = boi;
+      var nha = d.o.filter(function (o) { return o.k === 'nha'; })[0] || { x: 1, y: 1 };
+      nvDs = can.map(function (c, i) {
+        var dau = c.khach ? choTrongGan(d, Math.floor(d.kich.w / 2), d.kich.h - 1, 3) : choTrongGan(d, nha.x + 1, nha.y + 3, 2);
+        return { key: c.key, x: dau[0], y: dau[1], sau: Date.now() + 1500 + i * 1200 };
+      });
+    }
+    var dat = $('#ntDat');
+    nvDs.forEach(function (n, i) {
+      var c = can[i];
+      n.av = c.av;
+      n.el = document.createElement('div');
+      n.el.className = 'nt-nv' + (c.khach ? ' khach' : '');
+      n.el.style.width = Math.round(S.o * 1.15) + 'px';
+      n.el.innerHTML = htmlNv(c.av, c.ten, c.khach);
+      datViTriNv(n);
+      dat.appendChild(n.el);
+    });
+  }
+  // Moi giay (tu nhip): den luot thi di toi 1 o co trong gan do
+  function nvDiDao() {
+    var d = duLieuBanDo();
+    if (!d || !nvDs.length || document.hidden) return;
+    var now = Date.now();
+    nvDs.forEach(function (n) {
+      if (!n.el || now < n.sau) return;
+      var t = choTrongGan(d, n.x, n.y, 3);
+      var kc = Math.abs(t[0] - n.x) + Math.abs(t[1] - n.y);
+      var ms = Math.max(600, kc * 520);
+      if (t[0] !== n.x) n.el.classList.toggle('trai', t[0] < n.x);
+      n.el.style.transitionDuration = ms + 'ms';
+      n.el.classList.add('di');
+      n.x = t[0]; n.y = t[1];
+      datViTriNv(n);
+      setTimeout(function () { if (n.el) n.el.classList.remove('di'); }, ms);
+      n.sau = now + ms + 2500 + Math.random() * 4000;
+    });
+  }
+
+  // --- Bang thiet ke nhan vat ---
+  var nvSua = null;
+  var NV_TAB = [['toc', '头发 Tóc'], ['ao', '衣服 Áo'], ['duoi', '裤子 Quần váy'], ['mu', '帽子 Mũ'], ['kinh', '眼镜 Kính'], ['da', 'Màu da']];
+  var NV_MAU_CUA = { toc: 'mt', ao: 'ma', duoi: 'md', mu: 'mm' };
+  function giaNv(k, v) {
+    var key = k + ':' + v, sao = (S.cat.NV_SAO || {})[key];
+    return sao && (S.st.avMua || []).indexOf(key) < 0 ? sao : 0;
+  }
+  function canSaoNv(av) {
+    return ['toc', 'ao', 'duoi', 'mu', 'kinh'].reduce(function (s, k) { return s + giaNv(k, av[k]); }, 0);
+  }
+  function moNhanVat(lanDau) {
+    nvSua = Object.assign({}, avEm());
+    moBang('nhanvat', 'toc');
+    if (lanDau) bao('Chào em! Thiết kế nhân vật của em trước khi vào nông trại nhé.');
+  }
+  function veNhanVatBang(than) {
+    var tab = bangDang.tab || 'toc', av = nvSua;
+    $('#ntBangTit').textContent = 'Nhân vật của em';
+    datTab(NV_TAB, tab);
+    var html = '<div class="nt-nvs"><div class="nt-nvs-xem"><span class="nt-nv-ten">' + esc(NV.tenNgan(tenEm())) + '</span>' + NV.svg(av, 'nv-svg to') +
+      '<button type="button" class="nt-nut" data-nvngau>🎲 Ngẫu nhiên</button></div><div class="nt-nvs-chon">';
+    if (tab !== 'da') {
+      html += '<div class="nt-nvs-kieu">' + NV.KIEU[tab].map(function (m) {
+        var thu = Object.assign({}, av); thu[tab] = m.k;
+        if (tab === 'ao' && m.k === 'aodai') thu.duoi = 'dai';
+        var gia = giaNv(tab, m.k);
+        return '<button type="button" class="nt-nvs-mon' + (av[tab] === m.k ? ' bat' : '') + '" data-nvk="' + m.k + '"' + (m.zh ? ' data-doc="' + esc(m.zh) + '"' : '') + '>' +
+          NV.svg(thu, 'nv-svg nho') + '<b>' + esc(m.vn) + '</b>' + (m.zh ? '<small lang="zh">' + esc(m.zh) + ' <i>' + esc(m.py) + '</i></small>' : '<small>&nbsp;</small>') +
+          (gia ? '<span class="nt-nvs-gia">' + img('ic-sao') + gia + '</span>' : '') + '</button>';
+      }).join('') + '</div>';
+    }
+    var mk = tab === 'da' ? 'da' : NV_MAU_CUA[tab];
+    var coMau = mk && !(tab === 'mu' && (av.mu === '' || av.mu === 'nonla' || av.mu === 'vuong')) && !(tab === 'duoi' && av.ao === 'aodai');
+    if (coMau) {
+      var bang = mk === 'da' ? NV.DA : mk === 'mt' ? NV.MAU_TOC : NV.MAU;
+      var ten = mk === 'da' ? ['Sáng', 'Hơi sáng', 'Ngăm', 'Nâu'] : mk === 'mt' ? NV.TEN_MAU_TOC : NV.TEN_MAU;
+      html += '<p class="nt-nvs-nhan">Màu</p><div class="nt-nvs-mau">' + bang.map(function (c, i) {
+        return '<button type="button" data-nvm="' + i + '" class="' + (av[mk] === i ? 'bat' : '') + '" style="background:' + c + '" aria-label="' + esc(ten[i]) + '" title="' + esc(ten[i]) + '"></button>';
+      }).join('') + '</div>';
+    }
+    if (tab === 'duoi' && av.ao === 'aodai') html += '<p class="nt-meo">Áo dài mặc cùng quần trắng — chọn áo khác để đổi quần, váy.</p>';
+    html += '</div></div>';
+    var can = canSaoNv(av);
+    html += '<div class="nt-nvs-luu"><span>' + (can ? 'Món mới cần ' + img('ic-sao') + '<b>' + can + '</b> sao (em có ' + S.st.sao + ')' : 'Đổi đồ miễn phí — món đặc biệt mua 1 lần là dùng mãi.') + '</span>' +
+      '<button type="button" class="nt-nut nt-nut-xanh" data-nvluu>Lưu nhân vật</button></div>';
+    than.innerHTML = html;
+    $all('[data-nvk]', than).forEach(function (b) {
+      b.addEventListener('click', function () { nvSua[tab] = b.getAttribute('data-nvk'); veBang(); });
+    });
+    $all('[data-nvm]', than).forEach(function (b) {
+      b.addEventListener('click', function () { nvSua[mk] = +b.getAttribute('data-nvm'); veBang(); });
+    });
+    $('[data-nvngau]', than).addEventListener('click', function () {
+      var r = function (n) { return Math.floor(Math.random() * n); };
+      var chon = function (k) { var ds = NV.KIEU[k].filter(function (m) { return !giaNv(k, m.k); }); return ds[r(ds.length)].k; };
+      nvSua = { da: nvSua.da, toc: chon('toc'), mt: r(6), ao: chon('ao'), ma: r(8), duoi: chon('duoi'), md: r(8), mu: r(3) ? '' : chon('mu'), mm: r(8), kinh: r(4) ? '' : chon('kinh') };
+      tieng('mua');
+      veBang();
+    });
+    $('[data-nvluu]', than).addEventListener('click', function () {
+      var c = canSaoNv(nvSua);
+      if (c && S.st.sao < c) return thieuSao(c);
+      lam({ a: 'nhanvat', av: nvSua }, $('[data-nvluu]', than)).then(function () {
+        tieng('len');
+        dongBang();
+        bao('Đã lưu nhân vật! Các bạn sẽ thấy ' + NV.tenNgan(tenEm()) + ' khi em sang chơi.');
+        veNutNv();
+      }, function () {});
+    });
+  }
+  function veNutNv() {
+    var b = $('#ntNvNut');
+    if (b) b.innerHTML = NV.svg(avEm(), 'nv-svg mat');
+    if (b) b.classList.toggle('moi', !!(S.st && !S.st.av));
   }
 
   /* ---------------- choi cung ban ---------------- */
@@ -1268,7 +1433,8 @@
   function loDat(b, hang) {
     var huy = hang < 3 && b.dep > 0 ? HUY_TT[hang] + ' ' : '';
     return '<button type="button" class="nt-lo' + (b.la ? ' la' : '') + '" data-lo="' + esc(b.id) + '" aria-label="Nông trại của ' + esc(b.ten) + '">' +
-      '<div class="nt-lo-dat">' + (b.co ? farmNho(b) : '<div class="nt-lo-trong">Đất trống — chờ ' + esc(b.ten) + ' mở nông trại</div>') + '</div>' +
+      '<div class="nt-lo-dat">' + (b.co ? farmNho(b) : '<div class="nt-lo-trong">Đất trống — chờ ' + esc(b.ten) + ' mở nông trại</div>') +
+      '<span class="nt-lo-nv">' + NV.svg(b.av || NV.macDinh(b.id)) + '</span></div>' +
       '<div class="nt-lo-bien"><b>' + huy + esc(b.ten) + (b.la ? ' (em)' : '') + '</b><small>' +
       (b.co ? 'Cấp ' + b.lv + ' · đẹp ' + b.dep + ' · ❤ ' + b.tim + (b.sap ? ' · 🛒 ' + b.sap : '') : 'Chưa mở nông trại') + '</small></div></button>';
   }
@@ -1473,7 +1639,7 @@
         setTimeout(function () {
           dongBang();
           bao('Ngày thứ ' + r.st.chuoi + ' liên tiếp: +' + r.them.xu + ' xu!');
-          setTimeout(huongDan, 900);
+          setTimeout(function () { if (!huongDan() && !S.st.av) moNhanVat(true); }, 900);
         }, 700);
       }, function () { dongBang(); });
     });
@@ -1541,6 +1707,7 @@
       moBang(m);
     });
     $('#ntSao').addEventListener('click', function () { moBang('hoc'); });
+    $('#ntNvNut').addEventListener('click', function () { dongThiTran(); if (S.tham) veNha(); moNhanVat(); });
     $('#ntLv').addEventListener('click', function () {
       var s = S.st;
       bao('Cấp ' + s.lv + ' · còn ' + (s.xpSau - s.xp) + ' kinh nghiệm nữa lên cấp ' + (s.lv + 1));
@@ -1612,7 +1779,8 @@
       lamMoiDinhKy();
       nhip();
       if (r.quaHomNay) setTimeout(quaDiemDanh, 500);
-      else setTimeout(huongDan, 500);
+      // lan dau: huong dan choi, roi den thiet ke nhan vat (nut nhan vat nhap nhay cho den khi luu)
+      else setTimeout(function () { if (!huongDan() && !r.av) moNhanVat(true); }, 500);
     }, function (err) {
       if (err.status === 401) { $('#ntCong').hidden = false; return; }
       bao(err.message, 'loi');

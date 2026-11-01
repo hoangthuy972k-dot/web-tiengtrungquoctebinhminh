@@ -214,6 +214,34 @@ function ghiNk(f, e) {
   f.nk = [e].concat(Array.isArray(f.nk) ? f.nk : []).slice(0, 30);
 }
 
+// ---- Nhan vat ao cua moi em (dung tren nong trai, hien khi sang nha ban, tren lo dat thi tran) ----
+// av = { da, toc, mt, ao, ma, duoi, md, mu, mm, kinh }: kieu la chu, mau la so thu tu bang mau o client.
+const NV_KIEU = {
+  toc: ['ngan', 'xu', 'bob', 'dai', 'duoi', 'bui'],
+  ao: ['thun', 'khoac', 'somi', 'aodai'],
+  duoi: ['dai', 'short', 'vay'],
+  mu: ['', 'luoi', 'nonla', 'len', 'no', 'vuong'],
+  kinh: ['', 'den', 'tron', 'tim'],
+};
+const NV_SO_MAU = { da: 4, mt: 6, ma: 8, md: 8, mm: 8 };
+// mon dac biet tra bang sao (mua 1 lan, doi qua lai mien phi)
+const NV_SAO = { 'ao:aodai': 25, 'mu:vuong': 20, 'kinh:tim': 10 };
+function kiemNhanVat(v) {
+  if (!v || typeof v !== 'object') return null;
+  const av = {};
+  for (const k of Object.keys(NV_KIEU)) {
+    const x = String(v[k] == null ? '' : v[k]);
+    if (NV_KIEU[k].indexOf(x) < 0) return null;
+    av[k] = x;
+  }
+  for (const k of Object.keys(NV_SO_MAU)) {
+    const n = Number(v[k]);
+    if (!Number.isInteger(n) || n < 0 || n >= NV_SO_MAU[k]) return null;
+    av[k] = n;
+  }
+  return av;
+}
+
 module.exports = function ganNongTrai(app, d) {
   const FILE = path.join(d.DATA_DIR, 'farms.json');
   const khoa = new Map(); // userId -> Promise (xu ly lan luot tung nguoi)
@@ -309,6 +337,7 @@ module.exports = function ganNongTrai(app, d) {
       don, dep: diemDep(f), tim: f.tim || 0,
       oToiDa: oToiDa(lv), soO: f.o.filter((o) => o.k === 'o').length + (f.tui.o || 0),
       sap: f.sap, soOSap: soOSap(lv),
+      av: f.av || null, avMua: f.avMua || [], ten: (await d.loadUserNames())[userId] || '',
       nk: await nhatKy(f), nkMoi: (f.nk || []).filter((e) => e.t > (f.nkXem || 0)).length,
     };
   }
@@ -499,6 +528,19 @@ module.exports = function ganNongTrai(app, d) {
       if (!o) throw loi('Món này đã được bán rồi.');
       f.sap = f.sap.filter((x) => x !== o);
       f.kho[o.k] = (f.kho[o.k] || 0) + o.n;
+    } else if (a === 'nhanvat') {
+      const av = kiemNhanVat(b.av);
+      if (!av) throw loi('Nhân vật chưa hợp lệ.');
+      const mua = Array.isArray(f.avMua) ? f.avMua.slice() : [];
+      let can = 0;
+      ['toc', 'ao', 'duoi', 'mu', 'kinh'].forEach((k) => {
+        const key = k + ':' + av[k];
+        if (NV_SAO[key] && mua.indexOf(key) < 0) { can += NV_SAO[key]; mua.push(key); }
+      });
+      if (can) await tieuSao(can);
+      if (!f.av) them.xp += 3;
+      f.av = av;
+      f.avMua = mua;
     } else if (a === 'xemnk') {
       f.nkXem = now;
     } else {
@@ -511,7 +553,7 @@ module.exports = function ganNongTrai(app, d) {
     return { ok: true, them, lenCap: st.lv > lvCu ? st.lv : 0, st };
   }
 
-  const CATALOG = { CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA };
+  const CATALOG = { CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO };
 
   app.get('/api/farm', d.requireAuth, d.asyncRoute(async (req, res) => {
     const st = await lanLuot(req.user.id, async () => {
@@ -567,7 +609,7 @@ module.exports = function ganNongTrai(app, d) {
       ten: ten[id] || '', lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], now,
       // chi gui hinh dang nong trai + sap hang, khong gui xu / kho
       o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t })),
-      sap: f.sap || [],
+      sap: f.sap || [], av: f.av || null,
       daTim: fm.tham.d === ngay && fm.tham.ids.indexOf(id) >= 0,
       daChao: !!(fm.chao && fm.chao.d === ngay && fm.chao.ids.indexOf(id) >= 0),
       conGiup: GIUP_NGAY - (fm.giup && fm.giup.d === ngay ? fm.giup.n : 0),
@@ -653,7 +695,7 @@ module.exports = function ganNongTrai(app, d) {
       const f = farms[id];
       const x = { id, ten: ten[id], la: id === req.user.id, co: !!f };
       if (f) Object.assign(x, {
-        lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], sap: (f.sap || []).length,
+        lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], sap: (f.sap || []).length, av: f.av || null,
         o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t })),
       });
       return x;

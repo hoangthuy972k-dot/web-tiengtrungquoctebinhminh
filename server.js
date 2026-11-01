@@ -1788,7 +1788,7 @@ app.post('/api/stars/tick', requireAuth, asyncRoute(async (req, res) => {
 const nongTrai = require('./nong-trai')(app, {
   DATA_DIR, USE_DB, db: () => dbPool, readJsonFile, writeJsonFile, requireAuth, asyncRoute,
   loadStar, vnDayKey, loadClassState, loadUserNames,
-  loadAllStars, starsToday, vnWeekKey, secondsToVnWeekEnd, loadScoreOf,
+  loadAllStars, starsToday, vnWeekKey, secondsToVnWeekEnd, loadScoreOf, baiOnCua, tuVungBai,
 });
 // Thi tren lop (/thi-lop giao vien, /thi hoc sinh): de lay tu kho thi thu HSK — xem thi-lop.js
 const thiLop = require('./thi-lop')(app, {
@@ -1832,8 +1832,10 @@ function tenNguonOn(ds, loai) {
   return 'Ôn từ ' + [bai, MUC_LUC_BAI.tenCap[ds[0].lv] || ''].filter(Boolean).join(' · ') + ' (' + loai + ')';
 }
 
-app.get('/api/farm/on', requireAuth, asyncRoute(async (req, res) => {
-  const uid = req.user.id;
+app.get('/api/farm/on', requireAuth, asyncRoute(async (req, res) => { res.json(await baiOnCua(req.user)); }));
+// Bai em dang hoc (dung cho cau hoi nong trai va Thu thach chu Han): { urls, nguon, sai, cap }
+async function baiOnCua(user) {
+  const uid = user.id;
   const [sc, rs, keys] = await Promise.all([loadScoreOf(uid), loadResume(uid), loadStarAnswerKeys(uid)]);
   // hd[url] = { cau: so cau/luot da lam, t: lan cuoi lam (neu biet) }
   const hd = {};
@@ -1876,7 +1878,7 @@ app.get('/api/farm/on', requireAuth, asyncRoute(async (req, res) => {
     }
     // 4 bai em lam gan day nhat trong cap do (chua biet thoi diem thi lay bai sau cung)
     const ds = daLam.filter((x) => x.lv === lv).sort((a, b) => (b.t - a.t) || (b.i - a.i)).slice(0, 4).sort((a, b) => a.i - b.i);
-    return res.json({ urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài em đã làm'), sai, cap: lv });
+    return { urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài em đã làm'), sai, cap: lv };
   }
   // Chua lam bai nao: bai thay co giao cho lop, roi den dau cap em chon luc dang ky
   const st = await loadClassState();
@@ -1887,13 +1889,30 @@ app.get('/api/farm/on', requireAuth, asyncRoute(async (req, res) => {
     giao.forEach((x) => { if (ds.length < 4 && ds.indexOf(x) < 0 && x.lv === giao[0].lv) ds.push(x); });
     if (ds.length) {
       ds.sort((a, b) => a.i - b.i);
-      return res.json({ urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài thầy cô giao'), sai, cap: ds[0].lv });
+      return { urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài thầy cô giao'), sai, cap: ds[0].lv };
     }
   }
-  const lv = MUC_LUC_BAI.theoCap[req.user.level] ? req.user.level : 'hsk1';
+  const lv = MUC_LUC_BAI.theoCap[user.level] ? user.level : 'hsk1';
   const ds = (MUC_LUC_BAI.theoCap[lv] || []).slice(0, 3);
-  res.json({ urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài đầu cấp của em'), sai, cap: lv });
-}));
+  return { urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài đầu cấp của em'), sai, cap: lv };
+}
+// Tu vung 1 bai: doc vocabData trong public/js/<bai>-data.js (chi doc 1 lan, giu trong bo nho)
+const tuVungCache = new Map();
+function tuVungBai(url) {
+  if (tuVungCache.has(url)) return tuVungCache.get(url);
+  let ds = [];
+  const m = /^\/lessons\/([a-z0-9-]+)\.html$/.exec(String(url || ''));
+  const file = m && path.join(PUBLIC_DIR, 'js', m[1] + '-data.js');
+  if (file && fs.existsSync(file)) {
+    try {
+      const sb = { window: {}, document: { addEventListener() {}, querySelector() { return null; } } };
+      vm.runInNewContext(fs.readFileSync(file, 'utf8') + '\n;this.__tu = typeof vocabData !== "undefined" ? vocabData : null;', sb, { timeout: 2000 });
+      ds = (sb.__tu || []).filter((v) => v && v.zh && v.vn).map((v) => ({ zh: String(v.zh), py: String(v.py || ''), vn: String(v.vn), pos: String(v.pos || '') }));
+    } catch (err) { ds = []; }
+  }
+  tuVungCache.set(url, ds);
+  return ds;
+}
 
 // Bang xep hang "nguoi cham chi nhat": tong sao, kem so sao hom nay.
 app.get('/api/leaderboard/stars', asyncRoute(async (req, res) => {

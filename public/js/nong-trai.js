@@ -921,9 +921,10 @@
   function veKiemSao(than) {
     var tab = bangDang.tab || 'muc';
     bangDang.tab = tab;
-    $('#ntBangTit').textContent = { muc: 'Học hôm nay', thidua: 'Thi đua tuần', kiem: 'Kiếm thêm sao', doi: 'Đổi sao lấy xu' }[tab];
-    datTab([['muc', 'Hôm nay'], ['thidua', 'Thi đua'], ['kiem', 'Kiếm sao'], ['doi', 'Đổi xu']], tab);
+    $('#ntBangTit').textContent = { muc: 'Học hôm nay', chuhan: 'Thử thách chữ Hán', thidua: 'Thi đua tuần', kiem: 'Kiếm thêm sao', doi: 'Đổi sao lấy xu' }[tab];
+    datTab([['muc', 'Hôm nay'], ['chuhan', 'Chữ Hán'], ['thidua', 'Thi đua'], ['doi', 'Đổi xu']], tab);
     if (tab === 'muc') { veMucTieu(than); return; }
+    if (tab === 'chuhan') { veChuHan(than); return; }
     if (tab === 'thidua') { veThiDua(than); return; }
     if (tab === 'doi') { veDoiSao(than); return; }
     than.innerHTML =
@@ -961,6 +962,7 @@
       }).join('') + '</div>' +
       '<div id="ntHnChuoi" class="nt-hn-chuoi" hidden></div>' +
       '<h3 class="nt-hn-h">Kiếm sao ngay</h3><div class="nt-hn-viec">' +
+        '<button type="button" class="nt-viec nt-viec-ch" data-tab="chuhan"><span class="nt-ch-ic" aria-hidden="true">字</span><span><b>Thử thách chữ Hán</b><small>10 câu · đúng từ 8 câu mở hộp quà bí ẩn 🎁</small></span></button>' +
         '<a class="nt-viec" id="ntHocTiep" href="/">' + img('tb-hoc') + '<span><b>Học tiếp bài đang học</b><small id="ntHocTiepPhu">Mỗi câu đúng lần đầu +1 sao</small></span></a>' +
         '<button type="button" class="nt-viec" id="ntOnNhanh">' + img('ga') + '<span><b>Ôn từ — cho vật nuôi ăn</b><small>Trả lời đúng để vật nuôi lớn nhanh</small></span></button>' +
         '<a class="nt-viec" href="/game">' + img('tb-cuahang') + '<span><b>Trò chơi tự học</b><small>Mỗi câu đúng +1 sao</small></span></a>' +
@@ -1003,6 +1005,119 @@
       c.hidden = false;
     }, function () {});
   }
+
+  // --- Thu thach chu Han: 10 cau, dung tu 8 cau -> hop qua bi an (may chu cham + trao qua) ---
+  var CH = { de: null, i: 0, khoa: false, conQua: 3, quaNgay: 3, dat: 8, so: 10, ketThuc: null };
+  var TEN_KIEU_CH = { nghia: 'Chọn chữ Hán đúng nghĩa', py: 'Chữ này đọc là gì?', chu: 'Chữ này nghĩa là gì?', thieu: 'Điền chữ còn thiếu' };
+  function veNutChuHan() {
+    var p = $('#ntChuHanPhu');
+    if (!p) return;
+    p.textContent = CH.conQua > 0 ? 'còn ' + CH.conQua + ' hộp quà hôm nay 🎁' : 'luyện thêm · mai có quà mới';
+    $('#ntChuHan').classList.toggle('het', CH.conQua <= 0);
+  }
+  function taiChuHan() {
+    return goi('/api/farm/chuhan').then(function (r) {
+      CH.conQua = r.conQua; CH.quaNgay = r.quaNgay; CH.dat = r.dat; CH.so = r.so;
+      if (r.dang && !CH.ketThuc) { CH.de = r.dang; CH.i = r.dang.da; }
+      veNutChuHan();
+      return r;
+    });
+  }
+  function veChuHan(than) {
+    if (CH.ketThuc) { veKetQuaCh(than); return; }
+    if (CH.de && CH.i < CH.de.ds.length) { veCauCh(than); return; }
+    than.innerHTML = '<div class="nt-ch-moi">' +
+      '<div class="nt-ch-logo" aria-hidden="true">字</div>' +
+      '<h3>Thử thách chữ Hán</h3>' +
+      '<p>' + CH.so + ' câu về chữ Hán trong các bài em đang học: chọn chữ đúng nghĩa, đọc pinyin, điền chữ còn thiếu…</p>' +
+      '<div class="nt-ch-luat"><span>🎯 Đúng từ <b>' + CH.dat + '/' + CH.so + '</b> câu</span><span>🎁 Mở <b>hộp quà bí ẩn</b>: nông sản, đồ trang trí, xu — may mắn có cả vật nuôi!</span>' +
+      '<span>🌟 Đúng cả ' + CH.so + ' câu: quà xịn hơn</span></div>' +
+      '<p class="nt-ch-con">' + (CH.conQua > 0 ? 'Hôm nay còn <b>' + CH.conQua + '/' + CH.quaNgay + '</b> hộp quà' : 'Hôm nay em đã nhận đủ ' + CH.quaNgay + ' hộp quà — vẫn luyện tiếp được, mai có quà mới!') + '</p>' +
+      '<button type="button" class="nt-nut nt-nut-xanh nt-nut-to" id="ntChBatDau">Bắt đầu ▶</button></div>';
+    $('#ntChBatDau', than).addEventListener('click', function () {
+      var b = this; b.disabled = true;
+      goi('/api/farm/chuhan/moi', {}).then(function (r) {
+        CH.de = r.dang; CH.i = 0; CH.conQua = r.conQua; CH.ketThuc = null;
+        veBang();
+      }, function (e) { b.disabled = false; bao(e.message, 'loi'); });
+    });
+  }
+  function veCauCh(than) {
+    var de = CH.de, q = de.ds[CH.i], h = q.hoi;
+    var deBai = q.k === 'nghia' ? '<div class="nt-ch-vn">' + esc(h.vn) + '</div>'
+      : q.k === 'thieu' ? '<div class="nt-ch-zh" lang="zh">' + esc(h.thieu).replace('＿', '<span class="nt-ch-o">？</span>') + '</div><div class="nt-ch-goi">' + esc(h.vn) + '</div>'
+      : '<div class="nt-ch-zh" lang="zh">' + esc(h.zh) + '</div>';
+    var laZh = q.k === 'nghia' || q.k === 'thieu';
+    than.innerHTML = '<div class="nt-ch">' +
+      '<div class="nt-ch-dau"><span>Câu ' + (CH.i + 1) + '/' + de.ds.length + '</span><span class="nt-ch-cham">' + de.ds.map(function (x, j) { return '<i class="' + (j < CH.i ? 'qua' : j === CH.i ? 'dang' : '') + '"></i>'; }).join('') + '</span><span>✔ ' + de.dung + '</span></div>' +
+      '<p class="nt-ch-kieu">' + TEN_KIEU_CH[q.k] + '</p>' + deBai +
+      '<div class="nt-ch-lua' + (laZh ? ' zh' : '') + '">' + q.lua.map(function (l, j) {
+        return '<button type="button" data-ch="' + j + '"' + (laZh ? ' lang="zh"' : '') + '>' + esc(l) + '</button>';
+      }).join('') + '</div><p class="nt-ch-giai" id="ntChGiai" aria-live="polite"></p>' +
+      (de.nguon ? '<p class="nt-ch-nguon">Từ: ' + esc(de.nguon) + '</p>' : '') + '</div>';
+    CH.khoa = false;
+    $all('[data-ch]', than).forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (CH.khoa) return;
+        CH.khoa = true;
+        var chon = +b.getAttribute('data-ch');
+        goi('/api/farm/chuhan/tl', { id: de.id, i: CH.i, chon: chon }).then(function (r) {
+          $all('[data-ch]', than).forEach(function (x, j) { x.disabled = true; x.classList.add(j === r.dap ? 'dung' : j === chon ? 'sai' : 'mo'); });
+          if (r.dung) { de.dung++; tieng('dung'); } else tieng('sai');
+          $('#ntChGiai', than).innerHTML = '<b lang="zh">' + esc(r.zh) + '</b> ' + esc(r.py) + ' — ' + esc(r.vn);
+          doc(r.zh);
+          CH.i++;
+          if (r.ketThuc) {
+            CH.ketThuc = r.ketThuc; CH.de = null;
+            CH.conQua = r.ketThuc.conQua;
+            if (r.st) nhanTrangThai(r.st);
+            veNutChuHan();
+          }
+          setTimeout(function () { if (bangDang && bangDang.loai === 'hoc' && bangDang.tab === 'chuhan') veBang(); }, r.dung ? 1100 : 1900);
+        }, function (e) {
+          CH.khoa = false;
+          bao(e.message, 'loi');
+          if (/kết thúc/.test(e.message)) { CH.de = null; veBang(); }
+        });
+      });
+    });
+  }
+  function tenQua(q) {
+    if (q.loai === 'xu') return { zh: '铜钱', py: 'tóngqián', vn: q.n + ' xu', hinh: 'ic-xu' };
+    var m = tenMon(q.k);
+    return { zh: m.zh, py: m.py, vn: (q.n > 1 ? q.n + ' ' : '') + m.vn, hinh: q.loai === 'sp' ? 'sp-' + q.k : q.k };
+  }
+  function veKetQuaCh(than) {
+    var k = CH.ketThuc, q = k.qua;
+    var html = '<div class="nt-ch-kq">' +
+      '<div class="nt-ch-diem"><b>' + k.soDung + '/' + k.so + '</b><span>' + (k.soDung === k.so ? 'Xuất sắc! 太棒了！' : k.dat ? 'Giỏi lắm! 很好！' : 'Cố lên! 加油！') + '</span></div>';
+    if (q) {
+      var m = tenQua(q);
+      html += '<button type="button" class="nt-hop-qua" id="ntHopQua" aria-label="Mở hộp quà">' +
+        '<span class="nt-hop-than" aria-hidden="true">🎁</span><span class="nt-hop-chu">Chạm để mở hộp quà!</span></button>' +
+        '<div class="nt-qua-mo" id="ntQuaMo" hidden><span class="nt-qua-hiem h-' + esc(q.hiem) + '">' + esc(q.hiem) + '</span>' + img(m.hinh) +
+        '<b lang="zh">' + esc(m.zh) + '</b><small>' + esc(m.py) + ' · ' + esc(m.vn) + '</small>' +
+        '<p>' + (q.loai === 'tt' || q.loai === 'con' ? 'Đã cất vào <b>Kho → Túi đồ</b>, đặt lên nông trại khi nào em muốn.' : q.loai === 'sp' ? 'Đã cất vào <b>Kho</b> — giao đơn hàng hoặc bán lấy xu.' : 'Đã cộng vào xu của em.') + '</p></div>';
+    } else if (k.dat) {
+      html += '<p class="nt-ch-con">Hôm nay em đã nhận đủ hộp quà rồi — mai thử thách tiếp để mở quà nhé!</p>';
+    } else {
+      html += '<p class="nt-ch-con">Cần đúng từ <b>' + CH.dat + '</b> câu để mở hộp quà. Ôn lại chữ rồi thử lượt mới nhé!</p>';
+    }
+    html += '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh" id="ntChLai">Làm lượt mới</button>' +
+      (q && (q.loai === 'tt' || q.loai === 'con') ? '<button type="button" class="nt-nut" id="ntChTui">Mở túi đồ</button>' : '') + '</div></div>';
+    than.innerHTML = html;
+    $all('img', than).forEach(ganLoiAnh);
+    var hop = $('#ntHopQua', than);
+    if (hop) hop.addEventListener('click', function () {
+      hop.classList.add('lac');
+      tieng('len');
+      setTimeout(function () { hop.hidden = true; $('#ntQuaMo', than).hidden = false; var m = tenQua(q); doc(m.zh); }, T_CHO_HOP);
+    });
+    $('#ntChLai', than).addEventListener('click', function () { CH.ketThuc = null; CH.de = null; veBang(); });
+    var tui = $('#ntChTui', than);
+    if (tui) tui.addEventListener('click', function () { CH.ketThuc = null; moBang('kho', 'tui'); });
+  }
+  var T_CHO_HOP = (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) ? 0 : 900;
 
   // --- Thi dua tuan: xep hang sao hoc tap (lop / cong dong) ---
   var tdPham = 'lop';
@@ -2223,6 +2338,7 @@
     $('#ntSao').addEventListener('click', function () { moBang('hoc'); });
     $('#ntXu').addEventListener('click', function () { moBang('hoc', 'doi'); });
     $('#ntMuc').addEventListener('click', function () { dongThiTran(); if (S.tham) veNha(); moBang('hoc', 'muc'); });
+    $('#ntChuHan').addEventListener('click', function () { dongThiTran(); if (S.tham) veNha(); moBang('hoc', 'chuhan'); });
     $('#ntNvNut').addEventListener('click', function () { dongThiTran(); if (S.tham) veNha(); moNhanVat(); });
     $('#ntLv').addEventListener('click', function () {
       var s = S.st;
@@ -2295,6 +2411,7 @@
       lamMoiDinhKy();
       nhip();
       setTimeout(baoHang, 2500);
+      taiChuHan().catch(function () { /* lan sau */ });
       if (r.quaHomNay) setTimeout(quaDiemDanh, 500);
       // lan dau: huong dan choi, roi den thiet ke nhan vat (nut nhan vat nhap nhay cho den khi luu)
       else setTimeout(function () { if (!huongDan() && !r.av) moNhanVat(true); }, 500);

@@ -4,7 +4,7 @@
   --lv-tint: #faf6ef; --lv-accent: #c8372d; --lv-accent-d: #a82d24; --lv-accent-l: #fdefec; --lv-on-accent: #fff;
   --lv-ok: #1f7a45; --lv-ok-l: #e8f5ec; --lv-bad: #b3261e; --lv-bad-l: #fdecea;
   --lv-warn: #8a5a00; --lv-warn-l: #fff4d6; --lv-mark: #ffe58a; --lv-py: #8a5a0f;
-  --lv-hanzi: 'Noto Serif', 'Noto Serif SC', serif;
+  --lv-hanzi: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   html.ho-tro-toi:not([data-theme="light"]) {
@@ -142,7 +142,7 @@ html.ho-tro-toi[data-theme="dark"] {
 .lv-bai { font-size: 1.12rem; line-height: 2; word-break: break-all; }
 .lv-mk { background: var(--lv-mark); color: inherit; border-radius: 4px; padding: 1px 2px; }
 .lv-mk.is-nhe { background: transparent; border-bottom: 2px dotted var(--lv-warn); border-radius: 0; }
-.lv-mk sup { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 0.62rem; font-weight: 700; color: var(--lv-warn); margin-left: 1px; }
+.lv-mk sup { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 0.62rem; font-weight: 700; color: var(--lv-warn); margin-left: 1px; }
 .lv-loi { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 12px; }
 .lv-loi li::marker { font-weight: 700; color: var(--lv-soft); }
 .lv-loi-top { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 4px; }
@@ -268,7 +268,7 @@ html.ho-tro-toi[data-theme="dark"] {
   margin: 0 3px; padding: 0 8px; font: inherit; font-family: var(--lv-hanzi); color: var(--lv-ink);
   background: var(--lv-card); border: 0; border-bottom: 2px solid var(--lv-soft); border-radius: 6px 6px 0 0; cursor: pointer; vertical-align: baseline;
 }
-.nd-o sup { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 0.62rem; font-weight: 700; color: var(--lv-soft); margin-right: 2px; }
+.nd-o sup { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 0.62rem; font-weight: 700; color: var(--lv-soft); margin-right: 2px; }
 .nd-o.is-active { background: var(--lv-accent-l); border-bottom-color: var(--lv-accent); box-shadow: 0 0 0 2px var(--lv-accent) inset; }
 .nd-o.is-full { font-weight: 700; color: var(--lv-accent); }
 .nd-o.is-ok { background: var(--lv-ok-l); border-bottom-color: var(--lv-ok); color: var(--lv-ok); }
@@ -319,8 +319,8 @@ html.ho-tro-toi[data-theme="dark"] {
 .pb-tich:focus-visible { outline: 3px solid var(--lv-accent); outline-offset: 2px; }
 .pb-lt.is-mau td { background: var(--lv-tint); }
 .pb-lt.is-mau .pb-tich.is-dap { opacity: 0.8; }
-.pb-mau { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 0.72rem; font-weight: 700; color: var(--lv-soft); border: 1px solid var(--lv-line); border-radius: 99px; padding: 1px 8px; }
-.pb-lt .pb-why { margin-top: 6px; font-family: 'Noto Serif', 'Noto Serif SC', serif; }
+.pb-mau { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 0.72rem; font-weight: 700; color: var(--lv-soft); border: 1px solid var(--lv-line); border-radius: 99px; padding: 1px 8px; }
+.pb-lt .pb-why { margin-top: 6px; font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; }
 @media (max-width: 600px) {
   .pb-bang th, .pb-bang td, .pb-lam th, .pb-lam td { padding: 8px; font-size: 0.9rem; }
   .pb-tich-o { width: 48px; }
@@ -341,7 +341,7 @@ html.ho-tro-toi[data-theme="dark"] {
 .sk-ab { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
 .sk-vt {
   display: inline-grid; place-items: center; min-width: 30px; height: 30px; margin: 0 2px; padding: 0 6px;
-  font: inherit; font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 0.85rem; font-weight: 800;
+  font: inherit; font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 0.85rem; font-weight: 800;
   color: var(--lv-accent); background: var(--lv-accent-l); border: 1.5px solid var(--lv-accent); border-radius: 8px; cursor: pointer; vertical-align: middle;
 }
 .sk-vt:hover:not(:disabled) { background: var(--lv-accent); color: var(--lv-on-accent); }
@@ -407,7 +407,7 @@ html.ho-tro-toi[data-theme="dark"] {
 .sk-sx-mui { color: var(--lv-soft); }
 .sk-sx-bank { display: flex; flex-direction: column; gap: 6px; }
 .sk-sx-m { text-align: left; font: inherit; font-size: 1rem; line-height: 1.6; padding: 8px 12px; border-radius: 10px; border: 1.5px solid var(--lv-line); background: var(--lv-card); color: var(--lv-ink); cursor: pointer; }
-.sk-sx-m b { color: var(--lv-accent); margin-right: 4px; font-family: 'Noto Serif', 'Noto Serif SC', serif; }
+.sk-sx-m b { color: var(--lv-accent); margin-right: 4px; font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; }
 .sk-sx-m:hover:not(:disabled) { border-color: var(--lv-accent); }
 .sk-sx-m.is-used { opacity: 0.35; }
 .sk-sx-doan { margin: 6px 0; font-size: 1rem; line-height: 1.8; }

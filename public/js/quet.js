@@ -205,7 +205,7 @@
       if (r.la) return;
       var cx = ox + r.cx * tl, cy = oy + r.cy * tl;
       var nhan = r.id + (st.pha === 'hoi' || st.pha === 'lat' ? ' · ' + CHU[r.ans] : '');
-      g.font = '700 15px "Noto Serif","Noto Serif SC",serif';
+      g.font = '700 15px "Be Vietnam Pro","Noto Serif SC",sans-serif';
       var tw = g.measureText(nhan).width + 12;
       g.fillStyle = mau;
       g.fillRect(cx - tw / 2, cy - 11, tw, 22);

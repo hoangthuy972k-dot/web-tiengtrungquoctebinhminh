@@ -15,7 +15,7 @@ html.dt-open, html.dt-open body { overflow: hidden; }
   overflow: hidden;
   background: linear-gradient(180deg, #5fb4e6 0%, #9fd6f2 38%, #d8f0f7 62%, #cfe8b8 78%, #9ccc78 100%);
   color: var(--dt-ink);
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   display: flex; flex-direction: column;
 }
 .dt[hidden] { display: none; }
@@ -288,7 +288,7 @@ html.dt-open, html.dt-open body { overflow: hidden; }
   display: grid; place-items: center;
   padding: 4px; border-radius: 8px;
   background: #fff8ec; color: #8e1f14; box-shadow: inset 0 0 0 2px rgba(43, 29, 58, .3);
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   font-size: clamp(1.1rem, 2.1vw, 2rem); font-weight: 800; line-height: 1.15;
   text-align: center; overflow-wrap: anywhere;
 }
@@ -297,7 +297,7 @@ html.dt-open, html.dt-open body { overflow: hidden; }
   display: flex; flex-direction: column; justify-content: center; gap: 3px;
   padding: 4px 7px; border-radius: 8px;
   background: rgba(255, 255, 255, .95); color: #2b1a12; box-shadow: inset 0 0 0 2px rgba(43, 29, 58, .2);
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   font-size: clamp(.85rem, 1.3vw, 1.3rem); font-weight: 600; line-height: 1.3;
   overflow-wrap: anywhere;
 }
@@ -306,7 +306,7 @@ html.dt-open, html.dt-open body { overflow: hidden; }
 .dt-o.is-dung { color: #fff; background: #2f7a4a; border-radius: .2em; padding: 0 .2em; }
 .dt-mui { color: #9a8468; font-weight: 400; }
 .dt-lua { font-size: .78em; color: #7a6650; font-weight: 500; border-top: 1px dashed #d9ccb4; padding-top: 2px; }
-.dt-toa-phai.is-co { align-items: center; text-align: center; background: rgba(255, 255, 255, .25); color: #fff; font-family: 'Noto Serif', 'Noto Serif SC', serif; text-shadow: 0 2px 0 rgba(43, 29, 58, .45); }
+.dt-toa-phai.is-co { align-items: center; text-align: center; background: rgba(255, 255, 255, .25); color: #fff; font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; text-shadow: 0 2px 0 rgba(43, 29, 58, .45); }
 .dt-co { display: block; line-height: 0; animation: dt-co 1.6s ease-in-out infinite alternate; transform-origin: 15% 95%; }
 .dt-co img { display: block; height: clamp(30px, 4.4vh, 52px); width: auto; }
 @keyframes dt-co { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
@@ -417,7 +417,7 @@ html.dt-open, html.dt-open body { overflow: hidden; }
 .dt-sai ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
 .dt-sai li { padding: 8px 12px; border-radius: 12px; background: #fff2ee; line-height: 1.5; }
 .dt-sai-so { display: inline-block; padding: 0 8px; border-radius: 6px; background: #d8432f; color: #fff; font-size: .9rem; margin-right: 6px; }
-.dt-sai-cau { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: clamp(1.05rem, 1.8vw, 1.4rem); font-weight: 600; }
+.dt-sai-cau { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: clamp(1.05rem, 1.8vw, 1.4rem); font-weight: 600; }
 .dt-sai-vi { display: block; color: #8a5a4a; font-size: .95rem; }
 .dt-sai-why summary { cursor: pointer; color: #7a5a20; font-weight: 700; margin-top: 4px; }
 .dt-sai-why p { margin: 4px 0 0; padding: 6px 10px; border-radius: 8px; background: #fff1cf; color: #5a4630; }
@@ -439,8 +439,8 @@ html.dt-open, html.dt-open body { overflow: hidden; }
 .dt-giai-ds li:nth-child(7) { animation-delay: .36s; }
 .dt-giai-so { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: #2f6fa8; color: #fff; font-weight: 800; }
 .dt-giai-nd { flex: 1; min-width: 0; }
-.dt-giai-ctx { color: #7a6650; font-family: 'Noto Serif', 'Noto Serif SC', serif; }
-.dt-giai-cau { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: clamp(1.2rem, 2.2vw, 1.8rem); font-weight: 700; line-height: 1.4; }
+.dt-giai-ctx { color: #7a6650; font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; }
+.dt-giai-cau { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: clamp(1.2rem, 2.2vw, 1.8rem); font-weight: 700; line-height: 1.4; }
 .dt-giai-why { margin-top: 4px; padding: 6px 10px; border-radius: 10px; background: #fff1cf; color: #5a4630; line-height: 1.5; }
 .dt-giai-doc { flex: 0 0 auto; min-height: 40px; padding: 4px 10px; }
 

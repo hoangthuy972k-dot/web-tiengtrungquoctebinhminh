@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--sky-d, var(--xt-1f6f8b, #1f6f8b));
@@ -53,7 +53,7 @@
   padding: 14px 16px;
 }
 .h5-col-word {
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--sky-d, var(--xt-1f6f8b, #1f6f8b));
@@ -73,12 +73,12 @@
   margin-top: 6px;
 }
 .h5-ex.same { margin-top: 10px; background: var(--color-white, #fff); }
-.h5-ex-zh { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 1rem; color: var(--ink, var(--xt-2b2b2b, #2b2b2b)); }
+.h5-ex-zh { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 1rem; color: var(--ink, var(--xt-2b2b2b, #2b2b2b)); }
 .h5-ex-vn { font-size: 0.83rem; color: var(--soft, var(--xt-8d8279, #8d8279)); margin-top: 2px; }
 
 .h5-q { margin-bottom: 14px; }
 .h5-q-sentence {
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   font-size: 1.08rem;
   color: var(--ink, var(--xt-2b2b2b, #2b2b2b));
   margin-bottom: 8px;
@@ -89,7 +89,7 @@
   background: var(--color-white, #fff);
   border-radius: 999px;
   padding: 7px 20px;
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   font-size: 1rem;
   cursor: pointer;
   color: var(--ink, var(--xt-2b2b2b, #2b2b2b));
@@ -130,7 +130,7 @@
   border: 1px solid var(--gold-400, var(--xv-e3b768, #e3b768));
   border-radius: 999px;
   padding: 6px 18px;
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   font-size: 1.15rem;
   color: var(--gold-d, var(--xt-8a5a0f, #8a5a0f));
 }
@@ -144,7 +144,7 @@
   border: 1px solid var(--line, var(--xv-e6e0d8, #e6e0d8));
   border-radius: 10px;
   padding: 14px 16px;
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   font-size: 1.15rem;
   line-height: 2;
   color: var(--ink, var(--xt-2b2b2b, #2b2b2b));
@@ -181,7 +181,7 @@
   margin-bottom: 16px;
 }
 .h5-w-model-zh {
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   font-size: 1.2rem;
   line-height: 2;
   color: var(--ink, var(--xt-2b2b2b, #2b2b2b));
@@ -203,7 +203,7 @@
   font-weight: 600; cursor: pointer;
 }
 .h5-play:hover { filter: brightness(1.08); }
-.h5-le-q { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 1.15rem; color: var(--ink, var(--xt-2b2b2b, #2b2b2b)); margin: 4px 0 12px; }
+.h5-le-q { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 1.15rem; color: var(--ink, var(--xt-2b2b2b, #2b2b2b)); margin: 4px 0 12px; }
 .h5-le-qvn { display: block; font-family: inherit; font-size: 0.85rem; color: var(--soft, var(--xt-8d8279, #8d8279)); margin-top: 3px; }
 .h5-small { padding: 8px 18px; font-size: 0.88rem; margin: 12px 0 0; }
 .h5-le-script {
@@ -215,9 +215,9 @@
   flex: none; width: 28px; height: 28px; display: grid; place-items: center;
   border-radius: 999px; background: var(--nen-sky-d, var(--sky-d, #1f6f8b)); color: #fff; font-size: 0.85rem;
 }
-.h5-le-zh { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 1.05rem; line-height: 1.7; color: var(--ink, var(--xt-2b2b2b, #2b2b2b)); }
+.h5-le-zh { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 1.05rem; line-height: 1.7; color: var(--ink, var(--xt-2b2b2b, #2b2b2b)); }
 .h5-le-words { font-size: 0.85rem; color: var(--mid, var(--xt-5b5249, #5b5249)); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line, var(--xv-e6e0d8, #e6e0d8)); }
-.h5-le-words b { color: var(--gold-d, var(--xt-8a5a0f, #8a5a0f)); font-family: 'Noto Serif', 'Noto Serif SC', serif; }
+.h5-le-words b { color: var(--gold-d, var(--xt-8a5a0f, #8a5a0f)); font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; }
 
 /* ---------- Tình huống ---------- */
 .h5-si-scene { font-size: 0.95rem; color: var(--mid, var(--xt-5b5249, #5b5249)); font-style: italic; margin-bottom: 12px; }
@@ -227,7 +227,7 @@
 .h5-si-box {
   width: 100%; box-sizing: border-box; border: 1px solid var(--line, var(--xv-e6e0d8, #e6e0d8));
   border-radius: 10px; padding: 12px 14px;
-  font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 1.1rem; line-height: 1.9;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 1.1rem; line-height: 1.9;
   color: var(--ink, var(--xt-2b2b2b, #2b2b2b)); resize: vertical;
 }
 .h5-si-box:focus { outline: 2px solid var(--sky-d, #1f6f8b); outline-offset: 1px; }
@@ -253,9 +253,9 @@
 .h5-rt-step { display: grid; grid-template-columns: auto 1fr; gap: 14px; background: var(--color-white, #fff); border: 1px solid var(--line, var(--xv-e6e0d8, #e6e0d8)); border-radius: 12px; padding: 14px 18px; }
 .h5-rt-no { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 999px; background: var(--gold-50, var(--xb-fdf6e6, #fdf6e6)); border: 1px solid var(--gold-400, var(--xv-e3b768, #e3b768)); color: var(--gold-d, var(--xt-8a5a0f, #8a5a0f)); font-weight: 700; }
 .h5-rt-name { font-weight: 700; color: var(--ink, var(--xt-2b2b2b, #2b2b2b)); margin-bottom: 4px; }
-.h5-rt-cue { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 1.02rem; color: var(--sky-d, var(--xt-1f6f8b, #1f6f8b)); margin-bottom: 8px; }
+.h5-rt-cue { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 1.02rem; color: var(--sky-d, var(--xt-1f6f8b, #1f6f8b)); margin-bottom: 8px; }
 .h5-rt-words { display: flex; gap: 6px; flex-wrap: wrap; }
-.h5-rt-w { background: var(--paper, var(--xb-faf7f2, #faf7f2)); border-radius: 999px; padding: 3px 12px; font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 0.95rem; color: var(--mid, var(--xt-5b5249, #5b5249)); }
+.h5-rt-w { background: var(--paper, var(--xb-faf7f2, #faf7f2)); border-radius: 999px; padding: 3px 12px; font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 0.95rem; color: var(--mid, var(--xt-5b5249, #5b5249)); }
 
 @media (max-width: 720px) {
   .h5-rt-step { grid-template-columns: 1fr; }
@@ -282,7 +282,7 @@
 .h5-road-no b {
   display: grid; place-items: center; width: 44px; height: 44px;
   border-radius: 14px; background: var(--sky-l, var(--xb-fdefec, #fdefec)); color: var(--sky-d, var(--xt-a82d24, #a82d24));
-  font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 1.4rem; font-weight: 700;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 1.4rem; font-weight: 700;
 }
 .h5-road-no span { display: block; font-size: 0.72rem; color: var(--soft, var(--xt-8d8279, #8d8279)); margin-top: 5px; }
 .h5-road-name { font-weight: 700; color: var(--ink, var(--xt-2b2b2b, #2b2b2b)); font-size: 0.98rem; }

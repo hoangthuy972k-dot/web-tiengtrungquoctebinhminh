@@ -17,12 +17,12 @@ html.lu-open, html.lu-open body { overflow: hidden; }
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 170, 90, .25), transparent 70%),
     linear-gradient(180deg, #8f1d18 0%, #6d1412 45%, #4a0d0c 100%);
   color: var(--lu-ink);
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   display: flex; flex-direction: column;
 }
 .lu[hidden] { display: none; }
 .lu [hidden] { display: none !important; }
-.lu [lang="zh"] { font-family: 'Noto Serif', 'Noto Serif SC', serif; }
+.lu [lang="zh"] { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; }
 .lu kbd {
   display: inline-block; min-width: 1.4em; padding: 0 .35em; margin: 0 1px;
   border-radius: 6px; border: 1px solid rgba(0, 0, 0, .18); border-bottom-width: 3px;

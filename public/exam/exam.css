@@ -18,8 +18,8 @@
   --ex-radius: 22px;
   --ex-radius-sm: 14px;
   --ex-shadow: 0 8px 24px rgba(32, 30, 28, 0.08);
-  --font-vn: 'Noto Serif', 'Noto Serif SC', serif;
-  --font-zh: 'Noto Serif', 'Noto Serif SC', serif;
+  --font-vn: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
+  --font-zh: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
 }
 
 * { box-sizing: border-box; }

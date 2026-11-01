@@ -21,7 +21,7 @@ html.dh-open, html.dh-open body { overflow: hidden; }
   overflow: hidden;
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   transition: background .4s ease;
 }
 .dh[hidden] { display: none; }
@@ -282,7 +282,7 @@ html.dh-open, html.dh-open body { overflow: hidden; }
   border: 3px solid #2b1d3a;
   background: #fff8ec; color: #2b1d3a;
   box-shadow: 0 6px 0 #2b1d3a, 0 16px 34px rgba(20, 20, 50, .28);
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   touch-action: none; user-select: none; -webkit-user-select: none;
   cursor: grab;
 }

@@ -23,10 +23,10 @@ html.kt-open, html.kt-open body { overflow: hidden; }
   display: flex; flex-direction: column;
   background: var(--kt-kem);
   color: var(--kt-chu);
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
 }
 .kt[hidden] { display: none; }
-.kt .zh { font-family: 'Noto Serif', 'Noto Serif SC', serif; }
+.kt .zh { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; }
 .kt-nen {
   position: absolute; inset: 0; pointer-events: none;
   background:

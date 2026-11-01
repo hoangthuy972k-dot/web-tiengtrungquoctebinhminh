@@ -22,7 +22,7 @@ html.rc-open, html.rc-open body { overflow: hidden; }
   display: flex; flex-direction: column;
   overflow: hidden;
   color: var(--rc-chu);
-  font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   background:
     radial-gradient(1200px 520px at 50% -8%, rgba(245, 197, 24, .2), transparent 62%),
     radial-gradient(900px 600px at 105% 110%, rgba(77, 112, 255, .25), transparent 60%),
@@ -180,27 +180,27 @@ button.rc-chip { cursor: pointer; }
   background: linear-gradient(180deg, #ffe680, var(--rc-vang)); border-radius: 999px; padding: 4px 16px;
 }
 .rc-cau-phu { color: var(--rc-mo); font-weight: 600; font-size: .95rem; }
-.rc-cau-ctx { margin-top: 8px; color: rgba(255, 255, 255, .85); font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: 1.1rem; }
+.rc-cau-ctx { margin-top: 8px; color: rgba(255, 255, 255, .85); font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: 1.1rem; }
 .rc-cau-zh {
-  margin: 8px 0 12px; font-family: 'Noto Serif', 'Noto Serif SC', serif; font-weight: 700;
+  margin: 8px 0 12px; font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-weight: 700;
   font-size: clamp(1.6rem, 2.7vw, 3rem); line-height: 1.35; text-wrap: balance;
 }
-.rc-cau-tudo { font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: clamp(1.3rem, 2.1vw, 2.1rem); color: var(--rc-vang-nhat); }
+.rc-cau-tudo { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: clamp(1.3rem, 2.1vw, 2.1rem); color: var(--rc-vang-nhat); }
 .rc-trong-o { color: var(--rc-vang); padding: 0 .1em; }
 .rc-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .rc-opt {
   position: relative; display: flex; align-items: center; gap: 12px; min-width: 0; text-align: left; color: #fff;
   background: rgba(255, 255, 255, .08); border: 2px solid rgba(255, 255, 255, .2); border-radius: 12px; padding: 8px 12px;
-  font-family: 'Noto Serif', 'Noto Serif SC', serif; font-weight: 700; font-size: clamp(1.1rem, 1.7vw, 1.75rem);
+  font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-weight: 700; font-size: clamp(1.1rem, 1.7vw, 1.75rem);
   transition: opacity .4s ease, background .4s ease;
 }
 .rc-opt-chu {
   flex: 0 0 auto; width: 1.7em; height: 1.7em; border-radius: 50%; display: grid; place-items: center;
-  background: var(--rc-vang); color: #2a1c00; font-family: 'Noto Serif', 'Noto Serif SC', serif; font-weight: 900; font-size: .85em;
+  background: var(--rc-vang); color: #2a1c00; font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-weight: 900; font-size: .85em;
 }
 .rc-opt-t { min-width: 0; word-break: break-word; }
 .rc-opt-n {
-  margin-left: auto; font-family: 'Noto Serif', 'Noto Serif SC', serif; font-size: .75em; font-weight: 800;
+  margin-left: auto; font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-size: .75em; font-weight: 800;
   background: rgba(0, 0, 0, .25); border-radius: 999px; padding: 2px 10px;
 }
 .rc-opt.is-dung { background: linear-gradient(180deg, #fff1a6, var(--rc-vang)); color: #2a1c00; border-color: #fff6c8; box-shadow: 0 0 24px rgba(245, 197, 24, .6); animation: rc-nay .6s ease; }
@@ -212,7 +212,7 @@ button.rc-chip { cursor: pointer; }
   margin-top: 10px; padding: 8px 14px; border-radius: 10px; font-weight: 700; font-size: 1.1rem;
   background: rgba(74, 222, 128, .16); border-left: 5px solid var(--rc-dung);
 }
-.rc-dapan b { font-family: 'Noto Serif', 'Noto Serif SC', serif; color: var(--rc-vang-nhat); }
+.rc-dapan b { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; color: var(--rc-vang-nhat); }
 .rc-dapan.is-hoi { background: rgba(245, 197, 24, .16); border-left-color: var(--rc-vang); }
 .rc-why { display: block; margin-top: 3px; font-weight: 500; font-size: .95rem; color: rgba(255, 255, 255, .85); }
 /* Cau Chuong Vang */

@@ -944,7 +944,7 @@
   var nvDs = [];        // nhan vat dang dung tren ban do: { key, el, x, y, sau, av, ten }
   var nvBoi = '';       // ban do nao (nha em / nha ban id) -> doi ban do thi dat lai vi tri
   function idEm() { var a = auth(); return a && a.user ? a.user.id : ''; }
-  function avEm() { return (S.st && S.st.av) || NV.macDinh(idEm()); }
+  function avEm() { return Object.assign({ pk: '', mat: '', mp: 0 }, (S.st && S.st.av) || NV.macDinh(idEm())); }
   function tenEm() { var a = auth(); return (S.st && S.st.ten) || (a && a.user && a.user.name) || ''; }
   function oTrong(d) {
     var ban = {};
@@ -995,7 +995,7 @@
       n.av = c.av;
       n.el = document.createElement('div');
       n.el.className = 'nt-nv' + (c.khach ? ' khach' : '');
-      n.el.style.width = Math.round(S.o * 1.15) + 'px';
+      n.el.style.width = Math.round(S.o * 1.45) + 'px';
       n.el.innerHTML = htmlNv(c.av, c.ten, c.khach);
       datViTriNv(n);
       dat.appendChild(n.el);
@@ -1023,14 +1023,16 @@
 
   // --- Bang thiet ke nhan vat ---
   var nvSua = null;
-  var NV_TAB = [['toc', '头发 Tóc'], ['ao', '衣服 Áo'], ['duoi', '裤子 Quần váy'], ['mu', '帽子 Mũ'], ['kinh', '眼镜 Kính'], ['da', 'Màu da']];
-  var NV_MAU_CUA = { toc: 'mt', ao: 'ma', duoi: 'md', mu: 'mm' };
+  var NV_TAB = [['toc', '头发 Tóc'], ['ao', '衣服 Áo'], ['duoi', '裤子 Quần váy'], ['mu', '帽子 Mũ'], ['kinh', '眼镜 Kính'], ['pk', '配饰 Phụ kiện'], ['mat', '表情 Biểu cảm'], ['da', 'Màu da']];
+  var NV_MAU_CUA = { toc: 'mt', ao: 'ma', duoi: 'md', mu: 'mm', pk: 'mp' };
+  // mu / phu kien co mau co dinh (khong hien bang mau)
+  var NV_KHONG_MAU = { mu: ['', 'nonla', 'vuong', 'tho', 'hoa', 'bep'], pk: ['', 'denlong', 'gau'] };
   function giaNv(k, v) {
     var key = k + ':' + v, sao = (S.cat.NV_SAO || {})[key];
     return sao && (S.st.avMua || []).indexOf(key) < 0 ? sao : 0;
   }
   function canSaoNv(av) {
-    return ['toc', 'ao', 'duoi', 'mu', 'kinh'].reduce(function (s, k) { return s + giaNv(k, av[k]); }, 0);
+    return ['toc', 'ao', 'duoi', 'mu', 'kinh', 'pk', 'mat'].reduce(function (s, k) { return s + giaNv(k, av[k]); }, 0);
   }
   function moNhanVat(lanDau) {
     nvSua = Object.assign({}, avEm());
@@ -1054,7 +1056,7 @@
       }).join('') + '</div>';
     }
     var mk = tab === 'da' ? 'da' : NV_MAU_CUA[tab];
-    var coMau = mk && !(tab === 'mu' && (av.mu === '' || av.mu === 'nonla' || av.mu === 'vuong')) && !(tab === 'duoi' && av.ao === 'aodai');
+    var coMau = mk && !(NV_KHONG_MAU[tab] && NV_KHONG_MAU[tab].indexOf(av[tab]) >= 0) && !(tab === 'duoi' && av.ao === 'aodai');
     if (coMau) {
       var bang = mk === 'da' ? NV.DA : mk === 'mt' ? NV.MAU_TOC : NV.MAU;
       var ten = mk === 'da' ? ['Sáng', 'Hơi sáng', 'Ngăm', 'Nâu'] : mk === 'mt' ? NV.TEN_MAU_TOC : NV.TEN_MAU;
@@ -1077,7 +1079,8 @@
     $('[data-nvngau]', than).addEventListener('click', function () {
       var r = function (n) { return Math.floor(Math.random() * n); };
       var chon = function (k) { var ds = NV.KIEU[k].filter(function (m) { return !giaNv(k, m.k); }); return ds[r(ds.length)].k; };
-      nvSua = { da: nvSua.da, toc: chon('toc'), mt: r(6), ao: chon('ao'), ma: r(8), duoi: chon('duoi'), md: r(8), mu: r(3) ? '' : chon('mu'), mm: r(8), kinh: r(4) ? '' : chon('kinh') };
+      nvSua = { da: nvSua.da, toc: chon('toc'), mt: r(6), ao: chon('ao'), ma: r(8), duoi: chon('duoi'), md: r(8), mu: r(2) ? '' : chon('mu'), mm: r(8),
+        kinh: r(3) ? '' : chon('kinh'), pk: r(2) ? '' : chon('pk'), mp: r(8), mat: r(2) ? '' : chon('mat') };
       tieng('mua');
       veBang();
     });

@@ -220,12 +220,17 @@ const NV_KIEU = {
   toc: ['ngan', 'xu', 'bob', 'dai', 'duoi', 'bui'],
   ao: ['thun', 'khoac', 'somi', 'aodai'],
   duoi: ['dai', 'short', 'vay'],
-  mu: ['', 'luoi', 'nonla', 'len', 'no', 'vuong'],
-  kinh: ['', 'den', 'tron', 'tim'],
+  mu: ['', 'luoi', 'nonla', 'len', 'no', 'vuong', 'bao', 'coi', 'tho', 'meo', 'hoa', 'bep', 'kep'],
+  kinh: ['', 'den', 'tron', 'tim', 'sao', 'boi', 'vuong'],
+  pk: ['', 'balo', 'khan', 'cavat', 'noco', 'quat', 'bongbay', 'sach', 'denlong', 'tui', 'gau'],
+  mat: ['', 'tit', 'nhay', 'sao', 'le'],
 };
-const NV_SO_MAU = { da: 4, mt: 6, ma: 8, md: 8, mm: 8 };
+const NV_SO_MAU = { da: 4, mt: 6, ma: 8, md: 8, mm: 8, mp: 8 };
 // mon dac biet tra bang sao (mua 1 lan, doi qua lai mien phi)
-const NV_SAO = { 'ao:aodai': 25, 'mu:vuong': 20, 'kinh:tim': 10 };
+const NV_SAO = {
+  'ao:aodai': 25, 'mu:vuong': 20, 'kinh:tim': 10,
+  'mu:tho': 15, 'mu:hoa': 12, 'kinh:sao': 12, 'pk:gau': 15, 'pk:denlong': 10, 'pk:bongbay': 8,
+};
 function kiemNhanVat(v) {
   if (!v || typeof v !== 'object') return null;
   const av = {};
@@ -235,7 +240,7 @@ function kiemNhanVat(v) {
     av[k] = x;
   }
   for (const k of Object.keys(NV_SO_MAU)) {
-    const n = Number(v[k]);
+    const n = v[k] == null ? 0 : Number(v[k]); // nhan vat luu truoc khi co mau phu kien
     if (!Number.isInteger(n) || n < 0 || n >= NV_SO_MAU[k]) return null;
     av[k] = n;
   }
@@ -533,7 +538,7 @@ module.exports = function ganNongTrai(app, d) {
       if (!av) throw loi('Nhân vật chưa hợp lệ.');
       const mua = Array.isArray(f.avMua) ? f.avMua.slice() : [];
       let can = 0;
-      ['toc', 'ao', 'duoi', 'mu', 'kinh'].forEach((k) => {
+      ['toc', 'ao', 'duoi', 'mu', 'kinh', 'pk', 'mat'].forEach((k) => {
         const key = k + ':' + av[k];
         if (NV_SAO[key] && mua.indexOf(key) < 0) { can += NV_SAO[key]; mua.push(key); }
       });

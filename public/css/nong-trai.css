@@ -657,7 +657,7 @@ body.o-thi-tran .nt-zoom, body.o-thi-tran .nt-thu-het { display: none !important
   width: 50px; height: 50px; margin-right: auto; padding: 0; overflow: hidden;
   border-radius: 50%; border: 3px solid var(--vien); background: #bfe8fb; box-shadow: var(--bong); cursor: pointer;
 }
-.nt-nv-nut .nv-svg.mat { width: 100%; height: auto; transform: translateY(6%) scale(1.75); transform-origin: 50% 25%; display: block; }
+.nt-nv-nut .nv-svg.mat { width: 100%; height: auto; transform: scale(1.65); transform-origin: 50% 33%; display: block; }
 .nt-nv-nut.moi { animation: nt-nhay-nv 1.2s ease-in-out infinite; }
 @keyframes nt-nhay-nv { 50% { transform: scale(1.12); box-shadow: 0 0 0 6px rgba(255, 200, 61, 0.7), var(--bong); } }
 .nt-nv {

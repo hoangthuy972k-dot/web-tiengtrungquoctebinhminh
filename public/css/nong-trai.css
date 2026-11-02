@@ -1679,3 +1679,15 @@ body.o-thi-tran:not(.nt-dem) .nt-dom { display: none !important; }
 @keyframes nt-chop { 0%, 86%, 89%, 92%, 100% { opacity: 0; } 87% { opacity: 0.7; } 90% { opacity: 0.45; } }
 .nt-khung.tai-mua .nt-dat { filter: saturate(0.75) brightness(0.82) hue-rotate(-6deg); }
 @media (prefers-reduced-motion: reduce) { .nt-hat-mua { animation: none; top: 40%; } .nt-vung, .nt-chop { display: none; } }
+
+/* May chi bay tren bau troi (phan troi xanh phia tren), nam sau trang trai */
+.nt-troi-may { position: fixed; left: 0; right: 0; top: 0; height: 38vh; z-index: -1; pointer-events: none; overflow: hidden; }
+.nt-troi-may .nt-canh-may.m1 { top: 10%; }
+.nt-troi-may .nt-canh-may.m2 { top: 34%; }
+.nt-troi-may .nt-canh-may.m3 { top: 56%; }
+.nt-troi-may .nt-canh-may.m4 { top: 22%; }
+.nt-troi-may .nt-canh-may .may { background: rgba(255, 255, 255, 0.92); }
+body.nt-dem .nt-troi-may .nt-canh-may .may { background: rgba(190, 200, 235, 0.22); }
+body.nt-chieu .nt-troi-may .nt-canh-may .may { background: rgba(255, 233, 209, 0.92); }
+body[data-tai="mua"] .nt-troi-may .nt-canh-may .may { background: rgba(120, 130, 150, 0.9); }
+@media (prefers-reduced-motion: reduce) { .nt-troi-may { display: none; } }

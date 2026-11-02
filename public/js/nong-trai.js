@@ -1145,9 +1145,13 @@
     c.id = 'ntCanh'; c.className = 'nt-canh'; c.setAttribute('aria-hidden', 'true');
     var h = '';
     // may bay qua lai: 2 chieu, kem bong may luot tren ruong
-    [['m1', ''], ['m2', ' nguoc'], ['m3', ''], ['m4', ' nguoc']].forEach(function (x) {
-      h += '<div class="nt-canh-may ' + x[0] + x[1] + '"><i class="may"></i><i class="bong"></i></div>';
-    });
+    // may o tren bau troi (lop rieng nam SAU trang trai) — khong bay de len ruong
+    var troi = document.createElement('div');
+    troi.id = 'ntTroiMay'; troi.className = 'nt-troi-may'; troi.setAttribute('aria-hidden', 'true');
+    troi.innerHTML = [['m1', ''], ['m2', ' nguoc'], ['m3', ''], ['m4', ' nguoc']].map(function (x) {
+      return '<div class="nt-canh-may ' + x[0] + x[1] + '"><i class="may"></i></div>';
+    }).join('');
+    document.body.appendChild(troi);
     for (var i = 0; i < 3; i++) h += '<div class="nt-canh-chim c' + (i + 1) + '">' + svgChim() + '</div>';
     for (var j = 0; j < 2; j++) h += '<div class="nt-canh-buom b' + (j + 1) + '">' + svgBuom(MAU_BUOM[j]) + '</div>';
     // ban dem: trang, sao va dom dom 萤火虫 (chi hien khi body co lop nt-dem)

@@ -1372,6 +1372,8 @@ module.exports = function ganNongTrai(app, d) {
     const [f, ten, fm] = await Promise.all([doc(id), d.loadUserNames(), doc(req.user.id)]);
     const now = Date.now(), ngay = d.vnDayKey();
     const svb = await d.loadStar(id);
+    // lop cua ban -> nut 'Thi tran' tren thanh tham mo dung thi tran lop ban ay
+    const lopBan = await banCungLop(id);
     res.json({
       ten: ten[id] || '', lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], now, hv: svb.total || 0,
       // chi gui hinh dang nong trai + sap hang, khong gui xu / kho
@@ -1383,6 +1385,7 @@ module.exports = function ganNongTrai(app, d) {
       conTin: TIN_BAN_NGAY - (fm.tin && fm.tin.d === ngay ? fm.tin.dem[id] || 0 : 0),
       daTang: !!(fm.qua && fm.qua.d === ngay && fm.qua.ids.indexOf(id) >= 0),
       tai: taiChoHs(f), daGiupTai: !!(taiDang(f) && (f.tai.giup || []).indexOf(req.user.id) >= 0),
+      lop: lopBan ? { id: lopBan.id, ten: lopBan.ten } : null,
     });
   }));
 

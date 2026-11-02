@@ -28,6 +28,9 @@ img { -webkit-user-drag: none; user-select: none; }
 .ch-man { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; }
 
 /* Man vao: linh vat gau truc + logo */
+/* Nut ve trang hoc (chi o man vao phong) */
+.ch-ve { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: rgba(255,255,255,.16); color: #fff; font-weight: 700; text-decoration: none; }
+.ch-ve:focus-visible { outline: 3px solid #f5c518; outline-offset: 2px; }
 .ch-vao-dau { display: flex; align-items: flex-end; justify-content: center; gap: 4px; }
 .ch-vao-mascot { display: block; width: 96px; height: 96px; animation: chNhun 1.8s ease-in-out infinite; }
 .ch-logo {

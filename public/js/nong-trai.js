@@ -1623,13 +1623,15 @@
   }
 
   /* ---------------- tham nong trai ban ---------------- */
-  function thamBan(id) {
+  // tuTt: { id, ten } thi tran vua xem khi bam vao lo dat cua ban (de co nut "← Về thị trấn")
+  function thamBan(id, tuTt) {
     goi('/api/farm/xem/' + encodeURIComponent(id)).then(function (r) {
       dongBang();
       dongThiTran();
       thoatDat();
-      S.tham = { id: id, ten: r.ten, kich: r.kich, o: r.o, lv: r.lv, dep: r.dep, tim: r.tim, sap: r.sap || [], av: r.av, daTim: r.daTim, daChao: r.daChao, conGiup: r.conGiup, conTin: r.conTin, daTang: r.daTang, hv: r.hv, tai: r.tai, daGiupTai: r.daGiupTai };
+      S.tham = { id: id, ten: r.ten, kich: r.kich, o: r.o, lv: r.lv, dep: r.dep, tim: r.tim, sap: r.sap || [], av: r.av, daTim: r.daTim, daChao: r.daChao, conGiup: r.conGiup, conTin: r.conTin, daTang: r.daTang, hv: r.hv, tai: r.tai, daGiupTai: r.daGiupTai, lop: r.lop || null, tuTt: tuTt || null };
       S.lechTham = r.now - Date.now();
+      veNutLui();
       $('#ntThamTen').textContent = 'Nông trại của ' + r.ten;
       $('#ntThamPhu').textContent = 'Cấp ' + r.lv + ' · điểm đẹp ' + r.dep + ' · ❤ ' + r.tim;
       $('#ntTham').hidden = false;
@@ -1649,6 +1651,25 @@
   window.addEventListener('resize', datChoTham);
   // thanh tham doi chieu cao (them loi nhac, chu xuong dong) -> do lai
   if (window.ResizeObserver) new ResizeObserver(datChoTham).observe(document.getElementById('ntTham'));
+  // Nut quay lai tren thanh tham: sang tu thi tran -> "← Về thị trấn <lop>"; nut 🏘 mo thi tran lop cua ban ay
+  function veNutLui() {
+    var t = S.tham, lui = $('#ntThamLui'), tt = $('#ntThamTt');
+    if (!t || !lui) return;
+    lui.hidden = !t.tuTt;
+    if (t.tuTt) lui.textContent = '← Về thị trấn' + (t.tuTt.ten ? ' ' + t.tuTt.ten : '');
+    // da co nut ve dung thi tran lop ban -> an nut 🏘 cho do trung
+    tt.hidden = !!(t.tuTt && t.lop && t.tuTt.id === t.lop.id);
+    tt.textContent = '🏘 ' + (t.lop && t.lop.ten ? 'Thị trấn ' + t.lop.ten : 'Thị trấn');
+  }
+  function veThiTranBan() {
+    var t = S.tham;
+    var id = t && t.lop ? t.lop.id : '';
+    moThiTran(id);
+  }
+  function luiThiTran() {
+    var t = S.tham;
+    moThiTran(t && t.tuTt ? t.tuTt.id : '');
+  }
   function veNha() {
     S.tham = null;
     $('#ntTham').hidden = true;
@@ -3896,7 +3917,8 @@
     $('#ntThamTim').addEventListener('click', thaTim);
     $('#ntThamChao').addEventListener('click', moNoiChuyen);
     $('#ntThamSap').addEventListener('click', function () { if (S.tham) moBang('sapban'); });
-    $('#ntThamTt').addEventListener('click', moThiTran);
+    $('#ntThamTt').addEventListener('click', veThiTranBan);
+    $('#ntThamLui').addEventListener('click', luiThiTran);
     $('#ntThamTai').addEventListener('click', function () { TAI.cau = null; TAI.xong = null; moBang('thientai'); });
     $('#ntTai').addEventListener('click', function () { dongThiTran(); TAI.xong = null; moBang('thientai'); });
     $('#ntThiTran').addEventListener('scroll', anNoiDan, { passive: true });
@@ -3908,7 +3930,7 @@
         var id = lo.getAttribute('data-lo');
         dongThiTran();
         if (S.st && thiTran && thiTran.ds.some(function (b) { return b.id === id && b.la; })) return; // lo cua em: ve nong trai
-        thamBan(id);
+        thamBan(id, thiTran ? { id: thiTran.lopId || '', ten: thiTran.lop || '' } : null);
         return;
       }
       var t = e.target.closest('[data-tt]');

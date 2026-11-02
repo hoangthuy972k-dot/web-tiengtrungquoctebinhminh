@@ -213,6 +213,96 @@
     if (Array.isArray(c.lines)) c.lines = c.lines.map(boPy);
     return c;
   }
+  /* ---------------- xoay vong: hoi het kho cau roi moi lap lai ----------------
+     Truoc day moi tro xao ngau nhien nen co tu / cau mai khong duoc hoi (co giao kiem tra thay sot tu).
+     Cau / tu nao da chieu len bang thi ghi lai (localStorage 'hyv_lop_da', rieng tung cap); xao bai thi
+     cau chua chieu len truoc. Ca kho da chieu het thi bat dau vong moi. Kiem tra bai cu dung chung so nay. */
+  var DA_KEY = 'hyv_lop_da';
+  var daCache = null, luuHen = 0;
+  function bam(t) {
+    var h = 5381;
+    for (var i = 0; i < t.length; i++) h = ((h << 5) + h + t.charCodeAt(i)) | 0;
+    return (h >>> 0).toString(36);
+  }
+  function maTu(zh) { return bam('t' + zh); }
+  function maMuc(x) {
+    if (!x) return '';
+    if (x.options && typeof x.answer === 'number') return bam('m' + (x.pre || '') + x.options[x.answer] + (x.post || ''));
+    if (x.sentence) return bam('j' + x.sentence);
+    if (x.words && x.answer) return bam('s' + x.answer);
+    if (x.zh) return maTu(x.zh); // tu vung, cau dich
+    return '';
+  }
+  function daDs() {
+    if (!daCache) { try { daCache = JSON.parse(localStorage.getItem(DA_KEY) || '{}') || {}; } catch (e) { daCache = {}; } }
+    return daCache[state.level] || (daCache[state.level] = {});
+  }
+  function luuDa() {
+    clearTimeout(luuHen);
+    luuHen = setTimeout(function () { try { localStorage.setItem(DA_KEY, JSON.stringify(daCache)); } catch (e) { /* bo qua */ } }, 300);
+  }
+  function ghiMa(k) { var d = daDs(); if (k && !d[k]) { d[k] = 1; luuDa(); } }
+  function daChieu(x) {
+    if (!x) return;
+    ghiMa(maMuc(x));
+    // cau hoi tu vung «我» nghia la gi? / «tôi» — chu Han la gi? -> tinh luon la da hoi tu do
+    if (x.src === 'tu' && x.options) {
+      var m = /^«([^»]+)»/.exec(x.pre || '');
+      ghiMa(maTu(m && /[㐀-鿿]/.test(m[1]) ? m[1] : x.options[x.answer]));
+    }
+  }
+  function xaoMoi(list) {
+    list = list || [];
+    var d = daDs(), moi = [], cu = [];
+    list.forEach(function (x) { (d[maMuc(x)] ? cu : moi).push(x); });
+    if (!moi.length && cu.length) {
+      list.forEach(function (x) { delete d[maMuc(x)]; });
+      luuDa();
+      return shuffle(list);
+    }
+    return shuffle(moi).concat(shuffle(cu));
+  }
+  // Boc n cau cho tro / de co dinh: uu tien cau chua hoi, ghi lai la da hoi
+  function boc(list, n) {
+    var r = xaoMoi(list).slice(0, n);
+    r.forEach(daChieu);
+    return r;
+  }
+  // Cho Kiem tra bai cu: tu nao da hoi (trong tro choi hoac luot truoc)
+  var phuTu = {
+    co: function (zh) { return !!daDs()[maTu(zh)]; },
+    ghi: function (zh) { ghiMa(maTu(zh)); }
+  };
+  // Dong "Da hoi tren lop: x/y tu · a/b cau" duoi danh sach bai
+  function vePhu() {
+    var el = $('#lopPhu');
+    if (!el) return;
+    var urls = state.lessons.filter(function (l) { return state.picked[l.url]; }).map(function (l) { return l.url; });
+    if (!urls.length) { el.hidden = true; return; }
+    if (urls.some(function (u) { return !vocabCache[u]; })) { el.hidden = true; loadPickedVocab().then(vePhu); return; }
+    var d = daDs(), tu = {}, soTu = 0, daTu = 0;
+    urls.forEach(function (u) {
+      (vocabCache[u].vocab || []).forEach(function (v) {
+        if (tu[v.zh]) return;
+        tu[v.zh] = 1; soTu++;
+        if (d[maTu(v.zh)]) daTu++;
+      });
+    });
+    var cau = pickedMcs().concat(pickedSorts(), pickedJudges()), daCau = 0;
+    cau.forEach(function (x) { if (d[maMuc(x)]) daCau++; });
+    el.hidden = false;
+    el.innerHTML = '<span>📈 Đã hỏi trên lớp: <b>' + daTu + '/' + soTu + '</b> từ · <b>' + daCau + '/' + cau.length + '</b> câu' +
+      (daTu < soTu ? ' — trò chơi và Kiểm tra bài cũ sẽ ưu tiên ' + (soTu - daTu) + ' từ chưa hỏi' : ' — đã hỏi hết từ của các bài này') + '</span>' +
+      ((daTu || daCau) ? ' <button type="button" class="lop-mini-btn" id="lopPhuLai">↺ Đếm lại từ đầu</button>' : '');
+    var b = $('#lopPhuLai');
+    if (b) b.addEventListener('click', function () {
+      if (!confirm('Đếm lại từ đầu: coi như chưa hỏi từ / câu nào của cấp này?')) return;
+      daCache[state.level] = {};
+      luuDa();
+      vePhu();
+    });
+  }
+
   function pickedMcs() {
     var out = [];
     state.lessons.forEach(function (l) {
@@ -296,6 +386,7 @@
         : 'Chưa chọn bài nào — bấm vào số bài bên dưới để chọn.';
       st.classList.toggle('none', !label);
     }
+    vePhu();
   }
 
   function switchLevel(level) {
@@ -669,13 +760,13 @@
   });
 
   function dealAbc() {
-    state.deck = shuffle(pickedMcs());
+    state.deck = xaoMoi(pickedMcs());
     state.pos = 0;
     state.abcShown = false;
   }
 
   function renderAbc() {
-    var q = state.deck[state.pos];
+    var q = state.deck[state.pos]; daChieu(q);
     if (!q) {
       $('#lopStage').innerHTML =
         '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopNewRound">Bộ câu mới →</button></div>';
@@ -722,7 +813,7 @@
 
   function revealAbc() {
     if (state.abcShown) return;
-    var q = state.deck[state.pos];
+    var q = state.deck[state.pos]; daChieu(q);
     if (!q) return;
     state.abcShown = true;
     $all('#lopStage .lop-abc-opt').forEach(function (el, i) {
@@ -932,12 +1023,13 @@
   var MC_GAMES = { tug: 1, mine: 1, train: 1, nhip: 1 };
 
   function mcDeal() {
-    state.deck = shuffle(pickedMcs());
+    state.deck = xaoMoi(pickedMcs());
     state.pos = 0;
     state.mcShown = false;
   }
   function mcCur() {
     if (!state.deck[state.pos]) mcDeal();
+    daChieu(state.deck[state.pos]);
     return state.deck[state.pos];
   }
   function mcNext() {
@@ -966,7 +1058,7 @@
     '</div>';
   }
   function mcReveal() {
-    var q = state.deck[state.pos];
+    var q = state.deck[state.pos]; daChieu(q);
     if (!q || state.mcShown) return;
     state.mcShown = true;
     $all('#lopMcBox .lop-abc-opt').forEach(function (el, i) {
@@ -1527,7 +1619,7 @@
     if (!l) return;
     var b = $('#lopNhipGo');
     b.disabled = true;
-    var cau = shuffle(pickedMcs()).slice(0, state.nhipSo).map(function (q) {
+    var cau = boc(pickedMcs(), state.nhipSo).map(function (q) {
       var thu = shuffle(q.options.map(function (_, i) { return i; }));
       return {
         zh: q.pre + (q.noBlank ? '' : '＿＿') + q.post,
@@ -1546,13 +1638,13 @@
 
   /* ---------------- tro: xep cau bang nguoi ---------------- */
   function dealSort() {
-    state.deck = shuffle(pickedSorts());
+    state.deck = xaoMoi(pickedSorts());
     state.pos = 0;
     state.sortShown = false;
   }
 
   function renderSort() {
-    var q = state.deck[state.pos];
+    var q = state.deck[state.pos]; daChieu(q);
     if (!q) {
       $('#lopStage').innerHTML =
         '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopNewRound">Bộ câu mới →</button></div>';
@@ -1584,7 +1676,7 @@
 
   function revealSort() {
     if (state.sortShown) return;
-    var q = state.deck[state.pos];
+    var q = state.deck[state.pos]; daChieu(q);
     if (!q) return;
     state.sortShown = true;
     // Danh lai so thu tu dung cho tung the — de hoc sinh biet minh phai dung o dau
@@ -1607,7 +1699,7 @@
 
   /* ---------------- tro: Bingo 3x3 ---------------- */
   function startBingo(vocab) {
-    state.bingoWords = shuffle(vocab).slice(0, 15);
+    state.bingoWords = boc(vocab, 15);
     state.bingoCalled = [];
     state.bingoPhase = 'write';
     renderBingo();
@@ -1686,13 +1778,13 @@
 
   /* ---------------- tro: nhin hinh doan chu ---------------- */
   function dealGuess(vocab) {
-    state.deck = shuffle(vocab.filter(function (v) { return v.em; }));
+    state.deck = xaoMoi(vocab.filter(function (v) { return v.em; }));
     state.pos = 0;
     state.guessShown = false;
   }
 
   function renderGuess() {
-    var v = state.deck[state.pos];
+    var v = state.deck[state.pos]; daChieu(v);
     if (!v) {
       $('#lopStage').innerHTML =
         '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopNewRound">Bộ từ mới →</button></div>';
@@ -1720,7 +1812,7 @@
     state.guessShown = true;
     var el = $('#lopGuessAns');
     if (el) el.hidden = false;
-    var v = state.deck[state.pos];
+    var v = state.deck[state.pos]; daChieu(v);
     if (v) speakZh(v.zh);
   }
   function nextGuess() {
@@ -1818,14 +1910,14 @@
 
   /* ---------------- tro: ban noi toi doan ---------------- */
   function dealTaboo(vocab) {
-    state.deck = shuffle(vocab);
+    state.deck = xaoMoi(vocab);
     state.pos = 0;
     state.tabooGot = 0;
     state.tabooSkip = 0;
   }
 
   function renderTaboo() {
-    var v = state.deck[state.pos];
+    var v = state.deck[state.pos]; daChieu(v);
     if (!v) {
       $('#lopStage').innerHTML =
         '<div class="lop-taboo-done">Hết từ · đoán được <b>' + state.tabooGot + '</b> từ</div>' +
@@ -1858,13 +1950,13 @@
 
   /* ---------------- tro: dich nhanh Viet -> Trung ---------------- */
   function dealTrans() {
-    state.deck = shuffle(state.trans || []);
+    state.deck = xaoMoi(state.trans || []);
     state.pos = 0;
     state.transShown = false;
   }
 
   function renderTrans() {
-    var t = state.deck[state.pos];
+    var t = state.deck[state.pos]; daChieu(t);
     if (!t) {
       $('#lopStage').innerHTML =
         '<div class="lop-stage-head"><span>Các bài đã chọn chưa có câu dịch. Chọn thêm bài khác nhé.</span></div>';
@@ -1892,7 +1984,7 @@
     state.transShown = true;
     var el = $('#lopTransAns');
     if (el) el.hidden = false;
-    var t = state.deck[state.pos];
+    var t = state.deck[state.pos]; daChieu(t);
     if (t) speakZh(t.zh);
   }
   function nextTrans() {
@@ -1904,7 +1996,7 @@
 
   /* ---------------- tro: nghe nhanh chi chu ---------------- */
   function dealListen(vocab) {
-    var pool = shuffle(vocab).slice(0, 9);
+    var pool = boc(vocab, 9);
     state.listenGrid = shuffle(pool);
     state.listenTarget = state.listenGrid[Math.floor(Math.random() * state.listenGrid.length)];
     state.listenPicked = {};
@@ -1960,7 +2052,7 @@
   }
 
   function renderHanzi() {
-    var item = state.deck[state.pos];
+    var item = state.deck[state.pos]; daChieu(item);
     if (!item) {
       $('#lopStage').innerHTML =
         '<div class="lop-stage-head"><span>Các bài đã chọn chưa có dữ liệu chiết tự. Chọn thêm bài khác nhé.</span></div>';
@@ -1997,7 +2089,7 @@
     state.hanziShown = true;
     var el = $('#lopHzAns');
     if (el) el.hidden = false;
-    var item = state.deck[state.pos];
+    var item = state.deck[state.pos]; daChieu(item);
     if (item) speakZh(item.h.c);
   }
   function nextHanzi() {
@@ -2066,13 +2158,13 @@
 
   /* ---------------- tro: am Han Viet doan chu ---------------- */
   function dealHv(vocab) {
-    state.deck = shuffle(vocab.filter(function (v) { return v.hv; }));
+    state.deck = xaoMoi(vocab.filter(function (v) { return v.hv; }));
     state.pos = 0;
     state.hvShown = false;
   }
 
   function renderHv() {
-    var v = state.deck[state.pos];
+    var v = state.deck[state.pos]; daChieu(v);
     if (!v) {
       $('#lopStage').innerHTML =
         '<div class="lop-stage-head"><span>Các bài đã chọn chưa có âm Hán–Việt. Chọn thêm bài khác nhé.</span></div>';
@@ -2106,7 +2198,7 @@
     state.hvShown = true;
     var el = $('#lopHvAns');
     if (el) el.hidden = false;
-    var v = state.deck[state.pos];
+    var v = state.deck[state.pos]; daChieu(v);
     if (v) speakZh(v.zh);
   }
   function nextHv() {
@@ -2118,7 +2210,7 @@
 
   /* ---------------- tro: noi nghia nhanh ---------------- */
   function dealMatch(vocab) {
-    var pick = shuffle(vocab).slice(0, 6);
+    var pick = boc(vocab, 6);
     state.matchZh = pick;
     state.matchVn = shuffle(pick.slice());
     state.matchSel = null;
@@ -2227,7 +2319,7 @@
   function dealChain(vocab) {
     state.chain = { list: [], char: '' };
     // Bat dau bang tu ma chu cuoi con nhieu duong di nhat
-    var cands = shuffle(vocab.filter(chainClean)).slice(0, 60);
+    var cands = xaoMoi(vocab.filter(chainClean)).slice(0, 60);
     var best = null, bestN = -1;
     cands.forEach(function (v) {
       var ch = v.zh.charAt(v.zh.length - 1);
@@ -2312,13 +2404,13 @@
     var words = vocab.slice();
     var sents = vocab.filter(function (v) { return v.ex_zh; });
     state.writeMode = state.writeMode || 'word';
-    state.deck = shuffle(state.writeMode === 'sentence' && sents.length ? sents : words);
+    state.deck = xaoMoi(state.writeMode === 'sentence' && sents.length ? sents : words);
     state.pos = 0;
     state.writeShown = false;
   }
 
   function renderWrite() {
-    var v = state.deck[state.pos];
+    var v = state.deck[state.pos]; daChieu(v);
     if (!v) {
       $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Chưa có nội dung để chơi.</span></div>';
       return;
@@ -2483,7 +2575,7 @@
      Moi cau A/B/C rut gon con 2 phuong an: dap an dung + 1 phuong an sai ngau nhien,
      dat ngau nhien trai / phai. Cau hoi chuyen qua localStorage 'hyv_nghieng'.   */
   function moNghieng() {
-    var cau = shuffle(pickedMcs()).slice(0, 10).map(function (q) {
+    var cau = boc(pickedMcs(), 10).map(function (q) {
       var sai = shuffle(q.options.map(function (_, i) { return i; }).filter(function (i) { return i !== q.answer; }))[0];
       var dung = Math.random() < 0.5 ? 0 : 1;
       var dd = q.options[q.answer], ss = q.options[sai];
@@ -2500,7 +2592,7 @@
 
   // Tro van dong truoc webcam (trang /van-dong, mo tab moi): cau A–D giu toi da 4 phuong an
   function moVanDong(tro) {
-    var cau = shuffle(pickedMcs()).slice(0, 10).map(function (q) {
+    var cau = boc(pickedMcs(), 10).map(function (q) {
       var sai = shuffle(q.options.map(function (_, i) { return i; }).filter(function (i) { return i !== q.answer; })).slice(0, 3);
       var thu = shuffle(sai.concat([q.answer]));
       return {
@@ -2763,7 +2855,7 @@
   function dealDict(vocab) {
     var sents = vocab.filter(function (v) { return v.ex_zh; });
     var pool = state.dictMode === 'sentence' && sents.length ? sents : vocab;
-    state.dict = { deck: shuffle(pool).slice(0, state.dictN || 10), pos: 0, key: false };
+    state.dict = { deck: boc(pool, state.dictN || 10), pos: 0, key: false };
   }
 
   function dictPart(v) {
@@ -2856,7 +2948,7 @@
 
   /* ---- 2. Kiem tra nhanh 10 cau ---- */
   function dealQuiz() {
-    var deck = shuffle(pickedMcs()).slice(0, 10).map(function (q) {
+    var deck = boc(pickedMcs(), 10).map(function (q) {
       var order = shuffle(q.options.map(function (_, i) { return i; }));
       return { q: q, order: order, ans: order.indexOf(q.answer) };
     });
@@ -2931,7 +3023,7 @@
   function paperDeal() {
     var n = parseInt($('#lopPaperN').value, 10) || 8;
     var nv = parseInt($('#lopPaperV').value, 10) || 4;
-    var mcs = shuffle(pickedMcs()), sorts = shuffle(pickedSorts()), judges = shuffle(pickedJudges());
+    var mcs = xaoMoi(pickedMcs()), sorts = xaoMoi(pickedSorts()), judges = xaoMoi(pickedJudges());
 
     // Uu tien trac nghiem cho de cham, them chut xep cau va dung/sai cho du dang
     var nSort = Math.min(sorts.length, Math.round(n * 0.25));
@@ -2973,6 +3065,7 @@
         })
       });
     }
+    base.forEach(function (it) { daChieu(it.q); });
     state.paper = { versions: versions, total: base.length };
   }
 
@@ -3062,6 +3155,7 @@
   function closePaper() {
     $('#lopPaper').hidden = true;
     $('#lopSetup').hidden = false;
+    vePhu();
   }
 
   /* ---- mo mot dang kiem tra ---- */
@@ -3208,6 +3302,7 @@
     state.timer.running = false;
     $('#lopPlay').hidden = true;
     $('#lopSetup').hidden = false;
+    vePhu();
     // Kiem tra phat am co bang chon bai rieng — quay ra thi ve dung bang
     // do va cuon toi noi, khong bat thay/co tim lai tu dau trang.
     if (state.game === 'phatam') {
@@ -3621,7 +3716,7 @@
       if (!window.LopKiemTra || !pickedLabel()) return;
       loadPickedVocab().then(function (v) {
         window.LopKiemTra.mo({ nhan: pickedLabel(), vocab: v.map(boPy), mcs: pickedMcs(), sorts: pickedSorts(),
-          trans: (state.trans || []).map(boPy), dialogs: (state.dialogs || []).map(boPy), cauDich: cauDichOn() });
+          trans: (state.trans || []).map(boPy), dialogs: (state.dialogs || []).map(boPy), cauDich: cauDichOn(), phuTu: phuTu });
       });
     });
     // The tra loi: dung cau A/B/C cua cac bai dang chon; chua chon bai thi la cau hoi tu do

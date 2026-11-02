@@ -504,6 +504,9 @@ body.co-bang .hw-fab-stack, body.co-hoi .hw-fab-stack { display: none !important
 .nt-tham-nut { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 .nt-tham-goi { flex-basis: 100%; margin: 0; text-align: center; font-size: 0.82rem; font-weight: 700; color: var(--mo); }
 .nt-tham-goi:empty { display: none; }
+/* hang nut quay lai: ve thi tran vua xem (neu sang tu thi tran) + ve nong trai cua em */
+.nt-tham-ve { flex-basis: 100%; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.nt-tham-ve [hidden] { display: none; }
 body.dang-tham .nt-khung { padding-top: 180px; }
 .nt-sap-ds { display: grid; grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 12px; }
 .nt-sap-o { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px; border: 3px solid var(--vien); border-radius: 16px; background: #fff; box-shadow: 0 4px 0 var(--vien); text-align: center; }
@@ -854,7 +857,8 @@ body.dang-tham .nt-muc { display: none; }
   }
   .nt-tham-nut { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
   .nt-tham-goi { margin: 0; font-size: 0.78rem; text-align: center; }
-  #ntThamVe { min-height: 34px; padding: 4px 10px; font-size: 0.8rem; }
+  .nt-tham-ve { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 5px; }
+  #ntThamVe, #ntThamLui { min-height: 38px; padding: 4px 8px; font-size: 0.8rem; }
   .nt-tham-chu { flex-direction: row; align-items: baseline; justify-content: center; gap: 8px; flex-wrap: wrap; text-align: center; }
   .nt-tham-chu b { font-size: 0.98rem; }
   .nt-tham-chu span { font-size: 0.78rem; }

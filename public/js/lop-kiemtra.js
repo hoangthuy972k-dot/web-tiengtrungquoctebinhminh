@@ -5,7 +5,8 @@
    Boc tham nhiem vu · Kiem tra theo dang · Vong quay · Do min · San kho bau.
    Xong luot may goi y diem 0-10, thay/co chinh lai roi luu
    (lop he thong -> cot "Mieng"; danh sach nhanh -> chi luu tren may nay).
-   Mo bang window.LopKiemTra.mo({ nhan, vocab, mcs, sorts, trans, dialogs }).
+   Mo bang window.LopKiemTra.mo({ nhan, vocab, mcs, sorts, trans, dialogs, phuTu }) — phuTu (lop.js) cho biet
+   tu nao da hoi tren lop de uu tien tu chua hoi.
    Phan sinh cau hoi (LopKiemTra._taoCau) khong dung DOM, chay duoc trong Node. */
 (function () {
   'use strict';
@@ -213,6 +214,7 @@
     nho.da = nho.da || {};      // da hoi trong buoi:  loai|id
     nho.luot = nho.luot || {};  // da hoi trong luot cua em nay: id
     nho.loai = nho.loai || {};  // so lan moi dang cau trong luot nay
+    // nho.phu (tu lop.js): { co(zh), ghi(zh) } — tu da hoi tren lop (ca tro choi, ca cac buoi truoc)
     return nho;
   }
 
@@ -228,15 +230,29 @@
   function tuCu(x) {
     return mang(x && x.cu).length ? 'Từ đã học: ' + x.cu.map(function (c) { return c[0] + ' (bài ' + c[1] + ')'; }).join(' · ') : '';
   }
+  // Tu vung ma muc nay hoi toi (doc / nghia / viet / noi / nghe / dien / dat cau), '' neu khong phai cau ve mot tu
+  function tuCuaMuc(x) {
+    if (!x) return '';
+    if (x.v && x.v.zh) return x.v.zh;
+    if (/^n?v/.test(String(x.id)) && x.zh) return x.zh;
+    return '';
+  }
+  // Tu chua hoi lan nao tren lop duoc uu tien hon tu da hoi — de qua cac buoi phu het tu cua bai
   function chonMuc(tiers, loai, nho) {
-    var best = null, bw = -1;
+    var best = null, bw = -1, phu = nho.phu;
     tiers.forEach(function (list, ti) {
       list.forEach(function (x) {
-        var w = (nho.luot[x.id] ? 0 : 4) + (nho.da[loai + '|' + x.id] ? 0 : 2) + (ti === 0 ? 1 : ti === 1 ? 0.5 : 0) + Math.random() * 0.9;
+        var tu = phu ? tuCuaMuc(x) : '';
+        var w = (nho.luot[x.id] ? 0 : 4) + (nho.da[loai + '|' + x.id] ? 0 : 2) + (tu && !phu.co(tu) ? 3 : 0) +
+          (ti === 0 ? 1 : ti === 1 ? 0.5 : 0) + Math.random() * 0.9;
         if (w > bw) { bw = w; best = x; }
       });
     });
-    if (best) { nho.da[loai + '|' + best.id] = 1; nho.luot[best.id] = 1; }
+    if (best) {
+      nho.da[loai + '|' + best.id] = 1; nho.luot[best.id] = 1;
+      var t = phu ? tuCuaMuc(best) : '';
+      if (t) phu.ghi(t);
+    }
     return best;
   }
 
@@ -2030,7 +2046,10 @@
     if (!coMode(S.mode)) S.mode = modeDau();
     var P = S.P;
     var kho = [];
-    if (P.vocab.length) kho.push(P.vocab.length + ' từ vựng');
+    if (P.vocab.length) {
+      var chua = S.nho.phu ? P.vocab.filter(function (v) { return !S.nho.phu.co(v.zh); }).length : 0;
+      kho.push(P.vocab.length + ' từ vựng' + (chua ? ' (' + chua + ' từ chưa hỏi trên lớp — máy hỏi trước)' : ''));
+    }
     if (P.mcs.length) kho.push(P.mcs.length + ' câu ngữ pháp');
     if (P.sorts.length) kho.push(P.sorts.length + ' câu xếp từ');
     if (P.soTrans) kho.push(P.soTrans + ' câu dịch');
@@ -2574,6 +2593,7 @@
     S.nhan = str(opt.nhan);
     var ky = S.nhan + '|' + S.P.vocab.length + '|' + S.P.mcs.length + '|' + S.P.sorts.length + '|' + S.P.soTrans + '|' + S.P.soHt;
     if (ky !== S.ky) { S.ky = ky; S.nho = { da: {}, luot: {}, loai: {} }; }
+    S.nho.phu = opt.phuTu && typeof opt.phuTu.co === 'function' ? opt.phuTu : null;
     root.hidden = false;
     document.documentElement.classList.add('kt-open');
     S.pha = 'sanh';

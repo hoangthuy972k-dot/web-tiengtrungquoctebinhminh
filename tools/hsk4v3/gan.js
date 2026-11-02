@@ -8,7 +8,7 @@
    Roi chay: build-grammar hsk4v3 · seo-lessons --that · build-lop hsk4v3 · stamp-assets --that
    Anh lay tu sach: public/images/hsk4v3/nv/<ten>.webp (mat nhan vat), public/images/hsk4v3/bai-N/*.webp
    Cai mot lan: cd tools/hsk4v3 && npm install   (pinyin-pro, hanzi-writer-data — chi dung luc soan)
-   Chay: node tools/hsk4v3/gan.js            (moi bai co nguon)
+   Chay: node tools/hsk4v3/gan.js --bai 1-6  (chi cac bai da duyet; bo --bai = moi bai co nguon)
          node tools/hsk4v3/gan.js --khong-chay (chi sinh file, khong chay cac cong cu phia sau) */
 const fs = require('fs');
 const path = require('path');
@@ -239,8 +239,30 @@ function ghiDataJs(ds) {
 }
 
 // ---------- chay ----------
+// --bai 1-6 : chi xuat ban cac bai nay (bai dang soan do khong len web); mac dinh moi bai co nguon
+const iBai = process.argv.indexOf('--bai');
+const pham = iBai >= 0 ? process.argv[iBai + 1].split('-').map(Number) : null;
 const ds = fs.readdirSync(__dirname).filter((d) => /^bai-\d+$/.test(d) && fs.existsSync(path.join(__dirname, d, 'bai.json')))
-  .map((d) => +d.slice(4)).sort((a, b) => a - b).map(dungBai);
+  .map((d) => +d.slice(4)).sort((a, b) => a - b)
+  .filter((n) => !pham || process.argv.indexOf('--kiem') >= 0 || (n >= pham[0] && n <= (pham[1] || pham[0])))
+  .map((n) => { try { return dungBai(n); } catch (e) { loi.push('Bai ' + n + ': loi doc nguon — ' + e.message); return null; } })
+  .filter(Boolean);
+if (process.argv.indexOf('--kiem') < 0 && loi.some((x) => /loi doc nguon/.test(x))) { console.log(loi.join('\n')); process.exit(1); }
+// --kiem N: chi dung bai N trong bo nho va bao loi (khong ghi file nao) — de soan song song nhieu bai
+const iKiem = process.argv.indexOf('--kiem');
+if (iKiem >= 0) {
+  const L = ds.find((x) => x.so === +process.argv[iKiem + 1]);
+  if (!L) { console.log('Khong dung duoc bai ' + process.argv[iKiem + 1] + '\n  ' + loi.join('\n  ')); process.exit(1); }
+  const coAnh = (u) => { if (u && !fs.existsSync(path.join(PUB, u))) loi.push('Bai ' + L.so + ': thieu anh ' + u); };
+  L.data.wuData.forEach((w) => coAnh(w.img));
+  L.data.dialogData.forEach((d) => { coAnh(d.anh); d.nguoi.forEach((n) => coAnh(n.anh)); });
+  L.data.sgkData.forEach((p) => p.cau.forEach((c) => coAnh(c.anh)));
+  console.log('Bai ' + L.so + ': ' + L.T.length + ' tu, ' + L.data.dialogData.length + ' bai khoa, ' + L.npt.length + ' diem NP (' +
+    L.npt.map((g) => g.bt.reduce((a, b) => a + b.cau.length, 0)).join('/') + ' cau), ' + L.data.sgkData.length + ' phan SGK, ' + L.data.mcData.length + ' trac nghiem');
+  const cua = loi.filter((x) => x.indexOf('Bai ' + L.so + ':') === 0);
+  console.log(cua.length ? 'CAN XEM:\n  ' + cua.join('\n  ') : 'Khong co loi.');
+  process.exit(0);
+}
 ds.forEach((L) => { ghiData(L); ghiTrang(L); });
 ghiNpt(ds);
 ghiDataJs(ds);

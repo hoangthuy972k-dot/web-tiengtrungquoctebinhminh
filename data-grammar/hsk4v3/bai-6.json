@@ -1,0 +1,653 @@
+{
+ "/lessons/hsk4v3-bai-6.html": {
+  "points": [
+   {
+    "title": "形容词“厉害” — … dữ dội, … kinh khủng",
+    "errors": [
+     {
+      "wrong": "我很疼得厉害。",
+      "why": "厉害 đã chỉ mức độ cao; 很 chỉ đặt trước 厉害, không đặt trước động từ / tính từ chính.",
+      "right": "我疼得很厉害。"
+     },
+     {
+      "wrong": "他咳嗽得厉害很。",
+      "why": "Phó từ 很 đứng TRƯỚC 厉害, không đứng sau.",
+      "right": "他咳嗽得很厉害。"
+     },
+     {
+      "wrong": "我跑步得很多，腿很厉害。",
+      "why": "Động từ có tân ngữ (跑步) phải lặp động từ; và cái “dữ dội” là cơn đau: 疼得厉害.",
+      "right": "我跑步跑多了，腿疼得很厉害。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… ho dữ lắm.”",
+      "pre": "我还发烧，一直咳嗽，咳得很",
+      "blank": "厉害",
+      "post": "。",
+      "options": [
+       "厉害",
+       "有效",
+       "按时"
+      ],
+      "answer": 0,
+      "explanation": "V + 得 + 很 + 厉害."
+     },
+     {
+      "context": "“… hôm nay chân đau dữ dội.”",
+      "pre": "我昨天跑步跑多了，今天腿疼",
+      "blank": "得",
+      "post": "厉害。",
+      "options": [
+       "得",
+       "的",
+       "地"
+      ],
+      "answer": 0,
+      "explanation": "Bổ ngữ mức độ nối bằng 得."
+     },
+     {
+      "context": "“Món này cay kinh khủng …”",
+      "pre": "这道菜辣得",
+      "blank": "厉害",
+      "post": "，我吃了一口就不敢再吃了。",
+      "options": [
+       "厉害",
+       "好吃",
+       "一点儿"
+      ],
+      "answer": 0,
+      "explanation": "Adj + 得 + 厉害."
+     },
+     {
+      "context": "“Gió thổi mạnh lắm, đợi lát nữa hãy đi.”",
+      "pre": "外面风刮",
+      "blank": "得",
+      "post": "很厉害，咱们等会儿再走吧。",
+      "options": [
+       "得",
+       "了",
+       "着"
+      ],
+      "answer": 0,
+      "explanation": "刮 + 得 + 很厉害."
+     },
+     {
+      "context": "“… mau đi bệnh viện khám đi.” (ôn từ mới)",
+      "pre": "我看你病得很厉害，",
+      "blank": "赶快",
+      "post": "去医院看看吧。",
+      "options": [
+       "赶快",
+       "偶尔",
+       "按时"
+      ],
+      "answer": 0,
+      "explanation": "赶快 + V: giục làm ngay."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bụng tôi đau dữ dội.”",
+      "words": [
+       "我",
+       "肚子",
+       "疼",
+       "得",
+       "很厉害"
+      ],
+      "answer": "我肚子疼得很厉害。",
+      "explanation": "Adj + 得 + 很厉害."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy ho rất dữ.”",
+      "words": [
+       "他",
+       "咳嗽",
+       "咳",
+       "得",
+       "特别厉害"
+      ],
+      "answer": "他咳嗽咳得特别厉害。",
+      "explanation": "Động từ có tân ngữ → lặp động từ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm nay lạnh kinh khủng, mặc thêm áo vào.”",
+      "words": [
+       "今天",
+       "冷",
+       "得",
+       "厉害",
+       "，",
+       "多穿点儿衣服"
+      ],
+      "answer": "今天冷得厉害，多穿点儿衣服。",
+      "explanation": "Adj + 得 + 厉害."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这道菜辣得很厉害，我不敢吃。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: Adj + 得 + 很厉害."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我很疼得厉害。",
+      "isCorrect": false,
+      "correctVersion": "我疼得很厉害。",
+      "explanation": "很 đứng trước 厉害, không đứng trước 疼."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他咳嗽得厉害很。",
+      "isCorrect": false,
+      "correctVersion": "他咳嗽得很厉害。",
+      "explanation": "Phó từ 很 đứng trước 厉害."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Hôm qua tôi ngủ muộn quá, hôm nay đầu đau dữ dội.",
+      "answer": "昨天我睡得太晚了，今天头疼得厉害。",
+      "answerPy": "Zuótiān wǒ shuì de tài wǎn le, jīntiān tóu téng de lìhai.",
+      "explanation": "头 + 疼 + 得 + (很) + 厉害."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Món này cay kinh khủng, có điều tôi vẫn ăn được.",
+      "answer": "这道菜辣得厉害，不过我吃得了。",
+      "answerPy": "Zhè dào cài là de lìhai, búguò wǒ chī de liǎo.",
+      "explanation": "辣得厉害 + ôn 不过 (Bài 2) và V得了 (Bài 4)."
+     }
+    ]
+   },
+   {
+    "title": "固定格式“（没）有什么（好）×的” — có gì mà phải …, chẳng có gì (đáng) …",
+    "errors": [
+     {
+      "wrong": "你跟我有什么好客气。",
+      "why": "Thiếu 的 cuối câu — đây là cấu trúc cố định.",
+      "right": "你跟我有什么好客气的。"
+     },
+     {
+      "wrong": "我没有什么好担心。",
+      "why": "Thiếu 的.",
+      "right": "我没有什么好担心的。"
+     },
+     {
+      "wrong": "这种事没有什么奇怪的吗？",
+      "why": "Câu trần thuật 没有什么……的 không thêm 吗; muốn hỏi tu từ thì dùng 有什么……的？",
+      "right": "这种事有什么奇怪的？"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Cậu với tớ có gì mà phải khách sáo.”",
+      "pre": "你跟我有什么好",
+      "blank": "客气",
+      "post": "的。",
+      "options": [
+       "客气",
+       "厉害",
+       "严重"
+      ],
+      "answer": 0,
+      "explanation": "有什么好 + V + 的."
+     },
+     {
+      "context": "“… chẳng có gì lạ cả.”",
+      "pre": "这种事在网上有很多，没有什么奇怪",
+      "blank": "的",
+      "post": "。",
+      "options": [
+       "的",
+       "了",
+       "吗"
+      ],
+      "answer": 0,
+      "explanation": "Cuối câu bắt buộc có 的."
+     },
+     {
+      "context": "“… chẳng có gì đáng mua.”",
+      "pre": "这家商场里的东西都很一般，没有什么",
+      "blank": "好",
+      "post": "买的。",
+      "options": [
+       "好",
+       "很",
+       "太"
+      ],
+      "answer": 0,
+      "explanation": "好 + V = đáng để làm."
+     },
+     {
+      "context": "“Tớ chỉ bị cảm nhẹ, chẳng có gì phải lo.”",
+      "pre": "我得的只是小感冒，没有什么好",
+      "blank": "担心",
+      "post": "的。",
+      "options": [
+       "担心",
+       "放心",
+       "高兴"
+      ],
+      "answer": 0,
+      "explanation": "没有什么好担心的."
+     },
+     {
+      "context": "“… chẳng có gì phải dọn.”",
+      "pre": "前天刚打扫过，还很干净，",
+      "blank": "没有",
+      "post": "什么好打扫的。",
+      "options": [
+       "没有",
+       "不是",
+       "不"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định dùng 没有什么, không dùng 不什么."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng mình là bạn thân, chẳng có gì phải khách sáo.”",
+      "words": [
+       "咱们",
+       "是",
+       "好朋友",
+       "，",
+       "没有什么",
+       "好",
+       "客气",
+       "的"
+      ],
+      "answer": "咱们是好朋友，没有什么好客气的。",
+      "explanation": "没有什么 + 好 + V + 的."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Vấn đề này đơn giản lắm, có gì mà phải bàn.”",
+      "words": [
+       "这个问题",
+       "很简单",
+       "，",
+       "有什么",
+       "好",
+       "讨论",
+       "的"
+      ],
+      "answer": "这个问题很简单，有什么好讨论的？",
+      "explanation": "有什么好 + V + 的: hỏi tu từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你跟我有什么好客气的。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: câu hỏi tu từ, gạt đi lời cảm ơn."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这部电影很一般，没有什么好看。",
+      "isCorrect": false,
+      "correctVersion": "这部电影很一般，没有什么好看的。",
+      "explanation": "Thiếu 的 cuối câu."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "考试很简单，没有什么好紧张的。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 没有什么好 + V + 的."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Chúng ta là bạn bè, có gì mà phải khách sáo.",
+      "answer": "我们是朋友，有什么好客气的。",
+      "answerPy": "Wǒmen shì péngyou, yǒu shénme hǎo kèqi de.",
+      "explanation": "有什么好客气的."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bộ phim này rất bình thường, chẳng có gì đáng xem.",
+      "answer": "这部电影很一般，没有什么好看的。",
+      "answerPy": "Zhè bù diànyǐng hěn yìbān, méiyǒu shénme hǎokàn de.",
+      "explanation": "没有什么好看的."
+     }
+    ]
+   },
+   {
+    "title": "频率副词“偶尔” — thỉnh thoảng, lâu lâu mới",
+    "errors": [
+     {
+      "wrong": "我吃偶尔辣的菜。",
+      "why": "偶尔 đứng trước động từ.",
+      "right": "我偶尔吃辣的菜。"
+     },
+     {
+      "wrong": "他偶尔经常去图书馆。",
+      "why": "偶尔 và 经常 trái nghĩa, không dùng chung.",
+      "right": "他偶尔去图书馆。"
+     },
+     {
+      "wrong": "她偶尔才生病一次。",
+      "why": "生病 là động từ li hợp: số lần chen vào giữa.",
+      "right": "她偶尔才生一次病。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… lâu lâu mới ốm một lần.”",
+      "pre": "她平时身体不错，",
+      "blank": "偶尔",
+      "post": "才会生一次病。",
+      "options": [
+       "偶尔",
+       "经常",
+       "总是"
+      ],
+      "answer": 0,
+      "explanation": "偶尔 + 才: hiếm khi."
+     },
+     {
+      "context": "“… thỉnh thoảng mới ra rạp.”",
+      "pre": "他经常在家看电影，偶尔",
+      "blank": "才",
+      "post": "去电影院看。",
+      "options": [
+       "才",
+       "就",
+       "都"
+      ],
+      "answer": 0,
+      "explanation": "偶尔才 + V."
+     },
+     {
+      "context": "“… thỉnh thoảng đi ăn ngoài với bạn.”",
+      "pre": "我一般都在学校食堂吃饭，",
+      "blank": "偶尔",
+      "post": "会跟朋友一起出去吃。",
+      "options": [
+       "偶尔",
+       "一直",
+       "按时"
+      ],
+      "answer": 0,
+      "explanation": "一般……，偶尔……"
+     },
+     {
+      "context": "“… có điều thỉnh thoảng cũng muốn ăn đồ ngọt.”",
+      "pre": "我喜欢吃辣的菜，不过偶尔",
+      "blank": "也",
+      "post": "想吃点儿甜的。",
+      "options": [
+       "也",
+       "才",
+       "就"
+      ],
+      "answer": 0,
+      "explanation": "偶尔也 = cũng có lúc."
+     },
+     {
+      "context": "“… uống thuốc đúng giờ.” (phân biệt với 偶尔)",
+      "pre": "医生让她回家以后",
+      "blank": "按时",
+      "post": "吃药，多喝水，多休息。",
+      "options": [
+       "按时",
+       "偶尔",
+       "光"
+      ],
+      "answer": 0,
+      "explanation": "Uống thuốc phải 按时, không thể 偶尔."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi thường đi tàu điện ngầm, thỉnh thoảng mới đi taxi.”",
+      "words": [
+       "我",
+       "一般",
+       "坐地铁",
+       "，",
+       "偶尔",
+       "才",
+       "打车"
+      ],
+      "answer": "我一般坐地铁，偶尔才打车。",
+      "explanation": "一般……，偶尔才……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bình thường anh ấy không uống rượu, thỉnh thoảng uống một chút.”",
+      "words": [
+       "他",
+       "平时",
+       "不喝酒",
+       "，",
+       "偶尔",
+       "会",
+       "喝一点儿"
+      ],
+      "answer": "他平时不喝酒，偶尔会喝一点儿。",
+      "explanation": "偶尔会 + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我吃偶尔辣的菜。",
+      "isCorrect": false,
+      "correctVersion": "我偶尔吃辣的菜。",
+      "explanation": "偶尔 đứng trước động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "她身体很好，偶尔才生一次病。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 偶尔才 + 生一次病."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他每天都偶尔去跑步。",
+      "isCorrect": false,
+      "correctVersion": "他偶尔去跑步。",
+      "explanation": "每天都 (ngày nào cũng) mâu thuẫn với 偶尔."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi thường học ở thư viện, thỉnh thoảng mới học ở ký túc xá.",
+      "answer": "我经常在图书馆学习，偶尔才在宿舍学习。",
+      "answerPy": "Wǒ jīngcháng zài túshūguǎn xuéxí, ǒu'ěr cái zài sù shè xuéxí.",
+      "explanation": "经常 / 一般……，偶尔才……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Anh ấy rất ít khi ốm, thỉnh thoảng mới bị cảm một lần.",
+      "answer": "他很少生病，偶尔才感冒一次。",
+      "answerPy": "Tā hěn shǎo shēngbìng, ǒu'ěr cái gǎnmào yí cì.",
+      "explanation": "偶尔才 + V + 一次."
+     }
+    ]
+   },
+   {
+    "title": "目的复句“……，好……” — …, để (tiện / dễ) …",
+    "errors": [
+     {
+      "wrong": "好让他们放心，我每天给家人打电话。",
+      "why": "Vế 好 nêu mục đích luôn đứng SAU vế chỉ việc làm.",
+      "right": "我每天给家人打电话，好让他们放心。"
+     },
+     {
+      "wrong": "我把电话号码告诉你，好以后有什么事联系我。",
+      "why": "好 phải đứng ngay trước động từ chỉ mục đích (联系), sau trạng ngữ 以后有什么事.",
+      "right": "我把电话号码告诉你，以后有什么事好联系我。"
+     },
+     {
+      "wrong": "你们先了解一下情况，好好做出决定。",
+      "why": "好好 = “cho tốt, cẩn thận”, khác 好 chỉ mục đích; muốn nói “để ra quyết định” chỉ dùng một 好.",
+      "right": "你们先了解一下情况，好做出决定。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… để đưa ra cách điều trị phù hợp.”",
+      "pre": "医生有时还会做一些检查，",
+      "blank": "好",
+      "post": "给出合适的治疗方法。",
+      "options": [
+       "好",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "……，好 + V (mục đích)."
+     },
+     {
+      "context": "“Các bạn tìm hiểu tình hình trước …”",
+      "pre": "你们先了解一下",
+      "blank": "情况",
+      "post": "，好做出决定。",
+      "options": [
+       "情况",
+       "过程",
+       "结果"
+      ],
+      "answer": 0,
+      "explanation": "了解 + 情况."
+     },
+     {
+      "context": "“… sau này có việc gì thì tiện liên lạc với tôi.”",
+      "pre": "我把电话号码告诉你，以后有什么事",
+      "blank": "好",
+      "post": "联系我。",
+      "options": [
+       "好",
+       "再",
+       "又"
+      ],
+      "answer": 0,
+      "explanation": "好 đứng ngay trước động từ 联系."
+     },
+     {
+      "context": "“… để họ yên tâm.”",
+      "pre": "我每天都给家人打电话，好",
+      "blank": "让",
+      "post": "他们放心。",
+      "options": [
+       "让",
+       "被",
+       "把"
+      ],
+      "answer": 0,
+      "explanation": "好 + 让 + ai + Adj."
+     },
+     {
+      "context": "“Khám bệnh ở Trung Quốc phải lấy số trước …” (ôn từ mới)",
+      "pre": "在中国看病要先",
+      "blank": "挂号",
+      "post": "，然后再去找医生。",
+      "options": [
+       "挂号",
+       "打针",
+       "收费"
+      ],
+      "answer": 0,
+      "explanation": "先挂号，然后再看病."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn ngủ sớm đi, để mai còn dậy sớm.”",
+      "words": [
+       "你",
+       "早点儿",
+       "睡",
+       "，",
+       "明天",
+       "好",
+       "早起"
+      ],
+      "answer": "你早点儿睡，明天好早起。",
+      "explanation": "Trạng ngữ 明天 + 好 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Xin để lại địa chỉ, để chúng tôi tiện gửi đồ cho bạn.”",
+      "words": [
+       "请",
+       "留下",
+       "你的地址",
+       "，",
+       "我们",
+       "好",
+       "给你寄东西"
+      ],
+      "answer": "请留下你的地址，我们好给你寄东西。",
+      "explanation": "Chủ ngữ 我们 + 好 + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我把电话号码告诉你，以后有什么事好联系我。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 好 đứng trước 联系."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "好让他们放心，我每天给家人打电话。",
+      "isCorrect": false,
+      "correctVersion": "我每天给家人打电话，好让他们放心。",
+      "explanation": "Vế 好 (mục đích) đặt sau."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你先在大厅休息，我去排队挂号，好节省时间。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: vế cuối 好 + V nêu mục đích."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bạn mang theo hộ chiếu, để tiện đi lấy số.",
+      "answer": "你带上护照，好去挂号。",
+      "answerPy": "Nǐ dài shàng hùzhào, hǎo qù guàhào.",
+      "explanation": "……，好 + V."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi ghi lại các bước nấu món ăn, để lần sau dễ làm.",
+      "answer": "我把做菜的过程写下来，下次好做。",
+      "answerPy": "Wǒ bǎ zuò cài de guòchéng xiě xiàlái, xià cì hǎo zuò.",
+      "explanation": "Trạng ngữ 下次 + 好 + V."
+     }
+    ]
+   }
+  ]
+ }
+}

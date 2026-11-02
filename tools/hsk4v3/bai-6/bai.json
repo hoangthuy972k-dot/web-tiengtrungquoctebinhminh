@@ -1,0 +1,343 @@
+{
+"so": 6,
+"zh": "我陪你去看病",
+"py": "Wǒ péi nǐ qù kàn bìng",
+"vn": "Tớ đưa cậu đi khám bệnh",
+"chuDe": "Kể triệu chứng, làm thủ tục ở bệnh viện, quy trình khám chữa bệnh ở Trung Quốc",
+"icon": "🏥",
+"mucTieu": [
+  "Nghe hiểu và trao đổi thông tin về tình trạng sức khỏe và phương án điều trị.",
+  "Kể lại (nói hoặc viết) quá trình đi khám bệnh của mình.",
+  "Hiểu quy trình cơ bản khi đi khám bệnh ở Trung Quốc."
+],
+
+"wu": [
+  {"img":"wu-A","label":"汗","py":"hàn","letter":"A"},
+  {"img":"wu-B","label":"醒","py":"xǐng","letter":"B"},
+  {"img":"wu-C","label":"护士","py":"hùshi","letter":"C"},
+  {"img":"wu-D","label":"打针","py":"dǎzhēn","letter":"D"},
+  {"img":"wu-E","label":"咳嗽","py":"késou","letter":"E"},
+  {"img":"wu-F","label":"大厅","py":"dàtīng","letter":"F"}
+],
+
+"dialogs": [
+  {"tab":"Gọi điện báo ốm","scene":"在家里 · Ở nhà (Bạch Gia Nguyệt nằm trên giường gọi điện cho Lý Văn)","anh":"kv-1",
+   "nguoi":["白家月","李文"],
+   "preQuiz":[
+     {"q":"李文让白家月做什么？","opts":["在家休息","陪他去医院","去医院检查","给他当翻译"],"ans":2},
+     {"q":"白家月担心什么？","opts":["不知道吃什么药","不知道怎么看病","不知道哪家医院好","身体越来越不舒服"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"喂，李文，我身体不舒服。","vn":"A lô, Lý Văn à, tớ thấy trong người không khỏe."},
+     {"sp":1,"zh":"你怎么了？听你的声音，好像感冒了。","vn":"Cậu sao thế? Nghe giọng cậu hình như bị cảm rồi."},
+     {"sp":0,"zh":"对，我还发烧，一直咳嗽，咳得很厉害。","vn":"Ừ, tớ còn sốt nữa, ho suốt, ho dữ lắm."},
+     {"sp":1,"zh":"那挺严重的，最好赶快去医院检查一下。","vn":"Thế thì khá nặng đấy, tốt nhất cậu mau đi bệnh viện khám đi."},
+     {"sp":0,"zh":"我也这么想，不过我来中国后还没去过医院，不知道怎么在中国的医院看病。","vn":"Tớ cũng nghĩ vậy, có điều từ khi sang Trung Quốc tớ chưa đi bệnh viện lần nào, không biết khám bệnh ở bệnh viện Trung Quốc thế nào."},
+     {"sp":1,"zh":"没关系，我陪你一起去，还能帮你翻译。你在家等一下，我现在就去接你。","vn":"Không sao, tớ đi cùng cậu, còn phiên dịch giúp cậu được nữa. Cậu ở nhà đợi chút, tớ qua đón cậu ngay đây."},
+     {"sp":0,"zh":"太好了！有你陪着，我就放心多了。","vn":"Tốt quá! Có cậu đi cùng, tớ yên tâm hơn nhiều rồi."}],
+   "hoi":[["白家月怎么了？","她身体不舒服，好像感冒了，还发烧，一直咳嗽，咳得很厉害。"],["李文为什么要陪白家月去医院？","因为白家月来中国后还没去过医院，不知道怎么在中国的医院看病，李文陪她去还能帮她翻译。"]],
+   "kelai":"白家月给李文打电话，告诉他自己……，发烧，一直……，还……。李文觉得她病得……，建议她……。不过，白家月来中国后……，不知道……。李文让她在家……，说马上去……，……去医院，还能帮她……。白家月觉得，有……，她就……。",
+   "kelaiMau":"白家月给李文打电话，告诉他自己身体不舒服，发烧，一直咳嗽，还咳得很厉害。李文觉得她病得挺严重的，建议她赶快去医院检查一下。不过，白家月来中国后还没去过医院，不知道怎么在中国的医院看病。李文让她在家等一下，说马上去接她，陪她一起去医院，还能帮她翻译。白家月觉得，有李文陪着，她就放心多了。"},
+
+  {"tab":"Làm thủ tục khám bệnh","scene":"在医院大厅 · Ở sảnh bệnh viện (Lý Văn giúp Bạch Gia Nguyệt làm thủ tục khám bệnh)","anh":"kv-2",
+   "nguoi":["李文",{"ten":"护士","anh":"hushi"},"白家月"],
+   "preQuiz":[
+     {"q":"护士让李文做什么？","opts":["排队等医生","在大厅休息","把护照交给她","在表上写病人的信息"],"ans":3},
+     {"q":"李文要去做什么？","opts":["挂号","买药","办护照","找医生"],"ans":0}],
+   "lines":[
+     {"sp":0,"zh":"护士，您好，我的这位外国朋友生病了，第一次来这里看病，需要怎么做？","vn":"Chào chị y tá, người bạn nước ngoài này của tôi bị ốm, lần đầu đến đây khám bệnh, cần làm thế nào ạ?"},
+     {"sp":1,"zh":"请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。","vn":"Anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân nhé."},
+     {"sp":0,"zh":"我写好了，您看看，这样可以吗？","vn":"Tôi viết xong rồi, chị xem giúp, thế này được chưa ạ?"},
+     {"sp":1,"zh":"没问题，您拿着病人的护照去挂号吧。","vn":"Được rồi, anh cầm hộ chiếu của bệnh nhân đi lấy số nhé."},
+     {"sp":0,"zh":"家月，我去排队挂号，你先在大厅休息，别着急。","vn":"Gia Nguyệt, tớ đi xếp hàng lấy số, cậu ngồi nghỉ ở sảnh trước, đừng sốt ruột nhé."},
+     {"sp":2,"zh":"好的，真是太谢谢你了！","vn":"Ừ, thật sự cảm ơn cậu nhiều lắm!"},
+     {"sp":0,"zh":"你跟我有什么好客气的。","vn":"Cậu với tớ thì có gì mà phải khách sáo."}],
+   "hoi":[["李文要在表上写什么？","他要在表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。"],["李文让白家月做什么？","李文让白家月先在大厅休息，别着急。"]]},
+
+  {"tab":"Một lần đi khám bệnh","scene":"一次看病的经历 · Một lần đi khám bệnh (Bạch Gia Nguyệt bị cúm)","anh":"kv-3","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"白家月告诉医生什么了？","opts":["她总出汗","她吃过药了","她体温很低","她一直头疼"],"ans":3},
+     {"q":"第二天，白家月怎么样了？","opts":["头更疼了","更不舒服了","体温变高了","不那么难受了"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"下午白家月去看病了，她告诉医生，自己平时身体不错，偶尔才会生一次病。","vn":"Buổi chiều Bạch Gia Nguyệt đi khám bệnh, cô ấy nói với bác sĩ rằng bình thường mình khá khỏe, lâu lâu mới ốm một lần."},
+     {"sp":0,"zh":"这次她病得很厉害，头也一直疼，身上一点儿力气都没有。","vn":"Lần này cô ấy ốm rất nặng, đầu cũng đau suốt, người chẳng còn chút sức lực nào."},
+     {"sp":0,"zh":"医生给她做了检查，检查结果出来后，发现她得了比较严重的流行性感冒。","vn":"Bác sĩ khám cho cô ấy, sau khi có kết quả kiểm tra thì phát hiện cô ấy bị cúm khá nặng."},
+     {"sp":0,"zh":"医生告诉她，现在需要把体温降下来，光吃药恐怕不够，打针会更有效。","vn":"Bác sĩ nói với cô ấy rằng bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn."},
+     {"sp":0,"zh":"医生还让她回家以后按时吃药，多喝水，多休息。","vn":"Bác sĩ còn dặn cô ấy về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều."},
+     {"sp":0,"zh":"晚上，白家月睡觉时出了一身汗。","vn":"Buổi tối, Bạch Gia Nguyệt ngủ toát mồ hôi khắp người."},
+     {"sp":0,"zh":"第二天醒来时，她感觉头不那么疼了，体温也低了一些，身体不那么难受了。","vn":"Hôm sau lúc tỉnh dậy, cô ấy thấy đầu không còn đau như trước, nhiệt độ cũng hạ đi một chút, người không còn khó chịu như trước nữa."}],
+   "hoi":[["白家月得了什么病？","她得了比较严重的流行性感冒。"],["医生让白家月做什么？","医生让她打针，回家以后按时吃药，多喝水，多休息。"]],
+   "kelai":"下午白家月去看病了，她告诉医生，自己……，偶尔……。这次她……，头也……，身上……。医生给她……，检查结果……，发现她得了……。医生建议她……，因为那样……。医生还让她回家以后……，多……，多……。晚上，白家月睡觉时……。第二天醒来时，她感觉头……，体温……，身体……。",
+   "kelaiMau":"下午白家月去看病了，她告诉医生，自己平时身体不错，偶尔才会生一次病。这次她病得很厉害，头也一直疼，身上一点儿力气都没有。医生给她做了检查，检查结果出来后，发现她得了比较严重的流行性感冒。医生建议她打针，因为那样会更有效。医生还让她回家以后按时吃药，多喝水，多休息。晚上，白家月睡觉时出了一身汗。第二天醒来时，她感觉头不那么疼了，体温也低了一些，身体不那么难受了。"},
+
+  {"tab":"Khám bệnh ở Trung Quốc","scene":"怎么在中国看病 · Đi khám bệnh ở Trung Quốc như thế nào","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"关于国际部里的医生，下列哪项正确？","opts":["更专业","是外国医生","年龄比较大","一般会说英文"],"ans":3},
+     {"q":"根据课文，在中国看病，怎么做能顺利得到治疗？","opts":["找一个翻译","去国际部看病","按照医生说的做","跟中国朋友一起去"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"外国人第一次在中国看病，可能会担心语言不通，或者觉得看病的过程和自己的国家不同。","vn":"Người nước ngoài lần đầu đi khám bệnh ở Trung Quốc có thể sẽ lo bất đồng ngôn ngữ, hoặc thấy quy trình khám bệnh khác với nước mình."},
+     {"sp":0,"zh":"其实，这些问题都有办法解决。","vn":"Thật ra, những vấn đề này đều có cách giải quyết."},
+     {"sp":0,"zh":"有的医院有国际部，那里的医生一般会说英文，交流比较方便，但是国际部的收费比较高。","vn":"Có bệnh viện có khu quốc tế, bác sĩ ở đó thường biết nói tiếng Anh, giao tiếp khá thuận tiện, nhưng phí ở khu quốc tế khá cao."},
+     {"sp":0,"zh":"如果没有特别需要，可以选择普通部，用简单的中文和医生交流。","vn":"Nếu không có nhu cầu đặc biệt, có thể chọn khu thường, dùng tiếng Trung đơn giản để nói chuyện với bác sĩ."},
+     {"sp":0,"zh":"在中国看病要先挂号，然后再去找医生。","vn":"Khám bệnh ở Trung Quốc phải lấy số trước, rồi mới đi gặp bác sĩ."},
+     {"sp":0,"zh":"医生会问病人的情况，有时还会做一些检查，好给出合适的治疗方法。","vn":"Bác sĩ sẽ hỏi tình hình của bệnh nhân, có khi còn làm một số xét nghiệm, để đưa ra cách điều trị phù hợp."},
+     {"sp":0,"zh":"只要按照医生说的一步一步来，一般都可以顺利得到治疗。","vn":"Chỉ cần làm từng bước theo lời bác sĩ, thường đều được điều trị suôn sẻ."}],
+   "hoi":[["外国人第一次在中国看病，可能会担心什么问题？","可能会担心语言不通，或者觉得看病的过程和自己的国家不同。"],["在中国的医院，看病的过程是怎样的？","先挂号，然后再去找医生。医生会问病人的情况，有时还会做一些检查，好给出合适的治疗方法。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"形容词“厉害”","tenVn":"Tính từ 「厉害」 làm bổ ngữ mức độ — … dữ dội, … kinh khủng",
+  "cauTruc":["Động từ + 得 + (phó từ 很 / 太 / 特别) + 厉害","Tính từ + 得 + 厉害"],
+  "giaiThich":"「厉害」 đặt sau động từ hoặc tính từ, nối bằng 「得」, biểu thị MỨC ĐỘ RẤT CAO — giống “… dữ dội / … kinh khủng / … quá chừng” trong tiếng Việt. Hay dùng cho cảm giác khó chịu hoặc hiện tượng mạnh: 疼得厉害, 咳得很厉害, 辣得厉害, 风刮得很厉害. Nếu động từ có tân ngữ thì lặp lại động từ: 咳嗽，咳得很厉害; 跑步跑多了. Mẹo cho người Việt: “đau lắm” → 很疼; “đau dữ lắm, đau kinh khủng” → 疼得厉害 (mạnh hơn). Trước 厉害 có thể thêm 很 / 太 / 特别, nhưng KHÔNG đặt 很 trước động từ / tính từ chính (✗ 很疼得厉害). Phân biệt: 厉害 làm vị ngữ một mình (你真厉害！) lại mang nghĩa “giỏi, đỉnh”.",
+  "viDu":[["我还发烧，一直咳嗽，咳得很厉害。","Tớ còn sốt nữa, ho suốt, ho dữ lắm."],["我昨天跑步跑多了，今天腿疼得厉害。","Hôm qua tôi chạy bộ nhiều quá, hôm nay chân đau dữ dội."],["这道菜辣得厉害，我吃了一口就不敢再吃了。","Món này cay kinh khủng, tôi ăn một miếng là không dám ăn nữa."],["我肚子疼得厉害，不仅吃不下饭，甚至连水都喝不了。","Bụng tôi đau dữ dội, không những không ăn nổi cơm, thậm chí nước cũng không uống được. (ôn 不仅、甚至 – Bài 3; V不了 – Bài 4)"]],
+  "loi":[["我很疼得厉害。","厉害 đã chỉ mức độ cao; 很 chỉ đặt trước 厉害, không đặt trước động từ / tính từ chính.","我疼得很厉害。"],["他咳嗽得厉害很。","Phó từ 很 đứng TRƯỚC 厉害, không đứng sau.","他咳嗽得很厉害。"],["我跑步得很多，腿很厉害。","Động từ có tân ngữ (跑步) phải lặp động từ; và cái “dữ dội” là cơn đau: 疼得厉害.","我跑步跑多了，腿疼得很厉害。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["我还发烧，一直咳嗽，咳得很","。"],"dap":[["厉害"]],"chon":["厉害","有效","按时"],"goiY":"“… ho dữ lắm.”","giai":"V + 得 + 很 + 厉害."},
+     {"kieu":"dien","phan":["我昨天跑步跑多了，今天腿疼","厉害。"],"dap":[["得"]],"chon":["得","的","地"],"goiY":"“… hôm nay chân đau dữ dội.”","giai":"Bổ ngữ mức độ nối bằng 得."},
+     {"kieu":"dien","phan":["这道菜辣得","，我吃了一口就不敢再吃了。"],"dap":[["厉害"]],"chon":["厉害","好吃","一点儿"],"goiY":"“Món này cay kinh khủng …”","giai":"Adj + 得 + 厉害."},
+     {"kieu":"dien","phan":["外面风刮","很厉害，咱们等会儿再走吧。"],"dap":[["得"]],"chon":["得","了","着"],"goiY":"“Gió thổi mạnh lắm, đợi lát nữa hãy đi.”","giai":"刮 + 得 + 很厉害."},
+     {"kieu":"dien","phan":["我看你病得很厉害，","去医院看看吧。"],"dap":[["赶快"]],"chon":["赶快","偶尔","按时"],"goiY":"“… mau đi bệnh viện khám đi.” (ôn từ mới)","giai":"赶快 + V: giục làm ngay."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["我","肚子","疼","得","很厉害"],"dap":["我肚子疼得很厉害。"],"goiY":"Bụng tôi đau dữ dội.","giai":"Adj + 得 + 很厉害."},
+     {"kieu":"xep","manh":["他","咳嗽","咳","得","特别厉害"],"dap":["他咳嗽咳得特别厉害。"],"goiY":"Anh ấy ho rất dữ.","giai":"Động từ có tân ngữ → lặp động từ."},
+     {"kieu":"xep","manh":["今天","冷","得","厉害","，","多穿点儿衣服"],"dap":["今天冷得厉害，多穿点儿衣服。"],"goiY":"Hôm nay lạnh kinh khủng, mặc thêm áo vào.","giai":"Adj + 得 + 厉害."},
+     {"kieu":"dungsai","cau":"这道菜辣得很厉害，我不敢吃。","dung":true,"giai":"Đúng: Adj + 得 + 很厉害."},
+     {"kieu":"dungsai","cau":"我很疼得厉害。","dung":false,"sua":"我疼得很厉害。","giai":"很 đứng trước 厉害, không đứng trước 疼."},
+     {"kieu":"dungsai","cau":"他咳嗽得厉害很。","dung":false,"sua":"他咳嗽得很厉害。","giai":"Phó từ 很 đứng trước 厉害."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 61)","huongDan":"Viết phần còn thiếu của B, có dùng 「……得（很）厉害」","cau":[
+     {"kieu":"vandung","de":"A：外面刮风了，咱们是现在走还是过一会儿再走？ B：我看＿＿＿，咱们等会儿再走吧。","goiY":"Nói: gió thổi rất mạnh (刮……得很厉害)","mau":"风刮得很厉害","can":[["厉害"],["得"]]},
+     {"kieu":"vandung","de":"A：我已经咳嗽好几天了，今天还有点儿发烧。 B：我看你＿＿＿，快去医院看看吧。","goiY":"Nói: bạn ốm nặng lắm (病得……厉害)","mau":"病得很厉害","can":[["厉害"],["得"]]},
+     {"kieu":"vandung","de":"A：你怎么了？哪儿不舒服吗？ B：我刚吃完冰激凌，现在＿＿＿。","goiY":"Nói: bây giờ đau bụng dữ dội (肚子……)","mau":"肚子疼得厉害","can":[["厉害"],["得"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Hôm qua tôi ngủ muộn quá, hôm nay đầu đau dữ dội.","dap":["昨天我睡得太晚了，今天头疼得厉害。","我昨天睡得太晚了，今天头疼得很厉害。"],"giai":"头 + 疼 + 得 + (很) + 厉害."},
+     {"kieu":"dich","vn":"Món này cay kinh khủng, có điều tôi vẫn ăn được.","dap":["这道菜辣得厉害，不过我吃得了。","这个菜辣得很厉害，不过我还吃得了。"],"giai":"辣得厉害 + ôn 不过 (Bài 2) và V得了 (Bài 4)."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể một lần em bị ốm, có dùng 「V / Adj + 得 + 厉害」","mau":"上个月我感冒了，咳嗽咳得很厉害，晚上都睡不好觉。","can":[["厉害"],["得"]]}]}
+  ]},
+
+ {"so":"2","ten":"固定格式“（没）有什么（好）×的”","tenVn":"Cấu trúc cố định 「(没)有什么(好)×的」 — có gì mà phải …, chẳng có gì (đáng) …",
+  "cauTruc":["(A 跟 B) + 有什么 + 好 + động từ + 的 (câu hỏi tu từ)","没有什么 + (好) + động từ / tính từ + 的","没有什么 + 不 + động từ (不敢 / 不能…) + 的"],
+  "giaiThich":"Cấu trúc này biểu thị KHÔNG CẦN THIẾT làm việc gì, hoặc không có lý do để có cảm giác / trạng thái nào đó. 「有什么好……的」 là câu hỏi tu từ (không cần trả lời) = “có gì mà phải …”; 「没有什么（好）……的」 là câu trần thuật = “chẳng có gì phải / đáng …”. 「好」 ở đây = “đáng, cần” (đáng để làm), sau nó là động từ: 好客气, 好担心, 好买, 好打扫. Không có 好 thì sau có thể là tính từ: 没有什么奇怪的. Thêm 「不」: 没有什么不敢的 = chẳng có gì là không dám. Mẹo cho người Việt: thấy “có gì mà phải khách sáo / lo / sợ” → 有什么好客气 / 担心 / 怕的. Dùng khi gạt đi lời cảm ơn, an ủi người khác, hoặc chê nhẹ (没有什么好看的). Nhớ: chữ 「的」 cuối câu là BẮT BUỘC.",
+  "viDu":[["你跟我有什么好客气的。","Cậu với tớ thì có gì mà phải khách sáo."],["这种事在网上有很多，没有什么奇怪的。","Chuyện kiểu này trên mạng có nhiều lắm, chẳng có gì lạ cả."],["我觉得这家商场里的东西都很一般，没有什么好买的。","Tôi thấy đồ trong trung tâm thương mại này đều bình thường, chẳng có gì đáng mua."],["考试并不难，没有什么好担心的，再说你已经准备得很好了。","Kỳ thi thật ra không khó, chẳng có gì phải lo, hơn nữa bạn đã chuẩn bị rất tốt rồi. (ôn 并 – Bài 2; 再说 – Bài 4)"]],
+  "loi":[["你跟我有什么好客气。","Thiếu 的 cuối câu — đây là cấu trúc cố định.","你跟我有什么好客气的。"],["我没有什么好担心。","Thiếu 的.","我没有什么好担心的。"],["这种事没有什么奇怪的吗？","Câu trần thuật 没有什么……的 không thêm 吗; muốn hỏi tu từ thì dùng 有什么……的？","这种事有什么奇怪的？"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["你跟我有什么好","的。"],"dap":[["客气"]],"chon":["客气","厉害","严重"],"goiY":"“Cậu với tớ có gì mà phải khách sáo.”","giai":"有什么好 + V + 的."},
+     {"kieu":"dien","phan":["这种事在网上有很多，没有什么奇怪","。"],"dap":[["的"]],"chon":["的","了","吗"],"goiY":"“… chẳng có gì lạ cả.”","giai":"Cuối câu bắt buộc có 的."},
+     {"kieu":"dien","phan":["这家商场里的东西都很一般，没有什么","买的。"],"dap":[["好"]],"chon":["好","很","太"],"goiY":"“… chẳng có gì đáng mua.”","giai":"好 + V = đáng để làm."},
+     {"kieu":"dien","phan":["我得的只是小感冒，没有什么好","的。"],"dap":[["担心"]],"chon":["担心","放心","高兴"],"goiY":"“Tớ chỉ bị cảm nhẹ, chẳng có gì phải lo.”","giai":"没有什么好担心的."},
+     {"kieu":"dien","phan":["前天刚打扫过，还很干净，","什么好打扫的。"],"dap":[["没有"]],"chon":["没有","不是","不"],"goiY":"“… chẳng có gì phải dọn.”","giai":"Phủ định dùng 没有什么, không dùng 不什么."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["咱们","是","好朋友","，","没有什么","好","客气","的"],"dap":["咱们是好朋友，没有什么好客气的。"],"goiY":"Chúng mình là bạn thân, chẳng có gì phải khách sáo.","giai":"没有什么 + 好 + V + 的."},
+     {"kieu":"xep","manh":["这个问题","很简单","，","有什么","好","讨论","的"],"dap":["这个问题很简单，有什么好讨论的？","这个问题很简单，有什么好讨论的。"],"goiY":"Vấn đề này đơn giản lắm, có gì mà phải bàn.","giai":"有什么好 + V + 的: hỏi tu từ."},
+     {"kieu":"dungsai","cau":"你跟我有什么好客气的。","dung":true,"giai":"Đúng: câu hỏi tu từ, gạt đi lời cảm ơn."},
+     {"kieu":"dungsai","cau":"这部电影很一般，没有什么好看。","dung":false,"sua":"这部电影很一般，没有什么好看的。","giai":"Thiếu 的 cuối câu."},
+     {"kieu":"dungsai","cau":"考试很简单，没有什么好紧张的。","dung":true,"giai":"Đúng: 没有什么好 + V + 的."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 63)","huongDan":"Viết phần còn thiếu của B, có dùng 「（没）有什么（好）×的」","cau":[
+     {"kieu":"vandung","de":"A：你怎么这么快就打扫完房间了？ B：前天刚打扫过，还很干净，＿＿＿。","goiY":"Nói: chẳng có gì phải dọn","mau":"没有什么好打扫的","can":[["没有什么","没什么"],["的"]]},
+     {"kieu":"vandung","de":"A：你的病严重吗？我特别担心。 B：放心吧，我得的只是小感冒，＿＿＿。","goiY":"Nói: chẳng có gì phải lo","mau":"没有什么好担心的","can":[["没有什么","没什么"],["的"]]},
+     {"kieu":"vandung","de":"A：你敢一个人看这个电影吗？我陪你一起看吧。 B：谢谢你，＿＿＿。","goiY":"Nói: chẳng có gì là không dám (没有什么不……的)","mau":"没有什么不敢的","can":[["没有什么","没什么"],["的"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Chúng ta là bạn bè, có gì mà phải khách sáo.","dap":["我们是朋友，有什么好客气的。","咱们是朋友，有什么好客气的？"],"giai":"有什么好客气的."},
+     {"kieu":"dich","vn":"Bộ phim này rất bình thường, chẳng có gì đáng xem.","dap":["这部电影很一般，没有什么好看的。","这个电影很一般，没什么好看的。"],"giai":"没有什么好看的."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Bạn em sắp thi HSK 4 và rất lo; hãy an ủi bạn bằng 「没有什么好……的」, kèm một lý do","mau":"你准备得那么好，没有什么好担心的，再说离考试还有一个月，来得及。","can":[["什么"],["的"]]}]}
+  ]},
+
+ {"so":"3","ten":"频率副词“偶尔”","tenVn":"Phó từ tần suất 「偶尔」 — thỉnh thoảng, lâu lâu mới",
+  "cauTruc":["Chủ ngữ + 偶尔 + (才 / 会 / 也) + động từ","平时 / 一般 / 经常……，偶尔（才 / 也）……"],
+  "giaiThich":"「偶尔」 cho biết hành động / tình huống xảy ra RẤT ÍT LẦN. Hay dùng theo cặp đối lập: vế trước nói việc thường làm (一般, 平时, 经常), vế sau nói việc lâu lâu mới làm (偶尔才…… / 偶尔会…… / 偶尔也……). 「才」 nhấn mạnh “hiếm khi”, 「也」 nhấn mạnh “cũng có lúc”. Vị trí: trước động từ (sau chủ ngữ hoặc đầu câu), KHÔNG đứng sau động từ. Thang tần suất: 总是 > 经常 > 有时候 > 偶尔 > 从来不. Hán Việt “ngẫu nhĩ”; đừng nhầm với 偶然 (ngẫu nhiên, tình cờ). Chú ý động từ li hợp: 生一次病 (không nói 生病一次).",
+  "viDu":[["她告诉医生，自己平时身体不错，偶尔才会生一次病。","Cô ấy nói với bác sĩ rằng bình thường mình khá khỏe, lâu lâu mới ốm một lần."],["他经常在家看电影，偶尔才去电影院看。","Anh ấy hay xem phim ở nhà, thỉnh thoảng mới ra rạp xem."],["我一般都在学校食堂吃饭，偶尔会跟朋友一起出去吃。","Tôi thường ăn ở nhà ăn của trường, thỉnh thoảng đi ăn ngoài với bạn."],["我和室友平时各做各的饭，偶尔才一起出去吃。","Tôi và bạn cùng phòng bình thường ai nấu cơm nấy, thỉnh thoảng mới cùng ra ngoài ăn. (ôn 各V各的 – Bài 5 · điểm 3)"]],
+  "loi":[["我吃偶尔辣的菜。","偶尔 đứng trước động từ.","我偶尔吃辣的菜。"],["他偶尔经常去图书馆。","偶尔 và 经常 trái nghĩa, không dùng chung.","他偶尔去图书馆。"],["她偶尔才生病一次。","生病 là động từ li hợp: số lần chen vào giữa.","她偶尔才生一次病。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["她平时身体不错，","才会生一次病。"],"dap":[["偶尔"]],"chon":["偶尔","经常","总是"],"goiY":"“… lâu lâu mới ốm một lần.”","giai":"偶尔 + 才: hiếm khi."},
+     {"kieu":"dien","phan":["他经常在家看电影，偶尔","去电影院看。"],"dap":[["才"]],"chon":["才","就","都"],"goiY":"“… thỉnh thoảng mới ra rạp.”","giai":"偶尔才 + V."},
+     {"kieu":"dien","phan":["我一般都在学校食堂吃饭，","会跟朋友一起出去吃。"],"dap":[["偶尔"]],"chon":["偶尔","一直","按时"],"goiY":"“… thỉnh thoảng đi ăn ngoài với bạn.”","giai":"一般……，偶尔……"},
+     {"kieu":"dien","phan":["我喜欢吃辣的菜，不过偶尔","想吃点儿甜的。"],"dap":[["也"]],"chon":["也","才","就"],"goiY":"“… có điều thỉnh thoảng cũng muốn ăn đồ ngọt.”","giai":"偶尔也 = cũng có lúc."},
+     {"kieu":"dien","phan":["医生让她回家以后","吃药，多喝水，多休息。"],"dap":[["按时"]],"chon":["按时","偶尔","光"],"goiY":"“… uống thuốc đúng giờ.” (phân biệt với 偶尔)","giai":"Uống thuốc phải 按时, không thể 偶尔."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["我","一般","坐地铁","，","偶尔","才","打车"],"dap":["我一般坐地铁，偶尔才打车。"],"goiY":"Tôi thường đi tàu điện ngầm, thỉnh thoảng mới đi taxi.","giai":"一般……，偶尔才……"},
+     {"kieu":"xep","manh":["他","平时","不喝酒","，","偶尔","会","喝一点儿"],"dap":["他平时不喝酒，偶尔会喝一点儿。"],"goiY":"Bình thường anh ấy không uống rượu, thỉnh thoảng uống một chút.","giai":"偶尔会 + V."},
+     {"kieu":"dungsai","cau":"我吃偶尔辣的菜。","dung":false,"sua":"我偶尔吃辣的菜。","giai":"偶尔 đứng trước động từ."},
+     {"kieu":"dungsai","cau":"她身体很好，偶尔才生一次病。","dung":true,"giai":"Đúng: 偶尔才 + 生一次病."},
+     {"kieu":"dungsai","cau":"他每天都偶尔去跑步。","dung":false,"sua":"他偶尔去跑步。","giai":"每天都 (ngày nào cũng) mâu thuẫn với 偶尔."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 65)","huongDan":"Hoàn thành câu với 「偶尔」 và từ trong ngoặc","cau":[
+     {"kieu":"vandung","de":"我一般坐公交车，＿＿＿来学校。（自行车）","goiY":"Thỉnh thoảng đạp xe đạp","mau":"偶尔骑自行车","can":[["偶尔"],["自行车"]]},
+     {"kieu":"vandung","de":"我喜欢吃辣的菜，不过＿＿＿。（甜）","goiY":"Thỉnh thoảng cũng muốn ăn chút đồ ngọt","mau":"偶尔也想吃点儿甜的","can":[["偶尔"],["甜"]]},
+     {"kieu":"vandung","de":"我一般在网上买东西，＿＿＿。（商场）","goiY":"Thỉnh thoảng mới đến trung tâm thương mại mua","mau":"偶尔才去商场买","can":[["偶尔"],["商场"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Tôi thường học ở thư viện, thỉnh thoảng mới học ở ký túc xá.","dap":["我经常在图书馆学习，偶尔才在宿舍学习。","我一般在图书馆学习，偶尔才在宿舍学习。"],"giai":"经常 / 一般……，偶尔才……"},
+     {"kieu":"dich","vn":"Anh ấy rất ít khi ốm, thỉnh thoảng mới bị cảm một lần.","dap":["他很少生病，偶尔才感冒一次。","他很少生病，偶尔才会感冒一次。"],"giai":"偶尔才 + V + 一次."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể thói quen của em: việc thường làm và việc thỉnh thoảng mới làm, có dùng 「一般……，偶尔……」","mau":"我一般在家做饭，偶尔才去饭馆吃，因为在家做饭既便宜又健康。","can":[["偶尔"]]}]}
+  ]},
+
+ {"so":"4","ten":"目的复句“……，好……”","tenVn":"Câu phức mục đích 「……，好……」 — …, để (tiện / dễ) …",
+  "cauTruc":["Vế 1 (việc làm)，(chủ ngữ / trạng ngữ) + 好 + vế 2 (mục đích)"],
+  "giaiThich":"Vế trước nói một hành động / tình huống, vế sau bắt đầu bằng 「好」 nói MỤC ĐÍCH: làm việc ở vế trước ĐỂ việc ở vế sau dễ dàng / có thể thực hiện. 「好」 ở đây = “để, để tiện” (≈ 以便 trong văn viết), đứng ngay trước động từ của vế sau; nếu vế sau có chủ ngữ hoặc trạng ngữ thời gian thì 好 đứng sau chúng: 以后有什么事好联系我; 明天好陪你出去玩. So sánh với 为了 (HSK 3): 为了 nêu mục đích ở ĐẦU câu (为了……，……), còn 好 nêu mục đích ở CUỐI câu. Mẹo cho người Việt: “…, để còn …” → ……，好……. Chú ý 好 này đọc hǎo, không mang nghĩa “tốt”, và cũng khác 好好 (cẩn thận, chăm chỉ).",
+  "viDu":[["医生有时还会做一些检查，好给出合适的治疗方法。","Bác sĩ có lúc còn làm một số xét nghiệm, để đưa ra cách điều trị phù hợp."],["你们先了解一下情况，好做出决定。","Các bạn tìm hiểu tình hình trước đã, để còn ra quyết định."],["我把电话号码告诉你，以后有什么事好联系我。","Tôi cho bạn số điện thoại, sau này có việc gì thì tiện liên lạc với tôi."],["你早点儿出发，好来得及去机场接朋友。","Bạn xuất phát sớm một chút, để kịp ra sân bay đón bạn. (ôn 来得及 – Bài 4 · điểm 4)"]],
+  "loi":[["好让他们放心，我每天给家人打电话。","Vế 好 nêu mục đích luôn đứng SAU vế chỉ việc làm.","我每天给家人打电话，好让他们放心。"],["我把电话号码告诉你，好以后有什么事联系我。","好 phải đứng ngay trước động từ chỉ mục đích (联系), sau trạng ngữ 以后有什么事.","我把电话号码告诉你，以后有什么事好联系我。"],["你们先了解一下情况，好好做出决定。","好好 = “cho tốt, cẩn thận”, khác 好 chỉ mục đích; muốn nói “để ra quyết định” chỉ dùng một 好.","你们先了解一下情况，好做出决定。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["医生有时还会做一些检查，","给出合适的治疗方法。"],"dap":[["好"]],"chon":["好","就","才"],"goiY":"“… để đưa ra cách điều trị phù hợp.”","giai":"……，好 + V (mục đích)."},
+     {"kieu":"dien","phan":["你们先了解一下","，好做出决定。"],"dap":[["情况"]],"chon":["情况","过程","结果"],"goiY":"“Các bạn tìm hiểu tình hình trước …”","giai":"了解 + 情况."},
+     {"kieu":"dien","phan":["我把电话号码告诉你，以后有什么事","联系我。"],"dap":[["好"]],"chon":["好","再","又"],"goiY":"“… sau này có việc gì thì tiện liên lạc với tôi.”","giai":"好 đứng ngay trước động từ 联系."},
+     {"kieu":"dien","phan":["我每天都给家人打电话，好","他们放心。"],"dap":[["让"]],"chon":["让","被","把"],"goiY":"“… để họ yên tâm.”","giai":"好 + 让 + ai + Adj."},
+     {"kieu":"dien","phan":["在中国看病要先","，然后再去找医生。"],"dap":[["挂号"]],"chon":["挂号","打针","收费"],"goiY":"“Khám bệnh ở Trung Quốc phải lấy số trước …” (ôn từ mới)","giai":"先挂号，然后再看病."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["你","早点儿","睡","，","明天","好","早起"],"dap":["你早点儿睡，明天好早起。"],"goiY":"Bạn ngủ sớm đi, để mai còn dậy sớm.","giai":"Trạng ngữ 明天 + 好 + V."},
+     {"kieu":"xep","manh":["请","留下","你的地址","，","我们","好","给你寄东西"],"dap":["请留下你的地址，我们好给你寄东西。"],"goiY":"Xin để lại địa chỉ, để chúng tôi tiện gửi đồ cho bạn.","giai":"Chủ ngữ 我们 + 好 + V."},
+     {"kieu":"dungsai","cau":"我把电话号码告诉你，以后有什么事好联系我。","dung":true,"giai":"Đúng: 好 đứng trước 联系."},
+     {"kieu":"dungsai","cau":"好让他们放心，我每天给家人打电话。","dung":false,"sua":"我每天给家人打电话，好让他们放心。","giai":"Vế 好 (mục đích) đặt sau."},
+     {"kieu":"dungsai","cau":"你先在大厅休息，我去排队挂号，好节省时间。","dung":true,"giai":"Đúng: vế cuối 好 + V nêu mục đích."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 67)","huongDan":"Hoàn thành câu, dùng 「……，好……」","cau":[
+     {"kieu":"vandung","de":"我每天都给家人打电话，＿＿＿。","goiY":"Mục đích: để gia đình yên tâm","mau":"好让他们放心","can":[["好"]]},
+     {"kieu":"vandung","de":"你要早点儿准备好材料，＿＿＿。","goiY":"Mục đích: để trước cuộc họp đưa giám đốc xem","mau":"好在开会前给经理看一下","can":[["好"]]},
+     {"kieu":"vandung","de":"我今天就把工作做完，明天＿＿＿。","goiY":"Mục đích: để mai đi chơi với bạn","mau":"好陪你出去玩","can":[["好"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Bạn mang theo hộ chiếu, để tiện đi lấy số.","dap":["你带上护照，好去挂号。","你把护照带上，好去挂号。"],"giai":"……，好 + V."},
+     {"kieu":"dich","vn":"Tôi ghi lại các bước nấu món ăn, để lần sau dễ làm.","dap":["我把做菜的过程写下来，下次好做。","我把做菜的过程记下来，下次好做。"],"giai":"Trạng ngữ 下次 + 好 + V."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Nói một việc em chuẩn bị trước khi đi khám bệnh hoặc đi du lịch và mục đích của nó, có dùng 「……，好……」","mau":"去医院以前，我先在网上挂了号，好不用排队，再说也能节省很多时间。","can":[["好"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 67).","dapSgk":true,"tu":["地址","咳嗽","赶快","护士","严重"],"cau":[
+   {"s":"咱们过去问问＿＿，看牙应该去几楼。","dap":["护士"]},
+   {"s":"我这两天有点儿＿＿，不知道是不是感冒了。","dap":["咳嗽"]},
+   {"s":"把你的＿＿给我吧，我给你寄点儿东西。","dap":["地址"]},
+   {"s":"这个问题很＿＿，我们必须马上想办法解决。","dap":["严重"]},
+   {"s":"你都发烧好几天了，＿＿去医院检查一下吧。","dap":["赶快"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại).","dapSgk":true,"tu":["光","醒","有效","过程","情况"],"cau":[
+   {"s":"A：这道菜是怎么做的？　B：下次我把做菜的＿＿拍下来发给你。","dap":["过程"]},
+   {"s":"A：你今天怎么这么饿？　B：白天太忙了，＿＿喝了点儿水，一口饭都没吃。","dap":["光"]},
+   {"s":"A：经理叫你过去，要了解一下最近的工作＿＿。　B：好的，我现在就去他的办公室。","dap":["情况"]},
+   {"s":"A：我早上给你打电话，你怎么没接啊？　B：昨天睡得太晚了，今天10点才＿＿。","dap":["醒"]},
+   {"s":"A：你觉得看电影学中文怎么样？　B：我觉得这种方法很＿＿，不但能学语言，还能了解中国文化。","dap":["有效"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn (sách trang 68).","dapSgk":true,"tu":["按时吃药","帮你翻译","如果感觉身体不舒服","检查结果出来以后"],"cau":[
+   {"s":"＿＿，最好赶快去医院看看。第一次在中国的医院看病，可以先问护士应该怎么做。一般来说，顺序是先挂号，然后去找医生看病。要是怕听不懂医生说的话，可以找个中国朋友陪你一起去医院，＿＿。看病时，医生会先问你哪儿不舒服，然后给你做一些检查。＿＿，医生会给出治疗的方法。按照医生说的做，＿＿，多休息，病就会好得更快。","dap":["如果感觉身体不舒服","帮你翻译","检查结果出来以后","按时吃药"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (đáp án của sách chỉ là gợi ý — câu của em đúng ngữ pháp, hợp tranh là đạt).","cau":[
+   {"anh":"bt-1","s":"","tu":"排队","dap":"他们正在排队办入住。","giai":"正在 + 排队 + V: xếp hàng để làm gì (办入住 = làm thủ tục nhận phòng)."},
+   {"anh":"bt-2","s":"","tu":"体温","dap":"医生想看看她的体温是多少。","giai":"体温是多少 — hỏi nhiệt độ cơ thể; cũng có thể nói 护士在给他量体温。"},
+   {"anh":"bt-3","s":"","tu":"难受","dap":"爷爷生病了，非常难受。","giai":"难受 là tính từ, đi với 很 / 非常; ✗ 难受极 thiếu 了."}]}
+],
+
+"listen": [
+ {"audio":"护士，您好，请问在哪儿挂号？在一楼大厅。你先在这张表上写上姓名、性别和电话号码。写好了，然后呢？然后去那边排队挂号，挂好号以后去三楼找医生。人怎么这么多啊！别着急，现在也可以在网上挂号，下次你就不用排队了。","questions":[
+   {"q":"挂号以前要做什么？","opts":["在表上写信息","去三楼找医生","在网上买药"],"ans":0},
+   {"q":"下次怎么做可以不排队？","opts":["早点儿来医院","在网上挂号","请朋友帮忙"],"ans":1}]},
+ {"audio":"小王，你怎么了？声音都变了。我这两天一直咳嗽，昨天晚上咳得特别厉害，一夜都没睡好。发烧吗？体温有点儿高，三十八度。那你赶快去医院吧，光吃药恐怕不够。好，我下午就去。你能陪我一起去吗？没问题，咱们有什么好客气的。","questions":[
+   {"q":"小王怎么了？","opts":["一直咳嗽，有点儿发烧","肚子疼得厉害","头疼，但是没发烧"],"ans":0},
+   {"q":"朋友建议小王做什么？","opts":["在家多休息","多喝点儿水","赶快去医院"],"ans":2}]},
+ {"audio":"医生，我吃了三天药，现在感觉好多了。我看看……体温已经降下来了，不过你还要按时吃药，多喝水。我平时身体不错，偶尔才生一次病，没想到这次病得这么厉害。所以你要每天出去运动运动，好让身体更健康。","questions":[
+   {"q":"病人现在怎么样？","opts":["感觉好多了","比以前更难受","体温还很高"],"ans":0},
+   {"q":"医生让病人做什么？","opts":["再去打针","按时吃药，多喝水","马上住院治疗"],"ans":1}]}
+],
+
+"match": [
+ {"left":"排队","right":"挂号"},
+ {"left":"按时","right":"吃药"},
+ {"left":"把体温","right":"降下来"},
+ {"left":"语言","right":"不通"},
+ {"left":"出了一身","right":"汗"},
+ {"left":"检查","right":"结果"},
+ {"left":"治疗","right":"方法"},
+ {"left":"流行性","right":"感冒"},
+ {"left":"一步一步","right":"来"}
+],
+
+"fill": [
+ {"pre":"我还发烧，一直咳嗽，咳得很","blank":"厉害","post":"。","hint":"(dữ dội)","ans":"厉害","exp":"V + 得 + 很 + 厉害."},
+ {"pre":"那挺严重的，最好","blank":"赶快","post":"去医院检查一下。","hint":"(mau, ngay)","ans":"赶快","exp":"赶快 + V."},
+ {"pre":"没关系，我","blank":"陪","post":"你一起去，还能帮你翻译。","hint":"(đi cùng)","ans":"陪","exp":"陪 + ai + 一起 + V."},
+ {"pre":"您拿着病人的护照去","blank":"挂号","post":"吧。","hint":"(lấy số khám bệnh)","ans":"挂号","exp":"去挂号."},
+ {"pre":"你跟我有什么好","blank":"客气","post":"的。","hint":"(khách sáo)","ans":"客气","exp":"有什么好 + V + 的."},
+ {"pre":"她平时身体不错，","blank":"偶尔","post":"才会生一次病。","hint":"(thỉnh thoảng)","ans":"偶尔","exp":"偶尔才 + V."},
+ {"pre":"现在需要把","blank":"体温","post":"降下来。","hint":"(nhiệt độ cơ thể)","ans":"体温","exp":"把体温降下来."},
+ {"pre":"光吃药恐怕不够，打针会更","blank":"有效","post":"。","hint":"(hiệu quả)","ans":"有效","exp":"更有效."},
+ {"pre":"医生还让她回家以后","blank":"按时","post":"吃药，多喝水，多休息。","hint":"(đúng giờ)","ans":"按时","exp":"按时 + V."},
+ {"pre":"医生会问病人的情况，有时还会做一些检查，","blank":"好","post":"给出合适的治疗方法。","hint":"(để)","ans":"好","exp":"……，好 + V: mục đích."}
+],
+
+"sort": [
+ {"words":["我","还","发烧","，","一直","咳嗽","，","咳得","很厉害","。"],"ans":"我还发烧，一直咳嗽，咳得很厉害。"},
+ {"words":["有你","陪着","，","我","就","放心","多了","。"],"ans":"有你陪着，我就放心多了。"},
+ {"words":["你","跟我","有什么","好","客气","的","。"],"ans":"你跟我有什么好客气的。"},
+ {"words":["她","平时","身体不错","，","偶尔","才会","生一次病","。"],"ans":"她平时身体不错，偶尔才会生一次病。"},
+ {"words":["在中国","看病","要","先","挂号","，","然后","再去找医生","。"],"ans":"在中国看病要先挂号，然后再去找医生。"},
+ {"words":["医生","会","做一些检查","，","好","给出","合适的","治疗方法","。"],"ans":"医生会做一些检查，好给出合适的治疗方法。"}
+],
+
+"mc": [
+ {"q":"我昨天跑步跑多了，今天腿疼得＿＿。","opts":["厉害","严重","有效","难受"],"ans":0,"exp":"V / Adj + 得 + 厉害: mức độ rất cao."},
+ {"q":"你跟我有什么好客气＿＿。","opts":["的","了","吗","呢"],"ans":0,"exp":"(没)有什么(好)×的 — bắt buộc có 的."},
+ {"q":"他经常在家看电影，＿＿才去电影院看。","opts":["偶尔","经常","一直","按时"],"ans":0,"exp":"经常……，偶尔才……"},
+ {"q":"我把电话号码告诉你，以后有什么事＿＿联系我。","opts":["好","就","再","才"],"ans":0,"exp":"……，好 + V: để tiện làm gì."},
+ {"q":"请在这张表上写上病人的姓名、＿＿、国籍和年龄。","opts":["性别","结果","过程","体温"],"ans":0,"exp":"Các mục trên tờ khai: 姓名、性别、国籍、年龄."},
+ {"q":"家月，我去排队＿＿，你先在大厅休息。","opts":["挂号","打针","收费","治疗"],"ans":0,"exp":"排队挂号 = xếp hàng lấy số."},
+ {"q":"现在需要把体温＿＿下来。","opts":["降","低","醒","通"],"ans":0,"exp":"把……降下来: hạ xuống. 低 là tính từ, không đi với 下来 như vậy."},
+ {"q":"外国人第一次在中国看病，可能会担心语言不＿＿。","opts":["通","好","过","懂"],"ans":0,"exp":"语言不通 = bất đồng ngôn ngữ."},
+ {"q":"国际部交流比较方便，但是＿＿比较高。","opts":["收费","情况","步","部"],"ans":0,"exp":"收费比较高 = phí khá cao."},
+ {"q":"只要按照医生说的一步一步来，一般都可以顺利得到＿＿。","opts":["治疗","挂号","检查","结果"],"ans":0,"exp":"得到治疗 = được điều trị."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá, đóng vai và thảo luận nhóm), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions":[
+  {"q_zh":"你在中国生过病吗？生病后，你是怎么做的？","q_vn":"Bạn đã từng bị ốm ở Trung Quốc (hoặc khi ở xa nhà) chưa? Ốm rồi bạn đã làm gì?","hint":"我生过一次病，……得很厉害。我先……，然后……","sample":"我生过一次病。那次我感冒了，咳嗽咳得很厉害，还发烧。我先在家吃了一点儿药，可是体温降不下来，于是我的中国朋友陪我去了医院。医生给我打了针，让我按时吃药，多喝水，多休息。三天以后我就好多了。","sample_vn":"Tôi từng ốm một lần. Lần đó tôi bị cảm, ho rất dữ, còn sốt nữa. Tôi uống chút thuốc ở nhà trước, nhưng nhiệt độ không hạ, thế là bạn Trung Quốc đưa tôi đi bệnh viện. Bác sĩ tiêm cho tôi, dặn uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều. Ba ngày sau tôi đỡ nhiều rồi.","note":"Câu hỏi phần Khởi động của sách; ôn 于是 (Bài 3), V不下来 (Bài 4)."},
+  {"q_zh":"你在中国的医院看过病吗？看病的过程中有没有遇到什么问题？","q_vn":"Bạn đã đi khám ở bệnh viện Trung Quốc chưa? Trong quá trình khám có gặp vấn đề gì không?","hint":"我看过……。最大的问题是……，不过……","sample":"我看过一次病。最大的问题是语言不通，我听不懂医生说的一些话，也不知道应该先挂号。不过护士很热情，一步一步地告诉我怎么做，我的朋友还帮我翻译，所以最后没有什么好担心的。","sample_vn":"Tôi đã khám một lần. Vấn đề lớn nhất là bất đồng ngôn ngữ, tôi nghe không hiểu một số câu bác sĩ nói, cũng không biết phải lấy số trước. Có điều y tá rất nhiệt tình, chỉ tôi từng bước, bạn tôi còn phiên dịch giúp, nên cuối cùng chẳng có gì phải lo.","note":"Câu hỏi phần Khởi động; ôn 不过 (Bài 2), dùng 没有什么好……的 (điểm 2)."},
+  {"q_zh":"白家月怎么了？李文为什么要陪白家月去医院？","q_vn":"Bạch Gia Nguyệt bị làm sao? Vì sao Lý Văn muốn đưa cô ấy đi bệnh viện?","hint":"她……，咳得……。因为她来中国后……，李文还能帮她……","sample":"白家月感冒了，还发烧，一直咳嗽，咳得很厉害。因为她来中国后还没去过医院，不知道怎么在中国的医院看病，李文陪她去还能帮她翻译。","sample_vn":"Bạch Gia Nguyệt bị cảm, còn sốt, ho suốt, ho rất dữ. Vì từ khi sang Trung Quốc cô ấy chưa đi bệnh viện, không biết khám bệnh ở Trung Quốc thế nào, Lý Văn đi cùng còn phiên dịch giúp được.","note":"Câu hỏi đọc hiểu bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"白家月给李文打电话，告诉他自己……，发烧，一直……。李文觉得她病得……，建议她……","sample":"白家月给李文打电话，告诉他自己身体不舒服，发烧，一直咳嗽，还咳得很厉害。李文觉得她病得挺严重的，建议她赶快去医院检查一下。不过，白家月来中国后还没去过医院，不知道怎么在中国的医院看病。李文让她在家等一下，说马上去接她，陪她一起去医院，还能帮她翻译。白家月觉得，有李文陪着，她就放心多了。","sample_vn":"Bạch Gia Nguyệt gọi điện cho Lý Văn, nói mình không khỏe, sốt, ho suốt, ho rất dữ. Lý Văn thấy cô ấy ốm khá nặng, khuyên cô mau đi bệnh viện khám. Có điều từ khi sang Trung Quốc cô chưa đi bệnh viện, không biết khám thế nào. Lý Văn bảo cô ở nhà đợi, nói sẽ qua đón ngay, đưa cô đi bệnh viện, còn phiên dịch giúp. Bạch Gia Nguyệt thấy có Lý Văn đi cùng thì yên tâm hơn nhiều.","note":"Bài tập 复述 của sách (trang 61)."},
+  {"q_zh":"李文要在表上写什么？李文让白家月做什么？","q_vn":"Lý Văn phải viết gì vào tờ khai? Lý Văn bảo Bạch Gia Nguyệt làm gì?","hint":"他要在表上写上……。李文让白家月……","sample":"他要在表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。李文去排队挂号，让白家月先在大厅休息，别着急。","sample_vn":"Anh ấy phải viết vào tờ khai họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân. Lý Văn đi xếp hàng lấy số, bảo Bạch Gia Nguyệt ngồi nghỉ ở sảnh trước, đừng sốt ruột.","note":"Câu hỏi đọc hiểu bài khoá 2."},
+  {"q_zh":"白家月得了什么病？医生让白家月做什么？","q_vn":"Bạch Gia Nguyệt bị bệnh gì? Bác sĩ bảo cô ấy làm gì?","hint":"她得了……。医生让她……，还让她回家以后……","sample":"她得了比较严重的流行性感冒。医生让她打针，因为光吃药恐怕不够，打针会更有效。医生还让她回家以后按时吃药，多喝水，多休息。","sample_vn":"Cô ấy bị cúm khá nặng. Bác sĩ cho cô ấy tiêm, vì chỉ uống thuốc e là không đủ, tiêm hiệu quả hơn. Bác sĩ còn dặn cô về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều.","note":"Câu hỏi đọc hiểu bài khoá 3."},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"下午白家月去看病了，她告诉医生，自己……，偶尔……。这次她……","sample":"下午白家月去看病了，她告诉医生，自己平时身体不错，偶尔才会生一次病。这次她病得很厉害，头也一直疼，身上一点儿力气都没有。医生给她做了检查，检查结果出来后，发现她得了比较严重的流行性感冒。医生建议她打针，因为那样会更有效。医生还让她回家以后按时吃药，多喝水，多休息。晚上，白家月睡觉时出了一身汗。第二天醒来时，她感觉头不那么疼了，体温也低了一些，身体不那么难受了。","sample_vn":"Buổi chiều Bạch Gia Nguyệt đi khám bệnh… Bác sĩ khuyên cô tiêm vì hiệu quả hơn, dặn về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều. Tối cô toát mồ hôi khắp người; hôm sau tỉnh dậy, đầu bớt đau, nhiệt độ hạ, người không còn khó chịu như trước.","note":"Bài tập 复述 của sách (trang 64–65)."},
+  {"q_zh":"外国人第一次在中国看病，可能会担心什么问题？在中国的医院，看病的过程是怎样的？","q_vn":"Người nước ngoài lần đầu khám bệnh ở Trung Quốc có thể lo vấn đề gì? Quy trình khám bệnh ở bệnh viện Trung Quốc như thế nào?","hint":"可能会担心……，或者……。看病要先……，然后再……。医生会……，好……","sample":"外国人可能会担心语言不通，或者觉得看病的过程和自己的国家不同。在中国看病要先挂号，然后再去找医生。医生会问病人的情况，有时还会做一些检查，好给出合适的治疗方法。只要按照医生说的一步一步来，就可以顺利得到治疗。","sample_vn":"Người nước ngoài có thể lo bất đồng ngôn ngữ, hoặc thấy quy trình khám khác nước mình. Ở Trung Quốc phải lấy số trước, rồi mới gặp bác sĩ. Bác sĩ hỏi tình hình, có khi làm xét nghiệm để đưa ra cách điều trị phù hợp. Chỉ cần làm từng bước theo lời bác sĩ là được điều trị suôn sẻ.","note":"Câu hỏi đọc hiểu bài khoá 4; dùng ……，好…… (điểm 4)."},
+  {"q_zh":"角色扮演：你的朋友生病了，你陪他/她去医院。一个人演病人，一个人演朋友，一个人演护士/医生。","q_vn":"Đóng vai: Bạn của em bị ốm, em đưa bạn đi bệnh viện. Một người đóng bệnh nhân, một người đóng bạn, một người đóng y tá / bác sĩ.","hint":"病人：我……得很厉害。朋友：别着急，我陪你……。护士：请在这张表上写上……。医生：你哪儿不舒服？……好……","sample":"朋友：护士，您好，我的朋友病了，第一次来这里看病，需要怎么做？护士：请在这张表上写上病人的姓名、性别、年龄和电话号码，然后去那边排队挂号。朋友：好的。你先在大厅休息，我去挂号。病人：真是太谢谢你了！朋友：咱们有什么好客气的。医生：你哪儿不舒服？病人：我头疼得厉害，还一直咳嗽。我平时身体不错，偶尔才感冒一次。医生：我先给你量一下体温……三十八度五，有点儿高。你先去做个检查，好看看是不是流行性感冒。病人：需要打针吗？医生：先打一针，好把体温降下来。回家以后要按时吃药，多喝水，多休息，没有什么好担心的。","sample_vn":"Bạn: Chào chị y tá, bạn tôi bị ốm, lần đầu đến khám, cần làm thế nào ạ? Y tá: Mời điền họ tên, giới tính, tuổi, số điện thoại vào tờ khai, rồi qua kia xếp hàng lấy số… Bác sĩ: Bạn khó chịu ở đâu? Bệnh nhân: Tôi đau đầu dữ lắm, còn ho suốt… Bác sĩ: Tiêm một mũi trước để hạ nhiệt; về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi, chẳng có gì phải lo.","note":"Hoạt động 分角色朗读 / đóng vai mở rộng từ bài khoá 1–2; dùng đủ 4 điểm ngữ pháp."},
+  {"q_zh":"小组讨论：介绍一下你们国家的医疗情况，比如医疗体系、看病流程以及常见病的处理方式。","q_vn":"Thảo luận nhóm: Giới thiệu tình hình y tế của nước em, ví dụ hệ thống y tế, quy trình khám bệnh và cách xử lý các bệnh thường gặp.","hint":"在越南，……。看病的时候，先……，然后……。要是只是小感冒，就……；要是病得很厉害，最好赶快……","sample":"我给大家介绍一下越南的医疗情况。在越南，有公立医院，也有私立医院和国际医院。公立医院收费比较低，但是人很多，有时候要排很长时间的队；国际医院的医生一般会说英文，不过收费比较高。看病的时候，先要挂号，在表上写上姓名、年龄和地址，然后再去找医生。医生会问病人的情况，有时还会做一些检查，好给出合适的治疗方法。要是只是小感冒，很多越南人就在药店买点儿药，多喝水，多休息，没有什么好担心的；要是发烧发得很厉害，或者咳嗽好几天还不好，最好赶快去医院。现在很多医院也可以在网上挂号，既方便又能节省时间。","sample_vn":"Mình xin giới thiệu tình hình y tế ở Việt Nam. Ở Việt Nam có bệnh viện công, bệnh viện tư và bệnh viện quốc tế. Bệnh viện công phí thấp nhưng đông, có lúc phải xếp hàng rất lâu; bệnh viện quốc tế bác sĩ thường nói tiếng Anh, có điều phí khá cao. Khi khám phải lấy số, điền họ tên, tuổi, địa chỉ vào tờ khai rồi mới gặp bác sĩ… Nếu chỉ cảm nhẹ, nhiều người Việt mua ít thuốc ở hiệu thuốc, uống nhiều nước, nghỉ ngơi, chẳng có gì phải lo; nếu sốt cao hoặc ho mấy ngày không khỏi thì tốt nhất mau đi bệnh viện. Bây giờ nhiều bệnh viện cho lấy số trên mạng, vừa tiện vừa tiết kiệm thời gian.","note":"Hoạt động 小组讨论 (任务活动) của sách, trang 68; ôn 既……又…… (Bài 4), 要是……就…… (Bài 1)."}
+ ]
+},
+
+"translate": [
+ ["Tớ còn sốt nữa, ho suốt, ho dữ lắm.","我还发烧，一直咳嗽，咳得很厉害。"],
+ ["Không sao, tớ đi cùng cậu, còn phiên dịch giúp cậu được nữa.","没关系，我陪你一起去，还能帮你翻译。"],
+ ["Cậu với tớ thì có gì mà phải khách sáo.","你跟我有什么好客气的。"],
+ ["Bình thường cô ấy khá khỏe, lâu lâu mới ốm một lần.","她平时身体不错，偶尔才会生一次病。"],
+ ["Chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn.","光吃药恐怕不够，打针会更有效。"],
+ ["Bác sĩ sẽ làm một số xét nghiệm, để đưa ra cách điều trị phù hợp.","医生会做一些检查，好给出合适的治疗方法。"]
+],
+"translateRev": [
+ ["Mời viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân.","请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。"],
+ ["Tớ đi xếp hàng lấy số, cậu ngồi nghỉ ở sảnh trước, đừng sốt ruột.","我去排队挂号，你先在大厅休息，别着急。"],
+ ["Bác sĩ dặn cô ấy về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều.","医生让她回家以后按时吃药，多喝水，多休息。"],
+ ["Khu quốc tế giao tiếp khá thuận tiện, nhưng phí khá cao.","国际部交流比较方便，但是收费比较高。"],
+ ["Khám bệnh ở Trung Quốc phải lấy số trước, rồi mới đi gặp bác sĩ.","在中国看病要先挂号，然后再去找医生。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":120,"tieuDe":"写作 — trả lời tin nhắn WeChat của bạn (ít nhất 120 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết tin nhắn trả lời (写作)","gioiThieu":"Đề 写作 của sách HSK 4 (3.0) yêu cầu viết một đoạn văn ngắn (ít nhất 120 chữ) dựa trên nội dung đã học và đã thảo luận — ở bài này là tin nhắn WeChat trả lời người bạn Trung Quốc bị ốm khi đang du lịch ở nước em, chỉ cho bạn cách đi khám bệnh.","buoc":["Đọc kỹ đề: người đọc là bạn Trung Quốc đang ốm; mục đích là chỉ cách đi khám bệnh ở nước em (Việt Nam).","Lập dàn ý theo 5 câu hỏi gợi ý: hỏi thăm + khuyên đi khám → thủ tục ở bệnh viện → bác sĩ khám thế nào → lưu ý (khu quốc tế, phí, ngôn ngữ) → dặn dò sau khi khám.","Dùng từ mới (挂号, 排队, 护士, 表, 体温, 治疗, 按时…) và 4 điểm ngữ pháp: 厉害, 没有什么好……的, 偶尔, ……，好…….","Nối ý bằng: 先……然后再…… / 要是……就…… / 不过 / 再说 — giọng thân mật, như đang nhắn tin với bạn.","Mở đầu bằng lời hỏi thăm, kết thúc bằng lời chúc mau khỏe; tự soát số chữ (≥ 120) và lỗi chữ Hán trước khi nộp."]},
+ "de":"你的一个中国朋友正在你的国家旅行。他/她最近生病了，给你发微信，询问如何在医院看病。请你根据上面讨论的内容，给他/她写回复，不少于120字。",
+ "prompt":"Một người bạn Trung Quốc của em đang du lịch ở nước em. Gần đây bạn ấy bị ốm, nhắn WeChat hỏi em cách đi khám ở bệnh viện. Dựa vào nội dung đã thảo luận ở trên, hãy viết tin nhắn trả lời bạn ấy, không ít hơn 120 chữ.",
+ "dan":[
+  {"hoi":"朋友怎么了？你有什么建议？","goiY":"你……得这么厉害，最好赶快去医院检查一下。"},
+  {"hoi":"到了医院先做什么？","goiY":"先找护士，在表上写上……，然后拿着护照去排队挂号。"},
+  {"hoi":"看病的过程是怎样的？","goiY":"医生会问你的情况，给你量体温，有时还会做一些检查，好……"},
+  {"hoi":"有什么要注意的？（国际部、收费、语言）","goiY":"有的医院有国际部……，不过收费……；要是你怕语言不通，我就陪你去……"},
+  {"hoi":"看完病以后要做什么？","goiY":"按时吃药，多喝水，多休息；没有什么好担心的。"}],
+ "tuNen":["厉害","严重","赶快","陪","翻译","护士","表","挂号","排队","体温","检查","结果","治疗","按时","情况","收费"],
+ "cauTruc":[
+  {"ten":"V / Adj + 得 + 很厉害","nhan":"厉害","vd":"你咳嗽咳得这么厉害，最好赶快去医院检查一下。","khi":"Câu MỞ: hỏi thăm, nói bệnh nặng, khuyên đi khám."},
+  {"ten":"先……，然后再……","nhan":"先","vd":"到了医院，先在表上写上你的信息，然后再去排队挂号。","khi":"Kể thủ tục theo thứ tự."},
+  {"ten":"……，好……","nhan":"好","vd":"医生有时还会做一些检查，好给出合适的治疗方法。","khi":"Giải thích vì sao bác sĩ làm xét nghiệm."},
+  {"ten":"要是……，就……","nhan":"要是","vd":"要是你怕语言不通，我就陪你一起去，还能帮你翻译。","khi":"Đề nghị giúp đỡ (ôn Bài 1)."},
+  {"ten":"没有什么好担心的","nhan":"没有什么","vd":"只要按时吃药，多休息，没有什么好担心的。","khi":"Câu KẾT: an ủi bạn."}],
+ "checklist":[
+  "Đủ ít nhất 120 chữ Hán chưa?",
+  "Đã có lời hỏi thăm, lời khuyên, thủ tục ở bệnh viện, quá trình khám, lưu ý và lời dặn sau khi khám chưa?",
+  "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (厉害、（没）有什么（好）×的、偶尔、……，好……) chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài chưa?",
+  "Giọng văn có thân mật như tin nhắn cho bạn, có câu mở (hỏi thăm) và câu kết (chúc mau khỏe) chưa?"],
+ "model":"小林，你好！看到你的微信，我很担心。你咳嗽咳得这么厉害，还发烧，最好赶快去医院检查一下。在越南看病其实不难，没有什么好担心的。到了医院以后，先找护士，在表上写上你的姓名、性别、国籍和电话号码，然后拿着护照去排队挂号。挂好号以后再去找医生，医生会问你的情况，给你量体温，有时还会做一些检查，好给出合适的治疗方法。有的大医院有国际部，医生会说英文，不过收费比较高。要是你怕语言不通，我明天上午就陪你一起去，还能帮你翻译。看完病以后，一定要按时吃药，多喝水，多休息。你平时身体那么好，偶尔生一次病，很快就会好的。希望你早点儿好起来！"
+}
+}

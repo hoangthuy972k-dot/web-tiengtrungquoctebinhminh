@@ -1,0 +1,695 @@
+{
+ "/lessons/hsk4v3-bai-2.html": {
+  "points": [
+   {
+    "title": "固定格式“×就是了” — cứ … là được",
+    "errors": [
+     {
+      "wrong": "如果决定租了，告诉我就是。",
+      "why": "Thiếu 了 — cấu trúc cố định là 「就是了」.",
+      "right": "如果决定租了，告诉我就是了。"
+     },
+     {
+      "wrong": "就是了你放心。",
+      "why": "就是了 đứng ở CUỐI câu, sau động từ.",
+      "right": "你放心就是了。"
+     },
+     {
+      "wrong": "你放心就是了吗？",
+      "why": "就是了 dùng để khẳng định, trấn an — không dùng trong câu hỏi.",
+      "right": "你放心就是了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Nếu quyết định thuê thì cứ báo tôi là được.”",
+      "pre": "如果决定租了，告诉我",
+      "blank": "就是了",
+      "post": "。",
+      "options": [
+       "就是了",
+       "就是",
+       "是了"
+      ],
+      "answer": 0,
+      "explanation": "Cấu trúc cố định: V + 就是了 (phải có 了)."
+     },
+     {
+      "context": "“Tôi nhất định làm được, ông cứ yên tâm.”",
+      "pre": "我一定能办到，您",
+      "blank": "放心",
+      "post": "就是了。",
+      "options": [
+       "放心",
+       "担心",
+       "关心"
+      ],
+      "answer": 0,
+      "explanation": "放心就是了 = cứ yên tâm."
+     },
+     {
+      "context": "“Lần sau cố gắng là được.”",
+      "pre": "这次考得不好没关系，下次努力",
+      "blank": "就是了",
+      "post": "。",
+      "options": [
+       "就是了",
+       "才是了",
+       "也是了"
+      ],
+      "answer": 0,
+      "explanation": "Đặt 就是了 ở cuối câu để động viên."
+     },
+     {
+      "context": "“Bạn hài lòng thì cứ thuê luôn.” (ôn từ mới + 要是 – Bài 1)",
+      "pre": "你要是满意，",
+      "blank": "租",
+      "post": "下来就是了。",
+      "options": [
+       "租",
+       "出租",
+       "房租"
+      ],
+      "answer": 0,
+      "explanation": "租下来 = thuê luôn; 出租 = cho thuê; 房租 = tiền thuê."
+     },
+     {
+      "context": "“Phòng đã dọn xong, hôm nay bạn cứ dọn vào.”",
+      "pre": "房间已经",
+      "blank": "收拾",
+      "post": "好了，你今天搬进来就是了。",
+      "options": [
+       "收拾",
+       "入住",
+       "毕业"
+      ],
+      "answer": 0,
+      "explanation": "收拾好了 = dọn dẹp xong."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nếu bạn hài lòng thì cứ thuê luôn đi.”",
+      "words": [
+       "你",
+       "要是",
+       "满意",
+       "，",
+       "租下来",
+       "就是了"
+      ],
+      "answer": "你要是满意，租下来就是了。",
+      "explanation": "要是……，V + 就是了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Có bất kỳ vấn đề gì cứ gọi cho tôi là được.”",
+      "words": [
+       "有",
+       "任何",
+       "问题",
+       "，",
+       "给我",
+       "打电话",
+       "就是了"
+      ],
+      "answer": "有任何问题，给我打电话就是了。",
+      "explanation": "Ôn 任何 (Bài 1) + 就是了 cuối câu."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Không biết làm cũng không sao, tôi dạy bạn là được.”",
+      "words": [
+       "不会",
+       "做",
+       "没关系",
+       "，",
+       "我",
+       "教你",
+       "就是了"
+      ],
+      "answer": "不会做没关系，我教你就是了。",
+      "explanation": "Chủ ngữ 我 + V + 就是了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你别担心，我明天一定来就是了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 就是了 cuối câu, trấn an người nghe."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这件衣服很漂亮，你买下来就是。",
+      "isCorrect": false,
+      "correctVersion": "这件衣服很漂亮，你买下来就是了。",
+      "explanation": "Thiếu 了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "就是了你下次努力。",
+      "isCorrect": false,
+      "correctVersion": "你下次努力就是了。",
+      "explanation": "就是了 phải đặt cuối câu."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Nếu bạn thích thì cứ lấy đi là được.",
+      "answer": "你要是喜欢，拿走就是了。",
+      "answerPy": "Nǐ yàoshi xǐhuan, ná zǒu jiùshì le.",
+      "explanation": "要是……，V + 就是了 (ôn Bài 1 · điểm 2)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Có bất kỳ vấn đề gì, bạn cứ hỏi tôi là được.",
+      "answer": "有任何问题，你问我就是了。",
+      "answerPy": "Yǒu rènhé wèntí, nǐ wèn wǒ jiùshì le.",
+      "explanation": "任何 (Bài 1 · điểm 1) + 就是了."
+     }
+    ]
+   },
+   {
+    "title": "转折复句“……，不过……” — …, có điều …",
+    "errors": [
+     {
+      "wrong": "不过有点儿贵，这个手机还可以。",
+      "why": "不过 đứng đầu vế SAU, không mở đầu câu.",
+      "right": "这个手机还可以，不过有点儿贵。"
+     },
+     {
+      "wrong": "这个小区环境不错，不过很安静。",
+      "why": "Hai vế cùng chiều tích cực, không có ý chuyển ngoặt → dùng 而且.",
+      "right": "这个小区环境不错，而且很安静。"
+     },
+     {
+      "wrong": "这个房子很大，他不过不想租。",
+      "why": "不过 là liên từ, đứng trước chủ ngữ của vế sau.",
+      "right": "这个房子很大，不过他不想租。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Môi trường đẹp thật, có điều nghe nói gần đây có nhiều công ty.”",
+      "pre": "这个小区的环境真不错，",
+      "blank": "不过",
+      "post": "我听说，附近有十几家公司。",
+      "options": [
+       "不过",
+       "所以",
+       "而且"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau chuyển ý → 不过."
+     },
+     {
+      "context": "“… có điều không thấy gấu trúc.”",
+      "pre": "我们在动物园看见了很多动物，不过",
+      "blank": "没",
+      "post": "看见大熊猫。",
+      "options": [
+       "没",
+       "不",
+       "别"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định việc đã xảy ra: 没 + V."
+     },
+     {
+      "context": "“… có điều rất nhanh đã thích nghi.” (ôn từ Bài 1)",
+      "pre": "我刚来北京时还不太习惯这里的天气，不过很快就",
+      "blank": "适应",
+      "post": "了。",
+      "options": [
+       "适应",
+       "交流",
+       "申请"
+      ],
+      "answer": 0,
+      "explanation": "适应 = thích nghi."
+     },
+     {
+      "context": "“Phòng này khá sáng, có điều hơi nhỏ.”",
+      "pre": "这个房间挺",
+      "blank": "亮",
+      "post": "，不过有点儿小。",
+      "options": [
+       "亮",
+       "租",
+       "种"
+      ],
+      "answer": 0,
+      "explanation": "挺亮 = khá sáng (tính từ)."
+     },
+     {
+      "context": "“Tiền thuê không cao, có điều hơi xa công ty.”",
+      "pre": "房租不高，",
+      "blank": "不过",
+      "post": "离公司有点儿远。",
+      "options": [
+       "不过",
+       "因为",
+       "并且"
+      ],
+      "answer": 0,
+      "explanation": "Khen trước, góp ý sau → 不过."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chiếc điện thoại này cũng được, có điều hơi đắt.”",
+      "words": [
+       "这个手机",
+       "还可以",
+       "，",
+       "不过",
+       "有点儿贵"
+      ],
+      "answer": "这个手机还可以，不过有点儿贵。",
+      "explanation": "……，不过 + ý chuyển."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nhà rất đẹp, có điều xung quanh không yên tĩnh lắm.”",
+      "words": [
+       "房子",
+       "很漂亮",
+       "，",
+       "不过",
+       "周围",
+       "不太安静"
+      ],
+      "answer": "房子很漂亮，不过周围不太安静。",
+      "explanation": "不过 đứng trước chủ ngữ vế sau (周围)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi rất muốn đi, có điều e là không có thời gian.”",
+      "words": [
+       "我",
+       "很想去",
+       "，",
+       "不过",
+       "恐怕",
+       "没有时间"
+      ],
+      "answer": "我很想去，不过恐怕没有时间。",
+      "explanation": "不过 + 恐怕 (từ mới bài này)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个小区很安静，不过环境也很好。",
+      "isCorrect": false,
+      "correctVersion": "这个小区很安静，而且环境也很好。",
+      "explanation": "Hai ý cùng chiều tốt → dùng 而且, không dùng 不过."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "天气预报说明天是晴天，不过可能会刮风。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: trời nắng (tốt) — có điều có gió (chưa tốt)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "不过他很忙，他每天都去跑步。",
+      "isCorrect": false,
+      "correctVersion": "他很忙，不过每天都去跑步。",
+      "explanation": "不过 đứng ở đầu vế SAU."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Căn nhà này vị trí rất tốt, có điều tiền thuê hơi đắt.",
+      "answer": "这个房子位置很好，不过房租有点儿贵。",
+      "answerPy": "Zhège fángzi wèizhì hěn hǎo, búguò fángzū yǒudiǎnr guì.",
+      "explanation": "位置, 房租 (từ mới) + 不过."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi rất muốn đi du lịch, có điều e là không có thời gian.",
+      "answer": "我很想去旅游，不过恐怕没有时间。",
+      "answerPy": "Wǒ hěn xiǎng qù lǚyóu, búguò kǒngpà méiyǒu shíjiān.",
+      "explanation": "不过 + 恐怕."
+     }
+    ]
+   },
+   {
+    "title": "连词/副词“并” — và, đồng thời; hoàn toàn (không)",
+    "errors": [
+     {
+      "wrong": "我并她都是留学生。",
+      "why": "并 không nối hai danh từ; nối danh từ dùng 和.",
+      "right": "我和她都是留学生。"
+     },
+     {
+      "wrong": "这次考试不并难。",
+      "why": "Phó từ 并 đứng TRƯỚC từ phủ định: 并不 / 并没有.",
+      "right": "这次考试并不难。"
+     },
+     {
+      "wrong": "她考上了北京大学，并她申请到了奖学金。",
+      "why": "Hai vế cùng chủ ngữ — sau 并 không lặp lại chủ ngữ.",
+      "right": "她考上了北京大学并申请到了奖学金。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… và chỉ cho tôi cách dùng.”",
+      "pre": "房东又向我介绍了一下房子里的东西，",
+      "blank": "并",
+      "post": "告诉我这些东西怎么用。",
+      "options": [
+       "并",
+       "和",
+       "跟"
+      ],
+      "answer": 0,
+      "explanation": "Nối hai cụm động từ → 并 (和 nối danh từ)."
+     },
+     {
+      "context": "“… lần thuê nhà này chẳng hề dễ.”",
+      "pre": "对白家月来说，这次租房并",
+      "blank": "不",
+      "post": "容易。",
+      "options": [
+       "不",
+       "没",
+       "很"
+      ],
+      "answer": 0,
+      "explanation": "并不 + tính từ."
+     },
+     {
+      "context": "“… và xin được học bổng.” (ôn từ Bài 1)",
+      "pre": "她考上了北京大学并申请到了",
+      "blank": "奖学金",
+      "post": "。",
+      "options": [
+       "奖学金",
+       "房租",
+       "工资"
+      ],
+      "answer": 0,
+      "explanation": "申请到 + 奖学金."
+     },
+     {
+      "context": "“Tôi đâu có đồng ý thuê ngay …”",
+      "pre": "我",
+      "blank": "并",
+      "post": "没有答应你就租这个房子，我还要再想想。",
+      "options": [
+       "并",
+       "也",
+       "就"
+      ],
+      "answer": 0,
+      "explanation": "并没有 = phủ định mạnh, phản bác."
+     },
+     {
+      "context": "“Học chữ Hán chẳng khó, cứ viết nhiều luyện nhiều là được.” (ôn 就是了 – điểm 1)",
+      "pre": "学汉字",
+      "blank": "并",
+      "post": "不难，多写多练就是了。",
+      "options": [
+       "并",
+       "和",
+       "还"
+      ],
+      "answer": 0,
+      "explanation": "并不难 = chẳng khó chút nào."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tốt nghiệp xong anh ấy đến Bắc Kinh làm việc, và thuê một căn nhà gần công ty.”",
+      "words": [
+       "他",
+       "毕业后",
+       "来北京工作",
+       "，",
+       "并",
+       "在公司附近",
+       "租了个房子"
+      ],
+      "answer": "他毕业后来北京工作，并在公司附近租了个房子。",
+      "explanation": "V1……，并 + V2……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Khu chung cư này chẳng yên tĩnh chút nào.”",
+      "words": [
+       "这个",
+       "小区",
+       "并",
+       "不",
+       "安静"
+      ],
+      "answer": "这个小区并不安静。",
+      "explanation": "并不 + Adj."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng tôi đã thảo luận vấn đề này và đưa ra quyết định.”",
+      "words": [
+       "我们",
+       "讨论了",
+       "这个问题",
+       "，",
+       "并",
+       "做出了",
+       "决定"
+      ],
+      "answer": "我们讨论了这个问题，并做出了决定。",
+      "explanation": "Hai hành động nối tiếp, cùng chủ ngữ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我买了苹果并香蕉。",
+      "isCorrect": false,
+      "correctVersion": "我买了苹果和香蕉。",
+      "explanation": "并 không nối hai danh từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "其实这个问题并不难。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 并不 phản bác suy nghĩ “khó”."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "在北京租房子不并容易。",
+      "isCorrect": false,
+      "correctVersion": "在北京租房子并不容易。",
+      "explanation": "Thứ tự đúng: 并不."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cô ấy tìm được việc làm và thuê một căn nhà gần công ty.",
+      "answer": "她找到了工作，并在公司附近租了一个房子。",
+      "answerPy": "Tā zhǎo dào le gōngzuò, bìng zài gōngsī fùjìn zū le yí gè fángzi.",
+      "explanation": "并 nối hai hành động, không lặp chủ ngữ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Thực ra thuê nhà ở Bắc Kinh chẳng hề rẻ.",
+      "answer": "其实在北京租房子并不便宜。",
+      "answerPy": "Qí shízai Běijīng zū fángzi bìng bú piányi.",
+      "explanation": "并不 + Adj: phản bác suy nghĩ “rẻ”."
+     }
+    ]
+   },
+   {
+    "title": "连词/介词“由于” — do, bởi vì",
+    "errors": [
+     {
+      "wrong": "我们决定不爬山了，由于一直下大雨。",
+      "why": "由于 thường đứng ở vế TRƯỚC; vế sau dùng 所以 / 因此.",
+      "right": "由于一直下大雨，所以我们决定不爬山了。"
+     },
+     {
+      "wrong": "由于下雨，但是我们没去公园。",
+      "why": "由于 (nhân quả) không đi với 但是 (chuyển ngoặt).",
+      "right": "由于下雨，所以我们没去公园。"
+     },
+     {
+      "wrong": "由于他生病了，因为他没来上课。",
+      "why": "Vế sau dùng 所以 / 因此, không dùng 因为.",
+      "right": "由于他生病了，所以他没来上课。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Do trời mưa to suốt, nên …”",
+      "pre": "",
+      "blank": "由于",
+      "post": "一直下大雨，所以我们决定不爬山了。",
+      "options": [
+       "由于",
+       "虽然",
+       "要是"
+      ],
+      "answer": 0,
+      "explanation": "由于……，所以…… (nhân quả)."
+     },
+     {
+      "context": "“… nên lúc đầu họ cũng không mua nhà.”",
+      "pre": "由于很多刚工作的年轻人工资还不太高，",
+      "blank": "所以",
+      "post": "他们一开始也不买房。",
+      "options": [
+       "所以",
+       "但是",
+       "而且"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau của 由于 dùng 所以 / 因此."
+     },
+     {
+      "context": "“Nhờ sự nỗ lực của mọi người …”",
+      "pre": "由于大家的",
+      "blank": "努力",
+      "post": "，这次运动会我们班获得了第一名。",
+      "options": [
+       "努力",
+       "房租",
+       "位置"
+      ],
+      "answer": 0,
+      "explanation": "Giới từ: 由于 + danh từ."
+     },
+     {
+      "context": "“… vì vậy nhiều người thích thuê nhà ở đây.”",
+      "pre": "由于这个小区很安静，房子价格也不高，",
+      "blank": "因此",
+      "post": "，很多人都喜欢在这里租房子。",
+      "options": [
+       "因此",
+       "不过",
+       "并"
+      ],
+      "answer": 0,
+      "explanation": "由于……，因此…… (因此 yīncǐ = vì vậy)."
+     },
+     {
+      "context": "“… cô ấy quyết định thuê nhà gần công ty.”",
+      "pre": "由于新公司离她住的地方比较远，她决定在公司",
+      "blank": "附近",
+      "post": "租个房子。",
+      "options": [
+       "附近",
+       "价格",
+       "信息"
+      ],
+      "answer": 0,
+      "explanation": "在 + nơi + 附近 = ở gần …"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Do điện thoại hết pin, cô ấy không có cách nào gọi điện.”",
+      "words": [
+       "由于",
+       "手机",
+       "没电了",
+       "，",
+       "她",
+       "没有办法",
+       "打电话"
+      ],
+      "answer": "由于手机没电了，她没有办法打电话。",
+      "explanation": "由于 + nguyên nhân，kết quả."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Do lương không cao lắm nên anh ấy chọn thuê nhà.”",
+      "words": [
+       "由于",
+       "工资",
+       "不太高",
+       "，",
+       "所以",
+       "他",
+       "选择租房"
+      ],
+      "answer": "由于工资不太高，所以他选择租房。",
+      "explanation": "由于……，所以……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nhờ sự giúp đỡ của mọi người, chúng tôi đã nhanh chóng hoàn thành công việc.”",
+      "words": [
+       "由于",
+       "大家的",
+       "帮助",
+       "，",
+       "我们",
+       "很快就",
+       "完成了工作"
+      ],
+      "answer": "由于大家的帮助，我们很快就完成了工作。",
+      "explanation": "Giới từ: 由于 + cụm danh từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "由于天气不好，所以飞机晚到了两个小时。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 由于……，所以……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "由于下雨，但是比赛没有停。",
+      "isCorrect": false,
+      "correctVersion": "虽然下雨，但是比赛没有停。",
+      "explanation": "Đây là quan hệ nhượng bộ → 虽然……但是……; 由于 chỉ nguyên nhân."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我没去上课，由于我生病了。",
+      "isCorrect": false,
+      "correctVersion": "由于我生病了，所以没去上课。",
+      "explanation": "由于 đứng ở vế trước."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Do lương còn chưa cao nên nhiều người trẻ chọn thuê nhà.",
+      "answer": "由于工资还不太高，所以很多年轻人选择租房。",
+      "answerPy": "Yóuyú gōngzī hái bú tài gāo, suǒyǐ hěn duō niánqīngrén xuǎnzé zū fáng.",
+      "explanation": "由于……，所以…… + từ mới 工资."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Nhờ sự giúp đỡ của Lý Văn, Bạch Gia Nguyệt đã thuê được căn nhà phù hợp.",
+      "answer": "由于李文的帮助，白家月租到了合适的房子。",
+      "answerPy": "Yóuyú Lǐ Wén de bāngzhù, Bái Jiāyuè zū dào le héshì de fángzi.",
+      "explanation": "Giới từ: 由于 + cụm danh từ."
+     }
+    ]
+   }
+  ]
+ }
+}

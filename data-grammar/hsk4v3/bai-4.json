@@ -1,0 +1,648 @@
+{
+ "/lessons/hsk4v3-bai-4.html": {
+  "points": [
+   {
+    "title": "可能补语“动词+得/不+了” — làm được / không làm được",
+    "errors": [
+     {
+      "wrong": "我明天不了去。",
+      "why": "不了 phải đặt SAU động từ.",
+      "right": "我明天去不了。"
+     },
+     {
+      "wrong": "手机没有信号，上网不了。",
+      "why": "上网 là từ ly hợp: 不了 chen vào giữa 上 và 网.",
+      "right": "手机没有信号，上不了网。"
+     },
+     {
+      "wrong": "他病了，明天不能来不了。",
+      "why": "Không dùng 不能 cùng với V不了 (phủ định hai lần).",
+      "right": "他病了，明天来不了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Điện thoại không có sóng, không lên mạng được.”",
+      "pre": "手机没有信号，上",
+      "blank": "不了",
+      "post": "网。",
+      "options": [
+       "不了",
+       "得了",
+       "不能"
+      ],
+      "answer": 0,
+      "explanation": "上网 là từ ly hợp → 上不了网."
+     },
+     {
+      "context": "“Hôm nay cô ấy không đến được nữa.”",
+      "pre": "她刚才给我发信息，说她今天来",
+      "blank": "不了",
+      "post": "了。",
+      "options": [
+       "不了",
+       "得了",
+       "没有"
+      ],
+      "answer": 0,
+      "explanation": "来不了 = không đến được; 了 cuối câu báo sự thay đổi."
+     },
+     {
+      "context": "“… có tham gia được không?”",
+      "pre": "明天的足球比赛，你们班男生参加",
+      "blank": "得了",
+      "post": "吗？",
+      "options": [
+       "得了",
+       "了得",
+       "得不"
+      ],
+      "answer": 0,
+      "explanation": "Hỏi khả năng: V + 得了 + 吗？"
+     },
+     {
+      "context": "“Món gọi không nhiều, ăn hết được.”",
+      "pre": "咱们点的菜不多，吃",
+      "blank": "得了",
+      "post": "。",
+      "options": [
+       "得了",
+       "不了",
+       "了"
+      ],
+      "answer": 0,
+      "explanation": "菜不多 → 吃得了 (ăn hết được)."
+     },
+     {
+      "context": "“Mất ví rồi, không mua được vé tàu điện ngầm.”",
+      "pre": "我的钱包丢了，买",
+      "blank": "不了",
+      "post": "地铁票了。",
+      "options": [
+       "不了",
+       "得了",
+       "不能"
+      ],
+      "answer": 0,
+      "explanation": "买不了 + tân ngữ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Điện thoại không có sóng, tôi không lên mạng được.”",
+      "words": [
+       "手机",
+       "没有信号",
+       "，",
+       "我",
+       "上不了",
+       "网"
+      ],
+      "answer": "手机没有信号，我上不了网。",
+      "explanation": "上 + 不了 + 网."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mai bạn có đến được không?”",
+      "words": [
+       "明天",
+       "你",
+       "来得了",
+       "来不了",
+       "？"
+      ],
+      "answer": "明天你来得了来不了？",
+      "explanation": "Câu hỏi chính phản: V得了V不了？"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nhiều món thế này, chúng mình ăn hết được không?”",
+      "words": [
+       "这么多",
+       "菜",
+       "，",
+       "咱们",
+       "吃得了",
+       "吗",
+       "？"
+      ],
+      "answer": "这么多菜，咱们吃得了吗？",
+      "explanation": "V得了吗？"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我今天有点儿事，去不了你家了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 去不了 + nơi chốn + 了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "雨太大了，我们出门不了。",
+      "isCorrect": false,
+      "correctVersion": "雨太大了，我们出不了门。",
+      "explanation": "出门 là từ ly hợp: 出不了门."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他病了，明天不能来不了。",
+      "isCorrect": false,
+      "correctVersion": "他病了，明天来不了。",
+      "explanation": "Bỏ 不能 — không phủ định hai lần."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Điện thoại tôi hết pin rồi, không quét mã được.",
+      "answer": "我的手机没电了，扫不了码。",
+      "answerPy": "Wǒ de shǒujī méi diàn le, sǎo bù liǎo mǎ.",
+      "explanation": "扫码 là từ ly hợp → 扫不了码."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bài tập nhiều thế này, một ngày bạn làm xong được không?",
+      "answer": "这么多作业，你一天做得了吗？",
+      "answerPy": "Zhème duō zuòyè, nǐ yì tiān zuò de le ma?",
+      "explanation": "V得了吗？ hỏi khả năng hoàn thành."
+     }
+    ]
+   },
+   {
+    "title": "连词“再说” — vả lại, hơn nữa",
+    "errors": [
+     {
+      "wrong": "今天太晚了，再说我们别去超市了。",
+      "why": "再说 dẫn ra LÝ DO bổ sung, không dẫn ra kết luận / đề nghị.",
+      "right": "今天太晚了，别去超市了，再说外面还在下雨呢。"
+     },
+     {
+      "wrong": "再说外面下雨，今天太晚了。",
+      "why": "再说 đứng ở vế SAU, sau khi đã có lý do thứ nhất.",
+      "right": "今天太晚了，再说外面还在下雨。"
+     },
+     {
+      "wrong": "这家饭馆的菜很好吃，再说很贵。",
+      "why": "Hai ý phải cùng chiều; ý trái ngược dùng 不过 / 但是.",
+      "right": "这家饭馆的菜很好吃，不过有点儿贵。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… vả lại hàng xóm với nhau phải giúp nhau.”",
+      "pre": "我提着这些东西就算锻炼身体了，",
+      "blank": "再说",
+      "post": "邻居之间就是要互相帮助啊。",
+      "options": [
+       "再说",
+       "不过",
+       "于是"
+      ],
+      "answer": 0,
+      "explanation": "再说 bổ sung lý do thứ hai."
+     },
+     {
+      "context": "“… vả lại ngoài trời vẫn đang mưa đấy.”",
+      "pre": "今天太晚了，别去超市了，再说外面还在下雨",
+      "blank": "呢",
+      "post": "。",
+      "options": [
+       "呢",
+       "吗",
+       "吧"
+      ],
+      "answer": 0,
+      "explanation": "还在 + V + 呢: sự việc đang tiếp diễn (HSK 2/3)."
+     },
+     {
+      "context": "“… vả lại đông người cũng vui hơn.”",
+      "pre": "你今天正好有时间，再说人多",
+      "blank": "也",
+      "post": "更热闹。",
+      "options": [
+       "也",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "Vế 再说 hay có 也 / 还."
+     },
+     {
+      "context": "“… coi như là tập thể dục rồi.” (ôn từ mới)",
+      "pre": "我提着这些东西就",
+      "blank": "算",
+      "post": "锻炼身体了。",
+      "options": [
+       "算",
+       "像",
+       "变"
+      ],
+      "answer": 0,
+      "explanation": "就算……了 = coi như là."
+     },
+     {
+      "context": "“… vả lại bạn đã có nhiều áo rồi.”",
+      "pre": "别买这件了，太贵了，",
+      "blank": "再说",
+      "post": "你已经有很多衣服了。",
+      "options": [
+       "再说",
+       "不过",
+       "甚至"
+      ],
+      "answer": 0,
+      "explanation": "Hai lý do cùng chiều (đắt + đã có nhiều) → 再说."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm nay muộn quá rồi, vả lại ngoài trời vẫn đang mưa.”",
+      "words": [
+       "今天",
+       "太晚了",
+       "，",
+       "再说",
+       "外面",
+       "还在下雨呢"
+      ],
+      "answer": "今天太晚了，再说外面还在下雨呢。",
+      "explanation": "Lý do 1，再说 + lý do 2."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Căn nhà này gần trường, vả lại tiền thuê cũng không đắt.”",
+      "words": [
+       "这个房子",
+       "离学校很近",
+       "，",
+       "再说",
+       "房租",
+       "也不贵"
+      ],
+      "answer": "这个房子离学校很近，再说房租也不贵。",
+      "explanation": "再说 + chủ ngữ + 也 + …"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "咱们打车去吧，时间不多了，再说东西也很多。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: hai lý do cùng chiều (ít thời gian + nhiều đồ) → đi taxi."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这件衣服很漂亮，再说太贵了，我不买了。",
+      "isCorrect": false,
+      "correctVersion": "这件衣服很漂亮，不过太贵了，我不买了。",
+      "explanation": "Hai ý trái chiều → dùng 不过 (Bài 2 · điểm 2)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "再说外面很冷，你别出去了。",
+      "isCorrect": false,
+      "correctVersion": "已经很晚了，再说外面很冷，你别出去了。",
+      "explanation": "再说 không mở đầu khi chưa có lý do thứ nhất."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Chúng mình đi tàu điện ngầm đi, nhanh, vả lại cũng không đắt.",
+      "answer": "咱们坐地铁去吧，很快，再说也不贵。",
+      "answerPy": "Zánmen zuò dìtiě qù ba, hěn kuài, zàishuō yě bú guì.",
+      "explanation": "Lý do 1，再说 + 也 + lý do 2."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đừng khách sáo, việc này rất đơn giản, vả lại hàng xóm với nhau nên giúp đỡ lẫn nhau.",
+      "answer": "别客气，这件事很简单，再说邻居之间应该互相帮助。",
+      "answerPy": "Bié kèqi, zhè jiàn shì hěn jiǎndān, zàishuō línjū zhījiān yīnggāi hùxiāng bāngzhù.",
+      "explanation": "再说 + từ mới 之间, 互相."
+     }
+    ]
+   },
+   {
+    "title": "并列复句“既……，又/也……” — vừa … vừa …",
+    "errors": [
+     {
+      "wrong": "既他聪明，又他努力。",
+      "why": "既 / 又 đứng SAU chủ ngữ, không đứng trước chủ ngữ.",
+      "right": "他既聪明又努力。"
+     },
+     {
+      "wrong": "这家饭馆的菜既好吃，又很贵。",
+      "why": "Hai ý phải cùng chiều; ý trái ngược dùng 不过 / 但是.",
+      "right": "这家饭馆的菜很好吃，不过很贵。"
+     },
+     {
+      "wrong": "我既喜欢唱歌，还喜欢跳舞。",
+      "why": "Vế thứ hai dùng 又 / 也; 还 chỉ dùng cho ý thứ ba.",
+      "right": "我既喜欢唱歌，也喜欢跳舞。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Cô ấy thấy như vậy vừa tiện, vừa …”",
+      "pre": "她觉得这样",
+      "blank": "既",
+      "post": "方便，又能锻炼身体。",
+      "options": [
+       "既",
+       "也",
+       "还"
+      ],
+      "answer": 0,
+      "explanation": "Vế đầu dùng 既."
+     },
+     {
+      "context": "“… vừa ngon vừa rẻ.”",
+      "pre": "这家饭馆的菜既好吃，",
+      "blank": "又",
+      "post": "便宜。",
+      "options": [
+       "又",
+       "再",
+       "就"
+      ],
+      "answer": 0,
+      "explanation": "既……又……"
+     },
+     {
+      "context": "“… cũng học được kiến thức lịch sử.”",
+      "pre": "我很喜欢这门课程，既能提高中文水平，",
+      "blank": "也",
+      "post": "能学到历史知识。",
+      "options": [
+       "也",
+       "都",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "既……也…… (vế sau là cụm động từ)."
+     },
+     {
+      "context": "“… lại còn bảo vệ được môi trường.”",
+      "pre": "她觉得骑车既方便，又能锻炼身体，",
+      "blank": "还",
+      "post": "能保护环境。",
+      "options": [
+       "还",
+       "既",
+       "就"
+      ],
+      "answer": 0,
+      "explanation": "Ý thứ ba dùng 还."
+     },
+     {
+      "context": "“… sạc điện cũng rất tiện.” (ôn từ mới)",
+      "pre": "电动车速度快，价格不高，",
+      "blank": "充电",
+      "post": "也很方便。",
+      "options": [
+       "充电",
+       "速度",
+       "力气"
+      ],
+      "answer": 0,
+      "explanation": "充电 = sạc điện."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Món ăn ở nhà hàng này vừa ngon vừa rẻ.”",
+      "words": [
+       "这家",
+       "饭馆的菜",
+       "既",
+       "好吃",
+       "又",
+       "便宜"
+      ],
+      "answer": "这家饭馆的菜既好吃又便宜。",
+      "explanation": "Chủ ngữ + 既 + A + 又 + B."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đi xe đạp vừa rèn luyện thân thể, cũng bảo vệ được môi trường.”",
+      "words": [
+       "骑自行车",
+       "既",
+       "能锻炼身体",
+       "，",
+       "也",
+       "能保护环境"
+      ],
+      "answer": "骑自行车既能锻炼身体，也能保护环境。",
+      "explanation": "既……也……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他既是我的老师，也是我的朋友。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 既是……也是……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "既他会说汉语，又他会说英语。",
+      "isCorrect": false,
+      "correctVersion": "他既会说汉语，又会说英语。",
+      "explanation": "既 / 又 đứng sau chủ ngữ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这件衣服既漂亮，又不好看。",
+      "isCorrect": false,
+      "correctVersion": "这件衣服既漂亮，又便宜。",
+      "explanation": "Hai ý mâu thuẫn — phải cùng chiều."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Xe điện vừa nhanh vừa rẻ, nên ngày càng thịnh hành.",
+      "answer": "电动车既快又便宜，所以越来越流行。",
+      "answerPy": "Diàndòngchē jì kuài yòu piányi, suǒyǐ yuèláiyuè liúxíng.",
+      "explanation": "既……又…… + 流行."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đi tàu điện ngầm vừa không bị tắc đường, vừa tiết kiệm được thời gian.",
+      "answer": "坐地铁既不堵车，又能省时间。",
+      "answerPy": "Zuò dìtiě jì bù dǔchē, yòu néng shěng shíjiān.",
+      "explanation": "既……又 / 也…… + 省."
+     }
+    ]
+   },
+   {
+    "title": "固定短语“来得及/来不及” — kịp / không kịp",
+    "errors": [
+     {
+      "wrong": "我昨天没来不及吃早饭。",
+      "why": "Việc đã qua mà không kịp làm nói 没来得及, không nói 没来不及.",
+      "right": "我昨天没来得及吃早饭。"
+     },
+     {
+      "wrong": "时间太晚了，我不来得及坐地铁。",
+      "why": "Phủ định là 来不及, không phải 不来得及.",
+      "right": "时间太晚了，我来不及坐地铁了。"
+     },
+     {
+      "wrong": "还有一个小时，来得及了。",
+      "why": "Khẳng định còn kịp chỉ cần 来得及 (không thêm 了); 来不及了 mới hay có 了.",
+      "right": "还有一个小时，来得及。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Người không kịp ăn sáng …”",
+      "pre": "没",
+      "blank": "来得及",
+      "post": "吃早饭的人在这里就能买到热包子。",
+      "options": [
+       "来得及",
+       "来不及",
+       "不来及"
+      ],
+      "answer": 0,
+      "explanation": "没来得及 + V (✗ 没来不及)."
+     },
+     {
+      "context": "“… tôi không kịp thông báo cho mọi người nữa.”",
+      "pre": "你现在才告诉我，我",
+      "blank": "来不及",
+      "post": "通知大家了。",
+      "options": [
+       "来不及",
+       "来得及",
+       "没来得及"
+      ],
+      "answer": 0,
+      "explanation": "来不及 + V + 了."
+     },
+     {
+      "context": "“… 9 giờ xuất phát có kịp không?”",
+      "pre": "中午12点的飞机，咱们9点出发",
+      "blank": "来得及",
+      "post": "吗？",
+      "options": [
+       "来得及",
+       "来不及了",
+       "没来得及"
+      ],
+      "answer": 0,
+      "explanation": "Hỏi: ……来得及吗？"
+     },
+     {
+      "context": "“… kịp ăn sáng.”",
+      "pre": "别着急，还有15分钟，咱们来得及吃",
+      "blank": "早饭",
+      "post": "。",
+      "options": [
+       "早饭",
+       "速度",
+       "乘客"
+      ],
+      "answer": 0,
+      "explanation": "来得及 + V + O."
+     },
+     {
+      "context": "“… bạn không kịp đi tàu điện ngầm về nữa …”",
+      "pre": "时间太晚了，你",
+      "blank": "来不及",
+      "post": "坐地铁回去了，就住在我们这儿吧。",
+      "options": [
+       "来不及",
+       "来得及",
+       "没来得及"
+      ],
+      "answer": 0,
+      "explanation": "来不及 + V + 了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Còn nửa tiếng, chúng mình kịp ăn sáng.”",
+      "words": [
+       "还有",
+       "半个小时",
+       "，",
+       "咱们",
+       "来得及",
+       "吃早饭"
+      ],
+      "answer": "还有半个小时，咱们来得及吃早饭。",
+      "explanation": "来得及 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Sáng nay tôi chưa kịp ăn sáng đã đi làm rồi.”",
+      "words": [
+       "我",
+       "早上",
+       "没来得及",
+       "吃早饭",
+       "就",
+       "去上班了"
+      ],
+      "answer": "我早上没来得及吃早饭就去上班了。",
+      "explanation": "没来得及 + V + 就……了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "现在出发还来得及。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 还来得及 = vẫn còn kịp."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "昨天我没来不及跟你说再见。",
+      "isCorrect": false,
+      "correctVersion": "昨天我没来得及跟你说再见。",
+      "explanation": "Việc đã qua: 没来得及."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "飞机十点起飞，现在已经九点半了，来得及不了。",
+      "isCorrect": false,
+      "correctVersion": "飞机十点起飞，现在已经九点半了，来不及了。",
+      "explanation": "Phủ định là 来不及, không có 来得及不了."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Sáng nay tôi dậy muộn, không kịp ăn sáng.",
+      "answer": "今天早上我起晚了，没来得及吃早饭。",
+      "answerPy": "Jīntiān zǎoshang wǒ qǐ wǎn le, méi láidejí chī zǎofàn.",
+      "explanation": "Việc đã qua → 没来得及 + V."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Phim 8 giờ bắt đầu, bây giờ đi còn kịp không?",
+      "answer": "电影八点开始，现在去还来得及吗？",
+      "answerPy": "Diànyǐng bā diǎn kāishǐ, xiànzài qù hái láidejí ma?",
+      "explanation": "……，来得及吗？"
+     }
+    ]
+   }
+  ]
+ }
+}

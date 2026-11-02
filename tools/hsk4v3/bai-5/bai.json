@@ -1,0 +1,338 @@
+{
+"so": 5,
+"zh": "“不怕辣”和“怕不辣”",
+"py": "“Bú pà là” hé “pà bú là”",
+"vn": "“Không sợ cay” và “sợ không cay”",
+"chuDe": "Thói quen ăn uống, khẩu vị, tụ tập ăn uống và phép sắp xếp chỗ ngồi trên bàn tiệc",
+"icon": "🌶️",
+"mucTieu": [
+  "Nghe hiểu và trao đổi về thói quen ăn uống và chuyện tụ tập ăn uống (聚餐).",
+  "Nói / viết được sở thích ăn uống (khẩu vị) và trải nghiệm dùng bữa của bản thân.",
+  "Hiểu thói quen ăn uống của người Trung Quốc và phép lịch sự sắp xếp chỗ ngồi trong bữa tiệc trang trọng."
+],
+
+"wu": [
+  {"img":"wu-A","label":"辣子鸡 · 辣","py":"Làzǐjī · là","letter":"A"},
+  {"img":"wu-B","label":"红烧羊肉 · 咸","py":"Hóngshāo Yángròu · xián","letter":"B"},
+  {"img":"wu-C","label":"松鼠鳜鱼 · 酸、甜","py":"Sōngshǔ Guìyú · suān, tián","letter":"C"},
+  {"img":"wu-D","label":"酸汤米线 · 酸","py":"Suāntāng Mǐxiàn · suān","letter":"D"}
+],
+
+"dialogs": [
+  {"tab":"Bữa cơm nhà Lưu Minh","scene":"在刘明和王一雪家 · Ở nhà Lưu Minh và Vương Nhất Tuyết (hai vợ chồng mời Bạch Gia Nguyệt và Lý Văn ăn cơm)","anh":"kv-1",
+   "nguoi":["刘明","白家月","王一雪"],
+   "preQuiz":[
+     {"q":"白家月来中国多久了？","opts":["不到两个月","两个月","两个多月","两年多"],"ans":2},
+     {"q":"白家月觉得水煮鱼怎么样？","opts":["不好吃","没做熟","不太辣","比较辣"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"家月，你来中国至少两个月了，习惯吃中餐了吗？","vn":"Gia Nguyệt này, cháu sang Trung Quốc ít nhất cũng hai tháng rồi, đã quen ăn món Trung chưa?"},
+     {"sp":1,"zh":"习惯了，而且我很喜欢吃中国菜。","vn":"Cháu quen rồi ạ, mà cháu còn rất thích ăn món Trung Quốc nữa."},
+     {"sp":2,"zh":"你还没吃过水煮鱼吧？这是我专门为你做的。","vn":"Cháu chưa ăn món cá luộc cay bao giờ nhỉ? Món này cô làm riêng cho cháu đấy."},
+     {"sp":1,"zh":"看起来不像水煮鱼，更像“油煮鱼”。","vn":"Trông chẳng giống “cá luộc nước” chút nào, giống “cá nấu dầu” hơn ạ."},
+     {"sp":2,"zh":"这道菜是先用水把鱼煮熟，最后再倒上辣椒油，其实只有最上面那一层是油。你尝尝，对你来说辣不辣？","vn":"Món này là trước tiên dùng nước luộc chín cá, cuối cùng mới rưới dầu ớt lên, thật ra chỉ có lớp trên cùng là dầu thôi. Cháu nếm thử xem, với cháu có cay không?"},
+     {"sp":1,"zh":"辣是辣，但是非常好吃！","vn":"Cay thì cay thật, nhưng ngon cực kỳ ạ!"},
+     {"sp":2,"zh":"那你多吃点儿，不要客气。","vn":"Vậy cháu ăn nhiều vào nhé, đừng khách sáo."}],
+   "hoi":[["白家月习惯吃中餐了吗？","习惯了，而且她很喜欢吃中国菜。"],["水煮鱼是怎么做的？","先用水把鱼煮熟，最后再倒上辣椒油，其实只有最上面那一层是油。"]],
+   "kelai":"白家月……，她习惯……，而且……。王一雪让她尝尝……。白家月觉得这道菜看起来……，更……。王一雪告诉她，这道菜是先……，最后再……，其实只有……。白家月尝了以后，觉得……，不过……。王一雪让她……，不要……。",
+   "kelaiMau":"白家月来中国至少两个月了，她习惯吃中餐了，而且很喜欢吃中国菜。王一雪让她尝尝自己专门为她做的水煮鱼。白家月觉得这道菜看起来不像水煮鱼，更像“油煮鱼”。王一雪告诉她，这道菜是先用水把鱼煮熟，最后再倒上辣椒油，其实只有最上面那一层是油。白家月尝了以后，觉得辣是辣，不过非常好吃。王一雪让她多吃点儿，不要客气。"},
+
+  {"tab":"“Không sợ cay” hay “sợ không cay”","scene":"在刘明和王一雪家 · Ở nhà Lưu Minh và Vương Nhất Tuyết (hai vợ chồng vừa ăn vừa trò chuyện với Bạch Gia Nguyệt, Lý Văn)","anh":"kv-2",
+   "nguoi":["王一雪","白家月","刘明","李文"],
+   "preQuiz":[
+     {"q":"关于王一雪一家，可以知道什么？","opts":["现在不吃辣","现在能吃辣","以前敢吃辣","以前爱吃辣"],"ans":1},
+     {"q":"白家月现在的口味（kǒuwèi, khẩu vị）是什么？","opts":["不吃辣","爱吃辣","不怕辣","怕不辣"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"我听李文说，你现在也爱吃辣了？","vn":"Cô nghe Lý Văn nói bây giờ cháu cũng mê ăn cay rồi à?"},
+     {"sp":1,"zh":"是的，来中国以后，我越来越喜欢吃辣了。","vn":"Vâng ạ, từ khi sang Trung Quốc, cháu ngày càng thích ăn cay."},
+     {"sp":0,"zh":"我们以前不太敢吃辣，吃完可能会肚子不舒服，不过现在也慢慢适应了。","vn":"Trước đây nhà cô không dám ăn cay lắm, ăn xong có khi bị khó chịu trong bụng, nhưng giờ cũng dần quen rồi."},
+     {"sp":2,"zh":"对，我们现在都不怕辣了。家月，你是“不怕辣”还是“怕不辣”？","vn":"Đúng thế, giờ nhà chú đều “không sợ cay” rồi. Gia Nguyệt, cháu là “không sợ cay” hay “sợ không cay”?"},
+     {"sp":1,"zh":"中文真有意思，相同的字，顺序一换，意思就变了。","vn":"Tiếng Trung thú vị thật, vẫn những chữ ấy, đổi thứ tự một cái là nghĩa thay đổi ngay."},
+     {"sp":3,"zh":"你的中文水平够高的，这都听懂了！你说得对，“不怕辣”是说不怕吃辣的菜，“怕不辣”是担心菜还不够辣呢。","vn":"Trình độ tiếng Trung của cậu cao thật đấy, câu này mà cũng nghe hiểu! Cậu nói đúng, “không sợ cay” là không ngại ăn món cay, còn “sợ không cay” là lo món ăn còn chưa đủ cay cơ."},
+     {"sp":1,"zh":"我还达不到“怕不辣”的水平，甚至也不能算“不怕辣”，只是喜欢吃辣。","vn":"Cháu còn chưa đạt tới trình “sợ không cay”, thậm chí cũng chưa tính là “không sợ cay”, chỉ là thích ăn cay thôi ạ."}],
+   "hoi":[["王一雪一家以前敢不敢吃辣？为什么？","他们以前不太敢吃辣，因为吃完可能会肚子不舒服。"],["“不怕辣”“怕不辣”都是什么意思？","“不怕辣”是说不怕吃辣的菜，“怕不辣”是担心菜还不够辣。"]]},
+
+  {"tab":"Bữa trưa cuối tuần","scene":"在餐厅里 · Ở nhà hàng (Bạch Gia Nguyệt, Trần Thiên Trung, Lý Văn và Annie tụ tập ăn trưa)","anh":"kv-3","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"陈天中点了什么菜？","opts":["辣子鸡","松鼠鳜鱼","红烧羊肉","酸汤米线"],"ans":1},
+     {"q":"李文喜欢吃什么口味的菜？","opts":["辣的","甜的","咸的","酸的"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"周末，白家月、陈天中、李文和安妮聚在一起吃午餐。","vn":"Cuối tuần, Bạch Gia Nguyệt, Trần Thiên Trung, Lý Văn và Annie tụ tập ăn trưa cùng nhau."},
+     {"sp":0,"zh":"白家月想吃辣的，要了辣子鸡；陈天中爱吃甜的，想尝尝松鼠鳜鱼；李文更喜欢吃咸的，选了红烧羊肉和一道凉菜；安妮听说贵州酸汤很有名，点了酸汤米线。","vn":"Bạch Gia Nguyệt muốn ăn cay, gọi gà xào ớt khô; Trần Thiên Trung thích đồ ngọt, muốn nếm thử cá quế hình con sóc; Lý Văn thích ăn mặn hơn, chọn thịt dê kho tàu và một món nguội; Annie nghe nói canh chua Quý Châu rất nổi tiếng, nên gọi bún canh chua."},
+     {"sp":0,"zh":"他们边吃边聊，非常愉快。","vn":"Họ vừa ăn vừa trò chuyện, vô cùng vui vẻ."},
+     {"sp":0,"zh":"结账时，李文想请客，但大家觉得还是各付各的更合适。","vn":"Lúc thanh toán, Lý Văn muốn mời, nhưng mọi người thấy vẫn là ai trả phần nấy thì hợp hơn."},
+     {"sp":0,"zh":"于是，李文付完钱后，大家把钱转给了他，还笑着说下次再一起聚餐。","vn":"Thế là sau khi Lý Văn trả tiền xong, mọi người chuyển khoản lại cho anh ấy, còn cười nói lần sau lại cùng nhau đi ăn."}],
+   "hoi":[["白家月点了什么菜？为什么？","白家月点了辣子鸡，因为她想吃辣的。"],["他们是怎么结账的？","他们各付各的：李文先付完钱，然后大家用手机把钱转给了他。"]],
+   "kelai":"周末，白家月、陈天中、李文和安妮……吃午餐。白家月……，要了辣子鸡；陈天中……，想尝尝松鼠鳜鱼；李文更喜欢……，选了红烧羊肉和……；安妮听说贵州酸汤……，点了酸汤米线。他们……，非常愉快。结账时，李文……，但大家觉得还是……更合适。于是，李文……，大家……，还笑着说……。",
+   "kelaiMau":"周末，白家月、陈天中、李文和安妮聚在一起吃午餐。白家月想吃辣的，要了辣子鸡；陈天中爱吃甜的，想尝尝松鼠鳜鱼；李文更喜欢吃咸的，选了红烧羊肉和一道凉菜；安妮听说贵州酸汤很有名，点了酸汤米线。他们边吃边聊，非常愉快。结账时，李文想请客，但大家觉得还是各付各的更合适。于是，李文付完钱后，大家把钱转给了他，还笑着说下次再一起聚餐。"},
+
+  {"tab":"Chỗ ngồi trên bàn tiệc","scene":"中国餐桌上的座位安排 · Cách sắp xếp chỗ ngồi trên bàn ăn của người Trung Quốc","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"一般来说，什么人会坐面对门口的座位？","opts":["主人","主人的家人","年龄小的客人","年龄大的客人"],"ans":3},
+     {"q":"一般来说，正式聚餐时，谁先坐下？","opts":["主人","老人","小孩子","年轻人"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"今天吃饭的时候，大家坐得比较随意。","vn":"Hôm nay lúc ăn cơm, mọi người ngồi khá tùy ý."},
+     {"sp":0,"zh":"李文告诉白家月，在中国，正式聚餐和普通聚餐不同，正式聚餐时人们比较重视座位的安排，比如可以按照年龄大小来安排，年龄比较大的客人往往会坐在中间或者面对门口的座位。","vn":"Lý Văn nói với Bạch Gia Nguyệt rằng ở Trung Quốc, bữa tiệc trang trọng khác với bữa ăn bình thường; khi ăn tiệc trang trọng người ta khá coi trọng việc sắp xếp chỗ ngồi, ví dụ có thể xếp theo tuổi lớn nhỏ, khách lớn tuổi thường ngồi ở giữa hoặc ở chỗ đối diện cửa ra vào."},
+     {"sp":0,"zh":"大家坐下时，主人会请客人先坐。","vn":"Khi mọi người ngồi vào bàn, chủ nhà sẽ mời khách ngồi trước."},
+     {"sp":0,"zh":"如果聚餐时有老人，年轻人要等老人坐下后再坐。","vn":"Nếu bữa tiệc có người già, người trẻ phải đợi người già ngồi xuống rồi mới ngồi."},
+     {"sp":0,"zh":"白家月听后觉得很有意思，她认为这么做是照顾客人、尊重老人的表现。","vn":"Bạch Gia Nguyệt nghe xong thấy rất thú vị, cô cho rằng làm như vậy là biểu hiện của sự chu đáo với khách và kính trọng người già."}],
+   "hoi":[["正式聚餐时，可以怎么安排座位？","可以按照年龄大小来安排，年龄比较大的客人往往会坐在中间或者面对门口的座位。"],["白家月怎么看这种座位安排方式？","她觉得很有意思，认为这么做是照顾客人、尊重老人的表现。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"范围副词“至少”","tenVn":"Phó từ phạm vi 「至少」 — ít nhất, tối thiểu",
+  "cauTruc":["至少 + số lượng / thời gian","Chủ ngữ + 至少 + (要 / 能 / 会) + động từ + số lượng","……，不过 / 但 + 至少 + …… (ít ra thì cũng …)"],
+  "giaiThich":"「至少」 biểu thị thời gian, số lượng, mức độ… KHÔNG THẤP HƠN một giới hạn nhỏ nhất (≥ mức đó). Vị trí: đứng sau chủ ngữ, TRƯỚC động từ hoặc trước cụm số lượng: 至少两个月 / 至少要选三门课. Cách dùng thứ hai: khi điều khác chưa được như ý, 「至少」 nêu ra cái “ít ra cũng được”: 旧是旧，不过至少很干净 (cũ thì cũ, nhưng ít ra cũng sạch). Mẹo cho người Việt: tiếng Việt hay nói “hai tiếng là ít nhất”, “ít nhất” để cuối câu — tiếng Trung KHÔNG được để 至少 ở cuối câu. Trái nghĩa: 最多 (nhiều nhất).",
+  "viDu":[["家月，你来中国至少两个月了，习惯吃中餐了吗？","Gia Nguyệt, cháu sang Trung Quốc ít nhất cũng hai tháng rồi, đã quen ăn món Trung chưa?"],["每年至少有两百名留学生来我校学习中文专业。","Mỗi năm có ít nhất hai trăm du học sinh đến trường chúng tôi học chuyên ngành tiếng Trung."],["我们虽然没有见过面，但至少在网上聊过很多次，也算比较熟悉了。","Tuy chúng tôi chưa gặp mặt, nhưng ít ra cũng đã trò chuyện trên mạng nhiều lần, coi như khá quen rồi."],["这个房子旧是旧，不过至少很干净。","Căn nhà này cũ thì cũ, nhưng ít ra cũng rất sạch sẽ. (ôn ×是×，不过…… — Bài 3 · điểm 1)"]],
+  "loi":[["我每天学习两个小时至少。","Không để 至少 cuối câu như tiếng Việt; 至少 đứng trước động từ / số lượng.","我每天至少学习两个小时。"],["至少他有三十岁了。","Thường đặt 至少 sau chủ ngữ, trước vị ngữ.","他至少有三十岁了。"],["他至少的朋友有十个。","至少 là phó từ, không làm định ngữ với 的.","他至少有十个朋友。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["家月，你来中国","两个月了，习惯吃中餐了吗？"],"dap":[["至少"]],"chon":["至少","专门","任何"],"goiY":"“Cháu sang Trung Quốc ít nhất hai tháng rồi …”","giai":"至少 + cụm thời gian."},
+     {"kieu":"dien","phan":["每年至少","两百名留学生来我校学习中文专业。"],"dap":[["有"]],"chon":["有","是","在"],"goiY":"“Mỗi năm có ít nhất hai trăm du học sinh …”","giai":"至少 + 有 + số lượng."},
+     {"kieu":"dien","phan":["我们虽然没有见过面，","至少在网上聊过很多次。"],"dap":[["但"]],"chon":["但","就","于是"],"goiY":"“Tuy chưa gặp mặt, nhưng ít ra cũng đã trò chuyện trên mạng nhiều lần.”","giai":"虽然……，但至少…… — ôn 虽然……但是…… (HSK 3)."},
+     {"kieu":"dien","phan":["骑电动车至少","快十分钟。"],"dap":[["能"]],"chon":["能","敢","够"],"goiY":"“Đi xe đạp điện ít nhất cũng nhanh được mười phút.”","giai":"至少 + 能 + V + số lượng."},
+     {"kieu":"dien","phan":["这个房子旧是旧，","至少很干净。"],"dap":[["不过"]],"chon":["不过","因为","要是"],"goiY":"“Cũ thì cũ, nhưng ít ra cũng sạch.” (ôn Bài 3)","giai":"×是×，不过至少…… — ôn Bài 3 · điểm 1."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["我","每天","至少","学习","两个小时"],"dap":["我每天至少学习两个小时。"],"goiY":"Mỗi ngày tôi học ít nhất hai tiếng.","giai":"Chủ ngữ + thời gian + 至少 + V + thời lượng."},
+     {"kieu":"xep","manh":["研究生一年级","至少","要","选","三门课"],"dap":["研究生一年级至少要选三门课。"],"goiY":"Năm nhất cao học phải chọn ít nhất ba môn.","giai":"至少 + 要 + V + số lượng."},
+     {"kieu":"xep","manh":["这个","房子","旧是旧","，","不过","至少","很干净"],"dap":["这个房子旧是旧，不过至少很干净。"],"goiY":"Căn nhà này cũ thì cũ, nhưng ít ra cũng sạch.","giai":"Ôn ×是×，不过…… + 至少."},
+     {"kieu":"dungsai","cau":"我每天睡觉八个小时至少。","dung":false,"sua":"我每天至少睡八个小时。","giai":"至少 không đứng cuối câu."},
+     {"kieu":"dungsai","cau":"每年至少有两百名留学生来我校学习。","dung":true,"giai":"Đúng: 至少 + 有 + số lượng."},
+     {"kieu":"dungsai","cau":"他至少的朋友有十个。","dung":false,"sua":"他至少有十个朋友。","giai":"至少 là phó từ, không thêm 的 làm định ngữ."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 49)","huongDan":"Viết câu trả lời của B, có dùng 至少","cau":[
+     {"kieu":"vandung","de":"A：这个房子是不是有点儿旧？ B：旧是旧，不过＿＿＿。","goiY":"Thừa nhận nhà cũ, rồi nêu một điểm “ít ra cũng …” (ôn ×是×，不过…… — Bài 3)","mau":"至少很干净","can":[["至少"]]},
+     {"kieu":"vandung","de":"A：老师，我刚入学，不知道应该选几门课。 B：研究生一年级的时候，＿＿＿。","goiY":"Nói số môn tối thiểu phải chọn (至少要……)","mau":"至少要选三门课","can":[["至少"]]},
+     {"kieu":"vandung","de":"A：你现在怎么不坐公交车，每天骑电动车了？ B：骑电动车＿＿＿，我早上就不用太早出发了。","goiY":"Nói đi xe điện nhanh hơn ít nhất bao nhiêu phút","mau":"至少能快十分钟","can":[["至少"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Muốn học giỏi tiếng Trung, mỗi ngày ít nhất phải học một tiếng.","dap":["要想学好中文，每天至少要学习一个小时。","要想学好中文，每天至少要学一个小时。","想学好中文，每天至少要学习一个小时。"],"giai":"至少 + 要 + V + thời lượng."},
+     {"kieu":"dich","vn":"Tôi đã đến Bắc Kinh ít nhất năm lần rồi.","dap":["我至少来过北京五次了。","我至少去过北京五次了。","我至少来过五次北京了。"],"giai":"至少 + V过 + số lần."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt câu nói về thói quen ăn uống / học tập của em, có dùng 「至少」","mau":"我每天至少喝八杯水，至少吃一次水果。","can":[["至少"]]}]}
+  ]},
+
+ {"so":"2","ten":"副词/动词“够”","tenVn":"Phó từ / Động từ 「够」 — thật là …; đủ",
+  "cauTruc":["Phó từ: 够 + tính từ + 的 (thật là …, … thật đấy)","Động từ: danh từ + 够 / 不够 (đủ / không đủ)","不够 + tính từ (chưa đủ …)"],
+  "giaiThich":"「够」 có hai từ loại. (1) PHÓ TỪ: biểu thị mức độ cao, thường dùng trong khung cố định 「够……的」, mang sắc thái cảm thán của khẩu ngữ: 你的中文水平够高的 = trình độ tiếng Trung của cậu cao thật đấy. Đừng quên 的 ở cuối! (2) ĐỘNG TỪ: số lượng đáp ứng đủ nhu cầu, hoặc đạt tới một tiêu chuẩn / mức độ: 四个菜够不够？/ 时间不够. Dạng 「不够 + tính từ」 = chưa đủ … (还不够甜 = vẫn chưa đủ ngọt). Phát âm: 不够 đọc búgòu (biến điệu của 不). Mẹo phân biệt: câu khẳng định 「够 + Adj + 的」 → khen / than “thật là”; còn 够 / 不够 đứng sau danh từ → “đủ / không đủ”.",
+  "viDu":[["你的中文水平够高的，这都听懂了！","Trình độ tiếng Trung của cậu cao thật đấy, câu này mà cũng nghe hiểu!"],["明天请家月和李文来家里吃饭，四个菜够不够？","Mai mời Gia Nguyệt và Lý Văn đến nhà ăn cơm, bốn món có đủ không?"],["我尝了一下，还不够甜，再加一点儿糖吧。","Tôi nếm thử rồi, vẫn chưa đủ ngọt, thêm chút đường nữa đi."],["今天的菜够丰富的，我们四个人肯定吃不了。","Đồ ăn hôm nay phong phú thật đấy, bốn người chúng ta chắc chắn ăn không hết. (ôn V不了 — Bài 4 · điểm 1)"]],
+  "loi":[["你的中文水平够高。","Phó từ 够 ở câu khẳng định cần 的 cuối câu: 够……的.","你的中文水平够高的。"],["这个箱子够不大。","Phủ định là 不够 + tính từ: 不 đứng trước 够.","这个箱子不够大。"],["我的钱不足够买这本书。","Khẩu ngữ dùng 不够 (+ V), không nói 不足够.","我的钱不够买这本书。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["你的中文水平","高的，这都听懂了！"],"dap":[["够"]],"chon":["够","不够","至少"],"goiY":"“Trình độ tiếng Trung của cậu cao thật đấy!”","giai":"够 + Adj + 的 = thật là …"},
+     {"kieu":"dien","phan":["我尝了一下，还","甜，再加一点儿糖吧。"],"dap":[["不够"]],"chon":["不够","够","至少"],"goiY":"“Vẫn chưa đủ ngọt, thêm chút đường đi.”","giai":"不够 + Adj = chưa đủ …"},
+     {"kieu":"dien","phan":["明天请家月和李文来家里吃饭，四个菜","？"],"dap":[["够不够"]],"chon":["够不够","够没够","不够够"],"goiY":"“Bốn món có đủ không?”","giai":"Câu hỏi chính phản: 够不够."},
+     {"kieu":"dien","phan":["今天的天气够冷","，多穿点儿衣服吧。"],"dap":[["的"]],"chon":["的","了","吗"],"goiY":"“Hôm nay trời lạnh thật đấy, mặc thêm áo vào.”","giai":"Khung cố định 够……的."},
+     {"kieu":"dien","phan":["完成这个工作需要三天，现在只有两天，时间","。"],"dap":[["不够"]],"chon":["不够","够的","至少"],"goiY":"“… thời gian không đủ.”","giai":"N + 不够 (động từ)."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["你家","房子","够","大","的"],"dap":["你家房子够大的。"],"goiY":"Nhà bạn to thật đấy.","giai":"够 + Adj + 的."},
+     {"kieu":"xep","manh":["这个","箱子","不够大","，","放不下","这么多东西"],"dap":["这个箱子不够大，放不下这么多东西。"],"goiY":"Cái thùng này không đủ to, không để vừa nhiều đồ thế.","giai":"不够 + Adj + bổ ngữ khả năng 放不下."},
+     {"kieu":"xep","manh":["我","尝了一下","，","还","不够","甜"],"dap":["我尝了一下，还不够甜。"],"goiY":"Tôi nếm thử rồi, vẫn chưa đủ ngọt.","giai":"还 + 不够 + Adj."},
+     {"kieu":"dungsai","cau":"这个箱子够不大，放不下这么多东西。","dung":false,"sua":"这个箱子不够大，放不下这么多东西。","giai":"Phủ định: 不够 + Adj."},
+     {"kieu":"dungsai","cau":"你的中文水平够高的，这都听懂了！","dung":true,"giai":"Đúng: 够……的 cảm thán."},
+     {"kieu":"dungsai","cau":"我们只有两个人，三个菜够了。","dung":true,"giai":"Đúng: 够 làm động từ — đủ (số lượng)."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 51)","huongDan":"Hoàn thành đối thoại, có dùng 够 / 不够","cau":[
+     {"kieu":"vandung","de":"A：这个箱子＿＿＿，放不下这么多东西。 B：那我再看看有没有别的箱子。","goiY":"Thùng không đủ to (不够 + Adj)","mau":"不够大","can":[["够"]]},
+     {"kieu":"vandung","de":"A：你家房子＿＿＿，不仅有上下两层，还有一个小花园。 B：我买房的时候就想着要能住下一家五口人。","goiY":"Khen nhà to thật (够……的); ôn 不仅……还…… (Bài 3)","mau":"够大的","can":[["够"]]},
+     {"kieu":"vandung","de":"A：完成这个工作需要三天，现在只有两天，时间＿＿＿。 B：那我再去跟经理说一下。","goiY":"Thời gian không đủ (động từ 够)","mau":"不够","can":[["够"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Món này vẫn chưa đủ cay, cho thêm chút ớt nữa đi.","dap":["这道菜还不够辣，再放一点儿辣椒吧。","这道菜还不够辣，再加一点儿辣椒吧。","这个菜还不够辣，再放一点儿辣椒吧。"],"giai":"不够 + Adj; từ mới 辣椒."},
+     {"kieu":"dich","vn":"Hôm nay trời nóng thật đấy!","dap":["今天天气够热的！","今天的天气够热的！","今天够热的！"],"giai":"够 + Adj + 的."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt câu khen hoặc than về một món ăn / nhà hàng, có dùng 「够……的」 hoặc 「不够」","mau":"这家饭店的菜够好吃的，不过就是有点儿贵。","can":[["够"]]}]}
+  ]},
+
+ {"so":"3","ten":"固定格式“各×各的”","tenVn":"Cấu trúc cố định 「各×各的」 — ai … nấy, mỗi người tự …",
+  "cauTruc":["各 + động từ + 各 + 的 (+ danh từ)","Chủ ngữ số nhiều (大家 / 我们 / 他们) + (就) + 各 V 各的"],
+  "giaiThich":"「各×各的」 (× thường là động từ đơn âm tiết) biểu thị MỖI NGƯỜI ĐỘC LẬP làm cùng một loại việc, không ảnh hưởng nhau: 各付各的 = ai trả phần nấy, 各忙各的 = ai bận việc nấy, 各看各的书 = ai đọc sách nấy. Chủ ngữ phải chỉ nhiều người (大家, 我们, 他们). Động từ lặp lại giống nhau ở hai vế. Tiếng Việt có cách nói rất giống: “ai … nấy”, “mỗi người … phần mình”. Văn hóa: giới trẻ Trung Quốc ngày nay khi đi ăn với bạn bè hay 各付各的 (còn gọi là AA制), chuyển khoản qua điện thoại cho người trả trước.",
+  "viDu":[["大家觉得还是各付各的更合适。","Mọi người thấy vẫn là ai trả phần nấy thì hợp hơn."],["到了办公室，大家就开始各忙各的了。","Đến văn phòng, mọi người liền bắt đầu ai bận việc nấy."],["在图书馆里，大家都很安静，各看各的书。","Trong thư viện, mọi người đều rất yên lặng, ai đọc sách nấy."],["他们想买的东西不一样，于是到了商场以后就各买各的了。","Họ muốn mua những thứ khác nhau, thế là đến trung tâm thương mại liền mỗi người mua một kiểu. (ôn 于是 — Bài 3 · điểm 4)"]],
+  "loi":[["我各付各的。","Chủ ngữ phải là nhiều người.","我们各付各的。"],["大家各付自己的。","Cấu trúc cố định lặp lại 各 + cùng động từ: 各V各的.","大家各付各的。"],["他们各的吃各的。","Không có 的 sau 各 thứ nhất; 的 chỉ ở cuối.","他们各吃各的。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["大家觉得还是各付","的更合适。"],"dap":[["各"]],"chon":["各","自己","每"],"goiY":"“… vẫn là ai trả phần nấy thì hợp hơn.”","giai":"各 + V + 各 + 的."},
+     {"kieu":"dien","phan":["到了办公室，大家就开始各","各的了。"],"dap":[["忙"]],"chon":["忙","付","坐"],"goiY":"“… ai bận việc nấy.”","giai":"各忙各的."},
+     {"kieu":"dien","phan":["在图书馆里，大家都很安静，各看各的","。"],"dap":[["书"]],"chon":["书","饭","菜"],"goiY":"“… ai đọc sách nấy.”","giai":"各V各的 + danh từ."},
+     {"kieu":"dien","phan":["他们口味不同，","就各吃各的。"],"dap":[["于是"]],"chon":["于是","甚至","不仅"],"goiY":"“Khẩu vị họ khác nhau, thế là mỗi người ăn phần mình.” (ôn Bài 3)","giai":"于是 nối kết quả — Bài 3 · điểm 4."},
+     {"kieu":"dien","phan":["他们想买的东西不一样，到了商场以后就各买","了。"],"dap":[["各的"]],"chon":["各的","自己","他的"],"goiY":"“… mỗi người mua một kiểu.”","giai":"各买各的."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["大家","觉得","还是","各付各的","更合适"],"dap":["大家觉得还是各付各的更合适。"],"goiY":"Mọi người thấy vẫn là ai trả phần nấy thì hợp hơn.","giai":"还是……更合适 + 各付各的."},
+     {"kieu":"xep","manh":["到了","办公室","，","大家","就","开始","各忙各的了"],"dap":["到了办公室，大家就开始各忙各的了。"],"goiY":"Đến văn phòng, mọi người bắt đầu ai bận việc nấy.","giai":"Chủ ngữ số nhiều + 就 + 各V各的."},
+     {"kieu":"xep","manh":["老师","说完","以后","，","大家","就","各做各的"],"dap":["老师说完以后，大家就各做各的。"],"goiY":"Thầy nói xong, mọi người ai làm bài nấy.","giai":"……以后，大家就各V各的."},
+     {"kieu":"dungsai","cau":"我各吃各的。","dung":false,"sua":"我们各吃各的。","giai":"Chủ ngữ phải là nhiều người."},
+     {"kieu":"dungsai","cau":"在图书馆里，大家都很安静，各看各的书。","dung":true,"giai":"Đúng: 各看各的 + 书."},
+     {"kieu":"dungsai","cau":"他们各的做各的。","dung":false,"sua":"他们各做各的。","giai":"Không có 的 sau 各 thứ nhất."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 53)","huongDan":"Hoàn thành câu, có dùng 各×各的","cau":[
+     {"kieu":"vandung","de":"他们想买的东西不一样，到了商场以后就＿＿＿。","goiY":"Mỗi người đi mua đồ của mình","mau":"各买各的了","can":[["各"]]},
+     {"kieu":"vandung","de":"他们虽然住在一起，但是口味不同，＿＿＿。","goiY":"Vì khẩu vị khác nhau nên mỗi người ăn phần mình","mau":"所以就各吃各的","can":[["各"]]},
+     {"kieu":"vandung","de":"老师说完作业怎么做以后，大家就＿＿＿，不再说话了。","goiY":"Ai làm bài của người nấy","mau":"各做各的","can":[["各"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Bạn bè đi ăn với nhau, chúng tôi thường ai trả phần nấy.","dap":["朋友一起吃饭，我们一般各付各的。","和朋友聚餐，我们一般各付各的。","朋友聚餐的时候，我们常常各付各的。"],"giai":"各付各的 + từ mới 聚餐."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt câu kể về em và bạn cùng phòng / gia đình, có dùng 「各×各的」","mau":"我和同屋的口味不一样，所以周末我们常常各做各的饭。","can":[["各"]]}]}
+  ]},
+
+ {"so":"4","ten":"介词“等”","tenVn":"Giới từ 「等」 — đợi đến khi, chờ đến lúc",
+  "cauTruc":["等 + sự việc / thời gian + (以后 / 后)，(chủ ngữ) + 再 / 就 + động từ","等 + sự việc + 的时候，chủ ngữ + 已经 + động từ + 了"],
+  "giaiThich":"Trong bài này 「等」 là GIỚI TỪ, nghĩa là 「等到」 (đợi đến khi), dùng để dẫn ra THỜI ĐIỂM hoặc ĐIỀU KIỆN cho hành động ở vế sau. Hay gặp: 等……(以后)，再…… (đợi … xong rồi mới …); 等……，就…… (đợi đến khi … thì …); 等……的时候，已经……了 (đến lúc … thì đã … rồi — thường diễn tả sự muộn màng, tiếc nuối). Phân biệt ba chữ 等: động từ “chờ” (我等你), giới từ “đợi đến khi” (bài này), trợ từ “vân vân” (苹果、香蕉等). Mẹo cho người Việt: gặp câu “đợi … rồi mới …”, “chờ đến khi … thì …” → nghĩ ngay tới 等……再 / 就……; 等 luôn đứng ĐẦU vế câu.",
+  "viDu":[["如果聚餐时有老人，年轻人要等老人坐下后再坐。","Nếu bữa tiệc có người già, người trẻ phải đợi người già ngồi xuống rồi mới ngồi."],["等我写完作业，再跟你出去玩。","Đợi tớ làm xong bài tập rồi tớ đi chơi với cậu."],["等我们到火车站的时候，火车已经开走了。","Đến lúc chúng tôi tới ga thì tàu đã chạy mất rồi."],["等我们赶到电影院的时候，已经来不及了。","Đợi đến lúc chúng tôi chạy tới rạp thì đã không kịp nữa rồi. (ôn 来不及 — Bài 4 · điểm 4)"]],
+  "loi":[["我写完作业等，再跟你出去玩。","等 đứng ĐẦU vế câu, trước sự việc phải đợi.","等我写完作业，再跟你出去玩。"],["等我写完作业，我又跟你出去玩。","Việc chưa xảy ra ở vế sau dùng 再 (rồi mới), không dùng 又.","等我写完作业，再跟你出去玩。"],["等我们到火车站，火车开走了。","“Đến lúc … thì đã …” cần 的时候 và 已经……了.","等我们到火车站的时候，火车已经开走了。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["如果聚餐时有老人，年轻人要","老人坐下后再坐。"],"dap":[["等"]],"chon":["等","在","从"],"goiY":"“… người trẻ phải đợi người già ngồi xuống rồi mới ngồi.”","giai":"等 + sự việc + 后，再 + V."},
+     {"kieu":"dien","phan":["等我写完作业，","跟你出去玩。"],"dap":[["再"]],"chon":["再","又","还"],"goiY":"“Đợi tớ làm xong bài rồi mới đi chơi với cậu.”","giai":"等……，再…… (việc chưa xảy ra)."},
+     {"kieu":"dien","phan":["等我们到火车站的时候，火车","开走了。"],"dap":[["已经"]],"chon":["已经","正在","马上"],"goiY":"“… tàu đã chạy mất rồi.”","giai":"等……的时候，已经……了."},
+     {"kieu":"dien","phan":["别着急，等我忙完了","去找你。"],"dap":[["就"]],"chon":["就","才","也"],"goiY":"“Đừng vội, đợi tớ xong việc thì sẽ đi tìm cậu.”","giai":"等……，就…… (đáp án gợi ý của sách)."},
+     {"kieu":"dien","phan":["","我们赶到的时候，已经来不及了。"],"dap":[["等"]],"chon":["等","随着","要是"],"goiY":"“Đến lúc chúng tôi chạy tới thì đã không kịp rồi.” (ôn Bài 4)","giai":"等……的时候 + 来不及 (Bài 4 · điểm 4)."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["等","我","写完作业","，","再","跟你","出去玩"],"dap":["等我写完作业，再跟你出去玩。"],"goiY":"Đợi tớ làm xong bài tập rồi đi chơi với cậu.","giai":"等……，再……"},
+     {"kieu":"xep","manh":["年轻人","要","等","老人","坐下后","再坐"],"dap":["年轻人要等老人坐下后再坐。"],"goiY":"Người trẻ phải đợi người già ngồi xuống rồi mới ngồi.","giai":"Chủ ngữ + 要 + 等 + sự việc + 后 + 再 + V."},
+     {"kieu":"dungsai","cau":"我写完作业等，再跟你出去玩。","dung":false,"sua":"等我写完作业，再跟你出去玩。","giai":"等 đứng đầu vế câu."},
+     {"kieu":"dungsai","cau":"等我们到火车站的时候，火车已经开走了。","dung":true,"giai":"Đúng: 等……的时候，已经……了."},
+     {"kieu":"dungsai","cau":"等你办了信用卡以后，你又能先花钱再还钱了。","dung":false,"sua":"等你办了信用卡以后，你就能先花钱再还钱了。","giai":"Kết quả khi điều kiện đạt được dùng 就, không dùng 又."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 55)","huongDan":"Hoàn thành câu, có dùng giới từ 等","cau":[
+     {"kieu":"vandung","de":"别着急，＿＿＿就去找你。","goiY":"Đợi đến khi tớ làm xong việc","mau":"等我忙完了","can":[["等"]]},
+     {"kieu":"vandung","de":"＿＿＿，你就能先花钱再还钱了。","goiY":"Đợi đến khi bạn làm thẻ tín dụng (信用卡 xìnyòngkǎ)","mau":"等你办了信用卡以后","can":[["等"]]},
+     {"kieu":"vandung","de":"＿＿＿，走路十分钟就到公司了。","goiY":"Đợi đến khi tôi chuyển vào nhà mới","mau":"等我搬进新家以后","can":[["等"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Đợi mọi người đến đủ rồi chúng ta mới bắt đầu ăn.","dap":["等大家都到了，我们再开始吃。","等大家都来了，我们再开始吃饭。","等大家都到了以后，我们再开始吃饭。","等大家都到了，我们再开始吃饭。"],"giai":"等……，再……"},
+     {"kieu":"dich","vn":"Đợi tôi tốt nghiệp xong, tôi sẽ về nước làm giáo viên.","dap":["等我毕业以后，就回国当老师。","等我毕业了，就回国当老师。","等我毕业以后，我就回国当老师。"],"giai":"等……，就…… + 当 (Bài 1)."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt câu nói về kế hoạch của em, có dùng 「等……，再 / 就……」","mau":"等我的中文达到HSK四级水平，就去中国读硕士。","can":[["等"],["再","就"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 55).","dapSgk":true,"tu":["熟","敢","油","专门","肚子"],"cau":[
+   {"s":"家里没＿＿了，你去超市买一瓶吧。","dap":["油"]},
+   {"s":"这道菜看起来太辣了，我不＿＿吃。","dap":["敢"]},
+   {"s":"我＿＿有点儿不舒服，想休息一下。","dap":["肚子"]},
+   {"s":"已经煮了十多分钟了，饺子＿＿了吧？","dap":["熟"]},
+   {"s":"这是我＿＿为你准备的礼物，希望你喜欢。","dap":["专门"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại, sách trang 56).","dapSgk":true,"tu":["凉","咸","付","重视","座位"],"cau":[
+   {"s":"A：请问，这个＿＿有人吗？　B：没有人，您坐吧。","dap":["座位"]},
+   {"s":"A：你尝尝，这道菜是不是做得太＿＿了？　B：嗯，是的，我跟服务员说一下。","dap":["咸"]},
+   {"s":"A：你们怎么还不吃？一会儿菜都＿＿了。　B：我们在等你呢，一起吃更热闹。","dap":["凉"]},
+   {"s":"A：我发现早上出来跑步的人变多了。　B：是啊，因为人们越来越＿＿身体健康了。","dap":["重视"]},
+   {"s":"A：这是我去超市帮你带的东西。　B：谢谢！多少钱？我把钱＿＿给你。","dap":["付"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn (sách trang 56).","dapSgk":true,"tu":["不够再加","刘明和两个孩子也各点了一道菜","大家聚在一起","感谢他们这段时间对自己的照顾"],"cau":[
+   {"s":"周末，白家月请大家一起吃饭，＿＿。点菜时，白家月让大家想吃什么就点什么，并说自己很喜欢这家饭店的菜，味道特别好。王一雪建议每个人先点一个自己喜欢的菜，＿＿。王一雪要了一个汤，李文选了一道凉菜，＿＿，白家月最后点了一道肉菜。＿＿，边吃边聊，非常开心。","dap":["感谢他们这段时间对自己的照顾","不够再加","刘明和两个孩子也各点了一道菜","大家聚在一起"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (đáp án của sách chỉ là gợi ý — câu của em đúng ngữ pháp, hợp tranh là đạt).","cau":[
+   {"anh":"bt-1","s":"","tu":"午餐","dap":"今天吃午餐的时候，我们点了很多菜。","giai":"吃午餐的时候 = lúc ăn trưa; 点菜 = gọi món."},
+   {"anh":"bt-2","s":"","tu":"辣","dap":"这道菜看起来很辣，我不敢吃。","giai":"看起来 + Adj (trông có vẻ); 不敢 + V — từ mới 敢."},
+   {"anh":"bt-3","s":"","tu":"汤","dap":"这个汤看起来很好喝。","giai":"汤 đi với 喝 (好喝), không nói 好吃."}]}
+],
+
+"listen": [
+ {"audio":"服务员，我们点菜。我不太敢吃辣，来一个松鼠鳜鱼吧，酸酸甜甜的。我喜欢吃咸的，要一个红烧羊肉。再来一个汤。我们四个人，三个菜够不够？至少要点四个菜吧，不够再加。","questions":[
+   {"q":"他们一共有几个人？","opts":["三个","四个","五个"],"ans":1},
+   {"q":"他们觉得三个菜怎么样？","opts":["不够","太多了","刚好"],"ans":0}]},
+ {"audio":"今天这顿饭我来付吧。别，上次就是你请的客，这次还是各付各的吧。好吧，那我先用手机付，你们等一会儿把钱转给我就行。没问题，下次聚餐我请！","questions":[
+   {"q":"这次他们怎么付钱？","opts":["一个人请客","各付各的","下次再付"],"ans":1},
+   {"q":"大家怎么把钱给付钱的人？","opts":["给现金","用手机转给他","下次再给"],"ans":1}]},
+ {"audio":"明天是爷爷的生日，家里要请很多客人。座位怎么安排？按照年龄大小来安排吧，爷爷奶奶坐在中间，面对门口。那我们年轻人呢？你们要等爷爷奶奶和客人都坐下以后再坐，这是尊重老人。","questions":[
+   {"q":"明天家里为什么要请客人？","opts":["爷爷过生日","奶奶回国","过春节"],"ans":0},
+   {"q":"年轻人什么时候坐下？","opts":["最先坐","等老人和客人都坐下以后","想什么时候坐就什么时候坐"],"ans":1}]}
+],
+
+"match": [
+ {"left":"用水把鱼","right":"煮熟"},
+ {"left":"倒上","right":"辣椒油"},
+ {"left":"达到","right":"“怕不辣”的水平"},
+ {"left":"按照","right":"年龄大小"},
+ {"left":"面对","right":"门口的座位"},
+ {"left":"重视","right":"座位的安排"},
+ {"left":"尊重","right":"老人"},
+ {"left":"聚在","right":"一起"},
+ {"left":"各付","right":"各的"},
+ {"left":"等老人坐下后","right":"再坐"}
+],
+
+"fill": [
+ {"pre":"家月，你来中国","blank":"至少","post":"两个月了，习惯吃中餐了吗？","hint":"(ít nhất)","ans":"至少","exp":"至少 + thời gian."},
+ {"pre":"你还没吃过水煮鱼吧？这是我","blank":"专门","post":"为你做的。","hint":"(riêng, đặc biệt)","ans":"专门","exp":"专门为 + ai + V."},
+ {"pre":"这道菜是先用水把鱼煮","blank":"熟","post":"，最后再倒上辣椒油。","hint":"(chín)","ans":"熟","exp":"煮熟 — bổ ngữ kết quả."},
+ {"pre":"“怕不辣”是担心菜还","blank":"不够","post":"辣呢。","hint":"(chưa đủ)","ans":"不够","exp":"不够 + Adj."},
+ {"pre":"我还","blank":"达","post":"不到“怕不辣”的水平。","hint":"(đạt)","ans":"达","exp":"达到 → bổ ngữ khả năng 达不到."},
+ {"pre":"周末，白家月、陈天中、李文和安妮","blank":"聚","post":"在一起吃午餐。","hint":"(tụ tập)","ans":"聚","exp":"聚在一起."},
+ {"pre":"大家觉得还是","blank":"各","post":"付各的更合适。","hint":"(ai … nấy)","ans":"各","exp":"各V各的."},
+ {"pre":"正式聚餐时人们比较","blank":"重视","post":"座位的安排。","hint":"(coi trọng)","ans":"重视","exp":"重视 + N."},
+ {"pre":"比如可以","blank":"按照","post":"年龄大小来安排。","hint":"(theo)","ans":"按照","exp":"按照 + N + 来 + V."},
+ {"pre":"如果聚餐时有老人，年轻人要","blank":"等","post":"老人坐下后再坐。","hint":"(đợi đến khi)","ans":"等","exp":"等……后，再……"}
+],
+
+"sort": [
+ {"words":["你","来","中国","至少","两个月","了","。"],"ans":"你来中国至少两个月了。"},
+ {"words":["你的","中文水平","够","高","的","。"],"ans":"你的中文水平够高的。"},
+ {"words":["大家","觉得","还是","各付","各的","更合适","。"],"ans":"大家觉得还是各付各的更合适。"},
+ {"words":["年轻人","要","等","老人","坐下后","再坐","。"],"ans":"年轻人要等老人坐下后再坐。"},
+ {"words":["正式聚餐时","人们","比较","重视","座位的","安排","。"],"ans":"正式聚餐时人们比较重视座位的安排。"},
+ {"words":["这道菜","是","我","专门","为你","做的","。"],"ans":"这道菜是我专门为你做的。"}
+],
+
+"mc": [
+ {"q":"每年＿＿有两百名留学生来我校学习中文专业。","opts":["至少","任何","专门","按照"],"ans":0,"exp":"至少 + 有 + số lượng: ít nhất có …"},
+ {"q":"你的中文水平＿＿高的，这都听懂了！","opts":["够","太","不够","至少"],"ans":0,"exp":"Khung cố định 够……的 = thật là …"},
+ {"q":"我尝了一下，还＿＿甜，再加一点儿糖吧。","opts":["不够","够","至少","达到"],"ans":0,"exp":"不够 + Adj = chưa đủ …"},
+ {"q":"大家觉得还是＿＿付各的更合适。","opts":["各","每","自己","都"],"ans":0,"exp":"各V各的 = ai … nấy."},
+ {"q":"＿＿我写完作业，再跟你出去玩。","opts":["等","在","从","随着"],"ans":0,"exp":"等……，再…… = đợi … rồi mới …"},
+ {"q":"辣＿＿辣，但是非常好吃！","opts":["是","也","就","很"],"ans":0,"exp":"Ôn ×是×，但是 / 不过…… (Bài 3 · điểm 1)."},
+ {"q":"这道菜看起来太辣了，我不＿＿吃。","opts":["敢","怕","够","付"],"ans":0,"exp":"不敢 + V = không dám …"},
+ {"q":"正式聚餐时人们比较＿＿座位的安排。","opts":["重视","尊重","面对","达到"],"ans":0,"exp":"重视 + việc / vấn đề; 尊重 + người / ý kiến."},
+ {"q":"年龄比较大的客人往往会坐在中间或者＿＿门口的座位。","opts":["面对","按照","安排","重视"],"ans":0,"exp":"面对门口 = đối diện cửa ra vào."},
+ {"q":"大家坐下时，＿＿会请客人先坐。","opts":["主人","客人","年轻人","服务员"],"ans":0,"exp":"主人 = chủ nhà (đối lập 客人)."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu 4 bài khoá, kể lại bài khoá và đóng vai), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions":[
+  {"q_zh":"你吃过哪些中国菜？觉得怎么样？","q_vn":"Bạn đã ăn những món Trung Quốc nào? Thấy thế nào?","hint":"我吃过……、……和……。……辣是辣，不过……","sample":"我吃过水煮鱼、辣子鸡和松鼠鳜鱼。水煮鱼辣是辣，不过非常好吃；松鼠鳜鱼酸酸甜甜的，我也很喜欢。","sample_vn":"Tôi đã ăn cá luộc cay, gà xào ớt khô và cá quế hình con sóc. Cá luộc cay thì cay thật nhưng rất ngon; cá quế hình con sóc chua chua ngọt ngọt, tôi cũng rất thích.","note":"Câu hỏi phần Khởi động của sách; ôn ×是×，不过…… (Bài 3)."},
+  {"q_zh":"你喜欢什么味道的菜？","q_vn":"Bạn thích món ăn có mùi vị (味道 wèidào) như thế nào?","hint":"我喜欢……的菜，比如……。不过我不太敢吃……","sample":"我喜欢酸的和辣的菜，比如酸汤米线。不过我不太敢吃太咸的菜，吃多了对身体不好。","sample_vn":"Tôi thích món chua và cay, ví dụ bún canh chua. Nhưng tôi không dám ăn món quá mặn lắm, ăn nhiều không tốt cho sức khỏe.","note":"Câu hỏi phần Khởi động của sách."},
+  {"q_zh":"白家月习惯吃中餐了吗？水煮鱼是怎么做的？","q_vn":"Bạch Gia Nguyệt đã quen ăn món Trung chưa? Món cá luộc cay làm thế nào?","hint":"她……，而且……。水煮鱼是先……，最后再……","sample":"白家月习惯吃中餐了，而且很喜欢吃中国菜。水煮鱼是先用水把鱼煮熟，最后再倒上辣椒油，其实只有最上面那一层是油。","sample_vn":"Bạch Gia Nguyệt đã quen ăn món Trung, mà còn rất thích món Trung Quốc. Cá luộc cay là trước tiên luộc chín cá bằng nước, cuối cùng rưới dầu ớt lên, thật ra chỉ lớp trên cùng là dầu.","note":"Câu hỏi đọc hiểu bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"白家月……，她习惯……，而且……。王一雪让她尝尝……。白家月觉得……，更……。王一雪告诉她……","sample":"白家月来中国至少两个月了，她习惯吃中餐了，而且很喜欢吃中国菜。王一雪让她尝尝自己专门为她做的水煮鱼。白家月觉得这道菜看起来不像水煮鱼，更像“油煮鱼”。王一雪告诉她，这道菜是先用水把鱼煮熟，最后再倒上辣椒油，其实只有最上面那一层是油。白家月尝了以后，觉得辣是辣，不过非常好吃。王一雪让她多吃点儿，不要客气。","sample_vn":"Bạch Gia Nguyệt sang Trung Quốc ít nhất hai tháng rồi, đã quen ăn món Trung, lại còn rất thích. Vương Nhất Tuyết mời cô nếm món cá luộc cay làm riêng cho cô… Gia Nguyệt nếm xong thấy cay thì cay nhưng rất ngon. Nhất Tuyết bảo cô ăn nhiều vào, đừng khách sáo.","note":"Bài tập 复述 của sách (trang 49)."},
+  {"q_zh":"王一雪一家以前敢不敢吃辣？为什么？“不怕辣”“怕不辣”都是什么意思？","q_vn":"Trước đây nhà Vương Nhất Tuyết có dám ăn cay không? Vì sao? “不怕辣” và “怕不辣” nghĩa là gì?","hint":"他们以前……，因为……。“不怕辣”是说……，“怕不辣”是……","sample":"他们以前不太敢吃辣，因为吃完可能会肚子不舒服，不过现在也慢慢适应了。“不怕辣”是说不怕吃辣的菜，“怕不辣”是担心菜还不够辣。","sample_vn":"Trước đây họ không dám ăn cay lắm vì ăn xong có thể khó chịu trong bụng, nhưng giờ đã dần quen. “Không sợ cay” là không ngại ăn món cay, “sợ không cay” là lo món ăn chưa đủ cay.","note":"Câu hỏi đọc hiểu bài khoá 2; dùng 不够 (điểm 2)."},
+  {"q_zh":"白家月点了什么菜？为什么？他们是怎么结账的？","q_vn":"Bạch Gia Nguyệt gọi món gì? Vì sao? Họ thanh toán thế nào?","hint":"白家月点了……，因为……。结账时，大家觉得……，于是……","sample":"白家月点了辣子鸡，因为她想吃辣的。结账时，李文想请客，但大家觉得还是各付各的更合适，于是李文付完钱后，大家把钱转给了他。","sample_vn":"Bạch Gia Nguyệt gọi gà xào ớt khô vì cô muốn ăn cay. Lúc thanh toán Lý Văn muốn mời, nhưng mọi người thấy ai trả phần nấy thì hợp hơn, thế là Lý Văn trả xong thì mọi người chuyển tiền lại cho anh.","note":"Câu hỏi đọc hiểu bài khoá 3; dùng 各×各的 (điểm 3) + ôn 于是 (Bài 3)."},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"周末，……吃午餐。白家月……，要了辣子鸡；陈天中……；李文……；安妮……。结账时……于是……","sample":"周末，白家月、陈天中、李文和安妮聚在一起吃午餐。白家月想吃辣的，要了辣子鸡；陈天中爱吃甜的，想尝尝松鼠鳜鱼；李文更喜欢吃咸的，选了红烧羊肉和一道凉菜；安妮听说贵州酸汤很有名，点了酸汤米线。他们边吃边聊，非常愉快。结账时，李文想请客，但大家觉得还是各付各的更合适。于是，李文付完钱后，大家把钱转给了他，还笑着说下次再一起聚餐。","sample_vn":"Cuối tuần, bốn bạn tụ tập ăn trưa. Mỗi người gọi một món theo khẩu vị: cay, ngọt, mặn, chua… Họ vừa ăn vừa trò chuyện rất vui. Lúc thanh toán, mọi người quyết định ai trả phần nấy, rồi hẹn lần sau lại đi ăn cùng nhau.","note":"Bài tập 复述 của sách (trang 53)."},
+  {"q_zh":"正式聚餐时，可以怎么安排座位？白家月怎么看这种座位安排方式？","q_vn":"Khi ăn tiệc trang trọng có thể sắp xếp chỗ ngồi thế nào? Bạch Gia Nguyệt nghĩ gì về cách sắp xếp này?","hint":"可以按照……来安排，……往往会坐在……。年轻人要等……再……。白家月认为……","sample":"可以按照年龄大小来安排，年龄比较大的客人往往会坐在中间或者面对门口的座位。年轻人要等老人坐下后再坐。白家月觉得很有意思，她认为这么做是照顾客人、尊重老人的表现。","sample_vn":"Có thể sắp xếp theo tuổi, khách lớn tuổi thường ngồi ở giữa hoặc chỗ đối diện cửa. Người trẻ phải đợi người già ngồi rồi mới ngồi. Bạch Gia Nguyệt thấy rất thú vị, cho rằng đó là biểu hiện chu đáo với khách và kính trọng người già.","note":"Câu hỏi đọc hiểu bài khoá 4; dùng 等 (điểm 4)."},
+  {"q_zh":"你邀请中国朋友来家里做客，边吃边聊各自国家的饮食文化，包括饭菜的种类和口味、用餐感受、餐桌礼仪等。","q_vn":"Em mời bạn Trung Quốc đến nhà chơi, vừa ăn vừa trò chuyện về văn hóa ẩm thực của nước mỗi người: các loại món ăn và khẩu vị, cảm nhận khi ăn, phép lịch sự trên bàn ăn…","hint":"这是我专门为你做的……。越南菜……够……的。在越南，吃饭的时候要等……再……。你们中国……？我们各……各的……","sample":"欢迎你来我家做客！今天的菜都是我专门为你做的越南菜。你看，这是越南河粉，汤是用牛骨头煮了好几个小时做成的，你尝尝，咸不咸？越南菜油放得不多，还常常配很多新鲜的蔬菜，味道够清淡的。越南北方人喜欢吃咸一点儿的，南方人爱吃甜的，中部人最爱吃辣，有的人甚至“怕不辣”。你们中国人呢？我听说四川人爱吃辣，苏州人爱吃甜的，对吗？在越南，一家人吃饭的时候，年轻人要等爷爷奶奶拿起筷子再开始吃，这是尊重老人的表现。我听说中国正式聚餐的时候，也很重视座位的安排，年龄大的客人坐在面对门口的座位。和朋友聚餐的时候，越南人有时候一个人请客，有时候各付各的。你多吃点儿，不要客气！","sample_vn":"Chào mừng bạn đến nhà mình chơi! Hôm nay toàn món Việt mình làm riêng cho bạn. Đây là phở, nước dùng ninh từ xương bò mấy tiếng đồng hồ, bạn nếm xem có mặn không? Món Việt ít dầu mỡ, hay ăn kèm nhiều rau sống, vị khá thanh. Người miền Bắc thích ăn đậm hơn, người miền Nam thích ngọt, người miền Trung mê cay… Ở Việt Nam, cả nhà ăn cơm thì người trẻ phải đợi ông bà cầm đũa rồi mới ăn — đó là kính trọng người già. Đi ăn với bạn bè thì có khi một người mời, có khi ai trả phần nấy. Bạn ăn nhiều vào, đừng khách sáo nhé!","note":"Hoạt động 角色扮演 (đóng vai) của sách, trang 57 — dùng đủ 至少 / 够 / 各×各的 / 等."}
+ ]
+},
+
+"translate": [
+ ["Cháu sang Trung Quốc ít nhất hai tháng rồi, đã quen ăn món Trung chưa?","你来中国至少两个月了，习惯吃中餐了吗？"],
+ ["Trình độ tiếng Trung của cậu cao thật đấy!","你的中文水平够高的！"],
+ ["Mọi người thấy vẫn là ai trả phần nấy thì hợp hơn.","大家觉得还是各付各的更合适。"],
+ ["Người trẻ phải đợi người già ngồi xuống rồi mới ngồi.","年轻人要等老人坐下后再坐。"],
+ ["Món này cay thì cay, nhưng rất ngon.","这道菜辣是辣，但是非常好吃。"],
+ ["Món này trông có vẻ rất cay, tôi không dám ăn.","这道菜看起来很辣，我不敢吃。"]
+],
+"translateRev": [
+ ["Đây là món cô làm riêng cho cháu.","这是我专门为你做的。"],
+ ["Vẫn những chữ ấy, đổi thứ tự một cái là nghĩa thay đổi ngay.","相同的字，顺序一换，意思就变了。"],
+ ["“Sợ không cay” là lo món ăn còn chưa đủ cay.","“怕不辣”是担心菜还不够辣。"],
+ ["Khi ăn tiệc trang trọng, người ta khá coi trọng việc sắp xếp chỗ ngồi.","正式聚餐时，人们比较重视座位的安排。"],
+ ["Làm như vậy là biểu hiện của sự chu đáo với khách và kính trọng người già.","这么做是照顾客人、尊重老人的表现。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":120,"tieuDe":"写作 — viết theo đề của sách (ít nhất 120 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết bài giới thiệu văn hóa ẩm thực (写作)","gioiThieu":"Đề 写作 của sách HSK 4 (3.0) yêu cầu viết một đoạn văn ngắn (ít nhất 120 chữ) dựa trên nội dung đã học và đã thảo luận ở phần đóng vai — giống phần 书写 của đề thi HSK 4 mới. Người đọc là các bạn đến dự 美食节 (lễ hội ẩm thực) của trường.","buoc":["Đọc kỹ đề: viết cho AI đọc (các bạn ở lễ hội ẩm thực), viết để làm gì (giới thiệu văn hóa ẩm thực nước em), cần những ý nào.","Lập dàn ý theo các câu hỏi gợi ý: món ăn tiêu biểu → khẩu vị các vùng → thói quen ăn uống → phép lịch sự trên bàn ăn → chuyện trả tiền khi tụ tập.","Dùng từ mới (辣、咸、酸、汤、油、聚餐、主人、尊重…) và 4 điểm ngữ pháp của bài: 至少, 够……的, 各×各的, 等……再…….","Lồng ngữ pháp bài cũ: ×是×，不过…… (Bài 3), 既……又…… (Bài 4), 甚至 (Bài 3), 一方面……另一方面…… (Bài 1).","Câu mở giới thiệu mình đến từ đâu, câu kết mời mọi người đến nếm thử; tự soát số chữ (≥ 120) và lỗi chữ Hán trước khi nộp."]},
+ "de":"校园美食节就要到了。为了让大家更好地了解你们国家的饮食文化，请根据上面谈论的内容，写一篇短文进行介绍，不少于120字。",
+ "prompt":"Lễ hội ẩm thực của trường sắp diễn ra. Để mọi người hiểu rõ hơn văn hóa ẩm thực của nước em, hãy dựa vào nội dung vừa trao đổi ở trên, viết một bài văn ngắn giới thiệu, không ít hơn 120 chữ.",
+ "dan":[
+  {"hoi":"你们国家的饭菜有哪些种类？最有名的是什么？","goiY":"我们国家的菜种类够多的，最有名的是……"},
+  {"hoi":"各地的人喜欢什么口味？","goiY":"北方人喜欢……，南方人……，中部人……，有的菜甚至……"},
+  {"hoi":"你们每天怎么吃饭？有什么习惯？","goiY":"每天至少吃一次……；菜里油……，常常配……"},
+  {"hoi":"一家人吃饭时有什么礼仪？","goiY":"要等老人……，年轻人再……，这是……的表现"},
+  {"hoi":"和朋友聚餐时，一般谁付钱？","goiY":"有时候一个人请客，有时候各付各的"}],
+ "tuNen":["中餐","辣","酸","咸","汤","油","聚餐","主人","座位","尊重","按照","随意"],
+ "cauTruc":[
+  {"ten":"……够……的","nhan":"够","vd":"越南菜的种类够多的，味道也够丰富的。","khi":"Câu MỞ: giới thiệu, khen món ăn nước mình."},
+  {"ten":"至少……","nhan":"至少","vd":"越南人每天至少吃一次米饭或者米线。","khi":"Nói thói quen ăn uống hằng ngày."},
+  {"ten":"×是×，不过……","nhan":"是","vd":"中部的菜辣是辣，不过非常香。","khi":"Ôn Bài 3: nhận xét hai mặt của món ăn."},
+  {"ten":"等……，再……","nhan":"等","vd":"一家人吃饭的时候，要等爷爷奶奶拿起筷子，年轻人再开始吃。","khi":"Giới thiệu phép lịch sự trên bàn ăn."},
+  {"ten":"各×各的","nhan":"各","vd":"和朋友聚餐比较随意，有时候一个人请客，有时候各付各的。","khi":"Câu gần KẾT: chuyện trả tiền khi tụ tập."}],
+ "checklist":[
+  "Đủ ít nhất 120 chữ Hán chưa?",
+  "Đã nói đủ các ý: món tiêu biểu, khẩu vị các vùng, thói quen ăn uống, phép lịch sự trên bàn ăn, chuyện trả tiền chưa?",
+  "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (至少、够……的、各×各的、等……再……) chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài chưa? (汤 đi với 喝, không nói 吃汤!)",
+  "Bài có câu mở (mình đến từ đâu) và câu kết (mời mọi người đến nếm thử) rõ ràng chưa?"],
+ "model":"我来自越南，越南菜的种类够多的，味道也够丰富的。一般来说，北方人喜欢吃咸一点儿的，南方人更喜欢吃甜的，中部人最爱吃辣，有的菜辣是辣，不过非常香。越南人每天至少吃一次米饭或者米线，最有名的越南河粉就是用米做的，汤是用牛骨头煮了好几个小时才做成的。越南菜用油不多，还会配很多新鲜的蔬菜，既好吃又健康。在越南，一家人吃饭的时候，大家聚在一起，要等爷爷奶奶拿起筷子，年轻人再开始吃，这是尊重老人的表现。和朋友聚餐就比较随意了，有时候一个人请客，有时候各付各的。欢迎大家来美食节尝尝越南菜！"
+}
+}

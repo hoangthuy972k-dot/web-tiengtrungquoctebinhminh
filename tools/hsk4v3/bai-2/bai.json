@@ -1,0 +1,340 @@
+{
+"so": 2,
+"zh": "租到了合适的房子",
+"py": "Zūdào le héshì de fángzi",
+"vn": "Đã thuê được căn nhà vừa ý",
+"chuDe": "Thuê nhà: đi xem phòng, môi trường xung quanh, đồ đạc trong nhà và quan niệm nhà ở của người Trung Quốc",
+"icon": "🏠",
+"mucTieu": [
+  "Nghe hiểu và trao đổi được về chủ đề thuê nhà.",
+  "Nói hoặc viết được mong muốn, yêu cầu của mình khi thuê nhà.",
+  "Hiểu quan niệm về nhà ở (thuê hay mua nhà) của người Trung Quốc."
+],
+
+"wu": [
+  {"img":"wu-A","label":"客厅","py":"kètīng","letter":"A"},
+  {"img":"wu-B","label":"种","py":"zhòng","letter":"B"},
+  {"img":"wu-C","label":"收拾","py":"shōushi","letter":"C"},
+  {"img":"wu-D","label":"毕业","py":"bìyè","letter":"D"},
+  {"img":"wu-E","label":"厨房","py":"chúfáng","letter":"E"},
+  {"img":"wu-F","label":"价格","py":"jiàgé","letter":"F"}
+],
+
+"dialogs": [
+  {"tab":"Đi xem phòng thuê","scene":"在房东家 · Ở nhà chủ nhà (Bạch Gia Nguyệt muốn thuê nhà, Lý Văn đi cùng cô ấy xem phòng)","anh":"kv-1",
+   "nguoi":[{"ten":"房东","anh":"fangdong"},"白家月"],
+   "preQuiz":[
+     {"q":"白家月在看的房子每个月房租是多少？","opts":["3500元","5000元","5500元","6500元"],"ans":2},
+     {"q":"白家月在看的房子离哪里近？","opts":["公司","地铁站","公交站","大超市"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"请进！我给你们介绍一下，这个房子有两个房间，那个大房间出租，房租每月5500元。现在已经收拾好了，想租的话，今天就可以搬进来。","vn":"Mời vào! Tôi giới thiệu với hai bạn một chút: căn nhà này có hai phòng, phòng lớn kia cho thuê, tiền thuê mỗi tháng 5500 tệ. Bây giờ đã dọn dẹp xong rồi, muốn thuê thì hôm nay có thể dọn vào luôn."},
+     {"sp":1,"zh":"嗯，这个房间真不小，还挺亮。小区离我们学校也不远。","vn":"Ừm, căn phòng này rộng thật đấy, lại còn khá sáng. Khu chung cư cách trường chúng cháu cũng không xa."},
+     {"sp":0,"zh":"是的，我们小区离地铁站也很近，生活上很方便。如果决定租了，告诉我就是了。","vn":"Đúng vậy, khu chung cư của chúng tôi cách ga tàu điện ngầm cũng rất gần, sinh hoạt rất tiện. Nếu quyết định thuê thì cứ báo tôi là được."},
+     {"sp":1,"zh":"好的，我们再去看看外边的环境。","vn":"Vâng ạ, chúng cháu đi xem thêm môi trường bên ngoài đã."}],
+   "hoi":[["房东要出租哪个房间？那个房间怎么样？","房东要出租那个大房间。那个房间真不小，还挺亮，现在已经收拾好了。"],["房东为什么说住在那个小区生活上很方便？","因为小区离地铁站很近，离白家月的学校也不远。"]],
+   "kelai":"李文和白家月到房东家看房子。房东要出租的是……，房租……。房东告诉白家月，要出租的房间现在……，想租的话，今天……。这个房间……，还……。小区离白家月的……不远，离地铁站……，生活上……。白家月比较满意，他们决定再……。",
+   "kelaiMau":"李文和白家月到房东家看房子。房东要出租的是那个大房间，房租每月5500元。房东告诉白家月，要出租的房间现在已经收拾好了，想租的话，今天就可以搬进来。这个房间真不小，还挺亮。小区离白家月的学校不远，离地铁站也很近，生活上很方便。白家月比较满意，他们决定再去看看外边的环境。"},
+
+  {"tab":"Xem khu chung cư","scene":"在小区里 · Trong khu chung cư (Bạch Gia Nguyệt và Lý Văn tiếp tục xem môi trường xung quanh)","anh":"kv-2",
+   "nguoi":["李文","白家月"],
+   "preQuiz":[
+     {"q":"白家月觉得小区的环境怎么样？","opts":["树太少","不太好","很安静","很干净"],"ans":2},
+     {"q":"白家月想什么时候搬进新房子？","opts":["今天","明天","后天下午","后天晚上"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"家月，你看，那边还有个小花园。","vn":"Gia Nguyệt, cậu xem, bên kia còn có một khu vườn nhỏ."},
+     {"sp":1,"zh":"嗯，这个小区到处是花，还种了不少树，周围也很安静。","vn":"Ừ, khu chung cư này đâu đâu cũng có hoa, còn trồng không ít cây, xung quanh cũng rất yên tĩnh."},
+     {"sp":0,"zh":"是啊！这个小区的环境真不错，不过我听说，附近有十几家公司，很多刚毕业的学生都租住在这里。周末他们可能会玩到很晚，恐怕会影响你休息。","vn":"Đúng thế! Môi trường khu này đẹp thật, có điều tớ nghe nói gần đây có mười mấy công ty, nhiều sinh viên mới tốt nghiệp đều thuê nhà ở đây. Cuối tuần họ có thể chơi đến rất muộn, e là sẽ ảnh hưởng đến việc nghỉ ngơi của cậu."},
+     {"sp":1,"zh":"没关系，我还想多认识一些朋友，和他们一起玩呢。","vn":"Không sao, tớ còn muốn quen thêm bạn bè, chơi cùng họ nữa ấy chứ."},
+     {"sp":0,"zh":"是呢，大家可以一起热闹热闹。","vn":"Cũng phải, mọi người có thể cùng nhau vui vẻ một chút."},
+     {"sp":1,"zh":"这里房租合适，环境很好，而且房东也热情，所以我决定租这个房子了，明天就入住新家。","vn":"Ở đây tiền thuê hợp lý, môi trường tốt, hơn nữa chủ nhà cũng nhiệt tình, nên tớ quyết định thuê căn này rồi, ngày mai dọn vào nhà mới luôn."}],
+   "hoi":[["李文为什么担心周末白家月休息不好？","因为附近有十几家公司，很多刚毕业的学生都租住在那里，周末他们可能会玩到很晚，恐怕会影响白家月休息。"],["白家月为什么决定租那个房子？","因为那里房租合适，环境很好，而且房东也热情。"]]},
+
+  {"tab":"Nhật ký dọn nhà","scene":"白家月的日记 · Nhật ký của Bạch Gia Nguyệt sau khi dọn vào nhà mới","anh":"kv-3","doan":true,
+   "nguoi":["白家月"],
+   "preQuiz":[
+     {"q":"白家月租的房子，客厅里都有什么？","opts":["椅子、沙发和电视","椅子、空调和书桌","冰箱、电视和空调","书桌、椅子和沙发"],"ans":0},
+     {"q":"白家月平常主要在哪儿吃饭？","opts":["家里","饭馆","邻居家","学校食堂"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"8月25日，晴","vn":"Ngày 25 tháng 8, trời nắng"},
+     {"sp":0,"zh":"昨天我顺利租到了合适的房子，今天李文帮我搬家。","vn":"Hôm qua tôi đã thuận lợi thuê được căn nhà vừa ý, hôm nay Lý Văn giúp tôi chuyển nhà."},
+     {"sp":0,"zh":"搬进去的时候，房东又向我介绍了一下房子里的东西，并告诉我这些东西怎么用。","vn":"Lúc dọn vào, chủ nhà lại giới thiệu cho tôi đồ đạc trong nhà, và chỉ cho tôi cách dùng những thứ đó."},
+     {"sp":0,"zh":"我看了一下，客厅里有椅子、沙发，还有一台大电视；厨房里有冰箱和一些做饭用的东西，不过，我平常主要在学校食堂吃，基本上不做饭。","vn":"Tôi xem qua một lượt: phòng khách có ghế, sofa, còn có một chiếc tivi to; trong bếp có tủ lạnh và một số đồ dùng nấu ăn, có điều ngày thường tôi chủ yếu ăn ở nhà ăn của trường, hầu như không nấu cơm."},
+     {"sp":0,"zh":"我租的房间里，除了一张床以外，还有一台空调、一张书桌和一把椅子。","vn":"Trong phòng tôi thuê, ngoài một chiếc giường ra, còn có một chiếc điều hòa, một cái bàn học và một chiếc ghế."},
+     {"sp":0,"zh":"看完整个房子后，我准备再去买几条毛巾，其他东西还不需要。","vn":"Xem xong cả căn nhà, tôi định đi mua thêm mấy chiếc khăn, những thứ khác thì chưa cần."}],
+   "hoi":[["白家月租的房间里都有什么？","她租的房间里，除了一张床以外，还有一台空调、一张书桌和一把椅子。"],["白家月准备去买什么？","她准备再去买几条毛巾。"]],
+   "kelai":"昨天白家月顺利……，今天李文帮她……。搬进去的时候，房东又向白家月……，并告诉她……。白家月看到，客厅里有……，还有……；厨房里有冰箱和……，不过，白家月平常……，基本上……。白家月租的房间里，除了……以外，还有一台空调、……。看完整个房子后，她觉得再去……就行了。",
+   "kelaiMau":"昨天白家月顺利租到了合适的房子，今天李文帮她搬家。搬进去的时候，房东又向白家月介绍了一下房子里的东西，并告诉她这些东西怎么用。白家月看到，客厅里有椅子、沙发，还有一台大电视；厨房里有冰箱和一些做饭用的东西，不过，白家月平常主要在学校食堂吃，基本上不做饭。白家月租的房间里，除了一张床以外，还有一台空调、一张书桌和一把椅子。看完整个房子后，她觉得再去买几条毛巾就行了。"},
+
+  {"tab":"Thuê nhà thế nào","scene":"怎样租到合适的房子 · Làm thế nào để thuê được căn nhà phù hợp","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"白家月觉得这次租房怎么样？","opts":["很简单","不容易","不理想","有意思"],"ans":1},
+     {"q":"根据课文，很多刚工作的年轻人为什么选择租房？","opts":["更有安全感","不喜欢买房","喜欢租房子住","工资还不太高"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"在李文的帮助下，白家月租到了合适的房子。","vn":"Với sự giúp đỡ của Lý Văn, Bạch Gia Nguyệt đã thuê được căn nhà vừa ý."},
+     {"sp":0,"zh":"对白家月来说，这次租房并不容易。","vn":"Đối với Bạch Gia Nguyệt, lần thuê nhà này chẳng hề dễ dàng."},
+     {"sp":0,"zh":"根据李文的建议，她先在租房网站和App上查看有关信息，查找合适的房子，接着又去看了看房子，同时了解房子周围的环境。","vn":"Theo gợi ý của Lý Văn, trước tiên cô ấy xem thông tin liên quan trên các trang web và App thuê nhà, tìm căn nhà phù hợp, tiếp đó lại đến xem nhà, đồng thời tìm hiểu môi trường xung quanh."},
+     {"sp":0,"zh":"她看了好几个房子，才找到一个位置、环境和价格都合适的，最后顺利租到了理想的房子。","vn":"Cô ấy xem mấy căn liền mới tìm được một căn vị trí, môi trường và giá cả đều phù hợp, cuối cùng đã thuận lợi thuê được căn nhà lý tưởng."},
+     {"sp":0,"zh":"租房的时候，李文告诉白家月，在中国，由于很多刚工作的年轻人工资还不太高，所以他们一开始也不买房，都选择租房。","vn":"Lúc thuê nhà, Lý Văn nói với Bạch Gia Nguyệt rằng ở Trung Quốc, do nhiều người trẻ mới đi làm lương còn chưa cao lắm, nên lúc đầu họ cũng không mua nhà mà đều chọn thuê nhà."},
+     {"sp":0,"zh":"工作几年后，不少人就会买房，因为大家一直觉得，有房才有家，有自己的房子会更有安全感。","vn":"Đi làm vài năm, không ít người sẽ mua nhà, vì mọi người luôn cho rằng có nhà mới có tổ ấm, có nhà của riêng mình sẽ thấy an tâm hơn."}],
+   "hoi":[["白家月是怎么租到合适的房子的？","她先在租房网站和App上查看有关信息，查找合适的房子，接着又去看了看房子，同时了解房子周围的环境。她看了好几个房子，才找到一个位置、环境和价格都合适的。"],["在中国，为什么不少人工作几年后会买房？","因为大家一直觉得，有房才有家，有自己的房子会更有安全感。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"固定格式“×就是了”","tenVn":"Cấu trúc cố định 「×就是了」 — cứ … là được",
+  "cauTruc":["(Chủ ngữ) + động từ / cụm động từ + 就是了","Hay đi sau câu điều kiện: 如果 / 要是……，(Sub) + V + 就是了"],
+  "giaiThich":"「×就是了」 dùng trong KHẨU NGỮ, đặt ở CUỐI câu để khẳng định, làm người nghe yên tâm: “cứ … là được, … thôi mà”. Chữ × là một động từ / cụm động từ (告诉我, 放心, 努力, 租下来…). Mẹo cho người Việt: khi muốn nói “cứ … là được / đừng lo, cứ … đi” thì đặt 就是了 ở cuối câu. Lưu ý: phải có 「了」 (✗ 告诉我就是); câu là câu trần thuật, không dùng làm câu hỏi; khác với 「就是」 ở giữa câu nghĩa là “chính là” (他就是房东 = ông ấy chính là chủ nhà).",
+  "viDu":[["如果决定租了，告诉我就是了。","Nếu quyết định thuê thì cứ báo tôi là được."],["我一定能办到，您放心就是了。","Tôi nhất định làm được, ông cứ yên tâm."],["这次考得不好没关系，下次努力就是了。","Lần này thi không tốt không sao, lần sau cố gắng là được."],["要是你不喜欢这个房间，换一个就是了。","Nếu bạn không thích phòng này thì đổi phòng khác là được. (ôn 要是 – Bài 1 · điểm 2)"]],
+  "loi":[["如果决定租了，告诉我就是。","Thiếu 了 — cấu trúc cố định là 「就是了」.","如果决定租了，告诉我就是了。"],["就是了你放心。","就是了 đứng ở CUỐI câu, sau động từ.","你放心就是了。"],["你放心就是了吗？","就是了 dùng để khẳng định, trấn an — không dùng trong câu hỏi.","你放心就是了。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["如果决定租了，告诉我","。"],"dap":[["就是了"]],"chon":["就是了","就是","是了"],"goiY":"“Nếu quyết định thuê thì cứ báo tôi là được.”","giai":"Cấu trúc cố định: V + 就是了 (phải có 了)."},
+     {"kieu":"dien","phan":["我一定能办到，您","就是了。"],"dap":[["放心"]],"chon":["放心","担心","关心"],"goiY":"“Tôi nhất định làm được, ông cứ yên tâm.”","giai":"放心就是了 = cứ yên tâm."},
+     {"kieu":"dien","phan":["这次考得不好没关系，下次努力","。"],"dap":[["就是了"]],"chon":["就是了","才是了","也是了"],"goiY":"“Lần sau cố gắng là được.”","giai":"Đặt 就是了 ở cuối câu để động viên."},
+     {"kieu":"dien","phan":["你要是满意，","下来就是了。"],"dap":[["租"]],"chon":["租","出租","房租"],"goiY":"“Bạn hài lòng thì cứ thuê luôn.” (ôn từ mới + 要是 – Bài 1)","giai":"租下来 = thuê luôn; 出租 = cho thuê; 房租 = tiền thuê."},
+     {"kieu":"dien","phan":["房间已经","好了，你今天搬进来就是了。"],"dap":[["收拾"]],"chon":["收拾","入住","毕业"],"goiY":"“Phòng đã dọn xong, hôm nay bạn cứ dọn vào.”","giai":"收拾好了 = dọn dẹp xong."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["你","要是","满意","，","租下来","就是了"],"dap":["你要是满意，租下来就是了。","要是你满意，租下来就是了。"],"goiY":"Nếu bạn hài lòng thì cứ thuê luôn đi.","giai":"要是……，V + 就是了."},
+     {"kieu":"xep","manh":["有","任何","问题","，","给我","打电话","就是了"],"dap":["有任何问题，给我打电话就是了。"],"goiY":"Có bất kỳ vấn đề gì cứ gọi cho tôi là được.","giai":"Ôn 任何 (Bài 1) + 就是了 cuối câu."},
+     {"kieu":"xep","manh":["不会","做","没关系","，","我","教你","就是了"],"dap":["不会做没关系，我教你就是了。"],"goiY":"Không biết làm cũng không sao, tôi dạy bạn là được.","giai":"Chủ ngữ 我 + V + 就是了."},
+     {"kieu":"dungsai","cau":"你别担心，我明天一定来就是了。","dung":true,"giai":"Đúng: 就是了 cuối câu, trấn an người nghe."},
+     {"kieu":"dungsai","cau":"这件衣服很漂亮，你买下来就是。","dung":false,"sua":"这件衣服很漂亮，你买下来就是了。","giai":"Thiếu 了."},
+     {"kieu":"dungsai","cau":"就是了你下次努力。","dung":false,"sua":"你下次努力就是了。","giai":"就是了 phải đặt cuối câu."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 14)","huongDan":"Viết câu trả lời của B, có dùng 「……就是了」","cau":[
+     {"kieu":"vandung","de":"A：这个房子很干净，小区也安静，我租不租呢？ B：＿＿＿。","goiY":"Khuyên bạn: nếu hài lòng thì cứ thuê luôn (要是……，……就是了)","mau":"你要是满意，租下来就是了","can":[["就是了"]]},
+     {"kieu":"vandung","de":"A：这里离地铁站比较远，我怎么去好呢？ B：＿＿＿。","goiY":"Gợi ý một cách đi đơn giản: bắt taxi","mau":"打车就是了","can":[["就是了"]]},
+     {"kieu":"vandung","de":"A：你觉得这件衣服怎么样？我要不要买？ B：我觉得很漂亮，＿＿＿。","goiY":"Khuyên bạn cứ mua luôn","mau":"买下来就是了","can":[["就是了"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Nếu bạn thích thì cứ lấy đi là được.","dap":["你要是喜欢，拿走就是了。","要是你喜欢，拿走就是了。"],"giai":"要是……，V + 就是了 (ôn Bài 1 · điểm 2)."},
+     {"kieu":"dich","vn":"Có bất kỳ vấn đề gì, bạn cứ hỏi tôi là được.","dap":["有任何问题，你问我就是了。","你有任何问题，问我就是了。"],"giai":"任何 (Bài 1 · điểm 1) + 就是了."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Bạn em đang lo chuyện tìm nhà thuê. Hãy trấn an bạn bằng một câu có 「……就是了」","mau":"房子的事你别担心，我帮你一起找就是了。","can":[["就是了"]]}]}
+  ]},
+
+ {"so":"2","ten":"转折复句“……，不过……”","tenVn":"Câu phức chuyển ngoặt 「……，不过……」 — …, có điều …",
+  "cauTruc":["Vế 1 (nhận xét / sự việc)，不过 + vế 2 (ý chuyển ngoặt, bổ sung điều khác)","Sub + Adj / V……，不过 + (Sub) + ……"],
+  "giaiThich":"Liên từ 「不过」 đứng ở ĐẦU vế câu sau, biểu thị chuyển ngoặt: vế sau nói một điều trái với / khác với điều người nghe chờ đợi từ vế trước. So với 「但是」 (HSK 2–3), 「不过」 nhẹ nhàng, khẩu ngữ hơn — rất hay dùng khi “khen trước, góp ý sau”: 这个房间挺亮，不过有点儿小. Mẹo cho người Việt: 不过 ≈ “có điều / chỉ có điều / nhưng mà”. Lưu ý: 不过 đứng TRƯỚC chủ ngữ vế sau (✗ 他不过不想去 → ✓ 不过他不想去); hai vế phải có ý trái chiều, nếu cùng chiều thì dùng 而且 / 还.",
+  "viDu":[["这个小区的环境真不错，不过我听说，附近有十几家公司，很多刚毕业的学生都租住在这里。","Môi trường khu chung cư này đẹp thật, có điều tôi nghe nói gần đây có mười mấy công ty, nhiều sinh viên mới tốt nghiệp đều thuê nhà ở đây."],["我们在动物园看见了很多动物，不过没看见大熊猫。","Chúng tôi thấy rất nhiều động vật ở sở thú, có điều không thấy gấu trúc."],["我刚来北京时还不太习惯这里的天气，不过很快就适应了。","Mới đến Bắc Kinh tôi chưa quen thời tiết ở đây lắm, có điều rất nhanh đã thích nghi."],["这个房子位置很好，不过房租有点儿高，要是能再便宜些就好了。","Căn nhà này vị trí rất tốt, có điều tiền thuê hơi cao, nếu rẻ hơn chút thì tốt. (ôn 要是 – Bài 1 · điểm 2)"]],
+  "loi":[["不过有点儿贵，这个手机还可以。","不过 đứng đầu vế SAU, không mở đầu câu.","这个手机还可以，不过有点儿贵。"],["这个小区环境不错，不过很安静。","Hai vế cùng chiều tích cực, không có ý chuyển ngoặt → dùng 而且.","这个小区环境不错，而且很安静。"],["这个房子很大，他不过不想租。","不过 là liên từ, đứng trước chủ ngữ của vế sau.","这个房子很大，不过他不想租。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["这个小区的环境真不错，","我听说，附近有十几家公司。"],"dap":[["不过"]],"chon":["不过","所以","而且"],"goiY":"“Môi trường đẹp thật, có điều nghe nói gần đây có nhiều công ty.”","giai":"Vế sau chuyển ý → 不过."},
+     {"kieu":"dien","phan":["我们在动物园看见了很多动物，不过","看见大熊猫。"],"dap":[["没"]],"chon":["没","不","别"],"goiY":"“… có điều không thấy gấu trúc.”","giai":"Phủ định việc đã xảy ra: 没 + V."},
+     {"kieu":"dien","phan":["我刚来北京时还不太习惯这里的天气，不过很快就","了。"],"dap":[["适应"]],"chon":["适应","交流","申请"],"goiY":"“… có điều rất nhanh đã thích nghi.” (ôn từ Bài 1)","giai":"适应 = thích nghi."},
+     {"kieu":"dien","phan":["这个房间挺","，不过有点儿小。"],"dap":[["亮"]],"chon":["亮","租","种"],"goiY":"“Phòng này khá sáng, có điều hơi nhỏ.”","giai":"挺亮 = khá sáng (tính từ)."},
+     {"kieu":"dien","phan":["房租不高，","离公司有点儿远。"],"dap":[["不过"]],"chon":["不过","因为","并且"],"goiY":"“Tiền thuê không cao, có điều hơi xa công ty.”","giai":"Khen trước, góp ý sau → 不过."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["这个手机","还可以","，","不过","有点儿贵"],"dap":["这个手机还可以，不过有点儿贵。"],"goiY":"Chiếc điện thoại này cũng được, có điều hơi đắt.","giai":"……，不过 + ý chuyển."},
+     {"kieu":"xep","manh":["房子","很漂亮","，","不过","周围","不太安静"],"dap":["房子很漂亮，不过周围不太安静。"],"goiY":"Nhà rất đẹp, có điều xung quanh không yên tĩnh lắm.","giai":"不过 đứng trước chủ ngữ vế sau (周围)."},
+     {"kieu":"xep","manh":["我","很想去","，","不过","恐怕","没有时间"],"dap":["我很想去，不过恐怕没有时间。"],"goiY":"Tôi rất muốn đi, có điều e là không có thời gian.","giai":"不过 + 恐怕 (từ mới bài này)."},
+     {"kieu":"dungsai","cau":"这个小区很安静，不过环境也很好。","dung":false,"sua":"这个小区很安静，而且环境也很好。","giai":"Hai ý cùng chiều tốt → dùng 而且, không dùng 不过."},
+     {"kieu":"dungsai","cau":"天气预报说明天是晴天，不过可能会刮风。","dung":true,"giai":"Đúng: trời nắng (tốt) — có điều có gió (chưa tốt)."},
+     {"kieu":"dungsai","cau":"不过他很忙，他每天都去跑步。","dung":false,"sua":"他很忙，不过每天都去跑步。","giai":"不过 đứng ở đầu vế SAU."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 16)","huongDan":"Hoàn thành câu trả lời của B, có dùng 「不过」","cau":[
+     {"kieu":"vandung","de":"A：你觉得这个手机怎么样？ B：还可以，不过＿＿＿。","goiY":"Nêu một điểm chưa tốt của chiếc điện thoại (ví dụ: giá)","mau":"有点儿贵"},
+     {"kieu":"vandung","de":"A：你生病了？ B：没有，＿＿＿。","goiY":"Không ốm, có điều hơi khó chịu trong người","mau":"不过有点儿不舒服","can":[["不过"]]},
+     {"kieu":"vandung","de":"A：我们可以走着去那里吗？ B：可以，＿＿＿。","goiY":"Đồng ý, có điều không biết có mưa không","mau":"不过不知道会不会下雨","can":[["不过"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Căn nhà này vị trí rất tốt, có điều tiền thuê hơi đắt.","dap":["这个房子位置很好，不过房租有点儿贵。","这个房子位置很好，不过房租有点儿高。"],"giai":"位置, 房租 (từ mới) + 不过."},
+     {"kieu":"dich","vn":"Tôi rất muốn đi du lịch, có điều e là không có thời gian.","dap":["我很想去旅游，不过恐怕没有时间。","我很想去旅游，不过恐怕没时间。"],"giai":"不过 + 恐怕."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Nhận xét phòng / ký túc xá của em: khen một điểm, rồi dùng 「不过」 nói một điểm chưa tốt","mau":"我的宿舍又干净又亮，不过离教室有点儿远。","can":[["不过"]]}]}
+  ]},
+
+ {"so":"3","ten":"连词/副词“并”","tenVn":"Liên từ / phó từ 「并」 — và, đồng thời; hoàn toàn (không)",
+  "cauTruc":["Liên từ: V1 + O1，并 + V2 + O2 (vế sau tiến thêm một bước)","Phó từ: 并 + 不 / 没(有) + V / Adj — hoàn toàn không, chẳng hề"],
+  "giaiThich":"「并」 có nhiều cách dùng, bài này học hai cách. (1) LIÊN TỪ: nối hai động từ hai âm tiết, hai cụm động từ hoặc hai câu ngắn song song, có ý “tiến thêm một bước” — nghĩa “và, đồng thời, rồi còn”. Thường dùng trong văn viết; chủ ngữ hai vế giống nhau nên vế sau KHÔNG lặp lại chủ ngữ. Không dùng 并 để nối hai danh từ (danh từ dùng 和). (2) PHÓ TỪ: đứng TRƯỚC từ phủ định 不 / 没, làm giọng phủ định mạnh hơn, nói rằng sự thật KHÔNG như người ta (hoặc mình) nghĩ — giống tiếng Việt “chẳng hề, đâu có, hoàn toàn không”. Mẹo: thấy 并 + 不 / 没 là có ý “phản bác”: 租房并不容易 (ai cũng tưởng dễ, thật ra chẳng dễ chút nào). Thứ tự luôn là 并不 / 并没有, không phải 不并.",
+  "viDu":[["房东又向我介绍了一下房子里的东西，并告诉我这些东西怎么用。","Chủ nhà lại giới thiệu cho tôi đồ đạc trong nhà, và chỉ cho tôi cách dùng."],["她考上了北京大学并申请到了奖学金。","Cô ấy thi đỗ Đại học Bắc Kinh, lại còn xin được học bổng."],["我并没有答应你就租这个房子，我还要再想想。","Tôi đâu có đồng ý với bạn là thuê ngay căn nhà này, tôi còn phải nghĩ thêm. (答应 dāying = đồng ý, hứa)"],["随着中文水平的提高，我发现学汉字并不难。","Cùng với trình độ tiếng Trung nâng cao, tôi thấy học chữ Hán chẳng khó chút nào. (ôn 随着 – Bài 1 · điểm 3)"]],
+  "loi":[["我并她都是留学生。","并 không nối hai danh từ; nối danh từ dùng 和.","我和她都是留学生。"],["这次考试不并难。","Phó từ 并 đứng TRƯỚC từ phủ định: 并不 / 并没有.","这次考试并不难。"],["她考上了北京大学，并她申请到了奖学金。","Hai vế cùng chủ ngữ — sau 并 không lặp lại chủ ngữ.","她考上了北京大学并申请到了奖学金。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["房东又向我介绍了一下房子里的东西，","告诉我这些东西怎么用。"],"dap":[["并"]],"chon":["并","和","跟"],"goiY":"“… và chỉ cho tôi cách dùng.”","giai":"Nối hai cụm động từ → 并 (和 nối danh từ)."},
+     {"kieu":"dien","phan":["对白家月来说，这次租房并","容易。"],"dap":[["不"]],"chon":["不","没","很"],"goiY":"“… lần thuê nhà này chẳng hề dễ.”","giai":"并不 + tính từ."},
+     {"kieu":"dien","phan":["她考上了北京大学并申请到了","。"],"dap":[["奖学金"]],"chon":["奖学金","房租","工资"],"goiY":"“… và xin được học bổng.” (ôn từ Bài 1)","giai":"申请到 + 奖学金."},
+     {"kieu":"dien","phan":["我","没有答应你就租这个房子，我还要再想想。"],"dap":[["并"]],"chon":["并","也","就"],"goiY":"“Tôi đâu có đồng ý thuê ngay …”","giai":"并没有 = phủ định mạnh, phản bác."},
+     {"kieu":"dien","phan":["学汉字","不难，多写多练就是了。"],"dap":[["并"]],"chon":["并","和","还"],"goiY":"“Học chữ Hán chẳng khó, cứ viết nhiều luyện nhiều là được.” (ôn 就是了 – điểm 1)","giai":"并不难 = chẳng khó chút nào."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["他","毕业后","来北京工作","，","并","在公司附近","租了个房子"],"dap":["他毕业后来北京工作，并在公司附近租了个房子。"],"goiY":"Tốt nghiệp xong anh ấy đến Bắc Kinh làm việc, và thuê một căn nhà gần công ty.","giai":"V1……，并 + V2……"},
+     {"kieu":"xep","manh":["这个","小区","并","不","安静"],"dap":["这个小区并不安静。"],"goiY":"Khu chung cư này chẳng yên tĩnh chút nào.","giai":"并不 + Adj."},
+     {"kieu":"xep","manh":["我们","讨论了","这个问题","，","并","做出了","决定"],"dap":["我们讨论了这个问题，并做出了决定。"],"goiY":"Chúng tôi đã thảo luận vấn đề này và đưa ra quyết định.","giai":"Hai hành động nối tiếp, cùng chủ ngữ."},
+     {"kieu":"dungsai","cau":"我买了苹果并香蕉。","dung":false,"sua":"我买了苹果和香蕉。","giai":"并 không nối hai danh từ."},
+     {"kieu":"dungsai","cau":"其实这个问题并不难。","dung":true,"giai":"Đúng: 并不 phản bác suy nghĩ “khó”."},
+     {"kieu":"dungsai","cau":"在北京租房子不并容易。","dung":false,"sua":"在北京租房子并不容易。","giai":"Thứ tự đúng: 并不."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 18)","huongDan":"Hoàn thành câu, dùng 「并」 và từ trong ngoặc","cau":[
+     {"kieu":"vandung","de":"他毕业后来到北京工作，＿＿＿。（租）","goiY":"Nói thêm việc thứ hai: thuê nhà gần công ty","mau":"并在公司附近租了个房子","can":[["并"],["租"]]},
+     {"kieu":"vandung","de":"我吃完饭＿＿＿后，才去公园跑步。（收拾）","goiY":"Ăn xong và dọn bếp xong","mau":"并收拾好厨房","can":[["并"],["收拾"]]},
+     {"kieu":"vandung","de":"她＿＿＿这个小区，这里人太多，她不喜欢。（入住）","goiY":"Cô ấy chẳng hề muốn dọn vào khu này","mau":"并不想入住","can":[["并"],["入住"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Cô ấy tìm được việc làm và thuê một căn nhà gần công ty.","dap":["她找到了工作，并在公司附近租了一个房子。","她找到了工作，并在公司附近租了个房子。","她找到了工作并在公司附近租了一个房子。"],"giai":"并 nối hai hành động, không lặp chủ ngữ."},
+     {"kieu":"dich","vn":"Thực ra thuê nhà ở Bắc Kinh chẳng hề rẻ.","dap":["其实在北京租房子并不便宜。","其实在北京租房并不便宜。"],"giai":"并不 + Adj: phản bác suy nghĩ “rẻ”."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Phản bác một suy nghĩ sai về việc học tiếng Trung, dùng 「并不 / 并没有」","mau":"很多人觉得汉字很难，其实汉字并不难，多写多练就是了。","can":[["并"]]}]}
+  ]},
+
+ {"so":"4","ten":"连词/介词“由于”","tenVn":"Liên từ / giới từ 「由于」 — do, bởi vì",
+  "cauTruc":["Liên từ: 由于 + nguyên nhân，所以 / 因此 + kết quả","Giới từ: 由于 + danh từ (cụm danh từ)，+ kết quả"],
+  "giaiThich":"「由于」 có hai cách dùng. (1) LIÊN TỪ: đặt ở ĐẦU vế trước của câu phức để nêu NGUYÊN NHÂN; vế sau thường mở đầu bằng 「所以」 hoặc 「因此」 (yīncǐ, vì vậy). (2) GIỚI TỪ: 由于 + danh từ, nêu nguyên nhân / lý do: 由于大家的努力 (nhờ sự nỗ lực của mọi người). So với 「因为」 (HSK 2), 「由于」 trang trọng hơn, hay gặp trong văn viết, tin tức. Mẹo cho người Việt: 由于 thường đứng vế TRƯỚC (✗ ……，由于…… → ✓ 由于……，所以……; muốn đặt nguyên nhân ở sau thì dùng ……，是因为……). Không dùng 但是 / 虽然 với 由于 (đó là quan hệ nhượng bộ, không phải nhân quả).",
+  "viDu":[["在中国，由于很多刚工作的年轻人工资还不太高，所以他们一开始也不买房，都选择租房。","Ở Trung Quốc, do nhiều người trẻ mới đi làm lương còn chưa cao lắm, nên lúc đầu họ cũng không mua nhà mà đều chọn thuê nhà."],["由于一直下大雨，所以我们决定不爬山了。","Do trời mưa to suốt, nên chúng tôi quyết định không leo núi nữa."],["由于大家的努力，这次运动会我们班获得了第一名。","Nhờ sự nỗ lực của mọi người, đại hội thể thao lần này lớp ta giành giải nhất."],["由于申请到了奖学金，她减轻了不少经济压力。","Do xin được học bổng, cô ấy giảm được không ít áp lực kinh tế. (ôn 申请, 奖学金, 减轻 – Bài 1)"]],
+  "loi":[["我们决定不爬山了，由于一直下大雨。","由于 thường đứng ở vế TRƯỚC; vế sau dùng 所以 / 因此.","由于一直下大雨，所以我们决定不爬山了。"],["由于下雨，但是我们没去公园。","由于 (nhân quả) không đi với 但是 (chuyển ngoặt).","由于下雨，所以我们没去公园。"],["由于他生病了，因为他没来上课。","Vế sau dùng 所以 / 因此, không dùng 因为.","由于他生病了，所以他没来上课。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["","一直下大雨，所以我们决定不爬山了。"],"dap":[["由于"]],"chon":["由于","虽然","要是"],"goiY":"“Do trời mưa to suốt, nên …”","giai":"由于……，所以…… (nhân quả)."},
+     {"kieu":"dien","phan":["由于很多刚工作的年轻人工资还不太高，","他们一开始也不买房。"],"dap":[["所以"]],"chon":["所以","但是","而且"],"goiY":"“… nên lúc đầu họ cũng không mua nhà.”","giai":"Vế sau của 由于 dùng 所以 / 因此."},
+     {"kieu":"dien","phan":["由于大家的","，这次运动会我们班获得了第一名。"],"dap":[["努力"]],"chon":["努力","房租","位置"],"goiY":"“Nhờ sự nỗ lực của mọi người …”","giai":"Giới từ: 由于 + danh từ."},
+     {"kieu":"dien","phan":["由于这个小区很安静，房子价格也不高，","，很多人都喜欢在这里租房子。"],"dap":[["因此"]],"chon":["因此","不过","并"],"goiY":"“… vì vậy nhiều người thích thuê nhà ở đây.”","giai":"由于……，因此…… (因此 yīncǐ = vì vậy)."},
+     {"kieu":"dien","phan":["由于新公司离她住的地方比较远，她决定在公司","租个房子。"],"dap":[["附近"]],"chon":["附近","价格","信息"],"goiY":"“… cô ấy quyết định thuê nhà gần công ty.”","giai":"在 + nơi + 附近 = ở gần …"}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["由于","手机","没电了","，","她","没有办法","打电话"],"dap":["由于手机没电了，她没有办法打电话。"],"goiY":"Do điện thoại hết pin, cô ấy không có cách nào gọi điện.","giai":"由于 + nguyên nhân，kết quả."},
+     {"kieu":"xep","manh":["由于","工资","不太高","，","所以","他","选择租房"],"dap":["由于工资不太高，所以他选择租房。"],"goiY":"Do lương không cao lắm nên anh ấy chọn thuê nhà.","giai":"由于……，所以……"},
+     {"kieu":"xep","manh":["由于","大家的","帮助","，","我们","很快就","完成了工作"],"dap":["由于大家的帮助，我们很快就完成了工作。"],"goiY":"Nhờ sự giúp đỡ của mọi người, chúng tôi đã nhanh chóng hoàn thành công việc.","giai":"Giới từ: 由于 + cụm danh từ."},
+     {"kieu":"dungsai","cau":"由于天气不好，所以飞机晚到了两个小时。","dung":true,"giai":"Đúng: 由于……，所以……"},
+     {"kieu":"dungsai","cau":"由于下雨，但是比赛没有停。","dung":false,"sua":"虽然下雨，但是比赛没有停。","giai":"Đây là quan hệ nhượng bộ → 虽然……但是……; 由于 chỉ nguyên nhân."},
+     {"kieu":"dungsai","cau":"我没去上课，由于我生病了。","dung":false,"sua":"由于我生病了，所以没去上课。","giai":"由于 đứng ở vế trước."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 20)","huongDan":"Hoàn thành câu có 「由于」","cau":[
+     {"kieu":"vandung","de":"由于手机没电了，＿＿＿。","goiY":"Nói kết quả: không gọi điện được","mau":"她没有办法打电话"},
+     {"kieu":"vandung","de":"由于这个小区很安静，房子价格也不高，因此，＿＿＿。","goiY":"Nói kết quả: nhiều người thích thuê nhà ở đây","mau":"很多人都喜欢在这里租房子"},
+     {"kieu":"vandung","de":"＿＿＿，我们很快就完成了这个工作。","goiY":"Nêu nguyên nhân bằng giới từ 由于 + danh từ: nhờ sự nỗ lực của mọi người","mau":"由于大家的努力","can":[["由于"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Do lương còn chưa cao nên nhiều người trẻ chọn thuê nhà.","dap":["由于工资还不太高，所以很多年轻人选择租房。","由于工资还不高，所以很多年轻人选择租房。","由于工资还不太高，很多年轻人选择租房。"],"giai":"由于……，所以…… + từ mới 工资."},
+     {"kieu":"dich","vn":"Nhờ sự giúp đỡ của Lý Văn, Bạch Gia Nguyệt đã thuê được căn nhà phù hợp.","dap":["由于李文的帮助，白家月租到了合适的房子。"],"giai":"Giới từ: 由于 + cụm danh từ."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Giải thích vì sao em chọn ở ký túc xá / thuê nhà / ở nhà, dùng 「由于……，所以 / 因此……」","mau":"由于学校宿舍离教室很近，房租也不高，所以我选择住在宿舍。","can":[["由于"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 20).","dapSgk":true,"tu":["收拾","房租","入住","租","查看"],"cau":[
+   {"s":"这个小区环境好，＿＿也不高，一个月才5000元。","dap":["房租"]},
+   {"s":"要＿＿一个好房子也不容易，需要多多比较。","dap":["租"]},
+   {"s":"我女儿每天都把房间＿＿得干干净净的。","dap":["收拾"]},
+   {"s":"这次比赛的通知已经发到大家的邮箱了，请注意＿＿。","dap":["查看"]},
+   {"s":"＿＿后我发现，宾馆房间的灯是坏的。","dap":["入住"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại, sách trang 20–21).","dapSgk":true,"tu":["周围","建议","查找","客厅","接着"],"cau":[
+   {"s":"A：我最近打算在公司附近租个房子。　B：那你上网＿＿租房信息时，一定要小心，不要只看价格。","dap":["查找"]},
+   {"s":"A：你假期打算做什么？　B：我要先回家住几天，＿＿跟朋友去上海玩。","dap":["接着"]},
+   {"s":"A：听说小区＿＿有很多公司，很多年轻人都租住在附近。　B：是的，所以周末时特别热闹。","dap":["周围"]},
+   {"s":"A：这个房子怎么样？　B：很大，＿＿也大，里边除了沙发以外，还有一台大电视。","dap":["客厅"]},
+   {"s":"A：关于租什么样的房子合适，你还有什么好＿＿？　B：除了离公司近以外，我觉得生活上方便也很重要。","dap":["建议"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn (sách trang 21).","dapSgk":true,"tu":["就给房东打了电话","觉得房子很不错","她决定在公司附近租个房子","但是很干净"],"cau":[
+   {"s":"小张最近换了一个比较理想的工作。由于新公司离她现在住的地方比较远，＿＿。她在网上查找到一条出租信息，＿＿。房东说，小张要租的房子不太大，＿＿，房租不高，位置也比较好。接着，房东又建议小张过去看看。小张看了以后，＿＿，就租了下来。","dap":["她决定在公司附近租个房子","就给房东打了电话","但是很干净","觉得房子很不错"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (đáp án của sách chỉ là gợi ý — câu của em đúng ngữ pháp, hợp tranh là đạt).","cau":[
+   {"anh":"bt-1","s":"","tu":"房东","dap":"房东向他们介绍了一下房子里的东西。","giai":"向 + ai + 介绍 (giới thiệu với ai); V + 一下 làm nhẹ động tác — giống câu trong bài khoá 3."},
+   {"anh":"bt-2","s":"","tu":"毛巾","dap":"商店里有很多毛巾。","giai":"Câu tồn hiện: nơi chốn + 有 + N; lượng từ của 毛巾 là 条."},
+   {"anh":"bt-3","s":"","tu":"理想","dap":"我理想的大学是北京大学。","giai":"理想 làm định ngữ: 理想的 + N (nơi / thứ mơ ước)."}]}
+],
+
+"listen": [
+ {"audio":"你好，我在网上看到了你们的出租信息，那个房子还在吗？在，一室一厅，房租每月三千元。离地铁站远吗？不远，走路五分钟就到了。周围环境怎么样？小区里种了很多树，挺安静的，不过附近没有大超市。那我明天下午过去看看。好，到了给我打电话就是了。","questions":[
+   {"q":"这个房子每个月房租是多少？","opts":["两千元","三千元","五千元"],"ans":1},
+   {"q":"这个小区有什么不好？","opts":["离地铁站很远","附近没有大超市","周围不太安静"],"ans":1}]},
+ {"audio":"小林，听说你搬家了？是啊，上周末入住新家的。新家怎么样？客厅很大，也很亮，厨房里冰箱什么的都有。不过我平常工作太忙，基本上不做饭。那你周末请我们去热闹热闹吧！没问题，我先把房间收拾一下。","questions":[
+   {"q":"小林的新家怎么样？","opts":["客厅又大又亮","厨房里什么都没有","离公司很远"],"ans":0},
+   {"q":"小林为什么基本上不做饭？","opts":["不会做饭","平常工作太忙","厨房太小"],"ans":1}]},
+ {"audio":"由于房租越来越贵，我打算跟朋友一起租房子。一起租好啊，一方面能减轻经济压力，另一方面两个人住也热闹。你们想租什么样的房子？位置要好，离公司近，价格也不能太高。要是需要帮忙，告诉我就是了。","questions":[
+   {"q":"说话人为什么打算跟朋友一起租房子？","opts":["房租越来越贵","工资越来越高","朋友要来北京工作"],"ans":0},
+   {"q":"他们想租什么样的房子？","opts":["很大很亮的","位置好、价格不太高的","周围很热闹的"],"ans":1}]}
+],
+
+"match": [
+ {"left":"收拾","right":"房间"},
+ {"left":"查看","right":"有关信息"},
+ {"left":"租到","right":"理想的房子"},
+ {"left":"入住","right":"新家"},
+ {"left":"一台","right":"空调"},
+ {"left":"几条","right":"毛巾"},
+ {"left":"种了","right":"不少树"},
+ {"left":"更有","right":"安全感"},
+ {"left":"由于……","right":"所以……"}
+],
+
+"fill": [
+ {"pre":"如果决定租了，告诉我","blank":"就是了","post":"。","hint":"(… là được)","ans":"就是了","exp":"V + 就是了: khẳng định, trấn an."},
+ {"pre":"这个房子有两个房间，那个大房间","blank":"出租","post":"。","hint":"(cho thuê)","ans":"出租","exp":"Chủ nhà nói → 出租."},
+ {"pre":"现在已经","blank":"收拾","post":"好了，今天就可以搬进来。","hint":"(dọn dẹp)","ans":"收拾","exp":"收拾好了 = dọn xong."},
+ {"pre":"这个小区的环境真不错，","blank":"不过","post":"附近有十几家公司。","hint":"(có điều)","ans":"不过","exp":"……，不过…… chuyển ngoặt nhẹ."},
+ {"pre":"周末他们可能会玩到很晚，","blank":"恐怕","post":"会影响你休息。","hint":"(e là)","ans":"恐怕","exp":"恐怕 + 会: phỏng đoán có lo lắng."},
+ {"pre":"房东向我介绍了房子里的东西，","blank":"并","post":"告诉我这些东西怎么用。","hint":"(và)","ans":"并","exp":"Liên từ 并 nối hai hành động."},
+ {"pre":"对白家月来说，这次租房","blank":"并","post":"不容易。","hint":"(chẳng hề)","ans":"并","exp":"并不 + Adj."},
+ {"pre":"客厅里有椅子、沙发，还有一","blank":"台","post":"大电视。","hint":"(lượng từ máy móc)","ans":"台","exp":"一台电视 / 一台空调."},
+ {"pre":"","blank":"由于","post":"很多刚工作的年轻人工资还不太高，所以他们都选择租房。","hint":"(do)","ans":"由于","exp":"由于……，所以……"},
+ {"pre":"她看了好几个房子，才找到一个位置、环境和","blank":"价格","post":"都合适的。","hint":"(giá cả)","ans":"价格","exp":"价格合适 = giá phù hợp."}
+],
+
+"sort": [
+ {"words":["如果","决定","租了","，","告诉我","就是了","。"],"ans":"如果决定租了，告诉我就是了。"},
+ {"words":["这个小区","环境","不错","，","不过","附近","有很多公司","。"],"ans":"这个小区环境不错，不过附近有很多公司。"},
+ {"words":["房东","向我","介绍了","房子里的东西","，","并","告诉我","怎么用","。"],"ans":"房东向我介绍了房子里的东西，并告诉我怎么用。"},
+ {"words":["由于","工资","不太高","，","所以","他们","都选择","租房","。"],"ans":"由于工资不太高，所以他们都选择租房。"},
+ {"words":["我","平常","主要","在学校食堂","吃","，","基本上","不做饭","。"],"ans":"我平常主要在学校食堂吃，基本上不做饭。"},
+ {"words":["有自己的房子","会","更","有","安全感","。"],"ans":"有自己的房子会更有安全感。"}
+],
+
+"mc": [
+ {"q":"如果决定租了，告诉我＿＿。","opts":["就是了","就是","是了","就好吗"],"ans":0,"exp":"Cấu trúc cố định 「×就是了」 phải có 了, đặt cuối câu."},
+ {"q":"这个房子很漂亮，＿＿房租有点儿贵。","opts":["不过","所以","而且","并"],"ans":0,"exp":"Khen trước, góp ý sau → 不过."},
+ {"q":"她考上了北京大学＿＿申请到了奖学金。","opts":["并","和","跟","但"],"ans":0,"exp":"Liên từ 并 nối hai cụm động từ; 和 nối danh từ."},
+ {"q":"其实，在大城市租房子＿＿不便宜。","opts":["并","也就","很","还是"],"ans":0,"exp":"并不 + Adj: phủ định mạnh, phản bác."},
+ {"q":"＿＿一直下大雨，所以我们决定不爬山了。","opts":["由于","虽然","要是","随着"],"ans":0,"exp":"由于……，所以…… nêu nguyên nhân."},
+ {"q":"这个小区＿＿是花，还种了不少树。","opts":["到处","周围","位置","附近"],"ans":0,"exp":"到处是 + N = đâu đâu cũng là …"},
+ {"q":"客厅里有一＿＿大电视，房间里还有一＿＿空调。","opts":["台，台","张，把","条，台","个，张"],"ans":0,"exp":"Máy móc dùng lượng từ 台."},
+ {"q":"她先查看有关信息，＿＿又去看了看房子。","opts":["接着","同时","由于","不过"],"ans":0,"exp":"先……，接着…… kể việc theo thứ tự."},
+ {"q":"他每天都把房间＿＿得干干净净的。","opts":["收拾","出租","入住","查找"],"ans":0,"exp":"把 + N + 收拾得 + Adj."},
+ {"q":"很多人觉得，有房才有家，有自己的房子会更有安全＿＿。","opts":["感","心","意","情"],"ans":0,"exp":"安全感 = cảm giác an toàn; 感 là hậu tố."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và đóng vai), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions":[
+  {"q_zh":"你觉得租房子好，还是买房子好？为什么？","q_vn":"Bạn thấy thuê nhà tốt hay mua nhà tốt? Vì sao?","hint":"我觉得……好，一方面……，另一方面……。不过……","sample":"我觉得刚工作的时候租房子好。一方面工资还不太高，买房压力太大；另一方面租房子比较自由，换工作的时候也可以换地方住。不过工作几年以后，我也想买一个自己的房子，因为有自己的房子会更有安全感。","sample_vn":"Tôi thấy lúc mới đi làm thì thuê nhà tốt hơn. Một mặt lương chưa cao, mua nhà áp lực quá lớn; mặt khác thuê nhà khá tự do, đổi việc thì cũng có thể đổi chỗ ở. Có điều đi làm vài năm, tôi cũng muốn mua một căn nhà của riêng mình, vì có nhà riêng sẽ an tâm hơn.","note":"Câu hỏi phần Khởi động của sách; ôn 一方面……另一方面…… (Bài 1) + 不过 (điểm 2)."},
+  {"q_zh":"如果租房子，你喜欢租什么样的房子？","q_vn":"Nếu thuê nhà, bạn thích thuê căn nhà như thế nào?","hint":"我喜欢……的房子，房间要……，周围……，价格……","sample":"我喜欢租离学校近、周围安静的房子。房间不用太大，不过一定要亮，最好有一台空调和一张书桌。价格不要太高，每月两千元左右就行。","sample_vn":"Tôi thích thuê căn nhà gần trường, xung quanh yên tĩnh. Phòng không cần quá to, có điều nhất định phải sáng, tốt nhất có một chiếc điều hòa và một cái bàn học. Giá đừng quá cao, khoảng hai nghìn tệ một tháng là được.","note":"Câu hỏi phần Khởi động của sách."},
+  {"q_zh":"房东要出租哪个房间？那个房间怎么样？","q_vn":"Chủ nhà muốn cho thuê phòng nào? Phòng đó thế nào?","hint":"房东要出租……。那个房间……，还……","sample":"房东要出租那个大房间。那个房间真不小，还挺亮，现在已经收拾好了，今天就可以搬进去。","sample_vn":"Chủ nhà muốn cho thuê căn phòng lớn. Phòng đó rộng thật, lại khá sáng, giờ đã dọn dẹp xong, hôm nay có thể dọn vào luôn.","note":"Câu hỏi bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"李文和白家月到房东家看房子。房东要出租的是……，房租……。房东告诉白家月，……。这个房间……。小区离……不远，离地铁站……。","sample":"李文和白家月到房东家看房子。房东要出租的是那个大房间，房租每月5500元。房东告诉白家月，要出租的房间现在已经收拾好了，想租的话，今天就可以搬进来。这个房间真不小，还挺亮。小区离白家月的学校不远，离地铁站也很近，生活上很方便。白家月比较满意，他们决定再去看看外边的环境。","sample_vn":"Lý Văn và Bạch Gia Nguyệt đến nhà chủ nhà xem phòng. Chủ nhà cho thuê căn phòng lớn, tiền thuê 5500 tệ/tháng… Bạch Gia Nguyệt khá hài lòng, họ quyết định đi xem thêm môi trường bên ngoài.","note":"Bài tập 复述 của sách (trang 14)."},
+  {"q_zh":"李文为什么担心周末白家月休息不好？白家月为什么还是决定租那个房子？","q_vn":"Vì sao Lý Văn lo cuối tuần Bạch Gia Nguyệt nghỉ ngơi không tốt? Vì sao cô ấy vẫn quyết định thuê căn nhà đó?","hint":"因为附近……，恐怕……。不过白家月觉得……，所以……","sample":"因为附近有十几家公司，很多刚毕业的学生都租住在那里，周末他们可能会玩到很晚，恐怕会影响她休息。不过白家月想多认识一些朋友，而且那里房租合适，环境很好，房东也热情，所以她决定租那个房子。","sample_vn":"Vì gần đó có mười mấy công ty, nhiều sinh viên mới tốt nghiệp thuê nhà ở đó, cuối tuần họ có thể chơi đến khuya, e là ảnh hưởng đến việc nghỉ ngơi của cô ấy. Có điều Bạch Gia Nguyệt muốn quen thêm bạn, hơn nữa tiền thuê hợp lý, môi trường tốt, chủ nhà cũng nhiệt tình, nên cô ấy quyết định thuê.","note":"Câu hỏi bài khoá 2; dùng 恐怕 + 不过."},
+  {"q_zh":"白家月租的房间里都有什么？她准备去买什么？","q_vn":"Trong phòng Bạch Gia Nguyệt thuê có những gì? Cô ấy định đi mua gì?","hint":"除了……以外，还有……。她准备再去买……","sample":"她租的房间里，除了一张床以外，还有一台空调、一张书桌和一把椅子。她准备再去买几条毛巾，其他东西还不需要。","sample_vn":"Trong phòng cô ấy thuê, ngoài một chiếc giường ra còn có một chiếc điều hòa, một bàn học và một chiếc ghế. Cô ấy định đi mua thêm mấy chiếc khăn, những thứ khác chưa cần.","note":"Câu hỏi bài khoá 3."},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"昨天白家月顺利……，今天李文帮她……。搬进去的时候，房东又……，并……。客厅里有……；厨房里有……，不过……。","sample":"昨天白家月顺利租到了合适的房子，今天李文帮她搬家。搬进去的时候，房东又向白家月介绍了一下房子里的东西，并告诉她这些东西怎么用。白家月看到，客厅里有椅子、沙发，还有一台大电视；厨房里有冰箱和一些做饭用的东西，不过，白家月平常主要在学校食堂吃，基本上不做饭。白家月租的房间里，除了一张床以外，还有一台空调、一张书桌和一把椅子。看完整个房子后，她觉得再去买几条毛巾就行了。","sample_vn":"Hôm qua Bạch Gia Nguyệt đã thuê được căn nhà vừa ý, hôm nay Lý Văn giúp cô ấy chuyển nhà… Xem xong cả căn nhà, cô ấy thấy chỉ cần đi mua thêm mấy chiếc khăn là được.","note":"Bài tập 复述 của sách (trang 17–18)."},
+  {"q_zh":"白家月是怎么租到合适的房子的？","q_vn":"Bạch Gia Nguyệt đã thuê được căn nhà phù hợp như thế nào?","hint":"她先……，查找……，接着……，同时……。她看了好几个房子，才……","sample":"根据李文的建议，她先在租房网站和App上查看有关信息，查找合适的房子，接着又去看了看房子，同时了解房子周围的环境。她看了好几个房子，才找到一个位置、环境和价格都合适的。","sample_vn":"Theo gợi ý của Lý Văn, trước tiên cô ấy xem thông tin trên web và App thuê nhà, tìm nhà phù hợp, tiếp đó đến xem nhà, đồng thời tìm hiểu môi trường xung quanh. Cô ấy xem mấy căn liền mới tìm được căn vị trí, môi trường và giá cả đều phù hợp.","note":"Câu hỏi bài khoá 4; dùng 先……，接着……，同时……"},
+  {"q_zh":"在中国，为什么很多刚工作的年轻人选择租房？为什么不少人工作几年后会买房？","q_vn":"Ở Trung Quốc, vì sao nhiều người trẻ mới đi làm chọn thuê nhà? Vì sao không ít người đi làm vài năm thì mua nhà?","hint":"由于……，所以……。因为大家觉得，有房才……","sample":"由于很多刚工作的年轻人工资还不太高，所以他们一开始不买房，都选择租房。工作几年后，不少人会买房，因为大家一直觉得，有房才有家，有自己的房子会更有安全感。","sample_vn":"Do nhiều người trẻ mới đi làm lương chưa cao, nên lúc đầu họ không mua mà chọn thuê nhà. Đi làm vài năm, không ít người mua nhà, vì mọi người luôn cho rằng có nhà mới có tổ ấm, có nhà riêng sẽ an tâm hơn.","note":"Câu hỏi bài khoá 4; dùng 由于……，所以…… (điểm 4)."},
+  {"q_zh":"角色扮演：一个人扮演租房人，另一个人扮演房东。租房人到房东那儿看房子，询问租房价格、房屋情况及周围环境等，房东一一向租房人介绍。","q_vn":"Đóng vai: một người làm người thuê nhà, một người làm chủ nhà. Người thuê đến chỗ chủ nhà xem nhà, hỏi về giá thuê, tình trạng căn nhà và môi trường xung quanh…; chủ nhà lần lượt giới thiệu từng mục.","hint":"租房人：请问房租……？房间里有……吗？周围……？ 房东：……。由于……，所以……。不过……。要是……，告诉我就是了。","sample":"租房人：您好，我在网上看到了您的出租信息，想来看看房子。房东：请进！这个房子是一室一厅，客厅很大，也很亮。租房人：房间里都有什么？房东：除了一张床以外，还有一台空调、一张书桌和一把椅子。厨房里有冰箱，做饭也很方便。租房人：房租每个月多少钱？房东：每月三千元。由于离地铁站很近，所以价格比旁边的小区高一点儿。租房人：周围的环境怎么样？房东：小区里种了很多树，周围很安静，附近还有超市和饭馆。不过周末楼下有点儿热闹。租房人：嗯，房子我挺满意的，我想再考虑一下。房东：没问题，要是决定租了，告诉我就是了。","sample_vn":"Người thuê: Chào chú, cháu thấy tin cho thuê của chú trên mạng, muốn đến xem nhà. Chủ nhà: Mời vào! Căn này một phòng ngủ một phòng khách, phòng khách rộng, lại sáng… Do gần ga tàu điện nên giá cao hơn khu bên cạnh một chút… Có điều cuối tuần dưới nhà hơi ồn. Người thuê: Vâng, cháu khá hài lòng, cháu muốn cân nhắc thêm. Chủ nhà: Không sao, nếu quyết định thuê thì cứ báo chú là được.","note":"Hoạt động 角色扮演 (đóng vai) của sách, trang 21 — dùng đủ 4 điểm ngữ pháp: 就是了, 不过, 并, 由于."}
+ ]
+},
+
+"translate": [
+ ["Nếu quyết định thuê thì cứ báo tôi là được.","如果决定租了，告诉我就是了。"],
+ ["Môi trường khu chung cư này đẹp thật, có điều gần đây có mười mấy công ty.","这个小区的环境真不错，不过附近有十几家公司。"],
+ ["Chủ nhà giới thiệu đồ đạc trong nhà và chỉ cho tôi cách dùng.","房东介绍了一下房子里的东西，并告诉我这些东西怎么用。"],
+ ["Đối với Bạch Gia Nguyệt, lần thuê nhà này chẳng hề dễ dàng.","对白家月来说，这次租房并不容易。"],
+ ["Do lương còn chưa cao nên nhiều người trẻ chọn thuê nhà.","由于工资还不太高，所以很多年轻人选择租房。"],
+ ["Có nhà của riêng mình sẽ có cảm giác an toàn hơn.","有自己的房子会更有安全感。"]
+],
+"translateRev": [
+ ["Căn nhà này có hai phòng, phòng lớn kia cho thuê, tiền thuê mỗi tháng 5500 tệ.","这个房子有两个房间，那个大房间出租，房租每月5500元。"],
+ ["Cuối tuần họ có thể chơi đến rất muộn, e là sẽ ảnh hưởng đến việc nghỉ ngơi của cậu.","周末他们可能会玩到很晚，恐怕会影响你休息。"],
+ ["Ngày thường tôi chủ yếu ăn ở nhà ăn của trường, hầu như không nấu cơm.","我平常主要在学校食堂吃，基本上不做饭。"],
+ ["Cô ấy xem mấy căn liền mới tìm được một căn vị trí, môi trường và giá cả đều phù hợp.","她看了好几个房子，才找到一个位置、环境和价格都合适的。"],
+ ["Xem xong cả căn nhà, tôi định đi mua thêm mấy chiếc khăn.","看完整个房子后，我准备再去买几条毛巾。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":120,"tieuDe":"写作 — viết theo đề của sách (ít nhất 120 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết tin tìm thuê nhà (写作)","gioiThieu":"Đề 写作 của sách HSK 4 (3.0) yêu cầu viết một đoạn văn ngắn (ít nhất 120 chữ) dựa trên nội dung đã học — lần này là một “tin tìm thuê nhà” (租房需求信息) đăng lên mạng, giống phần 书写 của đề thi HSK 4 mới.","buoc":["Đọc kỹ đề: em là sinh viên MỚI TỐT NGHIỆP, viết tin đăng để CHỦ NHÀ đọc — nói rõ mình là ai và cần căn nhà thế nào.","Lập dàn ý theo các câu hỏi gợi ý: mỗi câu hỏi là một ý, viết 1–2 câu cho mỗi ý (vì sao thuê, vị trí, phòng ốc – đồ đạc, môi trường xung quanh, giá thuê, cách liên hệ).","Dùng từ mới và 4 điểm ngữ pháp của bài (khung “Từ, cấu trúc nên dùng”): 由于……所以……, ……不过……, 并, ……就是了.","Nối các ý bằng từ nối: 首先 / 接着 / 同时 / 除了……还…… / 要是……就……","Câu mở giới thiệu bản thân, câu kết là cách liên hệ + lời cảm ơn; tự soát số chữ (≥ 120) và lỗi chữ Hán trước khi nộp."]},
+ "de":"假如你是一个刚毕业的大学生，想要租房子。请你写一段租房需求信息，不少于120字。",
+ "prompt":"Giả sử em là một sinh viên vừa tốt nghiệp đại học, muốn thuê nhà. Hãy viết một đoạn tin đăng về nhu cầu thuê nhà, không ít hơn 120 chữ.",
+ "dan":[
+  {"hoi":"你是谁？为什么要租房子？","goiY":"我今年刚毕业，在……工作。由于公司离……比较远，所以……"},
+  {"hoi":"你想租在哪儿？位置有什么要求？","goiY":"最好在公司附近 / 离地铁站近，生活上方便"},
+  {"hoi":"房子要多大？房间里要有什么？","goiY":"一室一厅就行，房间要亮，有一张床、一台空调……"},
+  {"hoi":"周围环境和房租有什么要求？","goiY":"周围要安静……，不过……；房租每月不超过……元"},
+  {"hoi":"怎么联系你？","goiY":"要是你有合适的房子，给我打电话 / 发信息就是了"}],
+ "tuNen":["租","房租","房东","出租","客厅","厨房","台","周围","位置","价格","理想","信息","收拾","入住"],
+ "cauTruc":[
+  {"ten":"由于……，所以……","nhan":"由于","vd":"由于公司离我现在住的地方比较远，所以我想在公司附近租一个房子。","khi":"Câu MỞ: nêu lý do thuê nhà."},
+  {"ten":"……，不过……","nhan":"不过","vd":"房间不用太大，不过一定要亮。","khi":"Nói yêu cầu: điều không cần — điều nhất định cần."},
+  {"ten":"……，并……","nhan":"并","vd":"我会按时交房租，并把房子收拾干净。","khi":"Cam kết của người thuê (hai việc nối tiếp)."},
+  {"ten":"除了……以外，还……","nhan":"除了","vd":"房间里除了一张床以外，最好还有一台空调和一张书桌。","khi":"Liệt kê đồ đạc cần có."},
+  {"ten":"要是……，……就是了","nhan":"就是了","vd":"要是你有合适的房子出租，给我打电话就是了。","khi":"Câu KẾT: cách liên hệ."}],
+ "checklist":[
+  "Đủ ít nhất 120 chữ Hán chưa?",
+  "Đã nói đủ các ý: em là ai, vì sao thuê, vị trí, phòng ốc – đồ đạc, môi trường xung quanh, giá thuê, cách liên hệ chưa?",
+  "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (就是了、不过、并、由于) chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài chưa?",
+  "Tin đăng có câu mở (giới thiệu bản thân) và câu kết (liên hệ, cảm ơn), người đọc là chủ nhà chưa?"],
+ "model":"大家好！我今年刚从大学毕业，在北京的一家公司工作。由于公司离我现在住的地方比较远，所以我想在公司附近租一个房子。我理想的房子是一室一厅，客厅不用太大，不过房间一定要亮，里边除了一张床以外，最好还有一台空调和一张书桌。我平常工作比较忙，基本上不做饭，所以厨房小一些也没关系。我希望小区周围的环境比较安静，离地铁站近一些，生活上方便。刚工作的时候工资还不太高，房租最好每月不超过三千元。我会按时交房租，并把房子收拾干净。要是你有合适的房子出租，给我打电话或者发信息就是了，我随时都可以去看房。谢谢！"
+}
+}

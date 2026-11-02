@@ -45,9 +45,9 @@ const APP_DATA = {
       id: 'hsk4v3',
       name: 'HSK 4 (3.0 Mới)',
       subtitle: 'Giáo trình chuẩn mới · 新HSK教程4',
-      description: 'Giáo trình 新HSK教程4 (chuẩn HSK 3.0), 1 bài · 40 từ mới, ảnh nhân vật và tranh của sách + audio gốc.',
-      totalLessons: 1,
-      totalVocab: 40,
+      description: 'Giáo trình 新HSK教程4 (chuẩn HSK 3.0), 6 bài · 241 từ mới, ảnh nhân vật và tranh của sách + audio gốc.',
+      totalLessons: 6,
+      totalVocab: 241,
       color: 'teal'
     },
     // </hsk4v3-cap>
@@ -1621,6 +1621,66 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 4,
         fullPageUrl: '/lessons/hsk4v3-bai-1.html'
+      },
+      {
+        id: 'hsk4v3-l2',
+        number: 2,
+        title: "Đã thuê được căn nhà vừa ý",
+        titleHanzi: "租到了合适的房子",
+        titlePinyin: "Zūdào le héshì de fángzi",
+        topic: "Thuê nhà: đi xem phòng, môi trường xung quanh, đồ đạc trong nhà và quan niệm nhà ở của người Trung Quốc",
+        vocabCount: 37,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk4v3-bai-2.html'
+      },
+      {
+        id: 'hsk4v3-l3',
+        number: 3,
+        title: "Quét điện thoại một cái là xong",
+        titleHanzi: "手机扫一下",
+        titlePinyin: "Shǒujī sǎo yíxià",
+        topic: "Điện thoại trong đời sống: hỏi đường, quét mã thanh toán, mua hàng online, chuyển phát nhanh và bảo vệ thông tin cá nhân",
+        vocabCount: 42,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk4v3-bai-3.html'
+      },
+      {
+        id: 'hsk4v3-l4',
+        number: 4,
+        title: "Rất vui vì đã giúp được bạn",
+        titleHanzi: "很高兴能帮到你",
+        titlePinyin: "Hěn gāoxìng néng bāngdào nǐ",
+        topic: "Nhờ giúp đỡ và giúp đỡ người khác, các cách đi lại trong thành phố, dịch vụ tiện ích ở ga tàu điện ngầm",
+        vocabCount: 39,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk4v3-bai-4.html'
+      },
+      {
+        id: 'hsk4v3-l5',
+        number: 5,
+        title: "“Không sợ cay” và “sợ không cay”",
+        titleHanzi: "“不怕辣”和“怕不辣”",
+        titlePinyin: "“Bú pà là” hé “pà bú là”",
+        topic: "Thói quen ăn uống, khẩu vị, tụ tập ăn uống và phép sắp xếp chỗ ngồi trên bàn tiệc",
+        vocabCount: 44,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk4v3-bai-5.html'
+      },
+      {
+        id: 'hsk4v3-l6',
+        number: 6,
+        title: "Tớ đưa cậu đi khám bệnh",
+        titleHanzi: "我陪你去看病",
+        titlePinyin: "Wǒ péi nǐ qù kàn bìng",
+        topic: "Kể triệu chứng, làm thủ tục ở bệnh viện, quy trình khám chữa bệnh ở Trung Quốc",
+        vocabCount: 39,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk4v3-bai-6.html'
       }
     ],
     // </hsk4v3>

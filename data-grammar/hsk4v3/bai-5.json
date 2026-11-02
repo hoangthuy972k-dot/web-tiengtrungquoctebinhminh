@@ -1,0 +1,667 @@
+{
+ "/lessons/hsk4v3-bai-5.html": {
+  "points": [
+   {
+    "title": "范围副词“至少” — ít nhất, tối thiểu",
+    "errors": [
+     {
+      "wrong": "我每天学习两个小时至少。",
+      "why": "Không để 至少 cuối câu như tiếng Việt; 至少 đứng trước động từ / số lượng.",
+      "right": "我每天至少学习两个小时。"
+     },
+     {
+      "wrong": "至少他有三十岁了。",
+      "why": "Thường đặt 至少 sau chủ ngữ, trước vị ngữ.",
+      "right": "他至少有三十岁了。"
+     },
+     {
+      "wrong": "他至少的朋友有十个。",
+      "why": "至少 là phó từ, không làm định ngữ với 的.",
+      "right": "他至少有十个朋友。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Cháu sang Trung Quốc ít nhất hai tháng rồi …”",
+      "pre": "家月，你来中国",
+      "blank": "至少",
+      "post": "两个月了，习惯吃中餐了吗？",
+      "options": [
+       "至少",
+       "专门",
+       "任何"
+      ],
+      "answer": 0,
+      "explanation": "至少 + cụm thời gian."
+     },
+     {
+      "context": "“Mỗi năm có ít nhất hai trăm du học sinh …”",
+      "pre": "每年至少",
+      "blank": "有",
+      "post": "两百名留学生来我校学习中文专业。",
+      "options": [
+       "有",
+       "是",
+       "在"
+      ],
+      "answer": 0,
+      "explanation": "至少 + 有 + số lượng."
+     },
+     {
+      "context": "“Tuy chưa gặp mặt, nhưng ít ra cũng đã trò chuyện trên mạng nhiều lần.”",
+      "pre": "我们虽然没有见过面，",
+      "blank": "但",
+      "post": "至少在网上聊过很多次。",
+      "options": [
+       "但",
+       "就",
+       "于是"
+      ],
+      "answer": 0,
+      "explanation": "虽然……，但至少…… — ôn 虽然……但是…… (HSK 3)."
+     },
+     {
+      "context": "“Đi xe đạp điện ít nhất cũng nhanh được mười phút.”",
+      "pre": "骑电动车至少",
+      "blank": "能",
+      "post": "快十分钟。",
+      "options": [
+       "能",
+       "敢",
+       "够"
+      ],
+      "answer": 0,
+      "explanation": "至少 + 能 + V + số lượng."
+     },
+     {
+      "context": "“Cũ thì cũ, nhưng ít ra cũng sạch.” (ôn Bài 3)",
+      "pre": "这个房子旧是旧，",
+      "blank": "不过",
+      "post": "至少很干净。",
+      "options": [
+       "不过",
+       "因为",
+       "要是"
+      ],
+      "answer": 0,
+      "explanation": "×是×，不过至少…… — ôn Bài 3 · điểm 1."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mỗi ngày tôi học ít nhất hai tiếng.”",
+      "words": [
+       "我",
+       "每天",
+       "至少",
+       "学习",
+       "两个小时"
+      ],
+      "answer": "我每天至少学习两个小时。",
+      "explanation": "Chủ ngữ + thời gian + 至少 + V + thời lượng."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Năm nhất cao học phải chọn ít nhất ba môn.”",
+      "words": [
+       "研究生一年级",
+       "至少",
+       "要",
+       "选",
+       "三门课"
+      ],
+      "answer": "研究生一年级至少要选三门课。",
+      "explanation": "至少 + 要 + V + số lượng."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Căn nhà này cũ thì cũ, nhưng ít ra cũng sạch.”",
+      "words": [
+       "这个",
+       "房子",
+       "旧是旧",
+       "，",
+       "不过",
+       "至少",
+       "很干净"
+      ],
+      "answer": "这个房子旧是旧，不过至少很干净。",
+      "explanation": "Ôn ×是×，不过…… + 至少."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我每天睡觉八个小时至少。",
+      "isCorrect": false,
+      "correctVersion": "我每天至少睡八个小时。",
+      "explanation": "至少 không đứng cuối câu."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "每年至少有两百名留学生来我校学习。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 至少 + 有 + số lượng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他至少的朋友有十个。",
+      "isCorrect": false,
+      "correctVersion": "他至少有十个朋友。",
+      "explanation": "至少 là phó từ, không thêm 的 làm định ngữ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Muốn học giỏi tiếng Trung, mỗi ngày ít nhất phải học một tiếng.",
+      "answer": "要想学好中文，每天至少要学习一个小时。",
+      "answerPy": "Yào xiǎng xué hǎo Zhōngwén, měi tiān zhìshǎo yào xuéxí yí gè xiǎoshí.",
+      "explanation": "至少 + 要 + V + thời lượng."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi đã đến Bắc Kinh ít nhất năm lần rồi.",
+      "answer": "我至少来过北京五次了。",
+      "answerPy": "Wǒ zhìshǎo lái guò Běijīng wǔ cì le.",
+      "explanation": "至少 + V过 + số lần."
+     }
+    ]
+   },
+   {
+    "title": "副词/动词“够” — thật là …; đủ",
+    "errors": [
+     {
+      "wrong": "你的中文水平够高。",
+      "why": "Phó từ 够 ở câu khẳng định cần 的 cuối câu: 够……的.",
+      "right": "你的中文水平够高的。"
+     },
+     {
+      "wrong": "这个箱子够不大。",
+      "why": "Phủ định là 不够 + tính từ: 不 đứng trước 够.",
+      "right": "这个箱子不够大。"
+     },
+     {
+      "wrong": "我的钱不足够买这本书。",
+      "why": "Khẩu ngữ dùng 不够 (+ V), không nói 不足够.",
+      "right": "我的钱不够买这本书。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Trình độ tiếng Trung của cậu cao thật đấy!”",
+      "pre": "你的中文水平",
+      "blank": "够",
+      "post": "高的，这都听懂了！",
+      "options": [
+       "够",
+       "不够",
+       "至少"
+      ],
+      "answer": 0,
+      "explanation": "够 + Adj + 的 = thật là …"
+     },
+     {
+      "context": "“Vẫn chưa đủ ngọt, thêm chút đường đi.”",
+      "pre": "我尝了一下，还",
+      "blank": "不够",
+      "post": "甜，再加一点儿糖吧。",
+      "options": [
+       "不够",
+       "够",
+       "至少"
+      ],
+      "answer": 0,
+      "explanation": "不够 + Adj = chưa đủ …"
+     },
+     {
+      "context": "“Bốn món có đủ không?”",
+      "pre": "明天请家月和李文来家里吃饭，四个菜",
+      "blank": "够不够",
+      "post": "？",
+      "options": [
+       "够不够",
+       "够没够",
+       "不够够"
+      ],
+      "answer": 0,
+      "explanation": "Câu hỏi chính phản: 够不够."
+     },
+     {
+      "context": "“Hôm nay trời lạnh thật đấy, mặc thêm áo vào.”",
+      "pre": "今天的天气够冷",
+      "blank": "的",
+      "post": "，多穿点儿衣服吧。",
+      "options": [
+       "的",
+       "了",
+       "吗"
+      ],
+      "answer": 0,
+      "explanation": "Khung cố định 够……的."
+     },
+     {
+      "context": "“… thời gian không đủ.”",
+      "pre": "完成这个工作需要三天，现在只有两天，时间",
+      "blank": "不够",
+      "post": "。",
+      "options": [
+       "不够",
+       "够的",
+       "至少"
+      ],
+      "answer": 0,
+      "explanation": "N + 不够 (động từ)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nhà bạn to thật đấy.”",
+      "words": [
+       "你家",
+       "房子",
+       "够",
+       "大",
+       "的"
+      ],
+      "answer": "你家房子够大的。",
+      "explanation": "够 + Adj + 的."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cái thùng này không đủ to, không để vừa nhiều đồ thế.”",
+      "words": [
+       "这个",
+       "箱子",
+       "不够大",
+       "，",
+       "放不下",
+       "这么多东西"
+      ],
+      "answer": "这个箱子不够大，放不下这么多东西。",
+      "explanation": "不够 + Adj + bổ ngữ khả năng 放不下."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi nếm thử rồi, vẫn chưa đủ ngọt.”",
+      "words": [
+       "我",
+       "尝了一下",
+       "，",
+       "还",
+       "不够",
+       "甜"
+      ],
+      "answer": "我尝了一下，还不够甜。",
+      "explanation": "还 + 不够 + Adj."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个箱子够不大，放不下这么多东西。",
+      "isCorrect": false,
+      "correctVersion": "这个箱子不够大，放不下这么多东西。",
+      "explanation": "Phủ định: 不够 + Adj."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你的中文水平够高的，这都听懂了！",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 够……的 cảm thán."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们只有两个人，三个菜够了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 够 làm động từ — đủ (số lượng)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Món này vẫn chưa đủ cay, cho thêm chút ớt nữa đi.",
+      "answer": "这道菜还不够辣，再放一点儿辣椒吧。",
+      "answerPy": "Zhè dào cài hái búgòu là, zài fàng yìdiǎnr làjiāo ba.",
+      "explanation": "不够 + Adj; từ mới 辣椒."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Hôm nay trời nóng thật đấy!",
+      "answer": "今天天气够热的！",
+      "answerPy": "Jīntiān tiānqì gòu rè de!",
+      "explanation": "够 + Adj + 的."
+     }
+    ]
+   },
+   {
+    "title": "固定格式“各×各的” — ai … nấy, mỗi người tự …",
+    "errors": [
+     {
+      "wrong": "我各付各的。",
+      "why": "Chủ ngữ phải là nhiều người.",
+      "right": "我们各付各的。"
+     },
+     {
+      "wrong": "大家各付自己的。",
+      "why": "Cấu trúc cố định lặp lại 各 + cùng động từ: 各V各的.",
+      "right": "大家各付各的。"
+     },
+     {
+      "wrong": "他们各的吃各的。",
+      "why": "Không có 的 sau 各 thứ nhất; 的 chỉ ở cuối.",
+      "right": "他们各吃各的。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… vẫn là ai trả phần nấy thì hợp hơn.”",
+      "pre": "大家觉得还是各付",
+      "blank": "各",
+      "post": "的更合适。",
+      "options": [
+       "各",
+       "自己",
+       "每"
+      ],
+      "answer": 0,
+      "explanation": "各 + V + 各 + 的."
+     },
+     {
+      "context": "“… ai bận việc nấy.”",
+      "pre": "到了办公室，大家就开始各",
+      "blank": "忙",
+      "post": "各的了。",
+      "options": [
+       "忙",
+       "付",
+       "坐"
+      ],
+      "answer": 0,
+      "explanation": "各忙各的."
+     },
+     {
+      "context": "“… ai đọc sách nấy.”",
+      "pre": "在图书馆里，大家都很安静，各看各的",
+      "blank": "书",
+      "post": "。",
+      "options": [
+       "书",
+       "饭",
+       "菜"
+      ],
+      "answer": 0,
+      "explanation": "各V各的 + danh từ."
+     },
+     {
+      "context": "“Khẩu vị họ khác nhau, thế là mỗi người ăn phần mình.” (ôn Bài 3)",
+      "pre": "他们口味不同，",
+      "blank": "于是",
+      "post": "就各吃各的。",
+      "options": [
+       "于是",
+       "甚至",
+       "不仅"
+      ],
+      "answer": 0,
+      "explanation": "于是 nối kết quả — Bài 3 · điểm 4."
+     },
+     {
+      "context": "“… mỗi người mua một kiểu.”",
+      "pre": "他们想买的东西不一样，到了商场以后就各买",
+      "blank": "各的",
+      "post": "了。",
+      "options": [
+       "各的",
+       "自己",
+       "他的"
+      ],
+      "answer": 0,
+      "explanation": "各买各的."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mọi người thấy vẫn là ai trả phần nấy thì hợp hơn.”",
+      "words": [
+       "大家",
+       "觉得",
+       "还是",
+       "各付各的",
+       "更合适"
+      ],
+      "answer": "大家觉得还是各付各的更合适。",
+      "explanation": "还是……更合适 + 各付各的."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đến văn phòng, mọi người bắt đầu ai bận việc nấy.”",
+      "words": [
+       "到了",
+       "办公室",
+       "，",
+       "大家",
+       "就",
+       "开始",
+       "各忙各的了"
+      ],
+      "answer": "到了办公室，大家就开始各忙各的了。",
+      "explanation": "Chủ ngữ số nhiều + 就 + 各V各的."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Thầy nói xong, mọi người ai làm bài nấy.”",
+      "words": [
+       "老师",
+       "说完",
+       "以后",
+       "，",
+       "大家",
+       "就",
+       "各做各的"
+      ],
+      "answer": "老师说完以后，大家就各做各的。",
+      "explanation": "……以后，大家就各V各的."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我各吃各的。",
+      "isCorrect": false,
+      "correctVersion": "我们各吃各的。",
+      "explanation": "Chủ ngữ phải là nhiều người."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "在图书馆里，大家都很安静，各看各的书。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 各看各的 + 书."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他们各的做各的。",
+      "isCorrect": false,
+      "correctVersion": "他们各做各的。",
+      "explanation": "Không có 的 sau 各 thứ nhất."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bạn bè đi ăn với nhau, chúng tôi thường ai trả phần nấy.",
+      "answer": "朋友一起吃饭，我们一般各付各的。",
+      "answerPy": "Péngyou yìqǐ chīfàn, wǒmen yìbān gè fù gè de.",
+      "explanation": "各付各的 + từ mới 聚餐."
+     }
+    ]
+   },
+   {
+    "title": "介词“等” — đợi đến khi, chờ đến lúc",
+    "errors": [
+     {
+      "wrong": "我写完作业等，再跟你出去玩。",
+      "why": "等 đứng ĐẦU vế câu, trước sự việc phải đợi.",
+      "right": "等我写完作业，再跟你出去玩。"
+     },
+     {
+      "wrong": "等我写完作业，我又跟你出去玩。",
+      "why": "Việc chưa xảy ra ở vế sau dùng 再 (rồi mới), không dùng 又.",
+      "right": "等我写完作业，再跟你出去玩。"
+     },
+     {
+      "wrong": "等我们到火车站，火车开走了。",
+      "why": "“Đến lúc … thì đã …” cần 的时候 và 已经……了.",
+      "right": "等我们到火车站的时候，火车已经开走了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… người trẻ phải đợi người già ngồi xuống rồi mới ngồi.”",
+      "pre": "如果聚餐时有老人，年轻人要",
+      "blank": "等",
+      "post": "老人坐下后再坐。",
+      "options": [
+       "等",
+       "在",
+       "从"
+      ],
+      "answer": 0,
+      "explanation": "等 + sự việc + 后，再 + V."
+     },
+     {
+      "context": "“Đợi tớ làm xong bài rồi mới đi chơi với cậu.”",
+      "pre": "等我写完作业，",
+      "blank": "再",
+      "post": "跟你出去玩。",
+      "options": [
+       "再",
+       "又",
+       "还"
+      ],
+      "answer": 0,
+      "explanation": "等……，再…… (việc chưa xảy ra)."
+     },
+     {
+      "context": "“… tàu đã chạy mất rồi.”",
+      "pre": "等我们到火车站的时候，火车",
+      "blank": "已经",
+      "post": "开走了。",
+      "options": [
+       "已经",
+       "正在",
+       "马上"
+      ],
+      "answer": 0,
+      "explanation": "等……的时候，已经……了."
+     },
+     {
+      "context": "“Đừng vội, đợi tớ xong việc thì sẽ đi tìm cậu.”",
+      "pre": "别着急，等我忙完了",
+      "blank": "就",
+      "post": "去找你。",
+      "options": [
+       "就",
+       "才",
+       "也"
+      ],
+      "answer": 0,
+      "explanation": "等……，就…… (đáp án gợi ý của sách)."
+     },
+     {
+      "context": "“Đến lúc chúng tôi chạy tới thì đã không kịp rồi.” (ôn Bài 4)",
+      "pre": "",
+      "blank": "等",
+      "post": "我们赶到的时候，已经来不及了。",
+      "options": [
+       "等",
+       "随着",
+       "要是"
+      ],
+      "answer": 0,
+      "explanation": "等……的时候 + 来不及 (Bài 4 · điểm 4)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đợi tớ làm xong bài tập rồi đi chơi với cậu.”",
+      "words": [
+       "等",
+       "我",
+       "写完作业",
+       "，",
+       "再",
+       "跟你",
+       "出去玩"
+      ],
+      "answer": "等我写完作业，再跟你出去玩。",
+      "explanation": "等……，再……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Người trẻ phải đợi người già ngồi xuống rồi mới ngồi.”",
+      "words": [
+       "年轻人",
+       "要",
+       "等",
+       "老人",
+       "坐下后",
+       "再坐"
+      ],
+      "answer": "年轻人要等老人坐下后再坐。",
+      "explanation": "Chủ ngữ + 要 + 等 + sự việc + 后 + 再 + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我写完作业等，再跟你出去玩。",
+      "isCorrect": false,
+      "correctVersion": "等我写完作业，再跟你出去玩。",
+      "explanation": "等 đứng đầu vế câu."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "等我们到火车站的时候，火车已经开走了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 等……的时候，已经……了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "等你办了信用卡以后，你又能先花钱再还钱了。",
+      "isCorrect": false,
+      "correctVersion": "等你办了信用卡以后，你就能先花钱再还钱了。",
+      "explanation": "Kết quả khi điều kiện đạt được dùng 就, không dùng 又."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đợi mọi người đến đủ rồi chúng ta mới bắt đầu ăn.",
+      "answer": "等大家都到了，我们再开始吃。",
+      "answerPy": "Děng dàjiā dōu dào le, wǒmen zài kāishǐ chī.",
+      "explanation": "等……，再……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đợi tôi tốt nghiệp xong, tôi sẽ về nước làm giáo viên.",
+      "answer": "等我毕业以后，就回国当老师。",
+      "answerPy": "Děng wǒ bìyè yǐhòu, jiù huíguó dāng lǎoshī.",
+      "explanation": "等……，就…… + 当 (Bài 1)."
+     }
+    ]
+   }
+  ]
+ }
+}

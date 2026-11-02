@@ -1,0 +1,341 @@
+{
+"so": 3,
+"zh": "手机扫一下",
+"py": "Shǒujī sǎo yíxià",
+"vn": "Quét điện thoại một cái là xong",
+"chuDe": "Điện thoại trong đời sống: hỏi đường, quét mã thanh toán, mua hàng online, chuyển phát nhanh và bảo vệ thông tin cá nhân",
+"icon": "📱",
+"mucTieu": [
+  "Nghe hiểu và trao đổi về các chủ đề tải App, mua hàng online, thanh toán bằng điện thoại.",
+  "Nói / viết được về những công dụng khác nhau của điện thoại.",
+  "Hiểu các cách bảo vệ thông tin cá nhân trong thời đại Internet."
+],
+
+"wu": [
+  {"img":"wu-A","label":"法律","py":"fǎlǜ","letter":"A"},
+  {"img":"wu-B","label":"扫码支付","py":"sǎomǎ zhīfù","letter":"B"},
+  {"img":"wu-C","label":"网购","py":"wǎnggòu","letter":"C"},
+  {"img":"wu-D","label":"快递员","py":"kuàidìyuán","letter":"D"},
+  {"img":"wu-E","label":"管","py":"guǎn","letter":"E"},
+  {"img":"wu-F","label":"保护","py":"bǎohù","letter":"F"}
+],
+
+"dialogs": [
+  {"tab":"Hỏi đường","scene":"在路上 · Trên đường (Trần Thiên Trung từ trường đi ra thì bị lạc, hỏi đường một bạn học)","anh":"kv-1",
+   "nguoi":["陈天中",{"ten":"同学","anh":"tongxue"}],
+   "preQuiz":[
+     {"q":"陈天中到十字路口后，应该怎么走？","opts":["向前走","向右转","向左转","向南走"],"ans":1},
+     {"q":"为了找到目的地，同学建议陈天中：","opts":["坐地铁","买张地图","用手机地图","问出租车司机"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"请问，花园小区怎么走？","vn":"Cho hỏi, khu dân cư Hoa Viên đi đường nào ạ?"},
+     {"sp":1,"zh":"你往前走，到十字路口不要过马路，直接右转就到小区门口了。正好我也去那边，一起走吧。","vn":"Bạn cứ đi thẳng, đến ngã tư đừng sang đường, rẽ phải luôn là tới cổng khu. Vừa khéo mình cũng đi về phía đó, đi cùng luôn nhé."},
+     {"sp":0,"zh":"好的。我刚来中国，不熟悉路。北京真是太大了。","vn":"Được ạ. Mình mới đến Trung Quốc, chưa thạo đường. Bắc Kinh đúng là rộng quá."},
+     {"sp":1,"zh":"北京大是大，不过这边的路基本上都是正南正北、正东正西的，很好找。你也可以用手机地图，很容易就能找到目的地。","vn":"Bắc Kinh rộng thì rộng thật, nhưng đường bên này hầu như đều theo hướng chính Nam – Bắc, chính Đông – Tây, rất dễ tìm. Bạn cũng có thể dùng bản đồ trên điện thoại, rất dễ tìm được nơi cần đến."},
+     {"sp":0,"zh":"嗯，不过很多中文地名我还不认识。","vn":"Ừm, có điều nhiều tên địa danh tiếng Trung mình vẫn chưa đọc được."},
+     {"sp":1,"zh":"没关系，你很快就会熟悉的。","vn":"Không sao, bạn sẽ quen nhanh thôi."}],
+   "hoi":[["陈天中为什么找不到花园小区了？","因为他刚来中国，不熟悉路。"],["陈天中为什么没用手机地图？","因为很多中文地名他还不认识。"]],
+   "kelai":"陈天中从学校出来，不知道怎么去……，就向一位同学问路。同学告诉他，先往前走，到十字路口……，直接右转就到……。正好同学……，就和他……。陈天中说……，还……。同学告诉他，北京的路基本上都是……，很好找。他也可以用……，很容易就能……。不过，很多……陈天中还……。同学说，他很快就会……。",
+   "kelaiMau":"陈天中从学校出来，不知道怎么去花园小区，就向一位同学问路。同学告诉他，先往前走，到十字路口不要过马路，直接右转就到小区门口了。正好同学也去那边，就和他一起走。陈天中说他刚来中国，还不熟悉路。同学告诉他，北京的路基本上都是正南正北、正东正西的，很好找。他也可以用手机地图，很容易就能找到目的地。不过，很多中文地名陈天中还不认识。同学说，他很快就会熟悉的。"},
+
+  {"tab":"Học dùng điện thoại","scene":"在学校食堂 · Ở nhà ăn của trường (trưa tan học, Bạch Gia Nguyệt và Trần Thiên Trung gặp nhau, vừa ăn vừa trò chuyện)","anh":"kv-2",
+   "nguoi":["陈天中","白家月"],
+   "preQuiz":[
+     {"q":"李文帮陈天中下载了什么软件？","opts":["快递软件","网购软件","中国银行软件","微信和支付宝"],"ans":3},
+     {"q":"陈天中为什么着急回去？","opts":["要上课了","李文找他","快递员快到了","网购的手机到了"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"前两天和李文喝咖啡时，他帮我下载了微信和支付宝，教我认识里边的汉字，还教我用手机进行支付。","vn":"Mấy hôm trước lúc uống cà phê với Lý Văn, cậu ấy giúp tớ tải WeChat và Alipay, dạy tớ nhận mặt chữ Hán trong đó, còn dạy tớ thanh toán bằng điện thoại."},
+     {"sp":1,"zh":"他也教了我怎么用这两个软件。","vn":"Cậu ấy cũng dạy tớ cách dùng hai phần mềm này."},
+     {"sp":0,"zh":"现在我不仅会扫码结账，还会用手机在网上购物了。昨天我就在网上订了一台电脑，今天下午一点送到。","vn":"Giờ tớ không những biết quét mã thanh toán, mà còn biết dùng điện thoại mua hàng trên mạng nữa. Hôm qua tớ vừa đặt một cái máy tính trên mạng, chiều nay 1 giờ giao tới."},
+     {"sp":1,"zh":"学会了这些，我们在中国生活真是方便了不少。","vn":"Học được mấy thứ này rồi, cuộc sống của bọn mình ở Trung Quốc đúng là tiện hơn nhiều."},
+     {"sp":0,"zh":"对。快递员要到了，我得马上回去！家月，明天见！","vn":"Đúng thế. Shipper sắp đến rồi, tớ phải về ngay! Gia Nguyệt, mai gặp nhé!"},
+     {"sp":1,"zh":"好的，天中，再见。","vn":"Ừ, Thiên Trung, tạm biệt."}],
+   "hoi":[["前几天李文帮陈天中做什么了？","李文帮他下载了微信和支付宝，教他认识里边的汉字，还教他用手机进行支付。"],["陈天中现在会用手机做什么了？","他现在不仅会扫码结账，还会用手机在网上购物了。"]]},
+
+  {"tab":"Trải nghiệm mới","scene":"生活新体验 · Trải nghiệm mới trong cuộc sống (du học sinh học cách dùng điện thoại ở Trung Quốc)","anh":"kv-3","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"白家月和陈天中发现中国人在饭馆吃饭有什么习惯？","opts":["用现金结账","用手机支付","喜欢用筷子","吃完饭再结账"],"ans":1},
+     {"q":"根据课文，留学生网购时会担心什么？","opts":["乱花钱","价格高","送货太慢","银行卡会丢"],"ans":0}],
+   "lines":[
+     {"sp":0,"zh":"白家月和陈天中刚到北京时就发现，中国人在饭馆或超市结账时，几乎都用手机支付，只有他们用现金结账。","vn":"Bạch Gia Nguyệt và Trần Thiên Trung vừa đến Bắc Kinh đã phát hiện ra: người Trung Quốc khi thanh toán ở quán ăn hay siêu thị gần như đều dùng điện thoại, chỉ có họ là trả bằng tiền mặt."},
+     {"sp":0,"zh":"在李文的帮助下，白家月和陈天中也都学会了用手机支付、网购、寄快递等等。","vn":"Nhờ sự giúp đỡ của Lý Văn, Bạch Gia Nguyệt và Trần Thiên Trung cũng đều đã học được cách thanh toán bằng điện thoại, mua hàng online, gửi chuyển phát nhanh, v.v."},
+     {"sp":0,"zh":"在中国网购，不仅选择多、价格不高，而且送货很快，很多留学生甚至改变了自己的购物习惯。","vn":"Mua hàng online ở Trung Quốc không những nhiều lựa chọn, giá không cao mà giao hàng còn rất nhanh, nhiều du học sinh thậm chí đã thay đổi thói quen mua sắm của mình."},
+     {"sp":0,"zh":"不过，由于网购太方便了，动动手指就能买到想要的东西，他们也开始担心自己在网购时会乱花钱。","vn":"Tuy nhiên, vì mua online quá tiện, chỉ cần động ngón tay là mua được thứ mình muốn, nên họ cũng bắt đầu lo mình sẽ tiêu tiền lung tung khi mua online."},
+     {"sp":0,"zh":"怎么才能管住自己不乱花钱呢？","vn":"Làm thế nào mới kiểm soát được bản thân để không tiêu tiền lung tung đây?"}],
+   "hoi":[["白家月和陈天中学会用手机做什么了？","他们学会了用手机支付、网购、寄快递等等。"],["留学生为什么也喜欢网购？","因为在中国网购不仅选择多、价格不高，而且送货很快。"]],
+   "kelai":"白家月和陈天中……就发现，中国人在……结账时，几乎都……，只有他们……。后来，在……下，他们也都学会了……、网购、寄快递等等。在中国网购，不仅……、价格不高，而且……，很多留学生甚至改变了……。不过，由于网购……，动动手指就能……，他们也开始担心自己在网购时……。怎么才能……？",
+   "kelaiMau":"白家月和陈天中刚到北京时就发现，中国人在饭馆或超市结账时，几乎都用手机支付，只有他们用现金结账。后来，在李文的帮助下，他们也都学会了用手机支付、网购、寄快递等等。在中国网购，不仅选择多、价格不高，而且送货很快，很多留学生甚至改变了自己的购物习惯。不过，由于网购太方便了，动动手指就能买到想要的东西，他们也开始担心自己在网购时会乱花钱。怎么才能管住自己不乱花钱呢？"},
+
+  {"tab":"Bảo vệ thông tin cá nhân","scene":"用手机时如何保护个人信息 · Dùng điện thoại thế nào để bảo vệ thông tin cá nhân","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"网上购物或者订票时，经常需要提供哪些信息？","opts":["身份证号","个人姓名","手机号码","以上都需要"],"ans":3},
+     {"q":"下列哪项不是课文中的建议？","opts":["不发自己的车票信息","不随便告诉别人密码","不在咖啡馆收发邮件","不发自己的机票信息"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"网上购物或者订票时，我们经常需要提供姓名、手机号、身份证号等个人信息。","vn":"Khi mua sắm hoặc đặt vé trên mạng, chúng ta thường phải cung cấp họ tên, số điện thoại, số căn cước và các thông tin cá nhân khác."},
+     {"sp":0,"zh":"在提供这些信息时，我们也会担心：我的个人信息能否得到保护？","vn":"Khi cung cấp những thông tin này, chúng ta cũng sẽ lo lắng: thông tin cá nhân của mình liệu có được bảo vệ không?"},
+     {"sp":0,"zh":"于是，有人在网上说出了自己的担心，很快就有人给出了一些建议。","vn":"Thế là có người nói ra nỗi lo của mình trên mạng, và rất nhanh đã có người đưa ra một số lời khuyên."},
+     {"sp":0,"zh":"比如，别把密码随便告诉别人，不在网上发自己的车票、机票信息……","vn":"Chẳng hạn, đừng tùy tiện nói mật khẩu cho người khác, không đăng thông tin vé tàu, vé máy bay của mình lên mạng…"},
+     {"sp":0,"zh":"现在，很多国家也通过技术、法律等手段来保证个人信息安全。","vn":"Hiện nay, nhiều quốc gia cũng dùng các biện pháp như công nghệ, pháp luật… để bảo đảm an toàn thông tin cá nhân."},
+     {"sp":0,"zh":"比如中国的网络安全法、个人信息保护法等就很好地保护了人们的个人信息。","vn":"Ví dụ như Luật An ninh mạng, Luật Bảo vệ thông tin cá nhân… của Trung Quốc đã bảo vệ rất tốt thông tin cá nhân của mọi người."}],
+   "hoi":[["人们为什么会担心个人信息安全问题？","因为网上购物或者订票时，经常需要提供姓名、手机号、身份证号等个人信息，人们担心这些信息能否得到保护。"],["国家会通过什么手段来保证个人信息安全？","国家会通过技术、法律等手段来保证个人信息安全。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"转折复句“……×是×，就是/不过……”","tenVn":"Câu phức chuyển ngoặt 「×是×，就是 / 不过……」 — … thì … thật, nhưng / chỉ là …",
+  "cauTruc":["(Chủ ngữ) + A + 是 + A，就是 / 不过 + mặt hạn chế","A là tính từ (大是大), động từ (想是想了) hoặc cụm động từ (写完是写完了)"],
+  "giaiThich":"「×是×」 là khung cố định: lặp lại CÙNG MỘT TỪ ở hai bên 是 để THỪA NHẬN một tình hình / đặc điểm (“to thì to thật”, “rẻ thì rẻ thật”). Vế sau dùng 「就是」 hoặc 「不过」 (đã học ở Bài 2) để chuyển ý hoặc bổ sung, chỉ ra mặt hạn chế của vế trước. Người Việt nói “… thì … thật, nhưng mà / có điều …” → tiếng Trung: A是A，就是 / 不过……. Lưu ý: 1) 就是 ở đây = “chỉ là, có điều” (không phải “chính là”); 2) hai bên 是 giống hệt nhau, KHÔNG thêm 很 / 非常; 3) nếu có 了 thì đặt ở cuối: 想是想了 / 写完是写完了.",
+  "viDu":[["北京大是大，不过这边的路基本上都是正南正北、正东正西的，很好找。","Bắc Kinh rộng thì rộng thật, nhưng đường bên này hầu như đều theo hướng chính Nam – Bắc, chính Đông – Tây, rất dễ tìm."],["这个房子便宜是便宜，就是离我的公司太远了。","Căn nhà này rẻ thì rẻ thật, chỉ là cách công ty tôi xa quá."],["我们想是想了，就是没想出更好的办法。","Chúng tôi nghĩ thì có nghĩ rồi, chỉ là không nghĩ ra cách nào tốt hơn."],["这个房子大是大，就是离地铁站太远，我并不想租。","Căn nhà này rộng thì rộng thật, có điều xa ga tàu điện ngầm quá, tôi hoàn toàn không muốn thuê. (ôn 并不 – Bài 2 · điểm 3, chủ đề thuê nhà)"]],
+  "loi":[["北京大是很大，不过路很好找。","Hai bên 是 phải là cùng một từ, không thêm 很 vào sau 是.","北京大是大，不过路很好找。"],["这个房子便宜是便宜，所以离公司太远了。","Vế sau phải mang ý chuyển ngoặt (就是 / 不过 / 但是), không dùng 所以.","这个房子便宜是便宜，就是离公司太远了。"],["我们想了是想，就是没想出好办法。","Có 了 thì 了 đứng ở cuối khung: 想是想了.","我们想是想了，就是没想出好办法。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["北京大是","，不过这边的路基本上都是正南正北的。"],"dap":[["大"]],"chon":["大","很大","太大"],"goiY":"“Bắc Kinh to thì to thật, nhưng …”","giai":"Hai bên 是 lặp lại đúng một từ: 大是大."},
+     {"kieu":"dien","phan":["这个房子便宜是便宜，","离我的公司太远了。"],"dap":[["就是"]],"chon":["就是","所以","因为"],"goiY":"“Căn nhà này rẻ thì rẻ thật, chỉ là cách công ty xa quá.”","giai":"Vế sau dùng 就是 / 不过 chỉ ra hạn chế."},
+     {"kieu":"dien","phan":["我们想是","了，就是没想出更好的办法。"],"dap":[["想"]],"chon":["想","想想","想到"],"goiY":"“Chúng tôi nghĩ thì có nghĩ rồi …”","giai":"想是想了 — 了 ở cuối khung."},
+     {"kieu":"dien","phan":["网购方便是方便，就是容易","花钱。"],"dap":[["乱"]],"chon":["乱","正","直接"],"goiY":"“… chỉ là dễ tiêu tiền lung tung.” (ôn từ mới)","giai":"乱花钱 = tiêu tiền lung tung."},
+     {"kieu":"dien","phan":["凉快是凉快了，","夏天还没结束，过几天又会热起来了。"],"dap":[["不过"]],"chon":["不过","于是","甚至"],"goiY":"“Mát thì mát rồi, có điều mùa hè chưa hết …”","giai":"×是×，不过……"}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["这件衣服","好看","是","好看","，","就是","有点儿贵"],"dap":["这件衣服好看是好看，就是有点儿贵。"],"goiY":"Cái áo này đẹp thì đẹp thật, chỉ là hơi đắt.","giai":"A是A，就是……"},
+     {"kieu":"xep","manh":["这个软件","方便","是","方便","，","不过","我还不太会用"],"dap":["这个软件方便是方便，不过我还不太会用。"],"goiY":"Phần mềm này tiện thì tiện thật, nhưng tôi vẫn chưa biết dùng lắm.","giai":"A是A，不过……"},
+     {"kieu":"xep","manh":["作业","写完","是","写完了","，","不过","有的题","不会写"],"dap":["作业写完是写完了，不过有的题不会写。"],"goiY":"Bài tập viết xong thì viết xong rồi, nhưng có câu không biết làm.","giai":"Cụm động từ: 写完是写完了."},
+     {"kieu":"dungsai","cau":"北京大是很大，不过路很好找。","dung":false,"sua":"北京大是大，不过路很好找。","giai":"Hai bên 是 giống hệt nhau, không thêm 很."},
+     {"kieu":"dungsai","cau":"这家饭馆的菜好吃是好吃，就是价格有点儿高。","dung":true,"giai":"Đúng: A是A，就是……"},
+     {"kieu":"dungsai","cau":"我累是累，所以还想再学一会儿。","dung":false,"sua":"我累是累，不过还想再学一会儿。","giai":"Vế sau là chuyển ngoặt → 不过 / 就是, không dùng 所以."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 25)","huongDan":"Hoàn thành câu trả lời của B, dùng 「×是×，就是 / 不过……」","cau":[
+     {"kieu":"vandung","de":"A：你们那里凉快了吧？ B：＿＿＿，不过夏天还没结束，过几天又会热起来了。","goiY":"Thừa nhận trời đã mát rồi (凉快是凉快了)","mau":"凉快是凉快了","can":[["凉快是凉快"]]},
+     {"kieu":"vandung","de":"A：网购真是太方便了！ B：方便是方便，＿＿＿。","goiY":"Nêu mặt hạn chế của mua online: dễ tiêu tiền lung tung (就是……)","mau":"就是容易乱花钱","can":[["就是","不过"]]},
+     {"kieu":"vandung","de":"A：你们的作业写完了吗？ B：＿＿＿，＿＿＿。","goiY":"Viết xong thì viết xong rồi, nhưng có câu không biết làm","mau":"写完是写完了，不过有的题不会写","can":[["写完是写完了"],["不过","就是"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Điện thoại này đẹp thì đẹp thật, chỉ là hơi đắt.","dap":["这个手机好看是好看，就是有点儿贵。","这个手机漂亮是漂亮，就是有点儿贵。","这个手机好看是好看，不过有点儿贵。"],"giai":"A是A，就是 / 不过……"},
+     {"kieu":"dich","vn":"Tôi muốn đi thì muốn thật, có điều hôm nay không có thời gian.","dap":["我想去是想去，不过今天没有时间。","我想去是想去，就是今天没有时间。","我想去是想去，不过今天没时间。"],"giai":"Cụm động từ 想去是想去."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt một câu nói ưu điểm và nhược điểm của thanh toán bằng điện thoại / mua online, có dùng 「×是×，就是 / 不过……」","mau":"手机支付快是快，就是手机没电的时候就不能用了。","can":[["是"],["就是","不过"]]}]}
+  ]},
+
+ {"so":"2","ten":"递进复句“不仅/不光……，还/而且……”","tenVn":"Câu phức tăng tiến 「不仅 / 不光……，还 / 而且……」 — không những … mà còn …",
+  "cauTruc":["Chủ ngữ + 不仅 / 不光 + A，还 / 而且 + B","Hai vế cùng một chủ ngữ: chủ ngữ đứng TRƯỚC 不仅"],
+  "giaiThich":"「不仅 / 不光 (bùguāng) ……，还 / 而且……」 biểu thị quan hệ tăng tiến: vế sau là phần mở rộng, bổ sung cho vế trước, ý nghĩa tiến thêm một bước. Bài này học loại câu CÙNG MỘT CHỦ NGỮ: chủ ngữ + 不仅……，还 / 而且……. 不光 mang tính khẩu ngữ hơn 不仅. Vị trí: 还 đứng ngay trước động từ / tính từ của vế sau; 而且 đứng đầu vế sau, có thể thêm 也 / 还 (而且……也……). Cùng nghĩa với 不但……而且…… đã học ở HSK 3. Mẹo cho người Việt: “không những … mà còn …” — tuyệt đối không ghép 不仅 với 但是.",
+  "viDu":[["现在我不仅会扫码结账，还会用手机在网上购物了。","Giờ tôi không những biết quét mã thanh toán, mà còn biết dùng điện thoại mua hàng trên mạng nữa."],["王老师不光教我们说中文，而且带我们了解中国文化。","Thầy Vương không những dạy chúng tôi nói tiếng Trung, mà còn đưa chúng tôi tìm hiểu văn hóa Trung Quốc."],["现在很多书店不仅卖书，还卖咖啡和奶茶。","Bây giờ nhiều hiệu sách không những bán sách, mà còn bán cà phê và trà sữa."],["由于手机支付很方便，现在我不仅不带现金，而且连钱包也不带了。","Vì thanh toán bằng điện thoại rất tiện, giờ tôi không những không mang tiền mặt, mà ngay cả ví cũng không mang nữa. (ôn 由于 – Bài 2 · điểm 4; 连……也…… – HSK 3)"]],
+  "loi":[["不仅我会说中文，还会写汉字。","Hai vế cùng chủ ngữ thì chủ ngữ đứng trước 不仅.","我不仅会说中文，还会写汉字。"],["他不仅会唱歌，而且会跳舞还。","还 phải đứng trước động từ, không đứng cuối câu.","他不仅会唱歌，还会跳舞。"],["这家店不仅便宜，但是东西很好。","不仅 đi với 还 / 而且 / 也, không đi với 但是.","这家店不仅便宜，而且东西很好。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["现在我","会扫码结账，还会用手机在网上购物了。"],"dap":[["不仅"]],"chon":["不仅","虽然","要是"],"goiY":"“Giờ tôi không những biết quét mã thanh toán …”","giai":"不仅……，还……"},
+     {"kieu":"dien","phan":["王老师不光教我们说中文，","带我们了解中国文化。"],"dap":[["而且"]],"chon":["而且","但是","所以"],"goiY":"“… mà còn đưa chúng tôi tìm hiểu văn hóa.”","giai":"不光……，而且……"},
+     {"kieu":"dien","phan":["现在很多书店不仅卖书，","卖咖啡和奶茶。"],"dap":[["还"]],"chon":["还","就","才"],"goiY":"“… mà còn bán cà phê và trà sữa.”","giai":"还 đứng ngay trước động từ 卖."},
+     {"kieu":"dien","phan":["这个软件不仅能支付，还能","快递。"],"dap":[["寄"]],"chon":["寄","管","转"],"goiY":"“… mà còn gửi được chuyển phát nhanh.” (ôn từ mới)","giai":"寄快递 = gửi chuyển phát nhanh."},
+     {"kieu":"dien","phan":["在中国网购，不仅选择多、价格不高，","送货很快。"],"dap":[["而且"]],"chon":["而且","于是","不过"],"goiY":"“… mà giao hàng còn nhanh.”","giai":"不仅……，而且……"}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["她","不仅","会唱","中文歌","，","而且","唱得很好"],"dap":["她不仅会唱中文歌，而且唱得很好。"],"goiY":"Cô ấy không những biết hát bài tiếng Trung, mà còn hát rất hay.","giai":"Chủ ngữ + 不仅……，而且……"},
+     {"kieu":"xep","manh":["我","不仅","会","扫码结账","，","还","会","网购"],"dap":["我不仅会扫码结账，还会网购。"],"goiY":"Tôi không những biết quét mã thanh toán, mà còn biết mua online.","giai":"还 + 会 + V."},
+     {"kieu":"xep","manh":["这家饭馆","不光","菜好吃","，","而且","价格","也不高"],"dap":["这家饭馆不光菜好吃，而且价格也不高。"],"goiY":"Quán này không những món ngon mà giá cũng không cao.","giai":"而且……也……"},
+     {"kieu":"dungsai","cau":"不仅他会说中文，还会说英文。","dung":false,"sua":"他不仅会说中文，还会说英文。","giai":"Cùng chủ ngữ → chủ ngữ đứng trước 不仅."},
+     {"kieu":"dungsai","cau":"现在很多书店不仅卖书，还卖咖啡和奶茶。","dung":true,"giai":"Đúng: chủ ngữ + 不仅……，还……"},
+     {"kieu":"dungsai","cau":"她不仅很漂亮，但是很聪明。","dung":false,"sua":"她不仅很漂亮，而且很聪明。","giai":"不仅 đi với 而且 / 还, không đi với 但是."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 27)","huongDan":"Hoàn thành đối thoại, dùng 「不仅 / 不光……，还 / 而且……」","cau":[
+     {"kieu":"vandung","de":"A：她中文怎么说得这么好了？ B：她不仅每天认真听课，＿＿＿。","goiY":"Nói thêm: về nhà ngày nào cũng ôn bài (而且……)","mau":"而且每天回去都复习","can":[["而且","还"]]},
+     {"kieu":"vandung","de":"A：你妹妹一年前就开始学唱中文歌，现在已经会唱了吧？ B：她＿＿＿，而且唱得很好。","goiY":"Không những biết hát rồi (不仅……)","mau":"不仅会唱了","can":[["不仅","不光"]]},
+     {"kieu":"vandung","de":"A：你们都去看了这个电影，觉得怎么样？ B：＿＿＿，＿＿＿。","goiY":"Phim không những có nhiều người nổi tiếng mà câu chuyện cũng rất hay","mau":"这个电影里不仅有很多名人，而且故事也很好","can":[["不仅","不光"],["而且","还"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Thanh toán bằng điện thoại không những nhanh mà còn rất tiện.","dap":["用手机支付不仅很快，而且很方便。","手机支付不仅很快，还很方便。","用手机支付不仅快，而且很方便。"],"giai":"不仅……，而且 / 还……"},
+     {"kieu":"dich","vn":"Cậu ấy không những giúp tôi tải WeChat, mà còn dạy tôi cách dùng.","dap":["他不仅帮我下载了微信，还教我怎么用。","他不仅帮我下载了微信，还教了我怎么用。","他不仅帮我下载了微信，而且教我怎么用。"],"giai":"Chủ ngữ 他 đứng trước 不仅."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt câu giới thiệu những việc chiếc điện thoại của em làm được, có dùng 「不仅……，还 / 而且……」","mau":"我的手机不仅能打电话，还能扫码支付和网购。","can":[["不仅","不光"],["还","而且"]]}]}
+  ]},
+
+ {"so":"3","ten":"连词“甚至”","tenVn":"Liên từ 「甚至」 — thậm chí, ngay cả",
+  "cauTruc":["……，(chủ ngữ) + 甚至 + V / câu ngắn","A、B，甚至 + (还) + C — C là điều bất ngờ nhất","甚至 + 连……都 / 也……"],
+  "giaiThich":"Liên từ 「甚至」 nhấn mạnh một tình huống còn nổi bật hơn, vượt ngoài dự đoán thông thường — tiếng Việt là “thậm chí, ngay cả”. Thường đặt ở vế sau, ngay trước phần được nhấn mạnh; hay đi với 还, 都, 也, 连……都……. Khi liệt kê, 甚至 đứng trước mục cuối cùng — mục “bất ngờ” nhất (có vườn hoa, sân bóng, thậm chí còn có siêu thị). Mẹo: phần sau 甚至 phải “hơn” phần trước một bậc; nếu hai phần ngang nhau thì chỉ dùng 还 / 也. 甚至 không mở đầu câu đơn lẻ — phía trước phải có phần làm nền.",
+  "viDu":[["在中国网购，不仅选择多、价格不高，而且送货很快，很多留学生甚至改变了自己的购物习惯。","Mua online ở Trung Quốc không những nhiều lựa chọn, giá không cao mà giao hàng còn nhanh, nhiều du học sinh thậm chí đã thay đổi thói quen mua sắm của mình."],["高铁速度真快，甚至还没看清楚，它就已经开过去了。","Tàu cao tốc nhanh thật, thậm chí còn chưa nhìn rõ thì nó đã chạy qua rồi."],["这个小区真不错，有小花园、球场，甚至还有一个超市。","Khu dân cư này thật không tệ, có vườn hoa nhỏ, sân bóng, thậm chí còn có một siêu thị."],["随着网络的发展，现在甚至连买菜都可以在网上买了。","Cùng với sự phát triển của Internet, giờ thậm chí ngay cả mua rau cũng mua được trên mạng. (ôn 随着 – Bài 1 · điểm 3)"]],
+  "loi":[["甚至在中国网购很方便。","甚至 không mở đầu một câu đơn lẻ; phía trước phải có phần làm nền.","在中国网购很方便，甚至动动手指就能买到想要的东西。"],["他很忙，甚至吃饭。","Sau 甚至 phải là một tình huống đầy đủ, mức độ cao hơn phần trước.","他很忙，甚至连吃饭的时间都没有。"],["他甚至没吃午饭，也没吃早饭。","Phần “bất ngờ hơn” đặt SAU 甚至, ở vế sau.","他没吃早饭，甚至连午饭也没吃。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["在中国网购，送货很快，很多留学生","改变了自己的购物习惯。"],"dap":[["甚至"]],"chon":["甚至","不仅","于是"],"goiY":"“… nhiều du học sinh thậm chí đã thay đổi thói quen mua sắm.”","giai":"甚至 + V: nhấn mạnh điều vượt dự đoán."},
+     {"kieu":"dien","phan":["高铁速度真快，","还没看清楚，它就已经开过去了。"],"dap":[["甚至"]],"chon":["甚至","虽然","要是"],"goiY":"“Tàu cao tốc nhanh thật, thậm chí chưa nhìn rõ …”","giai":"甚至 đứng trước phần được nhấn mạnh."},
+     {"kieu":"dien","phan":["这个小区真不错，有小花园、球场，甚至","有一个超市。"],"dap":[["还"]],"chon":["还","就","才"],"goiY":"“… thậm chí còn có một siêu thị.”","giai":"甚至还 + 有……"},
+     {"kieu":"dien","phan":["他太忙了，甚至","吃饭的时间都没有。"],"dap":[["连"]],"chon":["连","把","被"],"goiY":"“… thậm chí ngay cả thời gian ăn cơm cũng không có.”","giai":"甚至连……都……"},
+     {"kieu":"dien","phan":["这家咖啡店很有名，甚至很多","都会来喝咖啡。"],"dap":[["名人"]],"chon":["名人","手指","现金"],"goiY":"“… thậm chí nhiều người nổi tiếng cũng đến uống.”","giai":"名人 = người nổi tiếng."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["他","太了解我了","，","甚至","我还没说话","，","他就知道","我想做什么"],"dap":["他太了解我了，甚至我还没说话，他就知道我想做什么。"],"goiY":"Anh ấy hiểu tôi quá, thậm chí tôi chưa nói anh ấy đã biết tôi muốn làm gì.","giai":"甚至 + câu ngắn (还没……就……)."},
+     {"kieu":"xep","manh":["这个小区","有小花园、球场","，","甚至","还有","一个超市"],"dap":["这个小区有小花园、球场，甚至还有一个超市。"],"goiY":"Khu này có vườn hoa, sân bóng, thậm chí còn có một siêu thị.","giai":"Liệt kê: 甚至 trước mục cuối."},
+     {"kieu":"xep","manh":["他","忙得","甚至","连饭","都","忘了吃"],"dap":["他忙得甚至连饭都忘了吃。"],"goiY":"Anh ấy bận đến mức thậm chí quên cả ăn cơm.","giai":"V得 + 甚至连……都……"},
+     {"kieu":"dungsai","cau":"甚至在中国寄快递很快。","dung":false,"sua":"在中国寄快递特别快，甚至上午寄出下午就收到了。","giai":"甚至 không mở đầu câu; phần sau 甚至 phải vượt dự đoán."},
+     {"kieu":"dungsai","cau":"他中文说得很好，甚至能看懂中文报纸。","dung":true,"giai":"Đúng: đọc hiểu báo là mức cao hơn nói tốt."},
+     {"kieu":"dungsai","cau":"他每天起得很早，甚至七点起床。","dung":false,"sua":"他每天起得很早，甚至五点就起床了。","giai":"Phần sau 甚至 phải nổi bật hơn hẳn; 7 giờ không “sớm” đến mức bất ngờ, thêm 就……了 nhấn mạnh."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 29)","huongDan":"Hoàn thành câu với 「甚至」, dùng từ trong ngoặc","cau":[
+     {"kieu":"vandung","de":"＿＿＿，＿＿＿上午寄出下午就收到了。（快递）","goiY":"Dùng từ 「快递」: ở Trung Quốc gửi chuyển phát nhanh rất nhanh, thậm chí …","mau":"在中国寄快递特别快，甚至","can":[["快递"],["甚至"]]},
+     {"kieu":"vandung","de":"这家咖啡店很有名，＿＿＿。（名人）","goiY":"Dùng từ 「名人」: thậm chí nhiều người nổi tiếng cũng đến uống cà phê","mau":"甚至很多名人都会来喝咖啡","can":[["甚至"],["名人"]]},
+     {"kieu":"vandung","de":"他太了解我了，＿＿＿，他就知道我想做什么。（说话）","goiY":"Dùng từ 「说话」: thậm chí tôi còn chưa nói gì","mau":"甚至我还没说话","can":[["甚至"],["说话"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Ở Trung Quốc mọi người đều dùng điện thoại trả tiền, thậm chí mua một chai nước cũng quét mã.","dap":["在中国大家都用手机支付，甚至买一瓶水也扫码。","在中国大家都用手机付钱，甚至买一瓶水也要扫码。","在中国大家都用手机支付，甚至买一瓶水都扫码。"],"giai":"甚至 + phần bất ngờ + 也 / 都."},
+     {"kieu":"dich","vn":"Anh ấy bận lắm, thậm chí cuối tuần cũng phải đi làm.","dap":["他很忙，甚至周末也要上班。","他非常忙，甚至周末都要上班。","他太忙了，甚至周末也得上班。"],"giai":"甚至 + 周末也……"},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể một điều làm em bất ngờ khi dùng điện thoại ở Trung Quốc hoặc Việt Nam, có dùng 「甚至」","mau":"在中国网购特别方便，有时候甚至晚上订的东西，第二天早上就送到了。","can":[["甚至"]]}]}
+  ]},
+
+ {"so":"4","ten":"承接复句“……，于是……”","tenVn":"Câu phức nối tiếp 「……，于是……」 — …, thế là …",
+  "cauTruc":["Việc / tình hình 1，于是 + (chủ ngữ) + việc 2","于是 đứng đầu vế sau; có thể thêm 就: 于是……就……"],
+  "giaiThich":"Hai vế kể các hành động / sự việc nối tiếp nhau theo thứ tự; 「于是」 đặt ở đầu vế sau. Giữa hai vế có quan hệ trước – sau và quan hệ logic: việc trước dẫn đến việc sau (“thế là, vì thế mà”). Lưu ý cho người Việt: 1) 于是 dùng để KỂ việc ĐÃ xảy ra, nên KHÔNG dùng trong câu mệnh lệnh / lời khuyên (✗ 天冷了，于是你多穿点儿衣服 → ✓ 所以你多穿点儿衣服吧); 2) 于是 không đứng ở vế đầu. Phân biệt: 所以 nhấn mạnh nguyên nhân – kết quả; 于是 nhấn mạnh hành động tiếp theo xảy ra ngay sau đó.",
+  "viDu":[["在提供这些信息时，我们也会担心：我的个人信息能否得到保护？于是，有人在网上说出了自己的担心。","Khi cung cấp những thông tin này, chúng ta cũng lo: thông tin cá nhân của mình liệu có được bảo vệ không? Thế là có người nói ra nỗi lo của mình trên mạng."],["她从小就想当医生，于是上大学时就选择了学医。","Cô ấy từ nhỏ đã muốn làm bác sĩ, thế là lên đại học liền chọn học y."],["最近总感冒，于是他决定病好后就开始锻炼身体。","Dạo này hay bị cảm, thế là anh ấy quyết định khỏi bệnh sẽ bắt đầu tập thể dục."],["房东向我介绍了房子里的东西，我很满意，于是当天就租下来了。","Chủ nhà giới thiệu đồ đạc trong nhà, tôi rất hài lòng, thế là thuê luôn trong ngày. (ôn 房东, 租 – Bài 2)"]],
+  "loi":[["于是我想喝咖啡，我去了咖啡馆。","于是 đứng đầu vế SAU, không đứng ở vế đầu.","我想喝咖啡，于是去了咖啡馆。"],["明天会下雨，于是你带上伞吧。","于是 kể việc đã xảy ra, không dùng với câu khuyên / mệnh lệnh.","明天会下雨，所以你带上伞吧。"],["他于是很累，就回家休息了。","于是 nối việc tiếp theo, không đặt trước nguyên nhân.","他很累，于是就回家休息了。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["我们担心个人信息能否得到保护，","有人在网上说出了自己的担心。"],"dap":[["于是"]],"chon":["于是","甚至","不仅"],"goiY":"“… thế là có người nói ra nỗi lo trên mạng.”","giai":"于是 đứng đầu vế sau."},
+     {"kieu":"dien","phan":["她从小就想当医生，于是上大学时就选择了学","。"],"dap":[["医"]],"chon":["医","法律","技术"],"goiY":"“… thế là lên đại học chọn học y.”","giai":"学医 = học y; 当医生 ôn Bài 1."},
+     {"kieu":"dien","phan":["最近总感冒，于是他决定病好后就开始","身体。"],"dap":[["锻炼"]],"chon":["锻炼","保护","改变"],"goiY":"“… quyết định khỏi bệnh sẽ tập thể dục.”","giai":"锻炼身体 = rèn luyện thân thể (HSK 3)."},
+     {"kieu":"dien","phan":["大家都不说话，于是我","不想说话了。"],"dap":[["也"]],"chon":["也","才","再"],"goiY":"“… thế là tôi cũng không muốn nói nữa.”","giai":"于是 + chủ ngữ + 也……"},
+     {"kieu":"dien","phan":["在十字路口等了半个小时，他们也没来，","我就一个人去图书馆了。"],"dap":[["于是"]],"chon":["于是","而且","甚至"],"goiY":"“… thế là tôi đi thư viện một mình.” (综合练习 3)","giai":"于是……就……"}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["我","很累","，","于是","就","回家","休息了"],"dap":["我很累，于是就回家休息了。"],"goiY":"Tôi rất mệt, thế là về nhà nghỉ.","giai":"……，于是就……"},
+     {"kieu":"xep","manh":["他","不熟悉路","，","于是","向","一位同学","问路"],"dap":["他不熟悉路，于是向一位同学问路。"],"goiY":"Anh ấy không thạo đường, thế là hỏi đường một bạn học.","giai":"于是 + 向 + ai + V."},
+     {"kieu":"xep","manh":["手机没电了","，","于是","我","用现金","结了账"],"dap":["手机没电了，于是我用现金结了账。"],"goiY":"Điện thoại hết pin, thế là tôi trả bằng tiền mặt.","giai":"于是 + chủ ngữ 我 + V."},
+     {"kieu":"dungsai","cau":"于是天黑了，我们回家了。","dung":false,"sua":"天黑了，于是我们回家了。","giai":"于是 đứng đầu vế sau."},
+     {"kieu":"dungsai","cau":"他想学好中文，于是来中国留学了。","dung":true,"giai":"Đúng: việc trước dẫn đến việc sau, đã xảy ra."},
+     {"kieu":"dungsai","cau":"天冷了，于是你多穿点儿衣服吧。","dung":false,"sua":"天冷了，你多穿点儿衣服吧。","giai":"Câu khuyên → không dùng 于是 (có thể dùng 所以)."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 31)","huongDan":"Hoàn thành câu, dùng 「于是」","cau":[
+     {"kieu":"vandung","de":"弟弟找到了一个新工作，但离家远，＿＿＿。","goiY":"Thế là cậu ấy thuê nhà gần công ty (ôn 租 – Bài 2)","mau":"于是他就在公司附近租了一个房子","can":[["于是"]]},
+     {"kieu":"vandung","de":"我昨天一天都在看书，很累，＿＿＿。","goiY":"Thế là buổi tối ra ngoài vận động một lúc","mau":"于是晚上我就出门活动了一会儿","can":[["于是"]]},
+     {"kieu":"vandung","de":"大家都不说话，＿＿＿。","goiY":"Thế là tôi cũng không muốn nói nữa","mau":"于是我也不想说话了","can":[["于是"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Tôi không biết dùng WeChat, thế là bạn Trung Quốc dạy tôi.","dap":["我不会用微信，于是中国朋友教我。","我不会用微信，于是中国朋友就教我怎么用。","我不会用微信，于是我的中国朋友教了我。"],"giai":"……，于是……"},
+     {"kieu":"dich","vn":"Mua online quá tiện, thế là cô ấy hay tiêu tiền lung tung.","dap":["网购太方便了，于是她常常乱花钱。","网购太方便了，于是她经常乱花钱。"],"giai":"于是 + chủ ngữ + V; từ mới 网购, 乱."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể lại một chuyện đã xảy ra với em khi dùng điện thoại (quên mật khẩu, hết pin, lạc đường…), có dùng 「……，于是……」","mau":"上个星期我忘了手机密码，于是去手机店请人帮忙。","can":[["于是"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 31).","dapSgk":true,"tu":["结账","于是","转","寄","正好"],"cau":[
+   {"s":"丽丽去快递站拿快递时，又＿＿了一个快递。","dap":["寄"]},
+   {"s":"从这儿走到十字路口，再向左＿＿，就是超市了。","dap":["转"]},
+   {"s":"在十字路口等了半个小时，他们也没来，＿＿我就一个人去图书馆了。","dap":["于是"]},
+   {"s":"在商场购物的时候，我喜欢用信用卡＿＿。","dap":["结账"]},
+   {"s":"我们到电影院的时候，电影＿＿开始了。","dap":["正好"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại, sách trang 32).","dapSgk":true,"tu":["保证","现金","购物","提供","技术"],"cau":[
+   {"s":"A：我用＿＿结账可以吗？　B：当然，这些一共125块。","dap":["现金"]},
+   {"s":"A：这个工作要求对网络＿＿很了解，你可以吗？　B：没问题，我做这方面的工作已经有五年了。","dap":["技术"]},
+   {"s":"A：你们能＿＿这些货下午就送到吗？　B：您放心，我们有「闪送」（shǎnsòng, giao hỏa tốc）服务，下午两点前就能送到。","dap":["保证"]},
+   {"s":"A：这个商场特别漂亮，在这里＿＿很舒服。　B：是啊，周末过来走走、看看，累了还可以坐下来喝喝咖啡或者茶。","dap":["购物"]},
+   {"s":"A：您好，办入住需要您＿＿身份证和手机号后四位。　B：好的，这是我的身份证，手机号后四位是5063。","dap":["提供"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn.","dapSgk":true,"tu":["马上给她提供帮助","爱丽觉得太方便了","第一次点外卖时","爱丽刚来北京留学时"],"cau":[
+   {"s":"在中国，用手机支付、网购和寄快递都很方便，所以很多人觉得自己快要离不开手机了。＿＿，还不会用中国人常用的手机App，她很着急。她的中国朋友知道后，＿＿，教她怎么用，她很快就学会用手机支付和网购了。＿＿，不到40分钟，外卖员就把饭送来了，＿＿。现在，她几乎每天都用手机点外卖或网购。","dap":["爱丽刚来北京留学时","马上给她提供帮助","第一次点外卖时","爱丽觉得太方便了"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (đáp án của sách chỉ là gợi ý — câu của em đúng ngữ pháp, hợp tranh là đạt).","cau":[
+   {"anh":"bt-1","s":"","tu":"结账","dap":"他结账的时候用手机扫码支付。","giai":"……的时候 + 用 + công cụ + V; 扫码支付 là cụm từ của bài."},
+   {"anh":"bt-2","s":"","tu":"密码","dap":"他担心忘记密码，就把密码记在了本子上。","giai":"Câu chữ 把: 把 + 密码 + 记在 + 本子上."},
+   {"anh":"bt-3","s":"","tu":"身份证","dap":"她正在刷身份证进地铁站。","giai":"正在 + V; 刷身份证 = quẹt căn cước."}]}
+],
+
+"listen": [
+ {"audio":"老板，这个多少钱？二十五块。我用现金结账可以吗？可以，不过我们这儿大部分客人都扫码支付，用微信或者支付宝都行。好的，那我也扫码吧。好，扫一下这个码就可以了。","questions":[
+   {"q":"顾客一开始想怎么结账？","opts":["用现金","用信用卡","扫码支付"],"ans":0},
+   {"q":"老板说这儿的客人大部分怎么付钱？","opts":["用现金","扫码支付","用银行卡"],"ans":1}]},
+ {"audio":"喂，您好，我是快递员，您的快递到了，您在家吗？我不在家，正在学校上课呢。那我把快递放在小区门口的快递站，可以吗？可以，谢谢您。不客气，您回来以后用手机扫码就能拿到了。","questions":[
+   {"q":"女的现在在哪儿？","opts":["在家","在学校","在快递站"],"ans":1},
+   {"q":"快递员把快递放在哪儿了？","opts":["小区门口的快递站","女的家门口","学校门口"],"ans":0}]},
+ {"audio":"小王，你怎么在网上发了你的机票照片？我想让朋友们知道我要去旅游了。可是照片上有你的姓名、身份证号等个人信息，别人看到了很不安全。啊，我没想到这个问题，那我现在就把照片拿下来。对，以后别随便在网上发这些信息。","questions":[
+   {"q":"小王在网上发了什么？","opts":["火车票信息","机票照片","身份证照片"],"ans":1},
+   {"q":"朋友为什么觉得不安全？","opts":["照片上有个人信息","小王的密码丢了","机票太贵了"],"ans":0}]}
+],
+
+"match": [
+ {"left":"扫码","right":"支付"},
+ {"left":"下载","right":"软件"},
+ {"left":"寄","right":"快递"},
+ {"left":"保护","right":"个人信息"},
+ {"left":"提供","right":"帮助"},
+ {"left":"改变","right":"购物习惯"},
+ {"left":"乱","right":"花钱"},
+ {"left":"找到","right":"目的地"},
+ {"left":"不仅……","right":"还……"}
+],
+
+"fill": [
+ {"pre":"北京大是大，","blank":"不过","post":"这边的路基本上都是正南正北的。","hint":"(nhưng)","ans":"不过","exp":"×是×，不过……"},
+ {"pre":"到十字路口不要过马路，","blank":"直接","post":"右转就到小区门口了。","hint":"(thẳng, luôn)","ans":"直接","exp":"直接 + V."},
+ {"pre":"没关系，你很快就会","blank":"熟悉","post":"的。","hint":"(quen thuộc)","ans":"熟悉","exp":"会……的: chắc chắn sẽ."},
+ {"pre":"他帮我","blank":"下载","post":"了微信和支付宝。","hint":"(tải về)","ans":"下载","exp":"下载 + 软件."},
+ {"pre":"现在我不仅会","blank":"扫码","post":"结账，还会用手机在网上购物了。","hint":"(quét mã)","ans":"扫码","exp":"扫码结账 / 扫码支付."},
+ {"pre":"昨天我就在网上","blank":"订","post":"了一台电脑。","hint":"(đặt)","ans":"订","exp":"订 + hàng / vé / phòng."},
+ {"pre":"很多留学生","blank":"甚至","post":"改变了自己的购物习惯。","hint":"(thậm chí)","ans":"甚至","exp":"甚至 + V: vượt dự đoán."},
+ {"pre":"怎么才能","blank":"管","post":"住自己不乱花钱呢？","hint":"(kiểm soát)","ans":"管","exp":"管住自己 = tự kiểm soát."},
+ {"pre":"我的个人信息能否得到","blank":"保护","post":"？","hint":"(bảo vệ)","ans":"保护","exp":"得到保护 = được bảo vệ."},
+ {"pre":"很多国家也通过技术、法律等","blank":"手段","post":"来保证个人信息安全。","hint":"(biện pháp)","ans":"手段","exp":"通过……等手段来……"}
+],
+
+"sort": [
+ {"words":["北京","大是大","，","不过","这边的路","很好找","。"],"ans":"北京大是大，不过这边的路很好找。"},
+ {"words":["现在","我","不仅","会扫码结账","，","还","会","在网上购物了","。"],"ans":"现在我不仅会扫码结账，还会在网上购物了。"},
+ {"words":["很多","留学生","甚至","改变了","自己的","购物习惯","。"],"ans":"很多留学生甚至改变了自己的购物习惯。"},
+ {"words":["她","从小","就想当医生","，","于是","选择了","学医","。"],"ans":"她从小就想当医生，于是选择了学医。"},
+ {"words":["别","把","密码","随便","告诉","别人","。"],"ans":"别把密码随便告诉别人。"},
+ {"words":["你","可以","用手机地图","找到","目的地","。"],"ans":"你可以用手机地图找到目的地。"}
+],
+
+"mc": [
+ {"q":"这个房子便宜是便宜，＿＿离我的公司太远了。","opts":["就是","所以","于是","甚至"],"ans":0,"exp":"×是×，就是…… — vế sau chỉ ra hạn chế."},
+ {"q":"现在很多书店不仅卖书，＿＿卖咖啡和奶茶。","opts":["还","就","才","但是"],"ans":0,"exp":"不仅……，还……"},
+ {"q":"高铁速度真快，＿＿还没看清楚，它就已经开过去了。","opts":["甚至","不仅","要是","随着"],"ans":0,"exp":"甚至 nhấn mạnh điều vượt dự đoán."},
+ {"q":"她从小就想当医生，＿＿上大学时就选择了学医。","opts":["于是","甚至","不过","而且"],"ans":0,"exp":"……，于是…… kể việc tiếp theo đã xảy ra."},
+ {"q":"你往前走，到十字路口＿＿右转就到了。","opts":["直接","正好","随便","甚至"],"ans":0,"exp":"直接 + V = rẽ luôn, không vòng."},
+ {"q":"我刚来中国，不＿＿路。","opts":["熟悉","保护","提供","改变"],"ans":0,"exp":"熟悉 + nơi chốn / đường."},
+ {"q":"网上购物或者订票时，我们经常需要＿＿个人信息。","opts":["提供","保证","下载","结账"],"ans":0,"exp":"提供 + 信息."},
+ {"q":"别把＿＿随便告诉别人。","opts":["密码","现金","手指","快递"],"ans":0,"exp":"密码 = mật khẩu."},
+ {"q":"由于网购太方便了，动动＿＿就能买到想要的东西。","opts":["手指","手段","软件","技术"],"ans":0,"exp":"动动手指 = chạm ngón tay một cái."},
+ {"q":"我们到电影院的时候，电影＿＿开始了。","opts":["正好","正","直接","乱"],"ans":0,"exp":"正好 = vừa đúng lúc."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách, câu hỏi phần Khởi động, kể lại bài khoá và tranh luận nhóm), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions":[
+  {"q_zh":"你在网上购物吗？如果你网购，说说你是怎么进行网购的；如果你不网购，为什么？","q_vn":"Bạn có mua sắm trên mạng không? Nếu có, hãy kể bạn mua online như thế nào; nếu không, vì sao?","hint":"我常常网购。先下载……，然后……，最后……。/ 我不网购，因为……","sample":"我常常网购。先在手机上下载一个网购软件，然后找到想要的东西，用微信或者支付宝支付，最后等快递员送货就可以了。在网上购物不仅选择多，而且价格不高。","sample_vn":"Tôi hay mua online. Trước tiên tải một ứng dụng mua sắm về điện thoại, rồi tìm món đồ mình muốn, thanh toán bằng WeChat hoặc Alipay, cuối cùng chờ shipper giao hàng là xong. Mua trên mạng không những nhiều lựa chọn mà giá còn không cao.","note":"Câu hỏi phần Khởi động của sách; dùng 不仅……而且…… (điểm 2)."},
+  {"q_zh":"用手机时，你会怎样保护自己的信息？","q_vn":"Khi dùng điện thoại, bạn sẽ bảo vệ thông tin của mình thế nào?","hint":"我不会……，也不……，还会……","sample":"我不会把密码随便告诉别人，也不在网上发自己的身份证号、车票和机票信息。要是有人打电话问我的个人信息，我就不回答。","sample_vn":"Tôi sẽ không tùy tiện nói mật khẩu cho người khác, cũng không đăng số căn cước, thông tin vé tàu, vé máy bay lên mạng. Nếu có người gọi điện hỏi thông tin cá nhân, tôi sẽ không trả lời.","note":"Câu hỏi phần Khởi động; ôn 要是……就…… (Bài 1)."},
+  {"q_zh":"陈天中为什么找不到花园小区了？他为什么没用手机地图？","q_vn":"Vì sao Trần Thiên Trung không tìm được khu Hoa Viên? Vì sao cậu ấy không dùng bản đồ điện thoại?","hint":"因为他刚……，不熟悉……。因为很多……他还……","sample":"因为他刚来中国，不熟悉路。他没用手机地图，是因为很多中文地名他还不认识。","sample_vn":"Vì cậu ấy mới đến Trung Quốc, chưa thạo đường. Cậu không dùng bản đồ điện thoại là vì nhiều địa danh tiếng Trung cậu chưa đọc được.","note":"Câu hỏi đọc hiểu bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"陈天中从学校出来，不知道怎么去……，就向一位同学问路。同学告诉他……正好同学……北京的路基本上都是……","sample":"陈天中从学校出来，不知道怎么去花园小区，就向一位同学问路。同学告诉他，先往前走，到十字路口不要过马路，直接右转就到小区门口了。正好同学也去那边，就和他一起走。陈天中说他刚来中国，还不熟悉路。同学告诉他，北京的路基本上都是正南正北、正东正西的，很好找。他也可以用手机地图，很容易就能找到目的地。不过，很多中文地名陈天中还不认识。同学说，他很快就会熟悉的。","sample_vn":"Trần Thiên Trung từ trường đi ra, không biết đi đến khu Hoa Viên thế nào nên hỏi đường một bạn học. Bạn ấy bảo cứ đi thẳng, đến ngã tư đừng sang đường, rẽ phải luôn là tới cổng khu. Vừa khéo bạn ấy cũng đi hướng đó nên đi cùng… Bạn nói cậu sẽ quen nhanh thôi.","note":"Bài tập 复述 của sách (trang 25)."},
+  {"q_zh":"前几天李文帮陈天中做什么了？陈天中现在会用手机做什么了？","q_vn":"Mấy hôm trước Lý Văn đã giúp Trần Thiên Trung làm gì? Bây giờ Trần Thiên Trung biết dùng điện thoại làm gì rồi?","hint":"李文帮他……，教他……，还……。他现在不仅……，还……","sample":"李文帮他下载了微信和支付宝，教他认识里边的汉字，还教他用手机进行支付。陈天中现在不仅会扫码结账，还会用手机在网上购物了。","sample_vn":"Lý Văn giúp cậu tải WeChat và Alipay, dạy cậu nhận chữ Hán trong đó, còn dạy thanh toán bằng điện thoại. Bây giờ Trần Thiên Trung không những biết quét mã thanh toán mà còn biết mua hàng trên mạng.","note":"Câu hỏi đọc hiểu bài khoá 2; dùng 不仅……还…… (điểm 2)."},
+  {"q_zh":"白家月和陈天中学会用手机做什么了？留学生为什么也喜欢网购？","q_vn":"Bạch Gia Nguyệt và Trần Thiên Trung đã học được dùng điện thoại làm gì? Vì sao du học sinh cũng thích mua online?","hint":"他们学会了……等等。因为在中国网购不仅……，而且……","sample":"他们学会了用手机支付、网购、寄快递等等。留学生也喜欢网购，因为在中国网购不仅选择多、价格不高，而且送货很快。","sample_vn":"Họ đã học được thanh toán bằng điện thoại, mua online, gửi chuyển phát nhanh, v.v. Du học sinh cũng thích mua online vì ở Trung Quốc mua online không những nhiều lựa chọn, giá không cao mà giao hàng còn nhanh.","note":"Câu hỏi đọc hiểu bài khoá 3."},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"白家月和陈天中……就发现……。后来，在……下，他们也都学会了……。在中国网购，不仅……，而且……，很多留学生甚至……。不过，由于……","sample":"白家月和陈天中刚到北京时就发现，中国人在饭馆或超市结账时，几乎都用手机支付，只有他们用现金结账。后来，在李文的帮助下，他们也都学会了用手机支付、网购、寄快递等等。在中国网购，不仅选择多、价格不高，而且送货很快，很多留学生甚至改变了自己的购物习惯。不过，由于网购太方便了，动动手指就能买到想要的东西，他们也开始担心自己在网购时会乱花钱。怎么才能管住自己不乱花钱呢？","sample_vn":"Bạch Gia Nguyệt và Trần Thiên Trung vừa đến Bắc Kinh đã phát hiện người Trung Quốc gần như đều thanh toán bằng điện thoại, chỉ có họ dùng tiền mặt. Sau đó, nhờ Lý Văn giúp, họ cũng học được thanh toán bằng điện thoại, mua online, gửi chuyển phát nhanh… Nhưng vì mua online quá tiện, họ bắt đầu lo mình tiêu tiền lung tung.","note":"Bài tập 复述 của sách (trang 29)."},
+  {"q_zh":"人们为什么会担心个人信息安全问题？国家会通过什么手段来保证个人信息安全？","q_vn":"Vì sao mọi người lo lắng về an toàn thông tin cá nhân? Nhà nước dùng biện pháp gì để bảo đảm an toàn thông tin cá nhân?","hint":"因为……时，经常需要提供……。国家会通过……等手段……","sample":"因为网上购物或者订票时，经常需要提供姓名、手机号、身份证号等个人信息，人们担心这些信息能否得到保护。国家会通过技术、法律等手段来保证个人信息安全，比如中国的网络安全法和个人信息保护法。","sample_vn":"Vì khi mua sắm hoặc đặt vé trên mạng thường phải cung cấp họ tên, số điện thoại, số căn cước… nên mọi người lo những thông tin này có được bảo vệ không. Nhà nước dùng các biện pháp như công nghệ, pháp luật để bảo đảm, ví dụ Luật An ninh mạng và Luật Bảo vệ thông tin cá nhân của Trung Quốc.","note":"Câu hỏi đọc hiểu bài khoá 4."},
+  {"q_zh":"小组辩论（正方）：手机带来的好处多。请说说你的理由。","q_vn":"Tranh luận nhóm (phe ủng hộ): Điện thoại mang lại nhiều lợi ích hơn. Hãy nêu lý do của bạn.","hint":"我认为手机带来的好处多。首先，……不仅……，还……；其次，……甚至……；要是没有手机，……","sample":"我认为手机带来的好处多。首先，用手机可以购物、结账，不仅很快，还不用带现金。其次，手机地图能帮我们很容易地找到目的地，刚来中国的留学生也不怕迷路了。有了手机，我们还可以下载学习软件，甚至在路上也能学中文。手机带来的问题是有，不过只要我们管住自己，保护好个人信息，这些问题都能解决。所以，手机带来的好处更多。","sample_vn":"Tôi cho rằng điện thoại mang lại nhiều lợi ích hơn. Trước hết, dùng điện thoại mua sắm, thanh toán không những nhanh mà còn không cần mang tiền mặt. Thứ hai, bản đồ điện thoại giúp ta dễ dàng tìm được nơi cần đến, du học sinh mới sang cũng không sợ lạc. Có điện thoại còn tải được phần mềm học tập, thậm chí trên đường cũng học được tiếng Trung. Vấn đề thì có, nhưng chỉ cần tự kiểm soát và bảo vệ tốt thông tin cá nhân là giải quyết được. Vì vậy lợi ích nhiều hơn.","note":"Hoạt động 小组辩论 (tranh luận nhóm) của sách, trang 33 — phe 正方."},
+  {"q_zh":"小组辩论（反方）：手机带来的问题多。请说说你的理由。","q_vn":"Tranh luận nhóm (phe phản đối): Điện thoại mang lại nhiều vấn đề hơn. Hãy nêu lý do của bạn.","hint":"我认为手机带来的问题多。手机方便是方便，就是……；由于……，于是……；有的人甚至……","sample":"我认为手机带来的问题多。手机方便是方便，就是上面的信息太多，看多了，很浪费时间。由于网购太方便了，动动手指就能买到东西，于是很多人开始乱花钱。还有，我们在网上提供了很多个人信息，这些信息能否得到保护，谁也不能保证。有的人甚至一天到晚都在看手机，连跟家人说话的时间都没有了。所以，我觉得手机带来的问题更多。","sample_vn":"Tôi cho rằng điện thoại mang lại nhiều vấn đề hơn. Điện thoại tiện thì tiện thật, nhưng thông tin trên đó quá nhiều, xem nhiều rất lãng phí thời gian. Vì mua online quá tiện, chạm ngón tay là mua được đồ, thế là nhiều người bắt đầu tiêu tiền lung tung. Ngoài ra, ta cung cấp rất nhiều thông tin cá nhân trên mạng, chẳng ai bảo đảm được chúng có được bảo vệ không. Có người thậm chí suốt ngày xem điện thoại, ngay cả thời gian nói chuyện với gia đình cũng không có. Vì vậy tôi thấy vấn đề nhiều hơn.","note":"Hoạt động 小组辩论 của sách — phe 反方; dùng đủ 4 điểm ngữ pháp của bài + 由于 (Bài 2)."}
+ ]
+},
+
+"translate": [
+ ["Bắc Kinh rộng thì rộng thật, nhưng đường ở đây rất dễ tìm.","北京大是大，不过这边的路很好找。"],
+ ["Giờ tôi không những biết quét mã thanh toán, mà còn biết mua hàng trên mạng.","现在我不仅会扫码结账，还会在网上购物了。"],
+ ["Nhiều du học sinh thậm chí đã thay đổi thói quen mua sắm của mình.","很多留学生甚至改变了自己的购物习惯。"],
+ ["Thế là có người nói ra nỗi lo của mình trên mạng.","于是，有人在网上说出了自己的担心。"],
+ ["Đừng tùy tiện nói mật khẩu cho người khác.","别把密码随便告诉别人。"],
+ ["Làm thế nào mới kiểm soát được bản thân không tiêu tiền lung tung?","怎么才能管住自己不乱花钱呢？"]
+],
+"translateRev": [
+ ["Bạn cứ đi thẳng, đến ngã tư rẽ phải luôn là tới cổng khu dân cư.","你往前走，到十字路口直接右转就到小区门口了。"],
+ ["Hôm qua tôi đặt một cái máy tính trên mạng, chiều nay giao tới.","昨天我在网上订了一台电脑，今天下午送到。"],
+ ["Shipper sắp đến rồi, tôi phải về ngay.","快递员要到了，我得马上回去。"],
+ ["Khi mua sắm trên mạng, chúng ta thường phải cung cấp thông tin cá nhân.","网上购物时，我们经常需要提供个人信息。"],
+ ["Nhiều quốc gia dùng công nghệ, pháp luật để bảo đảm an toàn thông tin cá nhân.","很多国家通过技术、法律等手段来保证个人信息安全。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":120,"tieuDe":"写作 — viết theo đề của sách (ít nhất 120 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết đoạn văn giới thiệu (写作)","gioiThieu":"Đề 写作 của sách HSK 4 (3.0) yêu cầu viết một đoạn văn ngắn (ít nhất 120 chữ) dựa trên nội dung đã học và đã thảo luận trong bài — giống phần 书写 của đề thi HSK 4 mới. Bài này: giới thiệu em dùng điện thoại để làm những gì.","buoc":["Đọc kỹ đề: viết về CHÍNH EM — em dùng điện thoại làm gì, chứ không phải viết về người Trung Quốc nói chung.","Lập dàn ý theo các câu hỏi gợi ý: mỗi câu hỏi là một ý (thanh toán, mua online, hỏi đường, học tập, liên lạc…), viết 1–2 câu cho mỗi ý.","Dùng từ mới và 4 điểm ngữ pháp của bài (khung “Từ, cấu trúc nên dùng”): 不仅……还……, ×是×就是……, 甚至, ……于是…… — đây là phần được chấm điểm từ vựng, ngữ pháp.","Nối các ý bằng từ nối: 首先 / 其次 / 除了……还…… / 另外 / 不过 / 总之.","Câu mở nêu chủ đề (điện thoại rất quan trọng với em), câu kết nêu nhận xét hoặc lời nhắc (bảo vệ thông tin cá nhân); tự soát số chữ (≥ 120) và lỗi chữ Hán trước khi nộp."]},
+ "de":"生活中手机有很多用处。比如，在中国，可以用手机扫码支付，还可以点外卖、网购等。请写一篇短文，介绍一下你会用手机做什么，不少于120字。",
+ "prompt":"Trong cuộc sống, điện thoại có rất nhiều công dụng. Ví dụ, ở Trung Quốc có thể dùng điện thoại quét mã thanh toán, còn có thể đặt đồ ăn, mua hàng online, v.v. Hãy viết một đoạn văn ngắn giới thiệu em dùng điện thoại để làm gì, không ít hơn 120 chữ.",
+ "dan":[
+  {"hoi":"你每天用手机做什么？","goiY":"我每天都用手机……，不仅……，还……"},
+  {"hoi":"你怎么用手机付钱？","goiY":"在饭馆或超市结账时，我几乎不用现金，扫码就能……"},
+  {"hoi":"你网购吗？网购有什么好处？","goiY":"在网上购物不仅选择多……，而且送货很快，有时候甚至……"},
+  {"hoi":"手机还帮你做过什么？","goiY":"刚来的时候我不熟悉路，于是下载了……；还可以订票、寄快递、点外卖等等"},
+  {"hoi":"用手机时要注意什么？","goiY":"手机方便是方便，就是……；别把密码随便……，要保护好个人信息"}],
+ "tuNen":["下载","软件","扫码","支付","结账","现金","网购","订","快递","寄","甚至","保护","个人","密码"],
+ "cauTruc":[
+  {"ten":"不仅……，还 / 而且……","nhan":"不仅","vd":"我每天不仅用手机看新闻，还用它学习中文。","khi":"Câu MỞ / thân bài: kể nhiều việc dùng điện thoại."},
+  {"ten":"……，甚至……","nhan":"甚至","vd":"在网上购物送货很快，有时候甚至上午订的东西下午就送到了。","khi":"Nhấn mạnh điều làm em bất ngờ."},
+  {"ten":"……，于是……","nhan":"于是","vd":"刚来中国的时候我不熟悉路，于是下载了一个地图软件。","khi":"Kể một chuyện đã xảy ra."},
+  {"ten":"A、B、C等等","nhan":"等等","vd":"我还用手机订票、寄快递、点外卖等等。","khi":"Liệt kê các công dụng khác."},
+  {"ten":"×是×，就是……","nhan":"是","vd":"不过，手机方便是方便，就是容易让人乱花钱。","khi":"Câu KẾT: nói mặt hạn chế, lời nhắc."}],
+ "checklist":[
+  "Đủ ít nhất 120 chữ Hán chưa?",
+  "Đã nói về chính em dùng điện thoại làm gì (thanh toán, mua online, tìm đường, học tập…) chưa?",
+  "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (×是×就是/不过、不仅……还/而且、甚至、于是) chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài chưa?",
+  "Đoạn văn có câu mở và câu kết rõ ràng (có nhắc đến bảo vệ thông tin cá nhân) chưa?"],
+ "model":"手机是我生活中最好的朋友。每天早上，我不仅用手机看新闻，还用它学习中文。在饭馆或超市结账时，我几乎不用现金，扫码就能支付。我也很喜欢网购，在网上购物不仅选择多、价格不高，而且送货很快，有时候甚至上午订的东西下午就送到了。刚来中国的时候，我不熟悉路，于是下载了一个地图软件，现在很容易就能找到目的地。除此以外，我还用手机订票、寄快递、点外卖等等。不过，手机方便是方便，就是容易让人乱花钱，而且要注意保护个人信息。所以，我从来不把密码随便告诉别人，也不在网上发自己的身份证号。"
+}
+}

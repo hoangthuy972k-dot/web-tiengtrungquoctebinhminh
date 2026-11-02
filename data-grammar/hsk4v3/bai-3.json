@@ -1,0 +1,702 @@
+{
+ "/lessons/hsk4v3-bai-3.html": {
+  "points": [
+   {
+    "title": "转折复句“……×是×，就是/不过……” — … thì … thật, nhưng / chỉ là …",
+    "errors": [
+     {
+      "wrong": "北京大是很大，不过路很好找。",
+      "why": "Hai bên 是 phải là cùng một từ, không thêm 很 vào sau 是.",
+      "right": "北京大是大，不过路很好找。"
+     },
+     {
+      "wrong": "这个房子便宜是便宜，所以离公司太远了。",
+      "why": "Vế sau phải mang ý chuyển ngoặt (就是 / 不过 / 但是), không dùng 所以.",
+      "right": "这个房子便宜是便宜，就是离公司太远了。"
+     },
+     {
+      "wrong": "我们想了是想，就是没想出好办法。",
+      "why": "Có 了 thì 了 đứng ở cuối khung: 想是想了.",
+      "right": "我们想是想了，就是没想出好办法。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Bắc Kinh to thì to thật, nhưng …”",
+      "pre": "北京大是",
+      "blank": "大",
+      "post": "，不过这边的路基本上都是正南正北的。",
+      "options": [
+       "大",
+       "很大",
+       "太大"
+      ],
+      "answer": 0,
+      "explanation": "Hai bên 是 lặp lại đúng một từ: 大是大."
+     },
+     {
+      "context": "“Căn nhà này rẻ thì rẻ thật, chỉ là cách công ty xa quá.”",
+      "pre": "这个房子便宜是便宜，",
+      "blank": "就是",
+      "post": "离我的公司太远了。",
+      "options": [
+       "就是",
+       "所以",
+       "因为"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau dùng 就是 / 不过 chỉ ra hạn chế."
+     },
+     {
+      "context": "“Chúng tôi nghĩ thì có nghĩ rồi …”",
+      "pre": "我们想是",
+      "blank": "想",
+      "post": "了，就是没想出更好的办法。",
+      "options": [
+       "想",
+       "想想",
+       "想到"
+      ],
+      "answer": 0,
+      "explanation": "想是想了 — 了 ở cuối khung."
+     },
+     {
+      "context": "“… chỉ là dễ tiêu tiền lung tung.” (ôn từ mới)",
+      "pre": "网购方便是方便，就是容易",
+      "blank": "乱",
+      "post": "花钱。",
+      "options": [
+       "乱",
+       "正",
+       "直接"
+      ],
+      "answer": 0,
+      "explanation": "乱花钱 = tiêu tiền lung tung."
+     },
+     {
+      "context": "“Mát thì mát rồi, có điều mùa hè chưa hết …”",
+      "pre": "凉快是凉快了，",
+      "blank": "不过",
+      "post": "夏天还没结束，过几天又会热起来了。",
+      "options": [
+       "不过",
+       "于是",
+       "甚至"
+      ],
+      "answer": 0,
+      "explanation": "×是×，不过……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cái áo này đẹp thì đẹp thật, chỉ là hơi đắt.”",
+      "words": [
+       "这件衣服",
+       "好看",
+       "是",
+       "好看",
+       "，",
+       "就是",
+       "有点儿贵"
+      ],
+      "answer": "这件衣服好看是好看，就是有点儿贵。",
+      "explanation": "A是A，就是……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Phần mềm này tiện thì tiện thật, nhưng tôi vẫn chưa biết dùng lắm.”",
+      "words": [
+       "这个软件",
+       "方便",
+       "是",
+       "方便",
+       "，",
+       "不过",
+       "我还不太会用"
+      ],
+      "answer": "这个软件方便是方便，不过我还不太会用。",
+      "explanation": "A是A，不过……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bài tập viết xong thì viết xong rồi, nhưng có câu không biết làm.”",
+      "words": [
+       "作业",
+       "写完",
+       "是",
+       "写完了",
+       "，",
+       "不过",
+       "有的题",
+       "不会写"
+      ],
+      "answer": "作业写完是写完了，不过有的题不会写。",
+      "explanation": "Cụm động từ: 写完是写完了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "北京大是很大，不过路很好找。",
+      "isCorrect": false,
+      "correctVersion": "北京大是大，不过路很好找。",
+      "explanation": "Hai bên 是 giống hệt nhau, không thêm 很."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这家饭馆的菜好吃是好吃，就是价格有点儿高。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: A是A，就是……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我累是累，所以还想再学一会儿。",
+      "isCorrect": false,
+      "correctVersion": "我累是累，不过还想再学一会儿。",
+      "explanation": "Vế sau là chuyển ngoặt → 不过 / 就是, không dùng 所以."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Điện thoại này đẹp thì đẹp thật, chỉ là hơi đắt.",
+      "answer": "这个手机好看是好看，就是有点儿贵。",
+      "answerPy": "Zhège shǒujī hǎokàn shì hǎokàn, jiù shì yǒudiǎnr guì.",
+      "explanation": "A是A，就是 / 不过……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi muốn đi thì muốn thật, có điều hôm nay không có thời gian.",
+      "answer": "我想去是想去，不过今天没有时间。",
+      "answerPy": "Wǒ xiǎng qù shì xiǎng qù, búguò jīntiān méiyǒu shíjiān.",
+      "explanation": "Cụm động từ 想去是想去."
+     }
+    ]
+   },
+   {
+    "title": "递进复句“不仅/不光……，还/而且……” — không những … mà còn …",
+    "errors": [
+     {
+      "wrong": "不仅我会说中文，还会写汉字。",
+      "why": "Hai vế cùng chủ ngữ thì chủ ngữ đứng trước 不仅.",
+      "right": "我不仅会说中文，还会写汉字。"
+     },
+     {
+      "wrong": "他不仅会唱歌，而且会跳舞还。",
+      "why": "还 phải đứng trước động từ, không đứng cuối câu.",
+      "right": "他不仅会唱歌，还会跳舞。"
+     },
+     {
+      "wrong": "这家店不仅便宜，但是东西很好。",
+      "why": "不仅 đi với 还 / 而且 / 也, không đi với 但是.",
+      "right": "这家店不仅便宜，而且东西很好。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Giờ tôi không những biết quét mã thanh toán …”",
+      "pre": "现在我",
+      "blank": "不仅",
+      "post": "会扫码结账，还会用手机在网上购物了。",
+      "options": [
+       "不仅",
+       "虽然",
+       "要是"
+      ],
+      "answer": 0,
+      "explanation": "不仅……，还……"
+     },
+     {
+      "context": "“… mà còn đưa chúng tôi tìm hiểu văn hóa.”",
+      "pre": "王老师不光教我们说中文，",
+      "blank": "而且",
+      "post": "带我们了解中国文化。",
+      "options": [
+       "而且",
+       "但是",
+       "所以"
+      ],
+      "answer": 0,
+      "explanation": "不光……，而且……"
+     },
+     {
+      "context": "“… mà còn bán cà phê và trà sữa.”",
+      "pre": "现在很多书店不仅卖书，",
+      "blank": "还",
+      "post": "卖咖啡和奶茶。",
+      "options": [
+       "还",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "还 đứng ngay trước động từ 卖."
+     },
+     {
+      "context": "“… mà còn gửi được chuyển phát nhanh.” (ôn từ mới)",
+      "pre": "这个软件不仅能支付，还能",
+      "blank": "寄",
+      "post": "快递。",
+      "options": [
+       "寄",
+       "管",
+       "转"
+      ],
+      "answer": 0,
+      "explanation": "寄快递 = gửi chuyển phát nhanh."
+     },
+     {
+      "context": "“… mà giao hàng còn nhanh.”",
+      "pre": "在中国网购，不仅选择多、价格不高，",
+      "blank": "而且",
+      "post": "送货很快。",
+      "options": [
+       "而且",
+       "于是",
+       "不过"
+      ],
+      "answer": 0,
+      "explanation": "不仅……，而且……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô ấy không những biết hát bài tiếng Trung, mà còn hát rất hay.”",
+      "words": [
+       "她",
+       "不仅",
+       "会唱",
+       "中文歌",
+       "，",
+       "而且",
+       "唱得很好"
+      ],
+      "answer": "她不仅会唱中文歌，而且唱得很好。",
+      "explanation": "Chủ ngữ + 不仅……，而且……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi không những biết quét mã thanh toán, mà còn biết mua online.”",
+      "words": [
+       "我",
+       "不仅",
+       "会",
+       "扫码结账",
+       "，",
+       "还",
+       "会",
+       "网购"
+      ],
+      "answer": "我不仅会扫码结账，还会网购。",
+      "explanation": "还 + 会 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Quán này không những món ngon mà giá cũng không cao.”",
+      "words": [
+       "这家饭馆",
+       "不光",
+       "菜好吃",
+       "，",
+       "而且",
+       "价格",
+       "也不高"
+      ],
+      "answer": "这家饭馆不光菜好吃，而且价格也不高。",
+      "explanation": "而且……也……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "不仅他会说中文，还会说英文。",
+      "isCorrect": false,
+      "correctVersion": "他不仅会说中文，还会说英文。",
+      "explanation": "Cùng chủ ngữ → chủ ngữ đứng trước 不仅."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "现在很多书店不仅卖书，还卖咖啡和奶茶。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: chủ ngữ + 不仅……，还……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "她不仅很漂亮，但是很聪明。",
+      "isCorrect": false,
+      "correctVersion": "她不仅很漂亮，而且很聪明。",
+      "explanation": "不仅 đi với 而且 / 还, không đi với 但是."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Thanh toán bằng điện thoại không những nhanh mà còn rất tiện.",
+      "answer": "用手机支付不仅很快，而且很方便。",
+      "answerPy": "Yòng shǒujī zhīfù bùjǐn hěn kuài, érqiě hěn fāngbiàn.",
+      "explanation": "不仅……，而且 / 还……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cậu ấy không những giúp tôi tải WeChat, mà còn dạy tôi cách dùng.",
+      "answer": "他不仅帮我下载了微信，还教我怎么用。",
+      "answerPy": "Tā bùjǐn bāng wǒ xiàzài le Wēixìn, hái jiào wǒ zěnme yòng.",
+      "explanation": "Chủ ngữ 他 đứng trước 不仅."
+     }
+    ]
+   },
+   {
+    "title": "连词“甚至” — thậm chí, ngay cả",
+    "errors": [
+     {
+      "wrong": "甚至在中国网购很方便。",
+      "why": "甚至 không mở đầu một câu đơn lẻ; phía trước phải có phần làm nền.",
+      "right": "在中国网购很方便，甚至动动手指就能买到想要的东西。"
+     },
+     {
+      "wrong": "他很忙，甚至吃饭。",
+      "why": "Sau 甚至 phải là một tình huống đầy đủ, mức độ cao hơn phần trước.",
+      "right": "他很忙，甚至连吃饭的时间都没有。"
+     },
+     {
+      "wrong": "他甚至没吃午饭，也没吃早饭。",
+      "why": "Phần “bất ngờ hơn” đặt SAU 甚至, ở vế sau.",
+      "right": "他没吃早饭，甚至连午饭也没吃。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… nhiều du học sinh thậm chí đã thay đổi thói quen mua sắm.”",
+      "pre": "在中国网购，送货很快，很多留学生",
+      "blank": "甚至",
+      "post": "改变了自己的购物习惯。",
+      "options": [
+       "甚至",
+       "不仅",
+       "于是"
+      ],
+      "answer": 0,
+      "explanation": "甚至 + V: nhấn mạnh điều vượt dự đoán."
+     },
+     {
+      "context": "“Tàu cao tốc nhanh thật, thậm chí chưa nhìn rõ …”",
+      "pre": "高铁速度真快，",
+      "blank": "甚至",
+      "post": "还没看清楚，它就已经开过去了。",
+      "options": [
+       "甚至",
+       "虽然",
+       "要是"
+      ],
+      "answer": 0,
+      "explanation": "甚至 đứng trước phần được nhấn mạnh."
+     },
+     {
+      "context": "“… thậm chí còn có một siêu thị.”",
+      "pre": "这个小区真不错，有小花园、球场，甚至",
+      "blank": "还",
+      "post": "有一个超市。",
+      "options": [
+       "还",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "甚至还 + 有……"
+     },
+     {
+      "context": "“… thậm chí ngay cả thời gian ăn cơm cũng không có.”",
+      "pre": "他太忙了，甚至",
+      "blank": "连",
+      "post": "吃饭的时间都没有。",
+      "options": [
+       "连",
+       "把",
+       "被"
+      ],
+      "answer": 0,
+      "explanation": "甚至连……都……"
+     },
+     {
+      "context": "“… thậm chí nhiều người nổi tiếng cũng đến uống.”",
+      "pre": "这家咖啡店很有名，甚至很多",
+      "blank": "名人",
+      "post": "都会来喝咖啡。",
+      "options": [
+       "名人",
+       "手指",
+       "现金"
+      ],
+      "answer": 0,
+      "explanation": "名人 = người nổi tiếng."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy hiểu tôi quá, thậm chí tôi chưa nói anh ấy đã biết tôi muốn làm gì.”",
+      "words": [
+       "他",
+       "太了解我了",
+       "，",
+       "甚至",
+       "我还没说话",
+       "，",
+       "他就知道",
+       "我想做什么"
+      ],
+      "answer": "他太了解我了，甚至我还没说话，他就知道我想做什么。",
+      "explanation": "甚至 + câu ngắn (还没……就……)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Khu này có vườn hoa, sân bóng, thậm chí còn có một siêu thị.”",
+      "words": [
+       "这个小区",
+       "有小花园、球场",
+       "，",
+       "甚至",
+       "还有",
+       "一个超市"
+      ],
+      "answer": "这个小区有小花园、球场，甚至还有一个超市。",
+      "explanation": "Liệt kê: 甚至 trước mục cuối."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy bận đến mức thậm chí quên cả ăn cơm.”",
+      "words": [
+       "他",
+       "忙得",
+       "甚至",
+       "连饭",
+       "都",
+       "忘了吃"
+      ],
+      "answer": "他忙得甚至连饭都忘了吃。",
+      "explanation": "V得 + 甚至连……都……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "甚至在中国寄快递很快。",
+      "isCorrect": false,
+      "correctVersion": "在中国寄快递特别快，甚至上午寄出下午就收到了。",
+      "explanation": "甚至 không mở đầu câu; phần sau 甚至 phải vượt dự đoán."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他中文说得很好，甚至能看懂中文报纸。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: đọc hiểu báo là mức cao hơn nói tốt."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他每天起得很早，甚至七点起床。",
+      "isCorrect": false,
+      "correctVersion": "他每天起得很早，甚至五点就起床了。",
+      "explanation": "Phần sau 甚至 phải nổi bật hơn hẳn; 7 giờ không “sớm” đến mức bất ngờ, thêm 就……了 nhấn mạnh."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Ở Trung Quốc mọi người đều dùng điện thoại trả tiền, thậm chí mua một chai nước cũng quét mã.",
+      "answer": "在中国大家都用手机支付，甚至买一瓶水也扫码。",
+      "answerPy": "Zài Zhōngguó dàjiā dōu yòng shǒujī zhīfù, shènzhì mǎi yì píng shuǐ yě sǎomǎ.",
+      "explanation": "甚至 + phần bất ngờ + 也 / 都."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Anh ấy bận lắm, thậm chí cuối tuần cũng phải đi làm.",
+      "answer": "他很忙，甚至周末也要上班。",
+      "answerPy": "Tā hěn máng, shènzhì zhōumò yě yào shàngbān.",
+      "explanation": "甚至 + 周末也……"
+     }
+    ]
+   },
+   {
+    "title": "承接复句“……，于是……” — …, thế là …",
+    "errors": [
+     {
+      "wrong": "于是我想喝咖啡，我去了咖啡馆。",
+      "why": "于是 đứng đầu vế SAU, không đứng ở vế đầu.",
+      "right": "我想喝咖啡，于是去了咖啡馆。"
+     },
+     {
+      "wrong": "明天会下雨，于是你带上伞吧。",
+      "why": "于是 kể việc đã xảy ra, không dùng với câu khuyên / mệnh lệnh.",
+      "right": "明天会下雨，所以你带上伞吧。"
+     },
+     {
+      "wrong": "他于是很累，就回家休息了。",
+      "why": "于是 nối việc tiếp theo, không đặt trước nguyên nhân.",
+      "right": "他很累，于是就回家休息了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… thế là có người nói ra nỗi lo trên mạng.”",
+      "pre": "我们担心个人信息能否得到保护，",
+      "blank": "于是",
+      "post": "有人在网上说出了自己的担心。",
+      "options": [
+       "于是",
+       "甚至",
+       "不仅"
+      ],
+      "answer": 0,
+      "explanation": "于是 đứng đầu vế sau."
+     },
+     {
+      "context": "“… thế là lên đại học chọn học y.”",
+      "pre": "她从小就想当医生，于是上大学时就选择了学",
+      "blank": "医",
+      "post": "。",
+      "options": [
+       "医",
+       "法律",
+       "技术"
+      ],
+      "answer": 0,
+      "explanation": "学医 = học y; 当医生 ôn Bài 1."
+     },
+     {
+      "context": "“… quyết định khỏi bệnh sẽ tập thể dục.”",
+      "pre": "最近总感冒，于是他决定病好后就开始",
+      "blank": "锻炼",
+      "post": "身体。",
+      "options": [
+       "锻炼",
+       "保护",
+       "改变"
+      ],
+      "answer": 0,
+      "explanation": "锻炼身体 = rèn luyện thân thể (HSK 3)."
+     },
+     {
+      "context": "“… thế là tôi cũng không muốn nói nữa.”",
+      "pre": "大家都不说话，于是我",
+      "blank": "也",
+      "post": "不想说话了。",
+      "options": [
+       "也",
+       "才",
+       "再"
+      ],
+      "answer": 0,
+      "explanation": "于是 + chủ ngữ + 也……"
+     },
+     {
+      "context": "“… thế là tôi đi thư viện một mình.” (综合练习 3)",
+      "pre": "在十字路口等了半个小时，他们也没来，",
+      "blank": "于是",
+      "post": "我就一个人去图书馆了。",
+      "options": [
+       "于是",
+       "而且",
+       "甚至"
+      ],
+      "answer": 0,
+      "explanation": "于是……就……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi rất mệt, thế là về nhà nghỉ.”",
+      "words": [
+       "我",
+       "很累",
+       "，",
+       "于是",
+       "就",
+       "回家",
+       "休息了"
+      ],
+      "answer": "我很累，于是就回家休息了。",
+      "explanation": "……，于是就……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy không thạo đường, thế là hỏi đường một bạn học.”",
+      "words": [
+       "他",
+       "不熟悉路",
+       "，",
+       "于是",
+       "向",
+       "一位同学",
+       "问路"
+      ],
+      "answer": "他不熟悉路，于是向一位同学问路。",
+      "explanation": "于是 + 向 + ai + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Điện thoại hết pin, thế là tôi trả bằng tiền mặt.”",
+      "words": [
+       "手机没电了",
+       "，",
+       "于是",
+       "我",
+       "用现金",
+       "结了账"
+      ],
+      "answer": "手机没电了，于是我用现金结了账。",
+      "explanation": "于是 + chủ ngữ 我 + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "于是天黑了，我们回家了。",
+      "isCorrect": false,
+      "correctVersion": "天黑了，于是我们回家了。",
+      "explanation": "于是 đứng đầu vế sau."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他想学好中文，于是来中国留学了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: việc trước dẫn đến việc sau, đã xảy ra."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "天冷了，于是你多穿点儿衣服吧。",
+      "isCorrect": false,
+      "correctVersion": "天冷了，你多穿点儿衣服吧。",
+      "explanation": "Câu khuyên → không dùng 于是 (có thể dùng 所以)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi không biết dùng WeChat, thế là bạn Trung Quốc dạy tôi.",
+      "answer": "我不会用微信，于是中国朋友教我。",
+      "answerPy": "Wǒ bú huì yòng Wēixìn, yúshì Zhōngguó péngyou jiào wǒ.",
+      "explanation": "……，于是……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Mua online quá tiện, thế là cô ấy hay tiêu tiền lung tung.",
+      "answer": "网购太方便了，于是她常常乱花钱。",
+      "answerPy": "Wǎnggòu tài fāngbiàn le, yúshì tā chángcháng luàn huā qián.",
+      "explanation": "于是 + chủ ngữ + V; từ mới 网购, 乱."
+     }
+    ]
+   }
+  ]
+ }
+}

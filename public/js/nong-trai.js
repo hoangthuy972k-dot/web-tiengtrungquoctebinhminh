@@ -1149,7 +1149,7 @@
       h += '<div class="nt-canh-may ' + x[0] + x[1] + '"><i class="may"></i><i class="bong"></i></div>';
     });
     for (var i = 0; i < 3; i++) h += '<div class="nt-canh-chim c' + (i + 1) + '">' + svgChim() + '</div>';
-    for (var j = 0; j < 5; j++) h += '<div class="nt-canh-buom b' + (j + 1) + '">' + svgBuom(MAU_BUOM[j]) + '</div>';
+    for (var j = 0; j < 2; j++) h += '<div class="nt-canh-buom b' + (j + 1) + '">' + svgBuom(MAU_BUOM[j]) + '</div>';
     // ban dem: trang, sao va dom dom 萤火虫 (chi hien khi body co lop nt-dem)
     h += '<i class="nt-dem-trang"></i>';
     for (var s = 0; s < 7; s++) h += '<i class="nt-dem-sao" style="left:' + (6 + s * 13) % 94 + '%;top:' + (2 + (s * 7) % 12) + '%;animation-delay:-' + s * 0.6 + 's"></i>';

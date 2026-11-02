@@ -128,6 +128,10 @@ const TT = {
   'lh-bianpao': { zh: '鞭炮', py: 'biānpào', vn: 'Dây pháo Tết', lv: 1, doc: 1, dep: 20 },
   'lh-longzhou': { zh: '龙舟', py: 'lóngzhōu', vn: 'Thuyền rồng', lv: 1, doc: 1, dep: 22 },
   'lh-gongdeng': { zh: '宫灯', py: 'gōngdēng', vn: 'Đèn cung đình', lv: 1, doc: 1, dep: 20 },
+  // Doc quyen: cup cho lop dung top 3 thi tran tuan
+  'cup-vang': { zh: '金杯', py: 'jīnbēi', vn: 'Cúp vàng thị trấn', lv: 1, doc: 1, dep: 30 },
+  'cup-bac': { zh: '银杯', py: 'yínbēi', vn: 'Cúp bạc thị trấn', lv: 1, doc: 1, dep: 24 },
+  'cup-dong': { zh: '铜杯', py: 'tóngbēi', vn: 'Cúp đồng thị trấn', lv: 1, doc: 1, dep: 18 },
 };
 // Bo suu tap chu Han: 1 chu tra loi dung 3 lan trong Thu thach = 1 the; du moc thi nhan do doc quyen
 const THE_DUNG = 3;
@@ -1234,7 +1238,9 @@ module.exports = function ganNongTrai(app, d) {
       return x;
     }).sort((a, b) => (b.dep || 0) - (a.dep || 0) || (b.lv || 0) - (a.lv || 0) || a.ten.localeCompare(b.ten, 'vi'));
     const [ct, cv] = await Promise.all([chung.ctLop(lop.id), chung.coVuLop(lop.id, req.user.id)]);
-    res.json({ lop: lop.ten, lopId: lop.id, cuaEm: !!(lopEm && lopEm.id === lop.id), now: Date.now(), ds, ct, covu: cv });
+    const diem = ds.filter((x) => x.co).reduce((t, x) => t + (x.dep || 0) + (x.tuan || 0), 0) + 150 * ct.xay.length;
+    const dh = await chung.danhHieuLop(lop.id, diem);
+    res.json({ lop: lop.ten, lopId: lop.id, cuaEm: !!(lopEm && lopEm.id === lop.id), now: Date.now(), ds, ct, covu: cv, diem, cap: dh.cap, hangTuanTruoc: dh.hangTuanTruoc, yeuMen: dh.yeuMen });
   }));
 
   /* ---- Bang "Can mua": dang nhu cau, ban cho ban dang can ---- */

@@ -2748,6 +2748,79 @@
       if (!$('#ntThiTran').hidden) veThiTran();
     }, function (err) { $('#ntTtLuoi').innerHTML = '<p class="nt-trong">' + esc(err.message) + '</p>'; });
   }
+  // Cap thi tran (小村 -> 城市): ten tren bien, do trang tri hai ben cong, co vo dich / danh hieu tuan truoc
+  var TRANG_CONG = ['den-long', 'tung', 'cay-dao', 'den-phuc'];
+  function veCapThiTran(r) {
+    var c = r && r.cap, capEl = $('#ntTtCap'), dh = $('#ntTtDh');
+    capEl.innerHTML = c ? '<span lang="zh">' + esc(c.zh) + '</span> ' + esc(c.py) + ' · ' + esc(c.vn) : '<span lang="zh">小镇</span> xiǎozhèn';
+    var cong = $('.nt-tt-cong'), hang = $('#ntTtCongHang');
+    if (!hang) {
+      hang = document.createElement('div');
+      hang.className = 'nt-tt-cong-hang'; hang.id = 'ntTtCongHang';
+      cong.parentNode.insertBefore(hang, cong);
+      hang.appendChild(cong);
+    }
+    $all('.nt-tt-trang', hang).forEach(function (x) { x.remove(); });
+    var so = c ? Math.min(c.cap, TRANG_CONG.length) : 0, trai = '', phai = '';
+    for (var i = 0; i < so; i++) {
+      trai = '<img class="nt-tt-trang" src="' + anh(TRANG_CONG[i]) + '" alt="" draggable="false">' + trai;
+      phai += '<img class="nt-tt-trang" src="' + anh(TRANG_CONG[i]) + '" alt="" draggable="false">';
+    }
+    if (r && r.hangTuanTruoc === 1) phai = '<img class="nt-tt-trang nt-tt-co" src="' + anh('co-vodich') + '" alt="Cờ vô địch" draggable="false">' + phai;
+    cong.insertAdjacentHTML('beforebegin', trai);
+    cong.insertAdjacentHTML('afterend', phai);
+    $all('img', hang).forEach(ganLoiAnh);
+    var dhs = [];
+    if (r && r.hangTuanTruoc) dhs.push(['🏆 Vô địch thị trấn tuần trước', '🥈 Hạng 2 thị trấn tuần trước', '🥉 Hạng 3 thị trấn tuần trước'][r.hangTuanTruoc - 1]);
+    if (r && r.yeuMen) dhs.push('❤ Lớp được yêu mến nhất tuần trước');
+    dh.hidden = !dhs.length;
+    dh.textContent = dhs.join(' · ');
+  }
+  // Phan thuong thi tran (top tuan, yeu men, moc cap, co vu 7 ngay) — cham do tren nut Thi tran
+  var TG = null;
+  function taiThuongTt() {
+    return goi('/api/farm/thuongtt').then(function (r) { TG = r; var c = $('#ntTtCham'); if (c) c.hidden = !(r.conNhan > 0); return r; });
+  }
+  function htmlThuongTt(lopEm) {
+    var r = TG;
+    if (!r) return '';
+    var kq = r.tuanTruoc, html = '<div class="nt-tg"><h4>🎁 Phần thưởng thị trấn</h4>';
+    if (kq.top.length) html += '<p class="nt-cn-nho">Tuần trước: ' + kq.top.map(function (x) { return ['🥇', '🥈', '🥉'][x.hang - 1] + ' <b>' + esc(x.ten) + '</b>'; }).join(' · ') +
+      (kq.yeuMen ? ' · ❤ Được yêu mến nhất: <b>' + esc(kq.yeuMen.ten) + '</b> (' + kq.yeuMen.n + ' cổ vũ)' : '') + '</p>';
+    var chua = r.ds.filter(function (x) { return !x.daNhan; });
+    if (chua.length) html += '<ul class="nt-tg-ds">' + chua.map(function (x) {
+      var chu = x.loai === 'tuan' ? ['🥇', '🥈', '🥉'][x.hang - 1] + ' Lớp em hạng ' + x.hang + ' tuần trước: <b>+' + x.xu + ' xu</b> + ' + esc(tenMon(x.mon).vn) + ' <span lang="zh">' + esc(tenMon(x.mon).zh) + '</span>'
+        : x.loai === 'yeumen' ? '❤ Lớp em được yêu mến nhất (' + x.n + ' lượt cổ vũ): <b>+' + x.xu + ' xu</b>'
+        : '🏯 Thị trấn lên <span lang="zh">' + esc(x.zh) + '</span> ' + esc(x.vn) + ' (' + x.d.toLocaleString('vi-VN') + ' điểm): <b>+' + x.xu + ' xu</b>' + (x.qua ? ' + hộp quà' : '');
+      return '<li>' + (x.loai === 'tuan' ? img(x.mon) : '') + '<span>' + chu + '</span><button type="button" class="nt-mua" data-tgnhan="' + x.loai + '" data-cap="' + (x.cap || 0) + '">Nhận</button></li>';
+    }).join('') + '</ul>';
+    else html += '<p class="nt-cn-nho">' + (r.ds.length ? '✓ Em đã nhận hết phần thưởng hiện có.' : 'Chưa có phần thưởng — cùng lớp học và xây thị trấn để lọt top tuần nhé!') + '</p>';
+    if (r.cap && lopEm) {
+      var sau = r.cap.sau;
+      html += '<p class="nt-cn-nho">Thị trấn lớp em: <b><span lang="zh">' + esc(r.cap.zh) + '</span> ' + esc(r.cap.vn) + '</b>' +
+        (sau ? (lopEm.diem < sau.d ? ' · còn <b>' + (sau.d - lopEm.diem).toLocaleString('vi-VN') + ' điểm</b> nữa lên <span lang="zh">' + esc(sau.zh) + '</span> ' + esc(sau.vn) : '') : ' · cấp cao nhất!') + '</p>' +
+        (sau ? thanhTien(lopEm.diem, sau.d) : '');
+    }
+    html += '<p class="nt-cn-nho">📣 Cổ vũ các lớp bạn: <b>' + r.coVu.ngay + '/' + r.coVu.can + ' ngày</b> tuần này — đủ ' + r.coVu.can + ' ngày nhận hộp quà bí ẩn.</p>' +
+      '<details class="nt-tg-luat"><summary>Cách nhận thưởng</summary><ul>' +
+      '<li>Hết Chủ nhật, 3 lớp điểm cao nhất: mỗi bạn <b>có học trong tuần</b> nhận 60 / 40 / 25 xu + cúp vàng / bạc / đồng đặt ở nông trại. Lớp hạng 1 được cắm cờ vô địch ở cổng thị trấn cả tuần sau.</li>' +
+      '<li>Lớp được cổ vũ nhiều nhất tuần: mỗi bạn có học nhận 20 xu và danh hiệu "Lớp được yêu mến nhất".</li>' +
+      '<li>Thị trấn đạt 500 / 1.000 / 2.000 / 5.000 điểm thì lên cấp 小镇 → 大镇 → 县城 → 城市, cả lớp nhận quà mỗi mốc, cổng thị trấn đẹp thêm.</li>' +
+      '<li>Cổ vũ lớp khác đủ 7 ngày trong tuần: hộp quà bí ẩn.</li></ul></details></div>';
+    return html;
+  }
+  function ganThuongTt(than) {
+    $all('[data-tgnhan]', than).forEach(function (b) {
+      b.addEventListener('click', function () {
+        b.disabled = true;
+        goi('/api/farm/thuongtt/nhan', { loai: b.getAttribute('data-tgnhan'), cap: +b.getAttribute('data-cap') }).then(function (r) {
+          nhanTrangThai(r.st); tieng('len');
+          bao('🎁 +' + r.xu + ' xu' + (r.mon ? ' · ' + tenMon(r.mon).vn + ' đã vào Túi đồ!' : '') + (r.qua ? ' · hộp quà: ' + tenQua(r.qua).vn + '!' : ''));
+          taiThuongTt().then(function () { if (bangDang && bangDang.loai === 'cacthitran') veBang(); });
+        }, function (e) { b.disabled = false; bao(e.message, 'loi'); });
+      });
+    });
+  }
   // Dang xem thi tran lop khac: dai ten + co vu + ve thi tran lop em; an Cho lop
   function veDaiKhach() {
     var r = thiTran, dai = $('#ntTtKhach');
@@ -2764,14 +2837,14 @@
     dai.innerHTML = '<p>Em đang tham quan thị trấn <b>' + esc(r.lop) + '</b> · 📣 <b>' + cv.n + '</b> lượt cổ vũ tuần này</p>' +
       '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-vang" id="ntTtCoVu"' + (cv.daCoVu || cv.con <= 0 ? ' disabled' : '') + '>' +
       (cv.daCoVu ? '✓ Đã cổ vũ hôm nay' : cv.con <= 0 ? 'Hết lượt cổ vũ hôm nay' : '📣 Cổ vũ: 加油！(+1 xu)') + '</button>' +
-      '<button type="button" class="nt-nut" data-tt="cac">🏙 Các thị trấn</button><button type="button" class="nt-nut nt-nut-xanh" data-tt="nha">← Thị trấn lớp em</button></div>';
+      '<button type="button" class="nt-nut nt-nut-xanh" data-tt="nha">← Thị trấn lớp em</button></div>';
     var nut = $('#ntTtCoVu', dai);
     nut.addEventListener('click', function () {
       nut.disabled = true;
       goi('/api/farm/covu/' + encodeURIComponent(r.lopId), {}).then(function (kq) {
         nhanTrangThai(kq.st); tieng('len'); doc('加油！');
         r.covu = { n: kq.n, daCoVu: true, con: cv.con - 1 };
-        bao('📣 加油！Em đã cổ vũ ' + r.lop + ' · +1 xu');
+        bao('📣 加油！Em đã cổ vũ ' + r.lop + ' · +1 xu · ' + kq.ngay + '/' + kq.canNgay + ' ngày tuần này' + (kq.qua ? ' · 🎁 Đủ ' + kq.canNgay + ' ngày: ' + tenQua(kq.qua).vn + '!' : ''));
         veDaiKhach();
       }, function (e) { nut.disabled = false; bao(e.message, 'loi'); });
     });
@@ -2780,13 +2853,16 @@
     $('#ntBangTit').textContent = 'Thị trấn các lớp';
     datTab([], '');
     than.innerHTML = '<p class="nt-trong">Đang tải…</p>';
-    goi('/api/farm/cacthitran').then(function (r) {
+    Promise.all([goi('/api/farm/cacthitran'), taiThuongTt()]).then(function (kq) {
+      var r = kq[0];
       if (!bangDang || bangDang.loai !== 'cacthitran') return;
-      var html = '<p class="nt-meo">Mỗi lớp cùng xây một thị trấn. <b>Điểm thị trấn</b> = tổng điểm đẹp các nông trại + <b>150</b> cho mỗi công trình chung đã xây + sao học của cả lớp tuần này. Sang tham quan và <b>cổ vũ 加油</b> các lớp bạn (còn ' + r.conCoVu + ' lượt hôm nay, mỗi lượt +1 xu)!</p>';
+      var lopEm = r.ds.filter(function (c) { return c.la; })[0];
+      var html = htmlThuongTt(lopEm) + '<p class="nt-meo">Mỗi lớp cùng xây một thị trấn. <b>Điểm thị trấn</b> = tổng điểm đẹp các nông trại + <b>150</b> cho mỗi công trình chung đã xây + sao học của cả lớp tuần này. Sang tham quan và <b>cổ vũ 加油</b> các lớp bạn (còn ' + r.conCoVu + ' lượt hôm nay, mỗi lượt +1 xu)!</p>';
       if (!r.ds.length) html += '<p class="nt-trong">Chưa có lớp nào mở nông trại.</p>';
       html += '<ol class="nt-cac-tt">' + r.ds.map(function (c) {
         return '<li class="' + (c.la ? 'la' : '') + '"><div class="nt-cac-dau"><span class="nt-cac-hang">' + (c.hang <= 3 ? ['🥇', '🥈', '🥉'][c.hang - 1] : '#' + c.hang) + '</span>' +
-          '<div class="nt-cac-ten"><b>' + esc(c.ten) + (c.la ? ' <em>lớp em</em>' : '') + '</b><small>' + c.soNt + '/' + c.so + ' bạn có nông trại · 📣 ' + c.covu + ' cổ vũ</small></div>' +
+          '<div class="nt-cac-ten"><b>' + esc(c.ten) + (c.la ? ' <em>lớp em</em>' : '') + '</b><small><span lang="zh">' + esc(c.cap.zh) + '</span> ' + esc(c.cap.vn) + ' · ' + c.soNt + '/' + c.so + ' bạn có nông trại · 📣 ' + c.covu + ' cổ vũ</small>' +
+          (c.hangTuanTruoc || c.yeuMen ? '<small class="nt-cac-dh">' + (c.hangTuanTruoc ? ['🏆 Vô địch', '🥈 Hạng 2', '🥉 Hạng 3'][c.hangTuanTruoc - 1] + ' tuần trước' : '') + (c.hangTuanTruoc && c.yeuMen ? ' · ' : '') + (c.yeuMen ? '❤ Được yêu mến nhất' : '') + '</small>' : '') + '</div>' +
           '<span class="nt-cac-diem"><b>' + c.diem.toLocaleString('vi-VN') + '</b><small>điểm</small></span></div>' +
           '<div class="nt-cac-nv">' + c.nv.map(function (n) { return anhNv(n.av, n.id); }).join('') + '</div>' +
           '<div class="nt-cac-so"><span>🌸 Đẹp <b>' + c.dep + '</b></span><span>⭐ Sao tuần <b>' + c.saoTuan + '</b></span><span>🏛 Công trình <b>' + c.xay.length + '</b></span></div>' +
@@ -2796,6 +2872,7 @@
       }).join('') + '</ol>';
       than.innerHTML = html;
       $all('img', than).forEach(ganLoiAnh);
+      ganThuongTt(than);
       $all('[data-xem-tt]', than).forEach(function (b) {
         b.addEventListener('click', function () { var id = b.getAttribute('data-xem-tt'); moThiTran(id === r.lopEm ? '' : id); });
       });
@@ -2820,6 +2897,7 @@
       return;
     }
     var tong = r.ds.reduce(function (s, b) { return s + (b.dep || 0); }, 0);
+    veCapThiTran(r);
     $('#ntTtTen').textContent = 'Thị trấn ' + r.lop;
     $('#ntTtPhu').textContent = r.ds.length + ' nông trại · tổng điểm đẹp ' + tong;
     var luoi = $('#ntTtLuoi');
@@ -3236,6 +3314,7 @@
       setTimeout(baoHang, 2500);
       taiChuHan().catch(function () { /* lan sau */ });
       taiCN();
+      taiThuongTt().catch(function () { /* lan sau */ });
       if (r.quaHomNay) setTimeout(quaDiemDanh, 500);
       // lan dau: huong dan choi, roi den thiet ke nhan vat (nut nhan vat nhap nhay cho den khi luu)
       else setTimeout(function () { if (!huongDan() && !r.av) moNhanVat(true); }, 500);

@@ -605,10 +605,78 @@ module.exports = function ganHoatDongChung(app, d, h) {
     rows.forEach((r) => { try { out[r.k] = JSON.parse(r.data); } catch (e) { /* bo qua */ } });
     return out;
   }
-  // Bang xep hang thi tran: diem = tong diem dep + 150 x cong trinh da xay + sao hoc ca lop tuan nay
+  /* ---------------- Diem thi tran + phan thuong ---------------- */
+  // Diem = tong diem dep + 150 x cong trinh da xay + sao hoc ca lop trong tuan
+  const diemTt = (dep, xay, sao) => dep + 150 * xay + sao;
+  // Cap thi tran (moc diem cao nhat tung dat, khong tut): moi moc ca lop nhan qua 1 lan
+  const TT_CAP = [
+    { d: 0, zh: '小村', py: 'xiǎocūn', vn: 'Làng nhỏ' },
+    { d: 500, zh: '小镇', py: 'xiǎozhèn', vn: 'Thị trấn', xu: 30 },
+    { d: 1000, zh: '大镇', py: 'dàzhèn', vn: 'Thị trấn lớn', xu: 50 },
+    { d: 2000, zh: '县城', py: 'xiànchéng', vn: 'Huyện thành', xu: 80, qua: 1 },
+    { d: 5000, zh: '城市', py: 'chéngshì', vn: 'Thành phố', xu: 150, qua: 1 },
+  ];
+  const TOP_XU = [60, 40, 25], TOP_CUP = ['cup-vang', 'cup-bac', 'cup-dong'];
+  const YEU_MEN_XU = 20, CV_TUAN_NGAY = 7;
+  const tuanTruoc = (t) => new Date(Date.parse(t + 'T00:00:00Z') - 7 * 86400000).toISOString().slice(0, 10);
+  const capTheoDiem = (diem) => { let i = 0; TT_CAP.forEach((c, j) => { if (diem >= c.d) i = j; }); return i; };
+  function capInfo(i) { const c = TT_CAP[i], sau = TT_CAP[i + 1]; return { cap: i, zh: c.zh, py: c.py, vn: c.vn, sau: sau ? { d: sau.d, zh: sau.zh, vn: sau.vn } : null }; }
+  // Ghi nhan moc cao nhat cua lop (goi moi khi tinh diem)
+  async function capNhatCap(lopId, diem) {
+    const k = 'moc:lop:' + lopId, i = capTheoDiem(diem);
+    const cu = await docC(k);
+    if (cu && cu.cap >= i) return cu.cap;
+    return khoaC(k, async () => {
+      const x = (await docC(k)) || { cap: 0 };
+      if (i > x.cap) { x.cap = i; x.t = Date.now(); await ghiC(k, x); }
+      return x.cap;
+    });
+  }
+
+  // Ket qua tuan truoc (tinh 1 lan vao luot xem dau tien cua tuan moi roi luu lai)
+  async function ketQuaTuan() {
+    const tt = tuanTruoc(d.vnWeekKey()), k = 'kq:' + tt;
+    const co = await docC(k);
+    if (co) return co;
+    return khoaC(k, async () => {
+      const lai = await docC(k);
+      if (lai) return lai;
+      const [st, cd, sao, chungDs] = await Promise.all([d.loadClassState(), h.taiCongDong(), d.loadAllStars(), docTheoDau(['ct:lop:', 'cv:'])]);
+      const coNt = {};
+      cd.forEach((x) => { coNt[x.id] = x; });
+      const saoTt = {};
+      sao.forEach((x) => { saoTt[x.userId] = x.week === tt ? x.weekStars || 0 : x.prevWeek === tt ? x.prevWeekStars || 0 : 0; });
+      const batDau = Date.parse(d.vnWeekKey() + 'T00:00:00+07:00');
+      const ds = [];
+      st.classes.forEach((c) => {
+        const ids = Object.keys(st.members).filter((u) => st.members[u].classId === c.id && coNt[u]);
+        if (!ids.length) return;
+        const dep = ids.reduce((t, id) => t + coNt[id].dep, 0), saoL = ids.reduce((t, id) => t + (saoTt[id] || 0), 0);
+        const xay = ((chungDs['ct:lop:' + c.id] || {}).xay || []).filter((x) => x.t < batDau).length;
+        const cv = chungDs['cv:' + c.id + ':' + tt];
+        // ai co hoc trong tuan (co sao) moi duoc nhan thuong cua lop
+        ds.push({ id: c.id, ten: c.name, diem: diemTt(dep, xay, saoL), sao: saoL, cv: cv ? cv.n : 0, ids: ids.filter((id) => saoTt[id] > 0) });
+      });
+      ds.sort((a, b) => b.diem - a.diem || b.sao - a.sao);
+      const top = ds.filter((x) => x.diem > 0).slice(0, 3).map((x, i) => ({ id: x.id, ten: x.ten, diem: x.diem, hang: i + 1, ids: x.ids }));
+      const ym = ds.filter((x) => x.cv > 0).sort((a, b) => b.cv - a.cv)[0];
+      const kq = { tuan: tt, top, yeuMen: ym ? { id: ym.id, ten: ym.ten, n: ym.cv, ids: ym.ids } : null };
+      await ghiC(k, kq);
+      return kq;
+    });
+  }
+  const tomKq = (kq) => ({ tuan: kq.tuan, top: kq.top.map((x) => ({ id: x.id, ten: x.ten, diem: x.diem, hang: x.hang })), yeuMen: kq.yeuMen ? { id: kq.yeuMen.id, ten: kq.yeuMen.ten, n: kq.yeuMen.n } : null });
+  // Danh hieu tuan truoc + cap cua 1 lop (de ve len thi tran)
+  async function danhHieuLop(lopId, diem) {
+    const [kq, cap] = await Promise.all([ketQuaTuan(), capNhatCap(lopId, diem)]);
+    const t = kq.top.find((x) => x.id === lopId);
+    return { cap: capInfo(cap), hangTuanTruoc: t ? t.hang : 0, yeuMen: !!(kq.yeuMen && kq.yeuMen.id === lopId) };
+  }
+
+  // Bang xep hang thi tran cac lop
   app.get('/api/farm/cacthitran', d.requireAuth, d.asyncRoute(async (req, res) => {
     const me = req.user.id;
-    const [st, cd, chungDs] = await Promise.all([d.loadClassState(), h.taiCongDong(), docTheoDau(['ct:lop:', 'cv:'])]);
+    const [st, cd, chungDs, kq] = await Promise.all([d.loadClassState(), h.taiCongDong(), docTheoDau(['ct:lop:', 'cv:', 'moc:lop:']), ketQuaTuan()]);
     const theo = {};
     cd.forEach((x) => { theo[x.id] = x; });
     const tuan = d.vnWeekKey();
@@ -621,18 +689,82 @@ module.exports = function ganHoatDongChung(app, d, h) {
       const dep = nt.reduce((t, x) => t + x.dep, 0), saoTuan = nt.reduce((t, x) => t + x.tuan, 0);
       const ct = tomCt(chungDs['ct:lop:' + c.id]);
       const cv = chungDs['cv:' + c.id + ':' + tuan];
+      const t = kq.top.find((x) => x.id === c.id);
       ds.push({
         id: c.id, ten: c.name, so: ids.length, soNt: nt.length, dep, saoTuan, xay: ct.xay, dang: ct.dang, covu: cv ? cv.n : 0,
-        diem: dep + 150 * ct.xay.length + saoTuan, la: c.id === lopEm,
+        diem: diemTt(dep, ct.xay.length, saoTuan), la: c.id === lopEm,
+        capCu: (chungDs['moc:lop:' + c.id] || {}).cap || 0,
+        hangTuanTruoc: t ? t.hang : 0, yeuMen: !!(kq.yeuMen && kq.yeuMen.id === c.id),
         nv: nt.slice().sort((a, b) => b.tuan - a.tuan).slice(0, 5).map((x) => ({ id: x.id, av: x.av })),
       });
     });
     ds.sort((a, b) => b.diem - a.diem || a.ten.localeCompare(b.ten, 'vi'));
-    ds.forEach((x, i) => { x.hang = i + 1; });
+    for (const x of ds) {
+      x.hang = ds.indexOf(x) + 1;
+      const i = capTheoDiem(x.diem);
+      if (i > x.capCu) await capNhatCap(x.id, x.diem);
+      x.cap = capInfo(Math.max(i, x.capCu));
+      delete x.capCu;
+    }
     const f = await h.doc(me);
     const ngay = d.vnDayKey();
-    res.json({ ds, conCoVu: CV_NGAY - (f.covu && f.covu.d === ngay ? f.covu.ids.length : 0), lopEm, giayHetTuan: d.secondsToVnWeekEnd() });
+    res.json({ ds, conCoVu: CV_NGAY - (f.covu && f.covu.d === ngay ? f.covu.ids.length : 0), lopEm, giayHetTuan: d.secondsToVnWeekEnd(), tuanTruoc: tomKq(kq) });
   }));
+
+  // Phan thuong thi tran cua em: top tuan, lop duoc yeu men, moc cap thi tran, co vu du 7 ngay
+  async function thuongCua(me, f) {
+    const st = await d.loadClassState();
+    const lopId = st.members[me] ? st.members[me].classId : '';
+    const kq = await ketQuaTuan();
+    const nhan = f.ttNhan || {};
+    const out = { lop: !!lopId, tuanTruoc: tomKq(kq), ds: [] };
+    const t = lopId ? kq.top.find((x) => x.id === lopId) : null;
+    if (t && t.ids.indexOf(me) >= 0) out.ds.push({ loai: 'tuan', hang: t.hang, xu: TOP_XU[t.hang - 1], mon: TOP_CUP[t.hang - 1], daNhan: nhan.tuan === kq.tuan });
+    if (lopId && kq.yeuMen && kq.yeuMen.id === lopId && kq.yeuMen.ids.indexOf(me) >= 0) out.ds.push({ loai: 'yeumen', n: kq.yeuMen.n, xu: YEU_MEN_XU, daNhan: nhan.ym === kq.tuan });
+    if (lopId) {
+      const cap = ((await docC('moc:lop:' + lopId)) || {}).cap || 0;
+      out.cap = capInfo(cap);
+      const da = (nhan.moc || {})[lopId] || 0;
+      for (let i = 1; i <= cap; i++) out.ds.push({ loai: 'moc', cap: i, zh: TT_CAP[i].zh, py: TT_CAP[i].py, vn: TT_CAP[i].vn, d: TT_CAP[i].d, xu: TT_CAP[i].xu, qua: !!TT_CAP[i].qua, daNhan: i <= da });
+    }
+    const cvt = f.cvNgay && f.cvNgay.tuan === d.vnWeekKey() ? f.cvNgay.ds.length : 0;
+    out.coVu = { ngay: cvt, can: CV_TUAN_NGAY };
+    out.conNhan = out.ds.filter((x) => !x.daNhan).length;
+    return out;
+  }
+  app.get('/api/farm/thuongtt', d.requireAuth, d.asyncRoute(async (req, res) => {
+    res.json(await thuongCua(req.user.id, await h.doc(req.user.id)));
+  }));
+  app.post('/api/farm/thuongtt/nhan', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, b = req.body || {};
+    const loai = String(b.loai || ''), cap = Math.floor(Number(b.cap));
+    await h.traLoi(res, h.lanLuot(me, async () => {
+      const f = await h.doc(me);
+      const tg = await thuongCua(me, f);
+      const x = tg.ds.find((y) => y.loai === loai && (loai !== 'moc' || y.cap === cap));
+      if (!x) throw loi('Em chưa có phần thưởng này.');
+      if (x.daNhan) throw loi('Em đã nhận phần thưởng này rồi.');
+      const st = await d.loadClassState();
+      const lopId = st.members[me].classId;
+      f.ttNhan = f.ttNhan || {};
+      const kq = { ok: true, xu: x.xu || 0 };
+      if (loai === 'tuan') { f.ttNhan.tuan = tg.tuanTruoc.tuan; f.tui[x.mon] = (f.tui[x.mon] || 0) + 1; kq.mon = x.mon; }
+      else if (loai === 'yeumen') f.ttNhan.ym = tg.tuanTruoc.tuan;
+      else {
+        // moc: nhan lan luot tung moc
+        f.ttNhan.moc = f.ttNhan.moc || {};
+        if ((f.ttNhan.moc[lopId] || 0) !== cap - 1) throw loi('Nhận mốc thấp hơn trước nhé.');
+        f.ttNhan.moc[lopId] = cap;
+        if (x.qua) kq.qua = h.moQua(f, h.lvTuXp(f.xp), true);
+      }
+      f.xu += kq.xu;
+      f.xp += 5;
+      await h.ghi(me, f);
+      kq.st = await h.trangThai(me, f);
+      return kq;
+    }));
+  }));
+
   app.post('/api/farm/covu/:lop', d.requireAuth, d.asyncRoute(async (req, res) => {
     const me = req.user.id, lopId = String(req.params.lop);
     const st = await d.loadClassState();
@@ -640,11 +772,11 @@ module.exports = function ganHoatDongChung(app, d, h) {
     if (st.members[me] && st.members[me].classId === lopId) return res.status(400).json({ error: 'Cổ vũ các lớp bạn nhé — lớp mình thì cùng xây thôi!' });
     await h.traLoi(res, h.lanLuot(me, async () => {
       const f = await h.doc(me);
-      const ngay = d.vnDayKey();
+      const ngay = d.vnDayKey(), tuan = d.vnWeekKey();
       if (!f.covu || f.covu.d !== ngay) f.covu = { d: ngay, ids: [] };
       if (f.covu.ids.indexOf(lopId) >= 0) throw loi('Hôm nay em đã cổ vũ lớp này rồi.');
       if (f.covu.ids.length >= CV_NGAY) throw loi('Mỗi ngày cổ vũ tối đa ' + CV_NGAY + ' lớp.');
-      const k = 'cv:' + lopId + ':' + d.vnWeekKey();
+      const k = 'cv:' + lopId + ':' + tuan;
       const n = await khoaC(k, async () => {
         const cv = (await docC(k)) || { n: 0 };
         cv.n++;
@@ -653,8 +785,15 @@ module.exports = function ganHoatDongChung(app, d, h) {
       });
       f.covu.ids.push(lopId);
       f.xu += 1;
+      // co vu du 7 ngay trong tuan -> hop qua bi an
+      if (!f.cvNgay || f.cvNgay.tuan !== tuan) f.cvNgay = { tuan, ds: [] };
+      let qua = null;
+      if (f.cvNgay.ds.indexOf(ngay) < 0) {
+        f.cvNgay.ds.push(ngay);
+        if (f.cvNgay.ds.length === CV_TUAN_NGAY) qua = h.moQua(f, h.lvTuXp(f.xp), false);
+      }
       await h.ghi(me, f);
-      return { ok: true, n, xu: 1, st: await h.trangThai(me, f) };
+      return { ok: true, n, xu: 1, ngay: f.cvNgay.ds.length, canNgay: CV_TUAN_NGAY, qua, st: await h.trangThai(me, f) };
     }));
   }));
 
@@ -672,5 +811,5 @@ module.exports = function ganHoatDongChung(app, d, h) {
     res.json({ pham: pv.ten, ds: ids.slice(0, 40).map((id) => ({ id, ten: ten[id], av: theo[id] ? theo[id].av : null, lv: theo[id] ? theo[id].lv : 0 })) });
   }));
 
-  return { initTable, CT, LH, ctLop, coVuLop };
+  return { initTable, CT, LH, ctLop, coVuLop, danhHieuLop };
 };

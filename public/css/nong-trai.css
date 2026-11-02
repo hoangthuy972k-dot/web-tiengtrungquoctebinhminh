@@ -494,8 +494,7 @@ body.dang-tham .nt-khung { padding-top: 140px; }
   .nt-lop { padding: 0; }
   .nt-bang { border-radius: 22px 22px 0 0; max-height: 88vh; }
 }
-/* It chuyen dong (may tat hieu ung, hoac em tu tat bang nut 🎬): moi thu dung yen nhung van hien */
-body.it-dong *, body.it-dong *::before, body.it-dong *::after { animation: none !important; transition: none !important; }
+
 
 /* dang mo bang / cau hoi: an nut noi cua widgets cho khoi de len */
 body.co-bang .hw-fab-stack, body.co-hoi .hw-fab-stack { display: none !important; }
@@ -1511,9 +1510,7 @@ span.nt-bt-tim { cursor: default; }
   .nt-dan-ten { font-size: 0.5rem; max-width: 56px; }
   .nt-quang-dan .nt-dan-nv { width: 26px; }
 }
-body.it-dong .nt-dan { left: var(--x); }
-body.it-dong .nt-tt-troi .m1 { left: 12%; } body.it-dong .nt-tt-troi .m2 { left: 58%; } body.it-dong .nt-tt-troi .m3 { left: 34%; }
-body.it-dong .nt-tt-troi .chim { left: 66%; }
+
 .nt-pho-bien { z-index: 3; }
 
 /* ---------- Thien tai 天灾 ---------- */
@@ -1625,11 +1622,7 @@ body.co-bang .nt-canh { display: none; }
   .nt-canh-may .may::after { width: 32px; height: 32px; left: 44px; top: -14px; }
   .nt-canh-buom { width: 28px; }
 }
-/* dung yen: may, chim, buom dung o cho dep; tuyet, mua, dom dom van hien */
-body.it-dong .nt-canh-chim.c1 { left: 38%; } body.it-dong .nt-canh-chim.c2 { left: 46%; } body.it-dong .nt-canh-chim.c3 { left: 70%; }
-body.it-dong .nt-canh-buom.b1 { translate: 20vw 60vh; } body.it-dong .nt-canh-buom.b2 { translate: 74vw 42vh; }
-body.it-dong .nt-tuyet-hat, body.it-dong .nt-hat-mua { top: var(--y); }
-body.it-dong .nt-vung { opacity: 0.7; }
+
 
 /* ---------- Ban dem 晚上 + dom dom 萤火虫 (theo gio Viet Nam) ---------- */
 body.nt.nt-dem { background: linear-gradient(180deg, #0f1b3d 0%, #26386e 38%, #2f4b2c 38.1%, #22381f 100%); }
@@ -1689,9 +1682,4 @@ body.o-thi-tran:not(.nt-dem) .nt-dom { display: none !important; }
 body.nt-dem .nt-troi-may .nt-canh-may .may { background: rgba(190, 200, 235, 0.22); }
 body.nt-chieu .nt-troi-may .nt-canh-may .may { background: rgba(255, 233, 209, 0.92); }
 body[data-tai="mua"] .nt-troi-may .nt-canh-may .may { background: rgba(120, 130, 150, 0.9); }
-body.it-dong .nt-troi-may .m1 { left: 6%; } body.it-dong .nt-troi-may .m2 { left: 52%; }
-body.it-dong .nt-troi-may .m3 { left: 30%; } body.it-dong .nt-troi-may .m4 { left: 74%; }
 
-/* nut bat / tat hieu ung chuyen dong */
-.nt-chip-dong { width: 42px; padding: 0; justify-content: center; font-size: 1.1rem; }
-.nt-chip-dong[aria-pressed="false"] { opacity: 0.55; }

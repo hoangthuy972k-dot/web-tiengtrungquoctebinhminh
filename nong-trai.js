@@ -846,7 +846,7 @@ module.exports = function ganNongTrai(app, d) {
     if (!mem) return null;
     const cls = st.classes.find((c) => c.id === mem.classId);
     const ids = Object.keys(st.members).filter((u) => st.members[u].classId === mem.classId);
-    return { ten: cls ? cls.name : '', ids };
+    return { id: mem.classId, ten: cls ? cls.name : '', ids };
   }
 
   // Cong dong: ai co tai khoan va da mo nong trai deu thay nhau, tham, mua ban, nhan tin duoc
@@ -1209,9 +1209,18 @@ module.exports = function ganNongTrai(app, d) {
   }));
 
   // Thi tran cua lop: moi ban 1 lo dat, ve thu nho hinh dang nong trai that (khong gui xu / kho)
+  // ?lop=<id>: xem thi tran cua lop khac (chi xem + sang tham tung nong trai; khong gui ma lop)
   app.get('/api/farm/thitran', d.requireAuth, d.asyncRoute(async (req, res) => {
-    const lop = await banCungLop(req.user.id);
-    if (!lop) return res.json({ lop: null, ds: [] });
+    const lopEm = await banCungLop(req.user.id);
+    const muon = String(req.query.lop || '');
+    let lop = lopEm;
+    if (muon && (!lopEm || lopEm.id !== muon)) {
+      const st = await d.loadClassState();
+      const cls = st.classes.find((c) => c.id === muon);
+      if (!cls) return res.status(404).json({ error: 'Không tìm thấy thị trấn này.' });
+      lop = { id: muon, ten: cls.name, ids: Object.keys(st.members).filter((u) => st.members[u].classId === muon) };
+    }
+    if (!lop) return res.json({ lop: null, ds: [], cuaEm: true });
     const [farms, ten, sao] = await Promise.all([docNhieu(lop.ids), d.loadUserNames(), d.loadAllStars()]);
     const tuanCua = {}, tongCua = {};
     sao.forEach((x) => { tuanCua[x.userId] = saoHoc(x).tuan; tongCua[x.userId] = x.total || 0; });
@@ -1224,7 +1233,8 @@ module.exports = function ganNongTrai(app, d) {
       });
       return x;
     }).sort((a, b) => (b.dep || 0) - (a.dep || 0) || (b.lv || 0) - (a.lv || 0) || a.ten.localeCompare(b.ten, 'vi'));
-    res.json({ lop: lop.ten, now: Date.now(), ds });
+    const [ct, cv] = await Promise.all([chung.ctLop(lop.id), chung.coVuLop(lop.id, req.user.id)]);
+    res.json({ lop: lop.ten, lopId: lop.id, cuaEm: !!(lopEm && lopEm.id === lop.id), now: Date.now(), ds, ct, covu: cv });
   }));
 
   /* ---- Bang "Can mua": dang nhu cau, ban cho ban dang can ---- */

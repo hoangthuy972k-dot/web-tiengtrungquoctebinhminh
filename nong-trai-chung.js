@@ -571,6 +571,93 @@ module.exports = function ganHoatDongChung(app, d, h) {
     }));
   }));
 
+  /* ---------------- Thi tran cac lop ---------------- */
+  // Cong trinh cua 1 lop de ve tren quang truong (khong xoay cong trinh moi khi chi xem)
+  function tomCt(s) {
+    if (!s) return { xay: [], dang: null };
+    const xay = (s.xay || []).map((x) => { const m = CT.find((c) => c.k === x.k) || {}; return { k: x.k, zh: m.zh, vn: m.vn }; });
+    let dang = null;
+    if (s.ct && !s.ct.xong) {
+      const m = CT[s.ct.i];
+      let tong = 0, du = 0;
+      Object.keys(s.ct.can).forEach((k) => { tong += s.ct.can[k]; du += Math.min(s.ct.can[k], s.ct.co[k] || 0); });
+      dang = { k: m.k, zh: m.zh, vn: m.vn, pct: tong ? Math.round(du / tong * 100) : 0 };
+    }
+    return { xay, dang };
+  }
+  async function ctLop(lopId) { return tomCt(await docC('ct:lop:' + lopId)); }
+  // Co vu lop khac: moi ban co vu toi da CV_NGAY lop / ngay (moi lop 1 lan), +1 xu; dem theo tuan
+  const CV_NGAY = 3;
+  async function coVuLop(lopId, me) {
+    const [cv, f] = await Promise.all([docC('cv:' + lopId + ':' + d.vnWeekKey()), h.doc(me)]);
+    const ngay = d.vnDayKey(), da = f.covu && f.covu.d === ngay ? f.covu.ids : [];
+    return { n: cv ? cv.n : 0, daCoVu: da.indexOf(lopId) >= 0, con: CV_NGAY - da.length };
+  }
+  // Doc nhieu khoa farm_chung theo tien to (1 truy van)
+  async function docTheoDau(dau) {
+    const out = {};
+    if (!d.USE_DB) {
+      const all = d.readJsonFile(FILE) || {};
+      Object.keys(all).forEach((k) => { if (dau.some((p) => k.indexOf(p) === 0)) out[k] = all[k]; });
+      return out;
+    }
+    const [rows] = await d.db().query('SELECT k, data FROM farm_chung WHERE ' + dau.map(() => 'k LIKE ?').join(' OR '), dau.map((p) => p + '%'));
+    rows.forEach((r) => { try { out[r.k] = JSON.parse(r.data); } catch (e) { /* bo qua */ } });
+    return out;
+  }
+  // Bang xep hang thi tran: diem = tong diem dep + 150 x cong trinh da xay + sao hoc ca lop tuan nay
+  app.get('/api/farm/cacthitran', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id;
+    const [st, cd, chungDs] = await Promise.all([d.loadClassState(), h.taiCongDong(), docTheoDau(['ct:lop:', 'cv:'])]);
+    const theo = {};
+    cd.forEach((x) => { theo[x.id] = x; });
+    const tuan = d.vnWeekKey();
+    const lopEm = st.members[me] ? st.members[me].classId : '';
+    const ds = [];
+    st.classes.forEach((c) => {
+      const ids = Object.keys(st.members).filter((u) => st.members[u].classId === c.id);
+      const nt = ids.filter((id) => theo[id]).map((id) => theo[id]);
+      if (!nt.length) return;
+      const dep = nt.reduce((t, x) => t + x.dep, 0), saoTuan = nt.reduce((t, x) => t + x.tuan, 0);
+      const ct = tomCt(chungDs['ct:lop:' + c.id]);
+      const cv = chungDs['cv:' + c.id + ':' + tuan];
+      ds.push({
+        id: c.id, ten: c.name, so: ids.length, soNt: nt.length, dep, saoTuan, xay: ct.xay, dang: ct.dang, covu: cv ? cv.n : 0,
+        diem: dep + 150 * ct.xay.length + saoTuan, la: c.id === lopEm,
+        nv: nt.slice().sort((a, b) => b.tuan - a.tuan).slice(0, 5).map((x) => ({ id: x.id, av: x.av })),
+      });
+    });
+    ds.sort((a, b) => b.diem - a.diem || a.ten.localeCompare(b.ten, 'vi'));
+    ds.forEach((x, i) => { x.hang = i + 1; });
+    const f = await h.doc(me);
+    const ngay = d.vnDayKey();
+    res.json({ ds, conCoVu: CV_NGAY - (f.covu && f.covu.d === ngay ? f.covu.ids.length : 0), lopEm, giayHetTuan: d.secondsToVnWeekEnd() });
+  }));
+  app.post('/api/farm/covu/:lop', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, lopId = String(req.params.lop);
+    const st = await d.loadClassState();
+    if (!st.classes.some((c) => c.id === lopId)) return res.status(404).json({ error: 'Không tìm thấy lớp này.' });
+    if (st.members[me] && st.members[me].classId === lopId) return res.status(400).json({ error: 'Cổ vũ các lớp bạn nhé — lớp mình thì cùng xây thôi!' });
+    await h.traLoi(res, h.lanLuot(me, async () => {
+      const f = await h.doc(me);
+      const ngay = d.vnDayKey();
+      if (!f.covu || f.covu.d !== ngay) f.covu = { d: ngay, ids: [] };
+      if (f.covu.ids.indexOf(lopId) >= 0) throw loi('Hôm nay em đã cổ vũ lớp này rồi.');
+      if (f.covu.ids.length >= CV_NGAY) throw loi('Mỗi ngày cổ vũ tối đa ' + CV_NGAY + ' lớp.');
+      const k = 'cv:' + lopId + ':' + d.vnWeekKey();
+      const n = await khoaC(k, async () => {
+        const cv = (await docC(k)) || { n: 0 };
+        cv.n++;
+        await ghiC(k, cv);
+        return cv.n;
+      });
+      f.covu.ids.push(lopId);
+      f.xu += 1;
+      await h.ghi(me, f);
+      return { ok: true, n, xu: 1, st: await h.trangThai(me, f) };
+    }));
+  }));
+
   // Danh sach ban de chon (moi thach dau / ban hoc): ban cung lop, chua co lop thi cong dong
   app.get('/api/farm/chung/ban', d.requireAuth, d.asyncRoute(async (req, res) => {
     const me = req.user.id;
@@ -585,5 +672,5 @@ module.exports = function ganHoatDongChung(app, d, h) {
     res.json({ pham: pv.ten, ds: ids.slice(0, 40).map((id) => ({ id, ten: ten[id], av: theo[id] ? theo[id].av : null, lv: theo[id] ? theo[id].lv : 0 })) });
   }));
 
-  return { initTable, CT, LH };
+  return { initTable, CT, LH, ctLop, coVuLop };
 };

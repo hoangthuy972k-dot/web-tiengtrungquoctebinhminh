@@ -10099,3 +10099,13 @@ html.ho-tro-toi[data-theme="dark"] .cando-line { border-color: #6a5440; }
 .sao-nut .btn { flex: 1 1 180px; justify-content: center; }
 #saoHoi + #statsOpen { margin-top: 0; }
 html:has(.modal-overlay.is-open) .hw-fab-stack { display: none; }
+
+/* The "Hoc tiep": dong sao hom nay / muc tieu */
+.resume-sao { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; margin: 0 0 var(--space-3); font-size: 0.86rem; color: rgba(255, 255, 255, 0.92); }
+.resume-sao[hidden] { display: none; }
+.resume-sao-t { display: inline-flex; align-items: center; gap: 6px; }
+.resume-sao-t .ui-ico { width: 16px; height: 16px; }
+.resume-sao-t b { color: #fff; font-variant-numeric: tabular-nums; }
+.resume-sao-bar { flex: 1 1 100px; max-width: 200px; height: 6px; border-radius: var(--radius-pill); background: rgba(var(--rgbn-255-255-255), 0.25); overflow: hidden; }
+.resume-sao-bar span { display: block; height: 100%; border-radius: inherit; background: var(--color-gold-400); }
+.assign-head h2 { display: flex; align-items: center; gap: 8px; } .assign-head h2 .ui-ico { width: 24px; height: 24px; flex: none; color: var(--fg-red-600); }

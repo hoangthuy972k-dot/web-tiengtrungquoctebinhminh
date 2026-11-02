@@ -599,3 +599,9 @@ body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4
 .py-goi-y{margin:8px 0 0;font-size:0.84rem;color:var(--mid);line-height:1.45;}
 @media (prefers-reduced-motion:reduce){body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py){transition:none;}}
 .py-hien-het{margin-left:4px;padding:0;border:0;background:none;font:inherit;font-weight:700;color:var(--sky-d);text-decoration:underline;text-underline-offset:2px;cursor:pointer;}
+/* Dien thoai: "← Trang chu" va nhan cap/bai chung mot hang (bot ~40px dau trang) */
+@media (max-width:640px){
+  .back-link{font-size:0;margin:0 10px 6px 0;vertical-align:middle;}
+  .back-link::before{content:'← Trang chủ';font-size:.85rem;}
+  .header-badge{vertical-align:middle;margin-bottom:6px;}
+}

@@ -1067,6 +1067,7 @@
           '<span>' + done + '/' + lps.length + ' bước</span>' +
         '</div>' +
         '<p class="dash-cta-sub">' + next + '</p>' +
+        '<div class="resume-sao" id="resumeSao" hidden></div>' +
         '<div class="resume-actions">' +
           '<button type="button" class="btn btn-white" data-resume="go">' + (target.finished ? 'Ôn lại bài ' + l.number : 'Học tiếp') + uiIcon('arrow') + '</button>' +
           (srs.total >= 4 ? '<button type="button" class="btn btn-outline-white" data-resume="review">' + (srs.due ? 'Ôn ' + Math.min(srs.due, 15) + ' từ hôm nay' : 'Ôn nhanh 10 từ') + '</button>' : '') +
@@ -1076,10 +1077,29 @@
     box.querySelector('[data-resume="go"]').addEventListener('click', function () { runTask('learn'); });
     var on = box.querySelector('[data-resume="review"]');
     if (on) on.addEventListener('click', function () { runTask('review'); });
+    veResumeSao();
     box.querySelector('[data-resume="levels"]').addEventListener('click', function () {
       practiceLevel = target.levelId;
       selectLevel(target.levelId);
     });
+  }
+
+  // Muc tieu sao moi ngay tren the "Hoc tiep" (so sao lay tu su kien hw:stars cua widgets.js)
+  var SAO_MUC_TIEU = 30, saoHomNay = null;
+  window.addEventListener('hw:stars', function (e) {
+    var d = e.detail || {};
+    saoHomNay = d.loggedIn && d.ready ? (Number(d.today) || 0) : null;
+    veResumeSao();
+  });
+  function veResumeSao() {
+    var el = document.getElementById('resumeSao');
+    if (!el) return;
+    if (saoHomNay == null) { el.hidden = true; return; }
+    var pct = Math.min(100, Math.round(saoHomNay / SAO_MUC_TIEU * 100));
+    el.hidden = false;
+    el.innerHTML = '<span class="resume-sao-t">' + uiIcon('final') + '<span>Sao hôm nay: <b>' + saoHomNay + '/' + SAO_MUC_TIEU + '</b>' +
+      (saoHomNay >= SAO_MUC_TIEU ? ' · đạt mục tiêu!' : ' · còn ' + (SAO_MUC_TIEU - saoHomNay) + ' sao') + '</span></span>' +
+      '<span class="resume-sao-bar"><span style="width:' + pct + '%"></span></span>';
   }
 
   // Nut nen sang / toi tren thanh tren. Mac dinh nen sang; bam de doi va luu lua
@@ -3196,10 +3216,13 @@
     var khac = nhom.reduce(function (n, g) { return n + g.length; }, 0) + cu.length;
     // Tu vung lap phan con lai (it nhat 6, toi da 16 tu), nua Trung -> Viet, nua Viet -> Trung
     var soTu = Math.min(vocab.length, 16, Math.max(6, FQ_TOI_DA - goTay.length - khac));
+    // Pinyin giam dan: kiem tra cuoi bai chi cho xem pinyin o 5 bai dau HSK1/YCT — cac bai sau doc mat chu, tra loi xong moi hien
+    var lv = currentHubLevelId, ls = currentHubLesson;
+    var anPy = !(/^(hsk1|hsk1v3|yct)$/.test(lv || '') && ls && Number(ls.number) <= 5);
     var tv = shuffle(vocab).slice(0, soTu).map(function (v, i) {
       var opts = shuffle([v].concat(shuffle(vocab.filter(function (x) { return x !== v; })).slice(0, 3)));
       return i % 2 === 0
-        ? { kind: 'Từ vựng', prompt: '<div class="fq-zh hanzi">' + v.zh + '</div><div class="fq-py">' + v.py + '</div>', speak: v.zh,
+        ? { kind: 'Từ vựng', prompt: '<div class="fq-zh hanzi">' + v.zh + '</div><div class="fq-py' + (anPy ? ' fq-py-an" hidden' : '"') + '>' + v.py + '</div>', speak: v.zh,
             opts: opts.map(function (o) { return o.vn; }), ans: opts.indexOf(v), zhOpts: false,
             qText: v.zh + (v.py ? ' (' + v.py + ')' : ''), vocab: v }
         : { kind: 'Từ vựng', prompt: '<div class="fq-q">Chọn chữ Hán có nghĩa: <b>' + v.vn + '</b></div>',
@@ -3390,6 +3413,7 @@
     pgbRecord('fq', st.pos, ok);
     if (opts.tuCham) window.hwStarAnswer = giuSao;
     st.log.push({ n: st.pos + 1, it: it, ok: ok, given: given == null ? '' : String(given) });
+    $all('#fqContent .fq-py-an').forEach(function (e) { e.hidden = false; });
     if (!ok && it.vocab) fqTuSai(st, it.vocab, it.lessonCu);
     // Cau on bai cu dung -> tin hieu "nho" cho tu do (sai da xu ly o fqTuSai)
     if (ok && it.lessonCu && it.vocab) srsSignal(it.vocab.zh, true);
@@ -18126,7 +18150,7 @@
       return;
     }
     if (!assignState.class) {
-      box.innerHTML = '<div class="assign-head"><div><h2>🏫 Em học lớp của thầy cô?</h2>' +
+      box.innerHTML = '<div class="assign-head"><div><h2>' + uiIcon('teacher') + 'Em học lớp của thầy cô?</h2>' +
         '<p>Nhập mã lớp thầy cô đưa để nhận bài tập được giao và hạn nộp.</p></div></div>' + joinFormHtml(false);
       bindJoin(box);
       return;

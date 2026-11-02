@@ -922,7 +922,7 @@
     }
     try {
       window.dispatchEvent(new CustomEvent('hw:stars', { detail: {
-        loggedIn: !!auth(), ready: star.ready, total: star.total, secToNext: star.secToNext, blockSec: star.blockSec,
+        loggedIn: !!auth(), ready: star.ready, total: star.total, today: star.today || 0, secToNext: star.secToNext, blockSec: star.blockSec,
         perBlock: star.perBlock, capped: star.capped, todayMin: dayMinutes(), goalMin: DAY_GOAL_MIN,
         tasksDone: star.tasksDone, tasksStars: star.tasksStars,
       } }));
@@ -930,6 +930,7 @@
   }
   function applyStar(d, kind) {
     star.total = d.total || 0;
+    star.today = d.today || 0;
     star.secToNext = typeof d.secToNext === 'number' ? d.secToNext : star.blockSec;
     star.blockSec = d.blockSec || 300;
     star.perBlock = d.perBlock || 5;

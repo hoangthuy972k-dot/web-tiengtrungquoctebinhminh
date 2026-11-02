@@ -1663,6 +1663,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var ic=dau&&svgTab(sec.id);
     if(ic){ ic.setAttribute('class','sec-ico'); t.insertBefore(ic,t.firstChild); }
   });
+  document.querySelectorAll('.sec-sub').forEach(boEmoji);
   var CHIP={'📚':'vocab','💬':'dialog','📖':'dialog','📐':'grammar'};
   document.querySelectorAll('.header-meta .h-chip, .lesson-tab').forEach(function(c){
     var r=boEmoji(c); if(!r||!r.emo) return;

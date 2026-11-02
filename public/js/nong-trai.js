@@ -1128,6 +1128,32 @@
 
   // --- Thu thach chu Han: 10 cau, dung tu 8 cau -> hop qua bi an (may chu cham + trao qua) ---
 
+  /* ---------------- Canh vat bay luon: may, chim, buom (nong trai + thi tran) ---------------- */
+  var MAU_BUOM = [['#ff8fb1', '#ffd1df'], ['#ffc83d', '#fff0b3'], ['#8fd3f7', '#dff4ff'], ['#b98cff', '#eadcff'], ['#ff9f43', '#ffe0bf']];
+  function svgBuom(m) {
+    return '<svg viewBox="0 0 40 32" aria-hidden="true"><g class="nt-buom-canh trai"><path d="M20 16C14 2 2 2 4 12c1 5 8 6 16 4z" fill="' + m[0] + '"/><path d="M20 17C13 18 6 24 10 29c4 3 9-4 10-12z" fill="' + m[1] + '"/></g>' +
+      '<g class="nt-buom-canh phai"><path d="M20 16C26 2 38 2 36 12c-1 5-8 6-16 4z" fill="' + m[0] + '"/><path d="M20 17c7 1 14 7 10 12-4 3-9-4-10-12z" fill="' + m[1] + '"/></g>' +
+      '<g stroke="#2b1d3a" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M20 9v17"/><path d="M20 9l-3-5M20 9l3-5"/></g></svg>';
+  }
+  function svgChim() {
+    return '<svg viewBox="0 0 40 24" aria-hidden="true"><g fill="none" stroke="#2b1d3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path class="nt-chim-canh" d="M3 9q8-8 17 3q9-11 17-3"/></g><circle cx="20" cy="13" r="2.6" fill="#2b1d3a"/></svg>';
+  }
+  function veCanh() {
+    if ($('#ntCanh')) return;
+    var c = document.createElement('div');
+    c.id = 'ntCanh'; c.className = 'nt-canh'; c.setAttribute('aria-hidden', 'true');
+    var h = '';
+    // may bay qua lai: 2 chieu, kem bong may luot tren ruong
+    [['m1', ''], ['m2', ' nguoc'], ['m3', ''], ['m4', ' nguoc']].forEach(function (x) {
+      h += '<div class="nt-canh-may ' + x[0] + x[1] + '"><i class="may"></i><i class="bong"></i></div>';
+    });
+    for (var i = 0; i < 3; i++) h += '<div class="nt-canh-chim c' + (i + 1) + '">' + svgChim() + '</div>';
+    for (var j = 0; j < 5; j++) h += '<div class="nt-canh-buom b' + (j + 1) + '">' + svgBuom(MAU_BUOM[j]) + '</div>';
+    c.innerHTML = h;
+    document.body.appendChild(c);
+  }
+
   /* ---------------- Thien tai 天灾 ---------------- */
   var TAI_IC = { gh: '☀️', sau: '🐛', mua: '🌧️', ret: '❄️' };
   var TAI_VIEC_IC = { gh: '🪣', sau: '🐛', mua: '⛏️', ret: '🪵' };
@@ -1140,11 +1166,16 @@
     if (!lop) { lop = document.createElement('div'); lop.id = 'ntTaiLop'; lop.className = 'nt-tai-lop'; lop.setAttribute('aria-hidden', 'true'); document.body.appendChild(lop); }
     lop.className = 'nt-tai-lop' + (t ? ' tai-' + t.k : '');
     var kieu = t ? t.k : '';
+    document.body.setAttribute('data-tai', kieu);
     if (lop.getAttribute('data-k') !== kieu) {
       lop.setAttribute('data-k', kieu);
       var h = '';
       if (kieu === 'sau') for (var i = 0; i < 9; i++) h += '<i class="nt-sau" style="left:' + (6 + (i * 37) % 86) + '%;top:' + (12 + (i * 53) % 74) + '%;animation-delay:-' + (i * 0.7) + 's"></i>';
       if (kieu === 'gh') h = '<i class="nt-mat-troi"></i>';
+      if (kieu === 'ret') for (var s = 0; s < 46; s++) {
+        var to = 4 + (s * 7) % 9;
+        h += '<i class="nt-tuyet-hat' + (s % 6 === 0 ? ' bong-tuyet' : '') + '" style="left:' + ((s * 23) % 100) + '%;width:' + to + 'px;height:' + to + 'px;--lac:' + (12 + (s * 5) % 26) + 'px;animation-duration:' + (7 + (s * 3) % 8) + 's,' + (2.4 + (s % 4) * 0.6) + 's;animation-delay:-' + ((s * 1.3) % 12).toFixed(1) + 's,-' + (s % 3) + 's">' + (s % 6 === 0 ? '❄' : '') + '</i>';
+      }
       lop.innerHTML = h;
     }
     var nut = $('#ntTai');
@@ -3739,6 +3770,7 @@
       nhip();
       setTimeout(baoHang, 2500);
       taiChuHan().catch(function () { /* lan sau */ });
+      veCanh();
       taiCN();
       taiThuongTt().catch(function () { /* lan sau */ });
       if (r.quaHomNay) setTimeout(quaDiemDanh, 500);

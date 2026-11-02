@@ -1548,7 +1548,7 @@ body.o-thi-tran .nt-tai-lop, body.co-bang .nt-tai-lop { display: none !important
 .nt-tai-lop.tai-mua { background: repeating-linear-gradient(105deg, transparent 0 18px, rgba(220, 240, 255, 0.55) 18px 20px, transparent 20px 46px), rgba(40, 60, 90, 0.22); background-size: 100% 200px; animation: nt-mua 0.45s linear infinite; }
 @keyframes nt-mua { from { background-position: 0 0; } to { background-position: -40px 200px; } }
 .nt-khung.tai-mua .nt-dat { filter: saturate(0.8) brightness(0.9) hue-rotate(-8deg); }
-.nt-tai-lop.tai-ret { background-image: radial-gradient(circle, #fff 2.5px, transparent 3.5px), radial-gradient(circle, rgba(255, 255, 255, 0.85) 1.5px, transparent 2.5px); background-size: 80px 80px, 50px 50px; background-color: rgba(170, 210, 255, 0.18); animation: nt-tuyet 6s linear infinite; }
+.nt-tai-lop.tai-ret { background: linear-gradient(180deg, rgba(170, 210, 255, 0.32), rgba(220, 238, 255, 0.12)); overflow: hidden; }
 @keyframes nt-tuyet { from { background-position: 0 0, 20px 10px; } to { background-position: 30px 160px, 0 110px; } }
 .nt-khung.tai-ret .nt-dat { filter: saturate(0.7) brightness(1.05) hue-rotate(10deg); }
 .nt-sau { position: absolute; width: 22px; height: 14px; border-radius: 10px; background: #7cb342; border: 2px solid var(--vien); animation: nt-bo 2.4s ease-in-out infinite; }
@@ -1570,3 +1570,64 @@ body.o-thi-tran .nt-tai-lop, body.co-bang .nt-tai-lop { display: none !important
 .nt-tai-o span.xong { opacity: 1; filter: none; border-style: solid; border-color: var(--xanh-dam); background: #e8f8df; }
 .nt-tai-qua { font-size: 3rem; }
 @media (prefers-reduced-motion: reduce) { .nt-tai-thanh, .nt-mat-troi, .nt-tai-lop, .nt-sau { animation: none !important; } }
+
+/* ---------- Tuyet roi that (ret dam) ---------- */
+.nt-tuyet-hat { position: absolute; top: -20px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #fff; box-shadow: 0 0 6px rgba(255, 255, 255, 0.9); opacity: 0.95; font-style: normal; color: #fff; line-height: 1;
+  animation-name: nt-tuyet-roi, nt-tuyet-lac; animation-timing-function: linear, ease-in-out; animation-iteration-count: infinite; animation-direction: normal, alternate; }
+.nt-tuyet-hat.bong-tuyet { width: auto !important; height: auto !important; background: none; box-shadow: none; font-size: 22px; text-shadow: 0 0 6px rgba(120, 170, 230, 0.9); }
+@keyframes nt-tuyet-roi { from { top: -24px; } to { top: 104%; } }
+@keyframes nt-tuyet-lac { from { translate: calc(var(--lac) * -1) 0; rotate: -20deg; } to { translate: var(--lac) 0; rotate: 20deg; } }
+
+/* ---------- Canh vat bay luon: may, chim, buom ---------- */
+.nt-canh { position: fixed; inset: 0; z-index: 39; pointer-events: none; overflow: hidden; }
+body.o-thi-tran .nt-canh { z-index: 49; }
+body.o-thi-tran .nt-canh-may { display: none; } /* thi tran da co may rieng tren bau troi */
+.nt-canh-may { position: absolute; left: -220px; animation: nt-may-qua 75s linear infinite; }
+.nt-canh-may.nguoc { animation-name: nt-may-ve; }
+.nt-canh-may .may { position: relative; display: block; width: 130px; height: 40px; border-radius: 40px; background: rgba(255, 255, 255, 0.7); }
+.nt-canh-may .may::before, .nt-canh-may .may::after { content: ''; position: absolute; border-radius: 50%; background: inherit; }
+.nt-canh-may .may::before { width: 60px; height: 60px; left: 18px; top: -30px; }
+.nt-canh-may .may::after { width: 46px; height: 46px; left: 64px; top: -20px; }
+.nt-canh-may .bong { position: absolute; left: 40px; top: 150px; width: 150px; height: 50px; border-radius: 50%; background: rgba(43, 29, 58, 0.09); filter: blur(6px); }
+.nt-canh-may.m1 { top: 12%; }
+.nt-canh-may.m2 { top: 34%; transform: scale(0.75); animation-duration: 95s; animation-delay: -40s; }
+.nt-canh-may.m3 { top: 56%; transform: scale(0.9); animation-duration: 110s; animation-delay: -70s; }
+.nt-canh-may.m4 { top: 74%; transform: scale(0.65); animation-duration: 85s; animation-delay: -15s; }
+@keyframes nt-may-qua { from { left: -220px; } to { left: 100%; } }
+@keyframes nt-may-ve { from { left: 100%; } to { left: -220px; } }
+.nt-canh-chim { position: absolute; width: 34px; left: 105%; animation: nt-chim-qua 24s linear infinite; }
+.nt-canh-chim.c1 { top: 16%; }
+.nt-canh-chim.c2 { top: 21%; width: 26px; animation-delay: -1.2s; }
+.nt-canh-chim.c3 { top: 46%; width: 30px; animation-duration: 31s; animation-delay: -14s; }
+.nt-chim-canh { transform-box: fill-box; transform-origin: 50% 80%; animation: nt-vo-canh 0.36s ease-in-out infinite alternate; }
+@keyframes nt-vo-canh { from { transform: scaleY(1); } to { transform: scaleY(-0.55); } }
+@keyframes nt-chim-qua { 0% { left: 105%; translate: 0 0; } 18% { translate: 0 -18px; } 36% { translate: 0 10px; } 55% { left: -12%; translate: 0 -8px; } 100% { left: -12%; } }
+.nt-canh-buom { position: absolute; left: 0; top: 0; width: 34px; animation: nt-buom-1 28s ease-in-out infinite; }
+.nt-canh-buom svg { display: block; width: 100%; height: auto; }
+.nt-buom-canh { transform-box: view-box; transform-origin: 50% 50%; animation: nt-dap-canh 0.22s ease-in-out infinite alternate; }
+@keyframes nt-dap-canh { from { transform: scaleX(1); } to { transform: scaleX(0.25); } }
+.nt-canh-buom.b2 { width: 24px; animation-name: nt-buom-2; animation-duration: 34s; animation-delay: -9s; }
+.nt-canh-buom.b3 { width: 26px; animation-name: nt-buom-3; animation-duration: 30s; animation-delay: -17s; }
+.nt-canh-buom.b4 { width: 22px; animation-name: nt-buom-1; animation-duration: 38s; animation-delay: -24s; animation-direction: reverse; }
+.nt-canh-buom.b5 { width: 28px; animation-name: nt-buom-2; animation-duration: 26s; animation-delay: -4s; animation-direction: reverse; }
+@keyframes nt-buom-1 { 0% { translate: 8vw 72vh; rotate: 10deg; } 15% { translate: 22vw 58vh; rotate: -12deg; } 30% { translate: 38vw 66vh; rotate: 8deg; } 45% { translate: 52vw 48vh; rotate: -6deg; } 60% { translate: 70vw 56vh; rotate: 14deg; } 75% { translate: 58vw 38vh; rotate: -10deg; } 90% { translate: 30vw 44vh; rotate: 6deg; } 100% { translate: 8vw 72vh; rotate: 10deg; } }
+@keyframes nt-buom-2 { 0% { translate: 88vw 30vh; rotate: -8deg; } 20% { translate: 72vw 44vh; rotate: 12deg; } 40% { translate: 60vw 28vh; rotate: -10deg; } 60% { translate: 44vw 40vh; rotate: 8deg; } 80% { translate: 66vw 62vh; rotate: -14deg; } 100% { translate: 88vw 30vh; rotate: -8deg; } }
+@keyframes nt-buom-3 { 0% { translate: 40vw 80vh; rotate: 6deg; } 25% { translate: 18vw 66vh; rotate: -12deg; } 50% { translate: 30vw 50vh; rotate: 10deg; } 75% { translate: 54vw 70vh; rotate: -6deg; } 100% { translate: 40vw 80vh; rotate: 6deg; } }
+/* thoi tiet xau: buom, chim tron di; mua / ret thi may xam lai */
+body[data-tai="mua"] .nt-canh-buom, body[data-tai="mua"] .nt-canh-chim, body[data-tai="ret"] .nt-canh-buom, body[data-tai="ret"] .nt-canh-chim { display: none; }
+body[data-tai="mua"] .nt-canh-may .may { background: rgba(120, 130, 150, 0.85); }
+body[data-tai="gh"] .nt-canh-may { display: none; }
+body.o-thi-tran[data-tai] .nt-canh-buom, body.o-thi-tran[data-tai] .nt-canh-chim { display: block; } /* thi tran khong bi thien tai cua rieng nong trai */
+body.co-bang .nt-canh { display: none; }
+/* thi tran: may bay ca hai chieu */
+.nt-tt-troi .m2 { animation-direction: reverse; }
+@media (max-width: 640px) {
+  .nt-canh-may .may { width: 90px; height: 28px; }
+  .nt-canh-may .may::before { width: 42px; height: 42px; left: 12px; top: -21px; }
+  .nt-canh-may .may::after { width: 32px; height: 32px; left: 44px; top: -14px; }
+  .nt-canh-buom { width: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nt-canh { display: none; }
+  .nt-tuyet-hat { animation: none; top: calc(var(--lac) * 2); }
+}

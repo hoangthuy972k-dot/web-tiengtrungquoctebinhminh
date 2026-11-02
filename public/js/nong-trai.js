@@ -228,7 +228,7 @@
     dat.style.height = d.kich.h * T + 'px';
     var html = '';
     // o dang dat do: o luoi + bong mo
-    if (S.che === 'dat' || S.che === 'sx') html += '<div class="nt-luoi"></div>';
+    if (S.che === 'dat') html += '<div class="nt-luoi"></div>';
     d.o.slice().sort(function (a, b) { return (a.y + rong(a)) - (b.y + rong(b)) || a.x - b.x; }).forEach(function (o) {
       html += htmlVat(o);
     });
@@ -401,7 +401,7 @@
   function rongMon(k) { var t = S.cat.TT[k]; return (t && t.w) || 1; }
 
   function bamBanDo(e) {
-    if (keo.daKeo) return;
+    if (keo.daKeo || vuaThaVat) return;
     var vatEl = e.target.closest('.nt-vat');
     if (S.tham) {
       if (vatEl) { var ov = timVat(vatEl); if (ov && !giupBan(ov, vatEl)) gioiThieu(ov, vatEl); }
@@ -423,23 +423,6 @@
         if (!lienTiep && !conTui) thoatDat();
         else veBanDo();
       }, function () {});
-      return;
-    }
-    if (S.che === 'sx') {
-      if (vatEl) {
-        var id = +vatEl.getAttribute('data-id');
-        S.chon = S.chon === id ? null : id;
-        veBanDo();
-        veThanhSx();
-        return;
-      }
-      if (S.chon != null) {
-        var vat = S.st.o.filter(function (o) { return o.id === S.chon; })[0];
-        var q = oTuSuKien(e), rw = rong(vat);
-        var nx = Math.min(q.x, S.st.kich.w - rw), ny = Math.min(q.y, S.st.kich.h - rw);
-        if (!datDuoc(nx, ny, rw, vat.id)) { bao('Chỗ này đã có đồ rồi.', 'loi'); tieng('sai'); return; }
-        lam({ a: 'doi', id: vat.id, x: nx, y: ny }).then(function () { tieng('mua'); veThanhSx(); }, function () {});
-      }
       return;
     }
     if (!vatEl) { dongNoi(); return; }
@@ -546,7 +529,8 @@
   function moNoiCon(o, el) {
     var con = S.cat.CON[o.k], sp = S.cat.SP[con.sp];
     var html = '<div class="nt-noi-dau">' + img(o.k) + htmlTen(con) + '</div>' +
-      '<p class="nt-noi-gio">' + img('sp-' + con.sp) + ' ' + esc(sp.vn) + ' <span lang="zh">' + esc(sp.zh) + '</span> sau <b data-con></b></p>';
+      '<p class="nt-noi-gio">' + img('sp-' + con.sp) + ' ' + esc(sp.vn) + ' <span lang="zh">' + esc(sp.zh) + '</span> sau <b data-con></b></p>' +
+      '<p class="nt-noi-phu">Nhấn giữ rồi kéo để dời chỗ</p>';
     moNoi(el, html, o.id);
     doc(con.zh);
     noiCua.capNhat = function () {
@@ -577,8 +561,14 @@
     if (!o) return;
     var t = trangThai(o);
     var m = o.k === 'o' && o.c ? S.cat.CAY[o.c] : tenMon(o.k, o.n);
+    var catDuoc = !S.tham && S.cat.TT[o.k];
     moNoi(el, '<div class="nt-noi-dau">' + img(t.hinh) + htmlTen(m) + '</div>' +
-      (S.cat.TT[o.k] ? '<p class="nt-noi-phu">Điểm đẹp +' + S.cat.TT[o.k].dep + '</p>' : ''), o.id);
+      (S.cat.TT[o.k] ? '<p class="nt-noi-phu">Điểm đẹp +' + S.cat.TT[o.k].dep + '</p>' : '') +
+      (catDuoc ? '<p class="nt-noi-phu">Nhấn giữ rồi kéo để dời chỗ · <button type="button" class="nt-link" data-cat-tui>Cất vào túi</button></p>' : ''), o.id);
+    var nutCat = $('#ntNoi [data-cat-tui]');
+    if (nutCat) nutCat.addEventListener('click', function () {
+      lam({ a: 'cat', id: o.id }).then(function () { dongNoi(); bao('Đã cất ' + m.vn + ' vào túi đồ (trong Kho).'); }, function () {});
+    });
     doc(m.zh);
   }
   function timTheoId(id) { return S.st.o.filter(function (o) { return o.id === id; })[0]; }
@@ -653,31 +643,68 @@
   function thoatDat() {
     S.che = 'xem'; S.dat = null; S.chon = null;
     $('#ntThanhDat').hidden = true;
-    document.body.classList.remove('dang-dat', 'dang-sx');
-    $('#ntSapXep').classList.remove('bat');
+    document.body.classList.remove('dang-dat');
     veBanDo();
   }
-  function batSapXep() {
-    if (S.che === 'sx') return thoatDat();
+  /* ---------------- keo tha do vat ngay tren nong trai ----------------
+     Chuot: nhan giu vao mon roi keo. Dien thoai: giu 0,35 giay (rung nhe) roi keo; vuot nhanh van la cuon ban do.
+     Tha ra o trong thi doi cho (may chu kiem tra lai), cho da co do thi tra ve cho cu. */
+  var kv = null, vuaThaVat = false;
+  function batDauKeoVat(e) {
+    if (S.tham || S.che !== 'xem' || !S.st) return false;
+    var el = e.target.closest && e.target.closest('.nt-vat');
+    if (!el || !$('#ntDat').contains(el)) return false;
+    var o = timVat(el);
+    if (!o) return false;
+    kv = { o: o, el: el, x0: e.clientX, y0: e.clientY, dang: false, chuot: e.pointerType === 'mouse', nx: o.x, ny: o.y, ok: true };
+    if (!kv.chuot) kv.hen = setTimeout(function () { if (kv && !kv.dang) moKeoVat(); }, 350);
+    return true;
+  }
+  function moKeoVat() {
+    kv.dang = true;
     dongNoi();
-    S.che = 'sx'; S.chon = null;
-    document.body.classList.add('dang-sx');
-    $('#ntSapXep').classList.add('bat');
-    $('#ntThanhDat').hidden = false;
-    veThanhSx();
-    veBanDo();
+    kv.el.classList.add('dang-keo-vat');
+    document.body.classList.add('keo-vat');
+    var w = rong(kv.o);
+    $('#ntDat').insertAdjacentHTML('beforeend', '<div class="nt-luoi" id="ntLuoiKeo"></div><div class="nt-dich" id="ntDich" style="left:' + kv.o.x * S.o + 'px;top:' + kv.o.y * S.o + 'px;width:' + w * S.o + 'px;height:' + w * S.o + 'px"></div>');
+    if (navigator.vibrate) { try { navigator.vibrate(15); } catch (er) { /* bo qua */ } }
   }
-  function veThanhSx() {
-    var chu = $('#ntThanhDatChu');
-    var o = S.chon != null ? timTheoId(S.chon) : null;
-    if (!o) { chu.innerHTML = 'Chạm vào một món để chọn, rồi chạm chỗ mới để dời đến.'; return; }
-    var m = tenMon(o.k, o.n);
-    chu.innerHTML = 'Đã chọn <b>' + esc(m.vn) + '</b> — chạm chỗ mới để dời' +
-      (o.k !== 'nha' && o.k !== 'kho' ? ' <button type="button" class="nt-nut nt-nut-nho" id="ntCat">Cất vào túi</button>' : '');
-    var b = $('#ntCat');
-    if (b) b.addEventListener('click', function () {
-      lam({ a: 'cat', id: o.id }).then(function () { S.chon = null; veThanhSx(); veBanDo(); bao('Đã cất ' + m.vn + ' vào túi đồ (trong Kho).'); }, function () {});
-    });
+  function keoVatDi(e) {
+    if (!kv) return;
+    var dx = e.clientX - kv.x0, dy = e.clientY - kv.y0;
+    if (!kv.dang) {
+      if (kv.chuot && Math.abs(dx) + Math.abs(dy) > 6) moKeoVat();
+      else if (!kv.chuot && Math.abs(dx) + Math.abs(dy) > 10) { clearTimeout(kv.hen); kv = null; return; } // dang vuot de cuon
+      if (!kv.dang) return;
+    }
+    kv.el.style.translate = dx + 'px ' + dy + 'px';
+    var w = rong(kv.o), k = S.st.kich;
+    var nx = Math.max(0, Math.min(k.w - w, Math.round((kv.o.x * S.o + dx) / S.o)));
+    var ny = Math.max(0, Math.min(k.h - w, Math.round((kv.o.y * S.o + dy) / S.o)));
+    kv.nx = nx; kv.ny = ny; kv.ok = datDuoc(nx, ny, w, kv.o.id);
+    var d = $('#ntDich');
+    if (d) { d.style.left = nx * S.o + 'px'; d.style.top = ny * S.o + 'px'; d.classList.toggle('sai', !kv.ok); }
+  }
+  function thaVat() {
+    if (!kv) return;
+    clearTimeout(kv.hen);
+    var k = kv;
+    kv = null;
+    if (!k.dang) return; // chi la cham: de su kien bam xu ly nhu cu
+    vuaThaVat = true;
+    setTimeout(function () { vuaThaVat = false; }, 0);
+    document.body.classList.remove('keo-vat');
+    ['#ntLuoiKeo', '#ntDich'].forEach(function (s) { var x = $(s); if (x) x.remove(); });
+    k.el.classList.remove('dang-keo-vat');
+    if (k.nx === k.o.x && k.ny === k.o.y) { k.el.style.translate = ''; return; }
+    if (!k.ok) { k.el.style.translate = ''; bao('Chỗ này đã có đồ rồi — thả vào ô cỏ trống nhé.', 'loi'); tieng('sai'); return; }
+    var m = tenMon(k.o.k, k.o.n);
+    lam({ a: 'doi', id: k.o.id, x: k.nx, y: k.ny }).then(function () { tieng('mua'); bao('Đã dời ' + m.vn + ' ' + m.zh); }, function () { veBanDo(); });
+  }
+  // meo mot lan cho hoc sinh biet cach sap xep moi
+  function meoKeoTha() {
+    try { if (localStorage.getItem('hyv_nt_meo_keo')) return; localStorage.setItem('hyv_nt_meo_keo', '1'); } catch (e) { return; }
+    setTimeout(function () { bao('Mẹo: nhấn giữ một đồ vật rồi kéo để sắp xếp lại nông trại!'); }, 4000);
   }
   // bong mo di theo chuot khi dang dat do (may tinh)
   function diChuot(e) {
@@ -699,16 +726,23 @@
   function ganKeo() {
     var k = $('#ntKhung');
     k.addEventListener('pointerdown', function (e) {
-      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      if (batDauKeoVat(e)) return;
+      if (e.pointerType !== 'mouse') return;
       keo = { dang: true, daKeo: false, x: e.clientX, y: e.clientY, sl: k.scrollLeft, st: k.scrollTop };
     });
     window.addEventListener('pointermove', function (e) {
+      if (kv) { keoVatDi(e); return; }
       if (!keo.dang) return;
       var dx = e.clientX - keo.x, dy = e.clientY - keo.y;
       if (!keo.daKeo && Math.abs(dx) + Math.abs(dy) > 8) { keo.daKeo = true; k.classList.add('dang-keo'); }
       if (keo.daKeo) { k.scrollLeft = keo.sl - dx; k.scrollTop = keo.st - dy; datViTriNoi(); }
     });
+    window.addEventListener('pointercancel', function () { if (kv && !kv.dang) { clearTimeout(kv.hen); kv = null; } });
+    // dang keo do vat bang ngon tay: chan cuon trang
+    document.addEventListener('touchmove', function (e) { if (kv && kv.dang) e.preventDefault(); }, { passive: false });
     window.addEventListener('pointerup', function () {
+      if (kv) { thaVat(); return; }
       if (!keo.dang) return;
       keo.dang = false;
       k.classList.remove('dang-keo');
@@ -3708,7 +3742,6 @@
       var m = b.getAttribute('data-mo');
       if (m === 'thitran') return moThiTran();
       dongThiTran();
-      if (m === 'sapxep') return batSapXep();
       if (S.che !== 'xem') thoatDat();
       if (m === 'chung') { CN.chon = null; if (!CN.tran || CN.tran.ket) CN.tran = null; taiCN(); }
       moBang(m);
@@ -3798,6 +3831,7 @@
       var k = $('#ntKhung');
       k.scrollLeft = (k.scrollWidth - k.clientWidth) / 2;
       ganNhac();
+      meoKeoTha();
       setInterval(nhip, 1000);
       lamMoiDinhKy();
       nhip();

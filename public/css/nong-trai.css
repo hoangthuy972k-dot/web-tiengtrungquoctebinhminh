@@ -1708,3 +1708,24 @@ body.keo-vat, body.keo-vat .nt-khung { cursor: grabbing; }
 .nt-cu { position: relative; }
 .nt-kho-them { position: absolute; left: 50%; top: -6px; padding: 1px 8px; border: 2px solid var(--vien); border-radius: 999px; background: var(--vang); font-weight: 900; font-size: 0.82rem; color: var(--chu); pointer-events: none; animation: nt-kho-them 1.2s ease-out forwards; }
 @keyframes nt-kho-them { 0% { transform: translate(-50%, 6px) scale(0.6); opacity: 0; } 20% { transform: translate(-50%, -8px) scale(1.1); opacity: 1; } 100% { transform: translate(-50%, -30px) scale(1); opacity: 0; } }
+
+/* ---------- Chieu sau 2D: bong do, cay dung dua, vat nuoi tho ---------- */
+/* bong do nhe ve phia sau-phai (anh sang tu goc tren trai) cho moi do vat dung — ruong, duong di nam phang thi khong */
+.nt-vat:not(.phang):not(.nt-k-o) .nt-hinh { filter: drop-shadow(3px 5px 2px rgba(43, 29, 58, 0.22)); }
+/* cay, hoa, tre, den long dung dua theo gio (rotate rieng nen khong de len hieu ung re chuot) */
+.nt-vat:is(.nt-k-tung, .nt-k-truc, .nt-k-cay-dao, .nt-k-cay-cam, .nt-k-cay-lon, .nt-k-bu-nhin, .nt-k-hoa-do, .nt-k-hoa-vang, .nt-k-hoa-tim, .nt-k-chau-hoa) .nt-hinh {
+  transform-origin: 50% 88%; animation: nt-gio 3.4s ease-in-out infinite alternate; animation-delay: var(--lech, 0s);
+}
+.nt-vat:is(.nt-k-den-long, .nt-k-den-phuc, .nt-k-lh-gongdeng, .nt-k-lh-bianpao, .nt-k-lh-tuzideng) .nt-hinh {
+  transform-origin: 50% 15%; animation: nt-gio-den 2.6s ease-in-out infinite alternate; animation-delay: var(--lech, 0s);
+}
+/* cay dang lon tren ruong cung rung rinh nhe */
+.nt-vat.nt-k-o.tt-lon .nt-hinh { transform-origin: 50% 85%; animation: nt-gio-ruong 2.8s ease-in-out infinite alternate; animation-delay: var(--lech, 0s); }
+@keyframes nt-gio { from { rotate: -2.2deg; } to { rotate: 2.2deg; } }
+@keyframes nt-gio-den { from { rotate: -4deg; } to { rotate: 4deg; } }
+@keyframes nt-gio-ruong { from { rotate: -1deg; } to { rotate: 1deg; } }
+/* vat nuoi "tho" nhe khi dang no / dang doi (con vat da co san pham thi nhun nhay nhu cu) */
+.nt-vat:is(.nt-k-ga, .nt-k-vit, .nt-k-bo, .nt-k-cuu, .nt-k-ong):is(.tt-lam, .tt-doi) .nt-hinh {
+  transform-origin: 50% 90%; animation: nt-tho 1.9s ease-in-out infinite alternate; animation-delay: var(--lech, 0s);
+}
+@keyframes nt-tho { from { scale: 1 1; } to { scale: 1.03 1.05; } }

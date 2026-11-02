@@ -249,7 +249,7 @@
     var phang = o.k === 'o' || (S.cat.TT[o.k] && S.cat.TT[o.k].phang);
     var cls = 'nt-vat nt-k-' + o.k + (phang ? ' phang' : '') + (t.loai ? ' tt-' + t.loai : '') + (S.chon === o.id ? ' chon' : '');
     var h = '<button type="button" class="' + cls + '" data-id="' + o.id + '" style="left:' + o.x * T + 'px;top:' + o.y * T +
-      'px;width:' + w * T + 'px;height:' + w * T + 'px;z-index:' + (phang ? 1 : (o.y + w) * 10) + '" aria-label="' + esc(tenMon(o.k, o.n).vn) + '">';
+      'px;width:' + w * T + 'px;height:' + w * T + 'px;z-index:' + (phang ? 1 : (o.y + w) * 10) + ';--lech:-' + ((o.id * 0.73) % 3).toFixed(2) + 's" aria-label="' + esc(tenMon(o.k, o.n).vn) + '">';
     h += '<img class="nt-hinh" src="' + anh(t.hinh) + '" alt="" draggable="false">';
     // dang tham ban: bong bong chi cho viec giup duoc (tuoi cay, cho an)
     var bong = S.tham ? (o.k === 'o' && t.loai === 'lon' && !o.t ? 'ic-tuoi' : t.loai === 'doi' ? 'ic-doi' : null) : t.bong;

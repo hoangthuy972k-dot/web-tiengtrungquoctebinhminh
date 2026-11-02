@@ -1201,13 +1201,13 @@
       if (kieu === 'gh') h = '<i class="nt-mat-troi"></i>';
       if (kieu === 'mua') {
         // mua that: tung hat roi xien, vong nuoc ban tren mat ruong, thinh thoang chop loe
-        for (var m = 0; m < 80; m++) h += '<i class="nt-hat-mua" style="left:' + ((m * 13 + (m % 7) * 3) % 104 - 2) + '%;height:' + (16 + (m * 7) % 14) + 'px;animation-duration:' + (0.55 + (m % 5) * 0.09).toFixed(2) + 's;animation-delay:-' + ((m * 0.137) % 1.2).toFixed(2) + 's"></i>';
+        for (var m = 0; m < 80; m++) h += '<i class="nt-hat-mua" style="--y:' + ((m * 37) % 98) + '%;left:' + ((m * 13 + (m % 7) * 3) % 104 - 2) + '%;height:' + (16 + (m * 7) % 14) + 'px;animation-duration:' + (0.55 + (m % 5) * 0.09).toFixed(2) + 's;animation-delay:-' + ((m * 0.137) % 1.2).toFixed(2) + 's"></i>';
         for (var v = 0; v < 16; v++) h += '<i class="nt-vung" style="left:' + ((v * 31 + 5) % 92) + '%;top:' + (30 + (v * 43) % 62) + '%;animation-delay:-' + ((v * 0.29) % 1.4).toFixed(2) + 's"></i>';
         h += '<i class="nt-chop"></i>';
       }
       if (kieu === 'ret') for (var s = 0; s < 46; s++) {
         var to = 4 + (s * 7) % 9;
-        h += '<i class="nt-tuyet-hat' + (s % 6 === 0 ? ' bong-tuyet' : '') + '" style="left:' + ((s * 23) % 100) + '%;width:' + to + 'px;height:' + to + 'px;--lac:' + (12 + (s * 5) % 26) + 'px;animation-duration:' + (7 + (s * 3) % 8) + 's,' + (2.4 + (s % 4) * 0.6) + 's;animation-delay:-' + ((s * 1.3) % 12).toFixed(1) + 's,-' + (s % 3) + 's">' + (s % 6 === 0 ? '❄' : '') + '</i>';
+        h += '<i class="nt-tuyet-hat' + (s % 6 === 0 ? ' bong-tuyet' : '') + '" style="--y:' + ((s * 37) % 96) + '%;left:' + ((s * 23) % 100) + '%;width:' + to + 'px;height:' + to + 'px;--lac:' + (12 + (s * 5) % 26) + 'px;animation-duration:' + (7 + (s * 3) % 8) + 's,' + (2.4 + (s % 4) * 0.6) + 's;animation-delay:-' + ((s * 1.3) % 12).toFixed(1) + 's,-' + (s % 3) + 's">' + (s % 6 === 0 ? '❄' : '') + '</i>';
       }
       lop.innerHTML = h;
     }
@@ -3675,6 +3675,35 @@
     if (d) d.addEventListener('click', dongBang);
   }
 
+  /* ---------------- hieu ung chuyen dong (may, chim, buom, mua, tuyet…) ---------------- */
+  // Mac dinh theo cai dat may (Windows / dien thoai tat hieu ung -> dung yen); em bat / tat bang nut 🎬, nho trong may
+  var DONG_KEY = 'hyv_nt_dong';
+  function ganDong() {
+    var mayTat = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+    var chon = null;
+    try { chon = localStorage.getItem(DONG_KEY); } catch (e) { /* bo qua */ }
+    var bat = chon ? chon === '1' : !mayTat;
+    var nut = document.createElement('button');
+    nut.type = 'button';
+    nut.className = 'nt-chip nt-chip-dong';
+    function ap() {
+      document.body.classList.toggle('it-dong', !bat);
+      nut.textContent = '🎬';
+      nut.setAttribute('aria-pressed', bat ? 'true' : 'false');
+      nut.setAttribute('aria-label', bat ? 'Tắt hiệu ứng chuyển động (mây, chim, bướm bay)' : 'Bật hiệu ứng chuyển động (mây, chim, bướm bay)');
+      nut.title = nut.getAttribute('aria-label');
+    }
+    nut.addEventListener('click', function () {
+      bat = !bat;
+      try { localStorage.setItem(DONG_KEY, bat ? '1' : '0'); } catch (e) { /* bo qua */ }
+      ap();
+      bao(bat ? '🎬 Đã bật hiệu ứng: mây trôi, chim bay, bướm lượn!' : 'Đã tắt hiệu ứng chuyển động — cảnh vật đứng yên.');
+    });
+    $('.nt-hud').appendChild(nut);
+    ap();
+    if (!bat && mayTat && !chon) setTimeout(function () { bao('Máy đang tắt hiệu ứng chuyển động — bấm 🎬 ở góc trên để mây, chim, bướm bay.'); }, 2500);
+  }
+
   /* ---------------- nhac nen ---------------- */
   function ganNhac() {
     if (!window.NhacNen) return;
@@ -3798,6 +3827,7 @@
       var k = $('#ntKhung');
       k.scrollLeft = (k.scrollWidth - k.clientWidth) / 2;
       ganNhac();
+      ganDong();
       setInterval(nhip, 1000);
       lamMoiDinhKy();
       nhip();

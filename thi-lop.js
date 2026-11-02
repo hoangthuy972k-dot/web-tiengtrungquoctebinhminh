@@ -505,7 +505,11 @@ module.exports = function ganThiLop(app, d) {
 
   app.post('/api/thi-lop/:ma/thu', d.requireAdmin, d.asyncRoute(async (req, res) => {
     const p = await phongGv(req, res); if (!p) return;
+    // Thay co bam Thu bai: cong bo luon diem + dap an -> may hoc sinh tu chuyen sang man chua bai
+    // (cau dung / sai, giai thich); muon an lai thi bo tich 'Cong bo' nhu cu
+    p.congBo = true;
     if (p.pha !== 'xong') thuBai(p, false);
+    else ghiNgay(p);
     res.json(trangThaiGv(p, true));
   }));
 

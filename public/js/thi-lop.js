@@ -618,7 +618,7 @@
   });
   $('#tlThu').addEventListener('click', function () {
     var con = T.ph.hs.filter(function (h) { return !h.nop; }).length;
-    hop('Thu bài ngay', (con ? 'Còn ' + con + ' bạn chưa nộp — máy sẽ chấm bài các em đã làm tới lúc này. ' : '') + 'Sau khi thu, học sinh không sửa bài được nữa.', 'Thu bài', function () {
+    hop('Thu bài ngay', (con ? 'Còn ' + con + ' bạn chưa nộp — máy sẽ chấm bài các em đã làm tới lúc này. ' : '') + 'Sau khi thu, học sinh không sửa bài được nữa, và máy các em sẽ hiện điểm, câu đúng / sai kèm đáp án và giải thích. (Muốn ẩn lại thì bỏ tích “Công bố điểm và đáp án”.)', 'Thu bài', function () {
       $('#tlAudio').pause();
       api('POST', '/api/thi-lop/' + T.ma + '/thu', {}).then(function (p) { nhanPhong(p); doiTab('kq'); veTatCa(); }).catch(function (er) { alert(er.message); });
     });

@@ -1150,8 +1150,31 @@
     });
     for (var i = 0; i < 3; i++) h += '<div class="nt-canh-chim c' + (i + 1) + '">' + svgChim() + '</div>';
     for (var j = 0; j < 5; j++) h += '<div class="nt-canh-buom b' + (j + 1) + '">' + svgBuom(MAU_BUOM[j]) + '</div>';
+    // ban dem: trang, sao va dom dom 萤火虫 (chi hien khi body co lop nt-dem)
+    h += '<i class="nt-dem-trang"></i>';
+    for (var s = 0; s < 7; s++) h += '<i class="nt-dem-sao" style="left:' + (6 + s * 13) % 94 + '%;top:' + (2 + (s * 7) % 12) + '%;animation-delay:-' + s * 0.6 + 's"></i>';
+    for (var d = 0; d < 22; d++) {
+      h += '<i class="nt-dom d' + (d % 3) + '" style="left:' + ((d * 29 + 7) % 92) + '%;top:' + (24 + (d * 41) % 66) + '%;animation-duration:' + (9 + (d * 5) % 9) + 's,' + (1.6 + (d % 5) * 0.5) + 's;animation-delay:-' + (d * 1.7 % 13).toFixed(1) + 's,-' + (d % 4) * 0.4 + 's"></i>';
+    }
     c.innerHTML = h;
+    capNhatDem();
+    setInterval(capNhatDem, 60000);
     document.body.appendChild(c);
+  }
+
+  // Ngay / chieu / dem theo gio Viet Nam (?dem=1 hoac ?dem=0 de xem thu)
+  var demDaBao = false;
+  function capNhatDem() {
+    var gio = new Date(Date.now() + 7 * 3600000).getUTCHours();
+    var ep = (location.search.match(/[?&]dem=([01])/) || [])[1];
+    var dem = ep ? ep === '1' : (gio >= 18 || gio < 5);
+    var chieu = !ep && gio >= 16 && gio < 18;
+    document.body.classList.toggle('nt-dem', dem);
+    document.body.classList.toggle('nt-chieu', chieu);
+    if (dem && !demDaBao) {
+      demDaBao = true;
+      setTimeout(function () { bao('🌙 晚上好！Wǎnshang hǎo — Chào buổi tối! Đom đóm 萤火虫 yínghuǒchóng bay khắp nông trại.'); doc('晚上好'); }, 1800);
+    }
   }
 
   /* ---------------- Thien tai 天灾 ---------------- */

@@ -1631,3 +1631,41 @@ body.co-bang .nt-canh { display: none; }
   .nt-canh { display: none; }
   .nt-tuyet-hat { animation: none; top: calc(var(--lac) * 2); }
 }
+
+/* ---------- Ban dem 晚上 + dom dom 萤火虫 (theo gio Viet Nam) ---------- */
+body.nt.nt-dem { background: linear-gradient(180deg, #0f1b3d 0%, #26386e 38%, #2f4b2c 38.1%, #22381f 100%); }
+body.nt.nt-chieu { background: linear-gradient(180deg, #ff9f5a 0%, #ffd29a 38%, #b8d97f 38.1%, #86b955 100%); }
+body.nt-dem .nt-dat { background-color: #567f49; background-blend-mode: multiply; box-shadow: 0 0 0 10px #3b6430, 0 0 0 14px var(--vien), 0 18px 0 14px rgba(0, 0, 0, 0.45); }
+body.nt-dem .nt-vat { filter: brightness(0.7) saturate(0.85); }
+body.nt-chieu .nt-vat { filter: sepia(0.18) saturate(1.08); }
+/* den long va nha: sang am ap */
+body.nt-dem .nt-vat:is(.nt-k-den-long, .nt-k-den-phuc, .nt-k-lh-gongdeng, .nt-k-lh-tuzideng, .nt-k-lh-bianpao) { filter: brightness(1.08) drop-shadow(0 0 14px rgba(255, 200, 87, 0.95)); }
+body.nt-dem .nt-vat.nt-k-nha { filter: brightness(0.85) drop-shadow(0 0 12px rgba(255, 214, 120, 0.7)); }
+/* vat nuoi ngu: z z */
+body.nt-dem .nt-vat:is(.nt-k-ga, .nt-k-vit, .nt-k-bo, .nt-k-cuu)::after {
+  content: 'z z'; position: absolute; right: 2px; top: -4px; font-size: 0.8rem; font-weight: 900; letter-spacing: 2px; color: #e8f0ff; text-shadow: 0 1px 0 var(--vien); animation: nt-ngu 2.4s ease-in-out infinite;
+}
+@keyframes nt-ngu { 0% { opacity: 0; translate: 0 6px; } 40% { opacity: 1; } 100% { opacity: 0; translate: 6px -10px; } }
+/* ban dem: chim, buom di ngu; may mo di */
+body.nt-dem .nt-canh-buom, body.nt-dem .nt-canh-chim { display: none !important; }
+body.nt-dem .nt-canh-may .may { background: rgba(190, 200, 235, 0.22); }
+body.nt-dem .nt-canh-may .bong { display: none; }
+/* trang, sao */
+.nt-dem-trang, .nt-dem-sao, .nt-dom { display: none; position: absolute; }
+body.nt-dem .nt-dem-trang, body.nt-dem .nt-dem-sao, body.nt-dem .nt-dom { display: block; }
+.nt-dem-trang { left: 26%; top: 66px; width: 44px; height: 44px; border-radius: 50%; background: #fff3b0; box-shadow: 0 0 26px 8px rgba(255, 243, 176, 0.5), inset -12px -5px 0 #f1dc7a; }
+.nt-dem-sao { width: 4px; height: 4px; border-radius: 50%; background: #fff7c2; box-shadow: 0 0 6px #fff7c2; animation: nt-sao 2.6s ease-in-out infinite alternate; }
+body.o-thi-tran .nt-dem-trang, body.o-thi-tran .nt-dem-sao { display: none !important; } /* thi tran co trang sao rieng */
+/* dom dom: cham sang vang xanh, bay vong vo va nhap nhay */
+.nt-dom { width: 7px; height: 7px; border-radius: 50%; background: #f4ff9c; box-shadow: 0 0 8px 3px rgba(214, 255, 102, 0.85), 0 0 18px 8px rgba(214, 255, 102, 0.35);
+  animation-name: nt-dom-bay-0, nt-dom-nhay; animation-timing-function: ease-in-out, ease-in-out; animation-iteration-count: infinite, infinite; animation-direction: alternate, alternate; }
+.nt-dom.d1 { animation-name: nt-dom-bay-1, nt-dom-nhay; width: 6px; height: 6px; }
+.nt-dom.d2 { animation-name: nt-dom-bay-2, nt-dom-nhay; width: 5px; height: 5px; }
+@keyframes nt-dom-bay-0 { 0% { translate: 0 0; } 33% { translate: 34px -22px; } 66% { translate: -18px -40px; } 100% { translate: 22px 16px; } }
+@keyframes nt-dom-bay-1 { 0% { translate: 0 0; } 33% { translate: -30px 18px; } 66% { translate: 16px 34px; } 100% { translate: -24px -20px; } }
+@keyframes nt-dom-bay-2 { 0% { translate: 0 0; } 50% { translate: 40px 24px; } 100% { translate: -36px 10px; } }
+@keyframes nt-dom-nhay { 0%, 30% { opacity: 0.15; } 60%, 100% { opacity: 1; } }
+/* mua bao / ret dam: dom dom tron mat */
+body[data-tai="mua"] .nt-dom, body[data-tai="ret"] .nt-dom { display: none !important; }
+body.o-thi-tran[data-tai] .nt-dom { display: block; }
+body.o-thi-tran:not(.nt-dem) .nt-dom { display: none !important; }

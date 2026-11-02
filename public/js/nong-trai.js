@@ -347,12 +347,83 @@
     if (!them) return;
     var tre = 0;
     Object.keys(them.sp || {}).forEach(function (k) {
-      setTimeout(function () { bayLen(el, '+' + them.sp[k], spAnh(k)); }, tre); tre += 220;
+      var zh = S.cat.SP[k] ? ' ' + S.cat.SP[k].zh : '';
+      setTimeout(function () { bayLen(el, '+' + them.sp[k] + zh, spAnh(k)); }, tre); tre += 220;
     });
     if (them.xu) setTimeout(function () { bayLen(el, '+' + them.xu, 'ic-xu'); }, tre), tre += 220;
     if (them.xp) setTimeout(function () { bayLen(el, '+' + them.xp, 'ic-xp'); }, tre);
   }
   function spAnh(k) { return 'sp-' + k; }
+
+  /* ---------------- hieu ung thu hoach: bung sang tai o ruong, nong san bay vao Kho ---------------- */
+  // Cac o / vat nuoi se thu (vi tri + loai nong san), lay TRUOC khi ban do ve lai
+  function oThuHoach(body, el) {
+    if (body.a !== 'thu' && body.a !== 'nhat') return null;
+    var els = body.id === 'het' ? $all('#ntDat .nt-vat.tt-chin, #ntDat .nt-vat.tt-xong') : (el && el.getBoundingClientRect ? [el] : []);
+    var ds = [];
+    els.forEach(function (x) {
+      var o = timVat(x);
+      if (!o) return;
+      var k = o.k === 'o' ? (body.a === 'thu' ? o.c : null) : (body.a === 'nhat' && S.cat.CON[o.k] ? S.cat.CON[o.k].sp : null);
+      if (k) ds.push({ k: k, r: x.getBoundingClientRect() });
+    });
+    return ds;
+  }
+  function hieuUngThu(ds, them) {
+    var kho = $('#ntDuoi [data-mo="kho"]');
+    var kr = kho ? kho.getBoundingClientRect() : { left: innerWidth / 2, top: innerHeight - 40, width: 0, height: 0 };
+    var ex = kr.left + kr.width / 2, ey = kr.top + kr.height / 2;
+    var dem = {};
+    ds.forEach(function (x) { dem[x.k] = (dem[x.k] || 0) + 1; });
+    var tong = 0, tre = 0;
+    ds.slice(0, 12).forEach(function (x, i) {
+      var n = Math.max(1, Math.min(3, Math.round(((them && them.sp && them.sp[x.k]) || dem[x.k]) / dem[x.k])));
+      tong += n;
+      setTimeout(function () {
+        var cx = x.r.left + x.r.width / 2, cy = x.r.top + x.r.height / 2;
+        bungSang(cx, cy);
+        for (var j = 0; j < n; j++) bayVaoKho(x.k, cx, cy, ex, ey, j);
+      }, i * 110);
+      tre = i * 110;
+    });
+    // Kho nay len + "+N" khi nong san bay toi
+    if (kho) setTimeout(function () {
+      kho.classList.remove('nt-kho-nhan'); void kho.offsetWidth; kho.classList.add('nt-kho-nhan');
+      var b = document.createElement('span');
+      b.className = 'nt-kho-them'; b.textContent = '+' + tong;
+      kho.appendChild(b);
+      setTimeout(function () { b.remove(); kho.classList.remove('nt-kho-nhan'); }, 1200);
+    }, tre + 950);
+  }
+  function bungSang(x, y) {
+    var b = document.createElement('div');
+    b.className = 'nt-no';
+    b.style.left = x + 'px'; b.style.top = y + 'px';
+    var h = '<i class="nt-no-vong"></i>';
+    for (var i = 0; i < 9; i++) {
+      var g = i * 40 + (i % 2) * 12, d = 34 + (i % 3) * 12;
+      h += '<i class="nt-no-hat ' + (i % 3 === 0 ? 'sao' : i % 3 === 1 ? 'la' : 'cham') + '" style="--dx:' + Math.round(Math.cos(g * Math.PI / 180) * d) + 'px;--dy:' + Math.round(Math.sin(g * Math.PI / 180) * d - 10) + 'px;--g:' + g + 'deg"></i>';
+    }
+    b.innerHTML = h;
+    document.body.appendChild(b);
+    setTimeout(function () { b.remove(); }, 900);
+  }
+  function bayVaoKho(k, sx, sy, ex, ey, j) {
+    var e = document.createElement('div');
+    e.className = 'nt-bay-sp';
+    e.innerHTML = img(spAnh(k));
+    document.body.appendChild(e);
+    var lech = (j - 1) * 22 + (Math.random() * 16 - 8);
+    var px = sx + lech, py = sy - 70 - Math.random() * 30;
+    if (!e.animate) { setTimeout(function () { e.remove(); }, 50); return; }
+    var a = e.animate([
+      { transform: 'translate(' + sx + 'px,' + sy + 'px) translate(-50%,-50%) scale(0.3)', opacity: 0 },
+      { transform: 'translate(' + px + 'px,' + py + 'px) translate(-50%,-50%) scale(1.15)', opacity: 1, offset: 0.32 },
+      { transform: 'translate(' + (px + (ex - px) * 0.45) + 'px,' + (py - 40) + 'px) translate(-50%,-50%) scale(0.95)', opacity: 1, offset: 0.6 },
+      { transform: 'translate(' + ex + 'px,' + ey + 'px) translate(-50%,-50%) scale(0.45)', opacity: 0.85 },
+    ], { duration: 950 + j * 90, delay: j * 110, easing: 'ease-in-out', fill: 'forwards' });
+    a.onfinish = function () { e.remove(); };
+  }
 
   /* ---------------- gui hanh dong ---------------- */
   function lam(body, el) {
@@ -360,10 +431,12 @@
     S.ban = true;
     // lay vi tri truoc khi ve lai (phan tu cu se bi thay)
     var vt = el && el.getBoundingClientRect ? el.getBoundingClientRect() : null;
+    var nguonThu = oThuHoach(body, el);
     return goi('/api/farm/act', body).then(function (r) {
       S.ban = false;
       nhanTrangThai(r.st);
       hienThem(r.them, vt);
+      if (nguonThu && nguonThu.length) hieuUngThu(nguonThu, r.them);
       if (r.lenCap) setTimeout(function () { lenCap(r.lenCap); }, 700);
       return r;
     }, function (err) {

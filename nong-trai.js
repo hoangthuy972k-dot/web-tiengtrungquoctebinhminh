@@ -117,6 +117,17 @@ const TT = {
   'cau-doi': { zh: '春联', py: 'chūnlián', vn: 'Câu đối đỏ', lv: 1, doc: 1, dep: 18 },
   'bang-chu': { zh: '书法牌', py: 'shūfǎ pái', vn: 'Bảng thư pháp', lv: 1, doc: 1, dep: 25 },
   'bia-trang': { zh: '状元碑', py: 'zhuàngyuán bēi', vn: 'Bia Trạng nguyên', lv: 1, doc: 1, dep: 40 },
+  // Doc quyen: qua cong trinh chung cua lop (nong-trai-chung.js) — ban sao nho cua cong trinh da cung xay
+  'ct-xuetang': { zh: '学堂', py: 'xuétáng', vn: 'Học đường', lv: 1, doc: 1, dep: 50, w: 2 },
+  'ct-shiqiao': { zh: '石桥', py: 'shíqiáo', vn: 'Cầu đá', lv: 1, doc: 1, dep: 50, w: 2 },
+  'ct-zhonglou': { zh: '钟楼', py: 'zhōnglóu', vn: 'Tháp chuông', lv: 1, doc: 1, dep: 55, w: 2 },
+  'ct-xitai': { zh: '戏台', py: 'xìtái', vn: 'Sân khấu tuồng', lv: 1, doc: 1, dep: 55, w: 2 },
+  'ct-baota': { zh: '宝塔', py: 'bǎotǎ', vn: 'Bảo tháp', lv: 1, doc: 1, dep: 60, w: 2 },
+  // Doc quyen: qua le hoi cuoi tuan
+  'lh-tuzideng': { zh: '兔子灯', py: 'tùzi dēng', vn: 'Đèn thỏ Trung thu', lv: 1, doc: 1, dep: 20 },
+  'lh-bianpao': { zh: '鞭炮', py: 'biānpào', vn: 'Dây pháo Tết', lv: 1, doc: 1, dep: 20 },
+  'lh-longzhou': { zh: '龙舟', py: 'lóngzhōu', vn: 'Thuyền rồng', lv: 1, doc: 1, dep: 22 },
+  'lh-gongdeng': { zh: '宫灯', py: 'gōngdēng', vn: 'Đèn cung đình', lv: 1, doc: 1, dep: 20 },
 };
 // Bo suu tap chu Han: 1 chu tra loi dung 3 lan trong Thu thach = 1 the; du moc thi nhan do doc quyen
 const THE_DUNG = 3;
@@ -614,7 +625,7 @@ module.exports = function ganNongTrai(app, d) {
       const x = Number(b.x), y = Number(b.y);
       const laO = k === 'o', con = CON[k], tt = TT[k];
       if (!laO && !con && !tt) throw loi('Không có món này.');
-      if (a === 'mua' && tt && tt.doc) throw loi('Món này chỉ có khi hoàn thành Bộ sưu tập chữ Hán.');
+      if (a === 'mua' && tt && tt.doc) throw loi('Món này là quà độc quyền (Bộ sưu tập chữ Hán, công trình lớp, lễ hội) — không bán ở cửa hàng.');
       const w = tt && tt.w ? 2 : 1;
       if (!datDuoc(f, x, y, w)) throw loi('Chỗ này không đặt được.');
       if (a === 'dat') {
@@ -1475,5 +1486,11 @@ module.exports = function ganNongTrai(app, d) {
     }));
   }));
 
-  return { initTable };
+  // Hoat dong chung: cong trinh lop, thach dau, ban hoc cap doi, le hoi cuoi tuan
+  const chung = require('./nong-trai-chung')(app, d, {
+    doc, ghi, lanLuot, haiLuot, loi, traLoi, trangThai, deChuHan, moQua, taiCongDong, ghiNk, lvTuXp, saoHoc, cungLop, SP,
+  });
+  async function initTatCa() { await initTable(); await chung.initTable(); }
+
+  return { initTable: initTatCa };
 };

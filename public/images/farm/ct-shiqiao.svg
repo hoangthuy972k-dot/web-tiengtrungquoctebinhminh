@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<ellipse cx="100" cy="170" rx="92" ry="8" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M58 152A42 42 0 0 1 142 152Z" fill="#5d6f86"/>
+<ellipse cx="100" cy="153" rx="92" ry="14" fill="#4fc3f7"/>
+<path d="M30 160q6 -4 12 0t12 0M86 160q7 -4 14 0t14 0M150 160q6 -4 12 0" fill="none" stroke="#b3e5fc" stroke-width="3"/>
+<path d="M8 152V122Q100 66 192 122V152H142A42 42 0 0 0 58 152Z" fill="#a9afb9"/>
+<path d="M52 152A48 48 0 0 1 148 152" fill="none" stroke="#8e95a1" stroke-width="3"/>
+<path d="M100 110V104M121 115.6L124 110.4M79 115.6L76 110.4M136.4 131L141.6 128M63.6 131L58.4 128" stroke="#8e95a1" stroke-width="3"/>
+<path d="M14 138H40M27 138V150M160 138H186M173 138V150M30 124V136M170 124V136" stroke="#8e95a1" stroke-width="3"/>
+<path d="M8 122Q100 66 192 122V132Q100 76 8 132Z" fill="#cfd5dc"/>
+<path d="M24 120Q60 98 92 92" fill="none" stroke="#eef1f4" stroke-width="3"/>
+<path d="M30 110V92M65 98V80M100 94V76M135 98V80M170 110V92M30 92Q100 58 170 92" fill="none" stroke-width="10"/>
+<path d="M30 110V92M65 98V80M100 94V76M135 98V80M170 110V92M30 92Q100 58 170 92" fill="none" stroke="#e04434" stroke-width="4"/>
+</g>
+<g fill="#ffc93c" stroke="#2b1d3a" stroke-width="3"><circle cx="30" cy="90" r="4.5"/><circle cx="65" cy="78" r="4.5"/><circle cx="100" cy="74" r="4.5"/><circle cx="135" cy="78" r="4.5"/><circle cx="170" cy="90" r="4.5"/></g>
+</svg>

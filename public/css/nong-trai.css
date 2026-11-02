@@ -1261,3 +1261,79 @@ body.dang-tham .nt-chuhan-nut { display: none; }
 }
 .nt-buoc .nt-cm-so { width: auto; height: auto; min-width: 42px; padding: 3px 8px; font-size: 0.78rem; gap: 1px; }
 .nt-buoc .nt-cm-so b { font-size: 1.1rem; line-height: 1.1; }
+
+/* ---------- Cung nhau: cong trinh lop, thach dau, ban hoc, le hoi ---------- */
+.nt-cu-chung span { color: var(--xanh-dam); }
+.nt-cn-nv { display: inline-flex; width: 44px; height: 44px; flex: none; }
+.nt-cn-nv svg { width: 100%; height: 100%; }
+.nt-cn-thanh { display: block; height: 10px; margin: 6px 0 2px; border-radius: 999px; border: 2px solid var(--vien); background: #fff; overflow: hidden; }
+.nt-cn-thanh span { display: block; height: 100%; background: var(--xanh); transition: width .4s ease; }
+.nt-cn-nho { margin: 0; font-size: 0.84rem; color: var(--mo); font-weight: 600; line-height: 1.4; }
+.nt-cn-h { margin: 16px 0 8px; font-size: 0.95rem; font-weight: 800; color: var(--chu); }
+.nt-cn-ct, .nt-cn-lh-dau { display: flex; gap: 12px; align-items: center; padding: 12px; border: 3px solid var(--vien); border-radius: 18px; background: var(--kem-2); box-shadow: var(--bong); }
+.nt-cn-ct > div, .nt-cn-lh-dau > div { flex: 1; min-width: 0; }
+.nt-cn-ct h3, .nt-cn-lh-dau h3 { margin: 2px 0; font-size: 1.1rem; line-height: 1.3; }
+.nt-cn-ct h3 [lang="zh"], .nt-cn-lh-dau h3 [lang="zh"] { font-family: 'Noto Serif SC', serif; font-size: 1.35rem; color: var(--do); }
+.nt-cn-ct-anh { width: 112px; height: 112px; flex: none; }
+.nt-cn-lh-dau img { width: 76px; height: 76px; flex: none; }
+.nt-cn-vl { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+.nt-cn-vl li { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 2px solid var(--vien); border-radius: 14px; background: #fff; }
+.nt-cn-vl li > img { width: 40px; height: 40px; flex: none; }
+.nt-cn-vl-t { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.nt-cn-vl-t b { font-size: 0.9rem; }
+.nt-cn-vl-t b [lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.nt-cn-vl-t small { font-size: 0.76rem; color: var(--mo); font-weight: 600; }
+.nt-cn-vl em { font-style: normal; font-weight: 800; font-variant-numeric: tabular-nums; flex: none; }
+.nt-cn-gach { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; flex: none; border: 2px solid var(--vien); border-radius: 8px; background: #d9774b; color: #fff; font-family: 'Noto Serif SC', serif; font-weight: 700; font-size: 1.3rem; }
+.nt-cn-du { color: var(--xanh-dam); font-weight: 800; flex: none; }
+.nt-cn-hop { margin-top: 12px; padding: 12px; border: 3px dashed var(--vang-dam); border-radius: 16px; background: #fffaf0; }
+.nt-cn-hop > p { margin: 0 0 10px; font-size: 0.9rem; }
+.nt-cn-top { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.nt-cn-top li { display: flex; align-items: center; gap: 8px; padding: 4px 10px 4px 6px; border-radius: 12px; background: #fff; border: 2px solid var(--kem-2); }
+.nt-cn-top li.la { border-color: var(--vang-dam); background: #fff6d8; }
+.nt-cn-top li .nt-cn-nv { width: 34px; height: 34px; }
+.nt-cn-top li b { flex: 1; min-width: 0; font-size: 0.88rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nt-cn-top li > span:last-child { font-weight: 800; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.nt-cn-hang { width: 24px; text-align: center; font-weight: 800; }
+.nt-cn-chon-dau { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.nt-cn-td-dau { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding: 12px; border: 3px solid var(--vien); border-radius: 18px; background: var(--kem-2); margin-bottom: 12px; }
+.nt-cn-td-dau > div { flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px; }
+.nt-cn-td-dau small { font-size: 0.82rem; color: var(--mo); font-weight: 600; line-height: 1.4; }
+.nt-cn-kq { flex: none; padding: 4px 12px; border-radius: 999px; font-weight: 800; font-size: 0.85rem; border: 2px solid var(--vien); background: #fff; }
+.nt-cn-kq.kq-thang { background: var(--vang); }
+.nt-cn-kq.kq-thua { background: var(--kem-2); }
+.nt-cn-kq.kq-hoa { background: var(--troi); }
+p.nt-cn-kq { display: inline-block; font-size: 1.05rem; margin: 6px 0; }
+.nt-cn-cho { flex: none; font-size: 0.82rem; font-weight: 700; color: var(--mo); }
+.nt-cn-hb { display: flex; flex-direction: column; gap: 6px; }
+.nt-cn-hb-doi { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border: 3px solid var(--vien); border-radius: 18px; background: var(--kem-2); }
+.nt-cn-hb-doi > div { flex: 1; max-width: 170px; display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 0; }
+.nt-cn-hb-doi .nt-cn-nv { width: 64px; height: 64px; }
+.nt-cn-hb-doi b { font-size: 0.92rem; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nt-cn-hb-doi small { font-weight: 700; font-size: 0.82rem; }
+.nt-cn-hb-doi .nt-cn-thanh { width: 100%; }
+.nt-cn-tim { font-family: 'Noto Serif SC', serif; font-weight: 700; color: var(--do); font-size: 1.1rem; writing-mode: vertical-rl; }
+.nt-cn-chuoi { margin: 4px 0 0; text-align: center; font-weight: 700; }
+.nt-cn-to { margin: 0; font-weight: 800; font-size: 1.05rem; }
+.nt-cn-to [lang="zh"] { font-family: 'Noto Serif SC', serif; color: var(--do); font-size: 1.3rem; }
+.nt-cn-lh { display: flex; flex-direction: column; gap: 10px; }
+.nt-cn-lh-mon { max-width: 340px; }
+.nt-cn-lh-mon .nt-the-anh img { width: 92px; height: 92px; }
+/* cong trinh tren quang truong thi tran */
+.nt-tt-ct { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 8px auto 4px; max-width: 980px; }
+.nt-tt-ct:empty { display: none; }
+.nt-tt-ct-xong { margin: 0; display: flex; flex-direction: column; align-items: center; }
+.nt-tt-ct-xong img { width: 120px; height: 120px; }
+.nt-tt-ct-xong figcaption { margin-top: -6px; padding: 2px 10px; border: 2px solid var(--vien); border-radius: 8px; background: #8b5a2b; color: #fff; font-size: 0.78rem; font-weight: 700; display: flex; gap: 6px; align-items: baseline; }
+.nt-tt-ct-xong figcaption b { font-family: 'Noto Serif SC', serif; color: #ffe08a; }
+.nt-tt-ct-dang { display: flex; align-items: center; gap: 10px; padding: 8px 14px 8px 8px; border: 3px dashed var(--vien); border-radius: 18px; background: rgba(255, 248, 236, 0.92); font: inherit; color: var(--chu); cursor: pointer; text-align: left; }
+.nt-tt-ct-dang img { width: 72px; height: 72px; filter: grayscale(.85) opacity(.65); }
+.nt-tt-ct-dang > span { display: flex; flex-direction: column; min-width: 150px; }
+.nt-tt-ct-dang small { font-size: 0.76rem; color: var(--mo); font-weight: 700; }
+.nt-tt-ct-dang:hover { background: #fff; }
+@media (max-width: 640px) {
+  .nt-cn-ct-anh { width: 80px; height: 80px; }
+  .nt-cn-lh-dau img { width: 60px; height: 60px; }
+  .nt-tt-ct-xong img { width: 84px; height: 84px; }
+  .nt-cn-vl li { flex-wrap: wrap; }
+}

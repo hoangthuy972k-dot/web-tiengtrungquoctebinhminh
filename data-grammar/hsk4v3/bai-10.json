@@ -1,0 +1,692 @@
+{
+ "/lessons/hsk4v3-bai-10.html": {
+  "points": [
+   {
+    "title": "固定格式“说什么/怎么（着）也得×” — dù thế nào cũng phải …",
+    "errors": [
+     {
+      "wrong": "我说什么得去。",
+      "why": "Thiếu 也 — cấu trúc cố định là 说什么 + 也 + 得.",
+      "right": "我说什么也得去。"
+     },
+     {
+      "wrong": "他说什么也得不去。",
+      "why": "Muốn nói “nhất quyết không” thì dùng 说什么也不 + V.",
+      "right": "他说什么也不去。"
+     },
+     {
+      "wrong": "我得说什么也去。",
+      "why": "说什么 / 怎么着 + 也 đứng TRƯỚC 得 + V.",
+      "right": "我说什么也得去。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… dù thế nào cũng phải mặc áo dày một chút.”",
+      "pre": "更重要的是，说什么",
+      "blank": "也得",
+      "post": "穿上厚一点儿的衣服。",
+      "options": [
+       "也得",
+       "就得",
+       "才得"
+      ],
+      "answer": 0,
+      "explanation": "Cấu trúc cố định: 说什么 + 也得 + V."
+     },
+     {
+      "context": "“Ngày mai dù thế nào tôi cũng phải làm xong bài tập.”",
+      "pre": "假期还有两天就结束了，我明天",
+      "blank": "说什么",
+      "post": "也得把作业做完。",
+      "options": [
+       "说什么",
+       "为什么",
+       "什么时候"
+      ],
+      "answer": 0,
+      "explanation": "说什么也得 = dù thế nào cũng phải."
+     },
+     {
+      "context": "“Lần này dù thế nào cũng phải đi.”",
+      "pre": "我很后悔上次没参加这个活动，这次怎么",
+      "blank": "着",
+      "post": "也得去。",
+      "options": [
+       "着",
+       "了",
+       "过"
+      ],
+      "answer": 0,
+      "explanation": "怎么着也得 (着 = zhe)."
+     },
+     {
+      "context": "“… nếu không sẽ rét cóng đấy.” (ôn 否则 – Bài 8)",
+      "pre": "这么低的温度，你说什么也得多穿点儿，",
+      "blank": "否则",
+      "post": "会冻坏的。",
+      "options": [
+       "否则",
+       "所以",
+       "而且"
+      ],
+      "answer": 0,
+      "explanation": "……，否则…… = nếu không thì …"
+     },
+     {
+      "context": "“… phải mặc quần áo dày một chút.”",
+      "pre": "冬天去哈尔滨，说什么也得穿上",
+      "blank": "厚",
+      "post": "一点儿的衣服。",
+      "options": [
+       "厚",
+       "低",
+       "暖和"
+      ],
+      "answer": 0,
+      "explanation": "厚一点儿的衣服 = áo dày hơn một chút."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ngày mai dù thế nào tôi cũng phải làm xong bài tập.”",
+      "words": [
+       "我",
+       "明天",
+       "说什么",
+       "也得",
+       "把作业",
+       "做完"
+      ],
+      "answer": "我明天说什么也得把作业做完。",
+      "explanation": "Chủ ngữ + thời gian + 说什么也得 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Lần này dù thế nào tôi cũng phải đi Cáp Nhĩ Tân ngắm tuyết.”",
+      "words": [
+       "这次",
+       "我",
+       "怎么着",
+       "也得",
+       "去",
+       "哈尔滨",
+       "看雪"
+      ],
+      "answer": "这次我怎么着也得去哈尔滨看雪。",
+      "explanation": "怎么着也得 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Dù bận đến đâu, Tết tôi nhất định phải về nhà.”",
+      "words": [
+       "不管",
+       "多忙",
+       "，",
+       "春节",
+       "我",
+       "说什么也得",
+       "回家"
+      ],
+      "answer": "不管多忙，春节我说什么也得回家。",
+      "explanation": "Ôn 不管 (Bài 8) + 说什么也得."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "妈妈生病了，我说什么也得回去看看她。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 说什么也得 + V, biểu thị nhất định phải."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他说什么也得不去。",
+      "isCorrect": false,
+      "correctVersion": "他说什么也不去。",
+      "explanation": "Phủ định: 说什么也不 + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我说什么得去参加这个活动。",
+      "isCorrect": false,
+      "correctVersion": "我说什么也得去参加这个活动。",
+      "explanation": "Thiếu 也."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Ngày mai dù thế nào tôi cũng phải dậy sớm một chút.",
+      "answer": "明天我说什么也得早点儿起床。",
+      "answerPy": "Míngtiān wǒ shuō shénme yě děi zǎo diǎnr qǐchuáng.",
+      "explanation": "Thời gian + 说什么也得 + V."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Mùa đông đến Cáp Nhĩ Tân, dù thế nào cũng phải mặc quần áo dày.",
+      "answer": "冬天去哈尔滨，说什么也得穿厚衣服。",
+      "answerPy": "Dōngtiān qù Hā'ěrbīn, shuō shénme yě děi chuān hòu yīfu.",
+      "explanation": "说什么也得 + 穿厚衣服 (从课文1)."
+     }
+    ]
+   },
+   {
+    "title": "固定短语“有的是” — có thừa, có khối, thiếu gì",
+    "errors": [
+     {
+      "wrong": "我有的是很多厚衣服。",
+      "why": "有的是 đã mang nghĩa “rất nhiều”, không thêm 很多.",
+      "right": "我有的是厚衣服。"
+     },
+     {
+      "wrong": "他有的是三本词典。",
+      "why": "Không đi với số lượng cụ thể.",
+      "right": "他有的是词典。"
+     },
+     {
+      "wrong": "这里很有的是水果。",
+      "why": "Không thêm 很 trước 有的是.",
+      "right": "这里有的是水果。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Không sao, áo dày tớ có thừa.”",
+      "pre": "没问题，受得了，我",
+      "blank": "有的是",
+      "post": "厚衣服。",
+      "options": [
+       "有的是",
+       "有的",
+       "是有"
+      ],
+      "answer": 0,
+      "explanation": "有的是 + N = có rất nhiều."
+     },
+     {
+      "context": "“Đồ ăn ngon, đồ uống ngon có khối.”",
+      "pre": "过年时，家里有的是",
+      "blank": "好吃",
+      "post": "的、好喝的，孩子们特别开心。",
+      "options": [
+       "好吃",
+       "很多",
+       "多少"
+      ],
+      "answer": 0,
+      "explanation": "有的是 + 好吃的、好喝的."
+     },
+     {
+      "context": "“… muốn mua rau gì cũng mua được.”",
+      "pre": "这个市场特别大，有的是水果和菜，你想买什么菜",
+      "blank": "都",
+      "post": "能买到。",
+      "options": [
+       "都",
+       "才",
+       "再"
+      ],
+      "answer": 0,
+      "explanation": "什么……都…… (đại từ phiếm chỉ, HSK 3)."
+     },
+     {
+      "context": "“Đừng vội, sau này thiếu gì cơ hội.”",
+      "pre": "别着急，以后有的是",
+      "blank": "机会",
+      "post": "，这次没申请到也没关系。",
+      "options": [
+       "机会",
+       "误会",
+       "社会"
+      ],
+      "answer": 0,
+      "explanation": "以后有的是机会 = sau này còn nhiều cơ hội."
+     },
+     {
+      "context": "“Trời lạnh thế này cậu chịu nổi không?” (ôn V得了 – Bài 4)",
+      "pre": "这么冷的天气你",
+      "blank": "受",
+      "post": "得了吗？——没问题，我有的是厚衣服。",
+      "options": [
+       "受",
+       "冻",
+       "举"
+      ],
+      "answer": 0,
+      "explanation": "受得了 / 受不了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi có thừa thời gian, có thể đi cùng bạn.”",
+      "words": [
+       "我",
+       "有的是",
+       "时间",
+       "，",
+       "可以",
+       "陪你",
+       "去"
+      ],
+      "answer": "我有的是时间，可以陪你去。",
+      "explanation": "有的是 + N; 陪 (Bài 6)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chợ hoa tươi ở Quảng Châu hoa nhiều vô kể.”",
+      "words": [
+       "广州的",
+       "鲜花市场",
+       "里",
+       "有的是",
+       "花"
+      ],
+      "answer": "广州的鲜花市场里有的是花。",
+      "explanation": "Nơi chốn + 有的是 + N."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đừng lo, sau này thiếu gì cơ hội.”",
+      "words": [
+       "别",
+       "担心",
+       "，",
+       "以后",
+       "有的是",
+       "机会"
+      ],
+      "answer": "别担心，以后有的是机会。",
+      "explanation": "Dùng để trấn an."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们学校有的是外国留学生。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: nơi chốn + 有的是 + N."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我有的是很多钱。",
+      "isCorrect": false,
+      "correctVersion": "我有的是钱。",
+      "explanation": "Không thêm 很多 sau 有的是."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "图书馆里有的是五本中文书。",
+      "isCorrect": false,
+      "correctVersion": "图书馆里有的是中文书。",
+      "explanation": "有的是 không đi với số lượng cụ thể."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đừng lo, ở Cáp Nhĩ Tân quần áo dày có thừa, muốn mua thì mua.",
+      "answer": "别担心，哈尔滨有的是厚衣服，想买就买。",
+      "answerPy": "Bié dānxīn, Hā'ěrbīn yǒudeshì hòu yīfu, xiǎng mǎi jiù mǎi.",
+      "explanation": "Nơi chốn + 有的是 + N."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Thời gian còn thừa, chúng ta vẫn kịp.",
+      "answer": "时间有的是，我们还来得及。",
+      "answerPy": "Shíjiān yǒudeshì, wǒmen hái láidejí.",
+      "explanation": "有的是 + 来得及 (ôn Bài 4 · điểm 4)."
+     }
+    ]
+   },
+   {
+    "title": "连词“而” — còn, mà, nhưng; (vì …) mà …",
+    "errors": [
+     {
+      "wrong": "我喜欢苹果而香蕉。",
+      "why": "而 không nối hai danh từ — dùng 和.",
+      "right": "我喜欢苹果和香蕉。"
+     },
+     {
+      "wrong": "广州冬天很暖和，哈尔滨而特别冷。",
+      "why": "而 đứng ĐẦU vế sau, trước chủ ngữ.",
+      "right": "广州冬天很暖和，而哈尔滨特别冷。"
+     },
+     {
+      "wrong": "他不仅聪明，而很努力。",
+      "why": "Ý tăng tiến “không chỉ … mà còn” dùng 而且, không dùng 而.",
+      "right": "他不仅聪明，而且很努力。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Quảng Châu gần như không có mùa đông, còn Cáp Nhĩ Tân …”",
+      "pre": "广州基本上没有冬天，",
+      "blank": "而",
+      "post": "哈尔滨的冬天一般会从十月开始。",
+      "options": [
+       "而",
+       "和",
+       "跟"
+      ],
+      "answer": 0,
+      "explanation": "Đối lập hai đối tượng → 而 (和 / 跟 chỉ nối danh từ)."
+     },
+     {
+      "context": "“Trong những ngày căng thẳng mà hào hứng này …”",
+      "pre": "在这个紧张",
+      "blank": "而",
+      "post": "兴奋的日子里，我们都走出教室，为运动员们加油。",
+      "options": [
+       "而",
+       "也",
+       "就"
+      ],
+      "answer": 0,
+      "explanation": "Adj + 而 + Adj (nối tiếp)."
+     },
+     {
+      "context": "“… vì thời tiết ấm mà thu hút nhiều du khách.”",
+      "pre": "冬天，这个城市因为天气暖和而",
+      "blank": "吸引",
+      "post": "了很多游客。",
+      "options": [
+       "吸引",
+       "引起",
+       "举办"
+      ],
+      "answer": 0,
+      "explanation": "因为……而 + kết quả; 吸引游客 = thu hút du khách."
+     },
+     {
+      "context": "“… còn tiếng Quảng Châu khác tiếng phổ thông khá nhiều.”",
+      "pre": "哈尔滨方言和普通话听起来比较像，而广州方言和普通话",
+      "blank": "差别",
+      "post": "较大。",
+      "options": [
+       "差别",
+       "气候",
+       "方言"
+      ],
+      "answer": 0,
+      "explanation": "差别较大 = khác biệt khá lớn."
+     },
+     {
+      "context": "“Trường do thời tiết xấu mà huỷ đại hội thể thao.” (ôn 由于 – Bài 2)",
+      "pre": "学校",
+      "blank": "由于",
+      "post": "天气不好而取消了运动会。",
+      "options": [
+       "由于",
+       "虽然",
+       "如果"
+      ],
+      "answer": 0,
+      "explanation": "由于 / 因为 + nguyên nhân + 而 + kết quả."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Miền Nam mùa đông rất ấm, còn miền Bắc mùa đông rất lạnh.”",
+      "words": [
+       "南方",
+       "冬天",
+       "很暖和",
+       "，",
+       "而",
+       "北方",
+       "冬天",
+       "很冷"
+      ],
+      "answer": "南方冬天很暖和，而北方冬天很冷。",
+      "explanation": "A……，而 B…… (đối lập)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô ấy thể hiện nhiệt tình và tích cực.”",
+      "words": [
+       "她",
+       "表现得",
+       "热情",
+       "而",
+       "积极"
+      ],
+      "answer": "她表现得热情而积极。",
+      "explanation": "Adj + 而 + Adj; 表现 (Bài 1)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Sân trường vì nghỉ đông mà trở nên rất yên tĩnh.”",
+      "words": [
+       "校园",
+       "因为",
+       "放寒假",
+       "而",
+       "变得",
+       "十分安静"
+      ],
+      "answer": "校园因为放寒假而变得十分安静。",
+      "explanation": "因为……而…… (nhân quả)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "哥哥喜欢安静，而弟弟喜欢热闹。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 而 nối hai vế đối lập."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我买了牛奶而面包。",
+      "isCorrect": false,
+      "correctVersion": "我买了牛奶和面包。",
+      "explanation": "而 không nối hai danh từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他因为生病了，而所以没来上课。",
+      "isCorrect": false,
+      "correctVersion": "他因为生病而没来上课。",
+      "explanation": "因为……而…… đã có ý nhân quả, không thêm 所以."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Miền Nam mùa đông rất ấm, còn miền Bắc mùa đông rất lạnh.",
+      "answer": "南方冬天很暖和，而北方冬天很冷。",
+      "answerPy": "Nánfāng dōngtiān hěn nuǎnhuo, ér běifāng dōngtiān hěn lěng.",
+      "explanation": "A……，而 B…… (đối lập)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Thành phố này vì có nhiều hoa mà được gọi là “Thành phố hoa”.",
+      "answer": "这个城市因为花多而叫“花城”。",
+      "answerPy": "Zhège chéngshì yīnwèi huā duō ér jiào “huā chéng”.",
+      "explanation": "因为……而…… (nhân quả)."
+     }
+    ]
+   },
+   {
+    "title": "频率副词“再次” — lại một lần nữa, lần thứ hai",
+    "errors": [
+     {
+      "wrong": "我们再次了见面。",
+      "why": "了 đặt sau động từ, không đặt ngay sau 再次.",
+      "right": "我们再次见面了。"
+     },
+     {
+      "wrong": "他昨天又再次迟到了。",
+      "why": "又 và 再次 cùng nghĩa “lại” — chỉ dùng một từ.",
+      "right": "他昨天再次迟到了。"
+     },
+     {
+      "wrong": "我们见面再次。",
+      "why": "再次 là phó từ, phải đứng TRƯỚC động từ.",
+      "right": "我们再次见面。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… chúng ta lại một lần nữa phát động hoạt động “Sống xanh”.”",
+      "pre": "今年的“世界环境日”，我们",
+      "blank": "再次",
+      "post": "开展“绿色生活”活动。",
+      "options": [
+       "再次",
+       "从来",
+       "偶尔"
+      ],
+      "answer": 0,
+      "explanation": "再次 + V."
+     },
+     {
+      "context": "“… tôi định lại đi Cáp Nhĩ Tân ngắm tuyết.”",
+      "pre": "今年冬天，我计划再次去哈尔滨",
+      "blank": "看",
+      "post": "雪。",
+      "options": [
+       "看",
+       "见",
+       "冻"
+      ],
+      "answer": 0,
+      "explanation": "看雪 = ngắm tuyết."
+     },
+     {
+      "context": "“Một lần nữa xin cảm ơn sự ủng hộ và quan tâm của quý vị!”",
+      "pre": "",
+      "blank": "再次",
+      "post": "感谢您的支持与关心！",
+      "options": [
+       "再次",
+       "再说",
+       "此外"
+      ],
+      "answer": 0,
+      "explanation": "再次感谢 — câu trang trọng cuối thư, phát biểu."
+     },
+     {
+      "context": "“Trước khi ra khỏi nhà anh ấy kiểm tra lại hành lý lần nữa.”",
+      "pre": "他出门前再次",
+      "blank": "检查",
+      "post": "了一下行李，看看东西都带好了没有。",
+      "options": [
+       "检查",
+       "举办",
+       "开展"
+      ],
+      "answer": 0,
+      "explanation": "再次 + 检查."
+     },
+     {
+      "context": "“Dù lần trước không thành công, nhưng anh ấy vẫn …” (ôn Bài 9)",
+      "pre": "尽管上次没有成功，",
+      "blank": "但是",
+      "post": "他还是决定再次试一试。",
+      "options": [
+       "但是",
+       "而且",
+       "所以"
+      ],
+      "answer": 0,
+      "explanation": "尽管……但是……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chào mừng ngài lại đến chỗ chúng tôi du lịch.”",
+      "words": [
+       "欢迎",
+       "您",
+       "再次",
+       "来",
+       "我们这里",
+       "旅游"
+      ],
+      "answer": "欢迎您再次来我们这里旅游。",
+      "explanation": "再次 + 来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Gặp lại bạn học cũ, mọi người đều đặc biệt vui.”",
+      "words": [
+       "再次",
+       "见到",
+       "老同学",
+       "，",
+       "大家",
+       "都特别高兴"
+      ],
+      "answer": "再次见到老同学，大家都特别高兴。",
+      "explanation": "再次 + 见到."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trường lại tổ chức hoạt động phân loại rác.”",
+      "words": [
+       "学校",
+       "再次",
+       "举办了",
+       "垃圾分类",
+       "活动"
+      ],
+      "answer": "学校再次举办了垃圾分类活动。",
+      "explanation": "再次 + V了 (việc đã xảy ra)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "下个月我们会再次开展环保活动。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 再次 dùng cho việc sắp làm."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他又再次忘了带钥匙。",
+      "isCorrect": false,
+      "correctVersion": "他再次忘了带钥匙。",
+      "explanation": "又 và 再次 trùng nghĩa — bỏ 又."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们再次了检查行李。",
+      "isCorrect": false,
+      "correctVersion": "我们再次检查了行李。",
+      "explanation": "了 đặt sau động từ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Một lần nữa cảm ơn sự giúp đỡ của mọi người!",
+      "answer": "再次感谢大家的帮助！",
+      "answerPy": "Zàicì gǎnxiè dàjiā de bāngzhù!",
+      "explanation": "再次感谢 — trang trọng."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Năm sau tôi định lại đi Quảng Châu lần nữa.",
+      "answer": "明年我打算再次去广州。",
+      "answerPy": "Míngnián wǒ dǎsuàn zàicì qù Guǎngzhōu.",
+      "explanation": "Thời gian + 打算 / 计划 + 再次 + V."
+     }
+    ]
+   }
+  ]
+ }
+}

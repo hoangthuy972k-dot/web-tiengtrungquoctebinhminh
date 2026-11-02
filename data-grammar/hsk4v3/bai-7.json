@@ -1,0 +1,702 @@
+{
+ "/lessons/hsk4v3-bai-7.html": {
+  "points": [
+   {
+    "title": "固定格式“在……方面” — về mặt …, trong lĩnh vực …",
+    "errors": [
+     {
+      "wrong": "他很努力在学习方面。",
+      "why": "Bắt chước trật tự tiếng Việt “chăm chỉ về mặt học tập”; tiếng Trung đặt 在……方面 TRƯỚC vị ngữ.",
+      "right": "他在学习方面很努力。"
+     },
+     {
+      "wrong": "在生活方面上，他还不太习惯。",
+      "why": "Thừa 上 — đã có 方面 thì không thêm 上 (lẫn với 在……上).",
+      "right": "在生活方面，他还不太习惯。"
+     },
+     {
+      "wrong": "在方面内容，您觉得有需要改的吗？",
+      "why": "Danh từ phải đứng GIỮA 在 và 方面.",
+      "right": "在内容方面，您觉得有需要改的吗？"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Về mặt nội dung, chị thấy có chỗ nào cần sửa không?”",
+      "pre": "",
+      "blank": "在",
+      "post": "内容方面，您觉得有需要改的吗？",
+      "options": [
+       "在",
+       "从",
+       "对"
+      ],
+      "answer": 0,
+      "explanation": "Cấu trúc cố định: 在 + N + 方面."
+     },
+     {
+      "context": "“Về mặt sắp xếp thời gian …”",
+      "pre": "在时间安排",
+      "blank": "方面",
+      "post": "，你可以再想一想。",
+      "options": [
+       "方面",
+       "一方面",
+       "地方"
+      ],
+      "answer": 0,
+      "explanation": "在……方面 khoanh vùng một mặt; 一方面 dùng khi liệt kê hai mặt (Bài 1)."
+     },
+     {
+      "context": "“… về mặt sinh hoạt vẫn chưa quen lắm.”",
+      "pre": "他才来中国两个月，在生活方面，还不太",
+      "blank": "习惯",
+      "post": "。",
+      "options": [
+       "习惯",
+       "经验",
+       "产品"
+      ],
+      "answer": 0,
+      "explanation": "不太习惯 = chưa quen lắm."
+     },
+     {
+      "context": "“Về mặt giá cả, mua trên mạng thường rẻ hơn cửa hàng.” (ôn 往往 – Bài 4)",
+      "pre": "在价格方面，网购",
+      "blank": "往往",
+      "post": "比商店便宜。",
+      "options": [
+       "往往",
+       "及时",
+       "提前"
+      ],
+      "answer": 0,
+      "explanation": "往往 = thường thường (theo quy luật)."
+     },
+     {
+      "context": "“Con trai tôi về mặt học tập thể hiện rất tốt.” (ôn 表现 – Bài 1)",
+      "pre": "我儿子在学习方面",
+      "blank": "表现",
+      "post": "很好。",
+      "options": [
+       "表现",
+       "效果",
+       "内容"
+      ],
+      "answer": 0,
+      "explanation": "表现很好 = biểu hiện / thể hiện tốt."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Về mặt nội dung, chị thấy có chỗ nào cần sửa không?”",
+      "words": [
+       "在",
+       "内容",
+       "方面",
+       "，",
+       "您",
+       "觉得",
+       "有需要改的吗"
+      ],
+      "answer": "在内容方面，您觉得有需要改的吗？",
+      "explanation": "在 + N + 方面 đứng đầu câu."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Về mặt công việc, cô ấy vừa cẩn thận vừa nghiêm túc.”",
+      "words": [
+       "她",
+       "在",
+       "工作",
+       "方面",
+       "既",
+       "细心",
+       "又",
+       "认真"
+      ],
+      "answer": "她在工作方面既细心又认真。",
+      "explanation": "Chủ ngữ + 在……方面 + vị ngữ; ôn 既……又…… (Bài 4)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Về mặt sinh hoạt, anh ấy vẫn chưa quen lắm.”",
+      "words": [
+       "在",
+       "生活",
+       "方面",
+       "，",
+       "他",
+       "还",
+       "不太习惯"
+      ],
+      "answer": "在生活方面，他还不太习惯。",
+      "explanation": "在……方面 đứng đầu câu hoặc sau chủ ngữ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他在交流方面能力很强。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 在交流方面 đứng trước vị ngữ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "她很细心在工作方面。",
+      "isCorrect": false,
+      "correctVersion": "她在工作方面很细心。",
+      "explanation": "在……方面 phải đứng TRƯỚC vị ngữ 很细心."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "在学习方面上，他的表现很好。",
+      "isCorrect": false,
+      "correctVersion": "在学习方面，他的表现很好。",
+      "explanation": "Không thêm 上 sau 方面."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Về mặt nội dung, bản kế hoạch này chẳng có gì phải sửa.",
+      "answer": "在内容方面，这个计划书没有什么好改的。",
+      "answerPy": "Zài nèiróng fāngmiàn, zhège jìhuà shū méiyǒu shénme hǎo gǎi de.",
+      "explanation": "在……方面 + 没有什么好×的 (Bài 6 · điểm 2)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Về mặt giá cả, mua trên mạng thường rẻ hơn ở cửa hàng.",
+      "answer": "在价格方面，网购往往比商店便宜。",
+      "answerPy": "Zài jiàgé fāngmiàn, wǎng gòu wǎngwǎng bǐ shāngdiàn piányi.",
+      "explanation": "在价格方面 + 往往 (Bài 4) + câu so sánh 比."
+     }
+    ]
+   },
+   {
+    "title": "因果复句“既然……，就……” — đã … thì …",
+    "errors": [
+     {
+      "wrong": "既然明天下雨，我们就不去了。",
+      "why": "既然 dùng cho sự thật ĐÃ biết; việc chưa chắc xảy ra là giả thiết → 要是 / 如果.",
+      "right": "要是明天下雨，我们就不去了。"
+     },
+     {
+      "wrong": "既然大家都同意，就我们这么做吧。",
+      "why": "就 là phó từ, đứng SAU chủ ngữ của vế sau.",
+      "right": "既然大家都同意，我们就这么做吧。"
+     },
+     {
+      "wrong": "既然你不舒服，所以回家休息吧。",
+      "why": "既然 đi với 就 / 也 / 还, không đi với 所以.",
+      "right": "既然你不舒服，就回家休息吧。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Đã đi công tác không lâu thì …”",
+      "pre": "",
+      "blank": "既然",
+      "post": "出差时间不长，就要安排好时间。",
+      "options": [
+       "既然",
+       "虽然",
+       "不但"
+      ],
+      "answer": 0,
+      "explanation": "既然……，就……: tiền đề → kết luận."
+     },
+     {
+      "context": "“… thì chúng ta làm như vậy đi.”",
+      "pre": "既然大家都同意，我们",
+      "blank": "就",
+      "post": "这么做吧。",
+      "options": [
+       "就",
+       "才",
+       "都"
+      ],
+      "answer": 0,
+      "explanation": "就 đứng sau chủ ngữ 我们."
+     },
+     {
+      "context": "“… thì đừng sửa nữa.”",
+      "pre": "既然你们已经决定了，就不要再",
+      "blank": "改",
+      "post": "了。",
+      "options": [
+       "改",
+       "谈",
+       "管理"
+      ],
+      "answer": 0,
+      "explanation": "不要再改了 = đừng sửa nữa."
+     },
+     {
+      "context": "“Bạn đã có kinh nghiệm về mặt này thì giới thiệu cho chúng tôi đi.”",
+      "pre": "既然你有这方面的",
+      "blank": "经验",
+      "post": "，就给我们介绍一下吧。",
+      "options": [
+       "经验",
+       "产品",
+       "市场"
+      ],
+      "answer": 0,
+      "explanation": "有……方面的经验."
+     },
+     {
+      "context": "“Đã không kịp nữa thì đi taxi thôi.” (ôn Bài 4)",
+      "pre": "既然",
+      "blank": "来不及",
+      "post": "了，我们就坐出租车去吧。",
+      "options": [
+       "来不及",
+       "来得及",
+       "来不了"
+      ],
+      "answer": 0,
+      "explanation": "来不及 = không kịp (thời gian)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mọi người đã đồng ý cả thì chúng ta làm như vậy đi.”",
+      "words": [
+       "既然",
+       "大家",
+       "都同意",
+       "，",
+       "我们",
+       "就",
+       "这么做吧"
+      ],
+      "answer": "既然大家都同意，我们就这么做吧。",
+      "explanation": "既然……，Sub + 就……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn đã không khỏe thì về nhà nghỉ đi.”",
+      "words": [
+       "既然",
+       "你",
+       "不舒服",
+       "，",
+       "就",
+       "回家",
+       "休息吧"
+      ],
+      "answer": "既然你不舒服，就回家休息吧。",
+      "explanation": "既然 có thể đứng trước hoặc sau chủ ngữ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đã đi công tác không lâu thì phải sắp xếp thời gian cho tốt.”",
+      "words": [
+       "既然",
+       "出差时间",
+       "不长",
+       "，",
+       "就要",
+       "安排好",
+       "时间"
+      ],
+      "answer": "既然出差时间不长，就要安排好时间。",
+      "explanation": "Câu trong bài khoá 2."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "既然你已经决定了，我也不说什么了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: vế sau có thể dùng 也."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "既然他生病了，所以没来上课。",
+      "isCorrect": false,
+      "correctVersion": "因为他生病了，所以没来上课。",
+      "explanation": "Kể nguyên nhân – kết quả khách quan dùng 因为……所以……; vế sau của 既然 là kết luận / đề nghị."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "既然下雨了，就咱们不出去了吧。",
+      "isCorrect": false,
+      "correctVersion": "既然下雨了，咱们就不出去了吧。",
+      "explanation": "就 đứng sau chủ ngữ 咱们."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đã đến rồi thì ngồi thêm một lúc nữa đi.",
+      "answer": "既然来了，就再坐一会儿吧。",
+      "answerPy": "Jìrán lái le, jiù zài zuò yíhuìr ba.",
+      "explanation": "既然……，就…… + 吧 (lời mời, đề nghị)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đã không có cơ hội phát triển thì đổi một công việc khác đi.",
+      "answer": "既然没有发展机会，就换一个工作吧。",
+      "answerPy": "Jìrán méiyǒu fāzhǎn jīhuì, jiù huàn yí gè gōngzuò ba.",
+      "explanation": "Đáp án gợi ý của sách; 一份工作 (lượng từ 份 – từ mới)."
+     }
+    ]
+   },
+   {
+    "title": "固定格式“拿……来说” — lấy … mà nói, ví dụ như …",
+    "errors": [
+     {
+      "wrong": "拿购物说，人们不出门就能买到想要的东西。",
+      "why": "Thiếu 来 — cấu trúc cố định là 拿……来说.",
+      "right": "拿购物来说，人们不出门就能买到想要的东西。"
+     },
+     {
+      "wrong": "拿我来说，汉字很难。",
+      "why": "Muốn nói “đối với tôi (cảm nhận của tôi)” → dùng 对……来说; 拿……来说 dùng để dẫn ví dụ cho một nhận định chung.",
+      "right": "对我来说，汉字很难。"
+     },
+     {
+      "wrong": "拿吃饭来说，在中国南北方的生活习惯不同。",
+      "why": "Câu nhận định chung nên đứng TRƯỚC, ví dụ 拿……来说 đứng sau để làm rõ.",
+      "right": "在中国，南北方的生活习惯不同。拿吃饭来说，一般南方人更爱吃米饭。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Lấy mua sắm mà nói …”",
+      "pre": "现在的生活很方便。",
+      "blank": "拿",
+      "post": "购物来说，人们不出门就能买到想要的东西。",
+      "options": [
+       "拿",
+       "对",
+       "把"
+      ],
+      "answer": 0,
+      "explanation": "Dẫn ví dụ → 拿……来说."
+     },
+     {
+      "context": "“Lấy chuyện ăn uống mà nói …”",
+      "pre": "在中国，南北方的生活习惯不同。拿吃饭来",
+      "blank": "说",
+      "post": "，一般南方人更爱吃米饭。",
+      "options": [
+       "说",
+       "看",
+       "想"
+      ],
+      "answer": 0,
+      "explanation": "Cấu trúc cố định 拿……来说."
+     },
+     {
+      "context": "“Lấy việc trao đổi với khách hàng mà nói …”",
+      "pre": "她也遇到了一些困难。拿和客户",
+      "blank": "交流",
+      "post": "来说，实际效果并不理想。",
+      "options": [
+       "交流",
+       "产品",
+       "效果"
+      ],
+      "answer": 0,
+      "explanation": "Giữa 拿 và 来说 có thể là cụm động từ: 和客户交流."
+     },
+     {
+      "context": "“Lấy tốc độ mà nói, hôm nay mua mai đã nhận.” (ôn 速度 – Bài 4)",
+      "pre": "网购有很多优点。拿",
+      "blank": "速度",
+      "post": "来说，今天买的东西明天就能收到。",
+      "options": [
+       "速度",
+       "能力",
+       "基础"
+      ],
+      "answer": 0,
+      "explanation": "Ví dụ về ưu điểm “tốc độ” của mua hàng trên mạng."
+     },
+     {
+      "context": "“Lấy môi trường mà nói, đâu cũng có hoa …” (ôn Bài 2)",
+      "pre": "这个小区很不错。拿",
+      "blank": "环境",
+      "post": "来说，到处都是花，还种了很多树。",
+      "options": [
+       "环境",
+       "房租",
+       "经验"
+      ],
+      "answer": 0,
+      "explanation": "Hoa, cây → nói về 环境."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Lấy chuyện ăn uống mà nói, người miền Nam thường thích ăn cơm hơn.”",
+      "words": [
+       "拿",
+       "吃饭",
+       "来说",
+       "，",
+       "一般",
+       "南方人",
+       "更爱吃",
+       "米饭"
+      ],
+      "answer": "拿吃饭来说，一般南方人更爱吃米饭。",
+      "explanation": "拿 + N + 来说，……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Lấy mua sắm mà nói, người ta không ra khỏi nhà cũng mua được thứ mình muốn.”",
+      "words": [
+       "拿",
+       "购物",
+       "来说",
+       "，",
+       "人们",
+       "不出门",
+       "就能",
+       "买到想要的东西"
+      ],
+      "answer": "拿购物来说，人们不出门就能买到想要的东西。",
+      "explanation": "Ví dụ của sách."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Lấy tôi làm ví dụ, mỗi ngày tôi học ít nhất hai tiếng.”",
+      "words": [
+       "拿",
+       "我",
+       "来说",
+       "，",
+       "我",
+       "每天",
+       "至少",
+       "学习两个小时"
+      ],
+      "answer": "拿我来说，我每天至少学习两个小时。",
+      "explanation": "拿 + người + 来说; ôn 至少 (Bài 5)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这家饭馆的菜很好吃。拿水煮鱼来说，又香又辣。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: nhận định chung trước, ví dụ 拿……来说 sau (水煮鱼 – Bài 5)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们班同学经常互相帮助。拿学习说，大家经常一起研究难题。",
+      "isCorrect": false,
+      "correctVersion": "我们班同学经常互相帮助。拿学习来说，大家经常一起研究难题。",
+      "explanation": "Thiếu 来."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "拿我来说，这个问题太难了。",
+      "isCorrect": false,
+      "correctVersion": "对我来说，这个问题太难了。",
+      "explanation": "Nói cảm nhận của một người → 对……来说."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Giao thông thành phố này rất thuận tiện. Lấy tàu điện ngầm mà nói, đi đâu cũng tiện.",
+      "answer": "这个城市的交通很方便。拿地铁来说，去哪儿都很方便。",
+      "answerPy": "Zhègè chéngshì de jiāotōng hěn fāngbiàn. Ná dìtiě láishuō, qù nǎr dōu hěn fāngbiàn.",
+      "explanation": "Nhận định chung + 拿……来说 + ví dụ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Lớp nào cũng có ưu điểm. Lấy lớp chúng tôi mà nói, các bạn thường xuyên giúp đỡ lẫn nhau.",
+      "answer": "每个班都有优点。拿我们班来说，同学之间经常互相帮助。",
+      "answerPy": "Měi gè bān dōu yǒu yōudiǎn. Ná wǒmen bān láishuō, tóngxué zhī jiān jīngcháng hùxiāng bāngzhù.",
+      "explanation": "优点 (từ mới) + ôn 之间, 互相 (Bài 4)."
+     }
+    ]
+   },
+   {
+    "title": "兼语句“主语+使+宾语+动词短语” — A khiến (làm cho) B …",
+    "errors": [
+     {
+      "wrong": "经理使我下周去上海出差。",
+      "why": "Sai bảo, giao việc dùng 让 / 叫; 使 chỉ “khiến cho” (nguyên nhân → kết quả).",
+      "right": "经理让我下周去上海出差。"
+     },
+     {
+      "wrong": "这个新方法使变得工作更加简单了。",
+      "why": "Ngay sau 使 phải là tân ngữ: 使 + 工作 + 变得……",
+      "right": "这个新方法使工作变得更加简单了。"
+     },
+     {
+      "wrong": "他的话做我很高兴。",
+      "why": "Dịch máy móc “làm cho” thành 做; “làm cho / khiến” phải dùng 使 (hoặc 让).",
+      "right": "他的话使我很高兴。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Phương pháp mới khiến công việc đơn giản hơn.”",
+      "pre": "这个新方法",
+      "blank": "使",
+      "post": "工作变得更加简单了。",
+      "options": [
+       "使",
+       "被",
+       "把"
+      ],
+      "answer": 0,
+      "explanation": "A + 使 + B + 变得 + Adj."
+     },
+     {
+      "context": "“… khiến sự phát triển của bản thân bị ảnh hưởng.”",
+      "pre": "如果总是换工作，可能会使自己的发展",
+      "blank": "受到",
+      "post": "影响。",
+      "options": [
+       "受到",
+       "得到",
+       "收到"
+      ],
+      "answer": 0,
+      "explanation": "受到影响 = bị ảnh hưởng."
+     },
+     {
+      "context": "“… giúp du học sinh nhanh chóng thích nghi với cuộc sống đại học.” (ôn 适应 – Bài 1)",
+      "pre": "参加这些交流活动使留学生更快",
+      "blank": "适应",
+      "post": "了大学生活。",
+      "options": [
+       "适应",
+       "进入",
+       "积累"
+      ],
+      "answer": 0,
+      "explanation": "适应 + 生活 / 环境."
+     },
+     {
+      "context": "“Lâu không nghỉ ngơi có thể khiến sức khỏe bị ảnh hưởng.”",
+      "pre": "长时间不休息可能会使",
+      "blank": "健康",
+      "post": "受到影响。",
+      "options": [
+       "健康",
+       "效果",
+       "能力"
+      ],
+      "answer": 0,
+      "explanation": "Đáp án gợi ý của sách."
+     },
+     {
+      "context": "“… thích nghi với môi trường làm việc mới.”",
+      "pre": "和同事多交流可以使你更快适应新的工作",
+      "blank": "环境",
+      "post": "。",
+      "options": [
+       "环境",
+       "产品",
+       "内容"
+      ],
+      "answer": 0,
+      "explanation": "工作环境 = môi trường làm việc."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Phương pháp mới này khiến công việc trở nên đơn giản hơn.”",
+      "words": [
+       "这个",
+       "新方法",
+       "使",
+       "工作",
+       "变得",
+       "更加简单了"
+      ],
+      "answer": "这个新方法使工作变得更加简单了。",
+      "explanation": "Chủ ngữ + 使 + tân ngữ + 变得 + Adj."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Lần khảo sát thị trường này giúp chúng tôi hiểu suy nghĩ của khách hàng hơn.”",
+      "words": [
+       "这次",
+       "市场调查",
+       "使",
+       "我们",
+       "更了解",
+       "客户的想法"
+      ],
+      "answer": "这次市场调查使我们更了解客户的想法。",
+      "explanation": "我们 vừa là tân ngữ của 使 vừa là chủ ngữ của 了解."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mua sắm trên mạng khiến cuộc sống của mọi người tiện hơn.”",
+      "words": [
+       "网购",
+       "使",
+       "人们的生活",
+       "更加",
+       "方便了"
+      ],
+      "answer": "网购使人们的生活更加方便了。",
+      "explanation": "使 + B + 更加 + Adj (ôn Bài 3, 4)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个消息使大家都很高兴。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: sự việc (消息) khiến mọi người vui."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "老师使我们写一篇作文。",
+      "isCorrect": false,
+      "correctVersion": "老师让我们写一篇作文。",
+      "explanation": "Giao việc, sai bảo dùng 让, không dùng 使."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这次出差使积累了很多经验。",
+      "isCorrect": false,
+      "correctVersion": "这次出差使我积累了很多经验。",
+      "explanation": "Sau 使 phải có tân ngữ (我)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Thường xuyên thức khuya sẽ khiến sức khỏe bị ảnh hưởng.",
+      "answer": "经常熬夜会使健康受到影响。",
+      "answerPy": "Jīngcháng áoyè huì shǐ jiànkāng shòudào yǐngxiǎng.",
+      "explanation": "会 + 使 + B + 受到影响."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Chuyến công tác lần này giúp tôi tích lũy được không ít kinh nghiệm.",
+      "answer": "这次出差使我积累了不少经验。",
+      "answerPy": "Zhè cì chūchāi shǐ wǒ jīlěi le bù shǎo jīngyàn.",
+      "explanation": "出差, 积累, 经验 (từ mới) + 使."
+     }
+    ]
+   }
+  ]
+ }
+}

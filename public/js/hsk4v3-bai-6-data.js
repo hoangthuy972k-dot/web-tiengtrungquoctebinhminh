@@ -204,7 +204,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ho dữ như thế, e là không đi làm nổi rồi.",
     "answer": "咳得这么厉害，恐怕上不了班了。",
-    "answerPy": "Ké de zhème lìhai, kǒngpà shàng bù liǎo bān le.",
+    "answerPy": "Ké de zhème lìhai, kǒngpà shàng bù le bān le.",
     "note": "Ôn bổ ngữ khả năng V不了 (Bài 4 · điểm 1).",
     "pair": "V不了"
    }
@@ -637,7 +637,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bạn dám xem phim này một mình không? Tôi xem cùng bạn nhé.",
     "answer": "你敢一个人看这个电影吗？我陪你一起看吧。",
-    "answerPy": "Nǐ gǎn yí gèrén kàn zhège diànyǐng ma? Wǒ péi nǐ yìqǐ kàn ba.",
+    "answerPy": "Nǐ gǎn yí gè rén kàn zhège diànyǐng ma? Wǒ péi nǐ yìqǐ kàn ba.",
     "note": "Bài tập SGK; ôn 敢 (từ mới Bài 5).",
     "pair": "陪 + ai + 一起 + V"
    }
@@ -2966,7 +2966,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hôm qua ngủ muộn quá, hôm nay 10 giờ mới dậy.",
     "answer": "昨天睡得太晚了，今天10点才醒。",
-    "answerPy": "Zuótiān shuì de tài wǎn le, jīntiān 1 0 diǎn cái xǐng.",
+    "answerPy": "Zuótiān shuì de tài wǎn le, jīntiān 10 diǎn cái xǐng.",
     "note": "Bài tập chọn từ của sách (câu 9).",
     "pair": "……才醒"
    },

@@ -106,7 +106,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu bạn muốn đỗ HSK 4 thì mỗi ngày phải học ít nhất hai tiếng.",
     "answer": "要是你想通过HSK四级，就得每天至少学习两个小时。",
-    "answerPy": "Yàoshì nǐ xiǎng tōngguò H S K sì jí, jiù děi měi tiān zhìshǎo xuéxí liǎng gè xiǎoshí.",
+    "answerPy": "Yàoshì nǐ xiǎng tōngguò HSK sì jí, jiù děi měi tiān zhìshǎo xuéxí liǎng gè xiǎoshí.",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2).",
     "pair": "要是……就至少……"
    }
@@ -626,7 +626,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mỗi người gọi một món mình thích, vừa ăn vừa trò chuyện.",
     "answer": "每个人点一道自己喜欢的菜，边吃边聊。",
-    "answerPy": "Měi gèrén diǎn yí dào zìjǐ xǐhuan de cài, biān chī biān liáo.",
+    "answerPy": "Měi gè rén diǎn yí dào zìjǐ xǐhuan de cài, biān chī biān liáo.",
     "note": "Ôn 边……边…… (HSK 3).",
     "pair": "边……边……"
    }
@@ -889,7 +889,7 @@ var vocabData = [
    },
    {
     "zh": "这个菜别放辣椒，我的孩子吃不了辣。",
-    "py": "Zhège cài bié fàng làjiāo, wǒ de háizi chī bù liǎo là.",
+    "py": "Zhège cài bié fàng làjiāo, wǒ de háizi chī bù le là.",
     "vn": "Món này đừng cho ớt, con tôi không ăn cay được."
    }
   ],
@@ -924,7 +924,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Món này đừng cho ớt, con tôi không ăn cay được.",
     "answer": "这个菜别放辣椒，我的孩子吃不了辣。",
-    "answerPy": "Zhège cài bié fàng làjiāo, wǒ de háizi chī bù liǎo là.",
+    "answerPy": "Zhège cài bié fàng làjiāo, wǒ de háizi chī bù le là.",
     "note": "Ôn V不了 (Bài 4 · điểm 1).",
     "pair": "吃不了"
    },
@@ -1858,7 +1858,7 @@ var vocabData = [
    },
    {
     "zh": "经过一年的努力，他的中文终于达到了HSK四级水平。",
-    "py": "Jīngguò yì nián de nǔlì, tā de Zhōngwén zhōngyú dádào le H S K sì jí shuǐpíng.",
+    "py": "Jīngguò yì nián de nǔlì, tā de Zhōngwén zhōngyú dádào le HSK sì jí shuǐpíng.",
     "vn": "Sau một năm nỗ lực, tiếng Trung của anh ấy cuối cùng đã đạt trình độ HSK 4."
    }
   ],
@@ -2810,7 +2810,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cuối tuần lớp chúng tôi đi liên hoan, bạn đến được không?",
     "answer": "周末我们班去聚餐，你来得了吗？",
-    "answerPy": "Zhōumò wǒmen bān qù jùcān, nǐ lái de le ma?",
+    "answerPy": "Zhōumò wǒmen bān qù jùcān, nǐ lái de liǎo ma?",
     "note": "Ôn V得了 (Bài 4 · điểm 1).",
     "pair": "来得了"
    },
@@ -3949,7 +3949,7 @@ var vocabData = [
    },
    {
     "zh": "请问，这个座位有人吗？——没有人，您坐吧。",
-    "py": "Qǐngwèn, zhège zuòwèi yǒurén ma? — — Méi yǒurén, nín zuò ba.",
+    "py": "Qǐngwèn, zhège zuòwèi yǒurén ma? — Méiyǒu rén, nín zuò ba.",
     "vn": "Xin hỏi, chỗ này có ai ngồi chưa? — Không có ai, mời bác ngồi."
    }
   ],
@@ -4496,12 +4496,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "大家坐下时，主人会请客人先坐。",
-  "ex_py": "Dàjiā zuò xià shí, zhǔrén huì qǐng kèrén xiān zuò.",
+  "ex_py": "Dàjiā zuò xià shí, zhǔrén huì qǐngkè rén xiān zuò.",
   "ex_vn": "Khi mọi người ngồi xuống, chủ nhà sẽ mời khách ngồi trước.",
   "exList": [
    {
     "zh": "大家坐下时，主人会请客人先坐。",
-    "py": "Dàjiā zuò xià shí, zhǔrén huì qǐng kèrén xiān zuò.",
+    "py": "Dàjiā zuò xià shí, zhǔrén huì qǐngkè rén xiān zuò.",
     "vn": "Khi mọi người ngồi xuống, chủ nhà sẽ mời khách ngồi trước."
    },
    {
@@ -4541,7 +4541,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Khi mọi người ngồi xuống, chủ nhà sẽ mời khách ngồi trước.",
     "answer": "大家坐下时，主人会请客人先坐。",
-    "answerPy": "Dàjiā zuò xià shí, zhǔrén huì qǐng kèrén xiān zuò.",
+    "answerPy": "Dàjiā zuò xià shí, zhǔrén huì qǐngkè rén xiān zuò.",
     "note": "Câu trong bài khoá 4; câu kiêm ngữ 请.",
     "pair": "请……先坐"
    },
@@ -5077,7 +5077,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "大家坐下时，主人会请客人先坐。",
-    "py": "Dàjiā zuò xià shí, zhǔrén huì qǐng kèrén xiān zuò.",
+    "py": "Dàjiā zuò xià shí, zhǔrén huì qǐngkè rén xiān zuò.",
     "vn": "Khi mọi người ngồi vào bàn, chủ nhà sẽ mời khách ngồi trước."
    },
    {
@@ -5856,6 +5856,6 @@ var writingData = {
  ],
  "model": {
   "zh": "我来自越南，越南菜的种类够多的，味道也够丰富的。一般来说，北方人喜欢吃咸一点儿的，南方人更喜欢吃甜的，中部人最爱吃辣，有的菜辣是辣，不过非常香。越南人每天至少吃一次米饭或者米线，最有名的越南河粉就是用米做的，汤是用牛骨头煮了好几个小时才做成的。越南菜用油不多，还会配很多新鲜的蔬菜，既好吃又健康。在越南，一家人吃饭的时候，大家聚在一起，要等爷爷奶奶拿起筷子，年轻人再开始吃，这是尊重老人的表现。和朋友聚餐就比较随意了，有时候一个人请客，有时候各付各的。欢迎大家来美食节尝尝越南菜！",
-  "py": "Wǒ láizì Yuènán, Yuènán cài de zhǒnglèi gòu duō de, wèidào yě gòu fēngfù de. Yìbān láishuō, běifāng rén xǐhuan chī xián yìdiǎnr de, nánfāng rén gèng xǐhuan chī tián de, zhōng bù rén zuì ài chī là, yǒude cài là shì là, búguò fēicháng xiāng. Yuènán rén měi tiān zhìshǎo chī yí cì mǐfàn huòzhě mǐ xiàn, zuì yǒumíng de Yuènán hé fěn jiù shì yòng mǐ zuò de, tāng shì yòng niú gǔtou zhǔ le hǎo jǐ gè xiǎoshí cái zuò chéng de. Yuènán cài yòng yóu bù duō, hái huì pèi hěn duō xīnxiān de shūcài, jì hǎochī yòu jiànkāng. Zài Yuènán, yì jiārén chīfàn de shíhou, dàjiā jù zài yìqǐ, yào děng yéye-nǎinai ná qǐ kuàizi, niánqīngrén zài kāishǐ chī, zhè shì zūnzhòng lǎorén de biǎoxiàn. Hé péngyou jùcān jiù bǐjiào suíyì le, yǒu shíhou yí gèrén qǐngkè, yǒu shíhou gè fù gè de. Huānyíng dàjiā lái měi shí jié cháng cháng Yuènán cài!"
+  "py": "Wǒ láizì Yuènán, Yuènán cài de zhǒnglèi gòu duō de, wèidào yě gòu fēngfù de. Yìbān láishuō, běifāng rén xǐhuan chī xián yìdiǎnr de, nánfāng rén gèng xǐhuan chī tián de, zhōng bù rén zuì ài chī là, yǒude cài là shì là, búguò fēicháng xiāng. Yuènán rén měi tiān zhìshǎo chī yí cì mǐfàn huòzhě mǐ xiàn, zuì yǒumíng de Yuènán hé fěn jiù shì yòng mǐ zuò de, tāng shì yòng niú gǔtou zhǔ le hǎo jǐ gè xiǎoshí cái zuò chéng de. Yuènán cài yòng yóu bù duō, hái huì pèi hěn duō xīnxiān de shūcài, jì hǎochī yòu jiànkāng. Zài Yuènán, yì jiārén chīfàn de shíhou, dàjiā jù zài yìqǐ, yào děng yéye-nǎinai ná qǐ kuàizi, niánqīngrén zài kāishǐ chī, zhè shì zūnzhòng lǎorén de biǎoxiàn. Hé péngyou jùcān jiù bǐjiào suíyì le, yǒu shíhou yí gè rén qǐngkè, yǒu shíhou gè fù gè de. Huānyíng dàjiā lái měi shí jié cháng cháng Yuènán cài!"
  }
 };

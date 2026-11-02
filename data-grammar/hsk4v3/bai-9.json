@@ -1,0 +1,684 @@
+{
+ "/lessons/hsk4v3-bai-9.html": {
+  "points": [
+   {
+    "title": "紧缩复句“不……也……” — không … cũng (vẫn) …",
+    "errors": [
+     {
+      "wrong": "我不说也你懂。",
+      "why": "也 là phó từ: đứng sau chủ ngữ vế sau (你), trước động từ.",
+      "right": "我不说你也懂。"
+     },
+     {
+      "wrong": "他不复习能考出好成绩。",
+      "why": "Thiếu 也 → không còn nghĩa “dù không … vẫn …”.",
+      "right": "他不复习也能考出好成绩。"
+     },
+     {
+      "wrong": "不用地图，但是我也能找到。",
+      "why": "Câu rút gọn không dùng 但是; nén gọn thành một câu 不……也…….",
+      "right": "不用地图我也能找到。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Em không nói anh cũng hiểu em đang nghĩ gì.”",
+      "pre": "我不说你",
+      "blank": "也",
+      "post": "懂我在想什么。",
+      "options": [
+       "也",
+       "就",
+       "还"
+      ],
+      "answer": 0,
+      "explanation": "不……也……: dù không nói, kết quả vẫn là hiểu."
+     },
+     {
+      "context": "“Cậu ấy không ôn cũng thi được điểm cao.”",
+      "pre": "他不",
+      "blank": "复习",
+      "post": "也能考出好成绩。",
+      "options": [
+       "复习",
+       "错过",
+       "祝"
+      ],
+      "answer": 0,
+      "explanation": "不 + V1 (复习) + 也 + kết quả."
+     },
+     {
+      "context": "“… không hỏi tôi cũng biết.”",
+      "pre": "我很清楚他为什么生气，",
+      "blank": "不",
+      "post": "问我也知道。",
+      "options": [
+       "不",
+       "没",
+       "别"
+      ],
+      "answer": 0,
+      "explanation": "Mẫu cố định dùng 不 ở vế đầu."
+     },
+     {
+      "context": "“Đường này tôi đi nhiều lần rồi, không dùng điện thoại cũng tìm được.”",
+      "pre": "这条路我走过很多次了，不用手机",
+      "blank": "也",
+      "post": "能找到。",
+      "options": [
+       "也",
+       "才",
+       "再"
+      ],
+      "answer": 0,
+      "explanation": "不用……也能…… = không cần … cũng có thể …"
+     },
+     {
+      "context": "“Trưa ăn no quá, tối không ăn cũng không đói.”",
+      "pre": "我中午吃得太饱了，晚上不吃饭也不",
+      "blank": "饿",
+      "post": "。",
+      "options": [
+       "饿",
+       "饱",
+       "累"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau có thể là phủ định: 也不饿."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Em không nói anh cũng hiểu.”",
+      "words": [
+       "我",
+       "不说",
+       "你",
+       "也",
+       "懂"
+      ],
+      "answer": "我不说你也懂。",
+      "explanation": "Sub1 + 不 + V1 + Sub2 + 也 + V2."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy không ôn cũng thi được điểm cao.”",
+      "words": [
+       "他",
+       "不",
+       "复习",
+       "也能",
+       "考出",
+       "好成绩"
+      ],
+      "answer": "他不复习也能考出好成绩。",
+      "explanation": "不 + V1 + 也能 + V2."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chuyện này không hỏi tôi cũng biết.”",
+      "words": [
+       "这件事",
+       "不问",
+       "我",
+       "也",
+       "知道"
+      ],
+      "answer": "这件事不问我也知道。",
+      "explanation": "Chủ ngữ vế sau (我) đứng trước 也."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你不告诉我，我也知道你在想什么。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 不……也…… (có thể có dấu phẩy khi chủ ngữ hai vế khác nhau)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我不说也你懂。",
+      "isCorrect": false,
+      "correctVersion": "我不说你也懂。",
+      "explanation": "也 phải đứng sau chủ ngữ 你."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "不用地图，但是我也能找到。",
+      "isCorrect": false,
+      "correctVersion": "不用地图我也能找到。",
+      "explanation": "Câu rút gọn không dùng 但是."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Em không nói anh cũng hiểu em đang nghĩ gì.",
+      "answer": "我不说你也懂我在想什么。",
+      "answerPy": "Wǒ bù shuō nǐ yě dǒng wǒ zài xiǎng shénme.",
+      "explanation": "Sub1 + 不 + V + Sub2 + 也 + V."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bài này dễ quá, không ôn cũng làm được.",
+      "answer": "这个题太简单了，不复习也做得了。",
+      "answerPy": "Zhège tí tài jiǎndān le, bú fùxí yě zuò de liǎo.",
+      "explanation": "不复习也 + V得了 (ôn Bài 4 · điểm 1)."
+     }
+    ]
+   },
+   {
+    "title": "转折复句“尽管……，但是/可是……” — mặc dù …, nhưng …",
+    "errors": [
+     {
+      "wrong": "尽管下雨，所以我们还是去了。",
+      "why": "尽管 (nhượng bộ) không đi với 所以 (nhân quả).",
+      "right": "尽管下雨，但是我们还是去了。"
+     },
+     {
+      "wrong": "尽管天气怎么样，我都去跑步。",
+      "why": "Điều kiện bất kỳ (怎么样) phải dùng 不管……都……; 尽管 chỉ đi với một sự thật cụ thể.",
+      "right": "不管天气怎么样，我都去跑步。"
+     },
+     {
+      "wrong": "尽管很累，但是还是他完成了工作。",
+      "why": "还是 là phó từ, đứng SAU chủ ngữ 他.",
+      "right": "尽管很累，但是他还是完成了工作。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Họ tuy tính cách khác nhau nhưng …”",
+      "pre": "他们",
+      "blank": "尽管",
+      "post": "性格不同，但是有很多共同爱好。",
+      "options": [
+       "尽管",
+       "由于",
+       "不管"
+      ],
+      "answer": 0,
+      "explanation": "尽管……，但是…… (chuyển ngoặt)."
+     },
+     {
+      "context": "“… nhưng họ vẫn hoàn thành nhiệm vụ.”",
+      "pre": "尽管时间紧张、压力很大，",
+      "blank": "但是",
+      "post": "他们还是完成了任务。",
+      "options": [
+       "但是",
+       "所以",
+       "而且"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau của 尽管 dùng 但是 / 可是."
+     },
+     {
+      "context": "“… nhưng vẫn kiên nhẫn đọc truyện cho con.”",
+      "pre": "尽管她已经很累了，可是",
+      "blank": "还是",
+      "post": "很耐心地给女儿读睡前故事。",
+      "options": [
+       "还是",
+       "才",
+       "就"
+      ],
+      "answer": 0,
+      "explanation": "可是 + 还是: nhấn mạnh “vẫn”."
+     },
+     {
+      "context": "“Mặc dù đã sống ở Trung Quốc năm năm, nhưng vẫn chưa quen ăn cay.” (phân biệt 不管 – Bài 8, 既然 – Bài 7)",
+      "pre": "",
+      "blank": "尽管",
+      "post": "他已经在中国住了五年，但是还是不太习惯吃辣的。",
+      "options": [
+       "尽管",
+       "不管",
+       "既然"
+      ],
+      "answer": 0,
+      "explanation": "Sự thật cụ thể + kết quả trái chiều → 尽管."
+     },
+     {
+      "context": "“Mặc dù công việc bận, nhưng anh ấy rất có trách nhiệm với gia đình …”",
+      "pre": "尽管工作很忙，但是他对家庭很",
+      "blank": "负责",
+      "post": "，从来没忘过孩子的生日。",
+      "options": [
+       "负责",
+       "积极",
+       "浪漫"
+      ],
+      "answer": 0,
+      "explanation": "对……负责 = có trách nhiệm với …"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mặc dù lâu lắm không gặp, nhưng mọi người vẫn thấy rất thân quen.”",
+      "words": [
+       "尽管",
+       "很久没见了",
+       "，",
+       "但是",
+       "大家",
+       "还是",
+       "感觉很熟悉"
+      ],
+      "answer": "尽管很久没见了，但是大家还是感觉很熟悉。",
+      "explanation": "尽管……，但是 + Sub + 还是……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy tuy công việc rất bận nhưng ngày nào cũng gọi cho bạn gái.”",
+      "words": [
+       "他",
+       "尽管",
+       "工作很忙",
+       "，",
+       "可是",
+       "每天",
+       "都给女朋友打电话"
+      ],
+      "answer": "他尽管工作很忙，可是每天都给女朋友打电话。",
+      "explanation": "尽管 đứng trước hoặc sau chủ ngữ đều được."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mặc dù tôi rất thích chiếc máy tính đó, nhưng cuối cùng vẫn không mua.”",
+      "words": [
+       "尽管",
+       "我",
+       "很喜欢那台电脑",
+       "，",
+       "但是",
+       "最后",
+       "还是没有买"
+      ],
+      "answer": "尽管我很喜欢那台电脑，但是最后还是没有买。",
+      "explanation": "Đáp án tham khảo của sách (bài tập 3)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "尽管雨下得很大，但是比赛还是按时开始了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: mưa to (sự thật) — trận đấu vẫn bắt đầu đúng giờ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "尽管他生病了，所以没来上课。",
+      "isCorrect": false,
+      "correctVersion": "由于他生病了，所以没来上课。",
+      "explanation": "Quan hệ nhân quả → 由于……，所以…… (Bài 2)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "尽管你说什么，我都不相信。",
+      "isCorrect": false,
+      "correctVersion": "不管你说什么，我都不相信。",
+      "explanation": "Điều kiện bất kỳ (什么) → 不管……都…… (Bài 8)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Mặc dù tính cách họ khác nhau, nhưng họ có rất nhiều sở thích chung.",
+      "answer": "尽管他们性格不同，但是有很多共同爱好。",
+      "answerPy": "Jǐnguǎn tāmen xìnggé bùtóng, dànshì yǒu hěn duō gòngtóng àihào.",
+      "explanation": "尽管……，但是 / 可是…… + từ mới 性格, 共同."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Mặc dù đã học tiếng Trung hai năm, nhưng tôi vẫn xem không hiểu phim Trung Quốc.",
+      "answer": "尽管我已经学了两年中文，但是还是看不懂中国电影。",
+      "answerPy": "Jǐnguǎn wǒ yǐjīng xué le liǎng nián Zhōngwén, dànshì háishì kàn bù dǒng Zhōngguó diànyǐng.",
+      "explanation": "但是 + 还是 + V不懂."
+     }
+    ]
+   },
+   {
+    "title": "指示代词“此” — này, đây (văn viết, trang trọng)",
+    "errors": [
+     {
+      "wrong": "你看，此是我新买的手机。",
+      "why": "Khẩu ngữ: 此 không làm chủ ngữ một mình như 这.",
+      "right": "你看，这是我新买的手机。"
+     },
+     {
+      "wrong": "妈妈，此菜真好吃！",
+      "why": "Nói chuyện thân mật trong nhà mà dùng 此 nghe rất cứng, như đọc văn bản — dùng 这.",
+      "right": "妈妈，这个菜真好吃！"
+     },
+     {
+      "wrong": "从此以前，他每天都跑步。",
+      "why": "从此 = từ đó VỀ SAU, không đi với 以前.",
+      "right": "从此以后，他每天都跑步。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Chuyến công tác lần này khiến hai người thân quen.”",
+      "pre": "",
+      "blank": "此",
+      "post": "次出差，让两人熟悉了起来。",
+      "options": [
+       "此",
+       "那",
+       "哪"
+      ],
+      "answer": 0,
+      "explanation": "此次 = 这次 (văn viết)."
+     },
+     {
+      "context": "“… nhất định hoàn thành tốt nhiệm vụ.”",
+      "pre": "此人聪明、有能力，一定能顺利完成",
+      "blank": "任务",
+      "post": "。",
+      "options": [
+       "任务",
+       "印象",
+       "日子"
+      ],
+      "answer": 0,
+      "explanation": "完成任务 = hoàn thành nhiệm vụ."
+     },
+     {
+      "context": "“Tài liệu này rất quan trọng, phải giao tận tay anh ấy.”",
+      "pre": "此材料很重要，必须直接",
+      "blank": "交",
+      "post": "给他。",
+      "options": [
+       "交",
+       "让",
+       "叫"
+      ],
+      "answer": 0,
+      "explanation": "交给 + người = giao cho ai."
+     },
+     {
+      "context": "“… từ đó thành bạn tốt.”",
+      "pre": "他们一起出了次差，",
+      "blank": "从此",
+      "post": "成了好朋友。",
+      "options": [
+       "从此",
+       "从来",
+       "当时"
+      ],
+      "answer": 0,
+      "explanation": "从此 = từ mốc đó về sau."
+     },
+     {
+      "context": "“… tôi chịu trách nhiệm về việc này.” (ôn 任何 – Bài 1)",
+      "pre": "关于此次活动，大家有任何问题都可以问我，我对",
+      "blank": "此",
+      "post": "负责。",
+      "options": [
+       "此",
+       "这儿",
+       "那儿"
+      ],
+      "answer": 0,
+      "explanation": "对此负责 = chịu trách nhiệm về việc này."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chuyến công tác lần này khiến hai người thân quen.”",
+      "words": [
+       "此次",
+       "出差",
+       "让",
+       "两人",
+       "熟悉了起来"
+      ],
+      "answer": "此次出差让两人熟悉了起来。",
+      "explanation": "此次 + N làm chủ ngữ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Công việc này do bạn phụ trách.”",
+      "words": [
+       "此项",
+       "工作",
+       "由",
+       "你",
+       "负责"
+      ],
+      "answer": "此项工作由你负责。",
+      "explanation": "此 + lượng từ 项 + N; 由 + người + 负责."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng tôi đều rất hài lòng về việc này.”",
+      "words": [
+       "我们",
+       "对此",
+       "都",
+       "很满意"
+      ],
+      "answer": "我们对此都很满意。",
+      "explanation": "对此 = 对这件事."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "此人做事积极，工作负责，大家都很喜欢他。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 此人 = 这个人 (trang trọng)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你看，此是我新买的手机。",
+      "isCorrect": false,
+      "correctVersion": "你看，这是我新买的手机。",
+      "explanation": "Khẩu ngữ dùng 这 làm chủ ngữ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "从此以前，他再也没迟到过。",
+      "isCorrect": false,
+      "correctVersion": "从此以后，他再也没迟到过。",
+      "explanation": "从此 đi với 以后."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Chuyến công tác lần này khiến hai người trở nên thân quen, từ đó thành bạn tốt.",
+      "answer": "此次出差让两人熟悉了起来，从此成了好朋友。",
+      "answerPy": "Cǐ cì chūchāi ràng liǎng rén shúxī le qǐlái, cóngcǐ chéng le hǎo péngyou.",
+      "explanation": "此次 + 从此 (từ mới)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Người này vừa thông minh vừa có trách nhiệm, việc này giao cho anh ấy là được.",
+      "answer": "此人既聪明又负责，这件事交给他就是了。",
+      "answerPy": "Cǐ rén jì cōngming yòu fùzé, zhè jiàn shì jiāo gěi tā jiù shì le.",
+      "explanation": "此人 + 既……又…… (Bài 4) + 就是了 (Bài 2)."
+     }
+    ]
+   },
+   {
+    "title": "时间副词“从来” — từ trước đến nay (luôn / chưa từng)",
+    "errors": [
+     {
+      "wrong": "我从来没见这个颜色的花。",
+      "why": "从来没 + V nói kinh nghiệm “chưa từng” → cần 过.",
+      "right": "我从来没见过这个颜色的花。"
+     },
+     {
+      "wrong": "昨天他从来没来上课。",
+      "why": "从来 nói cả quãng thời gian đến nay, không đi với một thời điểm cụ thể (昨天).",
+      "right": "昨天他没来上课。"
+     },
+     {
+      "wrong": "他不从来喝酒。",
+      "why": "从来 đứng TRƯỚC 不.",
+      "right": "他从来不喝酒。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Tình yêu, từ trước đến nay luôn là …”",
+      "pre": "爱，",
+      "blank": "从来",
+      "post": "都是相互尊重、理解与支持，不是吗？",
+      "options": [
+       "从来",
+       "从此",
+       "当时"
+      ],
+      "answer": 0,
+      "explanation": "从来都是 = từ trước đến nay luôn là."
+     },
+     {
+      "context": "“Tôi chưa từng thấy loài hoa màu này.”",
+      "pre": "我从来没见",
+      "blank": "过",
+      "post": "这个颜色的花，它叫什么名字啊？",
+      "options": [
+       "过",
+       "了",
+       "着"
+      ],
+      "answer": 0,
+      "explanation": "从来没 + V + 过."
+     },
+     {
+      "context": "“Tôi trước giờ không thích đi du lịch một mình.”",
+      "pre": "我从来",
+      "blank": "不",
+      "post": "喜欢一个人旅游，每次都要和家人或朋友一起去。",
+      "options": [
+       "不",
+       "没",
+       "别"
+      ],
+      "answer": 0,
+      "explanation": "Sở thích, thói quen → 从来不."
+     },
+     {
+      "context": "“… chưa từng đến muộn.”",
+      "pre": "他工作很负责，从来",
+      "blank": "没",
+      "post": "迟到过。",
+      "options": [
+       "没",
+       "不",
+       "别"
+      ],
+      "answer": 0,
+      "explanation": "Có 过 → 从来没 + V + 过."
+     },
+     {
+      "context": "“Anh ấy là người rất thật thà, trước giờ không nói dối.”",
+      "pre": "他这个人很",
+      "blank": "实在",
+      "post": "，从来不说假话。",
+      "options": [
+       "实在",
+       "浪漫",
+       "积极"
+      ],
+      "answer": 0,
+      "explanation": "实在 = thật thà (từ mới bài khoá 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi chưa từng đến Vạn Lý Trường Thành.”",
+      "words": [
+       "我",
+       "从来",
+       "没",
+       "去过",
+       "长城"
+      ],
+      "answer": "我从来没去过长城。",
+      "explanation": "从来没 + V + 过 + O."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy trước giờ không uống cà phê.”",
+      "words": [
+       "他",
+       "从来",
+       "不",
+       "喝",
+       "咖啡"
+      ],
+      "answer": "他从来不喝咖啡。",
+      "explanation": "从来不 + V: thói quen."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tình yêu từ trước đến nay luôn là ủng hộ lẫn nhau.”",
+      "words": [
+       "爱",
+       "从来",
+       "都是",
+       "相互",
+       "支持的"
+      ],
+      "answer": "爱从来都是相互支持的。",
+      "explanation": "Khẳng định: 从来都是……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我从来没吃过这么好吃的巧克力。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 从来没 + V + 过."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "她不从来迟到。",
+      "isCorrect": false,
+      "correctVersion": "她从来不迟到。",
+      "explanation": "从来 đứng trước 不."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "上个星期六我从来没去公园。",
+      "isCorrect": false,
+      "correctVersion": "上个星期六我没去公园。",
+      "explanation": "Một thời điểm cụ thể không dùng 从来."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi chưa từng xem bộ phim này, nghe nói rất hay.",
+      "answer": "我从来没看过这个电影，听说很精彩。",
+      "answerPy": "Wǒ cónglái méi kàn guò zhège diànyǐng, tīngshuō hěn jīngcǎi.",
+      "explanation": "从来没 + V + 过 + từ mới 精彩."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Anh ấy trước giờ không nói dối, bạn cứ yên tâm là được.",
+      "answer": "他从来不说假话，你放心就是了。",
+      "answerPy": "Tā cónglái bù shuō jiǎ huà, nǐ fàngxīn jiù shì le.",
+      "explanation": "从来不 + 就是了 (ôn Bài 2 · điểm 1)."
+     }
+    ]
+   }
+  ]
+ }
+}

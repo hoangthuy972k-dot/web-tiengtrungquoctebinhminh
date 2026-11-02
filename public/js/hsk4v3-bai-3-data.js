@@ -814,7 +814,7 @@ var vocabData = [
    },
    {
     "zh": "下载App",
-    "py": "Xiàzài A p p",
+    "py": "Xiàzài App",
     "vn": "tải ứng dụng"
    },
    {
@@ -3354,7 +3354,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu không mang căn cước thì không mua được vé tàu.",
     "answer": "要是不带身份证，就买不了火车票。",
-    "answerPy": "Yàoshi bú dài shēnfènzhèng, jiù mǎi bù liǎo huǒchē piào.",
+    "answerPy": "Yàoshi bú dài shēnfènzhèng, jiù mǎi bù le huǒchē piào.",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2) + 买不了.",
     "pair": "要是……就……"
    }
@@ -3782,7 +3782,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cô ấy từ nhỏ đã muốn làm bác sĩ, thế là lên đại học chọn học y.",
     "answer": "她从小就想当医生，于是上大学时就选择了学医。",
-    "answerPy": "Tā cóngxiǎo jiù xiǎng dāng yīshēng, yúshì shàng dàxué shí jiù xuǎnzé le xué yī.",
+    "answerPy": "Tā cóng xiǎo jiù xiǎng dāng yīshēng, yúshì shàng dàxué shí jiù xuǎnzé le xué yī.",
     "note": "Ví dụ của sách (Bài 3 · điểm 4) + ôn 当 (Bài 1).",
     "pair": "……，于是……"
    },
@@ -3966,7 +3966,7 @@ var vocabData = [
    },
    {
     "zh": "A：你想吃什么？B：随便，你点吧。",
-    "py": "A: Nǐ xiǎng chī shénme? B: Suíbiàn, nǐ diǎn ba.",
+    "py": "A: nǐ xiǎng chī shénme? B: suíbiàn, nǐ diǎn ba.",
     "vn": "A: Bạn muốn ăn gì? B: Gì cũng được, bạn gọi đi."
    }
   ],

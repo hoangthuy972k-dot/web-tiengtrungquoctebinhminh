@@ -1,0 +1,697 @@
+{
+ "/lessons/hsk4v3-bai-8.html": {
+  "points": [
+   {
+    "title": "条件复句“不管……，都/也……” — bất kể …, đều / cũng …",
+    "errors": [
+     {
+      "wrong": "不管下雨，我们都去爬长城。",
+      "why": "Sau 不管 phải là điều kiện chưa xác định (dạng V不V / từ để hỏi), không dùng sự thật cụ thể.",
+      "right": "不管下不下雨，我们都去爬长城。"
+     },
+     {
+      "wrong": "不管去哪儿，能放松的地方行。",
+      "why": "Vế sau thiếu 都 / 也.",
+      "right": "不管去哪儿，能放松的地方都行。"
+     },
+     {
+      "wrong": "不管天气多冷，都他去跑步。",
+      "why": "都 / 也 là phó từ, phải đứng SAU chủ ngữ.",
+      "right": "不管天气多冷，他都去跑步。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Đi đâu cũng được, miễn là nơi có thể thư giãn.”",
+      "pre": "",
+      "blank": "不管",
+      "post": "去哪儿，能放松的地方都行。",
+      "options": [
+       "不管",
+       "虽然",
+       "因为"
+      ],
+      "answer": 0,
+      "explanation": "不管 + từ để hỏi (哪儿)，都……"
+     },
+     {
+      "context": "“Bất kể có suy nghĩ gì, bạn cũng phải nói ra.”",
+      "pre": "不管有什么想法，你",
+      "blank": "都",
+      "post": "要说出来。",
+      "options": [
+       "都",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau của 不管 dùng 都 / 也."
+     },
+     {
+      "context": "“Bất kể thời tiết tốt hay không …”",
+      "pre": "不管天气",
+      "blank": "好不好",
+      "post": "，他每天都去跑步。",
+      "options": [
+       "好不好",
+       "很好",
+       "不好"
+      ],
+      "answer": 0,
+      "explanation": "Sau 不管 dùng dạng lựa chọn Adj不Adj, không dùng 很好 (sự thật xác định)."
+     },
+     {
+      "context": "“Dù gặp khó khăn lớn đến đâu, chúng ta cũng phải kiên trì.”",
+      "pre": "不管遇到多大困难，我们",
+      "blank": "也",
+      "post": "要坚持。",
+      "options": [
+       "也",
+       "还",
+       "再"
+      ],
+      "answer": 0,
+      "explanation": "都 / 也 đứng sau chủ ngữ 我们."
+     },
+     {
+      "context": "“Dù bận đến đâu …” (ôn 至少 – Bài 5)",
+      "pre": "不管",
+      "blank": "多",
+      "post": "忙，他每个星期都至少锻炼两次。",
+      "options": [
+       "多",
+       "很",
+       "太"
+      ],
+      "answer": 0,
+      "explanation": "不管 + 多 + Adj = dù … đến đâu."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bất kể căn nhà này to hay nhỏ, tôi cũng thuê.”",
+      "words": [
+       "不管",
+       "这个房子",
+       "大还是小",
+       "，",
+       "我",
+       "都要租"
+      ],
+      "answer": "不管这个房子大还是小，我都要租。",
+      "explanation": "不管 + A还是B，Sub + 都……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bất kể ai đến, bạn cũng phải báo cho tôi.”",
+      "words": [
+       "不管",
+       "谁",
+       "来",
+       "，",
+       "你",
+       "都",
+       "要告诉我"
+      ],
+      "answer": "不管谁来，你都要告诉我。",
+      "explanation": "不管 + 谁 (từ để hỏi)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Dù đi du lịch ở đâu, cô ấy cũng đội chiếc mũ này.”",
+      "words": [
+       "不管",
+       "去哪儿",
+       "旅游",
+       "，",
+       "她",
+       "都",
+       "戴着这顶帽子"
+      ],
+      "answer": "不管去哪儿旅游，她都戴着这顶帽子。",
+      "explanation": "Từ mới 戴, 帽子 + 不管……都……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "不管明天下不下雨，我们都去参观故宫。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 不管 + V不V，Sub + 都……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "不管天气很热，他也戴着帽子。",
+      "isCorrect": false,
+      "correctVersion": "不管天气多热，他都戴着帽子。",
+      "explanation": "Sau 不管 không dùng sự thật xác định 很热 → dùng 多热."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "不管有什么问题，都你可以问我。",
+      "isCorrect": false,
+      "correctVersion": "不管有什么问题，你都可以问我。",
+      "explanation": "都 đứng sau chủ ngữ 你."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bất kể đi đâu, chỉ cần thư giãn được là được.",
+      "answer": "不管去哪儿，能放松就行。",
+      "answerPy": "Bùguǎn qù nǎr, néng fàngsōng jiù xíng.",
+      "explanation": "不管 + từ để hỏi，……都 / 就行."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Dù công việc bận đến đâu, cuối tuần anh ấy cũng đi ngoại ô thư giãn.",
+      "answer": "不管工作多忙，周末他都去郊区放松。",
+      "answerPy": "Bùguǎn gōngzuò duō máng, zhōumò tā dōu qù jiāoqū fàngsōng.",
+      "explanation": "不管 + 多 + Adj，Sub + 都 / 也……"
+     }
+    ]
+   },
+   {
+    "title": "假设复句“……，否则……” — …, nếu không thì …",
+    "errors": [
+     {
+      "wrong": "否则明天起不来，今晚早点儿睡吧。",
+      "why": "否则 đứng ở đầu vế SAU, sau lời khuyên.",
+      "right": "今晚早点儿睡吧，否则明天起不来。"
+     },
+     {
+      "wrong": "快吃药吧，否则你的病会好了。",
+      "why": "Vế sau của 否则 là hậu quả xấu (nếu KHÔNG làm), không phải kết quả tốt.",
+      "right": "快吃药吧，否则你的病就好不了了。"
+     },
+     {
+      "wrong": "如果你不早点儿睡，否则明天会累。",
+      "why": "否则 đã mang nghĩa “如果不”, không dùng cùng 如果……不…….",
+      "right": "你早点儿睡吧，否则明天会很累。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… nếu không mất sức khỏe thì chẳng đáng.”",
+      "pre": "还是别给自己太大压力，",
+      "blank": "否则",
+      "post": "，失去健康就不值得了。",
+      "options": [
+       "否则",
+       "因此",
+       "不过"
+      ],
+      "answer": 0,
+      "explanation": "Lời khuyên，否则 + hậu quả."
+     },
+     {
+      "context": "“… nếu không rất dễ hỏng.”",
+      "pre": "吃不完的菜要放进冰箱，否则很容易",
+      "blank": "坏",
+      "post": "。",
+      "options": [
+       "坏",
+       "好",
+       "新鲜"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau của 否则 là hậu quả xấu."
+     },
+     {
+      "context": "“… nếu không sáng mai dậy không nổi.” (ôn bổ ngữ khả năng – Bài 4)",
+      "pre": "今晚早点儿睡吧，否则明天早上",
+      "blank": "起不来",
+      "post": "。",
+      "options": [
+       "起不来",
+       "起得来",
+       "起来了"
+      ],
+      "answer": 0,
+      "explanation": "起不来 = không dậy nổi."
+     },
+     {
+      "context": "“Ra ngoài nhớ đội mũ, nếu không sẽ bị nắng làm đau đầu.”",
+      "pre": "外出记得戴帽子，",
+      "blank": "否则",
+      "post": "会被太阳晒得头疼。",
+      "options": [
+       "否则",
+       "所以",
+       "并"
+      ],
+      "answer": 0,
+      "explanation": "否则 đứng đầu vế sau."
+     },
+     {
+      "context": "“… nếu không sẽ không kịp.” (ôn Bài 4 · điểm 4)",
+      "pre": "我们得马上出发，否则就",
+      "blank": "来不及",
+      "post": "了。",
+      "options": [
+       "来不及",
+       "来得及",
+       "不来"
+      ],
+      "answer": 0,
+      "explanation": "来不及 = không kịp."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đừng thức khuya nữa, nếu không cơ thể sẽ không chịu nổi đâu.”",
+      "words": [
+       "别",
+       "熬夜了",
+       "，",
+       "否则",
+       "身体",
+       "会",
+       "受不了的"
+      ],
+      "answer": "别熬夜了，否则身体会受不了的。",
+      "explanation": "Lời khuyên，否则 + hậu quả (ôn V不了 – Bài 4)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đi nhanh lên, nếu không chúng ta sẽ bị muộn.”",
+      "words": [
+       "快",
+       "走吧",
+       "，",
+       "否则",
+       "我们",
+       "就要",
+       "迟到了"
+      ],
+      "answer": "快走吧，否则我们就要迟到了。",
+      "explanation": "否则……就要……了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mang ô theo, nếu không trời mưa thì phiền lắm.”",
+      "words": [
+       "带上",
+       "雨伞",
+       "，",
+       "否则",
+       "下雨",
+       "就",
+       "麻烦了"
+      ],
+      "answer": "带上雨伞，否则下雨就麻烦了。",
+      "explanation": "否则 + điều kiện + 就 + hậu quả."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你得按时吃饭，否则对身体不好。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: yêu cầu，否则 + hậu quả xấu."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "否则会感冒，你多穿点儿衣服。",
+      "isCorrect": false,
+      "correctVersion": "你多穿点儿衣服，否则会感冒。",
+      "explanation": "否则 đứng ở đầu vế sau."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "多休息吧，否则工作效率会更高。",
+      "isCorrect": false,
+      "correctVersion": "多休息吧，否则工作效率会下降。",
+      "explanation": "Vế sau 否则 phải là hậu quả xấu khi KHÔNG nghỉ ngơi."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đừng tăng ca nữa, nếu không sức khỏe sẽ bị ảnh hưởng.",
+      "answer": "别再加班了，否则健康会受到影响。",
+      "answerPy": "Bié zài jiābān le, fǒuzé jiànkāng huì shòudào yǐngxiǎng.",
+      "explanation": "Lời khuyên，否则 + hậu quả."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bạn phải nhắc tôi nhé, nếu không tôi nhất định sẽ quên.",
+      "answer": "你要提醒我，否则我一定会忘的。",
+      "answerPy": "Nǐ yào tíxǐng wǒ, fǒuzé wǒ yídìng huì wàng de.",
+      "explanation": "提醒 (từ mới) + 否则."
+     }
+    ]
+   },
+   {
+    "title": "比较句“跟……相比” — so với …",
+    "errors": [
+     {
+      "wrong": "跟一直加班，休息好了再工作，效率更高。",
+      "why": "Thiếu 相比 ở cuối cụm 跟……",
+      "right": "跟一直加班相比，休息好了再工作，效率更高。"
+     },
+     {
+      "wrong": "跟坐地铁相比，打车很贵。",
+      "why": "Câu so sánh không dùng 很; dùng 更 / Adj + 多了.",
+      "right": "跟坐地铁相比，打车贵多了。"
+     },
+     {
+      "wrong": "相比跟去年，今年来旅游的人更多。",
+      "why": "Trật tự đúng: 跟 + A + 相比.",
+      "right": "跟去年相比，今年来旅游的人更多。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“So với tăng ca liên tục …”",
+      "pre": "跟一直加班",
+      "blank": "相比",
+      "post": "，休息好了再工作，效率更高。",
+      "options": [
+       "相比",
+       "比较",
+       "一样"
+      ],
+      "answer": 0,
+      "explanation": "跟 + A + 相比."
+     },
+     {
+      "context": "“So với học thạc sĩ …”",
+      "pre": "",
+      "blank": "跟",
+      "post": "读研究生相比，我更想直接工作。",
+      "options": [
+       "跟",
+       "比",
+       "对"
+      ],
+      "answer": 0,
+      "explanation": "跟……相比 (khẩu ngữ)."
+     },
+     {
+      "context": "“… thanh toán bằng điện thoại tiện hơn.”",
+      "pre": "跟用现金相比，手机支付",
+      "blank": "更",
+      "post": "方便些。",
+      "options": [
+       "更",
+       "很",
+       "非常"
+      ],
+      "answer": 0,
+      "explanation": "Câu so sánh dùng 更, không dùng 很."
+     },
+     {
+      "context": "“So với năm ngoái …” (văn viết)",
+      "pre": "",
+      "blank": "与",
+      "post": "去年相比，今年来这里游玩的人多了一倍。",
+      "options": [
+       "与",
+       "比",
+       "被"
+      ],
+      "answer": 0,
+      "explanation": "与……相比: trang trọng, văn viết."
+     },
+     {
+      "context": "“… không khí ngoại ô trong lành hơn nhiều.”",
+      "pre": "跟市区相比，郊区的空气新鲜",
+      "blank": "多了",
+      "post": "。",
+      "options": [
+       "多了",
+       "很多",
+       "非常"
+      ],
+      "answer": 0,
+      "explanation": "Adj + 多了 = … hơn nhiều."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “So với đi máy bay, đi tàu cao tốc thoải mái hơn.”",
+      "words": [
+       "跟",
+       "坐飞机",
+       "相比",
+       "，",
+       "坐高铁",
+       "更",
+       "舒服"
+      ],
+      "answer": "跟坐飞机相比，坐高铁更舒服。",
+      "explanation": "跟 + A + 相比，B + 更 + Adj."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “So với trước đây, hiệu suất làm việc của anh ấy đã tăng nhiều.”",
+      "words": [
+       "与",
+       "以前",
+       "相比",
+       "，",
+       "他的",
+       "工作效率",
+       "提高了很多"
+      ],
+      "answer": "与以前相比，他的工作效率提高了很多。",
+      "explanation": "与……相比 (văn viết)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “So với ở nhà xem tivi, tôi thích đi ngoại ô chơi hơn.”",
+      "words": [
+       "跟",
+       "在家看电视",
+       "相比",
+       "，",
+       "我",
+       "更喜欢",
+       "去郊区游玩"
+      ],
+      "answer": "跟在家看电视相比，我更喜欢去郊区游玩。",
+      "explanation": "Chủ ngữ 我 đứng ở vế sau."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "跟市区相比，郊区安静多了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: Adj + 多了 trong câu so sánh."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "跟去年相比，今年的夏天非常热。",
+      "isCorrect": false,
+      "correctVersion": "跟去年相比，今年的夏天更热。",
+      "explanation": "Câu so sánh dùng 更, không dùng 非常."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "跟一直学习，休息一下效率更高。",
+      "isCorrect": false,
+      "correctVersion": "跟一直学习相比，休息一下效率更高。",
+      "explanation": "Thiếu 相比."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "So với đi taxi, đi tàu điện ngầm rẻ hơn nhiều.",
+      "answer": "跟打车相比，坐地铁便宜多了。",
+      "answerPy": "Gēn dǎchē xiāngbǐ, zuò dìtiě piányi duō le.",
+      "explanation": "跟……相比，B + Adj + 多了."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "So với nội thành, ngoại ô có núi có sông, phong cảnh đẹp hơn.",
+      "answer": "跟市区相比，郊区有山有水，风景更美。",
+      "answerPy": "Gēn shìqū xiāngbǐ, jiāoqū yǒu shān yǒu shuǐ, fēngjǐng gèng měi.",
+      "explanation": "跟……相比 + 有A有B (điểm 4)."
+     }
+    ]
+   },
+   {
+    "title": "固定短语“有A有B” — có A có B",
+    "errors": [
+     {
+      "wrong": "郊区有山和有水。",
+      "why": "Cụm cố định không thêm 和 vào giữa.",
+      "right": "郊区有山有水。"
+     },
+     {
+      "wrong": "他们在一起有说笑，特别开心。",
+      "why": "Phải có đủ hai chữ 有.",
+      "right": "他们在一起有说有笑，特别开心。"
+     },
+     {
+      "wrong": "超市里的苹果有大有好。",
+      "why": "A và B phải cùng loại nghĩa (gần nghĩa hoặc trái nghĩa): 大 – 小.",
+      "right": "超市里的苹果有大有小。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Ngoại ô có núi có sông …”",
+      "pre": "郊区有山有",
+      "blank": "水",
+      "post": "，还有很多农家乐。",
+      "options": [
+       "水",
+       "人",
+       "车"
+      ],
+      "answer": 0,
+      "explanation": "有山有水 — cặp gần nghĩa, chỉ cảnh đẹp."
+     },
+     {
+      "context": "“… có quả to quả nhỏ …”",
+      "pre": "超市里的苹果有大有",
+      "blank": "小",
+      "post": "，有红有绿。",
+      "options": [
+       "小",
+       "多",
+       "好"
+      ],
+      "answer": 0,
+      "explanation": "有大有小 — cặp trái nghĩa."
+     },
+     {
+      "context": "“… có nam có nữ …”",
+      "pre": "公园里到处都是人，有男有",
+      "blank": "女",
+      "post": "，特别热闹。",
+      "options": [
+       "女",
+       "老",
+       "人"
+      ],
+      "answer": 0,
+      "explanation": "有男有女."
+     },
+     {
+      "context": "“Họ ở cùng nhau nói nói cười cười …”",
+      "pre": "他们在一起有说有",
+      "blank": "笑",
+      "post": "，特别开心。",
+      "options": [
+       "笑",
+       "听",
+       "哭"
+      ],
+      "answer": 0,
+      "explanation": "有说有笑 = vừa nói vừa cười, vui vẻ."
+     },
+     {
+      "context": "“Món ăn có món ngọt có món cay …” (ôn từ Bài 5)",
+      "pre": "这家饭馆的菜有",
+      "blank": "甜",
+      "post": "有辣，大家都能找到喜欢的。",
+      "options": [
+       "甜",
+       "饭",
+       "好"
+      ],
+      "answer": 0,
+      "explanation": "有甜有辣 — hai vị khác nhau."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Khu vườn nhỏ có hoa có cỏ, rất đẹp.”",
+      "words": [
+       "小花园里",
+       "有花",
+       "有草",
+       "，",
+       "非常",
+       "漂亮"
+      ],
+      "answer": "小花园里有花有草，非常漂亮。",
+      "explanation": "Nơi chốn + 有A有B."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn học lớp tôi có nam có nữ, có lớn có nhỏ.”",
+      "words": [
+       "我们班的同学",
+       "有男",
+       "有女",
+       "，",
+       "有大",
+       "有小"
+      ],
+      "answer": "我们班的同学有男有女，有大有小。",
+      "explanation": "Hai cụm 有A有B nối tiếp."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cuộc sống lúc nào cũng có đắng có ngọt.”",
+      "words": [
+       "生活",
+       "总是",
+       "有苦",
+       "有甜",
+       "的"
+      ],
+      "answer": "生活总是有苦有甜的。",
+      "explanation": "有苦有甜 — trái nghĩa."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个地方有山有水，景色十分美丽。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 有山有水 + từ mới 景色, 十分, 美丽."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "市场里的水果有大和有小。",
+      "isCorrect": false,
+      "correctVersion": "市场里的水果有大有小。",
+      "explanation": "Không thêm 和."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "大家在一起有说笑，特别热闹。",
+      "isCorrect": false,
+      "correctVersion": "大家在一起有说有笑，特别热闹。",
+      "explanation": "Thiếu chữ 有 thứ hai."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Ngoại ô có núi có sông, ăn, chơi, ở đều rất tiện.",
+      "answer": "郊区有山有水，吃、玩、住都十分方便。",
+      "answerPy": "Jiāoqū yǒu shān yǒu shuǐ, chī, wán, zhù dōu shífēn fāngbiàn.",
+      "explanation": "有A有B + 十分 (từ mới)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Trong công viên có người lớn có trẻ con, vô cùng náo nhiệt.",
+      "answer": "公园里有大人有孩子，十分热闹。",
+      "answerPy": "Gōngyuán lǐ yǒu dàrén yǒu háizi, shífēn rènao.",
+      "explanation": "A, B hai âm tiết: 有大人有孩子."
+     }
+    ]
+   }
+  ]
+ }
+}

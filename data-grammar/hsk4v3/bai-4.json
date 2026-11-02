@@ -158,7 +158,7 @@
       "promptLang": "vi",
       "prompt": "Điện thoại tôi hết pin rồi, không quét mã được.",
       "answer": "我的手机没电了，扫不了码。",
-      "answerPy": "Wǒ de shǒujī méi diàn le, sǎo bù liǎo mǎ.",
+      "answerPy": "Wǒ de shǒujī méi diàn le, sǎo bù le mǎ.",
       "explanation": "扫码 là từ ly hợp → 扫不了码."
      },
      {
@@ -167,7 +167,7 @@
       "promptLang": "vi",
       "prompt": "Bài tập nhiều thế này, một ngày bạn làm xong được không?",
       "answer": "这么多作业，你一天做得了吗？",
-      "answerPy": "Zhème duō zuòyè, nǐ yì tiān zuò de le ma?",
+      "answerPy": "Zhème duō zuòyè, nǐ yì tiān zuò de liǎo ma?",
       "explanation": "V得了吗？ hỏi khả năng hoàn thành."
      }
     ]

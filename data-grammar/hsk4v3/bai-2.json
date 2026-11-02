@@ -511,7 +511,7 @@
       "promptLang": "vi",
       "prompt": "Thực ra thuê nhà ở Bắc Kinh chẳng hề rẻ.",
       "answer": "其实在北京租房子并不便宜。",
-      "answerPy": "Qí shízai Běijīng zū fángzi bìng bú piányi.",
+      "answerPy": "Qíshí zài Běijīng zū fángzi bìng bú piányi.",
       "explanation": "并不 + Adj: phản bác suy nghĩ “rẻ”."
      }
     ]

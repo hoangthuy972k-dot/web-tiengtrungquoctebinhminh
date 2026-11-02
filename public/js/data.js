@@ -45,9 +45,9 @@ const APP_DATA = {
       id: 'hsk4v3',
       name: 'HSK 4 (3.0 Mới)',
       subtitle: 'Giáo trình chuẩn mới · 新HSK教程4',
-      description: 'Giáo trình 新HSK教程4 (chuẩn HSK 3.0), 6 bài · 241 từ mới, ảnh nhân vật và tranh của sách + audio gốc.',
-      totalLessons: 6,
-      totalVocab: 241,
+      description: 'Giáo trình 新HSK教程4 (chuẩn HSK 3.0), 10 bài · 403 từ mới, ảnh nhân vật và tranh của sách + audio gốc.',
+      totalLessons: 10,
+      totalVocab: 403,
       color: 'teal'
     },
     // </hsk4v3-cap>
@@ -1681,6 +1681,54 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 4,
         fullPageUrl: '/lessons/hsk4v3-bai-6.html'
+      },
+      {
+        id: 'hsk4v3-l7',
+        number: 7,
+        title: "Học hỏi trong công việc",
+        titleHanzi: "在工作中学习",
+        titlePinyin: "Zài gōngzuò zhōng xuéxí",
+        topic: "Nơi làm việc: báo cáo và nhận nhiệm vụ, đi công tác khảo sát thị trường, kinh nghiệm làm việc với khách hàng, chọn việc và phát triển nghề nghiệp",
+        vocabCount: 39,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk4v3-bai-7.html'
+      },
+      {
+        id: 'hsk4v3-l8',
+        number: 8,
+        title: "Lúc cần thư giãn thì hãy thư giãn",
+        titleHanzi: "该放松时就放松",
+        titlePinyin: "Gāi fàngsōng shí jiù fàngsōng",
+        topic: "Giảm áp lực và thư giãn: rủ nhau đi chơi, cân bằng giữa làm việc và nghỉ ngơi, những nơi người Trung Quốc thường đến thư giãn cuối tuần",
+        vocabCount: 40,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk4v3-bai-8.html'
+      },
+      {
+        id: 'hsk4v3-l9',
+        number: 9,
+        title: "Gặp được bạn, thật vừa đúng lúc",
+        titleHanzi: "遇见你，刚刚好",
+        titlePinyin: "Yùjiàn nǐ, gānggāng hǎo",
+        topic: "Tình yêu và tình bạn: món quà sinh nhật, cuộc hôn nhân hạnh phúc, tình bạn đồng nghiệp và quan niệm về tình yêu, tình bạn của người Trung Quốc",
+        vocabCount: 40,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk4v3-bai-9.html'
+      },
+      {
+        id: 'hsk4v3-l10',
+        number: 10,
+        title: "Phương Nam không hiểu cái lạnh phương Bắc",
+        titleHanzi: "南方不懂北方的冷",
+        titlePinyin: "Nánfāng bù dǒng běifāng de lěng",
+        topic: "Khí hậu và môi trường: cái lạnh phương Bắc, khác biệt Nam – Bắc Trung Quốc (khí hậu, phương ngữ), sống xanh và bảo vệ môi trường",
+        vocabCount: 43,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk4v3-bai-10.html'
       }
     ],
     // </hsk4v3>

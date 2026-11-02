@@ -86,7 +86,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Á, tôi quên mang ví rồi, không mua được vé.",
     "answer": "啊，我忘带钱包了，买不了票。",
-    "answerPy": "Ā, wǒ wàng dài qián bāo le, mǎi bù liǎo piào.",
+    "answerPy": "Ā, wǒ wàng dài qián bāo le, mǎi bù le piào.",
     "note": "Kết hợp bổ ngữ khả năng 买不了 (Bài 4 · điểm 1).",
     "pair": "啊，……V不了"
    },
@@ -451,12 +451,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "我没带现金，手机没有信号，上不了网，买不了地铁票了。",
-  "ex_py": "Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bù liǎo wǎng, mǎi bù liǎo dìtiě piào le.",
+  "ex_py": "Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bù le wǎng, mǎi bù le dìtiě piào le.",
   "ex_vn": "Tôi không mang tiền mặt, điện thoại không có sóng, không lên mạng được, không mua được vé tàu điện ngầm.",
   "exList": [
    {
     "zh": "我没带现金，手机没有信号，上不了网，买不了地铁票了。",
-    "py": "Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bù liǎo wǎng, mǎi bù liǎo dìtiě piào le.",
+    "py": "Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bù le wǎng, mǎi bù le dìtiě piào le.",
     "vn": "Tôi không mang tiền mặt, điện thoại không có sóng, không lên mạng được, không mua được vé tàu điện ngầm."
    },
    {
@@ -496,7 +496,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trong thang máy không có sóng, không gọi điện được.",
     "answer": "电梯里没有信号，打不了电话。",
-    "answerPy": "Diàntī lǐ méiyǒu xìnhào, dǎ bù liǎo diànhuà.",
+    "answerPy": "Diàntī lǐ méiyǒu xìnhào, dǎ bù le diànhuà.",
     "note": "Bổ ngữ khả năng V不了 (Bài 4 · điểm 1).",
     "pair": "没有信号，V不了"
    },
@@ -906,7 +906,7 @@ var vocabData = [
    },
    {
     "zh": "他对每个人都很客气。",
-    "py": "Tā duì měi gèrén dōu hěn kèqi.",
+    "py": "Tā duì měi gè rén dōu hěn kèqi.",
     "vn": "Anh ấy rất lịch sự với mọi người."
    }
   ],
@@ -1040,7 +1040,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chỉ còn mười phút, chúng ta vẫn kịp ăn sáng.",
     "answer": "只剩十分钟了，咱们还来得及吃早饭。",
-    "answerPy": "Zhī shèng shí fēnzhōng le, zánmen hái láidejí chī zǎofàn.",
+    "answerPy": "Zhǐ shèng shí fēnzhōng le, zánmen hái láidejí chī zǎofàn.",
     "note": "来得及 (Bài 4 · điểm 4).",
     "pair": "剩……，来得及……"
    },
@@ -1048,7 +1048,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Món còn thừa nhiều quá, hai chúng ta ăn không hết.",
     "answer": "剩下的菜太多了，咱们两个人吃不了。",
-    "answerPy": "Shèng xià de cài tài duō le, zánmen liǎng gèrén chī bù liǎo.",
+    "answerPy": "Shèng xià de cài tài duō le, zánmen liǎng gè rén chī bù liǎo.",
     "note": "Bổ ngữ khả năng 吃不了 (Bài 4 · điểm 1).",
     "pair": "V不了"
    }
@@ -1387,7 +1387,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "就算……了",
-    "py": "Jiù suàn…… liǎo",
+    "py": "Jiù suàn…… le",
     "vn": "coi như là …"
    },
    {
@@ -1613,7 +1613,7 @@ var vocabData = [
    },
    {
     "zh": "A和B之间",
-    "py": "A Hé B zhījiān",
+    "py": "A hé B zhījiān",
     "vn": "giữa A và B"
    }
   ],
@@ -1681,7 +1681,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Từ 2 giờ đến 4 giờ chiều tôi đều ở văn phòng, bất cứ lúc nào bạn cũng có thể đến tìm tôi.",
     "answer": "下午两点到四点之间，我都在办公室，你任何时候都可以来找我。",
-    "answerPy": "Xiàwǔ liǎng diǎn dào sì diǎn zhījiān, wǒ dōu zài bàngōngshì, nǐ rènhé shíhou dōu kě yǐlái zhǎo wǒ.",
+    "answerPy": "Xiàwǔ liǎng diǎn dào sì diǎn zhījiān, wǒ dōu zài bàngōngshì, nǐ rènhé shíhou dōu kěyǐ lái zhǎo wǒ.",
     "note": "之间 với thời gian + 任何 (Bài 1 · điểm 1).",
     "pair": "……之间 / 任何……都……"
    }
@@ -2054,7 +2054,7 @@ var vocabData = [
    },
    {
     "zh": "A到B的距离",
-    "py": "A Dào B de jùlí",
+    "py": "A dào B de jùlí",
     "vn": "khoảng cách từ A đến B"
    },
    {
@@ -2683,7 +2683,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi quên sạc điện thoại nên không quét mã được.",
     "answer": "我忘了给手机充电，所以扫不了码。",
-    "answerPy": "Wǒ wàng le gěi shǒujī chōngdiàn, suǒyǐ sǎo bù liǎo mǎ.",
+    "answerPy": "Wǒ wàng le gěi shǒujī chōngdiàn, suǒyǐ sǎo bù le mǎ.",
     "note": "Bổ ngữ khả năng 扫不了码 (Bài 4 · điểm 1).",
     "pair": "给……充电 / V不了"
    }
@@ -3628,7 +3628,7 @@ var vocabData = [
    },
    {
     "zh": "中午12点的飞机，咱们9点出发来得及吗？",
-    "py": "Zhōngwǔ 1 2 diǎn de fēijī, zánmen 9 diǎn chūfā láidejí ma?",
+    "py": "Zhōngwǔ 12 diǎn de fēijī, zánmen 9 diǎn chūfā láidejí ma?",
     "vn": "Máy bay 12 giờ trưa, chúng ta 9 giờ xuất phát có kịp không?"
    }
   ],
@@ -3675,7 +3675,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đừng vội, còn 15 phút, chúng ta kịp ăn sáng.",
     "answer": "别着急，还有15分钟，咱们来得及吃早饭。",
-    "answerPy": "Bié zháojí, hái yǒu 1 5 fēnzhōng, zánmen láidejí chī zǎofàn.",
+    "answerPy": "Bié zháojí, hái yǒu 15 fēnzhōng, zánmen láidejí chī zǎofàn.",
     "note": "Đáp án gợi ý của sách (Bài 4 · điểm 4).",
     "pair": "来得及 + V"
    },
@@ -4335,7 +4335,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "我忘了交电话费，手机停机了。我没带现金，手机没有信号，上不了网，买不了地铁票了。",
-    "py": "Wǒ wàng le jiāo diànhuà fèi, shǒujī tíng jī le. Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bù liǎo wǎng, mǎi bù liǎo dìtiě piào le.",
+    "py": "Wǒ wàng le jiāo diànhuà fèi, shǒujī tíng jī le. Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bù le wǎng, mǎi bù le dìtiě piào le.",
     "vn": "Tôi quên đóng tiền điện thoại nên máy bị cắt rồi. Tôi không mang tiền mặt, điện thoại không có sóng, không lên mạng được, không mua được vé tàu điện ngầm nữa."
    },
    {
@@ -5035,7 +5035,7 @@ var translateData = [
  {
   "vi": "Điện thoại không có sóng, không lên mạng được, không mua được vé tàu điện ngầm nữa.",
   "zh": "手机没有信号，上不了网，买不了地铁票了。",
-  "py": "Shǒujī méiyǒu xìnhào, shàng bù liǎo wǎng, mǎi bù liǎo dìtiě piào le."
+  "py": "Shǒujī méiyǒu xìnhào, shàng bù le wǎng, mǎi bù le dìtiě piào le."
  },
  {
   "vi": "Cháu xách mấy thứ này coi như tập thể dục, vả lại hàng xóm với nhau phải giúp đỡ lẫn nhau.",
@@ -5333,6 +5333,6 @@ var writingData = {
  ],
  "model": {
   "zh": "我们班一共有十二个同学，其中八个住在学校里，四个住在校外。住在校内的同学往往走路或者骑自行车去上课，他们觉得这样既方便，又能锻炼身体。住在校外的同学有的坐地铁，有的骑电动车。坐地铁不会堵车，能省不少时间，再说地铁站里还能买到早餐，没来得及吃早饭也不用担心。骑电动车速度快，充电也很方便，不过下大雨的时候就骑不了了。我觉得，绿色出行不仅能保护环境，也能让我们的心情更加愉快。要是距离不远，大家就尽量走路或者骑自行车吧！",
-  "py": "Wǒmen bān yígòng yǒu shí èr gè tóngxué, qízhōng bā gè zhù zài xuéxiào lǐ, sì gè zhù zài xiào wài. Zhù zài xiào nèi de tóngxué wǎngwǎng zǒulù huòzhě qí zìxíngchē qù shàngkè, tāmen juéde zhèyàng jì fāngbiàn, yòu néng duànliàn shēntǐ. Zhù zài xiào wài de tóngxué yǒude zuò dìtiě, yǒude qí diàndòngchē. Zuò dìtiě bú huì dǔchē, néng shěng bù shǎo shíjiān, zàishuō dìtiě zhàn lǐ hái néng mǎi dào zǎocān, méi láidejí chī zǎofàn yě búyòng dānxīn. Qí diàndòngchē sùdù kuài, chōngdiàn yě hěn fāngbiàn, búguò xià dà yǔ de shíhou jiù qí bù liǎo liǎo. Wǒ juéde, lǜsè chūxíng bùjǐn néng bǎohù huánjìng, yě néng ràng wǒmen de xīnqíng gèngjiā yúkuài. Yàoshi jùlí bù yuǎn, dàjiā jiù jǐnliàng zǒulù huòzhě qí zìxíngchē ba!"
+  "py": "Wǒmen bān yígòng yǒu shí èr gè tóngxué, qízhōng bā gè zhù zài xuéxiào lǐ, sì gè zhù zài xiào wài. Zhù zài xiào nèi de tóngxué wǎngwǎng zǒulù huòzhě qí zìxíngchē qù shàngkè, tāmen juéde zhèyàng jì fāngbiàn, yòu néng duànliàn shēntǐ. Zhù zài xiào wài de tóngxué yǒude zuò dìtiě, yǒude qí diàndòngchē. Zuò dìtiě bú huì dǔchē, néng shěng bù shǎo shíjiān, zàishuō dìtiě zhàn lǐ hái néng mǎi dào zǎocān, méi láidejí chī zǎofàn yě búyòng dānxīn. Qí diàndòngchē sùdù kuài, chōngdiàn yě hěn fāngbiàn, búguò xià dà yǔ de shíhou jiù qí bù liǎo le. Wǒ juéde, lǜsè chūxíng bùjǐn néng bǎohù huánjìng, yě néng ràng wǒmen de xīnqíng gèngjiā yúkuài. Yàoshi jùlí bù yuǎn, dàjiā jiù jǐnliàng zǒulù huòzhě qí zìxíngchē ba!"
  }
 };

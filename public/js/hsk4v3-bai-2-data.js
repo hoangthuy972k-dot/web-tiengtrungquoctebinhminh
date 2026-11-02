@@ -163,12 +163,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "这个房子有两个房间，那个大房间出租，房租每月5500元。",
-  "ex_py": "Zhège fángzi yǒu liǎng gè fángjiān, nàge dà fángjiān chūzū, fángzū měi yuè 5 5 0 0 yuán.",
+  "ex_py": "Zhège fángzi yǒu liǎng gè fángjiān, nàge dà fángjiān chūzū, fángzū měi yuè 5500 yuán.",
   "ex_vn": "Căn nhà này có hai phòng, phòng lớn kia cho thuê, tiền thuê mỗi tháng 5500 tệ.",
   "exList": [
    {
     "zh": "这个房子有两个房间，那个大房间出租，房租每月5500元。",
-    "py": "Zhège fángzi yǒu liǎng gè fángjiān, nàge dà fángjiān chūzū, fángzū měi yuè 5 5 0 0 yuán.",
+    "py": "Zhège fángzi yǒu liǎng gè fángjiān, nàge dà fángjiān chūzū, fángzū měi yuè 5500 yuán.",
     "vn": "Căn nhà này có hai phòng, phòng lớn kia cho thuê, tiền thuê mỗi tháng 5500 tệ."
    },
    {
@@ -274,17 +274,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "那个大房间出租，房租每月5500元。",
-  "ex_py": "Nàge dà fángjiān chūzū, fángzū měi yuè 5 5 0 0 yuán.",
+  "ex_py": "Nàge dà fángjiān chūzū, fángzū měi yuè 5500 yuán.",
   "ex_vn": "Phòng lớn kia cho thuê, tiền thuê mỗi tháng 5500 tệ.",
   "exList": [
    {
     "zh": "那个大房间出租，房租每月5500元。",
-    "py": "Nàge dà fángjiān chūzū, fángzū měi yuè 5 5 0 0 yuán.",
+    "py": "Nàge dà fángjiān chūzū, fángzū měi yuè 5500 yuán.",
     "vn": "Phòng lớn kia cho thuê, tiền thuê mỗi tháng 5500 tệ."
    },
    {
     "zh": "这个小区环境好，房租也不高，一个月才5000元。",
-    "py": "Zhège xiǎoqū huánjìng hǎo, fángzū yě bù gāo, yí gè yuè cái 5 0 0 0 yuán.",
+    "py": "Zhège xiǎoqū huánjìng hǎo, fángzū yě bù gāo, yí gè yuè cái 5000 yuán.",
     "vn": "Khu chung cư này môi trường tốt, tiền thuê cũng không cao, một tháng chỉ 5000 tệ."
    }
   ],
@@ -1343,7 +1343,7 @@ var vocabData = [
    },
    {
     "zh": "外边下大雨了，我们恐怕去不了公园了。",
-    "py": "Wàibian xià dà yǔ le, wǒmen kǒngpà qù bù liǎo gōngyuán le.",
+    "py": "Wàibian xià dà yǔ le, wǒmen kǒngpà qù bù le gōngyuán le.",
     "vn": "Bên ngoài mưa to rồi, e là chúng ta không đi công viên được rồi."
    }
   ],
@@ -2757,12 +2757,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "根据李文的建议，她先在租房网站和App上查看有关信息。",
-  "ex_py": "Gēnjù Lǐ Wén de jiànyì, tā xiān zài zū fáng wǎngzhàn hé A p p shàng chákàn yǒuguān xìnxī.",
+  "ex_py": "Gēnjù Lǐ Wén de jiànyì, tā xiān zài zū fáng wǎngzhàn hé App shàng chákàn yǒuguān xìnxī.",
   "ex_vn": "Theo gợi ý của Lý Văn, trước tiên cô ấy xem thông tin liên quan trên trang web và App thuê nhà.",
   "exList": [
    {
     "zh": "根据李文的建议，她先在租房网站和App上查看有关信息。",
-    "py": "Gēnjù Lǐ Wén de jiànyì, tā xiān zài zū fáng wǎngzhàn hé A p p shàng chákàn yǒuguān xìnxī.",
+    "py": "Gēnjù Lǐ Wén de jiànyì, tā xiān zài zū fáng wǎngzhàn hé App shàng chákàn yǒuguān xìnxī.",
     "vn": "Theo gợi ý của Lý Văn, trước tiên cô ấy xem thông tin liên quan trên trang web và App thuê nhà."
    },
    {
@@ -2868,12 +2868,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "她先在租房网站和App上查看有关信息。",
-  "ex_py": "Tā xiān zài zū fáng wǎngzhàn hé A p p shàng chákàn yǒuguān xìnxī.",
+  "ex_py": "Tā xiān zài zū fáng wǎngzhàn hé App shàng chákàn yǒuguān xìnxī.",
   "ex_vn": "Trước tiên cô ấy xem thông tin liên quan trên trang web và App thuê nhà.",
   "exList": [
    {
     "zh": "她先在租房网站和App上查看有关信息。",
-    "py": "Tā xiān zài zū fáng wǎngzhàn hé A p p shàng chákàn yǒuguān xìnxī.",
+    "py": "Tā xiān zài zū fáng wǎngzhàn hé App shàng chákàn yǒuguān xìnxī.",
     "vn": "Trước tiên cô ấy xem thông tin liên quan trên trang web và App thuê nhà."
    },
    {
@@ -2979,17 +2979,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "她先在租房网站和App上查看有关信息。",
-  "ex_py": "Tā xiān zài zū fáng wǎngzhàn hé A p p shàng chákàn yǒuguān xìnxī.",
+  "ex_py": "Tā xiān zài zū fáng wǎngzhàn hé App shàng chákàn yǒuguān xìnxī.",
   "ex_vn": "Trước tiên cô ấy xem thông tin liên quan trên trang web và App thuê nhà.",
   "exList": [
    {
     "zh": "她先在租房网站和App上查看有关信息。",
-    "py": "Tā xiān zài zū fáng wǎngzhàn hé A p p shàng chákàn yǒuguān xìnxī.",
+    "py": "Tā xiān zài zū fáng wǎngzhàn hé App shàng chákàn yǒuguān xìnxī.",
     "vn": "Trước tiên cô ấy xem thông tin liên quan trên trang web và App thuê nhà."
    },
    {
     "zh": "那你上网查找租房信息时，一定要小心，不要只看价格。",
-    "py": "Nà nǐ shàngwǎng cházhǎo zū fáng xìnxī shí, yídìng yào xiǎoxīn, búyào zhī kàn jiàgé.",
+    "py": "Nà nǐ shàngwǎng cházhǎo zū fáng xìnxī shí, yídìng yào xiǎoxīn, búyào zhǐ kàn jiàgé.",
     "vn": "Vậy khi bạn lên mạng tìm thông tin thuê nhà, nhất định phải cẩn thận, đừng chỉ xem giá."
    }
   ],
@@ -3090,17 +3090,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "她先在租房网站和App上查看有关信息，查找合适的房子。",
-  "ex_py": "Tā xiān zài zū fáng wǎngzhàn hé A p p shàng chákàn yǒuguān xìnxī, cházhǎo héshì de fángzi.",
+  "ex_py": "Tā xiān zài zū fáng wǎngzhàn hé App shàng chákàn yǒuguān xìnxī, cházhǎo héshì de fángzi.",
   "ex_vn": "Trước tiên cô ấy xem thông tin trên trang web và App thuê nhà, tìm căn nhà phù hợp.",
   "exList": [
    {
     "zh": "她先在租房网站和App上查看有关信息，查找合适的房子。",
-    "py": "Tā xiān zài zū fáng wǎngzhàn hé A p p shàng chákàn yǒuguān xìnxī, cházhǎo héshì de fángzi.",
+    "py": "Tā xiān zài zū fáng wǎngzhàn hé App shàng chákàn yǒuguān xìnxī, cházhǎo héshì de fángzi.",
     "vn": "Trước tiên cô ấy xem thông tin trên trang web và App thuê nhà, tìm căn nhà phù hợp."
    },
    {
     "zh": "那你上网查找租房信息时，一定要小心，不要只看价格。",
-    "py": "Nà nǐ shàngwǎng cházhǎo zū fáng xìnxī shí, yídìng yào xiǎoxīn, búyào zhī kàn jiàgé.",
+    "py": "Nà nǐ shàngwǎng cházhǎo zū fáng xìnxī shí, yídìng yào xiǎoxīn, búyào zhǐ kàn jiàgé.",
     "vn": "Khi bạn lên mạng tìm thông tin thuê nhà, nhất định phải cẩn thận, đừng chỉ xem giá."
    }
   ],
@@ -3367,7 +3367,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hai chúng tôi cùng lúc đến trường.",
     "answer": "我们两个人同时到了学校。",
-    "answerPy": "Wǒmen liǎng gèrén tóngshí dào le xuéxiào.",
+    "answerPy": "Wǒmen liǎng gè rén tóngshí dào le xuéxiào.",
     "note": "同时 làm trạng ngữ thời gian.",
     "pair": "同时 + V"
    }
@@ -3517,7 +3517,7 @@ var vocabData = [
    },
    {
     "zh": "只看价格",
-    "py": "Zhī kàn jiàgé",
+    "py": "Zhǐ kàn jiàgé",
     "vn": "chỉ nhìn giá"
    }
   ],
@@ -3577,7 +3577,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bạn lên mạng tìm thông tin thuê nhà thì đừng chỉ nhìn giá.",
     "answer": "你上网查找租房信息时，不要只看价格。",
-    "answerPy": "Nǐ shàngwǎng cházhǎo zū fáng xìnxī shí, búyào zhī kàn jiàgé.",
+    "answerPy": "Nǐ shàngwǎng cházhǎo zū fáng xìnxī shí, búyào zhǐ kàn jiàgé.",
     "note": "Câu bài tập chọn từ của sách.",
     "pair": "不要只……"
    },
@@ -4104,7 +4104,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "请进！我给你们介绍一下，这个房子有两个房间，那个大房间出租，房租每月5500元。现在已经收拾好了，想租的话，今天就可以搬进来。",
-    "py": "Qǐng jìn! Wǒ gěi nǐmen jièshào yíxià, zhège fángzi yǒu liǎng gè fángjiān, nàge dà fángjiān chūzū, fángzū měi yuè 5 5 0 0 yuán. Xiànzài yǐjīng shōushi hǎo le, xiǎng zū dehuà, jīntiān jiù kěyǐ bān jìnlái.",
+    "py": "Qǐng jìn! Wǒ gěi nǐmen jièshào yíxià, zhège fángzi yǒu liǎng gè fángjiān, nàge dà fángjiān chūzū, fángzū měi yuè 5500 yuán. Xiànzài yǐjīng shōushi hǎo le, xiǎng zū dehuà, jīntiān jiù kěyǐ bān jìnlái.",
     "vn": "Mời vào! Tôi giới thiệu với hai bạn một chút: căn nhà này có hai phòng, phòng lớn kia cho thuê, tiền thuê mỗi tháng 5500 tệ. Bây giờ đã dọn dẹp xong rồi, muốn thuê thì hôm nay có thể dọn vào luôn."
    },
    {
@@ -4236,7 +4236,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "8月25日，晴",
-    "py": "8 Yuè 2 5 rì, qíng",
+    "py": "8 yuè 25 rì, qíng",
     "vn": "Ngày 25 tháng 8, trời nắng"
    },
    {
@@ -4319,7 +4319,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "根据李文的建议，她先在租房网站和App上查看有关信息，查找合适的房子，接着又去看了看房子，同时了解房子周围的环境。",
-    "py": "Gēnjù Lǐ Wén de jiànyì, tā xiān zài zū fáng wǎngzhàn hé A p p shàng chákàn yǒuguān xìnxī, cházhǎo héshì de fángzi, jiēzhe yòu qù kàn le kàn fángzi, tóngshí liǎojiě fángzi zhōuwéi de huánjìng.",
+    "py": "Gēnjù Lǐ Wén de jiànyì, tā xiān zài zū fáng wǎngzhàn hé App shàng chákàn yǒuguān xìnxī, cházhǎo héshì de fángzi, jiēzhe yòu qù kàn le kàn fángzi, tóngshí liǎojiě fángzi zhōuwéi de huánjìng.",
     "vn": "Theo gợi ý của Lý Văn, trước tiên cô ấy xem thông tin liên quan trên các trang web và App thuê nhà, tìm căn nhà phù hợp, tiếp đó lại đến xem nhà, đồng thời tìm hiểu môi trường xung quanh."
    },
    {
@@ -4854,7 +4854,7 @@ var translateDataRev = [
  {
   "vi": "Căn nhà này có hai phòng, phòng lớn kia cho thuê, tiền thuê mỗi tháng 5500 tệ.",
   "zh": "这个房子有两个房间，那个大房间出租，房租每月5500元。",
-  "py": "Zhège fángzi yǒu liǎng gè fángjiān, nàge dà fángjiān chūzū, fángzū měi yuè 5 5 0 0 yuán."
+  "py": "Zhège fángzi yǒu liǎng gè fángjiān, nàge dà fángjiān chūzū, fángzū měi yuè 5500 yuán."
  },
  {
   "vi": "Cuối tuần họ có thể chơi đến rất muộn, e là sẽ ảnh hưởng đến việc nghỉ ngơi của cậu.",
@@ -5117,6 +5117,6 @@ var writingData = {
  ],
  "model": {
   "zh": "大家好！我今年刚从大学毕业，在北京的一家公司工作。由于公司离我现在住的地方比较远，所以我想在公司附近租一个房子。我理想的房子是一室一厅，客厅不用太大，不过房间一定要亮，里边除了一张床以外，最好还有一台空调和一张书桌。我平常工作比较忙，基本上不做饭，所以厨房小一些也没关系。我希望小区周围的环境比较安静，离地铁站近一些，生活上方便。刚工作的时候工资还不太高，房租最好每月不超过三千元。我会按时交房租，并把房子收拾干净。要是你有合适的房子出租，给我打电话或者发信息就是了，我随时都可以去看房。谢谢！",
-  "py": "Dàjiā hǎo! Wǒ jīnnián gāng cóng dàxué bìyè, zài Běijīng de yì jiā gōngsī gōngzuò. Yóuyú gōngsī lí wǒ xiànzài zhù de dìfang bǐjiào yuǎn, suǒyǐ wǒ xiǎng zài gōngsī fùjìn zū yí gè fángzi. Wǒ lǐxiǎng de fángzi shì yí shì yì tīng, kètīng búyòng tài dà, búguò fángjiān yídìng yào liàng, lǐbian chúle yì zhāng chuáng yǐwài, zuìhǎo hái yǒu yì tái kōng tiáohé yì zhāng shū zhuō. Wǒ píngcháng gōngzuò bǐjiào máng, jīběnshàng bú zuòfàn, suǒyǐ chúfáng xiǎo yìxiē yě méiguānxì. Wǒ xīwàng xiǎoqū zhōuwéi de huánjìng bǐjiào ānjìng, lí dìtiě zhàn jìn yìxiē, shēnghuó shàng fāngbiàn. Gāng gōngzuò de shíhou gōngzī hái bú tài gāo, fángzū zuìhǎo měi yuè bù chāoguò sān qiān yuán. Wǒ huì ànshí jiāo fángzū, bìng bǎ fángzi shōushi gānjìng. Yàoshi nǐ yǒu héshì de fángzi chūzū, gěi wǒ dǎdiànhuà huòzhě fā xìnxī jiùshì le, wǒ suíshí dōu kěyǐ qù kàn fáng. Xièxiè!"
+  "py": "Dàjiā hǎo! Wǒ jīnnián gāng cóng dàxué bìyè, zài Běijīng de yì jiā gōngsī gōngzuò. Yóuyú gōngsī lí wǒ xiànzài zhù de dìfang bǐjiào yuǎn, suǒyǐ wǒ xiǎng zài gōngsī fùjìn zū yí gè fángzi. Wǒ lǐxiǎng de fángzi shì yí shì yì tīng, kètīng búyòng tài dà, búguò fángjiān yídìng yào liàng, lǐbian chúle yì zhāng chuáng yǐwài, zuìhǎo hái yǒu yì tái kōngtiáo hé yì zhāng shū zhuō. Wǒ píngcháng gōngzuò bǐjiào máng, jīběnshàng bú zuòfàn, suǒyǐ chúfáng xiǎo yìxiē yě méiguānxì. Wǒ xīwàng xiǎoqū zhōuwéi de huánjìng bǐjiào ānjìng, lí dìtiě zhàn jìn yìxiē, shēnghuó shàng fāngbiàn. Gāng gōngzuò de shíhou gōngzī hái bú tài gāo, fángzū zuìhǎo měi yuè bù chāoguò sān qiān yuán. Wǒ huì ànshí jiāo fángzū, bìng bǎ fángzi shōushi gānjìng. Yàoshi nǐ yǒu héshì de fángzi chūzū, gěi wǒ dǎdiànhuà huòzhě fā xìnxī jiùshì le, wǒ suíshí dōu kěyǐ qù kàn fáng. Xièxiè!"
  }
 };

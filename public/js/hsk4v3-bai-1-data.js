@@ -173,7 +173,7 @@ var vocabData = [
    },
    {
     "zh": "我是2024年入学的，学的是国际经济专业。",
-    "py": "Wǒ shì 2 0 2 4 nián rùxué de, xué de shì guójì jīngjì zhuānyè.",
+    "py": "Wǒ shì 2024 nián rùxué de, xué de shì guójì jīngjì zhuānyè.",
     "vn": "Tôi nhập học năm 2024, học chuyên ngành kinh tế quốc tế."
    }
   ],
@@ -700,12 +700,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "不客气，你们以后有任何问题都可以来找我。",
-  "ex_py": "Búkèqì, nǐmen yǐhòu yǒu rènhé wèntí dōu kě yǐlái zhǎo wǒ.",
+  "ex_py": "Búkèqì, nǐmen yǐhòu yǒu rènhé wèntí dōu kěyǐ lái zhǎo wǒ.",
   "ex_vn": "Không có gì, sau này các em có bất kỳ vấn đề gì đều có thể đến tìm cô.",
   "exList": [
    {
     "zh": "不客气，你们以后有任何问题都可以来找我。",
-    "py": "Búkèqì, nǐmen yǐhòu yǒu rènhé wèntí dōu kě yǐlái zhǎo wǒ.",
+    "py": "Búkèqì, nǐmen yǐhòu yǒu rènhé wèntí dōu kěyǐ lái zhǎo wǒ.",
     "vn": "Không có gì, sau này các em có bất kỳ vấn đề gì đều có thể đến tìm cô."
    },
    {
@@ -2176,7 +2176,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Vì sao bạn chọn môn học này? — Vì tôi muốn nghiên cứu nghiêm túc lịch sử và văn hóa Trung Quốc.",
     "answer": "你为什么选择这门课程？——因为我想认真研究中国的历史和文化。",
-    "answerPy": "Nǐ wèishénme xuǎnzé zhè mén kèchéng? — — Yīnwèi wǒ xiǎng rènzhēn yánjiū Zhōngguó de lìshǐ hé wénhuà.",
+    "answerPy": "Nǐ wèishénme xuǎnzé zhè mén kèchéng? — Yīnwèi wǒ xiǎng rènzhēn yánjiū Zhōngguó de lìshǐ hé wénhuà.",
     "note": "Bài tập chọn từ của sách (câu 7).",
     "pair": "因为……"
    },
@@ -3032,7 +3032,7 @@ var vocabData = [
    },
    {
     "zh": "他通过了HSK四级考试。",
-    "py": "Tā tōngguò le H S K sì jí kǎoshì.",
+    "py": "Tā tōngguò le HSK sì jí kǎoshì.",
     "vn": "Anh ấy đã đỗ kỳ thi HSK cấp 4."
    }
   ],
@@ -3392,7 +3392,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Sau này bạn muốn làm công việc gì? — Tôi muốn làm ở công ty quốc tế, có nhiều cơ hội phát triển hơn.",
     "answer": "你将来想做什么工作？——我想在国际公司工作，有更多的发展机会。",
-    "answerPy": "Nǐ jiānglái xiǎng zuò shénme gōngzuò? — — Wǒ xiǎng zài guójì gōngsī gōngzuò, yǒu gèng duō de fāzhǎn jīhuì.",
+    "answerPy": "Nǐ jiānglái xiǎng zuò shénme gōngzuò? — Wǒ xiǎng zài guójì gōngsī gōngzuò, yǒu gèng duō de fāzhǎn jīhuì.",
     "note": "Bài tập chọn từ của sách (câu 6).",
     "pair": "将来想……"
    },
@@ -3825,7 +3825,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chúng tôi trở thành bạn tốt từ ngày đầu tiên nhập học.",
     "answer": "我们从入学第一天就成为了好朋友。",
-    "answerPy": "Wǒmen cóng rùxué dì yī tiān jiù chéng wéile hǎo péngyou.",
+    "answerPy": "Wǒmen cóng rùxué dì yī tiān jiù chéngwéi le hǎo péngyou.",
     "note": "Ôn 从……就…… (HSK 3).",
     "pair": "从……就……"
    },
@@ -4230,7 +4230,7 @@ var vocabData = [
    },
    {
     "zh": "她除了复习大学学过的课程，还读了一些新的专业书，希望更多地了解这方面的知识。",
-    "py": "Tā chúle fùxí dàxué xué guò de kèchéng, hái dú le yìxiē xīn de zhuānyè shū, xīwàng gèng duō de liǎojiě zhè fāngmiàn de zhīshi.",
+    "py": "Tā chúle fùxí dàxué xué guò de kèchéng, hái dú le yìxiē xīn de zhuānyè shū, xīwàng gèng duō dì liǎojiě zhè fāngmiàn de zhīshi.",
     "vn": "Ngoài ôn lại các môn đã học ở đại học, cô ấy còn đọc thêm sách chuyên ngành mới, mong hiểu thêm kiến thức về mặt này."
    }
   ],
@@ -4311,7 +4311,7 @@ var vocabData = [
    },
    {
     "zh": "另一个人",
-    "py": "Lìng yí gèrén",
+    "py": "Lìng yí gè rén",
     "vn": "người khác"
    },
    {
@@ -4481,7 +4481,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "不客气，你们以后有任何问题都可以来找我。",
-    "py": "Búkèqì, nǐmen yǐhòu yǒu rènhé wèntí dōu kě yǐlái zhǎo wǒ.",
+    "py": "Búkèqì, nǐmen yǐhòu yǒu rènhé wèntí dōu kěyǐ lái zhǎo wǒ.",
     "vn": "Không có gì, sau này các em có bất kỳ vấn đề gì đều có thể đến tìm cô."
    }
   ]
@@ -5153,7 +5153,7 @@ var translateData = [
  {
   "vi": "Sau này các em có bất kỳ vấn đề gì đều có thể đến tìm cô.",
   "zh": "你们以后有任何问题都可以来找我。",
-  "py": "Nǐmen yǐhòu yǒu rènhé wèntí dōu kě yǐlái zhǎo wǒ."
+  "py": "Nǐmen yǐhòu yǒu rènhé wèntí dōu kěyǐ lái zhǎo wǒ."
  },
  {
   "vi": "Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế.",

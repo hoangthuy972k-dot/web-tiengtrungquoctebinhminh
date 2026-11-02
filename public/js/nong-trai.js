@@ -3102,6 +3102,7 @@
     }, function (e) { than.innerHTML = '<p class="nt-trong">' + esc(e.message) + '</p>'; });
   }
   function dongThiTran() {
+    anNoiDan();
     $('#ntThiTran').hidden = true;
     document.body.classList.remove('o-thi-tran');
   }
@@ -3112,6 +3113,7 @@
   function veThiTran() {
     var r = thiTran;
     veDaiKhach();
+    veTroiTt();
     if (!r.lop) {
       $('#ntTtTen').textContent = 'Thị trấn của lớp em';
       $('#ntTtPhu').textContent = 'chưa có bạn nào';
@@ -3124,7 +3126,10 @@
     $('#ntTtTen').textContent = 'Thị trấn ' + r.lop;
     $('#ntTtPhu').textContent = r.ds.length + ' nông trại · tổng điểm đẹp ' + tong;
     var luoi = $('#ntTtLuoi');
+    chuanBiDan(r);
+    veTroiTt();
     veQuangTruong();
+    veDanQuang();
     veCtThiTran();
     if (r.cuaEm) taiDk().catch(function () {}); else { var dkn = $('#ntDkNut'); if (dkn) dkn.hidden = true; }
     // so lo moi hang theo be rong man hinh -> chen 1 con pho truoc moi hang
@@ -3157,7 +3162,7 @@
     var dao = i % 2 === 0 ? '<span class="nt-pho-dao' + (i % 4 === 2 ? ' nguoc' : '') + '" style="animation-delay:-' + (i * 7 % 23) + 's">' + img(DI_DAO[(i / 2) % DI_DAO.length]) + '</span>' : '';
     return '<div class="nt-pho"><i class="nt-pho-vach" aria-hidden="true"></i>' +
       '<button type="button" class="nt-pho-bien" data-doc="' + esc(p.zh) + '" aria-label="' + esc(p.vn) + ' — nghe đọc"><b lang="zh">' + esc(p.zh) + '</b><small>' + esc(p.py) + ' · ' + esc(p.vn) + '</small></button>' +
-      dao + '</div>';
+      dao + danPho(i) + '</div>';
   }
   function oPho(b, i) {
     // ven duong: den long goc tren, cay / chau hoa goc duoi (moi lo mot kieu)
@@ -3176,6 +3181,100 @@
     return (getComputedStyle(luoi).gridTemplateColumns || '').split(' ').filter(Boolean).length || 1;
   }
 
+
+  /* ---------------- Cu dan di lai trong thi tran ---------------- */
+  // Cu dan co san (khong phai hoc sinh) — moi nguoi mot vai va vai cau tieng Trung HSK1-2; ban cung lop cung di dao tren pho
+  var DAN_NPC = [
+    { ten: '王奶奶', py: 'Wáng nǎinai', vn: 'Bà Vương', av: { gt: '', toc: 'bui', mt: 5, ao: 'aodai', ma: 6, duoi: 'dai', md: 1, mu: '', mm: 0, kinh: 'tron', da: 0, pk: 'quat', mat: '', mp: 1 },
+      noi: [['你好！吃饭了吗？', 'Nǐ hǎo! Chīfàn le ma?', 'Chào cháu! Cháu ăn cơm chưa?'], ['今天天气真好！', 'Jīntiān tiānqì zhēn hǎo!', 'Hôm nay trời đẹp quá!'], ['慢点儿走！', 'Màn diǎnr zǒu!', 'Đi chậm thôi cháu!']] },
+    { ten: '邮递员', py: 'yóudìyuán', vn: 'Bác đưa thư', av: { gt: 'nam', toc: 'ngan', mt: 0, ao: 'somi', ma: 4, duoi: 'dai', md: 0, mu: 'luoi', mm: 3, kinh: '', da: 1, pk: 'tui', mat: '', mp: 4 },
+      noi: [['这是你的信！', 'Zhè shì nǐ de xìn!', 'Thư của cháu đây!'], ['我今天很忙。', 'Wǒ jīntiān hěn máng.', 'Hôm nay bác bận lắm.'], ['再见！', 'Zàijiàn!', 'Tạm biệt!']] },
+    { ten: '小明', py: 'Xiǎo Míng', vn: 'Bé Minh', av: { gt: 'nam', toc: 'dinh', mt: 0, ao: 'thun', ma: 1, duoi: 'short', md: 2, mu: 'nguoc', mm: 2, kinh: '', da: 1, pk: 'bongbay', mat: 'tit', mp: 3 },
+      noi: [['我们一起玩吧！', 'Wǒmen yìqǐ wán ba!', 'Mình cùng chơi nhé!'], ['我今天学了十个汉字！', 'Wǒ jīntiān xué le shí ge Hànzì!', 'Hôm nay mình học được mười chữ Hán!'], ['你几岁？', 'Nǐ jǐ suì?', 'Bạn mấy tuổi?']] },
+    { ten: '李老师', py: 'Lǐ lǎoshī', vn: 'Cô giáo Lý', av: { gt: '', toc: 'dai', mt: 0, ao: 'khoac', ma: 2, duoi: 'vay', md: 5, mu: '', mm: 0, kinh: 'vuong', da: 0, pk: 'sach', mat: '', mp: 0 },
+      noi: [['同学们好！', 'Tóngxuémen hǎo!', 'Chào các em!'], ['你今天学习了吗？', 'Nǐ jīntiān xuéxí le ma?', 'Hôm nay em học bài chưa?'], ['加油！', 'Jiāyóu!', 'Cố lên!']] },
+    { ten: '张爷爷', py: 'Zhāng yéye', vn: 'Ông Trương', av: { gt: 'nam', toc: 'ngan', mt: 5, ao: 'vest', ma: 7, duoi: 'dai', md: 7, mu: 'no', mm: 6, kinh: 'tron', da: 2, pk: '', mat: '', mp: 0 },
+      noi: [['早上好！', 'Zǎoshang hǎo!', 'Chào buổi sáng!'], ['我去公园。', 'Wǒ qù gōngyuán.', 'Ông đi công viên.'], ['你们的小镇真漂亮！', 'Nǐmen de xiǎozhèn zhēn piàoliang!', 'Thị trấn của các cháu đẹp thật!']] },
+    { ten: '小红', py: 'Xiǎo Hóng', vn: 'Bé Hồng', av: { gt: '', toc: 'duoi', mt: 2, ao: 'thun', ma: 0, duoi: 'vay', md: 0, mu: 'hoa', mm: 1, kinh: '', da: 0, pk: 'denlong', mat: 'nhay', mp: 0 },
+      noi: [['你看，我的灯笼！', 'Nǐ kàn, wǒ de dēnglong!', 'Bạn xem, đèn lồng của mình này!'], ['我喜欢熊猫。', 'Wǒ xǐhuan xióngmāo.', 'Mình thích gấu trúc.'], ['明天见！', 'Míngtiān jiàn!', 'Mai gặp nhé!']] },
+    { ten: '陈叔叔', py: 'Chén shūshu', vn: 'Chú Trần', av: { gt: 'nam', toc: 'xu', mt: 1, ao: 'thethao', ma: 5, duoi: 'dai', md: 3, mu: 'tainghe', mm: 2, kinh: '', da: 1, pk: 'balo', mat: '', mp: 5 },
+      noi: [['我去火车站。', 'Wǒ qù huǒchēzhàn.', 'Chú ra ga tàu.'], ['你好！你是学生吗？', 'Nǐ hǎo! Nǐ shì xuésheng ma?', 'Chào cháu! Cháu là học sinh à?'], ['多喝水！', 'Duō hē shuǐ!', 'Uống nhiều nước nhé!']] },
+  ];
+  var DAN = [];
+  function svgDan(av, id) { try { return NV.svg(Object.assign({}, NV.macDinh(id || 'dan'), av || {})); } catch (e) { return NV.svg(NV.macDinh(id || 'dan')); } }
+  function chuanBiDan(r) {
+    // tron cu dan co san + toi da 6 ban cung lop co nong trai
+    var ban = tron((r.ds || []).filter(function (b) { return b.co; })).slice(0, 6).map(function (b) {
+      return { ten: (NV.tenNgan ? NV.tenNgan(b.ten) : b.ten), av: b.av || NV.macDinh(b.id), id: b.id, ban: true };
+    });
+    DAN = tron(DAN_NPC.map(function (n, i) { return { ten: n.ten, py: n.py, vn: n.vn, av: n.av, noi: n.noi, id: 'npc' + i }; }).concat(ban));
+  }
+  function htmlDan(d, j, cls, toc, tre) {
+    return '<button type="button" class="nt-dan ' + cls + '" data-dan="' + j + '" style="animation-duration:' + toc + 's;animation-delay:-' + tre + 's;--x:' + (8 + (j * 37) % 80) + '%" aria-label="' + esc(d.ban ? d.ten : d.vn) + ' — bấm để nghe nói">' +
+      '<span class="nt-dan-nv">' + svgDan(d.av, d.id) + '</span><span class="nt-dan-ten' + (d.ban ? ' ban' : '') + '">' + esc(d.ban ? d.ten : d.ten) + '</span></button>';
+  }
+  // 1-2 nguoi di qua moi con pho, toc do va huong khac nhau
+  function danPho(i) {
+    if (!DAN.length) return '';
+    var a = DAN[(i * 2) % DAN.length], b = DAN[(i * 2 + 1) % DAN.length];
+    return htmlDan(a, (i * 2) % DAN.length, i % 2 ? 'nguoc' : '', 30 + (i * 7) % 14, (i * 11) % 29) +
+      (i % 3 !== 2 && DAN.length > 1 ? htmlDan(b, (i * 2 + 1) % DAN.length, i % 2 ? '' : 'nguoc', 38 + (i * 5) % 12, (i * 13 + 9) % 37) : '');
+  }
+  function veDanQuang() {
+    var q = $('#ntTtQuang');
+    if (!q || !DAN.length) return;
+    var cu = $('#ntTtQuangDan');
+    if (cu) cu.remove();
+    var h = '<span class="nt-quang-dan" id="ntTtQuangDan">';
+    for (var k = 0; k < Math.min(3, DAN.length); k++) {
+      var j = (k * 3 + 2) % DAN.length;
+      h += htmlDan(DAN[j], j, 'dao' + (k % 2 ? ' nguoc' : ''), 16 + k * 5, k * 6);
+    }
+    q.insertAdjacentHTML('beforeend', h + '</span>');
+  }
+  // Bam vao cu dan: dung lai, noi 1 cau tieng Trung (co pinyin, nghia, doc to)
+  var danHen = null;
+  function noiDan(el) {
+    var d = DAN[+el.getAttribute('data-dan')];
+    if (!d) return;
+    var cau;
+    if (d.noi) { var n = d.noi[Math.floor(Math.random() * d.noi.length)]; cau = { zh: n[0], py: n[1], vn: n[2] }; }
+    else { var lc = (S.cat.LOI_CHAO || [])[Math.floor(Math.random() * (S.cat.LOI_CHAO || []).length)] || { zh: '你好！', py: 'Nǐ hǎo!', vn: 'Xin chào!' }; cau = lc; }
+    $all('.nt-dan.dung').forEach(function (x) { x.classList.remove('dung'); });
+    el.classList.add('dung');
+    var b = $('#ntDanNoi');
+    if (!b) { b = document.createElement('div'); b.id = 'ntDanNoi'; b.className = 'nt-dan-noi'; b.setAttribute('role', 'status'); document.body.appendChild(b); }
+    b.innerHTML = '<small>' + esc(d.ban ? d.ten + ' (bạn cùng lớp)' : d.ten + ' ' + d.py + ' · ' + d.vn) + '</small><b lang="zh">' + esc(cau.zh) + '</b><i>' + esc(cau.py) + '</i><span>' + esc(cau.vn) + '</span>';
+    b.hidden = false;
+    var r = el.getBoundingClientRect(), w = Math.min(260, window.innerWidth - 16);
+    b.style.width = w + 'px';
+    b.style.left = Math.max(8, Math.min(window.innerWidth - w - 8, r.left + r.width / 2 - w / 2)) + 'px';
+    b.style.top = Math.max(8, r.top - b.offsetHeight - 8) + 'px';
+    doc(cau.zh);
+    clearTimeout(danHen);
+    danHen = setTimeout(anNoiDan, 4500);
+  }
+  function anNoiDan() {
+    var b = $('#ntDanNoi');
+    if (b) b.hidden = true;
+    $all('.nt-dan.dung').forEach(function (x) { x.classList.remove('dung'); });
+  }
+  // Bau troi theo gio that (gio Viet Nam): sang / chieu / toi
+  function veTroiTt() {
+    var tt = $('#ntThiTran');
+    var gio = new Date(Date.now() + 7 * 3600000).getUTCHours();
+    tt.classList.toggle('chieu', gio >= 16 && gio < 18);
+    tt.classList.toggle('dem', gio >= 18 || gio < 5);
+    if ($('#ntTtTroi')) return;
+    var troi = document.createElement('div');
+    troi.className = 'nt-tt-troi'; troi.id = 'ntTtTroi'; troi.setAttribute('aria-hidden', 'true');
+    troi.innerHTML = '<i class="may m1"></i><i class="may m2"></i><i class="may m3"></i>' +
+      '<svg class="chim" viewBox="0 0 60 20"><path d="M2 10q6-7 12 0q6-7 12 0M34 6q5-5 10 0q5-5 10 0" fill="none" stroke="#2b1d3a" stroke-width="2.4" stroke-linecap="round"/></svg>' +
+      '<i class="sao s1"></i><i class="sao s2"></i><i class="sao s3"></i><i class="sao s4"></i><i class="sao s5"></i><i class="trang"></i>' +
+      '<svg class="nui" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0 120V70q80-50 170-20t160-30 190 40 180-50 200 40 160-20 140 30v60z" fill="#7cc4a3"/><path d="M0 120V92q120-30 240 0t220-16 260 18 230-20 250 22v24z" fill="#5fae7f"/>' +
+      '<g fill="#c0392b" stroke="#2b1d3a" stroke-width="3"><path d="M520 62h70l-12-14h-46z"/><rect x="532" y="62" width="46" height="26" fill="#f6ead2"/><path d="M880 70h56l-10-12h-36z"/><rect x="890" y="70" width="36" height="20" fill="#f6ead2"/></g></svg>';
+    tt.insertBefore(troi, tt.firstChild);
+  }
   var HUY_TT = ['🥇', '🥈', '🥉'];
   function loDat(b, hang) {
     var huy = hang < 3 && b.dep > 0 ? HUY_TT[hang] + ' ' : '';
@@ -3487,7 +3586,10 @@
     $('#ntThamChao').addEventListener('click', moNoiChuyen);
     $('#ntThamSap').addEventListener('click', function () { if (S.tham) moBang('sapban'); });
     $('#ntThamTt').addEventListener('click', moThiTran);
+    $('#ntThiTran').addEventListener('scroll', anNoiDan, { passive: true });
     $('#ntThiTran').addEventListener('click', function (e) {
+      var dn = e.target.closest('[data-dan]');
+      if (dn) { noiDan(dn); return; }
       var lo = e.target.closest('[data-lo]');
       if (lo) {
         var id = lo.getAttribute('data-lo');

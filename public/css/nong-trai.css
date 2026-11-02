@@ -1545,7 +1545,7 @@ body.o-thi-tran .nt-tai-lop, body.co-bang .nt-tai-lop { display: none !important
 .nt-mat-troi { position: absolute; left: 4%; top: 70px; width: 84px; height: 84px; border-radius: 50%; background: #ffcf3d; border: 3px solid var(--vien); box-shadow: 0 0 0 10px rgba(255, 207, 61, 0.35), 0 0 40px 18px rgba(255, 170, 40, 0.45); animation: nt-nang 3s ease-in-out infinite alternate; }
 @keyframes nt-nang { from { transform: scale(0.94); } to { transform: scale(1.06); } }
 .nt-khung.tai-gh .nt-dat { filter: sepia(0.35) saturate(0.75) brightness(1.04); }
-.nt-tai-lop.tai-mua { background: repeating-linear-gradient(105deg, transparent 0 18px, rgba(220, 240, 255, 0.55) 18px 20px, transparent 20px 46px), rgba(40, 60, 90, 0.22); background-size: 100% 200px; animation: nt-mua 0.45s linear infinite; }
+.nt-tai-lop.tai-mua { background: linear-gradient(180deg, rgba(30, 44, 70, 0.38), rgba(40, 60, 90, 0.2)); overflow: hidden; }
 @keyframes nt-mua { from { background-position: 0 0; } to { background-position: -40px 200px; } }
 .nt-khung.tai-mua .nt-dat { filter: saturate(0.8) brightness(0.9) hue-rotate(-8deg); }
 .nt-tai-lop.tai-ret { background: linear-gradient(180deg, rgba(170, 210, 255, 0.32), rgba(220, 238, 255, 0.12)); overflow: hidden; }
@@ -1669,3 +1669,13 @@ body.o-thi-tran .nt-dem-trang, body.o-thi-tran .nt-dem-sao { display: none !impo
 body[data-tai="mua"] .nt-dom, body[data-tai="ret"] .nt-dom { display: none !important; }
 body.o-thi-tran[data-tai] .nt-dom { display: block; }
 body.o-thi-tran:not(.nt-dem) .nt-dom { display: none !important; }
+
+/* ---------- Mua roi that (暴雨) ---------- */
+.nt-hat-mua { position: absolute; top: -40px; width: 3px; border-radius: 3px; background: linear-gradient(180deg, rgba(235, 245, 255, 0), rgba(240, 248, 255, 1)); box-shadow: 0 0 2px rgba(255, 255, 255, 0.6); rotate: 12deg; animation: nt-mua-roi 0.7s linear infinite; }
+@keyframes nt-mua-roi { from { top: -40px; translate: 0 0; } to { top: 104%; translate: -60px 0; } }
+.nt-vung { position: absolute; width: 34px; height: 12px; margin-left: -17px; border-radius: 50%; border: 2.5px solid rgba(240, 248, 255, 0.95); box-shadow: 0 0 4px rgba(255, 255, 255, 0.5); opacity: 0; animation: nt-vung 1.4s ease-out infinite; }
+@keyframes nt-vung { 0% { transform: scale(0.2); opacity: 0.9; } 70% { opacity: 0.4; } 100% { transform: scale(1.6); opacity: 0; } }
+.nt-chop { position: absolute; inset: 0; background: rgba(240, 246, 255, 0.85); opacity: 0; animation: nt-chop 11s linear infinite; }
+@keyframes nt-chop { 0%, 86%, 89%, 92%, 100% { opacity: 0; } 87% { opacity: 0.7; } 90% { opacity: 0.45; } }
+.nt-khung.tai-mua .nt-dat { filter: saturate(0.75) brightness(0.82) hue-rotate(-6deg); }
+@media (prefers-reduced-motion: reduce) { .nt-hat-mua { animation: none; top: 40%; } .nt-vung, .nt-chop { display: none; } }

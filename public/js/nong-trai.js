@@ -1195,6 +1195,12 @@
       var h = '';
       if (kieu === 'sau') for (var i = 0; i < 9; i++) h += '<i class="nt-sau" style="left:' + (6 + (i * 37) % 86) + '%;top:' + (12 + (i * 53) % 74) + '%;animation-delay:-' + (i * 0.7) + 's"></i>';
       if (kieu === 'gh') h = '<i class="nt-mat-troi"></i>';
+      if (kieu === 'mua') {
+        // mua that: tung hat roi xien, vong nuoc ban tren mat ruong, thinh thoang chop loe
+        for (var m = 0; m < 80; m++) h += '<i class="nt-hat-mua" style="left:' + ((m * 13 + (m % 7) * 3) % 104 - 2) + '%;height:' + (16 + (m * 7) % 14) + 'px;animation-duration:' + (0.55 + (m % 5) * 0.09).toFixed(2) + 's;animation-delay:-' + ((m * 0.137) % 1.2).toFixed(2) + 's"></i>';
+        for (var v = 0; v < 16; v++) h += '<i class="nt-vung" style="left:' + ((v * 31 + 5) % 92) + '%;top:' + (30 + (v * 43) % 62) + '%;animation-delay:-' + ((v * 0.29) % 1.4).toFixed(2) + 's"></i>';
+        h += '<i class="nt-chop"></i>';
+      }
       if (kieu === 'ret') for (var s = 0; s < 46; s++) {
         var to = 4 + (s * 7) % 9;
         h += '<i class="nt-tuyet-hat' + (s % 6 === 0 ? ' bong-tuyet' : '') + '" style="left:' + ((s * 23) % 100) + '%;width:' + to + 'px;height:' + to + 'px;--lac:' + (12 + (s * 5) % 26) + 'px;animation-duration:' + (7 + (s * 3) % 8) + 's,' + (2.4 + (s % 4) * 0.6) + 's;animation-delay:-' + ((s * 1.3) % 12).toFixed(1) + 's,-' + (s % 3) + 's">' + (s % 6 === 0 ? '❄' : '') + '</i>';

@@ -437,6 +437,7 @@
       nhanTrangThai(r.st);
       hienThem(r.them, vt);
       if (nguonThu && nguonThu.length) hieuUngThu(nguonThu, r.them);
+      if (r.them && r.them.dacSan) setTimeout(function () { var m = S.cat.SP[r.them.dacSan]; bao('⭐ Đặc sản ' + (m ? m.zh + ' ' + m.vn.toLowerCase() : '') + ': thu thêm được 1! Bán cho các bạn đang cần nhé.'); }, 900);
       if (r.lenCap) setTimeout(function () { lenCap(r.lenCap); }, 700);
       return r;
     }, function (err) {
@@ -655,7 +656,8 @@
       html += '<div class="nt-hat-o' + (khoa ? ' khoa' : '') + '">' +
         '<button type="button" class="nt-hat-chon" data-hat="' + k + '"' + (khoa ? ' disabled' : '') + '>' + img('sp-' + k) +
         '<b lang="zh">' + esc(cay.zh) + '</b><span>' + esc(cay.vn) + '</span>' +
-        (khoa ? '<em>Cấp ' + cay.lv + '</em>' : '<em>' + img('ic-xu') + cay.gia + ' · ' + thoiLuong(cay.phut) + '</em>') + '</button>' +
+        (khoa ? '<em>Cấp ' + cay.lv + '</em>' : '<em>' + img('ic-xu') + cay.gia + ' · ' + thoiLuong(cay.phut) + '</em>') +
+        (khoa ? '' : '<span class="nt-hat-nhan">' + nhanDacSan(k) + nhanCan(k) + '</span>') + '</button>' +
         (!khoa && soTrong > 1 ? '<button type="button" class="nt-hat-het" data-het="' + k + '" title="Gieo vào mọi ô trống">Gieo hết</button>' : '') +
         '</div>';
     });
@@ -958,10 +960,10 @@
           '<button type="button" class="nt-nut" data-tab-hoc="muc">Học thêm</button></div>';
         html += '<div class="nt-luoi-the">';
         ks.forEach(function (k) {
-          var m = c.SP[k];
-          html += theMon(k, m, 'sp-' + k, '<p class="nt-the-phu">Có <b>' + s.kho[k] + '</b> · ' + img('ic-xu') + m.ban + ' / cái</p>', 0,
-            '<div class="nt-ban-nut"><button type="button" class="nt-mua" data-ban="' + k + '" data-n="1"' + (Math.round(m.ban * 0.7) > hm.con ? ' disabled title="Hết hạn mức bán hôm nay"' : '') + '>Bán 1</button>' +
-            (s.kho[k] > 1 ? '<button type="button" class="nt-mua" data-ban="' + k + '" data-n="' + s.kho[k] + '"' + (Math.round(m.ban * s.kho[k] * 0.7) > hm.con ? ' disabled title="Vượt hạn mức bán hôm nay"' : '') + '>Bán hết</button>' : '') +
+          var m = c.SP[k], gia1 = Math.max(1, Math.round(m.ban * hsCua(k)));
+          html += theMon(k, m, 'sp-' + k, '<p class="nt-the-phu">Có <b>' + s.kho[k] + '</b> · ' + img('ic-xu') + gia1 + ' / cái ' + nhanHs(k) + nhanDacSan(k) + nhanCan(k) + '</p>', 0,
+            '<div class="nt-ban-nut"><button type="button" class="nt-mua" data-ban="' + k + '" data-n="1"' + (Math.round(gia1 * 0.7) > hm.con ? ' disabled title="Hết hạn mức bán hôm nay"' : '') + '>Bán 1</button>' +
+            (s.kho[k] > 1 ? '<button type="button" class="nt-mua" data-ban="' + k + '" data-n="' + s.kho[k] + '"' + (Math.round(gia1 * s.kho[k] * 0.7) > hm.con ? ' disabled title="Vượt hạn mức bán hôm nay"' : '') + '>Bán hết</button>' : '') +
             '<button type="button" class="nt-mua" data-baysan="' + k + '">Bày sạp</button></div>');
         });
         html += '</div><p class="nt-meo">💡 Giữ lại nông sản để giao <b>Đơn hàng</b> — được nhiều xu hơn bán lẻ. Hoặc <b>bày sạp</b> bán cho các bạn trong lớp và cả <b>Cộng đồng</b>.</p>';
@@ -997,10 +999,12 @@
     $('#ntBangTit').textContent = 'Đơn hàng hôm nay';
     datTab([], '');
     var c = S.cat, s = S.st;
-    var html = htmlDonDb() + '<p class="nt-meo">Mỗi ngày có 3 đơn mới. Giao đủ hàng để nhận nhiều xu và kinh nghiệm.</p><div class="nt-don-ds">';
+    var html = htmlDonDb() + '<p class="nt-meo">Mỗi ngày có 3 đơn mới — đơn có 🤝 cần <b>đặc sản của bạn khác</b>, phải mua của bạn mới giao được (thưởng gấp đôi). Giao đủ hàng để nhận nhiều xu và kinh nghiệm.</p><div class="nt-don-ds">';
     s.don.forEach(function (dn, i) {
       var du = duHang(dn.can);
-      html += '<div class="nt-don' + (dn.xong ? ' xong' : '') + '"><div class="nt-don-hang">';
+      html += '<div class="nt-don' + (dn.xong ? ' xong' : '') + (dn.ban ? ' nt-don-ban' : '') + '">' +
+        (dn.ban ? '<p class="nt-don-ban-chu">🤝 Cần <b>đặc sản của ' + esc(dn.ban.ten) + '</b> — mua của bạn ở Chợ hoặc đăng Cần mua' + (!dn.xong && !du ? ' <button type="button" class="nt-link" data-tim-mua="' + esc(Object.keys(dn.can)[0]) + '">Tìm mua</button>' : '') + '</p>' : '') +
+        '<div class="nt-don-hang">';
       Object.keys(dn.can).forEach(function (k) {
         var co = s.kho[k] || 0;
         html += '<span class="nt-don-mon' + (co >= dn.can[k] ? ' du' : '') + '">' + img('sp-' + k) +
@@ -1018,6 +1022,9 @@
       b.addEventListener('click', function () {
         lam({ a: 'don', i: +b.getAttribute('data-don') }, b).then(function () { tieng('xu'); veBang(); }, function () {});
       });
+    });
+    $all('[data-tim-mua]', than).forEach(function (b) {
+      b.addEventListener('click', function () { CD.k = b.getAttribute('data-tim-mua'); moBang('congdong', 'cho'); });
     });
   }
 
@@ -1163,11 +1170,24 @@
     }
   }
 
+  /* ---------------- Cung - cau trong lop (dac san 特产, gia theo cung - cau) ---------------- */
+  function thiTr() { return (S.st && S.st.thiTruong) || { heSo: {}, can: {}, soNguoi: {}, cung: {}, dacSan: null }; }
+  function hsCua(k) { return thiTr().heSo[k] || 1; }
+  // nhan gia: ↑ dang thieu (ban duoc gia cao), ↓ dang thua
+  function nhanHs(k) {
+    var h = hsCua(k);
+    if (h >= 1.1) return '<span class="nt-hs len" title="Lớp đang thiếu — bán được giá cao">↑ ×' + h.toString().replace('.', ',') + '</span>';
+    if (h <= 0.9) return '<span class="nt-hs xuong" title="Nhiều bạn đang có — giá thấp">↓ ×' + h.toString().replace('.', ',') + '</span>';
+    return '';
+  }
+  function nhanDacSan(k) { return thiTr().dacSan === k ? '<span class="nt-ds-nhan">⭐ Đặc sản</span>' : ''; }
+  function nhanCan(k) { var n = thiTr().can[k] || 0; return n ? '<span class="nt-can-nhan">🔥 Lớp cần ' + n + '</span>' : ''; }
+
   /* ---------------- Ban hang: goi ten bang tieng Trung ---------------- */
   function hanMucBan() { var b = S.st.ban || { da: 0, toiDa: 0 }; return { da: b.da, toiDa: b.toiDa, con: Math.max(0, b.toiDa - b.da) }; }
   function moGoiTen(k, n) {
-    var c = S.cat, m = c.SP[k], goc = m.ban * n;
-    var dung = Math.round(goc * 1.1), sai = Math.max(1, Math.round(goc * 0.7));
+    var c = S.cat, m = c.SP[k], goc = m.ban * n * hsCua(k);
+    var dung = Math.max(1, Math.round(goc * 1.1)), sai = Math.max(1, Math.round(goc * 0.7));
     // dap an nhieu: ten nong san khac, uu tien cung so chu / chung chu
     var khac = Object.keys(c.SP).filter(function (x) { return x !== k && c.SP[x].zh !== m.zh; }).map(function (x) {
       var z = c.SP[x].zh, d = (z.length === m.zh.length ? 2 : 0) + (z.split('').some(function (ch) { return m.zh.indexOf(ch) >= 0; }) ? 3 : 0);
@@ -2017,9 +2037,9 @@
   /* ---------------- choi cung ban ---------------- */
   // Sap hang cua em, cho lop, giup ban khi den choi, loi chao co san, nhat ky nong trai.
   function tenSp(k) { return S.cat.SP[k] || { zh: '', py: '', vn: k }; }
-  function khoangGia(k, n) {
+  function khoangGia(k, n, hs) {
     var goc = S.cat.SP[k].ban * n;
-    return { min: Math.max(1, Math.ceil(goc * 0.5)), max: Math.max(1, Math.round(goc * 1.3)), goc: goc, buoc: Math.max(1, Math.round(goc * 0.1)) };
+    return { min: Math.max(1, Math.ceil(goc * 0.5)), max: Math.max(1, Math.round(goc * 1.3 * (hs || 1))), goc: goc, buoc: Math.max(1, Math.round(goc * 0.1)) };
   }
   function theSap(o, nut, ai) {
     var m = tenSp(o.k);
@@ -2210,7 +2230,7 @@
   function chonBay(k) {
     baySap.k = k;
     baySap.n = Math.min(S.st.kho[k] || 1, k && S.cat.CAY[k] ? 4 : 2);
-    baySap.gia = khoangGia(k, baySap.n).goc;
+    baySap.gia = khoangGia(k, baySap.n, hsCua(k)).goc;
   }
   function veSapEm(than) {
     var s = S.st, c = S.cat;
@@ -2226,7 +2246,7 @@
     else {
       if (!baySap.k || !(s.kho[baySap.k] > 0)) chonBay(ks[0]);
       baySap.n = Math.max(1, Math.min(baySap.n, s.kho[baySap.k], c.SAP_SL_TOI_DA));
-      var kg = khoangGia(baySap.k, baySap.n);
+      var kg = khoangGia(baySap.k, baySap.n, hsCua(baySap.k));
       baySap.gia = Math.max(kg.min, Math.min(kg.max, baySap.gia || kg.goc));
       html += '<div class="nt-bay-sap"><h3>Bày thêm lên sạp</h3><div class="nt-bay-hang">' + ks.map(function (k) {
         return '<button type="button" data-bay="' + k + '"' + (k === baySap.k ? ' class="bat"' : '') + '>' + img('sp-' + k) + esc(tenSp(k).vn) + ' ×' + s.kho[k] + '</button>';
@@ -2252,7 +2272,7 @@
     });
     $all('[data-gia]', than).forEach(function (b) {
       b.addEventListener('click', function () {
-        var kg2 = khoangGia(baySap.k, baySap.n);
+        var kg2 = khoangGia(baySap.k, baySap.n, hsCua(baySap.k));
         baySap.gia = Math.max(kg2.min, Math.min(kg2.max, baySap.gia + kg2.buoc * +b.getAttribute('data-gia')));
         veBang();
       });
@@ -2360,7 +2380,8 @@
     var tab = bangDang.tab || 'nt';
     bangDang.tab = tab;
     $('#ntBangTit').textContent = 'Cộng đồng nông trại';
-    datTab([['nt', 'Nông trại mọi người'], ['cho', 'Chợ cộng đồng'], ['can', 'Cần mua']], tab);
+    datTab([['nt', 'Nông trại mọi người'], ['canlop', 'Lớp cần gì'], ['cho', 'Chợ cộng đồng'], ['can', 'Cần mua']], tab);
+    if (tab === 'canlop') { veCanLop(than); return; }
     if (tab === 'cho') { veChoCongDong(than); return; }
     if (tab === 'can') { veCanMua(than); return; }
     than.innerHTML = '<div class="nt-cd-tim"><input type="search" id="ntCdQ" placeholder="Tìm tên bạn hoặc tên lớp…" aria-label="Tìm nông trại" value="' + esc(CD.q) + '" autocomplete="off"></div>' +
@@ -2373,6 +2394,34 @@
     });
     $('#ntCdThem', than).addEventListener('click', function () { taiCd(than, true); });
     taiCd(than, false);
+  }
+  // Bang "Lop can gi": tong hang ca lop dang can (don hang, don dac biet, tin Can mua) so voi hang dang co (kho + sap),
+  // gia hom nay theo cung - cau, va dac san cua tung ban — biet nen trong / nuoi gi va mua cua ai
+  function veCanLop(than) {
+    than.innerHTML = '<p class="nt-trong">Đang tải…</p>';
+    goi('/api/farm/canlop').then(function (r) {
+      if (!bangDang || bangDang.loai !== 'congdong' || bangDang.tab !== 'canlop') return;
+      var c = S.cat, html = '';
+      if (r.dacSanEm) {
+        var m = c.SP[r.dacSanEm];
+        html += '<div class="nt-ds-the">' + img('sp-' + r.dacSanEm) + '<div><p class="nt-cn-nho">Đặc sản tuần này của em <span lang="zh">特产</span> tèchǎn</p>' +
+          '<h3><span lang="zh">' + esc(m.zh) + '</span> ' + esc(m.py) + ' · ' + esc(m.vn) + '</h3>' +
+          '<p class="nt-cn-nho">Thu hoạch / nhặt được <b>thêm 1</b> mỗi lần. Các bạn khác sẽ có đơn hàng cần món này — bày sạp hoặc bán theo tin Cần mua để giúp bạn và kiếm xu!</p></div></div>';
+      } else html += '<p class="nt-meo">Em chưa có đặc sản — lên cấp hoặc nuôi thêm vật nuôi để làm được nhiều loại hàng hơn.</p>';
+      html += '<p class="nt-meo">' + (r.lop ? 'Cả lớp' : 'Cộng đồng') + ' đang cần những hàng dưới đây. <b>Giá hôm nay</b> theo cung – cầu: hàng nhiều bạn cần mà ít bạn có thì giá <b class="nt-hs-len-chu">↑ lên</b>, hàng ai cũng có thì giá <b class="nt-hs-xuong-chu">↓ xuống</b>. Đặc sản đổi mỗi thứ Hai.</p>';
+      html += '<ol class="nt-canlop">' + r.ds.map(function (x) {
+        var m = c.SP[x.k];
+        return '<li class="' + (x.can ? 'co-can' : '') + '">' + img('sp-' + x.k) +
+          '<div class="nt-canlop-t"><b><span lang="zh">' + esc(m.zh) + '</span> ' + esc(m.py) + ' · ' + esc(m.vn) + '</b>' +
+          '<small>' + (x.can ? '🔥 Cần <b>' + x.can + '</b> (' + x.soNguoi + ' bạn)' : 'Chưa ai cần') + ' · đang có ' + x.co +
+          (x.dacSan.length ? ' · ⭐ đặc sản của ' + x.dacSan.slice(0, 3).map(function (b) { return esc(b.la ? 'em' : b.ten); }).join(', ') + (x.dacSan.length > 3 ? '…' : '') : '') + '</small></div>' +
+          '<span class="nt-canlop-gia">' + img('ic-xu') + Math.max(1, Math.round(m.ban * x.heSo)) + '<small>' + (x.heSo !== 1 ? '×' + String(x.heSo).replace('.', ',') : 'giá gốc') + '</small></span>' +
+          (x.can && !x.emLam ? '<button type="button" class="nt-mua" data-canlop-mua="' + x.k + '">Mua</button>' : '') + '</li>';
+      }).join('') + '</ol>';
+      than.innerHTML = html;
+      $all('img', than).forEach(ganLoiAnh);
+      $all('[data-canlop-mua]', than).forEach(function (b) { b.addEventListener('click', function () { CD.k = b.getAttribute('data-canlop-mua'); bangDang.tab = 'cho'; veBang(); }); });
+    }, function (e) { than.innerHTML = '<p class="nt-trong">' + esc(e.message) + '</p>'; });
   }
   function taiCd(than, them) {
     var tu = them ? CD.ds.length : 0;

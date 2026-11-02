@@ -227,7 +227,8 @@ function soNgauNhien(hat) {
     return s / 4294967296;
   };
 }
-function donHang(f, userId, ngay) {
+// ngoai = [{ k, id, ten }]: dac san cua cac ban (da xep: mon em khong tu lam duoc, ban dang co san len truoc)
+function donHang(f, userId, ngay, ngoai) {
   const lv = lvTuXp(f.xp);
   const coCon = {};
   f.o.forEach((o) => { if (CON[o.k]) coCon[o.k] = 1; });
@@ -252,13 +253,20 @@ function donHang(f, userId, ngay) {
     }
     ds.push({ can, xu: Math.round(tien * 1.6) + 5, xp });
   }
+  // Don thu 3: can dac san cua ban khac -> phai mua ban voi nhau (tra cong cao hon don thuong)
+  if (ngoai && ngoai.length) {
+    const top = ngoai.slice(0, Math.min(3, ngoai.length));
+    const x = top[Math.floor(r() * top.length)];
+    const sl = CAY[x.k] ? 2 + Math.floor(r() * 2) : 1 + Math.floor(r() * 2);
+    ds[2] = { can: { [x.k]: sl }, xu: Math.round(SP[x.k].ban * sl * 2) + 8, xp: 3 + sl, ban: { id: x.id, ten: x.ten } };
+  }
   return ds;
 }
 
 // Don hang chot 1 lan moi ngay (len cap giua ngay khong doi don dang lam)
-function donHomNay(f, userId, ngay) {
+function donHomNay(f, userId, ngay, ngoai) {
   if (f.don.d !== ngay || !Array.isArray(f.don.ds)) {
-    f.don = { d: ngay, x: [], ds: donHang(f, userId, ngay) };
+    f.don = { d: ngay, x: [], ds: donHang(f, userId, ngay, ngoai) };
     return { ds: f.don.ds, moi: true };
   }
   return { ds: f.don.ds, moi: false };
@@ -269,9 +277,10 @@ function donHomNay(f, userId, ngay) {
 // 0,5x - 2x gia ban cho cua hang (khong "chuyen xu" qua lon giua cac ban).
 function soOSap(lv) { return lv >= 5 ? 6 : 4; }
 const SAP_SL_TOI_DA = 20;
-function khoangGia(k, n) {
+// hs = he so cung - cau luc bay sap (hang dang thieu thi tran gia cao hon)
+function khoangGia(k, n, hs) {
   const goc = SP[k].ban * n;
-  return { min: Math.max(1, Math.ceil(goc * 0.5)), max: Math.max(1, Math.round(goc * 1.3)), goc };
+  return { min: Math.max(1, Math.ceil(goc * 0.5)), max: Math.max(1, Math.round(goc * 1.3 * (hs || 1))), goc };
 }
 function cauCanMua(k, n) {
   const l = LUONG[k] || '个';
@@ -282,7 +291,7 @@ function cauCanMua(k, n) {
 // Gia dang ban cua 1 o sap: khong qua tran 1,3x; qua 1 ngay chua ai mua thi moi ngay giam 15% (khong duoi gia san)
 function giaSap(o) {
   if (!SP[o.k]) return o.gia;
-  const kg = khoangGia(o.k, o.n);
+  const kg = khoangGia(o.k, o.n, o.hs);
   let g = Math.min(o.gia, kg.max);
   const ngay = o.t ? Math.floor((Date.now() - o.t) / 86400000) : 0;
   if (ngay >= 1) g = Math.round(g * Math.pow(0.85, ngay));
@@ -520,6 +529,12 @@ module.exports = function ganNongTrai(app, d) {
   function daBanHomNay(f) { return f.banNgay && f.banNgay.d === d.vnDayKey() ? f.banNgay.xu : 0; }
   function soThe(f) { return Object.keys(f.the || {}).filter((z) => f.the[z][0] >= THE_DUNG).length; }
   function ruongDaMo(f) { return f.ruong && f.ruong.d === d.vnDayKey() ? f.ruong.ds : []; }
+  async function tomThiTruong(userId) {
+    try {
+      const tt = await thiTruong(userId);
+      return { dacSan: tt.dacSan[userId] || null, heSo: tt.heSo, can: tt.can, soNguoi: tt.soNguoi, cung: tt.cung, lop: tt.lop };
+    } catch (e) { return null; }
+  }
   async function trangThai(userId, f) {
     const ngay = d.vnDayKey();
     const lv = lvTuXp(f.xp);
@@ -543,6 +558,7 @@ module.exports = function ganNongTrai(app, d) {
       av: f.av || null, avMua: f.avMua || [], ten: (await d.loadUserNames())[userId] || '',
       nk: await nhatKy(f), nkMoi: (f.nk || []).filter((e) => e.t > (f.nkXem || 0)).length,
       tai: taiChoHs(f), taiVua: f.tai && f.tai.xong === 'ok' && Date.now() - f.tai.kt < 60000 ? f.tai.k : '',
+      thiTruong: await tomThiTruong(userId),
     };
   }
 
@@ -558,6 +574,86 @@ module.exports = function ganNongTrai(app, d) {
   }
 
   function loi(msg) { const e = new Error(msg); e.farm = true; return e; }
+
+  /* ---- Cung - cau trong lop: dac san 特产, don can hang cua ban, bang "Lop dang can", gia theo cung - cau ---- */
+  const HANG = Object.keys(CAY).concat(Object.keys(CON).map((k) => CON[k].sp));
+  const tuanSo = () => Math.floor(Date.parse(d.vnWeekKey() + 'T00:00:00Z') / (7 * 86400000));
+  const ttNho = new Map(); // pham vi -> { t, data } (luu 60 giay)
+  async function phamViTt(userId) {
+    const lop = await banCungLop(userId);
+    if (lop) return { k: 'lop:' + lop.id, ids: lop.ids, lop: true };
+    const cd = await taiCongDong();
+    const ids = cd.slice(0, 150).map((x) => x.id);
+    if (ids.indexOf(userId) < 0) ids.push(userId);
+    return { k: 'cd', ids, lop: false };
+  }
+  // Hang em tu lam duoc: cay da mo khoa + san pham cua vat nuoi em dang nuoi (ca trong tui)
+  function hangLamDuoc(f) {
+    const lv = lvTuXp(f.xp), co = {};
+    f.o.forEach((o) => { if (CON[o.k]) co[CON[o.k].sp] = 1; });
+    Object.keys(f.tui || {}).forEach((k) => { if (CON[k] && f.tui[k] > 0) co[CON[k].sp] = 1; });
+    return HANG.filter((k) => (CAY[k] ? CAY[k].lv <= lv : !!co[k]));
+  }
+  // Chia dac san moi tuan: xoay vong danh sach hang, moi ban nhan 1 mon CHUA ai nhan trong cac mon ban ay lam duoc
+  // -> ca lop phu nhieu loai hang nhat co the; het mon moi thi moi trung
+  function chiaDacSan(farms, ids) {
+    const W = tuanSo(), ds = ids.filter((id) => farms[id]).sort();
+    const lech = W % HANG.length;
+    const xoay = HANG.slice(lech).concat(HANG.slice(0, lech)).reverse(); // mon cap cao truoc: ban cap cao giu hang hiem
+    const kq = {}, daCo = {};
+    // ban lam duoc it mon nhat chon truoc (de khong bi het cho)
+    const thuTu = ds.map((id) => ({ id, lam: hangLamDuoc(farms[id]) })).sort((a, b) => a.lam.length - b.lam.length || (a.id < b.id ? -1 : 1));
+    thuTu.forEach((x, n) => {
+      const cho = xoay.filter((k) => x.lam.indexOf(k) >= 0);
+      if (!cho.length) return;
+      const k = cho.find((m) => !daCo[m]) || cho[(n + W) % cho.length];
+      kq[x.id] = k;
+      daCo[k] = (daCo[k] || 0) + 1;
+    });
+    return kq;
+  }
+  async function thiTruong(userId) {
+    const pv = await phamViTt(userId);
+    const nho = ttNho.get(pv.k);
+    if (nho && Date.now() - nho.t < 60000 && nho.data.ids.indexOf(userId) >= 0) return nho.data;
+    const farms = await docNhieu(pv.ids);
+    const ngay = d.vnDayKey();
+    const can = {}, nguoi = {}, cung = {};
+    const them = (o, k, n) => { if (SP[k]) o[k] = (o[k] || 0) + n; };
+    const ghiNguoi = (k, id) => { (nguoi[k] = nguoi[k] || {})[id] = 1; };
+    Object.keys(farms).forEach((id) => {
+      const f = farms[id];
+      if (f.don && f.don.d === ngay && Array.isArray(f.don.ds)) {
+        f.don.ds.forEach((o, i) => { if (!f.don.x[i]) Object.keys(o.can).forEach((k) => { them(can, k, o.can[k]); ghiNguoi(k, id); }); });
+      }
+      if (f.donDb && f.donDb.d === ngay && !f.donDb.xong) Object.keys(f.donDb.can || {}).forEach((k) => { them(can, k, f.donDb.can[k]); ghiNguoi(k, id); });
+      (f.can || []).forEach((x) => { them(can, x.k, x.n); ghiNguoi(x.k, id); });
+      Object.keys(f.kho || {}).forEach((k) => them(cung, k, f.kho[k]));
+      (f.sap || []).forEach((o) => them(cung, o.k, o.n));
+    });
+    // he so gia: (can + 3) / (co + 3), lay can bac hai cho em, gioi han 0,7 - 1,6
+    const heSo = {};
+    HANG.forEach((k) => {
+      const r = ((can[k] || 0) + 3) / ((cung[k] || 0) + 3);
+      heSo[k] = Math.round(Math.max(0.7, Math.min(1.6, Math.sqrt(r))) * 20) / 20;
+    });
+    const soNguoi = {};
+    Object.keys(nguoi).forEach((k) => { soNguoi[k] = Object.keys(nguoi[k]).length; });
+    const data = { ids: pv.ids, lop: pv.lop, can, soNguoi, cung, heSo, dacSan: chiaDacSan(farms, pv.ids), tuan: d.vnWeekKey() };
+    ttNho.set(pv.k, { t: Date.now(), data });
+    return data;
+  }
+  const heSoCua = (tt, k) => (tt && tt.heSo[k]) || 1;
+  // Dac san cua cac ban (tru em) de ra don hang: mon em khong tu lam duoc + ban dang co san len truoc
+  async function hangCuaBan(userId, f) {
+    const tt = await thiTruong(userId);
+    const ten = await d.loadUserNames();
+    const em = tt.dacSan[userId], lam = hangLamDuoc(f);
+    const ds = Object.keys(tt.dacSan).filter((id) => id !== userId && tt.dacSan[id] !== em && ten[id])
+      .map((id) => ({ k: tt.dacSan[id], id, ten: ten[id] }));
+    const diem = (x) => (lam.indexOf(x.k) < 0 ? 2 : 0) + ((tt.cung[x.k] || 0) > 0 ? 1 : 0) + Math.random() * 0.5;
+    return ds.sort((a, b) => diem(b) - diem(a));
+  }
 
   async function lam(userId, b) {
     const f = await doc(userId);
@@ -580,6 +676,9 @@ module.exports = function ganNongTrai(app, d) {
     };
     const them = { xu: 0, xp: 0, sp: {} };
     const congSp = (k, n) => { f.kho[k] = (f.kho[k] || 0) + n; them.sp[k] = (them.sp[k] || 0) + n; };
+    // thi truong lop chi doc khi can (thu hoach, nhat, ban, bay sap)
+    const tt = ['thu', 'nhat', 'ban', 'sap'].indexOf(a) >= 0 ? await thiTruong(userId) : null;
+    const dacSanEm = tt ? tt.dacSan[userId] : null;
 
     if (a === 'trong') {
       const o = timO();
@@ -613,7 +712,8 @@ module.exports = function ganNongTrai(app, d) {
       if (!ds.length) throw loi('Chưa có ô nào chín.');
       ds.forEach((o) => {
         if (o.k !== 'o' || !o.c || o.h > now) throw loi('Cây chưa chín.');
-        congSp(o.c, taiDang(f, 'sau') ? 1 : THU_MOI_O);
+        congSp(o.c, (taiDang(f, 'sau') ? 1 : THU_MOI_O) + (o.c === dacSanEm ? 1 : 0));
+        if (o.c === dacSanEm) them.dacSan = o.c;
         them.xp += CAY[o.c].xp;
         o.c = null; o.h = null; o.t = 0;
       });
@@ -628,7 +728,8 @@ module.exports = function ganNongTrai(app, d) {
       if (!ds.length) throw loi('Chưa có sản phẩm.');
       ds.forEach((o) => {
         if (!CON[o.k] || !o.h || o.h > now) throw loi('Chưa có sản phẩm.');
-        congSp(CON[o.k].sp, 1);
+        congSp(CON[o.k].sp, CON[o.k].sp === dacSanEm ? 2 : 1);
+        if (CON[o.k].sp === dacSanEm) them.dacSan = CON[o.k].sp;
         them.xp += CON[o.k].xp;
         o.h = null;
       });
@@ -637,7 +738,7 @@ module.exports = function ganNongTrai(app, d) {
       const n = Math.floor(Number(b.n) || 0);
       if (!SP[k] || n < 1 || (f.kho[k] || 0) < n) throw loi('Không đủ hàng để bán.');
       const goiDung = String(b.goi || '') === SP[k].zh;
-      const tien = Math.max(1, Math.round(SP[k].ban * n * (goiDung ? 1.1 : 0.7)));
+      const tien = Math.max(1, Math.round(SP[k].ban * n * (goiDung ? 1.1 : 0.7) * heSoCua(tt, k)));
       const homNay = saoHoc(await d.loadStar(userId)).homNay;
       const toiDa = BAN_CO_BAN + BAN_MOI_SAO * homNay, da = daBanHomNay(f);
       if (da + tien > toiDa) throw loi('Hạn mức bán cho cửa hàng hôm nay còn ' + Math.max(0, toiDa - da) + ' xu. Học thêm để mở rộng: mỗi sao học = +' + BAN_MOI_SAO + ' xu hạn mức!');
@@ -733,11 +834,12 @@ module.exports = function ganNongTrai(app, d) {
       const gia = Math.floor(Number(b.gia) || 0);
       if (!SP[k] || n < 1 || n > SAP_SL_TOI_DA || (f.kho[k] || 0) < n) throw loi('Không đủ hàng để bày sạp.');
       if (f.sap.length >= soOSap(lv)) throw loi('Sạp đã đầy ' + soOSap(lv) + ' ô' + (lv < 5 ? ' — lên cấp 5 có thêm 2 ô.' : '.'));
-      const kg = khoangGia(k, n);
+      const hs = heSoCua(tt, k);
+      const kg = khoangGia(k, n, hs);
       if (gia < kg.min || gia > kg.max) throw loi('Giá phải từ ' + kg.min + ' đến ' + kg.max + ' xu.');
       f.kho[k] -= n;
       if (!f.kho[k]) delete f.kho[k];
-      f.sap.push({ id: f.nid++, k, n, gia, t: Date.now() });
+      f.sap.push({ id: f.nid++, k, n, gia, t: Date.now(), hs });
     } else if (a === 'gosap') {
       const o = f.sap.find((x) => x.id === Number(b.id));
       if (!o) throw loi('Món này đã được bán rồi.');
@@ -852,7 +954,8 @@ module.exports = function ganNongTrai(app, d) {
       const het = (f.can || []).filter((x) => Date.now() - x.t > CAN_HAN_MS);
       if (het.length) { het.forEach((x) => { f.xu += x.gia; }); f.can = f.can.filter((x) => het.indexOf(x) < 0); await ghi(req.user.id, f); }
       // ngay moi: chot don hang hom nay vao du lieu
-      if (donHomNay(f, req.user.id, d.vnDayKey()).moi) await ghi(req.user.id, f);
+      const ngoai = f.don.d !== d.vnDayKey() ? await hangCuaBan(req.user.id, f).catch(() => null) : null;
+      if (donHomNay(f, req.user.id, d.vnDayKey(), ngoai).moi) await ghi(req.user.id, f);
       if (xetThienTai(f)) await ghi(req.user.id, f);
       return trangThai(req.user.id, f);
     });
@@ -958,6 +1061,17 @@ module.exports = function ganNongTrai(app, d) {
       kq.st = await trangThai(me, fm);
       return kq;
     })));
+  }));
+
+  app.get('/api/farm/canlop', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id;
+    const [tt, ten, f] = await Promise.all([thiTruong(me), d.loadUserNames(), doc(me)]);
+    const dacSanCua = {};
+    Object.keys(tt.dacSan).forEach((id) => { if (ten[id]) (dacSanCua[tt.dacSan[id]] = dacSanCua[tt.dacSan[id]] || []).push({ id, ten: ten[id], la: id === me }); });
+    const lam = hangLamDuoc(f);
+    const ds = HANG.map((k) => ({ k, can: tt.can[k] || 0, soNguoi: tt.soNguoi[k] || 0, co: tt.cung[k] || 0, heSo: tt.heSo[k], dacSan: dacSanCua[k] || [], emLam: lam.indexOf(k) >= 0 }))
+      .sort((a, b) => b.can - a.can || b.heSo - a.heSo);
+    res.json({ lop: tt.lop, tuan: tt.tuan, dacSanEm: tt.dacSan[me] || null, ds });
   }));
 
   app.post('/api/farm/act', d.requireAuth, d.asyncRoute(async (req, res) => {

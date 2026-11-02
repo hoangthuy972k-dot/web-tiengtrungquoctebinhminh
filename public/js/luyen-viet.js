@@ -275,6 +275,13 @@
       '<li><b>Tự soát:</b> đủ ý chưa, có thêm ý của mình không (缩写 không bình luận dài), số chữ khoảng 250–350.</li>' +
     '</ol></div>';
 
+  // De 写作 cua sach khac (HSK 4 · 3.0): d.huongDan = { tieuDe, gioiThieu, buoc: [...] } thay cho huong dan 缩写 cua HSK 6
+  function huongDanRieng(d) {
+    var h = d.huongDan;
+    return '<div class="lv-card"><h3>' + esc(h.tieuDe || 'Cách làm bài') + '</h3>' + (h.gioiThieu ? '<p>' + esc(h.gioiThieu) + '</p>' : '') + '</div>' +
+      '<div class="lv-card"><h3>Các bước làm</h3><ol class="lv-list">' + (h.buoc || []).map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ol></div>';
+  }
+
   /* ---------- Hướng dẫn cách làm bài (theo tài liệu tiết viết HSK 5) ---------- */
   var HUONG_DAN =
     '<div class="lv-card"><h3>Phần 书写 HSK 5 gồm những gì</h3>' +
@@ -325,7 +332,7 @@
       '</div>' +
       '<div class="lv-pane" data-lv-pane="sx"></div>' +
       '<div class="lv-pane" data-lv-pane="doan"></div>' +
-      '<div class="lv-pane" data-lv-pane="hd">' + (laSgk ? HUONG_DAN_SGK : HUONG_DAN) + '</div>';
+      '<div class="lv-pane" data-lv-pane="hd">' + (laSgk ? (d.huongDan ? huongDanRieng(d) : HUONG_DAN_SGK) : HUONG_DAN) + '</div>';
 
     function chonTab(t) {
       tab = t; st.tab = t; luu();
@@ -411,7 +418,7 @@
     // Đề 运用 · 写一写 của SGK HSK 6: đề + bảng gợi ý (bài tập 5) + từ nên dùng
     function deSgk() {
       return '<div class="lv-card lv-de">' +
-          '<div class="lv-label">Đề bài · 运用 写一写</div>' +
+          '<div class="lv-label">Đề bài · ' + esc(d.nhanDe || '运用 写一写') + '</div>' +
           '<div class="lv-de-zh lv-zh">' + esc(d.de || '') + '</div>' +
           '<div class="lv-de-vn">' + esc(d.prompt || '') + '</div>' +
           ((d.tuNen || []).length ? '<div class="lv-label lv-label-sub">Từ, cấu trúc nên dùng</div><div class="lv-words" id="lvWords">' + d.tuNen.map(function (w) {

@@ -1,0 +1,9 @@
+{
+"材":{"type":"形声字 · Chữ hình thanh","rad":"木 (mộc – cây gỗ)","mean":"gỗ; vật liệu; tư chất","ord":"木 → 才","tip":"Bộ 木 (gỗ) + 才 (cái, chỉ âm cái): gỗ là thứ “vật liệu” đầu tiên con người dùng.","cf":"村 cūn (làng) — bên phải là 寸","w":"材料 / 教材 / 身材"},
+"何":{"type":"形声字 · Chữ hình thanh","rad":"亻 (nhân đứng – người)","mean":"gì, nào (văn viết)","ord":"亻 → 可","tip":"Người (亻) + 可 (chỉ âm hé): người hỏi “gì vậy?” — trong 任何, 如何, 为何.","cf":"河 hé (sông) — bên trái là 氵","w":"任何 / 如何 / 为何"},
+"食":{"type":"会意字 · Chữ hội ý","rad":"人 (nhân – người, ở trên) · bộ 食","mean":"ăn; đồ ăn","ord":"人 → 良 (phẩy, mác, chấm… rồi 良)","tip":"Hình nồi cơm có nắp đậy ở trên: thức ăn. Làm bộ bên trái thì viết 饣 (饭, 饿, 馆).","cf":"良 liáng (tốt) — thiếu nắp 人 ở trên","w":"食堂 / 食物 / 美食"},
+"堂":{"type":"形声字 · Chữ hình thanh","rad":"土 (thổ – đất)","mean":"gian nhà lớn, nhà chính","ord":"⺌ → 冖 → 口 → 土","tip":"Phần trên giống 尚 (chỉ âm), dưới là 土 (đất): ngôi nhà to xây trên nền đất — 食堂, 课堂.","cf":"常 cháng (thường) — dưới là 巾; 掌 zhǎng (lòng bàn tay) — dưới là 手","w":"食堂 / 课堂 / 讲堂"},
+"金":{"type":"象形字 · Chữ tượng hình","rad":"金 (kim – kim loại)","mean":"vàng; kim loại; tiền","ord":"人 → 王 → hai chấm","tip":"Mái nhà 人 che đống đất có hai hạt kim loại lấp lánh bên trong: vàng, tiền — 奖学金 = “tiền thưởng học tập”.","cf":"全 quán (toàn) — không có hai chấm","w":"奖学金 / 金色 / 现金"},
+"研":{"type":"形声字 · Chữ hình thanh","rad":"石 (thạch – đá)","mean":"mài, nghiền; nghiên cứu","ord":"石 → 开","tip":"Bộ 石 (đá) + 开 (chỉ âm): mài đá cho thật nhỏ — nghiên cứu là “mài” một vấn đề cho thật kỹ.","cf":"砖 zhuān (gạch) — cũng bộ 石","w":"研究 / 研究生 / 科研"},
+"贸":{"type":"形声字 · Chữ hình thanh","rad":"贝 (bối – vỏ sò, tiền)","mean":"buôn bán, trao đổi","ord":"卯 → 贝","tip":"Trên là 卯 (chỉ âm), dưới là 贝 (vỏ sò = tiền ngày xưa): dùng tiền đổi hàng — thương mại.","cf":"贺 hè (chúc mừng) — trên là 加","w":"贸易 / 外贸 / 经贸"}
+}

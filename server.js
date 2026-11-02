@@ -654,7 +654,7 @@ const KNOWN_LEVELS = (() => {
     );
     if (Array.isArray(ids) && ids.length) return new Set(ids.map(String));
   } catch (err) { console.error('Khong doc duoc danh sach cap do tu data.js:', err.message); }
-  return new Set(['hsk1', 'hsk1v3', 'hsk2v3', 'hsk3v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'yct']);
+  return new Set(['hsk1', 'hsk1v3', 'hsk2v3', 'hsk3v3', 'hsk4v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'yct']);
 })();
 
 function publicUser(user) {

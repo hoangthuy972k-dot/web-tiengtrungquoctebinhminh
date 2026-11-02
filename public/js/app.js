@@ -661,15 +661,15 @@
 
   /* ---------------- Level cards ---------------- */
 
-  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2v3', 'hsk3v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'yct'];
+  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2v3', 'hsk3v3', 'hsk4v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'yct'];
   // Moi cap do cung mot mau nhan (do) — phan biet bang ten, khong bang mau
-  var LEVEL_COLOR = { hsk1v3: 'red', hsk2v3: 'green', hsk3v3: 'gold', hsk1: 'purple', hsk2: 'blue', hsk3: 'teal', hsk4: 'orange', hsk5: 'red', hsk6: 'green', yct: 'blue' };
+  var LEVEL_COLOR = { hsk1v3: 'red', hsk2v3: 'green', hsk3v3: 'gold', hsk4v3: 'teal', hsk1: 'purple', hsk2: 'blue', hsk3: 'teal', hsk4: 'orange', hsk5: 'red', hsk6: 'green', yct: 'blue' };
   // Chu Han lon in mo o goc the cap do
-  var LEVEL_ZH = { hsk1: '一', hsk1v3: '一', hsk2v3: '二', hsk3v3: '三', hsk2: '二', hsk3: '三', hsk4: '四', hsk5: '五', hsk6: '六', yct: '童' };
+  var LEVEL_ZH = { hsk1: '一', hsk1v3: '一', hsk2v3: '二', hsk3v3: '三', hsk4v3: '四', hsk2: '二', hsk3: '三', hsk4: '四', hsk5: '五', hsk6: '六', yct: '童' };
   // Nhan hien trong o vuong mau cua the cap do: [dong nho, so lon]
-  var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2v3: ['HSK 3.0', '2'], hsk3v3: ['HSK 3.0', '3'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], hsk6: ['HSK', '6'], yct: ['YCT', '1'] };
-  var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2v3: 'HSK 2 · 3.0', hsk3v3: 'HSK 3 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT Thiếu nhi' };
-  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2v3: true, hsk3v3: true, hsk2: true, hsk3: true, hsk4: true, hsk5: true, hsk6: true, yct: true };
+  var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2v3: ['HSK 3.0', '2'], hsk3v3: ['HSK 3.0', '3'], hsk4v3: ['HSK 3.0', '4'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], hsk6: ['HSK', '6'], yct: ['YCT', '1'] };
+  var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2v3: 'HSK 2 · 3.0', hsk3v3: 'HSK 3 · 3.0', hsk4v3: 'HSK 4 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT Thiếu nhi' };
+  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2v3: true, hsk3v3: true, hsk4v3: true, hsk2: true, hsk3: true, hsk4: true, hsk5: true, hsk6: true, yct: true };
   // Cap dang hoc: chua hoc bai nao thi de trong (khong mac dinh to dam cap nao, hoc sinh tu chon)
   var practiceLevel = null;
 
@@ -687,6 +687,7 @@
     hsk1v3: 'Người mới bắt đầu · giáo trình HSK 3.0 (thi từ 07/2026)',
     hsk2v3: 'Đã xong HSK 1 · giáo trình HSK 3.0',
     hsk3v3: 'Đã xong HSK 2 · giáo trình HSK 3.0',
+    hsk4v3: 'Đã xong HSK 3 · giáo trình HSK 3.0',
     hsk1: 'Người mới bắt đầu · giáo trình HSK cũ',
     hsk2: 'Đã xong HSK 1 · giáo trình HSK cũ',
     hsk3: 'Đã xong HSK 2 · giao tiếp hằng ngày',
@@ -712,7 +713,7 @@
   var LEVEL_PICK_KEY = 'hyv_level_pick';
   // Trang chu chia cap do thanh nhom de khong chon nham giao trinh moi / cu
   var NHOM_CAP = [
-    { key: 'v3', ten: 'HSK 3.0 — giáo trình mới', phu: 'Thi theo chuẩn mới từ 07/2026 · nên chọn nếu bạn mới bắt đầu', ids: ['hsk1v3', 'hsk2v3', 'hsk3v3'] },
+    { key: 'v3', ten: 'HSK 3.0 — giáo trình mới', phu: 'Thi theo chuẩn mới từ 07/2026 · nên chọn nếu bạn mới bắt đầu', ids: ['hsk1v3', 'hsk2v3', 'hsk3v3', 'hsk4v3'] },
     { key: 'cao', ten: 'HSK 4 – 6 · nâng cao', phu: 'Học tiếp sau HSK 3', ids: ['hsk4', 'hsk5', 'hsk6'] },
     { key: 'cu', ten: 'HSK 1 – 3 · giáo trình cũ (2.0)', phu: 'Dành cho lớp đang học giáo trình HSK cũ', ids: ['hsk1', 'hsk2', 'hsk3'], gon: true },
     { key: 'yct', ten: 'Thiếu nhi', phu: 'Trẻ em 6–12 tuổi', ids: ['yct'] }
@@ -760,7 +761,7 @@
       if (id === pickId) card.className += ' is-picked';
       card.innerHTML =
         (id === pickId ? '<span class="level-tag level-tag-pick">✓ Gợi ý cho bạn</span>'
-          : (id === 'hsk1v3' || id === 'hsk2v3' || id === 'hsk3v3' ? '<span class="level-tag">Mới</span>' : '')) +
+          : (id === 'hsk1v3' || id === 'hsk2v3' || id === 'hsk3v3' || id === 'hsk4v3' ? '<span class="level-tag">Mới</span>' : '')) +
         '<span class="level-zh" aria-hidden="true">' + (LEVEL_ZH[id] || '') + '</span>' +
         '<span class="level-mark" aria-hidden="true"><span class="level-mark-top">' + mark[0] + '</span><span class="level-mark-num">' + mark[1] + '</span></span>' +
         '<span class="level-card-body">' +
@@ -1480,7 +1481,7 @@
   var SRG_ERR_FILES = {
     hsk1: '/js/grammar-errors-hsk1.js', hsk1v3: '/js/grammar-errors-hsk1v3.js',
     hsk2: '/js/grammar-errors-hsk2.js', hsk2v3: '/js/grammar-errors-hsk2v3.js',
-    hsk3: '/js/grammar-errors-hsk3.js', hsk3v3: '/js/grammar-errors-hsk3v3.js',
+    hsk3: '/js/grammar-errors-hsk3.js', hsk3v3: '/js/grammar-errors-hsk3v3.js', hsk4v3: '/js/grammar-errors-hsk4v3.js',
     hsk4: '/js/grammar-errors-hsk4.js', yct: '/js/grammar-errors-yct.js'
   };
   var srgFileState = {};
@@ -1993,7 +1994,7 @@
     if (bnMenu) bnMenu.addEventListener('click', function () { $('#sidebarToggle').click(); });
   }
 
-  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2v3: 'HSK 2 (3.0 Mới)', hsk3v3: 'HSK 3 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT 1' };
+  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2v3: 'HSK 2 (3.0 Mới)', hsk3v3: 'HSK 3 (3.0 Mới)', hsk4v3: 'HSK 4 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT 1' };
 
   function selectLevel(id) {
     if (!READY_LEVELS[id]) {
@@ -2088,7 +2089,8 @@
     hsk2: rvBuildGroups(15),
     hsk1v3: rvBuildGroups(15),
     hsk2v3: rvBuildGroups(15),
-    hsk3v3: rvBuildGroups(18)
+    hsk3v3: rvBuildGroups(18),
+    hsk4v3: rvBuildGroups(10)
   };
 
   /* ---------------- Chung nhan hoan thanh cap + huy hieu ---------------- */
@@ -2542,6 +2544,7 @@
     hsk4: ['match', 'fill', 'sort', 'errfix'],
     hsk5: ['match', 'fill', 'sort', 'errfix', 'sgk'],
     hsk6: ['match', 'fill', 'sort', 'errfix', 'sgk'],
+    hsk4v3: ['match', 'fill', 'sort', 'sgk'],
     yct: ['match', 'fill', 'sort', 'mc']
   };
 
@@ -2769,8 +2772,15 @@
     if (s.key === 'retell') return Object.assign({}, s, { desc: 'Nhìn gợi ý của sách (bài tập 5), ghi âm kể lại nội dung chính → máy chấm đủ ý' });
     return s;
   });
+  // HSK 4 (3.0 moi): giu 7 buoc chung, them buoc Luyen viet (de 写作 cua sach, >= 120 chu) ngay sau buoc Noi
+  var PATH_STEPS_HSK4V3 = [];
+  PATH_STEPS.forEach(function (s) {
+    PATH_STEPS_HSK4V3.push(s);
+    if (s.key === 'speak') PATH_STEPS_HSK4V3.push({ key: 'writing', title: 'Luyện viết', stage: '用', desc: 'Viết theo đề 写作 của sách (ít nhất 120 chữ) → chấm điểm và sửa lỗi chi tiết', min: 15, icon: '✍️', section: 'writingPractice',
+      open: function (l, s2) { showWritingPractice(l, s2); } });
+  });
   function laLoTrinhCaoCap(ps) { return ps === PATH_STEPS_HSK5 || ps === PATH_STEPS_HSK6; }
-  function pathStepsOfLevel(levelId) { return levelId === 'hsk6' ? PATH_STEPS_HSK6 : levelId === 'hsk5' ? PATH_STEPS_HSK5 : PATH_STEPS; }
+  function pathStepsOfLevel(levelId) { return levelId === 'hsk6' ? PATH_STEPS_HSK6 : levelId === 'hsk5' ? PATH_STEPS_HSK5 : levelId === 'hsk4v3' ? PATH_STEPS_HSK4V3 : PATH_STEPS; }
   // Bai khong co phan Khoi dong (wuData rong) thi bo han buoc do khoi lo trinh.
   // Ket qua kiem tra luu theo phien ban web (hyv_khoi_dong) de the "Tiep tuc hoc"
   // o trang chu dung ngay; web cap nhat (co the bai vua duoc them Khoi dong) thi kiem lai.
@@ -2783,9 +2793,10 @@
   var buocBoKd = {};
   function pathStepsOf(lesson) {
     var url = (lesson && lesson.fullPageUrl) || '';
-    var goc = /\/lessons\/hsk6-bai-\d+\.html$/.test(url) ? PATH_STEPS_HSK6 : /\/lessons\/hsk5-bai-\d+\.html$/.test(url) ? PATH_STEPS_HSK5 : PATH_STEPS;
+    var goc = /\/lessons\/hsk6-bai-\d+\.html$/.test(url) ? PATH_STEPS_HSK6 : /\/lessons\/hsk5-bai-\d+\.html$/.test(url) ? PATH_STEPS_HSK5 :
+      /\/lessons\/hsk4v3-bai-\d+\.html$/.test(url) ? PATH_STEPS_HSK4V3 : PATH_STEPS;
     if (kdMap()[url] !== false) return goc;
-    var k = goc === PATH_STEPS_HSK6 ? 'hsk6' : goc === PATH_STEPS_HSK5 ? 'hsk5' : 'chung';
+    var k = goc === PATH_STEPS_HSK6 ? 'hsk6' : goc === PATH_STEPS_HSK5 ? 'hsk5' : goc === PATH_STEPS_HSK4V3 ? 'hsk4v3' : 'chung';
     return buocBoKd[k] || (buocBoKd[k] = goc.filter(function (s) { return s.key !== 'warmup'; }));
   }
   function kiemKhoiDong(lesson) {
@@ -3652,10 +3663,19 @@
     return [str];
   }
   function wuTranh(str) {
+    // Giao trinh HSK 3.0 moi (HSK 4): anh lay tu sach — img la duong dan /images/...
+    if (/^\//.test(String(str || ''))) return '<img class="wu-tranh wu-anh-sach" src="' + str + '" alt="" loading="lazy" draggable="false">';
     return wuTachEmoji(str).map(function (e) {
       return '<img class="wu-tranh" src="/images/wu/' + wuMaEmoji(e) + '.png" alt="" loading="lazy" draggable="false" data-emoji="' + e + '">';
     }).join('');
   }
+  // Bai khoa co anh nhan vat (scene.nguoi[sp] = { ten, anh }, anh cat tu sach) -> mat nhan vat thay chu A/B/C/D
+  function nvCua(scene, sp) { var n = scene && scene.nguoi; return n && n[sp] ? n[sp] : null; }
+  function nvAvatar(scene, sp) {
+    var n = nvCua(scene, sp);
+    return n && n.anh ? '<img class="nv-anh" src="' + n.anh + '" alt="' + spEsc(n.ten || '') + '" draggable="false">' : ('ABCD'.charAt(sp) || 'A');
+  }
+  function vaiTen(scene, sp) { var n = nvCua(scene, sp); return n && n.ten ? n.ten : 'Vai ' + ('ABCD'.charAt(sp) || 'A'); }
   function wuGanLoiTranh(box) {
     $all('img.wu-tranh', box).forEach(function (im) {
       im.addEventListener('error', function () {
@@ -5047,7 +5067,7 @@
   }
 
   function audioBaseFor(lesson) {
-    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2v3-|hsk3v3-|hsk2-|hsk3-|hsk4-|hsk5-|hsk6-)?bai-(\d+)\.html/);
+    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2v3-|hsk3v3-|hsk4v3-|hsk2-|hsk3-|hsk4-|hsk5-|hsk6-)?bai-(\d+)\.html/);
     if (!m) return null;
     return m[1] ? '/audio/' + m[1] + 'bai-' + m[2] : '/audio/bai-' + m[2];
   }
@@ -5328,7 +5348,7 @@
   // Khong hien chiet tu Han tu — len HSK 4 hoc sinh da thuoc mat chu.
   // ══════════════════════════════════════════════════════════
   function vpIsHsk4() {
-    return !!(currentHubLesson && /\/(?:hsk(?:[1345]|[123]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+    return !!(currentHubLesson && /\/(?:hsk(?:[1345]|[1234]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
   }
 
   function vpH4Say(t) {
@@ -5383,7 +5403,7 @@
   function renderVpListHsk4() {
     // Chi HSK 3 giu chiet tu Han tu; HSK 4 tro len da bo
     // HSK 1 va HSK 3 con dang hoc mat chu, nen giu khoi chiet tu Han tu
-    var giuHanTu = !!(currentHubLesson && /\/(?:hsk(?:[13]|[123]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+    var giuHanTu = !!(currentHubLesson && /\/(?:hsk(?:[13]|[1234]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
     var wrap = $('#vpContent');
     wrap.innerHTML =
       '<div class="h4-list">' +
@@ -11764,7 +11784,7 @@
   // Bai tap ngu phap soan rieng cho tung cap — chi tai khi hoc sinh mo phan Ngu phap
   var GRAMMAR_FILES = {
     hsk1: '/js/grammar-hsk1.js', hsk1v3: '/js/grammar-hsk1v3.js', hsk2: '/js/hsk2-grammar-exercises.js',
-    hsk2v3: '/js/grammar-hsk2v3.js', hsk3v3: '/js/grammar-hsk3v3.js', hsk3: '/js/grammar-hsk3.js',
+    hsk2v3: '/js/grammar-hsk2v3.js', hsk3v3: '/js/grammar-hsk3v3.js', hsk4v3: '/js/grammar-hsk4v3.js', hsk3: '/js/grammar-hsk3.js',
     hsk4: '/js/grammar-hsk4.js', yct: '/js/grammar-yct.js'
   };
   var grammarFileState = {};
@@ -11834,7 +11854,7 @@
   // Ngu phap chia theo diem — trinh ve dung chung + du lieu tung cap
   var NPT_FILES = {
     hsk1: '/js/ngu-phap-tab-hsk1.js', hsk1v3: '/js/ngu-phap-tab-hsk1v3.js',
-    hsk2: '/js/ngu-phap-tab-hsk2.js', hsk2v3: '/js/ngu-phap-tab-hsk2v3.js', hsk3v3: '/js/ngu-phap-tab-hsk3v3.js',
+    hsk2: '/js/ngu-phap-tab-hsk2.js', hsk2v3: '/js/ngu-phap-tab-hsk2v3.js', hsk3v3: '/js/ngu-phap-tab-hsk3v3.js', hsk4v3: '/js/ngu-phap-tab-hsk4v3.js',
     hsk3: '/js/ngu-phap-tab-hsk3.js', hsk4: '/js/ngu-phap-tab-hsk4.js', hsk5: '/js/ngu-phap-tab-hsk5.js', hsk6: '/js/ngu-phap-tab-hsk6.js'
   };
   var nptState = {};
@@ -12261,7 +12281,8 @@
       dpIndex = 0;
       dpViewed = new Set();
       dpQuizState = {};
-      dpHideVn = /\/hsk4-bai-\d+\.html/.test(lesson.fullPageUrl || '');
+      // Hoi thoai: an san pinyin + nghia tu HSK 3 tro len (co giao yeu cau), bam tung cau / nut de hien
+      dpHideVn = /\/(?:hsk[3456]|hsk[34]v3)-bai-\d+\.html/.test(lesson.fullPageUrl || '');
       dpLineShown = {};
       dpFlatOffsets = [];
       dpTotalQuiz = 0;
@@ -12390,18 +12411,17 @@
         var isB = spIdx % 2 === 1;
         var lineShown = dpHideVn && shownSet[li];
         return '<div class="dp-line' + (isB ? ' is-b' : '') + ' dp-sp' + spIdx + (lineShown ? ' show-vn' : '') + '" data-li="' + li + '">' +
-          '<div class="dp-avatar">' + ('ABCD'.charAt(spIdx) || 'A') + '</div>' +
+          (nvCua(scene, spIdx) ? '<div class="dp-avatar co-anh">' + nvAvatar(scene, spIdx) + '<span class="nv-ten">' + spEsc(nvCua(scene, spIdx).ten || '') + '</span></div>'
+            : '<div class="dp-avatar">' + ('ABCD'.charAt(spIdx) || 'A') + '</div>') +
           '<div class="dp-bubble">' + (dungBuoc ? '<button type="button" class="vp-speak-btn dp-say" data-speak="' + spEsc(line.zh) + '" aria-label="Nghe câu này">🔊</button>' : '') +
             '<div class="dp-zh hanzi">' + line.zh + '</div><div class="dp-py">' + line.py + '</div><div class="dp-vn">' + line.vn + '</div></div>' +
           '</div>';
       }).join('');
-      var isHsk4Dp = /\/hsk4-bai-\d+\.html/.test((currentHubLesson && currentHubLesson.fullPageUrl) || '');
-      var toggleHtml = isHsk4Dp
-        ? '<button type="button" class="dp-vn-toggle' + (dpHideVn ? '' : ' open') + '" id="dpVnToggle">' + (dpHideVn ? '👁 Hiện dịch' : '🙈 Ẩn dịch') + '</button>'
-        : '';
-      var hintHtml = (isHsk4Dp && dpHideVn) ? '<div class="dp-vn-hint">Bấm vào từng câu để xem nghĩa riêng câu đó.</div>' : '';
+      var toggleHtml =
+        '<button type="button" class="dp-vn-toggle' + (dpHideVn ? '' : ' open') + '" id="dpVnToggle">' + (dpHideVn ? '👁 Hiện pinyin & dịch' : '🙈 Ẩn pinyin & dịch') + '</button>';
+      var hintHtml = dpHideVn ? '<div class="dp-vn-hint">Bấm vào từng câu để xem pinyin và nghĩa của riêng câu đó.</div>' : '';
       linesHtml = '<div class="dp-content-head"><div class="dp-content-label">📖 Nội dung bài khóa</div>' + toggleHtml + '</div>' + hintHtml +
-        '<div class="dp-lines' + (dpHideVn ? ' vn-hidden' : '') + (laBaiKhoaDp ? ' dp-passage' : '') + '">' + linesHtml + '</div>';
+        '<div class="dp-lines' + (dpHideVn ? ' vn-hidden' : '') + (laBaiKhoaDp || scene.doan ? ' dp-passage' : '') + '">' + linesHtml + '</div>';
       // HSK 5: sau phan nghe chon dap an la phan NGHE VA DIEN TU (nghe-dien.js);
       // toan van bai khoa gap lai de khong lo dap an
       if (laBaiKhoaDp) {
@@ -12425,7 +12445,8 @@
     }
     top.innerHTML =
       (dpTotalQuiz > 0 ? pgbHtml('dpq', dpTotalQuiz) : '') +
-      '<div class="dp-scene-label">🎭 ' + scene.scene + '</div>';
+      '<div class="dp-scene-label">🎭 ' + scene.scene + '</div>' +
+      (scene.anh ? '<img class="dp-scene-anh" src="' + scene.anh + '" alt="" loading="lazy" draggable="false">' : '');
     // Khung tu cua phan nghe-dien (.nd-kho) cung ghim o tren: dat ngay DUOI thanh audio
     // dang ghim (neu khong se bi thanh audio che). Theo doi chieu cao thanh audio.
     if (!host._ndTop) {
@@ -12740,8 +12761,8 @@
         rpSpeakers(scene).map(function (sp) {
           var mine = scene.lines.filter(function (l) { return (l.sp || 0) === sp; });
           return '<button type="button" class="rp-role' + (st.role === sp ? ' active' : '') + '" data-role="' + sp + '">' +
-            '<span class="rp-av dp-sp' + sp + '">' + letter(sp) + '</span>' +
-            '<span class="rp-role-txt"><b>Vai ' + letter(sp) + '</b> · ' + mine.length + ' câu<br><span class="rp-role-first hanzi">「' + mine[0].zh + '」</span></span></button>';
+            '<span class="rp-av dp-sp' + sp + '">' + nvAvatar(scene, sp) + '</span>' +
+            '<span class="rp-role-txt"><b>' + spEsc(vaiTen(scene, sp)) + '</b> · ' + mine.length + ' câu<br><span class="rp-role-first hanzi">「' + mine[0].zh + '」</span></span></button>';
         }).join('') + '</div>' +
         '<div class="rp-label">2. Mức gợi ý</div><div class="rp-hints">' +
           '<button type="button" class="rp-hint' + (st.hint === 'full' ? ' active' : '') + '" data-hint="full"><b>Dễ</b> · thấy chữ Hán + pinyin</button>' +
@@ -12801,7 +12822,7 @@
       var sp = l.sp || 0, mine = sp === st.role;
       var sc = st.results[li];
       return '<div class="rp-line' + (sp % 2 ? ' is-b' : '') + (mine ? ' is-me' : '') + '">' +
-        '<span class="rp-av dp-sp' + sp + '">' + letter(sp) + '</span>' +
+        '<span class="rp-av dp-sp' + sp + '">' + nvAvatar(scene, sp) + '</span>' +
         '<div class="rp-bub"><div class="hanzi rp-zh">' + l.zh + '</div><div class="rp-py">' + l.py + '</div>' +
         (mine && typeof sc === 'number' ? '<span class="rp-score ' + (sc >= RP_PASS ? 'is-ok' : 'is-low') + '">' + sc + '%</span>' : '') +
         '</div></div>';
@@ -12811,7 +12832,7 @@
 
     if (!isMine) {
       html += '<div class="rp-line' + ((cur.sp || 0) % 2 ? ' is-b' : '') + ' is-now">' +
-        '<span class="rp-av dp-sp' + (cur.sp || 0) + '">' + letter(cur.sp || 0) + '</span>' +
+        '<span class="rp-av dp-sp' + (cur.sp || 0) + '">' + nvAvatar(scene, cur.sp || 0) + '</span>' +
         '<div class="rp-bub"><div class="rp-speaking">' + uiIcon('loa') + 'Vai ' + letter(cur.sp || 0) + ' đang nói…</div>' +
         '<div class="hanzi rp-zh">' + cur.zh + '</div><div class="rp-py">' + cur.py + '</div><div class="rp-vn">' + cur.vn + '</div></div></div>' +
         '<div class="rp-actions"><button type="button" class="rp-btn" id="rpReplay">' + uiIcon('loa') + 'Nghe lại</button>' +
@@ -13036,8 +13057,8 @@
         '<div class="rp-label">2. Em đóng vai</div><div class="rp-roles">' + sps.map(function (sp) {
           var mine = sc.lines.filter(function (l) { return (l.sp || 0) === sp; });
           return '<button type="button" class="rp-role' + (htpCfg.role === sp ? ' active' : '') + '" data-htp-role="' + sp + '">' +
-            '<span class="rp-av dp-sp' + sp + '">' + letter(sp) + '</span>' +
-            '<span class="rp-role-txt"><b>Vai ' + letter(sp) + '</b> · ' + mine.length + ' câu' + (sp === (sc.lines[0].sp || 0) ? ' · nói trước' : ' · máy hỏi trước') + '</span></button>';
+            '<span class="rp-av dp-sp' + sp + '">' + nvAvatar(sc, sp) + '</span>' +
+            '<span class="rp-role-txt"><b>' + spEsc(vaiTen(sc, sp)) + '</b> · ' + mine.length + ' câu' + (sp === (sc.lines[0].sp || 0) ? ' · nói trước' : ' · máy hỏi trước') + '</span></button>';
         }).join('') + '</div>' +
         '<div class="rp-label">3. Gợi ý khi đến lượt em</div><div class="rp-hints">' +
           '<button type="button" class="rp-hint' + (htpCfg.hint === 'zh' ? ' active' : '') + '" data-htp-hint="zh"><b>Dễ</b> · thấy chữ Hán</button>' +
@@ -13093,7 +13114,7 @@
           '<div class="rp-vn">' + l.vn + '</div>';
       }
       return '<div class="rp-line' + (sp % 2 ? ' is-b' : '') + (mine ? ' is-me' : '') + (now ? ' is-now' : '') + '">' +
-        '<span class="rp-av dp-sp' + sp + '">' + letter(sp) + '</span>' +
+        '<span class="rp-av dp-sp' + sp + '">' + nvAvatar(st.scene, sp) + '</span>' +
         '<div class="rp-bub">' + (l.on ? '<span class="htp-on">🔁 Ôn bài ' + l.on + '</span>' : '') + noiDung +
           (mine && typeof sc === 'number' ? '<span class="rp-score ' + (sc >= RP_PASS ? 'is-ok' : 'is-low') + '">' + sc + '%</span>' : '') +
         '</div></div>';
@@ -13833,7 +13854,7 @@
       }
       var ten = (lesson.fullPageUrl.match(/([\w-]+)\.html$/) || [])[1] || lesson.fullPageUrl;
       var sub = $('#wrSub');
-      if (sub) sub.textContent = data.writingData.kieu === 'sgk'
+      if (sub) sub.textContent = data.writingData.tieuDe ? data.writingData.tieuDe + ' → chấm điểm và sửa lỗi chi tiết' : data.writingData.kieu === 'sgk'
         ? '运用 · 写一写 — viết theo đề của sách (khoảng ' + (data.writingData.soChu || 300) + ' chữ) → chấm điểm và sửa lỗi chi tiết'
         : '书写 · Xếp câu, viết đoạn 80 chữ — nộp bài để được chấm và sửa lỗi chi tiết';
       window.LuyenViet.mount(hop, data.writingData, {

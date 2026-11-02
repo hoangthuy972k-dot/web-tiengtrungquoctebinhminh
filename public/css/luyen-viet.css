@@ -414,3 +414,6 @@ html.ho-tro-toi[data-theme="dark"] {
 
 /* Bai khoa trong app: thanh audio da ghim o tren, khung tu nghe-dien ghim ngay ben duoi (--nd-top do app.js tinh) */
 #dpContent .nd-kho { top: var(--nd-top, 64px); }
+
+/* Bai tap SGK: tranh cua sach (看图，用词语造句) */
+.sk-anh { display: block; width: 100%; max-width: 320px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; margin: 4px 0 8px; box-shadow: 0 2px 8px rgba(43, 29, 58, 0.15); }

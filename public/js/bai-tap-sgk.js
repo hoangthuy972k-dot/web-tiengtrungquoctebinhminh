@@ -11,6 +11,7 @@
    · mp — 阅读语段，模仿造句: đọc đoạn mẫu, điền vào câu khung → xem câu mẫu, tự đánh giá
    · bc — 扩展 病句: sửa câu sai → xem chỗ sai + câu đúng, tự đánh giá
    · sx — 把句子按照正确顺序组成语段: bấm các câu A–E theo đúng thứ tự
+   HSK 4 (3.0) thêm: gx có c.anh (看图，用词语造句 — nhìn tranh của sách, đặt câu với từ cho sẵn)
    ══════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -209,7 +210,9 @@
     function veGx(p, pi) {
       return '<ol class="sk-list sk-viet">' + p.cau.map(function (c, ci) {
         var k = pi + '_' + ci, s = st.vl[k] || { t: '' };
-        var dau = '<div class="lv-zh sk-cau">' + esc(c.s) + ' <span class="sk-ngoac">（' + esc(c.tu) + '）</span></div>';
+        // 看图，用词语造句 (HSK 4 · 3.0): c.anh = tranh cua sach, c.s co the rong
+        var dau = (c.anh ? '<img class="sk-anh" src="' + esc(c.anh) + '" alt="" loading="lazy" draggable="false">' : '') +
+          '<div class="lv-zh sk-cau">' + esc(c.s) + ' <span class="sk-ngoac">（' + esc(c.tu) + '）</span></div>';
         if (!s.xem) {
           return '<li>' + dau + '<textarea class="sk-ta lv-zh" rows="2" data-sk-vl-in="' + k + '" placeholder="Viết lại câu, có dùng ' + esc(c.tu) + '…" spellcheck="false">' + esc(s.t) + '</textarea>' +
             '<div class="lv-actions"><button type="button" class="lv-btn sm" data-sk-vl-kt="' + k + '">Kiểm tra</button>' +

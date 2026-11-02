@@ -1,0 +1,9 @@
+{
+  "name": "hsk4v3-cong-cu",
+  "private": true,
+  "description": "Cong cu soan HSK 4 (3.0): chi chay luc soan bai, khong dung tren server",
+  "dependencies": {
+    "hanzi-writer-data": "^2.0.1",
+    "pinyin-pro": "^3.26.0"
+  }
+}

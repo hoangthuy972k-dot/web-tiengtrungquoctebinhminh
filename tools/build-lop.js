@@ -34,6 +34,7 @@ const GRAMMAR = {
   hsk2: ['js/hsk2-grammar-exercises.js', 'js/grammar-errors-hsk2.js'],
   hsk2v3: ['js/grammar-hsk2v3.js', 'js/grammar-errors-hsk2v3.js'],
   hsk3v3: ['js/grammar-hsk3v3.js', 'js/grammar-errors-hsk3v3.js'],
+  hsk4v3: ['js/grammar-hsk4v3.js', 'js/grammar-errors-hsk4v3.js'],
   hsk3: ['js/grammar-hsk3.js', 'js/grammar-errors-hsk3.js'],
   hsk4: ['js/grammar-hsk4.js', 'js/grammar-errors-hsk4.js'],
   yct: ['js/grammar-yct.js', 'js/grammar-errors-yct.js'],
@@ -42,7 +43,7 @@ const GRAMMAR = {
 const DUOI = {
   hsk2: ['hsk1'], hsk3: ['hsk1', 'hsk2'], hsk4: ['hsk1', 'hsk2', 'hsk3'],
   hsk5: ['hsk1', 'hsk2', 'hsk3', 'hsk4'], hsk6: ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5'],
-  hsk2v3: ['hsk1v3'], hsk3v3: ['hsk1v3', 'hsk2v3'],
+  hsk2v3: ['hsk1v3'], hsk3v3: ['hsk1v3', 'hsk2v3'], hsk4v3: ['hsk1v3', 'hsk2v3', 'hsk3v3'],
 };
 
 // Cap duoc lay cau trong sach bai tap (wbData) lam cau hoi tro choi

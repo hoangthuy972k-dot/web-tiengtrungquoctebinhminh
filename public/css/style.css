@@ -4454,6 +4454,7 @@ html:has(.modal-overlay.is-open) { overflow: hidden; }
 .dp-lines { margin-top: var(--space-3); }
 .dp-lines.vn-hidden .dp-bubble { cursor: pointer; }
 .dp-lines.vn-hidden .dp-line:not(.show-vn) .dp-vn { display: none; }
+.dp-lines.vn-hidden .dp-line:not(.show-vn) .dp-py { display: none; }
 .dp-lines.vn-hidden .dp-line.show-vn .dp-vn {
   border-top: 1px dashed var(--color-gold-500);
   padding-top: 4px;
@@ -10109,3 +10110,17 @@ html:has(.modal-overlay.is-open) .hw-fab-stack { display: none; }
 .resume-sao-bar { flex: 1 1 100px; max-width: 200px; height: 6px; border-radius: var(--radius-pill); background: rgba(var(--rgbn-255-255-255), 0.25); overflow: hidden; }
 .resume-sao-bar span { display: block; height: 100%; border-radius: inherit; background: var(--color-gold-400); }
 .assign-head h2 { display: flex; align-items: center; gap: 8px; } .assign-head h2 .ui-ico { width: 24px; height: 24px; flex: none; color: var(--fg-red-600); }
+
+/* ---------- Giao trinh HSK 3.0 moi (HSK 4): anh lay tu sach ---------- */
+/* Khoi dong: anh chup trong sach (khong phai tranh 3D) -> khung chu nhat bo goc */
+.wu-emoji .wu-anh-sach { width: 100%; max-width: 168px; height: 112px; object-fit: cover; border-radius: 10px; filter: none; box-shadow: 0 2px 6px rgba(43, 29, 58, 0.16); }
+.wu-card:hover .wu-anh-sach { transform: none; }
+@media (max-width: 640px) { .wu-emoji .wu-anh-sach { width: 100%; height: 84px; } }
+/* Bai khoa: mat nhan vat thay chu A/B, ten nhan vat duoi anh; tranh minh hoa bai khoa */
+.dp-avatar.co-anh { width: 56px; height: auto; flex-direction: column; gap: 3px; background: none !important; color: var(--color-gray-700); border-radius: 0; }
+.dp-avatar .nv-anh { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-white); box-shadow: 0 0 0 2px var(--color-red-600); background: var(--color-white); }
+.dp-line.is-b .dp-avatar .nv-anh { box-shadow: 0 0 0 2px var(--color-gray-700); }
+.dp-avatar .nv-ten { font-size: 0.72rem; font-weight: 700; line-height: 1.15; text-align: center; max-width: 64px; overflow-wrap: anywhere; }
+.rp-av .nv-anh { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.rp-av:has(.nv-anh) { background: var(--color-white); box-shadow: 0 0 0 2px currentColor; overflow: hidden; }
+.dp-scene-anh { display: block; width: 100%; max-width: 560px; max-height: 300px; object-fit: cover; margin: 10px auto 4px; border-radius: 14px; box-shadow: 0 3px 10px rgba(43, 29, 58, 0.15); }

@@ -40,6 +40,17 @@ const APP_DATA = {
       totalVocab: 485,
       color: 'teal'
     },
+    // <hsk4v3-cap>
+    {
+      id: 'hsk4v3',
+      name: 'HSK 4 (3.0 Mới)',
+      subtitle: 'Giáo trình chuẩn mới · 新HSK教程4',
+      description: 'Giáo trình 新HSK教程4 (chuẩn HSK 3.0), 1 bài · 40 từ mới, ảnh nhân vật và tranh của sách + audio gốc.',
+      totalLessons: 1,
+      totalVocab: 40,
+      color: 'teal'
+    },
+    // </hsk4v3-cap>
     {
       id: 'hsk2',
       name: 'HSK 2',
@@ -1597,6 +1608,22 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk3v3-bai-18.html'
       }
     ],
+    // <hsk4v3> HSK 4 (3.0 Moi) — sinh boi tools/hsk4v3/gan.js
+    hsk4v3: [
+      {
+        id: 'hsk4v3-l1',
+        number: 1,
+        title: "Chúng em đến Trung Quốc du học rồi",
+        titleHanzi: "我们来中国学习了",
+        titlePinyin: "Wǒmen lái Zhōngguó xuéxí le",
+        topic: "Thủ tục nhập học, học bổng, chọn chuyên ngành và định hướng nghề nghiệp",
+        vocabCount: 40,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk4v3-bai-1.html'
+      }
+    ],
+    // </hsk4v3>
     hsk5: [
       {
         id: 'hsk5-l1',

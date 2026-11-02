@@ -10,7 +10,7 @@
 
   // Cac cap co trong Che do lop hoc. Du lieu moi cap dung san o /js/lop-<cap>.js
   // (tools/build-lop.js): bai tap rieng cua tung bai + bai tap ngu phap chung da loc cau co chu chua hoc.
-  var LEVELS = { hsk1: 1, hsk1v3: 1, hsk2: 1, hsk2v3: 1, hsk3v3: 1, hsk3: 1, hsk4: 1, hsk5: 1, hsk6: 1, yct: 1 };
+  var LEVELS = { hsk1: 1, hsk1v3: 1, hsk2: 1, hsk2v3: 1, hsk3v3: 1, hsk4v3: 1, hsk3: 1, hsk4: 1, hsk5: 1, hsk6: 1, yct: 1 };
   // Ma phien ban cua chinh lop.js (may chu dong dau ?v=) — dung lai cho file du lieu tai sau
   var VER = (function () {
     var s = document.currentScript && document.currentScript.src || '';
@@ -3199,7 +3199,7 @@
 
   /* ---------------- chuyen man hinh ---------------- */
   var LEVEL_NAME = {
-    hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2: 'HSK 2', hsk2v3: 'HSK 2 · 3.0', hsk3v3: 'HSK 3 · 3.0',
+    hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2: 'HSK 2', hsk2v3: 'HSK 2 · 3.0', hsk3v3: 'HSK 3 · 3.0', hsk4v3: 'HSK 4 · 3.0',
     hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT'
   };
 

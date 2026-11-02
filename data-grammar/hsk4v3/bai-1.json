@@ -1,0 +1,639 @@
+{
+ "/lessons/hsk4v3-bai-1.html": {
+  "points": [
+   {
+    "title": "指示代词“任何” — bất kỳ, bất cứ",
+    "errors": [
+     {
+      "wrong": "任何的问题都可以问我。",
+      "why": "Trước danh từ, 任何 thường không thêm 的.",
+      "right": "任何问题都可以问我。"
+     },
+     {
+      "wrong": "任何人可以参加。",
+      "why": "Thiếu 都 / 也 — câu “bất kỳ … cũng …” gần như luôn có 都 / 也.",
+      "right": "任何人都可以参加。"
+     },
+     {
+      "wrong": "他不认识任何人们。",
+      "why": "任何 đã mang nghĩa “mọi / bất kỳ”, không thêm 们.",
+      "right": "他不认识任何人。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Sau này có bất kỳ vấn đề gì đều có thể đến tìm cô.”",
+      "pre": "你们以后有",
+      "blank": "任何",
+      "post": "问题都可以来找我。",
+      "options": [
+       "任何",
+       "每",
+       "所有的"
+      ],
+      "answer": 0,
+      "explanation": "任何 + danh từ + 都 + V."
+     },
+     {
+      "context": "“Bất kỳ ai cũng không được đến muộn.”",
+      "pre": "明天8点出发，任何人",
+      "blank": "也",
+      "post": "不能迟到。",
+      "options": [
+       "也",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "任何……也 + phủ định."
+     },
+     {
+      "context": "“Có bất kỳ thông báo nào, tôi đều báo cho bạn ngay.”",
+      "pre": "学校有任何通知，我",
+      "blank": "都",
+      "post": "会第一时间告诉你。",
+      "options": [
+       "都",
+       "还",
+       "再"
+      ],
+      "answer": 0,
+      "explanation": "任何……都…… — 都 đứng trước động từ của vế sau."
+     },
+     {
+      "context": "“Việc này anh ấy không nói với bất kỳ ai.”",
+      "pre": "这件事他没有告诉",
+      "blank": "任何",
+      "post": "人。",
+      "options": [
+       "任何",
+       "什么的",
+       "哪"
+      ],
+      "answer": 0,
+      "explanation": "没有 + V + 任何 + N."
+     },
+     {
+      "context": "“Bất cứ lúc nào em cũng có thể gọi cho cô.”",
+      "pre": "",
+      "blank": "任何",
+      "post": "时候你都可以给我打电话。",
+      "options": [
+       "任何",
+       "那",
+       "一"
+      ],
+      "answer": 0,
+      "explanation": "任何时候 = bất cứ lúc nào."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Em có bất kỳ vấn đề gì đều có thể hỏi tôi.”",
+      "words": [
+       "你",
+       "有",
+       "任何",
+       "问题",
+       "都",
+       "可以",
+       "问我"
+      ],
+      "answer": "你有任何问题都可以问我。",
+      "explanation": "任何 + N + 都 + 可以 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bất kỳ ai cũng không được đến muộn.”",
+      "words": [
+       "任何人",
+       "也",
+       "不能",
+       "迟到"
+      ],
+      "answer": "任何人也不能迟到。",
+      "explanation": "任何人 + 也 + 不能."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Việc này anh ấy không nói với ai cả.”",
+      "words": [
+       "他",
+       "没有",
+       "告诉",
+       "任何人",
+       "这件事"
+      ],
+      "answer": "这件事他没有告诉任何人。",
+      "explanation": "Phủ định: 没有 + V + 任何 + N."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "任何的学生都可以参加。",
+      "isCorrect": false,
+      "correctVersion": "任何学生都可以参加。",
+      "explanation": "任何 + N, không thêm 的."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们有任何问题都可以找王老师。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 任何问题 + 都 + 可以."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他不认识任何人们。",
+      "isCorrect": false,
+      "correctVersion": "他不认识任何人。",
+      "explanation": "任何 không đi với 们."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bất cứ lúc nào em cũng có thể gọi điện cho cô.",
+      "answer": "任何时候你都可以给我打电话。",
+      "answerPy": "Rènhé shíhòu nǐ dōu kěyǐ gěi wǒ dǎdiànhuà.",
+      "explanation": "任何时候 + 都 + 可以."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Trong thư viện, bất kỳ ai cũng không được nói to.",
+      "answer": "在图书馆里，任何人都不能大声说话。",
+      "answerPy": "Zài túshūguǎn lǐ, rènhé rén dōu bù néng dà shēng shuōhuà.",
+      "explanation": "任何人 + 都 / 也 + 不能."
+     }
+    ]
+   },
+   {
+    "title": "假设复句“要是……，就……” — nếu … thì …",
+    "errors": [
+     {
+      "wrong": "要是明天下雨，我们不去公园了。",
+      "why": "Vế sau nên có 就 để nối kết quả.",
+      "right": "要是明天下雨，我们就不去公园了。"
+     },
+     {
+      "wrong": "要是你明天有时间，你跟我就去吧。",
+      "why": "就 đứng sau chủ ngữ và ngay trước động từ của vế sau.",
+      "right": "要是你明天有时间，就跟我去吧。"
+     },
+     {
+      "wrong": "就要是你来，我们很高兴。",
+      "why": "要是 ở vế trước, 就 ở vế sau, không đảo.",
+      "right": "要是你来，我们就很高兴。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Nếu xin được học bổng thì …”",
+      "pre": "",
+      "blank": "要是",
+      "post": "申请到奖学金，就能减轻不少经济压力。",
+      "options": [
+       "要是",
+       "虽然",
+       "因为"
+      ],
+      "answer": 0,
+      "explanation": "要是 nêu giả thiết."
+     },
+     {
+      "context": "“… thì đi leo núi với tớ nhé.”",
+      "pre": "你要是明天有时间，",
+      "blank": "就",
+      "post": "跟我一起去爬山吧。",
+      "options": [
+       "就",
+       "才",
+       "也"
+      ],
+      "answer": 0,
+      "explanation": "要是……，就……"
+     },
+     {
+      "context": "“… thì chúng ta hỏi người khác.”",
+      "pre": "要是她不愿意参加比赛，我们",
+      "blank": "就",
+      "post": "再问问别人。",
+      "options": [
+       "就",
+       "还",
+       "都"
+      ],
+      "answer": 0,
+      "explanation": "就 đứng sau chủ ngữ 我们."
+     },
+     {
+      "context": "“Nếu bạn đói thì mình đi nhà ăn trước.” (ôn từ mới)",
+      "pre": "要是你饿了，我们就先去",
+      "blank": "食堂",
+      "post": "吧。",
+      "options": [
+       "食堂",
+       "签证",
+       "证件"
+      ],
+      "answer": 0,
+      "explanation": "食堂 = nhà ăn."
+     },
+     {
+      "context": "“Nếu không làm visa thì không thể sang Trung Quốc du học.”",
+      "pre": "",
+      "blank": "要是",
+      "post": "不办签证，就不能来中国留学。",
+      "options": [
+       "要是",
+       "一方面",
+       "随着"
+      ],
+      "answer": 0,
+      "explanation": "要是 + phủ định 不……，就不能……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nếu mai mưa thì chúng ta không đi nữa.”",
+      "words": [
+       "要是",
+       "明天",
+       "下雨",
+       "，",
+       "我们",
+       "就",
+       "不去了"
+      ],
+      "answer": "要是明天下雨，我们就不去了。",
+      "explanation": "要是 + giả thiết，chủ ngữ + 就 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nếu bạn mệt rồi thì nghỉ một chút đi.”",
+      "words": [
+       "你",
+       "要是",
+       "累了",
+       "，",
+       "就",
+       "休息",
+       "一下吧"
+      ],
+      "answer": "你要是累了，就休息一下吧。",
+      "explanation": "要是 đứng sau chủ ngữ 你."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nếu có vấn đề thì đến tìm tôi.”",
+      "words": [
+       "要是",
+       "有",
+       "问题",
+       "，",
+       "就",
+       "来",
+       "找我"
+      ],
+      "answer": "要是有问题，就来找我。",
+      "explanation": "要是……，就……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "要是你不舒服，就去看医生吧。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 要是……，就……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "要是明天有时间，我们去就看电影。",
+      "isCorrect": false,
+      "correctVersion": "要是明天有时间，我们就去看电影。",
+      "explanation": "就 đứng trước động từ 去."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "要是我有钱，我就买一辆新车。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: chủ ngữ 我 + 就 + V."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Nếu xin được học bổng thì tôi sẽ học thạc sĩ ở Trung Quốc.",
+      "answer": "要是申请到奖学金，我就在中国读硕士。",
+      "answerPy": "Yàoshi shēnqǐng dào jiǎngxuéjīn, wǒ jiù zài Zhōngguó dú shuòshì.",
+      "explanation": "要是……，就…… + từ mới 申请, 奖学金, 硕士."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Nếu bạn không hiểu thì hỏi cô giáo đi.",
+      "answer": "要是你不懂，就问老师吧。",
+      "answerPy": "Yàoshi nǐ bù dǒng, jiù wèn lǎoshī ba.",
+      "explanation": "要是……，就……吧."
+     }
+    ]
+   },
+   {
+    "title": "介词“随着” — cùng với, theo (sự thay đổi)",
+    "errors": [
+     {
+      "wrong": "随着他来了，我们就开始上课。",
+      "why": "Sau 随着 phải là sự thay đổi, không phải một hành động đơn lẻ; nói thời điểm thì dùng ……以后 / 等……",
+      "right": "他来了以后，我们就开始上课。"
+     },
+     {
+      "wrong": "随着中国发展，……",
+      "why": "Thường nói 随着 + N + 的 + 发展 / 提高.",
+      "right": "随着中国的发展，……"
+     },
+     {
+      "wrong": "人们越来越关注健康，随着生活水平的提高。",
+      "why": "随着 đặt ở đầu câu, nêu điều kiện trước.",
+      "right": "随着生活水平的提高，人们越来越关注健康。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Cùng với sự phát triển của Trung Quốc …”",
+      "pre": "",
+      "blank": "随着",
+      "post": "中国的发展，越来越多的外国学生来中国学习。",
+      "options": [
+       "随着",
+       "通过",
+       "除了"
+      ],
+      "answer": 0,
+      "explanation": "随着 + N 的发展."
+     },
+     {
+      "context": "“Cùng với trình độ tiếng Trung nâng cao …”",
+      "pre": "随着中文水平的",
+      "blank": "提高",
+      "post": "，我现在能看懂中文报纸了。",
+      "options": [
+       "提高",
+       "知识",
+       "方面"
+      ],
+      "answer": 0,
+      "explanation": "随着……的提高."
+     },
+     {
+      "context": "“Theo trời ngày càng nóng …”",
+      "pre": "随着天气",
+      "blank": "越来越",
+      "post": "热，人们都换上了凉快的衣服。",
+      "options": [
+       "越来越",
+       "一方面",
+       "任何"
+      ],
+      "answer": 0,
+      "explanation": "随着 + 越来越 + tính từ."
+     },
+     {
+      "context": "“Thông qua những giao lưu này …” (phân biệt với 随着)",
+      "pre": "",
+      "blank": "通过",
+      "post": "这些交流，外国学生能更快地适应中国的大学生活。",
+      "options": [
+       "通过",
+       "随着",
+       "要是"
+      ],
+      "answer": 0,
+      "explanation": "通过 = nhờ/qua cách gì; 随着 = theo sự thay đổi."
+     },
+     {
+      "context": "“… giao lưu cũng ngày càng nhiều.”",
+      "pre": "随着来中国留学的人越来越多，中国学生和外国学生的交流",
+      "blank": "也",
+      "post": "越来越多。",
+      "options": [
+       "也",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau thường có 也 + 越来越."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cùng với kinh tế phát triển, đời sống mọi người ngày càng tốt.”",
+      "words": [
+       "随着",
+       "经济",
+       "的",
+       "发展",
+       "，",
+       "人们的生活",
+       "越来越好"
+      ],
+      "answer": "随着经济的发展，人们的生活越来越好。",
+      "explanation": "随着 + N 的 + 发展，……越来越……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cùng với tuổi tác tăng lên, cậu ấy ngày càng hiểu chuyện.”",
+      "words": [
+       "随着",
+       "年龄",
+       "的",
+       "增长",
+       "，",
+       "他",
+       "越来越",
+       "懂事了"
+      ],
+      "answer": "随着年龄的增长，他越来越懂事了。",
+      "explanation": "随着……的增长."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "随着我到了北京，就给你打电话。",
+      "isCorrect": false,
+      "correctVersion": "我到了北京以后，就给你打电话。",
+      "explanation": "“Đến Bắc Kinh” là hành động, không phải sự thay đổi dần → dùng ……以后."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "随着生活水平的提高，人们越来越关注身体健康。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 随着……的提高，……越来越……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "人们都换上了凉快的衣服，随着天气越来越热。",
+      "isCorrect": false,
+      "correctVersion": "随着天气越来越热，人们都换上了凉快的衣服。",
+      "explanation": "Cụm 随着 đặt ở đầu câu."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cùng với sự phát triển kinh tế, ngày càng nhiều người đi du lịch nước ngoài.",
+      "answer": "随着经济的发展，越来越多的人去国外旅游。",
+      "answerPy": "Suízhe jīngjì de fāzhǎn, yuèláiyuè duō de rén qù guó wài lǚyóu.",
+      "explanation": "随着……的发展，越来越多的……"
+     }
+    ]
+   },
+   {
+    "title": "并列复句“一方面……，另一方面……” — một mặt …, mặt khác …",
+    "errors": [
+     {
+      "wrong": "一方面便宜，一方面方便。",
+      "why": "Vế sau phải là 另一方面.",
+      "right": "一方面便宜，另一方面方便。"
+     },
+     {
+      "wrong": "一方面我喜欢旅游，另一方面我。",
+      "why": "Hai vế phải đều có nội dung đầy đủ, cân đối.",
+      "right": "一方面我喜欢旅游，另一方面我想了解中国文化。"
+     },
+     {
+      "wrong": "他一方面是学生，另外方面是老师。",
+      "why": "Viết 另一方面, không phải 另外方面.",
+      "right": "他一方面是学生，另一方面也是老师。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… mặt khác vì tiện.”",
+      "pre": "他经常在网上买东西，一方面因为便宜，",
+      "blank": "另一方面",
+      "post": "因为方便。",
+      "options": [
+       "另一方面",
+       "一方面",
+       "另外"
+      ],
+      "answer": 0,
+      "explanation": "一方面……，另一方面……"
+     },
+     {
+      "context": "“… mặt khác cũng giảm được áp lực.”",
+      "pre": "多做运动一方面能让身体更健康，另一方面",
+      "blank": "也",
+      "post": "能减轻压力。",
+      "options": [
+       "也",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "Vế 另一方面 thường có 也."
+     },
+     {
+      "context": "“Một mặt là để học ngôn ngữ …”",
+      "pre": "来中国留学，",
+      "blank": "一方面",
+      "post": "是为了学习语言，另一方面也是为将来做准备。",
+      "options": [
+       "一方面",
+       "随着",
+       "要是"
+      ],
+      "answer": 0,
+      "explanation": "Vế đầu dùng 一方面."
+     },
+     {
+      "context": "“… kiến thức về thương mại quốc tế.” (ôn từ 方面)",
+      "pre": "我想了解更多国际贸易",
+      "blank": "方面",
+      "post": "的知识。",
+      "options": [
+       "方面",
+       "知识",
+       "专业"
+      ],
+      "answer": 0,
+      "explanation": "N + 方面的知识."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đạp xe đi làm, một mặt tốt cho môi trường, mặt khác cũng tốt cho sức khỏe.”",
+      "words": [
+       "我",
+       "骑车上班",
+       "，",
+       "一方面",
+       "对环境好",
+       "，",
+       "另一方面",
+       "对身体也好"
+      ],
+      "answer": "我骑车上班，一方面对环境好，另一方面对身体也好。",
+      "explanation": "一方面……，另一方面……也……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Học tiếng Trung một mặt vì công việc, mặt khác để hiểu văn hóa Trung Quốc.”",
+      "words": [
+       "学中文",
+       "一方面",
+       "为了",
+       "工作",
+       "，",
+       "另一方面",
+       "为了",
+       "了解中国文化"
+      ],
+      "answer": "学中文一方面为了工作，另一方面为了了解中国文化。",
+      "explanation": "Hai vế cân đối: 为了……，为了……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他一方面是学生，另外方面是老师。",
+      "isCorrect": false,
+      "correctVersion": "他一方面是学生，另一方面也是老师。",
+      "explanation": "Phải là 另一方面."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我住在学校里，一方面因为便宜，另一方面因为方便。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: nêu hai lý do song song."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "一方面天气很好，一方面我们去公园吧。",
+      "isCorrect": false,
+      "correctVersion": "天气很好，我们去公园吧。",
+      "explanation": "Hai vế không phải hai mặt song song của một sự việc → không dùng cấu trúc này."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi chọn ngành kinh tế, một mặt vì có hứng thú, mặt khác vì sau này muốn làm thương mại quốc tế.",
+      "answer": "我选择经济专业，一方面是因为感兴趣，另一方面是因为将来想做国际贸易。",
+      "answerPy": "Wǒ xuǎnzé jīngjì zhuānyè, yìfāngmiàn shì yīnwèi gǎnxìngqù, lìngyìfāngmiàn shì yīnwèi jiānglái xiǎng zuò guójì màoyì.",
+      "explanation": "一方面……，另一方面…… + từ mới 专业, 将来, 国际贸易."
+     }
+    ]
+   }
+  ]
+ }
+}

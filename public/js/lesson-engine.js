@@ -311,9 +311,9 @@ document.addEventListener('click',function(e){
 // nhung o HSK 3 thi mat chu VAN DANG hoc — bo di la mat bai.
 // ══════════════════════════════════════════════════════════════
 // HSK 2 bo cu nam o /lessons/bai-N.html — khong co tien to cap do
-function isHsk4Page(){ return /hsk(?:[13456]|[123]v3)-bai-\d+|\/bai-\d+\.html/.test(location.pathname); }
+function isHsk4Page(){ return /hsk(?:[13456]|[1234]v3)-bai-\d+|\/bai-\d+\.html/.test(location.pathname); }
 // HSK 1 · HSK 2 · HSK 3 con dang hoc mat chu, nen giu khoi chiet tu Han tu
-function hsk3GiuHanTu(){ return /hsk(?:[13]|[123]v3)-bai-\d+|\/bai-\d+\.html/.test(location.pathname); }
+function hsk3GiuHanTu(){ return /hsk(?:[13]|[1234]v3)-bai-\d+|\/bai-\d+\.html/.test(location.pathname); }
 
 // Khoi chiet tu Han tu — dung chung cho ca hai bo cuc (the cu va o HSK 3/4)
 function hzListHtml(v,vi){
@@ -725,7 +725,7 @@ function buildDialogs(){
     const div=document.createElement('div');
     div.className='dlg-card'+(di===0?' active':'');
     div.id='dlg'+di;
-    let h='<div class="dlg-scene">🎭 '+d.scene+'</div>'+
+    let h='<div class="dlg-scene">🎭 '+d.scene+'</div>'+(d.anh?'<img class="dlg-scene-anh" src="'+d.anh+'" alt="" loading="lazy">':'')+
       (AUDIO_BASE?('<div class="audio-box real-box">'+
       '<span class="a-label"><span class="a-ico">🎙️</span> Audio gốc giáo trình</span>'+
       '<audio class="real-audio" controls preload="none" src="'+AUDIO_BASE+'/dlg-'+(di+1)+'.mp3" onerror="audioLoadError(this)"></audio>'+
@@ -735,7 +735,8 @@ function buildDialogs(){
       const isR=l.sp===1;
       const sc=spColors[l.sp]||spColors[0];
       h+='<div class="dlg-line'+(isR?' r':'')+'">'+
-        '<div class="dlg-sp '+sc[0]+'">'+(spLetters[l.sp]||'A')+'</div>'+
+        // Giao trinh HSK 3.0 moi: d.nguoi[sp] = {ten, anh} -> mat nhan vat cat tu sach thay chu A/B
+        ((d.nguoi&&d.nguoi[l.sp]&&d.nguoi[l.sp].anh)?'<div class="dlg-sp co-anh"><img src="'+d.nguoi[l.sp].anh+'" alt="">'+(d.nguoi[l.sp].ten||'')+'</div>':'<div class="dlg-sp '+sc[0]+'">'+(spLetters[l.sp]||'A')+'</div>')+
         '<div class="dlg-bub '+sc[1]+'">'+
         '<div class="dlg-zh">'+l.zh+'</div>'+
         '<div class="dlg-py">'+l.py+'</div>'+

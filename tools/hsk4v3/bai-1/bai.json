@@ -1,0 +1,331 @@
+{
+"so": 1,
+"zh": "我们来中国学习了",
+"py": "Wǒmen lái Zhōngguó xuéxí le",
+"vn": "Chúng em đến Trung Quốc du học rồi",
+"chuDe": "Thủ tục nhập học, học bổng, chọn chuyên ngành và định hướng nghề nghiệp",
+"icon": "🎓",
+"mucTieu": [
+  "Nghe hiểu và trao đổi thông tin về thủ tục nhập học, xin học bổng.",
+  "Nói / viết được lý do chọn chuyên ngành và định hướng nghề nghiệp tương lai.",
+  "Hiểu cuộc sống, học tập của sinh viên nước ngoài ở đại học Trung Quốc."
+],
+
+"wu": [
+  {"img":"wu-A","label":"证件","py":"zhèngjiàn","letter":"A"},
+  {"img":"wu-B","label":"博士","py":"bóshì","letter":"B"},
+  {"img":"wu-C","label":"食堂","py":"shítáng","letter":"C"},
+  {"img":"wu-D","label":"材料","py":"cáiliào","letter":"D"},
+  {"img":"wu-E","label":"教师","py":"jiàoshī","letter":"E"},
+  {"img":"wu-F","label":"加油","py":"jiāyóu","letter":"F"}
+],
+
+"dialogs": [
+  {"tab":"Làm thủ tục nhập học","scene":"在学院办公室 · Ở văn phòng học viện (Bạch Gia Nguyệt và Trần Thiên Trung làm thủ tục nhập học)","anh":"kv-1",
+   "nguoi":[{"ten":"老师","anh":"gv"},"白家月",{"ten":"白家月、陈天中","anh":"nv:chen"}],
+   "preQuiz":[
+     {"q":"老师给白家月什么了？","opts":["护照","签证","学生证","入学通知书"],"ans":2},
+     {"q":"他们什么时候开始上课？","opts":["今天","明天","下周一","两周后"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"你们好，欢迎来到中国留学！请把护照、签证和入学通知书给我。","vn":"Chào các em, chào mừng các em đến Trung Quốc du học! Các em đưa cô hộ chiếu, visa và giấy báo nhập học nhé."},
+     {"sp":1,"zh":"好的。这是我们的证件和材料。","vn":"Vâng ạ. Đây là giấy tờ và hồ sơ của chúng em."},
+     {"sp":0,"zh":"办好了，这是你们的学生证，下周一开始上课。先试听两周，然后在网上选课。","vn":"(Vài phút sau.) Xong rồi, đây là thẻ sinh viên của các em, thứ Hai tuần sau bắt đầu lên lớp. Các em học thử hai tuần trước, sau đó đăng ký môn học trên mạng."},
+     {"sp":2,"zh":"谢谢老师。","vn":"Chúng em cảm ơn cô ạ."},
+     {"sp":0,"zh":"不客气，你们以后有任何问题都可以来找我。","vn":"Không có gì, sau này các em có bất kỳ vấn đề gì đều có thể đến tìm cô."}],
+   "hoi":[["他们要给老师什么证件和材料？","他们要给老师护照、签证和入学通知书。"],["他们在哪儿选课？","他们在网上选课。"]],
+   "kelai":"白家月和陈天中来中国……。他们把……给老师，老师给他们办了……。老师告诉他们，下周一……，先……，然后……。以后如果有……，都可以……。",
+   "kelaiMau":"白家月和陈天中来中国留学。他们把护照、签证和入学通知书给老师，老师给他们办了学生证。老师告诉他们，下周一开始上课，先试听两周，然后在网上选课。以后如果有任何问题，都可以去找老师。"},
+
+  {"tab":"Dạo quanh khuôn viên","scene":"在大学校园 · Trong khuôn viên trường (Bạch Gia Nguyệt và Trần Thiên Trung vừa dạo vừa trò chuyện)","anh":"kv-2",
+   "nguoi":["陈天中","白家月"],
+   "preQuiz":[
+     {"q":"白家月觉得学校怎么样？","opts":["不太大","很安静","非常不方便","像座小城市"],"ans":3},
+     {"q":"陈天中为什么想申请奖学金？","opts":["想提高成绩","想让家人高兴","为了减轻经济压力","为了认识表现好的同学"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"你看，咱们的校园真大！有图书馆、体育馆、超市，还有好几个食堂。","vn":"Cậu xem, khuôn viên trường mình rộng thật! Có thư viện, nhà thi đấu, siêu thị, lại còn có mấy nhà ăn nữa."},
+     {"sp":1,"zh":"是啊，我觉得学校就像一座小城市，什么都有，方便极了。","vn":"Đúng vậy, tớ thấy trường giống như một thành phố nhỏ, cái gì cũng có, tiện vô cùng."},
+     {"sp":0,"zh":"刚才老师说，咱们可以申请奖学金，你了解过吗？","vn":"Lúc nãy cô nói chúng mình có thể xin học bổng, cậu tìm hiểu chưa?"},
+     {"sp":1,"zh":"我听说过一点儿，好像成绩好、表现好的学生都有机会获得奖学金。","vn":"Tớ có nghe nói một chút, hình như sinh viên có thành tích tốt, biểu hiện tốt đều có cơ hội nhận học bổng."},
+     {"sp":0,"zh":"那太好了，要是申请到奖学金，就能减轻不少经济压力。","vn":"Thế thì tốt quá, nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế."},
+     {"sp":1,"zh":"没错，我们一起加油吧！","vn":"Đúng thế, chúng mình cùng cố lên nhé!"}],
+   "hoi":[["他们的校园里有什么？","他们的校园里有图书馆、体育馆、超市，还有好几个食堂。"],["什么样的学生有机会获得奖学金？","成绩好、表现好的学生有机会获得奖学金。"]]},
+
+  {"tab":"Du học sinh ở Trung Quốc","scene":"外国学生在中国大学的学习和生活 · Việc học và cuộc sống của sinh viên nước ngoài ở đại học Trung Quốc","anh":"kv-3","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"外国学生可以根据什么选择专业？","opts":["中文水平","自己的兴趣","学校的要求","家人的需要"],"ans":1},
+     {"q":"外国学生怎么能更快地适应中国的大学生活？","opts":["多上中文课程","多去图书馆学习","多研究中国文化","多跟中国学生交流"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"随着中国的发展，越来越多的外国学生来到中国的大学学习。","vn":"Cùng với sự phát triển của Trung Quốc, ngày càng nhiều sinh viên nước ngoài đến các trường đại học Trung Quốc học tập."},
+     {"sp":0,"zh":"他们可以先上一年的中文课程，然后根据自己的兴趣和需要选择专业。","vn":"Họ có thể học trước một năm khóa tiếng Trung, rồi dựa vào sở thích và nhu cầu của mình để chọn chuyên ngành."},
+     {"sp":0,"zh":"除了读本科课程，他们还可以申请读硕士研究生或者博士研究生。","vn":"Ngoài học chương trình đại học, họ còn có thể đăng ký học thạc sĩ hoặc tiến sĩ."},
+     {"sp":0,"zh":"在大学里，外国学生可以和中国学生一起学习、做研究、参加校园活动。","vn":"Ở đại học, sinh viên nước ngoài có thể cùng sinh viên Trung Quốc học tập, làm nghiên cứu, tham gia các hoạt động trong trường."},
+     {"sp":0,"zh":"通过这些交流，外国学生能更快地适应中国的大学生活。","vn":"Thông qua những giao lưu này, sinh viên nước ngoài có thể thích nghi nhanh hơn với cuộc sống đại học ở Trung Quốc."}],
+   "hoi":[["为什么很多外国学生来中国学习？","因为随着中国的发展，越来越多的外国学生想来中国的大学学习。"],["除了学习，外国学生还可以和中国学生一起做什么？","他们还可以一起做研究、参加校园活动。"]],
+   "kelai":"随着……，越来越多的外国学生……。他们可以先……，然后根据自己的兴趣和需要……。除了读……，他们还可以申请读……。在大学里，他们可以和中国学生一起……。通过这些交流，外国学生能……。",
+   "kelaiMau":"随着中国的发展，越来越多的外国学生来到中国的大学学习。他们可以先上一年的中文课程，然后根据自己的兴趣和需要选择专业。除了读本科课程，他们还可以申请读硕士研究生或者博士研究生。在大学里，他们可以和中国学生一起学习、做研究、参加校园活动。通过这些交流，外国学生能更快地适应中国的大学生活。"},
+
+  {"tab":"Chọn ngành và nghề nghiệp","scene":"专业选择与职业发展 · Chọn chuyên ngành và phát triển nghề nghiệp","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"很多外国学生来中国学习以前，做了什么准备？","opts":["学会了中文","找好了工作","想好了发展方向","认识了很多中国朋友"],"ans":2},
+     {"q":"安妮以后想做什么？","opts":["当医生","成为老师","自己开公司","做国际贸易"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"很多外国学生来中国学习以前，就已经想好了自己的发展方向。","vn":"Nhiều sinh viên nước ngoài trước khi đến Trung Quốc học đã nghĩ kỹ hướng phát triển của mình."},
+     {"sp":0,"zh":"有人对经济感兴趣，希望将来在国际公司工作；有人喜欢学医，打算回国后当一名医生；还有人对教育有热情，想要成为一名教师。","vn":"Có người hứng thú với kinh tế, mong sau này làm việc ở công ty quốc tế; có người thích học y, định về nước làm bác sĩ; còn có người nhiệt tình với giáo dục, muốn trở thành giáo viên."},
+     {"sp":0,"zh":"陈天中想选择跟经济有关的专业，希望通过学习，了解更多国际贸易方面的知识。","vn":"Trần Thiên Trung muốn chọn chuyên ngành liên quan đến kinh tế, mong qua việc học hiểu thêm nhiều kiến thức về thương mại quốc tế."},
+     {"sp":0,"zh":"安妮以后想做一名中文老师，所以要选择国际中文教育专业。","vn":"Sau này Annie muốn làm giáo viên tiếng Trung, vì vậy sẽ chọn chuyên ngành giáo dục tiếng Trung quốc tế."},
+     {"sp":0,"zh":"对他们来说，来到中国留学，一方面是为了学习语言和知识，另一方面也是为将来的工作和生活做准备。","vn":"Đối với họ, đến Trung Quốc du học, một mặt là để học ngôn ngữ và kiến thức, mặt khác cũng là để chuẩn bị cho công việc và cuộc sống sau này."}],
+   "hoi":[["陈天中想选择什么专业？为什么？","他想选择跟经济有关的专业，因为他希望了解更多国际贸易方面的知识。"],["陈天中和安妮来到中国留学是为了什么？","一方面是为了学习语言和知识，另一方面也是为将来的工作和生活做准备。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"指示代词“任何”","tenVn":"Đại từ chỉ thị 「任何」 — bất kỳ, bất cứ",
+  "cauTruc":["任何 + danh từ + 都 / 也 + động từ","Phủ định: 没有 / 不 + động từ + 任何 + danh từ"],
+  "giaiThich":"「任何」 có nghĩa là 「无论什么」 (bất kể cái gì / ai). Khi bổ nghĩa cho danh từ thường KHÔNG thêm 「的」, và phía sau hay có 「都」 hoặc 「也」 đi kèm. Mẹo cho người Việt: “bất kỳ … nào cũng …” → 任何……都 / 也……; “không … bất kỳ … nào” → 没有任何…… hoặc 任何……都不…….",
+  "viDu":[["你们以后有任何问题都可以来找我。","Sau này các em có bất kỳ vấn đề gì đều có thể đến tìm cô."],["明天我们8点出发，任何人也不能迟到。","Mai chúng ta xuất phát lúc 8 giờ, bất kỳ ai cũng không được đến muộn."],["学校有任何通知，我都会第一时间告诉你。","Trường có bất kỳ thông báo nào, tôi đều sẽ báo cho bạn ngay."],["这件事他没有告诉任何人。","Việc này anh ấy không nói với bất kỳ ai. (câu phủ định: 任何 đứng sau động từ)"]],
+  "loi":[["任何的问题都可以问我。","Trước danh từ, 任何 thường không thêm 的.","任何问题都可以问我。"],["任何人可以参加。","Thiếu 都 / 也 — câu “bất kỳ … cũng …” gần như luôn có 都 / 也.","任何人都可以参加。"],["他不认识任何人们。","任何 đã mang nghĩa “mọi / bất kỳ”, không thêm 们.","他不认识任何人。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["你们以后有","问题都可以来找我。"],"dap":[["任何"]],"chon":["任何","每","所有的"],"goiY":"“Sau này có bất kỳ vấn đề gì đều có thể đến tìm cô.”","giai":"任何 + danh từ + 都 + V."},
+     {"kieu":"dien","phan":["明天8点出发，任何人","不能迟到。"],"dap":[["也"]],"chon":["也","就","才"],"goiY":"“Bất kỳ ai cũng không được đến muộn.”","giai":"任何……也 + phủ định."},
+     {"kieu":"dien","phan":["学校有任何通知，我","会第一时间告诉你。"],"dap":[["都"]],"chon":["都","还","再"],"goiY":"“Có bất kỳ thông báo nào, tôi đều báo cho bạn ngay.”","giai":"任何……都…… — 都 đứng trước động từ của vế sau."},
+     {"kieu":"dien","phan":["这件事他没有告诉","人。"],"dap":[["任何"]],"chon":["任何","什么的","哪"],"goiY":"“Việc này anh ấy không nói với bất kỳ ai.”","giai":"没有 + V + 任何 + N."},
+     {"kieu":"dien","phan":["","时候你都可以给我打电话。"],"dap":[["任何"]],"chon":["任何","那","一"],"goiY":"“Bất cứ lúc nào em cũng có thể gọi cho cô.”","giai":"任何时候 = bất cứ lúc nào."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["你","有","任何","问题","都","可以","问我"],"dap":["你有任何问题都可以问我。"],"goiY":"Em có bất kỳ vấn đề gì đều có thể hỏi tôi.","giai":"任何 + N + 都 + 可以 + V."},
+     {"kieu":"xep","manh":["任何人","也","不能","迟到"],"dap":["任何人也不能迟到。"],"goiY":"Bất kỳ ai cũng không được đến muộn.","giai":"任何人 + 也 + 不能."},
+     {"kieu":"xep","manh":["他","没有","告诉","任何人","这件事"],"dap":["这件事他没有告诉任何人。","他没有告诉任何人这件事。"],"goiY":"Việc này anh ấy không nói với ai cả.","giai":"Phủ định: 没有 + V + 任何 + N."},
+     {"kieu":"dungsai","cau":"任何的学生都可以参加。","dung":false,"sua":"任何学生都可以参加。","giai":"任何 + N, không thêm 的."},
+     {"kieu":"dungsai","cau":"我们有任何问题都可以找王老师。","dung":true,"giai":"Đúng: 任何问题 + 都 + 可以."},
+     {"kieu":"dungsai","cau":"他不认识任何人们。","dung":false,"sua":"他不认识任何人。","giai":"任何 không đi với 们."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 3)","huongDan":"Viết câu trả lời của B, có dùng 任何","cau":[
+     {"kieu":"vandung","de":"A：听说王老师特别热情？ B：＿＿＿。","goiY":"Đồng ý, nói có bất kỳ vấn đề gì cũng có thể tìm cô ấy (任何……都……)","mau":"对，我们有任何问题都可以找她。","can":[["任何"],["都","也"]]},
+     {"kieu":"vandung","de":"A：外国学生能参加学校运动会吗？ B：＿＿＿。","goiY":"Trả lời: được, bất kỳ sinh viên nào cũng có thể tham gia","mau":"能，任何学生都可以参加。","can":[["任何"],["都","也"]]},
+     {"kieu":"vandung","de":"A：明天的会议，不会有变化了吧？ B：＿＿＿。","goiY":"Khẳng định: sẽ không có bất kỳ thay đổi nào nữa","mau":"对，不会有任何变化了。","can":[["任何"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Bất cứ lúc nào em cũng có thể gọi điện cho cô.","dap":["任何时候你都可以给我打电话。","你任何时候都可以给我打电话。"],"giai":"任何时候 + 都 + 可以."},
+     {"kieu":"dich","vn":"Trong thư viện, bất kỳ ai cũng không được nói to.","dap":["在图书馆里，任何人都不能大声说话。","在图书馆里，任何人也不能大声说话。"],"giai":"任何人 + 都 / 也 + 不能."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt một câu giới thiệu trường / lớp của em, có dùng 「任何……都……」","mau":"我们学校的图书馆，任何学生都可以进去看书。","can":[["任何"],["都","也"]]}]}
+  ]},
+
+ {"so":"2","ten":"假设复句“要是……，就……”","tenVn":"Câu phức giả thiết 「要是……，就……」 — nếu … thì …",
+  "cauTruc":["要是 + giả thiết，(chủ ngữ) + 就 + kết quả","Chủ ngữ + 要是 + giả thiết，就 + kết quả"],
+  "giaiThich":"Vế trước nêu GIẢ THIẾT, vế sau nói KẾT QUẢ nếu giả thiết đó thành sự thật. 「要是」 mang tính khẩu ngữ, nghĩa như 「如果」 (đã học ở HSK 3). 「就」 đứng sau chủ ngữ của vế sau, trước động từ. 「要是」 có thể đứng trước hoặc sau chủ ngữ vế đầu: 要是你明天有时间 = 你要是明天有时间.",
+  "viDu":[["要是申请到奖学金，就能减轻不少经济压力。","Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế."],["你要是明天有时间，就跟我一起去爬山吧。","Nếu mai cậu có thời gian thì đi leo núi với tớ nhé."],["要是她不愿意参加比赛，我们就再问问别人。","Nếu cô ấy không muốn tham gia cuộc thi thì chúng ta hỏi người khác xem."],["要是没有你的帮助，我自己一定做不好这件事。","Nếu không có sự giúp đỡ của bạn, một mình tôi nhất định không làm tốt việc này. (ôn bổ ngữ khả năng 做不好)"]],
+  "loi":[["要是明天下雨，我们不去公园了。","Vế sau nên có 就 để nối kết quả.","要是明天下雨，我们就不去公园了。"],["要是你明天有时间，你跟我就去吧。","就 đứng sau chủ ngữ và ngay trước động từ của vế sau.","要是你明天有时间，就跟我去吧。"],["就要是你来，我们很高兴。","要是 ở vế trước, 就 ở vế sau, không đảo.","要是你来，我们就很高兴。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["","申请到奖学金，就能减轻不少经济压力。"],"dap":[["要是"]],"chon":["要是","虽然","因为"],"goiY":"“Nếu xin được học bổng thì …”","giai":"要是 nêu giả thiết."},
+     {"kieu":"dien","phan":["你要是明天有时间，","跟我一起去爬山吧。"],"dap":[["就"]],"chon":["就","才","也"],"goiY":"“… thì đi leo núi với tớ nhé.”","giai":"要是……，就……"},
+     {"kieu":"dien","phan":["要是她不愿意参加比赛，我们","再问问别人。"],"dap":[["就"]],"chon":["就","还","都"],"goiY":"“… thì chúng ta hỏi người khác.”","giai":"就 đứng sau chủ ngữ 我们."},
+     {"kieu":"dien","phan":["要是你饿了，我们就先去","吧。"],"dap":[["食堂"]],"chon":["食堂","签证","证件"],"goiY":"“Nếu bạn đói thì mình đi nhà ăn trước.” (ôn từ mới)","giai":"食堂 = nhà ăn."},
+     {"kieu":"dien","phan":["","不办签证，就不能来中国留学。"],"dap":[["要是"]],"chon":["要是","一方面","随着"],"goiY":"“Nếu không làm visa thì không thể sang Trung Quốc du học.”","giai":"要是 + phủ định 不……，就不能……"}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["要是","明天","下雨","，","我们","就","不去了"],"dap":["要是明天下雨，我们就不去了。"],"goiY":"Nếu mai mưa thì chúng ta không đi nữa.","giai":"要是 + giả thiết，chủ ngữ + 就 + V."},
+     {"kieu":"xep","manh":["你","要是","累了","，","就","休息","一下吧"],"dap":["你要是累了，就休息一下吧。"],"goiY":"Nếu bạn mệt rồi thì nghỉ một chút đi.","giai":"要是 đứng sau chủ ngữ 你."},
+     {"kieu":"xep","manh":["要是","有","问题","，","就","来","找我"],"dap":["要是有问题，就来找我。"],"goiY":"Nếu có vấn đề thì đến tìm tôi.","giai":"要是……，就……"},
+     {"kieu":"dungsai","cau":"要是你不舒服，就去看医生吧。","dung":true,"giai":"Đúng: 要是……，就……"},
+     {"kieu":"dungsai","cau":"要是明天有时间，我们去就看电影。","dung":false,"sua":"要是明天有时间，我们就去看电影。","giai":"就 đứng trước động từ 去."},
+     {"kieu":"dungsai","cau":"要是我有钱，我就买一辆新车。","dung":true,"giai":"Đúng: chủ ngữ 我 + 就 + V."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 5)","huongDan":"Hoàn thành câu, có dùng 要是……，就……","cau":[
+     {"kieu":"vandung","de":"A：你不开心的时候会做什么？ B：我要是不开心，＿＿＿。","goiY":"Nói việc em sẽ làm khi buồn (就……)","mau":"就会去找朋友玩","can":[["就"]]},
+     {"kieu":"vandung","de":"＿＿＿，咱们就去看电影。","goiY":"A rủ B: nêu điều kiện (要是……), B trả lời 「好啊，没问题。」","mau":"要是你明天有时间","can":[["要是"]]},
+     {"kieu":"vandung","de":"A：谢谢你帮助了我。＿＿＿。 B：不客气。","goiY":"Nói: nếu không có sự giúp đỡ của bạn thì một mình tôi không làm được (要是……，……)","mau":"要是没有你的帮助，我自己一定做不好这件事","can":[["要是"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Nếu xin được học bổng thì tôi sẽ học thạc sĩ ở Trung Quốc.","dap":["要是申请到奖学金，我就在中国读硕士。","要是我申请到奖学金，就在中国读硕士。"],"giai":"要是……，就…… + từ mới 申请, 奖学金, 硕士."},
+     {"kieu":"dich","vn":"Nếu bạn không hiểu thì hỏi cô giáo đi.","dap":["要是你不懂，就问老师吧。","你要是不懂，就问老师吧。"],"giai":"要是……，就……吧."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt một câu nói về kế hoạch của em khi đi du học, có dùng 「要是……，就……」","mau":"要是我能去中国留学，就去北京学习中文。","can":[["要是"],["就"]]}]}
+  ]},
+
+ {"so":"3","ten":"介词“随着”","tenVn":"Giới từ 「随着」 — cùng với, theo (sự thay đổi)",
+  "cauTruc":["随着 + danh từ + 的 + 发展 / 提高 / 变化，chủ ngữ + vị ngữ","随着 + câu ngắn chỉ sự thay đổi (越来越……)，……"],
+  "giaiThich":"Sau 「随着」 thường là từ / câu ngắn biểu thị SỰ THAY ĐỔI (发展, 提高, 越来越多…). Cả cụm nêu điều kiện: vì cái này thay đổi nên việc ở vế sau mới xảy ra / thay đổi theo. Vế sau thường có 越来越, 也, 变…. Lưu ý: 随着 đứng ĐẦU câu, sau nó không phải là một hành động đơn lẻ (✗ 随着他来了).",
+  "viDu":[["随着中国的发展，越来越多的外国学生来到中国的大学学习。","Cùng với sự phát triển của Trung Quốc, ngày càng nhiều sinh viên nước ngoài đến đại học Trung Quốc học tập."],["随着中文水平的提高，我现在能看懂中文报纸了。","Cùng với trình độ tiếng Trung được nâng cao, giờ tôi đã đọc hiểu được báo tiếng Trung."],["随着小区的环境越来越好，来这里买房子的人也变多了。","Theo môi trường khu dân cư ngày càng tốt, người đến đây mua nhà cũng nhiều lên."],["随着天气越来越冷，人们都穿上了厚衣服。","Theo trời ngày càng lạnh, mọi người đều mặc áo dày. (ôn 越来越 – HSK 3)"]],
+  "loi":[["随着他来了，我们就开始上课。","Sau 随着 phải là sự thay đổi, không phải một hành động đơn lẻ; nói thời điểm thì dùng ……以后 / 等……","他来了以后，我们就开始上课。"],["随着中国发展，……","Thường nói 随着 + N + 的 + 发展 / 提高.","随着中国的发展，……"],["人们越来越关注健康，随着生活水平的提高。","随着 đặt ở đầu câu, nêu điều kiện trước.","随着生活水平的提高，人们越来越关注健康。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["","中国的发展，越来越多的外国学生来中国学习。"],"dap":[["随着"]],"chon":["随着","通过","除了"],"goiY":"“Cùng với sự phát triển của Trung Quốc …”","giai":"随着 + N 的发展."},
+     {"kieu":"dien","phan":["随着中文水平的","，我现在能看懂中文报纸了。"],"dap":[["提高"]],"chon":["提高","知识","方面"],"goiY":"“Cùng với trình độ tiếng Trung nâng cao …”","giai":"随着……的提高."},
+     {"kieu":"dien","phan":["随着天气","热，人们都换上了凉快的衣服。"],"dap":[["越来越"]],"chon":["越来越","一方面","任何"],"goiY":"“Theo trời ngày càng nóng …”","giai":"随着 + 越来越 + tính từ."},
+     {"kieu":"dien","phan":["","这些交流，外国学生能更快地适应中国的大学生活。"],"dap":[["通过"]],"chon":["通过","随着","要是"],"goiY":"“Thông qua những giao lưu này …” (phân biệt với 随着)","giai":"通过 = nhờ/qua cách gì; 随着 = theo sự thay đổi."},
+     {"kieu":"dien","phan":["随着来中国留学的人越来越多，中国学生和外国学生的交流","越来越多。"],"dap":[["也"]],"chon":["也","就","才"],"goiY":"“… giao lưu cũng ngày càng nhiều.”","giai":"Vế sau thường có 也 + 越来越."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["随着","经济","的","发展","，","人们的生活","越来越好"],"dap":["随着经济的发展，人们的生活越来越好。"],"goiY":"Cùng với kinh tế phát triển, đời sống mọi người ngày càng tốt.","giai":"随着 + N 的 + 发展，……越来越……"},
+     {"kieu":"xep","manh":["随着","年龄","的","增长","，","他","越来越","懂事了"],"dap":["随着年龄的增长，他越来越懂事了。"],"goiY":"Cùng với tuổi tác tăng lên, cậu ấy ngày càng hiểu chuyện.","giai":"随着……的增长."},
+     {"kieu":"dungsai","cau":"随着我到了北京，就给你打电话。","dung":false,"sua":"我到了北京以后，就给你打电话。","giai":"“Đến Bắc Kinh” là hành động, không phải sự thay đổi dần → dùng ……以后."},
+     {"kieu":"dungsai","cau":"随着生活水平的提高，人们越来越关注身体健康。","dung":true,"giai":"Đúng: 随着……的提高，……越来越……"},
+     {"kieu":"dungsai","cau":"人们都换上了凉快的衣服，随着天气越来越热。","dung":false,"sua":"随着天气越来越热，人们都换上了凉快的衣服。","giai":"Cụm 随着 đặt ở đầu câu."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 7)","huongDan":"Hoàn thành câu, dùng từ trong ngoặc","cau":[
+     {"kieu":"vandung","de":"随着＿＿＿，人们越来越关注身体健康。","goiY":"Dùng từ 「提高」: mức sống nâng cao","mau":"生活水平的提高","can":[["提高"]]},
+     {"kieu":"vandung","de":"随着来中国留学的人越来越多，＿＿＿。","goiY":"Dùng từ 「交流」: giao lưu giữa sinh viên Trung Quốc và nước ngoài cũng nhiều hơn","mau":"中国学生和外国学生的交流也越来越多","can":[["交流"]]},
+     {"kieu":"vandung","de":"随着＿＿＿，人们都换上了凉快的衣服。","goiY":"Dùng từ 「天气」: trời ngày càng nóng","mau":"天气越来越热","can":[["天气"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Cùng với sự phát triển kinh tế, ngày càng nhiều người đi du lịch nước ngoài.","dap":["随着经济的发展，越来越多的人去国外旅游。"],"giai":"随着……的发展，越来越多的……"},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt câu nói về sự thay đổi của em hoặc quê em, có dùng 「随着」","mau":"随着中文水平的提高，我交了越来越多的中国朋友。","can":[["随着"]]}]}
+  ]},
+
+ {"so":"4","ten":"并列复句“一方面……，另一方面……”","tenVn":"Câu phức song song 「一方面……，另一方面……」 — một mặt …, mặt khác …",
+  "cauTruc":["一方面 + nguyên nhân / tình hình 1，另一方面 + (也) + nguyên nhân / tình hình 2"],
+  "giaiThich":"Dùng để nói HAI MẶT (hai lý do, hai tình hình) cùng tồn tại của một sự việc. Vế sau thường thêm 「也」. Hay đi sau 因为 / 是为了 để nêu hai lý do: 一方面因为……，另一方面因为……. Hai vế nên có cấu trúc giống nhau cho cân đối.",
+  "viDu":[["来到中国留学，一方面是为了学习语言和知识，另一方面也是为将来的工作和生活做准备。","Đến Trung Quốc du học, một mặt là để học ngôn ngữ và kiến thức, mặt khác cũng là chuẩn bị cho công việc và cuộc sống sau này."],["他经常在网上买东西，一方面因为便宜，另一方面因为方便。","Anh ấy hay mua đồ trên mạng, một mặt vì rẻ, mặt khác vì tiện."],["多做运动一方面能让身体更健康，另一方面也能减轻压力。","Tập thể dục nhiều một mặt giúp cơ thể khỏe hơn, mặt khác cũng giảm được áp lực."],["我选这个专业，一方面是对它感兴趣，另一方面是将来好找工作。","Tôi chọn ngành này, một mặt vì có hứng thú, mặt khác vì sau này dễ tìm việc. (ôn 对……感兴趣)"]],
+  "loi":[["一方面便宜，一方面方便。","Vế sau phải là 另一方面.","一方面便宜，另一方面方便。"],["一方面我喜欢旅游，另一方面我。","Hai vế phải đều có nội dung đầy đủ, cân đối.","一方面我喜欢旅游，另一方面我想了解中国文化。"],["他一方面是学生，另外方面是老师。","Viết 另一方面, không phải 另外方面.","他一方面是学生，另一方面也是老师。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["他经常在网上买东西，一方面因为便宜，","因为方便。"],"dap":[["另一方面"]],"chon":["另一方面","一方面","另外"],"goiY":"“… mặt khác vì tiện.”","giai":"一方面……，另一方面……"},
+     {"kieu":"dien","phan":["多做运动一方面能让身体更健康，另一方面","能减轻压力。"],"dap":[["也"]],"chon":["也","就","才"],"goiY":"“… mặt khác cũng giảm được áp lực.”","giai":"Vế 另一方面 thường có 也."},
+     {"kieu":"dien","phan":["来中国留学，","是为了学习语言，另一方面也是为将来做准备。"],"dap":[["一方面"]],"chon":["一方面","随着","要是"],"goiY":"“Một mặt là để học ngôn ngữ …”","giai":"Vế đầu dùng 一方面."},
+     {"kieu":"dien","phan":["我想了解更多国际贸易","的知识。"],"dap":[["方面"]],"chon":["方面","知识","专业"],"goiY":"“… kiến thức về thương mại quốc tế.” (ôn từ 方面)","giai":"N + 方面的知识."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["我","骑车上班","，","一方面","对环境好","，","另一方面","对身体也好"],"dap":["我骑车上班，一方面对环境好，另一方面对身体也好。"],"goiY":"Tôi đạp xe đi làm, một mặt tốt cho môi trường, mặt khác cũng tốt cho sức khỏe.","giai":"一方面……，另一方面……也……"},
+     {"kieu":"xep","manh":["学中文","一方面","为了","工作","，","另一方面","为了","了解中国文化"],"dap":["学中文一方面为了工作，另一方面为了了解中国文化。"],"goiY":"Học tiếng Trung một mặt vì công việc, mặt khác để hiểu văn hóa Trung Quốc.","giai":"Hai vế cân đối: 为了……，为了……"},
+     {"kieu":"dungsai","cau":"他一方面是学生，另外方面是老师。","dung":false,"sua":"他一方面是学生，另一方面也是老师。","giai":"Phải là 另一方面."},
+     {"kieu":"dungsai","cau":"我住在学校里，一方面因为便宜，另一方面因为方便。","dung":true,"giai":"Đúng: nêu hai lý do song song."},
+     {"kieu":"dungsai","cau":"一方面天气很好，一方面我们去公园吧。","dung":false,"sua":"天气很好，我们去公园吧。","giai":"Hai vế không phải hai mặt song song của một sự việc → không dùng cấu trúc này."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 9)","huongDan":"Hoàn thành câu, dùng 一方面……，另一方面……","cau":[
+     {"kieu":"vandung","de":"我很喜欢旅游，因为＿＿＿。","goiY":"Nêu hai lý do: được đi chơi + hiểu văn hóa","mau":"一方面可以出去玩，另一方面可以了解文化","can":[["一方面"],["另一方面"]]},
+     {"kieu":"vandung","de":"要想学好中文，＿＿＿。","goiY":"Nêu hai việc cần làm: đọc nhiều sách tiếng Trung + giao lưu nhiều với người Trung Quốc","mau":"一方面要多读中文书，另一方面要多和中国人交流","can":[["一方面"],["另一方面"]]},
+     {"kieu":"vandung","de":"我每天骑自行车上下班，＿＿＿。","goiY":"Nêu hai lợi ích: tốt cho môi trường + tốt cho sức khỏe","mau":"一方面对环境好，另一方面对身体也好","can":[["一方面"],["另一方面"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Tôi chọn ngành kinh tế, một mặt vì có hứng thú, mặt khác vì sau này muốn làm thương mại quốc tế.","dap":["我选择经济专业，一方面是因为感兴趣，另一方面是因为将来想做国际贸易。","我选经济专业，一方面因为感兴趣，另一方面因为将来想做国际贸易。"],"giai":"一方面……，另一方面…… + từ mới 专业, 将来, 国际贸易."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt câu nói vì sao em học tiếng Trung, có dùng 「一方面……，另一方面……」","mau":"我学中文，一方面是因为喜欢中国文化，另一方面是为了将来找一个好工作。","can":[["一方面"],["另一方面"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 9).","dapSgk":true,"tu":["入学","签证","获得","专业","食堂"],"cau":[
+   {"s":"她＿＿了三年的奖学金，高兴极了。","dap":["获得"]},
+   {"s":"我是2024年＿＿的，学的是国际经济专业。","dap":["入学"]},
+   {"s":"我打算考研究生，提高自己的＿＿水平。","dap":["专业"]},
+   {"s":"咱们晚上别去＿＿吃饭了，我请你出去吃饭吧。","dap":["食堂"]},
+   {"s":"王经理今天下午去办＿＿了，您明天再来找他吧。","dap":["签证"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại).","dapSgk":true,"tu":["加油","研究","活动","任何","将来"],"cau":[
+   {"s":"A：你＿＿想做什么工作？　B：我想在国际公司工作，有更多的发展机会。","dap":["将来"]},
+   {"s":"A：你为什么选择这门课程？　B：因为我想认真＿＿中国的历史和文化。","dap":["研究"]},
+   {"s":"A：今天下午公司有＿＿，我晚点儿回家。　B：好。大概几点结束？需要我去接你吗？","dap":["活动"]},
+   {"s":"A：你们要去哪儿？　B：我们要去给参加比赛的同学＿＿，你去吗？","dap":["加油"]},
+   {"s":"A：你们这次旅游怎么样？　B：虽然天气不太好，但是和朋友在一起，做＿＿事情都很有意思。","dap":["任何"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn.","dapSgk":true,"tu":["也会觉得有一些压力","她除了复习大学学过的课程","她决定参加硕士研究生考试","希望拿到研究生的入学通知书"],"cau":[
+   {"s":"李雪还有一年就本科毕业（bìyè, tốt nghiệp）了，＿＿。为了准备考试，＿＿，还读了一些新的专业书，希望更多地了解这方面的知识。有时候她学习的时间很长，＿＿，但是她还是坚持每天学习。随着考试的时间越来越近，李雪也更努力地复习，＿＿，在新的学校里继续学习更多知识。","dap":["她决定参加硕士研究生考试","她除了复习大学学过的课程","也会觉得有一些压力","希望拿到研究生的入学通知书"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (đáp án của sách chỉ là gợi ý — câu của em đúng ngữ pháp, hợp tranh là đạt).","cau":[
+   {"anh":"bt-1","s":"","tu":"申请","dap":"她正在写入学申请。","giai":"申请 ở đây là danh từ (đơn xin); 正在 + V diễn tả hành động đang diễn ra."},
+   {"anh":"bt-2","s":"","tu":"通知","dap":"他正在看学校的通知。","giai":"学校的通知 — 通知 làm danh từ."},
+   {"anh":"bt-3","s":"","tu":"压力","dap":"他最近工作压力很大。","giai":"压力 + 很大; ✗ 压力很多."}]}
+],
+
+"listen": [
+ {"audio":"同学，请问在哪儿办学生证？在二楼的办公室。要带什么材料？带上你的护照和入学通知书就可以了。谢谢！办好以后，下周一就能用学生证去图书馆借书了。","questions":[
+   {"q":"办学生证要带什么？","opts":["护照和入学通知书","签证和照片","成绩单"],"ans":0},
+   {"q":"有了学生证，可以做什么？","opts":["去食堂吃饭","去图书馆借书","申请奖学金"],"ans":1}]},
+ {"audio":"小王，你申请奖学金了吗？申请了，可是我不知道能不能获得。你成绩那么好，平时表现也不错，一定没问题。要是能申请到就好了，这样能减轻爸爸妈妈的经济压力。别担心，我们一起加油！","questions":[
+   {"q":"小王为什么想获得奖学金？","opts":["想买新电脑","想减轻家里的经济压力","想去旅游"],"ans":1},
+   {"q":"朋友觉得小王怎么样？","opts":["成绩好，表现也不错","不太努力","压力很大"],"ans":0}]},
+ {"audio":"安妮，你本科毕业以后打算做什么？我想申请读硕士，研究国际中文教育。为什么选这个专业？一方面我对教育有热情，另一方面我将来想当一名中文老师。","questions":[
+   {"q":"安妮本科毕业以后想做什么？","opts":["去公司工作","读硕士","回国当医生"],"ans":1},
+   {"q":"安妮为什么选这个专业？","opts":["因为好找工作","因为对教育有热情，将来想当老师","因为家人的要求"],"ans":1}]}
+],
+
+"match": [
+ {"left":"申请","right":"奖学金"},
+ {"left":"减轻","right":"经济压力"},
+ {"left":"适应","right":"大学生活"},
+ {"left":"参加","right":"校园活动"},
+ {"left":"国际","right":"贸易"},
+ {"left":"办理","right":"入学手续"},
+ {"left":"成为","right":"一名教师"},
+ {"left":"一方面……","right":"另一方面……"}
+],
+
+"fill": [
+ {"pre":"你们以后有","blank":"任何","post":"问题都可以来找我。","hint":"(bất kỳ)","ans":"任何","exp":"任何 + N + 都 + V."},
+ {"pre":"要是申请到奖学金，就能","blank":"减轻","post":"不少经济压力。","hint":"(giảm bớt)","ans":"减轻","exp":"减轻 + 压力."},
+ {"pre":"","blank":"随着","post":"中国的发展，越来越多的外国学生来中国学习。","hint":"(cùng với)","ans":"随着","exp":"随着 + N 的发展."},
+ {"pre":"通过这些交流，外国学生能更快地","blank":"适应","post":"中国的大学生活。","hint":"(thích nghi)","ans":"适应","exp":"适应 + 生活 / 环境."},
+ {"pre":"安妮以后想","blank":"当","post":"一名中文老师。","hint":"(làm nghề)","ans":"当","exp":"当 + nghề nghiệp."},
+ {"pre":"我想了解更多国际贸易","blank":"方面","post":"的知识。","hint":"(về mặt)","ans":"方面","exp":"N + 方面的知识."},
+ {"pre":"好像成绩好、","blank":"表现","post":"好的学生都有机会获得奖学金。","hint":"(biểu hiện)","ans":"表现","exp":"表现好 = biểu hiện tốt."},
+ {"pre":"我觉得学校就像一","blank":"座","post":"小城市，什么都有。","hint":"(lượng từ cho thành phố)","ans":"座","exp":"一座城市 / 一座山."},
+ {"pre":"她","blank":"获得","post":"了三年的奖学金，高兴极了。","hint":"(giành được)","ans":"获得","exp":"获得 + 奖学金."},
+ {"pre":"还有人对教育有热情，想要","blank":"成为","post":"一名教师。","hint":"(trở thành)","ans":"成为","exp":"成为 + danh từ."}
+],
+
+"sort": [
+ {"words":["你们","以后","有","任何","问题","都","可以","来找我","。"],"ans":"你们以后有任何问题都可以来找我。"},
+ {"words":["要是","申请到","奖学金","，","就","能","减轻","经济压力","。"],"ans":"要是申请到奖学金，就能减轻经济压力。"},
+ {"words":["随着","中文水平","的","提高","，","我","能看懂","中文报纸了","。"],"ans":"随着中文水平的提高，我能看懂中文报纸了。"},
+ {"words":["他们","可以","先","上","一年的","中文课程","。"],"ans":"他们可以先上一年的中文课程。"},
+ {"words":["我","想","了解","更多","国际贸易","方面","的","知识","。"],"ans":"我想了解更多国际贸易方面的知识。"},
+ {"words":["学校","就像","一座","小城市","，","什么","都","有","。"],"ans":"学校就像一座小城市，什么都有。"}
+],
+
+"mc": [
+ {"q":"请把护照、＿＿和入学通知书给我。","opts":["签证","食堂","知识","压力"],"ans":0,"exp":"护照、签证、入学通知书 đều là giấy tờ khi nhập học."},
+ {"q":"明天我们8点出发，任何人＿＿不能迟到。","opts":["也","就","才","再"],"ans":0,"exp":"任何……也 / 都 + phủ định."},
+ {"q":"＿＿明天下雨，我们就不去爬山了。","opts":["要是","虽然","随着","通过"],"ans":0,"exp":"要是……，就…… nêu giả thiết."},
+ {"q":"＿＿生活水平的提高，人们越来越关注身体健康。","opts":["随着","要是","通过","除了"],"ans":0,"exp":"随着 + N 的提高: theo sự thay đổi."},
+ {"q":"他经常在网上买东西，一方面因为便宜，＿＿因为方便。","opts":["另一方面","一方面","另外的","还是"],"ans":0,"exp":"一方面……，另一方面……"},
+ {"q":"李文回到北京，读医学＿＿。","opts":["博士","医生","教师","本科生"],"ans":0,"exp":"读博士 = học tiến sĩ. 博士 (Hán Việt: bác sĩ) nghĩa là tiến sĩ!"},
+ {"q":"刚来北京的时候，我很不＿＿这里的天气。","opts":["适应","交流","申请","成为"],"ans":0,"exp":"不适应 + môi trường / thời tiết."},
+ {"q":"你要多跟中国学生＿＿，这样中文会进步得更快。","opts":["交流","研究","获得","减轻"],"ans":0,"exp":"跟 + ai + 交流."},
+ {"q":"有人喜欢学医，打算回国后＿＿一名医生。","opts":["当","成","做到","变"],"ans":0,"exp":"当 + (一名) + nghề."},
+ {"q":"＿＿这些交流，外国学生能更快地适应中国的大学生活。","opts":["通过","随着","要是","一方面"],"ans":0,"exp":"通过 = thông qua (cách thức); 随着 = theo sự thay đổi."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách, câu hỏi phần Khởi động và đóng vai), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions":[
+  {"q_zh":"到中国留学，需要准备什么证件和材料？","q_vn":"Đi du học Trung Quốc cần chuẩn bị những giấy tờ và hồ sơ gì?","hint":"需要准备……、……和……","sample":"需要准备护照、签证和入学通知书，还有一些申请材料。","sample_vn":"Cần chuẩn bị hộ chiếu, visa và giấy báo nhập học, còn một số hồ sơ đăng ký nữa.","note":"Câu hỏi phần Khởi động của sách."},
+  {"q_zh":"你打算学习什么专业？为什么？","q_vn":"Bạn định học chuyên ngành gì? Vì sao?","hint":"我打算学……专业，一方面……，另一方面……","sample":"我打算学国际贸易专业，一方面我对经济感兴趣，另一方面将来想在国际公司工作。","sample_vn":"Tôi định học ngành thương mại quốc tế, một mặt tôi có hứng thú với kinh tế, mặt khác sau này muốn làm ở công ty quốc tế.","note":"Câu hỏi phần Khởi động; dùng 一方面……，另一方面…… (điểm 4)."},
+  {"q_zh":"老师给了白家月和陈天中什么？他们什么时候开始上课？","q_vn":"Cô giáo đưa cho Bạch Gia Nguyệt và Trần Thiên Trung cái gì? Khi nào họ bắt đầu lên lớp?","hint":"老师给了他们……，他们……开始上课。","sample":"老师给了他们学生证，他们下周一开始上课。","sample_vn":"Cô giáo đưa cho họ thẻ sinh viên, thứ Hai tuần sau họ bắt đầu lên lớp.","note":"Câu hỏi nghe hiểu bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"白家月和陈天中来中国……。他们把……给老师……老师告诉他们，下周一……，先……，然后……。","sample":"白家月和陈天中来中国留学。他们把护照、签证和入学通知书给老师，老师给他们办了学生证。老师告诉他们，下周一开始上课，先试听两周，然后在网上选课。以后如果有任何问题，都可以去找老师。","sample_vn":"Bạch Gia Nguyệt và Trần Thiên Trung đến Trung Quốc du học. Họ đưa hộ chiếu, visa và giấy báo nhập học cho cô giáo, cô làm thẻ sinh viên cho họ. Cô nói thứ Hai tuần sau bắt đầu lên lớp, học thử hai tuần trước, rồi đăng ký môn trên mạng. Sau này có bất kỳ vấn đề gì đều có thể đến tìm cô.","note":"Bài tập 复述 của sách (trang 3)."},
+  {"q_zh":"什么样的学生有机会获得奖学金？要是你获得了奖学金，你会做什么？","q_vn":"Sinh viên như thế nào có cơ hội nhận học bổng? Nếu bạn nhận được học bổng, bạn sẽ làm gì?","hint":"……的学生有机会……。要是我获得了奖学金，我就……","sample":"成绩好、表现好的学生有机会获得奖学金。要是我获得了奖学金，我就用这些钱买书，还能减轻家里的经济压力。","sample_vn":"Sinh viên học giỏi, biểu hiện tốt có cơ hội nhận học bổng. Nếu tôi nhận được học bổng, tôi sẽ dùng tiền đó mua sách, còn giảm được áp lực kinh tế cho gia đình.","note":"Câu hỏi bài khoá 2 + vận dụng 要是……，就…… (điểm 2)."},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"随着……，越来越多的外国学生……。他们可以先……，然后……。除了读……，还可以……。通过这些交流……","sample":"随着中国的发展，越来越多的外国学生来到中国的大学学习。他们可以先上一年的中文课程，然后根据自己的兴趣和需要选择专业。除了读本科课程，他们还可以申请读硕士研究生或者博士研究生。在大学里，他们可以和中国学生一起学习、做研究、参加校园活动。通过这些交流，外国学生能更快地适应中国的大学生活。","sample_vn":"Cùng với sự phát triển của Trung Quốc, ngày càng nhiều sinh viên nước ngoài đến đại học Trung Quốc học tập… Thông qua những giao lưu này, họ thích nghi nhanh hơn với cuộc sống đại học ở Trung Quốc.","note":"Bài tập 复述 của sách (trang 7)."},
+  {"q_zh":"陈天中和安妮来到中国留学是为了什么？","q_vn":"Trần Thiên Trung và Annie đến Trung Quốc du học để làm gì?","hint":"一方面是为了……，另一方面也是为……做准备。","sample":"一方面是为了学习语言和知识，另一方面也是为将来的工作和生活做准备。","sample_vn":"Một mặt là để học ngôn ngữ và kiến thức, mặt khác cũng là chuẩn bị cho công việc và cuộc sống sau này.","note":"Câu hỏi bài khoá 4."},
+  {"q_zh":"你的好朋友明年也想来中国留学，请你给他介绍一下留学手续和在中国的学习生活，并给他一些建议。","q_vn":"Bạn thân của em năm sau cũng muốn sang Trung Quốc du học. Hãy giới thiệu cho bạn ấy thủ tục du học, việc học và cuộc sống ở Trung Quốc, kèm vài lời khuyên.","hint":"先要……，然后……。在大学里……。要是你……，就……。你一方面要……，另一方面要……","sample":"先要申请学校，拿到入学通知书以后再办签证。来了以后，要把护照、签证和入学通知书交给学院的老师，办学生证。在大学里，你可以先上中文课程，然后选择专业。要是你成绩好、表现好，就可以申请奖学金。我的建议是：一方面要多跟中国学生交流，另一方面要多参加校园活动，这样能更快地适应这里的生活。","sample_vn":"Trước hết phải nộp đơn vào trường, có giấy báo nhập học rồi mới làm visa. Sang đến nơi thì nộp hộ chiếu, visa, giấy báo nhập học cho thầy cô ở học viện để làm thẻ sinh viên… Lời khuyên của mình: một mặt phải giao lưu nhiều với sinh viên Trung Quốc, mặt khác tham gia nhiều hoạt động trong trường, như vậy sẽ thích nghi nhanh hơn.","note":"Hoạt động 角色扮演 (đóng vai — gọi video) của sách, trang 10."}
+ ]
+},
+
+"translate": [
+ ["Sau này các em có bất kỳ vấn đề gì đều có thể đến tìm cô.","你们以后有任何问题都可以来找我。"],
+ ["Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế.","要是申请到奖学金，就能减轻不少经济压力。"],
+ ["Cùng với sự phát triển của Trung Quốc, ngày càng nhiều sinh viên nước ngoài đến Trung Quốc học tập.","随着中国的发展，越来越多的外国学生来中国学习。"],
+ ["Thông qua giao lưu, sinh viên nước ngoài có thể thích nghi nhanh hơn với cuộc sống đại học.","通过交流，外国学生能更快地适应大学生活。"],
+ ["Đến Trung Quốc du học, một mặt là để học ngôn ngữ, mặt khác cũng là chuẩn bị cho công việc sau này.","来中国留学，一方面是为了学习语言，另一方面也是为将来的工作做准备。"],
+ ["Sau này Annie muốn làm giáo viên tiếng Trung.","安妮以后想当一名中文老师。"]
+],
+"translateRev": [
+ ["Thứ Hai tuần sau bắt đầu lên lớp, học thử hai tuần trước, sau đó đăng ký môn học trên mạng.","下周一开始上课，先试听两周，然后在网上选课。"],
+ ["Tớ thấy trường giống như một thành phố nhỏ, cái gì cũng có.","我觉得学校就像一座小城市，什么都有。"],
+ ["Ngoài học chương trình đại học, họ còn có thể đăng ký học thạc sĩ hoặc tiến sĩ.","除了读本科课程，他们还可以申请读硕士研究生或者博士研究生。"],
+ ["Có người thích học y, định về nước làm bác sĩ.","有人喜欢学医，打算回国后当一名医生。"],
+ ["Trần Thiên Trung muốn chọn chuyên ngành liên quan đến kinh tế.","陈天中想选择跟经济有关的专业。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":120,"tieuDe":"写作 — viết theo đề của sách (ít nhất 120 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết đoạn giới thiệu (写作)","gioiThieu":"Đề 写作 của sách HSK 4 (3.0) yêu cầu viết một đoạn văn ngắn (ít nhất 120 chữ) dựa trên nội dung đã học và đã thảo luận trong bài — giống phần 书写 của đề thi HSK 4 mới.","buoc":["Đọc kỹ đề: viết cho AI đọc (người đọc), viết để làm gì, cần những ý nào.","Lập dàn ý theo các câu hỏi gợi ý: mỗi câu hỏi là một ý, viết 1–2 câu cho mỗi ý.","Dùng từ mới và 4 điểm ngữ pháp của bài (khung “Từ, cấu trúc nên dùng”) — đây là phần được chấm điểm từ vựng, ngữ pháp.","Nối các ý bằng từ nối: 首先 / 然后 / 除了……还…… / 要是……就…… / 一方面……另一方面……","Câu mở nêu chủ đề, câu kết là lời chào / lời khuyên; tự soát số chữ (≥ 120) và lỗi chữ Hán trước khi nộp."]},
+ "de":"学校即将举办“留学中国”宣讲会。为了让外国学生更好地了解他们在中国大学的学习和生活，请根据上面谈论的内容，写一段介绍，不少于120字。",
+ "prompt":"Trường sắp tổ chức buổi giới thiệu “Du học Trung Quốc”. Để sinh viên nước ngoài hiểu rõ hơn việc học và cuộc sống ở đại học Trung Quốc, hãy dựa vào nội dung đã trao đổi trong bài, viết một đoạn giới thiệu, không ít hơn 120 chữ.",
+ "dan":[
+  {"hoi":"为什么越来越多的外国学生来中国留学？","goiY":"随着中国的发展，越来越多的……"},
+  {"hoi":"来了以后要办什么手续？","goiY":"先把护照、签证和……交给老师，办……，然后……"},
+  {"hoi":"在中国的大学可以学什么？","goiY":"先上……的中文课程，然后根据……选择专业；除了本科，还可以……"},
+  {"hoi":"怎样才能更快地适应大学生活？","goiY":"一方面要……，另一方面要……"},
+  {"hoi":"还有什么好消息？（奖学金）","goiY":"要是……，就可以申请奖学金，减轻……"}],
+ "tuNen":["入学","签证","证件","材料","课程","专业","本科","硕士","奖学金","交流","适应","活动"],
+ "cauTruc":[
+  {"ten":"随着……，越来越多的……","nhan":"随着","vd":"随着中国的发展，越来越多的外国学生来到中国的大学学习。","khi":"Câu MỞ: nêu bối cảnh chung."},
+  {"ten":"先……，然后……","nhan":"先","vd":"来了以后，先办入学手续，然后在网上选课。","khi":"Kể thủ tục theo thứ tự."},
+  {"ten":"除了……，还……","nhan":"除了","vd":"除了读本科课程，还可以申请读硕士研究生或者博士研究生。","khi":"Giới thiệu các bậc học."},
+  {"ten":"要是……，就……","nhan":"要是","vd":"要是成绩好、表现好，就有机会获得奖学金。","khi":"Nói về học bổng."},
+  {"ten":"一方面……，另一方面……","nhan":"一方面","vd":"一方面要多跟中国学生交流，另一方面要多参加校园活动。","khi":"Câu KẾT: lời khuyên để thích nghi."}],
+ "checklist":[
+  "Đủ ít nhất 120 chữ Hán chưa?",
+  "Đã nói đủ các ý: lý do du học, thủ tục, việc học (khóa tiếng Trung, chuyên ngành, bậc học), học bổng, cách thích nghi chưa?",
+  "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (任何、要是……就……、随着、一方面……另一方面……) chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài chưa?",
+  "Đoạn văn có câu mở và câu kết rõ ràng, người đọc là sinh viên nước ngoài chưa?"],
+ "model":"随着中国的发展，越来越多的外国学生来到中国的大学学习。来了以后，大家先要把护照、签证和入学通知书交给学院的老师，办好入学手续和学生证，然后在网上选课。在大学里，你可以先上一年的中文课程，然后根据自己的兴趣和需要选择专业。除了读本科课程，还可以申请读硕士研究生或者博士研究生。要是你成绩好、表现好，就有机会获得奖学金，这样能减轻不少经济压力。想要更快地适应大学生活，一方面要多跟中国学生交流，另一方面要多参加校园活动。有任何问题，都可以去找老师。欢迎你来中国留学！"
+}
+}

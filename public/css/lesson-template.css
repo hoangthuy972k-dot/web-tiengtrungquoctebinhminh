@@ -605,3 +605,10 @@ body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4
   .back-link::before{content:'← Trang chủ';font-size:.85rem;}
   .header-badge{vertical-align:middle;margin-bottom:6px;}
 }
+
+/* Giao trinh HSK 3.0 moi (HSK 4): anh lay tu sach */
+.wu-emoji > img:not(.wu-tranh) { width: 100%; max-width: 168px; height: 112px; object-fit: cover; border-radius: 10px; }
+@media (max-width: 640px) { .wu-emoji > img:not(.wu-tranh) { height: 84px; } }
+.dlg-sp.co-anh { width: 54px; height: auto; flex-direction: column; gap: 2px; background: none; border-radius: 0; font-family: inherit; font-size: 0.7rem; color: var(--mid); }
+.dlg-sp.co-anh img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 0 0 2px var(--sky); }
+.dlg-scene-anh { display: block; width: 100%; max-width: 560px; max-height: 300px; object-fit: cover; margin: 6px auto 12px; border-radius: 14px; }

@@ -1273,13 +1273,11 @@
     document.body.appendChild(c);
   }
 
-  // Ngay / chieu / dem theo gio Viet Nam (?dem=1 hoac ?dem=0 de xem thu)
+  // Nong trai luon la ban ngay (co giao khong thich che do toi); ?dem=1 de trinh chieu canh dem co dom dom
   var demDaBao = false;
   function capNhatDem() {
-    var gio = new Date(Date.now() + 7 * 3600000).getUTCHours();
-    var ep = (location.search.match(/[?&]dem=([01])/) || [])[1];
-    var dem = ep ? ep === '1' : (gio >= 18 || gio < 5);
-    var chieu = !ep && gio >= 16 && gio < 18;
+    var dem = (location.search.match(/[?&]dem=([01])/) || [])[1] === '1';
+    var chieu = false;
     document.body.classList.toggle('nt-dem', dem);
     document.body.classList.toggle('nt-chieu', chieu);
     if (dem && !demDaBao) {
@@ -3528,9 +3526,8 @@
   // Bau troi theo gio that (gio Viet Nam): sang / chieu / toi
   function veTroiTt() {
     var tt = $('#ntThiTran');
-    var gio = new Date(Date.now() + 7 * 3600000).getUTCHours();
-    tt.classList.toggle('chieu', gio >= 16 && gio < 18);
-    tt.classList.toggle('dem', gio >= 18 || gio < 5);
+    // thi tran luon sang
+    tt.classList.remove('chieu', 'dem');
     if ($('#ntTtTroi')) return;
     var troi = document.createElement('div');
     troi.className = 'nt-tt-troi'; troi.id = 'ntTtTroi'; troi.setAttribute('aria-hidden', 'true');

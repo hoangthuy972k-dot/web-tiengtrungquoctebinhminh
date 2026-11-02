@@ -236,6 +236,7 @@
     dat.innerHTML = html;
     $all('img', dat).forEach(ganLoiAnh);
     veNhanVat();
+    veTai();
     if (!S.tham) veHud();
   }
   function hinhDat(k) {
@@ -755,6 +756,7 @@
     else if (l === 'nhanvat') veNhanVatBang(than);
     else if (l === 'tin') veTin(than);
     else if (l === 'congdong') veCongDong(than);
+    else if (l === 'thientai') veThienTai(than);
     else if (l === 'chung') veChung(than);
     else if (l === 'cacthitran') veCacThiTran(than);
     else if (l === 'loidai') veLoiDai(than);
@@ -1125,6 +1127,92 @@
   }
 
   // --- Thu thach chu Han: 10 cau, dung tu 8 cau -> hop qua bi an (may chu cham + trao qua) ---
+
+  /* ---------------- Thien tai 天灾 ---------------- */
+  var TAI_IC = { gh: '☀️', sau: '🐛', mua: '🌧️', ret: '❄️' };
+  var TAI_VIEC_IC = { gh: '🪣', sau: '🐛', mua: '⛏️', ret: '🪵' };
+  var TAI = { cau: null, xong: null };
+  // Thanh canh bao tren nong trai cua em + hieu ung tren ruong (ca khi sang nha ban)
+  function veTai() {
+    var t = S.tham ? S.tham.tai : (S.st && S.st.tai);
+    var khung = $('#ntKhung'), lop = $('#ntTaiLop');
+    ['gh', 'sau', 'mua', 'ret'].forEach(function (k) { khung.classList.toggle('tai-' + k, !!(t && t.k === k)); });
+    if (!lop) { lop = document.createElement('div'); lop.id = 'ntTaiLop'; lop.className = 'nt-tai-lop'; lop.setAttribute('aria-hidden', 'true'); document.body.appendChild(lop); }
+    lop.className = 'nt-tai-lop' + (t ? ' tai-' + t.k : '');
+    var kieu = t ? t.k : '';
+    if (lop.getAttribute('data-k') !== kieu) {
+      lop.setAttribute('data-k', kieu);
+      var h = '';
+      if (kieu === 'sau') for (var i = 0; i < 9; i++) h += '<i class="nt-sau" style="left:' + (6 + (i * 37) % 86) + '%;top:' + (12 + (i * 53) % 74) + '%;animation-delay:-' + (i * 0.7) + 's"></i>';
+      if (kieu === 'gh') h = '<i class="nt-mat-troi"></i>';
+      lop.innerHTML = h;
+    }
+    var nut = $('#ntTai');
+    if (!nut) return;
+    var em = !S.tham && S.st && S.st.tai;
+    nut.hidden = !em;
+    if (em) {
+      nut.innerHTML = '<span class="nt-tai-ic" aria-hidden="true">' + TAI_IC[em.k] + '</span><span class="nt-muc-chu"><b><span lang="zh">' + esc(em.zh) + '</span> ' + esc(em.vn) + '!</b>' +
+        '<small>' + esc(em.viec) + ' ' + em.co + '/' + em.can + ' · bấm để chống thiên tai</small></span>';
+    }
+  }
+  function htmlTaiDau(t, cuaBan) {
+    var viec = '';
+    for (var i = 0; i < t.can; i++) viec += '<span class="' + (i < t.co ? 'xong' : '') + '">' + TAI_VIEC_IC[t.k] + '</span>';
+    return '<div class="nt-tai-dau tai-' + t.k + '"><span class="nt-tai-to" aria-hidden="true">' + TAI_IC[t.k] + '</span><div>' +
+      '<p class="nt-cn-nho">' + (cuaBan ? 'Nông trại của ' + esc(cuaBan) + ' đang gặp' : 'Nông trại của em đang gặp') + ' thiên tai <span lang="zh">天灾</span></p>' +
+      '<h3><span lang="zh">' + esc(t.zh) + '</span> ' + esc(t.py) + ' · ' + esc(t.vn) + '</h3>' +
+      '<p class="nt-tai-hieu">' + esc(t.hieu) + '</p></div></div>' +
+      htmlCau(t.hoc) +
+      '<p class="nt-tai-viec"><b>' + esc(t.viec) + '</b> <span lang="zh">' + esc(t.dzh) + '</span> ' + esc(t.dpy) + ': ' + t.co + '/' + t.can + ' ' + esc(t.don) + '</p><div class="nt-tai-o">' + viec + '</div>';
+  }
+  function veThienTai(than) {
+    $('#ntBangTit').textContent = 'Chống thiên tai 天灾';
+    datTab([], '');
+    if (TAI.xong) {
+      var x = TAI.xong;
+      than.innerHTML = '<div class="nt-ch-kq"><div class="nt-tai-qua" aria-hidden="true">🌈</div><div class="nt-ch-diem"><b lang="zh">雨过天晴！</b><span>Yǔ guò tiān qíng — Mưa tạnh trời quang!</span></div>' +
+        '<p class="nt-ch-con">' + (x.ban ? 'Em đã giúp ' + esc(x.ban) + ' vượt qua <span lang="zh">' + esc(x.zh) + '</span> · +' + x.xu + ' xu' : 'Nông trại đã vượt qua <span lang="zh">' + esc(x.zh) + '</span> ' + esc(x.vn) + ' · <b>+' + x.xu + ' xu</b>, +5 kinh nghiệm') + '</p>' +
+        '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh" id="ntTaiXong">Về nông trại</button></div></div>';
+      $('#ntTaiXong', than).addEventListener('click', function () { TAI.xong = null; dongBang(); });
+      return;
+    }
+    var ban = S.tham, t = ban ? ban.tai : S.st.tai;
+    if (!t) { than.innerHTML = '<p class="nt-trong">Nông trại đang yên bình — không có thiên tai. 🌤</p>'; return; }
+    var html = htmlTaiDau(t, ban && ban.ten);
+    if (ban) {
+      html += ban.daGiupTai ? '<p class="nt-ch-con">✓ Em đã giúp bạn rồi — rủ thêm bạn khác sang giúp nhé!</p>'
+        : TAI.cau ? '<div class="nt-cn-hop" id="ntTaiHop">' + htmlCauChu(TAI.cau, '<div class="nt-ch-dau"><span>🆘 Giúp bạn</span><span>đúng 1 câu = 1 ' + esc(t.don) + '</span></div>') + '</div>'
+        : '<p class="nt-meo">Trả lời đúng 1 câu chữ Hán để làm giúp bạn 1 ' + esc(t.don) + ' (em nhận +' + (S.cat.TAI_GIUP_XU || 2) + ' xu).</p><div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh" id="ntTaiBd">🆘 Giúp bạn</button></div>';
+    } else {
+      var gio = Math.max(1, Math.round(t.conMs / 3600000));
+      html += TAI.cau ? '<div class="nt-cn-hop" id="ntTaiHop">' + htmlCauChu(TAI.cau, '<div class="nt-ch-dau"><span>' + TAI_VIEC_IC[t.k] + ' ' + esc(t.viec) + '</span><span>' + t.co + '/' + t.can + '</span></div>') + '</div>'
+        : '<p class="nt-meo">Mỗi câu chữ Hán đúng = 1 ' + esc(t.don) + '. Đủ ' + t.can + ' thì thiên tai qua đi và em nhận <b>+' + t.xu + ' xu</b>. Bạn bè sang nhà cũng giúp được! (Nếu không làm, khoảng ' + gio + ' giờ nữa thiên tai tự qua nhưng không có thưởng.)</p>' +
+          '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh nt-nut-to" id="ntTaiBd">' + TAI_VIEC_IC[t.k] + ' ' + esc(t.viec) + '</button></div>';
+    }
+    than.innerHTML = html;
+    var bd = $('#ntTaiBd', than);
+    if (bd) bd.addEventListener('click', function () {
+      bd.disabled = true;
+      goi(ban ? '/api/farm/thientai/giupcau/' + encodeURIComponent(ban.id) : '/api/farm/thientai/cau', {}).then(function (r) { TAI.cau = r.cau; veBang(); }, function (e) { bd.disabled = false; bao(e.message, 'loi'); });
+    });
+    if (TAI.cau && $('#ntTaiHop', than)) ganCauChu(than, function (chon) {
+      return goi(ban ? '/api/farm/thientai/giup/' + encodeURIComponent(ban.id) : '/api/farm/thientai/tl', { chon: chon });
+    }, function (r) {
+      if (r.st && !ban) nhanTrangThai(r.st); else if (r.st) { S.st = r.st; veHud(); }
+      if (ban) {
+        TAI.cau = null;
+        if (r.dung) { ban.daGiupTai = true; ban.tai = r.tai; bao('🆘 Em đã giúp bạn 1 ' + t.don + ' · +' + (S.cat.TAI_GIUP_XU || 2) + ' xu'); }
+        if (r.xong) { TAI.xong = { ban: ban.ten, zh: t.zh, vn: t.vn, xu: S.cat.TAI_GIUP_XU || 2 }; tieng('len'); doc('雨过天晴'); }
+        veTai(); veThamGoi();
+      } else {
+        TAI.cau = r.cau;
+        if (r.dung) bayLen($('#ntTaiHop'), '+1 ' + TAI_VIEC_IC[t.k]);
+        if (r.xong) { TAI.xong = { zh: t.zh, vn: t.vn, xu: t.xu }; TAI.cau = null; tieng('len'); doc('雨过天晴'); }
+      }
+      if (bangDang && bangDang.loai === 'thientai') veBang();
+    });
+  }
   var CH = { de: null, i: 0, khoa: false, conQua: 3, quaNgay: 3, dat: 8, so: 10, ketThuc: null };
   var TEN_KIEU_CH = { nghia: 'Chọn chữ Hán đúng nghĩa', py: 'Chữ này đọc là gì?', chu: 'Chữ này nghĩa là gì?', thieu: 'Điền chữ còn thiếu' };
   function veNutChuHan() {
@@ -1351,7 +1439,7 @@
       dongBang();
       dongThiTran();
       thoatDat();
-      S.tham = { id: id, ten: r.ten, kich: r.kich, o: r.o, lv: r.lv, dep: r.dep, tim: r.tim, sap: r.sap || [], av: r.av, daTim: r.daTim, daChao: r.daChao, conGiup: r.conGiup, conTin: r.conTin, daTang: r.daTang, hv: r.hv };
+      S.tham = { id: id, ten: r.ten, kich: r.kich, o: r.o, lv: r.lv, dep: r.dep, tim: r.tim, sap: r.sap || [], av: r.av, daTim: r.daTim, daChao: r.daChao, conGiup: r.conGiup, conTin: r.conTin, daTang: r.daTang, hv: r.hv, tai: r.tai, daGiupTai: r.daGiupTai };
       S.lechTham = r.now - Date.now();
       $('#ntThamTen').textContent = 'Nông trại của ' + r.ten;
       $('#ntThamPhu').textContent = 'Cấp ' + r.lv + ' · điểm đẹp ' + r.dep + ' · ❤ ' + r.tim;
@@ -2223,6 +2311,10 @@
       chu = e.l === 'hbmoi' ? ai + ' mời em làm <b>bạn học cặp đôi</b> <span lang="zh">学伴</span>. <button type="button" class="nt-link" data-nk-chung="hb">Xem lời mời</button>'
         : e.l === 'hbok' ? ai + ' đã đồng ý làm bạn học của em! Cùng đạt ' + ((CN.d && CN.d.hb.muc) || 20) + ' sao mỗi ngày để mở rương đôi nhé.'
         : ai + ' nhắc em: <b lang="zh">加油！一起学习吧！</b> Jiāyóu! Yìqǐ xuéxí ba! — Cố lên, cùng học nào! <button type="button" class="nt-link" data-nk-hoc>Đi học</button>';
+    } else if (e.l === 'taigiup') {
+      hinh = 'ic-tuoi';
+      var tg = (c.TAI || {})[e.k] || { zh: '', vn: '' };
+      chu = ai + ' sang giúp em chống <b lang="zh">' + esc(tg.zh) + '</b> ' + esc(tg.vn.toLowerCase()) + (e.xong ? ' — thiên tai đã qua! 雨过天晴！' : '.');
     } else if (e.l === 'td') {
       hinh = 'ic-xp';
       chu = ai + ' thách đấu chữ Hán với em! ⚔ <button type="button" class="nt-link" data-nk-chung="td">Vào thách đấu</button>';
@@ -2256,6 +2348,9 @@
     $('#ntThamTim').textContent = t.daTim ? '❤ Đã thả tim' : '❤ Thả tim';
     $('#ntThamChao').textContent = t.conTin > 0 ? '💬 Nói chuyện' : '💬 Nói chuyện ✓';
     $('#ntThamSap').textContent = '🛒 Sạp của bạn (' + t.sap.length + ')';
+    var tn = $('#ntThamTai');
+    tn.hidden = !t.tai;
+    if (t.tai) tn.textContent = t.daGiupTai ? '✓ Đã giúp chống ' + t.tai.zh : '🆘 Giúp chống ' + t.tai.zh + ' ' + t.tai.vn.toLowerCase();
     $('#ntThamGoi').textContent = t.conGiup > 0
       ? 'Chạm cây có giọt nước 💧 để tưới giúp, vật nuôi đói để cho ăn giúp · còn ' + t.conGiup + ' lượt giúp hôm nay'
       : 'Hôm nay em đã giúp đủ lượt rồi — mai giúp bạn tiếp nhé!';
@@ -3586,6 +3681,8 @@
     $('#ntThamChao').addEventListener('click', moNoiChuyen);
     $('#ntThamSap').addEventListener('click', function () { if (S.tham) moBang('sapban'); });
     $('#ntThamTt').addEventListener('click', moThiTran);
+    $('#ntThamTai').addEventListener('click', function () { TAI.cau = null; TAI.xong = null; moBang('thientai'); });
+    $('#ntTai').addEventListener('click', function () { dongThiTran(); TAI.xong = null; moBang('thientai'); });
     $('#ntThiTran').addEventListener('scroll', anNoiDan, { passive: true });
     $('#ntThiTran').addEventListener('click', function (e) {
       var dn = e.target.closest('[data-dan]');

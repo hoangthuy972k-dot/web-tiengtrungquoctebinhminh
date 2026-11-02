@@ -291,6 +291,26 @@ function giaSap(o) {
 function sapHien(ds) { return (ds || []).map((o) => Object.assign({}, o, { gia: giaSap(o), giaDat: o.gia })); }
 // Giup ban (tuoi cay / cho vat nuoi an — phai tra loi cau on tu): toi da moi ngay
 const GIUP_NGAY = 6;
+
+// Thien tai 天灾: thinh thoang ghe nong trai (lv >= 2, cach nhau it nhat 2 ngay), lam kho trong trot / chan nuoi.
+// Em vuot qua bang cach tra loi dung cau chu Han (moi cau = 1 phan viec); ban be sang giup duoc. Qua 2 ngay tu het.
+const TAI = {
+  gh: { zh: '干旱', py: 'gānhàn', vn: 'Hạn hán', hieu: 'Trời không mưa: cây mới gieo lớn chậm gấp đôi.', viec: 'Gánh nước cứu hạn', don: 'xô nước', dzh: '水桶', dpy: 'shuǐtǒng', can: 5,
+    hoc: { zh: '天气很热，没有下雨。', py: 'Tiānqì hěn rè, méiyǒu xià yǔ.', vn: 'Trời rất nóng, không có mưa.' } },
+  sau: { zh: '虫灾', py: 'chóngzāi', vn: 'Sâu bệnh', hieu: 'Sâu ăn lá: mỗi ô ruộng chỉ thu được 1 nông sản.', viec: 'Bắt sâu', don: 'con sâu', dzh: '虫子', dpy: 'chóngzi', can: 6,
+    hoc: { zh: '菜上有很多虫子！', py: 'Cài shang yǒu hěn duō chóngzi!', vn: 'Trên rau có nhiều sâu quá!' } },
+  mua: { zh: '暴雨', py: 'bàoyǔ', vn: 'Mưa bão', hieu: 'Ruộng ngập nước: chưa gieo hạt mới được.', viec: 'Đào rãnh thoát nước', don: 'nhát xẻng', dzh: '水沟', dpy: 'shuǐgōu', can: 5,
+    hoc: { zh: '外面下大雨了！', py: 'Wàimiàn xià dà yǔ le!', vn: 'Bên ngoài mưa to rồi!' } },
+  ret: { zh: '寒潮', py: 'háncháo', vn: 'Rét đậm', hieu: 'Trời lạnh: vật nuôi cần gấp đôi thời gian mới cho sản phẩm.', viec: 'Kiếm củi sưởi ấm chuồng', don: 'bó củi', dzh: '木柴', dpy: 'mùchái', can: 5,
+    hoc: { zh: '今天很冷，多穿衣服！', py: 'Jīntiān hěn lěng, duō chuān yīfu!', vn: 'Hôm nay rất lạnh, mặc nhiều áo vào!' } },
+};
+const TAI_XU = 10, TAI_HAN_MS = 2 * 86400000, TAI_CACH_MS = 2 * 86400000, TAI_TI_LE = 0.4, TAI_GIUP_NGAY = 3, TAI_GIUP_XU = 2;
+const taiDang = (f, k) => !!(f.tai && !f.tai.xong && Date.now() - f.tai.bd < TAI_HAN_MS && (!k || f.tai.k === k));
+function taiChoHs(f) {
+  if (!taiDang(f)) return null;
+  const t = TAI[f.tai.k];
+  return Object.assign({ k: f.tai.k, co: f.tai.co, bd: f.tai.bd, conMs: f.tai.bd + TAI_HAN_MS - Date.now(), xu: TAI_XU }, t);
+}
 // Loi chao co san (khong go chu tu do): vua choi vua doc tieng Trung
 const LOI_CHAO = [
   { zh: '你好！', py: 'Nǐ hǎo!', vn: 'Chào bạn!' },
@@ -522,6 +542,7 @@ module.exports = function ganNongTrai(app, d) {
       can: (f.can || []).map((x) => Object.assign({}, x, cauCanMua(x.k, x.n))),
       av: f.av || null, avMua: f.avMua || [], ten: (await d.loadUserNames())[userId] || '',
       nk: await nhatKy(f), nkMoi: (f.nk || []).filter((e) => e.t > (f.nkXem || 0)).length,
+      tai: taiChoHs(f), taiVua: f.tai && f.tai.xong === 'ok' && Date.now() - f.tai.kt < 60000 ? f.tai.k : '',
     };
   }
 
@@ -566,15 +587,18 @@ module.exports = function ganNongTrai(app, d) {
       if (o.k !== 'o' || o.c) throw loi('Ô này đang có cây.');
       if (!c) throw loi('Không có loại hạt này.');
       if (c.lv > lv) throw loi('Lên cấp ' + c.lv + ' để trồng ' + c.vn + '.');
+      if (taiDang(f, 'mua')) throw loi('暴雨！Ruộng đang ngập — đào rãnh thoát nước trước (bấm thanh thiên tai).');
       tieuXu(c.gia);
-      o.c = b.c; o.h = now + c.phut * PHUT; o.t = 0;
+      o.c = b.c; o.h = now + c.phut * PHUT * (taiDang(f, 'gh') ? 2 : 1); o.t = 0;
     } else if (a === 'trongHet') {
       // gieo cung 1 loai hat vao moi o trong (het xu thi dung)
       const c = CAY[b.c];
       if (!c || c.lv > lv) throw loi('Không có loại hạt này.');
+      if (taiDang(f, 'mua')) throw loi('暴雨！Ruộng đang ngập — đào rãnh thoát nước trước (bấm thanh thiên tai).');
+      const heSo = taiDang(f, 'gh') ? 2 : 1;
       let n = 0;
       f.o.forEach((o) => {
-        if (o.k === 'o' && !o.c && f.xu >= c.gia) { f.xu -= c.gia; o.c = b.c; o.h = now + c.phut * PHUT; o.t = 0; n++; }
+        if (o.k === 'o' && !o.c && f.xu >= c.gia) { f.xu -= c.gia; o.c = b.c; o.h = now + c.phut * PHUT * heSo; o.t = 0; n++; }
       });
       if (!n) throw loi(f.xu < c.gia ? 'Chưa đủ xu mua hạt.' : 'Không còn ô trống.');
     } else if (a === 'tuoi') {
@@ -589,7 +613,7 @@ module.exports = function ganNongTrai(app, d) {
       if (!ds.length) throw loi('Chưa có ô nào chín.');
       ds.forEach((o) => {
         if (o.k !== 'o' || !o.c || o.h > now) throw loi('Cây chưa chín.');
-        congSp(o.c, THU_MOI_O);
+        congSp(o.c, taiDang(f, 'sau') ? 1 : THU_MOI_O);
         them.xp += CAY[o.c].xp;
         o.c = null; o.h = null; o.t = 0;
       });
@@ -597,7 +621,7 @@ module.exports = function ganNongTrai(app, d) {
       const o = timO();
       if (!CON[o.k]) throw loi('Không phải vật nuôi.');
       if (o.h) throw loi(o.h > now ? 'Con vật đang no rồi.' : 'Hãy thu sản phẩm trước.');
-      o.h = now + CON[o.k].phut * PHUT;
+      o.h = now + CON[o.k].phut * PHUT * (taiDang(f, 'ret') ? 2 : 1);
       them.xp += 2; // vua tra loi dung 3 cau on tu
     } else if (a === 'nhat') {
       const ds = b.id === 'het' ? f.o.filter((o) => CON[o.k] && o.h && o.h <= now) : [timO()];
@@ -793,7 +817,7 @@ module.exports = function ganNongTrai(app, d) {
   }
 
   const CATALOG = { CAN_TOI_DA, CAN_SL_TOI_DA, MON, LUONG, LUONG_PY, CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO, RUONG,
-    MOC_THE, HOC_VI, THE_DUNG, BAN_CO_BAN, BAN_MOI_SAO,
+    MOC_THE, HOC_VI, THE_DUNG, BAN_CO_BAN, BAN_MOI_SAO, TAI, TAI_GIUP_XU,
     TIN_TU, TIN_MAU, TIN_HOI, TIN_BAN_NGAY, QUA_NGAY };
 
   // Don dac biet moi ngay: can hang em CHUA tu lam ra (cay cap cao, san pham vat nuoi em chua co, mon an),
@@ -829,9 +853,111 @@ module.exports = function ganNongTrai(app, d) {
       if (het.length) { het.forEach((x) => { f.xu += x.gia; }); f.can = f.can.filter((x) => het.indexOf(x) < 0); await ghi(req.user.id, f); }
       // ngay moi: chot don hang hom nay vao du lieu
       if (donHomNay(f, req.user.id, d.vnDayKey()).moi) await ghi(req.user.id, f);
+      if (xetThienTai(f)) await ghi(req.user.id, f);
       return trangThai(req.user.id, f);
     });
     res.json(req.query.cat ? Object.assign({ cat: CATALOG }, st) : st);
+  }));
+
+  // Moi ngay xet 1 lan: thien tai cu het han thi tu qua; khong co thi co the co thien tai moi
+  function xetThienTai(f) {
+    const ngay = d.vnDayKey(), now = Date.now();
+    let doi = false;
+    if (f.tai && !f.tai.xong && now - f.tai.bd >= TAI_HAN_MS) { f.tai.xong = 'het'; f.tai.kt = now; doi = true; }
+    if (f.taiXet === ngay) return doi;
+    f.taiXet = ngay;
+    const lanCuoi = f.tai ? f.tai.kt || f.tai.bd : 0;
+    if (!taiDang(f) && lvTuXp(f.xp) >= 2 && now - lanCuoi >= TAI_CACH_MS && Math.random() < TAI_TI_LE) {
+      const coCon = f.o.some((o) => CON[o.k]);
+      const ds = Object.keys(TAI).filter((k) => k !== 'ret' || coCon);
+      f.tai = { k: ds[Math.floor(Math.random() * ds.length)], bd: now, co: 0, giup: [] };
+      delete f.taiq;
+    }
+    return true;
+  }
+  // Mot phan viec chong thien tai hoan thanh (em tu lam hoac ban giup); du thi thien tai qua di
+  function lamTai(f, n) {
+    const t = TAI[f.tai.k];
+    f.tai.co = Math.min(t.can, f.tai.co + n);
+    if (f.tai.co >= t.can) {
+      f.tai.xong = 'ok'; f.tai.kt = Date.now();
+      f.xu += TAI_XU; f.xp += 5;
+      return true;
+    }
+    return false;
+  }
+  const cauTai = (q) => (q ? { k: q.k, hoi: q.hoi, lua: q.lua } : null);
+  app.post('/api/farm/thientai/cau', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id;
+    const de = await deChuHan(req.user);
+    if (de.ds.length < 4) return res.status(400).json({ error: 'Chưa đủ từ vựng để ra câu — học thêm bài rồi quay lại nhé!' });
+    await traLoi(res, lanLuot(me, async () => {
+      const f = await doc(me);
+      if (!taiDang(f)) throw loi('Nông trại đang yên bình — không có thiên tai.');
+      f.taiq = { ds: de.ds, i: 0 };
+      await ghi(me, f);
+      return { cau: cauTai(f.taiq.ds[0]) };
+    }));
+  }));
+  app.post('/api/farm/thientai/tl', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, chon = Math.floor(Number(req.body && req.body.chon));
+    await traLoi(res, lanLuot(me, async () => {
+      const f = await doc(me);
+      if (!taiDang(f)) throw loi('Thiên tai đã qua rồi!');
+      const q = f.taiq && f.taiq.ds[f.taiq.i];
+      if (!q) throw loi('Hết câu — bấm để lấy câu mới.');
+      const dung = chon === q.dap;
+      f.taiq.i++;
+      const kq = { ok: true, dung, dap: q.dap, zh: q.zh, py: q.py, vn: q.vn, xong: false };
+      if (dung) { kq.xong = lamTai(f, 1); chung.ldCong(me); }
+      kq.cau = !kq.xong && f.taiq.i < f.taiq.ds.length ? cauTai(f.taiq.ds[f.taiq.i]) : null;
+      if (kq.xong) delete f.taiq;
+      await ghi(me, f);
+      kq.st = await trangThai(me, f);
+      return kq;
+    }));
+  }));
+  // Ban sang nha giup chong thien tai: tra loi dung 1 cau = 1 phan viec cho ban (moi ban 1 lan/ngay, toi da 3 lan/ngay)
+  app.post('/api/farm/thientai/giupcau/:id', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, id = String(req.params.id);
+    const de = await deChuHan(req.user);
+    if (!de.ds.length) return res.status(400).json({ error: 'Chưa đủ từ vựng để ra câu.' });
+    await traLoi(res, cungLop(me, id).then(() => lanLuot(me, async () => {
+      const fm = await doc(me);
+      fm.taiGiupQ = { id, q: de.ds[0] };
+      await ghi(me, fm);
+      return { cau: cauTai(de.ds[0]) };
+    })));
+  }));
+  app.post('/api/farm/thientai/giup/:id', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, id = String(req.params.id), chon = Math.floor(Number(req.body && req.body.chon));
+    await traLoi(res, cungLop(me, id).then(() => haiLuot(me, id, async () => {
+      const fm = await doc(me), ff = await doc(id);
+      const ngay = d.vnDayKey();
+      const q = fm.taiGiupQ && fm.taiGiupQ.id === id ? fm.taiGiupQ.q : null;
+      if (!q) throw loi('Câu hỏi đã hết — thử lại nhé.');
+      delete fm.taiGiupQ;
+      if (!taiDang(ff)) { await ghi(me, fm); throw loi('Thiên tai ở nhà bạn đã qua rồi!'); }
+      if (!fm.taiGiup || fm.taiGiup.d !== ngay) fm.taiGiup = { d: ngay, n: 0 };
+      if (fm.taiGiup.n >= TAI_GIUP_NGAY) { await ghi(me, fm); throw loi('Hôm nay em đã giúp chống thiên tai ' + TAI_GIUP_NGAY + ' lần rồi.'); }
+      ff.tai.giup = ff.tai.giup || [];
+      if (ff.tai.giup.indexOf(me) >= 0) { await ghi(me, fm); throw loi('Em đã giúp bạn này rồi.'); }
+      const dung = chon === q.dap;
+      const kq = { ok: true, dung, dap: q.dap, zh: q.zh, py: q.py, vn: q.vn, xong: false };
+      if (dung) {
+        ff.tai.giup.push(me);
+        fm.taiGiup.n++;
+        fm.xu += TAI_GIUP_XU; fm.xp += 2;
+        kq.xong = lamTai(ff, 1);
+        ghiNk(ff, { ai: me, l: 'taigiup', k: ff.tai.k, xong: kq.xong ? 1 : 0 });
+        chung.ldCong(me);
+        await ghi(id, ff);
+      }
+      await ghi(me, fm);
+      kq.tai = taiChoHs(ff);
+      kq.st = await trangThai(me, fm);
+      return kq;
+    })));
   }));
 
   app.post('/api/farm/act', d.requireAuth, d.asyncRoute(async (req, res) => {
@@ -1142,6 +1268,7 @@ module.exports = function ganNongTrai(app, d) {
       conGiup: GIUP_NGAY - (fm.giup && fm.giup.d === ngay ? fm.giup.n : 0),
       conTin: TIN_BAN_NGAY - (fm.tin && fm.tin.d === ngay ? fm.tin.dem[id] || 0 : 0),
       daTang: !!(fm.qua && fm.qua.d === ngay && fm.qua.ids.indexOf(id) >= 0),
+      tai: taiChoHs(f), daGiupTai: !!(taiDang(f) && (f.tai.giup || []).indexOf(req.user.id) >= 0),
     });
   }));
 
@@ -1392,7 +1519,7 @@ module.exports = function ganNongTrai(app, d) {
         them.xu = 2; them.xp = 1;
       } else if (CON[o.k]) {
         if (o.h) throw loi('Con vật này đã được cho ăn rồi.');
-        o.h = now + CON[o.k].phut * PHUT;
+        o.h = now + CON[o.k].phut * PHUT * (taiDang(ff, 'ret') ? 2 : 1);
         ghiNk(ff, { ai: me, l: 'choan', k: o.k });
         them.xu = 4; them.xp = 2;
       } else throw loi('Món này không cần giúp.');

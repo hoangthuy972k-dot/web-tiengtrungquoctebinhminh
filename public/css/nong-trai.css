@@ -1517,3 +1517,56 @@ span.nt-bt-tim { cursor: default; }
   .nt-dan { left: var(--x); }
 }
 .nt-pho-bien { z-index: 3; }
+
+/* ---------- Thien tai 天灾 ---------- */
+.nt-tai-thanh {
+  position: fixed; top: 182px; right: clamp(10px, 2vw, 20px); z-index: 45;
+  display: flex; align-items: center; gap: 8px; padding: 4px 12px 4px 4px; max-width: min(320px, calc(100vw - 20px));
+  background: #ffe0d6; border: 3px solid var(--vien); border-radius: 999px; box-shadow: var(--bong);
+  font: inherit; color: var(--chu); cursor: pointer; text-align: left; animation: nt-tai-nhap 1.6s ease-in-out infinite;
+}
+.nt-tai-thanh[hidden] { display: none; }
+.nt-tai-thanh b { font-size: 0.86rem; }
+.nt-tai-thanh b [lang="zh"] { font-family: 'Noto Serif SC', serif; color: var(--do); }
+.nt-tai-thanh small { font-size: 0.72rem; color: var(--mo); font-weight: 700; }
+.nt-tai-ic { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; flex: none; border-radius: 50%; background: #fff; border: 2px solid var(--vien); font-size: 1.3rem; }
+@keyframes nt-tai-nhap { 0%, 100% { box-shadow: var(--bong); } 50% { box-shadow: 0 4px 0 var(--vien), 0 0 0 6px rgba(229, 83, 61, 0.35); } }
+body.dang-tham .nt-tai-thanh { display: none; }
+@media (max-width: 420px) {
+  .nt-tai-thanh { top: 140px; right: 8px; padding: 3px 9px 3px 3px; border-width: 2.5px; }
+  .nt-tai-ic { width: 30px; height: 30px; font-size: 1.05rem; }
+  .nt-tai-thanh b { font-size: 0.78rem; }
+}
+/* hieu ung tren man hinh nong trai */
+.nt-tai-lop { position: fixed; inset: 0; z-index: 40; pointer-events: none; display: none; }
+.nt-tai-lop.tai-gh, .nt-tai-lop.tai-sau, .nt-tai-lop.tai-mua, .nt-tai-lop.tai-ret { display: block; }
+body.o-thi-tran .nt-tai-lop, body.co-bang .nt-tai-lop { display: none !important; }
+.nt-tai-lop.tai-gh { background: radial-gradient(circle at 12% 8%, rgba(255, 196, 61, 0.45), transparent 45%), rgba(255, 170, 60, 0.12); }
+.nt-mat-troi { position: absolute; left: 4%; top: 70px; width: 84px; height: 84px; border-radius: 50%; background: #ffcf3d; border: 3px solid var(--vien); box-shadow: 0 0 0 10px rgba(255, 207, 61, 0.35), 0 0 40px 18px rgba(255, 170, 40, 0.45); animation: nt-nang 3s ease-in-out infinite alternate; }
+@keyframes nt-nang { from { transform: scale(0.94); } to { transform: scale(1.06); } }
+.nt-khung.tai-gh .nt-dat { filter: sepia(0.35) saturate(0.75) brightness(1.04); }
+.nt-tai-lop.tai-mua { background: repeating-linear-gradient(105deg, transparent 0 18px, rgba(220, 240, 255, 0.55) 18px 20px, transparent 20px 46px), rgba(40, 60, 90, 0.22); background-size: 100% 200px; animation: nt-mua 0.45s linear infinite; }
+@keyframes nt-mua { from { background-position: 0 0; } to { background-position: -40px 200px; } }
+.nt-khung.tai-mua .nt-dat { filter: saturate(0.8) brightness(0.9) hue-rotate(-8deg); }
+.nt-tai-lop.tai-ret { background-image: radial-gradient(circle, #fff 2.5px, transparent 3.5px), radial-gradient(circle, rgba(255, 255, 255, 0.85) 1.5px, transparent 2.5px); background-size: 80px 80px, 50px 50px; background-color: rgba(170, 210, 255, 0.18); animation: nt-tuyet 6s linear infinite; }
+@keyframes nt-tuyet { from { background-position: 0 0, 20px 10px; } to { background-position: 30px 160px, 0 110px; } }
+.nt-khung.tai-ret .nt-dat { filter: saturate(0.7) brightness(1.05) hue-rotate(10deg); }
+.nt-sau { position: absolute; width: 22px; height: 14px; border-radius: 10px; background: #7cb342; border: 2px solid var(--vien); animation: nt-bo 2.4s ease-in-out infinite; }
+.nt-sau::before { content: ''; position: absolute; right: -6px; top: 1px; width: 10px; height: 10px; border-radius: 50%; background: #558b2f; border: 2px solid var(--vien); }
+.nt-sau::after { content: ''; position: absolute; left: 3px; top: 3px; width: 10px; height: 3px; border-radius: 2px; background: #c5e1a5; }
+@keyframes nt-bo { 0%, 100% { translate: 0 0; } 25% { translate: 10px -3px; } 50% { translate: 18px 0; } 75% { translate: 8px 3px; } }
+/* bang chong thien tai */
+.nt-tai-dau { display: flex; gap: 12px; align-items: center; padding: 12px; border: 3px solid var(--vien); border-radius: 18px; background: #ffe9e2; box-shadow: var(--bong); margin-bottom: 10px; }
+.nt-tai-dau.tai-mua { background: #e3eefc; } .nt-tai-dau.tai-ret { background: #e6f4ff; } .nt-tai-dau.tai-sau { background: #edf7df; }
+.nt-tai-dau > div { flex: 1; min-width: 0; }
+.nt-tai-dau h3 { margin: 2px 0; font-size: 1.1rem; }
+.nt-tai-dau h3 [lang="zh"] { font-family: 'Noto Serif SC', serif; font-size: 1.4rem; color: var(--do); }
+.nt-tai-to { font-size: 2.6rem; flex: none; }
+.nt-tai-hieu { margin: 2px 0 0; font-weight: 700; font-size: 0.88rem; }
+.nt-tai-viec { margin: 10px 0 4px; font-size: 0.92rem; }
+.nt-tai-viec [lang="zh"] { font-family: 'Noto Serif SC', serif; font-weight: 700; }
+.nt-tai-o { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.nt-tai-o span { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border: 2px dashed var(--mo); border-radius: 10px; font-size: 1.3rem; opacity: 0.35; filter: grayscale(1); }
+.nt-tai-o span.xong { opacity: 1; filter: none; border-style: solid; border-color: var(--xanh-dam); background: #e8f8df; }
+.nt-tai-qua { font-size: 3rem; }
+@media (prefers-reduced-motion: reduce) { .nt-tai-thanh, .nt-mat-troi, .nt-tai-lop, .nt-sau { animation: none !important; } }

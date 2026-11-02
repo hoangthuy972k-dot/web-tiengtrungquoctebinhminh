@@ -1078,6 +1078,7 @@ module.exports = function ganNongTrai(app, d) {
       ch.tl.push({ chon, dung });
       const kq = { ok: true, dung, dap: q.dap, zh: q.zh, py: q.py, vn: q.vn, i };
       if (dung) {
+        chung.ldCong(req.user.id);
         f.the = f.the || {};
         const t = f.the[q.zh] || [0, q.py, q.vn];
         t[0]++;
@@ -1238,9 +1239,9 @@ module.exports = function ganNongTrai(app, d) {
       return x;
     }).sort((a, b) => (b.dep || 0) - (a.dep || 0) || (b.lv || 0) - (a.lv || 0) || a.ten.localeCompare(b.ten, 'vi'));
     const [ct, cv] = await Promise.all([chung.ctLop(lop.id), chung.coVuLop(lop.id, req.user.id)]);
-    const diem = ds.filter((x) => x.co).reduce((t, x) => t + (x.dep || 0) + (x.tuan || 0), 0) + 150 * ct.xay.length;
+    const diem = ds.filter((x) => x.co).reduce((t, x) => t + (x.dep || 0) + (x.tuan || 0), 0) + 150 * ct.xay.length + (await chung.diemThem(lop.id));
     const dh = await chung.danhHieuLop(lop.id, diem);
-    res.json({ lop: lop.ten, lopId: lop.id, cuaEm: !!(lopEm && lopEm.id === lop.id), now: Date.now(), ds, ct, covu: cv, diem, cap: dh.cap, hangTuanTruoc: dh.hangTuanTruoc, yeuMen: dh.yeuMen });
+    res.json({ lop: lop.ten, lopId: lop.id, cuaEm: !!(lopEm && lopEm.id === lop.id), now: Date.now(), ds, ct, covu: cv, diem, cap: dh.cap, hangTuanTruoc: dh.hangTuanTruoc, yeuMen: dh.yeuMen, loiChu: dh.loiChu });
   }));
 
   /* ---- Bang "Can mua": dang nhu cau, ban cho ban dang can ---- */
@@ -1504,7 +1505,7 @@ module.exports = function ganNongTrai(app, d) {
 
   // Hoat dong chung: cong trinh lop, thach dau, ban hoc cap doi, le hoi cuoi tuan
   const chung = require('./nong-trai-chung')(app, d, {
-    doc, ghi, lanLuot, haiLuot, loi, traLoi, trangThai, deChuHan, moQua, taiCongDong, ghiNk, lvTuXp, saoHoc, cungLop, SP,
+    doc, ghi, lanLuot, haiLuot, loi, traLoi, trangThai, deChuHan, moQua, taiCongDong, ghiNk, lvTuXp, saoHoc, cungLop, SP, CON, TIN_TU,
   });
   async function initTatCa() { await initTable(); await chung.initTable(); }
 

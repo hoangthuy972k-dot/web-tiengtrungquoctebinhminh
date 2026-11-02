@@ -40,6 +40,50 @@ const HB_MOI_TOI_DA = 5;
 const TD_SO = 8, TD_TAO_NGAY = 3, TD_HAN_MS = 3 * 86400000;
 const TD_XU = { thang: 15, thua: 5, hoa: 10 };
 
+// Loi dai chu Han 擂台: moi cau chu Han dung o nong trai (thu thach, gop gach, thach dau, du khach, loi dai) +1 diem cho lop
+const LD_NGAY = 60, LD_SO_CAU = 10, LD_XU = 30, LD_DIEM_TT = 100, LD_TOI_THIEU = 10;
+// Du khach hoi duong: ban do 3x3, hoi bang tu chi phuong huong (左边 / 右边 / 前边 / 后边)
+const DK_NOI = [
+  { k: 'xuexiao', zh: '学校', py: 'xuéxiào', vn: 'Trường học', hinh: '1f3eb' },
+  { k: 'yiyuan', zh: '医院', py: 'yīyuàn', vn: 'Bệnh viện', hinh: '1f3e5' },
+  { k: 'yinhang', zh: '银行', py: 'yínháng', vn: 'Ngân hàng', hinh: '1f3e6' },
+  { k: 'shangdian', zh: '商店', py: 'shāngdiàn', vn: 'Cửa hàng', hinh: '1f3ea' },
+  { k: 'huochezhan', zh: '火车站', py: 'huǒchēzhàn', vn: 'Ga tàu', hinh: '1f689' },
+  { k: 'gongyuan', zh: '公园', py: 'gōngyuán', vn: 'Công viên', hinh: '1f333' },
+  { k: 'fanguan', zh: '饭馆', py: 'fànguǎn', vn: 'Quán ăn', hinh: '1f35c' },
+  { k: 'shudian', zh: '书店', py: 'shūdiàn', vn: 'Hiệu sách', hinh: '1f4da' },
+  { k: 'jia', zh: '家', py: 'jiā', vn: 'Nhà', hinh: '1f3e0' },
+];
+const HUONG = [
+  { k: 'trai', zh: '左边', py: 'zuǒbian', vn: 'bên trái', dx: -1, dy: 0 },
+  { k: 'phai', zh: '右边', py: 'yòubian', vn: 'bên phải', dx: 1, dy: 0 },
+  { k: 'truoc', zh: '前边', py: 'qiánbian', vn: 'phía trước', dx: 0, dy: -1 },
+  { k: 'sau', zh: '后边', py: 'hòubian', vn: 'phía sau', dx: 0, dy: 1 },
+];
+const DK_SO = 5, DK_LUOT = 3, DK_XU = 2, DK_THUONG = 5;
+// Bang tin 公告栏 (chi ghep cau co san -> an toan cho tre) va cay uoc nguyen 许愿树
+const BT_MAU = [
+  { zh: '大家好！欢迎来我的农场！', py: 'Dàjiā hǎo! Huānyíng lái wǒ de nóngchǎng!', vn: 'Chào mọi người! Mời đến nông trại của mình!' },
+  { zh: '大家加油！我们班第一！', py: 'Dàjiā jiāyóu! Wǒmen bān dì-yī!', vn: 'Cả lớp cố lên! Lớp mình số một!' },
+  { zh: '我今天学习了，你们呢？', py: 'Wǒ jīntiān xuéxí le, nǐmen ne?', vn: 'Hôm nay mình học rồi, còn các bạn?' },
+  { zh: '我的农场有{x}，欢迎来看！', py: 'Wǒ de nóngchǎng yǒu {x}, huānyíng lái kàn!', vn: 'Nông trại mình có {x}, mời đến xem!', o: 'con' },
+  { zh: '谁有{x}？我想买。', py: 'Shéi yǒu {x}? Wǒ xiǎng mǎi.', vn: 'Ai có {x}? Mình muốn mua.', o: 'sp' },
+  { zh: '我们一起{x}吧！', py: 'Wǒmen yìqǐ {x} ba!', vn: 'Cả lớp cùng {x} nhé!', o: 'viec' },
+  { zh: '谢谢大家帮我{x}！', py: 'Xièxie dàjiā bāng wǒ {x}!', vn: 'Cảm ơn mọi người đã giúp mình {x}!', o: 'giup' },
+  { zh: '{x}很好吃！', py: '{x} hěn hǎochī!', vn: '{x} rất ngon!', o: 'sp' },
+];
+const UT_MAU = [
+  { zh: '我希望我的汉语越来越好。', py: 'Wǒ xīwàng wǒ de Hànyǔ yuè lái yuè hǎo.', vn: 'Mình mong tiếng Trung của mình ngày càng giỏi.' },
+  { zh: '我希望考试考得很好。', py: 'Wǒ xīwàng kǎoshì kǎo de hěn hǎo.', vn: 'Mình mong thi thật tốt.' },
+  { zh: '我希望明年去中国。', py: 'Wǒ xīwàng míngnián qù Zhōngguó.', vn: 'Mình mong sang năm được đi Trung Quốc.' },
+  { zh: '我希望爸爸妈妈身体好。', py: 'Wǒ xīwàng bàba māma shēntǐ hǎo.', vn: 'Mình mong bố mẹ khỏe mạnh.' },
+  { zh: '我希望每天都很快乐。', py: 'Wǒ xīwàng měi tiān dōu hěn kuàilè.', vn: 'Mình mong ngày nào cũng vui.' },
+  { zh: '我希望我们班是第一名！', py: 'Wǒ xīwàng wǒmen bān shì dì-yī míng!', vn: 'Mình mong lớp mình đứng nhất!' },
+  { zh: '我希望有很多中国朋友。', py: 'Wǒ xīwàng yǒu hěn duō Zhōngguó péngyou.', vn: 'Mình mong có nhiều bạn Trung Quốc.' },
+  { zh: '我希望我的农场最漂亮。', py: 'Wǒ xīwàng wǒ de nóngchǎng zuì piàoliang.', vn: 'Mình mong nông trại của mình đẹp nhất.' },
+];
+const BT_NGAY = 3, BT_TOI_DA = 40;
+
 module.exports = function ganHoatDongChung(app, d, h) {
   const FILE = path.join(d.DATA_DIR, 'farm_chung.json');
 
@@ -284,6 +328,7 @@ module.exports = function ganHoatDongChung(app, d, h) {
         const ngay = d.vnDayKey();
         f.ctGach = { d: ngay, n: gachHomNay(f) + 1 };
         f.xp += 1;
+        ldCongNen(me);
         kq.xong = await khoaC('ct:' + pv.k, async () => {
           const s = await layCt(pv);
           if (s.ct.xong) return true;
@@ -559,6 +604,7 @@ module.exports = function ganHoatDongChung(app, d, h) {
       const q = td.ds[i], chon = Math.floor(Number(b.chon));
       const dung = chon === q.dap;
       em.tl.push({ chon, dung });
+      if (dung) ldCongNen(me);
       const kq = { ok: true, dung, dap: q.dap, zh: q.zh, py: q.py, vn: q.vn };
       if (em.tl.length >= td.ds.length) {
         em.xong = Date.now();
@@ -607,7 +653,8 @@ module.exports = function ganHoatDongChung(app, d, h) {
   }
   /* ---------------- Diem thi tran + phan thuong ---------------- */
   // Diem = tong diem dep + 150 x cong trinh da xay + sao hoc ca lop trong tuan
-  const diemTt = (dep, xay, sao) => dep + 150 * xay + sao;
+  const diemTt = (dep, xay, sao, ld) => dep + 150 * xay + sao + LD_DIEM_TT * (ld || 0);
+  async function soLdThang(lopId) { const x = await docC('ldt:lop:' + lopId); return x ? x.n : 0; }
   // Cap thi tran (moc diem cao nhat tung dat, khong tut): moi moc ca lop nhan qua 1 lan
   const TT_CAP = [
     { d: 0, zh: '小村', py: 'xiǎocūn', vn: 'Làng nhỏ' },
@@ -641,7 +688,7 @@ module.exports = function ganHoatDongChung(app, d, h) {
     return khoaC(k, async () => {
       const lai = await docC(k);
       if (lai) return lai;
-      const [st, cd, sao, chungDs] = await Promise.all([d.loadClassState(), h.taiCongDong(), d.loadAllStars(), docTheoDau(['ct:lop:', 'cv:'])]);
+      const [st, cd, sao, chungDs, ldDoc] = await Promise.all([d.loadClassState(), h.taiCongDong(), d.loadAllStars(), docTheoDau(['ct:lop:', 'cv:', 'ldt:lop:']), docC('ld:' + tt)]);
       const coNt = {};
       cd.forEach((x) => { coNt[x.id] = x; });
       const saoTt = {};
@@ -655,28 +702,37 @@ module.exports = function ganHoatDongChung(app, d, h) {
         const xay = ((chungDs['ct:lop:' + c.id] || {}).xay || []).filter((x) => x.t < batDau).length;
         const cv = chungDs['cv:' + c.id + ':' + tt];
         // ai co hoc trong tuan (co sao) moi duoc nhan thuong cua lop
-        ds.push({ id: c.id, ten: c.name, diem: diemTt(dep, xay, saoL), sao: saoL, cv: cv ? cv.n : 0, ids: ids.filter((id) => saoTt[id] > 0) });
+        ds.push({ id: c.id, ten: c.name, diem: diemTt(dep, xay, saoL, (chungDs['ldt:lop:' + c.id] || {}).n), sao: saoL, cv: cv ? cv.n : 0, ids: ids.filter((id) => saoTt[id] > 0) });
       });
       ds.sort((a, b) => b.diem - a.diem || b.sao - a.sao);
       const top = ds.filter((x) => x.diem > 0).slice(0, 3).map((x, i) => ({ id: x.id, ten: x.ten, diem: x.diem, hang: i + 1, ids: x.ids }));
       const ym = ds.filter((x) => x.cv > 0).sort((a, b) => b.cv - a.cv)[0];
-      const kq = { tuan: tt, top, yeuMen: ym ? { id: ym.id, ten: ym.ten, n: ym.cv, ids: ym.ids } : null };
+      const kq = { tuan: tt, top, yeuMen: ym ? { id: ym.id, ten: ym.ten, n: ym.cv, ids: ym.ids } : null, ld: null };
+      // Loi dai tuan truoc: lop co diem trung binh moi ban cao nhat (it nhat LD_TOI_THIEU diem)
+      const bangLd = ldBang(ldDoc, st, coNt).filter((x) => x.tong >= LD_TOI_THIEU);
+      if (bangLd.length) {
+        const w = bangLd[0];
+        kq.ld = { id: w.id, ten: w.ten, tb: w.tb, ids: Object.keys((ldDoc && ldDoc.ai) || {}).filter((u) => ldDoc.ai[u].lop === w.id && ldDoc.ai[u].tong > 0) };
+        const kt = 'ldt:lop:' + w.id;
+        await khoaC(kt, async () => { const x = (await docC(kt)) || { n: 0 }; x.n++; await ghiC(kt, x); });
+      }
       await ghiC(k, kq);
       return kq;
     });
   }
-  const tomKq = (kq) => ({ tuan: kq.tuan, top: kq.top.map((x) => ({ id: x.id, ten: x.ten, diem: x.diem, hang: x.hang })), yeuMen: kq.yeuMen ? { id: kq.yeuMen.id, ten: kq.yeuMen.ten, n: kq.yeuMen.n } : null });
+  const tomKq = (kq) => ({ tuan: kq.tuan, top: kq.top.map((x) => ({ id: x.id, ten: x.ten, diem: x.diem, hang: x.hang })), yeuMen: kq.yeuMen ? { id: kq.yeuMen.id, ten: kq.yeuMen.ten, n: kq.yeuMen.n } : null,
+    ld: kq.ld ? { id: kq.ld.id, ten: kq.ld.ten, tb: kq.ld.tb } : null });
   // Danh hieu tuan truoc + cap cua 1 lop (de ve len thi tran)
   async function danhHieuLop(lopId, diem) {
     const [kq, cap] = await Promise.all([ketQuaTuan(), capNhatCap(lopId, diem)]);
     const t = kq.top.find((x) => x.id === lopId);
-    return { cap: capInfo(cap), hangTuanTruoc: t ? t.hang : 0, yeuMen: !!(kq.yeuMen && kq.yeuMen.id === lopId) };
+    return { cap: capInfo(cap), hangTuanTruoc: t ? t.hang : 0, yeuMen: !!(kq.yeuMen && kq.yeuMen.id === lopId), loiChu: !!(kq.ld && kq.ld.id === lopId) };
   }
 
   // Bang xep hang thi tran cac lop
   app.get('/api/farm/cacthitran', d.requireAuth, d.asyncRoute(async (req, res) => {
     const me = req.user.id;
-    const [st, cd, chungDs, kq] = await Promise.all([d.loadClassState(), h.taiCongDong(), docTheoDau(['ct:lop:', 'cv:', 'moc:lop:']), ketQuaTuan()]);
+    const [st, cd, chungDs, kq] = await Promise.all([d.loadClassState(), h.taiCongDong(), docTheoDau(['ct:lop:', 'cv:', 'moc:lop:', 'ldt:lop:']), ketQuaTuan()]);
     const theo = {};
     cd.forEach((x) => { theo[x.id] = x; });
     const tuan = d.vnWeekKey();
@@ -692,7 +748,8 @@ module.exports = function ganHoatDongChung(app, d, h) {
       const t = kq.top.find((x) => x.id === c.id);
       ds.push({
         id: c.id, ten: c.name, so: ids.length, soNt: nt.length, dep, saoTuan, xay: ct.xay, dang: ct.dang, covu: cv ? cv.n : 0,
-        diem: diemTt(dep, ct.xay.length, saoTuan), la: c.id === lopEm,
+        diem: diemTt(dep, ct.xay.length, saoTuan, (chungDs['ldt:lop:' + c.id] || {}).n), la: c.id === lopEm, ldThang: (chungDs['ldt:lop:' + c.id] || {}).n || 0,
+        loiChu: !!(kq.ld && kq.ld.id === c.id),
         capCu: (chungDs['moc:lop:' + c.id] || {}).cap || 0,
         hangTuanTruoc: t ? t.hang : 0, yeuMen: !!(kq.yeuMen && kq.yeuMen.id === c.id),
         nv: nt.slice().sort((a, b) => b.tuan - a.tuan).slice(0, 5).map((x) => ({ id: x.id, av: x.av })),
@@ -721,6 +778,7 @@ module.exports = function ganHoatDongChung(app, d, h) {
     const t = lopId ? kq.top.find((x) => x.id === lopId) : null;
     if (t && t.ids.indexOf(me) >= 0) out.ds.push({ loai: 'tuan', hang: t.hang, xu: TOP_XU[t.hang - 1], mon: TOP_CUP[t.hang - 1], daNhan: nhan.tuan === kq.tuan });
     if (lopId && kq.yeuMen && kq.yeuMen.id === lopId && kq.yeuMen.ids.indexOf(me) >= 0) out.ds.push({ loai: 'yeumen', n: kq.yeuMen.n, xu: YEU_MEN_XU, daNhan: nhan.ym === kq.tuan });
+    if (lopId && kq.ld && kq.ld.id === lopId && kq.ld.ids.indexOf(me) >= 0) out.ds.push({ loai: 'ld', xu: LD_XU, daNhan: nhan.ld === kq.tuan });
     if (lopId) {
       const cap = ((await docC('moc:lop:' + lopId)) || {}).cap || 0;
       out.cap = capInfo(cap);
@@ -750,6 +808,7 @@ module.exports = function ganHoatDongChung(app, d, h) {
       const kq = { ok: true, xu: x.xu || 0 };
       if (loai === 'tuan') { f.ttNhan.tuan = tg.tuanTruoc.tuan; f.tui[x.mon] = (f.tui[x.mon] || 0) + 1; kq.mon = x.mon; }
       else if (loai === 'yeumen') f.ttNhan.ym = tg.tuanTruoc.tuan;
+      else if (loai === 'ld') f.ttNhan.ld = tg.tuanTruoc.tuan;
       else {
         // moc: nhan lan luot tung moc
         f.ttNhan.moc = f.ttNhan.moc || {};
@@ -797,6 +856,272 @@ module.exports = function ganHoatDongChung(app, d, h) {
     }));
   }));
 
+  /* ---------------- Loi dai chu Han 擂台 ---------------- */
+  // Bang loi dai: xep theo diem trung binh moi ban co nong trai (lop dong khong lan at lop it nguoi)
+  function ldBang(doc, st, coNt) {
+    const tong = (doc && doc.lop) || {};
+    return st.classes.map((c) => {
+      const soNt = Object.keys(st.members).filter((u) => st.members[u].classId === c.id && coNt[u]).length;
+      if (!soNt) return null;
+      const n = tong[c.id] || 0;
+      return { id: c.id, ten: c.name, tong: n, soNt, tb: Math.round(n / Math.max(3, soNt) * 10) / 10 };
+    }).filter(Boolean).sort((a, b) => b.tb - a.tb || b.tong - a.tong);
+  }
+  // +1 diem loi dai cho lop cua em (goi khi tra loi dung 1 cau chu Han o nong trai)
+  async function ldCong(me) {
+    const st = await d.loadClassState();
+    const mem = st.members[me];
+    if (!mem) return 0;
+    const k = 'ld:' + d.vnWeekKey(), ngay = d.vnDayKey();
+    return khoaC(k, async () => {
+      const x = (await docC(k)) || { lop: {}, ai: {} };
+      const a = x.ai[me] || (x.ai[me] = { lop: mem.classId, tong: 0, d: ngay, n: 0 });
+      if (a.d !== ngay) { a.d = ngay; a.n = 0; }
+      if (a.n >= LD_NGAY) return 0;
+      a.n++; a.tong++; a.lop = mem.classId;
+      x.lop[mem.classId] = (x.lop[mem.classId] || 0) + 1;
+      await ghiC(k, x);
+      return 1;
+    });
+  }
+  const ldCongNen = (me) => { ldCong(me).catch(() => {}); };
+  app.get('/api/farm/loidai', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id;
+    const [st, cd, doc, ten, kq, f] = await Promise.all([d.loadClassState(), h.taiCongDong(), docC('ld:' + d.vnWeekKey()), d.loadUserNames(), ketQuaTuan(), h.doc(me)]);
+    const coNt = {};
+    cd.forEach((x) => { coNt[x.id] = x; });
+    const lopEm = st.members[me] ? st.members[me].classId : '';
+    const bang = ldBang(doc, st, coNt).map((x, i) => Object.assign(x, { hang: i + 1, la: x.id === lopEm }));
+    const ai = (doc && doc.ai) || {}, ngay = d.vnDayKey();
+    const top = Object.keys(ai).filter((u) => ai[u].lop === lopEm && ten[u]).map((u) => ({ id: u, ten: ten[u], n: ai[u].tong, la: u === me, av: coNt[u] ? coNt[u].av : null }))
+      .sort((a, b) => b.n - a.n).slice(0, 8);
+    const emNay = ai[me] && ai[me].d === ngay ? ai[me].n : 0;
+    res.json({
+      lopEm, bang, top, conNgay: Math.max(0, LD_NGAY - emNay), ldNgay: LD_NGAY, giayHetTuan: d.secondsToVnWeekEnd(),
+      tuanTruoc: kq.ld ? { id: kq.ld.id, ten: kq.ld.ten, tb: kq.ld.tb } : null, xu: LD_XU, diemTt: LD_DIEM_TT, toiThieu: LD_TOI_THIEU,
+      cau: f.ldq && f.ldq.ngay === ngay && f.ldq.i < f.ldq.ds.length ? cauChoHs(f.ldq.ds[f.ldq.i]) : null,
+    });
+  }));
+  app.post('/api/farm/ld/cau', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id;
+    const st = await d.loadClassState();
+    if (!st.members[me]) return res.status(400).json({ error: 'Vào lớp (nhập mã lớp ở trang học) để lên lôi đài cùng lớp nhé!' });
+    const de = await h.deChuHan(req.user);
+    if (de.ds.length < 4) return res.status(400).json({ error: 'Chưa đủ từ vựng để ra câu — học thêm bài rồi quay lại nhé!' });
+    await h.traLoi(res, h.lanLuot(me, async () => {
+      const f = await h.doc(me);
+      f.ldq = { ngay: d.vnDayKey(), ds: de.ds.slice(0, LD_SO_CAU), i: 0 };
+      await h.ghi(me, f);
+      return { cau: cauChoHs(f.ldq.ds[0]) };
+    }));
+  }));
+  app.post('/api/farm/ld/tl', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, chon = Math.floor(Number(req.body && req.body.chon));
+    await h.traLoi(res, h.lanLuot(me, async () => {
+      const f = await h.doc(me);
+      const q = f.ldq && f.ldq.ngay === d.vnDayKey() ? f.ldq.ds[f.ldq.i] : null;
+      if (!q) throw loi('Lượt này đã hết — bấm "Lên đài" để lấy câu mới.');
+      const dung = chon === q.dap;
+      f.ldq.i++;
+      if (dung) f.xp += 1;
+      await h.ghi(me, f);
+      return { ok: true, dung, dap: q.dap, zh: q.zh, py: q.py, vn: q.vn, diem: dung ? await ldCong(me) : 0,
+        cau: f.ldq.i < f.ldq.ds.length ? cauChoHs(f.ldq.ds[f.ldq.i]) : null };
+    }));
+  }));
+
+  /* ---------------- Du khach hoi duong 游客 ---------------- */
+  function taoDk() {
+    const bd = tronMang(DK_NOI.map((x) => x.k)); // o thu i: hang floor(i/3), cot i%3; hang 0 o tren cung (phia truoc)
+    const o = (k) => bd.indexOf(k);
+    const tai = (x, y) => (x >= 0 && x < 3 && y >= 0 && y < 3 ? bd[y * 3 + x] : null);
+    const noi = (k) => DK_NOI.find((x) => x.k === k);
+    // cac cap (A, huong, B): A o [huong] cua B
+    const cap = [];
+    bd.forEach((b, i) => { const x = i % 3, y = Math.floor(i / 3); HUONG.forEach((hg) => { const a = tai(x + hg.dx, y + hg.dy); if (a) cap.push({ a, hg, b }); }); });
+    const dung = (a, hg, b) => cap.some((c) => c.a === a && c.hg.k === hg.k && c.b === b);
+    const ds = [];
+    const kieu = tronMang(['o', 'o', 'gi', 'gi', 'nao', 'o', 'gi']).slice(0, DK_SO);
+    const daHoi = {};
+    kieu.forEach((kq) => {
+      const c = tronMang(cap).find((x) => !daHoi[x.a + x.hg.k + x.b]);
+      if (!c) return;
+      daHoi[c.a + c.hg.k + c.b] = 1;
+      const A = noi(c.a), Bn = noi(c.b);
+      if (kq === 'o') {
+        // 请问，A在哪儿？ -> 在B+huong
+        const sai = [];
+        tronMang(cap).forEach((x) => { if (sai.length < 3 && x.a !== c.a) { const hg = x.hg, b = x.b; if (!dung(c.a, hg, b) && !sai.some((s) => s.hg.k === hg.k && s.b === b)) sai.push({ hg, b }); } });
+        const lua = tronMang([{ hg: c.hg, b: c.b }].concat(sai)).map((x) => { const bb = noi(x.b); return { zh: '在' + bb.zh + x.hg.zh + '。', py: 'Zài ' + bb.py + ' ' + x.hg.py + '.', vn: 'Ở ' + x.hg.vn + ' ' + bb.vn.toLowerCase() + '.', dung: x.b === c.b && x.hg.k === c.hg.k }; });
+        ds.push({ k: 'o', hoi: { zh: '请问，' + A.zh + '在哪儿？', py: 'Qǐngwèn, ' + A.py + ' zài nǎr?', vn: 'Xin hỏi, ' + A.vn.toLowerCase() + ' ở đâu?' }, lua, dap: lua.findIndex((x) => x.dung), zh: A.zh + '在' + Bn.zh + c.hg.zh + '。' });
+      } else if (kq === 'gi') {
+        // B+huong 是什么？ -> A
+        const khac = tronMang(DK_NOI.filter((x) => x.k !== c.a && x.k !== c.b)).slice(0, 3);
+        const lua = tronMang([A].concat(khac)).map((x) => ({ zh: x.zh, py: x.py, vn: x.vn, dung: x.k === A.k }));
+        ds.push({ k: 'gi', hoi: { zh: Bn.zh + c.hg.zh + '是什么地方？', py: Bn.py + ' ' + c.hg.py + ' shì shénme dìfang?', vn: 'Ở ' + c.hg.vn + ' ' + Bn.vn.toLowerCase() + ' là nơi nào?' }, lua, dap: lua.findIndex((x) => x.dung), zh: Bn.zh + c.hg.zh + '是' + A.zh + '。' });
+      } else {
+        // o duoc to sang: 这是什么地方？
+        const khac = tronMang(DK_NOI.filter((x) => x.k !== c.a)).slice(0, 3);
+        const lua = tronMang([A].concat(khac)).map((x) => ({ zh: x.zh, py: x.py, vn: x.vn, dung: x.k === A.k }));
+        ds.push({ k: 'nao', o: o(c.a), hoi: { zh: '这是什么地方？', py: 'Zhè shì shénme dìfang?', vn: 'Đây là nơi nào?' }, lua, dap: lua.findIndex((x) => x.dung), zh: '这是' + A.zh + '。' });
+      }
+    });
+    return { bd, ds };
+  }
+  const dkHomNay = (f) => (f.dk && f.dk.ngay === d.vnDayKey() ? f.dk : null);
+  const dkChoHs = (dk) => ({ bd: dk.bd.map((k) => DK_NOI.find((x) => x.k === k)), i: dk.i, dung: dk.dung, so: dk.ds.length,
+    cau: dk.i < dk.ds.length ? { k: dk.ds[dk.i].k, o: dk.ds[dk.i].o, hoi: dk.ds[dk.i].hoi, lua: dk.ds[dk.i].lua.map((x) => ({ zh: x.zh, py: x.py, vn: x.vn })) } : null });
+  app.get('/api/farm/dukhach', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const f = await h.doc(req.user.id);
+    const dk = dkHomNay(f);
+    res.json({ luot: dk ? dk.luot : 0, toiDa: DK_LUOT, dang: dk && dk.ds && dk.i < dk.ds.length ? dkChoHs(dk) : null, xu: DK_XU, thuong: DK_THUONG, so: DK_SO, huong: HUONG });
+  }));
+  app.post('/api/farm/dukhach/moi', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id;
+    await h.traLoi(res, h.lanLuot(me, async () => {
+      const f = await h.doc(me);
+      const cu = dkHomNay(f);
+      if (cu && cu.ds && cu.i < cu.ds.length) return { dang: dkChoHs(cu), luot: cu.luot };
+      const luot = cu ? cu.luot : 0;
+      if (luot >= DK_LUOT) throw loi('Hôm nay đã có ' + DK_LUOT + ' đoàn du khách rồi — mai lại có khách mới nhé!');
+      const m = taoDk();
+      f.dk = { ngay: d.vnDayKey(), luot: luot + 1, bd: m.bd, ds: m.ds, i: 0, dung: 0 };
+      await h.ghi(me, f);
+      return { dang: dkChoHs(f.dk), luot: f.dk.luot };
+    }));
+  }));
+  app.post('/api/farm/dukhach/tl', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, chon = Math.floor(Number(req.body && req.body.chon));
+    await h.traLoi(res, h.lanLuot(me, async () => {
+      const f = await h.doc(me);
+      const dk = dkHomNay(f);
+      if (!dk || !dk.ds || dk.i >= dk.ds.length) throw loi('Du khách đã đi rồi — mời đoàn khách mới nhé.');
+      const q = dk.ds[dk.i];
+      const dung = chon === q.dap;
+      dk.i++;
+      const kq = { ok: true, dung, dap: q.dap, zh: q.zh, xu: 0 };
+      if (dung) { dk.dung++; f.xu += DK_XU; kq.xu = DK_XU; f.xp += 1; }
+      if (dk.i >= dk.ds.length) {
+        kq.ketThuc = { dung: dk.dung, so: dk.ds.length, thuong: dk.dung === dk.ds.length ? DK_THUONG : 0, conLuot: DK_LUOT - dk.luot };
+        if (kq.ketThuc.thuong) f.xu += DK_THUONG;
+      }
+      await h.ghi(me, f);
+      if (dung) ldCongNen(me);
+      kq.dang = dkChoHs(dk);
+      kq.st = await h.trangThai(me, f);
+      return kq;
+    }));
+  }));
+
+  /* ---------------- Bang tin 公告栏 + cay uoc nguyen 许愿树 ---------------- */
+  function tuBt(o) {
+    if (o === 'con') return Object.keys(h.CON);
+    if (o === 'sp') return Object.keys(h.SP);
+    return (h.TIN_TU[o] || []).map((w) => w.k);
+  }
+  app.get('/api/farm/bangtin', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id;
+    const pv = await phamVi(me);
+    const [bt, ut, ten, cd, f] = await Promise.all([docC('bt:' + pv.k), docC('ut:' + pv.k), d.loadUserNames(), h.taiCongDong(), h.doc(me)]);
+    const av = {};
+    cd.forEach((x) => { av[x.id] = x.av; });
+    const ngay = d.vnDayKey();
+    res.json({
+      pham: pv.ten, mau: BT_MAU, uocMau: UT_MAU, tuMau: { con: tuBt('con'), sp: tuBt('sp'), viec: tuBt('viec'), giup: tuBt('giup') },
+      conDang: BT_NGAY - (f.btNgay && f.btNgay.d === ngay ? f.btNgay.n : 0),
+      bt: ((bt && bt.ds) || []).filter((x) => ten[x.ai]).map((x) => ({ id: x.id, ai: x.ai, ten: ten[x.ai], av: av[x.ai] || null, m: x.m, x: x.x, t: x.t, tim: x.tim.length, daTim: x.tim.indexOf(me) >= 0, la: x.ai === me })),
+      uoc: ((ut && ut.ds) || []).filter((x) => ten[x.ai]).map((x) => ({ ai: x.ai, ten: ten[x.ai], av: av[x.ai] || null, w: x.w, t: x.t, cung: x.cung.length, daCung: x.cung.indexOf(me) >= 0, la: x.ai === me })),
+    });
+  }));
+  app.post('/api/farm/bangtin/dang', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, m = Math.floor(Number(req.body && req.body.m)), x = String((req.body && req.body.x) || '');
+    const mau = BT_MAU[m];
+    if (!mau) return res.status(400).json({ error: 'Mẫu câu chưa hợp lệ.' });
+    if (mau.o && tuBt(mau.o).indexOf(x) < 0) return res.status(400).json({ error: 'Hãy chọn từ điền vào chỗ trống.' });
+    const pv = await phamVi(me);
+    await h.traLoi(res, h.lanLuot(me, async () => {
+      const f = await h.doc(me);
+      const ngay = d.vnDayKey();
+      if (!f.btNgay || f.btNgay.d !== ngay) f.btNgay = { d: ngay, n: 0 };
+      if (f.btNgay.n >= BT_NGAY) throw loi('Mỗi ngày đăng tối đa ' + BT_NGAY + ' tin.');
+      const k = 'bt:' + pv.k;
+      await khoaC(k, async () => {
+        const bt = (await docC(k)) || { ds: [] };
+        bt.ds.unshift({ id: Math.random().toString(36).slice(2, 10), ai: me, m, x: mau.o ? x : '', t: Date.now(), tim: [] });
+        bt.ds = bt.ds.slice(0, BT_TOI_DA);
+        await ghiC(k, bt);
+      });
+      const dau = f.btNgay.n === 0;
+      f.btNgay.n++;
+      if (dau) { f.xu += 1; f.xp += 1; }
+      await h.ghi(me, f);
+      return { ok: true, xu: dau ? 1 : 0, st: await h.trangThai(me, f) };
+    }));
+  }));
+  app.post('/api/farm/bangtin/tim', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, id = String((req.body && req.body.id) || '');
+    const pv = await phamVi(me);
+    const k = 'bt:' + pv.k;
+    await h.traLoi(res, khoaC(k, async () => {
+      const bt = (await docC(k)) || { ds: [] };
+      const x = bt.ds.find((y) => y.id === id);
+      if (!x) throw loi('Tin này không còn nữa.');
+      const i = x.tim.indexOf(me);
+      if (i >= 0) x.tim.splice(i, 1); else x.tim.push(me);
+      await ghiC(k, bt);
+      return { ok: true, tim: x.tim.length, daTim: i < 0 };
+    }));
+  }));
+  app.post('/api/farm/bangtin/xoa', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, id = String((req.body && req.body.id) || '');
+    const pv = await phamVi(me);
+    const k = 'bt:' + pv.k;
+    await h.traLoi(res, khoaC(k, async () => {
+      const bt = (await docC(k)) || { ds: [] };
+      const x = bt.ds.find((y) => y.id === id);
+      if (!x || x.ai !== me) throw loi('Em chỉ xoá được tin của mình.');
+      bt.ds = bt.ds.filter((y) => y.id !== id);
+      await ghiC(k, bt);
+      return { ok: true };
+    }));
+  }));
+  // Treo / doi dieu uoc (moi ban 1 dieu tren cay; doi duoc moi ngay 1 lan)
+  app.post('/api/farm/uoc', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, w = Math.floor(Number(req.body && req.body.w));
+    if (!UT_MAU[w]) return res.status(400).json({ error: 'Điều ước chưa hợp lệ.' });
+    const pv = await phamVi(me);
+    const k = 'ut:' + pv.k;
+    await h.traLoi(res, khoaC(k, async () => {
+      const ut = (await docC(k)) || { ds: [] };
+      const cu = ut.ds.find((y) => y.ai === me);
+      const ngay = d.vnDayKey();
+      if (cu && cu.ngay === ngay) throw loi('Hôm nay em đã treo điều ước rồi — mai đổi được nhé.');
+      const lanDau = !cu;
+      ut.ds = ut.ds.filter((y) => y.ai !== me);
+      ut.ds.unshift({ ai: me, w, t: Date.now(), ngay, cung: [] });
+      ut.ds = ut.ds.slice(0, 60);
+      await ghiC(k, ut);
+      let st = null;
+      if (lanDau) st = await h.lanLuot(me, async () => { const f = await h.doc(me); f.xu += 2; f.xp += 2; await h.ghi(me, f); return h.trangThai(me, f); });
+      return { ok: true, xu: lanDau ? 2 : 0, st };
+    }));
+  }));
+  app.post('/api/farm/uoc/cung', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, ai = String((req.body && req.body.ai) || '');
+    const pv = await phamVi(me);
+    const k = 'ut:' + pv.k;
+    await h.traLoi(res, khoaC(k, async () => {
+      const ut = (await docC(k)) || { ds: [] };
+      const x = ut.ds.find((y) => y.ai === ai);
+      if (!x) throw loi('Điều ước này không còn nữa.');
+      if (ai === me) throw loi('Đây là điều ước của em mà.');
+      const i = x.cung.indexOf(me);
+      if (i >= 0) x.cung.splice(i, 1); else x.cung.push(me);
+      await ghiC(k, ut);
+      return { ok: true, cung: x.cung.length, daCung: i < 0 };
+    }));
+  }));
+
   // Danh sach ban de chon (moi thach dau / ban hoc): ban cung lop, chua co lop thi cong dong
   app.get('/api/farm/chung/ban', d.requireAuth, d.asyncRoute(async (req, res) => {
     const me = req.user.id;
@@ -811,5 +1136,6 @@ module.exports = function ganHoatDongChung(app, d, h) {
     res.json({ pham: pv.ten, ds: ids.slice(0, 40).map((id) => ({ id, ten: ten[id], av: theo[id] ? theo[id].av : null, lv: theo[id] ? theo[id].lv : 0 })) });
   }));
 
-  return { initTable, CT, LH, ctLop, coVuLop, danhHieuLop };
+  async function diemThem(lopId) { return LD_DIEM_TT * (await soLdThang(lopId)); }
+  return { initTable, CT, LH, ctLop, coVuLop, danhHieuLop, diemThem, ldCong: ldCongNen };
 };

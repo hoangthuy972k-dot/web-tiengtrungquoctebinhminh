@@ -1978,3 +1978,5 @@ body.o-ho-cau .nt-duoi, body.o-ho-cau .nt-zoom, body.o-ho-cau .nt-thu-het, body.
   .nt-hc-chon-nut { width: 100%; flex-direction: row; justify-content: center; flex-wrap: wrap; }
   .nt-hc-kq-hinh { width: 84px; height: 84px; }
 }
+
+.nt-sap-mo { margin: 0 0 10px; padding: 8px 12px; border: 2.5px dashed #b48a2c; border-radius: 14px; background: #fff8dc; font-size: 0.9rem; }

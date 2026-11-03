@@ -61,10 +61,12 @@ const CON = {
   cuu: { zh: '羊', py: 'yáng', vn: 'Cừu', lv: 4, sao: 60, sp: 'len', phut: 240, xp: 7 },
   ong: { zh: '蜜蜂', py: 'mìfēng', vn: 'Tổ ong', lv: 5, sao: 80, sp: 'mat', phut: 360, xp: 9 },
   // them 2026-11-03 (hoc sinh xin heo, su tu, ho, khung long — dat hon cac con cu)
-  heo: { zh: '猪', py: 'zhū', vn: 'Heo', lv: 6, sao: 120, sp: 'songlu', phut: 480, xp: 12 },
-  sutu: { zh: '狮子', py: 'shīzi', vn: 'Sư tử', lv: 8, sao: 200, sp: 'menpiao', phut: 600, xp: 16 },
-  ho: { zh: '老虎', py: 'lǎohǔ', vn: 'Hổ', lv: 9, sao: 240, sp: 'jinianpin', phut: 720, xp: 18 },
-  khunglong: { zh: '恐龙', py: 'kǒnglóng', vn: 'Khủng long', lv: 12, sao: 400, sp: 'kongdan', phut: 960, xp: 25 },
+  // Vat nuoi quy: mo khoa theo cap (co giao: cap 15, 20, 25… moi mua duoc)
+  heo: { zh: '猪', py: 'zhū', vn: 'Heo', lv: 10, sao: 150, sp: 'songlu', phut: 480, xp: 12 },
+  sutu: { zh: '狮子', py: 'shīzi', vn: 'Sư tử', lv: 15, sao: 250, sp: 'menpiao', phut: 600, xp: 16 },
+  ho: { zh: '老虎', py: 'lǎohǔ', vn: 'Hổ', lv: 20, sao: 320, sp: 'jinianpin', phut: 720, xp: 18 },
+  khunglong: { zh: '恐龙', py: 'kǒnglóng', vn: 'Khủng long', lv: 25, sao: 450, sp: 'kongdan', phut: 960, xp: 25 },
+  gautruc: { zh: '熊猫', py: 'xióngmāo', vn: 'Gấu trúc', lv: 30, sao: 600, sp: 'gaubong', phut: 1200, xp: 30 },
 };
 const CON_TOI_DA = 6; // moi loai toi da 6 con
 
@@ -76,9 +78,10 @@ const SP = {
   len: { zh: '羊毛', py: 'yángmáo', vn: 'Len', ban: 42 },
   mat: { zh: '蜂蜜', py: 'fēngmì', vn: 'Mật ong', ban: 60 },
   songlu: { zh: '松露', py: 'sōnglù', vn: 'Nấm truffle (heo đánh hơi tìm được)', ban: 95 },
-  menpiao: { zh: '门票', py: 'ménpiào', vn: 'Vé xem sư tử', ban: 150 },
-  jinianpin: { zh: '纪念品', py: 'jìniànpǐn', vn: 'Quà lưu niệm hổ', ban: 180 },
+  menpiao: { zh: '门票', py: 'ménpiào', vn: 'Vé xem sư tử', ban: 160 },
+  jinianpin: { zh: '纪念品', py: 'jìniànpǐn', vn: 'Quà lưu niệm hổ', ban: 200 },
   kongdan: { zh: '恐龙蛋', py: 'kǒnglóng dàn', vn: 'Trứng khủng long', ban: 300 },
+  gaubong: { zh: '熊猫玩偶', py: 'xióngmāo wán\'ǒu', vn: 'Gấu bông gấu trúc', ban: 420 },
 };
 Object.keys(CAY).forEach((k) => { SP[k] = { zh: CAY[k].zh, py: CAY[k].py, vn: CAY[k].vn, ban: CAY[k].ban }; });
 // Bep: mon an can nhieu loai nong san (mot nong trai thuong khong tu du -> mua cua ban). hinh = tranh 3D /images/wu/<ma>.png
@@ -122,7 +125,7 @@ const CA_BAC = [null,
 // Moi cau moi ngay: 3 + 1 moi 10 sao hoc hom nay (toi da 15); ho luon co 7 bong ca
 const MOI_CO_BAN = 3, MOI_MOI_SAO = 10, MOI_TOI_DA = 15, HO_SO_CA = 7;
 // Luong tu khi goi ten hang bang tieng Trung (don dac biet): 三个鸡蛋、两瓶牛奶…
-const LUONG = { lua: '斤', carot: '根', ngo: '根', caibap: '棵', dautay: '个', huongduong: '朵', bido: '个', cachua: '个', khoaitay: '个', duahau: '个', nho: '串', songlu: '个', menpiao: '张', jinianpin: '个', kongdan: '个', trung: '个', trungvit: '个',
+const LUONG = { lua: '斤', carot: '根', ngo: '根', caibap: '棵', dautay: '个', huongduong: '朵', bido: '个', cachua: '个', khoaitay: '个', duahau: '个', nho: '串', songlu: '个', menpiao: '张', jinianpin: '个', kongdan: '个', gaubong: '个', trung: '个', trungvit: '个',
   sua: '瓶', len: '斤', mat: '瓶', com: '碗', 'nuoc-carot': '杯', 'com-rang': '份', 'chao-bi': '碗', 'canh-ngo': '碗', 'sui-cao': '盘', 'sua-mat': '杯', 'banh-dau': '个' };
 Object.keys(CA).forEach((k) => { LUONG[k] = '条'; });
 const SO_ZH = ['', '一', '两', '三', '四', '五'];

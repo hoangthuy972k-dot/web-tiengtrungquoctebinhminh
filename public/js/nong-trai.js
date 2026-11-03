@@ -966,6 +966,7 @@
   function giaHtml(m) {
     return m.sao ? '<span class="nt-gia sao">' + img('ic-sao') + m.sao + '</span>' : '<span class="nt-gia xu">' + img('ic-xu') + m.xu + '</span>';
   }
+  function xpCap(n) { return 5 * n * (n - 1); } // giong xpCuaLv o may chu
   function theMon(k, m, hinh, them, khoa, nut) {
     return '<div class="nt-the' + (khoa ? ' khoa' : '') + '">' +
       '<div class="nt-the-anh">' + img(hinh) + (khoa ? '<span class="nt-khoa">Cấp ' + khoa + '</span>' : '') + '</div>' +
@@ -975,7 +976,18 @@
     var tab = bangDang.tab || 'con';
     $('#ntBangTit').textContent = 'Cửa hàng';
     datTab([['con', 'Vật nuôi'], ['tt', 'Trang trí'], ['dat', 'Đất & nhà']], tab);
-    var c = S.cat, s = S.st, lv = s.lv, html = '<div class="nt-luoi-the">';
+    var c = S.cat, s = S.st, lv = s.lv, html = '';
+    // mon sap mo khoa o tab nay (cap gan nhat con khoa)
+    var nhom = tab === 'con' ? c.CON : tab === 'tt' ? c.TT : null;
+    if (nhom) {
+      var khoa = Object.keys(nhom).filter(function (k) { return nhom[k].lv > lv && !nhom[k].doc; });
+      if (khoa.length) {
+        var capSau = Math.min.apply(null, khoa.map(function (k) { return nhom[k].lv; }));
+        var ten = khoa.filter(function (k) { return nhom[k].lv === capSau; }).map(function (k) { return nhom[k].vn; });
+        html += '<p class="nt-sap-mo">🔒 Cấp của em: <b>' + lv + '</b> · lên <b>cấp ' + capSau + '</b> (còn ' + Math.max(0, xpCap(capSau) - s.xp) + ' kinh nghiệm) để mở: <b>' + esc(ten.join(', ')) + '</b></p>';
+      }
+    }
+    html += '<div class="nt-luoi-the">';
     if (tab === 'con') {
       Object.keys(c.CON).forEach(function (k) {
         var m = c.CON[k], sp = c.SP[m.sp];
@@ -1037,7 +1049,7 @@
     { ten: 'Gia cầm', zh: '家禽', ds: ['ga', 'vit'] },
     { ten: 'Gia súc', zh: '家畜', ds: ['bo', 'cuu', 'heo'] },
     { ten: 'Côn trùng', zh: '昆虫', ds: ['ong'] },
-    { ten: 'Thú hoang dã', zh: '野生动物', ds: ['sutu', 'ho'] },
+    { ten: 'Thú hoang dã', zh: '野生动物', ds: ['sutu', 'ho', 'gautruc'] },
     { ten: 'Thời tiền sử', zh: '史前动物', ds: ['khunglong'] },
   ];
   function veChuong(than) {
@@ -1076,7 +1088,7 @@
     });
     than.innerHTML = '<div class="nt-chuong-tong"><span>🐾 <b>' + tong.con + '</b> con</span><span class="doi">Đói <b>' + tong.doi + '</b></span><span class="xong">Có sản phẩm <b>' + tong.xong + '</b></span>' +
       (tong.xong ? '<button type="button" class="nt-mua" data-chuong-thu="">Thu hết</button>' : '') + '</div>' + html +
-      '<p class="nt-meo">Chuồng gom mọi con vật theo nhóm để em dễ quản lý. Con đói: trả lời đúng 3 câu từ vựng để cho ăn. Heo, sư tử, hổ, khủng long đắt hơn nhưng sản phẩm bán được nhiều xu.</p>';
+      '<p class="nt-meo">Chuồng gom mọi con vật theo nhóm để em dễ quản lý. Con đói: trả lời đúng 3 câu từ vựng để cho ăn. Vật nuôi quý mở theo cấp: heo cấp 10, sư tử cấp 15, hổ cấp 20, khủng long cấp 25, gấu trúc cấp 30 — đắt hơn nhưng sản phẩm bán được nhiều xu.</p>';
     $all('[data-chuong-thu]', than).forEach(function (b) {
       b.addEventListener('click', function () {
         var k = b.getAttribute('data-chuong-thu');
@@ -3230,6 +3242,7 @@
     if (S.tham) veNha();
     $('#ntThiTran').hidden = false;
     document.body.classList.add('o-thi-tran');
+    nutVeTrang();
     veNutThu();
     if (!thiTran) $('#ntTtLuoi').innerHTML = '<p class="nt-trong">Đang vẽ thị trấn…</p>';
     if (lopId && (!thiTran || thiTran.lopId !== lopId)) $('#ntTtLuoi').innerHTML = '<p class="nt-trong">Đang vẽ thị trấn…</p>';
@@ -3597,6 +3610,7 @@
     anNoiDan();
     $('#ntThiTran').hidden = true;
     document.body.classList.remove('o-thi-tran');
+    nutVeTrang();
   }
   function veNutThu() {
     var n = S.st ? S.st.nkMoi || 0 : 0;
@@ -4056,6 +4070,7 @@
     if (S.che !== 'xem') thoatDat();
     $('#ntHoCau').hidden = false;
     document.body.classList.add('o-ho-cau');
+    nutVeTrang();
     HC.chon = null; HC.kq = null; HC.xemBst = false;
     veHoCau();
     taiHoCau();
@@ -4066,6 +4081,7 @@
     h.hidden = true;
     document.body.classList.remove('o-ho-cau');
     dungDongHo();
+    nutVeTrang();
   }
   function nhanHo(r) {
     HC.d = r;
@@ -4256,7 +4272,20 @@
     $all('img', the).forEach(ganLoiAnh);
     $('#ntHcBstDong', the).addEventListener('click', function () { HC.xemBst = false; veHoCau(); });
   }
+  // Nut ← goc trai: dang o ho cau / thi tran thi quay ve nong trai, con lai ve trang hoc
+  function nutVeTrang() {
+    var a = $('.nt-ve'), ngoai = !$('#ntHoCau').hidden || !$('#ntThiTran').hidden;
+    if (!a) return;
+    $('b', a).textContent = ngoai ? 'Nông trại' : 'Học bài';
+    a.setAttribute('aria-label', ngoai ? 'Về nông trại của em' : 'Về trang học');
+  }
   function ganHoCau() {
+    $('.nt-ve').addEventListener('click', function (e) {
+      if ($('#ntHoCau').hidden && $('#ntThiTran').hidden) return;
+      e.preventDefault();
+      dongHoCau();
+      dongThiTran();
+    });
     $('#ntHoCauNut').addEventListener('click', moHoCau);
     $('#ntHoCau').addEventListener('click', function (e) {
       var ca = e.target.closest('[data-ca]');

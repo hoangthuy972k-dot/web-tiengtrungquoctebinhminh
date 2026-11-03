@@ -172,6 +172,14 @@ const TT = {
   cau: { zh: '小桥', py: 'xiǎoqiáo', vn: 'Cầu nhỏ', lv: 5, sao: 55, dep: 32, w: 2 },
   dinh: { zh: '亭子', py: 'tíngzi', vn: 'Đình nghỉ mát', lv: 6, sao: 70, dep: 45, w: 2 },
   cong: { zh: '牌坊', py: 'páifāng', vn: 'Cổng làng', lv: 7, sao: 90, dep: 60, w: 2 },
+  // Do trang tri quy: mo khoa o cap cao
+  'ao-sen': { zh: '荷花池', py: 'héhuā chí', vn: 'Hồ sen', lv: 12, sao: 110, dep: 70, w: 2 },
+  'su-tu-da': { zh: '石狮子', py: 'shí shīzi', vn: 'Sư tử đá', lv: 15, sao: 90, dep: 45 },
+  'cau-son': { zh: '红桥', py: 'hóng qiáo', vn: 'Cầu son đỏ', lv: 18, sao: 160, dep: 95, w: 2 },
+  'den-da': { zh: '石灯笼', py: 'shí dēnglong', vn: 'Đèn đá', lv: 20, sao: 110, dep: 55 },
+  bonsai: { zh: '盆景', py: 'pénjǐng', vn: 'Cây bonsai', lv: 22, sao: 130, dep: 65 },
+  'cot-rong': { zh: '龙柱', py: 'lóngzhù', vn: 'Cột rồng', lv: 25, sao: 170, dep: 85 },
+  'cung-dien': { zh: '宫殿', py: 'gōngdiàn', vn: 'Cung điện', lv: 30, sao: 400, dep: 220, w: 2 },
   // Doc quyen: chi mo khoa bang Bo suu tap chu Han (khong ban trong cua hang)
   'den-phuc': { zh: '福字灯笼', py: 'fúzì dēnglong', vn: 'Đèn lồng chữ Phúc', lv: 1, doc: 1, dep: 12 },
   'cau-doi': { zh: '春联', py: 'chūnlián', vn: 'Câu đối đỏ', lv: 1, doc: 1, dep: 18 },

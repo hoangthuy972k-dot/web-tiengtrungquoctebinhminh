@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="85" rx="35" ry="4.5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="17" y="71" width="66" height="14" rx="3" fill="#a9afb9"/>
+<path d="M17 72L23 64H77L83 72Z" fill="#cfd5dc"/>
+<rect x="29" y="74.5" width="42" height="7.5" rx="2" fill="#bcc2cb" stroke-width="2"/>
+<path d="M26 67H44" stroke="#fff" stroke-width="1.5"/>
+<path d="M34 78.3q2 -2.5 4 0t4 0M58 78.3q2 -2.5 4 0t4 0" fill="none" stroke="#8e95a1" stroke-width="1.5"/>
+</g>
+<g fill="#ffc93c" stroke="#2b1d3a" stroke-width="1.5"><circle cx="23.5" cy="78" r="1.8"/><circle cx="76.5" cy="78" r="1.8"/></g>
+<g stroke="#2b1d3a" stroke-width="6"><circle cx="74" cy="44" r="5"/><circle cx="77" cy="37.5" r="4.2"/></g>
+<g fill="#a9afb9"><circle cx="74" cy="44" r="5"/><circle cx="77" cy="37.5" r="4.2"/></g>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<ellipse cx="31" cy="57" rx="9" ry="10" fill="#a9afb9"/>
+<ellipse cx="69" cy="57" rx="9" ry="10" fill="#a9afb9"/>
+<rect x="21" y="62" width="14" height="6.5" rx="3" fill="#c3c9d2"/>
+<rect x="65" y="62" width="14" height="6.5" rx="3" fill="#c3c9d2"/>
+</g>
+<g stroke="#2b1d3a" stroke-width="6"><circle cx="64" cy="25.5" r="6.3"/><circle cx="62.1" cy="32" r="6.3"/><circle cx="57" cy="36.8" r="6.3"/><circle cx="50" cy="38.5" r="6.3"/><circle cx="43" cy="36.8" r="6.3"/><circle cx="37.9" cy="32" r="6.3"/><circle cx="36" cy="25.5" r="6.3"/><circle cx="37.9" cy="19" r="6.3"/><circle cx="43" cy="14.2" r="6.3"/><circle cx="50" cy="12.5" r="6.3"/><circle cx="57" cy="14.2" r="6.3"/><circle cx="62.1" cy="19" r="6.3"/></g>
+<g fill="#a9afb9"><circle cx="64" cy="25.5" r="6.3"/><circle cx="62.1" cy="32" r="6.3"/><circle cx="57" cy="36.8" r="6.3"/><circle cx="50" cy="38.5" r="6.3"/><circle cx="43" cy="36.8" r="6.3"/><circle cx="37.9" cy="32" r="6.3"/><circle cx="36" cy="25.5" r="6.3"/><circle cx="37.9" cy="19" r="6.3"/><circle cx="43" cy="14.2" r="6.3"/><circle cx="50" cy="12.5" r="6.3"/><circle cx="57" cy="14.2" r="6.3"/><circle cx="62.1" cy="19" r="6.3"/></g>
+<path d="M62.4 26.1a1.8 1.8 0 1 1 1.8 1.8M60.5 32.6a1.8 1.8 0 1 1 1.8 1.8M36.3 32.6a1.8 1.8 0 1 1 1.8 1.8M34.4 26.1a1.8 1.8 0 1 1 1.8 1.8M36.3 19.6a1.8 1.8 0 1 1 1.8 1.8M41.4 14.8a1.8 1.8 0 1 1 1.8 1.8M48.4 13.1a1.8 1.8 0 1 1 1.8 1.8M55.4 14.8a1.8 1.8 0 1 1 1.8 1.8M60.5 19.6a1.8 1.8 0 1 1 1.8 1.8" fill="none" stroke="#8e95a1" stroke-width="1.5" stroke-linecap="round"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M35 67Q33 50 38 39H62Q67 50 65 67Z" fill="#c3c9d2"/>
+<path d="M41 52a2 2 0 1 1 2 2M50 56a2 2 0 1 1 2 2" fill="none" stroke="#8e95a1" stroke-width="1.5"/>
+<path d="M37.5 41.5Q50 48 62.5 41.5" fill="none" stroke-width="6"/>
+<path d="M37.5 41.5Q50 48 62.5 41.5" fill="none" stroke="#d63a2f"/>
+<rect x="37" y="47" width="9" height="17" rx="3" fill="#d5dae1"/>
+<rect x="35" y="61" width="13" height="7" rx="3" fill="#d5dae1"/>
+<path d="M39.5 64.5V68M43.5 64.5V68" stroke-width="1.5"/>
+<circle cx="63" cy="61" r="7" fill="#a9afb9"/>
+<path d="M56.5 61.5Q60 57 63 61T69.5 60.5" fill="none" stroke="#8e95a1" stroke-width="1.5"/>
+<path d="M57.8 64.5Q59.5 66.8 62 67.2" fill="none" stroke="#fff" stroke-width="1.5"/>
+<rect x="56.5" y="44" width="9" height="10" rx="3" fill="#d5dae1"/>
+<rect x="55" y="49.5" width="13" height="6.5" rx="3" fill="#d5dae1"/>
+<path d="M59.5 53V56M63.5 53V56" stroke-width="1.5"/>
+<circle cx="50" cy="47" r="3.6" fill="#ffc93c" stroke-width="2"/>
+<path d="M50 48V50.5" stroke-width="1.5"/>
+<ellipse cx="50" cy="28" rx="12.5" ry="11" fill="#d5dae1"/>
+<path d="M41.5 22.5Q45 19 48.5 22.5M51.5 22.5Q55 19 58.5 22.5" fill="none" stroke-width="2.2"/>
+<circle cx="45" cy="26.5" r="3.3" fill="#fff" stroke-width="2"/>
+<circle cx="55" cy="26.5" r="3.3" fill="#fff" stroke-width="2"/>
+<path d="M42 34.5Q50 42.5 58 34.5Q50 37 42 34.5Z" fill="#8e95a1" stroke-width="2"/>
+<path d="M45.5 36.5l1 2 1 -1.6M54.5 36.5l-1 2 -1 -1.6" fill="#fff" stroke-width="1.2"/>
+<ellipse cx="50" cy="31.5" rx="4.5" ry="3" fill="#a9afb9" stroke-width="2"/>
+</g>
+<g fill="#2b1d3a"><circle cx="45.5" cy="27" r="1.6"/><circle cx="54.5" cy="27" r="1.6"/></g>
+<g fill="#fff"><circle cx="48.8" cy="30.5" r="1"/><ellipse cx="43" cy="21" rx="2" ry=".8" transform="rotate(-20 43 21)"/><circle cx="31" cy="15.5" r="1.2"/></g>
+<circle cx="48.8" cy="45.8" r="1" fill="#fff3c4"/>
+</svg>

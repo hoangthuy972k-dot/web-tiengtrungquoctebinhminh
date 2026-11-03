@@ -295,6 +295,7 @@
   function veHud() {
     var s = S.st;
     veNutVongQuay();
+    veNutHoCau();
     // so lon rut gon (12345 -> 12,3k) de cum sao / xu khong tran man dien thoai
     $('#ntSaoSo').textContent = soGon(s.sao);
     $('#ntXuSo').textContent = soGon(s.xu);
@@ -3221,6 +3222,7 @@
     $all('img', hop).forEach(ganLoiAnh);
   }
   function moThiTran(lopId) {
+    dongHoCau();
     lopId = typeof lopId === 'string' ? lopId : '';
     dongNoi();
     dongBang();
@@ -3591,6 +3593,7 @@
     }, function (e) { than.innerHTML = '<p class="nt-trong">' + esc(e.message) + '</p>'; });
   }
   function dongThiTran() {
+    dongHoCau();
     anNoiDan();
     $('#ntThiTran').hidden = true;
     document.body.classList.remove('o-thi-tran');
@@ -4022,6 +4025,259 @@
     ve();
   }
 
+  /* ---------------- Ho cau ca 钓鱼湖 (y tuong cua co giao) ----------------
+     Ca cang to, dep -> gia cang cao, cau hoi cang kho; ca be xau -> cau hoi de.
+     Cham bong ca -> tha cau (1 moi) -> phao chim -> tra loi -> keo ca len hoac ca song mat.
+     May chu giu ho ca, dap an va dong ho; o day chi ve.                                     */
+  var HC = { d: null, chon: null, dang: null, i: 0, kq: null, khoa: false, xemBst: false, cho: false, hen: null, lanCuoi: 0 };
+  var CA_SAO = ['', '★☆☆☆☆', '★★☆☆☆', '★★★☆☆', '★★★★☆', '★★★★★'];
+  function bacCa(t) { return (S.cat.CA_BAC || [])[t] || { ten: '', zh: '', so: 1, giay: 0, xp: 0, de: '' }; }
+  function caCuaBac(t) { var C = S.cat.CA || {}; return Object.keys(C).filter(function (k) { return C[k].t === t; }); }
+  function giaBac(t) {
+    var g = caCuaBac(t).map(function (k) { return S.cat.CA[k].ban; });
+    return g.length ? (Math.min.apply(null, g) === Math.max.apply(null, g) ? g[0] + '' : Math.min.apply(null, g) + '–' + Math.max.apply(null, g)) : '';
+  }
+  // bong ca nhin tu tren mat nuoc: ca cang to bong cang lon; ca dep / huyen thoai co anh vang
+  function bongCa(t) {
+    return '<svg viewBox="0 0 120 60" aria-hidden="true"><path class="nt-hc-bong-than" d="M8 30C22 8 70 6 92 26L114 12C110 24 110 36 114 48L92 34C70 54 22 52 8 30Z"/>' +
+      (t >= 4 ? '<path class="nt-hc-bong-anh" d="M30 24C44 16 64 16 78 24"/>' : '') + '</svg>';
+  }
+  function veNutHoCau() {
+    var m = S.st && S.st.cau, nut = $('#ntHoCauNut');
+    if (!m || !nut) return;
+    $('#ntHcPhu').textContent = m.con > 0 ? 'còn ' + m.con + ' mồi câu 🎣' : (m.sau ? 'học thêm ' + m.sau + ' sao → +1 mồi' : 'hết mồi · mai câu tiếp');
+    nut.classList.toggle('co-luot', m.con > 0);
+    nut.classList.toggle('het', m.con <= 0);
+  }
+  function moHoCau() {
+    dongThiTran();
+    if (S.tham) veNha();
+    dongBang();
+    if (S.che !== 'xem') thoatDat();
+    $('#ntHoCau').hidden = false;
+    document.body.classList.add('o-ho-cau');
+    HC.chon = null; HC.kq = null; HC.xemBst = false;
+    veHoCau();
+    taiHoCau();
+  }
+  function dongHoCau() {
+    var h = $('#ntHoCau');
+    if (!h || h.hidden) return;
+    h.hidden = true;
+    document.body.classList.remove('o-ho-cau');
+    dungDongHo();
+  }
+  function nhanHo(r) {
+    HC.d = r;
+    if (S.st) S.st.cau = r.moi;
+    veNutHoCau();
+  }
+  function taiHoCau() {
+    return goi('/api/farm/hocau').then(function (r) {
+      nhanHo(r);
+      // dang co ca can cau (em dong ho giua chung) -> hoi tiep
+      if (r.dang && !HC.dang && !HC.kq) { HC.dang = r.dang; HC.i = r.dang.i; HC.chon = r.dang.ca; }
+      veHoCau();
+    }, function (e) { bao(e.message, 'loi'); });
+  }
+  function dungDongHo() { if (HC.hen) { clearInterval(HC.hen); HC.hen = null; } }
+  function veHoCau() {
+    var r = HC.d, m = r ? r.moi : (S.st && S.st.cau);
+    $('#ntHcMoi').innerHTML = m ? 'mồi câu <b>' + m.con + '/' + m.co + '</b>' + (m.sau ? ' · học thêm <b>' + m.sau + ' sao</b> → +1 mồi' : '') : '';
+    veMatHo();
+    veTheCa();
+    // dien thoai: the cau hoi / ket qua nam duoi ho -> cuon xuong cho em thay
+    var the = $('#ntHcThe');
+    if ((HC.dang || HC.kq || HC.chon || HC.xemBst) && the.getBoundingClientRect().bottom > window.innerHeight) the.scrollIntoView({ block: 'end', behavior: 'smooth' });
+  }
+  // mat ho: bong ca + phao + day cau tu ben cau go
+  function veMatHo() {
+    var r = HC.d, ho = $('#ntHcHo');
+    var trangTri = '<span class="nt-hc-sen s1"></span><span class="nt-hc-sen s2"></span><span class="nt-hc-sen s3"></span>' +
+      '<span class="nt-hc-gon g1"></span><span class="nt-hc-gon g2"></span><span class="nt-hc-gon g3"></span><span class="nt-hc-gon g4"></span>' +
+      '<span class="nt-hc-co c1"></span><span class="nt-hc-co c2"></span><span class="nt-hc-da d1"></span><span class="nt-hc-da d2"></span>';
+    if (!r) { ho.innerHTML = trangTri + '<p class="nt-hc-tai">Đang tải hồ cá…</p>'; return; }
+    var ca = r.ho.map(function (c, i) {
+      var cls = 'nt-hc-ca b' + c.t + (HC.chon === c.id ? ' chon' : '') + (HC.dang && HC.dang.ca === c.id ? ' can' : '');
+      return '<button type="button" class="' + cls + '" data-ca="' + esc(c.id) + '" style="left:' + c.x + '%;top:' + c.y + '%;--lech:-' + ((i * 1.7) % 6).toFixed(1) + 's;--boi:' + (7 + (i % 4) * 1.5) + 's"' +
+        ' aria-label="' + esc(bacCa(c.t).ten) + ' — ' + CA_SAO[c.t] + '">' + bongCa(c.t) + (c.t >= 5 ? '<i class="nt-hc-lap" aria-hidden="true"></i>' : '') + '</button>';
+    }).join('');
+    var c = HC.chon && r.ho.filter(function (x) { return x.id === HC.chon; })[0];
+    var day = '';
+    if (c && (HC.cho || HC.dang)) {
+      day = '<svg class="nt-hc-day" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 104Q' + ((50 + c.x) / 2) + ' ' + (c.y - 8) + ' ' + c.x + ' ' + c.y + '" vector-effect="non-scaling-stroke"/></svg>' +
+        '<span class="nt-hc-phao' + (HC.dang ? ' can' : '') + '" style="left:' + c.x + '%;top:' + c.y + '%"></span>';
+    }
+    ho.innerHTML = trangTri + ca + day;
+    $('#ntHcNv').innerHTML = NV.svg(avEm()) + '<span class="nt-hc-can" aria-hidden="true"></span>';
+  }
+  function veTheCa() {
+    var the = $('#ntHcThe'), r = HC.d;
+    if (HC.xemBst) return veBstCa(the);
+    if (HC.kq) return veKqCa(the);
+    if (HC.dang) return veCauCa(the);
+    if (HC.cho) { the.innerHTML = '<div class="nt-hc-cho"><span class="nt-hc-cho-phao" aria-hidden="true"></span><b>Đang chờ cá cắn câu…</b><small lang="zh">等鱼上钩 děng yú shàng gōu</small></div>'; return; }
+    var c = HC.chon && r && r.ho.filter(function (x) { return x.id === HC.chon; })[0];
+    if (!c) {
+      the.innerHTML = '<div class="nt-hc-goi"><p><b>Chạm vào một bóng cá để thả câu.</b> Cá càng to, càng đẹp → bán càng nhiều xu, nhưng câu hỏi càng khó!</p><div class="nt-hc-bac">' +
+        [1, 2, 3, 4, 5].map(function (t) {
+          var b = bacCa(t);
+          return '<span class="b' + t + '"><i class="nt-hc-mau b' + t + '">' + bongCa(t) + '</i><b>' + esc(b.ten) + '</b><small>' + CA_SAO[t] + ' · ' + giaBac(t) + ' xu</small></span>';
+        }).join('') + '</div></div>';
+      return;
+    }
+    var b = bacCa(c.t), m = r.moi;
+    var loai = caCuaBac(c.t).map(function (k) { var x = S.cat.CA[k]; return '<span><span lang="zh">' + esc(x.zh) + '</span> ' + esc(x.vn) + '</span>'; }).join(' · ');
+    the.innerHTML = '<div class="nt-hc-chon b' + c.t + '"><i class="nt-hc-mau to b' + c.t + '">' + bongCa(c.t) + '</i><div class="nt-hc-chon-chu">' +
+      '<b>' + esc(b.ten) + ' <span lang="zh">' + esc(b.zh) + '</span> <span class="nt-hc-sao" aria-label="độ khó ' + c.t + '/5">' + CA_SAO[c.t] + '</span></b>' +
+      '<small>Có thể là: ' + loai + '</small>' +
+      '<small>' + esc(b.de) + '</small>' +
+      '<small>💰 Bán ' + giaBac(c.t) + ' xu · ✨ +' + b.xp + ' kinh nghiệm</small></div>' +
+      '<div class="nt-hc-chon-nut"><button type="button" class="nt-nut nt-nut-xanh nt-nut-to" id="ntHcTha"' + (m.con > 0 ? '' : ' disabled') + '>🎣 Thả câu</button>' +
+      '<small>' + (m.con > 0 ? 'tốn 1 mồi · còn ' + m.con : (m.sau ? 'Hết mồi — học thêm ' + m.sau + ' sao' : 'Hết mồi hôm nay')) + '</small>' +
+      '<button type="button" class="nt-nut" id="ntHcBo">Chọn con khác</button></div></div>';
+    $('#ntHcBo', the).addEventListener('click', function () { HC.chon = null; veHoCau(); });
+    $('#ntHcTha', the).addEventListener('click', function () { thaCau(c); });
+  }
+  function thaCau(c) {
+    if (HC.cho) return;
+    HC.cho = true;
+    tieng('mua');
+    veHoCau();
+    var batDau = Date.now();
+    goi('/api/farm/hocau/tha', { id: c.id }).then(function (r) {
+      nhanHo(r.ho);
+      // cho phao chim mot chut roi moi hien cau hoi (may chu cung cho 1,5 giay)
+      setTimeout(function () {
+        HC.cho = false; HC.dang = r.dang; HC.i = r.dang.i;
+        tieng('dung');
+        if ($('#ntHoCau').hidden) return;
+        veHoCau();
+        bao('🐟 Cá cắn câu rồi! 鱼上钩了！');
+      }, Math.max(0, 1500 - (Date.now() - batDau)));
+    }, function (e) {
+      HC.cho = false;
+      bao(e.message, 'loi');
+      if (/bơi đi/.test(e.message)) { HC.chon = null; taiHoCau(); } else veHoCau();
+    });
+  }
+  function veCauCa(the) {
+    var g = HC.dang, q = g.ds[HC.i], h = q.hoi, b = bacCa(g.t);
+    var deBai = q.k === 'nghia' ? '<div class="nt-ch-vn">' + esc(h.vn) + '</div>'
+      : q.k === 'thieu' ? '<div class="nt-ch-zh" lang="zh">' + esc(h.thieu).replace('＿', '<span class="nt-ch-o">？</span>') + '</div><div class="nt-ch-goi">' + esc(h.vn) + '</div>'
+      : '<div class="nt-ch-zh" lang="zh">' + esc(h.zh) + '</div>' + (h.py ? '<div class="nt-ch-goi">' + esc(h.py) + '</div>' : '');
+    var laZh = q.k === 'nghia' || q.k === 'thieu';
+    the.innerHTML = '<div class="nt-ch nt-hc-cau">' +
+      '<div class="nt-ch-dau"><span>🎣 ' + esc(b.ten) + ' ' + CA_SAO[g.t] + '</span>' + (g.so > 1 ? '<span>Câu ' + (HC.i + 1) + '/' + g.so + '</span>' : '') + '</div>' +
+      (g.giay ? '<div class="nt-hc-gio" aria-hidden="true"><i id="ntHcGio"></i></div>' : '') +
+      '<p class="nt-ch-kieu">' + TEN_KIEU_CH[q.k] + (g.so > 1 ? ' — sai 1 câu là cá sổng!' : '') + '</p>' + deBai +
+      '<div class="nt-ch-lua' + (laZh ? ' zh' : '') + '">' + q.lua.map(function (l, j) {
+        return '<button type="button" data-hc="' + j + '"' + (laZh ? ' lang="zh"' : '') + '>' + esc(l) + '</button>';
+      }).join('') + '</div><p class="nt-ch-giai" id="ntHcGiai" aria-live="polite"></p>' +
+      (g.nguon ? '<p class="nt-ch-nguon">Từ: ' + esc(g.nguon) + '</p>' : '') + '</div>';
+    HC.khoa = false;
+    dungDongHo();
+    if (g.giay) {
+      var het = Date.now() + (HC.i === g.i && g.conMs ? g.conMs : g.giay * 1000), tong = g.giay * 1000;
+      g.conMs = 0;
+      var chay = function () {
+        var con = het - Date.now(), v = $('#ntHcGio');
+        if (v) { v.style.width = Math.max(0, Math.min(100, con / tong * 100)) + '%'; v.classList.toggle('gap', con < 5000); }
+        if (con <= 0) { dungDongHo(); if (!HC.khoa) traLoiCa(-1, the); }
+      };
+      chay();
+      HC.hen = setInterval(chay, 200);
+    }
+    $all('[data-hc]', the).forEach(function (bt) {
+      bt.addEventListener('click', function () { traLoiCa(+bt.getAttribute('data-hc'), the); });
+    });
+  }
+  function traLoiCa(chon, the) {
+    if (HC.khoa) return;
+    HC.khoa = true;
+    dungDongHo();
+    var g = HC.dang;
+    goi('/api/farm/hocau/tl', { id: g.id, i: HC.i, chon: chon }).then(function (r) {
+      $all('[data-hc]', the).forEach(function (x, j) { x.disabled = true; x.classList.add(j === r.dap ? 'dung' : j === chon ? 'sai' : 'mo'); });
+      $('#ntHcGiai', the).innerHTML = (r.cham ? '⏰ Hết giờ! ' : '') + '<b lang="zh">' + esc(r.zh) + '</b> ' + esc(r.py) + ' — ' + esc(r.vn);
+      doc(r.zh);
+      if (r.dung) tieng('dung'); else tieng('sai');
+      var tiep = function () {
+        if (r.ho) nhanHo(r.ho);
+        if (r.st) nhanTrangThai(r.st);
+        if (r.bat || r.song) {
+          HC.kq = r; HC.dang = null;
+          if (r.bat) { tieng('len'); var x = S.cat.CA[r.bat.k]; setTimeout(function () { doc(x.zh); }, 400); }
+        } else HC.i++;
+        if (!$('#ntHoCau').hidden) veHoCau();
+      };
+      setTimeout(tiep, r.dung ? 1000 : 2000);
+    }, function (e) {
+      HC.khoa = false;
+      bao(e.message, 'loi');
+      if (/kết thúc/.test(e.message)) { HC.dang = null; HC.chon = null; taiHoCau(); }
+    });
+  }
+  function veKqCa(the) {
+    var r = HC.kq, html;
+    if (r.bat) {
+      var x = S.cat.CA[r.bat.k];
+      html = '<div class="nt-hc-kq bat b' + r.bat.t + '">' +
+        '<div class="nt-hc-kq-hinh">' + img('sp-' + r.bat.k) + '</div>' +
+        '<div class="nt-hc-kq-chu"><span class="nt-hc-tieu" lang="zh">钓到了！</span>' +
+        '<b><span lang="zh">' + esc(x.zh) + '</span> ' + esc(x.py) + '</b><small>' + esc(x.vn) + ' · dài <b>' + r.bat.cm + ' cm</b></small>' +
+        '<span class="nt-hc-huy">' + (r.bat.moi ? '<i class="moi">🆕 Loài mới trong bộ sưu tập!</i>' : '') + (r.bat.kyLuc ? '<i class="ky">🏆 Kỷ lục mới!</i>' : '') + '</span>' +
+        '<small>Đã cất vào <b>Kho</b> · bán được ' + x.ban + ' xu</small></div></div>';
+    } else {
+      html = '<div class="nt-hc-kq song"><div class="nt-hc-kq-hinh nt-hc-bong-song">' + bongCa(HC.chonT || 2) + '</div>' +
+        '<div class="nt-hc-kq-chu"><span class="nt-hc-tieu" lang="zh">鱼跑了！</span><b>Cá sổng mất rồi!</b>' +
+        '<small>' + (r.cham ? 'Hết giờ mất rồi.' : 'Đáp án đúng:') + ' <b lang="zh">' + esc(r.zh) + '</b> ' + esc(r.py) + ' — ' + esc(r.vn) + '</small>' +
+        '<small>Ôn lại từ này rồi thử con khác nhé — cá bé dễ câu hơn!</small></div></div>';
+    }
+    the.innerHTML = html + '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh" id="ntHcTiep">🎣 Câu tiếp</button>' +
+      (r.bat ? '<button type="button" class="nt-nut" id="ntHcKho">Bán cá ở Kho</button>' : '') + '</div>';
+    $all('img', the).forEach(ganLoiAnh);
+    $('#ntHcTiep', the).addEventListener('click', function () { HC.kq = null; HC.chon = null; veHoCau(); });
+    var k = $('#ntHcKho', the);
+    if (k) k.addEventListener('click', function () { HC.kq = null; HC.chon = null; dongHoCau(); moBang('kho', 'sp'); });
+  }
+  function veBstCa(the) {
+    var C = S.cat.CA || {}, bst = (HC.d && HC.d.bst) || {};
+    var ds = Object.keys(C).sort(function (a, b) { return C[a].t - C[b].t || C[a].ban - C[b].ban; });
+    var co = ds.filter(function (k) { return bst[k]; }).length;
+    the.innerHTML = '<div class="nt-hc-bst"><div class="nt-hc-bst-dau"><b>📖 Bộ sưu tập cá <span lang="zh">鱼类图鉴</span></b><span>' + co + '/' + ds.length + ' loài</span>' +
+      '<button type="button" class="nt-nut" id="ntHcBstDong">Đóng</button></div><div class="nt-hc-bst-ds">' +
+      ds.map(function (k) {
+        var x = C[k], b = bst[k];
+        return '<div class="nt-hc-o' + (b ? '' : ' chua') + '">' + img('sp-' + k) + '<span class="nt-hc-sao">' + CA_SAO[x.t] + '</span>' +
+          (b ? '<b><span lang="zh">' + esc(x.zh) + '</span> ' + esc(x.py) + '</b><small>' + esc(x.vn) + '</small><small>×' + b[0] + ' · lớn nhất ' + b[1] + ' cm</small>'
+            : '<b>？？？</b><small>' + esc(bacCa(x.t).ten) + '</small><small>chưa câu được</small>') + '</div>';
+      }).join('') + '</div></div>';
+    $all('img', the).forEach(ganLoiAnh);
+    $('#ntHcBstDong', the).addEventListener('click', function () { HC.xemBst = false; veHoCau(); });
+  }
+  function ganHoCau() {
+    $('#ntHoCauNut').addEventListener('click', moHoCau);
+    $('#ntHoCau').addEventListener('click', function (e) {
+      var ca = e.target.closest('[data-ca]');
+      if (ca) {
+        if (HC.dang || HC.cho) { bao('Em đang kéo một con cá — trả lời xong đã nhé!'); return; }
+        HC.chon = ca.getAttribute('data-ca'); HC.kq = null; HC.xemBst = false;
+        var c = HC.d.ho.filter(function (x) { return x.id === HC.chon; })[0];
+        HC.chonT = c ? c.t : 1;
+        tieng('thu');
+        veHoCau();
+        return;
+      }
+      var t = e.target.closest('[data-hc-nut]');
+      if (!t) return;
+      var k = t.getAttribute('data-hc-nut');
+      if (k === 've') dongHoCau();
+      else if (k === 'bst') { HC.xemBst = true; veHoCau(); }
+      else if (k === 'kho') { dongHoCau(); moBang('kho', 'sp'); }
+    });
+  }
+
   /* ---------------- khoi dong ---------------- */
   function ganSuKien() {
     $('#ntDat').addEventListener('click', bamBanDo);
@@ -4046,6 +4302,7 @@
     $('#ntMuc').addEventListener('click', function () { dongThiTran(); if (S.tham) veNha(); moBang('hoc', 'muc'); });
     $('#ntChuHan').addEventListener('click', function () { dongThiTran(); if (S.tham) veNha(); moBang('hoc', 'chuhan'); });
     $('#ntVongQuay').addEventListener('click', function () { dongThiTran(); if (S.tham) veNha(); VQ.qua = null; moBang('vongquay'); });
+    ganHoCau();
     $('#ntNvNut').addEventListener('click', function () { dongThiTran(); if (S.tham) veNha(); moNhanVat(); });
     $('#ntLv').addEventListener('click', function () {
       var s = S.st;
@@ -4104,6 +4361,7 @@
       if (e.key !== 'Escape') return;
       if (!$('#ntHoi').hidden) dongHoi();
       else if (bangDang) dongBang();
+      else if (!$('#ntHoCau').hidden) { if (HC.xemBst) { HC.xemBst = false; veHoCau(); } else dongHoCau(); }
       else if (!$('#ntThiTran').hidden) dongThiTran();
       else if (noiCua) dongNoi();
       else if (S.che !== 'xem') thoatDat();

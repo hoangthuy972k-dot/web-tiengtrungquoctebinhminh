@@ -97,9 +97,34 @@ Object.keys(MON).forEach((k) => {
   const goc = Object.keys(m.can).reduce((t, x) => t + SP[x].ban * m.can[x], 0);
   SP[k] = { zh: m.zh, py: m.py, vn: m.vn, ban: Math.round(goc * 1.6), hinh: m.hinh, mon: 1 };
 });
+// Ho cau ca 钓鱼湖 (y tuong cua co giao): ca cang to, dep -> gia cang cao, cau hoi cang kho; ca be xau -> cau hoi de.
+// t = bac 1..5, cm = khoang kich thuoc. Ca cau duoc vao kho nhu nong san (ban, bay sap, tang ban duoc).
+const CA = {
+  cacon: { zh: '小鱼', py: 'xiǎoyú', vn: 'Cá con', t: 1, ban: 4, cm: [5, 12] },
+  cachach: { zh: '泥鳅', py: 'níqiu', vn: 'Cá chạch', t: 1, ban: 5, cm: [8, 18] },
+  cadiec: { zh: '鲫鱼', py: 'jìyú', vn: 'Cá diếc', t: 2, ban: 10, cm: [12, 25] },
+  catram: { zh: '草鱼', py: 'cǎoyú', vn: 'Cá trắm cỏ', t: 2, ban: 12, cm: [25, 50] },
+  cachep: { zh: '鲤鱼', py: 'lǐyú', vn: 'Cá chép', t: 3, ban: 22, cm: [30, 60] },
+  cavuoc: { zh: '鲈鱼', py: 'lúyú', vn: 'Cá vược', t: 3, ban: 25, cm: [30, 65] },
+  cavang: { zh: '金鱼', py: 'jīnyú', vn: 'Cá vàng', t: 4, ban: 45, cm: [15, 30] },
+  cakoi: { zh: '锦鲤', py: 'jǐnlǐ', vn: 'Cá koi', t: 4, ban: 55, cm: [45, 85] },
+  carong: { zh: '金龙鱼', py: 'jīnlóngyú', vn: 'Cá rồng vàng', t: 5, ban: 120, cm: [70, 110] },
+};
+Object.keys(CA).forEach((k) => { const c = CA[k]; SP[k] = { zh: c.zh, py: c.py, vn: c.vn, ban: c.ban, ca: c.t }; });
+// Bac ca: w = ti le xuat hien trong ho; so cau, so lua chon, nhieu "giong" (kho), gioi han giay moi cau
+const CA_BAC = [null,
+  { ten: 'Cá bé', zh: '小鱼', w: 32, so: 1, lua: 3, giong: false, giay: 0, xp: 1, de: 'Dễ: xem chữ Hán + pinyin, chọn nghĩa' },
+  { ten: 'Cá vừa', zh: '中鱼', w: 27, so: 1, lua: 4, giong: false, giay: 0, xp: 2, de: 'Vừa: chữ Hán không pinyin ↔ nghĩa' },
+  { ten: 'Cá to', zh: '大鱼', w: 20, so: 1, lua: 4, giong: true, giay: 30, xp: 3, de: 'Khó: đáp án gần giống nhau, 30 giây' },
+  { ten: 'Cá đẹp hiếm', zh: '漂亮的鱼', w: 14, so: 2, lua: 4, giong: true, giay: 20, xp: 5, de: 'Rất khó: 2 câu liền, từ em hay sai, 20 giây/câu' },
+  { ten: 'Cá huyền thoại', zh: '传说中的鱼', w: 7, so: 3, lua: 4, giong: true, giay: 15, xp: 8, de: 'Siêu khó: 3 câu liền, điền chữ + pinyin, 15 giây/câu' },
+];
+// Moi cau moi ngay: 3 + 1 moi 10 sao hoc hom nay (toi da 15); ho luon co 7 bong ca
+const MOI_CO_BAN = 3, MOI_MOI_SAO = 10, MOI_TOI_DA = 15, HO_SO_CA = 7;
 // Luong tu khi goi ten hang bang tieng Trung (don dac biet): 三个鸡蛋、两瓶牛奶…
 const LUONG = { lua: '斤', carot: '根', ngo: '根', caibap: '棵', dautay: '个', huongduong: '朵', bido: '个', cachua: '个', khoaitay: '个', duahau: '个', nho: '串', songlu: '个', menpiao: '张', jinianpin: '个', kongdan: '个', trung: '个', trungvit: '个',
   sua: '瓶', len: '斤', mat: '瓶', com: '碗', 'nuoc-carot': '杯', 'com-rang': '份', 'chao-bi': '碗', 'canh-ngo': '碗', 'sui-cao': '盘', 'sua-mat': '杯', 'banh-dau': '个' };
+Object.keys(CA).forEach((k) => { LUONG[k] = '条'; });
 const SO_ZH = ['', '一', '两', '三', '四', '五'];
 // Bang "Can mua" o cho cong dong: moi em toi da 2 tin, xu giu lai khi dang, qua 2 ngay tu huy tra xu
 const CAN_TOI_DA = 2, CAN_SL_TOI_DA = 5, CAN_HAN_MS = 2 * 86400000;
@@ -115,7 +140,7 @@ const MAC_CA = [
 const VN_MAC_CA = { '这个多少钱？': 'Cái này bao nhiêu tiền?', '这个怎么卖？': 'Cái này bán thế nào?', '太贵了，便宜一点儿吧！': 'Đắt quá, rẻ chút đi!',
   '能便宜一点儿吗？': 'Rẻ chút được không?', '好，我买了。': 'Được, tôi mua.', '好的，我要这个。': 'Được, tôi lấy cái này.' };
 const SO_PY = ['', 'yì', 'liǎng', 'sān', 'sì', 'wǔ'];
-const LUONG_PY = { '斤': 'jīn', '根': 'gēn', '棵': 'kē', '个': 'ge', '朵': 'duǒ', '瓶': 'píng', '碗': 'wǎn', '杯': 'bēi', '份': 'fèn', '盘': 'pán', '串': 'chuàn', '张': 'zhāng' };
+const LUONG_PY = { '斤': 'jīn', '根': 'gēn', '棵': 'kē', '个': 'ge', '朵': 'duǒ', '瓶': 'píng', '碗': 'wǎn', '杯': 'bēi', '份': 'fèn', '盘': 'pán', '串': 'chuàn', '张': 'zhāng', '条': 'tiáo' };
 
 // Do trang tri: tra bang sao hoac xu; dep = diem "dep" cua nong trai; w = 2 la vat 2x2
 const TT = {
@@ -584,6 +609,7 @@ module.exports = function ganNongTrai(app, d) {
       sao: Math.max(0, (sv.total || 0) - (f.saoTieu || 0)),
       hoc: { homNay: sh.homNay, tuan: sh.tuan, ruong: ruongDaMo(f), tong: sv.total || 0 },
       vq: vongQuay(f, sh.homNay),
+      cau: moiCa({ n: f.hc && f.hc.d === ngay ? f.hc.n || 0 : 0 }, sh.homNay),
       ban: { da: daBanHomNay(f), toiDa: BAN_CO_BAN + BAN_MOI_SAO * sh.homNay },
       the: soThe(f), theMoc: f.theMoc || 0,
       xu: f.xu, xp: f.xp, lv, xpLv: xpCuaLv(lv), xpSau: xpCuaLv(lv + 1),
@@ -961,7 +987,7 @@ module.exports = function ganNongTrai(app, d) {
       if (o.loai === 'xu') { f.xu += o.n; them.xu += o.n; }
       else if (o.loai === 'luot') { v.them = (v.them || 0) + 1; }
       else if (o.loai === 'sp') {
-        const k = chon(Object.keys(SP).filter((x) => CAY[x] ? CAY[x].lv <= lv + 1 : !MON[x]));
+        const k = chon(Object.keys(SP).filter((x) => CAY[x] ? CAY[x].lv <= lv + 1 : !MON[x] && !CA[x]));
         congSp(k, o.n); qua = { loai: 'sp', k, n: o.n };
       } else {
         const con = o.loai === 'con' ? Object.keys(CON).filter((k) => CON[k].lv <= lv + 1 && f.o.filter((x) => x.k === k).length + (f.tui[k] || 0) < CON_TOI_DA) : [];
@@ -982,7 +1008,7 @@ module.exports = function ganNongTrai(app, d) {
     return { ok: true, them, lenCap: st.lv > lvCu ? st.lv : 0, st };
   }
 
-  const CATALOG = { VQ_O, VQ_MOC, CAN_TOI_DA, CAN_SL_TOI_DA, MON, LUONG, LUONG_PY, CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO, RUONG,
+  const CATALOG = { CA, CA_BAC, VQ_O, VQ_MOC, CAN_TOI_DA, CAN_SL_TOI_DA, MON, LUONG, LUONG_PY, CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO, RUONG,
     MOC_THE, HOC_VI, THE_DUNG, BAN_CO_BAN, BAN_MOI_SAO, TAI, TAI_GIUP_XU,
     TIN_TU, TIN_MAU, TIN_HOI, TIN_BAN_NGAY, QUA_NGAY };
 
@@ -997,7 +1023,7 @@ module.exports = function ganNongTrai(app, d) {
     let cho = {};
     try { (await taiCongDong()).forEach((x) => { if (x.id !== userId) x.sap.forEach((o) => { cho[o.k] = (cho[o.k] || 0) + o.n; }); }); } catch (e) { cho = {}; }
     let ung = Object.keys(cho).filter((k) => SP[k] && k !== 'len' && !tuLam(k));
-    if (!ung.length) ung = Object.keys(SP).filter((k) => k !== 'len' && !tuLam(k));
+    if (!ung.length) ung = Object.keys(SP).filter((k) => k !== 'len' && !CA[k] && !tuLam(k));
     if (!ung.length) ung = Object.keys(MON);
     const can = {};
     tronMang(ung).slice(0, Math.random() < 0.5 ? 1 : 2).forEach((k) => { can[k] = Math.max(1, Math.min(3, cho[k] || 2, 1 + Math.floor(Math.random() * 3))); });
@@ -1284,7 +1310,8 @@ module.exports = function ganNongTrai(app, d) {
     return ds.filter((v) => v.zh !== tu.zh).map((v) => ({ v, dd: giong(tu, v) })).sort((x, y) => y.dd - x.dd)
       .map((x) => x.v).filter((v) => { const k = khoa(v); if (!k || thay[k]) return false; thay[k] = 1; return true; }).slice(0, n);
   }
-  async function deChuHan(user) {
+  // Bo tu em dang hoc (cac bai on gan nhat), tu hay sai, kho chu de ra cau "dien chu"
+  async function tuHocCua(user) {
     const on = await d.baiOnCua(user);
     let tu = [], thay = {};
     (on.urls || []).forEach((u) => d.tuVungBai(u).forEach((v) => { if (!thay[v.zh] && /^[㐀-鿿]{1,4}$/.test(v.zh)) { thay[v.zh] = 1; tu.push(v); } }));
@@ -1295,34 +1322,62 @@ module.exports = function ganNongTrai(app, d) {
       nguon = 'Tên các món trong nông trại';
     }
     nguon = nguon.replace(/^Ôn từ /, '');
+    return { tu, nguon, sai: (on.sai || []).filter((z) => thay[z]), chu: [...new Set(tu.map((v) => v.zh).join('').split(''))] };
+  }
+  // nhieu de: chon ngau nhien (khong can giong)
+  function ngauNhien(ds, tu, n, khoa) {
+    const thay = {}; thay[khoa(tu)] = 1;
+    return tronMang(ds.filter((v) => v.zh !== tu.zh)).filter((v) => { const k = khoa(v); if (!k || thay[k]) return false; thay[k] = 1; return true; }).slice(0, n);
+  }
+  // 1 cau hoi ve tu v: k = nghia | py | chu | thieu; n = so lua chon; kho = dap an nhieu gan giong; goiPy = hien pinyin (cau de)
+  function taoCau(bo, v, k, n, kho, goiPy) {
+    const tu = bo.tu, chonNhieu = kho ? nhieu : ngauNhien;
+    if (k === 'thieu' && v.zh.length < 2) k = 'nghia';
+    if (k === 'py' && !v.py) k = 'chu';
+    let hoi, lua, dap;
+    if (k === 'nghia') {        // nghia tieng Viet -> chon chu Han
+      lua = [v.zh].concat(chonNhieu(tu, v, n - 1, (x) => x.zh).map((x) => x.zh));
+      hoi = { vn: v.vn }; dap = v.zh;
+    } else if (k === 'py') {    // chu Han -> chon pinyin
+      lua = [v.py].concat(chonNhieu(tu.filter((x) => x.py), v, n - 1, (x) => x.py.toLowerCase()).map((x) => x.py));
+      hoi = { zh: v.zh }; dap = v.py;
+    } else if (k === 'chu') {   // chu Han -> chon nghia
+      lua = [v.vn].concat(chonNhieu(tu, v, n - 1, (x) => x.vn).map((x) => x.vn));
+      hoi = goiPy && v.py ? { zh: v.zh, py: v.py } : { zh: v.zh }; dap = v.vn;
+    } else {                     // tu thieu 1 chu -> chon chu con thieu
+      const vt = Math.floor(Math.random() * v.zh.length), c = v.zh[vt];
+      const khac = tronMang(bo.chu.filter((x) => v.zh.indexOf(x) < 0)).slice(0, n - 1);
+      lua = [c].concat(khac);
+      hoi = { thieu: v.zh.slice(0, vt) + '＿' + v.zh.slice(vt + 1), vn: v.vn }; dap = c;
+    }
+    lua = tronMang(lua.filter((x, j, a) => x && a.indexOf(x) === j));
+    return { k, hoi, lua, dap: lua.indexOf(dap), zh: v.zh, py: v.py, vn: v.vn };
+  }
+  const cauDung = (q) => q.lua.length >= 2 && q.dap >= 0;
+  async function deChuHan(user) {
+    const bo = await tuHocCua(user), tu = bo.tu, sai = bo.sai;
     // tu hay sai uu tien vao de
-    const sai = (on.sai || []).filter((z) => thay[z]);
     const chon = tronMang(tu.filter((v) => sai.indexOf(v.zh) >= 0)).slice(0, 4).concat(tronMang(tu.filter((v) => sai.indexOf(v.zh) < 0))).slice(0, CH_SO);
     const kieu = tronMang(['nghia', 'nghia', 'nghia', 'py', 'py', 'py', 'thieu', 'thieu', 'chu', 'chu']);
-    const chuCuaBo = [...new Set(tu.map((v) => v.zh).join('').split(''))];
-    return { nguon, ds: chon.map((v, i) => {
-      let k = kieu[i];
-      if (k === 'thieu' && v.zh.length < 2) k = 'nghia';
-      if (k === 'py' && !v.py) k = 'chu';
-      let hoi, lua, dap;
-      if (k === 'nghia') {        // nghia tieng Viet -> chon chu Han
-        lua = [v.zh].concat(nhieu(tu, v, 3, (x) => x.zh).map((x) => x.zh));
-        hoi = { vn: v.vn }; dap = v.zh;
-      } else if (k === 'py') {    // chu Han -> chon pinyin
-        lua = [v.py].concat(nhieu(tu.filter((x) => x.py), v, 3, (x) => x.py.toLowerCase()).map((x) => x.py));
-        hoi = { zh: v.zh }; dap = v.py;
-      } else if (k === 'chu') {   // chu Han -> chon nghia
-        lua = [v.vn].concat(nhieu(tu, v, 3, (x) => x.vn).map((x) => x.vn));
-        hoi = { zh: v.zh }; dap = v.vn;
-      } else {                     // tu thieu 1 chu -> chon chu con thieu
-        const vt = Math.floor(Math.random() * v.zh.length), c = v.zh[vt];
-        const khac = tronMang(chuCuaBo.filter((x) => v.zh.indexOf(x) < 0)).slice(0, 3);
-        lua = [c].concat(khac);
-        hoi = { thieu: v.zh.slice(0, vt) + '＿' + v.zh.slice(vt + 1), vn: v.vn }; dap = c;
-      }
-      lua = tronMang(lua.filter((x, j, a) => x && a.indexOf(x) === j));
-      return { k, hoi, lua, dap: lua.indexOf(dap), zh: v.zh, py: v.py, vn: v.vn };
-    }).filter((q) => q.lua.length >= 2 && q.dap >= 0) };
+    return { nguon: bo.nguon, ds: chon.map((v, i) => taoCau(bo, v, kieu[i], 4, true)).filter(cauDung) };
+  }
+  // De cho 1 con ca bac t: ca cang to -> nhieu cau hon, dap an giong nhau hon, uu tien tu em hay sai / tu dai
+  const KIEU_CA = [null, ['chu'], ['chu', 'nghia'], ['nghia', 'py'], ['py', 'thieu', 'nghia'], ['thieu', 'py', 'nghia']];
+  async function deCa(user, t) {
+    const bo = await tuHocCua(user), bac = CA_BAC[t];
+    const sai = tronMang(bo.tu.filter((v) => bo.sai.indexOf(v.zh) >= 0));
+    const thuong = tronMang(bo.tu.filter((v) => bo.sai.indexOf(v.zh) < 0));
+    const ds = t >= 4 ? sai.concat(thuong.sort((a, b) => b.zh.length - a.zh.length)) : t === 3 ? thuong.concat(sai) : thuong.sort((a, b) => a.zh.length - b.zh.length).concat(sai);
+    // ca be: lay trong nua tu ngan/de; ca to: lay tu dau danh sach (tu sai, tu dai)
+    const nguon = t <= 2 ? tronMang(ds.slice(0, Math.max(6, Math.ceil(ds.length / 2)))) : ds;
+    const kieu = tronMang(KIEU_CA[t]);
+    const cau = [];
+    for (const v of nguon) {
+      if (cau.length >= bac.so) break;
+      const q = taoCau(bo, v, kieu[cau.length % kieu.length], bac.lua, bac.giong, t === 1);
+      if (cauDung(q)) cau.push(q);
+    }
+    return { nguon: bo.nguon, ds: cau };
   }
   // Hop qua: nong san / do trang tri / xu / vat nuoi (hiem). Diem tuyet doi -> khong ra loai thuong
   function moQua(f, lv, tuyetDoi) {
@@ -1338,7 +1393,7 @@ module.exports = function ganNongTrai(app, d) {
       return { loai: 'tt', k, n: 1, hiem: r >= 85 ? 'Quý' : 'Đẹp' };
     }
     if (r >= 45) { const n = 20 + Math.floor(Math.random() * 21); f.xu += n; return { loai: 'xu', k: 'xu', n, hiem: 'Thường' }; }
-    const sp = Object.keys(SP).filter((k) => !CAY[k] || CAY[k].lv <= lv + 1);
+    const sp = Object.keys(SP).filter((k) => !CA[k] && (!CAY[k] || CAY[k].lv <= lv + 1));
     const k = chon(sp), n = CAY[k] ? 3 : 2;
     f.kho[k] = (f.kho[k] || 0) + n;
     return { loai: 'sp', k, n, hiem: 'Thường' };
@@ -1411,6 +1466,106 @@ module.exports = function ganNongTrai(app, d) {
       }
       await ghi(req.user.id, f);
       if (kq.ketThuc || kq.mocMoi) kq.st = await trangThai(req.user.id, f);
+      return kq;
+    }));
+  }));
+
+  /* ---------------- Ho cau ca 钓鱼湖 ----------------
+     Ho co 7 bong ca (bac 1..5, to dan). Chon bong -> tha cau (ton 1 moi) -> tra loi cau hoi theo bac:
+     dung het = cau duoc ca (vao kho, ghi bo suu tap + ky luc cm); sai / qua gio = ca song mat.
+     May chu giu dap an va dong ho -> khong gian lan duoc.                                           */
+  const tongWCa = CA_BAC.reduce((a, b) => a + (b ? b.w : 0), 0);
+  function caMoi(t) {
+    if (!t) { let r = Math.random() * tongWCa; t = 1; while (t < 5 && r >= CA_BAC[t].w) { r -= CA_BAC[t].w; t++; } }
+    return { id: Math.random().toString(36).slice(2, 9), t, x: 8 + Math.floor(Math.random() * 84), y: 14 + Math.floor(Math.random() * 62) };
+  }
+  function hoCa(f) {
+    const ngay = d.vnDayKey();
+    const hc = f.hc = f.hc || {};
+    if (hc.d !== ngay) { hc.d = ngay; hc.n = 0; }
+    if (!Array.isArray(hc.ho)) hc.ho = [];
+    hc.bst = hc.bst || {};
+    // luon co it nhat 2 ca be/vua cho ban moi hoc
+    while (hc.ho.length < HO_SO_CA) hc.ho.push(caMoi(hc.ho.filter((c) => c.t <= 2).length < 2 ? 1 + Math.floor(Math.random() * 2) : 0));
+    return hc;
+  }
+  function moiCa(hc, homNay) {
+    const them = Math.floor(homNay / MOI_MOI_SAO), co = Math.min(MOI_TOI_DA, MOI_CO_BAN + them);
+    return { co, da: hc.n, con: Math.max(0, co - hc.n), sau: co >= MOI_TOI_DA ? 0 : (them + 1) * MOI_MOI_SAO - homNay };
+  }
+  const dangCaChoHs = (g) => ({ id: g.id, t: g.t, ca: g.ca, i: g.tl.length, so: g.ds.length, giay: CA_BAC[g.t].giay, nguon: g.nguon,
+    conMs: CA_BAC[g.t].giay ? Math.max(0, g.bd + CA_BAC[g.t].giay * 1000 - Date.now()) : 0,
+    ds: g.ds.map((q) => ({ k: q.k, hoi: q.hoi, lua: q.lua })) });
+  const hoChoHs = (hc, homNay) => ({ ho: hc.ho, moi: moiCa(hc, homNay), bst: hc.bst, dang: hc.dang ? dangCaChoHs(hc.dang) : null });
+  const homNayCua = async (userId) => saoHoc(await d.loadStar(userId)).homNay;
+
+  app.get('/api/farm/hocau', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const homNay = await homNayCua(req.user.id);
+    res.json(await lanLuot(req.user.id, async () => {
+      const f = await doc(req.user.id);
+      const truoc = JSON.stringify(f.hc || null);
+      const hc = hoCa(f);
+      if (JSON.stringify(hc) !== truoc) await ghi(req.user.id, f);
+      return hoChoHs(hc, homNay);
+    }));
+  }));
+  app.post('/api/farm/hocau/tha', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const b = req.body || {};
+    const homNay = await homNayCua(req.user.id);
+    await traLoi(res, lanLuot(req.user.id, async () => {
+      const f = await doc(req.user.id);
+      const hc = hoCa(f);
+      const c = hc.ho.find((x) => x.id === String(b.id || ''));
+      if (!c) throw loi('Con cá này bơi đi mất rồi — chọn con khác nhé!');
+      if (hc.dang && hc.dang.ca === c.id) return { ok: true, dang: dangCaChoHs(hc.dang), ho: hoChoHs(hc, homNay) };
+      const m = moiCa(hc, homNay);
+      if (m.con <= 0) throw loi(m.sau ? 'Hết mồi câu rồi — học thêm ' + m.sau + ' sao nữa để có thêm 1 mồi nhé!' : 'Hôm nay em dùng hết ' + MOI_TOI_DA + ' mồi rồi — mai câu tiếp nhé!');
+      const de = await deCa(req.user, c.t);
+      if (de.ds.length < CA_BAC[c.t].so) throw loi('Chưa đủ từ vựng để ra câu hỏi — học thêm bài rồi quay lại nhé!');
+      // dang cau con khac ma bo do -> con do bơi mất
+      if (hc.dang) { const cu = hc.dang.ca; hc.ho = hc.ho.filter((x) => x.id !== cu); }
+      hc.n++;
+      // 1,5 giay dau la luc phao chim (ca can cau) -> dong ho bat dau sau do
+      hc.dang = { id: Math.random().toString(36).slice(2, 10), ca: c.id, t: c.t, ds: de.ds, tl: [], bd: Date.now() + 1500, nguon: de.nguon };
+      hoCa(f);
+      await ghi(req.user.id, f);
+      return { ok: true, dang: dangCaChoHs(hc.dang), ho: hoChoHs(hc, homNay) };
+    }));
+  }));
+  app.post('/api/farm/hocau/tl', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const b = req.body || {};
+    const homNay = await homNayCua(req.user.id);
+    await traLoi(res, lanLuot(req.user.id, async () => {
+      const f = await doc(req.user.id);
+      const hc = hoCa(f), g = hc.dang;
+      if (!g || g.id !== String(b.id || '')) throw loi('Lượt câu này đã kết thúc — chọn cá khác nhé.');
+      const i = g.tl.length;
+      if (Number(b.i) !== i) throw loi('Câu này em đã trả lời rồi.');
+      const q = g.ds[i], bac = CA_BAC[g.t];
+      const cham = !!bac.giay && Date.now() - g.bd > (bac.giay + 4) * 1000;
+      const dung = !cham && Number(b.chon) === q.dap;
+      g.tl.push(dung);
+      const kq = { ok: true, dung, cham, dap: q.dap, zh: q.zh, py: q.py, vn: q.vn, i };
+      if (dung) chung.ldCong(req.user.id);
+      const xong = () => { hc.ho = hc.ho.filter((x) => x.id !== g.ca); hc.dang = null; hoCa(f); };
+      if (!dung) {
+        kq.song = true; xong();
+      } else if (g.tl.length < g.ds.length) {
+        g.bd = Date.now();
+      } else {
+        const loai = Object.keys(CA).filter((k) => CA[k].t === g.t);
+        const k = loai[Math.floor(Math.random() * loai.length)], [a, z] = CA[k].cm;
+        const cm = Math.round(a + Math.random() * (z - a));
+        f.kho[k] = (f.kho[k] || 0) + 1;
+        const cu = hc.bst[k] || [0, 0];
+        kq.bat = { k, cm, t: g.t, moi: !cu[0], kyLuc: cu[0] > 0 && cm > cu[1] };
+        hc.bst[k] = [cu[0] + 1, Math.max(cu[1], cm)];
+        f.xp += bac.xp;
+        xong();
+      }
+      await ghi(req.user.id, f);
+      kq.ho = hoChoHs(hc, homNay);
+      if (kq.bat) kq.st = await trangThai(req.user.id, f);
       return kq;
     }));
   }));

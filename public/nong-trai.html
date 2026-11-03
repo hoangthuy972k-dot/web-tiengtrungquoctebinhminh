@@ -50,6 +50,12 @@
   <span class="nt-muc-chu"><b>Vòng quay may mắn</b><small id="ntVqPhu">học để có lượt quay</small></span>
 </button>
 
+<!-- Ho cau ca: ca cang to dep cang dat, cau hoi cang kho -->
+<button type="button" class="nt-chuhan-nut nt-hc-nut" id="ntHoCauNut" aria-label="Hồ câu cá">
+  <span class="nt-ch-ic nt-hc-ic" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="none" stroke="#2b1d3a" stroke-width="2.2" stroke-linecap="round"><path d="M8 34L30 6"/><path d="M30 6Q36 14 32 24" stroke-width="1.4"/></g><path d="M14 30C18 23 28 23 32 28L37 24V34L32 31C28 36 18 36 14 30Z" fill="#ff9f43" stroke="#2b1d3a" stroke-width="2" stroke-linejoin="round"/><circle cx="19" cy="29" r="1.6" fill="#2b1d3a"/></svg></span>
+  <span class="nt-muc-chu"><b>Hồ câu cá</b><small id="ntHcPhu">câu cá · trả lời chữ Hán</small></span>
+</button>
+
 <!-- Thien tai: hien khi nong trai dang gap han han / sau benh / mua bao / ret dam -->
 <button type="button" class="nt-tai-thanh" id="ntTai" hidden></button>
 
@@ -103,6 +109,26 @@
   </header>
   <div class="nt-tt-quang" id="ntTtQuang"></div>
   <div class="nt-tt-luoi" id="ntTtLuoi"></div>
+</section>
+
+<!-- Ho cau ca 钓鱼湖: ban do rieng; bong ca to = ca quy = cau hoi kho -->
+<section class="nt-hc" id="ntHoCau" hidden aria-labelledby="ntHcTen">
+  <header class="nt-hc-dau">
+    <div class="nt-tt-bien nt-hc-bien">
+      <h1 id="ntHcTen">Hồ câu cá</h1>
+      <p><span lang="zh">钓鱼湖</span> diàoyú hú · <span id="ntHcMoi"></span></p>
+    </div>
+    <div class="nt-tt-nut">
+      <button type="button" class="nt-nut nt-nut-vang" data-hc-nut="bst">📖 Bộ sưu tập cá</button>
+      <button type="button" class="nt-nut" data-hc-nut="kho">🧺 Kho</button>
+      <button type="button" class="nt-nut nt-nut-xanh" data-hc-nut="ve">🏡 Về nông trại</button>
+    </div>
+  </header>
+  <div class="nt-hc-canh">
+    <div class="nt-hc-ho" id="ntHcHo"></div>
+    <div class="nt-hc-ben" aria-hidden="true"><div class="nt-hc-nv" id="ntHcNv"></div></div>
+  </div>
+  <div class="nt-hc-the" id="ntHcThe" aria-live="polite"></div>
 </section>
 
 <nav class="nt-duoi" id="ntDuoi" aria-label="Công cụ nông trại">

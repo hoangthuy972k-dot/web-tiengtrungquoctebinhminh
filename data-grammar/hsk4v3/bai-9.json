@@ -339,7 +339,7 @@
       "promptLang": "vi",
       "prompt": "Mặc dù đã học tiếng Trung hai năm, nhưng tôi vẫn xem không hiểu phim Trung Quốc.",
       "answer": "尽管我已经学了两年中文，但是还是看不懂中国电影。",
-      "answerPy": "Jǐnguǎn wǒ yǐjīng xué le liǎng nián Zhōngwén, dànshì háishì kàn bù dǒng Zhōngguó diànyǐng.",
+      "answerPy": "Jǐnguǎn wǒ yǐjīng xué le liǎng nián Zhōngwén, dànshì háishi kàn bu dǒng Zhōngguó diànyǐng.",
       "explanation": "但是 + 还是 + V不懂."
      }
     ]
@@ -497,7 +497,7 @@
       "promptLang": "vi",
       "prompt": "Chuyến công tác lần này khiến hai người trở nên thân quen, từ đó thành bạn tốt.",
       "answer": "此次出差让两人熟悉了起来，从此成了好朋友。",
-      "answerPy": "Cǐ cì chūchāi ràng liǎng rén shúxī le qǐlái, cóngcǐ chéng le hǎo péngyou.",
+      "answerPy": "Cǐ cì chūchāi ràng liǎng rén shúxi le qǐlai, cóngcǐ chéng le hǎo péngyou.",
       "explanation": "此次 + 从此 (từ mới)."
      },
      {
@@ -506,7 +506,7 @@
       "promptLang": "vi",
       "prompt": "Người này vừa thông minh vừa có trách nhiệm, việc này giao cho anh ấy là được.",
       "answer": "此人既聪明又负责，这件事交给他就是了。",
-      "answerPy": "Cǐ rén jì cōngming yòu fùzé, zhè jiàn shì jiāo gěi tā jiù shì le.",
+      "answerPy": "Cǐ rén jì cōngming yòu fùzé, zhè jiàn shì jiāogěi tā jiùshì le.",
       "explanation": "此人 + 既……又…… (Bài 4) + 就是了 (Bài 2)."
      }
     ]
@@ -674,7 +674,7 @@
       "promptLang": "vi",
       "prompt": "Anh ấy trước giờ không nói dối, bạn cứ yên tâm là được.",
       "answer": "他从来不说假话，你放心就是了。",
-      "answerPy": "Tā cónglái bù shuō jiǎ huà, nǐ fàngxīn jiù shì le.",
+      "answerPy": "Tā cónglái bù shuō jiǎhuà, nǐ fàngxīn jiùshì le.",
       "explanation": "从来不 + 就是了 (ôn Bài 2 · điểm 1)."
      }
     ]

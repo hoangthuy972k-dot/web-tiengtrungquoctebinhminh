@@ -160,7 +160,7 @@
       "promptLang": "vi",
       "prompt": "Ngày mai dù thế nào tôi cũng phải dậy sớm một chút.",
       "answer": "明天我说什么也得早点儿起床。",
-      "answerPy": "Míngtiān wǒ shuō shénme yě děi zǎo diǎnr qǐchuáng.",
+      "answerPy": "Míngtiān wǒ shuō shénme yě děi zǎodiǎnr qǐchuáng.",
       "explanation": "Thời gian + 说什么也得 + V."
      },
      {
@@ -512,7 +512,7 @@
       "promptLang": "vi",
       "prompt": "Thành phố này vì có nhiều hoa mà được gọi là “Thành phố hoa”.",
       "answer": "这个城市因为花多而叫“花城”。",
-      "answerPy": "Zhège chéngshì yīnwèi huā duō ér jiào “huā chéng”.",
+      "answerPy": "Zhège chéngshì yīnwèi huā duō ér jiào “huāchéng”.",
       "explanation": "因为……而…… (nhân quả)."
      }
     ]

@@ -157,7 +157,7 @@
       "promptLang": "vi",
       "prompt": "Muốn học giỏi tiếng Trung, mỗi ngày ít nhất phải học một tiếng.",
       "answer": "要想学好中文，每天至少要学习一个小时。",
-      "answerPy": "Yào xiǎng xué hǎo Zhōngwén, měi tiān zhìshǎo yào xuéxí yí gè xiǎoshí.",
+      "answerPy": "Yào xiǎng xuéhǎo Zhōngwén, měitiān zhìshǎo yào xuéxí yí gè xiǎoshí.",
       "explanation": "至少 + 要 + V + thời lượng."
      },
      {
@@ -166,7 +166,7 @@
       "promptLang": "vi",
       "prompt": "Tôi đã đến Bắc Kinh ít nhất năm lần rồi.",
       "answer": "我至少来过北京五次了。",
-      "answerPy": "Wǒ zhìshǎo lái guò Běijīng wǔ cì le.",
+      "answerPy": "Wǒ zhìshǎo lái guò Běijīng wǔcì le.",
       "explanation": "至少 + V过 + số lần."
      }
     ]

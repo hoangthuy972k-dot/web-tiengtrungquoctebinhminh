@@ -1,0 +1,698 @@
+{
+ "/lessons/hsk4v3-bai-19.html": {
+  "points": [
+   {
+    "title": "选择复句“不是……，就是……” — không phải … thì là …",
+    "errors": [
+     {
+      "wrong": "她不是中国人，就是韩国人，我跟她聊过，她是韩国人。",
+      "why": "Đã biết chắc là người Hàn (phủ định A, khẳng định B) → phải dùng 不是……而是…… (Bài 11).",
+      "right": "她不是中国人，而是韩国人。"
+     },
+     {
+      "wrong": "不是他在家看书，就是出去看演出。",
+      "why": "Chung chủ ngữ thì chủ ngữ đứng TRƯỚC 不是.",
+      "right": "他不是在家看书，就是出去看演出。"
+     },
+     {
+      "wrong": "最近很忙，不是出差，就加班。",
+      "why": "Vế sau phải là 就是, không dùng 就 + động từ.",
+      "right": "最近很忙，不是出差，就是加班。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Có lúc không phải quên lời thì là quên động tác.”",
+      "pre": "有时候",
+      "blank": "不是",
+      "post": "忘词，就是忘记做动作。",
+      "options": [
+       "不是",
+       "不但",
+       "虽然"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau có 就是 → vế trước dùng 不是 (lựa chọn một trong hai)."
+     },
+     {
+      "context": "“… không ở nhà đọc sách thì là ra ngoài xem biểu diễn.” (lúc thế này, lúc thế kia)",
+      "pre": "周末的时候，小文不是在家看书，",
+      "blank": "就是",
+      "post": "出去看演出。",
+      "options": [
+       "就是",
+       "而是",
+       "还是"
+      ],
+      "answer": 0,
+      "explanation": "Hai việc luân phiên, một trong hai → 不是……，就是……"
+     },
+     {
+      "context": "“… không đi công tác thì là tăng ca ở công ty.”",
+      "pre": "杨同乐最近很忙，不是去外地出差，就是在公司",
+      "blank": "加班",
+      "post": "。",
+      "options": [
+       "加班",
+       "度假",
+       "散步"
+      ],
+      "answer": 0,
+      "explanation": "Rất bận → 出差 / 加班 cùng loại công việc."
+     },
+     {
+      "context": "“Cô ấy không phải người Trung Quốc mà là người Hàn, tôi từng nói chuyện với cô ấy.” (biết chắc)",
+      "pre": "她不是中国人，",
+      "blank": "而是",
+      "post": "韩国人，我跟她聊过。",
+      "options": [
+       "而是",
+       "就是",
+       "或者"
+      ],
+      "answer": 0,
+      "explanation": "Biết chắc → phủ định A, khẳng định B → 不是……而是…… (Bài 11 · điểm 3), không dùng 就是."
+     },
+     {
+      "context": "“… cộng thêm trời trở lạnh, nhiều người bị cảm.” (ôn Bài 14)",
+      "pre": "这几天不是刮大风，就是下大雨，",
+      "blank": "加上",
+      "post": "降温，好多人都感冒了。",
+      "options": [
+       "加上",
+       "于是",
+       "甚至"
+      ],
+      "answer": 0,
+      "explanation": "加上 = cộng thêm nguyên nhân (Bài 14 · điểm 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cuối tuần Tiểu Văn không ở nhà đọc sách thì là ra ngoài xem biểu diễn.”",
+      "words": [
+       "周末",
+       "小文",
+       "不是",
+       "在家看书",
+       "，",
+       "就是",
+       "出去看演出"
+      ],
+      "answer": "周末小文不是在家看书，就是出去看演出。",
+      "explanation": "Chủ ngữ + 不是 A，就是 B."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chắc là ngày mai không có gió thì cũng mưa.”",
+      "words": [
+       "估计",
+       "明天",
+       "不是",
+       "刮风",
+       "，",
+       "就是",
+       "下雨"
+      ],
+      "answer": "估计明天不是刮风，就是下雨。",
+      "explanation": "Phỏng đoán một trong hai: 估计 + 不是……就是……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tối nào anh ấy cũng không đi công viên chạy bộ thì là đi bơi.”",
+      "words": [
+       "他",
+       "每天晚上",
+       "不是",
+       "去公园跑步",
+       "，",
+       "就是",
+       "去游泳"
+      ],
+      "answer": "他每天晚上不是去公园跑步，就是去游泳。",
+      "explanation": "Trạng ngữ thời gian đứng trước 不是."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "杨同乐最近很忙，不是去外地出差，就是在公司加班。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: hai việc luân phiên, cùng kết cấu."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "最近很忙，不是出差，就加班。",
+      "isCorrect": false,
+      "correctVersion": "最近很忙，不是出差，就是加班。",
+      "explanation": "Vế sau phải là 就是."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "那本书不是小王的，就是小李的，你看，上面写着小李的名字。",
+      "isCorrect": false,
+      "correctVersion": "那本书不是小王的，而是小李的，你看，上面写着小李的名字。",
+      "explanation": "Đã biết chắc là của Tiểu Lý → 不是……而是……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Dạo này anh ấy rất bận, không đi công tác thì là tăng ca.",
+      "answer": "他最近很忙，不是出差，就是加班。",
+      "answerPy": "Tā zuìjìn hěn máng, bú shì chūchāi, jiùshì jiābān.",
+      "explanation": "不是 A，就是 B — hai việc luân phiên."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cuối tuần tôi không ở nhà đọc sách thì là đi xem biểu diễn với bạn.",
+      "answer": "周末我不是在家看书，就是和朋友去看演出。",
+      "answerPy": "Zhōumò wǒ bú shì zài jiā kànshū, jiùshì hé péngyou qù kàn yǎnchū.",
+      "explanation": "Chủ ngữ đứng trước 不是."
+     }
+    ]
+   },
+   {
+    "title": "固定格式“动词+一×是一×” — làm được … nào hay … ấy",
+    "errors": [
+     {
+      "wrong": "你多吃一点儿是一些。",
+      "why": "Hai bên phải cùng một lượng từ: 一点儿……一点儿.",
+      "right": "你多吃一点儿是一点儿。"
+     },
+     {
+      "wrong": "看一页看一页，最后一定能看完。",
+      "why": "Giữa hai vế phải có 是; động từ không lặp lại sau 是.",
+      "right": "看一页是一页，最后一定能看完。"
+     },
+     {
+      "wrong": "我们一点儿学是一点儿。",
+      "why": "Động từ đứng TRƯỚC 一×: V + 一点儿 + 是 + 一点儿.",
+      "right": "我们学一点儿是一点儿。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… hiểu được chút nào hay chút ấy.”",
+      "pre": "咱们先做做功课，提前了解下，能懂一点儿",
+      "blank": "是",
+      "post": "一点儿。",
+      "options": [
+       "是",
+       "就",
+       "也"
+      ],
+      "answer": 0,
+      "explanation": "V + 一点儿 + 是 + 一点儿."
+     },
+     {
+      "context": "“… đọc được trang nào hay trang ấy.”",
+      "pre": "虽然这本书很厚，但是我还是要看，看一",
+      "blank": "页",
+      "post": "是一页。",
+      "options": [
+       "页",
+       "本",
+       "次"
+      ],
+      "answer": 0,
+      "explanation": "Hai lượng từ phải giống nhau: 一页……一页."
+     },
+     {
+      "context": "“… như vậy sức khoẻ mới khá lên được.”",
+      "pre": "你能多吃一点儿是一点儿，这样身体",
+      "blank": "才",
+      "post": "能好起来。",
+      "options": [
+       "才",
+       "就",
+       "都"
+      ],
+      "answer": 0,
+      "explanation": "这样……才…… = có như thế mới… (điều kiện cần)."
+     },
+     {
+      "context": "“… làm được việc nào hay việc ấy.”",
+      "pre": "事情实在太多了，别着急，慢慢做，做一",
+      "blank": "件",
+      "post": "是一件。",
+      "options": [
+       "件",
+       "个",
+       "遍"
+      ],
+      "answer": 0,
+      "explanation": "事情 dùng lượng từ 件; hai bên phải cùng 件."
+     },
+     {
+      "context": "“Cho dù mỗi ngày chỉ có mười phút, tôi cũng kiên trì…” (ôn Bài 11)",
+      "pre": "即使每天只有十分钟，我",
+      "blank": "也",
+      "post": "坚持背生词，背一个是一个。",
+      "options": [
+       "也",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "即使……，Sub + 也…… (Bài 11 · điểm 1)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng mình cứ chuẩn bị trước, hiểu được chút nào hay chút ấy.”",
+      "words": [
+       "咱们",
+       "先做做功课",
+       "，",
+       "能懂",
+       "一点儿",
+       "是",
+       "一点儿"
+      ],
+      "answer": "咱们先做做功课，能懂一点儿是一点儿。",
+      "explanation": "能 + V + 一点儿是一点儿."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đừng vội, làm từ từ, làm được việc nào hay việc ấy.”",
+      "words": [
+       "别着急",
+       "，",
+       "慢慢做",
+       "，",
+       "做",
+       "一件",
+       "是",
+       "一件"
+      ],
+      "answer": "别着急，慢慢做，做一件是一件。",
+      "explanation": "V + 一件 + 是 + 一件."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nhiều vấn đề thế này, chúng ta giải quyết được cái nào hay cái ấy.”",
+      "words": [
+       "这么多问题",
+       "，",
+       "我们",
+       "解决",
+       "一个",
+       "是",
+       "一个"
+      ],
+      "answer": "这么多问题，我们解决一个是一个。",
+      "explanation": "V + 一个是一个."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你能多吃一点儿是一点儿，这样身体才能好起来。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 能多 + V + 一点儿是一点儿."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "看一页看一页，最后一定能看完。",
+      "isCorrect": false,
+      "correctVersion": "看一页是一页，最后一定能看完。",
+      "explanation": "Thiếu 是 ở giữa; không lặp động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这些生词，我每天记一个是两个。",
+      "isCorrect": false,
+      "correctVersion": "这些生词，我每天记一个是一个。",
+      "explanation": "Hai bên phải cùng là 一 + cùng lượng từ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Không sao, chúng ta tìm hiểu trước một chút, hiểu được chút nào hay chút ấy.",
+      "answer": "没事，咱们提前了解一下，能懂一点儿是一点儿。",
+      "answerPy": "Méishì, zánmen tíqián liǎojiě yíxià, néng dǒng yìdiǎnr shì yìdiǎnr.",
+      "explanation": "能懂一点儿是一点儿."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cuốn sách tuy dày, nhưng đọc được trang nào hay trang ấy, cuối cùng nhất định đọc xong.",
+      "answer": "这本书虽然很厚，但是看一页是一页，最后一定能看完。",
+      "answerPy": "Zhè běn shū suīrán hěn hòu, dànshì kàn yí yè shì yí yè, zuìhòu yídìng néng kànwán.",
+      "explanation": "虽然……但是…… + 看一页是一页."
+     }
+    ]
+   },
+   {
+    "title": "“把”字句“主语+把+宾语+动词+动量补语” — làm việc gì với đối tượng mấy lần",
+    "errors": [
+     {
+      "wrong": "我把这本书两遍看了。",
+      "why": "Bổ ngữ động lượng đứng SAU động từ, không đứng trước như tiếng Việt.",
+      "right": "我把这本书看了两遍。"
+     },
+     {
+      "wrong": "她把这个动作做了好几。",
+      "why": "Thiếu động lượng từ (次 / 遍) sau số từ.",
+      "right": "她把这个动作做了好几次。"
+     },
+     {
+      "wrong": "他把一本书看了三遍。",
+      "why": "Tân ngữ sau 把 phải xác định (这本书 / 那本书), không dùng 一本书.",
+      "right": "他把这本书看了三遍。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… đã tìm hiểu trước câu chuyện một lượt …”",
+      "pre": "因为李文他们提前把故事了解了一",
+      "blank": "遍",
+      "post": "，所以差不多都看懂了。",
+      "options": [
+       "遍",
+       "本",
+       "个"
+      ],
+      "answer": 0,
+      "explanation": "Động lượng từ 遍 = một lượt trọn vẹn."
+     },
+     {
+      "context": "“Anh ấy làm động tác này mấy lần …”",
+      "pre": "他",
+      "blank": "把",
+      "post": "这个动作做了好几次，最后终于做对了。",
+      "options": [
+       "把",
+       "被",
+       "给"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ chủ động tác động lên 这个动作 → 把."
+     },
+     {
+      "context": "“Bạch Gia Nguyệt LẠI đọc cuốn sách này mấy lượt …” (việc đã xảy ra)",
+      "pre": "白家月",
+      "blank": "又",
+      "post": "把这本书看了几遍，越看越喜欢。",
+      "options": [
+       "又",
+       "再",
+       "还"
+      ],
+      "answer": 0,
+      "explanation": "又 (lặp lại, đã xảy ra) đứng trước 把; 再 dùng cho việc chưa xảy ra."
+     },
+     {
+      "context": "“… chúng tôi tập tiết mục này mười mấy lượt.”",
+      "pre": "为了演好，我们把这个节目排了十几",
+      "blank": "遍",
+      "post": "。",
+      "options": [
+       "遍",
+       "趟",
+       "下"
+      ],
+      "answer": 0,
+      "explanation": "Tập trọn tiết mục từ đầu đến cuối → 遍."
+     },
+     {
+      "context": "“Anh ấy gõ cửa ba cái, nhưng không ai mở.”",
+      "pre": "他把门敲了三",
+      "blank": "下",
+      "post": "，可是没有人开。",
+      "options": [
+       "下",
+       "遍",
+       "本"
+      ],
+      "answer": 0,
+      "explanation": "Động tác nhanh, ngắn (gõ, vỗ) → 下."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy làm động tác này mấy lần, cuối cùng cũng làm đúng.”",
+      "words": [
+       "他",
+       "把",
+       "这个动作",
+       "做了",
+       "好几次",
+       "，",
+       "最后",
+       "终于做对了"
+      ],
+      "answer": "他把这个动作做了好几次，最后终于做对了。",
+      "explanation": "把 + 宾 + V了 + 好几次."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạch Gia Nguyệt lại đọc cuốn sách này mấy lượt.”",
+      "words": [
+       "白家月",
+       "又",
+       "把",
+       "这本书",
+       "看了",
+       "几遍"
+      ],
+      "answer": "白家月又把这本书看了几遍。",
+      "explanation": "又 đứng trước 把."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng tôi tập tiết mục này mười mấy lượt.”",
+      "words": [
+       "我们",
+       "把",
+       "这个节目",
+       "排了",
+       "十几遍"
+      ],
+      "answer": "我们把这个节目排了十几遍。",
+      "explanation": "Số lần ở cuối câu."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "因为李文他们提前把故事了解了一遍，所以差不多都看懂了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 提前 đứng trước 把, 一遍 sau động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我把这本书两遍看了。",
+      "isCorrect": false,
+      "correctVersion": "我把这本书看了两遍。",
+      "explanation": "Bổ ngữ động lượng đứng sau động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他把一个问题讲了好几遍。",
+      "isCorrect": false,
+      "correctVersion": "他把这个问题讲了好几遍。",
+      "explanation": "Tân ngữ của 把 phải xác định."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cô ấy đã đọc cuốn sách này mấy lượt, càng đọc càng thích.",
+      "answer": "她把这本书看了好几遍，越看越喜欢。",
+      "answerPy": "Tā bǎ zhè běn shū kàn le hǎojǐ biàn, yuè kàn yuè xǐhuan.",
+      "explanation": "把 + 宾 + V了 + 好几遍 + ôn 越……越……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi đã xem trước bài khoá một lượt, nên trên lớp nghe hiểu hết.",
+      "answer": "我提前把课文看了一遍，所以上课都听懂了。",
+      "answerPy": "Wǒ tíqián bǎ kèwén kàn le yí biàn, suǒyǐ shàngkè dōu tīngdǒng le.",
+      "explanation": "提前 đứng trước 把; 一遍 sau động từ."
+     }
+    ]
+   },
+   {
+    "title": "“把”字句“主语+把+宾语+动词+时量补语” — làm việc gì với đối tượng trong bao lâu",
+    "errors": [
+     {
+      "wrong": "我把这本书两天看了。",
+      "why": "Bổ ngữ thời lượng đứng SAU động từ.",
+      "right": "我把这本书看了两天。"
+     },
+     {
+      "wrong": "王老师讲了这个问题十分钟。",
+      "why": "Động từ có tân ngữ + thời lượng: không đặt thời lượng sau tân ngữ kiểu tiếng Việt → dùng 把 (hoặc lặp động từ).",
+      "right": "王老师把这个问题讲了十分钟。"
+     },
+     {
+      "wrong": "他把一个动作练了一个小时。",
+      "why": "Tân ngữ sau 把 phải xác định.",
+      "right": "他把这个动作练了一个小时。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Về đến nhà, tôi lại đọc cuốn sách này suốt hai ngày.”",
+      "pre": "到家后，我又把这本书看了两",
+      "blank": "天",
+      "post": "。",
+      "options": [
+       "天",
+       "本",
+       "页"
+      ],
+      "answer": 0,
+      "explanation": "Bổ ngữ thời lượng: 两天."
+     },
+     {
+      "context": "“… mọi người MỚI hiểu.” (muộn, khó khăn)",
+      "pre": "王老师把这个问题又讲了十分钟，大家",
+      "blank": "才",
+      "post": "明白。",
+      "options": [
+       "才",
+       "就",
+       "都"
+      ],
+      "answer": 0,
+      "explanation": "Tốn thời gian rồi mới có kết quả → 才."
+     },
+     {
+      "context": "“… luyện động tác này thêm một tiếng.”",
+      "pre": "为了演好，陈天中把这个动作又练了一个",
+      "blank": "小时",
+      "post": "。",
+      "options": [
+       "小时",
+       "遍",
+       "次"
+      ],
+      "answer": 0,
+      "explanation": "一个 + 小时 (thời lượng); 遍 / 次 không đi với 个."
+     },
+     {
+      "context": "“… tôi sắp xếp chúng mất nửa tiếng.”",
+      "pre": "桌子上的东西太多、太乱了，我把它们",
+      "blank": "整理",
+      "post": "了半个小时。",
+      "options": [
+       "整理",
+       "转发",
+       "报考"
+      ],
+      "answer": 0,
+      "explanation": "整理 = sắp xếp (từ mới bài khoá 4)."
+     },
+     {
+      "context": "“… không chừng sẽ thành công.” (ôn Bài 16)",
+      "pre": "为了这次面试，他把自我介绍准备了整整一个星期，",
+      "blank": "说不定",
+      "post": "能成功。",
+      "options": [
+       "说不定",
+       "到底",
+       "究竟"
+      ],
+      "answer": 0,
+      "explanation": "说不定 = có lẽ, không chừng (Bài 16 · điểm 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Thầy Vương giảng vấn đề này thêm mười phút.”",
+      "words": [
+       "王老师",
+       "把",
+       "这个问题",
+       "又",
+       "讲了",
+       "十分钟"
+      ],
+      "answer": "王老师把这个问题又讲了十分钟。",
+      "explanation": "又 đứng trước động từ (hoặc trước 把)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Về đến nhà tôi lại đọc cuốn sách này suốt hai ngày.”",
+      "words": [
+       "我",
+       "到家后",
+       "又",
+       "把",
+       "这本书",
+       "看了",
+       "两天"
+      ],
+      "answer": "我到家后又把这本书看了两天。",
+      "explanation": "Thời lượng ở cuối câu."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Các bạn luyện chữ Hán này cả một buổi sáng.”",
+      "words": [
+       "同学们",
+       "把",
+       "这个汉字",
+       "练了",
+       "一个上午"
+      ],
+      "answer": "同学们把这个汉字练了一个上午。",
+      "explanation": "把 + 宾 + V了 + 一个上午."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "陈天中把这个动作又练了一小时。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 又 + V了 + thời lượng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我把这本书两天看了。",
+      "isCorrect": false,
+      "correctVersion": "我把这本书看了两天。",
+      "explanation": "Thời lượng đứng sau động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "王老师讲了这个问题十分钟。",
+      "isCorrect": false,
+      "correctVersion": "王老师把这个问题讲了十分钟。",
+      "explanation": "Không đặt thời lượng sau tân ngữ → dùng 把."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Thầy Vương giảng vấn đề này thêm mười phút, mọi người mới hiểu.",
+      "answer": "王老师把这个问题又讲了十分钟，大家才明白。",
+      "answerPy": "Wáng lǎoshī bǎ zhège wèntí yòu jiǎng le shí fēnzhōng, dàjiā cái míngbai.",
+      "explanation": "把 + 宾 + 又 + V了 + 十分钟，……才……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Về đến nhà, tôi lại đọc cuốn sách này suốt hai ngày.",
+      "answer": "到家后，我又把这本书看了两天。",
+      "answerPy": "Dào jiā hòu, wǒ yòu bǎ zhè běn shū kàn le liǎng tiān.",
+      "explanation": "又 + 把 + 宾 + V了 + 两天."
+     }
+    ]
+   }
+  ]
+ }
+}

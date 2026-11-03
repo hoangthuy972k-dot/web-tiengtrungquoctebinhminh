@@ -1,0 +1,348 @@
+{
+"so": 11,
+"zh": "活到老学到老",
+"py": "Huó dào lǎo xué dào lǎo",
+"vn": "Sống đến già, học đến già",
+"chuDe": "Học tập suốt đời, lớp học số – học trực tuyến – tự học qua mạng, quan niệm giáo dục của người Trung Quốc",
+"icon": "📚",
+"mucTieu": [
+  "Nghe hiểu và trao đổi được về các chủ đề học tập suốt đời, dạy học trực tuyến, học qua mạng.",
+  "Nói hoặc viết được ý nghĩa của việc học tập suốt đời và học qua mạng.",
+  "Hiểu quan niệm giáo dục của người Trung Quốc."
+],
+
+"wu": [
+  {"img":"wu-A","label":"分数","py":"fēnshù","letter":"A"},
+  {"img":"wu-B","label":"资料","py":"zīliào","letter":"B"},
+  {"img":"wu-C","label":"自学","py":"zìxué","letter":"C"},
+  {"img":"wu-D","label":"钢琴","py":"gāngqín","letter":"D"},
+  {"img":"wu-E","label":"网页","py":"wǎngyè","letter":"E"},
+  {"img":"wu-F","label":"家长","py":"jiāzhǎng","letter":"F"}
+],
+
+"dialogs": [
+  {"tab":"Người già trong công viên","scene":"在公园里 · Trong công viên (Lý Văn và Bạch Gia Nguyệt vừa đi dạo vừa trò chuyện)","anh":"kv-1",
+   "nguoi":["白家月","李文"],
+   "preQuiz":[
+     {"q":"白家月觉得公园里老年人的生活怎么样？","opts":["很开心","很丰富","很辛苦","很无聊"],"ans":1},
+     {"q":"李文的爷爷每周去老年班做什么？","opts":["学电脑","学唱歌","学写字","学太极拳"],"ans":0}],
+   "lines":[
+     {"sp":0,"zh":"这里的老年人真不少。","vn":"Người cao tuổi ở đây đông thật."},
+     {"sp":1,"zh":"嗯，住在附近的老年人都会来这儿，有的散步，有的唱歌、跳舞，还有的打太极拳。","vn":"Ừ, người già sống gần đây đều đến chỗ này, có người đi dạo, có người hát, nhảy múa, còn có người đánh Thái Cực quyền."},
+     {"sp":0,"zh":"他们的生活真丰富，让人羡慕。","vn":"Cuộc sống của họ thật phong phú, khiến người ta ngưỡng mộ."},
+     {"sp":1,"zh":"是的。有些人即使年龄大了，也坚持去老年班学习。","vn":"Đúng vậy. Có những người dù tuổi đã cao vẫn kiên trì đi học lớp dành cho người cao tuổi."},
+     {"sp":0,"zh":"真是活到老学到老啊。","vn":"Đúng là sống đến già học đến già nhỉ."},
+     {"sp":1,"zh":"对，我爷爷就每周都去老年班学电脑。他总说，老年人也要继续学习，“你看，我都七八十岁了，还上网和网友们聊天儿呢，生活一点儿都不无聊。”","vn":"Đúng thế, ông tớ tuần nào cũng đi lớp người cao tuổi học máy tính đấy. Ông luôn nói người già cũng phải tiếp tục học tập: “Cháu xem, ông bảy tám mươi tuổi rồi mà còn lên mạng trò chuyện với bạn trên mạng đấy, cuộc sống chẳng buồn chán chút nào.”"}],
+   "hoi":[["在公园里，老年人都会做些什么活动？","有的散步，有的唱歌、跳舞，还有的打太极拳。"],["李文的爷爷为什么去老年班学习？","因为他觉得老年人也要继续学习。他学了电脑，还能上网和网友们聊天儿，生活一点儿都不无聊。"]],
+   "kelai":"李文和白家月在公园里散步。白家月觉得公园里的老年人……。李文说，住在附近的老年人都……，有的……，有的……、……，还有的……。白家月说，这里的老年人生活……，让人……。李文告诉她，有些老年人即使……，也坚持……。比如，他爷爷每周都去老年班……。爷爷说：“你看，我都……，还上网……呢，生活……。”",
+   "kelaiMau":"李文和白家月在公园里散步。白家月觉得公园里的老年人真不少。李文说，住在附近的老年人都会来这儿，有的散步，有的唱歌、跳舞，还有的打太极拳。白家月说，这里的老年人生活真丰富，让人羡慕。李文告诉她，有些老年人即使年龄大了，也坚持去老年班学习。比如，他爷爷每周都去老年班学电脑。爷爷说：“你看，我都七八十岁了，还上网和网友们聊天儿呢，生活一点儿都不无聊。”"},
+
+  {"tab":"Lớp học số","scene":"在餐馆 · Ở nhà hàng (Lý Văn mời Bạch Gia Nguyệt và Annie đi ăn, ba người nói về lớp học số)","anh":"kv-2",
+   "nguoi":["安妮","白家月","李文"],
+   "preQuiz":[
+     {"q":"白家月认为线上点名怎么样？","opts":["节约时间","不太方便","比较随意","很吸引学生"],"ans":0},
+     {"q":"对安妮来说，线上上课时，自己不用急着做的事情是：","opts":["写作业","找资料","记笔记","提问题"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"家月，我们今天的课是在数字教室上的，感觉挺不一样的。","vn":"Gia Nguyệt, buổi học hôm nay của chúng mình học ở lớp học số, cảm giác khá là khác."},
+     {"sp":1,"zh":"是的，数字教室可以拍照点名，教授在线上点名，不用像线下那样一个个叫名字，特别节约时间。","vn":"Đúng vậy, lớp học số có thể chụp ảnh điểm danh, giáo sư điểm danh trực tuyến, không phải gọi tên từng người như học trực tiếp, cực kỳ tiết kiệm thời gian."},
+     {"sp":2,"zh":"最方便的是，课上没听明白时，课后还能在学校网站上找到视频记录看。","vn":"Tiện nhất là trên lớp nghe chưa hiểu thì sau giờ học còn có thể lên trang web của trường tìm video ghi lại bài giảng để xem."},
+     {"sp":0,"zh":"对，上课我都不用着急记笔记了。","vn":"Đúng thế, lên lớp mình chẳng cần vội vàng ghi chép nữa."},
+     {"sp":2,"zh":"不仅数字教室很方便，现在网上到处是学习资料，想查什么都能查到，自学也更方便了。","vn":"Không chỉ lớp học số tiện lợi, bây giờ trên mạng đâu đâu cũng là tài liệu học tập, muốn tra gì cũng tra được, tự học cũng tiện hơn."},
+     {"sp":1,"zh":"是的，只要有手机或电脑，我就是不在教室，也可以学习中文，和同学一起练口语。","vn":"Đúng vậy, chỉ cần có điện thoại hoặc máy tính, mình dù không ở lớp vẫn có thể học tiếng Trung, luyện nói cùng các bạn."},
+     {"sp":0,"zh":"科技真是让获取知识变得简单多了。","vn":"Công nghệ đúng là đã làm việc tiếp thu kiến thức trở nên đơn giản hơn nhiều."}],
+   "hoi":[["李文说，线上上课时，如果没听懂，课后还可以怎么做？","课后还可以在学校网站上找到视频记录看。"],["人们自学为什么变得越来越方便了？","因为现在网上到处是学习资料，想查什么都能查到。而且只要有手机或电脑，就是不在教室，也可以学习。"]]},
+
+  {"tab":"Nhật ký: chuyện dạy con","scene":"白家月的日记 · Nhật ký của Bạch Gia Nguyệt sau khi cùng Lý Văn đến chơi nhà Vương Nhất Tuyết","anh":"kv-3","doan":true,
+   "nguoi":["白家月"],
+   "preQuiz":[
+     {"q":"以前，王一雪和刘明认为孩子的人生怎样才是成功的？","opts":["变得有名","有很多钱","上个好大学","有个好工作"],"ans":2},
+     {"q":"后来，王一雪和刘明认为教育是为了让孩子：","opts":["获得高分","按时做作业","有个好身体","养成好习惯"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"今天星期六，我们去了一雪姐姐家。","vn":"Hôm nay thứ Bảy, chúng tôi đến nhà chị Nhất Tuyết."},
+     {"sp":0,"zh":"姐姐家的两个孩子很有礼貌，我们一进门，就马上和我们打招呼。","vn":"Hai đứa con nhà chị rất lễ phép, chúng tôi vừa vào cửa, các cháu đã lập tức chào hỏi chúng tôi."},
+     {"sp":0,"zh":"在姐姐家，我们也聊到了孩子的教育。","vn":"Ở nhà chị, chúng tôi cũng nói đến chuyện giáo dục con cái."},
+     {"sp":0,"zh":"姐姐说，以前他们和很多家长一样，觉得孩子上个好大学，人生才是成功的。","vn":"Chị kể, trước đây anh chị cũng như nhiều phụ huynh khác, cho rằng con vào được một trường đại học tốt thì cuộc đời mới là thành công."},
+     {"sp":0,"zh":"所以，他们只关心孩子的分数，结果孩子压力特别大，每天都很不开心。","vn":"Vì vậy, anh chị chỉ quan tâm đến điểm số của con, kết quả là con bị áp lực vô cùng lớn, ngày nào cũng không vui."},
+     {"sp":0,"zh":"后来，他们认识到，教育的目的不是让孩子考高分，而是帮助孩子养成好习惯。","vn":"Về sau, anh chị nhận ra rằng mục đích của giáo dục không phải là để con thi được điểm cao, mà là giúp con hình thành những thói quen tốt."},
+     {"sp":0,"zh":"于是，他们做出改变，每天都给孩子留出时间外出锻炼身体，或者看些自己感兴趣的书。","vn":"Thế là anh chị đã thay đổi, ngày nào cũng dành thời gian cho con ra ngoài rèn luyện thân thể, hoặc đọc vài cuốn sách mà các cháu thích."},
+     {"sp":0,"zh":"我觉得他们的做法真棒。","vn":"Tôi thấy cách làm của anh chị thật tuyệt."}],
+   "hoi":[["以前，王一雪的孩子为什么不开心？","因为以前王一雪和刘明只关心孩子的分数，孩子压力特别大。"],["王一雪和刘明做出了什么样的改变？","他们每天都给孩子留出时间外出锻炼身体，或者看些自己感兴趣的书。"]],
+   "kelai":"星期六，白家月和李文去了……。王一雪的两个孩子……，他们一进门，两个孩子就……。在王一雪家，他们也聊到了……。王一雪说，以前他们……，觉得孩子……，人生才是成功的。所以，他们只关心……，结果孩子……，每天都……。后来，他们认识到，教育的目的不是……，而是帮助孩子……。于是，他们……，每天都给孩子……外出锻炼身体，或者看些……。白家月觉得王一雪和刘明的做法……。",
+   "kelaiMau":"星期六，白家月和李文去了王一雪家。王一雪的两个孩子很有礼貌，他们一进门，两个孩子就马上和他们打招呼。在王一雪家，他们也聊到了孩子的教育。王一雪说，以前他们和很多家长一样，觉得孩子上个好大学，人生才是成功的。所以，他们只关心孩子的分数，结果孩子压力特别大，每天都很不开心。后来，他们认识到，教育的目的不是让孩子考高分，而是帮助孩子养成好习惯。于是，他们做出改变，每天都给孩子留出时间外出锻炼身体，或者看些自己感兴趣的书。白家月觉得王一雪和刘明的做法真棒。"},
+
+  {"tab":"Học để sống ý nghĩa hơn","scene":"学习，让生活更有意义 · Học tập làm cuộc sống thêm ý nghĩa","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"“学而不厌”是孔子什么时候说的？","opts":["二十多年前","两百多年前","两千多年前","五千多年前"],"ans":2},
+     {"q":"坚持学习，爷爷觉得怎么样？","opts":["很开心","有点儿累","更健康了","年轻起来了"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"“学而不厌”是两千多年前中国教育家孔子说过的话，意思是人要一直坚持学习，就是说，学习是人一生的事情，要活到老学到老。","vn":"“Học nhi bất yếm” (học không biết chán) là câu nói của nhà giáo dục Trung Quốc Khổng Tử hơn hai nghìn năm trước, ý là con người phải luôn kiên trì học tập, nghĩa là học tập là việc cả đời, phải sống đến già học đến già."},
+     {"sp":0,"zh":"在世界快速变化的今天，“学而不厌”变得更加重要。","vn":"Ngày nay, khi thế giới thay đổi nhanh chóng, “học không biết chán” càng trở nên quan trọng."},
+     {"sp":0,"zh":"我有一位很优秀的律师朋友，他一直在学习新的法律知识。","vn":"Tôi có một người bạn là luật sư rất xuất sắc, anh ấy luôn học kiến thức pháp luật mới."},
+     {"sp":0,"zh":"他说，这不仅是律师的要求和责任，也是提高自己能力的重要方法。","vn":"Anh ấy nói, đây không chỉ là yêu cầu và trách nhiệm của luật sư, mà còn là cách quan trọng để nâng cao năng lực của bản thân."},
+     {"sp":0,"zh":"同时我也认为，人就是不再工作了，坚持学习仍很重要。","vn":"Đồng thời tôi cũng cho rằng, con người cho dù không còn đi làm nữa, kiên trì học tập vẫn rất quan trọng."},
+     {"sp":0,"zh":"就像我爷爷，虽然七十多岁了，每天还准时去老年大学上课，学习做网页、弹钢琴。","vn":"Giống như ông tôi, tuy đã hơn bảy mươi tuổi, ngày nào cũng đến trường đại học người cao tuổi học đúng giờ, học làm trang web, đánh đàn piano."},
+     {"sp":0,"zh":"他说，重新当一回学生，生活更有意思了，也感觉自己变年轻了。","vn":"Ông nói, được làm học sinh lại một lần nữa, cuộc sống thú vị hơn, cũng cảm thấy mình trẻ ra."}],
+   "hoi":[["“活到老学到老”是什么意思？","意思是学习是人一生的事情，人要一直坚持学习。"],["那位律师为什么一直坚持学习法律知识？","因为他认为，这不仅是律师的要求和责任，也是提高自己能力的重要方法。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"让步复句“即使……，也……”","tenVn":"Câu phức nhượng bộ 「即使……，也……」 — cho dù …, cũng …",
+  "cauTruc":["即使 + giả thiết (thường bất lợi / cực đoan)，(chủ ngữ) + 也 + kết quả không đổi","Chủ ngữ + 即使 + giả thiết，也 + ……"],
+  "giaiThich":"Đây là câu phức NHƯỢNG BỘ: vế trước nêu một GIẢ THIẾT — thường là tình huống bất lợi hoặc cực đoan (mưa to, tuổi cao, rất khó…); vế sau nói kết quả KHÔNG thay đổi, không bị ảnh hưởng. 「即使」 ≈ “cho dù, dù cho, ngay cả khi”; vế sau bắt buộc có 「也」, đặt sau chủ ngữ, trước động từ (✗ 也我 → ✓ 我也). 即使 có thể đứng trước hoặc sau chủ ngữ vế đầu. Hay gặp 即使 + 再 + tính từ (即使再忙, 即使再累). Phân biệt cho người Việt: 虽然……但是…… (HSK 3) và 尽管……但是…… (Bài 9) nói SỰ THẬT đã có; 即使……也…… thường nói GIẢ THIẾT (chưa xảy ra / giả sử): 虽然下雨了 (đang mưa thật) — 即使下雨 (giả sử có mưa). Vì vậy 即使 KHÔNG đi với 但是. So với 不管……都/也…… (Bài 8): 不管 + điều kiện có lựa chọn / đại từ nghi vấn (不管多忙, 不管下不下雨); 即使 + một giả thiết cụ thể (即使很忙). Gần nghĩa với dạng rút gọn 不……也…… (Bài 9) nhưng đầy đủ và rõ ràng hơn.",
+  "viDu":[["有些人即使年龄大了，也坚持去老年班学习。","Có những người dù tuổi đã cao vẫn kiên trì đi học lớp người cao tuổi."],["即使明天下大雨，我们也会按时出发。","Cho dù ngày mai mưa to, chúng ta cũng sẽ xuất phát đúng giờ."],["即使大家都说很难，我也要试一试。","Cho dù mọi người đều nói rất khó, tôi cũng muốn thử một lần."],["即使工作再忙，他每天也至少看半个小时书。","Cho dù công việc bận đến mấy, mỗi ngày anh ấy cũng đọc sách ít nhất nửa tiếng. (ôn 至少 – Bài 5 · điểm 1)"]],
+  "loi":[["即使明天下大雨，我们会按时出发。","Thiếu 也 ở vế sau — 即使 phải đi với 也.","即使明天下大雨，我们也会按时出发。"],["即使大家都说很难，也我要试一试。","也 là phó từ, đứng SAU chủ ngữ, trước động từ.","即使大家都说很难，我也要试一试。"],["即使昨天下了大雨，但是比赛没有停。","Việc đã xảy ra thật + 但是 → dùng 虽然 / 尽管……但是……; 即使 không đi với 但是.","虽然昨天下了大雨，但是比赛没有停。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["有些人","年龄大了，也坚持去老年班学习。"],"dap":[["即使"]],"chon":["即使","虽然","因为"],"goiY":"“Có những người dù tuổi đã cao vẫn kiên trì …”","giai":"Vế sau có 也 → vế trước dùng 即使 (giả thiết nhượng bộ)."},
+     {"kieu":"dien","phan":["即使明天下大雨，我们","会按时出发。"],"dap":[["也"]],"chon":["也","就","才"],"goiY":"“Cho dù mai mưa to, chúng ta cũng sẽ xuất phát đúng giờ.”","giai":"即使……，(Sub) + 也 + V."},
+     {"kieu":"dien","phan":["即使年龄大了，爷爷也","去老年班学电脑。"],"dap":[["坚持"]],"chon":["坚持","羡慕","散步"],"goiY":"“Dù tuổi đã cao, ông vẫn kiên trì đi học máy tính.”","giai":"坚持 + V = kiên trì làm gì."},
+     {"kieu":"dien","phan":["即使工作再忙，他也","每周给家里打一次电话。"],"dap":[["至少"]],"chon":["至少","甚至","从来"],"goiY":"“… mỗi tuần anh ấy cũng gọi về nhà ít nhất một lần.” (ôn 至少 – Bài 5)","giai":"至少 + V + số lượng = ít nhất."},
+     {"kieu":"dien","phan":["","不在一个学校了，我们也要经常联系。"],"dap":[["即使"]],"chon":["即使","由于","随着"],"goiY":"“Cho dù không học cùng trường nữa, chúng ta cũng phải thường xuyên liên lạc.”","giai":"Giả thiết bất lợi + 也 → 即使."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["即使","明天","下大雨","，","我们","也会","按时出发"],"dap":["即使明天下大雨，我们也会按时出发。"],"goiY":"Cho dù ngày mai mưa to, chúng ta cũng sẽ xuất phát đúng giờ.","giai":"即使 + giả thiết，Sub + 也 + V."},
+     {"kieu":"xep","manh":["即使","缺水","，","门前的花","也","长得","很好"],"dap":["即使缺水，门前的花也长得很好。"],"goiY":"Cho dù thiếu nước, hoa trước cửa vẫn mọc rất tốt.","giai":"也 đứng sau chủ ngữ 门前的花."},
+     {"kieu":"xep","manh":["他","即使","再忙","，","也","会","坚持锻炼身体"],"dap":["他即使再忙，也会坚持锻炼身体。","即使再忙，他也会坚持锻炼身体。"],"goiY":"Anh ấy cho dù bận đến mấy cũng kiên trì rèn luyện thân thể.","giai":"即使 + 再 + Adj，也……"},
+     {"kieu":"dungsai","cau":"即使大家都说很难，我也要试一试。","dung":true,"giai":"Đúng: 即使……，Sub + 也……"},
+     {"kieu":"dungsai","cau":"即使昨天下了大雨，但是比赛没有停。","dung":false,"sua":"虽然昨天下了大雨，但是比赛没有停。","giai":"Sự thật đã xảy ra + 但是 → 虽然……但是……"},
+     {"kieu":"dungsai","cau":"即使你不去，我去。","dung":false,"sua":"即使你不去，我也去。","giai":"Thiếu 也."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 3)","huongDan":"Hoàn thành đối thoại, có dùng 「即使……，也……」","cau":[
+     {"kieu":"vandung","de":"A：门前的花长得真不错！ B：是的，即使缺（quē, thiếu）水，＿＿＿。","goiY":"Nói: hoa vẫn mọc rất tốt (也……)","mau":"它们也长得很好","can":[["也"]]},
+     {"kieu":"vandung","de":"A：即使不在一个学校了，＿＿＿。 B：当然！平时没时间，假期也要多聚聚。","goiY":"A nói: chúng ta vẫn phải thường xuyên liên lạc, gặp nhau (也……)","mau":"我们也要经常联系、经常见面","can":[["也"]]},
+     {"kieu":"vandung","de":"A：任务这么重，你们能完成吗？ B：＿＿＿，＿＿＿。","goiY":"Khẳng định: cho dù ngày nào cũng phải tăng ca, cũng nhất định hoàn thành đúng hạn","mau":"即使每天加班，我们也一定会按时完成","can":[["即使"],["也"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Cho dù tuổi đã cao, ông tôi vẫn kiên trì đi học lớp người cao tuổi.","dap":["即使年龄大了，我爷爷也坚持去老年班学习。","我爷爷即使年龄大了，也坚持去老年班学习。"],"giai":"即使……，Sub + 也 + 坚持……"},
+     {"kieu":"dich","vn":"Cho dù ngày mai mưa to, chúng ta cũng sẽ xuất phát đúng giờ.","dap":["即使明天下大雨，我们也会准时出发。","即使明天下大雨，我们也会按时出发。"],"giai":"即使……也…… + từ mới 准时."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt một câu nói về quyết tâm học tiếng Trung của em, có dùng 「即使……也……」","mau":"即使工作再忙，我也要每天留出一个小时学习中文。","can":[["即使"],["也"]]}]}
+  ]},
+
+ {"so":"2","ten":"让步复句“就是……，也……”","tenVn":"Câu phức nhượng bộ 「就是……，也……」 — cho dù …, cũng … (khẩu ngữ)",
+  "cauTruc":["就是 + giả thiết cực đoan / điều kiện nhượng bộ，(chủ ngữ) + 也 + kết quả / thái độ không đổi","Chủ ngữ + 就是 + ……，也 + ……"],
+  "giaiThich":"「就是」 ở đây là LIÊN TỪ, nghĩa giống 「即使」 (cho dù, kể cả), nhưng mang màu sắc KHẨU NGỮ — rất hay dùng khi nói chuyện. Vế trước nêu một giả thiết cực đoan hoặc điều kiện nhượng bộ; vế sau (có 也) nói kết quả vẫn không đổi, hoặc vẫn giữ một thái độ, hành động nào đó. Hay đi với 再 + tính từ: 就是再忙 / 再累 / 再贵，也……. Văn viết, trang trọng → 即使; nói chuyện → 就是. ⚠ Đừng nhầm các 「就是」 đã học: ×就是了 (Bài 2 – cuối câu: cứ … là được); ……×是×，就是…… (Bài 3 – vế sau: chỉ có điều); 就是 đứng một mình tỏ ý đồng tình (Bài 10 – đúng thế); 就是 = chính là (他就是李教授). Mẹo nhận biết: 就是 ở vế ĐẦU + 也 ở vế SAU → “cho dù … cũng …”.",
+  "viDu":[["我就是不在教室，也可以学习中文，和同学一起练口语。","Mình cho dù không ở lớp cũng có thể học tiếng Trung, luyện nói cùng các bạn."],["锻炼身体很重要，就是再忙，也要坚持运动。","Rèn luyện thân thể rất quan trọng, cho dù bận đến mấy cũng phải kiên trì tập thể thao."],["明天开会需要这份材料，我就是今晚不睡觉，也要把它改完。","Mai họp cần tài liệu này, tôi dù đêm nay không ngủ cũng phải sửa xong nó."],["就是明天下大雨，我说什么也得去机场接你。","Cho dù mai mưa to, tôi nhất định phải ra sân bay đón bạn. (ôn 说什么也得× – Bài 10 · điểm 1)"]],
+  "loi":[["就是再忙，我要坚持运动。","Thiếu 也 ở vế sau.","就是再忙，我也要坚持运动。"],["我就是不在教室，就可以学习中文。","Vế sau dùng 也 (kết quả không đổi), không dùng 就.","我就是不在教室，也可以学习中文。"],["他就是不来，我们开会也。","也 là phó từ, đứng trước động từ.","他就是不来，我们也开会。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["我","不在教室，也可以学习中文，和同学一起练口语。"],"dap":[["就是"]],"chon":["就是","就是了","只要"],"goiY":"“Mình cho dù không ở lớp cũng có thể học tiếng Trung …”","giai":"就是 (liên từ) ở vế đầu + 也 ở vế sau."},
+     {"kieu":"dien","phan":["锻炼身体很重要，就是再忙，","要坚持运动。"],"dap":[["也"]],"chon":["也","就","才"],"goiY":"“… cho dù bận đến mấy cũng phải kiên trì tập thể thao.”","giai":"就是再 + Adj，也……"},
+     {"kieu":"dien","phan":["明天开会需要这份材料，我就是今晚不睡觉，也要把它","完。"],"dap":[["改"]],"chon":["改","留","弹"],"goiY":"“… dù đêm nay không ngủ cũng phải sửa xong nó.”","giai":"把 + O + 改完 (ôn câu chữ 把)."},
+     {"kieu":"dien","phan":["就是不在一个城市，我们也可以在","上见面。"],"dap":[["线上"]],"chon":["线上","线下","网友"],"goiY":"“Cho dù không ở cùng thành phố, chúng ta vẫn có thể gặp nhau trực tuyến.”","giai":"在线上 + V = trực tuyến."},
+     {"kieu":"dien","phan":["课上没听明白也没关系，就是没有老师，课后也能看","记录自学。"],"dap":[["视频"]],"chon":["视频","分数","口语"],"goiY":"“… cho dù không có thầy, sau giờ học vẫn có thể xem video ghi lại để tự học.”","giai":"视频记录 = video ghi lại."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["就是","再忙","，","也","要","坚持运动"],"dap":["就是再忙，也要坚持运动。"],"goiY":"Cho dù bận đến mấy cũng phải kiên trì tập thể thao.","giai":"就是再 + Adj，也 + V."},
+     {"kieu":"xep","manh":["我","就是","今晚不睡觉","，","也要","把材料","改完"],"dap":["我就是今晚不睡觉，也要把材料改完。"],"goiY":"Tôi dù đêm nay không ngủ cũng phải sửa xong tài liệu.","giai":"Sub + 就是……，也要 + 把……"},
+     {"kieu":"xep","manh":["就是","下大雨","，","我们","也得","去"],"dap":["就是下大雨，我们也得去。"],"goiY":"Cho dù mưa to, chúng ta cũng phải đi.","giai":"也得 (děi) = cũng phải."},
+     {"kieu":"dungsai","cau":"就是再贵，我就买。","dung":false,"sua":"就是再贵，我也买。","giai":"Vế sau của 就是 phải dùng 也."},
+     {"kieu":"dungsai","cau":"就是他是我的好朋友，我也不能帮他做这种事。","dung":true,"giai":"Đúng: 就是 + một câu, vế sau 也 + phủ định."},
+     {"kieu":"dungsai","cau":"他就是不来，我们开会也。","dung":false,"sua":"他就是不来，我们也开会。","giai":"也 đứng trước động từ 开会."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 5–6)","huongDan":"Hoàn thành đối thoại, có dùng 「就是……，也……」","cau":[
+     {"kieu":"vandung","de":"A：经理不来，我们怎么办呢？ B：经理就是不来，＿＿＿。","goiY":"Nói: chúng ta vẫn họp đúng giờ (也……)","mau":"我们也要按时开会","can":[["也"]]},
+     {"kieu":"vandung","de":"A：外边下小雨呢，我们还去吗？ B：＿＿＿，我们也得去。","goiY":"Nêu giả thiết cực đoan hơn: cho dù mưa to","mau":"就是下大雨","can":[["就是"]]},
+     {"kieu":"vandung","de":"A：李教授不在北京，这个问题咱们怎么解决呢？ B：＿＿＿，＿＿＿。咱们可以和他在线上交流。","goiY":"Nói: cho dù giáo sư không ở Bắc Kinh, ông ấy cũng giúp chúng ta giải quyết được","mau":"他就是不在北京，也能帮咱们解决","can":[["就是"],["也"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Cho dù bận đến mấy, cuối tuần tôi cũng sẽ dành thời gian đi dạo cùng ông bà.","dap":["就是再忙，周末我也会留出时间陪爷爷奶奶散步。","就是再忙，我周末也会留出时间陪爷爷奶奶散步。"],"giai":"就是再忙，……也…… + từ mới 留, 散步."},
+     {"kieu":"dich","vn":"Cho dù không có thầy cô, chúng ta cũng có thể tự học trên mạng.","dap":["就是没有老师，我们也可以在网上自学。","就是没有老师，我们也能在网上自学。"],"giai":"就是……，Sub + 也 + 可以 / 能……"},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Bạn em ngại học online vì không có thầy ở bên. Hãy động viên bạn bằng một câu có 「就是……也……」","mau":"就是老师不在你旁边，你也能在网上找到很多资料自学。","can":[["就是"],["也"]]}]}
+  ]},
+
+ {"so":"3","ten":"并列复句“不是……，而是……”","tenVn":"Câu phức song song 「不是……，而是……」 — không phải …, mà là …",
+  "cauTruc":["(Chủ ngữ) + 不是 + A，而是 + B (phủ định A, khẳng định B)","……的目的 / 原因 + 不是……，而是……"],
+  "giaiThich":"Câu phức song song: PHỦ ĐỊNH vế trước, KHẲNG ĐỊNH vế sau, nhấn mạnh sự khác biệt hoặc đối lập giữa hai vế — “không phải là A, mà là B”. A và B nên cùng loại (cùng là động từ, cùng là cụm danh từ, cùng là lý do…) để đối chiếu rõ: 不是想喝茶，而是想喝水. 「而是」 là một khối, không bỏ 是 (✗ 不是……，而……). Liên hệ bài cũ: 而 (Bài 10 · điểm 3) nối hai vế tương phản; 不是……而是…… là khuôn cố định, ý “sửa lại cho đúng” mạnh hơn. ⚠ Người Việt hay nhầm với 不但 / 不仅……而且…… (Bài 3): “không những … mà còn …” → cả A và B đều đúng; còn 不是……而是…… → A SAI, B mới ĐÚNG. Hay dùng để giải thích nguyên nhân thật: 我不是不想去，而是……",
+  "viDu":[["教育的目的不是让孩子考高分，而是帮助孩子养成好习惯。","Mục đích của giáo dục không phải là để con thi được điểm cao, mà là giúp con hình thành thói quen tốt."],["我不是想喝茶，而是想喝水。","Tôi không phải muốn uống trà, mà là muốn uống nước."],["我放学后不是直接回家，而是先去超市买笔。","Tan học tôi không về thẳng nhà, mà là đi siêu thị mua bút trước."],["我不是不想去，而是实在来不及了。","Không phải tôi không muốn đi, mà là thực sự không kịp nữa rồi. (ôn 来不及 – Bài 4 · điểm 4)"]],
+  "loi":[["我不是想喝茶，而想喝水。","Phải là 而是, không bỏ 是.","我不是想喝茶，而是想喝水。"],["他不仅想喝茶，而是想喝水。","不仅 đi với 而且 / 还 (cả hai đều đúng); phủ định A khẳng định B thì dùng 不是……而是…….","他不是想喝茶，而是想喝水。"],["不是我放学后直接回家，而是先去超市买笔。","Hai vế phải cân đối: 不是 và 而是 cùng đứng sau chủ ngữ, trước phần được so sánh.","我放学后不是直接回家，而是先去超市买笔。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["教育的目的不是让孩子考高分，","帮助孩子养成好习惯。"],"dap":[["而是"]],"chon":["而是","而且","还是"],"goiY":"“… không phải là để con thi điểm cao, mà là giúp con hình thành thói quen tốt.”","giai":"不是……，而是…… (phủ định – khẳng định)."},
+     {"kieu":"dien","phan":["我","想喝茶，而是想喝水。"],"dap":[["不是"]],"chon":["不是","不仅","没有"],"goiY":"“Tôi không phải muốn uống trà, mà là muốn uống nước.”","giai":"而是 đi với 不是; 不仅 đi với 而且."},
+     {"kieu":"dien","phan":["他学钢琴不是为了","，而是因为真的喜欢。"],"dap":[["分数"]],"chon":["分数","礼貌","资料"],"goiY":"“Cậu ấy học piano không phải vì điểm số, mà vì thật sự thích.”","giai":"Hai vế đều nêu lý do: 为了…… / 因为……"},
+     {"kieu":"dien","phan":["他们不是在聊天儿，而是在开线上","。"],"dap":[["会议"]],"chon":["会议","视频","网页"],"goiY":"“Họ không phải đang tán gẫu, mà là đang họp trực tuyến.”","giai":"开会议 / 线上会议 = họp trực tuyến."},
+     {"kieu":"dien","phan":["孩子不开心，不是因为学习太难，而是因为","太大。"],"dap":[["压力"]],"chon":["压力","目的","做法"],"goiY":"“Con không vui không phải vì học quá khó, mà vì áp lực quá lớn.” (ôn từ 压力 – Bài 1)","giai":"压力大 = áp lực lớn."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["我","不是","想喝茶","，","而是","想喝水"],"dap":["我不是想喝茶，而是想喝水。"],"goiY":"Tôi không phải muốn uống trà, mà là muốn uống nước.","giai":"不是 A，而是 B — A, B cùng loại."},
+     {"kieu":"xep","manh":["教育的目的","不是","让孩子考高分","，","而是","帮助孩子","养成好习惯"],"dap":["教育的目的不是让孩子考高分，而是帮助孩子养成好习惯。"],"goiY":"Mục đích của giáo dục không phải là để con thi điểm cao, mà là giúp con hình thành thói quen tốt.","giai":"……的目的不是……，而是……"},
+     {"kieu":"xep","manh":["他","不是","在玩游戏","，","而是","在练口语"],"dap":["他不是在玩游戏，而是在练口语。"],"goiY":"Cậu ấy không phải đang chơi game, mà là đang luyện nói.","giai":"在 + V: đang làm gì; hai vế cân đối."},
+     {"kieu":"dungsai","cau":"我放学后不是直接回家，而是先去超市买笔。","dung":true,"giai":"Đúng: 不是 / 而是 cùng đứng trước phần so sánh."},
+     {"kieu":"dungsai","cau":"教育的目的不是让孩子考高分，而且帮助孩子养成好习惯。","dung":false,"sua":"教育的目的不是让孩子考高分，而是帮助孩子养成好习惯。","giai":"不是 đi với 而是, không đi với 而且."},
+     {"kieu":"dungsai","cau":"我不是不想去，而实在来不及了。","dung":false,"sua":"我不是不想去，而是实在来不及了。","giai":"Không bỏ 是 trong 而是."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 8)","huongDan":"Hoàn thành câu, dùng 「不是……，而是……」 và từ trong ngoặc","cau":[
+     {"kieu":"vandung","de":"他们不是在聊天儿，＿＿＿。（线上会议）","goiY":"Nói việc họ thật sự đang làm: họp trực tuyến","mau":"而是在开线上会议","can":[["而是"],["线上会议"]]},
+     {"kieu":"vandung","de":"他＿＿＿，而是在练口语。（游戏）","goiY":"Phủ định: cậu ấy không phải đang chơi game","mau":"不是在玩游戏","can":[["不是"],["游戏"]]},
+     {"kieu":"vandung","de":"＿＿＿，而是＿＿＿。（礼貌）","goiY":"Tự đặt cả câu: cậu ấy không chào không phải vì vô lễ, mà vì quá căng thẳng","mau":"他不是没有礼貌，而是太紧张了，忘了打招呼","can":[["不是"],["而是"],["礼貌"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Tôi học tiếng Trung không phải vì công việc, mà là vì thích văn hóa Trung Quốc.","dap":["我学中文不是因为工作，而是因为喜欢中国文化。","我学中文不是为了工作，而是因为喜欢中国文化。"],"giai":"不是因为……，而是因为…… (hai vế cùng nêu lý do)."},
+     {"kieu":"dich","vn":"Mục đích của giáo dục không phải là điểm số, mà là giúp trẻ hình thành thói quen tốt.","dap":["教育的目的不是分数，而是帮助孩子养成好习惯。","教育的目的不是为了分数，而是帮助孩子养成好习惯。"],"giai":"目的 + 不是……，而是…… + từ mới 分数, 养成."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Nói quan niệm “thành công” của em, có dùng 「不是……，而是……」","mau":"我觉得成功不是有很多钱，而是每天都能做自己喜欢的事情。","can":[["不是"],["而是"]]}]}
+  ]},
+
+ {"so":"4","ten":"固定短语“就是说”","tenVn":"Cụm cố định 「就是说」 — tức là, nghĩa là, nói cách khác",
+  "cauTruc":["Câu A，就是说，câu B (giải thích lại / nói rõ hơn câu A)","……，也就是说，……"],
+  "giaiThich":"「就是说」 là cụm cố định, đặt GIỮA hai câu: câu sau GIẢI THÍCH THÊM, nói lại câu trước bằng một cách khác cho rõ hơn, cụ thể hơn — giống tiếng Việt “tức là, nghĩa là, nói cách khác”. Thường có dấu phẩy trước và sau. Có thể nói 「也就是说」 (hơi trang trọng hơn). Trong hội thoại, người nghe cũng dùng 「就是说……？」 / 「你的意思是……？」 để hỏi lại cho chắc. ⚠ Câu sau 就是说 phải cùng ý với câu trước (diễn đạt lại, rút ra hệ quả trực tiếp), không đưa ra một ý mới không liên quan. Không nhầm với 就是 (chính là) + 说 (nói): 他就是说了一句话 (anh ấy chỉ nói đúng một câu).",
+  "viDu":[["人要一直坚持学习，就是说，学习是人一生的事情，要活到老学到老。","Con người phải luôn kiên trì học tập, nghĩa là học tập là việc cả đời, phải sống đến già học đến già."],["别着急写，就是说，别着急动笔，想好后再写。","Đừng vội viết, tức là đừng vội đặt bút, nghĩ kỹ rồi hãy viết."],["这份工作的工资是根据你工作的完成情况来发的，就是说，你完成得越多，工资越高。","Lương công việc này trả theo mức độ hoàn thành công việc của bạn, nghĩa là bạn hoàn thành càng nhiều thì lương càng cao."],["这家图书馆二十四小时开门，就是说，不管什么时候你都可以来看书。","Thư viện này mở cửa 24 giờ, tức là bất kể lúc nào bạn cũng có thể đến đọc sách. (ôn 不管……都…… – Bài 8 · điểm 1)"]],
+  "loi":[["就是说，学习是人一生的事情，人要一直坚持学习。","就是说 đứng GIỮA, sau câu cần giải thích, không mở đầu đoạn.","人要一直坚持学习，就是说，学习是人一生的事情。"],["别着急写，就是说，你要快点儿写。","Câu sau mâu thuẫn với câu trước — 就是说 phải nói lại CÙNG một ý.","别着急写，就是说，别着急动笔，想好后再写。"],["明天下雨，就是说，我们去公园吧。","Câu sau không phải là giải thích / hệ quả của câu trước.","明天会下雨，就是说，我们不能去公园了。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["人要一直坚持学习，","，学习是人一生的事情。"],"dap":[["就是说"]],"chon":["就是说","就是了","不是说"],"goiY":"“Con người phải luôn kiên trì học tập, nghĩa là …”","giai":"就是说 đứng giữa, giải thích lại câu trước."},
+     {"kieu":"dien","phan":["别着急写，就是说，别着急动","，想好后再写。"],"dap":[["笔"]],"chon":["笔","脑","心"],"goiY":"“Đừng vội viết, tức là đừng vội đặt bút …”","giai":"动笔 = đặt bút viết."},
+     {"kieu":"dien","phan":["工资是根据你工作的完成情况来发的，就是说，你完成得","多，工资越高。"],"dap":[["越"]],"chon":["越","更","最"],"goiY":"“… nghĩa là bạn hoàn thành càng nhiều thì lương càng cao.”","giai":"越……越…… (HSK 3)."},
+     {"kieu":"dien","phan":["“学而不厌”的意思是人要一直坚持学习，就是说，要活到老","到老。"],"dap":[["学"]],"chon":["学","活","教"],"goiY":"“… tức là phải sống đến già học đến già.”","giai":"活到老学到老."},
+     {"kieu":"dien","phan":["图书馆二十四小时开门，就是说，","什么时候你都可以去看书。"],"dap":[["不管"]],"chon":["不管","即使","虽然"],"goiY":"“… tức là bất kể lúc nào bạn cũng có thể đi đọc sách.” (ôn 不管 – Bài 8)","giai":"不管 + đại từ nghi vấn + 都……"}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["人","要","一直坚持学习","，","就是说","，","学习是人一生的事情"],"dap":["人要一直坚持学习，就是说，学习是人一生的事情。"],"goiY":"Con người phải luôn kiên trì học tập, nghĩa là học tập là việc cả đời.","giai":"Câu A，就是说，câu B."},
+     {"kieu":"xep","manh":["别着急写","，","就是说","，","想好后","再写"],"dap":["别着急写，就是说，想好后再写。"],"goiY":"Đừng vội viết, tức là nghĩ kỹ rồi hãy viết.","giai":"就是说 + giải thích cụ thể."},
+     {"kieu":"xep","manh":["明天放假","，","就是说","，","我们","不用","去学校了"],"dap":["明天放假，就是说，我们不用去学校了。"],"goiY":"Ngày mai được nghỉ, tức là chúng ta không phải đến trường.","giai":"就是说 + hệ quả trực tiếp."},
+     {"kieu":"dungsai","cau":"他会说英语、法语和中文，就是说，他会三种语言。","dung":true,"giai":"Đúng: câu sau nói lại cùng ý bằng cách khác."},
+     {"kieu":"dungsai","cau":"明天下雨，就是说，我们去公园吧。","dung":false,"sua":"明天会下雨，就是说，我们不能去公园了。","giai":"Câu sau phải là giải thích / hệ quả của câu trước."},
+     {"kieu":"dungsai","cau":"这家店二十四小时开门，就是说，晚上它不开门。","dung":false,"sua":"这家店二十四小时开门，就是说，什么时候去都可以。","giai":"Câu sau mâu thuẫn với câu trước."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 9)","huongDan":"Hoàn thành câu, có dùng 「就是说」","cau":[
+     {"kieu":"vandung","de":"他想了想才回答，就是说，＿＿＿。","goiY":"Giải thích lại: anh ấy đã suy nghĩ kỹ rồi mới trả lời, không phải trả lời bừa","mau":"他不是随便回答的，而是认真考虑过的"},
+     {"kieu":"vandung","de":"＿＿＿，＿＿＿，我们要注意学习方法。","goiY":"Nêu một câu (học giỏi không chỉ dựa vào thời gian học dài), rồi 就是说","mau":"学习时间长不一定学得好，就是说","can":[["就是说"]]},
+     {"kieu":"vandung","de":"＿＿＿，＿＿＿，休息好，你的病才能快点儿好起来。","goiY":"Nêu lời bác sĩ dặn (mấy hôm nay đừng đi làm), rồi 就是说","mau":"医生说你这几天不能去上班，就是说","can":[["就是说"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Cửa hàng này mở cửa 24 giờ, nghĩa là lúc nào bạn cũng có thể đến.","dap":["这家店二十四小时开门，就是说，你什么时候都可以来。","这家店二十四小时开门，就是说，你什么时候来都可以。"],"giai":"就是说 + đại từ nghi vấn phiếm chỉ 什么时候都……"},
+     {"kieu":"dich","vn":"Lớp học số có thể chụp ảnh điểm danh, tức là giáo sư không cần gọi tên từng người nữa.","dap":["数字教室可以拍照点名，就是说，教授不用一个个叫名字了。","数字教室可以拍照点名，就是说，教授不用一个一个叫名字了。"],"giai":"就是说 + từ mới 数字, 点名, 教授."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Giải thích câu 「活到老学到老」 cho một người bạn, có dùng 「就是说」","mau":"“活到老学到老”，就是说，不管多大年龄，人都要坚持学习。","can":[["就是说"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 10). Sách 4下 chưa có đáp án — đây là đáp án tham khảo.","dapSgk":false,"tu":["一生","打招呼","丰富","留","弹","优秀"],"cau":[
+   {"s":"即使每天工作很忙，我也会＿＿出时间读书。","dap":["留"]},
+   {"s":"我刚坐下，她就过来和我＿＿。","dap":["打招呼"]},
+   {"s":"他＿＿只做了一件事，那就是研究数学，最后他成为了一位很有名的数学家。","dap":["一生"]},
+   {"s":"小雪很喜欢＿＿钢琴，每天都会练习至少两个小时。","dap":["弹"]},
+   {"s":"他非常＿＿，把任务交给他，我很放心。","dap":["优秀"]},
+   {"s":"老王工作三十年了，有很＿＿的工作经验，这个问题他能解决。","dap":["丰富"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại, sách trang 10). Đáp án tham khảo.","dapSgk":false,"tu":["羡慕","礼貌","律师","数字","继续","口语"],"cau":[
+   {"s":"A：你们还要＿＿加班吗？　B：对，今天必须要把这些货全部发出去。","dap":["继续"]},
+   {"s":"A：你觉得怎样才能学好外语？　B：我自己学外语的经验是，开始学习时要特别重视＿＿，多听多说。","dap":["口语"]},
+   {"s":"A：你女儿真有＿＿。　B：谢谢，从小我们就教她要尊重别人，得到别人的帮助时，要说“谢谢”。","dap":["礼貌"]},
+   {"s":"A：你们做＿＿的，平时工作一定很忙吧？　B：也不一定，有时候周末也不能休息，有时候就能按时下班。","dap":["律师"]},
+   {"s":"A：姐姐，我太＿＿你的工作了！从来不加班，而且工资高。　B：可是我们经常出差，很累的。","dap":["羡慕"]},
+   {"s":"A：真是＿＿社会啊，我要的信息马上就查到了。　B：是啊，不仅是查资料，现在很多事情也都可以在网上解决了。","dap":["数字"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn (sách trang 10–11). Đáp án tham khảo.","dapSgk":false,"tu":["还可以直接给大家放视频","第一个进教室的人","老师和学生都觉得方便","上课时"],"cau":[
+   {"s":"现在有了数字教室，上课方式和以前大不相同了。＿＿，只要按（àn, ấn）下门口的“上课”，灯和空调就会自己打开，不用一个一个去开。＿＿，用到的“黑板”是一块能上网的电子屏幕（píngmù, màn hình），老师不仅可以在上面写字，＿＿。数字教室里的桌椅也分成几个小组（xiǎozǔ, nhóm），小组里的人聚在一起，都能互相看到对方，这样方便大家交流。这些变化让上课方式丰富了不少，＿＿，所以数字教室很受欢迎。","dap":["第一个进教室的人","上课时","还可以直接给大家放视频","老师和学生都觉得方便"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (câu dưới đây là câu mẫu tham khảo — câu của em đúng ngữ pháp, hợp tranh là đạt).","cau":[
+   {"anh":"bt-1","s":"","tu":"老年人","dap":"这两位老年人虽然年龄大了，但是每天都过得很开心。","giai":"老年人 làm chủ ngữ; 两位 — lượng từ lịch sự 位 cho người; ôn 虽然……但是……"},
+   {"anh":"bt-2","s":"","tu":"准时","dap":"这架飞机准时起飞了。","giai":"准时 làm trạng ngữ đứng trước động từ 起飞; lượng từ của 飞机 là 架."},
+   {"anh":"bt-3","s":"","tu":"散步","dap":"他们每天晚饭后都去河边散步。","giai":"Nơi chốn đứng trước 散步 (✗ 散步河边); 散步 là động từ li hợp: 散散步, 散一会儿步."}]}
+],
+
+"listen": [
+ {"audio":"奶奶，您每周二都去哪儿啊？我去老年大学学用手机。您都七十多岁了，还学这个？即使年龄大了，也要继续学习嘛！现在我会在网上和网友聊天儿了，还能给你发视频呢。您的生活真丰富，真让人羡慕！","questions":[
+   {"q":"奶奶每周二去老年大学学什么？","opts":["学用手机","学弹钢琴","学打太极拳"],"ans":0},
+   {"q":"奶奶现在会做什么了？","opts":["自己做网页","在网上和网友聊天儿","教别人用电脑"],"ans":1}]},
+ {"audio":"小王，今天的课怎么是在线上上的？教授去外地开会了，就是说，这两周我们都在线上上课。那要是网不好，没听明白怎么办？没关系，课后可以在学校网站上找到视频记录，再看一遍就是了。","questions":[
+   {"q":"这两周为什么在线上上课？","opts":["教授去外地开会了","教室坏了","学生都生病了"],"ans":0},
+   {"q":"没听明白可以怎么办？","opts":["给教授打电话","课后看视频记录","去图书馆找资料"],"ans":1}]},
+ {"audio":"李老师，我儿子这次数学只考了七十分，我特别着急。其实分数不是最重要的，孩子已经很努力了。那我应该怎么做呢？教育的目的不是让孩子考高分，而是帮助他养成好习惯。您可以每天留出时间陪他看看书、锻炼锻炼身体。","questions":[
+   {"q":"孩子这次数学考了多少分？","opts":["七十分","九十分","一百分"],"ans":0},
+   {"q":"李老师认为教育的目的是什么？","opts":["让孩子考高分","帮助孩子养成好习惯","让孩子上好大学"],"ans":1}]}
+],
+
+"match": [
+ {"left":"养成","right":"好习惯"},
+ {"left":"获取","right":"知识"},
+ {"left":"弹","right":"钢琴"},
+ {"left":"打","right":"太极拳"},
+ {"left":"拍照","right":"点名"},
+ {"left":"优秀的","right":"律师"},
+ {"left":"丰富的","right":"工作经验"},
+ {"left":"和孩子","right":"打招呼"},
+ {"left":"即使……","right":"也……"},
+ {"left":"不是……","right":"而是……"}
+],
+
+"fill": [
+ {"pre":"有些人即使年龄大了，也","blank":"坚持","post":"去老年班学习。","hint":"(kiên trì)","ans":"坚持","exp":"坚持 + V."},
+ {"pre":"他们的生活真丰富，让人","blank":"羡慕","post":"。","hint":"(ngưỡng mộ)","ans":"羡慕","exp":"让人羡慕 = đáng ngưỡng mộ."},
+ {"pre":"我都七八十岁了，还上网和网友们聊天儿呢，生活一点儿都不","blank":"无聊","post":"。","hint":"(buồn chán)","ans":"无聊","exp":"一点儿都不 + Adj."},
+ {"pre":"教授在线上点名，不用像","blank":"线下","post":"那样一个个叫名字。","hint":"(trực tiếp, offline)","ans":"线下","exp":"线上 ↔ 线下."},
+ {"pre":"我就是不在教室，也可以学习中文，和同学一起练","blank":"口语","post":"。","hint":"(kỹ năng nói)","ans":"口语","exp":"练口语 = luyện nói."},
+ {"pre":"科技真是让","blank":"获取","post":"知识变得简单多了。","hint":"(tiếp nhận, thu được)","ans":"获取","exp":"获取 + 知识 / 信息."},
+ {"pre":"姐姐家的两个孩子很有","blank":"礼貌","post":"。","hint":"(lễ phép)","ans":"礼貌","exp":"有礼貌 = lễ phép."},
+ {"pre":"教育的目的不是让孩子考高分，而是帮助孩子","blank":"养成","post":"好习惯。","hint":"(hình thành)","ans":"养成","exp":"养成 + 习惯."},
+ {"pre":"学习是人","blank":"一生","post":"的事情，要活到老学到老。","hint":"(cả đời)","ans":"一生","exp":"一生 = cả đời."},
+ {"pre":"爷爷虽然七十多岁了，每天还","blank":"准时","post":"去老年大学上课。","hint":"(đúng giờ)","ans":"准时","exp":"准时 + V."}
+],
+
+"sort": [
+ {"words":["有些人","即使","年龄大了","，","也","坚持","去老年班学习","。"],"ans":"有些人即使年龄大了，也坚持去老年班学习。"},
+ {"words":["我","就是","不在教室","，","也","可以","学习中文","。"],"ans":"我就是不在教室，也可以学习中文。"},
+ {"words":["教育的目的","不是","让孩子考高分","，","而是","帮助孩子","养成好习惯","。"],"ans":"教育的目的不是让孩子考高分，而是帮助孩子养成好习惯。"},
+ {"words":["人","要","一直坚持学习","，","就是说","，","学习是","人一生的事情","。"],"ans":"人要一直坚持学习，就是说，学习是人一生的事情。"},
+ {"words":["现在","网上","到处是","学习资料","。"],"ans":"现在网上到处是学习资料。"},
+ {"words":["重新","当一回","学生","，","生活","更有意思了","。"],"ans":"重新当一回学生，生活更有意思了。"}
+],
+
+"mc": [
+ {"q":"＿＿明天下大雨，我们也会按时出发。","opts":["即使","虽然","因为","只要"],"ans":0,"exp":"Giả thiết + 也 → 即使……也……; 虽然 nói sự thật, đi với 但是."},
+ {"q":"锻炼身体很重要，就是再忙，＿＿要坚持运动。","opts":["也","就","才","却"],"ans":0,"exp":"就是……，也…… (khẩu ngữ của 即使……也……)."},
+ {"q":"教育的目的不是让孩子考高分，＿＿帮助孩子养成好习惯。","opts":["而是","而且","还是","但是"],"ans":0,"exp":"不是……，而是…… phủ định A, khẳng định B."},
+ {"q":"人要一直坚持学习，＿＿，学习是人一生的事情。","opts":["就是说","就是了","而是","即使"],"ans":0,"exp":"就是说 = tức là, giải thích lại câu trước."},
+ {"q":"数字教室可以拍照＿＿，特别节约时间。","opts":["点名","记录","自学","获取"],"ans":0,"exp":"拍照点名 = chụp ảnh điểm danh."},
+ {"q":"他非常＿＿，把任务交给他，我很放心。","opts":["优秀","无聊","快速","礼貌"],"ans":0,"exp":"优秀 = xuất sắc → giao việc thì yên tâm."},
+ {"q":"小雪很喜欢＿＿钢琴，每天都会练习至少两个小时。","opts":["弹","打","玩","唱"],"ans":0,"exp":"弹 (tán) + 钢琴 / 吉他."},
+ {"q":"课上没听明白时，课后还能在学校网站上找到＿＿记录看。","opts":["视频","分数","口语","网友"],"ans":0,"exp":"视频记录 = video ghi lại bài giảng."},
+ {"q":"我们一进门，两个孩子就马上和我们＿＿。","opts":["打招呼","散步","点名","留"],"ans":0,"exp":"和 + ai + 打招呼 = chào hỏi ai."},
+ {"q":"爷爷虽然七十多岁了，每天还＿＿去老年大学上课。","opts":["准时","快速","重新","仍"],"ans":0,"exp":"准时 + V = làm gì đúng giờ."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và thảo luận nhóm), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions":[
+  {"q_zh":"你上过线上课吗？你觉得怎么样？","q_vn":"Bạn đã từng học lớp trực tuyến chưa? Bạn thấy thế nào?","hint":"我上过……。我觉得线上课……，就是说……。不过……","sample":"我上过线上课。我觉得线上课很方便，只要有手机或电脑，就是不在教室，也可以上课。课后还能看视频记录，就是说，没听明白的地方可以再听一遍。不过，线上课不能和老师、同学面对面地交流，练口语的机会少一些。","sample_vn":"Tôi từng học lớp trực tuyến. Tôi thấy học trực tuyến rất tiện, chỉ cần có điện thoại hoặc máy tính thì dù không ở lớp vẫn học được. Sau giờ học còn xem được video ghi lại, tức là chỗ nào chưa hiểu có thể nghe lại. Có điều học trực tuyến không trao đổi trực tiếp với thầy cô, bạn bè được, ít cơ hội luyện nói hơn.","note":"Câu hỏi phần Khởi động của sách; dùng 就是……也…… (điểm 2), 就是说 (điểm 4), ôn 不过 (Bài 2)."},
+  {"q_zh":"在你的国家，老年人都怎么生活？","q_vn":"Ở nước bạn, người cao tuổi sống như thế nào?","hint":"在越南，很多老年人……，有的……，有的……。即使……，也……","sample":"在越南，很多老年人退休以后，每天早上去公园散步、跳舞，有的打太极拳，有的和朋友一起喝茶聊天儿。现在也有不少老年人学用手机，上网看新闻、和孩子打视频电话。即使年龄大了，他们也希望生活丰富一点儿，不想在家里一个人觉得无聊。","sample_vn":"Ở Việt Nam, nhiều người cao tuổi sau khi nghỉ hưu, sáng nào cũng ra công viên đi bộ, nhảy múa, có người tập Thái Cực quyền, có người cùng bạn bè uống trà trò chuyện. Bây giờ cũng có không ít người già học dùng điện thoại, lên mạng đọc tin, gọi video cho con cháu. Dù tuổi đã cao, họ cũng mong cuộc sống phong phú hơn, không muốn ở nhà một mình buồn chán.","note":"Câu hỏi phần Khởi động của sách; dùng 即使……也…… (điểm 1) + ôn 有的……有的……"},
+  {"q_zh":"在公园里，老年人都会做些什么活动？李文的爷爷为什么去老年班学习？","q_vn":"Trong công viên, người cao tuổi thường làm những hoạt động gì? Vì sao ông của Lý Văn đi học lớp người cao tuổi?","hint":"有的……，有的……，还有的……。因为他觉得老年人也要……","sample":"在公园里，老年人有的散步，有的唱歌、跳舞，还有的打太极拳。李文的爷爷去老年班学习，是因为他觉得老年人也要继续学习。他学了电脑以后，还能上网和网友们聊天儿，生活一点儿都不无聊。","sample_vn":"Trong công viên, người cao tuổi có người đi dạo, có người hát, nhảy múa, còn có người đánh Thái Cực quyền. Ông của Lý Văn đi học lớp người cao tuổi vì ông thấy người già cũng phải tiếp tục học tập. Học máy tính xong, ông còn lên mạng trò chuyện với bạn trên mạng, cuộc sống chẳng buồn chán chút nào.","note":"Câu hỏi bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"李文和白家月在公园里散步。白家月觉得……。李文说，住在附近的老年人都……。白家月说……，让人……。李文告诉她，有些老年人即使……，也……。比如，他爷爷……","sample":"李文和白家月在公园里散步。白家月觉得公园里的老年人真不少。李文说，住在附近的老年人都会来这儿，有的散步，有的唱歌、跳舞，还有的打太极拳。白家月说，这里的老年人生活真丰富，让人羡慕。李文告诉她，有些老年人即使年龄大了，也坚持去老年班学习。比如，他爷爷每周都去老年班学电脑。爷爷说：“你看，我都七八十岁了，还上网和网友们聊天儿呢，生活一点儿都不无聊。”","sample_vn":"Lý Văn và Bạch Gia Nguyệt đi dạo trong công viên. Bạch Gia Nguyệt thấy người cao tuổi trong công viên đông thật… Ông nói: “Cháu xem, ông bảy tám mươi tuổi rồi mà còn lên mạng trò chuyện với bạn trên mạng, cuộc sống chẳng buồn chán chút nào.”","note":"Bài tập 复述 của sách (trang 3)."},
+  {"q_zh":"李文说，线上上课时，如果没听懂，课后还可以怎么做？人们自学为什么变得越来越方便了？","q_vn":"Lý Văn nói, khi học trực tuyến nếu nghe chưa hiểu, sau giờ học còn có thể làm gì? Vì sao việc tự học ngày càng tiện lợi?","hint":"课后还能……。因为现在网上到处是……，想查什么……。只要……，就是……，也……","sample":"李文说，课上没听明白时，课后还能在学校网站上找到视频记录看。人们自学越来越方便，是因为现在网上到处是学习资料，想查什么都能查到。而且只要有手机或电脑，就是不在教室，也可以学习。","sample_vn":"Lý Văn nói, trên lớp nghe chưa hiểu thì sau giờ học còn có thể tìm video ghi lại trên trang web của trường để xem. Tự học ngày càng tiện vì bây giờ trên mạng đâu đâu cũng là tài liệu học tập, muốn tra gì cũng tra được. Hơn nữa chỉ cần có điện thoại hoặc máy tính, dù không ở lớp vẫn có thể học.","note":"Câu hỏi bài khoá 2; dùng 就是……也…… (điểm 2)."},
+  {"q_zh":"以前，王一雪的孩子为什么不开心？王一雪和刘明做出了什么样的改变？","q_vn":"Trước đây, vì sao con của Vương Nhất Tuyết không vui? Vương Nhất Tuyết và Lưu Minh đã thay đổi như thế nào?","hint":"因为以前他们只关心……，结果……。后来他们认识到，教育的目的不是……，而是……。于是……","sample":"因为以前王一雪和刘明只关心孩子的分数，结果孩子压力特别大，每天都很不开心。后来他们认识到，教育的目的不是让孩子考高分，而是帮助孩子养成好习惯。于是，他们每天都给孩子留出时间外出锻炼身体，或者看些自己感兴趣的书。","sample_vn":"Vì trước đây Vương Nhất Tuyết và Lưu Minh chỉ quan tâm điểm số của con, kết quả là con bị áp lực rất lớn, ngày nào cũng không vui. Về sau họ nhận ra mục đích của giáo dục không phải là để con thi điểm cao, mà là giúp con hình thành thói quen tốt. Thế là ngày nào họ cũng dành thời gian cho con ra ngoài rèn luyện thân thể hoặc đọc sách mình thích.","note":"Câu hỏi bài khoá 3; dùng 不是……而是…… (điểm 3) + ôn 于是 (Bài 3)."},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"星期六，白家月和李文去了……。王一雪的两个孩子……。王一雪说，以前他们……，所以……，结果……。后来，他们认识到，教育的目的不是……，而是……。于是……","sample":"星期六，白家月和李文去了王一雪家。王一雪的两个孩子很有礼貌，他们一进门，两个孩子就马上和他们打招呼。在王一雪家，他们也聊到了孩子的教育。王一雪说，以前他们和很多家长一样，觉得孩子上个好大学，人生才是成功的。所以，他们只关心孩子的分数，结果孩子压力特别大，每天都很不开心。后来，他们认识到，教育的目的不是让孩子考高分，而是帮助孩子养成好习惯。于是，他们做出改变，每天都给孩子留出时间外出锻炼身体，或者看些自己感兴趣的书。白家月觉得王一雪和刘明的做法真棒。","sample_vn":"Thứ Bảy, Bạch Gia Nguyệt và Lý Văn đến nhà Vương Nhất Tuyết. Hai đứa con của chị rất lễ phép… Bạch Gia Nguyệt thấy cách làm của Vương Nhất Tuyết và Lưu Minh thật tuyệt.","note":"Bài tập 复述 của sách (trang 7)."},
+  {"q_zh":"“活到老学到老”是什么意思？那位律师为什么一直坚持学习法律知识？","q_vn":"“Sống đến già học đến già” nghĩa là gì? Vì sao người luật sư kia luôn kiên trì học kiến thức pháp luật?","hint":"“活到老学到老”，就是说……。因为他认为，这不仅是……，也是……","sample":"“活到老学到老”，就是说，学习是人一生的事情，人要一直坚持学习。那位律师一直坚持学习新的法律知识，因为他认为，这不仅是律师的要求和责任，也是提高自己能力的重要方法。","sample_vn":"“Sống đến già học đến già” nghĩa là học tập là việc cả đời, con người phải luôn kiên trì học. Người luật sư kia luôn kiên trì học kiến thức pháp luật mới, vì anh ấy cho rằng đó không chỉ là yêu cầu và trách nhiệm của luật sư, mà còn là cách quan trọng để nâng cao năng lực bản thân.","note":"Câu hỏi bài khoá 4; dùng 就是说 (điểm 4) + ôn 不仅……也…… (Bài 3)."},
+  {"q_zh":"小组讨论：现在，人们越来越离不开网络，上网成为很多人每天一定要做的事情。三人一组，请以“网络给我们带来的影响”为题，从好的影响和坏的影响两方面进行讨论，讨论后填写表格，再向全班介绍。","q_vn":"Thảo luận nhóm: Ngày nay con người ngày càng không thể rời xa mạng Internet, lên mạng trở thành việc nhiều người ngày nào cũng làm. Nhóm 3 người, lấy chủ đề “Ảnh hưởng của mạng Internet đối với chúng ta”, thảo luận từ hai mặt: ảnh hưởng tốt và ảnh hưởng xấu; thảo luận xong điền vào bảng rồi trình bày trước lớp.","hint":"好的影响：获取知识……；线上……；自学……；就是……也……。坏的影响：……不是……，而是……；即使……也……。我们认为，……就是说……","sample":"大家好！我们组讨论的题目是“网络给我们带来的影响”。先说好的影响：第一，网上到处是学习资料，获取知识变得简单多了，想查什么都能查到；第二，有了线上课和视频记录，我们就是不在教室，也可以学习，自学也更方便了；第三，老年人也可以上网和网友聊天儿，生活更丰富了。再说坏的影响：有些人每天花太多时间玩游戏、看视频，结果没有时间运动和休息；还有人觉得在网上什么都能查到，就不认真读书、不自己思考了。另外，网上的信息不一定都是对的。我们认为，网络本身不是问题，问题是怎么用它。即使网络再方便，我们也要合理安排上网的时间，就是说，要让网络帮助我们学习和生活，而不是让它管着我们。","sample_vn":"Chào cả lớp! Chủ đề nhóm em thảo luận là “Ảnh hưởng của mạng Internet đối với chúng ta”. Trước hết là ảnh hưởng tốt: một là, trên mạng đâu đâu cũng là tài liệu học tập, tiếp thu kiến thức trở nên đơn giản hơn nhiều; hai là, có lớp trực tuyến và video ghi lại, chúng ta dù không ở lớp vẫn học được, tự học cũng tiện hơn; ba là, người già cũng có thể lên mạng trò chuyện với bạn bè, cuộc sống phong phú hơn. Còn ảnh hưởng xấu: có người mỗi ngày dành quá nhiều thời gian chơi game, xem video, kết quả không có thời gian vận động và nghỉ ngơi; có người thấy trên mạng cái gì cũng tra được nên không chăm đọc sách, không tự suy nghĩ. Ngoài ra, thông tin trên mạng chưa chắc đã đúng hết. Chúng em cho rằng bản thân mạng Internet không phải là vấn đề, vấn đề là dùng nó thế nào. Dù mạng tiện đến mấy, chúng ta cũng phải sắp xếp thời gian lên mạng hợp lý, tức là để mạng giúp ta học tập và sinh hoạt, chứ không để nó điều khiển ta.","note":"Hoạt động 任务活动 · 小组讨论 (thảo luận nhóm) của sách, trang 11 — dùng đủ 4 điểm ngữ pháp: 即使……也……, 就是……也……, 不是……而是……, 就是说."}
+ ]
+},
+
+"translate": [
+ ["Có những người dù tuổi đã cao vẫn kiên trì đi học lớp người cao tuổi.","有些人即使年龄大了，也坚持去老年班学习。"],
+ ["Tôi chỉ cần có điện thoại hoặc máy tính thì dù không ở lớp cũng có thể học tiếng Trung.","我只要有手机或电脑，就是不在教室，也可以学习中文。"],
+ ["Mục đích của giáo dục không phải là để con thi được điểm cao, mà là giúp con hình thành thói quen tốt.","教育的目的不是让孩子考高分，而是帮助孩子养成好习惯。"],
+ ["Học tập là việc cả đời của con người, nghĩa là phải sống đến già học đến già.","学习是人一生的事情，就是说，要活到老学到老。"],
+ ["Công nghệ đã làm cho việc tiếp thu kiến thức trở nên đơn giản hơn nhiều.","科技让获取知识变得简单多了。"],
+ ["Hai đứa con nhà chị rất lễ phép, vừa vào cửa đã chào hỏi chúng tôi.","姐姐家的两个孩子很有礼貌，一进门就和我们打招呼。"]
+],
+"translateRev": [
+ ["Cuộc sống của họ thật phong phú, khiến người ta ngưỡng mộ.","他们的生活真丰富，让人羡慕。"],
+ ["Giáo sư điểm danh trực tuyến, không phải gọi tên từng người như học trực tiếp.","教授在线上点名，不用像线下那样一个个叫名字。"],
+ ["Bây giờ trên mạng đâu đâu cũng là tài liệu học tập, muốn tra gì cũng tra được.","现在网上到处是学习资料，想查什么都能查到。"],
+ ["Ngày nào họ cũng dành thời gian cho con ra ngoài rèn luyện thân thể.","他们每天都给孩子留出时间外出锻炼身体。"],
+ ["Được làm học sinh lại một lần nữa, cuộc sống thú vị hơn, cũng cảm thấy mình trẻ ra.","重新当一回学生，生活更有意思了，也感觉自己变年轻了。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":140,"tieuDe":"写作 — viết theo đề của sách (ít nhất 140 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết đoạn văn: cách dạy học em thích (写作)","gioiThieu":"Đề 写作 của sách HSK 4 (3.0) yêu cầu viết một đoạn văn ngắn (ít nhất 140 chữ) dựa trên trải nghiệm của bản thân — lần này là nói về cách dạy học trên lớp mà em thích và giải thích lý do, giống phần 书写 của đề thi HSK 4 mới.","buoc":["Đọc kỹ đề: hai yêu cầu bắt buộc — (1) em thích thầy cô dạy THẾ NÀO, (2) VÌ SAO; phải dựa vào trải nghiệm thật của em.","Lập dàn ý theo các câu hỏi gợi ý: trước đây em học thế nào → cách dạy em thích → lợi ích → so sánh trực tuyến / trực tiếp → mong muốn sau này.","Dùng từ mới và 4 điểm ngữ pháp của bài (khung “Từ, cấu trúc nên dùng”): 不是……而是……, 就是说, 即使……也……, 就是……也…….","Nối các ý bằng từ nối: 以前 / 后来 / 首先 / 另外 / 一方面……另一方面…… / 跟……相比.","Câu mở nêu thẳng cách dạy em thích, câu kết nói ý nghĩa (học suốt đời); tự soát số chữ (≥ 140) và lỗi chữ Hán trước khi nộp."]},
+ "de":"你喜欢老师怎样上课？请根据你的经历，写一篇短文，说说你喜欢的课堂教学方式，并说明理由，不少于140字。",
+ "prompt":"Em thích thầy cô lên lớp như thế nào? Hãy dựa vào trải nghiệm của mình, viết một đoạn văn ngắn nói về cách dạy học trên lớp mà em thích và giải thích lý do, không ít hơn 140 chữ.",
+ "dan":[
+  {"hoi":"你以前上的课是什么样的？","goiY":"以前，老师在上面讲，我们在下面记笔记……"},
+  {"hoi":"你最喜欢老师怎样上课？","goiY":"我最喜欢的上课方式不是……，而是……"},
+  {"hoi":"这样上课有什么好处？","goiY":"……，就是说……；一方面……，另一方面……"},
+  {"hoi":"线上课和线下课，你更喜欢哪一种？为什么？","goiY":"跟线下课相比，线上课……；即使……，也……"},
+  {"hoi":"以后你打算怎样学习？","goiY":"就是以后不在学校了，我也会……，活到老学到老"}],
+ "tuNen":["线上","线下","数字","教授","点名","视频","记录","资料","自学","口语","科技","获取","丰富","养成","继续"],
+ "cauTruc":[
+  {"ten":"不是……，而是……","nhan":"不是","vd":"我最喜欢的上课方式不是老师一个人讲，而是老师和学生一起交流。","khi":"Câu MỞ: nêu cách dạy em thích (phủ định cách cũ, khẳng định cách mới)."},
+  {"ten":"……，就是说，……","nhan":"就是说","vd":"老师会让我们分成小组讨论，就是说，每个人都有机会练口语。","khi":"Giải thích rõ lợi ích của cách dạy đó."},
+  {"ten":"即使……，也……","nhan":"即使","vd":"即使课上没听明白，我也能在学校网站上找到视频记录再看一遍。","khi":"Nói về ưu điểm của lớp học số / trực tuyến."},
+  {"ten":"跟……相比","nhan":"相比","vd":"跟线下课相比，线上课更方便，不过和同学面对面交流的机会少一些。","khi":"So sánh trực tuyến – trực tiếp (ôn Bài 8)."},
+  {"ten":"就是……，也……","nhan":"就是","vd":"就是以后不在学校了，我也会继续用这种方法学习。","khi":"Câu KẾT: quyết tâm học suốt đời."}],
+ "checklist":[
+  "Đủ ít nhất 140 chữ Hán chưa?",
+  "Đã nói rõ cách dạy em thích VÀ giải thích lý do (dựa vào trải nghiệm thật) chưa?",
+  "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (即使……也……、就是……也……、不是……而是……、就是说) chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài chưa?",
+  "Đoạn văn có câu mở và câu kết rõ ràng, các ý nối với nhau bằng từ nối chưa?"],
+ "model":"我最喜欢的课堂教学方式，不是老师一个人在上面讲、学生在下面记笔记，而是老师和学生一起交流、线上线下结合的方式。上大学以后，我们经常在数字教室上课。教授拍照点名，特别节约时间；课上老师会给我们放视频，还会让我们分成小组讨论，就是说，每个人都有机会练口语，不只是听，还要自己说、自己想。课后，即使课上没听明白，我也能在学校网站上找到视频记录再看一遍。网上到处是学习资料，自学也更方便了。我觉得这种上课方式一方面让课堂变得更丰富、更有趣，另一方面也让我养成了自学的好习惯。就是以后不在学校了，我也会继续用这种方法学习，活到老学到老。"
+}
+}

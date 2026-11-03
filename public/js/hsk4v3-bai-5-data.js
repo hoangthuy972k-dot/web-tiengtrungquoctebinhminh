@@ -63,7 +63,7 @@ var vocabData = [
    },
    {
     "zh": "每年至少有两百名留学生来我校学习中文专业。",
-    "py": "Měi nián zhìshǎo yǒu liǎng bǎi míng liúxuéshēng lái wǒ xiào xuéxí Zhōngwén zhuānyè.",
+    "py": "Měinián zhìshǎo yǒu liǎngbǎi míng liúxuéshēng lái wǒ xiào xuéxí Zhōngwén zhuānyè.",
     "vn": "Mỗi năm có ít nhất hai trăm du học sinh đến trường chúng tôi học chuyên ngành tiếng Trung."
    }
   ],
@@ -106,7 +106,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu bạn muốn đỗ HSK 4 thì mỗi ngày phải học ít nhất hai tiếng.",
     "answer": "要是你想通过HSK四级，就得每天至少学习两个小时。",
-    "answerPy": "Yàoshì nǐ xiǎng tōngguò HSK sì jí, jiù děi měi tiān zhìshǎo xuéxí liǎng gè xiǎoshí.",
+    "answerPy": "Yàoshi nǐ xiǎng tōngguò HSK sì jí, jiù děi měitiān zhìshǎo xuéxí liǎng gè xiǎoshí.",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2).",
     "pair": "要是……就至少……"
    }
@@ -139,7 +139,7 @@ var vocabData = [
    },
    {
     "zh": "中餐厅",
-    "py": "Zhōng cāntīng",
+    "py": "Zhōngcān tīng",
     "vn": "nhà hàng Trung Hoa"
    },
    {
@@ -372,7 +372,7 @@ var vocabData = [
    },
    {
     "zh": "煮熟",
-    "py": "Zhǔ shú",
+    "py": "Zhǔshú",
     "vn": "luộc chín"
    }
   ],
@@ -387,12 +387,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "这道菜是先用水把鱼煮熟，最后再倒上辣椒油。",
-  "ex_py": "Zhè dào cài shì xiān yòng shuǐ bǎ yú zhǔ shú, zuìhòu zài dào shàng làjiāo yóu.",
+  "ex_py": "Zhè dào cài shì xiān yòngshuǐ bǎ yú zhǔshú, zuìhòu zài dào shàng làjiāo yóu.",
   "ex_vn": "Món này là trước tiên dùng nước luộc chín cá, cuối cùng mới rưới dầu ớt lên.",
   "exList": [
    {
     "zh": "这道菜是先用水把鱼煮熟，最后再倒上辣椒油。",
-    "py": "Zhè dào cài shì xiān yòng shuǐ bǎ yú zhǔ shú, zuìhòu zài dào shàng làjiāo yóu.",
+    "py": "Zhè dào cài shì xiān yòngshuǐ bǎ yú zhǔshú, zuìhòu zài dào shàng làjiāo yóu.",
     "vn": "Món này là trước tiên dùng nước luộc chín cá, cuối cùng mới rưới dầu ớt lên."
    },
    {
@@ -496,7 +496,7 @@ var vocabData = [
    },
    {
     "zh": "家里没油了，你去超市买一瓶吧。",
-    "py": "Jiā lǐ méi yóu le, nǐ qù chāoshì mǎi yì píng ba.",
+    "py": "Jiāli méi yóu le, nǐ qù chāoshì mǎi yì píng ba.",
     "vn": "Nhà hết dầu rồi, bạn ra siêu thị mua một chai nhé."
    }
   ],
@@ -519,7 +519,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nhà hết dầu rồi, bạn ra siêu thị mua một chai nhé.",
     "answer": "家里没油了，你去超市买一瓶吧。",
-    "answerPy": "Jiā lǐ méi yóu le, nǐ qù chāoshì mǎi yì píng ba.",
+    "answerPy": "Jiāli méi yóu le, nǐ qù chāoshì mǎi yì píng ba.",
     "note": "Câu chọn từ của sách (综合练习 câu 1).",
     "pair": "没 + N + 了"
    },
@@ -565,7 +565,7 @@ var vocabData = [
    },
    {
     "zh": "一道凉菜",
-    "py": "Yí dào liáng cài",
+    "py": "Yí dào liángcài",
     "vn": "một món nguội"
    },
    {
@@ -585,17 +585,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "这道菜是先用水把鱼煮熟，最后再倒上辣椒油。",
-  "ex_py": "Zhè dào cài shì xiān yòng shuǐ bǎ yú zhǔ shú, zuìhòu zài dào shàng làjiāo yóu.",
+  "ex_py": "Zhè dào cài shì xiān yòngshuǐ bǎ yú zhǔshú, zuìhòu zài dào shàng làjiāo yóu.",
   "ex_vn": "Món này là trước tiên dùng nước luộc chín cá, cuối cùng mới rưới dầu ớt lên.",
   "exList": [
    {
     "zh": "这道菜是先用水把鱼煮熟，最后再倒上辣椒油。",
-    "py": "Zhè dào cài shì xiān yòng shuǐ bǎ yú zhǔ shú, zuìhòu zài dào shàng làjiāo yóu.",
+    "py": "Zhè dào cài shì xiān yòngshuǐ bǎ yú zhǔshú, zuìhòu zài dào shàng làjiāo yóu.",
     "vn": "Món này là trước tiên dùng nước luộc chín cá, cuối cùng mới rưới dầu ớt lên."
    },
    {
     "zh": "李文更喜欢吃咸的，选了红烧羊肉和一道凉菜。",
-    "py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liáng cài.",
+    "py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liángcài.",
     "vn": "Lý Văn thích ăn mặn hơn, chọn món thịt dê kho tàu và một món nộm."
    }
   ],
@@ -618,7 +618,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Món này trông thì rất cay, nhưng thật ra không cay lắm.",
     "answer": "这道菜看起来很辣，其实不太辣。",
-    "answerPy": "Zhè dào cài kàn qǐlái hěn là, qíshí bú tài là.",
+    "answerPy": "Zhè dào cài kànqǐlai hěn là, qíshí bú tài là.",
     "note": "Đáp án gợi ý bài nhìn tranh của sách (ý tương tự).",
     "pair": "看起来……其实……"
    },
@@ -655,7 +655,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "煮熟",
-    "py": "Zhǔ shú",
+    "py": "Zhǔshú",
     "vn": "luộc chín"
    },
    {
@@ -670,7 +670,7 @@ var vocabData = [
    },
    {
     "zh": "很熟悉",
-    "py": "Hěn shúxī",
+    "py": "Hěn shúxi",
     "vn": "rất quen thuộc"
    }
   ],
@@ -685,17 +685,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "这道菜是先用水把鱼煮熟，最后再倒上辣椒油。",
-  "ex_py": "Zhè dào cài shì xiān yòng shuǐ bǎ yú zhǔ shú, zuìhòu zài dào shàng làjiāo yóu.",
+  "ex_py": "Zhè dào cài shì xiān yòngshuǐ bǎ yú zhǔshú, zuìhòu zài dào shàng làjiāo yóu.",
   "ex_vn": "Món này là trước tiên dùng nước luộc chín cá, cuối cùng mới rưới dầu ớt lên.",
   "exList": [
    {
     "zh": "这道菜是先用水把鱼煮熟，最后再倒上辣椒油。",
-    "py": "Zhè dào cài shì xiān yòng shuǐ bǎ yú zhǔ shú, zuìhòu zài dào shàng làjiāo yóu.",
+    "py": "Zhè dào cài shì xiān yòngshuǐ bǎ yú zhǔshú, zuìhòu zài dào shàng làjiāo yóu.",
     "vn": "Món này là trước tiên dùng nước luộc chín cá, cuối cùng mới rưới dầu ớt lên."
    },
    {
     "zh": "我们虽然没有见过面，但至少在网上聊过很多次，也算比较熟悉了。",
-    "py": "Wǒmen suīrán méiyǒu jiàn guò miàn, dàn zhìshǎo zài wǎngshàng liáo guò hěn duō cì, yě suàn bǐjiào shúxī le.",
+    "py": "Wǒmen suīrán méiyǒu jiàn guò miàn, dàn zhìshǎo zài wǎngshang liáo guò hěn duō cì, yě suàn bǐjiào shúxi le.",
     "vn": "Tuy chúng tôi chưa gặp mặt, nhưng ít nhất cũng đã trò chuyện trên mạng nhiều lần, coi như khá quen rồi."
    }
   ],
@@ -726,7 +726,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Thịt chưa nấu chín thì nhất định không ăn được.",
     "answer": "肉要是没做熟，就一定吃不了。",
-    "answerPy": "Ròu yàoshi méi zuò shú, jiù yídìng chī bù liǎo.",
+    "answerPy": "Ròu yàoshi méi zuò shú, jiù yídìng chī bu liǎo.",
     "note": "Ôn 要是……就…… (Bài 1) + V不了 (Bài 4 · điểm 1).",
     "pair": "没做熟……吃不了"
    }
@@ -769,7 +769,7 @@ var vocabData = [
    },
    {
     "zh": "倒进去",
-    "py": "Dào jìnqù",
+    "py": "Dào jìnqu",
     "vn": "đổ vào"
    }
   ],
@@ -784,12 +784,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "这道菜是先用水把鱼煮熟，最后再倒上辣椒油。",
-  "ex_py": "Zhè dào cài shì xiān yòng shuǐ bǎ yú zhǔ shú, zuìhòu zài dào shàng làjiāo yóu.",
+  "ex_py": "Zhè dào cài shì xiān yòngshuǐ bǎ yú zhǔshú, zuìhòu zài dào shàng làjiāo yóu.",
   "ex_vn": "Món này là trước tiên dùng nước luộc chín cá, cuối cùng mới rưới dầu ớt lên.",
   "exList": [
    {
     "zh": "这道菜是先用水把鱼煮熟，最后再倒上辣椒油。",
-    "py": "Zhè dào cài shì xiān yòng shuǐ bǎ yú zhǔ shú, zuìhòu zài dào shàng làjiāo yóu.",
+    "py": "Zhè dào cài shì xiān yòngshuǐ bǎ yú zhǔshú, zuìhòu zài dào shàng làjiāo yóu.",
     "vn": "Món này là trước tiên dùng nước luộc chín cá, cuối cùng mới rưới dầu ớt lên."
    },
    {
@@ -825,7 +825,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trước tiên luộc chín cá, sau đó rưới dầu ớt lên.",
     "answer": "先把鱼煮熟，然后倒上辣椒油。",
-    "answerPy": "Xiān bǎ yú zhǔ shú, ránhòu dào shàng làjiāo yóu.",
+    "answerPy": "Xiān bǎ yú zhǔshú, ránhòu dào shàng làjiāo yóu.",
     "note": "Ôn 先……然后…… và câu chữ 把 (HSK 3).",
     "pair": "先……然后……"
    }
@@ -889,7 +889,7 @@ var vocabData = [
    },
    {
     "zh": "这个菜别放辣椒，我的孩子吃不了辣。",
-    "py": "Zhège cài bié fàng làjiāo, wǒ de háizi chī bù le là.",
+    "py": "Zhège cài bié fàng làjiāo, wǒ de háizi chī bu le là.",
     "vn": "Món này đừng cho ớt, con tôi không ăn cay được."
    }
   ],
@@ -924,7 +924,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Món này đừng cho ớt, con tôi không ăn cay được.",
     "answer": "这个菜别放辣椒，我的孩子吃不了辣。",
-    "answerPy": "Zhège cài bié fàng làjiāo, wǒ de háizi chī bù le là.",
+    "answerPy": "Zhège cài bié fàng làjiāo, wǒ de háizi chī bu le là.",
     "note": "Ôn V不了 (Bài 4 · điểm 1).",
     "pair": "吃不了"
    },
@@ -932,7 +932,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Người Tứ Xuyên ăn ớt, người Quý Châu cũng ăn ớt.",
     "answer": "四川人吃辣椒，贵州人也吃辣椒。",
-    "answerPy": "Sì chuān rén chī làjiāo, Guìzhōu rén yě chī làjiāo.",
+    "answerPy": "Sìchuān rén chī làjiāo, Guìzhōu rén yě chī làjiāo.",
     "note": "Câu đơn giản luyện từ mới.",
     "pair": "也"
    }
@@ -1000,7 +1000,7 @@ var vocabData = [
    },
    {
     "zh": "这道菜看起来很辣，我不敢吃。",
-    "py": "Zhè dào cài kàn qǐlái hěn là, wǒ bù gǎn chī.",
+    "py": "Zhè dào cài kànqǐlai hěn là, wǒ bù gǎn chī.",
     "vn": "Món này trông có vẻ rất cay, tôi không dám ăn."
    }
   ],
@@ -1023,7 +1023,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Món này trông có vẻ rất cay, tôi không dám ăn.",
     "answer": "这道菜看起来很辣，我不敢吃。",
-    "answerPy": "Zhè dào cài kàn qǐlái hěn là, wǒ bù gǎn chī.",
+    "answerPy": "Zhè dào cài kànqǐlai hěn là, wǒ bù gǎn chī.",
     "note": "Đáp án gợi ý bài nhìn tranh của sách.",
     "pair": "看起来……不敢……"
    },
@@ -1074,7 +1074,7 @@ var vocabData = [
    },
    {
     "zh": "四川水煮鱼",
-    "py": "Sì chuān Shuǐzhǔyú",
+    "py": "Sìchuān Shuǐzhǔyú",
     "vn": "cá luộc cay Tứ Xuyên"
    }
   ],
@@ -1095,7 +1095,7 @@ var vocabData = [
    },
    {
     "zh": "水煮鱼看起来很辣，其实只有上面那一层是油。",
-    "py": "Shuǐzhǔyú kàn qǐlái hěn là, qíshí zhǐyǒu shàngmian nà yì céng shì yóu.",
+    "py": "Shuǐzhǔyú kànqǐlai hěn là, qíshí zhǐyǒu shàngmian nà yì céng shì yóu.",
     "vn": "Món cá luộc cay trông thì rất cay, thật ra chỉ có lớp trên cùng là dầu."
    }
   ],
@@ -1208,17 +1208,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "我们以前不太敢吃辣，吃完可能会肚子不舒服。",
-  "ex_py": "Wǒmen yǐqián bú tài gǎn chī là, chī wán kěnéng huì dùzi bù shūfu.",
+  "ex_py": "Wǒmen yǐqián bú tài gǎn chī là, chīwán kěnéng huì dùzi bù shūfu.",
   "ex_vn": "Trước đây chúng tôi không dám ăn cay lắm, ăn xong có thể bị đau bụng.",
   "exList": [
    {
     "zh": "我们以前不太敢吃辣，吃完可能会肚子不舒服。",
-    "py": "Wǒmen yǐqián bú tài gǎn chī là, chī wán kěnéng huì dùzi bù shūfu.",
+    "py": "Wǒmen yǐqián bú tài gǎn chī là, chīwán kěnéng huì dùzi bù shūfu.",
     "vn": "Trước đây chúng tôi không dám ăn cay lắm, ăn xong có thể bị đau bụng."
    },
    {
     "zh": "这道菜看起来太辣了，我不敢吃。",
-    "py": "Zhè dào cài kàn qǐlái tài là le, wǒ bù gǎn chī.",
+    "py": "Zhè dào cài kànqǐlai tài là le, wǒ bù gǎn chī.",
     "vn": "Món này trông cay quá, tôi không dám ăn."
    }
   ],
@@ -1241,7 +1241,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Món này trông cay quá, tôi không dám ăn.",
     "answer": "这道菜看起来太辣了，我不敢吃。",
-    "answerPy": "Zhè dào cài kàn qǐlái tài là le, wǒ bù gǎn chī.",
+    "answerPy": "Zhè dào cài kànqǐlai tài là le, wǒ bù gǎn chī.",
     "note": "Câu chọn từ của sách (综合练习 câu 2).",
     "pair": "不敢 + V"
    },
@@ -1292,7 +1292,7 @@ var vocabData = [
    },
    {
     "zh": "吃坏肚子",
-    "py": "Chī huài dùzi",
+    "py": "Chīhuài dùzi",
     "vn": "ăn đau bụng"
    }
   ],
@@ -1303,12 +1303,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "我们以前不太敢吃辣，吃完可能会肚子不舒服。",
-  "ex_py": "Wǒmen yǐqián bú tài gǎn chī là, chī wán kěnéng huì dùzi bù shūfu.",
+  "ex_py": "Wǒmen yǐqián bú tài gǎn chī là, chīwán kěnéng huì dùzi bù shūfu.",
   "ex_vn": "Trước đây chúng tôi không dám ăn cay lắm, ăn xong có thể bị khó chịu trong bụng.",
   "exList": [
    {
     "zh": "我们以前不太敢吃辣，吃完可能会肚子不舒服。",
-    "py": "Wǒmen yǐqián bú tài gǎn chī là, chī wán kěnéng huì dùzi bù shūfu.",
+    "py": "Wǒmen yǐqián bú tài gǎn chī là, chīwán kěnéng huì dùzi bù shūfu.",
     "vn": "Trước đây chúng tôi không dám ăn cay lắm, ăn xong có thể bị khó chịu trong bụng."
    },
    {
@@ -1414,12 +1414,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "中文真有意思，相同的字，顺序一换，意思就变了。",
-  "ex_py": "Zhōngwén zhēn yǒuyìsī, xiāngtóng de zì, shùnxù yí huàn, yìsi jiù biàn le.",
+  "ex_py": "Zhōngwén zhēn yǒu yìsi, xiāngtóng de zì, shùnxù yí huàn, yìsi jiù biàn le.",
   "ex_vn": "Tiếng Trung thú vị thật, cùng những chữ ấy, đổi thứ tự một cái là nghĩa thay đổi ngay.",
   "exList": [
    {
     "zh": "中文真有意思，相同的字，顺序一换，意思就变了。",
-    "py": "Zhōngwén zhēn yǒuyìsī, xiāngtóng de zì, shùnxù yí huàn, yìsi jiù biàn le.",
+    "py": "Zhōngwén zhēn yǒu yìsi, xiāngtóng de zì, shùnxù yí huàn, yìsi jiù biàn le.",
     "vn": "Tiếng Trung thú vị thật, cùng những chữ ấy, đổi thứ tự một cái là nghĩa thay đổi ngay."
    },
    {
@@ -1578,7 +1578,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mời mọi người dựa theo thứ tự của bài khoá kể lại câu chuyện.",
     "answer": "请大家按照课文的顺序复述故事。",
-    "answerPy": "Qǐng dàjiā ànzhào kè wén de shùnxù fù shù gùshì.",
+    "answerPy": "Qǐng dàjiā ànzhào kèwén de shùnxù fù shù gùshi.",
     "note": "Câu quen thuộc trong lớp học.",
     "pair": "按照……的顺序"
    }
@@ -1637,17 +1637,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "你的中文水平够高的，这都听懂了！",
-  "ex_py": "Nǐ de Zhōngwén shuǐpíng gòu gāo de, zhè dōu tīng dǒng le!",
+  "ex_py": "Nǐ de Zhōngwén shuǐpíng gòu gāo de, zhè dōu tīngdǒng le!",
   "ex_vn": "Trình độ tiếng Trung của cháu cao thật đấy, cái này cũng nghe hiểu!",
   "exList": [
    {
     "zh": "你的中文水平够高的，这都听懂了！",
-    "py": "Nǐ de Zhōngwén shuǐpíng gòu gāo de, zhè dōu tīng dǒng le!",
+    "py": "Nǐ de Zhōngwén shuǐpíng gòu gāo de, zhè dōu tīngdǒng le!",
     "vn": "Trình độ tiếng Trung của cháu cao thật đấy, cái này cũng nghe hiểu!"
    },
    {
     "zh": "明天请家月和李文来家里吃饭，四个菜够不够？",
-    "py": "Míngtiān qǐng Jiāyuè hé Lǐ Wén lái jiā lǐ chīfàn, sì gè cài gòu búgòu?",
+    "py": "Míngtiān qǐng Jiāyuè hé Lǐ Wén lái jiāli chīfàn, sì gè cài gòu búgòu?",
     "vn": "Mai mời Gia Nguyệt và Lý Văn đến nhà ăn cơm, bốn món có đủ không?"
    }
   ],
@@ -1670,7 +1670,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nhà bạn to thật đấy, không những có hai tầng mà còn có một khu vườn nhỏ.",
     "answer": "你家房子够大的，不仅有上下两层，还有一个小花园。",
-    "answerPy": "Nǐ jiā fángzi gòu dà de, bùjǐn yǒu shàng xià liǎng céng, hái yǒu yí gè xiǎo huāyuán.",
+    "answerPy": "Nǐ jiā fángzi gòu dà de, bùjǐn yǒu shàngxià liǎng céng, hái yǒu yí gè xiǎo huāyuán.",
     "note": "Đáp án gợi ý của sách; ôn 不仅……还…… (Bài 3 · điểm 2).",
     "pair": "够……的"
    },
@@ -1790,7 +1790,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Thùng này không đủ to, không đựng nổi nhiều đồ như vậy.",
     "answer": "这个箱子不够大，放不下这么多东西。",
-    "answerPy": "Zhège xiāngzi búgòu dà, fàng bú xià zhème duō dōngxi.",
+    "answerPy": "Zhège xiāngzi búgòu dà, fàng bu xià zhème duō dōngxi.",
     "note": "Đáp án gợi ý của sách; ôn V不下 (bổ ngữ khả năng, Bài 4).",
     "pair": "不够大，放不下"
    }
@@ -1833,7 +1833,7 @@ var vocabData = [
    },
    {
     "zh": "达不到",
-    "py": "Dá bú dào",
+    "py": "Dá bu dào",
     "vn": "không đạt được"
    }
   ],
@@ -1848,12 +1848,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "我还达不到“怕不辣”的水平，甚至也不能算“不怕辣”，只是喜欢吃辣。",
-  "ex_py": "Wǒ hái dá bú dào “pà bú là” de shuǐpíng, shènzhì yě bù néng suàn “bú pà là”, zhǐshì xǐhuan chī là.",
+  "ex_py": "Wǒ hái dá bu dào “pà bú là” de shuǐpíng, shènzhì yě bù néng suàn “bú pà là”, zhǐshì xǐhuan chī là.",
   "ex_vn": "Cháu còn chưa đạt tới trình độ “sợ không cay”, thậm chí cũng chưa tính là “không sợ cay”, chỉ là thích ăn cay thôi.",
   "exList": [
    {
     "zh": "我还达不到“怕不辣”的水平，甚至也不能算“不怕辣”，只是喜欢吃辣。",
-    "py": "Wǒ hái dá bú dào “pà bú là” de shuǐpíng, shènzhì yě bù néng suàn “bú pà là”, zhǐshì xǐhuan chī là.",
+    "py": "Wǒ hái dá bu dào “pà bú là” de shuǐpíng, shènzhì yě bù néng suàn “bú pà là”, zhǐshì xǐhuan chī là.",
     "vn": "Cháu còn chưa đạt tới trình độ “sợ không cay”, thậm chí cũng chưa tính là “không sợ cay”, chỉ là thích ăn cay thôi."
    },
    {
@@ -1893,7 +1893,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi còn chưa đạt tới trình độ “sợ không cay”.",
     "answer": "我还达不到“怕不辣”的水平。",
-    "answerPy": "Wǒ hái dá bú dào “pà bú là” de shuǐpíng.",
+    "answerPy": "Wǒ hái dá bu dào “pà bú là” de shuǐpíng.",
     "note": "Câu trong bài khoá 2.",
     "pair": "达不到……的水平"
    },
@@ -2043,7 +2043,7 @@ var vocabData = [
    },
    {
     "zh": "早餐、午餐、晚餐",
-    "py": "Zǎo cān, wǔcān, wǎn cān",
+    "py": "Zǎocān, wǔcān, wǎncān",
     "vn": "bữa sáng, trưa, tối"
    }
   ],
@@ -2111,7 +2111,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Giờ ăn trưa chỉ có nửa tiếng, nên ăn nhanh lên, nếu không sẽ không kịp.",
     "answer": "午餐时间只有半个小时，快点儿吃，不然就来不及了。",
-    "answerPy": "Wǔcān shíjiān zhǐyǒu bàn gè xiǎoshí, kuài diǎnr chī, bùrán jiù láibùjí le.",
+    "answerPy": "Wǔcān shíjiān zhǐyǒu bàn gè xiǎoshí, kuài diǎnr chī, bùrán jiù láibují le.",
     "note": "Ôn 来不及 (Bài 4 · điểm 4).",
     "pair": "来不及"
    }
@@ -2169,17 +2169,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "李文更喜欢吃咸的，选了红烧羊肉和一道凉菜。",
-  "ex_py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liáng cài.",
+  "ex_py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liángcài.",
   "ex_vn": "Lý Văn thích ăn mặn hơn, chọn món thịt dê kho tàu và một món nộm.",
   "exList": [
    {
     "zh": "李文更喜欢吃咸的，选了红烧羊肉和一道凉菜。",
-    "py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liáng cài.",
+    "py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liángcài.",
     "vn": "Lý Văn thích ăn mặn hơn, chọn món thịt dê kho tàu và một món nộm."
    },
    {
     "zh": "你尝尝，这道菜是不是做得太咸了？",
-    "py": "Nǐ cháng cháng, zhè dào cài shì bu shì zuò de tài xián le?",
+    "py": "Nǐ chángchang, zhè dào cài shì bu shì zuò de tài xián le?",
     "vn": "Bạn nếm thử xem, món này có phải nấu mặn quá không?"
    }
   ],
@@ -2202,7 +2202,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bạn nếm thử xem, món này có phải nấu mặn quá không?",
     "answer": "你尝尝，这道菜是不是做得太咸了？",
-    "answerPy": "Nǐ cháng cháng, zhè dào cài shì bu shì zuò de tài xián le?",
+    "answerPy": "Nǐ chángchang, zhè dào cài shì bu shì zuò de tài xián le?",
     "note": "Câu chọn từ của sách (综合练习 câu 7).",
     "pair": "是不是……"
    },
@@ -2238,7 +2238,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "凉菜",
-    "py": "Liáng cài",
+    "py": "Liángcài",
     "vn": "món nguội (món trộn)"
    },
    {
@@ -2268,12 +2268,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "李文更喜欢吃咸的，选了红烧羊肉和一道凉菜。",
-  "ex_py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liáng cài.",
+  "ex_py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liángcài.",
   "ex_vn": "Lý Văn thích ăn mặn hơn, chọn món thịt dê kho tàu và một món nguội.",
   "exList": [
    {
     "zh": "李文更喜欢吃咸的，选了红烧羊肉和一道凉菜。",
-    "py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liáng cài.",
+    "py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liángcài.",
     "vn": "Lý Văn thích ăn mặn hơn, chọn món thịt dê kho tàu và một món nguội."
    },
    {
@@ -2343,7 +2343,7 @@ var vocabData = [
    },
    {
     "zh": "酸甜",
-    "py": "Suān tián",
+    "py": "Suāntián",
     "vn": "chua ngọt"
    },
    {
@@ -2378,7 +2378,7 @@ var vocabData = [
    },
    {
     "zh": "松鼠鳜鱼味道酸甜可口。",
-    "py": "Sōngshǔ Guìyú wèidào suān tián kěkǒu.",
+    "py": "Sōngshǔ Guìyú wèidào suāntián kěkǒu.",
     "vn": "Món cá quế hình con sóc có vị chua ngọt, rất ngon miệng."
    }
   ],
@@ -2409,7 +2409,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đi bộ cả ngày, chân tôi mỏi quá, không đi nổi nữa.",
     "answer": "走了一天，我的腿太酸了，走不动了。",
-    "answerPy": "Zǒu le yì tiān, wǒ de tuǐ tài suān le, zǒu bú dòng le.",
+    "answerPy": "Zǒu le yì tiān, wǒ de tuǐ tài suān le, zǒubudòng le.",
     "note": "酸 = mỏi; ôn bổ ngữ khả năng 走不动 (Bài 4).",
     "pair": "V不动"
    }
@@ -2447,7 +2447,7 @@ var vocabData = [
    },
    {
     "zh": "鸡汤",
-    "py": "Jī tāng",
+    "py": "Jītāng",
     "vn": "canh gà"
    },
    {
@@ -2477,7 +2477,7 @@ var vocabData = [
    },
    {
     "zh": "这个汤看起来很好喝。",
-    "py": "Zhège tāng kàn qǐlái hěn hǎo hē.",
+    "py": "Zhège tāng kànqǐlai hěn hǎohē.",
     "vn": "Món canh này trông có vẻ rất ngon."
    }
   ],
@@ -2500,7 +2500,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Món canh này trông có vẻ rất ngon.",
     "answer": "这个汤看起来很好喝。",
-    "answerPy": "Zhège tāng kàn qǐlái hěn hǎo hē.",
+    "answerPy": "Zhège tāng kànqǐlai hěn hǎohē.",
     "note": "Đáp án gợi ý bài nhìn tranh của sách.",
     "pair": "看起来很好喝"
    },
@@ -2508,7 +2508,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Người miền Nam thích ăn cơm trước, rồi uống canh sau.",
     "answer": "南方人喜欢先吃饭，然后再喝汤。",
-    "answerPy": "Nánfāng rén xǐhuan xiān chīfàn, ránhòu zài hē tāng.",
+    "answerPy": "Nánfāngrén xǐhuan xiān chīfàn, ránhòu zài hē tāng.",
     "note": "Ôn 先……然后…… (HSK 3).",
     "pair": "先……然后……"
    }
@@ -2547,7 +2547,7 @@ var vocabData = [
    },
    {
     "zh": "各位",
-    "py": "Gè wèi",
+    "py": "Gèwèi",
     "vn": "quý vị, các bạn"
    },
    {
@@ -2567,12 +2567,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "结账时，李文想请客，但大家觉得还是各付各的更合适。",
-  "ex_py": "Jié zhàng shí, Lǐ Wén xiǎng qǐngkè, dàn dàjiā juéde háishì gè fù gè de gèng héshì.",
+  "ex_py": "Jiézhàng shí, Lǐ Wén xiǎng qǐngkè, dàn dàjiā juéde háishi gè fù gè de gèng héshì.",
   "ex_vn": "Lúc thanh toán, Lý Văn muốn mời, nhưng mọi người thấy vẫn là ai trả phần nấy thì hợp hơn.",
   "exList": [
    {
     "zh": "结账时，李文想请客，但大家觉得还是各付各的更合适。",
-    "py": "Jié zhàng shí, Lǐ Wén xiǎng qǐngkè, dàn dàjiā juéde háishì gè fù gè de gèng héshì.",
+    "py": "Jiézhàng shí, Lǐ Wén xiǎng qǐngkè, dàn dàjiā juéde háishi gè fù gè de gèng héshì.",
     "vn": "Lúc thanh toán, Lý Văn muốn mời, nhưng mọi người thấy vẫn là ai trả phần nấy thì hợp hơn."
    },
    {
@@ -2600,7 +2600,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mọi người thấy vẫn là ai trả phần nấy thì hợp hơn.",
     "answer": "大家觉得还是各付各的更合适。",
-    "answerPy": "Dàjiā juéde háishì gè fù gè de gèng héshì.",
+    "answerPy": "Dàjiā juéde háishi gè fù gè de gèng héshì.",
     "note": "Câu trong bài khoá 3 (Bài 5 · điểm 3).",
     "pair": "各付各的"
    },
@@ -2636,7 +2636,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "付钱",
-    "py": "Fù qián",
+    "py": "Fùqián",
     "vn": "trả tiền"
    },
    {
@@ -2676,7 +2676,7 @@ var vocabData = [
    },
    {
     "zh": "谢谢！多少钱？我把钱付给你。",
-    "py": "Xièxiè! Duōshǎo qián? Wǒ bǎ qián fù gěi nǐ.",
+    "py": "Xièxie! Duōshao qián? Wǒ bǎ qián fùgěi nǐ.",
     "vn": "Cảm ơn nhé! Bao nhiêu tiền? Tôi trả tiền cho bạn."
    }
   ],
@@ -2699,7 +2699,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cảm ơn nhé! Bao nhiêu tiền? Tôi trả tiền cho bạn.",
     "answer": "谢谢！多少钱？我把钱付给你。",
-    "answerPy": "Xièxiè! Duōshǎo qián? Wǒ bǎ qián fù gěi nǐ.",
+    "answerPy": "Xièxie! Duōshao qián? Wǒ bǎ qián fùgěi nǐ.",
     "note": "Câu chọn từ của sách (综合练习 câu 10).",
     "pair": "把钱付给……"
    },
@@ -2707,7 +2707,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lần này bạn đừng trả, vả lại lần trước cũng là bạn mời rồi.",
     "answer": "这次你别付了，再说上次也是你请的客。",
-    "answerPy": "Zhè cì nǐ bié fù le, zài shuō shàng cì yě shì nǐ qǐng de kè.",
+    "answerPy": "Zhè cì nǐ bié fù le, zài shuōshang cì yě shì nǐ qǐng de kè.",
     "note": "Ôn 再说 (Bài 4 · điểm 2).",
     "pair": "再说……"
    }
@@ -2856,7 +2856,7 @@ var vocabData = [
    },
    {
     "zh": "四川辣子鸡",
-    "py": "Sì chuān Làzǐjī",
+    "py": "Sìchuān Làzǐjī",
     "vn": "gà xào ớt Tứ Xuyên"
    },
    {
@@ -2965,17 +2965,17 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "尝尝松鼠鳜鱼",
-    "py": "Cháng cháng Sōngshǔ Guìyú",
+    "py": "Chángchang Sōngshǔ Guìyú",
     "vn": "nếm thử cá quế hình sóc"
    },
    {
     "zh": "苏州的松鼠鳜鱼",
-    "py": "Sū zhōu de Sōngshǔ Guìyú",
+    "py": "Sūzhōu de Sōngshǔ Guìyú",
     "vn": "cá quế hình sóc Tô Châu"
    },
    {
     "zh": "酸甜的松鼠鳜鱼",
-    "py": "Suān tián de Sōngshǔ Guìyú",
+    "py": "Suāntián de Sōngshǔ Guìyú",
     "vn": "cá quế chua ngọt"
    },
    {
@@ -2991,17 +2991,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "陈天中爱吃甜的，想尝尝松鼠鳜鱼。",
-  "ex_py": "Chén Tiānzhōng ài chī tián de, xiǎng cháng cháng Sōngshǔ Guìyú.",
+  "ex_py": "Chén Tiānzhōng ài chī tián de, xiǎng chángchang Sōngshǔ Guìyú.",
   "ex_vn": "Trần Thiên Trung thích ăn ngọt, muốn nếm thử món cá quế hình con sóc.",
   "exList": [
    {
     "zh": "陈天中爱吃甜的，想尝尝松鼠鳜鱼。",
-    "py": "Chén Tiānzhōng ài chī tián de, xiǎng cháng cháng Sōngshǔ Guìyú.",
+    "py": "Chén Tiānzhōng ài chī tián de, xiǎng chángchang Sōngshǔ Guìyú.",
     "vn": "Trần Thiên Trung thích ăn ngọt, muốn nếm thử món cá quế hình con sóc."
    },
    {
     "zh": "松鼠鳜鱼的样子像一只松鼠，味道酸甜可口。",
-    "py": "Sōngshǔ Guìyú de yàngzi xiàng yì zhī sōng shǔ, wèidào suān tián kěkǒu.",
+    "py": "Sōngshǔ Guìyú de yàngzi xiàng yì zhī sōngshǔ, wèidào suāntián kěkǒu.",
     "vn": "Món cá quế hình con sóc trông như một con sóc, vị chua ngọt rất ngon miệng."
    }
   ],
@@ -3060,7 +3060,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trần Thiên Trung thích ăn ngọt, nên muốn nếm thử cá quế hình con sóc.",
     "answer": "陈天中爱吃甜的，所以想尝尝松鼠鳜鱼。",
-    "answerPy": "Chén Tiānzhōng ài chī tián de, suǒyǐ xiǎng cháng cháng Sōngshǔ Guìyú.",
+    "answerPy": "Chén Tiānzhōng ài chī tián de, suǒyǐ xiǎng chángchang Sōngshǔ Guìyú.",
     "note": "Câu trong bài khoá 3; V V (尝尝) = thử.",
     "pair": "尝尝"
    },
@@ -3068,7 +3068,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Món này không những trông đẹp mà còn có vị chua ngọt.",
     "answer": "这道菜不仅看起来很漂亮，而且味道酸甜。",
-    "answerPy": "Zhè dào cài bùjǐn kàn qǐlái hěn piàoliang, érqiě wèidào suān tián.",
+    "answerPy": "Zhè dào cài bùjǐn kànqǐlai hěn piàoliang, érqiě wèidào suāntián.",
     "note": "Ôn 不仅……而且…… (Bài 3 · điểm 2).",
     "pair": "不仅……而且……"
    }
@@ -3101,12 +3101,12 @@ var vocabData = [
    },
    {
     "zh": "红烧鱼",
-    "py": "Hóng shāo yú",
+    "py": "Hóngshāoyú",
     "vn": "cá kho tàu"
    },
    {
     "zh": "红烧肉",
-    "py": "Hóng shāo ròu",
+    "py": "Hóngshāoròu",
     "vn": "thịt kho tàu"
    },
    {
@@ -3122,12 +3122,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "李文更喜欢吃咸的，选了红烧羊肉和一道凉菜。",
-  "ex_py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liáng cài.",
+  "ex_py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liángcài.",
   "ex_vn": "Lý Văn thích ăn mặn hơn, chọn món thịt dê kho tàu và một món nguội.",
   "exList": [
    {
     "zh": "李文更喜欢吃咸的，选了红烧羊肉和一道凉菜。",
-    "py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liáng cài.",
+    "py": "Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liángcài.",
     "vn": "Lý Văn thích ăn mặn hơn, chọn món thịt dê kho tàu và một món nguội."
    },
    {
@@ -3344,7 +3344,7 @@ var vocabData = [
    },
    {
     "zh": "米线",
-    "py": "Mǐ xiàn",
+    "py": "Mǐxiàn",
     "vn": "bún gạo"
    },
    {
@@ -3548,7 +3548,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hôm nay chỉ là bữa ăn bình thường, mọi người cứ tự nhiên là được.",
     "answer": "今天只是普通聚餐，大家随意就是了。",
-    "answerPy": "Jīntiān zhǐshì pǔtōng jùcān, dàjiā suíyì jiù shì le.",
+    "answerPy": "Jīntiān zhǐshì pǔtōng jùcān, dàjiā suíyì jiùshì le.",
     "note": "Ôn ×就是了 (Bài 2 · điểm 1).",
     "pair": "……就是了"
    }
@@ -3659,7 +3659,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Học thử hai tuần xong, thứ Hai tuần sau chính thức lên lớp.",
     "answer": "试听两周以后，下周一正式上课。",
-    "answerPy": "Shìtīng liǎng zhōu yǐhòu, xià zhōu yī zhèngshì shàngkè.",
+    "answerPy": "Shìtīng liǎng zhōu yǐhòu, xià zhōuyī zhèngshì shàngkè.",
     "note": "Ôn từ của Bài 1 (试听, 上课).",
     "pair": "正式 + V"
    }
@@ -3692,7 +3692,7 @@ var vocabData = [
    },
    {
     "zh": "普通人",
-    "py": "Pǔtōng rén",
+    "py": "Pǔtōngrén",
     "vn": "người bình thường"
    },
    {
@@ -3828,17 +3828,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "正式聚餐时人们比较重视座位的安排。",
-  "ex_py": "Zhèngshì jùcān shí rén men bǐjiào zhòngshì zuòwèi de ānpái.",
+  "ex_py": "Zhèngshì jùcān shí rénmen bǐjiào zhòngshì zuòwèi de ānpái.",
   "ex_vn": "Khi ăn tiệc trang trọng, người ta khá coi trọng việc sắp xếp chỗ ngồi.",
   "exList": [
    {
     "zh": "正式聚餐时人们比较重视座位的安排。",
-    "py": "Zhèngshì jùcān shí rén men bǐjiào zhòngshì zuòwèi de ānpái.",
+    "py": "Zhèngshì jùcān shí rénmen bǐjiào zhòngshì zuòwèi de ānpái.",
     "vn": "Khi ăn tiệc trang trọng, người ta khá coi trọng việc sắp xếp chỗ ngồi."
    },
    {
     "zh": "是啊，因为人们越来越重视身体健康了。",
-    "py": "Shì a, yīnwèi rén men yuèláiyuè zhòngshì shēntǐ jiànkāng le.",
+    "py": "Shì a, yīnwèi rénmen yuèláiyuè zhòngshì shēntǐ jiànkāng le.",
     "vn": "Đúng vậy, vì mọi người ngày càng coi trọng sức khỏe."
    }
   ],
@@ -3873,7 +3873,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Vì mọi người ngày càng coi trọng sức khỏe.",
     "answer": "因为人们越来越重视身体健康了。",
-    "answerPy": "Yīnwèi rén men yuèláiyuè zhòngshì shēntǐ jiànkāng le.",
+    "answerPy": "Yīnwèi rénmen yuèláiyuè zhòngshì shēntǐ jiànkāng le.",
     "note": "Câu chọn từ của sách (综合练习 câu 9).",
     "pair": "越来越重视"
    },
@@ -3881,7 +3881,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với sự phát triển kinh tế, người ta ngày càng coi trọng giáo dục.",
     "answer": "随着经济的发展，人们越来越重视教育了。",
-    "answerPy": "Suízhe jīngjì de fāzhǎn, rén men yuèláiyuè zhòngshì jiàoyù le.",
+    "answerPy": "Suízhe jīngjì de fāzhǎn, rénmen yuèláiyuè zhòngshì jiàoyù le.",
     "note": "Ôn 随着 (Bài 1 · điểm 3).",
     "pair": "随着……越来越重视……"
    }
@@ -3939,12 +3939,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "正式聚餐时人们比较重视座位的安排。",
-  "ex_py": "Zhèngshì jùcān shí rén men bǐjiào zhòngshì zuòwèi de ānpái.",
+  "ex_py": "Zhèngshì jùcān shí rénmen bǐjiào zhòngshì zuòwèi de ānpái.",
   "ex_vn": "Khi ăn tiệc trang trọng, người ta khá coi trọng việc sắp xếp chỗ ngồi.",
   "exList": [
    {
     "zh": "正式聚餐时人们比较重视座位的安排。",
-    "py": "Zhèngshì jùcān shí rén men bǐjiào zhòngshì zuòwèi de ānpái.",
+    "py": "Zhèngshì jùcān shí rénmen bǐjiào zhòngshì zuòwèi de ānpái.",
     "vn": "Khi ăn tiệc trang trọng, người ta khá coi trọng việc sắp xếp chỗ ngồi."
    },
    {
@@ -4104,7 +4104,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Công việc tuần này tôi đã sắp xếp xong, vả lại cũng có thời gian, nên đi được.",
     "answer": "这周的工作我已经安排好了，再说也有时间，去得了。",
-    "answerPy": "Zhè zhōu de gōngzuò wǒ yǐjīng ānpái hǎo le, zài shuō yě yǒu shíjiān, qù de liǎo.",
+    "answerPy": "Zhè zhōu de gōngzuò wǒ yǐjīng ānpái hǎo le, Zàishuō yě yǒu shíjiān, qù de liǎo.",
     "note": "Ôn 再说 (Bài 4 · điểm 2) + V得了 (Bài 4 · điểm 1).",
     "pair": "再说……"
    }
@@ -4258,7 +4258,7 @@ var vocabData = [
    },
    {
     "zh": "年龄的增长",
-    "py": "Niánlíng de zēng zhǎng",
+    "py": "Niánlíng de zēngzhǎng",
     "vn": "tuổi tác tăng lên"
    }
   ],
@@ -4273,17 +4273,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "年龄比较大的客人往往会坐在中间或者面对门口的座位。",
-  "ex_py": "Niánlíng bǐjiào dà de kèrén wǎngwǎng huì zuò zài zhōngjiàn huòzhě miànduì ménkǒu de zuòwèi.",
+  "ex_py": "Niánlíng bǐjiào dà de kèrén wǎngwǎng huì zuò zài zhōngjiān huòzhě miànduì ménkǒu de zuòwèi.",
   "ex_vn": "Khách lớn tuổi thường ngồi ở giữa hoặc chỗ đối diện cửa ra vào.",
   "exList": [
    {
     "zh": "年龄比较大的客人往往会坐在中间或者面对门口的座位。",
-    "py": "Niánlíng bǐjiào dà de kèrén wǎngwǎng huì zuò zài zhōngjiàn huòzhě miànduì ménkǒu de zuòwèi.",
+    "py": "Niánlíng bǐjiào dà de kèrén wǎngwǎng huì zuò zài zhōngjiān huòzhě miànduì ménkǒu de zuòwèi.",
     "vn": "Khách lớn tuổi thường ngồi ở giữa hoặc chỗ đối diện cửa ra vào."
    },
    {
     "zh": "随着年龄的增长，他越来越懂事了。",
-    "py": "Suízhe niánlíng de zēng zhǎng, tā yuèláiyuè dǒng shì le.",
+    "py": "Suízhe niánlíng de zēngzhǎng, tā yuèláiyuè dǒngshì le.",
     "vn": "Cùng với tuổi tác tăng lên, cậu ấy ngày càng hiểu chuyện."
    }
   ],
@@ -4318,7 +4318,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với tuổi tác tăng lên, cậu ấy ngày càng hiểu chuyện.",
     "answer": "随着年龄的增长，他越来越懂事了。",
-    "answerPy": "Suízhe niánlíng de zēng zhǎng, tā yuèláiyuè dǒng shì le.",
+    "answerPy": "Suízhe niánlíng de zēngzhǎng, tā yuèláiyuè dǒngshì le.",
     "note": "Ôn 随着 (Bài 1 · điểm 3).",
     "pair": "随着……的增长"
    },
@@ -4360,7 +4360,7 @@ var vocabData = [
    },
    {
     "zh": "面对困难",
-    "py": "Miànduì kùnnán",
+    "py": "Miànduì kùnnan",
     "vn": "đối mặt khó khăn"
    },
    {
@@ -4370,7 +4370,7 @@ var vocabData = [
    },
    {
     "zh": "面对面",
-    "py": "Miàn duìmiàn",
+    "py": "Miànduì miàn",
     "vn": "mặt đối mặt"
    }
   ],
@@ -4385,17 +4385,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "年龄比较大的客人往往会坐在中间或者面对门口的座位。",
-  "ex_py": "Niánlíng bǐjiào dà de kèrén wǎngwǎng huì zuò zài zhōngjiàn huòzhě miànduì ménkǒu de zuòwèi.",
+  "ex_py": "Niánlíng bǐjiào dà de kèrén wǎngwǎng huì zuò zài zhōngjiān huòzhě miànduì ménkǒu de zuòwèi.",
   "ex_vn": "Khách lớn tuổi thường ngồi ở giữa hoặc chỗ đối diện cửa ra vào.",
   "exList": [
    {
     "zh": "年龄比较大的客人往往会坐在中间或者面对门口的座位。",
-    "py": "Niánlíng bǐjiào dà de kèrén wǎngwǎng huì zuò zài zhōngjiàn huòzhě miànduì ménkǒu de zuòwèi.",
+    "py": "Niánlíng bǐjiào dà de kèrén wǎngwǎng huì zuò zài zhōngjiān huòzhě miànduì ménkǒu de zuòwèi.",
     "vn": "Khách lớn tuổi thường ngồi ở giữa hoặc chỗ đối diện cửa ra vào."
    },
    {
     "zh": "面对困难，我们不能害怕。",
-    "py": "Miànduì kùnnán, wǒmen bù néng hàipà.",
+    "py": "Miànduì kùnnan, wǒmen bù néng hàipà.",
     "vn": "Đối mặt với khó khăn, chúng ta không được sợ hãi."
    }
   ],
@@ -4430,7 +4430,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Theo thói quen của người Trung Quốc, chủ nhà thường mời khách lớn tuổi ngồi chỗ đối diện cửa.",
     "answer": "按照中国人的习惯，主人一般会请年龄大的客人坐在面对门口的座位。",
-    "answerPy": "Ànzhào zhōngguórén de xíguàn, zhǔrén yìbān huì qǐng niánlíng dà de kèrén zuò zài miànduì ménkǒu de zuòwèi.",
+    "answerPy": "Ànzhào Zhōngguórén de xíguàn, zhǔrén yìbān huì qǐng niánlíng dà de kèrén zuò zài miànduì ménkǒu de zuòwèi.",
     "note": "Kết hợp 按照, 主人 (từ mới).",
     "pair": "面对门口的座位"
    },
@@ -4438,7 +4438,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đối mặt với khó khăn, anh ấy không những không sợ mà còn rất bình tĩnh.",
     "answer": "面对困难，他不仅不害怕，而且很冷静。",
-    "answerPy": "Miànduì kùnnán, tā bùjǐn bú hàipà, érqiě hěn lěngjìng.",
+    "answerPy": "Miànduì kùnnan, tā bùjǐn bú hàipà, érqiě hěn lěngjìng.",
     "note": "Ôn 不仅……而且…… (Bài 3 · điểm 2).",
     "pair": "不仅……而且……"
    }
@@ -4496,12 +4496,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "大家坐下时，主人会请客人先坐。",
-  "ex_py": "Dàjiā zuò xià shí, zhǔrén huì qǐngkè rén xiān zuò.",
+  "ex_py": "Dàjiā zuòxia shí, zhǔrén huì qǐngkè rén xiān zuò.",
   "ex_vn": "Khi mọi người ngồi xuống, chủ nhà sẽ mời khách ngồi trước.",
   "exList": [
    {
     "zh": "大家坐下时，主人会请客人先坐。",
-    "py": "Dàjiā zuò xià shí, zhǔrén huì qǐngkè rén xiān zuò.",
+    "py": "Dàjiā zuòxia shí, zhǔrén huì qǐngkè rén xiān zuò.",
     "vn": "Khi mọi người ngồi xuống, chủ nhà sẽ mời khách ngồi trước."
    },
    {
@@ -4541,7 +4541,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Khi mọi người ngồi xuống, chủ nhà sẽ mời khách ngồi trước.",
     "answer": "大家坐下时，主人会请客人先坐。",
-    "answerPy": "Dàjiā zuò xià shí, zhǔrén huì qǐngkè rén xiān zuò.",
+    "answerPy": "Dàjiā zuòxia shí, zhǔrén huì qǐngkè rén xiān zuò.",
     "note": "Câu trong bài khoá 4; câu kiêm ngữ 请.",
     "pair": "请……先坐"
    },
@@ -4549,7 +4549,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chủ nhà rất nhiệt tình, không những làm nhiều món mà còn rót trà cho chúng tôi.",
     "answer": "主人很热情，不仅做了很多菜，还给我们倒茶。",
-    "answerPy": "Zhǔrén hěn rèqíng, bùjǐn zuò le hěn duō cài, hái gěi wǒmen dào chá.",
+    "answerPy": "Zhǔrén hěn rèqíng, bùjǐn zuò le hěn duō cài, huán gěi wǒmen dào chá.",
     "note": "Ôn 不仅……还…… (Bài 3 · điểm 2).",
     "pair": "不仅……还……"
    }
@@ -4582,7 +4582,7 @@ var vocabData = [
    },
    {
     "zh": "等老人坐下后",
-    "py": "Děng lǎorén zuò xià hòu",
+    "py": "Děng lǎorén zuòxia hòu",
     "vn": "đợi người già ngồi xuống"
    },
    {
@@ -4607,17 +4607,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "如果聚餐时有老人，年轻人要等老人坐下后再坐。",
-  "ex_py": "Rúguǒ jùcān shí yǒu lǎorén, niánqīngrén yào děng lǎorén zuò xià hòu zài zuò.",
+  "ex_py": "Rúguǒ jùcān shí yǒu lǎorén, niánqīngrén yào děng lǎorén zuòxia hòu zài zuò.",
   "ex_vn": "Nếu bữa tiệc có người già, người trẻ phải đợi người già ngồi xuống rồi mới ngồi.",
   "exList": [
    {
     "zh": "如果聚餐时有老人，年轻人要等老人坐下后再坐。",
-    "py": "Rúguǒ jùcān shí yǒu lǎorén, niánqīngrén yào děng lǎorén zuò xià hòu zài zuò.",
+    "py": "Rúguǒ jùcān shí yǒu lǎorén, niánqīngrén yào děng lǎorén zuòxia hòu zài zuò.",
     "vn": "Nếu bữa tiệc có người già, người trẻ phải đợi người già ngồi xuống rồi mới ngồi."
    },
    {
     "zh": "等我写完作业，再跟你出去玩。",
-    "py": "Děng wǒ xiě wán zuòyè, zài gēn nǐ chūqù wán.",
+    "py": "Děng wǒ xiěwán zuòyè, zài gēn nǐ chūqu wán.",
     "vn": "Đợi tớ làm xong bài tập rồi tớ đi chơi với cậu."
    }
   ],
@@ -4648,7 +4648,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lúc chúng tôi đến ga thì tàu đã chạy mất rồi, không kịp nữa.",
     "answer": "等我们到火车站的时候，火车已经开走了，来不及了。",
-    "answerPy": "Děng wǒmen dào huǒ chēzhàn de shíhou, huǒchē yǐjīng kāi zǒu le, láibùjí le.",
+    "answerPy": "Děng wǒmen dào huǒchēzhàn de shíhou, huǒchē yǐjīng kāizǒu le, láibují le.",
     "note": "Ví dụ của sách + ôn 来不及 (Bài 4 · điểm 4).",
     "pair": "等……的时候，已经……了"
    }
@@ -4854,13 +4854,13 @@ var dialogData = [
    {
     "sp": 1,
     "zh": "看起来不像水煮鱼，更像“油煮鱼”。",
-    "py": "Kàn qǐlái bú xiàng Shuǐzhǔyú, gèng xiàng “yóu zhǔ yú”.",
+    "py": "Kànqǐlai bú xiàng Shuǐzhǔyú, gèng xiàng “yóu zhǔ yú”.",
     "vn": "Trông chẳng giống “cá luộc nước” chút nào, giống “cá nấu dầu” hơn ạ."
    },
    {
     "sp": 2,
     "zh": "这道菜是先用水把鱼煮熟，最后再倒上辣椒油，其实只有最上面那一层是油。你尝尝，对你来说辣不辣？",
-    "py": "Zhè dào cài shì xiān yòng shuǐ bǎ yú zhǔ shú, zuìhòu zài dào shàng làjiāo yóu, qíshí zhǐyǒu zuì shàngmian nà yì céng shì yóu. Nǐ cháng cháng, duì nǐ láishuō là bu là?",
+    "py": "Zhè dào cài shì xiān yòngshuǐ bǎ yú zhǔshú, zuìhòu zài dào shàng làjiāo yóu, qíshí zhǐyǒu zuì shàngmian nà yì céng shì yóu. Nǐ chángchang, duì nǐ láishuō là bu là?",
     "vn": "Món này là trước tiên dùng nước luộc chín cá, cuối cùng mới rưới dầu ớt lên, thật ra chỉ có lớp trên cùng là dầu thôi. Cháu nếm thử xem, với cháu có cay không?"
    },
    {
@@ -4936,31 +4936,31 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "我们以前不太敢吃辣，吃完可能会肚子不舒服，不过现在也慢慢适应了。",
-    "py": "Wǒmen yǐqián bú tài gǎn chī là, chī wán kěnéng huì dùzi bù shūfu, búguò xiànzài yě màn màn shìyìng le.",
+    "py": "Wǒmen yǐqián bú tài gǎn chī là, chīwán kěnéng huì dùzi bù shūfu, búguò xiànzài yě mànmàn shìyìng le.",
     "vn": "Trước đây nhà cô không dám ăn cay lắm, ăn xong có khi bị khó chịu trong bụng, nhưng giờ cũng dần quen rồi."
    },
    {
     "sp": 2,
     "zh": "对，我们现在都不怕辣了。家月，你是“不怕辣”还是“怕不辣”？",
-    "py": "Duì, wǒmen xiànzài dōu bú pà là le. Jiāyuè, nǐ shì “bú pà là” háishì “pà bú là”?",
+    "py": "Duì, wǒmen xiànzài dōu bú pà là le. Jiāyuè, nǐ shì “bú pà là” háishi “pà bú là”?",
     "vn": "Đúng thế, giờ nhà chú đều “không sợ cay” rồi. Gia Nguyệt, cháu là “không sợ cay” hay “sợ không cay”?"
    },
    {
     "sp": 1,
     "zh": "中文真有意思，相同的字，顺序一换，意思就变了。",
-    "py": "Zhōngwén zhēn yǒuyìsī, xiāngtóng de zì, shùnxù yí huàn, yìsi jiù biàn le.",
+    "py": "Zhōngwén zhēn yǒu yìsi, xiāngtóng de zì, shùnxù yí huàn, yìsi jiù biàn le.",
     "vn": "Tiếng Trung thú vị thật, vẫn những chữ ấy, đổi thứ tự một cái là nghĩa thay đổi ngay."
    },
    {
     "sp": 3,
     "zh": "你的中文水平够高的，这都听懂了！你说得对，“不怕辣”是说不怕吃辣的菜，“怕不辣”是担心菜还不够辣呢。",
-    "py": "Nǐ de Zhōngwén shuǐpíng gòu gāo de, zhè dōu tīng dǒng le! Nǐ shuō de duì, “bú pà là” shì shuō bú pà chī là de cài, “pà bú là” shì dānxīn cài hái búgòu là ne.",
+    "py": "Nǐ de Zhōngwén shuǐpíng gòu gāo de, zhè dōu tīngdǒng le! Nǐ shuō de duì, “bú pà là” shì shuō bú pà chī là de cài, “pà bú là” shì dānxīn cài hái búgòu là ne.",
     "vn": "Trình độ tiếng Trung của cậu cao thật đấy, câu này mà cũng nghe hiểu! Cậu nói đúng, “không sợ cay” là không ngại ăn món cay, còn “sợ không cay” là lo món ăn còn chưa đủ cay cơ."
    },
    {
     "sp": 1,
     "zh": "我还达不到“怕不辣”的水平，甚至也不能算“不怕辣”，只是喜欢吃辣。",
-    "py": "Wǒ hái dá bú dào “pà bú là” de shuǐpíng, shènzhì yě bù néng suàn “bú pà là”, zhǐshì xǐhuan chī là.",
+    "py": "Wǒ hái dá bu dào “pà bú là” de shuǐpíng, shènzhì yě bù néng suàn “bú pà là”, zhǐshì xǐhuan chī là.",
     "vn": "Cháu còn chưa đạt tới trình “sợ không cay”, thậm chí cũng chưa tính là “không sợ cay”, chỉ là thích ăn cay thôi ạ."
    }
   ]
@@ -5006,7 +5006,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "白家月想吃辣的，要了辣子鸡；陈天中爱吃甜的，想尝尝松鼠鳜鱼；李文更喜欢吃咸的，选了红烧羊肉和一道凉菜；安妮听说贵州酸汤很有名，点了酸汤米线。",
-    "py": "Bái Jiāyuè xiǎng chī là de, yào le Làzǐjī; Chén Tiānzhōng ài chī tián de, xiǎng cháng cháng Sōngshǔ Guìyú; Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liáng cài; Ānní tīngshuō Guìzhōu suān tāng hěn yǒumíng, diǎn le Suāntāng Mǐxiàn.",
+    "py": "Bái Jiāyuè xiǎng chī là de, yào le Làzǐjī; Chén Tiānzhōng ài chī tián de, xiǎng chángchang Sōngshǔ Guìyú; Lǐ Wén gèng xǐhuan chī xián de, xuǎn le Hóngshāo Yángròu hé yí dào liángcài; Ānní tīngshuō Guìzhōu suān tāng hěn yǒumíng, diǎn le Suāntāng Mǐxiàn.",
     "vn": "Bạch Gia Nguyệt muốn ăn cay, gọi gà xào ớt khô; Trần Thiên Trung thích đồ ngọt, muốn nếm thử cá quế hình con sóc; Lý Văn thích ăn mặn hơn, chọn thịt dê kho tàu và một món nguội; Annie nghe nói canh chua Quý Châu rất nổi tiếng, nên gọi bún canh chua."
    },
    {
@@ -5018,7 +5018,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "结账时，李文想请客，但大家觉得还是各付各的更合适。",
-    "py": "Jié zhàng shí, Lǐ Wén xiǎng qǐngkè, dàn dàjiā juéde háishì gè fù gè de gèng héshì.",
+    "py": "Jiézhàng shí, Lǐ Wén xiǎng qǐngkè, dàn dàjiā juéde háishi gè fù gè de gèng héshì.",
     "vn": "Lúc thanh toán, Lý Văn muốn mời, nhưng mọi người thấy vẫn là ai trả phần nấy thì hợp hơn."
    },
    {
@@ -5071,25 +5071,25 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "李文告诉白家月，在中国，正式聚餐和普通聚餐不同，正式聚餐时人们比较重视座位的安排，比如可以按照年龄大小来安排，年龄比较大的客人往往会坐在中间或者面对门口的座位。",
-    "py": "Lǐ Wén gàosu Bái Jiāyuè, zài Zhōngguó, zhèngshì jùcān hé pǔtōng jùcān bùtóng, zhèngshì jùcān shí rén men bǐjiào zhòngshì zuòwèi de ānpái, bǐrú kěyǐ ànzhào niánlíng dàxiǎo lái ānpái, niánlíng bǐjiào dà de kèrén wǎngwǎng huì zuò zài zhōngjiàn huòzhě miànduì ménkǒu de zuòwèi.",
+    "py": "Lǐ Wén gàosu Bái Jiāyuè, zài Zhōngguó, zhèngshì jùcān hé pǔtōng jùcān bùtóng, zhèngshì jùcān shí rénmen bǐjiào zhòngshì zuòwèi de ānpái, bǐrú kěyǐ ànzhào niánlíng dàxiǎo lái ānpái, niánlíng bǐjiào dà de kèrén wǎngwǎng huì zuò zài zhōngjiān huòzhě miànduì ménkǒu de zuòwèi.",
     "vn": "Lý Văn nói với Bạch Gia Nguyệt rằng ở Trung Quốc, bữa tiệc trang trọng khác với bữa ăn bình thường; khi ăn tiệc trang trọng người ta khá coi trọng việc sắp xếp chỗ ngồi, ví dụ có thể xếp theo tuổi lớn nhỏ, khách lớn tuổi thường ngồi ở giữa hoặc ở chỗ đối diện cửa ra vào."
    },
    {
     "sp": 0,
     "zh": "大家坐下时，主人会请客人先坐。",
-    "py": "Dàjiā zuò xià shí, zhǔrén huì qǐngkè rén xiān zuò.",
+    "py": "Dàjiā zuòxia shí, zhǔrén huì qǐngkè rén xiān zuò.",
     "vn": "Khi mọi người ngồi vào bàn, chủ nhà sẽ mời khách ngồi trước."
    },
    {
     "sp": 0,
     "zh": "如果聚餐时有老人，年轻人要等老人坐下后再坐。",
-    "py": "Rúguǒ jùcān shí yǒu lǎorén, niánqīngrén yào děng lǎorén zuò xià hòu zài zuò.",
+    "py": "Rúguǒ jùcān shí yǒu lǎorén, niánqīngrén yào děng lǎorén zuòxia hòu zài zuò.",
     "vn": "Nếu bữa tiệc có người già, người trẻ phải đợi người già ngồi xuống rồi mới ngồi."
    },
    {
     "sp": 0,
     "zh": "白家月听后觉得很有意思，她认为这么做是照顾客人、尊重老人的表现。",
-    "py": "Bái Jiāyuè tīng hòu juéde hěn yǒuyìsī, tā rènwéi zhème zuò shì zhàogu kèrén, zūnzhòng lǎorén de biǎoxiàn.",
+    "py": "Bái Jiāyuè tīng hòu juéde hěn yǒu yìsi, tā rènwéi zhème zuò shì zhàogu kèrén, zūnzhòng lǎorén de biǎoxiàn.",
     "vn": "Bạch Gia Nguyệt nghe xong thấy rất thú vị, cô cho rằng làm như vậy là biểu hiện của sự chu đáo với khách và kính trọng người già."
    }
   ],
@@ -5573,12 +5573,12 @@ var translateData = [
  {
   "vi": "Mọi người thấy vẫn là ai trả phần nấy thì hợp hơn.",
   "zh": "大家觉得还是各付各的更合适。",
-  "py": "Dàjiā juéde háishì gè fù gè de gèng héshì."
+  "py": "Dàjiā juéde háishi gè fù gè de gèng héshì."
  },
  {
   "vi": "Người trẻ phải đợi người già ngồi xuống rồi mới ngồi.",
   "zh": "年轻人要等老人坐下后再坐。",
-  "py": "Niánqīngrén yào děng lǎorén zuò xià hòu zài zuò."
+  "py": "Niánqīngrén yào děng lǎorén zuòxia hòu zài zuò."
  },
  {
   "vi": "Món này cay thì cay, nhưng rất ngon.",
@@ -5588,7 +5588,7 @@ var translateData = [
  {
   "vi": "Món này trông có vẻ rất cay, tôi không dám ăn.",
   "zh": "这道菜看起来很辣，我不敢吃。",
-  "py": "Zhè dào cài kàn qǐlái hěn là, wǒ bù gǎn chī."
+  "py": "Zhè dào cài kànqǐlai hěn là, wǒ bù gǎn chī."
  }
 ];
 var translateDataRev = [
@@ -5610,7 +5610,7 @@ var translateDataRev = [
  {
   "vi": "Khi ăn tiệc trang trọng, người ta khá coi trọng việc sắp xếp chỗ ngồi.",
   "zh": "正式聚餐时，人们比较重视座位的安排。",
-  "py": "Zhèngshì jùcān shí, rén men bǐjiào zhòngshì zuòwèi de ānpái."
+  "py": "Zhèngshì jùcān shí, rénmen bǐjiào zhòngshì zuòwèi de ānpái."
  },
  {
   "vi": "Làm như vậy là biểu hiện của sự chu đáo với khách và kính trọng người già.",
@@ -5856,6 +5856,6 @@ var writingData = {
  ],
  "model": {
   "zh": "我来自越南，越南菜的种类够多的，味道也够丰富的。一般来说，北方人喜欢吃咸一点儿的，南方人更喜欢吃甜的，中部人最爱吃辣，有的菜辣是辣，不过非常香。越南人每天至少吃一次米饭或者米线，最有名的越南河粉就是用米做的，汤是用牛骨头煮了好几个小时才做成的。越南菜用油不多，还会配很多新鲜的蔬菜，既好吃又健康。在越南，一家人吃饭的时候，大家聚在一起，要等爷爷奶奶拿起筷子，年轻人再开始吃，这是尊重老人的表现。和朋友聚餐就比较随意了，有时候一个人请客，有时候各付各的。欢迎大家来美食节尝尝越南菜！",
-  "py": "Wǒ láizì Yuènán, Yuènán cài de zhǒnglèi gòu duō de, wèidào yě gòu fēngfù de. Yìbān láishuō, běifāng rén xǐhuan chī xián yìdiǎnr de, nánfāng rén gèng xǐhuan chī tián de, zhōng bù rén zuì ài chī là, yǒude cài là shì là, búguò fēicháng xiāng. Yuènán rén měi tiān zhìshǎo chī yí cì mǐfàn huòzhě mǐ xiàn, zuì yǒumíng de Yuènán hé fěn jiù shì yòng mǐ zuò de, tāng shì yòng niú gǔtou zhǔ le hǎo jǐ gè xiǎoshí cái zuò chéng de. Yuènán cài yòng yóu bù duō, hái huì pèi hěn duō xīnxiān de shūcài, jì hǎochī yòu jiànkāng. Zài Yuènán, yì jiārén chīfàn de shíhou, dàjiā jù zài yìqǐ, yào děng yéye-nǎinai ná qǐ kuàizi, niánqīngrén zài kāishǐ chī, zhè shì zūnzhòng lǎorén de biǎoxiàn. Hé péngyou jùcān jiù bǐjiào suíyì le, yǒu shíhou yí gè rén qǐngkè, yǒu shíhou gè fù gè de. Huānyíng dàjiā lái měi shí jié cháng cháng Yuènán cài!"
+  "py": "Wǒ láizì Yuènán, Yuènán cài de zhǒnglèi gòu duō de, wèidào yě gòu fēngfù de. Yìbān láishuō, běifāngrén xǐhuan chī xián yìdiǎnr de, nánfāngrén gèng xǐhuan chī tián de, zhōngbù rén zuì ài chī là, yǒude cài là shì là, búguò fēicháng xiāng. Yuènánrén měitiān zhìshǎo chī yí cì mǐfàn huòzhě mǐxiàn, zuì yǒumíng de Yuènán héfěn jiùshì yòng mǐ zuò de, tāng shì yòng niú gǔtou zhǔ le hǎojǐ gè xiǎoshí cái zuòchéng de. Yuènán cài yòng yóu bù duō, hái huì pèi hěn duō xīnxiān de shūcài, jì hǎochī yòu jiànkāng. Zài Yuènán, yì jiārén chīfàn de shíhou, dàjiā jù zài yìqǐ, yào děng yéye nǎinai náqǐ kuàizi, niánqīngrén zài kāishǐ chī, zhè shì zūnzhòng lǎorén de biǎoxiàn. Hé péngyou jùcān jiù bǐjiào suíyì le, yǒushíhou yí gè rén qǐngkè, yǒushíhou gè fù gè de. Huānyíng dàjiā lái měishí jié chángchang Yuènán cài!"
  }
 };

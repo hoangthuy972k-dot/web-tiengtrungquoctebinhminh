@@ -1,0 +1,692 @@
+{
+ "/lessons/hsk4v3-bai-13.html": {
+  "points": [
+   {
+    "title": "固定格式“怎么都/也+不/没……” — thế nào cũng không …, mãi mà không …",
+    "errors": [
+     {
+      "wrong": "我怎么都找到不我的手机。",
+      "why": "Phủ định của bổ ngữ khả năng: V + 不 + kết quả (找不到), không phải 找到不.",
+      "right": "我怎么都找不到我的手机。"
+     },
+     {
+      "wrong": "我在包里找了半天，怎么都没找不到。",
+      "why": "没 và 不 không dùng chồng lên nhau: hoặc 怎么都没找到 (đã xảy ra), hoặc 怎么都找不到 (không thể).",
+      "right": "我在包里找了半天，怎么都没找到。"
+     },
+     {
+      "wrong": "我怎么都想起来不他的名字。",
+      "why": "Bổ ngữ khả năng của 想起来 là 想不起来; tân ngữ đặt sau.",
+      "right": "我怎么都想不起来他的名字。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… tìm mãi mà không thấy, lạ thật.”",
+      "pre": "她在包里找了半天，",
+      "blank": "怎么",
+      "post": "都没找到，真奇怪。",
+      "options": [
+       "怎么",
+       "什么",
+       "哪儿"
+      ],
+      "answer": 0,
+      "explanation": "怎么 + 都 + 没 + V到."
+     },
+     {
+      "context": "“… nhưng thế nào cũng không ngờ lại rộng đến thế!”",
+      "pre": "我知道北京野生动物园很大，可怎么",
+      "blank": "也",
+      "post": "没想到这么大！",
+      "options": [
+       "也",
+       "还",
+       "就"
+      ],
+      "answer": 0,
+      "explanation": "怎么也没想到 = không ngờ (ngạc nhiên)."
+     },
+     {
+      "context": "“… nhưng con gấu trúc đó nhất định không chịu ra.”",
+      "pre": "我们等了两个多小时，可是那只熊猫怎么都",
+      "blank": "不",
+      "post": "出来。",
+      "options": [
+       "不",
+       "没",
+       "别"
+      ],
+      "answer": 0,
+      "explanation": "Ý muốn của con vật (không chịu) → 不."
+     },
+     {
+      "context": "“Tối qua nóng quá, tôi trằn trọc mãi không ngủ được.”",
+      "pre": "昨天晚上太热了，我怎么也睡",
+      "blank": "不",
+      "post": "着。",
+      "options": [
+       "不",
+       "没",
+       "得"
+      ],
+      "answer": 0,
+      "explanation": "Bổ ngữ khả năng 睡不着."
+     },
+     {
+      "context": "“… làm mãi mà không ra.”",
+      "pre": "这道题太难了，我做了好久，怎么都做",
+      "blank": "不",
+      "post": "出来。",
+      "options": [
+       "不",
+       "没",
+       "得"
+      ],
+      "answer": 0,
+      "explanation": "Bổ ngữ khả năng 做不出来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô ấy lục trong túi nửa ngày mà tìm mãi không thấy.”",
+      "words": [
+       "她",
+       "在包里",
+       "找了半天",
+       "，",
+       "怎么",
+       "都",
+       "没找到"
+      ],
+      "answer": "她在包里找了半天，怎么都没找到。",
+      "explanation": "V了半天，怎么都没 + V到."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi thế nào cũng không nhớ ra tên anh ấy.”",
+      "words": [
+       "我",
+       "怎么",
+       "也",
+       "想不起来",
+       "他的名字"
+      ],
+      "answer": "我怎么也想不起来他的名字。",
+      "explanation": "怎么也 + V不起来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi biết ở đây rộng, nhưng không ngờ lại rộng thế này.”",
+      "words": [
+       "我",
+       "知道",
+       "这里很大",
+       "，",
+       "可",
+       "怎么也",
+       "没想到",
+       "这么大"
+      ],
+      "answer": "我知道这里很大，可怎么也没想到这么大。",
+      "explanation": "可 + 怎么也没想到 (ngạc nhiên)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我怎么都找到不我的手机。",
+      "isCorrect": false,
+      "correctVersion": "我怎么都找不到我的手机。",
+      "explanation": "Phải là bổ ngữ khả năng 找不到."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "那只熊猫怎么都不出来，我们只好走了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 怎么都 + 不 + V (con vật không chịu ra)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他怎么都没睡不着。",
+      "isCorrect": false,
+      "correctVersion": "他怎么都睡不着。",
+      "explanation": "没 và 不 không đi chung; dùng bổ ngữ khả năng 睡不着."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi gọi cho anh ấy mấy lần, thế nào cũng không gọi được.",
+      "answer": "我给他打了好几次电话，怎么都打不通。",
+      "answerPy": "Wǒ gěi tā dǎ le hǎojǐ cì diànhuà, zěnme dōu dǎ bù tōng.",
+      "explanation": "怎么都 / 也 + V不通 (bổ ngữ khả năng)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi biết kỳ thi này khó, nhưng thế nào cũng không ngờ lại khó đến vậy.",
+      "answer": "我知道这次考试很难，可怎么也没想到这么难。",
+      "answerPy": "Wǒ zhīdao zhè cì kǎoshì hěn nán, kě zěnme yě méi xiǎngdào zhème nán.",
+      "explanation": "怎么也没想到 + 这么 + Adj (ngạc nhiên)."
+     }
+    ]
+   },
+   {
+    "title": "固定格式“一+量词+比+一+量词” — cái sau hơn cái trước, ngày càng …",
+    "errors": [
+     {
+      "wrong": "天气一天比一天很热。",
+      "why": "Sau cấu trúc này tính từ đứng trần, không thêm 很 / 非常.",
+      "right": "天气一天比一天热。"
+     },
+     {
+      "wrong": "他的中文一天比两天好。",
+      "why": "Hai vế phải cùng là 一 + cùng một lượng từ.",
+      "right": "他的中文一天比一天好。"
+     },
+     {
+      "wrong": "这些杯子一个比一个漂亮多了。",
+      "why": "Không thêm 多了 / 得多 (đó là câu 比 thường: A比B + Adj + 多了).",
+      "right": "这些杯子一个比一个漂亮。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… trời cũng ngày một nóng hơn.”",
+      "pre": "夏天快到了，天气也一天比一",
+      "blank": "天",
+      "post": "热。",
+      "options": [
+       "天",
+       "年",
+       "个"
+      ],
+      "answer": 0,
+      "explanation": "Hai lượng từ giống nhau: 一天比一天."
+     },
+     {
+      "context": "“Cốc ở đây cái nào cũng đẹp hơn cái nào.”",
+      "pre": "这家店里的杯子一个",
+      "blank": "比",
+      "post": "一个漂亮，我都不知道选哪个了。",
+      "options": [
+       "比",
+       "跟",
+       "和"
+      ],
+      "answer": 0,
+      "explanation": "一个 + 比 + 一个 + Adj."
+     },
+     {
+      "context": "“… năm sau náo nhiệt hơn năm trước.”",
+      "pre": "这几年，中秋节的活动一年比一年",
+      "blank": "热闹",
+      "post": "。",
+      "options": [
+       "热闹",
+       "很热闹",
+       "热闹多了"
+      ],
+      "answer": 0,
+      "explanation": "Tính từ đứng trần, không thêm 很 / 多了."
+     },
+     {
+      "context": "“Ba anh em nhà họ, người sau cao hơn người trước.”",
+      "pre": "他们兄弟三个，一",
+      "blank": "个",
+      "post": "比一个高。",
+      "options": [
+       "个",
+       "天",
+       "次"
+      ],
+      "answer": 0,
+      "explanation": "So người → lượng từ 个."
+     },
+     {
+      "context": "“… đời sống năm sau tốt hơn năm trước.” (ôn 随着)",
+      "pre": "随着经济的发展，人们的生活",
+      "blank": "一年比一年",
+      "post": "好。",
+      "options": [
+       "一年比一年",
+       "一年比两年",
+       "一年一年"
+      ],
+      "answer": 0,
+      "explanation": "一年比一年 + Adj."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trời ngày một lạnh hơn rồi.”",
+      "words": [
+       "天气",
+       "一天",
+       "比",
+       "一天",
+       "冷",
+       "了"
+      ],
+      "answer": "天气一天比一天冷了。",
+      "explanation": "一天比一天 + Adj + 了 (thay đổi)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mấy năm nay Trung thu năm sau náo nhiệt hơn năm trước.”",
+      "words": [
+       "这几年",
+       "中秋节",
+       "一年",
+       "比",
+       "一年",
+       "热闹"
+      ],
+      "answer": "这几年中秋节一年比一年热闹。",
+      "explanation": "Chủ ngữ + 一年比一年 + Adj."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Quần áo ở đây bộ nào cũng đẹp hơn bộ nào.”",
+      "words": [
+       "这儿的",
+       "衣服",
+       "一件",
+       "比",
+       "一件",
+       "漂亮"
+      ],
+      "answer": "这儿的衣服一件比一件漂亮。",
+      "explanation": "Lượng từ 件 cho quần áo."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "天气一天比一天很热。",
+      "isCorrect": false,
+      "correctVersion": "天气一天比一天热。",
+      "explanation": "Không thêm 很 trước tính từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们班的同学一个比一个努力。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: so nhiều người, ai cũng chăm chỉ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他的中文一天比两天好。",
+      "isCorrect": false,
+      "correctVersion": "他的中文一天比一天好。",
+      "explanation": "Hai vế đều là 一 + cùng lượng từ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Từ khi đến Trung Quốc, tiếng Trung của tôi ngày một tốt hơn.",
+      "answer": "来中国以后，我的中文一天比一天好。",
+      "answerPy": "Lái Zhōngguó yǐhòu, wǒ de Zhōngwén yì tiān bǐ yì tiān hǎo.",
+      "explanation": "一天比一天 + Adj."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Những món mẹ nấu, món nào cũng ngon hơn món nào.",
+      "answer": "妈妈做的菜一个比一个好吃。",
+      "answerPy": "Māma zuò de cài yí gè bǐ yí gè hǎochī.",
+      "explanation": "一个 / 一道 + 比 + 一个 / 一道 + 好吃."
+     }
+    ]
+   },
+   {
+    "title": "用“大约”“左右”表示概数 — khoảng, chừng",
+    "errors": [
+     {
+      "wrong": "左右五点我们见面吧。",
+      "why": "左右 đứng SAU số / thời gian.",
+      "right": "五点左右我们见面吧。"
+     },
+     {
+      "wrong": "我们七点大约到。",
+      "why": "大约 đứng TRƯỚC số / thời gian.",
+      "right": "我们大约七点到。"
+     },
+     {
+      "wrong": "大约七点左右我们出发。",
+      "why": "Dùng 大约 hoặc 左右 là đủ, dùng cả hai bị lặp nghĩa.",
+      "right": "大约七点我们出发。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Khoảng năm giờ sáng họ đã lên tàu cao tốc.”",
+      "pre": "早上五点",
+      "blank": "左右",
+      "post": "他们就坐上了高铁。",
+      "options": [
+       "左右",
+       "大约",
+       "大概"
+      ],
+      "answer": 0,
+      "explanation": "Sau thời gian dùng 左右."
+     },
+     {
+      "context": "“Chừng bảy giờ họ đã đến thành phố …”",
+      "pre": "他们",
+      "blank": "大约",
+      "post": "七点就来到了儿子工作的城市。",
+      "options": [
+       "大约",
+       "左右",
+       "以后"
+      ],
+      "answer": 0,
+      "explanation": "Trước thời gian dùng 大约."
+     },
+     {
+      "context": "“Khoảng mười hai giờ trưa tôi đến trường các bạn.”",
+      "pre": "我中午十二点",
+      "blank": "左右",
+      "post": "到你们学校。",
+      "options": [
+       "左右",
+       "大约",
+       "刚才"
+      ],
+      "answer": 0,
+      "explanation": "Thời gian + 左右."
+     },
+     {
+      "context": "“… tối khoảng mười giờ rưỡi mới về đến nhà.”",
+      "pre": "昨天飞机晚点，我晚上",
+      "blank": "大约",
+      "post": "十点半才到家。",
+      "options": [
+       "大约",
+       "左右",
+       "已经"
+      ],
+      "answer": 0,
+      "explanation": "大约 + thời gian + 才."
+     },
+     {
+      "context": "“Từ đây đến khu du lịch đi xe mất khoảng một tiếng.”",
+      "pre": "从这儿到景区坐车要一个小时",
+      "blank": "左右",
+      "post": "。",
+      "options": [
+       "左右",
+       "大约",
+       "以后"
+      ],
+      "answer": 0,
+      "explanation": "Thời đoạn + 左右."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng ta khoảng bảy giờ gặp nhau ở cổng nhà hát.”",
+      "words": [
+       "我们",
+       "大约",
+       "七点",
+       "在剧院门口",
+       "见面"
+      ],
+      "answer": "我们大约七点在剧院门口见面。",
+      "explanation": "Chủ ngữ + 大约 + thời gian + nơi chốn + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tối nào anh ấy cũng đi ngủ khoảng mười một giờ.”",
+      "words": [
+       "他",
+       "每天",
+       "晚上",
+       "十一点左右",
+       "睡觉"
+      ],
+      "answer": "他每天晚上十一点左右睡觉。",
+      "explanation": "Thời gian + 左右 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Thành phố này có khoảng mười triệu người.”",
+      "words": [
+       "这个城市",
+       "大约",
+       "有",
+       "一千万",
+       "人"
+      ],
+      "answer": "这个城市大约有一千万人。",
+      "explanation": "大约 + 有 + số lượng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "左右八点我们出发吧。",
+      "isCorrect": false,
+      "correctVersion": "八点左右我们出发吧。",
+      "explanation": "左右 đứng sau thời gian."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他看起来三十岁左右。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: số tuổi + 左右."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们七点大约到。",
+      "isCorrect": false,
+      "correctVersion": "我们大约七点到。",
+      "explanation": "大约 đứng trước thời gian."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Khoảng tám giờ sáng mai chúng ta xuất phát, đừng đến muộn nhé.",
+      "answer": "明天早上八点左右我们出发，别迟到。",
+      "answerPy": "Míngtiān zǎoshang bā diǎn zuǒyòu wǒmen chūfā, bié chídào.",
+      "explanation": "八点左右 / 大约八点."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Từ nhà tôi đến trường đi bộ mất khoảng hai mươi phút.",
+      "answer": "从我家到学校走路要二十分钟左右。",
+      "answerPy": "Cóng wǒ jiā dào xuéxiào zǒulù yào èrshí fēnzhōng zuǒyòu.",
+      "explanation": "Thời đoạn + 左右 / 大约 + 要 + thời đoạn."
+     }
+    ]
+   },
+   {
+    "title": "介词“作为” — với tư cách là, là (một …)",
+    "errors": [
+     {
+      "wrong": "是学生，我们应该好好学习。",
+      "why": "Đầu câu nói “Là …, …” phải dùng 作为, không dùng 是.",
+      "right": "作为学生，我们应该好好学习。"
+     },
+     {
+      "wrong": "作为一名老师，学生们都很喜欢他。",
+      "why": "Người mang thân phận “giáo viên” (他) phải làm chủ ngữ vế sau.",
+      "right": "作为一名老师，他很关心学生。"
+     },
+     {
+      "wrong": "作为，我支持你。",
+      "why": "作为 không đứng một mình, phải có danh từ theo sau.",
+      "right": "作为你的朋友，我支持你。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Là ngày lễ truyền thống quan trọng nhất trong năm …”",
+      "pre": "",
+      "blank": "作为",
+      "post": "一年里最重要的传统节日，春节对中国人来说有着特别的意义。",
+      "options": [
+       "作为",
+       "因为",
+       "成为"
+      ],
+      "answer": 0,
+      "explanation": "作为 + N (tính chất của sự vật)."
+     },
+     {
+      "context": "“… giá cũng không cao.” (ôn 不仅……也……)",
+      "pre": "作为新产品，这个手机不仅样子好看，价格",
+      "blank": "也",
+      "post": "不高。",
+      "options": [
+       "也",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "不仅……，……也…… (Bài 3 · điểm 2)."
+     },
+     {
+      "context": "“… luôn quan tâm, giúp đỡ lẫn nhau.”",
+      "pre": "作为好朋友，我们一直",
+      "blank": "互相",
+      "post": "关心、互相帮助。",
+      "options": [
+       "互相",
+       "一起",
+       "自己"
+      ],
+      "answer": 0,
+      "explanation": "互相 + V = lẫn nhau."
+     },
+     {
+      "context": "“Là cha mẹ, chúng ta nên ở bên con nhiều hơn.”",
+      "pre": "作为父母，",
+      "blank": "我们",
+      "post": "应该多陪陪孩子。",
+      "options": [
+       "我们",
+       "孩子们",
+       "老师"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ vế sau phải là người mang thân phận “cha mẹ”."
+     },
+     {
+      "context": "“Là một bác sĩ, ngày nào cô ấy cũng quan tâm bệnh nhân.”",
+      "pre": "她",
+      "blank": "作为",
+      "post": "一名医生，每天都很关心病人。",
+      "options": [
+       "作为",
+       "对于",
+       "关于"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ + 作为 + N."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Là học sinh, chúng ta nên học hành chăm chỉ.”",
+      "words": [
+       "作为",
+       "学生",
+       "，",
+       "我们",
+       "应该",
+       "好好学习"
+      ],
+      "answer": "作为学生，我们应该好好学习。",
+      "explanation": "作为 + N，chủ ngữ + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Là người Bắc Kinh, tôi nhất định phải mời bạn ăn vịt quay.”",
+      "words": [
+       "作为",
+       "北京人",
+       "，",
+       "我",
+       "一定要",
+       "请你",
+       "吃烤鸭"
+      ],
+      "answer": "作为北京人，我一定要请你吃烤鸭。",
+      "explanation": "作为 + thân phận，我 + ……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Là ngày lễ truyền thống quan trọng nhất của Trung Quốc, Tết có ý nghĩa đặc biệt.”",
+      "words": [
+       "作为",
+       "中国",
+       "最重要的",
+       "传统节日",
+       "，",
+       "春节",
+       "有着",
+       "特别的意义"
+      ],
+      "answer": "作为中国最重要的传统节日，春节有着特别的意义。",
+      "explanation": "作为 + N (tính chất của vật)，chủ ngữ + 有着……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "是学生，我们应该好好学习。",
+      "isCorrect": false,
+      "correctVersion": "作为学生，我们应该好好学习。",
+      "explanation": "Đầu câu dùng 作为, không dùng 是."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "作为一名老师，学生们都很喜欢他。",
+      "isCorrect": false,
+      "correctVersion": "作为一名老师，他很关心学生。",
+      "explanation": "Người là “giáo viên” (他) phải làm chủ ngữ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "作为新产品，这个手机的价格不太高。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 作为 + N chỉ tính chất của sự vật."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Là người Việt Nam, tôi rất thích Tết.",
+      "answer": "作为越南人，我很喜欢过春节。",
+      "answerPy": "Zuòwéi Yuènánrén, wǒ hěn xǐhuan guò Chūnjié.",
+      "explanation": "作为 + thân phận，我 + ……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Là lớp trưởng, cậu ấy luôn quan tâm đến mọi người.",
+      "answer": "作为班长，他一直很关心大家。",
+      "answerPy": "Zuòwéi bānzhǎng, tā yìzhí hěn guānxīn dàjiā.",
+      "explanation": "作为 + chức vụ，他 + ……"
+     }
+    ]
+   }
+  ]
+ }
+}

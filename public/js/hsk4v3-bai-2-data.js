@@ -32,7 +32,7 @@ var vocabData = [
    },
    {
     "zh": "房东太太",
-    "py": "Fángdōng tàitài",
+    "py": "Fángdōng tàitai",
     "vn": "bà chủ nhà"
    },
    {
@@ -105,7 +105,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu chủ nhà đồng ý thì chúng tôi chuyển vào ngay hôm nay.",
     "answer": "要是房东同意，我们今天就搬进去。",
-    "answerPy": "Yàoshi fángdōng tóngyì, wǒmen jīntiān jiù bān jìnqù.",
+    "answerPy": "Yàoshi fángdōng tóngyì, wǒmen jīntiān jiù bān jìnqu.",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2).",
     "pair": "要是……就……"
    }
@@ -173,7 +173,7 @@ var vocabData = [
    },
    {
     "zh": "她在网上查找到一条出租信息。",
-    "py": "Tā zài wǎngshàng cházhǎo dào yì tiáo chūzū xìnxī.",
+    "py": "Tā zài wǎngshang cházhǎo dào yì tiáo chūzū xìnxī.",
     "vn": "Cô ấy tìm thấy trên mạng một tin cho thuê nhà."
    }
   ],
@@ -208,7 +208,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Căn phòng lớn này cho thuê, mỗi tháng 3000 tệ.",
     "answer": "这个大房间出租，每月三千元。",
-    "answerPy": "Zhège dà fángjiān chūzū, měi yuè sān qiān yuán.",
+    "answerPy": "Zhège dà fángjiān chūzū, měi yuè sānqiān yuán.",
     "note": "出租 — người nói là chủ nhà.",
     "pair": "N + 出租"
    },
@@ -319,7 +319,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tiền thuê nhà ở đây một tháng chỉ 2000 tệ, rẻ thật!",
     "answer": "这里的房租一个月才两千元，真便宜！",
-    "answerPy": "Zhèli de fángzū yí gè yuè cái liǎng qiān yuán, zhēn piányi!",
+    "answerPy": "Zhèli de fángzū yí gè yuè cái liǎngqiān yuán, zhēn piányi!",
     "note": "Ôn 才 = chỉ (ít) (HSK 3).",
     "pair": "才 + số lượng"
    },
@@ -385,12 +385,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "现在已经收拾好了，想租的话，今天就可以搬进来。",
-  "ex_py": "Xiànzài yǐjīng shōushi hǎo le, xiǎng zū dehuà, jīntiān jiù kěyǐ bān jìnlái.",
+  "ex_py": "Xiànzài yǐjīng shōushi hǎo le, xiǎng zū de huà, jīntiān jiù kěyǐ bān jìnlai.",
   "ex_vn": "Bây giờ đã dọn dẹp xong rồi, muốn thuê thì hôm nay có thể dọn vào luôn.",
   "exList": [
    {
     "zh": "现在已经收拾好了，想租的话，今天就可以搬进来。",
-    "py": "Xiànzài yǐjīng shōushi hǎo le, xiǎng zū dehuà, jīntiān jiù kěyǐ bān jìnlái.",
+    "py": "Xiànzài yǐjīng shōushi hǎo le, xiǎng zū de huà, jīntiān jiù kěyǐ bān jìnlai.",
     "vn": "Bây giờ đã dọn dẹp xong rồi, muốn thuê thì hôm nay có thể dọn vào luôn."
    },
    {
@@ -430,7 +430,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ngày nào tôi cũng dọn phòng sạch sẽ.",
     "answer": "我每天都把房间收拾干净。",
-    "answerPy": "Wǒ měi tiān dōu bǎ fángjiān shōushi gānjìng.",
+    "answerPy": "Wǒ měitiān dōu bǎ fángjiān shōushi gānjìng.",
     "note": "Ôn câu chữ 把 + bổ ngữ kết quả 干净 (HSK 3).",
     "pair": "把……收拾干净"
    },
@@ -438,7 +438,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ăn cơm xong tôi dọn bếp rồi mới đi công viên chạy bộ.",
     "answer": "我吃完饭并收拾好厨房后，才去公园跑步。",
-    "answerPy": "Wǒ chī wán fàn bìng shōushi hǎo chúfáng hòu, cái qù gōngyuán pǎobù.",
+    "answerPy": "Wǒ chīwán fàn bìng shōushi hǎo chúfáng hòu, cái qù gōngyuán pǎobù.",
     "note": "Đáp án gợi ý của sách (Bài 2 · điểm 3).",
     "pair": "并 + V"
    }
@@ -476,7 +476,7 @@ var vocabData = [
    },
    {
     "zh": "租下来",
-    "py": "Zū xiàlái",
+    "py": "Zū xiàlai",
     "vn": "thuê luôn (chốt thuê)"
    },
    {
@@ -506,7 +506,7 @@ var vocabData = [
    },
    {
     "zh": "要租一个好房子也不容易，需要多多比较。",
-    "py": "Yào zū yí gè hǎo fángzi yě bù róngyì, xūyào duō duō bǐjiào.",
+    "py": "Yào zū yí gè hǎo fángzi yě bù róngyì, xūyào duōduō bǐjiào.",
     "vn": "Muốn thuê được một căn nhà tốt cũng không dễ, cần so sánh nhiều."
    }
   ],
@@ -529,7 +529,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bạn thấy hài lòng thì cứ thuê luôn là được.",
     "answer": "你要是满意，租下来就是了。",
-    "answerPy": "Nǐ yàoshi mǎnyì, zū xiàlái jiùshì le.",
+    "answerPy": "Nǐ yàoshi mǎnyì, zū xiàlai jiùshì le.",
     "note": "Đáp án gợi ý của sách (Bài 2 · điểm 1) + 要是 (Bài 1).",
     "pair": "要是……，V就是了"
    },
@@ -666,7 +666,7 @@ var vocabData = [
    },
    {
     "zh": "天亮了",
-    "py": "Tiān liàng le",
+    "py": "Tiānliàng le",
     "vn": "trời sáng rồi"
    },
    {
@@ -775,7 +775,7 @@ var vocabData = [
    },
    {
     "zh": "买下来就是了",
-    "py": "Mǎi xiàlái jiùshì le",
+    "py": "Mǎi xiàlai jiùshì le",
     "vn": "cứ mua luôn đi"
    }
   ],
@@ -886,7 +886,7 @@ var vocabData = [
    },
    {
     "zh": "种了不少树",
-    "py": "Zhòng le bù shǎo shù",
+    "py": "Zhòng le bùshǎo shù",
     "vn": "trồng không ít cây"
    }
   ],
@@ -901,17 +901,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "这个小区到处是花，还种了不少树。",
-  "ex_py": "Zhège xiǎoqū dàochù shì huā, hái zhòng le bù shǎo shù.",
+  "ex_py": "Zhège xiǎoqū dàochù shì huā, hái zhòng le bùshǎo shù.",
   "ex_vn": "Khu chung cư này đâu đâu cũng có hoa, còn trồng không ít cây.",
   "exList": [
    {
     "zh": "这个小区到处是花，还种了不少树。",
-    "py": "Zhège xiǎoqū dàochù shì huā, hái zhòng le bù shǎo shù.",
+    "py": "Zhège xiǎoqū dàochù shì huā, hái zhòng le bùshǎo shù.",
     "vn": "Khu chung cư này đâu đâu cũng có hoa, còn trồng không ít cây."
    },
    {
     "zh": "爷爷在院子里种了很多菜。",
-    "py": "Yéye zài yuàn zi lǐ zhòng le hěn duō cài.",
+    "py": "Yéye zài yuànzi lǐ zhòng le hěn duō cài.",
     "vn": "Ông nội trồng rất nhiều rau trong sân."
    }
   ],
@@ -942,7 +942,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với thời tiết ấm dần lên, rất nhiều người ra ngoài trồng cây.",
     "answer": "随着天气越来越暖和，很多人都出去种树。",
-    "answerPy": "Suízhe tiānqì yuèláiyuè nuǎnhuo, hěn duō rén dōu chūqù zhòng shù.",
+    "answerPy": "Suízhe tiānqì yuèláiyuè nuǎnhuo, hěn duō rén dōu chūqu zhòng shù.",
     "note": "Ôn 随着 (Bài 1 · điểm 3).",
     "pair": "随着……"
    }
@@ -985,7 +985,7 @@ var vocabData = [
    },
    {
     "zh": "看看周围",
-    "py": "Kàn kàn zhōuwéi",
+    "py": "Kànkan zhōuwéi",
     "vn": "nhìn xung quanh"
    }
   ],
@@ -1000,12 +1000,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "这个小区到处是花，还种了不少树，周围也很安静。",
-  "ex_py": "Zhège xiǎoqū dàochù shì huā, hái zhòng le bù shǎo shù, zhōuwéi yě hěn ānjìng.",
+  "ex_py": "Zhège xiǎoqū dàochù shì huā, hái zhòng le bùshǎo shù, zhōuwéi yě hěn ānjìng.",
   "ex_vn": "Khu chung cư này đâu đâu cũng có hoa, còn trồng không ít cây, xung quanh cũng rất yên tĩnh.",
   "exList": [
    {
     "zh": "这个小区到处是花，还种了不少树，周围也很安静。",
-    "py": "Zhège xiǎoqū dàochù shì huā, hái zhòng le bù shǎo shù, zhōuwéi yě hěn ānjìng.",
+    "py": "Zhège xiǎoqū dàochù shì huā, hái zhòng le bùshǎo shù, zhōuwéi yě hěn ānjìng.",
     "vn": "Khu chung cư này đâu đâu cũng có hoa, còn trồng không ít cây, xung quanh cũng rất yên tĩnh."
    },
    {
@@ -1111,12 +1111,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "这个小区的环境真不错，不过我听说，附近有十几家公司。",
-  "ex_py": "Zhègè xiǎoqū de huánjìng zhēn búcuò, búguò wǒ tīngshuō, fùjìn yǒu shí jǐ jiā gōngsī.",
+  "ex_py": "Zhège xiǎoqū de huánjìng zhēn búcuò, búguò wǒ tīngshuō, fùjìn yǒu shíjǐ jiā gōngsī.",
   "ex_vn": "Môi trường khu chung cư này đẹp thật, có điều tôi nghe nói gần đây có mười mấy công ty.",
   "exList": [
    {
     "zh": "这个小区的环境真不错，不过我听说，附近有十几家公司。",
-    "py": "Zhègè xiǎoqū de huánjìng zhēn búcuò, búguò wǒ tīngshuō, fùjìn yǒu shí jǐ jiā gōngsī.",
+    "py": "Zhège xiǎoqū de huánjìng zhēn búcuò, búguò wǒ tīngshuō, fùjìn yǒu shíjǐ jiā gōngsī.",
     "vn": "Môi trường khu chung cư này đẹp thật, có điều tôi nghe nói gần đây có mười mấy công ty."
    },
    {
@@ -1207,7 +1207,7 @@ var vocabData = [
    },
    {
     "zh": "毕业生",
-    "py": "Bìyè shēng",
+    "py": "Bìyèshēng",
     "vn": "sinh viên tốt nghiệp"
    }
   ],
@@ -1222,12 +1222,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "附近有十几家公司，很多刚毕业的学生都租住在这里。",
-  "ex_py": "Fùjìn yǒu shí jǐ jiā gōngsī, hěn duō gāng bìyè de xuésheng dōu zū zhù zài zhèli.",
+  "ex_py": "Fùjìn yǒu shíjǐ jiā gōngsī, hěn duō gāng bìyè de xuésheng dōu zū zhù zài zhèli.",
   "ex_vn": "Gần đây có mười mấy công ty, nhiều sinh viên mới tốt nghiệp đều thuê nhà ở đây.",
   "exList": [
    {
     "zh": "附近有十几家公司，很多刚毕业的学生都租住在这里。",
-    "py": "Fùjìn yǒu shí jǐ jiā gōngsī, hěn duō gāng bìyè de xuésheng dōu zū zhù zài zhèli.",
+    "py": "Fùjìn yǒu shíjǐ jiā gōngsī, hěn duō gāng bìyè de xuésheng dōu zū zhù zài zhèli.",
     "vn": "Gần đây có mười mấy công ty, nhiều sinh viên mới tốt nghiệp đều thuê nhà ở đây."
    },
    {
@@ -1275,7 +1275,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu xin được học bổng, tốt nghiệp xong tôi sẽ đến Trung Quốc học.",
     "answer": "要是能申请到奖学金，毕业以后我就去中国学习。",
-    "answerPy": "Yàoshi néng shēnqǐng dào jiǎng xué jīn, bìyè yǐhòu wǒ jiù qù Zhōngguó xuéxí.",
+    "answerPy": "Yàoshi néng shēnqǐng dào jiǎngxuéjīn, bìyè yǐhòu wǒ jiù qù Zhōngguó xuéxí.",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2).",
     "pair": "要是……就……"
    }
@@ -1313,7 +1313,7 @@ var vocabData = [
    },
    {
     "zh": "恐怕来不及",
-    "py": "Kǒngpà láibùjí",
+    "py": "Kǒngpà láibují",
     "vn": "e là không kịp"
    },
    {
@@ -1343,7 +1343,7 @@ var vocabData = [
    },
    {
     "zh": "外边下大雨了，我们恐怕去不了公园了。",
-    "py": "Wàibian xià dà yǔ le, wǒmen kǒngpà qù bù le gōngyuán le.",
+    "py": "Wàibian xià dàyǔ le, wǒmen kǒngpà qù bu le gōngyuán le.",
     "vn": "Bên ngoài mưa to rồi, e là chúng ta không đi công viên được rồi."
    }
   ],
@@ -1378,7 +1378,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đã 8 giờ rồi, e là không kịp nữa.",
     "answer": "已经八点了，恐怕来不及了。",
-    "answerPy": "Yǐjīng bā diǎn le, kǒngpà láibùjí le.",
+    "answerPy": "Yǐjīng bā diǎn le, kǒngpà láibují le.",
     "note": "Ôn bổ ngữ khả năng 来不及 (HSK 3).",
     "pair": "恐怕 + V不……"
    },
@@ -1454,7 +1454,7 @@ var vocabData = [
    },
    {
     "zh": "春节的时候，街上特别热闹。",
-    "py": "Chūn jié de shíhou, jiē shàng tèbié rènao.",
+    "py": "Chūnjié de shíhou, jiē shàng tèbié rènao.",
     "vn": "Dịp Tết, ngoài phố đặc biệt náo nhiệt."
    }
   ],
@@ -1497,7 +1497,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cuối tuần gọi bạn bè đến nhà vui vẻ một chút nhé!",
     "answer": "周末叫朋友们来家里热闹热闹吧！",
-    "answerPy": "Zhōumò jiào péngyou men lái jiā lǐ rènao rènao ba!",
+    "answerPy": "Zhōumò jiào péngyoumen lái jiāli rènao rènao ba!",
     "note": "热闹 làm động từ, lặp ABAB.",
     "pair": "ABAB"
    }
@@ -1608,7 +1608,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Làm xong thủ tục nhận phòng, chúng ta đi ăn nhé.",
     "answer": "办好了入住手续，我们就去吃饭吧。",
-    "answerPy": "Bàn hǎo le rùzhù shǒuxù, wǒmen jiù qù chīfàn ba.",
+    "answerPy": "Bànhǎo le rùzhù shǒuxù, wǒmen jiù qù chīfàn ba.",
     "note": "Ôn 办好…… (Bài 1 · từ 入学).",
     "pair": "办好……就……"
    }
@@ -1676,7 +1676,7 @@ var vocabData = [
    },
    {
     "zh": "我每天睡觉前都用中文写日记。",
-    "py": "Wǒ měi tiān shuìjiào qián dōu yòng Zhōngwén xiě rìjì.",
+    "py": "Wǒ měitiān shuìjiào qián dōu yòng Zhōngwén xiě rìjì.",
     "vn": "Ngày nào trước khi ngủ tôi cũng viết nhật ký bằng tiếng Trung."
    }
   ],
@@ -1922,7 +1922,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cô ấy thi đỗ Đại học Bắc Kinh và xin được học bổng.",
     "answer": "她考上了北京大学并申请到了奖学金。",
-    "answerPy": "Tā kǎo shàng le běijīngdàxué bìng shēnqǐng dào le jiǎng xué jīn.",
+    "answerPy": "Tā kǎoshàng le běijīngdàxué bìng shēnqǐng dào le jiǎngxuéjīn.",
     "note": "Ví dụ của sách; ôn 申请到 + 奖学金 (Bài 1).",
     "pair": "并 + V"
    },
@@ -1930,7 +1930,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi hoàn toàn không đồng ý thuê căn nhà này, tôi còn phải nghĩ thêm.",
     "answer": "我并没有答应你就租这个房子，我还要再想想。",
-    "answerPy": "Wǒ bìng méiyǒu dāying nǐ jiù zū zhège fángzi, wǒ hái yào zài xiǎng xiǎng.",
+    "answerPy": "Wǒ bìng méiyǒu dāying nǐ jiù zū zhège fángzi, wǒ hái yào zài xiǎngxiang.",
     "note": "Ví dụ của sách; 答应 dāying = đồng ý, hứa.",
     "pair": "并没有……"
    }
@@ -2183,7 +2183,7 @@ var vocabData = [
    },
    {
     "zh": "厨房用品",
-    "py": "Chúfáng yòng pǐn",
+    "py": "Chúfáng yòngpǐn",
     "vn": "đồ dùng nhà bếp"
    }
   ],
@@ -2204,7 +2204,7 @@ var vocabData = [
    },
    {
     "zh": "我吃完饭并收拾好厨房后，才去公园跑步。",
-    "py": "Wǒ chī wán fàn bìng shōushi hǎo chúfáng hòu, cái qù gōngyuán pǎobù.",
+    "py": "Wǒ chīwán fàn bìng shōushi hǎo chúfáng hòu, cái qù gōngyuán pǎobù.",
     "vn": "Tôi ăn xong và dọn dẹp bếp xong rồi mới đi công viên chạy bộ."
    }
   ],
@@ -2305,12 +2305,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "不过，我平常主要在学校食堂吃，基本上不做饭。",
-  "ex_py": "Búguò, wǒ píngcháng zhǔyào zài xuéxiào shí táng chī, jīběnshàng bú zuòfàn.",
+  "ex_py": "Búguò, wǒ píngcháng zhǔyào zài xuéxiào shítáng chī, jīběnshàng bú zuòfàn.",
   "ex_vn": "Có điều, ngày thường tôi chủ yếu ăn ở nhà ăn của trường, hầu như không nấu cơm.",
   "exList": [
    {
     "zh": "不过，我平常主要在学校食堂吃，基本上不做饭。",
-    "py": "Búguò, wǒ píngcháng zhǔyào zài xuéxiào shí táng chī, jīběnshàng bú zuòfàn.",
+    "py": "Búguò, wǒ píngcháng zhǔyào zài xuéxiào shítáng chī, jīběnshàng bú zuòfàn.",
     "vn": "Có điều, ngày thường tôi chủ yếu ăn ở nhà ăn của trường, hầu như không nấu cơm."
    },
    {
@@ -2358,7 +2358,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hôm nay anh ấy dậy sớm hơn mọi ngày một tiếng.",
     "answer": "今天他比平常早起了一个小时。",
-    "answerPy": "Jīntiān tā bǐ píngcháng zǎo qǐ le yí gè xiǎoshí.",
+    "answerPy": "Jīntiān tā bǐ píngcháng zǎoqǐ le yí gè xiǎoshí.",
     "note": "Ôn câu so sánh 比 + số lượng (HSK 3).",
     "pair": "比平常 + V + số lượng"
    }
@@ -2416,17 +2416,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "我平常主要在学校食堂吃，基本上不做饭。",
-  "ex_py": "Wǒ píngcháng zhǔyào zài xuéxiào shí táng chī, jīběnshàng bú zuòfàn.",
+  "ex_py": "Wǒ píngcháng zhǔyào zài xuéxiào shítáng chī, jīběnshàng bú zuòfàn.",
   "ex_vn": "Ngày thường tôi chủ yếu ăn ở nhà ăn trường, hầu như không nấu cơm.",
   "exList": [
    {
     "zh": "我平常主要在学校食堂吃，基本上不做饭。",
-    "py": "Wǒ píngcháng zhǔyào zài xuéxiào shí táng chī, jīběnshàng bú zuòfàn.",
+    "py": "Wǒ píngcháng zhǔyào zài xuéxiào shítáng chī, jīběnshàng bú zuòfàn.",
     "vn": "Ngày thường tôi chủ yếu ăn ở nhà ăn trường, hầu như không nấu cơm."
    },
    {
     "zh": "这本书的内容，我基本上都看懂了。",
-    "py": "Zhè běn shū de nèiróng, wǒ jīběnshàng dōu kàn dǒng le.",
+    "py": "Zhè běn shū de nèiróng, wǒ jīběnshàng dōu kàndǒng le.",
     "vn": "Nội dung cuốn sách này về cơ bản tôi đã đọc hiểu hết."
    }
   ],
@@ -2473,7 +2473,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bài tập hôm nay về cơ bản tôi làm xong rồi.",
     "answer": "今天的作业我基本上做完了。",
-    "answerPy": "Jīntiān de zuòyè wǒ jīběnshàng zuò wán le.",
+    "answerPy": "Jīntiān de zuòyè wǒ jīběnshàng zuòwán le.",
     "note": "基本上 + V完.",
     "pair": "基本上 + V了"
    },
@@ -2481,7 +2481,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ở trường cái gì cũng có, hầu như không cần ra ngoài mua đồ.",
     "answer": "学校里什么都有，基本上不用出去买东西。",
-    "answerPy": "Xuéxiào lǐ shénme dōu yǒu, jīběnshàng búyòng chūqù mǎi dōngxi.",
+    "answerPy": "Xuéxiào lǐ shénme dōu yǒu, jīběnshàng búyòng chūqu mǎi dōngxi.",
     "note": "Ôn đại từ nghi vấn phiếm chỉ 什么都 (HSK 3).",
     "pair": "什么都……"
    }
@@ -2630,7 +2630,7 @@ var vocabData = [
    },
    {
     "zh": "洗脸毛巾",
-    "py": "Xǐ liǎn máojīn",
+    "py": "Xǐliǎn máojīn",
     "vn": "khăn rửa mặt"
    },
    {
@@ -2767,7 +2767,7 @@ var vocabData = [
    },
    {
     "zh": "接着，房东又建议小张过去看看。",
-    "py": "Jiēzhe, fángdōng yòu jiànyì xiǎo zhāng guòqù kàn kàn.",
+    "py": "Jiēzhe, fángdōng yòu jiànyì Xiǎo Zhāng guòqu kànkan.",
     "vn": "Tiếp đó, chủ nhà lại đề nghị Tiểu Trương qua xem thử."
    }
   ],
@@ -2802,7 +2802,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Về chuyện thuê nhà như thế nào là hợp, bạn còn gợi ý gì hay không?",
     "answer": "关于租什么样的房子合适，你还有什么好建议？",
-    "answerPy": "Guānyú zū shénme yàng de fángzi héshì, nǐ hái yǒu shénme hǎo jiànyì?",
+    "answerPy": "Guānyú zū shénmeyàng de fángzi héshì, nǐ hái yǒu shénme hǎo jiànyì?",
     "note": "Câu bài tập chọn từ của sách.",
     "pair": "有什么好建议"
    },
@@ -2878,7 +2878,7 @@ var vocabData = [
    },
    {
     "zh": "这次比赛的通知已经发到大家的邮箱了，请注意查看。",
-    "py": "Zhè cì bǐsài de tōngzhī yǐjīng fā dào dàjiā de yóuxiāng le, qǐng zhùyì chákàn.",
+    "py": "Zhè cì bǐsài de tōngzhī yǐjīng fādào dàjiā de yóuxiāng le, qǐng zhùyì chákàn.",
     "vn": "Thông báo cuộc thi lần này đã gửi vào hộp thư mọi người, xin chú ý kiểm tra."
    }
   ],
@@ -2913,7 +2913,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Có bất kỳ thông báo nào, tôi đều sẽ kiểm tra ngay.",
     "answer": "有任何通知，我都会第一时间查看。",
-    "answerPy": "Yǒu rènhé tōngzhī, wǒ dōu huì dì yī shíjiān chákàn.",
+    "answerPy": "Yǒu rènhé tōngzhī, wǒ dōu huì dì yìshíjiān chákàn.",
     "note": "Ôn 任何……都…… (Bài 1 · điểm 1).",
     "pair": "任何……都……"
    },
@@ -3024,7 +3024,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cô ấy tìm thấy trên mạng một tin cho thuê nhà.",
     "answer": "她在网上查找到一条出租信息。",
-    "answerPy": "Tā zài wǎngshàng cházhǎo dào yì tiáo chūzū xìnxī.",
+    "answerPy": "Tā zài wǎngshang cházhǎo dào yì tiáo chūzū xìnxī.",
     "note": "Câu trong bài tập hoàn thành đoạn văn của sách.",
     "pair": "一条信息"
    },
@@ -3143,7 +3143,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi tìm mãi ba ngày mới thấy căn nhà phù hợp.",
     "answer": "我查找了三天，才找到合适的房子。",
-    "answerPy": "Wǒ cházhǎo le sān tiān, cái zhǎo dào héshì de fángzi.",
+    "answerPy": "Wǒ cházhǎo le sān tiān, cái zhǎodào héshì de fángzi.",
     "note": "Ôn 才 (muộn, khó) (HSK 3).",
     "pair": "……才……"
    }
@@ -3212,7 +3212,7 @@ var vocabData = [
    },
    {
     "zh": "我要先回家住几天，接着跟朋友去上海玩。",
-    "py": "Wǒ yào xiān huí jiā zhù jǐ tiān, jiēzhe gēn péngyou qù Shànghǎi wán.",
+    "py": "Wǒ yào xiān huíjiā zhù jǐ tiān, jiēzhe gēn péngyou qù Shànghǎi wán.",
     "vn": "Tôi sẽ về nhà ở mấy hôm trước, sau đó cùng bạn đi Thượng Hải chơi."
    }
   ],
@@ -3255,7 +3255,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi đọc sách trước, tiếp đó viết nhật ký.",
     "answer": "我先看书，接着写日记。",
-    "answerPy": "Wǒ xiān kàn shū, jiēzhe xiě rìjì.",
+    "answerPy": "Wǒ xiān kànshū, jiēzhe xiě rìjì.",
     "note": "先……，接着…….",
     "pair": "先……，接着……"
    }
@@ -3359,7 +3359,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đi làm thêm vừa kiếm được tiền, đồng thời còn hiểu thêm về xã hội.",
     "answer": "打工能挣钱，同时还能了解社会。",
-    "answerPy": "Dǎgōng néng zhèng qián, tóngshí hái néng liǎojiě shèhuì.",
+    "answerPy": "Dǎgōng néng zhèngqián, tóngshí hái néng liǎojiě shèhuì.",
     "note": "同时 + 还.",
     "pair": "……，同时还……"
    },
@@ -3421,12 +3421,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "才找到一个位置、环境和价格都合适的。",
-  "ex_py": "Cái zhǎo dào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de.",
+  "ex_py": "Cái zhǎodào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de.",
   "ex_vn": "Mới tìm được một căn vị trí, môi trường và giá cả đều phù hợp.",
   "exList": [
    {
     "zh": "才找到一个位置、环境和价格都合适的。",
-    "py": "Cái zhǎo dào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de.",
+    "py": "Cái zhǎodào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de.",
     "vn": "Mới tìm được một căn vị trí, môi trường và giá cả đều phù hợp."
    },
    {
@@ -3466,7 +3466,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Căn nhà này vị trí tốt, cách tàu điện ngầm rất gần.",
     "answer": "这个房子位置很好，离地铁站很近。",
-    "answerPy": "Zhège fángzi wèizhì hěn hǎo, lí dìtiě zhàn hěn jìn.",
+    "answerPy": "Zhège fángzi wèizhì hěn hǎo, lí dìtiězhàn hěn jìn.",
     "note": "Ôn 离 (HSK 2/3).",
     "pair": "离……很近"
    },
@@ -3532,12 +3532,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "才找到一个位置、环境和价格都合适的。",
-  "ex_py": "Cái zhǎo dào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de.",
+  "ex_py": "Cái zhǎodào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de.",
   "ex_vn": "Mới tìm được một căn vị trí, môi trường và giá cả đều phù hợp.",
   "exList": [
    {
     "zh": "才找到一个位置、环境和价格都合适的。",
-    "py": "Cái zhǎo dào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de.",
+    "py": "Cái zhǎodào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de.",
     "vn": "Mới tìm được một căn vị trí, môi trường và giá cả đều phù hợp."
    },
    {
@@ -3766,7 +3766,7 @@ var vocabData = [
    },
    {
     "zh": "由于大家的努力，这次运动会我们班获得了第一名。",
-    "py": "Yóuyú dàjiā de nǔlì, zhè cì yùndònghuì wǒmen bān huòdé le dì yī míng.",
+    "py": "Yóuyú dàjiā de nǔlì, zhè cì yùndònghuì wǒmen bān huòdé le dì yì míng.",
     "vn": "Nhờ sự cố gắng của mọi người, đại hội thể thao lần này lớp ta giành giải nhất."
    }
   ],
@@ -3809,7 +3809,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Do trời mưa to suốt nên chúng tôi quyết định không leo núi nữa.",
     "answer": "由于一直下大雨，所以我们决定不爬山了。",
-    "answerPy": "Yóuyú yìzhí xià dà yǔ, suǒyǐ wǒmen juédìng bù páshān le.",
+    "answerPy": "Yóuyú yìzhí xià dàyǔ, suǒyǐ wǒmen juédìng bù páshān le.",
     "note": "Ví dụ của sách; ôn 决定 (HSK 3).",
     "pair": "由于……，所以……"
    }
@@ -3912,7 +3912,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lương tuy không cao nhưng công việc rất thú vị.",
     "answer": "工资虽然不高，但是工作很有意思。",
-    "answerPy": "Gōngzī suīrán bù gāo, dànshì gōngzuò hěn yǒuyìsī.",
+    "answerPy": "Gōngzī suīrán bù gāo, dànshì gōngzuò hěn yǒu yìsi.",
     "note": "Ôn 虽然……但是…… (HSK 3).",
     "pair": "虽然……但是……"
    },
@@ -3948,22 +3948,22 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "安全感",
-    "py": "Ānquán gǎn",
+    "py": "Ānquángǎn",
     "vn": "cảm giác an toàn"
    },
    {
     "zh": "幸福感",
-    "py": "Xìngfú gǎn",
+    "py": "Xìngfúgǎn",
     "vn": "cảm giác hạnh phúc"
    },
    {
     "zh": "责任感",
-    "py": "Zérèn gǎn",
+    "py": "Zérèngǎn",
     "vn": "tinh thần trách nhiệm"
    },
    {
     "zh": "有安全感",
-    "py": "Yǒu ānquán gǎn",
+    "py": "Yǒu ānquángǎn",
     "vn": "có cảm giác an toàn"
    }
   ],
@@ -3978,17 +3978,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "有自己的房子会更有安全感。",
-  "ex_py": "Yǒu zìjǐ de fángzi huì gèng yǒu ānquán gǎn.",
+  "ex_py": "Yǒu zìjǐ de fángzi huì gèng yǒu ānquángǎn.",
   "ex_vn": "Có nhà của riêng mình sẽ có cảm giác an toàn hơn.",
   "exList": [
    {
     "zh": "有自己的房子会更有安全感。",
-    "py": "Yǒu zìjǐ de fángzi huì gèng yǒu ānquán gǎn.",
+    "py": "Yǒu zìjǐ de fángzi huì gèng yǒu ānquángǎn.",
     "vn": "Có nhà của riêng mình sẽ có cảm giác an toàn hơn."
    },
    {
     "zh": "和家人在一起，我觉得很有幸福感。",
-    "py": "Hé jiārén zài yìqǐ, wǒ juéde hěn yǒu xìngfú gǎn.",
+    "py": "Hé jiārén zài yìqǐ, wǒ juéde hěn yǒu xìngfúgǎn.",
     "vn": "Ở bên gia đình, tôi thấy rất hạnh phúc."
    }
   ],
@@ -4011,7 +4011,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Rất nhiều người Trung Quốc cho rằng có nhà mới có nhà (tổ ấm), có nhà riêng sẽ an tâm hơn.",
     "answer": "很多中国人觉得，有房才有家，有自己的房子会更有安全感。",
-    "answerPy": "Hěn duō zhōngguórén juéde, yǒu fáng cái yǒu jiā, yǒu zìjǐ de fángzi huì gèng yǒu ānquán gǎn.",
+    "answerPy": "Hěn duō Zhōngguórén juéde, yǒu fáng cái yǒu jiā, yǒu zìjǐ de fángzi huì gèng yǒu ānquángǎn.",
     "note": "Câu trong bài khoá 4; ôn 才 nhấn mạnh điều kiện.",
     "pair": "有……才……"
    },
@@ -4019,7 +4019,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Một mặt anh ấy rất có trách nhiệm, mặt khác cũng rất nhiệt tình.",
     "answer": "他一方面很有责任感，另一方面也很热情。",
-    "answerPy": "Tā yìfāngmiàn hěn yǒu zérèn gǎn, lìngyìfāngmiàn yě hěn rèqíng.",
+    "answerPy": "Tā yìfāngmiàn hěn yǒu zérèngǎn, lìngyìfāngmiàn yě hěn rèqíng.",
     "note": "Ôn 一方面……另一方面…… (Bài 1 · điểm 4).",
     "pair": "一方面……另一方面……"
    }
@@ -4104,7 +4104,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "请进！我给你们介绍一下，这个房子有两个房间，那个大房间出租，房租每月5500元。现在已经收拾好了，想租的话，今天就可以搬进来。",
-    "py": "Qǐng jìn! Wǒ gěi nǐmen jièshào yíxià, zhège fángzi yǒu liǎng gè fángjiān, nàge dà fángjiān chūzū, fángzū měi yuè 5500 yuán. Xiànzài yǐjīng shōushi hǎo le, xiǎng zū dehuà, jīntiān jiù kěyǐ bān jìnlái.",
+    "py": "Qǐng jìn! Wǒ gěi nǐmen jièshào yíxià, zhège fángzi yǒu liǎng gè fángjiān, nàge dà fángjiān chūzū, fángzū měi yuè 5500 yuán. Xiànzài yǐjīng shōushi hǎo le, xiǎng zū de huà, jīntiān jiù kěyǐ bān jìnlai.",
     "vn": "Mời vào! Tôi giới thiệu với hai bạn một chút: căn nhà này có hai phòng, phòng lớn kia cho thuê, tiền thuê mỗi tháng 5500 tệ. Bây giờ đã dọn dẹp xong rồi, muốn thuê thì hôm nay có thể dọn vào luôn."
    },
    {
@@ -4116,13 +4116,13 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "是的，我们小区离地铁站也很近，生活上很方便。如果决定租了，告诉我就是了。",
-    "py": "Shì de, wǒmen xiǎoqū lí dìtiě zhàn yě hěn jìn, shēnghuó shàng hěn fāngbiàn. Rúguǒ juédìng zū le, gàosu wǒ jiùshì le.",
+    "py": "Shì de, wǒmen xiǎoqū lí dìtiězhàn yě hěn jìn, shēnghuó shàng hěn fāngbiàn. Rúguǒ juédìng zū le, gàosu wǒ jiùshì le.",
     "vn": "Đúng vậy, khu chung cư của chúng tôi cách ga tàu điện ngầm cũng rất gần, sinh hoạt rất tiện. Nếu quyết định thuê thì cứ báo tôi là được."
    },
    {
     "sp": 1,
     "zh": "好的，我们再去看看外边的环境。",
-    "py": "Hǎo de, wǒmen zài qù kàn kàn wàibian de huánjìng.",
+    "py": "Hǎo de, wǒmen zài qù kànkan wàibian de huánjìng.",
     "vn": "Vâng ạ, chúng cháu đi xem thêm môi trường bên ngoài đã."
    }
   ]
@@ -4172,13 +4172,13 @@ var dialogData = [
    {
     "sp": 1,
     "zh": "嗯，这个小区到处是花，还种了不少树，周围也很安静。",
-    "py": "Ǹg, zhège xiǎoqū dàochù shì huā, hái zhòng le bù shǎo shù, zhōuwéi yě hěn ānjìng.",
+    "py": "Ǹg, zhège xiǎoqū dàochù shì huā, hái zhòng le bùshǎo shù, zhōuwéi yě hěn ānjìng.",
     "vn": "Ừ, khu chung cư này đâu đâu cũng có hoa, còn trồng không ít cây, xung quanh cũng rất yên tĩnh."
    },
    {
     "sp": 0,
     "zh": "是啊！这个小区的环境真不错，不过我听说，附近有十几家公司，很多刚毕业的学生都租住在这里。周末他们可能会玩到很晚，恐怕会影响你休息。",
-    "py": "Shì a! Zhège xiǎoqū de huánjìng zhēn búcuò, búguò wǒ tīngshuō, fùjìn yǒu shí jǐ jiā gōngsī, hěn duō gāng bìyè de xuésheng dōu zū zhù zài zhèli. Zhōumò tāmen kěnéng huì wán dào hěn wǎn, kǒngpà huì yǐngxiǎng nǐ xiūxi.",
+    "py": "Shì a! Zhège xiǎoqū de huánjìng zhēn búcuò, búguò wǒ tīngshuō, fùjìn yǒu shíjǐ jiā gōngsī, hěn duō gāng bìyè de xuésheng dōu zū zhù zài zhèli. Zhōumò tāmen kěnéng huì wán dào hěn wǎn, kǒngpà huì yǐngxiǎng nǐ xiūxi.",
     "vn": "Đúng thế! Môi trường khu này đẹp thật, có điều tớ nghe nói gần đây có mười mấy công ty, nhiều sinh viên mới tốt nghiệp đều thuê nhà ở đây. Cuối tuần họ có thể chơi đến rất muộn, e là sẽ ảnh hưởng đến việc nghỉ ngơi của cậu."
    },
    {
@@ -4248,19 +4248,19 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "搬进去的时候，房东又向我介绍了一下房子里的东西，并告诉我这些东西怎么用。",
-    "py": "Bān jìnqù de shíhou, fángdōng yòu xiàng wǒ jièshào le yíxià fángzi lǐ de dōngxi, bìng gàosu wǒ zhèxiē dōngxi zěnme yòng.",
+    "py": "Bān jìnqu de shíhou, fángdōng yòu xiàng wǒ jièshào le yíxià fángzi lǐ de dōngxi, bìng gàosu wǒ zhèxiē dōngxi zěnme yòng.",
     "vn": "Lúc dọn vào, chủ nhà lại giới thiệu cho tôi đồ đạc trong nhà, và chỉ cho tôi cách dùng những thứ đó."
    },
    {
     "sp": 0,
     "zh": "我看了一下，客厅里有椅子、沙发，还有一台大电视；厨房里有冰箱和一些做饭用的东西，不过，我平常主要在学校食堂吃，基本上不做饭。",
-    "py": "Wǒ kàn le yíxià, kètīng lǐ yǒu yǐzi, shāfā, hái yǒu yì tái dà diànshì; chúfáng lǐ yǒu bīngxiāng hé yìxiē zuòfàn yòng de dōngxi, búguò, wǒ píngcháng zhǔyào zài xuéxiào shí táng chī, jīběnshàng bú zuòfàn.",
+    "py": "Wǒ kàn le yíxià, kètīng lǐ yǒu yǐzi, shāfā, hái yǒu yì tái dà diànshì; chúfáng lǐ yǒu bīngxiāng hé yìxiē zuòfàn yòng de dōngxi, búguò, wǒ píngcháng zhǔyào zài xuéxiào shítáng chī, jīběnshàng bú zuòfàn.",
     "vn": "Tôi xem qua một lượt: phòng khách có ghế, sofa, còn có một chiếc tivi to; trong bếp có tủ lạnh và một số đồ dùng nấu ăn, có điều ngày thường tôi chủ yếu ăn ở nhà ăn của trường, hầu như không nấu cơm."
    },
    {
     "sp": 0,
     "zh": "我租的房间里，除了一张床以外，还有一台空调、一张书桌和一把椅子。",
-    "py": "Wǒ zū de fángjiān lǐ, chúle yì zhāng chuáng yǐwài, hái yǒu yì tái kōngtiáo, yì zhāng shū zhuō hé yì bǎ yǐzi.",
+    "py": "Wǒ zū de fángjiān lǐ, chúle yì zhāng chuáng yǐwài, hái yǒu yì tái kōngtiáo, yì zhāng shūzhuō hé yì bǎ yǐzi.",
     "vn": "Trong phòng tôi thuê, ngoài một chiếc giường ra, còn có một chiếc điều hòa, một cái bàn học và một chiếc ghế."
    },
    {
@@ -4325,7 +4325,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "她看了好几个房子，才找到一个位置、环境和价格都合适的，最后顺利租到了理想的房子。",
-    "py": "Tā kàn le hǎo jǐ gè fángzi, cái zhǎo dào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de, zuìhòu shùnlì zū dào le lǐxiǎng de fángzi.",
+    "py": "Tā kàn le hǎojǐ gè fángzi, cái zhǎodào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de, zuìhòu shùnlì zū dào le lǐxiǎng de fángzi.",
     "vn": "Cô ấy xem mấy căn liền mới tìm được một căn vị trí, môi trường và giá cả đều phù hợp, cuối cùng đã thuận lợi thuê được căn nhà lý tưởng."
    },
    {
@@ -4337,7 +4337,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "工作几年后，不少人就会买房，因为大家一直觉得，有房才有家，有自己的房子会更有安全感。",
-    "py": "Gōngzuò jǐ nián hòu, bù shǎo rén jiù huì mǎi fáng, yīnwèi dàjiā yìzhí juéde, yǒu fáng cái yǒu jiā, yǒu zìjǐ de fángzi huì gèng yǒu ānquán gǎn.",
+    "py": "Gōngzuò jǐ nián hòu, bùshǎo rén jiù huì mǎi fáng, yīnwèi dàjiā yìzhí juéde, yǒu fáng cái yǒu jiā, yǒu zìjǐ de fángzi huì gèng yǒu ānquángǎn.",
     "vn": "Đi làm vài năm, không ít người sẽ mua nhà, vì mọi người luôn cho rằng có nhà mới có tổ ấm, có nhà của riêng mình sẽ thấy an tâm hơn."
    }
   ],
@@ -4827,7 +4827,7 @@ var translateData = [
  {
   "vi": "Môi trường khu chung cư này đẹp thật, có điều gần đây có mười mấy công ty.",
   "zh": "这个小区的环境真不错，不过附近有十几家公司。",
-  "py": "Zhège xiǎoqū de huánjìng zhēn búcuò, búguò fùjìn yǒu shí jǐ jiā gōngsī."
+  "py": "Zhège xiǎoqū de huánjìng zhēn búcuò, búguò fùjìn yǒu shíjǐ jiā gōngsī."
  },
  {
   "vi": "Chủ nhà giới thiệu đồ đạc trong nhà và chỉ cho tôi cách dùng.",
@@ -4847,7 +4847,7 @@ var translateData = [
  {
   "vi": "Có nhà của riêng mình sẽ có cảm giác an toàn hơn.",
   "zh": "有自己的房子会更有安全感。",
-  "py": "Yǒu zìjǐ de fángzi huì gèng yǒu ānquán gǎn."
+  "py": "Yǒu zìjǐ de fángzi huì gèng yǒu ānquángǎn."
  }
 ];
 var translateDataRev = [
@@ -4864,12 +4864,12 @@ var translateDataRev = [
  {
   "vi": "Ngày thường tôi chủ yếu ăn ở nhà ăn của trường, hầu như không nấu cơm.",
   "zh": "我平常主要在学校食堂吃，基本上不做饭。",
-  "py": "Wǒ píngcháng zhǔyào zài xuéxiào shí táng chī, jīběnshàng bú zuòfàn."
+  "py": "Wǒ píngcháng zhǔyào zài xuéxiào shítáng chī, jīběnshàng bú zuòfàn."
  },
  {
   "vi": "Cô ấy xem mấy căn liền mới tìm được một căn vị trí, môi trường và giá cả đều phù hợp.",
   "zh": "她看了好几个房子，才找到一个位置、环境和价格都合适的。",
-  "py": "Tā kàn le hǎo jǐ gè fángzi, cái zhǎo dào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de."
+  "py": "Tā kàn le hǎojǐ gè fángzi, cái zhǎodào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de."
  },
  {
   "vi": "Xem xong cả căn nhà, tôi định đi mua thêm mấy chiếc khăn.",
@@ -5117,6 +5117,6 @@ var writingData = {
  ],
  "model": {
   "zh": "大家好！我今年刚从大学毕业，在北京的一家公司工作。由于公司离我现在住的地方比较远，所以我想在公司附近租一个房子。我理想的房子是一室一厅，客厅不用太大，不过房间一定要亮，里边除了一张床以外，最好还有一台空调和一张书桌。我平常工作比较忙，基本上不做饭，所以厨房小一些也没关系。我希望小区周围的环境比较安静，离地铁站近一些，生活上方便。刚工作的时候工资还不太高，房租最好每月不超过三千元。我会按时交房租，并把房子收拾干净。要是你有合适的房子出租，给我打电话或者发信息就是了，我随时都可以去看房。谢谢！",
-  "py": "Dàjiā hǎo! Wǒ jīnnián gāng cóng dàxué bìyè, zài Běijīng de yì jiā gōngsī gōngzuò. Yóuyú gōngsī lí wǒ xiànzài zhù de dìfang bǐjiào yuǎn, suǒyǐ wǒ xiǎng zài gōngsī fùjìn zū yí gè fángzi. Wǒ lǐxiǎng de fángzi shì yí shì yì tīng, kètīng búyòng tài dà, búguò fángjiān yídìng yào liàng, lǐbian chúle yì zhāng chuáng yǐwài, zuìhǎo hái yǒu yì tái kōngtiáo hé yì zhāng shū zhuō. Wǒ píngcháng gōngzuò bǐjiào máng, jīběnshàng bú zuòfàn, suǒyǐ chúfáng xiǎo yìxiē yě méiguānxì. Wǒ xīwàng xiǎoqū zhōuwéi de huánjìng bǐjiào ānjìng, lí dìtiě zhàn jìn yìxiē, shēnghuó shàng fāngbiàn. Gāng gōngzuò de shíhou gōngzī hái bú tài gāo, fángzū zuìhǎo měi yuè bù chāoguò sān qiān yuán. Wǒ huì ànshí jiāo fángzū, bìng bǎ fángzi shōushi gānjìng. Yàoshi nǐ yǒu héshì de fángzi chūzū, gěi wǒ dǎdiànhuà huòzhě fā xìnxī jiùshì le, wǒ suíshí dōu kěyǐ qù kàn fáng. Xièxiè!"
+  "py": "Dàjiā hǎo! Wǒ jīnnián gāng cóng dàxué bìyè, zài Běijīng de yì jiā gōngsī gōngzuò. Yóuyú gōngsī lí wǒ xiànzài zhù de dìfang bǐjiào yuǎn, suǒyǐ wǒ xiǎng zài gōngsī fùjìn zū yí gè fángzi. Wǒ lǐxiǎng de fángzi shì yí shì yì tīng, kètīng búyòng tài dà, búguò fángjiān yídìng yào liàng, lǐbian chúle yì zhāng chuáng yǐwài, zuìhǎo hái yǒu yì tái kōngtiáo hé yì zhāng shūzhuō. Wǒ píngcháng gōngzuò bǐjiào máng, jīběnshàng bú zuòfàn, suǒyǐ chúfáng xiǎo yìxiē yě méiguānxì. Wǒ xīwàng xiǎoqū zhōuwéi de huánjìng bǐjiào ānjìng, lí dìtiězhàn jìn yìxiē, shēnghuó shàng fāngbiàn. Gāng gōngzuò de shíhou gōngzī hái bú tài gāo, fángzū zuìhǎo měi yuè bù chāoguò sānqiān yuán. Wǒ huì ànshí jiāo fángzū, bìng bǎ fángzi shōushi gānjìng. Yàoshi nǐ yǒu héshì de fángzi chūzū, gěi wǒ dǎdiànhuà huòzhě fā xìnxī jiùshì le, wǒ suíshí dōu kěyǐ qù kàn fáng. Xièxie!"
  }
 };

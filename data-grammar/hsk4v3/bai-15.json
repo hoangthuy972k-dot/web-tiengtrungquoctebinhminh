@@ -1,0 +1,688 @@
+{
+ "/lessons/hsk4v3-bai-15.html": {
+  "points": [
+   {
+    "title": "固定格式“再也不/没……” — không bao giờ … nữa / từ đó không … nữa",
+    "errors": [
+     {
+      "wrong": "我以后再也没迟到了。",
+      "why": "Lời hứa về sau (以后) phải dùng 再也不.",
+      "right": "我以后再也不迟到了。"
+     },
+     {
+      "wrong": "毕业以后，我再也不见过他。",
+      "why": "Kể việc từ quá khứ đến nay, có 过 → dùng 再也没.",
+      "right": "毕业以后，我再也没见过他。"
+     },
+     {
+      "wrong": "我不再也去那家饭馆了。",
+      "why": "Thứ tự đúng là 再也 + 不 / 没.",
+      "right": "我再也不去那家饭馆了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Từ sau thi giữa kỳ là không gặp lại cậu nữa.” (quá khứ → nay)",
+      "pre": "期中考试后就再也",
+      "blank": "没",
+      "post": "见过你了。",
+      "options": [
+       "没",
+       "不",
+       "别"
+      ],
+      "answer": 0,
+      "explanation": "Có 过, kể việc đã qua → 再也没."
+     },
+     {
+      "context": "“Từ nay em sẽ không bao giờ đến muộn nữa.” (lời hứa)",
+      "pre": "对不起，我以后再也",
+      "blank": "不",
+      "post": "迟到了。",
+      "options": [
+       "不",
+       "没",
+       "还"
+      ],
+      "answer": 0,
+      "explanation": "以后 + lời hứa → 再也不."
+     },
+     {
+      "context": "“Từ khi ra nước ngoài, tôi không gọi cho anh ấy nữa.”",
+      "pre": "我出国以后就",
+      "blank": "再也",
+      "post": "没给他打过电话。",
+      "options": [
+       "再也",
+       "也再",
+       "还是"
+      ],
+      "answer": 0,
+      "explanation": "Thứ tự: 再也 + 没."
+     },
+     {
+      "context": "“Từ hôm đó, cô ấy không nhắn tin cho tôi nữa.” (ôn từ mới)",
+      "pre": "从那天以后，她就再也没给我发过",
+      "blank": "短信",
+      "post": "。",
+      "options": [
+       "短信",
+       "细节",
+       "答案"
+      ],
+      "answer": 0,
+      "explanation": "发短信 = gửi tin nhắn."
+     },
+     {
+      "context": "“Mẹ yên tâm, con sẽ không bao giờ nằm trên giường xem điện thoại nữa.”",
+      "pre": "妈妈，你放心，我",
+      "blank": "再也",
+      "post": "不躺在床上看手机了。",
+      "options": [
+       "再也",
+       "再也没",
+       "也再"
+      ],
+      "answer": 0,
+      "explanation": "再也 + 不 → lời hứa."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Từ nay tôi sẽ không bao giờ đến muộn nữa.”",
+      "words": [
+       "我",
+       "以后",
+       "再也",
+       "不",
+       "迟到了"
+      ],
+      "answer": "我以后再也不迟到了。",
+      "explanation": "以后 + 再也不 + V + 了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Từ khi tốt nghiệp, chúng tôi không gặp lại nhau nữa.”",
+      "words": [
+       "毕业以后",
+       "，",
+       "我们",
+       "就",
+       "再也没",
+       "见过面"
+      ],
+      "answer": "毕业以后，我们就再也没见过面。",
+      "explanation": "Mốc thời gian + 就 + 再也没 + V过."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Từ khi chuyển nhà, anh ấy không đến công viên đó nữa.”",
+      "words": [
+       "搬家以后",
+       "，",
+       "他",
+       "再也没",
+       "去过",
+       "那个公园"
+      ],
+      "answer": "搬家以后，他再也没去过那个公园。",
+      "explanation": "再也没 + V过 + O."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我保证，以后再也没熬夜了。",
+      "isCorrect": false,
+      "correctVersion": "我保证，以后再也不熬夜了。",
+      "explanation": "Lời hứa về tương lai → 再也不."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "出国以后，我就再也没给他打过电话。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: kể việc từ quá khứ đến nay → 再也没……过."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你放心，我不再也玩游戏了。",
+      "isCorrect": false,
+      "correctVersion": "你放心，我再也不玩游戏了。",
+      "explanation": "Thứ tự đúng: 再也 + 不."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Từ khi tốt nghiệp, tôi không gặp lại cô ấy nữa.",
+      "answer": "毕业以后，我就再也没见过她。",
+      "answerPy": "Bìyè yǐhòu, wǒ jiù zài yě méi jiàn guò tā.",
+      "explanation": "Quá khứ → nay: 再也没 + V过."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Xin lỗi, từ nay em sẽ không bao giờ đến muộn nữa.",
+      "answer": "对不起，我以后再也不迟到了。",
+      "answerPy": "Duìbuqǐ, wǒ yǐhòu zài yě bù chídào le.",
+      "explanation": "Lời hứa: 以后再也不……了."
+     }
+    ]
+   },
+   {
+    "title": "介词“由” — do (ai) làm, do (ai) phụ trách",
+    "errors": [
+     {
+      "wrong": "这个问题由于谁来解决？",
+      "why": "由于 chỉ nguyên nhân; dẫn ra người làm phải dùng 由.",
+      "right": "这个问题由谁来解决？"
+     },
+     {
+      "wrong": "这次活动是由他们公司安排。",
+      "why": "Đã dùng khung 是由…… thì cuối câu cần 的.",
+      "right": "这次活动是由他们公司（来）安排的。"
+     },
+     {
+      "wrong": "面试由部门负责人。",
+      "why": "Sau 由 + người phải có động từ.",
+      "right": "面试由部门负责人来做。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Hôm đó do người phụ trách bộ phận phỏng vấn.”",
+      "pre": "那天是",
+      "blank": "由",
+      "post": "部门负责人来面试的。",
+      "options": [
+       "由",
+       "由于",
+       "被"
+      ],
+      "answer": 0,
+      "explanation": "由 + người + 来 + V."
+     },
+     {
+      "context": "“Vấn đề này rốt cuộc do ai phụ trách giải quyết?”",
+      "pre": "这个问题究竟由谁来",
+      "blank": "负责",
+      "post": "解决？",
+      "options": [
+       "负责",
+       "负责人",
+       "部门"
+      ],
+      "answer": 0,
+      "explanation": "负责 là động từ; 负责人 là danh từ."
+     },
+     {
+      "context": "“Hoạt động lần này do công ty họ sắp xếp.”",
+      "pre": "这次活动是由他们公司来安排",
+      "blank": "的",
+      "post": "。",
+      "options": [
+       "的",
+       "了",
+       "着"
+      ],
+      "answer": 0,
+      "explanation": "Khung 是由……的."
+     },
+     {
+      "context": "“Do thời tiết xấu, trận đấu bị hoãn.” (phân biệt với 由)",
+      "pre": "",
+      "blank": "由于",
+      "post": "天气不好，比赛推迟了。",
+      "options": [
+       "由于",
+       "由",
+       "被"
+      ],
+      "answer": 0,
+      "explanation": "Nguyên nhân → 由于 (Bài 2); người làm → 由."
+     },
+     {
+      "context": "“Việc này để tôi phụ trách nhé.”",
+      "pre": "这件事由我",
+      "blank": "来",
+      "post": "负责吧。",
+      "options": [
+       "来",
+       "去",
+       "在"
+      ],
+      "answer": 0,
+      "explanation": "由 + người + 来 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hoạt động lần này do trường tổ chức.”",
+      "words": [
+       "这次活动",
+       "由",
+       "学校",
+       "来",
+       "举办"
+      ],
+      "answer": "这次活动由学校来举办。",
+      "explanation": "Sự việc + 由 + đơn vị + 来 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Phỏng vấn là do người phụ trách bộ phận làm.”",
+      "words": [
+       "面试",
+       "是",
+       "由",
+       "部门负责人",
+       "来",
+       "做",
+       "的"
+      ],
+      "answer": "面试是由部门负责人来做的。",
+      "explanation": "是由……来……的."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bữa tối hôm nay để tôi nấu nhé.”",
+      "words": [
+       "今天的",
+       "晚饭",
+       "由",
+       "我",
+       "来",
+       "做",
+       "吧"
+      ],
+      "answer": "今天的晚饭由我来做吧。",
+      "explanation": "由 + 我 + 来 + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个工作是由小王一个人完成的。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 是由 + người + V + 的."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "由于你来负责这件事吧。",
+      "isCorrect": false,
+      "correctVersion": "由你来负责这件事吧。",
+      "explanation": "Chỉ người phụ trách → 由, không phải 由于."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这期交流活动是由学生会举办。",
+      "isCorrect": false,
+      "correctVersion": "这期交流活动是由学生会举办的。",
+      "explanation": "Khung 是由…… cần 的 ở cuối."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bữa tối hôm nay do tôi nấu.",
+      "answer": "今天的晚饭由我来做。",
+      "answerPy": "Jīntiān de wǎnfàn yóu wǒ lái zuò.",
+      "explanation": "由 + người + (来) + V."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Hoạt động lần này do nhà trường tổ chức.",
+      "answer": "这次活动是由学校举办的。",
+      "answerPy": "Zhè cì huódòng shì yóu xuéxiào jǔbàn de.",
+      "explanation": "(是)由……(来)举办(的)."
+     }
+    ]
+   },
+   {
+    "title": "“把”字句“主语+把+宾语+动词（+一/了）+动词” — làm (qua / thử) một chút",
+    "errors": [
+     {
+      "wrong": "我把作业检查。",
+      "why": "Sau động từ trong câu 把 phải có thành phần khác — ở đây lặp động từ.",
+      "right": "我把作业检查检查。"
+     },
+     {
+      "wrong": "你先把课文复习一复习。",
+      "why": "Động từ hai âm tiết lặp ABAB, không chen 一.",
+      "right": "你先把课文复习复习。"
+     },
+     {
+      "wrong": "昨天我把衣服洗一洗。",
+      "why": "Việc đã xảy ra (昨天) dùng V了V.",
+      "right": "昨天我把衣服洗了洗。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Cậu ấy ra tiệm sửa lại tóc một chút.”",
+      "pre": "他去理发店把头发",
+      "blank": "理",
+      "post": "了理。",
+      "options": [
+       "理",
+       "剪",
+       "洗"
+      ],
+      "answer": 0,
+      "explanation": "V了V: 理了理 — hai động từ phải giống nhau."
+     },
+     {
+      "context": "“Em kiểm tra bài tập một lượt trước …”",
+      "pre": "你先把作业",
+      "blank": "检查检查",
+      "post": "，然后再交给老师。",
+      "options": [
+       "检查检查",
+       "检查一检查",
+       "检查"
+      ],
+      "answer": 0,
+      "explanation": "Động từ hai âm tiết: ABAB; ✗ 检查一检查; 把 + O không thể chỉ có 检查."
+     },
+     {
+      "context": "“Trước giờ học, tôi đã xem qua nội dung hôm nay.” (việc đã làm)",
+      "pre": "上课前，我把今天要学习的内容看",
+      "blank": "了",
+      "post": "看。",
+      "options": [
+       "了",
+       "着",
+       "过"
+      ],
+      "answer": 0,
+      "explanation": "Việc đã làm → V了V."
+     },
+     {
+      "context": "“Trước phỏng vấn, anh ấy định tập phần tự giới thiệu một chút.” (dự định)",
+      "pre": "面试前，他打算在镜子前把自我介绍练",
+      "blank": "一",
+      "post": "练。",
+      "options": [
+       "一",
+       "了",
+       "过"
+      ],
+      "answer": 0,
+      "explanation": "打算 → việc chưa làm → V一V."
+     },
+     {
+      "context": "“Bạn nghĩ kỹ việc này rồi hãy nói cho tôi.”",
+      "pre": "你",
+      "blank": "把",
+      "post": "这件事好好想想，再告诉我吧。",
+      "options": [
+       "把",
+       "被",
+       "给"
+      ],
+      "answer": 0,
+      "explanation": "把 + O + VV."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn giặt quần áo một chút đi.”",
+      "words": [
+       "你",
+       "把",
+       "衣服",
+       "洗",
+       "一",
+       "洗",
+       "吧"
+      ],
+      "answer": "你把衣服洗一洗吧。",
+      "explanation": "Đề nghị: 把 + O + V一V + 吧."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đi dọn phòng một chút.”",
+      "words": [
+       "我",
+       "去",
+       "把",
+       "房间",
+       "打扫打扫"
+      ],
+      "answer": "我去把房间打扫打扫。",
+      "explanation": "Hai âm tiết: ABAB."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô ấy nghĩ một chút về lời thầy nói rồi gật đầu.”",
+      "words": [
+       "她",
+       "把",
+       "老师的话",
+       "想了想",
+       "，",
+       "点了点头"
+      ],
+      "answer": "她把老师的话想了想，点了点头。",
+      "explanation": "Việc đã làm: 把 + O + V了V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你先把课文复习一复习。",
+      "isCorrect": false,
+      "correctVersion": "你先把课文复习复习。",
+      "explanation": "Động từ hai âm tiết lặp ABAB, không chen 一."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他把头发理了理，又买了一身新衣服。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: việc đã làm → V了V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我把这本书看。",
+      "isCorrect": false,
+      "correctVersion": "我把这本书看了看。",
+      "explanation": "Động từ sau 把 không được đứng một mình (có thể sửa: 看了看 / 看一看 / 看完了)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Em sửa bài văn này một chút rồi hãy nộp cho thầy.",
+      "answer": "你把这篇作文改一改，再交给老师。",
+      "answerPy": "Nǐ bǎ zhè piān zuòwén gǎi yi gǎi, zài jiāogěi lǎoshī.",
+      "explanation": "Đề nghị → 把 + O + V一V / VV."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Anh ấy xem qua tin nhắn một chút rồi cười.",
+      "answer": "他把短信看了看，笑了。",
+      "answerPy": "Tā bǎ duǎnxìn kàn le kàn, xiào le.",
+      "explanation": "Việc đã làm → V了V; ôn từ mới 短信."
+     }
+    ]
+   },
+   {
+    "title": "比较句“A不如B（+形容词）” — A không bằng B",
+    "errors": [
+     {
+      "wrong": "这家店不如那家店很好。",
+      "why": "Tính từ sau 不如 + B không thêm 很.",
+      "right": "这家店不如那家店好。"
+     },
+     {
+      "wrong": "我的中文不如他好多了。",
+      "why": "不如 không đi với 多了 / 一点儿 như câu 比.",
+      "right": "我的中文不如他好。 / 他的中文比我好多了。"
+     },
+     {
+      "wrong": "坐公交不如方便坐地铁。",
+      "why": "Tính từ đứng sau B, ở cuối câu.",
+      "right": "坐公交不如坐地铁方便。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Học trên sách không bằng tự làm một lần.”",
+      "pre": "有些事情，在课本上学",
+      "blank": "不如",
+      "post": "自己做一遍。",
+      "options": [
+       "不如",
+       "比",
+       "没"
+      ],
+      "answer": 0,
+      "explanation": "A不如B."
+     },
+     {
+      "context": "“Cửa hàng này môi trường không tốt bằng cửa hàng kia.”",
+      "pre": "这家店不如那家店环境",
+      "blank": "好",
+      "post": "。",
+      "options": [
+       "好",
+       "很好",
+       "好多了"
+      ],
+      "answer": 0,
+      "explanation": "不如 + B + Adj (không thêm 很 / 多了)."
+     },
+     {
+      "context": "“… không tiện bằng đi tàu điện ngầm.”",
+      "pre": "坐公交要换两次车，我觉得坐公交不如坐地铁",
+      "blank": "方便",
+      "post": "。",
+      "options": [
+       "方便",
+       "不方便",
+       "更方便"
+      ],
+      "answer": 0,
+      "explanation": "Tính từ tích cực, không thêm 更 / 不."
+     },
+     {
+      "context": "“Mùa đông năm nay không lạnh bằng năm ngoái.”",
+      "pre": "今年冬天",
+      "blank": "不如",
+      "post": "去年冷。",
+      "options": [
+       "不如",
+       "比",
+       "跟"
+      ],
+      "answer": 0,
+      "explanation": "A不如B + Adj."
+     },
+     {
+      "context": "“… vừa an toàn vừa vui.” (ôn Bài 4)",
+      "pre": "一个人去不如跟大家一起去，",
+      "blank": "既",
+      "post": "安全又开心。",
+      "options": [
+       "既",
+       "又",
+       "也"
+      ],
+      "answer": 0,
+      "explanation": "既……又……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cửa hàng này môi trường không tốt bằng cửa hàng kia.”",
+      "words": [
+       "这家店",
+       "不如",
+       "那家店",
+       "环境",
+       "好"
+      ],
+      "answer": "这家店不如那家店环境好。",
+      "explanation": "A + 不如 + B + (mặt so sánh) + Adj."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi thấy đi xe buýt không tiện bằng tàu điện ngầm.”",
+      "words": [
+       "我",
+       "觉得",
+       "坐公交",
+       "不如",
+       "坐地铁",
+       "方便"
+      ],
+      "answer": "我觉得坐公交不如坐地铁方便。",
+      "explanation": "A, B là hành động."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đọc sách ở nhà chẳng bằng lên thư viện đọc.”",
+      "words": [
+       "在家",
+       "看书",
+       "不如",
+       "去图书馆",
+       "看"
+      ],
+      "answer": "在家看书不如去图书馆看。",
+      "explanation": "A不如B (không có tính từ)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我唱歌不如她唱得好。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: A不如B + V得 + Adj."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这件衣服不如那件很漂亮。",
+      "isCorrect": false,
+      "correctVersion": "这件衣服不如那件漂亮。",
+      "explanation": "Không thêm 很 trước tính từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "坐出租车不如便宜坐地铁。",
+      "isCorrect": false,
+      "correctVersion": "坐出租车不如坐地铁便宜。",
+      "explanation": "Tính từ đặt sau B."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tiếng Trung của tôi không tốt bằng chị tôi.",
+      "answer": "我的中文不如我姐姐好。",
+      "answerPy": "Wǒ de Zhōngwén bùrú wǒ jiějie hǎo.",
+      "explanation": "A不如B + Adj."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Mua ở cửa hàng không rẻ bằng mua trên mạng.",
+      "answer": "在商店买不如在网上买便宜。",
+      "answerPy": "Zài shāngdiàn mǎi bùrú zài wǎngshang mǎi piányi.",
+      "explanation": "A, B là hành động; tính từ cuối câu."
+     }
+    ]
+   }
+  ]
+ }
+}

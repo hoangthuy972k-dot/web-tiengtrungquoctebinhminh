@@ -162,7 +162,7 @@
       "promptLang": "vi",
       "prompt": "Điện thoại này đẹp thì đẹp thật, chỉ là hơi đắt.",
       "answer": "这个手机好看是好看，就是有点儿贵。",
-      "answerPy": "Zhège shǒujī hǎokàn shì hǎokàn, jiù shì yǒudiǎnr guì.",
+      "answerPy": "Zhège shǒujī hǎokàn shì hǎokàn, jiùshì yǒudiǎnr guì.",
       "explanation": "A是A，就是 / 不过……"
      },
      {
@@ -692,7 +692,7 @@
       "promptLang": "vi",
       "prompt": "Mua online quá tiện, thế là cô ấy hay tiêu tiền lung tung.",
       "answer": "网购太方便了，于是她常常乱花钱。",
-      "answerPy": "Wǎnggòu tài fāngbiàn le, yúshì tā chángcháng luàn huā qián.",
+      "answerPy": "Wǎnggòu tài fāngbiàn le, yúshì tā chángcháng luàn huāqián.",
       "explanation": "于是 + chủ ngữ + V; từ mới 网购, 乱."
      }
     ]

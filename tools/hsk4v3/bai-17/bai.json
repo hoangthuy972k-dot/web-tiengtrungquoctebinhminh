@@ -1,0 +1,346 @@
+{
+"so": 17,
+"zh": "运动让我更健康",
+"py": "Yùndòng ràng wǒ gèng jiànkāng",
+"vn": "Vận động giúp tôi khoẻ mạnh hơn",
+"chuDe": "Rèn luyện sức khoẻ: phòng gym, huấn luyện viên, thói quen tập luyện; bóng bàn – “quốc cầu” của Trung Quốc",
+"icon": "🏓",
+"mucTieu": [
+  "Nghe hiểu và trao đổi được về các cách tập luyện, thói quen rèn luyện thân thể.",
+  "Nói hoặc viết được trải nghiệm tập luyện của bản thân và môn thể thao mình yêu thích.",
+  "Hiểu sự phát triển và ảnh hưởng của môn bóng bàn ở Trung Quốc."
+],
+
+"wu": [
+  {"img":"wu-A","label":"酸奶","py":"suānnǎi","letter":"A"},
+  {"img":"wu-B","label":"饼干","py":"bǐnggān","letter":"B"},
+  {"img":"wu-C","label":"果汁","py":"guǒzhī","letter":"C"},
+  {"img":"wu-D","label":"教练","py":"jiàoliàn","letter":"D"},
+  {"img":"wu-E","label":"操场","py":"cāochǎng","letter":"E"},
+  {"img":"wu-F","label":"健身房","py":"jiànshēnfáng","letter":"F"}
+],
+
+"dialogs": [
+  {"tab":"Rủ về chung xe","scene":"在公司 · Ở công ty (Vương Nhất Tuyết chuẩn bị tan làm, chào Dương Đồng Lạc)","anh":"kv-1",
+   "nguoi":["王一雪","杨同乐"],
+   "preQuiz":[
+     {"q":"杨同乐一会儿要做什么？","opts":["加班","去健身","办会员卡","开车送王一雪回家"],"ans":1},
+     {"q":"关于那家健身房，下列哪项正确？","opts":["是新开的","非常便宜","离单位比较远","总有打折活动"],"ans":0}],
+   "lines":[
+     {"sp":0,"zh":"下班了！同乐，我今天正好要路过你们家那边，用不用我开车送你？","vn":"Tan làm rồi! Đồng Lạc, hôm nay chị tiện đi ngang qua bên nhà em, có cần chị lái xe đưa em về không?"},
+     {"sp":1,"zh":"谢谢一雪姐，不过您走您的吧，我一会儿还要去一趟健身房。","vn":"Cảm ơn chị Nhất Tuyết, nhưng chị cứ về trước đi ạ, lát nữa em còn phải đến phòng gym một chuyến."},
+     {"sp":0,"zh":"去健身房？你什么时候开始健身的？","vn":"Đi phòng gym á? Em bắt đầu tập từ khi nào thế?"},
+     {"sp":1,"zh":"我上个星期发现单位旁边新开了一家健身房。我最近体重增加了不少，正好想运动一下，就进去看了看。","vn":"Tuần trước em phát hiện bên cạnh cơ quan mới mở một phòng gym. Dạo này em tăng cân khá nhiều, đúng lúc đang muốn vận động một chút, nên vào xem thử."},
+     {"sp":0,"zh":"感觉怎么样？","vn":"Cảm thấy thế nào?"},
+     {"sp":1,"zh":"挺不错的。当时正好有打折活动，我就办了一张会员卡。","vn":"Khá ổn ạ. Lúc đó đúng dịp có chương trình giảm giá, em liền làm luôn một thẻ hội viên."}],
+   "hoi":[["杨同乐为什么想健身？","因为他最近体重增加了不少，正好想运动一下。"],["杨同乐为什么办了会员卡？","因为他觉得那家健身房挺不错的，而且当时正好有打折活动。"]],
+   "kelai":"下班时，王一雪问杨同乐……，因为她今天开车会……。不过，杨同乐不回家，他要先……。他上个星期发现……，就进去……。他最近……，正好想……。那家健身房……，当时……，他就……。",
+   "kelaiMau":"下班时，王一雪问杨同乐用不用她开车送他，因为她今天开车会路过他们家那边。不过，杨同乐不回家，他要先去一趟健身房。他上个星期发现单位旁边新开了一家健身房，就进去看了看。他最近体重增加了不少，正好想运动一下。那家健身房挺不错的，当时正好有打折活动，他就办了一张会员卡。"},
+
+  {"tab":"Phòng gym gần công ty","scene":"在公司 · Ở công ty (Vương Nhất Tuyết và Dương Đồng Lạc trò chuyện sau giờ làm)","anh":"kv-2",
+   "nguoi":["王一雪","杨同乐"],
+   "preQuiz":[
+     {"q":"杨同乐为什么不去家附近的健身房？","opts":["太贵了","没有教练","环境不好","要花不少时间"],"ans":3},
+     {"q":"公司附近那家健身房的教练怎么样？","opts":["很专业","力气大","讲得不清楚","动作不标准"],"ans":0}],
+   "lines":[
+     {"sp":0,"zh":"同乐，你晚上不吃饭就去健身，不会饿吗？","vn":"Đồng Lạc, buổi tối em không ăn cơm đã đi tập, không đói à?"},
+     {"sp":1,"zh":"我带了饼干、酸奶和果汁，一会儿吃完了再去。","vn":"Em mang bánh quy, sữa chua và nước ép rồi, lát nữa ăn xong rồi mới đi."},
+     {"sp":0,"zh":"那你为什么不在家附近找健身房？吃完晚饭，休息一下再去，不是更好吗？","vn":"Thế sao em không tìm phòng gym gần nhà? Ăn tối xong, nghỉ ngơi một lát rồi đi, chẳng phải tốt hơn sao?"},
+     {"sp":1,"zh":"离我家最近的健身房也要坐两站公交车，一来一回得半个小时，太浪费时间了。","vn":"Phòng gym gần nhà em nhất cũng phải đi xe buýt hai bến, cả đi lẫn về mất nửa tiếng, phí thời gian quá."},
+     {"sp":0,"zh":"确实。那这家健身房的教练怎么样？","vn":"Đúng thật. Thế huấn luyện viên ở phòng gym này thế nào?"},
+     {"sp":1,"zh":"教练很热情，也非常专业，动作讲得很清楚。","vn":"Huấn luyện viên rất nhiệt tình, cũng rất chuyên nghiệp, giảng động tác rất rõ ràng."},
+     {"sp":0,"zh":"听你这么一说，我也想试试了。我现在都是在家看着视频练，动作不一定标准。","vn":"Nghe em nói vậy, chị cũng muốn thử rồi. Bây giờ chị toàn ở nhà xem video tập theo, động tác chưa chắc đã chuẩn."},
+     {"sp":1,"zh":"好啊，那您也来吧。锻炼要科学，否则容易受伤。","vn":"Hay quá, vậy chị cũng đến đi. Tập luyện phải khoa học, nếu không dễ bị thương."}],
+   "hoi":[["杨同乐去健身房前要做什么？","他要先把带来的饼干、酸奶和果汁吃完，然后再去健身房。"],["王一雪为什么也想去健身房锻炼？","因为杨同乐说那里的教练很热情，也非常专业，动作讲得很清楚；而王一雪现在都是在家看着视频练，动作不一定标准。"]]},
+
+  {"tab":"Dương Đồng Lạc đi tập gym","scene":"杨同乐的健身情况 · Chuyện tập gym của Dương Đồng Lạc","anh":"kv-3","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"杨同乐喜欢用什么方式锻炼？","opts":["打球","游泳","去操场跑步","去健身房健身"],"ans":3},
+     {"q":"关于杨同乐，下列哪项正确？","opts":["身体更健康了","觉得课程简单","不喜欢他的教练","不想坚持健身了"],"ans":0}],
+   "lines":[
+     {"sp":0,"zh":"有人爱在操场跑步，有人喜欢通过打球锻炼身体，还有一部分人愿意去健身房健身，杨同乐就是其中之一。","vn":"Có người thích chạy bộ ở sân tập, có người thích rèn luyện thân thể bằng cách chơi bóng, còn một bộ phận người thích đến phòng gym tập luyện — Dương Đồng Lạc chính là một trong số đó."},
+     {"sp":0,"zh":"杨同乐认为健身房火起来是因为它有很多好处——环境好、设备全，可以锻炼全身。","vn":"Dương Đồng Lạc cho rằng phòng gym trở nên “hot” là vì nó có nhiều lợi ích — môi trường tốt, thiết bị đầy đủ, có thể rèn luyện toàn thân."},
+     {"sp":0,"zh":"另外，健身房里一般还有专业教练，能帮助大家把动作做准确，练习的效果也更好。","vn":"Ngoài ra, trong phòng gym thường còn có huấn luyện viên chuyên nghiệp, giúp mọi người làm động tác cho chuẩn, hiệu quả luyện tập cũng tốt hơn."},
+     {"sp":0,"zh":"仅仅经过一个月左右的锻炼，杨同乐就感觉自己的身体比以前更健康了。","vn":"Chỉ sau khoảng một tháng tập luyện, Dương Đồng Lạc đã cảm thấy cơ thể mình khoẻ mạnh hơn trước."},
+     {"sp":0,"zh":"教练也表扬他取得了很大的进步，并鼓励他坚持下去，还说随着身体越来越好，人看起来也会更帅。","vn":"Huấn luyện viên cũng khen anh ấy đã có tiến bộ rất lớn, động viên anh kiên trì tiếp, còn nói rằng cùng với sức khoẻ ngày càng tốt, trông người cũng sẽ đẹp trai hơn."}],
+   "hoi":[["健身房为什么会火起来？","因为健身房有很多好处：环境好、设备全，可以锻炼全身；另外，一般还有专业教练，能帮助大家把动作做准确，练习的效果也更好。"],["教练为什么表扬杨同乐？","因为他仅仅经过一个月左右的锻炼，身体就比以前更健康了，取得了很大的进步。"]],
+   "kelai":"有人爱……，有人喜欢……，还有一部分人……，杨同乐就是……。杨同乐认为健身房……是因为……——环境……、设备……，可以……。另外，健身房里一般还……，能帮助大家……，……也更好。仅仅经过……，杨同乐就感觉自己的身体……。教练也表扬他……，并鼓励……，还说随着……，人看起来也会……。",
+   "kelaiMau":"有人爱在操场跑步，有人喜欢通过打球锻炼身体，还有一部分人愿意去健身房健身，杨同乐就是其中之一。杨同乐认为健身房火起来是因为它有很多好处——环境好、设备全，可以锻炼全身。另外，健身房里一般还有专业教练，能帮助大家把动作做准确，练习的效果也更好。仅仅经过一个月左右的锻炼，杨同乐就感觉自己的身体比以前更健康了。教练也表扬他取得了很大的进步，并鼓励他坚持下去，还说随着身体越来越好，人看起来也会更帅。"},
+
+  {"tab":"“Quốc cầu” của Trung Quốc","scene":"中国的“国球” · Bóng bàn — “quốc cầu” của Trung Quốc","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"中国乒乓球队为什么被叫作“梦之队”？","opts":["队员很多","队员很年轻","经常赢得比赛","训练时间很长"],"ans":2},
+     {"q":"关于乒乓球在中国的情况，下列哪项正确？","opts":["老人最喜欢打乒乓球","只有运动员打乒乓球","年轻人不喜欢打乒乓球","乒乓球是最常见的运动之一"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"中国乒乓球队非常有名，常在各项比赛中赢得第一名，被叫作“梦之队”。","vn":"Đội tuyển bóng bàn Trung Quốc rất nổi tiếng, thường giành hạng nhất trong các giải đấu, được gọi là “đội trong mơ”."},
+     {"sp":0,"zh":"为了不断提高自己的水平，队员们每天都要进行严格的训练。","vn":"Để không ngừng nâng cao trình độ của mình, các đội viên ngày nào cũng phải tập luyện nghiêm ngặt."},
+     {"sp":0,"zh":"正因为这样，球队才能在比赛中取得更好的成绩，获得更多球迷的喜爱。","vn":"Chính vì vậy, đội mới có thể đạt thành tích tốt hơn trong thi đấu, nhận được sự yêu mến của nhiều người hâm mộ hơn."},
+     {"sp":0,"zh":"许多年轻的乒乓球运动员都有一个梦想，那就是进入国家队，参加世界大赛，为球队赢下比赛。","vn":"Nhiều vận động viên bóng bàn trẻ đều có một ước mơ, đó là vào đội tuyển quốc gia, tham gia các giải đấu lớn thế giới, thắng trận vì đội."},
+     {"sp":0,"zh":"在中国，除了专业运动员，喜欢打乒乓球的普通人也特别多。","vn":"Ở Trung Quốc, ngoài vận động viên chuyên nghiệp, người bình thường thích chơi bóng bàn cũng rất nhiều."},
+     {"sp":0,"zh":"连一些年龄比较大的老人都坚持打球，年轻人更是把它作为一种日常锻炼的方式。","vn":"Ngay cả một số người già lớn tuổi cũng kiên trì chơi bóng, người trẻ thì càng coi nó là một cách rèn luyện hằng ngày."},
+     {"sp":0,"zh":"可以说，乒乓球是中国人生活中最常见的运动之一。","vn":"Có thể nói, bóng bàn là một trong những môn thể thao phổ biến nhất trong đời sống của người Trung Quốc."}],
+   "hoi":[["乒乓球队为什么每天都要进行严格的训练？","为了不断提高自己的水平，这样球队才能在比赛中取得更好的成绩。"],["许多年轻的乒乓球运动员有什么梦想？","他们的梦想是进入国家队，参加世界大赛，为球队赢下比赛。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"固定格式“你×你的吧”","tenVn":"Cụm cố định 「你×你的吧」 — anh / chị cứ (làm việc) của mình đi",
+  "cauTruc":["你 / 您 / 你们 + V + 你 / 您 / 你们 + 的 + 吧","你×你的吧，我…… (nói lý do / việc của mình)"],
+  "giaiThich":"Sách: cụm cố định 「你×你的吧」 biểu thị MỖI NGƯỜI LÀM VIỆC CỦA MÌNH, không cần làm cùng nhau; thường dùng để TỪ CHỐI MỘT CÁCH LỊCH SỰ lời mời / ý tốt của người khác. × là một động từ đơn (走, 忙, 玩, 吃, 看, 写…); đại từ ở hai chỗ phải giống nhau: 您走您的吧 / 你忙你的吧 / 你们玩你们的吧. Câu thường có thêm vế giải thích: 我一会儿还要…… / 我自己就能…… / 我今天想…… — để người nghe yên tâm, không thấy bị từ chối phũ. Tiếng Việt tương đương: “Chị cứ về trước đi”, “Anh cứ làm việc của anh đi, không cần lo cho em”. 吧 làm giọng mềm, mang ý khuyên. Liên hệ 各×各的 (Bài 5 · điểm 3): 各×各的 là câu TRẦN THUẬT khách quan “ai làm việc nấy” (我们各吃各的); còn 你×你的吧 là lời nói TRỰC TIẾP với người kia, có 吧, để từ chối khéo. ⚠ Chỉ dùng khi KHÔNG muốn làm cùng; nếu đồng ý thì nói 好啊，一起……吧. Nói với giọng gắt (bỏ 吧) có thể thành “mặc kệ anh”, kém lịch sự.",
+  "viDu":[["您走您的吧，我一会儿还要去一趟健身房。","Chị cứ về trước đi, lát nữa em còn phải đến phòng gym một chuyến."],["你忙你的吧，我自己就能完成。","Anh cứ làm việc của anh đi, em tự làm xong được."],["你们玩你们的吧，我今天想在家休息。","Các cậu cứ đi chơi đi, hôm nay mình muốn ở nhà nghỉ ngơi."],["你看你的吧，就是再晚，我也要把这份材料写完。","Anh cứ xem của anh đi, dù muộn đến mấy em cũng phải viết xong tài liệu này. (ôn 就是……也…… – Bài 11 · điểm 2)"]],
+  "loi":[["您走你的吧，我还要去健身房。","Hai đại từ phải giống nhau: 您……您的 / 你……你的.","您走您的吧，我还要去健身房。"],["你忙你吧，我自己就能完成。","Thiếu 的 — khuôn là 你 + V + 你的 + 吧.","你忙你的吧，我自己就能完成。"],["A：我们一起去吃饭吧！B：好啊，你吃你的吧。","你×你的吧 dùng để TỪ CHỐI (ai làm việc nấy); đã đồng ý đi cùng thì không dùng.","A：我们一起去吃饭吧！B：不了，你吃你的吧，我还不饿。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["谢谢一雪姐，不过您走","的吧，我一会儿还要去健身房。"],"dap":[["您"]],"chon":["您","你","我"],"goiY":"“… nhưng chị cứ về trước đi …” — đại từ phải giống chữ đầu","giai":"您走您的吧: hai đại từ giống nhau."},
+     {"kieu":"dien","phan":["你","你的吧，我自己就能完成。"],"dap":[["忙"]],"chon":["忙","帮","等"],"goiY":"“Anh cứ làm việc của anh đi, em tự làm xong được.”","giai":"你忙你的吧 = anh cứ bận việc của anh."},
+     {"kieu":"dien","phan":["你们玩你们","，我今天想在家休息。"],"dap":[["的吧"]],"chon":["的吧","吧的","了吧"],"goiY":"“Các cậu cứ đi chơi đi, hôm nay mình muốn ở nhà nghỉ.”","giai":"Khuôn: 你们 + V + 你们 + 的吧."},
+     {"kieu":"dien","phan":["我一会儿还要去一","健身房，您先走吧。"],"dap":[["趟"]],"chon":["趟","张","家"],"goiY":"“Lát nữa em còn phải đến phòng gym một chuyến …”","giai":"去一趟 + nơi: đi một chuyến."},
+     {"kieu":"dien","phan":["你吃你的吧，我今天要加班，回来得很","。"],"dap":[["晚"]],"chon":["晚","早","快"],"goiY":"“Anh cứ ăn đi, hôm nay em phải tăng ca, về rất muộn.”","giai":"Lý do từ chối: về muộn → 回来得很晚."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["您","走","您的吧","，","我","还要去","一趟健身房"],"dap":["您走您的吧，我还要去一趟健身房。"],"goiY":"Chị cứ về trước đi, em còn phải đến phòng gym một chuyến.","giai":"您 + V + 您的吧，+ lý do."},
+     {"kieu":"xep","manh":["你","看","你的吧","，","我","去","接个电话"],"dap":["你看你的吧，我去接个电话。"],"goiY":"Anh cứ xem của anh đi, em đi nghe điện thoại một chút.","giai":"你×你的吧 + việc của mình."},
+     {"kieu":"xep","manh":["你们","聊","你们的吧","，","我","有点儿累了"],"dap":["你们聊你们的吧，我有点儿累了。"],"goiY":"Các bạn cứ nói chuyện đi, mình hơi mệt rồi.","giai":"你们……你们的吧."},
+     {"kieu":"dungsai","cau":"你忙你的吧，我自己就能完成。","dung":true,"giai":"Đúng: từ chối khéo ý giúp đỡ."},
+     {"kieu":"dungsai","cau":"您走你的吧，我还要去健身房。","dung":false,"sua":"您走您的吧，我还要去健身房。","giai":"Hai đại từ phải thống nhất."},
+     {"kieu":"dungsai","cau":"你玩你吧，我想在家休息。","dung":false,"sua":"你玩你的吧，我想在家休息。","giai":"Thiếu 的."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 76)","huongDan":"Hoàn thành đối thoại, có dùng 「你×你的吧」","cau":[
+     {"kieu":"vandung","de":"A：你几点回来？我等你一起吃饭吧。 B：＿＿＿。","goiY":"Từ chối khéo: anh cứ ăn trước đi, không cần đợi em (nêu lý do)","mau":"你吃你的吧，不用等我了，我今天要加班，回来得很晚","can":[["吃你的吧"]]},
+     {"kieu":"vandung","de":"A：我有点儿累了，不想继续看这个电影了。 B：好，＿＿＿。","goiY":"Bảo người kia cứ đi nghỉ, mình tự xem nốt","mau":"你休息你的吧，我自己把它看完","can":[["你的吧"]]},
+     {"kieu":"vandung","de":"A：你＿＿＿，我去接个电话。 B：好，我写完告诉你。","goiY":"A đang ngồi cùng B làm bài, A bảo B cứ viết tiếp (B trả lời 写完)","mau":"写你的吧","can":[["写你的吧"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Chị cứ về trước đi, lát nữa em còn phải đến phòng gym một chuyến.","dap":["您走您的吧，我一会儿还要去一趟健身房。","你走你的吧，我一会儿还要去一趟健身房。"],"giai":"你×你的吧 + từ mới 趟, 健身房."},
+     {"kieu":"dich","vn":"Các cậu cứ chơi đi, mình phải ở nhà ôn bài.","dap":["你们玩你们的吧，我得在家复习。","你们玩你们的吧，我要在家复习。"],"giai":"你们……你们的吧，+ lý do."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Đồng nghiệp rủ em đi ăn tối nhưng em phải đi tập gym. Hãy từ chối khéo bằng 「你×你的吧」","mau":"谢谢你，不过你吃你的吧，我一会儿还要去健身房锻炼。","can":[["你的吧"]]}]}
+  ]},
+
+ {"so":"2","ten":"固定短语“一A一B”","tenVn":"Cụm cố định 「一A一B」 — một … một … (hai mặt đối xứng)",
+  "cauTruc":["一 + A + 一 + B (A, B là từ đơn âm tiết)","A, B trái nghĩa / đối xứng: 一来一回, 一问一答, 一大一小, 一长一短","A, B cùng loại: 一字一句 (từng chữ từng câu)"],
+  "giaiThich":"Sách: cụm cố định 「一A一B」 biểu thị tình huống ĐỐI XỨNG hoặc HAI PHƯƠNG DIỆN của một việc; A và B là từ ĐƠN ÂM TIẾT. Hay gặp hai kiểu: (1) A, B trái nghĩa / đối nhau → nói hai bên, hai chiều: 一来一回 (cả đi lẫn về), 一问一答 (người hỏi người đáp), 一大一小 (một to một nhỏ), 一长一短, 一前一后, 一高一矮; (2) A, B là hai danh từ cùng loại → nhấn mạnh “từng … từng …”, rõ ràng, cẩn thận: 一字一句 (từng chữ từng câu). Cụm này làm được nhiều thành phần: chủ ngữ (一来一回得半个小时), vị ngữ (这两个房间一大一小), trạng ngữ (一字一句地说), và không thêm 的 sau A hay B (✗ 一大的一小的). Liên hệ 有A有B (Bài 8 · điểm 4 — 有说有笑): 有A有B liệt kê hai thứ CÙNG CÓ; 一A一B nhấn hai bên ĐỐI XỨNG, mỗi bên một. ⚠ Phát âm: 一 trước thanh 4 đọc yí (一大 yí dà, 一字 yí zì), trước thanh 1, 2, 3 đọc yì (一来 yì lái, 一长 yì cháng, 一小 yì xiǎo). Trong 一来一回得半个小时, 得 đọc děi = phải mất.",
+  "viDu":[["一来一回得半个小时，太浪费时间了。","Cả đi lẫn về mất nửa tiếng, phí thời gian quá."],["她说话的声音不大，但是一字一句说得很清楚。","Cô ấy nói không to, nhưng từng chữ từng câu đều rất rõ ràng."],["记者和运动员一问一答，谈到了很多比赛中的事情。","Phóng viên và vận động viên một hỏi một đáp, nói đến rất nhiều chuyện trong trận đấu."],["这两个孩子一大一小，可是大的不如小的跑得快。","Hai đứa trẻ này một lớn một nhỏ, nhưng đứa lớn chạy không nhanh bằng đứa nhỏ. (ôn A不如B – Bài 15 · điểm 4)"]],
+  "loi":[["一来回得半个小时。","Phải đủ hai chữ 一: 一来一回.","一来一回得半个小时。"],["这两个房间一大的一小的。","一A一B làm vị ngữ, không thêm 的.","这两个房间一大一小。"],["记者和运动员一问一回答。","A, B phải là từ đơn âm tiết, đối xứng nhau.","记者和运动员一问一答。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["离我家最近的健身房也要坐两站公交车，一","一回得半个小时。"],"dap":[["来"]],"chon":["来","到","回"],"goiY":"“… cả đi lẫn về mất nửa tiếng.”","giai":"一来一回 = cả đi lẫn về."},
+     {"kieu":"dien","phan":["她说话的声音不大，但是一字一","说得很清楚。"],"dap":[["句"]],"chon":["句","话","声"],"goiY":"“… nhưng từng chữ từng câu đều rất rõ.”","giai":"一字一句: A, B cùng loại, đơn âm tiết."},
+     {"kieu":"dien","phan":["记者和运动员一问一","，谈到了很多比赛中的事情。"],"dap":[["答"]],"chon":["答","说","问"],"goiY":"“Phóng viên và vận động viên một hỏi một đáp …”","giai":"问 ↔ 答: hai mặt đối xứng."},
+     {"kieu":"dien","phan":["这两个房间一大一","，你们两个人住大的，我自己住小的。"],"dap":[["小"]],"chon":["小","多","少"],"goiY":"“Hai phòng này một to một nhỏ …”","giai":"大 ↔ 小."},
+     {"kieu":"dien","phan":["您看这条裤子，怎么左腿和右腿一","一短？"],"dap":[["长"]],"chon":["长","高","大"],"goiY":"“… sao ống trái ống phải một dài một ngắn?”","giai":"长 ↔ 短; 一 trước 长 đọc yì."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["一来一回","得","半个小时","，","太浪费","时间了"],"dap":["一来一回得半个小时，太浪费时间了。"],"goiY":"Cả đi lẫn về mất nửa tiếng, phí thời gian quá.","giai":"一来一回 làm chủ ngữ; 得 (děi) = phải mất."},
+     {"kieu":"xep","manh":["老师","一字一句地","读","，","大家","都","听清楚了"],"dap":["老师一字一句地读，大家都听清楚了。"],"goiY":"Thầy đọc từng chữ từng câu, mọi người đều nghe rõ.","giai":"一字一句 + 地 + V: làm trạng ngữ."},
+     {"kieu":"xep","manh":["两个孩子","一胖一瘦","，","都","很喜欢","打乒乓球"],"dap":["两个孩子一胖一瘦，都很喜欢打乒乓球。"],"goiY":"Hai đứa trẻ một béo một gầy, đều rất thích chơi bóng bàn.","giai":"一胖一瘦 làm vị ngữ (胖 ↔ 瘦)."},
+     {"kieu":"dungsai","cau":"这两个房间一大一小。","dung":true,"giai":"Đúng: 一A一B làm vị ngữ."},
+     {"kieu":"dungsai","cau":"记者和运动员一问一回答。","dung":false,"sua":"记者和运动员一问一答。","giai":"A, B phải đơn âm tiết, đối xứng."},
+     {"kieu":"dungsai","cau":"从家到公司一来回要一个多小时。","dung":false,"sua":"从家到公司一来一回要一个多小时。","giai":"Đủ hai chữ 一."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 78)","huongDan":"Hoàn thành đối thoại, có dùng 「一A一B」","cau":[
+     {"kieu":"vandung","de":"A：你怎么没去医院看病？ B：只是点儿小问题，而且＿＿＿，所以就没去。","goiY":"Lý do: bệnh viện xa, cả đi lẫn về mất nhiều thời gian","mau":"医院离我家太远，一来一回要两个多小时","can":[["一来一回"]]},
+     {"kieu":"vandung","de":"A：这两个房间怎么安排？ B：＿＿＿，你们两个人住大的，我自己住小的。","goiY":"Nói hai phòng một to một nhỏ","mau":"这两个房间一大一小","can":[["一大一小"]]},
+     {"kieu":"vandung","de":"A：您看这条裤子，怎么左腿和右腿＿＿＿？ B：实在抱歉，我现在就给您换一条。","goiY":"Khách phàn nàn: hai ống quần một dài một ngắn","mau":"一长一短","can":[["一长一短"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Hai đứa con nhà chị ấy một béo một gầy.","dap":["她家的两个孩子一胖一瘦。","她家两个孩子一胖一瘦。"],"giai":"一胖一瘦 làm vị ngữ."},
+     {"kieu":"dich","vn":"Từ nhà đến công ty cả đi lẫn về mất một tiếng.","dap":["从家到公司一来一回要一个小时。","从家到公司一来一回得一个小时。"],"giai":"一来一回 + 得 / 要 + thời gian."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Giải thích vì sao em không chọn phòng gym ở xa, có dùng 「一A一B」","mau":"那家健身房离我家太远了，一来一回要一个小时，所以我在家附近办了会员卡。","can":[["一来一回"]]}]}
+  ]},
+
+ {"so":"3","ten":"兼语句“主语+表扬/批评+宾语1+动词+宾语2”","tenVn":"Câu kiêm ngữ với 表扬 / 批评 — khen / phê bình ai (đã) làm gì",
+  "cauTruc":["Chủ ngữ + 表扬 / 批评 + O1 (người) + V + O2 (việc người đó làm)","O1 vừa là tân ngữ của 表扬 / 批评, vừa là chủ ngữ của phần sau"],
+  "giaiThich":"Sách: câu kiêm ngữ 「主语+表扬/批评+宾语1+动词+宾语2」 dùng để ĐÁNH GIÁ việc mà ai đó đã làm. Động từ thứ nhất là 表扬 (khen) hoặc 批评 (phê bình, trách); O1 là người được khen / bị trách; phần sau (V + O2) chính là LÝ DO khen / trách — có thể là cụm động từ (取得了很大的进步, 坚持每天学习中文), câu phủ định (没有按时完成工作) hay cụm tính từ (工作很细心). Không cần thêm 因为: ✗ 表扬他因为…… → ✓ 表扬他取得了进步. Phủ định / phó từ đặt TRƯỚC 表扬 / 批评: 妈妈总是批评我……, 老师没有批评他……. So sánh với các câu kiêm ngữ đã học: 让 / 叫 / 请 (HSK 3), 使 (Bài 7 · điểm 4), 鼓励 + ai + V (từ mới bài này) là loại SAI KHIẾN — việc phía sau CHƯA làm, người nói muốn người kia làm; còn 表扬 / 批评 thì việc phía sau ĐÃ xảy ra (hoặc là thói quen), là lý do để khen / chê. ⚠ Bẫy Hán Việt: 批评 nhẹ hơn chữ “phê bình” trang trọng của tiếng Việt — 妈妈批评我 thường chỉ là “mẹ mắng / trách tôi”.",
+  "viDu":[["教练也表扬他取得了很大的进步。","Huấn luyện viên cũng khen anh ấy đã có tiến bộ rất lớn."],["老师表扬白家月坚持每天学习中文。","Cô giáo khen Bạch Gia Nguyệt kiên trì học tiếng Trung mỗi ngày."],["经理批评他没有按时完成工作。","Giám đốc phê bình anh ấy không hoàn thành công việc đúng hạn."],["经理表扬小王把工作做得又快又好。","Giám đốc khen Tiểu Vương làm việc vừa nhanh vừa tốt. (ôn câu 把 – Bài 15, 16)"]],
+  "loi":[["老师表扬了因为白家月坚持每天学习中文。","Không chèn 因为; người + việc sau 表扬 chính là lý do.","老师表扬白家月坚持每天学习中文。"],["经理批评没有按时完成工作他。","O1 (người) đứng ngay sau 批评, rồi mới đến việc người đó làm.","经理批评他没有按时完成工作。"],["妈妈总是批评我把房间不收拾。","Câu 把 không đặt 不 sau 把; nói 不收拾房间.","妈妈总是批评我不收拾房间。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["教练也","他取得了很大的进步。"],"dap":[["表扬"]],"chon":["表扬","批评","羡慕"],"goiY":"“Huấn luyện viên cũng khen anh ấy đã tiến bộ rất lớn.”","giai":"Tiến bộ → khen: 表扬 + ai + V."},
+     {"kieu":"dien","phan":["经理","他没有按时完成工作。"],"dap":[["批评"]],"chon":["批评","表扬","鼓励"],"goiY":"“Giám đốc phê bình anh ấy không hoàn thành đúng hạn.”","giai":"Việc chưa tốt → 批评."},
+     {"kieu":"dien","phan":["老师表扬白家月","每天学习中文。"],"dap":[["坚持"]],"chon":["坚持","受伤","路过"],"goiY":"“… khen Bạch Gia Nguyệt kiên trì học tiếng Trung mỗi ngày.”","giai":"坚持 + V."},
+     {"kieu":"dien","phan":["教练表扬他把动作做得很","。"],"dap":[["准确"]],"chon":["准确","全身","设备"],"goiY":"“HLV khen anh ấy làm động tác rất chuẩn.”","giai":"V得 + 准确."},
+     {"kieu":"dien","phan":["妈妈总是批评我不收拾","。"],"dap":[["房间"]],"chon":["房间","操场","会员"],"goiY":"“Mẹ lúc nào cũng trách tôi không dọn phòng.”","giai":"收拾房间 = dọn phòng."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["教练","表扬","他","取得了","很大的进步"],"dap":["教练表扬他取得了很大的进步。"],"goiY":"Huấn luyện viên khen anh ấy đã có tiến bộ rất lớn.","giai":"S + 表扬 + O1 + V + O2."},
+     {"kieu":"xep","manh":["经理","批评","他","没有","按时完成工作"],"dap":["经理批评他没有按时完成工作。"],"goiY":"Giám đốc phê bình anh ấy không hoàn thành công việc đúng hạn.","giai":"Phủ định nằm trong phần lý do."},
+     {"kieu":"xep","manh":["老师","表扬","我们","把教室","打扫得","很干净"],"dap":["老师表扬我们把教室打扫得很干净。"],"goiY":"Cô giáo khen chúng tôi dọn lớp rất sạch.","giai":"Phần lý do có thể là câu 把."},
+     {"kieu":"dungsai","cau":"老师表扬白家月坚持每天学习中文。","dung":true,"giai":"Đúng: câu kiêm ngữ với 表扬."},
+     {"kieu":"dungsai","cau":"经理批评没有按时完成工作他。","dung":false,"sua":"经理批评他没有按时完成工作。","giai":"Người bị phê bình đứng ngay sau 批评."},
+     {"kieu":"dungsai","cau":"教练表扬了因为他动作很标准。","dung":false,"sua":"教练表扬他动作很标准。","giai":"Không dùng 因为 sau 表扬."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 80)","huongDan":"Hoàn thành câu, dùng từ trong ngoặc","cau":[
+     {"kieu":"vandung","de":"经理表扬他＿＿＿。（细心）","goiY":"Lý do khen: làm việc cẩn thận, chưa từng sai sót","mau":"工作很细心，从来没出过错","can":[["细心"]]},
+     {"kieu":"vandung","de":"今天老师表扬我＿＿＿。（成绩）","goiY":"Lý do khen: lần thi này đạt thành tích tốt","mau":"这次考试取得了很好的成绩","can":[["成绩"]]},
+     {"kieu":"vandung","de":"妈妈总是批评我＿＿＿。（房间）","goiY":"Lý do bị trách: không dọn phòng của mình","mau":"不收拾自己的房间","can":[["房间"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Huấn luyện viên khen tôi làm động tác rất chuẩn.","dap":["教练表扬我动作做得很准确。","教练表扬我动作做得很标准。"],"giai":"表扬 + ai + (O) + V得 + Adj."},
+     {"kieu":"dich","vn":"Thầy giáo phê bình cậu ấy đi học muộn.","dap":["老师批评他上课迟到。","老师批评他上课迟到了。"],"giai":"批评 + ai + việc đã làm."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể một lần em được thầy cô / bố mẹ khen, dùng 「表扬」 theo mẫu kiêm ngữ","mau":"上个月，中文老师表扬我口语进步得很快。","can":[["表扬"]]}]}
+  ]},
+
+ {"so":"4","ten":"递进复句“连……也/都……，……更……”","tenVn":"Câu phức tăng tiến 「连……也/都……，……更……」 — ngay cả … cũng …, (thì) … càng …",
+  "cauTruc":["连 + ví dụ cực đoan + 也 / 都 + V……，(đối tượng / việc khác) + 更 + ……","连 + chủ ngữ / tân ngữ đưa lên trước + 也 / 都 (+ 不 / 没) + V"],
+  "giaiThich":"Sách: câu phức tăng tiến 「连……也/都……，……更……」 dùng một VÍ DỤ CỰC ĐOAN để nói rõ một tình huống. Vế 1: 连 đưa ra trường hợp “ít khả năng nhất” (người già, việc dễ nhất, nghe thầy nói…) + 也 / 都 — đến cái đó còn như vậy; vế 2: suy ra trường hợp khác CÀNG như vậy với 更 (更是, 就更……了, 更没有, 更不用说). Ví dụ: người già còn kiên trì chơi bóng → người trẻ càng chơi; lời thầy còn không hiểu → nghe đài càng khó. Phần sau 连 có thể là chủ ngữ (连一些老人都坚持打球) hoặc tân ngữ được đưa lên trước động từ (连脸都没来得及洗, 连老师说的话也听不懂). Câu phủ định: 连……也 / 都 + 不 / 没…… → vế sau 更 + 不 / 没 / 难…… (càng không). Tiếng Việt: “ngay cả / đến … còn …, huống chi / càng …”. ⚠ 连 bắt buộc đi với 也 / 都 (✗ 连老人坚持打球); 也 / 都 đứng sau phần 连, trước động từ. Hai vế phải cùng chiều: vế 1 khó → vế 2 càng khó. Liên hệ 甚至 (Bài 3 · điểm 3): cũng nêu trường hợp cực đoan, hay kết hợp 甚至连……都……; 即使……也…… (Bài 11 · điểm 1) là giả thiết, còn 连……也 là sự thật được nhấn mạnh.",
+  "viDu":[["连一些年龄比较大的老人都坚持打球，年轻人更是把它作为一种日常锻炼的方式。","Ngay cả một số người già lớn tuổi cũng kiên trì chơi bóng, người trẻ thì càng coi nó là một cách rèn luyện hằng ngày."],["我有时候连老师说的话也听不懂，听广播就更难了。","Có lúc tôi đến lời thầy nói còn nghe không hiểu, nghe đài thì càng khó hơn."],["今天早上他连脸都没来得及洗，更没有时间准备早饭了。","Sáng nay cậu ấy đến mặt còn không kịp rửa, càng không có thời gian chuẩn bị bữa sáng."],["这个问题太难了，甚至连老师都要想很久，我们就更不会了。","Câu hỏi này khó quá, thậm chí thầy giáo cũng phải nghĩ rất lâu, chúng ta thì càng không biết. (ôn 甚至 – Bài 3 · điểm 3)"]],
+  "loi":[["连一些年龄比较大的老人坚持打球。","Thiếu 都 / 也 sau phần 连.","连一些年龄比较大的老人都坚持打球。"],["他都连脸没来得及洗。","Thứ tự: 连 + phần nhấn mạnh + 都 + V.","他连脸都没来得及洗。"],["我连老师说的话也听不懂，听广播就更容易了。","Hai vế phải cùng chiều: vế 1 khó → vế 2 càng khó.","我连老师说的话也听不懂，听广播就更难了。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["","一些年龄比较大的老人都坚持打球。"],"dap":[["连"]],"chon":["连","就","才"],"goiY":"“Ngay cả một số người già lớn tuổi cũng kiên trì chơi bóng.”","giai":"连……都……: nêu ví dụ cực đoan."},
+     {"kieu":"dien","phan":["连老人都坚持打球，年轻人","是把它作为一种日常锻炼的方式。"],"dap":[["更"]],"chon":["更","最","太"],"goiY":"“… người trẻ thì càng coi nó là cách rèn luyện hằng ngày.”","giai":"Vế 2 dùng 更 (càng)."},
+     {"kieu":"dien","phan":["我有时候连老师说的话","听不懂，听广播就更难了。"],"dap":[["也"]],"chon":["也","就","才"],"goiY":"“… đến lời thầy nói còn không hiểu …”","giai":"连 + tân ngữ đưa lên trước + 也 + V."},
+     {"kieu":"dien","phan":["今天早上他连脸都没来得及洗，更没有时间准备","了。"],"dap":[["早饭"]],"chon":["早饭","操场","设备"],"goiY":"“… càng không có thời gian chuẩn bị bữa sáng.”","giai":"Ôn 来得及 / 来不及 (Bài 4 · điểm 4)."},
+     {"kieu":"dien","phan":["受伤以后，他连走路都困难，更不能去","锻炼了。"],"dap":[["健身房"]],"chon":["健身房","会员","饼干"],"goiY":"“… càng không thể đến phòng gym tập luyện.”","giai":"去 + nơi + 锻炼."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["他","连","脸","都","没来得及洗"],"dap":["他连脸都没来得及洗。"],"goiY":"Cậu ấy đến mặt còn không kịp rửa.","giai":"连 + tân ngữ + 都 + 没 + V."},
+     {"kieu":"xep","manh":["这个问题","连","孩子","都","知道","，","你","更","应该知道了"],"dap":["这个问题连孩子都知道，你更应该知道了。"],"goiY":"Câu hỏi này đến trẻ con cũng biết, bạn thì càng phải biết.","giai":"连……都……，……更……"},
+     {"kieu":"xep","manh":["我","忙得","连饭","都","没时间吃","，","更","不能去健身了"],"dap":["我忙得连饭都没时间吃，更不能去健身了。"],"goiY":"Tôi bận đến mức đến cơm cũng không có thời gian ăn, càng không thể đi tập.","giai":"V得 + 连……都……"},
+     {"kieu":"dungsai","cau":"连一些年龄比较大的老人坚持打球。","dung":false,"sua":"连一些年龄比较大的老人都坚持打球。","giai":"连 phải đi với 都 / 也."},
+     {"kieu":"dungsai","cau":"他连这么难的事情都能解决，这件小事就更没问题了。","dung":true,"giai":"Đúng: việc khó còn làm được → việc nhỏ càng được."},
+     {"kieu":"dungsai","cau":"我连老师说的话也听不懂，听广播就更容易了。","dung":false,"sua":"我连老师说的话也听不懂，听广播就更难了。","giai":"Hai vế phải cùng chiều."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 82)","huongDan":"Hoàn thành câu, có dùng 「连……也/都……，……更……」","cau":[
+     {"kieu":"vandung","de":"受伤以后，他连走路都困难，＿＿＿。","goiY":"Vế 2 với 更: càng không thể chạy bộ / chơi bóng","mau":"更不能去跑步、打球了","can":[["更"]]},
+     {"kieu":"vandung","de":"他连这么难的事情都能解决，＿＿＿。","goiY":"Vế 2 với 更: việc nhỏ này càng không thành vấn đề","mau":"这件小事他就更没问题了","can":[["更"]]},
+     {"kieu":"vandung","de":"他＿＿＿，硕士研究生课程就更难了。","goiY":"Vế 1 với 连……都: đến chương trình đại học còn thấy rất khó","mau":"连大学的课程都觉得很难","can":[["连"],["都","也"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Ngay cả ông tôi cũng biết dùng điện thoại thông minh, các bạn trẻ thì càng khỏi phải nói.","dap":["连我爷爷都会用智能手机，年轻人就更不用说了。","连我爷爷也会用智能手机，年轻人就更不用说了。"],"giai":"连……都 / 也……，……就更不用说了."},
+     {"kieu":"dich","vn":"Anh ấy bận đến nỗi cuối tuần cũng phải tăng ca, càng không có thời gian đi phòng gym.","dap":["他忙得连周末都要加班，更没有时间去健身房了。","他忙得连周末也要加班，更没有时间去健身房了。"],"giai":"V得 + 连……都……，更没有……"},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Nói về một môn thể thao rất được ưa chuộng ở Việt Nam, có dùng 「连……都……，……更……」","mau":"在越南，连很多老人都每天早上去公园跑步，年轻人更是喜欢踢足球、打羽毛球。","can":[["连"],["更"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 82). Sách 4下 chưa có đáp án — đây là đáp án tham khảo.","dapSgk":false,"tu":["趟","科学","路过","会员","酸奶","健身"],"cau":[
+   {"s":"随着＿＿的发展，人们的生活方式发生了很大的变化。","dap":["科学"]},
+   {"s":"昨天我在回家的路上＿＿了一家新开的咖啡店。","dap":["路过"]},
+   {"s":"我吃完晚饭后都会去＿＿，已经坚持两年多了。","dap":["健身"]},
+   {"s":"她早上一般都会喝杯＿＿，觉得这样对身体有好处。","dap":["酸奶"]},
+   {"s":"明天我要去一＿＿上海，咱们下周再约时间见面吧。","dap":["趟"]},
+   {"s":"楼下新开了一家超市，正在做活动，办＿＿还送小礼物。","dap":["会员"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại, sách trang 83). Đáp án tham khảo.","dapSgk":false,"tu":["队","赢","准确","梦想","其中","不断"],"cau":[
+   {"s":"A：昨天的比赛结果怎么样？　B：三比二，我们球队最后＿＿了。","dap":["赢"]},
+   {"s":"A：你儿子以后想做什么工作？　B：他的＿＿是当一名医生。","dap":["梦想"]},
+   {"s":"A：您看我这个句子写得对吗？　B：不太＿＿，你再检查一下吧。","dap":["准确"]},
+   {"s":"A：你最近工作怎么样？　B：公司给我们的任务＿＿增加，我们越来越忙了。","dap":["不断"]},
+   {"s":"A：他们班参加羽毛球比赛的人多吗？　B：挺多的，＿＿还有几个水平很高的。","dap":["其中"]},
+   {"s":"A：听说你进入了学校的乒乓球＿＿？　B：没错，我很喜欢打乒乓球，而且打得很好。","dap":["队"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn (sách trang 83). Đáp án tham khảo.","dapSgk":false,"tu":["只要方法科学","体重也一直增加","他决定去健身房锻炼","虽然他刚开始做得还不太标准"],"cau":[
+   {"s":"小张以前不太爱运动，下班以后常常在家看电视或玩手机，很少锻炼身体。时间长了，他感觉自己的身体越来越差，＿＿，工作的时候还容易觉得累。后来在朋友的建议下，＿＿。教练先教了他一些最简单的动作。＿＿，但他慢慢练、慢慢改，最后还是坚持了下来。现在，小张已经养成了运动的习惯。他觉得，＿＿，并且坚持锻炼，就一定能取得不错的效果。","dap":["体重也一直增加","他决定去健身房锻炼","虽然他刚开始做得还不太标准","只要方法科学"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (câu dưới đây là câu mẫu tham khảo — câu của em đúng ngữ pháp, hợp tranh là đạt).","cau":[
+   {"anh":"bt-1","s":"","tu":"赢得","dap":"女儿在网球比赛中赢得了第一名，妈妈特别高兴。","giai":"在……比赛中 + 赢得 + 第一名; tranh: cô bé đeo huy chương, cầm cúp và vợt tennis (网球)."},
+   {"anh":"bt-2","s":"","tu":"受伤","dap":"她跑步的时候不小心腿受伤了，医生正在帮她看。","giai":"Bộ phận + 受伤了; 不小心 = không cẩn thận; ôn 正在 + V."},
+   {"anh":"bt-3","s":"","tu":"球迷","dap":"自己喜欢的球队赢了，球迷们都高兴得跳了起来。","giai":"球迷们 + Adj + 得 + bổ ngữ trạng thái; 跳了起来 = nhảy cẫng lên."}]}
+],
+
+"listen": [
+ {"audio":"你好，我想了解一下你们健身房。欢迎！我们这儿环境好、设备全，还有专业教练。现在办会员卡打八折。一年多少钱？原价三千，打完折两千四。那挺合适的，我先办一张吧。","questions":[
+   {"q":"这家健身房现在有什么活动？","opts":["送饼干和果汁","办会员卡打八折","免费请教练"],"ans":1},
+   {"q":"打折以后，一年的会员卡多少钱？","opts":["两千四","三千","两千"],"ans":0}]},
+ {"audio":"小李，你的腿怎么了？昨天在健身房受伤了。你没跟教练练吗？没有，我自己看着视频练的，动作不太准确。锻炼要科学，否则容易受伤。你现在连走路都困难，更不能去打球了，好好儿休息吧。","questions":[
+   {"q":"小李是怎么受伤的？","opts":["打球的时候","在操场跑步的时候","在健身房自己练的时候"],"ans":2},
+   {"q":"说话人认为锻炼应该怎么样？","opts":["要科学","要每天练","要看视频"],"ans":0}]},
+ {"audio":"妈妈，今天我们学校的乒乓球比赛，我们班三比一赢了！真棒！你打得怎么样？教练表扬我动作很标准，还鼓励我参加市里的大赛。那你要不断练习啊。我知道，我的梦想就是进入国家队！","questions":[
+   {"q":"比赛结果怎么样？","opts":["二比二","三比一赢了","三比一输了"],"ans":1},
+   {"q":"孩子的梦想是什么？","opts":["当教练","当球迷","进入国家队"],"ans":2}]}
+],
+
+"match": [
+ {"left":"路过","right":"你们家那边"},
+ {"left":"办一张","right":"会员卡"},
+ {"left":"去一趟","right":"健身房"},
+ {"left":"把动作","right":"做准确"},
+ {"left":"锻炼","right":"全身"},
+ {"left":"取得了很大的","right":"进步"},
+ {"left":"赢得","right":"第一名"},
+ {"left":"进行严格的","right":"训练"},
+ {"left":"您走","right":"您的吧"},
+ {"left":"连……也/都……","right":"……更……"}
+],
+
+"fill": [
+ {"pre":"同乐，我今天正好要","blank":"路过","post":"你们家那边，用不用我开车送你？","hint":"(đi ngang qua)","ans":"路过","exp":"路过 + nơi chốn."},
+ {"pre":"我一会儿还要去一","blank":"趟","post":"健身房。","hint":"(chuyến)","ans":"趟","exp":"去一趟 + nơi."},
+ {"pre":"我最近","blank":"体重","post":"增加了不少，正好想运动一下。","hint":"(cân nặng)","ans":"体重","exp":"体重增加 = tăng cân."},
+ {"pre":"当时正好有打折活动，我就办了一张","blank":"会员","post":"卡。","hint":"(hội viên)","ans":"会员","exp":"会员卡 = thẻ hội viên."},
+ {"pre":"教练很热情，也非常专业，","blank":"动作","post":"讲得很清楚。","hint":"(động tác)","ans":"动作","exp":"动作讲得很清楚."},
+ {"pre":"锻炼要科学，否则容易","blank":"受伤","post":"。","hint":"(bị thương)","ans":"受伤","exp":"容易受伤."},
+ {"pre":"还有一部分人愿意去健身房健身，杨同乐就是","blank":"其中","post":"之一。","hint":"(trong số đó)","ans":"其中","exp":"其中之一 = một trong số đó."},
+ {"pre":"健身房能帮助大家把动作做","blank":"准确","post":"，练习的效果也更好。","hint":"(chính xác)","ans":"准确","exp":"把 + O + 做准确."},
+ {"pre":"教练也表扬他取得了很大的进步，并","blank":"鼓励","post":"他坚持下去。","hint":"(động viên)","ans":"鼓励","exp":"鼓励 + ai + V."},
+ {"pre":"为了","blank":"不断","post":"提高自己的水平，队员们每天都要进行严格的训练。","hint":"(không ngừng)","ans":"不断","exp":"不断 + V."}
+],
+
+"sort": [
+ {"words":["您","走","您的吧","，","我","一会儿","还要去","一趟健身房","。"],"ans":"您走您的吧，我一会儿还要去一趟健身房。"},
+ {"words":["一来一回","得","半个小时","，","太","浪费时间了","。"],"ans":"一来一回得半个小时，太浪费时间了。"},
+ {"words":["教练","也","表扬","他","取得了","很大的进步","。"],"ans":"教练也表扬他取得了很大的进步。"},
+ {"words":["连","一些老人","都","坚持打球","，","年轻人","更","喜欢打","。"],"ans":"连一些老人都坚持打球，年轻人更喜欢打。"},
+ {"words":["锻炼","要","科学","，","否则","容易","受伤","。"],"ans":"锻炼要科学，否则容易受伤。"},
+ {"words":["乒乓球","是","中国人","最常见的","运动","之一","。"],"ans":"乒乓球是中国人最常见的运动之一。"}
+],
+
+"mc": [
+ {"q":"谢谢一雪姐，不过您走＿＿吧，我一会儿还要去健身房。","opts":["您的","你的","我的","他的"],"ans":0,"exp":"您走您的吧: hai đại từ phải giống nhau."},
+ {"q":"离我家最近的健身房也要坐两站公交车，一来一＿＿得半个小时。","opts":["回","去","到","走"],"ans":0,"exp":"一来一回 = cả đi lẫn về."},
+ {"q":"教练也＿＿他取得了很大的进步。","opts":["表扬","批评","受伤","路过"],"ans":0,"exp":"Tiến bộ → khen: 表扬 + ai + V + O."},
+ {"q":"＿＿一些年龄比较大的老人都坚持打球，年轻人更是把它作为一种日常锻炼的方式。","opts":["连","就","才","把"],"ans":0,"exp":"连……都……，……更……"},
+ {"q":"我有时候连老师说的话也听不懂，听广播就＿＿难了。","opts":["更","最","太","还"],"ans":0,"exp":"Vế 2 dùng 更 (càng)."},
+ {"q":"中国乒乓球队常在各项比赛中＿＿第一名。","opts":["赢得","赢","获取","进步"],"ans":0,"exp":"赢得 + tân ngữ (第一名); 赢 thường không mang 第一名."},
+ {"q":"中国乒乓球队非常有名，被＿＿“梦之队”。","opts":["叫作","表扬","训练","鼓励"],"ans":0,"exp":"被叫作 = được gọi là."},
+ {"q":"仅仅经过一个月左右的锻炼，杨同乐＿＿感觉自己的身体比以前更健康了。","opts":["就","才","也","都"],"ans":0,"exp":"仅仅……就…… = chỉ mới … đã …"},
+ {"q":"健身房环境好、＿＿全，可以锻炼全身。","opts":["设备","好处","动作","会员"],"ans":0,"exp":"设备全 = thiết bị đầy đủ."},
+ {"q":"她早上一般都会喝杯＿＿，觉得这样对身体有好处。","opts":["酸奶","饼干","乒乓球","操场"],"ans":0,"exp":"喝 + 酸奶 (người Trung “uống” sữa chua)."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và hoạt động điều tra), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions":[
+  {"q_zh":"你去过健身房吗？你喜欢去健身房锻炼身体吗？","q_vn":"Bạn đã từng đến phòng gym chưa? Bạn có thích đến phòng gym rèn luyện thân thể không?","hint":"我去过……。我觉得健身房……，不过……。我更喜欢……","sample":"我去过健身房，去年还办了一张会员卡。健身房环境好、设备全，还有专业教练，能帮我把动作做准确。不过，离我家最近的健身房也很远，一来一回要一个小时，所以后来我去得越来越少了。现在我更喜欢晚饭后在操场跑步，又方便又不用花钱。","sample_vn":"Tôi từng đến phòng gym, năm ngoái còn làm một thẻ hội viên. Phòng gym môi trường tốt, thiết bị đầy đủ, còn có HLV chuyên nghiệp giúp tôi tập động tác cho chuẩn. Có điều phòng gym gần nhà tôi nhất cũng rất xa, cả đi lẫn về mất một tiếng, nên về sau tôi đi ngày càng ít. Bây giờ tôi thích chạy bộ ở sân tập sau bữa tối hơn, vừa tiện vừa không tốn tiền.","note":"Câu hỏi phần Khởi động của sách; dùng 一来一回 (điểm 2) + ôn 既……又…… / 又……又……"},
+  {"q_zh":"你喜欢看什么体育比赛？你有喜欢的运动员或球队吗？","q_vn":"Bạn thích xem các trận đấu thể thao nào? Bạn có vận động viên hay đội bóng yêu thích không?","hint":"我最喜欢看……比赛。我是……迷。我最喜欢的球队是……，因为……","sample":"我最喜欢看足球比赛，我是一个老球迷了。我最喜欢的球队是越南国家队。队员们每天都进行严格的训练，水平不断提高，这几年在东南亚的比赛中常常赢得第一名。每次比赛的时候，连我奶奶都会和我们一起看电视，我爸爸就更激动了。","sample_vn":"Tôi thích xem bóng đá nhất, tôi là fan lâu năm rồi. Đội bóng tôi thích nhất là đội tuyển quốc gia Việt Nam. Các cầu thủ ngày nào cũng tập luyện nghiêm ngặt, trình độ không ngừng nâng cao, mấy năm nay thường giành chức vô địch các giải Đông Nam Á. Mỗi lần có trận đấu, đến bà tôi cũng xem tivi cùng cả nhà, bố tôi thì càng phấn khích hơn.","note":"Câu hỏi phần Khởi động của sách; dùng 连……都……，……更…… (điểm 4) + từ 球迷, 队员, 训练, 不断, 赢得."},
+  {"q_zh":"杨同乐为什么想健身？他为什么办了会员卡？","q_vn":"Vì sao Dương Đồng Lạc muốn tập luyện? Vì sao anh ấy làm thẻ hội viên?","hint":"因为他最近……，正好想……。因为那家健身房……，当时正好……","sample":"杨同乐想健身，是因为他最近体重增加了不少，正好想运动一下。他上个星期发现单位旁边新开了一家健身房，进去看了看，觉得挺不错的，当时正好有打折活动，所以他就办了一张会员卡。","sample_vn":"Dương Đồng Lạc muốn tập luyện vì dạo này anh tăng cân khá nhiều, đúng lúc muốn vận động một chút. Tuần trước anh phát hiện bên cạnh cơ quan mới mở một phòng gym, vào xem thấy khá ổn, lúc đó đúng dịp có khuyến mãi nên anh làm luôn một thẻ hội viên.","note":"Câu hỏi bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"下班时，王一雪问杨同乐……，因为她今天开车会……。不过，杨同乐不回家，他要先……。他上个星期发现……，就进去……。他最近……，正好想……。那家健身房……，当时……，他就……。","sample":"下班时，王一雪问杨同乐用不用她开车送他，因为她今天开车会路过他们家那边。不过，杨同乐不回家，他要先去一趟健身房。他上个星期发现单位旁边新开了一家健身房，就进去看了看。他最近体重增加了不少，正好想运动一下。那家健身房挺不错的，当时正好有打折活动，他就办了一张会员卡。","sample_vn":"Lúc tan làm, Vương Nhất Tuyết hỏi Dương Đồng Lạc có cần chị lái xe đưa về không, vì hôm nay chị lái xe sẽ đi ngang qua bên nhà anh. Nhưng Dương Đồng Lạc không về nhà, anh phải đến phòng gym một chuyến trước. Tuần trước anh phát hiện bên cạnh cơ quan mới mở một phòng gym nên vào xem thử. Dạo này anh tăng cân khá nhiều, đúng lúc muốn vận động. Phòng gym đó khá ổn, lúc ấy đúng dịp giảm giá, anh liền làm một thẻ hội viên.","note":"Bài tập 复述 của sách (trang 76)."},
+  {"q_zh":"杨同乐去健身房前要做什么？王一雪为什么也想去健身房锻炼？","q_vn":"Trước khi đến phòng gym Dương Đồng Lạc phải làm gì? Vì sao Vương Nhất Tuyết cũng muốn đến phòng gym tập?","hint":"他要先把……吃完。因为杨同乐说那里的教练……；而王一雪现在都是……，动作……","sample":"杨同乐去健身房以前，要先把带来的饼干、酸奶和果汁吃完。王一雪也想去健身房锻炼，因为杨同乐说那里的教练很热情，也非常专业，动作讲得很清楚；而她现在都是在家看着视频练，动作不一定标准。杨同乐还提醒她，锻炼要科学，否则容易受伤。","sample_vn":"Trước khi đến phòng gym, Dương Đồng Lạc phải ăn hết bánh quy, sữa chua và nước ép mang theo. Vương Nhất Tuyết cũng muốn đến phòng gym tập vì Đồng Lạc nói HLV ở đó rất nhiệt tình, chuyên nghiệp, giảng động tác rất rõ; còn chị bây giờ toàn ở nhà xem video tập theo, động tác chưa chắc đã chuẩn. Đồng Lạc còn nhắc chị tập luyện phải khoa học, nếu không dễ bị thương.","note":"Câu hỏi bài khoá 2; ôn 否则 (Bài 8 · điểm 2) + câu 把."},
+  {"q_zh":"健身房为什么会火起来？教练为什么表扬杨同乐？","q_vn":"Vì sao phòng gym trở nên “hot”? Vì sao huấn luyện viên khen Dương Đồng Lạc?","hint":"因为它有很多好处——……。另外，……。教练表扬他……，因为仅仅经过……，他就……","sample":"健身房火起来，是因为它有很多好处——环境好、设备全，可以锻炼全身。另外，健身房里一般还有专业教练，能帮助大家把动作做准确，练习的效果也更好。教练表扬杨同乐取得了很大的进步，因为仅仅经过一个月左右的锻炼，他的身体就比以前更健康了。","sample_vn":"Phòng gym trở nên “hot” vì nó có nhiều lợi ích — môi trường tốt, thiết bị đầy đủ, rèn luyện được toàn thân. Ngoài ra, phòng gym thường có HLV chuyên nghiệp giúp mọi người làm động tác cho chuẩn, hiệu quả tập luyện cũng tốt hơn. HLV khen Dương Đồng Lạc đã tiến bộ rất lớn, vì chỉ sau khoảng một tháng tập, sức khoẻ của anh đã tốt hơn trước.","note":"Câu hỏi bài khoá 3; dùng câu kiêm ngữ 表扬 (điểm 3) + 仅仅……就……"},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"有人爱……，有人喜欢……，还有一部分人……，杨同乐就是……。杨同乐认为健身房……是因为……。另外，……。仅仅经过……，杨同乐就……。教练也表扬他……，并鼓励……，还说随着……，人看起来也会……。","sample":"有人爱在操场跑步，有人喜欢通过打球锻炼身体，还有一部分人愿意去健身房健身，杨同乐就是其中之一。杨同乐认为健身房火起来是因为它有很多好处——环境好、设备全，可以锻炼全身。另外，健身房里一般还有专业教练，能帮助大家把动作做准确，练习的效果也更好。仅仅经过一个月左右的锻炼，杨同乐就感觉自己的身体比以前更健康了。教练也表扬他取得了很大的进步，并鼓励他坚持下去，还说随着身体越来越好，人看起来也会更帅。","sample_vn":"Có người thích chạy bộ ở sân tập, có người thích rèn luyện bằng cách chơi bóng, còn một bộ phận người thích đến phòng gym, Dương Đồng Lạc là một trong số đó… HLV cũng khen anh tiến bộ rất lớn, động viên anh kiên trì tiếp, còn nói cùng với sức khoẻ ngày càng tốt, trông người cũng sẽ đẹp trai hơn.","note":"Bài tập 复述 của sách (trang 80)."},
+  {"q_zh":"乒乓球队为什么每天都要进行严格的训练？许多年轻的乒乓球运动员有什么梦想？","q_vn":"Vì sao đội bóng bàn ngày nào cũng phải tập luyện nghiêm ngặt? Nhiều vận động viên bóng bàn trẻ có ước mơ gì?","hint":"为了不断提高……。正因为这样，……。他们的梦想是……，参加……，为……","sample":"中国乒乓球队每天都要进行严格的训练，是为了不断提高自己的水平。正因为这样，球队才能在比赛中取得更好的成绩，获得更多球迷的喜爱。许多年轻的乒乓球运动员都有一个梦想，那就是进入国家队，参加世界大赛，为球队赢下比赛。","sample_vn":"Đội tuyển bóng bàn Trung Quốc ngày nào cũng tập luyện nghiêm ngặt là để không ngừng nâng cao trình độ. Chính vì thế, đội mới đạt thành tích tốt hơn trong thi đấu, được nhiều người hâm mộ yêu mến hơn. Nhiều VĐV bóng bàn trẻ đều có một ước mơ, đó là vào đội tuyển quốc gia, dự các giải đấu lớn thế giới, thắng trận vì đội.","note":"Câu hỏi bài khoá 4; từ mới 不断, 训练, 球迷, 梦想, 大赛, 赢."},
+  {"q_zh":"调查：请在班级中做一个调查，了解同学们的运动情况，包括是否有锻炼的习惯、锻炼的方式、选择这种方式的原因、每周锻炼的次数以及每次多长时间等等。调查后，向全班介绍调查结果。","q_vn":"Điều tra: Hãy làm một cuộc khảo sát trong lớp, tìm hiểu tình hình vận động của các bạn, gồm: có thói quen rèn luyện không, rèn luyện bằng cách nào, vì sao chọn cách đó, mỗi tuần tập mấy lần và mỗi lần bao lâu… (bảng: 姓名 · 是否有锻炼的习惯 · 锻炼方式 · 原因 · 每周锻炼的次数和时长). Sau đó trình bày kết quả trước lớp.","hint":"你有锻炼的习惯吗？你一般怎么锻炼？为什么？每周锻炼几次？每次多长时间？ → 我一共问了……位同学，其中……；有人……，有人……；……连……都……，更……","sample":"（采访）A：你有锻炼的习惯吗？B：有，我每周去三次健身房。A：为什么选择去健身房？B：因为健身房设备全，还有专业教练，能帮我把动作做准确。A：每次锻炼多长时间？B：一个小时左右。（报告）大家好！我在班里一共问了八位同学，其中六位有锻炼的习惯。有人爱在操场跑步，有人喜欢打乒乓球，还有两位同学去健身房健身。他们每周锻炼两到三次，每次一个小时左右。另外两位同学不太运动，因为学习太忙，有时候连周末都要上课，更没有时间锻炼了。我觉得，大家应该互相鼓励，一起锻炼，让身体更健康。","sample_vn":"(Phỏng vấn) A: Bạn có thói quen tập luyện không? B: Có, mỗi tuần mình đến phòng gym ba lần. A: Sao bạn chọn phòng gym? B: Vì phòng gym thiết bị đầy đủ, có HLV chuyên nghiệp giúp mình tập động tác cho chuẩn. A: Mỗi lần tập bao lâu? B: Khoảng một tiếng. (Báo cáo) Chào cả lớp! Mình hỏi tổng cộng tám bạn, trong đó sáu bạn có thói quen tập luyện. Có người thích chạy bộ ở sân tập, có người thích chơi bóng bàn, còn hai bạn đến phòng gym. Các bạn tập mỗi tuần hai đến ba lần, mỗi lần khoảng một tiếng. Hai bạn còn lại ít vận động vì học quá bận, có khi đến cuối tuần cũng phải đi học, càng không có thời gian tập. Mình nghĩ mọi người nên động viên nhau cùng tập luyện để khoẻ mạnh hơn.","note":"Hoạt động 任务活动 · 调查 (điều tra) của sách, trang 84 — dùng 其中, 左右 (Bài 13 · điểm 3), 连……都……，……更…… (điểm 4), 鼓励."}
+ ]
+},
+
+"translate": [
+ ["Cảm ơn chị, nhưng chị cứ về trước đi, lát nữa em còn phải đến phòng gym một chuyến.","谢谢您，不过您走您的吧，我一会儿还要去一趟健身房。"],
+ ["Phòng gym gần nhà tôi nhất cũng phải đi xe buýt hai bến, cả đi lẫn về mất nửa tiếng.","离我家最近的健身房也要坐两站公交车，一来一回得半个小时。"],
+ ["Huấn luyện viên khen anh ấy đã có tiến bộ rất lớn, và động viên anh ấy kiên trì tiếp.","教练表扬他取得了很大的进步，并鼓励他坚持下去。"],
+ ["Ngay cả một số người già cũng kiên trì chơi bóng bàn, người trẻ thì càng thích hơn.","连一些老人都坚持打乒乓球，年轻人就更喜欢了。"],
+ ["Tập luyện phải khoa học, nếu không dễ bị thương.","锻炼要科学，否则容易受伤。"],
+ ["Bóng bàn là một trong những môn thể thao phổ biến nhất trong đời sống người Trung Quốc.","乒乓球是中国人生活中最常见的运动之一。"]
+],
+"translateRev": [
+ ["Dạo này cân nặng của tôi tăng không ít, đúng lúc muốn vận động một chút.","我最近体重增加了不少，正好想运动一下。"],
+ ["Lúc đó đúng dịp có khuyến mãi giảm giá, tôi liền làm một thẻ hội viên.","当时正好有打折活动，我就办了一张会员卡。"],
+ ["Phòng gym có nhiều lợi ích: môi trường tốt, thiết bị đầy đủ, có thể rèn luyện toàn thân.","健身房有很多好处：环境好、设备全，可以锻炼全身。"],
+ ["Chỉ sau khoảng một tháng tập luyện, anh ấy đã thấy cơ thể khoẻ mạnh hơn trước.","仅仅经过一个月左右的锻炼，他就感觉身体比以前更健康了。"],
+ ["Để không ngừng nâng cao trình độ, các đội viên ngày nào cũng tập luyện nghiêm ngặt.","为了不断提高水平，队员们每天都要进行严格的训练。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":140,"tieuDe":"写作 — viết theo đề của sách (ít nhất 140 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết báo cáo điều tra: tình hình vận động của các bạn trong lớp (写作)","gioiThieu":"Đề 写作 của sách HSK 4 (3.0) yêu cầu dựa vào kết quả cuộc điều tra trong phần 任务活动 để viết một BẢN BÁO CÁO ĐIỀU TRA (调查报告) ngắn, ít nhất 140 chữ — giống phần 书写 của đề thi HSK 4 mới. Báo cáo phải có số liệu (bao nhiêu người, mấy lần một tuần, bao lâu), cách tập, lý do và kết luận / đề xuất.","buoc":["Đọc kỹ đề: bối cảnh là đại hội thể thao của trường sắp diễn ra, thầy cô muốn biết tình hình vận động của học sinh → viết báo cáo dựa vào bảng điều tra (姓名, 是否有锻炼的习惯, 锻炼方式, 原因, 每周锻炼的次数和时长).","Lập dàn ý theo 5 câu hỏi gợi ý: mục đích + đối tượng điều tra → bao nhiêu người có thói quen tập → cách tập và lý do → số lần, thời gian → nhóm không tập và lý do → kết luận, đề xuất.","Dùng từ mới (健身房, 操场, 教练, 设备, 好处, 全身, 体重, 坚持, 鼓励, 进步, 乒乓球…) và ngữ pháp của bài: 其中, 连……都……，……更……, 表扬 + ai + V, 一A一B.","Nối ý bằng từ nối của báo cáo: 为了…… / 调查发现 / 其中 / 另外 / 总的来说 / 我认为; ôn 左右 (Bài 13), 不如 (Bài 15), 并且 (Bài 16).","Câu mở nêu mục đích và phạm vi điều tra, câu kết nêu đề xuất trước đại hội thể thao; tự soát số chữ (≥ 140) và lỗi chữ Hán."]},
+ "de":"学校运动会就要到了，老师希望了解同学们的运动情况。请你根据上面调查的内容，写一份调查报告，不少于140字。",
+ "prompt":"Đại hội thể thao của trường sắp diễn ra, thầy cô muốn tìm hiểu tình hình vận động của các bạn học sinh. Hãy dựa vào nội dung điều tra ở trên, viết một bản báo cáo điều tra, không ít hơn 140 chữ.",
+ "dan":[
+  {"hoi":"你为什么做这个调查？一共调查了多少人？","goiY":"为了了解同学们的运动情况，我在班里做了一个调查，一共问了……位同学。"},
+  {"hoi":"有多少人有锻炼的习惯？","goiY":"调查发现，其中……位同学有锻炼的习惯。"},
+  {"hoi":"大家都用什么方式锻炼？为什么？","goiY":"有人爱在操场跑步，有人喜欢……，还有人去健身房，因为……"},
+  {"hoi":"每周锻炼几次？每次多长时间？没有锻炼习惯的同学是什么原因？","goiY":"他们每周锻炼……次，每次……左右。另外……位同学……，连……都……，更……"},
+  {"hoi":"你有什么结论和建议？","goiY":"我认为，运动会就要到了，……只要方法科学，并且坚持下去，……"}],
+ "tuNen":["健身房","操场","乒乓球","教练","设备","好处","全身","体重","动作","科学","坚持","鼓励","进步","表扬","其中"],
+ "cauTruc":[
+  {"ten":"……，其中……","nhan":"其中","vd":"我一共问了十位同学，其中七位有锻炼的习惯。","khi":"Đưa số liệu tổng và một phần trong đó."},
+  {"ten":"有人……，有人……，还有人……","nhan":"有人","vd":"有人爱在操场跑步，有人喜欢打乒乓球，还有人去健身房健身。","khi":"Liệt kê các cách tập luyện khác nhau (theo mẫu bài khoá 3)."},
+  {"ten":"连……都……，……更……","nhan":"连","vd":"有的同学学习太忙，连周末都要上课，更没有时间锻炼了。","khi":"Giải thích lý do một số bạn không tập."},
+  {"ten":"主语 + 表扬 + ai + V……","nhan":"表扬","vd":"体育老师还表扬他取得了很大的进步。","khi":"Nêu một ví dụ cụ thể, sinh động trong báo cáo."},
+  {"ten":"只要……，并且……，就……","nhan":"只要","vd":"只要方法科学，并且坚持下去，就一定能取得不错的效果。","khi":"Câu KẾT: đề xuất, lời khuyên (ôn 并且 – Bài 16)."}],
+ "checklist":[
+  "Đủ ít nhất 140 chữ Hán chưa?",
+  "Báo cáo đã có: mục đích + số người điều tra, có thói quen tập hay không, cách tập + lý do, số lần + thời gian mỗi lần, kết luận / đề xuất chưa?",
+  "Đã dùng ít nhất 2 điểm ngữ pháp của bài (连……都……，……更……、表扬 + ai + V、一A一B、你×你的吧) và 其中 chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài chưa?",
+  "Có câu mở nêu mục đích điều tra và câu kết nêu đề xuất trước đại hội thể thao chưa?"],
+ "model":"为了了解同学们的运动情况，我在班里做了一个调查，一共问了十位同学。调查发现，其中七位同学有锻炼的习惯，他们每周锻炼三次左右，每次一个小时左右。大家的锻炼方式不太一样：有人爱在操场跑步，有人喜欢打乒乓球，还有两位同学办了健身房的会员卡。他们说，健身房环境好、设备全，还有专业教练，能帮助大家把动作做准确。另外三位同学几乎不运动，原因是学习太忙，有时候连周末都要上课，更没有时间锻炼了。小王告诉我，他以前体重增加了不少，后来坚持每天跑步，仅仅两个月就瘦了五公斤，体育老师还表扬他取得了很大的进步。我认为，运动会就要到了，同学们应该互相鼓励，一起参加锻炼。只要方法科学，并且不断坚持，我们的身体就一定会越来越健康。"
+}
+}

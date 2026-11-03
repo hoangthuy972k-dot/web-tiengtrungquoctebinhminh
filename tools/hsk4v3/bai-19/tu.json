@@ -1,0 +1,566 @@
+[
+ {
+  "zh": "话剧", "py": "huàjù", "pos": "Danh từ", "en": "stage play", "vn": "kịch nói", "hv": "thoại kịch", "em": "🎭", "k": 1,
+  "explain": ["Loại kịch sân khấu diễn chủ yếu bằng lời thoại (đối thoại, độc thoại), khác với 京剧 (Kinh kịch — có hát) hay 歌剧 (nhạc kịch).", "Bẫy Hán Việt: 话剧 = kịch nói (không nói “thoại kịch”)."],
+  "usage": "演话剧 · 排话剧 · 看话剧 · 一部/一场话剧.",
+  "ex": [["小雪，你们的话剧排好了吗？", "Tiểu Tuyết, vở kịch của các con tập xong chưa?"], ["周末我和朋友去剧院看了一场话剧，演员们演得特别好。", "Cuối tuần tôi với bạn đi nhà hát xem một buổi kịch nói, các diễn viên diễn rất hay."]],
+  "collo": [["演话剧", "diễn kịch nói"], ["排话剧", "tập kịch"], ["一场话剧", "một buổi diễn kịch"], ["话剧演员", "diễn viên kịch nói"]],
+  "pat": [["一部 / 一场 + 话剧", "部 = một vở (tác phẩm); 场 = một buổi diễn"]],
+  "check": [
+   ["Tuần này ở trường, không phải tập kịch thì là lên lớp, bận lắm.", "这周在学校，不是排话剧，就是上课，忙极了。", "不是……就是…… (Bài 19 · điểm 1).", "不是……，就是……"],
+   ["Cho dù bận đến mấy, chúng tớ cũng phải tập xong vở kịch trước thứ Sáu.", "即使再忙，我们也要在周五以前把话剧排好。", "Ôn 即使……也…… (Bài 11 · điểm 1) + 把 + V + 好 (HSK 3).", "即使……也……"]
+  ]
+ },
+ {
+  "zh": "排", "py": "pái", "pos": "Động từ", "en": "rehearse", "vn": "tập (diễn), dàn dựng (tiết mục)", "hv": "bài", "em": "🎬", "k": 1,
+  "explain": ["Ở bài này 排 = 排练: tập dượt, dàn dựng một tiết mục trước khi biểu diễn (排节目, 排话剧).", "Từ đa nghĩa: 排队 (xếp hàng); 排 còn là lượng từ “hàng” (第一排 — hàng ghế đầu)."],
+  "usage": "排节目 · 排话剧 · 排好了 · 排了好几遍.",
+  "ex": [["小雪，你们的话剧排好了吗？", "Tiểu Tuyết, vở kịch của các con tập xong chưa?"], ["为了参加艺术节，我们每天下午都在教室里排节目。", "Để tham gia lễ hội nghệ thuật, chiều nào chúng tôi cũng tập tiết mục trong lớp."]],
+  "collo": [["排节目", "tập tiết mục"], ["排话剧", "tập kịch nói"], ["排好了", "tập xong rồi"], ["排了三遍", "tập ba lượt"]],
+  "pat": [["排 + 节目 / 话剧 / 舞蹈", "tập dượt một tiết mục"], ["把 + 节目 + 排了 + số + 遍", "nhấn số lần tập (Bài 19 · điểm 3)"]],
+  "check": [
+   ["Chúng tôi tập tiết mục này mười mấy lượt, cuối cùng ai cũng nhớ hết.", "我们把这个节目排了十几遍，最后所有人都记住了。", "把 + 宾 + 动 + 动量补语 (Bài 19 · điểm 3).", "把……排了十几遍"],
+   ["Cả lớp vì muốn tham gia lễ hội nghệ thuật mà ngày nào cũng ở lại tập tiết mục.", "全班同学为了参加艺术节而每天留下来排节目。", "Ôn 为了……而…… (Bài 12 · điểm 4).", "为了……而……"]
+  ]
+ },
+ {
+  "zh": "艺术", "py": "yìshù", "pos": "Danh từ", "en": "art", "vn": "nghệ thuật", "hv": "nghệ thuật", "em": "🎨", "k": 1,
+  "explain": ["Nghệ thuật: âm nhạc, hội hoạ, sân khấu, điện ảnh, múa… Hay ghép làm định ngữ không cần 的: 艺术节, 艺术家, 艺术作品."],
+  "usage": "艺术节 · 艺术家 · 艺术作品 · 京剧艺术.",
+  "ex": [["艺术节周五下午开始，我内心还是有些紧张。", "Lễ hội nghệ thuật bắt đầu vào chiều thứ Sáu, trong lòng con vẫn hơi hồi hộp."], ["我姐姐从小就喜欢艺术，后来当上了画家。", "Chị tôi từ nhỏ đã thích nghệ thuật, sau này trở thành hoạ sĩ."]],
+  "collo": [["艺术节", "lễ hội nghệ thuật"], ["艺术家", "nghệ sĩ"], ["艺术作品", "tác phẩm nghệ thuật"], ["京剧艺术", "nghệ thuật Kinh kịch"]],
+  "pat": [["艺术 + 节 / 家 / 作品", "ghép thẳng làm định ngữ, không thêm 的"]],
+  "check": [
+   ["Mai Lan Phương là nghệ sĩ Kinh kịch nổi tiếng của Trung Quốc.", "梅兰芳是中国著名的京剧艺术家。", "艺术家 = nghệ sĩ (câu bài khoá 2).", "……是……艺术家"],
+   ["Lễ hội nghệ thuật năm nay không chỉ học sinh biểu diễn, ngay cả phụ huynh cũng tham gia.", "今年的艺术节不仅学生表演了节目，连家长也参加了。", "Ôn 不仅……也/还…… (Bài 3 · điểm 2) + 连……也…… (Bài 17 · điểm 4).", "不仅……，连……也……"]
+  ]
+ },
+ {
+  "zh": "内心", "py": "nèixīn", "pos": "Danh từ", "en": "heart", "vn": "trong lòng, nội tâm", "hv": "nội tâm", "em": "💓", "k": 1,
+  "explain": ["Trong lòng, nội tâm — cảm xúc thật bên trong, nhiều khi không thể hiện ra ngoài. Hay dùng: 内心 + (很/有些) + tính từ cảm xúc (紧张, 感动, 激动)."],
+  "usage": "内心很紧张 · 内心很感动 · 内心的想法 · 从内心感谢.",
+  "ex": [["艺术节周五下午开始，我内心还是有些紧张。", "Lễ hội nghệ thuật bắt đầu vào chiều thứ Sáu, trong lòng con vẫn hơi hồi hộp."], ["他表面上很平静，其实内心特别激动。", "Ngoài mặt anh ấy rất bình tĩnh, thực ra trong lòng vô cùng xúc động."]],
+  "collo": [["内心有些紧张", "trong lòng hơi căng thẳng"], ["内心很感动", "trong lòng rất cảm động"], ["内心的想法", "suy nghĩ trong lòng"], ["从内心感谢", "cảm ơn từ đáy lòng"]],
+  "pat": [["主语 + 内心 + (很/有些) + Adj", "nói cảm xúc thật bên trong"], ["表面上……，其实内心……", "ngoài mặt …, thực ra trong lòng …"]],
+  "check": [
+   ["Tuy không nói gì, nhưng trong lòng tôi rất cảm động.", "虽然没说什么，但是我内心很感动。", "Câu 选词填空 của bài; ôn 虽然……但是…… (HSK 3).", "虽然……，但是……"],
+   ["Lần đầu lên sân khấu, trên mặt cô ấy tuy đang cười nhưng trong lòng lại rất căng thẳng.", "第一次上台演出，她脸上虽然笑着，内心却特别紧张。", "Ôn 却 (Bài 16 · điểm 4).", "……，内心却……"]
+  ]
+ },
+ {
+  "zh": "自信", "py": "zìxìn", "pos": "Tính từ / Danh từ / Động từ", "en": "confident; self-confidence", "vn": "tự tin; lòng tự tin", "hv": "tự tin", "em": "💪", "k": 1,
+  "explain": ["Tin vào bản thân. Dùng được như tính từ (很自信, 再自信些), danh từ (有自信, 缺少自信) và động từ (他自信能做好)."],
+  "usage": "很自信 · 再自信些 · 有自信 · 自信心.",
+  "ex": [["没事，妈妈相信你一定可以。放松些，再自信些！", "Không sao, mẹ tin con nhất định làm được. Thả lỏng chút, tự tin thêm chút nữa!"], ["多上台说中文，你就会越来越自信。", "Lên sân khấu nói tiếng Trung nhiều vào, con sẽ ngày càng tự tin."]],
+  "collo": [["再自信些", "tự tin thêm chút"], ["对自己有自信", "tin vào bản thân"], ["自信心", "lòng tự tin"], ["更加自信", "tự tin hơn"]],
+  "pat": [["再 + Adj + 些 / 一点儿", "lời khuyên: … hơn chút nữa"], ["对 + ai/việc + 有自信", "tự tin về …"]],
+  "check": [
+   ["Sự khích lệ của thầy cô làm cô ấy (Chu Hoa) tự tin hơn, cũng cố gắng hơn.", "老师的鼓励，让她更加自信，也更加努力。", "Bài hoàn thành đoạn văn; ôn 让 + 宾 + … (Bài 18 · điểm 2).", "让……更加自信"],
+   ["Đừng căng thẳng, cậu đã tập nhiều lượt như vậy rồi, tự tin thêm chút đi!", "别紧张，你都练了这么多遍了，再自信些！", "Ôn 都……了 (HSK 3) + 动量补语 遍.", "再自信些"]
+  ]
+ },
+ {
+  "zh": "少年", "py": "shàonián", "pos": "Danh từ", "en": "teenager; young man", "vn": "thiếu niên", "hv": "thiếu niên", "em": "🧒", "k": 1,
+  "explain": ["Thiếu niên — tuổi khoảng 10–16. Chú ý 少 ở đây đọc shào (trẻ), không phải shǎo (ít).", "Các giai đoạn tuổi: 儿童 → 少年 → 青年 → 中年 → 老年 (老年 — Bài 11)."],
+  "usage": "少年歌手 · 少年时代 · 少年宫 · 一个少年.",
+  "ex": [["我同学演少年歌手，他的歌声美极了。", "Bạn con đóng vai ca sĩ thiếu niên, giọng hát của bạn ấy hay tuyệt."], ["他少年时就开始学京剧，现在已经是很有名的演员了。", "Anh ấy học Kinh kịch từ thời niên thiếu, bây giờ đã là diễn viên rất nổi tiếng."]],
+  "collo": [["少年歌手", "ca sĩ thiếu niên"], ["少年时代", "thời niên thiếu"], ["少年宫", "cung thiếu nhi"], ["少年儿童", "thiếu niên nhi đồng"]],
+  "pat": [["少年 shàonián ≠ 多少 duōshao", "少 hai âm: shào (trẻ) / shǎo (ít)"], ["儿童 → 少年 → 青年 → 中年 → 老年", "các giai đoạn tuổi"]],
+  "check": [
+   ["Bạn tớ đóng vai ca sĩ thiếu niên, giọng hát của bạn ấy hay tuyệt.", "我同学演少年歌手，他的歌声美极了。", "Câu bài khoá 1; Adj + 极了 (HSK 3).", "演 + vai diễn"],
+   ["Thời niên thiếu, anh ấy không phải chơi bóng rổ thì là đá bóng, chẳng bao giờ ở nhà.", "他少年时不是打篮球，就是踢足球，从来不在家待着。", "不是……就是…… (Bài 19 · điểm 1) + ôn 从来 (Bài 9 · điểm 4).", "不是……，就是……"]
+  ]
+ },
+ {
+  "zh": "歌手", "py": "gēshǒu", "pos": "Danh từ", "en": "singer", "vn": "ca sĩ", "hv": "ca thủ", "em": "🎤", "k": 1,
+  "explain": ["Người hát (chuyên nghiệp hoặc nghiệp dư). 手 ở đây = người làm / giỏi một việc: 歌手, 选手 (tuyển thủ), 新手 (người mới)."],
+  "usage": "少年歌手 · 有名的歌手 · 当歌手 · 一位歌手.",
+  "ex": [["我同学演少年歌手，他的歌声美极了。", "Bạn con đóng vai ca sĩ thiếu niên, giọng hát của bạn ấy hay tuyệt."], ["我从小的理想就是当一名歌手。", "Ước mơ từ nhỏ của tôi là làm ca sĩ."]],
+  "collo": [["有名的歌手", "ca sĩ nổi tiếng"], ["青年歌手", "ca sĩ trẻ"], ["当歌手", "làm ca sĩ"], ["歌手比赛", "cuộc thi ca sĩ"]],
+  "pat": [["N + 手 → người làm / giỏi việc đó", "歌手 / 选手 / 新手"]],
+  "check": [
+   ["Ca sĩ này hát hay tuyệt, khán giả vỗ tay không ngớt.", "这位歌手唱得好听极了，观众们不断鼓掌。", "Ôn bổ ngữ trình độ V得 + Adj (HSK 2–3).", "V得……极了"],
+   ["Cô ấy muốn làm ca sĩ, mỗi ngày luyện hát ít nhất hai tiếng.", "她想当歌手，每天至少练习唱歌两个小时。", "Ôn 至少 (Bài 5 · điểm 1).", "至少 + V + thời lượng"]
+  ]
+ },
+ {
+  "zh": "歌声", "py": "gēshēng", "pos": "Danh từ", "en": "singing (voice)", "vn": "tiếng hát, giọng hát", "hv": "ca thanh", "em": "🎶", "k": 1,
+  "explain": ["Tiếng hát nghe được. Phân biệt: 歌手 (người hát) — 歌声 (tiếng hát) — 声音 (âm thanh, giọng nói nói chung)."],
+  "usage": "歌声很美 · 好听的歌声 · 听到歌声 · 歌声美极了.",
+  "ex": [["他的歌声美极了。", "Giọng hát của bạn ấy hay tuyệt."], ["从教室里传来了孩子们快乐的歌声。", "Từ trong lớp vọng ra tiếng hát vui vẻ của bọn trẻ."]],
+  "collo": [["歌声很美", "tiếng hát rất hay"], ["好听的歌声", "giọng hát dễ nghe"], ["听到歌声", "nghe thấy tiếng hát"], ["快乐的歌声", "tiếng hát vui vẻ"]],
+  "pat": [["……的歌声 + 美 / 好听 + 极了", "khen giọng hát"]],
+  "check": [
+   ["Tiếng hát của cô ấy để lại cho tôi ấn tượng rất sâu.", "她的歌声给我留下了很深的印象。", "Ôn 给……留下印象 (bài khoá 2).", "给……留下……印象"],
+   ["Tối qua tôi nghe tiếng hát của cô ấy mãi, càng nghe càng thích.", "昨天晚上我一直在听她的歌声，越听越喜欢。", "Ôn 越……越…… (HSK 3).", "越听越喜欢"]
+  ]
+ },
+ {
+  "zh": "度假", "py": "dùjià", "pos": "Động từ", "en": "go on holiday", "vn": "đi nghỉ (mát), nghỉ dưỡng", "hv": "độ giả", "em": "🏖️", "k": 2,
+  "explain": ["Đi nghỉ dưỡng, đi nghỉ mát trong kỳ nghỉ. Không mang tân ngữ nơi chốn trực tiếp: 去海边度假 (✗ 度假海边)."],
+  "usage": "去……度假 · 在……度假 · 度假时 · 度假村 (khu nghỉ dưỡng).",
+  "ex": [["我小时候在加拿大度假时，在宾馆的电视上看过一次。", "Hồi nhỏ khi đi nghỉ ở Canada, tớ từng xem một lần trên tivi khách sạn."], ["今年暑假，我们全家打算去海边度假。", "Kỳ nghỉ hè năm nay, cả nhà tôi định ra biển nghỉ mát."]],
+  "collo": [["去海边度假", "ra biển nghỉ mát"], ["出国度假", "ra nước ngoài nghỉ"], ["度假村", "khu nghỉ dưỡng"], ["度假的时候", "lúc đi nghỉ"]],
+  "pat": [["去 / 在 + nơi + 度假", "nơi chốn đứng TRƯỚC 度假"]],
+  "check": [
+   ["Con gái sắp nghỉ hè rồi, năm nay cả nhà mình đi đâu nghỉ mát?", "女儿马上放假了，今年咱们全家去哪儿度假？", "Câu 选词填空 của bài.", "去哪儿度假"],
+   ["Đi nghỉ không nhất thiết phải ra nước ngoài, về quê cũng rất thư giãn.", "度假不一定要出国，回老家也很放松。", "Ôn 不一定 (HSK 3).", "不一定……"]
+  ]
+ },
+ {
+  "zh": "演员", "py": "yǎnyuán", "pos": "Danh từ", "en": "performer; actor", "vn": "diễn viên", "hv": "diễn viên", "em": "🎭", "k": 2,
+  "explain": ["Người biểu diễn trên sân khấu, phim ảnh: 京剧演员, 电影演员, 话剧演员."],
+  "usage": "京剧演员 · 电影演员 · 当演员 · 青年演员.",
+  "ex": [["是梅兰芳等演员演的，演员们都非常棒。", "Là do các diễn viên như Mai Lan Phương diễn, các diễn viên đều cực kỳ giỏi."], ["这位演员不仅会演戏，还会唱歌。", "Diễn viên này không chỉ biết diễn kịch mà còn biết hát."]],
+  "collo": [["京剧演员", "diễn viên Kinh kịch"], ["青年演员", "diễn viên trẻ"], ["话剧演员", "diễn viên kịch nói"], ["当演员", "làm diễn viên"]],
+  "pat": [["演员们 + 演得 + Adj", "nhận xét diễn xuất (bổ ngữ trình độ)"]],
+  "check": [
+   ["Những diễn viên này rất chuyên nghiệp, có người còn từng đoạt giải quốc tế lớn.", "这些演员很专业，有的还获过国际大奖。", "Câu bài khoá 3; ôn V + 过 (HSK 2), 有的…… (HSK 3).", "有的还……"],
+   ["Để diễn cho tốt, người diễn viên ấy luyện động tác này cả một buổi sáng.", "为了演好，那位演员把这个动作练了一个上午。", "把 + 宾 + 动 + 时量补语 (Bài 19 · điểm 4).", "把……练了一个上午"]
+  ]
+ },
+ {
+  "zh": "演唱", "py": "yǎnchàng", "pos": "Động từ", "en": "sing (in a performance)", "vn": "biểu diễn (hát), trình bày ca khúc", "hv": "diễn xướng", "em": "🎙️", "k": 2,
+  "explain": ["Hát biểu diễn trên sân khấu — trang trọng hơn 唱. Dùng cho ca sĩ, diễn viên kịch hát: 演唱一首歌, 演唱会 (buổi biểu diễn ca nhạc, concert)."],
+  "usage": "演唱歌曲 · 演唱会 · 演唱得很好 · 现场演唱.",
+  "ex": [["他们演唱得好听极了。", "Họ hát hay tuyệt."], ["周末我和朋友去看了一场演唱会，人特别多。", "Cuối tuần tôi với bạn đi xem một buổi biểu diễn ca nhạc, người đông kinh khủng."]],
+  "collo": [["演唱会", "buổi biểu diễn ca nhạc"], ["演唱一首歌", "trình bày một bài hát"], ["现场演唱", "hát trực tiếp"], ["演唱得好听极了", "hát hay tuyệt"]],
+  "pat": [["演唱 vs 唱", "演唱: trang trọng, trên sân khấu; 唱: dùng hằng ngày (唱歌, ✗ 演唱卡拉OK)"]],
+  "check": [
+   ["Họ hát hay tuyệt, để lại cho tớ ấn tượng đặc biệt sâu.", "他们演唱得好听极了，给我留下的印象特别深。", "Câu bài khoá 2.", "演唱得……"],
+   ["Buổi biểu diễn ca nhạc tối nay không ở nhà hát thì ở sân vận động, cậu tra lại xem.", "今晚的演唱会不是在剧院，就是在体育馆，你再查一下。", "不是……就是…… (Bài 19 · điểm 1).", "不是……，就是……"]
+  ]
+ },
+ {
+  "zh": "留下", "py": "liúxia", "pos": "Động từ", "en": "leave", "vn": "để lại, lưu lại; ở lại", "hv": "lưu hạ", "em": "📌", "k": 2,
+  "explain": ["Để lại (ấn tượng, kỷ niệm, đồ vật…) hoặc ở lại. Bài này: 给 + ai + 留下 + 印象. Sách ghi liúxia (下 đọc nhẹ)."],
+  "usage": "留下印象 · 留下回忆 · 留下来 · 留下名字.",
+  "ex": [["他们演唱得好听极了，给我留下的印象特别深。", "Họ hát hay tuyệt, ấn tượng để lại cho tớ đặc biệt sâu."], ["这次旅行给我们留下了很多美好的回忆。", "Chuyến đi này để lại cho chúng tôi rất nhiều kỷ niệm đẹp."]],
+  "collo": [["留下印象", "để lại ấn tượng"], ["留下很深的印象", "để lại ấn tượng sâu"], ["留下电话号码", "để lại số điện thoại"], ["留下来加班", "ở lại tăng ca"]],
+  "pat": [["给 + ai + 留下 + (很深的) 印象", "để lại ấn tượng cho ai"], ["……给我留下的印象 + 很深", "đảo cụm thành chủ ngữ (như bài khoá)"]],
+  "check": [
+   ["Tác phẩm đó viết rất hay, để lại cho chúng tôi ấn tượng rất sâu.", "那部作品写得很棒，给我们留下了很深的印象。", "Câu 选词填空 của bài.", "给……留下……印象"],
+   ["Tuy chỉ ở Bắc Kinh ba ngày, nhưng thành phố này để lại cho tôi ấn tượng rất tốt.", "虽然只在北京待了三天，但是这个城市给我留下了很好的印象。", "Ôn 虽然……但是…… (HSK 3) + 时量补语.", "给……留下了……印象"]
+  ]
+ },
+ {
+  "zh": "青年", "py": "qīngnián", "pos": "Danh từ", "en": "youth; young people", "vn": "thanh niên, người trẻ", "hv": "thanh niên", "em": "🧑", "k": 2,
+  "explain": ["Thanh niên (khoảng 18–35 tuổi). Hay làm định ngữ chỉ người trẻ trong nghề: 青年演员, 青年作家, 青年歌手."],
+  "usage": "青年演员 · 青年作家 · 青年人 · 优秀青年.",
+  "ex": [["咱们要看的这个京剧是青年演员们演的。", "Vở Kinh kịch chúng ta sắp xem là do các diễn viên trẻ diễn."], ["这个作者是现在最受欢迎的青年作家。", "Tác giả này là nhà văn trẻ được yêu thích nhất hiện nay."]],
+  "collo": [["青年演员", "diễn viên trẻ"], ["青年作家", "nhà văn trẻ"], ["青年人", "thanh niên, người trẻ"], ["青年时代", "thời thanh niên"]],
+  "pat": [["青年 + N (nghề)", "青年演员 / 青年作家 / 青年歌手"]],
+  "check": [
+   ["Vở Kinh kịch chúng ta sắp xem là do các diễn viên trẻ diễn.", "咱们要看的这个京剧是青年演员们演的。", "Ôn 是……的 nhấn mạnh người làm (HSK 2–3).", "是……演的"],
+   ["Ngày nay ngày càng nhiều người trẻ thích Kinh kịch.", "现在，越来越多的青年人喜欢上了京剧。", "Ôn 越来越 (HSK 3).", "越来越多的……"]
+  ]
+ },
+ {
+  "zh": "观众", "py": "guānzhòng", "pos": "Danh từ", "en": "audience", "vn": "khán giả, người xem", "hv": "quan chúng", "em": "👏", "k": 2,
+  "explain": ["Người xem (kịch, phim, thi đấu, truyền hình).", "Bẫy Hán Việt: 观众 = khán giả, không phải “quần chúng” (群众 qúnzhòng)."],
+  "usage": "观众们 · 现场观众 · 电视观众 · 受观众欢迎.",
+  "ex": [["要去看的观众也特别多。", "Khán giả muốn đi xem cũng rất đông."], ["演出结束后，观众们都站起来为演员鼓掌。", "Buổi diễn kết thúc, khán giả đều đứng dậy vỗ tay cho diễn viên."]],
+  "collo": [["现场观众", "khán giả tại chỗ"], ["电视观众", "khán giả truyền hình"], ["受观众欢迎", "được khán giả yêu thích"], ["观众们不断鼓掌", "khán giả vỗ tay không ngớt"]],
+  "pat": [["受 + 观众 + (的) 欢迎", "được khán giả hoan nghênh"]],
+  "check": [
+   ["Khán giả đến xem rất đông, ngay cả một vé cũng không mua được nữa.", "来看的观众特别多，连一张票都买不到了。", "Ôn 连……都…… (Bài 17 · điểm 4) + 可能补语 买不到.", "连……都……"],
+   ["Bộ phim này rất được khán giả yêu thích, tôi đã xem nó ba lượt rồi.", "这部电影很受观众欢迎，我已经把它看了三遍了。", "把 + 宾 + 动 + 动量补语 (Bài 19 · điểm 3).", "把……看了三遍"]
+  ]
+ },
+ {
+  "zh": "功课", "py": "gōngkè", "pos": "Danh từ", "en": "preparation; schoolwork", "vn": "bài vở; (做功课) tìm hiểu, chuẩn bị trước", "hv": "công khoá", "em": "📚", "k": 2,
+  "explain": ["Nghĩa gốc: bài vở, bài tập ở trường.", "Nghĩa mở rộng trong bài: 做功课 = tìm hiểu, chuẩn bị trước khi làm việc gì (đi xem kịch, đi du lịch, đi phỏng vấn)."],
+  "usage": "做功课 · 做做功课 · 功课很多 · 提前做功课.",
+  "ex": [["咱们先做做功课，提前了解下，能懂一点儿是一点儿。", "Chúng mình cứ chuẩn bị trước đã, tìm hiểu trước một chút, hiểu được chút nào hay chút ấy."], ["去面试以前，你最好先做做功课，了解一下那家公司。", "Trước khi đi phỏng vấn, bạn nên tìm hiểu trước một chút về công ty đó."]],
+  "collo": [["做功课", "làm bài / chuẩn bị trước"], ["提前做功课", "chuẩn bị trước"], ["功课很多", "bài vở nhiều"], ["复习功课", "ôn bài"]],
+  "pat": [["做做功课", "lặp động từ: làm thử, làm một chút"]],
+  "check": [
+   ["Trước khi đi du lịch, chúng mình chuẩn bị trước đã, tìm hiểu được chút nào hay chút ấy.", "去旅行以前，咱们先做做功课，了解一点儿是一点儿。", "动 + 一 × 是一 × (Bài 19 · điểm 2).", "……一点儿是一点儿"],
+   ["Học kỳ này bài vở rất nhiều, ngay cả cuối tuần cũng không được nghỉ.", "这个学期功课特别多，连周末也不能休息。", "Ôn 连……也…… (Bài 17 · điểm 4).", "连……也……"]
+  ]
+ },
+ {
+  "zh": "转发", "py": "zhuǎnfā", "pos": "Động từ", "en": "forward; repost", "vn": "chuyển tiếp, chia sẻ lại", "hv": "chuyển phát", "em": "📤", "k": 2,
+  "explain": ["Chuyển tiếp (tin nhắn, email, bài viết) cho người khác; chia sẻ lại trên mạng xã hội.", "Bẫy Hán Việt: không phải “chuyển phát” bưu phẩm (gửi hàng là 快递 / 寄)."],
+  "usage": "转发给…… · 转发信息 · 转发文章 · 把……转发给…….",
+  "ex": [["对，我先去网上查资料，查完后也转发给你们。", "Đúng, tớ lên mạng tra tài liệu trước, tra xong cũng chuyển cho các cậu."], ["经理给我发了几条信息，我把他的信息转发给你。", "Quản lý gửi cho tôi mấy tin nhắn, tôi chuyển tiếp tin nhắn của anh ấy cho cậu."]],
+  "collo": [["转发给大家", "chuyển tiếp cho mọi người"], ["转发信息", "chuyển tiếp tin nhắn"], ["转发文章", "chia sẻ bài viết"], ["转发到朋友圈", "chia sẻ lên vòng bạn bè (WeChat)"]],
+  "pat": [["把 + 信息/文章 + 转发给 + ai", "câu chữ 把 với 给"]],
+  "check": [
+   ["Tôi chuyển tiếp tin nhắn của quản lý cho cậu nhé.", "我把经理的信息转发给你吧。", "Câu chữ 把 + V + 给 (HSK 3).", "把……转发给……"],
+   ["Bài viết này hay quá, tôi đã chia sẻ cho các bạn trong lớp rồi.", "这篇文章写得太好了，我已经转发给班里的同学了。", "Ôn V得 + Adj; 篇 là lượng từ của bài viết.", "转发给……"]
+  ]
+ },
+ {
+  "zh": "入口", "py": "rùkǒu", "pos": "Danh từ", "en": "entrance", "vn": "lối vào, cửa vào", "hv": "nhập khẩu", "em": "🚪", "k": 2,
+  "explain": ["Lối vào, cửa vào; đối lập 出口 (lối ra).", "Bẫy Hán Việt: 入口 = lối vào; “nhập khẩu hàng hoá” tiếng Trung là 进口."],
+  "usage": "在入口见 · 大剧院入口 · 地铁入口 · 入口处.",
+  "ex": [["那我就在网上订票了，到时候咱们在大剧院入口见。", "Vậy tớ đặt vé trên mạng nhé, đến lúc đó chúng mình gặp nhau ở lối vào nhà hát lớn."], ["地铁站的入口在银行旁边，出口在马路对面。", "Lối vào ga tàu điện ngầm ở bên cạnh ngân hàng, lối ra ở bên kia đường."]],
+  "collo": [["大剧院入口", "lối vào nhà hát lớn"], ["入口处", "chỗ lối vào"], ["地铁入口", "cửa vào ga tàu điện"], ["入口和出口", "lối vào và lối ra"]],
+  "pat": [["在 + nơi + 入口 + 见", "hẹn gặp ở lối vào"], ["入口 ↔ 出口", "lối vào ↔ lối ra"]],
+  "check": [
+   ["Đến lúc đó chúng ta gặp nhau ở lối vào nhà hát lớn.", "到时候咱们在大剧院入口见。", "Câu bài khoá 2.", "在……入口见"],
+   ["Cậu đến lối vào thì gọi cho tớ, nói không chừng tớ đến muộn mấy phút.", "你到了入口就给我打电话，说不定我会晚到几分钟。", "Ôn 说不定 (Bài 16 · điểm 3).", "说不定……"]
+  ]
+ },
+ {
+  "zh": "国家大剧院", "py": "Guójiā Dàjùyuàn", "pos": "Danh từ riêng", "en": "National Center for the Performing Arts", "vn": "Nhà hát Lớn Quốc gia (Trung Quốc)", "hv": "Quốc gia Đại kịch viện", "em": "🏛️", "k": 2,
+  "explain": ["Trung tâm Nghệ thuật Biểu diễn Quốc gia Trung Quốc ở Bắc Kinh, cạnh Thiên An Môn; toà nhà hình “quả trứng” bằng kính nổi giữa hồ nước, nơi diễn Kinh kịch, nhạc kịch, hoà nhạc."],
+  "usage": "去国家大剧院看京剧 · 在国家大剧院演出 · 大剧院入口.",
+  "ex": [["下周六晚上，我请大家去国家大剧院看京剧，怎么样？", "Tối thứ Bảy tuần sau, tớ mời mọi người đi Nhà hát Lớn Quốc gia xem Kinh kịch, thế nào?"], ["国家大剧院的样子很特别，像一个大鸡蛋。", "Hình dáng của Nhà hát Lớn Quốc gia rất đặc biệt, giống một quả trứng gà khổng lồ."]],
+  "collo": [["去国家大剧院", "đi Nhà hát Lớn Quốc gia"], ["国家大剧院的演出", "buổi diễn ở Nhà hát Lớn Quốc gia"], ["大剧院入口", "lối vào nhà hát lớn"], ["在国家大剧院演出", "biểu diễn ở Nhà hát Lớn Quốc gia"]],
+  "pat": [["去 + 国家大剧院 + 看 + 京剧/话剧", "đi đâu làm gì (liên động)"]],
+  "check": [
+   ["Thứ Bảy tuần sau, tớ mời mọi người đi Nhà hát Lớn Quốc gia xem Kinh kịch.", "下周六，我请大家去国家大剧院看京剧。", "Câu kiêm ngữ 请 + ai + V (HSK 3).", "请……去……看……"],
+   ["Lần đầu đến Bắc Kinh, tôi nhất định phải đến Nhà hát Lớn Quốc gia xem.", "第一次来北京，我说什么也得去国家大剧院看看。", "Ôn 说什么也得…… (Bài 10 · điểm 1).", "说什么也得……"]
+  ]
+ },
+ {
+  "zh": "京剧", "py": "Jīngjù", "pos": "Danh từ riêng", "en": "Peking Opera", "vn": "Kinh kịch (kịch Bắc Kinh)", "hv": "Kinh kịch", "em": "🎎", "k": 2,
+  "explain": ["Loại hình sân khấu truyền thống tiêu biểu của Trung Quốc, kết hợp hát, đọc, diễn, võ (唱、念、做、打), được gọi là “quốc tuý” (国粹). Diễn viên hoá trang mặt nhiều màu (脸谱)."],
+  "usage": "看京剧 · 唱京剧 · 京剧演员 · 京剧艺术.",
+  "ex": [["下周六晚上，我请大家去国家大剧院看京剧，怎么样？", "Tối thứ Bảy tuần sau, tớ mời mọi người đi Nhà hát Lớn Quốc gia xem Kinh kịch, thế nào?"], ["京剧已经有两百多年的历史了，很多外国人也喜欢看。", "Kinh kịch đã có lịch sử hơn hai trăm năm, nhiều người nước ngoài cũng thích xem."]],
+  "collo": [["看京剧", "xem Kinh kịch"], ["唱京剧", "hát Kinh kịch"], ["京剧演员", "diễn viên Kinh kịch"], ["京剧比赛", "cuộc thi Kinh kịch"]],
+  "pat": [["京剧 + 演员 / 艺术 / 比赛", "ghép làm định ngữ"]],
+  "check": [
+   ["Đây là lần đầu tôi xem Kinh kịch, xem hiểu được chút nào hay chút ấy.", "这是我第一次看京剧，能看懂一点儿是一点儿。", "动 + 一 × 是一 × (Bài 19 · điểm 2).", "……一点儿是一点儿"],
+   ["Vì đã tìm hiểu câu chuyện trước một lượt, nên chúng tôi xem Kinh kịch gần như hiểu hết.", "因为提前把故事了解了一遍，所以我们差不多都看懂了京剧。", "把 + 宾 + 动 + 动量补语 (Bài 19 · điểm 3).", "把……了解了一遍"]
+  ]
+ },
+ {
+  "zh": "梅兰芳", "py": "Méi Lánfāng", "pos": "Danh từ riêng", "en": "Mei Lanfang", "vn": "Mai Lan Phương", "hv": "Mai Lan Phương", "em": "🌸", "k": 2,
+  "explain": ["Nghệ sĩ Kinh kịch nổi tiếng bậc nhất Trung Quốc (1894–1961), chuyên đóng vai nữ (旦角), từng đưa Kinh kịch ra biểu diễn ở Mỹ, Nhật, Liên Xô."],
+  "usage": "梅兰芳先生 · 梅兰芳演的京剧 · 京剧艺术家梅兰芳.",
+  "ex": [["梅兰芳先生是中国著名京剧艺术家。", "Ông Mai Lan Phương là nghệ sĩ Kinh kịch nổi tiếng của Trung Quốc."], ["梅兰芳把中国京剧介绍给了全世界。", "Mai Lan Phương đã giới thiệu Kinh kịch Trung Quốc với cả thế giới."]],
+  "collo": [["梅兰芳先生", "ông Mai Lan Phương"], ["梅兰芳的京剧", "Kinh kịch của Mai Lan Phương"], ["京剧艺术家梅兰芳", "nghệ sĩ Kinh kịch Mai Lan Phương"], ["梅兰芳等演员", "các diễn viên như Mai Lan Phương"]],
+  "pat": [["梅兰芳等 + N", "等 = vân vân, liệt kê đại diện (Bài 5 · điểm 4)"]],
+  "check": [
+   ["Vở Kinh kịch đó là do các diễn viên như Mai Lan Phương diễn.", "那个京剧是梅兰芳等演员演的。", "Ôn 等 (Bài 5 · điểm 4) + 是……的.", "是……等……演的"],
+   ["Với tư cách là nghệ sĩ Kinh kịch, Mai Lan Phương cả đời luyện tập không ngừng.", "作为京剧艺术家，梅兰芳一生都在不断地练习。", "Ôn 作为 (Bài 13 · điểm 4).", "作为……，……"]
+  ]
+ },
+ {
+  "zh": "入", "py": "rù", "pos": "Động từ", "en": "go into; enter", "vn": "vào", "hv": "nhập", "em": "➡️", "k": 3,
+  "explain": ["Vào (văn viết, trang trọng) — chủ yếu trong từ ghép: 入座 (vào chỗ ngồi), 入口, 入学, 进入. Khẩu ngữ hằng ngày dùng 进."],
+  "usage": "入座 · 入口 · 入学 · 入场.",
+  "ex": [["入座后，李文指着节目表说……", "Sau khi vào chỗ ngồi, Lý Văn chỉ vào tờ chương trình nói…"], ["演出马上开始了，请观众们尽快入座。", "Buổi diễn sắp bắt đầu, mời quý khán giả nhanh chóng vào chỗ."]],
+  "collo": [["入座", "vào chỗ ngồi"], ["入学", "nhập học"], ["入场", "vào hội trường"], ["入口", "lối vào"]],
+  "pat": [["入 (viết) ≈ 进 (nói)", "入座 / 入学 / 入场"]],
+  "check": [
+   ["Sau khi vào chỗ, Lý Văn chỉ vào tờ chương trình giới thiệu diễn viên với mọi người.", "入座后，李文指着节目表给大家介绍演员。", "V着 + V (HSK 3): 指着…介绍….", "入座后，……"],
+   ["Em gái tôi nhập học năm ngoái, đến nay đã học được hai học kỳ.", "妹妹去年入学，到现在已经学了两个学期了。", "Ôn 时量补语 + 了…了 (HSK 3).", "入学"]
+  ]
+ },
+ {
+  "zh": "指", "py": "zhǐ", "pos": "Động từ", "en": "point at", "vn": "chỉ (vào); ám chỉ", "hv": "chỉ", "em": "👉", "k": 3,
+  "explain": ["Dùng ngón tay hoặc đồ vật chỉ vào; nghĩa mở rộng: nói đến, ám chỉ (指的是…). 指着 + vật + 说 = vừa chỉ vào … vừa nói."],
+  "usage": "指着……说 · 用手指 · 指路 · 指的是…….",
+  "ex": [["入座后，李文指着节目表说……", "Sau khi vào chỗ ngồi, Lý Văn chỉ vào tờ chương trình nói…"], ["孩子指着天上的飞机，高兴地叫了起来。", "Đứa bé chỉ vào chiếc máy bay trên trời, vui sướng kêu lên."]],
+  "collo": [["指着节目表", "chỉ vào tờ chương trình"], ["用手指", "dùng tay chỉ"], ["指路", "chỉ đường"], ["你指的是……", "ý bạn là …"]],
+  "pat": [["指着 + N + V", "V着 chỉ cách thức của động tác sau"], ["A 指的是 B", "A ám chỉ B"]],
+  "check": [
+   ["Cô giáo chỉ vào bức ảnh trên bảng, hỏi chúng tôi đây là ai.", "老师指着黑板上的图片，问我们这是谁。", "V着 + V (HSK 3).", "指着……问……"],
+   ["“Người ấy” mà cậu nói là chỉ ai thế?", "你说的“那个人”，指的是谁啊？", "指的是 = ám chỉ, nói đến.", "……指的是……"]
+  ]
+ },
+ {
+  "zh": "功夫", "py": "gōngfu", "pos": "Danh từ", "en": "skill; workmanship", "vn": "tay nghề, bản lĩnh; công sức; võ thuật", "hv": "công phu", "em": "🥋", "k": 3,
+  "explain": ["Ở bài này: trình độ, tay nghề do luyện tập lâu năm mà có — 功夫很深 = tay nghề rất cao.", "Nghĩa khác: võ thuật (中国功夫 — kungfu); thời gian, công sức (下功夫, 花功夫). 夫 đọc thanh nhẹ."],
+  "usage": "功夫很深 · 中国功夫 · 下功夫 · 花功夫.",
+  "ex": [["这些演员很专业，功夫很深。", "Những diễn viên này rất chuyên nghiệp, tay nghề rất cao."], ["要想学好中文，就得多下功夫。", "Muốn học giỏi tiếng Trung thì phải bỏ nhiều công sức."]],
+  "collo": [["功夫很深", "tay nghề rất cao"], ["中国功夫", "võ thuật Trung Quốc"], ["下功夫", "bỏ công sức"], ["花功夫", "tốn công"]],
+  "pat": [["功夫 + 很深", "tay nghề cao, luyện lâu năm"], ["在……上下功夫", "dồn công sức vào việc gì"]],
+  "check": [
+   ["Muốn viết chữ Hán cho đẹp thì phải bỏ nhiều công sức.", "要想把汉字写好，就得多下功夫。", "Ôn 把 + 宾 + V + 结果补语 (HSK 3).", "下功夫"],
+   ["Người diễn viên đó đã luyện hơn mười năm, tay nghề rất cao.", "那位演员已经练了十多年，功夫很深。", "Ôn 时量补语 + 多 (HSK 3).", "功夫很深"]
+  ]
+ },
+ {
+  "zh": "获奖", "py": "huòjiǎng", "pos": "Động từ", "en": "win a prize", "vn": "đoạt giải, được giải", "hv": "hoạch tưởng", "em": "🏆", "k": 3,
+  "explain": ["Đoạt giải. Là động từ li hợp (获 + 奖): 获过很多奖, 获了大奖. Văn viết; khẩu ngữ hay nói 得奖."],
+  "usage": "获奖 · 获过奖 · 获了大奖 · 获奖作品.",
+  "ex": [["这些演员很专业，功夫很深，在京剧比赛中获过很多奖。", "Những diễn viên này rất chuyên nghiệp, tay nghề rất cao, đã đoạt nhiều giải trong các cuộc thi Kinh kịch."], ["这部获奖作品写的是一个普通少年的故事。", "Tác phẩm đoạt giải này viết về câu chuyện của một thiếu niên bình thường."]],
+  "collo": [["获奖作品", "tác phẩm đoạt giải"], ["获奖演员", "diễn viên đoạt giải"], ["获过很多奖", "từng đoạt nhiều giải"], ["获国际大奖", "đoạt giải quốc tế lớn"]],
+  "pat": [["获 + (过/了) + số lượng + 奖", "tách li hợp"], ["在 + cuộc thi + 中 + 获奖", "đoạt giải trong cuộc thi"]],
+  "check": [
+   ["Họ đã từng đoạt rất nhiều giải trong các cuộc thi Kinh kịch.", "他们在京剧比赛中获过很多奖。", "Câu bài khoá 3; V + 过 chen giữa li hợp.", "在……中获过……奖"],
+   ["Bài văn của em gái tôi được giải, cả nhà ai cũng vui.", "妹妹的作文获奖了，全家人都特别高兴。", "了 chỉ thay đổi (HSK 2).", "……获奖了"]
+  ]
+ },
+ {
+  "zh": "奖", "py": "jiǎng", "pos": "Danh từ", "en": "award; prize", "vn": "giải thưởng", "hv": "tưởng", "em": "🥇", "k": 3,
+  "explain": ["Giải thưởng. Hay gặp: 大奖, 一等奖, 得奖, 获奖, 奖金 (tiền thưởng)."],
+  "usage": "大奖 · 一等奖 · 得奖 · 国际大奖.",
+  "ex": [["有的还是国家、国际大奖。", "Có giải còn là giải quốc gia, quốc tế lớn."], ["这次比赛他得了一等奖。", "Cuộc thi lần này anh ấy được giải nhất."]],
+  "collo": [["国际大奖", "giải quốc tế lớn"], ["一等奖", "giải nhất"], ["二等奖", "giải nhì"], ["奖金", "tiền thưởng"]],
+  "pat": [["一 / 二 / 三 + 等奖", "giải nhất / nhì / ba"]],
+  "check": [
+   ["Cuộc thi lần này anh ấy được giải nhất.", "这次比赛他得了一等奖。", "一等奖 = giải nhất.", "得了……奖"],
+   ["Dù không được giải, chúng tôi cũng học được rất nhiều.", "即使没获奖，我们也学到了很多。", "Ôn 即使……也…… (Bài 11 · điểm 1).", "即使……也……"]
+  ]
+ },
+ {
+  "zh": "期待", "py": "qīdài", "pos": "Động từ", "en": "look forward to", "vn": "mong chờ, mong đợi", "hv": "kỳ đãi", "em": "🤩", "k": 3,
+  "explain": ["Mong đợi một việc tốt sắp đến; trang trọng hơn 盼望 / 希望. Cũng làm danh từ: 大家的期待 (sự kỳ vọng của mọi người)."],
+  "usage": "期待演出 · 特别期待 · 期待着 · 期待你的回信.",
+  "ex": [["我特别期待这场演出。", "Tớ rất mong chờ buổi diễn này."], ["我们都很期待和你再次见面。", "Chúng tôi đều rất mong được gặp lại bạn."]],
+  "collo": [["特别期待", "rất mong chờ"], ["期待这场演出", "mong chờ buổi diễn này"], ["期待你的到来", "mong bạn đến"], ["让人期待", "khiến người ta mong chờ"]],
+  "pat": [["期待 + N / V (sự việc)", "mong chờ việc gì"]],
+  "check": [
+   ["Đây là lần đầu tôi xem Kinh kịch, tôi rất mong chờ buổi diễn tối nay.", "这是我第一次看京剧，我特别期待今晚的演出。", "Chủ ngữ + 特别期待 + N.", "特别期待……"],
+   ["Chúng tôi đều rất mong được gặp lại các bạn.", "我们都很期待再次和你们见面。", "Ôn 再次 (Bài 10 · điểm 4).", "期待再次……"]
+  ]
+ },
+ {
+  "zh": "鼓掌", "py": "gǔzhǎng", "pos": "Động từ", "en": "clap one's hands", "vn": "vỗ tay", "hv": "cổ chưởng", "em": "👏", "k": 3,
+  "explain": ["Vỗ tay (khen ngợi, hoan nghênh). Li hợp: 鼓了掌, 鼓起掌来. Muốn nói vỗ tay cho ai dùng 为/给 + ai + 鼓掌 (✗ 鼓掌演员)."],
+  "usage": "不断鼓掌 · 为……鼓掌 · 热烈鼓掌 · 鼓起掌来.",
+  "ex": [["演出开始后，他们看到演员们做的动作很难，但是做得都特别好，观众们不断鼓掌。", "Buổi diễn bắt đầu, họ thấy động tác các diễn viên làm rất khó nhưng đều làm cực đẹp, khán giả vỗ tay không ngớt."], ["他讲完以后，大家都为他鼓掌。", "Anh ấy nói xong, mọi người đều vỗ tay cho anh ấy."]],
+  "collo": [["不断鼓掌", "vỗ tay không ngớt"], ["为他鼓掌", "vỗ tay cho anh ấy"], ["热烈鼓掌", "vỗ tay nhiệt liệt"], ["鼓掌欢迎", "vỗ tay hoan nghênh"]],
+  "pat": [["为 / 给 + ai + 鼓掌", "✗ 鼓掌 + ai"]],
+  "check": [
+   ["Cô ấy hát xong, cả hội trường đều vỗ tay cho cô ấy.", "她唱完以后，全场观众都为她鼓掌。", "为 + ai + 鼓掌.", "为……鼓掌"],
+   ["Động tác rất khó, nhưng các diễn viên làm rất đẹp, khán giả vỗ tay không ngớt.", "动作很难，但是演员们做得特别好，观众们不断鼓掌。", "Câu bài khoá 3; bổ ngữ trình độ.", "不断鼓掌"]
+  ]
+ },
+ {
+  "zh": "邀请", "py": "yāoqǐng", "pos": "Động từ", "en": "invite", "vn": "mời; lời mời", "hv": "yêu thỉnh", "em": "💌", "k": 3,
+  "explain": ["Mời (trang trọng hơn 请): 邀请 + ai + V (câu kiêm ngữ).", "Cũng dùng làm danh từ: 收到邀请 (nhận được lời mời), 接受邀请 (nhận lời)."],
+  "usage": "邀请 + ai + V · 收到邀请 · 接受邀请 · 邀请函 (thư mời).",
+  "ex": [["演出结束后，演员们邀请观众和他们一起庆祝演出成功。", "Buổi diễn kết thúc, các diễn viên mời khán giả cùng họ ăn mừng buổi diễn thành công."], ["收到演出邀请后，他们马上就开始排新节目。", "Nhận được lời mời biểu diễn, họ lập tức bắt đầu tập tiết mục mới."]],
+  "collo": [["邀请朋友", "mời bạn bè"], ["收到邀请", "nhận được lời mời"], ["接受邀请", "nhận lời mời"], ["发出邀请", "gửi lời mời"]],
+  "pat": [["邀请 + ai + V", "câu kiêm ngữ (giống 请 / 让 — Bài 18 · điểm 2)"]],
+  "check": [
+   ["Họ mời chúng tôi cuối tuần đến nhà ăn cơm.", "他们邀请我们周末去家里吃饭。", "Câu kiêm ngữ 邀请 + ai + V.", "邀请……V"],
+   ["Nhận được lời mời rồi, nhưng tôi không phải tăng ca thì là đi công tác, e là không đi được.", "收到邀请了，可是我不是加班，就是出差，恐怕去不了。", "不是……就是…… (Bài 19 · điểm 1) + V不了 (Bài 4 · điểm 1).", "不是……，就是……"]
+  ]
+ },
+ {
+  "zh": "庆祝", "py": "qìngzhù", "pos": "Động từ", "en": "celebrate", "vn": "ăn mừng, chúc mừng, kỷ niệm", "hv": "khánh chúc", "em": "🎉", "k": 3,
+  "explain": ["Ăn mừng, tổ chức kỷ niệm một sự kiện vui. Tân ngữ là SỰ VIỆC (庆祝生日, 庆祝成功, 庆祝节日), không phải người — chúc mừng ai thì nói 祝贺你."],
+  "usage": "庆祝生日 · 庆祝成功 · 庆祝节日 · 庆祝一下.",
+  "ex": [["演出结束后，演员们邀请观众和他们一起庆祝演出成功。", "Buổi diễn kết thúc, các diễn viên mời khán giả cùng họ ăn mừng buổi diễn thành công."], ["下周五是妈妈的生日，我们一起庆祝一下吧。", "Thứ Sáu tuần sau là sinh nhật mẹ, chúng mình cùng tổ chức một chút nhé."]],
+  "collo": [["庆祝演出成功", "ăn mừng buổi diễn thành công"], ["庆祝生日", "tổ chức sinh nhật"], ["庆祝一下", "ăn mừng một chút"], ["庆祝活动", "hoạt động kỷ niệm"]],
+  "pat": [["庆祝 + sự việc", "✗ 庆祝你 → ✓ 祝贺你"]],
+  "check": [
+   ["Chúng mình thi xong rồi, tối nay đi ăn một bữa ăn mừng nhé!", "咱们考完了，今晚去吃顿饭庆祝一下吧！", "庆祝一下 (V + 一下).", "庆祝一下"],
+   ["Sinh nhật mẹ, chúng tôi nấu mấy món mẹ thích để cùng ăn mừng.", "妈妈过生日，我们给她做了几个她爱吃的菜，一起庆祝了一下。", "Câu 选词填空 của bài.", "一起庆祝"]
+  ]
+ },
+ {
+  "zh": "点头", "py": "diǎntóu", "pos": "Động từ", "en": "nod (one's head)", "vn": "gật đầu", "hv": "điểm đầu", "em": "🙆", "k": 3,
+  "explain": ["Gật đầu (đồng ý, chào hỏi). Li hợp: 点了点头, 点点头. Đối lập: 摇头 (lắc đầu)."],
+  "usage": "点头说 · 点点头 · 点了点头 · 点头同意.",
+  "ex": [["李文点头说：“是啊，以后咱们还来看。”", "Lý Văn gật đầu nói: “Đúng vậy, sau này chúng mình lại đến xem.”"], ["在有的国家，点头是“不”的意思。", "Ở có những nước, gật đầu lại có nghĩa là “không”."]],
+  "collo": [["点头同意", "gật đầu đồng ý"], ["点头答应", "gật đầu nhận lời"], ["点头说", "gật đầu nói"], ["点头和摇头", "gật đầu và lắc đầu"]],
+  "pat": [["点了点头 / 点点头", "li hợp lặp lại: gật nhẹ"]],
+  "check": [
+   ["Nghe tôi nói xong, bố cười gật đầu, chẳng nói gì.", "听我说完，爸爸笑着点头，什么也没说。", "V着 + V (HSK 3) + đại từ nghi vấn phiếm chỉ 什么也没….", "笑着点头"],
+   ["Ở có những nước, gật đầu lại mang nghĩa “không”.", "在有的国家，点头却是“不”的意思。", "Ôn 却 (Bài 16 · điểm 4).", "……却……"]
+  ]
+ },
+ {
+  "zh": "作品", "py": "zuòpǐn", "pos": "Danh từ", "en": "works (of literature and art)", "vn": "tác phẩm", "hv": "tác phẩm", "em": "📖", "k": 4,
+  "explain": ["Tác phẩm văn học, nghệ thuật (sách, tranh, phim, bài hát…). Lượng từ thường dùng: 部 (tác phẩm lớn), 件 (tác phẩm mỹ thuật)."],
+  "usage": "一部作品 · 文学作品 · 艺术作品 · 获奖作品.",
+  "ex": [["最后完成了一部作品——《马可·波罗游记》。", "Cuối cùng hoàn thành một tác phẩm — “Du ký Marco Polo”."], ["这位作家的作品我几乎都读过。", "Tác phẩm của nhà văn này tôi gần như đã đọc hết."]],
+  "collo": [["一部作品", "một tác phẩm"], ["文学作品", "tác phẩm văn học"], ["艺术作品", "tác phẩm nghệ thuật"], ["完成作品", "hoàn thành tác phẩm"]],
+  "pat": [["一部 + 作品 / 小说 / 电影", "lượng từ 部 cho tác phẩm lớn"]],
+  "check": [
+   ["Đây là một tác phẩm có ảnh hưởng rất lớn.", "这是一部影响很大的作品。", "Lượng từ 部.", "一部……作品"],
+   ["Tác phẩm của nhà văn ấy, tôi đã đọc nó mấy lượt rồi.", "那位作家的作品，我已经把它读了好几遍了。", "把 + 宾 + 动 + 动量补语 (Bài 19 · điểm 3).", "把……读了好几遍"]
+  ]
+ },
+ {
+  "zh": "作者", "py": "zuòzhě", "pos": "Danh từ", "en": "author", "vn": "tác giả", "hv": "tác giả", "em": "✍️", "k": 4,
+  "explain": ["Người viết ra một tác phẩm, bài viết CỤ THỂ. Phân biệt: 作者 (tác giả của tác phẩm nào đó) — 作家 (nghề nhà văn): người viết một bài báo là 作者 nhưng chưa chắc là 作家."],
+  "usage": "这本书的作者 · 文章的作者 · 作者介绍.",
+  "ex": [["在这部影响很大的作品中，作者向世界介绍了13世纪时的中国。", "Trong tác phẩm có ảnh hưởng rất lớn này, tác giả đã giới thiệu với thế giới Trung Quốc thế kỷ 13."], ["这本书的作者是一位年轻的医生。", "Tác giả cuốn sách này là một bác sĩ trẻ."]],
+  "collo": [["这本书的作者", "tác giả cuốn sách này"], ["文章的作者", "tác giả bài viết"], ["作者介绍", "giới thiệu tác giả"], ["年轻作者", "tác giả trẻ"]],
+  "pat": [["作品 + 的 + 作者", "tác giả của …"], ["作者 vs 作家", "tác giả (của tác phẩm cụ thể) / nhà văn (nghề)"]],
+  "check": [
+   ["Tác giả này là nhà văn trẻ được yêu thích nhất hiện nay.", "这个作者是现在最受欢迎的青年作家。", "Câu 选词填空 của bài.", "作者……作家"],
+   ["Trong cuốn sách, tác giả giới thiệu văn hoá Việt Nam với độc giả.", "在这本书中，作者向读者介绍了越南的文化。", "向 + ai + 介绍 (HSK 3).", "向……介绍……"]
+  ]
+ },
+ {
+  "zh": "世纪", "py": "shìjì", "pos": "Danh từ", "en": "century", "vn": "thế kỷ", "hv": "thế kỷ", "em": "🕰️", "k": 4,
+  "explain": ["Thế kỷ (100 năm). Trật tự khác tiếng Việt: số đứng TRƯỚC — 13世纪 = thế kỷ 13; 上个世纪 = thế kỷ trước."],
+  "usage": "13世纪 · 二十一世纪 · 上个世纪 · 世纪末.",
+  "ex": [["作者向世界介绍了13世纪时的中国。", "Tác giả đã giới thiệu với thế giới Trung Quốc thế kỷ 13."], ["二十一世纪，科技发展得越来越快。", "Thế kỷ 21, khoa học công nghệ phát triển ngày càng nhanh."]],
+  "collo": [["13世纪", "thế kỷ 13"], ["二十一世纪", "thế kỷ 21"], ["上个世纪", "thế kỷ trước"], ["世纪末", "cuối thế kỷ"]],
+  "pat": [["số + 世纪", "✗ 世纪十三 → ✓ 十三世纪 (ngược tiếng Việt)"]],
+  "check": [
+   ["Marco Polo đến Trung Quốc vào thế kỷ 13.", "马可·波罗是13世纪来到中国的。", "Ôn 是……的 nhấn thời gian (HSK 2).", "是……世纪……的"],
+   ["Thế kỷ trước, người đi du lịch nước ngoài rất ít; bây giờ thì khác hẳn rồi.", "上个世纪，出国旅行的人很少；现在却完全不同了。", "Ôn 却 (Bài 16 · điểm 4).", "上个世纪……"]
+  ]
+ },
+ {
+  "zh": "读者", "py": "dúzhě", "pos": "Danh từ", "en": "reader", "vn": "độc giả, người đọc", "hv": "độc giả", "em": "👓", "k": 4,
+  "explain": ["Người đọc sách, báo, tác phẩm. 者 = người làm việc gì: 读者, 作者, 记者 (nhà báo)."],
+  "usage": "作为读者 · 年轻读者 · 读者来信 · 受读者欢迎.",
+  "ex": [["作为读者，读完这部作品后，我也很想成为作家。", "Với tư cách là độc giả, đọc xong tác phẩm này, tôi cũng rất muốn trở thành nhà văn."], ["这本小说很受年轻读者的欢迎。", "Cuốn tiểu thuyết này rất được độc giả trẻ yêu thích."]],
+  "collo": [["作为读者", "với tư cách độc giả"], ["年轻读者", "độc giả trẻ"], ["读者来信", "thư độc giả"], ["受读者欢迎", "được độc giả yêu thích"]],
+  "pat": [["V + 者 → người làm việc đó", "读者 / 作者 / 记者"]],
+  "check": [
+   ["Với tư cách là độc giả, tôi rất thích cách viết của tác giả này.", "作为读者，我很喜欢这个作者的写法。", "Ôn 作为 (Bài 13 · điểm 4).", "作为读者，……"],
+   ["Cuốn sách này rất được độc giả trẻ yêu thích.", "这本书很受年轻读者的欢迎。", "受……欢迎.", "受……欢迎"]
+  ]
+ },
+ {
+  "zh": "作家", "py": "zuòjiā", "pos": "Danh từ", "en": "writer", "vn": "nhà văn", "hv": "tác gia", "em": "🖋️", "k": 4,
+  "explain": ["Nhà văn — người lấy sáng tác văn học làm nghề. 家 = nhà chuyên môn: 作家, 画家, 艺术家, 旅行家, 科学家."],
+  "usage": "青年作家 · 著名作家 · 成为作家 · 做一名作家.",
+  "ex": [["作为读者，读完这部作品后，我也很想成为作家。", "Với tư cách là độc giả, đọc xong tác phẩm này, tôi cũng rất muốn trở thành nhà văn."], ["十几年后，她成为了一名优秀作家。", "Mười mấy năm sau, cô ấy đã trở thành một nhà văn xuất sắc."]],
+  "collo": [["青年作家", "nhà văn trẻ"], ["著名作家", "nhà văn nổi tiếng"], ["成为作家", "trở thành nhà văn"], ["做一名作家", "làm một nhà văn"]],
+  "pat": [["N + 家 → nhà chuyên môn", "作家 / 艺术家 / 旅行家"]],
+  "check": [
+   ["Hồi đó cô ấy viết văn không phải để làm nhà văn, chỉ là thấy thú vị.", "那时候她写文章并不是为了成为作家，只是觉得有趣。", "Bài hoàn thành đoạn văn; ôn 并 (Bài 2 · điểm 3).", "并不是为了……"],
+   ["Cho dù không trở thành nhà văn, tôi cũng sẽ kiên trì viết nhật ký.", "就是成不了作家，我也会坚持写日记。", "Ôn 就是……也…… (Bài 11 · điểm 2) + V不了 (Bài 4).", "就是……也……"]
+  ]
+ },
+ {
+  "zh": "版", "py": "bǎn", "pos": "Danh từ", "en": "edition", "vn": "bản, phiên bản, ấn bản", "hv": "bản", "em": "📕", "k": 4,
+  "explain": ["Phiên bản của sách, phần mềm… theo ngôn ngữ hoặc lần in: 中文版 (bản tiếng Trung), 英文版, 新版, 第二版, 手机版."],
+  "usage": "中文版 · 英文版 · 新版 · 第二版.",
+  "ex": [["前两天，我去书店看到了中文版的《马可·波罗游记》。", "Mấy hôm trước, tôi ra hiệu sách thấy “Du ký Marco Polo” bản tiếng Trung."], ["这本书的越南语版去年刚出版。", "Bản tiếng Việt của cuốn sách này năm ngoái mới xuất bản."]],
+  "collo": [["中文版", "bản tiếng Trung"], ["英文版", "bản tiếng Anh"], ["新版", "bản mới"], ["手机版", "phiên bản điện thoại"]],
+  "pat": [["ngôn ngữ + 版", "中文版 / 英文版 / 越南文版"]],
+  "check": [
+   ["Cuốn sách này có bản tiếng Trung không?", "这本书有中文版吗？", "中文版 = bản tiếng Trung.", "……版"],
+   ["Tôi đã đọc bản tiếng Anh một lượt, bây giờ lại muốn đọc bản tiếng Trung.", "我把英文版看了一遍，现在又想看中文版。", "把 + 宾 + 动 + 动量补语 (Bài 19 · điểm 3).", "把……看了一遍"]
+  ]
+ },
+ {
+  "zh": "文章", "py": "wénzhāng", "pos": "Danh từ", "en": "essay; article", "vn": "bài văn, bài viết", "hv": "văn chương", "em": "📝", "k": 4,
+  "explain": ["Một bài viết, bài văn cụ thể; lượng từ 篇 (piān).", "Bẫy Hán Việt: 文章 = bài viết, không phải “văn chương” nói chung (văn học = 文学)."],
+  "usage": "一篇文章 · 写文章 · 发表文章 · 文章的意思.",
+  "ex": [["我决定把自己来中国后写的文章、日记等全部整理出来。", "Tôi quyết định sắp xếp lại toàn bộ những bài viết, nhật ký… tôi viết từ khi đến Trung Quốc."], ["你理解这篇文章的意思了吗？", "Bạn đã hiểu ý của bài viết này chưa?"]],
+  "collo": [["一篇文章", "một bài viết"], ["写文章", "viết bài"], ["发表文章", "đăng bài"], ["文章的意思", "ý của bài viết"]],
+  "pat": [["一篇 + 文章", "lượng từ 篇"]],
+  "check": [
+   ["Bài viết này tôi đọc mấy lượt rồi mà vẫn không nhớ được.", "这篇文章我已经读了好几遍了，还是记不住。", "Câu 选词填空 + 可能补语 记不住 (Bài 4).", "读了好几遍"],
+   ["Bạn phải hiểu ý của bài viết trước, sau đó mới học thuộc.", "你要先理解这篇文章的意思，然后再记。", "Ôn 先……然后…… (Bài 14 · điểm 2).", "先……然后……"]
+  ]
+ },
+ {
+  "zh": "全部", "py": "quánbù", "pos": "Danh từ", "en": "all; whole", "vn": "toàn bộ, tất cả", "hv": "toàn bộ", "em": "💯", "k": 4,
+  "explain": ["Toàn bộ, tất cả, không sót phần nào. Làm định ngữ (全部的作品) hoặc trạng ngữ đứng trước động từ (全部整理出来)."],
+  "usage": "全部做完 · 全部整理出来 · 全部的钱 · 全部同学.",
+  "ex": [["我决定把自己来中国后写的文章、日记等全部整理出来。", "Tôi quyết định sắp xếp lại toàn bộ những bài viết, nhật ký… tôi viết từ khi đến Trung Quốc."], ["今天的作业我已经全部做完了。", "Bài tập hôm nay tôi đã làm xong hết rồi."]],
+  "collo": [["全部做完", "làm xong hết"], ["全部整理出来", "sắp xếp lại toàn bộ"], ["全部的钱", "toàn bộ số tiền"], ["全部同学", "tất cả các bạn"]],
+  "pat": [["把 + N + 全部 + V + 补语", "全部 đứng trước động từ"]],
+  "check": [
+   ["Hôm nay phải gửi đi toàn bộ số hàng này.", "今天必须把这些货全部发出去。", "把 + 宾 + 全部 + V + 补语 (HSK 3).", "把……全部……"],
+   ["Nhiều từ mới như vậy, tôi mất ba ngày mới học xong hết.", "这么多生词，我用了三天时间才全部学完。", "Ôn 才 (HSK 3).", "才全部学完"]
+  ]
+ },
+ {
+  "zh": "整理", "py": "zhěnglǐ", "pos": "Động từ", "en": "sort out", "vn": "sắp xếp, chỉnh lý, thu dọn", "hv": "chỉnh lý", "em": "🗂️", "k": 4,
+  "explain": ["Sắp xếp cho gọn gàng, có trật tự (đồ đạc, tài liệu, bài viết). 整理出来 = sắp xếp xong, thành sản phẩm. Gần 收拾 (dọn đồ) nhưng 整理 dùng được cả cho tài liệu, vở ghi."],
+  "usage": "整理房间 · 整理资料 · 整理出来 · 整理一下.",
+  "ex": [["我决定把自己来中国后写的文章、日记等全部整理出来。", "Tôi quyết định sắp xếp lại toàn bộ những bài viết, nhật ký… tôi viết từ khi đến Trung Quốc."], ["桌子上的东西太乱了，我把它们整理了半个小时。", "Đồ trên bàn lộn xộn quá, tôi sắp xếp chúng mất nửa tiếng."]],
+  "collo": [["整理房间", "dọn phòng"], ["整理资料", "sắp xếp tài liệu"], ["整理笔记", "chỉnh lý vở ghi"], ["整理出来", "sắp xếp xong"]],
+  "pat": [["把 + N + 整理 + 出来 / 好", "kết quả của việc sắp xếp"], ["把 + N + 整理了 + thời lượng", "Bài 19 · điểm 4"]],
+  "check": [
+   ["Đồ trên bàn nhiều quá, lộn xộn quá, tôi sắp xếp chúng mất nửa tiếng.", "桌子上的东西太多、太乱了，我把它们整理了半个小时。", "把 + 宾 + 动 + 时量补语 (Bài 19 · điểm 4).", "把……整理了半个小时"],
+   ["Thi xong, tôi sắp xếp lại vở ghi của cả học kỳ một chút.", "考完试，我把整个学期的笔记整理了一下。", "把 + V + 一下.", "把……整理一下"]
+  ]
+ },
+ {
+  "zh": "文字", "py": "wénzì", "pos": "Danh từ", "en": "writing (as regards form or style)", "vn": "chữ viết; lời văn, câu chữ", "hv": "văn tự", "em": "🔤", "k": 4,
+  "explain": ["(1) Chữ viết (汉字 là một loại 文字). (2) Lời văn, câu chữ của tác phẩm: 这部小说的文字很美. (3) Phần chữ (khác phần ảnh): 文字加图片."],
+  "usage": "文字很美 · 文字加图片 · 中国文字 · 文字工作.",
+  "ex": [["完成一部文字加图片的作品——《东方旅行日记》。", "Hoàn thành một tác phẩm có chữ kèm ảnh — “Nhật ký du hành phương Đông”."], ["这部小说的文字很美，我都看了好几遍了。", "Lời văn của cuốn tiểu thuyết này rất đẹp, tôi đã đọc mấy lượt rồi."]],
+  "collo": [["文字很美", "lời văn rất đẹp"], ["文字加图片", "chữ kèm ảnh"], ["中国文字", "chữ viết Trung Quốc"], ["文字工作", "công việc viết lách"]],
+  "pat": [["文字 + 加 + 图片", "chữ + ảnh"], ["文字 / 文章 / 文学", "chữ, lời văn / bài viết / văn học"]],
+  "check": [
+   ["Lời văn của cuốn tiểu thuyết này rất đẹp, tôi đọc mấy lượt rồi.", "这部小说的文字很美，我都看了好几遍了。", "Câu 选词填空 của bài.", "……的文字很美"],
+   ["Chữ Hán là một trong những chữ viết lâu đời nhất thế giới.", "汉字是世界上最古老的文字之一。", "Cấu trúc 最……之一 = một trong những … nhất.", "……之一"]
+  ]
+ },
+ {
+  "zh": "图片", "py": "túpiàn", "pos": "Danh từ", "en": "picture", "vn": "hình ảnh, tranh ảnh", "hv": "đồ phiến", "em": "🖼️", "k": 4,
+  "explain": ["Hình ảnh, tranh ảnh (ảnh chụp, hình minh hoạ, ảnh trên mạng); lượng từ 张."],
+  "usage": "一张图片 · 看图片 · 网上的图片 · 文字加图片.",
+  "ex": [["完成一部文字加图片的作品——《东方旅行日记》。", "Hoàn thành một tác phẩm có chữ kèm ảnh — “Nhật ký du hành phương Đông”."], ["他把旅行时拍的图片都转发给了我们。", "Anh ấy chuyển cho chúng tôi hết những tấm ảnh chụp khi đi du lịch."]],
+  "collo": [["一张图片", "một tấm ảnh"], ["看图片", "xem ảnh"], ["网上的图片", "ảnh trên mạng"], ["图片和文字", "hình và chữ"]],
+  "pat": [["一张 + 图片", "lượng từ 张"]],
+  "check": [
+   ["Anh ấy chuyển tiếp cho chúng tôi toàn bộ ảnh chụp khi đi du lịch.", "他把旅行时拍的图片全部转发给了我们。", "把 + 全部 + V + 给.", "把……转发给……"],
+   ["Cuốn sách này chữ ít, ảnh nhiều, rất hợp cho trẻ con đọc.", "这本书文字少，图片多，很适合小孩子看。", "Ôn 适合 (HSK 3).", "……很适合……"]
+  ]
+ },
+ {
+  "zh": "报考", "py": "bàokǎo", "pos": "Động từ", "en": "enter oneself for an examination", "vn": "đăng ký dự thi (vào trường, ngành)", "hv": "báo khảo", "em": "🎓", "k": 4,
+  "explain": ["Đăng ký dự thi vào một trường / chuyên ngành / bậc học: 报考 + 学校 / 专业 / 研究生. Tân ngữ là nơi muốn vào, không phải kỳ thi (✗ 报考考试 → ✓ 报名参加考试)."],
+  "usage": "报考研究生 · 报考大学 · 报考专业 · 报考条件.",
+  "ex": [["同时我也想继续学习中文和中国文化，报考中国语言文学专业的研究生。", "Đồng thời tôi cũng muốn tiếp tục học tiếng Trung và văn hoá Trung Quốc, đăng ký thi cao học chuyên ngành ngôn ngữ văn học Trung Quốc."], ["姐姐今年报考了北京的一所大学。", "Năm nay chị tôi đăng ký thi vào một trường đại học ở Bắc Kinh."]],
+  "collo": [["报考研究生", "đăng ký thi cao học"], ["报考大学", "đăng ký thi đại học"], ["报考专业", "chuyên ngành đăng ký thi"], ["报考条件", "điều kiện dự thi"]],
+  "pat": [["报考 + trường / ngành / bậc học", "✗ 报考考试"]],
+  "check": [
+   ["Năm sau tôi định thi cao học chuyên ngành ngôn ngữ văn học Trung Quốc.", "明年我打算报考中国语言文学专业的研究生。", "Câu bài khoá 4.", "报考……研究生"],
+   ["Để thi vào trường đó, anh ấy đã ôn nội dung thi suốt một năm.", "为了报考那所大学，他把考试内容复习了整整一年。", "把 + 宾 + 动 + 时量补语 (Bài 19 · điểm 4).", "把……复习了整整一年"]
+  ]
+ },
+ {
+  "zh": "文学", "py": "wénxué", "pos": "Danh từ", "en": "literature", "vn": "văn học", "hv": "văn học", "em": "📚", "k": 4,
+  "explain": ["Văn học — nghệ thuật dùng ngôn ngữ (tiểu thuyết, thơ, kịch, tản văn…); cũng là tên chuyên ngành: 中国语言文学专业 (ngành ngôn ngữ và văn học Trung Quốc)."],
+  "usage": "中国文学 · 文学作品 · 语言文学专业 · 文学家.",
+  "ex": [["同时我也想继续学习中文和中国文化，报考中国语言文学专业的研究生。", "Đồng thời tôi cũng muốn tiếp tục học tiếng Trung và văn hoá Trung Quốc, đăng ký thi cao học chuyên ngành ngôn ngữ văn học Trung Quốc."], ["我从小就喜欢文学，最喜欢看小说。", "Tôi thích văn học từ nhỏ, thích nhất là đọc tiểu thuyết."]],
+  "collo": [["中国文学", "văn học Trung Quốc"], ["文学作品", "tác phẩm văn học"], ["语言文学专业", "chuyên ngành ngôn ngữ văn học"], ["文学家", "nhà văn học"]],
+  "pat": [["文学 / 文章 / 文字", "văn học (lĩnh vực) / bài viết / chữ, lời văn"]],
+  "check": [
+   ["Tôi rất thích văn học, tác phẩm của nhà văn này tôi gần như đã đọc hết.", "我很喜欢文学，这位作家的作品我差不多都读过了。", "差不多 + 都 (HSK 3).", "差不多都……"],
+   ["Văn học không chỉ giúp chúng ta hiểu một đất nước, mà còn giúp ta hiểu chính mình.", "文学不仅能让我们了解一个国家，还能让我们了解自己。", "Ôn 不仅……还…… (Bài 3 · điểm 2).", "不仅……还……"]
+  ]
+ },
+ {
+  "zh": "马可·波罗", "py": "Mǎkě·Bōluó", "pos": "Danh từ riêng", "en": "Marco Polo", "vn": "Marco Polo", "hv": "Mã Khả Ba La", "em": "🧭", "k": 4,
+  "explain": ["Nhà du hành, thương nhân người Ý (1254–1324), theo gia đình đến Trung Quốc năm 1275, sống ở đó khoảng 17 năm; cuốn du ký của ông giúp châu Âu biết đến Trung Quốc."],
+  "usage": "马可·波罗来到中国 · 马可·波罗的游记.",
+  "ex": [["马可·波罗是意大利旅行家，在1275年和家人来到中国。", "Marco Polo là nhà du hành người Ý, năm 1275 cùng gia đình đến Trung Quốc."], ["马可·波罗在中国大约生活了17年。", "Marco Polo đã sống ở Trung Quốc khoảng 17 năm."]],
+  "collo": [["马可·波罗的故事", "câu chuyện về Marco Polo"], ["马可·波罗的游记", "du ký của Marco Polo"], ["马可·波罗来到中国", "Marco Polo đến Trung Quốc"], ["像马可·波罗一样", "giống như Marco Polo"]],
+  "pat": [["在 + năm + 来到 + nơi", "thời gian đứng trước động từ"]],
+  "check": [
+   ["Marco Polo sống ở Trung Quốc khoảng 17 năm.", "马可·波罗在中国大约生活了17年。", "Ôn 大约 (Bài 13 · điểm 3) + 时量补语.", "大约……年"],
+   ["Marco Polo đến Trung Quốc vào thế kỷ 13.", "马可·波罗是13世纪来到中国的。", "Ôn 是……的 (HSK 2).", "是……来到……的"]
+  ]
+ },
+ {
+  "zh": "意大利", "py": "Yìdàlì", "pos": "Danh từ riêng", "en": "Italy", "vn": "nước Ý (Italia)", "hv": "Ý Đại Lợi", "em": "🇮🇹", "k": 4,
+  "explain": ["Nước Ý ở Nam Âu, thủ đô Rô-ma (罗马), quê hương của Marco Polo, nổi tiếng về nghệ thuật, kiến trúc, ẩm thực (pizza, mì Ý)."],
+  "usage": "意大利人 · 意大利菜 · 去意大利玩.",
+  "ex": [["马可·波罗是意大利旅行家。", "Marco Polo là nhà du hành người Ý."], ["我很想去意大利看看那里的艺术作品。", "Tôi rất muốn đến Ý ngắm các tác phẩm nghệ thuật ở đó."]],
+  "collo": [["意大利人", "người Ý"], ["意大利菜", "món Ý"], ["去意大利", "đi Ý"], ["意大利旅行家", "nhà du hành người Ý"]],
+  "pat": [["意大利 + 人 / 菜 / 语", "người / món / tiếng Ý"]],
+  "check": [
+   ["Marco Polo là nhà du hành người Ý.", "马可·波罗是意大利旅行家。", "Câu bài khoá 4.", "……是意大利……"],
+   ["Đi du lịch Ý, chúng tôi không đi xem tác phẩm nghệ thuật thì là đi ăn món Ý.", "去意大利旅行，我们不是看艺术作品，就是吃意大利菜。", "不是……就是…… (Bài 19 · điểm 1).", "不是……，就是……"]
+  ]
+ },
+ {
+  "zh": "马可·波罗游记", "py": "Mǎkě·Bōluó Yóujì", "pos": "Danh từ riêng", "en": "The Travels of Marco Polo", "vn": "Du ký Marco Polo", "hv": "Mã Khả Ba La du ký", "em": "📜", "k": 4,
+  "explain": ["Cuốn sách ghi lại chuyến đi và những điều Marco Polo thấy ở Trung Quốc và phương Đông thế kỷ 13; có ảnh hưởng rất lớn ở châu Âu. 游记 = du ký (ghi chép du lịch). Tên sách viết trong 《》."],
+  "usage": "《马可·波罗游记》 · 中文版的《马可·波罗游记》.",
+  "ex": [["最后完成了一部作品——《马可·波罗游记》。", "Cuối cùng hoàn thành một tác phẩm — “Du ký Marco Polo”."], ["很多欧洲人是从《马可·波罗游记》中了解中国的。", "Nhiều người châu Âu đã biết đến Trung Quốc qua “Du ký Marco Polo”."]],
+  "collo": [["读《马可·波罗游记》", "đọc “Du ký Marco Polo”"], ["中文版的《马可·波罗游记》", "“Du ký Marco Polo” bản tiếng Trung"], ["一部游记", "một cuốn du ký"], ["写游记", "viết du ký"]],
+  "pat": [["《tên sách》", "tên sách, tác phẩm viết trong dấu 《》"]],
+  "check": [
+   ["Mấy hôm trước, tôi ra hiệu sách mua một cuốn “Du ký Marco Polo” bản tiếng Trung.", "前两天，我去书店买了一本中文版的《马可·波罗游记》。", "Câu bài khoá 4; 前两天 = mấy hôm trước.", "中文版的《……》"],
+   ["Cuốn du ký này rất dày, tôi đọc nó suốt hai ngày, cuối cùng cũng đọc xong.", "这本游记很厚，我把它看了整整两天，终于看完了。", "把 + 宾 + 动 + 时量补语 (Bài 19 · điểm 4).", "把……看了两天"]
+  ]
+ },
+ {
+  "zh": "东方旅行日记", "py": "Dōngfāng Lǚxíng Rìjì", "pos": "Danh từ riêng", "en": "Travel Diary of the East", "vn": "Nhật ký du hành phương Đông", "hv": "Đông phương lữ hành nhật ký", "em": "🗺️", "k": 4,
+  "explain": ["Tên cuốn sách (chữ kèm ảnh) mà Bạch Gia Nguyệt định hoàn thành từ các bài viết, nhật ký của cô ở Trung Quốc — để lại giới thiệu Trung Quốc với thế giới như Marco Polo. 东方 = phương Đông."],
+  "usage": "《东方旅行日记》 · 完成《东方旅行日记》.",
+  "ex": [["完成一部文字加图片的作品——《东方旅行日记》，再次把中国介绍给世界。", "Hoàn thành một tác phẩm có chữ kèm ảnh — “Nhật ký du hành phương Đông”, một lần nữa giới thiệu Trung Quốc với thế giới."], ["白家月希望《东方旅行日记》也能让更多人了解中国。", "Bạch Gia Nguyệt mong “Nhật ký du hành phương Đông” cũng giúp nhiều người hiểu thêm về Trung Quốc."]],
+  "collo": [["东方", "phương Đông"], ["旅行日记", "nhật ký du lịch"], ["写日记", "viết nhật ký"], ["完成《东方旅行日记》", "hoàn thành “Nhật ký du hành phương Đông”"]],
+  "pat": [["把 + A + 介绍给 + B", "giới thiệu A với B"]],
+  "check": [
+   ["Cô ấy muốn thông qua “Nhật ký du hành phương Đông” giới thiệu Trung Quốc với thế giới.", "她想通过《东方旅行日记》把中国介绍给世界。", "把 + A + 介绍给 + B (HSK 3).", "把……介绍给……"],
+   ["Để viết xong “Nhật ký du hành phương Đông”, cô ấy sắp xếp bài viết của mình suốt một tháng.", "为了写完《东方旅行日记》，她把自己的文章整理了整整一个月。", "把 + 宾 + 动 + 时量补语 (Bài 19 · điểm 4).", "把……整理了整整一个月"]
+  ]
+ }
+]

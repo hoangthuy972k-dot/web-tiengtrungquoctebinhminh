@@ -52,12 +52,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "经理，打扰您一下。市场调查的计划书我昨天发到您邮箱了。",
-  "ex_py": "Jīnglǐ, dǎrǎo nín yíxià. Shìchǎng diàochá de jìhuà shū wǒ zuótiān fā dào nín yóuxiāng le.",
+  "ex_py": "Jīnglǐ, dǎrǎo nín yíxià. Shìchǎng diàochá de jìhuàshū wǒ zuótiān fādào nín yóuxiāng le.",
   "ex_vn": "Giám đốc, em làm phiền chị một chút ạ. Bản kế hoạch khảo sát thị trường em đã gửi vào hộp thư của chị hôm qua rồi.",
   "exList": [
    {
     "zh": "经理，打扰您一下。市场调查的计划书我昨天发到您邮箱了。",
-    "py": "Jīnglǐ, dǎrǎo nín yíxià. Shìchǎng diàochá de jìhuà shū wǒ zuótiān fā dào nín yóuxiāng le.",
+    "py": "Jīnglǐ, dǎrǎo nín yíxià. Shìchǎng diàochá de jìhuàshū wǒ zuótiān fādào nín yóuxiāng le.",
     "vn": "Giám đốc, em làm phiền chị một chút ạ. Bản kế hoạch khảo sát thị trường em đã gửi vào hộp thư của chị hôm qua rồi."
    },
    {
@@ -97,7 +97,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Xin lỗi, muộn thế này còn đến làm phiền chị nghỉ ngơi.",
     "answer": "不好意思，这么晚还来打扰您休息。",
-    "answerPy": "Bùhǎoyìsi, zhème wǎn hái lái dǎrǎo nín xiūxi.",
+    "answerPy": "Bù hǎoyìsi, zhème wǎn hái lái dǎrǎo nín xiūxi.",
     "note": "Câu bài tập chọn từ của sách.",
     "pair": "打扰 + ai + V"
    },
@@ -163,12 +163,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "市场调查的计划书我昨天发到您邮箱了。",
-  "ex_py": "Shìchǎng diàochá de jìhuà shū wǒ zuótiān fā dào nín yóuxiāng le.",
+  "ex_py": "Shìchǎng diàochá de jìhuàshū wǒ zuótiān fādào nín yóuxiāng le.",
   "ex_vn": "Bản kế hoạch khảo sát thị trường em đã gửi vào hộp thư của chị hôm qua rồi.",
   "exList": [
    {
     "zh": "市场调查的计划书我昨天发到您邮箱了。",
-    "py": "Shìchǎng diàochá de jìhuà shū wǒ zuótiān fā dào nín yóuxiāng le.",
+    "py": "Shìchǎng diàochá de jìhuàshū wǒ zuótiān fādào nín yóuxiāng le.",
     "vn": "Bản kế hoạch khảo sát thị trường em đã gửi vào hộp thư của chị hôm qua rồi."
    },
    {
@@ -208,7 +208,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Sáng nào mẹ tôi cũng ra chợ mua thức ăn, không chỉ rẻ mà còn tươi.",
     "answer": "我妈妈每天早上都去菜市场买菜，不仅便宜，而且新鲜。",
-    "answerPy": "Wǒ māma měi tiān zǎoshang dōu qù cài shìchǎng mǎi cài, bùjǐn piányi, érqiě xīnxiān.",
+    "answerPy": "Wǒ māma měitiān zǎoshang dōu qù cài shìchǎng mǎi cài, bùjǐn piányi, érqiě xīnxiān.",
     "note": "Ôn 不仅……而且…… (Bài 3 · điểm 2).",
     "pair": "不仅……而且……"
    },
@@ -274,12 +274,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "我看过了，写得不错，就是调查的地点只有超市，不太够。",
-  "ex_py": "Wǒ kàn guò le, xiě de búcuò, jiù shì diàochá de dìdiǎn zhǐyǒu chāoshì, bú tài gòu.",
+  "ex_py": "Wǒ kàn guò le, xiě de búcuò, jiùshì diàochá de dìdiǎn zhǐyǒu chāoshì, bú tài gòu.",
   "ex_vn": "Chị xem rồi, viết khá tốt, chỉ có điều địa điểm khảo sát chỉ có siêu thị, chưa đủ lắm.",
   "exList": [
    {
     "zh": "我看过了，写得不错，就是调查的地点只有超市，不太够。",
-    "py": "Wǒ kàn guò le, xiě de búcuò, jiù shì diàochá de dìdiǎn zhǐyǒu chāoshì, bú tài gòu.",
+    "py": "Wǒ kàn guò le, xiě de búcuò, jiùshì diàochá de dìdiǎn zhǐyǒu chāoshì, bú tài gòu.",
     "vn": "Chị xem rồi, viết khá tốt, chỉ có điều địa điểm khảo sát chỉ có siêu thị, chưa đủ lắm."
    },
    {
@@ -366,7 +366,7 @@ var vocabData = [
    },
    {
     "zh": "计划书",
-    "py": "Jìhuà shū",
+    "py": "Jìhuàshū",
     "vn": "bản kế hoạch"
    },
    {
@@ -386,17 +386,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "市场调查的计划书我昨天发到您邮箱了。",
-  "ex_py": "Shìchǎng diàochá de jìhuà shū wǒ zuótiān fā dào nín yóuxiāng le.",
+  "ex_py": "Shìchǎng diàochá de jìhuàshū wǒ zuótiān fādào nín yóuxiāng le.",
   "ex_vn": "Bản kế hoạch khảo sát thị trường em đã gửi vào hộp thư của chị hôm qua rồi.",
   "exList": [
    {
     "zh": "市场调查的计划书我昨天发到您邮箱了。",
-    "py": "Shìchǎng diàochá de jìhuà shū wǒ zuótiān fā dào nín yóuxiāng le.",
+    "py": "Shìchǎng diàochá de jìhuàshū wǒ zuótiān fādào nín yóuxiāng le.",
     "vn": "Bản kế hoạch khảo sát thị trường em đã gửi vào hộp thư của chị hôm qua rồi."
    },
    {
     "zh": "我计划明年去中国读研究生。",
-    "py": "Wǒ jìhuà míngnián qù Zhōngguó dú yánjiū shēng.",
+    "py": "Wǒ jìhuà míngnián qù Zhōngguó dú yánjiūshēng.",
     "vn": "Tôi dự định sang năm sang Trung Quốc học cao học."
    }
   ],
@@ -439,7 +439,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu kế hoạch có thay đổi thì anh cứ báo tôi là được.",
     "answer": "要是计划有变化，你告诉我就是了。",
-    "answerPy": "Yàoshi jìhuà yǒu biànhuà, nǐ gàosu wǒ jiù shì le.",
+    "answerPy": "Yàoshi jìhuà yǒu biànhuà, nǐ gàosu wǒ jiùshì le.",
     "note": "Ôn 要是 (Bài 1) + 就是了 (Bài 2 · điểm 1).",
     "pair": "要是……，V就是了"
    }
@@ -542,7 +542,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nội dung cuốn sách này vừa bổ ích vừa thú vị.",
     "answer": "这本书的内容既有用又有意思。",
-    "answerPy": "Zhè běn shū de nèiróng jì yǒuyòng yòu yǒuyìsī.",
+    "answerPy": "Zhè běn shū de nèiróng jì yǒuyòng yòu yǒu yìsi.",
     "note": "Ôn 既……又…… (Bài 4 · điểm 3).",
     "pair": "既……又……"
    },
@@ -550,7 +550,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Về mặt nội dung, bản kế hoạch này chẳng có gì phải sửa.",
     "answer": "在内容方面，这个计划书没有什么好改的。",
-    "answerPy": "Zài nèiróng fāngmiàn, zhège jìhuà shū méiyǒu shénme hǎo gǎi de.",
+    "answerPy": "Zài nèiróng fāngmiàn, zhège jìhuàshū méiyǒu shénme hǎo gǎi de.",
     "note": "Ôn (没)有什么好×的 (Bài 6 · điểm 2) + 在……方面.",
     "pair": "没有什么好 V 的"
    }
@@ -583,7 +583,7 @@ var vocabData = [
    },
    {
     "zh": "改错字",
-    "py": "Gǎi cuò zì",
+    "py": "Gǎicuò zì",
     "vn": "sửa chữ sai"
    },
    {
@@ -641,7 +641,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi vừa viết sai địa chỉ nhà, có thể sửa lại một chút không?",
     "answer": "我刚才把家庭地址写错了，可以改一下吗？",
-    "answerPy": "Wǒ gāngcái bǎ jiātíng dìzhǐ xiě cuò le, kěyǐ gǎi yíxià ma?",
+    "answerPy": "Wǒ gāngcái bǎ jiātíng dìzhǐ xiěcuò le, kěyǐ gǎi yíxià ma?",
     "note": "Câu bài tập chọn từ của sách; ôn 地址 (Bài 6).",
     "pair": "把……写错了，改一下"
    },
@@ -649,7 +649,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Thói quen ngủ muộn của anh ấy e là sửa không được.",
     "answer": "他晚睡的习惯恐怕改不了。",
-    "answerPy": "Tā wǎn shuì de xíguàn kǒngpà gǎi bù liǎo.",
+    "answerPy": "Tā wǎn shuì de xíguàn kǒngpà gǎi bu liǎo.",
     "note": "Ôn V不了 (Bài 4 · điểm 1) + 恐怕 (Bài 2).",
     "pair": "V不了"
    }
@@ -677,7 +677,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "做事细心",
-    "py": "Zuò shì xìxīn",
+    "py": "Zuòshì xìxīn",
     "vn": "làm việc cẩn thận"
    },
    {
@@ -760,7 +760,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Làm khảo sát mà chưa đủ cẩn thận thì kết quả sẽ có vấn đề.",
     "answer": "做调查不够细心的话，结果就会有问题。",
-    "answerPy": "Zuò diàochá bú gòu xìxīn dehuà, jiéguǒ jiù huì yǒu wèntí.",
+    "answerPy": "Zuò diàochá bú gòu xìxīn de huà, jiéguǒ jiù huì yǒu wèntí.",
     "note": "Ôn 不够 + Adj (Bài 5 · điểm 2).",
     "pair": "不够 + Adj"
    }
@@ -871,7 +871,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Gặp bất kỳ khách hàng nào cũng phải nhiệt tình.",
     "answer": "见到任何客户都要热情。",
-    "answerPy": "Jiàn dào rènhé kèhù dōu yào rèqíng.",
+    "answerPy": "Jiàndào rènhé kèhù dōu yào rèqíng.",
     "note": "Ôn 任何……都…… (Bài 1 · điểm 1).",
     "pair": "任何……都……"
    }
@@ -940,7 +940,7 @@ var vocabData = [
    },
    {
     "zh": "在中国住了一年，我才真正了解了中国人的生活。",
-    "py": "Zài Zhōngguó zhù le yì nián, wǒ cái zhēnzhèng liǎojiě le zhōngguórén de shēnghuó.",
+    "py": "Zài Zhōngguó zhù le yì nián, wǒ cái zhēnzhèng liǎojiě le Zhōngguórén de shēnghuó.",
     "vn": "Sống ở Trung Quốc một năm, tôi mới thật sự hiểu cuộc sống của người Trung Quốc."
    }
   ],
@@ -1021,7 +1021,7 @@ var vocabData = [
    },
    {
     "zh": "说说你的想法",
-    "py": "Shuō shuō nǐ de xiǎngfǎ",
+    "py": "Shuōshuo nǐ de xiǎngfǎ",
     "vn": "nói suy nghĩ của bạn đi"
    },
    {
@@ -1094,7 +1094,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Có ý tưởng hay thì cứ nói ra là được.",
     "answer": "有好想法，说出来就是了。",
-    "answerPy": "Yǒu hǎo xiǎngfǎ, shuō chū lái jiù shì le.",
+    "answerPy": "Yǒu hǎo xiǎngfǎ, shuō chūlai jiùshì le.",
     "note": "Ôn ×就是了 (Bài 2 · điểm 1).",
     "pair": "……就是了"
    }
@@ -1127,7 +1127,7 @@ var vocabData = [
    },
    {
     "zh": "接到任务",
-    "py": "Jiē dào rènwù",
+    "py": "Jiēdào rènwù",
     "vn": "nhận nhiệm vụ"
    },
    {
@@ -1162,7 +1162,7 @@ var vocabData = [
    },
    {
     "zh": "上周，小张接到经理的任务，去几家公司做市场调查了。",
-    "py": "Shàng zhōu, xiǎo zhāng jiē dào jīnglǐ de rènwù, qù jǐ jiā gōngsī zuò shìchǎng diàochá le.",
+    "py": "Shàng zhōu, Xiǎo Zhāng jiēdào jīnglǐ de rènwù, qù jǐ jiā gōngsī zuò shìchǎng diàochá le.",
     "vn": "Tuần trước, Tiểu Trương nhận nhiệm vụ của giám đốc, đi mấy công ty làm khảo sát thị trường."
    }
   ],
@@ -1360,7 +1360,7 @@ var vocabData = [
    },
    {
     "zh": "出差回来",
-    "py": "Chūchāi huílái",
+    "py": "Chūchāi huílai",
     "vn": "đi công tác về"
    }
   ],
@@ -1428,7 +1428,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lần này đi công tác chỉ có hai ngày, hơn nữa việc lại nhiều, chẳng có thời gian đi chơi.",
     "answer": "这次出差只有两天，再说工作也多，没时间出去玩。",
-    "answerPy": "Zhè cì chūchāi zhǐyǒu liǎng tiān, zài shuō gōngzuò yě duō, méi shíjiān chūqù wán.",
+    "answerPy": "Zhè cì chūchāi zhǐyǒu liǎng tiān, Zàishuō gōngzuò yě duō, méi shíjiān chūqu wán.",
     "note": "Ôn 再说 (Bài 4 · điểm 2).",
     "pair": "……，再说……"
    }
@@ -1496,7 +1496,7 @@ var vocabData = [
    },
    {
     "zh": "通过这次调查，她也积累了不少经验。",
-    "py": "Tōngguò zhè cì diàochá, tā yě jīlěi le bù shǎo jīngyàn.",
+    "py": "Tōngguò zhè cì diàochá, tā yě jīlěi le bùshǎo jīngyàn.",
     "vn": "Qua lần khảo sát này, cô ấy cũng tích lũy được không ít kinh nghiệm."
    }
   ],
@@ -1582,7 +1582,7 @@ var vocabData = [
    },
    {
     "zh": "电视台采访",
-    "py": "Diànshì tái cǎifǎng",
+    "py": "Diànshìtái cǎifǎng",
     "vn": "đài truyền hình phỏng vấn"
    }
   ],
@@ -1642,7 +1642,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lần khảo sát này chúng tôi ít nhất phải phỏng vấn năm mươi khách hàng.",
     "answer": "这次调查我们至少要采访五十位客户。",
-    "answerPy": "Zhè cì diàochá wǒmen zhìshǎo yào cǎifǎng wǔ shí wèi kèhù.",
+    "answerPy": "Zhè cì diàochá wǒmen zhìshǎo yào cǎifǎng wǔshí wèi kèhù.",
     "note": "Ôn 至少 (Bài 5 · điểm 1); 位 là lượng từ lịch sự.",
     "pair": "至少 + 要 + V + số lượng"
    },
@@ -1650,7 +1650,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Phỏng vấn khách hàng, một mặt hiểu được suy nghĩ của họ, mặt khác nghe được ý kiến về sản phẩm mới.",
     "answer": "采访客户，一方面能了解他们的想法，另一方面能听听他们对新产品的看法。",
-    "answerPy": "Cǎifǎng kèhù, yìfāngmiàn néng lejiě tāmen de xiǎngfǎ, lìngyìfāngmiàn néng tīng tīng tāmen duì xīn chǎnpǐn de kànfǎ.",
+    "answerPy": "Cǎifǎng kèhù, yìfāngmiàn néng liǎojiě tāmen de xiǎngfǎ, lìngyìfāngmiàn néng tīngting tāmen duì xīn chǎnpǐn de kànfǎ.",
     "note": "Ôn 一方面……另一方面…… (Bài 1 · điểm 4).",
     "pair": "一方面……另一方面……"
    }
@@ -1693,7 +1693,7 @@ var vocabData = [
    },
    {
     "zh": "电子产品",
-    "py": "Diàn zǐ chǎnpǐn",
+    "py": "Diànzǐ chǎnpǐn",
     "vn": "sản phẩm điện tử"
    }
   ],
@@ -1753,7 +1753,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Sản phẩm mới này vừa đẹp vừa dễ dùng.",
     "answer": "这个新产品既好看又好用。",
-    "answerPy": "Zhège xīn chǎnpǐn jì hǎokàn yòu hǎo yòng.",
+    "answerPy": "Zhège xīn chǎnpǐn jì hǎokàn yòu hǎoyòng.",
     "note": "Ôn 既……又…… (Bài 4 · điểm 3).",
     "pair": "既……又……"
    },
@@ -1804,7 +1804,7 @@ var vocabData = [
    },
    {
     "zh": "谈谈看法",
-    "py": "Tán tán kànfǎ",
+    "py": "Tántan kànfǎ",
     "vn": "nói qua quan điểm"
    }
   ],
@@ -2026,7 +2026,7 @@ var vocabData = [
    },
    {
     "zh": "便于查找",
-    "py": "Biànyú chá zhǎo",
+    "py": "Biànyú cházhǎo",
     "vn": "dễ tìm kiếm"
    }
   ],
@@ -2051,7 +2051,7 @@ var vocabData = [
    },
    {
     "zh": "老师把学习材料放到了网上，便于学生们复习。",
-    "py": "Lǎoshī bǎ xuéxí cáiliào fàng dào le wǎngshàng, biànyú xuésheng men fùxí.",
+    "py": "Lǎoshī bǎ xuéxí cáiliào fàngdào le wǎngshang, biànyú xuéshengmen fùxí.",
     "vn": "Thầy giáo đưa tài liệu học tập lên mạng, tiện cho học sinh ôn tập."
    }
   ],
@@ -2086,7 +2086,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Thầy giáo đưa tài liệu học tập lên mạng, tiện cho học sinh ôn tập.",
     "answer": "老师把学习材料放到了网上，便于学生们复习。",
-    "answerPy": "Lǎoshī bǎ xuéxí cáiliào fàng dào le wǎngshàng, biànyú xuésheng men fùxí.",
+    "answerPy": "Lǎoshī bǎ xuéxí cáiliào fàngdào le wǎngshang, biànyú xuéshengmen fùxí.",
     "note": "Câu bài tập chọn từ của sách; ôn 材料 (Bài 1).",
     "pair": "……，便于 + V"
    },
@@ -2197,7 +2197,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đã không khỏe thì về nhà nghỉ đi.",
     "answer": "既然不舒服，就回家休息吧。",
-    "answerPy": "Jìrán bù shūfu, jiù huí jiā xiūxi ba.",
+    "answerPy": "Jìrán bù shūfu, jiù huíjiā xiūxi ba.",
     "note": "Đáp án gợi ý của sách (Bài 7 · điểm 2).",
     "pair": "既然……，就……"
    },
@@ -2205,7 +2205,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đã không kịp nữa rồi thì mai hẵng đi.",
     "answer": "既然来不及了，就明天再去吧。",
-    "answerPy": "Jìrán láibùjí le, jiù míngtiān zài qù ba.",
+    "answerPy": "Jìrán láibují le, jiù míngtiān zài qù ba.",
     "note": "Ôn 来不及 (Bài 4 · điểm 4).",
     "pair": "既然……，就……"
    }
@@ -2243,12 +2243,12 @@ var vocabData = [
    },
    {
     "zh": "谈成了",
-    "py": "Tán chéng le",
+    "py": "Tánchéng le",
     "vn": "bàn thành công"
    },
    {
     "zh": "谈谈你的看法",
-    "py": "Tán tán nǐ de kànfǎ",
+    "py": "Tántan nǐ de kànfǎ",
     "vn": "nói qua ý kiến của bạn"
    }
   ],
@@ -2263,17 +2263,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "前段时间，杨同乐的同事谈成了一笔不错的生意。",
-  "ex_py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tán chéng le yì bǐ búcuò de shēngyi.",
+  "ex_py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tánchéng le yì bǐ búcuò de shēngyi.",
   "ex_vn": "Thời gian trước, đồng nghiệp của Dương Đồng Lạc đã bàn thành một vụ làm ăn khá tốt.",
   "exList": [
    {
     "zh": "前段时间，杨同乐的同事谈成了一笔不错的生意。",
-    "py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tán chéng le yì bǐ búcuò de shēngyi.",
+    "py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tánchéng le yì bǐ búcuò de shēngyi.",
     "vn": "Thời gian trước, đồng nghiệp của Dương Đồng Lạc đã bàn thành một vụ làm ăn khá tốt."
    },
    {
     "zh": "请你谈谈对这个问题的看法。",
-    "py": "Qǐng nǐ tán tán duì zhège wèntí de kànfǎ.",
+    "py": "Qǐng nǐ tántan duì zhège wèntí de kànfǎ.",
     "vn": "Mời bạn nói qua quan điểm của mình về vấn đề này."
    }
   ],
@@ -2296,7 +2296,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Vì họ rất có năng lực nên đã bàn thành một vụ làm ăn lớn.",
     "answer": "因为他们很有能力，所以谈成了一笔大生意。",
-    "answerPy": "Yīnwèi tāmen hěn yǒu nénglì, suǒyǐ tán chéng le yì bǐ dà shēngyi.",
+    "answerPy": "Yīnwèi tāmen hěn yǒu nénglì, suǒyǐ tánchéng le yì bǐ dà shēngyi.",
     "note": "Đáp án gợi ý của sách (看图造句).",
     "pair": "谈成了一笔生意"
    },
@@ -2362,17 +2362,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "前段时间，杨同乐的同事谈成了一笔不错的生意。",
-  "ex_py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tán chéng le yì bǐ búcuò de shēngyi.",
+  "ex_py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tánchéng le yì bǐ búcuò de shēngyi.",
   "ex_vn": "Thời gian trước, đồng nghiệp của Dương Đồng Lạc đã bàn thành một vụ làm ăn khá tốt.",
   "exList": [
    {
     "zh": "前段时间，杨同乐的同事谈成了一笔不错的生意。",
-    "py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tán chéng le yì bǐ búcuò de shēngyi.",
+    "py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tánchéng le yì bǐ búcuò de shēngyi.",
     "vn": "Thời gian trước, đồng nghiệp của Dương Đồng Lạc đã bàn thành một vụ làm ăn khá tốt."
    },
    {
     "zh": "他工作了三年，存了一笔钱，打算自己开一家小店。",
-    "py": "Tā gōngzuò le sān nián, cún le yì bǐ qián, dǎsuàn zìjǐ kāi yì jiā xiǎo diàn.",
+    "py": "Tā gōngzuò le sān nián, cún le yì bǐ qián, dǎsuàn zìjǐ kāi yì jiā xiǎodiàn.",
     "vn": "Anh ấy đi làm ba năm, dành dụm được một khoản tiền, định tự mở một cửa hàng nhỏ."
    }
   ],
@@ -2395,7 +2395,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tháng trước công ty chúng tôi bàn thành một vụ làm ăn lớn.",
     "answer": "上个月我们公司谈成了一笔大生意。",
-    "answerPy": "Shàng gè yuè wǒmen gōngsī tán chéng le yì bǐ dà shēngyi.",
+    "answerPy": "Shàng gè yuè wǒmen gōngsī tánchéng le yì bǐ dà shēngyi.",
     "note": "一笔 + 生意.",
     "pair": "一笔生意"
    },
@@ -2461,12 +2461,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "前段时间，杨同乐的同事谈成了一笔不错的生意。",
-  "ex_py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tán chéng le yì bǐ búcuò de shēngyi.",
+  "ex_py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tánchéng le yì bǐ búcuò de shēngyi.",
   "ex_vn": "Thời gian trước, đồng nghiệp của Dương Đồng Lạc đã bàn thành một vụ làm ăn khá tốt.",
   "exList": [
    {
     "zh": "前段时间，杨同乐的同事谈成了一笔不错的生意。",
-    "py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tán chéng le yì bǐ búcuò de shēngyi.",
+    "py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tánchéng le yì bǐ búcuò de shēngyi.",
     "vn": "Thời gian trước, đồng nghiệp của Dương Đồng Lạc đã bàn thành một vụ làm ăn khá tốt."
    },
    {
@@ -2514,7 +2514,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Quán này buôn bán rất đắt khách, ngày nào cũng nhiều người xếp hàng, thậm chí trời mưa cũng vậy.",
     "answer": "这家店生意特别好，每天都有很多人排队，甚至下雨天也一样。",
-    "answerPy": "Zhè jiā diàn shēngyi tèbié hǎo, měi tiān dōu yǒu hěn duō rén páiduì, shènzhì xiàyǔ tiān yě yíyàng.",
+    "answerPy": "Zhè jiā diàn shēngyi tèbié hǎo, měitiān dōu yǒu hěn duō rén páiduì, shènzhì xiàyǔtiān yě yíyàng.",
     "note": "Ôn 甚至 (Bài 3 · điểm 3) + 排队 (Bài 6).",
     "pair": "甚至……"
    }
@@ -2626,7 +2626,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Có bất kỳ khó khăn gì, cứ báo tôi kịp thời là được.",
     "answer": "有任何困难，及时告诉我就是了。",
-    "answerPy": "Yǒu rènhé kùnnan, jíshí gàosu wǒ jiù shì le.",
+    "answerPy": "Yǒu rènhé kùnnan, jíshí gàosu wǒ jiùshì le.",
     "note": "Ôn 任何 (Bài 1) + 就是了 (Bài 2) + 及时 (từ mới).",
     "pair": "任何……，……就是了"
    }
@@ -2659,7 +2659,7 @@ var vocabData = [
    },
    {
     "zh": "最大的优点",
-    "py": "Zuì dà de yōudiǎn",
+    "py": "Zuìdà de yōudiǎn",
     "vn": "ưu điểm lớn nhất"
    },
    {
@@ -2737,7 +2737,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Xe điện có rất nhiều ưu điểm, chẳng hạn vừa rẻ vừa tiện.",
     "answer": "电动车有很多优点，比如既便宜又方便。",
-    "answerPy": "Diàn dòng chē yǒu hěn duō yōudiǎn, bǐrú jì piányi yòu fāngbiàn.",
+    "answerPy": "Diàndòng chē yǒu hěn duō yōudiǎn, bǐrú jì piányi yòu fāngbiàn.",
     "note": "Ôn 电动车 + 既……又…… (Bài 4).",
     "pair": "既……又……"
    }
@@ -2775,7 +2775,7 @@ var vocabData = [
    },
    {
     "zh": "最大的缺点",
-    "py": "Zuì dà de quēdiǎn",
+    "py": "Zuìdà de quēdiǎn",
     "vn": "khuyết điểm lớn nhất"
    },
    {
@@ -2805,7 +2805,7 @@ var vocabData = [
    },
    {
     "zh": "每个人都有缺点，有缺点没关系，改了就是了。",
-    "py": "Měi gè rén dōu yǒu quēdiǎn, yǒu quēdiǎn méiguānxì, gǎi le jiù shì le.",
+    "py": "Měi gè rén dōu yǒu quēdiǎn, yǒu quēdiǎn méiguānxì, gǎi le jiùshì le.",
     "vn": "Ai cũng có khuyết điểm, có khuyết điểm không sao, sửa là được."
    }
   ],
@@ -2840,7 +2840,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Khuyết điểm lớn nhất của tôi là làm việc chưa đủ cẩn thận.",
     "answer": "我最大的缺点是做事不够细心。",
-    "answerPy": "Wǒ zuì dà de quēdiǎn shì zuò shì bú gòu xìxīn.",
+    "answerPy": "Wǒ zuìdà de quēdiǎn shì zuòshì bú gòu xìxīn.",
     "note": "Ôn 不够 + Adj (Bài 5 · điểm 2).",
     "pair": "不够 + Adj"
    },
@@ -2887,7 +2887,7 @@ var vocabData = [
    },
    {
     "zh": "实际上",
-    "py": "Shíjì shang",
+    "py": "Shíjìshang",
     "vn": "thực ra"
    },
    {
@@ -3104,7 +3104,7 @@ var vocabData = [
    },
    {
     "zh": "这一点",
-    "py": "Zhè yì diǎn",
+    "py": "Zhè yìdiǎn",
     "vn": "điểm này"
    },
    {
@@ -3139,7 +3139,7 @@ var vocabData = [
    },
    {
     "zh": "这一点很重要，大家一定要注意。",
-    "py": "Zhè yì diǎn hěn zhòngyào, dàjiā yídìng yào zhùyì.",
+    "py": "Zhè yìdiǎn hěn zhòngyào, dàjiā yídìng yào zhùyì.",
     "vn": "Điểm này rất quan trọng, mọi người nhất định phải chú ý."
    }
   ],
@@ -3162,7 +3162,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Về điểm này, tôi đồng ý với quan điểm của bạn.",
     "answer": "在这一点上，我同意你的看法。",
-    "answerPy": "Zài zhè yì diǎn shàng, wǒ tóngyì nǐ de kànfǎ.",
+    "answerPy": "Zài zhè yìdiǎn shàng, wǒ tóngyì nǐ de kànfǎ.",
     "note": "这一点 + 看法 (từ mới).",
     "pair": "在这一点上"
    },
@@ -3208,12 +3208,12 @@ var vocabData = [
    },
    {
     "zh": "一下就找到了",
-    "py": "Yíxià jiù zhǎo dào le",
+    "py": "Yíxià jiù zhǎodào le",
     "vn": "tìm thấy ngay"
    },
    {
     "zh": "一下子",
-    "py": "Yíxià zǐ",
+    "py": "Yíxiàzi",
     "vn": "bỗng chốc"
    }
   ],
@@ -3238,7 +3238,7 @@ var vocabData = [
    },
    {
     "zh": "您讲得真好，讲完我一下就明白了。",
-    "py": "Nín jiǎng de zhēn hǎo, jiǎng wán wǒ yíxià jiù míngbai le.",
+    "py": "Nín jiǎng de zhēn hǎo, jiǎngwán wǒ yíxià jiù míngbai le.",
     "vn": "Thầy giảng hay quá, giảng xong em hiểu ngay."
    }
   ],
@@ -3273,7 +3273,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Thầy giảng hay quá, giảng xong em hiểu ngay.",
     "answer": "您讲得真好，讲完我一下就明白了。",
-    "answerPy": "Nín jiǎng de zhēn hǎo, jiǎng wán wǒ yíxià jiù míngbai le.",
+    "answerPy": "Nín jiǎng de zhēn hǎo, jiǎngwán wǒ yíxià jiù míngbai le.",
     "note": "Câu bài tập chọn từ của sách.",
     "pair": "一下就……了"
    },
@@ -3281,7 +3281,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Thấy rẻ như vậy, cô ấy mua luôn ba cái, thậm chí chẳng hỏi có dễ dùng không.",
     "answer": "看到这么便宜，她一下就买了三个，甚至没问好不好用。",
-    "answerPy": "Kàn dào zhème piányi, tā yíxià jiù mǎi le sān gè, shènzhì méi wèn hǎo bu hǎo yòng.",
+    "answerPy": "Kàndào zhème piányi, tā yíxià jiù mǎi le sān gè, shènzhì méi wènhǎo bu hǎoyòng.",
     "note": "Ôn 甚至 (Bài 3 · điểm 3).",
     "pair": "一下就……，甚至……"
    }
@@ -3372,7 +3372,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cô ấy tìm được một công việc vừa nhẹ nhàng vừa lương cao.",
     "answer": "她找到了一份既轻松又工资高的工作。",
-    "answerPy": "Tā zhǎo dào le yí fèn jì qīngsōng yòu gōngzī gāo de gōngzuò.",
+    "answerPy": "Tā zhǎodào le yí fèn jì qīngsōng yòu gōngzī gāo de gōngzuò.",
     "note": "Ôn 既……又…… (Bài 4 · điểm 3).",
     "pair": "一份 + 工作"
    },
@@ -3423,7 +3423,7 @@ var vocabData = [
    },
    {
     "zh": "慢慢积累",
-    "py": "Màn màn jīlěi",
+    "py": "Mànmàn jīlěi",
     "vn": "tích lũy dần dần"
    }
   ],
@@ -3448,7 +3448,7 @@ var vocabData = [
    },
    {
     "zh": "通过这次调查，她也积累了不少经验。",
-    "py": "Tōngguò zhè cì diàochá, tā yě jīlěi le bù shǎo jīngyàn.",
+    "py": "Tōngguò zhè cì diàochá, tā yě jīlěi le bùshǎo jīngyàn.",
     "vn": "Qua lần khảo sát này, cô ấy cũng tích lũy được không ít kinh nghiệm."
    }
   ],
@@ -3483,7 +3483,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Qua lần khảo sát này, cô ấy cũng tích lũy được không ít kinh nghiệm.",
     "answer": "通过这次调查，她也积累了不少经验。",
-    "answerPy": "Tōngguò zhè cì diàochá, tā yě jīlěi le bù shǎo jīngyàn.",
+    "answerPy": "Tōngguò zhè cì diàochá, tā yě jīlěi le bùshǎo jīngyàn.",
     "note": "Câu trong bài tập hoàn thành đoạn văn của sách.",
     "pair": "积累了 + 经验"
    },
@@ -3529,7 +3529,7 @@ var vocabData = [
    },
    {
     "zh": "使……变得……",
-    "py": "Shǐ…… biàn de……",
+    "py": "Shǐ…… biànde……",
     "vn": "làm … trở nên …"
    },
    {
@@ -3559,7 +3559,7 @@ var vocabData = [
    },
    {
     "zh": "这个新方法使工作变得更加简单了。",
-    "py": "Zhège xīn fāngfǎ shǐ gōngzuò biàn de gèng jiā jiǎndān le.",
+    "py": "Zhège xīn fāngfǎ shǐ gōngzuò biànde gèngjiā jiǎndān le.",
     "vn": "Phương pháp mới này khiến công việc trở nên đơn giản hơn."
    }
   ],
@@ -3590,7 +3590,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với sự phát triển của mua sắm trên mạng, chuyển phát nhanh khiến cuộc sống của mọi người ngày càng tiện lợi.",
     "answer": "随着网购的发展，快递使人们的生活越来越方便。",
-    "answerPy": "Suízhe wǎng gòu de fāzhǎn, kuài dì shǐ rén men de shēnghuó yuèláiyuè fāngbiàn.",
+    "answerPy": "Suízhe wǎnggòu de fāzhǎn, kuàidì shǐ rénmen de shēnghuó yuèláiyuè fāngbiàn.",
     "note": "Ôn 随着 (Bài 1) + 网购, 快递 (Bài 3).",
     "pair": "随着……，A 使 B……"
    }
@@ -3648,12 +3648,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "我认为，年轻人刚进入社会时，不能只关心工资的高低，更要重视学习。",
-  "ex_py": "Wǒ rènwéi, niánqīngrén gāng jìnrù shèhuì shí, bù néng zhǐ guānxīn gōngzī de gāo dī, gèng yào zhòngshì xuéxí.",
+  "ex_py": "Wǒ rènwéi, niánqīngrén gāng jìnrù shèhuì shí, bù néng zhǐ guānxīn gōngzī de gāodī, gèng yào zhòngshì xuéxí.",
   "ex_vn": "Tôi cho rằng người trẻ vừa bước vào xã hội không thể chỉ quan tâm lương cao hay thấp, mà càng phải coi trọng việc học.",
   "exList": [
    {
     "zh": "我认为，年轻人刚进入社会时，不能只关心工资的高低，更要重视学习。",
-    "py": "Wǒ rènwéi, niánqīngrén gāng jìnrù shèhuì shí, bù néng zhǐ guānxīn gōngzī de gāo dī, gèng yào zhòngshì xuéxí.",
+    "py": "Wǒ rènwéi, niánqīngrén gāng jìnrù shèhuì shí, bù néng zhǐ guānxīn gōngzī de gāodī, gèng yào zhòngshì xuéxí.",
     "vn": "Tôi cho rằng người trẻ vừa bước vào xã hội không thể chỉ quan tâm lương cao hay thấp, mà càng phải coi trọng việc học."
    },
    {
@@ -3759,12 +3759,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "我认为，年轻人刚进入社会时，不能只关心工资的高低，更要重视学习。",
-  "ex_py": "Wǒ rènwéi, niánqīngrén gāng jìnrù shèhuì shí, bù néng zhǐ guānxīn gōngzī de gāo dī, gèng yào zhòngshì xuéxí.",
+  "ex_py": "Wǒ rènwéi, niánqīngrén gāng jìnrù shèhuì shí, bù néng zhǐ guānxīn gōngzī de gāodī, gèng yào zhòngshì xuéxí.",
   "ex_vn": "Tôi cho rằng người trẻ vừa bước vào xã hội không thể chỉ quan tâm lương cao hay thấp, mà càng phải coi trọng việc học.",
   "exList": [
    {
     "zh": "我认为，年轻人刚进入社会时，不能只关心工资的高低，更要重视学习。",
-    "py": "Wǒ rènwéi, niánqīngrén gāng jìnrù shèhuì shí, bù néng zhǐ guānxīn gōngzī de gāo dī, gèng yào zhòngshì xuéxí.",
+    "py": "Wǒ rènwéi, niánqīngrén gāng jìnrù shèhuì shí, bù néng zhǐ guānxīn gōngzī de gāodī, gèng yào zhòngshì xuéxí.",
     "vn": "Tôi cho rằng người trẻ vừa bước vào xã hội không thể chỉ quan tâm lương cao hay thấp, mà càng phải coi trọng việc học."
    },
    {
@@ -3870,12 +3870,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "比如，学习课本中没有的专业知识，了解公司的管理方式，学会和同事有效交流，等等。",
-  "ex_py": "Bǐrú, xuéxí kèběn zhōng méiyǒu de zhuānyè zhīshí, liǎojiě gōngsī de guǎnlǐ fāngshì, xué huì hé tóngshì yǒuxiào jiāoliú, děng děng.",
+  "ex_py": "Bǐrú, xuéxí kèběn zhōng méiyǒu de zhuānyè zhīshi, liǎojiě gōngsī de guǎnlǐ fāngshì, xuéhuì hé tóngshì yǒuxiào jiāoliú, děngděng.",
   "ex_vn": "Ví dụ: học kiến thức chuyên môn không có trong sách vở, tìm hiểu cách quản lý của công ty, học cách giao tiếp hiệu quả với đồng nghiệp, v.v.",
   "exList": [
    {
     "zh": "比如，学习课本中没有的专业知识，了解公司的管理方式，学会和同事有效交流，等等。",
-    "py": "Bǐrú, xuéxí kèběn zhōng méiyǒu de zhuānyè zhīshí, liǎojiě gōngsī de guǎnlǐ fāngshì, xué huì hé tóngshì yǒuxiào jiāoliú, děng děng.",
+    "py": "Bǐrú, xuéxí kèběn zhōng méiyǒu de zhuānyè zhīshi, liǎojiě gōngsī de guǎnlǐ fāngshì, xuéhuì hé tóngshì yǒuxiào jiāoliú, děngděng.",
     "vn": "Ví dụ: học kiến thức chuyên môn không có trong sách vở, tìm hiểu cách quản lý của công ty, học cách giao tiếp hiệu quả với đồng nghiệp, v.v."
    },
    {
@@ -3923,7 +3923,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Người biết quản lý thời gian vừa học tốt lại vừa có thời gian nghỉ ngơi.",
     "answer": "会管理时间的人，既能学好，又有时间休息。",
-    "answerPy": "Huì guǎnlǐ shíjiān de rén, jì néng xué hǎo, yòu yǒu shíjiān xiūxi.",
+    "answerPy": "Huì guǎnlǐ shíjiān de rén, jì néng xuéhǎo, yòu yǒu shíjiān xiūxi.",
     "note": "Ôn 既……又…… (Bài 4 · điểm 3).",
     "pair": "既……又……"
    }
@@ -3951,7 +3951,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "打好基础",
-    "py": "Dǎ hǎo jīchǔ",
+    "py": "Dǎhǎo jīchǔ",
     "vn": "xây chắc nền tảng"
    },
    {
@@ -3981,17 +3981,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "只有把这些基础打好，提高工作能力，今后才会有更好的发展机会。",
-  "ex_py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎ hǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
+  "ex_py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎhǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
   "ex_vn": "Chỉ có xây chắc những nền tảng này, nâng cao năng lực làm việc, sau này mới có cơ hội phát triển tốt hơn.",
   "exList": [
    {
     "zh": "只有把这些基础打好，提高工作能力，今后才会有更好的发展机会。",
-    "py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎ hǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
+    "py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎhǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
     "vn": "Chỉ có xây chắc những nền tảng này, nâng cao năng lực làm việc, sau này mới có cơ hội phát triển tốt hơn."
    },
    {
     "zh": "刚开始的时候别太着急，先把基础打好。",
-    "py": "Gāng kāishǐ de shíhou bié tài zháojí, xiān bǎ jīchǔ dǎ hǎo.",
+    "py": "Gāng kāishǐ de shíhou bié tài zháojí, xiān bǎ jīchǔ dǎhǎo.",
     "vn": "Lúc mới bắt đầu đừng vội quá, trước tiên hãy xây chắc nền tảng."
    }
   ],
@@ -4026,7 +4026,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lúc mới bắt đầu đừng vội quá, trước tiên hãy xây chắc nền tảng.",
     "answer": "刚开始的时候别太着急，先把基础打好。",
-    "answerPy": "Gāng kāishǐ de shíhou bié tài zháojí, xiān bǎ jīchǔ dǎ hǎo.",
+    "answerPy": "Gāng kāishǐ de shíhou bié tài zháojí, xiān bǎ jīchǔ dǎhǎo.",
     "note": "Câu bài tập chọn từ của sách.",
     "pair": "把基础打好"
    },
@@ -4034,7 +4034,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nền tảng tiếng Trung của cô ấy rất tốt, thậm chí đọc hiểu được cả báo Trung Quốc.",
     "answer": "她的中文基础很好，甚至能看懂中文报纸。",
-    "answerPy": "Tā de Zhōngwén jīchǔ hěn hǎo, shènzhì néng kàn dǒng Zhōngwén bàozhǐ.",
+    "answerPy": "Tā de Zhōngwén jīchǔ hěn hǎo, shènzhì néng kàndǒng Zhōngwén bàozhǐ.",
     "note": "Ôn 甚至 (Bài 3 · điểm 3).",
     "pair": "甚至……"
    }
@@ -4092,17 +4092,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "只有把这些基础打好，提高工作能力，今后才会有更好的发展机会。",
-  "ex_py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎ hǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
+  "ex_py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎhǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
   "ex_vn": "Chỉ có xây chắc những nền tảng này, nâng cao năng lực làm việc, sau này mới có cơ hội phát triển tốt hơn.",
   "exList": [
    {
     "zh": "只有把这些基础打好，提高工作能力，今后才会有更好的发展机会。",
-    "py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎ hǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
+    "py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎhǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
     "vn": "Chỉ có xây chắc những nền tảng này, nâng cao năng lực làm việc, sau này mới có cơ hội phát triển tốt hơn."
    },
    {
     "zh": "因为他们很有能力，所以谈成了一笔大生意。",
-    "py": "Yīnwèi tāmen hěn yǒu nénglì, suǒyǐ tán chéng le yì bǐ dà shēngyi.",
+    "py": "Yīnwèi tāmen hěn yǒu nénglì, suǒyǐ tánchéng le yì bǐ dà shēngyi.",
     "vn": "Vì họ rất có năng lực nên đã bàn thành một vụ làm ăn lớn."
    }
   ],
@@ -4137,7 +4137,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Năng lực làm việc của anh ấy rất mạnh, giám đốc giao bất kỳ nhiệm vụ nào anh ấy cũng làm tốt.",
     "answer": "他的工作能力很强，经理交给他任何任务，他都能做好。",
-    "answerPy": "Tā de gōngzuò nénglì hěn qiáng, jīnglǐ jiāo gěi tā rènhé rènwù, tā dōu néng zuò hǎo.",
+    "answerPy": "Tā de gōngzuò nénglì hěn qiáng, jīnglǐ jiāogěi tā rènhé rènwù, tā dōu néng zuòhǎo.",
     "note": "Ôn 任何……都…… (Bài 1 · điểm 1).",
     "pair": "任何……都……"
    },
@@ -4203,12 +4203,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "只有把这些基础打好，提高工作能力，今后才会有更好的发展机会。",
-  "ex_py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎ hǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
+  "ex_py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎhǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
   "ex_vn": "Chỉ có xây chắc những nền tảng này, nâng cao năng lực làm việc, sau này mới có cơ hội phát triển tốt hơn.",
   "exList": [
    {
     "zh": "只有把这些基础打好，提高工作能力，今后才会有更好的发展机会。",
-    "py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎ hǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
+    "py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎhǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
     "vn": "Chỉ có xây chắc những nền tảng này, nâng cao năng lực làm việc, sau này mới có cơ hội phát triển tốt hơn."
    },
    {
@@ -4256,7 +4256,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bạn có dự định gì cho sau này? — Đợi tốt nghiệp rồi hẵng tính.",
     "answer": "你今后有什么打算？——等毕业了再说吧。",
-    "answerPy": "Nǐ jīnhòu yǒu shénme dǎsuàn? — Děng bìyè le zài shuō ba.",
+    "answerPy": "Nǐ jīnhòu yǒu shénme dǎsuàn? — Děng bìyè le Zàishuō ba.",
     "note": "Ôn 等……再…… (Bài 5 · điểm 4).",
     "pair": "等……再说"
    }
@@ -4341,19 +4341,19 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "经理，打扰您一下。市场调查的计划书我昨天发到您邮箱了。在内容方面，您觉得有需要改的吗？",
-    "py": "Jīnglǐ, dǎrǎo nín yíxià. Shìchǎng diàochá de jìhuà shū wǒ zuótiān fā dào nín yóuxiāng le. Zài nèiróng fāngmiàn, nín juéde yǒu xūyào gǎi de ma?",
+    "py": "Jīnglǐ, dǎrǎo nín yíxià. Shìchǎng diàochá de jìhuàshū wǒ zuótiān fādào nín yóuxiāng le. Zài nèiróng fāngmiàn, nín juéde yǒu xūyào gǎi de ma?",
     "vn": "Giám đốc, em làm phiền chị một chút ạ. Bản kế hoạch khảo sát thị trường em đã gửi vào hộp thư của chị hôm qua rồi. Về mặt nội dung, chị thấy có chỗ nào cần sửa không ạ?"
    },
    {
     "sp": 1,
     "zh": "我看过了，写得不错，就是调查的地点只有超市，不太够。",
-    "py": "Wǒ kàn guò le, xiě de búcuò, jiù shì diàochá de dìdiǎn zhǐyǒu chāoshì, bú tài gòu.",
+    "py": "Wǒ kàn guò le, xiě de búcuò, jiùshì diàochá de dìdiǎn zhǐyǒu chāoshì, bú tài gòu.",
     "vn": "Chị xem rồi, viết khá tốt, chỉ có điều địa điểm khảo sát mới có siêu thị, chưa đủ lắm."
    },
    {
     "sp": 0,
     "zh": "好的，那我再加一些网店。",
-    "py": "Hǎo de, nà wǒ zài jiā yìxiē wǎng diàn.",
+    "py": "Hǎo de, nà wǒ zài jiā yìxiē wǎngdiàn.",
     "vn": "Vâng ạ, vậy em thêm một số cửa hàng trên mạng."
    },
    {
@@ -4485,7 +4485,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "前段时间，杨同乐的同事谈成了一笔不错的生意。",
-    "py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tán chéng le yì bǐ búcuò de shēngyi.",
+    "py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tánchéng le yì bǐ búcuò de shēngyi.",
     "vn": "Thời gian trước, đồng nghiệp của Dương Đồng Lạc đã bàn thành một vụ làm ăn khá tốt."
    },
    {
@@ -4580,19 +4580,19 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "我认为，年轻人刚进入社会时，不能只关心工资的高低，更要重视学习。",
-    "py": "Wǒ rènwéi, niánqīngrén gāng jìnrù shèhuì shí, bù néng zhǐ guānxīn gōngzī de gāo dī, gèng yào zhòngshì xuéxí.",
+    "py": "Wǒ rènwéi, niánqīngrén gāng jìnrù shèhuì shí, bù néng zhǐ guānxīn gōngzī de gāodī, gèng yào zhòngshì xuéxí.",
     "vn": "Tôi cho rằng người trẻ vừa bước vào xã hội không thể chỉ quan tâm lương cao hay thấp, mà càng phải coi trọng việc học hỏi."
    },
    {
     "sp": 0,
     "zh": "比如，学习课本中没有的专业知识，了解公司的管理方式，学会和同事有效交流，等等。",
-    "py": "Bǐrú, xuéxí kèběn zhōng méiyǒu de zhuānyè zhīshí, liǎojiě gōngsī de guǎnlǐ fāngshì, xué huì hé tóngshì yǒuxiào jiāoliú, děng děng.",
+    "py": "Bǐrú, xuéxí kèběn zhōng méiyǒu de zhuānyè zhīshi, liǎojiě gōngsī de guǎnlǐ fāngshì, xuéhuì hé tóngshì yǒuxiào jiāoliú, děngděng.",
     "vn": "Ví dụ như học kiến thức chuyên môn không có trong sách vở, tìm hiểu cách quản lý của công ty, học cách giao tiếp hiệu quả với đồng nghiệp, v.v."
    },
    {
     "sp": 0,
     "zh": "只有把这些基础打好，提高工作能力，今后才会有更好的发展机会。",
-    "py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎ hǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
+    "py": "Zhǐyǒu bǎ zhèxiē jīchǔ dǎhǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì.",
     "vn": "Chỉ có xây chắc những nền tảng này, nâng cao năng lực làm việc, sau này mới có cơ hội phát triển tốt hơn."
    }
   ],
@@ -5077,7 +5077,7 @@ var translateData = [
  {
   "vi": "Xin lỗi làm phiền chị một chút, bản kế hoạch em đã gửi vào hộp thư của chị rồi.",
   "zh": "打扰您一下，计划书我已经发到您邮箱了。",
-  "py": "Dǎrǎo nín yíxià, jìhuà shū wǒ yǐjīng fā dào nín yóuxiāng le."
+  "py": "Dǎrǎo nín yíxià, jìhuàshū wǒ yǐjīng fādào nín yóuxiāng le."
  },
  {
   "vi": "Về mặt nội dung, chị thấy có chỗ nào cần sửa không?",
@@ -5119,7 +5119,7 @@ var translateDataRev = [
  {
   "vi": "Thời gian trước, đồng nghiệp của Dương Đồng Lạc đã bàn thành một vụ làm ăn khá tốt.",
   "zh": "前段时间，杨同乐的同事谈成了一笔不错的生意。",
-  "py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tán chéng le yì bǐ búcuò de shēngyi."
+  "py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tánchéng le yì bǐ búcuò de shēngyi."
  },
  {
   "vi": "Khách hàng khác tuổi, khác giới tính có điểm quan tâm đến sản phẩm không giống nhau.",
@@ -5129,7 +5129,7 @@ var translateDataRev = [
  {
   "vi": "Chỉ có xây chắc nền tảng, nâng cao năng lực làm việc, sau này mới có cơ hội phát triển tốt hơn.",
   "zh": "只有把基础打好，提高工作能力，今后才会有更好的发展机会。",
-  "py": "Zhǐyǒu bǎ jīchǔ dǎ hǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì."
+  "py": "Zhǐyǒu bǎ jīchǔ dǎhǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì."
  }
 ];
 var sgkData = [
@@ -5375,6 +5375,6 @@ var writingData = {
  ],
  "model": {
   "zh": "小明：你好！收到你的邮件，知道你最近很苦恼，觉得现在的工作没有发展机会。我很理解你的心情，不过我想谈谈我的看法。你刚进入社会一年，适应新工作往往需要比较长的时间。拿我来说，刚开始工作的时候，我也觉得每天的任务又多又没意思，后来才发现，在和客户交流方面，我学到了很多课本中没有的知识。我觉得，现在的工作一方面能使你积累经验，另一方面也能帮你打好基础。如果总是换工作，可能会使你的发展受到影响。当然，既然你真的不喜欢这份工作，也可以先想清楚自己最想做什么，再做决定。有什么困难，及时跟我联系就是了。祝你工作顺利！你的朋友小林",
-  "py": "Xiǎomíng: nǐhǎo! Shōudào nǐ de yóujiàn, zhīdao nǐ zuìjìn hěn kǔ nǎo, juéde xiànzài de gōngzuò méiyǒu fāzhǎn jīhuì. Wǒ hěn lǐjiě nǐ de xīnqíng, búguò wǒ xiǎng tán tán wǒ de kànfǎ. Nǐ gāng jìnrù shèhuì yì nián, shìyìng xīn gōngzuò wǎngwǎng xūyào bǐjiào cháng de shíjiān. Ná wǒ láishuō, gāng kāishǐ gōngzuò de shíhou, wǒ yě juéde měi tiān de rènwù yòu duō yòu méiyìsi, hòulái cái fāxiàn, zài hé kèhù jiāoliú fāngmiàn, wǒ xué dào le hěn duō kèběn zhōng méiyǒu de zhīshí. Wǒ juéde, xiànzài de gōngzuò yìfāngmiàn néng shǐ nǐ jīlěi jīngyàn, lìngyìfāngmiàn yě néng bāng nǐ dǎ hǎo jīchǔ. Rúguǒ zǒngshì huàn gōngzuò, kěnéng huì shǐ nǐ de fāzhǎn shòudào yǐngxiǎng. Dāngrán, jìrán nǐ zhēn de bù xǐhuan zhè fèn gōngzuò, yě kěyǐ xiān xiǎng qīngchu zìjǐ zuì xiǎng zuò shénme, zài zuò juédìng. Yǒu shénme kùnnan, jíshí gēn wǒ liánxì jiù shì le. Zhù nǐ gōngzuò shùnlì! Nǐ de péngyou xiǎo lín"
+  "py": "Xiǎomíng: nǐhǎo! Shōudào nǐ de yóujiàn, zhīdao nǐ zuìjìn hěn kǔnǎo, juéde xiànzài de gōngzuò méiyǒu fāzhǎn jīhuì. Wǒ hěn lǐjiě nǐ de xīnqíng, búguò wǒ xiǎng tántan wǒ de kànfǎ. Nǐ gāng jìnrù shèhuì yì nián, shìyìng xīn gōngzuò wǎngwǎng xūyào bǐjiào cháng de shíjiān. Ná wǒ láishuō, gāng kāishǐ gōngzuò de shíhou, wǒ yě juéde měitiān de rènwù yòu duō yòu méi yìsi, hòulái cái fāxiàn, zài hé kèhù jiāoliú fāngmiàn, wǒ xuédào le hěn duō kèběn zhōng méiyǒu de zhīshi. Wǒ juéde, xiànzài de gōngzuò yìfāngmiàn néng shǐ nǐ jīlěi jīngyàn, lìngyìfāngmiàn yě néng bāng nǐ dǎhǎo jīchǔ. Rúguǒ zǒngshì huàn gōngzuò, kěnéng huì shǐ nǐ de fāzhǎn shòudào yǐngxiǎng. Dāngrán, jìrán nǐ zhēn de bù xǐhuan zhè fèn gōngzuò, yě kěyǐ xiān xiǎng qīngchu zìjǐ zuì xiǎng zuò shénme, zài zuò juédìng. Yǒu shénme kùnnan, jíshí gēn wǒ liánxì jiùshì le. Zhù nǐ gōngzuò shùnlì! Nǐ de péngyou Xiǎo Lín"
  }
 };

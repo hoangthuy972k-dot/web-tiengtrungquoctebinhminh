@@ -165,7 +165,7 @@
       "promptLang": "vi",
       "prompt": "Trong thư viện, bất kỳ ai cũng không được nói to.",
       "answer": "在图书馆里，任何人都不能大声说话。",
-      "answerPy": "Zài túshūguǎn lǐ, rènhé rén dōu bù néng dà shēng shuōhuà.",
+      "answerPy": "Zài túshūguǎn lǐ, rènhé rén dōu bù néng dàshēng shuōhuà.",
       "explanation": "任何人 + 都 / 也 + 不能."
      }
     ]
@@ -490,7 +490,7 @@
       "promptLang": "vi",
       "prompt": "Cùng với sự phát triển kinh tế, ngày càng nhiều người đi du lịch nước ngoài.",
       "answer": "随着经济的发展，越来越多的人去国外旅游。",
-      "answerPy": "Suízhe jīngjì de fāzhǎn, yuèláiyuè duō de rén qù guó wài lǚyóu.",
+      "answerPy": "Suízhe jīngjì de fāzhǎn, yuèláiyuè duō de rén qù guówài lǚyóu.",
       "explanation": "随着……的发展，越来越多的……"
      }
     ]

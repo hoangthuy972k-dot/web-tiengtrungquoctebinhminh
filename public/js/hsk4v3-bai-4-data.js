@@ -28,7 +28,7 @@ var vocabData = [
    },
    {
     "zh": "啊，我想起来了",
-    "py": "Ā, wǒ xiǎng qǐlái le",
+    "py": "Ā, wǒ xiǎng qǐlai le",
     "vn": "À, tôi nhớ ra rồi"
    },
    {
@@ -86,7 +86,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Á, tôi quên mang ví rồi, không mua được vé.",
     "answer": "啊，我忘带钱包了，买不了票。",
-    "answerPy": "Ā, wǒ wàng dài qián bāo le, mǎi bù le piào.",
+    "answerPy": "Ā, wǒ wàng dài qiánbāo le, mǎi bu le piào.",
     "note": "Kết hợp bổ ngữ khả năng 买不了 (Bài 4 · điểm 1).",
     "pair": "啊，……V不了"
    },
@@ -94,7 +94,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "À, tôi nhớ ra rồi, hôm nay là sinh nhật cô ấy!",
     "answer": "啊，我想起来了，今天是她的生日！",
-    "answerPy": "Ā, wǒ xiǎng qǐlái le, jīntiān shì tā de shēngrì!",
+    "answerPy": "Ā, wǒ xiǎng qǐlai le, jīntiān shì tā de shēngrì!",
     "note": "Ôn bổ ngữ xu hướng 想起来 (HSK 3).",
     "pair": "想起来"
    }
@@ -128,7 +128,7 @@ var vocabData = [
    },
    {
     "zh": "停车",
-    "py": "Tíng chē",
+    "py": "Tíngchē",
     "vn": "đỗ xe"
    },
    {
@@ -138,7 +138,7 @@ var vocabData = [
    },
    {
     "zh": "停下来",
-    "py": "Tíng xiàlái",
+    "py": "Tíngxià lái",
     "vn": "dừng lại"
    }
   ],
@@ -163,7 +163,7 @@ var vocabData = [
    },
    {
     "zh": "外面的雨停了，咱们出去走走吧。",
-    "py": "Wàimian de yǔ tíng le, zánmen chūqù zǒu zǒu ba.",
+    "py": "Wàimian de yǔ tíng le, zánmen chūqu zǒuzou ba.",
     "vn": "Mưa ngoài trời tạnh rồi, mình ra ngoài đi dạo chút đi."
    }
   ],
@@ -194,7 +194,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Xe của tôi đỗ ở dưới nhà, bạn đợi tôi một lát nhé.",
     "answer": "我的车停在楼下，你等我一会儿吧。",
-    "answerPy": "Wǒ de chē tíng zài lóu xià, nǐ děng wǒ yíhuìr ba.",
+    "answerPy": "Wǒ de chē tíng zài lóuxià, nǐ děng wǒ yíhuìr ba.",
     "note": "Ôn bổ ngữ giới từ 在 + nơi chốn (HSK 3).",
     "pair": "停在……"
    }
@@ -222,7 +222,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "交电话费",
-    "py": "Jiāo diànhuà fèi",
+    "py": "Jiāo diàn huàfèi",
     "vn": "đóng tiền điện thoại"
    },
    {
@@ -237,7 +237,7 @@ var vocabData = [
    },
    {
     "zh": "交房租",
-    "py": "Jiāo fáng zū",
+    "py": "Jiāo fángzū",
     "vn": "đóng tiền nhà"
    }
   ],
@@ -252,17 +252,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "我忘了交电话费，手机停机了。",
-  "ex_py": "Wǒ wàng le jiāo diànhuà fèi, shǒujī tíng jī le.",
+  "ex_py": "Wǒ wàng le jiāo diàn huàfèi, shǒujī tíng jī le.",
   "ex_vn": "Tôi quên đóng tiền điện thoại nên máy bị cắt rồi.",
   "exList": [
    {
     "zh": "我忘了交电话费，手机停机了。",
-    "py": "Wǒ wàng le jiāo diànhuà fèi, shǒujī tíng jī le.",
+    "py": "Wǒ wàng le jiāo diàn huàfèi, shǒujī tíng jī le.",
     "vn": "Tôi quên đóng tiền điện thoại nên máy bị cắt rồi."
    },
    {
     "zh": "明天以前要把作业交给老师。",
-    "py": "Míngtiān yǐqián yào bǎ zuòyè jiāo gěi lǎoshī.",
+    "py": "Míngtiān yǐqián yào bǎ zuòyè jiāogěi lǎoshī.",
     "vn": "Trước ngày mai phải nộp bài tập cho thầy."
    }
   ],
@@ -285,7 +285,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tiền nhà tháng này tôi đã đóng rồi.",
     "answer": "这个月的房租我已经交了。",
-    "answerPy": "Zhège yuè de fáng zū wǒ yǐjīng jiāo le.",
+    "answerPy": "Zhège yuè de fángzū wǒ yǐjīng jiāo le.",
     "note": "Tân ngữ đưa lên đầu làm chủ đề + 已经……了 (HSK 3).",
     "pair": "N，Sub + 已经交了"
    },
@@ -293,7 +293,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bất kỳ ai cũng phải nộp bài tập trước thứ Sáu.",
     "answer": "任何人都要在周五以前交作业。",
-    "answerPy": "Rènhé rén dōu yào zài zhōu wǔ yǐqián jiāo zuòyè.",
+    "answerPy": "Rènhé rén dōu yào zài zhōuwǔ yǐqián jiāo zuòyè.",
     "note": "任何……都…… (Bài 1 · điểm 1).",
     "pair": "任何……都……"
    }
@@ -322,12 +322,12 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "电话费",
-    "py": "Diànhuà fèi",
+    "py": "Diàn huàfèi",
     "vn": "tiền điện thoại"
    },
    {
     "zh": "学费",
-    "py": "Xué fèi",
+    "py": "Xuéfèi",
     "vn": "học phí"
    },
    {
@@ -352,12 +352,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "我忘了交电话费，手机停机了。",
-  "ex_py": "Wǒ wàng le jiāo diànhuà fèi, shǒujī tíng jī le.",
+  "ex_py": "Wǒ wàng le jiāo diàn huàfèi, shǒujī tíng jī le.",
   "ex_vn": "Tôi quên đóng tiền điện thoại nên máy bị cắt rồi.",
   "exList": [
    {
     "zh": "我忘了交电话费，手机停机了。",
-    "py": "Wǒ wàng le jiāo diànhuà fèi, shǒujī tíng jī le.",
+    "py": "Wǒ wàng le jiāo diàn huàfèi, shǒujī tíng jī le.",
     "vn": "Tôi quên đóng tiền điện thoại nên máy bị cắt rồi."
    },
    {
@@ -385,7 +385,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Học phí trường này không cao, có điều tiền sinh hoạt hơi đắt.",
     "answer": "这个学校的学费不高，不过生活费有点儿贵。",
-    "answerPy": "Zhège xuéxiào de xué fèi bù gāo, búguò shēnghuó fèi yǒudiǎnr guì.",
+    "answerPy": "Zhège xuéxiào de xuéfèi bù gāo, búguò shēnghuó fèi yǒudiǎnr guì.",
     "note": "……，不过…… (Bài 2 · điểm 2).",
     "pair": "……，不过……"
    },
@@ -451,17 +451,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "我没带现金，手机没有信号，上不了网，买不了地铁票了。",
-  "ex_py": "Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bù le wǎng, mǎi bù le dìtiě piào le.",
+  "ex_py": "Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bu le wǎng, mǎi bu le dìtiě piào le.",
   "ex_vn": "Tôi không mang tiền mặt, điện thoại không có sóng, không lên mạng được, không mua được vé tàu điện ngầm.",
   "exList": [
    {
     "zh": "我没带现金，手机没有信号，上不了网，买不了地铁票了。",
-    "py": "Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bù le wǎng, mǎi bù le dìtiě piào le.",
+    "py": "Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bu le wǎng, mǎi bu le dìtiě piào le.",
     "vn": "Tôi không mang tiền mặt, điện thoại không có sóng, không lên mạng được, không mua được vé tàu điện ngầm."
    },
    {
     "zh": "山上的信号不太好，电话打不通。",
-    "py": "Shān shàng de xìnhào bú tài hǎo, diànhuà dǎ bù tōng.",
+    "py": "Shānshang de xìnhào bú tài hǎo, diànhuà dǎ bù tōng.",
     "vn": "Trên núi sóng không tốt lắm, gọi điện không được."
    }
   ],
@@ -496,7 +496,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trong thang máy không có sóng, không gọi điện được.",
     "answer": "电梯里没有信号，打不了电话。",
-    "answerPy": "Diàntī lǐ méiyǒu xìnhào, dǎ bù le diànhuà.",
+    "answerPy": "Diàntī lǐ méiyǒu xìnhào, dǎ bu le diànhuà.",
     "note": "Bổ ngữ khả năng V不了 (Bài 4 · điểm 1).",
     "pair": "没有信号，V不了"
    },
@@ -607,7 +607,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tiểu Vương vô cùng cảm ơn cô ấy, liên tục nói “cảm ơn”.",
     "answer": "小王非常感谢她，一直向她说“谢谢”。",
-    "answerPy": "Xiǎo wáng fēicháng gǎnxiè tā, yìzhí xiàng tā shuō “xièxiè”.",
+    "answerPy": "Xiǎo Wáng fēicháng gǎnxiè tā, yìzhí xiàng tā shuō “xièxie”.",
     "note": "Câu trong bài tập hoàn thành đoạn văn của sách.",
     "pair": "非常感谢……"
    },
@@ -615,7 +615,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Do mọi người giúp đỡ, chúng tôi đã làm xong rất nhanh, xin cảm ơn mọi người!",
     "answer": "由于大家的帮助，我们很快就做完了，感谢大家！",
-    "answerPy": "Yóuyú dàjiā de bāngzhù, wǒmen hěn kuài jiù zuò wán le, gǎnxiè dàjiā!",
+    "answerPy": "Yóuyú dàjiā de bāngzhù, wǒmen hěn kuài jiù zuòwán le, gǎnxiè dàjiā!",
     "note": "由于 (Bài 2 · điểm 4).",
     "pair": "由于……，……"
    }
@@ -653,7 +653,7 @@ var vocabData = [
    },
    {
     "zh": "保持联系",
-    "py": "Bǎo chí liánxì",
+    "py": "Bǎochí liánxì",
     "vn": "giữ liên lạc"
    },
    {
@@ -673,12 +673,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "对了，能不能告诉我你的联系方式？我想把钱还给你。",
-  "ex_py": "Duì le, néng bu néng gàosu wǒ nǐ de liánxì fāngshì? Wǒ xiǎng bǎ qián hái gěi nǐ.",
+  "ex_py": "Duì le, néng bu néng gàosu wǒ nǐ de liánxì fāngshì? Wǒ xiǎng bǎ qián huán gěi nǐ.",
   "ex_vn": "À đúng rồi, bạn có thể cho tôi biết cách liên lạc của bạn không? Tôi muốn trả lại tiền cho bạn.",
   "exList": [
    {
     "zh": "对了，能不能告诉我你的联系方式？我想把钱还给你。",
-    "py": "Duì le, néng bu néng gàosu wǒ nǐ de liánxì fāngshì? Wǒ xiǎng bǎ qián hái gěi nǐ.",
+    "py": "Duì le, néng bu néng gàosu wǒ nǐ de liánxì fāngshì? Wǒ xiǎng bǎ qián huán gěi nǐ.",
     "vn": "À đúng rồi, bạn có thể cho tôi biết cách liên lạc của bạn không? Tôi muốn trả lại tiền cho bạn."
    },
    {
@@ -794,7 +794,7 @@ var vocabData = [
    },
    {
     "zh": "在城市里，人们出行的方式越来越多。",
-    "py": "Zài chéngshì lǐ, rén men chūxíng de fāngshì yuèláiyuè duō.",
+    "py": "Zài chéngshì lǐ, rénmen chūxíng de fāngshì yuèláiyuè duō.",
     "vn": "Ở thành phố, cách đi lại của mọi người ngày càng nhiều."
    }
   ],
@@ -837,7 +837,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với sự phát triển của thành phố, cách đi lại của mọi người ngày càng nhiều.",
     "answer": "随着城市的发展，人们出行的方式越来越多。",
-    "answerPy": "Suízhe chéngshì de fāzhǎn, rén men chūxíng de fāngshì yuèláiyuè duō.",
+    "answerPy": "Suízhe chéngshì de fāzhǎn, rénmen chūxíng de fāngshì yuèláiyuè duō.",
     "note": "随着 (Bài 1 · điểm 3).",
     "pair": "随着……，越来越……"
    }
@@ -881,7 +881,7 @@ var vocabData = [
    },
    {
     "zh": "客气话",
-    "py": "Kèqi huà",
+    "py": "Kèqihuà",
     "vn": "lời khách sáo"
    }
   ],
@@ -941,7 +941,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đừng khách sáo, cần gì cứ nói với tôi là được.",
     "answer": "别客气，有什么需要，告诉我就是了。",
-    "answerPy": "Bié kèqi, yǒu shénme xūyào, gàosu wǒ jiù shì le.",
+    "answerPy": "Bié kèqi, yǒu shénme xūyào, gàosu wǒ jiùshì le.",
     "note": "×就是了 (Bài 2 · điểm 1).",
     "pair": "……就是了"
    },
@@ -977,12 +977,12 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "剩下",
-    "py": "Shèng xià",
+    "py": "Shèngxià",
     "vn": "còn lại"
    },
    {
     "zh": "剩下的",
-    "py": "Shèng xià de",
+    "py": "Shèngxià de",
     "vn": "phần còn lại"
    },
    {
@@ -1007,17 +1007,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "我先休息一会儿，再去车里拿剩下的。",
-  "ex_py": "Wǒ xiān xiūxi yíhuìr, zài qù chē lǐ ná shèng xià de.",
+  "ex_py": "Wǒ xiān xiūxi yíhuìr, zài qù chē lǐ ná shèngxià de.",
   "ex_vn": "Cô nghỉ một lát đã, rồi ra xe lấy chỗ còn lại.",
   "exList": [
    {
     "zh": "我先休息一会儿，再去车里拿剩下的。",
-    "py": "Wǒ xiān xiūxi yíhuìr, zài qù chē lǐ ná shèng xià de.",
+    "py": "Wǒ xiān xiūxi yíhuìr, zài qù chē lǐ ná shèngxià de.",
     "vn": "Cô nghỉ một lát đã, rồi ra xe lấy chỗ còn lại."
    },
    {
     "zh": "还剩不少菜，我们带回家吃吧。",
-    "py": "Hái shèng bù shǎo cài, wǒmen dài huí jiā chī ba.",
+    "py": "Hái shèng bùshǎo cài, wǒmen dài huíjiā chī ba.",
     "vn": "Còn thừa khá nhiều món, mình mang về nhà ăn đi."
    }
   ],
@@ -1048,7 +1048,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Món còn thừa nhiều quá, hai chúng ta ăn không hết.",
     "answer": "剩下的菜太多了，咱们两个人吃不了。",
-    "answerPy": "Shèng xià de cài tài duō le, zánmen liǎng gè rén chī bù liǎo.",
+    "answerPy": "Shèngxià de cài tài duō le, zánmen liǎng gè rén chī bu liǎo.",
     "note": "Bổ ngữ khả năng 吃不了 (Bài 4 · điểm 1).",
     "pair": "V不了"
    }
@@ -1081,7 +1081,7 @@ var vocabData = [
    },
    {
     "zh": "提上去",
-    "py": "Tí shàngqù",
+    "py": "Tí shàngqu",
     "vn": "xách lên"
    },
    {
@@ -1091,7 +1091,7 @@ var vocabData = [
    },
    {
     "zh": "提不动",
-    "py": "Tí bú dòng",
+    "py": "Tí bu dòng",
     "vn": "xách không nổi"
    }
   ],
@@ -1106,12 +1106,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "我正好要上楼，我帮您提上去吧。",
-  "ex_py": "Wǒ zhènghǎo yào shàng lóu, wǒ bāng nín tí shàngqù ba.",
+  "ex_py": "Wǒ zhènghǎo yào shànglóu, wǒ bāng nín tí shàngqu ba.",
   "ex_vn": "Cháu đang định lên lầu, cháu xách lên giúp cô nhé.",
   "exList": [
    {
     "zh": "我正好要上楼，我帮您提上去吧。",
-    "py": "Wǒ zhènghǎo yào shàng lóu, wǒ bāng nín tí shàngqù ba.",
+    "py": "Wǒ zhènghǎo yào shànglóu, wǒ bāng nín tí shàngqu ba.",
     "vn": "Cháu đang định lên lầu, cháu xách lên giúp cô nhé."
    },
    {
@@ -1139,7 +1139,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cái vali này nặng quá, tôi xách không nổi.",
     "answer": "这个箱子太重了，我提不动。",
-    "answerPy": "Zhège xiāngzi tài zhòng le, wǒ tí bú dòng.",
+    "answerPy": "Zhège xiāngzi tài zhòng le, wǒ tí bu dòng.",
     "note": "Bổ ngữ khả năng 提不动 (HSK 3).",
     "pair": "V不动"
    },
@@ -1180,7 +1180,7 @@ var vocabData = [
    },
    {
     "zh": "塑料袋子",
-    "py": "Sùliàodài zǐ",
+    "py": "Sùliào dàizi",
     "vn": "túi nhựa"
    },
    {
@@ -1190,7 +1190,7 @@ var vocabData = [
    },
    {
     "zh": "装进袋子",
-    "py": "Zhuāng jìn dàizi",
+    "py": "Zhuāngjìn dàizi",
     "vn": "cho vào túi"
    }
   ],
@@ -1205,12 +1205,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "不用不用，这几个袋子太重了，我自己拿吧。",
-  "ex_py": "Búyòng buyòng, zhè jǐ gè dàizi tài zhòng le, wǒ zìjǐ ná ba.",
+  "ex_py": "Búyòng búyòng, zhè jǐ gè dàizi tài zhòng le, wǒ zìjǐ ná ba.",
   "ex_vn": "Không cần không cần, mấy cái túi này nặng quá, cô tự mang được.",
   "exList": [
    {
     "zh": "不用不用，这几个袋子太重了，我自己拿吧。",
-    "py": "Búyòng buyòng, zhè jǐ gè dàizi tài zhòng le, wǒ zìjǐ ná ba.",
+    "py": "Búyòng búyòng, zhè jǐ gè dàizi tài zhòng le, wǒ zìjǐ ná ba.",
     "vn": "Không cần không cần, mấy cái túi này nặng quá, cô tự mang được."
    },
    {
@@ -1250,7 +1250,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hãy bỏ sách vào túi.",
     "answer": "请把书放进袋子里。",
-    "answerPy": "Qǐng bǎ shū fàng jìn dàizi lǐ.",
+    "answerPy": "Qǐng bǎ shū fàngjìn dàizi lǐ.",
     "note": "Ôn câu chữ 把 (HSK 3).",
     "pair": "把……放进……"
    },
@@ -1317,17 +1317,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "不用不用，这几个袋子太重了，我自己拿吧。",
-  "ex_py": "Búyòng buyòng, zhè jǐ gè dàizi tài zhòng le, wǒ zìjǐ ná ba.",
+  "ex_py": "Búyòng búyòng, zhè jǐ gè dàizi tài zhòng le, wǒ zìjǐ ná ba.",
   "ex_vn": "Không cần không cần, mấy cái túi này nặng quá, cô tự mang được.",
   "exList": [
    {
     "zh": "不用不用，这几个袋子太重了，我自己拿吧。",
-    "py": "Búyòng buyòng, zhè jǐ gè dàizi tài zhòng le, wǒ zìjǐ ná ba.",
+    "py": "Búyòng búyòng, zhè jǐ gè dàizi tài zhòng le, wǒ zìjǐ ná ba.",
     "vn": "Không cần không cần, mấy cái túi này nặng quá, cô tự mang được."
    },
    {
     "zh": "这个箱子太重了，他们两个人才能搬动。",
-    "py": "Zhège xiāngzi tài zhòng le, tāmen liǎng gè réncái néng bān dòng.",
+    "py": "Zhège xiāngzi tài zhòng le, tāmen liǎng gè rén cáinéng bān dòng.",
     "vn": "Cái thùng này nặng quá, hai người họ mới khiêng nổi."
    }
   ],
@@ -1350,7 +1350,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cái thùng này nặng quá, hai người họ mới khiêng nổi.",
     "answer": "这个箱子太重了，他们两个人才能搬动。",
-    "answerPy": "Zhège xiāngzi tài zhòng le, tāmen liǎng gè réncái néng bān dòng.",
+    "answerPy": "Zhège xiāngzi tài zhòng le, tāmen liǎng gè rén cáinéng bān dòng.",
     "note": "Đáp án gợi ý bài nhìn tranh đặt câu của sách; ôn 才 (HSK 3).",
     "pair": "太重了，……才……"
    },
@@ -1387,7 +1387,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "就算……了",
-    "py": "Jiù suàn…… le",
+    "py": "Jiùsuàn…… le",
     "vn": "coi như là …"
    },
    {
@@ -1402,7 +1402,7 @@ var vocabData = [
    },
    {
     "zh": "算了",
-    "py": "Suàn le",
+    "py": "Suànle",
     "vn": "thôi, bỏ đi"
    }
   ],
@@ -1417,12 +1417,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "没事，我提着这些东西就算锻炼身体了。",
-  "ex_py": "Méishì, wǒ tí zhe zhèxiē dōngxi jiù suàn duànliàn shēntǐ le.",
+  "ex_py": "Méishì, wǒ tí zhe zhèxiē dōngxi jiùsuàn duànliàn shēntǐ le.",
   "ex_vn": "Không sao ạ, cháu xách mấy thứ này coi như là tập thể dục rồi.",
   "exList": [
    {
     "zh": "没事，我提着这些东西就算锻炼身体了。",
-    "py": "Méishì, wǒ tí zhe zhèxiē dōngxi jiù suàn duànliàn shēntǐ le.",
+    "py": "Méishì, wǒ tí zhe zhèxiē dōngxi jiùsuàn duànliàn shēntǐ le.",
     "vn": "Không sao ạ, cháu xách mấy thứ này coi như là tập thể dục rồi."
    },
    {
@@ -1450,7 +1450,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bà nói mỗi ngày bà dọn phòng, coi như là tập thể dục rồi.",
     "answer": "奶奶说她每天打扫房间，就算做运动了。",
-    "answerPy": "Nǎinai shuō tā měi tiān dǎsǎo fángjiān, jiù suàn zuò yùndòng le.",
+    "answerPy": "Nǎinai shuō tā měitiān dǎsǎo fángjiān, jiùsuàn zuò yùndòng le.",
     "note": "Bài tập chọn từ của sách (câu 5).",
     "pair": "就算……了"
    },
@@ -1517,12 +1517,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "我提着这些东西就算锻炼身体了，再说邻居之间就是要互相帮助啊。",
-  "ex_py": "Wǒ tí zhe zhèxiē dōngxi jiù suàn duànliàn shēntǐ le, zàishuō línjū zhījiān jiù shì yào hùxiāng bāngzhù ā.",
+  "ex_py": "Wǒ tí zhe zhèxiē dōngxi jiùsuàn duànliàn shēntǐ le, zàishuō línjū zhījiān jiùshì yào hùxiāng bāngzhù ā.",
   "ex_vn": "Cháu xách mấy thứ này coi như tập thể dục rồi, vả lại hàng xóm với nhau thì phải giúp đỡ lẫn nhau mà.",
   "exList": [
    {
     "zh": "我提着这些东西就算锻炼身体了，再说邻居之间就是要互相帮助啊。",
-    "py": "Wǒ tí zhe zhèxiē dōngxi jiù suàn duànliàn shēntǐ le, zàishuō línjū zhījiān jiù shì yào hùxiāng bāngzhù ā.",
+    "py": "Wǒ tí zhe zhèxiē dōngxi jiùsuàn duànliàn shēntǐ le, zàishuō línjū zhījiān jiùshì yào hùxiāng bāngzhù ā.",
     "vn": "Cháu xách mấy thứ này coi như tập thể dục rồi, vả lại hàng xóm với nhau thì phải giúp đỡ lẫn nhau mà."
    },
    {
@@ -1628,12 +1628,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "再说邻居之间就是要互相帮助啊。",
-  "ex_py": "Zàishuō línjū zhījiān jiù shì yào hùxiāng bāngzhù ā.",
+  "ex_py": "Zàishuō línjū zhījiān jiùshì yào hùxiāng bāngzhù ā.",
   "ex_vn": "Vả lại hàng xóm với nhau thì phải giúp đỡ lẫn nhau mà.",
   "exList": [
    {
     "zh": "再说邻居之间就是要互相帮助啊。",
-    "py": "Zàishuō línjū zhījiān jiù shì yào hùxiāng bāngzhù ā.",
+    "py": "Zàishuō línjū zhījiān jiùshì yào hùxiāng bāngzhù ā.",
     "vn": "Vả lại hàng xóm với nhau thì phải giúp đỡ lẫn nhau mà."
    },
    {
@@ -1681,7 +1681,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Từ 2 giờ đến 4 giờ chiều tôi đều ở văn phòng, bất cứ lúc nào bạn cũng có thể đến tìm tôi.",
     "answer": "下午两点到四点之间，我都在办公室，你任何时候都可以来找我。",
-    "answerPy": "Xiàwǔ liǎng diǎn dào sì diǎn zhījiān, wǒ dōu zài bàngōngshì, nǐ rènhé shíhou dōu kěyǐ lái zhǎo wǒ.",
+    "answerPy": "Xiàwǔ liǎng diǎndào sì diǎn zhījiān, wǒ dōu zài bàngōngshì, nǐ rènhé shíhou dōu kěyǐ lái zhǎo wǒ.",
     "note": "之间 với thời gian + 任何 (Bài 1 · điểm 1).",
     "pair": "……之间 / 任何……都……"
    }
@@ -1739,12 +1739,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "再说邻居之间就是要互相帮助啊。",
-  "ex_py": "Zàishuō línjū zhījiān jiù shì yào hùxiāng bāngzhù ā.",
+  "ex_py": "Zàishuō línjū zhījiān jiùshì yào hùxiāng bāngzhù ā.",
   "ex_vn": "Vả lại hàng xóm với nhau thì phải giúp đỡ lẫn nhau mà.",
   "exList": [
    {
     "zh": "再说邻居之间就是要互相帮助啊。",
-    "py": "Zàishuō línjū zhījiān jiù shì yào hùxiāng bāngzhù ā.",
+    "py": "Zàishuō línjū zhījiān jiùshì yào hùxiāng bāngzhù ā.",
     "vn": "Vả lại hàng xóm với nhau thì phải giúp đỡ lẫn nhau mà."
    },
    {
@@ -1851,17 +1851,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "谢谢家月！那就辛苦你了。",
-  "ex_py": "Xièxiè Jiāyuè! Nà jiù xīnkǔ nǐ le.",
+  "ex_py": "Xièxie Jiāyuè! Nà jiù xīnkǔ nǐ le.",
   "ex_vn": "Cảm ơn Gia Nguyệt! Thế thì làm phiền cháu vậy.",
   "exList": [
    {
     "zh": "谢谢家月！那就辛苦你了。",
-    "py": "Xièxiè Jiāyuè! Nà jiù xīnkǔ nǐ le.",
+    "py": "Xièxie Jiāyuè! Nà jiù xīnkǔ nǐ le.",
     "vn": "Cảm ơn Gia Nguyệt! Thế thì làm phiền cháu vậy."
    },
    {
     "zh": "爸爸每天工作很辛苦。",
-    "py": "Bàba měi tiān gōngzuò hěn xīnkǔ.",
+    "py": "Bàba měitiān gōngzuò hěn xīnkǔ.",
     "vn": "Bố mỗi ngày làm việc rất vất vả."
    }
   ],
@@ -1896,7 +1896,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hôm nay mọi người vất vả rồi, về nhà nghỉ sớm nhé.",
     "answer": "大家今天辛苦了，早点儿回家休息吧。",
-    "answerPy": "Dàjiā jīntiān xīnkǔ le, zǎo diǎnr huí jiā xiūxi ba.",
+    "answerPy": "Dàjiā jīntiān xīnkǔ le, zǎodiǎnr huíjiā xiūxi ba.",
     "note": "辛苦了 — lời cảm ơn thường gặp.",
     "pair": "辛苦了"
    },
@@ -1904,7 +1904,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Công việc này vất vả thì vất vả thật, có điều rất thú vị.",
     "answer": "这份工作辛苦是辛苦，不过很有意思。",
-    "answerPy": "Zhè fèn gōngzuò xīnkǔ shì xīnkǔ, búguò hěn yǒuyìsī.",
+    "answerPy": "Zhè fèn gōngzuò xīnkǔ shì xīnkǔ, búguò hěn yǒu yìsi.",
     "note": "……×是×，不过…… (Bài 3 · điểm 1).",
     "pair": "A是A，不过……"
    }
@@ -1962,12 +1962,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "在城市里，人们出行的方式越来越多。",
-  "ex_py": "Zài chéngshì lǐ, rén men chūxíng de fāngshì yuèláiyuè duō.",
+  "ex_py": "Zài chéngshì lǐ, rénmen chūxíng de fāngshì yuèláiyuè duō.",
   "ex_vn": "Ở thành phố, cách đi lại của mọi người ngày càng nhiều.",
   "exList": [
    {
     "zh": "在城市里，人们出行的方式越来越多。",
-    "py": "Zài chéngshì lǐ, rén men chūxíng de fāngshì yuèláiyuè duō.",
+    "py": "Zài chéngshì lǐ, rénmen chūxíng de fāngshì yuèláiyuè duō.",
     "vn": "Ở thành phố, cách đi lại của mọi người ngày càng nhiều."
    },
    {
@@ -2007,7 +2007,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Khi đi quãng ngắn, đi xe đạp thường là lựa chọn phổ biến.",
     "answer": "短距离出行时，骑自行车往往是人们常见的选择。",
-    "answerPy": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rén men chángjiàn de xuǎnzé.",
+    "answerPy": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rénmen chángjiàn de xuǎnzé.",
     "note": "Câu bài khoá 3.",
     "pair": "……出行时，……"
    },
@@ -2015,7 +2015,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với tàu điện ngầm ngày càng nhiều, việc đi lại của mọi người ngày càng tiện.",
     "answer": "随着地铁越来越多，人们的出行越来越方便了。",
-    "answerPy": "Suízhe dìtiě yuèláiyuè duō, rén men de chūxíng yuèláiyuè fāngbiàn le.",
+    "answerPy": "Suízhe dìtiě yuèláiyuè duō, rénmen de chūxíng yuèláiyuè fāngbiàn le.",
     "note": "随着 (Bài 1 · điểm 3).",
     "pair": "随着……越来越……"
    }
@@ -2074,12 +2074,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "短距离出行时，骑自行车往往是人们常见的选择。",
-  "ex_py": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rén men chángjiàn de xuǎnzé.",
+  "ex_py": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rénmen chángjiàn de xuǎnzé.",
   "ex_vn": "Khi đi quãng ngắn, đi xe đạp thường là lựa chọn phổ biến.",
   "exList": [
    {
     "zh": "短距离出行时，骑自行车往往是人们常见的选择。",
-    "py": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rén men chángjiàn de xuǎnzé.",
+    "py": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rénmen chángjiàn de xuǎnzé.",
     "vn": "Khi đi quãng ngắn, đi xe đạp thường là lựa chọn phổ biến."
    },
    {
@@ -2127,7 +2127,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nhà tôi cách công ty không xa, thế là tôi quyết định đi bộ đi làm.",
     "answer": "我家到公司的距离不远，于是我决定走路上班。",
-    "answerPy": "Wǒ jiā dào gōngsī de jùlí bù yuǎn, yúshì wǒ juédìng zǒulù shangbān.",
+    "answerPy": "Wǒ jiā dào gōngsī de jùlí bù yuǎn, yúshì wǒ juédìng zǒulù shàngbān.",
     "note": "……，于是…… (Bài 3 · điểm 4).",
     "pair": "……，于是……"
    }
@@ -2186,12 +2186,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "短距离出行时，骑自行车往往是人们常见的选择。",
-  "ex_py": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rén men chángjiàn de xuǎnzé.",
+  "ex_py": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rénmen chángjiàn de xuǎnzé.",
   "ex_vn": "Khi đi quãng ngắn, đi xe đạp thường là lựa chọn phổ biến.",
   "exList": [
    {
     "zh": "短距离出行时，骑自行车往往是人们常见的选择。",
-    "py": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rén men chángjiàn de xuǎnzé.",
+    "py": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rénmen chángjiàn de xuǎnzé.",
     "vn": "Khi đi quãng ngắn, đi xe đạp thường là lựa chọn phổ biến."
    },
    {
@@ -2330,7 +2330,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Món ăn ở nhà ăn trường tôi vừa rẻ vừa ngon.",
     "answer": "我们学校食堂的菜既便宜又好吃。",
-    "answerPy": "Wǒmen xuéxiào shí táng de cài jì piányi yòu hǎochī.",
+    "answerPy": "Wǒmen xuéxiào shítáng de cài jì piányi yòu hǎochī.",
     "note": "既……又…… (Bài 4 · điểm 3); ôn 食堂 (Bài 1).",
     "pair": "既……又……"
    },
@@ -2396,17 +2396,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "除了骑自行车，人们还会选择骑电动车。",
-  "ex_py": "Chúle qí zìxíngchē, rén men hái huì xuǎnzé qí diàndòngchē.",
+  "ex_py": "Chúle qí zìxíngchē, rénmen hái huì xuǎnzé qí diàndòngchē.",
   "ex_vn": "Ngoài đi xe đạp, mọi người còn chọn đi xe điện.",
   "exList": [
    {
     "zh": "除了骑自行车，人们还会选择骑电动车。",
-    "py": "Chúle qí zìxíngchē, rén men hái huì xuǎnzé qí diàndòngchē.",
+    "py": "Chúle qí zìxíngchē, rénmen hái huì xuǎnzé qí diàndòngchē.",
     "vn": "Ngoài đi xe đạp, mọi người còn chọn đi xe điện."
    },
    {
     "zh": "我每天骑电动车上班，二十分钟就到了。",
-    "py": "Wǒ měi tiān qí diàndòngchē shàngbān, èr shí fēnzhōng jiù dào le.",
+    "py": "Wǒ měitiān qí diàndòngchē shàngbān, èrshí fēnzhōng jiù dào le.",
     "vn": "Hằng ngày tôi đi xe điện đi làm, hai mươi phút là đến."
    }
   ],
@@ -2675,7 +2675,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu điện thoại hết pin thì có thể sạc ở ga tàu điện ngầm.",
     "answer": "要是手机没电了，就可以在地铁站充电。",
-    "answerPy": "Yàoshi shǒujī méi diàn le, jiù kěyǐ zài dìtiě zhàn chōngdiàn.",
+    "answerPy": "Yàoshi shǒujī méi diàn le, jiù kěyǐ zài dìtiězhàn chōngdiàn.",
     "note": "要是……就…… (Bài 1 · điểm 2).",
     "pair": "要是……就……"
    },
@@ -2683,7 +2683,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi quên sạc điện thoại nên không quét mã được.",
     "answer": "我忘了给手机充电，所以扫不了码。",
-    "answerPy": "Wǒ wàng le gěi shǒujī chōngdiàn, suǒyǐ sǎo bù le mǎ.",
+    "answerPy": "Wǒ wàng le gěi shǒujī chōngdiàn, suǒyǐ sǎo bu le mǎ.",
     "note": "Bổ ngữ khả năng 扫不了码 (Bài 4 · điểm 1).",
     "pair": "给……充电 / V不了"
    }
@@ -2721,7 +2721,7 @@ var vocabData = [
    },
    {
     "zh": "流行歌曲",
-    "py": "Liúxíng gē qǔ",
+    "py": "Liúxíng gēqǔ",
     "vn": "bài hát thịnh hành"
    },
    {
@@ -2838,7 +2838,7 @@ var vocabData = [
    },
    {
     "zh": "省了不少时间",
-    "py": "Shěng le bù shǎo shíjiān",
+    "py": "Shěng le bùshǎo shíjiān",
     "vn": "tiết kiệm được khá nhiều thời gian"
    }
   ],
@@ -2863,7 +2863,7 @@ var vocabData = [
    },
    {
     "zh": "在网上买东西能省不少钱。",
-    "py": "Zài wǎngshàng mǎi dōngxi néng shěng bù shǎo qián.",
+    "py": "Zài wǎngshang mǎi dōngxi néng shěng bùshǎo qián.",
     "vn": "Mua đồ trên mạng tiết kiệm được khá nhiều tiền."
    }
   ],
@@ -2886,7 +2886,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Để tiết kiệm tiền, mỗi ngày anh ấy đều nấu cơm ở nhà.",
     "answer": "为了省钱，他每天都在家做饭。",
-    "answerPy": "Wèile shěng qián, tā měi tiān dōu zài jiā zuòfàn.",
+    "answerPy": "Wèile shěng qián, tā měitiān dōu zài jiā zuòfàn.",
     "note": "Ôn 为了 (HSK 3).",
     "pair": "为了省……"
    },
@@ -2894,7 +2894,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Do đi tàu điện ngầm không bị tắc đường, mỗi ngày tôi tiết kiệm được khá nhiều thời gian.",
     "answer": "由于坐地铁不堵车，我每天能省不少时间。",
-    "answerPy": "Yóuyú zuò dìtiě bù dǔchē, wǒ měi tiān néng shěng bù shǎo shíjiān.",
+    "answerPy": "Yóuyú zuò dìtiě bù dǔchē, wǒ měitiān néng shěng bùshǎo shíjiān.",
     "note": "由于 (Bài 2 · điểm 4).",
     "pair": "由于……，……"
    }
@@ -3043,12 +3043,12 @@ var vocabData = [
    },
    {
     "zh": "各位乘客",
-    "py": "Gè wèi chéngkè",
+    "py": "Gèwèi chéngkè",
     "vn": "kính thưa quý hành khách"
    },
    {
     "zh": "乘客们",
-    "py": "Chéngkè men",
+    "py": "Chéngkèmen",
     "vn": "các hành khách"
    }
   ],
@@ -3063,17 +3063,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "在中国，乘客可以在不少地铁站里直接扫码购买食物和饮料。",
-  "ex_py": "Zài Zhōngguó, chéngkè kěyǐ zài bù shǎo dìtiě zhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
+  "ex_py": "Zài Zhōngguó, chéngkè kěyǐ zài bùshǎo dìtiězhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
   "ex_vn": "Ở Trung Quốc, hành khách có thể quét mã mua đồ ăn và đồ uống ngay trong nhiều ga tàu điện ngầm.",
   "exList": [
    {
     "zh": "在中国，乘客可以在不少地铁站里直接扫码购买食物和饮料。",
-    "py": "Zài Zhōngguó, chéngkè kěyǐ zài bù shǎo dìtiě zhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
+    "py": "Zài Zhōngguó, chéngkè kěyǐ zài bùshǎo dìtiězhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
     "vn": "Ở Trung Quốc, hành khách có thể quét mã mua đồ ăn và đồ uống ngay trong nhiều ga tàu điện ngầm."
    },
    {
     "zh": "一位乘客看到了，问她需不需要帮忙。",
-    "py": "Yí wèi chéngkè kàn dào le, wèn tā xū bu xūyào bāngmáng.",
+    "py": "Yí wèi chéngkè kàndào le, wèn tā xū bu xūyào bāngmáng.",
     "vn": "Một hành khách nhìn thấy, hỏi cô ấy có cần giúp không."
    }
   ],
@@ -3108,7 +3108,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Kính thưa quý hành khách, ga tiếp theo là ga Đại học Bắc Kinh.",
     "answer": "各位乘客，下一站是北京大学站。",
-    "answerPy": "Gè wèi chéngkè, xià yí zhàn shì běijīngdàxué zhàn.",
+    "answerPy": "Gèwèi chéngkè, xià yí zhàn shì běijīngdàxué zhàn.",
     "note": "Câu thông báo trên tàu.",
     "pair": "各位乘客"
    },
@@ -3116,7 +3116,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hành khách trên tàu điện ngầm không chỉ có người đi làm mà còn có học sinh.",
     "answer": "地铁上的乘客不光有上班的人，还有学生。",
-    "answerPy": "Dìtiě shàng de chéngkè bù guāng yǒu shàngbān de rén, hái yǒu xuésheng.",
+    "answerPy": "Dìtiě shàng de chéngkè bùguāng yǒu shàngbān de rén, hái yǒu xuésheng.",
     "note": "不光……还…… (Bài 3 · điểm 2).",
     "pair": "不光……还……"
    }
@@ -3149,12 +3149,12 @@ var vocabData = [
    },
    {
     "zh": "购买车票",
-    "py": "Gòumǎi chē piào",
+    "py": "Gòumǎi chēpiào",
     "vn": "mua vé xe"
    },
    {
     "zh": "网上购买",
-    "py": "Wǎngshàng gòumǎi",
+    "py": "Wǎngshang gòumǎi",
     "vn": "mua trên mạng"
    },
    {
@@ -3174,17 +3174,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "乘客可以在不少地铁站里直接扫码购买食物和饮料。",
-  "ex_py": "Chéngkè kěyǐ zài bù shǎo dìtiě zhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
+  "ex_py": "Chéngkè kěyǐ zài bùshǎo dìtiězhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
   "ex_vn": "Hành khách có thể quét mã mua đồ ăn và đồ uống ngay trong nhiều ga tàu điện ngầm.",
   "exList": [
    {
     "zh": "乘客可以在不少地铁站里直接扫码购买食物和饮料。",
-    "py": "Chéngkè kěyǐ zài bù shǎo dìtiě zhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
+    "py": "Chéngkè kěyǐ zài bùshǎo dìtiězhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
     "vn": "Hành khách có thể quét mã mua đồ ăn và đồ uống ngay trong nhiều ga tàu điện ngầm."
    },
    {
     "zh": "您可以在网上购买火车票。",
-    "py": "Nín kěyǐ zài wǎngshàng gòumǎi huǒchē piào.",
+    "py": "Nín kěyǐ zài wǎngshang gòumǎi huǒchēpiào.",
     "vn": "Quý khách có thể mua vé tàu hỏa trên mạng."
    }
   ],
@@ -3219,7 +3219,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trên mạng có thể mua bất kỳ thứ gì.",
     "answer": "在网上可以购买任何东西。",
-    "answerPy": "Zài wǎngshàng kěyǐ gòumǎi rènhé dōngxi.",
+    "answerPy": "Zài wǎngshang kěyǐ gòumǎi rènhé dōngxi.",
     "note": "任何 (Bài 1 · điểm 1).",
     "pair": "购买任何……"
    },
@@ -3227,7 +3227,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nhiều người thích mua đồ trên mạng, một mặt vì rẻ, mặt khác vì tiện.",
     "answer": "很多人喜欢在网上购买东西，一方面因为便宜，另一方面因为方便。",
-    "answerPy": "Hěn duō rén xǐhuan zài wǎngshàng gòumǎi dōngxi, yìfāngmiàn yīnwèi piányi, lìngyìfāngmiàn yīnwèi fāngbiàn.",
+    "answerPy": "Hěn duō rén xǐhuan zài wǎngshang gòumǎi dōngxi, yìfāngmiàn yīnwèi piányi, lìngyìfāngmiàn yīnwèi fāngbiàn.",
     "note": "一方面……另一方面…… (Bài 1 · điểm 4).",
     "pair": "一方面……另一方面……"
    }
@@ -3285,12 +3285,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "乘客可以在不少地铁站里直接扫码购买食物和饮料。",
-  "ex_py": "Chéngkè kěyǐ zài bù shǎo dìtiě zhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
+  "ex_py": "Chéngkè kěyǐ zài bùshǎo dìtiězhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
   "ex_vn": "Hành khách có thể quét mã mua đồ ăn và đồ uống ngay trong nhiều ga tàu điện ngầm.",
   "exList": [
    {
     "zh": "乘客可以在不少地铁站里直接扫码购买食物和饮料。",
-    "py": "Chéngkè kěyǐ zài bù shǎo dìtiě zhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
+    "py": "Chéngkè kěyǐ zài bùshǎo dìtiězhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào.",
     "vn": "Hành khách có thể quét mã mua đồ ăn và đồ uống ngay trong nhiều ga tàu điện ngầm."
    },
    {
@@ -3338,7 +3338,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đi leo núi phải mang đủ đồ ăn và nước.",
     "answer": "去爬山要带够食物和水。",
-    "answerPy": "Qù páshān yào dài gòu shíwù hé shuǐ.",
+    "answerPy": "Qù páshān yào dàigòu shíwù hé shuǐ.",
     "note": "Bổ ngữ kết quả 够 (HSK 3).",
     "pair": "带够……"
    }
@@ -3396,17 +3396,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "有的地铁站还提供免费借雨伞、发雨衣等服务。",
-  "ex_py": "Yǒude dìtiě zhàn hái tígōng miǎnfèi jiè yǔ sǎn, fā yǔyī děng fúwù.",
+  "ex_py": "Yǒude dìtiězhàn hái tígōng miǎnfèi jiè yǔsǎn, fā yǔyī děng fúwù.",
   "ex_vn": "Có ga tàu điện ngầm còn cung cấp các dịch vụ như cho mượn ô, phát áo mưa miễn phí.",
   "exList": [
    {
     "zh": "有的地铁站还提供免费借雨伞、发雨衣等服务。",
-    "py": "Yǒude dìtiě zhàn hái tígōng miǎnfèi jiè yǔ sǎn, fā yǔyī děng fúwù.",
+    "py": "Yǒude dìtiězhàn hái tígōng miǎnfèi jiè yǔsǎn, fā yǔyī děng fúwù.",
     "vn": "Có ga tàu điện ngầm còn cung cấp các dịch vụ như cho mượn ô, phát áo mưa miễn phí."
    },
    {
     "zh": "这个博物馆每周二免费。",
-    "py": "Zhège bó wù guǎn měi zhōu èr miǎnfèi.",
+    "py": "Zhège bówùguǎn měi zhōu èr miǎnfèi.",
     "vn": "Bảo tàng này thứ Ba hằng tuần miễn phí."
    }
   ],
@@ -3449,7 +3449,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ở đây không chỉ sạc điện miễn phí mà còn mượn ô miễn phí được.",
     "answer": "这里不仅能免费充电，还能免费借雨伞。",
-    "answerPy": "Zhèli bùjǐn néng miǎnfèi chōngdiàn, hái néng miǎnfèi jiè yǔ sǎn.",
+    "answerPy": "Zhèli bùjǐn néng miǎnfèi chōngdiàn, hái néng miǎnfèi jiè yǔsǎn.",
     "note": "不仅……还…… (Bài 3 · điểm 2).",
     "pair": "不仅……还……"
    }
@@ -3507,17 +3507,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "有些地铁站附近公司比较多，工作日站里还有早餐车。",
-  "ex_py": "Yǒuxiē dìtiě zhàn fùjìn gōngsī bǐjiào duō, gōngzuòrì zhàn lǐ hái yǒu zǎocān chē.",
+  "ex_py": "Yǒuxiē dìtiězhàn fùjìn gōngsī bǐjiào duō, gōngzuòrì zhàn lǐ hái yǒu zǎocān chē.",
   "ex_vn": "Có những ga tàu điện ngầm gần đó nhiều công ty, ngày làm việc trong ga còn có xe bán đồ ăn sáng.",
   "exList": [
    {
     "zh": "有些地铁站附近公司比较多，工作日站里还有早餐车。",
-    "py": "Yǒuxiē dìtiě zhàn fùjìn gōngsī bǐjiào duō, gōngzuòrì zhàn lǐ hái yǒu zǎocān chē.",
+    "py": "Yǒuxiē dìtiězhàn fùjìn gōngsī bǐjiào duō, gōngzuòrì zhàn lǐ hái yǒu zǎocān chē.",
     "vn": "Có những ga tàu điện ngầm gần đó nhiều công ty, ngày làm việc trong ga còn có xe bán đồ ăn sáng."
    },
    {
     "zh": "小王选好早餐后，突然发现手机没电了。",
-    "py": "Xiǎo wáng xuǎn hǎo zǎocān hòu, tūrán fāxiàn shǒujī méi diàn le.",
+    "py": "Xiǎo Wáng xuǎnhǎo zǎocān hòu, tūrán fāxiàn shǒujī méi diàn le.",
     "vn": "Tiểu Vương chọn xong đồ ăn sáng thì chợt phát hiện điện thoại hết pin."
    }
   ],
@@ -3552,7 +3552,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Một hành khách mua giúp Tiểu Vương một suất ăn sáng.",
     "answer": "一位乘客给小王买了一份早餐。",
-    "answerPy": "Yí wèi chéngkè gěi xiǎo wáng mǎi le yí fèn zǎocān.",
+    "answerPy": "Yí wèi chéngkè gěi Xiǎo Wáng mǎi le yí fèn zǎocān.",
     "note": "Bài tập hoàn thành đoạn văn của sách.",
     "pair": "一份早餐"
    },
@@ -3598,7 +3598,7 @@ var vocabData = [
    },
    {
     "zh": "来不及了",
-    "py": "Láibùjí le",
+    "py": "Láibují le",
     "vn": "không kịp nữa rồi"
    },
    {
@@ -3618,12 +3618,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "没来得及吃早饭的人在这里就能买到热包子和牛奶等。",
-  "ex_py": "Méi láidejí chī zǎofàn de rén zài zhèli jiù néng mǎi dào rè bāozi hé niúnǎi děng.",
+  "ex_py": "Méi láidejí chī zǎofàn de rén zài zhèli jiù néng mǎidào rè bāozi hé niúnǎi děng.",
   "ex_vn": "Người không kịp ăn sáng ở đây có thể mua được bánh bao nóng, sữa…",
   "exList": [
    {
     "zh": "没来得及吃早饭的人在这里就能买到热包子和牛奶等。",
-    "py": "Méi láidejí chī zǎofàn de rén zài zhèli jiù néng mǎi dào rè bāozi hé niúnǎi děng.",
+    "py": "Méi láidejí chī zǎofàn de rén zài zhèli jiù néng mǎidào rè bāozi hé niúnǎi děng.",
     "vn": "Người không kịp ăn sáng ở đây có thể mua được bánh bao nóng, sữa…"
    },
    {
@@ -3741,17 +3741,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "有的地铁站里甚至还有鲜花店。",
-  "ex_py": "Yǒude dìtiě zhàn lǐ shènzhì hái yǒu xiānhuā diàn.",
+  "ex_py": "Yǒude dìtiězhàn lǐ shènzhì hái yǒu xiānhuā diàn.",
   "ex_vn": "Có ga tàu điện ngầm thậm chí còn có cả tiệm hoa tươi.",
   "exList": [
    {
     "zh": "有的地铁站里甚至还有鲜花店。",
-    "py": "Yǒude dìtiě zhàn lǐ shènzhì hái yǒu xiānhuā diàn.",
+    "py": "Yǒude dìtiězhàn lǐ shènzhì hái yǒu xiānhuā diàn.",
     "vn": "Có ga tàu điện ngầm thậm chí còn có cả tiệm hoa tươi."
    },
    {
     "zh": "母亲节那天，我给妈妈买了一束鲜花。",
-    "py": "Mǔqīn jié nà tiān, wǒ gěi māma mǎi le yí shù xiānhuā.",
+    "py": "Mǔqīnjié nàtiān, wǒ gěi māma mǎi le yí shù xiānhuā.",
     "vn": "Ngày của Mẹ, tôi mua cho mẹ một bó hoa tươi."
    }
   ],
@@ -3786,7 +3786,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trong ga tàu điện ngầm thậm chí còn có tiệm hoa tươi.",
     "answer": "地铁站里甚至还有鲜花店。",
-    "answerPy": "Dìtiě zhàn lǐ shènzhì hái yǒu xiānhuā diàn.",
+    "answerPy": "Dìtiězhàn lǐ shènzhì hái yǒu xiānhuā diàn.",
     "note": "甚至 (Bài 3 · điểm 3).",
     "pair": "甚至还有……"
    },
@@ -3794,7 +3794,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tan làm tôi mua một bó hoa tươi tặng vợ, cô ấy vui lắm.",
     "answer": "下班的时候，我买了一束鲜花送给妻子，她高兴极了。",
-    "answerPy": "Xiàbān de shíhou, wǒ mǎi le yí shù xiānhuā sòng gěi qīzi, tā gāoxìng jí le.",
+    "answerPy": "Xiàbān de shíhou, wǒ mǎi le yí shù xiānhuā sònggěi qīzi, tā gāoxìng jí le.",
     "note": "V + 给 (HSK 3); ôn 极了.",
     "pair": "送给…… / Adj + 极了"
    }
@@ -3827,7 +3827,7 @@ var vocabData = [
    },
    {
     "zh": "顺便问一下",
-    "py": "Shùnbiàn wèn yíxià",
+    "py": "Shùnbiàn wènyíxià",
     "vn": "nhân tiện hỏi chút"
    },
    {
@@ -3837,7 +3837,7 @@ var vocabData = [
    },
    {
     "zh": "顺便看看",
-    "py": "Shùnbiàn kàn kàn",
+    "py": "Shùnbiàn kànkan",
     "vn": "tiện thể xem qua"
    }
   ],
@@ -3852,12 +3852,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "乘客下班时可以顺便买花送给家人。",
-  "ex_py": "Chéngkè xiàbān shí kěyǐ shùnbiàn mǎi huā sòng gěi jiārén.",
+  "ex_py": "Chéngkè xiàbān shí kěyǐ shùnbiàn mǎi huā sònggěi jiārén.",
   "ex_vn": "Hành khách lúc tan làm có thể tiện thể mua hoa tặng người nhà.",
   "exList": [
    {
     "zh": "乘客下班时可以顺便买花送给家人。",
-    "py": "Chéngkè xiàbān shí kěyǐ shùnbiàn mǎi huā sòng gěi jiārén.",
+    "py": "Chéngkè xiàbān shí kěyǐ shùnbiàn mǎi huā sònggěi jiārén.",
     "vn": "Hành khách lúc tan làm có thể tiện thể mua hoa tặng người nhà."
    },
    {
@@ -3963,17 +3963,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "这些小小的服务，不仅方便了人们的出行，也让大家的心情变得更加愉快。",
-  "ex_py": "Zhèxiē xiǎo xiǎo de fúwù, bùjǐn fāngbiàn le rén men de chūxíng, yě ràng dàjiā de xīnqíng biàn de gèngjiā yúkuài.",
+  "ex_py": "Zhèxiē xiǎoxiǎo de fúwù, bùjǐn fāngbiàn le rénmen de chūxíng, yě ràng dàjiā de xīnqíng biànde gèngjiā yúkuài.",
   "ex_vn": "Những dịch vụ nho nhỏ này không chỉ giúp mọi người đi lại thuận tiện, mà còn khiến tâm trạng mọi người vui vẻ hơn.",
   "exList": [
    {
     "zh": "这些小小的服务，不仅方便了人们的出行，也让大家的心情变得更加愉快。",
-    "py": "Zhèxiē xiǎo xiǎo de fúwù, bùjǐn fāngbiàn le rén men de chūxíng, yě ràng dàjiā de xīnqíng biàn de gèngjiā yúkuài.",
+    "py": "Zhèxiē xiǎoxiǎo de fúwù, bùjǐn fāngbiàn le rénmen de chūxíng, yě ràng dàjiā de xīnqíng biànde gèngjiā yúkuài.",
     "vn": "Những dịch vụ nho nhỏ này không chỉ giúp mọi người đi lại thuận tiện, mà còn khiến tâm trạng mọi người vui vẻ hơn."
    },
    {
     "zh": "听音乐可以让人心情变好。",
-    "py": "Tīng yīnyuè kěyǐ ràng rén xīnqíng biàn hǎo.",
+    "py": "Tīng yīnyuè kěyǐ ràng rén xīnqíng biànhǎo.",
     "vn": "Nghe nhạc có thể làm tâm trạng tốt lên."
    }
   ],
@@ -4008,7 +4008,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nghe nhạc có thể làm tâm trạng tốt lên.",
     "answer": "听音乐可以让人心情变好。",
-    "answerPy": "Tīng yīnyuè kěyǐ ràng rén xīnqíng biàn hǎo.",
+    "answerPy": "Tīng yīnyuè kěyǐ ràng rén xīnqíng biànhǎo.",
     "note": "Đáp án gợi ý bài nhìn tranh đặt câu của sách.",
     "pair": "让……心情变好"
    },
@@ -4016,7 +4016,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hôm nay trời mưa, tâm trạng tôi không tốt lắm, có điều gặp bạn thì vui lên rồi.",
     "answer": "今天下雨，我心情不太好，不过见到你就开心了。",
-    "answerPy": "Jīntiān xiàyǔ, wǒ xīnqíng bú tài hǎo, búguò jiàn dào nǐ jiù kāixīn le.",
+    "answerPy": "Jīntiān xiàyǔ, wǒ xīnqíng bú tài hǎo, búguò jiàndào nǐ jiù kāixīn le.",
     "note": "……，不过…… (Bài 2 · điểm 2).",
     "pair": "心情不太好，不过……"
    }
@@ -4074,12 +4074,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "也让大家的心情变得更加愉快。",
-  "ex_py": "Yě ràng dàjiā de xīnqíng biàn de gèngjiā yúkuài.",
+  "ex_py": "Yě ràng dàjiā de xīnqíng biànde gèngjiā yúkuài.",
   "ex_vn": "Cũng khiến tâm trạng mọi người trở nên vui vẻ hơn.",
   "exList": [
    {
     "zh": "也让大家的心情变得更加愉快。",
-    "py": "Yě ràng dàjiā de xīnqíng biàn de gèngjiā yúkuài.",
+    "py": "Yě ràng dàjiā de xīnqíng biànde gèngjiā yúkuài.",
     "vn": "Cũng khiến tâm trạng mọi người trở nên vui vẻ hơn."
    },
    {
@@ -4119,7 +4119,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với tuổi tác tăng lên, ông ấy càng chú ý đến sức khỏe hơn.",
     "answer": "随着年龄的增长，他更加关注身体健康了。",
-    "answerPy": "Suízhe niánlíng de zēng zhǎng, tā gèngjiā guānzhù shēntǐ jiànkāng le.",
+    "answerPy": "Suízhe niánlíng de zēngzhǎng, tā gèngjiā guānzhù shēntǐ jiànkāng le.",
     "note": "随着 (Bài 1 · điểm 3).",
     "pair": "随着……，更加……"
    },
@@ -4127,7 +4127,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Có tàu điện ngầm rồi, việc đi lại của mọi người càng tiện hơn.",
     "answer": "有了地铁以后，人们的出行更加方便了。",
-    "answerPy": "Yǒu le dìtiě yǐhòu, rén men de chūxíng gèngjiā fāngbiàn le.",
+    "answerPy": "Yǒu le dìtiě yǐhòu, rénmen de chūxíng gèngjiā fāngbiàn le.",
     "note": "更加 + 方便.",
     "pair": "更加 + Adj"
    }
@@ -4165,7 +4165,7 @@ var vocabData = [
    },
    {
     "zh": "旅途愉快",
-    "py": "Lǚ tú yúkuài",
+    "py": "Lǚtú yúkuài",
     "vn": "chuyến đi vui vẻ"
    },
    {
@@ -4185,17 +4185,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "这些小小的服务，不仅方便了人们的出行，也让大家的心情变得更加愉快。",
-  "ex_py": "Zhèxiē xiǎo xiǎo de fúwù, bùjǐn fāngbiàn le rén men de chūxíng, yě ràng dàjiā de xīnqíng biàn de gèngjiā yúkuài.",
+  "ex_py": "Zhèxiē xiǎoxiǎo de fúwù, bùjǐn fāngbiàn le rénmen de chūxíng, yě ràng dàjiā de xīnqíng biànde gèngjiā yúkuài.",
   "ex_vn": "Những dịch vụ nho nhỏ này không chỉ giúp mọi người đi lại thuận tiện, mà còn khiến tâm trạng mọi người vui vẻ hơn.",
   "exList": [
    {
     "zh": "这些小小的服务，不仅方便了人们的出行，也让大家的心情变得更加愉快。",
-    "py": "Zhèxiē xiǎo xiǎo de fúwù, bùjǐn fāngbiàn le rén men de chūxíng, yě ràng dàjiā de xīnqíng biàn de gèngjiā yúkuài.",
+    "py": "Zhèxiē xiǎoxiǎo de fúwù, bùjǐn fāngbiàn le rénmen de chūxíng, yě ràng dàjiā de xīnqíng biànde gèngjiā yúkuài.",
     "vn": "Những dịch vụ nho nhỏ này không chỉ giúp mọi người đi lại thuận tiện, mà còn khiến tâm trạng mọi người vui vẻ hơn."
    },
    {
     "zh": "小王因为这件事，一天的心情都非常愉快。",
-    "py": "Xiǎo wáng yīnwèi zhè jiàn shì, yì tiān de xīnqíng dōu fēicháng yúkuài.",
+    "py": "Xiǎo Wáng yīnwèi zhè jiàn shì, yì tiān de xīnqíng dōu fēicháng yúkuài.",
     "vn": "Vì chuyện này mà cả ngày tâm trạng Tiểu Vương rất vui."
    }
   ],
@@ -4238,7 +4238,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chuyến du lịch này vui thì vui thật, có điều hơi mệt.",
     "answer": "这次旅游愉快是愉快，就是有点儿累。",
-    "answerPy": "Zhè cì lǚyóu yúkuài shì yúkuài, jiù shì yǒudiǎnr lèi.",
+    "answerPy": "Zhè cì lǚyóu yúkuài shì yúkuài, jiùshì yǒudiǎnr lèi.",
     "note": "……×是×，就是…… (Bài 3 · điểm 1).",
     "pair": "A是A，就是……"
    }
@@ -4329,13 +4329,13 @@ var dialogData = [
    {
     "sp": 1,
     "zh": "你好，你看上去很着急，需要帮忙吗？",
-    "py": "Nǐhǎo, nǐ kàn shàngqù hěn zháojí, xūyào bāngmáng ma?",
+    "py": "Nǐhǎo, nǐ kàn shàngqu hěn zháojí, xūyào bāngmáng ma?",
     "vn": "Chào bạn, trông bạn có vẻ sốt ruột lắm, bạn cần giúp gì không?"
    },
    {
     "sp": 0,
     "zh": "我忘了交电话费，手机停机了。我没带现金，手机没有信号，上不了网，买不了地铁票了。",
-    "py": "Wǒ wàng le jiāo diànhuà fèi, shǒujī tíng jī le. Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bù le wǎng, mǎi bù le dìtiě piào le.",
+    "py": "Wǒ wàng le jiāo diàn huàfèi, shǒujī tíng jī le. Wǒ méi dài xiànjīn, shǒujī méiyǒu xìnhào, shàng bu le wǎng, mǎi bu le dìtiě piào le.",
     "vn": "Tôi quên đóng tiền điện thoại nên máy bị cắt rồi. Tôi không mang tiền mặt, điện thoại không có sóng, không lên mạng được, không mua được vé tàu điện ngầm nữa."
    },
    {
@@ -4347,7 +4347,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "太感谢你了，我要去北京大学站。对了，能不能告诉我你的联系方式？我想把钱还给你。",
-    "py": "Tài gǎnxiè nǐ le, wǒ yào qù běijīngdàxué zhàn. Duì le, néng bu néng gàosu wǒ nǐ de liánxì fāngshì? Wǒ xiǎng bǎ qián hái gěi nǐ.",
+    "py": "Tài gǎnxiè nǐ le, wǒ yào qù běijīngdàxué zhàn. Duì le, néng bu néng gàosu wǒ nǐ de liánxì fāngshì? Wǒ xiǎng bǎ qián huán gěi nǐ.",
     "vn": "Cảm ơn bạn nhiều lắm, tôi muốn đến ga Đại học Bắc Kinh. À đúng rồi, bạn có thể cho tôi cách liên lạc của bạn không? Tôi muốn trả lại tiền cho bạn."
    },
    {
@@ -4397,37 +4397,37 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "阿姨，您怎么站在这儿不上楼？",
-    "py": "Āyí, nín zěnme zhàn zài zhèr bú shàng lóu?",
+    "py": "Āyí, nín zěnme zhàn zài zhèr bú shànglóu?",
     "vn": "Cô ơi, sao cô đứng đây mà không lên lầu ạ?"
    },
    {
     "sp": 1,
     "zh": "我开车去超市买了不少东西，刚拿过来了一些。我先休息一会儿，再去车里拿剩下的。",
-    "py": "Wǒ kāichē qù chāoshì mǎi le bù shǎo dōngxi, gāng ná guòlái le yìxiē. Wǒ xiān xiūxi yíhuìr, zài qù chē lǐ ná shèng xià de.",
+    "py": "Wǒ kāichē qù chāoshì mǎi le bùshǎo dōngxi, gāng ná guòlai le yìxiē. Wǒ xiān xiūxi yíhuìr, zài qù chē lǐ ná shèngxià de.",
     "vn": "Cô lái xe đi siêu thị mua khá nhiều đồ, vừa mang qua đây được một ít. Cô nghỉ một lát đã, rồi ra xe lấy chỗ còn lại."
    },
    {
     "sp": 0,
     "zh": "我正好要上楼，我帮您提上去吧。",
-    "py": "Wǒ zhènghǎo yào shàng lóu, wǒ bāng nín tí shàngqù ba.",
+    "py": "Wǒ zhènghǎo yào shànglóu, wǒ bāng nín tí shàngqu ba.",
     "vn": "Cháu đang định lên lầu, để cháu xách lên giúp cô nhé."
    },
    {
     "sp": 1,
     "zh": "不用不用，这几个袋子太重了，我自己拿吧。",
-    "py": "Búyòng buyòng, zhè jǐ gè dàizi tài zhòng le, wǒ zìjǐ ná ba.",
+    "py": "Búyòng búyòng, zhè jǐ gè dàizi tài zhòng le, wǒ zìjǐ ná ba.",
     "vn": "Không cần đâu cháu, mấy cái túi này nặng lắm, để cô tự mang."
    },
    {
     "sp": 0,
     "zh": "没事，我提着这些东西就算锻炼身体了，再说邻居之间就是要互相帮助啊。",
-    "py": "Méishì, wǒ tí zhe zhèxiē dōngxi jiù suàn duànliàn shēntǐ le, zàishuō línjū zhījiān jiù shì yào hùxiāng bāngzhù ā.",
+    "py": "Méishì, wǒ tí zhe zhèxiē dōngxi jiùsuàn duànliàn shēntǐ le, zàishuō línjū zhījiān jiùshì yào hùxiāng bāngzhù ā.",
     "vn": "Không sao đâu ạ, cháu xách mấy thứ này coi như tập thể dục rồi, vả lại hàng xóm với nhau thì phải giúp đỡ lẫn nhau mà."
    },
    {
     "sp": 1,
     "zh": "谢谢家月！那就辛苦你了。",
-    "py": "Xièxiè Jiāyuè! Nà jiù xīnkǔ nǐ le.",
+    "py": "Xièxie Jiāyuè! Nà jiù xīnkǔ nǐ le.",
     "vn": "Cảm ơn Gia Nguyệt! Vậy làm phiền cháu nhé."
    }
   ]
@@ -4467,25 +4467,25 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "在城市里，人们出行的方式越来越多。",
-    "py": "Zài chéngshì lǐ, rén men chūxíng de fāngshì yuèláiyuè duō.",
+    "py": "Zài chéngshì lǐ, rénmen chūxíng de fāngshì yuèláiyuè duō.",
     "vn": "Ở thành phố, cách đi lại của mọi người ngày càng nhiều."
    },
    {
     "sp": 0,
     "zh": "短距离出行时，骑自行车往往是人们常见的选择。",
-    "py": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rén men chángjiàn de xuǎnzé.",
+    "py": "Duǎn jùlí chūxíng shí, qí zìxíngchē wǎngwǎng shì rénmen chángjiàn de xuǎnzé.",
     "vn": "Khi đi quãng ngắn, đi xe đạp thường là lựa chọn phổ biến của mọi người."
    },
    {
     "sp": 0,
     "zh": "白家月就很喜欢骑车去学校，她觉得这样既方便，又能锻炼身体，还能保护环境。",
-    "py": "Bái Jiāyuè jiù hěn xǐhuan qí chē qù xuéxiào, tā juéde zhèyàng jì fāngbiàn, yòu néng duànliàn shēntǐ, hái néng bǎohù huánjìng.",
+    "py": "Bái Jiāyuè jiù hěn xǐhuan qíchē qù xuéxiào, tā juéde zhèyàng jì fāngbiàn, yòu néng duànliàn shēntǐ, hái néng bǎohù huánjìng.",
     "vn": "Bạch Gia Nguyệt rất thích đạp xe đến trường, cô ấy thấy như vậy vừa tiện, vừa rèn luyện được thân thể, lại còn bảo vệ được môi trường."
    },
    {
     "sp": 0,
     "zh": "除了骑自行车，人们还会选择骑电动车。",
-    "py": "Chúle qí zìxíngchē, rén men hái huì xuǎnzé qí diàndòngchē.",
+    "py": "Chúle qí zìxíngchē, rénmen hái huì xuǎnzé qí diàndòngchē.",
     "vn": "Ngoài đi xe đạp, mọi người còn chọn đi xe điện."
    },
    {
@@ -4538,25 +4538,25 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "在中国，乘客可以在不少地铁站里直接扫码购买食物和饮料，有的地铁站还提供免费借雨伞、发雨衣等服务。",
-    "py": "Zài Zhōngguó, chéngkè kěyǐ zài bù shǎo dìtiě zhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào, yǒude dìtiě zhàn hái tígōng miǎnfèi jiè yǔ sǎn, fā yǔyī děng fúwù.",
+    "py": "Zài Zhōngguó, chéngkè kěyǐ zài bùshǎo dìtiězhàn lǐ zhíjiē sǎo mǎ gòumǎi shíwù hé yǐnliào, yǒude dìtiězhàn hái tígōng miǎnfèi jiè yǔsǎn, fā yǔyī děng fúwù.",
     "vn": "Ở Trung Quốc, hành khách có thể quét mã mua đồ ăn và đồ uống ngay trong nhiều ga tàu điện ngầm, có ga còn cung cấp các dịch vụ như cho mượn ô, phát áo mưa miễn phí."
    },
    {
     "sp": 0,
     "zh": "有些地铁站附近公司比较多，工作日站里还有早餐车，没来得及吃早饭的人在这里就能买到热包子和牛奶等，省了不少时间。",
-    "py": "Yǒuxiē dìtiě zhàn fùjìn gōngsī bǐjiào duō, gōngzuòrì zhàn lǐ hái yǒu zǎocān chē, méi láidejí chī zǎofàn de rén zài zhèli jiù néng mǎi dào rè bāozi hé niúnǎi děng, shěng le bù shǎo shíjiān.",
+    "py": "Yǒuxiē dìtiězhàn fùjìn gōngsī bǐjiào duō, gōngzuòrì zhàn lǐ hái yǒu zǎocān chē, méi láidejí chī zǎofàn de rén zài zhèli jiù néng mǎidào rè bāozi hé niúnǎi děng, shěng le bùshǎo shíjiān.",
     "vn": "Có những ga gần đó khá nhiều công ty, ngày làm việc trong ga còn có xe bán đồ ăn sáng, người không kịp ăn sáng có thể mua bánh bao nóng, sữa… ngay tại đây, tiết kiệm được khá nhiều thời gian."
    },
    {
     "sp": 0,
     "zh": "有的地铁站里甚至还有鲜花店，乘客下班时可以顺便买花送给家人。",
-    "py": "Yǒude dìtiě zhàn lǐ shènzhì hái yǒu xiānhuā diàn, chéngkè xiàbān shí kěyǐ shùnbiàn mǎi huā sòng gěi jiārén.",
+    "py": "Yǒude dìtiězhàn lǐ shènzhì hái yǒu xiānhuā diàn, chéngkè xiàbān shí kěyǐ shùnbiàn mǎi huā sònggěi jiārén.",
     "vn": "Có ga thậm chí còn có cả tiệm hoa tươi, hành khách lúc tan làm có thể tiện thể mua hoa tặng người nhà."
    },
    {
     "sp": 0,
     "zh": "这些小小的服务，不仅方便了人们的出行，也让大家的心情变得更加愉快。",
-    "py": "Zhèxiē xiǎo xiǎo de fúwù, bùjǐn fāngbiàn le rén men de chūxíng, yě ràng dàjiā de xīnqíng biàn de gèngjiā yúkuài.",
+    "py": "Zhèxiē xiǎoxiǎo de fúwù, bùjǐn fāngbiàn le rénmen de chūxíng, yě ràng dàjiā de xīnqíng biànde gèngjiā yúkuài.",
     "vn": "Những dịch vụ nho nhỏ này không chỉ giúp mọi người đi lại thuận tiện, mà còn khiến tâm trạng mọi người trở nên vui vẻ hơn."
    }
   ],
@@ -5035,12 +5035,12 @@ var translateData = [
  {
   "vi": "Điện thoại không có sóng, không lên mạng được, không mua được vé tàu điện ngầm nữa.",
   "zh": "手机没有信号，上不了网，买不了地铁票了。",
-  "py": "Shǒujī méiyǒu xìnhào, shàng bù le wǎng, mǎi bù le dìtiě piào le."
+  "py": "Shǒujī méiyǒu xìnhào, shàng bu le wǎng, mǎi bu le dìtiě piào le."
  },
  {
   "vi": "Cháu xách mấy thứ này coi như tập thể dục, vả lại hàng xóm với nhau phải giúp đỡ lẫn nhau.",
   "zh": "我提着这些东西就算锻炼身体了，再说邻居之间就是要互相帮助。",
-  "py": "Wǒ tí zhe zhèxiē dōngxi jiù suàn duànliàn shēntǐ le, zàishuō línjū zhījiān jiù shì yào hùxiāng bāngzhù."
+  "py": "Wǒ tí zhe zhèxiē dōngxi jiùsuàn duànliàn shēntǐ le, zàishuō línjū zhījiān jiùshì yào hùxiāng bāngzhù."
  },
  {
   "vi": "Cô ấy thấy đi xe đạp vừa tiện, vừa rèn luyện được thân thể.",
@@ -5050,7 +5050,7 @@ var translateData = [
  {
   "vi": "Người không kịp ăn sáng có thể mua bánh bao nóng ở đây.",
   "zh": "没来得及吃早饭的人可以在这里买到热包子。",
-  "py": "Méi láidejí chī zǎofàn de rén kěyǐ zài zhèli mǎi dào rè bāozi."
+  "py": "Méi láidejí chī zǎofàn de rén kěyǐ zài zhèli mǎidào rè bāozi."
  },
  {
   "vi": "Để đỡ tốn sức, gần đây anh ấy định mua một chiếc xe điện.",
@@ -5060,7 +5060,7 @@ var translateData = [
  {
   "vi": "Hành khách lúc tan làm có thể tiện thể mua hoa tặng người nhà.",
   "zh": "乘客下班时可以顺便买花送给家人。",
-  "py": "Chéngkè xiàbān shí kěyǐ shùnbiàn mǎi huā sòng gěi jiārén."
+  "py": "Chéngkè xiàbān shí kěyǐ shùnbiàn mǎi huā sònggěi jiārén."
  }
 ];
 var translateDataRev = [
@@ -5082,12 +5082,12 @@ var translateDataRev = [
  {
   "vi": "Có ga tàu điện ngầm còn cung cấp dịch vụ cho mượn ô miễn phí.",
   "zh": "有的地铁站还提供免费借雨伞的服务。",
-  "py": "Yǒude dìtiě zhàn hái tígōng miǎnfèi jiè yǔ sǎn de fúwù."
+  "py": "Yǒude dìtiězhàn hái tígōng miǎnfèi jiè yǔsǎn de fúwù."
  },
  {
   "vi": "Những dịch vụ nho nhỏ này khiến tâm trạng mọi người càng vui vẻ hơn.",
   "zh": "这些小小的服务让大家的心情变得更加愉快。",
-  "py": "Zhèxiē xiǎo xiǎo de fúwù ràng dàjiā de xīnqíng biàn de gèngjiā yúkuài."
+  "py": "Zhèxiē xiǎoxiǎo de fúwù ràng dàjiā de xīnqíng biànde gèngjiā yúkuài."
  }
 ];
 var sgkData = [
@@ -5333,6 +5333,6 @@ var writingData = {
  ],
  "model": {
   "zh": "我们班一共有十二个同学，其中八个住在学校里，四个住在校外。住在校内的同学往往走路或者骑自行车去上课，他们觉得这样既方便，又能锻炼身体。住在校外的同学有的坐地铁，有的骑电动车。坐地铁不会堵车，能省不少时间，再说地铁站里还能买到早餐，没来得及吃早饭也不用担心。骑电动车速度快，充电也很方便，不过下大雨的时候就骑不了了。我觉得，绿色出行不仅能保护环境，也能让我们的心情更加愉快。要是距离不远，大家就尽量走路或者骑自行车吧！",
-  "py": "Wǒmen bān yígòng yǒu shí èr gè tóngxué, qízhōng bā gè zhù zài xuéxiào lǐ, sì gè zhù zài xiào wài. Zhù zài xiào nèi de tóngxué wǎngwǎng zǒulù huòzhě qí zìxíngchē qù shàngkè, tāmen juéde zhèyàng jì fāngbiàn, yòu néng duànliàn shēntǐ. Zhù zài xiào wài de tóngxué yǒude zuò dìtiě, yǒude qí diàndòngchē. Zuò dìtiě bú huì dǔchē, néng shěng bù shǎo shíjiān, zàishuō dìtiě zhàn lǐ hái néng mǎi dào zǎocān, méi láidejí chī zǎofàn yě búyòng dānxīn. Qí diàndòngchē sùdù kuài, chōngdiàn yě hěn fāngbiàn, búguò xià dà yǔ de shíhou jiù qí bù liǎo le. Wǒ juéde, lǜsè chūxíng bùjǐn néng bǎohù huánjìng, yě néng ràng wǒmen de xīnqíng gèngjiā yúkuài. Yàoshi jùlí bù yuǎn, dàjiā jiù jǐnliàng zǒulù huòzhě qí zìxíngchē ba!"
+  "py": "Wǒmen bān yígòng yǒu shí èr gè tóngxué, qízhōng bā gè zhù zài xuéxiào lǐ, sì gè zhù zài xiào wài. Zhù zài xiào nèi de tóngxué wǎngwǎng zǒulù huòzhě qí zìxíngchē qù shàngkè, tāmen juéde zhèyàng jì fāngbiàn, yòu néng duànliàn shēntǐ. Zhù zài xiào wài de tóngxué yǒude zuò dìtiě, yǒude qí diàndòngchē. Zuò dìtiě bú huì dǔchē, néng shěng bùshǎo shíjiān, zàishuō dìtiězhàn lǐ hái néng mǎidào zǎocān, méi láidejí chī zǎofàn yě búyòng dānxīn. Qí diàndòngchē sùdù kuài, chōngdiàn yě hěn fāngbiàn, búguò xià dàyǔ de shíhou jiù qí bu liǎo le. Wǒ juéde, lǜsè chūxíng bùjǐn néng bǎohù huánjìng, yě néng ràng wǒmen de xīnqíng gèngjiā yúkuài. Yàoshi jùlí bù yuǎn, dàjiā jiù jǐnliàng zǒulù huòzhě qí zìxíngchē ba!"
  }
 };

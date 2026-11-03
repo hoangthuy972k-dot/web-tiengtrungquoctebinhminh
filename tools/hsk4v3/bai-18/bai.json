@@ -1,0 +1,347 @@
+{
+"so": 18,
+"zh": "科技改变生活",
+"py": "Kējì gǎibiàn shēnghuó",
+"vn": "Công nghệ thay đổi cuộc sống",
+"chuDe": "Xe đạp công cộng, quay video ngắn, kinh tế dịch vụ tận nhà — công nghệ mới thay đổi cuộc sống hằng ngày",
+"icon": "📱",
+"mucTieu": [
+  "Nghe hiểu và trao đổi được về các chủ đề ứng dụng công nghệ mới, tiến bộ khoa học kỹ thuật thay đổi cuộc sống.",
+  "Nói hoặc viết được cách quay video ngắn và nêu được suy nghĩ của mình về video ngắn.",
+  "Hiểu các hình thái kinh tế mới của Trung Quốc như xe đạp công cộng, video ngắn, kinh tế dịch vụ tận nhà."
+],
+
+"wu": [
+  {"img":"wu-A","label":"厨师","py":"chúshī","letter":"A"},
+  {"img":"wu-B","label":"推","py":"tuī","letter":"B"},
+  {"img":"wu-C","label":"小吃","py":"xiǎochī","letter":"C"},
+  {"img":"wu-D","label":"拍","py":"pāi","letter":"D"},
+  {"img":"wu-E","label":"取","py":"qǔ","letter":"E"},
+  {"img":"wu-F","label":"3D打印机","py":"3D dǎyìnjī","letter":"F"}
+],
+
+"dialogs": [
+  {"tab":"Đi xe đạp công cộng","scene":"学校咖啡馆 · Quán cà phê trong trường (chiều cuối tuần, Annie đạp xe đạp công cộng đến trường của Bạch Gia Nguyệt và Trần Thiên Trung)","anh":"kv-1",
+   "nguoi":["白家月","安妮","陈天中"],
+   "preQuiz":[
+     {"q":"安妮是怎么到白家月的学校的？","opts":["先骑车后坐地铁","先坐地铁后骑车","先骑车后坐公交车","先坐公交车后骑车"],"ans":3},
+     {"q":"第一次骑共享单车，需要扫码后再在App上：","opts":["进行支付","完成注册","查看信息","找回密码"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"安妮，我们在这儿呢。","vn":"Annie ơi, bọn mình ở đây này."},
+     {"sp":1,"zh":"天中、家月，你们猜我是怎么过来的？","vn":"Thiên Trung, Gia Nguyệt, các cậu đoán xem tớ đến đây bằng cách nào?"},
+     {"sp":0,"zh":"坐公交车吗？","vn":"Đi xe buýt à?"},
+     {"sp":1,"zh":"我先坐的公交车，然后骑共享单车，快到那边那个出口时又推了一小段。","vn":"Tớ đi xe buýt trước, sau đó đạp xe đạp công cộng, sắp đến cái cổng ra đằng kia thì lại dắt xe đi bộ một đoạn ngắn."},
+     {"sp":0,"zh":"我看很多人都骑共享单车，我还没骑过呢。","vn":"Tớ thấy rất nhiều người đi xe đạp công cộng, mà tớ thì chưa đi bao giờ."},
+     {"sp":2,"zh":"我骑过，很方便的。第一次骑的时候，你打开微信，对着共享单车上的二维码扫一下，在App上完成注册就可以了，怎么使用、费用标准什么的App上都有说明。","vn":"Tớ đi rồi, tiện lắm. Lần đầu đi, cậu mở WeChat, hướng vào mã QR trên xe đạp quét một cái, hoàn tất đăng ký trên App là được, còn cách sử dụng, mức phí các thứ thì trên App đều có hướng dẫn."},
+     {"sp":0,"zh":"好啊！哪天我出去办事时也试试。","vn":"Hay đấy! Hôm nào ra ngoài làm việc tớ cũng thử xem."}],
+   "hoi":[["白家月骑过共享单车吗？如果没骑过，她想什么时候骑？","她还没骑过共享单车。她想哪天出去办事时也试试。"],["第一次骑共享单车时应该做些什么？了解些什么？","第一次骑的时候，要打开微信，对着共享单车上的二维码扫一下，在App上完成注册。还要了解怎么使用、费用标准什么的，这些App上都有说明。"]],
+   "kelai":"安妮到白家月和陈天中的学校玩，她先坐……，然后……，快到一个出口时又……。白家月说她看很多人……，但她……呢。陈天中介绍说，他骑过共享单车，……。第一次……，打开微信，对着……扫一下，在App上……就可以了，而且，怎么使用、……什么的App上……。白家月听完表示，她哪天出去……。",
+   "kelaiMau":"安妮到白家月和陈天中的学校玩，她先坐的公交车，然后骑共享单车，快到一个出口时又推了一小段。白家月说她看很多人都骑共享单车，但她还没骑过呢。陈天中介绍说，他骑过共享单车，很方便。第一次骑的时候，打开微信，对着共享单车上的二维码扫一下，在App上完成注册就可以了，而且，怎么使用、费用标准什么的App上都有说明。白家月听完表示，她哪天出去办事时也试试。"},
+
+  {"tab":"Video ngắn của nhóm Annie","scene":"学校咖啡馆 · Quán cà phê trong trường (Annie, Bạch Gia Nguyệt và Trần Thiên Trung tiếp tục trò chuyện)","anh":"kv-2",
+   "nguoi":["安妮","白家月","陈天中"],
+   "preQuiz":[
+     {"q":"老师留的短视频作业是关于什么的？","opts":["中国美食","饮料广告","校园生活","著名景点"],"ans":0},
+     {"q":"大家觉得安妮他们小组拍的短视频怎么样？","opts":["有些无聊","效果一般","非常精彩","让人感动"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"差点儿忘了，我给你们看个短视频。","vn":"Suýt nữa thì quên, tớ cho các cậu xem một video ngắn."},
+     {"sp":1,"zh":"啊？你们拍的？真不错！","vn":"Hả? Các cậu quay à? Hay thật đấy!"},
+     {"sp":0,"zh":"对！前段时间老师留了个作业，叫各个小组拍个短视频，介绍中国美食。我们小组讨论后决定，由AI小语演厨师，做出中国各地的著名小吃。拍完后，老师说很不错。","vn":"Đúng thế! Thời gian trước cô giáo giao một bài tập, bảo các nhóm mỗi nhóm quay một video ngắn giới thiệu ẩm thực Trung Quốc. Nhóm tớ thảo luận xong quyết định để AI Tiểu Ngữ đóng vai đầu bếp, làm ra những món ăn vặt nổi tiếng của các vùng miền Trung Quốc. Quay xong, cô giáo khen rất hay."},
+     {"sp":2,"zh":"嗯，语言也很幽默！","vn":"Ừ, lời thoại cũng rất hài hước!"},
+     {"sp":0,"zh":"后来这个视频让我同学放到了互联网上，很多人都来点赞。","vn":"Sau đó video này được bạn cùng lớp tớ đăng lên mạng, rất nhiều người vào bấm thích."},
+     {"sp":1,"zh":"看来大家都喜欢这个视频。","vn":"Xem ra mọi người đều thích video này."},
+     {"sp":0,"zh":"后边我们打算拍第二个、第三个，让小语带大家到中国各地走一走、看一看。","vn":"Sắp tới bọn tớ định quay video thứ hai, thứ ba, để Tiểu Ngữ dẫn mọi người đi đây đi đó khắp các nơi ở Trung Quốc."},
+     {"sp":2,"zh":"这样大家就能通过你们的视频了解中国了，我支持你们！","vn":"Như vậy mọi người có thể hiểu về Trung Quốc qua video của các cậu rồi, tớ ủng hộ các cậu!"}],
+   "hoi":[["老师留作业后，安妮和同学们拍了什么样的短视频？","他们拍了一个介绍中国美食的短视频。小组讨论后决定，由AI小语演厨师，做出中国各地的著名小吃。"],["安妮后边还想拍什么短视频？","他们打算拍第二个、第三个，让小语带大家到中国各地走一走、看一看。"]]},
+
+  {"tab":"Công nghệ đang thay đổi cuộc sống","scene":"科技正在改变我们的生活 · Công nghệ đang thay đổi cuộc sống của chúng ta","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"安妮和朋友们怎么看科技的发展？","opts":["科技发展很快","科技不影响世界","科技改变了人们的生活","科技能帮人减轻工作压力"],"ans":2},
+     {"q":"安妮他们的短视频是用什么拍的？","opts":["相机","手机","电脑","电视"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"安妮骑共享单车到了白家月、陈天中的学校，三人从共享单车聊到AI眼镜和3D打印机，从绿色经济聊到上门经济。","vn":"Annie đạp xe đạp công cộng đến trường của Bạch Gia Nguyệt và Trần Thiên Trung, ba người trò chuyện từ xe đạp công cộng đến kính AI và máy in 3D, từ kinh tế xanh (mô hình kinh tế vừa phát triển kinh tế, vừa tiết kiệm tài nguyên và bảo vệ môi trường) đến kinh tế dịch vụ tận nhà."},
+     {"sp":0,"zh":"科技到底对世界产生了怎样的影响？","vn":"Rốt cuộc công nghệ đã tạo ra ảnh hưởng như thế nào đối với thế giới?"},
+     {"sp":0,"zh":"他们都认为，科技确实改变了人们的生活。","vn":"Họ đều cho rằng công nghệ quả thực đã thay đổi cuộc sống của con người."},
+     {"sp":0,"zh":"接着，安妮给大家看了她和同学们拍的短视频。","vn":"Tiếp đó, Annie cho mọi người xem video ngắn mà cô và các bạn cùng lớp đã quay."},
+     {"sp":0,"zh":"安妮说，短视频是用手机拍的，他们装了一些免费的App，仅用几天就拍完了。","vn":"Annie kể, video ngắn được quay bằng điện thoại, họ cài một vài App miễn phí, chỉ mất vài ngày là quay xong."},
+     {"sp":0,"zh":"视频里，小语做的小吃丰富多样，看起来好吃极了。","vn":"Trong video, các món ăn vặt Tiểu Ngữ làm phong phú đa dạng, trông ngon cực kỳ."},
+     {"sp":0,"zh":"短视频推出后，大家认为非常精彩，白家月和陈天中看后也特别喜欢，并且表示支持他们拍更多的视频。","vn":"Sau khi video ngắn được tung ra, mọi người cho rằng rất đặc sắc, Bạch Gia Nguyệt và Trần Thiên Trung xem xong cũng đặc biệt thích, đồng thời bày tỏ ủng hộ họ quay thêm nhiều video nữa."}],
+   "hoi":[["安妮和同学们的短视频是怎么拍的？","短视频是用手机拍的，他们装了一些免费的App，仅用几天就拍完了。"],["对于安妮他们拍的短视频，白家月和陈天中有什么想法？","他们看后特别喜欢，并且表示支持安妮他们拍更多的视频。"]],
+   "kelai":"安妮骑……到了白家月、陈天中的学校，三人从……聊到AI眼镜和3D打印机，从……聊到上门经济。科技到底对世界产生了怎样的影响？他们都认为，……。接着，安妮给大家看了……。安妮说，短视频是……，他们装了一些……，仅用几天就……。视频里，……做的小吃……，看起来……。短视频推出后，大家认为……，白家月和陈天中看后也……，并且表示……。",
+   "kelaiMau":"安妮骑共享单车到了白家月、陈天中的学校，三人从共享单车聊到AI眼镜和3D打印机，从绿色经济聊到上门经济。科技到底对世界产生了怎样的影响？他们都认为，科技确实改变了人们的生活。接着，安妮给大家看了她和同学们拍的短视频。安妮说，短视频是用手机拍的，他们装了一些免费的App，仅用几天就拍完了。视频里，小语做的小吃丰富多样，看起来好吃极了。短视频推出后，大家认为非常精彩，白家月和陈天中看后也特别喜欢，并且表示支持他们拍更多的视频。"},
+
+  {"tab":"Kinh tế dịch vụ tận nhà","scene":"当代新经济——上门经济 · Kinh tế mới thời nay: kinh tế dịch vụ tận nhà","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"根据课文，上门服务怎么预约？","opts":["直接打电话","在网上预约","在线下预约","让服务员预约"],"ans":1},
+     {"q":"赵女士觉得上门服务怎么样？","opts":["很方便","难预约","价格低","不安全"],"ans":0}],
+   "lines":[
+     {"sp":0,"zh":"随着互联网技术的发展，现在又出现了一种新的服务方式——上门经济，就是预约者通过网上预约，让服务人员在合适的时间到家里或者约好的地点服务，服务内容有上门做饭、照顾小动物、取东西等。","vn":"Cùng với sự phát triển của công nghệ Internet, nay lại xuất hiện một hình thức dịch vụ mới — kinh tế dịch vụ tận nhà, tức là người đặt hẹn đặt lịch qua mạng, để nhân viên phục vụ đến nhà hoặc đến địa điểm đã hẹn vào thời gian thích hợp để phục vụ; nội dung dịch vụ có nấu cơm tại nhà, chăm sóc thú cưng, lấy đồ giúp, v.v."},
+     {"sp":0,"zh":"赵女士养了一只猫，由于工作等原因，她需要经常出差，然而又很担心猫的安全。","vn":"Chị Triệu nuôi một con mèo, vì công việc và những lý do khác, chị phải thường xuyên đi công tác, thế nhưng lại rất lo cho sự an toàn của con mèo."},
+     {"sp":0,"zh":"有了上门服务后，她觉得方便多了，不必再找亲戚帮忙。","vn":"Từ khi có dịch vụ tận nhà, chị thấy tiện hơn nhiều, không cần phải nhờ họ hàng giúp nữa."},
+     {"sp":0,"zh":"每次出差，在网上预约并支付费用后，服务人员就会按她提出的要求上门照顾小猫，大大减轻了她的压力，赵女士也特别满意。","vn":"Mỗi lần đi công tác, sau khi đặt lịch và thanh toán chi phí trên mạng, nhân viên phục vụ sẽ đến tận nhà chăm sóc mèo con theo yêu cầu chị đưa ra, giảm nhẹ rất nhiều áp lực cho chị, chị Triệu cũng đặc biệt hài lòng."},
+     {"sp":0,"zh":"当然，上门经济也有一些问题，特别是现有服务人员有些还不够专业，需要重新学习，提高服务质量。","vn":"Tất nhiên, kinh tế dịch vụ tận nhà cũng có một số vấn đề, đặc biệt là trong đội ngũ nhân viên phục vụ hiện có, một số người vẫn chưa đủ chuyên nghiệp, cần học lại để nâng cao chất lượng dịch vụ."}],
+   "hoi":[["什么是上门经济？","上门经济是一种新的服务方式，就是预约者通过网上预约，让服务人员在合适的时间到家里或者约好的地点服务，比如上门做饭、照顾小动物、取东西等。"],["上门经济还有什么问题？","现有服务人员有些还不够专业，需要重新学习，提高服务质量。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"“数词+形容词+量词”结构","tenVn":"Cấu trúc 「Số từ + Tính từ + Lượng từ」 — 一大碗, 一小段 (nhấn mạnh nhiều / ít, to / nhỏ)",
+  "cauTruc":["一 + 大 / 小 + lượng từ (+ danh từ): 一大碗面条儿 · 一大包巧克力 · 一小段路","Động từ + 了 + 一 + 大 / 小 + lượng từ (+ danh từ)"],
+  "giaiThich":"Cấu trúc 「数词 + 形容词 + 量词」 mang sắc thái KHOA TRƯƠNG: người nói chủ quan nhấn mạnh số lượng NHIỀU / TO (一大……) hoặc ÍT / NHỎ (一小……). Số từ thường là 「一」; tính từ thường là từ đơn âm tiết 「大」「小」; lượng từ thường là LƯỢNG TỪ TẠM THỜI mượn danh từ chỉ đồ đựng, khối, nhóm: 碗、杯、盘、包、箱、桌子、屋子、口、块、堆、段…. Rất hay dùng trong khẩu ngữ. ⚠ Người Việt nói “một bát TO mì”, “một quãng NGẮN” (tính từ đứng sau) nên hay đặt sai: tiếng Trung đặt 大 / 小 ngay TRƯỚC lượng từ: 一大碗面条儿 (✗ 一碗大面条儿). Tính từ ở đây không thêm 很 / 非常 (✗ 一很大包). Chú ý nghĩa: 一大碗 nhấn mạnh “nhiều” theo cảm nhận của người nói, không nhất thiết cái bát thật sự to; 一小段路 = một quãng đường ngắn, còn 一段小路 = một đoạn đường nhỏ (hẹp). Ôn lượng từ: lượng từ tạm thời giống 「一屋子人」「一桌子菜」 (cả phòng người, cả bàn thức ăn) — thêm 大 thì càng khoa trương: 一大屋子人, 一大桌子菜.",
+  "viDu":[["快到那边那个出口时又推了一小段。","Sắp đến cái cổng ra đằng kia thì lại dắt xe đi bộ một đoạn ngắn."],["今天早上我没吃饭就去上班了，中午饿极了，吃了一大碗面条儿。","Sáng nay tôi chưa ăn gì đã đi làm, trưa đói cực kỳ, ăn liền một bát mì to."],["我今天又收到了妈妈寄来的快递，打开一看，除了衣服外，里边还有一大包巧克力。","Hôm nay tôi lại nhận được bưu kiện mẹ gửi, mở ra xem, ngoài quần áo, bên trong còn có cả một túi sô-cô-la to."],["周末我把一大箱旧书整理了整理，送给了小区的图书角。","Cuối tuần tôi sắp xếp qua một thùng sách cũ to, rồi tặng cho góc thư viện của khu nhà. (ôn 把+宾+动+了+动 – Bài 15 · điểm 3)"]],
+  "loi":[["我中午吃了一碗大面条儿。","大 phải đứng TRƯỚC lượng từ, không đứng trước danh từ (khác tiếng Việt “một bát to”).","我中午吃了一大碗面条儿。"],["妈妈给我寄了一很大包巧克力。","Trong cấu trúc này tính từ là 大 / 小 đơn âm tiết, không thêm 很.","妈妈给我寄了一大包巧克力。"],["快到出口时，我又推了一段小路。","Muốn nói “dắt xe thêm một quãng ngắn” → 一小段 (小 trước lượng từ); 一段小路 là “một con đường nhỏ”.","快到出口时，我又推了一小段。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["快到那边那个出口时又推了一","段。"],"dap":[["小"]],"chon":["小","很","多"],"goiY":"“… lại dắt xe đi bộ một đoạn ngắn.”","giai":"一 + 小 + lượng từ 段: một quãng ngắn."},
+     {"kieu":"dien","phan":["中午饿极了，我吃了一","碗面条儿。"],"dap":[["大"]],"chon":["大","太","好"],"goiY":"“Trưa đói cực kỳ, tôi ăn một bát mì to.”","giai":"一 + 大 + 碗: nhấn mạnh nhiều."},
+     {"kieu":"dien","phan":["快递里除了衣服外，还有一大","巧克力。"],"dap":[["包"]],"chon":["包","个","本"],"goiY":"“… còn có cả một túi sô-cô-la to.”","giai":"Lượng từ tạm thời 包 (túi, gói)."},
+     {"kieu":"dien","phan":["他从图书馆借了一大","书，说要在假期里看完。"],"dap":[["堆"]],"chon":["堆","张","位"],"goiY":"“Anh ấy mượn cả một chồng sách to ở thư viện …”","giai":"一大堆 + N: cả đống, cả chồng."},
+     {"kieu":"dien","phan":["这个小吃太辣了，我只吃了一小","就不敢吃了。"],"dap":[["口"]],"chon":["口","条","件"],"goiY":"“… tôi mới ăn một miếng nhỏ đã không dám ăn nữa.” (ôn từ 小吃 của bài)","giai":"一小口 = một miếng nhỏ (口 mượn từ “miệng”)."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["我","中午","吃了","一大碗","面条儿"],"dap":["我中午吃了一大碗面条儿。","中午我吃了一大碗面条儿。"],"goiY":"Trưa nay tôi ăn một bát mì to.","giai":"V + 了 + 一大碗 + N."},
+     {"kieu":"xep","manh":["快到出口时","，","我","又","推了","一小段"],"dap":["快到出口时，我又推了一小段。"],"goiY":"Sắp đến cổng ra, tôi lại dắt xe đi một đoạn ngắn.","giai":"又 + V + 了 + 一小段."},
+     {"kieu":"xep","manh":["桌子上","放着","一大盘","小吃"],"dap":["桌子上放着一大盘小吃。"],"goiY":"Trên bàn đặt một đĩa đồ ăn vặt to.","giai":"Nơi chốn + V着 + 一大盘 + N (ôn câu tồn hiện, HSK 3)."},
+     {"kieu":"dungsai","cau":"妈妈给我寄了一很大包巧克力。","dung":false,"sua":"妈妈给我寄了一大包巧克力。","giai":"Không thêm 很 vào giữa 一 và 大."},
+     {"kieu":"dungsai","cau":"我只吃了一小块蛋糕，就吃不下了。","dung":true,"giai":"Đúng: 一小块 nhấn mạnh rất ít."},
+     {"kieu":"dungsai","cau":"他点了一碗大面条儿。","dung":false,"sua":"他点了一大碗面条儿。","giai":"大 đứng trước lượng từ 碗."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 88)","huongDan":"Hoàn thành đối thoại, có dùng cấu trúc 「数词+形容词+量词」","cau":[
+     {"kieu":"vandung","de":"A：这＿＿＿，够热闹的。 B：今天是我生日，请朋友们来家里一起聚聚，热闹热闹。","goiY":"Khen: cả một phòng to toàn người (一大 + 屋子 + 人)","mau":"一大屋子人","can":[["一大"]]},
+     {"kieu":"vandung","de":"A：最近天气有些热，我天天喝绿茶。 B：我也是，昨天又买了＿＿＿。","goiY":"Nói: hôm qua lại mua cả một túi trà xanh to","mau":"一大包绿茶","can":[["一大"]]},
+     {"kieu":"vandung","de":"A：您太客气了，怎么做了＿＿＿。 B：不客气，你们好不容易来一次，我特别开心。","goiY":"Khách ngại: chủ nhà nấu cả một bàn đầy thức ăn","mau":"一大桌子菜","can":[["一大"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Sáng nay tôi chưa ăn sáng đã đi làm, trưa đói cực kỳ, ăn liền một bát mì to.","dap":["今天早上我没吃早饭就去上班了，中午饿极了，吃了一大碗面条儿。","今天早上我没吃饭就去上班了，中午饿极了，吃了一大碗面条儿。"],"giai":"一大碗 nhấn mạnh ăn nhiều; ôn ……极了 (HSK 3)."},
+     {"kieu":"dich","vn":"Sắp đến cổng ra, tôi lại dắt xe đạp công cộng đi bộ một đoạn ngắn.","dap":["快到出口时，我又把共享单车推了一小段。","快到出口的时候，我又推着共享单车走了一小段。"],"giai":"一小段 + từ mới 出口, 推, 共享单车."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể về một bữa ăn / một món quà làm em bất ngờ, có dùng 「一大 / 一小 + lượng từ」","mau":"生日那天，朋友们给我做了一大桌子菜，还送了我一大包小吃，我感动极了。","can":[["一大","一小"]]}]}
+  ]},
+
+ {"so":"2","ten":"被动句“主语+让/叫+宾语+动词+其他成分”","tenVn":"Câu bị động 「Chủ ngữ + 让 / 叫 + tân ngữ + động từ + thành phần khác」 — bị / được (ai) làm gì (khẩu ngữ)",
+  "cauTruc":["Người / vật chịu tác động + 让 / 叫 + người gây ra hành động + (给) + động từ + 了 / bổ ngữ","Phủ định: Chủ ngữ + 没(有) + 让 / 叫 + tân ngữ + động từ + ……"],
+  "giaiThich":"Đây là câu BỊ ĐỘNG kiểu khẩu ngữ: CHỦ NGỮ là người / vật CHỊU tác động (受事), sau 「让」 hoặc 「叫」 là người GÂY RA hành động (施事). Nghĩa giống câu chữ 「被」 (HSK 3), nhưng dùng nhiều khi nói chuyện. Ba quy tắc cần nhớ: (1) Sau 让 / 叫 BẮT BUỘC có tân ngữ — 被 có thể bỏ (书被借走了), còn 让 / 叫 thì không (✗ 书让借走了 → ✓ 书让同学借走了). (2) Động từ không đứng một mình, phía sau phải có 了, bổ ngữ kết quả / xu hướng / nơi chốn (吃了, 拿走了, 放到了……上); khẩu ngữ hay thêm 「给」 trước động từ: 门叫小明给关上了. (3) Phủ định / phó từ đặt TRƯỚC 让 / 叫: 没让他拿走, 都让我吃了 — 都 nói về chủ ngữ (月饼都……). Câu bị động thường mang ý KHÔNG MONG MUỐN (bị mất, bị ăn hết…), nhưng cũng có khi trung tính (视频让同学放到了互联网上). ⚠ Phân biệt với 让 / 叫 SAI KHIẾN đã học (bảo, khiến ai làm gì): 老师叫各个小组拍个短视频 — chủ ngữ 老师 là người RA LỆNH. Mẹo: thay 让 / 叫 bằng 被 mà câu vẫn đúng → đó là bị động. So sánh với câu chữ 把 (Bài 15, 16): 我同学把这个视频放到了互联网上 (chủ động) = 这个视频让我同学放到了互联网上 (bị động).",
+  "viDu":[["后来这个视频让我同学放到了互联网上。","Sau đó video này được bạn cùng lớp tôi đăng lên mạng."],["门叫小明给关上了。","Cửa bị Tiểu Minh đóng lại rồi."],["不好意思，月饼都让我吃了。","Xin lỗi nhé, bánh trung thu bị tôi ăn hết rồi."],["那本小说让妹妹借走了，说不定她要看一个月呢。","Cuốn tiểu thuyết đó bị em gái mượn đi rồi, không chừng nó phải đọc cả tháng đấy. (ôn 说不定 – Bài 16 · điểm 3)"]],
+  "loi":[["我的书让借走了。","Sau 让 / 叫 bị động bắt buộc có người làm; không nói được người làm thì dùng 被.","我的书让同学借走了。 / 我的书被借走了。"],["月饼都让我吃。","Động từ không đứng một mình — phải có 了 hoặc bổ ngữ.","月饼都让我吃了。"],["我的自行车让别人没骑走。","没 đặt TRƯỚC 让 / 叫, không chen giữa tân ngữ và động từ.","我的自行车没让别人骑走。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["后来这个视频","我同学放到了互联网上。"],"dap":[["让"]],"chon":["让","把","对"],"goiY":"“Sau đó video này được bạn cùng lớp tôi đăng lên mạng.”","giai":"Chủ ngữ chịu tác động (视频) + 让 + người làm."},
+     {"kieu":"dien","phan":["门叫小明","关上了。"],"dap":[["给"]],"chon":["给","把","被"],"goiY":"“Cửa bị Tiểu Minh đóng lại rồi.”","giai":"Khẩu ngữ: 让 / 叫 + O + 给 + V."},
+     {"kieu":"dien","phan":["不好意思，月饼都让我吃","。"],"dap":[["了"]],"chon":["了","过","着"],"goiY":"“Xin lỗi, bánh trung thu bị tôi ăn hết rồi.”","giai":"Động từ phải có 了 / bổ ngữ phía sau."},
+     {"kieu":"dien","phan":["那双鞋叫别人买","了。"],"dap":[["走"]],"chon":["走","来","起"],"goiY":"“Đôi giày đó bị người khác mua mất rồi.”","giai":"Bổ ngữ xu hướng 走: mua đi mất."},
+     {"kieu":"dien","phan":["我的手机","让弟弟拿走，还在桌子上呢。"],"dap":[["没"]],"chon":["没","别","都"],"goiY":"“Điện thoại của tôi không bị em trai lấy đi, vẫn còn trên bàn.”","giai":"Phủ định 没 đứng trước 让."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["这个视频","让","我同学","放到了","互联网上"],"dap":["这个视频让我同学放到了互联网上。"],"goiY":"Video này được bạn cùng lớp tôi đăng lên mạng.","giai":"Chủ ngữ + 让 + người làm + V + 到 + nơi chốn."},
+     {"kieu":"xep","manh":["我的自行车","让","朋友","骑走了"],"dap":["我的自行车让朋友骑走了。"],"goiY":"Xe đạp của tôi bị bạn đạp đi mất rồi.","giai":"让 + O + V + bổ ngữ 走 + 了."},
+     {"kieu":"xep","manh":["蛋糕","都","叫","孩子们","给","吃完了"],"dap":["蛋糕都叫孩子们给吃完了。"],"goiY":"Bánh ngọt bị bọn trẻ ăn hết sạch rồi.","giai":"都 trước 叫; 给 ngay trước động từ."},
+     {"kieu":"dungsai","cau":"那本书让借走了。","dung":false,"sua":"那本书让同学借走了。","giai":"Sau 让 bị động phải có người làm."},
+     {"kieu":"dungsai","cau":"我的钱包叫小偷给偷了。","dung":true,"giai":"Đúng: 叫 + người làm + 给 + V + 了."},
+     {"kieu":"dungsai","cau":"饺子都让我吃。","dung":false,"sua":"饺子都让我吃了。","giai":"Thiếu 了 sau động từ."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 91)","huongDan":"Hoàn thành đối thoại, dùng câu bị động 「主语+让/叫+宾语+动词+其他成分」","cau":[
+     {"kieu":"vandung","de":"A：那双鞋你没买到吗？ B：对，＿＿＿买去了。","goiY":"Nói: đôi giày đã bị người khác mua mất (让 / 叫 + người làm)","mau":"让别人","can":[["让","叫"]]},
+     {"kieu":"vandung","de":"A：杯子在哪儿呢？ B：杯子＿＿＿。","goiY":"Nói: cái cốc bị em gái lấy đi rồi","mau":"叫妹妹拿走了","can":[["让","叫"]]},
+     {"kieu":"vandung","de":"A：你的手机呢？ B：＿＿＿。","goiY":"Nói cả câu: điện thoại của tôi bị em trai cầm đi chơi rồi","mau":"我的手机让弟弟拿去玩儿了","can":[["让","叫"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Bánh trung thu của tôi bị em trai ăn hết rồi.","dap":["我的月饼都让弟弟吃了。","我的月饼都叫弟弟吃了。","我的月饼都让弟弟给吃了。","我的月饼让弟弟吃完了。"],"giai":"Chủ ngữ chịu tác động + 让 / 叫 + người làm + V + 了."},
+     {"kieu":"dich","vn":"Video của chúng tôi được bạn cùng lớp đăng lên mạng, rất nhiều người vào bấm thích.","dap":["我们的视频让同学放到了互联网上，很多人都来点赞。","我们的视频叫同学放到了互联网上，很多人都来点赞。"],"giai":"Bị động 让 + từ mới 互联网, 点赞."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể một chuyện “xui”: đồ của em bị ai đó lấy / ăn / mượn mất, có dùng 「让 / 叫」 bị động","mau":"我放在冰箱里的蛋糕叫室友给吃了，我只好又去买了一个。","can":[["让","叫"]]}]}
+  ]},
+
+ {"so":"3","ten":"语气副词“到底”","tenVn":"Phó từ ngữ khí 「到底」 — rốt cuộc, rốt cục (truy hỏi đến cùng)",
+  "cauTruc":["Chủ ngữ + 到底 + câu hỏi (đại từ nghi vấn / V不V / A还是B)?","到底 + 谁 / 哪…… + ……? (chủ ngữ là đại từ nghi vấn → 到底 đứng trước)"],
+  "giaiThich":"「到底」 dùng trong CÂU HỎI để TRUY HỎI, hỏi dồn cho ra lẽ — giống tiếng Việt “rốt cuộc, rốt cục, thế rốt cuộc là…”; thường lộ vẻ sốt ruột, muốn có câu trả lời dứt khoát. Rất hay dùng trong khẩu ngữ. Vị trí: sau chủ ngữ, trước vị ngữ (你到底去不去？); nếu chủ ngữ là đại từ nghi vấn thì 到底 phải đứng TRƯỚC chủ ngữ (到底谁去？ ✗ 谁到底去？). ⚠ Câu có 到底 phải là câu hỏi dùng đại từ nghi vấn (什么、怎么、为什么、哪…), câu hỏi chính phản (来不来) hoặc 还是 (A还是B) — KHÔNG dùng với 吗 (✗ 你到底去吗？). Liên hệ bài cũ: 「究竟」 (Bài 14 · điểm 1) cùng nghĩa, nhưng 究竟 trang trọng, thiên về văn viết; 到底 thân mật, khẩu ngữ. (到底 còn có nghĩa khác “cuối cùng thì, rốt cục cũng” trong câu trần thuật — gần 终于 — sẽ gặp sau; bài này chỉ học 到底 trong câu hỏi.)",
+  "viDu":[["科技到底对世界产生了怎样的影响？","Rốt cuộc công nghệ đã tạo ra ảnh hưởng như thế nào đối với thế giới?"],["你们到底还来不来？","Rốt cuộc các bạn còn đến hay không?"],["你到底是怎么想的？为什么不同意？","Rốt cuộc bạn nghĩ thế nào? Sao lại không đồng ý?"],["无论去还是不去，你今天都得告诉我：你到底是怎么想的？","Dù đi hay không đi, hôm nay bạn cũng phải nói cho tôi biết: rốt cuộc bạn nghĩ thế nào? (ôn 无论……都…… – Bài 12 · điểm 3)"]],
+  "loi":[["你到底去吗？","到底 không đi với 吗; dùng câu hỏi chính phản / đại từ nghi vấn.","你到底去不去？"],["谁到底拿了我的手机？","Chủ ngữ là đại từ nghi vấn → 到底 đứng trước nó.","到底谁拿了我的手机？"],["你到底喜欢这个还是那个吗？","Câu đã có 还是 thì không thêm 吗.","你到底喜欢这个还是那个？"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["科技","对世界产生了怎样的影响？"],"dap":[["到底"]],"chon":["到底","终于","一定"],"goiY":"“Rốt cuộc công nghệ đã tạo ra ảnh hưởng như thế nào …?”","giai":"Câu hỏi truy vấn → 到底."},
+     {"kieu":"dien","phan":["你们到底还来","来？"],"dap":[["不"]],"chon":["不","吗","没"],"goiY":"“Rốt cuộc các bạn còn đến hay không?”","giai":"到底 + V不V; không dùng 吗."},
+     {"kieu":"dien","phan":["你到底是怎么想的？为什么不","？"],"dap":[["同意"]],"chon":["同意","讨论","预约"],"goiY":"“Rốt cuộc bạn nghĩ thế nào? Sao không đồng ý?”","giai":"不同意 = không đồng ý."},
+     {"kieu":"dien","phan":["到底","把视频放到了互联网上？"],"dap":[["谁"]],"chon":["谁","什么","哪儿"],"goiY":"“Rốt cuộc là ai đã đăng video lên mạng?”","giai":"到底 + 谁 (chủ ngữ là đại từ nghi vấn)."},
+     {"kieu":"dien","phan":["这次旅行的","到底是多少？我们一起算一下吧。"],"dap":[["费用"]],"chon":["费用","原因","说明"],"goiY":"“Rốt cuộc chi phí chuyến du lịch này là bao nhiêu?”","giai":"费用 = chi phí (từ mới của bài)."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["你们","到底","还","来不来"],"dap":["你们到底还来不来？"],"goiY":"Rốt cuộc các bạn còn đến hay không?","giai":"Chủ ngữ + 到底 + V不V?"},
+     {"kieu":"xep","manh":["到底","谁","把视频","放到了","互联网上"],"dap":["到底谁把视频放到了互联网上？"],"goiY":"Rốt cuộc ai đã đăng video lên mạng?","giai":"到底 + 谁 + 把……"},
+     {"kieu":"xep","manh":["你","到底","是坐公交车","还是","骑共享单车"],"dap":["你到底是坐公交车还是骑共享单车？"],"goiY":"Rốt cuộc bạn đi xe buýt hay đạp xe đạp công cộng?","giai":"到底 + (是) A 还是 B?"},
+     {"kieu":"dungsai","cau":"你到底喜欢不喜欢这部电影吗？","dung":false,"sua":"你到底喜欢不喜欢这部电影？","giai":"Câu chính phản + 到底, không thêm 吗."},
+     {"kieu":"dungsai","cau":"这个问题到底怎么解决？","dung":true,"giai":"Đúng: 到底 + 怎么 + V."},
+     {"kieu":"dungsai","cau":"谁到底说得对？","dung":false,"sua":"到底谁说得对？","giai":"Chủ ngữ là 谁 → 到底 đứng trước."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 93)","huongDan":"Hoàn thành câu, có dùng 「到底」 và từ trong ngoặc","cau":[
+     {"kieu":"vandung","de":"你们＿＿＿呢？（点赞）","goiY":"Hỏi dồn: rốt cuộc vì sao các bạn đều bấm thích video này","mau":"到底为什么都给这个视频点赞","can":[["到底"],["点赞"]]},
+     {"kieu":"vandung","de":"这个AI眼镜＿＿＿？还是请他＿＿＿。（说明）","goiY":"Hỏi: rốt cuộc dùng thế nào? → nhờ anh ấy hướng dẫn cho","mau":"到底怎么用 / 给我们说明一下吧","can":[["到底"],["说明"]]},
+     {"kieu":"vandung","de":"这次旅行＿＿＿？咱们还是一起算一下吧。（费用）","goiY":"Hỏi: rốt cuộc chi phí là bao nhiêu","mau":"的费用到底是多少","can":[["到底"],["费用"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Rốt cuộc bạn có đi hay không? Mọi người đều đang đợi bạn đấy.","dap":["你到底去不去？大家都在等你呢。","你到底去不去？大家都在等你。"],"giai":"到底 + V不V."},
+     {"kieu":"dich","vn":"Rốt cuộc công nghệ đã thay đổi cuộc sống của chúng ta như thế nào?","dap":["科技到底怎样改变了我们的生活？","科技到底是怎么改变我们的生活的？","科技到底怎么改变了我们的生活？"],"giai":"到底 + đại từ nghi vấn 怎样 / 怎么."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Bạn em bàn mãi không quyết định quay video gì. Hãy hỏi dồn bạn bằng 「到底」","mau":"你到底想拍什么样的短视频？是介绍美食，还是介绍著名景点？","can":[["到底"]]}]}
+  ]},
+
+ {"so":"4","ten":"转折复句“……，然而……”","tenVn":"Câu phức chuyển ngoặt 「……，然而……」 — …, thế nhưng / tuy nhiên …",
+  "cauTruc":["Vế 1，然而 + vế 2 (tương phản với vế 1 / trái với dự đoán)","Vế 1，然而 + (chủ ngữ) + 又 / 却 / 还 + ……"],
+  "giaiThich":"「然而」 là liên từ chuyển ngoặt, đặt ở ĐẦU vế sau (trước chủ ngữ của vế sau, nếu có): nội dung sau 然而 TƯƠNG PHẢN với vế trước hoặc KHÔNG GIỐNG điều người ta dự đoán — giống tiếng Việt “thế nhưng, tuy nhiên, vậy mà”. Nghĩa gần 但是 / 可是 / 不过 (Bài 2), nhưng 然而 trang trọng hơn, hay gặp trong văn viết, bài báo, bài phát biểu. Sau 然而 hay có 又 / 却 (Bài 16 · điểm 4) / 还 để nhấn mạnh sự trái ngược: 然而又很担心…, 然而天却…. ⚠ (1) 然而 KHÔNG đứng sau chủ ngữ như phó từ (✗ 她然而……). (2) Hai vế phải thật sự trái ngược; nếu chỉ bổ sung cùng chiều thì dùng 而且 / 并且 (✗ 菜好吃，然而价格也不贵). (3) Câu giả thiết “cho dù … cũng …” dùng 即使……也…… (Bài 11), không dùng 然而. Có thể dùng 虽然……，然而…… nhưng 虽然……，但是…… thông dụng hơn.",
+  "viDu":[["由于工作等原因，她需要经常出差，然而又很担心猫的安全。","Vì công việc và những lý do khác, chị phải thường xuyên đi công tác, thế nhưng lại rất lo cho sự an toàn của con mèo."],["毕业旅行现在越来越流行，然而由于学生没什么社会和生活经验，可能会遇到各种问题。","Du lịch tốt nghiệp bây giờ ngày càng thịnh hành, tuy nhiên vì học sinh chưa có mấy kinh nghiệm xã hội và cuộc sống nên có thể gặp đủ thứ vấn đề."],["春天应该是花开的季节，然而由于前一段时间下大雪，现在花都没开。","Mùa xuân lẽ ra là mùa hoa nở, vậy mà vì thời gian trước tuyết rơi dày nên giờ hoa vẫn chưa nở."],["我们本来打算周末去爬山，然而那天却下了一整天的雨。","Chúng tôi vốn định cuối tuần đi leo núi, vậy mà hôm đó lại mưa suốt cả ngày. (ôn 却 – Bài 16 · điểm 4)"]],
+  "loi":[["她需要经常出差，她然而又很担心猫的安全。","然而 là liên từ, đứng ĐẦU vế sau, không đứng sau chủ ngữ.","她需要经常出差，然而又很担心猫的安全。"],["这家饭店的菜很好吃，然而价格也不贵。","Hai vế cùng chiều (đều là ưu điểm) → dùng 而且, không dùng 然而.","这家饭店的菜很好吃，而且价格也不贵。"],["即使明天下雨，然而我们也去。","Giả thiết “cho dù … cũng …” dùng 即使……也……, không dùng 然而.","即使明天下雨，我们也去。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["由于工作等原因，她需要经常出差，","又很担心猫的安全。"],"dap":[["然而"]],"chon":["然而","而且","于是"],"goiY":"“… phải thường xuyên đi công tác, thế nhưng lại rất lo cho con mèo.”","giai":"Hai vế trái ngược → 然而."},
+     {"kieu":"dien","phan":["毕业旅行越来越流行，然而由于学生没什么社会经验，可能会","各种问题。"],"dap":[["遇到"]],"chon":["遇到","提出","推出"],"goiY":"“… có thể gặp đủ thứ vấn đề.”","giai":"遇到 + 问题 = gặp vấn đề."},
+     {"kieu":"dien","phan":["春天应该是花开的季节，然而现在花都","开。"],"dap":[["没"]],"chon":["没","才","就"],"goiY":"“… vậy mà giờ hoa vẫn chưa nở.”","giai":"都没 + V: đều chưa."},
+     {"kieu":"dien","phan":["我们计划了一周，然而到了出发那天，天","下起了大雨。"],"dap":[["却"]],"chon":["却","就","才"],"goiY":"“… vậy mà đến hôm xuất phát, trời lại đổ mưa to.” (ôn 却 – Bài 16)","giai":"然而……却……: nhấn mạnh trái ngược."},
+     {"kieu":"dien","phan":["上门服务很方便，","现有服务人员有些还不够专业。"],"dap":[["然而"]],"chon":["然而","所以","因为"],"goiY":"“Dịch vụ tận nhà rất tiện, tuy nhiên một số nhân viên hiện có chưa đủ chuyên nghiệp.”","giai":"Ưu điểm ↔ vấn đề → 然而."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["她","很想去旅行","，","然而","工作","太忙了"],"dap":["她很想去旅行，然而工作太忙了。"],"goiY":"Cô ấy rất muốn đi du lịch, thế nhưng công việc bận quá.","giai":"Vế 1，然而 + vế 2."},
+     {"kieu":"xep","manh":["春天","应该是","花开的季节","，","然而","现在","花都没开"],"dap":["春天应该是花开的季节，然而现在花都没开。"],"goiY":"Mùa xuân lẽ ra là mùa hoa nở, vậy mà giờ hoa vẫn chưa nở.","giai":"Dự đoán (应该) ↔ thực tế → 然而."},
+     {"kieu":"xep","manh":["我们","准备了很久","，","然而","比赛","却","取消了"],"dap":["我们准备了很久，然而比赛却取消了。"],"goiY":"Chúng tôi chuẩn bị rất lâu, vậy mà cuộc thi lại bị hủy.","giai":"然而 + chủ ngữ + 却 + V."},
+     {"kieu":"dungsai","cau":"大家都在等他，他然而没有来。","dung":false,"sua":"大家都在等他，然而他没有来。","giai":"然而 đứng trước chủ ngữ vế sau."},
+     {"kieu":"dungsai","cau":"这家饭店的菜很好吃，然而价格也不贵。","dung":false,"sua":"这家饭店的菜很好吃，而且价格也不贵。","giai":"Hai vế cùng chiều → 而且."},
+     {"kieu":"dungsai","cau":"他学了三年中文，然而还是不敢开口说。","dung":true,"giai":"Đúng: học lâu ↔ vẫn không dám nói (trái dự đoán)."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 95)","huongDan":"Hoàn thành câu, có dùng 「然而」","cau":[
+     {"kieu":"vandung","de":"我们计划了一周，＿＿＿，天却下起了大雨。","goiY":"Nêu điều trái dự đoán: vậy mà đến hôm xuất phát","mau":"然而到了出发那天","can":[["然而"]]},
+     {"kieu":"vandung","de":"他想站起来，＿＿＿，怎么也站不起来。","goiY":"Nêu lý do trái ý muốn: nhưng chân đau quá","mau":"然而腿实在太疼了","can":[["然而"]]},
+     {"kieu":"vandung","de":"他很想出去旅行，＿＿＿。","goiY":"Nêu thực tế trái mong muốn: công việc quá bận, mãi không có thời gian","mau":"然而工作太忙，一直没有时间","can":[["然而"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Cô ấy rất muốn nuôi một con mèo, thế nhưng lại phải thường xuyên đi công tác.","dap":["她很想养一只猫，然而又需要经常出差。","她很想养一只猫，然而她需要经常出差。","她很想养一只猫，然而又要经常出差。"],"giai":"Mong muốn ↔ thực tế → 然而 (+ 又)."},
+     {"kieu":"dich","vn":"Dịch vụ tận nhà rất tiện lợi, tuy nhiên một số nhân viên phục vụ vẫn chưa đủ chuyên nghiệp.","dap":["上门服务很方便，然而有些服务人员还不够专业。","上门服务很方便，然而现有服务人员有些还不够专业。"],"giai":"然而 + từ mới 上门, 现有."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể một kế hoạch của em không thành như mong đợi, có dùng 「然而」","mau":"我本来打算周末去公园拍短视频，然而那天却下了一整天的雨。","can":[["然而"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 95, câu 1–6). Sách 4下 chưa có đáp án — đây là đáp án tham khảo.","dapSgk":false,"tu":["互联网","猜","提出","按","差点儿","各地"],"cau":[
+   {"s":"请大家＿＿一下，我手里拿的是什么东西？","dap":["猜"]},
+   {"s":"你从手机上打开使用说明，＿＿说明一步一步做就行了。","dap":["按"]},
+   {"s":"春节前，＿＿火车站都增加了服务人员，保证大家出行安全。","dap":["各地"]},
+   {"s":"他们＿＿了一个能够更好地保护环境的建议。","dap":["提出"]},
+   {"s":"由于早上起晚了，他们＿＿没赶上飞机。","dap":["差点儿"]},
+   {"s":"＿＿让我们的生活越来越方便，我们可以在网上购物，也可以和在外地的父母视频聊天儿。","dap":["互联网"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại, sách trang 95, câu 7–12). Đáp án tham khảo.","dapSgk":false,"tu":["推出","不必","到底","讨论","仅","取"],"cau":[
+   {"s":"A：经理，这次调查发现，还是有一些客人对我们酒店的服务不太满意。　B：我们周五开个会，＿＿下怎么解决这个问题。","dap":["讨论"]},
+   {"s":"A：这是什么菜？味道真好，我以前都没吃过。　B：您好，这是我们新＿＿的一道菜，叫香辣鱼块。","dap":["推出"]},
+   {"s":"A：你们的这个小船＿＿是不是用纸做的？　B：是用纸做的，但不是普通的纸。","dap":["到底"]},
+   {"s":"A：我去＿＿个快递，顺便买个早餐，你想吃什么？　B：给我带两个包子吧。","dap":["取"]},
+   {"s":"A：这把伞我明天就还给你。　B：你用吧，＿＿还给我了，我还有一把。","dap":["不必"]},
+   {"s":"A：这道题我们都做不出来，他＿＿用不到五分钟就做出来了。　B：我知道他特别聪明。","dap":["仅"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn (sách trang 96). Đáp án tham khảo.","dapSgk":false,"tu":["线上看病一般分为以下几步","病人只要有手机和网络","给人们看病提供了方便","最后才能和医生线上交流"],"cau":[
+   {"s":"随着科技的发展，社会上有了一种新的看病方式——线上看病，互联网医院就这样出现了。＿＿，就可以在互联网医院线上看病。＿＿：首先病人根据病情（bìngqíng, bệnh tình）选择好医院和科室（kēshì, khoa khám bệnh），然后在网上填写姓名、身体情况和看病经历等，＿＿。互联网医院的出现，＿＿，这种方式也越来越受到欢迎。","dap":["病人只要有手机和网络","线上看病一般分为以下几步","最后才能和医生线上交流","给人们看病提供了方便"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (câu dưới đây là câu mẫu tham khảo — câu của em đúng ngữ pháp, hợp tranh là đạt).","cau":[
+   {"anh":"bt-1","s":"","tu":"小组","dap":"他们小组正在一起讨论怎么完成这个任务。","giai":"小组 làm định ngữ cho chủ ngữ (他们小组 = nhóm của họ); 正在……讨论: đang thảo luận; ôn từ mới 讨论."},
+   {"anh":"bt-2","s":"","tu":"亲戚","dap":"春节的时候，亲戚们都来我家聚会，大家一起拍了一张照片。","giai":"亲戚们 = bà con họ hàng; ôn 拍照片 (từ mới 拍) và lượng từ 张."},
+   {"anh":"bt-3","s":"","tu":"办事","dap":"他今天去银行办事，工作人员正在给他说明怎么填表。","giai":"去 + nơi chốn + 办事 (đi đâu đó làm việc / làm thủ tục); 办事 là động từ li hợp: 办点儿事, 办完事."}]}
+],
+
+"listen": [
+ {"audio":"你今天怎么来得这么早？我骑共享单车来的，比坐公交车快多了。我还没骑过呢，难不难？一点儿都不难，打开App，对着车上的二维码扫一下就行了。不过第一次骑要先注册。费用贵吗？不贵，骑半个小时才一块五。","questions":[
+   {"q":"说话人今天是怎么来的？","opts":["坐公交车","骑共享单车","坐地铁"],"ans":1},
+   {"q":"第一次骑共享单车要先做什么？","opts":["支付费用","找出口","注册"],"ans":2}]},
+ {"audio":"妈，下周您过生日，我在网上预约了上门做饭的服务。上门做饭？厨师会到家里来吗？对，厨师会按我们提出的要求做菜，您就不必自己做饭了。那费用贵不贵啊？不贵，跟去饭店吃差不多，还不用出门。","questions":[
+   {"q":"说话人在网上预约了什么服务？","opts":["上门做饭","上门照顾小猫","上门取快递"],"ans":0},
+   {"q":"厨师会怎么做菜？","opts":["做各地的著名小吃","按他们提出的要求做","只做一道菜"],"ans":1}]},
+ {"audio":"你昨天拍的那个短视频呢？我怎么找不到了？别提了，叫我弟弟不小心给删了。啊？那你到底还拍不拍了？拍啊，我们小组已经讨论好了，周末重新拍一个介绍学校的视频。","questions":[
+   {"q":"那个短视频为什么找不到了？","opts":["还没拍完","放到互联网上了","让弟弟删了"],"ans":2},
+   {"q":"他们周末打算做什么？","opts":["重新拍一个视频","去看弟弟","讨论作业"],"ans":0}]}
+],
+
+"match": [
+ {"left":"骑","right":"共享单车"},
+ {"left":"扫","right":"二维码"},
+ {"left":"完成","right":"注册"},
+ {"left":"支付","right":"费用"},
+ {"left":"演","right":"厨师"},
+ {"left":"中国各地的","right":"著名小吃"},
+ {"left":"预约","right":"上门服务"},
+ {"left":"提出","right":"要求"},
+ {"left":"提高","right":"服务质量"},
+ {"left":"……，然而","right":"又很担心猫的安全"}
+],
+
+"fill": [
+ {"pre":"天中、家月，你们","blank":"猜","post":"我是怎么过来的？","hint":"(đoán)","ans":"猜","exp":"猜 + câu hỏi = đoán xem."},
+ {"pre":"快到那边那个出口时又","blank":"推","post":"了一小段。","hint":"(đẩy, dắt xe)","ans":"推","exp":"推车 = dắt / đẩy xe."},
+ {"pre":"你打开微信，对着共享单车上的","blank":"二维码","post":"扫一下。","hint":"(mã QR)","ans":"二维码","exp":"扫二维码 = quét mã QR."},
+ {"pre":"在App上完成","blank":"注册","post":"就可以了。","hint":"(đăng ký)","ans":"注册","exp":"完成注册 = hoàn tất đăng ký."},
+ {"pre":"","blank":"差点儿","post":"忘了，我给你们看个短视频。","hint":"(suýt nữa)","ans":"差点儿","exp":"差点儿 + V = suýt nữa thì."},
+ {"pre":"我们小组","blank":"讨论","post":"后决定，由AI小语演厨师。","hint":"(thảo luận)","ans":"讨论","exp":"讨论 = thảo luận."},
+ {"pre":"后来这个视频让我同学放到了互联网上，很多人都来","blank":"点赞","post":"。","hint":"(bấm thích)","ans":"点赞","exp":"给……点赞 = bấm thích cho …"},
+ {"pre":"他们装了一些免费的App，","blank":"仅","post":"用几天就拍完了。","hint":"(chỉ)","ans":"仅","exp":"仅 = 只 (văn viết)."},
+ {"pre":"有了上门服务后，她觉得方便多了，","blank":"不必","post":"再找亲戚帮忙。","hint":"(không cần)","ans":"不必","exp":"不必 = 不用 / 不需要."},
+ {"pre":"服务人员就会按她提出的要求上门照顾小猫，","blank":"大大","post":"减轻了她的压力。","hint":"(rất nhiều, đáng kể)","ans":"大大","exp":"大大 + V (减轻 / 提高 / 方便)."}
+],
+
+"sort": [
+ {"words":["快到出口时","，","我","又","推了","一小段","。"],"ans":"快到出口时，我又推了一小段。"},
+ {"words":["后来","这个视频","让","我同学","放到了","互联网上","。"],"ans":"后来这个视频让我同学放到了互联网上。"},
+ {"words":["科技","到底","对世界","产生了","怎样的","影响","？"],"ans":"科技到底对世界产生了怎样的影响？"},
+ {"words":["她","需要经常出差","，","然而","又","很担心","猫的安全","。"],"ans":"她需要经常出差，然而又很担心猫的安全。"},
+ {"words":["你","打开微信","，","对着","二维码","扫一下","。"],"ans":"你打开微信，对着二维码扫一下。"},
+ {"words":["短视频","是","用手机","拍","的","。"],"ans":"短视频是用手机拍的。"}
+],
+
+"mc": [
+ {"q":"中午饿极了，我吃了＿＿面条儿。","opts":["一大碗","一碗大","一很大碗","大一碗"],"ans":0,"exp":"一 + 大 + 量词 (+ N): 一大碗面条儿."},
+ {"q":"不好意思，月饼都＿＿我吃了。","opts":["让","把","对","向"],"ans":0,"exp":"Bị động khẩu ngữ: 主语 + 让 / 叫 + 宾语 + V + 了."},
+ {"q":"你们到底还来＿＿来？","opts":["不","吗","没","也"],"ans":0,"exp":"到底 + V不V; 到底 không đi với 吗."},
+ {"q":"她需要经常出差，＿＿又很担心猫的安全。","opts":["然而","而且","于是","所以"],"ans":0,"exp":"Hai vế trái ngược → 然而."},
+ {"q":"第一次骑的时候，在App上完成＿＿就可以了。","opts":["注册","预约","讨论","点赞"],"ans":0,"exp":"完成注册 = hoàn tất đăng ký."},
+ {"q":"我们小组讨论后决定，由AI小语＿＿厨师。","opts":["演","拍","推","取"],"ans":0,"exp":"演 + vai = đóng vai."},
+ {"q":"视频里，小语做的小吃丰富＿＿，看起来好吃极了。","opts":["多样","著名","现有","大大"],"ans":0,"exp":"丰富多样 = phong phú đa dạng."},
+ {"q":"上门经济，就是预约者通过网上＿＿，让服务人员到家里服务。","opts":["预约","推出","提出","说明"],"ans":0,"exp":"网上预约 = đặt lịch qua mạng."},
+ {"q":"由于工作等＿＿，她需要经常出差。","opts":["原因","费用","说明","亲戚"],"ans":0,"exp":"由于……等原因 = vì … và các lý do khác (ôn 由于 – Bài 2)."},
+ {"q":"服务人员就会＿＿她提出的要求上门照顾小猫。","opts":["按","对","推","取"],"ans":0,"exp":"按 + 要求 / 说明 = theo yêu cầu / hướng dẫn."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và thảo luận nhóm), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions":[
+  {"q_zh":"你喜欢看什么样的短视频？","q_vn":"Bạn thích xem những video ngắn như thế nào?","hint":"我最喜欢看……的短视频，比如……。因为……。不过……，然而……","sample":"我最喜欢看介绍美食和旅游的短视频，比如介绍中国各地著名小吃的视频。这些视频一般只有一两分钟，语言也很幽默，看完以后我就特别想去那个地方走一走、尝一尝。我常常给好看的视频点赞。然而，有时候一看就是一大段时间，作业都忘了写，所以我现在每天只看半个小时。","sample_vn":"Tôi thích nhất là xem video ngắn giới thiệu ẩm thực và du lịch, ví dụ như video giới thiệu các món ăn vặt nổi tiếng của các vùng Trung Quốc. Những video này thường chỉ một hai phút, lời thoại cũng hài hước, xem xong tôi rất muốn đến nơi đó đi dạo, nếm thử. Tôi thường bấm thích cho video hay. Thế nhưng có lúc xem một lúc là cả một quãng thời gian dài, quên cả làm bài, nên bây giờ mỗi ngày tôi chỉ xem nửa tiếng.","note":"Câu hỏi phần Khởi động của sách; dùng 然而 (điểm 4), 一大段 (điểm 1)."},
+  {"q_zh":"你拍过短视频吗？如果拍过，请介绍一下你拍的短视频；如果没拍过，你想不想试试拍短视频？","q_vn":"Bạn đã từng quay video ngắn chưa? Nếu đã quay, hãy giới thiệu video bạn quay; nếu chưa, bạn có muốn thử quay video ngắn không?","hint":"我拍过……。那个视频是用……拍的，……。后来视频让……放到了互联网上，……","sample":"我拍过一个短视频，介绍我们学校的秋天。视频是用手机拍的，我装了一个免费的App，仅用两天就拍完了。后来这个视频让我朋友放到了互联网上，没想到有一百多个人给我点赞。下次我还想拍一个介绍越南小吃的视频，让大家更了解越南。","sample_vn":"Tôi từng quay một video ngắn giới thiệu mùa thu ở trường. Video quay bằng điện thoại, tôi cài một App miễn phí, chỉ mất hai ngày là quay xong. Sau đó video được bạn tôi đăng lên mạng, không ngờ có hơn một trăm người bấm thích. Lần sau tôi còn muốn quay một video giới thiệu món ăn vặt Việt Nam để mọi người hiểu Việt Nam hơn.","note":"Câu hỏi phần Khởi động của sách; dùng câu bị động 让 (điểm 2) + từ mới 仅, 点赞, 小吃."},
+  {"q_zh":"白家月骑过共享单车吗？如果没骑过，她想什么时候骑？第一次骑共享单车时应该做些什么？了解些什么？","q_vn":"Bạch Gia Nguyệt đã đi xe đạp công cộng chưa? Nếu chưa, cô ấy định khi nào đi? Lần đầu đi xe đạp công cộng nên làm gì? Tìm hiểu những gì?","hint":"她还没……。她想哪天……。第一次骑的时候，要先……，对着……扫一下，在App上……。还要了解……","sample":"白家月还没骑过共享单车，她想哪天出去办事时也试试。第一次骑共享单车的时候，要先打开微信，对着共享单车上的二维码扫一下，在App上完成注册。另外，还要了解怎么使用、费用标准什么的，这些App上都有说明。","sample_vn":"Bạch Gia Nguyệt chưa từng đi xe đạp công cộng, cô định hôm nào ra ngoài làm việc cũng sẽ thử. Lần đầu đi, trước tiên mở WeChat, hướng vào mã QR trên xe quét một cái, hoàn tất đăng ký trên App. Ngoài ra còn phải tìm hiểu cách sử dụng, mức phí…, những thứ này App đều có hướng dẫn.","note":"Câu hỏi bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"安妮到白家月和陈天中的学校玩，她先坐……，然后……，快到一个出口时又……。白家月说……。陈天中介绍说……。白家月听完表示……","sample":"安妮到白家月和陈天中的学校玩，她先坐的公交车，然后骑共享单车，快到一个出口时又推了一小段。白家月说她看很多人都骑共享单车，但她还没骑过呢。陈天中介绍说，他骑过共享单车，很方便。第一次骑的时候，打开微信，对着共享单车上的二维码扫一下，在App上完成注册就可以了，而且，怎么使用、费用标准什么的App上都有说明。白家月听完表示，她哪天出去办事时也试试。","sample_vn":"Annie đến trường của Bạch Gia Nguyệt và Trần Thiên Trung chơi, cô đi xe buýt trước, sau đó đạp xe đạp công cộng, sắp đến một cổng ra thì lại dắt xe đi một đoạn ngắn… Bạch Gia Nguyệt nghe xong nói hôm nào ra ngoài làm việc cũng sẽ thử.","note":"Bài tập 复述 của sách (trang 88); dùng 一小段 (điểm 1)."},
+  {"q_zh":"老师留作业后，安妮和同学们拍了什么样的短视频？安妮后边还想拍什么短视频？","q_vn":"Sau khi cô giáo giao bài tập, Annie và các bạn đã quay video ngắn như thế nào? Sắp tới Annie còn muốn quay video gì?","hint":"他们小组讨论后决定，由……演……，做出……。后来视频让……放到了……。后边他们打算……，让小语……","sample":"老师叫各个小组拍个短视频，介绍中国美食。安妮他们小组讨论后决定，由AI小语演厨师，做出中国各地的著名小吃。后来这个视频让安妮的同学放到了互联网上，很多人都来点赞。后边他们打算拍第二个、第三个，让小语带大家到中国各地走一走、看一看。","sample_vn":"Cô giáo bảo các nhóm quay video ngắn giới thiệu ẩm thực Trung Quốc. Nhóm Annie thảo luận xong quyết định để AI Tiểu Ngữ đóng vai đầu bếp, làm các món ăn vặt nổi tiếng của các vùng Trung Quốc. Sau đó video được bạn của Annie đăng lên mạng, rất nhiều người vào bấm thích. Sắp tới họ định quay video thứ hai, thứ ba, để Tiểu Ngữ dẫn mọi người đi khắp các nơi ở Trung Quốc.","note":"Câu hỏi bài khoá 2; phân biệt 叫 sai khiến (老师叫各个小组……) và 让 bị động (视频让同学放到了……) — điểm 2; ôn 由 (Bài 15)."},
+  {"q_zh":"安妮和同学们的短视频是怎么拍的？对于安妮他们拍的短视频，白家月和陈天中有什么想法？","q_vn":"Video ngắn của Annie và các bạn được quay như thế nào? Đối với video đó, Bạch Gia Nguyệt và Trần Thiên Trung có suy nghĩ gì?","hint":"短视频是用……拍的，他们装了……，仅用……。对于这个视频，白家月和陈天中……，并且表示……","sample":"短视频是用手机拍的，他们装了一些免费的App，仅用几天就拍完了。对于这个短视频，白家月和陈天中看后都特别喜欢，并且表示支持他们拍更多的视频。","sample_vn":"Video ngắn được quay bằng điện thoại, họ cài vài App miễn phí, chỉ mất vài ngày là quay xong. Đối với video này, Bạch Gia Nguyệt và Trần Thiên Trung xem xong đều rất thích, đồng thời bày tỏ ủng hộ họ quay thêm nhiều video.","note":"Câu hỏi bài khoá 3; ôn 对于 (Bài 14 · điểm 4) và 并且 (Bài 16 · điểm 2)."},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"安妮骑……到了白家月、陈天中的学校，三人从……聊到……，从……聊到……。科技到底……？他们都认为……。接着……。安妮说，短视频是……。视频里……。短视频推出后……","sample":"安妮骑共享单车到了白家月、陈天中的学校，三人从共享单车聊到AI眼镜和3D打印机，从绿色经济聊到上门经济。科技到底对世界产生了怎样的影响？他们都认为，科技确实改变了人们的生活。接着，安妮给大家看了她和同学们拍的短视频。安妮说，短视频是用手机拍的，他们装了一些免费的App，仅用几天就拍完了。视频里，小语做的小吃丰富多样，看起来好吃极了。短视频推出后，大家认为非常精彩，白家月和陈天中看后也特别喜欢，并且表示支持他们拍更多的视频。","sample_vn":"Annie đạp xe đạp công cộng đến trường của Bạch Gia Nguyệt và Trần Thiên Trung, ba người trò chuyện từ xe đạp công cộng đến kính AI và máy in 3D… Bạch Gia Nguyệt và Trần Thiên Trung xem xong cũng rất thích, đồng thời bày tỏ ủng hộ họ quay thêm nhiều video.","note":"Bài tập 复述 của sách (trang 92); dùng 到底 (điểm 3)."},
+  {"q_zh":"什么是上门经济？上门经济还有什么问题？","q_vn":"Kinh tế dịch vụ tận nhà là gì? Kinh tế dịch vụ tận nhà còn có vấn đề gì?","hint":"上门经济就是……通过网上预约，让服务人员……。比如……。上门服务很方便，然而……","sample":"上门经济是一种新的服务方式，就是预约者通过网上预约，让服务人员在合适的时间到家里或者约好的地点服务，比如上门做饭、照顾小动物、取东西等。上门服务很方便，然而也有一些问题，特别是现有服务人员有些还不够专业，需要重新学习，提高服务质量。","sample_vn":"Kinh tế dịch vụ tận nhà là một hình thức dịch vụ mới, tức là người đặt hẹn đặt lịch qua mạng để nhân viên phục vụ đến nhà hoặc đến địa điểm đã hẹn vào thời gian thích hợp, ví dụ nấu cơm tại nhà, chăm sóc thú cưng, lấy đồ giúp… Dịch vụ tận nhà rất tiện, tuy nhiên cũng có một số vấn đề, đặc biệt là một số nhân viên hiện có chưa đủ chuyên nghiệp, cần học lại để nâng cao chất lượng dịch vụ.","note":"Câu hỏi bài khoá 4; dùng 然而 (điểm 4) + ôn 就是说 (Bài 11)."},
+  {"q_zh":"小组讨论：三至四人一组，根据亲身经历，谈谈科技的发展给人们生活带来的便利，讨论后由一人报告小组讨论结果。","q_vn":"Thảo luận nhóm: Nhóm 3–4 người, dựa vào trải nghiệm của bản thân, nói về những tiện lợi mà sự phát triển của công nghệ mang lại cho cuộc sống; thảo luận xong một người báo cáo kết quả của nhóm.","hint":"首先，……共享单车……；其次，……上门服务……；另外，……短视频……。然而……。科技到底……？我们认为……","sample":"大家好！我们小组讨论的题目是“科技的发展给生活带来的便利”。首先是出行。以前我们出门只能坐公交车或者打车，现在路边到处都是共享单车，用手机对着二维码扫一下就能骑，费用也不高。我们组的小王每天都先坐地铁，然后骑一小段共享单车到学校，比以前节约了二十分钟。其次是生活服务。有了上门经济，在网上预约后，就会有人上门做饭、取快递、照顾小动物。小李的姐姐经常出差，她家的猫就是让上门服务人员照顾的，大大减轻了她的压力。另外，短视频也让我们的生活更丰富了。我们用手机就能拍视频，放到互联网上，让更多的人了解我们的生活。然而，科技也带来了一些问题，比如有人一看短视频就是一大段时间。科技到底是好还是坏？我们认为，关键是怎么用它。只要合理使用，科技就会让我们的生活越来越方便。","sample_vn":"Chào cả lớp! Chủ đề nhóm em thảo luận là “Những tiện lợi mà sự phát triển công nghệ mang lại cho cuộc sống”. Trước hết là đi lại. Trước đây ra ngoài chỉ có thể đi xe buýt hoặc gọi taxi, bây giờ ven đường đâu đâu cũng có xe đạp công cộng, dùng điện thoại quét mã QR là đi được, phí cũng không cao. Bạn Vương trong nhóm em ngày nào cũng đi tàu điện ngầm trước rồi đạp xe công cộng một đoạn ngắn đến trường, tiết kiệm được hai mươi phút so với trước. Tiếp theo là dịch vụ sinh hoạt. Có kinh tế dịch vụ tận nhà, đặt lịch trên mạng là sẽ có người đến nấu cơm, lấy bưu kiện, chăm sóc thú cưng. Chị của bạn Lý thường xuyên đi công tác, con mèo nhà chị ấy chính là do nhân viên dịch vụ tận nhà chăm sóc, giảm nhẹ rất nhiều áp lực cho chị. Ngoài ra, video ngắn cũng làm cuộc sống phong phú hơn. Chỉ cần điện thoại là quay được video, đăng lên mạng để nhiều người hiểu cuộc sống của chúng ta hơn. Tuy nhiên, công nghệ cũng mang lại một số vấn đề, ví dụ có người cứ xem video ngắn là mất cả một quãng thời gian dài. Rốt cuộc công nghệ tốt hay xấu? Chúng em cho rằng mấu chốt là dùng nó như thế nào. Chỉ cần sử dụng hợp lý, công nghệ sẽ làm cuộc sống ngày càng tiện lợi.","note":"Hoạt động 任务活动 · 小组讨论 (thảo luận nhóm) của sách, trang 96 — dùng đủ 4 điểm ngữ pháp: 一小段 / 一大段, 让 bị động, 到底, 然而; ôn 首先……其次…… (Bài 14 · điểm 2)."}
+ ]
+},
+
+"translate": [
+ ["Tớ đi xe buýt trước, sau đó đạp xe đạp công cộng, sắp đến cổng ra thì lại dắt xe đi một đoạn ngắn.","我先坐的公交车，然后骑共享单车，快到出口时又推了一小段。"],
+ ["Sau đó video này được bạn cùng lớp tôi đăng lên mạng, rất nhiều người vào bấm thích.","后来这个视频让我同学放到了互联网上，很多人都来点赞。"],
+ ["Rốt cuộc công nghệ đã tạo ra ảnh hưởng như thế nào đối với thế giới?","科技到底对世界产生了怎样的影响？"],
+ ["Chị ấy phải thường xuyên đi công tác, thế nhưng lại rất lo cho sự an toàn của con mèo.","她需要经常出差，然而又很担心猫的安全。"],
+ ["Lần đầu đi, cậu hướng vào mã QR trên xe quét một cái, hoàn tất đăng ký trên App là được.","第一次骑的时候，你对着车上的二维码扫一下，在App上完成注册就可以了。"],
+ ["Có dịch vụ tận nhà rồi, cô ấy thấy tiện hơn nhiều, không cần nhờ họ hàng giúp nữa.","有了上门服务后，她觉得方便多了，不必再找亲戚帮忙。"]
+],
+"translateRev": [
+ ["Nhóm chúng tôi thảo luận xong quyết định để AI Tiểu Ngữ đóng vai đầu bếp.","我们小组讨论后决定，由AI小语演厨师。"],
+ ["Họ cài vài App miễn phí, chỉ mất vài ngày là quay xong.","他们装了一些免费的App，仅用几天就拍完了。"],
+ ["Các món ăn vặt Tiểu Ngữ làm phong phú đa dạng, trông ngon cực kỳ.","小语做的小吃丰富多样，看起来好吃极了。"],
+ ["Nhân viên phục vụ sẽ đến tận nhà chăm sóc mèo con theo yêu cầu chị ấy đưa ra.","服务人员会按她提出的要求上门照顾小猫。"],
+ ["Một số nhân viên phục vụ hiện có vẫn chưa đủ chuyên nghiệp, cần nâng cao chất lượng dịch vụ.","现有服务人员有些还不够专业，需要提高服务质量。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":140,"tieuDe":"写作 — viết theo đề của sách (ít nhất 140 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết đoạn văn: 我也想拍个短视频 (写作)","gioiThieu":"Đề 写作 của sách HSK 4 (3.0) yêu cầu viết một đoạn văn ngắn (ít nhất 140 chữ) với nhan đề 「我也想拍个短视频」 — nói em muốn quay video ngắn như thế nào và định quay ra sao, giống phần 书写 của đề thi HSK 4 mới.","buoc":["Đọc kỹ đề: hai yêu cầu bắt buộc — (1) em muốn quay video ngắn VỀ CÁI GÌ (loại video, nội dung), (2) em định quay THẾ NÀO (dùng gì, ai đóng vai, mất bao lâu, đăng ở đâu).","Lập dàn ý theo các câu hỏi gợi ý: vì sao muốn quay → nội dung → cách quay → khó khăn có thể gặp → mong muốn.","Dùng từ mới và 4 điểm ngữ pháp của bài (khung “Từ, cấu trúc nên dùng”): 一大 / 一小 + lượng từ, 让 / 叫 bị động, 到底, 然而.","Nối các ý bằng từ nối: 首先 / 然后 / 其次 (Bài 14) / 另外 / 最后.","Câu mở nêu lý do muốn quay, câu kết nói mong muốn; tự soát số chữ (≥ 140) và lỗi chữ Hán trước khi nộp."]},
+ "de":"安妮和同学们拍的短视频很有意思，很多人点赞。请以“我也想拍个短视频”为题目，写一篇短文，谈谈你想拍什么样的短视频，想怎么拍，不少于140字。",
+ "prompt":"Video ngắn mà Annie và các bạn quay rất thú vị, nhiều người bấm thích. Hãy lấy nhan đề “Tôi cũng muốn quay một video ngắn”, viết một đoạn văn ngắn, nói em muốn quay video ngắn như thế nào, định quay ra sao, không ít hơn 140 chữ.",
+ "dan":[
+  {"hoi":"你为什么也想拍短视频？","goiY":"看了安妮他们的视频以后，我……；很多人……点赞"},
+  {"hoi":"你想拍什么样的短视频？","goiY":"我想拍一个介绍……的短视频，比如……各地的著名小吃"},
+  {"hoi":"你打算怎么拍？用什么拍？谁来演？","goiY":"首先……讨论；然后用手机……，装一个免费的App；由……演……"},
+  {"hoi":"拍的时候可能会遇到什么问题？","goiY":"……很想……，然而……；到底……？"},
+  {"hoi":"拍完以后你想怎么做？","goiY":"让朋友放到互联网上；希望大家通过视频了解……"}],
+ "tuNen":["拍","短视频","小组","讨论","演","厨师","各地","著名","小吃","互联网","点赞","仅","推出","多样","差点儿"],
+ "cauTruc":[
+  {"ten":"一大 / 一小 + lượng từ","nhan":"一大","vd":"视频里，我要做一大桌子越南菜，让大家看看越南小吃有多丰富。","khi":"Miêu tả nội dung video một cách sinh động, khoa trương."},
+  {"ten":"……让 / 叫 + người + V + ……","nhan":"让","vd":"上次我拍的小视频让朋友放到了互联网上，可是只有几个人点赞。","khi":"Kể lại trải nghiệm cũ (câu bị động — thường nói việc ĐÃ xảy ra)."},
+  {"ten":"……到底……？","nhan":"到底","vd":"拍什么内容大家才喜欢看呢？我们到底应该拍多长时间？","khi":"Nêu câu hỏi băn khoăn khi lên kế hoạch."},
+  {"ten":"……，然而……","nhan":"然而","vd":"我很想拍一个有意思的视频，然而我从来没拍过，有点儿担心。","khi":"Nói về khó khăn có thể gặp."},
+  {"ten":"首先……，然后……","nhan":"首先","vd":"首先和同学们讨论内容，然后用手机拍，最后用免费的App做好。","khi":"Trình bày các bước quay (ôn Bài 14)."}],
+ "checklist":[
+  "Đủ ít nhất 140 chữ Hán chưa?",
+  "Có nhan đề 「我也想拍个短视频」 và nói rõ cả hai ý: muốn quay video gì + định quay thế nào chưa?",
+  "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (一大 / 一小 + lượng từ、让 / 叫 bị động、到底、然而) chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài chưa?",
+  "Đoạn văn có câu mở và câu kết rõ ràng, các bước nối với nhau bằng từ nối chưa?"],
+ "model":"看了安妮他们拍的短视频以后，我也想拍一个。上次我随便拍的一个小视频让朋友放到了互联网上，可是只有几个人点赞，这次我想认真拍一个。我想拍一个介绍越南著名小吃的短视频，让更多的中国朋友了解越南美食。首先，我会和小组的同学一起讨论，选出越南各地最有名的五种小吃。然后，由我来演厨师，在视频里做一大桌子越南菜，一边做一边用中文介绍。视频就用手机拍，再装一个免费的App，顺利的话，仅用一个星期就能拍完。我很想把视频拍得幽默一点儿，然而我从来没拍过视频，也有点儿担心：大家到底喜欢看什么样的内容呢？所以拍之前，我打算先看看别人的视频，多学习学习。拍完以后，我会把它放到互联网上。如果点赞的人很多，我还要推出第二个、第三个，带大家到越南各地走一走、看一看。"
+}
+}

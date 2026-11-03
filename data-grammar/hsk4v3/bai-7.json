@@ -162,7 +162,7 @@
       "promptLang": "vi",
       "prompt": "Về mặt nội dung, bản kế hoạch này chẳng có gì phải sửa.",
       "answer": "在内容方面，这个计划书没有什么好改的。",
-      "answerPy": "Zài nèiróng fāngmiàn, zhège jìhuà shū méiyǒu shénme hǎo gǎi de.",
+      "answerPy": "Zài nèiróng fāngmiàn, zhège jìhuàshū méiyǒu shénme hǎo gǎi de.",
       "explanation": "在……方面 + 没有什么好×的 (Bài 6 · điểm 2)."
      },
      {
@@ -171,7 +171,7 @@
       "promptLang": "vi",
       "prompt": "Về mặt giá cả, mua trên mạng thường rẻ hơn ở cửa hàng.",
       "answer": "在价格方面，网购往往比商店便宜。",
-      "answerPy": "Zài jiàgé fāngmiàn, wǎng gòu wǎngwǎng bǐ shāngdiàn piányi.",
+      "answerPy": "Zài jiàgé fāngmiàn, wǎnggòu wǎngwǎng bǐ shāngdiàn piányi.",
       "explanation": "在价格方面 + 往往 (Bài 4) + câu so sánh 比."
      }
     ]
@@ -513,7 +513,7 @@
       "promptLang": "vi",
       "prompt": "Giao thông thành phố này rất thuận tiện. Lấy tàu điện ngầm mà nói, đi đâu cũng tiện.",
       "answer": "这个城市的交通很方便。拿地铁来说，去哪儿都很方便。",
-      "answerPy": "Zhègè chéngshì de jiāotōng hěn fāngbiàn. Ná dìtiě láishuō, qù nǎr dōu hěn fāngbiàn.",
+      "answerPy": "Zhège chéngshì de jiāotōng hěn fāngbiàn. Ná dìtiě láishuō, qù nǎr dōu hěn fāngbiàn.",
       "explanation": "Nhận định chung + 拿……来说 + ví dụ."
      },
      {
@@ -522,7 +522,7 @@
       "promptLang": "vi",
       "prompt": "Lớp nào cũng có ưu điểm. Lấy lớp chúng tôi mà nói, các bạn thường xuyên giúp đỡ lẫn nhau.",
       "answer": "每个班都有优点。拿我们班来说，同学之间经常互相帮助。",
-      "answerPy": "Měi gè bān dōu yǒu yōudiǎn. Ná wǒmen bān láishuō, tóngxué zhī jiān jīngcháng hùxiāng bāngzhù.",
+      "answerPy": "Měi gè bān dōu yǒu yōudiǎn. Ná wǒmen bān láishuō, tóngxué zhījiān jīngcháng hùxiāng bāngzhù.",
       "explanation": "优点 (từ mới) + ôn 之间, 互相 (Bài 4)."
      }
     ]
@@ -692,7 +692,7 @@
       "promptLang": "vi",
       "prompt": "Chuyến công tác lần này giúp tôi tích lũy được không ít kinh nghiệm.",
       "answer": "这次出差使我积累了不少经验。",
-      "answerPy": "Zhè cì chūchāi shǐ wǒ jīlěi le bù shǎo jīngyàn.",
+      "answerPy": "Zhè cì chūchāi shǐ wǒ jīlěi le bùshǎo jīngyàn.",
       "explanation": "出差, 积累, 经验 (từ mới) + 使."
      }
     ]

@@ -162,7 +162,7 @@ var vocabData = [
    },
    {
     "zh": "直接回家",
-    "py": "Zhíjiē huí jiā",
+    "py": "Zhíjiē huíjiā",
     "vn": "về thẳng nhà"
    },
    {
@@ -228,7 +228,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tan học tôi không đi đâu cả, về thẳng nhà.",
     "answer": "下课后我哪儿也不去，直接回家。",
-    "answerPy": "Xiàkè hòu wǒ nǎr yě bú qù, zhíjiē huí jiā.",
+    "answerPy": "Xià kèhòu wǒ nǎr yě bú qù, zhíjiē huíjiā.",
     "note": "Ôn đại từ nghi vấn phiếm chỉ 哪儿也不…… (HSK 3).",
     "pair": "直接 + V"
    },
@@ -236,7 +236,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bạn cứ nói thẳng với chủ nhà là được.",
     "answer": "你直接告诉房东就是了。",
-    "answerPy": "Nǐ zhíjiē gàosu fángdōng jiù shì le.",
+    "answerPy": "Nǐ zhíjiē gàosu fángdōng jiùshì le.",
     "note": "Ôn ×就是了 (Bài 2 · điểm 1) + từ 房东 (Bài 2).",
     "pair": "……就是了"
    }
@@ -280,7 +280,7 @@ var vocabData = [
    },
    {
     "zh": "转身",
-    "py": "Zhuǎn shēn",
+    "py": "Zhuǎnshēn",
     "vn": "quay người lại"
    }
   ],
@@ -305,7 +305,7 @@ var vocabData = [
    },
    {
     "zh": "前面那个路口左转，就能看到学校了。",
-    "py": "Qiánmian nàge lùkǒu zuǒ zhuǎn, jiù néng kàn dào xuéxiào le.",
+    "py": "Qiánmian nàge lùkǒu zuǒ zhuǎn, jiù néng kàndào xuéxiào le.",
     "vn": "Ở ngã rẽ phía trước rẽ trái là nhìn thấy trường ngay."
    }
   ],
@@ -336,7 +336,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đi đến cổng trường rồi rẽ trái, nhà tôi ở ngay đó.",
     "answer": "走到学校门口以后左转，我家就在那儿。",
-    "answerPy": "Zǒu dào xuéxiào ménkǒu yǐhòu zuǒ zhuǎn, wǒ jiā jiù zài nàr.",
+    "answerPy": "Zǒudào xuéxiào ménkǒu yǐhòu zuǒ zhuǎn, wǒ jiā jiù zài nàr.",
     "note": "Bổ ngữ kết quả 走到 + nơi chốn (HSK 3).",
     "pair": "V到 + nơi chốn"
    }
@@ -380,7 +380,7 @@ var vocabData = [
    },
    {
     "zh": "正好赶上",
-    "py": "Zhènghǎo gǎn shàng",
+    "py": "Zhènghǎo gǎnshang",
     "vn": "vừa kịp"
    }
   ],
@@ -559,7 +559,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đường ở đây tôi quen thì quen, chỉ là tên đường tiếng Trung tôi vẫn chưa đọc được.",
     "answer": "这儿的路我熟悉是熟悉，就是中文路名我还看不懂。",
-    "answerPy": "Zhèr de lù wǒ shúxi shì shúxi, jiù shì Zhōngwén lù míng wǒ hái kàn bù dǒng.",
+    "answerPy": "Zhèr de lù wǒ shúxi shì shúxi, jiùshì Zhōngwén lù míng wǒ hái kàn bu dǒng.",
     "note": "Kết hợp ×是×，就是…… (Bài 3 · điểm 1).",
     "pair": "×是×，就是……"
    }
@@ -602,7 +602,7 @@ var vocabData = [
    },
    {
     "zh": "正前方",
-    "py": "Zhèng qián fāng",
+    "py": "Zhèng qiánfāng",
     "vn": "ngay phía trước"
    }
   ],
@@ -686,7 +686,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "找到目的地",
-    "py": "Zhǎo dào mùdìdì",
+    "py": "Zhǎodào mùdìdì",
     "vn": "tìm thấy nơi cần đến"
    },
    {
@@ -716,12 +716,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "你也可以用手机地图，很容易就能找到目的地。",
-  "ex_py": "Nǐ yě kěyǐ yòng shǒujī dìtú, hěn róngyì jiù néng zhǎo dào mùdìdì.",
+  "ex_py": "Nǐ yě kěyǐ yòng shǒujī dìtú, hěn róngyì jiù néng zhǎodào mùdìdì.",
   "ex_vn": "Bạn cũng có thể dùng bản đồ trên điện thoại, rất dễ tìm được nơi cần đến.",
   "exList": [
    {
     "zh": "你也可以用手机地图，很容易就能找到目的地。",
-    "py": "Nǐ yě kěyǐ yòng shǒujī dìtú, hěn róngyì jiù néng zhǎo dào mùdìdì.",
+    "py": "Nǐ yě kěyǐ yòng shǒujī dìtú, hěn róngyì jiù néng zhǎodào mùdìdì.",
     "vn": "Bạn cũng có thể dùng bản đồ trên điện thoại, rất dễ tìm được nơi cần đến."
    },
    {
@@ -773,7 +773,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Dùng bản đồ điện thoại, bạn sẽ rất dễ tìm thấy nơi cần đến.",
     "answer": "用手机地图，你很容易就能找到目的地。",
-    "answerPy": "Yòng shǒujī dìtú, nǐ hěn róngyì jiù néng zhǎo dào mùdìdì.",
+    "answerPy": "Yòng shǒujī dìtú, nǐ hěn róngyì jiù néng zhǎodào mùdìdì.",
     "note": "Bổ ngữ kết quả 找到 (HSK 3).",
     "pair": "找到 + N"
    },
@@ -824,7 +824,7 @@ var vocabData = [
    },
    {
     "zh": "下载下来",
-    "py": "Xiàzài xiàlái",
+    "py": "Xiàzài xiàlai",
     "vn": "tải về (máy)"
    }
   ],
@@ -991,7 +991,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Họ đang tiến hành nghiên cứu về thương mại quốc tế.",
     "answer": "他们正在进行国际贸易方面的研究。",
-    "answerPy": "Tāmen zhèngzài jìnxíng guójì mào yì fāngmiàn de yánjiū.",
+    "answerPy": "Tāmen zhèngzài jìnxíng guójì màoyì fāngmiàn de yánjiū.",
     "note": "Ôn từ 研究, 国际, 贸易, 方面 (Bài 1).",
     "pair": "进行……研究"
    },
@@ -1042,7 +1042,7 @@ var vocabData = [
    },
    {
     "zh": "网上支付",
-    "py": "Wǎngshàng zhīfù",
+    "py": "Wǎngshang zhīfù",
     "vn": "thanh toán trực tuyến"
    }
   ],
@@ -1178,7 +1178,7 @@ var vocabData = [
    },
    {
     "zh": "这个学中文的软件很好用，你也下载一个吧。",
-    "py": "Zhège xué Zhōngwén de ruǎnjiàn hěn hǎo yòng, nǐ yě xiàzài yí gè ba.",
+    "py": "Zhège xué Zhōngwén de ruǎnjiàn hěn hǎoyòng, nǐ yě xiàzài yí gè ba.",
     "vn": "Phần mềm học tiếng Trung này rất dễ dùng, bạn cũng tải một cái đi."
    }
   ],
@@ -1213,7 +1213,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Phần mềm này có thể dùng để gọi taxi.",
     "answer": "这个软件可以用来打车。",
-    "answerPy": "Zhège ruǎnjiàn kěyǐ yòng lái dǎchē.",
+    "answerPy": "Zhège ruǎnjiàn kěyǐ yònglái dǎchē.",
     "note": "用来 + V = dùng để (HSK 3).",
     "pair": "可以用来……"
    },
@@ -1259,7 +1259,7 @@ var vocabData = [
    },
    {
     "zh": "不仅如此",
-    "py": "Bùjǐn rú cǐ",
+    "py": "Bùjǐn rúcǐ",
     "vn": "không chỉ như vậy"
    },
    {
@@ -1275,12 +1275,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "现在我不仅会扫码结账，还会用手机在网上购物了。",
-  "ex_py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshàng gòuwù le.",
+  "ex_py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshang gòuwù le.",
   "ex_vn": "Giờ tôi không những biết quét mã thanh toán, mà còn biết dùng điện thoại mua hàng trên mạng nữa.",
   "exList": [
    {
     "zh": "现在我不仅会扫码结账，还会用手机在网上购物了。",
-    "py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshàng gòuwù le.",
+    "py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshang gòuwù le.",
     "vn": "Giờ tôi không những biết quét mã thanh toán, mà còn biết dùng điện thoại mua hàng trên mạng nữa."
    },
    {
@@ -1382,12 +1382,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "现在我不仅会扫码结账，还会用手机在网上购物了。",
-  "ex_py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshàng gòuwù le.",
+  "ex_py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshang gòuwù le.",
   "ex_vn": "Giờ tôi không những biết quét mã thanh toán, mà còn biết mua hàng trên mạng nữa.",
   "exList": [
    {
     "zh": "现在我不仅会扫码结账，还会用手机在网上购物了。",
-    "py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshàng gòuwù le.",
+    "py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshang gòuwù le.",
     "vn": "Giờ tôi không những biết quét mã thanh toán, mà còn biết mua hàng trên mạng nữa."
    },
    {
@@ -1427,7 +1427,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bạn trả tiền mặt hay quét mã?",
     "answer": "你付现金还是扫码？",
-    "answerPy": "Nǐ fù xiànjīn háishì sǎomǎ?",
+    "answerPy": "Nǐ fù xiànjīn háishi sǎomǎ?",
     "note": "Câu hỏi lựa chọn A还是B (HSK 2–3).",
     "pair": "A还是B"
    },
@@ -1493,12 +1493,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "现在我不仅会扫码结账，还会用手机在网上购物了。",
-  "ex_py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshàng gòuwù le.",
+  "ex_py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshang gòuwù le.",
   "ex_vn": "Giờ tôi không những biết quét mã thanh toán, mà còn biết mua hàng trên mạng nữa.",
   "exList": [
    {
     "zh": "现在我不仅会扫码结账，还会用手机在网上购物了。",
-    "py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshàng gòuwù le.",
+    "py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshang gòuwù le.",
     "vn": "Giờ tôi không những biết quét mã thanh toán, mà còn biết mua hàng trên mạng nữa."
    },
    {
@@ -1546,7 +1546,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ăn xong rồi mới thanh toán.",
     "answer": "吃完饭再结账。",
-    "answerPy": "Chī wán fàn zài jiézhàng.",
+    "answerPy": "Chīwán fàn zài jiézhàng.",
     "note": "Ôn 再 = rồi mới (HSK 3).",
     "pair": "V完……再……"
    }
@@ -1574,7 +1574,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "网上购物",
-    "py": "Wǎngshàng gòuwù",
+    "py": "Wǎngshang gòuwù",
     "vn": "mua sắm trên mạng"
    },
    {
@@ -1589,7 +1589,7 @@ var vocabData = [
    },
    {
     "zh": "购物车",
-    "py": "Gòuwù chē",
+    "py": "Gòuwùchē",
     "vn": "giỏ hàng"
    }
   ],
@@ -1604,12 +1604,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "……还会用手机在网上购物了。",
-  "ex_py": "…… Hái huì yòng shǒujī zài wǎngshàng gòuwù le.",
+  "ex_py": "…… Hái huì yòng shǒujī zài wǎngshang gòuwù le.",
   "ex_vn": "…còn biết dùng điện thoại mua hàng trên mạng nữa.",
   "exList": [
    {
     "zh": "……还会用手机在网上购物了。",
-    "py": "…… Hái huì yòng shǒujī zài wǎngshàng gòuwù le.",
+    "py": "…… Hái huì yòng shǒujī zài wǎngshang gòuwù le.",
     "vn": "…còn biết dùng điện thoại mua hàng trên mạng nữa."
    },
    {
@@ -1649,7 +1649,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mua sắm trên mạng không những rẻ mà còn tiện.",
     "answer": "在网上购物不仅便宜，而且方便。",
-    "answerPy": "Zài wǎngshàng gòuwù bùjǐn piányi, érqiě fāngbiàn.",
+    "answerPy": "Zài wǎngshang gòuwù bùjǐn piányi, érqiě fāngbiàn.",
     "note": "Bài 3 · điểm 2 不仅……而且…….",
     "pair": "不仅……而且……"
    },
@@ -1700,7 +1700,7 @@ var vocabData = [
    },
    {
     "zh": "订好了",
-    "py": "Dìng hǎo le",
+    "py": "Dìnghǎo le",
     "vn": "đặt xong rồi"
    }
   ],
@@ -1715,17 +1715,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "昨天我就在网上订了一台电脑，今天下午一点送到。",
-  "ex_py": "Zuótiān wǒ jiù zài wǎngshàng dìng le yì tái diànnǎo, jīntiān xiàwǔ yì diǎn sòng dào.",
+  "ex_py": "Zuótiān wǒ jiù zài wǎngshang dìng le yì tái diànnǎo, jīntiān xiàwǔ yìdiǎn sòngdào.",
   "ex_vn": "Hôm qua tôi đặt một cái máy tính trên mạng, chiều nay 1 giờ giao tới.",
   "exList": [
    {
     "zh": "昨天我就在网上订了一台电脑，今天下午一点送到。",
-    "py": "Zuótiān wǒ jiù zài wǎngshàng dìng le yì tái diànnǎo, jīntiān xiàwǔ yì diǎn sòng dào.",
+    "py": "Zuótiān wǒ jiù zài wǎngshang dìng le yì tái diànnǎo, jīntiān xiàwǔ yìdiǎn sòngdào.",
     "vn": "Hôm qua tôi đặt một cái máy tính trên mạng, chiều nay 1 giờ giao tới."
    },
    {
     "zh": "我已经在网上订好了去上海的火车票。",
-    "py": "Wǒ yǐjīng zài wǎngshàng dìng hǎo le qù Shànghǎi de huǒchē piào.",
+    "py": "Wǒ yǐjīng zài wǎngshang dìnghǎo le qù Shànghǎi de huǒchēpiào.",
     "vn": "Tôi đã đặt xong vé tàu đi Thượng Hải trên mạng."
    }
   ],
@@ -1756,7 +1756,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Vì đặt vé trên mạng quá tiện nên bây giờ tôi không ra ga mua vé nữa.",
     "answer": "由于在网上订票太方便了，我现在不去火车站买票了。",
-    "answerPy": "Yóuyú zài wǎngshàng dìng piào tài fāngbiàn le, wǒ xiànzài bú qù huǒ chēzhàn mǎi piào le.",
+    "answerPy": "Yóuyú zài wǎngshang dìng piào tài fāngbiàn le, wǒ xiànzài bú qù huǒchēzhàn mǎipiào le.",
     "note": "Ôn 由于 (Bài 2 · điểm 4).",
     "pair": "由于……"
    }
@@ -1794,7 +1794,7 @@ var vocabData = [
    },
    {
     "zh": "快递员",
-    "py": "Kuàidì yuán",
+    "py": "Kuàidìyuán",
     "vn": "shipper"
    },
    {
@@ -1810,17 +1810,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "快递员要到了，我得马上回去！",
-  "ex_py": "Kuàidì yuán yào dào le, wǒ děi mǎshàng huíqù!",
+  "ex_py": "Kuàidìyuán yào dào le, wǒ děi mǎshàng huíqu!",
   "ex_vn": "Shipper sắp đến rồi, tớ phải về ngay!",
   "exList": [
    {
     "zh": "快递员要到了，我得马上回去！",
-    "py": "Kuàidì yuán yào dào le, wǒ děi mǎshàng huíqù!",
+    "py": "Kuàidìyuán yào dào le, wǒ děi mǎshàng huíqu!",
     "vn": "Shipper sắp đến rồi, tớ phải về ngay!"
    },
    {
     "zh": "我去楼下拿个快递，马上回来。",
-    "py": "Wǒ qù lóu xià ná gè kuàidì, mǎshàng huílái.",
+    "py": "Wǒ qù lóuxià ná gè kuàidì, mǎshàng huílai.",
     "vn": "Tôi xuống dưới lấy bưu kiện, quay lại ngay."
    }
   ],
@@ -1855,7 +1855,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Shipper sắp đến rồi, tôi phải về ngay.",
     "answer": "快递员要到了，我得马上回去。",
-    "answerPy": "Kuàidì yuán yào dào le, wǒ děi mǎshàng huíqù.",
+    "answerPy": "Kuàidìyuán yào dào le, wǒ děi mǎshàng huíqu.",
     "note": "Ôn 要……了 (sắp) + 得 děi (phải).",
     "pair": "要……了"
    },
@@ -2089,7 +2089,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Alipay tiện thì tiện thật, chỉ là đôi khi dễ tiêu tiền lung tung.",
     "answer": "支付宝方便是方便，就是有时候容易乱花钱。",
-    "answerPy": "Zhīfùbǎo fāngbiàn shì fāngbiàn, jiù shì yǒu shíhou róngyì luàn huā qián.",
+    "answerPy": "Zhīfùbǎo fāngbiàn shì fāngbiàn, jiùshì yǒushíhou róngyì luàn huāqián.",
     "note": "Bài 3 · điểm 1 ×是×，就是…….",
     "pair": "×是×，就是……"
    }
@@ -2188,7 +2188,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với sự phát triển của thanh toán bằng điện thoại, người dùng tiền mặt ngày càng ít.",
     "answer": "随着手机支付的发展，用现金的人越来越少了。",
-    "answerPy": "Suízhuó shǒujī zhīfù de fāzhǎn, yòng xiànjīn de rén yuèláiyuè shǎo le.",
+    "answerPy": "Suízhe shǒujī zhīfù de fāzhǎn, yòng xiànjīn de rén yuèláiyuè shǎo le.",
     "note": "Ôn 随着 (Bài 1 · điểm 3).",
     "pair": "随着……越来越……"
    },
@@ -2196,7 +2196,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đi du lịch nước ngoài vẫn nên mang một ít tiền mặt.",
     "answer": "去国外旅游，最好还是带一点儿现金。",
-    "answerPy": "Qù guó wài lǚyóu, zuìhǎo háishì dài yìdiǎnr xiànjīn.",
+    "answerPy": "Qù guówài lǚyóu, zuìhǎo háishi dài yìdiǎnr xiànjīn.",
     "note": "最好还是 = tốt nhất vẫn nên (HSK 3).",
     "pair": "最好还是……"
    }
@@ -2239,7 +2239,7 @@ var vocabData = [
    },
    {
     "zh": "第一次网购",
-    "py": "Dì yī cì wǎnggòu",
+    "py": "Dì yí cì wǎnggòu",
     "vn": "lần đầu mua online"
    }
   ],
@@ -2250,17 +2250,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "在中国网购，不仅选择多、价格不高，而且送货很快。",
-  "ex_py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sòng huò hěn kuài.",
+  "ex_py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sònghuò hěn kuài.",
   "ex_vn": "Mua hàng online ở Trung Quốc không những nhiều lựa chọn, giá không cao mà giao hàng còn nhanh.",
   "exList": [
    {
     "zh": "在中国网购，不仅选择多、价格不高，而且送货很快。",
-    "py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sòng huò hěn kuài.",
+    "py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sònghuò hěn kuài.",
     "vn": "Mua hàng online ở Trung Quốc không những nhiều lựa chọn, giá không cao mà giao hàng còn nhanh."
    },
    {
     "zh": "我妈妈以前不会网购，现在每天都在网上买东西。",
-    "py": "Wǒ māma yǐqián bú huì wǎnggòu, xiànzài měi tiān dōu zài wǎngshàng mǎi dōngxi.",
+    "py": "Wǒ māma yǐqián bú huì wǎnggòu, xiànzài měitiān dōu zài wǎngshang mǎi dōngxi.",
     "vn": "Trước kia mẹ tôi không biết mua online, giờ ngày nào cũng mua đồ trên mạng."
    }
   ],
@@ -2303,7 +2303,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mua online tiện thì tiện thật, chỉ là không thử được quần áo.",
     "answer": "网购方便是方便，就是不能试衣服。",
-    "answerPy": "Wǎnggòu fāngbiàn shì fāngbiàn, jiù shì bù néng shì yīfu.",
+    "answerPy": "Wǎnggòu fāngbiàn shì fāngbiàn, jiùshì bù néng shì yīfu.",
     "note": "Bài 3 · điểm 1.",
     "pair": "×是×，就是……"
    }
@@ -2341,12 +2341,12 @@ var vocabData = [
    },
    {
     "zh": "寄给家人",
-    "py": "Jì gěi jiārén",
+    "py": "Jìgěi jiārén",
     "vn": "gửi cho gia đình"
    },
    {
     "zh": "寄出去",
-    "py": "Jì chūqù",
+    "py": "Jì chūqu",
     "vn": "gửi đi"
    }
   ],
@@ -2361,17 +2361,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "白家月和陈天中也都学会了用手机支付、网购、寄快递等等。",
-  "ex_py": "Bái Jiāyuè hé Chén Tiānzhōng yě dōu xué huì le yòng shǒujī zhīfù, wǎnggòu, jì kuàidì děng děng.",
+  "ex_py": "Bái Jiāyuè hé Chén Tiānzhōng yě dōu xuéhuì le yòng shǒujī zhīfù, wǎnggòu, jì kuàidì děngděng.",
   "ex_vn": "Bạch Gia Nguyệt và Trần Thiên Trung cũng đều đã học được cách thanh toán bằng điện thoại, mua online, gửi chuyển phát nhanh, v.v.",
   "exList": [
    {
     "zh": "白家月和陈天中也都学会了用手机支付、网购、寄快递等等。",
-    "py": "Bái Jiāyuè hé Chén Tiānzhōng yě dōu xué huì le yòng shǒujī zhīfù, wǎnggòu, jì kuàidì děng děng.",
+    "py": "Bái Jiāyuè hé Chén Tiānzhōng yě dōu xuéhuì le yòng shǒujī zhīfù, wǎnggòu, jì kuàidì děngděng.",
     "vn": "Bạch Gia Nguyệt và Trần Thiên Trung cũng đều đã học được cách thanh toán bằng điện thoại, mua online, gửi chuyển phát nhanh, v.v."
    },
    {
     "zh": "我给妈妈寄了一些北京的点心。",
-    "py": "Wǒ gěi māma jì le yìxiē Běijīng de diǎnxīn.",
+    "py": "Wǒ gěi māma jì le yìxiē Běijīng de diǎnxin.",
     "vn": "Tôi gửi cho mẹ một ít bánh ngọt Bắc Kinh."
    }
   ],
@@ -2394,7 +2394,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi muốn gửi cuốn sách này cho bạn ở Việt Nam.",
     "answer": "我想把这本书寄给越南的朋友。",
-    "answerPy": "Wǒ xiǎng bǎ zhè běn shū jì gěi Yuènán de péngyou.",
+    "answerPy": "Wǒ xiǎng bǎ zhè běn shū jìgěi Yuènán de péngyou.",
     "note": "Câu chữ 把 + 寄给 (HSK 3).",
     "pair": "把……寄给……"
    },
@@ -2402,7 +2402,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lệ Lệ đi điểm chuyển phát lấy hàng, tiện thể lại gửi thêm một bưu kiện.",
     "answer": "丽丽去快递站拿快递时，又寄了一个快递。",
-    "answerPy": "Lì lì qù kuàidì zhàn ná kuàidì shí, yòu jì le yí gè kuàidì.",
+    "answerPy": "Lìli qù kuàidì zhàn ná kuàidì shí, yòu jì le yí gè kuàidì.",
     "note": "Câu 综合练习 (1) của sách.",
     "pair": "又 + V"
    }
@@ -2430,7 +2430,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "等等",
-    "py": "Děng děng",
+    "py": "Děngděng",
     "vn": "vân vân"
    },
    {
@@ -2440,7 +2440,7 @@ var vocabData = [
    },
    {
     "zh": "姓名、手机号等",
-    "py": "Xìngmíng, shǒujī hào děng",
+    "py": "Xìngmíng, shǒujīhào děng",
     "vn": "họ tên, số điện thoại…"
    },
    {
@@ -2460,12 +2460,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "白家月和陈天中也都学会了用手机支付、网购、寄快递等等。",
-  "ex_py": "Bái Jiāyuè hé Chén Tiānzhōng yě dōu xué huì le yòng shǒujī zhīfù, wǎnggòu, jì kuàidì děng děng.",
+  "ex_py": "Bái Jiāyuè hé Chén Tiānzhōng yě dōu xuéhuì le yòng shǒujī zhīfù, wǎnggòu, jì kuàidì děngděng.",
   "ex_vn": "Bạch Gia Nguyệt và Trần Thiên Trung cũng đều đã học được thanh toán bằng điện thoại, mua online, gửi chuyển phát nhanh, v.v.",
   "exList": [
    {
     "zh": "白家月和陈天中也都学会了用手机支付、网购、寄快递等等。",
-    "py": "Bái Jiāyuè hé Chén Tiānzhōng yě dōu xué huì le yòng shǒujī zhīfù, wǎnggòu, jì kuàidì děng děng.",
+    "py": "Bái Jiāyuè hé Chén Tiānzhōng yě dōu xuéhuì le yòng shǒujī zhīfù, wǎnggòu, jì kuàidì děngděng.",
     "vn": "Bạch Gia Nguyệt và Trần Thiên Trung cũng đều đã học được thanh toán bằng điện thoại, mua online, gửi chuyển phát nhanh, v.v."
    },
    {
@@ -2493,7 +2493,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mua đồ trên mạng cần cung cấp họ tên, số điện thoại… và các thông tin khác.",
     "answer": "网上购物需要提供姓名、手机号等信息。",
-    "answerPy": "Wǎngshàng gòuwù xūyào tígōng xìngmíng, shǒujī hào děng xìnxī.",
+    "answerPy": "Wǎngshang gòuwù xūyào tígōng xìngmíng, shǒujīhào děng xìnxī.",
     "note": "Câu bài khoá 4: ……等 + N.",
     "pair": "……等 + N"
    },
@@ -2501,7 +2501,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ở nhà tôi thích nấu ăn, xem phim, đọc sách, v.v.",
     "answer": "在家我喜欢做饭、看电影、看书等等。",
-    "answerPy": "Zài jiā wǒ xǐhuan zuòfàn, kàn diànyǐng, kàn shū děng děng.",
+    "answerPy": "Zài jiā wǒ xǐhuan zuòfàn, kàn diànyǐng, kànshū děngděng.",
     "note": "等等 lặp lại.",
     "pair": "……等等"
    }
@@ -2529,7 +2529,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "送货",
-    "py": "Sòng huò",
+    "py": "Sònghuò",
     "vn": "giao hàng"
    },
    {
@@ -2544,7 +2544,7 @@ var vocabData = [
    },
    {
     "zh": "送货上门",
-    "py": "Sòng huò shàng mén",
+    "py": "Sònghuò shàngmén",
     "vn": "giao tận nhà"
    }
   ],
@@ -2555,12 +2555,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "在中国网购，不仅选择多、价格不高，而且送货很快。",
-  "ex_py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sòng huò hěn kuài.",
+  "ex_py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sònghuò hěn kuài.",
   "ex_vn": "Mua hàng online ở Trung Quốc không những nhiều lựa chọn, giá không cao mà giao hàng còn nhanh.",
   "exList": [
    {
     "zh": "在中国网购，不仅选择多、价格不高，而且送货很快。",
-    "py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sòng huò hěn kuài.",
+    "py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sònghuò hěn kuài.",
     "vn": "Mua hàng online ở Trung Quốc không những nhiều lựa chọn, giá không cao mà giao hàng còn nhanh."
    },
    {
@@ -2588,7 +2588,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ở Trung Quốc mua online không những nhiều đồ mà giao hàng còn nhanh.",
     "answer": "在中国网购，不仅东西多，而且送货很快。",
-    "answerPy": "Zài Zhōngguó wǎnggòu, bùjǐn dōngxi duō, érqiě sòng huò hěn kuài.",
+    "answerPy": "Zài Zhōngguó wǎnggòu, bùjǐn dōngxi duō, érqiě sònghuò hěn kuài.",
     "note": "Bài 3 · điểm 2.",
     "pair": "不仅……而且……"
    },
@@ -2596,7 +2596,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mua online rẻ thì rẻ thật, chỉ là đôi khi giao hàng hơi chậm.",
     "answer": "网购便宜是便宜，就是有时候送货有点儿慢。",
-    "answerPy": "Wǎnggòu piányi shì piányi, jiù shì yǒu shíhou sòng huò yǒudiǎnr màn.",
+    "answerPy": "Wǎnggòu piányi shì piányi, jiùshì yǒushíhou sònghuò yǒudiǎnr màn.",
     "note": "Bài 3 · điểm 1.",
     "pair": "×是×，就是……"
    }
@@ -2654,12 +2654,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "在中国网购，不仅选择多、价格不高，而且送货很快，很多留学生甚至改变了自己的购物习惯。",
-  "ex_py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sòng huò hěn kuài, hěn duō liúxuéshēng shènzhì gǎibiàn le zìjǐ de gòuwù xíguàn.",
+  "ex_py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sònghuò hěn kuài, hěn duō liúxuéshēng shènzhì gǎibiàn le zìjǐ de gòuwù xíguàn.",
   "ex_vn": "Mua online ở Trung Quốc không những nhiều lựa chọn, giá không cao mà giao hàng còn nhanh, nhiều du học sinh thậm chí đã thay đổi thói quen mua sắm của mình.",
   "exList": [
    {
     "zh": "在中国网购，不仅选择多、价格不高，而且送货很快，很多留学生甚至改变了自己的购物习惯。",
-    "py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sòng huò hěn kuài, hěn duō liúxuéshēng shènzhì gǎibiàn le zìjǐ de gòuwù xíguàn.",
+    "py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sònghuò hěn kuài, hěn duō liúxuéshēng shènzhì gǎibiàn le zìjǐ de gòuwù xíguàn.",
     "vn": "Mua online ở Trung Quốc không những nhiều lựa chọn, giá không cao mà giao hàng còn nhanh, nhiều du học sinh thậm chí đã thay đổi thói quen mua sắm của mình."
    },
    {
@@ -2699,7 +2699,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Khu này thật không tệ, có vườn hoa nhỏ, sân bóng, thậm chí còn có một siêu thị.",
     "answer": "这个小区真不错，有小花园、球场，甚至还有一个超市。",
-    "answerPy": "Zhègè xiǎoqū zhēn búcuò, yǒu xiǎo huāyuán, qiúchǎng, shènzhì hái yǒu yí gè chāoshì.",
+    "answerPy": "Zhège xiǎoqū zhēn búcuò, yǒu xiǎo huāyuán, qiúchǎng, shènzhì hái yǒu yí gè chāoshì.",
     "note": "Ví dụ của sách (Bài 3 · điểm 3) + ôn 小区 (Bài 2).",
     "pair": "甚至还……"
    },
@@ -2745,7 +2745,7 @@ var vocabData = [
    },
    {
     "zh": "改变想法",
-    "py": "Gǎibiàn xiǎng fǎ",
+    "py": "Gǎibiàn xiǎngfǎ",
     "vn": "thay đổi suy nghĩ"
    },
    {
@@ -2810,7 +2810,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với sự phát triển của Internet, thói quen mua sắm của mọi người đã thay đổi.",
     "answer": "随着网络的发展，人们的购物习惯改变了。",
-    "answerPy": "Suízhe wǎngluò de fāzhǎn, rén men de gòuwù xíguàn gǎibiàn le.",
+    "answerPy": "Suízhe wǎngluò de fāzhǎn, rénmen de gòuwù xíguàn gǎibiàn le.",
     "note": "Ôn 随着 (Bài 1 · điểm 3).",
     "pair": "随着……"
    },
@@ -2846,7 +2846,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "动动手指",
-    "py": "Dòng dòng shǒuzhǐ",
+    "py": "Dòngdong shǒuzhǐ",
     "vn": "động ngón tay"
    },
    {
@@ -2856,7 +2856,7 @@ var vocabData = [
    },
    {
     "zh": "伸出手指",
-    "py": "Shēn chū shǒuzhǐ",
+    "py": "Shēnchū shǒuzhǐ",
     "vn": "giơ ngón tay ra"
    },
    {
@@ -2872,17 +2872,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "由于网购太方便了，动动手指就能买到想要的东西。",
-  "ex_py": "Yóuyú wǎnggòu tài fāngbiàn le, dòng dòng shǒuzhǐ jiù néng mǎi dào xiǎng yào de dōngxi.",
+  "ex_py": "Yóuyú wǎnggòu tài fāngbiàn le, dòngdong shǒuzhǐ jiù néng mǎidào xiǎng yào de dōngxi.",
   "ex_vn": "Vì mua online quá tiện, chỉ cần động ngón tay là mua được thứ mình muốn.",
   "exList": [
    {
     "zh": "由于网购太方便了，动动手指就能买到想要的东西。",
-    "py": "Yóuyú wǎnggòu tài fāngbiàn le, dòng dòng shǒuzhǐ jiù néng mǎi dào xiǎng yào de dōngxi.",
+    "py": "Yóuyú wǎnggòu tài fāngbiàn le, dòngdong shǒuzhǐ jiù néng mǎidào xiǎng yào de dōngxi.",
     "vn": "Vì mua online quá tiện, chỉ cần động ngón tay là mua được thứ mình muốn."
    },
    {
     "zh": "现在动动手指就能订到饭店，太方便了。",
-    "py": "Xiànzài dòng dòng shǒuzhǐ jiù néng dìng dào fàndiàn, tài fāngbiàn le.",
+    "py": "Xiànzài dòngdong shǒuzhǐ jiù néng dìng dào fàndiàn, tài fāngbiàn le.",
     "vn": "Bây giờ chạm vài cái là đặt được khách sạn, tiện quá."
    }
   ],
@@ -2917,7 +2917,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chỉ cần động ngón tay là mua được thứ mình muốn.",
     "answer": "动动手指就能买到想要的东西。",
-    "answerPy": "Dòng dòng shǒuzhǐ jiù néng mǎi dào xiǎng yào de dōngxi.",
+    "answerPy": "Dòngdong shǒuzhǐ jiù néng mǎidào xiǎng yào de dōngxi.",
     "note": "Câu bài khoá 3: động từ lặp VV + 就能…….",
     "pair": "动动……就能……"
    },
@@ -2925,7 +2925,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu ngón tay bị ướt thì không mở được điện thoại.",
     "answer": "要是手指湿了，手机就打不开。",
-    "answerPy": "Yàoshi shǒuzhǐ shī le, shǒujī jiù dǎ bù kāi.",
+    "answerPy": "Yàoshi shǒuzhǐ shī le, shǒujī jiù dǎ bu kāi.",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2) + bổ ngữ khả năng 打不开.",
     "pair": "要是……就……"
    }
@@ -2954,7 +2954,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "乱花钱",
-    "py": "Luàn huā qián",
+    "py": "Luàn huāqián",
     "vn": "tiêu tiền lung tung"
    },
    {
@@ -2984,12 +2984,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "他们也开始担心自己在网购时会乱花钱。",
-  "ex_py": "Tāmen yě kāishǐ dānxīn zìjǐ zài wǎnggòu shí huì luàn huā qián.",
+  "ex_py": "Tāmen yě kāishǐ dānxīn zìjǐ zài wǎnggòu shí huì luàn huāqián.",
   "ex_vn": "Họ cũng bắt đầu lo mình sẽ tiêu tiền lung tung khi mua online.",
   "exList": [
    {
     "zh": "他们也开始担心自己在网购时会乱花钱。",
-    "py": "Tāmen yě kāishǐ dānxīn zìjǐ zài wǎnggòu shí huì luàn huā qián.",
+    "py": "Tāmen yě kāishǐ dānxīn zìjǐ zài wǎnggòu shí huì luàn huāqián.",
     "vn": "Họ cũng bắt đầu lo mình sẽ tiêu tiền lung tung khi mua online."
    },
    {
@@ -3017,7 +3017,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đừng tiêu tiền lung tung!",
     "answer": "别乱花钱！",
-    "answerPy": "Bié luàn huā qián!",
+    "answerPy": "Bié luàn huāqián!",
     "note": "别 + 乱 + V.",
     "pair": "别乱……"
    },
@@ -3063,7 +3063,7 @@ var vocabData = [
    },
    {
     "zh": "管不住",
-    "py": "Guǎn bú zhù",
+    "py": "Guǎn bu zhù",
     "vn": "không kiểm soát được"
    },
    {
@@ -3083,17 +3083,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "怎么才能管住自己不乱花钱呢？",
-  "ex_py": "Zěnme cái néng guǎn zhù zìjǐ bú luàn huā qián ne?",
+  "ex_py": "Zěnme cáinéng guǎn zhù zìjǐ bú luàn huāqián ne?",
   "ex_vn": "Làm thế nào mới kiểm soát được bản thân không tiêu tiền lung tung đây?",
   "exList": [
    {
     "zh": "怎么才能管住自己不乱花钱呢？",
-    "py": "Zěnme cái néng guǎn zhù zìjǐ bú luàn huā qián ne?",
+    "py": "Zěnme cáinéng guǎn zhù zìjǐ bú luàn huāqián ne?",
     "vn": "Làm thế nào mới kiểm soát được bản thân không tiêu tiền lung tung đây?"
    },
    {
     "zh": "我妈管我管得很严，晚上十点以前必须回家。",
-    "py": "Wǒ mā guǎn wǒ guǎn de hěn yán, wǎnshang shí diǎn yǐqián bìxū huí jiā.",
+    "py": "Wǒ mā guǎn wǒ guǎn de hěn yán, wǎnshang shí diǎn yǐqián bìxū huíjiā.",
     "vn": "Mẹ quản tôi rất nghiêm, phải về nhà trước 10 giờ tối."
    }
   ],
@@ -3116,7 +3116,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi biết nên tiêu ít tiền, có điều cứ không kiểm soát được bản thân.",
     "answer": "我知道应该少花钱，不过总是管不住自己。",
-    "answerPy": "Wǒ zhīdao yīnggāi shǎo huā qián, búguò zǒngshì guǎn bú zhù zìjǐ.",
+    "answerPy": "Wǒ zhīdao yīnggāi shǎo huāqián, búguò zǒngshì guǎn bu zhù zìjǐ.",
     "note": "Ôn ……，不过…… (Bài 2 · điểm 2) + bổ ngữ khả năng.",
     "pair": "……，不过……管不住……"
    },
@@ -3124,7 +3124,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Việc này bạn đừng quản nữa, để tôi làm là được.",
     "answer": "这件事你别管了，我来做就是了。",
-    "answerPy": "Zhè jiàn shì nǐ bié guǎn le, wǒ lái zuò jiù shì le.",
+    "answerPy": "Zhè jiàn shì nǐ bié guǎn le, wǒ lái zuò jiùshì le.",
     "note": "Ôn ×就是了 (Bài 2 · điểm 1).",
     "pair": "……就是了"
    }
@@ -3289,12 +3289,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "我们经常需要提供姓名、手机号、身份证号等个人信息。",
-  "ex_py": "Wǒmen jīngcháng xūyào tígōng xìngmíng, shǒujī hào, shēnfènzhèng hào děng gèrén xìnxī.",
+  "ex_py": "Wǒmen jīngcháng xūyào tígōng xìngmíng, shǒujīhào, shēnfènzhèng hào děng gèrén xìnxī.",
   "ex_vn": "Chúng ta thường phải cung cấp họ tên, số điện thoại, số căn cước và các thông tin cá nhân khác.",
   "exList": [
    {
     "zh": "我们经常需要提供姓名、手机号、身份证号等个人信息。",
-    "py": "Wǒmen jīngcháng xūyào tígōng xìngmíng, shǒujī hào, shēnfènzhèng hào děng gèrén xìnxī.",
+    "py": "Wǒmen jīngcháng xūyào tígōng xìngmíng, shǒujīhào, shēnfènzhèng hào děng gèrén xìnxī.",
     "vn": "Chúng ta thường phải cung cấp họ tên, số điện thoại, số căn cước và các thông tin cá nhân khác."
    },
    {
@@ -3346,7 +3346,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cô ấy đang quẹt căn cước để vào ga tàu điện ngầm.",
     "answer": "她正在刷身份证进地铁站。",
-    "answerPy": "Tā zhèngzài shuā shēnfènzhèng jìn dìtiě zhàn.",
+    "answerPy": "Tā zhèngzài shuā shēnfènzhèng jìn dìtiězhàn.",
     "note": "Đáp án sách bài 看图 (3); 正在 + V.",
     "pair": "正在 + V"
    },
@@ -3354,7 +3354,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu không mang căn cước thì không mua được vé tàu.",
     "answer": "要是不带身份证，就买不了火车票。",
-    "answerPy": "Yàoshi bú dài shēnfènzhèng, jiù mǎi bù le huǒchē piào.",
+    "answerPy": "Yàoshi bú dài shēnfènzhèng, jiù mǎi bu le huǒchēpiào.",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2) + 买不了.",
     "pair": "要是……就……"
    }
@@ -3408,12 +3408,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "网上购物或者订票时，我们经常需要提供姓名、手机号、身份证号等个人信息。",
-  "ex_py": "Wǎngshàng gòuwù huòzhě dìng piào shí, wǒmen jīngcháng xūyào tígōng xìngmíng, shǒujī hào, shēnfènzhèng hào děng gèrén xìnxī.",
+  "ex_py": "Wǎngshang gòuwù huòzhě dìng piào shí, wǒmen jīngcháng xūyào tígōng xìngmíng, shǒujīhào, shēnfènzhèng hào děng gèrén xìnxī.",
   "ex_vn": "Khi mua sắm hoặc đặt vé trên mạng, chúng ta thường phải cung cấp họ tên, số điện thoại, số căn cước và các thông tin cá nhân khác.",
   "exList": [
    {
     "zh": "网上购物或者订票时，我们经常需要提供姓名、手机号、身份证号等个人信息。",
-    "py": "Wǎngshàng gòuwù huòzhě dìng piào shí, wǒmen jīngcháng xūyào tígōng xìngmíng, shǒujī hào, shēnfènzhèng hào děng gèrén xìnxī.",
+    "py": "Wǎngshang gòuwù huòzhě dìng piào shí, wǒmen jīngcháng xūyào tígōng xìngmíng, shǒujīhào, shēnfènzhèng hào děng gèrén xìnxī.",
     "vn": "Khi mua sắm hoặc đặt vé trên mạng, chúng ta thường phải cung cấp họ tên, số điện thoại, số căn cước và các thông tin cá nhân khác."
    },
    {
@@ -3453,7 +3453,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đừng tùy tiện đăng thông tin cá nhân lên mạng.",
     "answer": "别随便在网上发个人信息。",
-    "answerPy": "Bié suíbiàn zài wǎngshàng fā gèrén xìnxī.",
+    "answerPy": "Bié suíbiàn zài wǎngshang fā gèrén xìnxī.",
     "note": "别 + 随便 + V.",
     "pair": "别随便……"
    },
@@ -3461,7 +3461,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cá nhân tôi thấy mua online một mặt rất tiện, mặt khác cũng dễ tiêu tiền lung tung.",
     "answer": "我个人觉得网购一方面很方便，另一方面也容易乱花钱。",
-    "answerPy": "Wǒ gèrén juéde wǎnggòu yìfāngmiàn hěn fāngbiàn, lìngyìfāngmiàn yě róngyì luàn huā qián.",
+    "answerPy": "Wǒ gèrén juéde wǎnggòu yìfāngmiàn hěn fāngbiàn, lìngyìfāngmiàn yě róngyì luàn huāqián.",
     "note": "Ôn 一方面……另一方面…… (Bài 1 · điểm 4).",
     "pair": "一方面……另一方面……"
    }
@@ -3564,7 +3564,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Không biết tôi có xin được học bổng không.",
     "answer": "不知道我能否申请到奖学金。",
-    "answerPy": "Bù zhīdao wǒ néngfǒu shēnqǐng dào jiǎng xué jīn.",
+    "answerPy": "Bù zhīdao wǒ néngfǒu shēnqǐng dào jiǎngxuéjīn.",
     "note": "Ôn 申请, 奖学金 (Bài 1).",
     "pair": "能否 + V"
    },
@@ -3737,12 +3737,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "于是，有人在网上说出了自己的担心。",
-  "ex_py": "Yúshì, yǒurén zài wǎngshàng shuō chū le zìjǐ de dānxīn.",
+  "ex_py": "Yúshì, yǒurén zài wǎngshang shuōchū le zìjǐ de dānxīn.",
   "ex_vn": "Thế là có người nói ra nỗi lo của mình trên mạng.",
   "exList": [
    {
     "zh": "于是，有人在网上说出了自己的担心。",
-    "py": "Yúshì, yǒurén zài wǎngshàng shuō chū le zìjǐ de dānxīn.",
+    "py": "Yúshì, yǒurén zài wǎngshang shuōchū le zìjǐ de dānxīn.",
     "vn": "Thế là có người nói ra nỗi lo của mình trên mạng."
    },
    {
@@ -3790,7 +3790,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi rất hài lòng với căn nhà này, thế là thuê luôn.",
     "answer": "我对这个房子很满意，于是就租下来了。",
-    "answerPy": "Wǒ duì zhège fángzi hěn mǎnyì, yúshì jiù zū xiàlái le.",
+    "answerPy": "Wǒ duì zhège fángzi hěn mǎnyì, yúshì jiù zū xiàlai le.",
     "note": "Ôn 租, 满意 (Bài 2) + bổ ngữ xu hướng 下来.",
     "pair": "……，于是就……"
    }
@@ -3833,7 +3833,7 @@ var vocabData = [
    },
    {
     "zh": "银行卡密码",
-    "py": "Yínháng kǎ mìmǎ",
+    "py": "Yínhángkǎ mìmǎ",
     "vn": "mã PIN thẻ ngân hàng"
    }
   ],
@@ -3854,7 +3854,7 @@ var vocabData = [
    },
    {
     "zh": "我忘了手机的密码，打不开了。",
-    "py": "Wǒ wàng le shǒujī de mìmǎ, dǎ bù kāi le.",
+    "py": "Wǒ wàng le shǒujī de mìmǎ, dǎ bu kāi le.",
     "vn": "Tôi quên mật khẩu điện thoại, không mở được nữa."
    }
   ],
@@ -3931,7 +3931,7 @@ var vocabData = [
    },
    {
     "zh": "随便说说",
-    "py": "Suíbiàn shuō shuō",
+    "py": "Suíbiàn shuōshuo",
     "vn": "nói vui thôi"
    },
    {
@@ -3941,7 +3941,7 @@ var vocabData = [
    },
    {
     "zh": "随便看看",
-    "py": "Suíbiàn kàn kàn",
+    "py": "Suíbiàn kànkan",
     "vn": "cứ xem tự nhiên"
    }
   ],
@@ -4009,7 +4009,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bạn cứ xem tự nhiên, có bất kỳ câu hỏi gì cứ hỏi tôi.",
     "answer": "你随便看看，有任何问题都可以问我。",
-    "answerPy": "Nǐ suíbiàn kàn kàn, yǒu rènhé wèntí dōu kěyǐ wèn wǒ.",
+    "answerPy": "Nǐ suíbiàn kànkan, yǒu rènhé wèntí dōu kěyǐ wèn wǒ.",
     "note": "Ôn 任何 (Bài 1 · điểm 1).",
     "pair": "任何……都……"
    }
@@ -4184,7 +4184,7 @@ var vocabData = [
    },
    {
     "zh": "他大学学的是法律专业。",
-    "py": "Tā dàxué xué de shì fǎlǜ zhuānyè.",
+    "py": "Tā dà xuéxue de shì fǎlǜ zhuānyè.",
     "vn": "Ở đại học anh ấy học chuyên ngành luật."
    }
   ],
@@ -4291,7 +4291,7 @@ var vocabData = [
    },
    {
     "zh": "现在手机已经成为人们最常用的支付手段。",
-    "py": "Xiànzài shǒujī yǐjīng chéngwéi rén men zuì chángyòng de zhīfù shǒuduàn.",
+    "py": "Xiànzài shǒujī yǐjīng chéngwéi rénmen zuì chángyòng de zhīfù shǒuduàn.",
     "vn": "Bây giờ điện thoại đã trở thành phương tiện thanh toán mọi người dùng nhiều nhất."
    }
   ],
@@ -4403,7 +4403,7 @@ var vocabData = [
    },
    {
     "zh": "我保证以后不乱花钱了。",
-    "py": "Wǒ bǎozhèng yǐhòu bú luàn huā qián le.",
+    "py": "Wǒ bǎozhèng yǐhòu bú luàn huāqián le.",
     "vn": "Con cam đoan sau này không tiêu tiền lung tung nữa."
    }
   ],
@@ -4438,7 +4438,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Các anh có thể bảo đảm chiều nay giao số hàng này tới không?",
     "answer": "你们能保证这些货下午就送到吗？",
-    "answerPy": "Nǐmen néng bǎozhèng zhèxiē huò xiàwǔ jiù sòng dào ma?",
+    "answerPy": "Nǐmen néng bǎozhèng zhèxiē huò xiàwǔ jiù sòngdào ma?",
     "note": "Câu 综合练习 (8) của sách.",
     "pair": "保证……"
    },
@@ -4504,12 +4504,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "比如中国的网络安全法、个人信息保护法等就很好地保护了人们的个人信息。",
-  "ex_py": "Bǐrú Zhōngguó de wǎngluò ānquán fǎ, gèrén xìnxī bǎohù fǎ děng jiù hěn hǎo de bǎohù le rén men de gèrén xìnxī.",
+  "ex_py": "Bǐrú Zhōngguó de wǎngluò ānquán fǎ, gèrén xìnxī bǎohù fǎ děng jiù hěn hǎo de bǎohù le rénmen de gèrén xìnxī.",
   "ex_vn": "Ví dụ như Luật An ninh mạng, Luật Bảo vệ thông tin cá nhân của Trung Quốc đã bảo vệ rất tốt thông tin cá nhân của mọi người.",
   "exList": [
    {
     "zh": "比如中国的网络安全法、个人信息保护法等就很好地保护了人们的个人信息。",
-    "py": "Bǐrú Zhōngguó de wǎngluò ānquán fǎ, gèrén xìnxī bǎohù fǎ děng jiù hěn hǎo de bǎohù le rén men de gèrén xìnxī.",
+    "py": "Bǐrú Zhōngguó de wǎngluò ānquán fǎ, gèrén xìnxī bǎohù fǎ děng jiù hěn hǎo de bǎohù le rénmen de gèrén xìnxī.",
     "vn": "Ví dụ như Luật An ninh mạng, Luật Bảo vệ thông tin cá nhân của Trung Quốc đã bảo vệ rất tốt thông tin cá nhân của mọi người."
    },
    {
@@ -4654,13 +4654,13 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "好的。我刚来中国，不熟悉路。北京真是太大了。",
-    "py": "Hǎo de. Wǒ gāng lái Zhōngguó, bù shúxi lù. Běijīng zhēn shì tài dà le.",
+    "py": "Hǎo de. Wǒ gāng lái Zhōngguó, bù shúxi lù. Běijīng zhēnshì tài dà le.",
     "vn": "Được ạ. Mình mới đến Trung Quốc, chưa thạo đường. Bắc Kinh đúng là rộng quá."
    },
    {
     "sp": 1,
     "zh": "北京大是大，不过这边的路基本上都是正南正北、正东正西的，很好找。你也可以用手机地图，很容易就能找到目的地。",
-    "py": "Běijīng dà shì dà, búguò zhèbiān de lù jīběn shàng dōu shì zhèng nán zhèng běi, zhèng dōng zhèng xī de, hěn hǎo zhǎo. Nǐ yě kěyǐ yòng shǒujī dìtú, hěn róngyì jiù néng zhǎo dào mùdìdì.",
+    "py": "Běijīng dà shì dà, búguò zhèbiān de lù jīběn shàng dōu shì zhèng nán zhèng běi, zhèng dōng zhèng xī de, hěn hǎo zhǎo. Nǐ yě kěyǐ yòng shǒujī dìtú, hěn róngyì jiù néng zhǎodào mùdìdì.",
     "vn": "Bắc Kinh rộng thì rộng thật, nhưng đường bên này hầu như đều theo hướng chính Nam – Bắc, chính Đông – Tây, rất dễ tìm. Bạn cũng có thể dùng bản đồ trên điện thoại, rất dễ tìm được nơi cần đến."
    },
    {
@@ -4728,19 +4728,19 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "现在我不仅会扫码结账，还会用手机在网上购物了。昨天我就在网上订了一台电脑，今天下午一点送到。",
-    "py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshàng gòuwù le. Zuótiān wǒ jiù zài wǎngshàng dìng le yì tái diànnǎo, jīntiān xiàwǔ yì diǎn sòng dào.",
+    "py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì yòng shǒujī zài wǎngshang gòuwù le. Zuótiān wǒ jiù zài wǎngshang dìng le yì tái diànnǎo, jīntiān xiàwǔ yìdiǎn sòngdào.",
     "vn": "Giờ tớ không những biết quét mã thanh toán, mà còn biết dùng điện thoại mua hàng trên mạng nữa. Hôm qua tớ vừa đặt một cái máy tính trên mạng, chiều nay 1 giờ giao tới."
    },
    {
     "sp": 1,
     "zh": "学会了这些，我们在中国生活真是方便了不少。",
-    "py": "Xué huì le zhèxiē, wǒmen zài Zhōngguó shēnghuó zhēn shì fāngbiàn le bù shǎo.",
+    "py": "Xuéhuì le zhèxiē, wǒmen zài Zhōngguó shēnghuó zhēnshì fāngbiàn le bùshǎo.",
     "vn": "Học được mấy thứ này rồi, cuộc sống của bọn mình ở Trung Quốc đúng là tiện hơn nhiều."
    },
    {
     "sp": 0,
     "zh": "对。快递员要到了，我得马上回去！家月，明天见！",
-    "py": "Duì. Kuàidì yuán yào dào le, wǒ děi mǎshàng huíqù! Jiāyuè, míngtiānjiàn!",
+    "py": "Duì. Kuàidìyuán yào dào le, wǒ děi mǎshàng huíqu! Jiāyuè, míngtiānjiàn!",
     "vn": "Đúng thế. Shipper sắp đến rồi, tớ phải về ngay! Gia Nguyệt, mai gặp nhé!"
    },
    {
@@ -4786,31 +4786,31 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "白家月和陈天中刚到北京时就发现，中国人在饭馆或超市结账时，几乎都用手机支付，只有他们用现金结账。",
-    "py": "Bái Jiāyuè hé Chén Tiānzhōng gāng dào Běijīng shí jiù fāxiàn, zhōngguórén zài fànguǎn huò chāoshì jiézhàng shí, jīhū dōu yòng shǒujī zhīfù, zhǐyǒu tāmen yòng xiànjīn jiézhàng.",
+    "py": "Bái Jiāyuè hé Chén Tiānzhōng gāng dào Běijīng shí jiù fāxiàn, Zhōngguórén zài fànguǎn huò chāoshì jiézhàng shí, jīhū dōu yòng shǒujī zhīfù, zhǐyǒu tāmen yòng xiànjīn jiézhàng.",
     "vn": "Bạch Gia Nguyệt và Trần Thiên Trung vừa đến Bắc Kinh đã phát hiện ra: người Trung Quốc khi thanh toán ở quán ăn hay siêu thị gần như đều dùng điện thoại, chỉ có họ là trả bằng tiền mặt."
    },
    {
     "sp": 0,
     "zh": "在李文的帮助下，白家月和陈天中也都学会了用手机支付、网购、寄快递等等。",
-    "py": "Zài Lǐ Wén de bāngzhù xià, Bái Jiāyuè hé Chén Tiānzhōng yě dōu xué huì le yòng shǒujī zhīfù, wǎnggòu, jì kuàidì děng děng.",
+    "py": "Zài Lǐ Wén de bāngzhù xià, Bái Jiāyuè hé Chén Tiānzhōng yě dōu xuéhuì le yòng shǒujī zhīfù, wǎnggòu, jì kuàidì děngděng.",
     "vn": "Nhờ sự giúp đỡ của Lý Văn, Bạch Gia Nguyệt và Trần Thiên Trung cũng đều đã học được cách thanh toán bằng điện thoại, mua hàng online, gửi chuyển phát nhanh, v.v."
    },
    {
     "sp": 0,
     "zh": "在中国网购，不仅选择多、价格不高，而且送货很快，很多留学生甚至改变了自己的购物习惯。",
-    "py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sòng huò hěn kuài, hěn duō liúxuéshēng shènzhì gǎibiàn le zìjǐ de gòuwù xíguàn.",
+    "py": "Zài Zhōngguó wǎnggòu, bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sònghuò hěn kuài, hěn duō liúxuéshēng shènzhì gǎibiàn le zìjǐ de gòuwù xíguàn.",
     "vn": "Mua hàng online ở Trung Quốc không những nhiều lựa chọn, giá không cao mà giao hàng còn rất nhanh, nhiều du học sinh thậm chí đã thay đổi thói quen mua sắm của mình."
    },
    {
     "sp": 0,
     "zh": "不过，由于网购太方便了，动动手指就能买到想要的东西，他们也开始担心自己在网购时会乱花钱。",
-    "py": "Búguò, yóuyú wǎnggòu tài fāngbiàn le, dòng dòng shǒuzhǐ jiù néng mǎi dào xiǎng yào de dōngxi, tāmen yě kāishǐ dānxīn zìjǐ zài wǎnggòu shí huì luàn huā qián.",
+    "py": "Búguò, yóuyú wǎnggòu tài fāngbiàn le, dòngdong shǒuzhǐ jiù néng mǎidào xiǎng yào de dōngxi, tāmen yě kāishǐ dānxīn zìjǐ zài wǎnggòu shí huì luàn huāqián.",
     "vn": "Tuy nhiên, vì mua online quá tiện, chỉ cần động ngón tay là mua được thứ mình muốn, nên họ cũng bắt đầu lo mình sẽ tiêu tiền lung tung khi mua online."
    },
    {
     "sp": 0,
     "zh": "怎么才能管住自己不乱花钱呢？",
-    "py": "Zěnme cái néng guǎn zhù zìjǐ bú luàn huā qián ne?",
+    "py": "Zěnme cáinéng guǎn zhù zìjǐ bú luàn huāqián ne?",
     "vn": "Làm thế nào mới kiểm soát được bản thân để không tiêu tiền lung tung đây?"
    }
   ],
@@ -4851,7 +4851,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "网上购物或者订票时，我们经常需要提供姓名、手机号、身份证号等个人信息。",
-    "py": "Wǎngshàng gòuwù huòzhě dìng piào shí, wǒmen jīngcháng xūyào tígōng xìngmíng, shǒujī hào, shēnfènzhèng hào děng gèrén xìnxī.",
+    "py": "Wǎngshang gòuwù huòzhě dìng piào shí, wǒmen jīngcháng xūyào tígōng xìngmíng, shǒujīhào, shēnfènzhèng hào děng gèrén xìnxī.",
     "vn": "Khi mua sắm hoặc đặt vé trên mạng, chúng ta thường phải cung cấp họ tên, số điện thoại, số căn cước và các thông tin cá nhân khác."
    },
    {
@@ -4863,13 +4863,13 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "于是，有人在网上说出了自己的担心，很快就有人给出了一些建议。",
-    "py": "Yúshì, yǒurén zài wǎngshàng shuō chū le zìjǐ de dānxīn, hěn kuài jiù yǒurén gěi chū le yìxiē jiànyì.",
+    "py": "Yúshì, yǒurén zài wǎngshang shuōchū le zìjǐ de dānxīn, hěn kuài jiù yǒurén gěichū le yìxiē jiànyì.",
     "vn": "Thế là có người nói ra nỗi lo của mình trên mạng, và rất nhanh đã có người đưa ra một số lời khuyên."
    },
    {
     "sp": 0,
     "zh": "比如，别把密码随便告诉别人，不在网上发自己的车票、机票信息……",
-    "py": "Bǐrú, bié bǎ mìmǎ suíbiàn gàosu biérén, bú zài wǎngshàng fā zìjǐ de chē piào, jīpiào xìnxī……",
+    "py": "Bǐrú, bié bǎ mìmǎ suíbiàn gàosu biérén, bú zài wǎngshang fā zìjǐ de chēpiào, jīpiào xìnxī……",
     "vn": "Chẳng hạn, đừng tùy tiện nói mật khẩu cho người khác, không đăng thông tin vé tàu, vé máy bay của mình lên mạng…"
    },
    {
@@ -4881,7 +4881,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "比如中国的网络安全法、个人信息保护法等就很好地保护了人们的个人信息。",
-    "py": "Bǐrú Zhōngguó de wǎngluò ānquán fǎ, gèrén xìnxī bǎohù fǎ děng jiù hěn hǎo de bǎohù le rén men de gèrén xìnxī.",
+    "py": "Bǐrú Zhōngguó de wǎngluò ānquán fǎ, gèrén xìnxī bǎohù fǎ děng jiù hěn hǎo de bǎohù le rénmen de gèrén xìnxī.",
     "vn": "Ví dụ như Luật An ninh mạng, Luật Bảo vệ thông tin cá nhân… của Trung Quốc đã bảo vệ rất tốt thông tin cá nhân của mọi người."
    }
   ],
@@ -5367,7 +5367,7 @@ var translateData = [
  {
   "vi": "Giờ tôi không những biết quét mã thanh toán, mà còn biết mua hàng trên mạng.",
   "zh": "现在我不仅会扫码结账，还会在网上购物了。",
-  "py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì zài wǎngshàng gòuwù le."
+  "py": "Xiànzài wǒ bùjǐn huì sǎomǎ jiézhàng, hái huì zài wǎngshang gòuwù le."
  },
  {
   "vi": "Nhiều du học sinh thậm chí đã thay đổi thói quen mua sắm của mình.",
@@ -5377,7 +5377,7 @@ var translateData = [
  {
   "vi": "Thế là có người nói ra nỗi lo của mình trên mạng.",
   "zh": "于是，有人在网上说出了自己的担心。",
-  "py": "Yúshì, yǒurén zài wǎngshàng shuō chū le zìjǐ de dānxīn."
+  "py": "Yúshì, yǒurén zài wǎngshang shuōchū le zìjǐ de dānxīn."
  },
  {
   "vi": "Đừng tùy tiện nói mật khẩu cho người khác.",
@@ -5387,7 +5387,7 @@ var translateData = [
  {
   "vi": "Làm thế nào mới kiểm soát được bản thân không tiêu tiền lung tung?",
   "zh": "怎么才能管住自己不乱花钱呢？",
-  "py": "Zěnme cái néng guǎn zhù zìjǐ bú luàn huā qián ne?"
+  "py": "Zěnme cáinéng guǎn zhù zìjǐ bú luàn huāqián ne?"
  }
 ];
 var translateDataRev = [
@@ -5399,17 +5399,17 @@ var translateDataRev = [
  {
   "vi": "Hôm qua tôi đặt một cái máy tính trên mạng, chiều nay giao tới.",
   "zh": "昨天我在网上订了一台电脑，今天下午送到。",
-  "py": "Zuótiān wǒ zài wǎngshàng dìng le yì tái diànnǎo, jīntiān xiàwǔ sòng dào."
+  "py": "Zuótiān wǒ zài wǎngshang dìng le yì tái diànnǎo, jīntiān xiàwǔ sòngdào."
  },
  {
   "vi": "Shipper sắp đến rồi, tôi phải về ngay.",
   "zh": "快递员要到了，我得马上回去。",
-  "py": "Kuàidì yuán yào dào le, wǒ děi mǎshàng huíqù."
+  "py": "Kuàidìyuán yào dào le, wǒ děi mǎshàng huíqu."
  },
  {
   "vi": "Khi mua sắm trên mạng, chúng ta thường phải cung cấp thông tin cá nhân.",
   "zh": "网上购物时，我们经常需要提供个人信息。",
-  "py": "Wǎngshàng gòuwù shí, wǒmen jīngcháng xūyào tígōng gèrén xìnxī."
+  "py": "Wǎngshang gòuwù shí, wǒmen jīngcháng xūyào tígōng gèrén xìnxī."
  },
  {
   "vi": "Nhiều quốc gia dùng công nghệ, pháp luật để bảo đảm an toàn thông tin cá nhân.",
@@ -5657,6 +5657,6 @@ var writingData = {
  ],
  "model": {
   "zh": "手机是我生活中最好的朋友。每天早上，我不仅用手机看新闻，还用它学习中文。在饭馆或超市结账时，我几乎不用现金，扫码就能支付。我也很喜欢网购，在网上购物不仅选择多、价格不高，而且送货很快，有时候甚至上午订的东西下午就送到了。刚来中国的时候，我不熟悉路，于是下载了一个地图软件，现在很容易就能找到目的地。除此以外，我还用手机订票、寄快递、点外卖等等。不过，手机方便是方便，就是容易让人乱花钱，而且要注意保护个人信息。所以，我从来不把密码随便告诉别人，也不在网上发自己的身份证号。",
-  "py": "Shǒujī shì wǒ shēnghuó zhōng zuìhǎo de péngyou. Měi tiān zǎoshang, wǒ bùjǐn yòng shǒujī kàn xīnwén, hái yòng tā xuéxí Zhōngwén. Zài fànguǎn huò chāoshì jiézhàng shí, wǒ jīhū búyòng xiànjīn, sǎomǎ jiù néng zhīfù. Wǒ yě hěn xǐhuan wǎnggòu, zài wǎngshàng gòuwù bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sòng huò hěn kuài, yǒu shíhou shènzhì shàngwǔ dìng de dōngxi xiàwǔ jiù sòng dào le. Gāng lái Zhōngguó de shíhou, wǒ bù shúxi lù, yúshì xiàzài le yí gè dìtú ruǎnjiàn, xiànzài hěn róngyì jiù néng zhǎo dào mùdìdì. Chú cǐ yǐwài, wǒ hái yòng shǒujī dìng piào, jì kuàidì, diǎn wàimài děng děng. Búguò, shǒujī fāngbiàn shì fāngbiàn, jiù shì róngyì ràng rén luàn huā qián, érqiě yào zhùyì bǎohù gèrén xìnxī. Suǒyǐ, wǒ cónglái bù bǎ mìmǎ suíbiàn gàosu biérén, yě bú zài wǎngshàng fā zìjǐ de shēnfènzhèng hào."
+  "py": "Shǒujī shì wǒ shēnghuó zhōng zuìhǎo de péngyou. Měitiān zǎoshang, wǒ bùjǐn yòng shǒujī kàn xīnwén, hái yòng tā xuéxí Zhōngwén. Zài fànguǎn huò chāoshì jiézhàng shí, wǒ jīhū búyòng xiànjīn, sǎomǎ jiù néng zhīfù. Wǒ yě hěn xǐhuan wǎnggòu, zài wǎngshang gòuwù bùjǐn xuǎnzé duō, jiàgé bù gāo, érqiě sònghuò hěn kuài, yǒushíhou shènzhì shàngwǔ dìng de dōngxi xiàwǔ jiù sòngdào le. Gāng lái Zhōngguó de shíhou, wǒ bù shúxi lù, yúshì xiàzài le yí gè dìtú ruǎnjiàn, xiànzài hěn róngyì jiù néng zhǎodào mùdìdì. Chú cǐ yǐwài, wǒ hái yòng shǒujī dìng piào, jì kuàidì, diǎn wàimài děngděng. Búguò, shǒujī fāngbiàn shì fāngbiàn, jiùshì róngyì ràng rén luàn huāqián, érqiě yào zhùyì bǎohù gèrén xìnxī. Suǒyǐ, wǒ cónglái bù bǎ mìmǎ suíbiàn gàosu biérén, yě bú zài wǎngshang fā zìjǐ de shēnfènzhèng hào."
  }
 };

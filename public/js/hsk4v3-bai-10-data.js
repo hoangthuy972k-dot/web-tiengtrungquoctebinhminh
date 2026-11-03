@@ -52,12 +52,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "你看，这个小伙子从广州去哈尔滨出差，没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-  "ex_py": "Nǐ kàn, zhège xiǎohuǒzi cóng Guǎngzhōu qù Hā'ěrbīn chūchāi, méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le.",
+  "ex_py": "Nǐ kàn, zhège xiǎohuǒzi cóng Guǎngzhōu qù Hā'ěrbīn chūchāi, méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le.",
   "ex_vn": "Anh xem này, cậu thanh niên này từ Quảng Châu đi công tác Cáp Nhĩ Tân, không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng.",
   "exList": [
    {
     "zh": "你看，这个小伙子从广州去哈尔滨出差，没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-    "py": "Nǐ kàn, zhège xiǎohuǒzi cóng Guǎngzhōu qù Hā'ěrbīn chūchāi, méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le.",
+    "py": "Nǐ kàn, zhège xiǎohuǒzi cóng Guǎngzhōu qù Hā'ěrbīn chūchāi, méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le.",
     "vn": "Anh xem này, cậu thanh niên này từ Quảng Châu đi công tác Cáp Nhĩ Tân, không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng."
    },
    {
@@ -175,12 +175,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-  "ex_py": "Méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le.",
+  "ex_py": "Méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le.",
   "ex_vn": "Không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng.",
   "exList": [
    {
     "zh": "没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-    "py": "Méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le.",
+    "py": "Méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le.",
     "vn": "Không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng."
    },
    {
@@ -220,7 +220,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hôm nay nhiệt độ ít nhất cũng 35 độ, nóng quá!",
     "answer": "今天的气温至少有三十五度，太热了！",
-    "answerPy": "Jīntiān de qìwēn zhìshǎo yǒu sān shí wǔ dù, tài rè le!",
+    "answerPy": "Jīntiān de qìwēn zhìshǎo yǒu sānshí wǔ dù, tài rè le!",
     "note": "Ôn 至少 (Bài 5 · điểm 1).",
     "pair": "至少"
    },
@@ -261,7 +261,7 @@ var vocabData = [
    },
    {
     "zh": "零下二十几度",
-    "py": "Líng xià èr shí jǐ dù",
+    "py": "Líng xià èr shíjǐ dù",
     "vn": "âm hai mươi mấy độ"
    },
    {
@@ -286,12 +286,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "没想到哈尔滨的气温降到了零下二十几度。",
-  "ex_py": "Méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù.",
+  "ex_py": "Méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù.",
   "ex_vn": "Không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ.",
   "exList": [
    {
     "zh": "没想到哈尔滨的气温降到了零下二十几度。",
-    "py": "Méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù.",
+    "py": "Méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù.",
     "vn": "Không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ."
    },
    {
@@ -331,7 +331,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ở Cáp Nhĩ Tân, mùa đông nhiệt độ thường âm hai mươi mấy độ.",
     "answer": "在哈尔滨，冬天的气温常常是零下二十几度。",
-    "answerPy": "Zài Hā'ěrbīn, dōngtiān de qìwēn chángcháng shì líng xià èr shí jǐ dù.",
+    "answerPy": "Zài Hā'ěrbīn, dōngtiān de qìwēn chángcháng shì líng xià èr shíjǐ dù.",
     "note": "二十几 = hai mươi mấy (HSK 3).",
     "pair": "零下 + số + 度"
    },
@@ -339,7 +339,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Dù nhiệt độ là âm 10 độ, nhưng anh ấy vẫn ra ngoài chạy bộ.",
     "answer": "尽管气温是零下十度，但是他还是出去跑步了。",
-    "answerPy": "Jǐnguǎn qìwēn shì líng xià shí dù, dànshì tā háishì chūqù pǎobù le.",
+    "answerPy": "Jǐnguǎn qìwēn shì líng xià shí dù, dànshì tā háishi chūqu pǎobù le.",
     "note": "Ôn 尽管……但是…… (Bài 9 · điểm 2).",
     "pair": "尽管……但是……"
    }
@@ -367,7 +367,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "三十度",
-    "py": "Sān shí dù",
+    "py": "Sānshí dù",
     "vn": "30 độ"
    },
    {
@@ -377,12 +377,12 @@ var vocabData = [
    },
    {
     "zh": "多少度",
-    "py": "Duōshǎo dù",
+    "py": "Duōshao dù",
     "vn": "bao nhiêu độ"
    },
    {
     "zh": "二十几度",
-    "py": "Èr shí jǐ dù",
+    "py": "Èr shíjǐ dù",
     "vn": "hai mươi mấy độ"
    }
   ],
@@ -397,17 +397,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "你看，这个小伙子……没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-  "ex_py": "Nǐ kàn, zhège xiǎohuǒzi…… méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le.",
+  "ex_py": "Nǐ kàn, zhège xiǎohuǒzi…… méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le.",
   "ex_vn": "Anh xem, cậu thanh niên này… không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng.",
   "exList": [
    {
     "zh": "你看，这个小伙子……没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-    "py": "Nǐ kàn, zhège xiǎohuǒzi…… méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le.",
+    "py": "Nǐ kàn, zhège xiǎohuǒzi…… méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le.",
     "vn": "Anh xem, cậu thanh niên này… không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng."
    },
    {
     "zh": "北京那天只有零下五度，不过风不大，我们不觉得冷。",
-    "py": "Běijīng nà tiān zhǐyǒu líng xià wǔ dù, búguò fēng bú dà, wǒmen bù juéde lěng.",
+    "py": "Běijīng nàtiān zhǐyǒu líng xià wǔ dù, búguò fēng bú dà, wǒmen bù juéde lěng.",
     "vn": "Hôm đó Bắc Kinh chỉ có âm 5 độ, có điều gió không to, chúng tôi không thấy lạnh. (ôn 不过 – Bài 2 · điểm 2)"
    }
   ],
@@ -430,7 +430,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hôm nay bao nhiêu độ? — Khoảng 30 độ.",
     "answer": "——今天多少度？——三十度左右。",
-    "answerPy": "— Jīntiān duōshǎo dù? — Sān shí dù zuǒyòu.",
+    "answerPy": "— Jīntiān duōshao dù? — Sānshí dù zuǒyòu.",
     "note": "左右 = khoảng (HSK 3).",
     "pair": "多少度？"
    },
@@ -438,7 +438,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mùa hè ở đây nóng tới 40 độ, tôi thật sự chịu không nổi.",
     "answer": "这里夏天热到四十度，我实在受不了。",
-    "answerPy": "Zhèli xiàtiān rè dào sì shí dù, wǒ shízai shòubuliǎo.",
+    "answerPy": "Zhèli xiàtiān rè dào sìshí dù, wǒ shízai shòubuliǎo.",
     "note": "受不了 = V不了, ôn Bài 4 · điểm 1.",
     "pair": "V到 + số + 度"
    }
@@ -466,7 +466,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "冻坏了",
-    "py": "Dòng huài le",
+    "py": "Dònghuài le",
     "vn": "rét cóng; bị lạnh làm hỏng"
    },
    {
@@ -476,7 +476,7 @@ var vocabData = [
    },
    {
     "zh": "冻住了",
-    "py": "Dòng zhù le",
+    "py": "Dòngzhù le",
     "vn": "đông cứng lại"
    },
    {
@@ -496,12 +496,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-  "ex_py": "Méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le.",
+  "ex_py": "Méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le.",
   "ex_vn": "Không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng.",
   "exList": [
    {
     "zh": "没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-    "py": "Méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le.",
+    "py": "Méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le.",
     "vn": "Không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng."
    },
    {
@@ -529,7 +529,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mặc thêm áo vào, nếu không cậu sẽ bị rét cóng đấy.",
     "answer": "多穿点儿衣服，否则你会冻坏的。",
-    "answerPy": "Duō chuān diǎnr yīfu, fǒuzé nǐ huì dòng huài de.",
+    "answerPy": "Duō chuān diǎnr yīfu, fǒuzé nǐ huì dònghuài de.",
     "note": "Ôn 否则 (Bài 8 · điểm 2).",
     "pair": "……，否则……"
    },
@@ -640,7 +640,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bây giờ hối hận cũng không kịp nữa rồi.",
     "answer": "现在后悔也来不及了。",
-    "answerPy": "Xiànzài hòuhuǐ yě láibùjí le.",
+    "answerPy": "Xiànzài hòuhuǐ yě láibují le.",
     "note": "Ôn 来不及 (Bài 4 · điểm 4).",
     "pair": "来不及"
    },
@@ -706,12 +706,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "就是呢，冬天北方和南方的温度差别还是很大的。",
-  "ex_py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishì hěn dà de.",
+  "ex_py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishi hěn dà de.",
   "ex_vn": "Đúng thế, mùa đông nhiệt độ miền Bắc và miền Nam chênh lệch vẫn rất lớn.",
   "exList": [
    {
     "zh": "就是呢，冬天北方和南方的温度差别还是很大的。",
-    "py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishì hěn dà de.",
+    "py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishi hěn dà de.",
     "vn": "Đúng thế, mùa đông nhiệt độ miền Bắc và miền Nam chênh lệch vẫn rất lớn."
    },
    {
@@ -751,7 +751,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "— Học tiếng Trung không thể không học chữ Hán. — Đúng thế, nếu không thì đọc sách không hiểu.",
     "answer": "——学中文不能不学汉字。——就是，否则看不懂书。",
-    "answerPy": "— Xué Zhōngwén bù néng bù xué hànzì. — Jiùshì, fǒuzé kàn bù dǒng shū.",
+    "answerPy": "— Xué Zhōngwén bù néng bù xué hànzì. — Jiùshì, fǒuzé kàn bu dǒng shū.",
     "note": "Ôn 否则 (Bài 8 · điểm 2).",
     "pair": "就是，……"
    },
@@ -759,7 +759,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "— Món này cay quá! — Đúng vậy, tớ ăn không nổi.",
     "answer": "——这个菜太辣了！——就是啊，我吃不了。",
-    "answerPy": "— Zhège cài tài là le! — Jiùshì a, wǒ chī bù liǎo.",
+    "answerPy": "— Zhège cài tài là le! — Jiùshì a, wǒ chī bu liǎo.",
     "note": "Ôn V不了 (Bài 4 · điểm 1).",
     "pair": "就是啊，……"
    }
@@ -817,17 +817,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "就是呢，冬天北方和南方的温度差别还是很大的。",
-  "ex_py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishì hěn dà de.",
+  "ex_py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishi hěn dà de.",
   "ex_vn": "Đúng thế, mùa đông nhiệt độ miền Bắc và miền Nam chênh lệch vẫn rất lớn.",
   "exList": [
    {
     "zh": "就是呢，冬天北方和南方的温度差别还是很大的。",
-    "py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishì hěn dà de.",
+    "py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishi hěn dà de.",
     "vn": "Đúng thế, mùa đông nhiệt độ miền Bắc và miền Nam chênh lệch vẫn rất lớn."
    },
    {
     "zh": "这里早晚的温度差别很大，你得多带一件衣服。",
-    "py": "Zhèli zǎo wǎn de wēndù chābié hěn dà, nǐ děi duō dài yí jiàn yīfu.",
+    "py": "Zhèli zǎowǎn de wēndù chābié hěn dà, nǐ děi duō dài yí jiàn yīfu.",
     "vn": "Ở đây nhiệt độ sáng và tối chênh nhau nhiều, cậu phải mang thêm một cái áo."
    }
   ],
@@ -928,17 +928,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "就是呢，冬天北方和南方的温度差别还是很大的。",
-  "ex_py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishì hěn dà de.",
+  "ex_py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishi hěn dà de.",
   "ex_vn": "Đúng thế, mùa đông nhiệt độ miền Bắc và miền Nam chênh lệch vẫn rất lớn.",
   "exList": [
    {
     "zh": "就是呢，冬天北方和南方的温度差别还是很大的。",
-    "py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishì hěn dà de.",
+    "py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishi hěn dà de.",
     "vn": "Đúng thế, mùa đông nhiệt độ miền Bắc và miền Nam chênh lệch vẫn rất lớn."
    },
    {
     "zh": "这两个手机看起来差不多，其实价格差别很大。",
-    "py": "Zhè liǎng gè shǒujī kàn qǐlái chàbùduō, qíshí jiàgé chābié hěn dà.",
+    "py": "Zhè liǎng gè shǒujī kànqǐlai chàbuduō, qíshí jiàgé chābié hěn dà.",
     "vn": "Hai chiếc điện thoại này trông na ná nhau, thật ra giá chênh lệch rất nhiều."
    }
   ],
@@ -973,7 +973,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Khí hậu ở đây khác biệt rất lớn so với Hà Nội.",
     "answer": "这里的气候跟河内的差别很大。",
-    "answerPy": "Zhèli de qìhòu gēn hé nèi de chābié hěn dà.",
+    "answerPy": "Zhèli de qìhòu gēn Hénèi de chābié hěn dà.",
     "note": "A 跟 B 的差别很大.",
     "pair": "A跟B的差别"
    },
@@ -1039,17 +1039,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "更重要的是，说什么也得穿上厚一点儿的衣服。",
-  "ex_py": "Gèng zhòngyào de shì, shuō shénme yě děi chuān shàng hòu yìdiǎnr de yīfu.",
+  "ex_py": "Gèng zhòngyào de shì, shuō shénme yě děi chuānshang hòu yìdiǎnr de yīfu.",
   "ex_vn": "Quan trọng hơn là, dù thế nào cũng phải mặc quần áo dày một chút.",
   "exList": [
    {
     "zh": "更重要的是，说什么也得穿上厚一点儿的衣服。",
-    "py": "Gèng zhòngyào de shì, shuō shénme yě děi chuān shàng hòu yìdiǎnr de yīfu.",
+    "py": "Gèng zhòngyào de shì, shuō shénme yě děi chuānshang hòu yìdiǎnr de yīfu.",
     "vn": "Quan trọng hơn là, dù thế nào cũng phải mặc quần áo dày một chút."
    },
    {
     "zh": "这本书太厚了，一个星期都看不完。",
-    "py": "Zhè běn shū tài hòu le, yí gè xīngqī dōu kàn bù wán.",
+    "py": "Zhè běn shū tài hòu le, yí gè xīngqī dōu kàn bu wán.",
     "vn": "Quyển sách này dày quá, một tuần cũng đọc không hết."
    }
   ],
@@ -1080,7 +1080,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tuyết dày đến mức xe đạp cũng không đi được.",
     "answer": "雪厚得连自行车都骑不了。",
-    "answerPy": "Xuě hòu de lián zìxíngchē dōu qí bù liǎo.",
+    "answerPy": "Xuě hòu de lián zìxíngchē dōu qí bu liǎo.",
     "note": "Ôn V不了 (Bài 4 · điểm 1) + 连……都…….",
     "pair": "V不了"
    }
@@ -1123,7 +1123,7 @@ var vocabData = [
    },
    {
     "zh": "花城广州",
-    "py": "Huā chéng Guǎngzhōu",
+    "py": "Huāchéng Guǎngzhōu",
     "vn": "Quảng Châu – thành phố hoa"
    }
   ],
@@ -1179,7 +1179,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Quảng Châu cách Cáp Nhĩ Tân hơn ba nghìn ki-lô-mét.",
     "answer": "广州离哈尔滨三千多公里。",
-    "answerPy": "Guǎngzhōu lí Hā'ěrbīn sān qiān duō gōnglǐ.",
+    "answerPy": "Guǎngzhōu lí Hā'ěrbīn sānqiān duō gōnglǐ.",
     "note": "Câu 离 chỉ khoảng cách (HSK 2).",
     "pair": "A离B + khoảng cách"
    },
@@ -1241,12 +1241,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-  "ex_py": "Méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le.",
+  "ex_py": "Méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le.",
   "ex_vn": "Không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng.",
   "exList": [
    {
     "zh": "没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-    "py": "Méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le.",
+    "py": "Méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le.",
     "vn": "Không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng."
    },
    {
@@ -1298,7 +1298,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mùa đông ở Cáp Nhĩ Tân thường bắt đầu từ tháng 10.",
     "answer": "哈尔滨的冬天一般从十月开始。",
-    "answerPy": "Hā'ěrbīn de dōngtiān yìbān cóng shí yuè kāishǐ.",
+    "answerPy": "Hā'ěrbīn de dōngtiān yìbān cóng shíyuè kāishǐ.",
     "note": "从……开始 (HSK 3).",
     "pair": "从……开始"
    },
@@ -1374,7 +1374,7 @@ var vocabData = [
    },
    {
     "zh": "放寒假以后，我打算回老家过年。",
-    "py": "Fàng hánjià yǐhòu, wǒ dǎsuàn huí lǎo jiā guònián.",
+    "py": "Fàng hánjià yǐhòu, wǒ dǎsuàn huí lǎojiā guònián.",
     "vn": "Sau khi nghỉ đông, tôi định về quê ăn Tết."
    }
   ],
@@ -1417,7 +1417,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nghỉ đông này tôi vừa muốn đi du lịch vừa muốn về nhà ăn Tết.",
     "answer": "这个寒假我既想去旅游，又想回家过年。",
-    "answerPy": "Zhège hánjià wǒ jì xiǎng qù lǚyóu, yòu xiǎng huí jiā guònián.",
+    "answerPy": "Zhège hánjià wǒ jì xiǎng qù lǚyóu, yòu xiǎng huíjiā guònián.",
     "note": "Ôn 既……又…… (Bài 4 · điểm 3).",
     "pair": "既……又……"
    }
@@ -1451,7 +1451,7 @@ var vocabData = [
    },
    {
     "zh": "暖和起来",
-    "py": "Nuǎnhuo qǐlái",
+    "py": "Nuǎnhuo qǐlai",
     "vn": "ấm dần lên"
    },
    {
@@ -1476,17 +1476,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "那时候广州暖和，但哈尔滨特别冷。",
-  "ex_py": "Nà shíhou Guǎngzhōu nuǎnhuo, dàn Hā'ěrbīn tèbié lěng.",
+  "ex_py": "Nàshíhou Guǎngzhōu nuǎnhuo, dàn Hā'ěrbīn tèbié lěng.",
   "ex_vn": "Lúc đó Quảng Châu ấm áp, nhưng Cáp Nhĩ Tân thì cực lạnh.",
   "exList": [
    {
     "zh": "那时候广州暖和，但哈尔滨特别冷。",
-    "py": "Nà shíhou Guǎngzhōu nuǎnhuo, dàn Hā'ěrbīn tèbié lěng.",
+    "py": "Nàshíhou Guǎngzhōu nuǎnhuo, dàn Hā'ěrbīn tèbié lěng.",
     "vn": "Lúc đó Quảng Châu ấm áp, nhưng Cáp Nhĩ Tân thì cực lạnh."
    },
    {
     "zh": "外面太冷了，快进来暖和暖和吧。",
-    "py": "Wàimian tài lěng le, kuài jìnlái nuǎnhuo nuǎnhuo ba.",
+    "py": "Wàimian tài lěng le, kuài jìnlai nuǎnhuo nuǎnhuo ba.",
     "vn": "Ngoài trời lạnh quá, mau vào trong sưởi cho ấm đi."
    }
   ],
@@ -1521,7 +1521,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mùa xuân đến rồi, thời tiết dần dần ấm lên.",
     "answer": "春天来了，天气慢慢暖和起来了。",
-    "answerPy": "Chūntiān lái le, tiānqì màn màn nuǎnhuo qǐlái le.",
+    "answerPy": "Chūntiān lái le, tiānqì mànmàn nuǎnhuo qǐlai le.",
     "note": "Bổ ngữ xu hướng 起来 = bắt đầu (HSK 3).",
     "pair": "Adj + 起来"
    },
@@ -1529,7 +1529,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với thời tiết ấm lên, người ra công viên ngày càng nhiều.",
     "answer": "随着天气暖和起来，去公园的人越来越多了。",
-    "answerPy": "Suízhe tiānqì nuǎnhuo qǐlái, qù gōngyuán de rén yuèláiyuè duō le.",
+    "answerPy": "Suízhe tiānqì nuǎnhuo qǐlai, qù gōngyuán de rén yuèláiyuè duō le.",
     "note": "Ôn 随着 (Bài 1 · điểm 3).",
     "pair": "随着……"
    }
@@ -1587,12 +1587,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "气温一般都低于零下十摄氏度甚至零下二十摄氏度。",
-  "ex_py": "Qìwēn yìbān dōu dīyú líng xià shí shèshìdù shènzhì líng xià èr shí shèshìdù.",
+  "ex_py": "Qìwēn yìbān dōu dīyú líng xià shí shèshìdù shènzhì líng xià èrshí shèshìdù.",
   "ex_vn": "Nhiệt độ thường đều thấp hơn âm 10 độ C, thậm chí âm 20 độ C.",
   "exList": [
    {
     "zh": "气温一般都低于零下十摄氏度甚至零下二十摄氏度。",
-    "py": "Qìwēn yìbān dōu dīyú líng xià shí shèshìdù shènzhì líng xià èr shí shèshìdù.",
+    "py": "Qìwēn yìbān dōu dīyú líng xià shí shèshìdù shènzhì líng xià èrshí shèshìdù.",
     "vn": "Nhiệt độ thường đều thấp hơn âm 10 độ C, thậm chí âm 20 độ C."
    },
    {
@@ -1640,7 +1640,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu nhiệt độ thấp hơn 0 độ thì nước sẽ đóng băng.",
     "answer": "要是气温低于零度，水就会冻住。",
-    "answerPy": "Yàoshi qìwēn dīyú líng dù, shuǐ jiù huì dòng zhù.",
+    "answerPy": "Yàoshi qìwēn dīyú líng dù, shuǐ jiù huì dòngzhù.",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2).",
     "pair": "要是……就……"
    }
@@ -1673,12 +1673,12 @@ var vocabData = [
    },
    {
     "zh": "三十摄氏度",
-    "py": "Sān shí shèshìdù",
+    "py": "Sānshí shèshìdù",
     "vn": "30 độ C"
    },
    {
     "zh": "二十几摄氏度",
-    "py": "Èr shí jǐ shèshìdù",
+    "py": "Èr shíjǐ shèshìdù",
     "vn": "hai mươi mấy độ C"
    },
    {
@@ -1694,17 +1694,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "气温一般都低于零下十摄氏度甚至零下二十摄氏度。",
-  "ex_py": "Qìwēn yìbān dōu dīyú líng xià shí shèshìdù shènzhì líng xià èr shí shèshìdù.",
+  "ex_py": "Qìwēn yìbān dōu dīyú líng xià shí shèshìdù shènzhì líng xià èrshí shèshìdù.",
   "ex_vn": "Nhiệt độ thường đều thấp hơn âm 10 độ C, thậm chí âm 20 độ C.",
   "exList": [
    {
     "zh": "气温一般都低于零下十摄氏度甚至零下二十摄氏度。",
-    "py": "Qìwēn yìbān dōu dīyú líng xià shí shèshìdù shènzhì líng xià èr shí shèshìdù.",
+    "py": "Qìwēn yìbān dōu dīyú líng xià shí shèshìdù shènzhì líng xià èrshí shèshìdù.",
     "vn": "Nhiệt độ thường đều thấp hơn âm 10 độ C, thậm chí âm 20 độ C."
    },
    {
     "zh": "天气预报说，明天最高气温三十五摄氏度。",
-    "py": "Tiānqì yù bào shuō, míngtiān zuì gāo qìwēn sān shí wǔ shèshìdù.",
+    "py": "Tiānqì yùbào shuō, míngtiān zuì gāo qìwēn sān shíwǔ shèshìdù.",
     "vn": "Dự báo thời tiết nói ngày mai nhiệt độ cao nhất 35 độ C."
    }
   ],
@@ -1751,7 +1751,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hôm nay cao nhất 35 độ C, có nơi thậm chí lên tới 40 độ C.",
     "answer": "今天最高气温三十五摄氏度，有的地方甚至达到了四十摄氏度。",
-    "answerPy": "Jīntiān zuì gāo qìwēn sān shí wǔ shèshìdù, yǒude dìfang shènzhì dádào le sì shí shèshìdù.",
+    "answerPy": "Jīntiān zuì gāo qìwēn sān shíwǔ shèshìdù, yǒude dìfang shènzhì dádào le sìshí shèshìdù.",
     "note": "Ôn 甚至 (Bài 3 · điểm 3) + 达到 (từ Bài 5).",
     "pair": "甚至"
    },
@@ -1759,7 +1759,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nhiệt độ Cáp Nhĩ Tân thấp hơn Quảng Châu ba mươi mấy độ C.",
     "answer": "哈尔滨的气温比广州低三十几摄氏度。",
-    "answerPy": "Hā'ěrbīn de qìwēn bǐ Guǎngzhōu dī sān shí jǐ shèshìdù.",
+    "answerPy": "Hā'ěrbīn de qìwēn bǐ Guǎngzhōu dī sān shíjǐ shèshìdù.",
     "note": "So sánh 比 + chênh lệch số lượng (HSK 3).",
     "pair": "A比B + Adj + số lượng"
    }
@@ -1882,7 +1882,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Dù cay không chịu nổi, nhưng tôi vẫn ăn hết.",
     "answer": "尽管辣得受不了，但是我还是吃完了。",
-    "answerPy": "Jǐnguǎn là de shòubuliǎo, dànshì wǒ háishì chī wán le.",
+    "answerPy": "Jǐnguǎn là de shòubuliǎo, dànshì wǒ háishi chīwán le.",
     "note": "Ôn 尽管……但是…… (Bài 9 · điểm 2).",
     "pair": "Adj得受不了"
    }
@@ -1925,7 +1925,7 @@ var vocabData = [
    },
    {
     "zh": "举办冰雪节",
-    "py": "Jǔbàn bīng xuě jié",
+    "py": "Jǔbàn bīngxuě jié",
     "vn": "tổ chức lễ hội băng tuyết"
    }
   ],
@@ -1936,17 +1936,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "听说春节时那里会举办很多活动。",
-  "ex_py": "Tīngshuō chūn jié shí nàli huì jǔbàn hěn duō huódòng.",
+  "ex_py": "Tīngshuō Chūnjié shí nàli huì jǔbàn hěn duō huódòng.",
   "ex_vn": "Nghe nói dịp Tết ở đó sẽ tổ chức rất nhiều hoạt động.",
   "exList": [
    {
     "zh": "听说春节时那里会举办很多活动。",
-    "py": "Tīngshuō chūn jié shí nàli huì jǔbàn hěn duō huódòng.",
+    "py": "Tīngshuō Chūnjié shí nàli huì jǔbàn hěn duō huódòng.",
     "vn": "Nghe nói dịp Tết ở đó sẽ tổ chức rất nhiều hoạt động."
    },
    {
     "zh": "我们学校下个月举办运动会，至少有二十个班参加。",
-    "py": "Wǒmen xuéxiào xià gè yuè jǔbàn yùndònghuì, zhìshǎo yǒu èr shí gè bān cānjiā.",
+    "py": "Wǒmen xuéxiào xià gè yuè jǔbàn yùndònghuì, zhìshǎo yǒu èrshí gè bān cānjiā.",
     "vn": "Tháng sau trường mình tổ chức đại hội thể thao, ít nhất có hai mươi lớp tham gia. (ôn 至少 – Bài 5 · điểm 1)"
    }
   ],
@@ -2032,7 +2032,7 @@ var vocabData = [
    },
    {
     "zh": "各种各样",
-    "py": "Gèzhǒng gè yàng",
+    "py": "Gèzhǒng gèyàng",
     "vn": "đủ loại đủ kiểu"
    }
   ],
@@ -2047,17 +2047,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "听说广州的鲜花市场很有名，里面有各种植物。",
-  "ex_py": "Tīngshuō Guǎngzhōu de xiān huā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù.",
+  "ex_py": "Tīngshuō Guǎngzhōu de xiānhuā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù.",
   "ex_vn": "Nghe nói chợ hoa tươi ở Quảng Châu rất nổi tiếng, trong đó có đủ loại cây cối.",
   "exList": [
    {
     "zh": "听说广州的鲜花市场很有名，里面有各种植物。",
-    "py": "Tīngshuō Guǎngzhōu de xiān huā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù.",
+    "py": "Tīngshuō Guǎngzhōu de xiānhuā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù.",
     "vn": "Nghe nói chợ hoa tươi ở Quảng Châu rất nổi tiếng, trong đó có đủ loại cây cối."
    },
    {
     "zh": "超市里有各种各样的水果，你想买什么都有。",
-    "py": "Chāoshì lǐ yǒu gèzhǒng gè yàng de shuǐguǒ, nǐ xiǎng mǎi shénme dōu yǒu.",
+    "py": "Chāoshì lǐ yǒu gèzhǒng gèyàng de shuǐguǒ, nǐ xiǎng mǎi shénme dōu yǒu.",
     "vn": "Trong siêu thị có đủ loại trái cây, bạn muốn mua gì cũng có."
    }
   ],
@@ -2092,7 +2092,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chợ này có đủ loại rau quả, bạn muốn mua gì cũng mua được.",
     "answer": "这个市场里有各种水果和菜，你想买什么都能买到。",
-    "answerPy": "Zhège shìchǎng lǐ yǒu gèzhǒng shuǐguǒ hé cài, nǐ xiǎng mǎi shénme dōu néng mǎi dào.",
+    "answerPy": "Zhège shìchǎng lǐ yǒu gèzhǒng shuǐguǒ hé cài, nǐ xiǎng mǎi shénme dōu néng mǎidào.",
     "note": "Đại từ phiếm chỉ 什么……都…… (HSK 3).",
     "pair": "什么……都"
    },
@@ -2100,7 +2100,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trung Quốc có đủ loại phương ngữ, lấy Quảng Đông mà nói, có mấy loại liền.",
     "answer": "中国有各种方言，拿广东来说，就有好几种。",
-    "answerPy": "Zhōngguó yǒu gèzhǒng fāngyán, ná guǎng dōng láishuō, jiù yǒu hǎo jǐ zhǒng.",
+    "answerPy": "Zhōngguó yǒu gèzhǒng fāngyán, ná Guǎngdōng láishuō, jiù yǒu hǎojǐ zhǒng.",
     "note": "Ôn 拿……来说 (Bài 7 · điểm 3).",
     "pair": "拿……来说"
    }
@@ -2158,17 +2158,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "听说广州的鲜花市场很有名，里面有各种植物。",
-  "ex_py": "Tīngshuō Guǎngzhōu de xiān huā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù.",
+  "ex_py": "Tīngshuō Guǎngzhōu de xiānhuā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù.",
   "ex_vn": "Nghe nói chợ hoa tươi ở Quảng Châu rất nổi tiếng, trong đó có đủ loại cây cối.",
   "exList": [
    {
     "zh": "听说广州的鲜花市场很有名，里面有各种植物。",
-    "py": "Tīngshuō Guǎngzhōu de xiān huā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù.",
+    "py": "Tīngshuō Guǎngzhōu de xiānhuā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù.",
     "vn": "Nghe nói chợ hoa tươi ở Quảng Châu rất nổi tiếng, trong đó có đủ loại cây cối."
    },
    {
     "zh": "我喜欢在房间里种一些植物，看起来很舒服。",
-    "py": "Wǒ xǐhuan zài fángjiān lǐ zhǒng yìxiē zhíwù, kàn qǐlái hěn shūfu.",
+    "py": "Wǒ xǐhuan zài fángjiān lǐ zhǒng yìxiē zhíwù, kànqǐlai hěn shūfu.",
     "vn": "Tôi thích trồng ít cây trong phòng, nhìn rất dễ chịu."
    }
   ],
@@ -2239,7 +2239,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "三千多公里",
-    "py": "Sān qiān duō gōnglǐ",
+    "py": "Sānqiān duō gōnglǐ",
     "vn": "hơn 3000 km"
    },
    {
@@ -2249,7 +2249,7 @@ var vocabData = [
    },
    {
     "zh": "每小时一百公里",
-    "py": "Měi xiǎoshí yì bǎi gōnglǐ",
+    "py": "Měi xiǎoshí yìbǎi gōnglǐ",
     "vn": "100 km/giờ"
    },
    {
@@ -2269,17 +2269,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "两个城市之间的距离有三千多公里。",
-  "ex_py": "Liǎng gè chéngshì zhī jiān de jùlí yǒu sān qiān duō gōnglǐ.",
+  "ex_py": "Liǎng gè chéngshì zhījiān de jùlí yǒu sānqiān duō gōnglǐ.",
   "ex_vn": "Khoảng cách giữa hai thành phố là hơn ba nghìn ki-lô-mét.",
   "exList": [
    {
     "zh": "两个城市之间的距离有三千多公里。",
-    "py": "Liǎng gè chéngshì zhī jiān de jùlí yǒu sān qiān duō gōnglǐ.",
+    "py": "Liǎng gè chéngshì zhījiān de jùlí yǒu sānqiān duō gōnglǐ.",
     "vn": "Khoảng cách giữa hai thành phố là hơn ba nghìn ki-lô-mét."
    },
    {
     "zh": "我家离学校只有两公里，走路二十分钟就到了。",
-    "py": "Wǒ jiā lí xuéxiào zhǐyǒu liǎng gōnglǐ, zǒulù èr shí fēnzhōng jiù dào le.",
+    "py": "Wǒ jiā lí xuéxiào zhǐyǒu liǎng gōnglǐ, zǒulù èrshí fēnzhōng jiù dào le.",
     "vn": "Nhà tôi cách trường chỉ hai cây số, đi bộ hai mươi phút là tới."
    }
   ],
@@ -2314,7 +2314,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Từ đây đến sân bay ít nhất 30 km.",
     "answer": "从这儿到机场至少有三十公里。",
-    "answerPy": "Cóng zhèr dào jīchǎng zhìshǎo yǒu sān shí gōnglǐ.",
+    "answerPy": "Cóng zhèr dào jīchǎng zhìshǎo yǒu sānshí gōnglǐ.",
     "note": "Ôn 至少 (Bài 5 · điểm 1).",
     "pair": "至少"
    },
@@ -2322,7 +2322,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hai thành phố cách nhau 500 km, hơn nữa đi tàu cao tốc cũng tiện, chúng ta đi tàu cao tốc nhé.",
     "answer": "两个城市之间有五百公里，再说坐高铁也很方便，我们就坐高铁吧。",
-    "answerPy": "Liǎng gè chéngshì zhī jiān yǒu wǔ bǎi gōnglǐ, zài shuō zuò gāotiě yě hěn fāngbiàn, wǒmen jiù zuò gāotiě ba.",
+    "answerPy": "Liǎng gè chéngshì zhījiān yǒu wǔbǎi gōnglǐ, Zàishuō zuò gāotiě yě hěn fāngbiàn, wǒmen jiù zuò gāotiě ba.",
     "note": "Ôn 再说 (Bài 4 · điểm 2).",
     "pair": "……，再说……"
    }
@@ -2376,12 +2376,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "两个城市之间的距离有三千多公里，气候也大不相同。",
-  "ex_py": "Liǎng gè chéngshì zhī jiān de jùlí yǒu sān qiān duō gōnglǐ, qìhòu yě dà bù xiāngtóng.",
+  "ex_py": "Liǎng gè chéngshì zhījiān de jùlí yǒu sānqiān duō gōnglǐ, qìhòu yě dà bù xiāngtóng.",
   "ex_vn": "Khoảng cách giữa hai thành phố là hơn ba nghìn ki-lô-mét, khí hậu cũng khác nhau rất nhiều.",
   "exList": [
    {
     "zh": "两个城市之间的距离有三千多公里，气候也大不相同。",
-    "py": "Liǎng gè chéngshì zhī jiān de jùlí yǒu sān qiān duō gōnglǐ, qìhòu yě dà bù xiāngtóng.",
+    "py": "Liǎng gè chéngshì zhījiān de jùlí yǒu sānqiān duō gōnglǐ, qìhòu yě dà bù xiāngtóng.",
     "vn": "Khoảng cách giữa hai thành phố là hơn ba nghìn ki-lô-mét, khí hậu cũng khác nhau rất nhiều."
    },
    {
@@ -2487,12 +2487,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "广州基本上没有冬天，而哈尔滨的冬天一般会从十月开始。",
-  "ex_py": "Guǎngzhōu jīběn shàng méiyǒu dōngtiān, ér Hā'ěrbīn de dōngtiān yìbān huì cóng shí yuè kāishǐ.",
+  "ex_py": "Guǎngzhōu jīběn shàng méiyǒu dōngtiān, ér Hā'ěrbīn de dōngtiān yìbān huì cóng shíyuè kāishǐ.",
   "ex_vn": "Quảng Châu gần như không có mùa đông, còn mùa đông Cáp Nhĩ Tân thường bắt đầu từ tháng Mười.",
   "exList": [
    {
     "zh": "广州基本上没有冬天，而哈尔滨的冬天一般会从十月开始。",
-    "py": "Guǎngzhōu jīběn shàng méiyǒu dōngtiān, ér Hā'ěrbīn de dōngtiān yìbān huì cóng shí yuè kāishǐ.",
+    "py": "Guǎngzhōu jīběn shàng méiyǒu dōngtiān, ér Hā'ěrbīn de dōngtiān yìbān huì cóng shíyuè kāishǐ.",
     "vn": "Quảng Châu gần như không có mùa đông, còn mùa đông Cáp Nhĩ Tân thường bắt đầu từ tháng Mười."
    },
    {
@@ -2592,7 +2592,7 @@ var vocabData = [
    },
    {
     "zh": "这个房子离地铁站很近，此外，房租也不高。",
-    "py": "Zhège fángzi lí dìtiě zhàn hěn jìn, cǐwài, fáng zū yě bù gāo.",
+    "py": "Zhège fángzi lí dìtiězhàn hěn jìn, cǐwài, fángzū yě bù gāo.",
     "vn": "Căn nhà này gần ga tàu điện ngầm, ngoài ra tiền thuê cũng không cao. (ôn 房租 – Bài 2)"
    }
   ],
@@ -2673,12 +2673,12 @@ var vocabData = [
    },
    {
     "zh": "听不懂方言",
-    "py": "Tīng bù dǒng fāngyán",
+    "py": "Tīngbudǒng fāngyán",
     "vn": "nghe không hiểu tiếng địa phương"
    },
    {
     "zh": "各地方言",
-    "py": "Gè dì fāngyán",
+    "py": "Gèdì fāngyán",
     "vn": "tiếng các vùng"
    }
   ],
@@ -2699,7 +2699,7 @@ var vocabData = [
    },
    {
     "zh": "我听不懂上海方言，不过上海人都会说普通话。",
-    "py": "Wǒ tīng bù dǒng Shànghǎi fāngyán, búguò Shànghǎi rén dōu huì shuō pǔtōnghuà.",
+    "py": "Wǒ tīngbudǒng Shànghǎi fāngyán, búguò shànghǎirén dōu huì shuō pǔtōnghuà.",
     "vn": "Tôi nghe không hiểu tiếng Thượng Hải, có điều người Thượng Hải đều biết nói tiếng phổ thông. (ôn 不过 – Bài 2 · điểm 2)"
    }
   ],
@@ -2734,7 +2734,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Dù tôi nghe không hiểu tiếng địa phương, nhưng mọi người đều nói tiếng phổ thông với tôi.",
     "answer": "尽管我听不懂方言，但是大家都跟我说普通话。",
-    "answerPy": "Jǐnguǎn wǒ tīng bù dǒng fāngyán, dànshì dàjiā dōu gēn wǒ shuō pǔtōnghuà.",
+    "answerPy": "Jǐnguǎn wǒ tīngbudǒng fāngyán, dànshì dàjiā dōu gēn wǒ shuō pǔtōnghuà.",
     "note": "Ôn 尽管……但是…… (Bài 9 · điểm 2).",
     "pair": "尽管……但是……"
    },
@@ -2742,7 +2742,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Việt Nam cũng có phương ngữ, lấy miền Trung mà nói, nhiều từ khác với miền Bắc.",
     "answer": "越南也有方言，拿中部来说，很多词跟北部不一样。",
-    "answerPy": "Yuènán yě yǒu fāngyán, ná zhōng bù láishuō, hěn duō cí gēn běi bù bù yíyàng.",
+    "answerPy": "Yuènán yě yǒu fāngyán, ná zhōngbù láishuō, hěn duō cí gēn běibù bù yíyàng.",
     "note": "Ôn 拿……来说 (Bài 7 · điểm 3).",
     "pair": "拿……来说"
    }
@@ -2800,12 +2800,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "为了顺利交流，中国人从小都要学习普通话。",
-  "ex_py": "Wèile shùnlì jiāoliú, zhōngguórén cóng xiǎo dōu yào xuéxí pǔtōnghuà.",
+  "ex_py": "Wèile shùnlì jiāoliú, Zhōngguórén cóng xiǎo dōu yào xuéxí pǔtōnghuà.",
   "ex_vn": "Để giao tiếp thuận lợi, người Trung Quốc từ nhỏ đều phải học tiếng phổ thông.",
   "exList": [
    {
     "zh": "为了顺利交流，中国人从小都要学习普通话。",
-    "py": "Wèile shùnlì jiāoliú, zhōngguórén cóng xiǎo dōu yào xuéxí pǔtōnghuà.",
+    "py": "Wèile shùnlì jiāoliú, Zhōngguórén cóng xiǎo dōu yào xuéxí pǔtōnghuà.",
     "vn": "Để giao tiếp thuận lợi, người Trung Quốc từ nhỏ đều phải học tiếng phổ thông."
    },
    {
@@ -2857,7 +2857,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Để giao tiếp thuận lợi, người Trung Quốc từ nhỏ đã phải học tiếng phổ thông.",
     "answer": "为了顺利交流，中国人从小就要学习普通话。",
-    "answerPy": "Wèile shùnlì jiāoliú, zhōngguórén cóng xiǎo jiù yào xuéxí pǔtōnghuà.",
+    "answerPy": "Wèile shùnlì jiāoliú, Zhōngguórén cóng xiǎo jiù yào xuéxí pǔtōnghuà.",
     "note": "为了 + mục đích (HSK 3).",
     "pair": "为了……"
    },
@@ -2919,12 +2919,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "哈尔滨方言和普通话听起来比较像，而广州方言和普通话差别较大。",
-  "ex_py": "Hā'ěrbīn fāngyán hé pǔtōnghuà tīng qǐlái bǐjiào xiàng, ér Guǎngzhōu fāngyán hé pǔtōnghuà chābié jiào dà.",
+  "ex_py": "Hā'ěrbīn fāngyán hé pǔtōnghuà tīng qǐlai bǐjiào xiàng, ér Guǎngzhōu fāngyán hé pǔtōnghuà chābié jiào dà.",
   "ex_vn": "Tiếng Cáp Nhĩ Tân nghe khá giống tiếng phổ thông, còn tiếng Quảng Châu thì khác tiếng phổ thông tương đối nhiều.",
   "exList": [
    {
     "zh": "哈尔滨方言和普通话听起来比较像，而广州方言和普通话差别较大。",
-    "py": "Hā'ěrbīn fāngyán hé pǔtōnghuà tīng qǐlái bǐjiào xiàng, ér Guǎngzhōu fāngyán hé pǔtōnghuà chābié jiào dà.",
+    "py": "Hā'ěrbīn fāngyán hé pǔtōnghuà tīng qǐlai bǐjiào xiàng, ér Guǎngzhōu fāngyán hé pǔtōnghuà chābié jiào dà.",
     "vn": "Tiếng Cáp Nhĩ Tân nghe khá giống tiếng phổ thông, còn tiếng Quảng Châu thì khác tiếng phổ thông tương đối nhiều."
    },
    {
@@ -2952,7 +2952,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Khu này môi trường khá tốt, tiền thuê nhà cũng tương đối thấp.",
     "answer": "这个小区环境较好，房租也较低。",
-    "answerPy": "Zhège xiǎoqū huánjìng jiào hǎo, fáng zū yě jiào dī.",
+    "answerPy": "Zhège xiǎoqū huánjìng jiào hǎo, fángzū yě jiào dī.",
     "note": "较 + Adj một âm tiết.",
     "pair": "较 + Adj"
    },
@@ -3018,17 +3018,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "如果广州人和哈尔滨人都只使用自己的方言，那么交流就很困难。",
-  "ex_py": "Rúguǒ Guǎngzhōu rén hé Hā'ěrbīn rén dōu zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnán.",
+  "ex_py": "Rúguǒ Guǎngzhōu rén hé Hā'ěrbīn rén dōu zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnan.",
   "ex_vn": "Nếu người Quảng Châu và người Cáp Nhĩ Tân đều chỉ dùng phương ngữ của mình thì giao tiếp sẽ rất khó khăn.",
   "exList": [
    {
     "zh": "如果广州人和哈尔滨人都只使用自己的方言，那么交流就很困难。",
-    "py": "Rúguǒ Guǎngzhōu rén hé Hā'ěrbīn rén dōu zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnán.",
+    "py": "Rúguǒ Guǎngzhōu rén hé Hā'ěrbīn rén dōu zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnan.",
     "vn": "Nếu người Quảng Châu và người Cáp Nhĩ Tân đều chỉ dùng phương ngữ của mình thì giao tiếp sẽ rất khó khăn."
    },
    {
     "zh": "这台电脑我已经使用了五年，还很好用。",
-    "py": "Zhè tái diànnǎo wǒ yǐjīng shǐyòng le wǔ nián, hái hěn hǎo yòng.",
+    "py": "Zhè tái diànnǎo wǒ yǐjīng shǐyòng le wǔ nián, hái hěn hǎoyòng.",
     "vn": "Chiếc máy tính này tôi đã dùng năm năm rồi, vẫn còn dùng tốt."
    }
   ],
@@ -3063,7 +3063,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trong giờ học phải dùng tiếng phổ thông, nếu không giao tiếp sẽ rất khó.",
     "answer": "上课时要使用普通话，否则交流会很困难。",
-    "answerPy": "Shàngkè shí yào shǐyòng pǔtōnghuà, fǒuzé jiāoliú huì hěn kùnnán.",
+    "answerPy": "Shàngkè shí yào shǐyòng pǔtōnghuà, fǒuzé jiāoliú huì hěn kùnnan.",
     "note": "Ôn 否则 (Bài 8 · điểm 2).",
     "pair": "……，否则……"
    },
@@ -3125,17 +3125,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "如果广州人和哈尔滨人都只使用自己的方言，那么交流就很困难，甚至还可能引起误会。",
-  "ex_py": "Rúguǒ Guǎngzhōu rén hé Hā'ěrbīn rén dōu zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnán, shènzhì hái kěnéng yǐnqǐ wùhuì.",
+  "ex_py": "Rúguǒ Guǎngzhōu rén hé Hā'ěrbīn rén dōu zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnan, shènzhì hái kěnéng yǐnqǐ wùhuì.",
   "ex_vn": "Nếu người Quảng Châu và người Cáp Nhĩ Tân đều chỉ dùng phương ngữ của mình thì giao tiếp sẽ rất khó, thậm chí còn có thể gây hiểu lầm.",
   "exList": [
    {
     "zh": "如果广州人和哈尔滨人都只使用自己的方言，那么交流就很困难，甚至还可能引起误会。",
-    "py": "Rúguǒ Guǎngzhōu rén hé Hā'ěrbīn rén dōu zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnán, shènzhì hái kěnéng yǐnqǐ wùhuì.",
+    "py": "Rúguǒ Guǎngzhōu rén hé Hā'ěrbīn rén dōu zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnan, shènzhì hái kěnéng yǐnqǐ wùhuì.",
     "vn": "Nếu người Quảng Châu và người Cáp Nhĩ Tân đều chỉ dùng phương ngữ của mình thì giao tiếp sẽ rất khó, thậm chí còn có thể gây hiểu lầm."
    },
    {
     "zh": "他的话引起了大家的注意。",
-    "py": "Tā dehuà yǐnqǐ le dàjiā de zhùyì.",
+    "py": "Tā de huà yǐnqǐ le dàjiā de zhùyì.",
     "vn": "Lời anh ấy đã thu hút sự chú ý của mọi người."
    }
   ],
@@ -3178,7 +3178,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chuyện này thậm chí đã gây sự chú ý của cả trường.",
     "answer": "这件事甚至引起了全校的注意。",
-    "answerPy": "Zhè jiàn shì shènzhì yǐnqǐ le quán xiào de zhùyì.",
+    "answerPy": "Zhè jiàn shì shènzhì yǐnqǐ le quánxiào de zhùyì.",
     "note": "Ôn 甚至 (Bài 3 · điểm 3).",
     "pair": "甚至"
    }
@@ -3237,12 +3237,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "那么交流就很困难，甚至还可能引起误会。",
-  "ex_py": "Nàme jiāoliú jiù hěn kùnnán, shènzhì hái kěnéng yǐnqǐ wùhuì.",
+  "ex_py": "Nàme jiāoliú jiù hěn kùnnan, shènzhì hái kěnéng yǐnqǐ wùhuì.",
   "ex_vn": "Thì giao tiếp sẽ rất khó, thậm chí còn có thể gây hiểu lầm.",
   "exList": [
    {
     "zh": "那么交流就很困难，甚至还可能引起误会。",
-    "py": "Nàme jiāoliú jiù hěn kùnnán, shènzhì hái kěnéng yǐnqǐ wùhuì.",
+    "py": "Nàme jiāoliú jiù hěn kùnnan, shènzhì hái kěnéng yǐnqǐ wùhuì.",
     "vn": "Thì giao tiếp sẽ rất khó, thậm chí còn có thể gây hiểu lầm."
    },
    {
@@ -3318,7 +3318,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "亲爱的同学们",
-    "py": "Qīn'ài de tóngxué men",
+    "py": "Qīn'ài de tóngxuémen",
     "vn": "các bạn học sinh thân mến"
    },
    {
@@ -3344,12 +3344,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "亲爱的同学们：今年的“世界环境日”，我们再次开展“绿色生活”活动。",
-  "ex_py": "Qīn'ài de tóngxué men: jīnnián de “shìjiè huánjìng rì”, wǒmen zàicì kāizhǎn “lǜsè shēnghuó” huódòng.",
+  "ex_py": "Qīn'ài de tóngxuémen: jīnnián de “shìjiè huánjìng rì”, wǒmen zàicì kāizhǎn “lǜsè shēnghuó” huódòng.",
   "ex_vn": "Các bạn học sinh thân mến: Ngày Môi trường Thế giới năm nay, chúng ta lại phát động hoạt động “Sống xanh”.",
   "exList": [
    {
     "zh": "亲爱的同学们：今年的“世界环境日”，我们再次开展“绿色生活”活动。",
-    "py": "Qīn'ài de tóngxué men: jīnnián de “shìjiè huánjìng rì”, wǒmen zàicì kāizhǎn “lǜsè shēnghuó” huódòng.",
+    "py": "Qīn'ài de tóngxuémen: jīnnián de “shìjiè huánjìng rì”, wǒmen zàicì kāizhǎn “lǜsè shēnghuó” huódòng.",
     "vn": "Các bạn học sinh thân mến: Ngày Môi trường Thế giới năm nay, chúng ta lại phát động hoạt động “Sống xanh”."
    },
    {
@@ -3389,7 +3389,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Các bạn thân mến, chúng ta hãy cùng nhau bảo vệ môi trường!",
     "answer": "亲爱的同学们，让我们一起保护环境吧！",
-    "answerPy": "Qīn'ài de tóngxué men, ràng wǒmen yìqǐ bǎohù huánjìng ba!",
+    "answerPy": "Qīn'ài de tóngxuémen, ràng wǒmen yìqǐ bǎohù huánjìng ba!",
     "note": "让 + 我们 + V + 吧 (HSK 3).",
     "pair": "亲爱的……"
    },
@@ -3397,7 +3397,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bạn thân mến, bất kể gặp khó khăn gì, tôi cũng sẽ ủng hộ bạn.",
     "answer": "亲爱的朋友，不管遇到什么困难，我都会支持你。",
-    "answerPy": "Qīn'ài de péngyou, bùguǎn yùdào shénme kùnnán, wǒ dōu huì zhīchí nǐ.",
+    "answerPy": "Qīn'ài de péngyou, bùguǎn yùdào shénme kùnnan, wǒ dōu huì zhīchí nǐ.",
     "note": "Ôn 不管……都…… (Bài 8 · điểm 1).",
     "pair": "不管……都……"
    }
@@ -3435,7 +3435,7 @@ var vocabData = [
    },
    {
     "zh": "再次见到",
-    "py": "Zàicì jiàn dào",
+    "py": "Zàicì jiàndào",
     "vn": "gặp lại lần nữa"
    },
    {
@@ -3504,7 +3504,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Dù đã thất bại nhưng anh ấy vẫn quyết định thử thêm lần nữa.",
     "answer": "尽管失败了，但是他还是决定再次试一试。",
-    "answerPy": "Jǐnguǎn shībài le, dànshì tā háishì juédìng zàicì shì yi shì.",
+    "answerPy": "Jǐnguǎn shībài le, dànshì tā háishi juédìng zàicì shì yi shì.",
     "note": "Ôn 尽管……但是…… (Bài 9 · điểm 2).",
     "pair": "尽管……但是……"
    }
@@ -3572,7 +3572,7 @@ var vocabData = [
    },
    {
     "zh": "学校开展了“节约用水”活动，大家都积极参加。",
-    "py": "Xuéxiào kāizhǎn le “jiéyuē yòng shuǐ” huódòng, dàjiā dōu jījí cānjiā.",
+    "py": "Xuéxiào kāizhǎn le “jiéyuē yòngshuǐ” huódòng, dàjiā dōu jījí cānjiā.",
     "vn": "Trường đã phát động hoạt động “Tiết kiệm nước”, mọi người đều tích cực tham gia."
    }
   ],
@@ -3643,7 +3643,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "绿色出行",
-    "py": "Lǜsè chū xíng",
+    "py": "Lǜsè chūxíng",
     "vn": "đi lại xanh"
    },
    {
@@ -3653,7 +3653,7 @@ var vocabData = [
    },
    {
     "zh": "绿色食品",
-    "py": "Lǜsè shí pǐn",
+    "py": "Lǜsè shípǐn",
     "vn": "thực phẩm sạch"
    },
    {
@@ -3679,7 +3679,7 @@ var vocabData = [
    },
    {
     "zh": "现在很多人喜欢买绿色食品。",
-    "py": "Xiànzài hěn duō rén xǐhuan mǎi lǜsè shí pǐn.",
+    "py": "Xiànzài hěn duō rén xǐhuan mǎi lǜsè shípǐn.",
     "vn": "Bây giờ nhiều người thích mua thực phẩm sạch."
    }
   ],
@@ -3714,7 +3714,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đi lại xanh không chỉ bảo vệ môi trường mà còn tốt cho sức khoẻ.",
     "answer": "绿色出行不仅能保护环境，还对身体好。",
-    "answerPy": "Lǜsè chū xíng bùjǐn néng bǎohù huánjìng, hái duì shēntǐ hǎo.",
+    "answerPy": "Lǜsè chūxíng bùjǐn néng bǎohù huánjìng, hái duì shēntǐ hǎo.",
     "note": "Ôn 不仅……还…… (Bài 3 · điểm 2).",
     "pair": "不仅……还……"
    },
@@ -3834,7 +3834,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đã biết rác ảnh hưởng đến môi trường thì phải làm tốt việc bảo vệ môi trường.",
     "answer": "既然知道垃圾会影响环境，就应该做好环保。",
-    "answerPy": "Jìrán zhīdao lājī huì yǐngxiǎng huánjìng, jiù yīnggāi zuò hǎo huánbǎo.",
+    "answerPy": "Jìrán zhīdao lājī huì yǐngxiǎng huánjìng, jiù yīnggāi zuòhǎo huánbǎo.",
     "note": "Ôn 既然……就…… (Bài 7 · điểm 2).",
     "pair": "既然……就……"
    }
@@ -3892,12 +3892,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "二、拒绝浪费。节约资源，坚持一水多用、人走灯关、餐餐都“光盘”。",
-  "ex_py": "Èr, jùjué làngfèi. Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cān cān dōu “guāng pán”.",
+  "ex_py": "Èr, jùjué làngfèi. Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cāncan dōu “guāngpán”.",
   "ex_vn": "Hai, nói không với lãng phí. Tiết kiệm tài nguyên, kiên trì một nước dùng nhiều lần, người đi đèn tắt, bữa nào cũng ăn sạch đĩa.",
   "exList": [
    {
     "zh": "二、拒绝浪费。节约资源，坚持一水多用、人走灯关、餐餐都“光盘”。",
-    "py": "Èr, jùjué làngfèi. Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cān cān dōu “guāng pán”.",
+    "py": "Èr, jùjué làngfèi. Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cāncan dōu “guāngpán”.",
     "vn": "Hai, nói không với lãng phí. Tiết kiệm tài nguyên, kiên trì một nước dùng nhiều lần, người đi đèn tắt, bữa nào cũng ăn sạch đĩa."
    },
    {
@@ -3945,7 +3945,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Dù cô ấy rất muốn đi, nhưng cuối cùng vẫn từ chối.",
     "answer": "尽管她很想去，但是最后还是拒绝了。",
-    "answerPy": "Jǐnguǎn tā hěn xiǎng qù, dànshì zuìhòu háishì jùjué le.",
+    "answerPy": "Jǐnguǎn tā hěn xiǎng qù, dànshì zuìhòu háishi jùjué le.",
     "note": "Ôn 尽管……但是…… (Bài 9 · điểm 2).",
     "pair": "尽管……但是……"
    }
@@ -4048,7 +4048,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Gọi nhiều món như vậy, ăn không hết thì lãng phí lắm.",
     "answer": "点这么多菜，吃不了太浪费了。",
-    "answerPy": "Diǎn zhème duō cài, chī bù le tài làngfèi le.",
+    "answerPy": "Diǎn zhème duō cài, chī bu le tài làngfèi le.",
     "note": "Ôn V不了 (Bài 4 · điểm 1).",
     "pair": "V不了"
    },
@@ -4084,12 +4084,12 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "节约用水",
-    "py": "Jiéyuē yòng shuǐ",
+    "py": "Jiéyuē yòngshuǐ",
     "vn": "tiết kiệm nước"
    },
    {
     "zh": "节约用电",
-    "py": "Jiéyuē yòng diàn",
+    "py": "Jiéyuē yòngdiàn",
     "vn": "tiết kiệm điện"
    },
    {
@@ -4114,17 +4114,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "节约资源，坚持一水多用、人走灯关、餐餐都“光盘”。",
-  "ex_py": "Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cān cān dōu “guāng pán”.",
+  "ex_py": "Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cāncan dōu “guāngpán”.",
   "ex_vn": "Tiết kiệm tài nguyên, kiên trì một nước dùng nhiều lần, người đi đèn tắt, bữa nào cũng ăn sạch đĩa.",
   "exList": [
    {
     "zh": "节约资源，坚持一水多用、人走灯关、餐餐都“光盘”。",
-    "py": "Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cān cān dōu “guāng pán”.",
+    "py": "Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cāncan dōu “guāngpán”.",
     "vn": "Tiết kiệm tài nguyên, kiên trì một nước dùng nhiều lần, người đi đèn tắt, bữa nào cũng ăn sạch đĩa."
    },
    {
     "zh": "每个人平时都应该注意节约用水。",
-    "py": "Měi gè rén píngshí dōu yīnggāi zhùyì jiéyuē yòng shuǐ.",
+    "py": "Měi gè rén píngshí dōu yīnggāi zhùyì jiéyuē yòngshuǐ.",
     "vn": "Mỗi người hằng ngày đều nên chú ý tiết kiệm nước."
    }
   ],
@@ -4159,7 +4159,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Phải tiết kiệm điện, nếu không tiền điện sẽ rất đắt.",
     "answer": "要节约用电，否则电费会很贵。",
-    "answerPy": "Yào jiéyuē yòng diàn, fǒuzé diàn fèi huì hěn guì.",
+    "answerPy": "Yào jiéyuē yòngdiàn, fǒuzé diànfèi huì hěn guì.",
     "note": "Ôn 否则 (Bài 8 · điểm 2) + 费 (từ Bài 4).",
     "pair": "……，否则……"
    },
@@ -4231,7 +4231,7 @@ var vocabData = [
    },
    {
     "zh": "水是非常重要的资源，我们要节约用水。",
-    "py": "Shuǐ shì fēicháng zhòngyào de zīyuán, wǒmen yào jiéyuē yòng shuǐ.",
+    "py": "Shuǐ shì fēicháng zhòngyào de zīyuán, wǒmen yào jiéyuē yòngshuǐ.",
     "vn": "Nước là tài nguyên vô cùng quan trọng, chúng ta phải tiết kiệm nước."
    }
   ],
@@ -4302,7 +4302,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "吃光",
-    "py": "Chī guāng",
+    "py": "Chīguāng",
     "vn": "ăn sạch"
    },
    {
@@ -4312,12 +4312,12 @@ var vocabData = [
    },
    {
     "zh": "卖光了",
-    "py": "Mài guāng le",
+    "py": "Màiguāng le",
     "vn": "bán sạch rồi"
    },
    {
     "zh": "光盘",
-    "py": "Guāng pán",
+    "py": "Guāngpán",
     "vn": "ăn sạch đĩa"
    }
   ],
@@ -4328,17 +4328,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "节约资源，坚持一水多用、人走灯关、餐餐都“光盘”。",
-  "ex_py": "Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cān cān dōu “guāng pán”.",
+  "ex_py": "Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cāncan dōu “guāngpán”.",
   "ex_vn": "Tiết kiệm tài nguyên, kiên trì một nước dùng nhiều lần, người đi đèn tắt, bữa nào cũng ăn sạch đĩa.",
   "exList": [
    {
     "zh": "节约资源，坚持一水多用、人走灯关、餐餐都“光盘”。",
-    "py": "Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cān cān dōu “guāng pán”.",
+    "py": "Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cāncan dōu “guāngpán”.",
     "vn": "Tiết kiệm tài nguyên, kiên trì một nước dùng nhiều lần, người đi đèn tắt, bữa nào cũng ăn sạch đĩa."
    },
    {
     "zh": "菜太好吃了，我们一会儿就吃光了。",
-    "py": "Cài tài hǎochī le, wǒmen yíhuìr jiù chī guāng le.",
+    "py": "Cài tài hǎochī le, wǒmen yíhuìr jiù chīguāng le.",
     "vn": "Món ăn ngon quá, chúng tôi một lát đã ăn sạch."
    }
   ],
@@ -4361,7 +4361,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tiền tiêu hết sạch rồi, tháng này tôi phải tiết kiệm một chút.",
     "answer": "钱都花光了，这个月我得节约一点儿。",
-    "answerPy": "Qián dōu huā guāng le, zhège yuè wǒ děi jiéyuē yìdiǎnr.",
+    "answerPy": "Qián dōu huāguāng le, zhège yuè wǒ děi jiéyuē yìdiǎnr.",
     "note": "V + 光; 得 đọc děi (phải).",
     "pair": "V光"
    },
@@ -4369,7 +4369,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cơm ít nhất phải ăn sạch, không được để thừa.",
     "answer": "饭至少得吃光，不能剩。",
-    "answerPy": "Fàn zhìshǎo de chī guāng, bù néng shèng.",
+    "answerPy": "Fàn zhìshǎo de chīguāng, bù néng shèng.",
     "note": "Ôn 至少 (Bài 5 · điểm 1) + 剩 (từ Bài 4).",
     "pair": "至少"
    }
@@ -4480,7 +4480,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bất kể đi đâu, anh ấy đều mang rác của mình đi.",
     "answer": "不管去哪儿，他都把自己的垃圾带走。",
-    "answerPy": "Bùguǎn qù nǎr, tā dōu bǎ zìjǐ de lājī dài zǒu.",
+    "answerPy": "Bùguǎn qù nǎr, tā dōu bǎ zìjǐ de lājī dàizǒu.",
     "note": "Ôn 不管……都…… (Bài 8 · điểm 1).",
     "pair": "不管……都……"
    }
@@ -4538,12 +4538,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "学习垃圾分类知识，从小事做起，做好垃圾分类。",
-  "ex_py": "Xuéxí lājī fēnlèi zhīshi, cóng xiǎoshì zuò qǐ, zuò hǎo lājī fēnlèi.",
+  "ex_py": "Xuéxí lājī fēnlèi zhīshi, cóng xiǎoshì zuòqǐ, zuòhǎo lājī fēnlèi.",
   "ex_vn": "Học kiến thức phân loại rác, bắt đầu từ việc nhỏ, làm tốt việc phân loại rác.",
   "exList": [
    {
     "zh": "学习垃圾分类知识，从小事做起，做好垃圾分类。",
-    "py": "Xuéxí lājī fēnlèi zhīshi, cóng xiǎoshì zuò qǐ, zuò hǎo lājī fēnlèi.",
+    "py": "Xuéxí lājī fēnlèi zhīshi, cóng xiǎoshì zuòqǐ, zuòhǎo lājī fēnlèi.",
     "vn": "Học kiến thức phân loại rác, bắt đầu từ việc nhỏ, làm tốt việc phân loại rác."
    },
    {
@@ -4591,7 +4591,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Không chỉ ở trường, ở nhà tôi cũng phân loại rác.",
     "answer": "不仅在学校，在家里我也做垃圾分类。",
-    "answerPy": "Bùjǐn zài xuéxiào, zài jiā lǐ wǒ yě zuò lājī fēnlèi.",
+    "answerPy": "Bùjǐn zài xuéxiào, zài jiāli wǒ yě zuò lājī fēnlèi.",
     "note": "Ôn 不仅……也…… (Bài 3 · điểm 2).",
     "pair": "不仅……也……"
    }
@@ -4629,7 +4629,7 @@ var vocabData = [
    },
    {
     "zh": "日常用语",
-    "py": "Rì chángyòng yǔ",
+    "py": "Rìcháng yòngyǔ",
     "vn": "câu nói thường ngày"
    },
    {
@@ -4649,12 +4649,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "同学们，让我们共同努力，让绿色生活成为我们的日常习惯！",
-  "ex_py": "Tóngxué men, ràng wǒmen gòngtóng nǔlì, ràng lǜsè shēnghuó chéngwéi wǒmen de rìcháng xíguàn!",
+  "ex_py": "Tóngxuémen, ràng wǒmen gòngtóng nǔlì, ràng lǜsè shēnghuó chéngwéi wǒmen de rìcháng xíguàn!",
   "ex_vn": "Các bạn ơi, chúng ta hãy cùng nỗ lực, để sống xanh trở thành thói quen hằng ngày của chúng ta!",
   "exList": [
    {
     "zh": "同学们，让我们共同努力，让绿色生活成为我们的日常习惯！",
-    "py": "Tóngxué men, ràng wǒmen gòngtóng nǔlì, ràng lǜsè shēnghuó chéngwéi wǒmen de rìcháng xíguàn!",
+    "py": "Tóngxuémen, ràng wǒmen gòngtóng nǔlì, ràng lǜsè shēnghuó chéngwéi wǒmen de rìcháng xíguàn!",
     "vn": "Các bạn ơi, chúng ta hãy cùng nỗ lực, để sống xanh trở thành thói quen hằng ngày của chúng ta!"
    },
    {
@@ -4702,7 +4702,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đi lại xanh khiến cuộc sống thường ngày của chúng ta lành mạnh hơn.",
     "answer": "绿色出行使我们的日常生活更健康了。",
-    "answerPy": "Lǜsè chū xíng shǐ wǒmen de rìcháng shēnghuó gèng jiànkāng le.",
+    "answerPy": "Lǜsè chūxíng shǐ wǒmen de rìcháng shēnghuó gèng jiànkāng le.",
     "note": "Ôn 使 (Bài 7 · điểm 4).",
     "pair": "A 使 B + Adj"
    }
@@ -4787,7 +4787,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "你看，这个小伙子从广州去哈尔滨出差，没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-    "py": "Nǐ kàn, zhège xiǎohuǒzi cóng Guǎngzhōu qù Hā'ěrbīn chūchāi, méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le.",
+    "py": "Nǐ kàn, zhège xiǎohuǒzi cóng Guǎngzhōu qù Hā'ěrbīn chūchāi, méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le.",
     "vn": "Em xem này, cậu thanh niên này từ Quảng Châu đi công tác Cáp Nhĩ Tân, không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng luôn."
    },
    {
@@ -4805,19 +4805,19 @@ var dialogData = [
    {
     "sp": 1,
     "zh": "就是呢，冬天北方和南方的温度差别还是很大的。",
-    "py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishì hěn dà de.",
+    "py": "Jiùshì ne, dōngtiān běifāng hé nánfāng de wēndù chābié háishi hěn dà de.",
     "vn": "Chuẩn luôn, mùa đông nhiệt độ miền Bắc và miền Nam chênh lệch vẫn rất lớn."
    },
    {
     "sp": 0,
     "zh": "所以冬天来北方，尤其是东北，一定要提前查好目的地的天气，看看下不下雪，气温怎么样。",
-    "py": "Suǒyǐ dōngtiān lái běifāng, yóuqí shì dōng běi, yídìng yào tíqián chá hǎo mùdìdì de tiānqì, kàn kàn xià bu xià xuě, qìwēn zěnmeyàng.",
+    "py": "Suǒyǐ dōngtiān lái běifāng, yóuqí shì dōng běi, yídìng yào tíqián chá hǎo mùdìdì de tiānqì, kànkan xià bu xià xuě, qìwēn zěnmeyàng.",
     "vn": "Cho nên mùa đông đến miền Bắc, nhất là vùng Đông Bắc, nhất định phải xem trước thời tiết nơi đến, xem có tuyết rơi không, nhiệt độ thế nào."
    },
    {
     "sp": 1,
     "zh": "对。更重要的是，说什么也得穿上厚一点儿的衣服。",
-    "py": "Duì. Gèng zhòngyào de shì, shuō shénme yě děi chuān shàng hòu yìdiǎnr de yīfu.",
+    "py": "Duì. Gèng zhòngyào de shì, shuō shénme yě děi chuānshang hòu yìdiǎnr de yīfu.",
     "vn": "Đúng. Quan trọng hơn là, dù thế nào cũng phải mặc quần áo dày một chút."
    }
   ]
@@ -4871,25 +4871,25 @@ var dialogData = [
    {
     "sp": 1,
     "zh": "我们刚刚还说呢，家月春节时要去广州，我计划去哈尔滨。",
-    "py": "Wǒmen gānggāng hái shuō ne, Jiāyuè chūn jié shí yào qù Guǎngzhōu, wǒ jìhuà qù Hā'ěrbīn.",
+    "py": "Wǒmen gānggāng hái shuō ne, Jiāyuè Chūnjié shí yào qù Guǎngzhōu, wǒ jìhuà qù Hā'ěrbīn.",
     "vn": "Bọn mình vừa nói chuyện này xong, Tết Gia Nguyệt sẽ đi Quảng Châu, còn mình định đi Cáp Nhĩ Tân."
    },
    {
     "sp": 0,
     "zh": "那时候广州暖和，但哈尔滨特别冷，气温一般都低于零下十摄氏度甚至零下二十摄氏度，这么低的温度你受不了吧？",
-    "py": "Nà shíhou Guǎngzhōu nuǎnhuo, dàn Hā'ěrbīn tèbié lěng, qìwēn yìbān dōu dīyú líng xià shí shèshìdù shènzhì líng xià èr shí shèshìdù, zhème dī de wēndù nǐ shòubuliǎo ba?",
+    "py": "Nàshíhou Guǎngzhōu nuǎnhuo, dàn Hā'ěrbīn tèbié lěng, qìwēn yìbān dōu dīyú líng xià shí shèshìdù shènzhì líng xià èrshí shèshìdù, zhème dī de wēndù nǐ shòubuliǎo ba?",
     "vn": "Lúc đó Quảng Châu thì ấm, nhưng Cáp Nhĩ Tân cực lạnh, nhiệt độ thường dưới âm 10 độ C, thậm chí âm 20 độ C, nhiệt độ thấp thế này chắc cậu chịu không nổi đâu nhỉ?"
    },
    {
     "sp": 1,
     "zh": "没问题，受得了，我有的是厚衣服。我去哈尔滨主要是想看雪，听说春节时那里会举办很多活动。",
-    "py": "Méi wèntí, shòu de liǎo, wǒ yǒudeshì hòu yīfu. Wǒ qù Hā'ěrbīn zhǔyào shì xiǎng kàn xuě, tīngshuō chūn jié shí nàli huì jǔbàn hěn duō huódòng.",
+    "py": "Méi wèntí, shòu de liǎo, wǒ yǒudeshì hòu yīfu. Wǒ qù Hā'ěrbīn zhǔyào shì xiǎng kàn xuě, tīngshuō Chūnjié shí nàli huì jǔbàn hěn duō huódòng.",
     "vn": "Không sao, chịu được, áo dày mình có thừa. Mình đi Cáp Nhĩ Tân chủ yếu là muốn ngắm tuyết, nghe nói dịp Tết ở đó tổ chức rất nhiều hoạt động."
    },
    {
     "sp": 2,
     "zh": "我想在广州过年，那里冬天比较暖和。而且我喜欢看花，听说广州的鲜花市场很有名，里面有各种植物。",
-    "py": "Wǒ xiǎng zài Guǎngzhōu guònián, nàli dōngtiān bǐjiào nuǎnhuo. Érqiě wǒ xǐhuan kàn huā, tīngshuō Guǎngzhōu de xiān huā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù.",
+    "py": "Wǒ xiǎng zài Guǎngzhōu guònián, nàli dōngtiān bǐjiào nuǎnhuo. Érqiě wǒ xǐhuan kàn huā, tīngshuō Guǎngzhōu de xiānhuā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù.",
     "vn": "Mình muốn ăn Tết ở Quảng Châu, mùa đông ở đó khá ấm. Hơn nữa mình thích ngắm hoa, nghe nói chợ hoa tươi Quảng Châu rất nổi tiếng, trong đó có đủ loại cây cối."
    },
    {
@@ -4935,19 +4935,19 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "广州和哈尔滨，一个在南方，一个在北方，两个城市之间的距离有三千多公里，气候也大不相同。",
-    "py": "Guǎngzhōu hé Hā'ěrbīn, yí gè zài nánfāng, yí gè zài běifāng, liǎng gè chéngshì zhī jiān de jùlí yǒu sān qiān duō gōnglǐ, qìhòu yě dà bù xiāngtóng.",
+    "py": "Guǎngzhōu hé Hā'ěrbīn, yí gè zài nánfāng, yí gè zài běifāng, liǎng gè chéngshì zhījiān de jùlí yǒu sānqiān duō gōnglǐ, qìhòu yě dà bù xiāngtóng.",
     "vn": "Quảng Châu và Cáp Nhĩ Tân, một ở miền Nam, một ở miền Bắc, khoảng cách giữa hai thành phố là hơn ba nghìn ki-lô-mét, khí hậu cũng khác nhau rất nhiều."
    },
    {
     "sp": 0,
     "zh": "广州基本上没有冬天，而哈尔滨的冬天一般会从十月开始，到第二年的三四月才结束。",
-    "py": "Guǎngzhōu jīběn shàng méiyǒu dōngtiān, ér Hā'ěrbīn de dōngtiān yìbān huì cóng shí yuè kāishǐ, dào dì èr nián de sān sì yuè cái jiéshù.",
+    "py": "Guǎngzhōu jīběn shàng méiyǒu dōngtiān, ér Hā'ěrbīn de dōngtiān yìbān huì cóng shíyuè kāishǐ, dào dì èr nián de sān sì yuè cái jiéshù.",
     "vn": "Quảng Châu gần như không có mùa đông, còn mùa đông Cáp Nhĩ Tân thường bắt đầu từ tháng Mười, đến tháng Ba, tháng Tư năm sau mới kết thúc."
    },
    {
     "sp": 0,
     "zh": "广州四季开满鲜花，所以又叫“花城”；哈尔滨冬天冰雪多，所以也叫“冰城”。",
-    "py": "Guǎngzhōu sìjì kāi mǎn xiān huā, suǒyǐ yòu jiào “huā chéng”; Hā'ěrbīn dōngtiān bīng xuě duō, suǒyǐ yě jiào “bīng chéng”.",
+    "py": "Guǎngzhōu sìjì kāimǎn xiānhuā, suǒyǐ yòu jiào “huāchéng”; Hā'ěrbīn dōngtiān bīngxuě duō, suǒyǐ yě jiào “bīng chéng”.",
     "vn": "Quảng Châu bốn mùa hoa nở khắp nơi, nên còn gọi là “Thành phố hoa”; Cáp Nhĩ Tân mùa đông nhiều băng tuyết, nên cũng gọi là “Thành phố băng”."
    },
    {
@@ -4959,19 +4959,19 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "哈尔滨方言和普通话听起来比较像，而广州方言和普通话差别较大。",
-    "py": "Hā'ěrbīn fāngyán hé pǔtōnghuà tīng qǐlái bǐjiào xiàng, ér Guǎngzhōu fāngyán hé pǔtōnghuà chābié jiào dà.",
+    "py": "Hā'ěrbīn fāngyán hé pǔtōnghuà tīng qǐlai bǐjiào xiàng, ér Guǎngzhōu fāngyán hé pǔtōnghuà chābié jiào dà.",
     "vn": "Tiếng Cáp Nhĩ Tân nghe khá giống tiếng phổ thông, còn tiếng Quảng Châu thì khác tiếng phổ thông tương đối nhiều."
    },
    {
     "sp": 0,
     "zh": "如果广州人和哈尔滨人都只使用自己的方言，那么交流就很困难，甚至还可能引起误会。",
-    "py": "Rúguǒ Guǎngzhōu rén hé Hā'ěrbīn rén dōu zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnán, shènzhì hái kěnéng yǐnqǐ wùhuì.",
+    "py": "Rúguǒ Guǎngzhōu rén hé Hā'ěrbīn rén dōu zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnan, shènzhì hái kěnéng yǐnqǐ wùhuì.",
     "vn": "Nếu người Quảng Châu và người Cáp Nhĩ Tân đều chỉ dùng phương ngữ của mình thì giao tiếp sẽ rất khó khăn, thậm chí còn có thể gây hiểu lầm."
    },
    {
     "sp": 0,
     "zh": "其实，中国很多地方都有自己的方言，所以，为了顺利交流，中国人从小都要学习普通话。",
-    "py": "Qíshí, Zhōngguó hěn duō dìfang dōu yǒu zìjǐ de fāngyán, suǒyǐ, wèile shùnlì jiāoliú, zhōngguórén cóng xiǎo dōu yào xuéxí pǔtōnghuà.",
+    "py": "Qíshí, Zhōngguó hěn duō dìfang dōu yǒu zìjǐ de fāngyán, suǒyǐ, wèile shùnlì jiāoliú, Zhōngguórén cóng xiǎo dōu yào xuéxí pǔtōnghuà.",
     "vn": "Thật ra, nhiều nơi ở Trung Quốc đều có phương ngữ riêng, vì vậy, để giao tiếp thuận lợi, người Trung Quốc từ nhỏ đều phải học tiếng phổ thông."
    }
   ],
@@ -5012,19 +5012,19 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "亲爱的同学们：",
-    "py": "Qīn'ài de tóngxué men:",
+    "py": "Qīn'ài de tóngxuémen:",
     "vn": "Các bạn sinh viên thân mến:"
    },
    {
     "sp": 0,
     "zh": "今年的“世界环境日”，我们再次开展“绿色生活”活动，希望同学们做到：",
-    "py": "Jīnnián de “shìjiè huánjìng rì”, wǒmen zàicì kāizhǎn “lǜsè shēnghuó” huódòng, xīwàng tóngxué men zuò dào:",
+    "py": "Jīnnián de “shìjiè huánjìng rì”, wǒmen zàicì kāizhǎn “lǜsè shēnghuó” huódòng, xīwàng tóngxuémen zuòdào:",
     "vn": "Ngày Môi trường Thế giới năm nay, chúng ta lại một lần nữa phát động hoạt động “Sống xanh”, mong các bạn làm được những điều sau:"
    },
    {
     "sp": 0,
     "zh": "一、绿色出行",
-    "py": "Yī, lǜsè chū xíng",
+    "py": "Yī, lǜsè chūxíng",
     "vn": "Một, đi lại xanh"
    },
    {
@@ -5054,7 +5054,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "节约资源，坚持一水多用、人走灯关、餐餐都“光盘”。",
-    "py": "Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cān cān dōu “guāng pán”.",
+    "py": "Jiéyuē zīyuán, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cāncan dōu “guāngpán”.",
     "vn": "Tiết kiệm tài nguyên, kiên trì một nước dùng nhiều lần, người đi đèn tắt, bữa nào cũng ăn sạch đĩa."
    },
    {
@@ -5066,7 +5066,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "积极参加校园、小区环保活动，学习垃圾分类知识，从小事做起，做好垃圾分类。",
-    "py": "Jījí cānjiā xiàoyuán, xiǎoqū huánbǎo huódòng, xuéxí lājī fēnlèi zhīshi, cóng xiǎoshì zuò qǐ, zuò hǎo lājī fēnlèi.",
+    "py": "Jījí cānjiā xiàoyuán, xiǎoqū huánbǎo huódòng, xuéxí lājī fēnlèi zhīshi, cóng xiǎoshì zuòqǐ, zuòhǎo lājī fēnlèi.",
     "vn": "Tích cực tham gia các hoạt động bảo vệ môi trường trong trường và khu dân cư, học kiến thức phân loại rác, bắt đầu từ những việc nhỏ, làm tốt việc phân loại rác."
    },
    {
@@ -5078,13 +5078,13 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "同学们，让我们共同努力，让绿色生活成为我们的日常习惯！",
-    "py": "Tóngxué men, ràng wǒmen gòngtóng nǔlì, ràng lǜsè shēnghuó chéngwéi wǒmen de rìcháng xíguàn!",
+    "py": "Tóngxuémen, ràng wǒmen gòngtóng nǔlì, ràng lǜsè shēnghuó chéngwéi wǒmen de rìcháng xíguàn!",
     "vn": "Các bạn ơi, chúng ta hãy cùng nhau nỗ lực, để sống xanh trở thành thói quen hằng ngày của chúng ta!"
    },
    {
     "sp": 0,
     "zh": "校学生会",
-    "py": "Xiào xuésheng huì",
+    "py": "Xiào xuéshēnghuì",
     "vn": "Hội sinh viên trường"
    },
    {
@@ -5570,7 +5570,7 @@ var translateData = [
  {
   "vi": "Quan trọng hơn là, dù thế nào cũng phải mặc quần áo dày một chút.",
   "zh": "更重要的是，说什么也得穿上厚一点儿的衣服。",
-  "py": "Gèng zhòngyào de shì, shuō shénme yě děi chuān shàng hòu yìdiǎnr de yīfu."
+  "py": "Gèng zhòngyào de shì, shuō shénme yě děi chuānshang hòu yìdiǎnr de yīfu."
  },
  {
   "vi": "Không sao, chịu được, áo dày tớ có thừa.",
@@ -5580,7 +5580,7 @@ var translateData = [
  {
   "vi": "Quảng Châu gần như không có mùa đông, còn mùa đông Cáp Nhĩ Tân thường bắt đầu từ tháng Mười.",
   "zh": "广州基本上没有冬天，而哈尔滨的冬天一般会从十月开始。",
-  "py": "Guǎngzhōu jīběn shàng méiyǒu dōngtiān, ér Hā'ěrbīn de dōngtiān yìbān huì cóng shí yuè kāishǐ."
+  "py": "Guǎngzhōu jīběn shàng méiyǒu dōngtiān, ér Hā'ěrbīn de dōngtiān yìbān huì cóng shíyuè kāishǐ."
  },
  {
   "vi": "Ngày Môi trường Thế giới năm nay, chúng ta lại một lần nữa phát động hoạt động “Sống xanh”.",
@@ -5590,7 +5590,7 @@ var translateData = [
  {
   "vi": "Mùa đông nhiệt độ miền Bắc và miền Nam chênh lệch vẫn rất lớn.",
   "zh": "冬天北方和南方的温度差别还是很大的。",
-  "py": "Dōngtiān běifāng hé nánfāng de wēndù chābié háishì hěn dà de."
+  "py": "Dōngtiān běifāng hé nánfāng de wēndù chābié háishi hěn dà de."
  },
  {
   "vi": "Bảo vệ môi trường là trách nhiệm của mỗi người.",
@@ -5602,7 +5602,7 @@ var translateDataRev = [
  {
   "vi": "Không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng.",
   "zh": "没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。",
-  "py": "Méi xiǎng dào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shí jǐ dù, bǎ tā dòng huài le."
+  "py": "Méi xiǎngdào Hā'ěrbīn de qìwēn jiàng dào le líng xià èr shíjǐ dù, bǎ tā dònghuài le."
  },
  {
   "vi": "Nhiệt độ thấp thế này chắc cậu chịu không nổi đâu nhỉ?",
@@ -5612,12 +5612,12 @@ var translateDataRev = [
  {
   "vi": "Nghe nói chợ hoa tươi Quảng Châu rất nổi tiếng, trong đó có đủ loại cây cối.",
   "zh": "听说广州的鲜花市场很有名，里面有各种植物。",
-  "py": "Tīngshuō Guǎngzhōu de xiān huā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù."
+  "py": "Tīngshuō Guǎngzhōu de xiānhuā shìchǎng hěn yǒumíng, lǐmian yǒu gèzhǒng zhíwù."
  },
  {
   "vi": "Nếu chỉ dùng phương ngữ của mình thì giao tiếp sẽ rất khó, thậm chí còn có thể gây hiểu lầm.",
   "zh": "如果只使用自己的方言，那么交流就很困难，甚至还可能引起误会。",
-  "py": "Rúguǒ zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnán, shènzhì hái kěnéng yǐnqǐ wùhuì."
+  "py": "Rúguǒ zhǐ shǐyòng zìjǐ de fāngyán, nàme jiāoliú jiù hěn kùnnan, shènzhì hái kěnéng yǐnqǐ wùhuì."
  },
  {
   "vi": "Tiết kiệm tài nguyên, kiên trì một nước dùng nhiều lần, người đi đèn tắt.",
@@ -5866,6 +5866,6 @@ var writingData = {
  ],
  "model": {
   "zh": "自然环境和我们的生活紧密相关。我们吃的、喝的、用的，都来自自然环境。环境好，我们的生活才会更健康，而环境不好，很多问题都会出现。现在，垃圾越来越多，有的地方气温越来越高，资源也越来越少，所以保护环境意义重大。那么，我们应该怎么做呢？首先，要选择绿色出行。距离短时走路或者骑自行车，距离长时乘坐公交车或者地铁，这样不仅能节约资源，还对身体好。此外，在日常生活中要拒绝浪费，坚持一水多用、人走灯关、餐餐都“光盘”。最后，要学习垃圾分类知识，从小事做起，做好垃圾分类。保护环境是每个人的责任，不管多忙，我们说什么也得做好这些小事。让我们共同努力，让绿色生活成为我们的日常习惯！",
-  "py": "Zìrán huánjìng hé wǒmen de shēnghuó jǐn mì xiāngguān. Wǒmen chī de, hē de, yòng de, dōu láizì zìrán huánjìng. Huánjìng hǎo, wǒmen de shēnghuó cái huì gèng jiànkāng, ér huánjìng bù hǎo, hěn duō wèntí dōu huì chūxiàn. Xiànzài, lājī yuèláiyuè duō, yǒude dìfang qìwēn yuèláiyuè gāo, zīyuán yě yuèláiyuè shǎo, suǒyǐ bǎohù huánjìng yìyì zhòngdà. Nàme, wǒmen yīnggāi zěnme zuò ne? Shǒuxiān, yào xuǎnzé lǜsè chū xíng. Jùlí duǎn shí zǒulù huòzhě qí zìxíngchē, jùlí cháng shí chéngzuò gōngjiāochē huòzhě dìtiě, zhèyàng bùjǐn néng jiéyuē zīyuán, hái duì shēntǐ hǎo. Cǐwài, zài rìcháng shēnghuó zhōng yào jùjué làngfèi, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cān cān dōu “guāng pán”. Zuìhòu, yào xuéxí lājī fēnlèi zhīshi, cóng xiǎoshì zuò qǐ, zuò hǎo lājī fēnlèi. Bǎohù huánjìng shì měi gè rén de zérèn, bùguǎn duō máng, wǒmen shuō shénme yě děi zuò hǎo zhèxiē xiǎoshì. Ràng wǒmen gòngtóng nǔlì, ràng lǜsè shēnghuó chéngwéi wǒmen de rìcháng xíguàn!"
+  "py": "Zìrán huánjìng hé wǒmen de shēnghuó jǐn mì xiāngguān. Wǒmen chī de, hē de, yòng de, dōu láizì zìrán huánjìng. Huánjìng hǎo, wǒmen de shēnghuó cái huì gèng jiànkāng, ér huánjìng bù hǎo, hěn duō wèntí dōu huì chūxiàn. Xiànzài, lājī yuèláiyuè duō, yǒude dìfang qìwēn yuèláiyuè gāo, zīyuán yě yuèláiyuè shǎo, suǒyǐ bǎohù huánjìng yìyì zhòngdà. Nàme, wǒmen yīnggāi zěnme zuò ne? Shǒuxiān, yào xuǎnzé lǜsè chūxíng. Jùlí duǎn shí zǒulù huòzhě qí zìxíngchē, jùlí cháng shí chéngzuò gōngjiāochē huòzhě dìtiě, zhèyàng bùjǐn néng jiéyuē zīyuán, hái duì shēntǐ hǎo. Cǐwài, zài rìcháng shēnghuó zhōng yào jùjué làngfèi, jiānchí yì shuǐ duō yòng, rén zǒu dēng guān, cāncan dōu “guāngpán”. Zuìhòu, yào xuéxí lājī fēnlèi zhīshi, cóng xiǎoshì zuòqǐ, zuòhǎo lājī fēnlèi. Bǎohù huánjìng shì měi gè rén de zérèn, bùguǎn duō máng, wǒmen shuō shénme yě děi zuòhǎo zhèxiē xiǎoshì. Ràng wǒmen gòngtóng nǔlì, ràng lǜsè shēnghuó chéngwéi wǒmen de rìcháng xíguàn!"
  }
 };

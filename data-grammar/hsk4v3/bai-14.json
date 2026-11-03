@@ -1,0 +1,667 @@
+{
+ "/lessons/hsk4v3-bai-14.html": {
+  "points": [
+   {
+    "title": "语气副词“究竟” — rốt cuộc, cuối cùng thì",
+    "errors": [
+     {
+      "wrong": "你究竟去吗？",
+      "why": "Câu có 究竟 không dùng 吗 — phải là câu hỏi chính phản hoặc có đại từ nghi vấn.",
+      "right": "你究竟去不去？"
+     },
+     {
+      "wrong": "谁究竟拿走了我的书？",
+      "why": "Chủ ngữ là đại từ nghi vấn (谁) thì 究竟 phải đứng trước nó.",
+      "right": "究竟谁拿走了我的书？"
+     },
+     {
+      "wrong": "这件衣服究竟很贵。",
+      "why": "究竟 dùng trong câu hỏi để truy hỏi, không dùng trong câu trần thuật khẳng định bình thường.",
+      "right": "这件衣服究竟贵不贵？"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… rốt cuộc nên mua loại nào đây?”",
+      "pre": "这里茶叶这么多，",
+      "blank": "究竟",
+      "post": "买哪种好呢？",
+      "options": [
+       "究竟",
+       "已经",
+       "一共"
+      ],
+      "answer": 0,
+      "explanation": "究竟 + câu hỏi có đại từ nghi vấn 哪."
+     },
+     {
+      "context": "“… rốt cuộc anh ấy đi đâu rồi?”",
+      "pre": "我一直没找到他，他究竟去哪里了",
+      "blank": "呢",
+      "post": "？",
+      "options": [
+       "呢",
+       "吗",
+       "吧"
+      ],
+      "answer": 0,
+      "explanation": "Câu có 究竟 cuối câu dùng 呢, không dùng 吗."
+     },
+     {
+      "context": "“Mai rốt cuộc cậu có đi hay không?”",
+      "pre": "你明天究竟去",
+      "blank": "不",
+      "post": "去？快决定吧！",
+      "options": [
+       "不",
+       "没",
+       "也"
+      ],
+      "answer": 0,
+      "explanation": "究竟 + V不V (việc tương lai dùng 不)."
+     },
+     {
+      "context": "“Rốt cuộc là đúng hay sai?”",
+      "pre": "",
+      "blank": "究竟",
+      "post": "是对还是错？我现在也不清楚。",
+      "options": [
+       "究竟",
+       "一定",
+       "已经"
+      ],
+      "answer": 0,
+      "explanation": "究竟 + 是A还是B."
+     },
+     {
+      "context": "“… rốt cuộc cậu thích đôi nào?”",
+      "pre": "这两双鞋，你究竟喜欢",
+      "blank": "哪",
+      "post": "一双？",
+      "options": [
+       "哪",
+       "那",
+       "这"
+      ],
+      "answer": 0,
+      "explanation": "Câu hỏi phải có đại từ nghi vấn 哪."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Rốt cuộc bạn muốn mua gì?”",
+      "words": [
+       "你",
+       "究竟",
+       "想",
+       "买",
+       "什么",
+       "呢"
+      ],
+      "answer": "你究竟想买什么呢？",
+      "explanation": "Chủ ngữ + 究竟 + V + 什么 + 呢."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Rốt cuộc ai đi dự thi?”",
+      "words": [
+       "究竟",
+       "谁",
+       "去",
+       "参加",
+       "比赛"
+      ],
+      "answer": "究竟谁去参加比赛？",
+      "explanation": "Chủ ngữ là 谁 → 究竟 đứng trước 谁."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi không biết rốt cuộc tại sao anh ấy không đến.”",
+      "words": [
+       "我",
+       "不知道",
+       "他",
+       "究竟",
+       "为什么",
+       "不来"
+      ],
+      "answer": "我不知道他究竟为什么不来。",
+      "explanation": "Câu hỏi gián tiếp: 不知道 + chủ ngữ + 究竟 + 为什么."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你究竟喜欢这件外套吗？",
+      "isCorrect": false,
+      "correctVersion": "你究竟喜欢不喜欢这件外套？",
+      "explanation": "究竟 không đi với 吗 → dùng V不V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "究竟是谁告诉你的？",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 究竟 + 是 + 谁."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "谁究竟是你的老师？",
+      "isCorrect": false,
+      "correctVersion": "究竟谁是你的老师？",
+      "explanation": "究竟 đứng trước đại từ nghi vấn làm chủ ngữ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Rốt cuộc bạn muốn mua loại trà nào?",
+      "answer": "你究竟想买哪种茶叶？",
+      "answerPy": "Nǐ jiūjìng xiǎng mǎi nǎ zhǒng cháyè?",
+      "explanation": "究竟 + V + 哪种 + N."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Rốt cuộc ai đã nói với bạn chuyện này?",
+      "answer": "究竟是谁告诉你这件事的？",
+      "answerPy": "Jiūjìng shì shuí gàosu nǐ zhè jiàn shì de?",
+      "explanation": "究竟 + 是 + 谁 + ……的."
+     }
+    ]
+   },
+   {
+    "title": "承接复句“首先……，然后/其次……” — trước hết …, sau đó / thứ đến …",
+    "errors": [
+     {
+      "wrong": "我首先洗手，其次吃饭。",
+      "why": "Hai hành động nối nhau theo thời gian → dùng 然后; 其次 dùng để xếp các ý theo mức độ quan trọng.",
+      "right": "我首先洗手，然后吃饭。"
+     },
+     {
+      "wrong": "先，我们去做市场调查。",
+      "why": "先 không đứng một mình ở đầu câu trước dấu phẩy; muốn tách riêng như vậy phải dùng 首先.",
+      "right": "首先，我们去做市场调查。"
+     },
+     {
+      "wrong": "首先我们去吃饭，然后去看电影，然后去唱歌，然后回家。",
+      "why": "Liệt kê nhiều việc mà cứ lặp 然后 thì rườm; việc cuối dùng 最后.",
+      "right": "首先我们去吃饭，然后去看电影，再去唱歌，最后回家。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… sau đó mới xem chất lượng thế nào.”",
+      "pre": "首先看样子喜不喜欢，",
+      "blank": "然后",
+      "post": "再看质量怎么样。",
+      "options": [
+       "然后",
+       "其次",
+       "首先"
+      ],
+      "answer": 0,
+      "explanation": "Thứ tự thời gian: 首先……，然后再……"
+     },
+     {
+      "context": "“Gặp vấn đề, trước hết nghĩ xem …”",
+      "pre": "遇到问题，",
+      "blank": "首先",
+      "post": "想想问题为什么出现，然后再积极想办法解决。",
+      "options": [
+       "首先",
+       "最后",
+       "其次"
+      ],
+      "answer": 0,
+      "explanation": "Vế đầu dùng 首先."
+     },
+     {
+      "context": "“… sau đó dựa vào bài khóa làm bài tập.”",
+      "pre": "请大家首先读一遍课文，",
+      "blank": "然后",
+      "post": "根据课文完成课后练习。",
+      "options": [
+       "然后",
+       "而且",
+       "加上"
+      ],
+      "answer": 0,
+      "explanation": "首先……，然后……"
+     },
+     {
+      "context": "“… thứ nhất là vì thích, thứ hai là vì gần nhà.”",
+      "pre": "我选这份工作，首先是因为喜欢，",
+      "blank": "其次",
+      "post": "是因为离家近。",
+      "options": [
+       "其次",
+       "然后",
+       "首先"
+      ],
+      "answer": 0,
+      "explanation": "Liệt kê lý do (chính – phụ) → 其次."
+     },
+     {
+      "context": "“… cuối cùng còn phải đọc nhiều viết nhiều.”",
+      "pre": "学中文首先要多听，其次要多说，",
+      "blank": "最后",
+      "post": "还要多读多写。",
+      "options": [
+       "最后",
+       "首先",
+       "究竟"
+      ],
+      "answer": 0,
+      "explanation": "首先……，其次……，最后……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng ta đi siêu thị trước, sau đó đến ngân hàng.”",
+      "words": [
+       "我们",
+       "首先",
+       "去超市",
+       "，",
+       "然后",
+       "去",
+       "银行"
+      ],
+      "answer": "我们首先去超市，然后去银行。",
+      "explanation": "首先 + V1，然后 + V2."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mua đồ trước hết xem chất lượng, thứ đến mới xem giá.”",
+      "words": [
+       "买东西",
+       "首先",
+       "看质量",
+       "，",
+       "其次",
+       "看价格"
+      ],
+      "answer": "买东西首先看质量，其次看价格。",
+      "explanation": "首先……，其次…… (chính – phụ)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mời mọi người đọc bài khóa một lượt trước, sau đó trả lời câu hỏi.”",
+      "words": [
+       "请大家",
+       "首先",
+       "读一遍课文",
+       "，",
+       "然后",
+       "回答问题"
+      ],
+      "answer": "请大家首先读一遍课文，然后回答问题。",
+      "explanation": "首先……，然后……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我每天首先起床，其次刷牙。",
+      "isCorrect": false,
+      "correctVersion": "我每天首先起床，然后刷牙。",
+      "explanation": "Thứ tự thời gian → 然后, không dùng 其次."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "首先，我要感谢老师；其次，我要感谢我的家人。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: liệt kê các ý theo thứ tự, 首先……；其次……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "先，我们来介绍一下自己。",
+      "isCorrect": false,
+      "correctVersion": "首先，我们来介绍一下自己。",
+      "explanation": "Đứng đầu câu có dấu phẩy phải là 首先."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Trước hết phải xem mình có thật sự cần không, sau đó mới so sánh giá.",
+      "answer": "首先要看自己是不是真正需要，然后再比较价格。",
+      "answerPy": "Shǒuxiān yào kàn zìjǐ shì bu shì zhēnzhèng xūyào, ránhòu zài bǐjiào jiàgé.",
+      "explanation": "首先……，然后再……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi thích căn nhà này: thứ nhất là giao thông thuận tiện, thứ hai là tiền thuê không đắt.",
+      "answer": "我喜欢这个房子，首先是交通方便，其次是房租不贵。",
+      "answerPy": "Wǒ xǐhuan zhège fángzi, shǒuxiān shì jiāotōng fāngbiàn, qícì shì fángzū bú guì.",
+      "explanation": "Liệt kê lý do → 首先……，其次……; ôn 房租 (Bài 2)."
+     }
+    ]
+   },
+   {
+    "title": "连词“加上” — thêm vào đó, cộng thêm",
+    "errors": [
+     {
+      "wrong": "他很聪明，加上一直非常努力。",
+      "why": "Thiếu vế kết quả — sau vế 加上 phải có câu nêu kết quả.",
+      "right": "他很聪明，加上一直非常努力，所以考上了理想的大学。"
+     },
+     {
+      "wrong": "这件衣服很好看，加上太贵了，所以我买了。",
+      "why": "Hai lý do phải cùng chiều dẫn tới kết quả; “quá đắt” ngược chiều với việc “mua”.",
+      "right": "这件衣服很好看，加上不太贵，所以我买了。"
+     },
+     {
+      "wrong": "小店的生意越来越好，加上店员态度友好。",
+      "why": "Vế 加上 (nguyên nhân) đứng trước, vế kết quả đứng sau.",
+      "right": "东西适合年轻人，加上店员态度友好，所以小店的生意越来越好。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… thêm vào đó nhân viên thân thiện …”",
+      "pre": "小店虽然小，但东西适合年轻人，",
+      "blank": "加上",
+      "post": "店员态度友好，使得小店的生意越来越好。",
+      "options": [
+       "加上",
+       "首先",
+       "对于"
+      ],
+      "answer": 0,
+      "explanation": "加上 đưa thêm một lý do cùng chiều."
+     },
+     {
+      "context": "“… nên nhiều người trẻ thuê nhà ở đây.”",
+      "pre": "这里交通很方便，加上房租便宜，",
+      "blank": "所以",
+      "post": "很多年轻人都在这里租房子。",
+      "options": [
+       "所以",
+       "但是",
+       "虽然"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau 加上 nêu kết quả, thường có 所以."
+     },
+     {
+      "context": "“… lại thêm hôm nay là cuối tuần …”",
+      "pre": "今天下雨，加上",
+      "blank": "又",
+      "post": "是周末，路上车特别多。",
+      "options": [
+       "又",
+       "才",
+       "都"
+      ],
+      "answer": 0,
+      "explanation": "加上 + 又 + lý do thêm."
+     },
+     {
+      "context": "“… lại thêm phục vụ tốt …”",
+      "pre": "这家店东西便宜，再",
+      "blank": "加上",
+      "post": "服务好，顾客越来越多。",
+      "options": [
+       "加上",
+       "而且",
+       "不光"
+      ],
+      "answer": 0,
+      "explanation": "再加上 = lại thêm."
+     },
+     {
+      "context": "“… khiến nhiều người muốn mua nhà ở đây.”",
+      "pre": "这里环境好，加上交通也方便，",
+      "blank": "使得",
+      "post": "很多人想在这儿买房子。",
+      "options": [
+       "使得",
+       "但是",
+       "虽然"
+      ],
+      "answer": 0,
+      "explanation": "……，加上……，使得 + kết quả (使得 – từ mới bài khoá 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trà này rất thơm, thêm vào đó đang khuyến mãi, nên tôi mua hai cân.”",
+      "words": [
+       "这些茶叶",
+       "很香",
+       "，",
+       "加上",
+       "在促销",
+       "，",
+       "我",
+       "买了两斤"
+      ],
+      "answer": "这些茶叶很香，加上在促销，我买了两斤。",
+      "explanation": "Lý do 1，加上 + lý do 2，kết quả."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trời rất lạnh, lại thêm mưa, nên trên phố chẳng có mấy người.”",
+      "words": [
+       "天气",
+       "很冷",
+       "，",
+       "加上",
+       "下雨",
+       "，",
+       "街上",
+       "没什么人"
+      ],
+      "answer": "天气很冷，加上下雨，街上没什么人。",
+      "explanation": "Hai lý do cùng chiều → một kết quả."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他很聪明，加上一直非常努力。",
+      "isCorrect": false,
+      "correctVersion": "他很聪明，加上一直非常努力，所以考上了理想的大学。",
+      "explanation": "Thiếu vế kết quả."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这里环境很好，加上交通方便，所以房子很好卖。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: hai lý do cùng chiều + kết quả 所以……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这家饭馆的菜很好吃，加上服务员态度很差，所以顾客很多。",
+      "isCorrect": false,
+      "correctVersion": "这家饭馆的菜很好吃，加上服务员态度很好，所以顾客很多。",
+      "explanation": "Lý do sau 加上 phải cùng chiều với lý do trước."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tiệm này đồ rẻ, thêm vào đó nhân viên rất thân thiện, nên khách rất đông.",
+      "answer": "这家店东西便宜，加上店员很友好，所以顾客很多。",
+      "answerPy": "Zhè jiā diàn dōngxi piányi, jiāshàng diànyuán hěn yǒuhǎo, suǒyǐ gùkè hěn duō.",
+      "explanation": "……，加上……，所以……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Hôm nay tôi dậy muộn, thêm vào đó đường lại tắc, nên đã đến muộn.",
+      "answer": "今天我起晚了，加上路上又堵车，所以迟到了。",
+      "answerPy": "Jīntiān wǒ qǐwǎn le, jiāshàng lùshang yòu dǔchē, suǒyǐ chídào le.",
+      "explanation": "加上 + 又 + lý do thêm; 所以 + kết quả."
+     }
+    ]
+   },
+   {
+    "title": "介词“对于” — đối với, về",
+    "errors": [
+     {
+      "wrong": "他对于老师很友好。",
+      "why": "Thái độ giữa người với người (đối xử với ai) chỉ dùng 对.",
+      "right": "他对老师很友好。"
+     },
+     {
+      "wrong": "对于我，学中文很有意思。",
+      "why": "Nêu cảm nhận, góc nhìn của ai phải dùng 对……来说 / 对于……来说.",
+      "right": "对我来说，学中文很有意思。"
+     },
+     {
+      "wrong": "对于这个建议很好。",
+      "why": "Cụm 对于…… không làm chủ ngữ; câu phải có chủ ngữ riêng.",
+      "right": "对于这个建议，大家都觉得很好。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Đối với những thứ muốn mua …”",
+      "pre": "",
+      "blank": "对于",
+      "post": "想买的东西，她不光看质量，还看价格。",
+      "options": [
+       "对于",
+       "加上",
+       "首先"
+      ],
+      "answer": 0,
+      "explanation": "对于 + đối tượng，chủ ngữ + V."
+     },
+     {
+      "context": "“… mọi người đều rất ủng hộ.” (ôn 支持 – Bài 9)",
+      "pre": "对于他的做法，大家都很",
+      "blank": "支持",
+      "post": "。",
+      "options": [
+       "支持",
+       "友好",
+       "仔细"
+      ],
+      "answer": 0,
+      "explanation": "对于 + việc，ai + 支持."
+     },
+     {
+      "context": "“… chúng tôi nhất định nghiên cứu kỹ.”",
+      "pre": "对于你们提的这个建议，我们一定好好",
+      "blank": "研究",
+      "post": "。",
+      "options": [
+       "研究",
+       "表示",
+       "降价"
+      ],
+      "answer": 0,
+      "explanation": "对于 + 建议，……研究."
+     },
+     {
+      "context": "“Cậu ấy rất lễ phép với thầy cô.”",
+      "pre": "他",
+      "blank": "对",
+      "post": "老师很有礼貌。",
+      "options": [
+       "对",
+       "对于",
+       "关于"
+      ],
+      "answer": 0,
+      "explanation": "Thái độ với NGƯỜI → chỉ dùng 对."
+     },
+     {
+      "context": "“Đối với nhiều bạn trẻ mà nói …”",
+      "pre": "对于很多年轻人",
+      "blank": "来说",
+      "post": "，买盲盒是一件快乐的事。",
+      "options": [
+       "来说",
+       "以后",
+       "的话"
+      ],
+      "answer": 0,
+      "explanation": "对于……来说 = đối với … mà nói."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Về vấn đề này, mọi người có ý kiến gì?”",
+      "words": [
+       "对于",
+       "这个问题",
+       "，",
+       "大家",
+       "有",
+       "什么",
+       "看法"
+      ],
+      "answer": "对于这个问题，大家有什么看法？",
+      "explanation": "对于 + N，chủ ngữ + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đối với ý kiến của khách hàng, chúng tôi nhất định nghiên cứu kỹ.”",
+      "words": [
+       "对于",
+       "顾客的意见",
+       "，",
+       "我们",
+       "一定",
+       "好好研究"
+      ],
+      "answer": "对于顾客的意见，我们一定好好研究。",
+      "explanation": "Cụm 对于 đứng đầu câu."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "她对于孩子很耐心。",
+      "isCorrect": false,
+      "correctVersion": "她对孩子很耐心。",
+      "explanation": "Thái độ với người → 对."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "对于这件事，我还没想好。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 对于 + việc，chủ ngữ + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "对于买东西很仔细。",
+      "isCorrect": false,
+      "correctVersion": "对于买东西，她很仔细。",
+      "explanation": "Thiếu chủ ngữ; cụm 对于 không làm chủ ngữ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Về vấn đề này, mọi người có ý kiến gì?",
+      "answer": "对于这个问题，大家有什么看法？",
+      "answerPy": "Duìyú zhège wèntí, dàjiā yǒu shénme kànfǎ?",
+      "explanation": "对于 + N đứng đầu câu."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đối với những thứ muốn mua, tôi đều so sánh kỹ rồi mới mua.",
+      "answer": "对于想买的东西，我都仔细比较后才买。",
+      "answerPy": "Duìyú xiǎng mǎi de dōngxi, wǒ dōu zǐxì bǐjiào hòu cái mǎi.",
+      "explanation": "对于……，chủ ngữ + 都 + 仔细比较后才……"
+     }
+    ]
+   }
+  ]
+ }
+}

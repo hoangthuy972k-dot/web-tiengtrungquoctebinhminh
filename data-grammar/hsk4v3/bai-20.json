@@ -1,0 +1,695 @@
+{
+ "/lessons/hsk4v3-bai-20.html": {
+  "points": [
+   {
+    "title": "语气副词“难道” — lẽ nào, chẳng lẽ (câu hỏi tu từ, phỏng đoán)",
+    "errors": [
+     {
+      "wrong": "我难道是你的朋友吗？我一定会帮你的。",
+      "why": "Hình thức khẳng định + 难道 lại thành ý phủ định (“tôi không phải bạn bạn”) — ngược ý muốn nói.",
+      "right": "难道我不是你的朋友吗？我一定会帮你的。"
+     },
+     {
+      "wrong": "难道你知道不知道这件事？",
+      "why": "难道 không đi với câu hỏi chính phản V不V; dùng 难道……(不)……吗？",
+      "right": "难道你不知道这件事吗？"
+     },
+     {
+      "wrong": "难道你到底去不去？",
+      "why": "到底 hỏi thật (muốn biết đáp án), 难道 là câu tu từ — không dùng chung.",
+      "right": "你到底去不去？ / 难道你不去了吗？"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… chẳng lẽ cậu mua vé không có chỗ ngồi à?”",
+      "pre": "看你一直不坐下，我还在想，",
+      "blank": "难道",
+      "post": "你买的是无座票吗？",
+      "options": [
+       "难道",
+       "到底",
+       "究竟"
+      ],
+      "answer": 0,
+      "explanation": "Câu tu từ có 吗 → 难道; 到底 / 究竟 là hỏi thật, không đi với 吗."
+     },
+     {
+      "context": "“Chẳng lẽ chúng ta không nên bảo vệ môi trường sao?”",
+      "pre": "难道我们不应该保护环境",
+      "blank": "吗",
+      "post": "？",
+      "options": [
+       "吗",
+       "呢",
+       "吧"
+      ],
+      "answer": 0,
+      "explanation": "Khuôn 难道……吗？"
+     },
+     {
+      "context": "“… lẽ nào không sợ bị cảm à?”",
+      "pre": "这么冷的天，你只穿了一件衬衫，难道不怕",
+      "blank": "感冒",
+      "post": "吗？",
+      "options": [
+       "感冒",
+       "堵车",
+       "登机"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định 不怕 → ý khẳng định: sẽ bị cảm đấy."
+     },
+     {
+      "context": "“Bạn nói tiếng Trung lưu loát thế, lẽ nào bạn từng sống ở Trung Quốc?”",
+      "pre": "你中文说得这么",
+      "blank": "流利",
+      "post": "，难道你在中国住过吗？",
+      "options": [
+       "流利",
+       "所有",
+       "细"
+      ],
+      "answer": 0,
+      "explanation": "难道 dùng để phỏng đoán; V得 + 流利."
+     },
+     {
+      "context": "“Chuyện này ai cũng biết, chẳng lẽ bạn không biết?”",
+      "pre": "这件事大家都知道，难道你",
+      "blank": "不",
+      "post": "知道吗？",
+      "options": [
+       "不",
+       "也",
+       "就"
+      ],
+      "answer": 0,
+      "explanation": "难道 + 不 + V + 吗？ = ý khẳng định: bạn phải biết chứ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chẳng lẽ cậu mua vé không có chỗ ngồi à?”",
+      "words": [
+       "难道",
+       "你",
+       "买的",
+       "是",
+       "无座票",
+       "吗"
+      ],
+      "answer": "难道你买的是无座票吗？",
+      "explanation": "难道 + câu + 吗？"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chẳng lẽ chúng ta không nên bảo vệ môi trường sao?”",
+      "words": [
+       "难道",
+       "我们",
+       "不应该",
+       "保护",
+       "环境",
+       "吗"
+      ],
+      "answer": "难道我们不应该保护环境吗？",
+      "explanation": "难道 đứng đầu câu hoặc sau chủ ngữ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tàu sắp chạy rồi, anh ấy vẫn chưa đến, lẽ nào anh ấy không đi nữa?”",
+      "words": [
+       "车快开了",
+       "，",
+       "他还没到",
+       "，",
+       "难道",
+       "他不去了"
+      ],
+      "answer": "车快开了，他还没到，难道他不去了？",
+      "explanation": "难道 biểu thị phỏng đoán, có thể không có 吗."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你已经是大学生了，难道这点儿小事也不会做吗？",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: phủ định 不会做 → ý khẳng định “việc nhỏ này bạn phải làm được”."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "难道你知道不知道这件事？",
+      "isCorrect": false,
+      "correctVersion": "难道你不知道这件事吗？",
+      "explanation": "难道 không đi với câu hỏi chính phản V不V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我难道是你的朋友吗？我一定会帮你的。",
+      "isCorrect": false,
+      "correctVersion": "难道我不是你的朋友吗？我一定会帮你的。",
+      "explanation": "Muốn khẳng định “tôi là bạn của bạn” phải dùng hình thức phủ định 难道……不……吗？"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Chẳng lẽ bạn không biết ngày mai có kỳ thi sao?",
+      "answer": "难道你不知道明天有考试吗？",
+      "answerPy": "Nándào nǐ bù zhīdao míngtiān yǒu kǎoshì ma?",
+      "explanation": "难道 + 不 + V + 吗？ → ý khẳng định."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đã mười giờ rồi mà anh ấy vẫn chưa đến, lẽ nào anh ấy quên rồi?",
+      "answer": "已经十点了他还没来，难道他忘了？",
+      "answerPy": "Yǐjīng shí diǎn le tā hái méi lái, nándào tā wàng le?",
+      "explanation": "难道 biểu thị phỏng đoán."
+     }
+    ]
+   },
+   {
+    "title": "反问句：由疑问代词构成的反问句 — Câu hỏi tu từ (phản vấn) dùng đại từ nghi vấn 「谁、什么、怎么、哪里、为什么」",
+    "errors": [
+     {
+      "wrong": "我已经检查好几遍了，怎么会出错吗？",
+      "why": "Câu tu từ đã có đại từ nghi vấn thì không dùng 吗 — dùng 呢 (hoặc không có trợ từ).",
+      "right": "我已经检查好几遍了，怎么会出错呢？"
+     },
+     {
+      "wrong": "这么好的机会，你为什么去试试呢？",
+      "why": "Muốn khuyên “nên đi thử” phải dùng hình thức PHỦ ĐỊNH 为什么不……呢？",
+      "right": "这么好的机会，你为什么不去试试呢？"
+     },
+     {
+      "wrong": "A：中国文化真是读也读不完。B：谁说是呢？",
+      "why": "Đồng tình phải nói 谁说不是呢？ (phủ định → khẳng định); 谁说是呢 lại thành phản đối.",
+      "right": "谁说不是呢？"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Ai bảo không phải chứ?” (= đúng thế)",
+      "pre": "中国文化真是读也读不完。——谁说不",
+      "blank": "是",
+      "post": "呢？",
+      "options": [
+       "是",
+       "对",
+       "好"
+      ],
+      "answer": 0,
+      "explanation": "Câu cố định 谁说不是呢？ biểu thị đồng tình."
+     },
+     {
+      "context": "“… sao chúng ta lại không đi Tô Châu chơi?” (= nên đi)",
+      "pre": "这里离苏州这么近，我们为什么",
+      "blank": "不",
+      "post": "去苏州玩玩呢？",
+      "options": [
+       "不",
+       "没",
+       "也"
+      ],
+      "answer": 0,
+      "explanation": "为什么不……呢？ phủ định → ý khẳng định."
+     },
+     {
+      "context": "“… làm sao mà tra được những thông tin này?”",
+      "pre": "我们连手机都没有，",
+      "blank": "怎么",
+      "post": "能查到这些信息啊？",
+      "options": [
+       "怎么",
+       "什么",
+       "谁"
+      ],
+      "answer": 0,
+      "explanation": "怎么能……？ = không thể … (ôn 连……都…… – Bài 17)."
+     },
+     {
+      "context": "“Tôi đã kiểm tra mấy lần rồi, làm sao mà sai được?”",
+      "pre": "我已经检查好几遍了，怎么会出错",
+      "blank": "呢",
+      "post": "？",
+      "options": [
+       "呢",
+       "吗",
+       "吧"
+      ],
+      "answer": 0,
+      "explanation": "Câu tu từ có đại từ nghi vấn dùng 呢, không dùng 吗."
+     },
+     {
+      "context": "“Cậu ấy một câu tiếng Trung cũng không biết, làm sao mà đọc hiểu tiểu thuyết của Lão Xá được?”",
+      "pre": "他一句中文都不会，",
+      "blank": "哪儿",
+      "post": "能看懂老舍的小说呢？",
+      "options": [
+       "哪儿",
+       "什么",
+       "谁"
+      ],
+      "answer": 0,
+      "explanation": "哪儿能……？ = không thể …; ôn 一……都不…… (HSK 3)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ở đây gần Tô Châu thế, sao chúng ta lại không đi Tô Châu chơi?”",
+      "words": [
+       "这里",
+       "离苏州",
+       "这么近",
+       "，",
+       "我们",
+       "为什么不",
+       "去苏州玩玩呢"
+      ],
+      "answer": "这里离苏州这么近，我们为什么不去苏州玩玩呢？",
+      "explanation": "为什么不……呢？"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng ta đến điện thoại cũng không có, làm sao tra được những thông tin này?”",
+      "words": [
+       "我们",
+       "连手机都没有",
+       "，",
+       "怎么能",
+       "查到",
+       "这些信息啊"
+      ],
+      "answer": "我们连手机都没有，怎么能查到这些信息啊？",
+      "explanation": "怎么能 + V？ = không thể."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đã kiểm tra mấy lần rồi, làm sao mà sai được?”",
+      "words": [
+       "我",
+       "已经检查好几遍了",
+       "，",
+       "怎么会",
+       "出错呢"
+      ],
+      "answer": "我已经检查好几遍了，怎么会出错呢？",
+      "explanation": "怎么会……呢？ = không thể nào …"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "谁说不是呢？中国文化真是读也读不完。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 谁说不是呢 = đồng tình."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我已经检查好几遍了，怎么会出错吗？",
+      "isCorrect": false,
+      "correctVersion": "我已经检查好几遍了，怎么会出错呢？",
+      "explanation": "Đã có 怎么 thì không dùng 吗."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这么好的机会，你为什么去试试呢？",
+      "isCorrect": false,
+      "correctVersion": "这么好的机会，你为什么不去试试呢？",
+      "explanation": "Khuyên nên làm → 为什么不……呢？"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tiền tiết kiệm được, sao lại không dùng để đi du lịch?",
+      "answer": "节省下来的钱，为什么不用来旅行呢？",
+      "answerPy": "Jiéshěng xiàlai de qián, wèishénme bú yònglái lǚxíng ne?",
+      "explanation": "为什么不……呢？ = nên làm."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bài tập nhiều thế này, một ngày làm sao làm xong được?",
+      "answer": "作业这么多，一天怎么能做完呢？",
+      "answerPy": "Zuòyè zhème duō, yì tiān zěnme néng zuòwán ne?",
+      "explanation": "怎么能 / 怎么 + V得完 + 呢？ = không thể."
+     }
+    ]
+   },
+   {
+    "title": "固定格式“×就×（点儿）吧” — … thì … (một chút) thôi, cũng được (chấp nhận, nhượng bộ)",
+    "errors": [
+     {
+      "wrong": "累就累吧点儿，很值得。",
+      "why": "点儿 đứng trước 吧: × + 就 + × + 点儿 + 吧.",
+      "right": "累就累点儿吧，很值得。"
+     },
+     {
+      "wrong": "累就很累吧，花更少的钱去看更多的地方。",
+      "why": "× lặp nguyên dạng, không thêm 很; muốn giảm nhẹ dùng 点儿.",
+      "right": "累就累点儿吧，花更少的钱去看更多的地方。"
+     },
+     {
+      "wrong": "远就远吧，所以房租便宜。",
+      "why": "Vế sau nêu lý do chấp nhận (至少 / ……最重要), không dùng 所以.",
+      "right": "远就远吧，至少房租便宜。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… mệt thì mệt một chút thôi …”",
+      "pre": "虽然有些累，但累就",
+      "blank": "累",
+      "post": "点儿吧，花更少的钱去看更多的地方，很值得。",
+      "options": [
+       "累",
+       "远",
+       "慢"
+      ],
+      "answer": 0,
+      "explanation": "× lặp lại nguyên dạng: 累就累点儿吧."
+     },
+     {
+      "context": "“… xa thì xa thôi, ít nhất tiền thuê rẻ.”",
+      "pre": "我租的房子离公司有些远，我想，远",
+      "blank": "就",
+      "post": "远吧，至少房租便宜。",
+      "options": [
+       "就",
+       "也",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "× + 就 + × + 吧."
+     },
+     {
+      "context": "“Chậm thì chậm một chút, an toàn là quan trọng nhất.”",
+      "pre": "慢就慢点儿吧，",
+      "blank": "安全",
+      "post": "最重要。",
+      "options": [
+       "安全",
+       "特点",
+       "意见"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau nêu lý do chấp nhận."
+     },
+     {
+      "context": "“Chiếc áo này đắt thì đắt một chút, chất lượng tốt là được.”",
+      "pre": "这件衣服贵就贵点儿",
+      "blank": "吧",
+      "post": "，质量好就行。",
+      "options": [
+       "吧",
+       "吗",
+       "呢"
+      ],
+      "answer": 0,
+      "explanation": "Khuôn kết thúc bằng 吧."
+     },
+     {
+      "context": "“… tiền tiết kiệm được coi như là phong bao lì xì lớn tặng mình.”",
+      "pre": "转机累就累点儿吧，节省下来的钱就",
+      "blank": "当",
+      "post": "是给自己的大红包了。",
+      "options": [
+       "当",
+       "把",
+       "让"
+      ],
+      "answer": 0,
+      "explanation": "当 (dàng) = coi như (từ mới)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mệt thì mệt một chút, tiêu ít tiền hơn mà đi được nhiều nơi hơn.”",
+      "words": [
+       "累",
+       "就",
+       "累点儿吧",
+       "，",
+       "花更少的钱",
+       "去看更多的地方"
+      ],
+      "answer": "累就累点儿吧，花更少的钱去看更多的地方。",
+      "explanation": "Adj就Adj点儿吧，+ lý do."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Xa thì xa thôi, ít nhất tiền thuê rẻ.”",
+      "words": [
+       "远就远吧",
+       "，",
+       "至少",
+       "房租",
+       "便宜"
+      ],
+      "answer": "远就远吧，至少房租便宜。",
+      "explanation": "至少 (Bài 5) nêu lý do chấp nhận."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chậm thì chậm một chút, an toàn là quan trọng nhất.”",
+      "words": [
+       "慢",
+       "就",
+       "慢点儿吧",
+       "，",
+       "安全",
+       "最重要"
+      ],
+      "answer": "慢就慢点儿吧，安全最重要。",
+      "explanation": "……最重要 = lý do."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "贵就贵点儿吧，质量好最重要。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: Adj就Adj点儿吧 + lý do."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "累就累吧点儿，很值得。",
+      "isCorrect": false,
+      "correctVersion": "累就累点儿吧，很值得。",
+      "explanation": "点儿 đứng trước 吧."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "远就很远吧，所以房租便宜。",
+      "isCorrect": false,
+      "correctVersion": "远就远吧，至少房租便宜。",
+      "explanation": "Không thêm 很; vế sau dùng 至少, không dùng 所以."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Chậm thì chậm một chút, an toàn là quan trọng nhất.",
+      "answer": "慢就慢点儿吧，安全最重要。",
+      "answerPy": "Màn jiù màn diǎnr ba, ānquán zuì zhòngyào.",
+      "explanation": "Adj就Adj点儿吧，……最重要."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đắt thì đắt một chút thôi, đồ tốt dùng được lâu.",
+      "answer": "贵就贵点儿吧，好东西可以用很久。",
+      "answerPy": "Guì jiù guì diǎnr ba, hǎo dōngxi kěyǐ yòng hěn jiǔ.",
+      "explanation": "贵就贵点儿吧 + lý do chấp nhận."
+     }
+    ]
+   },
+   {
+    "title": "假设复句“要是……，（就）……，否则……” — nếu … thì …, nếu không thì …",
+    "errors": [
+     {
+      "wrong": "要是下雨，你们就关上窗户，但是雨水会进到房间里。",
+      "why": "Nối hậu quả “nếu không thì …” bằng 否则, không dùng 但是.",
+      "right": "要是下雨，你们就关上窗户，否则雨水会进到房间里。"
+     },
+     {
+      "wrong": "要是路上堵车，你们就改乘地铁，否则你们改乘地铁。",
+      "why": "Vế 否则 phải nói hậu quả khi KHÔNG làm theo vế 就, không lặp lại vế 就.",
+      "right": "要是路上堵车，你们就改乘地铁，否则会来不及的。"
+     },
+     {
+      "wrong": "要是天气好，否则我们去爬山。",
+      "why": "Thiếu vế 就; 否则 đứng ở vế thứ ba, sau vế 就.",
+      "right": "要是天气好，我们就去爬山，否则就在家学习。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Các em nếu muốn hiểu thêm về Trung Quốc thì …”",
+      "pre": "你们",
+      "blank": "要是",
+      "post": "想多了解中国，就不能只通过读书。",
+      "options": [
+       "要是",
+       "即使",
+       "难道"
+      ],
+      "answer": 0,
+      "explanation": "Giả thiết + 就 → 要是……就……"
+     },
+     {
+      "context": "“… nếu không thì tớ chẳng đi đâu cả.”",
+      "pre": "要是出去的话，咱们就爬山，",
+      "blank": "否则",
+      "post": "我哪儿都不去。",
+      "options": [
+       "否则",
+       "然后",
+       "于是"
+      ],
+      "answer": 0,
+      "explanation": "否则 = nếu không thì."
+     },
+     {
+      "context": "“… kế hoạch này được thông qua …”",
+      "pre": "要是你同意的话，这个计划就",
+      "blank": "通过",
+      "post": "，否则可能需要重新讨论。",
+      "options": [
+       "通过",
+       "解释",
+       "总结"
+      ],
+      "answer": 0,
+      "explanation": "计划 + 通过 = thông qua kế hoạch."
+     },
+     {
+      "context": "“Nếu tắc đường thì các bạn đổi sang tàu điện ngầm …” (ôn 来不及 – Bài 4)",
+      "pre": "要是路上堵车，你们",
+      "blank": "就",
+      "post": "改乘地铁，否则会来不及的。",
+      "options": [
+       "就",
+       "才",
+       "也"
+      ],
+      "answer": 0,
+      "explanation": "要是……，(主语) + 就……"
+     },
+     {
+      "context": "“… nếu không thì rất khó đặt được.”",
+      "pre": "节假日要是想出去玩，就得早点儿订机票，否则很难订",
+      "blank": "到",
+      "post": "。",
+      "options": [
+       "到",
+       "完",
+       "住"
+      ],
+      "answer": 0,
+      "explanation": "订到 = đặt được (bổ ngữ kết quả 到)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nếu bạn đồng ý thì kế hoạch này thông qua, nếu không phải thảo luận lại.”",
+      "words": [
+       "要是",
+       "你同意的话",
+       "，",
+       "这个计划",
+       "就通过",
+       "，",
+       "否则",
+       "需要重新讨论"
+      ],
+      "answer": "要是你同意的话，这个计划就通过，否则需要重新讨论。",
+      "explanation": "要是……，就……，否则……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nếu tắc đường thì các bạn đổi sang tàu điện ngầm, nếu không sẽ không kịp.”",
+      "words": [
+       "要是",
+       "路上堵车",
+       "，",
+       "你们就",
+       "改乘地铁",
+       "，",
+       "否则",
+       "会来不及的"
+      ],
+      "answer": "要是路上堵车，你们就改乘地铁，否则会来不及的。",
+      "explanation": "否则 + 会……的 (hậu quả)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nếu muốn nói lưu loát thì phải luyện nói mỗi ngày, nếu không sẽ quên.”",
+      "words": [
+       "要是",
+       "想说得流利",
+       "，",
+       "就得",
+       "每天练口语",
+       "，",
+       "否则",
+       "会忘的"
+      ],
+      "answer": "要是想说得流利，就得每天练口语，否则会忘的。",
+      "explanation": "就得 (děi) = thì phải."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "要是出去的话，咱们就爬山，否则我哪儿都不去。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: đủ ba vế 要是……就……否则……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "要是下雨，你们就关上窗户，但是雨水会进到房间里。",
+      "isCorrect": false,
+      "correctVersion": "要是下雨，你们就关上窗户，否则雨水会进到房间里。",
+      "explanation": "“Nếu không thì” → 否则, không dùng 但是."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "要是天气好，否则我们去爬山。",
+      "isCorrect": false,
+      "correctVersion": "要是天气好，我们就去爬山，否则就在家学习。",
+      "explanation": "Thiếu vế 就; 否则 nói hậu quả ở vế thứ ba."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Nếu bạn muốn hiểu Trung Quốc thì phải đi du lịch nhiều, nếu không chỉ biết một Trung Quốc trong sách.",
+      "answer": "要是你想了解中国，就要多出门旅行，否则只能认识书里的中国。",
+      "answerPy": "Yàoshi nǐ xiǎng liǎojiě Zhōngguó, jiù yào duō chūmén lǚxíng, fǒuzé zhǐnéng rènshi shū lǐ de Zhōngguó.",
+      "explanation": "要是……就……，否则只能……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Nếu không khỏe thì về nhà nghỉ sớm đi, nếu không bệnh sẽ ngày càng nặng.",
+      "answer": "要是不舒服，就早点儿回家休息吧，否则病会越来越厉害。",
+      "answerPy": "Yàoshi bù shūfu, jiù zǎodiǎnr huíjiā xiūxi ba, fǒuzé bìng huì yuèláiyuè lìhai.",
+      "explanation": "否则 + 会 + hậu quả; ôn 厉害 (Bài 6)."
+     }
+    ]
+   }
+  ]
+ }
+}

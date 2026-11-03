@@ -1,0 +1,697 @@
+{
+ "/lessons/hsk4v3-bai-11.html": {
+  "points": [
+   {
+    "title": "让步复句“即使……，也……” — cho dù …, cũng …",
+    "errors": [
+     {
+      "wrong": "即使明天下大雨，我们会按时出发。",
+      "why": "Thiếu 也 ở vế sau — 即使 phải đi với 也.",
+      "right": "即使明天下大雨，我们也会按时出发。"
+     },
+     {
+      "wrong": "即使大家都说很难，也我要试一试。",
+      "why": "也 là phó từ, đứng SAU chủ ngữ, trước động từ.",
+      "right": "即使大家都说很难，我也要试一试。"
+     },
+     {
+      "wrong": "即使昨天下了大雨，但是比赛没有停。",
+      "why": "Việc đã xảy ra thật + 但是 → dùng 虽然 / 尽管……但是……; 即使 không đi với 但是.",
+      "right": "虽然昨天下了大雨，但是比赛没有停。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Có những người dù tuổi đã cao vẫn kiên trì …”",
+      "pre": "有些人",
+      "blank": "即使",
+      "post": "年龄大了，也坚持去老年班学习。",
+      "options": [
+       "即使",
+       "虽然",
+       "因为"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau có 也 → vế trước dùng 即使 (giả thiết nhượng bộ)."
+     },
+     {
+      "context": "“Cho dù mai mưa to, chúng ta cũng sẽ xuất phát đúng giờ.”",
+      "pre": "即使明天下大雨，我们",
+      "blank": "也",
+      "post": "会按时出发。",
+      "options": [
+       "也",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "即使……，(Sub) + 也 + V."
+     },
+     {
+      "context": "“Dù tuổi đã cao, ông vẫn kiên trì đi học máy tính.”",
+      "pre": "即使年龄大了，爷爷也",
+      "blank": "坚持",
+      "post": "去老年班学电脑。",
+      "options": [
+       "坚持",
+       "羡慕",
+       "散步"
+      ],
+      "answer": 0,
+      "explanation": "坚持 + V = kiên trì làm gì."
+     },
+     {
+      "context": "“… mỗi tuần anh ấy cũng gọi về nhà ít nhất một lần.” (ôn 至少 – Bài 5)",
+      "pre": "即使工作再忙，他也",
+      "blank": "至少",
+      "post": "每周给家里打一次电话。",
+      "options": [
+       "至少",
+       "甚至",
+       "从来"
+      ],
+      "answer": 0,
+      "explanation": "至少 + V + số lượng = ít nhất."
+     },
+     {
+      "context": "“Cho dù không học cùng trường nữa, chúng ta cũng phải thường xuyên liên lạc.”",
+      "pre": "",
+      "blank": "即使",
+      "post": "不在一个学校了，我们也要经常联系。",
+      "options": [
+       "即使",
+       "由于",
+       "随着"
+      ],
+      "answer": 0,
+      "explanation": "Giả thiết bất lợi + 也 → 即使."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cho dù ngày mai mưa to, chúng ta cũng sẽ xuất phát đúng giờ.”",
+      "words": [
+       "即使",
+       "明天",
+       "下大雨",
+       "，",
+       "我们",
+       "也会",
+       "按时出发"
+      ],
+      "answer": "即使明天下大雨，我们也会按时出发。",
+      "explanation": "即使 + giả thiết，Sub + 也 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cho dù thiếu nước, hoa trước cửa vẫn mọc rất tốt.”",
+      "words": [
+       "即使",
+       "缺水",
+       "，",
+       "门前的花",
+       "也",
+       "长得",
+       "很好"
+      ],
+      "answer": "即使缺水，门前的花也长得很好。",
+      "explanation": "也 đứng sau chủ ngữ 门前的花."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy cho dù bận đến mấy cũng kiên trì rèn luyện thân thể.”",
+      "words": [
+       "他",
+       "即使",
+       "再忙",
+       "，",
+       "也",
+       "会",
+       "坚持锻炼身体"
+      ],
+      "answer": "他即使再忙，也会坚持锻炼身体。",
+      "explanation": "即使 + 再 + Adj，也……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "即使大家都说很难，我也要试一试。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 即使……，Sub + 也……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "即使昨天下了大雨，但是比赛没有停。",
+      "isCorrect": false,
+      "correctVersion": "虽然昨天下了大雨，但是比赛没有停。",
+      "explanation": "Sự thật đã xảy ra + 但是 → 虽然……但是……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "即使你不去，我去。",
+      "isCorrect": false,
+      "correctVersion": "即使你不去，我也去。",
+      "explanation": "Thiếu 也."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cho dù tuổi đã cao, ông tôi vẫn kiên trì đi học lớp người cao tuổi.",
+      "answer": "即使年龄大了，我爷爷也坚持去老年班学习。",
+      "answerPy": "Jíshǐ niánlíng dà le, wǒ yéye yě jiānchí qù lǎoniánbān xuéxí.",
+      "explanation": "即使……，Sub + 也 + 坚持……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cho dù ngày mai mưa to, chúng ta cũng sẽ xuất phát đúng giờ.",
+      "answer": "即使明天下大雨，我们也会准时出发。",
+      "answerPy": "Jíshǐ míngtiān xià dàyǔ, wǒmen yě huì zhǔnshí chūfā.",
+      "explanation": "即使……也…… + từ mới 准时."
+     }
+    ]
+   },
+   {
+    "title": "让步复句“就是……，也……” — cho dù …, cũng … (khẩu ngữ)",
+    "errors": [
+     {
+      "wrong": "就是再忙，我要坚持运动。",
+      "why": "Thiếu 也 ở vế sau.",
+      "right": "就是再忙，我也要坚持运动。"
+     },
+     {
+      "wrong": "我就是不在教室，就可以学习中文。",
+      "why": "Vế sau dùng 也 (kết quả không đổi), không dùng 就.",
+      "right": "我就是不在教室，也可以学习中文。"
+     },
+     {
+      "wrong": "他就是不来，我们开会也。",
+      "why": "也 là phó từ, đứng trước động từ.",
+      "right": "他就是不来，我们也开会。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Mình cho dù không ở lớp cũng có thể học tiếng Trung …”",
+      "pre": "我",
+      "blank": "就是",
+      "post": "不在教室，也可以学习中文，和同学一起练口语。",
+      "options": [
+       "就是",
+       "就是了",
+       "只要"
+      ],
+      "answer": 0,
+      "explanation": "就是 (liên từ) ở vế đầu + 也 ở vế sau."
+     },
+     {
+      "context": "“… cho dù bận đến mấy cũng phải kiên trì tập thể thao.”",
+      "pre": "锻炼身体很重要，就是再忙，",
+      "blank": "也",
+      "post": "要坚持运动。",
+      "options": [
+       "也",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "就是再 + Adj，也……"
+     },
+     {
+      "context": "“… dù đêm nay không ngủ cũng phải sửa xong nó.”",
+      "pre": "明天开会需要这份材料，我就是今晚不睡觉，也要把它",
+      "blank": "改",
+      "post": "完。",
+      "options": [
+       "改",
+       "留",
+       "弹"
+      ],
+      "answer": 0,
+      "explanation": "把 + O + 改完 (ôn câu chữ 把)."
+     },
+     {
+      "context": "“Cho dù không ở cùng thành phố, chúng ta vẫn có thể gặp nhau trực tuyến.”",
+      "pre": "就是不在一个城市，我们也可以在",
+      "blank": "线上",
+      "post": "上见面。",
+      "options": [
+       "线上",
+       "线下",
+       "网友"
+      ],
+      "answer": 0,
+      "explanation": "在线上 + V = trực tuyến."
+     },
+     {
+      "context": "“… cho dù không có thầy, sau giờ học vẫn có thể xem video ghi lại để tự học.”",
+      "pre": "课上没听明白也没关系，就是没有老师，课后也能看",
+      "blank": "视频",
+      "post": "记录自学。",
+      "options": [
+       "视频",
+       "分数",
+       "口语"
+      ],
+      "answer": 0,
+      "explanation": "视频记录 = video ghi lại."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cho dù bận đến mấy cũng phải kiên trì tập thể thao.”",
+      "words": [
+       "就是",
+       "再忙",
+       "，",
+       "也",
+       "要",
+       "坚持运动"
+      ],
+      "answer": "就是再忙，也要坚持运动。",
+      "explanation": "就是再 + Adj，也 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi dù đêm nay không ngủ cũng phải sửa xong tài liệu.”",
+      "words": [
+       "我",
+       "就是",
+       "今晚不睡觉",
+       "，",
+       "也要",
+       "把材料",
+       "改完"
+      ],
+      "answer": "我就是今晚不睡觉，也要把材料改完。",
+      "explanation": "Sub + 就是……，也要 + 把……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cho dù mưa to, chúng ta cũng phải đi.”",
+      "words": [
+       "就是",
+       "下大雨",
+       "，",
+       "我们",
+       "也得",
+       "去"
+      ],
+      "answer": "就是下大雨，我们也得去。",
+      "explanation": "也得 (děi) = cũng phải."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "就是再贵，我就买。",
+      "isCorrect": false,
+      "correctVersion": "就是再贵，我也买。",
+      "explanation": "Vế sau của 就是 phải dùng 也."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "就是他是我的好朋友，我也不能帮他做这种事。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 就是 + một câu, vế sau 也 + phủ định."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他就是不来，我们开会也。",
+      "isCorrect": false,
+      "correctVersion": "他就是不来，我们也开会。",
+      "explanation": "也 đứng trước động từ 开会."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cho dù bận đến mấy, cuối tuần tôi cũng sẽ dành thời gian đi dạo cùng ông bà.",
+      "answer": "就是再忙，周末我也会留出时间陪爷爷奶奶散步。",
+      "answerPy": "Jiùshì zài máng, zhōumò wǒ yě huì liúchū shíjiān péi yéye nǎinai sànbù.",
+      "explanation": "就是再忙，……也…… + từ mới 留, 散步."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cho dù không có thầy cô, chúng ta cũng có thể tự học trên mạng.",
+      "answer": "就是没有老师，我们也可以在网上自学。",
+      "answerPy": "Jiùshì méiyǒu lǎoshī, wǒmen yě kěyǐ zài wǎngshang zìxué.",
+      "explanation": "就是……，Sub + 也 + 可以 / 能……"
+     }
+    ]
+   },
+   {
+    "title": "并列复句“不是……，而是……” — không phải …, mà là …",
+    "errors": [
+     {
+      "wrong": "我不是想喝茶，而想喝水。",
+      "why": "Phải là 而是, không bỏ 是.",
+      "right": "我不是想喝茶，而是想喝水。"
+     },
+     {
+      "wrong": "他不仅想喝茶，而是想喝水。",
+      "why": "不仅 đi với 而且 / 还 (cả hai đều đúng); phủ định A khẳng định B thì dùng 不是……而是…….",
+      "right": "他不是想喝茶，而是想喝水。"
+     },
+     {
+      "wrong": "不是我放学后直接回家，而是先去超市买笔。",
+      "why": "Hai vế phải cân đối: 不是 và 而是 cùng đứng sau chủ ngữ, trước phần được so sánh.",
+      "right": "我放学后不是直接回家，而是先去超市买笔。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… không phải là để con thi điểm cao, mà là giúp con hình thành thói quen tốt.”",
+      "pre": "教育的目的不是让孩子考高分，",
+      "blank": "而是",
+      "post": "帮助孩子养成好习惯。",
+      "options": [
+       "而是",
+       "而且",
+       "还是"
+      ],
+      "answer": 0,
+      "explanation": "不是……，而是…… (phủ định – khẳng định)."
+     },
+     {
+      "context": "“Tôi không phải muốn uống trà, mà là muốn uống nước.”",
+      "pre": "我",
+      "blank": "不是",
+      "post": "想喝茶，而是想喝水。",
+      "options": [
+       "不是",
+       "不仅",
+       "没有"
+      ],
+      "answer": 0,
+      "explanation": "而是 đi với 不是; 不仅 đi với 而且."
+     },
+     {
+      "context": "“Cậu ấy học piano không phải vì điểm số, mà vì thật sự thích.”",
+      "pre": "他学钢琴不是为了",
+      "blank": "分数",
+      "post": "，而是因为真的喜欢。",
+      "options": [
+       "分数",
+       "礼貌",
+       "资料"
+      ],
+      "answer": 0,
+      "explanation": "Hai vế đều nêu lý do: 为了…… / 因为……"
+     },
+     {
+      "context": "“Họ không phải đang tán gẫu, mà là đang họp trực tuyến.”",
+      "pre": "他们不是在聊天儿，而是在开线上",
+      "blank": "会议",
+      "post": "。",
+      "options": [
+       "会议",
+       "视频",
+       "网页"
+      ],
+      "answer": 0,
+      "explanation": "开会议 / 线上会议 = họp trực tuyến."
+     },
+     {
+      "context": "“Con không vui không phải vì học quá khó, mà vì áp lực quá lớn.” (ôn từ 压力 – Bài 1)",
+      "pre": "孩子不开心，不是因为学习太难，而是因为",
+      "blank": "压力",
+      "post": "太大。",
+      "options": [
+       "压力",
+       "目的",
+       "做法"
+      ],
+      "answer": 0,
+      "explanation": "压力大 = áp lực lớn."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi không phải muốn uống trà, mà là muốn uống nước.”",
+      "words": [
+       "我",
+       "不是",
+       "想喝茶",
+       "，",
+       "而是",
+       "想喝水"
+      ],
+      "answer": "我不是想喝茶，而是想喝水。",
+      "explanation": "不是 A，而是 B — A, B cùng loại."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mục đích của giáo dục không phải là để con thi điểm cao, mà là giúp con hình thành thói quen tốt.”",
+      "words": [
+       "教育的目的",
+       "不是",
+       "让孩子考高分",
+       "，",
+       "而是",
+       "帮助孩子",
+       "养成好习惯"
+      ],
+      "answer": "教育的目的不是让孩子考高分，而是帮助孩子养成好习惯。",
+      "explanation": "……的目的不是……，而是……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy không phải đang chơi game, mà là đang luyện nói.”",
+      "words": [
+       "他",
+       "不是",
+       "在玩游戏",
+       "，",
+       "而是",
+       "在练口语"
+      ],
+      "answer": "他不是在玩游戏，而是在练口语。",
+      "explanation": "在 + V: đang làm gì; hai vế cân đối."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我放学后不是直接回家，而是先去超市买笔。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 不是 / 而是 cùng đứng trước phần so sánh."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "教育的目的不是让孩子考高分，而且帮助孩子养成好习惯。",
+      "isCorrect": false,
+      "correctVersion": "教育的目的不是让孩子考高分，而是帮助孩子养成好习惯。",
+      "explanation": "不是 đi với 而是, không đi với 而且."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我不是不想去，而实在来不及了。",
+      "isCorrect": false,
+      "correctVersion": "我不是不想去，而是实在来不及了。",
+      "explanation": "Không bỏ 是 trong 而是."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi học tiếng Trung không phải vì công việc, mà là vì thích văn hóa Trung Quốc.",
+      "answer": "我学中文不是因为工作，而是因为喜欢中国文化。",
+      "answerPy": "Wǒ xué Zhōngwén bú shì yīnwèi gōngzuò, érshì yīnwèi xǐhuan Zhōngguó wénhuà.",
+      "explanation": "不是因为……，而是因为…… (hai vế cùng nêu lý do)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Mục đích của giáo dục không phải là điểm số, mà là giúp trẻ hình thành thói quen tốt.",
+      "answer": "教育的目的不是分数，而是帮助孩子养成好习惯。",
+      "answerPy": "Jiàoyù de mùdì bú shì fēnshù, érshì bāngzhù háizi yǎngchéng hǎo xíguàn.",
+      "explanation": "目的 + 不是……，而是…… + từ mới 分数, 养成."
+     }
+    ]
+   },
+   {
+    "title": "固定短语“就是说” — tức là, nghĩa là, nói cách khác",
+    "errors": [
+     {
+      "wrong": "就是说，学习是人一生的事情，人要一直坚持学习。",
+      "why": "就是说 đứng GIỮA, sau câu cần giải thích, không mở đầu đoạn.",
+      "right": "人要一直坚持学习，就是说，学习是人一生的事情。"
+     },
+     {
+      "wrong": "别着急写，就是说，你要快点儿写。",
+      "why": "Câu sau mâu thuẫn với câu trước — 就是说 phải nói lại CÙNG một ý.",
+      "right": "别着急写，就是说，别着急动笔，想好后再写。"
+     },
+     {
+      "wrong": "明天下雨，就是说，我们去公园吧。",
+      "why": "Câu sau không phải là giải thích / hệ quả của câu trước.",
+      "right": "明天会下雨，就是说，我们不能去公园了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Con người phải luôn kiên trì học tập, nghĩa là …”",
+      "pre": "人要一直坚持学习，",
+      "blank": "就是说",
+      "post": "，学习是人一生的事情。",
+      "options": [
+       "就是说",
+       "就是了",
+       "不是说"
+      ],
+      "answer": 0,
+      "explanation": "就是说 đứng giữa, giải thích lại câu trước."
+     },
+     {
+      "context": "“Đừng vội viết, tức là đừng vội đặt bút …”",
+      "pre": "别着急写，就是说，别着急动",
+      "blank": "笔",
+      "post": "，想好后再写。",
+      "options": [
+       "笔",
+       "脑",
+       "心"
+      ],
+      "answer": 0,
+      "explanation": "动笔 = đặt bút viết."
+     },
+     {
+      "context": "“… nghĩa là bạn hoàn thành càng nhiều thì lương càng cao.”",
+      "pre": "工资是根据你工作的完成情况来发的，就是说，你完成得",
+      "blank": "越",
+      "post": "多，工资越高。",
+      "options": [
+       "越",
+       "更",
+       "最"
+      ],
+      "answer": 0,
+      "explanation": "越……越…… (HSK 3)."
+     },
+     {
+      "context": "“… tức là phải sống đến già học đến già.”",
+      "pre": "“学而不厌”的意思是人要一直坚持学习，就是说，要活到老",
+      "blank": "学",
+      "post": "到老。",
+      "options": [
+       "学",
+       "活",
+       "教"
+      ],
+      "answer": 0,
+      "explanation": "活到老学到老."
+     },
+     {
+      "context": "“… tức là bất kể lúc nào bạn cũng có thể đi đọc sách.” (ôn 不管 – Bài 8)",
+      "pre": "图书馆二十四小时开门，就是说，",
+      "blank": "不管",
+      "post": "什么时候你都可以去看书。",
+      "options": [
+       "不管",
+       "即使",
+       "虽然"
+      ],
+      "answer": 0,
+      "explanation": "不管 + đại từ nghi vấn + 都……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Con người phải luôn kiên trì học tập, nghĩa là học tập là việc cả đời.”",
+      "words": [
+       "人",
+       "要",
+       "一直坚持学习",
+       "，",
+       "就是说",
+       "，",
+       "学习是人一生的事情"
+      ],
+      "answer": "人要一直坚持学习，就是说，学习是人一生的事情。",
+      "explanation": "Câu A，就是说，câu B."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đừng vội viết, tức là nghĩ kỹ rồi hãy viết.”",
+      "words": [
+       "别着急写",
+       "，",
+       "就是说",
+       "，",
+       "想好后",
+       "再写"
+      ],
+      "answer": "别着急写，就是说，想好后再写。",
+      "explanation": "就是说 + giải thích cụ thể."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Ngày mai được nghỉ, tức là chúng ta không phải đến trường.”",
+      "words": [
+       "明天放假",
+       "，",
+       "就是说",
+       "，",
+       "我们",
+       "不用",
+       "去学校了"
+      ],
+      "answer": "明天放假，就是说，我们不用去学校了。",
+      "explanation": "就是说 + hệ quả trực tiếp."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他会说英语、法语和中文，就是说，他会三种语言。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: câu sau nói lại cùng ý bằng cách khác."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "明天下雨，就是说，我们去公园吧。",
+      "isCorrect": false,
+      "correctVersion": "明天会下雨，就是说，我们不能去公园了。",
+      "explanation": "Câu sau phải là giải thích / hệ quả của câu trước."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这家店二十四小时开门，就是说，晚上它不开门。",
+      "isCorrect": false,
+      "correctVersion": "这家店二十四小时开门，就是说，什么时候去都可以。",
+      "explanation": "Câu sau mâu thuẫn với câu trước."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cửa hàng này mở cửa 24 giờ, nghĩa là lúc nào bạn cũng có thể đến.",
+      "answer": "这家店二十四小时开门，就是说，你什么时候都可以来。",
+      "answerPy": "Zhè jiā diàn èr shísì xiǎoshí kāimén, jiùshì shuō, nǐ shénme shíhou dōu kěyǐ lái.",
+      "explanation": "就是说 + đại từ nghi vấn phiếm chỉ 什么时候都……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Lớp học số có thể chụp ảnh điểm danh, tức là giáo sư không cần gọi tên từng người nữa.",
+      "answer": "数字教室可以拍照点名，就是说，教授不用一个个叫名字了。",
+      "answerPy": "Shùzì jiàoshì kěyǐ pāizhào diǎnmíng, jiùshì shuō, jiàoshòu búyòng yígègè jiào míngzi le.",
+      "explanation": "就是说 + từ mới 数字, 点名, 教授."
+     }
+    ]
+   }
+  ]
+ }
+}

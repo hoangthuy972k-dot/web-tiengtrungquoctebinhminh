@@ -32,12 +32,12 @@ var vocabData = [
    },
    {
     "zh": "签证到期",
-    "py": "Qiānzhèng dào qī",
+    "py": "Qiānzhèng dàoqī",
     "vn": "visa hết hạn"
    },
    {
     "zh": "拿到签证",
-    "py": "Ná dào qiānzhèng",
+    "py": "Nádào qiānzhèng",
     "vn": "nhận được visa"
    }
   ],
@@ -62,7 +62,7 @@ var vocabData = [
    },
    {
     "zh": "我的学生签证下个月就到期了。",
-    "py": "Wǒ de xuésheng qiānzhèng xià gè yuè jiù dào qī le.",
+    "py": "Wǒ de xuésheng qiānzhèng xià gè yuè jiù dàoqī le.",
     "vn": "Visa du học của tôi tháng sau là hết hạn rồi."
    }
   ],
@@ -163,12 +163,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "在学院办公室，白家月和陈天中在办理入学手续。",
-  "ex_py": "Zài xué yuàn bàngōngshì, Bái Jiāyuè hé Chén Tiānzhōng zài bànlǐ rùxué shǒuxù.",
+  "ex_py": "Zài xuéyuàn bàngōngshì, Bái Jiāyuè hé Chén Tiānzhōng zài bànlǐ rùxué shǒuxù.",
   "ex_vn": "Ở văn phòng học viện, Bạch Gia Nguyệt và Trần Thiên Trung đang làm thủ tục nhập học.",
   "exList": [
    {
     "zh": "在学院办公室，白家月和陈天中在办理入学手续。",
-    "py": "Zài xué yuàn bàngōngshì, Bái Jiāyuè hé Chén Tiānzhōng zài bànlǐ rùxué shǒuxù.",
+    "py": "Zài xuéyuàn bàngōngshì, Bái Jiāyuè hé Chén Tiānzhōng zài bànlǐ rùxué shǒuxù.",
     "vn": "Ở văn phòng học viện, Bạch Gia Nguyệt và Trần Thiên Trung đang làm thủ tục nhập học."
    },
    {
@@ -216,7 +216,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Làm xong thủ tục nhập học rồi chúng ta đi ăn nhé.",
     "answer": "办好了入学手续，我们就去吃饭吧。",
-    "answerPy": "Bàn hǎo le rùxué shǒuxù, wǒmen jiù qù chīfàn ba.",
+    "answerPy": "Bànhǎo le rùxué shǒuxù, wǒmen jiù qù chīfàn ba.",
     "note": "Bổ ngữ kết quả 好 + 就 nối hai việc.",
     "pair": "V好了……就……"
    }
@@ -275,12 +275,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "学校有任何通知，我都会第一时间告诉你。",
-  "ex_py": "Xuéxiào yǒu rènhé tōngzhī, wǒ dōu huì dì yī shíjiān gàosu nǐ.",
+  "ex_py": "Xuéxiào yǒu rènhé tōngzhī, wǒ dōu huì dì yìshíjiān gàosu nǐ.",
   "ex_vn": "Trường có bất kỳ thông báo nào, tôi đều sẽ báo cho bạn ngay lập tức.",
   "exList": [
    {
     "zh": "学校有任何通知，我都会第一时间告诉你。",
-    "py": "Xuéxiào yǒu rènhé tōngzhī, wǒ dōu huì dì yī shíjiān gàosu nǐ.",
+    "py": "Xuéxiào yǒu rènhé tōngzhī, wǒ dōu huì dì yìshíjiān gàosu nǐ.",
     "vn": "Trường có bất kỳ thông báo nào, tôi đều sẽ báo cho bạn ngay lập tức."
    },
    {
@@ -366,7 +366,7 @@ var vocabData = [
    },
    {
     "zh": "证件照",
-    "py": "Zhèngjiàn zhào",
+    "py": "Zhèngjiànzhào",
     "vn": "ảnh thẻ"
    },
    {
@@ -392,7 +392,7 @@ var vocabData = [
    },
    {
     "zh": "坐飞机的时候，一定要带好证件。",
-    "py": "Zuò fēijī de shíhou, yídìng yào dài hǎo zhèngjiàn.",
+    "py": "Zuò fēijī de shíhou, yídìng yào dàihǎo zhèngjiàn.",
     "vn": "Khi đi máy bay nhất định phải mang đủ giấy tờ."
    }
   ],
@@ -435,7 +435,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đừng quên mang giấy tờ, nếu không sẽ không vào được.",
     "answer": "别忘了带证件，不然进不去。",
-    "answerPy": "Bié wàng le dài zhèngjiàn, bùrán jìn bú qù.",
+    "answerPy": "Bié wàng le dài zhèngjiàn, bùrán jìn bu qù.",
     "note": "Ôn bổ ngữ khả năng 进不去 (HSK 3).",
     "pair": "V不去"
    }
@@ -601,12 +601,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "办好了，这是你们的学生证。",
-  "ex_py": "Bàn hǎo le, zhè shì nǐmen de xuéshengzhèng.",
+  "ex_py": "Bànhǎo le, zhè shì nǐmen de xuéshengzhèng.",
   "ex_vn": "Làm xong rồi, đây là thẻ sinh viên của các em.",
   "exList": [
    {
     "zh": "办好了，这是你们的学生证。",
-    "py": "Bàn hǎo le, zhè shì nǐmen de xuéshengzhèng.",
+    "py": "Bànhǎo le, zhè shì nǐmen de xuéshengzhèng.",
     "vn": "Làm xong rồi, đây là thẻ sinh viên của các em."
    },
    {
@@ -642,7 +642,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Có thẻ sinh viên thì đi tàu điện ngầm có rẻ hơn không?",
     "answer": "有学生证的话，坐地铁会便宜一点儿吗？",
-    "answerPy": "Yǒu xuéshengzhèng dehuà, zuò dìtiě huì piányi yìdiǎnr ma?",
+    "answerPy": "Yǒu xuéshengzhèng de huà, zuò dìtiě huì piányi yìdiǎnr ma?",
     "note": "Ôn 的话 = nếu (HSK 3).",
     "pair": "……的话"
    }
@@ -796,7 +796,7 @@ var vocabData = [
    },
    {
     "zh": "好几个食堂",
-    "py": "Hǎo jǐ gè shítáng",
+    "py": "Hǎojǐ gè shítáng",
     "vn": "mấy nhà ăn"
    }
   ],
@@ -807,17 +807,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "有图书馆、体育馆、超市，还有好几个食堂。",
-  "ex_py": "Yǒu túshūguǎn, tǐyùguǎn, chāoshì, hái yǒu hǎo jǐ gè shítáng.",
+  "ex_py": "Yǒu túshūguǎn, tǐyùguǎn, chāoshì, hái yǒu hǎojǐ gè shítáng.",
   "ex_vn": "Có thư viện, nhà thi đấu, siêu thị, lại còn có mấy nhà ăn.",
   "exList": [
    {
     "zh": "有图书馆、体育馆、超市，还有好几个食堂。",
-    "py": "Yǒu túshūguǎn, tǐyùguǎn, chāoshì, hái yǒu hǎo jǐ gè shítáng.",
+    "py": "Yǒu túshūguǎn, tǐyùguǎn, chāoshì, hái yǒu hǎojǐ gè shítáng.",
     "vn": "Có thư viện, nhà thi đấu, siêu thị, lại còn có mấy nhà ăn."
    },
    {
     "zh": "咱们晚上别去食堂吃饭了，我请你出去吃吧。",
-    "py": "Zánmen wǎnshang bié qù shítáng chīfàn le, wǒ qǐng nǐ chūqù chī ba.",
+    "py": "Zánmen wǎnshang bié qù shítáng chīfàn le, wǒ qǐng nǐ chūqu chī ba.",
     "vn": "Tối nay chúng mình đừng ăn ở nhà ăn nữa, tôi mời bạn ra ngoài ăn nhé."
    }
   ],
@@ -898,7 +898,7 @@ var vocabData = [
    },
    {
     "zh": "一座大楼",
-    "py": "Yí zuò dà lóu",
+    "py": "Yí zuò dàlóu",
     "vn": "một tòa nhà"
    },
    {
@@ -928,7 +928,7 @@ var vocabData = [
    },
    {
     "zh": "我家旁边有一座很高的大楼。",
-    "py": "Wǒ jiā pángbiān yǒu yí zuò hěn gāo de dà lóu.",
+    "py": "Wǒ jiā pángbiān yǒu yí zuò hěn gāo de dàlóu.",
     "vn": "Cạnh nhà tôi có một tòa nhà rất cao."
    }
   ],
@@ -959,7 +959,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trên ngọn núi kia có một ngôi chùa cổ.",
     "answer": "那座山上有一座很老的寺庙。",
-    "answerPy": "Nà zuò shān shàng yǒu yí zuò hěn lǎo de sìmiào.",
+    "answerPy": "Nà zuò shānshang yǒu yí zuò hěn lǎo de sìmiào.",
     "note": "Ôn câu tồn hiện 有 (HSK 3): nơi chốn + 有 + vật.",
     "pair": "nơi + 有 + vật"
    }
@@ -1062,7 +1062,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế.",
     "answer": "要是申请到奖学金，就能减轻不少经济压力。",
-    "answerPy": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bù shǎo jīngjì yālì.",
+    "answerPy": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì.",
     "note": "Câu trong bài khoá 2; 申请到 = xin được.",
     "pair": "要是……就……"
    },
@@ -1189,7 +1189,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Để giành được học bổng, mỗi ngày anh ấy đều học đến rất khuya.",
     "answer": "为了获得奖学金，他每天都学习到很晚。",
-    "answerPy": "Wèile huòdé jiǎngxuéjīn, tā měi tiān dōu xuéxí dào hěn wǎn.",
+    "answerPy": "Wèile huòdé jiǎngxuéjīn, tā měitiān dōu xuéxí dào hěn wǎn.",
     "note": "Ôn 为了 chỉ mục đích (HSK 3).",
     "pair": "为了……"
    }
@@ -1338,7 +1338,7 @@ var vocabData = [
    },
    {
     "zh": "获得第一名",
-    "py": "Huòdé dì yī míng",
+    "py": "Huòdé dì yì míng",
     "vn": "giành giải nhất"
    },
    {
@@ -1399,7 +1399,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Anh ấy giành giải nhất trong cuộc thi nói tiếng Hán.",
     "answer": "他在汉语比赛中获得了第一名。",
-    "answerPy": "Tā zài Hànyǔ bǐsài zhōng huòdé le dì yī míng.",
+    "answerPy": "Tā zài Hànyǔ bǐsài zhōng huòdé le dì yì míng.",
     "note": "在……中 + 获得.",
     "pair": "获得 + giải"
    },
@@ -1465,12 +1465,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "那太好了，要是申请到奖学金，就能减轻不少经济压力。",
-  "ex_py": "Nà tài hǎo le, yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bù shǎo jīngjì yālì.",
+  "ex_py": "Nà tài hǎo le, yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì.",
   "ex_vn": "Thế thì tốt quá, nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế.",
   "exList": [
    {
     "zh": "那太好了，要是申请到奖学金，就能减轻不少经济压力。",
-    "py": "Nà tài hǎo le, yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bù shǎo jīngjì yālì.",
+    "py": "Nà tài hǎo le, yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì.",
     "vn": "Thế thì tốt quá, nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế."
    },
    {
@@ -1561,7 +1561,7 @@ var vocabData = [
    },
    {
     "zh": "减轻不少",
-    "py": "Jiǎnqīng bù shǎo",
+    "py": "Jiǎnqīng bùshǎo",
     "vn": "giảm được không ít"
    }
   ],
@@ -1576,12 +1576,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "要是申请到奖学金，就能减轻不少经济压力。",
-  "ex_py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bù shǎo jīngjì yālì.",
+  "ex_py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì.",
   "ex_vn": "Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế.",
   "exList": [
    {
     "zh": "要是申请到奖学金，就能减轻不少经济压力。",
-    "py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bù shǎo jīngjì yālì.",
+    "py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì.",
     "vn": "Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế."
    },
    {
@@ -1629,7 +1629,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bố mẹ đi làm thêm để giảm gánh nặng kinh tế cho gia đình.",
     "answer": "爸爸妈妈多做一些工作，为了减轻家里的经济压力。",
-    "answerPy": "Bàba-māma duō zuò yìxiē gōngzuò, wèile jiǎnqīng jiā lǐ de jīngjì yālì.",
+    "answerPy": "Bàba māma duō zuò yìxiē gōngzuò, wèile jiǎnqīng jiāli de jīngjì yālì.",
     "note": "Ôn 为了 (HSK 3).",
     "pair": "为了……"
    }
@@ -1687,12 +1687,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "要是申请到奖学金，就能减轻不少经济压力。",
-  "ex_py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bù shǎo jīngjì yālì.",
+  "ex_py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì.",
   "ex_vn": "Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế.",
   "exList": [
    {
     "zh": "要是申请到奖学金，就能减轻不少经济压力。",
-    "py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bù shǎo jīngjì yālì.",
+    "py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì.",
     "vn": "Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế."
    },
    {
@@ -1732,7 +1732,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với sự phát triển kinh tế, đời sống của mọi người ngày càng tốt.",
     "answer": "随着经济的发展，人们的生活越来越好。",
-    "answerPy": "Suízhe jīngjì de fāzhǎn, rén men de shēnghuó yuèláiyuè hǎo.",
+    "answerPy": "Suízhe jīngjì de fāzhǎn, rénmen de shēnghuó yuèláiyuè hǎo.",
     "note": "随着 (Bài 1 · điểm 3) + 越来越 (HSK 3).",
     "pair": "随着……，越来越……"
    },
@@ -1798,12 +1798,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "要是申请到奖学金，就能减轻不少经济压力。",
-  "ex_py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bù shǎo jīngjì yālì.",
+  "ex_py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì.",
   "ex_vn": "Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế.",
   "exList": [
    {
     "zh": "要是申请到奖学金，就能减轻不少经济压力。",
-    "py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bù shǎo jīngjì yālì.",
+    "py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì.",
     "vn": "Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế."
    },
    {
@@ -1851,7 +1851,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Có lúc học lâu quá cũng sẽ thấy hơi áp lực.",
     "answer": "有时候学习的时间很长，也会觉得有一些压力。",
-    "answerPy": "Yǒu shíhou xuéxí de shíjiān hěn cháng, yě huì juéde yǒu yìxiē yālì.",
+    "answerPy": "Yǒushíhou xuéxí de shíjiān hěn cháng, yě huì juéde yǒu yìxiē yālì.",
     "note": "Câu trong bài tập hoàn thành đoạn văn của sách.",
     "pair": "会觉得……"
    }
@@ -2020,17 +2020,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "随着中国的发展，越来越多的外国学生来到中国的大学学习。",
-  "ex_py": "Suízhe Zhōngguó de fāzhǎn, yuèláiyuè duō de wàiguó xuésheng lái dào Zhōngguó de dàxué xuéxí.",
+  "ex_py": "Suízhe Zhōngguó de fāzhǎn, yuèláiyuè duō de wàiguó xuésheng láidào Zhōngguó de dàxué xuéxí.",
   "ex_vn": "Cùng với sự phát triển của Trung Quốc, ngày càng nhiều sinh viên nước ngoài đến các trường đại học Trung Quốc học tập.",
   "exList": [
    {
     "zh": "随着中国的发展，越来越多的外国学生来到中国的大学学习。",
-    "py": "Suízhe Zhōngguó de fāzhǎn, yuèláiyuè duō de wàiguó xuésheng lái dào Zhōngguó de dàxué xuéxí.",
+    "py": "Suízhe Zhōngguó de fāzhǎn, yuèláiyuè duō de wàiguó xuésheng láidào Zhōngguó de dàxué xuéxí.",
     "vn": "Cùng với sự phát triển của Trung Quốc, ngày càng nhiều sinh viên nước ngoài đến các trường đại học Trung Quốc học tập."
    },
    {
     "zh": "随着中文水平的提高，我现在能看懂中文报纸了。",
-    "py": "Suízhe Zhōngwén shuǐpíng de tígāo, wǒ xiànzài néng kàn dǒng Zhōngwén bàozhǐ le.",
+    "py": "Suízhe Zhōngwén shuǐpíng de tígāo, wǒ xiànzài néng kàndǒng Zhōngwén bàozhǐ le.",
     "vn": "Cùng với trình độ tiếng Trung nâng cao, bây giờ tôi đã đọc hiểu được báo tiếng Trung."
    }
   ],
@@ -2065,7 +2065,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với mức sống nâng cao, mọi người ngày càng quan tâm đến sức khỏe.",
     "answer": "随着生活水平的提高，人们越来越关注身体健康。",
-    "answerPy": "Suízhe shēnghuó shuǐpíng de tígāo, rén men yuèláiyuè guānzhù shēntǐ jiànkāng.",
+    "answerPy": "Suízhe shēnghuó shuǐpíng de tígāo, rénmen yuèláiyuè guānzhù shēntǐ jiànkāng.",
     "note": "Đáp án gợi ý của sách (Bài 1 · điểm 3).",
     "pair": "随着……的提高"
    },
@@ -2073,7 +2073,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Theo thời tiết ngày càng nóng, mọi người đều đã thay quần áo mát mẻ.",
     "answer": "随着天气越来越热，人们都换上了凉快的衣服。",
-    "answerPy": "Suízhe tiānqì yuèláiyuè rè, rén men dōu huàn shàng le liángkuai de yīfu.",
+    "answerPy": "Suízhe tiānqì yuèláiyuè rè, rénmen dōu huànshàng le liángkuai de yīfu.",
     "note": "Đáp án gợi ý của sách; ôn 越来越 (HSK 3).",
     "pair": "随着……越来越……"
    }
@@ -2334,7 +2334,7 @@ var vocabData = [
    },
    {
     "zh": "本科生",
-    "py": "Běnkē shēng",
+    "py": "Běnkēshēng",
     "vn": "sinh viên đại học"
    },
    {
@@ -2667,7 +2667,7 @@ var vocabData = [
    },
    {
     "zh": "医学博士",
-    "py": "Yī xué bóshì",
+    "py": "Yīxué bóshì",
     "vn": "tiến sĩ y khoa"
    },
    {
@@ -2697,7 +2697,7 @@ var vocabData = [
    },
    {
     "zh": "李文回到北京继续深造，攻读医学博士学位。",
-    "py": "Lǐ Wén huí dào Běijīng jìxù shēn zào, gōng dú yī xué bóshì xuéwèi.",
+    "py": "Lǐ Wén huídào Běijīng jìxù shēn zào, gōng dú yīxué bóshì xuéwèi.",
     "vn": "Lý Văn về Bắc Kinh học tiếp, theo học học vị tiến sĩ y khoa."
    }
   ],
@@ -2732,7 +2732,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lý Văn đang học tiến sĩ y khoa ở Bắc Kinh.",
     "answer": "李文正在北京读医学博士。",
-    "answerPy": "Lǐ Wén zhèngzài Běijīng dú yī xué bóshì.",
+    "answerPy": "Lǐ Wén zhèngzài Běijīng dú yīxué bóshì.",
     "note": "Theo phần giới thiệu nhân vật của sách.",
     "pair": "正在 + V"
    },
@@ -2740,7 +2740,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Anh ấy không phải bác sĩ chữa bệnh mà là tiến sĩ kinh tế.",
     "answer": "他不是医生，是经济学博士。",
-    "answerPy": "Tā bú shì yīshēng, shì jīngjì xué bóshì.",
+    "answerPy": "Tā bú shì yīshēng, shì jīngjìxué bóshì.",
     "note": "Phân biệt 医生 / 博士.",
     "pair": "不是……是……"
    }
@@ -2920,7 +2920,7 @@ var vocabData = [
    },
    {
     "zh": "今天下午公司有活动，我晚点儿回家。",
-    "py": "Jīntiān xiàwǔ gōngsī yǒu huódòng, wǒ wǎndiǎnr huí jiā.",
+    "py": "Jīntiān xiàwǔ gōngsī yǒu huódòng, wǒ wǎn diǎnr huíjiā.",
     "vn": "Chiều nay công ty có hoạt động, tôi về nhà muộn một chút."
    }
   ],
@@ -2955,7 +2955,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chiều nay công ty có hoạt động, tôi về muộn một chút.",
     "answer": "今天下午公司有活动，我晚点儿回家。",
-    "answerPy": "Jīntiān xiàwǔ gōngsī yǒu huódòng, wǒ wǎndiǎnr huí jiā.",
+    "answerPy": "Jīntiān xiàwǔ gōngsī yǒu huódòng, wǒ wǎn diǎnr huíjiā.",
     "note": "Bài tập chọn từ của sách (câu 8).",
     "pair": "有活动"
    },
@@ -2963,7 +2963,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ngồi lâu quá rồi, ra ngoài vận động một chút đi.",
     "answer": "坐了太长时间了，出去活动活动吧。",
-    "answerPy": "Zuò le tài cháng shíjiān le, chūqù huódòng huódòng ba.",
+    "answerPy": "Zuò le tài chángshíjiān le, chūqu huódòng huódòng ba.",
     "note": "活动 làm động từ, lặp lại 活动活动.",
     "pair": "V V"
    }
@@ -3103,7 +3103,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "跟中国人交流",
-    "py": "Gēn zhōngguórén jiāoliú",
+    "py": "Gēn Zhōngguórén jiāoliú",
     "vn": "giao lưu với người Trung Quốc"
    },
    {
@@ -3139,7 +3139,7 @@ var vocabData = [
    },
    {
     "zh": "要想学好中文，一方面要多读中文书，另一方面要多和中国人交流。",
-    "py": "Yào xiǎng xué hǎo Zhōngwén, yìfāngmiàn yào duō dú Zhōngwén shū, lìngyìfāngmiàn yào duō hé zhōngguórén jiāoliú.",
+    "py": "Yào xiǎng xuéhǎo Zhōngwén, yìfāngmiàn yào duō dú Zhōngwén shū, lìngyìfāngmiàn yào duō hé Zhōngguórén jiāoliú.",
     "vn": "Muốn học giỏi tiếng Trung, một mặt phải đọc nhiều sách tiếng Trung, mặt khác phải giao lưu nhiều với người Trung Quốc."
    }
   ],
@@ -3220,7 +3220,7 @@ var vocabData = [
    },
    {
     "zh": "慢慢适应",
-    "py": "Màn màn shìyìng",
+    "py": "Mànmàn shìyìng",
     "vn": "dần dần thích nghi"
    },
    {
@@ -3289,7 +3289,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Một tháng sau, tôi đã dần thích nghi với cuộc sống ở đây.",
     "answer": "一个月以后，我已经慢慢适应了这里的生活。",
-    "answerPy": "Yí gè yuè yǐhòu, wǒ yǐjīng màn màn shìyìng le zhèli de shēnghuó.",
+    "answerPy": "Yí gè yuè yǐhòu, wǒ yǐjīng mànmàn shìyìng le zhèli de shēnghuó.",
     "note": "Ôn 已经……了 (HSK 2/3).",
     "pair": "已经……了"
    }
@@ -3679,7 +3679,7 @@ var vocabData = [
    },
    {
     "zh": "父母要好好儿教育孩子。",
-    "py": "Fù mǔ yào hǎo hǎor jiàoyù háizi.",
+    "py": "Fùmǔ yào hǎohāor jiàoyù háizi.",
     "vn": "Cha mẹ phải dạy dỗ con cái thật tốt."
    }
   ],
@@ -3722,7 +3722,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ông ấy làm giáo dục đã hơn hai mươi năm rồi.",
     "answer": "他做教育工作已经二十多年了。",
-    "answerPy": "Tā zuò jiàoyù gōngzuò yǐjīng èr shí duō nián le.",
+    "answerPy": "Tā zuò jiàoyù gōngzuò yǐjīng èrshí duō nián le.",
     "note": "Ôn bổ ngữ thời lượng + 了 (HSK 3).",
     "pair": "已经……了"
    }
@@ -3790,7 +3790,7 @@ var vocabData = [
    },
    {
     "zh": "白家月立志成为一名作家。",
-    "py": "Bái Jiāyuè lì zhì chéngwéi yì míng zuòjiā.",
+    "py": "Bái Jiāyuè lìzhì chéngwéi yì míng zuòjiā.",
     "vn": "Bạch Gia Nguyệt quyết chí trở thành nhà văn."
    }
   ],
@@ -3825,7 +3825,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chúng tôi trở thành bạn tốt từ ngày đầu tiên nhập học.",
     "answer": "我们从入学第一天就成为了好朋友。",
-    "answerPy": "Wǒmen cóng rùxué dì yī tiān jiù chéngwéi le hǎo péngyou.",
+    "answerPy": "Wǒmen cóng rùxué dì yì tiān jiù chéngwéi le hǎo péngyou.",
     "note": "Ôn 从……就…… (HSK 3).",
     "pair": "从……就……"
    },
@@ -3876,7 +3876,7 @@ var vocabData = [
    },
    {
     "zh": "教师节",
-    "py": "Jiàoshī jié",
+    "py": "Jiàoshījié",
     "vn": "Ngày nhà giáo"
    }
   ],
@@ -3936,7 +3936,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ngày 10 tháng 9 là Ngày Nhà giáo của Trung Quốc.",
     "answer": "九月十号是中国的教师节。",
-    "answerPy": "Jiǔ yuè shí hào shì Zhōngguó de jiàoshī jié.",
+    "answerPy": "Jiǔ yuè shí hào shì Zhōngguó de jiàoshījié.",
     "note": "教师节 — văn hóa Trung Quốc.",
     "pair": "……是……节"
    },
@@ -3944,7 +3944,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mẹ tôi là giáo viên, dạy tiếng Anh ở trường trung học.",
     "answer": "我妈妈是一名教师，在中学教英语。",
-    "answerPy": "Wǒ māma shì yì míng jiàoshī, zài zhōngxué jiào yīng yǔ.",
+    "answerPy": "Wǒ māma shì yì míng jiàoshī, zài zhōngxué jiào Yīngyǔ.",
     "note": "一名 + nghề.",
     "pair": "是一名……"
    }
@@ -4158,7 +4158,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi thích đi du lịch, vì một mặt có thể đi chơi, mặt khác có thể hiểu văn hóa.",
     "answer": "我很喜欢旅游，因为一方面可以出去玩，另一方面可以了解文化。",
-    "answerPy": "Wǒ hěn xǐhuan lǚyóu, yīnwèi yìfāngmiàn kěyǐ chūqù wán, lìngyìfāngmiàn kěyǐ liǎojiě wénhuà.",
+    "answerPy": "Wǒ hěn xǐhuan lǚyóu, yīnwèi yìfāngmiàn kěyǐ chūqu wán, lìngyìfāngmiàn kěyǐ liǎojiě wénhuà.",
     "note": "Đáp án gợi ý của sách (Bài 1 · điểm 4).",
     "pair": "一方面……，另一方面……"
    },
@@ -4230,7 +4230,7 @@ var vocabData = [
    },
    {
     "zh": "她除了复习大学学过的课程，还读了一些新的专业书，希望更多地了解这方面的知识。",
-    "py": "Tā chúle fùxí dàxué xué guò de kèchéng, hái dú le yìxiē xīn de zhuānyè shū, xīwàng gèng duō dì liǎojiě zhè fāngmiàn de zhīshi.",
+    "py": "Tā chúle fùxí dà xuéxue guò de kèchéng, hái dú le yìxiē xīn de zhuānyè shū, xīwàng gèng duō dì liǎojiě zhè fāngmiàn de zhīshi.",
     "vn": "Ngoài ôn lại các môn đã học ở đại học, cô ấy còn đọc thêm sách chuyên ngành mới, mong hiểu thêm kiến thức về mặt này."
    }
   ],
@@ -4265,7 +4265,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đọc sách có thể học được rất nhiều kiến thức.",
     "answer": "读书可以学到很多知识。",
-    "answerPy": "Dúshū kěyǐ xué dào hěn duō zhīshi.",
+    "answerPy": "Dúshū kěyǐ xuédào hěn duō zhīshi.",
     "note": "Bổ ngữ kết quả 到.",
     "pair": "V到"
    },
@@ -4337,7 +4337,7 @@ var vocabData = [
    },
    {
     "zh": "这个不好看，给我看看另一个吧。",
-    "py": "Zhège bù hǎokàn, gěi wǒ kàn kàn lìng yí gè ba.",
+    "py": "Zhège bù hǎokàn, gěi wǒ kànkan lìng yí gè ba.",
     "vn": "Cái này không đẹp, cho tôi xem cái khác đi."
    }
   ],
@@ -4360,7 +4360,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Anh ấy thường mua đồ trên mạng, một mặt vì rẻ, mặt khác vì tiện.",
     "answer": "他经常在网上买东西，一方面因为便宜，另一方面因为方便。",
-    "answerPy": "Tā jīngcháng zài wǎngshàng mǎi dōngxi, yìfāngmiàn yīnwèi piányi, lìngyìfāngmiàn yīnwèi fāngbiàn.",
+    "answerPy": "Tā jīngcháng zài wǎngshang mǎi dōngxi, yìfāngmiàn yīnwèi piányi, lìngyìfāngmiàn yīnwèi fāngbiàn.",
     "note": "Ví dụ của sách (Bài 1 · điểm 4).",
     "pair": "一方面……另一方面……"
    },
@@ -4457,7 +4457,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "你们好，欢迎来到中国留学！请把护照、签证和入学通知书给我。",
-    "py": "Nǐmen hǎo, huānyíng lái dào Zhōngguó liúxué! Qǐng bǎ hùzhào, qiānzhèng hé rùxué tōngzhīshū gěi wǒ.",
+    "py": "Nǐmen hǎo, huānyíng láidào Zhōngguó liúxué! Qǐng bǎ hùzhào, qiānzhèng hé rùxué tōngzhīshū gěi wǒ.",
     "vn": "Chào các em, chào mừng các em đến Trung Quốc du học! Các em đưa cô hộ chiếu, visa và giấy báo nhập học nhé."
    },
    {
@@ -4469,13 +4469,13 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "办好了，这是你们的学生证，下周一开始上课。先试听两周，然后在网上选课。",
-    "py": "Bàn hǎo le, zhè shì nǐmen de xuéshengzhèng, xià zhōu yī kāishǐ shàngkè. Xiān shìtīng liǎng zhōu, ránhòu zài wǎngshàng xuǎnkè.",
+    "py": "Bànhǎo le, zhè shì nǐmen de xuéshengzhèng, xià zhōuyī kāishǐ shàngkè. Xiān shìtīng liǎng zhōu, ránhòu zài wǎngshang xuǎnkè.",
     "vn": "(Vài phút sau.) Xong rồi, đây là thẻ sinh viên của các em, thứ Hai tuần sau bắt đầu lên lớp. Các em học thử hai tuần trước, sau đó đăng ký môn học trên mạng."
    },
    {
     "sp": 2,
     "zh": "谢谢老师。",
-    "py": "Xièxiè lǎoshī.",
+    "py": "Xièxie lǎoshī.",
     "vn": "Chúng em cảm ơn cô ạ."
    },
    {
@@ -4525,7 +4525,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "你看，咱们的校园真大！有图书馆、体育馆、超市，还有好几个食堂。",
-    "py": "Nǐ kàn, zánmen de xiàoyuán zhēn dà! Yǒu túshūguǎn, tǐyùguǎn, chāoshì, hái yǒu hǎo jǐ gè shítáng.",
+    "py": "Nǐ kàn, zánmen de xiàoyuán zhēn dà! Yǒu túshūguǎn, tǐyùguǎn, chāoshì, hái yǒu hǎojǐ gè shítáng.",
     "vn": "Cậu xem, khuôn viên trường mình rộng thật! Có thư viện, nhà thi đấu, siêu thị, lại còn có mấy nhà ăn nữa."
    },
    {
@@ -4549,7 +4549,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "那太好了，要是申请到奖学金，就能减轻不少经济压力。",
-    "py": "Nà tài hǎo le, yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bù shǎo jīngjì yālì.",
+    "py": "Nà tài hǎo le, yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì.",
     "vn": "Thế thì tốt quá, nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế."
    },
    {
@@ -4595,7 +4595,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "随着中国的发展，越来越多的外国学生来到中国的大学学习。",
-    "py": "Suízhe Zhōngguó de fāzhǎn, yuèláiyuè duō de wàiguó xuésheng lái dào Zhōngguó de dàxué xuéxí.",
+    "py": "Suízhe Zhōngguó de fāzhǎn, yuèláiyuè duō de wàiguó xuésheng láidào Zhōngguó de dàxué xuéxí.",
     "vn": "Cùng với sự phát triển của Trung Quốc, ngày càng nhiều sinh viên nước ngoài đến các trường đại học Trung Quốc học tập."
    },
    {
@@ -4660,7 +4660,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "很多外国学生来中国学习以前，就已经想好了自己的发展方向。",
-    "py": "Hěn duō wàiguó xuésheng lái Zhōngguó xuéxí yǐqián, jiù yǐjīng xiǎng hǎo le zìjǐ de fāzhǎn fāngxiàng.",
+    "py": "Hěn duō wàiguó xuésheng lái Zhōngguó xuéxí yǐqián, jiù yǐjīng xiǎnghǎo le zìjǐ de fāzhǎn fāngxiàng.",
     "vn": "Nhiều sinh viên nước ngoài trước khi đến Trung Quốc học đã nghĩ kỹ hướng phát triển của mình."
    },
    {
@@ -4684,7 +4684,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "对他们来说，来到中国留学，一方面是为了学习语言和知识，另一方面也是为将来的工作和生活做准备。",
-    "py": "Duì tāmen láishuō, lái dào Zhōngguó liúxué, yìfāngmiàn shì wèile xuéxí yǔyán hé zhīshi, lìngyìfāngmiàn yě shì wèi jiānglái de gōngzuò hé shēnghuó zuò zhǔnbèi.",
+    "py": "Duì tāmen láishuō, láidào Zhōngguó liúxué, yìfāngmiàn shì wèile xuéxí yǔyán hé zhīshi, lìngyìfāngmiàn yě shì wèi jiānglái de gōngzuò hé shēnghuó zuò zhǔnbèi.",
     "vn": "Đối với họ, đến Trung Quốc du học, một mặt là để học ngôn ngữ và kiến thức, mặt khác cũng là để chuẩn bị cho công việc và cuộc sống sau này."
    }
   ],
@@ -5158,7 +5158,7 @@ var translateData = [
  {
   "vi": "Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế.",
   "zh": "要是申请到奖学金，就能减轻不少经济压力。",
-  "py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bù shǎo jīngjì yālì."
+  "py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì."
  },
  {
   "vi": "Cùng với sự phát triển của Trung Quốc, ngày càng nhiều sinh viên nước ngoài đến Trung Quốc học tập.",
@@ -5185,7 +5185,7 @@ var translateDataRev = [
  {
   "vi": "Thứ Hai tuần sau bắt đầu lên lớp, học thử hai tuần trước, sau đó đăng ký môn học trên mạng.",
   "zh": "下周一开始上课，先试听两周，然后在网上选课。",
-  "py": "Xià zhōu yī kāishǐ shàngkè, xiān shìtīng liǎng zhōu, ránhòu zài wǎngshàng xuǎnkè."
+  "py": "Xià zhōuyī kāishǐ shàngkè, xiān shìtīng liǎng zhōu, ránhòu zài wǎngshang xuǎnkè."
  },
  {
   "vi": "Tớ thấy trường giống như một thành phố nhỏ, cái gì cũng có.",
@@ -5446,6 +5446,6 @@ var writingData = {
  ],
  "model": {
   "zh": "随着中国的发展，越来越多的外国学生来到中国的大学学习。来了以后，大家先要把护照、签证和入学通知书交给学院的老师，办好入学手续和学生证，然后在网上选课。在大学里，你可以先上一年的中文课程，然后根据自己的兴趣和需要选择专业。除了读本科课程，还可以申请读硕士研究生或者博士研究生。要是你成绩好、表现好，就有机会获得奖学金，这样能减轻不少经济压力。想要更快地适应大学生活，一方面要多跟中国学生交流，另一方面要多参加校园活动。有任何问题，都可以去找老师。欢迎你来中国留学！",
-  "py": "Suízhe Zhōngguó de fāzhǎn, yuèláiyuè duō de wàiguó xuésheng lái dào Zhōngguó de dàxué xuéxí. Lái le yǐhòu, dàjiā xiān yào bǎ hùzhào, qiānzhèng hé rùxué tōngzhīshū jiāo gěi xué yuàn de lǎoshī, bàn hǎo rùxué shǒuxù hé xuéshengzhèng, ránhòu zài wǎngshàng xuǎnkè. Zài dàxué lǐ, nǐ kěyǐ xiān shàng yì nián de Zhōngwén kèchéng, ránhòu gēnjù zìjǐ de xìngqù hé xūyào xuǎnzé zhuānyè. Chúle dú běnkē kèchéng, hái kěyǐ shēnqǐng dú shuòshì yánjiūshēng huòzhě bóshì yánjiūshēng. Yàoshi nǐ chéngjì hǎo, biǎoxiàn hǎo, jiù yǒu jīhuì huòdé jiǎngxuéjīn, zhèyàng néng jiǎnqīng bù shǎo jīngjì yālì. Xiǎng yào gèng kuài de shìyìng dàxué shēnghuó, yìfāngmiàn yào duō gēn Zhōngguó xuésheng jiāoliú, lìngyìfāngmiàn yào duō cānjiā xiàoyuán huódòng. Yǒu rènhé wèntí, dōu kěyǐ qù zhǎo lǎoshī. Huānyíng nǐ lái Zhōngguó liúxué!"
+  "py": "Suízhe Zhōngguó de fāzhǎn, yuèláiyuè duō de wàiguó xuésheng láidào Zhōngguó de dàxué xuéxí. Lái le yǐhòu, dàjiā xiān yào bǎ hùzhào, qiānzhèng hé rùxué tōngzhīshū jiāogěi xuéyuàn de lǎoshī, bànhǎo rùxué shǒuxù hé xuéshengzhèng, ránhòu zài wǎngshang xuǎnkè. Zài dàxué lǐ, nǐ kěyǐ xiān shàng yì nián de Zhōngwén kèchéng, ránhòu gēnjù zìjǐ de xìngqù hé xūyào xuǎnzé zhuānyè. Chúle dú běnkē kèchéng, hái kěyǐ shēnqǐng dú shuòshì yánjiūshēng huòzhě bóshì yánjiūshēng. Yàoshi nǐ chéngjì hǎo, biǎoxiàn hǎo, jiù yǒu jīhuì huòdé jiǎngxuéjīn, zhèyàng néng jiǎnqīng bùshǎo jīngjì yālì. Xiǎng yào gèng kuài de shìyìng dàxué shēnghuó, yìfāngmiàn yào duō gēn Zhōngguó xuésheng jiāoliú, lìngyìfāngmiàn yào duō cānjiā xiàoyuán huódòng. Yǒu rènhé wèntí, dōu kěyǐ qù zhǎo lǎoshī. Huānyíng nǐ lái Zhōngguó liúxué!"
  }
 };

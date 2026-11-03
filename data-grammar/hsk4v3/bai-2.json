@@ -160,7 +160,7 @@
       "promptLang": "vi",
       "prompt": "Nếu bạn thích thì cứ lấy đi là được.",
       "answer": "你要是喜欢，拿走就是了。",
-      "answerPy": "Nǐ yàoshi xǐhuan, ná zǒu jiùshì le.",
+      "answerPy": "Nǐ yàoshi xǐhuan, názǒu jiùshì le.",
       "explanation": "要是……，V + 就是了 (ôn Bài 1 · điểm 2)."
      },
      {
@@ -502,7 +502,7 @@
       "promptLang": "vi",
       "prompt": "Cô ấy tìm được việc làm và thuê một căn nhà gần công ty.",
       "answer": "她找到了工作，并在公司附近租了一个房子。",
-      "answerPy": "Tā zhǎo dào le gōngzuò, bìng zài gōngsī fùjìn zū le yí gè fángzi.",
+      "answerPy": "Tā zhǎodào le gōngzuò, bìng zài gōngsī fùjìn zū le yí gè fángzi.",
       "explanation": "并 nối hai hành động, không lặp chủ ngữ."
      },
      {

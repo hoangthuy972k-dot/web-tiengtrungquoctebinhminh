@@ -1,0 +1,695 @@
+{
+ "/lessons/hsk4v3-bai-17.html": {
+  "points": [
+   {
+    "title": "固定格式“你×你的吧” — anh / chị cứ (làm việc) của mình đi",
+    "errors": [
+     {
+      "wrong": "您走你的吧，我还要去健身房。",
+      "why": "Hai đại từ phải giống nhau: 您……您的 / 你……你的.",
+      "right": "您走您的吧，我还要去健身房。"
+     },
+     {
+      "wrong": "你忙你吧，我自己就能完成。",
+      "why": "Thiếu 的 — khuôn là 你 + V + 你的 + 吧.",
+      "right": "你忙你的吧，我自己就能完成。"
+     },
+     {
+      "wrong": "A：我们一起去吃饭吧！B：好啊，你吃你的吧。",
+      "why": "你×你的吧 dùng để TỪ CHỐI (ai làm việc nấy); đã đồng ý đi cùng thì không dùng.",
+      "right": "A：我们一起去吃饭吧！B：不了，你吃你的吧，我还不饿。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… nhưng chị cứ về trước đi …” — đại từ phải giống chữ đầu",
+      "pre": "谢谢一雪姐，不过您走",
+      "blank": "您",
+      "post": "的吧，我一会儿还要去健身房。",
+      "options": [
+       "您",
+       "你",
+       "我"
+      ],
+      "answer": 0,
+      "explanation": "您走您的吧: hai đại từ giống nhau."
+     },
+     {
+      "context": "“Anh cứ làm việc của anh đi, em tự làm xong được.”",
+      "pre": "你",
+      "blank": "忙",
+      "post": "你的吧，我自己就能完成。",
+      "options": [
+       "忙",
+       "帮",
+       "等"
+      ],
+      "answer": 0,
+      "explanation": "你忙你的吧 = anh cứ bận việc của anh."
+     },
+     {
+      "context": "“Các cậu cứ đi chơi đi, hôm nay mình muốn ở nhà nghỉ.”",
+      "pre": "你们玩你们",
+      "blank": "的吧",
+      "post": "，我今天想在家休息。",
+      "options": [
+       "的吧",
+       "吧的",
+       "了吧"
+      ],
+      "answer": 0,
+      "explanation": "Khuôn: 你们 + V + 你们 + 的吧."
+     },
+     {
+      "context": "“Lát nữa em còn phải đến phòng gym một chuyến …”",
+      "pre": "我一会儿还要去一",
+      "blank": "趟",
+      "post": "健身房，您先走吧。",
+      "options": [
+       "趟",
+       "张",
+       "家"
+      ],
+      "answer": 0,
+      "explanation": "去一趟 + nơi: đi một chuyến."
+     },
+     {
+      "context": "“Anh cứ ăn đi, hôm nay em phải tăng ca, về rất muộn.”",
+      "pre": "你吃你的吧，我今天要加班，回来得很",
+      "blank": "晚",
+      "post": "。",
+      "options": [
+       "晚",
+       "早",
+       "快"
+      ],
+      "answer": 0,
+      "explanation": "Lý do từ chối: về muộn → 回来得很晚."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chị cứ về trước đi, em còn phải đến phòng gym một chuyến.”",
+      "words": [
+       "您",
+       "走",
+       "您的吧",
+       "，",
+       "我",
+       "还要去",
+       "一趟健身房"
+      ],
+      "answer": "您走您的吧，我还要去一趟健身房。",
+      "explanation": "您 + V + 您的吧，+ lý do."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh cứ xem của anh đi, em đi nghe điện thoại một chút.”",
+      "words": [
+       "你",
+       "看",
+       "你的吧",
+       "，",
+       "我",
+       "去",
+       "接个电话"
+      ],
+      "answer": "你看你的吧，我去接个电话。",
+      "explanation": "你×你的吧 + việc của mình."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Các bạn cứ nói chuyện đi, mình hơi mệt rồi.”",
+      "words": [
+       "你们",
+       "聊",
+       "你们的吧",
+       "，",
+       "我",
+       "有点儿累了"
+      ],
+      "answer": "你们聊你们的吧，我有点儿累了。",
+      "explanation": "你们……你们的吧."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你忙你的吧，我自己就能完成。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: từ chối khéo ý giúp đỡ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "您走你的吧，我还要去健身房。",
+      "isCorrect": false,
+      "correctVersion": "您走您的吧，我还要去健身房。",
+      "explanation": "Hai đại từ phải thống nhất."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你玩你吧，我想在家休息。",
+      "isCorrect": false,
+      "correctVersion": "你玩你的吧，我想在家休息。",
+      "explanation": "Thiếu 的."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Chị cứ về trước đi, lát nữa em còn phải đến phòng gym một chuyến.",
+      "answer": "您走您的吧，我一会儿还要去一趟健身房。",
+      "answerPy": "Nín zǒu nín de ba, wǒ yíhuìr hái yào qù yí tàng jiànshēnfáng.",
+      "explanation": "你×你的吧 + từ mới 趟, 健身房."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Các cậu cứ chơi đi, mình phải ở nhà ôn bài.",
+      "answer": "你们玩你们的吧，我得在家复习。",
+      "answerPy": "Nǐmen wán nǐmen de ba, wǒ děi zài jiā fùxí.",
+      "explanation": "你们……你们的吧，+ lý do."
+     }
+    ]
+   },
+   {
+    "title": "固定短语“一A一B” — một … một … (hai mặt đối xứng)",
+    "errors": [
+     {
+      "wrong": "一来回得半个小时。",
+      "why": "Phải đủ hai chữ 一: 一来一回.",
+      "right": "一来一回得半个小时。"
+     },
+     {
+      "wrong": "这两个房间一大的一小的。",
+      "why": "一A一B làm vị ngữ, không thêm 的.",
+      "right": "这两个房间一大一小。"
+     },
+     {
+      "wrong": "记者和运动员一问一回答。",
+      "why": "A, B phải là từ đơn âm tiết, đối xứng nhau.",
+      "right": "记者和运动员一问一答。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… cả đi lẫn về mất nửa tiếng.”",
+      "pre": "离我家最近的健身房也要坐两站公交车，一",
+      "blank": "来",
+      "post": "一回得半个小时。",
+      "options": [
+       "来",
+       "到",
+       "回"
+      ],
+      "answer": 0,
+      "explanation": "一来一回 = cả đi lẫn về."
+     },
+     {
+      "context": "“… nhưng từng chữ từng câu đều rất rõ.”",
+      "pre": "她说话的声音不大，但是一字一",
+      "blank": "句",
+      "post": "说得很清楚。",
+      "options": [
+       "句",
+       "话",
+       "声"
+      ],
+      "answer": 0,
+      "explanation": "一字一句: A, B cùng loại, đơn âm tiết."
+     },
+     {
+      "context": "“Phóng viên và vận động viên một hỏi một đáp …”",
+      "pre": "记者和运动员一问一",
+      "blank": "答",
+      "post": "，谈到了很多比赛中的事情。",
+      "options": [
+       "答",
+       "说",
+       "问"
+      ],
+      "answer": 0,
+      "explanation": "问 ↔ 答: hai mặt đối xứng."
+     },
+     {
+      "context": "“Hai phòng này một to một nhỏ …”",
+      "pre": "这两个房间一大一",
+      "blank": "小",
+      "post": "，你们两个人住大的，我自己住小的。",
+      "options": [
+       "小",
+       "多",
+       "少"
+      ],
+      "answer": 0,
+      "explanation": "大 ↔ 小."
+     },
+     {
+      "context": "“… sao ống trái ống phải một dài một ngắn?”",
+      "pre": "您看这条裤子，怎么左腿和右腿一",
+      "blank": "长",
+      "post": "一短？",
+      "options": [
+       "长",
+       "高",
+       "大"
+      ],
+      "answer": 0,
+      "explanation": "长 ↔ 短; 一 trước 长 đọc yì."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cả đi lẫn về mất nửa tiếng, phí thời gian quá.”",
+      "words": [
+       "一来一回",
+       "得",
+       "半个小时",
+       "，",
+       "太浪费",
+       "时间了"
+      ],
+      "answer": "一来一回得半个小时，太浪费时间了。",
+      "explanation": "一来一回 làm chủ ngữ; 得 (děi) = phải mất."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Thầy đọc từng chữ từng câu, mọi người đều nghe rõ.”",
+      "words": [
+       "老师",
+       "一字一句地",
+       "读",
+       "，",
+       "大家",
+       "都",
+       "听清楚了"
+      ],
+      "answer": "老师一字一句地读，大家都听清楚了。",
+      "explanation": "一字一句 + 地 + V: làm trạng ngữ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hai đứa trẻ một béo một gầy, đều rất thích chơi bóng bàn.”",
+      "words": [
+       "两个孩子",
+       "一胖一瘦",
+       "，",
+       "都",
+       "很喜欢",
+       "打乒乓球"
+      ],
+      "answer": "两个孩子一胖一瘦，都很喜欢打乒乓球。",
+      "explanation": "一胖一瘦 làm vị ngữ (胖 ↔ 瘦)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这两个房间一大一小。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 一A一B làm vị ngữ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "记者和运动员一问一回答。",
+      "isCorrect": false,
+      "correctVersion": "记者和运动员一问一答。",
+      "explanation": "A, B phải đơn âm tiết, đối xứng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "从家到公司一来回要一个多小时。",
+      "isCorrect": false,
+      "correctVersion": "从家到公司一来一回要一个多小时。",
+      "explanation": "Đủ hai chữ 一."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Hai đứa con nhà chị ấy một béo một gầy.",
+      "answer": "她家的两个孩子一胖一瘦。",
+      "answerPy": "Tā jiā de liǎng gè háizi yí pàng yí shòu.",
+      "explanation": "一胖一瘦 làm vị ngữ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Từ nhà đến công ty cả đi lẫn về mất một tiếng.",
+      "answer": "从家到公司一来一回要一个小时。",
+      "answerPy": "Cóng jiā dào gōngsī yì lái yì huí yào yí gè xiǎoshí.",
+      "explanation": "一来一回 + 得 / 要 + thời gian."
+     }
+    ]
+   },
+   {
+    "title": "兼语句“主语+表扬/批评+宾语1+动词+宾语2” — khen / phê bình ai (đã) làm gì",
+    "errors": [
+     {
+      "wrong": "老师表扬了因为白家月坚持每天学习中文。",
+      "why": "Không chèn 因为; người + việc sau 表扬 chính là lý do.",
+      "right": "老师表扬白家月坚持每天学习中文。"
+     },
+     {
+      "wrong": "经理批评没有按时完成工作他。",
+      "why": "O1 (người) đứng ngay sau 批评, rồi mới đến việc người đó làm.",
+      "right": "经理批评他没有按时完成工作。"
+     },
+     {
+      "wrong": "妈妈总是批评我把房间不收拾。",
+      "why": "Câu 把 không đặt 不 sau 把; nói 不收拾房间.",
+      "right": "妈妈总是批评我不收拾房间。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Huấn luyện viên cũng khen anh ấy đã tiến bộ rất lớn.”",
+      "pre": "教练也",
+      "blank": "表扬",
+      "post": "他取得了很大的进步。",
+      "options": [
+       "表扬",
+       "批评",
+       "羡慕"
+      ],
+      "answer": 0,
+      "explanation": "Tiến bộ → khen: 表扬 + ai + V."
+     },
+     {
+      "context": "“Giám đốc phê bình anh ấy không hoàn thành đúng hạn.”",
+      "pre": "经理",
+      "blank": "批评",
+      "post": "他没有按时完成工作。",
+      "options": [
+       "批评",
+       "表扬",
+       "鼓励"
+      ],
+      "answer": 0,
+      "explanation": "Việc chưa tốt → 批评."
+     },
+     {
+      "context": "“… khen Bạch Gia Nguyệt kiên trì học tiếng Trung mỗi ngày.”",
+      "pre": "老师表扬白家月",
+      "blank": "坚持",
+      "post": "每天学习中文。",
+      "options": [
+       "坚持",
+       "受伤",
+       "路过"
+      ],
+      "answer": 0,
+      "explanation": "坚持 + V."
+     },
+     {
+      "context": "“HLV khen anh ấy làm động tác rất chuẩn.”",
+      "pre": "教练表扬他把动作做得很",
+      "blank": "准确",
+      "post": "。",
+      "options": [
+       "准确",
+       "全身",
+       "设备"
+      ],
+      "answer": 0,
+      "explanation": "V得 + 准确."
+     },
+     {
+      "context": "“Mẹ lúc nào cũng trách tôi không dọn phòng.”",
+      "pre": "妈妈总是批评我不收拾",
+      "blank": "房间",
+      "post": "。",
+      "options": [
+       "房间",
+       "操场",
+       "会员"
+      ],
+      "answer": 0,
+      "explanation": "收拾房间 = dọn phòng."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Huấn luyện viên khen anh ấy đã có tiến bộ rất lớn.”",
+      "words": [
+       "教练",
+       "表扬",
+       "他",
+       "取得了",
+       "很大的进步"
+      ],
+      "answer": "教练表扬他取得了很大的进步。",
+      "explanation": "S + 表扬 + O1 + V + O2."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Giám đốc phê bình anh ấy không hoàn thành công việc đúng hạn.”",
+      "words": [
+       "经理",
+       "批评",
+       "他",
+       "没有",
+       "按时完成工作"
+      ],
+      "answer": "经理批评他没有按时完成工作。",
+      "explanation": "Phủ định nằm trong phần lý do."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô giáo khen chúng tôi dọn lớp rất sạch.”",
+      "words": [
+       "老师",
+       "表扬",
+       "我们",
+       "把教室",
+       "打扫得",
+       "很干净"
+      ],
+      "answer": "老师表扬我们把教室打扫得很干净。",
+      "explanation": "Phần lý do có thể là câu 把."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "老师表扬白家月坚持每天学习中文。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: câu kiêm ngữ với 表扬."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "经理批评没有按时完成工作他。",
+      "isCorrect": false,
+      "correctVersion": "经理批评他没有按时完成工作。",
+      "explanation": "Người bị phê bình đứng ngay sau 批评."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "教练表扬了因为他动作很标准。",
+      "isCorrect": false,
+      "correctVersion": "教练表扬他动作很标准。",
+      "explanation": "Không dùng 因为 sau 表扬."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Huấn luyện viên khen tôi làm động tác rất chuẩn.",
+      "answer": "教练表扬我动作做得很准确。",
+      "answerPy": "Jiàoliàn biǎoyáng wǒ dòngzuò zuò de hěn zhǔnquè.",
+      "explanation": "表扬 + ai + (O) + V得 + Adj."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Thầy giáo phê bình cậu ấy đi học muộn.",
+      "answer": "老师批评他上课迟到。",
+      "answerPy": "Lǎoshī pīpíng tā shàngkè chídào.",
+      "explanation": "批评 + ai + việc đã làm."
+     }
+    ]
+   },
+   {
+    "title": "递进复句“连……也/都……，……更……” — ngay cả … cũng …, (thì) … càng …",
+    "errors": [
+     {
+      "wrong": "连一些年龄比较大的老人坚持打球。",
+      "why": "Thiếu 都 / 也 sau phần 连.",
+      "right": "连一些年龄比较大的老人都坚持打球。"
+     },
+     {
+      "wrong": "他都连脸没来得及洗。",
+      "why": "Thứ tự: 连 + phần nhấn mạnh + 都 + V.",
+      "right": "他连脸都没来得及洗。"
+     },
+     {
+      "wrong": "我连老师说的话也听不懂，听广播就更容易了。",
+      "why": "Hai vế phải cùng chiều: vế 1 khó → vế 2 càng khó.",
+      "right": "我连老师说的话也听不懂，听广播就更难了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Ngay cả một số người già lớn tuổi cũng kiên trì chơi bóng.”",
+      "pre": "",
+      "blank": "连",
+      "post": "一些年龄比较大的老人都坚持打球。",
+      "options": [
+       "连",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "连……都……: nêu ví dụ cực đoan."
+     },
+     {
+      "context": "“… người trẻ thì càng coi nó là cách rèn luyện hằng ngày.”",
+      "pre": "连老人都坚持打球，年轻人",
+      "blank": "更",
+      "post": "是把它作为一种日常锻炼的方式。",
+      "options": [
+       "更",
+       "最",
+       "太"
+      ],
+      "answer": 0,
+      "explanation": "Vế 2 dùng 更 (càng)."
+     },
+     {
+      "context": "“… đến lời thầy nói còn không hiểu …”",
+      "pre": "我有时候连老师说的话",
+      "blank": "也",
+      "post": "听不懂，听广播就更难了。",
+      "options": [
+       "也",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "连 + tân ngữ đưa lên trước + 也 + V."
+     },
+     {
+      "context": "“… càng không có thời gian chuẩn bị bữa sáng.”",
+      "pre": "今天早上他连脸都没来得及洗，更没有时间准备",
+      "blank": "早饭",
+      "post": "了。",
+      "options": [
+       "早饭",
+       "操场",
+       "设备"
+      ],
+      "answer": 0,
+      "explanation": "Ôn 来得及 / 来不及 (Bài 4 · điểm 4)."
+     },
+     {
+      "context": "“… càng không thể đến phòng gym tập luyện.”",
+      "pre": "受伤以后，他连走路都困难，更不能去",
+      "blank": "健身房",
+      "post": "锻炼了。",
+      "options": [
+       "健身房",
+       "会员",
+       "饼干"
+      ],
+      "answer": 0,
+      "explanation": "去 + nơi + 锻炼."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy đến mặt còn không kịp rửa.”",
+      "words": [
+       "他",
+       "连",
+       "脸",
+       "都",
+       "没来得及洗"
+      ],
+      "answer": "他连脸都没来得及洗。",
+      "explanation": "连 + tân ngữ + 都 + 没 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Câu hỏi này đến trẻ con cũng biết, bạn thì càng phải biết.”",
+      "words": [
+       "这个问题",
+       "连",
+       "孩子",
+       "都",
+       "知道",
+       "，",
+       "你",
+       "更",
+       "应该知道了"
+      ],
+      "answer": "这个问题连孩子都知道，你更应该知道了。",
+      "explanation": "连……都……，……更……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi bận đến mức đến cơm cũng không có thời gian ăn, càng không thể đi tập.”",
+      "words": [
+       "我",
+       "忙得",
+       "连饭",
+       "都",
+       "没时间吃",
+       "，",
+       "更",
+       "不能去健身了"
+      ],
+      "answer": "我忙得连饭都没时间吃，更不能去健身了。",
+      "explanation": "V得 + 连……都……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "连一些年龄比较大的老人坚持打球。",
+      "isCorrect": false,
+      "correctVersion": "连一些年龄比较大的老人都坚持打球。",
+      "explanation": "连 phải đi với 都 / 也."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他连这么难的事情都能解决，这件小事就更没问题了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: việc khó còn làm được → việc nhỏ càng được."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我连老师说的话也听不懂，听广播就更容易了。",
+      "isCorrect": false,
+      "correctVersion": "我连老师说的话也听不懂，听广播就更难了。",
+      "explanation": "Hai vế phải cùng chiều."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Ngay cả ông tôi cũng biết dùng điện thoại thông minh, các bạn trẻ thì càng khỏi phải nói.",
+      "answer": "连我爷爷都会用智能手机，年轻人就更不用说了。",
+      "answerPy": "Lián wǒ yéye dōu huì yòng zhìnéng shǒujī, niánqīngrén jiù gèng búyòng shuō le.",
+      "explanation": "连……都 / 也……，……就更不用说了."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Anh ấy bận đến nỗi cuối tuần cũng phải tăng ca, càng không có thời gian đi phòng gym.",
+      "answer": "他忙得连周末都要加班，更没有时间去健身房了。",
+      "answerPy": "Tā máng de lián zhōumò dōu yào jiābān, gèng méiyǒu shíjiān qù jiànshēnfáng le.",
+      "explanation": "V得 + 连……都……，更没有……"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -53,17 +53,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "家月，最近学习太紧张了，咱们明天出去放松放松吧。",
-  "ex_py": "Jiāyuè, zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqù fàngsōng fàngsōng ba.",
+  "ex_py": "Jiāyuè, zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqu fàngsōng fàngsōng ba.",
   "ex_vn": "Gia Nguyệt, dạo này học hành căng thẳng quá, ngày mai chúng mình ra ngoài thư giãn chút đi.",
   "exList": [
    {
     "zh": "家月，最近学习太紧张了，咱们明天出去放松放松吧。",
-    "py": "Jiāyuè, zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqù fàngsōng fàngsōng ba.",
+    "py": "Jiāyuè, zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqu fàngsōng fàngsōng ba.",
     "vn": "Gia Nguyệt, dạo này học hành căng thẳng quá, ngày mai chúng mình ra ngoài thư giãn chút đi."
    },
    {
     "zh": "第一次参加比赛，他紧张得说不出话来。",
-    "py": "Dì yī cì cānjiā bǐsài, tā jǐnzhāng de shuō bù chū huà lái.",
+    "py": "Dì yí cì cānjiā bǐsài, tā jǐnzhāng de shuō bu chū huà lái.",
     "vn": "Lần đầu tham gia thi đấu, cậu ấy hồi hộp đến mức không nói nên lời."
    }
   ],
@@ -106,7 +106,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu bạn căng thẳng thì hít thở sâu vài cái là được.",
     "answer": "要是你紧张，深呼吸几次就是了。",
-    "answerPy": "Yàoshi nǐ jǐnzhāng, shēn hūxī jǐ cì jiù shì le.",
+    "answerPy": "Yàoshi nǐ jǐnzhāng, shēn hūxī jǐ cì jiùshì le.",
     "note": "Ôn 要是……就…… (Bài 1) + ×就是了 (Bài 2 · điểm 1).",
     "pair": "要是……，×就是了"
    }
@@ -149,7 +149,7 @@ var vocabData = [
    },
    {
     "zh": "好好放松",
-    "py": "Hǎo hǎo fàngsōng",
+    "py": "Hǎohāo fàngsōng",
     "vn": "thư giãn cho thoả"
    }
   ],
@@ -164,17 +164,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "家月，最近学习太紧张了，咱们明天出去放松放松吧。",
-  "ex_py": "Jiāyuè, zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqù fàngsōng fàngsōng ba.",
+  "ex_py": "Jiāyuè, zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqu fàngsōng fàngsōng ba.",
   "ex_vn": "Gia Nguyệt, dạo này học căng thẳng quá, ngày mai mình ra ngoài thư giãn chút đi.",
   "exList": [
    {
     "zh": "家月，最近学习太紧张了，咱们明天出去放松放松吧。",
-    "py": "Jiāyuè, zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqù fàngsōng fàngsōng ba.",
+    "py": "Jiāyuè, zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqu fàngsōng fàngsōng ba.",
     "vn": "Gia Nguyệt, dạo này học căng thẳng quá, ngày mai mình ra ngoài thư giãn chút đi."
    },
    {
     "zh": "工作了一整天，晚上听听音乐放松一下。",
-    "py": "Gōngzuò le yì zhěng tiān, wǎnshang tīng tīng yīnyuè fàngsōng yíxià.",
+    "py": "Gōngzuò le yì zhěngtiān, wǎnshang tīngting yīnyuè fàngsōng yíxià.",
     "vn": "Làm việc cả ngày, buổi tối nghe nhạc thư giãn một chút."
    }
   ],
@@ -209,7 +209,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Thi xong rồi, cuối tuần này chúng ta đi ngoại ô thư giãn một chút đi.",
     "answer": "考完试了，这个周末咱们去郊区放松放松吧。",
-    "answerPy": "Kǎo wán shì le, zhège zhōumò zánmen qù jiāoqū fàngsōng fàngsōng ba.",
+    "answerPy": "Kǎowán shì le, zhège zhōumò zánmen qù jiāoqū fàngsōng fàngsōng ba.",
     "note": "Lặp ABAB của động từ hai âm tiết.",
     "pair": "V V (ABAB)"
    },
@@ -217,7 +217,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cứ đến cuối tuần, anh ấy hoặc đi leo núi hoặc ở nhà xem sách, như thế mới thư giãn được.",
     "answer": "一到周末，他不是去爬山就是在家看书，这样才能放松。",
-    "answerPy": "Yí dào zhōumò, tā bú shì qù páshān jiù shì zài jiā kàn shū, zhèyàng cái néng fàngsōng.",
+    "answerPy": "Yí dào zhōumò, tā bú shì qù páshān jiùshì zài jiā kànshū, zhèyàng cáinéng fàngsōng.",
     "note": "Ôn 不是A就是B (HSK 3) + 一……就……",
     "pair": "一……就……"
    }
@@ -275,12 +275,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "呀，正好我也想出去呢。",
-  "ex_py": "Yā, zhènghǎo wǒ yě xiǎng chūqù ne.",
+  "ex_py": "Yā, zhènghǎo wǒ yě xiǎng chūqu ne.",
   "ex_vn": "Ôi, vừa hay tớ cũng đang muốn ra ngoài đây.",
   "exList": [
    {
     "zh": "呀，正好我也想出去呢。",
-    "py": "Yā, zhènghǎo wǒ yě xiǎng chūqù ne.",
+    "py": "Yā, zhènghǎo wǒ yě xiǎng chūqu ne.",
     "vn": "Ôi, vừa hay tớ cũng đang muốn ra ngoài đây."
    },
    {
@@ -308,7 +308,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ôi, đã 11 giờ rồi, muộn thế này tôi về không kịp mất.",
     "answer": "呀，已经十一点了，这么晚了，我回不去了。",
-    "answerPy": "Yā, yǐjīng shí yī diǎn le, zhème wǎn le, wǒ huí bú qù le.",
+    "answerPy": "Yā, yǐjīng shí yìdiǎn le, zhème wǎn le, wǒ huí bu qù le.",
     "note": "Ôn V不了 (Bài 4 · điểm 1) — ở đây dùng 回不去 (bổ ngữ khả năng).",
     "pair": "呀，……"
    },
@@ -316,7 +316,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ôi, cậu đến rồi! Đồ cứ để ở đây là được, đừng khách sáo.",
     "answer": "呀，你来了！东西放这儿就是了，别客气。",
-    "answerPy": "Yā, nǐ lái le! Dōngxi fàng zhèr jiù shì le, bié kèqi.",
+    "answerPy": "Yā, nǐ lái le! Dōngxi fàng zhèr jiùshì le, bié kèqi.",
     "note": "Ôn ×就是了 (Bài 2 · điểm 1).",
     "pair": "×就是了"
    }
@@ -384,7 +384,7 @@ var vocabData = [
    },
    {
     "zh": "不管天气好不好，他每天都去跑步。",
-    "py": "Bùguǎn tiānqì hǎo bu hǎo, tā měi tiān dōu qù pǎobù.",
+    "py": "Bùguǎn tiānqì hǎo bu hǎo, tā měitiān dōu qù pǎobù.",
     "vn": "Bất kể thời tiết tốt hay không, ngày nào anh ấy cũng đi chạy bộ."
    }
   ],
@@ -419,7 +419,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bất kể gặp phải vấn đề gì, cứ gọi điện cho tôi là được.",
     "answer": "不管遇到什么问题，给我打电话就是了。",
-    "answerPy": "Bùguǎn yùdào shénme wèntí, gěi wǒ dǎdiànhuà jiù shì le.",
+    "answerPy": "Bùguǎn yùdào shénme wèntí, gěi wǒ dǎdiànhuà jiùshì le.",
     "note": "Ôn ×就是了 (Bài 2 · điểm 1).",
     "pair": "不管……，×就是了"
    },
@@ -538,7 +538,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với việc ô tô ngày càng nhiều, càng ngày càng nhiều người thích lái xe đi ngoại ô chơi.",
     "answer": "随着汽车越来越多，越来越多的人喜欢开车去郊区玩。",
-    "answerPy": "Suízhe qì chē yuèláiyuè duō, yuèláiyuè duō de rén xǐhuan kāichē qù jiāoqū wán.",
+    "answerPy": "Suízhe qìchē yuèláiyuè duō, yuèláiyuè duō de rén xǐhuan kāichē qù jiāoqū wán.",
     "note": "Ôn 随着 (Bài 1 · điểm 3).",
     "pair": "随着……"
    }
@@ -641,7 +641,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lần này đi chơi ở Hàng Châu, chúng tôi vừa ngắm cảnh lại vừa ăn được đồ ngon.",
     "answer": "这次去杭州游玩，我们既看了风景，又吃到了好吃的。",
-    "answerPy": "Zhè cì qù háng zhōu yóuwán, wǒmen jì kàn le fēngjǐng, yòu chī dào le hǎochī de.",
+    "answerPy": "Zhè cì qù Hángzhōu yóuwán, wǒmen jì kàn le fēngjǐng, yòu chīdào le hǎochī de.",
     "note": "Ôn 既……又…… (Bài 4 · điểm 3).",
     "pair": "既……又……"
    },
@@ -649,7 +649,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đi chơi xong về nhà, mỗi người tự dọn đồ của mình.",
     "answer": "游玩回来以后，大家各收拾各的东西。",
-    "answerPy": "Yóuwán huílái yǐhòu, dàjiā gè shōushi gè de dōngxi.",
+    "answerPy": "Yóuwán huílai yǐhòu, dàjiā gè shōushi gè de dōngxi.",
     "note": "Ôn 各×各的 (Bài 5 · điểm 3).",
     "pair": "各V各的"
    }
@@ -707,17 +707,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "好主意！不过明天是个大晴天，外出记得戴帽子。",
-  "ex_py": "Hǎo zhǔyi! Búguò míngtiān shì gè dà qíng tiān, wàichū jìde dài màozi.",
+  "ex_py": "Hǎo zhǔyi! Búguò míngtiān shì gè dà qíngtiān, wàichū jìde dài màozi.",
   "ex_vn": "Ý hay đấy! Có điều mai trời nắng to, ra ngoài nhớ đội mũ nhé.",
   "exList": [
    {
     "zh": "好主意！不过明天是个大晴天，外出记得戴帽子。",
-    "py": "Hǎo zhǔyi! Búguò míngtiān shì gè dà qíng tiān, wàichū jìde dài màozi.",
+    "py": "Hǎo zhǔyi! Búguò míngtiān shì gè dà qíngtiān, wàichū jìde dài màozi.",
     "vn": "Ý hay đấy! Có điều mai trời nắng to, ra ngoài nhớ đội mũ nhé."
    },
    {
     "zh": "你主意多，帮我想想怎么办吧。",
-    "py": "Nǐ zhǔyi duō, bāng wǒ xiǎng xiǎng zěnmebàn ba.",
+    "py": "Nǐ zhǔyi duō, bāng wǒ xiǎngxiang zěnmebàn ba.",
     "vn": "Cậu nhiều ý tưởng, nghĩ giúp tớ xem nên làm thế nào đi."
    }
   ],
@@ -760,7 +760,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu cậu đã có ý tưởng hay rồi thì nói ra cho mọi người nghe đi.",
     "answer": "既然你有好主意，就说出来让大家听听吧。",
-    "answerPy": "Jìrán nǐ yǒu hǎo zhǔyi, jiù shuō chū lái ràng dàjiā tīng tīng ba.",
+    "answerPy": "Jìrán nǐ yǒu hǎo zhǔyi, jiù shuō chūlai ràng dàjiā tīngting ba.",
     "note": "Ôn 既然……就…… (Bài 7 · điểm 2).",
     "pair": "既然……就……"
    }
@@ -798,7 +798,7 @@ var vocabData = [
    },
    {
     "zh": "外出办事",
-    "py": "Wàichū bàn shì",
+    "py": "Wàichū bànshì",
     "vn": "ra ngoài làm việc"
    },
    {
@@ -818,17 +818,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "不过明天是个大晴天，外出记得戴帽子。",
-  "ex_py": "Búguò míngtiān shì gè dà qíng tiān, wàichū jìde dài màozi.",
+  "ex_py": "Búguò míngtiān shì gè dà qíngtiān, wàichū jìde dài màozi.",
   "ex_vn": "Có điều mai trời nắng to, ra ngoài nhớ đội mũ.",
   "exList": [
    {
     "zh": "不过明天是个大晴天，外出记得戴帽子。",
-    "py": "Búguò míngtiān shì gè dà qíng tiān, wàichū jìde dài màozi.",
+    "py": "Búguò míngtiān shì gè dà qíngtiān, wàichū jìde dài màozi.",
     "vn": "Có điều mai trời nắng to, ra ngoài nhớ đội mũ."
    },
    {
     "zh": "经理外出了，下午才回来。",
-    "py": "Jīnglǐ wàichū le, xiàwǔ cái huílái.",
+    "py": "Jīnglǐ wàichū le, xiàwǔ cái huílai.",
     "vn": "Giám đốc ra ngoài rồi, chiều mới về."
    }
   ],
@@ -871,7 +871,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mưa to quá, chúng ta không ra ngoài được rồi, ở nhà xem sách vậy.",
     "answer": "雨下得太大了，我们出不去了，就在家看书吧。",
-    "answerPy": "Yǔ xià de tài dà le, wǒmen chū bú qù le, jiù zài jiā kàn shū ba.",
+    "answerPy": "Yǔ xià de tài dà le, wǒmen chū bu qù le, jiù zài jiā kànshū ba.",
     "note": "Ôn V不了 / bổ ngữ khả năng (Bài 4).",
     "pair": "V不……"
    }
@@ -914,7 +914,7 @@ var vocabData = [
    },
    {
     "zh": "戴口罩",
-    "py": "Dài kǒu zhào",
+    "py": "Dài kǒuzhào",
     "vn": "đeo khẩu trang"
    }
   ],
@@ -929,17 +929,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "不过明天是个大晴天，外出记得戴帽子。",
-  "ex_py": "Búguò míngtiān shì gè dà qíng tiān, wàichū jìde dài màozi.",
+  "ex_py": "Búguò míngtiān shì gè dà qíngtiān, wàichū jìde dài màozi.",
   "ex_vn": "Có điều mai trời nắng to, ra ngoài nhớ đội mũ.",
   "exList": [
    {
     "zh": "不过明天是个大晴天，外出记得戴帽子。",
-    "py": "Búguò míngtiān shì gè dà qíng tiān, wàichū jìde dài màozi.",
+    "py": "Búguò míngtiān shì gè dà qíngtiān, wàichū jìde dài màozi.",
     "vn": "Có điều mai trời nắng to, ra ngoài nhớ đội mũ."
    },
    {
     "zh": "夏天出汗多，所以我一般不戴手表。",
-    "py": "Xiàtiān chū hàn duō, suǒyǐ wǒ yìbān bú dài shǒubiǎo.",
+    "py": "Xiàtiān chūhàn duō, suǒyǐ wǒ yìbān bú dài shǒubiǎo.",
     "vn": "Mùa hè ra nhiều mồ hôi, nên tôi thường không đeo đồng hồ."
    }
   ],
@@ -962,7 +962,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hôm nay nắng to, ra ngoài nhớ đội mũ, nếu không sẽ đau đầu đấy.",
     "answer": "今天太阳很大，外出记得戴帽子，否则会头疼的。",
-    "answerPy": "Jīntiān tàiyang hěn dà, wàichū jìde dài màozi, fǒuzé huì tóu téng de.",
+    "answerPy": "Jīntiān tàiyang hěn dà, wàichū jìde dài màozi, fǒuzé huì tóuténg de.",
     "note": "Dùng 否则 (điểm ngữ pháp 2 bài này).",
     "pair": "……，否则……"
    },
@@ -970,7 +970,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ông ấy đeo kính rồi mà vẫn không nhìn rõ chữ trên bảng.",
     "answer": "他戴上眼镜了，还是看不清楚黑板上的字。",
-    "answerPy": "Tā dài shàng yǎnjìng le, háishì kàn bù qīngchu hēibǎn shàng de zì.",
+    "answerPy": "Tā dàishang yǎnjìng le, háishi kànbuqīngchu hēibǎn shàng de zì.",
     "note": "Ôn bổ ngữ khả năng 看不清楚 (Bài 4).",
     "pair": "V不清楚"
    }
@@ -1028,17 +1028,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "不过明天是个大晴天，外出记得戴帽子。",
-  "ex_py": "Búguò míngtiān shì gè dà qíng tiān, wàichū jìde dài màozi.",
+  "ex_py": "Búguò míngtiān shì gè dà qíngtiān, wàichū jìde dài màozi.",
   "ex_vn": "Có điều mai trời nắng to, ra ngoài nhớ đội mũ.",
   "exList": [
    {
     "zh": "不过明天是个大晴天，外出记得戴帽子。",
-    "py": "Búguò míngtiān shì gè dà qíng tiān, wàichū jìde dài màozi.",
+    "py": "Búguò míngtiān shì gè dà qíngtiān, wàichū jìde dài màozi.",
     "vn": "Có điều mai trời nắng to, ra ngoài nhớ đội mũ."
    },
    {
     "zh": "这顶帽子又好看又便宜，我买下来了。",
-    "py": "Zhè dǐng màozi yòu hǎokàn yòu piányi, wǒ mǎi xiàlái le.",
+    "py": "Zhè dǐng màozi yòu hǎokàn yòu piányi, wǒ mǎi xiàlai le.",
     "vn": "Cái mũ này vừa đẹp vừa rẻ, tôi mua luôn rồi."
    }
   ],
@@ -1073,7 +1073,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cái mũ này hơi nhỏ, tôi đội không vừa.",
     "answer": "这顶帽子有点儿小，我戴不了。",
-    "answerPy": "Zhè dǐng màozi yǒudiǎnr xiǎo, wǒ dài bù liǎo.",
+    "answerPy": "Zhè dǐng màozi yǒudiǎnr xiǎo, wǒ dài bu liǎo.",
     "note": "Ôn V不了 (Bài 4 · điểm 1).",
     "pair": "V不了"
    },
@@ -1081,7 +1081,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mỗi người đội mũ của mình, đừng lấy nhầm.",
     "answer": "大家各戴各的帽子，别拿错了。",
-    "answerPy": "Dàjiā gè dài gè de màozi, bié ná cuò le.",
+    "answerPy": "Dàjiā gè dài gè de màozi, bié nácuò le.",
     "note": "Ôn 各×各的 (Bài 5 · điểm 3).",
     "pair": "各V各的"
    }
@@ -1114,7 +1114,7 @@ var vocabData = [
    },
    {
     "zh": "万里长城",
-    "py": "Wàn lǐ Chángchéng",
+    "py": "Wànlǐ Chángchéng",
     "vn": "Vạn Lý Trường Thành"
    },
    {
@@ -1139,17 +1139,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "那咱们明天去爬长城吧，不是说“不到长城非好汉”吗？",
-  "ex_py": "Nà zánmen míngtiān qù pá Chángchéng ba, bú shì shuō “bú dào Chángchéng fēi hǎo hàn” ma?",
+  "ex_py": "Nà zánmen míngtiān qù pá Chángchéng ba, bú shì shuō “bú dào Chángchéng fēi hǎohàn” ma?",
   "ex_vn": "Vậy mai chúng mình đi leo Trường Thành đi, chẳng phải người ta nói “chưa đến Trường Thành chưa phải hảo hán” sao?",
   "exList": [
    {
     "zh": "那咱们明天去爬长城吧，不是说“不到长城非好汉”吗？",
-    "py": "Nà zánmen míngtiān qù pá Chángchéng ba, bú shì shuō “bú dào Chángchéng fēi hǎo hàn” ma?",
+    "py": "Nà zánmen míngtiān qù pá Chángchéng ba, bú shì shuō “bú dào Chángchéng fēi hǎohàn” ma?",
     "vn": "Vậy mai chúng mình đi leo Trường Thành đi, chẳng phải người ta nói “chưa đến Trường Thành chưa phải hảo hán” sao?"
    },
    {
     "zh": "很多外国人来北京，第一个想去的地方就是长城。",
-    "py": "Hěn duō wàiguó rén lái Běijīng, dì yī gè xiǎng qù de dìfang jiù shì Chángchéng.",
+    "py": "Hěn duō wàiguórén lái Běijīng, dì yí gè xiǎng qù de dìfang jiùshì Chángchéng.",
     "vn": "Nhiều người nước ngoài đến Bắc Kinh, nơi đầu tiên muốn đến chính là Trường Thành."
    }
   ],
@@ -1295,7 +1295,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Dự án này quá nhiều việc, một mình tôi làm không xuể.",
     "answer": "这个项目工作太多了，我一个人做不了。",
-    "answerPy": "Zhège xiàngmù gōngzuò tài duō le, wǒ yí gè rén zuò bù liǎo.",
+    "answerPy": "Zhège xiàngmù gōngzuò tài duō le, wǒ yí gè rén zuò bu liǎo.",
     "note": "Ôn V不了 (Bài 4 · điểm 1).",
     "pair": "V不了"
    },
@@ -1361,17 +1361,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "所以参加了公司里的很多项目，经常加班、熬夜，身体也亮起了红灯。",
-  "ex_py": "Suǒyǐ cānjiā le gōngsī lǐ de hěn duō xiàngmù, jīngcháng jiābān, áoyè, shēntǐ yě liàng qǐ le hóng dēng.",
+  "ex_py": "Suǒyǐ cānjiā le gōngsī lǐ de hěn duō xiàngmù, jīngcháng jiābān, áoyè, shēntǐ yě liàng qǐ le hóngdēng.",
   "ex_vn": "Nên đã tham gia nhiều dự án của công ty, thường xuyên tăng ca, thức khuya, sức khỏe cũng báo động đỏ.",
   "exList": [
    {
     "zh": "所以参加了公司里的很多项目，经常加班、熬夜，身体也亮起了红灯。",
-    "py": "Suǒyǐ cānjiā le gōngsī lǐ de hěn duō xiàngmù, jīngcháng jiābān, áoyè, shēntǐ yě liàng qǐ le hóng dēng.",
+    "py": "Suǒyǐ cānjiā le gōngsī lǐ de hěn duō xiàngmù, jīngcháng jiābān, áoyè, shēntǐ yě liàng qǐ le hóngdēng.",
     "vn": "Nên đã tham gia nhiều dự án của công ty, thường xuyên tăng ca, thức khuya, sức khỏe cũng báo động đỏ."
    },
    {
     "zh": "今天又要加班，我恐怕来不及回家吃晚饭了。",
-    "py": "Jīntiān yòu yào jiābān, wǒ kǒngpà láibùjí huí jiā chī wǎnfàn le.",
+    "py": "Jīntiān yòu yào jiābān, wǒ kǒngpà láibují huíjiā chī wǎnfàn le.",
     "vn": "Hôm nay lại phải tăng ca, e là tôi không kịp về nhà ăn tối rồi."
    }
   ],
@@ -1472,17 +1472,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "经常加班、熬夜，身体也亮起了红灯。",
-  "ex_py": "Jīngcháng jiābān, áoyè, shēntǐ yě liàng qǐ le hóng dēng.",
+  "ex_py": "Jīngcháng jiābān, áoyè, shēntǐ yě liàng qǐ le hóngdēng.",
   "ex_vn": "Thường xuyên tăng ca, thức khuya, sức khỏe cũng báo động đỏ.",
   "exList": [
    {
     "zh": "经常加班、熬夜，身体也亮起了红灯。",
-    "py": "Jīngcháng jiābān, áoyè, shēntǐ yě liàng qǐ le hóng dēng.",
+    "py": "Jīngcháng jiābān, áoyè, shēntǐ yě liàng qǐ le hóngdēng.",
     "vn": "Thường xuyên tăng ca, thức khuya, sức khỏe cũng báo động đỏ."
    },
    {
     "zh": "为了准备考试，他熬了好几个晚上。",
-    "py": "Wèile zhǔnbèi kǎoshì, tā áo le hǎo jǐ gè wǎnshang.",
+    "py": "Wèile zhǔnbèi kǎoshì, tā áo le hǎojǐ gè wǎnshang.",
     "vn": "Để chuẩn bị thi, cậu ấy đã thức trắng mấy đêm liền."
    }
   ],
@@ -1517,7 +1517,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đừng thức khuya nữa, nếu không ngày mai sẽ không dậy nổi đâu.",
     "answer": "别熬夜了，否则明天会起不来的。",
-    "answerPy": "Bié áoyè le, fǒuzé míngtiān huì qǐ bù lái de.",
+    "answerPy": "Bié áoyè le, fǒuzé míngtiān huì qǐ bu lái de.",
     "note": "Dùng 否则 (điểm 2) + 起不来 (bổ ngữ khả năng, Bài 4).",
     "pair": "……，否则……"
    },
@@ -1553,7 +1553,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "否则的话",
-    "py": "Fǒuzé dehuà",
+    "py": "Fǒuzé de huà",
     "vn": "nếu không thì"
    },
    {
@@ -1568,7 +1568,7 @@ var vocabData = [
    },
    {
     "zh": "要不然",
-    "py": "Yào bùrán",
+    "py": "Yàobùrán",
     "vn": "(khẩu ngữ) không thì"
    }
   ],
@@ -1583,17 +1583,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "还是别给自己太大压力，否则，失去健康就不值得了。",
-  "ex_py": "Háishì bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
+  "ex_py": "Háishi bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
   "ex_vn": "Tốt hơn hết đừng tự tạo áp lực quá lớn cho mình, nếu không mất sức khỏe thì chẳng đáng.",
   "exList": [
    {
     "zh": "还是别给自己太大压力，否则，失去健康就不值得了。",
-    "py": "Háishì bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
+    "py": "Háishi bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
     "vn": "Tốt hơn hết đừng tự tạo áp lực quá lớn cho mình, nếu không mất sức khỏe thì chẳng đáng."
    },
    {
     "zh": "快走吧，否则我们就来不及了。",
-    "py": "Kuài zǒu ba, fǒuzé wǒmen jiù láibùjí le.",
+    "py": "Kuài zǒu ba, fǒuzé wǒmen jiù láibují le.",
     "vn": "Đi nhanh lên, không thì chúng ta không kịp mất."
    }
   ],
@@ -1628,7 +1628,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mang ô theo đi, nếu không lát nữa mưa thì phiền lắm.",
     "answer": "带上雨伞吧，否则一会儿下雨就麻烦了。",
-    "answerPy": "Dài shàng yǔ sǎn ba, fǒuzé yíhuìr xiàyǔ jiù máfan le.",
+    "answerPy": "Dàishàng yǔsǎn ba, fǒuzé yíhuìr xiàyǔ jiù máfan le.",
     "note": "Mẫu cơ bản của 否则.",
     "pair": "……，否则……"
    },
@@ -1636,7 +1636,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nên đi ngủ sớm, nếu không cậu ít nhất cũng phải mệt cả ngày mai.",
     "answer": "早点儿睡吧，否则你明天至少要累一整天。",
-    "answerPy": "Zǎo diǎnr shuì ba, fǒuzé nǐ míngtiān zhìshǎo yào lèi yì zhěng tiān.",
+    "answerPy": "Zǎodiǎnr shuì ba, fǒuzé nǐ míngtiān zhìshǎo yào lèi yì zhěngtiān.",
     "note": "Ôn 至少 (Bài 5 · điểm 1).",
     "pair": "否则 + 至少"
    }
@@ -1694,12 +1694,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "还是别给自己太大压力，否则，失去健康就不值得了。",
-  "ex_py": "Háishì bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
+  "ex_py": "Háishi bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
   "ex_vn": "Đừng tự tạo áp lực quá lớn, nếu không mất sức khỏe thì chẳng đáng.",
   "exList": [
    {
     "zh": "还是别给自己太大压力，否则，失去健康就不值得了。",
-    "py": "Háishì bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
+    "py": "Háishi bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
     "vn": "Đừng tự tạo áp lực quá lớn, nếu không mất sức khỏe thì chẳng đáng."
    },
    {
@@ -1739,7 +1739,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đã lỡ mất cơ hội này rồi thì đừng nghĩ nữa, chuẩn bị cho lần sau là được.",
     "answer": "既然已经失去了这个机会，就别再想了，准备下次就是了。",
-    "answerPy": "Jìrán yǐjīng shīqù le zhège jīhuì, jiù bié zài xiǎng le, zhǔnbèi xià cì jiù shì le.",
+    "answerPy": "Jìrán yǐjīng shīqù le zhège jīhuì, jiù bié zài xiǎng le, zhǔnbèi xià cì jiùshì le.",
     "note": "Ôn 既然……就…… (Bài 7) + 就是了 (Bài 2).",
     "pair": "既然……就……"
    },
@@ -1805,17 +1805,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "还是别给自己太大压力，否则，失去健康就不值得了。",
-  "ex_py": "Háishì bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
+  "ex_py": "Háishi bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
   "ex_vn": "Đừng tự tạo áp lực quá lớn, nếu không mất sức khỏe thì chẳng đáng.",
   "exList": [
    {
     "zh": "还是别给自己太大压力，否则，失去健康就不值得了。",
-    "py": "Háishì bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
+    "py": "Háishi bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
     "vn": "Đừng tự tạo áp lực quá lớn, nếu không mất sức khỏe thì chẳng đáng."
    },
    {
     "zh": "故宫很值得参观，你来北京一定要去看看。",
-    "py": "Gùgōng hěn zhídé cānguān, nǐ lái Běijīng yídìng yào qù kàn kàn.",
+    "py": "Gùgōng hěn zhídé cānguān, nǐ lái Běijīng yídìng yào qù kànkan.",
     "vn": "Cố Cung rất đáng tham quan, bạn đến Bắc Kinh nhất định phải đi xem."
    }
   ],
@@ -1850,7 +1850,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cuốn sách này đọc rất hay, nếu bạn có thời gian thì đáng đọc lắm.",
     "answer": "这本书写得很好，要是你有时间，很值得一看。",
-    "answerPy": "Zhè běn shū xiě de hěn hǎo, yàoshi nǐ yǒu shíjiān, hěn zhídé yí kàn.",
+    "answerPy": "Zhè běn shūxiě de hěn hǎo, yàoshi nǐ yǒu shíjiān, hěn zhídé yí kàn.",
     "note": "Ôn 要是 (Bài 1).",
     "pair": "值得 + V"
    },
@@ -1886,7 +1886,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "暂停下来",
-    "py": "Zàntíng xiàlái",
+    "py": "Zàntíng xiàlai",
     "vn": "tạm dừng lại"
    },
    {
@@ -1916,17 +1916,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "我发现暂停下来、好好休息之后，我能把工作做得更快更好。",
-  "ex_py": "Wǒ fāxiàn zàntíng xiàlái, hǎo hǎo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo.",
+  "ex_py": "Wǒ fāxiàn zàntíng xiàlai, hǎohāo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo.",
   "ex_vn": "Tôi nhận ra sau khi tạm dừng lại, nghỉ ngơi cho tốt, tôi có thể làm việc nhanh hơn và tốt hơn.",
   "exList": [
    {
     "zh": "我发现暂停下来、好好休息之后，我能把工作做得更快更好。",
-    "py": "Wǒ fāxiàn zàntíng xiàlái, hǎo hǎo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo.",
+    "py": "Wǒ fāxiàn zàntíng xiàlai, hǎohāo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo.",
     "vn": "Tôi nhận ra sau khi tạm dừng lại, nghỉ ngơi cho tốt, tôi có thể làm việc nhanh hơn và tốt hơn."
    },
    {
     "zh": "由于下大雨，比赛暂停了半个小时。",
-    "py": "Yóuyú xià dà yǔ, bǐsài zàntíng le bàn gè xiǎoshí.",
+    "py": "Yóuyú xià dàyǔ, bǐsài zàntíng le bàn gè xiǎoshí.",
     "vn": "Do mưa to, trận đấu tạm dừng nửa tiếng."
    }
   ],
@@ -1961,7 +1961,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Học mệt rồi thì tạm dừng một chút, đi ra ngoài đi dạo cho đỡ.",
     "answer": "学累了就暂停一下，出去走走，好放松放松。",
-    "answerPy": "Xué lèi le jiù zàntíng yíxià, chūqù zǒu zǒu, hǎo fàngsōng fàngsōng.",
+    "answerPy": "Xué lèi le jiù zàntíng yíxià, chūqu zǒuzou, hǎo fàngsōng fàngsōng.",
     "note": "Ôn ……，好…… (Bài 6 · điểm 4).",
     "pair": "……，好……"
    },
@@ -2027,12 +2027,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "我发现暂停下来、好好休息之后，我能把工作做得更快更好。",
-  "ex_py": "Wǒ fāxiàn zàntíng xiàlái, hǎo hǎo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo.",
+  "ex_py": "Wǒ fāxiàn zàntíng xiàlai, hǎohāo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo.",
   "ex_vn": "Tôi nhận ra sau khi tạm dừng, nghỉ ngơi tử tế, tôi có thể làm việc nhanh hơn và tốt hơn.",
   "exList": [
    {
     "zh": "我发现暂停下来、好好休息之后，我能把工作做得更快更好。",
-    "py": "Wǒ fāxiàn zàntíng xiàlái, hǎo hǎo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo.",
+    "py": "Wǒ fāxiàn zàntíng xiàlai, hǎohāo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo.",
     "vn": "Tôi nhận ra sau khi tạm dừng, nghỉ ngơi tử tế, tôi có thể làm việc nhanh hơn và tốt hơn."
    },
    {
@@ -2072,7 +2072,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Sau khi về đến nhà, tôi mới phát hiện mình để quên điện thoại ở công ty.",
     "answer": "回到家之后，我才发现手机忘在公司了。",
-    "answerPy": "Huí dào jiā zhīhòu, wǒ cái fāxiàn shǒujī wàng zài gōngsī le.",
+    "answerPy": "Huídào jiā zhīhòu, wǒ cái fāxiàn shǒujī wàng zài gōngsī le.",
     "note": "之后 + 才.",
     "pair": "……之后，才……"
    },
@@ -2118,7 +2118,7 @@ var vocabData = [
    },
    {
     "zh": "风景区",
-    "py": "Fēngjǐng qū",
+    "py": "Fēngjǐngqū",
     "vn": "khu thắng cảnh"
    },
    {
@@ -2148,7 +2148,7 @@ var vocabData = [
    },
    {
     "zh": "坐火车可以一路看风景，所以我不太喜欢坐飞机。",
-    "py": "Zuò huǒchē kěyǐ yí lù kàn fēngjǐng, suǒyǐ wǒ bú tài xǐhuan zuò fēijī.",
+    "py": "Zuò huǒchē kěyǐ yílù kàn fēngjǐng, suǒyǐ wǒ bú tài xǐhuan zuò fēijī.",
     "vn": "Đi tàu hỏa có thể ngắm cảnh suốt đường, nên tôi không thích đi máy bay lắm."
    }
   ],
@@ -2191,7 +2191,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lấy Quế Lâm làm ví dụ, phong cảnh ở đó đẹp vô cùng.",
     "answer": "拿桂林来说，那里的风景十分美丽。",
-    "answerPy": "Ná guì lín láishuō, nàli de fēngjǐng shífēn měilì.",
+    "answerPy": "Ná Guìlín láishuō, nàli de fēngjǐng shífēn měilì.",
     "note": "Ôn 拿……来说 (Bài 7 · điểm 3).",
     "pair": "拿……来说"
    }
@@ -2249,17 +2249,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "休息好了，再回去上班时，心情愉快，工作效率也更高。",
-  "ex_py": "Xiūxi hǎo le, zài huíqù shàngbān shí, xīnqíng yúkuài, gōngzuò xiàolǜ yě gèng gāo.",
+  "ex_py": "Xiūxi hǎo le, zài huíqu shàngbān shí, xīnqíng yúkuài, gōngzuò xiàolǜ yě gèng gāo.",
   "ex_vn": "Nghỉ ngơi đủ rồi, khi quay lại làm việc, tâm trạng vui vẻ, hiệu suất công việc cũng cao hơn.",
   "exList": [
    {
     "zh": "休息好了，再回去上班时，心情愉快，工作效率也更高。",
-    "py": "Xiūxi hǎo le, zài huíqù shàngbān shí, xīnqíng yúkuài, gōngzuò xiàolǜ yě gèng gāo.",
+    "py": "Xiūxi hǎo le, zài huíqu shàngbān shí, xīnqíng yúkuài, gōngzuò xiàolǜ yě gèng gāo.",
     "vn": "Nghỉ ngơi đủ rồi, khi quay lại làm việc, tâm trạng vui vẻ, hiệu suất công việc cũng cao hơn."
    },
    {
     "zh": "他做事效率很高，一个小时就做完了。",
-    "py": "Tā zuò shì xiàolǜ hěn gāo, yí gè xiǎoshí jiù zuò wán le.",
+    "py": "Tā zuòshì xiàolǜ hěn gāo, yí gè xiǎoshí jiù zuòwán le.",
     "vn": "Anh ấy làm việc năng suất rất cao, một tiếng đã làm xong."
    }
   ],
@@ -2302,7 +2302,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Làm việc cả ngày không nghỉ, hiệu suất sẽ ngày càng thấp.",
     "answer": "一整天工作不休息，效率会越来越低。",
-    "answerPy": "Yì zhěng tiān gōngzuò bù xiūxi, xiàolǜ huì yuèláiyuè dī.",
+    "answerPy": "Yì zhěngtiān gōngzuò bù xiūxi, xiàolǜ huì yuèláiyuè dī.",
     "note": "Ôn 越来越 (HSK 3).",
     "pair": "越来越……"
    }
@@ -2370,7 +2370,7 @@ var vocabData = [
    },
    {
     "zh": "最近他晚上总是玩手机，学习成绩下降了不少。",
-    "py": "Zuìjìn tā wǎnshang zǒngshì wán shǒujī, xuéxí chéngjì xiàjiàng le bù shǎo.",
+    "py": "Zuìjìn tā wǎnshang zǒngshì wán shǒujī, xuéxí chéngjì xiàjiàng le bùshǎo.",
     "vn": "Dạo này tối nào cậu ấy cũng chơi điện thoại, thành tích học tập giảm đi không ít."
    }
   ],
@@ -2582,17 +2582,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "因此，很多人开始做出改变，提醒自己减轻压力、多多放松。",
-  "ex_py": "Yīncǐ, hěn duō rén kāishǐ zuò chū gǎibiàn, tíxǐng zìjǐ jiǎn qīng yālì, duō duō fàngsōng.",
+  "ex_py": "Yīncǐ, hěn duō rén kāishǐ zuòchū gǎibiàn, tíxǐng zìjǐ jiǎnqīng yālì, duōduō fàngsōng.",
   "ex_vn": "Vì vậy, nhiều người bắt đầu thay đổi, nhắc nhở bản thân giảm áp lực, thư giãn nhiều hơn.",
   "exList": [
    {
     "zh": "因此，很多人开始做出改变，提醒自己减轻压力、多多放松。",
-    "py": "Yīncǐ, hěn duō rén kāishǐ zuò chū gǎibiàn, tíxǐng zìjǐ jiǎn qīng yālì, duō duō fàngsōng.",
+    "py": "Yīncǐ, hěn duō rén kāishǐ zuòchū gǎibiàn, tíxǐng zìjǐ jiǎnqīng yālì, duōduō fàngsōng.",
     "vn": "Vì vậy, nhiều người bắt đầu thay đổi, nhắc nhở bản thân giảm áp lực, thư giãn nhiều hơn."
    },
    {
     "zh": "由于下大雨，因此比赛暂停了。",
-    "py": "Yóuyú xià dà yǔ, yīncǐ bǐsài zàntíng le.",
+    "py": "Yóuyú xià dàyǔ, yīncǐ bǐsài zàntíng le.",
     "vn": "Do mưa to, vì vậy trận đấu tạm dừng."
    }
   ],
@@ -2627,7 +2627,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Anh ấy đã luyện tập rất lâu, vì vậy lần này thi đấu một chút cũng không căng thẳng.",
     "answer": "他练习了很长时间，因此这次比赛一点儿也不紧张。",
-    "answerPy": "Tā liànxí le hěn cháng shíjiān, yīncǐ zhè cì bǐsài yìdiǎnr yě bù jǐnzhāng.",
+    "answerPy": "Tā liànxí le hěn chángshíjiān, yīncǐ zhè cì bǐsài yìdiǎnr yě bù jǐnzhāng.",
     "note": "因此 nối nguyên nhân – kết quả.",
     "pair": "……，因此……"
    },
@@ -2635,7 +2635,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Giao thông ở Bắc Kinh rất tiện, vì vậy đi đâu cũng không tốn mấy thời gian.",
     "answer": "北京交通很方便，因此去哪儿都用不了多少时间。",
-    "answerPy": "Běijīng jiāotōng hěn fāngbiàn, yīncǐ qù nǎr dōu yòng bù le duōshǎo shíjiān.",
+    "answerPy": "Běijīng jiāotōng hěn fāngbiàn, yīncǐ qù nǎr dōu yòng bu le duōshao shíjiān.",
     "note": "Ôn V不了 (Bài 4 · điểm 1).",
     "pair": "用不了"
    }
@@ -2668,12 +2668,12 @@ var vocabData = [
    },
    {
     "zh": "提醒他早点儿睡",
-    "py": "Tíxǐng tā zǎo diǎnr shuì",
+    "py": "Tíxǐng tā zǎodiǎnr shuì",
     "vn": "nhắc anh ấy ngủ sớm"
    },
    {
     "zh": "谢谢你的提醒",
-    "py": "Xièxiè nǐ de tíxǐng",
+    "py": "Xièxie nǐ de tíxǐng",
     "vn": "cảm ơn bạn đã nhắc"
    },
    {
@@ -2693,17 +2693,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "因此，很多人开始做出改变，提醒自己减轻压力、多多放松。",
-  "ex_py": "Yīncǐ, hěn duō rén kāishǐ zuò chū gǎibiàn, tíxǐng zìjǐ jiǎn qīng yālì, duō duō fàngsōng.",
+  "ex_py": "Yīncǐ, hěn duō rén kāishǐ zuòchū gǎibiàn, tíxǐng zìjǐ jiǎnqīng yālì, duōduō fàngsōng.",
   "ex_vn": "Vì vậy, nhiều người bắt đầu thay đổi, nhắc nhở bản thân giảm bớt áp lực, thư giãn nhiều hơn.",
   "exList": [
    {
     "zh": "因此，很多人开始做出改变，提醒自己减轻压力、多多放松。",
-    "py": "Yīncǐ, hěn duō rén kāishǐ zuò chū gǎibiàn, tíxǐng zìjǐ jiǎn qīng yālì, duō duō fàngsōng.",
+    "py": "Yīncǐ, hěn duō rén kāishǐ zuòchū gǎibiàn, tíxǐng zìjǐ jiǎnqīng yālì, duōduō fàngsōng.",
     "vn": "Vì vậy, nhiều người bắt đầu thay đổi, nhắc nhở bản thân giảm bớt áp lực, thư giãn nhiều hơn."
    },
    {
     "zh": "下雨天妈妈总是提醒我，出门时别忘了带雨伞。",
-    "py": "Xiàyǔ tiān māma zǒngshì tíxǐng wǒ, chūmén shí bié wàng le dài yǔ sǎn.",
+    "py": "Xiàyǔtiān māma zǒngshì tíxǐng wǒ, chūmén shí bié wàng le dài yǔsǎn.",
     "vn": "Trời mưa mẹ luôn nhắc tôi ra ngoài đừng quên mang ô."
    }
   ],
@@ -2738,7 +2738,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nhắc tôi một chút nhé, ngày mai ít nhất phải đến sớm mười phút.",
     "answer": "你提醒我一下，明天至少要早来十分钟。",
-    "answerPy": "Nǐ tíxǐng wǒ yíxià, míngtiān zhìshǎo yào zǎo lái shí fēnzhōng.",
+    "answerPy": "Nǐ tíxǐng wǒ yíxià, míngtiān zhìshǎo yào zǎo lái shífēn zhōng.",
     "note": "Ôn 至少 (Bài 5 · điểm 1).",
     "pair": "提醒 + ai"
    },
@@ -2746,7 +2746,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bác sĩ nhắc anh ấy đừng thức khuya nữa, nếu không bệnh sẽ không khỏi được.",
     "answer": "医生提醒他别再熬夜了，否则病好不了。",
-    "answerPy": "Yīshēng tíxǐng tā bié zài áoyè le, fǒuzé bìng hǎo bù liǎo.",
+    "answerPy": "Yīshēng tíxǐng tā bié zài áoyè le, fǒuzé bìng hǎo bu liǎo.",
     "note": "Ôn V不了 (Bài 4) + 否则 (điểm 2).",
     "pair": "提醒 + ai + 别……"
    }
@@ -2804,12 +2804,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "杨同乐周末时或者与朋友们去郊区游玩，在大自然美丽的景色中好好放松自己。",
-  "ex_py": "Yáng Tónglè zhōumò shí huòzhě yǔ péngyou men qù jiāoqū yóuwán, zài dàzìrán měilì de jǐngsè zhōng hǎo hǎo fàngsōng zìjǐ.",
+  "ex_py": "Yáng Tónglè zhōumò shí huòzhě yǔ péngyoumen qù jiāoqū yóuwán, zài dàzìrán měilì de jǐngsè zhōng hǎohāo fàngsōng zìjǐ.",
   "ex_vn": "Cuối tuần, Dương Đồng Lạc có khi cùng bạn bè đi chơi ngoại ô, thư giãn giữa cảnh sắc tươi đẹp của thiên nhiên.",
   "exList": [
    {
     "zh": "杨同乐周末时或者与朋友们去郊区游玩，在大自然美丽的景色中好好放松自己。",
-    "py": "Yáng Tónglè zhōumò shí huòzhě yǔ péngyou men qù jiāoqū yóuwán, zài dàzìrán měilì de jǐngsè zhōng hǎo hǎo fàngsōng zìjǐ.",
+    "py": "Yáng Tónglè zhōumò shí huòzhě yǔ péngyoumen qù jiāoqū yóuwán, zài dàzìrán měilì de jǐngsè zhōng hǎohāo fàngsōng zìjǐ.",
     "vn": "Cuối tuần, Dương Đồng Lạc có khi cùng bạn bè đi chơi ngoại ô, thư giãn giữa cảnh sắc tươi đẹp của thiên nhiên."
    },
    {
@@ -2873,7 +2873,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "走进大自然",
-    "py": "Zǒu jìn dàzìrán",
+    "py": "Zǒujìn dàzìrán",
     "vn": "bước vào thiên nhiên"
    },
    {
@@ -2903,17 +2903,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "杨同乐周末时或者与朋友们去郊区游玩，在大自然美丽的景色中好好放松自己。",
-  "ex_py": "Yáng Tónglè zhōumò shí huòzhě yǔ péngyou men qù jiāoqū yóuwán, zài dàzìrán měilì de jǐngsè zhōng hǎo hǎo fàngsōng zìjǐ.",
+  "ex_py": "Yáng Tónglè zhōumò shí huòzhě yǔ péngyoumen qù jiāoqū yóuwán, zài dàzìrán měilì de jǐngsè zhōng hǎohāo fàngsōng zìjǐ.",
   "ex_vn": "Cuối tuần Dương Đồng Lạc có khi cùng bạn bè đi chơi ngoại ô, thư giãn thoải mái giữa cảnh sắc tươi đẹp của thiên nhiên.",
   "exList": [
    {
     "zh": "杨同乐周末时或者与朋友们去郊区游玩，在大自然美丽的景色中好好放松自己。",
-    "py": "Yáng Tónglè zhōumò shí huòzhě yǔ péngyou men qù jiāoqū yóuwán, zài dàzìrán měilì de jǐngsè zhōng hǎo hǎo fàngsōng zìjǐ.",
+    "py": "Yáng Tónglè zhōumò shí huòzhě yǔ péngyoumen qù jiāoqū yóuwán, zài dàzìrán měilì de jǐngsè zhōng hǎohāo fàngsōng zìjǐ.",
     "vn": "Cuối tuần Dương Đồng Lạc có khi cùng bạn bè đi chơi ngoại ô, thư giãn thoải mái giữa cảnh sắc tươi đẹp của thiên nhiên."
    },
    {
     "zh": "孩子们应该多去大自然里走走，少玩手机。",
-    "py": "Háizi men yīnggāi duō qù dàzìrán lǐ zǒu zǒu, shǎo wán shǒujī.",
+    "py": "Háizimen yīnggāi duō qù dàzìrán lǐ zǒuzou, shǎo wán shǒujī.",
     "vn": "Trẻ con nên đi dạo giữa thiên nhiên nhiều hơn, ít chơi điện thoại thôi."
    }
   ],
@@ -2960,7 +2960,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi thích đến gần thiên nhiên hơn, lấy cuối tuần trước làm ví dụ, chúng tôi đã đi leo núi.",
     "answer": "我更喜欢接近大自然，拿上个周末来说，我们去爬山了。",
-    "answerPy": "Wǒ gèng xǐhuan jiējìn dàzìrán, ná shàng gè zhōumò láishuō, wǒmen qù páshān le.",
+    "answerPy": "Wǒ gèng xǐhuan jiējìn dàzìrán, náshang gè zhōumò láishuō, wǒmen qù páshān le.",
     "note": "Ôn 拿……来说 (Bài 7 · điểm 3).",
     "pair": "拿……来说"
    },
@@ -2968,7 +2968,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đi dạo giữa thiên nhiên có thể khiến tâm trạng con người vui vẻ hơn.",
     "answer": "在大自然中走走，能使人心情更愉快。",
-    "answerPy": "Zài dàzìrán zhōng zǒu zǒu, néng shǐ rén xīnqíng gèng yúkuài.",
+    "answerPy": "Zài dàzìrán zhōng zǒuzou, néng shǐ rén xīnqíng gèng yúkuài.",
     "note": "Ôn 使 (Bài 7 · điểm 4).",
     "pair": "使 + ai + Adj"
    }
@@ -3011,7 +3011,7 @@ var vocabData = [
    },
    {
     "zh": "美丽的故事",
-    "py": "Měilì de gùshì",
+    "py": "Měilì de gùshi",
     "vn": "câu chuyện đẹp"
    }
   ],
@@ -3026,17 +3026,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "在大自然美丽的景色中好好放松自己。",
-  "ex_py": "Zài dàzìrán měilì de jǐngsè zhōng hǎo hǎo fàngsōng zìjǐ.",
+  "ex_py": "Zài dàzìrán měilì de jǐngsè zhōng hǎohāo fàngsōng zìjǐ.",
   "ex_vn": "Thư giãn thoải mái giữa cảnh sắc tươi đẹp của thiên nhiên.",
   "exList": [
    {
     "zh": "在大自然美丽的景色中好好放松自己。",
-    "py": "Zài dàzìrán měilì de jǐngsè zhōng hǎo hǎo fàngsōng zìjǐ.",
+    "py": "Zài dàzìrán měilì de jǐngsè zhōng hǎohāo fàngsōng zìjǐ.",
     "vn": "Thư giãn thoải mái giữa cảnh sắc tươi đẹp của thiên nhiên."
    },
    {
     "zh": "杭州是一个美丽的城市，每年都有很多人去那儿游玩。",
-    "py": "Háng zhōu shì yí gè měilì de chéngshì, měi nián dōu yǒu hěn duō rén qù nàr yóuwán.",
+    "py": "Hángzhōu shì yí gè měilì de chéngshì, měinián dōu yǒu hěn duō rén qù nàr yóuwán.",
     "vn": "Hàng Châu là một thành phố xinh đẹp, năm nào cũng có rất nhiều người đến đó chơi."
    }
   ],
@@ -3071,7 +3071,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Phong cảnh ở đây đẹp quá, tiếc là đi vội, không kịp chụp ảnh.",
     "answer": "这里的风景太美丽了，可惜走得太急，来不及拍照。",
-    "answerPy": "Zhèli de fēngjǐng tài měilì le, kěxī zǒu de tài jí, láibùjí pāizhào.",
+    "answerPy": "Zhèli de fēngjǐng tài měilì le, kěxī zǒu de tài jí, láibují pāizhào.",
     "note": "Ôn 来不及 (Bài 4 · điểm 4).",
     "pair": "来不及"
    },
@@ -3122,7 +3122,7 @@ var vocabData = [
    },
    {
     "zh": "窗外的景色",
-    "py": "Chuāng wài de jǐngsè",
+    "py": "Chuāngwài de jǐngsè",
     "vn": "cảnh ngoài cửa sổ"
    }
   ],
@@ -3137,12 +3137,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "在大自然美丽的景色中好好放松自己。",
-  "ex_py": "Zài dàzìrán měilì de jǐngsè zhōng hǎo hǎo fàngsōng zìjǐ.",
+  "ex_py": "Zài dàzìrán měilì de jǐngsè zhōng hǎohāo fàngsōng zìjǐ.",
   "ex_vn": "Thư giãn thoải mái giữa cảnh sắc tươi đẹp của thiên nhiên.",
   "exList": [
    {
     "zh": "在大自然美丽的景色中好好放松自己。",
-    "py": "Zài dàzìrán měilì de jǐngsè zhōng hǎo hǎo fàngsōng zìjǐ.",
+    "py": "Zài dàzìrán měilì de jǐngsè zhōng hǎohāo fàngsōng zìjǐ.",
     "vn": "Thư giãn thoải mái giữa cảnh sắc tươi đẹp của thiên nhiên."
    },
    {
@@ -3190,7 +3190,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ngồi tàu cao tốc có thể ngắm cảnh ngoài cửa sổ, thỉnh thoảng còn thấy được núi tuyết.",
     "answer": "坐高铁可以看窗外的景色，偶尔还能看到雪山。",
-    "answerPy": "Zuò gāotiě kěyǐ kàn chuāng wài de jǐngsè, ǒu'ěr hái néng kàn dào xuě shān.",
+    "answerPy": "Zuò gāotiě kěyǐ kàn chuāngwài de jǐngsè, ǒu'ěr hái néng kàndào xuěshān.",
     "note": "Ôn 偶尔 (Bài 6 · điểm 3).",
     "pair": "偶尔"
    }
@@ -3258,7 +3258,7 @@ var vocabData = [
    },
    {
     "zh": "河内是越南的首都，也是一个有千年历史的城市。",
-    "py": "Hé nèi shì Yuènán de shǒudū, yě shì yí gè yǒu qiān nián lìshǐ de chéngshì.",
+    "py": "Hénèi shì Yuènán de shǒudū, yě shì yí gè yǒu qiān nián lìshǐ de chéngshì.",
     "vn": "Hà Nội là thủ đô của Việt Nam, cũng là một thành phố có lịch sử nghìn năm."
    }
   ],
@@ -3293,7 +3293,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Thủ đô của Việt Nam là Hà Nội, nơi đó vừa có hồ vừa có phố cổ.",
     "answer": "越南的首都是河内，那里有湖有老街。",
-    "answerPy": "Yuènán de shǒudū shì hé nèi, nàli yǒu hú yǒu lǎo jiē.",
+    "answerPy": "Yuènán de shǒudū shì Hénèi, nàli yǒu hú yǒu lǎojiē.",
     "note": "Dùng 有A有B (điểm 4 bài này).",
     "pair": "有A有B"
    },
@@ -3359,12 +3359,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "在北京，周末的时候，有人会在市区公园走走，看看眼前的美景。",
-  "ex_py": "Zài Běijīng, zhōumò de shíhou, yǒurén huì zài shìqū gōngyuán zǒu zǒu, kàn kàn yǎnqián de měijǐng.",
+  "ex_py": "Zài Běijīng, zhōumò de shíhou, yǒurén huì zài shìqū gōngyuán zǒuzou, kànkan yǎnqián de měijǐng.",
   "ex_vn": "Ở Bắc Kinh, cuối tuần có người sẽ đi dạo ở công viên trong nội thành, ngắm cảnh đẹp trước mắt.",
   "exList": [
    {
     "zh": "在北京，周末的时候，有人会在市区公园走走，看看眼前的美景。",
-    "py": "Zài Běijīng, zhōumò de shíhou, yǒurén huì zài shìqū gōngyuán zǒu zǒu, kàn kàn yǎnqián de měijǐng.",
+    "py": "Zài Běijīng, zhōumò de shíhou, yǒurén huì zài shìqū gōngyuán zǒuzou, kànkan yǎnqián de měijǐng.",
     "vn": "Ở Bắc Kinh, cuối tuần có người sẽ đi dạo ở công viên trong nội thành, ngắm cảnh đẹp trước mắt."
    },
    {
@@ -3470,17 +3470,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "有人会在市区公园走走，看看眼前的美景。",
-  "ex_py": "Yǒurén huì zài shìqū gōngyuán zǒu zǒu, kàn kàn yǎnqián de měijǐng.",
+  "ex_py": "Yǒurén huì zài shìqū gōngyuán zǒuzou, kànkan yǎnqián de měijǐng.",
   "ex_vn": "Có người sẽ đi dạo trong công viên nội thành, ngắm cảnh đẹp trước mắt.",
   "exList": [
    {
     "zh": "有人会在市区公园走走，看看眼前的美景。",
-    "py": "Yǒurén huì zài shìqū gōngyuán zǒu zǒu, kàn kàn yǎnqián de měijǐng.",
+    "py": "Yǒurén huì zài shìqū gōngyuán zǒuzou, kànkan yǎnqián de měijǐng.",
     "vn": "Có người sẽ đi dạo trong công viên nội thành, ngắm cảnh đẹp trước mắt."
    },
    {
     "zh": "爬到山上，美丽的风景一下子出现在眼前。",
-    "py": "Pá dào shān shàng, měilì de fēngjǐng yíxià zǐ chūxiàn zài yǎnqián.",
+    "py": "Pádào shānshang, měilì de fēngjǐng yíxiàzi chūxiàn zài yǎnqián.",
     "vn": "Leo lên đỉnh núi, cảnh đẹp bỗng chốc hiện ra trước mắt."
    }
   ],
@@ -3515,7 +3515,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đừng chỉ nhìn lợi ích trước mắt, cũng phải nghĩ cho tương lai.",
     "answer": "别只看眼前的好处，也要为将来想想。",
-    "answerPy": "Bié zhǐ kàn yǎnqián de hǎochù, yě yào wèi jiānglái xiǎng xiǎng.",
+    "answerPy": "Bié zhǐ kàn yǎnqián de hǎochù, yě yào wèi jiānglái xiǎngxiang.",
     "note": "Ôn 将来 (Bài 1 · từ mới).",
     "pair": "眼前的……"
    },
@@ -3551,7 +3551,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "看看美景",
-    "py": "Kàn kàn měijǐng",
+    "py": "Kànkan měijǐng",
     "vn": "ngắm cảnh đẹp"
    },
    {
@@ -3581,17 +3581,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "有人会在市区公园走走，看看眼前的美景。",
-  "ex_py": "Yǒurén huì zài shìqū gōngyuán zǒu zǒu, kàn kàn yǎnqián de měijǐng.",
+  "ex_py": "Yǒurén huì zài shìqū gōngyuán zǒuzou, kànkan yǎnqián de měijǐng.",
   "ex_vn": "Có người sẽ đi dạo công viên trong nội thành, ngắm cảnh đẹp trước mắt.",
   "exList": [
    {
     "zh": "有人会在市区公园走走，看看眼前的美景。",
-    "py": "Yǒurén huì zài shìqū gōngyuán zǒu zǒu, kàn kàn yǎnqián de měijǐng.",
+    "py": "Yǒurén huì zài shìqū gōngyuán zǒuzou, kànkan yǎnqián de měijǐng.",
     "vn": "Có người sẽ đi dạo công viên trong nội thành, ngắm cảnh đẹp trước mắt."
    },
    {
     "zh": "山上的美景让我们忘记了累。",
-    "py": "Shān shàng de měijǐng ràng wǒmen wàngjì le lèi.",
+    "py": "Shānshang de měijǐng ràng wǒmen wàngjì le lèi.",
     "vn": "Cảnh đẹp trên núi khiến chúng tôi quên mất mệt."
    }
   ],
@@ -3667,7 +3667,7 @@ var vocabData = [
    },
    {
     "zh": "参观博物馆",
-    "py": "Cānguān bó wù guǎn",
+    "py": "Cānguān bówùguǎn",
     "vn": "tham quan bảo tàng"
    },
    {
@@ -3702,7 +3702,7 @@ var vocabData = [
    },
    {
     "zh": "下午我们要去参观一个汽车工厂。",
-    "py": "Xiàwǔ wǒmen yào qù cānguān yí gè qì chē gōngchǎng.",
+    "py": "Xiàwǔ wǒmen yào qù cānguān yí gè qìchē gōngchǎng.",
     "vn": "Buổi chiều chúng tôi sẽ đi tham quan một nhà máy ô tô."
    }
   ],
@@ -3737,7 +3737,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bất kể đi nước nào du lịch, tôi đều thích tham quan bảo tàng.",
     "answer": "不管去哪个国家旅游，我都喜欢参观博物馆。",
-    "answerPy": "Bùguǎn qù nǎgè guójiā lǚyóu, wǒ dōu xǐhuan cānguān bó wù guǎn.",
+    "answerPy": "Bùguǎn qù nǎge guójiā lǚyóu, wǒ dōu xǐhuan cānguān bówùguǎn.",
     "note": "Dùng 不管……都…… (điểm 1 bài này).",
     "pair": "不管……都……"
    },
@@ -3745,7 +3745,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bảo tàng này quá lớn, một ngày tham quan không hết được.",
     "answer": "这个博物馆太大了，一天参观不完。",
-    "answerPy": "Zhège bó wù guǎn tài dà le, yì tiān cānguān bù wán.",
+    "answerPy": "Zhège bówùguǎn tài dà le, yì tiān cānguān bù wán.",
     "note": "Ôn bổ ngữ khả năng V不完 (Bài 4).",
     "pair": "V不完"
    }
@@ -3848,7 +3848,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hà Nội có rất nhiều điểm tham quan, ví dụ Hồ Gươm, Văn Miếu… rất đáng đi.",
     "answer": "河内有很多景点，比如还剑湖、文庙等，都很值得去。",
-    "answerPy": "Hé nèi yǒu hěn duō jǐngdiǎn, bǐrú hái jiàn hú, wén miào děng, dōu hěn zhídé qù.",
+    "answerPy": "Hénèi yǒu hěn duō jǐngdiǎn, bǐrú hái jiàn hú, wénmiào děng, dōu hěn zhídé qù.",
     "note": "Ôn 等 (Bài 5 · điểm 4) + 值得.",
     "pair": "A、B 等"
    },
@@ -3894,7 +3894,7 @@ var vocabData = [
    },
    {
     "zh": "公共交通",
-    "py": "Gōng gòng jiāotōng",
+    "py": "Gōnggòng jiāotōng",
     "vn": "giao thông công cộng"
    },
    {
@@ -3924,7 +3924,7 @@ var vocabData = [
    },
    {
     "zh": "这个十字路口的交通有点儿乱，你开车要小心。",
-    "py": "Zhège shí zì lùkǒu de jiāotōng yǒudiǎnr luàn, nǐ kāichē yào xiǎoxīn.",
+    "py": "Zhège shízì lùkǒu de jiāotōng yǒudiǎnr luàn, nǐ kāichē yào xiǎoxīn.",
     "vn": "Giao thông ở ngã tư này hơi lộn xộn, anh lái xe phải cẩn thận."
    }
   ],
@@ -3959,7 +3959,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Khu này giao thông vừa tiện, tiền thuê nhà lại không cao.",
     "answer": "这个地方交通方便，再说房租也不高。",
-    "answerPy": "Zhège dìfang jiāotōng fāngbiàn, zài shuō fáng zū yě bù gāo.",
+    "answerPy": "Zhège dìfang jiāotōng fāngbiàn, Zàishuō fángzū yě bù gāo.",
     "note": "Ôn 再说 (Bài 4 · điểm 2).",
     "pair": "……，再说……"
    },
@@ -4146,7 +4146,7 @@ var vocabData = [
    },
    {
     "zh": "他今天是第一次参加比赛，所以十分紧张。",
-    "py": "Tā jīntiān shì dì yī cì cānjiā bǐsài, suǒyǐ shífēn jǐnzhāng.",
+    "py": "Tā jīntiān shì dì yí cì cānjiā bǐsài, suǒyǐ shífēn jǐnzhāng.",
     "vn": "Hôm nay là lần đầu cậu ấy tham gia thi đấu, nên vô cùng hồi hộp."
    }
   ],
@@ -4227,7 +4227,7 @@ var vocabData = [
    },
    {
     "zh": "看起来……实际上……",
-    "py": "Kàn qǐlái…… shíjìshàng……",
+    "py": "Kànqǐlai…… shíjìshàng……",
     "vn": "trông thì … thực ra …"
    },
    {
@@ -4257,7 +4257,7 @@ var vocabData = [
    },
    {
     "zh": "这道菜看着不太好吃，实际上挺好吃的，你尝尝。",
-    "py": "Zhè dào cài kàn zhe bú tài hǎochī, shíjìshàng tǐng hǎochī de, nǐ cháng cháng.",
+    "py": "Zhè dào cài kànzhe bú tài hǎochī, shíjìshàng tǐng hǎochī de, nǐ chángchang.",
     "vn": "Món này trông có vẻ không ngon lắm, thực ra rất ngon đấy, bạn nếm thử xem."
    }
   ],
@@ -4312,7 +4312,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trông thì anh ấy rất thoải mái, thực ra trong lòng vô cùng căng thẳng.",
     "answer": "他看起来很轻松，实际上心里十分紧张。",
-    "answerPy": "Tā kàn qǐlái hěn qīngsōng, shíjìshàng xīnlǐ shífēn jǐnzhāng.",
+    "answerPy": "Tā kànqǐlai hěn qīngsōng, shíjìshàng xīnli shífēn jǐnzhāng.",
     "note": "Đối lập vẻ ngoài – sự thật.",
     "pair": "看起来……，实际上……"
    }
@@ -4345,7 +4345,7 @@ var vocabData = [
    },
    {
     "zh": "故宫博物院",
-    "py": "Gùgōng bó wù yuàn",
+    "py": "Gùgōng Bówùyuàn",
     "vn": "Bảo tàng Cố Cung"
    },
    {
@@ -4508,13 +4508,13 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "家月，最近学习太紧张了，咱们明天出去放松放松吧。",
-    "py": "Jiāyuè, zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqù fàngsōng fàngsōng ba.",
+    "py": "Jiāyuè, zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqu fàngsōng fàngsōng ba.",
     "vn": "Gia Nguyệt, dạo này học hành căng thẳng quá, ngày mai chúng mình ra ngoài thư giãn chút đi."
    },
    {
     "sp": 1,
     "zh": "呀，正好我也想出去呢。咱们去哪儿好呢？",
-    "py": "Yā, zhènghǎo wǒ yě xiǎng chūqù ne. Zánmen qù nǎr hǎo ne?",
+    "py": "Yā, zhènghǎo wǒ yě xiǎng chūqu ne. Zánmen qù nǎr hǎo ne?",
     "vn": "Ôi, vừa hay tớ cũng đang muốn ra ngoài đây. Chúng mình đi đâu thì hay nhỉ?"
    },
    {
@@ -4538,13 +4538,13 @@ var dialogData = [
    {
     "sp": 1,
     "zh": "是吗？那咱们明天去爬长城吧，不是说“不到长城非好汉”吗？",
-    "py": "Shì ma? Nà zánmen míngtiān qù pá Chángchéng ba, bú shì shuō “bú dào Chángchéng fēi hǎo hàn” ma?",
+    "py": "Shì ma? Nà zánmen míngtiān qù pá Chángchéng ba, bú shì shuō “bú dào Chángchéng fēi hǎohàn” ma?",
     "vn": "Thế à? Vậy mai chúng mình đi leo Trường Thành đi, chẳng phải người ta nói “chưa đến Trường Thành chưa phải hảo hán” sao?"
    },
    {
     "sp": 0,
     "zh": "好主意！不过明天是个大晴天，外出记得戴帽子。",
-    "py": "Hǎo zhǔyi! Búguò míngtiān shì gè dà qíng tiān, wàichū jìde dài màozi.",
+    "py": "Hǎo zhǔyi! Búguò míngtiān shì gè dà qíngtiān, wàichū jìde dài màozi.",
     "vn": "Ý hay đấy! Có điều mai trời nắng to, ra ngoài nhớ đội mũ nhé."
    }
   ]
@@ -4594,19 +4594,19 @@ var dialogData = [
    {
     "sp": 1,
     "zh": "挺忙的。以前我总觉得年轻时要多学多干，所以参加了公司里的很多项目，经常加班、熬夜，身体也亮起了红灯。",
-    "py": "Tǐng máng de. Yǐqián wǒ zǒng juéde niánqīng shí yào duō xué duō gàn, suǒyǐ cānjiā le gōngsī lǐ de hěn duō xiàngmù, jīngcháng jiābān, áoyè, shēntǐ yě liàng qǐ le hóng dēng.",
+    "py": "Tǐng máng de. Yǐqián wǒ zǒng juéde niánqīng shí yào duō xué duō gàn, suǒyǐ cānjiā le gōngsī lǐ de hěn duō xiàngmù, jīngcháng jiābān, áoyè, shēntǐ yě liàng qǐ le hóngdēng.",
     "vn": "Khá bận. Trước đây anh luôn nghĩ lúc còn trẻ phải học nhiều làm nhiều, nên tham gia rất nhiều dự án trong công ty, thường xuyên tăng ca, thức khuya, sức khỏe cũng “báo động đỏ”."
    },
    {
     "sp": 0,
     "zh": "还是别给自己太大压力，否则，失去健康就不值得了。",
-    "py": "Háishì bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
+    "py": "Háishi bié gěi zìjǐ tài dà yālì, fǒuzé, shīqù jiànkāng jiù bù zhídé le.",
     "vn": "Tốt hơn hết là đừng tự tạo áp lực quá lớn cho mình, nếu không mất sức khỏe thì chẳng đáng chút nào."
    },
    {
     "sp": 1,
     "zh": "是啊，后来我就不接那么多项目了。我发现暂停下来、好好休息之后，我能把工作做得更快更好。",
-    "py": "Shì a, hòulái wǒ jiù bù jiē nàme duō xiàngmù le. Wǒ fāxiàn zàntíng xiàlái, hǎo hǎo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo.",
+    "py": "Shì a, hòulái wǒ jiù bù jiē nàme duō xiàngmù le. Wǒ fāxiàn zàntíng xiàlai, hǎohāo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo.",
     "vn": "Đúng thế, sau đó anh không nhận nhiều dự án như vậy nữa. Anh nhận ra sau khi tạm dừng lại, nghỉ ngơi cho tử tế, anh có thể làm việc nhanh hơn, tốt hơn."
    },
    {
@@ -4664,7 +4664,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "很多年轻人和他想法一样。",
-    "py": "Hěn duō niánqīngrén hé tā xiǎng fǎ yíyàng.",
+    "py": "Hěn duō niánqīngrén hé tā xiǎngfǎ yíyàng.",
     "vn": "Rất nhiều người trẻ cũng nghĩ giống anh ấy."
    },
    {
@@ -4682,19 +4682,19 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "因此，很多人开始做出改变，提醒自己减轻压力、多多放松。",
-    "py": "Yīncǐ, hěn duō rén kāishǐ zuò chū gǎibiàn, tíxǐng zìjǐ jiǎn qīng yālì, duō duō fàngsōng.",
+    "py": "Yīncǐ, hěn duō rén kāishǐ zuòchū gǎibiàn, tíxǐng zìjǐ jiǎnqīng yālì, duōduō fàngsōng.",
     "vn": "Vì vậy, nhiều người bắt đầu thay đổi, nhắc nhở bản thân giảm bớt áp lực, thư giãn nhiều hơn."
    },
    {
     "sp": 0,
     "zh": "比如，杨同乐周末时或者与朋友们去郊区游玩，在大自然美丽的景色中好好放松自己；或者就在家里安安静静地看看书。",
-    "py": "Bǐrú, Yáng Tónglè zhōumò shí huòzhě yǔ péngyou men qù jiāoqū yóuwán, zài dàzìrán měilì de jǐngsè zhōng hǎo hǎo fàngsōng zìjǐ; huòzhě jiù zài jiā lǐ ānān-jìngjìng de kàn kàn shū.",
+    "py": "Bǐrú, Yáng Tónglè zhōumò shí huòzhě yǔ péngyoumen qù jiāoqū yóuwán, zài dàzìrán měilì de jǐngsè zhōng hǎohāo fàngsōng zìjǐ; huòzhě jiù zài jiāli ānān-jìngjìng de kàn kànshū.",
     "vn": "Ví dụ, cuối tuần Dương Đồng Lạc có khi cùng bạn bè đi chơi ngoại ô, thư giãn thoải mái giữa cảnh sắc tươi đẹp của thiên nhiên; có khi chỉ ở nhà yên lặng đọc sách."
    },
    {
     "sp": 0,
     "zh": "休息好了，再回去上班时，心情愉快，工作效率也更高。",
-    "py": "Xiūxi hǎo le, zài huíqù shàngbān shí, xīnqíng yúkuài, gōngzuò xiàolǜ yě gèng gāo.",
+    "py": "Xiūxi hǎo le, zài huíqu shàngbān shí, xīnqíng yúkuài, gōngzuò xiàolǜ yě gèng gāo.",
     "vn": "Nghỉ ngơi đầy đủ rồi, khi quay lại đi làm, tâm trạng vui vẻ, hiệu suất công việc cũng cao hơn."
    }
   ],
@@ -4753,7 +4753,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "在北京，周末的时候，有人会在市区公园走走，看看眼前的美景；有人喜欢去参观长城、故宫等有名的景点，放松心情的同时，也能了解历史文化。",
-    "py": "Zài Běijīng, zhōumò de shíhou, yǒurén huì zài shìqū gōngyuán zǒu zǒu, kàn kàn yǎnqián de měijǐng; yǒurén xǐhuan qù cānguān Chángchéng, Gùgōng děng yǒumíng de jǐngdiǎn, fàngsōng xīnqíng de tóngshí, yě néng liǎojiě lìshǐ wénhuà.",
+    "py": "Zài Běijīng, zhōumò de shíhou, yǒurén huì zài shìqū gōngyuán zǒuzou, kànkan yǎnqián de měijǐng; yǒurén xǐhuan qù cānguān Chángchéng, Gùgōng děng yǒumíng de jǐngdiǎn, fàngsōng xīnqíng de tóngshí, yě néng liǎojiě lìshǐ wénhuà.",
     "vn": "Ở Bắc Kinh, vào cuối tuần, có người đi dạo trong công viên nội thành, ngắm cảnh đẹp trước mắt; có người thích đi tham quan những thắng cảnh nổi tiếng như Trường Thành, Cố Cung, vừa thư giãn đầu óc, vừa có thể tìm hiểu lịch sử văn hóa."
    },
    {
@@ -5265,7 +5265,7 @@ var translateData = [
  {
   "vi": "Dạo này học hành căng thẳng quá, ngày mai chúng mình ra ngoài thư giãn chút đi.",
   "zh": "最近学习太紧张了，咱们明天出去放松放松吧。",
-  "py": "Zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqù fàngsōng fàngsōng ba."
+  "py": "Zuìjìn xuéxí tài jǐnzhāng le, zánmen míngtiān chūqu fàngsōng fàngsōng ba."
  },
  {
   "vi": "Đi đâu cũng được, miễn là nơi có thể thư giãn.",
@@ -5302,7 +5302,7 @@ var translateDataRev = [
  {
   "vi": "Sau khi tạm dừng lại, nghỉ ngơi cho tử tế, tôi có thể làm việc nhanh hơn và tốt hơn.",
   "zh": "暂停下来、好好休息之后，我能把工作做得更快更好。",
-  "py": "Zàntíng xiàlái, hǎo hǎo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo."
+  "py": "Zàntíng xiàlai, hǎohāo xiūxi zhīhòu, wǒ néng bǎ gōngzuò zuò de gèng kuài gèng hǎo."
  },
  {
   "vi": "Do công việc căng thẳng, họ thường tăng ca, thức khuya, kết quả là hiệu suất giảm sút.",
@@ -5564,6 +5564,6 @@ var writingData = {
  ],
  "model": {
   "zh": "我去过很多地方游玩，其中印象最深的是越南的下龙湾。去年夏天，由于工作太紧张，我常常加班、熬夜，于是决定和家人一起去那里放松放松。我们从河内乘坐大巴车出发，三个多小时就到了，交通十分方便。下龙湾有山有水，海上有一千多座小山，景色非常美丽。我们坐船在海上游玩，眼前的美景让我忘了工作的压力。跟市区相比，那里的空气新鲜多了，晚上也特别安静。导游提醒我们，夏天太阳很大，外出一定要戴帽子，否则很容易被晒伤。在我看来，不管工作多忙，都应该抽时间去大自然里走走。下龙湾真的很值得一去！",
-  "py": "Wǒ qù guò hěn duō dìfang yóuwán, qízhōng yìnxiàng zuì shēn de shì Yuènán de xià lóng wān. Qùnián xiàtiān, yóuyú gōngzuò tài jǐnzhāng, wǒ chángcháng jiābān, áoyè, yúshì juédìng hé jiārén yìqǐ qù nàli fàngsōng fàngsōng. Wǒmen cóng hé nèi chéngzuò dà bā chē chūfā, sān gè duō xiǎoshí jiù dào le, jiāotōng shífēn fāngbiàn. Xià lóng wān yǒu shān yǒu shuǐ, hǎi shàng yǒu yì qiān duō zuò xiǎo shān, jǐngsè fēicháng měilì. Wǒmen zuò chuán zài hǎi shàng yóuwán, yǎnqián de měijǐng ràng wǒ wàng le gōngzuò de yālì. Gēn shìqū xiāngbǐ, nàli de kōngqì xīnxiān duō le, wǎnshang yě tèbié ānjìng. Dǎoyóu tíxǐng wǒmen, xiàtiān tàiyang hěn dà, wàichū yídìng yào dài màozi, fǒuzé hěn róngyì bèi shài shāng. Zài wǒ kànlái, bùguǎn gōngzuò duō máng, dōu yīnggāi chōu shíjiān qù dàzìrán lǐ zǒu zǒu. Xià lóng wān zhēn de hěn zhídé yí qù!"
+  "py": "Wǒ qù guò hěn duō dìfang yóuwán, qízhōng yìnxiàng zuì shēn de shì Yuènán de Xiàlóng wān. Qùnián xiàtiān, yóuyú gōngzuò tài jǐnzhāng, wǒ chángcháng jiābān, áoyè, yúshì juédìng hé jiārén yìqǐ qù nàli fàngsōng fàngsōng. Wǒmen cóng Hénèi chéngzuò dàbā chē chūfā, sān gè duō xiǎoshí jiù dào le, jiāotōng shífēn fāngbiàn. Xiàlóng wān yǒu shān yǒu shuǐ, hǎi shàng yǒu yìqiān duō zuò xiǎo shān, jǐngsè fēicháng měilì. Wǒmen zuò chuán zài hǎi shàng yóuwán, yǎnqián de měijǐng ràng wǒ wàng le gōngzuò de yālì. Gēn shìqū xiāngbǐ, nàli de kōngqì xīnxiān duō le, wǎnshang yě tèbié ānjìng. Dǎoyóu tíxǐng wǒmen, xiàtiān tàiyang hěn dà, wàichū yídìng yào dài màozi, fǒuzé hěn róngyì bèi shàishāng. Zài wǒ kànlái, bùguǎn gōngzuò duō máng, dōu yīnggāi chōu shíjiān qù dàzìrán lǐ zǒuzou. Xiàlóng wān zhēn de hěn zhídé yí qù!"
  }
 };

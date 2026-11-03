@@ -1,0 +1,690 @@
+{
+ "/lessons/hsk4v3-bai-16.html": {
+  "points": [
+   {
+    "title": "“把”字句“主语+把+宾语+动词+了” — xử lý xong một người / vật xác định",
+    "errors": [
+     {
+      "wrong": "我已经取消把机票了。",
+      "why": "把 + tân ngữ phải đứng TRƯỚC động từ.",
+      "right": "我已经把机票取消了。"
+     },
+     {
+      "wrong": "我把一本书还了。",
+      "why": "Tân ngữ của 把 phải xác định (quyển sách đã biết), không dùng 一本 không xác định.",
+      "right": "我把那本书还了。"
+     },
+     {
+      "wrong": "我把机票没取消。",
+      "why": "Phủ định 没 / 别 đặt TRƯỚC 把; câu phủ định với 没 thì bỏ 了.",
+      "right": "我没把机票取消。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Tôi đã hủy vé máy bay và khách sạn rồi.”",
+      "pre": "我已经",
+      "blank": "把",
+      "post": "机票和酒店取消了。",
+      "options": [
+       "把",
+       "被",
+       "给"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ + 已经 + 把 + O + V + 了."
+     },
+     {
+      "context": "“Bạn tắt đèn đi, tôi muốn ngủ rồi.”",
+      "pre": "你把灯",
+      "blank": "关",
+      "post": "了吧，我想睡觉了。",
+      "options": [
+       "关",
+       "放",
+       "看"
+      ],
+      "answer": 0,
+      "explanation": "把灯关了 = tắt đèn đi."
+     },
+     {
+      "context": "“Đừng quên giặt quần áo nhé, mai còn phải mặc.”",
+      "pre": "你别忘了把衣服洗",
+      "blank": "了",
+      "post": "，明天还得穿呢。",
+      "options": [
+       "了",
+       "过",
+       "着"
+      ],
+      "answer": 0,
+      "explanation": "把 + O + V + 了: việc phải làm xong."
+     },
+     {
+      "context": "“Mau uống thuốc đi, như vậy bạn mới mau khỏi.”",
+      "pre": "快把药",
+      "blank": "吃",
+      "post": "了，这样你才能快点儿好。",
+      "options": [
+       "吃",
+       "做",
+       "打"
+      ],
+      "answer": 0,
+      "explanation": "Tiếng Trung nói 吃药 (✗ 喝药)."
+     },
+     {
+      "context": "“… nếu không nước sẽ vào phòng.” (ôn 否则 – Bài 8)",
+      "pre": "下雨了，快把窗户关了，",
+      "blank": "否则",
+      "post": "房间里会进水的。",
+      "options": [
+       "否则",
+       "于是",
+       "并且"
+      ],
+      "answer": 0,
+      "explanation": "……，否则…… = nếu không thì …"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đã hủy vé máy bay và khách sạn rồi.”",
+      "words": [
+       "我",
+       "已经",
+       "把",
+       "机票和酒店",
+       "取消",
+       "了"
+      ],
+      "answer": "我已经把机票和酒店取消了。",
+      "explanation": "已经 đứng trước 把."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn tắt đèn đi.”",
+      "words": [
+       "你",
+       "把",
+       "灯",
+       "关",
+       "了",
+       "吧"
+      ],
+      "answer": "你把灯关了吧。",
+      "explanation": "Câu đề nghị: 把 + O + V + 了 + 吧."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đừng quên trả sách đã mượn nhé.”",
+      "words": [
+       "别忘了",
+       "把",
+       "借的书",
+       "还",
+       "了"
+      ],
+      "answer": "别忘了把借的书还了。",
+      "explanation": "别忘了 + 把 + O + V + 了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你快把这些水果吃了吧，放久了就不新鲜了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 这些水果 xác định, V + 了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我把一杯咖啡喝了。",
+      "isCorrect": false,
+      "correctVersion": "我把那杯咖啡喝了。",
+      "explanation": "Tân ngữ của 把 phải xác định."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我把机票没取消。",
+      "isCorrect": false,
+      "correctVersion": "我没把机票取消。",
+      "explanation": "没 đặt trước 把."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi đã hủy vé máy bay và khách sạn rồi.",
+      "answer": "我已经把机票和酒店取消了。",
+      "answerPy": "Wǒ yǐjīng bǎ jīpiào hé jiǔdiàn qǔxiāo le.",
+      "explanation": "已经 + 把 + O + 取消了."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Kế hoạch thay đổi rồi, bạn hủy khách sạn đã đặt đi.",
+      "answer": "计划变了，你把订好的酒店取消了吧。",
+      "answerPy": "Jìhuà biàn le, nǐ bǎ dìnghǎo de jiǔdiàn qǔxiāo le ba.",
+      "explanation": "Câu đề nghị 把……取消了吧."
+     }
+    ]
+   },
+   {
+    "title": "递进复句“……，并且……” — …, hơn nữa / đồng thời …",
+    "errors": [
+     {
+      "wrong": "我买了苹果并且香蕉。",
+      "why": "并且 không nối hai danh từ — nối danh từ dùng 和.",
+      "right": "我买了苹果和香蕉。"
+     },
+     {
+      "wrong": "他按时完成了任务，做得并且很好。",
+      "why": "并且 đứng ĐẦU vế sau, không chen vào giữa động từ và bổ ngữ.",
+      "right": "他按时完成了任务，并且做得很好。"
+     },
+     {
+      "wrong": "并且再检查一下有没有错误，试着增加一些例子。",
+      "why": "并且 nối vế SAU với vế trước — không đặt ở đầu vế thứ nhất.",
+      "right": "再检查一下有没有错误，并且试着增加一些例子。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… đồng thời thử thêm một vài ví dụ.”",
+      "pre": "再检查一下有没有细节上的错误，",
+      "blank": "并且",
+      "post": "试着增加一些例子。",
+      "options": [
+       "并且",
+       "但是",
+       "所以"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau là hành động bổ sung → 并且."
+     },
+     {
+      "context": "“… đồng thời lối sống cũng đã thay đổi rất lớn.”",
+      "pre": "人们的生活水平提高了，并且生活方式也发生了很大的",
+      "blank": "变化",
+      "post": "。",
+      "options": [
+       "变化",
+       "例子",
+       "错误"
+      ],
+      "answer": 0,
+      "explanation": "发生变化 = xảy ra thay đổi."
+     },
+     {
+      "context": "“Anh ấy hoàn thành nhiệm vụ đúng hạn, hơn nữa làm rất tốt.”",
+      "pre": "他按时完成了任务，",
+      "blank": "并且",
+      "post": "做得很好。",
+      "options": [
+       "并且",
+       "和",
+       "跟"
+      ],
+      "answer": 0,
+      "explanation": "和 / 跟 nối danh từ; nối hai vế dùng 并且."
+     },
+     {
+      "context": "“Thời gian họp đổi rồi, hơn nữa còn thêm một số nội dung mới.”",
+      "pre": "会议时间改了，并且还",
+      "blank": "增加",
+      "post": "了一些新的内容。",
+      "options": [
+       "增加",
+       "推迟",
+       "取消"
+      ],
+      "answer": 0,
+      "explanation": "增加 + 内容."
+     },
+     {
+      "context": "“Đã quyết định rồi thì viết kế hoạch chi tiết một chút, và làm nghiêm túc theo kế hoạch.” (ôn 既然 – Bài 7)",
+      "pre": "",
+      "blank": "既然",
+      "post": "你已经决定了，就把计划写得详细一些，并且严格按照计划去做。",
+      "options": [
+       "既然",
+       "即使",
+       "虽然"
+      ],
+      "answer": 0,
+      "explanation": "既然……，就…… (Bài 7 · điểm 2)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy hoàn thành nhiệm vụ đúng hạn, hơn nữa làm rất tốt.”",
+      "words": [
+       "他",
+       "按时",
+       "完成了任务",
+       "，",
+       "并且",
+       "做得很好"
+      ],
+      "answer": "他按时完成了任务，并且做得很好。",
+      "explanation": "并且 đứng đầu vế sau."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mức sống được nâng cao, đồng thời lối sống cũng thay đổi rất lớn.”",
+      "words": [
+       "人们的生活水平",
+       "提高了",
+       "，",
+       "并且",
+       "生活方式",
+       "也发生了很大的变化"
+      ],
+      "answer": "人们的生活水平提高了，并且生活方式也发生了很大的变化。",
+      "explanation": "Vế sau có chủ ngữ mới → 并且 + chủ ngữ + 也……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn kiểm tra lại tài liệu, đồng thời thử thêm một vài ví dụ.”",
+      "words": [
+       "你",
+       "再检查一下",
+       "材料",
+       "，",
+       "并且",
+       "试着",
+       "增加一些例子"
+      ],
+      "answer": "你再检查一下材料，并且试着增加一些例子。",
+      "explanation": "Hai hành động nối tiếp: V1……，并且 + V2……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "小王工作很认真，并且对人很热情。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: hai ưu điểm, vế sau bổ sung."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我买了苹果并且香蕉。",
+      "isCorrect": false,
+      "correctVersion": "我买了苹果和香蕉。",
+      "explanation": "Nối hai danh từ dùng 和."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他按时完成了任务，做得并且很好。",
+      "isCorrect": false,
+      "correctVersion": "他按时完成了任务，并且做得很好。",
+      "explanation": "并且 đứng đầu vế sau."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Anh ấy đã hoàn thành nhiệm vụ đúng hạn, hơn nữa làm rất tốt.",
+      "answer": "他按时完成了任务，并且做得很好。",
+      "answerPy": "Tā ànshí wánchéng le rènwu, bìngqiě zuò de hěn hǎo.",
+      "explanation": "……，并且 + V得……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi đã điều chỉnh kế hoạch, đồng thời thêm vài ví dụ vào tài liệu.",
+      "answer": "我调整了计划，并且在材料里增加了一些例子。",
+      "answerPy": "Wǒ tiáozhěng le jìhuà, bìngqiě zài cáiliào lǐ zēngjiā le yìxiē lìzi.",
+      "explanation": "V1 + 了……，并且 + V2 + 了…… + từ mới 调整, 增加, 例子."
+     }
+    ]
+   },
+   {
+    "title": "固定短语“说不定” — không chừng, biết đâu, có khi",
+    "errors": [
+     {
+      "wrong": "他今天没来，说不定他有事吗？",
+      "why": "说不定 là câu phỏng đoán (trần thuật), không thêm 吗 ở cuối.",
+      "right": "他今天没来，说不定有事。"
+     },
+     {
+      "wrong": "今天这么阴，一定说不定会下雨。",
+      "why": "一定 (chắc chắn) và 说不定 (không chắc) mâu thuẫn nhau.",
+      "right": "今天这么阴，说不定会下雨。"
+     },
+     {
+      "wrong": "我说不定明天去不去。",
+      "why": "Muốn nói “mai đi hay không còn chưa chắc” → đặt 说不定 cuối câu làm vị ngữ.",
+      "right": "我明天去不去还说不定。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Không lập kế hoạch, không chừng cũng sẽ mang lại phát hiện mới.”",
+      "pre": "不做计划，",
+      "blank": "说不定",
+      "post": "也会带来新的发现。",
+      "options": [
+       "说不定",
+       "一定",
+       "不得不"
+      ],
+      "answer": 0,
+      "explanation": "Phỏng đoán khả năng → 说不定."
+     },
+     {
+      "context": "“Hôm nay âm u thế này, không chừng sẽ mưa.”",
+      "pre": "今天这么阴，说不定会",
+      "blank": "下雨",
+      "post": "。",
+      "options": [
+       "下雨",
+       "出太阳",
+       "轻松"
+      ],
+      "answer": 0,
+      "explanation": "阴 (âm u) → có thể mưa."
+     },
+     {
+      "context": "“Thử lại lần nữa, biết đâu lại thành công.”",
+      "pre": "你再试一次，说不定",
+      "blank": "就",
+      "post": "成功了。",
+      "options": [
+       "就",
+       "才",
+       "却"
+      ],
+      "answer": 0,
+      "explanation": "说不定就……了: biết đâu lại … ngay."
+     },
+     {
+      "context": "“Cuộc họp mai có họp hay không còn chưa chắc, có thể sẽ hoãn.”",
+      "pre": "明天的会议开不开",
+      "blank": "还",
+      "post": "说不定，可能会推迟。",
+      "options": [
+       "还",
+       "就",
+       "却"
+      ],
+      "answer": 0,
+      "explanation": "……还说不定 = còn chưa chắc."
+     },
+     {
+      "context": "“Đã thích thế thì mua đi, biết đâu sau này không mua được nữa.” (ôn 既然 – Bài 7)",
+      "pre": "",
+      "blank": "既然",
+      "post": "你这么喜欢，那就买吧，说不定以后就买不到了。",
+      "options": [
+       "既然",
+       "即使",
+       "虽然"
+      ],
+      "answer": 0,
+      "explanation": "既然……，就…… (Bài 7 · điểm 2)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm nay âm u thế này, không chừng sẽ mưa.”",
+      "words": [
+       "今天",
+       "这么阴",
+       "，",
+       "说不定",
+       "会",
+       "下雨"
+      ],
+      "answer": "今天这么阴，说不定会下雨。",
+      "explanation": "说不定 + 会 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn thử lại lần nữa, biết đâu lại thành công.”",
+      "words": [
+       "你",
+       "再试一次",
+       "，",
+       "说不定",
+       "就",
+       "成功了"
+      ],
+      "answer": "你再试一次，说不定就成功了。",
+      "explanation": "说不定 + 就 + V + 了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Có khi anh ấy đã đến sân bay rồi.”",
+      "words": [
+       "他",
+       "说不定",
+       "已经",
+       "到",
+       "机场了"
+      ],
+      "answer": "他说不定已经到机场了。",
+      "explanation": "说不定 đứng trước hoặc sau chủ ngữ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他今天没来，说不定有事。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: phỏng đoán nguyên nhân."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "今天这么阴，一定说不定会下雨。",
+      "isCorrect": false,
+      "correctVersion": "今天这么阴，说不定会下雨。",
+      "explanation": "Bỏ 一定 — mâu thuẫn với 说不定."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我明天去不去还说不定。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 说不定 làm vị ngữ = còn chưa chắc."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đừng thất vọng, lần sau không chừng bạn sẽ làm tốt hơn.",
+      "answer": "别失望，下次你说不定会做得更好。",
+      "answerPy": "Bié shīwàng, xià cì nǐ shuōbudìng huì zuò de gèng hǎo.",
+      "explanation": "说不定 + 会 + V + từ mới 失望."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bạn thử đi hỏi thầy giáo xem, biết đâu thầy sẽ đồng ý.",
+      "answer": "你去问问老师吧，说不定他会同意。",
+      "answerPy": "Nǐ qù wènwen lǎoshī ba, shuōbudìng tā huì tóngyì.",
+      "explanation": "V V (thử) + 说不定……"
+     }
+    ]
+   },
+   {
+    "title": "关联副词“却” — lại, nhưng lại (chuyển ý, trái với mong đợi)",
+    "errors": [
+     {
+      "wrong": "他通过了面试，却他一点儿也不激动。",
+      "why": "却 là phó từ — đứng SAU chủ ngữ, không đứng trước chủ ngữ như 但是.",
+      "right": "他通过了面试，他却一点儿也不激动。"
+     },
+     {
+      "wrong": "她长得很像她姐姐，却性格完全不同。",
+      "why": "Vế sau có chủ ngữ riêng (性格) → 却 đặt sau chủ ngữ đó.",
+      "right": "她长得很像她姐姐，性格却完全不同。"
+     },
+     {
+      "wrong": "他学习很努力，却考得很好。",
+      "why": "却 chỉ dùng khi vế sau TRÁI với điều mong đợi; đây là kết quả hợp lý → dùng 所以.",
+      "right": "他学习很努力，所以考得很好。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Bạn đã chuẩn bị xong mọi thứ, nhưng lại đột nhiên xuất hiện tình huống mới.”",
+      "pre": "你准备好了一切，",
+      "blank": "却",
+      "post": "突然出现了新情况。",
+      "options": [
+       "却",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "Vế sau trái với mong đợi → 却."
+     },
+     {
+      "context": "“Anh ấy qua vòng phỏng vấn nhưng lại chẳng phấn khích chút nào.”",
+      "pre": "他通过了面试，却一点儿也不",
+      "blank": "激动",
+      "post": "。",
+      "options": [
+       "激动",
+       "可惜",
+       "详细"
+      ],
+      "answer": 0,
+      "explanation": "一点儿也不 + Adj."
+     },
+     {
+      "context": "“… nhưng tính cách lại hoàn toàn khác.”",
+      "pre": "她长得很像她姐姐，性格",
+      "blank": "却",
+      "post": "完全不同。",
+      "options": [
+       "却",
+       "并且",
+       "也"
+      ],
+      "answer": 0,
+      "explanation": "却 đứng sau chủ ngữ 性格."
+     },
+     {
+      "context": "“Anh ấy nói hôm nay nhất định đến, cuối cùng lại không đến, thật khiến người ta thất vọng.”",
+      "pre": "他说今天一定来，",
+      "blank": "最后",
+      "post": "却没来，真让人失望。",
+      "options": [
+       "最后",
+       "本来",
+       "等到"
+      ],
+      "answer": 0,
+      "explanation": "最后却…… = cuối cùng lại …"
+     },
+     {
+      "context": "“Mặc dù ngày nào cũng cố gắng, thành tích lại không tiến bộ.” (ôn 尽管 – Bài 9)",
+      "pre": "",
+      "blank": "尽管",
+      "post": "他每天都很努力，成绩却一直没有提高。",
+      "options": [
+       "尽管",
+       "既然",
+       "只要"
+      ],
+      "answer": 0,
+      "explanation": "尽管……，却…… (nhượng bộ – chuyển ý)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Anh ấy qua vòng phỏng vấn nhưng lại chẳng phấn khích chút nào.”",
+      "words": [
+       "他",
+       "通过了面试",
+       "，",
+       "却",
+       "一点儿也",
+       "不激动"
+      ],
+      "answer": "他通过了面试，却一点儿也不激动。",
+      "explanation": "Cùng chủ ngữ → vế sau bỏ chủ ngữ, 却 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô ấy trông rất giống chị gái, tính cách lại hoàn toàn khác.”",
+      "words": [
+       "她",
+       "长得很像她姐姐",
+       "，",
+       "性格",
+       "却",
+       "完全不同"
+      ],
+      "answer": "她长得很像她姐姐，性格却完全不同。",
+      "explanation": "Chủ ngữ 2 + 却 + vị ngữ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mọi người đều đến rồi, anh ấy lại vẫn chưa đến.”",
+      "words": [
+       "大家",
+       "都",
+       "到了",
+       "，",
+       "他",
+       "却",
+       "还没来"
+      ],
+      "answer": "大家都到了，他却还没来。",
+      "explanation": "他却…… — 却 sau chủ ngữ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我们都很着急，他却一点儿也不着急。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 却 sau chủ ngữ 他, vế sau ngược với vế trước."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他学习很努力，却考得很好。",
+      "isCorrect": false,
+      "correctVersion": "他学习很努力，所以考得很好。",
+      "explanation": "Kết quả hợp lý, không trái mong đợi → không dùng 却."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他通过了面试，却他一点儿也不激动。",
+      "isCorrect": false,
+      "correctVersion": "他通过了面试，他却一点儿也不激动。",
+      "explanation": "却 đứng sau chủ ngữ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Đã hẹn gặp bạn rồi, nhưng trời lại đột nhiên đổ mưa.",
+      "answer": "约好见朋友了，却突然下起了大雨。",
+      "answerPy": "Yuēhǎo jiàn péngyou le, què tūrán xiàqǐ le dàyǔ.",
+      "explanation": "约好…… + 却 + 突然……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Tôi học tiếng Trung ba năm rồi, nhưng lại chưa từng đến Trung Quốc.",
+      "answer": "我学了三年中文，却从来没去过中国。",
+      "answerPy": "Wǒ xué le sān nián Zhōngwén, què cónglái méi qù guò Zhōngguó.",
+      "explanation": "却 + ôn 从来没 + V过 (Bài 9 · điểm 4)."
+     }
+    ]
+   }
+  ]
+ }
+}

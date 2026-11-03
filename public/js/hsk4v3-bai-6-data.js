@@ -62,7 +62,7 @@ var vocabData = [
    },
    {
     "zh": "他咳嗽了好几天了，至少应该去医院看看。",
-    "py": "Tā késou le hǎo jǐ tiān le, zhìshǎo yīnggāi qù yīyuàn kàn kàn.",
+    "py": "Tā késou le hǎojǐ tiān le, zhìshǎo yīnggāi qù yīyuàn kànkan.",
     "vn": "Anh ấy ho mấy ngày rồi, ít nhất cũng nên đi bệnh viện khám xem sao."
    }
   ],
@@ -148,7 +148,7 @@ var vocabData = [
    },
    {
     "zh": "咳出来",
-    "py": "Ké chū lái",
+    "py": "Ké chūlai",
     "vn": "ho ra"
    }
   ],
@@ -173,7 +173,7 @@ var vocabData = [
    },
    {
     "zh": "他昨天晚上咳了一夜，一点儿都没睡好。",
-    "py": "Tā zuótiān wǎnshang ké le yí yè, yìdiǎnr dōu méi shuì hǎo.",
+    "py": "Tā zuótiān wǎnshang ké le yí yè, yìdiǎnr dōu méi shuìhǎo.",
     "vn": "Tối qua anh ấy ho cả đêm, chẳng ngủ được chút nào."
    }
   ],
@@ -204,7 +204,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ho dữ như thế, e là không đi làm nổi rồi.",
     "answer": "咳得这么厉害，恐怕上不了班了。",
-    "answerPy": "Ké de zhème lìhai, kǒngpà shàng bù le bān le.",
+    "answerPy": "Ké de zhème lìhai, kǒngpà shàng bu le bān le.",
     "note": "Ôn bổ ngữ khả năng V不了 (Bài 4 · điểm 1).",
     "pair": "V不了"
    }
@@ -460,7 +460,7 @@ var vocabData = [
    },
    {
     "zh": "赶快回家",
-    "py": "Gǎnkuài huí jiā",
+    "py": "Gǎnkuài huíjiā",
     "vn": "mau về nhà"
    },
    {
@@ -495,7 +495,7 @@ var vocabData = [
    },
    {
     "zh": "要下雨了，我们赶快回家吧，不然就来不及了。",
-    "py": "Yào xiàyǔ le, wǒmen gǎnkuài huí jiā ba, bùrán jiù láibùjí le.",
+    "py": "Yào xiàyǔ le, wǒmen gǎnkuài huíjiā ba, bùrán jiù láibují le.",
     "vn": "Sắp mưa rồi, mình mau về nhà thôi, không thì không kịp mất."
    }
   ],
@@ -530,7 +530,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bạn sốt mấy hôm rồi, mau đi bệnh viện khám đi.",
     "answer": "你都发烧好几天了，赶快去医院检查一下吧。",
-    "answerPy": "Nǐ dōu fāshāo hǎo jǐ tiān le, gǎnkuài qù yīyuàn jiǎnchá yíxià ba.",
+    "answerPy": "Nǐ dōu fāshāo hǎojǐ tiān le, gǎnkuài qù yīyuàn jiǎnchá yíxià ba.",
     "note": "Bài tập chọn từ của sách (câu 5).",
     "pair": "赶快 + V"
    },
@@ -538,7 +538,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Phim sắp chiếu rồi, mau đi thôi, không thì không kịp.",
     "answer": "电影快开始了，赶快走吧，要不就来不及了。",
-    "answerPy": "Diànyǐng kuài kāishǐ le, gǎnkuài zǒu ba, yàobú jiù láibùjí le.",
+    "answerPy": "Diànyǐng kuài kāishǐ le, gǎnkuài zǒu ba, yàobu jiù láibují le.",
     "note": "Ôn 来不及 (Bài 4 · điểm 4).",
     "pair": "来不及"
    }
@@ -606,7 +606,7 @@ var vocabData = [
    },
    {
     "zh": "周末我要在家陪父母，不能跟你们出去玩了。",
-    "py": "Zhōumò wǒ yào zài jiā péi fù mǔ, bù néng gēn nǐmen chūqù wán le.",
+    "py": "Zhōumò wǒ yào zài jiā péi fùmǔ, bù néng gēn nǐmen chūqu wán le.",
     "vn": "Cuối tuần tôi phải ở nhà với bố mẹ, không đi chơi với các bạn được."
    }
   ],
@@ -706,7 +706,7 @@ var vocabData = [
    },
    {
     "zh": "请把这句话翻译成越南语。",
-    "py": "Qǐng bǎ zhè jù huà fānyì chéng Yuènán yǔ.",
+    "py": "Qǐng bǎ zhè jù huà fānyì chéng Yuènányǔ.",
     "vn": "Hãy dịch câu này sang tiếng Việt."
    }
   ],
@@ -741,7 +741,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu sợ nghe không hiểu bác sĩ nói thì có thể tìm một người phiên dịch.",
     "answer": "要是怕听不懂医生说的话，就可以找个翻译。",
-    "answerPy": "Yàoshi pà tīng bù dǒng yīshēng shuō dehuà, jiù kěyǐ zhǎo gè fānyì.",
+    "answerPy": "Yàoshi pà tīngbudǒng yīshēng shuō dehuà, jiù kěyǐ zhǎo gè fānyì.",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2).",
     "pair": "要是……就……"
    },
@@ -749,7 +749,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cô ấy vừa biết tiếng Anh vừa biết tiếng Trung, đã làm phiên dịch ở công ty ba năm.",
     "answer": "她既会英文又会中文，在公司当了三年翻译。",
-    "answerPy": "Tā jì huì yīng wén yòu huì Zhōngwén, zài gōngsī dāng le sān nián fānyì.",
+    "answerPy": "Tā jì huì Yīngwén yòu huì Zhōngwén, zài gōngsī dāng le sān nián fānyì.",
     "note": "Ôn 既……又…… (Bài 4 · điểm 3).",
     "pair": "既……又……"
    }
@@ -803,17 +803,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "护士，您好，我的这位外国朋友生病了，第一次来这里看病，需要怎么做？",
-  "ex_py": "Hùshi, nín hǎo, wǒ de zhè wèi wàiguó péngyou shēngbìng le, dì yī cì lái zhèli kànbìng, xūyào zěnme zuò?",
+  "ex_py": "Hùshi, nín hǎo, wǒ de zhè wèi wàiguó péngyou shēngbìng le, dì yí cì lái zhèli kànbìng, xūyào zěnme zuò?",
   "ex_vn": "Chào chị y tá, người bạn nước ngoài này của tôi bị ốm, lần đầu đến đây khám, cần làm thế nào ạ?",
   "exList": [
    {
     "zh": "护士，您好，我的这位外国朋友生病了，第一次来这里看病，需要怎么做？",
-    "py": "Hùshi, nín hǎo, wǒ de zhè wèi wàiguó péngyou shēngbìng le, dì yī cì lái zhèli kànbìng, xūyào zěnme zuò?",
+    "py": "Hùshi, nín hǎo, wǒ de zhè wèi wàiguó péngyou shēngbìng le, dì yí cì lái zhèli kànbìng, xūyào zěnme zuò?",
     "vn": "Chào chị y tá, người bạn nước ngoài này của tôi bị ốm, lần đầu đến đây khám, cần làm thế nào ạ?"
    },
    {
     "zh": "她妈妈是一名护士，每天工作都很忙。",
-    "py": "Tā māma shì yì míng hùshi, měi tiān gōngzuò dōu hěn máng.",
+    "py": "Tā māma shì yì míng hùshi, měitiān gōngzuò dōu hěn máng.",
     "vn": "Mẹ cô ấy là y tá, ngày nào cũng làm việc rất bận."
    }
   ],
@@ -848,7 +848,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chúng ta qua hỏi y tá xem khám răng phải lên tầng mấy.",
     "answer": "咱们过去问问护士，看牙应该去几楼。",
-    "answerPy": "Zánmen guòqù wèn wèn hùshi, kàn yá yīnggāi qù jǐ lóu.",
+    "answerPy": "Zánmen guòqu wènwen hùshi, kàn yá yīnggāi qù jǐ lóu.",
     "note": "Bài tập chọn từ của sách (câu 1).",
     "pair": "问问 + ai"
    },
@@ -899,7 +899,7 @@ var vocabData = [
    },
    {
     "zh": "报名表",
-    "py": "Bàomíng biǎo",
+    "py": "Bàomíngbiǎo",
     "vn": "phiếu đăng ký"
    }
   ],
@@ -914,12 +914,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-  "ex_py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
+  "ex_py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
   "ex_vn": "Mời anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân.",
   "exList": [
    {
     "zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-    "py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
+    "py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
     "vn": "Mời anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân."
    },
    {
@@ -947,7 +947,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mời viết họ tên, tuổi và số điện thoại vào tờ khai này.",
     "answer": "请在这张表上写上姓名、年龄和电话号码。",
-    "answerPy": "Qǐng zài zhè zhāng biǎo shàng xiě shàng xìngmíng, niánlíng hé diànhuà hàomǎ.",
+    "answerPy": "Qǐng zài zhè zhāng biǎo shàng xiěshang xìngmíng, niánlíng hé diànhuà hàomǎ.",
     "note": "Câu gần bài khoá 2.",
     "pair": "在……上写上……"
    },
@@ -983,7 +983,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "写上性别",
-    "py": "Xiě shàng xìngbié",
+    "py": "Xiěshang xìngbié",
     "vn": "ghi giới tính"
    },
    {
@@ -1009,12 +1009,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-  "ex_py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
+  "ex_py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
   "ex_vn": "Mời anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân.",
   "exList": [
    {
     "zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-    "py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
+    "py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
     "vn": "Mời anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân."
    },
    {
@@ -1054,7 +1054,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trên tờ khai phải viết họ tên, giới tính và quốc tịch.",
     "answer": "表上要写上姓名、性别和国籍。",
-    "answerPy": "Biǎo shàng yào xiě shàng xìngmíng, xìngbié hé guójí.",
+    "answerPy": "Biǎo shàng yào xiěshang xìngmíng, xìngbié hé guójí.",
     "note": "Câu gần bài khoá 2.",
     "pair": "写上……"
    },
@@ -1105,7 +1105,7 @@ var vocabData = [
    },
    {
     "zh": "写上国籍",
-    "py": "Xiě shàng guójí",
+    "py": "Xiěshang guójí",
     "vn": "ghi quốc tịch"
    }
   ],
@@ -1116,17 +1116,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-  "ex_py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
+  "ex_py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
   "ex_vn": "Mời anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân.",
   "exList": [
    {
     "zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-    "py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
+    "py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
     "vn": "Mời anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân."
    },
    {
     "zh": "我们班的同学来自十几个国家，国籍都不一样。",
-    "py": "Wǒmen bān de tóngxué láizì shí jǐ gè guójiā, guójí dōu bù yíyàng.",
+    "py": "Wǒmen bān de tóngxué láizì shíjǐ gè guójiā, guójí dōu bù yíyàng.",
     "vn": "Các bạn lớp tôi đến từ hơn mười nước, quốc tịch đều khác nhau."
    }
   ],
@@ -1169,7 +1169,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bạn bè quốc tịch khác nhau, ai về nước nấy đón Tết.",
     "answer": "国籍不同的朋友们，各回各的国家过新年。",
-    "answerPy": "Guójí bùtóng de péngyou men, gè huí gè de guójiā guò xīnnián.",
+    "answerPy": "Guójí bùtóng de péngyoumen, gè huí gè de guójiā guò xīnnián.",
     "note": "Ôn 各V各的 (Bài 5 · điểm 3).",
     "pair": "各V各的"
    }
@@ -1227,12 +1227,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-  "ex_py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
+  "ex_py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
   "ex_vn": "Mời anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân.",
   "exList": [
    {
     "zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-    "py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
+    "py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
     "vn": "Mời anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân."
    },
    {
@@ -1334,12 +1334,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-  "ex_py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
+  "ex_py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
   "ex_vn": "Mời anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân.",
   "exList": [
    {
     "zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-    "py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
+    "py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
     "vn": "Mời anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân."
    },
    {
@@ -1425,7 +1425,7 @@ var vocabData = [
    },
    {
     "zh": "网上挂号",
-    "py": "Wǎngshàng guàhào",
+    "py": "Wǎngshang guàhào",
     "vn": "lấy số trên mạng"
    },
    {
@@ -1455,7 +1455,7 @@ var vocabData = [
    },
    {
     "zh": "现在很多医院都可以在网上挂号，非常方便。",
-    "py": "Xiànzài hěn duō yīyuàn dōu kěyǐ zài wǎngshàng guàhào, fēicháng fāngbiàn.",
+    "py": "Xiànzài hěn duō yīyuàn dōu kěyǐ zài wǎngshang guàhào, fēicháng fāngbiàn.",
     "vn": "Bây giờ nhiều bệnh viện có thể lấy số trên mạng, rất tiện."
    }
   ],
@@ -1531,7 +1531,7 @@ var vocabData = [
    },
    {
     "zh": "排队买票",
-    "py": "Páiduì mǎi piào",
+    "py": "Páiduì mǎipiào",
     "vn": "xếp hàng mua vé"
    },
    {
@@ -1566,7 +1566,7 @@ var vocabData = [
    },
    {
     "zh": "这家饭馆特别有名，每天都有很多人排队。",
-    "py": "Zhè jiā fànguǎn tèbié yǒumíng, měi tiān dōu yǒu hěn duō rén páiduì.",
+    "py": "Zhè jiā fànguǎn tèbié yǒumíng, měitiān dōu yǒu hěn duō rén páiduì.",
     "vn": "Quán này rất nổi tiếng, ngày nào cũng có nhiều người xếp hàng."
    }
   ],
@@ -1866,12 +1866,12 @@ var vocabData = [
    },
    {
     "zh": "身上",
-    "py": "Shēn shàng",
+    "py": "Shēnshang",
     "vn": "trên người"
    },
    {
     "zh": "全身",
-    "py": "Quán shēn",
+    "py": "Quánshēn",
     "vn": "toàn thân"
    }
   ],
@@ -1896,7 +1896,7 @@ var vocabData = [
    },
    {
     "zh": "他今天穿了一身新衣服，看起来很精神。",
-    "py": "Tā jīntiān chuān le yì shēn xīn yīfu, kàn qǐlái hěn jīngshén.",
+    "py": "Tā jīntiān chuān le yì shēn xīn yīfu, kànqǐlai hěn jīngshén.",
     "vn": "Hôm nay anh ấy mặc một bộ đồ mới, trông rất tươi tỉnh."
    }
   ],
@@ -1927,7 +1927,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chạy bộ xong người tôi toàn mồ hôi, đợi tắm xong rồi hãy ăn cơm.",
     "answer": "跑完步我身上都是汗，等洗完澡再吃饭。",
-    "answerPy": "Pǎo wán bù wǒ shēn shàng dōu shì hàn, děng xǐ wán zǎo zài chīfàn.",
+    "answerPy": "Pǎowán bù wǒ shēnshang dōu shì hàn, děng xǐwán zǎo zài chīfàn.",
     "note": "身上 = trên người; ôn 等……再…… (Bài 5 · điểm 4).",
     "pair": "等……再……"
    }
@@ -1966,7 +1966,7 @@ var vocabData = [
    },
    {
     "zh": "结果出来了",
-    "py": "Jiéguǒ chū lái le",
+    "py": "Jiéguǒ chūlai le",
     "vn": "có kết quả rồi"
    },
    {
@@ -1986,12 +1986,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "医生给她做了检查，检查结果出来后，发现她得了比较严重的流行性感冒。",
-  "ex_py": "Yīshēng gěi tā zuò le jiǎnchá, jiǎnchá jiéguǒ chū lái hòu, fāxiàn tā dé le bǐjiào yánzhòng de liúxíngxìng gǎnmào.",
+  "ex_py": "Yīshēng gěi tā zuò le jiǎnchá, jiǎnchá jiéguǒ chūlai hòu, fāxiàn tā dé le bǐjiào yánzhòng de liúxíngxìng gǎnmào.",
   "ex_vn": "Bác sĩ khám cho cô ấy, sau khi có kết quả kiểm tra thì phát hiện cô ấy bị cúm khá nặng.",
   "exList": [
    {
     "zh": "医生给她做了检查，检查结果出来后，发现她得了比较严重的流行性感冒。",
-    "py": "Yīshēng gěi tā zuò le jiǎnchá, jiǎnchá jiéguǒ chū lái hòu, fāxiàn tā dé le bǐjiào yánzhòng de liúxíngxìng gǎnmào.",
+    "py": "Yīshēng gěi tā zuò le jiǎnchá, jiǎnchá jiéguǒ chūlai hòu, fāxiàn tā dé le bǐjiào yánzhòng de liúxíngxìng gǎnmào.",
     "vn": "Bác sĩ khám cho cô ấy, sau khi có kết quả kiểm tra thì phát hiện cô ấy bị cúm khá nặng."
    },
    {
@@ -2031,7 +2031,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Kết quả kiểm tra có rồi, may là không nặng lắm.",
     "answer": "检查结果出来了，还好不太严重。",
-    "answerPy": "Jiǎnchá jiéguǒ chū lái le, hái hǎo bú tài yánzhòng.",
+    "answerPy": "Jiǎnchá jiéguǒ chūlai le, háihǎo bú tài yánzhòng.",
     "note": "结果 làm danh từ.",
     "pair": "结果出来了"
    },
@@ -2039,7 +2039,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Anh ấy thấy mình khỏe nên không mặc áo khoác, kết quả là bị cảm.",
     "answer": "他觉得自己身体不错，于是没穿外套，结果感冒了。",
-    "answerPy": "Tā juéde zìjǐ shēntǐ búcuò, yúshì méi chuān wài tào, jiéguǒ gǎnmào le.",
+    "answerPy": "Tā juéde zìjǐ shēntǐ búcuò, yúshì méi chuān wàitào, jiéguǒ gǎnmào le.",
     "note": "Ôn 于是 (Bài 3 · điểm 4); 结果 làm liên từ.",
     "pair": "于是……，结果……"
    }
@@ -2072,17 +2072,17 @@ var vocabData = [
    },
    {
     "zh": "重要性",
-    "py": "Zhòngyào xìng",
+    "py": "Zhòngyàoxìng",
     "vn": "tầm quan trọng"
    },
    {
     "zh": "可能性",
-    "py": "Kěnéng xìng",
+    "py": "Kěnéngxìng",
     "vn": "khả năng"
    },
    {
     "zh": "积极性",
-    "py": "Jījí xìng",
+    "py": "Jījíxìng",
     "vn": "tính tích cực"
    }
   ],
@@ -2097,17 +2097,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "检查结果出来后，发现她得了比较严重的流行性感冒。",
-  "ex_py": "Jiǎnchá jiéguǒ chū lái hòu, fāxiàn tā dé le bǐjiào yánzhòng de liúxíngxìng gǎnmào.",
+  "ex_py": "Jiǎnchá jiéguǒ chūlai hòu, fāxiàn tā dé le bǐjiào yánzhòng de liúxíngxìng gǎnmào.",
   "ex_vn": "Sau khi có kết quả kiểm tra, phát hiện cô ấy bị cúm khá nặng.",
   "exList": [
    {
     "zh": "检查结果出来后，发现她得了比较严重的流行性感冒。",
-    "py": "Jiǎnchá jiéguǒ chū lái hòu, fāxiàn tā dé le bǐjiào yánzhòng de liúxíngxìng gǎnmào.",
+    "py": "Jiǎnchá jiéguǒ chūlai hòu, fāxiàn tā dé le bǐjiào yánzhòng de liúxíngxìng gǎnmào.",
     "vn": "Sau khi có kết quả kiểm tra, phát hiện cô ấy bị cúm khá nặng."
    },
    {
     "zh": "学好中文的重要性，大家都知道。",
-    "py": "Xué hǎo Zhōngwén de zhòngyào xìng, dàjiā dōu zhīdao.",
+    "py": "Xuéhǎo Zhōngwén de zhòngyàoxìng, dàjiā dōu zhīdao.",
     "vn": "Tầm quan trọng của việc học giỏi tiếng Trung thì ai cũng biết."
    }
   ],
@@ -2138,7 +2138,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chiều nay khả năng mưa rất cao, ít nhất phải mang theo một chiếc ô.",
     "answer": "今天下午下雨的可能性很大，至少要带一把伞。",
-    "answerPy": "Jīntiān xiàwǔ xiàyǔ de kěnéng xìng hěn dà, zhìshǎo yào dài yì bǎ sǎn.",
+    "answerPy": "Jīntiān xiàwǔ xiàyǔ de kěnéngxìng hěn dà, zhìshǎo yào dài yì bǎ sǎn.",
     "note": "Ôn 至少 (Bài 5 · điểm 1).",
     "pair": "至少……"
    }
@@ -2176,7 +2176,7 @@ var vocabData = [
    },
    {
     "zh": "体温降下来",
-    "py": "Tǐwēn jiàng xiàlái",
+    "py": "Tǐwēn jiàng xiàlai",
     "vn": "hạ nhiệt"
    },
    {
@@ -2196,17 +2196,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "医生告诉她，现在需要把体温降下来，光吃药恐怕不够，打针会更有效。",
-  "ex_py": "Yīshēng gàosu tā, xiànzài xūyào bǎ tǐwēn jiàng xiàlái, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
+  "ex_py": "Yīshēng gàosu tā, xiànzài xūyào bǎ tǐwēn jiàng xiàlai, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
   "ex_vn": "Bác sĩ bảo cô ấy bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn.",
   "exList": [
    {
     "zh": "医生告诉她，现在需要把体温降下来，光吃药恐怕不够，打针会更有效。",
-    "py": "Yīshēng gàosu tā, xiànzài xūyào bǎ tǐwēn jiàng xiàlái, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
+    "py": "Yīshēng gàosu tā, xiànzài xūyào bǎ tǐwēn jiàng xiàlai, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
     "vn": "Bác sĩ bảo cô ấy bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn."
    },
    {
     "zh": "他发烧了，体温有三十九度。",
-    "py": "Tā fāshāo le, tǐwēn yǒu sān shí jiǔ dù.",
+    "py": "Tā fāshāo le, tǐwēn yǒu sān shíjiǔ dù.",
     "vn": "Anh ấy sốt rồi, nhiệt độ lên tới 39 độ."
    }
   ],
@@ -2241,7 +2241,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bác sĩ muốn xem nhiệt độ của cô ấy là bao nhiêu.",
     "answer": "医生想看看她的体温是多少。",
-    "answerPy": "Yīshēng xiǎng kàn kàn tā de tǐwēn shì duōshǎo.",
+    "answerPy": "Yīshēng xiǎng kànkan tā de tǐwēn shì duōshao.",
     "note": "Đáp án gợi ý bài nhìn tranh của sách.",
     "pair": "看看……是多少"
    },
@@ -2249,7 +2249,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Sốt tới 39 độ, nhiệt độ cao như vậy phải mau đi bệnh viện.",
     "answer": "发烧到三十九度，体温这么高，要赶快去医院。",
-    "answerPy": "Fāshāo dào sān shí jiǔ dù, tǐwēn zhème gāo, yào gǎnkuài qù yīyuàn.",
+    "answerPy": "Fāshāo dào sān shíjiǔ dù, tǐwēn zhème gāo, yào gǎnkuài qù yīyuàn.",
     "note": "Kết hợp 赶快 (từ mới 5).",
     "pair": "赶快 + V"
    }
@@ -2277,17 +2277,17 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "降下来",
-    "py": "Jiàng xiàlái",
+    "py": "Jiàng xiàlai",
     "vn": "hạ xuống"
    },
    {
     "zh": "降温",
-    "py": "Jiàng wēn",
+    "py": "Jiàngwēn",
     "vn": "hạ nhiệt; trời trở lạnh"
    },
    {
     "zh": "降价",
-    "py": "Jiàng jià",
+    "py": "Jiàngjià",
     "vn": "giảm giá"
    },
    {
@@ -2307,17 +2307,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "医生告诉她，现在需要把体温降下来，光吃药恐怕不够，打针会更有效。",
-  "ex_py": "Yīshēng gàosu tā, xiànzài xūyào bǎ tǐwēn jiàng xiàlái, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
+  "ex_py": "Yīshēng gàosu tā, xiànzài xūyào bǎ tǐwēn jiàng xiàlai, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
   "ex_vn": "Bác sĩ bảo cô ấy bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn.",
   "exList": [
    {
     "zh": "医生告诉她，现在需要把体温降下来，光吃药恐怕不够，打针会更有效。",
-    "py": "Yīshēng gàosu tā, xiànzài xūyào bǎ tǐwēn jiàng xiàlái, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
+    "py": "Yīshēng gàosu tā, xiànzài xūyào bǎ tǐwēn jiàng xiàlai, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
     "vn": "Bác sĩ bảo cô ấy bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn."
    },
    {
     "zh": "明天要降温了，多穿点儿衣服。",
-    "py": "Míngtiān yào jiàng wēn le, duō chuān diǎnr yīfu.",
+    "py": "Míngtiān yào jiàngwēn le, duō chuān diǎnr yīfu.",
     "vn": "Mai trời trở lạnh, mặc thêm áo vào nhé."
    }
   ],
@@ -2340,7 +2340,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bây giờ cần hạ nhiệt độ cơ thể xuống.",
     "answer": "现在需要把体温降下来。",
-    "answerPy": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlái.",
+    "answerPy": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlai.",
     "note": "Câu trong bài khoá 3.",
     "pair": "把……降下来"
    },
@@ -2348,7 +2348,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Uống thuốc rồi mà nhiệt độ vẫn không hạ xuống được, vẫn nên đi tiêm thôi.",
     "answer": "吃了药体温也降不下来，还是去打针吧。",
-    "answerPy": "Chī le yào tǐwēn yě jiàng bú xiàlái, háishì qù dǎzhēn ba.",
+    "answerPy": "Chī le yào tǐwēn yě jiàng bu xiàlai, háishi qù dǎzhēn ba.",
     "note": "Ôn bổ ngữ khả năng (Bài 4 · điểm 1): 降不下来.",
     "pair": "V不下来"
    }
@@ -2391,7 +2391,7 @@ var vocabData = [
    },
    {
     "zh": "光看书",
-    "py": "Guāng kàn shū",
+    "py": "Guāng kànshū",
     "vn": "chỉ đọc sách"
    }
   ],
@@ -2406,17 +2406,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "现在需要把体温降下来，光吃药恐怕不够，打针会更有效。",
-  "ex_py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlái, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
+  "ex_py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlai, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
   "ex_vn": "Bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn.",
   "exList": [
    {
     "zh": "现在需要把体温降下来，光吃药恐怕不够，打针会更有效。",
-    "py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlái, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
+    "py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlai, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
     "vn": "Bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn."
    },
    {
     "zh": "学中文光看书不行，还要多说多练。",
-    "py": "Xué Zhōngwén guāng kàn shū bùxíng, hái yào duō shuō duō liàn.",
+    "py": "Xué Zhōngwén guāng kànshū bùxíng, hái yào duō shuō duō liàn.",
     "vn": "Học tiếng Trung chỉ đọc sách thì không được, còn phải nói nhiều luyện nhiều."
    }
   ],
@@ -2447,7 +2447,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Học tiếng Trung không thể chỉ đọc sách, không những phải nghe nhiều mà còn phải nói nhiều.",
     "answer": "学中文不能光看书，不仅要多听，而且要多说。",
-    "answerPy": "Xué Zhōngwén bù néng guāng kàn shū, bùjǐn yào duō tīng, érqiě yào duō shuō.",
+    "answerPy": "Xué Zhōngwén bù néng guāng kànshū, bùjǐn yào duō tīng, érqiě yào duō shuō.",
     "note": "Ôn 不仅……而且…… (Bài 3 · điểm 2).",
     "pair": "不仅……而且……"
    }
@@ -2505,17 +2505,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "现在需要把体温降下来，光吃药恐怕不够，打针会更有效。",
-  "ex_py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlái, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
+  "ex_py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlai, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
   "ex_vn": "Bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn.",
   "exList": [
    {
     "zh": "现在需要把体温降下来，光吃药恐怕不够，打针会更有效。",
-    "py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlái, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
+    "py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlai, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
     "vn": "Bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn."
    },
    {
     "zh": "小孩子一听到打针就哭。",
-    "py": "Xiǎo háizi yì tīng dào dǎzhēn jiù kū.",
+    "py": "Xiǎoháizi yì tīngdào dǎzhēn jiù kū.",
     "vn": "Trẻ con cứ nghe đến tiêm là khóc."
    }
   ],
@@ -2616,12 +2616,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "现在需要把体温降下来，光吃药恐怕不够，打针会更有效。",
-  "ex_py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlái, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
+  "ex_py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlai, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
   "ex_vn": "Bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn.",
   "exList": [
    {
     "zh": "现在需要把体温降下来，光吃药恐怕不够，打针会更有效。",
-    "py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlái, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
+    "py": "Xiànzài xūyào bǎ tǐwēn jiàng xiàlai, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
     "vn": "Bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn."
    },
    {
@@ -2727,12 +2727,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "医生还让她回家以后按时吃药，多喝水，多休息。",
-  "ex_py": "Yīshēng huán ràng tā huí jiā yǐhòu ànshí chī yào, duō hē shuǐ, duō xiūxi.",
+  "ex_py": "Yīshēng huán ràng tā huíjiā yǐhòu ànshí chī yào, duō hē shuǐ, duō xiūxi.",
   "ex_vn": "Bác sĩ còn dặn cô ấy về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều.",
   "exList": [
    {
     "zh": "医生还让她回家以后按时吃药，多喝水，多休息。",
-    "py": "Yīshēng huán ràng tā huí jiā yǐhòu ànshí chī yào, duō hē shuǐ, duō xiūxi.",
+    "py": "Yīshēng huán ràng tā huíjiā yǐhòu ànshí chī yào, duō hē shuǐ, duō xiūxi.",
     "vn": "Bác sĩ còn dặn cô ấy về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều."
    },
    {
@@ -2772,7 +2772,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bác sĩ dặn cô ấy về nhà phải uống thuốc đúng giờ.",
     "answer": "医生让她回家以后按时吃药。",
-    "answerPy": "Yīshēng ràng tā huí jiā yǐhòu ànshí chī yào.",
+    "answerPy": "Yīshēng ràng tā huíjiā yǐhòu ànshí chī yào.",
     "note": "Câu trong bài khoá 3.",
     "pair": "让 + ai + 按时 + V"
    },
@@ -2808,7 +2808,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "出汗",
-    "py": "Chū hàn",
+    "py": "Chūhàn",
     "vn": "ra mồ hôi"
    },
    {
@@ -2818,7 +2818,7 @@ var vocabData = [
    },
    {
     "zh": "满头大汗",
-    "py": "Mǎn tóu dà hàn",
+    "py": "Mǎntóu dàhàn",
     "vn": "mồ hôi đầm đìa"
    },
    {
@@ -2844,7 +2844,7 @@ var vocabData = [
    },
    {
     "zh": "天气太热了，我一出门就出汗。",
-    "py": "Tiānqì tài rè le, wǒ yì chūmén jiù chū hàn.",
+    "py": "Tiānqì tài rè le, wǒ yì chūmén jiù chūhàn.",
     "vn": "Trời nóng quá, tôi vừa ra khỏi nhà là toát mồ hôi."
    }
   ],
@@ -2867,7 +2867,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trời nóng quá, tôi vừa ra khỏi nhà là toát mồ hôi.",
     "answer": "天气太热了，我一出门就出汗。",
-    "answerPy": "Tiānqì tài rè le, wǒ yì chūmén jiù chū hàn.",
+    "answerPy": "Tiānqì tài rè le, wǒ yì chūmén jiù chūhàn.",
     "note": "Ôn 一……就…… (HSK 3).",
     "pair": "一……就……"
    },
@@ -2875,7 +2875,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ra mồ hôi rồi thì nhiệt độ sẽ hạ xuống.",
     "answer": "出了汗，体温就会降下来。",
-    "answerPy": "Chū le hàn, tǐwēn jiù huì jiàng xiàlái.",
+    "answerPy": "Chū le hàn, tǐwēn jiù huì jiàng xiàlai.",
     "note": "出汗 + 降下来.",
     "pair": "出了汗，就……"
    }
@@ -2903,17 +2903,17 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "醒来",
-    "py": "Xǐng lái",
+    "py": "Xǐnglái",
     "vn": "tỉnh dậy"
    },
    {
     "zh": "叫醒",
-    "py": "Jiào xǐng",
+    "py": "Jiàoxǐng",
     "vn": "gọi dậy"
    },
    {
     "zh": "睡醒",
-    "py": "Shuì xǐng",
+    "py": "Shuìxǐng",
     "vn": "ngủ dậy"
    },
    {
@@ -2933,12 +2933,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "第二天醒来时，她感觉头不那么疼了。",
-  "ex_py": "Dì èr tiān xǐng lái shí, tā gǎnjué tóu bú nàme téng le.",
+  "ex_py": "Dì èr tiān xǐnglái shí, tā gǎnjué tóu bú nàme téng le.",
   "ex_vn": "Hôm sau lúc tỉnh dậy, cô ấy thấy đầu không đau như trước nữa.",
   "exList": [
    {
     "zh": "第二天醒来时，她感觉头不那么疼了。",
-    "py": "Dì èr tiān xǐng lái shí, tā gǎnjué tóu bú nàme téng le.",
+    "py": "Dì èr tiān xǐnglái shí, tā gǎnjué tóu bú nàme téng le.",
     "vn": "Hôm sau lúc tỉnh dậy, cô ấy thấy đầu không đau như trước nữa."
    },
    {
@@ -3033,17 +3033,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "第二天醒来时，她感觉头不那么疼了，体温也低了一些，身体不那么难受了。",
-  "ex_py": "Dì èr tiān xǐng lái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē, shēntǐ bú nàme nánshòu le.",
+  "ex_py": "Dì èr tiān xǐnglái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē, shēntǐ bú nàme nánshòu le.",
   "ex_vn": "Hôm sau lúc tỉnh dậy, cô ấy thấy đầu không đau như trước, nhiệt độ cũng hạ đi một chút, người không còn khó chịu như trước nữa.",
   "exList": [
    {
     "zh": "第二天醒来时，她感觉头不那么疼了，体温也低了一些，身体不那么难受了。",
-    "py": "Dì èr tiān xǐng lái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē, shēntǐ bú nàme nánshòu le.",
+    "py": "Dì èr tiān xǐnglái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē, shēntǐ bú nàme nánshòu le.",
     "vn": "Hôm sau lúc tỉnh dậy, cô ấy thấy đầu không đau như trước, nhiệt độ cũng hạ đi một chút, người không còn khó chịu như trước nữa."
    },
    {
     "zh": "第一次在中国看病，我的感觉是比我想的简单。",
-    "py": "Dì yī cì zài Zhōngguó kànbìng, wǒ de gǎnjué shì bǐ wǒ xiǎng de jiǎndān.",
+    "py": "Dì yí cì zài Zhōngguó kànbìng, wǒ de gǎnjué shì bǐ wǒ xiǎng de jiǎndān.",
     "vn": "Lần đầu khám bệnh ở Trung Quốc, cảm giác của tôi là đơn giản hơn tôi nghĩ."
    }
   ],
@@ -3078,7 +3078,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu cảm thấy người không khỏe thì tốt nhất mau đi bệnh viện khám.",
     "answer": "如果感觉身体不舒服，最好赶快去医院看看。",
-    "answerPy": "Rúguǒ gǎnjué shēntǐ bù shūfu, zuìhǎo gǎnkuài qù yīyuàn kàn kàn.",
+    "answerPy": "Rúguǒ gǎnjué shēntǐ bù shūfu, zuìhǎo gǎnkuài qù yīyuàn kànkan.",
     "note": "Bài tập hoàn thành đoạn văn của sách.",
     "pair": "如果……最好……"
    },
@@ -3144,12 +3144,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "第二天醒来时，她感觉头不那么疼了，体温也低了一些。",
-  "ex_py": "Dì èr tiān xǐng lái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē.",
+  "ex_py": "Dì èr tiān xǐnglái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē.",
   "ex_vn": "Hôm sau lúc tỉnh dậy, cô ấy thấy đầu không đau như trước, nhiệt độ cũng hạ đi một chút.",
   "exList": [
    {
     "zh": "第二天醒来时，她感觉头不那么疼了，体温也低了一些。",
-    "py": "Dì èr tiān xǐng lái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē.",
+    "py": "Dì èr tiān xǐnglái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē.",
     "vn": "Hôm sau lúc tỉnh dậy, cô ấy thấy đầu không đau như trước, nhiệt độ cũng hạ đi một chút."
    },
    {
@@ -3223,7 +3223,7 @@ var vocabData = [
    },
    {
     "zh": "心里难受",
-    "py": "Xīnlǐ nánshòu",
+    "py": "Xīnli nánshòu",
     "vn": "buồn trong lòng"
    },
    {
@@ -3239,17 +3239,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "第二天醒来时，她感觉头不那么疼了，体温也低了一些，身体不那么难受了。",
-  "ex_py": "Dì èr tiān xǐng lái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē, shēntǐ bú nàme nánshòu le.",
+  "ex_py": "Dì èr tiān xǐnglái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē, shēntǐ bú nàme nánshòu le.",
   "ex_vn": "Hôm sau lúc tỉnh dậy, cô ấy thấy đầu không đau như trước, nhiệt độ cũng hạ đi một chút, người không còn khó chịu như trước nữa.",
   "exList": [
    {
     "zh": "第二天醒来时，她感觉头不那么疼了，体温也低了一些，身体不那么难受了。",
-    "py": "Dì èr tiān xǐng lái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē, shēntǐ bú nàme nánshòu le.",
+    "py": "Dì èr tiān xǐnglái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē, shēntǐ bú nàme nánshòu le.",
     "vn": "Hôm sau lúc tỉnh dậy, cô ấy thấy đầu không đau như trước, nhiệt độ cũng hạ đi một chút, người không còn khó chịu như trước nữa."
    },
    {
     "zh": "听到这个消息，她心里很难受。",
-    "py": "Tīng dào zhège xiāoxi, tā xīnlǐ hěn nánshòu.",
+    "py": "Tīngdào zhège xiāoxi, tā xīnli hěn nánshòu.",
     "vn": "Nghe tin này, trong lòng cô ấy rất buồn."
    }
   ],
@@ -3350,17 +3350,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "外国人第一次在中国看病，可能会担心语言不通。",
-  "ex_py": "Wàiguó rén dì yī cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng.",
+  "ex_py": "Wàiguórén dì yí cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng.",
   "ex_vn": "Người nước ngoài lần đầu khám bệnh ở Trung Quốc có thể sẽ lo bất đồng ngôn ngữ.",
   "exList": [
    {
     "zh": "外国人第一次在中国看病，可能会担心语言不通。",
-    "py": "Wàiguó rén dì yī cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng.",
+    "py": "Wàiguórén dì yí cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng.",
     "vn": "Người nước ngoài lần đầu khám bệnh ở Trung Quốc có thể sẽ lo bất đồng ngôn ngữ."
    },
    {
     "zh": "我给他打了好几次电话，都打不通。",
-    "py": "Wǒ gěi tā dǎ le hǎo jǐ cì diànhuà, dōu dǎ bù tōng.",
+    "py": "Wǒ gěi tā dǎ le hǎojǐ cì diànhuà, dōu dǎ bù tōng.",
     "vn": "Tôi gọi cho anh ấy mấy lần rồi mà đều không được."
    }
   ],
@@ -3383,7 +3383,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lần đầu khám bệnh ở Trung Quốc, có thể sẽ lo bất đồng ngôn ngữ.",
     "answer": "第一次在中国看病，可能会担心语言不通。",
-    "answerPy": "Dì yī cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng.",
+    "answerPy": "Dì yí cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng.",
     "note": "Câu trong bài khoá 4.",
     "pair": "语言不通"
    },
@@ -3449,12 +3449,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "外国人第一次在中国看病，可能会担心语言不通，或者觉得看病的过程和自己的国家不同。",
-  "ex_py": "Wàiguó rén dì yī cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng, huòzhě juéde kànbìng de guòchéng hé zìjǐ de guójiā bùtóng.",
+  "ex_py": "Wàiguórén dì yí cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng, huòzhě juéde kànbìng de guòchéng hé zìjǐ de guójiā bùtóng.",
   "ex_vn": "Người nước ngoài lần đầu khám bệnh ở Trung Quốc có thể lo bất đồng ngôn ngữ, hoặc thấy quy trình khám bệnh khác với nước mình.",
   "exList": [
    {
     "zh": "外国人第一次在中国看病，可能会担心语言不通，或者觉得看病的过程和自己的国家不同。",
-    "py": "Wàiguó rén dì yī cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng, huòzhě juéde kànbìng de guòchéng hé zìjǐ de guójiā bùtóng.",
+    "py": "Wàiguórén dì yí cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng, huòzhě juéde kànbìng de guòchéng hé zìjǐ de guójiā bùtóng.",
     "vn": "Người nước ngoài lần đầu khám bệnh ở Trung Quốc có thể lo bất đồng ngôn ngữ, hoặc thấy quy trình khám bệnh khác với nước mình."
    },
    {
@@ -3494,7 +3494,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lần sau tôi quay lại các bước nấu món này rồi gửi cho bạn.",
     "answer": "下次我把做菜的过程拍下来发给你。",
-    "answerPy": "Xià cì wǒ bǎ zuò cài de guòchéng pāi xiàlái fā gěi nǐ.",
+    "answerPy": "Xià cì wǒ bǎ zuò cài de guòchéng pāixià lái fāgěi nǐ.",
     "note": "Bài tập chọn từ của sách (câu 6).",
     "pair": "把……拍下来"
    },
@@ -3535,7 +3535,7 @@ var vocabData = [
    },
    {
     "zh": "普通部",
-    "py": "Pǔ tōng bù",
+    "py": "Pǔtōng bù",
     "vn": "khu thường"
    },
    {
@@ -3556,12 +3556,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "有的医院有国际部，那里的医生一般会说英文。",
-  "ex_py": "Yǒude yīyuàn yǒu guójì bù, nàli de yīshēng yìbān huì shuō yīng wén.",
+  "ex_py": "Yǒude yīyuàn yǒu guójì bù, nàli de yīshēng yìbān huì shuō Yīngwén.",
   "ex_vn": "Có bệnh viện có khu quốc tế, bác sĩ ở đó thường biết nói tiếng Anh.",
   "exList": [
    {
     "zh": "有的医院有国际部，那里的医生一般会说英文。",
-    "py": "Yǒude yīyuàn yǒu guójì bù, nàli de yīshēng yìbān huì shuō yīng wén.",
+    "py": "Yǒude yīyuàn yǒu guójì bù, nàli de yīshēng yìbān huì shuō Yīngwén.",
     "vn": "Có bệnh viện có khu quốc tế, bác sĩ ở đó thường biết nói tiếng Anh."
    },
    {
@@ -3597,7 +3597,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu không có nhu cầu đặc biệt thì có thể chọn khu thường.",
     "answer": "要是没有特别需要，就可以选择普通部。",
-    "answerPy": "Yàoshi méiyǒu tèbié xūyào, jiù kěyǐ xuǎnzé pǔ tōng bù.",
+    "answerPy": "Yàoshi méiyǒu tèbié xūyào, jiù kěyǐ xuǎnzé pǔtōng bù.",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2).",
     "pair": "要是……就……"
    }
@@ -3655,17 +3655,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "有的医院有国际部，那里的医生一般会说英文，交流比较方便，但是国际部的收费比较高。",
-  "ex_py": "Yǒude yīyuàn yǒu guójì bù, nàli de yīshēng yìbān huì shuō yīng wén, jiāoliú bǐjiào fāngbiàn, dànshì guójì bù de shōufèi bǐjiào gāo.",
+  "ex_py": "Yǒude yīyuàn yǒu guójì bù, nàli de yīshēng yìbān huì shuō Yīngwén, jiāoliú bǐjiào fāngbiàn, dànshì guójì bù de shōufèi bǐjiào gāo.",
   "ex_vn": "Có bệnh viện có khu quốc tế, bác sĩ ở đó thường biết tiếng Anh, giao tiếp khá thuận tiện, nhưng phí ở khu quốc tế khá cao.",
   "exList": [
    {
     "zh": "有的医院有国际部，那里的医生一般会说英文，交流比较方便，但是国际部的收费比较高。",
-    "py": "Yǒude yīyuàn yǒu guójì bù, nàli de yīshēng yìbān huì shuō yīng wén, jiāoliú bǐjiào fāngbiàn, dànshì guójì bù de shōufèi bǐjiào gāo.",
+    "py": "Yǒude yīyuàn yǒu guójì bù, nàli de yīshēng yìbān huì shuō Yīngwén, jiāoliú bǐjiào fāngbiàn, dànshì guójì bù de shōufèi bǐjiào gāo.",
     "vn": "Có bệnh viện có khu quốc tế, bác sĩ ở đó thường biết tiếng Anh, giao tiếp khá thuận tiện, nhưng phí ở khu quốc tế khá cao."
    },
    {
     "zh": "这个博物馆不收费，任何人都可以进去参观。",
-    "py": "Zhège bó wù guǎn bù shōufèi, rènhé rén dōu kěyǐ jìnqù cānguān.",
+    "py": "Zhège bówùguǎn bù shōufèi, rènhé rén dōu kěyǐ jìnqu cānguān.",
     "vn": "Bảo tàng này không thu phí, bất kỳ ai cũng có thể vào tham quan."
    }
   ],
@@ -3700,7 +3700,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bảo tàng này không thu phí, bất kỳ ai cũng có thể vào tham quan.",
     "answer": "这个博物馆不收费，任何人都可以进去参观。",
-    "answerPy": "Zhège bó wù guǎn bù shōufèi, rènhé rén dōu kěyǐ jìnqù cānguān.",
+    "answerPy": "Zhège bówùguǎn bù shōufèi, rènhé rén dōu kěyǐ jìnqu cānguān.",
     "note": "Ôn 任何……都…… (Bài 1 · điểm 1).",
     "pair": "任何……都……"
    },
@@ -3811,7 +3811,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Giám đốc gọi bạn qua, muốn tìm hiểu tình hình công việc gần đây.",
     "answer": "经理叫你过去，要了解一下最近的工作情况。",
-    "answerPy": "Jīnglǐ jiào nǐ guòqù, yào liǎojiě yíxià zuìjìn de gōngzuò qíngkuàng.",
+    "answerPy": "Jīnglǐ jiào nǐ guòqu, yào liǎojiě yíxià zuìjìn de gōngzuò qíngkuàng.",
     "note": "Bài tập chọn từ của sách (câu 8).",
     "pair": "了解……情况"
    },
@@ -3862,7 +3862,7 @@ var vocabData = [
    },
    {
     "zh": "好早点儿走",
-    "py": "Hǎo zǎo diǎnr zǒu",
+    "py": "Hǎo zǎodiǎnr zǒu",
     "vn": "để đi sớm được"
    }
   ],
@@ -3877,17 +3877,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "医生会问病人的情况，有时还会做一些检查，好给出合适的治疗方法。",
-  "ex_py": "Yīshēng huì wèn bìngrén de qíngkuàng, yǒushí hái huì zuò yìxiē jiǎnchá, hǎo gěi chū héshì de zhìliáo fāngfǎ.",
+  "ex_py": "Yīshēng huì wèn bìngrén de qíngkuàng, yǒushí hái huì zuò yìxiē jiǎnchá, hǎo gěichū héshì de zhìliáo fāngfǎ.",
   "ex_vn": "Bác sĩ sẽ hỏi tình hình bệnh nhân, có lúc còn làm một số xét nghiệm, để đưa ra cách điều trị phù hợp.",
   "exList": [
    {
     "zh": "医生会问病人的情况，有时还会做一些检查，好给出合适的治疗方法。",
-    "py": "Yīshēng huì wèn bìngrén de qíngkuàng, yǒushí hái huì zuò yìxiē jiǎnchá, hǎo gěi chū héshì de zhìliáo fāngfǎ.",
+    "py": "Yīshēng huì wèn bìngrén de qíngkuàng, yǒushí hái huì zuò yìxiē jiǎnchá, hǎo gěichū héshì de zhìliáo fāngfǎ.",
     "vn": "Bác sĩ sẽ hỏi tình hình bệnh nhân, có lúc còn làm một số xét nghiệm, để đưa ra cách điều trị phù hợp."
    },
    {
     "zh": "你早点儿睡，明天好早点儿起床。",
-    "py": "Nǐ zǎo diǎnr shuì, míngtiān hǎo zǎo diǎnr qǐchuáng.",
+    "py": "Nǐ zǎodiǎnr shuì, míngtiān hǎo zǎodiǎnr qǐchuáng.",
     "vn": "Bạn ngủ sớm đi, để mai còn dậy sớm."
    }
   ],
@@ -3910,7 +3910,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Ngày nào tôi cũng gọi điện cho gia đình để họ yên tâm.",
     "answer": "我每天都给家人打电话，好让他们放心。",
-    "answerPy": "Wǒ měi tiān dōu gěi jiārén dǎdiànhuà, hǎo ràng tāmen fàngxīn.",
+    "answerPy": "Wǒ měitiān dōu gěi jiārén dǎdiànhuà, hǎo ràng tāmen fàngxīn.",
     "note": "Đáp án gợi ý của sách (Bài 6 · điểm 4).",
     "pair": "……，好……"
    },
@@ -3918,7 +3918,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Hôm nay tôi làm xong việc luôn, để mai đi chơi với bạn.",
     "answer": "我今天就把工作做完，明天好陪你出去玩。",
-    "answerPy": "Wǒ jīntiān jiù bǎ gōngzuò zuò wán, míngtiān hǎo péi nǐ chūqù wán.",
+    "answerPy": "Wǒ jīntiān jiù bǎ gōngzuò zuòwán, míngtiān hǎo péi nǐ chūqu wán.",
     "note": "Đáp án gợi ý của sách; câu chữ 把.",
     "pair": "……，明天好……"
    }
@@ -3976,12 +3976,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "只要按照医生说的一步一步来，一般都可以顺利得到治疗。",
-  "ex_py": "Zhīyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
+  "ex_py": "Zhǐyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
   "ex_vn": "Chỉ cần làm từng bước theo lời bác sĩ, thường đều được điều trị suôn sẻ.",
   "exList": [
    {
     "zh": "只要按照医生说的一步一步来，一般都可以顺利得到治疗。",
-    "py": "Zhīyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
+    "py": "Zhǐyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
     "vn": "Chỉ cần làm từng bước theo lời bác sĩ, thường đều được điều trị suôn sẻ."
    },
    {
@@ -4021,7 +4021,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chỉ cần làm từng bước theo lời bác sĩ, thường đều được điều trị suôn sẻ.",
     "answer": "只要按照医生说的一步一步来，一般都可以顺利得到治疗。",
-    "answerPy": "Zhīyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
+    "answerPy": "Zhǐyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
     "note": "Câu trong bài khoá 4.",
     "pair": "只要……都……"
    },
@@ -4062,7 +4062,7 @@ var vocabData = [
    },
    {
     "zh": "第一步",
-    "py": "Dì yī bù",
+    "py": "Dì yí bù",
     "vn": "bước đầu tiên"
    },
    {
@@ -4087,17 +4087,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "只要按照医生说的一步一步来，一般都可以顺利得到治疗。",
-  "ex_py": "Zhīyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
+  "ex_py": "Zhǐyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
   "ex_vn": "Chỉ cần làm từng bước theo lời bác sĩ, thường đều được điều trị suôn sẻ.",
   "exList": [
    {
     "zh": "只要按照医生说的一步一步来，一般都可以顺利得到治疗。",
-    "py": "Zhīyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
+    "py": "Zhǐyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
     "vn": "Chỉ cần làm từng bước theo lời bác sĩ, thường đều được điều trị suôn sẻ."
    },
    {
     "zh": "学中文的第一步是学好拼音。",
-    "py": "Xué Zhōngwén de dì yī bù shì xué hǎo pīn yīn.",
+    "py": "Xué Zhōngwén de dì yí bù shì xuéhǎo pīnyīn.",
     "vn": "Bước đầu tiên của việc học tiếng Trung là học tốt pinyin."
    }
   ],
@@ -4120,7 +4120,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Khám bệnh ở Trung Quốc, bước đầu tiên là lấy số.",
     "answer": "在中国看病，第一步是挂号。",
-    "answerPy": "Zài Zhōngguó kànbìng, dì yī bù shì guàhào.",
+    "answerPy": "Zài Zhōngguó kànbìng, dì yí bù shì guàhào.",
     "note": "第一步是…….",
     "pair": "第一步是……"
    },
@@ -4297,19 +4297,19 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "护士，您好，我的这位外国朋友生病了，第一次来这里看病，需要怎么做？",
-    "py": "Hùshi, nín hǎo, wǒ de zhè wèi wàiguó péngyou shēngbìng le, dì yī cì lái zhèli kànbìng, xūyào zěnme zuò?",
+    "py": "Hùshi, nín hǎo, wǒ de zhè wèi wàiguó péngyou shēngbìng le, dì yí cì lái zhèli kànbìng, xūyào zěnme zuò?",
     "vn": "Chào chị y tá, người bạn nước ngoài này của tôi bị ốm, lần đầu đến đây khám bệnh, cần làm thế nào ạ?"
    },
    {
     "sp": 1,
     "zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-    "py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
+    "py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ.",
     "vn": "Anh viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân nhé."
    },
    {
     "sp": 0,
     "zh": "我写好了，您看看，这样可以吗？",
-    "py": "Wǒ xiě hǎo le, nín kàn kàn, zhèyàng kěyǐ ma?",
+    "py": "Wǒ xiěhǎo le, nín kànkan, zhèyàng kěyǐ ma?",
     "vn": "Tôi viết xong rồi, chị xem giúp, thế này được chưa ạ?"
    },
    {
@@ -4327,7 +4327,7 @@ var dialogData = [
    {
     "sp": 2,
     "zh": "好的，真是太谢谢你了！",
-    "py": "Hǎo de, zhēn shì tài xièxiè nǐ le!",
+    "py": "Hǎo de, zhēnshì tài xièxie nǐ le!",
     "vn": "Ừ, thật sự cảm ơn cậu nhiều lắm!"
    },
    {
@@ -4379,25 +4379,25 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "这次她病得很厉害，头也一直疼，身上一点儿力气都没有。",
-    "py": "Zhè cì tā bìng de hěn lìhai, tóu yě yìzhí téng, shēn shàng yìdiǎnr lìqi dōu méiyǒu.",
+    "py": "Zhè cì tā bìng de hěn lìhai, tóu yě yìzhí téng, shēnshang yìdiǎnr lìqi dōu méiyǒu.",
     "vn": "Lần này cô ấy ốm rất nặng, đầu cũng đau suốt, người chẳng còn chút sức lực nào."
    },
    {
     "sp": 0,
     "zh": "医生给她做了检查，检查结果出来后，发现她得了比较严重的流行性感冒。",
-    "py": "Yīshēng gěi tā zuò le jiǎnchá, jiǎnchá jiéguǒ chū lái hòu, fāxiàn tā dé le bǐjiào yánzhòng de liúxíngxìng gǎnmào.",
+    "py": "Yīshēng gěi tā zuò le jiǎnchá, jiǎnchá jiéguǒ chūlai hòu, fāxiàn tā dé le bǐjiào yánzhòng de liúxíngxìng gǎnmào.",
     "vn": "Bác sĩ khám cho cô ấy, sau khi có kết quả kiểm tra thì phát hiện cô ấy bị cúm khá nặng."
    },
    {
     "sp": 0,
     "zh": "医生告诉她，现在需要把体温降下来，光吃药恐怕不够，打针会更有效。",
-    "py": "Yīshēng gàosu tā, xiànzài xūyào bǎ tǐwēn jiàng xiàlái, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
+    "py": "Yīshēng gàosu tā, xiànzài xūyào bǎ tǐwēn jiàng xiàlai, guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào.",
     "vn": "Bác sĩ nói với cô ấy rằng bây giờ cần hạ nhiệt độ xuống, chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn."
    },
    {
     "sp": 0,
     "zh": "医生还让她回家以后按时吃药，多喝水，多休息。",
-    "py": "Yīshēng huán ràng tā huí jiā yǐhòu ànshí chī yào, duō hē shuǐ, duō xiūxi.",
+    "py": "Yīshēng huán ràng tā huíjiā yǐhòu ànshí chī yào, duō hē shuǐ, duō xiūxi.",
     "vn": "Bác sĩ còn dặn cô ấy về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều."
    },
    {
@@ -4409,7 +4409,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "第二天醒来时，她感觉头不那么疼了，体温也低了一些，身体不那么难受了。",
-    "py": "Dì èr tiān xǐng lái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē, shēntǐ bú nàme nánshòu le.",
+    "py": "Dì èr tiān xǐnglái shí, tā gǎnjué tóu bú nàme téng le, tǐwēn yě dī le yìxiē, shēntǐ bú nàme nánshòu le.",
     "vn": "Hôm sau lúc tỉnh dậy, cô ấy thấy đầu không còn đau như trước, nhiệt độ cũng hạ đi một chút, người không còn khó chịu như trước nữa."
    }
   ],
@@ -4450,7 +4450,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "外国人第一次在中国看病，可能会担心语言不通，或者觉得看病的过程和自己的国家不同。",
-    "py": "Wàiguó rén dì yī cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng, huòzhě juéde kànbìng de guòchéng hé zìjǐ de guójiā bùtóng.",
+    "py": "Wàiguórén dì yí cì zài Zhōngguó kànbìng, kěnéng huì dānxīn yǔyán bù tōng, huòzhě juéde kànbìng de guòchéng hé zìjǐ de guójiā bùtóng.",
     "vn": "Người nước ngoài lần đầu đi khám bệnh ở Trung Quốc có thể sẽ lo bất đồng ngôn ngữ, hoặc thấy quy trình khám bệnh khác với nước mình."
    },
    {
@@ -4462,13 +4462,13 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "有的医院有国际部，那里的医生一般会说英文，交流比较方便，但是国际部的收费比较高。",
-    "py": "Yǒude yīyuàn yǒu guójì bù, nàli de yīshēng yìbān huì shuō yīng wén, jiāoliú bǐjiào fāngbiàn, dànshì guójì bù de shōufèi bǐjiào gāo.",
+    "py": "Yǒude yīyuàn yǒu guójì bù, nàli de yīshēng yìbān huì shuō Yīngwén, jiāoliú bǐjiào fāngbiàn, dànshì guójì bù de shōufèi bǐjiào gāo.",
     "vn": "Có bệnh viện có khu quốc tế, bác sĩ ở đó thường biết nói tiếng Anh, giao tiếp khá thuận tiện, nhưng phí ở khu quốc tế khá cao."
    },
    {
     "sp": 0,
     "zh": "如果没有特别需要，可以选择普通部，用简单的中文和医生交流。",
-    "py": "Rúguǒ méiyǒu tèbié xūyào, kěyǐ xuǎnzé pǔ tōng bù, yòng jiǎndān de Zhōngwén hé yīshēng jiāoliú.",
+    "py": "Rúguǒ méiyǒu tèbié xūyào, kěyǐ xuǎnzé pǔtōng bù, yòng jiǎndān de Zhōngwén hé yīshēng jiāoliú.",
     "vn": "Nếu không có nhu cầu đặc biệt, có thể chọn khu thường, dùng tiếng Trung đơn giản để nói chuyện với bác sĩ."
    },
    {
@@ -4480,13 +4480,13 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "医生会问病人的情况，有时还会做一些检查，好给出合适的治疗方法。",
-    "py": "Yīshēng huì wèn bìngrén de qíngkuàng, yǒushí hái huì zuò yìxiē jiǎnchá, hǎo gěi chū héshì de zhìliáo fāngfǎ.",
+    "py": "Yīshēng huì wèn bìngrén de qíngkuàng, yǒushí hái huì zuò yìxiē jiǎnchá, hǎo gěichū héshì de zhìliáo fāngfǎ.",
     "vn": "Bác sĩ sẽ hỏi tình hình của bệnh nhân, có khi còn làm một số xét nghiệm, để đưa ra cách điều trị phù hợp."
    },
    {
     "sp": 0,
     "zh": "只要按照医生说的一步一步来，一般都可以顺利得到治疗。",
-    "py": "Zhīyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
+    "py": "Zhǐyào ànzhào yīshēng shuō de yí bù yi bù lái, yìbān dōu kěyǐ shùnlì dédào zhìliáo.",
     "vn": "Chỉ cần làm từng bước theo lời bác sĩ, thường đều được điều trị suôn sẻ."
    }
   ],
@@ -4999,14 +4999,14 @@ var translateData = [
  {
   "vi": "Bác sĩ sẽ làm một số xét nghiệm, để đưa ra cách điều trị phù hợp.",
   "zh": "医生会做一些检查，好给出合适的治疗方法。",
-  "py": "Yīshēng huì zuò yìxiē jiǎnchá, hǎo gěi chū héshì de zhìliáo fāngfǎ."
+  "py": "Yīshēng huì zuò yìxiē jiǎnchá, hǎo gěichū héshì de zhìliáo fāngfǎ."
  }
 ];
 var translateDataRev = [
  {
   "vi": "Mời viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân.",
   "zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-  "py": "Qǐng zài zhè zhāng biǎo shàng xiě shàng bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ."
+  "py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ."
  },
  {
   "vi": "Tớ đi xếp hàng lấy số, cậu ngồi nghỉ ở sảnh trước, đừng sốt ruột.",
@@ -5016,7 +5016,7 @@ var translateDataRev = [
  {
   "vi": "Bác sĩ dặn cô ấy về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều.",
   "zh": "医生让她回家以后按时吃药，多喝水，多休息。",
-  "py": "Yīshēng ràng tā huí jiā yǐhòu ànshí chī yào, duō hē shuǐ, duō xiūxi."
+  "py": "Yīshēng ràng tā huíjiā yǐhòu ànshí chī yào, duō hē shuǐ, duō xiūxi."
  },
  {
   "vi": "Khu quốc tế giao tiếp khá thuận tiện, nhưng phí khá cao.",
@@ -5271,6 +5271,6 @@ var writingData = {
  ],
  "model": {
   "zh": "小林，你好！看到你的微信，我很担心。你咳嗽咳得这么厉害，还发烧，最好赶快去医院检查一下。在越南看病其实不难，没有什么好担心的。到了医院以后，先找护士，在表上写上你的姓名、性别、国籍和电话号码，然后拿着护照去排队挂号。挂好号以后再去找医生，医生会问你的情况，给你量体温，有时还会做一些检查，好给出合适的治疗方法。有的大医院有国际部，医生会说英文，不过收费比较高。要是你怕语言不通，我明天上午就陪你一起去，还能帮你翻译。看完病以后，一定要按时吃药，多喝水，多休息。你平时身体那么好，偶尔生一次病，很快就会好的。希望你早点儿好起来！",
-  "py": "Xiǎo lín, nǐhǎo! Kàn dào nǐ de wēixìn, wǒ hěn dānxīn. Nǐ késou ké de zhème lìhai, hái fāshāo, zuìhǎo gǎnkuài qù yīyuàn jiǎnchá yíxià. Zài Yuènán kànbìng qíshí bù nán, méiyǒu shénme hǎo dānxīn de. Dào le yīyuàn yǐhòu, xiān zhǎo hùshi, zài biǎo shàng xiě shàng nǐ de xìngmíng, xìngbié, guójí hé diànhuà hàomǎ, ránhòu ná zhe hùzhào qù páiduì guàhào. Guà hǎo hào yǐhòu zài qù zhǎo yīshēng, yīshēng huì wèn nǐ de qíngkuàng, gěi nǐ liáng tǐwēn, yǒushí hái huì zuò yìxiē jiǎnchá, hǎo gěi chū héshì de zhìliáo fāngfǎ. Yǒude dà yīyuàn yǒu guójì bù, yīshēng huì shuō yīng wén, búguò shōufèi bǐjiào gāo. Yàoshi nǐ pà yǔyán bù tōng, wǒ míngtiān shàngwǔ jiù péi nǐ yìqǐ qù, hái néng bāng nǐ fānyì. Kànwán bìng yǐhòu, yídìng yào ànshí chī yào, duō hē shuǐ, duō xiūxi. Nǐ píngshí shēntǐ nàme hǎo, ǒu'ěr shēng yí cì bìng, hěn kuài jiù huì hǎo de. Xīwàng nǐ zǎo diǎnr hǎo qǐlái!"
+  "py": "Xiǎo Lín, nǐhǎo! Kàndào nǐ de wēixìn, wǒ hěn dānxīn. Nǐ késou ké de zhème lìhai, hái fāshāo, zuìhǎo gǎnkuài qù yīyuàn jiǎnchá yíxià. Zài Yuènán kànbìng qíshí bù nán, méiyǒu shénme hǎo dānxīn de. Dào le yīyuàn yǐhòu, xiān zhǎo hùshi, zài biǎo shàng xiěshang nǐ de xìngmíng, xìngbié, guójí hé diànhuà hàomǎ, ránhòu ná zhe hùzhào qù páiduì guàhào. Guà hǎo hào yǐhòu zài qù zhǎo yīshēng, yīshēng huì wèn nǐ de qíngkuàng, gěi nǐ liáng tǐwēn, yǒushí hái huì zuò yìxiē jiǎnchá, hǎo gěichū héshì de zhìliáo fāngfǎ. Yǒude dà yīyuàn yǒu guójì bù, yīshēng huì shuō Yīngwén, búguò shōufèi bǐjiào gāo. Yàoshi nǐ pà yǔyán bù tōng, wǒ míngtiān shàngwǔ jiù péi nǐ yìqǐ qù, hái néng bāng nǐ fānyì. Kànwán bìng yǐhòu, yídìng yào ànshí chī yào, duō hē shuǐ, duō xiūxi. Nǐ píngshí shēntǐ nàme hǎo, ǒu'ěr shēng yí cì bìng, hěn kuài jiù huì hǎo de. Xīwàng nǐ zǎodiǎnr hǎoqǐlai!"
  }
 };

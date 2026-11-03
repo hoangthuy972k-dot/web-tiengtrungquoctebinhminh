@@ -156,7 +156,7 @@
       "promptLang": "vi",
       "prompt": "Hôm qua tôi ngủ muộn quá, hôm nay đầu đau dữ dội.",
       "answer": "昨天我睡得太晚了，今天头疼得厉害。",
-      "answerPy": "Zuótiān wǒ shuì de tài wǎn le, jīntiān tóu téng de lìhai.",
+      "answerPy": "Zuótiān wǒ shuì de tài wǎn le, jīntiān tóuténg de lìhai.",
       "explanation": "头 + 疼 + 得 + (很) + 厉害."
      },
      {
@@ -475,7 +475,7 @@
       "promptLang": "vi",
       "prompt": "Tôi thường học ở thư viện, thỉnh thoảng mới học ở ký túc xá.",
       "answer": "我经常在图书馆学习，偶尔才在宿舍学习。",
-      "answerPy": "Wǒ jīngcháng zài túshūguǎn xuéxí, ǒu'ěr cái zài sù shè xuéxí.",
+      "answerPy": "Wǒ jīngcháng zài túshūguǎn xuéxí, ǒu'ěr cái zài sùshè xuéxí.",
       "explanation": "经常 / 一般……，偶尔才……"
      },
      {
@@ -634,7 +634,7 @@
       "promptLang": "vi",
       "prompt": "Bạn mang theo hộ chiếu, để tiện đi lấy số.",
       "answer": "你带上护照，好去挂号。",
-      "answerPy": "Nǐ dài shàng hùzhào, hǎo qù guàhào.",
+      "answerPy": "Nǐ dàishàng hùzhào, hǎo qù guàhào.",
       "explanation": "……，好 + V."
      },
      {
@@ -643,7 +643,7 @@
       "promptLang": "vi",
       "prompt": "Tôi ghi lại các bước nấu món ăn, để lần sau dễ làm.",
       "answer": "我把做菜的过程写下来，下次好做。",
-      "answerPy": "Wǒ bǎ zuò cài de guòchéng xiě xiàlái, xià cì hǎo zuò.",
+      "answerPy": "Wǒ bǎ zuò cài de guòchéng xiěxiàlái, xià cì hǎo zuò.",
       "explanation": "Trạng ngữ 下次 + 好 + V."
      }
     ]

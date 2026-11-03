@@ -1,0 +1,348 @@
+{
+"so": 12,
+"zh": "幸福的家庭",
+"py": "Xìngfú de jiātíng",
+"vn": "Gia đình hạnh phúc",
+"chuDe": "Gia đình hạnh phúc: quan tâm, chăm sóc cha mẹ, tình thân trong gia đình Trung Quốc",
+"icon": "👨‍👩‍👧‍👦",
+"mucTieu": [
+  "Nghe hiểu và trao đổi được về chủ đề gia đình hạnh phúc.",
+  "Kể lại (nói hoặc viết) được câu chuyện về cuộc sống của một gia đình hạnh phúc.",
+  "Hiểu đặc điểm văn hoá tình thân, gia đình của người Trung Quốc."
+],
+
+"wu": [
+  {"img":"wu-A","label":"打折","py":"dǎzhé","letter":"A"},
+  {"img":"wu-B","label":"毛衣","py":"máoyī","letter":"B"},
+  {"img":"wu-C","label":"鼻子","py":"bízi","letter":"C"},
+  {"img":"wu-D","label":"勇敢","py":"yǒnggǎn","letter":"D"},
+  {"img":"wu-E","label":"脱","py":"tuō","letter":"E"},
+  {"img":"wu-F","label":"伤心","py":"shāngxīn","letter":"F"}
+],
+
+"dialogs": [
+  {"tab":"Mua áo len cho mẹ","scene":"在商场 · Ở trung tâm thương mại (Dương Đồng Lạc và vợ là Vương Nhất Phi mua quần áo cho bố mẹ) — 小语助力: “老妈” là cách gọi mẹ thân mật, trìu mến trong khẩu ngữ (giống “mẹ già nhà mình”).","anh":"kv-1",
+   "nguoi":["王一飞","杨同乐",{"ten":"售货员","anh":"shouhuoyuan"}],
+   "preQuiz":[
+     {"q":"杨同乐认为毛衣的颜色怎么样？","opts":["很合适","不合适","正流行","太深了"],"ans":1},
+     {"q":"商场年底有什么活动？","opts":["买一送一","买二送一","全场七折","免费送货"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"你觉得老妈穿这件毛衣怎么样？","vn":"Anh thấy mẹ mặc chiếc áo len này thế nào?"},
+     {"sp":1,"zh":"样子不错，就是颜色好像不怎么适合她。","vn":"Kiểu dáng không tệ, chỉ là màu sắc hình như không hợp với mẹ lắm."},
+     {"sp":2,"zh":"老年人穿这种颜色的衣服正合适，颜色不深，质量还特别好。您看那位阿姨正试着呢，是不是很好看？","vn":"Người lớn tuổi mặc quần áo màu này là vừa hợp, màu không đậm, chất lượng lại đặc biệt tốt. Anh xem bác gái kia đang mặc thử kìa, có phải rất đẹp không?"},
+     {"sp":0,"zh":"嗯，是挺不错的。同乐，我印象中，老妈也常穿这种颜色的衣服，她应该会喜欢的，买一件吧。","vn":"Ừm, đúng là khá đẹp. Đồng Lạc, em nhớ là mẹ cũng hay mặc quần áo màu này, chắc mẹ sẽ thích, mua một chiếc đi."},
+     {"sp":1,"zh":"好的，老妈高兴比什么都强。","vn":"Được, mẹ vui là hơn tất cả."},
+     {"sp":2,"zh":"就是，老人开心最重要。我们店正好年底有活动，全场打七折呢，挺值的。","vn":"Đúng thế, người già vui vẻ là quan trọng nhất. Cửa hàng chúng tôi vừa hay cuối năm có chương trình, toàn bộ cửa hàng giảm 30% đấy, rất đáng tiền."}],
+   "hoi":[["售货员认为老人穿那件毛衣怎么样？","售货员认为老年人穿这种颜色的衣服正合适，颜色不深，质量还特别好。"],["杨同乐最后为什么愿意买那件毛衣了？","因为王一飞说老妈也常穿这种颜色的衣服，她应该会喜欢的。杨同乐觉得老妈高兴比什么都强。"]],
+   "kelai":"杨同乐和王一飞去商场给父母买衣服。王一飞选了一件毛衣后问杨同乐……，杨同乐觉得样子还可以，但是颜色……。售货员说老年人穿这种颜色……，……，质量也好。王一飞也觉得不错，认为老妈也常穿……，她会……。杨同乐说，老妈高兴……。售货员告诉他们，现在店里正好……，全场……，挺值的。",
+   "kelaiMau":"杨同乐和王一飞去商场给父母买衣服。王一飞选了一件毛衣后问杨同乐觉得怎么样，杨同乐觉得样子还可以，但是颜色好像不怎么适合老妈。售货员说老年人穿这种颜色的衣服正合适，颜色不深，质量也好。王一飞也觉得不错，认为老妈也常穿这种颜色的衣服，她会喜欢的。杨同乐说，老妈高兴比什么都强。售货员告诉他们，现在店里正好年底有活动，全场打七折，挺值的。"},
+
+  {"tab":"Tiểu Minh nổi nóng với bà","scene":"在家里 · Ở nhà (Lưu Minh đi làm về, trò chuyện với vợ là Vương Nhất Tuyết) — 小语助力: Trong gia đình Trung Quốc, người lớn thường gọi các thành viên theo vai vế của con trẻ (爷爷、奶奶 ở đây là bố mẹ của Lưu Minh, gọi theo cách của bé Tiểu Minh) — vừa thân mật, vừa giúp trẻ hiểu quan hệ trong nhà.","anh":"kv-2",
+   "nguoi":["刘明","王一雪"],
+   "preQuiz":[
+     {"q":"爷爷、奶奶下午去做什么了？","opts":["打扫卫生","在家睡觉","接小明放学","参加老年班活动"],"ans":3},
+     {"q":"王一雪批评小明，是因为他：","opts":["总是迟到","不打扫房间","对奶奶发脾气","考试前不复习"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"爷爷、奶奶还没回来呢？","vn":"Ông bà vẫn chưa về à?"},
+     {"sp":1,"zh":"没呢，估计快了。下午老年班举办一期听力保护活动，他们去参加活动了。","vn":"Chưa, chắc sắp về rồi. Chiều nay lớp người cao tuổi tổ chức một đợt hoạt động bảo vệ thính lực, ông bà đi tham gia rồi."},
+     {"sp":0,"zh":"他们的活动还挺丰富的！","vn":"Hoạt động của ông bà cũng phong phú ghê!"},
+     {"sp":1,"zh":"嗯。小明最近要考试，心里有点儿烦，昨天因为脱、挂衣服这点儿小事，就对奶奶发脾气了。","vn":"Ừ. Tiểu Minh sắp thi, trong lòng hơi bực bội, hôm qua chỉ vì chuyện nhỏ cởi áo, treo áo mà nổi nóng với bà."},
+     {"sp":0,"zh":"是吗？他这样做老人该伤心了。","vn":"Thế à? Nó làm vậy chắc bà buồn lắm."},
+     {"sp":1,"zh":"就是啊。他也不是不知道自己错了，我批评他以后，他马上说放学回来就向奶奶道歉。","vn":"Đúng vậy. Nó cũng không phải là không biết mình sai, em phê bình xong là nó nói ngay tan học về sẽ xin lỗi bà."},
+     {"sp":0,"zh":"好的，我也再跟他聊聊。","vn":"Được, anh cũng sẽ nói chuyện thêm với nó."},
+     {"sp":1,"zh":"那就更好了。","vn":"Thế thì càng tốt."}],
+   "hoi":[["小明因为什么对奶奶发了脾气？","小明最近要考试，心里有点儿烦，昨天因为脱、挂衣服这点儿小事，就对奶奶发了脾气。"],["小明发脾气后，王一雪和小明都做了什么？","王一雪批评了小明；小明知道自己错了，马上说放学回来就向奶奶道歉。"]]},
+
+  {"tab":"Vì hạnh phúc mà cố gắng","scene":"为幸福而努力 · Vì hạnh phúc mà cố gắng (Dương Đồng Lạc ở xa bố mẹ; vợ chồng Lưu Minh đón bố mẹ về ở cùng)","anh":"kv-3","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"杨同乐每个周末都会做什么？","opts":["回上海","去北京出差","带父母旅游","给父母打电话"],"ans":3},
+     {"q":"刘明的母亲身体变差后，刘明和王一雪：","opts":["不再工作了","请别人帮忙照顾","带父母回了老家","把父母接到了自己家"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"杨同乐的老家在上海，他自毕业后一直在北京工作。","vn":"Quê của Dương Đồng Lạc ở Thượng Hải, từ sau khi tốt nghiệp anh ấy luôn làm việc ở Bắc Kinh."},
+     {"sp":0,"zh":"虽然没和父母生活在一起，但父子、母子关系特别好。","vn":"Tuy không sống cùng bố mẹ nhưng quan hệ cha con, mẹ con rất tốt."},
+     {"sp":0,"zh":"杨同乐很关心父母，无论平时工作有多忙，他每个周末都会给父母打电话。","vn":"Dương Đồng Lạc rất quan tâm bố mẹ, dù ngày thường công việc bận đến đâu, cuối tuần nào anh ấy cũng gọi điện cho bố mẹ."},
+     {"sp":0,"zh":"条件允许时，他会回上海看父母。","vn":"Khi điều kiện cho phép, anh ấy sẽ về Thượng Hải thăm bố mẹ."},
+     {"sp":0,"zh":"刘明和王一雪结婚后，一直没有和父母生活在一起，他们平时会另外找时间去看父母，帮父母做做饭，打扫打扫卫生。","vn":"Lưu Minh và Vương Nhất Tuyết sau khi kết hôn vẫn không sống cùng bố mẹ, ngày thường họ dành riêng thời gian đi thăm bố mẹ, giúp bố mẹ nấu nướng, dọn dẹp nhà cửa."},
+     {"sp":0,"zh":"这两年，刘明的母亲身体不太好，他们很担心，就把父母接到了自己家里照顾。","vn":"Hai năm nay mẹ của Lưu Minh sức khỏe không được tốt, họ rất lo, nên đã đón bố mẹ về nhà mình chăm sóc."},
+     {"sp":0,"zh":"父母待在他们身边，他们也终于能放心地去工作了。","vn":"Bố mẹ ở ngay bên cạnh, cuối cùng họ cũng có thể yên tâm đi làm."}],
+   "hoi":[["杨同乐是怎么关心父母的？","无论平时工作有多忙，他每个周末都会给父母打电话；条件允许时，他会回上海看父母。"],["刘明和王一雪为什么要把父母接到自己家里？","因为这两年刘明的母亲身体不太好，他们很担心，所以把父母接到自己家里照顾。"]],
+   "kelai":"杨同乐的老家……，他自毕业后一直在……。虽然没和父母……，但……特别好。杨同乐很关心父母，无论……，他每个周末都会……。条件允许时，他会……。刘明和王一雪结婚后，一直没有和父母……，他们平时会……去看父母，帮父母……，……。这两年，刘明的……，他们……，就把父母……。父母待在他们身边，他们也终于能……。",
+   "kelaiMau":"杨同乐的老家在上海，他自毕业后一直在北京工作。虽然没和父母生活在一起，但父子、母子关系特别好。杨同乐很关心父母，无论平时工作有多忙，他每个周末都会给父母打电话。条件允许时，他会回上海看父母。刘明和王一雪结婚后，一直没有和父母生活在一起，他们平时会另外找时间去看父母，帮父母做做饭，打扫打扫卫生。这两年，刘明的母亲身体不太好，他们很担心，就把父母接到了自己家里照顾。父母待在他们身边，他们也终于能放心地去工作了。"},
+
+  {"tab":"Hương vị hạnh phúc","scene":"幸福的味道 · Hương vị hạnh phúc (Lâm Tĩnh Tĩnh một mình làm việc ở Bắc Kinh, nhận canh gà bố mẹ gửi từ quê) — 小语助力: “儿行千里母担忧” nghĩa là con đi xa nghìn dặm, mẹ ở nhà lo lắng — con lớn rồi đi đâu, cha mẹ cũng luôn lo lắng, nhớ thương.","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"林静静下班回家后热的是：","opts":["奶茶","鸡汤","包子","米饭"],"ans":1},
+     {"q":"父母给林静静寄了什么？","opts":["好用的","好吃的","好玩的","好看的"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"下班回家，林静静将父母从老家寄来的鸡汤热了热，当闻到从小就熟悉的味道时，平时冷静的她鼻子还是酸了。","vn":"Tan làm về nhà, Lâm Tĩnh Tĩnh đem canh gà bố mẹ gửi từ quê lên hâm nóng; khi ngửi thấy mùi vị quen thuộc từ nhỏ, cô vốn ngày thường điềm tĩnh mà sống mũi vẫn cay cay."},
+     {"sp":0,"zh":"林静静一个人来北京工作三年了，父母总是担心她为了节约时间而不好好吃饭，所以每个月都给她寄各种好吃的。","vn":"Lâm Tĩnh Tĩnh một mình lên Bắc Kinh làm việc đã ba năm, bố mẹ luôn lo cô vì tiết kiệm thời gian mà không ăn uống tử tế, nên tháng nào cũng gửi cho cô đủ thứ đồ ăn ngon."},
+     {"sp":0,"zh":"这次母亲专门做了林静静最爱喝的鸡汤，为了让食物新鲜，父亲选择了城里最快的快递，上午寄出，下午就能收到。","vn":"Lần này mẹ đặc biệt nấu món canh gà mà Lâm Tĩnh Tĩnh thích uống nhất; để đồ ăn tươi ngon, bố chọn dịch vụ chuyển phát nhanh nhất trong thành phố, buổi sáng gửi đi, buổi chiều đã nhận được."},
+     {"sp":0,"zh":"鸡汤很鲜，林静静心里更暖，她觉得父母好像就在身边。","vn":"Canh gà rất ngọt, lòng Lâm Tĩnh Tĩnh càng ấm hơn, cô cảm thấy bố mẹ như đang ở ngay bên cạnh."},
+     {"sp":0,"zh":"都说“儿行千里母担忧”，父母总对她说：“遇到困难别害怕，要勇敢面对，任何时候都可以和父母商量。”","vn":"Người ta vẫn nói “con đi nghìn dặm, mẹ ở nhà lo lắng”, bố mẹ luôn dặn cô: “Gặp khó khăn đừng sợ, phải dũng cảm đối mặt, bất cứ lúc nào cũng có thể bàn bạc với bố mẹ.”"},
+     {"sp":0,"zh":"尽管在大城市生活压力有些大，但每当想到父母的这些话，尝到来自老家熟悉的味道，她就觉得又能笑着面对生活了。","vn":"Dù sống ở thành phố lớn áp lực có phần lớn, nhưng mỗi khi nghĩ đến những lời này của bố mẹ, nếm được hương vị quen thuộc từ quê nhà, cô lại thấy mình có thể mỉm cười đối mặt với cuộc sống."}],
+   "hoi":[["父亲为什么选择最快的快递？","为了让食物新鲜，上午寄出，下午就能收到。"],["是什么让林静静能“笑着面对生活”？","是父母的话和来自老家熟悉的味道。每当想到父母说的话，尝到老家的味道，她就觉得又能笑着面对生活了。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"固定短语“不怎么”","tenVn":"Cụm cố định 「不怎么」 — không … lắm; ít khi",
+  "cauTruc":["不怎么 + tính từ / động từ tâm lý (= 不太、不很: không … lắm)","不怎么 + động từ hành động (= 不常: ít khi làm)"],
+  "giaiThich":"「不怎么」 biểu thị MỨC ĐỘ THẤP, nghĩa là 「不太、不很、不常」. Đi với tính từ / động từ tâm lý → “không … lắm”: 不怎么适合 (không hợp lắm), 不怎么喜欢 (không thích lắm). Đi với động từ hành động → “ít khi”: 不怎么出去玩 (ít khi đi chơi). Giọng mềm mỏng, lịch sự hơn 「不」 — rất hay dùng khi nhận xét khéo (như Dương Đồng Lạc chê màu áo). ⚠️ Đừng nhầm trật tự: 「怎么不……？」 = sao lại không …? (hỏi lý do). 「不怎么样」 = chẳng ra sao. Việc cụ thể đã xảy ra thì phủ định bằng 没 (✗ 昨天不怎么去).",
+  "viDu":[["样子不错，就是颜色好像不怎么适合她。","Kiểu dáng không tệ, chỉ là màu sắc hình như không hợp với mẹ lắm."],["他总是在图书馆看书，不怎么出去玩。","Cậu ấy lúc nào cũng đọc sách ở thư viện, ít khi ra ngoài chơi."],["我爱吃饺子、包子，不怎么喜欢吃米饭。","Tôi thích ăn sủi cảo, bánh bao, không thích ăn cơm lắm."],["这儿的冬天不怎么冷，不过风有点儿大。","Mùa đông ở đây không lạnh lắm, có điều gió hơi to. (ôn 不过 — Bài 2 · điểm 2)"]],
+  "loi":[["这件衣服不怎么很好看。","不怎么 đã mang nghĩa “không … lắm”, không thêm 很 / 太 nữa.","这件衣服不怎么好看。"],["他怎么不喜欢吃米饭。（muốn nói: anh ấy không thích ăn cơm lắm）","怎么不 = sao lại không (câu hỏi lý do); muốn nói mức độ thấp phải đặt 不 trước 怎么.","他不怎么喜欢吃米饭。"],["我昨天不怎么去上课。","不怎么 nói thói quen / mức độ chung; một việc cụ thể đã xảy ra thì dùng 没.","我昨天没去上课。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["样子不错，就是颜色好像","适合她。"],"dap":[["不怎么"]],"chon":["不怎么","怎么不","不什么"],"goiY":"“Chỉ là màu hình như không hợp với mẹ lắm.”","giai":"不怎么 + động từ 适合 = không hợp lắm."},
+     {"kieu":"dien","phan":["他总是在图书馆看书，","出去玩。"],"dap":[["不怎么"]],"chon":["不怎么","怎么","很少的"],"goiY":"“… ít khi ra ngoài chơi.”","giai":"不怎么 + động từ hành động = ít khi."},
+     {"kieu":"dien","phan":["我爱吃饺子、包子，不怎么","吃米饭。"],"dap":[["喜欢"]],"chon":["喜欢","多","很"],"goiY":"“… không thích ăn cơm lắm.”","giai":"不怎么 + động từ tâm lý 喜欢."},
+     {"kieu":"dien","phan":["今天不怎么","，不用穿毛衣了。"],"dap":[["冷"]],"chon":["冷","伤心","热闹"],"goiY":"“Hôm nay không lạnh lắm, không cần mặc áo len nữa.” (ôn từ 毛衣)","giai":"不怎么 + tính từ."},
+     {"kieu":"dien","phan":["A：你常去体育馆打球吗？ B：","去，最近太忙了。"],"dap":[["不怎么"]],"chon":["不怎么","怎么不","没怎么样"],"goiY":"“Ít khi đi, dạo này bận quá.”","giai":"Trả lời câu hỏi về tần suất: 不怎么去 = ít khi đi."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["颜色","好像","不怎么","适合","她"],"dap":["颜色好像不怎么适合她。"],"goiY":"Màu sắc hình như không hợp với cô ấy lắm.","giai":"好像 + 不怎么 + V."},
+     {"kieu":"xep","manh":["他","总是","在图书馆","看书","，","不怎么","出去玩"],"dap":["他总是在图书馆看书，不怎么出去玩。"],"goiY":"Cậu ấy lúc nào cũng đọc sách ở thư viện, ít khi ra ngoài chơi.","giai":"不怎么 đứng trước động từ."},
+     {"kieu":"xep","manh":["我","最近","不怎么","去","体育馆","打球"],"dap":["我最近不怎么去体育馆打球。"],"goiY":"Dạo này tôi ít khi đến nhà thi đấu chơi bóng.","giai":"Trạng ngữ thời gian 最近 + 不怎么 + V."},
+     {"kieu":"dungsai","cau":"这件衣服不怎么很好看。","dung":false,"sua":"这件衣服不怎么好看。","giai":"Không dùng 很 sau 不怎么."},
+     {"kieu":"dungsai","cau":"我不怎么喜欢喝咖啡，更喜欢喝茶。","dung":true,"giai":"Đúng: 不怎么 + 喜欢."},
+     {"kieu":"dungsai","cau":"我昨天不怎么去上课。","dung":false,"sua":"我昨天没去上课。","giai":"Việc cụ thể đã xảy ra → phủ định bằng 没."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 15)","huongDan":"Hoàn thành đối thoại, có dùng 不怎么","cau":[
+     {"kieu":"vandung","de":"A：今天天气怎么样了？ B：挺不错的，＿＿＿。","goiY":"Nói hôm nay không lạnh lắm nữa (不怎么 + tính từ)","mau":"不怎么冷了","can":[["不怎么"]]},
+     {"kieu":"vandung","de":"A：你看起来好像＿＿＿。 B：是的，＿＿＿。","goiY":"A: trông bạn có vẻ không vui lắm; B: đúng vậy, lần này thi không tốt lắm (dùng 不怎么 ở cả hai chỗ trống)","mau":"不怎么高兴；这次考试考得不怎么好","can":[["不怎么"]]},
+     {"kieu":"vandung","de":"A：你常去体育馆打球吗？ B：＿＿＿。","goiY":"Trả lời: ít khi đi, và nói lý do","mau":"不怎么去，我最近工作太忙了","can":[["不怎么"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Chiếc áo len này kiểu dáng đẹp, chỉ là chất lượng không tốt lắm.","dap":["这件毛衣样子很好看，就是质量不怎么好。","这件毛衣样子不错，就是质量不怎么好。"],"giai":"……，就是…… (Bài 3) + 不怎么 + tính từ."},
+     {"kieu":"dich","vn":"Ông tôi ít khi xem tivi, thích ra công viên đi dạo hơn.","dap":["我爷爷不怎么看电视，更喜欢去公园散步。"],"giai":"不怎么 + V = ít khi."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt một câu nói về thói quen của một người trong gia đình em, có dùng 「不怎么」","mau":"我妈妈不怎么喜欢逛商场，她更喜欢在网上买东西。","can":[["不怎么"]]}]}
+  ]},
+
+ {"so":"2","ten":"双重否定","tenVn":"Phủ định kép — 不是不 / 不能不 / 不得不: khẳng định với giọng mạnh hơn",
+  "cauTruc":["不是不 + V / adj (không phải là không … → thật ra là có …)","不能不 + V (không thể không … → nhất định phải)","不得不 + V (buộc phải, đành phải)"],
+  "giaiThich":"Hai lần phủ định = KHẲNG ĐỊNH, nhưng giọng mạnh hơn câu khẳng định bình thường. Mỗi dạng có sắc thái riêng: 「不是不……」 dùng để thanh minh, giải thích (他也不是不知道自己错了 = nó biết mình sai đấy chứ); 「不能不……」 = nhất định phải, vì trách nhiệm / tình cảm (你又是班长，不能不来); 「不得不……」 = buộc phải, đành phải, vì hoàn cảnh ép, không muốn cũng phải làm (飞机不能起飞，爸爸不得不改变计划). Ngoài ra còn 「没有……不……」: 没有人不喜欢他 (không ai không thích anh ấy = ai cũng thích). ⚠️ Phân biệt với 「不是A，而是B」 (Bài 11): phủ định A, khẳng định B — còn 「不是不A」 lại khẳng định A.",
+  "viDu":[["他也不是不知道自己错了，我批评他以后，他马上说放学回来就向奶奶道歉。","Nó cũng không phải là không biết mình sai, em phê bình xong là nó nói ngay tan học về sẽ xin lỗi bà."],["今天是我们毕业后第一次同学聚餐，你又是班长，不能不来啊！","Hôm nay là buổi họp lớp đầu tiên sau khi tốt nghiệp, cậu lại là lớp trưởng, không thể không đến đâu nhé!"],["由于天气不好，飞机不能起飞，爸爸不得不改变计划，明天再去上海。","Do thời tiết xấu, máy bay không thể cất cánh, bố đành phải thay đổi kế hoạch, mai mới đi Thượng Hải. (ôn 由于 — Bài 2 · điểm 4)"],["即使工作再忙，妈妈的生日我也不能不回家。","Dù công việc có bận đến đâu, sinh nhật mẹ tôi cũng không thể không về nhà. (ôn 即使……也…… — Bài 11 · điểm 1)"]],
+  "loi":[["今天是班长的生日聚会，我不能来不。","Trật tự đúng là 不能不 + V.","今天是班长的生日聚会，我不能不来。"],["他病了，不得不不去上班。","Sau 不得不 là động từ khẳng định (việc buộc phải LÀM); muốn nói “đành nghỉ” thì dùng 请假.","他病了，不得不请假。"],["我不得不喜欢这件毛衣。","不得不 = buộc phải (bất đắc dĩ), không đi với cảm xúc thích / ghét; muốn nhấn mạnh “ai cũng thích” dùng 没有人不…….","这件毛衣太好看了，没有人不喜欢。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["他也","不知道自己错了，只是不好意思说。"],"dap":[["不是"]],"chon":["不是","不能","不得"],"goiY":"“Nó cũng không phải không biết mình sai, chỉ là ngại nói.”","giai":"不是不 + V: thanh minh, giải thích."},
+     {"kieu":"dien","phan":["今天是毕业后第一次同学聚餐，你又是班长，","来啊！"],"dap":[["不能不"]],"chon":["不能不","不能","不来不"],"goiY":"“… cậu lại là lớp trưởng, không thể không đến!”","giai":"不能不 + V = nhất định phải."},
+     {"kieu":"dien","phan":["由于天气不好，飞机不能起飞，爸爸","改变计划。"],"dap":[["不得不"]],"chon":["不得不","不是不","不怎么"],"goiY":"“… bố đành phải thay đổi kế hoạch.”","giai":"Hoàn cảnh ép buộc → 不得不."},
+     {"kieu":"dien","phan":["我不是不想参加，","实在没有时间。"],"dap":[["是"]],"chon":["是","就","也"],"goiY":"“Tôi không phải không muốn tham gia, mà là thật sự không có thời gian.”","giai":"不是不……，是…… (cũng có thể nói 而是)."},
+     {"kieu":"dien","phan":["爷爷奶奶年纪大了，我们","好好照顾他们。"],"dap":[["不能不"]],"chon":["不能不","不是不","不怎么"],"goiY":"“Ông bà lớn tuổi rồi, chúng ta không thể không chăm sóc chu đáo.”","giai":"Trách nhiệm, tình cảm → 不能不."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["他","也","不是","不知道","自己错了"],"dap":["他也不是不知道自己错了。"],"goiY":"Nó cũng không phải không biết mình sai.","giai":"不是 + 不知道."},
+     {"kieu":"xep","manh":["你","是班长","，","不能不","来","啊"],"dap":["你是班长，不能不来啊。"],"goiY":"Cậu là lớp trưởng, không thể không đến.","giai":"不能不 + V."},
+     {"kieu":"xep","manh":["因为","下大雨","，","我们","不得不","改变","计划"],"dap":["因为下大雨，我们不得不改变计划。"],"goiY":"Vì mưa to, chúng tôi buộc phải thay đổi kế hoạch.","giai":"Chủ ngữ + 不得不 + V."},
+     {"kieu":"dungsai","cau":"这件事我不得不告诉他。","dung":true,"giai":"Đúng: buộc phải nói cho anh ấy biết."},
+     {"kieu":"dungsai","cau":"他病了，不得不不去上班。","dung":false,"sua":"他病了，不得不请假。","giai":"Sau 不得不 là động từ khẳng định."},
+     {"kieu":"dungsai","cau":"我不是不想去，是实在没有时间。","dung":true,"giai":"Đúng: 不是不想去 = muốn đi chứ."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 17–18)","huongDan":"Hoàn thành đối thoại, có dùng phủ định kép (不是不 / 不能不 / 不得不)","cau":[
+     {"kieu":"vandung","de":"A：家里的东西太多了，＿＿＿。 B：是啊，搬家是很不容易。","goiY":"Nói lần chuyển nhà này buộc phải bỏ bớt một số đồ (不得不……)","mau":"这次搬家，我们不得不扔掉一些","can":[["不得不","不能不"]]},
+     {"kieu":"vandung","de":"A：这么重要的活动你不参加吗？ B：＿＿＿，是实在没有时间。","goiY":"Thanh minh: không phải tôi không muốn tham gia (不是不……)","mau":"我不是不想参加","can":[["不是不"]]},
+     {"kieu":"vandung","de":"A：你们学校真大啊！楼与楼之间距离那么远。 B：是啊，为了能准时上课，＿＿＿。","goiY":"Nói việc buộc phải làm để đến lớp đúng giờ (不得不……)","mau":"我们不得不骑自行车去上课","can":[["不得不","不能不"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Không phải tôi không muốn giúp bạn, mà là tôi thật sự không có thời gian.","dap":["我不是不想帮你，是我实在没有时间。","我不是不想帮你，而是我实在没有时间。","我不是不想帮你，而是实在没有时间。"],"giai":"不是不……，(而)是…… — kết hợp Bài 11 · điểm 3."},
+     {"kieu":"dich","vn":"Vì trời mưa to, chúng tôi đành phải ở nhà.","dap":["因为下大雨，我们不得不待在家里。","因为雨下得很大，我们不得不待在家里。"],"giai":"不得不 + 待在家里 (từ mới 待 dāi)."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt một câu nói về một việc em buộc phải làm hoặc không thể không làm vì gia đình, có dùng phủ định kép","mau":"妈妈生病了，我不得不请假回家照顾她。","can":[["不得不","不能不","不是不"]]}]}
+  ]},
+
+ {"so":"3","ten":"条件复句“无论……，都/也……”","tenVn":"Câu phức điều kiện 「无论……，都/也……」 — dù … (thế nào) … cũng …",
+  "cauTruc":["无论 + từ nghi vấn (什么 / 谁 / 哪儿 / 怎么 / 多 + tính từ)……，(chủ ngữ) + 都 / 也……","无论 + A 还是 B / 是不是……，(chủ ngữ) + 都 / 也……"],
+  "giaiThich":"Nêu rằng trong BẤT KỲ điều kiện nào, kết quả cũng không thay đổi. Vì “bất kỳ điều kiện nào” nên sau 「无论」 phải là cụm KHÔNG XÁC ĐỊNH: từ nghi vấn (什么, 谁, 哪儿, 多忙…), phương án chọn lựa (A还是B), hoặc dạng khẳng định–phủ định (下不下雨). 「都 / 也」 đặt sau chủ ngữ vế sau, trước động từ. Tiếng Việt: “dù … thế nào … cũng …”, “bất kể”. So sánh: 「不管……都……」 (Bài 8) nghĩa giống hệt, khẩu ngữ hơn; 「即使……也……」 (Bài 11) nêu MỘT giả thiết cụ thể (即使下雨也去), còn 无论 bao trùm MỌI trường hợp (无论下不下雨都去).",
+  "viDu":[["杨同乐很关心父母，无论平时工作有多忙，他每个周末都会给父母打电话。","Dương Đồng Lạc rất quan tâm bố mẹ, dù ngày thường công việc bận đến đâu, cuối tuần nào anh ấy cũng gọi điện cho bố mẹ."],["只要你努力了，无论你考多少分，你在我们眼里都是最优秀的。","Chỉ cần con đã cố gắng, dù con thi được bao nhiêu điểm, trong mắt bố mẹ con vẫn là giỏi nhất."],["无论你遇到什么困难，我都会在你身边。","Dù em gặp khó khăn gì, anh cũng sẽ ở bên cạnh em."],["无论天气怎么样，爷爷每天都去公园跑步，从来没停过。","Dù thời tiết thế nào, ngày nào ông cũng ra công viên chạy bộ, chưa từng ngừng. (ôn 从来 — Bài 9 · điểm 4)"]],
+  "loi":[["无论明天下雨，我们都去爬山。","Sau 无论 phải là cụm không xác định (từ nghi vấn, A还是B, V不V), không phải một điều kiện cụ thể.","无论明天下不下雨，我们都去爬山。"],["无论你去哪儿，我跟你去。","Vế sau thiếu 都 / 也.","无论你去哪儿，我都跟你去。"],["无论多忙，都他每天给父母打电话。","都 đứng sau chủ ngữ, ngay trước động từ.","无论多忙，他每天都给父母打电话。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["","平时工作有多忙，他每个周末都会给父母打电话。"],"dap":[["无论"]],"chon":["无论","虽然","因为"],"goiY":"“Dù ngày thường công việc bận đến đâu …”","giai":"无论 + 多 + tính từ."},
+     {"kieu":"dien","phan":["无论你考多少分，你在我们眼里","是最优秀的。"],"dap":[["都"]],"chon":["都","就","才"],"goiY":"“… trong mắt bố mẹ con đều là giỏi nhất.”","giai":"无论……，都……"},
+     {"kieu":"dien","phan":["无论你去","，都要给家里打个电话。"],"dap":[["哪儿"]],"chon":["哪儿","北京","那儿"],"goiY":"“Dù con đi đâu cũng phải gọi điện về nhà.”","giai":"Sau 无论 dùng từ nghi vấn 哪儿, không dùng địa điểm cụ thể."},
+     {"kieu":"dien","phan":["无论刮风","下雨，爷爷每天都去公园跑步。"],"dap":[["还是"]],"chon":["还是","或者","和"],"goiY":"“Dù gió hay mưa …”","giai":"无论 A 还是 B (không dùng 或者)."},
+     {"kieu":"dien","phan":["无论遇到什么事，","不要着急。"],"dap":[["也"]],"chon":["也","就","才"],"goiY":"“Dù gặp chuyện gì cũng đừng sốt ruột.”","giai":"无论……，也 + phủ định."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["无论","工作","多忙","，","他","都","给父母","打电话"],"dap":["无论工作多忙，他都给父母打电话。"],"goiY":"Dù công việc bận đến đâu, anh ấy cũng gọi điện cho bố mẹ.","giai":"无论 + 多忙，chủ ngữ + 都 + V."},
+     {"kieu":"xep","manh":["无论","你","去哪儿","，","我","都","跟你去"],"dap":["无论你去哪儿，我都跟你去。"],"goiY":"Dù em đi đâu, anh cũng đi cùng em.","giai":"无论 + 哪儿."},
+     {"kieu":"xep","manh":["无论","刮风","还是","下雨","，","他","都","坚持跑步"],"dap":["无论刮风还是下雨，他都坚持跑步。"],"goiY":"Dù gió hay mưa, ông ấy vẫn kiên trì chạy bộ.","giai":"无论 A 还是 B，都……"},
+     {"kieu":"dungsai","cau":"无论明天下雨，我们都去。","dung":false,"sua":"无论明天下不下雨，我们都去。","giai":"Sau 无论 cần dạng không xác định: 下不下雨."},
+     {"kieu":"dungsai","cau":"无论你多大，在父母眼里你都是孩子。","dung":true,"giai":"Đúng: 无论 + 多大，都……"},
+     {"kieu":"dungsai","cau":"无论你去哪儿，我跟你去。","dung":false,"sua":"无论你去哪儿，我都跟你去。","giai":"Vế sau phải có 都 / 也."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 20)","huongDan":"Hoàn thành câu, dùng 无论……，都/也…… và từ trong ngoặc","cau":[
+     {"kieu":"vandung","de":"她很爱读书，＿＿＿，都要带上一本书。（待）","goiY":"Dùng từ 「待」 (dāi): dù ở ngoài bao lâu","mau":"无论在外面待多长时间","can":[["无论"],["待"]]},
+     {"kieu":"vandung","de":"父亲无论多忙，周末＿＿＿。（陪）","goiY":"Dùng từ 「陪」: cuối tuần đều ở bên / đưa cả nhà đi chơi","mau":"都会陪我们去公园玩","can":[["都","也"],["陪"]]},
+     {"kieu":"vandung","de":"＿＿＿，我都相信我们能成功。（条件）","goiY":"Dùng từ 「条件」: dù điều kiện khó khăn thế nào","mau":"无论条件多么困难","can":[["无论","不管"],["条件"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Dù bận đến đâu, cuối tuần nào anh ấy cũng gọi điện cho bố mẹ.","dap":["无论多忙，他每个周末都给父母打电话。","无论多忙，他每个周末都会给父母打电话。"],"giai":"无论 + 多忙，chủ ngữ + 每个周末 + 都……"},
+     {"kieu":"dich","vn":"Dù em gặp khó khăn gì, bất cứ lúc nào cũng có thể bàn bạc với bố mẹ.","dap":["无论你遇到什么困难，任何时候都可以和父母商量。","无论遇到什么困难，你任何时候都可以和父母商量。"],"giai":"无论……什么…… + ôn 任何……都…… (Bài 1 · điểm 1)."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt một câu nói về việc em (hoặc người thân) luôn làm cho gia đình, có dùng 「无论……，都/也……」","mau":"无论学习多忙，我每天晚上都给妈妈打一个电话。","can":[["无论"],["都","也"]]}]}
+  ]},
+
+ {"so":"4","ten":"固定格式“为了……而……”","tenVn":"Cấu trúc cố định 「为了……而……」 — vì (để) … mà …",
+  "cauTruc":["(Chủ ngữ +) 为了 + mục đích / mục tiêu + 而 + hành động","Chủ ngữ + (都 / 正) 在 + 为了…… + 而 + V(着)"],
+  "giaiThich":"「为了……」 nêu MỤC ĐÍCH hoặc MỤC TIÊU; 「而……」 là HÀNH ĐỘNG được thực hiện để đạt mục đích đó. Cả cụm là MỘT mệnh đề, thường không ngắt dấu phẩy trước 而; chủ ngữ đứng trước 为了 (父母担心她为了节约时间而不好好吃饭). Tiếng Việt dịch rất khớp: “vì … mà …”. Sắc thái trang trọng, văn viết hơn 「为了……，……」 (HSK 3). ⚠️ Phân biệt: 「因为……而……」 nêu NGUYÊN NHÂN (因为生病而请假); 「……，好……」 (Bài 6) nêu mục đích ở vế SAU; 「而」 ở Bài 10 là liên từ nối hai vế tương phản / tiếp nối.",
+  "viDu":[["父母总是担心她为了节约时间而不好好吃饭。","Bố mẹ luôn lo cô ấy vì tiết kiệm thời gian mà không ăn uống tử tế."],["我们都在为了生活幸福而努力工作着。","Chúng ta đều đang nỗ lực làm việc vì một cuộc sống hạnh phúc."],["他们为了保护环境而拒绝使用纸杯。","Họ từ chối dùng cốc giấy để bảo vệ môi trường."],["她为了照顾生病的母亲而搬回了老家，好每天陪在母亲身边。","Cô ấy vì chăm sóc mẹ bị bệnh mà chuyển về quê, để ngày ngày ở bên mẹ. (ôn ……，好…… — Bài 6 · điểm 4)"]],
+  "loi":[["为了节约时间，而他不好好吃饭。","Chủ ngữ đứng trước 为了; 而 đứng ngay trước hành động, không ngắt câu kiểu này.","他为了节约时间而不好好吃饭。"],["我们为了生活幸福而。","Sau 而 bắt buộc phải có hành động.","我们为了生活幸福而努力工作。"],["他为了而努力学习考上大学。","Mục đích đặt GIỮA 为了 và 而, hành động đặt SAU 而.","他为了考上大学而努力学习。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["父母总是担心她为了节约时间","不好好吃饭。"],"dap":[["而"]],"chon":["而","就","才"],"goiY":"“… vì tiết kiệm thời gian mà không ăn uống tử tế.”","giai":"为了…… + 而 + hành động."},
+     {"kieu":"dien","phan":["我们都在","生活幸福而努力工作着。"],"dap":[["为了"]],"chon":["为了","因为","随着"],"goiY":"“Chúng ta đều đang nỗ lực làm việc vì cuộc sống hạnh phúc.”","giai":"为了 nêu mục đích (khác 因为 nêu nguyên nhân)."},
+     {"kieu":"dien","phan":["他们为了保护环境而","使用纸杯。"],"dap":[["拒绝"]],"chon":["拒绝","允许","商量"],"goiY":"“… từ chối dùng cốc giấy.”","giai":"Hành động sau 而: 拒绝使用."},
+     {"kieu":"dien","phan":["","让食物新鲜，父亲选择了城里最快的快递。"],"dap":[["为了"]],"chon":["为了","无论","因为"],"goiY":"“Để đồ ăn tươi ngon, bố chọn chuyển phát nhanh nhất.”","giai":"为了……，…… (dạng có dấu phẩy, HSK 3)."},
+     {"kieu":"dien","phan":["她为了照顾生病的母亲而","在老家。"],"dap":[["待"]],"chon":["待","挂","脱"],"goiY":"“Cô ấy vì chăm sóc mẹ bị bệnh mà ở lại quê.” (ôn từ mới 待 dāi)","giai":"而 + 待在 + nơi."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["我们","都在","为了","生活幸福","而","努力工作着"],"dap":["我们都在为了生活幸福而努力工作着。"],"goiY":"Chúng ta đều đang nỗ lực làm việc vì cuộc sống hạnh phúc.","giai":"Chủ ngữ + 都在 + 为了…… + 而 + V着."},
+     {"kieu":"xep","manh":["他们","为了","保护环境","而","拒绝","使用纸杯"],"dap":["他们为了保护环境而拒绝使用纸杯。"],"goiY":"Họ từ chối dùng cốc giấy để bảo vệ môi trường.","giai":"为了 + mục đích + 而 + hành động."},
+     {"kieu":"xep","manh":["他","为了","去中国留学","而","努力","学中文"],"dap":["他为了去中国留学而努力学中文。"],"goiY":"Cậu ấy vì muốn sang Trung Quốc du học mà chăm chỉ học tiếng Trung.","giai":"Bài tập SGK câu 2."},
+     {"kieu":"dungsai","cau":"为了节约时间，而他不好好吃饭。","dung":false,"sua":"他为了节约时间而不好好吃饭。","giai":"Chủ ngữ trước 为了; 而 ngay trước hành động."},
+     {"kieu":"dungsai","cau":"她为了参加比赛而每天练习三个小时。","dung":true,"giai":"Đúng: 为了 + mục đích + 而 + hành động."},
+     {"kieu":"dungsai","cau":"我为了考试而。","dung":false,"sua":"我为了考试而努力复习。","giai":"Sau 而 phải có hành động."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 21)","huongDan":"Hoàn thành câu, dùng 为了……而……","cau":[
+     {"kieu":"vandung","de":"我为了这次比赛＿＿＿。","goiY":"Nói hành động em làm để chuẩn bị cuộc thi (而 + hành động)","mau":"而每天坚持练习三个小时","can":[["而"]]},
+     {"kieu":"vandung","de":"他＿＿＿而努力学中文。","goiY":"Nêu mục đích học tiếng Trung (为了 + mục đích)","mau":"为了去中国留学","can":[["为了"]]},
+     {"kieu":"vandung","de":"＿＿＿努力练习。","goiY":"Nêu chủ ngữ + mục đích: vận động viên muốn đạt thành tích tốt (为了……而)","mau":"运动员们为了在比赛中取得好成绩而","can":[["为了"],["而"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Bố mẹ luôn lo cô ấy vì tiết kiệm thời gian mà không ăn uống tử tế.","dap":["父母总是担心她为了节约时间而不好好吃饭。"],"giai":"为了…… + 而 + 不好好吃饭."},
+     {"kieu":"dich","vn":"Họ đang nỗ lực làm việc vì một cuộc sống hạnh phúc.","dap":["他们正在为了生活幸福而努力工作。","他们正在为了幸福的生活而努力工作。","他们都在为了生活幸福而努力工作着。"],"giai":"正在 + 为了…… + 而 + V."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt một câu nói về việc bố mẹ em đã làm vì gia đình, có dùng 「为了……而……」","mau":"我爸爸为了让我们过上好日子而每天努力工作。","can":[["为了"],["而"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 22). Sách 4下 chưa có đáp án — đây là đáp án tham khảo của cô.","dapSgk":false,"tu":["自","无论","允许","冷静","值","鲜"],"cau":[
+   {"s":"这位护士工作认真，最大的优点是遇到任何事情都很＿＿。","dap":["冷静"]},
+   {"s":"这家饭馆的汤味道特别＿＿，每次来我都要点。","dap":["鲜"]},
+   {"s":"＿＿你多大，在父母眼里，你一直都是那个需要被照顾的孩子。","dap":["无论"]},
+   {"s":"看到母亲那么喜欢这件毛衣，我觉得花多少钱都＿＿了。","dap":["值"]},
+   {"s":"小徐＿＿2006年就离开了老家，在上海读大学，毕业后又在那儿工作了。","dap":["自"]},
+   {"s":"我们换条路走吧，前面那个路口不＿＿右转。","dap":["允许"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại, sách trang 22). Đáp án tham khảo.","dapSgk":false,"tu":["估计","另外","待","烦","质量","脾气"],"cau":[
+   {"s":"A：我想买这条裤子送给妈妈。　B：颜色很适合她，＿＿也不错，她应该会喜欢的。","dap":["质量"]},
+   {"s":"A：你好像不太开心，没什么事吧？　B：昨天我的银行卡丢了，我现在心里很＿＿。","dap":["烦"]},
+   {"s":"A：排队的人这么多，＿＿得等很长时间。　B：他家的包子好吃又便宜，买的人当然多，咱们等等吧。","dap":["估计"]},
+   {"s":"A：对不起，我刚刚不应该对你发＿＿。　B：没关系，我知道你这几天心情不好。","dap":["脾气"]},
+   {"s":"A：请加一碗米饭，＿＿再加一双筷子。　B：好的，马上就来。","dap":["另外"]},
+   {"s":"A：周末时我喜欢去公园散步，不喜欢在家＿＿着。　B：周末我也喜欢出去活动活动。","dap":["待"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn (sách trang 22). Đáp án tham khảo: B – D – A – C.","dapSgk":false,"tu":["忘记了今天是自己的生日","没想到送餐地址是自己家","外卖员的眼睛红了","要注意身体"],"cau":[
+   {"s":"中午，一个外卖员到奶茶店取（qǔ, lấy）餐，拿到后一看，＿＿，上面还写着：“爸爸，生日快乐！天气很热，＿＿。”原来（yuánlái, hoá ra），外卖员忙着工作，＿＿，但他的女儿没有忘。看着这份生日礼物，＿＿。他喝了奶茶，又继续努力工作。","dap":["没想到送餐地址是自己家","要注意身体","忘记了今天是自己的生日","外卖员的眼睛红了"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (sách trang 23 — câu dưới đây là câu mẫu tham khảo; câu của em đúng ngữ pháp, hợp tranh là đạt).","dapSgk":false,"cau":[
+   {"anh":"bt-1","s":"","tu":"老家","dap":"我的老家在南方的一个小镇，那里有很多小河。","giai":"……的老家在 + nơi; 那里有…… câu tồn hiện. Tranh: thị trấn sông nước Giang Nam."},
+   {"anh":"bt-2","s":"","tu":"烦","dap":"她最近工作压力很大，心里特别烦。","giai":"心里 + (特别 / 有点儿) + 烦: tính từ chỉ tâm trạng bực bội."},
+   {"anh":"bt-3","s":"","tu":"商量","dap":"他们正在商量工作上的事情。","giai":"正在 + 商量 + việc; hoặc 跟 / 和 + ai + 商量."}]}
+],
+
+"listen": [
+ {"audio":"妈妈的生日快到了，你打算送她什么？我想给她买一件毛衣，商场年底打八折，挺值的。那颜色呢？深颜色的不怎么适合她，买件浅颜色的吧。好，周末我们一起去看看。","questions":[
+   {"q":"他们打算给妈妈买什么？","opts":["鞋","毛衣","帽子"],"ans":1},
+   {"q":"商场年底有什么活动？","opts":["买一送一","打七折","打八折"],"ans":2}]},
+ {"audio":"儿子，你今天怎么不高兴？考试考得不怎么好，心里很烦。烦也不能对妹妹发脾气啊，她都伤心得哭了。我知道错了，我现在就去向她道歉。这就对了。","questions":[
+   {"q":"儿子为什么心里烦？","opts":["考试考得不好","妹妹不听话","不想去上学"],"ans":0},
+   {"q":"儿子打算做什么？","opts":["去找朋友玩","去向妹妹道歉","去复习功课"],"ans":1}]},
+ {"audio":"小李，听说你把父母接到北京来了？是啊，我母亲身体不太好，我不能不照顾他们。可你工作那么忙，怎么办？我和妻子商量好了，无论多忙，晚上都回家陪父母吃饭，周末再带他们去公园散步。","questions":[
+   {"q":"小李为什么把父母接到北京？","opts":["父母想来北京旅游","父母要帮他照顾孩子","母亲身体不太好"],"ans":2},
+   {"q":"小李和妻子商量好了什么？","opts":["无论多忙，晚上都陪父母吃饭","每个周末都回老家","请别人帮忙照顾父母"],"ans":0}]}
+],
+
+"match": [
+ {"left":"发","right":"脾气"},
+ {"left":"打扫","right":"卫生"},
+ {"left":"向奶奶","right":"道歉"},
+ {"left":"全场","right":"打七折"},
+ {"left":"勇敢","right":"面对"},
+ {"left":"条件","right":"允许"},
+ {"left":"闻到","right":"熟悉的味道"},
+ {"left":"和父母","right":"商量"},
+ {"left":"无论……","right":"都……"},
+ {"left":"为了……","right":"而……"}
+],
+
+"fill": [
+ {"pre":"你觉得老妈穿这件","blank":"毛衣","post":"怎么样？","hint":"(áo len)","ans":"毛衣","exp":"一件毛衣."},
+ {"pre":"样子不错，就是颜色好像","blank":"不怎么","post":"适合她。","hint":"(không … lắm)","ans":"不怎么","exp":"不怎么 + V = không … lắm."},
+ {"pre":"颜色不深，","blank":"质量","post":"还特别好。","hint":"(chất lượng)","ans":"质量","exp":"质量好 = chất lượng tốt."},
+ {"pre":"好的，老妈高兴比什么都","blank":"强","post":"。","hint":"(hơn, tốt hơn)","ans":"强","exp":"……比什么都强."},
+ {"pre":"没呢，","blank":"估计","post":"快了。","hint":"(chắc là, đoán)","ans":"估计","exp":"估计 + mệnh đề."},
+ {"pre":"他马上说放学回来就向奶奶","blank":"道歉","post":"。","hint":"(xin lỗi)","ans":"道歉","exp":"向 + ai + 道歉."},
+ {"pre":"条件","blank":"允许","post":"时，他会回上海看父母。","hint":"(cho phép)","ans":"允许","exp":"条件允许."},
+ {"pre":"父母","blank":"待","post":"在他们身边，他们也终于能放心地去工作了。","hint":"(ở lại — dāi)","ans":"待","exp":"待在 + nơi."},
+ {"pre":"遇到困难别害怕，要","blank":"勇敢","post":"面对。","hint":"(dũng cảm)","ans":"勇敢","exp":"勇敢面对."},
+ {"pre":"任何时候都可以和父母","blank":"商量","post":"。","hint":"(bàn bạc)","ans":"商量","exp":"和 + ai + 商量."}
+],
+
+"sort": [
+ {"words":["样子不错","，","就是","颜色","好像","不怎么","适合她","。"],"ans":"样子不错，就是颜色好像不怎么适合她。"},
+ {"words":["他","也","不是","不知道","自己","错了","。"],"ans":"他也不是不知道自己错了。"},
+ {"words":["无论","平时工作","有多忙","，","他","每个周末","都会","给父母打电话","。"],"ans":"无论平时工作有多忙，他每个周末都会给父母打电话。"},
+ {"words":["父母","总是","担心她","为了","节约时间","而","不好好吃饭","。"],"ans":"父母总是担心她为了节约时间而不好好吃饭。"},
+ {"words":["我们店","正好","年底","有活动","，","全场","打七折","。"],"ans":"我们店正好年底有活动，全场打七折。"},
+ {"words":["任何时候","都","可以","和","父母","商量","。"],"ans":"任何时候都可以和父母商量。"}
+],
+
+"mc": [
+ {"q":"样子不错，就是颜色好像＿＿适合她。","opts":["不怎么","怎么不","不什么","没怎么样"],"ans":0,"exp":"不怎么 + V = không … lắm; 怎么不 = sao lại không."},
+ {"q":"他也＿＿不知道自己错了，只是不好意思说。","opts":["不能","不是","不得","没有"],"ans":1,"exp":"不是不 + V: thanh minh — thật ra là biết."},
+ {"q":"由于天气不好，飞机不能起飞，爸爸＿＿改变计划。","opts":["不是不","不怎么","不得不","不能"],"ans":2,"exp":"Hoàn cảnh ép buộc → 不得不 (đành phải)."},
+ {"q":"＿＿你考多少分，你在我们眼里都是最优秀的。","opts":["因为","虽然","即使","无论"],"ans":3,"exp":"Sau có từ nghi vấn 多少 → 无论……都……; 即使 cần một giả thiết cụ thể."},
+ {"q":"父母总是担心她为了节约时间＿＿不好好吃饭。","opts":["而","就","才","也"],"ans":0,"exp":"为了……而……: vì … mà …"},
+ {"q":"下班回家，林静静＿＿父母寄来的鸡汤热了热。","opts":["被","将","让","给"],"ans":1,"exp":"将 = 把 (văn viết): 将 + O + V + 了V."},
+ {"q":"当＿＿到从小就熟悉的味道时，她鼻子还是酸了。","opts":["听","看","闻","想"],"ans":2,"exp":"闻 = ngửi (bẫy Hán Việt “văn”)."},
+ {"q":"全场打七折，就是说，原价100元的毛衣现在卖＿＿元。","opts":["30","7","17","70"],"ans":3,"exp":"打七折 = trả 70% giá = giảm 30% (ôn 就是说 — Bài 11)."},
+ {"q":"小明昨天因为一点儿小事就对奶奶发＿＿了。","opts":["脾气","味道","条件","质量"],"ans":0,"exp":"发脾气 = nổi nóng."},
+ {"q":"他们平时会＿＿找时间去看父母。","opts":["自","将","另外","无论"],"ans":2,"exp":"另外 + V: làm riêng, thêm (tìm thời gian khác)."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại và đóng vai), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions":[
+  {"q_zh":"过节时，你会给家人买什么礼物？","q_vn":"Dịp lễ Tết, bạn sẽ mua quà gì cho người nhà?","hint":"过节时，我会给……买……，因为……","sample":"过节时，我会给妈妈买一件毛衣，给爸爸买一瓶好茶。年底商场常常打折，挺值的。我觉得，无论买什么礼物，家人高兴比什么都强。","sample_vn":"Dịp lễ Tết, tôi sẽ mua cho mẹ một chiếc áo len, mua cho bố một hộp trà ngon. Cuối năm trung tâm thương mại hay giảm giá, rất đáng. Tôi thấy dù mua quà gì thì người nhà vui là hơn tất cả.","note":"Câu hỏi phần Khởi động của sách (1)."},
+  {"q_zh":"你的家人因为一些事情伤心时，你会怎么办？","q_vn":"Khi người nhà buồn vì chuyện gì đó, bạn sẽ làm gì?","hint":"……伤心时，我会先……，然后……","sample":"家人伤心时，我会先冷静地听他们说，然后陪他们出去走走。要是我做错了事让他们伤心，我就马上向他们道歉。","sample_vn":"Khi người nhà buồn, tôi sẽ bình tĩnh nghe họ nói trước, rồi đưa họ ra ngoài đi dạo. Nếu tôi làm sai khiến họ buồn thì tôi sẽ xin lỗi ngay.","note":"Câu hỏi phần Khởi động của sách (2); ôn 要是……，就…… (Bài 1)."},
+  {"q_zh":"售货员认为老人穿那件毛衣怎么样？杨同乐最后为什么愿意买那件毛衣了？","q_vn":"Nhân viên bán hàng cho rằng người già mặc chiếc áo len đó thế nào? Vì sao cuối cùng Dương Đồng Lạc lại đồng ý mua?","hint":"售货员认为……正合适……。因为王一飞说……，杨同乐觉得……比什么都强。","sample":"售货员认为老年人穿这种颜色的衣服正合适，颜色不深，质量还特别好。因为王一飞说老妈也常穿这种颜色的衣服，她应该会喜欢的，杨同乐觉得老妈高兴比什么都强，所以愿意买了。","sample_vn":"Nhân viên bán hàng cho rằng người già mặc màu này là vừa hợp, màu không đậm, chất lượng lại rất tốt. Vì Vương Nhất Phi nói mẹ cũng hay mặc màu này, chắc sẽ thích, Dương Đồng Lạc thấy mẹ vui là hơn tất cả nên đồng ý mua.","note":"Câu hỏi đọc hiểu bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"杨同乐和王一飞去商场……。王一飞选了一件毛衣后问杨同乐……，杨同乐觉得样子还可以，但是颜色……。售货员说……。杨同乐说，老妈高兴……。售货员告诉他们，现在店里正好……","sample":"杨同乐和王一飞去商场给父母买衣服。王一飞选了一件毛衣后问杨同乐觉得怎么样，杨同乐觉得样子还可以，但是颜色好像不怎么适合老妈。售货员说老年人穿这种颜色的衣服正合适，颜色不深，质量也好。王一飞也觉得不错，认为老妈也常穿这种颜色的衣服，她会喜欢的。杨同乐说，老妈高兴比什么都强。售货员告诉他们，现在店里正好年底有活动，全场打七折，挺值的。","sample_vn":"Dương Đồng Lạc và Vương Nhất Phi đến trung tâm thương mại mua quần áo cho bố mẹ… Nhân viên bán hàng nói cửa hàng vừa hay cuối năm có chương trình, toàn bộ cửa hàng giảm 30%, rất đáng.","note":"Bài tập 复述 của sách (trang 15)."},
+  {"q_zh":"小明因为什么对奶奶发了脾气？发脾气后，王一雪和小明都做了什么？","q_vn":"Tiểu Minh vì sao nổi nóng với bà? Sau đó Vương Nhất Tuyết và Tiểu Minh đã làm gì?","hint":"小明最近……，心里……，因为……这点儿小事，就……。王一雪……以后，小明马上说……","sample":"小明最近要考试，心里有点儿烦，因为脱、挂衣服这点儿小事，就对奶奶发了脾气。王一雪批评了他，他也不是不知道自己错了，马上说放学回来就向奶奶道歉。","sample_vn":"Tiểu Minh sắp thi, trong lòng hơi bực, chỉ vì chuyện nhỏ cởi áo, treo áo mà nổi nóng với bà. Vương Nhất Tuyết phê bình cậu, cậu cũng biết mình sai, lập tức nói tan học về sẽ xin lỗi bà.","note":"Câu hỏi đọc hiểu bài khoá 2; dùng 不是不…… (điểm 2)."},
+  {"q_zh":"杨同乐是怎么关心父母的？刘明和王一雪为什么要把父母接到自己家里？","q_vn":"Dương Đồng Lạc quan tâm bố mẹ như thế nào? Vì sao Lưu Minh và Vương Nhất Tuyết đón bố mẹ về nhà mình?","hint":"无论……，他每个周末都……；条件允许时……。因为刘明的母亲……，他们很担心……","sample":"无论平时工作有多忙，杨同乐每个周末都会给父母打电话，条件允许时，他还会回上海看父母。因为这两年刘明的母亲身体不太好，他们很担心，所以把父母接到自己家里照顾。","sample_vn":"Dù ngày thường bận đến đâu, cuối tuần nào Dương Đồng Lạc cũng gọi điện cho bố mẹ, khi điều kiện cho phép còn về Thượng Hải thăm bố mẹ. Vì hai năm nay mẹ Lưu Minh sức khỏe không tốt, họ rất lo nên đón bố mẹ về nhà chăm sóc.","note":"Câu hỏi đọc hiểu bài khoá 3; dùng 无论……都…… (điểm 3)."},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"杨同乐的老家……，他自毕业后……。虽然……，但……。无论……，他每个周末都……。刘明和王一雪结婚后……，这两年……，就把父母……","sample":"杨同乐的老家在上海，他自毕业后一直在北京工作。虽然没和父母生活在一起，但父子、母子关系特别好。杨同乐很关心父母，无论平时工作有多忙，他每个周末都会给父母打电话。条件允许时，他会回上海看父母。刘明和王一雪结婚后，一直没有和父母生活在一起，他们平时会另外找时间去看父母，帮父母做做饭，打扫打扫卫生。这两年，刘明的母亲身体不太好，他们很担心，就把父母接到了自己家里照顾。父母待在他们身边，他们也终于能放心地去工作了。","sample_vn":"Quê Dương Đồng Lạc ở Thượng Hải, từ khi tốt nghiệp anh luôn làm việc ở Bắc Kinh… Bố mẹ ở bên cạnh, cuối cùng vợ chồng Lưu Minh cũng yên tâm đi làm.","note":"Bài tập 复述 của sách (trang 19)."},
+  {"q_zh":"父亲为什么选择最快的快递？是什么让林静静能“笑着面对生活”？","q_vn":"Vì sao bố chọn dịch vụ chuyển phát nhanh nhất? Điều gì khiến Lâm Tĩnh Tĩnh có thể “mỉm cười đối mặt với cuộc sống”?","hint":"为了让……，父亲……。每当想到……，尝到……，她就……","sample":"为了让食物新鲜，父亲选择了城里最快的快递，上午寄出，下午就能收到。每当想到父母说的话，尝到来自老家熟悉的味道，林静静就觉得又能笑着面对生活了。","sample_vn":"Để đồ ăn tươi ngon, bố chọn chuyển phát nhanh nhất thành phố, sáng gửi chiều nhận. Mỗi khi nghĩ đến lời bố mẹ dặn, nếm hương vị quen thuộc của quê nhà, Lâm Tĩnh Tĩnh lại thấy mình có thể mỉm cười đối mặt với cuộc sống.","note":"Câu hỏi đọc hiểu bài khoá 4; dùng 为了…… (điểm 4)."},
+  {"q_zh":"你觉得幸福的家庭应该是什么样子的？","q_vn":"Bạn thấy một gia đình hạnh phúc nên như thế nào?","hint":"我觉得幸福的家庭……。无论……，家人都……。……比什么都强。","sample":"我觉得幸福的家庭不一定很有钱，但家人要互相关心。无论遇到什么困难，大家都可以一起商量。家里有人伤心了，其他人会陪着他。一家人健康、开心，比什么都强。","sample_vn":"Tôi thấy gia đình hạnh phúc không nhất thiết phải giàu, nhưng người nhà phải quan tâm nhau. Dù gặp khó khăn gì, mọi người đều có thể cùng bàn bạc. Ai trong nhà buồn thì những người khác ở bên. Cả nhà khỏe mạnh, vui vẻ là hơn tất cả.","note":"Mục tiêu bài học: nói về gia đình hạnh phúc (学习小结)."},
+  {"q_zh":"角色扮演：周末晚上，杨同乐给父母打电话聊天儿。请你扮演杨同乐，和父母聊一聊。","q_vn":"Đóng vai: tối cuối tuần, Dương Đồng Lạc gọi điện trò chuyện với bố mẹ. Em đóng vai Dương Đồng Lạc nói chuyện với bố mẹ (nhóm 3 người: một người là Dương Đồng Lạc, hai người là bố mẹ).","hint":"爸、妈，你们最近身体怎么样？……我这周工作……，不过……。无论多忙，我都……。年底我……。你们有什么事，一定……","sample":"杨同乐：爸、妈，你们最近身体怎么样？\n妈妈：挺好的，就是天气冷了，你爸的腿有点儿疼，不过不怎么严重。\n杨同乐：那您得带爸去医院看看，不能不重视啊。我给你们买了两件毛衣，年底商场打折，质量特别好，过两天就能收到。\n爸爸：又花钱了！你工作那么忙，别为了我们而太累了。\n杨同乐：放心吧，无论多忙，我都会照顾好自己。条件允许的话，年底我就回上海看你们。你们有什么事，任何时候都可以给我打电话，咱们一起商量。\n妈妈：好，你也要好好吃饭，注意身体！","sample_vn":"Dương Đồng Lạc: Bố, mẹ, dạo này bố mẹ khỏe không ạ?\nMẹ: Khỏe, chỉ là trời lạnh rồi, chân bố con hơi đau, nhưng không nghiêm trọng lắm.\nDương Đồng Lạc: Vậy mẹ phải đưa bố đi viện khám, không thể không để ý đâu ạ. Con mua cho bố mẹ hai chiếc áo len, cuối năm trung tâm giảm giá, chất lượng rất tốt, vài hôm nữa là nhận được.\nBố: Lại tốn tiền rồi! Con làm việc bận như vậy, đừng vì bố mẹ mà mệt quá.\nDương Đồng Lạc: Bố mẹ yên tâm, dù bận đến đâu con cũng sẽ tự chăm sóc tốt cho mình. Nếu điều kiện cho phép, cuối năm con sẽ về Thượng Hải thăm bố mẹ. Bố mẹ có việc gì, bất cứ lúc nào cũng có thể gọi cho con, mình cùng bàn.\nMẹ: Ừ, con cũng phải ăn uống đầy đủ, giữ gìn sức khỏe nhé!","note":"Hoạt động 角色扮演 (đóng vai) của sách, trang 23 — dùng đủ 4 điểm ngữ pháp: 不怎么, 不能不, 无论……都, 为了……而."}
+ ]
+},
+
+"translate": [
+ ["Kiểu dáng không tệ, chỉ là màu sắc hình như không hợp với mẹ lắm.","样子不错，就是颜色好像不怎么适合她。"],
+ ["Nó cũng không phải là không biết mình sai.","他也不是不知道自己错了。"],
+ ["Dù ngày thường công việc bận đến đâu, cuối tuần nào anh ấy cũng gọi điện cho bố mẹ.","无论平时工作有多忙，他每个周末都会给父母打电话。"],
+ ["Bố mẹ luôn lo cô ấy vì tiết kiệm thời gian mà không ăn uống tử tế.","父母总是担心她为了节约时间而不好好吃饭。"],
+ ["Cửa hàng chúng tôi cuối năm có chương trình, toàn bộ cửa hàng giảm 30%.","我们店年底有活动，全场打七折。"],
+ ["Gặp khó khăn đừng sợ, phải dũng cảm đối mặt.","遇到困难别害怕，要勇敢面对。"]
+],
+"translateRev": [
+ ["Mẹ vui là hơn tất cả.","老妈高兴比什么都强。"],
+ ["Hôm qua vì chuyện nhỏ mà nó nổi nóng với bà.","昨天因为这点儿小事，他就对奶奶发脾气了。"],
+ ["Khi điều kiện cho phép, anh ấy sẽ về Thượng Hải thăm bố mẹ.","条件允许时，他会回上海看父母。"],
+ ["Bố mẹ ở bên cạnh, cuối cùng họ cũng có thể yên tâm đi làm.","父母待在他们身边，他们也终于能放心地去工作了。"],
+ ["Bất cứ lúc nào cũng có thể bàn bạc với bố mẹ.","任何时候都可以和父母商量。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":140,"tieuDe":"写作 — viết theo đề của sách (ít nhất 140 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết đoạn văn nêu ý kiến (写作)","gioiThieu":"Đề 写作 của sách HSK 4 (3.0) yêu cầu viết một đoạn văn ngắn (ít nhất 140 chữ) nêu lựa chọn của mình và giải thích lý do — giống phần 书写 của đề thi HSK 4 mới. Đây là dạng văn NGHỊ LUẬN NGẮN: nêu quan điểm → lý do → ví dụ → kết luận.","buoc":["Đọc kỹ đề: phải CHỌN một bên (大家庭 hay 小家庭) và nói LÝ DO — không viết lửng lơ cả hai.","Câu mở: nêu rõ lựa chọn — 我更喜欢大家庭 / 小家庭.","Thân bài: 2–3 lý do, mỗi lý do kèm một ví dụ trong gia đình em (ông bà chăm sóc, cùng bàn bạc, tự do…).","Dùng từ mới và 4 điểm ngữ pháp của bài (khung “Từ, cấu trúc nên dùng”): 无论……都……, 不是不……, 为了……而……, 不怎么…; có thể nói thêm mặt chưa tốt của lựa chọn kia cho khách quan.","Câu kết: khẳng định lại quan điểm (……比什么都强 / 对我来说……); tự soát số chữ (≥ 140) và lỗi chữ Hán."]},
+ "de":"有的人生活在大家庭（爷爷、奶奶、父母、孩子等生活在一起）里，有的人生活在小家庭（只有父母和孩子）里，你喜欢大家庭，还是喜欢小家庭？请写一篇短文，说说你的理由，不少于140字。",
+ "prompt":"Có người sống trong gia đình lớn (ông, bà, bố mẹ, con cái… sống cùng nhau), có người sống trong gia đình nhỏ (chỉ có bố mẹ và con). Em thích gia đình lớn hay gia đình nhỏ? Hãy viết một đoạn văn ngắn nói lý do của em, không ít hơn 140 chữ.",
+ "dan":[
+  {"hoi":"你喜欢大家庭还是小家庭？","goiY":"我更喜欢……，因为……"},
+  {"hoi":"你的家里有哪些人？你们住在一起吗？","goiY":"我的老家在……，从小我就和……生活在一起 / 我家只有……"},
+  {"hoi":"第一个理由是什么？有什么例子？","goiY":"无论遇到什么困难，……都可以一起商量 / 父母工作忙的时候，爷爷奶奶……"},
+  {"hoi":"你喜欢的家庭有没有不方便的地方？","goiY":"我不是不知道……，不过……"},
+  {"hoi":"最后你想说什么？","goiY":"对我来说，一家人……比什么都强 / 我会为了……而……"}],
+ "tuNen":["父母","老家","商量","照顾","关心","伤心","脾气","道歉","待","味道","暖","条件","允许","另外"],
+ "cauTruc":[
+  {"ten":"我更喜欢……，因为……","nhan":"更喜欢","vd":"我更喜欢大家庭，因为一家人待在一起很热闹、很温暖。","khi":"Câu MỞ: nêu rõ lựa chọn."},
+  {"ten":"无论……，都……","nhan":"无论","vd":"无论遇到什么困难，家里总有人可以和我商量。","khi":"Lý do 1: người nhà luôn ở bên."},
+  {"ten":"不是不……，(而)是……","nhan":"不是不","vd":"我不是不知道小家庭更自由，而是更喜欢热热闹闹的生活。","khi":"Nhắc đến lựa chọn kia cho khách quan."},
+  {"ten":"为了……而……","nhan":"为了","vd":"父母为了让我们生活得更好而努力工作。","khi":"Kể về sự hy sinh của người nhà."},
+  {"ten":"……比什么都强","nhan":"比什么都强","vd":"一家人健康、开心，比什么都强。","khi":"Câu KẾT: khẳng định quan điểm."}],
+ "checklist":[
+  "Đủ ít nhất 140 chữ Hán chưa?",
+  "Đã nêu rõ em thích 大家庭 hay 小家庭 ngay câu đầu chưa?",
+  "Có ít nhất 2 lý do, mỗi lý do có ví dụ cụ thể chưa?",
+  "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (不怎么、phủ định kép、无论……都……、为了……而……) chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài và có câu kết khẳng định lại quan điểm chưa?"],
+ "model":"我更喜欢大家庭。我的老家在一个小城，从小我就和爷爷、奶奶、父母生活在一起。父母为了让我们生活得更好而每天努力工作，平时是爷爷奶奶照顾我，给我做最鲜的鱼汤。无论我遇到什么困难，家里总有人可以和我商量。有一次我考试考得不怎么好，心里很烦，还对奶奶发了脾气，可是奶奶一点儿也没生气，还陪我聊天儿。后来我向她道了歉，心里暖暖的。当然，我不是不知道大家庭也有不方便的地方，比如大家的生活习惯不一样，有时候不得不互相让一让。可是我觉得，一家人待在一起，互相关心，互相照顾，比什么都强。现在我一个人在外地学习，每当想起老家熟悉的味道，我就特别想念他们。对我来说，热热闹闹的大家庭才是最幸福的家庭。"
+}
+}

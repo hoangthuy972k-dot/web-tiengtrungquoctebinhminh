@@ -1,0 +1,352 @@
+{
+"so": 20,
+"zh": "看不完也读不完",
+"py": "Kàn bu wán yě dú bu wán",
+"vn": "Xem không hết, đọc cũng không hết",
+"chuDe": "Đọc sách và du lịch: đi tàu cao tốc, đi máy bay nối chuyến, kinh nghiệm du lịch, “đọc vạn quyển sách, đi vạn dặm đường”",
+"icon": "🧳",
+"mucTieu": [
+  "Nghe hiểu và trao đổi được về các chủ đề đọc sách và du lịch.",
+  "Nói hoặc viết được nét đặc sắc của một điểm tham quan.",
+  "Hiểu cách du lịch ở Trung Quốc, trải nghiệm văn hóa Trung Quốc."
+],
+
+"wu": [
+  {"img":"wu-A","label":"道路","py":"dàolù","letter":"A"},
+  {"img":"wu-B","label":"堵车","py":"dǔchē","letter":"B"},
+  {"img":"wu-C","label":"导游","py":"dǎoyóu","letter":"C"},
+  {"img":"wu-D","label":"安检","py":"ānjiǎn","letter":"D"},
+  {"img":"wu-E","label":"航班","py":"hángbān","letter":"E"},
+  {"img":"wu-F","label":"窗户","py":"chuānghu","letter":"F"}
+],
+
+"dialogs": [
+  {"tab":"Đi tàu cao tốc","scene":"在动车上 · Trên tàu cao tốc (Bạch Gia Nguyệt, Annie và Trần Thiên Trung đi tàu cao tốc đến Hàng Châu, Tô Châu chơi)","anh":"kv-1",
+   "nguoi":["安妮","白家月","陈天中"],
+   "preQuiz":[
+     {"q":"如果安妮没有坐上车，白家月有什么建议？","opts":["明天再去","改坐飞机","坐下一趟车","买张无座票"],"ans":2},
+     {"q":"安妮为什么建议下车后就去西湖？","opts":["西湖离得近","去西湖方便","西湖不要门票","晚上西湖更好看"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"终于上车了，刚刚路上堵车，差点儿晚了。","vn":"Cuối cùng cũng lên được tàu, vừa nãy trên đường tắc xe, suýt nữa thì muộn."},
+     {"sp":1,"zh":"没关系，晚了就改乘下一趟。天中，你坐哪儿？看你一直不坐下，我还在想，难道你买的是无座票吗？","vn":"Không sao, muộn thì đổi sang đi chuyến sau. Thiên Trung, cậu ngồi đâu? Thấy cậu cứ đứng mãi không ngồi, tớ còn đang nghĩ, chẳng lẽ cậu mua vé không có chỗ ngồi à?"},
+     {"sp":2,"zh":"我的座位就在前边，我想先站这儿跟你们说说话。","vn":"Chỗ của tớ ở ngay phía trước thôi, tớ muốn đứng đây nói chuyện với các cậu một lát đã."},
+     {"sp":0,"zh":"动车车速也挺快啊！对了，这列车晚上七点多到杭州，咱们在车上吃晚餐，到站后就先去西湖吧，夜里的西湖更美。","vn":"Tàu cao tốc tốc độ cũng nhanh ghê! À đúng rồi, chuyến tàu này hơn bảy giờ tối đến Hàng Châu, mình ăn tối trên tàu, đến ga thì đi Tây Hồ trước luôn nhé, Tây Hồ ban đêm còn đẹp hơn."},
+     {"sp":2,"zh":"好！后天我们坐大巴去苏州，看苏州园林。","vn":"Được! Ngày kia chúng ta đi xe khách đến Tô Châu, ngắm vườn Tô Châu."},
+     {"sp":1,"zh":"嗯。中国太大了！真是看也看不完啊。","vn":"Ừ. Trung Quốc rộng lớn quá! Đúng là xem cũng xem không hết."}],
+   "hoi":[["上车后，陈天中为什么没有直接坐到自己的座位上？","因为他的座位就在前边，他想先站在那儿跟大家说说话。"],["安妮都有哪些安排？","她建议大家在车上吃晚餐，晚上七点多到杭州以后，就先去西湖，因为夜里的西湖更美。"]],
+   "kelai":"安妮、白家月和陈天中坐动车去旅行。由于路上堵车，安妮……。白家月说，晚了……。接着，白家月问陈天中……，难道买的是……吗？陈天中说他的座位……，他想先站着跟大家……。安妮说这列车……到……，建议在车上……，到站后就……，夜里的……。陈天中说，后天坐大巴……，……。白家月说，中国……，真是……。",
+   "kelaiMau":"安妮、白家月和陈天中坐动车去旅行。由于路上堵车，安妮差点儿晚了。白家月说，晚了就改乘下一趟。接着，白家月问陈天中坐哪儿，难道买的是无座票吗？陈天中说他的座位就在前边，他想先站着跟大家说说话。安妮说这列车晚上七点多到杭州，建议在车上吃晚餐，到站后就先去西湖，夜里的西湖更美。陈天中说，后天坐大巴去苏州，看苏州园林。白家月说，中国太大了，真是看也看不完。"},
+
+  {"tab":"Ở sân bay","scene":"在机场 · Ở sân bay (Lý Văn cùng Bạch Gia Nguyệt, Annie, Trần Thiên Trung qua kiểm tra an ninh, chuẩn bị lên máy bay đi Tây Song Bản Nạp, nối chuyến ở Tây An)","anh":"kv-2",
+   "nguoi":["李文","白家月","陈天中","安妮",{"ten":"值机员","anh":"zhijiyuan"}],
+   "preQuiz":[
+     {"q":"安检完后，白家月、陈天中和安妮都在干什么？","opts":["看书","买东西","看电影","听中文歌"],"ans":0},
+     {"q":"他们这次去西双版纳要做什么？","opts":["吃美食","听演唱会","参加比赛","感受泼水节"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"安检完就等着登机了。你们在看什么？","vn":"Kiểm tra an ninh xong là chờ lên máy bay thôi. Các cậu đang xem gì thế?"},
+     {"sp":1,"zh":"我在读老舍的小说。","vn":"Mình đang đọc tiểu thuyết của Lão Xá."},
+     {"sp":2,"zh":"我读的是一本中国历史书。","vn":"Cái mình đọc là một cuốn sách lịch sử Trung Quốc."},
+     {"sp":3,"zh":"我读唐诗呢。几千年的中国文化，真是读也读不完。","vn":"Mình đang đọc thơ Đường. Văn hóa Trung Quốc mấy nghìn năm, đúng là đọc cũng đọc không hết."},
+     {"sp":0,"zh":"谁说不是呢？不过，现在咱们得去排队，航班的值机员在叫大家登机呢——","vn":"Ai bảo không phải chứ? (Đúng thế!) Có điều bây giờ chúng mình phải đi xếp hàng thôi, nhân viên làm thủ tục của chuyến bay đang gọi mọi người lên máy bay kìa —"},
+     {"sp":4,"zh":"去西安的旅客开始登机，请拿好登机牌按顺序排队。","vn":"(Lời nhân viên làm thủ tục) Hành khách đi Tây An bắt đầu lên máy bay, xin cầm sẵn thẻ lên máy bay và xếp hàng theo thứ tự. …"},
+     {"sp":1,"zh":"终于上来了，我的座位靠窗户。","vn":"Cuối cùng cũng lên được rồi, chỗ của mình cạnh cửa sổ."},
+     {"sp":3,"zh":"我在最外边。这么多人，是不是跟咱们一样，都是去感受泼水节的啊？","vn":"Mình ngồi ngoài cùng. Đông người thế này, có phải cũng giống chúng mình, đều đi trải nghiệm Tết té nước không nhỉ?"},
+     {"sp":0,"zh":"应该不是。很多人的目的地是西安，你别忘了，咱们是在西安转机，然后再飞西双版纳。","vn":"Chắc không phải đâu. Nhiều người điểm đến là Tây An, cậu đừng quên, chúng ta nối chuyến ở Tây An, sau đó mới bay đi Tây Song Bản Nạp."}],
+   "hoi":[["安妮为什么觉得中国文化读也读不完？","因为中国文化有几千年的历史，内容非常丰富，所以她觉得真是读也读不完。"],["李文他们的目的地是西安吗？为什么？","不是。他们的目的地是西双版纳，他们只是在西安转机，然后再飞西双版纳。"]]},
+
+  {"tab":"Kinh nghiệm du lịch","scene":"旅行经验谈 · Bàn về kinh nghiệm du lịch","anh":"kv-3","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"白家月、安妮和陈天中想通过旅行：","opts":["放松心情","交到朋友","了解中国","积累知识"],"ans":2},
+     {"q":"白家月、安妮和陈天中的旅行经验首先是：","opts":["提前订好酒店","做好旅行计划","提前订好门票","仔细检查行李"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"来中国留学后，白家月、安妮和陈天中常外出旅行，从中了解中国。","vn":"Sau khi đến Trung Quốc du học, Bạch Gia Nguyệt, Annie và Trần Thiên Trung thường ra ngoài du lịch, qua đó tìm hiểu Trung Quốc."},
+     {"sp":0,"zh":"他们还总结出几点旅行经验：","vn":"Họ còn đúc kết ra mấy kinh nghiệm du lịch:"},
+     {"sp":0,"zh":"第一，好计划是成功的一半。","vn":"Thứ nhất, kế hoạch tốt là một nửa thành công."},
+     {"sp":0,"zh":"旅行前，要了解目的地天气、道路交通特点等，安排好每天的活动，保证所有人对计划都没意见。","vn":"Trước khi đi, phải tìm hiểu thời tiết, đặc điểm đường sá giao thông… ở nơi đến, sắp xếp ổn thỏa hoạt động mỗi ngày, đảm bảo tất cả mọi người đều không có ý kiến gì về kế hoạch."},
+     {"sp":0,"zh":"准备越细，烦恼越少。","vn":"Chuẩn bị càng kỹ, phiền não càng ít."},
+     {"sp":0,"zh":"第二，节假日早点儿订机票、酒店和各种门票，否则很难订到。","vn":"Thứ hai, dịp lễ phải đặt vé máy bay, khách sạn và các loại vé vào cửa sớm một chút, nếu không thì rất khó đặt được."},
+     {"sp":0,"zh":"第三，转机会比直飞更便宜。","vn":"Thứ ba, bay nối chuyến sẽ rẻ hơn bay thẳng."},
+     {"sp":0,"zh":"此次去西双版纳，在西安转机，机票价格比直飞便宜了百分之四十多。","vn":"Lần này đi Tây Song Bản Nạp, nối chuyến ở Tây An, giá vé máy bay rẻ hơn bay thẳng hơn 40%."},
+     {"sp":0,"zh":"虽然有些累，但累就累点儿吧，花更少的钱去看更多的地方，很值得，节省下来的钱就当是给自己的大“红包”了。","vn":"Tuy hơi mệt, nhưng mệt thì mệt một chút thôi, tiêu ít tiền hơn mà đi được nhiều nơi hơn, rất đáng; số tiền tiết kiệm được thì coi như là một “phong bao lì xì” lớn tặng cho chính mình."}],
+   "hoi":[["为什么节假日要早点儿订机票？","因为节假日出去旅行的人很多，要是不早点儿订机票，就很难订到。"],["为什么他们觉得转机虽然累，但值得？","因为转机比直飞便宜，这次机票价格便宜了百分之四十多。花更少的钱可以去看更多的地方，节省下来的钱就当是给自己的大红包了。"]],
+   "kelai":"来中国留学后，白家月、安妮和陈天中常……，从中……。他们还总结出几点……：第一，好计划是……。旅行前，要了解目的地天气、……等，安排好……，保证所有人对计划……。准备越细，……。第二，节假日早点儿……、酒店和各种门票，否则……。第三，转机会……更便宜。此次去……，在……，机票价格比直飞便宜了……。虽然有些累，但……，花更少的钱去……，很值得，节省下来的钱就当是……。",
+   "kelaiMau":"来中国留学后，白家月、安妮和陈天中常外出旅行，从中了解中国。他们还总结出几点旅行经验：第一，好计划是成功的一半。旅行前，要了解目的地天气、道路交通特点等，安排好每天的活动，保证所有人对计划都没意见。准备越细，烦恼越少。第二，节假日早点儿订机票、酒店和各种门票，否则很难订到。第三，转机会比直飞更便宜。此次去西双版纳，在西安转机，机票价格比直飞便宜了百分之四十多。虽然有些累，但累就累点儿吧，花更少的钱去看更多的地方，很值得，节省下来的钱就当是给自己的大“红包”了。"},
+
+  {"tab":"Đọc vạn quyển sách","scene":"读万卷书，行万里路 · Đọc vạn quyển sách, đi vạn dặm đường","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"“读万卷书，行万里路”的意思是：","opts":["既学习也运动","边看书边走路","读一万本书，走一万里路","既读书学习，也外出看世界"],"ans":3},
+     {"q":"根据课文，旅行除了能看自然景色外，还能：","opts":["吃美食","认识朋友","了解历史文化","了解旅行过程"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"王一飞常对她的学生说：“读万卷书，行万里路。你们要是想多了解中国，就不能只通过读书，还要多出门旅行，否则只能认识课本里的中国。”","vn":"Vương Nhất Phi thường nói với học sinh của mình: “Đọc vạn quyển sách, đi vạn dặm đường. Các em nếu muốn hiểu thêm về Trung Quốc thì không thể chỉ qua sách vở, mà còn phải ra ngoài du lịch nhiều, nếu không thì chỉ biết một Trung Quốc trong sách giáo khoa.”"},
+     {"sp":0,"zh":"旅行，不仅能看到自然美景，还能近距离感受不同的历史文化。","vn":"Du lịch không những được ngắm cảnh đẹp thiên nhiên, mà còn được cảm nhận tận mắt những nền văn hóa, lịch sử khác nhau."},
+     {"sp":0,"zh":"比如，白家月等人想了解少数民族泼水节，就去了西双版纳。","vn":"Chẳng hạn, Bạch Gia Nguyệt và mọi người muốn tìm hiểu Tết té nước của dân tộc thiểu số, liền đến Tây Song Bản Nạp."},
+     {"sp":0,"zh":"泼水节上，导游向他们解释说，被泼的水越多，新的一年就会越健康、幸福。","vn":"Trong Tết té nước, hướng dẫn viên giải thích với họ rằng càng bị té nhiều nước thì năm mới sẽ càng khỏe mạnh, hạnh phúc."},
+     {"sp":0,"zh":"安妮喜欢唐诗，就来到了西安，在那里遇到身穿唐装的“对诗人”，对诗人说上句，游客就能流利地说出下句。","vn":"Annie thích thơ Đường nên đã đến Tây An, ở đó gặp những “người đối thơ” mặc áo Đường trang: người đối thơ đọc câu trên, du khách liền đọc trôi chảy câu dưới. (“Đối thơ” là một người ngâm câu thơ, người khác đối lại câu tiếp theo, thường diễn ra giữa hai hay nhiều người; người tham gia gọi là “người đối thơ”.)"},
+     {"sp":0,"zh":"安妮觉得在西安，唐诗活了。","vn":"Annie cảm thấy ở Tây An, thơ Đường như sống lại."},
+     {"sp":0,"zh":"虽然已经去了很多地方，但是白家月他们觉得还不够。","vn":"Tuy đã đi rất nhiều nơi, nhưng Bạch Gia Nguyệt và các bạn vẫn thấy chưa đủ."},
+     {"sp":0,"zh":"他们也认为，美丽中国，不只是在书中，更是在脚下。","vn":"Họ cũng cho rằng, một Trung Quốc tươi đẹp không chỉ ở trong sách, mà còn ở dưới chân mình."}],
+   "hoi":[["安妮在西安遇见了什么人？有什么感受？","她遇见了身穿唐装的“对诗人”，对诗人说上句，游客就能流利地说出下句。她觉得在西安，唐诗活了。"],["外出旅行后，白家月他们有什么感受？","虽然已经去了很多地方，但是他们觉得还不够。他们认为，美丽中国，不只是在书中，更是在脚下。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"语气副词“难道”","tenVn":"Phó từ ngữ khí 「难道」 — lẽ nào, chẳng lẽ (câu hỏi tu từ, phỏng đoán)",
+  "cauTruc":["难道 + (chủ ngữ) + hình thức KHẲNG ĐỊNH + 吗？ → ý PHỦ ĐỊNH","难道 + (chủ ngữ) + 不 / 没 + V + 吗？ → ý KHẲNG ĐỊNH","……，难道 + ……(了)？ → phỏng đoán, nghi ngờ (có thể không có 吗)"],
+  "giaiThich":"「难道」 là phó từ ngữ khí, có hai cách dùng. (1) Biểu thị PHỎNG ĐOÁN, nghi ngờ: thấy một hiện tượng lạ rồi đoán — 车快开了他还没到，难道他不去了？ (lẽ nào anh ấy không đi nữa?). (2) Dùng trong CÂU HỎI TU TỪ (phản vấn) 「难道……吗？」 — hỏi mà không cần trả lời, để NHẤN MẠNH: nếu là hình thức khẳng định thì ý thật là phủ định (难道我会骗你吗？ = tôi không lừa bạn đâu); nếu là hình thức phủ định thì ý thật là khẳng định (难道我们不应该保护环境吗？ = chúng ta đương nhiên phải bảo vệ môi trường). Tiếng Việt tương đương: “lẽ nào…?, chẳng lẽ…?, chẳng phải… sao?”. 难道 đứng đầu câu hoặc sau chủ ngữ (你难道不知道吗？). Cuối câu thường có 吗 (khẩu ngữ có khi bỏ). ⚠ 难道 KHÔNG dùng với câu hỏi chính phản V不V hay đại từ nghi vấn; KHÔNG nhầm với 到底 / 究竟 (Bài 18, Bài 14) — hai từ này là hỏi THẬT, muốn biết đáp án (你到底去不去？), không đi với 吗. Mẹo: muốn “trách nhẹ” hay “khẳng định mạnh” thì đổi câu thành 难道 + ý ngược lại + 吗？",
+  "viDu":[["难道你买的是无座票吗？","Chẳng lẽ cậu mua vé không có chỗ ngồi à?"],["车快开了他还没到，难道他不去了？","Tàu sắp chạy rồi mà anh ấy vẫn chưa tới, lẽ nào anh ấy không đi nữa?"],["难道我们不应该保护环境吗？","Chẳng lẽ chúng ta không nên bảo vệ môi trường sao? (= đương nhiên phải bảo vệ)"],["这么简单的问题，难道你连这个都不会吗？","Câu hỏi đơn giản thế này, chẳng lẽ đến cái này bạn cũng không biết? (ôn 连……都…… – Bài 17 · điểm 4)"]],
+  "loi":[["我难道是你的朋友吗？我一定会帮你的。","Hình thức khẳng định + 难道 lại thành ý phủ định (“tôi không phải bạn bạn”) — ngược ý muốn nói.","难道我不是你的朋友吗？我一定会帮你的。"],["难道你知道不知道这件事？","难道 không đi với câu hỏi chính phản V不V; dùng 难道……(不)……吗？","难道你不知道这件事吗？"],["难道你到底去不去？","到底 hỏi thật (muốn biết đáp án), 难道 là câu tu từ — không dùng chung.","你到底去不去？ / 难道你不去了吗？"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["看你一直不坐下，我还在想，","你买的是无座票吗？"],"dap":[["难道"]],"chon":["难道","到底","究竟"],"goiY":"“… chẳng lẽ cậu mua vé không có chỗ ngồi à?”","giai":"Câu tu từ có 吗 → 难道; 到底 / 究竟 là hỏi thật, không đi với 吗."},
+     {"kieu":"dien","phan":["难道我们不应该保护环境","？"],"dap":[["吗"]],"chon":["吗","呢","吧"],"goiY":"“Chẳng lẽ chúng ta không nên bảo vệ môi trường sao?”","giai":"Khuôn 难道……吗？"},
+     {"kieu":"dien","phan":["这么冷的天，你只穿了一件衬衫，难道不怕","吗？"],"dap":[["感冒"]],"chon":["感冒","堵车","登机"],"goiY":"“… lẽ nào không sợ bị cảm à?”","giai":"Phủ định 不怕 → ý khẳng định: sẽ bị cảm đấy."},
+     {"kieu":"dien","phan":["你中文说得这么","，难道你在中国住过吗？"],"dap":[["流利"]],"chon":["流利","所有","细"],"goiY":"“Bạn nói tiếng Trung lưu loát thế, lẽ nào bạn từng sống ở Trung Quốc?”","giai":"难道 dùng để phỏng đoán; V得 + 流利."},
+     {"kieu":"dien","phan":["这件事大家都知道，难道你","知道吗？"],"dap":[["不"]],"chon":["不","也","就"],"goiY":"“Chuyện này ai cũng biết, chẳng lẽ bạn không biết?”","giai":"难道 + 不 + V + 吗？ = ý khẳng định: bạn phải biết chứ."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["难道","你","买的","是","无座票","吗"],"dap":["难道你买的是无座票吗？"],"goiY":"Chẳng lẽ cậu mua vé không có chỗ ngồi à?","giai":"难道 + câu + 吗？"},
+     {"kieu":"xep","manh":["难道","我们","不应该","保护","环境","吗"],"dap":["难道我们不应该保护环境吗？","我们难道不应该保护环境吗？"],"goiY":"Chẳng lẽ chúng ta không nên bảo vệ môi trường sao?","giai":"难道 đứng đầu câu hoặc sau chủ ngữ."},
+     {"kieu":"xep","manh":["车快开了","，","他还没到","，","难道","他不去了"],"dap":["车快开了，他还没到，难道他不去了？"],"goiY":"Tàu sắp chạy rồi, anh ấy vẫn chưa đến, lẽ nào anh ấy không đi nữa?","giai":"难道 biểu thị phỏng đoán, có thể không có 吗."},
+     {"kieu":"dungsai","cau":"你已经是大学生了，难道这点儿小事也不会做吗？","dung":true,"giai":"Đúng: phủ định 不会做 → ý khẳng định “việc nhỏ này bạn phải làm được”."},
+     {"kieu":"dungsai","cau":"难道你知道不知道这件事？","dung":false,"sua":"难道你不知道这件事吗？","giai":"难道 không đi với câu hỏi chính phản V不V."},
+     {"kieu":"dungsai","cau":"我难道是你的朋友吗？我一定会帮你的。","dung":false,"sua":"难道我不是你的朋友吗？我一定会帮你的。","giai":"Muốn khẳng định “tôi là bạn của bạn” phải dùng hình thức phủ định 难道……不……吗？"}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 114)","huongDan":"Hoàn thành đối thoại, có dùng 「难道」","cau":[
+     {"kieu":"vandung","de":"A：你应该向她道歉。 B：为什么要道歉？＿＿＿？","goiY":"B không đồng ý, hỏi lại bằng câu tu từ: lẽ nào là tôi làm sai?","mau":"难道是我做错了吗","can":[["难道"]]},
+     {"kieu":"vandung","de":"A：这个东西不是你的。 B：＿＿＿？它就是我的。","goiY":"B khẳng định: lẽ nào tôi lại không nhận ra đồ của chính mình?","mau":"难道我连自己的东西都不认识吗","can":[["难道"]]},
+     {"kieu":"vandung","de":"A：他为什么不在？＿＿＿？ B：对，＿＿＿。","goiY":"A phỏng đoán: lẽ nào anh ấy tan làm rồi? B xác nhận và nói thêm lý do","mau":"难道他已经下班了吗；他今天有事，提前下班了","can":[["难道"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Chẳng lẽ bạn không biết ngày mai có kỳ thi sao?","dap":["难道你不知道明天有考试吗？","你难道不知道明天有考试吗？"],"giai":"难道 + 不 + V + 吗？ → ý khẳng định."},
+     {"kieu":"dich","vn":"Đã mười giờ rồi mà anh ấy vẫn chưa đến, lẽ nào anh ấy quên rồi?","dap":["已经十点了他还没来，难道他忘了？","已经十点了，他还没来，难道他忘了吗？"],"giai":"难道 biểu thị phỏng đoán."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Bạn em nói “học tiếng Trung chẳng có ích gì”. Hãy phản bác bằng một câu có 「难道」","mau":"难道会说中文没有用吗？现在很多公司都需要会中文的人。","can":[["难道"]]}]}
+  ]},
+
+ {"so":"2","ten":"反问句：由疑问代词构成的反问句","tenVn":"Câu hỏi tu từ (phản vấn) dùng đại từ nghi vấn 「谁、什么、怎么、哪里、为什么」",
+  "cauTruc":["谁 + 说 / V + ……？ (谁说不是呢？ = ai bảo không phải → đúng thế)","怎么 + 能 / 会 + ……？ (hình thức khẳng định → ý phủ định)","为什么不 + V + ……呢？ (hình thức phủ định → ý khẳng định: nên làm)","哪儿 / 哪里 / 什么 + ……？ (哪儿有时间？ = không có thời gian)"],
+  "giaiThich":"Câu hỏi tu từ (反问句) là câu có hình thức câu hỏi nhưng KHÔNG cần trả lời — người nói đã có ý rõ ràng, chỉ hỏi để nhấn mạnh ngữ khí. Bài 20 · điểm 1 dùng 难道; điểm này dùng ĐẠI TỪ NGHI VẤN 谁、什么、怎么、哪里 / 哪儿、为什么. Quy tắc giống nhau: hình thức KHẲNG ĐỊNH → ý PHỦ ĐỊNH (我们连手机都没有，怎么能查到？ = không thể tra được); hình thức PHỦ ĐỊNH → ý KHẲNG ĐỊNH (我们为什么不去苏州玩玩呢？ = nên đi; 谁说不是呢？ = đúng thế, tôi đồng ý). Cuối câu thường dùng 呢 hoặc 啊, KHÔNG dùng 吗 (vì đã có đại từ nghi vấn). Mẫu hay gặp: 谁说……？ (phản bác: ai bảo …), 谁知道……？ (ai mà biết), 怎么会……呢？ (sao có thể …), 哪儿有……？ (đâu có …), 有什么……的？ (ôn Bài 6 · điểm 2: 有什么好着急的？ = chẳng có gì phải vội). Người Việt cũng nói tương tự: “Ai bảo thế?”, “Làm sao mà … được?”, “Sao lại không …?” — nên dễ hiểu, chỉ cần nhớ dùng 呢 chứ không dùng 吗, và đọc với ngữ điệu nhấn mạnh.",
+  "viDu":[["谁说不是呢？","Ai bảo không phải chứ? (= Đúng thế!)"],["这里离苏州这么近，我们为什么不去苏州玩玩呢？","Ở đây gần Tô Châu thế, sao chúng ta lại không đi Tô Châu chơi một chút? (= nên đi)"],["我们连手机都没有，怎么能查到这些信息啊？","Chúng ta đến điện thoại cũng không có, làm sao mà tra được những thông tin này? (= không thể tra được)"],["时间还早呢，你有什么好着急的？","Thời gian còn sớm mà, bạn có gì đâu mà phải vội? (ôn 有什么好×的 – Bài 6 · điểm 2)"]],
+  "loi":[["我已经检查好几遍了，怎么会出错吗？","Câu tu từ đã có đại từ nghi vấn thì không dùng 吗 — dùng 呢 (hoặc không có trợ từ).","我已经检查好几遍了，怎么会出错呢？"],["这么好的机会，你为什么去试试呢？","Muốn khuyên “nên đi thử” phải dùng hình thức PHỦ ĐỊNH 为什么不……呢？","这么好的机会，你为什么不去试试呢？"],["A：中国文化真是读也读不完。B：谁说是呢？","Đồng tình phải nói 谁说不是呢？ (phủ định → khẳng định); 谁说是呢 lại thành phản đối.","谁说不是呢？"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["中国文化真是读也读不完。——谁说不","呢？"],"dap":[["是"]],"chon":["是","对","好"],"goiY":"“Ai bảo không phải chứ?” (= đúng thế)","giai":"Câu cố định 谁说不是呢？ biểu thị đồng tình."},
+     {"kieu":"dien","phan":["这里离苏州这么近，我们为什么","去苏州玩玩呢？"],"dap":[["不"]],"chon":["不","没","也"],"goiY":"“… sao chúng ta lại không đi Tô Châu chơi?” (= nên đi)","giai":"为什么不……呢？ phủ định → ý khẳng định."},
+     {"kieu":"dien","phan":["我们连手机都没有，","能查到这些信息啊？"],"dap":[["怎么"]],"chon":["怎么","什么","谁"],"goiY":"“… làm sao mà tra được những thông tin này?”","giai":"怎么能……？ = không thể … (ôn 连……都…… – Bài 17)."},
+     {"kieu":"dien","phan":["我已经检查好几遍了，怎么会出错","？"],"dap":[["呢"]],"chon":["呢","吗","吧"],"goiY":"“Tôi đã kiểm tra mấy lần rồi, làm sao mà sai được?”","giai":"Câu tu từ có đại từ nghi vấn dùng 呢, không dùng 吗."},
+     {"kieu":"dien","phan":["他一句中文都不会，","能看懂老舍的小说呢？"],"dap":[["哪儿"]],"chon":["哪儿","什么","谁"],"goiY":"“Cậu ấy một câu tiếng Trung cũng không biết, làm sao mà đọc hiểu tiểu thuyết của Lão Xá được?”","giai":"哪儿能……？ = không thể …; ôn 一……都不…… (HSK 3)."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["这里","离苏州","这么近","，","我们","为什么不","去苏州玩玩呢"],"dap":["这里离苏州这么近，我们为什么不去苏州玩玩呢？"],"goiY":"Ở đây gần Tô Châu thế, sao chúng ta lại không đi Tô Châu chơi?","giai":"为什么不……呢？"},
+     {"kieu":"xep","manh":["我们","连手机都没有","，","怎么能","查到","这些信息啊"],"dap":["我们连手机都没有，怎么能查到这些信息啊？"],"goiY":"Chúng ta đến điện thoại cũng không có, làm sao tra được những thông tin này?","giai":"怎么能 + V？ = không thể."},
+     {"kieu":"xep","manh":["我","已经检查好几遍了","，","怎么会","出错呢"],"dap":["我已经检查好几遍了，怎么会出错呢？"],"goiY":"Tôi đã kiểm tra mấy lần rồi, làm sao mà sai được?","giai":"怎么会……呢？ = không thể nào …"},
+     {"kieu":"dungsai","cau":"谁说不是呢？中国文化真是读也读不完。","dung":true,"giai":"Đúng: 谁说不是呢 = đồng tình."},
+     {"kieu":"dungsai","cau":"我已经检查好几遍了，怎么会出错吗？","dung":false,"sua":"我已经检查好几遍了，怎么会出错呢？","giai":"Đã có 怎么 thì không dùng 吗."},
+     {"kieu":"dungsai","cau":"这么好的机会，你为什么去试试呢？","dung":false,"sua":"这么好的机会，你为什么不去试试呢？","giai":"Khuyên nên làm → 为什么不……呢？"}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 116)","huongDan":"Hoàn thành đối thoại bằng câu hỏi tu từ có đại từ nghi vấn","cau":[
+     {"kieu":"vandung","de":"A：你看看，是不是出错了？ B：我已经检查好几遍了，＿＿＿？","goiY":"B phản bác: làm sao mà sai được?","mau":"怎么会出错呢","can":[["怎么","哪儿","哪里"]]},
+     {"kieu":"vandung","de":"A：你头发也不长，别理发了。 B：＿＿＿？＿＿＿。","goiY":"B phản bác: ai bảo không dài? rồi nêu lý do","mau":"谁说不长；你看，我已经两个多月没理发了","can":[["谁","怎么","哪儿","哪里"]]},
+     {"kieu":"vandung","de":"A：＿＿＿？这片树林里有熊，你们不能去！ B：没关系，我们会非常小心的。","goiY":"A ngăn lại bằng câu tu từ: sao các cậu có thể đi chỗ đó được? (ôn 熊, 树林 – Bài 13)","mau":"你们怎么能去那儿呢","can":[["怎么","为什么","谁","哪儿"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Tiền tiết kiệm được, sao lại không dùng để đi du lịch?","dap":["节省下来的钱，为什么不用来旅行呢？","节省下来的钱，为什么不拿来旅行呢？"],"giai":"为什么不……呢？ = nên làm."},
+     {"kieu":"dich","vn":"Bài tập nhiều thế này, một ngày làm sao làm xong được?","dap":["作业这么多，一天怎么能做完呢？","这么多作业，一天怎么做得完呢？"],"giai":"怎么能 / 怎么 + V得完 + 呢？ = không thể."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Bạn em nói “Đi du lịch chỉ tốn tiền, đọc sách là đủ rồi”. Hãy phản bác bằng câu tu từ có đại từ nghi vấn","mau":"谁说旅行只是花钱？不出门看看，怎么能真正了解一个国家呢？","can":[["谁","怎么","什么","哪儿","为什么"]]}]}
+  ]},
+
+ {"so":"3","ten":"固定格式“×就×（点儿）吧”","tenVn":"Cấu trúc 「×就×(点儿)吧」 — … thì … (một chút) thôi, cũng được (chấp nhận, nhượng bộ)",
+  "cauTruc":["Adj + 就 + Adj + (点儿) + 吧 (累就累点儿吧 / 远就远吧)","V(O) + 就 + V(O) + 吧 (堵车就堵车吧 / 去就去吧)","×就×(点儿)吧，+ lý do chấp nhận (至少……/ ……最重要 / 很值得)"],
+  "giaiThich":"Khuôn cố định biểu thị THỎA HIỆP, NHƯỢNG BỘ: người nói biết tình huống chưa hoàn hảo (mệt, xa, chậm, đắt…) nhưng chấp nhận — “thôi thì … một chút cũng được”, “… thì … vậy”. Rất hay dùng trong KHẨU NGỮ. × lặp lại NGUYÊN DẠNG ở hai bên 就: 累就累点儿吧, 远就远吧, 堵车就堵车吧. Với tính từ hay thêm 点儿 (giảm nhẹ: chỉ hơi … thôi), cuối câu có 吧. Vế sau thường nêu LÝ DO khiến mình chấp nhận: 至少房租便宜 (ít nhất tiền thuê rẻ), 安全最重要, 很值得. ⚠ Không thêm 很 / 非常 vào × (✗ 累就很累吧); 点儿 đứng TRƯỚC 吧 (✗ 累就累吧点儿); vế sau không dùng 所以. Liên hệ bài cũ: ×就是了 (Bài 2) cũng mang giọng “cứ … là được”; 你×你的吧 (Bài 17) cũng là giọng thoải mái, buông bỏ.",
+  "viDu":[["累就累点儿吧，花更少的钱去看更多的地方，很值得。","Mệt thì mệt một chút thôi, tiêu ít tiền hơn mà đi được nhiều nơi hơn, rất đáng."],["我租的房子离公司有些远，我想，远就远吧，至少房租便宜。","Nhà tôi thuê hơi xa công ty, tôi nghĩ, xa thì xa thôi, ít nhất tiền thuê rẻ."],["慢就慢点儿吧，安全最重要。","Chậm thì chậm một chút cũng được, an toàn là quan trọng nhất."],["既然你这么喜欢，贵就贵点儿吧，质量好最重要。","Đã thích như thế thì đắt một chút cũng được, chất lượng tốt là quan trọng nhất. (ôn 既然……就…… – Bài 7 · điểm 2)"]],
+  "loi":[["累就累吧点儿，很值得。","点儿 đứng trước 吧: × + 就 + × + 点儿 + 吧.","累就累点儿吧，很值得。"],["累就很累吧，花更少的钱去看更多的地方。","× lặp nguyên dạng, không thêm 很; muốn giảm nhẹ dùng 点儿.","累就累点儿吧，花更少的钱去看更多的地方。"],["远就远吧，所以房租便宜。","Vế sau nêu lý do chấp nhận (至少 / ……最重要), không dùng 所以.","远就远吧，至少房租便宜。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["虽然有些累，但累就","点儿吧，花更少的钱去看更多的地方，很值得。"],"dap":[["累"]],"chon":["累","远","慢"],"goiY":"“… mệt thì mệt một chút thôi …”","giai":"× lặp lại nguyên dạng: 累就累点儿吧."},
+     {"kieu":"dien","phan":["我租的房子离公司有些远，我想，远","远吧，至少房租便宜。"],"dap":[["就"]],"chon":["就","也","才"],"goiY":"“… xa thì xa thôi, ít nhất tiền thuê rẻ.”","giai":"× + 就 + × + 吧."},
+     {"kieu":"dien","phan":["慢就慢点儿吧，","最重要。"],"dap":[["安全"]],"chon":["安全","特点","意见"],"goiY":"“Chậm thì chậm một chút, an toàn là quan trọng nhất.”","giai":"Vế sau nêu lý do chấp nhận."},
+     {"kieu":"dien","phan":["这件衣服贵就贵点儿","，质量好就行。"],"dap":[["吧"]],"chon":["吧","吗","呢"],"goiY":"“Chiếc áo này đắt thì đắt một chút, chất lượng tốt là được.”","giai":"Khuôn kết thúc bằng 吧."},
+     {"kieu":"dien","phan":["转机累就累点儿吧，节省下来的钱就","是给自己的大红包了。"],"dap":[["当"]],"chon":["当","把","让"],"goiY":"“… tiền tiết kiệm được coi như là phong bao lì xì lớn tặng mình.”","giai":"当 (dàng) = coi như (từ mới)."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["累","就","累点儿吧","，","花更少的钱","去看更多的地方"],"dap":["累就累点儿吧，花更少的钱去看更多的地方。"],"goiY":"Mệt thì mệt một chút, tiêu ít tiền hơn mà đi được nhiều nơi hơn.","giai":"Adj就Adj点儿吧，+ lý do."},
+     {"kieu":"xep","manh":["远就远吧","，","至少","房租","便宜"],"dap":["远就远吧，至少房租便宜。"],"goiY":"Xa thì xa thôi, ít nhất tiền thuê rẻ.","giai":"至少 (Bài 5) nêu lý do chấp nhận."},
+     {"kieu":"xep","manh":["慢","就","慢点儿吧","，","安全","最重要"],"dap":["慢就慢点儿吧，安全最重要。"],"goiY":"Chậm thì chậm một chút, an toàn là quan trọng nhất.","giai":"……最重要 = lý do."},
+     {"kieu":"dungsai","cau":"贵就贵点儿吧，质量好最重要。","dung":true,"giai":"Đúng: Adj就Adj点儿吧 + lý do."},
+     {"kieu":"dungsai","cau":"累就累吧点儿，很值得。","dung":false,"sua":"累就累点儿吧，很值得。","giai":"点儿 đứng trước 吧."},
+     {"kieu":"dungsai","cau":"远就很远吧，所以房租便宜。","dung":false,"sua":"远就远吧，至少房租便宜。","giai":"Không thêm 很; vế sau dùng 至少, không dùng 所以."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 118)","huongDan":"Hoàn thành câu, dùng 「×就×(点儿)吧」 và từ trong ngoặc","cau":[
+     {"kieu":"vandung","de":"别着急，下班时间路上车多，＿＿＿。（堵车）","goiY":"Chấp nhận: tắc đường thì tắc thôi, đến muộn chút cũng không sao","mau":"堵车就堵车吧，晚点儿到也没关系","can":[["堵车就堵车"]]},
+     {"kieu":"vandung","de":"＿＿＿都要在这周末前完成，＿＿＿，至少能换来下个星期的休假。（所有）","goiY":"Vế 1: tất cả công việc; vế 2: chấp nhận vất vả (累 / 忙就……点儿吧)","mau":"所有的工作；累就累点儿吧","can":[["所有"],["就"]]},
+     {"kieu":"vandung","de":"他对这件事＿＿＿，我们觉得这是大家共同的决定，＿＿＿。（意见）","goiY":"Vế 1: anh ấy có ý kiến (không hài lòng); vế 2: có ý kiến thì cứ có ý kiến thôi","mau":"有些意见；有意见就有意见吧，我们还是按计划做","can":[["意见"],["就"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Chậm thì chậm một chút, an toàn là quan trọng nhất.","dap":["慢就慢点儿吧，安全最重要。","慢就慢点儿吧，安全是最重要的。"],"giai":"Adj就Adj点儿吧，……最重要."},
+     {"kieu":"dich","vn":"Đắt thì đắt một chút thôi, đồ tốt dùng được lâu.","dap":["贵就贵点儿吧，好东西可以用很久。","贵就贵点儿吧，好东西能用很长时间。"],"giai":"贵就贵点儿吧 + lý do chấp nhận."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Vé bay thẳng hết rồi, chỉ còn vé nối chuyến. Dùng 「×就×(点儿)吧」 động viên bạn","mau":"转机就转机吧，正好可以在西安玩一天，还能节省不少钱。","can":[["就"],["吧"]]}]}
+  ]},
+
+ {"so":"4","ten":"假设复句“要是……，（就）……，否则……”","tenVn":"Câu phức giả thiết 「要是……，(就)……，否则……」 — nếu … thì …, nếu không thì …",
+  "cauTruc":["要是 + giả thiết / điều kiện，(chủ ngữ) + 就 + hành động nên làm / kết quả，否则 + hậu quả (nếu không như vậy)","要是……的话，……就……，否则……"],
+  "giaiThich":"Đây là câu phức ba vế, ghép hai cấu trúc đã học: 要是……，就…… (Bài 1 · điểm 2: nếu … thì …) và ……，否则…… (Bài 8 · điểm 2: nếu không thì …). Vế 1 (要是) nêu một giả thiết / tình huống; vế 2 (就) nói nên làm gì hoặc kết quả trong tình huống đó; vế 3 (否则) nói HẬU QUẢ nếu không làm như vế 2 (hoặc nếu giả thiết không xảy ra). 就 có thể lược (nên sách ghi (就)); có thể thêm 的话 sau vế 要是. Tiếng Việt: “Nếu … thì …, nếu không thì …”. ⚠ Người Việt hay: (1) dùng 但是 / 所以 thay cho 否则 — sai, vì 否则 = “nếu không thì”; (2) vế 否则 lặp lại ý vế 就 — sai, vế 否则 phải nói kết quả XẤU / ngược lại; (3) đặt 否则 ngay sau vế 要是 mà bỏ vế 就. 否则 thường đi với 会 / 就 / 只能 / 可能 (否则会来不及的, 否则只能……).",
+  "viDu":[["你们要是想多了解中国，就不能只通过读书，还要多出门旅行，否则只能认识课本里的中国。","Các em nếu muốn hiểu thêm về Trung Quốc thì không thể chỉ qua sách vở, còn phải ra ngoài du lịch nhiều, nếu không thì chỉ biết một Trung Quốc trong sách giáo khoa."],["要是出去的话，咱们就爬山，否则我哪儿都不去。","Nếu đi ra ngoài thì mình đi leo núi, nếu không thì tớ chẳng đi đâu cả."],["要是你同意的话，这个计划就通过，否则可能需要重新讨论。","Nếu bạn đồng ý thì kế hoạch này được thông qua, nếu không có thể phải thảo luận lại."],["要是你不舒服，就早点儿回家休息，否则病会越来越厉害。","Nếu bạn không khỏe thì về nhà nghỉ sớm đi, nếu không bệnh sẽ ngày càng nặng. (ôn 厉害 – Bài 6 · điểm 1)"]],
+  "loi":[["要是下雨，你们就关上窗户，但是雨水会进到房间里。","Nối hậu quả “nếu không thì …” bằng 否则, không dùng 但是.","要是下雨，你们就关上窗户，否则雨水会进到房间里。"],["要是路上堵车，你们就改乘地铁，否则你们改乘地铁。","Vế 否则 phải nói hậu quả khi KHÔNG làm theo vế 就, không lặp lại vế 就.","要是路上堵车，你们就改乘地铁，否则会来不及的。"],["要是天气好，否则我们去爬山。","Thiếu vế 就; 否则 đứng ở vế thứ ba, sau vế 就.","要是天气好，我们就去爬山，否则就在家学习。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["你们","想多了解中国，就不能只通过读书。"],"dap":[["要是"]],"chon":["要是","即使","难道"],"goiY":"“Các em nếu muốn hiểu thêm về Trung Quốc thì …”","giai":"Giả thiết + 就 → 要是……就……"},
+     {"kieu":"dien","phan":["要是出去的话，咱们就爬山，","我哪儿都不去。"],"dap":[["否则"]],"chon":["否则","然后","于是"],"goiY":"“… nếu không thì tớ chẳng đi đâu cả.”","giai":"否则 = nếu không thì."},
+     {"kieu":"dien","phan":["要是你同意的话，这个计划就","，否则可能需要重新讨论。"],"dap":[["通过"]],"chon":["通过","解释","总结"],"goiY":"“… kế hoạch này được thông qua …”","giai":"计划 + 通过 = thông qua kế hoạch."},
+     {"kieu":"dien","phan":["要是路上堵车，你们","改乘地铁，否则会来不及的。"],"dap":[["就"]],"chon":["就","才","也"],"goiY":"“Nếu tắc đường thì các bạn đổi sang tàu điện ngầm …” (ôn 来不及 – Bài 4)","giai":"要是……，(主语) + 就……"},
+     {"kieu":"dien","phan":["节假日要是想出去玩，就得早点儿订机票，否则很难订","。"],"dap":[["到"]],"chon":["到","完","住"],"goiY":"“… nếu không thì rất khó đặt được.”","giai":"订到 = đặt được (bổ ngữ kết quả 到)."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["要是","你同意的话","，","这个计划","就通过","，","否则","需要重新讨论"],"dap":["要是你同意的话，这个计划就通过，否则需要重新讨论。"],"goiY":"Nếu bạn đồng ý thì kế hoạch này thông qua, nếu không phải thảo luận lại.","giai":"要是……，就……，否则……"},
+     {"kieu":"xep","manh":["要是","路上堵车","，","你们就","改乘地铁","，","否则","会来不及的"],"dap":["要是路上堵车，你们就改乘地铁，否则会来不及的。"],"goiY":"Nếu tắc đường thì các bạn đổi sang tàu điện ngầm, nếu không sẽ không kịp.","giai":"否则 + 会……的 (hậu quả)."},
+     {"kieu":"xep","manh":["要是","想说得流利","，","就得","每天练口语","，","否则","会忘的"],"dap":["要是想说得流利，就得每天练口语，否则会忘的。"],"goiY":"Nếu muốn nói lưu loát thì phải luyện nói mỗi ngày, nếu không sẽ quên.","giai":"就得 (děi) = thì phải."},
+     {"kieu":"dungsai","cau":"要是出去的话，咱们就爬山，否则我哪儿都不去。","dung":true,"giai":"Đúng: đủ ba vế 要是……就……否则……"},
+     {"kieu":"dungsai","cau":"要是下雨，你们就关上窗户，但是雨水会进到房间里。","dung":false,"sua":"要是下雨，你们就关上窗户，否则雨水会进到房间里。","giai":"“Nếu không thì” → 否则, không dùng 但是."},
+     {"kieu":"dungsai","cau":"要是天气好，否则我们去爬山。","dung":false,"sua":"要是天气好，我们就去爬山，否则就在家学习。","giai":"Thiếu vế 就; 否则 nói hậu quả ở vế thứ ba."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 120)","huongDan":"Hoàn thành câu với 「要是……，(就)……，否则……」","cau":[
+     {"kieu":"vandung","de":"要是路上堵车，你们就改乘地铁，否则＿＿＿。","goiY":"Nói hậu quả: sẽ không kịp / sẽ đến muộn (ôn 来不及 – Bài 4)","mau":"会来不及的"},
+     {"kieu":"vandung","de":"要是＿＿＿，＿＿＿，否则就在家学习。","goiY":"Nêu giả thiết (ví dụ thời tiết đẹp) và việc sẽ làm (dùng 就)","mau":"明天天气好；我们就去公园散步","can":[["就"]]},
+     {"kieu":"vandung","de":"＿＿＿，你们就关上窗户，否则＿＿＿。","goiY":"Vế 1: nêu giả thiết (trời mưa / gió to); vế 3: hậu quả nếu không đóng cửa sổ","mau":"要是外边下雨了；雨水会进到房间里","can":[["要是","如果"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Nếu bạn muốn hiểu Trung Quốc thì phải đi du lịch nhiều, nếu không chỉ biết một Trung Quốc trong sách.","dap":["要是你想了解中国，就要多出门旅行，否则只能认识书里的中国。","要是你想了解中国，就要多出去旅行，否则只能认识课本里的中国。"],"giai":"要是……就……，否则只能……"},
+     {"kieu":"dich","vn":"Nếu không khỏe thì về nhà nghỉ sớm đi, nếu không bệnh sẽ ngày càng nặng.","dap":["要是不舒服，就早点儿回家休息吧，否则病会越来越厉害。","要是你不舒服，就早点儿回家休息，否则病会越来越厉害。"],"giai":"否则 + 会 + hậu quả; ôn 厉害 (Bài 6)."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Dặn bạn sắp đi du lịch dịp lễ: phải đặt vé sớm, có dùng 「要是……就……否则……」","mau":"要是你想国庆节去旅行，就得早点儿订机票和酒店，否则很难订到。","can":[["要是"],["否则"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 121). Sách 4下 chưa có đáp án — đây là đáp án tham khảo.","dapSgk":false,"tu":["总结","百分之","登机","烦恼","特点","列"],"cau":[
+   {"s":"我们还没有看清楚，一＿＿火车就快速开了过去。","dap":["列"]},
+   {"s":"四点开始＿＿，我们准备下午两点到机场。","dap":["登机"]},
+   {"s":"经过努力，我们完成了一个大项目，得好好＿＿下经验。","dap":["总结"]},
+   {"s":"我心情不好的时候，就会干点儿自己喜欢的事情，比如听音乐，这样能让我暂时忘记＿＿。","dap":["烦恼"]},
+   {"s":"由于有＿＿八十五的人支持，这项建议终于通过了。","dap":["百分之"]},
+   {"s":"这个手机的＿＿是拍照好看，很适合年轻人。","dap":["特点"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại, sách trang 121). Đáp án tham khảo.","dapSgk":false,"tu":["旅客","流利","意见","难道","转机","解释"],"cau":[
+   {"s":"A：您好，您对我们的服务有什么＿＿吗？　B：没有，挺好的，服务员很热情。","dap":["意见"]},
+   {"s":"A：这次出国旅行，你们也要＿＿吗？　B：不，这次旅行时间紧张，我们要直接飞过去。","dap":["转机"]},
+   {"s":"A：这位＿＿，请问您有什么需要？　B：我想要一杯水。","dap":["旅客"]},
+   {"s":"A：这个问题你都＿＿清楚了，我们完全理解，会支持你们的。　B：感谢你们的理解与支持！","dap":["解释"]},
+   {"s":"A：这么冷的天，你只穿了一件衬衫，＿＿不怕感冒吗？　B：我刚锻炼完，现在不觉得冷。","dap":["难道"]},
+   {"s":"A：你中文说得真＿＿！学了多久了？　B：谢谢，我已经学了四年了。","dap":["流利"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn (sách trang 121–122). Đáp án tham khảo.","dapSgk":false,"tu":["我就出去旅行","为了更好地了解自己国家的历史","当时给我留下了很深的印象","让我看见了更大的世界"],"cau":[
+   {"s":"我小时候就喜欢看历史方面的书。有一天上课时，老师说中华文明（Zhōnghuá wénmíng, văn minh Trung Hoa）有五千多年的历史，＿＿。直到后来，学校开了历史课，老师从古代（gǔdài, thời cổ đại）讲到现在的中国，我才真正感受到中国历史之长。＿＿，我希望自己也能够“读万卷书，行万里路”。于是，放假时，＿＿，参观万里长城、故宫等历史文化景点。读书和旅行，＿＿。将来我也想去其他国家看看，了解更多国家的历史文化。","dap":["当时给我留下了很深的印象","为了更好地了解自己国家的历史","我就出去旅行","让我看见了更大的世界"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (câu dưới đây là câu mẫu tham khảo — câu của em đúng ngữ pháp, hợp tranh là đạt).","cau":[
+   {"anh":"bt-1","s":"","tu":"旅客","dap":"这位旅客拉着行李箱，正在机场等着登机。","giai":"Lượng từ lịch sự 位 cho người; V着 + V (拉着……等着); ôn 正在 (HSK 2)."},
+   {"anh":"bt-2","s":"","tu":"红包","dap":"过春节的时候，爷爷奶奶给了我好几个红包。","giai":"给 + ai + 红包 (tân ngữ kép); lượng từ 个; 好几 = nhiều."},
+   {"anh":"bt-3","s":"","tu":"大巴","dap":"这辆大巴是去机场的，坐大巴比打车便宜多了。","giai":"Lượng từ 辆; câu 是……的 nói đích đến; so sánh 比 + 多了."}]}
+],
+
+"listen": [
+ {"audio":"师傅，去火车站还要多长时间？路上堵车，可能还得二十分钟。哎呀，我的动车七点开，难道要来不及了？别着急，要是真来不及，就改乘下一趟吧。晚就晚点儿吧，安全最重要。","questions":[
+   {"q":"女的坐的动车几点开？","opts":["六点","七点","八点"],"ans":1},
+   {"q":"司机建议她怎么做？","opts":["改坐飞机","改乘下一趟","明天再去"],"ans":1}]},
+ {"audio":"您好，我去西双版纳，这是我的护照。您是在昆明转机，需要给您安排靠窗户的座位吗？好啊，谢谢！请拿好登机牌，九点开始登机。要是听到广播，就去十二号登机口排队，否则可能会错过航班。","questions":[
+   {"q":"男的在哪儿转机？","opts":["西安","昆明","杭州"],"ans":1},
+   {"q":"男的的座位在哪儿？","opts":["靠窗户","靠门","最外边"],"ans":0}]},
+ {"audio":"小王，国庆节你打算去哪儿旅行？我想去西安看看，我喜欢唐诗，想去感受一下唐朝文化。那你得早点儿订票，否则节假日很难订到。我已经订好了，转机比直飞便宜了百分之三十呢。转机多累啊！累就累点儿吧，节省下来的钱可以多买几本书。","questions":[
+   {"q":"小王为什么想去西安？","opts":["喜欢唐诗","去看朋友","去那儿工作"],"ans":0},
+   {"q":"转机的机票比直飞便宜了多少？","opts":["百分之二十","百分之三十","百分之四十"],"ans":1}]}
+],
+
+"match": [
+ {"left":"改乘","right":"下一趟车"},
+ {"left":"拿好","right":"登机牌"},
+ {"left":"总结","right":"旅行经验"},
+ {"left":"节省","right":"时间和钱"},
+ {"left":"少数","right":"民族"},
+ {"left":"身穿","right":"唐装"},
+ {"left":"流利地","right":"说出下句"},
+ {"left":"读万卷书","right":"行万里路"},
+ {"left":"要是……就……","right":"否则……"},
+ {"left":"累就累点儿","right":"吧"}
+],
+
+"fill": [
+ {"pre":"刚刚路上","blank":"堵车","post":"，差点儿晚了。","hint":"(tắc đường)","ans":"堵车","exp":"路上堵车 = trên đường bị tắc."},
+ {"pre":"没关系，晚了就改","blank":"乘","post":"下一趟。","hint":"(đi, đáp)","ans":"乘","exp":"改乘 = đổi sang đi."},
+ {"pre":"看你一直不坐下，我还在想，","blank":"难道","post":"你买的是无座票吗？","hint":"(chẳng lẽ)","ans":"难道","exp":"难道……吗？ câu tu từ / phỏng đoán."},
+ {"pre":"安检完就等着","blank":"登机","post":"了。","hint":"(lên máy bay)","ans":"登机","exp":"等着登机 = chờ lên máy bay."},
+ {"pre":"终于上来了，我的座位","blank":"靠","post":"窗户。","hint":"(sát, cạnh)","ans":"靠","exp":"靠窗户 = cạnh cửa sổ."},
+ {"pre":"咱们是在西安","blank":"转机","post":"，然后再飞西双版纳。","hint":"(nối chuyến)","ans":"转机","exp":"在 + nơi + 转机."},
+ {"pre":"安排好每天的活动，保证所有人对计划都没","blank":"意见","post":"。","hint":"(ý kiến)","ans":"意见","exp":"对……没意见 = không phản đối."},
+ {"pre":"准备越细，","blank":"烦恼","post":"越少。","hint":"(phiền não)","ans":"烦恼","exp":"越……越…… với 细 / 烦恼."},
+ {"pre":"导游向他们","blank":"解释","post":"说，被泼的水越多，新的一年就会越健康、幸福。","hint":"(giải thích)","ans":"解释","exp":"向 + ai + 解释."},
+ {"pre":"对诗人说上句，游客就能","blank":"流利","post":"地说出下句。","hint":"(trôi chảy)","ans":"流利","exp":"流利地 + V."}
+],
+
+"sort": [
+ {"words":["难道","你","买的","是","无座票","吗","？"],"ans":"难道你买的是无座票吗？"},
+ {"words":["这里","离苏州","这么近","，","我们","为什么不","去苏州","玩玩呢","？"],"ans":"这里离苏州这么近，我们为什么不去苏州玩玩呢？"},
+ {"words":["累就累","点儿吧","，","花更少的钱","去看","更多的地方","。"],"ans":"累就累点儿吧，花更少的钱去看更多的地方。"},
+ {"words":["要是","出去的话","，","咱们","就爬山","，","否则","我哪儿都不去","。"],"ans":"要是出去的话，咱们就爬山，否则我哪儿都不去。"},
+ {"words":["准备","越细","，","烦恼","越少","。"],"ans":"准备越细，烦恼越少。"},
+ {"words":["美丽中国","，","不只是","在书中","，","更是","在脚下","。"],"ans":"美丽中国，不只是在书中，更是在脚下。"}
+],
+
+"mc": [
+ {"q":"＿＿你买的是无座票吗？","opts":["难道","到底","究竟","要是"],"ans":0,"exp":"Câu tu từ 难道……吗？; 到底 / 究竟 hỏi thật, không đi với 吗."},
+ {"q":"我已经检查好几遍了，怎么会出错＿＿？","opts":["呢","吗","吧","了"],"ans":0,"exp":"Câu tu từ có đại từ nghi vấn dùng 呢, không dùng 吗."},
+ {"q":"这里离苏州这么近，我们为什么＿＿去苏州玩玩呢？","opts":["不","也","就","才"],"ans":0,"exp":"为什么不……呢？ = nên làm (phủ định → khẳng định)."},
+ {"q":"虽然有些累，但累就累＿＿吧，很值得。","opts":["点儿","很","极了","得很"],"ans":0,"exp":"×就×点儿吧 — 点儿 giảm nhẹ, đứng trước 吧."},
+ {"q":"要是出去的话，咱们就爬山，＿＿我哪儿都不去。","opts":["否则","于是","然后","而且"],"ans":0,"exp":"否则 = nếu không thì."},
+ {"q":"去西安的旅客开始＿＿，请拿好登机牌按顺序排队。","opts":["登机","安检","转机","值机"],"ans":0,"exp":"开始登机 = bắt đầu lên máy bay."},
+ {"q":"节省下来的钱就＿＿是给自己的大“红包”了。","opts":["当","让","把","被"],"ans":0,"exp":"当 (dàng) = coi như."},
+ {"q":"在西安转机，机票价格比直飞便宜了＿＿四十多。","opts":["百分之","一半","多少","左右"],"ans":0,"exp":"百分之 + số = … %."},
+ {"q":"白家月等人想了解少数＿＿泼水节，就去了西双版纳。","opts":["民族","特点","道路","意见"],"ans":0,"exp":"少数民族 = dân tộc thiểu số."},
+ {"q":"这么冷的天，你只穿了一件衬衫，＿＿不怕感冒吗？","opts":["难道","要是","否则","所有"],"ans":0,"exp":"难道 + 不 + V + 吗？ = ý khẳng định (sẽ bị cảm đấy)."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và thảo luận nhóm), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions":[
+  {"q_zh":"你喜欢旅行吗？如果喜欢，你喜欢去看自然景色还是去历史文化景点？","q_vn":"Bạn có thích du lịch không? Nếu thích, bạn thích đi ngắm cảnh thiên nhiên hay đến các điểm văn hóa lịch sử?","hint":"我很喜欢旅行。比起……，我更喜欢……，因为……。要是……，就……，否则……","sample":"我很喜欢旅行。比起自然景色，我更喜欢去历史文化景点，因为我对历史特别感兴趣。去年我去了西安，看了很多古代的建筑，还遇到了身穿唐装的人，感觉自己好像回到了唐朝。我觉得，要是想真正了解一个国家，就要去看看它的历史文化景点，否则只能认识书里的它。","sample_vn":"Tôi rất thích du lịch. So với cảnh thiên nhiên, tôi thích đến các điểm văn hóa lịch sử hơn, vì tôi đặc biệt hứng thú với lịch sử. Năm ngoái tôi đi Tây An, xem rất nhiều công trình cổ, còn gặp người mặc áo Đường trang, cảm giác như mình quay về thời nhà Đường. Tôi thấy, nếu muốn thật sự hiểu một đất nước thì phải đi xem các điểm văn hóa lịch sử của nó, nếu không chỉ biết nó qua sách thôi.","note":"Câu hỏi phần Khởi động của sách; dùng 要是……就……否则…… (điểm 4)."},
+  {"q_zh":"旅行时，你一般会坐火车还是坐飞机？为什么？","q_vn":"Khi đi du lịch, bạn thường đi tàu hỏa hay đi máy bay? Vì sao?","hint":"我一般坐……，因为……。……就……点儿吧，……","sample":"旅行时，如果不太远，我一般坐动车，因为动车车速快，还能一边看窗户外边的风景，一边和朋友聊天儿。要是去很远的地方，我就坐飞机，否则在路上的时间太长了。有时候我会选择转机，虽然有些累，但累就累点儿吧，机票便宜不少，节省下来的钱可以多去几个地方。","sample_vn":"Khi đi du lịch, nếu không xa lắm tôi thường đi tàu cao tốc, vì tàu cao tốc nhanh, lại vừa ngắm cảnh ngoài cửa sổ vừa trò chuyện với bạn được. Nếu đi nơi rất xa thì tôi đi máy bay, nếu không thời gian trên đường quá dài. Có lúc tôi chọn bay nối chuyến, tuy hơi mệt nhưng mệt thì mệt một chút thôi, vé rẻ hơn khá nhiều, tiền tiết kiệm được có thể đi thêm mấy nơi.","note":"Câu hỏi phần Khởi động của sách; dùng ×就×点儿吧 (điểm 3), 要是……就……否则…… (điểm 4)."},
+  {"q_zh":"上车后，陈天中为什么没有直接坐到自己的座位上？安妮都有哪些安排？","q_vn":"Lên tàu rồi, vì sao Trần Thiên Trung không ngồi ngay vào chỗ của mình? Annie có những sắp xếp gì?","hint":"因为他的座位……，他想先……。安妮建议……，到站后……，因为……","sample":"陈天中没有直接坐到自己的座位上，是因为他的座位就在前边，他想先站在那儿跟大家说说话。安妮的安排是：这列车晚上七点多到杭州，大家在车上吃晚餐，到站后就先去西湖，因为夜里的西湖更美。","sample_vn":"Trần Thiên Trung không ngồi ngay vào chỗ vì chỗ của cậu ấy ở ngay phía trước, cậu ấy muốn đứng đó nói chuyện với mọi người một lát. Sắp xếp của Annie là: chuyến tàu này hơn bảy giờ tối đến Hàng Châu, mọi người ăn tối trên tàu, đến ga thì đi Tây Hồ trước, vì Tây Hồ ban đêm đẹp hơn.","note":"Câu hỏi bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"安妮、白家月和陈天中坐动车去旅行。由于路上堵车，安妮……。白家月说，晚了……。接着，白家月问陈天中……，难道……吗？……","sample":"安妮、白家月和陈天中坐动车去旅行。由于路上堵车，安妮差点儿晚了。白家月说，晚了就改乘下一趟。接着，白家月问陈天中坐哪儿，难道买的是无座票吗？陈天中说他的座位就在前边，他想先站着跟大家说说话。安妮说这列车晚上七点多到杭州，建议在车上吃晚餐，到站后就先去西湖，夜里的西湖更美。陈天中说，后天坐大巴去苏州，看苏州园林。白家月说，中国太大了，真是看也看不完。","sample_vn":"Annie, Bạch Gia Nguyệt và Trần Thiên Trung đi tàu cao tốc đi du lịch. Do tắc đường, Annie suýt nữa thì muộn. Bạch Gia Nguyệt nói, muộn thì đổi sang chuyến sau… Bạch Gia Nguyệt nói, Trung Quốc rộng quá, đúng là xem cũng xem không hết.","note":"Bài tập 复述 của sách (trang 113); ôn 由于 (Bài 2 · điểm 4)."},
+  {"q_zh":"安妮为什么觉得中国文化读也读不完？李文他们的目的地是西安吗？为什么？","q_vn":"Vì sao Annie thấy văn hóa Trung Quốc đọc cũng không hết? Điểm đến của nhóm Lý Văn có phải là Tây An không? Vì sao?","hint":"因为中国文化有……。不是，他们是在西安……，然后……","sample":"安妮觉得中国文化读也读不完，因为中国文化有几千年的历史，内容非常丰富，光是唐诗就有很多很多。李文他们的目的地不是西安，而是西双版纳，他们只是在西安转机，然后再飞西双版纳，去感受泼水节。","sample_vn":"Annie thấy văn hóa Trung Quốc đọc cũng không hết vì văn hóa Trung Quốc có lịch sử mấy nghìn năm, nội dung vô cùng phong phú, riêng thơ Đường thôi đã rất nhiều. Điểm đến của nhóm Lý Văn không phải Tây An mà là Tây Song Bản Nạp; họ chỉ nối chuyến ở Tây An rồi bay tiếp đến Tây Song Bản Nạp để trải nghiệm Tết té nước.","note":"Câu hỏi bài khoá 2; ôn 不是……而是…… (Bài 11 · điểm 3)."},
+  {"q_zh":"为什么节假日要早点儿订机票？为什么他们觉得转机虽然累，但值得？","q_vn":"Vì sao dịp lễ phải đặt vé máy bay sớm? Vì sao họ thấy bay nối chuyến tuy mệt nhưng đáng?","hint":"因为节假日……，否则……。因为转机比直飞……，累就累点儿吧，……","sample":"节假日出去旅行的人特别多，所以要早点儿订机票，否则很难订到。他们觉得转机虽然累，但值得，因为转机比直飞便宜，这次去西双版纳，机票价格便宜了百分之四十多。累就累点儿吧，花更少的钱可以去看更多的地方，节省下来的钱就当是给自己的大红包了。","sample_vn":"Dịp lễ người đi du lịch rất đông, nên phải đặt vé máy bay sớm, nếu không rất khó đặt được. Họ thấy nối chuyến tuy mệt nhưng đáng, vì nối chuyến rẻ hơn bay thẳng, lần này đi Tây Song Bản Nạp giá vé rẻ hơn hơn 40%. Mệt thì mệt một chút thôi, tiêu ít tiền hơn mà đi được nhiều nơi hơn, tiền tiết kiệm được coi như phong bao lì xì lớn tặng mình.","note":"Câu hỏi bài khoá 3; dùng ×就×点儿吧 (điểm 3), ôn 否则 (Bài 8)."},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"来中国留学后，白家月、安妮和陈天中常……，从中……。他们还总结出几点……：第一，……。第二，……，否则……。第三，……","sample":"来中国留学后，白家月、安妮和陈天中常外出旅行，从中了解中国。他们还总结出几点旅行经验：第一，好计划是成功的一半。旅行前，要了解目的地天气、道路交通特点等，安排好每天的活动，保证所有人对计划都没意见。准备越细，烦恼越少。第二，节假日早点儿订机票、酒店和各种门票，否则很难订到。第三，转机会比直飞更便宜。此次去西双版纳，在西安转机，机票价格比直飞便宜了百分之四十多。虽然有些累，但累就累点儿吧，花更少的钱去看更多的地方，很值得，节省下来的钱就当是给自己的大“红包”了。","sample_vn":"Sau khi đến Trung Quốc du học, Bạch Gia Nguyệt, Annie và Trần Thiên Trung thường ra ngoài du lịch, qua đó tìm hiểu Trung Quốc. Họ còn đúc kết mấy kinh nghiệm du lịch… số tiền tiết kiệm được coi như phong bao lì xì lớn tặng chính mình.","note":"Bài tập 复述 của sách (trang 118)."},
+  {"q_zh":"安妮在西安遇见了什么人？有什么感受？外出旅行后，白家月他们有什么感受？","q_vn":"Annie gặp ai ở Tây An? Cô ấy cảm nhận thế nào? Sau khi đi du lịch, nhóm Bạch Gia Nguyệt có cảm nhận gì?","hint":"她遇见了身穿……的“对诗人”，对诗人说上句，……。她觉得……。虽然……，但是……。他们认为，美丽中国，不只是……，更是……","sample":"安妮在西安遇见了身穿唐装的“对诗人”。对诗人说上句，游客就能流利地说出下句，所以她觉得在西安，唐诗活了。外出旅行后，白家月他们虽然已经去了很多地方，但是觉得还不够。他们认为，美丽中国，不只是在书中，更是在脚下。要是想真正了解中国，就要多出门看看。","sample_vn":"Ở Tây An, Annie gặp những “người đối thơ” mặc áo Đường trang. Người đối thơ đọc câu trên, du khách liền đọc trôi chảy câu dưới, nên cô thấy ở Tây An thơ Đường như sống lại. Sau khi đi du lịch, nhóm Bạch Gia Nguyệt tuy đã đi rất nhiều nơi nhưng vẫn thấy chưa đủ. Họ cho rằng Trung Quốc tươi đẹp không chỉ ở trong sách mà còn ở dưới chân. Nếu muốn thật sự hiểu Trung Quốc thì phải ra ngoài xem nhiều hơn.","note":"Câu hỏi bài khoá 4; dùng 要是……就…… (điểm 4)."},
+  {"q_zh":"小组讨论：三至四人一组，互相介绍外出旅行时，哪个地方给自己留下的印象最深，为什么？讨论后，由一人向大家介绍。","q_vn":"Thảo luận nhóm: Nhóm 3–4 người, giới thiệu cho nhau khi đi du lịch, nơi nào để lại cho mình ấn tượng sâu sắc nhất, vì sao? Thảo luận xong, một người đại diện trình bày trước lớp.","hint":"给我留下印象最深的地方是……。那里的特点是……。难道……吗？……就……点儿吧。要是……，就……，否则……。我们组认为……","sample":"大家好！我们组讨论的题目是“给自己留下印象最深的地方”。我先说说我自己：给我留下印象最深的地方是云南的西双版纳。去年四月，我们坐飞机去那儿，在昆明转机，虽然有些累，但累就累点儿吧，机票便宜了百分之三十多。那里的特点是少数民族多，文化很丰富。我们正好赶上泼水节，导游向我们解释说，被泼的水越多，新的一年就越幸福。所以虽然我被泼了一身水，却一点儿也不生气。小林说，给她留下印象最深的是西安，她遇到了身穿唐装的“对诗人”，觉得唐诗活了。阿明最喜欢杭州的西湖，他说夜里的西湖更美，谁看了不喜欢呢？讨论以后，我们组都认为：读书很重要，但是难道只读书就够了吗？要是想真正了解一个地方，就要亲自去看看，否则只能认识书里的它。这就是“读万卷书，行万里路”。","sample_vn":"Chào cả lớp! Chủ đề nhóm em thảo luận là “Nơi để lại ấn tượng sâu sắc nhất”. Trước hết em nói về mình: nơi để lại cho em ấn tượng sâu nhất là Tây Song Bản Nạp ở Vân Nam. Tháng Tư năm ngoái, chúng em đi máy bay đến đó, nối chuyến ở Côn Minh, tuy hơi mệt nhưng mệt thì mệt chút thôi, vé rẻ hơn hơn 30%. Đặc điểm ở đó là có nhiều dân tộc thiểu số, văn hóa rất phong phú. Chúng em đúng lúc gặp Tết té nước, hướng dẫn viên giải thích rằng càng bị té nhiều nước thì năm mới càng hạnh phúc, nên dù bị té ướt cả người em cũng chẳng giận chút nào. Tiểu Lâm nói nơi ấn tượng nhất với bạn ấy là Tây An, bạn ấy gặp “người đối thơ” mặc áo Đường trang, thấy thơ Đường như sống lại. A Minh thích nhất Tây Hồ ở Hàng Châu, bạn ấy nói Tây Hồ ban đêm còn đẹp hơn, ai xem mà chẳng thích? Thảo luận xong, cả nhóm cho rằng: đọc sách rất quan trọng, nhưng chẳng lẽ chỉ đọc sách là đủ sao? Nếu muốn thật sự hiểu một nơi thì phải tự mình đến xem, nếu không chỉ biết nó qua sách. Đó chính là “đọc vạn quyển sách, đi vạn dặm đường”.","note":"Hoạt động 任务活动 · 小组讨论 (thảo luận nhóm) của sách, trang 122 — dùng đủ 4 điểm ngữ pháp: 难道, câu tu từ với đại từ nghi vấn (谁……呢？), ×就×点儿吧, 要是……就……否则……; ôn 却 (Bài 16)."}
+ ]
+},
+
+"translate": [
+ ["Muộn thì đổi sang đi chuyến sau.","晚了就改乘下一趟。"],
+ ["Chẳng lẽ cậu mua vé không có chỗ ngồi à?","难道你买的是无座票吗？"],
+ ["Văn hóa Trung Quốc mấy nghìn năm, đúng là đọc cũng đọc không hết.","几千年的中国文化，真是读也读不完。"],
+ ["Mệt thì mệt một chút thôi, tiêu ít tiền hơn mà đi được nhiều nơi hơn, rất đáng.","累就累点儿吧，花更少的钱去看更多的地方，很值得。"],
+ ["Dịp lễ phải đặt vé máy bay sớm một chút, nếu không thì rất khó đặt được.","节假日要早点儿订机票，否则很难订到。"],
+ ["Các em nếu muốn hiểu thêm về Trung Quốc thì không thể chỉ qua sách vở.","你们要是想多了解中国，就不能只通过读书。"]
+],
+"translateRev": [
+ ["Kiểm tra an ninh xong là chờ lên máy bay thôi.","安检完就等着登机了。"],
+ ["Cuối cùng cũng lên được rồi, chỗ của mình cạnh cửa sổ.","终于上来了，我的座位靠窗户。"],
+ ["Chúng ta nối chuyến ở Tây An, sau đó mới bay đi Tây Song Bản Nạp.","咱们是在西安转机，然后再飞西双版纳。"],
+ ["Chuẩn bị càng kỹ, phiền não càng ít.","准备越细，烦恼越少。"],
+ ["Trung Quốc tươi đẹp không chỉ ở trong sách, mà còn ở dưới chân.","美丽中国，不只是在书中，更是在脚下。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":140,"tieuDe":"写作 — viết theo đề của sách (ít nhất 140 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết “mẹo nhỏ” cho chuyến đi xa (写作)","gioiThieu":"Đề 写作 của sách HSK 4 (3.0) yêu cầu dựa vào kinh nghiệm du lịch của bản thân, viết một bản 小贴士 (mẹo nhỏ, lời nhắc) ít nhất 140 chữ, nhắc người đi du lịch đường dài cần đặc biệt chú ý những vấn đề gì — giống phần 书写 của đề thi HSK 4 mới.","buoc":["Đọc kỹ đề: thể loại là 小贴士 — viết thành các điểm nhắc nhở rõ ràng (第一、第二…) dựa vào kinh nghiệm thật của em.","Lập dàn ý theo các câu hỏi gợi ý: trước khi đi → đặt vé → ở sân bay / ga tàu → đồ đạc mang theo → đến nơi.","Dùng từ mới và 4 điểm ngữ pháp của bài (khung “Từ, cấu trúc nên dùng”): 要是……就……否则……, ×就×点儿吧, 难道……吗？, câu tu từ với 怎么 / 谁.","Nối các ý bằng 第一 / 第二 / 第三 / 最后 hoặc 首先……然后…… (Bài 14).","Câu mở nói vì sao cần kế hoạch, câu kết nói ý nghĩa của du lịch; tự soát số chữ (≥ 140) và lỗi chữ Hán trước khi nộp."]},
+ "de":"远距离旅行一般都要做详细计划。请根据旅行经验，写一个小贴士，提醒旅行者应该特别注意哪些问题，不少于140字。",
+ "prompt":"Du lịch đường dài thường phải lập kế hoạch chi tiết. Hãy dựa vào kinh nghiệm du lịch của em, viết một bản “mẹo nhỏ” nhắc người đi du lịch cần đặc biệt chú ý những vấn đề gì, không ít hơn 140 chữ.",
+ "dan":[
+  {"hoi":"出发前要做哪些准备？","goiY":"了解目的地的天气、道路交通特点……；准备越细，烦恼越少"},
+  {"hoi":"怎么订票又方便又便宜？","goiY":"节假日要早点儿订票，否则……；转机虽然累，但累就累点儿吧……"},
+  {"hoi":"在机场或火车站要注意什么？","goiY":"要是坐飞机，就要提前……到机场，否则……；值机、安检……"},
+  {"hoi":"带东西要注意什么？","goiY":"护照、登机牌……要放好，难道你想……吗？"},
+  {"hoi":"到了目的地以后要注意什么？","goiY":"尊重少数民族的习惯；听导游的解释；旅行不只是……，更是……"}],
+ "tuNen":["计划","道路","特点","所有","细","烦恼","节省","转机","值机","安检","登机","航班","旅客","导游","解释","少数民族","百分之"],
+ "cauTruc":[
+  {"ten":"要是……，就……，否则……","nhan":"否则","vd":"要是节假日出去玩，就要早点儿订机票，否则很难订到。","khi":"Nhắc việc phải làm và hậu quả nếu không làm."},
+  {"ten":"×就×(点儿)吧","nhan":"就×点儿吧","vd":"转机虽然有些累，但累就累点儿吧，可以节省不少钱。","khi":"Khuyên chấp nhận một điều chưa hoàn hảo để có lợi hơn."},
+  {"ten":"难道……吗？","nhan":"难道","vd":"难道你愿意到了机场才发现忘带护照吗？","khi":"Nhấn mạnh lời nhắc bằng câu tu từ."},
+  {"ten":"怎么能 / 谁……呢？","nhan":"怎么","vd":"不提前了解天气，怎么能带对衣服呢？","khi":"Câu tu từ với đại từ nghi vấn — tăng sức thuyết phục."},
+  {"ten":"越……，越……","nhan":"越","vd":"准备越细，烦恼越少。","khi":"Câu MỞ hoặc KẾT: chốt ý quan trọng của kế hoạch."}],
+ "checklist":[
+  "Đủ ít nhất 140 chữ Hán chưa?",
+  "Đã viết đúng thể loại 小贴士 — các điểm nhắc nhở rõ ràng (第一、第二…), dựa vào kinh nghiệm thật chưa?",
+  "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (难道、câu tu từ với đại từ nghi vấn、×就×点儿吧、要是……就……否则……) chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài chưa?",
+  "Có câu mở và câu kết rõ ràng, các ý nối với nhau bằng từ nối chưa?"],
+ "model":"远距离旅行要注意什么呢？好计划是成功的一半，准备越细，烦恼越少。第一，出发前要了解目的地的天气和道路交通特点，安排好每天的活动。不提前了解天气，怎么能带对衣服呢？第二，节假日要早点儿订机票、酒店和门票，否则很难订到。要是想节省钱，可以选择转机，机票有时能便宜百分之三十以上。虽然有些累，但累就累点儿吧，节省下来的钱可以多去几个地方。第三，坐飞机至少要提前两个小时到机场，值机、安检都需要时间，要是晚了，就可能错过航班。第四，护照、登机牌等重要的东西一定要放好，难道你愿意到了机场才发现忘带护照吗？最后，到了少数民族地区，要尊重那里的文化和习惯，多听听导游的解释。旅行不只是看风景，更是了解世界的好机会。"
+}
+}

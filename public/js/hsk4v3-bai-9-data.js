@@ -37,7 +37,7 @@ var vocabData = [
    },
    {
     "zh": "祝你一路平安",
-    "py": "Zhù nǐ yí lù píng'ān",
+    "py": "Zhù nǐ yílù píng'ān",
     "vn": "chúc bạn thượng lộ bình an"
    }
   ],
@@ -93,7 +93,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu bạn thi đỗ, tôi sẽ mời bạn ăn cơm. Chúc bạn thi tốt!",
     "answer": "要是你考上了，我就请你吃饭。祝你考试顺利！",
-    "answerPy": "Yàoshi nǐ kǎo shàng le, wǒ jiù qǐng nǐ chīfàn. Zhù nǐ kǎoshì shùnlì!",
+    "answerPy": "Yàoshi nǐ kǎoshàng le, wǒ jiù qǐng nǐ chīfàn. Zhù nǐ kǎoshì shùnlì!",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2).",
     "pair": "要是……就……"
    }
@@ -161,7 +161,7 @@ var vocabData = [
    },
    {
     "zh": "情人节那天，他送了女朋友一盒巧克力。",
-    "py": "Qíng rén jié nà tiān, tā sòng le nǚpéngyǒu yì hé qiǎokèlì.",
+    "py": "Qíng rén jié nàtiān, tā sòng le nǚpéngyou yì hé qiǎokèlì.",
     "vn": "Hôm lễ tình nhân, anh ấy tặng bạn gái một hộp sô-cô-la."
    }
   ],
@@ -319,7 +319,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nhận được món quà của bạn, tôi cảm động đến mức không nói nên lời.",
     "answer": "收到你的礼物，我感动得说不出话来。",
-    "answerPy": "Shōudào nǐ de lǐwù, wǒ gǎndòng de shuō bù chū huà lái.",
+    "answerPy": "Shōudào nǐ de lǐwù, wǒ gǎndòng de shuō bu chū huà lái.",
     "note": "Ôn bổ ngữ trạng thái Adj + 得 + … (HSK 3).",
     "pair": "感动得……"
    },
@@ -327,7 +327,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Câu chuyện của cô ấy đã làm mọi người cảm động, khiến chúng tôi hiểu tình bạn hơn.",
     "answer": "她的故事感动了大家，使我们更理解友情。",
-    "answerPy": "Tā de gùshì gǎndòng le dàjiā, shǐ wǒmen gèng lǐjiě yǒuqíng.",
+    "answerPy": "Tā de gùshi gǎndòng le dàjiā, shǐ wǒmen gèng lǐjiě yǒuqíng.",
     "note": "Ôn 使 (Bài 7 · điểm 4).",
     "pair": "使 + người + V / Adj"
    }
@@ -360,7 +360,7 @@ var vocabData = [
    },
    {
     "zh": "浪漫的晚餐",
-    "py": "Làngmàn de wǎn cān",
+    "py": "Làngmàn de wǎncān",
     "vn": "bữa tối lãng mạn"
    },
    {
@@ -370,7 +370,7 @@ var vocabData = [
    },
    {
     "zh": "细心又浪漫",
-    "py": "Xì xīn yòu làngmàn",
+    "py": "Xìxīn yòu làngmàn",
     "vn": "chu đáo lại lãng mạn"
    }
   ],
@@ -385,17 +385,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "你真是细心又浪漫。",
-  "ex_py": "Nǐ zhēn shì xì xīn yòu làngmàn.",
+  "ex_py": "Nǐ zhēnshì xìxīn yòu làngmàn.",
   "ex_vn": "Anh đúng là vừa chu đáo vừa lãng mạn.",
   "exList": [
    {
     "zh": "你真是细心又浪漫。",
-    "py": "Nǐ zhēn shì xì xīn yòu làngmàn.",
+    "py": "Nǐ zhēnshì xìxīn yòu làngmàn.",
     "vn": "Anh đúng là vừa chu đáo vừa lãng mạn."
    },
    {
     "zh": "在海边看日落，既浪漫又舒服。",
-    "py": "Zài hǎi biān kàn rì luò, jì làngmàn yòu shūfu.",
+    "py": "Zài hǎibiān kàn rì luò, jì làngmàn yòu shūfu.",
     "vn": "Ngắm hoàng hôn bên bờ biển vừa lãng mạn vừa dễ chịu."
    }
   ],
@@ -438,7 +438,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nếu muốn lãng mạn một chút thì chúng ta ra biển ngắm hoàng hôn đi.",
     "answer": "要是想浪漫一点儿，我们就去海边看日落吧。",
-    "answerPy": "Yàoshi xiǎng làngmàn yìdiǎnr, wǒmen jiù qù hǎi biān kàn rì luò ba.",
+    "answerPy": "Yàoshi xiǎng làngmàn yìdiǎnr, wǒmen jiù qù hǎibiān kàn rì luò ba.",
     "note": "Ôn 要是……就…… (Bài 1 · điểm 2).",
     "pair": "要是……就……"
    }
@@ -471,12 +471,12 @@ var vocabData = [
    },
    {
     "zh": "幽默的话",
-    "py": "Yōumò dehuà",
+    "py": "Yōumò de huà",
     "vn": "câu nói dí dỏm"
    },
    {
     "zh": "有幽默感",
-    "py": "Yǒu yōumò gǎn",
+    "py": "Yǒu yōumògǎn",
     "vn": "có khiếu hài hước"
    },
    {
@@ -617,7 +617,7 @@ var vocabData = [
    },
    {
     "zh": "玩拼图需要很多耐心，我玩了一会儿就玩不下去了。",
-    "py": "Wán pīn tú xūyào hěn duō nàixīn, wǒ wán le yíhuìr jiù wán bú xiàqù le.",
+    "py": "Wán pīn tú xūyào hěn duō nàixīn, wǒ wán le yíhuìr jiù wán bu xiàqu le.",
     "vn": "Chơi xếp hình cần rất nhiều kiên nhẫn, tôi chơi một lúc là không chơi nổi nữa."
    }
   ],
@@ -660,7 +660,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bất kể học sinh hỏi bao nhiêu lần, cô giáo đều kiên nhẫn giải thích.",
     "answer": "不管学生问多少次，老师都耐心地解释。",
-    "answerPy": "Bùguǎn xuésheng wèn duōshǎo cì, lǎoshī dōu nàixīn de jiěshì.",
+    "answerPy": "Bùguǎn xuésheng wèn duōshao cì, lǎoshī dōu nàixīn de jiěshì.",
     "note": "Ôn 不管……都…… (Bài 8 · điểm 1).",
     "pair": "不管……都……"
    }
@@ -728,7 +728,7 @@ var vocabData = [
    },
    {
     "zh": "这家小店的咖啡又香又便宜，吸引了不少年轻人。",
-    "py": "Zhè jiā xiǎo diàn de kāfēi yòu xiāng yòu piányi, xīyǐn le bù shào niánqīngrén.",
+    "py": "Zhè jiā xiǎodiàn de kāfēi yòu xiāng yòu piányi, xīyǐn le bùshǎo niánqīngrén.",
     "vn": "Cà phê của tiệm nhỏ này vừa thơm vừa rẻ, thu hút không ít người trẻ."
    }
   ],
@@ -829,17 +829,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "不过我当时也只把你当普通朋友。",
-  "ex_py": "Búguò wǒ dāngshí yě zhǐ bǎ nǐ dāng pǔ tōng péngyou.",
+  "ex_py": "Búguò wǒ dāngshí yě zhǐ bǎ nǐ dāng pǔtōng péngyou.",
   "ex_vn": "Có điều lúc đó em cũng chỉ coi anh là bạn bình thường.",
   "exList": [
    {
     "zh": "不过我当时也只把你当普通朋友。",
-    "py": "Búguò wǒ dāngshí yě zhǐ bǎ nǐ dāng pǔ tōng péngyou.",
+    "py": "Búguò wǒ dāngshí yě zhǐ bǎ nǐ dāng pǔtōng péngyou.",
     "vn": "Có điều lúc đó em cũng chỉ coi anh là bạn bình thường."
    },
    {
     "zh": "我当时太紧张了，一句话也说不出来。",
-    "py": "Wǒ dāngshí tài jǐnzhāng le, yí jù huà yě shuō bù chū lái.",
+    "py": "Wǒ dāngshí tài jǐnzhāng le, yí jù huà yě shuō bu chūlai.",
     "vn": "Lúc đó tôi căng thẳng quá, một câu cũng không nói ra được."
    }
   ],
@@ -874,7 +874,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lúc đó tôi không kịp nói cảm ơn anh ấy.",
     "answer": "我当时没来得及跟他说谢谢。",
-    "answerPy": "Wǒ dāngshí méi láidejí gēn tā shuō xièxiè.",
+    "answerPy": "Wǒ dāngshí méi láidejí gēn tā shuō xièxie.",
     "note": "Ôn 来得及 / 来不及 (Bài 4 · điểm 4).",
     "pair": "当时没来得及……"
    },
@@ -882,7 +882,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Lúc đó tôi chỉ coi cô ấy là bạn bình thường, có điều bây giờ cô ấy là bạn gái tôi rồi.",
     "answer": "我当时只把她当普通朋友，不过现在她是我的女朋友了。",
-    "answerPy": "Wǒ dāngshí zhǐ bǎ tā dāng pǔ tōng péngyou, búguò xiànzài tā shì wǒ de nǚpéngyǒu le.",
+    "answerPy": "Wǒ dāngshí zhǐ bǎ tā dāng pǔtōng péngyou, búguò xiànzài tā shì wǒ de nǚpéngyou le.",
     "note": "Ôn 不过 (Bài 2 · điểm 2); 把……当…… = coi … là ….",
     "pair": "把……当……"
    }
@@ -950,7 +950,7 @@ var vocabData = [
    },
    {
     "zh": "快走吧，再不走就来不及了，我们会错过火车的。",
-    "py": "Kuài zǒu ba, zài bù zǒu jiù láibùjí le, wǒmen huì cuòguò huǒchē de.",
+    "py": "Kuài zǒu ba, zài bù zǒu jiù láibují le, wǒmen huì cuòguò huǒchē de.",
     "vn": "Đi nhanh thôi, không đi ngay thì không kịp, chúng ta sẽ lỡ tàu mất."
    }
   ],
@@ -1162,17 +1162,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "看到一飞和同乐结婚后这么幸福，我这个介绍人也特别开心。",
-  "ex_py": "Kàn dào Yīfēi hé Tónglè jiéhūn hòu zhème xìngfú, wǒ zhège jièshào rén yě tèbié kāixīn.",
+  "ex_py": "Kàndào Yīfēi hé Tónglè jiéhūn hòu zhème xìngfú, wǒ zhège jièshào rén yě tèbié kāixīn.",
   "ex_vn": "Thấy Nhất Phi và Đồng Lạc cưới nhau xong hạnh phúc như vậy, người làm mai như em cũng đặc biệt vui.",
   "exList": [
    {
     "zh": "看到一飞和同乐结婚后这么幸福，我这个介绍人也特别开心。",
-    "py": "Kàn dào Yīfēi hé Tónglè jiéhūn hòu zhème xìngfú, wǒ zhège jièshào rén yě tèbié kāixīn.",
+    "py": "Kàndào Yīfēi hé Tónglè jiéhūn hòu zhème xìngfú, wǒ zhège jièshào rén yě tèbié kāixīn.",
     "vn": "Thấy Nhất Phi và Đồng Lạc cưới nhau xong hạnh phúc như vậy, người làm mai như em cũng đặc biệt vui."
    },
    {
     "zh": "随着生活越来越好，老人们也越来越幸福。",
-    "py": "Suízhe shēnghuó yuèláiyuè hǎo, lǎorén men yě yuèláiyuè xìngfú.",
+    "py": "Suízhe shēnghuó yuèláiyuè hǎo, lǎorénmen yě yuèláiyuè xìngfú.",
     "vn": "Cùng với cuộc sống ngày càng tốt lên, người già cũng ngày càng hạnh phúc."
    }
   ],
@@ -1243,7 +1243,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "尽管如此",
-    "py": "Jǐnguǎn rú cǐ",
+    "py": "Jǐnguǎn rúcǐ",
     "vn": "mặc dù vậy"
    },
    {
@@ -1258,7 +1258,7 @@ var vocabData = [
    },
    {
     "zh": "尽管……，还是……",
-    "py": "Jǐnguǎn……, háishì……",
+    "py": "Jǐnguǎn……, háishi……",
     "vn": "dù … vẫn …"
    }
   ],
@@ -1283,7 +1283,7 @@ var vocabData = [
    },
    {
     "zh": "尽管外边下着大雨，可是来看比赛的人还是很多。",
-    "py": "Jǐnguǎn wàibian xià zhe dà yǔ, kěshì lái kàn bǐsài de rén háishì hěn duō.",
+    "py": "Jǐnguǎn wàibian xià zhe dàyǔ, kěshì lái kàn bǐsài de rén háishi hěn duō.",
     "vn": "Mặc dù bên ngoài đang mưa to nhưng người đến xem trận đấu vẫn rất đông."
    }
   ],
@@ -1326,7 +1326,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mặc dù công việc rất bận, nhưng mỗi tuần anh ấy gọi điện cho bố mẹ ít nhất hai lần.",
     "answer": "尽管工作很忙，但是他每个星期至少给父母打两次电话。",
-    "answerPy": "Jǐnguǎn gōngzuò hěn máng, dànshì tā měi gè xīngqī zhìshǎo gěi fù mǔ dǎ liǎng cì diànhuà.",
+    "answerPy": "Jǐnguǎn gōngzuò hěn máng, dànshì tā měi gè xīngqī zhìshǎo gěi fùmǔ dǎ liǎng cì diànhuà.",
     "note": "Ôn 至少 (Bài 5 · điểm 1).",
     "pair": "尽管……，但是……"
    }
@@ -1384,12 +1384,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "特别是同乐人好，性格也好，很有责任感。",
-  "ex_py": "Tèbié shì Tónglè rén hǎo, xìnggé yě hǎo, hěn yǒu zérèn gǎn.",
+  "ex_py": "Tèbié shì Tónglè rén hǎo, xìnggé yě hǎo, hěn yǒu zérèngǎn.",
   "ex_vn": "Đặc biệt là Đồng Lạc người tốt, tính cách cũng tốt, rất có tinh thần trách nhiệm.",
   "exList": [
    {
     "zh": "特别是同乐人好，性格也好，很有责任感。",
-    "py": "Tèbié shì Tónglè rén hǎo, xìnggé yě hǎo, hěn yǒu zérèn gǎn.",
+    "py": "Tèbié shì Tónglè rén hǎo, xìnggé yě hǎo, hěn yǒu zérèngǎn.",
     "vn": "Đặc biệt là Đồng Lạc người tốt, tính cách cũng tốt, rất có tinh thần trách nhiệm."
    },
    {
@@ -1576,7 +1576,7 @@ var vocabData = [
   "colloFull": [
    {
     "zh": "责任感",
-    "py": "Zérèn gǎn",
+    "py": "Zérèngǎn",
     "vn": "tinh thần trách nhiệm"
    },
    {
@@ -1606,17 +1606,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "特别是同乐人好，性格也好，很有责任感。",
-  "ex_py": "Tèbié shì Tónglè rén hǎo, xìnggé yě hǎo, hěn yǒu zérèn gǎn.",
+  "ex_py": "Tèbié shì Tónglè rén hǎo, xìnggé yě hǎo, hěn yǒu zérèngǎn.",
   "ex_vn": "Đặc biệt là Đồng Lạc người tốt, tính cách cũng tốt, rất có tinh thần trách nhiệm.",
   "exList": [
    {
     "zh": "特别是同乐人好，性格也好，很有责任感。",
-    "py": "Tèbié shì Tónglè rén hǎo, xìnggé yě hǎo, hěn yǒu zérèn gǎn.",
+    "py": "Tèbié shì Tónglè rén hǎo, xìnggé yě hǎo, hěn yǒu zérèngǎn.",
     "vn": "Đặc biệt là Đồng Lạc người tốt, tính cách cũng tốt, rất có tinh thần trách nhiệm."
    },
    {
     "zh": "照顾好孩子是父母的责任。",
-    "py": "Zhàogu hǎo háizi shì fù mǔ de zérèn.",
+    "py": "Zhàogu hǎo háizi shì fùmǔ de zérèn.",
     "vn": "Chăm sóc tốt con cái là trách nhiệm của cha mẹ."
    }
   ],
@@ -1659,7 +1659,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Anh ấy làm việc rất có trách nhiệm, hơn nữa người cũng nhiệt tình, nên mọi người đều thích làm việc cùng anh ấy.",
     "answer": "他工作很有责任感，再说人也热情，所以大家都喜欢跟他一起工作。",
-    "answerPy": "Tā gōngzuò hěn yǒu zérèn gǎn, zài shuō rén yě rèqíng, suǒyǐ dàjiā dōu xǐhuan gēn tā yìqǐ gōngzuò.",
+    "answerPy": "Tā gōngzuò hěn yǒu zérèngǎn, Zàishuō rén yě rèqíng, suǒyǐ dàjiā dōu xǐhuan gēn tā yìqǐ gōngzuò.",
     "note": "Ôn 再说 (Bài 4 · điểm 2).",
     "pair": "……，再说……"
    }
@@ -1727,7 +1727,7 @@ var vocabData = [
    },
    {
     "zh": "同学之间应该相互帮助，相互学习。",
-    "py": "Tóngxué zhī jiān yīnggāi xiānghù bāngzhù, xiānghù xuéxí.",
+    "py": "Tóngxué zhījiān yīnggāi xiānghù bāngzhù, xiānghù xuéxí.",
     "vn": "Giữa bạn học với nhau nên giúp đỡ nhau, học hỏi lẫn nhau."
    }
   ],
@@ -1762,7 +1762,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Vợ chồng nên thấu hiểu lẫn nhau, nếu không sẽ hay cãi nhau.",
     "answer": "夫妻之间应该相互理解，否则会经常吵架。",
-    "answerPy": "Fūqī zhī jiān yīnggāi xiānghù lǐjiě, fǒuzé huì jīngcháng chǎojià.",
+    "answerPy": "Fūqī zhījiān yīnggāi xiānghù lǐjiě, fǒuzé huì jīngcháng chǎojià.",
     "note": "Ôn 否则 (Bài 8 · điểm 2).",
     "pair": "相互 + V，否则……"
    },
@@ -1873,7 +1873,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bố mẹ không hiểu mình thì có gì mà phải buồn, nói chuyện nhiều với họ là được.",
     "answer": "父母不理解我，有什么好难过的，多跟他们聊聊就是了。",
-    "answerPy": "Fù mǔ bù lǐjiě wǒ, yǒu shénme hǎo nánguò de, duō gēn tāmen liáo liáo jiù shì le.",
+    "answerPy": "Fùmǔ bù lǐjiě wǒ, yǒu shénme hǎo nánguò de, duō gēn tāmen liáoliao jiùshì le.",
     "note": "Ôn 有什么好×的 (Bài 6 · điểm 2) + 就是了 (Bài 2 · điểm 1).",
     "pair": "有什么好×的"
    },
@@ -1881,7 +1881,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Câu này tôi đọc mấy lần mà vẫn không hiểu nổi.",
     "answer": "这句话我看了好几遍，还是理解不了。",
-    "answerPy": "Zhè jù huà wǒ kàn le hǎo jǐ biàn, háishì lǐjiě bù liǎo.",
+    "answerPy": "Zhè jù huà wǒ kàn le hǎojǐ biàn, háishi lǐjiě bù liǎo.",
     "note": "Ôn V不了 (Bài 4 · điểm 1).",
     "pair": "V不了"
    }
@@ -1984,7 +1984,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Nhờ có sự ủng hộ của gia đình, tôi mới có thể sang Trung Quốc du học.",
     "answer": "由于家人的支持，我才能来中国留学。",
-    "answerPy": "Yóuyú jiārén de zhīchí, wǒ cái néng lái Zhōngguó liúxué.",
+    "answerPy": "Yóuyú jiārén de zhīchí, wǒ cáinéng lái Zhōngguó liúxué.",
     "note": "Ôn 由于 (Bài 2 · điểm 4).",
     "pair": "由于……"
    },
@@ -1992,7 +1992,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Bố mẹ không chỉ ủng hộ tôi, thậm chí còn giúp tôi tìm trường.",
     "answer": "父母不仅支持我，甚至还帮我找学校。",
-    "answerPy": "Fù mǔ bùjǐn zhīchí wǒ, shènzhì hái bāng wǒ zhǎo xuéxiào.",
+    "answerPy": "Fùmǔ bùjǐn zhīchí wǒ, shènzhì hái bāng wǒ zhǎo xuéxiào.",
     "note": "Ôn 不仅 (Bài 3 · điểm 2) + 甚至 (Bài 3 · điểm 3).",
     "pair": "不仅……甚至……"
    }
@@ -2025,12 +2025,12 @@ var vocabData = [
    },
    {
     "zh": "第一印象",
-    "py": "Dì yī yìnxiàng",
+    "py": "Dì yí yìnxiàng",
     "vn": "ấn tượng đầu tiên"
    },
    {
     "zh": "留下印象",
-    "py": "Liú xià yìnxiàng",
+    "py": "Liúxià yìnxiàng",
     "vn": "để lại ấn tượng"
    },
    {
@@ -2060,7 +2060,7 @@ var vocabData = [
    },
    {
     "zh": "这次旅行给我留下了很深的印象。",
-    "py": "Zhè cì lǚxíng gěi wǒ liú xià le hěn shēn de yìnxiàng.",
+    "py": "Zhè cì lǚxíng gěi wǒ liúxià le hěn shēn de yìnxiàng.",
     "vn": "Chuyến du lịch lần này để lại cho tôi ấn tượng rất sâu."
    }
   ],
@@ -2095,7 +2095,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Trong những thành phố tôi từng đến, tôi có ấn tượng với Hàng Châu sâu nhất.",
     "answer": "在我去过的城市中，我对杭州的印象最深。",
-    "answerPy": "Zài wǒ qù guò de chéngshì zhōng, wǒ duì háng zhōu de yìnxiàng zuì shēn.",
+    "answerPy": "Zài wǒ qù guò de chéngshì zhōng, wǒ duì Hángzhōu de yìnxiàng zuì shēn.",
     "note": "Mẫu 对……印象最深 (dùng từ 深 – từ số 34).",
     "pair": "对……印象……"
    },
@@ -2103,7 +2103,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "So với lần đầu gặp mặt, bây giờ ấn tượng của tôi về anh ấy tốt hơn nhiều.",
     "answer": "跟第一次见面相比，现在我对他的印象好多了。",
-    "answerPy": "Gēn dì yī cì jiànmiàn xiāngbǐ, xiànzài wǒ duì tā de yìnxiàng hǎoduō le.",
+    "answerPy": "Gēn dì yí cì jiànmiàn xiāngbǐ, xiànzài wǒ duì tā de yìnxiàng hǎoduō le.",
     "note": "Ôn 跟……相比 (Bài 8 · điểm 3).",
     "pair": "跟……相比"
    }
@@ -2171,7 +2171,7 @@ var vocabData = [
    },
    {
     "zh": "这件事我实在不知道怎么办，你帮我想想办法吧。",
-    "py": "Zhè jiàn shì wǒ shízài bù zhīdao zěnmebàn, nǐ bāng wǒ xiǎng xiǎng bànfǎ ba.",
+    "py": "Zhè jiàn shì wǒ shízài bù zhīdao zěnmebàn, nǐ bāng wǒ xiǎngxiang bànfǎ ba.",
     "vn": "Chuyện này tôi thật sự không biết làm thế nào, bạn nghĩ cách giúp tôi với."
    }
   ],
@@ -2214,7 +2214,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Món này thật sự cay quá, tôi ăn không nổi.",
     "answer": "这个菜实在太辣了，我吃不了。",
-    "answerPy": "Zhège cài shízài tài là le, wǒ chī bù liǎo.",
+    "answerPy": "Zhège cài shízài tài là le, wǒ chī bu liǎo.",
     "note": "Ôn V不了 (Bài 4 · điểm 1).",
     "pair": "实在太……了"
    }
@@ -2247,7 +2247,7 @@ var vocabData = [
    },
    {
     "zh": "阳光男孩",
-    "py": "Yángguāng nán hái",
+    "py": "Yángguāng nánhái",
     "vn": "chàng trai năng động"
    },
    {
@@ -2257,7 +2257,7 @@ var vocabData = [
    },
    {
     "zh": "阳光的笑容",
-    "py": "Yángguāng de xiào róng",
+    "py": "Yángguāng de xiàoróng",
     "vn": "nụ cười rạng rỡ"
    }
   ],
@@ -2282,7 +2282,7 @@ var vocabData = [
    },
    {
     "zh": "今天阳光很好，我们去公园走走吧。",
-    "py": "Jīntiān yángguāng hěn hǎo, wǒmen qù gōngyuán zǒu zǒu ba.",
+    "py": "Jīntiān yángguāng hěn hǎo, wǒmen qù gōngyuán zǒuzou ba.",
     "vn": "Hôm nay nắng đẹp, chúng ta ra công viên đi dạo đi."
    }
   ],
@@ -2317,7 +2317,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cô ấy tính cách rất vui tươi, đi đến đâu cũng mang lại niềm vui cho mọi người.",
     "answer": "她性格很阳光，走到哪儿都给大家带来快乐。",
-    "answerPy": "Tā xìnggé hěn yángguāng, zǒu dào nǎr dōu gěi dàjiā dài lái kuàilè.",
+    "answerPy": "Tā xìnggé hěn yángguāng, zǒudào nǎr dōu gěi dàjiā dàilái kuàilè.",
     "note": "带来 (giống bài khoá 3).",
     "pair": "性格阳光"
    },
@@ -2368,7 +2368,7 @@ var vocabData = [
    },
    {
     "zh": "负责人",
-    "py": "Fùzé rén",
+    "py": "Fùzérén",
     "vn": "người phụ trách"
    }
   ],
@@ -2393,7 +2393,7 @@ var vocabData = [
    },
    {
     "zh": "这次活动由小王负责，有问题可以找他。",
-    "py": "Zhè cì huódòng yóu xiǎo wáng fùzé, yǒu wèntí kěyǐ zhǎo tā.",
+    "py": "Zhè cì huódòng yóu Xiǎo Wáng fùzé, yǒu wèntí kěyǐ zhǎo tā.",
     "vn": "Hoạt động lần này do Tiểu Vương phụ trách, có vấn đề có thể tìm anh ấy."
    }
   ],
@@ -2479,7 +2479,7 @@ var vocabData = [
    },
    {
     "zh": "积极的态度",
-    "py": "Jījí de tàidù",
+    "py": "Jījí de tàidu",
     "vn": "thái độ tích cực"
    }
   ],
@@ -2585,7 +2585,7 @@ var vocabData = [
    },
    {
     "zh": "此时",
-    "py": "Cǐ shí",
+    "py": "Cǐshí",
     "vn": "lúc này"
    },
    {
@@ -2605,17 +2605,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "此次出差，让两人熟悉了起来，从此成了好朋友。",
-  "ex_py": "Cǐ cì chūchāi, ràng liǎng rén shúxī le qǐlái, cóngcǐ chéng le hǎo péngyou.",
+  "ex_py": "Cǐ cì chūchāi, ràng liǎng rén shúxi le qǐlai, cóngcǐ chéng le hǎo péngyou.",
   "ex_vn": "Chuyến công tác lần này khiến hai người trở nên thân quen, từ đó thành bạn tốt.",
   "exList": [
    {
     "zh": "此次出差，让两人熟悉了起来，从此成了好朋友。",
-    "py": "Cǐ cì chūchāi, ràng liǎng rén shúxī le qǐlái, cóngcǐ chéng le hǎo péngyou.",
+    "py": "Cǐ cì chūchāi, ràng liǎng rén shúxi le qǐlai, cóngcǐ chéng le hǎo péngyou.",
     "vn": "Chuyến công tác lần này khiến hai người trở nên thân quen, từ đó thành bạn tốt."
    },
    {
     "zh": "此时此刻，我想对大家说一声谢谢。",
-    "py": "Cǐ shí cǐ kè, wǒ xiǎng duì dàjiā shuō yì shēng xièxiè.",
+    "py": "Cǐshí cǐ kè, wǒ xiǎng duì dàjiā shuō yì shēng xièxie.",
     "vn": "Ngay lúc này đây, tôi muốn nói với mọi người một lời cảm ơn."
    }
   ],
@@ -2638,7 +2638,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Chuyến công tác lần này tôi ít nhất phải ở Thượng Hải một tuần.",
     "answer": "此次出差，我至少要在上海待一个星期。",
-    "answerPy": "Cǐ cì chūchāi, wǒ zhìshǎo yào zài Shànghǎi dài yí gè xīngqī.",
+    "answerPy": "Cǐ cì chūchāi, wǒ zhìshǎo yào zài Shànghǎi dāi yí gè xīngqī.",
     "note": "Ôn 至少 (Bài 5 · điểm 1).",
     "pair": "此次 + N"
    },
@@ -2646,7 +2646,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Người này vừa có năng lực vừa có trách nhiệm, việc này giao cho anh ấy là được.",
     "answer": "此人既有能力又负责，这件事交给他就是了。",
-    "answerPy": "Cǐ rén jì yǒu nénglì yòu fùzé, zhè jiàn shì jiāo gěi tā jiù shì le.",
+    "answerPy": "Cǐ rén jì yǒu nénglì yòu fùzé, zhè jiàn shì jiāogěi tā jiùshì le.",
     "note": "Ôn 既……又…… (Bài 4 · điểm 3) + 就是了 (Bài 2 · điểm 1).",
     "pair": "此人……"
    }
@@ -2704,12 +2704,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "此次出差，让两人熟悉了起来，从此成了好朋友。",
-  "ex_py": "Cǐ cì chūchāi, ràng liǎng rén shúxī le qǐlái, cóngcǐ chéng le hǎo péngyou.",
+  "ex_py": "Cǐ cì chūchāi, ràng liǎng rén shúxi le qǐlai, cóngcǐ chéng le hǎo péngyou.",
   "ex_vn": "Chuyến công tác lần này khiến hai người trở nên thân quen, từ đó thành bạn tốt.",
   "exList": [
    {
     "zh": "此次出差，让两人熟悉了起来，从此成了好朋友。",
-    "py": "Cǐ cì chūchāi, ràng liǎng rén shúxī le qǐlái, cóngcǐ chéng le hǎo péngyou.",
+    "py": "Cǐ cì chūchāi, ràng liǎng rén shúxi le qǐlai, cóngcǐ chéng le hǎo péngyou.",
     "vn": "Chuyến công tác lần này khiến hai người trở nên thân quen, từ đó thành bạn tốt."
    },
    {
@@ -2757,7 +2757,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Từ đó về sau, bất kể gặp khó khăn gì, hai người đều giúp đỡ lẫn nhau.",
     "answer": "从此以后，不管遇到什么困难，两个人都相互帮助。",
-    "answerPy": "Cóngcǐ yǐhòu, bùguǎn yùdào shénme kùnnán, liǎng gè rén dōu xiānghù bāngzhù.",
+    "answerPy": "Cóngcǐ yǐhòu, bùguǎn yùdào shénme kùnnan, liǎng gè rén dōu xiānghù bāngzhù.",
     "note": "Ôn 不管……都…… (Bài 8 · điểm 1).",
     "pair": "从此以后"
    }
@@ -2815,12 +2815,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "杨同乐和王一飞认识后，很聊得来，两人之间慢慢产生了爱情。",
-  "ex_py": "Yáng Tónglè hé Wáng Yīfēi rènshi hòu, hěn liáo de lái, liǎng rén zhī jiān màn màn chǎnshēng le àiqíng.",
+  "ex_py": "Yáng Tónglè hé Wáng Yīfēi rènshi hòu, hěn liáo délái, liǎng rén zhījiān mànmàn chǎnshēng le àiqíng.",
   "ex_vn": "Dương Đồng Lạc và Vương Nhất Phi quen nhau rồi rất hợp chuyện, giữa hai người dần dần nảy sinh tình yêu.",
   "exList": [
    {
     "zh": "杨同乐和王一飞认识后，很聊得来，两人之间慢慢产生了爱情。",
-    "py": "Yáng Tónglè hé Wáng Yīfēi rènshi hòu, hěn liáo de lái, liǎng rén zhī jiān màn màn chǎnshēng le àiqíng.",
+    "py": "Yáng Tónglè hé Wáng Yīfēi rènshi hòu, hěn liáo délái, liǎng rén zhījiān mànmàn chǎnshēng le àiqíng.",
     "vn": "Dương Đồng Lạc và Vương Nhất Phi quen nhau rồi rất hợp chuyện, giữa hai người dần dần nảy sinh tình yêu."
    },
    {
@@ -2860,7 +2860,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với việc hiểu nhau ngày càng nhiều, giữa hai người dần dần nảy sinh tình cảm.",
     "answer": "随着相互了解越来越多，两人之间慢慢产生了感情。",
-    "answerPy": "Suízhe xiānghù liǎojiě yuèláiyuè duō, liǎng rén zhī jiān màn màn chǎnshēng le gǎnqíng.",
+    "answerPy": "Suízhe xiānghù liǎojiě yuèláiyuè duō, liǎng rén zhījiān mànmàn chǎnshēng le gǎnqíng.",
     "note": "Ôn 随着 (Bài 1 · điểm 3).",
     "pair": "随着……"
    },
@@ -2868,7 +2868,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Mỗi ngày phải ngủ đủ, nếu không sẽ ảnh hưởng đến sức khỏe.",
     "answer": "每天要睡够，否则会对身体产生影响。",
-    "answerPy": "Měi tiān yào shuì gòu, fǒuzé huì duì shēntǐ chǎnshēng yǐngxiǎng.",
+    "answerPy": "Měitiān yào shuìgòu, fǒuzé huì duì shēntǐ chǎnshēng yǐngxiǎng.",
     "note": "Ôn 够 (Bài 5 · điểm 2) + 否则 (Bài 8 · điểm 2).",
     "pair": "对……产生影响"
    }
@@ -2901,7 +2901,7 @@ var vocabData = [
    },
    {
     "zh": "爱情故事",
-    "py": "Àiqíng gùshì",
+    "py": "Àiqíng gùshi",
     "vn": "chuyện tình yêu"
    },
    {
@@ -2926,12 +2926,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "两人之间慢慢产生了爱情，最后成了夫妻。",
-  "ex_py": "Liǎng rén zhī jiān màn màn chǎnshēng le àiqíng, zuìhòu chéng le fūqī.",
+  "ex_py": "Liǎng rén zhījiān mànmàn chǎnshēng le àiqíng, zuìhòu chéng le fūqī.",
   "ex_vn": "Giữa hai người dần dần nảy sinh tình yêu, cuối cùng thành vợ chồng.",
   "exList": [
    {
     "zh": "两人之间慢慢产生了爱情，最后成了夫妻。",
-    "py": "Liǎng rén zhī jiān màn màn chǎnshēng le àiqíng, zuìhòu chéng le fūqī.",
+    "py": "Liǎng rén zhījiān mànmàn chǎnshēng le àiqíng, zuìhòu chéng le fūqī.",
     "vn": "Giữa hai người dần dần nảy sinh tình yêu, cuối cùng thành vợ chồng."
    },
    {
@@ -3017,7 +3017,7 @@ var vocabData = [
    },
    {
     "zh": "两人之间",
-    "py": "Liǎng rén zhī jiān",
+    "py": "Liǎng rén zhījiān",
     "vn": "giữa hai người"
    },
    {
@@ -3037,12 +3037,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "杨同乐说自己很幸运，和王一雪这份同事间的友情，给他带来了美好的爱情。",
-  "ex_py": "Yáng Tónglè shuō zìjǐ hěn xìngyùn, hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dài lái le měihǎo de àiqíng.",
+  "ex_py": "Yáng Tónglè shuō zìjǐ hěn xìngyùn, hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dàilái le měihǎo de àiqíng.",
   "ex_vn": "Dương Đồng Lạc nói mình rất may mắn, tình bạn đồng nghiệp với Vương Nhất Tuyết đã mang đến cho anh một tình yêu đẹp.",
   "exList": [
    {
     "zh": "杨同乐说自己很幸运，和王一雪这份同事间的友情，给他带来了美好的爱情。",
-    "py": "Yáng Tónglè shuō zìjǐ hěn xìngyùn, hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dài lái le měihǎo de àiqíng.",
+    "py": "Yáng Tónglè shuō zìjǐ hěn xìngyùn, hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dàilái le měihǎo de àiqíng.",
     "vn": "Dương Đồng Lạc nói mình rất may mắn, tình bạn đồng nghiệp với Vương Nhất Tuyết đã mang đến cho anh một tình yêu đẹp."
    },
    {
@@ -3078,7 +3078,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Giữa hai người họ có rất nhiều sở thích chung.",
     "answer": "他们两人之间有很多共同爱好。",
-    "answerPy": "Tāmen liǎng rén zhī jiān yǒu hěn duō gòngtóng àihào.",
+    "answerPy": "Tāmen liǎng rén zhījiān yǒu hěn duō gòngtóng àihào.",
     "note": "Mẫu ……之间 + từ mới 共同.",
     "pair": "……之间"
    }
@@ -3136,17 +3136,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "和王一雪这份同事间的友情，给他带来了美好的爱情。",
-  "ex_py": "Hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dài lái le měihǎo de àiqíng.",
+  "ex_py": "Hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dàilái le měihǎo de àiqíng.",
   "ex_vn": "Tình bạn đồng nghiệp với Vương Nhất Tuyết đã mang đến cho anh một tình yêu đẹp.",
   "exList": [
    {
     "zh": "和王一雪这份同事间的友情，给他带来了美好的爱情。",
-    "py": "Hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dài lái le měihǎo de àiqíng.",
+    "py": "Hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dàilái le měihǎo de àiqíng.",
     "vn": "Tình bạn đồng nghiệp với Vương Nhất Tuyết đã mang đến cho anh một tình yêu đẹp."
    },
    {
     "zh": "我们从小一起长大，这份友情对我来说特别重要。",
-    "py": "Wǒmen cóng xiǎo yìqǐ zhǎng dà, zhè fèn yǒuqíng duì wǒ láishuō tèbié zhòngyào.",
+    "py": "Wǒmen cóng xiǎo yìqǐ zhǎngdà, zhè fèn yǒuqíng duì wǒ láishuō tèbié zhòngyào.",
     "vn": "Chúng tôi lớn lên cùng nhau từ nhỏ, tình bạn này đối với tôi đặc biệt quan trọng."
    }
   ],
@@ -3247,12 +3247,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "和王一雪这份同事间的友情，给他带来了美好的爱情。",
-  "ex_py": "Hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dài lái le měihǎo de àiqíng.",
+  "ex_py": "Hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dàilái le měihǎo de àiqíng.",
   "ex_vn": "Tình bạn đồng nghiệp với Vương Nhất Tuyết đã mang đến cho anh một tình yêu đẹp.",
   "exList": [
    {
     "zh": "和王一雪这份同事间的友情，给他带来了美好的爱情。",
-    "py": "Hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dài lái le měihǎo de àiqíng.",
+    "py": "Hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dàilái le měihǎo de àiqíng.",
     "vn": "Tình bạn đồng nghiệp với Vương Nhất Tuyết đã mang đến cho anh một tình yêu đẹp."
    },
    {
@@ -3300,7 +3300,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tôi thỉnh thoảng nhớ lại những ngày tháng đẹp đẽ thời đại học.",
     "answer": "我偶尔会想起大学时那些美好的日子。",
-    "answerPy": "Wǒ ǒu'ěr huì xiǎng qǐ dàxué shí nàxiē měihǎo de rìzi.",
+    "answerPy": "Wǒ ǒu'ěr huì xiǎngqǐ dàxué shí nàxiē měihǎo de rìzi.",
     "note": "Ôn 偶尔 (Bài 6 · điểm 3).",
     "pair": "偶尔"
    }
@@ -3358,17 +3358,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "李文在校园里遇见白家月，从此，他们的人生变得更加精彩。",
-  "ex_py": "Lǐ Wén zài xiàoyuán lǐ yùjiàn Bái Jiāyuè, cóngcǐ, tāmen de rénshēng biàn de gèng jiā jīngcǎi.",
+  "ex_py": "Lǐ Wén zài xiàoyuán lǐ yùjiàn Bái Jiāyuè, cóngcǐ, tāmen de rénshēng biànde gèngjiā jīngcǎi.",
   "ex_vn": "Lý Văn gặp Bạch Gia Nguyệt trong khuôn viên trường, từ đó cuộc đời họ trở nên rực rỡ hơn.",
   "exList": [
    {
     "zh": "李文在校园里遇见白家月，从此，他们的人生变得更加精彩。",
-    "py": "Lǐ Wén zài xiàoyuán lǐ yùjiàn Bái Jiāyuè, cóngcǐ, tāmen de rénshēng biàn de gèng jiā jīngcǎi.",
+    "py": "Lǐ Wén zài xiàoyuán lǐ yùjiàn Bái Jiāyuè, cóngcǐ, tāmen de rénshēng biànde gèngjiā jīngcǎi.",
     "vn": "Lý Văn gặp Bạch Gia Nguyệt trong khuôn viên trường, từ đó cuộc đời họ trở nên rực rỡ hơn."
    },
    {
     "zh": "上大学是我人生中的一件大事。",
-    "py": "Shàng dàxué shì wǒ rénshēng zhōng de yí jiàn dà shì.",
+    "py": "Shàng dàxué shì wǒ rénshēng zhōng de yí jiàn dàshì.",
     "vn": "Vào đại học là một việc lớn trong đời tôi."
    }
   ],
@@ -3403,7 +3403,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Đời người có đắng có ngọt, quan trọng là có người cùng bạn đi tiếp.",
     "answer": "人生有苦有甜，重要的是有人陪你一起走下去。",
-    "answerPy": "Rénshēng yǒu kǔ yǒu tián, zhòngyào de shì yǒurén péi nǐ yìqǐ zǒu xiàqù.",
+    "answerPy": "Rénshēng yǒu kǔ yǒu tián, zhòngyào de shì yǒurén péi nǐ yìqǐ zǒu xiàqu.",
     "note": "Ôn 有A有B (Bài 8 · điểm 4).",
     "pair": "有A有B"
    },
@@ -3469,12 +3469,12 @@ var vocabData = [
    }
   ],
   "ex_zh": "从此，他们的人生变得更加精彩。",
-  "ex_py": "Cóngcǐ, tāmen de rénshēng biàn de gèng jiā jīngcǎi.",
+  "ex_py": "Cóngcǐ, tāmen de rénshēng biànde gèngjiā jīngcǎi.",
   "ex_vn": "Từ đó, cuộc đời họ trở nên rực rỡ hơn.",
   "exList": [
    {
     "zh": "从此，他们的人生变得更加精彩。",
-    "py": "Cóngcǐ, tāmen de rénshēng biàn de gèng jiā jīngcǎi.",
+    "py": "Cóngcǐ, tāmen de rénshēng biànde gèngjiā jīngcǎi.",
     "vn": "Từ đó, cuộc đời họ trở nên rực rỡ hơn."
    },
    {
@@ -3691,17 +3691,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "感情越来越深，最后两人幸福地走到了一起。",
-  "ex_py": "Gǎnqíng yuèláiyuè shēn, zuìhòu liǎng rén xìngfú de zǒu dào le yìqǐ.",
+  "ex_py": "Gǎnqíng yuèláiyuè shēn, zuìhòu liǎng rén xìngfú de zǒudào le yìqǐ.",
   "ex_vn": "Tình cảm ngày càng sâu đậm, cuối cùng hai người hạnh phúc về chung một nhà.",
   "exList": [
    {
     "zh": "感情越来越深，最后两人幸福地走到了一起。",
-    "py": "Gǎnqíng yuèláiyuè shēn, zuìhòu liǎng rén xìngfú de zǒu dào le yìqǐ.",
+    "py": "Gǎnqíng yuèláiyuè shēn, zuìhòu liǎng rén xìngfú de zǒudào le yìqǐ.",
     "vn": "Tình cảm ngày càng sâu đậm, cuối cùng hai người hạnh phúc về chung một nhà."
    },
    {
     "zh": "这条河很深，小孩子不能在这儿游泳。",
-    "py": "Zhè tiáo hé hěn shēn, xiǎo háizi bù néng zài zhèr yóuyǒng.",
+    "py": "Zhè tiáo hé hěn shēn, xiǎoháizi bù néng zài zhèr yóuyǒng.",
     "vn": "Con sông này rất sâu, trẻ con không được bơi ở đây."
    }
   ],
@@ -3724,7 +3724,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Cùng với thời gian trôi qua, tình bạn của họ ngày càng sâu đậm.",
     "answer": "随着时间的过去，他们的友情越来越深。",
-    "answerPy": "Suízhe shíjiān de guòqù, tāmen de yǒuqíng yuèláiyuè shēn.",
+    "answerPy": "Suízhe shíjiān de guòqu, tāmen de yǒuqíng yuèláiyuè shēn.",
     "note": "Ôn 随着 (Bài 1 · điểm 3).",
     "pair": "随着……"
    },
@@ -3843,7 +3843,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Tình cảm cần được vun đắp bằng cả tấm lòng, nếu không sẽ ngày càng nhạt.",
     "answer": "感情需要用心经营，否则会越来越淡。",
-    "answerPy": "Gǎnqíng xūyào yòng xīn jīngyíng, fǒuzé huì yuèláiyuè dàn.",
+    "answerPy": "Gǎnqíng xūyào yòngxīn jīngyíng, fǒuzé huì yuèláiyuè dàn.",
     "note": "Ôn 否则 (Bài 8 · điểm 2).",
     "pair": "……，否则……"
    }
@@ -3911,7 +3911,7 @@ var vocabData = [
    },
    {
     "zh": "我给她打了好几次电话，可是对方一直没接。",
-    "py": "Wǒ gěi tā dǎ le hǎo jǐ cì diànhuà, kěshì duìfāng yìzhí méi jiē.",
+    "py": "Wǒ gěi tā dǎ le hǎojǐ cì diànhuà, kěshì duìfāng yìzhí méi jiē.",
     "vn": "Tôi gọi cho cô ấy mấy lần liền, nhưng bên kia mãi không nghe máy."
    }
   ],
@@ -3946,7 +3946,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Một câu nói ấm áp có thể khiến người kia cảm thấy rất hạnh phúc.",
     "answer": "一句温暖的话能使对方感到很幸福。",
-    "answerPy": "Yí jù wēnnuǎn dehuà néng shǐ duìfāng gǎndào hěn xìngfú.",
+    "answerPy": "Yí jù wēnnuǎn de huà néng shǐ duìfāng gǎndào hěn xìngfú.",
     "note": "Ôn 使 (Bài 7 · điểm 4).",
     "pair": "使 + 对方 + ……"
    },
@@ -3997,7 +3997,7 @@ var vocabData = [
    },
    {
     "zh": "谈谈感受",
-    "py": "Tán tán gǎnshòu",
+    "py": "Tántan gǎnshòu",
     "vn": "nói cảm nhận"
    }
   ],
@@ -4022,7 +4022,7 @@ var vocabData = [
    },
    {
     "zh": "来中国以后，我感受到了中国人的热情。",
-    "py": "Lái Zhōngguó yǐhòu, wǒ gǎnshòu dào le zhōngguórén de rèqíng.",
+    "py": "Lái Zhōngguó yǐhòu, wǒ gǎnshòu dào le Zhōngguórén de rèqíng.",
     "vn": "Đến Trung Quốc rồi, tôi cảm nhận được sự nhiệt tình của người Trung Quốc."
    }
   ],
@@ -4057,7 +4057,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Học ở Trung Quốc một năm, tôi cảm nhận được tiếng Trung của mình tiến bộ, thậm chí đã nghe hiểu phim Trung Quốc.",
     "answer": "在中国学习了一年，我感受到自己的中文进步了，甚至能听懂中国电影了。",
-    "answerPy": "Zài Zhōngguó xuéxí le yì nián, wǒ gǎnshòu dào zìjǐ de Zhōngwén jìnbù le, shènzhì néng tīng dǒng Zhōngguó diànyǐng le.",
+    "answerPy": "Zài Zhōngguó xuéxí le yì nián, wǒ gǎnshòu dào zìjǐ de Zhōngwén jìnbù le, shènzhì néng tīngdǒng Zhōngguó diànyǐng le.",
     "note": "Ôn 甚至 (Bài 3 · điểm 3).",
     "pair": "感受到……"
    },
@@ -4168,7 +4168,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Về mặt học tập, cô ấy rất chăm chỉ, nhất là môn khẩu ngữ.",
     "answer": "在学习方面，她很努力，尤其是口语。",
-    "answerPy": "Zài xuéxí fāngmiàn, tā hěn nǔlì, yóuqí shì kǒu yǔ.",
+    "answerPy": "Zài xuéxí fāngmiàn, tā hěn nǔlì, yóuqí shì kǒuyǔ.",
     "note": "Ôn 在……方面 (Bài 7 · điểm 1).",
     "pair": "在……方面"
    },
@@ -4234,17 +4234,17 @@ var vocabData = [
    }
   ],
   "ex_zh": "尤其是结婚后，更要共同经营好家庭，日子才能越过越好。",
-  "ex_py": "Yóuqí shì jiéhūn hòu, gèng yào gòngtóng jīngyíng hǎo jiātíng, rìzi cái néng yuè guò yuè hǎo.",
+  "ex_py": "Yóuqí shì jiéhūn hòu, gèng yào gòngtóng jīngyíng hǎo jiātíng, rìzi cáinéng yuè guò yuè hǎo.",
   "ex_vn": "Nhất là sau khi kết hôn, càng phải cùng nhau vun vén gia đình, cuộc sống mới ngày càng tốt đẹp.",
   "exList": [
    {
     "zh": "尤其是结婚后，更要共同经营好家庭，日子才能越过越好。",
-    "py": "Yóuqí shì jiéhūn hòu, gèng yào gòngtóng jīngyíng hǎo jiātíng, rìzi cái néng yuè guò yuè hǎo.",
+    "py": "Yóuqí shì jiéhūn hòu, gèng yào gòngtóng jīngyíng hǎo jiātíng, rìzi cáinéng yuè guò yuè hǎo.",
     "vn": "Nhất là sau khi kết hôn, càng phải cùng nhau vun vén gia đình, cuộc sống mới ngày càng tốt đẹp."
    },
    {
     "zh": "退休以后，爷爷奶奶每天种种花、散散步，日子过得很舒服。",
-    "py": "Tuìxiū yǐhòu, yéye-nǎinai měi tiān zhǒng zhǒng huā, sàn sànbù, rìzi guò de hěn shūfu.",
+    "py": "Tuìxiū yǐhòu, yéye nǎinai měitiān zhǒngzhǒng huā, sàn sànbù, rìzi guò de hěn shūfu.",
     "vn": "Sau khi nghỉ hưu, ông bà mỗi ngày trồng hoa, đi dạo, sống rất thoải mái."
    }
   ],
@@ -4279,7 +4279,7 @@ var vocabData = [
     "promptLang": "vi",
     "prompt": "Những ngày sống ở nước ngoài, tôi thỉnh thoảng lại nhớ nhà.",
     "answer": "在国外的日子里，我偶尔会想家。",
-    "answerPy": "Zài guó wài de rìzi lǐ, wǒ ǒu'ěr huì xiǎng jiā.",
+    "answerPy": "Zài guówài de rìzi lǐ, wǒ ǒu'ěr huì xiǎngjiā.",
     "note": "Ôn 偶尔 (Bài 6 · điểm 3).",
     "pair": "在……的日子里"
    },
@@ -4495,13 +4495,13 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "上次咱们去超市，看你拿起来看了看又放下了，我就记住了。",
-    "py": "Shàng cì zánmen qù chāoshì, kàn nǐ ná qǐlái kàn le kàn yòu fàng xià le, wǒ jiù jì zhù le.",
+    "py": "Shàng cì zánmen qù chāoshì, kàn nǐ náqǐ lái kàn le kàn yòu fàngxià le, wǒ jiù jìzhù le.",
     "vn": "Lần trước chúng mình đi siêu thị, anh thấy em cầm lên xem xem rồi lại đặt xuống, thế là anh nhớ luôn."
    },
    {
     "sp": 1,
     "zh": "好感动！我不说你也懂我在想什么，你真是细心又浪漫。其实刚认识不久，你的幽默与耐心就很吸引我，不过我当时也只把你当普通朋友。如果你没有一直找我聊天儿，我们可能就错过了。",
-    "py": "Hǎo gǎndòng! Wǒ bù shuō nǐ yě dǒng wǒ zài xiǎng shénme, nǐ zhēn shì xì xīn yòu làngmàn. Qíshí gāng rènshi bùjiǔ, nǐ de yōumò yǔ nàixīn jiù hěn xīyǐn wǒ, búguò wǒ dāngshí yě zhǐ bǎ nǐ dāng pǔ tōng péngyou. Rúguǒ nǐ méiyǒu yìzhí zhǎo wǒ liáotiānr, wǒmen kěnéng jiù cuòguò le.",
+    "py": "Hǎo gǎndòng! Wǒ bù shuō nǐ yě dǒng wǒ zài xiǎng shénme, nǐ zhēnshì xìxīn yòu làngmàn. Qíshí gāng rènshi bùjiǔ, nǐ de yōumò yǔ nàixīn jiù hěn xīyǐn wǒ, búguò wǒ dāngshí yě zhǐ bǎ nǐ dāng pǔtōng péngyou. Rúguǒ nǐ méiyǒu yìzhí zhǎo wǒ liáotiānr, wǒmen kěnéng jiù cuòguò le.",
     "vn": "Cảm động quá! Em không nói anh cũng hiểu em đang nghĩ gì, anh đúng là vừa chu đáo vừa lãng mạn. Thật ra mới quen không lâu, sự hài hước và kiên nhẫn của anh đã rất thu hút em, có điều lúc đó em cũng chỉ coi anh là bạn bình thường. Nếu anh không luôn tìm em trò chuyện, có lẽ chúng mình đã lỡ nhau rồi."
    },
    {
@@ -4557,7 +4557,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "看到一飞和同乐结婚后这么幸福，我这个介绍人也特别开心。",
-    "py": "Kàn dào Yīfēi hé Tónglè jiéhūn hòu zhème xìngfú, wǒ zhège jièshào rén yě tèbié kāixīn.",
+    "py": "Kàndào Yīfēi hé Tónglè jiéhūn hòu zhème xìngfú, wǒ zhège jièshào rén yě tèbié kāixīn.",
     "vn": "Thấy Nhất Phi và Đồng Lạc cưới nhau xong hạnh phúc như vậy, người làm mai như em cũng đặc biệt vui."
    },
    {
@@ -4569,7 +4569,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "嗯，他们尽管性格不同，但是有很多共同爱好。特别是同乐人好，性格也好，很有责任感。",
-    "py": "Ǹg, tāmen jǐnguǎn xìnggé bùtóng, dànshì yǒu hěn duō gòngtóng àihào. Tèbié shì Tónglè rén hǎo, xìnggé yě hǎo, hěn yǒu zérèn gǎn.",
+    "py": "Ǹg, tāmen jǐnguǎn xìnggé bùtóng, dànshì yǒu hěn duō gòngtóng àihào. Tèbié shì Tónglè rén hǎo, xìnggé yě hǎo, hěn yǒu zérèngǎn.",
     "vn": "Vâng, họ tuy tính cách khác nhau nhưng có rất nhiều sở thích chung. Đặc biệt là Đồng Lạc người tốt, tính cách cũng tốt, rất có tinh thần trách nhiệm."
    },
    {
@@ -4581,7 +4581,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "我了解同乐，更了解一飞，相信他们会一直走下去的。",
-    "py": "Wǒ liǎojiě Tónglè, gèng liǎojiě Yīfēi, xiāngxìn tāmen huì yìzhí zǒu xiàqù de.",
+    "py": "Wǒ liǎojiě Tónglè, gèng liǎojiě Yīfēi, xiāngxìn tāmen huì yìzhí zǒu xiàqu de.",
     "vn": "Em hiểu Đồng Lạc, càng hiểu Nhất Phi hơn, em tin họ sẽ luôn cùng nhau đi tiếp."
    },
    {
@@ -4627,7 +4627,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "王一雪比杨同乐更早进入公司。",
-    "py": "Wáng Yīxuě bǐ Yáng Tónglè gèng zǎo jìn rù gōngsī.",
+    "py": "Wáng Yīxuě bǐ Yáng Tónglè gèng zǎo jìnrù gōngsī.",
     "vn": "Vương Nhất Tuyết vào công ty sớm hơn Dương Đồng Lạc."
    },
    {
@@ -4639,25 +4639,25 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "后来他们一起出了次差，此次出差，让两人熟悉了起来，从此成了好朋友。",
-    "py": "Hòulái tāmen yìqǐ chū le cì chà, cǐ cì chūchāi, ràng liǎng rén shúxī le qǐlái, cóngcǐ chéng le hǎo péngyou.",
+    "py": "Hòulái tāmen yìqǐ chū le cì chà, cǐ cì chūchāi, ràng liǎng rén shúxi le qǐlai, cóngcǐ chéng le hǎo péngyou.",
     "vn": "Sau đó họ cùng đi công tác một chuyến, chuyến công tác này khiến hai người trở nên thân quen, từ đó thành bạn tốt."
    },
    {
     "sp": 0,
     "zh": "一次聊天儿时，王一雪了解到杨同乐还没女朋友，正好自己的妹妹王一飞也没有男朋友，于是王一雪就把王一飞介绍给了他。",
-    "py": "Yí cì liáotiānr shí, Wáng Yīxuě liǎojiě dào Yáng Tónglè hái méi nǚpéngyǒu, zhènghǎo zìjǐ de mèimei Wáng Yīfēi yě méiyǒu nánpéngyǒu, yúshì Wáng Yīxuě jiù bǎ Wáng Yīfēi jièshào gěi le tā.",
+    "py": "Yí cì liáotiān érshí, Wáng Yīxuě liǎojiě dào Yáng Tónglè hái méi nǚpéngyou, zhènghǎo zìjǐ de mèimei Wáng Yīfēi yě méiyǒu nánpéngyou, yúshì Wáng Yīxuě jiù bǎ Wáng Yīfēi jièshào gěi le tā.",
     "vn": "Một lần trò chuyện, Vương Nhất Tuyết biết được Dương Đồng Lạc chưa có bạn gái, vừa hay em gái mình là Vương Nhất Phi cũng chưa có bạn trai, thế là Vương Nhất Tuyết giới thiệu Vương Nhất Phi cho anh ấy."
    },
    {
     "sp": 0,
     "zh": "杨同乐和王一飞认识后，很聊得来，两人之间慢慢产生了爱情，最后成了夫妻。",
-    "py": "Yáng Tónglè hé Wáng Yīfēi rènshi hòu, hěn liáo de lái, liǎng rén zhī jiān màn màn chǎnshēng le àiqíng, zuìhòu chéng le fūqī.",
+    "py": "Yáng Tónglè hé Wáng Yīfēi rènshi hòu, hěn liáo délái, liǎng rén zhījiān mànmàn chǎnshēng le àiqíng, zuìhòu chéng le fūqī.",
     "vn": "Dương Đồng Lạc và Vương Nhất Phi quen nhau rồi rất hợp chuyện, giữa hai người dần dần nảy sinh tình yêu, cuối cùng thành vợ chồng."
    },
    {
     "sp": 0,
     "zh": "杨同乐说自己很幸运，和王一雪这份同事间的友情，给他带来了美好的爱情。",
-    "py": "Yáng Tónglè shuō zìjǐ hěn xìngyùn, hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dài lái le měihǎo de àiqíng.",
+    "py": "Yáng Tónglè shuō zìjǐ hěn xìngyùn, hé Wáng Yīxuě zhè fèn tóngshì jiān de yǒuqíng, gěi tā dàilái le měihǎo de àiqíng.",
     "vn": "Dương Đồng Lạc nói mình rất may mắn: tình bạn đồng nghiệp với Vương Nhất Tuyết đã mang đến cho anh một tình yêu đẹp."
    }
   ],
@@ -4698,7 +4698,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "李文在校园里遇见白家月，从此，他们的人生变得更加精彩；王一飞和杨同乐通过王一雪介绍认识后，感情越来越深，最后两人幸福地走到了一起。",
-    "py": "Lǐ Wén zài xiàoyuán lǐ yùjiàn Bái Jiāyuè, cóngcǐ, tāmen de rénshēng biàn de gèng jiā jīngcǎi; Wáng Yīfēi hé Yáng Tónglè tōngguò Wáng Yīxuě jièshào rènshi hòu, gǎnqíng yuèláiyuè shēn, zuìhòu liǎng rén xìngfú de zǒu dào le yìqǐ.",
+    "py": "Lǐ Wén zài xiàoyuán lǐ yùjiàn Bái Jiāyuè, cóngcǐ, tāmen de rénshēng biànde gèngjiā jīngcǎi; Wáng Yīfēi hé Yáng Tónglè tōngguò Wáng Yīxuě jièshào rènshi hòu, gǎnqíng yuèláiyuè shēn, zuìhòu liǎng rén xìngfú de zǒudào le yìqǐ.",
     "vn": "Lý Văn gặp Bạch Gia Nguyệt trong khuôn viên trường, từ đó cuộc đời họ trở nên rực rỡ hơn; Vương Nhất Phi và Dương Đồng Lạc quen nhau qua sự giới thiệu của Vương Nhất Tuyết, tình cảm ngày càng sâu đậm, cuối cùng hai người hạnh phúc về chung một nhà."
    },
    {
@@ -4722,7 +4722,7 @@ var dialogData = [
    {
     "sp": 0,
     "zh": "在一段感情中，两个人要多关注对方的感受，尤其是结婚后，更要共同经营好家庭，日子才能越过越好。",
-    "py": "Zài yí duàn gǎnqíng zhōng, liǎng gè rén yào duō guānzhù duìfāng de gǎnshòu, yóuqí shì jiéhūn hòu, gèng yào gòngtóng jīngyíng hǎo jiātíng, rìzi cái néng yuè guò yuè hǎo.",
+    "py": "Zài yí duàn gǎnqíng zhōng, liǎng gè rén yào duō guānzhù duìfāng de gǎnshòu, yóuqí shì jiéhūn hòu, gèng yào gòngtóng jīngyíng hǎo jiātíng, rìzi cáinéng yuè guò yuè hǎo.",
     "vn": "Trong một mối quan hệ tình cảm, hai người phải quan tâm nhiều hơn đến cảm nhận của đối phương, nhất là sau khi kết hôn, càng phải cùng nhau vun vén gia đình, cuộc sống mới ngày càng tốt đẹp."
    },
    {
@@ -5213,7 +5213,7 @@ var translateData = [
  {
   "vi": "Chuyến công tác lần này khiến hai người trở nên thân quen, từ đó thành bạn tốt.",
   "zh": "此次出差，让两人熟悉了起来，从此成了好朋友。",
-  "py": "Cǐ cì chūchāi, ràng liǎng rén shúxī le qǐlái, cóngcǐ chéng le hǎo péngyou."
+  "py": "Cǐ cì chūchāi, ràng liǎng rén shúxi le qǐlai, cóngcǐ chéng le hǎo péngyou."
  },
  {
   "vi": "Tình yêu từ trước đến nay luôn là tôn trọng, thấu hiểu và ủng hộ lẫn nhau.",
@@ -5245,7 +5245,7 @@ var translateDataRev = [
  {
   "vi": "Giữa hai người dần dần nảy sinh tình yêu, cuối cùng thành vợ chồng.",
   "zh": "两人之间慢慢产生了爱情，最后成了夫妻。",
-  "py": "Liǎng rén zhī jiān màn màn chǎnshēng le àiqíng, zuìhòu chéng le fūqī."
+  "py": "Liǎng rén zhījiān mànmàn chǎnshēng le àiqíng, zuìhòu chéng le fūqī."
  },
  {
   "vi": "Trong một mối quan hệ tình cảm, hai người phải quan tâm nhiều hơn đến cảm nhận của đối phương.",
@@ -5502,6 +5502,6 @@ var writingData = {
  ],
  "model": {
   "zh": "在我看来，友情是人生中最美好的东西之一。我和小美是在大学里认识的。刚认识不久，我对她印象就非常好：人很实在，性格阳光，做事也很负责。尽管我们性格不同，她喜欢热闹，我喜欢安静，但是我们有很多共同爱好，都喜欢看书和旅游。有一次我生病了，我不说她也知道我不舒服，每天给我送饭，还帮我复习，我特别感动。从此，我们成了最好的朋友。毕业后，我们去了不同的城市工作，见面的机会少了，不过我们从来没有失去联系，常常在网上聊天儿。我觉得好的友情需要相互理解、相互支持，要多关注对方的感受，尤其是在对方遇到困难的时候。遇见她，我觉得很幸运。",
-  "py": "Zài wǒ kànlái, yǒuqíng shì rénshēng zhōng zuì měihǎo de dōngxi zhī yī. Wǒ hé xiǎo měi shì zài dàxué lǐ rènshi de. Gāng rènshi bùjiǔ, wǒ duì tā yìnxiàng jiù fēicháng hǎo: rén hěn shízài, xìnggé yángguāng, zuò shì yě hěn fùzé. Jǐnguǎn wǒmen xìnggé bùtóng, tā xǐhuan rènao, wǒ xǐhuan ānjìng, dànshì wǒmen yǒu hěn duō gòngtóng àihào, dōu xǐhuan kàn shū hé lǚyóu. Yǒu yí cì wǒ shēngbìng le, wǒ bù shuō tā yě zhīdao wǒ bù shūfu, měi tiān gěi wǒ sòng fàn, hái bāng wǒ fùxí, wǒ tèbié gǎndòng. Cóngcǐ, wǒmen chéng le zuìhǎo de péngyou. Bìyè hòu, wǒmen qù le bùtóng de chéngshì gōngzuò, jiànmiàn de jīhuì shǎo le, búguò wǒmen cónglái méiyǒu shīqù liánxì, chángcháng zài wǎngshàng liáotiānr. Wǒ juéde hǎo de yǒuqíng xūyào xiānghù lǐjiě, xiānghù zhīchí, yào duō guānzhù duìfāng de gǎnshòu, yóuqí shì zài duìfāng yùdào kùnnán de shíhou. Yùjiàn tā, wǒ juéde hěn xìngyùn."
+  "py": "Zài wǒ kànlái, yǒuqíng shì rénshēng zhōng zuì měihǎo de dōngxi zhīyī. Wǒ hé Xiǎoměi shì zài dàxué lǐ rènshi de. Gāng rènshi bùjiǔ, wǒ duì tā yìnxiàng jiù fēicháng hǎo: rén hěn shízài, xìnggé yángguāng, zuòshì yě hěn fùzé. Jǐnguǎn wǒmen xìnggé bùtóng, tā xǐhuan rènao, wǒ xǐhuan ānjìng, dànshì wǒmen yǒu hěn duō gòngtóng àihào, dōu xǐhuan kànshū hé lǚyóu. Yǒu yí cì wǒ shēngbìng le, wǒ bù shuō tā yě zhīdao wǒ bù shūfu, měitiān gěi wǒ sòng fàn, hái bāng wǒ fùxí, wǒ tèbié gǎndòng. Cóngcǐ, wǒmen chéng le zuìhǎo de péngyou. Bìyè hòu, wǒmen qù le bùtóng de chéngshì gōngzuò, jiànmiàn de jīhuì shǎo le, búguò wǒmen cónglái méiyǒu shīqù liánxì, chángcháng zài wǎngshang liáotiānr. Wǒ juéde hǎo de yǒuqíng xūyào xiānghù lǐjiě, xiānghù zhīchí, yào duō guānzhù duìfāng de gǎnshòu, yóuqí shì zài duìfāng yùdào kùnnan de shíhou. Yùjiàn tā, wǒ juéde hěn xìngyùn."
  }
 };

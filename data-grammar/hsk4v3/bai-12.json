@@ -1,0 +1,695 @@
+{
+ "/lessons/hsk4v3-bai-12.html": {
+  "points": [
+   {
+    "title": "固定短语“不怎么” — không … lắm; ít khi",
+    "errors": [
+     {
+      "wrong": "这件衣服不怎么很好看。",
+      "why": "不怎么 đã mang nghĩa “không … lắm”, không thêm 很 / 太 nữa.",
+      "right": "这件衣服不怎么好看。"
+     },
+     {
+      "wrong": "他怎么不喜欢吃米饭。（muốn nói: anh ấy không thích ăn cơm lắm）",
+      "why": "怎么不 = sao lại không (câu hỏi lý do); muốn nói mức độ thấp phải đặt 不 trước 怎么.",
+      "right": "他不怎么喜欢吃米饭。"
+     },
+     {
+      "wrong": "我昨天不怎么去上课。",
+      "why": "不怎么 nói thói quen / mức độ chung; một việc cụ thể đã xảy ra thì dùng 没.",
+      "right": "我昨天没去上课。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Chỉ là màu hình như không hợp với mẹ lắm.”",
+      "pre": "样子不错，就是颜色好像",
+      "blank": "不怎么",
+      "post": "适合她。",
+      "options": [
+       "不怎么",
+       "怎么不",
+       "不什么"
+      ],
+      "answer": 0,
+      "explanation": "不怎么 + động từ 适合 = không hợp lắm."
+     },
+     {
+      "context": "“… ít khi ra ngoài chơi.”",
+      "pre": "他总是在图书馆看书，",
+      "blank": "不怎么",
+      "post": "出去玩。",
+      "options": [
+       "不怎么",
+       "怎么",
+       "很少的"
+      ],
+      "answer": 0,
+      "explanation": "不怎么 + động từ hành động = ít khi."
+     },
+     {
+      "context": "“… không thích ăn cơm lắm.”",
+      "pre": "我爱吃饺子、包子，不怎么",
+      "blank": "喜欢",
+      "post": "吃米饭。",
+      "options": [
+       "喜欢",
+       "多",
+       "很"
+      ],
+      "answer": 0,
+      "explanation": "不怎么 + động từ tâm lý 喜欢."
+     },
+     {
+      "context": "“Hôm nay không lạnh lắm, không cần mặc áo len nữa.” (ôn từ 毛衣)",
+      "pre": "今天不怎么",
+      "blank": "冷",
+      "post": "，不用穿毛衣了。",
+      "options": [
+       "冷",
+       "伤心",
+       "热闹"
+      ],
+      "answer": 0,
+      "explanation": "不怎么 + tính từ."
+     },
+     {
+      "context": "“Ít khi đi, dạo này bận quá.”",
+      "pre": "A：你常去体育馆打球吗？ B：",
+      "blank": "不怎么",
+      "post": "去，最近太忙了。",
+      "options": [
+       "不怎么",
+       "怎么不",
+       "没怎么样"
+      ],
+      "answer": 0,
+      "explanation": "Trả lời câu hỏi về tần suất: 不怎么去 = ít khi đi."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Màu sắc hình như không hợp với cô ấy lắm.”",
+      "words": [
+       "颜色",
+       "好像",
+       "不怎么",
+       "适合",
+       "她"
+      ],
+      "answer": "颜色好像不怎么适合她。",
+      "explanation": "好像 + 不怎么 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy lúc nào cũng đọc sách ở thư viện, ít khi ra ngoài chơi.”",
+      "words": [
+       "他",
+       "总是",
+       "在图书馆",
+       "看书",
+       "，",
+       "不怎么",
+       "出去玩"
+      ],
+      "answer": "他总是在图书馆看书，不怎么出去玩。",
+      "explanation": "不怎么 đứng trước động từ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Dạo này tôi ít khi đến nhà thi đấu chơi bóng.”",
+      "words": [
+       "我",
+       "最近",
+       "不怎么",
+       "去",
+       "体育馆",
+       "打球"
+      ],
+      "answer": "我最近不怎么去体育馆打球。",
+      "explanation": "Trạng ngữ thời gian 最近 + 不怎么 + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这件衣服不怎么很好看。",
+      "isCorrect": false,
+      "correctVersion": "这件衣服不怎么好看。",
+      "explanation": "Không dùng 很 sau 不怎么."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我不怎么喜欢喝咖啡，更喜欢喝茶。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 不怎么 + 喜欢."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我昨天不怎么去上课。",
+      "isCorrect": false,
+      "correctVersion": "我昨天没去上课。",
+      "explanation": "Việc cụ thể đã xảy ra → phủ định bằng 没."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Chiếc áo len này kiểu dáng đẹp, chỉ là chất lượng không tốt lắm.",
+      "answer": "这件毛衣样子很好看，就是质量不怎么好。",
+      "answerPy": "Zhè jiàn máoyī yàngzi hěn hǎokàn, jiùshì zhìliàng bù zěnme hǎo.",
+      "explanation": "……，就是…… (Bài 3) + 不怎么 + tính từ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Ông tôi ít khi xem tivi, thích ra công viên đi dạo hơn.",
+      "answer": "我爷爷不怎么看电视，更喜欢去公园散步。",
+      "answerPy": "Wǒ yéye bù zěnme kàn diànshì, gèng xǐhuan qù gōngyuán sànbù.",
+      "explanation": "不怎么 + V = ít khi."
+     }
+    ]
+   },
+   {
+    "title": "双重否定 — 不是不 / 不能不 / 不得不: khẳng định với giọng mạnh hơn",
+    "errors": [
+     {
+      "wrong": "今天是班长的生日聚会，我不能来不。",
+      "why": "Trật tự đúng là 不能不 + V.",
+      "right": "今天是班长的生日聚会，我不能不来。"
+     },
+     {
+      "wrong": "他病了，不得不不去上班。",
+      "why": "Sau 不得不 là động từ khẳng định (việc buộc phải LÀM); muốn nói “đành nghỉ” thì dùng 请假.",
+      "right": "他病了，不得不请假。"
+     },
+     {
+      "wrong": "我不得不喜欢这件毛衣。",
+      "why": "不得不 = buộc phải (bất đắc dĩ), không đi với cảm xúc thích / ghét; muốn nhấn mạnh “ai cũng thích” dùng 没有人不…….",
+      "right": "这件毛衣太好看了，没有人不喜欢。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Nó cũng không phải không biết mình sai, chỉ là ngại nói.”",
+      "pre": "他也",
+      "blank": "不是",
+      "post": "不知道自己错了，只是不好意思说。",
+      "options": [
+       "不是",
+       "不能",
+       "不得"
+      ],
+      "answer": 0,
+      "explanation": "不是不 + V: thanh minh, giải thích."
+     },
+     {
+      "context": "“… cậu lại là lớp trưởng, không thể không đến!”",
+      "pre": "今天是毕业后第一次同学聚餐，你又是班长，",
+      "blank": "不能不",
+      "post": "来啊！",
+      "options": [
+       "不能不",
+       "不能",
+       "不来不"
+      ],
+      "answer": 0,
+      "explanation": "不能不 + V = nhất định phải."
+     },
+     {
+      "context": "“… bố đành phải thay đổi kế hoạch.”",
+      "pre": "由于天气不好，飞机不能起飞，爸爸",
+      "blank": "不得不",
+      "post": "改变计划。",
+      "options": [
+       "不得不",
+       "不是不",
+       "不怎么"
+      ],
+      "answer": 0,
+      "explanation": "Hoàn cảnh ép buộc → 不得不."
+     },
+     {
+      "context": "“Tôi không phải không muốn tham gia, mà là thật sự không có thời gian.”",
+      "pre": "我不是不想参加，",
+      "blank": "是",
+      "post": "实在没有时间。",
+      "options": [
+       "是",
+       "就",
+       "也"
+      ],
+      "answer": 0,
+      "explanation": "不是不……，是…… (cũng có thể nói 而是)."
+     },
+     {
+      "context": "“Ông bà lớn tuổi rồi, chúng ta không thể không chăm sóc chu đáo.”",
+      "pre": "爷爷奶奶年纪大了，我们",
+      "blank": "不能不",
+      "post": "好好照顾他们。",
+      "options": [
+       "不能不",
+       "不是不",
+       "不怎么"
+      ],
+      "answer": 0,
+      "explanation": "Trách nhiệm, tình cảm → 不能不."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Nó cũng không phải không biết mình sai.”",
+      "words": [
+       "他",
+       "也",
+       "不是",
+       "不知道",
+       "自己错了"
+      ],
+      "answer": "他也不是不知道自己错了。",
+      "explanation": "不是 + 不知道."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu là lớp trưởng, không thể không đến.”",
+      "words": [
+       "你",
+       "是班长",
+       "，",
+       "不能不",
+       "来",
+       "啊"
+      ],
+      "answer": "你是班长，不能不来啊。",
+      "explanation": "不能不 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Vì mưa to, chúng tôi buộc phải thay đổi kế hoạch.”",
+      "words": [
+       "因为",
+       "下大雨",
+       "，",
+       "我们",
+       "不得不",
+       "改变",
+       "计划"
+      ],
+      "answer": "因为下大雨，我们不得不改变计划。",
+      "explanation": "Chủ ngữ + 不得不 + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这件事我不得不告诉他。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: buộc phải nói cho anh ấy biết."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他病了，不得不不去上班。",
+      "isCorrect": false,
+      "correctVersion": "他病了，不得不请假。",
+      "explanation": "Sau 不得不 là động từ khẳng định."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我不是不想去，是实在没有时间。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 不是不想去 = muốn đi chứ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Không phải tôi không muốn giúp bạn, mà là tôi thật sự không có thời gian.",
+      "answer": "我不是不想帮你，是我实在没有时间。",
+      "answerPy": "Wǒ bú shì bù xiǎng bāng nǐ, shì wǒ shízai méiyǒu shíjiān.",
+      "explanation": "不是不……，(而)是…… — kết hợp Bài 11 · điểm 3."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Vì trời mưa to, chúng tôi đành phải ở nhà.",
+      "answer": "因为下大雨，我们不得不待在家里。",
+      "answerPy": "Yīnwèi xià dàyǔ, wǒmen bùdébù dāi zài jiāli.",
+      "explanation": "不得不 + 待在家里 (từ mới 待 dāi)."
+     }
+    ]
+   },
+   {
+    "title": "条件复句“无论……，都/也……” — dù … (thế nào) … cũng …",
+    "errors": [
+     {
+      "wrong": "无论明天下雨，我们都去爬山。",
+      "why": "Sau 无论 phải là cụm không xác định (từ nghi vấn, A还是B, V不V), không phải một điều kiện cụ thể.",
+      "right": "无论明天下不下雨，我们都去爬山。"
+     },
+     {
+      "wrong": "无论你去哪儿，我跟你去。",
+      "why": "Vế sau thiếu 都 / 也.",
+      "right": "无论你去哪儿，我都跟你去。"
+     },
+     {
+      "wrong": "无论多忙，都他每天给父母打电话。",
+      "why": "都 đứng sau chủ ngữ, ngay trước động từ.",
+      "right": "无论多忙，他每天都给父母打电话。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Dù ngày thường công việc bận đến đâu …”",
+      "pre": "",
+      "blank": "无论",
+      "post": "平时工作有多忙，他每个周末都会给父母打电话。",
+      "options": [
+       "无论",
+       "虽然",
+       "因为"
+      ],
+      "answer": 0,
+      "explanation": "无论 + 多 + tính từ."
+     },
+     {
+      "context": "“… trong mắt bố mẹ con đều là giỏi nhất.”",
+      "pre": "无论你考多少分，你在我们眼里",
+      "blank": "都",
+      "post": "是最优秀的。",
+      "options": [
+       "都",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "无论……，都……"
+     },
+     {
+      "context": "“Dù con đi đâu cũng phải gọi điện về nhà.”",
+      "pre": "无论你去",
+      "blank": "哪儿",
+      "post": "，都要给家里打个电话。",
+      "options": [
+       "哪儿",
+       "北京",
+       "那儿"
+      ],
+      "answer": 0,
+      "explanation": "Sau 无论 dùng từ nghi vấn 哪儿, không dùng địa điểm cụ thể."
+     },
+     {
+      "context": "“Dù gió hay mưa …”",
+      "pre": "无论刮风",
+      "blank": "还是",
+      "post": "下雨，爷爷每天都去公园跑步。",
+      "options": [
+       "还是",
+       "或者",
+       "和"
+      ],
+      "answer": 0,
+      "explanation": "无论 A 还是 B (không dùng 或者)."
+     },
+     {
+      "context": "“Dù gặp chuyện gì cũng đừng sốt ruột.”",
+      "pre": "无论遇到什么事，",
+      "blank": "也",
+      "post": "不要着急。",
+      "options": [
+       "也",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "无论……，也 + phủ định."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Dù công việc bận đến đâu, anh ấy cũng gọi điện cho bố mẹ.”",
+      "words": [
+       "无论",
+       "工作",
+       "多忙",
+       "，",
+       "他",
+       "都",
+       "给父母",
+       "打电话"
+      ],
+      "answer": "无论工作多忙，他都给父母打电话。",
+      "explanation": "无论 + 多忙，chủ ngữ + 都 + V."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Dù em đi đâu, anh cũng đi cùng em.”",
+      "words": [
+       "无论",
+       "你",
+       "去哪儿",
+       "，",
+       "我",
+       "都",
+       "跟你去"
+      ],
+      "answer": "无论你去哪儿，我都跟你去。",
+      "explanation": "无论 + 哪儿."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Dù gió hay mưa, ông ấy vẫn kiên trì chạy bộ.”",
+      "words": [
+       "无论",
+       "刮风",
+       "还是",
+       "下雨",
+       "，",
+       "他",
+       "都",
+       "坚持跑步"
+      ],
+      "answer": "无论刮风还是下雨，他都坚持跑步。",
+      "explanation": "无论 A 还是 B，都……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "无论明天下雨，我们都去。",
+      "isCorrect": false,
+      "correctVersion": "无论明天下不下雨，我们都去。",
+      "explanation": "Sau 无论 cần dạng không xác định: 下不下雨."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "无论你多大，在父母眼里你都是孩子。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 无论 + 多大，都……"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "无论你去哪儿，我跟你去。",
+      "isCorrect": false,
+      "correctVersion": "无论你去哪儿，我都跟你去。",
+      "explanation": "Vế sau phải có 都 / 也."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Dù bận đến đâu, cuối tuần nào anh ấy cũng gọi điện cho bố mẹ.",
+      "answer": "无论多忙，他每个周末都给父母打电话。",
+      "answerPy": "Wúlùn duō máng, tā měi gè zhōumò dōu gěi fùmǔ dǎdiànhuà.",
+      "explanation": "无论 + 多忙，chủ ngữ + 每个周末 + 都……"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Dù em gặp khó khăn gì, bất cứ lúc nào cũng có thể bàn bạc với bố mẹ.",
+      "answer": "无论你遇到什么困难，任何时候都可以和父母商量。",
+      "answerPy": "Wúlùn nǐ yùdào shénme kùnnan, rènhé shíhou dōu kěyǐ hé fùmǔ shāngliang.",
+      "explanation": "无论……什么…… + ôn 任何……都…… (Bài 1 · điểm 1)."
+     }
+    ]
+   },
+   {
+    "title": "固定格式“为了……而……” — vì (để) … mà …",
+    "errors": [
+     {
+      "wrong": "为了节约时间，而他不好好吃饭。",
+      "why": "Chủ ngữ đứng trước 为了; 而 đứng ngay trước hành động, không ngắt câu kiểu này.",
+      "right": "他为了节约时间而不好好吃饭。"
+     },
+     {
+      "wrong": "我们为了生活幸福而。",
+      "why": "Sau 而 bắt buộc phải có hành động.",
+      "right": "我们为了生活幸福而努力工作。"
+     },
+     {
+      "wrong": "他为了而努力学习考上大学。",
+      "why": "Mục đích đặt GIỮA 为了 và 而, hành động đặt SAU 而.",
+      "right": "他为了考上大学而努力学习。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… vì tiết kiệm thời gian mà không ăn uống tử tế.”",
+      "pre": "父母总是担心她为了节约时间",
+      "blank": "而",
+      "post": "不好好吃饭。",
+      "options": [
+       "而",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "为了…… + 而 + hành động."
+     },
+     {
+      "context": "“Chúng ta đều đang nỗ lực làm việc vì cuộc sống hạnh phúc.”",
+      "pre": "我们都在",
+      "blank": "为了",
+      "post": "生活幸福而努力工作着。",
+      "options": [
+       "为了",
+       "因为",
+       "随着"
+      ],
+      "answer": 0,
+      "explanation": "为了 nêu mục đích (khác 因为 nêu nguyên nhân)."
+     },
+     {
+      "context": "“… từ chối dùng cốc giấy.”",
+      "pre": "他们为了保护环境而",
+      "blank": "拒绝",
+      "post": "使用纸杯。",
+      "options": [
+       "拒绝",
+       "允许",
+       "商量"
+      ],
+      "answer": 0,
+      "explanation": "Hành động sau 而: 拒绝使用."
+     },
+     {
+      "context": "“Để đồ ăn tươi ngon, bố chọn chuyển phát nhanh nhất.”",
+      "pre": "",
+      "blank": "为了",
+      "post": "让食物新鲜，父亲选择了城里最快的快递。",
+      "options": [
+       "为了",
+       "无论",
+       "因为"
+      ],
+      "answer": 0,
+      "explanation": "为了……，…… (dạng có dấu phẩy, HSK 3)."
+     },
+     {
+      "context": "“Cô ấy vì chăm sóc mẹ bị bệnh mà ở lại quê.” (ôn từ mới 待 dāi)",
+      "pre": "她为了照顾生病的母亲而",
+      "blank": "待",
+      "post": "在老家。",
+      "options": [
+       "待",
+       "挂",
+       "脱"
+      ],
+      "answer": 0,
+      "explanation": "而 + 待在 + nơi."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng ta đều đang nỗ lực làm việc vì cuộc sống hạnh phúc.”",
+      "words": [
+       "我们",
+       "都在",
+       "为了",
+       "生活幸福",
+       "而",
+       "努力工作着"
+      ],
+      "answer": "我们都在为了生活幸福而努力工作着。",
+      "explanation": "Chủ ngữ + 都在 + 为了…… + 而 + V着."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Họ từ chối dùng cốc giấy để bảo vệ môi trường.”",
+      "words": [
+       "他们",
+       "为了",
+       "保护环境",
+       "而",
+       "拒绝",
+       "使用纸杯"
+      ],
+      "answer": "他们为了保护环境而拒绝使用纸杯。",
+      "explanation": "为了 + mục đích + 而 + hành động."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy vì muốn sang Trung Quốc du học mà chăm chỉ học tiếng Trung.”",
+      "words": [
+       "他",
+       "为了",
+       "去中国留学",
+       "而",
+       "努力",
+       "学中文"
+      ],
+      "answer": "他为了去中国留学而努力学中文。",
+      "explanation": "Bài tập SGK câu 2."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "为了节约时间，而他不好好吃饭。",
+      "isCorrect": false,
+      "correctVersion": "他为了节约时间而不好好吃饭。",
+      "explanation": "Chủ ngữ trước 为了; 而 ngay trước hành động."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "她为了参加比赛而每天练习三个小时。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 为了 + mục đích + 而 + hành động."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我为了考试而。",
+      "isCorrect": false,
+      "correctVersion": "我为了考试而努力复习。",
+      "explanation": "Sau 而 phải có hành động."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bố mẹ luôn lo cô ấy vì tiết kiệm thời gian mà không ăn uống tử tế.",
+      "answer": "父母总是担心她为了节约时间而不好好吃饭。",
+      "answerPy": "Fùmǔ zǒngshì dānxīn tā wèile jiéyuē shíjiān ér bù hǎohāo chīfàn.",
+      "explanation": "为了…… + 而 + 不好好吃饭."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Họ đang nỗ lực làm việc vì một cuộc sống hạnh phúc.",
+      "answer": "他们正在为了生活幸福而努力工作。",
+      "answerPy": "Tāmen zhèngzài wèile shēnghuó xìngfú ér nǔlì gōngzuò.",
+      "explanation": "正在 + 为了…… + 而 + V."
+     }
+    ]
+   }
+  ]
+ }
+}

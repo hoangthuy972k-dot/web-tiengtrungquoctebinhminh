@@ -1,0 +1,345 @@
+{
+"so": 15,
+"zh": "我去应聘了",
+"py": "Wǒ qù yìngpìn le",
+"vn": "Tôi đi ứng tuyển rồi",
+"chuDe": "Ứng tuyển, thi viết, phỏng vấn, thực tập và ý nghĩa của thực tập",
+"icon": "💼",
+"mucTieu": [
+  "Nghe hiểu và trao đổi được thông tin về ứng tuyển, phỏng vấn, thực tập.",
+  "Kể lại (nói hoặc viết) được trải nghiệm đi xin việc của bản thân.",
+  "Hiểu tình hình thực tập của sinh viên đại học Trung Quốc và ý nghĩa của việc thực tập."
+],
+
+"wu": [
+  {"img":"wu-A","label":"工厂","py":"gōngchǎng","letter":"A"},
+  {"img":"wu-B","label":"镜子","py":"jìngzi","letter":"B"},
+  {"img":"wu-C","label":"理发","py":"lǐfà","letter":"C"},
+  {"img":"wu-D","label":"面试","py":"miànshì","letter":"D"},
+  {"img":"wu-E","label":"短信","py":"duǎnxìn","letter":"E"},
+  {"img":"wu-F","label":"毕业生","py":"bìyèshēng","letter":"F"}
+],
+
+"dialogs": [
+  {"tab":"Lý Văn đi ứng tuyển","scene":"在陈天中的学校 · Lý Văn đến trường của Trần Thiên Trung, hai người vừa đi vừa trò chuyện","anh":"kv-1",
+   "nguoi":["陈天中","李文"],
+   "preQuiz":[
+     {"q":"李文最近在忙什么？","opts":["去公司应聘","在公司实习","准备期中考试","为毕业做准备"],"ans":0},
+     {"q":"很多单位招聘毕业生时，比较重视什么？","opts":["身体情况","学习成绩","实习经历","毕业的学校"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"李文，期中考试后就再也没见过你了，你这段时间在忙什么呢？","vn":"Lý Văn, từ sau kỳ thi giữa kỳ là không gặp lại cậu nữa, dạo này cậu bận gì thế?"},
+     {"sp":1,"zh":"我最近去一家医药公司应聘了，他们正在招聘实习生。","vn":"Dạo này mình đi ứng tuyển ở một công ty dược, họ đang tuyển thực tập sinh."},
+     {"sp":0,"zh":"你这么早就考虑实习了？","vn":"Cậu đã tính chuyện thực tập sớm vậy à?"},
+     {"sp":1,"zh":"现在很多单位在招聘毕业生时，都很重视有没有实习经历，所以我想提前去锻炼一下，积累一些经验。","vn":"Bây giờ nhiều đơn vị khi tuyển sinh viên tốt nghiệp đều rất coi trọng có kinh nghiệm thực tập hay không, nên mình muốn đi rèn luyện trước một chút, tích lũy ít kinh nghiệm."},
+     {"sp":0,"zh":"那现在有结果了吗？","vn":"Thế bây giờ có kết quả chưa?"},
+     {"sp":1,"zh":"我还在等消息，希望能有好结果。","vn":"Mình vẫn đang chờ tin, mong là có kết quả tốt."}],
+   "hoi":[["李文为什么现在就想去实习？","因为现在很多单位在招聘毕业生时，都很重视有没有实习经历，所以他想提前去锻炼一下，积累一些经验。"],["李文应聘成功了吗？","现在还不知道。他还在等消息，希望能有好结果。"]],
+   "kelai":"陈天中很久没有……。他问李文这段时间……。李文说他最近去……，因为那家公司……。他觉得现在很多单位在……时，都很重视……，所以他想提前……，积累……。陈天中又问李文现在……。李文说他还在……，希望……。",
+   "kelaiMau":"陈天中很久没有见到李文了。他问李文这段时间在忙什么。李文说他最近去一家医药公司应聘了，因为那家公司正在招聘实习生。他觉得现在很多单位在招聘毕业生时，都很重视有没有实习经历，所以他想提前去锻炼一下，积累一些经验。陈天中又问李文现在有没有结果。李文说他还在等消息，希望能有好结果。"},
+
+  {"tab":"Thi viết và phỏng vấn","scene":"在校园 · Trong khuôn viên trường, Trần Thiên Trung và Lý Văn vừa đi vừa trò chuyện","anh":"kv-2",
+   "nguoi":["陈天中","李文"],
+   "preQuiz":[
+     {"q":"李文应聘时，第一步做的是什么？","opts":["参加笔试","参加面试","在网上报名","给负责人打电话"],"ans":2},
+     {"q":"公司的笔试主要考什么？","opts":["外语水平","专业知识","兴趣爱好","对工作的想法"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"李文，你是怎么应聘的？","vn":"Lý Văn, cậu ứng tuyển như thế nào?"},
+     {"sp":1,"zh":"我先在网上报名，填写个人信息，然后等公司通知我去参加笔试。","vn":"Mình đăng ký trên mạng trước, điền thông tin cá nhân, sau đó chờ công ty báo đi thi viết."},
+     {"sp":0,"zh":"笔试都考些什么？","vn":"Thi viết thì thi những gì?"},
+     {"sp":1,"zh":"主要是一些专业知识。考完没多久，他们就让我去面试了。","vn":"Chủ yếu là kiến thức chuyên ngành. Thi xong không lâu, họ đã bảo mình đi phỏng vấn."},
+     {"sp":0,"zh":"看来你笔试答得不错，那你面试得怎么样？","vn":"Xem ra cậu làm bài thi viết khá tốt, thế phỏng vấn thế nào?"},
+     {"sp":1,"zh":"那天是由部门负责人来面试的，我有点儿紧张。他让我介绍了自己的学习经历、兴趣爱好和对工作的想法。","vn":"Hôm đó là người phụ trách bộ phận phỏng vấn, mình hơi căng thẳng. Anh ấy bảo mình giới thiệu quá trình học tập, sở thích và suy nghĩ của mình về công việc."},
+     {"sp":0,"zh":"听起来挺正式的。","vn":"Nghe có vẻ khá trang trọng nhỉ."},
+     {"sp":1,"zh":"是啊，我觉得这次经历很有用。不论结果怎么样，对我以后找工作肯定有帮助。","vn":"Đúng vậy, mình thấy lần trải nghiệm này rất có ích. Bất kể kết quả thế nào, đối với việc tìm việc sau này của mình chắc chắn đều có ích."}],
+   "hoi":[["李文面试的内容是什么？","部门负责人让他介绍了自己的学习经历、兴趣爱好和对工作的想法。"],["李文觉得这次应聘经历怎么样？","他觉得这次经历很有用，不论结果怎么样，对他以后找工作肯定有帮助。"]]},
+
+  {"tab":"Tin nhắn trúng tuyển","scene":"在家里 · Ở nhà, Lý Văn nhận được tin nhắn công ty gửi đến","anh":"kv-3","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"李文收到的短信内容是什么？","opts":["他通过面试了","他周末得加班","他明天要开始工作","他下周工作任务多"],"ans":0},
+     {"q":"李文做了什么准备？","opts":["搬到了公司附近","买了一个新手机","买了一身新衣服","去商场买礼物了"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"一天下午，李文突然收到一条短信，说他通过了面试，让他下周一到公司实习。","vn":"Một buổi chiều, Lý Văn bỗng nhận được một tin nhắn, nói cậu ấy đã qua phỏng vấn, bảo thứ Hai tuần sau đến công ty thực tập."},
+     {"sp":0,"zh":"李文看到信息后，激动得把手机扔到床上，在屋子里跳了起来。","vn":"Đọc tin xong, Lý Văn phấn khích đến mức ném điện thoại lên giường, nhảy cẫng lên trong phòng."},
+     {"sp":0,"zh":"之后的几天，李文忙着做各种准备。","vn":"Mấy ngày sau đó, Lý Văn tất bật làm đủ thứ chuẩn bị."},
+     {"sp":0,"zh":"为了给大家留个好印象，他去理发店把头发理了理，又去商店买了一身正式的衣服，还打算在镜子前把自我介绍练一练。","vn":"Để để lại ấn tượng tốt với mọi người, cậu ra tiệm cắt tóc sửa lại tóc một chút, lại đi cửa hàng mua một bộ quần áo lịch sự, còn định tập phần tự giới thiệu trước gương một chút."},
+     {"sp":0,"zh":"在他看来，这次实习是一个新的开始。","vn":"Theo cậu ấy, lần thực tập này là một khởi đầu mới."},
+     {"sp":0,"zh":"他希望不仅能够运用专业知识完成任务，还能够积累更多经验，为将来找工作打下基础。","vn":"Cậu mong không chỉ có thể vận dụng kiến thức chuyên ngành để hoàn thành nhiệm vụ, mà còn có thể tích lũy thêm kinh nghiệm, đặt nền móng cho việc tìm việc sau này."}],
+   "hoi":[["李文看到信息后做什么了？","他激动得把手机扔到床上，在屋子里跳了起来。之后他去理发店理了发，又买了一身正式的衣服，还打算在镜子前练习自我介绍。"],["李文是怎么看这次实习的？","在他看来，这次实习是一个新的开始。他希望不仅能够运用专业知识完成任务，还能够积累更多经验，为将来找工作打下基础。"]],
+   "kelai":"李文收到了一条短信，告诉他……，让他下周一……。他看到信息后，激动得……，在屋子里……。为了给大家……，他去理发店……，又去商店……，还打算在镜子前……。他觉得这次实习是……。他希望不仅能够……，还能够……，为将来找工作……。",
+   "kelaiMau":"李文收到了一条短信，告诉他通过了面试，让他下周一到公司实习。他看到信息后，激动得把手机扔到床上，在屋子里跳了起来。为了给大家留个好印象，他去理发店把头发理了理，又去商店买了一身正式的衣服，还打算在镜子前把自我介绍练一练。他觉得这次实习是一个新的开始。他希望不仅能够运用专业知识完成任务，还能够积累更多经验，为将来找工作打下基础。"},
+
+  {"tab":"Thu hoạch từ thực tập","scene":"实习的收获 · Thu hoạch từ kỳ thực tập","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"根据课文，为什么很多大学生要去实习？","opts":["想认识新朋友","便于了解社会","想减轻经济压力","为了达到毕业要求"],"ans":1},
+     {"q":"在实习中，学生们会有什么发现？","opts":["工作比学习更简单","书上的知识没有用","学习时要注意细节","有的问题要慢慢理解"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"在中国，很多大学生在毕业前都会去实习。","vn":"Ở Trung Quốc, nhiều sinh viên đại học trước khi tốt nghiệp đều đi thực tập."},
+     {"sp":0,"zh":"实习的地方有公司、工厂，也有学校和医院。","vn":"Nơi thực tập có công ty, nhà máy, cũng có trường học và bệnh viện."},
+     {"sp":0,"zh":"学生们通过实习，可以积累工作经验，熟悉工作内容和单位的管理规定，提前了解并适应社会。","vn":"Thông qua thực tập, sinh viên có thể tích lũy kinh nghiệm làm việc, làm quen với nội dung công việc và quy định quản lý của đơn vị, hiểu và thích nghi với xã hội từ sớm."},
+     {"sp":0,"zh":"在实习中，学生常常会发现，课堂上学到的知识和实际工作并不完全一样。","vn":"Trong khi thực tập, sinh viên thường phát hiện kiến thức học trên lớp và công việc thực tế không hoàn toàn giống nhau."},
+     {"sp":0,"zh":"例如：有些事情，在课本上学不如自己做一遍，因为只有在做的时候，才会发现有很多细节需要注意；还有一些问题，在书上找不到答案，只能通过日常工作慢慢理解。","vn":"Ví dụ: có những việc, học trên sách không bằng tự mình làm một lần, vì chỉ khi bắt tay làm mới phát hiện có rất nhiều chi tiết cần chú ý; còn có những vấn đề không tìm được đáp án trong sách, chỉ có thể dần dần hiểu ra qua công việc hằng ngày."},
+     {"sp":0,"zh":"在这样的过程中，学生能够对学到的知识有更好的认识，也更清楚自己的职业发展方向。","vn":"Trong quá trình đó, sinh viên có thể hiểu rõ hơn những kiến thức đã học, cũng rõ hơn hướng phát triển nghề nghiệp của mình."}],
+   "hoi":[["通过实习，学生可以学到什么？","学生可以积累工作经验，熟悉工作内容和单位的管理规定，提前了解并适应社会。"],["为什么说有些事情需要自己做一遍？","因为只有在做的时候，才会发现有很多细节需要注意。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"固定格式“再也不/没……”","tenVn":"Cấu trúc cố định 「再也不 / 再也没……」 — không bao giờ … nữa / từ đó không … nữa",
+  "cauTruc":["(以后) + 再也不 + động từ (+ 了) → từ nay về sau sẽ không bao giờ … nữa (TƯƠNG LAI)","(mốc thời gian + 后 / 以后) + 就 + 再也没 (有) + động từ + 过 (+ 了) → từ đó đến nay không … lại nữa (QUÁ KHỨ → HIỆN TẠI)"],
+  "giaiThich":"「再也不」 nói về TƯƠNG LAI: khẳng định / hứa từ nay sẽ không bao giờ làm việc đó nữa (我以后再也不迟到了). 「再也没」 nói về khoảng thời gian từ một mốc trong QUÁ KHỨ đến BÂY GIỜ: việc đó không xảy ra lần nào nữa; động từ hay kèm 「过」, phía trước thường có mốc thời gian + 就 (期中考试后就再也没见过你了). Mẹo cho người Việt: nghe “không … nữa”, hãy hỏi: đó là lời hứa / dự định về sau → 再也不; còn là kể chuyện đã xảy ra từ đó đến nay → 再也没. Thứ tự luôn là 再也 + 不 / 没 (✗ 不再也). So với 不再 (không … nữa), 再也不 mạnh hơn, mang cảm xúc rõ hơn (hối hận, quyết tâm, tiếc nuối).",
+  "viDu":[["期中考试后就再也没见过你了。","Từ sau kỳ thi giữa kỳ là không gặp lại cậu nữa."],["对不起，我以后再也不迟到了。","Xin lỗi, từ nay em sẽ không bao giờ đến muộn nữa."],["我出国以后就再也没给他打过电话。","Từ khi ra nước ngoài, tôi không gọi điện cho anh ấy lần nào nữa."],["毕业以后我们就再也没见过面，我怎么也联系不上他。","Từ khi tốt nghiệp chúng tôi không gặp lại nhau nữa, tôi liên lạc thế nào cũng không được. (ôn 怎么也 + 不 — Bài 13)"]],
+  "loi":[["我以后再也没迟到了。","Lời hứa về sau (以后) phải dùng 再也不.","我以后再也不迟到了。"],["毕业以后，我再也不见过他。","Kể việc từ quá khứ đến nay, có 过 → dùng 再也没.","毕业以后，我再也没见过他。"],["我不再也去那家饭馆了。","Thứ tự đúng là 再也 + 不 / 没.","我再也不去那家饭馆了。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["期中考试后就再也","见过你了。"],"dap":[["没"]],"chon":["没","不","别"],"goiY":"“Từ sau thi giữa kỳ là không gặp lại cậu nữa.” (quá khứ → nay)","giai":"Có 过, kể việc đã qua → 再也没."},
+     {"kieu":"dien","phan":["对不起，我以后再也","迟到了。"],"dap":[["不"]],"chon":["不","没","还"],"goiY":"“Từ nay em sẽ không bao giờ đến muộn nữa.” (lời hứa)","giai":"以后 + lời hứa → 再也不."},
+     {"kieu":"dien","phan":["我出国以后就","没给他打过电话。"],"dap":[["再也"]],"chon":["再也","也再","还是"],"goiY":"“Từ khi ra nước ngoài, tôi không gọi cho anh ấy nữa.”","giai":"Thứ tự: 再也 + 没."},
+     {"kieu":"dien","phan":["从那天以后，她就再也没给我发过","。"],"dap":[["短信"]],"chon":["短信","细节","答案"],"goiY":"“Từ hôm đó, cô ấy không nhắn tin cho tôi nữa.” (ôn từ mới)","giai":"发短信 = gửi tin nhắn."},
+     {"kieu":"dien","phan":["妈妈，你放心，我","不躺在床上看手机了。"],"dap":[["再也"]],"chon":["再也","再也没","也再"],"goiY":"“Mẹ yên tâm, con sẽ không bao giờ nằm trên giường xem điện thoại nữa.”","giai":"再也 + 不 → lời hứa."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["我","以后","再也","不","迟到了"],"dap":["我以后再也不迟到了。"],"goiY":"Từ nay tôi sẽ không bao giờ đến muộn nữa.","giai":"以后 + 再也不 + V + 了."},
+     {"kieu":"xep","manh":["毕业以后","，","我们","就","再也没","见过面"],"dap":["毕业以后，我们就再也没见过面。"],"goiY":"Từ khi tốt nghiệp, chúng tôi không gặp lại nhau nữa.","giai":"Mốc thời gian + 就 + 再也没 + V过."},
+     {"kieu":"xep","manh":["搬家以后","，","他","再也没","去过","那个公园"],"dap":["搬家以后，他再也没去过那个公园。"],"goiY":"Từ khi chuyển nhà, anh ấy không đến công viên đó nữa.","giai":"再也没 + V过 + O."},
+     {"kieu":"dungsai","cau":"我保证，以后再也没熬夜了。","dung":false,"sua":"我保证，以后再也不熬夜了。","giai":"Lời hứa về tương lai → 再也不."},
+     {"kieu":"dungsai","cau":"出国以后，我就再也没给他打过电话。","dung":true,"giai":"Đúng: kể việc từ quá khứ đến nay → 再也没……过."},
+     {"kieu":"dungsai","cau":"你放心，我不再也玩游戏了。","dung":false,"sua":"你放心，我再也不玩游戏了。","giai":"Thứ tự đúng: 再也 + 不."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 52)","huongDan":"Hoàn thành câu của B, có dùng 再也不 / 再也没","cau":[
+     {"kieu":"vandung","de":"A：你和小王还有联系吗？ B：毕业以后，＿＿。","goiY":"Kể: từ khi tốt nghiệp đến giờ không liên lạc / không gặp lại nữa (再也没……过)","mau":"我们就再也没联系过","can":[["再也没"]]},
+     {"kieu":"vandung","de":"A：你以后千万要注意保护好眼睛。 B：知道了，我以后＿＿。","goiY":"Hứa: từ nay sẽ không bao giờ nằm xem điện thoại / đọc sách chỗ tối nữa (再也不……)","mau":"再也不躺在床上看手机了","can":[["再也不"]]},
+     {"kieu":"vandung","de":"A：你还常去太阳公园散步吗？ B：搬家以后离公园太远了，＿＿。","goiY":"Kể: từ khi chuyển nhà đến nay không đến đó tản bộ nữa (再也没……过)","mau":"我就再也没去那儿散过步","can":[["再也没"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Từ khi tốt nghiệp, tôi không gặp lại cô ấy nữa.","dap":["毕业以后，我就再也没见过她。","毕业以后，我再也没见过她。","毕业以后，我就再也没见过她了。"],"giai":"Quá khứ → nay: 再也没 + V过."},
+     {"kieu":"dich","vn":"Xin lỗi, từ nay em sẽ không bao giờ đến muộn nữa.","dap":["对不起，我以后再也不迟到了。","对不起，以后我再也不迟到了。"],"giai":"Lời hứa: 以后再也不……了."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể một việc em quyết tâm không bao giờ làm nữa, hoặc một người / một nơi từ đó em không gặp / không đến nữa — dùng 「再也不」 hoặc 「再也没」","mau":"那次感冒以后，我冬天再也不穿那么少出门了。","can":[["再也不","再也没"]]}]}
+  ]},
+
+ {"so":"2","ten":"介词“由”","tenVn":"Giới từ 「由」 — do (ai) làm, do (ai) phụ trách",
+  "cauTruc":["(Sự việc) + 由 + người / đơn vị + (来) + động từ","(Sự việc) + 是 + 由 + người / đơn vị + (来) + động từ + 的"],
+  "giaiThich":"Trong bài này, 「由」 dẫn ra NGƯỜI THỰC HIỆN hành động: việc này DO ai làm / phụ trách. Sự việc thường đứng đầu câu làm chủ đề, sau đó là 由 + người + (来) + động từ. Hay đi với động từ chỉ trách nhiệm, công việc: 负责, 安排, 决定, 举办, 完成, 准备, 解决, 面试. Muốn nhấn mạnh người làm thì dùng khung 「是由……(来)……的」. Mẹo cho người Việt: “do” trong “do ai làm” = 由; còn “do / vì” chỉ nguyên nhân = 由于 (Bài 2 · điểm 4) — đừng nhầm. Khác 被: 被 nhấn mạnh chủ ngữ BỊ tác động (thường không như ý), còn 由 nhấn mạnh TRÁCH NHIỆM thuộc về ai. Sau 由 + người bắt buộc phải có động từ.",
+  "viDu":[["那天是由部门负责人来面试的，我有点儿紧张。","Hôm đó là người phụ trách bộ phận phỏng vấn, tôi hơi căng thẳng."],["这个问题究竟由谁来负责解决？","Vấn đề này rốt cuộc do ai phụ trách giải quyết?"],["这次活动是由他们公司来安排的。","Hoạt động lần này do công ty họ sắp xếp."],["作为班长，这次晚会由我来安排。","Với tư cách lớp trưởng, buổi liên hoan lần này do tôi sắp xếp. (ôn 作为 — Bài 13)"]],
+  "loi":[["这个问题由于谁来解决？","由于 chỉ nguyên nhân; dẫn ra người làm phải dùng 由.","这个问题由谁来解决？"],["这次活动是由他们公司安排。","Đã dùng khung 是由…… thì cuối câu cần 的.","这次活动是由他们公司（来）安排的。"],["面试由部门负责人。","Sau 由 + người phải có động từ.","面试由部门负责人来做。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["那天是","部门负责人来面试的。"],"dap":[["由"]],"chon":["由","由于","被"],"goiY":"“Hôm đó do người phụ trách bộ phận phỏng vấn.”","giai":"由 + người + 来 + V."},
+     {"kieu":"dien","phan":["这个问题究竟由谁来","解决？"],"dap":[["负责"]],"chon":["负责","负责人","部门"],"goiY":"“Vấn đề này rốt cuộc do ai phụ trách giải quyết?”","giai":"负责 là động từ; 负责人 là danh từ."},
+     {"kieu":"dien","phan":["这次活动是由他们公司来安排","。"],"dap":[["的"]],"chon":["的","了","着"],"goiY":"“Hoạt động lần này do công ty họ sắp xếp.”","giai":"Khung 是由……的."},
+     {"kieu":"dien","phan":["","天气不好，比赛推迟了。"],"dap":[["由于"]],"chon":["由于","由","被"],"goiY":"“Do thời tiết xấu, trận đấu bị hoãn.” (phân biệt với 由)","giai":"Nguyên nhân → 由于 (Bài 2); người làm → 由."},
+     {"kieu":"dien","phan":["这件事由我","负责吧。"],"dap":[["来"]],"chon":["来","去","在"],"goiY":"“Việc này để tôi phụ trách nhé.”","giai":"由 + người + 来 + V."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["这次活动","由","学校","来","举办"],"dap":["这次活动由学校来举办。"],"goiY":"Hoạt động lần này do trường tổ chức.","giai":"Sự việc + 由 + đơn vị + 来 + V."},
+     {"kieu":"xep","manh":["面试","是","由","部门负责人","来","做","的"],"dap":["面试是由部门负责人来做的。"],"goiY":"Phỏng vấn là do người phụ trách bộ phận làm.","giai":"是由……来……的."},
+     {"kieu":"xep","manh":["今天的","晚饭","由","我","来","做","吧"],"dap":["今天的晚饭由我来做吧。"],"goiY":"Bữa tối hôm nay để tôi nấu nhé.","giai":"由 + 我 + 来 + V."},
+     {"kieu":"dungsai","cau":"这个工作是由小王一个人完成的。","dung":true,"giai":"Đúng: 是由 + người + V + 的."},
+     {"kieu":"dungsai","cau":"由于你来负责这件事吧。","dung":false,"sua":"由你来负责这件事吧。","giai":"Chỉ người phụ trách → 由, không phải 由于."},
+     {"kieu":"dungsai","cau":"这期交流活动是由学生会举办。","dung":false,"sua":"这期交流活动是由学生会举办的。","giai":"Khung 是由…… cần 的 ở cuối."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 54)","huongDan":"Viết câu trả lời của B, có dùng 由","cau":[
+     {"kieu":"vandung","de":"A：这个工作是谁完成的？ B：＿＿。","goiY":"Trả lời việc này do ai hoàn thành (是由……完成的)","mau":"这个工作是由我们部门的同事一起完成的","can":[["由"]]},
+     {"kieu":"vandung","de":"A：这些节目是谁准备的？ B：＿＿。","goiY":"Trả lời các tiết mục do ai chuẩn bị (是由……准备的)","mau":"这些节目是由留学生们自己准备的","can":[["由"]]},
+     {"kieu":"vandung","de":"A：这期交流活动是谁举办的？ B：＿＿。","goiY":"Trả lời hoạt động giao lưu kỳ này do ai tổ chức (是由……举办的)","mau":"这期交流活动是由学校的留学生办公室举办的","can":[["由"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Bữa tối hôm nay do tôi nấu.","dap":["今天的晚饭由我来做。","今天的晚饭由我做。","今天晚饭由我来做。"],"giai":"由 + người + (来) + V."},
+     {"kieu":"dich","vn":"Hoạt động lần này do nhà trường tổ chức.","dap":["这次活动是由学校举办的。","这次活动由学校举办。","这次活动是由学校来举办的。","这次活动由学校来举办。"],"giai":"(是)由……(来)举办(的)."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể cách phân công việc trong nhà / trong lớp em, có dùng 「由……来……」","mau":"在我们家，做饭由妈妈来负责，打扫房间由我和弟弟来负责。","can":[["由"]]}]}
+  ]},
+
+ {"so":"3","ten":"“把”字句“主语+把+宾语+动词（+一/了）+动词”","tenVn":"Câu chữ 「把」 với động từ lặp lại — làm (qua / thử) một chút",
+  "cauTruc":["Chủ ngữ + 把 + tân ngữ + VV / V一V → việc chưa làm: đề nghị, dự định","Chủ ngữ + 把 + tân ngữ + V了V → việc đã làm","Động từ hai âm tiết: 把 + tân ngữ + ABAB (检查检查, 复习复习)"],
+  "giaiThich":"Ở HSK 3 em đã học: trong câu 「把」, động từ không được đứng trơ trọi, phía sau phải có thành phần khác (了, bổ ngữ…). Bài này thêm một cách: LẶP LẠI động từ — VV, V一V, V了V — để diễn tả hành động diễn ra trong thời gian NGẮN, mức độ NHẸ (làm qua, làm một chút, thử). Dùng V一V / VV cho việc CHƯA làm: lời đề nghị, dự định (你先把作业检查检查). Dùng V了V cho việc ĐÃ làm (他把头发理了理). Động từ hai âm tiết chỉ lặp kiểu ABAB, không chen 一: 复习复习 ✓, ✗ 复习一复习. Động từ ly hợp như 理发 thì tách ra: 把头发理了理 (理 là động từ, 头发 là tân ngữ). Mẹo cho người Việt: tiếng Việt hay thêm “một chút / qua / thử” — gặp ý này trong câu có 把 thì nghĩ ngay đến động từ lặp.",
+  "viDu":[["他去理发店把头发理了理。","Cậu ấy ra tiệm cắt tóc sửa lại tóc một chút."],["你先把作业检查检查，然后再交给老师。","Em kiểm tra bài tập một lượt trước, rồi hãy nộp cho thầy."],["上课前，我把今天要学习的内容看了看。","Trước giờ học, tôi đã xem qua nội dung hôm nay sẽ học."],["首先把房间打扫打扫，然后再请大家进来。","Trước hết dọn phòng một chút, sau đó mới mời mọi người vào. (ôn 首先……然后…… — Bài 14)"]],
+  "loi":[["我把作业检查。","Sau động từ trong câu 把 phải có thành phần khác — ở đây lặp động từ.","我把作业检查检查。"],["你先把课文复习一复习。","Động từ hai âm tiết lặp ABAB, không chen 一.","你先把课文复习复习。"],["昨天我把衣服洗一洗。","Việc đã xảy ra (昨天) dùng V了V.","昨天我把衣服洗了洗。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["他去理发店把头发","了理。"],"dap":[["理"]],"chon":["理","剪","洗"],"goiY":"“Cậu ấy ra tiệm sửa lại tóc một chút.”","giai":"V了V: 理了理 — hai động từ phải giống nhau."},
+     {"kieu":"dien","phan":["你先把作业","，然后再交给老师。"],"dap":[["检查检查"]],"chon":["检查检查","检查一检查","检查"],"goiY":"“Em kiểm tra bài tập một lượt trước …”","giai":"Động từ hai âm tiết: ABAB; ✗ 检查一检查; 把 + O không thể chỉ có 检查."},
+     {"kieu":"dien","phan":["上课前，我把今天要学习的内容看","看。"],"dap":[["了"]],"chon":["了","着","过"],"goiY":"“Trước giờ học, tôi đã xem qua nội dung hôm nay.” (việc đã làm)","giai":"Việc đã làm → V了V."},
+     {"kieu":"dien","phan":["面试前，他打算在镜子前把自我介绍练","练。"],"dap":[["一"]],"chon":["一","了","过"],"goiY":"“Trước phỏng vấn, anh ấy định tập phần tự giới thiệu một chút.” (dự định)","giai":"打算 → việc chưa làm → V一V."},
+     {"kieu":"dien","phan":["你","这件事好好想想，再告诉我吧。"],"dap":[["把"]],"chon":["把","被","给"],"goiY":"“Bạn nghĩ kỹ việc này rồi hãy nói cho tôi.”","giai":"把 + O + VV."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["你","把","衣服","洗","一","洗","吧"],"dap":["你把衣服洗一洗吧。"],"goiY":"Bạn giặt quần áo một chút đi.","giai":"Đề nghị: 把 + O + V一V + 吧."},
+     {"kieu":"xep","manh":["我","去","把","房间","打扫打扫"],"dap":["我去把房间打扫打扫。"],"goiY":"Tôi đi dọn phòng một chút.","giai":"Hai âm tiết: ABAB."},
+     {"kieu":"xep","manh":["她","把","老师的话","想了想","，","点了点头"],"dap":["她把老师的话想了想，点了点头。"],"goiY":"Cô ấy nghĩ một chút về lời thầy nói rồi gật đầu.","giai":"Việc đã làm: 把 + O + V了V."},
+     {"kieu":"dungsai","cau":"你先把课文复习一复习。","dung":false,"sua":"你先把课文复习复习。","giai":"Động từ hai âm tiết lặp ABAB, không chen 一."},
+     {"kieu":"dungsai","cau":"他把头发理了理，又买了一身新衣服。","dung":true,"giai":"Đúng: việc đã làm → V了V."},
+     {"kieu":"dungsai","cau":"我把这本书看。","dung":false,"sua":"我把这本书看了看。","giai":"Động từ sau 把 không được đứng một mình (có thể sửa: 看了看 / 看一看 / 看完了)."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 56)","huongDan":"Hoàn thành câu bằng câu chữ 把 với động từ lặp, dùng từ trong ngoặc","cau":[
+     {"kieu":"vandung","de":"我＿＿，也说出了自己的看法。（想）","goiY":"Dùng 「想」: việc đã làm (đã nghĩ một chút về vấn đề) → 把……想了想","mau":"把这个问题想了想","can":[["把"],["想了想"]]},
+     {"kieu":"vandung","de":"看到办公室有点儿脏，他打算＿＿。（扫）","goiY":"Dùng 「扫」: dự định quét văn phòng một chút → 把……扫一扫 / 扫扫","mau":"把办公室扫一扫","can":[["把"],["扫一扫","扫扫"]]},
+     {"kieu":"vandung","de":"我建议你每次先＿＿，然后再开始写作业。（复习）","goiY":"Dùng 「复习」: lời khuyên ôn lại bài một chút → 把……复习复习","mau":"把学过的内容复习复习","can":[["把"],["复习复习"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Em sửa bài văn này một chút rồi hãy nộp cho thầy.","dap":["你把这篇作文改一改，再交给老师。","你把这篇作文改改，再交给老师。","你先把这篇作文改一改，然后再交给老师。","你把这篇作文改一改，然后再交给老师。"],"giai":"Đề nghị → 把 + O + V一V / VV."},
+     {"kieu":"dich","vn":"Anh ấy xem qua tin nhắn một chút rồi cười.","dap":["他把短信看了看，笑了。","他把短信看了看，就笑了。"],"giai":"Việc đã làm → V了V; ôn từ mới 短信."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể em đã / sẽ chuẩn bị gì trước một buổi phỏng vấn hoặc kỳ thi, dùng 「把……V了V」 hoặc 「把……V一V」","mau":"考试前一天，我把生词看了看，又把书上的练习做了做。","can":[["把"]]}]}
+  ]},
+
+ {"so":"4","ten":"比较句“A不如B（+形容词）”","tenVn":"Câu so sánh 「A 不如 B (+ tính từ)」 — A không bằng B",
+  "cauTruc":["A + 不如 + B → A không bằng B (B tốt hơn)","A + 不如 + B + tính từ → về mặt này A kém B","A (cách làm này) + 不如 + B (cách làm khác) → làm A chẳng bằng làm B"],
+  "giaiThich":"「A不如B」 nghĩa là A KHÔNG BẰNG B, tức B tốt hơn. Nếu cuối câu có tính từ thì so sánh ở MỘT MẶT cụ thể: 这家店不如那家店环境好 = cửa hàng này môi trường không tốt bằng cửa hàng kia. Tính từ sau 不如 thường mang nghĩa tích cực (好, 方便, 便宜, 舒服, 干净…). A và B có thể là người, vật, hoặc cả một hành động: 在课本上学不如自己做一遍. Khác câu 比: không thêm 很, 非常, 多了, 一点儿 sau tính từ (✗ 不如他高多了). Gần nghĩa với 「A没有B + tính từ」, nhưng 不如 thiên về đánh giá A kém hơn. Mẹo cho người Việt: “không bằng”, “chẳng bằng”, “thua” → 不如; tính từ đặt CUỐI câu, sau B.",
+  "viDu":[["有些事情，在课本上学不如自己做一遍。","Có những việc, học trên sách không bằng tự mình làm một lần."],["这家店不如那家店环境好。","Cửa hàng này môi trường không tốt bằng cửa hàng kia."],["我觉得坐公交不如坐地铁方便。","Tôi thấy đi xe buýt không tiện bằng đi tàu điện ngầm."],["对于我来说，坐飞机不如坐高铁舒服。","Đối với tôi, đi máy bay không thoải mái bằng đi tàu cao tốc. (ôn 对于……来说 — Bài 14)"]],
+  "loi":[["这家店不如那家店很好。","Tính từ sau 不如 + B không thêm 很.","这家店不如那家店好。"],["我的中文不如他好多了。","不如 không đi với 多了 / 一点儿 như câu 比.","我的中文不如他好。 / 他的中文比我好多了。"],["坐公交不如方便坐地铁。","Tính từ đứng sau B, ở cuối câu.","坐公交不如坐地铁方便。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["有些事情，在课本上学","自己做一遍。"],"dap":[["不如"]],"chon":["不如","比","没"],"goiY":"“Học trên sách không bằng tự làm một lần.”","giai":"A不如B."},
+     {"kieu":"dien","phan":["这家店不如那家店环境","。"],"dap":[["好"]],"chon":["好","很好","好多了"],"goiY":"“Cửa hàng này môi trường không tốt bằng cửa hàng kia.”","giai":"不如 + B + Adj (không thêm 很 / 多了)."},
+     {"kieu":"dien","phan":["坐公交要换两次车，我觉得坐公交不如坐地铁","。"],"dap":[["方便"]],"chon":["方便","不方便","更方便"],"goiY":"“… không tiện bằng đi tàu điện ngầm.”","giai":"Tính từ tích cực, không thêm 更 / 不."},
+     {"kieu":"dien","phan":["今年冬天","去年冷。"],"dap":[["不如"]],"chon":["不如","比","跟"],"goiY":"“Mùa đông năm nay không lạnh bằng năm ngoái.”","giai":"A不如B + Adj."},
+     {"kieu":"dien","phan":["一个人去不如跟大家一起去，","安全又开心。"],"dap":[["既"]],"chon":["既","又","也"],"goiY":"“… vừa an toàn vừa vui.” (ôn Bài 4)","giai":"既……又……"}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["这家店","不如","那家店","环境","好"],"dap":["这家店不如那家店环境好。"],"goiY":"Cửa hàng này môi trường không tốt bằng cửa hàng kia.","giai":"A + 不如 + B + (mặt so sánh) + Adj."},
+     {"kieu":"xep","manh":["我","觉得","坐公交","不如","坐地铁","方便"],"dap":["我觉得坐公交不如坐地铁方便。"],"goiY":"Tôi thấy đi xe buýt không tiện bằng tàu điện ngầm.","giai":"A, B là hành động."},
+     {"kieu":"xep","manh":["在家","看书","不如","去图书馆","看"],"dap":["在家看书不如去图书馆看。"],"goiY":"Đọc sách ở nhà chẳng bằng lên thư viện đọc.","giai":"A不如B (không có tính từ)."},
+     {"kieu":"dungsai","cau":"我唱歌不如她唱得好。","dung":true,"giai":"Đúng: A不如B + V得 + Adj."},
+     {"kieu":"dungsai","cau":"这件衣服不如那件很漂亮。","dung":false,"sua":"这件衣服不如那件漂亮。","giai":"Không thêm 很 trước tính từ."},
+     {"kieu":"dungsai","cau":"坐出租车不如便宜坐地铁。","dung":false,"sua":"坐出租车不如坐地铁便宜。","giai":"Tính từ đặt sau B."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 58)","huongDan":"Hoàn thành câu, dùng 不如","cau":[
+     {"kieu":"vandung","de":"你多走走吧，坐车＿＿。","goiY":"Ngồi xe không tốt cho sức khỏe bằng đi bộ (不如……好)","mau":"不如走路对身体好","can":[["不如"]]},
+     {"kieu":"vandung","de":"不知道怎么解决问题时，自己想＿＿。","goiY":"Tự nghĩ chẳng bằng đi hỏi người khác (不如问问……)","mau":"不如问问老师和同学","can":[["不如"]]},
+     {"kieu":"vandung","de":"我更愿意在家做饭，因为在外面吃饭＿＿。","goiY":"Ăn ngoài không sạch / rẻ / tốt cho sức khỏe bằng ăn ở nhà (不如……)","mau":"不如在家吃健康、便宜","can":[["不如"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Tiếng Trung của tôi không tốt bằng chị tôi.","dap":["我的中文不如我姐姐好。","我的中文不如姐姐好。","我的中文不如我姐姐的好。","我的中文不如姐姐的好。"],"giai":"A不如B + Adj."},
+     {"kieu":"dich","vn":"Mua ở cửa hàng không rẻ bằng mua trên mạng.","dap":["在商店买不如在网上买便宜。","在商店买东西不如在网上买便宜。"],"giai":"A, B là hành động; tính từ cuối câu."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"So sánh hai thành phố / hai cách đi lại / hai món ăn em biết, dùng 「A不如B + tính từ」","mau":"我觉得河内的夏天不如大叻的夏天凉快，可是河内比大叻热闹多了。","can":[["不如"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 58). Sách 4下 chưa có đáp án — đây là đáp án tham khảo.","dapSgk":false,"tu":["考虑","笔试","不论","消息","肯定","负责人"],"cau":[
+   {"s":"你这么努力，这次考试＿＿能通过。","dap":["肯定"]},
+   {"s":"您有什么问题，可以直接跟＿＿联系。","dap":["负责人"]},
+   {"s":"＿＿你同不同意，我都会按照计划去做。","dap":["不论"]},
+   {"s":"这件事比较重要，我需要再认真＿＿一下。","dap":["考虑"]},
+   {"s":"我们要先进行＿＿，了解一下大家的专业能力。","dap":["笔试"]},
+   {"s":"我已经等了好几天了，还是没有收到他的＿＿。","dap":["消息"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại, sách trang 59).","dapSgk":false,"tu":["能够","理发","答案","工厂","激动","职业"],"cau":[
+   {"s":"A：你知道这道题的＿＿吗？　B：知道，我已经写在纸上了。","dap":["答案"]},
+   {"s":"A：听说你获得奖学金了？　B：是的，我＿＿得昨天晚上都没睡好。","dap":["激动"]},
+   {"s":"A：你现在中文说得怎么样了？　B：我已经＿＿和中国朋友进行简单交流了。","dap":["能够"]},
+   {"s":"A：下午我去＿＿，你想跟我一起去吗？　B：好啊，我最近头发有点儿长了，正好下午有时间。","dap":["理发"]},
+   {"s":"A：你对自己的＿＿发展有什么打算？　B：我希望先去大公司工作，积累一些经验，然后自己开一家公司。","dap":["职业"]},
+   {"s":"A：听说你哥哥换工作了，他现在在哪儿工作？　B：他现在在一家＿＿工作，主要负责检查产品的质量。","dap":["工厂"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn.","dapSgk":false,"tu":["面试结束后","练习介绍自己的学习经历","不仅让他了解了应聘的过程","他在网上看到了几条招聘信息"],"cau":[
+   {"s":"王明是一名大三学生，最近正在找实习机会。＿＿，选了一家自己感兴趣的单位报名。为了顺利通过面试，他提前准备了很多内容，比如了解公司的情况，＿＿。面试那天，他刚开始有点儿紧张，不过慢慢放松了一些。＿＿，他觉得自己的表现没有那么好。虽然最后没有通过面试，但是他认为这次应聘的经历很有用，＿＿，也让他在交流方面更有信心（xìnxīn, sự tự tin）了。","dap":["他在网上看到了几条招聘信息","练习介绍自己的学习经历","面试结束后","不仅让他了解了应聘的过程"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (câu dưới đây là câu mẫu tham khảo — câu của em đúng ngữ pháp, hợp tranh là đạt).","cau":[
+   {"anh":"bt-1","s":"","tu":"扔","dap":"他把喝完的瓶子扔进了垃圾桶。","giai":"把 + O + 扔进 / 扔到 + nơi chốn (câu chữ 把 với bổ ngữ nơi chốn)."},
+   {"anh":"bt-2","s":"","tu":"答案","dap":"她想了很久，还是不知道这道题的答案。","giai":"这道题的答案 — lượng từ 道 cho câu hỏi, bài tập."},
+   {"anh":"bt-3","s":"","tu":"激动","dap":"他收到了公司的短信，激动得跳了起来。","giai":"激动得 + V: bổ ngữ trạng thái chỉ mức độ (giống câu của bài khoá 3)."}]}
+],
+
+"listen": [
+ {"audio":"小林，你最近怎么总是在看手机？我在等一家公司的消息。上周我去应聘了，笔试答得还不错，可是面试的时候有点儿紧张。别担心，你准备得那么认真，肯定没问题。希望吧。不论结果怎么样，这次经历对我都很有帮助。","questions":[
+   {"q":"小林在等什么？","opts":["朋友的短信","公司的消息","考试成绩"],"ans":1},
+   {"q":"小林面试的时候怎么样？","opts":["答得很好","非常放松","有点儿紧张"],"ans":2}]},
+ {"audio":"您好，请问你们公司还在招聘实习生吗？在招聘。你先在网上报名，填写个人信息就可以了。需要参加笔试吗？需要，笔试以后还有面试，面试由我们部门的负责人来做。好的，谢谢您！","questions":[
+   {"q":"应聘实习生，第一步要做什么？","opts":["在网上报名","参加面试","给负责人打电话"],"ans":0},
+   {"q":"面试由谁来做？","opts":["公司经理","学校老师","部门负责人"],"ans":2}]},
+ {"audio":"王明，你在那家工厂实习得怎么样？挺好的，学到了很多课本上没有的东西。我发现在书上看不如自己做一遍，很多细节只有做的时候才能发现。是啊，实习还能让我们更清楚自己的职业方向。","questions":[
+   {"q":"王明在哪儿实习？","opts":["医院","工厂","学校"],"ans":1},
+   {"q":"王明觉得怎么学更好？","opts":["自己做一遍","在书上看","问老师"],"ans":0}]}
+],
+
+"match": [
+ {"left":"招聘","right":"实习生"},
+ {"left":"填写","right":"个人信息"},
+ {"left":"积累","right":"工作经验"},
+ {"left":"参加","right":"笔试"},
+ {"left":"运用","right":"专业知识"},
+ {"left":"注意","right":"细节"},
+ {"left":"部门","right":"负责人"},
+ {"left":"收到","right":"一条短信"},
+ {"left":"留个","right":"好印象"}
+],
+
+"fill": [
+ {"pre":"期中考试后就","blank":"再也","post":"没见过你了。","hint":"(không … nữa)","ans":"再也","exp":"再也 + 没 + V过: từ đó đến nay không … nữa."},
+ {"pre":"他们正在","blank":"招聘","post":"实习生。","hint":"(tuyển dụng)","ans":"招聘","exp":"招聘 = công ty tuyển người; 应聘 = người đi xin việc."},
+ {"pre":"很多单位都很重视有没有实习","blank":"经历","post":"。","hint":"(kinh nghiệm đã trải qua)","ans":"经历","exp":"实习经历 = quá trình / kinh nghiệm thực tập."},
+ {"pre":"我还在等","blank":"消息","post":"，希望能有好结果。","hint":"(tin tức)","ans":"消息","exp":"等消息 = chờ tin."},
+ {"pre":"我先在网上报名，","blank":"填写","post":"个人信息。","hint":"(điền)","ans":"填写","exp":"填写 + 信息 / 表格."},
+ {"pre":"那天是","blank":"由","post":"部门负责人来面试的。","hint":"(do ai làm)","ans":"由","exp":"由 + người + 来 + V."},
+ {"pre":"","blank":"不论","post":"结果怎么样，对我以后找工作肯定有帮助。","hint":"(bất kể)","ans":"不论","exp":"不论……，都 / 也……"},
+ {"pre":"李文激动得把手机","blank":"扔","post":"到床上。","hint":"(ném)","ans":"扔","exp":"把 + O + 扔到 + nơi chốn."},
+ {"pre":"他去理发店把头发","blank":"理了理","post":"。","hint":"(sửa qua một chút — việc đã làm)","ans":"理了理","exp":"把 + O + V了V (điểm 3)."},
+ {"pre":"有些事情，在课本上学","blank":"不如","post":"自己做一遍。","hint":"(không bằng)","ans":"不如","exp":"A不如B (điểm 4)."}
+],
+
+"sort": [
+ {"words":["期中考试后","就","再也没","见过","你了","。"],"ans":"期中考试后就再也没见过你了。"},
+ {"words":["那天","是","由","部门负责人","来","面试","的","。"],"ans":"那天是由部门负责人来面试的。"},
+ {"words":["他","去理发店","把","头发","理了理","。"],"ans":"他去理发店把头发理了理。"},
+ {"words":["在课本上学","不如","自己","做一遍","。"],"ans":"在课本上学不如自己做一遍。"},
+ {"words":["我","先","在网上","报名","，","然后","等","公司","通知我","。"],"ans":"我先在网上报名，然后等公司通知我。"},
+ {"words":["学生们","通过","实习","，","可以","积累","工作经验","。"],"ans":"学生们通过实习，可以积累工作经验。"}
+],
+
+"mc": [
+ {"q":"期中考试后就再也＿＿见过你了。","opts":["不","别","没","也"],"ans":2,"exp":"Kể việc từ quá khứ đến nay, có 过 → 再也没."},
+ {"q":"对不起，我以后再也＿＿迟到了。","opts":["不","没","别","还"],"ans":0,"exp":"Lời hứa về tương lai → 再也不."},
+ {"q":"那天是＿＿部门负责人来面试的。","opts":["由于","被","从","由"],"ans":3,"exp":"由 dẫn ra người thực hiện; 由于 chỉ nguyên nhân."},
+ {"q":"你先把作业＿＿，然后再交给老师。","opts":["检查","检查检查","检查一检查","检查了检查了"],"ans":1,"exp":"把 + O + ABAB; động từ hai âm tiết không chen 一."},
+ {"q":"坐公交要换两次车，我觉得坐公交＿＿坐地铁方便。","opts":["不如","比","跟","被"],"ans":0,"exp":"A不如B + Adj = A không … bằng B."},
+ {"q":"＿＿结果怎么样，这次经历对我都很有帮助。","opts":["虽然","不论","因为","即使"],"ans":1,"exp":"不论 + từ nghi vấn (怎么样)，都……"},
+ {"q":"现在很多单位在＿＿毕业生时，都很重视实习经历。","opts":["应聘","报名","招聘","面试"],"ans":2,"exp":"Đơn vị tuyển người → 招聘."},
+ {"q":"我先在网上报名，＿＿个人信息。","opts":["填写","运用","考虑","规定"],"ans":0,"exp":"填写 + 信息 / 表格."},
+ {"q":"只有在做的时候，才会发现有很多＿＿需要注意。","opts":["答案","细节","职业","课堂"],"ans":1,"exp":"注意细节 = chú ý chi tiết."},
+ {"q":"他希望能够＿＿专业知识完成任务。","opts":["激动","扔","运用","理发"],"ans":2,"exp":"运用 + 知识 = vận dụng kiến thức."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và đóng vai phỏng vấn), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions":[
+  {"q_zh":"你以前实习过吗？是在哪儿实习的？","q_vn":"Trước đây bạn đã thực tập chưa? Thực tập ở đâu?","hint":"我实习过 / 还没实习过。我是在……实习的，……","sample":"我实习过一次。去年暑假，我是在一家贸易公司实习的，实习了两个月左右。在那里，我不仅积累了一些工作经验，还了解了公司的管理规定。","sample_vn":"Tôi đã thực tập một lần. Hè năm ngoái tôi thực tập ở một công ty thương mại, khoảng hai tháng. Ở đó tôi không chỉ tích lũy được ít kinh nghiệm làm việc mà còn hiểu được quy định quản lý của công ty.","note":"Câu hỏi phần Khởi động của sách; ôn 左右 (Bài 13), 不仅……还…… (Bài 3)."},
+  {"q_zh":"你觉得面试的时候需要注意哪些方面？","q_vn":"Bạn thấy khi phỏng vấn cần chú ý những mặt nào?","hint":"首先……，其次……，另外……","sample":"我觉得首先要穿得正式一点儿，给面试官留个好印象；其次要提前把自我介绍练一练，回答问题的时候不要太紧张；另外，还要了解一下公司的情况，注意说话的细节。","sample_vn":"Tôi nghĩ trước hết phải ăn mặc trang trọng một chút, để lại ấn tượng tốt cho người phỏng vấn; thứ hai là tập trước phần tự giới thiệu, khi trả lời đừng quá căng thẳng; ngoài ra còn phải tìm hiểu tình hình công ty, chú ý chi tiết khi nói.","note":"Câu hỏi phần Khởi động; ôn 首先……其次…… (Bài 14), 把……V一V (điểm 3)."},
+  {"q_zh":"李文为什么现在就想去实习？他应聘成功了吗？","q_vn":"Vì sao Lý Văn bây giờ đã muốn đi thực tập? Cậu ấy ứng tuyển thành công chưa?","hint":"因为现在很多单位……，所以他想……。他还在……","sample":"因为现在很多单位在招聘毕业生时，都很重视有没有实习经历，所以他想提前去锻炼一下，积累一些经验。现在还不知道结果，他还在等消息。","sample_vn":"Vì bây giờ nhiều đơn vị khi tuyển sinh viên tốt nghiệp đều rất coi trọng kinh nghiệm thực tập, nên cậu ấy muốn đi rèn luyện trước, tích lũy ít kinh nghiệm. Hiện chưa biết kết quả, cậu ấy vẫn đang chờ tin.","note":"Câu hỏi đọc hiểu bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"陈天中很久没有……。他问李文这段时间……。李文说他最近去……，因为那家公司……。他觉得现在很多单位……，所以他想提前……。李文说他还在……，希望……。","sample":"陈天中很久没有见到李文了。他问李文这段时间在忙什么。李文说他最近去一家医药公司应聘了，因为那家公司正在招聘实习生。他觉得现在很多单位在招聘毕业生时，都很重视有没有实习经历，所以他想提前去锻炼一下，积累一些经验。陈天中又问李文现在有没有结果。李文说他还在等消息，希望能有好结果。","sample_vn":"Trần Thiên Trung lâu rồi không gặp Lý Văn. Cậu hỏi dạo này Lý Văn bận gì. Lý Văn nói gần đây đi ứng tuyển ở một công ty dược vì công ty đó đang tuyển thực tập sinh… Lý Văn nói vẫn đang chờ tin, mong có kết quả tốt.","note":"Bài tập 复述 của sách (trang 52)."},
+  {"q_zh":"李文面试的内容是什么？他觉得这次应聘经历怎么样？","q_vn":"Nội dung buổi phỏng vấn của Lý Văn là gì? Cậu ấy thấy lần ứng tuyển này thế nào?","hint":"那天是由……来面试的，他让李文介绍了……。李文觉得……，不论……，都……","sample":"那天是由部门负责人来面试的，他让李文介绍了自己的学习经历、兴趣爱好和对工作的想法。李文觉得这次经历很有用，不论结果怎么样，对他以后找工作肯定有帮助。","sample_vn":"Hôm đó người phụ trách bộ phận phỏng vấn, bảo Lý Văn giới thiệu quá trình học tập, sở thích và suy nghĩ về công việc. Lý Văn thấy trải nghiệm này rất có ích, bất kể kết quả thế nào, chắc chắn có ích cho việc tìm việc sau này.","note":"Câu hỏi đọc hiểu bài khoá 2; dùng 由 (điểm 2)."},
+  {"q_zh":"李文看到信息后做什么了？他是怎么看这次实习的？","q_vn":"Đọc tin xong Lý Văn đã làm gì? Cậu ấy nhìn nhận lần thực tập này thế nào?","hint":"他激动得……。为了……，他把……V了V……。在他看来，……","sample":"他激动得把手机扔到床上，在屋子里跳了起来。为了给大家留个好印象，他去理发店把头发理了理，又买了一身正式的衣服。在他看来，这次实习是一个新的开始，他希望能够运用专业知识完成任务，积累更多经验。","sample_vn":"Cậu ấy phấn khích đến mức ném điện thoại lên giường, nhảy cẫng lên trong phòng. Để để lại ấn tượng tốt, cậu đi cắt sửa tóc, mua một bộ quần áo lịch sự. Theo cậu, lần thực tập này là một khởi đầu mới; cậu mong vận dụng được kiến thức chuyên ngành để hoàn thành nhiệm vụ, tích lũy thêm kinh nghiệm.","note":"Câu hỏi đọc hiểu bài khoá 3; dùng 把……V了V (điểm 3)."},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"李文收到了一条短信，告诉他……。他看到信息后，激动得……。为了给大家……，他去理发店……，又去商店……，还打算……。他觉得这次实习是……。他希望不仅能够……，还能够……","sample":"李文收到了一条短信，告诉他通过了面试，让他下周一到公司实习。他看到信息后，激动得把手机扔到床上，在屋子里跳了起来。为了给大家留个好印象，他去理发店把头发理了理，又去商店买了一身正式的衣服，还打算在镜子前把自我介绍练一练。他觉得这次实习是一个新的开始。他希望不仅能够运用专业知识完成任务，还能够积累更多经验，为将来找工作打下基础。","sample_vn":"Lý Văn nhận được một tin nhắn báo cậu đã qua phỏng vấn, thứ Hai tuần sau đến công ty thực tập… Cậu mong không chỉ vận dụng được kiến thức chuyên ngành mà còn tích lũy thêm kinh nghiệm, đặt nền móng cho việc tìm việc sau này.","note":"Bài tập 复述 của sách (trang 56)."},
+  {"q_zh":"通过实习，学生可以学到什么？为什么说有些事情需要自己做一遍？","q_vn":"Thông qua thực tập, sinh viên học được gì? Vì sao nói có những việc cần tự mình làm một lần?","hint":"学生可以……，熟悉……，提前……。因为只有在做的时候，才……","sample":"通过实习，学生可以积累工作经验，熟悉工作内容和单位的管理规定，提前了解并适应社会。有些事情在课本上学不如自己做一遍，因为只有在做的时候，才会发现有很多细节需要注意。","sample_vn":"Qua thực tập, sinh viên có thể tích lũy kinh nghiệm làm việc, làm quen nội dung công việc và quy định quản lý của đơn vị, hiểu và thích nghi với xã hội sớm. Có những việc học trên sách không bằng tự làm một lần, vì chỉ khi làm mới phát hiện nhiều chi tiết cần chú ý.","note":"Câu hỏi đọc hiểu bài khoá 4; dùng A不如B (điểm 4)."},
+  {"q_zh":"角色扮演：两人一组，一人扮演面试官，一人扮演应聘者，模拟面试的过程。面试官可以询问应聘者的学习经历，了解其能力和想法；应聘者可以介绍自己的基本情况，说明应聘的原因，并谈谈自己的优缺点。","q_vn":"Đóng vai: nhóm hai người, một người làm người phỏng vấn, một người làm ứng viên, mô phỏng buổi phỏng vấn. Người phỏng vấn có thể hỏi về quá trình học tập của ứng viên, tìm hiểu năng lực và suy nghĩ của họ; ứng viên giới thiệu tình hình bản thân, nói lý do ứng tuyển và nói về ưu, khuyết điểm của mình.","hint":"面试官：请先做一个简单的自我介绍。/ 你为什么来应聘？/ 你有什么优点和缺点？ 应聘者：我叫……，是……专业的学生。我来应聘，一方面……，另一方面……。我的优点是……，缺点是……，不过……","sample":"面试官：你好，请坐。今天的面试由我来负责。请你先做一个简单的自我介绍吧。应聘者：您好！我叫阮明，是河内大学国际贸易专业的大三学生。我学了三年中文，已经能够和中国人进行简单的交流了。面试官：你为什么来我们公司应聘？应聘者：一方面，贵公司是一家国际公司，有很多机会运用我的专业知识；另一方面，我想提前积累一些工作经验，为将来的职业发展打下基础。面试官：你以前有过实习经历吗？应聘者：有过。去年暑假我在一家工厂实习了两个月，主要负责翻译工作。在那儿我发现，有些事情在课本上学不如自己做一遍。面试官：那你觉得自己有什么优点和缺点？应聘者：我的优点是认真，很注意细节，不论多忙，都会把工作检查检查再交。缺点是有时候说话太快，不过我现在每天都在镜子前练一练，已经好多了。面试官：好的，请回去等消息吧。应聘者：谢谢您！","sample_vn":"Người PV: Chào bạn, mời ngồi. Hôm nay tôi phụ trách phỏng vấn. Bạn tự giới thiệu ngắn gọn trước nhé. Ứng viên: Chào anh/chị! Em tên Nguyễn Minh, sinh viên năm ba ngành thương mại quốc tế Đại học Hà Nội. Em đã học tiếng Trung ba năm, có thể giao tiếp đơn giản với người Trung Quốc. Người PV: Vì sao bạn ứng tuyển vào công ty chúng tôi? Ứng viên: Một mặt, quý công ty là công ty quốc tế, có nhiều cơ hội vận dụng kiến thức chuyên ngành của em; mặt khác, em muốn tích lũy kinh nghiệm làm việc sớm, đặt nền móng cho sự phát triển nghề nghiệp sau này. Người PV: Trước đây bạn đã từng thực tập chưa? Ứng viên: Rồi ạ. Hè năm ngoái em thực tập hai tháng ở một nhà máy, chủ yếu phụ trách phiên dịch. Ở đó em thấy có những việc học trên sách không bằng tự làm một lần. Người PV: Vậy bạn thấy mình có ưu điểm, khuyết điểm gì? Ứng viên: Ưu điểm của em là cẩn thận, rất chú ý chi tiết, bận đến mấy cũng kiểm tra lại công việc rồi mới nộp. Khuyết điểm là đôi khi nói quá nhanh, nhưng giờ ngày nào em cũng tập trước gương, đã đỡ nhiều rồi. Người PV: Được rồi, bạn về chờ tin nhé. Ứng viên: Em cảm ơn anh/chị!","note":"Hoạt động 任务活动 · 角色扮演 (đóng vai phỏng vấn) của sách, trang 60 — dùng 由, 把……VV, 不如, 不论 cùng từ mới về ứng tuyển; ôn 一方面……另一方面…… (Bài 1)."}
+ ]
+},
+
+"translate": [
+ ["Từ sau kỳ thi giữa kỳ là không gặp lại cậu nữa.","期中考试后就再也没见过你了。"],
+ ["Bây giờ nhiều đơn vị khi tuyển sinh viên tốt nghiệp đều rất coi trọng kinh nghiệm thực tập.","现在很多单位在招聘毕业生时，都很重视实习经历。"],
+ ["Hôm đó là người phụ trách bộ phận đến phỏng vấn, tôi hơi căng thẳng.","那天是由部门负责人来面试的，我有点儿紧张。"],
+ ["Bất kể kết quả thế nào, trải nghiệm này chắc chắn có ích cho việc tìm việc sau này của tôi.","不论结果怎么样，这次经历对我以后找工作肯定有帮助。"],
+ ["Cậu ấy ra tiệm cắt tóc sửa lại tóc một chút.","他去理发店把头发理了理。"],
+ ["Có những việc, học trên sách không bằng tự mình làm một lần.","有些事情，在课本上学不如自己做一遍。"]
+],
+"translateRev": [
+ ["Mình vẫn đang chờ tin, mong là có kết quả tốt.","我还在等消息，希望能有好结果。"],
+ ["Mình đăng ký trên mạng trước, điền thông tin cá nhân, sau đó chờ công ty báo đi thi viết.","我先在网上报名，填写个人信息，然后等公司通知我去参加笔试。"],
+ ["Lý Văn phấn khích đến mức ném điện thoại lên giường.","李文激动得把手机扔到床上。"],
+ ["Thông qua thực tập, sinh viên có thể tích lũy kinh nghiệm làm việc.","学生们通过实习，可以积累工作经验。"],
+ ["Sinh viên cũng rõ hơn hướng phát triển nghề nghiệp của mình.","学生也更清楚自己的职业发展方向。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":140,"tieuDe":"写作 — viết theo đề của sách (ít nhất 140 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết danh sách lời khuyên ứng tuyển (写作)","gioiThieu":"Đề 写作 của bài này yêu cầu viết một 「应聘建议清单」 — danh sách lời khuyên cho người bạn sắp đi phỏng vấn ở công ty quốc tế, dựa vào nội dung vừa đóng vai phỏng vấn (ít nhất 140 chữ). Đây là dạng văn thực dụng, giống phần 书写 của đề thi HSK 4 mới.","buoc":["Đọc kỹ đề: người đọc là BẠN của em, sắp đi ứng tuyển ở công ty quốc tế; mục đích là đưa ra lời khuyên thiết thực.","Lập dàn ý theo trình tự ứng tuyển: trước khi đăng ký → thi viết → chuẩn bị phỏng vấn → trong buổi phỏng vấn → thái độ với kết quả. Mỗi bước là một mục trong danh sách.","Dùng từ mới (报名、填写、笔试、面试、负责人、自我介绍、细节…) và 4 điểm ngữ pháp: 把……V一V, 由……来……, A不如B, 再也不/没.","Đánh số các mục (一、二、三…) hoặc dùng 首先 / 其次 / 另外 / 最后 (Bài 14) để danh sách rõ ràng.","Mở đầu bằng lời gọi tên bạn và lý do viết; kết thúc bằng lời động viên (不论结果怎么样…, 祝你成功!); tự soát số chữ (≥ 140) và lỗi chữ Hán."]},
+ "de":"你的一个朋友要去一家国际公司应聘。请你根据上面表演的内容，给他/她写一份应聘建议清单，不少于140字。",
+ "prompt":"Một người bạn của em sắp đi ứng tuyển ở một công ty quốc tế. Hãy dựa vào nội dung vừa đóng vai ở trên, viết cho bạn ấy một danh sách lời khuyên khi ứng tuyển, không ít hơn 140 chữ.",
+ "dan":[
+  {"hoi":"报名以前要做什么准备？","goiY":"先把公司的情况了解了解，例如……；在网上填写个人信息时……"},
+  {"hoi":"笔试一般考什么？怎么准备？","goiY":"笔试主要考专业知识，可以把……复习复习"},
+  {"hoi":"面试一般由谁来面试？会问什么？","goiY":"面试一般由部门负责人来……，他会让你介绍……"},
+  {"hoi":"面试那天要注意哪些细节？","goiY":"穿得正式一点儿，理理发；一个人练不如……；在镜子前把自我介绍……"},
+  {"hoi":"你自己有什么经验或教训？最后想对朋友说什么？","goiY":"上次我……，从那以后我再也不……了。不论结果怎么样……，祝你成功！"}],
+ "tuNen":["应聘","招聘","报名","填写","笔试","面试","负责人","部门","自我介绍","经历","细节","肯定"],
+ "cauTruc":[
+  {"ten":"把 + O + V一V / VV","nhan":"把","vd":"报名以前，先把公司的情况了解了解。","khi":"Đưa lời khuyên làm một việc nhỏ, nhẹ nhàng."},
+  {"ten":"由……来……","nhan":"由","vd":"面试一般由部门负责人来做。","khi":"Giới thiệu ai sẽ phỏng vấn / phụ trách."},
+  {"ten":"A不如B (+ Adj)","nhan":"不如","vd":"一个人在家练不如请朋友帮你听听。","khi":"So sánh hai cách chuẩn bị, khuyên cách tốt hơn."},
+  {"ten":"再也不 / 再也没……","nhan":"再也","vd":"上次面试我迟到了，从那以后我再也不敢晚出门了。","khi":"Kể bài học kinh nghiệm của bản thân."},
+  {"ten":"不论……，都……","nhan":"不论","vd":"不论结果怎么样，这次经历对你都肯定有帮助。","khi":"Câu KẾT: động viên bạn."}],
+ "checklist":[
+  "Đủ ít nhất 140 chữ Hán chưa?",
+  "Có lời gọi tên bạn ở đầu, lời chúc ở cuối, và các lời khuyên được đánh số / sắp theo trình tự (đăng ký → thi viết → phỏng vấn) chưa?",
+  "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (再也不/没、由、把……V一V/V了V、A不如B) chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài chưa?",
+  "Lời khuyên có cụ thể, thiết thực cho việc ứng tuyển ở công ty quốc tế chưa?"],
+ "model":"安妮：听说你要去一家国际公司应聘，我根据上次我们一起练习面试的经验，给你写了几条建议。一、报名以前，先把公司的情况了解了解，例如公司主要做什么、在招聘什么样的人。二、在网上填写个人信息的时候要认真，最好把每一项都检查检查再提交。三、笔试主要考专业知识，你可以把学过的内容复习复习。四、面试一般由部门负责人来做，他会让你介绍自己的学习经历、实习经历和对工作的想法。一个人在家练不如请朋友帮你听听，你也可以在镜子前把自我介绍练一练。五、面试那天要穿得正式一点儿，注意细节，回答问题时别太紧张。上次面试我迟到了五分钟，从那以后我再也不敢晚出门了，所以你一定要早点儿出发。不论结果怎么样，这次经历对你都肯定有帮助。祝你成功！"
+}
+}

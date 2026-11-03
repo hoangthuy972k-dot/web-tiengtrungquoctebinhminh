@@ -158,7 +158,7 @@
       "promptLang": "vi",
       "prompt": "Điện thoại tôi hết pin rồi, không quét mã được.",
       "answer": "我的手机没电了，扫不了码。",
-      "answerPy": "Wǒ de shǒujī méi diàn le, sǎo bù le mǎ.",
+      "answerPy": "Wǒ de shǒujī méi diàn le, sǎo bu le mǎ.",
       "explanation": "扫码 là từ ly hợp → 扫不了码."
      },
      {
@@ -629,7 +629,7 @@
       "promptLang": "vi",
       "prompt": "Sáng nay tôi dậy muộn, không kịp ăn sáng.",
       "answer": "今天早上我起晚了，没来得及吃早饭。",
-      "answerPy": "Jīntiān zǎoshang wǒ qǐ wǎn le, méi láidejí chī zǎofàn.",
+      "answerPy": "Jīntiān zǎoshang wǒ qǐwǎn le, méi láidejí chī zǎofàn.",
       "explanation": "Việc đã qua → 没来得及 + V."
      },
      {

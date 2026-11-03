@@ -1,0 +1,620 @@
+{
+ "so": 19,
+ "zh": "他们都很棒",
+ "py": "Tāmen dōu hěn bàng",
+ "vn": "Họ đều rất tuyệt",
+ "chuDe": "Văn học và nghệ thuật: tập kịch cho lễ hội nghệ thuật, đi xem Kinh kịch ở Nhà hát Lớn Quốc gia, “Du ký Marco Polo” và ước mơ viết sách",
+ "icon": "🎭",
+ "mucTieu": [
+  "Nghe hiểu và trao đổi được về các chủ đề văn học, nghệ thuật.",
+  "Giới thiệu được bằng lời nói hoặc bằng văn viết một tác phẩm hoặc một loại hình nghệ thuật.",
+  "Tìm hiểu một trong những “quốc tuý” của Trung Quốc — Kinh kịch."
+ ],
+ "wu": [
+  {"img": "wu-A", "label": "获奖", "py": "huòjiǎng", "letter": "A"},
+  {"img": "wu-B", "label": "庆祝", "py": "qìngzhù", "letter": "B"},
+  {"img": "wu-C", "label": "少年", "py": "shàonián", "letter": "C"},
+  {"img": "wu-D", "label": "入口", "py": "rùkǒu", "letter": "D"},
+  {"img": "wu-E", "label": "歌手", "py": "gēshǒu", "letter": "E"},
+  {"img": "wu-F", "label": "图片", "py": "túpiàn", "letter": "F"}
+ ],
+ "dialogs": [
+  {
+   "tab": "Tập kịch cho lễ hội nghệ thuật",
+   "scene": "在家里 · Ở nhà (Vương Nhất Tuyết hỏi con gái Lưu Tiểu Tuyết chuyện tập tiết mục cho lễ hội nghệ thuật của trường)",
+   "anh": "kv-1",
+   "nguoi": ["王一雪", "刘小雪"],
+   "preQuiz": [
+    {"q": "小雪和同学们的话剧排得怎么样了？", "opts": ["排好了", "还差很多", "还没开始排", "基本上排好了"], "ans": 3},
+    {"q": "小雪的同学唱歌怎么样？", "opts": ["很爱忘词", "比较一般", "很有感情", "特别好听"], "ans": 3}
+   ],
+   "lines": [
+    {"sp": 0, "zh": "小雪，你们的话剧排好了吗？", "vn": "Tiểu Tuyết, vở kịch của các con tập xong chưa?"},
+    {"sp": 1, "zh": "差不多了，妈妈。艺术节周五下午开始，我内心还是有些紧张，有时候不是忘词，就是忘记做动作。", "vn": "Gần xong rồi mẹ ạ. Lễ hội nghệ thuật bắt đầu chiều thứ Sáu, trong lòng con vẫn hơi hồi hộp, có lúc không phải quên lời thì là quên làm động tác."},
+    {"sp": 0, "zh": "没事，妈妈相信你一定可以。放松些，再自信些！", "vn": "Không sao, mẹ tin con nhất định làm được. Thả lỏng chút, tự tin thêm chút nữa!"},
+    {"sp": 1, "zh": "好的，我同学演少年歌手，他的歌声美极了。我演他的妈妈，不知道像不像呢。", "vn": "Vâng ạ, bạn con đóng vai ca sĩ thiếu niên, giọng hát của bạn ấy hay tuyệt. Con đóng vai mẹ của bạn ấy, không biết có giống không nữa."},
+    {"sp": 0, "zh": "没问题的，努力做最好的自己就好。演出时，我和你爸都去给你加油。", "vn": "Không có vấn đề gì đâu, cố gắng làm tốt nhất bản thân mình là được. Lúc biểu diễn, mẹ và bố đều sẽ đến cổ vũ con."},
+    {"sp": 1, "zh": "好的，谢谢妈妈！", "vn": "Vâng, con cảm ơn mẹ!"}
+   ],
+   "hoi": [
+    ["小雪紧张时会怎么样？", "她紧张时，有时候不是忘词，就是忘记做动作。"],
+    ["小雪演出时，妈妈和爸爸会去看吗？", "会。演出时，妈妈和爸爸都会去给她加油。"]
+   ],
+   "kelai": "王一雪问小雪他们的……。小雪说……，艺术节……开始，她现在……，有时候不是……，就是……。王一雪鼓励小雪，……，再……。小雪说，她的同学演……，同学的歌声……。她演妈妈，不知道……。王一雪继续鼓励小雪，努力……。演出时，她和小雪的爸爸都……。",
+   "kelaiMau": "王一雪问小雪他们的话剧排好了没有。小雪说差不多了，艺术节周五下午开始，她现在内心还是有些紧张，有时候不是忘词，就是忘记做动作。王一雪鼓励小雪，妈妈相信她一定可以，让她放松些，再自信些。小雪说，她的同学演少年歌手，同学的歌声美极了。她演妈妈，不知道像不像。王一雪继续鼓励小雪，努力做最好的自己就好。演出时，她和小雪的爸爸都去给小雪加油。"
+  },
+  {
+   "tab": "Rủ nhau xem Kinh kịch",
+   "scene": "视频通话 · Gọi video (thứ Bảy, Lý Văn gọi video với Bạch Gia Nguyệt, Annie và Trần Thiên Trung)",
+   "anh": "kv-2",
+   "nguoi": ["李文", "安妮", "陈天中", "白家月"],
+   "preQuiz": [
+    {"q": "下周六晚上，李文请大家去做什么？", "opts": ["散步", "聚餐", "看电影", "看京剧"], "ans": 3},
+    {"q": "白家月说的“做功课”最可能是什么意思？", "opts": ["提前了解", "完成作业", "翻译内容", "学唱京剧"], "ans": 0}
+   ],
+   "lines": [
+    {"sp": 0, "zh": "下周六晚上，我请大家去国家大剧院看京剧，怎么样？", "vn": "Tối thứ Bảy tuần sau, tớ mời mọi người đi Nhà hát Lớn Quốc gia xem Kinh kịch, thế nào?"},
+    {"sp": 1, "zh": "好啊。我小时候在加拿大度假时，在宾馆的电视上看过一次，是梅兰芳等演员演的，演员们都非常棒，他们演唱得好听极了，给我留下的印象特别深。", "vn": "Hay quá. Hồi nhỏ đi nghỉ ở Canada, tớ từng xem một lần trên tivi khách sạn, là do các diễn viên như Mai Lan Phương diễn, các diễn viên đều cực kỳ giỏi, họ hát hay tuyệt, để lại cho tớ ấn tượng đặc biệt sâu."},
+    {"sp": 0, "zh": "梅兰芳先生是中国著名京剧艺术家。咱们要看的这个京剧是青年演员们演的，要去看的观众也特别多。", "vn": "Ông Mai Lan Phương là nghệ sĩ Kinh kịch nổi tiếng của Trung Quốc. Vở Kinh kịch chúng mình sắp xem là do các diễn viên trẻ diễn, khán giả muốn đi xem cũng rất đông."},
+    {"sp": 2, "zh": "不知道我们能不能看懂。", "vn": "Không biết chúng mình có xem hiểu được không."},
+    {"sp": 3, "zh": "咱们先做做功课，提前了解下，能懂一点儿是一点儿。", "vn": "Chúng mình cứ “làm bài tập” trước đã, tìm hiểu trước một chút, hiểu được chút nào hay chút ấy."},
+    {"sp": 2, "zh": "对，我先去网上查资料，查完后也转发给你们。", "vn": "Đúng, tớ lên mạng tra tài liệu trước, tra xong cũng chuyển cho các cậu."},
+    {"sp": 1, "zh": "谢谢天中！", "vn": "Cảm ơn Thiên Trung!"},
+    {"sp": 0, "zh": "那我就在网上订票了，到时候咱们在大剧院入口见。", "vn": "Vậy tớ đặt vé trên mạng nhé, đến lúc đó chúng mình gặp nhau ở lối vào nhà hát lớn."}
+   ],
+   "hoi": [
+    ["在加拿大时安妮就看过京剧，她觉得怎么样？", "她觉得演员们都非常棒，他们演唱得好听极了，给她留下的印象特别深。"],
+    ["李文最后说他要去做什么？", "他说他要在网上订票，到时候大家在大剧院入口见。"]
+   ]
+  },
+  {
+   "tab": "Buổi diễn đặc sắc",
+   "scene": "精彩的演出 · Buổi diễn đặc sắc (Lý Văn và ba người bạn xem Kinh kịch ở Nhà hát Lớn Quốc gia — ảnh: Nhà hát Lớn Quốc gia, phần 小语的彩蛋 của sách)",
+   "anh": "kv-3",
+   "doan": true,
+   "nguoi": ["小语"],
+   "preQuiz": [
+    {"q": "李文很期待那场演出，因为：", "opts": ["演员很专业", "故事有意思", "音乐很好听", "内容很幽默"], "ans": 0},
+    {"q": "演出结束后，演员们邀请观众一起做什么？", "opts": ["回答问题", "学京剧动作", "继续演节目", "庆祝演出成功"], "ans": 3}
+   ],
+   "lines": [
+    {"sp": 0, "zh": "周六晚上，李文等四人来到国家大剧院观看京剧演出。", "vn": "Tối thứ Bảy, nhóm bốn người của Lý Văn đến Nhà hát Lớn Quốc gia xem biểu diễn Kinh kịch."},
+    {"sp": 0, "zh": "入座后，李文指着节目表说：“这些演员很专业，功夫很深，在京剧比赛中获过很多奖，有的还是国家、国际大奖。我特别期待这场演出。”", "vn": "Sau khi vào chỗ, Lý Văn chỉ vào tờ chương trình nói: “Những diễn viên này rất chuyên nghiệp, tay nghề rất cao, đã đoạt nhiều giải trong các cuộc thi Kinh kịch, có giải còn là giải quốc gia, quốc tế lớn. Tớ rất mong chờ buổi diễn này.”"},
+    {"sp": 0, "zh": "演出开始后，他们看到演员们做的动作很难，但是做得都特别好，观众们不断鼓掌。", "vn": "Buổi diễn bắt đầu, họ thấy những động tác các diễn viên làm rất khó, nhưng đều làm cực kỳ đẹp, khán giả vỗ tay không ngớt."},
+    {"sp": 0, "zh": "因为李文他们提前把故事了解了一遍，所以差不多都看懂了。", "vn": "Vì nhóm Lý Văn đã tìm hiểu trước câu chuyện một lượt, nên họ gần như xem hiểu hết."},
+    {"sp": 0, "zh": "演出结束后，演员们邀请观众和他们一起庆祝演出成功。", "vn": "Buổi diễn kết thúc, các diễn viên mời khán giả cùng họ ăn mừng buổi diễn thành công."},
+    {"sp": 0, "zh": "回来的路上，大家特别激动，觉得京剧很有意思，演员演得很精彩。", "vn": "Trên đường về, mọi người đều rất xúc động, thấy Kinh kịch rất thú vị, diễn viên diễn rất đặc sắc."},
+    {"sp": 0, "zh": "李文点头说：“是啊，以后咱们还来看。”", "vn": "Lý Văn gật đầu nói: “Đúng vậy, sau này chúng mình lại đến xem.”"}
+   ],
+   "hoi": [
+    ["京剧演员们的表演怎么样？", "演员们很专业，功夫很深。他们做的动作很难，但是做得都特别好，演得很精彩，观众们不断鼓掌。"],
+    ["李文为什么说以后还来看京剧演出？", "因为大家都觉得京剧很有意思，演员演得很精彩，回来的路上大家都特别激动。"]
+   ],
+   "kelai": "周六晚上，李文等四人来到国家大剧院……。入座后，李文……说：“这些演员很专业，……，在京剧比赛中……，有的还是……。”演出开始后，他们看到演员们做的动作……，但是做得……，观众们……。因为李文他们提前……，所以差不多……。演出……，演员们邀请观众……。回来的路上，大家……，觉得……，演员……。李文点头说：“以后……。”",
+   "kelaiMau": "周六晚上，李文等四人来到国家大剧院观看京剧演出。入座后，李文指着节目表说：“这些演员很专业，功夫很深，在京剧比赛中获过很多奖，有的还是国家、国际大奖。”演出开始后，他们看到演员们做的动作很难，但是做得都特别好，观众们不断鼓掌。因为李文他们提前把故事了解了一遍，所以差不多都看懂了。演出结束后，演员们邀请观众和他们一起庆祝演出成功。回来的路上，大家特别激动，觉得京剧很有意思，演员演得很精彩。李文点头说：“以后咱们还来看。”"
+  },
+  {
+   "tab": "Nhật ký của Bạch Gia Nguyệt",
+   "scene": "白家月的日记 · Nhật ký của Bạch Gia Nguyệt (đọc “Du ký Marco Polo” và ước mơ viết sách về Trung Quốc)",
+   "anh": "kv-4",
+   "doan": true,
+   "nguoi": ["白家月"],
+   "preQuiz": [
+    {"q": "《马可·波罗游记》介绍了什么内容？", "opts": ["中国的经济", "中国的教育", "现在的中国", "13世纪的中国"], "ans": 3},
+    {"q": "白家月看完中文版的《马可·波罗游记》之后打算做什么？", "opts": ["去意大利玩", "把它翻译给家人", "完成自己的作品", "再买一本送给朋友"], "ans": 2}
+   ],
+   "lines": [
+    {"sp": 0, "zh": "马可·波罗是意大利旅行家，在1275年和家人来到中国，在中国大约生活了17年，最后完成了一部作品——《马可·波罗游记》。", "vn": "Marco Polo là nhà du hành người Ý, năm 1275 cùng gia đình đến Trung Quốc, sống ở Trung Quốc khoảng 17 năm, cuối cùng hoàn thành một tác phẩm — “Du ký Marco Polo”."},
+    {"sp": 0, "zh": "在这部影响很大的作品中，作者向世界介绍了13世纪时的中国。", "vn": "Trong tác phẩm có ảnh hưởng rất lớn này, tác giả đã giới thiệu với thế giới Trung Quốc thế kỷ 13."},
+    {"sp": 0, "zh": "作为读者，读完这部作品后，我也很想成为作家，更想来中国看看。", "vn": "Với tư cách là độc giả, đọc xong tác phẩm này, tôi cũng rất muốn trở thành nhà văn, càng muốn đến Trung Quốc xem thử."},
+    {"sp": 0, "zh": "来到中国后，我发现现在的中国和书里的中国已有很大不同。", "vn": "Đến Trung Quốc rồi, tôi phát hiện Trung Quốc bây giờ đã khác rất nhiều so với Trung Quốc trong sách."},
+    {"sp": 0, "zh": "前两天，我去书店看到了中文版的《马可·波罗游记》，马上买了一本，到家后又把这本书看了两天。", "vn": "Mấy hôm trước, tôi ra hiệu sách thấy “Du ký Marco Polo” bản tiếng Trung, lập tức mua một cuốn, về đến nhà lại đọc cuốn sách này suốt hai ngày."},
+    {"sp": 0, "zh": "看完后，我决定把自己来中国后写的文章、日记等全部整理出来，完成一部文字加图片的作品——《东方旅行日记》，再次把中国介绍给世界。", "vn": "Đọc xong, tôi quyết định sắp xếp lại toàn bộ những bài viết, nhật ký… mình viết từ khi đến Trung Quốc, hoàn thành một tác phẩm có chữ kèm ảnh — “Nhật ký du hành phương Đông”, một lần nữa giới thiệu Trung Quốc với thế giới."},
+    {"sp": 0, "zh": "同时我也想继续学习中文和中国文化，报考中国语言文学专业的研究生。", "vn": "Đồng thời tôi cũng muốn tiếp tục học tiếng Trung và văn hoá Trung Quốc, đăng ký thi cao học chuyên ngành ngôn ngữ văn học Trung Quốc."}
+   ],
+   "hoi": [
+    ["马可·波罗写的游记怎么样？", "这部游记影响很大。在这部作品中，作者向世界介绍了13世纪时的中国。"],
+    ["来到中国后，白家月有什么发现？她后来决定读什么专业？", "她发现现在的中国和书里的中国已有很大不同。她决定报考中国语言文学专业的研究生。"]
+   ]
+  }
+ ],
+ "nguphap": [
+  {
+   "so": "1",
+   "ten": "选择复句“不是……，就是……”",
+   "tenVn": "Câu phức lựa chọn 「不是……，就是……」 — không phải … thì là …",
+   "cauTruc": [
+    "(Chủ ngữ) + 不是 + A，就是 + B",
+    "A, B: hai khả năng / hai việc cùng loại (cụm động từ, danh từ…) — chắc chắn là một trong hai"
+   ],
+   "giaiThich": "Câu phức biểu thị quan hệ LỰA CHỌN: trong hai khả năng A và B, chắc chắn có một cái đúng — “không phải A thì là B”, “không A thì B”. Hay dùng trong hai trường hợp: (1) PHỎNG ĐOÁN chắc chắn một trong hai: 估计不是刮风，就是下雨; (2) KỂ việc lặp đi lặp lại, lúc thì A lúc thì B, nhiều khi mang ý than “toàn là…, suốt ngày…”: 最近很忙，不是出差，就是加班. A và B nên cùng loại, cùng kết cấu (cụm động từ với cụm động từ). Có chung chủ ngữ thì chủ ngữ đứng TRƯỚC 不是. Vế sau bắt buộc là 就是 (✗ 就 + V). ⚠ Phân biệt quan trọng với 不是……，而是…… (Bài 11 · điểm 3): 不是 A，而是 B = phủ định A, KHẲNG ĐỊNH B (biết chắc là B); 不是 A，就是 B = A HOẶC B, một trong hai (chưa biết chắc, hoặc cả hai luân phiên). VD: 她不是中国人，而是韩国人 (cô ấy là người Hàn) ≠ 她不是中国人，就是韩国人 (đoán: hoặc người Trung, hoặc người Hàn). Người Việt cũng đừng nhầm với 不……就…… (“hễ không… thì…”, câu điều kiện) hay 不……也…… (Bài 9). Gần nghĩa: 或者 (hoặc — liệt kê nhẹ nhàng, không có ý “chắc chắn một trong hai”).",
+   "viDu": [
+    ["有时候不是忘词，就是忘记做动作。", "Có lúc không phải quên lời thì là quên làm động tác."],
+    ["周末的时候，小文不是在家看书，就是出去看演出。", "Cuối tuần, Tiểu Văn không ở nhà đọc sách thì là ra ngoài xem biểu diễn."],
+    ["杨同乐最近很忙，不是去外地出差，就是在公司加班。", "Dương Đồng Lạc dạo này rất bận, không đi công tác tỉnh ngoài thì là tăng ca ở công ty."],
+    ["这几天天气真奇怪，不是刮大风，就是下大雨，加上降温，好多人都感冒了。", "Mấy hôm nay thời tiết lạ thật, không gió to thì mưa lớn, cộng thêm trời trở lạnh, nhiều người bị cảm. (ôn 加上 – Bài 14 · điểm 3)"]
+   ],
+   "loi": [
+    ["她不是中国人，就是韩国人，我跟她聊过，她是韩国人。", "Đã biết chắc là người Hàn (phủ định A, khẳng định B) → phải dùng 不是……而是…… (Bài 11).", "她不是中国人，而是韩国人。"],
+    ["不是他在家看书，就是出去看演出。", "Chung chủ ngữ thì chủ ngữ đứng TRƯỚC 不是.", "他不是在家看书，就是出去看演出。"],
+    ["最近很忙，不是出差，就加班。", "Vế sau phải là 就是, không dùng 就 + động từ.", "最近很忙，不是出差，就是加班。"]
+   ],
+   "bt": [
+    {
+     "so": 1, "cap": "Cơ học", "tieuDe": "Chọn từ điền vào chỗ trống",
+     "cau": [
+      {"kieu": "dien", "phan": ["有时候", "忘词，就是忘记做动作。"], "dap": [["不是"]], "chon": ["不是", "不但", "虽然"], "goiY": "“Có lúc không phải quên lời thì là quên động tác.”", "giai": "Vế sau có 就是 → vế trước dùng 不是 (lựa chọn một trong hai)."},
+      {"kieu": "dien", "phan": ["周末的时候，小文不是在家看书，", "出去看演出。"], "dap": [["就是"]], "chon": ["就是", "而是", "还是"], "goiY": "“… không ở nhà đọc sách thì là ra ngoài xem biểu diễn.” (lúc thế này, lúc thế kia)", "giai": "Hai việc luân phiên, một trong hai → 不是……，就是……"},
+      {"kieu": "dien", "phan": ["杨同乐最近很忙，不是去外地出差，就是在公司", "。"], "dap": [["加班"]], "chon": ["加班", "度假", "散步"], "goiY": "“… không đi công tác thì là tăng ca ở công ty.”", "giai": "Rất bận → 出差 / 加班 cùng loại công việc."},
+      {"kieu": "dien", "phan": ["她不是中国人，", "韩国人，我跟她聊过。"], "dap": [["而是"]], "chon": ["而是", "就是", "或者"], "goiY": "“Cô ấy không phải người Trung Quốc mà là người Hàn, tôi từng nói chuyện với cô ấy.” (biết chắc)", "giai": "Biết chắc → phủ định A, khẳng định B → 不是……而是…… (Bài 11 · điểm 3), không dùng 就是."},
+      {"kieu": "dien", "phan": ["这几天不是刮大风，就是下大雨，", "降温，好多人都感冒了。"], "dap": [["加上"]], "chon": ["加上", "于是", "甚至"], "goiY": "“… cộng thêm trời trở lạnh, nhiều người bị cảm.” (ôn Bài 14)", "giai": "加上 = cộng thêm nguyên nhân (Bài 14 · điểm 3)."}
+     ]
+    },
+    {
+     "so": 2, "cap": "Bán giao tiếp", "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+     "cau": [
+      {"kieu": "xep", "manh": ["周末", "小文", "不是", "在家看书", "，", "就是", "出去看演出"], "dap": ["周末小文不是在家看书，就是出去看演出。", "小文周末不是在家看书，就是出去看演出。"], "goiY": "Cuối tuần Tiểu Văn không ở nhà đọc sách thì là ra ngoài xem biểu diễn.", "giai": "Chủ ngữ + 不是 A，就是 B."},
+      {"kieu": "xep", "manh": ["估计", "明天", "不是", "刮风", "，", "就是", "下雨"], "dap": ["估计明天不是刮风，就是下雨。", "明天估计不是刮风，就是下雨。"], "goiY": "Chắc là ngày mai không có gió thì cũng mưa.", "giai": "Phỏng đoán một trong hai: 估计 + 不是……就是……"},
+      {"kieu": "xep", "manh": ["他", "每天晚上", "不是", "去公园跑步", "，", "就是", "去游泳"], "dap": ["他每天晚上不是去公园跑步，就是去游泳。"], "goiY": "Tối nào anh ấy cũng không đi công viên chạy bộ thì là đi bơi.", "giai": "Trạng ngữ thời gian đứng trước 不是."},
+      {"kieu": "dungsai", "cau": "杨同乐最近很忙，不是去外地出差，就是在公司加班。", "dung": true, "giai": "Đúng: hai việc luân phiên, cùng kết cấu."},
+      {"kieu": "dungsai", "cau": "最近很忙，不是出差，就加班。", "dung": false, "sua": "最近很忙，不是出差，就是加班。", "giai": "Vế sau phải là 就是."},
+      {"kieu": "dungsai", "cau": "那本书不是小王的，就是小李的，你看，上面写着小李的名字。", "dung": false, "sua": "那本书不是小王的，而是小李的，你看，上面写着小李的名字。", "giai": "Đã biết chắc là của Tiểu Lý → 不是……而是……"}
+     ]
+    },
+    {
+     "so": 3, "cap": "Bài tập SGK", "tieuDe": "完成对话 · Hoàn thành đối thoại (sách trang 101)",
+     "huongDan": "Hoàn thành đối thoại, có dùng 「不是……，就是……」",
+     "cau": [
+      {"kieu": "vandung", "de": "A：明天天气看起来不太好啊。 B：是啊，估计＿＿＿，就是下雨。", "goiY": "Đoán: không phải (gió to / trời âm u) thì là mưa", "mau": "不是刮大风", "can": [["不是"]]},
+      {"kieu": "vandung", "de": "A：听说老张病好了以后，开始天天锻炼身体了。 B：是的，他＿＿＿，＿＿＿。", "goiY": "Kể hai cách ông ấy tập luyện luân phiên mỗi ngày", "mau": "不是早上去公园跑步，就是晚上去体育馆游泳", "can": [["不是"], ["就是"]]},
+      {"kieu": "vandung", "de": "A：你明天去哪儿？ B：我明天＿＿＿，＿＿＿。", "goiY": "Chưa chắc, một trong hai nơi", "mau": "不是去图书馆看书，就是去书店买书", "can": [["不是"], ["就是"]]}
+     ]
+    },
+    {
+     "so": 4, "cap": "Giao tiếp", "tieuDe": "Dịch và tự đặt câu",
+     "cau": [
+      {"kieu": "dich", "vn": "Dạo này anh ấy rất bận, không đi công tác thì là tăng ca.", "dap": ["他最近很忙，不是出差，就是加班。", "他最近很忙，不是去出差，就是在加班。", "最近他很忙，不是出差，就是加班。"], "giai": "不是 A，就是 B — hai việc luân phiên."},
+      {"kieu": "dich", "vn": "Cuối tuần tôi không ở nhà đọc sách thì là đi xem biểu diễn với bạn.", "dap": ["周末我不是在家看书，就是和朋友去看演出。", "我周末不是在家看书，就是跟朋友去看演出。", "周末我不是在家看书，就是跟朋友一起去看演出。"], "giai": "Chủ ngữ đứng trước 不是."},
+      {"kieu": "vandung", "tuDo": true, "de": "＿＿＿", "goiY": "Kể thói quen buổi tối / cuối tuần của em, có dùng 「不是……，就是……」", "mau": "晚上我不是在宿舍复习生词，就是去操场跑步。", "can": [["不是"], ["就是"]]}
+     ]
+    }
+   ]
+  },
+  {
+   "so": "2",
+   "ten": "固定格式“动词+一×是一×”",
+   "tenVn": "Cấu trúc cố định 「V + 一× 是一×」 — làm được … nào hay … ấy",
+   "cauTruc": [
+    "(能/多) + V + 一 + lượng từ (hoặc 点儿) + 是 + 一 + lượng từ (hoặc 点儿)",
+    "能懂一点儿是一点儿 · 看一页是一页 · 做一件是一件 · 解决一个是一个"
+   ],
+   "giaiThich": "Nhấn mạnh: trong điều kiện có hạn (thời gian ít, việc nhiều, sức có hạn, trình độ chưa đủ), cứ cố hết sức làm được bao nhiêu hay bấy nhiêu — tiếng Việt: “được chút nào hay chút ấy”, “đọc được trang nào hay trang ấy”, “làm được việc nào hay việc ấy”. × là lượng từ (页, 件, 个, 天, 课…) hoặc 点儿; HAI BÊN PHẢI GIỐNG NHAU (一点儿……一点儿, 一页……一页). Động từ chỉ xuất hiện một lần ở đầu, sau 是 không lặp lại động từ. Trước động từ hay có 能 / 多 (能懂一点儿是一点儿, 多吃一点儿是一点儿). Ngữ khí tích cực, chấp nhận hoàn cảnh và kiên trì từng bước; hay đi cùng 慢慢, 别着急, 先…. Hay đứng ở vế sau, vế trước nêu khó khăn: 虽然这本书很厚，但是…看一页是一页. Đừng nhầm với 一A一B (Bài 17 · điểm 2) hay 一+量词+比+一+量词 (Bài 13 · điểm 2): ở đây phải có động từ đứng trước và 是 ở giữa.",
+   "viDu": [
+    ["咱们先做做功课，提前了解下，能懂一点儿是一点儿。", "Chúng mình cứ tìm hiểu trước đã, hiểu được chút nào hay chút ấy."],
+    ["虽然这本书很厚，但是我还是要看，看一页是一页，最后一定能看完。", "Tuy cuốn sách này rất dày nhưng tôi vẫn muốn đọc, đọc được trang nào hay trang ấy, cuối cùng nhất định sẽ đọc xong."],
+    ["你能多吃一点儿是一点儿，这样身体才能好起来。", "Con ăn thêm được chút nào hay chút ấy, như vậy sức khoẻ mới khá lên được."],
+    ["即使每天只有十分钟，我也坚持背生词，背一个是一个。", "Cho dù mỗi ngày chỉ có mười phút, tôi cũng kiên trì học thuộc từ mới, thuộc được từ nào hay từ ấy. (ôn 即使……也…… – Bài 11 · điểm 1)"]
+   ],
+   "loi": [
+    ["你多吃一点儿是一些。", "Hai bên phải cùng một lượng từ: 一点儿……一点儿.", "你多吃一点儿是一点儿。"],
+    ["看一页看一页，最后一定能看完。", "Giữa hai vế phải có 是; động từ không lặp lại sau 是.", "看一页是一页，最后一定能看完。"],
+    ["我们一点儿学是一点儿。", "Động từ đứng TRƯỚC 一×: V + 一点儿 + 是 + 一点儿.", "我们学一点儿是一点儿。"]
+   ],
+   "bt": [
+    {
+     "so": 1, "cap": "Cơ học", "tieuDe": "Chọn từ điền vào chỗ trống",
+     "cau": [
+      {"kieu": "dien", "phan": ["咱们先做做功课，提前了解下，能懂一点儿", "一点儿。"], "dap": [["是"]], "chon": ["是", "就", "也"], "goiY": "“… hiểu được chút nào hay chút ấy.”", "giai": "V + 一点儿 + 是 + 一点儿."},
+      {"kieu": "dien", "phan": ["虽然这本书很厚，但是我还是要看，看一", "是一页。"], "dap": [["页"]], "chon": ["页", "本", "次"], "goiY": "“… đọc được trang nào hay trang ấy.”", "giai": "Hai lượng từ phải giống nhau: 一页……一页."},
+      {"kieu": "dien", "phan": ["你能多吃一点儿是一点儿，这样身体", "能好起来。"], "dap": [["才"]], "chon": ["才", "就", "都"], "goiY": "“… như vậy sức khoẻ mới khá lên được.”", "giai": "这样……才…… = có như thế mới… (điều kiện cần)."},
+      {"kieu": "dien", "phan": ["事情实在太多了，别着急，慢慢做，做一", "是一件。"], "dap": [["件"]], "chon": ["件", "个", "遍"], "goiY": "“… làm được việc nào hay việc ấy.”", "giai": "事情 dùng lượng từ 件; hai bên phải cùng 件."},
+      {"kieu": "dien", "phan": ["即使每天只有十分钟，我", "坚持背生词，背一个是一个。"], "dap": [["也"]], "chon": ["也", "就", "才"], "goiY": "“Cho dù mỗi ngày chỉ có mười phút, tôi cũng kiên trì…” (ôn Bài 11)", "giai": "即使……，Sub + 也…… (Bài 11 · điểm 1)."}
+     ]
+    },
+    {
+     "so": 2, "cap": "Bán giao tiếp", "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+     "cau": [
+      {"kieu": "xep", "manh": ["咱们", "先做做功课", "，", "能懂", "一点儿", "是", "一点儿"], "dap": ["咱们先做做功课，能懂一点儿是一点儿。"], "goiY": "Chúng mình cứ chuẩn bị trước, hiểu được chút nào hay chút ấy.", "giai": "能 + V + 一点儿是一点儿."},
+      {"kieu": "xep", "manh": ["别着急", "，", "慢慢做", "，", "做", "一件", "是", "一件"], "dap": ["别着急，慢慢做，做一件是一件。"], "goiY": "Đừng vội, làm từ từ, làm được việc nào hay việc ấy.", "giai": "V + 一件 + 是 + 一件."},
+      {"kieu": "xep", "manh": ["这么多问题", "，", "我们", "解决", "一个", "是", "一个"], "dap": ["这么多问题，我们解决一个是一个。"], "goiY": "Nhiều vấn đề thế này, chúng ta giải quyết được cái nào hay cái ấy.", "giai": "V + 一个是一个."},
+      {"kieu": "dungsai", "cau": "你能多吃一点儿是一点儿，这样身体才能好起来。", "dung": true, "giai": "Đúng: 能多 + V + 一点儿是一点儿."},
+      {"kieu": "dungsai", "cau": "看一页看一页，最后一定能看完。", "dung": false, "sua": "看一页是一页，最后一定能看完。", "giai": "Thiếu 是 ở giữa; không lặp động từ."},
+      {"kieu": "dungsai", "cau": "这些生词，我每天记一个是两个。", "dung": false, "sua": "这些生词，我每天记一个是一个。", "giai": "Hai bên phải cùng là 一 + cùng lượng từ."}
+     ]
+    },
+    {
+     "so": 3, "cap": "Bài tập SGK", "tieuDe": "完成对话 · Hoàn thành đối thoại (sách trang 103–104)",
+     "huongDan": "Hoàn thành đối thoại, có dùng 「动词 + 一×是一×」",
+     "cau": [
+      {"kieu": "vandung", "de": "A：我们＿＿＿，最后一定都能学会。 B：是的，现在就开始吧。", "goiY": "Mỗi ngày học được chút nào hay chút ấy", "mau": "每天学一点儿是一点儿", "can": [["是一"]]},
+      {"kieu": "vandung", "de": "A：事情实在太多了，你能做完吗？ B：慢慢做，＿＿＿。", "goiY": "Làm được việc nào hay việc ấy", "mau": "做一件是一件", "can": [["是一"]]},
+      {"kieu": "vandung", "de": "A：这么多问题能解决完吗？ B：＿＿＿，＿＿＿。", "goiY": "Khuyên đừng vội; giải quyết được cái nào hay cái ấy", "mau": "别着急，咱们慢慢来，解决一个是一个", "can": [["是一"]]}
+     ]
+    },
+    {
+     "so": 4, "cap": "Giao tiếp", "tieuDe": "Dịch và tự đặt câu",
+     "cau": [
+      {"kieu": "dich", "vn": "Không sao, chúng ta tìm hiểu trước một chút, hiểu được chút nào hay chút ấy.", "dap": ["没事，咱们提前了解一下，能懂一点儿是一点儿。", "没关系，我们先了解一下，能懂一点儿是一点儿。", "没事，我们提前了解一下，能懂一点儿是一点儿。"], "giai": "能懂一点儿是一点儿."},
+      {"kieu": "dich", "vn": "Cuốn sách tuy dày, nhưng đọc được trang nào hay trang ấy, cuối cùng nhất định đọc xong.", "dap": ["这本书虽然很厚，但是看一页是一页，最后一定能看完。", "虽然这本书很厚，但是看一页是一页，最后一定能看完。"], "giai": "虽然……但是…… + 看一页是一页."},
+      {"kieu": "vandung", "tuDo": true, "de": "＿＿＿", "goiY": "Khuyên một người bạn đang thấy từ mới quá nhiều, có dùng 「V + 一×是一×」", "mau": "生词虽然多，但是别着急，每天记一个是一个，坚持下去就能记住。", "can": [["是一"]]}
+     ]
+    }
+   ]
+  },
+  {
+   "so": "3",
+   "ten": "“把”字句“主语+把+宾语+动词+动量补语”",
+   "tenVn": "Câu chữ 「把」: Chủ ngữ + 把 + tân ngữ + động từ + bổ ngữ động lượng — làm việc gì với đối tượng mấy lần",
+   "cauTruc": [
+    "Chủ ngữ + 把 + tân ngữ (xác định) + động từ + (了) + số từ + động lượng từ (遍 / 次 / 下 / 趟)",
+    "把故事了解了一遍 · 把这个动作做了好几次 · 把这本书看了几遍"
+   ],
+   "giaiThich": "Một dạng của câu chữ 把: nhấn mạnh động tác tác động lên tân ngữ BAO NHIÊU LẦN. “Bổ ngữ động lượng” = số từ + động lượng từ, đứng sau động từ: 遍 (một lượt trọn vẹn từ đầu đến cuối — đọc, xem, nghe, viết, tập, giảng), 次 (lần — nói chung), 下 (một cái, nhẹ và nhanh — 敲了三下门), 趟 (chuyến đi về). Việc đã xảy ra thì có 了 sau động từ; con số hay gặp: 一遍, 两次, 几遍, 好几次, 十几遍. Tân ngữ sau 把 phải là thứ XÁC ĐỊNH (这本书, 故事, 这个动作 — ✗ 一本书). Phó từ (又, 已经, 都, 提前), động từ năng nguyện và từ phủ định đứng TRƯỚC 把: 白家月又把这本书看了几遍. So với câu thường: 我看了两遍这本书 (kể bình thường) — 我把这本书看了两遍 (nhấn mạnh cuốn sách đã được “xử lý” hai lượt). Ôn chuỗi câu chữ 把 của 4下: Bài 15 · điểm 3 把 + 宾 + 动(+一/了)+动 (把房间打扫打扫), Bài 16 · điểm 1 把 + 宾 + 动 + 了. Lỗi người Việt hay mắc: đặt số lần trước động từ theo tiếng Việt (“hai lượt đọc”) hoặc quên động lượng từ sau số từ.",
+   "viDu": [
+    ["因为李文他们提前把故事了解了一遍，所以差不多都看懂了。", "Vì nhóm Lý Văn đã tìm hiểu trước câu chuyện một lượt, nên họ gần như xem hiểu hết."],
+    ["他把这个动作做了好几次，最后终于做对了。", "Anh ấy làm động tác này mấy lần liền, cuối cùng cũng làm đúng."],
+    ["白家月又把这本书看了几遍，越看越喜欢。", "Bạch Gia Nguyệt lại đọc cuốn sách này mấy lượt, càng đọc càng thích."],
+    ["尽管已经把课文读了好几遍，他上台时还是有点儿紧张。", "Mặc dù đã đọc bài khoá mấy lượt rồi, khi lên sân khấu anh ấy vẫn hơi căng thẳng. (ôn 尽管……还是…… – Bài 9 · điểm 2)"]
+   ],
+   "loi": [
+    ["我把这本书两遍看了。", "Bổ ngữ động lượng đứng SAU động từ, không đứng trước như tiếng Việt.", "我把这本书看了两遍。"],
+    ["她把这个动作做了好几。", "Thiếu động lượng từ (次 / 遍) sau số từ.", "她把这个动作做了好几次。"],
+    ["他把一本书看了三遍。", "Tân ngữ sau 把 phải xác định (这本书 / 那本书), không dùng 一本书.", "他把这本书看了三遍。"]
+   ],
+   "bt": [
+    {
+     "so": 1, "cap": "Cơ học", "tieuDe": "Chọn từ điền vào chỗ trống",
+     "cau": [
+      {"kieu": "dien", "phan": ["因为李文他们提前把故事了解了一", "，所以差不多都看懂了。"], "dap": [["遍"]], "chon": ["遍", "本", "个"], "goiY": "“… đã tìm hiểu trước câu chuyện một lượt …”", "giai": "Động lượng từ 遍 = một lượt trọn vẹn."},
+      {"kieu": "dien", "phan": ["他", "这个动作做了好几次，最后终于做对了。"], "dap": [["把"]], "chon": ["把", "被", "给"], "goiY": "“Anh ấy làm động tác này mấy lần …”", "giai": "Chủ ngữ chủ động tác động lên 这个动作 → 把."},
+      {"kieu": "dien", "phan": ["白家月", "把这本书看了几遍，越看越喜欢。"], "dap": [["又"]], "chon": ["又", "再", "还"], "goiY": "“Bạch Gia Nguyệt LẠI đọc cuốn sách này mấy lượt …” (việc đã xảy ra)", "giai": "又 (lặp lại, đã xảy ra) đứng trước 把; 再 dùng cho việc chưa xảy ra."},
+      {"kieu": "dien", "phan": ["为了演好，我们把这个节目排了十几", "。"], "dap": [["遍"]], "chon": ["遍", "趟", "下"], "goiY": "“… chúng tôi tập tiết mục này mười mấy lượt.”", "giai": "Tập trọn tiết mục từ đầu đến cuối → 遍."},
+      {"kieu": "dien", "phan": ["他把门敲了三", "，可是没有人开。"], "dap": [["下"]], "chon": ["下", "遍", "本"], "goiY": "“Anh ấy gõ cửa ba cái, nhưng không ai mở.”", "giai": "Động tác nhanh, ngắn (gõ, vỗ) → 下."}
+     ]
+    },
+    {
+     "so": 2, "cap": "Bán giao tiếp", "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+     "cau": [
+      {"kieu": "xep", "manh": ["他", "把", "这个动作", "做了", "好几次", "，", "最后", "终于做对了"], "dap": ["他把这个动作做了好几次，最后终于做对了。"], "goiY": "Anh ấy làm động tác này mấy lần, cuối cùng cũng làm đúng.", "giai": "把 + 宾 + V了 + 好几次."},
+      {"kieu": "xep", "manh": ["白家月", "又", "把", "这本书", "看了", "几遍"], "dap": ["白家月又把这本书看了几遍。"], "goiY": "Bạch Gia Nguyệt lại đọc cuốn sách này mấy lượt.", "giai": "又 đứng trước 把."},
+      {"kieu": "xep", "manh": ["我们", "把", "这个节目", "排了", "十几遍"], "dap": ["我们把这个节目排了十几遍。"], "goiY": "Chúng tôi tập tiết mục này mười mấy lượt.", "giai": "Số lần ở cuối câu."},
+      {"kieu": "dungsai", "cau": "因为李文他们提前把故事了解了一遍，所以差不多都看懂了。", "dung": true, "giai": "Đúng: 提前 đứng trước 把, 一遍 sau động từ."},
+      {"kieu": "dungsai", "cau": "我把这本书两遍看了。", "dung": false, "sua": "我把这本书看了两遍。", "giai": "Bổ ngữ động lượng đứng sau động từ."},
+      {"kieu": "dungsai", "cau": "他把一个问题讲了好几遍。", "dung": false, "sua": "他把这个问题讲了好几遍。", "giai": "Tân ngữ của 把 phải xác định."}
+     ]
+    },
+    {
+     "so": 3, "cap": "Bài tập SGK", "tieuDe": "完成句子 · Hoàn thành câu (sách trang 105)",
+     "huongDan": "Dùng từ trong ngoặc, hoàn thành câu theo cấu trúc 「主语 + 把 + 宾语 + 动词 + 动量补语」",
+     "cau": [
+      {"kieu": "vandung", "de": "他们小组特别认真，＿＿＿，最后才定下来。（讨论）", "goiY": "Thảo luận kế hoạch / phương án mấy lần", "mau": "把这个计划讨论了好几遍", "can": [["把"], ["讨论"]]},
+      {"kieu": "vandung", "de": "我＿＿＿，还是不满意。（计划书）", "goiY": "Đã sửa bản kế hoạch mấy lượt", "mau": "把计划书改了三遍", "can": [["把"], ["计划书"]]},
+      {"kieu": "vandung", "de": "我们＿＿＿，最后所有人都记住了。（排）", "goiY": "Tập tiết mục mấy lượt", "mau": "把这个节目排了十几遍", "can": [["把"], ["排"]]}
+     ]
+    },
+    {
+     "so": 4, "cap": "Giao tiếp", "tieuDe": "Dịch và tự đặt câu",
+     "cau": [
+      {"kieu": "dich", "vn": "Cô ấy đã đọc cuốn sách này mấy lượt, càng đọc càng thích.", "dap": ["她把这本书看了好几遍，越看越喜欢。", "她把这本书看了几遍，越看越喜欢。", "她把这本书读了好几遍，越读越喜欢。"], "giai": "把 + 宾 + V了 + 好几遍 + ôn 越……越……"},
+      {"kieu": "dich", "vn": "Tôi đã xem trước bài khoá một lượt, nên trên lớp nghe hiểu hết.", "dap": ["我提前把课文看了一遍，所以上课都听懂了。", "我提前把课文看了一遍，所以课上都听懂了。", "因为我提前把课文看了一遍，所以上课都听懂了。"], "giai": "提前 đứng trước 把; 一遍 sau động từ."},
+      {"kieu": "vandung", "tuDo": true, "de": "＿＿＿", "goiY": "Kể em đã chuẩn bị cho một kỳ thi / buổi biểu diễn thế nào, có dùng 「把 + 宾 + V + 动量补语」", "mau": "为了参加艺术节，我们把这个话剧排了二十多遍。", "can": [["把"], ["遍", "次"]]}
+     ]
+    }
+   ]
+  },
+  {
+   "so": "4",
+   "ten": "“把”字句“主语+把+宾语+动词+时量补语”",
+   "tenVn": "Câu chữ 「把」: Chủ ngữ + 把 + tân ngữ + động từ + bổ ngữ thời lượng — làm việc gì với đối tượng trong bao lâu",
+   "cauTruc": [
+    "Chủ ngữ + 把 + tân ngữ (xác định) + (又) + động từ + (了) + thời lượng (十分钟 / 一个小时 / 两天 / 一个星期…)",
+    "把这本书看了两天 · 把这个问题又讲了十分钟 · 把这个动作又练了一小时"
+   ],
+   "giaiThich": "Một dạng nữa của câu chữ 把: nhấn mạnh chủ ngữ tác động lên tân ngữ trong KHOẢNG THỜI GIAN bao lâu. “Bổ ngữ thời lượng” là các từ chỉ độ dài thời gian: 十分钟, 半个小时, 一个上午, 两天, 一个星期, 整整一年… đặt SAU động từ. Rất hay đi với 又 (lại thêm): 又 có thể đứng trước 把 (又把这本书看了两天) hoặc trước động từ (把这个问题又讲了十分钟) — sách có cả hai cách. Thường có vế sau nói kết quả: …，大家才明白 / …，终于都会写了 / …才看完. So với câu thường: động từ có tân ngữ mà muốn thêm thời lượng thì tiếng Trung phải lặp động từ (讲这个问题讲了十分钟) hoặc đưa tân ngữ ra trước bằng 把 (把这个问题讲了十分钟) — ✗ 讲了这个问题十分钟 (câu kiểu tiếng Việt). So sánh với điểm 3: 动量补语 trả lời “mấy lần?” (几遍 / 几次), 时量补语 trả lời “bao lâu?” (多长时间). Tân ngữ sau 把 vẫn phải xác định. Đừng đặt thời lượng trước động từ (✗ 把这本书两天看了).",
+   "viDu": [
+    ["（我）到家后又把这本书看了两天。", "(Tôi) về đến nhà lại đọc cuốn sách này suốt hai ngày."],
+    ["王老师把这个问题又讲了十分钟，大家才明白。", "Thầy Vương giảng vấn đề này thêm mười phút nữa, mọi người mới hiểu."],
+    ["陈天中把这个动作又练了一小时。", "Trần Thiên Trung luyện động tác này thêm một tiếng nữa."],
+    ["为了这次面试，他把自我介绍准备了整整一个星期，说不定能成功。", "Vì lần phỏng vấn này, anh ấy chuẩn bị phần tự giới thiệu suốt cả một tuần, không chừng sẽ thành công. (ôn 说不定 – Bài 16 · điểm 3)"]
+   ],
+   "loi": [
+    ["我把这本书两天看了。", "Bổ ngữ thời lượng đứng SAU động từ.", "我把这本书看了两天。"],
+    ["王老师讲了这个问题十分钟。", "Động từ có tân ngữ + thời lượng: không đặt thời lượng sau tân ngữ kiểu tiếng Việt → dùng 把 (hoặc lặp động từ).", "王老师把这个问题讲了十分钟。"],
+    ["他把一个动作练了一个小时。", "Tân ngữ sau 把 phải xác định.", "他把这个动作练了一个小时。"]
+   ],
+   "bt": [
+    {
+     "so": 1, "cap": "Cơ học", "tieuDe": "Chọn từ điền vào chỗ trống",
+     "cau": [
+      {"kieu": "dien", "phan": ["到家后，我又把这本书看了两", "。"], "dap": [["天"]], "chon": ["天", "本", "页"], "goiY": "“Về đến nhà, tôi lại đọc cuốn sách này suốt hai ngày.”", "giai": "Bổ ngữ thời lượng: 两天."},
+      {"kieu": "dien", "phan": ["王老师把这个问题又讲了十分钟，大家", "明白。"], "dap": [["才"]], "chon": ["才", "就", "都"], "goiY": "“… mọi người MỚI hiểu.” (muộn, khó khăn)", "giai": "Tốn thời gian rồi mới có kết quả → 才."},
+      {"kieu": "dien", "phan": ["为了演好，陈天中把这个动作又练了一个", "。"], "dap": [["小时"]], "chon": ["小时", "遍", "次"], "goiY": "“… luyện động tác này thêm một tiếng.”", "giai": "一个 + 小时 (thời lượng); 遍 / 次 không đi với 个."},
+      {"kieu": "dien", "phan": ["桌子上的东西太多、太乱了，我把它们", "了半个小时。"], "dap": [["整理"]], "chon": ["整理", "转发", "报考"], "goiY": "“… tôi sắp xếp chúng mất nửa tiếng.”", "giai": "整理 = sắp xếp (từ mới bài khoá 4)."},
+      {"kieu": "dien", "phan": ["为了这次面试，他把自我介绍准备了整整一个星期，", "能成功。"], "dap": [["说不定"]], "chon": ["说不定", "到底", "究竟"], "goiY": "“… không chừng sẽ thành công.” (ôn Bài 16)", "giai": "说不定 = có lẽ, không chừng (Bài 16 · điểm 3)."}
+     ]
+    },
+    {
+     "so": 2, "cap": "Bán giao tiếp", "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+     "cau": [
+      {"kieu": "xep", "manh": ["王老师", "把", "这个问题", "又", "讲了", "十分钟"], "dap": ["王老师把这个问题又讲了十分钟。", "王老师又把这个问题讲了十分钟。"], "goiY": "Thầy Vương giảng vấn đề này thêm mười phút.", "giai": "又 đứng trước động từ (hoặc trước 把)."},
+      {"kieu": "xep", "manh": ["我", "到家后", "又", "把", "这本书", "看了", "两天"], "dap": ["我到家后又把这本书看了两天。", "到家后我又把这本书看了两天。"], "goiY": "Về đến nhà tôi lại đọc cuốn sách này suốt hai ngày.", "giai": "Thời lượng ở cuối câu."},
+      {"kieu": "xep", "manh": ["同学们", "把", "这个汉字", "练了", "一个上午"], "dap": ["同学们把这个汉字练了一个上午。"], "goiY": "Các bạn luyện chữ Hán này cả một buổi sáng.", "giai": "把 + 宾 + V了 + 一个上午."},
+      {"kieu": "dungsai", "cau": "陈天中把这个动作又练了一小时。", "dung": true, "giai": "Đúng: 又 + V了 + thời lượng."},
+      {"kieu": "dungsai", "cau": "我把这本书两天看了。", "dung": false, "sua": "我把这本书看了两天。", "giai": "Thời lượng đứng sau động từ."},
+      {"kieu": "dungsai", "cau": "王老师讲了这个问题十分钟。", "dung": false, "sua": "王老师把这个问题讲了十分钟。", "giai": "Không đặt thời lượng sau tân ngữ → dùng 把."}
+     ]
+    },
+    {
+     "so": 3, "cap": "Bài tập SGK", "tieuDe": "完成句子 · Hoàn thành câu (sách trang 107)",
+     "huongDan": "Hoàn thành câu theo cấu trúc 「主语 + 把 + 宾语 + 动词 + 时量补语」",
+     "cau": [
+      {"kieu": "vandung", "de": "桌子上的东西太多、太乱了，＿＿＿。", "goiY": "Kể đã sắp xếp chúng mất bao lâu", "mau": "我把它们整理了半个小时", "can": [["把"]]},
+      {"kieu": "vandung", "de": "同学们＿＿＿，终于都会写了。", "goiY": "Đã luyện chữ Hán này bao lâu", "mau": "把这个汉字练了一个上午", "can": [["把"]]},
+      {"kieu": "vandung", "de": "这本历史书太厚了，＿＿＿才看完。", "goiY": "Đọc nó mất bao lâu mới xong", "mau": "我把它看了整整两个星期", "can": [["把"]]}
+     ]
+    },
+    {
+     "so": 4, "cap": "Giao tiếp", "tieuDe": "Dịch và tự đặt câu",
+     "cau": [
+      {"kieu": "dich", "vn": "Thầy Vương giảng vấn đề này thêm mười phút, mọi người mới hiểu.", "dap": ["王老师把这个问题又讲了十分钟，大家才明白。", "王老师又把这个问题讲了十分钟，大家才明白。"], "giai": "把 + 宾 + 又 + V了 + 十分钟，……才……"},
+      {"kieu": "dich", "vn": "Về đến nhà, tôi lại đọc cuốn sách này suốt hai ngày.", "dap": ["到家后，我又把这本书看了两天。", "回家后，我又把这本书看了两天。", "到家以后，我又把这本书看了两天。"], "giai": "又 + 把 + 宾 + V了 + 两天."},
+      {"kieu": "vandung", "tuDo": true, "de": "＿＿＿", "goiY": "Kể em đã luyện / ôn một thứ gì đó trong bao lâu, có dùng 「把 + 宾 + V + 时量补语」", "mau": "为了参加汉语比赛，我把自己的演讲练了整整一个星期。", "can": [["把"]]}
+     ]
+    }
+   ]
+  }
+ ],
+ "sgk": [
+  {
+   "kieu": "kho",
+   "de": "选词填空（一）· 综合练习",
+   "vn": "Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 108). Sách 4下 chưa có đáp án — đây là đáp án tham khảo.",
+   "dapSgk": false,
+   "tu": ["文字", "留下", "内心", "艺术", "自信", "邀请"],
+   "cau": [
+    {"s": "那部作品写得很棒，给我们＿＿了很深的印象。", "dap": ["留下"]},
+    {"s": "收到演出＿＿后，他们马上就开始排新节目。", "dap": ["邀请"]},
+    {"s": "今年的＿＿节，刘小雪参加了话剧表演。", "dap": ["艺术"]},
+    {"s": "虽然没说什么，但是我＿＿很感动。", "dap": ["内心"]},
+    {"s": "妈妈总是鼓励我要＿＿，相信自己一定能做好。", "dap": ["自信"]},
+    {"s": "这部小说（xiǎoshuō, tiểu thuyết）的＿＿很美，我都看了好几遍了。", "dap": ["文字"]}
+   ]
+  },
+  {
+   "kieu": "kho",
+   "de": "选词填空（二）· 综合练习",
+   "vn": "Chọn từ thích hợp điền vào chỗ trống (hội thoại, sách trang 108). Đáp án tham khảo.",
+   "dapSgk": false,
+   "tu": ["作家", "文章", "点头", "庆祝", "度假", "转发"],
+   "cau": [
+    {"s": "A：女儿马上放假了，今年咱们全家去哪儿＿＿？　B：郊区怎么样？那儿风景好，交通也方便。", "dap": ["度假"]},
+    {"s": "A：我已经把它读了好几遍了，还是记不住。　B：你理解这篇（piān, lượng từ của bài viết）＿＿的意思了吗？你要在理解的基础上记忆。", "dap": ["文章"]},
+    {"s": "A：报纸上说，在这个国家，“＿＿”是“不”的意思。　B：是吗？我还是第一次听说。这就是文化上的不同啊！", "dap": ["点头"]},
+    {"s": "A：小赵，这个项目咱们怎么做？　B：听经理的吧。经理给我发了几条信息，我把他的信息＿＿给你。", "dap": ["转发"]},
+    {"s": "A：下周五是妈妈的生日，咱们给她买个礼物吧。　B：好啊，我再给她做几个她爱吃的菜，一起＿＿一下。", "dap": ["庆祝"]},
+    {"s": "A：我读过这本书，挺有意思的。　B：是啊，这个作者是现在最受欢迎的青年＿＿。", "dap": ["作家"]}
+   ]
+  },
+  {
+   "kieu": "kho",
+   "de": "选择合适的内容完成短文",
+   "vn": "Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn (sách trang 108). Đáp án tham khảo.",
+   "dapSgk": false,
+   "tu": ["老师的鼓励", "上学后", "只是觉得有趣", "她成为了一名优秀作家"],
+   "cau": [
+    {"s": "朱华从小就喜欢读书。＿＿，她写的作文（zuòwén, bài văn）总会受到老师的表扬，老师经常把她的作文读给同学们听。＿＿，让朱华更加自信，也更加努力。上高中后，她开始写小说。十几年后，＿＿。她常说，那时候写文章、写小说并不是为了当作家，＿＿，就坚持下来了。", "dap": ["上学后", "老师的鼓励", "她成为了一名优秀作家", "只是觉得有趣"]}
+   ]
+  },
+  {
+   "kieu": "gx",
+   "de": "看图，用词语造句",
+   "vn": "Nhìn tranh, đặt câu với từ cho sẵn (câu dưới đây là câu mẫu tham khảo — câu của em đúng ngữ pháp, hợp tranh là đạt).",
+   "cau": [
+    {"anh": "bt-1", "s": "", "tu": "观众", "dap": "演出太精彩了，观众们一边笑一边不断地鼓掌。", "giai": "观众 làm chủ ngữ, thêm 们 chỉ số nhiều; ôn 一边……一边…… (HSK 2) và 不断 + V."},
+    {"anh": "bt-2", "s": "", "tu": "度假", "dap": "他们俩去海边度假了，每天躺在椅子上看大海，舒服极了。", "giai": "Nơi chốn đứng trước 度假 (✗ 度假海边); Adj + 极了 (HSK 3)."},
+    {"anh": "bt-3", "s": "", "tu": "演唱", "dap": "她正在台上演唱一首歌，歌声美极了。", "giai": "演唱 + 一首歌 (lượng từ 首 cho bài hát); 正在 + V chỉ hành động đang diễn ra."}
+   ]
+  }
+ ],
+ "listen": [
+  {
+   "audio": "小雪，听说你们学校下周有艺术节？对，我们班排了一个话剧，我演一个少年歌手。你唱歌那么好听，一定没问题。可是我内心还是有点儿紧张，排的时候不是忘词，就是走错地方。别紧张，再自信些！那天我一定去给你加油。",
+   "questions": [
+    {"q": "小雪在话剧里演什么？", "opts": ["老师", "少年歌手", "妈妈"], "ans": 1},
+    {"q": "小雪排话剧时有什么问题？", "opts": ["唱歌不好听", "没有时间排", "不是忘词，就是走错地方"], "ans": 2}
+   ]
+  },
+  {
+   "audio": "安妮，这个周末你有空吗？我想邀请你去看京剧。太好了，我一直很期待看京剧。不过我怕看不懂。没关系，我先把故事给你讲一遍，你能懂一点儿是一点儿。好啊！那我们几点在哪儿见？晚上七点，在大剧院入口见吧。",
+   "questions": [
+    {"q": "他们这个周末去做什么？", "opts": ["看京剧", "看话剧", "听演唱会"], "ans": 0},
+    {"q": "他们在哪儿见面？", "opts": ["地铁站", "学校门口", "大剧院入口"], "ans": 2}
+   ]
+  },
+  {
+   "audio": "你在看什么书呢？是一本小说，作者是一位青年作家。好看吗？特别好看，文字很美。我昨天把它看了一个晚上，已经看完一半了。看完以后能借给我看看吗？当然可以，我看完就给你。",
+   "questions": [
+    {"q": "这本小说的作者是谁？", "opts": ["一位外国作家", "一位青年作家", "一位老作家"], "ans": 1},
+    {"q": "他昨天把小说看了多长时间？", "opts": ["一个晚上", "一个小时", "两天"], "ans": 0}
+   ]
+  }
+ ],
+ "match": [
+  {"left": "庆祝", "right": "演出成功"},
+  {"left": "获", "right": "国际大奖"},
+  {"left": "为演员", "right": "鼓掌"},
+  {"left": "给我留下了", "right": "很深的印象"},
+  {"left": "报考", "right": "研究生"},
+  {"left": "整理", "right": "文章和日记"},
+  {"left": "转发", "right": "信息"},
+  {"left": "中文版的", "right": "《马可·波罗游记》"},
+  {"left": "不是忘词，", "right": "就是忘记做动作"},
+  {"left": "能懂一点儿", "right": "是一点儿"}
+ ],
+ "fill": [
+  {"pre": "艺术节周五下午开始，我", "blank": "内心", "post": "还是有些紧张。", "hint": "(trong lòng)", "ans": "内心", "exp": "内心 + 有些 + Adj."},
+  {"pre": "没事，妈妈相信你一定可以。放松些，再", "blank": "自信", "post": "些！", "hint": "(tự tin)", "ans": "自信", "exp": "再 + Adj + 些."},
+  {"pre": "我同学演少年歌手，他的", "blank": "歌声", "post": "美极了。", "hint": "(giọng hát)", "ans": "歌声", "exp": "歌声 = tiếng hát; 歌手 = ca sĩ."},
+  {"pre": "我小时候在加拿大", "blank": "度假", "post": "时，在宾馆的电视上看过一次京剧。", "hint": "(đi nghỉ)", "ans": "度假", "exp": "在 + nơi + 度假."},
+  {"pre": "咱们要看的这个京剧是", "blank": "青年", "post": "演员们演的。", "hint": "(thanh niên, trẻ)", "ans": "青年", "exp": "青年演员 = diễn viên trẻ."},
+  {"pre": "我先去网上查资料，查完后也", "blank": "转发", "post": "给你们。", "hint": "(chuyển tiếp)", "ans": "转发", "exp": "转发给 + ai."},
+  {"pre": "那我就在网上订票了，到时候咱们在大剧院", "blank": "入口", "post": "见。", "hint": "(lối vào)", "ans": "入口", "exp": "入口 ↔ 出口."},
+  {"pre": "这些演员很专业，", "blank": "功夫", "post": "很深。", "hint": "(tay nghề)", "ans": "功夫", "exp": "功夫很深 = tay nghề cao."},
+  {"pre": "演出结束后，演员们邀请观众和他们一起", "blank": "庆祝", "post": "演出成功。", "hint": "(ăn mừng)", "ans": "庆祝", "exp": "庆祝 + sự việc."},
+  {"pre": "我想继续学习中文和中国文化，", "blank": "报考", "post": "中国语言文学专业的研究生。", "hint": "(đăng ký thi)", "ans": "报考", "exp": "报考 + ngành / bậc học."}
+ ],
+ "sort": [
+  {"words": ["有时候", "不是", "忘词", "，", "就是", "忘记", "做动作", "。"], "ans": "有时候不是忘词，就是忘记做动作。"},
+  {"words": ["咱们", "先做做功课", "，", "能懂", "一点儿", "是", "一点儿", "。"], "ans": "咱们先做做功课，能懂一点儿是一点儿。"},
+  {"words": ["李文他们", "提前", "把", "故事", "了解了", "一遍", "。"], "ans": "李文他们提前把故事了解了一遍。"},
+  {"words": ["到家后", "我", "又", "把", "这本书", "看了", "两天", "。"], "ans": "到家后我又把这本书看了两天。"},
+  {"words": ["他们", "演唱得", "好听极了", "，", "给我", "留下的", "印象", "特别深", "。"], "ans": "他们演唱得好听极了，给我留下的印象特别深。"},
+  {"words": ["演员们", "邀请", "观众", "和他们", "一起", "庆祝", "演出成功", "。"], "ans": "演员们邀请观众和他们一起庆祝演出成功。"}
+ ],
+ "mc": [
+  {"q": "周末小文＿＿在家看书，就是出去看演出。", "opts": ["不但", "虽然", "不是", "即使"], "ans": 2, "exp": "不是……，就是…… = không A thì B (một trong hai)."},
+  {"q": "我知道，她不是中国人，＿＿韩国人，我们以前是同学。", "opts": ["就是", "而是", "还是", "或者"], "ans": 1, "exp": "Biết chắc → 不是……而是…… (Bài 11); 不是……就是…… dùng khi đoán một trong hai."},
+  {"q": "咱们先做做功课，能懂一点儿＿＿一点儿。", "opts": ["就", "也", "是", "有"], "ans": 2, "exp": "V + 一×是一×."},
+  {"q": "事情太多了，别着急，慢慢做，做一件是一＿＿。", "opts": ["件", "个", "次", "遍"], "ans": 0, "exp": "Hai lượng từ phải giống nhau: 一件……一件."},
+  {"q": "他把这个动作做了好几＿＿，最后终于做对了。", "opts": ["个", "次", "天", "本"], "ans": 1, "exp": "Bổ ngữ động lượng: số từ + 次 / 遍."},
+  {"q": "王老师把这个问题又讲了＿＿，大家才明白。", "opts": ["十分钟", "很清楚", "十个", "一点儿是一点儿"], "ans": 0, "exp": "Bổ ngữ thời lượng: 十分钟."},
+  {"q": "白家月又＿＿这本书看了几遍，越看越喜欢。", "opts": ["被", "让", "给", "把"], "ans": 3, "exp": "把 + 宾 + V + 动量补语; 又 đứng trước 把."},
+  {"q": "演员们的动作做得特别好，观众们不断＿＿。", "opts": ["点头", "鼓掌", "邀请", "转发"], "ans": 1, "exp": "不断鼓掌 = vỗ tay không ngớt."},
+  {"q": "我读过这本书，这个作者是现在最受欢迎的青年＿＿。", "opts": ["读者", "观众", "作家", "演员"], "ans": 2, "exp": "作家 = nhà văn (nghề)."},
+  {"q": "收到演出＿＿后，他们马上就开始排新节目。", "opts": ["邀请", "庆祝", "期待", "整理"], "ans": 0, "exp": "收到邀请 = nhận được lời mời (邀请 dùng như danh từ)."}
+ ],
+ "speaking": {
+  "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và hoạt động biểu diễn nhóm), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+  "questions": [
+   {
+    "q_zh": "你过生日时会怎么庆祝？",
+    "q_vn": "Khi sinh nhật, bạn thường ăn mừng thế nào?",
+    "hint": "我过生日时，不是……，就是……。去年……",
+    "sample": "我过生日时，不是和家人在家吃饭，就是请几个好朋友去饭馆聚餐。妈妈会给我做几个我爱吃的菜，朋友们会送我小礼物，大家一起唱生日歌、吃蛋糕，庆祝一下。去年生日，我的朋友们还给我准备了一个小节目，他们唱的歌好听极了，给我留下了很深的印象。",
+    "sample_vn": "Khi sinh nhật, tôi không ăn cơm ở nhà với gia đình thì là mời vài người bạn thân đi nhà hàng liên hoan. Mẹ sẽ nấu cho tôi mấy món tôi thích, bạn bè tặng quà nhỏ, mọi người cùng hát bài chúc mừng sinh nhật, ăn bánh kem, ăn mừng một chút. Sinh nhật năm ngoái, các bạn còn chuẩn bị cho tôi một tiết mục nhỏ, bài họ hát hay tuyệt, để lại cho tôi ấn tượng rất sâu.",
+    "note": "Câu hỏi phần Khởi động của sách; dùng 不是……就是…… (điểm 1) + từ mới 庆祝, 留下."
+   },
+   {
+    "q_zh": "你喜欢看什么书？",
+    "q_vn": "Bạn thích đọc sách gì?",
+    "hint": "我最喜欢看……。我最近在看……，作者是……。我已经把它看了……遍",
+    "sample": "我最喜欢看小说，特别是中国的文学作品。我最近在看一本中文小说，作者是一位青年作家，文字很美，故事也很有意思。刚开始很多地方看不懂，我就看一页是一页，不懂的词就查一查。现在我已经把它看了两遍了，越看越喜欢。",
+    "sample_vn": "Tôi thích đọc tiểu thuyết nhất, đặc biệt là tác phẩm văn học Trung Quốc. Gần đây tôi đang đọc một cuốn tiểu thuyết tiếng Trung, tác giả là một nhà văn trẻ, lời văn rất đẹp, câu chuyện cũng rất hay. Lúc đầu nhiều chỗ đọc không hiểu, tôi cứ đọc được trang nào hay trang ấy, từ nào không hiểu thì tra. Bây giờ tôi đã đọc nó hai lượt rồi, càng đọc càng thích.",
+    "note": "Câu hỏi phần Khởi động của sách; dùng V + 一×是一× (điểm 2) và 把 + 宾 + V + 动量补语 (điểm 3)."
+   },
+   {
+    "q_zh": "小雪紧张时会怎么样？小雪演出时，妈妈和爸爸会去看吗？",
+    "q_vn": "Khi căng thẳng Tiểu Tuyết thường bị làm sao? Lúc Tiểu Tuyết biểu diễn, bố mẹ có đi xem không?",
+    "hint": "小雪紧张时，有时候不是……，就是……。会，演出时……",
+    "sample": "小雪紧张时，有时候不是忘词，就是忘记做动作。她演出时，妈妈和爸爸都会去看，还会给她加油。",
+    "sample_vn": "Khi căng thẳng, Tiểu Tuyết có lúc không quên lời thì là quên làm động tác. Lúc em biểu diễn, bố mẹ đều sẽ đi xem, còn cổ vũ em nữa.",
+    "note": "Câu hỏi bài khoá 1; dùng 不是……就是…… (điểm 1)."
+   },
+   {
+    "q_zh": "请根据提示复述课文一。",
+    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
+    "hint": "王一雪问小雪他们的……。小雪说……，艺术节……开始，她现在……，有时候不是……，就是……。王一雪鼓励小雪……",
+    "sample": "王一雪问小雪他们的话剧排好了没有。小雪说差不多了，艺术节周五下午开始，她现在内心还是有些紧张，有时候不是忘词，就是忘记做动作。王一雪鼓励小雪，妈妈相信她一定可以，让她放松些，再自信些。小雪说，她的同学演少年歌手，同学的歌声美极了。她演妈妈，不知道像不像。王一雪继续鼓励小雪，努力做最好的自己就好。演出时，她和小雪的爸爸都去给小雪加油。",
+    "sample_vn": "Vương Nhất Tuyết hỏi Tiểu Tuyết vở kịch của các em tập xong chưa. Tiểu Tuyết nói gần xong rồi, lễ hội nghệ thuật bắt đầu chiều thứ Sáu, bây giờ trong lòng em vẫn hơi hồi hộp, có lúc không quên lời thì là quên động tác. Vương Nhất Tuyết động viên con, mẹ tin con nhất định làm được, bảo con thả lỏng, tự tin hơn. Tiểu Tuyết kể bạn em đóng vai ca sĩ thiếu niên, giọng hát hay tuyệt; em đóng vai mẹ, không biết có giống không. Vương Nhất Tuyết tiếp tục động viên: cố gắng làm tốt nhất bản thân là được. Lúc biểu diễn, chị và bố Tiểu Tuyết đều đến cổ vũ con.",
+    "note": "Bài tập 复述 của sách (trang 101)."
+   },
+   {
+    "q_zh": "在加拿大时安妮就看过京剧，她觉得怎么样？李文最后说他要去做什么？",
+    "q_vn": "Hồi ở Canada Annie đã từng xem Kinh kịch, cô ấy thấy thế nào? Cuối cùng Lý Văn nói anh ấy sẽ làm gì?",
+    "hint": "安妮觉得演员们都……，他们演唱得……，给她留下的印象……。李文说他要……",
+    "sample": "安妮小时候在加拿大度假时，在宾馆的电视上看过一次京剧。她觉得演员们都非常棒，他们演唱得好听极了，给她留下的印象特别深。李文最后说，他要在网上订票，到时候大家在大剧院入口见。",
+    "sample_vn": "Hồi nhỏ đi nghỉ ở Canada, Annie từng xem Kinh kịch một lần trên tivi khách sạn. Cô thấy các diễn viên đều rất giỏi, họ hát hay tuyệt, để lại cho cô ấn tượng đặc biệt sâu. Cuối cùng Lý Văn nói anh sẽ đặt vé trên mạng, đến lúc đó mọi người gặp nhau ở lối vào nhà hát lớn.",
+    "note": "Câu hỏi bài khoá 2."
+   },
+   {
+    "q_zh": "京剧演员们的表演怎么样？李文为什么说以后还来看京剧演出？",
+    "q_vn": "Phần biểu diễn của các diễn viên Kinh kịch thế nào? Vì sao Lý Văn nói sau này còn đến xem Kinh kịch?",
+    "hint": "演员们很专业，功夫……。他们做的动作……，但是……，观众们……。因为大家觉得……",
+    "sample": "京剧演员们的表演非常精彩。他们很专业，功夫很深，做的动作很难，但是做得都特别好，观众们不断鼓掌。因为李文他们提前把故事了解了一遍，所以差不多都看懂了。回来的路上，大家都觉得京剧很有意思，演员演得很精彩，所以李文说以后还来看。",
+    "sample_vn": "Phần biểu diễn của các diễn viên Kinh kịch rất đặc sắc. Họ rất chuyên nghiệp, tay nghề rất cao, động tác rất khó nhưng đều làm cực đẹp, khán giả vỗ tay không ngớt. Vì nhóm Lý Văn đã tìm hiểu trước câu chuyện một lượt nên gần như xem hiểu hết. Trên đường về, ai cũng thấy Kinh kịch rất thú vị, diễn viên diễn rất đặc sắc, nên Lý Văn nói sau này sẽ lại đến xem.",
+    "note": "Câu hỏi bài khoá 3; dùng 把 + 宾 + V + 动量补语 (điểm 3)."
+   },
+   {
+    "q_zh": "请根据提示复述课文三。",
+    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
+    "hint": "周六晚上，李文等四人来到国家大剧院……。入座后，李文……说……。演出开始后……。因为李文他们提前……，所以……。演出……，演员们邀请观众……。回来的路上……",
+    "sample": "周六晚上，李文等四人来到国家大剧院观看京剧演出。入座后，李文指着节目表说：“这些演员很专业，功夫很深，在京剧比赛中获过很多奖，有的还是国家、国际大奖。”演出开始后，他们看到演员们做的动作很难，但是做得都特别好，观众们不断鼓掌。因为李文他们提前把故事了解了一遍，所以差不多都看懂了。演出结束后，演员们邀请观众和他们一起庆祝演出成功。回来的路上，大家特别激动，觉得京剧很有意思，演员演得很精彩。李文点头说：“以后咱们还来看。”",
+    "sample_vn": "Tối thứ Bảy, nhóm bốn người của Lý Văn đến Nhà hát Lớn Quốc gia xem Kinh kịch. Vào chỗ xong, Lý Văn chỉ vào tờ chương trình nói: “Những diễn viên này rất chuyên nghiệp, tay nghề rất cao, đã đoạt nhiều giải trong các cuộc thi Kinh kịch, có giải còn là giải quốc gia, quốc tế lớn.” Buổi diễn bắt đầu, họ thấy động tác rất khó nhưng diễn viên làm cực đẹp, khán giả vỗ tay không ngớt. Vì đã tìm hiểu trước câu chuyện một lượt nên họ gần như xem hiểu hết. Kết thúc, các diễn viên mời khán giả cùng ăn mừng buổi diễn thành công. Trên đường về, mọi người rất xúc động, thấy Kinh kịch rất thú vị. Lý Văn gật đầu nói: “Sau này chúng mình lại đến xem.”",
+    "note": "Bài tập 复述 của sách (trang 105)."
+   },
+   {
+    "q_zh": "马可·波罗写的游记怎么样？来到中国后，白家月有什么发现？她后来决定读什么专业？",
+    "q_vn": "Cuốn du ký Marco Polo viết thế nào? Đến Trung Quốc rồi, Bạch Gia Nguyệt phát hiện ra điều gì? Sau đó cô quyết định học chuyên ngành gì?",
+    "hint": "《马可·波罗游记》影响……，作者向世界介绍了……。来到中国后，她发现……。她决定报考……",
+    "sample": "《马可·波罗游记》是一部影响很大的作品，作者向世界介绍了13世纪时的中国。来到中国后，白家月发现现在的中国和书里的中国已有很大不同。她到家后又把中文版的游记看了两天，然后决定把自己的文章、日记全部整理出来，完成《东方旅行日记》。她还决定报考中国语言文学专业的研究生。",
+    "sample_vn": "“Du ký Marco Polo” là một tác phẩm có ảnh hưởng rất lớn, tác giả đã giới thiệu với thế giới Trung Quốc thế kỷ 13. Đến Trung Quốc, Bạch Gia Nguyệt phát hiện Trung Quốc bây giờ đã khác rất nhiều so với trong sách. Về nhà cô lại đọc cuốn du ký bản tiếng Trung suốt hai ngày, rồi quyết định sắp xếp lại toàn bộ bài viết, nhật ký của mình để hoàn thành “Nhật ký du hành phương Đông”. Cô còn quyết định đăng ký thi cao học chuyên ngành ngôn ngữ văn học Trung Quốc.",
+    "note": "Câu hỏi bài khoá 4; dùng 把 + 宾 + V + 时量补语 (điểm 4)."
+   },
+   {
+    "q_zh": "表演：三至五人一组，选择一个与本课话题有关的主题，排一个五分钟左右的小节目，可以是小话剧、对话表演、朗诵等。每位同学都要参加，并尽量使用本课学过的词语和语言点。排完后在全班进行表演。",
+    "q_vn": "Biểu diễn: Nhóm 3–5 người, chọn một chủ đề liên quan đến bài học, dàn dựng một tiết mục nhỏ khoảng 5 phút — có thể là kịch ngắn, diễn hội thoại, ngâm thơ/đọc diễn cảm… Mỗi bạn đều phải tham gia, cố gắng dùng từ ngữ và điểm ngữ pháp của bài. Tập xong thì biểu diễn trước lớp.",
+    "hint": "小话剧《排练》：老师问……排得怎么样了？学生：……不是……，就是……。老师：时间不多了，咱们练一遍是一遍。你把……再练……分钟。……把……排了……遍",
+    "sample": "小话剧《排练》（人物：李老师、小雪、马克）。李老师：同学们，艺术节周五就开始了，咱们的话剧排得怎么样了？小雪：差不多了。不过我内心还是有些紧张，排的时候不是忘词，就是忘记做动作。马克：我也是。我演少年歌手，可是有一句总是唱不好。李老师：别着急，时间不多了，咱们练一遍是一遍。马克，你先把这首歌唱三遍。马克：好的。（唱完）怎么样？小雪：你的歌声美极了，比昨天好多了！李老师：小雪，你把第二场的动作再练十分钟，练完咱们从头再排一遍。小雪：没问题。我昨天晚上已经把台词看了一个小时，现在都记住了。李老师：太棒了！大家要再自信些。演出那天，我还邀请了很多家长来看。演出成功以后，我请大家吃饭庆祝！小雪、马克：太好了，我们特别期待！",
+    "sample_vn": "Kịch ngắn “Buổi tập” (nhân vật: cô Lý, Tiểu Tuyết, Mark). Cô Lý: Các em, thứ Sáu lễ hội nghệ thuật bắt đầu rồi, vở kịch của chúng ta tập đến đâu rồi? Tiểu Tuyết: Gần xong rồi ạ. Nhưng trong lòng em vẫn hơi hồi hộp, lúc tập không quên lời thì là quên động tác. Mark: Em cũng vậy. Em đóng vai ca sĩ thiếu niên, mà có một câu hát mãi không hay. Cô Lý: Đừng vội, thời gian không còn nhiều, chúng ta tập được lượt nào hay lượt ấy. Mark, em hát bài này ba lượt trước đã. Mark: Vâng. (Hát xong) Thế nào ạ? Tiểu Tuyết: Giọng cậu hay tuyệt, hay hơn hôm qua nhiều! Cô Lý: Tiểu Tuyết, em luyện động tác cảnh hai thêm mười phút, xong chúng ta tập lại từ đầu một lượt. Tiểu Tuyết: Không vấn đề gì ạ. Tối qua em đã đọc kịch bản một tiếng, giờ nhớ hết rồi. Cô Lý: Tuyệt quá! Mọi người tự tin hơn nữa nhé. Hôm biểu diễn cô còn mời nhiều phụ huynh đến xem. Diễn thành công, cô mời cả lớp đi ăn ăn mừng! Tiểu Tuyết, Mark: Hay quá, chúng em rất mong chờ!",
+    "note": "Hoạt động 任务活动 · 表演 của sách (trang 109) — kịch mẫu dùng đủ 4 điểm ngữ pháp: 不是……就是……, 练一遍是一遍, 把这首歌唱三遍 (động lượng), 把动作再练十分钟 / 把台词看了一个小时 (thời lượng)."
+   }
+  ]
+ },
+ "translate": [
+  ["Có lúc con không quên lời thì là quên làm động tác.", "有时候我不是忘词，就是忘记做动作。"],
+  ["Chúng mình cứ chuẩn bị trước đã, hiểu được chút nào hay chút ấy.", "咱们先做做功课，能懂一点儿是一点儿。"],
+  ["Vì đã tìm hiểu câu chuyện trước một lượt nên họ gần như xem hiểu hết.", "因为他们提前把故事了解了一遍，所以差不多都看懂了。"],
+  ["Về đến nhà, tôi lại đọc cuốn sách này suốt hai ngày.", "到家后，我又把这本书看了两天。"],
+  ["Họ hát hay tuyệt, để lại cho tôi ấn tượng đặc biệt sâu.", "他们演唱得好听极了，给我留下的印象特别深。"],
+  ["Buổi diễn kết thúc, các diễn viên mời khán giả cùng họ ăn mừng buổi diễn thành công.", "演出结束后，演员们邀请观众和他们一起庆祝演出成功。"]
+ ],
+ "translateRev": [
+  ["Ông Mai Lan Phương là nghệ sĩ Kinh kịch nổi tiếng của Trung Quốc.", "梅兰芳先生是中国著名京剧艺术家。"],
+  ["Tớ lên mạng tra tài liệu trước, tra xong cũng chuyển cho các cậu.", "我先去网上查资料，查完后也转发给你们。"],
+  ["Những diễn viên này rất chuyên nghiệp, tay nghề rất cao.", "这些演员很专业，功夫很深。"],
+  ["Tôi quyết định sắp xếp lại toàn bộ bài viết và nhật ký của mình.", "我决定把自己写的文章和日记全部整理出来。"],
+  ["Tôi muốn đăng ký thi cao học chuyên ngành ngôn ngữ văn học Trung Quốc.", "我想报考中国语言文学专业的研究生。"]
+ ],
+ "writing": {
+  "kieu": "sgk",
+  "soChu": 140,
+  "tieuDe": "写作 — viết theo đề của sách (ít nhất 140 chữ)",
+  "nhanDe": "写作",
+  "huongDan": {
+   "tieuDe": "Viết đoạn văn: giới thiệu một cuốn tiểu thuyết em thích (写作)",
+   "gioiThieu": "Đề 写作 của sách HSK 4 (3.0) yêu cầu viết một đoạn văn ngắn (ít nhất 140 chữ): giới thiệu một cuốn tiểu thuyết em thích và kể lại những tình tiết chính của câu chuyện — giống phần 书写 của đề thi HSK 4 mới, đồng thời luyện mục tiêu 2 của bài: giới thiệu một tác phẩm bằng văn viết.",
+   "buoc": [
+    "Đọc kỹ đề: hai yêu cầu bắt buộc — (1) GIỚI THIỆU cuốn tiểu thuyết (tên, tác giả), (2) KỂ tình tiết chính (主要故事情节).",
+    "Lập dàn ý theo các câu hỏi gợi ý: tên sách, tác giả → câu chuyện kể về ai, làm gì → diễn biến, kết thúc → em đọc nó thế nào → ấn tượng, bài học.",
+    "Kể tình tiết ngắn gọn theo thứ tự thời gian (开始…… / 后来…… / 最后……), không chép lại cả truyện.",
+    "Dùng từ mới và 4 điểm ngữ pháp của bài (khung “Từ, cấu trúc nên dùng”): 不是……就是……, V + 一×是一×, 把 + 宾 + V + 动量补语 / 时量补语.",
+    "Câu kết nói ấn tượng của em (给我留下了……印象, 告诉我……); tự soát số chữ (≥ 140), tên sách đặt trong 《》, soát lỗi chữ Hán trước khi nộp."
+   ]
+  },
+  "de": "请介绍一部你喜欢的小说，描述一下主要故事情节，不少于140字。",
+  "prompt": "Hãy giới thiệu một cuốn tiểu thuyết mà em thích, mô tả những tình tiết chính của câu chuyện, không ít hơn 140 chữ.",
+  "dan": [
+   {"hoi": "这部小说叫什么？作者是谁？", "goiY": "我最喜欢的小说是《……》，这部作品的作者是……"},
+   {"hoi": "小说主要讲了一个什么故事？", "goiY": "小说主要讲的是……的故事。"},
+   {"hoi": "故事里发生了什么？最后怎么样了？", "goiY": "开始……；后来……不是……，就是……；最后……"},
+   {"hoi": "你是怎么读这部小说的？", "goiY": "刚开始……，能懂一点儿是一点儿；后来我把它看了好几遍 / 看了整整一个月……"},
+   {"hoi": "这部小说给你留下了什么印象？", "goiY": "这部作品给我留下了很深的印象，它告诉我……"}
+  ],
+  "tuNen": ["作品", "作者", "作家", "读者", "文学", "文字", "图片", "版", "全部", "留下", "期待", "内心", "自信", "少年", "青年"],
+  "cauTruc": [
+   {"ten": "不是……，就是……", "nhan": "不是", "vd": "在回来的路上，鲨鱼不是从左边游过来，就是从右边游过来。", "khi": "Kể những khó khăn / sự việc lặp đi lặp lại trong truyện."},
+   {"ten": "V + 一×是一×", "nhan": "是一", "vd": "刚开始很多地方看不懂，我就看一页是一页，能懂一点儿是一点儿。", "khi": "Kể quá trình em đọc — kiên trì từng chút."},
+   {"ten": "把 + 宾 + V + 动量补语", "nhan": "遍", "vd": "这部小说我特别喜欢，已经把它看了好几遍。", "khi": "Nói em đọc mấy lượt (thể hiện mức độ yêu thích)."},
+   {"ten": "把 + 宾 + V + 时量补语", "nhan": "把", "vd": "有一个暑假，我把它读了整整一个月。", "khi": "Nói thời gian em dành cho cuốn sách."},
+   {"ten": "给……留下……印象", "nhan": "印象", "vd": "这部作品给我留下了很深的印象。", "khi": "Câu KẾT: ấn tượng, ý nghĩa của tác phẩm."}
+  ],
+  "checklist": [
+   "Đủ ít nhất 140 chữ Hán chưa?",
+   "Đã giới thiệu tên sách (trong 《》), tác giả VÀ kể được tình tiết chính chưa?",
+   "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (不是……就是……、V + 一×是一×、把 + 宾 + V + 动量补语、把 + 宾 + V + 时量补语) chưa?",
+   "Đã dùng ít nhất 6 từ mới của bài chưa?",
+   "Đoạn văn có câu mở, phần kể chuyện theo trình tự và câu kết nói cảm nhận chưa?"
+  ],
+  "model": "我最喜欢的小说是《老人与海》。这部作品的作者是一位美国作家，它曾经获得过世界文学大奖。小说主要讲的是一位打鱼老人的故事。老人已经八十多天没有打到鱼了，别人都觉得他运气不好，只有一个男孩一直相信他。有一天，老人一个人去了很远的海上，终于有一条大鱼上钩了。这条鱼比他的船还长，老人把鱼线拉了整整三天两夜，最后终于抓住了它。可是在回来的路上，鲨鱼不是从左边游过来，就是从右边游过来，老人一路上都在跟它们打，最后大鱼只剩下了一副骨头。小说的文字很简单，却给我留下了很深的印象。第一次读的时候，很多词我不认识，就看一页是一页，能懂一点儿是一点儿；后来我又把它看了好几遍，有一个暑假，我把它读了整整一个月。这部小说告诉我：人可以失败，但是不能放弃。"
+ }
+}

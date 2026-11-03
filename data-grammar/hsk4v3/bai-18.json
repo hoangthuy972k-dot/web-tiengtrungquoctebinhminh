@@ -1,0 +1,682 @@
+{
+ "/lessons/hsk4v3-bai-18.html": {
+  "points": [
+   {
+    "title": "“数词+形容词+量词”结构 — 一大碗, 一小段 (nhấn mạnh nhiều / ít, to / nhỏ)",
+    "errors": [
+     {
+      "wrong": "我中午吃了一碗大面条儿。",
+      "why": "大 phải đứng TRƯỚC lượng từ, không đứng trước danh từ (khác tiếng Việt “một bát to”).",
+      "right": "我中午吃了一大碗面条儿。"
+     },
+     {
+      "wrong": "妈妈给我寄了一很大包巧克力。",
+      "why": "Trong cấu trúc này tính từ là 大 / 小 đơn âm tiết, không thêm 很.",
+      "right": "妈妈给我寄了一大包巧克力。"
+     },
+     {
+      "wrong": "快到出口时，我又推了一段小路。",
+      "why": "Muốn nói “dắt xe thêm một quãng ngắn” → 一小段 (小 trước lượng từ); 一段小路 là “một con đường nhỏ”.",
+      "right": "快到出口时，我又推了一小段。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… lại dắt xe đi bộ một đoạn ngắn.”",
+      "pre": "快到那边那个出口时又推了一",
+      "blank": "小",
+      "post": "段。",
+      "options": [
+       "小",
+       "很",
+       "多"
+      ],
+      "answer": 0,
+      "explanation": "一 + 小 + lượng từ 段: một quãng ngắn."
+     },
+     {
+      "context": "“Trưa đói cực kỳ, tôi ăn một bát mì to.”",
+      "pre": "中午饿极了，我吃了一",
+      "blank": "大",
+      "post": "碗面条儿。",
+      "options": [
+       "大",
+       "太",
+       "好"
+      ],
+      "answer": 0,
+      "explanation": "一 + 大 + 碗: nhấn mạnh nhiều."
+     },
+     {
+      "context": "“… còn có cả một túi sô-cô-la to.”",
+      "pre": "快递里除了衣服外，还有一大",
+      "blank": "包",
+      "post": "巧克力。",
+      "options": [
+       "包",
+       "个",
+       "本"
+      ],
+      "answer": 0,
+      "explanation": "Lượng từ tạm thời 包 (túi, gói)."
+     },
+     {
+      "context": "“Anh ấy mượn cả một chồng sách to ở thư viện …”",
+      "pre": "他从图书馆借了一大",
+      "blank": "堆",
+      "post": "书，说要在假期里看完。",
+      "options": [
+       "堆",
+       "张",
+       "位"
+      ],
+      "answer": 0,
+      "explanation": "一大堆 + N: cả đống, cả chồng."
+     },
+     {
+      "context": "“… tôi mới ăn một miếng nhỏ đã không dám ăn nữa.” (ôn từ 小吃 của bài)",
+      "pre": "这个小吃太辣了，我只吃了一小",
+      "blank": "口",
+      "post": "就不敢吃了。",
+      "options": [
+       "口",
+       "条",
+       "件"
+      ],
+      "answer": 0,
+      "explanation": "一小口 = một miếng nhỏ (口 mượn từ “miệng”)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trưa nay tôi ăn một bát mì to.”",
+      "words": [
+       "我",
+       "中午",
+       "吃了",
+       "一大碗",
+       "面条儿"
+      ],
+      "answer": "我中午吃了一大碗面条儿。",
+      "explanation": "V + 了 + 一大碗 + N."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Sắp đến cổng ra, tôi lại dắt xe đi một đoạn ngắn.”",
+      "words": [
+       "快到出口时",
+       "，",
+       "我",
+       "又",
+       "推了",
+       "一小段"
+      ],
+      "answer": "快到出口时，我又推了一小段。",
+      "explanation": "又 + V + 了 + 一小段."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trên bàn đặt một đĩa đồ ăn vặt to.”",
+      "words": [
+       "桌子上",
+       "放着",
+       "一大盘",
+       "小吃"
+      ],
+      "answer": "桌子上放着一大盘小吃。",
+      "explanation": "Nơi chốn + V着 + 一大盘 + N (ôn câu tồn hiện, HSK 3)."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "妈妈给我寄了一很大包巧克力。",
+      "isCorrect": false,
+      "correctVersion": "妈妈给我寄了一大包巧克力。",
+      "explanation": "Không thêm 很 vào giữa 一 và 大."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我只吃了一小块蛋糕，就吃不下了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 一小块 nhấn mạnh rất ít."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他点了一碗大面条儿。",
+      "isCorrect": false,
+      "correctVersion": "他点了一大碗面条儿。",
+      "explanation": "大 đứng trước lượng từ 碗."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Sáng nay tôi chưa ăn sáng đã đi làm, trưa đói cực kỳ, ăn liền một bát mì to.",
+      "answer": "今天早上我没吃早饭就去上班了，中午饿极了，吃了一大碗面条儿。",
+      "answerPy": "Jīntiān zǎoshang wǒ méi chī zǎofàn jiù qù shàngbān le, zhōngwǔ è jí le, chī le yí dà wǎn miàntiáor.",
+      "explanation": "一大碗 nhấn mạnh ăn nhiều; ôn ……极了 (HSK 3)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Sắp đến cổng ra, tôi lại dắt xe đạp công cộng đi bộ một đoạn ngắn.",
+      "answer": "快到出口时，我又把共享单车推了一小段。",
+      "answerPy": "Kuài dào chūkǒu shí, wǒ yòu bǎ gòngxiǎng dānchē tuī le yì xiǎo duàn.",
+      "explanation": "一小段 + từ mới 出口, 推, 共享单车."
+     }
+    ]
+   },
+   {
+    "title": "被动句“主语+让/叫+宾语+动词+其他成分” — bị / được (ai) làm gì (khẩu ngữ)",
+    "errors": [
+     {
+      "wrong": "我的书让借走了。",
+      "why": "Sau 让 / 叫 bị động bắt buộc có người làm; không nói được người làm thì dùng 被.",
+      "right": "我的书让同学借走了。 / 我的书被借走了。"
+     },
+     {
+      "wrong": "月饼都让我吃。",
+      "why": "Động từ không đứng một mình — phải có 了 hoặc bổ ngữ.",
+      "right": "月饼都让我吃了。"
+     },
+     {
+      "wrong": "我的自行车让别人没骑走。",
+      "why": "没 đặt TRƯỚC 让 / 叫, không chen giữa tân ngữ và động từ.",
+      "right": "我的自行车没让别人骑走。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Sau đó video này được bạn cùng lớp tôi đăng lên mạng.”",
+      "pre": "后来这个视频",
+      "blank": "让",
+      "post": "我同学放到了互联网上。",
+      "options": [
+       "让",
+       "把",
+       "对"
+      ],
+      "answer": 0,
+      "explanation": "Chủ ngữ chịu tác động (视频) + 让 + người làm."
+     },
+     {
+      "context": "“Cửa bị Tiểu Minh đóng lại rồi.”",
+      "pre": "门叫小明",
+      "blank": "给",
+      "post": "关上了。",
+      "options": [
+       "给",
+       "把",
+       "被"
+      ],
+      "answer": 0,
+      "explanation": "Khẩu ngữ: 让 / 叫 + O + 给 + V."
+     },
+     {
+      "context": "“Xin lỗi, bánh trung thu bị tôi ăn hết rồi.”",
+      "pre": "不好意思，月饼都让我吃",
+      "blank": "了",
+      "post": "。",
+      "options": [
+       "了",
+       "过",
+       "着"
+      ],
+      "answer": 0,
+      "explanation": "Động từ phải có 了 / bổ ngữ phía sau."
+     },
+     {
+      "context": "“Đôi giày đó bị người khác mua mất rồi.”",
+      "pre": "那双鞋叫别人买",
+      "blank": "走",
+      "post": "了。",
+      "options": [
+       "走",
+       "来",
+       "起"
+      ],
+      "answer": 0,
+      "explanation": "Bổ ngữ xu hướng 走: mua đi mất."
+     },
+     {
+      "context": "“Điện thoại của tôi không bị em trai lấy đi, vẫn còn trên bàn.”",
+      "pre": "我的手机",
+      "blank": "没",
+      "post": "让弟弟拿走，还在桌子上呢。",
+      "options": [
+       "没",
+       "别",
+       "都"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định 没 đứng trước 让."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Video này được bạn cùng lớp tôi đăng lên mạng.”",
+      "words": [
+       "这个视频",
+       "让",
+       "我同学",
+       "放到了",
+       "互联网上"
+      ],
+      "answer": "这个视频让我同学放到了互联网上。",
+      "explanation": "Chủ ngữ + 让 + người làm + V + 到 + nơi chốn."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Xe đạp của tôi bị bạn đạp đi mất rồi.”",
+      "words": [
+       "我的自行车",
+       "让",
+       "朋友",
+       "骑走了"
+      ],
+      "answer": "我的自行车让朋友骑走了。",
+      "explanation": "让 + O + V + bổ ngữ 走 + 了."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bánh ngọt bị bọn trẻ ăn hết sạch rồi.”",
+      "words": [
+       "蛋糕",
+       "都",
+       "叫",
+       "孩子们",
+       "给",
+       "吃完了"
+      ],
+      "answer": "蛋糕都叫孩子们给吃完了。",
+      "explanation": "都 trước 叫; 给 ngay trước động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "那本书让借走了。",
+      "isCorrect": false,
+      "correctVersion": "那本书让同学借走了。",
+      "explanation": "Sau 让 bị động phải có người làm."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我的钱包叫小偷给偷了。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 叫 + người làm + 给 + V + 了."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "饺子都让我吃。",
+      "isCorrect": false,
+      "correctVersion": "饺子都让我吃了。",
+      "explanation": "Thiếu 了 sau động từ."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Bánh trung thu của tôi bị em trai ăn hết rồi.",
+      "answer": "我的月饼都让弟弟吃了。",
+      "answerPy": "Wǒ de yuèbing dōu ràng dìdi chī le.",
+      "explanation": "Chủ ngữ chịu tác động + 让 / 叫 + người làm + V + 了."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Video của chúng tôi được bạn cùng lớp đăng lên mạng, rất nhiều người vào bấm thích.",
+      "answer": "我们的视频让同学放到了互联网上，很多人都来点赞。",
+      "answerPy": "Wǒmen de shìpín ràng tóngxué fàngdào le hùliánwǎng shàng, hěn duō rén dōu lái diǎnzàn.",
+      "explanation": "Bị động 让 + từ mới 互联网, 点赞."
+     }
+    ]
+   },
+   {
+    "title": "语气副词“到底” — rốt cuộc, rốt cục (truy hỏi đến cùng)",
+    "errors": [
+     {
+      "wrong": "你到底去吗？",
+      "why": "到底 không đi với 吗; dùng câu hỏi chính phản / đại từ nghi vấn.",
+      "right": "你到底去不去？"
+     },
+     {
+      "wrong": "谁到底拿了我的手机？",
+      "why": "Chủ ngữ là đại từ nghi vấn → 到底 đứng trước nó.",
+      "right": "到底谁拿了我的手机？"
+     },
+     {
+      "wrong": "你到底喜欢这个还是那个吗？",
+      "why": "Câu đã có 还是 thì không thêm 吗.",
+      "right": "你到底喜欢这个还是那个？"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Rốt cuộc công nghệ đã tạo ra ảnh hưởng như thế nào …?”",
+      "pre": "科技",
+      "blank": "到底",
+      "post": "对世界产生了怎样的影响？",
+      "options": [
+       "到底",
+       "终于",
+       "一定"
+      ],
+      "answer": 0,
+      "explanation": "Câu hỏi truy vấn → 到底."
+     },
+     {
+      "context": "“Rốt cuộc các bạn còn đến hay không?”",
+      "pre": "你们到底还来",
+      "blank": "不",
+      "post": "来？",
+      "options": [
+       "不",
+       "吗",
+       "没"
+      ],
+      "answer": 0,
+      "explanation": "到底 + V不V; không dùng 吗."
+     },
+     {
+      "context": "“Rốt cuộc bạn nghĩ thế nào? Sao không đồng ý?”",
+      "pre": "你到底是怎么想的？为什么不",
+      "blank": "同意",
+      "post": "？",
+      "options": [
+       "同意",
+       "讨论",
+       "预约"
+      ],
+      "answer": 0,
+      "explanation": "不同意 = không đồng ý."
+     },
+     {
+      "context": "“Rốt cuộc là ai đã đăng video lên mạng?”",
+      "pre": "到底",
+      "blank": "谁",
+      "post": "把视频放到了互联网上？",
+      "options": [
+       "谁",
+       "什么",
+       "哪儿"
+      ],
+      "answer": 0,
+      "explanation": "到底 + 谁 (chủ ngữ là đại từ nghi vấn)."
+     },
+     {
+      "context": "“Rốt cuộc chi phí chuyến du lịch này là bao nhiêu?”",
+      "pre": "这次旅行的",
+      "blank": "费用",
+      "post": "到底是多少？我们一起算一下吧。",
+      "options": [
+       "费用",
+       "原因",
+       "说明"
+      ],
+      "answer": 0,
+      "explanation": "费用 = chi phí (từ mới của bài)."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Rốt cuộc các bạn còn đến hay không?”",
+      "words": [
+       "你们",
+       "到底",
+       "还",
+       "来不来"
+      ],
+      "answer": "你们到底还来不来？",
+      "explanation": "Chủ ngữ + 到底 + V不V?"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Rốt cuộc ai đã đăng video lên mạng?”",
+      "words": [
+       "到底",
+       "谁",
+       "把视频",
+       "放到了",
+       "互联网上"
+      ],
+      "answer": "到底谁把视频放到了互联网上？",
+      "explanation": "到底 + 谁 + 把……"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Rốt cuộc bạn đi xe buýt hay đạp xe đạp công cộng?”",
+      "words": [
+       "你",
+       "到底",
+       "是坐公交车",
+       "还是",
+       "骑共享单车"
+      ],
+      "answer": "你到底是坐公交车还是骑共享单车？",
+      "explanation": "到底 + (是) A 还是 B?"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "你到底喜欢不喜欢这部电影吗？",
+      "isCorrect": false,
+      "correctVersion": "你到底喜欢不喜欢这部电影？",
+      "explanation": "Câu chính phản + 到底, không thêm 吗."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个问题到底怎么解决？",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: 到底 + 怎么 + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "谁到底说得对？",
+      "isCorrect": false,
+      "correctVersion": "到底谁说得对？",
+      "explanation": "Chủ ngữ là 谁 → 到底 đứng trước."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Rốt cuộc bạn có đi hay không? Mọi người đều đang đợi bạn đấy.",
+      "answer": "你到底去不去？大家都在等你呢。",
+      "answerPy": "Nǐ dàodǐ qù bu qù? Dàjiā dōu zài děng nǐ ne.",
+      "explanation": "到底 + V不V."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Rốt cuộc công nghệ đã thay đổi cuộc sống của chúng ta như thế nào?",
+      "answer": "科技到底怎样改变了我们的生活？",
+      "answerPy": "Kējì dàodǐ zěnyàng gǎibiàn le wǒmen de shēnghuó?",
+      "explanation": "到底 + đại từ nghi vấn 怎样 / 怎么."
+     }
+    ]
+   },
+   {
+    "title": "转折复句“……，然而……” — …, thế nhưng / tuy nhiên …",
+    "errors": [
+     {
+      "wrong": "她需要经常出差，她然而又很担心猫的安全。",
+      "why": "然而 là liên từ, đứng ĐẦU vế sau, không đứng sau chủ ngữ.",
+      "right": "她需要经常出差，然而又很担心猫的安全。"
+     },
+     {
+      "wrong": "这家饭店的菜很好吃，然而价格也不贵。",
+      "why": "Hai vế cùng chiều (đều là ưu điểm) → dùng 而且, không dùng 然而.",
+      "right": "这家饭店的菜很好吃，而且价格也不贵。"
+     },
+     {
+      "wrong": "即使明天下雨，然而我们也去。",
+      "why": "Giả thiết “cho dù … cũng …” dùng 即使……也……, không dùng 然而.",
+      "right": "即使明天下雨，我们也去。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“… phải thường xuyên đi công tác, thế nhưng lại rất lo cho con mèo.”",
+      "pre": "由于工作等原因，她需要经常出差，",
+      "blank": "然而",
+      "post": "又很担心猫的安全。",
+      "options": [
+       "然而",
+       "而且",
+       "于是"
+      ],
+      "answer": 0,
+      "explanation": "Hai vế trái ngược → 然而."
+     },
+     {
+      "context": "“… có thể gặp đủ thứ vấn đề.”",
+      "pre": "毕业旅行越来越流行，然而由于学生没什么社会经验，可能会",
+      "blank": "遇到",
+      "post": "各种问题。",
+      "options": [
+       "遇到",
+       "提出",
+       "推出"
+      ],
+      "answer": 0,
+      "explanation": "遇到 + 问题 = gặp vấn đề."
+     },
+     {
+      "context": "“… vậy mà giờ hoa vẫn chưa nở.”",
+      "pre": "春天应该是花开的季节，然而现在花都",
+      "blank": "没",
+      "post": "开。",
+      "options": [
+       "没",
+       "才",
+       "就"
+      ],
+      "answer": 0,
+      "explanation": "都没 + V: đều chưa."
+     },
+     {
+      "context": "“… vậy mà đến hôm xuất phát, trời lại đổ mưa to.” (ôn 却 – Bài 16)",
+      "pre": "我们计划了一周，然而到了出发那天，天",
+      "blank": "却",
+      "post": "下起了大雨。",
+      "options": [
+       "却",
+       "就",
+       "才"
+      ],
+      "answer": 0,
+      "explanation": "然而……却……: nhấn mạnh trái ngược."
+     },
+     {
+      "context": "“Dịch vụ tận nhà rất tiện, tuy nhiên một số nhân viên hiện có chưa đủ chuyên nghiệp.”",
+      "pre": "上门服务很方便，",
+      "blank": "然而",
+      "post": "现有服务人员有些还不够专业。",
+      "options": [
+       "然而",
+       "所以",
+       "因为"
+      ],
+      "answer": 0,
+      "explanation": "Ưu điểm ↔ vấn đề → 然而."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cô ấy rất muốn đi du lịch, thế nhưng công việc bận quá.”",
+      "words": [
+       "她",
+       "很想去旅行",
+       "，",
+       "然而",
+       "工作",
+       "太忙了"
+      ],
+      "answer": "她很想去旅行，然而工作太忙了。",
+      "explanation": "Vế 1，然而 + vế 2."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Mùa xuân lẽ ra là mùa hoa nở, vậy mà giờ hoa vẫn chưa nở.”",
+      "words": [
+       "春天",
+       "应该是",
+       "花开的季节",
+       "，",
+       "然而",
+       "现在",
+       "花都没开"
+      ],
+      "answer": "春天应该是花开的季节，然而现在花都没开。",
+      "explanation": "Dự đoán (应该) ↔ thực tế → 然而."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chúng tôi chuẩn bị rất lâu, vậy mà cuộc thi lại bị hủy.”",
+      "words": [
+       "我们",
+       "准备了很久",
+       "，",
+       "然而",
+       "比赛",
+       "却",
+       "取消了"
+      ],
+      "answer": "我们准备了很久，然而比赛却取消了。",
+      "explanation": "然而 + chủ ngữ + 却 + V."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "大家都在等他，他然而没有来。",
+      "isCorrect": false,
+      "correctVersion": "大家都在等他，然而他没有来。",
+      "explanation": "然而 đứng trước chủ ngữ vế sau."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这家饭店的菜很好吃，然而价格也不贵。",
+      "isCorrect": false,
+      "correctVersion": "这家饭店的菜很好吃，而且价格也不贵。",
+      "explanation": "Hai vế cùng chiều → 而且."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他学了三年中文，然而还是不敢开口说。",
+      "isCorrect": true,
+      "correctVersion": "",
+      "explanation": "Đúng: học lâu ↔ vẫn không dám nói (trái dự đoán)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Cô ấy rất muốn nuôi một con mèo, thế nhưng lại phải thường xuyên đi công tác.",
+      "answer": "她很想养一只猫，然而又需要经常出差。",
+      "answerPy": "Tā hěn xiǎng yǎng yì zhī māo, rán'ér yòu xūyào jīngcháng chūchāi.",
+      "explanation": "Mong muốn ↔ thực tế → 然而 (+ 又)."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung.",
+      "promptLang": "vi",
+      "prompt": "Dịch vụ tận nhà rất tiện lợi, tuy nhiên một số nhân viên phục vụ vẫn chưa đủ chuyên nghiệp.",
+      "answer": "上门服务很方便，然而有些服务人员还不够专业。",
+      "answerPy": "Shàngmén fúwù hěn fāngbiàn, rán'ér yǒuxiē fúwù rényuán hái bú gòu zhuānyè.",
+      "explanation": "然而 + từ mới 上门, 现有."
+     }
+    ]
+   }
+  ]
+ }
+}

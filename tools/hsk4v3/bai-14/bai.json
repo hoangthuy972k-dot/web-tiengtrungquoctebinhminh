@@ -1,0 +1,348 @@
+{
+"so": 14,
+"zh": "合适才买",
+"py": "Héshì cái mǎi",
+"vn": "Hợp mới mua",
+"chuDe": "Mua sắm trực tiếp: khuyến mãi, giảm giá, so sánh hàng hóa và quan niệm tiêu dùng hợp lý",
+"icon": "🛍️",
+"mucTieu": [
+  "Nghe hiểu và trao đổi được thông tin về giảm giá, so sánh hàng hóa khi mua sắm trực tiếp ở cửa hàng.",
+  "Diễn đạt được mong muốn, dự định mua hàng bằng lời nói và bài viết.",
+  "Hiểu quan niệm tiêu dùng của người Trung Quốc."
+],
+
+"wu": [
+  {"img":"wu-A","label":"盒子","py":"hézi","letter":"A"},
+  {"img":"wu-B","label":"茶叶","py":"cháyè","letter":"B"},
+  {"img":"wu-C","label":"降价","py":"jiàngjià","letter":"C"},
+  {"img":"wu-D","label":"外套","py":"wàitào","letter":"D"},
+  {"img":"wu-E","label":"装","py":"zhuāng","letter":"E"},
+  {"img":"wu-F","label":"抱歉","py":"bàoqiàn","letter":"F"}
+],
+
+"dialogs": [
+  {"tab":"Mua trà ở tiệm trà","scene":"茶叶店 · Tiệm trà (sáng thứ Bảy, Annie đến tiệm mua trà)","anh":"kv-1",
+   "nguoi":[{"ten":"售货员","anh":"shouhuoyuan"},"安妮"],
+   "preQuiz":[
+     {"q":"安妮想知道：","opts":["红茶的价格","绿茶的价格","有没有红茶","买哪种茶合适"],"ans":3},
+     {"q":"安妮最后买了：","opts":["半两绿茶","五两绿茶","六两绿茶","一斤绿茶"],"ans":2}],
+   "lines":[
+     {"sp":0,"zh":"您要什么茶？","vn":"Chị muốn mua trà gì ạ?"},
+     {"sp":1,"zh":"我先看看。这里茶叶这么多，究竟买哪种好呢？","vn":"Tôi xem trước đã. Ở đây nhiều loại trà thế này, rốt cuộc nên mua loại nào đây?"},
+     {"sp":0,"zh":"茶叶主要分为红茶、绿茶等，看您喜欢喝哪种。","vn":"Trà chủ yếu chia thành hồng trà, lục trà…, tùy chị thích uống loại nào."},
+     {"sp":1,"zh":"我想买一些自己喝，再买些送人。这种绿茶还有吗？","vn":"Tôi muốn mua một ít để tự uống, mua thêm ít để biếu người khác. Loại trà xanh này còn không anh?"},
+     {"sp":0,"zh":"抱歉，暂时没有。如果自己喝，可以买这个绿茶，今天满二两送半两，超过半斤再送小礼物；如果送人，可以买个盒子装进去。","vn":"Xin lỗi chị, tạm thời hết rồi ạ. Nếu tự uống thì chị có thể mua loại trà xanh này, hôm nay mua đủ hai lạng tặng nửa lạng, quá nửa cân còn tặng thêm quà nhỏ; nếu để biếu thì có thể mua một cái hộp để đựng vào."},
+     {"sp":1,"zh":"嗯。那就先买六两这种绿茶吧，再买一个盒子。请帮我分着装，盒子里装半斤，剩下的用纸包一下就行。","vn":"Ừm. Vậy tôi mua trước sáu lạng loại trà xanh này, mua thêm một cái hộp. Anh đựng riêng giúp tôi nhé, trong hộp để nửa cân, phần còn lại gói giấy là được."}],
+   "hoi":[["安妮为什么要买茶叶？","她想买一些自己喝，再买些送人。"],["关于买茶叶送人，售货员有什么建议？","售货员建议她买个盒子，把茶叶装进去。"]],
+   "kelai":"安妮到茶叶店买茶叶，售货员问她……。她不知道究竟买……，售货员向她介绍了不同的茶叶。安妮想买一些茶……，再……。但她想买的一种绿茶……。售货员向她介绍说，自己喝的话，可以……，今天……，超过半斤再送……；送人的话，可以买个……。安妮最后买了……，盒子里……，……用纸包起来了。",
+   "kelaiMau":"安妮到茶叶店买茶叶，售货员问她要什么茶。她不知道究竟买哪种好，售货员向她介绍了不同的茶叶。安妮想买一些茶自己喝，再买些送人。但她想买的一种绿茶暂时没有了。售货员向她介绍说，自己喝的话，可以买另一种绿茶，今天满二两送半两，超过半斤再送小礼物；送人的话，可以买个盒子装进去。安妮最后买了六两绿茶和一个盒子，盒子里装了半斤，剩下的用纸包起来了。"},
+
+  {"tab":"Mua giày thể thao","scene":"商场 · Trung tâm thương mại (chiều Chủ nhật, Vương Nhất Tuyết muốn mua giày thể thao, Vương Nhất Phi đi cùng)","anh":"kv-2",
+   "nguoi":[{"ten":"广播员","anh":"guangboyuan"},"王一雪","王一飞",{"ten":"售货员","anh":"shouhuoyuan2"}],
+   "preQuiz":[
+     {"q":"商场做的运动鞋促销活动是：","opts":["打一折","打五折","打七折","打八五折"],"ans":1},
+     {"q":"关于运动鞋，王一飞更重视什么？","opts":["价格高不高","质量好不好","降价没降价","好看不好看"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"各位顾客，本商场正在举办运动鞋假日低价促销活动，全场五折。","vn":"Kính thưa quý khách, trung tâm thương mại chúng tôi đang tổ chức chương trình khuyến mãi giá thấp ngày lễ cho giày thể thao, toàn bộ giảm 50% (五折 = bán bằng 50% giá gốc)."},
+     {"sp":1,"zh":"一飞，广播里说价格减了一半呢，咱们过去看看？","vn":"Nhất Phi, loa nói giá giảm một nửa đấy, mình qua xem nhé?"},
+     {"sp":2,"zh":"好的。不过咱们也不能只听广告说什么，还得看质量。","vn":"Được. Nhưng mình cũng không thể quảng cáo nói gì nghe nấy, còn phải xem chất lượng nữa."},
+     {"sp":1,"zh":"对，首先看样子喜不喜欢，然后再看质量怎么样、价格合适不合适。","vn":"Đúng, trước hết xem kiểu dáng có thích không, sau đó mới xem chất lượng thế nào, giá có hợp lý không."},
+     {"sp":3,"zh":"二位看看喜欢哪双？这个牌子质量很好，今天又降价，一双减300块。","vn":"Hai chị xem thích đôi nào ạ? Hãng này chất lượng rất tốt, hôm nay lại giảm giá, mỗi đôi giảm 300 tệ."},
+     {"sp":1,"zh":"嗯，我知道这个牌子。一飞，你喜欢吗？你看，这个鞋的样式很新，价钱也不高。","vn":"Ừ, tôi biết hãng này. Nhất Phi, cậu thích không? Cậu xem, kiểu dáng đôi giày này rất mới, giá cũng không cao."},
+     {"sp":2,"zh":"你喜欢就买吧。我再看看别的。","vn":"Cậu thích thì mua đi. Tớ xem thêm mấy đôi khác."},
+     {"sp":1,"zh":"好的。请给我拿一双37号的吧。","vn":"Được. Lấy giúp tôi một đôi số 37 nhé."}],
+   "hoi":[["听了广播后，王一雪为什么要过去看看？","因为广播里说运动鞋全场五折，价格减了一半。"],["王一雪是怎么决定买那双运动鞋的？","她首先看样子喜不喜欢，然后再看质量怎么样、价格合适不合适。这个牌子质量很好，鞋的样式很新，价钱也不高，所以她决定买。"]]},
+
+  {"tab":"Tiệm nhỏ của Từ Tiền","scene":"适合，就受欢迎 · Phù hợp thì được yêu thích (tiệm nhỏ của Từ Tiền, bạn Lý Văn)","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"徐前店里卖的东西：","opts":["不是很多","都很便宜","种类很多","只有游戏机"],"ans":2},
+     {"q":"来徐前店里的顾客主要是：","opts":["小孩子","年轻人","中年人","老年人"],"ans":1}],
+   "lines":[
+     {"sp":0,"zh":"李文的朋友徐前在商业区开了家小店，专门卖年轻人喜欢的东西。","vn":"Bạn của Lý Văn là Từ Tiền mở một cửa hàng nhỏ ở khu thương mại, chuyên bán những thứ người trẻ thích."},
+     {"sp":0,"zh":"他的店里商品种类不少，既有几十年前的老游戏机，也有最近流行的盲盒等等，很吸引年轻人。","vn":"Tiệm của anh ấy có không ít loại hàng, vừa có máy chơi game cũ từ mấy chục năm trước, vừa có hộp mù đang thịnh hành gần đây…, rất thu hút người trẻ."},
+     {"sp":0,"zh":"徐前说，自己就是年轻人，知道年轻人喜欢什么。","vn":"Từ Tiền nói bản thân anh chính là người trẻ, nên biết người trẻ thích gì."},
+     {"sp":0,"zh":"他也常和来店里的年轻顾客聊天儿，了解他们的兴趣爱好。","vn":"Anh cũng thường trò chuyện với các khách hàng trẻ đến tiệm để tìm hiểu sở thích của họ."},
+     {"sp":0,"zh":"前段时间刚进的盲盒很快就卖到了缺货。","vn":"Lô hộp mù vừa nhập về thời gian trước bán nhanh đến mức hết hàng."},
+     {"sp":0,"zh":"许多年轻人表示，在徐前的店里能感受到快乐。","vn":"Nhiều bạn trẻ cho biết ở tiệm của Từ Tiền họ cảm nhận được niềm vui."},
+     {"sp":0,"zh":"小店虽然小，但东西适合年轻人，加上店员态度友好，使得小店的生意越来越好。","vn":"Tiệm tuy nhỏ nhưng đồ hợp với người trẻ, thêm vào đó nhân viên lại thân thiện, khiến việc buôn bán của tiệm ngày càng tốt."},
+     {"sp":0,"zh":"李文觉得自己的朋友真会做生意。","vn":"Lý Văn thấy bạn mình thật biết làm ăn."}],
+   "hoi":[["年轻人为什么喜欢徐前店里的东西？","因为徐前自己就是年轻人，知道年轻人喜欢什么。他的店里商品种类不少，既有老游戏机，也有流行的盲盒，很吸引年轻人。"],["徐前店里的生意做得怎么样？","他店里的生意越来越好，刚进的盲盒很快就卖到了缺货。"]],
+   "kelai":"李文的朋友徐前在商业区……，专门卖……。他的店里商品……，既有几十年前的……，也有……等等，很吸引年轻人。徐前说，自己……，知道年轻人……。他也常和来店里的……，了解……。前段时间刚进的盲盒很快就……。许多年轻人表示，在徐前的店里能……。小店虽然小，但东西……，加上店员……，使得小店的生意……。李文觉得自己的朋友……。",
+   "kelaiMau":"李文的朋友徐前在商业区开了家小店，专门卖年轻人喜欢的东西。他的店里商品种类不少，既有几十年前的老游戏机，也有最近流行的盲盒等等，很吸引年轻人。徐前说，自己就是年轻人，知道年轻人喜欢什么。他也常和来店里的年轻顾客聊天儿，了解他们的兴趣爱好。前段时间刚进的盲盒很快就卖到了缺货。许多年轻人表示，在徐前的店里能感受到快乐。小店虽然小，但东西适合年轻人，加上店员态度友好，使得小店的生意越来越好。李文觉得自己的朋友真会做生意。"},
+
+  {"tab":"Cái phù hợp mới là tốt nhất","scene":"合适的才是最好的 · Cái phù hợp mới là tốt nhất (người mua sắm tỉnh táo và không tỉnh táo)","anh":"kv-4","doan":true,
+   "nguoi":["小语"],
+   "preQuiz":[
+     {"q":"冷静购物者买东西时会怎么做？","opts":["想买就买","喜欢就买","需要才买","很少买东西"],"ans":2},
+     {"q":"买东西时王一飞会怎么做？","opts":["只看广告","问售货员","比较一下就买","仔细比较后才买"],"ans":3}],
+   "lines":[
+     {"sp":0,"zh":"关于购物，你是一位冷静购物者，还是不冷静购物者？","vn":"Về chuyện mua sắm, bạn là người mua sắm tỉnh táo hay không tỉnh táo?"},
+     {"sp":0,"zh":"一般来说，冷静购物者往往是真正需要一件东西时才买。","vn":"Nói chung, người mua sắm tỉnh táo thường chỉ mua khi thật sự cần một món đồ."},
+     {"sp":0,"zh":"购买时，还会从质量、价格等各方面仔细比较。","vn":"Khi mua, họ còn so sánh kỹ về mọi mặt như chất lượng, giá cả."},
+     {"sp":0,"zh":"不冷静购物者看见一个东西时，只要感觉喜欢就买，不管需要不需要，结果常常买完就后悔，买的东西也成了“垃圾”，还不环保。","vn":"Người mua sắm không tỉnh táo khi thấy một món đồ, chỉ cần thấy thích là mua, bất kể có cần hay không, kết quả là thường mua xong thì hối hận, đồ mua về cũng thành “rác”, lại không bảo vệ môi trường."},
+     {"sp":0,"zh":"王一飞说，她从来不随便买东西。","vn":"Vương Nhất Phi nói cô ấy chưa bao giờ mua đồ tùy tiện."},
+     {"sp":0,"zh":"对于想买的东西，她不光看质量，还看价格。","vn":"Đối với những thứ muốn mua, cô ấy không chỉ xem chất lượng mà còn xem giá."},
+     {"sp":0,"zh":"无论是一件外套，还是一条裤子，甚至一双袜子，都是仔细比较后才决定买不买。","vn":"Dù là một chiếc áo khoác, một chiếc quần, thậm chí một đôi tất, cô ấy đều so sánh kỹ rồi mới quyết định có mua hay không."},
+     {"sp":0,"zh":"其实，不仅是买东西，人生的很多事情都一样，选择合适的才是最好的。","vn":"Thật ra, không chỉ mua đồ, nhiều chuyện trong cuộc đời cũng vậy: chọn cái phù hợp mới là tốt nhất."}],
+   "hoi":[["冷静购物者和不冷静购物者最大的不同是什么？","冷静购物者真正需要一件东西时才买，还会仔细比较；不冷静购物者只要感觉喜欢就买，不管需要不需要。"],["王一飞是冷静购物者吗？为什么？","是。因为她从来不随便买东西，对于想买的东西，她不光看质量，还看价格，都是仔细比较后才决定买不买。"]]}
+],
+
+"nguphap": [
+ {"so":"1","ten":"语气副词“究竟”","tenVn":"Phó từ ngữ khí 「究竟」 — rốt cuộc, cuối cùng thì",
+  "cauTruc":["Chủ ngữ + 究竟 + câu hỏi có đại từ nghi vấn (什么 / 哪 / 怎么 / 为什么…) (+ 呢)?","Chủ ngữ + 究竟 + V不V / 是A还是B (+ 呢)?","Đại từ nghi vấn làm chủ ngữ: 究竟 + 谁 / 什么 + V?"],
+  "giaiThich":"「究竟」 dùng trong câu hỏi để TRUY HỎI đến cùng: người nói rất muốn biết câu trả lời chính xác (rốt cuộc là …?). Câu có 究竟 phải là câu hỏi có đại từ nghi vấn (什么, 哪, 谁, 怎么, 为什么…), câu hỏi chính phản (V不V) hoặc câu hỏi lựa chọn (是……还是……); cuối câu hay thêm 「呢」 nhưng KHÔNG dùng 「吗」. Vị trí: thường đứng sau chủ ngữ, trước vị ngữ (他究竟去哪里了?); nếu chủ ngữ chính là đại từ nghi vấn thì 究竟 đứng TRƯỚC chủ ngữ (究竟谁去?). 究竟 cũng dùng được trong câu hỏi gián tiếp: 我不知道他究竟去哪儿了. Mẹo cho người Việt: thấy “rốt cuộc … ?” → 究竟 (sau này gặp thêm 到底 ở Bài 18, khẩu ngữ hơn). Bẫy Hán Việt: 究竟 đọc là “cứu cánh” nhưng KHÔNG mang nghĩa “cứu cánh” của tiếng Việt.",
+  "viDu":[["这里茶叶这么多，究竟买哪种好呢？","Ở đây nhiều loại trà thế này, rốt cuộc nên mua loại nào đây?"],["我一直没找到他，他究竟去哪里了呢？","Tôi tìm mãi không thấy anh ấy, rốt cuộc anh ấy đi đâu rồi?"],["究竟是对还是错？我现在也不清楚。","Rốt cuộc là đúng hay sai? Bây giờ tôi cũng không rõ."],["无论我怎么问，他都不告诉我究竟发生了什么事。","Dù tôi hỏi thế nào, anh ấy cũng không nói cho tôi biết rốt cuộc đã xảy ra chuyện gì. (ôn 无论……都…… – Bài 12 · điểm 3)"]],
+  "loi":[["你究竟去吗？","Câu có 究竟 không dùng 吗 — phải là câu hỏi chính phản hoặc có đại từ nghi vấn.","你究竟去不去？"],["谁究竟拿走了我的书？","Chủ ngữ là đại từ nghi vấn (谁) thì 究竟 phải đứng trước nó.","究竟谁拿走了我的书？"],["这件衣服究竟很贵。","究竟 dùng trong câu hỏi để truy hỏi, không dùng trong câu trần thuật khẳng định bình thường.","这件衣服究竟贵不贵？"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["这里茶叶这么多，","买哪种好呢？"],"dap":[["究竟"]],"chon":["究竟","已经","一共"],"goiY":"“… rốt cuộc nên mua loại nào đây?”","giai":"究竟 + câu hỏi có đại từ nghi vấn 哪."},
+     {"kieu":"dien","phan":["我一直没找到他，他究竟去哪里了","？"],"dap":[["呢"]],"chon":["呢","吗","吧"],"goiY":"“… rốt cuộc anh ấy đi đâu rồi?”","giai":"Câu có 究竟 cuối câu dùng 呢, không dùng 吗."},
+     {"kieu":"dien","phan":["你明天究竟去","去？快决定吧！"],"dap":[["不"]],"chon":["不","没","也"],"goiY":"“Mai rốt cuộc cậu có đi hay không?”","giai":"究竟 + V不V (việc tương lai dùng 不)."},
+     {"kieu":"dien","phan":["","是对还是错？我现在也不清楚。"],"dap":[["究竟"]],"chon":["究竟","一定","已经"],"goiY":"“Rốt cuộc là đúng hay sai?”","giai":"究竟 + 是A还是B."},
+     {"kieu":"dien","phan":["这两双鞋，你究竟喜欢","一双？"],"dap":[["哪"]],"chon":["哪","那","这"],"goiY":"“… rốt cuộc cậu thích đôi nào?”","giai":"Câu hỏi phải có đại từ nghi vấn 哪."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["你","究竟","想","买","什么","呢"],"dap":["你究竟想买什么呢？"],"goiY":"Rốt cuộc bạn muốn mua gì?","giai":"Chủ ngữ + 究竟 + V + 什么 + 呢."},
+     {"kieu":"xep","manh":["究竟","谁","去","参加","比赛"],"dap":["究竟谁去参加比赛？"],"goiY":"Rốt cuộc ai đi dự thi?","giai":"Chủ ngữ là 谁 → 究竟 đứng trước 谁."},
+     {"kieu":"xep","manh":["我","不知道","他","究竟","为什么","不来"],"dap":["我不知道他究竟为什么不来。"],"goiY":"Tôi không biết rốt cuộc tại sao anh ấy không đến.","giai":"Câu hỏi gián tiếp: 不知道 + chủ ngữ + 究竟 + 为什么."},
+     {"kieu":"dungsai","cau":"你究竟喜欢这件外套吗？","dung":false,"sua":"你究竟喜欢不喜欢这件外套？","giai":"究竟 không đi với 吗 → dùng V不V."},
+     {"kieu":"dungsai","cau":"究竟是谁告诉你的？","dung":true,"giai":"Đúng: 究竟 + 是 + 谁."},
+     {"kieu":"dungsai","cau":"谁究竟是你的老师？","dung":false,"sua":"究竟谁是你的老师？","giai":"究竟 đứng trước đại từ nghi vấn làm chủ ngữ."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 40)","huongDan":"Hoàn thành câu hỏi của A, có dùng 「究竟」","cau":[
+     {"kieu":"vandung","de":"A：这件衣服她究竟＿＿＿呢？ B：她说她很喜欢。","goiY":"Hỏi: rốt cuộc cô ấy có thích hay không (câu hỏi chính phản V不V)","mau":"喜欢不喜欢","can":[["不喜欢","喜不喜欢"]]},
+     {"kieu":"vandung","de":"A：你＿＿＿？ B：我快写完了，请再等两天。","goiY":"Hỏi: rốt cuộc khi nào bạn mới viết xong (bản báo cáo / luận văn)","mau":"究竟什么时候能把报告写完","can":[["究竟"]]},
+     {"kieu":"vandung","de":"A：＿＿＿？ B：我还没决定，我再想想吧。","goiY":"Hỏi: hai chiếc điện thoại này, rốt cuộc bạn mua chiếc nào","mau":"这两个手机，你究竟买哪个","can":[["究竟"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Rốt cuộc bạn muốn mua loại trà nào?","dap":["你究竟想买哪种茶叶？","你究竟想买哪种茶？"],"giai":"究竟 + V + 哪种 + N."},
+     {"kieu":"dich","vn":"Rốt cuộc ai đã nói với bạn chuyện này?","dap":["究竟是谁告诉你这件事的？","这件事究竟是谁告诉你的？"],"giai":"究竟 + 是 + 谁 + ……的."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Tự đặt một câu hỏi người bạn đang phân vân khi mua sắm, có dùng 「究竟」","mau":"这两件外套都很好看，你究竟买哪件呢？","can":[["究竟"]]}]}
+  ]},
+
+ {"so":"2","ten":"承接复句“首先……，然后/其次……”","tenVn":"Câu phức nối tiếp 「首先……，然后 / 其次……」 — trước hết …, sau đó / thứ đến …",
+  "cauTruc":["首先 + việc 1，然后 (再) + việc 2 — thứ tự thời gian","首先 + điều chính / lý do 1，其次 + điều phụ / lý do 2 — thứ tự chính phụ","Liệt kê dài: 首先……，其次 / 然后……，最后……"],
+  "giaiThich":"Câu phức nối tiếp, biểu thị THỨ TỰ TRƯỚC SAU hoặc PHÂN BIỆT CHÍNH – PHỤ. 「首先……，然后……」: các hành động xảy ra theo thứ tự thời gian — làm việc 1 trước rồi mới đến việc 2 (然后 hay đi với 再). 「首先……，其次……」: liệt kê theo mức độ quan trọng — điều thứ nhất (chính), điều thứ hai (phụ hơn); hay dùng khi nêu lý do, điều kiện, yêu cầu, trình bày ý kiến. 其次 (qícì) = thứ đến, thứ hai là. Có thể thêm 最后 ở vế cuối. Mẹo cho người Việt: “đầu tiên … sau đó …” (thời gian) → 首先……，然后……; “thứ nhất là … thứ hai là …” (các ý, lý do) → 首先……，其次……. Phân biệt 首先 với 先: 首先 đứng được ở đầu câu, trước chủ ngữ, có dấu phẩy (首先，我……), còn 先 chỉ đứng sau chủ ngữ (我先……).",
+  "viDu":[["首先看样子喜不喜欢，然后再看质量怎么样、价格合适不合适。","Trước hết xem kiểu dáng có thích không, sau đó mới xem chất lượng thế nào, giá có hợp lý không."],["遇到问题，首先想想问题为什么出现，然后再积极想办法解决。","Gặp vấn đề, trước hết nghĩ xem vì sao vấn đề xuất hiện, sau đó mới tích cực tìm cách giải quyết."],["请大家首先读一遍课文，然后根据课文完成课后练习。","Mời cả lớp trước hết đọc bài khóa một lượt, sau đó dựa vào bài khóa làm bài tập sau bài."],["作为班长，我首先要关心同学们，其次要帮老师做好班里的事。","Là lớp trưởng, trước hết tôi phải quan tâm các bạn, thứ đến phải giúp thầy cô làm tốt việc của lớp. (ôn 作为 – Bài 13 · điểm 4)"]],
+  "loi":[["我首先洗手，其次吃饭。","Hai hành động nối nhau theo thời gian → dùng 然后; 其次 dùng để xếp các ý theo mức độ quan trọng.","我首先洗手，然后吃饭。"],["先，我们去做市场调查。","先 không đứng một mình ở đầu câu trước dấu phẩy; muốn tách riêng như vậy phải dùng 首先.","首先，我们去做市场调查。"],["首先我们去吃饭，然后去看电影，然后去唱歌，然后回家。","Liệt kê nhiều việc mà cứ lặp 然后 thì rườm; việc cuối dùng 最后.","首先我们去吃饭，然后去看电影，再去唱歌，最后回家。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["首先看样子喜不喜欢，","再看质量怎么样。"],"dap":[["然后"]],"chon":["然后","其次","首先"],"goiY":"“… sau đó mới xem chất lượng thế nào.”","giai":"Thứ tự thời gian: 首先……，然后再……"},
+     {"kieu":"dien","phan":["遇到问题，","想想问题为什么出现，然后再积极想办法解决。"],"dap":[["首先"]],"chon":["首先","最后","其次"],"goiY":"“Gặp vấn đề, trước hết nghĩ xem …”","giai":"Vế đầu dùng 首先."},
+     {"kieu":"dien","phan":["请大家首先读一遍课文，","根据课文完成课后练习。"],"dap":[["然后"]],"chon":["然后","而且","加上"],"goiY":"“… sau đó dựa vào bài khóa làm bài tập.”","giai":"首先……，然后……"},
+     {"kieu":"dien","phan":["我选这份工作，首先是因为喜欢，","是因为离家近。"],"dap":[["其次"]],"chon":["其次","然后","首先"],"goiY":"“… thứ nhất là vì thích, thứ hai là vì gần nhà.”","giai":"Liệt kê lý do (chính – phụ) → 其次."},
+     {"kieu":"dien","phan":["学中文首先要多听，其次要多说，","还要多读多写。"],"dap":[["最后"]],"chon":["最后","首先","究竟"],"goiY":"“… cuối cùng còn phải đọc nhiều viết nhiều.”","giai":"首先……，其次……，最后……"}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["我们","首先","去超市","，","然后","去","银行"],"dap":["我们首先去超市，然后去银行。"],"goiY":"Chúng ta đi siêu thị trước, sau đó đến ngân hàng.","giai":"首先 + V1，然后 + V2."},
+     {"kieu":"xep","manh":["买东西","首先","看质量","，","其次","看价格"],"dap":["买东西首先看质量，其次看价格。"],"goiY":"Mua đồ trước hết xem chất lượng, thứ đến mới xem giá.","giai":"首先……，其次…… (chính – phụ)."},
+     {"kieu":"xep","manh":["请大家","首先","读一遍课文","，","然后","回答问题"],"dap":["请大家首先读一遍课文，然后回答问题。"],"goiY":"Mời mọi người đọc bài khóa một lượt trước, sau đó trả lời câu hỏi.","giai":"首先……，然后……"},
+     {"kieu":"dungsai","cau":"我每天首先起床，其次刷牙。","dung":false,"sua":"我每天首先起床，然后刷牙。","giai":"Thứ tự thời gian → 然后, không dùng 其次."},
+     {"kieu":"dungsai","cau":"首先，我要感谢老师；其次，我要感谢我的家人。","dung":true,"giai":"Đúng: liệt kê các ý theo thứ tự, 首先……；其次……"},
+     {"kieu":"dungsai","cau":"先，我们来介绍一下自己。","dung":false,"sua":"首先，我们来介绍一下自己。","giai":"Đứng đầu câu có dấu phẩy phải là 首先."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成对话 · Hoàn thành đối thoại (sách trang 42)","huongDan":"Hoàn thành câu trả lời của B, có dùng 「首先……，然后 / 其次……」","cau":[
+     {"kieu":"vandung","de":"A：请说说你们的计划。 B：我们的计划是，首先去做市场调查，＿＿＿。","goiY":"Sau đó dựa vào kết quả khảo sát quyết định bán mặt hàng gì (ôn 调查 – Bài 7)","mau":"然后根据调查的结果决定卖什么商品","can":[["然后"]]},
+     {"kieu":"vandung","de":"A：你们寒假是怎么安排的？ B：＿＿＿；其次，＿＿＿。","goiY":"Thứ nhất: về nhà đón Tết với bố mẹ; thứ hai: đi du lịch phương Nam vài ngày (ôn 寒假 – Bài 10)","mau":"首先，我们要回家陪父母过春节；其次，我们打算去南方旅游几天","can":[["首先"]]},
+     {"kieu":"vandung","de":"A：能谈谈你为什么觉得自己适合这份工作吗？ B：好的。首先我的专业是儿童教育，＿＿＿。","goiY":"Thứ hai: em rất thích trẻ con và đã có kinh nghiệm làm ở nhà trẻ","mau":"其次我非常喜欢孩子，而且有两年在幼儿园工作的经验","can":[["其次"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Trước hết phải xem mình có thật sự cần không, sau đó mới so sánh giá.","dap":["首先要看自己是不是真正需要，然后再比较价格。","首先要看自己是不是真的需要，然后再比较价格。"],"giai":"首先……，然后再……"},
+     {"kieu":"dich","vn":"Tôi thích căn nhà này: thứ nhất là giao thông thuận tiện, thứ hai là tiền thuê không đắt.","dap":["我喜欢这个房子，首先是交通方便，其次是房租不贵。","我喜欢这套房子，首先是交通方便，其次是房租不贵。"],"giai":"Liệt kê lý do → 首先……，其次……; ôn 房租 (Bài 2)."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Kể các bước em chọn mua một món đồ, có dùng 「首先……，然后……」","mau":"我买东西的时候，首先看质量好不好，然后再看价格合适不合适。","can":[["首先"],["然后","其次"]]}]}
+  ]},
+
+ {"so":"3","ten":"连词“加上”","tenVn":"Liên từ 「加上」 — thêm vào đó, cộng thêm",
+  "cauTruc":["Lý do / tình hình 1，加上 + lý do / tình hình 2，(所以 / 使得 / 就) + kết quả","Lý do 1，再加上 + lý do 2，……"],
+  "giaiThich":"「加上」 nối tiếp câu trước, đưa thêm MỘT LÝ DO / ĐIỀU KIỆN NỮA (tiến thêm một bước); câu sau nêu KẾT QUẢ do các lý do đó cùng tạo ra, thường có 所以, 使得, 就…. Hai lý do phải CÙNG CHIỀU, cùng dẫn tới kết quả. Vế 加上 có thể thêm 又 / 再 cho tự nhiên: 加上又是周末, 再加上……. Mẹo cho người Việt: “(lại) thêm vào đó / cộng thêm …, nên …” → 加上. Phân biệt với 而且 (hơn nữa): 而且 chỉ bổ sung thông tin, không bắt buộc có vế kết quả; 加上 thì luôn có vế kết quả phía sau.",
+  "viDu":[["小店虽然小，但东西适合年轻人，加上店员态度友好，使得小店的生意越来越好。","Tiệm tuy nhỏ nhưng đồ hợp với người trẻ, thêm vào đó nhân viên lại thân thiện, khiến việc buôn bán của tiệm ngày càng tốt."],["虽然这里是郊区，但周围交通很方便，加上房租便宜，所以很多年轻人都在这里租房子。","Tuy đây là vùng ngoại ô nhưng giao thông xung quanh rất thuận tiện, thêm vào đó tiền thuê nhà rẻ, nên nhiều người trẻ thuê nhà ở đây."],["他很聪明，加上一直非常努力，所以最后考上了理想的大学。","Cậu ấy rất thông minh, thêm vào đó lại luôn rất chăm chỉ, nên cuối cùng đã đỗ vào trường đại học mơ ước."],["这里离公司很近，走路大约十分钟，加上房租也不贵，所以我决定租这儿的房子。","Chỗ này gần công ty, đi bộ khoảng mười phút, thêm vào đó tiền thuê cũng không đắt, nên tôi quyết định thuê nhà ở đây. (ôn 大约 – Bài 13 · điểm 3)"]],
+  "loi":[["他很聪明，加上一直非常努力。","Thiếu vế kết quả — sau vế 加上 phải có câu nêu kết quả.","他很聪明，加上一直非常努力，所以考上了理想的大学。"],["这件衣服很好看，加上太贵了，所以我买了。","Hai lý do phải cùng chiều dẫn tới kết quả; “quá đắt” ngược chiều với việc “mua”.","这件衣服很好看，加上不太贵，所以我买了。"],["小店的生意越来越好，加上店员态度友好。","Vế 加上 (nguyên nhân) đứng trước, vế kết quả đứng sau.","东西适合年轻人，加上店员态度友好，所以小店的生意越来越好。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["小店虽然小，但东西适合年轻人，","店员态度友好，使得小店的生意越来越好。"],"dap":[["加上"]],"chon":["加上","首先","对于"],"goiY":"“… thêm vào đó nhân viên thân thiện …”","giai":"加上 đưa thêm một lý do cùng chiều."},
+     {"kieu":"dien","phan":["这里交通很方便，加上房租便宜，","很多年轻人都在这里租房子。"],"dap":[["所以"]],"chon":["所以","但是","虽然"],"goiY":"“… nên nhiều người trẻ thuê nhà ở đây.”","giai":"Vế sau 加上 nêu kết quả, thường có 所以."},
+     {"kieu":"dien","phan":["今天下雨，加上","是周末，路上车特别多。"],"dap":[["又"]],"chon":["又","才","都"],"goiY":"“… lại thêm hôm nay là cuối tuần …”","giai":"加上 + 又 + lý do thêm."},
+     {"kieu":"dien","phan":["这家店东西便宜，再","服务好，顾客越来越多。"],"dap":[["加上"]],"chon":["加上","而且","不光"],"goiY":"“… lại thêm phục vụ tốt …”","giai":"再加上 = lại thêm."},
+     {"kieu":"dien","phan":["这里环境好，加上交通也方便，","很多人想在这儿买房子。"],"dap":[["使得"]],"chon":["使得","但是","虽然"],"goiY":"“… khiến nhiều người muốn mua nhà ở đây.”","giai":"……，加上……，使得 + kết quả (使得 – từ mới bài khoá 3)."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["这些茶叶","很香","，","加上","在促销","，","我","买了两斤"],"dap":["这些茶叶很香，加上在促销，我买了两斤。"],"goiY":"Trà này rất thơm, thêm vào đó đang khuyến mãi, nên tôi mua hai cân.","giai":"Lý do 1，加上 + lý do 2，kết quả."},
+     {"kieu":"xep","manh":["天气","很冷","，","加上","下雨","，","街上","没什么人"],"dap":["天气很冷，加上下雨，街上没什么人。"],"goiY":"Trời rất lạnh, lại thêm mưa, nên trên phố chẳng có mấy người.","giai":"Hai lý do cùng chiều → một kết quả."},
+     {"kieu":"dungsai","cau":"他很聪明，加上一直非常努力。","dung":false,"sua":"他很聪明，加上一直非常努力，所以考上了理想的大学。","giai":"Thiếu vế kết quả."},
+     {"kieu":"dungsai","cau":"这里环境很好，加上交通方便，所以房子很好卖。","dung":true,"giai":"Đúng: hai lý do cùng chiều + kết quả 所以……"},
+     {"kieu":"dungsai","cau":"这家饭馆的菜很好吃，加上服务员态度很差，所以顾客很多。","dung":false,"sua":"这家饭馆的菜很好吃，加上服务员态度很好，所以顾客很多。","giai":"Lý do sau 加上 phải cùng chiều với lý do trước."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 44)","huongDan":"Hoàn thành câu với 「加上」 và từ trong ngoặc","cau":[
+     {"kieu":"vandung","de":"这些茶叶闻着很香，＿＿＿，我一下就买了两斤。（促销）","goiY":"Dùng 「促销」: thêm vào đó cửa hàng đang khuyến mãi","mau":"加上店里正在做促销","can":[["加上"],["促销"]]},
+     {"kieu":"vandung","de":"这个话剧（huàjù, kịch nói）很有名，＿＿＿，来剧院看演出的观众＿＿＿。（超过）","goiY":"Dùng 「超过」: thêm vào đó diễn viên diễn rất hay; khán giả đến xem vượt quá một nghìn người","mau":"加上演员演得特别好，超过了一千人","can":[["加上"],["超过"]]},
+     {"kieu":"vandung","de":"这位售货员很专业，＿＿＿，很快就卖出去了好几个手机。（态度）","goiY":"Dùng 「态度」: thêm vào đó thái độ rất thân thiện","mau":"加上态度也很友好","can":[["加上"],["态度"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Tiệm này đồ rẻ, thêm vào đó nhân viên rất thân thiện, nên khách rất đông.","dap":["这家店东西便宜，加上店员很友好，所以顾客很多。","这家店的东西很便宜，加上店员态度很友好，所以顾客很多。"],"giai":"……，加上……，所以……"},
+     {"kieu":"dich","vn":"Hôm nay tôi dậy muộn, thêm vào đó đường lại tắc, nên đã đến muộn.","dap":["今天我起晚了，加上路上又堵车，所以迟到了。","我今天起晚了，加上路上堵车，所以迟到了。"],"giai":"加上 + 又 + lý do thêm; 所以 + kết quả."},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Giải thích vì sao em thích một cửa hàng / quán ăn, có dùng 「加上」","mau":"学校旁边那家饭馆的菜又好吃又便宜，加上老板很友好，所以同学们都喜欢去。","can":[["加上"]]}]}
+  ]},
+
+ {"so":"4","ten":"介词“对于”","tenVn":"Giới từ 「对于」 — đối với, về",
+  "cauTruc":["对于 + đối tượng (người / việc / vật)，chủ ngữ + vị ngữ","Chủ ngữ + 对于 + đối tượng + vị ngữ","对于 + ai + 来说，…… (đối với ai mà nói)"],
+  "giaiThich":"「对于」 dẫn ra ĐỐI TƯỢNG cụ thể (người, việc, vật) mà hành động hoặc thái độ nhắm tới. Cụm 「对于……」 thường đứng ĐẦU câu, trước chủ ngữ, có dấu phẩy, để nêu chủ đề cần bàn; cũng có thể đứng sau chủ ngữ. Phân biệt với 对: chỗ nào dùng 对于 đều thay được bằng 对; nhưng khi nói thái độ, hành động giữa NGƯỜI với NGƯỜI (đối xử với ai, nói với ai: 他对我很好, 对老师说) thì chỉ dùng 对, không dùng 对于. Mẹo cho người Việt: “đối với / về (vấn đề, việc) …, (ai) …” → 对于……，……; còn “đối với tôi mà nói (theo tôi)” phải có 来说: 对我来说 / 对于我来说. Lưu ý: cụm 对于…… không làm chủ ngữ — câu vẫn cần một chủ ngữ riêng.",
+  "viDu":[["对于想买的东西，她不光看质量，还看价格。","Đối với những thứ muốn mua, cô ấy không chỉ xem chất lượng mà còn xem giá."],["对于他的做法，大家都很支持。","Đối với cách làm của anh ấy, mọi người đều rất ủng hộ."],["对于你们提的这个建议，我们一定好好研究。","Về đề xuất các bạn đưa ra, chúng tôi nhất định sẽ nghiên cứu kỹ."],["对于这件事，即使大家都不同意，我也想试一试。","Về chuyện này, cho dù mọi người đều không đồng ý, tôi cũng muốn thử một lần. (ôn 即使……也…… – Bài 11 · điểm 1)"]],
+  "loi":[["他对于老师很友好。","Thái độ giữa người với người (đối xử với ai) chỉ dùng 对.","他对老师很友好。"],["对于我，学中文很有意思。","Nêu cảm nhận, góc nhìn của ai phải dùng 对……来说 / 对于……来说.","对我来说，学中文很有意思。"],["对于这个建议很好。","Cụm 对于…… không làm chủ ngữ; câu phải có chủ ngữ riêng.","对于这个建议，大家都觉得很好。"]],
+  "bt":[
+   {"so":1,"cap":"Cơ học","tieuDe":"Chọn từ điền vào chỗ trống","cau":[
+     {"kieu":"dien","phan":["","想买的东西，她不光看质量，还看价格。"],"dap":[["对于"]],"chon":["对于","加上","首先"],"goiY":"“Đối với những thứ muốn mua …”","giai":"对于 + đối tượng，chủ ngữ + V."},
+     {"kieu":"dien","phan":["对于他的做法，大家都很","。"],"dap":[["支持"]],"chon":["支持","友好","仔细"],"goiY":"“… mọi người đều rất ủng hộ.” (ôn 支持 – Bài 9)","giai":"对于 + việc，ai + 支持."},
+     {"kieu":"dien","phan":["对于你们提的这个建议，我们一定好好","。"],"dap":[["研究"]],"chon":["研究","表示","降价"],"goiY":"“… chúng tôi nhất định nghiên cứu kỹ.”","giai":"对于 + 建议，……研究."},
+     {"kieu":"dien","phan":["他","老师很有礼貌。"],"dap":[["对"]],"chon":["对","对于","关于"],"goiY":"“Cậu ấy rất lễ phép với thầy cô.”","giai":"Thái độ với NGƯỜI → chỉ dùng 对."},
+     {"kieu":"dien","phan":["对于很多年轻人","，买盲盒是一件快乐的事。"],"dap":[["来说"]],"chon":["来说","以后","的话"],"goiY":"“Đối với nhiều bạn trẻ mà nói …”","giai":"对于……来说 = đối với … mà nói."}]},
+   {"so":2,"cap":"Bán giao tiếp","tieuDe":"Sắp xếp câu · Câu đúng hay sai","cau":[
+     {"kieu":"xep","manh":["对于","这个问题","，","大家","有","什么","看法"],"dap":["对于这个问题，大家有什么看法？"],"goiY":"Về vấn đề này, mọi người có ý kiến gì?","giai":"对于 + N，chủ ngữ + V."},
+     {"kieu":"xep","manh":["对于","顾客的意见","，","我们","一定","好好研究"],"dap":["对于顾客的意见，我们一定好好研究。"],"goiY":"Đối với ý kiến của khách hàng, chúng tôi nhất định nghiên cứu kỹ.","giai":"Cụm 对于 đứng đầu câu."},
+     {"kieu":"dungsai","cau":"她对于孩子很耐心。","dung":false,"sua":"她对孩子很耐心。","giai":"Thái độ với người → 对."},
+     {"kieu":"dungsai","cau":"对于这件事，我还没想好。","dung":true,"giai":"Đúng: 对于 + việc，chủ ngữ + V."},
+     {"kieu":"dungsai","cau":"对于买东西很仔细。","dung":false,"sua":"对于买东西，她很仔细。","giai":"Thiếu chủ ngữ; cụm 对于 không làm chủ ngữ."}]},
+   {"so":3,"cap":"Bài tập SGK","tieuDe":"完成句子 · Hoàn thành câu (sách trang 46)","huongDan":"Hoàn thành câu, có dùng 「对于」","cau":[
+     {"kieu":"vandung","de":"对于这份工作，＿＿＿？","goiY":"Hỏi suy nghĩ của người nghe về công việc này (có thể thêm 究竟)","mau":"你究竟有什么想法","can":[["什么","怎么","吗","满意"]]},
+     {"kieu":"vandung","de":"＿＿＿，你们觉得怎么样？","goiY":"Nêu đối tượng muốn hỏi ý kiến: kế hoạch chúng tôi đưa ra","mau":"对于我们提的这个计划","can":[["对于"]]},
+     {"kieu":"vandung","de":"＿＿＿购物，你是想＿＿＿，还是＿＿＿？","goiY":"Hỏi về chuyện mua sắm: muốn mua đồ rẻ hay mua đồ chất lượng tốt","mau":"对于购物，你是想买便宜的，还是想买质量好的","can":[["对于"]]}]},
+   {"so":4,"cap":"Giao tiếp","tieuDe":"Dịch và tự đặt câu","cau":[
+     {"kieu":"dich","vn":"Về vấn đề này, mọi người có ý kiến gì?","dap":["对于这个问题，大家有什么看法？","对于这个问题，大家有什么意见？"],"giai":"对于 + N đứng đầu câu."},
+     {"kieu":"dich","vn":"Đối với những thứ muốn mua, tôi đều so sánh kỹ rồi mới mua.","dap":["对于想买的东西，我都仔细比较后才买。","对于想买的东西，我都是仔细比较以后才买。"],"giai":"对于……，chủ ngữ + 都 + 仔细比较后才……"},
+     {"kieu":"vandung","tuDo":true,"de":"＿＿＿","goiY":"Nói ý kiến của em về việc mua hộp mù / mua đồ giảm giá, có dùng 「对于」","mau":"对于盲盒，我觉得偶尔买一个可以，但是不能买太多，不然就是浪费钱。","can":[["对于"]]}]}
+  ]}
+],
+
+"sgk": [
+ {"kieu":"kho","de":"选词填空（一）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (Bài tập tổng hợp, sách trang 46–47).","dapSgk":false,"tu":["暂时","表示","减","态度","两","缺"],"cau":[
+   {"s":"这家饭馆不仅菜好吃，服务员服务＿＿也特别好，所以我们经常来。","dap":["态度"]},
+   {"s":"茶叶一次不用买太多，买六＿＿就够喝一段时间了。","dap":["两"]},
+   {"s":"马上到景区了，大家准备下车，不需要的东西可以＿＿放在车上。","dap":["暂时"]},
+   {"s":"网上商店正在做活动，除了直接降价外，还有满100＿＿30的活动，挺值的。","dap":["减"]},
+   {"s":"我要买的那个手机现在＿＿货，过几天再去看看来没来货。","dap":["缺"]},
+   {"s":"高医生＿＿，病人过几天如果没什么问题就可以出院了。","dap":["表示"]}]},
+ {"kieu":"kho","de":"选词填空（二）· 综合练习","vn":"Chọn từ thích hợp điền vào chỗ trống (hội thoại, sách trang 47).","dapSgk":false,"tu":["许多","者","不光","分为","友好","顾客"],"cau":[
+   {"s":"A：您的学生学习都很好！　B：是的，他们＿＿学习成绩优秀，还经常帮助别人。","dap":["不光"]},
+   {"s":"A：这家店人真多！　B：嗯，他们的商品种类多、价格合适，服务还特别好，所以很多＿＿都喜欢来这里买东西。","dap":["顾客"]},
+   {"s":"A：您能简单介绍一下武汉长江大桥（Wǔhàn Chángjiāng Dàqiáo, cầu Trường Giang Vũ Hán）吗？　B：这座桥全长1670米，＿＿上下两层，是长江上的第一座大桥。","dap":["分为"]},
+   {"s":"A：这个动物园虽然比较远，但动物特别多，有＿＿我以前没见过的动物。　B：是吗？有机会我也去看看。","dap":["许多"]},
+   {"s":"A：你这次去那儿玩感觉怎么样？　B：挺不错的，那里的人都很热情、＿＿，也给了我们很多帮助。","dap":["友好"]},
+   {"s":"A：电子邮件发出后，我才发现会议时间写错了。　B：那你快给参会＿＿重新发邮件，向他们道歉，并告诉他们正确（zhèngquè, chính xác）的时间。","dap":["者"]}]},
+ {"kieu":"kho","de":"选择合适的内容完成短文","vn":"Chọn nội dung thích hợp (A–D) hoàn thành đoạn văn (sách trang 47).","dapSgk":false,"tu":["对于买衣服这件事","但现在她更喜欢在网上买","她都会仔细看商品介绍","既不浪费钱"],"cau":[
+   {"s":"吴红在一家公司上班，工资挺高的。和许多女孩子一样，她喜欢买衣服。＿＿，她的想法是：不需要的就不买，只买对的，不买贵的。以前，吴红喜欢去商场买衣服，＿＿。网上的选择多，每次看到喜欢的，＿＿，看颜色、大小、样子是不是自己满意的，都看好了才付钱。这样买东西，＿＿，又能买到自己喜欢的。每次穿上新衣服，她都挺开心的。","dap":["对于买衣服这件事","但现在她更喜欢在网上买","她都会仔细看商品介绍","既不浪费钱"]}]},
+ {"kieu":"gx","de":"看图，用词语造句","vn":"Nhìn tranh, đặt câu với từ cho sẵn (câu dưới đây là câu tham khảo — câu của em đúng ngữ pháp, hợp tranh là đạt).","cau":[
+   {"anh":"bt-1","s":"","tu":"商品","dap":"这家店的商品种类很多，各种各样的碗和盘子都有。","giai":"商品种类很多 — cụm từ của bài khoá 3; 各种各样的 + N = đủ loại …"},
+   {"anh":"bt-2","s":"","tu":"仔细","dap":"这个孩子正在仔细地观察植物。","giai":"正在 + 仔细地 + V: đang làm gì một cách kỹ lưỡng; 观察 = quan sát; ôn 植物 (Bài 10)."},
+   {"anh":"bt-3","s":"","tu":"友好","dap":"这位护士对老奶奶非常友好。","giai":"对 + ai + 很 / 非常友好 = thân thiện với ai; ôn 护士 (Bài 6). Có thể nói thêm: 她的态度很友好。"}]}
+],
+
+"listen": [
+ {"audio":"小姐，这件外套多少钱？三百八。不过现在店里在做促销，满三百减五十。那就是三百三十块？对。这个牌子质量很好，样式也是今年最流行的。好，那我试试。","questions":[
+   {"q":"这件外套现在多少钱？","opts":["三百八十块","三百三十块","三百块"],"ans":1},
+   {"q":"售货员觉得这件外套怎么样？","opts":["质量好，样式流行","价钱很便宜","颜色很好看"],"ans":0}]},
+ {"audio":"你听，广播里说什么？说今天晚上八点到九点，超市里所有的水果都打七折，买满五十块还送一盒牛奶。太好了！咱们首先去买水果，然后再去买别的吧。好，不过别买太多，吃不完就浪费了。","questions":[
+   {"q":"什么东西打七折？","opts":["牛奶","水果","茶叶"],"ans":1},
+   {"q":"买满五十块送什么？","opts":["一盒牛奶","一盒茶叶","一个盒子"],"ans":0}]},
+ {"audio":"你又买盲盒了？你究竟买了多少个了？这已经是第十个了。对于盲盒，我觉得偶尔买一个还行，买太多就是浪费钱。你说得对，以后买东西以前，我首先想想自己是不是真的需要。","questions":[
+   {"q":"她一共买了多少个盲盒？","opts":["一个","五个","十个"],"ans":2},
+   {"q":"朋友觉得买很多盲盒怎么样？","opts":["很有意思","是浪费钱","能感受到快乐"],"ans":1}]}
+],
+
+"match": [
+ {"left":"举办","right":"促销活动"},
+ {"left":"服务","right":"态度"},
+ {"left":"仔细","right":"比较"},
+ {"left":"商品","right":"种类"},
+ {"left":"满二两","right":"送半两"},
+ {"left":"一双","right":"袜子"},
+ {"left":"首先……","right":"然后……"},
+ {"left":"不光……","right":"还……"},
+ {"left":"……，加上……","right":"使得……"}
+],
+
+"fill": [
+ {"pre":"这里茶叶这么多，","blank":"究竟","post":"买哪种好呢？","hint":"(rốt cuộc)","ans":"究竟","exp":"究竟 + câu hỏi có đại từ nghi vấn."},
+ {"pre":"茶叶主要","blank":"分为","post":"红茶、绿茶等。","hint":"(chia thành)","ans":"分为","exp":"A 分为 B、C……"},
+ {"pre":"抱歉，","blank":"暂时","post":"没有。","hint":"(tạm thời)","ans":"暂时","exp":"暂时 + 没有 / 不 + V."},
+ {"pre":"今天满二两送半两，","blank":"超过","post":"半斤再送小礼物。","hint":"(vượt quá)","ans":"超过","exp":"超过 + số lượng."},
+ {"pre":"本商场正在举办运动鞋假日低价","blank":"促销","post":"活动。","hint":"(khuyến mãi)","ans":"促销","exp":"促销活动 = chương trình khuyến mãi."},
+ {"pre":"","blank":"首先","post":"看样子喜不喜欢，然后再看质量怎么样。","hint":"(trước hết)","ans":"首先","exp":"首先……，然后……"},
+ {"pre":"这个牌子质量很好，今天又","blank":"降价","post":"，一双减300块。","hint":"(giảm giá)","ans":"降价","exp":"降价 = hạ giá bán."},
+ {"pre":"东西适合年轻人，","blank":"加上","post":"店员态度友好，使得小店的生意越来越好。","hint":"(thêm vào đó)","ans":"加上","exp":"……，加上……，使得 + kết quả."},
+ {"pre":"前段时间刚进的盲盒很快就卖到了","blank":"缺","post":"货。","hint":"(thiếu, hết)","ans":"缺","exp":"缺货 = hết hàng."},
+ {"pre":"","blank":"对于","post":"想买的东西，她不光看质量，还看价格。","hint":"(đối với)","ans":"对于","exp":"对于 + đối tượng，chủ ngữ + V."}
+],
+
+"sort": [
+ {"words":["这里","茶叶","这么多","，","究竟","买","哪种","好呢","？"],"ans":"这里茶叶这么多，究竟买哪种好呢？"},
+ {"words":["首先","看样子","喜不喜欢","，","然后","再看","质量","怎么样","。"],"ans":"首先看样子喜不喜欢，然后再看质量怎么样。"},
+ {"words":["请","帮我","分着装","，","盒子里","装","半斤","。"],"ans":"请帮我分着装，盒子里装半斤。"},
+ {"words":["加上","店员","态度友好","，","使得","小店的生意","越来越好","。"],"ans":"加上店员态度友好，使得小店的生意越来越好。"},
+ {"words":["对于","想买的东西","，","她","不光","看质量","，","还","看价格","。"],"ans":"对于想买的东西，她不光看质量，还看价格。"},
+ {"words":["许多","年轻人","表示","，","在","徐前的店里","能","感受到","快乐","。"],"ans":"许多年轻人表示，在徐前的店里能感受到快乐。"}
+],
+
+"mc": [
+ {"q":"这里茶叶这么多，＿＿买哪种好呢？","opts":["究竟","首先","加上","暂时"],"ans":0,"exp":"究竟 dùng trong câu hỏi để truy hỏi: rốt cuộc."},
+ {"q":"你明天究竟去＿＿？","opts":["不去","吗","了","吧"],"ans":0,"exp":"Câu có 究竟 dùng câu hỏi chính phản V不V, không dùng 吗."},
+ {"q":"＿＿看样子喜不喜欢，然后再看质量怎么样。","opts":["首先","其次","加上","对于"],"ans":0,"exp":"首先……，然后……: thứ tự trước sau."},
+ {"q":"我选这家公司，首先是因为离家近，＿＿是因为工资高。","opts":["其次","然后","首先","加上"],"ans":0,"exp":"Liệt kê lý do chính – phụ → 首先……，其次……"},
+ {"q":"小店的东西适合年轻人，＿＿店员态度友好，所以生意越来越好。","opts":["加上","对于","究竟","首先"],"ans":0,"exp":"加上 thêm một lý do cùng chiều, sau đó là kết quả."},
+ {"q":"＿＿这个问题，大家有什么看法？","opts":["对于","加上","首先","超过"],"ans":0,"exp":"对于 + đối tượng đứng đầu câu."},
+ {"q":"他＿＿朋友非常热情。","opts":["对","对于","关于","加上"],"ans":0,"exp":"Thái độ giữa người với người chỉ dùng 对, không dùng 对于."},
+ {"q":"这种茶叶多少钱一＿＿？","opts":["两","个","件","双"],"ans":0,"exp":"两 = lạng (50 g), đơn vị cân trà; 1 斤 = 10 两."},
+ {"q":"我想买的那个手机现在＿＿货，过几天再来看看吧。","opts":["缺","减","满","装"],"ans":0,"exp":"缺货 = hết hàng."},
+ {"q":"买东西的时候，要从质量、价格等各方面＿＿比较。","opts":["仔细","友好","暂时","许多"],"ans":0,"exp":"仔细 + V = làm kỹ lưỡng (✗ tử tế)."}
+],
+
+"speaking": {
+ "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu, kể lại bài khoá và đóng vai của sách), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài: 究竟, 首先……然后/其次……, 加上, 对于.",
+ "questions":[
+  {"q_zh":"当你想买一个东西时，会不会等它降价的时候才买？","q_vn":"Khi muốn mua một món đồ, bạn có đợi đến lúc nó giảm giá mới mua không?","hint":"我一般会 / 不会……，因为……，加上……","sample":"我一般会等它降价的时候才买。因为很多商品过一段时间就会降价，加上商场常常举办促销活动，等一等能省不少钱。不过，如果是马上就需要的东西，我就不等了。","sample_vn":"Tôi thường đợi đến khi nó giảm giá mới mua. Vì nhiều mặt hàng một thời gian sau sẽ giảm giá, thêm vào đó trung tâm thương mại hay tổ chức khuyến mãi, đợi một chút tiết kiệm được kha khá. Nhưng nếu là đồ cần ngay thì tôi không đợi.","note":"Câu hỏi phần Khởi động của sách; dùng 加上 (điểm 3)."},
+  {"q_zh":"买东西时，你觉得质量和价格哪个更重要？","q_vn":"Khi mua đồ, bạn thấy chất lượng và giá cả cái nào quan trọng hơn?","hint":"我觉得……更重要。首先……，其次……","sample":"我觉得质量更重要。首先，质量好的东西能用很长时间，其实更省钱；其次，质量不好的东西很快就坏了，最后还成了垃圾，不环保。当然，价格也要合适。","sample_vn":"Tôi thấy chất lượng quan trọng hơn. Thứ nhất, đồ chất lượng tốt dùng được lâu, thật ra còn tiết kiệm hơn; thứ hai, đồ kém chất lượng nhanh hỏng, cuối cùng thành rác, không bảo vệ môi trường. Tất nhiên giá cũng phải hợp lý.","note":"Câu hỏi phần Khởi động của sách; dùng 首先……，其次…… (điểm 2), ôn 环保 (Bài 10)."},
+  {"q_zh":"安妮为什么要买茶叶？关于买茶叶送人，售货员有什么建议？","q_vn":"Vì sao Annie mua trà? Về việc mua trà để biếu, người bán hàng có gợi ý gì?","hint":"安妮想……，再……。售货员建议她……","sample":"安妮想买一些茶叶自己喝，再买些送人。售货员建议她买个盒子，把送人的茶叶装进去。","sample_vn":"Annie muốn mua một ít trà để tự uống, mua thêm ít để biếu người khác. Người bán gợi ý cô mua một cái hộp, đựng phần trà biếu vào đó.","note":"Câu hỏi bài khoá 1."},
+  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"安妮到茶叶店买茶叶，售货员问她……。她不知道究竟买……。安妮想买一些茶……，再……。但她想买的一种绿茶……。安妮最后买了……","sample":"安妮到茶叶店买茶叶，售货员问她要什么茶。她不知道究竟买哪种好，售货员向她介绍了不同的茶叶。安妮想买一些茶自己喝，再买些送人。但她想买的一种绿茶暂时没有了。售货员向她介绍说，自己喝的话，可以买另一种绿茶，今天满二两送半两，超过半斤再送小礼物；送人的话，可以买个盒子装进去。安妮最后买了六两绿茶和一个盒子，盒子里装了半斤，剩下的用纸包起来了。","sample_vn":"Annie đến tiệm trà mua trà, người bán hỏi cô muốn trà gì. Cô không biết rốt cuộc nên mua loại nào, người bán giới thiệu các loại trà khác nhau… Cuối cùng Annie mua sáu lạng trà xanh và một cái hộp, trong hộp để nửa cân, phần còn lại gói giấy.","note":"Bài tập 复述 của sách (trang 40)."},
+  {"q_zh":"听了广播后，王一雪为什么要过去看看？","q_vn":"Nghe loa thông báo xong, vì sao Vương Nhất Tuyết muốn qua xem?","hint":"因为广播里说……，价格……","sample":"因为广播里说商场正在举办运动鞋促销活动，全场五折，价格减了一半。","sample_vn":"Vì loa nói trung tâm thương mại đang khuyến mãi giày thể thao, toàn bộ giảm 50%, giá giảm một nửa.","note":"Câu hỏi bài khoá 2."},
+  {"q_zh":"王一雪是怎么决定买那双运动鞋的？","q_vn":"Vương Nhất Tuyết đã quyết định mua đôi giày thể thao đó như thế nào?","hint":"她首先……，然后再……。这个牌子……，样式……，价钱……","sample":"她首先看样子喜不喜欢，然后再看质量怎么样、价格合适不合适。这个牌子质量很好，鞋的样式很新，今天又降价，价钱也不高，所以她决定买一双37号的。","sample_vn":"Trước hết cô xem kiểu dáng có thích không, sau đó mới xem chất lượng, giá cả có hợp lý không. Hãng này chất lượng tốt, kiểu dáng mới, hôm nay lại giảm giá, giá không cao, nên cô quyết định mua một đôi số 37.","note":"Câu hỏi bài khoá 2; dùng 首先……，然后…… (điểm 2)."},
+  {"q_zh":"年轻人为什么喜欢徐前店里的东西？徐前店里的生意做得怎么样？","q_vn":"Vì sao người trẻ thích đồ ở tiệm Từ Tiền? Việc buôn bán của tiệm thế nào?","hint":"因为徐前自己……，知道……。店里商品种类……，既有……，也有……。加上……，使得……","sample":"因为徐前自己就是年轻人，知道年轻人喜欢什么。他的店里商品种类不少，既有老游戏机，也有流行的盲盒。东西适合年轻人，加上店员态度友好，使得小店的生意越来越好。","sample_vn":"Vì Từ Tiền chính là người trẻ, biết người trẻ thích gì. Tiệm anh có nhiều loại hàng, vừa có máy game cũ vừa có hộp mù thịnh hành. Đồ hợp với người trẻ, thêm vào đó nhân viên thân thiện, khiến tiệm buôn bán ngày càng tốt.","note":"Câu hỏi bài khoá 3; dùng 加上 (điểm 3) + 使得, ôn 既……也…… (Bài 4)."},
+  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"李文的朋友徐前在商业区……，专门卖……。他的店里商品……，既有……，也有……。徐前说……。小店虽然小，但……，加上……，使得……","sample":"李文的朋友徐前在商业区开了家小店，专门卖年轻人喜欢的东西。他的店里商品种类不少，既有几十年前的老游戏机，也有最近流行的盲盒等等，很吸引年轻人。徐前说，自己就是年轻人，知道年轻人喜欢什么。他也常和来店里的年轻顾客聊天儿，了解他们的兴趣爱好。前段时间刚进的盲盒很快就卖到了缺货。许多年轻人表示，在徐前的店里能感受到快乐。小店虽然小，但东西适合年轻人，加上店员态度友好，使得小店的生意越来越好。李文觉得自己的朋友真会做生意。","sample_vn":"Bạn của Lý Văn là Từ Tiền mở một tiệm nhỏ ở khu thương mại, chuyên bán đồ người trẻ thích… Tiệm tuy nhỏ nhưng đồ hợp với người trẻ, thêm vào đó nhân viên thân thiện, khiến việc buôn bán ngày càng tốt. Lý Văn thấy bạn mình thật biết làm ăn.","note":"Bài tập 复述 của sách (trang 44)."},
+  {"q_zh":"冷静购物者和不冷静购物者最大的不同是什么？王一飞是冷静购物者吗？为什么？","q_vn":"Điểm khác nhau lớn nhất giữa người mua sắm tỉnh táo và không tỉnh táo là gì? Vương Nhất Phi có phải người mua sắm tỉnh táo không? Vì sao?","hint":"冷静购物者……才买；不冷静购物者只要……就买。王一飞……，对于想买的东西，她不光……，还……","sample":"冷静购物者真正需要一件东西时才买，还会仔细比较；不冷静购物者只要感觉喜欢就买，不管需要不需要。王一飞是冷静购物者，因为她从来不随便买东西，对于想买的东西，她不光看质量，还看价格，都是仔细比较后才决定买不买。","sample_vn":"Người mua sắm tỉnh táo chỉ mua khi thật sự cần và còn so sánh kỹ; người không tỉnh táo cứ thấy thích là mua, bất kể có cần hay không. Vương Nhất Phi là người tỉnh táo, vì cô chưa bao giờ mua đồ tùy tiện; với thứ muốn mua, cô không chỉ xem chất lượng mà còn xem giá, đều so sánh kỹ rồi mới quyết định.","note":"Câu hỏi bài khoá 4; dùng 对于 (điểm 4), ôn 从来 (Bài 9) và 不光……还…… (Bài 3)."},
+  {"q_zh":"角色扮演：两人一组，一人扮演顾客，一人扮演售货员。顾客想买一个手机，售货员向顾客做介绍，最后顾客觉得合适，买下了这个手机。","q_vn":"Đóng vai: hai người một nhóm, một người là khách hàng, một người là nhân viên bán hàng. Khách muốn mua điện thoại, nhân viên giới thiệu, cuối cùng khách thấy hợp và mua chiếc điện thoại đó.","hint":"顾客：……究竟买哪个好呢？ 售货员：首先……，其次……，加上今天……。 顾客：对于……，我……","sample":"顾客：您好，我想买一个手机，可是这里手机这么多，究竟买哪个好呢？售货员：您好！您平时主要用手机做什么？顾客：我经常拍照，也常用手机看电影。售货员：那我建议您看看这个。首先，它拍照特别清楚；其次，用一整天都不用充电。加上今天正在做促销活动，一部减三百块，非常合适。顾客：这个牌子我知道，质量不错，样式也挺新的。现在多少钱？售货员：原来三千，现在两千七，满两千还送一副耳机。顾客：对于这个价钱，我挺满意的。就买这个吧！售货员：好的，请到这边付钱。","sample_vn":"Khách: Chào anh, tôi muốn mua điện thoại, nhưng ở đây nhiều thế này, rốt cuộc nên mua chiếc nào? — Nhân viên: Chào chị! Chị thường dùng điện thoại để làm gì? — Khách: Tôi hay chụp ảnh, cũng hay xem phim. — Nhân viên: Vậy chị xem chiếc này. Thứ nhất, chụp ảnh rất nét; thứ hai, dùng cả ngày không cần sạc. Thêm vào đó hôm nay đang khuyến mãi, mỗi chiếc giảm 300 tệ, rất đáng. — Khách: Hãng này tôi biết, chất lượng tốt, kiểu dáng cũng mới. Giờ bao nhiêu tiền? — Nhân viên: Giá gốc 3000, giờ 2700, mua đủ 2000 còn tặng một bộ tai nghe. — Khách: Với giá này tôi rất hài lòng. Lấy chiếc này nhé! — Nhân viên: Vâng, mời chị qua bên này thanh toán.","note":"Hoạt động 任务活动 · 角色扮演 (đóng vai) của sách, trang 48 — dùng đủ 4 điểm ngữ pháp: 究竟, 首先……其次……, 加上, 对于 cùng các từ 牌子, 样式, 促销, 减, 满."}
+ ]
+},
+
+"translate": [
+ ["Ở đây nhiều loại trà thế này, rốt cuộc nên mua loại nào đây?","这里茶叶这么多，究竟买哪种好呢？"],
+ ["Trước hết xem kiểu dáng có thích không, sau đó mới xem chất lượng thế nào.","首先看样子喜不喜欢，然后再看质量怎么样。"],
+ ["Đồ hợp với người trẻ, thêm vào đó nhân viên thân thiện, khiến việc buôn bán của tiệm ngày càng tốt.","东西适合年轻人，加上店员态度友好，使得小店的生意越来越好。"],
+ ["Đối với những thứ muốn mua, cô ấy không chỉ xem chất lượng mà còn xem giá.","对于想买的东西，她不光看质量，还看价格。"],
+ ["Xin lỗi, tạm thời hết hàng.","抱歉，暂时没有。"],
+ ["Hãng này chất lượng rất tốt, hôm nay lại giảm giá.","这个牌子质量很好，今天又降价了。"]
+],
+"translateRev": [
+ ["Trà chủ yếu chia thành hồng trà, lục trà…","茶叶主要分为红茶、绿茶等。"],
+ ["Hôm nay mua đủ hai lạng tặng nửa lạng, quá nửa cân còn tặng thêm quà nhỏ.","今天满二两送半两，超过半斤再送小礼物。"],
+ ["Lô hộp mù vừa nhập về bán nhanh đến mức hết hàng.","刚进的盲盒很快就卖到了缺货。"],
+ ["Người mua sắm tỉnh táo thường chỉ mua khi thật sự cần một món đồ.","冷静购物者往往是真正需要一件东西时才买。"],
+ ["Chọn cái phù hợp mới là tốt nhất.","选择合适的才是最好的。"]
+],
+
+"writing": {
+ "kieu":"sgk","soChu":140,"tieuDe":"写作 — viết theo đề của sách (ít nhất 140 chữ)",
+ "nhanDe":"写作",
+ "huongDan":{"tieuDe":"Viết đoạn văn kể kinh nghiệm mua sắm (写作)","gioiThieu":"Đề 写作 của sách HSK 4 (3.0) yêu cầu viết một bài văn ngắn (ít nhất 140 chữ) kể THÓI QUEN và một LẦN MUA SẮM CỤ THỂ của em ở siêu thị / trung tâm thương mại — giống phần 书写 của đề thi HSK 4 mới. Bài nên có cả kể chuyện lẫn rút ra quan niệm: “hợp mới mua”.","buoc":["Đọc kỹ đề: phải có HAI phần — (1) bình thường em mua sắm thế nào, (2) một lần cụ thể em đi siêu thị / trung tâm thương mại mua đồ.","Lập dàn ý theo các câu hỏi gợi ý: mỗi câu hỏi là một ý, viết 1–2 câu cho mỗi ý (khi nào đi, mua gì, so sánh ra sao, có khuyến mãi không, kết quả và suy nghĩ).","Dùng từ mới của bài (顾客、促销、降价、减、牌子、样式、价钱、商品、仔细、态度…) và 4 điểm ngữ pháp: 究竟, 首先……然后/其次……, 加上, 对于.","Nối các ý bằng từ nối: 首先 / 然后 / 其次 / 最后; ôn 不光……还……, 无论……都……, 即使……也…….","Câu mở nêu thói quen mua sắm, câu kết rút ra quan niệm (合适的才是最好的); tự soát số chữ (≥ 140) và lỗi chữ Hán trước khi nộp."]},
+ "de":"你平时一般怎么购物？请根据你去超市或商场买东西的经历，写一篇短文，不少于140字。",
+ "prompt":"Bình thường em thường mua sắm như thế nào? Hãy dựa vào trải nghiệm đi siêu thị hoặc trung tâm thương mại mua đồ của em, viết một bài văn ngắn, không ít hơn 140 chữ.",
+ "dan":[
+  {"hoi":"你平时一般什么时候、去哪儿买东西？","goiY":"我平时一般在……去超市 / 商场买东西。"},
+  {"hoi":"对于购物，你有什么想法？","goiY":"对于购物，我的想法是……；买东西以前，我首先……，然后……"},
+  {"hoi":"有一次你去买什么？商场在做什么活动？","goiY":"上个月我想买……，正好商场在举办……促销活动，满……减……"},
+  {"hoi":"你是怎么比较、怎么决定的？","goiY":"我不光看……，还看……；这个牌子……，加上……，所以……"},
+  {"hoi":"最后买了没有？你有什么感受？","goiY":"最后我……。我觉得买东西不能只看……，合适的才是最好的。"}],
+ "tuNen":["顾客","促销","降价","减","满","牌子","样式","价钱","商品","种类","仔细","态度","友好","广告"],
+ "cauTruc":[
+  {"ten":"对于……，……","nhan":"对于","vd":"对于购物，我的想法是：合适才买。","khi":"Câu MỞ: nêu quan niệm mua sắm của em."},
+  {"ten":"首先……，然后……","nhan":"首先","vd":"出门以前，我首先想想自己究竟需要什么，然后把要买的东西写下来。","khi":"Kể các bước chuẩn bị theo thứ tự."},
+  {"ten":"究竟……？","nhan":"究竟","vd":"这么多外套，究竟买哪件好呢？","khi":"Diễn tả sự phân vân khi chọn đồ."},
+  {"ten":"……，加上……，所以……","nhan":"加上","vd":"这件外套质量很好，加上正在促销，所以我买了。","khi":"Giải thích lý do quyết định mua."},
+  {"ten":"不光……，还……","nhan":"不光","vd":"买东西时，我不光看质量，还看价格。","khi":"Nói cách em so sánh hàng hóa."}],
+ "checklist":[
+  "Đủ ít nhất 140 chữ Hán chưa?",
+  "Đã có cả hai phần: thói quen mua sắm thường ngày và một lần mua sắm cụ thể ở siêu thị / trung tâm thương mại chưa?",
+  "Đã dùng ít nhất 3 trong 4 điểm ngữ pháp của bài (究竟、首先……然后/其次……、加上、对于) chưa?",
+  "Đã dùng ít nhất 6 từ mới của bài chưa?",
+  "Bài có câu mở nêu thói quen và câu kết rút ra quan niệm (合适的才是最好的) chưa?"],
+ "model":"我平时一般在周末去超市或者商场买东西。对于购物，我的想法是：合适才买。每次出门以前，我首先想想自己究竟需要什么，然后把要买的东西写下来。到了商场，我不光看质量，还看价格，会从各方面仔细比较。上个月，我想买一件外套。有一家店正在举办促销活动，全场五折，加上售货员态度很友好，我差点儿就买了一件很贵的。可是我仔细一看，发现那件外套的样式并不适合我，就没有买。后来，我在另一家店买到了一件价钱不高、质量也很好的外套，穿起来很舒服。我觉得，买东西不能只看广告和低价，选择合适的才是最好的。"
+}
+}

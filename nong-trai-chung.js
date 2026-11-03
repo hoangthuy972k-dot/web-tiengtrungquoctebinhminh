@@ -1137,5 +1137,5 @@ module.exports = function ganHoatDongChung(app, d, h) {
   }));
 
   async function diemThem(lopId) { return LD_DIEM_TT * (await soLdThang(lopId)); }
-  return { initTable, CT, LH, ctLop, coVuLop, danhHieuLop, diemThem, ldCong: ldCongNen };
+  return { initTable, CT, LH, ctLop, coVuLop, danhHieuLop, diemThem, ldCong: ldCongNen, docC, ghiC, khoaC, phamVi };
 };

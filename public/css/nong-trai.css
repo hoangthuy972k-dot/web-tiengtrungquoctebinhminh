@@ -1005,6 +1005,64 @@ body.dang-tham .nt-chuhan-nut { display: none; }
   .nt-chuhan-nut .nt-ch-ic { width: 30px; height: 30px; font-size: 1.05rem; }
   .nt-chuhan-nut .nt-muc-chu b { font-size: 0.8rem; }
 }
+/* ---------- Chuong 动物园: vat nuoi theo nhom ---------- */
+.nt-chuong-tong { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 8px 12px; border: 2.5px solid var(--vien); border-radius: 14px; background: #fff8dc; font-weight: 700; }
+.nt-chuong-tong .doi b { color: #c62828; }
+.nt-chuong-tong .xong b { color: #2e7d32; }
+.nt-chuong-tong .nt-mua { margin-left: auto; }
+.nt-chuong-ds { display: grid; gap: 8px; }
+.nt-chuong { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 2.5px solid var(--vien); border-radius: 14px; background: #fff; }
+.nt-chuong.co-doi { background: #fff4f2; }
+.nt-chuong.co-xong { background: #effae8; }
+.nt-chuong.khoa { background: #f3eef2; opacity: .8; }
+.nt-chuong.khoa .nt-chuong-hinh { filter: grayscale(1); }
+.nt-chuong-hinh { flex: none; width: 64px; height: 64px; }
+.nt-chuong-chu { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.nt-chuong-chu b [lang="zh"] { font-family: 'Noto Serif SC', serif; font-size: 1.15rem; }
+.nt-chuong-chu small img { width: 18px; height: 18px; vertical-align: -4px; }
+.nt-chuong-so { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.nt-chuong-so i { font-style: normal; font-size: 0.82rem; padding: 1px 8px; border-radius: 999px; background: #f1ece6; }
+.nt-chuong-so i.doi { background: #ffdcd6; }
+.nt-chuong-so i.xong { background: #d6f2c9; }
+.nt-chuong-khoa { font-weight: 700; color: #7b5e78; }
+.nt-chuong-nut { display: flex; flex-direction: column; gap: 5px; }
+.nt-mua.phu { background: #fff; }
+@media (max-width: 480px) { .nt-chuong { flex-wrap: wrap; } .nt-chuong-nut { flex-direction: row; width: 100%; } }
+
+/* ---------- Vong quay may man 幸运大转盘 ---------- */
+.nt-vq-nut { top: 176px; background: #fff8dc; }
+.nt-vq-nut .nt-vq-ic { background: #fff; padding: 1px; }
+.nt-vq-nut .nt-vq-ic svg { width: 100%; height: 100%; animation: ntVqXoay 6s linear infinite; }
+.nt-vq-nut.co-luot { animation: ntVqNhun 1.6s ease-in-out infinite; }
+.nt-vq-nut.co-luot .nt-muc-chu small { color: var(--do); font-weight: 800; }
+@keyframes ntVqXoay { to { transform: rotate(360deg); } }
+@keyframes ntVqNhun { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@media (max-width: 420px) { .nt-vq-nut { top: 142px; } }
+.nt-vq { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.nt-vq-tit { margin: 0; font-size: 1.05rem; }
+.nt-vq-tit span { font-family: 'Noto Serif SC', serif; font-weight: 900; color: var(--do); margin-right: 6px; }
+.nt-vq-khung { position: relative; width: min(320px, 82vw); aspect-ratio: 1; }
+.nt-vq-banh { width: 100%; height: 100%; transition: transform 4.2s cubic-bezier(.12, .7, .14, 1); filter: drop-shadow(0 6px 0 rgba(43, 29, 58, .25)); }
+.nt-vq-kim { position: absolute; left: 50%; top: -6px; width: 34px; margin-left: -17px; z-index: 2; filter: drop-shadow(0 3px 0 rgba(43, 29, 58, .3)); }
+.nt-vq-quay {
+  position: absolute; left: 50%; top: 50%; width: 27%; aspect-ratio: 1; transform: translate(-50%, -50%); z-index: 2;
+  border-radius: 50%; border: 4px solid var(--vien); background: var(--do); color: #fff; font: inherit; font-weight: 900;
+  font-size: clamp(0.85rem, 3.4vw, 1.05rem); line-height: 1.05; cursor: pointer; box-shadow: 0 4px 0 var(--vien);
+}
+.nt-vq-quay small { display: block; font-family: 'Noto Serif SC', serif; font-size: 0.75em; opacity: .9; }
+.nt-vq-quay:disabled { background: #a58ca0; cursor: default; }
+.nt-vq-con { font-weight: 800; }
+.nt-vq-con b { color: var(--do); font-size: 1.2rem; }
+.nt-vq-moc { list-style: none; margin: 0; padding: 0; width: 100%; max-width: 380px; display: grid; gap: 6px; text-align: left; }
+.nt-vq-moc li { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border: 2.5px solid var(--vien); border-radius: 12px; background: #fff; }
+.nt-vq-moc li.dat { background: #e9f8e1; }
+.nt-vq-moc li .nt-vq-dau { flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--vien); background: #fff; font-weight: 900; font-size: 0.8rem; }
+.nt-vq-moc li.dat .nt-vq-dau { background: #66bb6a; color: #fff; }
+.nt-vq-moc li em { margin-left: auto; font-style: normal; font-weight: 800; color: var(--do); white-space: nowrap; }
+.nt-vq-qua { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 16px; border: 3px solid var(--vien); border-radius: 16px; background: #fff8dc; animation: ntVqHien .5s ease-out; }
+.nt-vq-qua img { width: 64px; height: 64px; }
+.nt-vq-qua .zh { font-family: 'Noto Serif SC', serif; font-weight: 900; font-size: 1.3rem; color: var(--do); }
+@keyframes ntVqHien { from { transform: scale(.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 .nt-viec-ch { background: #fff1f1; }
 .nt-viec-ch .nt-ch-ic { width: 44px; height: 44px; font-size: 1.5rem; border-radius: 12px; }
 

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs>
+<g id="khoaitay-l"><ellipse cx="-14" cy="-10" rx="8" ry="5.5" transform="rotate(-25 -14 -10)"/><ellipse cx="14" cy="-10" rx="8" ry="5.5" transform="rotate(25 14 -10)"/><ellipse cx="-8" cy="-21" rx="7.5" ry="5.5" transform="rotate(-55 -8 -21)"/><ellipse cx="8" cy="-21" rx="7.5" ry="5.5" transform="rotate(55 8 -21)"/><ellipse cy="-27" rx="5.5" ry="7.5"/><ellipse cy="-13" rx="9.5" ry="8.5"/><ellipse cy="-5" rx="10" ry="4.5"/></g>
+<g id="khoaitay-f" stroke="#2b1d3a" stroke-width="1.2"><g fill="#f3ecff"><circle cy="-2.4" r="2.2"/><circle cx="2.3" cy="-.7" r="2.2"/><circle cx="1.4" cy="2" r="2.2"/><circle cx="-1.4" cy="2" r="2.2"/><circle cx="-2.3" cy="-.7" r="2.2"/></g><circle r="1.3" fill="#ffd23f"/></g>
+<g id="khoaitay-p">
+<ellipse cy="2" rx="18" ry="3.4" fill="#6b3f22"/>
+<use href="#khoaitay-l" fill="#2b1d3a" stroke="#2b1d3a" stroke-width="5.5"/>
+<use href="#khoaitay-l" fill="#4fa83d"/>
+<g fill="#6cc552"><ellipse cx="-15" cy="-11" rx="5" ry="3" transform="rotate(-25 -15 -11)"/><ellipse cx="15" cy="-11" rx="5" ry="3" transform="rotate(25 15 -11)"/><ellipse cx="-9" cy="-22" rx="4.5" ry="3" transform="rotate(-55 -9 -22)"/><ellipse cx="9" cy="-22" rx="4.5" ry="3" transform="rotate(55 9 -22)"/><ellipse cy="-29" rx="3" ry="4.6"/></g>
+<path d="M-19-10Q-16-13-12-14M-12-24Q-11-27-8-28" stroke="#a5e07f" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+<g stroke="#2b1d3a" stroke-width="2.5" stroke-linejoin="round">
+<path d="M-19 4Q-20-6-11-7Q-2-7-2 4Z" fill="#d9a865"/>
+<path d="M3 4Q3-5 11-5.5Q19-5 18 4Z" fill="#c99456"/>
+</g>
+<path d="M-16-2Q-15-4-12-4.5M7-1.5Q8.5-3.5 11-3.6" stroke="#f0cf94" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+<g fill="#8a5a2b"><circle cx="-7" cy="-2.5" r=".9"/><circle cx="14" cy="-1" r=".9"/></g>
+<path d="M-20.5 5.5Q-11 0-1.5 5.5ZM2 5.5Q11 1 19.5 5.5Z" fill="#8a5430"/>
+<use href="#khoaitay-f" x="-6" y="-31"/>
+<use href="#khoaitay-f" x="6" y="-30"/>
+</g></defs>
+<ellipse cx="50" cy="86" rx="40" ry="7" fill="#000" opacity=".15"/>
+<rect x="11" y="47" width="78" height="38" rx="13" fill="#8a5430" stroke="#2b1d3a" stroke-width="3"/>
+<rect x="12.5" y="48.5" width="75" height="28" rx="11" fill="#a8693f"/>
+<path d="M20 59H80M19 68H81" stroke="#8a5430" stroke-width="3" stroke-linecap="round"/>
+<path d="M22 56H48M24 65H40" stroke="#c98a5a" stroke-width="2" stroke-linecap="round"/>
+<use href="#khoaitay-p" transform="translate(32 60)"/>
+<use href="#khoaitay-p" transform="translate(68 60)"/>
+<use href="#khoaitay-p" transform="translate(50 73) scale(1.1)"/>
+</svg>

@@ -18,6 +18,11 @@ const CAY = {
   dautay: { zh: '草莓', py: 'cǎoméi', vn: 'Dâu tây', lv: 4, gia: 15, phut: 180, ban: 25, xp: 6 },
   huongduong: { zh: '向日葵', py: 'xiàngrìkuí', vn: 'Hướng dương', lv: 5, gia: 22, phut: 300, ban: 36, xp: 8 },
   bido: { zh: '南瓜', py: 'nánguā', vn: 'Bí ngô', lv: 6, gia: 30, phut: 480, ban: 52, xp: 10 },
+  // them 2026-11-03 (hoc sinh xin da dang thuc vat hon)
+  cachua: { zh: '番茄', py: 'fānqié', vn: 'Cà chua', lv: 3, gia: 12, phut: 120, ban: 20, xp: 5 },
+  khoaitay: { zh: '土豆', py: 'tǔdòu', vn: 'Khoai tây', lv: 5, gia: 18, phut: 240, ban: 30, xp: 7 },
+  duahau: { zh: '西瓜', py: 'xīguā', vn: 'Dưa hấu', lv: 7, gia: 38, phut: 600, ban: 66, xp: 12 },
+  nho: { zh: '葡萄', py: 'pútao', vn: 'Nho', lv: 8, gia: 46, phut: 720, ban: 80, xp: 14 },
 };
 const THU_MOI_O = 2; // moi o dat thu duoc 2 nong san
 const XU_MOI_SAO = 1; // doi 1 sao hoc tap = 1 xu nong trai
@@ -25,6 +30,24 @@ const XU_MOI_SAO = 1; // doi 1 sao hoc tap = 1 xu nong trai
 // Ruong go con cong them theo chuoi ngay hoc lien tiep (toi da +10 xu).
 // Thu thach chu Han: 10 cau ve chu Han cua bai em dang hoc, dung tu 8 cau -> hop qua bi an (toi da 3 hop / ngay)
 const CH_SO = 10, CH_DAT = 8, CH_QUA_NGAY = 3;
+// Vong quay may man 幸运大转盘 (y tuong cua co giao): luot quay moi ngay theo viec hoc —
+// dang nhap hoc +1, hoc tu 30 sao +1, hoc tu 80 sao +2 (cong don, toi da 4 luot / ngay; luot khong cong sang hom sau).
+// O quay do may chu chon theo trong so (w); "Thêm 1 lượt" tra lai luot vua quay.
+const VQ_MOC = [
+  { sao: 0, luot: 1, ten: 'Đăng nhập học hôm nay' },
+  { sao: 30, luot: 1, ten: 'Học từ 30 sao hôm nay' },
+  { sao: 80, luot: 2, ten: 'Học từ 80 sao hôm nay' },
+];
+const VQ_O = [
+  { loai: 'xu', n: 5, w: 20, zh: '金币', ten: '5 xu' },
+  { loai: 'sp', n: 3, w: 16, zh: '农产品', ten: 'Nông sản ×3', nhan: 'Nông sản' },
+  { loai: 'xu', n: 10, w: 18, zh: '金币', ten: '10 xu' },
+  { loai: 'tt', n: 1, w: 10, zh: '装饰', ten: 'Đồ trang trí', nhan: 'Trang trí' },
+  { loai: 'xu', n: 20, w: 12, zh: '金币', ten: '20 xu' },
+  { loai: 'luot', n: 1, w: 8, zh: '再来一次', ten: 'Thêm 1 lượt', nhan: '+1 lượt' },
+  { loai: 'xu', n: 50, w: 5, zh: '大奖', ten: '50 xu' },
+  { loai: 'con', n: 1, w: 3, zh: '动物', ten: 'Vật nuôi' },
+];
 const RUONG = [
   { sao: 20, xu: 15, xp: 3, ten: 'Rương gỗ' },
   { sao: 50, xu: 30, xp: 6, ten: 'Rương bạc' },
@@ -37,6 +60,11 @@ const CON = {
   bo: { zh: '牛', py: 'niú', vn: 'Bò', lv: 3, sao: 45, sp: 'sua', phut: 120, xp: 5 },
   cuu: { zh: '羊', py: 'yáng', vn: 'Cừu', lv: 4, sao: 60, sp: 'len', phut: 240, xp: 7 },
   ong: { zh: '蜜蜂', py: 'mìfēng', vn: 'Tổ ong', lv: 5, sao: 80, sp: 'mat', phut: 360, xp: 9 },
+  // them 2026-11-03 (hoc sinh xin heo, su tu, ho, khung long — dat hon cac con cu)
+  heo: { zh: '猪', py: 'zhū', vn: 'Heo', lv: 6, sao: 120, sp: 'songlu', phut: 480, xp: 12 },
+  sutu: { zh: '狮子', py: 'shīzi', vn: 'Sư tử', lv: 8, sao: 200, sp: 'menpiao', phut: 600, xp: 16 },
+  ho: { zh: '老虎', py: 'lǎohǔ', vn: 'Hổ', lv: 9, sao: 240, sp: 'jinianpin', phut: 720, xp: 18 },
+  khunglong: { zh: '恐龙', py: 'kǒnglóng', vn: 'Khủng long', lv: 12, sao: 400, sp: 'kongdan', phut: 960, xp: 25 },
 };
 const CON_TOI_DA = 6; // moi loai toi da 6 con
 
@@ -47,6 +75,10 @@ const SP = {
   sua: { zh: '牛奶', py: 'niúnǎi', vn: 'Sữa bò', ban: 26 },
   len: { zh: '羊毛', py: 'yángmáo', vn: 'Len', ban: 42 },
   mat: { zh: '蜂蜜', py: 'fēngmì', vn: 'Mật ong', ban: 60 },
+  songlu: { zh: '松露', py: 'sōnglù', vn: 'Nấm truffle (heo đánh hơi tìm được)', ban: 95 },
+  menpiao: { zh: '门票', py: 'ménpiào', vn: 'Vé xem sư tử', ban: 150 },
+  jinianpin: { zh: '纪念品', py: 'jìniànpǐn', vn: 'Quà lưu niệm hổ', ban: 180 },
+  kongdan: { zh: '恐龙蛋', py: 'kǒnglóng dàn', vn: 'Trứng khủng long', ban: 300 },
 };
 Object.keys(CAY).forEach((k) => { SP[k] = { zh: CAY[k].zh, py: CAY[k].py, vn: CAY[k].vn, ban: CAY[k].ban }; });
 // Bep: mon an can nhieu loai nong san (mot nong trai thuong khong tu du -> mua cua ban). hinh = tranh 3D /images/wu/<ma>.png
@@ -66,7 +98,7 @@ Object.keys(MON).forEach((k) => {
   SP[k] = { zh: m.zh, py: m.py, vn: m.vn, ban: Math.round(goc * 1.6), hinh: m.hinh, mon: 1 };
 });
 // Luong tu khi goi ten hang bang tieng Trung (don dac biet): 三个鸡蛋、两瓶牛奶…
-const LUONG = { lua: '斤', carot: '根', ngo: '根', caibap: '棵', dautay: '个', huongduong: '朵', bido: '个', trung: '个', trungvit: '个',
+const LUONG = { lua: '斤', carot: '根', ngo: '根', caibap: '棵', dautay: '个', huongduong: '朵', bido: '个', cachua: '个', khoaitay: '个', duahau: '个', nho: '串', songlu: '个', menpiao: '张', jinianpin: '个', kongdan: '个', trung: '个', trungvit: '个',
   sua: '瓶', len: '斤', mat: '瓶', com: '碗', 'nuoc-carot': '杯', 'com-rang': '份', 'chao-bi': '碗', 'canh-ngo': '碗', 'sui-cao': '盘', 'sua-mat': '杯', 'banh-dau': '个' };
 const SO_ZH = ['', '一', '两', '三', '四', '五'];
 // Bang "Can mua" o cho cong dong: moi em toi da 2 tin, xu giu lai khi dang, qua 2 ngay tu huy tra xu
@@ -83,7 +115,7 @@ const MAC_CA = [
 const VN_MAC_CA = { '这个多少钱？': 'Cái này bao nhiêu tiền?', '这个怎么卖？': 'Cái này bán thế nào?', '太贵了，便宜一点儿吧！': 'Đắt quá, rẻ chút đi!',
   '能便宜一点儿吗？': 'Rẻ chút được không?', '好，我买了。': 'Được, tôi mua.', '好的，我要这个。': 'Được, tôi lấy cái này.' };
 const SO_PY = ['', 'yì', 'liǎng', 'sān', 'sì', 'wǔ'];
-const LUONG_PY = { '斤': 'jīn', '根': 'gēn', '棵': 'kē', '个': 'ge', '朵': 'duǒ', '瓶': 'píng', '碗': 'wǎn', '杯': 'bēi', '份': 'fèn', '盘': 'pán' };
+const LUONG_PY = { '斤': 'jīn', '根': 'gēn', '棵': 'kē', '个': 'ge', '朵': 'duǒ', '瓶': 'píng', '碗': 'wǎn', '杯': 'bēi', '份': 'fèn', '盘': 'pán', '串': 'chuàn', '张': 'zhāng' };
 
 // Do trang tri: tra bang sao hoac xu; dep = diem "dep" cua nong trai; w = 2 la vat 2x2
 const TT = {
@@ -529,6 +561,12 @@ module.exports = function ganNongTrai(app, d) {
   function daBanHomNay(f) { return f.banNgay && f.banNgay.d === d.vnDayKey() ? f.banNgay.xu : 0; }
   function soThe(f) { return Object.keys(f.the || {}).filter((z) => f.the[z][0] >= THE_DUNG).length; }
   function ruongDaMo(f) { return f.ruong && f.ruong.d === d.vnDayKey() ? f.ruong.ds : []; }
+  // Vong quay: so luot co / da quay / con lai hom nay
+  function vongQuay(f, homNay) {
+    const v = f.vq && f.vq.d === d.vnDayKey() ? f.vq : { n: 0, them: 0 };
+    const co = VQ_MOC.reduce((a, m) => a + (homNay >= m.sao ? m.luot : 0), 0) + (v.them || 0);
+    return { da: v.n || 0, co, con: Math.max(0, co - (v.n || 0)), moc: VQ_MOC.map((m) => Object.assign({ dat: homNay >= m.sao }, m)) };
+  }
   async function tomThiTruong(userId) {
     try {
       const tt = await thiTruong(userId);
@@ -545,6 +583,7 @@ module.exports = function ganNongTrai(app, d) {
       now: Date.now(),
       sao: Math.max(0, (sv.total || 0) - (f.saoTieu || 0)),
       hoc: { homNay: sh.homNay, tuan: sh.tuan, ruong: ruongDaMo(f), tong: sv.total || 0 },
+      vq: vongQuay(f, sh.homNay),
       ban: { da: daBanHomNay(f), toiDa: BAN_CO_BAN + BAN_MOI_SAO * sh.homNay },
       the: soThe(f), theMoc: f.theMoc || 0,
       xu: f.xu, xp: f.xp, lv, xpLv: xpCuaLv(lv), xpSau: xpCuaLv(lv + 1),
@@ -724,7 +763,7 @@ module.exports = function ganNongTrai(app, d) {
       o.h = now + CON[o.k].phut * PHUT * (taiDang(f, 'ret') ? 2 : 1);
       them.xp += 2; // vua tra loi dung 3 cau on tu
     } else if (a === 'nhat') {
-      const ds = b.id === 'het' ? f.o.filter((o) => CON[o.k] && o.h && o.h <= now) : [timO()];
+      const ds = b.id === 'het' ? f.o.filter((o) => CON[o.k] && o.h && o.h <= now && (!b.k || o.k === b.k)) : [timO()];
       if (!ds.length) throw loi('Chưa có sản phẩm.');
       ds.forEach((o) => {
         if (!CON[o.k] || !o.h || o.h > now) throw loi('Chưa có sản phẩm.');
@@ -907,6 +946,31 @@ module.exports = function ganNongTrai(app, d) {
       await tieuSao(n);
       f.xu += n * XU_MOI_SAO;
       them.xu += n * XU_MOI_SAO;
+    } else if (a === 'quay') {
+      // Vong quay may man: may chu chon o theo trong so, roi phat qua
+      const homNay = saoHoc(await d.loadStar(userId)).homNay;
+      const vq = vongQuay(f, homNay);
+      if (vq.con <= 0) throw loi('Hết lượt quay hôm nay — học thêm để có lượt mới (30 sao +1, 80 sao +2)!');
+      const tong = VQ_O.reduce((a, o) => a + o.w, 0);
+      let r = Math.random() * tong, i = 0;
+      while (i < VQ_O.length - 1 && r >= VQ_O[i].w) { r -= VQ_O[i].w; i++; }
+      const o = VQ_O[i], chon = (ds) => ds[Math.floor(Math.random() * ds.length)];
+      const v = f.vq && f.vq.d === ngay ? f.vq : { d: ngay, n: 0, them: 0 };
+      v.n += 1;
+      let qua = { loai: o.loai, k: o.loai, n: o.n };
+      if (o.loai === 'xu') { f.xu += o.n; them.xu += o.n; }
+      else if (o.loai === 'luot') { v.them = (v.them || 0) + 1; }
+      else if (o.loai === 'sp') {
+        const k = chon(Object.keys(SP).filter((x) => CAY[x] ? CAY[x].lv <= lv + 1 : !MON[x]));
+        congSp(k, o.n); qua = { loai: 'sp', k, n: o.n };
+      } else {
+        const con = o.loai === 'con' ? Object.keys(CON).filter((k) => CON[k].lv <= lv + 1 && f.o.filter((x) => x.k === k).length + (f.tui[k] || 0) < CON_TOI_DA) : [];
+        const k = con.length ? chon(con) : chon(Object.keys(TT).filter((x) => TT[x].lv <= lv + 1 && !TT[x].doc));
+        f.tui[k] = (f.tui[k] || 0) + 1;
+        qua = { loai: con.length ? 'con' : 'tt', k, n: 1 };
+      }
+      f.vq = { d: ngay, n: v.n, them: v.them || 0 };
+      them.quay = { o: i, qua };
     } else {
       throw loi('Hành động không hợp lệ.');
     }
@@ -918,7 +982,7 @@ module.exports = function ganNongTrai(app, d) {
     return { ok: true, them, lenCap: st.lv > lvCu ? st.lv : 0, st };
   }
 
-  const CATALOG = { CAN_TOI_DA, CAN_SL_TOI_DA, MON, LUONG, LUONG_PY, CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO, RUONG,
+  const CATALOG = { VQ_O, VQ_MOC, CAN_TOI_DA, CAN_SL_TOI_DA, MON, LUONG, LUONG_PY, CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO, RUONG,
     MOC_THE, HOC_VI, THE_DUNG, BAN_CO_BAN, BAN_MOI_SAO, TAI, TAI_GIUP_XU,
     TIN_TU, TIN_MAU, TIN_HOI, TIN_BAN_NGAY, QUA_NGAY };
 

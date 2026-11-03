@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="86" rx="32" ry="5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="25" y="49" width="50" height="36" rx="3" fill="#ffa03f"/>
+<path d="M64 50.5H73.5V83.5H64Z" fill="#ec7a22" stroke="none"/>
+<path d="M26.5 58Q32 59 34 63M26.5 71Q31 72 33 76M73.5 60Q68 61 66 65M73.5 73Q69 74 67 78" fill="none" stroke="#3b2a35" stroke-width="3.2"/>
+<rect x="25" y="49" width="50" height="36" rx="3" fill="none"/>
+<rect x="21" y="38" width="58" height="13" rx="3" fill="#ffb35c"/>
+<path d="M30 39.5Q33 44 31 49.5M69 39.5Q66 44 68 49.5" fill="none" stroke="#3b2a35" stroke-width="3"/>
+<rect x="21" y="38" width="58" height="13" rx="3" fill="none"/>
+<rect x="44.5" y="38" width="11" height="47" fill="#e53935"/>
+<path d="M50 38Q34 22 31 31Q30 40 50 38ZM50 38Q66 22 69 31Q70 40 50 38Z" fill="#e53935"/>
+<path d="M50 38L42 46M50 38L58 46" fill="none"/>
+<circle cx="50" cy="37" r="4.5" fill="#c62828"/>
+</g>
+<path d="M47.5 53V81M36 30Q40 30 44 34" fill="none" stroke="#ff8a80" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="29" cy="42" rx="3.5" ry="1.4" fill="#ffe0b2"/>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs>
+<g id="cachua-t" stroke="#2b1d3a" stroke-linejoin="round" stroke-linecap="round">
+<circle r="8" fill="#e8392f" stroke-width="2.6"/>
+<path d="M2 5.5Q5.5 4 6-.5" fill="none" stroke="#b71c1c" stroke-width="2"/>
+<path d="M-5-.5Q-5-4.2-2-5.5" fill="none" stroke="#ff8a80" stroke-width="2"/>
+<path d="M0-10.5L1.5-7.8L4.8-8.4L2.8-6L3.2-4L0-5.3L-3.2-4L-2.8-6L-4.8-8.4L-1.5-7.8Z" fill="#5cb83f" stroke-width="1.4"/>
+</g>
+<g id="cachua-p" stroke="#2b1d3a" stroke-linejoin="round" stroke-linecap="round">
+<ellipse cy="1" rx="13" ry="3" fill="#6b3f22" stroke="none"/>
+<path d="M10 2V-61" stroke-width="7.5"/>
+<path d="M10 2V-61" stroke="#d29a5c" stroke-width="3.5"/>
+<path d="M0 1Q-6-14 0-28Q6-40 1-50" fill="none" stroke-width="8"/>
+<path d="M0 1Q-6-14 0-28Q6-40 1-50" fill="none" stroke="#5aa845" stroke-width="4"/>
+<g stroke-width="2.6">
+<path d="M-2-10Q-12-20-22-15Q-26-8-19-4Q-10-2-2-10Z" fill="#6cbf4f"/>
+<path d="M2-24Q12-34 22-28Q26-20 18-17Q9-16 2-24Z" fill="#5aa845"/>
+<path d="M0-38Q-10-48-19-42Q-21-35-14-33Q-6-32 0-38Z" fill="#7cc456"/>
+<path d="M1-50Q-6-58-12-53Q-7-47 1-50Z" fill="#6cbf4f"/>
+<path d="M1-50Q6-59 13-56Q10-49 1-50Z" fill="#5aa845"/>
+</g>
+<path d="M-6-10Q-13-13-19-11M6-24Q13-26 19-24M-4-38Q-10-40-15-39" fill="none" stroke="#a5e07f" stroke-width="1.5"/>
+<use href="#cachua-t" x="-10" y="-24"/>
+<use href="#cachua-t" x="10" y="-9"/>
+<use href="#cachua-t" transform="translate(9 -41) scale(.8)"/>
+</g></defs>
+<ellipse cx="50" cy="86" rx="40" ry="7" fill="#000" opacity=".15"/>
+<rect x="11" y="47" width="78" height="38" rx="13" fill="#8a5430" stroke="#2b1d3a" stroke-width="3"/>
+<rect x="12.5" y="48.5" width="75" height="28" rx="11" fill="#a8693f"/>
+<path d="M20 59H80M19 68H81" stroke="#8a5430" stroke-width="3" stroke-linecap="round"/>
+<path d="M22 56H48M24 65H40" stroke="#c98a5a" stroke-width="2" stroke-linecap="round"/>
+<use href="#cachua-p" transform="translate(30 62) scale(.9)"/>
+<use href="#cachua-p" transform="translate(68 62) scale(.9)"/>
+<g stroke="#2b1d3a" stroke-width="2.4" stroke-linejoin="round"><path d="M50 76Q40 66 30 71Q38 80 50 76Z" fill="#6cbf4f"/><path d="M50 76Q60 66 70 71Q62 80 50 76Z" fill="#5aa845"/></g>
+<use href="#cachua-t" x="44" y="74"/>
+<use href="#cachua-t" x="57" y="75"/>
+</svg>

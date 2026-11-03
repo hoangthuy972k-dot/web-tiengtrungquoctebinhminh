@@ -89,6 +89,16 @@
     return (m && m[url]) || 0;
   }
 
+  // Bai co "Bai tap SGK" khong: ghi lai khi tai du lieu bai (hyv_game_sgk); chua tai thi doan theo cap
+  // (cap co dang 'sgk' trong LEVEL_GAME_TYPES). Co giao: phan Bai tap SGK la BAT BUOC o buoc Luyen tap.
+  function coBaiTapSgk(lesson) {
+    var url = (lesson && lesson.fullPageUrl) || '';
+    var m = readJSON('hyv_game_sgk', {}) || {};
+    if (url in m) return !!m[url];
+    var cap = (url.match(/\/lessons\/([a-z0-9]+)-bai-\d+\.html$/) || [])[1] || 'hsk2';
+    return (LEVEL_GAME_TYPES[cap] || []).indexOf('sgk') >= 0;
+  }
+
   // Buoc "Luyen tap" xong khi: lam it nhat 2 dang bai, tong so cau dung (lan tot nhat
   // moi dang) tu 70% tro len. Truoc day chi can tra loi 1 cau la duoc danh dau ✓.
   function gameStepStatus(lesson) {
@@ -107,7 +117,11 @@
     var lyDo = [];
     if (loai < can) lyDo.push('làm thêm ' + (can - loai) + ' dạng bài nữa');
     if (!datPct) lyDo.push('cần đúng từ 70% (hiện ' + pct + '%)');
-    return { tried: loai > 0, loai: loai, can: can, pct: pct, done: loai >= can && datPct, lyDo: lyDo.join(', ') };
+    // Bai tap SGK bat buoc (neu bai co): phai lam xong phan nay
+    var canSgk = coBaiTapSgk(lesson), daSgk = !!(g.sgk && g.sgk.total > 0);
+    if (canSgk && !daSgk) lyDo.push('làm phần Bài tập SGK (bắt buộc)');
+    return { tried: loai > 0, loai: loai, can: can, pct: pct, canSgk: canSgk, daSgk: daSgk,
+      done: loai >= can && datPct && (!canSgk || daSgk), lyDo: lyDo.join(', ') };
   }
 
   function isHubTileDone(lesson, tabId) {
@@ -3023,7 +3037,7 @@
           return '<i class="' + (pathStepDone(pathState.lesson, s) ? 'is-done' : '') + (i === pathState.idx ? ' is-here' : '') + '"></i>';
         }).join('') + '</span>' +
         (done ? '' : '<span class="pb-hint">' + (pathStepRetry(pathState.lesson, step) ||
-          (step.key === 'final' ? 'Đúng từ 70% để qua bài' : step.key === 'game' ? 'Làm ít nhất 2 dạng, đúng từ 70% để được ✓' : last ? '' : 'Làm xong bước này để được đánh dấu ✓')) + '</span>') +
+          (step.key === 'final' ? 'Đúng từ 70% để qua bài' : step.key === 'game' ? 'Làm ít nhất 2 dạng' + (coBaiTapSgk(pathState.lesson) ? ' (bắt buộc có Bài tập SGK)' : '') + ', đúng từ 70% để được ✓' : last ? '' : 'Làm xong bước này để được đánh dấu ✓')) + '</span>') +
       '</div>' +
       '<div class="pb-actions">' +
         '<button type="button" class="pb-map" id="pbMap">Lộ trình</button>' +
@@ -14837,6 +14851,8 @@
       var nLoai = (LEVEL_GAME_TYPES[levelId] || []).filter(function (t) { return (data[t] || []).length; }).length;
       var mLoai = readJSON('hyv_game_types', {}) || {};
       if (nLoai && mLoai[lesson.fullPageUrl] !== nLoai) { mLoai[lesson.fullPageUrl] = nLoai; writeJSON('hyv_game_types', mLoai); }
+      var mSgk = readJSON('hyv_game_sgk', {}) || {}, coSgk = (LEVEL_GAME_TYPES[levelId] || []).indexOf('sgk') >= 0 && (data.sgk || []).length > 0;
+      if (mSgk[lesson.fullPageUrl] !== coSgk) { mSgk[lesson.fullPageUrl] = coSgk; writeJSON('hyv_game_sgk', mSgk); }
       var savedGame = rsGet('game:mode');
       if (savedGame && gpCacDang().indexOf(savedGame) >= 0 && (data[savedGame] || []).length) gpMode = savedGame;
       renderGameScreen();
@@ -14867,7 +14883,8 @@
     var gRaw = currentHubLesson ? (getLessonScores(currentHubLesson).game || {}) : {};
     var rule = !gs ? '' : gs.done
       ? '<p class="gp-rule is-done">✓ Đã qua bước Luyện tập (' + gs.loai + ' dạng bài · đúng ' + gs.pct + '%).</p>'
-      : '<p class="gp-rule">Để qua bước Luyện tập: làm ít nhất <b>' + gs.can + ' dạng bài</b>, tổng số câu đúng từ <b>70%</b> trở lên.' +
+      : '<p class="gp-rule">Để qua bước Luyện tập: làm ít nhất <b>' + gs.can + ' dạng bài</b>' +
+          (gs.canSgk ? ', trong đó <b>bắt buộc có Bài tập SGK</b>' + (gs.daSgk ? ' (✓ đã làm)' : '') : '') + ', tổng số câu đúng từ <b>70%</b> trở lên.' +
           (gs.tried ? ' Hiện tại: ' + gs.loai + ' dạng · đúng ' + gs.pct + '%.' : '') + '</p>';
     wrap.innerHTML = rule + '<div class="game-picker-grid">' + types.map(function (type) {
       var def = type === 'errfix' ? errfixDef() : GAME_TYPE_DEFS[type];
@@ -14885,6 +14902,7 @@
           '<div class="game-picker-title">' + def.label + '</div>' +
           '<div class="game-picker-desc">' + (count ? def.desc : 'Chưa có nội dung') + '</div>' +
           '<div class="game-picker-tags">' +
+            (type === 'sgk' && count ? '<span class="game-picker-bb">Bắt buộc</span>' : '') +
             (count ? '<span class="game-picker-so">' + count + ' câu</span>' : '') +
             (best !== null ? '<span class="game-picker-best' + (best >= 0.7 ? ' is-ok' : '') + '">' + (best >= 0.7 ? '✓ ' : '') + 'Tốt nhất ' + Math.round(best * 100) + '%</span>'
               : count ? '<span class="game-picker-moi">Chưa làm</span>' : '') +

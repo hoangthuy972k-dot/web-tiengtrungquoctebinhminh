@@ -43,3 +43,13 @@ Giống Bài 1: `so, zh, py, vn, chuDe, icon, mucTieu[3 mục tiêu của sách,
 ## Kiểm tra
 
 `node tools/hsk4v3/gan.js --kiem N` (không ghi file) phải báo **Không có lỗi** (đủ ảnh, đủ phân tích chữ). Không chạy `gan.js` không có `--kiem` (người điều phối chạy một lần cho tất cả). Không sửa file nào ngoài `tools/hsk4v3/bai-N/`, `public/images/hsk4v3/bai-N/` và thêm khoá vào `chu-moi.json`. Không commit.
+
+## Quyển 4下 (bài 11–20) — khác 4上
+
+- PDF: `C:/Users/Admin/Desktop/HSK 3.0/新HSK教程4下 trunghoctiengtrung.pdf` (137 trang). Đã render: `<SP>/h4/sgk2/pNNN.jpg` (scale 1.6). **Trang sách N = PDF trang N+4** (sách 001 = PDF p5). Render độ phân giải cao: `node render.mjs "<pdf 4下>" hi2 <tu> <den> 2.6` (thư mục `hi2`, `xhi2` cho mặt nhân vật — KHÔNG dùng `hi`/`xhi` của 4上 vì trùng số trang).
+- Bài bắt đầu (trang PDF): 11→p5, 12→p17, 13→p29, 14→p42, 15→p54, 16→p66, 17→p78, 18→p90, 19→p103, 20→p115 (bài 20 hết p127; p128–137 là bảng từ).
+- **Chưa có file đáp án 4下** → tự giải mọi bài tập thật cẩn thận (đọc kỹ ngữ cảnh), phần `sgk` để `"dapSgk": false` (hiện “Đáp án tham khảo”), và trong báo cáo liệt kê đáp án từng câu để cô giáo duyệt. Câu nghe (preQuiz) cũng tự giải theo nội dung bài khoá.
+- **Chưa có audio 4下** — không ảnh hưởng việc soạn.
+- Ngữ pháp 4下 theo mục lục (để ôn xoáy ốc giữa các bài 11–20):
+  11 即使……也…… · 就是……也…… · 不是……而是…… · 就是说 ‖ 12 不怎么 · 双重否定 · 无论……都/也…… · 为了……而…… ‖ 13 怎么都/也+不/没…… · 一+量词+比+一+量词 · 大约/左右 · 作为 ‖ 14 究竟 · 首先……然后/其次…… · 加上 · 对于 ‖ 15 再也不/没…… · 由 · 把+宾+动(+一/了)+动 · A不如B(+形) ‖ 16 把+宾+动+了 · ……，并且…… · 说不定 · 却 ‖ 17 你×你的吧 · 一A一B · 主语+表扬/批评+宾1+动+宾2 · 连……也/都……，……更…… ‖ 18 数+形+量 · 主语+让/叫+宾+动+其他 · 到底 · ……，然而…… ‖ 19 不是……就是…… · 动+一×是一× · 把+宾+动+动量补语 · 把+宾+动+时量补语 ‖ 20 难道 · 反问句 (đại từ nghi vấn) · ×就×(点儿)吧 · 要是……，(就)……，否则……
+- Ôn xoáy ốc: dùng cả ngữ pháp bài 1–10 (xem `tools/hsk4v3/bai-*/bai.json` → nguphap[].ten) và các bài 4下 trước bài mình.

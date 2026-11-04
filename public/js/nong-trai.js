@@ -154,6 +154,28 @@
     // goi NGAY (dong bo) de giu "luot cham" cua em — iPhone moi cho doc
     docTrinhDuyet(zh, function () { docMayChu(zh, loi); });
   }
+  // Doc co kiem tra (cho cau nghe): ok(true) neu may that su phat tieng. Nhieu dien thoai co giong Trung trong danh sach
+  // nhung khong co du lieu am thanh / chan doc khi chua cham -> im lang ma khong bao loi; nhin su kien start/end de biet.
+  function docKiem(zh, ok) {
+    var xong = false;
+    function ket(v) { if (xong) return; xong = true; ok(v); }
+    if (!window.speechSynthesis || coGiongZh() === false) { ket(false); return; }
+    try {
+      speechSynthesis.cancel();
+      if (speechSynthesis.resume) speechSynthesis.resume();
+      var u = new SpeechSynthesisUtterance(zh), bd = 0;
+      u.lang = 'zh-CN'; u.rate = 0.85;
+      if (giongZh) u.voice = giongZh;
+      u.onstart = function () { bd = Date.now(); };
+      u.onend = function () { ket(bd > 0 && Date.now() - bd > 150); };
+      u.onerror = function (e) { if (e && (e.error === 'interrupted' || e.error === 'canceled')) return; ket(false); };
+      speechSynthesis.speak(u);
+      setTimeout(function () { ket(bd > 0 || speechSynthesis.speaking); }, 2500);
+    } catch (e) { ket(false); }
+  }
+  // may nay da thu ma khong phat duoc tieng -> khong xin cau nghe nua
+  function mayKhongNghe() { try { return localStorage.getItem('hyv_nt_khong_nghe') === '1'; } catch (e) { return false; } }
+  function xinCauNghe() { return coGiongZh() === true && !mayKhongNghe(); }
   // May chac chan khong doc duoc (khong co giong Trung, may chu cung khong co giong) -> bo kieu cau nghe
   function nghiDuoc() { return coGiongZh() !== false || !ttsHong; }
 
@@ -1665,7 +1687,7 @@
     $('#ntBstXem', than).addEventListener('click', function () { CH.xemBst = true; veBang(); });
     $('#ntChBatDau', than).addEventListener('click', function () {
       var b = this; b.disabled = true;
-      goi('/api/farm/chuhan/moi', { nghe: coGiongZh() === true }).then(function (r) {
+      goi('/api/farm/chuhan/moi', { nghe: xinCauNghe() }).then(function (r) {
         CH.de = r.dang; CH.i = 0; CH.conQua = r.conQua; CH.ketThuc = null;
         veBang();
       }, function (e) { b.disabled = false; bao(e.message, 'loi'); });
@@ -4262,7 +4284,7 @@
     tieng('mua');
     veHoCau();
     var batDau = Date.now();
-    goi('/api/farm/hocau/tha', { id: c.id, nghe: coGiongZh() === true }).then(function (r) {
+    goi('/api/farm/hocau/tha', { id: c.id, nghe: xinCauNghe() }).then(function (r) {
       nhanHo(r.ho);
       // cho phao chim mot chut roi moi hien cau hoi (may chu cung cho 1,5 giay)
       setTimeout(function () {
@@ -4603,7 +4625,7 @@
   // cau nghe / viet dung chung cho thu thach chu Han va ho cau: tra ve html de bai
   function deBaiDacBiet(q) {
     var h = q.hoi;
-    if (q.k === 'nghe') return '<button type="button" class="nt-nghe" data-nghe-lai>🔊 Nghe lại</button>';
+    if (q.k === 'nghe') return '<button type="button" class="nt-nghe" data-nghe-lai>🔊 Nghe lại</button><p class="nt-nghe-tb" data-nghe-tb aria-live="polite"></p>';
     if (q.k === 'viet') return '<div class="nt-ch-zh" lang="zh">' + esc(h.tu).replace('＿', '<span class="nt-ch-o">？</span>') + '</div><div class="nt-ch-goi">' + esc(h.py) + ' — ' + esc(h.vn) + '</div>' +
       '<div class="nt-viet-o" id="ntVietO"></div><p class="nt-viet-tb" id="ntVietTb">✏️ Viết chữ còn thiếu vào ô — sai 3 nét sẽ hiện gợi ý</p>';
     return '';
@@ -4611,10 +4633,26 @@
   // sau khi ve cau: doc cau nghe, tao o viet chu; xong(chon) goi lai luong tra loi cu
   function ganDacBiet(q, than, xong) {
     if (q.k === 'nghe') {
-      var zh = giaiNghe(q.hoi.nghe);
-      doc(zh);
-      var lai = $('[data-nghe-lai]', than);
-      if (lai) lai.addEventListener('click', function () { doc(zh); });
+      var zh = giaiNghe(q.hoi.nghe), py = q.hoi.p ? giaiNghe(q.hoi.p) : '';
+      var lai = $('[data-nghe-lai]', than), tb = $('[data-nghe-tb]', than);
+      var hienPy = function () {
+        if (tb) tb.innerHTML = 'Máy của em chưa phát được tiếng Trung — đọc pinyin rồi chọn chữ: <b>' + esc(py) + '</b>';
+        if (lai) lai.textContent = '🔊 Thử nghe lại';
+      };
+      if (mayKhongNghe()) hienPy();
+      // tu doc khi hien cau; dien thoai chan doc tu dong thi moi em bam nut (bam = duoc phep phat tieng)
+      docKiem(zh, function (ok) {
+        if (ok || !tb) return;
+        if (lai) lai.textContent = '🔊 Bấm để nghe';
+        tb.textContent = 'Bấm nút loa để nghe từ cần chọn.';
+      });
+      if (lai) lai.addEventListener('click', function () {
+        docKiem(zh, function (ok) {
+          if (ok) { if (tb && !mayKhongNghe()) tb.textContent = ''; return; }
+          try { localStorage.setItem('hyv_nt_khong_nghe', '1'); } catch (e) { /* bo qua */ }
+          hienPy();
+        });
+      });
     }
     if (q.k === 'viet') {
       napHanziWriter().then(function () {

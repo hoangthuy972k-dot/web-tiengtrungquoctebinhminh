@@ -1556,7 +1556,8 @@ module.exports = function ganNongTrai(app, d) {
       hoi = { vn: v.vn }; dap = v.zh;
     } else if (k === 'nghe') {  // nghe doc -> chon chu Han (client doc bang giong may; ma hoa nhe de khong lo dap an tren man hinh)
       lua = [v.zh].concat(chonNhieu(tu, v, n - 1, (x) => x.zh).map((x) => x.zh));
-      hoi = { nghe: Buffer.from(encodeURIComponent(v.zh)).toString('base64') }; dap = v.zh;
+      // p = pinyin (chi hien khi may em khong phat duoc tieng)
+      hoi = { nghe: Buffer.from(encodeURIComponent(v.zh)).toString('base64'), p: Buffer.from(encodeURIComponent(v.py || '')).toString('base64') }; dap = v.zh;
     } else if (k === 'py') {    // chu Han -> chon pinyin
       lua = [v.py].concat(chonNhieu(tu.filter((x) => x.py), v, n - 1, (x) => x.py.toLowerCase()).map((x) => x.py));
       hoi = { zh: v.zh }; dap = v.py;

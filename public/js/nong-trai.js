@@ -1475,14 +1475,14 @@
   }
 
   /* ---------------- Thien tai 天灾 ---------------- */
-  var TAI_IC = { gh: '☀️', sau: '🐛', mua: '🌧️', ret: '❄️' };
-  var TAI_VIEC_IC = { gh: '🪣', sau: '🐛', mua: '⛏️', ret: '🪵' };
+  var TAI_IC = { gh: '☀️', sau: '🐛', mua: '🌧️', ret: '❄️', bao: '🌀', lu: '🌊', chuot: '🐭', muada: '🧊', nong: '🔥', suong: '🌫️', cat: '🏜️', chau: '🦗' };
+  var TAI_VIEC_IC = { gh: '🪣', sau: '🐛', mua: '⛏️', ret: '🪵', bao: '🪢', lu: '🧱', chuot: '🪤', muada: '⛺', nong: '🪭', suong: '🏮', cat: '🧹', chau: '🥅' };
   var TAI = { cau: null, xong: null };
   // Thanh canh bao tren nong trai cua em + hieu ung tren ruong (ca khi sang nha ban)
   function veTai() {
     var t = S.tham ? S.tham.tai : (S.st && S.st.tai);
     var khung = $('#ntKhung'), lop = $('#ntTaiLop');
-    ['gh', 'sau', 'mua', 'ret'].forEach(function (k) { khung.classList.toggle('tai-' + k, !!(t && t.k === k)); });
+    Object.keys(TAI_IC).forEach(function (k) { khung.classList.toggle('tai-' + k, !!(t && t.k === k)); });
     if (!lop) { lop = document.createElement('div'); lop.id = 'ntTaiLop'; lop.className = 'nt-tai-lop'; lop.setAttribute('aria-hidden', 'true'); document.body.appendChild(lop); }
     lop.className = 'nt-tai-lop' + (t ? ' tai-' + t.k : '');
     var kieu = t ? t.k : '';
@@ -1498,6 +1498,21 @@
         for (var v = 0; v < 16; v++) h += '<i class="nt-vung" style="left:' + ((v * 31 + 5) % 92) + '%;top:' + (30 + (v * 43) % 62) + '%;animation-delay:-' + ((v * 0.29) % 1.4).toFixed(2) + 's"></i>';
         h += '<i class="nt-chop"></i>';
       }
+      // cac kieu moi: bao (mua xien + la bay), lu (nuoc dang), chuot chay, mua da, nang nong, suong mu, bao cat, chau chau
+      if (kieu === 'bao') {
+        for (var b1 = 0; b1 < 60; b1++) h += '<i class="nt-hat-mua xien" style="left:' + ((b1 * 17) % 120 - 10) + '%;height:' + (18 + (b1 * 7) % 14) + 'px;animation-duration:' + (0.45 + (b1 % 4) * 0.08).toFixed(2) + 's;animation-delay:-' + ((b1 * 0.11) % 1).toFixed(2) + 's"></i>';
+        for (var b2 = 0; b2 < 10; b2++) h += '<i class="nt-la-bay" style="top:' + (10 + (b2 * 37) % 80) + '%;animation-duration:' + (2.2 + (b2 % 4) * 0.5) + 's;animation-delay:-' + (b2 * 0.7).toFixed(1) + 's">🍃</i>';
+      }
+      if (kieu === 'lu') { h = '<i class="nt-lu-nuoc"></i>'; for (var l1 = 0; l1 < 30; l1++) h += '<i class="nt-hat-mua" style="left:' + ((l1 * 29) % 100) + '%;height:' + (14 + (l1 * 5) % 10) + 'px;animation-duration:' + (0.7 + (l1 % 5) * 0.1).toFixed(2) + 's;animation-delay:-' + ((l1 * 0.17) % 1.2).toFixed(2) + 's"></i>'; }
+      if (kieu === 'chuot') for (var c1 = 0; c1 < 7; c1++) h += '<i class="nt-chuot' + (c1 % 2 ? ' nguoc' : '') + '" style="top:' + (22 + (c1 * 41) % 66) + '%;animation-duration:' + (5 + (c1 % 3) * 1.5) + 's;animation-delay:-' + (c1 * 1.3).toFixed(1) + 's">🐭</i>';
+      if (kieu === 'muada') for (var d1 = 0; d1 < 60; d1++) {
+        var dto = 5 + (d1 * 3) % 6;
+        h += '<i class="nt-tuyet-hat nt-da-hat" style="left:' + ((d1 * 23) % 100) + '%;width:' + dto + 'px;height:' + dto + 'px;--lac:4px;animation-duration:' + (1.1 + (d1 % 5) * 0.2).toFixed(1) + 's,1s;animation-delay:-' + ((d1 * 0.21) % 2).toFixed(2) + 's,0s"></i>';
+      }
+      if (kieu === 'nong') h = '<i class="nt-mat-troi nong"></i><i class="nt-hoi-nong"></i>';
+      if (kieu === 'suong') for (var s1 = 0; s1 < 5; s1++) h += '<i class="nt-suong" style="top:' + (s1 * 20 - 5) + '%;animation-duration:' + (26 + s1 * 6) + 's;animation-delay:-' + (s1 * 7) + 's"></i>';
+      if (kieu === 'cat') for (var k1 = 0; k1 < 50; k1++) h += '<i class="nt-cat-hat" style="top:' + ((k1 * 37) % 100) + '%;animation-duration:' + (1.4 + (k1 % 5) * 0.35).toFixed(2) + 's;animation-delay:-' + ((k1 * 0.19) % 2).toFixed(2) + 's"></i>';
+      if (kieu === 'chau') for (var u1 = 0; u1 < 12; u1++) h += '<i class="nt-chau-con" style="left:' + (5 + (u1 * 37) % 88) + '%;top:' + (14 + (u1 * 53) % 72) + '%;animation-delay:-' + (u1 * 0.4).toFixed(1) + 's">🦗</i>';
       if (kieu === 'ret') for (var s = 0; s < 46; s++) {
         var to = 4 + (s * 7) % 9;
         h += '<i class="nt-tuyet-hat' + (s % 6 === 0 ? ' bong-tuyet' : '') + '" style="left:' + ((s * 23) % 100) + '%;width:' + to + 'px;height:' + to + 'px;--lac:' + (12 + (s * 5) % 26) + 'px;animation-duration:' + (7 + (s * 3) % 8) + 's,' + (2.4 + (s % 4) * 0.6) + 's;animation-delay:-' + ((s * 1.3) % 12).toFixed(1) + 's,-' + (s % 3) + 's">' + (s % 6 === 0 ? '❄' : '') + '</i>';
@@ -1512,6 +1527,18 @@
       nut.innerHTML = '<span class="nt-tai-ic" aria-hidden="true">' + TAI_IC[em.k] + '</span><span class="nt-muc-chu"><b><span lang="zh">' + esc(em.zh) + '</span> ' + esc(em.vn) + '!</b>' +
         '<small>' + esc(em.viec) + ' ' + em.co + '/' + em.can + ' · bấm để chống thiên tai</small></span>';
     }
+  }
+  // Thien tai vua ap den: bang thong bao (chong ngay hoac de sau)
+  function baoThienTai(t) {
+    tieng('sai');
+    moBangNho('<div class="nt-chuc nt-tai-den tai-' + t.k + '"><span class="nt-tai-qua" aria-hidden="true">' + TAI_IC[t.k] + '</span>' +
+      '<h2><span lang="zh">' + esc(t.zh) + '</span> ' + esc(t.vn) + '!</h2><p class="nt-cn-nho">' + esc(t.py) + ' · thiên tai hôm nay <span lang="zh">今天的天灾</span></p>' +
+      '<p><b>' + esc(t.hieu) + '</b></p>' + htmlCau(t.hoc) +
+      '<p>Trả lời đúng ' + t.can + ' câu chữ Hán để <b>' + esc(t.viec.toLowerCase()) + '</b> · xong được +' + t.xu + ' xu. Bạn bè cũng sang giúp được!</p>' +
+      '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh nt-nut-to" data-tai-ngay>' + TAI_VIEC_IC[t.k] + ' Chống ngay</button><button type="button" class="nt-nut" data-dong>Để sau</button></div></div>');
+    var b = $('#ntBangThan [data-tai-ngay]');
+    if (b) b.addEventListener('click', function () { TAI.xong = null; TAI.cau = null; moBang('thientai'); });
+    doc(t.hoc.zh);
   }
   function htmlTaiDau(t, cuaBan) {
     var viec = '';
@@ -2847,10 +2874,11 @@
   function lamMoiDinhKy() {
     setInterval(function () {
       if (document.hidden || S.ban || S.tham || S.che !== 'xem' || hoi || bangDang || noiCua) return;
-      var cu = S.st.nkMoi || 0;
+      var cu = S.st.nkMoi || 0, taiCu = S.st.tai ? S.st.tai.bd : 0;
       goi('/api/farm').then(function (st) {
         if (S.ban || S.tham || S.che !== 'xem' || hoi || bangDang || noiCua) return;
         nhanTrangThai(st);
+        if (st.tai && st.tai.bd !== taiCu) baoThienTai(st.tai);
         if ((st.nkMoi || 0) > cu) { tieng('xu'); bao('Có tin mới từ các bạn — xem ở Thị trấn → Nhật ký!'); }
       }, function () {});
     }, 60000);

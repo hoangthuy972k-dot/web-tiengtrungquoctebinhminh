@@ -250,11 +250,11 @@ const DAT = [
   { w: 16, h: 14, sao: 100, lv: 6 },
   { w: 18, h: 16, sao: 160, lv: 8 },
   // Dat lon (co giao: du cap + tra bang xu); tu 20 o rong, lo dat trong thi tran to gap doi
-  { w: 20, h: 18, xu: 800, lv: 12, zh: '大农场', py: 'dà nóngchǎng', vn: 'Trang trại lớn' },
-  { w: 22, h: 20, xu: 1500, lv: 16, zh: '大农场', py: 'dà nóngchǎng', vn: 'Trang trại lớn' },
-  { w: 24, h: 22, xu: 2500, lv: 20, zh: '庄园', py: 'zhuāngyuán', vn: 'Điền trang' },
-  { w: 26, h: 24, xu: 4000, lv: 25, zh: '庄园', py: 'zhuāngyuán', vn: 'Điền trang' },
-  { w: 28, h: 26, xu: 6000, lv: 30, zh: '皇家庄园', py: 'huángjiā zhuāngyuán', vn: 'Điền trang hoàng gia' },
+  { w: 20, h: 18, xu: 2000, lv: 12, zh: '大农场', py: 'dà nóngchǎng', vn: 'Trang trại lớn' },
+  { w: 22, h: 20, xu: 4000, lv: 16, zh: '大农场', py: 'dà nóngchǎng', vn: 'Trang trại lớn' },
+  { w: 24, h: 22, xu: 7000, lv: 20, zh: '庄园', py: 'zhuāngyuán', vn: 'Điền trang' },
+  { w: 26, h: 24, xu: 12000, lv: 25, zh: '庄园', py: 'zhuāngyuán', vn: 'Điền trang' },
+  { w: 28, h: 26, xu: 20000, lv: 30, zh: '皇家庄园', py: 'huángjiā zhuāngyuán', vn: 'Điền trang hoàng gia' },
 ];
 const O_MIEN_PHI = 4;
 function giaODat(soO) { return 3 + Math.max(0, soO - O_MIEN_PHI); }
@@ -396,24 +396,50 @@ function sapHien(ds) { return (ds || []).map((o) => Object.assign({}, o, { gia: 
 // Giup ban (tuoi cay / cho vat nuoi an — phai tra loi cau on tu): toi da moi ngay
 const GIUP_NGAY = 6;
 
-// Thien tai 天灾: thinh thoang ghe nong trai (lv >= 2, cach nhau it nhat 2 ngay), lam kho trong trot / chan nuoi.
-// Em vuot qua bang cach tra loi dung cau chu Han (moi cau = 1 phan viec); ban be sang giup duoc. Qua 2 ngay tu het.
+// Thien tai 天灾 (co giao: da dang, moi ngay 1 kieu khac nhau): lv >= 2, vao nong trai choi duoc ~2 phut thi
+// thien tai trong ngay ap den (khac cac kieu 6 ngay gan nhat), keo dai het ngay. Em vuot qua bang cau chu Han
+// (moi cau dung = 1 phan viec), ban be sang giup duoc.
+// Hieu ung (chung cho moi kieu): cay = nhan thoi gian cay moi gieo, thu = moi o chi thu duoc n, khongTrong = khong gieo,
+// khongTuoi = khong tuoi duoc, con = nhan thoi gian vat nuoi, ban = nhan gia ban cho cua hang. canCon = chi den nha co vat nuoi.
 const TAI = {
-  gh: { zh: '干旱', py: 'gānhàn', vn: 'Hạn hán', hieu: 'Trời không mưa: cây mới gieo lớn chậm gấp đôi.', viec: 'Gánh nước cứu hạn', don: 'xô nước', dzh: '水桶', dpy: 'shuǐtǒng', can: 5,
+  gh: { zh: '干旱', py: 'gānhàn', vn: 'Hạn hán', hieu: 'Trời không mưa: cây mới gieo lớn chậm gấp đôi.', viec: 'Gánh nước cứu hạn', don: 'xô nước', dzh: '水桶', dpy: 'shuǐtǒng', can: 5, cay: 2,
     hoc: { zh: '天气很热，没有下雨。', py: 'Tiānqì hěn rè, méiyǒu xià yǔ.', vn: 'Trời rất nóng, không có mưa.' } },
-  sau: { zh: '虫灾', py: 'chóngzāi', vn: 'Sâu bệnh', hieu: 'Sâu ăn lá: mỗi ô ruộng chỉ thu được 1 nông sản.', viec: 'Bắt sâu', don: 'con sâu', dzh: '虫子', dpy: 'chóngzi', can: 6,
+  sau: { zh: '虫灾', py: 'chóngzāi', vn: 'Sâu bệnh', hieu: 'Sâu ăn lá: mỗi ô ruộng chỉ thu được 1 nông sản.', viec: 'Bắt sâu', don: 'con sâu', dzh: '虫子', dpy: 'chóngzi', can: 6, thu: 1,
     hoc: { zh: '菜上有很多虫子！', py: 'Cài shang yǒu hěn duō chóngzi!', vn: 'Trên rau có nhiều sâu quá!' } },
-  mua: { zh: '暴雨', py: 'bàoyǔ', vn: 'Mưa bão', hieu: 'Ruộng ngập nước: chưa gieo hạt mới được.', viec: 'Đào rãnh thoát nước', don: 'nhát xẻng', dzh: '水沟', dpy: 'shuǐgōu', can: 5,
+  mua: { zh: '暴雨', py: 'bàoyǔ', vn: 'Mưa bão', hieu: 'Ruộng ngập nước: chưa gieo hạt mới được.', viec: 'Đào rãnh thoát nước', don: 'nhát xẻng', dzh: '水沟', dpy: 'shuǐgōu', can: 5, khongTrong: 1,
     hoc: { zh: '外面下大雨了！', py: 'Wàimiàn xià dà yǔ le!', vn: 'Bên ngoài mưa to rồi!' } },
-  ret: { zh: '寒潮', py: 'háncháo', vn: 'Rét đậm', hieu: 'Trời lạnh: vật nuôi cần gấp đôi thời gian mới cho sản phẩm.', viec: 'Kiếm củi sưởi ấm chuồng', don: 'bó củi', dzh: '木柴', dpy: 'mùchái', can: 5,
+  ret: { zh: '寒潮', py: 'háncháo', vn: 'Rét đậm', hieu: 'Trời lạnh: vật nuôi cần gấp đôi thời gian mới cho sản phẩm.', viec: 'Kiếm củi sưởi ấm chuồng', don: 'bó củi', dzh: '木柴', dpy: 'mùchái', can: 5, con: 2, canCon: 1,
     hoc: { zh: '今天很冷，多穿衣服！', py: 'Jīntiān hěn lěng, duō chuān yīfu!', vn: 'Hôm nay rất lạnh, mặc nhiều áo vào!' } },
+  bao: { zh: '台风', py: 'táifēng', vn: 'Bão lớn', hieu: 'Gió giật mạnh: cây và vật nuôi đều chậm hơn 1,5 lần.', viec: 'Chằng chống chuồng trại', don: 'sợi dây thừng', dzh: '绳子', dpy: 'shéngzi', can: 6, cay: 1.5, con: 1.5,
+    hoc: { zh: '台风来了，风很大！', py: 'Táifēng lái le, fēng hěn dà!', vn: 'Bão đến rồi, gió to quá!' } },
+  lu: { zh: '洪水', py: 'hóngshuǐ', vn: 'Lũ lụt', hieu: 'Nước lũ tràn ruộng: không tưới được, cây mới gieo lớn chậm 1,5 lần.', viec: 'Đắp bao cát chặn lũ', don: 'bao cát', dzh: '沙袋', dpy: 'shādài', can: 6, cay: 1.5, khongTuoi: 1,
+    hoc: { zh: '河水太多了，快走！', py: 'Hé shuǐ tài duō le, kuài zǒu!', vn: 'Nước sông nhiều quá, đi mau!' } },
+  chuot: { zh: '鼠灾', py: 'shǔzāi', vn: 'Chuột phá kho', hieu: 'Chuột gặm hàng trong kho: bán cho cửa hàng chỉ được 80% giá.', viec: 'Đặt bẫy bắt chuột', don: 'cái bẫy', dzh: '老鼠夹', dpy: 'lǎoshǔjiā', can: 5, ban: 0.8,
+    hoc: { zh: '仓库里有老鼠！', py: 'Cāngkù li yǒu lǎoshǔ!', vn: 'Trong kho có chuột!' } },
+  muada: { zh: '冰雹', py: 'bīngbáo', vn: 'Mưa đá', hieu: 'Đá rơi dập lá: mỗi ô ruộng chỉ thu được 1 nông sản.', viec: 'Dựng mái che ruộng', don: 'tấm mái', dzh: '棚子', dpy: 'péngzi', can: 5, thu: 1,
+    hoc: { zh: '天上下冰雹了，别出去！', py: 'Tiān shang xià bīngbáo le, bié chūqu!', vn: 'Trời mưa đá rồi, đừng ra ngoài!' } },
+  nong: { zh: '热浪', py: 'rèlàng', vn: 'Nắng nóng', hieu: 'Nóng gay gắt: vật nuôi mệt, cần lâu gấp 1,5 lần.', viec: 'Quạt mát cho vật nuôi', don: 'cái quạt', dzh: '扇子', dpy: 'shànzi', can: 5, con: 1.5, canCon: 1,
+    hoc: { zh: '今天太热了，多喝水！', py: 'Jīntiān tài rè le, duō hē shuǐ!', vn: 'Hôm nay nóng quá, uống nhiều nước nhé!' } },
+  suong: { zh: '大雾', py: 'dàwù', vn: 'Sương mù dày', hieu: 'Không thấy đường: cây mới gieo lớn chậm 1,5 lần.', viec: 'Thắp đèn soi đường', don: 'ngọn đèn', dzh: '灯', dpy: 'dēng', can: 5, cay: 1.5,
+    hoc: { zh: '雾太大了，我看不见。', py: 'Wù tài dà le, wǒ kàn bu jiàn.', vn: 'Sương mù dày quá, mình không nhìn thấy.' } },
+  cat: { zh: '沙尘暴', py: 'shāchénbào', vn: 'Bão cát', hieu: 'Bụi cát phủ hàng: bán cho cửa hàng chỉ được 80% giá, cây chậm 1,3 lần.', viec: 'Quét cát khỏi nông trại', don: 'cái chổi', dzh: '扫帚', dpy: 'sàozhou', can: 6, ban: 0.8, cay: 1.3,
+    hoc: { zh: '风里都是沙子！', py: 'Fēng li dōu shì shāzi!', vn: 'Trong gió toàn là cát!' } },
+  chau: { zh: '蝗灾', py: 'huángzāi', vn: 'Châu chấu', hieu: 'Đàn châu chấu kéo đến: mỗi ô ruộng chỉ thu được 1 nông sản.', viec: 'Đuổi châu chấu', don: 'cái lưới', dzh: '网', dpy: 'wǎng', can: 6, thu: 1,
+    hoc: { zh: '好多蚂蚱在吃菜！', py: 'Hǎo duō màzha zài chī cài!', vn: 'Nhiều châu chấu đang ăn rau quá!' } },
 };
-const TAI_XU = 10, TAI_HAN_MS = 2 * 86400000, TAI_CACH_MS = 2 * 86400000, TAI_TI_LE = 0.4, TAI_GIUP_NGAY = 3, TAI_GIUP_XU = 2;
-const taiDang = (f, k) => !!(f.tai && !f.tai.xong && Date.now() - f.tai.bd < TAI_HAN_MS && (!k || f.tai.k === k));
+const TAI_XU = 10, TAI_HAN_MS = 2 * 86400000, TAI_CHO_MS = 2 * 60000, TAI_NHO = 6, TAI_GIUP_NGAY = 3, TAI_GIUP_XU = 2;
+const ngayVn = () => new Date(Date.now() + 7 * 3600000).toISOString().slice(0, 10);
+// thien tai moi (co ngay d) het khi sang ngay moi; du lieu cu (khong co d) giu han 2 ngay
+const taiConHan = (t) => (t.d ? t.d === ngayVn() : Date.now() - t.bd < TAI_HAN_MS);
+const taiDang = (f, k) => !!(f.tai && !f.tai.xong && TAI[f.tai.k] && taiConHan(f.tai) && (!k || f.tai.k === k));
+// gia tri hieu ung cua thien tai dang co (0 neu khong co)
+const taiHieu = (f, x) => (taiDang(f) && TAI[f.tai.k][x]) || 0;
+const heSoTai = (f, x) => taiHieu(f, x) || 1;
 function taiChoHs(f) {
   if (!taiDang(f)) return null;
   const t = TAI[f.tai.k];
-  return Object.assign({ k: f.tai.k, co: f.tai.co, bd: f.tai.bd, conMs: f.tai.bd + TAI_HAN_MS - Date.now(), xu: TAI_XU }, t);
+  const het = f.tai.d ? Date.parse(f.tai.d + 'T00:00:00Z') - 7 * 3600000 + 86400000 : f.tai.bd + TAI_HAN_MS;
+  return Object.assign({ k: f.tai.k, co: f.tai.co, bd: f.tai.bd, conMs: Math.max(0, het - Date.now()), xu: TAI_XU }, t);
 }
 // Loi chao co san (khong go chu tu do): vua choi vua doc tieng Trung
 const LOI_CHAO = [
@@ -813,24 +839,25 @@ module.exports = function ganNongTrai(app, d) {
       if (o.k !== 'o' || o.c) throw loi('Ô này đang có cây.');
       if (!c) throw loi('Không có loại hạt này.');
       if (c.lv > lv) throw loi('Lên cấp ' + c.lv + ' để trồng ' + c.vn + '.');
-      if (taiDang(f, 'mua')) throw loi('暴雨！Ruộng đang ngập — đào rãnh thoát nước trước (bấm thanh thiên tai).');
+      if (taiHieu(f, 'khongTrong')) throw loi(TAI[f.tai.k].zh + '！' + TAI[f.tai.k].hieu + ' — chống thiên tai trước (bấm thanh thiên tai).');
       tieuXu(c.gia);
-      o.c = b.c; o.h = now + c.phut * PHUT * (taiDang(f, 'gh') ? 2 : 1); o.t = 0;
+      o.c = b.c; o.h = now + Math.round(c.phut * PHUT * heSoTai(f, 'cay')); o.t = 0;
     } else if (a === 'trongHet') {
       // gieo cung 1 loai hat vao moi o trong (het xu thi dung)
       const c = CAY[b.c];
       if (!c || c.lv > lv) throw loi('Không có loại hạt này.');
-      if (taiDang(f, 'mua')) throw loi('暴雨！Ruộng đang ngập — đào rãnh thoát nước trước (bấm thanh thiên tai).');
-      const heSo = taiDang(f, 'gh') ? 2 : 1;
+      if (taiHieu(f, 'khongTrong')) throw loi(TAI[f.tai.k].zh + '！' + TAI[f.tai.k].hieu + ' — chống thiên tai trước (bấm thanh thiên tai).');
+      const heSo = heSoTai(f, 'cay');
       let n = 0;
       f.o.forEach((o) => {
-        if (o.k === 'o' && !o.c && f.xu >= c.gia) { f.xu -= c.gia; o.c = b.c; o.h = now + c.phut * PHUT * heSo; o.t = 0; n++; }
+        if (o.k === 'o' && !o.c && f.xu >= c.gia) { f.xu -= c.gia; o.c = b.c; o.h = now + Math.round(c.phut * PHUT * heSo); o.t = 0; n++; }
       });
       if (!n) throw loi(f.xu < c.gia ? 'Chưa đủ xu mua hạt.' : 'Không còn ô trống.');
     } else if (a === 'tuoi') {
       const o = timO();
       if (o.k !== 'o' || !o.c || o.h <= now) throw loi('Ô này không cần tưới.');
       if (o.t) throw loi('Ô này đã tưới rồi.');
+      if (taiHieu(f, 'khongTuoi')) throw loi(TAI[f.tai.k].zh + '！' + TAI[f.tai.k].hieu);
       o.t = 1;
       o.h = now + Math.round((o.h - now) * 0.6); // tuoi nuoc: con 60% thoi gian
       them.xp += 1;
@@ -839,7 +866,7 @@ module.exports = function ganNongTrai(app, d) {
       if (!ds.length) throw loi('Chưa có ô nào chín.');
       ds.forEach((o) => {
         if (o.k !== 'o' || !o.c || o.h > now) throw loi('Cây chưa chín.');
-        congSp(o.c, (taiDang(f, 'sau') ? 1 : THU_MOI_O) + (o.c === dacSanEm ? 1 : 0));
+        congSp(o.c, (taiHieu(f, 'thu') || THU_MOI_O) + (o.c === dacSanEm ? 1 : 0));
         if (o.c === dacSanEm) them.dacSan = o.c;
         them.xp += CAY[o.c].xp;
         o.c = null; o.h = null; o.t = 0;
@@ -848,7 +875,7 @@ module.exports = function ganNongTrai(app, d) {
       const o = timO();
       if (!CON[o.k]) throw loi('Không phải vật nuôi.');
       if (o.h) throw loi(o.h > now ? 'Con vật đang no rồi.' : 'Hãy thu sản phẩm trước.');
-      o.h = now + CON[o.k].phut * PHUT * (taiDang(f, 'ret') ? 2 : 1);
+      o.h = now + Math.round(CON[o.k].phut * PHUT * heSoTai(f, 'con'));
       them.xp += 2; // vua tra loi dung 3 cau on tu
     } else if (a === 'nhat') {
       const ds = b.id === 'het' ? f.o.filter((o) => CON[o.k] && o.h && o.h <= now && (!b.k || o.k === b.k)) : [timO()];
@@ -865,7 +892,7 @@ module.exports = function ganNongTrai(app, d) {
       const n = Math.floor(Number(b.n) || 0);
       if (!SP[k] || n < 1 || (f.kho[k] || 0) < n) throw loi('Không đủ hàng để bán.');
       const goiDung = String(b.goi || '') === SP[k].zh;
-      const tien = Math.max(1, Math.round(SP[k].ban * n * (goiDung ? 1.1 : 0.7) * heSoCua(tt, k)));
+      const tien = Math.max(1, Math.round(SP[k].ban * n * (goiDung ? 1.1 : 0.7) * heSoCua(tt, k) * heSoTai(f, 'ban')));
       const homNay = saoHoc(await d.loadStar(userId)).homNay;
       const toiDa = BAN_CO_BAN + BAN_MOI_SAO * homNay, da = daBanHomNay(f);
       if (da + tien > toiDa) throw loi('Hạn mức bán cho cửa hàng hôm nay còn ' + Math.max(0, toiDa - da) + ' xu. Học thêm để mở rộng: mỗi sao học = +' + BAN_MOI_SAO + ' xu hạn mức!');
@@ -1131,20 +1158,23 @@ module.exports = function ganNongTrai(app, d) {
     res.json(req.query.cat ? Object.assign({ cat: CATALOG }, st) : st);
   }));
 
-  // Moi ngay xet 1 lan: thien tai cu het han thi tu qua; khong co thi co the co thien tai moi
+  // Moi ngay 1 thien tai (lv >= 2): lan dau vao nong trai trong ngay ghi gio vao; choi duoc TAI_CHO_MS thi
+  // thien tai ap den — kieu khac voi TAI_NHO kieu gan nhat. Thien tai hom truoc chua xong thi tu qua.
   function xetThienTai(f) {
     const ngay = d.vnDayKey(), now = Date.now();
     let doi = false;
-    if (f.tai && !f.tai.xong && now - f.tai.bd >= TAI_HAN_MS) { f.tai.xong = 'het'; f.tai.kt = now; doi = true; }
-    if (f.taiXet === ngay) return doi;
+    if (f.tai && !f.tai.xong && !taiConHan(f.tai)) { f.tai.xong = 'het'; f.tai.kt = now; doi = true; }
+    if (!f.taiVao || f.taiVao.d !== ngay) { f.taiVao = { d: ngay, t: now }; doi = true; }
+    if (f.taiXet === ngay || taiDang(f) || lvTuXp(f.xp) < 2 || now - f.taiVao.t < TAI_CHO_MS) return doi;
     f.taiXet = ngay;
-    const lanCuoi = f.tai ? f.tai.kt || f.tai.bd : 0;
-    if (!taiDang(f) && lvTuXp(f.xp) >= 2 && now - lanCuoi >= TAI_CACH_MS && Math.random() < TAI_TI_LE) {
-      const coCon = f.o.some((o) => CON[o.k]);
-      const ds = Object.keys(TAI).filter((k) => k !== 'ret' || coCon);
-      f.tai = { k: ds[Math.floor(Math.random() * ds.length)], bd: now, co: 0, giup: [] };
-      delete f.taiq;
-    }
+    const coCon = f.o.some((o) => CON[o.k]);
+    const gan = Array.isArray(f.taiDa) ? f.taiDa : [];
+    let ds = Object.keys(TAI).filter((k) => (!TAI[k].canCon || coCon) && gan.indexOf(k) < 0);
+    if (!ds.length) ds = Object.keys(TAI).filter((k) => (!TAI[k].canCon || coCon) && k !== gan[0]);
+    const k = ds[Math.floor(Math.random() * ds.length)];
+    f.tai = { k, d: ngay, bd: now, co: 0, giup: [] };
+    f.taiDa = [k].concat(gan).slice(0, TAI_NHO);
+    delete f.taiq;
     return true;
   }
   // Mot phan viec chong thien tai hoan thanh (em tu lam hoac ban giup); du thi thien tai qua di
@@ -1948,7 +1978,7 @@ module.exports = function ganNongTrai(app, d) {
         them.xu = 2; them.xp = 1;
       } else if (CON[o.k]) {
         if (o.h) throw loi('Con vật này đã được cho ăn rồi.');
-        o.h = now + CON[o.k].phut * PHUT * (taiDang(ff, 'ret') ? 2 : 1);
+        o.h = now + Math.round(CON[o.k].phut * PHUT * heSoTai(ff, 'con'));
         ghiNk(ff, { ai: me, l: 'choan', k: o.k });
         them.xu = 4; them.xp = 2;
       } else throw loi('Món này không cần giúp.');

@@ -142,6 +142,9 @@ module.exports = function ganCho(app, d, h, c) {
     await h.traLoi(res, h.lanLuot(me, async () => {
       if (!r.tl || r.tl.ma !== String(b.ma || '')) throw loi('Thương lái này đã đi rồi — xem thương lái mới nhé!');
       const f = await h.doc(me);
+      if (h.lvTuXp(f.xp) < h.MO_TN.tl.lv) throw loi('Thương lái mở ở cấp ' + h.MO_TN.tl.lv + '.');
+      // ban cho thuong lai tinh vao han muc ban hang (tang theo sao hoc hom nay)
+      const hm = await h.hanMuc(me, f);
       const kq = await c.khoaC(r.key, async () => {
         const tl = await c.docC(r.key);
         const i = Number(b.i), it = tl.ds[i];
@@ -158,10 +161,10 @@ module.exports = function ganCho(app, d, h, c) {
         if (tl.biet[me].indexOf(i) < 0) tl.biet[me].push(i);
         tl.ban[me] = tl.ban[me] || {};
         const da = tl.ban[me][i] || 0;
-        const n = Math.min(Math.floor(Number(b.n) || 0) || 999, it.con, gioiHan(it) - da, f.kho[it.k] || 0);
+        const n = Math.min(Math.floor(Number(b.n) || 0) || 999, it.con, gioiHan(it) - da, f.kho[it.k] || 0, Math.floor(hm.con / it.gia));
         if (n < 1) {
           await c.ghiC(r.key, tl);
-          return { k: it.k, n: 0, ly: it.con < 1 ? 'het' : da >= gioiHan(it) ? 'du' : 'kho' };
+          return { k: it.k, n: 0, ly: it.con < 1 ? 'het' : da >= gioiHan(it) ? 'du' : (f.kho[it.k] || 0) < 1 ? 'kho' : 'hanmuc', toiDa: hm.toiDa };
         }
         it.con -= n;
         tl.ban[me][i] = da + n;
@@ -172,6 +175,7 @@ module.exports = function ganCho(app, d, h, c) {
         f.kho[kq.k] -= kq.n;
         if (!f.kho[kq.k]) delete f.kho[kq.k];
         f.xu += kq.xu;
+        h.ghiBanNgay(f, kq.xu);
         f.xp += Math.min(10, kq.n);
         await h.ghi(me, f);
       }
@@ -228,7 +232,9 @@ module.exports = function ganCho(app, d, h, c) {
     await h.traLoi(res, h.lanLuot(me, async () => {
       if (!SP[k] || !(n >= 1)) throw loi('Món góp chưa hợp lệ.');
       const f = await h.doc(me);
+      if (h.lvTuXp(f.xp) < h.MO_TN.hd.lv) throw loi('Đơn lớn mở ở cấp ' + h.MO_TN.hd.lv + '.');
       if ((f.kho[k] || 0) < 1) throw loi('Kho của em không có ' + SP[k].vn.toLowerCase() + '.');
+      const hm = await h.hanMuc(me, f);
       const key = 'hd:' + pv.k + ':' + tuan;
       const kq = await c.khoaC(key, async () => {
         const hd = await c.docC(key);
@@ -243,13 +249,15 @@ module.exports = function ganCho(app, d, h, c) {
         await c.ghiC(key, hd);
         return { so, xong, hd };
       });
-      const xu = Math.round(SP[k].ban * 0.9 * kq.so);
+      // van gop duoc cho ca lop; tien tra toi da bang han muc ban con lai hom nay
+      const du = Math.round(SP[k].ban * 0.9 * kq.so), xu = Math.min(du, hm.con);
       f.kho[k] -= kq.so;
       if (!f.kho[k]) delete f.kho[k];
       f.xu += xu;
+      h.ghiBanNgay(f, xu);
       f.xp += Math.min(15, kq.so);
       await h.ghi(me, f);
-      return { ok: true, so: kq.so, xu, xong: kq.xong, hd: await hdChoHs(kq.hd, me, tuan), st: await h.trangThai(me, f) };
+      return { ok: true, so: kq.so, xu, catHanMuc: du - xu, xong: kq.xong, hd: await hdChoHs(kq.hd, me, tuan), st: await h.trangThai(me, f) };
     }));
   }));
   app.post('/api/farm/hd/nhan', d.requireAuth, d.asyncRoute(async (req, res) => {

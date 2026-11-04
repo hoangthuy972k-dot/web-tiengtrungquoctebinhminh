@@ -325,7 +325,8 @@
     if (!nut || !m.R.length) return;
     var dich = m.tiep ? m.tiep.sao : m.R[m.R.length - 1].sao;
     $('#ntMucSo').textContent = m.mo ? 'Mở rương!' : m.h.homNay + '/' + dich;
-    $('#ntMucPhu').textContent = m.mo ? m.mo + ' rương đang chờ' : m.tiep ? 'sao hôm nay' : 'đủ 3 rương';
+    var nv = S.st.nv;
+    $('#ntMucPhu').textContent = m.mo ? m.mo + ' rương đang chờ' : (m.tiep ? 'sao hôm nay' : 'đủ 3 rương') + (nv ? ' · nhiệm vụ ' + nv.xong + '/' + nv.ds.length : '');
     $('#ntMucVong').setAttribute('stroke-dasharray', Math.round(Math.min(1, m.h.homNay / dich) * 100) + ' 100');
     nut.classList.toggle('co-qua', m.mo > 0);
     nut.classList.toggle('xong', !m.tiep && !m.mo);
@@ -1243,10 +1244,32 @@
 
   // --- Hoc hom nay: 3 ruong theo sao hoc duoc trong ngay + loi moi hoc tiep ---
   var hocTiep = null; // { url, nguon } bai em dang hoc (tu /api/farm/on)
+  // Nhiem vu hom nay: danh sach viec (cham de di toi), du 3 viec / du het -> nhan thuong
+  var NV_IC = { hoc: '📚', ruong: '🧰', chuhan: '字', don: '📋', tai: '🛡️', cau: '🎣', nh: '🍽' };
+  function htmlNhiemVu() {
+    var nv = S.st.nv;
+    if (!nv) return '';
+    return '<div class="nt-nvu"><div class="nt-nvu-dau"><b>📋 Nhiệm vụ hôm nay <span lang="zh">今天的任务</span></b><span>' + nv.xong + '/' + nv.ds.length + '</span></div><ul>' +
+      nv.ds.map(function (x) { return '<li class="' + (x.xong ? 'xong' : '') + '"><button type="button" data-nv-di="' + x.k + '"><span class="nt-nvu-ic" aria-hidden="true">' + (x.xong ? '✅' : NV_IC[x.k] || '•') + '</span>' + esc(x.ten) + (x.xong ? '' : ' <i>→</i>') + '</button></li>'; }).join('') +
+      '</ul><div class="nt-nvu-qua">' + nv.thuong.map(function (t, i) {
+        var da = nv.nhan.indexOf(i) >= 0, du = nv.xong >= t.can;
+        return '<button type="button" class="nt-nut' + (du && !da ? ' nt-nut-vang' : '') + '" data-nv-qua="' + i + '"' + (da || !du ? ' disabled' : '') + '>' +
+          (da ? '✅ Đã nhận' : '🎁 Xong ' + t.can + ' việc: +' + t.xu + ' xu' + (t.luot ? ' + 1 lượt quay' : '')) + '</button>';
+      }).join('') + '</div></div>';
+  }
+  function diNhiemVu(k) {
+    if (k === 'hoc') { location.href = (hocTiep && hocTiep.url) || '/'; return; }
+    if (k === 'ruong') { moBang('hoc', 'muc'); return; }
+    if (k === 'chuhan') { moBang('hoc', 'chuhan'); return; }
+    if (k === 'don') { moBang('don'); return; }
+    if (k === 'tai') { TAI.xong = null; TAI.cau = null; moBang('thientai'); return; }
+    if (k === 'cau') { moHoCau(); return; }
+    if (k === 'nh') moBang('kho', 'bep');
+  }
   function veMucTieu(than) {
     var m = tinhMuc(), h = m.h, max = m.R.length ? m.R[m.R.length - 1].sao : 100;
     var pt = function (n) { return Math.min(100, Math.round(n / max * 100)); };
-    var html = '<div class="nt-hn">' +
+    var html = '<div class="nt-hn">' + htmlNhiemVu() +
       '<div class="nt-hn-dau">' + img('ic-sao') + '<div><b>' + h.homNay + ' sao</b><span>em học được hôm nay' + (h.tuan ? ' · ' + h.tuan + ' sao tuần này' : '') + '</span></div></div>' +
       '<div class="nt-hn-duong" role="img" aria-label="Tiến độ ' + h.homNay + ' trên ' + max + ' sao"><i style="width:' + pt(h.homNay) + '%"></i>' +
       m.R.map(function (r, i) {
@@ -1279,6 +1302,16 @@
       '</div></div>';
     than.innerHTML = html;
     $all('img', than).forEach(ganLoiAnh);
+    $all('[data-nv-di]', than).forEach(function (b) { b.addEventListener('click', function () { diNhiemVu(b.getAttribute('data-nv-di')); }); });
+    $all('[data-nv-qua]', than).forEach(function (b) {
+      b.addEventListener('click', function () {
+        lam({ a: 'nvqua', i: +b.getAttribute('data-nv-qua') }, b).then(function (kq) {
+          tieng('len');
+          bao('🎁 Thưởng nhiệm vụ: +' + kq.them.xu + ' xu' + (kq.them.luot ? ' + 1 lượt vòng quay!' : '!'));
+          veBang();
+        }, function () {});
+      });
+    });
     $all('[data-ruong]', than).forEach(function (b) {
       b.addEventListener('click', function () {
         var i = +b.getAttribute('data-ruong'), r = m.R[i];
@@ -1525,7 +1558,7 @@
     nut.hidden = !em;
     if (em) {
       nut.innerHTML = '<span class="nt-tai-ic" aria-hidden="true">' + TAI_IC[em.k] + '</span><span class="nt-muc-chu"><b><span lang="zh">' + esc(em.zh) + '</span> ' + esc(em.vn) + '!</b>' +
-        '<small>' + esc(em.viec) + ' ' + em.co + '/' + em.can + ' · bấm để chống thiên tai</small></span>';
+        '<small>' + (em.khien ? '🛡️ Khiên bảo vệ đang bật · ' : '') + esc(em.viec) + ' ' + em.co + '/' + em.can + ' · bấm để chống thiên tai</small></span>';
     }
   }
   // Thien tai vua ap den: bang thong bao (chong ngay hoac de sau)
@@ -1534,6 +1567,7 @@
     moBangNho('<div class="nt-chuc nt-tai-den tai-' + t.k + '"><span class="nt-tai-qua" aria-hidden="true">' + TAI_IC[t.k] + '</span>' +
       '<h2><span lang="zh">' + esc(t.zh) + '</span> ' + esc(t.vn) + '!</h2><p class="nt-cn-nho">' + esc(t.py) + ' · thiên tai hôm nay <span lang="zh">今天的天灾</span></p>' +
       '<p><b>' + esc(t.hieu) + '</b></p>' + htmlCau(t.hoc) +
+      '<p class="nt-khien' + (t.khien ? ' bat' : '') + '">' + (t.khien ? '🛡️ Khiên bảo vệ đang bật — thiên tai không ảnh hưởng nông trại của em!' : '🛡️ Học đủ ' + S.cat.KHIEN_SAO + ' sao hôm nay để bật <b>khiên bảo vệ</b>.') + '</p>' +
       '<p>Trả lời đúng ' + t.can + ' câu chữ Hán để <b>' + esc(t.viec.toLowerCase()) + '</b> · xong được +' + t.xu + ' xu. Bạn bè cũng sang giúp được!</p>' +
       '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh nt-nut-to" data-tai-ngay>' + TAI_VIEC_IC[t.k] + ' Chống ngay</button><button type="button" class="nt-nut" data-dong>Để sau</button></div></div>');
     var b = $('#ntBangThan [data-tai-ngay]');
@@ -1546,7 +1580,9 @@
     return '<div class="nt-tai-dau tai-' + t.k + '"><span class="nt-tai-to" aria-hidden="true">' + TAI_IC[t.k] + '</span><div>' +
       '<p class="nt-cn-nho">' + (cuaBan ? 'Nông trại của ' + esc(cuaBan) + ' đang gặp' : 'Nông trại của em đang gặp') + ' thiên tai <span lang="zh">天灾</span></p>' +
       '<h3><span lang="zh">' + esc(t.zh) + '</span> ' + esc(t.py) + ' · ' + esc(t.vn) + '</h3>' +
-      '<p class="nt-tai-hieu">' + esc(t.hieu) + '</p></div></div>' +
+      '<p class="nt-tai-hieu">' + (t.khien ? '<s>' + esc(t.hieu) + '</s>' : esc(t.hieu)) + '</p>' +
+      '<p class="nt-khien' + (t.khien ? ' bat' : '') + '">' + (t.khien ? '🛡️ <b>Khiên bảo vệ 护盾 đang bật</b> — học đủ ' + S.cat.KHIEN_SAO + ' sao hôm nay nên thiên tai không ảnh hưởng nông trại. Vẫn chống được để nhận thưởng!'
+        : '🛡️ Học đủ <b>' + S.cat.KHIEN_SAO + ' sao</b> hôm nay để bật <b>khiên bảo vệ</b>: thiên tai hết tác dụng.') + '</p></div></div>' +
       htmlCau(t.hoc) +
       '<p class="nt-tai-viec"><b>' + esc(t.viec) + '</b> <span lang="zh">' + esc(t.dzh) + '</span> ' + esc(t.dpy) + ': ' + t.co + '/' + t.can + ' ' + esc(t.don) + '</p><div class="nt-tai-o">' + viec + '</div>';
   }
@@ -1598,7 +1634,7 @@
     });
   }
   var CH = { de: null, i: 0, khoa: false, conQua: 3, quaNgay: 3, dat: 8, so: 10, ketThuc: null };
-  var TEN_KIEU_CH = { nghia: 'Chọn chữ Hán đúng nghĩa', py: 'Chữ này đọc là gì?', chu: 'Chữ này nghĩa là gì?', thieu: 'Điền chữ còn thiếu' };
+  var TEN_KIEU_CH = { nghia: 'Chọn chữ Hán đúng nghĩa', py: 'Chữ này đọc là gì?', chu: 'Chữ này nghĩa là gì?', thieu: 'Điền chữ còn thiếu', nghe: 'Nghe và chọn chữ đúng', viet: 'Viết chữ còn thiếu' };
   function veNutChuHan() {
     var p = $('#ntChuHanPhu');
     if (!p) return;
@@ -1629,7 +1665,7 @@
     $('#ntBstXem', than).addEventListener('click', function () { CH.xemBst = true; veBang(); });
     $('#ntChBatDau', than).addEventListener('click', function () {
       var b = this; b.disabled = true;
-      goi('/api/farm/chuhan/moi', {}).then(function (r) {
+      goi('/api/farm/chuhan/moi', { nghe: coGiongZh() === true }).then(function (r) {
         CH.de = r.dang; CH.i = 0; CH.conQua = r.conQua; CH.ketThuc = null;
         veBang();
       }, function (e) { b.disabled = false; bao(e.message, 'loi'); });
@@ -1637,18 +1673,23 @@
   }
   function veCauCh(than) {
     var de = CH.de, q = de.ds[CH.i], h = q.hoi;
-    var deBai = q.k === 'nghia' ? '<div class="nt-ch-vn">' + esc(h.vn) + '</div>'
+    var deBai = q.k === 'nghe' || q.k === 'viet' ? deBaiDacBiet(q)
+      : q.k === 'nghia' ? '<div class="nt-ch-vn">' + esc(h.vn) + '</div>'
       : q.k === 'thieu' ? '<div class="nt-ch-zh" lang="zh">' + esc(h.thieu).replace('＿', '<span class="nt-ch-o">？</span>') + '</div><div class="nt-ch-goi">' + esc(h.vn) + '</div>'
       : '<div class="nt-ch-zh" lang="zh">' + esc(h.zh) + '</div>';
-    var laZh = q.k === 'nghia' || q.k === 'thieu';
+    var laZh = q.k === 'nghia' || q.k === 'thieu' || q.k === 'nghe';
     than.innerHTML = '<div class="nt-ch">' +
       '<div class="nt-ch-dau"><span>Câu ' + (CH.i + 1) + '/' + de.ds.length + '</span><span class="nt-ch-cham">' + de.ds.map(function (x, j) { return '<i class="' + (j < CH.i ? 'qua' : j === CH.i ? 'dang' : '') + '"></i>'; }).join('') + '</span><span>✔ ' + de.dung + '</span></div>' +
       '<p class="nt-ch-kieu">' + TEN_KIEU_CH[q.k] + '</p>' + deBai +
-      '<div class="nt-ch-lua' + (laZh ? ' zh' : '') + '">' + q.lua.map(function (l, j) {
-        return '<button type="button" data-ch="' + j + '"' + (laZh ? ' lang="zh"' : '') + '>' + esc(l) + '</button>';
-      }).join('') + '</div><p class="nt-ch-giai" id="ntChGiai" aria-live="polite"></p>' +
+      (q.k === 'viet' ? '<div class="nt-hang-nut"><button type="button" class="nt-nut" data-viet-bo>Bỏ qua</button><button type="button" data-ch="0" hidden></button><button type="button" data-ch="-1" hidden></button></div>'
+        : '<div class="nt-ch-lua' + (laZh ? ' zh' : '') + '">' + q.lua.map(function (l, j) {
+          return '<button type="button" data-ch="' + j + '"' + (laZh ? ' lang="zh"' : '') + '>' + esc(l) + '</button>';
+        }).join('') + '</div>') + '<p class="nt-ch-giai" id="ntChGiai" aria-live="polite"></p>' +
       (de.nguon ? '<p class="nt-ch-nguon">Từ: ' + esc(de.nguon) + '</p>' : '') + '</div>';
     CH.khoa = false;
+    ganDacBiet(q, than, function (chon) { var b = $('[data-ch="' + chon + '"]', than); if (b) b.click(); });
+    var boViet = $('[data-viet-bo]', than);
+    if (boViet) boViet.addEventListener('click', function () { boViet.disabled = true; $('[data-ch="-1"]', than).click(); });
     $all('[data-ch]', than).forEach(function (b) {
       b.addEventListener('click', function () {
         if (CH.khoa) return;
@@ -1717,16 +1758,18 @@
   var T_CHO_HOP = (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) ? 0 : 900;
 
   // --- Thi dua tuan: xep hang sao hoc tap (lop / cong dong) ---
-  var tdPham = 'lop';
+  var tdPham = 'lop', tdGiai = false;
   function conLai(giay) {
     var ngay = Math.floor(giay / 86400), gio = Math.floor((giay % 86400) / 3600);
     return ngay ? ngay + ' ngày ' + gio + ' giờ' : gio ? gio + ' giờ' : Math.max(1, Math.floor(giay / 60)) + ' phút';
   }
   function veThiDua(than) {
     than.innerHTML = '<div class="nt-td-pham" role="group" aria-label="Phạm vi"><button type="button" data-td="lop"' + (tdPham === 'lop' ? ' class="bat"' : '') + '>Lớp em</button>' +
-      '<button type="button" data-td="cd"' + (tdPham === 'cd' ? ' class="bat"' : '') + '>Cộng đồng</button></div><div id="ntTdThan"><p class="nt-trong">Đang tải…</p></div>';
+      '<button type="button" data-td="cd"' + (tdPham === 'cd' ? ' class="bat"' : '') + '>Cộng đồng</button>' +
+      '<button type="button" data-td-giai' + (tdGiai ? ' class="bat"' : '') + '>🏅 Giải cùng cấp</button></div><div id="ntTdThan"><p class="nt-trong">Đang tải…</p></div>';
     $all('[data-td]', than).forEach(function (b) { b.addEventListener('click', function () { tdPham = b.getAttribute('data-td'); veBang(); }); });
-    goi('/api/farm/thidua?pham=' + tdPham).then(function (d) {
+    $('[data-td-giai]', than).addEventListener('click', function () { tdGiai = !tdGiai; veBang(); });
+    goi('/api/farm/thidua?pham=' + tdPham + (tdGiai ? '&giai=1' : '')).then(function (d) {
       var hop = $('#ntTdThan', than);
       if (!hop || !bangDang || bangDang.tab !== 'thidua') return;
       if (d.pham === 'lop' && !d.lop) { hop.innerHTML = '<p class="nt-trong">Em chưa vào lớp nào. Xem thi đua ở <b>Cộng đồng</b>, hoặc nhập mã lớp ở trang học.</p>'; return; }
@@ -1738,7 +1781,11 @@
       }).join('');
       var html = '<p class="nt-meo">' + (d.pham === 'lop' ? 'Lớp <b>' + esc(d.lop) + '</b>' : 'Mọi nông trại trên Hi Hán') +
         ' · xếp theo <b>sao học tập</b> kiếm được tuần này. Tuần mới bắt đầu sau <b>' + conLai(d.conGiay) + '</b>.</p>';
+      if (d.giaiEm) html += '<p class="nt-giai g' + d.giaiEm.i + '">🏅 ' + (d.giai ? 'Đang xem ' : 'Em thuộc ') + '<b>Giải ' + esc(d.giaiEm.vn) + ' <span lang="zh">' + esc(d.giaiEm.zh) + '</span></b> (cấp ' + d.giaiEm.tu + (d.giaiEm.den < 99 ? '–' + d.giaiEm.den : '+') + ')' +
+        (d.giai ? ' — chỉ so với các bạn cùng giải.' : ' — bấm "Giải cùng cấp" để so với các bạn cùng trình độ.') + '</p>';
       if (bac) html += '<div class="nt-bucvinh">' + bac + '</div>';
+      if (d.tienBo && d.tienBo.length) html += '<div class="nt-tien-bo"><b>📈 Tiến bộ nhất tuần <span lang="zh">进步之星</span></b><small>Sao tuần này tăng nhiều nhất so với cả tuần trước</small><ol>' +
+        d.tienBo.map(function (r) { return '<li' + (r.la ? ' class="la"' : '') + '><span class="nt-tb-nv">' + NV.svg(r.av || NV.macDinh(r.id)) + '</span><b>' + esc(r.ten) + (r.la ? ' (em)' : '') + '</b><span class="nt-tb-so">+' + r.tang + ' ⭐</span><small>' + r.truoc + ' → ' + r.tuan + '</small></li>'; }).join('') + '</ol></div>';
       if (em) {
         html += '<div class="nt-td-em"><span class="nt-td-hang">#' + em.hang + '</span><div><b>Em: ' + em.tuan + ' sao tuần này</b><small>' +
           (em.hang === 1 && em.tuan > 0 ? 'Em đang dẫn đầu! Giữ vững nhé 💪'
@@ -4023,8 +4070,12 @@
     ['CAY', 'CON', 'TT'].forEach(function (nh) {
       Object.keys(S.cat[nh]).forEach(function (k) { if (S.cat[nh][k].lv === n) moi.push(S.cat[nh][k].vn); });
     });
-    moBangNho('<div class="nt-chuc">' + img('ic-xp') + '<h2>Lên cấp ' + n + '!</h2>' +
-      (moi.length ? '<p>Mở khoá: <b>' + esc(moi.join(', ')) + '</b></p>' : '<p>Nông trại của em ngày càng lớn!</p>') +
+    var tn = Object.keys(S.cat.MO_TN || {}).filter(function (k) { return S.cat.MO_TN[k].lv === n; }).map(function (k) {
+      var m = S.cat.MO_TN[k];
+      return '<div class="nt-gt"><b>✨ Tính năng mới: ' + esc(m.vn) + ' <span lang="zh">' + esc(m.zh) + '</span></b><p>' + esc(m.gt) + '</p></div>';
+    }).join('');
+    moBangNho('<div class="nt-chuc">' + img('ic-xp') + '<h2>Lên cấp ' + n + '!</h2>' + tn +
+      (moi.length ? '<p>Mở khoá: <b>' + esc(moi.join(', ')) + '</b></p>' : tn ? '' : '<p>Nông trại của em ngày càng lớn!</p>') +
       '<button type="button" class="nt-nut nt-nut-xanh nt-nut-to" data-dong>Tuyệt vời!</button></div>');
   }
   function quaDiemDanh() {
@@ -4107,11 +4158,13 @@
   function veNutHoCau() {
     var m = S.st && S.st.cau, nut = $('#ntHoCauNut');
     if (!m || !nut) return;
+    nut.hidden = !moTn('cau');
     $('#ntHcPhu').textContent = m.con > 0 ? 'còn ' + m.con + ' mồi câu 🎣' : (m.sau ? 'học thêm ' + m.sau + ' sao → +1 mồi' : 'hết mồi · mai câu tiếp');
     nut.classList.toggle('co-luot', m.con > 0);
     nut.classList.toggle('het', m.con <= 0);
   }
   function moHoCau() {
+    if (!moTn('cau')) { moBangNho(htmlKhoaTn('cau') + '<div class="nt-hang-nut"><button type="button" class="nt-nut" data-dong>Đóng</button></div>'); return; }
     dongThiTran();
     if (S.tham) veNha();
     dongBang();
@@ -4183,7 +4236,7 @@
     if (HC.cho) { the.innerHTML = '<div class="nt-hc-cho"><span class="nt-hc-cho-phao" aria-hidden="true"></span><b>Đang chờ cá cắn câu…</b><small lang="zh">等鱼上钩 děng yú shàng gōu</small></div>'; return; }
     var c = HC.chon && r && r.ho.filter(function (x) { return x.id === HC.chon; })[0];
     if (!c) {
-      the.innerHTML = '<div class="nt-hc-goi"><p><b>Chạm vào một bóng cá để thả câu.</b> Cá càng to, càng đẹp → bán càng nhiều xu, nhưng câu hỏi càng khó!</p><div class="nt-hc-bac">' +
+      the.innerHTML = htmlGt('cau') + '<div class="nt-hc-goi"><p><b>Chạm vào một bóng cá để thả câu.</b> Cá càng to, càng đẹp → bán càng nhiều xu, nhưng câu hỏi càng khó!</p><div class="nt-hc-bac">' +
         [1, 2, 3, 4, 5].map(function (t) {
           var b = bacCa(t);
           return '<span class="b' + t + '"><i class="nt-hc-mau b' + t + '">' + bongCa(t) + '</i><b>' + esc(b.ten) + '</b><small>' + CA_SAO[t] + ' · ' + giaBac(t) + ' xu</small></span>';
@@ -4209,7 +4262,7 @@
     tieng('mua');
     veHoCau();
     var batDau = Date.now();
-    goi('/api/farm/hocau/tha', { id: c.id }).then(function (r) {
+    goi('/api/farm/hocau/tha', { id: c.id, nghe: coGiongZh() === true }).then(function (r) {
       nhanHo(r.ho);
       // cho phao chim mot chut roi moi hien cau hoi (may chu cung cho 1,5 giay)
       setTimeout(function () {
@@ -4227,10 +4280,10 @@
   }
   function veCauCa(the) {
     var g = HC.dang, q = g.ds[HC.i], h = q.hoi, b = bacCa(g.t);
-    var deBai = q.k === 'nghia' ? '<div class="nt-ch-vn">' + esc(h.vn) + '</div>'
+    var deBai = q.k === 'nghe' ? deBaiDacBiet(q) : q.k === 'nghia' ? '<div class="nt-ch-vn">' + esc(h.vn) + '</div>'
       : q.k === 'thieu' ? '<div class="nt-ch-zh" lang="zh">' + esc(h.thieu).replace('＿', '<span class="nt-ch-o">？</span>') + '</div><div class="nt-ch-goi">' + esc(h.vn) + '</div>'
       : '<div class="nt-ch-zh" lang="zh">' + esc(h.zh) + '</div>' + (h.py ? '<div class="nt-ch-goi">' + esc(h.py) + '</div>' : '');
-    var laZh = q.k === 'nghia' || q.k === 'thieu';
+    var laZh = q.k === 'nghia' || q.k === 'thieu' || q.k === 'nghe';
     the.innerHTML = '<div class="nt-ch nt-hc-cau">' +
       '<div class="nt-ch-dau"><span>🎣 ' + esc(b.ten) + ' ' + CA_SAO[g.t] + '</span>' + (g.so > 1 ? '<span>Câu ' + (HC.i + 1) + '/' + g.so + '</span>' : '') + '</div>' +
       (g.giay ? '<div class="nt-hc-gio" aria-hidden="true"><i id="ntHcGio"></i></div>' : '') +
@@ -4241,6 +4294,7 @@
       (g.nguon ? '<p class="nt-ch-nguon">Từ: ' + esc(g.nguon) + '</p>' : '') + '</div>';
     HC.khoa = false;
     dungDongHo();
+    ganDacBiet(q, the, function () {});
     if (g.giay) {
       var het = Date.now() + (HC.i === g.i && g.conMs ? g.conMs : g.giay * 1000), tong = g.giay * 1000;
       g.conMs = 0;
@@ -4368,6 +4422,7 @@
   var TL = { d: null, py: false, dang: null };
   function giayRaGio(g) { var h = Math.floor(g / 3600), p = Math.floor(g % 3600 / 60); return h ? h + ' giờ ' + p + ' phút' : Math.max(1, p) + ' phút'; }
   function veThuongLai(than) {
+    if (!moTn('tl')) { than.innerHTML = htmlKhoaTn('tl'); return; }
     than.innerHTML = '<p class="nt-trong">Đang tải…</p>';
     goi('/api/farm/thuonglai').then(function (r) { TL.d = r; veTlNoi(than); }, function (e) { than.innerHTML = '<p class="nt-trong">' + esc(e.message) + '</p>'; });
   }
@@ -4380,10 +4435,10 @@
       return;
     }
     var n = t.nguoi, av = NV.svg(NV.macDinh('tl-' + n.zh));
-    var html = '<div class="nt-tl-dau"><span class="nt-tl-nv">' + av + '</span><div><b><span lang="zh">' + esc(n.zh) + '</span> ' + esc(n.py) + '</b><small>' + esc(n.vn) + ' · thương lái <span lang="zh">商人</span> đến chợ lớp em</small>' +
+    var html = htmlGt('tl') + '<div class="nt-tl-dau"><span class="nt-tl-nv">' + av + '</span><div><b><span lang="zh">' + esc(n.zh) + '</span> ' + esc(n.py) + '</b><small>' + esc(n.vn) + ' · thương lái <span lang="zh">商人</span> đến chợ lớp em</small>' +
       '<small>Đi sau <b>' + giayRaGio(r.sau) + '</b>' + (t.quetN ? ' · đã mua <b>' + t.quetN + '</b> món ở sạp các bạn' : '') + '</small></div>' +
       '<button type="button" class="nt-nut" id="ntTlPy">' + (TL.py ? 'Ẩn pinyin' : 'Hiện pinyin') + '</button></div>' +
-      '<p class="nt-meo">Đọc câu thương lái nói, <b>chạm đúng tranh món hàng</b> để bán ngay từ kho — giá cao hơn cửa hàng và <b>không tính vào hạn mức bán</b>. Chọn nhầm thì thương lái không mua món đó của em nữa! Thương lái cũng tự mua hàng ở sạp nào bán rẻ.</p>' +
+      '<p class="nt-meo">Đọc câu thương lái nói, <b>chạm đúng tranh món hàng</b> để bán ngay từ kho — giá cao hơn cửa hàng (tính vào <b>hạn mức bán</b> hằng ngày: mỗi sao học +10 xu). Chọn nhầm thì thương lái không mua món đó của em nữa! Thương lái cũng tự mua hàng ở sạp nào bán rẻ.</p>' +
       '<div class="nt-tl-ds">' + t.ds.map(function (o) {
         var het = o.con < 1, du = o.emBan >= o.gioiHan;
         return '<div class="nt-tl-dong' + (het || du ? ' xong' : '') + (o.sai ? ' sai' : '') + '">' +
@@ -4410,7 +4465,7 @@
           var m = tenSp(k.k);
           if (k.sai) { tieng('sai'); bao('不对！Thương lái cần ' + m.vn + ' ' + m.zh + ' — em chọn nhầm rồi.', 'loi'); }
           else if (k.n > 0) { tieng('xu'); bao('Bán cho thương lái ' + k.n + ' ' + m.vn + ' ' + m.zh + ' · +' + k.xu + ' xu!'); doc(m.zh); }
-          else { tieng('dung'); bao(k.ly === 'kho' ? 'Đúng rồi: ' + m.zh + ' ' + m.py + ' — ' + m.vn + '! Nhưng kho em chưa có món này.' : 'Đúng rồi, nhưng thương lái đã mua đủ món này.'); }
+          else { tieng('dung'); bao(k.ly === 'kho' ? 'Đúng rồi: ' + m.zh + ' ' + m.py + ' — ' + m.vn + '! Nhưng kho em chưa có món này.' : k.ly === 'hanmuc' ? 'Đúng rồi! Nhưng hạn mức bán hôm nay (' + k.toiDa + ' xu) đã hết — học thêm sao để bán tiếp: mỗi sao +10 xu hạn mức.' : 'Đúng rồi, nhưng thương lái đã mua đủ món này.'); }
           if (k.st) nhanTrangThai(k.st);
           TL.d.tl = k.tl;
           veTlNoi(than);
@@ -4421,6 +4476,7 @@
   // --- Don lon cua thi tran tuan nay ---
   var HD = { d: null, dang: false };
   function veDonLon(than) {
+    if (!moTn('hd')) { than.innerHTML = htmlKhoaTn('hd'); return; }
     than.innerHTML = '<p class="nt-trong">Đang tải…</p>';
     goi('/api/farm/hd').then(function (r) { HD.d = r; veHdNoi(than); }, function (e) { than.innerHTML = '<p class="nt-trong">' + esc(e.message) + '</p>'; });
   }
@@ -4446,7 +4502,7 @@
   function veHdNoi(than) {
     if (!bangDang || bangDang.loai !== 'chung' || bangDang.tab !== 'hd') return;
     var r = HD.d;
-    than.innerHTML = '<p class="nt-meo">Cả <b>' + esc(r.pham) + '</b> cùng gom hàng cho một đơn lớn mỗi tuần. Góp món nào được <b>trả xu ngay</b> (không tính vào hạn mức bán). Đủ đơn thì ai góp cũng nhận <b>30 xu</b>, top 3 thêm 30/20/10 xu. Còn <b>' + conLai(r.conGiay) + '</b>.</p>' +
+    than.innerHTML = htmlGt('hd') + '<p class="nt-meo">Cả <b>' + esc(r.pham) + '</b> cùng gom hàng cho một đơn lớn mỗi tuần. Góp món nào được <b>trả xu ngay</b> (trong hạn mức bán hằng ngày — hết hạn mức vẫn góp được cho lớp). Đủ đơn thì ai góp cũng nhận <b>30 xu</b>, top 3 thêm 30/20/10 xu. Còn <b>' + conLai(r.conGiay) + '</b>.</p>' +
       (r.cu ? htmlHd(r.cu, true) : '') + htmlHd(r.hd, false);
     $all('img', than).forEach(ganLoiAnh);
     $all('[data-hd]', than).forEach(function (b) {
@@ -4457,7 +4513,7 @@
           HD.dang = false;
           tieng('xu');
           var m = tenSp(b.getAttribute('data-hd'));
-          bao('Góp ' + k.so + ' ' + m.vn + ' ' + m.zh + ' · +' + k.xu + ' xu' + (k.xong ? ' — 🎉 cả lớp hoàn thành đơn tuần!' : ''));
+          bao('Góp ' + k.so + ' ' + m.vn + ' ' + m.zh + ' · +' + k.xu + ' xu' + (k.catHanMuc ? ' (hết hạn mức bán hôm nay — học thêm sao để nhận đủ xu)' : '') + (k.xong ? ' — 🎉 cả lớp hoàn thành đơn tuần!' : ''));
           if (k.st) nhanTrangThai(k.st);
           HD.d.hd = k.hd;
           veHdNoi(than);
@@ -4479,10 +4535,10 @@
   var NH = { py: false };
   function htmlNhaHang() {
     var ds = (S.st && S.st.nh) || [];
-    if (!ds.length) return '';
-    return '<div class="nt-nh"><div class="nt-nh-dau"><b>🍽 Nhà hàng <span lang="zh">餐厅</span> — khách gọi món hôm nay</b>' +
+    if (!ds.length) return moTn('nh') ? '' : htmlKhoaTn('nh');
+    return htmlGt('nh') + '<div class="nt-nh"><div class="nt-nh-dau"><b>🍽 Nhà hàng <span lang="zh">餐厅</span> — khách gọi món hôm nay</b>' +
       '<button type="button" class="nt-nut" id="ntNhPy">' + (NH.py ? 'Ẩn pinyin' : 'Hiện pinyin') + '</button></div>' +
-      '<p class="nt-meo">Đọc khách gọi món gì, nấu món đó rồi <b>Phục vụ</b>: khách trả <b>thêm 30%</b> giá món (không tính vào hạn mức bán).</p>' +
+      '<p class="nt-meo">Đọc khách gọi món gì, nấu món đó rồi <b>Phục vụ</b>: khách trả <b>thêm 30%</b> giá món (tính vào hạn mức bán hằng ngày — học càng nhiều sao, bán được càng nhiều).</p>' +
       ds.map(function (o, i) {
         return '<div class="nt-nh-khach' + (o.xong ? ' xong' : '') + '"><span class="nt-tl-nv">' + NV.svg(NV.macDinh('kh-' + o.kh.zh)) + '</span>' +
           '<div class="nt-nh-chu"><small><span lang="zh">' + esc(o.kh.zh) + '</span> ' + esc(o.kh.py) + '</small>' +
@@ -4510,6 +4566,72 @@
         }, function () { b.disabled = true; b.classList.add('sai'); tieng('sai'); });
       });
     });
+  }
+
+  /* ---------------- Mo tinh nang theo cap + loi gioi thieu ---------------- */
+  function capEm() { return (S.st && S.st.lv) || 1; }
+  function moTn(k) { var m = (S.cat.MO_TN || {})[k]; return !m || capEm() >= m.lv; }
+  function daXemGt(k) { try { return localStorage.getItem('hyv_nt_gt_' + k) === '1'; } catch (e) { return true; } }
+  function ghiGt(k) { try { localStorage.setItem('hyv_nt_gt_' + k, '1'); } catch (e) { /* bo qua */ } }
+  // the gioi thieu ngan, hien lan dau em mo tinh nang (bam "Đã hiểu" thi an)
+  function htmlGt(k) {
+    var m = (S.cat.MO_TN || {})[k];
+    if (!m || daXemGt(k)) return '';
+    return '<div class="nt-gt"><b>✨ Tính năng mới: ' + esc(m.vn) + ' <span lang="zh">' + esc(m.zh) + '</span></b><p>' + esc(m.gt) + '</p>' +
+      '<button type="button" class="nt-nut" data-gt-xong="' + k + '">Đã hiểu</button></div>';
+  }
+  function htmlKhoaTn(k) {
+    var m = S.cat.MO_TN[k];
+    return '<div class="nt-tn-khoa"><span aria-hidden="true">🔒</span><b>' + esc(m.vn) + ' <span lang="zh">' + esc(m.zh) + '</span> mở ở cấp ' + m.lv + '</b>' +
+      '<p>' + esc(m.gt) + '</p><small>Em đang cấp ' + capEm() + ' — trồng trọt, chăm vật nuôi, giao đơn để lên cấp nhé!</small></div>';
+  }
+  // nap thu vien viet chu (dung chung voi trang bai hoc)
+  var hwHua = null;
+  function napHanziWriter() {
+    if (typeof HanziWriter !== 'undefined') return Promise.resolve();
+    if (hwHua) return hwHua;
+    hwHua = new Promise(function (ok) {
+      var s = document.createElement('script');
+      s.src = '/js/vendor/hanzi-writer.min.js';
+      s.onload = function () { ok(); };
+      s.onerror = function () { ok(); };
+      document.head.appendChild(s);
+    });
+    return hwHua;
+  }
+  function giaiNghe(s) { try { return decodeURIComponent(atob(s)); } catch (e) { return ''; } }
+  // cau nghe / viet dung chung cho thu thach chu Han va ho cau: tra ve html de bai
+  function deBaiDacBiet(q) {
+    var h = q.hoi;
+    if (q.k === 'nghe') return '<button type="button" class="nt-nghe" data-nghe-lai>🔊 Nghe lại</button>';
+    if (q.k === 'viet') return '<div class="nt-ch-zh" lang="zh">' + esc(h.tu).replace('＿', '<span class="nt-ch-o">？</span>') + '</div><div class="nt-ch-goi">' + esc(h.py) + ' — ' + esc(h.vn) + '</div>' +
+      '<div class="nt-viet-o" id="ntVietO"></div><p class="nt-viet-tb" id="ntVietTb">✏️ Viết chữ còn thiếu vào ô — sai 3 nét sẽ hiện gợi ý</p>';
+    return '';
+  }
+  // sau khi ve cau: doc cau nghe, tao o viet chu; xong(chon) goi lai luong tra loi cu
+  function ganDacBiet(q, than, xong) {
+    if (q.k === 'nghe') {
+      var zh = giaiNghe(q.hoi.nghe);
+      doc(zh);
+      var lai = $('[data-nghe-lai]', than);
+      if (lai) lai.addEventListener('click', function () { doc(zh); });
+    }
+    if (q.k === 'viet') {
+      napHanziWriter().then(function () {
+        var o = $('#ntVietO', than), tb = $('#ntVietTb', than);
+        if (!o || typeof HanziWriter === 'undefined') { if (tb) tb.textContent = 'Không tải được ô viết chữ — bấm Bỏ qua.'; return; }
+        var w = HanziWriter.create(o, 'X', {
+          width: 180, height: 180, padding: 10, showOutline: false, showCharacter: false, showHintAfterMisses: 3,
+          strokeColor: '#1f1a17', highlightColor: '#4caf50', drawingColor: '#2b1d3a', drawingWidth: 18,
+          charDataLoader: function () { return q.hoi.net; }
+        });
+        w.quiz({
+          onMistake: function () { if (tb) tb.textContent = '❌ Chưa đúng nét, thử lại nhé!'; },
+          onCorrectStroke: function () { if (tb) tb.textContent = '✅ Đúng rồi! Viết tiếp nét sau…'; },
+          onComplete: function () { if (tb) tb.textContent = '🎉 Viết đúng rồi!'; setTimeout(function () { xong(0); }, 500); }
+        });
+      });
+    }
   }
 
   /* ---------------- khoi dong ---------------- */
@@ -4554,6 +4676,8 @@
       if (b) traLoi(+b.getAttribute('data-i'), b);
     });
     document.addEventListener('click', function (e) {
+      var gt = e.target.closest('[data-gt-xong]');
+      if (gt) { ghiGt(gt.getAttribute('data-gt-xong')); var the = gt.closest('.nt-gt'); if (the) the.remove(); return; }
       var d = e.target.closest('[data-doc]');
       if (d) doc(d.getAttribute('data-doc'), d.classList.contains('nt-hoi-loa') && hoi ? hoi.hienPy : null);
       var nk = e.target.closest('[data-nk-chung]');

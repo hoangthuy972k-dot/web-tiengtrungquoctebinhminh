@@ -2099,3 +2099,44 @@ body[data-tai="bao"] .nt-canh-buom, body[data-tai="bao"] .nt-canh-chim, body[dat
 body[data-tai="lu"] .nt-canh-buom, body[data-tai="cat"] .nt-canh-buom, body[data-tai="suong"] .nt-canh-chim { display: none; }
 .nt-tai-den { text-align: center; }
 .nt-tai-den h2 [lang="zh"] { font-family: 'Noto Serif SC', serif; color: var(--do); }
+
+/* ---------- Nhiem vu hom nay, mo tinh nang theo cap, khien bao ve, giai dau, cau nghe / viet ---------- */
+.nt-nvu { margin-bottom: 12px; padding: 10px 12px; border: 3px solid var(--vien); border-radius: 18px; background: #fffbe9; box-shadow: var(--bong); }
+.nt-nvu-dau { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+.nt-nvu-dau [lang="zh"] { font-family: 'Noto Serif SC', serif; color: var(--do); }
+.nt-nvu-dau > span { font-weight: 900; font-size: 1.1rem; }
+.nt-nvu ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.nt-nvu li button { width: 100%; display: flex; align-items: center; gap: 8px; padding: 6px 10px; border: 2px solid #eadfcf; border-radius: 12px; background: #fff; font: inherit; color: var(--chu); text-align: left; cursor: pointer; }
+.nt-nvu li button:hover { border-color: var(--vien); }
+.nt-nvu li.xong button { background: #eaf7e1; border-color: #b9e0a5; color: var(--mo); text-decoration: line-through; }
+.nt-nvu li button i { margin-left: auto; font-style: normal; color: var(--mo); }
+.nt-nvu-ic { width: 26px; text-align: center; font-family: 'Noto Serif SC', serif; font-weight: 900; color: var(--do); }
+.nt-nvu-qua { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.nt-gt { margin: 0 0 10px; padding: 10px 12px; border: 2.5px dashed #4f9be0; border-radius: 16px; background: #eef7ff; text-align: left; }
+.nt-gt b [lang="zh"] { font-family: 'Noto Serif SC', serif; color: var(--do); }
+.nt-gt p { margin: 4px 0 8px; font-size: 0.9rem; }
+.nt-tn-khoa { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px; border: 2.5px dashed #c9bfae; border-radius: 16px; background: #fbf7ef; text-align: center; }
+.nt-tn-khoa > span { font-size: 2rem; }
+.nt-tn-khoa b [lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.nt-tn-khoa p { margin: 0; max-width: 46ch; }
+.nt-tn-khoa small { color: var(--mo); font-weight: 600; }
+.nt-khien { margin: 6px 0 0; padding: 4px 10px; border-radius: 10px; background: #f1ece6; font-size: 0.85rem; }
+.nt-khien.bat { background: #dff3ff; border: 2px solid #4f9be0; }
+.nt-giai { margin: 0 0 8px; padding: 6px 12px; border-radius: 12px; background: #f6efe0; font-size: 0.9rem; }
+.nt-giai [lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.nt-giai.g1 { background: #eef1f4; } .nt-giai.g2 { background: #fff3cf; } .nt-giai.g3 { background: #e9f3f6; } .nt-giai.g4 { background: #efe6ff; }
+.nt-tien-bo { margin: 10px 0; padding: 10px 12px; border: 2.5px solid var(--vien); border-radius: 16px; background: #effae8; }
+.nt-tien-bo [lang="zh"] { font-family: 'Noto Serif SC', serif; color: var(--do); }
+.nt-tien-bo > small { display: block; color: var(--mo); font-weight: 600; }
+.nt-tien-bo ol { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 4px; }
+.nt-tien-bo li { display: grid; grid-template-columns: 34px 1fr auto; grid-template-rows: auto auto; column-gap: 8px; align-items: center; padding: 4px 8px; border-radius: 12px; background: #fff; }
+.nt-tien-bo li.la { outline: 2.5px solid var(--vang); }
+.nt-tb-nv { grid-row: span 2; width: 34px; height: 38px; display: block; }
+.nt-tb-nv svg { width: 100%; height: 100%; }
+.nt-tb-so { font-weight: 900; color: #2e7d32; }
+.nt-tien-bo li small { grid-column: 2 / 4; color: var(--mo); font-size: 0.75rem; }
+.nt-nghe { display: block; margin: 8px auto; padding: 14px 22px; border: 3px solid var(--vien); border-radius: 18px; background: #eef7ff; box-shadow: var(--bong); font: inherit; font-size: 1.15rem; font-weight: 800; cursor: pointer; }
+.nt-viet-o { width: 180px; height: 180px; margin: 8px auto 4px; border: 3px dashed #c9bfae; border-radius: 16px; background-color: #fff;
+  background-image: linear-gradient(rgba(201, 191, 174, 0.5), rgba(201, 191, 174, 0.5)), linear-gradient(90deg, rgba(201, 191, 174, 0.5), rgba(201, 191, 174, 0.5));
+  background-size: 100% 1.5px, 1.5px 100%; background-position: center; background-repeat: no-repeat; touch-action: none; }
+.nt-viet-tb { margin: 0; text-align: center; font-size: 0.88rem; font-weight: 700; }

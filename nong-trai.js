@@ -7,6 +7,8 @@
 // Cau hoi on tu (cho an, tuoi nuoc) chay o client: phan thuong chi la xu/nong san,
 // khong bao gio ra sao, nen khong co gi de gian lan.
 const path = require('path');
+const fsMod = require('fs');
+const vmMod = require('vm');
 
 const PHUT = 60000;
 
@@ -433,13 +435,56 @@ const ngayVn = () => new Date(Date.now() + 7 * 3600000).toISOString().slice(0, 1
 const taiConHan = (t) => (t.d ? t.d === ngayVn() : Date.now() - t.bd < TAI_HAN_MS);
 const taiDang = (f, k) => !!(f.tai && !f.tai.xong && TAI[f.tai.k] && taiConHan(f.tai) && (!k || f.tai.k === k));
 // gia tri hieu ung cua thien tai dang co (0 neu khong co)
-const taiHieu = (f, x) => (taiDang(f) && TAI[f.tai.k][x]) || 0;
+// Khien bao ve 护盾: hoc du KHIEN_SAO sao trong ngay thi thien tai khong con tac dung (van chong de nhan thuong)
+const KHIEN_SAO = 30;
+const taiHieu = (f, x) => (taiDang(f) && !f.tai.khien && TAI[f.tai.k][x]) || 0;
 const heSoTai = (f, x) => taiHieu(f, x) || 1;
 function taiChoHs(f) {
   if (!taiDang(f)) return null;
   const t = TAI[f.tai.k];
   const het = f.tai.d ? Date.parse(f.tai.d + 'T00:00:00Z') - 7 * 3600000 + 86400000 : f.tai.bd + TAI_HAN_MS;
-  return Object.assign({ k: f.tai.k, co: f.tai.co, bd: f.tai.bd, conMs: Math.max(0, het - Date.now()), xu: TAI_XU }, t);
+  return Object.assign({ k: f.tai.k, co: f.tai.co, bd: f.tai.bd, conMs: Math.max(0, het - Date.now()), xu: TAI_XU, khien: !!f.tai.khien }, t);
+}
+// Mo dan tinh nang theo cap (co giao); client hien loi gioi thieu ngan khi len cap / lan dau mo
+const MO_TN = {
+  cau: { lv: 3, zh: '钓鱼湖', vn: 'Hồ câu cá', gt: 'Chạm bóng cá rồi thả câu: cá càng to càng quý, câu hỏi càng khó. Mỗi ngày có mồi câu theo số sao học.' },
+  hd: { lv: 4, zh: '本周大订单', vn: 'Đơn lớn của thị trấn', gt: 'Cả lớp cùng gom hàng cho một đơn lớn mỗi tuần: góp hàng được trả xu, đủ đơn ai góp cũng có thưởng.' },
+  tl: { lv: 5, zh: '商人', vn: 'Thương lái', gt: 'Thương lái đến chợ 3 lần mỗi ngày, đặt hàng bằng tiếng Trung — đọc hiểu, chọn đúng món thì bán được giá cao.' },
+  nh: { lv: 6, zh: '餐厅', vn: 'Nhà hàng', gt: 'Mỗi ngày 3 vị khách gọi món bằng tiếng Trung — nấu đúng món rồi phục vụ để nhận xu.' },
+};
+// Giai dau thi dua theo cap nong trai
+const GIAI = [
+  { tu: 1, den: 5, zh: '铜', vn: 'Đồng' }, { tu: 6, den: 10, zh: '银', vn: 'Bạc' }, { tu: 11, den: 15, zh: '金', vn: 'Vàng' },
+  { tu: 16, den: 20, zh: '白金', vn: 'Bạch kim' }, { tu: 21, den: 99, zh: '钻石', vn: 'Kim cương' },
+];
+const giaiCua = (lv) => GIAI.findIndex((g) => lv >= g.tu && lv <= g.den);
+// On cach quang (Leitner): tu tra loi dung len hop, sai ve hop 0; hop n hen on lai sau ON_NGAY[n] ngay
+const ON_NGAY = [0, 1, 3, 7, 14, 30];
+function ghiOn(f, zh, dung) {
+  if (!zh) return;
+  f.on = f.on || {};
+  const x = f.on[zh] || [0, 0];
+  const hop = dung ? Math.min(ON_NGAY.length - 1, x[0] + 1) : 0;
+  f.on[zh] = [hop, Date.now() + ON_NGAY[hop] * 86400000 + (dung ? 0 : 10 * 60000)];
+  const ks = Object.keys(f.on);
+  if (ks.length > 500) ks.sort((a, b) => f.on[b][1] - f.on[a][1]).slice(0, ks.length - 500).forEach((k) => { delete f.on[k]; });
+}
+// Du lieu net chu cua bai (cho cau "viet chu"): doc public/js/<bai>-strokes.js, luu bo nho
+const netCache = new Map();
+function netCuaBai(url) {
+  if (netCache.has(url)) return netCache.get(url);
+  let net = {};
+  const m = /^\/lessons\/([a-z0-9-]+)\.html$/.exec(String(url || ''));
+  const file = m && path.join(__dirname, 'public', 'js', m[1] + '-strokes.js');
+  if (file && fsMod.existsSync(file)) {
+    try {
+      const sb = {};
+      vmMod.runInNewContext(fsMod.readFileSync(file, 'utf8') + '\n;this.__n = typeof STROKE_DATA !== "undefined" ? STROKE_DATA : null;', sb, { timeout: 3000 });
+      net = sb.__n || {};
+    } catch (e) { net = {}; }
+  }
+  netCache.set(url, net);
+  return net;
 }
 // Loi chao co san (khong go chu tu do): vua choi vua doc tieng Trung
 const LOI_CHAO = [
@@ -648,6 +693,28 @@ module.exports = function ganNongTrai(app, d) {
     };
   }
   function daBanHomNay(f) { return f.banNgay && f.banNgay.d === d.vnDayKey() ? f.banNgay.xu : 0; }
+  // Han muc xu kiem tu BAN HANG moi ngay (cua hang + thuong lai + nha hang + don lon): 30 + 10 x sao hoc hom nay
+  async function hanMuc(userId, f) {
+    const homNay = saoHoc(await d.loadStar(userId)).homNay;
+    const toiDa = BAN_CO_BAN + BAN_MOI_SAO * homNay;
+    return { toiDa, con: Math.max(0, toiDa - daBanHomNay(f)), homNay };
+  }
+  function ghiBanNgay(f, xu) { f.banNgay = { d: d.vnDayKey(), xu: daBanHomNay(f) + xu }; }
+  // Nhiem vu hom nay: viec hoc + viec nong trai (mo theo cap); du 3 viec / du het -> nhan thuong
+  function nhiemVu(f, homNay, lv) {
+    const ngay = d.vnDayKey();
+    const ds = [
+      { k: 'hoc', ten: 'Học bài được 20 sao', xong: homNay >= 20 },
+      { k: 'ruong', ten: 'Mở 1 rương học tập', xong: ruongDaMo(f).length > 0 },
+      { k: 'chuhan', ten: 'Thử thách chữ Hán — mở 1 hộp quà', xong: !!(f.chQua && f.chQua.d === ngay && f.chQua.n > 0) },
+      { k: 'don', ten: 'Giao 1 đơn hàng', xong: !!(f.don && f.don.d === ngay && Object.values(f.don.x || {}).some(Boolean)) },
+    ];
+    if (f.tai && f.tai.d === ngay) ds.push({ k: 'tai', ten: 'Chống thiên tai hôm nay', xong: f.tai.xong === 'ok' });
+    if (lv >= MO_TN.cau.lv) ds.push({ k: 'cau', ten: 'Thả câu ở hồ cá', xong: !!(f.hc && f.hc.d === ngay && f.hc.n > 0) });
+    if (lv >= MO_TN.nh.lv) ds.push({ k: 'nh', ten: 'Phục vụ 1 khách nhà hàng', xong: !!(f.nh && f.nh.d === ngay && f.nh.ds.some((o) => o.xong)) });
+    const nhan = f.nv && f.nv.d === ngay ? f.nv.nhan : [];
+    return { ds, xong: ds.filter((x) => x.xong).length, nhan, thuong: [{ can: 3, xu: 10 }, { can: ds.length, xu: 20, luot: 1 }] };
+  }
   function soThe(f) { return Object.keys(f.the || {}).filter((z) => f.the[z][0] >= THE_DUNG).length; }
   // Khach nha hang hom nay (tao lan dau trong ngay): uu tien mon da mo khoa, co ca mon cao cap
   // xao tron co hat giong (cung em + cung ngay -> cung danh sach khach, ke ca truoc khi luu)
@@ -694,6 +761,7 @@ module.exports = function ganNongTrai(app, d) {
       sao: Math.max(0, (sv.total || 0) - (f.saoTieu || 0)),
       hoc: { homNay: sh.homNay, tuan: sh.tuan, ruong: ruongDaMo(f), tong: sv.total || 0 },
       vq: vongQuay(f, sh.homNay),
+      nv: nhiemVu(f, sh.homNay, lv),
       cau: moiCa({ n: f.hc && f.hc.d === ngay ? f.hc.n || 0 : 0 }, sh.homNay),
       ban: { da: daBanHomNay(f), toiDa: BAN_CO_BAN + BAN_MOI_SAO * sh.homNay },
       the: soThe(f), theMoc: f.theMoc || 0,
@@ -704,7 +772,7 @@ module.exports = function ganNongTrai(app, d) {
       oToiDa: oToiDa(lv), soO: f.o.filter((o) => o.k === 'o').length + (f.tui.o || 0),
       sap: sapHien(f.sap), soOSap: soOSap(lv),
       donDb: f.donDb && f.donDb.d === ngay ? f.donDb : null, daNau: f.daNau || {},
-      nh: (nhaHang(f, lv, userId).ds || []).map((o) => ({ m: o.m, xu: o.xu, kh: o.kh, xong: o.xong,
+      nh: lv < MO_TN.nh.lv ? [] : (nhaHang(f, lv, userId).ds || []).map((o) => ({ m: o.m, xu: o.xu, kh: o.kh, xong: o.xong,
         zh: '服务员，我要一份' + MON[o.m].zh + '！', py: 'Fúwùyuán, wǒ yào yí fèn ' + MON[o.m].py + '!' })),
       muaBan: { n: f.muaBan && f.muaBan.d === ngay ? f.muaBan.n : 0, so: MUA_THUONG_SO },
       can: (f.can || []).map((x) => Object.assign({}, x, cauCanMua(x.k, x.n))),
@@ -1048,8 +1116,20 @@ module.exports = function ganNongTrai(app, d) {
       if (!f.daNau[k]) { them.monMoi = k; them.xp += 5; }
       f.daNau[k] = (f.daNau[k] || 0) + 1;
       them.xp += 2;
+    } else if (a === 'nvqua') {
+      // nhan thuong nhiem vu hom nay (i = 0: du 3 viec, 1: du het)
+      const nv = nhiemVu(f, saoHoc(await d.loadStar(userId)).homNay, lv), i = Number(b.i), tg = nv.thuong[i];
+      if (!tg) throw loi('Không có phần thưởng này.');
+      if (nv.nhan.indexOf(i) >= 0) throw loi('Em đã nhận phần thưởng này rồi.');
+      if (nv.xong < tg.can) throw loi('Cần xong ' + tg.can + ' nhiệm vụ — em mới xong ' + nv.xong + '.');
+      f.nv = { d: ngay, nhan: nv.nhan.concat(i) };
+      f.xu += tg.xu;
+      them.xu += tg.xu;
+      them.xp += 5;
+      if (tg.luot) { const v = f.vq && f.vq.d === ngay ? f.vq : { d: ngay, n: 0, them: 0 }; f.vq = { d: ngay, n: v.n || 0, them: (v.them || 0) + 1 }; them.luot = 1; }
     } else if (a === 'phucvu') {
       // phuc vu khach nha hang: doc cau goi mon tieng Trung, chon dung mon trong kho
+      if (lv < MO_TN.nh.lv) throw loi('Nhà hàng mở ở cấp ' + MO_TN.nh.lv + '.');
       const nh = nhaHang(f, lv, userId), i = Number(b.i), o = nh.ds[i];
       if (!o) throw loi('Không có khách này.');
       if (o.xong) throw loi('Khách này đã được phục vụ rồi.');
@@ -1057,9 +1137,14 @@ module.exports = function ganNongTrai(app, d) {
       if ((f.kho[o.m] || 0) < 1) throw loi('Kho chưa có món này — vào Bếp nấu trước nhé!');
       f.kho[o.m] -= 1;
       if (!f.kho[o.m]) delete f.kho[o.m];
+      const hm = await hanMuc(userId, f);
+      if (hm.con < 1) throw loi('Hạn mức bán hôm nay đã hết (' + hm.toiDa + ' xu) — học thêm sao để phục vụ tiếp: mỗi sao = +' + BAN_MOI_SAO + ' xu hạn mức!');
       o.xong = 1;
-      f.xu += o.xu;
-      them.xu += o.xu;
+      const tra = Math.min(o.xu, hm.con);
+      ghiBanNgay(f, tra);
+      f.xu += tra;
+      them.xu += tra;
+      if (tra < o.xu) them.catHanMuc = o.xu - tra;
       them.xp += 3;
     } else if (a === 'dondb') {
       // giao don dac biet (de bai chi co chu Han)
@@ -1114,7 +1199,7 @@ module.exports = function ganNongTrai(app, d) {
     return { ok: true, them, lenCap: st.lv > lvCu ? st.lv : 0, st };
   }
 
-  const CATALOG = { CA, CA_BAC, VQ_O, VQ_MOC, CAN_TOI_DA, CAN_SL_TOI_DA, MON, LUONG, LUONG_PY, CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO, RUONG,
+  const CATALOG = { MO_TN, GIAI, KHIEN_SAO, CA, CA_BAC, VQ_O, VQ_MOC, CAN_TOI_DA, CAN_SL_TOI_DA, MON, LUONG, LUONG_PY, CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO, RUONG,
     MOC_THE, HOC_VI, THE_DUNG, BAN_CO_BAN, BAN_MOI_SAO, TAI, TAI_GIUP_XU,
     TIN_TU, TIN_MAU, TIN_HOI, TIN_BAN_NGAY, QUA_NGAY };
 
@@ -1153,6 +1238,8 @@ module.exports = function ganNongTrai(app, d) {
       const ngoai = f.don.d !== d.vnDayKey() ? await hangCuaBan(req.user.id, f).catch(() => null) : null;
       if (donHomNay(f, req.user.id, d.vnDayKey(), ngoai).moi) await ghi(req.user.id, f);
       if (xetThienTai(f)) await ghi(req.user.id, f);
+      // khien bao ve: hoc du KHIEN_SAO sao hom nay -> thien tai khong con tac dung
+      if (taiDang(f) && !f.tai.khien && saoHoc(await d.loadStar(req.user.id)).homNay >= KHIEN_SAO) { f.tai.khien = 1; await ghi(req.user.id, f); }
       return trangThai(req.user.id, f);
     });
     res.json(req.query.cat ? Object.assign({ cat: CATALOG }, st) : st);
@@ -1210,6 +1297,7 @@ module.exports = function ganNongTrai(app, d) {
       if (!q) throw loi('Hết câu — bấm để lấy câu mới.');
       const dung = chon === q.dap;
       f.taiq.i++;
+      ghiOn(f, q.zh, dung);
       const kq = { ok: true, dung, dap: q.dap, zh: q.zh, py: q.py, vn: q.vn, xong: false };
       if (dung) { kq.xong = lamTai(f, 1); chung.ldCong(me); }
       kq.cau = !kq.xong && f.taiq.i < f.taiq.ds.length ? cauTai(f.taiq.ds[f.taiq.i]) : null;
@@ -1383,17 +1471,27 @@ module.exports = function ganNongTrai(app, d) {
     const [sao, ten, sc] = await Promise.all([d.loadAllStars(), d.loadUserNames(), d.loadScoreOf(me)]);
     const theoSao = {};
     sao.forEach((x) => { theoSao[x.userId] = x; });
-    const bang = ids.filter((id) => ten[id]).map((id) => {
+    const tuanNay = d.vnWeekKey(), tuanTruoc = new Date(Date.parse(tuanNay + 'T00:00:00Z') - 7 * 86400000).toISOString().slice(0, 10);
+    // sao tuan truoc: dang luu o prevWeek (neu tuan nay da hoc) hoac van o week (neu tuan nay chua hoc)
+    const saoTuanTruoc = (s) => (!s ? 0 : s.week === tuanNay ? (s.prevWeek === tuanTruoc ? s.prevWeekStars || 0 : 0) : s.week === tuanTruoc ? s.weekStars || 0 : 0);
+    let bang = ids.filter((id) => ten[id]).map((id) => {
       const sh = theoSao[id] ? saoHoc(theoSao[id]) : { homNay: 0, tuan: 0 };
       const x = theoId[id];
-      return { id, ten: ten[id], tuan: sh.tuan, homNay: sh.homNay, la: id === me, av: x ? x.av : null, lv: x ? x.lv : 0, lop: x ? x.lop : '', hv: theoSao[id] ? theoSao[id].total || 0 : 0 };
+      return { id, ten: ten[id], tuan: sh.tuan, homNay: sh.homNay, la: id === me, av: x ? x.av : null, lv: x ? x.lv : 0, lop: x ? x.lop : '', hv: theoSao[id] ? theoSao[id].total || 0 : 0,
+        truoc: saoTuanTruoc(theoSao[id]) };
     }).sort((a, b) => b.tuan - a.tuan || b.homNay - a.homNay || a.ten.localeCompare(b.ten, 'vi'));
+    // giai dau theo cap: chi so voi ban cung giai
+    const lvEm = lvTuXp((await doc(me)).xp), giaiEm = giaiCua(lvEm);
+    const giai = req.query.giai === '1';
+    if (giai) bang = bang.filter((r) => r.la || giaiCua(r.lv || 1) === giaiEm);
+    const tienBo = bang.filter((r) => r.tuan - r.truoc > 0).map((r) => ({ id: r.id, ten: r.ten, av: r.av, la: r.la, tang: r.tuan - r.truoc, tuan: r.tuan, truoc: r.truoc }))
+      .sort((a, b) => b.tang - a.tang).slice(0, 5);
     bang.forEach((r, i) => { r.hang = i + 1; });
     const k = bang.findIndex((r) => r.la);
     const em = bang[k];
     const tren = k > 0 ? bang[k - 1] : null;
     res.json({
-      pham, lop: tenPham, tong: bang.length, conGiay: d.secondsToVnWeekEnd(),
+      pham, lop: tenPham, tong: bang.length, conGiay: d.secondsToVnWeekEnd(), giai, giaiEm: Object.assign({ i: giaiEm }, GIAI[giaiEm]), tienBo,
       ds: bang.slice(0, 30),
       em: em ? Object.assign({}, em, { chuoi: (sc && sc.streak) || 0, tren: tren ? { ten: tren.ten, tuan: tren.tuan, can: tren.tuan - em.tuan + 1 } : null }) : null,
     });
@@ -1423,7 +1521,7 @@ module.exports = function ganNongTrai(app, d) {
   async function tuHocCua(user) {
     const on = await d.baiOnCua(user);
     let tu = [], thay = {};
-    (on.urls || []).forEach((u) => d.tuVungBai(u).forEach((v) => { if (!thay[v.zh] && /^[㐀-鿿]{1,4}$/.test(v.zh)) { thay[v.zh] = 1; tu.push(v); } }));
+    (on.urls || []).forEach((u) => d.tuVungBai(u).forEach((v) => { if (!thay[v.zh] && /^[㐀-鿿]{1,4}$/.test(v.zh)) { thay[v.zh] = 1; tu.push(Object.assign({ u }, v)); } }));
     let nguon = on.nguon || '';
     if (tu.length < 8) {
       // du phong: ten cac mon trong nong trai
@@ -1431,7 +1529,10 @@ module.exports = function ganNongTrai(app, d) {
       nguon = 'Tên các món trong nông trại';
     }
     nguon = nguon.replace(/^Ôn từ /, '');
-    return { tu, nguon, sai: (on.sai || []).filter((z) => thay[z]), chu: [...new Set(tu.map((v) => v.zh).join('').split(''))] };
+    // tu den han on lai (on cach quang), hop thap truoc
+    const fm = await doc(user.id), ghi0 = fm.on || {}, bay = Date.now();
+    const den = tu.filter((v) => ghi0[v.zh] && ghi0[v.zh][1] <= bay).sort((a, b) => ghi0[a.zh][0] - ghi0[b.zh][0]).map((v) => v.zh);
+    return { tu, nguon, sai: (on.sai || []).filter((z) => thay[z]), chu: [...new Set(tu.map((v) => v.zh).join('').split(''))], den };
   }
   // nhieu de: chon ngau nhien (khong can giong)
   function ngauNhien(ds, tu, n, khoa) {
@@ -1441,12 +1542,21 @@ module.exports = function ganNongTrai(app, d) {
   // 1 cau hoi ve tu v: k = nghia | py | chu | thieu; n = so lua chon; kho = dap an nhieu gan giong; goiPy = hien pinyin (cau de)
   function taoCau(bo, v, k, n, kho, goiPy) {
     const tu = bo.tu, chonNhieu = kho ? nhieu : ngauNhien;
+    if (k === 'viet') {
+      // viet chu con thieu trong tu (net chu lay tu bai hoc); client cham bang HanziWriter: xong = chon 0
+      const net = netCuaBai(v.u), chs = [...v.zh], vt = chs.findIndex((c) => net[c]);
+      if (vt < 0) k = 'thieu';
+      else return { k, hoi: { tu: chs.map((c, j) => (j === vt ? '＿' : c)).join(''), py: v.py, vn: v.vn, net: net[chs[vt]] }, lua: ['✓'], dap: 0, zh: v.zh, py: v.py, vn: v.vn };
+    }
     if (k === 'thieu' && v.zh.length < 2) k = 'nghia';
     if (k === 'py' && !v.py) k = 'chu';
     let hoi, lua, dap;
     if (k === 'nghia') {        // nghia tieng Viet -> chon chu Han
       lua = [v.zh].concat(chonNhieu(tu, v, n - 1, (x) => x.zh).map((x) => x.zh));
       hoi = { vn: v.vn }; dap = v.zh;
+    } else if (k === 'nghe') {  // nghe doc -> chon chu Han (client doc bang giong may; ma hoa nhe de khong lo dap an tren man hinh)
+      lua = [v.zh].concat(chonNhieu(tu, v, n - 1, (x) => x.zh).map((x) => x.zh));
+      hoi = { nghe: Buffer.from(encodeURIComponent(v.zh)).toString('base64') }; dap = v.zh;
     } else if (k === 'py') {    // chu Han -> chon pinyin
       lua = [v.py].concat(chonNhieu(tu.filter((x) => x.py), v, n - 1, (x) => x.py.toLowerCase()).map((x) => x.py));
       hoi = { zh: v.zh }; dap = v.py;
@@ -1462,24 +1572,34 @@ module.exports = function ganNongTrai(app, d) {
     lua = tronMang(lua.filter((x, j, a) => x && a.indexOf(x) === j));
     return { k, hoi, lua, dap: lua.indexOf(dap), zh: v.zh, py: v.py, vn: v.vn };
   }
-  const cauDung = (q) => q.lua.length >= 2 && q.dap >= 0;
-  async function deChuHan(user) {
-    const bo = await tuHocCua(user), tu = bo.tu, sai = bo.sai;
-    // tu hay sai uu tien vao de
-    const chon = tronMang(tu.filter((v) => sai.indexOf(v.zh) >= 0)).slice(0, 4).concat(tronMang(tu.filter((v) => sai.indexOf(v.zh) < 0))).slice(0, CH_SO);
-    const kieu = tronMang(['nghia', 'nghia', 'nghia', 'py', 'py', 'py', 'thieu', 'thieu', 'chu', 'chu']);
-    return { nguon: bo.nguon, ds: chon.map((v, i) => taoCau(bo, v, kieu[i], 4, true)).filter(cauDung) };
+  const cauDung = (q) => (q.k === 'viet' || q.lua.length >= 2) && q.dap >= 0;
+  // opt.nghe: may em doc duoc tieng Trung -> co cau nghe; opt.viet: co cau viet chu
+  async function deChuHan(user, opt) {
+    opt = opt || {};
+    const bo = await tuHocCua(user), tu = bo.tu, sai = bo.sai, den = bo.den || [];
+    // uu tien: tu den han on (toi da 4), tu hay sai (toi da 3), roi cac tu khac
+    const chon = tronMang(tu.filter((v) => den.indexOf(v.zh) >= 0)).slice(0, 4)
+      .concat(tronMang(tu.filter((v) => den.indexOf(v.zh) < 0 && sai.indexOf(v.zh) >= 0)).slice(0, 3))
+      .concat(tronMang(tu.filter((v) => den.indexOf(v.zh) < 0 && sai.indexOf(v.zh) < 0))).slice(0, CH_SO);
+    const kieu = ['nghia', 'nghia', 'nghia', 'py', 'py', 'py', 'thieu', 'thieu', 'chu', 'chu'];
+    if (opt.nghe) { kieu[0] = 'nghe'; kieu[8] = 'nghe'; }
+    if (opt.viet) kieu[3] = 'viet';
+    const k2 = tronMang(kieu);
+    return { nguon: bo.nguon, ds: chon.map((v, i) => taoCau(bo, v, k2[i], 4, true)).filter(cauDung) };
   }
   // De cho 1 con ca bac t: ca cang to -> nhieu cau hon, dap an giong nhau hon, uu tien tu em hay sai / tu dai
   const KIEU_CA = [null, ['chu'], ['chu', 'nghia'], ['nghia', 'py'], ['py', 'thieu', 'nghia'], ['thieu', 'py', 'nghia']];
-  async function deCa(user, t) {
+  async function deCa(user, t, opt) {
     const bo = await tuHocCua(user), bac = CA_BAC[t];
-    const sai = tronMang(bo.tu.filter((v) => bo.sai.indexOf(v.zh) >= 0));
-    const thuong = tronMang(bo.tu.filter((v) => bo.sai.indexOf(v.zh) < 0));
+    const kho = (v) => bo.sai.indexOf(v.zh) >= 0 || (bo.den || []).indexOf(v.zh) >= 0;
+    const sai = tronMang(bo.tu.filter(kho));
+    const thuong = tronMang(bo.tu.filter((v) => !kho(v)));
     const ds = t >= 4 ? sai.concat(thuong.sort((a, b) => b.zh.length - a.zh.length)) : t === 3 ? thuong.concat(sai) : thuong.sort((a, b) => a.zh.length - b.zh.length).concat(sai);
     // ca be: lay trong nua tu ngan/de; ca to: lay tu dau danh sach (tu sai, tu dai)
     const nguon = t <= 2 ? tronMang(ds.slice(0, Math.max(6, Math.ceil(ds.length / 2)))) : ds;
-    const kieu = tronMang(KIEU_CA[t]);
+    const ks = KIEU_CA[t].slice();
+    if (opt && opt.nghe && t >= 2 && t <= 4) ks.push('nghe');
+    const kieu = tronMang(ks);
     const cau = [];
     for (const v of nguon) {
       if (cau.length >= bac.so) break;
@@ -1523,7 +1643,7 @@ module.exports = function ganNongTrai(app, d) {
     res.json({ ds, the: soThe(f), theMoc: f.theMoc || 0 });
   }));
   app.post('/api/farm/chuhan/moi', d.requireAuth, d.asyncRoute(async (req, res) => {
-    const de = await deChuHan(req.user);
+    const de = await deChuHan(req.user, { nghe: !!(req.body && req.body.nghe), viet: true });
     if (de.ds.length < 5) return res.status(400).json({ error: 'Chưa đủ từ vựng để ra đề — học thêm bài rồi quay lại nhé!' });
     const out = await lanLuot(req.user.id, async () => {
       const f = await doc(req.user.id);
@@ -1544,6 +1664,7 @@ module.exports = function ganNongTrai(app, d) {
       const q = ch.ds[i], chon = Number(b.chon);
       const dung = chon === q.dap;
       ch.tl.push({ chon, dung });
+      ghiOn(f, q.zh, dung);
       const kq = { ok: true, dung, dap: q.dap, zh: q.zh, py: q.py, vn: q.vn, i };
       if (dung) {
         chung.ldCong(req.user.id);
@@ -1624,12 +1745,13 @@ module.exports = function ganNongTrai(app, d) {
     await traLoi(res, lanLuot(req.user.id, async () => {
       const f = await doc(req.user.id);
       const hc = hoCa(f);
+      if (lvTuXp(f.xp) < MO_TN.cau.lv) throw loi('Hồ câu cá mở ở cấp ' + MO_TN.cau.lv + ' — chăm sóc nông trại để lên cấp nhé!');
       const c = hc.ho.find((x) => x.id === String(b.id || ''));
       if (!c) throw loi('Con cá này bơi đi mất rồi — chọn con khác nhé!');
       if (hc.dang && hc.dang.ca === c.id) return { ok: true, dang: dangCaChoHs(hc.dang), ho: hoChoHs(hc, homNay) };
       const m = moiCa(hc, homNay);
       if (m.con <= 0) throw loi(m.sau ? 'Hết mồi câu rồi — học thêm ' + m.sau + ' sao nữa để có thêm 1 mồi nhé!' : 'Hôm nay em dùng hết ' + MOI_TOI_DA + ' mồi rồi — mai câu tiếp nhé!');
-      const de = await deCa(req.user, c.t);
+      const de = await deCa(req.user, c.t, { nghe: !!b.nghe });
       if (de.ds.length < CA_BAC[c.t].so) throw loi('Chưa đủ từ vựng để ra câu hỏi — học thêm bài rồi quay lại nhé!');
       // dang cau con khac ma bo do -> con do bơi mất
       if (hc.dang) { const cu = hc.dang.ca; hc.ho = hc.ho.filter((x) => x.id !== cu); }
@@ -1654,6 +1776,7 @@ module.exports = function ganNongTrai(app, d) {
       const cham = !!bac.giay && Date.now() - g.bd > (bac.giay + 4) * 1000;
       const dung = !cham && Number(b.chon) === q.dap;
       g.tl.push(dung);
+      ghiOn(f, q.zh, dung);
       const kq = { ok: true, dung, cham, dap: q.dap, zh: q.zh, py: q.py, vn: q.vn, i };
       if (dung) chung.ldCong(req.user.id);
       const xong = () => { hc.ho = hc.ho.filter((x) => x.id !== g.ca); hc.dang = null; hoCa(f); };
@@ -2095,6 +2218,7 @@ module.exports = function ganNongTrai(app, d) {
   });
   require('./nong-trai-cho')(app, d, {
     doc, ghi, lanLuot, loi, traLoi, trangThai, ghiNk, docNhieu, thiTruong, giaSap, boNhoCongDong, SP, CA, CAY, HANG, LUONG, LUONG_PY,
+    hanMuc, ghiBanNgay, lvTuXp, MO_TN, BAN_MOI_SAO,
   }, chung);
   async function initTatCa() { await initTable(); await chung.initTable(); }
 

@@ -1010,9 +1010,9 @@
         '<button type="button" class="nt-mua" data-mua="o"' + (duO ? '' : ' disabled') + '>' + (duO ? giaHtml({ sao: giaO }) : 'Đã tối đa') + '</button>');
       var sau = c.DAT[s.dat + 1];
       html += theMon('morong', { zh: '扩建', py: 'kuòjiàn', vn: 'Mở rộng đất' }, 'co',
-        '<p class="nt-the-phu">' + (sau ? s.kich.w + '×' + s.kich.h + ' → ' + sau.w + '×' + sau.h + ' ô' : 'Đất đã rộng nhất') + '</p>',
+        '<p class="nt-the-phu">' + (sau ? s.kich.w + '×' + s.kich.h + ' → ' + sau.w + '×' + sau.h + ' ô' + (sau.vn ? '<br><b>' + esc(sau.vn) + '</b> <span lang="zh">' + esc(sau.zh) + '</span> · lô đất to gấp đôi trong thị trấn' : '') : 'Đất đã rộng nhất') + '</p>',
         sau && sau.lv > lv ? sau.lv : 0,
-        '<button type="button" class="nt-mua" data-lam="morong"' + (!sau || sau.lv > lv ? ' disabled' : '') + '>' + (sau ? giaHtml(sau) : 'Tối đa') + '</button>');
+        '<button type="button" class="nt-mua" data-lam="morong"' + (!sau || sau.lv > lv || (sau.xu && s.xu < sau.xu) ? ' disabled' : '') + '>' + (sau ? giaHtml(sau) : 'Tối đa') + '</button>');
       var nha = s.o.filter(function (o) { return o.k === 'nha'; })[0], n = (nha && nha.n) || 1, nm = c.NHA[n + 1];
       if (nm) html += theMon('nha', nm, 'nha-' + (n + 1), '<p class="nt-the-phu">Nâng cấp nhà · điểm đẹp ' + nm.dep + '</p>', nm.lv > lv ? nm.lv : 0,
         '<button type="button" class="nt-mua" data-lam="nangnha"' + (nm.lv > lv ? ' disabled' : '') + '>' + giaHtml(nm) + '</button>');
@@ -3649,12 +3649,20 @@
     veCtThiTran();
     if (r.cuaEm) taiDk().catch(function () {}); else { var dkn = $('#ntDkNut'); if (dkn) dkn.hidden = true; }
     // so lo moi hang theo be rong man hinh -> chen 1 con pho truoc moi hang
-    var cot = soCotTt = soCot(luoi), html = '';
-    r.ds.forEach(function (b, i) {
-      if (i % cot === 0) html += hangPho(i / cot);
-      html += oPho(b, i);
-    });
-    luoi.innerHTML = html + hangPho(Math.ceil(r.ds.length / cot));
+    var cot = soCotTt = soCot(luoi), html = '', hang = 0, dung = 0;
+    // trang trai lon chiem 2 o; xep lan luot, o lon khong vua cho trong thi lay lo nho ke tiep chen vao
+    var cho = r.ds.map(function (b, i) { return { b: b, i: i, u: laDatLon(b) ? Math.min(2, cot) : 1 }; });
+    while (cho.length) {
+      if (dung === 0) html += hangPho(hang++);
+      var j = -1;
+      for (var k = 0; k < cho.length; k++) if (cho[k].u <= cot - dung) { j = k; break; }
+      if (j < 0) { dung = 0; continue; }
+      var x = cho.splice(j, 1)[0];
+      html += oPho(x.b, x.i, x.u > 1);
+      dung += x.u;
+      if (dung >= cot) dung = 0;
+    }
+    luoi.innerHTML = html + hangPho(hang);
     $all('img', luoi).forEach(ganLoiAnh);
   }
   // Duong pho: moi hang lo dat la 1 con pho mang ten tieng Trung (bam vao bien de nghe doc)
@@ -3680,9 +3688,10 @@
       '<button type="button" class="nt-pho-bien" data-doc="' + esc(p.zh) + '" aria-label="' + esc(p.vn) + ' — nghe đọc"><b lang="zh">' + esc(p.zh) + '</b><small>' + esc(p.py) + ' · ' + esc(p.vn) + '</small></button>' +
       dao + danPho(i) + '</div>';
   }
-  function oPho(b, i) {
+  function laDatLon(b) { return !!(b.co && b.kich && b.kich.w >= 20); }
+  function oPho(b, i, to) {
     // ven duong: den long goc tren, cay / chau hoa goc duoi (moi lo mot kieu)
-    return '<div class="nt-o-pho">' + loDat(b, i) +
+    return '<div class="nt-o-pho' + (to ? ' to' : '') + '">' + loDat(b, i) +
       '<img class="nt-vd nt-vd-den" src="' + anh('den-long') + '" alt="" draggable="false">' +
       '<img class="nt-vd nt-vd-cay" src="' + anh(VEN_DUONG[(i * 3 + 1) % VEN_DUONG.length]) + '" alt="" draggable="false"></div>';
   }
@@ -3798,7 +3807,8 @@
       '<span class="nt-lo-nv">' + NV.svg(b.av || NV.macDinh(b.id)) + '</span></div>' +
       '<div class="nt-lo-bien"><b>' + huy + huyHv(b.hv, true) + esc(b.ten) + (b.la ? ' (em)' : '') + '</b><small>' +
       (b.co ? 'Cấp ' + b.lv + ' · đẹp ' + b.dep + ' · ❤ ' + b.tim + (b.sap ? ' · 🛒 ' + b.sap : '') : 'Chưa mở nông trại') +
-      (b.tuan ? ' · ⭐ ' + b.tuan + ' tuần' : '') + '</small>' + (b.vuaHoc ? '<span class="nt-lo-vua">👑 Chăm học nhất tuần</span>' : '') + '</div></button>';
+      (b.tuan ? ' · ⭐ ' + b.tuan + ' tuần' : '') + '</small>' +
+      (laDatLon(b) ? '<span class="nt-lo-to">🏰 ' + (b.kich.w >= 28 ? 'Điền trang hoàng gia <span lang="zh">皇家庄园</span>' : b.kich.w >= 24 ? 'Điền trang <span lang="zh">庄园</span>' : 'Trang trại lớn <span lang="zh">大农场</span>') + ' · ' + b.kich.w + '×' + b.kich.h + '</span>' : '') + (b.vuaHoc ? '<span class="nt-lo-vua">👑 Chăm học nhất tuần</span>' : '') + '</div></button>';
   }
   // Ve thu nho: vi tri tinh theo % kich thuoc dat nen lo nao cung vua khung
   function farmNho(b) {

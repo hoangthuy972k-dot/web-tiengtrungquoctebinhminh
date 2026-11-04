@@ -2046,3 +2046,12 @@ body.o-ho-cau .nt-duoi, body.o-ho-cau .nt-zoom, body.o-ho-cau .nt-thu-het, body.
 .nt-mon.cao { background: #fffaf0; }
 @media (max-width: 480px) { .nt-tl-lua img { width: 40px; height: 40px; } .nt-hd-dong { flex-wrap: wrap; } .nt-hd-nut { flex-direction: row; } }
 .nt-hd-chu .nt-link { align-self: flex-start; padding: 0; text-align: left; color: var(--chu); text-decoration: none; }
+
+/* trang trai lon: lo dat chiem 2 o trong thi tran */
+.nt-o-pho.to { grid-column: span 2; }
+.nt-o-pho.to .nt-lo { background: #ffd56b; }
+.nt-o-pho.to .nt-lo.la { background: #ffc83d; }
+.nt-lo-to { align-self: center; margin-top: 2px; padding: 1px 10px; border-radius: 999px; background: #7a4b1f; color: #fff4d6; font-size: 0.78rem; font-weight: 800; }
+.nt-lo-to [lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.nt-o-pho.to .nt-lo-nv { width: 10%; }
+.nt-tt-luoi > .nt-o-pho { align-self: start; }

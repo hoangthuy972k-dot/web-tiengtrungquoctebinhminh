@@ -249,6 +249,12 @@ const DAT = [
   { w: 14, h: 12, sao: 60, lv: 4 },
   { w: 16, h: 14, sao: 100, lv: 6 },
   { w: 18, h: 16, sao: 160, lv: 8 },
+  // Dat lon (co giao: du cap + tra bang xu); tu 20 o rong, lo dat trong thi tran to gap doi
+  { w: 20, h: 18, xu: 800, lv: 12, zh: '大农场', py: 'dà nóngchǎng', vn: 'Trang trại lớn' },
+  { w: 22, h: 20, xu: 1500, lv: 16, zh: '大农场', py: 'dà nóngchǎng', vn: 'Trang trại lớn' },
+  { w: 24, h: 22, xu: 2500, lv: 20, zh: '庄园', py: 'zhuāngyuán', vn: 'Điền trang' },
+  { w: 26, h: 24, xu: 4000, lv: 25, zh: '庄园', py: 'zhuāngyuán', vn: 'Điền trang' },
+  { w: 28, h: 26, xu: 6000, lv: 30, zh: '皇家庄园', py: 'huángjiā zhuāngyuán', vn: 'Điền trang hoàng gia' },
 ];
 const O_MIEN_PHI = 4;
 function giaODat(soO) { return 3 + Math.max(0, soO - O_MIEN_PHI); }
@@ -917,9 +923,12 @@ module.exports = function ganNongTrai(app, d) {
       const sau = DAT[f.dat + 1];
       if (!sau) throw loi('Đất đã rộng tối đa.');
       if (sau.lv > lv) throw loi('Lên cấp ' + sau.lv + ' để mở rộng đất.');
-      await tieuSao(sau.sao);
+      if (sau.xu) {
+        if (f.xu < sau.xu) throw loi('Cần ' + sau.xu + ' xu để mở rộng — em đang có ' + f.xu + ' xu. Bán hàng, giao đơn để có thêm xu nhé!');
+        f.xu -= sau.xu;
+      } else await tieuSao(sau.sao);
       f.dat++;
-      them.xp += 10;
+      them.xp += sau.xu ? 30 : 10;
     } else if (a === 'nangnha') {
       const nha = f.o.find((o) => o.k === 'nha');
       const sau = NHA[(nha.n || 1) + 1];

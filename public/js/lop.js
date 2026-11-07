@@ -44,7 +44,9 @@
   }
   function save() {
     try {
-      localStorage.setItem('hyv_lop', JSON.stringify({ level: state.level, teams: state.teams, secs: state.timer.secs, sound: audio.on, teamNames: state.teamNames || [] }));
+      // picked: bai dang chon cua cap nay — choi tro o trang rieng (nghieng dau, van dong…) roi quay lai khong phai chon lai
+      localStorage.setItem('hyv_lop', JSON.stringify({ level: state.level, teams: state.teams, secs: state.timer.secs, sound: audio.on, teamNames: state.teamNames || [],
+        picked: Object.keys(state.picked || {}) }));
     } catch (e) { /* bo qua */ }
   }
   function restore() {
@@ -55,6 +57,7 @@
       if (d.secs) { state.timer.secs = d.secs; state.timer.left = d.secs; }
       if (d.sound === false) audio.on = false;
       if (Array.isArray(d.teamNames)) state.teamNames = d.teamNames;
+      if (Array.isArray(d.picked)) state.pickedLuu = { level: state.level, urls: d.picked };
     } catch (e) { /* bo qua */ }
   }
 
@@ -139,9 +142,11 @@
         if (state.picked[u]) delete state.picked[u]; else state.picked[u] = true;
         b.classList.toggle('on');
         updateCount();
+        save();
       });
     });
     updateCount();
+    save();
   }
 
   function pickedJudges() {
@@ -395,7 +400,11 @@
     $('#lopLessons').textContent = 'Đang tải…';
     loadLevel(level).then(function () {
       state.lessons = collectLessons(level);
-      // Khong tu tich san bai nao — thay/co bam bai nao thi ra bai do
+      // Khong tu tich san bai nao — thay/co bam bai nao thi ra bai do; rieng luc mo lai trang (vua choi xong tro o
+      // trang rieng) thi giu cac bai da chon lan truoc cua cung cap
+      var luu = state.pickedLuu;
+      state.pickedLuu = null;
+      if (luu && luu.level === level) state.lessons.forEach(function (l) { if (luu.urls.indexOf(l.url) >= 0) state.picked[l.url] = true; });
       renderLessons();
       save();
     });

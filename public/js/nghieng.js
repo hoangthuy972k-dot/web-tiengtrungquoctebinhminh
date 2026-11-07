@@ -11,8 +11,9 @@
 
   var WASM = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.35/wasm';
   var MO_HINH = 'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task';
-  var GOC = 15;          // nghieng qua 15 do moi tinh
-  var GIU_MS = 700;      // giu bao lau thi chot dap an
+  var GOC = 8;           // hoi nghieng dau (qua 8 do) la tinh — co giao: chi can nghieng nhe
+  var NEN_GOC = 4;       // lech duoi 4 do moi coi la "dau thang" de tu chinh goc goc (khong nuot mat cu nghieng nhe)
+  var GIU_MS = 550;      // giu bao lau thi chot dap an
   var GIAY = 15;         // thoi gian moi cau (tren lop 20)
   var KL_KEY = 'hyv_tn_kl_nghieng';
 
@@ -167,7 +168,9 @@
       return choMP().then(taoLm).then(function (lm) { S.lm = lm; return lm; });
     }).then(function () {
       var ds = cfg.cau.slice();
-      S.cau = lop ? ds : tron(ds).slice(0, 12);
+      // tren lop: luot dau giu thu tu co chon; ban khac choi tiep thi xao lai de khong thuoc dap an luot truoc
+      S.luot = (S.luot || 0) + 1;
+      S.cau = lop ? (S.luot > 1 ? tron(ds) : ds) : tron(ds).slice(0, 12);
       S.moiBan = lop && $('nhMoiBan').checked;
       S.i = 0; S.diem = 0; S.dung = 0; S.chuoi = 0; S.chuoiMax = 0;
       if (window.SaoGame) window.SaoGame.batDauVan();
@@ -223,7 +226,7 @@
       var goc = Math.atan2((b.y - a.y) * h, (b.x - a.x) * w) * 180 / Math.PI;
       S.goc = S.goc * 0.6 + goc * 0.4;
       // tu chinh "thang dau" cho tung ban (camera dat hoi lech)
-      if (Math.abs(S.goc - S.nen) < 8) S.nen = S.nen * 0.97 + S.goc * 0.03;
+      if (Math.abs(S.goc - S.nen) < NEN_GOC) S.nen = S.nen * 0.97 + S.goc * 0.03;
       var g = S.goc - S.nen;
       $('nhDau').style.transform = 'rotate(' + (-g).toFixed(1) + 'deg)';
       if (S.cheDo === 'nghieng') {
@@ -362,9 +365,11 @@
       '<div class="nh-kq-diem">' + S.diem + ' <small>điểm</small></div>' +
       '<p>Đúng ' + S.dung + '/' + S.cau.length + (S.chuoiMax > 1 ? ' · chuỗi dài nhất ' + S.chuoiMax : '') + (moi ? ' · 🏆 Kỷ lục mới!' : '') + '</p>' +
       (window.SaoGame ? window.SaoGame.tongKetHtml() : '') +
-      '<div class="nh-kq-nut"><button type="button" class="nh-go" id="nhLai">↺ Chơi lại</button>' +
-      '<a class="nh-btn" href="' + (lop ? '/lop' : '/game') + '">Thoát</a></div></div>';
+      // tren lop: ban khac len choi tiep ngay cung bai (khong phai quay lai chon cap / chon bai)
+      '<div class="nh-kq-nut"><button type="button" class="nh-go" id="nhLai">' + (lop ? '🙋 Bạn khác chơi tiếp' : '↺ Chơi lại') + '</button>' +
+      '<a class="nh-btn" href="' + (lop ? '/lop' : '/game') + '">' + (lop ? '← Về chọn trò khác' : 'Thoát') + '</a></div></div>';
     $('nhLai').addEventListener('click', function () {
+      if (lop) { k.hidden = true; batDau(); return; }
       k.hidden = true;
       $('nhSanh').hidden = false;
       $('nhBatDau').disabled = false;

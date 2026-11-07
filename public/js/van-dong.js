@@ -1241,9 +1241,11 @@
     var k = $('vdKq');
     k.hidden = false;
     k.innerHTML = '<div class="vd-kq-the">' + html + (window.SaoGame && !lop ? window.SaoGame.tongKetHtml() : '') +
-      '<div class="vd-kq-nut"><button type="button" class="vd-go" id="vdLai">↺ Chơi lại</button>' +
-      '<a class="vd-btn" href="' + (lop ? '/lop' : '/game') + '">Thoát</a></div></div>';
+      // tren lop: ban khac choi tiep cung bai — ve sanh voi ban moi da boc san tu danh sach lop, chi can bam Bat dau
+      '<div class="vd-kq-nut"><button type="button" class="vd-go" id="vdLai">' + (lop ? '🙋 Bạn khác chơi tiếp' : '↺ Chơi lại') + '</button>' +
+      '<a class="vd-btn" href="' + (lop ? '/lop' : '/game') + '">' + (lop ? '← Về chọn trò khác' : 'Thoát') + '</a></div></div>';
     $('vdLai').addEventListener('click', function () {
+      if (lop && S.ds.length) { if (S.tro === 'ngoisao') { if (S.ds.length >= 2) bocHaiBan(); } else bocMotBan(); }
       k.hidden = true;
       $('vdHoa').innerHTML = '';
       $('vdSanh').hidden = false;

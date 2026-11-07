@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="/css/lop-chuong.css">
 <link rel="stylesheet" href="/css/lop-noi.css">
 <link rel="stylesheet" href="/css/lop-chu-to.css">
+<link rel="stylesheet" href="/css/lop-thegiay.css">
 <link rel="stylesheet" href="/css/lop-quanly.css">
 <script>
 // CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
@@ -307,6 +308,12 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <span class="lop-game-desc">Chiếu câu có chỗ trống, đếm ngược 10 giây, cả lớp giơ thẻ. Tổ nào đúng nhiều nhất được điểm.</span>
           <span class="lop-game-count" id="lopCountAbc">—</span>
         </button>
+        <button type="button" class="lop-game-card" data-game="thegiay">
+          <span class="lop-game-emoji">📇</span>
+          <span class="lop-game-name">Thẻ giấy A/B/C/D</span>
+          <span class="lop-game-desc">Mỗi em một thẻ giấy in mã riêng, xoay thẻ chọn A/B/C/D rồi giơ lên. Cô quét cả lớp bằng webcam / camera ngay trên máy này — biết ngay ai đúng, cuối giờ có bảng tổng kết. Không cần điện thoại học sinh.</span>
+          <span class="lop-game-count">in thẻ · quét</span>
+        </button>
         <button type="button" class="lop-game-card" data-game="sort">
           <span class="lop-game-emoji">🧩</span>
           <span class="lop-game-name">Xếp câu bằng người</span>
@@ -545,6 +552,8 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/lop-diemthuong.js"></script>
 <script src="/js/lop-thuvien.js"></script>
 <script src="/js/lop-chuong.js"></script>
+<script src="/js/thegiay-ma.js"></script>
+<script src="/js/lop-thegiay.js"></script>
 <script src="/js/lop.js"></script>
 </body>
 </html>

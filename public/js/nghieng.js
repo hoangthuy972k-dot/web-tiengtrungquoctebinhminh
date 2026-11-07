@@ -197,11 +197,15 @@
     if (window.NhacNen && S.tieng) window.NhacNen.bat({ ctx: ac, kieu: 'vui' });
     $('nhHoi').innerHTML = '<span class="nh-dem" id="nhDemSo">3</span>';
     $('nhDuoi').textContent = 'Ngồi thẳng, nhìn vào camera nhé!';
-    return cho(100).then(function () { sDem(); return cho(900); })
-      .then(function () { $('nhDemSo').textContent = '2'; sDem(); return cho(900); })
-      .then(function () { $('nhDemSo').textContent = '1'; sDem(); return cho(900); })
-      .then(function () { sDem(true); });
+    // bam Thoat giua chung -> S.phien doi -> dung han dem nguoc
+    var ph = S.phien;
+    var buoc = function (f) { return function () { return ph !== S.phien ? new Promise(function () {}) : f(); }; };
+    return cho(100).then(buoc(function () { sDem(); return cho(900); }))
+      .then(buoc(function () { $('nhDemSo').textContent = '2'; sDem(); return cho(900); }))
+      .then(buoc(function () { $('nhDemSo').textContent = '1'; sDem(); return cho(900); }))
+      .then(buoc(function () { sDem(true); }));
   }
+  function hen(f, ms) { var ph = S.phien; setTimeout(function () { if (ph === S.phien) f(); }, ms); }
 
   // Mot vong khung hinh: doc goc nghieng / net mat, cap nhat thanh giu
   function vong() {
@@ -335,7 +339,7 @@
       $('nhTiep').addEventListener('click', tiep);
       S.pha = 'cho';
     } else {
-      setTimeout(tiep, cuoi ? 2200 : 2600);
+      hen(tiep, cuoi ? 2200 : 2600);
     }
   }
   function tiep() {
@@ -381,6 +385,21 @@
   veTieng();
   veSanh();
   $('nhBatDau').addEventListener('click', batDau);
+  // Tren lop: dang choi ma bam "Thoat" -> ve man chuan bi (giu bai da chon) de moi ban khac len;
+  // dang o man chuan bi thi Thoat moi ve Che do lop hoc
+  $('nhThoat').addEventListener('click', function (e) {
+    if (!lop || !$('nhSanh').hidden) return;
+    e.preventDefault();
+    S.phien = (S.phien || 0) + 1;
+    S.pha = 'sanh';
+    if (window.NhacNen) window.NhacNen.tat();
+    $('nhChoi').hidden = true;
+    $('nhKq').hidden = true;
+    $('nhDiem').hidden = true;
+    $('nhSanh').hidden = false;
+    $('nhBatDau').disabled = false;
+    $('nhBatDau').textContent = '▶ Bắt đầu';
+  });
   $('nhTieng').addEventListener('click', function () {
     S.tieng = !S.tieng;
     try { localStorage.setItem('hyv_nghieng_tieng', JSON.stringify(S.tieng)); } catch (e) { /* bo qua */ }

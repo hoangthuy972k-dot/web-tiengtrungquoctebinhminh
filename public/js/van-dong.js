@@ -180,7 +180,7 @@
   }
   var S = {
     tro: hoiTro ? hoiTro[1] : (cfg && /^(chem|theduc|ngoisao)$/.test(cfg.tro) ? cfg.tro : 'chem'),
-    da: 'qua', moiBan: false, muc: 5,
+    da: 'qua', moiBan: false, muc: 5, phien: 0,
     cau: [], i: 0, diem: 0, dung: 0, chuoi: 0, chuoiMax: 0,
     pha: 'sanh', video: null, chay: false, tsCuoi: -1, lanDo: 0, tCu: 0,
     lmTay: null, lmNguoi: null, fs: null,
@@ -535,11 +535,16 @@
     $('vdHoi').innerHTML = '<span class="vd-dem" id="vdDemSo">3</span>';
     $('vdDuoi').textContent = S.tro === 'theduc' ? 'Lùi lại cho camera thấy từ đầu đến bụng nhé!'
       : S.tro === 'ngoisao' ? 'Hai bạn đứng hai bên, giơ tay lên nào!' : 'Giơ bàn tay lên trước camera nhé!';
-    return cho(100).then(function () { sDem(); return cho(900); })
-      .then(function () { $('vdDemSo').textContent = '2'; sDem(); return cho(900); })
-      .then(function () { $('vdDemSo').textContent = '1'; sDem(); return cho(900); })
-      .then(function () { sDem(true); });
+    // bam Thoat giua chung -> S.phien doi -> dung han dem nguoc (khong mo cau hoi nua)
+    var ph = S.phien;
+    var buoc = function (f) { return function () { return ph !== S.phien ? new Promise(function () {}) : f(); }; };
+    return cho(100).then(buoc(function () { sDem(); return cho(900); }))
+      .then(buoc(function () { $('vdDemSo').textContent = '2'; sDem(); return cho(900); }))
+      .then(buoc(function () { $('vdDemSo').textContent = '1'; sDem(); return cho(900); }))
+      .then(buoc(function () { sDem(true); }));
   }
+  // hen gio trong luot choi — bo qua neu giao vien da bam Thoat ve man chuan bi
+  function hen(f, ms) { var ph = S.phien; setTimeout(function () { if (ph === S.phien) f(); }, ms); }
 
   /* ================= khung ve + vong lap ================= */
   var cv = $('vdCv'), cx = cv.getContext('2d'), san = $('vdSan');
@@ -1070,7 +1075,7 @@
     veNguoi(0); veNguoi(1);
     setTimeout(function () { docZh(c.docSau); }, 700);
     var xong = S.i + 1 - S.vong.tu >= S.vong.n || S.i + 1 >= S.cau.length;
-    setTimeout(xong ? ketThucNS : tiep, xong ? 2400 : 2800);
+    hen(xong ? ketThucNS : tiep, xong ? 2400 : 2800);
   }
   function veNguoi(k) {
     var P = S.p[k], el = $('vdP' + k), c = S.cau[S.i], n = P.n, trang = '', so, nhan;
@@ -1214,13 +1219,13 @@
       (c.why ? '<span>' + esc(c.why) + '</span>' : '');
     setTimeout(function () { docZh(c.docSau); }, 700);
     var cuoi = S.luot ? S.i + 1 - S.vong.tu >= S.vong.n : S.i + 1 >= S.cau.length;
-    if (S.luot && cuoi) { S.pha = 'cho-luot'; setTimeout(ketThucLuot, 2200); return cong; }
+    if (S.luot && cuoi) { S.pha = 'cho-luot'; hen(ketThucLuot, 2200); return cong; }
     if (S.moiBan && !cuoi) {
       $('vdDuoi').insertAdjacentHTML('beforeend', '<div class="vd-moi">👉 Mời bạn tiếp theo lên! <button type="button" class="vd-go vd-go-sm" id="vdTiep">Câu tiếp ▶</button></div>');
       $('vdTiep').addEventListener('click', tiep);
       S.pha = 'cho';
     } else {
-      setTimeout(tiep, cuoi ? 2200 : 2800);
+      hen(tiep, cuoi ? 2200 : 2800);
     }
     return cong;
   }
@@ -1247,17 +1252,36 @@
       '<a class="vd-btn" href="' + (lop ? '/lop' : '/game') + '">' + (lop ? '← Về chọn trò khác' : 'Thoát') + '</a></div></div>';
     $('vdLai').addEventListener('click', function () {
       if (lop && S.ds.length) { if (S.tro === 'ngoisao') { if (S.ds.length >= 2) bocHaiBan(); } else bocMotBan(); }
-      k.hidden = true;
-      $('vdHoa').innerHTML = '';
-      $('vdSanh').hidden = false;
-      $('vdDiem').hidden = true;
-      $('vdTieuDe').textContent = '🤸 Vận động trả lời';
-      $('vdBatDau').disabled = false;
-      $('vdBatDau').textContent = '▶ Bắt đầu';
-      S.pha = 'sanh';
-      veCach();
+      veSanhLai();
     });
   }
+  // ve lai man chuan bi (giu bai, giu danh sach lop) — dung khi het luot hoac giao vien bam Thoat giua chung
+  function veSanhLai() {
+    S.phien++;
+    S.pha = 'sanh';
+    nhac(false);
+    S.vat = []; S.hat = [];
+    if (KH.w) cx.clearRect(0, 0, KH.w, KH.h);
+    tb('');
+    $('vdChoi').hidden = true;
+    $('vd').classList.remove('is-choi');
+    $('vdKq').hidden = true;
+    $('vdHoa').innerHTML = '';
+    $('vdSanh').hidden = false;
+    $('vdDiem').hidden = true;
+    $('vdP0').hidden = $('vdP1').hidden = true;
+    $('vdTieuDe').textContent = '🤸 Vận động trả lời';
+    $('vdBatDau').disabled = false;
+    $('vdBatDau').textContent = '▶ Bắt đầu';
+    veCach();
+  }
+  // Tren lop: dang choi ma bam "Thoat" -> quay ve man chuan bi de chon ban khac (khong phai chon lai bai);
+  // dang o man chuan bi thi Thoat moi ve Che do lop hoc
+  $('vdThoat').addEventListener('click', function (e) {
+    if (!lop || !$('vdSanh').hidden) return;
+    e.preventDefault();
+    veSanhLai();
+  });
   function kyLuc(diem) { // tra ve true neu pha ky luc cu (choi o nha)
     if (lop) return false;
     var key = 'hyv_tn_kl_vd_' + S.tro, kl = parseInt(localStorage.getItem(key) || '0', 10) || 0;

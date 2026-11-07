@@ -28,10 +28,11 @@ html.lmi-open, html.lmi-open body { overflow: hidden; }
 .lmi-loi { color: var(--do) !important; font-weight: 800 !important; }
 .lmi-tim { display: flex; gap: 8px; }
 .lmi-tim input { flex: 1; min-width: 0; }
-.lmi-ds { flex: 1; min-height: 0; overflow: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; align-content: start; padding: 2px; }
-.lmi-hs { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 10px 12px; min-height: 62px; text-align: left;
+.lmi-ds { flex: 1; min-height: 0; overflow: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); grid-auto-rows: max-content; gap: 8px; align-content: start; padding: 2px 4px 6px 2px; }
+.lmi-hs { position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 9px 28px 9px 12px; min-height: 62px; height: auto; text-align: left; overflow: visible; white-space: normal;
   border: 2.5px solid #e0c99f; border-radius: 14px; background: #fff; font: inherit; color: var(--vien); cursor: pointer; box-shadow: 0 3px 0 #e0c99f; }
 .lmi-hs b { font-size: 1.02rem; line-height: 1.25; }
+.lmi-hs em, .lmi-bt-ten em { font-style: normal; font-size: .78rem; font-weight: 700; color: #8a6d4b; }
 .lmi-hs small { color: var(--nau); font-weight: 600; font-size: .78rem; }
 .lmi-hs.chon { border-color: var(--vien); background: #fff3c4; box-shadow: 0 3px 0 var(--vien), 0 0 0 4px rgba(255, 200, 61, .5); }
 .lmi-hs.da { background: #eaf7e1; border-color: #9fd08a; }
@@ -80,3 +81,55 @@ html.lmi-open, html.lmi-open body { overflow: hidden; }
 .lop-mieng-bang:hover { box-shadow: 0 7px 0 #1d5c38; }
 .lop-mieng-bang:active { box-shadow: 0 2px 0 #1d5c38; }
 .lop-mieng-bang .lop-thi-bang-ic { color: #2f8a57; }
+
+/* tab Cham diem / Bang diem lop */
+.lmi-tabs { display: flex; gap: 8px; }
+.lmi-tabs button { font: inherit; font-weight: 800; font-size: 1.02rem; padding: 9px 18px; border: 2.5px solid var(--vien); border-radius: 999px; background: #fff; cursor: pointer; box-shadow: 0 3px 0 var(--vien); color: var(--vien); }
+.lmi-tabs button.on { background: var(--do); color: #fff; }
+.lmi-tabs button:focus-visible, .lmi-bchip:focus-visible, .lmi-hs:focus-visible { outline: 3px solid #3f88c5; outline-offset: 2px; }
+
+/* bang diem lop */
+.lmi-bang { display: flex; flex-direction: column; gap: 12px; padding: 18px; border: 3px solid var(--vien); border-radius: 24px; background: #fff; box-shadow: 0 6px 0 rgba(43, 29, 58, .25); }
+.lmi-btop { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.lmi-btop h2 { margin: 0; flex: 1; min-width: 220px; font-size: 1.4rem; color: var(--do); text-wrap: balance; }
+.lmi-btop h2 span { color: var(--vien); }
+.lmi-bky { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--nau); font-size: .92rem; }
+.lmi-bky select { font: inherit; font-weight: 700; padding: 6px 10px; border: 2px solid #e0c99f; border-radius: 10px; background: #fff; color: var(--vien); }
+.lmi-tk { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.lmi-o { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border: 2.5px solid #eadfcf; border-radius: 16px; background: var(--kem); }
+.lmi-o small { font-weight: 800; color: var(--nau); text-transform: uppercase; letter-spacing: .06em; font-size: .74rem; }
+.lmi-o b { font-size: 2rem; font-weight: 900; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.lmi-o b i { font-style: normal; font-size: 1.1rem; color: var(--nau); }
+.lmi-o > span { font-size: .82rem; font-weight: 600; color: var(--nau); }
+.lmi-o-chua { cursor: pointer; border-color: #f0b9ad; background: #fff1ee; }
+.lmi-o-chua b { color: var(--do); }
+.lmi-tien { display: block; height: 8px; margin-top: 6px; border-radius: 999px; background: #eadfcf; overflow: hidden; }
+.lmi-tien span { display: block; height: 100%; border-radius: inherit; background: var(--xanh); }
+.lmi-pb { display: flex; height: 30px; border-radius: 12px; overflow: hidden; border: 2.5px solid var(--vien); }
+.lmi-pb span { display: grid; place-items: center; min-width: 26px; color: #fff; font-weight: 900; font-size: .9rem; }
+.lmi-pb-gioi { background: #2f8a57; } .lmi-pb-kha { background: #3f88c5; } .lmi-pb-tb { background: #e0a020; } .lmi-pb-yeu { background: #e0644f; }
+.lmi-pb span.lmi-pb-tb { color: var(--vien); }
+.lmi-pb-chua { background: #d9ccb8; } .lmi-pb span.lmi-pb-chua { color: var(--vien); }
+.lmi-pb-chu { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .88rem; font-weight: 600; color: var(--nau); }
+.lmi-pb-chu i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; border-radius: 4px; vertical-align: -1px; }
+.lmi-pb-chu b { color: var(--vien); }
+.lmi-bloc { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.lmi-bchip { font: inherit; font-weight: 800; font-size: .92rem; padding: 6px 12px; border: 2px solid var(--vien); border-radius: 999px; background: #fff; cursor: pointer; color: var(--vien); }
+.lmi-bchip i { font-style: normal; display: inline-block; min-width: 22px; padding: 0 6px; margin-left: 4px; border-radius: 999px; background: #f1e7d6; text-align: center; }
+.lmi-bchip.on { background: var(--vang); box-shadow: 0 2px 0 var(--vien); }
+.lmi-bwrap { overflow: auto; max-height: 52vh; border: 2px solid #eadfcf; border-radius: 14px; }
+.lmi-bt { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.lmi-bt th { position: sticky; top: 0; z-index: 1; padding: 9px 10px; background: #fff3d6; text-align: left; font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--nau); border-bottom: 2px solid #eadfcf; white-space: nowrap; }
+.lmi-bt td { padding: 7px 10px; border-bottom: 1px solid #f1e7d6; vertical-align: middle; }
+.lmi-bt tr:hover td { background: #fffaf0; }
+.lmi-bt-so { color: #a08a6c; font-weight: 800; width: 1%; }
+.lmi-bt-ten { min-width: 170px; }
+.lmi-bt-ten b { display: block; font-weight: 800; }
+.lmi-lan { display: flex; flex-wrap: wrap; gap: 4px; }
+.lmi-lan i { font-style: normal; display: grid; place-items: center; min-width: 28px; height: 26px; padding: 0 4px; border-radius: 8px; color: #fff; font-weight: 900; font-size: .9rem; }
+.lmi-tbo { display: inline-block; min-width: 44px; padding: 3px 10px; border-radius: 999px; text-align: center; font-weight: 900; color: #fff; }
+.lmi-tb-gioi { background: #2f8a57; } .lmi-tb-kha { background: #3f88c5; } .lmi-tb-tb { background: #e0a020; color: var(--vien) !important; } .lmi-tb-yeu { background: #e0644f; }
+.lmi-tbo.lmi-tb-chua { background: #eadfcf; color: var(--nau); }
+.lmi-o b.lmi-tb-gioi, .lmi-o b.lmi-tb-kha, .lmi-o b.lmi-tb-tb, .lmi-o b.lmi-tb-yeu, .lmi-o b.lmi-tb-chua { background: none; }
+.lmi-o b.lmi-tb-gioi { color: #2f8a57; } .lmi-o b.lmi-tb-kha { color: #3f88c5; } .lmi-o b.lmi-tb-tb { color: #b07a10 !important; } .lmi-o b.lmi-tb-yeu { color: #c0392b; }
+@media (max-width: 1100px) { .lmi-tk { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

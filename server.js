@@ -4270,8 +4270,9 @@ app.get('/api/admin/oral', requireAdmin, asyncRoute(async (req, res) => {
   const classId = String(req.query.classId || '');
   const byRoster = {};
   checks.forEach((c) => {
-    const k = byRoster[c.rosterId] || (byRoster[c.rosterId] = { times: 0, lastMs: 0, lastScore: null, scores: [] });
+    const k = byRoster[c.rosterId] || (byRoster[c.rosterId] = { times: 0, lastMs: 0, lastScore: null, scores: [], lan: [] });
     k.times++;
+    k.lan.push({ id: c.id, ms: c.ms, score: c.score });
     if (c.ms >= k.lastMs) { k.lastMs = c.ms; k.lastScore = c.score; }
     if (typeof c.score === 'number') k.scores.push(c.score);
   });
@@ -4280,9 +4281,10 @@ app.get('/api/admin/oral', requireAdmin, asyncRoute(async (req, res) => {
     .filter((r) => r.classId === classId)
     .sort((a, b) => a.sort - b.sort)
     .map((r) => {
-      const k = byRoster[r.id] || { times: 0, lastMs: 0, lastScore: null, scores: [] };
+      const k = byRoster[r.id] || { times: 0, lastMs: 0, lastScore: null, scores: [], lan: [] };
       const avg = k.scores.length ? Math.round((k.scores.reduce((s, x) => s + x, 0) / k.scores.length) * 10) / 10 : null;
-      return { id: r.id, name: r.name, no: r.sort, times: k.times, lastMs: k.lastMs, lastScore: k.lastScore, avg: avg };
+      // lan: tung lan cham (cho Bang diem lop o man Cham diem mieng)
+      return { id: r.id, name: r.name, no: r.sort, times: k.times, lastMs: k.lastMs, lastScore: k.lastScore, avg: avg, lan: k.lan.sort((a, b) => a.ms - b.ms) };
     });
   res.json({ classes, roster });
 }));

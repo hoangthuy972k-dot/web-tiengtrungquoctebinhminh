@@ -30,6 +30,10 @@
 <link rel="stylesheet" href="/css/lop-noi.css">
 <link rel="stylesheet" href="/css/lop-chu-to.css">
 <link rel="stylesheet" href="/css/lop-thegiay.css">
+<link rel="stylesheet" href="/css/lop-onto.css">
+<link rel="stylesheet" href="/css/lop-gapthu.css">
+<link rel="stylesheet" href="/css/lop-laudai.css">
+<link rel="stylesheet" href="/css/lop-duongbang.css">
 <link rel="stylesheet" href="/css/lop-quanly.css">
 <script>
 // CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
@@ -392,6 +396,24 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <span class="lop-game-desc">Máy đọc một từ (hoặc cả câu), các tổ viết chữ Hán lên bảng. Lật ra có chữ và phiên âm để chấm.</span>
           <span class="lop-game-count lop-count-vocab">từ vựng</span>
         </button>
+        <button type="button" class="lop-game-card" data-game="gapthu">
+          <span class="lop-game-emoji">🧸</span>
+          <span class="lop-game-name">Gắp thú bông</span>
+          <span class="lop-game-desc">Tổ trả lời đúng được điều khiển cần gắp: bấm THẢ đúng lúc để gắp thú bông. Thú hiếm nhiều điểm, có bóng ⭐ x2 và 🎁 bất ngờ (cướp thú / thêm lượt). Tủ thú nhiều điểm nhất thắng.</span>
+          <span class="lop-game-count lop-count-vocab">ôn bài</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="laudai">
+          <span class="lop-game-emoji">🏰</span>
+          <span class="lop-game-name">Xây lâu đài</span>
+          <span class="lop-game-desc">Mỗi tổ một mảnh đất: trả lời đúng được chọn mảnh ghép (tường, tháp, cổng, cờ, vườn…), câu khó được mảnh lớn. Cẩn thận gió lớn! Lâu đài hoàn chỉnh được thưởng.</span>
+          <span class="lop-game-count lop-count-vocab">ôn bài</span>
+        </button>
+        <button type="button" class="lop-game-card" data-game="duongbang">
+          <span class="lop-game-emoji">🐧</span>
+          <span class="lop-game-name">Đường băng bí mật</span>
+          <span class="lop-game-desc">Chim cánh cụt của mỗi tổ vượt hồ băng tới lâu đài: trả lời đúng được chọn ô băng phía trước — an toàn, băng nứt (lùi 1) hay cá thưởng (+1 bước). Tổ tới lâu đài trước thắng.</span>
+          <span class="lop-game-count lop-count-vocab">ôn bài</span>
+        </button>
       </div>
     </div>
 
@@ -552,6 +574,10 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/lop-diemthuong.js"></script>
 <script src="/js/lop-thuvien.js"></script>
 <script src="/js/lop-chuong.js"></script>
+<script src="/js/lop-onto.js"></script>
+<script src="/js/lop-gapthu.js"></script>
+<script src="/js/lop-laudai.js"></script>
+<script src="/js/lop-duongbang.js"></script>
 <script src="/js/thegiay-ma.js"></script>
 <script src="/js/lop-thegiay.js"></script>
 <script src="/js/lop.js"></script>

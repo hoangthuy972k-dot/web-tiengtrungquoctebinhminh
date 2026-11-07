@@ -3266,7 +3266,22 @@
     caiDat();
   }
 
+  // On bai theo to (lop-onto.js + lop-gapthu / lop-laudai / lop-duongbang): to cua lop + bo cau Kiem tra bai cu theo dang (khong co cau dich)
+  function moOnTo(game) {
+    if (!pickedLabel()) return;
+    var to = [];
+    for (var i = 0; i < TEAM_DEF.length; i++) to.push({ ten: teamName(i), mau: teamColor(i), hinh: '/images/game/lop-team-' + TEAM_IMG[i] + '.svg' });
+    window.LopOnTo.mo(game, { nhan: (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel(), to: to, soTo: state.teams, layCau: function (n, ds) {
+      if (!ds) return cauDienThoai(n);
+      return loadPickedVocab().then(function (v) {
+        var kt = window.LopKiemTra;
+        return kt && kt._boCauDt ? kt._boCauDt({ vocab: v.map(boPy), mcs: pickedMcs(), sorts: pickedSorts() }, n, ds) : [];
+      });
+    } });
+  }
+
   function startGame(game) {
+    if (window.LopOnTo && window.LopOnTo.co(game)) { moOnTo(game); return; }
     if (game === 'nghieng') { moNghieng(); return; }
     if (game === 'chem' || game === 'theduc' || game === 'ngoisao') { moVanDong(game); return; }
     if (game === 'chuong' && window.LopChuong) { window.LopChuong.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
@@ -3601,6 +3616,7 @@
     { ten: '⚡ Khởi động nhanh — cả lớp cùng chơi', g: ['chuong', 'abc', 'thegiay', 'zombie', 'listen', 'match', 'hv'] },
     { ten: '🤸 Vận động trước webcam', g: ['nghieng', 'chem', 'theduc', 'ngoisao'] },
     { ten: '🏆 Đấu tổ kịch tính', g: ['tug', 'train', 'mine', 'ghep', 'luot'] },
+    { ten: '🧸 Ôn bài theo tổ — gắp thú, xây lâu đài, vượt hồ băng', g: ['gapthu', 'laudai', 'duongbang'] },
     { ten: '📱 Học sinh dùng điện thoại', g: ['dua', 'nhip', 'doikhang'] },
     { ten: '📚 Ôn từ vựng', g: ['bingo', 'ochu', 'guess', 'tiles', 'hanzi', 'chain'] },
     { ten: '🧩 Câu & ngữ pháp', g: ['errfix', 'sort', 'bay', 'doantau', 'trans'] },
@@ -3613,7 +3629,8 @@
     bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
     errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],
     taboo: ['5′', 'nói'], role: ['5–7′', 'đóng vai'], write: ['5′', 'lên bảng'],
-    nhip: ['5–10′', 'quét mã QR', 'tự làm'], tug: ['5′', '2 tổ đấu', 'bảng hoặc mã QR'], train: ['5–7′', 'các tổ đua'], mine: ['5–7′', 'theo lượt']
+    nhip: ['5–10′', 'quét mã QR', 'tự làm'], tug: ['5′', '2 tổ đấu', 'bảng hoặc mã QR'], train: ['5–7′', 'các tổ đua'], mine: ['5–7′', 'theo lượt'],
+    gapthu: ['10–15′', '2–6 tổ', 'trên bảng'], laudai: ['10–15′', '2–6 tổ', 'câu khó mảnh lớn'], duongbang: ['10′', '2–6 tổ', 'ô băng bí mật']
   };
   function decorateSetup() {
     var grid = $('.lop-games');

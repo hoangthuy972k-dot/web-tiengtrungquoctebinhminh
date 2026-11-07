@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="/css/lop-doikhang.css">
 <link rel="stylesheet" href="/css/dua-canh.css">
 <link rel="stylesheet" href="/css/lop-dua.css">
+<link rel="stylesheet" href="/css/lop-mieng.css">
 <link rel="stylesheet" href="/css/lop-chuong.css">
 <link rel="stylesheet" href="/css/lop-noi.css">
 <link rel="stylesheet" href="/css/lop-chu-to.css">
@@ -60,6 +61,11 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       <span class="lop-thi-bang-chu"><b>Thi thử HSK trên lớp</b><small>Đề HSK 1–6 · học sinh quét mã QR làm trên điện thoại · bảng điểm tự động · in đề giấy</small></span>
       <span class="lop-thi-bang-mui" aria-hidden="true">→</span>
     </a>
+    <button type="button" class="lop-thi-bang lop-mieng-bang" id="lopMiengMo">
+      <span class="lop-thi-bang-ic" aria-hidden="true">写</span>
+      <span class="lop-thi-bang-chu"><b>Chấm điểm miệng</b><small>Học sinh lên bảng viết chữ Hán, trả bài đầu giờ · chọn tên trong danh sách lớp · bấm điểm là lưu vào cột Miệng</small></span>
+      <span class="lop-thi-bang-mui" aria-hidden="true">→</span>
+    </button>
 
     <div class="lop-field">
       <label for="lopLevel">1 · Cấp độ</label>
@@ -526,6 +532,7 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/lop-doikhang.js"></script>
 <script src="/js/dua-canh.js"></script>
 <script src="/js/lop-dua.js"></script>
+<script src="/js/lop-mieng.js"></script>
 <script src="/js/lop-chuong.js"></script>
 <script src="/js/lop.js"></script>
 </body>

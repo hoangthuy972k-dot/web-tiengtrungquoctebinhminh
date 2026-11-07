@@ -600,7 +600,8 @@
   }
 
   /* ================= tro 1: chem hoa qua / bat bong bong ================= */
-  function kichVat() { return Math.max(32, Math.min(110, Math.min(KH.w, KH.h) * (S.da === 'qua' ? 0.1 : 0.115), KH.w / (S.cau[S.i].opts.length * 2.5))); }
+  // qua / bong to (co giao: chu dap an phai doc ro tu xa) — van gioi han theo be rong de cac bong khong de len nhau
+  function kichVat() { return Math.max(36, Math.min(150, Math.min(KH.w, KH.h) * (S.da === 'qua' ? 0.13 : 0.15), KH.w / (S.cau[S.i].opts.length * 2.3))); }
   function phong(zh, co) { return zh ? '700 ' + co + 'px "Be Vietnam Pro","Noto Serif SC",sans-serif' : '800 ' + co + 'px "Be Vietnam Pro","Noto Serif SC",sans-serif'; }
   // chon co chu vua khung (toi da 2 dong)
   function doChu(chu, zh, maxW, co0, coMin) {
@@ -649,12 +650,12 @@
       v.vy = -Math.sqrt(2 * v.g * (v.y - h * ngau(0.18, 0.36)));
       v.vx = (w / 2 - v.x) * ngau(0.03, 0.1) + ngau(-0.02, 0.02) * w;
       v.vr = ngau(-1.2, 1.2);
-      v.nhan = doChu(c.opts[v.i], !!c.zhOpt, Math.max(w / n * 1.3, r * 2.4) - r * 0.65 - 24, Math.round(r * 0.5), 12);
+      v.nhan = doChu(c.opts[v.i], !!c.zhOpt, Math.max(w / n * 1.3, r * 2.4) - r * 0.65 - 24, Math.round(r * 0.66), 14);
     } else {
       v.y = h + r * 1.3; v.x0 = v.x;
       v.vy = -h * ngau(0.085, 0.12) * (itDong ? 0.8 : 1); v.vx = 0; v.vr = 0;
       v.pha = Math.random() * 6.28;
-      v.nhan = doChu(c.opts[v.i], !!c.zhOpt, r * 1.55, Math.round(r * 0.48), 11);
+      v.nhan = doChu(c.opts[v.i], !!c.zhOpt, r * 1.7, Math.round(r * 0.64), 13);
     }
   }
   function capNhatVat(v, dt, now) {

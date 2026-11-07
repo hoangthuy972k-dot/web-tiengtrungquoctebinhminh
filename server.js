@@ -4305,6 +4305,21 @@ app.post('/api/admin/oral', requireAdmin, asyncRoute(async (req, res) => {
     await classDbWrite('INSERT INTO oral_checks (id, class_id, roster_id, ms, score) VALUES (?,?,?,?,?)',
       [row.id, row.classId, row.rosterId, row.ms, row.score]);
   }
+  res.json({ ok: true, id: row.id });
+}));
+// Xoa mot lan cham mieng vua ghi nham (man "Cham diem mieng" o Che do lop hoc co nut Hoan tac)
+app.delete('/api/admin/oral/:id', requireAdmin, asyncRoute(async (req, res) => {
+  const id = String(req.params.id || '');
+  if (!id) return res.status(400).json({ error: 'Thiếu mã lần chấm.' });
+  if (!USE_DB) {
+    const d = readClassFile();
+    const truoc = (d.oral || []).length;
+    d.oral = (d.oral || []).filter((x) => x.id !== id);
+    if (d.oral.length === truoc) return res.status(404).json({ error: 'Không tìm thấy lần chấm này.' });
+    writeClassFile(d);
+  } else {
+    await classDbWrite('DELETE FROM oral_checks WHERE id = ?', [id]);
+  }
   res.json({ ok: true });
 }));
 

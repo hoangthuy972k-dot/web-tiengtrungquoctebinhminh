@@ -102,6 +102,37 @@
       setTimeout(function () { tra([]); }, 8000);   // file hong thi khong treo mai
     });
   }
+  /* ---------------- nap cau cua bai (cho tro dung cau) ----------------
+     Cau sap xep (sorts) va trac nghiem (mcs) cua tung bai nam trong file du lieu
+     Che do lop hoc /js/lop-<cap>.js (tools/build-lop.js) — gan window.LOP_DATA[cap]. */
+  var napLopHua = {};
+  function napLop(level) {
+    if (!napLopHua[level]) {
+      napLopHua[level] = new Promise(function (resolve) {
+        var sc = document.createElement('script');
+        sc.src = '/js/lop-' + level + '.js';
+        sc.onload = function () { resolve((window.LOP_DATA && window.LOP_DATA[level]) || []); };
+        sc.onerror = function () { delete napLopHua[level]; resolve([]); };
+        document.head.appendChild(sc);
+      });
+    }
+    return napLopHua[level];
+  }
+  // loai: 'sorts' | 'mcs' — gop cau cua cac bai dang chon (khop theo duong dan bai, khong thi theo so bai)
+  function napCauDaChon(loai) {
+    var ds = state.lessons.filter(function (l) { return state.picked[l.url]; });
+    return napLop(state.level).then(function (list) {
+      var out = [];
+      ds.forEach(function (l) {
+        var b = null;
+        for (var i = 0; i < list.length && !b; i++) if (list[i].url === l.url) b = list[i];
+        for (i = 0; i < list.length && !b; i++) if (String(list[i].n) === String(l.so)) b = list[i];
+        if (b && Array.isArray(b[loai])) out = out.concat(b[loai]);
+      });
+      return out;
+    });
+  }
+
   function napDaChon() {
     var urls = state.lessons.filter(function (l) { return state.picked[l.url]; })
       .map(function (l) { return l.url; });
@@ -232,8 +263,23 @@
     $('#ghPlay').hidden = false;
     $('#ghPlayTen').textContent = g.emoji + ' ' + g.ten;
     $('#ghPlayBai').textContent = ds.map(function (l) { return 'Bài ' + l.so; }).join(' · ');
-    $('#ghStage').innerHTML = '<p class="gh-dangtai">Đang lấy từ vựng…</p>';
+    $('#ghStage').innerHTML = '<p class="gh-dangtai">' + (g.canCau ? 'Đang lấy câu của bài…' : 'Đang lấy từ vựng…') + '</p>';
     document.body.classList.toggle('gh-dang-lop', state.cheDo === 'lop');
+
+    // Tro dung cau (tro-nha-cau.js): lay cau sap xep / trac nghiem thay cho tu vung
+    if (g.canCau) {
+      napCauDaChon(g.canCau).then(function (cau) {
+        if ($('#ghPlay').hidden) return; // da thoat trong luc tai
+        if (g.chuanCau) cau = g.chuanCau(cau);
+        if (state.phien) state.phien.dung();
+        state.phien = window.Arcade.mo($('#ghStage'), key, {
+          cau: cau,
+          nhan: ds.map(function (l) { return 'Bài ' + l.so; }).join(' · '),
+          thoat: thoat
+        });
+      });
+      return;
+    }
 
     napDaChon().then(function (vocab) {
       if (!vocab.length) {

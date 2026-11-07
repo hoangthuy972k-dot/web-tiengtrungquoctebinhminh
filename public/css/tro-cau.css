@@ -1,0 +1,151 @@
+/* ================= Tro choi cau — che do mot nguoi (dien thoai) =================
+   Bo sung cho lop-bay.css / lop-doantau.css khi tro mo o che do mot nguoi
+   (.by.is-mot, .dt.is-mot): /game tu hoc va phong thi QR tren /choi.
+   Thanh tren, HUD va bai toa doi sang tong sang (kem, vien nau dam) cho hop
+   giao dien /choi; man nho 375px gon lai, khong cuon ngang.                   */
+
+/* ---------- thanh tren & nut: kem sang ---------- */
+.by.is-mot .by-bar, .dt.is-mot .dt-bar {
+  background: rgba(255, 250, 240, .94); color: #2b1d3a;
+  border-bottom: 3px solid #2b1d3a; backdrop-filter: none;
+}
+.by.is-mot .by-title { color: #7a2f8f; font-weight: 900; }
+.dt.is-mot .dt-title { color: #b2311e; font-weight: 900; }
+.by.is-mot .by-bar .by-btn, .dt.is-mot .dt-bar .dt-btn {
+  background: #fff; color: #2b1d3a; border: 2.5px solid #2b1d3a; box-shadow: 0 3px 0 #2b1d3a; font-weight: 800;
+}
+.by.is-mot .by-bar .by-btn:active, .dt.is-mot .dt-bar .dt-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #2b1d3a; }
+.by.is-mot .by-bar .by-btn[hidden], .dt.is-mot .dt-bar .dt-btn[hidden] { display: none; }
+
+/* nut chinh: vien dam, bong cung nhu /choi */
+.by.is-mot .by-go, .dt.is-mot .dt-go {
+  border: 3px solid #2b1d3a; box-shadow: 0 5px 0 #2b1d3a; color: #2b1d3a;
+  background: linear-gradient(180deg, #ffd96a, #ffb92e);
+}
+.by.is-mot .by-go:active, .dt.is-mot .dt-go:active { transform: translateY(3px); box-shadow: 0 2px 0 #2b1d3a; }
+.by.is-mot .by-btn-sang, .dt.is-mot .dt-btn-sang { border: 2.5px solid #2b1d3a; box-shadow: 0 3px 0 #2b1d3a; font-weight: 800; }
+.by.is-mot .by-the, .dt.is-mot .dt-the { border: 4px solid #2b1d3a; box-shadow: 0 8px 0 #2b1d3a, 0 24px 50px rgba(30, 40, 80, .2); }
+.by-mot-so, .dt-mot-so { margin: 10px 0 0; padding: 10px 14px; border-radius: 14px; background: #fff4d6; color: #5a4630; font-weight: 700; }
+
+/* ---------- HUD sang ---------- */
+.by.is-mot .by-hud-o, .by.is-mot .by-bang-o, .dt.is-mot .dt-hud-o {
+  background: rgba(255, 255, 255, .92); color: #2b1d3a; border: 2.5px solid #2b1d3a; font-weight: 700;
+}
+.by.is-mot .by-hud-o b, .by.is-mot .by-bang-o b, .dt.is-mot .dt-hud-o b { color: #c2410c; }
+.by.is-mot .by-hud-o.is-loi b { color: #d23a2a; }
+.by.is-mot .by-bang-o.is-luot { background: #fff4d6; box-shadow: none; }
+.by.is-mot .by-luot, .dt.is-mot .dt-luot { border: 2.5px solid #2b1d3a; box-shadow: 0 3px 0 #2b1d3a; }
+.by.is-mot .by-ctx { background: rgba(255, 255, 255, .94); color: #2b1d3a; border: 2.5px solid #2b1d3a; font-weight: 600; }
+.dt.is-mot .dt-tin { color: #1f3a52; }
+
+/* ---------- bai toa: cat vang sang thay cho soi nau ---------- */
+.dt.is-mot .dt-bai {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(160, 120, 60, .16) 0 2px, transparent 3px) 0 0 / 22px 22px,
+    linear-gradient(180deg, #f6e7c4, #ead3a2);
+  border: 3px solid #2b1d3a; box-shadow: inset 0 3px 10px rgba(120, 80, 30, .15);
+  color: #4a3420;
+}
+.dt.is-mot .dt-bai-hd { color: #7a5a30; }
+.dt.is-mot .dt-bai-rong { color: #6b4a22; font-weight: 700; }
+
+/* ---------- diem tong + o phu (ky luc / thu hang) o man ket qua ---------- */
+.dt-tong { display: flex; justify-content: center; align-items: baseline; gap: 10px; margin: 4px 0 10px; }
+.dt-tong b { font-size: clamp(3rem, 9vw, 5rem); color: #2f7a4a; line-height: 1; }
+.dt-tong span { color: #7a6650; font-size: 1.2rem; font-weight: 600; }
+.by-phu, .dt-phu { display: grid; gap: 8px; max-width: 560px; margin: 0 auto 14px; text-align: center; }
+.by-phu:empty, .dt-phu:empty { display: none; }
+.tc-dong {
+  padding: 10px 14px; border-radius: 14px; border: 2.5px solid #2b1d3a;
+  background: #fff; color: #2b1d3a; font-weight: 700; line-height: 1.45;
+}
+.tc-dong b { color: #b2311e; }
+.tc-dong.is-moi { background: #fff4d6; animation: tc-nay .6s cubic-bezier(.3, 1.6, .5, 1); }
+.tc-dong.is-hang { background: #eaf6ff; font-size: 1.15rem; }
+.tc-dong.is-hang b { font-size: 1.5em; color: #2a4fbf; }
+.tc-dong.is-nhe { border-style: dashed; border-color: #b9a88a; color: #6b5a40; font-weight: 600; }
+@keyframes tc-nay { from { transform: scale(.6); opacity: 0; } }
+
+/* ---------- dien thoai ---------- */
+@media (max-width: 860px) {
+  .by.is-mot .by-title, .dt.is-mot .dt-title { display: inline; font-size: 1rem; }
+  .by.is-mot .by-title .by-buom { width: 1.4em; }
+}
+@media (max-width: 600px) {
+  .by.is-mot .by-bar, .dt.is-mot .dt-bar { padding: 6px 8px; gap: 6px; flex-wrap: nowrap; }
+  .by.is-mot .by-title, .dt.is-mot .dt-title { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .by.is-mot .by-bar-gap, .dt.is-mot .dt-bar-gap { display: none; }
+  .by.is-mot .by-bar .by-btn, .dt.is-mot .dt-bar .dt-btn { min-height: 38px; padding: 4px 10px; font-size: .88rem; }
+  .by.is-mot .by-ic, .dt.is-mot .dt-ic { min-width: 38px; padding: 4px; }
+  .by.is-mot .by-the, .dt.is-mot .dt-the { width: calc(100% - 20px); margin: 12px auto; padding: 16px 14px; border-radius: 20px; }
+  .by.is-mot .by-the h2, .dt.is-mot .dt-the h2 { font-size: 1.5rem; }
+  .by.is-mot .by-logo, .dt.is-mot .dt-logo { width: 72px; }
+  .by.is-mot .by-luat, .dt.is-mot .dt-luat { font-size: .95rem; line-height: 1.55; }
+  .by.is-mot .by-opt, .dt.is-mot .dt-opt { min-height: 44px; padding: 5px 12px; font-size: .95rem; }
+  .by.is-mot .by-go, .dt.is-mot .dt-go { min-height: 50px; padding: 8px 20px; font-size: 1.05rem; }
+  .by.is-mot .by-go kbd, .dt.is-mot .dt-go kbd, .by.is-mot .by-btn kbd, .dt.is-mot .dt-btn kbd { display: none; }
+
+  /* bay: HUD mot dong, chu buom nho lai cho vua man hep */
+  .by.is-mot .by-choi { gap: 6px; padding: 6px 8px 8px; }
+  .by.is-mot .by-hud { gap: 5px; }
+  .by.is-mot .by-luot { display: none; }
+  .by.is-mot .by-hud-o, .by.is-mot .by-bang-o { padding: 3px 9px; font-size: .88rem; }
+  .by.is-mot .by-hud-gap { display: none; }
+  .by.is-mot .by-ctx { font-size: 1rem; padding: 5px 12px; }
+  .by.is-mot .by-tu { font-size: 1.3rem; padding: 0 .8em; }
+  .by.is-mot .by-tu-chu { border-width: 2.5px; box-shadow: inset 0 -.2em 0 var(--c), 0 4px 0 #2b1d3a, 0 8px 14px rgba(30, 20, 70, .22); }
+  .by.is-mot .by-khay { gap: 6px; padding: 8px 10px; border-radius: 18px; min-height: 64px; }
+  .by.is-mot .by-khay-tu { flex-basis: 100%; font-size: 1.45rem; }
+  .by.is-mot .by-khay-nut { width: 100%; justify-content: space-between; gap: 5px; }
+  .by.is-mot .by-khay-nut .by-btn-sang { min-height: 40px; padding: 4px 9px; font-size: .86rem; flex: 1 1 auto; }
+  .by.is-mot .by-con { font-size: .85rem; flex: 1 0 100%; text-align: center; margin: 0; }
+  .by.is-mot .by-con:empty { display: none; }
+  .by.is-mot .by-kq-diem { font-size: 3.2rem; }
+  .by.is-mot .by-ds-cau { flex: 1 1 calc(100% - 44px); font-size: 1.15rem; }
+
+  /* doan tau: 2 toa moi hang, toa thap va chu nho; vuot doc de cuon man (cham van gan toa) */
+  .dt.is-mot .dt-choi { gap: 8px; padding: 6px 8px 10px; }
+  .dt.is-mot .dt-hud { gap: 5px; }
+  .dt.is-mot .dt-luot { padding: 3px 10px; font-size: .9rem; }
+  .dt.is-mot .dt-hud-o { padding: 3px 9px; font-size: .88rem; }
+  .dt.is-mot .dt-tin { flex-basis: 100%; font-size: .9rem; }
+  .dt.is-mot .dt-ga { padding-top: 24px; flex: 0 0 auto; }
+  .dt.is-mot .dt-ray { gap: 12px; padding-bottom: 12px; margin-bottom: 22px; }
+  .dt.is-mot .dt-cho { min-height: 82px; }
+  .dt.is-mot .dt-toa-than { min-height: 72px; padding: 5px; gap: 4px; border-radius: 12px 12px 7px 7px; }
+  .dt.is-mot .dt-toa-trai { font-size: 1.05rem; padding: 2px; }
+  .dt.is-mot .dt-toa-phai { font-size: .8rem; padding: 3px 5px; line-height: 1.25; }
+  .dt.is-mot .dt-toa .dt-may { flex-basis: 24%; }
+  .dt.is-mot .dt-banh i { width: 18px; }
+  .dt.is-mot .dt-banh { margin-top: -9px; }
+  .dt.is-mot .dt-ong { height: 18px; }
+  .dt.is-mot .dt-noi b { width: 24px; height: 24px; font-size: .9rem; bottom: 10px; }
+  .dt.is-mot .dt-cho-trong { font-size: 1.5rem; }
+  .dt.is-mot .dt-toa { touch-action: pan-y; }
+  .dt.is-mot .dt-bai { flex: 0 0 auto; min-height: 120px; }
+  .dt.is-mot .dt-bai-dau { padding: 6px 8px; gap: 6px; }
+  .dt.is-mot .dt-bai-dau .dt-btn-sang { min-height: 40px; padding: 4px 10px; font-size: .88rem; }
+  .dt.is-mot .dt-go-sm { min-height: 42px; padding: 6px 14px; font-size: .95rem; }
+  .dt.is-mot .dt-bai-toa { gap: 18px 10px; padding: 14px 8px 10px; overflow: visible; }
+  /* .dt-choi cuon duoc nen bang loi gan vao man hinh, khong troi theo noi dung */
+  .dt.is-mot .dt-sai { position: fixed; width: calc(100% - 16px); bottom: 8px; max-height: 60%; padding: 10px 12px; }
+  .dt.is-mot .dt-giai-ds li { gap: 8px; padding: 8px; }
+  .dt.is-mot .dt-giai-cau { font-size: 1.1rem; }
+}
+
+/* ---------- /choi: chon to (phong tro choi chia to) ---------- */
+.ch-to { display: grid; gap: 14px; margin-top: 10px; width: 100%; max-width: 420px; align-self: center; }
+.ch-to-nut {
+  --c: #e0573f; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  min-height: 74px; padding: 12px 20px; border: 3px solid #2b1d3a; border-radius: 22px; cursor: pointer;
+  background: var(--c); color: #fff; box-shadow: 0 6px 0 #2b1d3a; font: inherit; text-align: left;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, .2); animation: tc-nay .45s cubic-bezier(.3, 1.6, .5, 1) both;
+}
+.ch-to-nut:nth-child(2) { animation-delay: .06s; }
+.ch-to-nut:nth-child(3) { animation-delay: .12s; }
+.ch-to-nut:nth-child(4) { animation-delay: .18s; }
+.ch-to-nut b { font-size: 1.5rem; font-weight: 900; }
+.ch-to-nut small { padding: 4px 12px; border-radius: 999px; background: rgba(255, 255, 255, .92); color: #2b1d3a; font-weight: 800; font-size: .95rem; text-shadow: none; }
+.ch-to-nut:active { transform: translateY(3px); box-shadow: 0 3px 0 #2b1d3a; }
+.ch-to-nut:disabled { opacity: .7; }
+.tc-dong.is-to { background: #f1f9ea; }

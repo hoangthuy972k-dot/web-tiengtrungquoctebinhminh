@@ -7,7 +7,14 @@
    Thu tu dung = cach ghep cac tu thanh dung chuoi `answer` (khong gia su mang
    words da xep dung; mot tu co the lap lai). Neu du lieu lech nhau thi lay
    thu tu cua mang words lam chuan.
-   Mo bang window.LopBay.mo({ cau, nhan, to }).                                 */
+   Mo bang window.LopBay.mo({ cau, nhan, to }).
+   Che do mot nguoi (dien thoai — /game tu hoc va phong thi QR /choi): them
+   mot: { so, toc, nhieu, batNgay, choiLai, nutVe, dong, onTienDo(tt), onXong(kq, oPhu), onDong() }
+   — khong chia doi, moi van `so` cau; xong moi cau bao tien do, het van goi onXong
+   (oPhu la o trong man ket qua de trang goi ghi ky luc / thu hang).
+   Che do phong QR (trang giao vien): them qr: function (cfg) — sanh giu nguyen (so doi,
+   ten doi, so cau, toc do, tu nhieu) nhung bam Bat dau thi dong lai va goi
+   qr({ soTo, ten, so, toc, nhieu }) de lop-tro.js mo phong cho hoc sinh choi tren dien thoai. */
 (function () {
   'use strict';
 
@@ -23,7 +30,7 @@
   var S = {
     built: false, goc: [], nhan: '', soTo: 1, ten: [], soCau: '8', toc: 'vua', nhieu: 0, sound: true,
     pha: 'sanh', van: 0, ds: [], ci: 0, diem: [0, 0, 0, 0], kq: [], c: null, bay: [], cho: {},
-    raf: 0, tLast: 0, dongHo: 0, W: 0, H: 0, dem: 0
+    raf: 0, tLast: 0, dongHo: 0, W: 0, H: 0, dem: 0, mot: null, qr: null
   };
   var root;
 
@@ -49,7 +56,7 @@
     var ve = S.van;
     return setTimeout(function () { if (ve === S.van && root && !root.hidden) fn(); }, ms);
   }
-  function tenTo(i) { return S.soTo < 2 ? 'Cả lớp' : (S.ten[i] || ('Tổ ' + (i + 1))); }
+  function tenTo(i) { return S.mot ? 'Em' : S.soTo < 2 ? 'Cả lớp' : (S.ten[i] || ('Tổ ' + (i + 1))); }
   function toCua(ci) { return S.soTo < 2 ? 0 : ci % S.soTo; }
 
   /* ---------------- am thanh & giong doc ---------------- */
@@ -125,9 +132,14 @@
       '<main class="by-man" id="byMan"></main>';
     document.body.appendChild(root);
 
-    $('#bySound').addEventListener('click', function () { S.sound = !S.sound; luuPref(); veNut(); if (S.sound) sndGoiY(); });
+    $('#bySound').addEventListener('click', function () {
+      S.sound = !S.sound; luuPref(); veNut();
+      if (S.sound) sndGoiY();
+      // che do mot nguoi khong co nut nhac noi (de len khay tren dien thoai): nut loa tat / bat ca nhac nen
+      if (S.mot && window.NhacNen) { if (!S.sound) window.NhacNen.tat(); else if (S.pha === 'choi' || S.pha === 'xong' || S.pha === 'cho-xong') nhacNen(); }
+    });
     $('#byFull').addEventListener('click', toanManHinh);
-    $('#byClose').addEventListener('click', dong);
+    $('#byClose').addEventListener('click', dongBam);
     window.addEventListener('keydown', phim, true);
     window.addEventListener('keyup', phimNha, true);
     window.addEventListener('resize', doiCo);
@@ -140,8 +152,22 @@
     s.title = S.sound ? 'Đang bật tiếng — bấm để tắt (M)' : 'Đang tắt tiếng — bấm để bật (M)';
     s.classList.toggle('is-off', !S.sound);
   }
+  function nhacNen() {
+    if (!window.NhacNen) return;
+    if (S.mot) { if (S.sound) window.NhacNen.bat({ kieu: 'vui', nut: false }); }
+    else window.NhacNen.bat({ kieu: 'vui' });
+  }
+  // Trang giao vien co mo phong QR: hang "Cach choi" chon choi tren bang hay thi qua ma QR
+  function laQr() { return !!(S.qr && S.cach === 'qr'); }
+  function hangCach() {
+    if (!S.qr) return '';
+    return '<div class="by-hang by-hang-cach"><span class="by-nhan">Cách chơi</span><div class="by-chon">' +
+      chipNut('cach', 'bang', '🖥️ Chơi trên bảng <small>cô điều khiển trên màn chiếu</small>', S.cach !== 'qr') +
+      chipNut('cach', 'qr', '📱 Thi đấu qua mã QR <small>mỗi em một điện thoại, đấu theo tổ</small>', S.cach === 'qr') + '</div></div>';
+  }
   function luuPref() {
-    ghiLS(PREF_KEY, { soTo: S.soTo, ten: S.ten, soCau: S.soCau, toc: S.toc, nhieu: S.nhieu, sound: S.sound });
+    // che do mot nguoi luu rieng de khong de len lua chon doi cua giao vien
+    ghiLS(S.mot ? PREF_KEY + '_mot' : PREF_KEY, { cach: S.cach, soTo: S.soTo, ten: S.ten, soCau: S.soCau, toc: S.toc, nhieu: S.nhieu, sound: S.sound });
   }
 
   /* ---------------- sanh ---------------- */
@@ -150,6 +176,7 @@
   }
   function soCauChon() {
     var n = S.goc.length;
+    if (S.mot) return Math.min(S.mot.so || 8, n);
     return S.soCau === 'het' ? n : Math.min(+S.soCau || 8, n);
   }
   function veSanh() {
@@ -165,10 +192,10 @@
         '<div class="by-the by-trong">' +
           '<div class="by-logo" aria-hidden="true">' + BUOM + '</div>' +
           '<h2>Chưa có câu nào để thả bay!</h2>' +
-          '<p>Trò chơi cần các câu <b>sắp xếp từ thành câu</b>. Hãy tích chọn bài có phần sắp xếp câu ở màn chuẩn bị, rồi mở lại nhé.</p>' +
+          '<p>Trò chơi cần các câu <b>sắp xếp từ thành câu</b>. ' + (S.mot ? 'Những bài em chọn chưa có phần này — chọn bài khác nhé.' : 'Hãy tích chọn bài có phần sắp xếp câu ở màn chuẩn bị, rồi mở lại nhé.') + '</p>' +
           '<div class="by-nut"><button type="button" class="by-go" id="byVe">← Về chọn bài</button></div>' +
         '</div>';
-      $('#byVe').addEventListener('click', dong);
+      $('#byVe').addEventListener('click', dongBam);
       return;
     }
     var ten = '';
@@ -184,30 +211,35 @@
         '<div class="by-sanh-dau">' +
           '<div class="by-logo" aria-hidden="true">' + BUOM + '</div>' +
           '<div><h2>Từ ngữ biết bay</h2>' +
-          '<p class="by-luat">Các từ của câu bay lượn khắp màn hình như những chú bướm. Bấm vào từng từ <b>theo đúng thứ tự</b> để xếp thành câu ở khay bên dưới. ' +
+          (laQr() ? '<p class="by-luat by-qr-luat">📱 <b>Thi trên điện thoại:</b> học sinh quét mã QR, nhập tên' + ' và chọn tổ (nếu chia đội), rồi mỗi em tự xếp các câu trên điện thoại của mình. ' +
+            'Điểm tổ = <b>trung bình</b> điểm các bạn trong tổ, cả tổ cùng xong một câu được <b>+20</b> — cả tổ phải cùng cố gắng!</p>' : '') +
+          '<p class="by-luat">Các từ của câu bay lượn khắp màn hình như những chú bướm. ' + (S.mot || laQr() ? 'Chạm' : 'Bấm') + ' vào từng từ <b>theo đúng thứ tự</b> để xếp thành câu ở khay bên dưới. ' +
           'Bấm sai: từ rung lên và bay tiếp (tính 1 lỗi). Dấu câu tự vào chỗ. ' +
           'Mỗi câu tối đa <b>100 điểm</b>: −15 mỗi lỗi, −2 mỗi giây quá thời gian chuẩn, ít nhất 10.</p></div>' +
         '</div>' +
-        '<div class="by-hang"><span class="by-nhan">Số đội</span><div class="by-chon">' +
+        (S.mot ? '<p class="by-ghi by-mot-so">🦋 Mỗi ván ' + soCauChon() + ' câu — xếp xong xem điểm của em.</p>' : hangCach() + '<div class="by-hang"><span class="by-nhan">Số đội</span><div class="by-chon">' +
           chipNut('to', 1, 'Cả lớp', S.soTo === 1) + chipNut('to', 2, '2 đội', S.soTo === 2) +
           chipNut('to', 3, '3 đội', S.soTo === 3) + chipNut('to', 4, '4 đội', S.soTo === 4) +
         '</div></div>' +
         '<div class="by-hang" id="byHangTen"' + (S.soTo > 1 ? '' : ' hidden') + '><span class="by-nhan">Tên đội</span><div class="by-chon">' + ten +
-          '<span class="by-ghi">Các đội lần lượt xếp mỗi đội một câu.</span></div></div>' +
-        '<div class="by-hang"><span class="by-nhan">Số câu</span><div class="by-chon">' + cau + '</div></div>' +
-        '<div class="by-hang"><span class="by-nhan">Tốc độ bay</span><div class="by-chon">' +
+          '<span class="by-ghi">' + (laQr() ? 'Học sinh tự chọn tổ trên điện thoại.' : 'Các đội lần lượt xếp mỗi đội một câu.') + '</span></div></div>' +
+        '<div class="by-hang"><span class="by-nhan">Số câu</span><div class="by-chon">' + cau + '</div></div>') +
+        (S.mot && S.mot.toc ? '' : '<div class="by-hang"><span class="by-nhan">Tốc độ bay</span><div class="by-chon">' +
           chipNut('toc', 'cham', '🐢 Chậm', S.toc === 'cham') + chipNut('toc', 'vua', '🦋 Vừa', S.toc === 'vua') + chipNut('toc', 'nhanh', '🐝 Nhanh', S.toc === 'nhanh') +
-        '</div></div>' +
-        '<div class="by-hang"><span class="by-nhan">Từ gây nhiễu</span><div class="by-chon">' +
+        '</div></div>') +
+        (S.mot && S.mot.nhieu != null ? '' : '<div class="by-hang"><span class="by-nhan">Từ gây nhiễu</span><div class="by-chon">' +
           chipNut('nhieu', 0, 'Không', S.nhieu === 0) + chipNut('nhieu', 1, '+1 từ <small>mượn câu khác</small>', S.nhieu === 1) +
           chipNut('nhieu', 2, '+2 từ <small>mượn câu khác</small>', S.nhieu === 2) +
-        '</div></div>' +
-        '<div class="by-nut"><button type="button" class="by-go" id="byBatDau">▶ Bắt đầu <kbd>Enter</kbd></button></div>' +
+        '</div></div>') +
+        '<div class="by-nut">' + (S.mot && S.mot.nutVe ? '<button type="button" class="by-btn by-btn-sang" id="byVe">' + esc(S.mot.nutVe) + '</button>' : '') +
+          '<button type="button" class="by-go" id="byBatDau">' + (laQr() ? '📱 Mở phòng QR' : '▶ Bắt đầu') + ' <kbd>Enter</kbd></button></div>' +
       '</div>';
+    if ($('#byVe')) $('#byVe').addEventListener('click', dongBam);
 
     $all('.by-opt').forEach(function (b) {
       b.addEventListener('click', function () {
         var k = b.getAttribute('data-k'), v = b.getAttribute('data-v');
+        if (k === 'cach') { S.cach = v; luuPref(); veSanh(); var g = $('#byBatDau'); if (g) g.focus(); return; }
         if (k === 'to') {
           S.soTo = +v;
           $all('.by-ten-to').forEach(function (l, i) { l.hidden = i >= S.soTo; });
@@ -297,13 +329,23 @@
   function batDau() {
     if (!S.goc.length) return;
     luuPref();
+    // Phong QR: giao cai dat cho trang giao vien mo phong, khong choi tren man chieu
+    if (laQr()) {
+      var ten = [];
+      for (var t = 0; t < S.soTo && S.soTo > 1; t++) ten.push(tenTo(t));
+      var cfg = { soTo: S.soTo, ten: ten, so: soCauChon(), toc: S.toc, nhieu: S.nhieu }, f = S.qr;
+      dong();
+      f(cfg);
+      return;
+    }
     S.ds = tron(S.goc).slice(0, soCauChon());
     S.ci = 0;
     S.diem = [0, 0, 0, 0];
     S.kq = [];
+    if (S.mot && window.SaoGame) window.SaoGame.batDauVan();
     veChoi();
     batDauCau();
-    if (window.NhacNen) window.NhacNen.bat({ kieu: 'vui' });
+    nhacNen();
   }
 
   function veChoi() {
@@ -400,7 +442,7 @@
     var c = S.c, t = toCua(S.ci);
     var l = $('#byLuot');
     l.style.setProperty('--c', S.soTo > 1 ? MAU_TO[t] : '#8a5cc7');
-    l.innerHTML = S.soTo > 1 ? '<small>Lượt của</small> <b>' + esc(tenTo(t)) + '</b>' : '<b>Cả lớp</b>';
+    l.innerHTML = S.soTo > 1 ? '<small>Lượt của</small> <b>' + esc(tenTo(t)) + '</b>' : '<b>' + (S.mot ? '🦋 Em' : 'Cả lớp') + '</b>';
     $('#bySo').textContent = S.ci + 1;
     $('#byLoi').textContent = c ? c.loi : 0;
     $('#byGio').textContent = S.pha === 'choi' ? soGiay() : (c && c.giay != null ? c.giay : 0);
@@ -708,6 +750,11 @@
     c.diem = c.bo ? 0 : tinhDiem(c);
     S.diem[to] += c.diem;
     S.kq.push({ to: to, hien: c.hien, a: c.a, diem: c.diem, loi: c.loi, giay: c.giay, bo: c.bo });
+    if (S.mot) {
+      // sao tro choi: xep xong (khong xem dap an) = 1 cau dung
+      if (window.SaoGame) { if (c.bo) window.SaoGame.sai(); else window.SaoGame.dung(); }
+      baoTienDo();
+    }
     S.bay.forEach(function (d) { d.el.classList.add('is-tan'); });
     S.cho = {};
     veKhay();
@@ -777,22 +824,41 @@
     }).join('');
     $('#byMan').innerHTML =
       '<div class="by-the by-cuoi">' +
-        '<h2>🏁 Đã xếp xong ' + S.kq.length + ' câu!</h2>' +
+        '<h2>🏁 ' + (S.mot ? 'Em đã' : 'Đã') + ' xếp xong ' + S.kq.length + ' câu!</h2>' +
         bang +
+        (S.mot ? '<div class="by-phu" id="byPhu" aria-live="polite"></div>' : '') +
         '<ol class="by-ds">' + ds + '</ol>' +
-        '<div class="by-nut">' +
-          '<button type="button" class="by-btn by-btn-sang" id="byVeSanh">⚙ Về sảnh</button>' +
-          '<button type="button" class="by-btn by-btn-sang" id="byXong">Đóng</button>' +
-          '<button type="button" class="by-go" id="byLai">🦋 Chơi lại <kbd>Enter</kbd></button>' +
+        '<div class="by-nut">' + (S.mot
+          ? (S.mot.nutVe ? '<button type="button" class="by-btn by-btn-sang" id="byXong">' + esc(S.mot.nutVe) + '</button>' : '') +
+            (S.mot.choiLai ? '<button type="button" class="by-go" id="byLai">🦋 Chơi lại <kbd>Enter</kbd></button>' : '')
+          : '<button type="button" class="by-btn by-btn-sang" id="byVeSanh">⚙ Về sảnh</button>' +
+            '<button type="button" class="by-btn by-btn-sang" id="byXong">Đóng</button>' +
+            '<button type="button" class="by-go" id="byLai">🦋 Chơi lại <kbd>Enter</kbd></button>') +
         '</div>' +
       '</div>';
     $all('.by-ds-doc').forEach(function (b) {
       b.addEventListener('click', function () { var r = S.kq[+b.getAttribute('data-i')]; if (r) docTrung(r.a); });
     });
-    $('#byVeSanh').addEventListener('click', veSanh);
-    $('#byXong').addEventListener('click', dong);
-    $('#byLai').addEventListener('click', batDau);
+    if ($('#byVeSanh')) $('#byVeSanh').addEventListener('click', veSanh);
+    if ($('#byXong')) $('#byXong').addEventListener('click', dongBam);
+    if ($('#byLai')) $('#byLai').addEventListener('click', batDau);
     sndKen();
+    if (S.mot && S.mot.onXong) {
+      var kq = soLieu(true);
+      kq.toiDa = S.kq.length * 100;
+      try { S.mot.onXong(kq, $('#byPhu')); } catch (e) { /* bo qua */ }
+    }
+  }
+
+  // So lieu van dang choi (che do mot nguoi) cho trang goi
+  function soLieu(xong) {
+    var dung = 0, loi = 0, giay = 0;
+    S.kq.forEach(function (r) { if (!r.bo) dung++; loi += r.loi; giay += r.giay; });
+    return { lam: S.kq.length, tong: S.ds.length, dung: dung, loi: loi, giay: giay, diem: S.diem[0], xong: !!xong };
+  }
+  function baoTienDo() {
+    if (!S.mot || !S.mot.onTienDo || S.kq.length >= S.ds.length) return; // cau cuoi: onXong bao thay
+    try { S.mot.onTienDo(soLieu(false)); } catch (e) { /* bo qua */ }
   }
 
   /* ---------------- phim tat / mo / dong ---------------- */
@@ -812,7 +878,7 @@
     var trongO = e.target && /input|select|textarea/i.test(e.target.tagName);
     if (e.key === 'Escape') {
       e.stopImmediatePropagation();
-      if (!document.fullscreenElement) dong();
+      if (!document.fullscreenElement && !(S.mot && S.mot.dong === false)) dongBam();
       return;
     }
     if (trongO) {
@@ -845,7 +911,7 @@
         else if (space || enter || phai) tiepCau();
         break;
       case 'cuoi':
-        if (enter && !nut) batDau();
+        if (enter && !nut && (!S.mot || S.mot.choiLai)) batDau();
         else if (nut && (space || enter)) nut.click();
         break;
     }
@@ -861,7 +927,10 @@
   function mo(opt) {
     opt = opt || {};
     if (!S.built) dung();
-    var p = docLS(PREF_KEY, {});
+    S.mot = opt.mot || null;
+    S.qr = !S.mot && typeof opt.qr === 'function' ? opt.qr : null;
+    var p = docLS(S.mot ? PREF_KEY + '_mot' : PREF_KEY, {});
+    S.cach = p.cach === 'qr' ? 'qr' : 'bang'; // mac dinh choi tren bang
     S.goc = (opt.cau || []).filter(hopLeCau);
     S.nhan = opt.nhan || '';
     S.sound = p.sound !== false;
@@ -876,15 +945,29 @@
       S.soTo = p.soTo >= 1 && p.soTo <= 4 ? p.soTo : 1;
       S.ten = Array.isArray(p.ten) ? p.ten.slice(0, 4) : [];
     }
+    if (S.mot) {
+      S.soTo = 1;
+      if (TOC[S.mot.toc]) S.toc = S.mot.toc;
+      if (S.mot.nhieu != null) S.nhieu = S.mot.nhieu === 1 || S.mot.nhieu === 2 ? S.mot.nhieu : 0;
+    }
+    root.classList.toggle('is-mot', !!S.mot);
+    $('#byClose').hidden = !!(S.mot && S.mot.dong === false);
     root.hidden = false;
     document.documentElement.classList.add('by-open');
     veNut();
     veSanh();
+    if (S.mot && S.mot.batNgay && S.goc.length) { batDau(); return; }
     var b = $('#byBatDau');
     if (b) b.focus();
   }
   function soCauHop(v) { return v === '5' || v === '8' || v === '10' || v === 'het'; }
 
+  // Nguoi choi bam dong / ve: dong roi bao trang goi (che do mot nguoi)
+  function dongBam() {
+    var cb = S.mot && S.mot.onDong;
+    dong();
+    if (cb) cb();
+  }
   function dong() {
     if (window.NhacNen) window.NhacNen.tat();
     if (!root) return;
@@ -900,5 +983,6 @@
     document.documentElement.classList.remove('by-open');
   }
 
-  window.LopBay = { mo: mo, dong: dong };
+  // loc: cac cau dung duoc cho tro choi (trang giao vien chon truoc bo cau gui cho dien thoai)
+  window.LopBay = { mo: mo, dong: dong, loc: function (ds) { return (ds || []).filter(hopLeCau); } };
 })();

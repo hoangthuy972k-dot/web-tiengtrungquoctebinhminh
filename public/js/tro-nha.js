@@ -5,6 +5,8 @@
      key, ten, emoji, chu (chu Han trang tri tren the), nen (gradient),
      moTa, canToiThieu (so tu toi thieu), mo(hop, o) -> { dung: fn }
    o = { vocab: [{ zh, py, vn, hv, em, pos, hanzi[] }] }
+   Tro dung cau cua bai (tro-nha-cau.js) khai them canCau: 'sorts' | 'mcs'
+   — game-hub.js nap du lieu Che do lop hoc va truyen o = { cau, nhan, thoat }.
 
    Khung chung lo: tao cau hoi trac nghiem tu tu vung, thanh tren
    (diem · tim · gio), o dap an 4 mau, man ket qua co ky luc rieng
@@ -322,7 +324,7 @@
     keuSai: function () { keuSai(); ghiSao(false); }, keuThang: keuThang, rung: rung,
     itChuyenDong: itChuyenDong,
     cauHoi: cauHoi, boCau: boCau, nhieu: nhieu, oDapAn: oDapAn, khung: khung, demNguoc: demNguoc, ketQua: ketQua, manMoi: manMoi,
-    docKyLuc: docKyLuc,
+    docKyLuc: docKyLuc, kyLuc: kyLuc, ghiNgayHoc: ghiNgayHoc, SO_CAU_NGAY_HOC: SO_CAU_NGAY_HOC,
     dangKy: function (g) { if (!KHO[g.key]) THU_TU.push(g.key); KHO[g.key] = g; }
   };
 
@@ -334,6 +336,17 @@
       var g = KHO[key];
       if (!g) return { dung: function () { } };
       o = o || {};
+      // Tro dung cau (xep cau / trac nghiem) thay cho tu vung
+      if (g.canCau) {
+        var soCau = (o.cau || []).length;
+        if (soCau < (g.canToiThieu || 1)) {
+          hop.innerHTML = '<p class="tn-thieu">' + (g.thieu || ('Các bài đã chọn chưa đủ câu cho trò “' + esc(g.ten) + '”.')) +
+            (soCau ? ' (mới có ' + soCau + ' câu)' : '') + ' Chọn thêm bài khác rồi chơi lại nhé.</p>';
+          return { dung: function () { } };
+        }
+        if (window.SaoGame) window.SaoGame.batDauVan();
+        return g.mo(hop, o);
+      }
       var vocab = (o.vocab || []).filter(function (v) { return v && v.zh && v.vn; });
       if (vocab.length < (g.canToiThieu || 4)) {
         hop.innerHTML = '<p class="tn-thieu">Các bài đã chọn mới có ' + vocab.length +

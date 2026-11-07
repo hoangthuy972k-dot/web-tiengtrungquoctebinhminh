@@ -3246,13 +3246,25 @@
     role: 1, hv: 1, match: 1, chain: 1, write: 1
   };
 
+  function moTroQr(game) {
+    var may = game === 'bay' ? window.LopBay : window.LopDoanTau;
+    var cau = game === 'bay' ? pickedSorts() : pickedMcs(), nhan = pickedLabel();
+    var caiDat = function () {
+      may.mo({ cau: cau, nhan: nhan, qr: function (cfg) {
+        window.LopTro.mo({ tro: game, cau: cau, nhan: nhan, cfg: cfg, caiDat: caiDat });
+      } });
+    };
+    caiDat();
+  }
+
   function startGame(game) {
     if (game === 'nghieng') { moNghieng(); return; }
     if (game === 'chem' || game === 'theduc' || game === 'ngoisao') { moVanDong(game); return; }
     if (game === 'chuong' && window.LopChuong) { window.LopChuong.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
     if (game === 'luot' && window.LopLuot) { window.LopLuot.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
-    if (game === 'bay' && window.LopBay) { window.LopBay.mo({ cau: pickedSorts(), nhan: pickedLabel() }); return; }
-    if (game === 'doantau' && window.LopDoanTau) { window.LopDoanTau.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
+    // Tu ngu biet bay / Doan tau tri thuc: man cai dat cu (so doi, ten doi, so cau…) co hang 'Cach choi':
+    // choi tren bang nhu cu, hoac mo phong QR — moi em choi tren dien thoai, man chieu hien bang xep hang theo to (lop-tro.js)
+    if ((game === 'bay' || game === 'doantau') && window.LopTro) { moTroQr(game); return; }
     // Cuoc dua ki thu: bo cau lay tu ngan hang Kiem tra bai cu (khong co cau dich)
     if (game === 'dua' && window.LopDua) { window.LopDua.mo({ layCau: cauDienThoai, nhan: pickedLabel() }); return; }
     if (game === 'doikhang' && window.LopDoiKhang) {
@@ -3585,7 +3597,7 @@
   ];
   var GAME_TAGS = {
     abc: ['3–5′', 'cả lớp'], nghieng: ['5′', 'webcam', 'từng bạn'], chem: ['5′', 'webcam', 'từng bạn'], theduc: ['5′', 'webcam', 'vận động'], ngoisao: ['5′', 'webcam', '2 bạn đấu'],
-    zombie: ['3–5′', 'cả lớp'], dua: ['10–15′', 'quét mã QR', 'chọn linh vật'], chuong: ['15′', 'cả lớp', 'bảng con / điện thoại'], luot: ['10–15′', '2–4 tổ'], bay: ['5′', 'bảng tương tác'], doantau: ['5′', 'kéo thả'], doikhang: ['5–10′', 'quét mã QR', '1–1'],
+    zombie: ['3–5′', 'cả lớp'], dua: ['10–15′', 'quét mã QR', 'chọn linh vật'], chuong: ['15′', 'cả lớp', 'bảng con / điện thoại'], luot: ['10–15′', '2–4 tổ'], bay: ['5–10′', 'trên bảng', 'hoặc mã QR theo tổ'], doantau: ['5–10′', 'trên bảng', 'hoặc mã QR theo tổ'], doikhang: ['5–10′', 'quét mã QR', '1–1'],
     ghep: ['10′', 'theo tổ'], ochu: ['5–10′', 'cả lớp / tổ'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
     bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
     errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],

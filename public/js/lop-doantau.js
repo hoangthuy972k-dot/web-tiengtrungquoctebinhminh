@@ -10,7 +10,13 @@
    thi tau keo coi, nha khoi va chay khoi man hinh, roi hien loi giai.
    Nhieu doi: moi doi mot doan tau rieng, dua thoi gian (+10 giay moi lan kiem
    tra sai). Muc Kho them 1 toa "moi" thua (dap an nhieu, khong thuoc doan tau).
-   Mo bang window.LopDoanTau.mo({ cau, nhan, to }).                            */
+   Mo bang window.LopDoanTau.mo({ cau, nhan, to }).
+   Che do mot nguoi (dien thoai — /game tu hoc va phong thi QR /choi): them
+   mot: { soToa, muc, batNgay, choiLai, nutVe, dong, onTienDo(tt), onXong(kq, oPhu), onDong() }
+   — khong chia doi, moi van mot doan tau; moi lan doi toa / kiem tra bao tien do
+   (so cho noi dang dung), tau ve ga thi tinh diem va goi onXong.
+   Che do phong QR (trang giao vien): them qr: function (cfg) — sanh giu nguyen, bam Bat dau
+   thi dong lai va goi qr({ soTo, ten, soToa, muc }) de lop-tro.js mo phong dien thoai. */
 (function () {
   'use strict';
 
@@ -22,7 +28,7 @@
   var S = {
     built: false, goc: [], nhan: '', soTo: 1, ten: [], soToa: 6, muc: 'vua', sound: true,
     pha: 'sanh', van: 0, luot: 0, kqTo: [], daDung: {}, Q: [], toa: {}, dau: null, slot: [], bai: [],
-    kiem: 0, sai: 0, t0: 0, giay: 0, dongHo: 0, keo: null, danhDau: null, tin: ''
+    kiem: 0, sai: 0, t0: 0, giay: 0, dongHo: 0, keo: null, danhDau: null, tin: '', mot: null, moiHang: 0, qr: null
   };
   var root;
 
@@ -44,7 +50,7 @@
     var ve = S.van;
     return setTimeout(function () { if (ve === S.van && root && !root.hidden) fn(); }, ms);
   }
-  function tenTo(i) { return S.soTo < 2 ? 'Cả lớp' : (S.ten[i] || ('Tổ ' + (i + 1))); }
+  function tenTo(i) { return S.mot ? 'Em' : S.soTo < 2 ? 'Cả lớp' : (S.ten[i] || ('Tổ ' + (i + 1))); }
   function soToaToiDa() { return Math.min(8, S.goc.length + 1); }
   function soCauTau() { return Math.max(2, Math.min(S.soToa, soToaToiDa()) - 1); }
 
@@ -151,12 +157,21 @@
       '<main class="dt-man" id="dtMan"></main>';
     document.body.appendChild(root);
 
-    $('#dtSound').addEventListener('click', function () { S.sound = !S.sound; luuPref(); veNut(); if (S.sound) sndDat(); });
+    $('#dtSound').addEventListener('click', function () {
+      S.sound = !S.sound; luuPref(); veNut();
+      if (S.sound) sndDat();
+      // che do mot nguoi khong co nut nhac noi (de len bai toa tren dien thoai): nut loa tat / bat ca nhac nen
+      if (S.mot && window.NhacNen) { if (!S.sound) window.NhacNen.tat(); else if (S.pha === 'choi') nhacNen(); }
+    });
     $('#dtFull').addEventListener('click', toanManHinh);
-    $('#dtClose').addEventListener('click', dong);
+    $('#dtClose').addEventListener('click', dongBam);
     window.addEventListener('keydown', phim, true);
     window.addEventListener('keyup', phimNha, true);
-    window.addEventListener('resize', function () { if (root && !root.hidden && S.pha === 'choi') doRong(); });
+    window.addEventListener('resize', function () {
+      if (!root || root.hidden || S.pha !== 'choi') return;
+      // xoay / doi co man hinh qua nguong: xep lai so toa moi hang
+      if (!S.keo && soMoiHang() !== S.moiHang) veTau(); else doRong();
+    });
     S.built = true;
   }
 
@@ -166,8 +181,22 @@
     s.title = S.sound ? 'Đang bật tiếng — bấm để tắt (M)' : 'Đang tắt tiếng — bấm để bật (M)';
     s.classList.toggle('is-off', !S.sound);
   }
+  function nhacNen() {
+    if (!window.NhacNen) return;
+    if (S.mot) { if (S.sound) window.NhacNen.bat({ kieu: 'gap', nut: false }); }
+    else window.NhacNen.bat({ kieu: 'gap' });
+  }
+  // Trang giao vien co mo phong QR: hang "Cach choi" chon choi tren bang hay thi qua ma QR
+  function laQr() { return !!(S.qr && S.cach === 'qr'); }
+  function hangCach() {
+    if (!S.qr) return '';
+    return '<div class="dt-hang dt-hang-cach"><span class="dt-nhan">Cách chơi</span><div class="dt-chon">' +
+      chipNut('cach', 'bang', '🖥️ Chơi trên bảng <small>cô điều khiển trên màn chiếu</small>', S.cach !== 'qr') +
+      chipNut('cach', 'qr', '📱 Thi đấu qua mã QR <small>mỗi em một điện thoại, đấu theo tổ</small>', S.cach === 'qr') + '</div></div>';
+  }
   function luuPref() {
-    ghiLS(PREF_KEY, { soTo: S.soTo, ten: S.ten, soToa: S.soToa, muc: S.muc, sound: S.sound });
+    // che do mot nguoi luu rieng de khong de len lua chon doi cua giao vien
+    ghiLS(S.mot ? PREF_KEY + '_mot' : PREF_KEY, { cach: S.cach, soTo: S.soTo, ten: S.ten, soToa: S.soToa, muc: S.muc, sound: S.sound });
   }
 
   /* ---------------- sanh ---------------- */
@@ -195,10 +224,10 @@
         '<div class="dt-the dt-trong">' +
           '<div class="dt-logo" aria-hidden="true">' + logo() + '</div>' +
           '<h2>Chưa đủ câu hỏi để nối toa!</h2>' +
-          '<p>Đoàn tàu cần ít nhất <b>2 câu trắc nghiệm</b>. Hãy tích chọn thêm bài ở màn chuẩn bị, rồi mở lại trò chơi nhé.</p>' +
+          '<p>Đoàn tàu cần ít nhất <b>2 câu trắc nghiệm</b>. ' + (S.mot ? 'Những bài em chọn chưa đủ — chọn thêm bài khác nhé.' : 'Hãy tích chọn thêm bài ở màn chuẩn bị, rồi mở lại trò chơi nhé.') + '</p>' +
           '<div class="dt-nut"><button type="button" class="dt-go" id="dtVe">← Về chọn bài</button></div>' +
         '</div>';
-      $('#dtVe').addEventListener('click', dong);
+      $('#dtVe').addEventListener('click', dongBam);
       return;
     }
     var ten = '';
@@ -215,29 +244,37 @@
         '<div class="dt-sanh-dau">' +
           '<div class="dt-logo" aria-hidden="true">' + logo() + '</div>' +
           '<div><h2>Đoàn tàu tri thức</h2>' +
+          (laQr() ? '<p class="dt-luat dt-qr-luat">📱 <b>Thi trên điện thoại:</b> học sinh quét mã QR, nhập tên và chọn tổ (nếu chia đội), rồi mỗi em tự nối một đoàn tàu trên điện thoại. ' +
+            'Điểm tổ = <b>trung bình</b> điểm các bạn trong tổ, cả tổ cùng về ga được <b>+20</b> — cả tổ phải cùng cố gắng!</p>' : '') +
           '<p class="dt-luat">Nối các toa thành đoàn tàu: <b>nửa trái</b> mỗi toa là <b>đáp án</b> của câu hỏi trên toa đứng ngay trước nó. ' +
-          'Đầu tàu mang câu hỏi số 1, toa cuối 🚩 chỉ mang đáp án của câu cuối. Kéo toa từ bãi lên đường ray (hoặc chạm để gắn vào chỗ trống), ' +
+          'Đầu tàu mang câu hỏi số 1, toa cuối 🚩 chỉ mang đáp án của câu cuối. ' +
+          (S.mot ? '<b>Chạm</b> một toa ở bãi để gắn vào chỗ trống tiếp theo, chạm toa trên ray để trả về bãi (hoặc kéo thả để đổi chỗ), '
+            : 'Kéo toa từ bãi lên đường ray (hoặc chạm để gắn vào chỗ trống), ') +
           'rồi bấm <b>✔ Kiểm tra</b>. Nối đúng hết — tàu kéo còi chạy về ga!</p></div>' +
         '</div>' +
-        '<div class="dt-hang"><span class="dt-nhan">Số đội</span><div class="dt-chon">' +
+        (S.mot ? '<p class="dt-ghi dt-mot-so">🚂 Mỗi ván một đoàn tàu ' + (soCauTau() + 1) + ' toa — nối đúng nhanh, ít lần kiểm tra sai thì nhiều điểm.</p>' :
+        hangCach() + '<div class="dt-hang"><span class="dt-nhan">Số đội</span><div class="dt-chon">' +
           chipNut('to', 1, 'Cả lớp', S.soTo === 1) + chipNut('to', 2, '2 đội', S.soTo === 2) +
           chipNut('to', 3, '3 đội', S.soTo === 3) + chipNut('to', 4, '4 đội', S.soTo === 4) +
         '</div></div>' +
         '<div class="dt-hang" id="dtHangTen"' + (S.soTo > 1 ? '' : ' hidden') + '><span class="dt-nhan">Tên đội</span><div class="dt-chon">' + ten +
-          '<span class="dt-ghi">Mỗi đội một đoàn tàu riêng, đua thời gian — mỗi lần kiểm tra còn sai +' + PHAT + ' giây.</span></div></div>' +
+          '<span class="dt-ghi">' + (laQr() ? 'Học sinh tự chọn tổ trên điện thoại.' : 'Mỗi đội một đoàn tàu riêng, đua thời gian — mỗi lần kiểm tra còn sai +' + PHAT + ' giây.') + '</span></div></div>' +
         '<div class="dt-hang"><span class="dt-nhan">Độ dài</span><div class="dt-chon">' + dai +
-          '<span class="dt-ghi">gồm cả đầu tàu và toa cuối</span></div></div>' +
-        '<div class="dt-hang"><span class="dt-nhan">Mức độ</span><div class="dt-chon">' +
+          '<span class="dt-ghi">gồm cả đầu tàu và toa cuối</span></div></div>') +
+        (S.mot && S.mot.muc ? '' : '<div class="dt-hang"><span class="dt-nhan">Mức độ</span><div class="dt-chon">' +
           chipNut('muc', 'de', '🌱 Dễ <small>hiện các lựa chọn trên toa</small>', S.muc === 'de') +
           chipNut('muc', 'vua', '⭐ Vừa <small>chỉ câu hỏi</small>', S.muc === 'vua') +
           chipNut('muc', 'kho', '🔥 Khó <small>thêm 1 toa mồi thừa</small>', S.muc === 'kho') +
-        '</div></div>' +
-        '<div class="dt-nut"><button type="button" class="dt-go" id="dtBatDau">▶ Bắt đầu <kbd>Enter</kbd></button></div>' +
+        '</div></div>') +
+        '<div class="dt-nut">' + (S.mot && S.mot.nutVe ? '<button type="button" class="dt-btn dt-btn-sang" id="dtVe">' + esc(S.mot.nutVe) + '</button>' : '') +
+          '<button type="button" class="dt-go" id="dtBatDau">' + (laQr() ? '📱 Mở phòng QR' : '▶ Bắt đầu') + ' <kbd>Enter</kbd></button></div>' +
       '</div>';
+    if ($('#dtVe')) $('#dtVe').addEventListener('click', dongBam);
 
     $all('.dt-opt').forEach(function (b) {
       b.addEventListener('click', function () {
         var k = b.getAttribute('data-k'), v = b.getAttribute('data-v');
+        if (k === 'cach') { S.cach = v; luuPref(); veSanh(); var g = $('#dtBatDau'); if (g) g.focus(); return; }
         if (k === 'to') {
           S.soTo = +v;
           $all('.dt-ten-to').forEach(function (l, i) { l.hidden = i >= S.soTo; });
@@ -328,7 +365,8 @@
       ? '<div class="dt-may" aria-hidden="true"><span class="dt-ong"><i></i><i></i><i></i><i></i></span>' + hinh('train-engine-face', 'dt-may-mat') + '</div>'
       : '<div class="dt-toa-trai" lang="zh">' + esc(t.trai) + '</div>';
     var phai = t.cau
-      ? '<div class="dt-toa-phai" lang="zh"><span class="dt-cau">' + cauHtml(t.cau) + '</span>' +
+      // cau chi co ngu canh (pre / post rong, vd 'Gap ban moi, ban chao ＿＿') thi phai hien ngu canh moi lam duoc
+      ? '<div class="dt-toa-phai" lang="zh">' + (t.cau.ctx ? '<span class="dt-ctx">' + esc(t.cau.ctx) + '</span>' : '') + '<span class="dt-cau">' + cauHtml(t.cau) + '</span>' +
           (S.muc === 'de' ? '<span class="dt-lua">' + t.cau.opts.map(esc).join(' · ') + '</span>' : '') + '</div>'
       : '<div class="dt-toa-phai is-co"><span class="dt-co" aria-hidden="true">' + hinh('train-flag') + '</span><small>Toa cuối</small></div>';
     var nhan = t.loai === 'dau' ? 'Đầu tàu' : (t.cau ? 'Toa ' : 'Toa cuối ') + t.trai;
@@ -346,9 +384,17 @@
       (id ? htmlToa(S.toa[id]) : '<span class="dt-cho-trong">' + (j + 2) + '</span>') +
     '</div>';
   }
+  // So toa moi hang tren duong ray: man rong xep 1–2 hang, dien thoai 2 toa / hang
+  function soMoiHang() {
+    var tong = S.slot.length + 1, w = root ? root.clientWidth : 1200;
+    if (w < 560) return Math.min(2, tong);
+    if (w < 900) return Math.min(3, tong);
+    return tong > 5 ? Math.ceil(tong / 2) : tong;
+  }
   function veTau() {
     var K = S.slot.length, tong = K + 1;
-    var moiHang = tong > 5 ? Math.ceil(tong / 2) : tong;
+    var moiHang = soMoiHang();
+    S.moiHang = moiHang;
     var o = '', k = 0;
     for (var h = 0; k < tong; h++) {
       var cells = '';
@@ -387,12 +433,22 @@
   function batDau() {
     if (S.goc.length < 2) return;
     luuPref();
+    // Phong QR: giao cai dat cho trang giao vien mo phong, khong choi tren man chieu
+    if (laQr()) {
+      var ten = [];
+      for (var t = 0; t < S.soTo && S.soTo > 1; t++) ten.push(tenTo(t));
+      var cfg = { soTo: S.soTo, ten: ten, soToa: soCauTau() + 1, muc: S.muc }, f = S.qr;
+      dong();
+      f(cfg);
+      return;
+    }
     S.luot = 0;
     S.kqTo = [];
     S.daDung = {};
+    if (S.mot && window.SaoGame) window.SaoGame.batDauVan();
     if (S.soTo > 1) veCho();
     else batDauTau();
-    if (window.NhacNen) window.NhacNen.bat({ kieu: 'gap' });
+    nhacNen();
   }
 
   function veCho() {
@@ -429,7 +485,7 @@
         '<div class="dt-ga" id="dtGa"><div class="dt-tau" id="dtTau"></div></div>' +
         '<div class="dt-bai">' +
           '<div class="dt-bai-dau">' +
-            '<b>🛤️ Bãi toa</b><span class="dt-bai-hd">Kéo toa lên đường ray · chạm một toa để gắn vào chỗ trống / trả về bãi</span>' +
+            '<b>🛤️ Bãi toa</b><span class="dt-bai-hd">' + (S.mot ? 'Chạm toa để gắn vào chỗ trống · chạm toa trên ray để trả về bãi' : 'Kéo toa lên đường ray · chạm một toa để gắn vào chỗ trống / trả về bãi') + '</span>' +
             '<span class="dt-gap"></span>' +
             '<button type="button" class="dt-btn dt-btn-sang" id="dtDo">↺ Dỡ hết toa</button>' +
             '<button type="button" class="dt-go dt-go-sm" id="dtKiemTra">✔ Kiểm tra <kbd>Enter</kbd></button>' +
@@ -565,6 +621,30 @@
     anSai();
     veTau();
     sndDat();
+    baoTienDo();
+  }
+  // So cho noi dang dung (ca hai toa da gan) — chi bao cho trang goi, khong hien cho nguoi choi
+  function soNoiDung() {
+    var n = 0;
+    for (var j = 0; j < S.slot.length; j++) {
+      var truoc = j === 0 ? S.dau : S.toa[S.slot[j - 1]], t = S.toa[S.slot[j]];
+      if (truoc && t && truoc.cau && t.trai === truoc.cau.dap) n++;
+    }
+    return n;
+  }
+  function soLieu(xong) {
+    var K = S.slot.length;
+    return { lam: xong ? K : soNoiDung(), tong: K, dung: xong ? K : soNoiDung(), loi: S.sai, giay: xong ? S.giay : soGiay(), diem: xong ? diemTau() : 0, xong: !!xong };
+  }
+  function baoTienDo() {
+    if (!S.mot || !S.mot.onTienDo || S.pha !== 'choi') return;
+    try { S.mot.onTienDo(soLieu(false)); } catch (e) { /* bo qua */ }
+  }
+  // Diem mot doan tau (che do mot nguoi): 100 moi cho noi, −40 moi lan kiem tra con sai,
+  // −2 moi giay qua thoi gian chuan; it nhat 10 moi cho noi
+  function diemTau() {
+    var K = S.slot.length, han = 15 + 12 * K;
+    return Math.max(10 * K, Math.round(100 * K - 40 * S.sai - 2 * Math.max(0, S.giay - han)));
   }
 
   /* ---------------- kiem tra ---------------- */
@@ -598,6 +678,7 @@
     veTau();
     veSai(sai);
     sndSai();
+    if (S.mot) { if (window.SaoGame) window.SaoGame.sai(); baoTienDo(); }
   }
   function veSai(sai) {
     var li = sai.map(function (j) {
@@ -629,6 +710,8 @@
     clearInterval(S.dongHo);
     S.giay = Math.max(0, Math.round((Date.now() - S.t0) / 1000));
     if (S.soTo > 1) S.kqTo[S.luot] = { giay: S.giay, sai: S.sai, kiem: S.kiem, tong: S.giay + PHAT * S.sai };
+    // sao tro choi: moi cho noi la mot cau, tru di so lan kiem tra con sai (it nhat 1)
+    if (S.mot && window.SaoGame) for (var k = Math.max(1, S.slot.length - S.sai); k > 0; k--) window.SaoGame.dung();
     anSai();
     veTau();
     $('#dtGio').textContent = S.giay;
@@ -661,30 +744,43 @@
     }).join('');
     var nhieu = S.soTo > 1, conLuot = nhieu && S.luot < S.soTo - 1;
     var tiep = conLuot ? '🚂 Lượt ' + esc(tenTo(S.luot + 1)) + ' →' : nhieu ? '🏆 Bảng xếp hạng' : '🚂 Đoàn tàu mới';
+    var nut = '<button type="button" class="dt-btn dt-btn-sang" id="dtVeSanh">⚙ Về sảnh</button>' +
+      '<button type="button" class="dt-btn dt-btn-sang" id="dtXong">Đóng</button>' +
+      '<button type="button" class="dt-go" id="dtTiep">' + tiep + ' <kbd>Enter</kbd></button>';
+    if (S.mot) {
+      nut = (S.mot.nutVe ? '<button type="button" class="dt-btn dt-btn-sang" id="dtXong">' + esc(S.mot.nutVe) + '</button>' : '') +
+        (S.mot.choiLai ? '<button type="button" class="dt-go" id="dtTiep">🚂 Chơi lại <kbd>Enter</kbd></button>' : '');
+    }
+    var diem = S.mot ? diemTau() : 0;
     $('#dtMan').innerHTML =
       '<div class="dt-the dt-giai">' +
         '<h2>🎉 Đoàn tàu đã về ga!</h2>' +
+        (S.mot ? '<div class="dt-tong"><b>' + diem + '</b><span>/ ' + (S.slot.length * 100) + ' điểm</span></div>' : '') +
         '<p class="dt-giai-ct">' + (nhieu ? '<span class="dt-giai-to" style="--c:' + MAU_TO[S.luot] + '">' + esc(tenTo(S.luot)) + '</span> ' : '') +
           '⏱ ' + S.giay + ' giây · 🔎 ' + S.kiem + ' lần kiểm tra' + (S.sai ? ' (' + S.sai + ' lần còn sai' + (nhieu ? ', +' + (S.sai * PHAT) + ' giây phạt' : '') + ')' : ' — đúng ngay lần đầu!') +
           (nhieu ? ' · <b>Tổng ' + (S.giay + PHAT * S.sai) + ' giây</b>' : '') + '</p>' +
+        (S.mot ? '<div class="dt-phu" id="dtPhu" aria-live="polite"></div>' : '') +
         '<ol class="dt-giai-ds">' + li + '</ol>' +
-        '<div class="dt-nut">' +
-          '<button type="button" class="dt-btn dt-btn-sang" id="dtVeSanh">⚙ Về sảnh</button>' +
-          '<button type="button" class="dt-btn dt-btn-sang" id="dtXong">Đóng</button>' +
-          '<button type="button" class="dt-go" id="dtTiep">' + tiep + ' <kbd>Enter</kbd></button>' +
-        '</div>' +
+        '<div class="dt-nut">' + nut + '</div>' +
       '</div>';
     $all('.dt-giai-doc').forEach(function (b) {
       b.addEventListener('click', function () { var q = S.Q[+b.getAttribute('data-i')]; if (q) docTrung(docCau(q)); });
     });
-    $('#dtVeSanh').addEventListener('click', veSanh);
-    $('#dtXong').addEventListener('click', dong);
-    $('#dtTiep').addEventListener('click', tiep2);
+    if ($('#dtVeSanh')) $('#dtVeSanh').addEventListener('click', veSanh);
+    if ($('#dtXong')) $('#dtXong').addEventListener('click', dongBam);
+    if ($('#dtTiep')) $('#dtTiep').addEventListener('click', tiep2);
     sndKen();
+    if (S.mot && S.mot.onXong) {
+      var kq = soLieu(true);
+      kq.toiDa = S.slot.length * 100;
+      kq.kiem = S.kiem;
+      try { S.mot.onXong(kq, $('#dtPhu')); } catch (e) { /* bo qua */ }
+    }
   }
   function tiep2() {
     if (S.pha !== 'giai') return;
     if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (S.mot) { if (S.mot.choiLai) batDau(); return; }
     if (S.soTo > 1) {
       if (S.luot < S.soTo - 1) { S.luot++; veCho(); }
       else veXepHang();
@@ -717,7 +813,7 @@
         '</div>' +
       '</div>';
     $('#dtVeSanh').addEventListener('click', veSanh);
-    $('#dtXong').addEventListener('click', dong);
+    $('#dtXong').addEventListener('click', dongBam);
     $('#dtLai').addEventListener('click', batDau);
     sndKen();
   }
@@ -741,7 +837,7 @@
       e.stopImmediatePropagation();
       if (S.keo) huyKeo();
       else if ($('#dtSai') && !$('#dtSai').hidden) anSai();
-      else if (!document.fullscreenElement) dong();
+      else if (!document.fullscreenElement && !(S.mot && S.mot.dong === false)) dongBam();
       return;
     }
     if (trongO) {
@@ -775,7 +871,7 @@
         break;
       case 'giai':
         if (nut && space) nut.click();
-        else if (enter || space || phai) tiep2();
+        else if ((enter || space || phai) && (!S.mot || S.mot.choiLai)) tiep2();
         break;
       case 'cuoi':
         if (enter) batDau();
@@ -792,7 +888,10 @@
   function mo(opt) {
     opt = opt || {};
     if (!S.built) dung();
-    var p = docLS(PREF_KEY, {});
+    S.mot = opt.mot || null;
+    S.qr = !S.mot && typeof opt.qr === 'function' ? opt.qr : null;
+    var p = docLS(S.mot ? PREF_KEY + '_mot' : PREF_KEY, {});
+    S.cach = p.cach === 'qr' ? 'qr' : 'bang'; // mac dinh choi tren bang
     S.goc = (opt.cau || []).filter(hopLe);
     S.nhan = opt.nhan || '';
     S.sound = p.sound !== false;
@@ -806,12 +905,26 @@
       S.soTo = p.soTo >= 1 && p.soTo <= 4 ? p.soTo : 1;
       S.ten = Array.isArray(p.ten) ? p.ten.slice(0, 4) : [];
     }
+    if (S.mot) {
+      S.soTo = 1;
+      if (S.mot.soToa) S.soToa = Math.max(3, Math.min(8, S.mot.soToa));
+      if (S.mot.muc === 'de' || S.mot.muc === 'vua' || S.mot.muc === 'kho') S.muc = S.mot.muc;
+    }
+    root.classList.toggle('is-mot', !!S.mot);
+    $('#dtClose').hidden = !!(S.mot && S.mot.dong === false);
     root.hidden = false;
     document.documentElement.classList.add('dt-open');
     veNut();
     veSanh();
+    if (S.mot && S.mot.batNgay && S.goc.length >= 2) { batDau(); return; }
     var b = $('#dtBatDau');
     if (b) b.focus();
+  }
+  // Nguoi choi bam dong / ve: dong roi bao trang goi (che do mot nguoi)
+  function dongBam() {
+    var cb = S.mot && S.mot.onDong;
+    dong();
+    if (cb) cb();
   }
   function dong() {
     if (window.NhacNen) window.NhacNen.tat();
@@ -827,5 +940,6 @@
     document.documentElement.classList.remove('dt-open');
   }
 
-  window.LopDoanTau = { mo: mo, dong: dong };
+  // loc: cac cau trac nghiem dung duoc (trang giao vien chon truoc bo cau gui cho dien thoai)
+  window.LopDoanTau = { mo: mo, dong: dong, loc: function (ds) { return (ds || []).filter(hopLe); } };
 })();

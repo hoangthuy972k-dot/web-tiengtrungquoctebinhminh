@@ -301,6 +301,7 @@ html.dt-open, html.dt-open body { overflow: hidden; }
   font-size: clamp(.85rem, 1.3vw, 1.3rem); font-weight: 600; line-height: 1.3;
   overflow-wrap: anywhere;
 }
+.dt-ctx { display: block; font-size: .78em; font-weight: 600; color: #6b5a40; line-height: 1.25; }
 .dt-o { color: var(--dt-do); font-weight: 800; padding: 0 .05em; }
 .dt-o.is-sai { color: #fff; background: #d8432f; border-radius: .2em; padding: 0 .2em; text-decoration: line-through; }
 .dt-o.is-dung { color: #fff; background: #2f7a4a; border-radius: .2em; padding: 0 .2em; }

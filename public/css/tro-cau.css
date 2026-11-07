@@ -149,3 +149,17 @@
 .ch-to-nut:active { transform: translateY(3px); box-shadow: 0 3px 0 #2b1d3a; }
 .ch-to-nut:disabled { opacity: .7; }
 .tc-dong.is-to { background: #f1f9ea; }
+
+/* ---------- /choi: day keo co nho (phong Keo co qua ma QR) ---------- */
+.ch-keo-day {
+  position: relative; display: block; height: 54px; margin: 16px auto 0; max-width: 340px;
+  background: linear-gradient(180deg, transparent 0 46%, #b07a3c 46% 58%, transparent 58%);
+}
+.ch-keo-day::before { content: ''; position: absolute; left: 50%; top: 18%; bottom: 18%; width: 4px; margin-left: -2px; border-radius: 2px; background: #2b1d3a; opacity: .35; }
+.ch-keo-day i {
+  position: absolute; top: 50%; width: 30px; height: 30px; transform: translate(-50%, -50%);
+  background: url(/images/game/tug-flag.svg) center / contain no-repeat; transition: left .6s cubic-bezier(.3, 1.4, .5, 1);
+}
+.ch-keo-day b { position: absolute; bottom: -6px; font-size: .8rem; font-weight: 800; color: #5b4632; max-width: 45%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ch-keo-day b.l { left: 0; }
+.ch-keo-day b.r { right: 0; }

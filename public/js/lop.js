@@ -1106,7 +1106,10 @@
     var nac = '';
     for (var k = -t.max; k <= t.max; k++) nac += '<i style="left:' + (50 + k * (42 / t.max)) + '%"></i>';
     $('#lopStage').innerHTML =
-      '<div class="lop-stage-head"><span>Kéo co · tổ nào trả lời đúng trước kéo dây về phía mình — kéo ' + t.max + ' nấc là thắng</span></div>' +
+      '<div class="lop-stage-head"><span>Kéo co · tổ nào trả lời đúng trước kéo dây về phía mình — kéo ' + t.max + ' nấc là thắng</span>' +
+        // Cach choi thu hai: moi em tra loi tren dien thoai, ti le dung cua to keo day (lop-keo-qr.js)
+        (window.LopKeoQr && state.teams >= 2 ? '<span class="lop-tug-cach"><b>🖥️ Đang chơi trên bảng</b> · <button type="button" class="lop-act ghost" id="lopTugQr">📱 Thi đấu qua mã QR</button></span>' : '') +
+      '</div>' +
       '<div class="lop-tug" style="--tl:' + teamColor(t.L) + ';--tr:' + teamColor(t.R) + '">' +
         '<div class="lop-tug-nhan">' + nhan('L') + nhan('R') + '</div>' +
         '<div class="lop-tug-bai" role="img" aria-label="Sân kéo co">' +
@@ -1139,6 +1142,12 @@
     if ($('#lopTugNew')) $('#lopTugNew').addEventListener('click', function () { dealTug(); renderTug(); resetTimer(); });
     if ($('#lopMcReveal')) $('#lopMcReveal').addEventListener('click', mcReveal);
     if ($('#lopMcNext')) $('#lopMcNext').addEventListener('click', tugNext);
+    if ($('#lopTugQr')) $('#lopTugQr').addEventListener('click', function () {
+      stopTimer();
+      var to = [];
+      for (var i = 0; i < state.teams; i++) to.push({ ten: teamName(i), mau: teamColor(i), kid: KID[i] || KID[0] });
+      window.LopKeoQr.mo({ to: to, L: t.L, R: t.R, cau: pickedMcs(), nhan: pickedLabel() });
+    });
   }
   function tugWin(side) {
     var t = state.tug;
@@ -3602,7 +3611,7 @@
     bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
     errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],
     taboo: ['5′', 'nói'], role: ['5–7′', 'đóng vai'], write: ['5′', 'lên bảng'],
-    nhip: ['5–10′', 'quét mã QR', 'tự làm'], tug: ['5′', '2 tổ đấu'], train: ['5–7′', 'các tổ đua'], mine: ['5–7′', 'theo lượt']
+    nhip: ['5–10′', 'quét mã QR', 'tự làm'], tug: ['5′', '2 tổ đấu', 'bảng hoặc mã QR'], train: ['5–7′', 'các tổ đua'], mine: ['5–7′', 'theo lượt']
   };
   function decorateSetup() {
     var grid = $('.lop-games');

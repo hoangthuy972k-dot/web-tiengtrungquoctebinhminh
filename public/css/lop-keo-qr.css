@@ -1,0 +1,95 @@
+/* Keo co tri thuc qua ma QR — man chieu (public/js/lop-keo-qr.js). Khung chung lay tu lop-tro.css (.ltr);
+   o day chi canh san keo co (ban nho tug-kid, day, co, nac), the cau hoi va man thang. Sang, tuoi. */
+.ltr.is-keo { --nhan: #b2311e; --thanh: linear-gradient(90deg, #ffb92e, #ff8a3d); }
+
+/* sanh: chon cap dau */
+.lkq-cap { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.lkq-cap > b { font-size: 1.8rem; }
+.lkq-sel {
+  --c: #e0573f; font: inherit; font-weight: 900; font-size: 1.2rem; padding: 8px 14px; cursor: pointer;
+  border: 3px solid #2b1d3a; border-radius: 16px; background: var(--c); color: #fff; box-shadow: 0 4px 0 #2b1d3a;
+}
+.lkq-sel option { color: #2b1d3a; background: #fff; }
+.ltr-sanh-lan.lkq-dau { box-shadow: 0 0 0 4px #ffd54a; }
+
+/* tran dau */
+.lkq-tran { --k: clamp(110px, 21vh, 190px); display: flex; flex-direction: column; gap: 12px; max-width: 1300px; margin: 0 auto; }
+.lkq-dau { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; }
+.lkq-to {
+  --c: #e0573f; display: flex; flex-direction: column; padding: 8px 16px; border: 3px solid #2b1d3a; border-radius: 18px;
+  background: var(--c); color: #fff; box-shadow: 0 5px 0 #2b1d3a; text-shadow: 0 2px 0 rgba(0, 0, 0, .2);
+}
+.lkq-to.R { text-align: right; }
+.lkq-to b { font-size: clamp(1.3rem, 2.4vw, 2rem); font-weight: 900; }
+.lkq-to span { font-weight: 700; opacity: .95; }
+.lkq-gio-o { padding: 8px 18px; border: 3px solid #2b1d3a; border-radius: 999px; background: #fff; font-weight: 900; font-size: 1.4rem; box-shadow: 0 4px 0 #2b1d3a; }
+.lkq-gio-o b { font-variant-numeric: tabular-nums; color: #2a4fbf; }
+.lkq-gio-o b.thap { color: #d23a2a; }
+.lkq-san {
+  position: relative; height: calc(var(--k) * 1.12); overflow: hidden;
+  border: 4px solid #2b1d3a; border-radius: 26px; box-shadow: 0 8px 0 #2b1d3a;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--tl) 16%, transparent) 0 50%, color-mix(in srgb, var(--tr) 16%, transparent) 50% 100%),
+    linear-gradient(180deg, transparent 0 64%, #8bc34a 64% 84%, #689f38 84%),
+    radial-gradient(ellipse 7% 9% at 36% 20%, rgba(255, 255, 255, .92) 0 96%, transparent 100%),
+    radial-gradient(ellipse 6% 8% at 66% 26%, rgba(255, 255, 255, .85) 0 96%, transparent 100%),
+    linear-gradient(180deg, #7fccff 0%, #d9f2ff 64%);
+}
+.lkq-san::before { content: ''; position: absolute; left: 50%; top: 44%; bottom: 3%; width: 6px; margin-left: -3px; border-radius: 3px; background: #fff8ec; opacity: .9; }
+.lkq-day {
+  position: absolute; z-index: 1; left: 0; right: 0; top: 64%; height: calc(var(--k) * .1); transform: translateY(-50%);
+  background: url(/images/game/tug-rope.svg) 0 0 / calc(var(--k) * .17) 100% repeat-x; filter: drop-shadow(0 4px 0 rgba(43, 29, 58, .2));
+}
+.lkq-ben { position: absolute; z-index: 2; bottom: 3%; height: var(--k); }
+.lkq-ben.L { left: 1%; }
+.lkq-ben.R { right: 1%; }
+.lkq-ben > img:first-child { display: block; height: 100%; width: auto; transform-origin: 50% 100%; }
+.lkq-ben.R > img:first-child { transform: scaleX(-1); }
+.lkq-bui { position: absolute; z-index: 3; bottom: -3%; width: calc(var(--k) * .3); height: auto; opacity: 0; }
+.lkq-ben.L .lkq-bui { left: calc(var(--k) * .55); }
+.lkq-ben.R .lkq-bui { right: calc(var(--k) * .55); transform: scaleX(-1); }
+.lkq-ben.keo > img:first-child { animation: lkq-keoL .6s ease; }
+.lkq-ben.R.keo > img:first-child { animation-name: lkq-keoR; }
+.lkq-ben.keo .lkq-bui { animation: lkq-bui .7s ease-out; }
+@keyframes lkq-keoL { 40% { transform: translateX(-16px) rotate(-10deg); } }
+@keyframes lkq-keoR { 40% { transform: scaleX(-1) translateX(-16px) rotate(-10deg); } }
+@keyframes lkq-bui { 0% { opacity: .2; scale: .4; } 50% { opacity: 1; scale: 1.35; } 100% { opacity: 0; } }
+.lkq-ben.thang > img:first-child { animation: lkq-nhay .5s ease infinite alternate; }
+.lkq-ben.R.thang > img:first-child { animation-name: lkq-nhayR; }
+.lkq-ben.thua { opacity: .55; filter: grayscale(.4); }
+@keyframes lkq-nhay { to { transform: translateY(-12%); } }
+@keyframes lkq-nhayR { from { transform: scaleX(-1); } to { transform: scaleX(-1) translateY(-12%); } }
+.lkq-ray { position: absolute; z-index: 3; top: 64%; height: calc(var(--k) * .44); transform: translateY(-50%); left: calc(1% + var(--k) * .78); right: calc(1% + var(--k) * .78); }
+.lkq-nac i { position: absolute; top: 24%; bottom: 24%; width: 3px; background: rgba(255, 255, 255, .85); transform: translateX(-1.5px); border-radius: 2px; }
+.lkq-nac i.dich { top: 4%; bottom: 4%; width: 7px; background: #ffcf5c; transform: translateX(-3.5px); border-radius: 4px; box-shadow: 0 0 0 2.5px #2b1d3a; }
+.lkq-nac i.giua { display: none; }
+.lkq-co { position: absolute; z-index: 1; top: 50%; width: calc(var(--k) * .3); height: auto; transform: translate(-50%, -23%); transition: left .7s cubic-bezier(.3, 1.4, .5, 1); filter: drop-shadow(0 4px 3px rgba(0, 0, 0, .25)); }
+
+/* cau hoi */
+.lkq-cau { padding: 14px 18px; border: 4px solid #2b1d3a; border-radius: 22px; background: #fffaf0; box-shadow: 0 6px 0 #2b1d3a; text-align: center; }
+.lkq-cau-so { display: inline-block; padding: 2px 12px; border-radius: 999px; background: #ffe9a8; font-weight: 800; color: #5b4632; }
+.lkq-ctx { margin-top: 4px; font-weight: 700; color: #6b5a40; font-size: 1.1rem; }
+.lkq-de { margin: 6px 0 10px; font-family: 'Noto Serif SC', serif; font-size: clamp(1.6rem, 3.4vw, 2.6rem); font-weight: 700; color: #2b1d3a; }
+.lkq-opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.lkq-opt { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 3px solid #2b1d3a; border-radius: 16px; background: #fff; box-shadow: 0 4px 0 #2b1d3a; text-align: left; transition: opacity .3s, transform .3s; }
+.lkq-opt span { flex: none; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 1.2rem; border: 2.5px solid #2b1d3a; }
+.lkq-opt.o0 span { background: #e5484d; } .lkq-opt.o1 span { background: #2f7cf6; } .lkq-opt.o2 span { background: #f2a516; } .lkq-opt.o3 span { background: #1f9d55; }
+.lkq-opt b { font-family: 'Noto Serif SC', 'Be Vietnam Pro', serif; font-size: clamp(1.2rem, 2.2vw, 1.7rem); }
+.lkq-opt.is-dung { background: #dff3e2; border-color: #2f7a4a; box-shadow: 0 4px 0 #2f7a4a, 0 0 0 5px #9be0a8; transform: scale(1.03); }
+.lkq-opt.is-mo { opacity: .45; }
+.lkq-why { margin: 10px 0 0; padding: 8px 12px; border-radius: 12px; background: #fff1cf; color: #5a4630; font-weight: 600; text-align: left; }
+.lkq-nut { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; }
+.lkq-thang {
+  --c: #e0573f; padding: 18px 28px; text-align: center; font-size: clamp(1.6rem, 3.6vw, 2.8rem); font-weight: 900;
+  border: 4px solid #2b1d3a; border-radius: 22px; background: #fffdf8; box-shadow: 0 8px 0 #2b1d3a, 0 0 0 9px var(--c);
+  animation: tc-nay .6s cubic-bezier(.3, 1.6, .5, 1) both;
+}
+.lkq-thang b { color: var(--c); }
+.lkq-thang small { display: block; margin-top: 6px; font-size: 1rem; font-weight: 700; color: #5b4632; }
+@keyframes tc-nay { from { transform: scale(.6); opacity: 0; } }
+@media (max-width: 900px) { .lkq-dau { grid-template-columns: 1fr 1fr; } .lkq-gio-o { grid-column: 1 / -1; justify-self: center; order: -1; } }
+
+/* nut chon cach choi tren man keo co cua lop.js (khong sua lop.css) */
+.lop-tug-cach { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; font-weight: 700; }
+.lop-tug-cach b { font-weight: 800; }
+#lopTugQr { padding: 6px 14px; }

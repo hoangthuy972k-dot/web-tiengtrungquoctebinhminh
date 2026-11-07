@@ -269,3 +269,5 @@ body.ch-rc .ch-chan b::before { background-image: url('/images/game/duel-bell.sv
 @media (prefers-reduced-motion: reduce) {
   .ch-rc-bang.is-vang, .ch-rc-kq.is-vang .ch-kq-ic, .ch-man.ch-rc-vang .ch-cho-ic, .ch-rc-cuu-the, .ch-rc-cuu-ic { animation: none; }
 }
+.ch-chan-bao { flex: 1; min-width: 0; color: #ffd166; font-weight: 800; font-size: .92rem; line-height: 1.25; animation: chPop .3s ease; }
+.ch-chan-bao[hidden] { display: none; }

@@ -253,7 +253,18 @@
     return h;
   }
   var henBao = 0;
+  // Thong bao nhanh (vd ban vuot minh): dang lam bai thi hien trong thanh diem duoi day man hinh
+  // de khong de len cau hoi / dap an; chua co thanh diem thi moi dung o noi phia tren.
   function baoNhanh(txt) {
+    var chan = $('chan'), cb = $('chanBao');
+    if (chan && cb && !chan.hidden) {
+      cb.textContent = txt;
+      cb.hidden = false;
+      $('chanTen').hidden = true;
+      clearTimeout(henBao);
+      henBao = setTimeout(function () { cb.hidden = true; $('chanTen').hidden = false; }, 3200);
+      return;
+    }
     var t = $('toast');
     t.textContent = txt;
     t.hidden = false;
@@ -268,7 +279,7 @@
     if (d.tong) s.tong = d.tong;
     // ban khac vua vuot minh -> bao ngay
     (d.tin || []).forEach(function (t) {
-      if (t.loai === 'biVuot') { baoNhanh('⚠️ ' + t.ten + ' vừa vượt bạn — cố lên!'); rung([60, 40, 60]); }
+      if (t.loai === 'biVuot') { baoNhanh('⚠️ ' + t.ten + ' vừa vượt bạn — cố lên! 加油！'); rung([60, 40, 60]); }
     });
     if (d.pha === 'cho') { if (doi) hien('manCho'); return; }
     if (d.pha === 'het') { if (doi) { s.dangPh = false; veHet(d); } return; }

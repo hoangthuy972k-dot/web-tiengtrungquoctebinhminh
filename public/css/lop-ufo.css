@@ -1,19 +1,20 @@
 /* ================= UFO goi tra bai =================
-   Mot khung canh rieng (dem pho co, den long, dia bay) — luon toi, khong theo
-   che do sang/toi cua trang vi day la man chieu len lop.                    */
+   Mot khung canh rieng (pho co ban ngay, den long, dia bay) — luon sang, cung
+   tong mau "Kiem tra bai cu": nen kem, vien dam #2b1d3a, do gach, vang ho phach. */
 html.ufo-open, html.ufo-open body { overflow: hidden; }
 
 .ufo {
-  --ufo-ink: #fff7ea;
-  --ufo-muted: #d9c9b4;
-  --ufo-gold: #ffcf6b;
+  --ufo-ink: #3a2a24;
+  --ufo-muted: #7a6558;
+  --ufo-gold: #ffc83d;
+  --ufo-vien: #2b1d3a;
   --ufo-red: #e0573f;
   --ufo-panel: #fffaf2;
   --ufo-panel-ink: #3a2a24;
   position: fixed; inset: 0;
   z-index: 80;
   overflow: hidden;
-  background: linear-gradient(180deg, #141a33 0%, #2a2347 42%, #533150 70%, #7a3d3a 100%);
+  background: linear-gradient(180deg, #bfe6ff 0%, #dff3ff 34%, #fff1d8 58%, #fbf5ea 100%);
   color: var(--ufo-ink);
   font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   display: flex; flex-direction: column;
@@ -23,29 +24,33 @@ html.ufo-open, html.ufo-open body { overflow: hidden; }
 /* ---------- troi dem ---------- */
 .ufo-sky { position: absolute; inset: 0; pointer-events: none; }
 .ufo-stars {
-  position: absolute; left: 0; top: 0;
+  /* ban ngay: sao (box-shadow mau kem do JS ve) khong hien tren troi sang */
+  position: absolute; left: 0; top: 0; visibility: hidden;
   width: 2px; height: 2px; border-radius: 50%;
   animation: ufo-twinkle 4s ease-in-out infinite alternate;
 }
 @keyframes ufo-twinkle { from { opacity: .65; } to { opacity: 1; } }
 .ufo-moon {
+  /* mat troi */
   position: absolute; right: 8%; top: 12%;
   width: clamp(56px, 7vw, 96px); aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle at 38% 36%, #fff8e2 0%, #ffe9b0 60%, #f4d38a 100%);
-  box-shadow: 0 0 40px 12px rgba(255, 226, 150, .25), 0 0 120px 40px rgba(255, 210, 140, .12);
+  background: radial-gradient(circle at 38% 36%, #fff6c8 0%, #ffd23f 60%, #f5b400 100%);
+  border: 3px solid var(--ufo-vien);
+  box-shadow: 0 0 0 10px rgba(255, 210, 63, .28), 0 0 0 22px rgba(255, 210, 63, .14);
 }
 .ufo-den-long {
   position: absolute; top: 0;
   width: clamp(22px, 2.4vw, 34px); height: clamp(30px, 3.2vw, 44px);
   border-radius: 45%;
   background: radial-gradient(circle at 50% 40%, #ff9a6b 0%, #e0453a 55%, #a82d24 100%);
-  box-shadow: 0 0 22px 6px rgba(255, 120, 80, .35);
+  border: 2.5px solid var(--ufo-vien);
+  box-shadow: 0 0 18px 4px rgba(255, 120, 80, .25);
   transform-origin: 50% -60px;
   animation: ufo-swing 3.6s ease-in-out infinite alternate;
 }
 .ufo-den-long::before {
   content: ''; position: absolute; left: 50%; bottom: 100%;
-  width: 1px; height: 60px; background: rgba(255, 230, 200, .35);
+  width: 2px; height: 60px; background: rgba(43, 29, 58, .45);
 }
 .ufo-den-long::after {
   content: ''; position: absolute; left: 50%; top: 100%; transform: translateX(-50%);
@@ -63,15 +68,21 @@ html.ufo-open, html.ufo-open body { overflow: hidden; }
   pointer-events: none; opacity: .95;
 }
 .ufo-roofs svg { width: 100%; height: 100%; display: block; }
+/* mai ngoi do gach thay cho bong toi (CSS fill de len thuoc tinh fill cua SVG) */
+.ufo-roofs path:first-child { fill: #c9654a; }
+.ufo-roofs path:last-child { fill: #9c4a34; }
 .ufo-ground {
   position: absolute; left: 0; right: 0; bottom: 0; height: 42%;
-  background: linear-gradient(180deg, #2e2240 0%, #3b2a3e 30%, #4a3036 100%);
+  background:
+    radial-gradient(circle, rgba(58, 42, 36, .07) 1.4px, transparent 1.7px) 0 0 / 24px 24px,
+    linear-gradient(180deg, #f6e4c4 0%, #fbf0dc 40%, #fbf5ea 100%);
+  border-top: 4px solid var(--ufo-vien);
   pointer-events: none;
 }
 .ufo-ground::before {
-  /* anh den am tren mat duong */
+  /* nang am tren mat san */
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 45% at 50% 20%, rgba(255, 190, 120, .16), transparent 70%);
+  background: radial-gradient(ellipse 60% 45% at 50% 20%, rgba(233, 162, 59, .18), transparent 70%);
 }
 
 /* ---------- thanh tren ---------- */
@@ -79,46 +90,47 @@ html.ufo-open, html.ufo-open body { overflow: hidden; }
   position: relative; z-index: 5;
   display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
   padding: 10px 16px;
-  background: rgba(16, 12, 28, .55);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255, 230, 200, .12);
+  background: #fffdf8;
+  border-bottom: 3px solid var(--ufo-vien);
 }
-.ufo-title { font-size: 1.1rem; margin-right: 6px; white-space: nowrap; }
+.ufo-title { font-size: 1.15rem; font-weight: 900; color: #b8432f; margin-right: 6px; white-space: nowrap; }
 .ufo-bar-gap { flex: 1; }
 .ufo-src {
   min-height: 40px; max-width: min(320px, 60vw);
   padding: 6px 10px; border-radius: 10px;
-  border: 1px solid rgba(255, 230, 200, .25);
-  background: #241c38; color: var(--ufo-ink);
-  font: inherit; font-size: .95rem;
+  border: 2.5px solid var(--ufo-vien);
+  background: #fff; color: var(--ufo-ink);
+  font: inherit; font-size: .95rem; font-weight: 600;
 }
 .ufo-btn {
   min-height: 40px; padding: 6px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 230, 200, .22);
-  background: rgba(255, 255, 255, .08);
-  color: var(--ufo-ink);
-  font: inherit; font-size: .92rem; font-weight: 600;
+  border-radius: 12px;
+  border: 2.5px solid var(--ufo-vien);
+  background: #fff;
+  color: var(--ufo-vien);
+  font: inherit; font-size: .92rem; font-weight: 700;
+  box-shadow: 0 3px 0 var(--ufo-vien);
   cursor: pointer; white-space: nowrap;
 }
-.ufo-btn:hover { background: rgba(255, 255, 255, .16); }
+.ufo-btn:hover { background: #fff3c4; }
+.ufo-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--ufo-vien); }
 .ufo-btn:focus-visible, .ufo-go:focus-visible, .ufo-kid:focus-visible, .ufo-num:focus-visible, .ufo-per button:focus-visible, .ufo-src:focus-visible {
-  outline: 3px solid var(--ufo-gold); outline-offset: 2px;
+  outline: 3px solid #e9a23b; outline-offset: 2px;
 }
 .ufo-btn.is-off { opacity: .55; }
 .ufo-ic { min-width: 42px; padding: 6px; font-size: 1.1rem; }
 .ufo-per {
   display: inline-flex; align-items: center; gap: 4px;
   font-size: .88rem; color: var(--ufo-muted);
-  padding: 3px 4px 3px 10px; border-radius: 10px;
-  background: rgba(255, 255, 255, .06);
+  padding: 3px 4px 3px 10px; border-radius: 12px;
+  background: #f6ecdf; border: 2px solid #eadbc6; font-weight: 600;
 }
 .ufo-per button {
   width: 34px; height: 34px; border-radius: 8px; border: 0;
   background: transparent; color: var(--ufo-ink);
   font: inherit; font-weight: 700; cursor: pointer;
 }
-.ufo-per button.is-on { background: var(--ufo-gold); color: #3a2a24; }
+.ufo-per button.is-on { background: #b8432f; color: #fff; }
 
 /* ---------- dia bay ---------- */
 .ufo-ship {
@@ -130,7 +142,7 @@ html.ufo-open, html.ufo-open body { overflow: hidden; }
   pointer-events: none;
 }
 .ufo-ship-body { position: absolute; inset: 0; animation: ufo-bob 2.4s ease-in-out infinite alternate; }
-.ufo-ship-body svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 6px 18px rgba(140, 220, 255, .35)); }
+.ufo-ship-body svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 5px 0 rgba(43, 29, 58, .55)) drop-shadow(0 10px 16px rgba(43, 29, 58, .18)); }
 @keyframes ufo-bob { from { transform: translateY(-4px) rotate(-2deg); } to { transform: translateY(5px) rotate(2deg); } }
 .ufo-den { animation: ufo-blink 1s steps(2) infinite; }
 .ufo-den:nth-child(even) { animation-delay: .5s; }
@@ -141,7 +153,7 @@ html.ufo-open, html.ufo-open body { overflow: hidden; }
   transform: translateX(-50%) scaleY(.02);
   transform-origin: 50% 0;
   clip-path: polygon(36% 0, 64% 0, 100% 100%, 0 100%);
-  background: linear-gradient(180deg, rgba(255, 238, 170, .85), rgba(255, 220, 140, .25) 75%, rgba(255, 220, 140, 0));
+  background: linear-gradient(180deg, rgba(255, 210, 63, .9), rgba(255, 200, 61, .35) 75%, rgba(255, 200, 61, 0));
   opacity: 0;
   transition: transform .18s ease, opacity .18s ease;
 }
@@ -153,11 +165,13 @@ html.ufo-open, html.ufo-open body { overflow: hidden; }
 .ufo-status {
   position: absolute; left: 0; right: 0; bottom: calc(42% + 8px); z-index: 2;
   margin: 0; text-align: center;
-  font-size: clamp(.9rem, 1.3vw, 1.05rem); color: var(--ufo-muted);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, .5);
-  padding: 0 16px;
+  font-size: clamp(.9rem, 1.3vw, 1.05rem); color: var(--ufo-ink); font-weight: 600;
+  /* the nho nen kem de chu khong lan vao mai ngoi phia sau */
+  width: fit-content; max-width: calc(100% - 32px); margin: 0 auto; box-sizing: border-box;
+  padding: 3px 16px; border-radius: 14px;
+  background: rgba(255, 253, 248, .92); border: 2px solid var(--ufo-vien);
 }
-.ufo-status-x { display: block; color: var(--ufo-gold); font-weight: 600; margin-top: 2px; }
+.ufo-status-x { display: block; color: #8e2f22; font-weight: 800; margin-top: 2px; }
 .ufo-crowd {
   position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
   height: 42%;
@@ -197,19 +211,20 @@ html.ufo-open, html.ufo-open body { overflow: hidden; }
 .ufo-kid-ten {
   max-width: 100%;
   padding: 2px 8px; border-radius: 999px;
-  background: rgba(255, 250, 240, .95); color: #3a2a24;
+  background: #fff; color: #3a2a24;
+  border: 2px solid var(--ufo-vien);
   font-size: clamp(.74rem, 1.05vw, .9rem); font-weight: 700; line-height: 1.3;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+  box-shadow: 0 2px 0 var(--ufo-vien);
 }
 .ufo-kid-tag {
   position: absolute; top: -2px; left: calc(50% + 12px);
   min-width: 22px; height: 22px; padding: 0 5px;
   border-radius: 11px; display: grid; place-items: center;
-  background: var(--ufo-gold); color: #3a2a24;
+  background: var(--ufo-gold); color: #3a2a24; border: 2px solid var(--ufo-vien);
   font-size: .75rem; font-weight: 800;
 }
-.ufo-kid:hover .ufo-kid-ten { background: #fff; outline: 2px solid var(--ufo-gold); }
+.ufo-kid:hover .ufo-kid-ten { background: #fff3c4; outline: 3px solid var(--ufo-gold); }
 .ufo-kid.is-xong { opacity: .45; }
 .ufo-kid.is-vang { opacity: .28; filter: grayscale(1); }
 .ufo-kid.is-vang .ufo-kid-tag { background: #8a8090; color: #fff; }
@@ -224,19 +239,20 @@ html.ufo-open, html.ufo-open body { overflow: hidden; }
 .ufo-go {
   position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 4;
   min-height: 52px; padding: 10px 26px;
-  border: 0; border-radius: 999px;
-  background: linear-gradient(180deg, #ffd77e, #f0a53a);
-  color: #3a2216;
+  border: 3px solid var(--ufo-vien); border-radius: 999px;
+  background: linear-gradient(180deg, #e8604a, #b8432f);
+  color: #fff;
   font: inherit; font-size: clamp(1rem, 1.6vw, 1.2rem); font-weight: 800;
-  box-shadow: 0 8px 24px rgba(240, 165, 58, .35), inset 0 -3px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 5px 0 var(--ufo-vien), 0 12px 22px rgba(184, 67, 47, .3), inset 0 3px 0 rgba(255, 255, 255, .22);
   cursor: pointer; white-space: nowrap;
 }
 .ufo-go:hover { filter: brightness(1.05); }
 .ufo-go[disabled] { opacity: .5; cursor: default; }
 .ufo-go kbd {
   margin-left: 8px; padding: 1px 7px; border-radius: 6px;
-  background: rgba(58, 34, 22, .15); font: inherit; font-size: .75em; font-weight: 700;
+  background: rgba(255, 255, 255, .22); font: inherit; font-size: .75em; font-weight: 700;
 }
+.ufo-go:active:not([disabled]) { box-shadow: 0 2px 0 var(--ufo-vien); translate: 0 3px; }
 .ufo-go-sm { position: static; transform: none; min-height: 44px; padding: 8px 20px; font-size: 1rem; }
 .ufo.is-busy .ufo-go:not(.ufo-go-sm) { opacity: .5; pointer-events: none; }
 
@@ -245,14 +261,15 @@ html.ufo-open, html.ufo-open body { overflow: hidden; }
   position: absolute; inset: 0; z-index: 10;
   display: grid; place-items: center;
   padding: 16px;
-  background: rgba(12, 8, 20, .55);
+  background: rgba(58, 42, 36, .45);
+  backdrop-filter: blur(3px);
 }
 .ufo-the[hidden], .ufo-panel[hidden] { display: none; }
 .ufo-the-card, .ufo-panel-card {
   width: min(760px, 100%); max-height: calc(100vh - 32px); overflow-y: auto;
   background: var(--ufo-panel); color: var(--ufo-panel-ink);
-  border-radius: 24px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+  border-radius: 24px; border: 4px solid var(--ufo-vien);
+  box-shadow: 0 10px 0 var(--ufo-vien), 0 30px 70px rgba(30, 18, 12, .3);
   padding: clamp(18px, 3vw, 32px);
   text-align: center;
   animation: ufo-pop .35s cubic-bezier(.2, 1.4, .4, 1);
@@ -274,24 +291,25 @@ html.ufo-open, html.ufo-open body { overflow: hidden; }
 .ufo-the-list.is-nhieu .ufo-the-diem { justify-content: flex-start; }
 .ufo-num {
   width: clamp(40px, 5vw, 54px); height: clamp(40px, 5vw, 54px);
-  border-radius: 12px; border: 1px solid #e6d6c4;
+  border-radius: 12px; border: 2.5px solid var(--ufo-vien);
   background: #fff; color: #3a2a24;
-  font: inherit; font-size: clamp(1rem, 1.9vw, 1.3rem); font-weight: 700;
+  font: inherit; font-size: clamp(1rem, 1.9vw, 1.3rem); font-weight: 800;
+  box-shadow: 0 3px 0 var(--ufo-vien);
   cursor: pointer;
 }
-.ufo-num:hover:not([disabled]) { background: #c8372d; color: #fff; border-color: transparent; }
-.ufo-num.is-chon { background: #c8372d; color: #fff; border-color: transparent; }
+.ufo-num:hover:not([disabled]) { background: #c8372d; color: #fff; }
+.ufo-num.is-chon { background: #c8372d; color: #fff; }
 .ufo-num[disabled]:not(.is-chon) { opacity: .4; cursor: default; }
 .ufo-the-phu { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; justify-content: center; margin-top: 10px; }
 .ufo-the-list.is-nhieu .ufo-the-phu { justify-content: flex-start; }
-.ufo-the-phu .ufo-btn, .ufo-panel-card .ufo-btn { background: #f1e5d6; color: #4a3a30; border-color: #e3d2bf; }
-.ufo-the-phu .ufo-btn:hover, .ufo-panel-card .ufo-btn:hover { background: #ead9c4; }
+.ufo-the-phu .ufo-btn, .ufo-panel-card .ufo-btn { background: #fff; color: #4a3a30; }
+.ufo-the-phu .ufo-btn:hover, .ufo-panel-card .ufo-btn:hover { background: #fff3c4; }
 .ufo-the-phu .ufo-btn[disabled] { opacity: .45; cursor: default; }
 .ufo-the-kq { font-weight: 700; color: #2f7a4a; }
 .ufo-the-hs.is-bo .ufo-the-kq { color: #7a6558; }
 .ufo-the-hs.is-bo .ufo-the-ten { opacity: .45; }
 .ufo-the-foot { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
-.ufo-the-foot .ufo-btn { background: #f1e5d6; color: #4a3a30; border-color: #e3d2bf; }
+.ufo-the-foot .ufo-btn { background: #fff; color: #4a3a30; }
 
 /* ---------- bang phu ---------- */
 .ufo-panel-card { width: min(520px, 100%); text-align: left; }

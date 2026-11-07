@@ -13,7 +13,8 @@ html.lt-open, html.lt-open body { overflow: hidden; }
   --lt-nhat: rgba(43, 29, 58, .18);
   --lt-do: #e5484d;
   --lt-do-dam: #b8323a;
-  --lt-tim: #7c4dff;
+  --lt-tim: #b8432f;
+  --lt-tim-tim: #7c4dff;
   --lt-vang: #ffc02e;
   --lt-xanh: #2f9a5a;
   --lt-sai: #c4442f;
@@ -23,8 +24,10 @@ html.lt-open, html.lt-open body { overflow: hidden; }
   position: fixed; inset: 0; z-index: 80;
   display: flex; flex-direction: column;
   background:
-    radial-gradient(circle at 12px 12px, rgba(124, 77, 255, .08) 2px, transparent 2.6px) 0 0 / 26px 26px,
-    linear-gradient(180deg, #f1f4ff 0%, #fff4e4 100%);
+    radial-gradient(ellipse 60% 50% at 10% 0%, rgba(233, 162, 59, .14), transparent 70%),
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(184, 67, 47, .08), transparent 70%),
+    radial-gradient(circle, rgba(43, 29, 58, .06) 1.3px, transparent 1.6px) 0 0 / 24px 24px,
+    #fbf5ea;
   color: var(--lt-chu);
   font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
 }
@@ -46,27 +49,27 @@ html.lt-open, html.lt-open body { overflow: hidden; }
 .lt-btn {
   min-height: 42px; padding: 7px 14px;
   border-radius: 12px; border: 2.5px solid var(--lt-vien);
-  background: #f3ecff; color: var(--lt-chu);
+  background: #fff; color: var(--lt-chu);
   font: inherit; font-size: .95rem; font-weight: 700;
   box-shadow: 0 3px 0 var(--lt-vien);
   cursor: pointer; white-space: nowrap;
   transition: transform .1s ease, box-shadow .1s ease, background .15s ease;
 }
-.lt-btn:hover { background: #e6dbff; }
+.lt-btn:hover { background: #fff3c4; }
 .lt-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--lt-vien); }
 .lt-btn-sang { background: #fff; }
 .lt-btn-sang:hover { background: #fff3d1; }
 .lt-go {
   min-height: 52px; padding: 10px 26px;
   border: 3px solid var(--lt-vien); border-radius: 999px;
-  background: var(--lt-tim); color: #fff;
+  background: linear-gradient(180deg, #e8604a, var(--lt-tim)); color: #fff;
   font: inherit; font-size: clamp(1rem, 1.5vw, 1.15rem); font-weight: 900;
   box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .16), 0 4px 0 var(--lt-vien);
   text-shadow: 0 2px 0 rgba(43, 29, 58, .3);
   cursor: pointer; white-space: nowrap;
   transition: transform .1s ease, box-shadow .1s ease, background .15s ease;
 }
-.lt-go:hover { background: #8b61ff; }
+.lt-go:hover { background: linear-gradient(180deg, #ee7058, #c4503a); }
 .lt-go:active { transform: translateY(3px); box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .16), 0 1px 0 var(--lt-vien); }
 .lt-go kbd { margin-left: 8px; padding: 1px 7px; border-radius: 6px; background: rgba(255, 255, 255, .22); font: inherit; font-size: .75em; text-shadow: none; }
 .lt-go-sm { min-height: 44px; padding: 8px 20px; font-size: 1rem; }
@@ -199,7 +202,7 @@ html.lt-open, html.lt-open body { overflow: hidden; }
 .lt-chip b { font-variant-numeric: tabular-nums; min-width: 1.6em; font-weight: 900; }
 .lt-chip i { font-style: normal; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lt-chip u { margin-left: auto; text-decoration: none; font-weight: 900; }
-.lt-chip.is-co { background: var(--lt-tim); color: #fff; border: 2px solid var(--lt-vien); box-shadow: 0 2px 0 var(--lt-vien); }
+.lt-chip.is-co { background: var(--lt-tim-tim); color: #fff; border: 2px solid var(--lt-vien); box-shadow: 0 2px 0 var(--lt-vien); }
 .lt-chip.is-dung { background: var(--lt-c); color: #fff; }
 .lt-chip.is-sai { background: #ffe1dc; color: var(--lt-sai); }
 .lt-nut { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }

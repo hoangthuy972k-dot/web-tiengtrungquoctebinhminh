@@ -1,19 +1,21 @@
 /* ================= Chan Zombie =================
-   Man chieu rieng: dem nghia trang hoat hinh, zombie xanh ngo ngo di tu phai
-   sang hang rao ben trai. Luon toi, khong theo che do sang/toi cua trang.     */
+   Man chieu rieng: nghia trang hoat hinh ban ngay, zombie xanh ngo ngo di tu phai
+   sang hang rao ben trai. Luon sang, cung tong "Kiem tra bai cu": troi xanh nhat,
+   san dat kem, the trang vien dam #2b1d3a.                                       */
 html.zb-open, html.zb-open body { overflow: hidden; }
 
 .zb {
-  --zb-ink: #f1f7ec;
-  --zb-muted: #b9c8b3;
-  --zb-gold: #ffcf6b;
+  --zb-ink: #2b1d3a;
+  --zb-muted: #6b5a52;
+  --zb-gold: #ffc83d;
+  --zb-vien: #2b1d3a;
   --zb-green: #4fae45;
   --zb-panel: #f7f3e8;
   --zb-panel-ink: #23301f;
   position: fixed; inset: 0;
   z-index: 80;
   overflow: hidden;
-  background: linear-gradient(180deg, #141b3d 0%, #1b244d 30%, #243a5e 58%, #2c5568 82%, #2f6b45 100%);
+  background: linear-gradient(180deg, #a9dcff 0%, #cdeeff 32%, #eaf8ff 52%, #fff3dc 80%, #f3e2bf 100%);
   color: var(--zb-ink);
   font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   display: flex; flex-direction: column;
@@ -28,20 +30,21 @@ html.zb-open, html.zb-open body { overflow: hidden; }
 /* ---------- troi ---------- */
 .zb-troi { position: absolute; inset: 0; pointer-events: none; }
 .zb-sao {
-  position: absolute; left: 0; top: 0; width: 2px; height: 2px; border-radius: 50%;
+  /* ban ngay: sao (box-shadow do JS ve) an tren troi sang */
+  position: absolute; left: 0; top: 0; width: 2px; height: 2px; border-radius: 50%; visibility: hidden;
   animation: zb-nhay 4s ease-in-out infinite alternate;
 }
 @keyframes zb-nhay { from { opacity: .6; } to { opacity: 1; } }
 .zb-trang {
   position: absolute; right: 7%; top: 9%;
   width: clamp(60px, 8vw, 110px); aspect-ratio: 1; border-radius: 50%;
-  background: #fff3c4;
-  /* quang trang nhieu vong, cung kieu voi tranh the tro choi */
-  box-shadow: 0 0 0 clamp(8px, 1.1vw, 15px) rgba(255, 248, 236, .12), 0 0 0 clamp(18px, 2.4vw, 32px) rgba(255, 248, 236, .06),
-    0 0 80px 30px rgba(255, 243, 196, .12);
+  /* mat troi tron vien dam, quang vang nhieu vong */
+  background: radial-gradient(circle at 38% 36%, #fff6c8 0%, #ffd23f 60%, #f5b400 100%);
+  border: 3px solid var(--zb-vien); box-sizing: border-box;
+  box-shadow: 0 0 0 clamp(8px, 1.1vw, 15px) rgba(255, 210, 63, .3), 0 0 0 clamp(18px, 2.4vw, 32px) rgba(255, 210, 63, .14);
 }
 .zb-trang::before, .zb-trang::after {
-  content: ''; position: absolute; border-radius: 50%; background: #f3df9c;
+  content: ''; position: absolute; border-radius: 50%; background: rgba(255, 255, 255, .55);
 }
 .zb-trang::before { width: 22%; height: 22%; left: 24%; top: 26%; }
 .zb-trang::after { width: 14%; height: 14%; left: 62%; top: 60%; }
@@ -51,11 +54,10 @@ html.zb-open, html.zb-open body { overflow: hidden; }
   position: relative; z-index: 30;
   display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
   padding: 10px 16px;
-  background: rgba(6, 12, 16, .6);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(200, 255, 190, .12);
+  background: #fffdf8;
+  border-bottom: 3px solid var(--zb-vien);
 }
-.zb-title { font-size: 1.1rem; white-space: nowrap; }
+.zb-title { font-size: 1.15rem; font-weight: 900; color: #b8432f; white-space: nowrap; }
 .zb-sub { color: var(--zb-muted); font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 30vw; }
 .zb-bar-gap { flex: 1; }
 .zb-diem { display: inline-flex; flex-wrap: wrap; gap: 6px; }
@@ -63,45 +65,48 @@ html.zb-open, html.zb-open body { overflow: hidden; }
   --c: #4fae45;
   display: inline-flex; align-items: center; gap: 6px;
   padding: 4px 12px; border-radius: 999px;
-  background: rgba(255, 255, 255, .08);
-  font-size: .95rem; font-weight: 600; white-space: nowrap;
+  background: #fff; border: 2px solid #eadbc6;
+  font-size: .95rem; font-weight: 700; white-space: nowrap;
   transition: background .25s ease, box-shadow .25s ease;
 }
 .zb-chip i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
 .zb-chip b { font-size: 1.1rem; }
-.zb-chip.is-luot { background: var(--c); color: #fff; box-shadow: 0 0 0 3px rgba(255, 255, 255, .3); }
+.zb-chip.is-luot { background: var(--c); color: #fff; border-color: var(--zb-vien); box-shadow: 0 3px 0 var(--zb-vien), 0 0 0 4px rgba(255, 200, 61, .45); }
 .zb-chip.is-luot i { background: #fff; }
 .zb-tim { display: inline-flex; gap: 2px; font-size: 1.35rem; line-height: 1; }
 .zb-tim .is-mat { opacity: .55; }
 .zb-btn {
   min-height: 40px; padding: 6px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(200, 255, 190, .2);
-  background: rgba(255, 255, 255, .08);
+  border-radius: 12px;
+  border: 2.5px solid var(--zb-vien);
+  background: #fff;
   color: var(--zb-ink);
-  font: inherit; font-size: .92rem; font-weight: 600;
+  font: inherit; font-size: .92rem; font-weight: 700;
+  box-shadow: 0 3px 0 var(--zb-vien);
   cursor: pointer; white-space: nowrap;
 }
-.zb-btn:hover { background: rgba(255, 255, 255, .16); }
+.zb-btn:hover { background: #fff3c4; }
+.zb-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--zb-vien); }
 .zb-btn.is-off { opacity: .55; }
 .zb-btn[hidden] { display: none; }
 .zb-ic { min-width: 42px; padding: 6px; font-size: 1.1rem; }
-.zb-btn-sang { background: #ece5d2; color: #3a4434; border-color: #ddd3ba; min-height: 48px; padding: 8px 18px; font-size: 1rem; }
-.zb-btn-sang:hover { background: #e2d9c1; }
+.zb-btn-sang { background: #fff; color: #3a2a24; min-height: 48px; padding: 8px 18px; font-size: 1rem; }
+.zb-btn-sang:hover { background: #fff3c4; }
 .zb-btn:focus-visible, .zb-go:focus-visible, .zb-opt:focus-visible, .zb-ten-to input:focus-visible {
   outline: 3px solid var(--zb-gold); outline-offset: 2px;
 }
 
 .zb-go {
   min-height: 54px; padding: 10px 28px;
-  border: 0; border-radius: 999px;
+  border: 3px solid var(--zb-vien); border-radius: 999px;
   background: linear-gradient(180deg, #a6ec8f, #4fae45);
   color: #0f2c0b;
   font: inherit; font-size: clamp(1.05rem, 1.7vw, 1.3rem); font-weight: 800;
-  box-shadow: 0 8px 24px rgba(79, 174, 69, .35), inset 0 -3px 0 rgba(0, 0, 0, .14);
+  box-shadow: 0 5px 0 var(--zb-vien), 0 12px 22px rgba(79, 174, 69, .3), inset 0 3px 0 rgba(255, 255, 255, .3);
   cursor: pointer; white-space: nowrap;
 }
 .zb-go:hover { filter: brightness(1.06); }
+.zb-go:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--zb-vien); }
 .zb-go kbd { margin-left: 8px; background: rgba(15, 44, 11, .14); border-color: transparent; color: inherit; }
 
 /* ---------- vung chinh ---------- */
@@ -116,15 +121,15 @@ html.zb-open, html.zb-open body { overflow: hidden; }
 .zb-the {
   width: min(880px, calc(100% - 32px));
   margin: auto; box-sizing: border-box;
-  background: var(--zb-panel); color: var(--zb-panel-ink);
-  border-radius: 24px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, .5);
+  background: #fffdf8; color: var(--zb-panel-ink);
+  border-radius: 24px; border: 4px solid var(--zb-vien);
+  box-shadow: 0 10px 0 var(--zb-vien), 0 26px 60px rgba(43, 29, 58, .18);
   padding: clamp(18px, 3vw, 34px);
   animation: zb-pop .35s cubic-bezier(.2, 1.4, .4, 1);
 }
 .zb-man > .zb-the { margin: 24px auto; }
 @keyframes zb-pop { from { transform: scale(.88); opacity: 0; } to { transform: none; opacity: 1; } }
-.zb-the h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 3.2vw, 2.4rem); color: #2f6b2a; line-height: 1.2; }
+.zb-the h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 3.2vw, 2.4rem); color: #8e2f22; line-height: 1.2; }
 .zb-sanh-dau { display: flex; gap: clamp(12px, 2vw, 24px); align-items: center; margin-bottom: 8px; }
 .zb-sanh-hinh { flex: 0 0 auto; width: clamp(80px, 10vw, 120px); }
 .zb-sanh-hinh svg, .zb-trong-hinh svg { width: 100%; height: auto; display: block; }
@@ -138,13 +143,14 @@ html.zb-open, html.zb-open body { overflow: hidden; }
 .zb-chon { display: flex; flex-wrap: wrap; gap: 8px; }
 .zb-opt {
   min-height: 48px; padding: 8px 18px;
-  border-radius: 12px; border: 2px solid #d8d0b8;
+  border-radius: 12px; border: 2.5px solid #e0c99f;
   background: #fff; color: #2d3829;
   font: inherit; font-size: 1.05rem; font-weight: 700;
+  box-shadow: 0 3px 0 #e0c99f;
   cursor: pointer;
 }
-.zb-opt:hover { border-color: #8cc47f; }
-.zb-opt.is-on { background: #3f8f3a; border-color: #3f8f3a; color: #fff; }
+.zb-opt:hover { border-color: var(--zb-vien); }
+.zb-opt.is-on { background: #3f8f3a; border-color: var(--zb-vien); color: #fff; box-shadow: 0 3px 0 var(--zb-vien); }
 .zb-ten-to {
   --c: #e0573f;
   display: inline-flex; align-items: center; gap: 8px;
@@ -170,14 +176,14 @@ html.zb-open, html.zb-open body { overflow: hidden; }
   position: relative; z-index: 6;
   margin: 10px 16px 0;
   padding: 10px clamp(14px, 2vw, 24px) 12px;
-  background: rgba(8, 14, 18, .74);
-  border: 1px solid rgba(200, 255, 190, .16);
-  border-radius: 18px;
+  background: #fffdf8;
+  border: 3px solid var(--zb-vien);
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  box-shadow: 0 6px 0 var(--zb-vien), 0 14px 28px rgba(43, 29, 58, .14);
 }
 .zb-hoi-dau { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; font-size: .95rem; }
-.zb-hoi-so { color: var(--zb-muted); font-weight: 600; }
+.zb-hoi-so { color: var(--zb-muted); font-weight: 700; }
 .zb-hoi-luot {
   --c: #e0573f;
   padding: 1px 12px; border-radius: 999px; background: var(--c); color: #fff; font-weight: 600;
@@ -186,24 +192,34 @@ html.zb-open, html.zb-open body { overflow: hidden; }
 .zb-hoi-cau {
   font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   font-size: clamp(1.6rem, 3.6vw, 3rem); font-weight: 700; line-height: 1.35;
-  color: #fff; text-wrap: balance;
+  color: var(--zb-ink); text-wrap: balance;
 }
-.zb-o { color: var(--zb-gold); padding: 0 .1em; }
+.zb-o { color: #e5484d; padding: 0 .1em; }
 .zb-o.is-hien { color: #fff; background: #3f8f3a; border-radius: .2em; padding: 0 .25em; }
 .zb-mui { color: var(--zb-muted); font-weight: 400; }
 
 .zb-san { position: relative; flex: 1; min-height: 240px; overflow: hidden; }
 .zb-xa { position: absolute; left: 0; right: 0; top: 0; height: 26%; z-index: 0; pointer-events: none; }
 .zb-xa svg { width: 100%; height: 100%; display: block; }
+/* San dat kem cham bi: zombie xanh vien dam noi ro tren nen sang */
+.zb-xa svg > path:nth-of-type(1) { fill: #b9e3b0; }
+.zb-xa svg > path:nth-of-type(2) { fill: #8fcf7c; }
+.zb-xa svg > path:nth-of-type(3) { fill: #fff1d6; }
+.zb-xa svg > path:nth-of-type(4) { fill: #c9654a; }
+.zb-xa svg > path:nth-of-type(5), .zb-xa svg > path:nth-of-type(6) { stroke: #7a5a3a; }
+.zb-xa svg > g:nth-of-type(1) { fill: #a9a3bf; }
+.zb-xa svg > g:nth-of-type(2) { fill: #f4f0fa; }
 .zb-san::before {
   content: ''; position: absolute; left: 0; right: 0; top: 18%; bottom: 0; z-index: 1;
-  background: linear-gradient(180deg, rgba(47, 107, 69, 0) 0%, #2f6b45 9%, #2a6140 50%, #234f35 100%);
+  background:
+    radial-gradient(circle, rgba(58, 42, 36, .07) 1.4px, transparent 1.7px) 0 0 / 24px 24px,
+    linear-gradient(180deg, rgba(243, 226, 191, 0) 0%, #f3e2bf 9%, #efd8ad 50%, #e8cc99 100%);
   pointer-events: none;
 }
 .zb-suong {
   position: absolute; left: -20%; right: -20%; top: 14%; height: 22%; z-index: 2; pointer-events: none;
-  background: radial-gradient(ellipse 30% 50% at 20% 50%, rgba(200, 230, 210, .12), transparent 70%),
-              radial-gradient(ellipse 35% 45% at 70% 60%, rgba(200, 230, 210, .1), transparent 70%);
+  background: radial-gradient(ellipse 30% 50% at 20% 50%, rgba(255, 255, 255, .35), transparent 70%),
+              radial-gradient(ellipse 35% 45% at 70% 60%, rgba(255, 255, 255, .28), transparent 70%);
   animation: zb-suong 18s ease-in-out infinite alternate;
 }
 @keyframes zb-suong { from { transform: translateX(-6%); } to { transform: translateX(6%); } }
@@ -218,16 +234,16 @@ html.zb-open, html.zb-open body { overflow: hidden; }
   20% { transform: translateX(-8px); } 40% { transform: translateX(7px); }
   60% { transform: translateX(-5px); } 80% { transform: translateX(3px); }
 }
-.zb-lane { position: absolute; left: 0; right: 0; border-top: 2px dashed rgba(10, 30, 20, .22); }
-.zb-lane:nth-child(2n) { background: rgba(255, 255, 255, .035); }
+.zb-lane { position: absolute; left: 0; right: 0; border-top: 2px dashed rgba(43, 29, 58, .2); }
+.zb-lane:nth-child(2n) { background: rgba(255, 255, 255, .22); }
 .zb-rao {
   position: absolute; left: var(--fx); width: var(--fw); bottom: 5%; height: 72%;
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .35));
+  filter: drop-shadow(0 4px 4px rgba(43, 29, 58, .25));
 }
 .zb-rao svg { width: 100%; height: 100%; display: block; }
 .zb-vet { opacity: 0; transition: opacity .3s ease; }
 .zb-rao[data-hp="2"] .zb-vet1, .zb-rao[data-hp="1"] .zb-vet, .zb-rao[data-hp="0"] .zb-vet { opacity: 1; }
-.zb-rao[data-hp="1"] { filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .35)) brightness(.88); }
+.zb-rao[data-hp="1"] { filter: drop-shadow(0 4px 4px rgba(43, 29, 58, .25)) brightness(.88); }
 .zb-rao[data-hp="0"] { transform: rotate(-8deg); transform-origin: 50% 100%; filter: brightness(.7); }
 
 .zb-sung {
@@ -236,7 +252,7 @@ html.zb-open, html.zb-open body { overflow: hidden; }
   transition: transform .14s ease-out;
   pointer-events: none;
 }
-.zb-sung svg { width: 100%; height: 100%; display: block; overflow: visible; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .45)); }
+.zb-sung svg { width: 100%; height: 100%; display: block; overflow: visible; filter: drop-shadow(0 4px 5px rgba(43, 29, 58, .3)); }
 .zb-sung.is-ban svg { animation: zb-giat .22s ease-out; }
 @keyframes zb-giat { 30% { transform: translateX(-12%) rotate(-4deg); } }
 .zb-lua {
@@ -295,7 +311,7 @@ html.zb-open, html.zb-open body { overflow: hidden; }
   background: #fff8ec; color: #2b1d3a;
   border: 3px solid #2b1d3a; border-radius: .3em;
   font-size: var(--fs); line-height: 1.15; white-space: nowrap;
-  box-shadow: 0 4px 0 #2b1d3a, 0 10px 18px rgba(0, 0, 0, .35);
+  box-shadow: 0 4px 0 #2b1d3a, 0 10px 18px rgba(43, 29, 58, .2);
   transform: rotate(-3deg); transform-origin: 0 100%;
   transition: background .2s ease, color .2s ease, opacity .2s ease;
 }
@@ -312,14 +328,14 @@ html.zb-open, html.zb-open body { overflow: hidden; }
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .18);
 }
 .zb-bien-chu { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-weight: 700; }
-.zb-z:hover .zb-bien, .zb-z:focus-visible .zb-bien { box-shadow: 0 0 0 4px var(--zb-gold), 0 10px 18px rgba(0, 0, 0, .35); }
+.zb-z:hover .zb-bien, .zb-z:focus-visible .zb-bien { box-shadow: 0 4px 0 #2b1d3a, 0 0 0 5px var(--zb-gold), 0 10px 18px rgba(43, 29, 58, .2); }
 
 .zb-noi {
   position: absolute; left: 0; bottom: 100%; z-index: 2;
   padding: .25em .7em; border-radius: 14px;
-  background: #fff; color: #23301f;
+  background: #fff; color: #23301f; border: 2.5px solid var(--zb-vien);
   font-size: max(16px, calc(var(--fs) * .52)); font-weight: 800; white-space: nowrap;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+  box-shadow: 0 4px 0 var(--zb-vien);
   opacity: 0; transform: translateY(14px) scale(.6); pointer-events: none;
 }
 .zb-noi::after {
@@ -403,12 +419,12 @@ html.zb-open, html.zb-open body { overflow: hidden; }
 .zb-dung-man {
   position: absolute; inset: 0; z-index: 20;
   display: grid; place-content: center; gap: 6px;
-  border: 0; background: rgba(4, 10, 8, .6); color: #fff;
+  border: 0; background: rgba(58, 42, 36, .45); color: #fff; text-shadow: 0 3px 0 #2b1d3a;
   font: inherit; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800;
   cursor: pointer;
 }
 .zb-dung-man[hidden] { display: none; }
-.zb-dung-man small { font-size: 1rem; font-weight: 500; color: var(--zb-muted); }
+.zb-dung-man small { font-size: 1rem; font-weight: 600; color: #fff3dc; text-shadow: none; }
 .zb.is-dung .zb-than, .zb.is-dung .zb-chan, .zb.is-dung .zb-tay { animation-play-state: paused; }
 
 /* ket qua tung cau */
@@ -416,15 +432,15 @@ html.zb-open, html.zb-open body { overflow: hidden; }
   position: absolute; inset: 0; z-index: 15;
   display: flex; align-items: flex-end; justify-content: center;
   padding: 16px 16px 22px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, .5) 100%);
+  background: linear-gradient(180deg, rgba(58, 42, 36, 0) 30%, rgba(58, 42, 36, .4) 100%);
 }
 .zb-kq[hidden] { display: none; }
 .zb-kq-the {
   width: min(860px, 100%); max-height: 100%; overflow-y: auto; box-sizing: border-box;
-  background: var(--zb-panel); color: var(--zb-panel-ink);
-  border-radius: 22px; padding: clamp(14px, 2.4vw, 26px);
+  background: #fffdf8; color: var(--zb-panel-ink);
+  border-radius: 22px; padding: clamp(14px, 2.4vw, 26px); border: 4px solid var(--zb-vien);
   text-align: center;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, .5);
+  box-shadow: 0 10px 0 var(--zb-vien), 0 24px 60px rgba(43, 29, 58, .2);
   animation: zb-pop .35s cubic-bezier(.2, 1.4, .4, 1);
 }
 .zb-kq-dau { margin: 0 0 6px; font-size: clamp(1.3rem, 2.6vw, 2rem); font-weight: 800; color: #2f7a4a; }
@@ -446,7 +462,7 @@ html.zb-open, html.zb-open body { overflow: hidden; }
 .zb-kq-da span { font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif; font-weight: 700; color: #1f2a1b; }
 .zb-kq-why {
   margin: 12px 0 0; padding: 10px 14px; border-radius: 12px;
-  background: #fff1cf; color: #5a4630; text-align: left; line-height: 1.55;
+  background: #fff3c4; color: #5a4630; text-align: left; line-height: 1.55; border: 2px solid #e9a23b;
   font-size: clamp(1rem, 1.6vw, 1.2rem);
 }
 .zb-kq .zb-nut { margin-top: 14px; }

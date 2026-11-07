@@ -1,12 +1,13 @@
 /* ================= Dua ve 终点 (ban co theo luot) =================
-   Man chieu rieng: nen son mai do, den long, may 祥云; ban co giay da vang voi
-   con duong uon luon. Luon dung bang mau rieng, khong theo che do sang/toi.   */
+   Man chieu rieng: nen kem cham bi, den long, may 祥云 vang; ban co dong co xanh voi
+   con duong uon luon. Luon sang, cung tong "Kiem tra bai cu" (vien dam #2b1d3a).   */
 html.lu-open, html.lu-open body { overflow: hidden; }
 
 .lu {
-  --lu-ink: #fff6e6;
-  --lu-muted: #f0cfb8;
-  --lu-gold: #ffcf5a;
+  --lu-ink: #3d2418;
+  --lu-muted: #7a5a48;
+  --lu-gold: #ffc83d;
+  --lu-vien: #2b1d3a;
   --lu-red: #c8312a;
   --lu-panel: #fff8ea;
   --lu-panel-ink: #3d2418;
@@ -14,8 +15,10 @@ html.lu-open, html.lu-open body { overflow: hidden; }
   z-index: 80;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 170, 90, .25), transparent 70%),
-    linear-gradient(180deg, #8f1d18 0%, #6d1412 45%, #4a0d0c 100%);
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(233, 162, 59, .2), transparent 70%),
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(200, 49, 42, .1), transparent 70%),
+    radial-gradient(circle, rgba(43, 29, 58, .06) 1.3px, transparent 1.6px) 0 0 / 24px 24px,
+    #fbf5ea;
   color: var(--lu-ink);
   font-family: 'Be Vietnam Pro', 'Noto Serif SC', sans-serif;
   display: flex; flex-direction: column;
@@ -36,13 +39,13 @@ html.lu-open, html.lu-open body { overflow: hidden; }
   position: absolute; top: 0;
   width: clamp(30px, 3vw, 46px); aspect-ratio: 48 / 68;
   background: url(/images/game/luot-den.svg) center / contain no-repeat;
-  filter: drop-shadow(0 0 14px rgba(255, 150, 80, .55));
+  filter: drop-shadow(0 4px 6px rgba(200, 49, 42, .3));
   transform-origin: 50% -50px;
   animation: lu-dua 3.6s ease-in-out infinite alternate;
 }
 .lu-long::before {
   content: ''; position: absolute; left: 50%; bottom: 100%;
-  width: 2px; height: 50px; margin-left: -1px; background: rgba(255, 220, 170, .45);
+  width: 2px; height: 50px; margin-left: -1px; background: rgba(43, 29, 58, .45);
 }
 .lu-long.l1 { left: 2%; top: 64px; }
 .lu-long.l2 { left: 12%; top: 54px; animation-delay: -1.3s; }
@@ -50,7 +53,7 @@ html.lu-open, html.lu-open body { overflow: hidden; }
 .lu-long.l4 { right: 2%; top: 68px; animation-delay: -.7s; }
 @keyframes lu-dua { from { transform: rotate(-4deg); } to { transform: rotate(4deg); } }
 .lu-may {
-  position: absolute; width: clamp(90px, 10vw, 150px); color: rgba(255, 214, 150, .16);
+  position: absolute; width: clamp(90px, 10vw, 150px); color: rgba(233, 162, 59, .25);
   animation: lu-troi 22s ease-in-out infinite alternate;
 }
 .lu-may svg { width: 100%; height: auto; display: block; }
@@ -64,40 +67,42 @@ html.lu-open, html.lu-open body { overflow: hidden; }
   position: relative; z-index: 30;
   display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
   padding: 10px 16px;
-  background: rgba(40, 6, 6, .5);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255, 207, 90, .22);
+  background: #fffdf8;
+  border-bottom: 3px solid var(--lu-vien);
 }
-.lu-title { font-size: 1.1rem; white-space: nowrap; }
+.lu-title { font-size: 1.15rem; font-weight: 900; color: #b8432f; white-space: nowrap; }
 .lu-sub { color: var(--lu-muted); font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 34vw; }
 .lu-bar-gap { flex: 1; }
 .lu-btn {
   min-height: 40px; padding: 6px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 207, 90, .3);
-  background: rgba(255, 255, 255, .08);
+  border-radius: 12px;
+  border: 2.5px solid var(--lu-vien);
+  background: #fff;
   color: var(--lu-ink);
-  font: inherit; font-size: .92rem; font-weight: 600;
+  font: inherit; font-size: .92rem; font-weight: 700;
+  box-shadow: 0 3px 0 var(--lu-vien);
   cursor: pointer; white-space: nowrap;
 }
-.lu-btn:hover { background: rgba(255, 255, 255, .16); }
+.lu-btn:hover { background: #fff3c4; }
+.lu-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--lu-vien); }
 .lu-btn.is-off { opacity: .55; }
 .lu-ic { min-width: 42px; padding: 6px; font-size: 1.1rem; }
-.lu-btn-sang { background: #f5e6cc; color: #5a3a24; border-color: #e6cfa8; min-height: 48px; padding: 8px 18px; font-size: 1rem; }
-.lu-btn-sang:hover { background: #eedab8; }
+.lu-btn-sang { background: #fff; color: #5a3a24; min-height: 48px; padding: 8px 18px; font-size: 1rem; }
+.lu-btn-sang:hover { background: #fff3c4; }
 .lu-btn:focus-visible, .lu-go:focus-visible, .lu-opt:focus-visible, .lu-dap-nut:focus-visible, .lu-ten-to input:focus-visible {
-  outline: 3px solid var(--lu-gold); outline-offset: 2px;
+  outline: 3px solid #e9a23b; outline-offset: 2px;
 }
 .lu-go {
   min-height: 54px; padding: 10px 28px;
-  border: 0; border-radius: 999px;
+  border: 3px solid var(--lu-vien); border-radius: 999px;
   background: linear-gradient(180deg, #ffe08a, #f2a92e);
   color: #4a2410;
   font: inherit; font-size: clamp(1.05rem, 1.7vw, 1.3rem); font-weight: 800;
-  box-shadow: 0 8px 24px rgba(242, 169, 46, .35), inset 0 -3px 0 rgba(0, 0, 0, .14);
+  box-shadow: 0 5px 0 var(--lu-vien), 0 12px 22px rgba(242, 169, 46, .3), inset 0 3px 0 rgba(255, 255, 255, .3);
   cursor: pointer; white-space: nowrap;
 }
 .lu-go:hover { filter: brightness(1.06); }
+.lu-go:active:not([disabled]) { transform: translateY(3px); box-shadow: 0 2px 0 var(--lu-vien); }
 .lu-go[disabled] { opacity: .5; cursor: default; filter: grayscale(.4); }
 .lu-go kbd { margin-left: 8px; background: rgba(74, 36, 16, .14); border-color: transparent; color: inherit; }
 
@@ -107,9 +112,9 @@ html.lu-open, html.lu-open body { overflow: hidden; }
 .lu-the {
   width: min(900px, calc(100% - 32px));
   margin: 24px auto; box-sizing: border-box;
-  background: var(--lu-panel); color: var(--lu-panel-ink);
-  border-radius: 24px; border: 4px solid #e2b04a;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, .5), inset 0 0 0 3px #fff3d6;
+  background: #fffdf8; color: var(--lu-panel-ink);
+  border-radius: 24px; border: 4px solid var(--lu-vien);
+  box-shadow: 0 10px 0 var(--lu-vien), 0 26px 60px rgba(43, 29, 58, .14);
   padding: clamp(18px, 3vw, 34px);
   animation: lu-pop .35s cubic-bezier(.2, 1.4, .4, 1);
 }
@@ -143,13 +148,14 @@ html.lu-open, html.lu-open body { overflow: hidden; }
 .lu-chon { display: flex; flex-wrap: wrap; gap: 8px; }
 .lu-opt {
   min-height: 48px; padding: 8px 18px;
-  border-radius: 12px; border: 2px solid #e3cfa8;
+  border-radius: 12px; border: 2.5px solid #e0c99f;
   background: #fff; color: #4a2a1a;
   font: inherit; font-size: 1.05rem; font-weight: 700;
+  box-shadow: 0 3px 0 #e0c99f;
   cursor: pointer;
 }
-.lu-opt:hover { border-color: #e2a04a; }
-.lu-opt.is-on { background: #c8312a; border-color: #c8312a; color: #fff; }
+.lu-opt:hover { border-color: var(--lu-vien); }
+.lu-opt.is-on { background: #c8312a; border-color: var(--lu-vien); color: #fff; box-shadow: 0 3px 0 var(--lu-vien); }
 .lu-ten-to {
   --c: #e0453a;
   display: inline-flex; align-items: center; gap: 6px;
@@ -181,7 +187,7 @@ html.lu-open, html.lu-open body { overflow: hidden; }
     radial-gradient(ellipse at 22% 8%, rgba(255, 255, 255, .45), transparent 55%),
     linear-gradient(165deg, #c4e89c 0%, #9fd474 55%, #86c45e 100%);
   border: 4px solid #2b1d3a;
-  box-shadow: 0 7px 0 #2b1d3a, 0 22px 50px rgba(0, 0, 0, .45), inset 0 0 0 6px rgba(255, 248, 236, .55);
+  box-shadow: 0 7px 0 #2b1d3a, 0 22px 44px rgba(43, 29, 58, .16), inset 0 0 0 6px rgba(255, 248, 236, .55);
 }
 .lu-ban { --q: 80px; --tq: 40px; position: relative; width: 100%; height: 100%; }
 .lu-duong { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
@@ -266,9 +272,11 @@ html.lu-open, html.lu-open body { overflow: hidden; }
 .lu-luot {
   --c: #e0453a;
   display: flex; align-items: center; gap: 12px;
-  padding: 10px 14px; border-radius: 18px;
+  padding: 10px 14px; border-radius: 20px;
   background: var(--c); color: #fff;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, .35), inset 0 -4px 0 rgba(0, 0, 0, .15);
+  border: 3px solid var(--lu-vien);
+  box-shadow: 0 6px 0 var(--lu-vien), inset 0 -4px 0 rgba(0, 0, 0, .15);
+  text-shadow: 0 2px 0 rgba(43, 29, 58, .3);
 }
 .lu-luot-con {
   width: 58px; height: 58px; flex: 0 0 auto; border-radius: 50%;
@@ -315,7 +323,7 @@ html.lu-open, html.lu-open body { overflow: hidden; }
 .lu-sanh-hinh .lu-mat6 { transform: rotateY(180deg) translateZ(calc(clamp(56px, 7vw, 76px) / 2)); }
 .lu-xuc-bong {
   position: absolute; left: 12%; right: 12%; bottom: -14%; height: 14%;
-  border-radius: 50%; background: rgba(0, 0, 0, .35); filter: blur(4px);
+  border-radius: 50%; background: rgba(43, 29, 58, .25); filter: blur(4px);
 }
 .lu-xuc.is-lac { animation: lu-lac 1.2s cubic-bezier(.2, .7, .3, 1); }
 @keyframes lu-lac {
@@ -325,13 +333,13 @@ html.lu-open, html.lu-open body { overflow: hidden; }
 .lu-tung { width: 100%; padding: 10px 16px; }
 .lu-tin {
   margin: 0; min-height: 2.6em;
-  text-align: center; color: var(--lu-ink);
+  text-align: center; color: var(--lu-ink); font-weight: 600;
   font-size: clamp(.95rem, 1.4vw, 1.1rem); line-height: 1.4;
 }
 .lu-tin kbd { font-size: .75em; }
 .lu-tin-so {
   display: inline-grid; place-items: center; min-width: 1.6em; height: 1.6em;
-  border-radius: 10px; background: #fff; color: #a8261e; font-size: 1.3em; font-weight: 900;
+  border-radius: 10px; background: #fff3c4; color: #a8261e; font-size: 1.3em; font-weight: 900; border: 2.5px solid var(--lu-vien);
   vertical-align: middle;
 }
 .lu-dsdoi { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
@@ -339,15 +347,15 @@ html.lu-open, html.lu-open body { overflow: hidden; }
   --c: #e0453a;
   display: grid; grid-template-columns: auto 1fr auto; grid-template-rows: auto auto; column-gap: 8px; row-gap: 4px; align-items: center;
   padding: 8px 12px; border-radius: 14px;
-  background: rgba(255, 255, 255, .09);
-  border: 2px solid transparent;
+  background: #fff;
+  border: 2.5px solid #e0c99f;
 }
-.lu-dsdoi li.is-luot { border-color: var(--lu-gold); background: rgba(255, 207, 90, .16); }
+.lu-dsdoi li.is-luot { border-color: var(--lu-vien); background: #fff3c4; box-shadow: 0 3px 0 var(--lu-vien); }
 .lu-ds-con { grid-row: span 2; width: 40px; height: 40px; box-sizing: border-box; border-radius: 50%; background: var(--c); border: 3px solid #2b1d3a; display: grid; place-items: center; }
 .lu-ds-ten { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.lu-ds-ten small { font-weight: 600; color: var(--lu-gold); }
-.lu-ds-o { font-weight: 800; color: var(--lu-gold); }
-.lu-ds-thanh { grid-column: 2 / 4; height: 7px; border-radius: 4px; background: rgba(255, 255, 255, .15); overflow: hidden; }
+.lu-ds-ten small { font-weight: 600; color: #a8641a; }
+.lu-ds-o { font-weight: 800; color: #a8261e; }
+.lu-ds-thanh { grid-column: 2 / 4; height: 8px; border-radius: 4px; background: #f1e6d6; overflow: hidden; }
 .lu-ds-thanh i { display: block; height: 100%; background: var(--c); border-radius: 4px; transition: width .3s ease; }
 
 /* ---------- lop phu: cau hoi, thong bao, the, ve dich ---------- */
@@ -355,16 +363,16 @@ html.lu-open, html.lu-open body { overflow: hidden; }
   position: absolute; inset: 0; z-index: 20;
   display: flex; align-items: center; justify-content: center;
   padding: 16px;
-  background: rgba(40, 6, 6, .55);
+  background: rgba(58, 42, 36, .45);
   overflow-y: auto;
 }
-.lu-phu--bao { background: rgba(40, 6, 6, .25); pointer-events: none; }
-.lu-phu--het { background: rgba(40, 6, 6, .6); overflow: hidden; }
+.lu-phu--bao { background: rgba(58, 42, 36, .18); pointer-events: none; }
+.lu-phu--het { background: rgba(58, 42, 36, .5); overflow: hidden; }
 
 .lu-bao {
   min-width: min(440px, 100%); box-sizing: border-box;
   padding: 22px 34px; border-radius: 26px; text-align: center;
-  border: 4px solid #2b1d3a; box-shadow: 0 7px 0 #2b1d3a, 0 24px 60px rgba(0, 0, 0, .5);
+  border: 4px solid #2b1d3a; box-shadow: 0 7px 0 #2b1d3a, 0 24px 50px rgba(30, 18, 12, .3);
   color: #3d2418;
   animation: lu-bao .45s cubic-bezier(.2, 1.5, .4, 1);
 }
@@ -377,9 +385,9 @@ html.lu-open, html.lu-open body { overflow: hidden; }
 
 .lu-hoi, .lu-het, .lu-qua-the {
   width: min(980px, 100%); max-height: 100%; overflow-y: auto; box-sizing: border-box;
-  background: var(--lu-panel); color: var(--lu-panel-ink);
-  border-radius: 24px; border: 4px solid #e2b04a;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, .55);
+  background: #fffdf8; color: var(--lu-panel-ink);
+  border-radius: 24px; border: 4px solid var(--lu-vien);
+  box-shadow: 0 10px 0 var(--lu-vien), 0 30px 70px rgba(30, 18, 12, .3);
   padding: clamp(16px, 2.6vw, 30px);
   text-align: center;
   animation: lu-pop .35s cubic-bezier(.2, 1.4, .4, 1);

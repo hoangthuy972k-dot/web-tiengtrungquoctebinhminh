@@ -25,23 +25,29 @@ html.dh-open, html.dh-open body { overflow: hidden; }
   transition: background .4s ease;
 }
 .dh[hidden] { display: none; }
+/* "is-toi" (ten lua / nen / so lon) nay cung dung nen sang nhu cac kieu khac — giu ten lop cho JS */
 .dh.is-toi {
-  --ui-line: rgba(255, 255, 255, .2);
-  --bar: rgba(0, 0, 0, .22);
-  --gap: #ff7a7a;
-  --het: #ffd166;
+  --ui-line: rgba(30, 40, 80, .14);
+  --bar: rgba(255, 255, 255, .45);
+  --gap: #e5484d;
+  --het: #e8590c;
 }
 
 /* ---------- nen tung kieu (dung chung cho the xem truoc) ---------- */
 .dh[data-kieu="bong"], .dh-t-bong { --bg: linear-gradient(180deg, #bfe6ff 0%, #e3f4ff 55%, #fff6e6 100%); --ink: #23395d; }
 .dh[data-kieu="cat"], .dh-t-cat { --bg: linear-gradient(180deg, #fff3dc 0%, #ffe2b8 100%); --ink: #5a3412; }
-.dh[data-kieu="tenlua"], .dh-t-tenlua { --bg: linear-gradient(180deg, #0f1638 0%, #1f2a5c 60%, #3a3f7a 100%); --ink: #f4f6ff; }
+.dh[data-kieu="tenlua"], .dh-t-tenlua { --bg: linear-gradient(180deg, #8fd0ff 0%, #c4e9ff 55%, #fff1d6 100%); --ink: #23395d; }
 .dh[data-kieu="duong"], .dh-t-duong { --bg: linear-gradient(180deg, #c9ecff 0%, #e9f8ff 50%, #e3f6d5 100%); --ink: #1f3b2a; }
-.dh[data-kieu="nen"], .dh-t-nen { --bg: radial-gradient(ellipse at 30% 45%, #4a2c4f 0%, #24162e 60%, #160d1d 100%); --ink: #ffe7b8; }
+.dh[data-kieu="nen"], .dh-t-nen { --bg: radial-gradient(ellipse at 30% 45%, #fff6dc 0%, #ffe6c2 60%, #f8d3a8 100%); --ink: #6a2d1a; }
 .dh[data-kieu="hoa"], .dh-t-hoa { --bg: linear-gradient(180deg, #ffe4ef 0%, #fff3f7 60%, #eaf7e3 100%); --ink: #7a2950; }
 .dh[data-kieu="rua"], .dh-t-rua { --bg: linear-gradient(180deg, #dff4ff 0%, #f2fbe9 55%, #d6efc0 100%); --ink: #234021; }
 .dh[data-kieu="banh"], .dh-t-banh { --bg: linear-gradient(180deg, #fff4e0 0%, #ffe2c2 100%); --ink: #6a2d1a; }
-.dh[data-kieu="so"], .dh-t-so { --bg: radial-gradient(ellipse at 50% 40%, #2b2f6b 0%, #161838 100%); --ink: #fff; }
+.dh[data-kieu="so"], .dh-t-so { --bg: radial-gradient(circle, rgba(43, 29, 58, .06) 1.3px, transparent 1.6px) 0 0 / 24px 24px, radial-gradient(ellipse at 50% 40%, #fffdf8 0%, #fbf5ea 70%, #f3e6cf 100%); --ink: #2b1d3a; }
+/* vong "So lon": SVG ve net trang cho nen toi — doi sang net tim dam tren nen kem */
+.dh-so-g > circle:first-child { stroke: #2b1d3a; }
+.dh-so-g line { stroke: #2b1d3a; }
+.dh-so-g circle[data-r="dau"] { fill: #2b1d3a; }
+.dh-so-g .dh-so-chu { fill: #2b1d3a; }
 
 /* ---------- thanh tren ---------- */
 .dh-bar {
@@ -52,7 +58,7 @@ html.dh-open, html.dh-open body { overflow: hidden; }
   backdrop-filter: blur(6px);
   border-bottom: 3px solid var(--vien);
 }
-.dh.is-toi .dh-bar { border-bottom-color: rgba(255, 255, 255, .25); }
+.dh.is-toi .dh-bar { border-bottom-color: var(--vien); }
 .dh-title { display: inline-flex; align-items: center; gap: 8px; font-size: 1.15rem; font-weight: 900; margin-right: 4px; white-space: nowrap; }
 .dh-title-img { width: 34px; height: 34px; display: block; animation: dh-reng 3.2s ease-in-out infinite; }
 @keyframes dh-reng { 0%, 84%, 100% { transform: rotate(0); } 88% { transform: rotate(-12deg); } 92% { transform: rotate(10deg); } 96% { transform: rotate(-6deg); } }
@@ -108,7 +114,7 @@ html.dh-open, html.dh-open body { overflow: hidden; }
   text-shadow: 0 4px 0 rgba(0, 0, 0, .06);
   transition: color .3s ease;
 }
-.dh.is-toi .dh-so-so { text-shadow: 0 0 40px rgba(255, 255, 255, .15); }
+.dh.is-toi .dh-so-so { text-shadow: 0 4px 0 rgba(0, 0, 0, .06); }
 .dh-so-so i, .dh-mini-so i { font-style: normal; display: inline-block; width: .64em; text-align: center; }
 .dh-so-so i.dh-hai, .dh-mini-so i.dh-hai { width: .3em; position: relative; top: -.06em; }
 .dh-trang { min-height: 1.6em; margin-top: .4em; font-size: clamp(.95rem, 1.6vw, 1.3rem); font-weight: 600; opacity: .7; }

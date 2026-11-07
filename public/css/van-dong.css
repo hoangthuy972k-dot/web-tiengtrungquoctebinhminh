@@ -417,3 +417,23 @@ button.vd-the { cursor: pointer; }
 .vd-vong-nut { display: flex; justify-content: center; margin-top: 14px; }
 .vd-xp { margin: 14px auto 0; max-width: 520px; display: grid; gap: 8px; text-align: left; }
 .vd-xp small { color: #7a6558; }
+
+/* ---------- chu sieu lon (co giao): hoc sinh dung xa truoc may tinh van doc ro cau hoi, dap an, ten hai ban ---------- */
+@media (min-height: 561px) {
+  .vd-hoi { padding-top: 12px; padding-bottom: 14px; }
+  .vd-hoi-dau { font-size: clamp(1rem, 1.6vw, 1.35rem); }
+  .vd-hoi-chu { font-size: clamp(1.9rem, 5vw, 4.6rem); line-height: 1.2; }
+  .vd-hoi-chu.is-zh { font-size: clamp(3rem, 9vw, 8rem); line-height: 1.1; }
+  .vd-ctx { font-size: clamp(1.05rem, 2.2vw, 1.9rem); font-weight: 700; }
+  .vd-py { font-size: clamp(1.15rem, 2.6vw, 2.1rem); }
+  .vd-the-chu i { font-size: clamp(1.1rem, 2.4vw, 2rem); }
+  .vd-the-chu span { font-size: clamp(1.45rem, 3.6vw, 3.2rem); }
+  .vd-the-chu span.is-zh { font-size: clamp(1.9rem, 5vw, 4.4rem); }
+  .vd-the-ngon { font-size: clamp(.95rem, 1.8vw, 1.4rem); }
+  /* cuoc dua ngoi sao: ten hai ban to, de doc tu xa */
+  .vd-nguoi { width: clamp(150px, 26%, 320px); }
+  .vd-nguoi-ten { font-size: clamp(1.25rem, 2.9vw, 2.4rem); padding: 4px 16px; }
+  .vd-nguoi-sao { font-size: clamp(1.6rem, 3.4vw, 2.8rem); }
+  .vd-nguoi-nhan { font-size: clamp(.95rem, 1.8vw, 1.35rem); }
+  .vd-nguoi.is-giu .vd-nguoi-nhan { font-size: clamp(1.2rem, 2.6vw, 2rem); }
+}

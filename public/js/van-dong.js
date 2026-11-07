@@ -303,8 +303,10 @@
      Hai nguon giong man UFO goi tra bai: danh sach nhanh tren may (hyv_ufo_lists) va lop
      tren he thong (/api/admin/oral, mat khau quan tri trong sessionStorage neu co da nhap
      o Che do lop hoc). Chi doc ten, khong ghi gi len may chu. */
+  // Ten trong danh sach lop hay kem lop phia sau ("Nguyen Gia My - 10C16", "... (10C16)"): bo phan lop truoc khi rut gon
   function tenNgan(ten) {
-    var w = String(ten || '').trim().split(/\s+/);
+    var goc = String(ten || '').trim(), s = goc.replace(/\s*[-–—|(（[].*$/, '').trim() || goc;
+    var w = s.split(/\s+/);
     return (w.length > 2 ? w.slice(-2).join(' ') : w.join(' ')).slice(0, 24);
   }
   function napNguonLop() {
@@ -402,8 +404,10 @@
   function veSanh() {
     $('vdThoat').href = lop ? '/lop' : '/game';
     $('vdNhan').textContent = cfg && cfg.nhan ? ' · ' + cfg.nhan : '';
-    $('vdTen0').value = tenLuu[0] || 'Bạn trái';
-    $('vdTen1').value = tenLuu[1] || 'Bạn phải';
+    // ten luu cu co the chi con phan lop ("- 10C16") do ban truoc rut gon sai -> bo qua
+    var tenHop = function (t) { return t && !/^\s*[-–—(]/.test(t) ? t : ''; };
+    $('vdTen0').value = tenHop(tenLuu[0]) || 'Bạn trái';
+    $('vdTen1').value = tenHop(tenLuu[1]) || 'Bạn phải';
     if (!dsCau.length) {
       $('vdBatDau').disabled = true;
       $('vdLoi').innerHTML = lop

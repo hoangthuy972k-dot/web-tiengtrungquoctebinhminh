@@ -190,7 +190,7 @@ function phienBanHopLe(v, filePath, stat) {
 // sinh khong hoi AI trong luc thi, va bo qua trang quan tri.
 const WIDGET_TAGS = '<link rel="stylesheet" href="/css/widgets.css" />\n<script src="/js/widgets.js" defer></script>\n';
 // Trang lop.html la man hinh chieu len lop — khong gan nut noi cho do roi mat.
-const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html|lop\.html|choi\.html|quet\.html|nghieng\.html|van-dong\.html|dk\.html|hsk30\.html|thi-lop\.html)$/;
+const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html|lop\.html|choi\.html|quet\.html|nghieng\.html|van-dong\.html|dk\.html|dua\.html|hsk30\.html|thi-lop\.html)$/;
 
 function sendVersionedHtml(res, filePath) {
   let html = fs.readFileSync(filePath, 'utf8');

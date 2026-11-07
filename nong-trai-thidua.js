@@ -23,6 +23,7 @@ const TD_THANG = 60, TD_THAM_GIA = 10, TD_HOA = 30;
 const VUON_O = 8;                  // so o vuon tu kho
 const CAY7_XU = 80;                // qua vang cay cham chi
 const CO_XU = { xu50: 50, xu100: 100 };
+const DT_XU = 20;                  // diem thuong lop (Che do lop hoc): 1 diem = 20 xu nong trai
 
 module.exports = function ganThiDua(app, d, h, c) {
   const loi = h.loi;
@@ -494,6 +495,21 @@ module.exports = function ganThiDua(app, d, h, c) {
         await c.ghiC('cothuong:idx', idx);
       }).catch(() => {});
     });
+    // Diem thuong lop (+1/+2/+3 o /lop): server.js chi gui khi dong danh sach co roster.userId
+    d.suKien.on('diem-thuong', (m) => {
+      if (!m || !m.userId || !m.id || !(m.diem > 0)) return;
+      themCo(m.userId, { id: 'b' + m.id, bonus: m.id, loai: 'diem', xu: Math.min(3, m.diem) * DT_XU, diem: m.diem,
+        ly: '🏅 Cô thưởng ' + m.diem + ' điểm vì ' + String(m.ly || 'cố gắng').slice(0, 30), t: Date.now() }).catch((e) => console.error('Diem thuong:', e.message));
+    });
+    d.suKien.on('diem-thuong-xoa', (m) => {
+      // hoan tac: rut qua chua nhan (nhan roi thi thoi)
+      if (!m || !m.userId || !m.id) return;
+      c.khoaC('cothuong:' + m.userId, async () => {
+        const ds = (await c.docC('cothuong:' + m.userId)) || [];
+        const con = ds.filter((x) => x.bonus !== m.id);
+        if (con.length !== ds.length) await c.ghiC('cothuong:' + m.userId, con);
+      }).catch((e) => console.error('Diem thuong (hoan tac):', e.message));
+    });
   }
   // Hat giong quy: 3 hat cua loai cay dat nhat em trong duoc (gieo khong ton xu)
   function hatQuy(lv) {
@@ -508,6 +524,7 @@ module.exports = function ganThiDua(app, d, h, c) {
   function traQua(f, q) {
     const lv = h.lvTuXp(f.xp);
     if (q.loai === 'xu50' || q.loai === 'xu100') { f.xu += CO_XU[q.loai]; return { loai: 'xu', n: CO_XU[q.loai] }; }
+    if (q.loai === 'diem') { const n = Math.max(0, Math.min(3 * DT_XU, Math.round(Number(q.xu)) || 0)); f.xu += n; return { loai: 'xu', n }; }
     if (q.loai === 'con') {
       const k = conQuy(f, lv);
       if (k) { f.tui[k] = (f.tui[k] || 0) + 1; return { loai: 'con', k, n: 1 }; }

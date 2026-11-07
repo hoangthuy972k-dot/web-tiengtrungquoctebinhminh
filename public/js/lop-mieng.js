@@ -45,6 +45,7 @@
     root.hidden = true;
     root.innerHTML = '<header class="lmi-bar"><span class="lmi-tit"><span class="lmi-ic" aria-hidden="true">写</span>Chấm điểm miệng</span>' +
       '<span class="lmi-phu">Bấm tên bạn lên bảng → bấm điểm là lưu ngay vào cột <b>Miệng</b></span><span class="lmi-gian"></span>' +
+      '<button type="button" class="lmi-nut-nho" data-act="diemdanh" title="Vắng có phép / không phép / đi muộn — bạn vắng không bị gọi ngẫu nhiên">📋 Điểm danh</button>' +
       '<button type="button" class="lmi-nut-nho" data-act="dong">✕ Đóng</button></header>' +
       '<div class="lmi-than"><aside class="lmi-trai">' +
         '<label class="lmi-nguon"><span>📋 Danh sách lớp</span><select id="lmiNguon"></select></label>' +
@@ -105,6 +106,7 @@
         return { id: k.id, name: k.name, times: k.times || 0, lastMs: k.lastMs || 0, lastScore: sc.length ? sc[sc.length - 1] : null, lan: lan };
       }) : [];
       veDs(); vePhai();
+      napPhu(v);
       return Promise.resolve();
     }
     S.dangTai = true; veDs();
@@ -113,6 +115,7 @@
       S.kids = (d.roster || []).map(function (r) { return { id: r.id, name: r.name, no: r.no, times: r.times || 0, lastMs: r.lastMs || 0, lastScore: r.lastScore, avg: r.avg, lan: r.lan || [] }; });
       if (!S.kids.length) S.loi = 'Lớp này chưa có danh sách học sinh. Vào Báo cáo → Lớp & bài giao để dán danh sách.';
       veDs(); vePhai();
+      napPhu(v);
     }).catch(function (e) {
       S.dangTai = false;
       S.loi = e.status === 401 || e.status === 403 ? 'Cần nhập lại mật khẩu quản trị.' : e.message;
@@ -132,12 +135,26 @@
     el.innerHTML = ds.length ? ds.map(function (k) {
       var hn = S.homNay.filter(function (x) { return x.kid === k.id && x.src === S.src; });
       var diemHn = hn.length ? hn[hn.length - 1].diem : null;
-      return '<button type="button" class="lmi-hs' + (S.chon && S.chon.id === k.id ? ' chon' : '') + (diemHn != null ? ' da' : '') + '" data-hs="' + esc(k.id) + '">' +
-        (k.no ? '<span class="lmi-so">' + k.no + '</span>' : '') + tenHtml(k.name) +
+      var vang = !coMat(k.id);
+      return '<button type="button" class="lmi-hs' + (S.chon && S.chon.id === k.id ? ' chon' : '') + (diemHn != null ? ' da' : '') + (vang ? ' vang' : '') + '" data-hs="' + esc(k.id) + '">' +
+        (k.no ? '<span class="lmi-so">' + k.no + '</span>' : '') + tenHtml(k.name) + (vang ? '<span class="lmi-vang-tag">vắng</span>' : '') +
         (diemHn != null ? '<span class="lmi-diem-nho">✓ ' + diemHn + '</span>' : k.lastScore != null ? '<small>lần trước ' + k.lastScore + '</small>' : '') + '</button>';
     }).join('') : '<p class="lmi-trong">Không thấy tên nào khớp.</p>';
   }
 
+  // Diem danh hom nay (lop-diemdanh.js) + diem thuong lop (lop-diemthuong.js)
+  function coMat(id) { return !window.DiemDanh || window.DiemDanh.coMat(S.src, id); }
+  function napPhu(src, ep) {
+    return Promise.all([window.DiemDanh ? window.DiemDanh.nap(src, ep) : null, window.DiemThuong ? window.DiemThuong.nap(src, ep) : null])
+      .then(function () { if (src === S.src && root && !root.hidden) { veDs(); vePhai(); } });
+  }
+  function htmlDiemThuong(k) {
+    if (!window.DiemThuong || !S.src) return '';
+    return '<div class="lmi-nt lmi-dt"><h3>🏅 Điểm thưởng lớp</h3>' +
+      '<p class="lmi-nt-phu">+1 / +2 / +3 ⭐ vì Phát biểu, Làm bài tốt, Giúp bạn, Tiến bộ.' + (S.src.indexOf('sv:') === 0 ? ' Mỗi điểm = ' + window.DiemThuong.XU + ' xu nông trại (bạn đã chọn tên trong lớp).' : ' Danh sách nhanh: chỉ lưu trên máy này.') + '</p>' +
+      '<div class="lmi-nt-nut">' + (k ? '<button type="button" class="lmi-nut lmi-nut-vang" data-dthuong="' + esc(k.id) + '">🏅 Thưởng ' + esc(k.name) + '</button>' : '') +
+      '<button type="button" class="lmi-nut" data-dthuong="*">🏅 Thưởng cả lớp</button></div></div>';
+  }
   // "Bao Han - 10C08" -> ten dam + ma lop nho (danh sach ghep nhieu lop)
   function tenHtml(t) {
     var m = String(t || '').match(/^(.*?)\s+[-–—]\s+(\S.*)$/);
@@ -163,7 +180,12 @@
   function so(x) { return x == null ? '—' : String(x).replace('.', ','); }
   function ngay(ms) { if (!ms) return ''; var d = new Date(ms); return ('0' + d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth() + 1)).slice(-2); }
   function hangBang() {
-    return S.kids.map(function (k, i) { var l = lanCua(k); return { k: k, i: i, l: l, tb: tbCua(l), loai: loai(tbCua(l)), cuoi: l.length ? l[l.length - 1].ms : 0 }; });
+    var tv = (window.DiemDanh && window.DiemDanh.tong(S.src)) || {}, dt = (window.DiemThuong && window.DiemThuong.thang(S.src)) || {};
+    return S.kids.map(function (k, i) {
+      var l = lanCua(k), v = tv[k.id] || { vcp: 0, vkp: 0, muon: 0 };
+      return { k: k, i: i, l: l, tb: tbCua(l), loai: loai(tbCua(l)), cuoi: l.length ? l[l.length - 1].ms : 0,
+        vang: (v.vcp || 0) + (v.vkp || 0), vcp: v.vcp || 0, vkp: v.vkp || 0, muon: v.muon || 0, thuong: dt[k.id] || 0 };
+    });
   }
   function veBang() {
     var el = $('#lmiPhai');
@@ -175,6 +197,7 @@
     rows.forEach(function (r) { dem[r.loai]++; });
     var tongLan = rows.reduce(function (s, r) { return s + r.l.length; }, 0);
     var pt = n ? Math.round(co.length / n * 100) : 0;
+    var vangHn = rows.filter(function (r) { return !coMat(r.k.id); }).length;
     var loc = rows.filter(function (r) {
       return S.bLoc === 'tat' || (S.bLoc === 'chua' ? !r.l.length : S.bLoc === r.loai);
     });
@@ -197,6 +220,7 @@
         '<button type="button" class="lmi-nut-nho" data-act="csv">⬇ Tải file Excel</button></div>' +
       '<div class="lmi-tk">' +
         '<div class="lmi-o"><small>Sĩ số</small><b>' + n + '</b><span>bạn</span></div>' +
+        '<div class="lmi-o lmi-o-vang" data-act="diemdanh" title="Vắng hôm nay: ' + vangHn + ' — bấm để mở điểm danh"><small>Vắng hôm nay</small><b>' + vangHn + '</b><span>📋 bấm để điểm danh</span></div>' +
         '<div class="lmi-o"><small>Đã kiểm tra</small><b>' + co.length + '<i>/' + n + '</i></b><span class="lmi-tien"><span style="width:' + pt + '%"></span></span></div>' +
         '<div class="lmi-o lmi-o-chua" data-bloc="chua"><small>Chưa kiểm tra</small><b>' + dem.chua + '</b><span>bấm để lọc</span></div>' +
         '<div class="lmi-o"><small>Điểm TB lớp</small><b class="lmi-tb-' + loai(tbLop) + '">' + so(tbLop) + '</b><span>' + tongLan + ' lượt chấm</span></div>' +
@@ -205,13 +229,15 @@
       '<div class="lmi-pb-chu">' + ['gioi', 'kha', 'tb', 'yeu'].map(function (t) { return '<span><i class="lmi-pb-' + t + '"></i>' + TEN_LOAI[t] + ': <b>' + dem[t] + '</b></span>'; }).join('') + '</div>' +
       '<div class="lmi-bloc">' + chip('tat', 'Tất cả', n) + chip('chua', 'Chưa kiểm tra', dem.chua) + chip('yeu', 'Dưới 5', dem.yeu) + chip('gioi', 'Từ 8 trở lên', dem.gioi) +
         '<span class="lmi-gian"></span><label class="lmi-bky">Sắp xếp <select id="lmiSx"><option value="no">Theo số thứ tự</option><option value="ten">Theo tên</option><option value="cao">Điểm TB cao → thấp</option><option value="thap">Điểm TB thấp → cao</option><option value="it">Ít được gọi nhất</option></select></label></div>' +
-      '<div class="lmi-bwrap"><table class="lmi-bt"><thead><tr><th>#</th><th>Họ tên</th><th>Số lần</th><th>Các lần chấm</th><th>TB</th><th>Gần nhất</th><th></th></tr></thead><tbody>' +
+      '<div class="lmi-bwrap"><table class="lmi-bt"><thead><tr><th>#</th><th>Họ tên</th><th>Số lần</th><th>Các lần chấm</th><th>TB</th><th>Gần nhất</th><th title="Số buổi vắng (có phép + không phép), từ trước đến nay">Vắng</th><th title="Điểm thưởng lớp tháng này">Điểm thưởng</th><th></th></tr></thead><tbody>' +
       (loc.length ? loc.map(function (r) {
         return '<tr><td class="lmi-bt-so">' + (r.k.no || r.i + 1) + '</td><td class="lmi-bt-ten">' + tenHtml(r.k.name) + '</td><td>' + r.l.length + '</td>' +
           '<td><span class="lmi-lan">' + (r.l.length ? r.l.map(function (x) { return '<i class="lmi-tb-' + loai(x.score) + '" title="' + ngay(x.ms) + '">' + x.score + '</i>'; }).join('') : '<small>—</small>') + '</span></td>' +
           '<td><b class="lmi-tbo lmi-tb-' + r.loai + '">' + so(r.tb) + '</b></td><td><small>' + (ngay(r.cuoi) || '—') + '</small></td>' +
+          '<td title="Có phép ' + r.vcp + ' · Không phép ' + r.vkp + ' · Đi muộn ' + r.muon + '">' + (r.vang ? '<b>' + r.vang + '</b>' : '<small>0</small>') + (coMat(r.k.id) ? '' : ' <small class="lmi-vang-tag">hôm nay</small>') + '</td>' +
+          '<td>' + (r.thuong ? '⭐ <b>' + r.thuong + '</b>' : '<small>—</small>') + '</td>' +
           '<td><button type="button" class="lmi-nut-nho" data-chamhs="' + esc(r.k.id) + '">✍️ Chấm</button></td></tr>';
-      }).join('') : '<tr><td colspan="7" class="lmi-trong">Không có bạn nào trong mục này.</td></tr>') +
+      }).join('') : '<tr><td colspan="9" class="lmi-trong">Không có bạn nào trong mục này.</td></tr>') +
       '</tbody></table></div>' +
       '<p class="lmi-meo">Xếp loại theo điểm trung bình các lần chấm: Giỏi ≥ 8 · Khá 6,5–7,9 · Trung bình 5–6,4 · Yếu &lt; 5.' + (S.src.indexOf('ls:') === 0 ? ' Danh sách nhanh trên máy không lưu ngày từng lần chấm, nên lọc theo thời gian chỉ tính lần gần nhất.' : '') + '</p>' +
       '</div>';
@@ -226,11 +252,11 @@
     var max = rows.reduce(function (m, r) { return Math.max(m, r.l.length); }, 0);
     var dau = ['STT', 'Họ tên', 'Số lần'];
     for (var i = 1; i <= max; i++) dau.push('Lần ' + i);
-    dau.push('Điểm TB', 'Xếp loại');
+    dau.push('Điểm TB', 'Xếp loại', 'Số buổi vắng', 'Điểm thưởng tháng này');
     var dong = [dau.map(q).join(',')].concat(rows.map(function (r) {
       var c = [r.k.no || r.i + 1, r.k.name, r.l.length];
       for (var j = 0; j < max; j++) c.push(r.l[j] ? r.l[j].score : '');
-      c.push(r.tb == null ? '' : r.tb, r.tb == null ? 'Chưa kiểm tra' : TEN_LOAI[r.loai].replace(/\s*\(.*$/, ''));
+      c.push(r.tb == null ? '' : r.tb, r.tb == null ? 'Chưa kiểm tra' : TEN_LOAI[r.loai].replace(/\s*\(.*$/, ''), r.vang, r.thuong);
       return c.map(q).join(',');
     }));
     var blob = new Blob(['\ufeff' + dong.join('\r\n')], { type: 'text/csv;charset=utf-8' });
@@ -249,7 +275,7 @@
     var nk = '<div class="lmi-nk"><h3>Hôm nay đã chấm · ' + hn.length + ' lượt</h3>' + (hn.length ? '<ol>' + hn.slice().reverse().map(function (x) {
       return '<li><b>' + esc(x.ten) + '</b><span class="lmi-nk-diem">' + x.diem + '</span><small>' + esc(x.nd || '') + ' · ' + x.gio + '</small>' +
         '<button type="button" class="lmi-nut-nho" data-huy="' + x.key + '">↶ Hoàn tác</button></li>';
-    }).join('') + '</ol>' : '<p class="lmi-trong">Chưa chấm bạn nào.</p>') + '</div>' + htmlThuongNt(k);
+    }).join('') + '</ol>' : '<p class="lmi-trong">Chưa chấm bạn nào.</p>') + '</div>' + htmlDiemThuong(k) + htmlThuongNt(k);
     if (!k) {
       el.innerHTML = tabs() + '<div class="lmi-cho"><span class="lmi-cho-ic" aria-hidden="true">✍️</span><h2>Bấm tên bạn vừa lên bảng</h2>' +
         '<p>Hoặc bấm <b>🎲 Gọi ngẫu nhiên</b> — máy ưu tiên bạn lâu chưa được gọi.</p></div>' + nk;
@@ -293,6 +319,11 @@
     }).catch(function (e) { nut.disabled = false; bao('⚠️ ' + esc(e.message)); });
   }
   function bam(e) {
+    var dt = e.target.closest('[data-dthuong]');
+    if (dt && window.DiemThuong) {
+      window.DiemThuong.mo({ src: S.src, rosterId: dt.getAttribute('data-dthuong'), onXong: function () { if (S.xem === 'bang') veBang(); } });
+      return;
+    }
     var q = e.target.closest('[data-qua], [data-thuong], [data-huynt]');
     if (q && q.hasAttribute('data-qua')) { quaChon = q.getAttribute('data-qua'); vePhai(); return; }
     if (q && q.hasAttribute('data-thuong')) { thuongNt(q.getAttribute('data-thuong'), q); return; }
@@ -312,6 +343,7 @@
     if (b.hasAttribute('data-huy')) { hoanTac(b.getAttribute('data-huy'), b); return; }
     var a = b.getAttribute('data-act');
     if (a === 'dong') dong();
+    else if (a === 'diemdanh' && window.DiemDanh) window.DiemDanh.mo({ src: S.src, onDong: function (src) { if (src && src !== S.src && coNguon(src)) chonNguon(src); else { veDs(); vePhai(); } } });
     else if (a === 'ngaunhien') { S.xem = 'cham'; goiNgauNhien(); }
     else if (a === 'csv') taiCsv();
   }
@@ -319,7 +351,10 @@
   function goiNgauNhien() {
     if (!S.kids.length) return;
     var now = Date.now(), best = null, bw = -Infinity;
-    S.kids.forEach(function (k) {
+    // ban vang hom nay (diem danh) khong bi goi; di muon van goi
+    var coMatDs = S.kids.filter(function (k) { return coMat(k.id); });
+    if (!coMatDs.length) { bao('Hôm nay cả lớp đều vắng — mở 📋 Điểm danh để sửa.'); return; }
+    coMatDs.forEach(function (k) {
       var daHn = S.homNay.some(function (x) { return x.kid === k.id && x.src === S.src; }) || laHomNay(k.lastMs);
       var ngay = k.lastMs ? (now - k.lastMs) / 86400000 : 999;
       var w = (daHn ? -1000 : 0) + Math.min(ngay, 60) * 10 - k.times * 3 + Math.random() * 25;

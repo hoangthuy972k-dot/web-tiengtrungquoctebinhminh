@@ -3618,11 +3618,27 @@ async function initClassTables() {
       'INDEX idx_class (class_id), INDEX idx_roster (roster_id), INDEX idx_kind (kind)' +
     ')'
   );
+  // Diem danh theo ngay (Che do lop hoc): chi luu em KHONG co mat binh thuong (vcp / vkp / muon)
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS class_attendance (' +
+      'class_id VARCHAR(16) NOT NULL, day CHAR(10) NOT NULL, roster_id VARCHAR(16) NOT NULL, ' +
+      'st VARCHAR(4) NOT NULL, ms BIGINT NOT NULL, ' +
+      'PRIMARY KEY (class_id, day, roster_id), INDEX idx_class (class_id)' +
+    ')'
+  );
+  // Diem thuong lop (+1/+2/+3 vi phat bieu...): moi dong 1 em, lan = ma 1 lan bam (hoan tac ca lan)
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS class_bonus (' +
+      'id VARCHAR(16) PRIMARY KEY, lan VARCHAR(16) NOT NULL, class_id VARCHAR(16) NOT NULL, roster_id VARCHAR(16) NOT NULL, ' +
+      'user_id VARCHAR(36) NULL, diem INT NOT NULL, ly VARCHAR(40) NOT NULL, ms BIGINT NOT NULL, ' +
+      'INDEX idx_class (class_id), INDEX idx_lan (lan)' +
+    ')'
+  );
 }
 
 function readClassFile() {
   const d = readJsonFile(CLASSES_FILE) || {};
-  return { classes: d.classes || [], members: d.members || {}, assignments: d.assignments || [], roster: d.roster || [], done: d.done || {}, oral: d.oral || [], points: d.points || [] };
+  return { classes: d.classes || [], members: d.members || {}, assignments: d.assignments || [], roster: d.roster || [], done: d.done || {}, oral: d.oral || [], points: d.points || [], attendance: d.attendance || [], bonus: d.bonus || [] };
 }
 
 // Moi hoc sinh mo trang chu deu goi /api/class/me; 6 lop x 50 em co the doc lien
@@ -4346,6 +4362,151 @@ app.delete('/api/admin/oral/:id', requireAdmin, asyncRoute(async (req, res) => {
   }
   baoNt('mieng-xoa', id);
   res.json({ ok: true });
+}));
+
+/* ---------- Diem danh hom nay (Che do lop hoc /lop, lop-diemdanh.js) ----------
+   Mac dinh ai cung co mat; chi luu em vang co phep (vcp) / vang khong phep (vkp) / di muon (muon)
+   theo lop + ngay VN. Cac man goi ten (UFO, Goi ten vui, Cham diem mieng) bo qua em vang. */
+const DD_ST = ['vcp', 'vkp', 'muon'];
+async function readAttendance(classId) {
+  if (!USE_DB) return (readClassFile().attendance || []).filter((x) => x.classId === classId);
+  const [rows] = await dbPool.query('SELECT * FROM class_attendance WHERE class_id = ?', [classId]);
+  return rows.map((r) => ({ classId: r.class_id, day: r.day, rosterId: r.roster_id, st: r.st, ms: Number(r.ms) }));
+}
+// ngay hop le: YYYY-MM-DD, khong o tuong lai, toi da 60 ngay truoc (sua diem danh hom qua...)
+function ngayDiemDanh(v) {
+  const hom = vnDayKey();
+  const s = v ? String(v) : hom;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(s) || Number.isNaN(Date.parse(s + 'T00:00:00Z'))) return null;
+  if (s > hom || Date.parse(hom + 'T00:00:00Z') - Date.parse(s + 'T00:00:00Z') > 60 * 86400000) return null;
+  return s;
+}
+app.get('/api/admin/attendance', requireAdmin, asyncRoute(async (req, res) => {
+  const classId = String(req.query.classId || '');
+  const day = ngayDiemDanh(req.query.date);
+  if (!day) return res.status(400).json({ error: 'Ngày điểm danh không hợp lệ.' });
+  const st = await loadClassState();
+  if (!st.classes.some((c) => c.id === classId)) return res.status(404).json({ error: 'Không tìm thấy lớp.' });
+  const ids = new Set(st.roster.filter((r) => r.classId === classId).map((r) => r.id));
+  const marks = {}, tong = {};
+  (await readAttendance(classId)).forEach((x) => {
+    if (!ids.has(x.rosterId)) return;
+    if (x.day === day) marks[x.rosterId] = x.st;
+    const t = tong[x.rosterId] || (tong[x.rosterId] = { vcp: 0, vkp: 0, muon: 0 });
+    if (t[x.st] != null) t[x.st]++;
+  });
+  res.json({ date: day, marks, tong });
+}));
+// marks: { rosterId: 'co' | 'vcp' | 'vkp' | 'muon' } — 'co' = xoa dong (co mat la mac dinh)
+app.post('/api/admin/attendance', requireAdmin, asyncRoute(async (req, res) => {
+  const classId = String(req.body?.classId || '');
+  const day = ngayDiemDanh(req.body?.date);
+  if (!day) return res.status(400).json({ error: 'Ngày điểm danh không hợp lệ.' });
+  const raw = req.body?.marks;
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return res.status(400).json({ error: 'Thiếu danh sách điểm danh.' });
+  const st = await loadClassState();
+  if (!st.classes.some((c) => c.id === classId)) return res.status(404).json({ error: 'Không tìm thấy lớp.' });
+  const ids = new Set(st.roster.filter((r) => r.classId === classId).map((r) => r.id));
+  const doi = [];
+  for (const k of Object.keys(raw).slice(0, 300)) {
+    const v = String(raw[k]);
+    if (v !== 'co' && DD_ST.indexOf(v) === -1) return res.status(400).json({ error: 'Trạng thái điểm danh không hợp lệ.' });
+    if (ids.has(k)) doi.push([k, v]);
+  }
+  const now = Date.now();
+  if (!USE_DB) {
+    const d = readClassFile();
+    const doiMap = new Map(doi);
+    d.attendance = (d.attendance || []).filter((x) => !(x.classId === classId && x.day === day && doiMap.has(x.rosterId)));
+    doi.forEach(([rid, v]) => { if (v !== 'co') d.attendance.push({ classId, day, rosterId: rid, st: v, ms: now }); });
+    writeClassFile(d);
+  } else {
+    for (const [rid, v] of doi) {
+      if (v === 'co') await classDbWrite('DELETE FROM class_attendance WHERE class_id = ? AND day = ? AND roster_id = ?', [classId, day, rid]);
+      else await classDbWrite('INSERT INTO class_attendance (class_id, day, roster_id, st, ms) VALUES (?,?,?,?,?) ON DUPLICATE KEY UPDATE st = VALUES(st), ms = VALUES(ms)', [classId, day, rid, v, now]);
+    }
+  }
+  res.json({ ok: true, date: day, so: doi.length });
+}));
+
+/* ---------- Diem thuong lop (+1/+2/+3, lop-diemthuong.js) ----------
+   Moi dong = 1 em (roster row); lan = 1 lan bam (thuong ca lop = nhieu dong cung lan) de hoan tac ca lan.
+   Nong trai: chi em co roster.userId (da chon ten trong lop) moi nhan xu — xem nong-trai-thidua.js 'diem-thuong'. */
+const DT_LY = ['Phát biểu', 'Làm bài tốt', 'Giúp bạn', 'Tiến bộ'];
+const dtLog = [];
+async function readBonus(classId) {
+  if (!USE_DB) return (readClassFile().bonus || []).filter((x) => x.classId === classId);
+  const [rows] = await dbPool.query('SELECT * FROM class_bonus WHERE class_id = ? ORDER BY ms', [classId]);
+  return rows.map((r) => ({ id: r.id, lan: r.lan, classId: r.class_id, rosterId: r.roster_id, userId: r.user_id || null, diem: Number(r.diem), ly: r.ly, ms: Number(r.ms) }));
+}
+app.get('/api/admin/bonus', requireAdmin, asyncRoute(async (req, res) => {
+  const classId = String(req.query.classId || '');
+  const st = await loadClassState();
+  if (!st.classes.some((c) => c.id === classId)) return res.status(404).json({ error: 'Không tìm thấy lớp.' });
+  const thangNay = vnDayKey().slice(0, 7), thang = {}, tong = {}, lanMap = {};
+  (await readBonus(classId)).forEach((x) => {
+    tong[x.rosterId] = (tong[x.rosterId] || 0) + x.diem;
+    if (vnDayKey(x.ms).slice(0, 7) === thangNay) thang[x.rosterId] = (thang[x.rosterId] || 0) + x.diem;
+    const l = lanMap[x.lan] || (lanMap[x.lan] = { lan: x.lan, diem: x.diem, ly: x.ly, ms: x.ms, ds: [] });
+    l.ds.push(x.rosterId);
+  });
+  const gan = Object.values(lanMap).sort((a, b) => b.ms - a.ms).slice(0, 15);
+  res.json({ thang, tong, gan });
+}));
+app.post('/api/admin/bonus', requireAdmin, asyncRoute(async (req, res) => {
+  const classId = String(req.body?.classId || '');
+  const rosterId = String(req.body?.rosterId || '');
+  const diem = Math.round(Number(req.body?.diem));
+  const ly = String(req.body?.ly || '');
+  if ([1, 2, 3].indexOf(diem) === -1) return res.status(400).json({ error: 'Điểm thưởng chỉ từ 1 đến 3.' });
+  if (DT_LY.indexOf(ly) === -1) return res.status(400).json({ error: 'Chọn lý do thưởng.' });
+  const now = Date.now();
+  while (dtLog.length && now - dtLog[0] > 3600000) dtLog.shift();
+  if (dtLog.length >= 300) return res.status(429).json({ error: 'Thưởng nhiều quá trong 1 giờ — đợi một lúc nhé.' });
+  const st = await loadClassState();
+  let ro = st.roster.filter((r) => r.classId === classId && (rosterId === '*' || r.id === rosterId));
+  if (!ro.length) return res.status(404).json({ error: 'Không tìm thấy học sinh trong lớp này.' });
+  if (rosterId === '*') {
+    // ca lop = cac em co mat hom nay (di muon van tinh)
+    const hom = vnDayKey();
+    const vang = new Set((await readAttendance(classId)).filter((x) => x.day === hom && x.st !== 'muon').map((x) => x.rosterId));
+    ro = ro.filter((r) => !vang.has(r.id));
+    if (!ro.length) return res.status(400).json({ error: 'Hôm nay cả lớp đều vắng.' });
+  }
+  const lan = newShortId();
+  const rows = ro.map((r) => ({ id: newShortId(), lan, classId, rosterId: r.id, userId: r.userId || null, diem, ly, ms: now }));
+  if (!USE_DB) {
+    const d = readClassFile();
+    d.bonus = (d.bonus || []).concat(rows);
+    writeClassFile(d);
+  } else {
+    await classDbWrite('INSERT INTO class_bonus (id, lan, class_id, roster_id, user_id, diem, ly, ms) VALUES ' + rows.map(() => '(?,?,?,?,?,?,?,?)').join(','),
+      [].concat(...rows.map((x) => [x.id, x.lan, x.classId, x.rosterId, x.userId, x.diem, x.ly, x.ms])));
+  }
+  dtLog.push(now);
+  // chi dong co lien ket tai khoan that (roster.userId) — khong bao gio doan theo ten
+  rows.forEach((x) => { if (x.userId) baoNt('diem-thuong', { id: x.id, userId: x.userId, diem, ly }); });
+  res.json({ ok: true, lan, ds: rows.map((x) => x.rosterId), coTk: rows.filter((x) => x.userId).length });
+}));
+// Hoan tac 1 lan thuong: xoa diem; xu nong trai chua nhan thi rut lai
+app.delete('/api/admin/bonus/:lan', requireAdmin, asyncRoute(async (req, res) => {
+  const lan = String(req.params.lan || '');
+  if (!/^[0-9a-f]{12}$/.test(lan)) return res.status(400).json({ error: 'Mã lần thưởng không hợp lệ.' });
+  let rows;
+  if (!USE_DB) {
+    const d = readClassFile();
+    rows = (d.bonus || []).filter((x) => x.lan === lan);
+    if (!rows.length) return res.status(404).json({ error: 'Không tìm thấy lần thưởng này.' });
+    d.bonus = d.bonus.filter((x) => x.lan !== lan);
+    writeClassFile(d);
+  } else {
+    const [r] = await dbPool.query('SELECT id, user_id FROM class_bonus WHERE lan = ?', [lan]);
+    rows = r.map((x) => ({ id: x.id, userId: x.user_id || null }));
+    if (!rows.length) return res.status(404).json({ error: 'Không tìm thấy lần thưởng này.' });
+    await classDbWrite('DELETE FROM class_bonus WHERE lan = ?', [lan]);
+  }
+  rows.forEach((x) => { if (x.userId) baoNt('diem-thuong-xoa', { id: x.id, userId: x.userId }); });
+  res.json({ ok: true, xoa: rows.length });
 }));
 
 // ---------------- So diem lop (chi quan tri) ----------------

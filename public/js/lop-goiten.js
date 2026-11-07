@@ -361,6 +361,13 @@
     });
   }
 
+  // Diem danh hom nay dung chung (lop-diemdanh.js): vang co / khong phep -> khong vao vong quay, cuoc dua, cap, nhom
+  function ddAp() {
+    if (!window.DiemDanh) return;
+    S.absent = {};
+    S.kids.forEach(function (k) { if (!window.DiemDanh.coMat(S.src, k.id)) S.absent[k.id] = 1; });
+  }
+  function ddDat(id, vang) { if (window.DiemDanh) window.DiemDanh.dat(S.src, id, vang ? 'vkp' : 'co').catch(function () { /* bo qua */ }); }
   function chonNguon(v, moLobby) {
     var cung = v === S.srcDaNap;
     S.src = v;
@@ -376,6 +383,7 @@
       kids.forEach(function (k) { co[k.id] = 1; });
       Object.keys(S.absent).forEach(function (id) { if (!co[id]) delete S.absent[id]; });
       Object.keys(S.round).forEach(function (id) { if (!co[id]) delete S.round[id]; });
+      ddAp();
       veNut();
       veView();
       if (moLobby && kids.length) moDiemDanh();
@@ -389,6 +397,7 @@
     veNut();
     hienRong('Đang tải danh sách lớp…');
     return api('/api/admin/oral?classId=' + encodeURIComponent(v.slice(3)))
+      .then(function (d) { return window.DiemDanh ? window.DiemDanh.nap(v).then(function () { return d; }) : d; })
       .then(function (d) {
         xong((d.roster || []).map(function (r) { return { id: String(r.id), name: String(r.name), no: r.no }; }));
         if (!S.kids.length) hienRong('Lớp này chưa có danh sách. Vào Báo cáo → Lớp & bài giao để dán danh sách, hoặc tạo danh sách nhanh.');
@@ -1721,6 +1730,7 @@
       var id = b.getAttribute('data-id');
       if (S.absent[id]) delete S.absent[id]; else S.absent[id] = 1;
       var vang = !!S.absent[id];
+      ddDat(id, vang);
       b.classList.toggle('is-vang', vang);
       b.setAttribute('aria-pressed', vang ? 'true' : 'false');
       b.querySelector('.gt-chip-tag').textContent = vang ? 'vắng' : S.round[id] ? '✓ đã gọi' : '';
@@ -1728,6 +1738,7 @@
       dem();
     });
     card.querySelector('[data-x="comat"]').addEventListener('click', function () {
+      Object.keys(S.absent).forEach(function (id) { ddDat(id, false); });
       S.absent = {}; S.nhomKq = null;
       $all('.gt-chip').forEach(function (b) {
         b.classList.remove('is-vang'); b.setAttribute('aria-pressed', 'false');
@@ -1895,6 +1906,13 @@
     if (coKieu) S.kieu = opt.kieu;
     root.hidden = false;
     document.documentElement.classList.add('gt-open');
+    if (!S.ddNghe && window.DiemDanh) {
+      S.ddNghe = 1;
+      window.DiemDanh.on(function (src) {
+        if (!root || root.hidden || src !== S.src || S.busy || $('#gtPanelCard .gt-chips')) return;
+        ddAp(); S.nhomKq = null; veNut(); veView();
+      });
+    }
     veNut();
     $all('.gt-view').forEach(function (v) { v.hidden = v.getAttribute('data-v') !== S.kieu; });
     napLop().then(function () { return chonDau(!coKieu); });

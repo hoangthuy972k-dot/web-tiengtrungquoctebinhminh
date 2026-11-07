@@ -279,19 +279,29 @@
         return { id: k.id, name: k.name, times: k.times || 0, lastMs: k.lastMs || 0,
           avg: sc.length ? Math.round(sc.reduce(function (a, b) { return a + b; }, 0) / sc.length * 10) / 10 : null };
       }) : [];
+      ddAp();
       veDam();
       return Promise.resolve();
     }
     crowd.innerHTML = '<p class="ufo-wait">Đang tải danh sách lớp…</p>';
     return api('/api/admin/oral?classId=' + encodeURIComponent(v.slice(3)))
+      .then(function (d) { return ddNap(v).then(function () { return d; }); })
       .then(function (d) {
         S.kids = (d.roster || []).map(function (r) {
           return { id: r.id, name: r.name, no: r.no, times: r.times || 0, lastMs: r.lastMs || 0, avg: r.avg };
         });
+        ddAp();
         veDam();
         if (!S.kids.length) trangThai('Lớp này chưa có danh sách. Vào Báo cáo → Lớp & bài giao để dán danh sách, hoặc tạo danh sách nhanh.');
       })
       .catch(loiMay);
+  }
+  // Diem danh hom nay dung chung (lop-diemdanh.js): ban vang (co / khong phep) khong bi goi; di muon van goi
+  function ddNap(v) { return window.DiemDanh ? window.DiemDanh.nap(v) : Promise.resolve(); }
+  function ddAp() {
+    if (!window.DiemDanh) return;
+    S.absent = {};
+    S.kids.forEach(function (k) { if (!window.DiemDanh.coMat(S.src, k.id)) { S.absent[k.id] = 1; delete S.round[k.id]; } });
   }
   function loiMay(e) {
     if (e && (e.status === 401 || e.status === 403)) {
@@ -517,7 +527,10 @@
     if (act === 'diem') return chamDiem(k, +b.getAttribute('data-n'), row);
     // De sau: tra ve dam dong, van co the bi goi trong vong nay. Vang: bo qua ca buoi.
     delete S.round[k.id];
-    if (act === 'vang') S.absent[k.id] = 1;
+    if (act === 'vang') {
+      S.absent[k.id] = 1;
+      if (window.DiemDanh) window.DiemDanh.dat(S.src, k.id, 'vkp').catch(function () { /* bo qua */ });
+    }
     row.classList.add('is-bo');
     row.querySelector('.ufo-the-kq').textContent = act === 'vang' ? 'Vắng hôm nay' : 'Để lượt sau';
     $all('.ufo-the-hs[data-id="' + cssId(id) + '"] button').forEach(function (x) { x.disabled = true; });
@@ -677,7 +690,11 @@
       b.addEventListener('click', function () {
         var x = b.getAttribute('data-x');
         dongPanel();
-        if (x === 'vang') { if (vang) delete S.absent[id]; else { S.absent[id] = 1; delete S.round[id]; } veDam(); }
+        if (x === 'vang') {
+          if (vang) delete S.absent[id]; else { S.absent[id] = 1; delete S.round[id]; }
+          if (window.DiemDanh) window.DiemDanh.dat(S.src, id, vang ? 'co' : 'vkp').catch(function () { /* bo qua */ });
+          veDam();
+        }
         else if (x === 'lai') { delete S.round[id]; veDam(); }
         else if (x === 'goi') { delete S.round[id]; goi(k); }
       });
@@ -734,6 +751,10 @@
     root.hidden = false;
     document.documentElement.classList.add('ufo-open');
     datTau(-ship.offsetWidth - 40, 40, 0);
+    if (!S.ddNghe && window.DiemDanh) {
+      S.ddNghe = 1;
+      window.DiemDanh.on(function (src) { if (root && !root.hidden && src === S.src && !S.busy) { ddAp(); veDam(); } });
+    }
     napLop().then(chonDau).then(function () { veNghi(); });
   }
   function dong() {

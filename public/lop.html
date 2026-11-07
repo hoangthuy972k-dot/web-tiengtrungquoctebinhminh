@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="/css/lop-chuong.css">
 <link rel="stylesheet" href="/css/lop-noi.css">
 <link rel="stylesheet" href="/css/lop-chu-to.css">
+<link rel="stylesheet" href="/css/lop-quanly.css">
 <script>
 // CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
 // va trinh duyet giu mai ban CSS/JS cu. Chuyen sang /lop de luon qua may chu.
@@ -68,6 +69,9 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       <span class="lop-thi-bang-chu"><b>Chấm điểm miệng</b><small>Học sinh lên bảng viết chữ Hán, trả bài đầu giờ · chọn tên trong danh sách lớp · bấm điểm là lưu vào cột Miệng</small></span>
       <span class="lop-thi-bang-mui" aria-hidden="true">→</span>
     </button>
+    <div class="lop-dd-bang">
+      <button type="button" class="lop-mini-btn" id="lopDiemDanhMo" title="Đánh dấu vắng có phép / không phép / đi muộn — bạn vắng không bị gọi tên">📋 Điểm danh hôm nay</button>
+    </div>
 
     <div class="lop-field">
       <label for="lopLevel">1 · Cấp độ</label>
@@ -537,6 +541,9 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/lop-tro.js"></script>
 <script src="/js/lop-keo-qr.js"></script>
 <script src="/js/lop-mieng.js"></script>
+<script src="/js/lop-diemdanh.js"></script>
+<script src="/js/lop-diemthuong.js"></script>
+<script src="/js/lop-thuvien.js"></script>
 <script src="/js/lop-chuong.js"></script>
 <script src="/js/lop.js"></script>
 </body>

@@ -338,7 +338,7 @@
     if (v.indexOf('ls:') === 0) {
       var l = (docLS('hyv_ufo_lists', []) || []).filter(function (x) { return 'ls:' + x.id === v; })[0];
       S.ds = l ? l.kids.map(function (k) { return k.name; }) : [];
-      xong();
+      vangHomNay(v, l ? l.kids : []).then(xong);
       return;
     }
     var pw = '';
@@ -347,8 +347,15 @@
     $('vdLopGoi').textContent = 'Đang tải danh sách lớp…';
     fetch('/api/admin/oral?classId=' + encodeURIComponent(v.slice(3)), { headers: { 'X-Admin-Password': pw } })
       .then(function (r) { return r.ok ? r.json() : { roster: [] }; })
-      .then(function (d) { S.ds = (d.roster || []).map(function (r) { return r.name; }); })
+      .then(function (d) { S.ds = (d.roster || []).map(function (r) { return r.name; }); return vangHomNay(v, d.roster || []); })
       .catch(function () { S.ds = []; }).then(xong);
+  }
+  // Diem danh hom nay o Che do lop hoc (lop-diemdanh.js): ban vang danh dau san, khong bi boc
+  function vangHomNay(v, ds) {
+    if (!window.DiemDanh) return Promise.resolve();
+    return window.DiemDanh.nap(v).then(function () {
+      ds.forEach(function (k) { if (k && k.name && !window.DiemDanh.coMat(v, k.id)) S.vang[k.name] = 1; });
+    }).catch(function () { /* bo qua */ });
   }
   function coMat() { return S.ds.filter(function (t) { return !S.vang[t]; }); }
   function veLop() {

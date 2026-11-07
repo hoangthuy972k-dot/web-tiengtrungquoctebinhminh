@@ -371,8 +371,6 @@
           '<div class="by-khay-nut">' +
             '<span class="by-con" id="byCon"></span>' +
             '<button type="button" class="by-btn by-btn-sang" id="byUndo">↶ Hoàn tác <kbd>⌫</kbd></button>' +
-            '<button type="button" class="by-btn by-btn-sang" id="byGoiY" title="Từ tiếp theo sẽ sáng lên — tính 1 lỗi">💡 Gợi ý <kbd>H</kbd></button>' +
-            '<button type="button" class="by-btn by-btn-sang" id="byBo" title="Hiện cả câu, câu này 0 điểm">🏳 Xem đáp án</button>' +
           '</div>' +
         '</div>' +
       '</div>';
@@ -390,8 +388,6 @@
       if (b) bamTu(b.getAttribute('data-id'));
     });
     $('#byUndo').addEventListener('click', hoanTac);
-    $('#byGoiY').addEventListener('click', goiY);
-    $('#byBo').addEventListener('click', xemDapAn);
     $('#byKq').addEventListener('click', function (e) {
       var b = e.target.closest('button[data-act]');
       if (!b) return;
@@ -469,8 +465,6 @@
     $('#byCon').textContent = con ? 'Còn ' + con + ' từ' : '';
     var coTu = c.dat.some(function (i) { return !c.tok[i].dau; });
     $('#byUndo').disabled = S.pha !== 'choi' || !coTu;
-    $('#byGoiY').disabled = S.pha !== 'choi';
-    $('#byBo').disabled = S.pha !== 'choi';
   }
   function chipCua(i) { return $('#byKhayTu .by-k[data-i="' + i + '"]'); }
   function hienChip(ds) {
@@ -902,7 +896,6 @@
         break;
       case 'choi':
         if (e.key === 'Backspace' || k === 'z') { e.preventDefault(); hoanTac(); }
-        else if (k === 'h') goiY();
         else if (nut && (space || enter)) nut.click();
         break;
       case 'xong':

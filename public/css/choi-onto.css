@@ -1,0 +1,78 @@
+/* On bai theo to qua ma QR — dien thoai (/choi, phong kieu 'onto'; public/js/choi.js veOnTo).
+   Man doi truong (THA / manh ghep / o bang / chon to), dong trang thai "doi truong dang chon",
+   dong ket qua tung to. Cung tinh than /choi: nen kem, the trang vien nau dam, nut to, luon sang, dong luon bat. */
+.ch-ot { gap: 12px; }
+.ch-ot-dau { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.ch-ot-vai {
+  padding: 6px 16px; border-radius: 999px; border: 3px solid var(--dam); background: var(--vang-sang); color: var(--dam);
+  font-weight: 900; font-size: 1.05rem; box-shadow: 0 4px 0 var(--dam); animation: chOtNhun 1s ease-in-out infinite alternate;
+}
+@keyframes chOtNhun { to { transform: translateY(-3px) rotate(-1.5deg); } }
+.ch-ot .ch-dem { position: static; }
+.ch-ot-chon { width: 100%; max-width: 420px; margin-top: 6px; }
+
+/* THA: nut tron lon */
+.ch-ot-tha {
+  display: grid; place-items: center; width: min(76vw, 280px); aspect-ratio: 1; margin: 6px auto 0; border-radius: 50%;
+  font: inherit; font-size: clamp(2.6rem, 14vw, 3.6rem); font-weight: 900; color: #fff; letter-spacing: .04em; cursor: pointer;
+  background: radial-gradient(circle at 35% 30%, #ff8a73, var(--a) 55%, var(--a-d));
+  border: 5px solid var(--dam); box-shadow: 0 10px 0 var(--dam), 0 0 0 10px rgba(233, 162, 59, .35);
+  text-shadow: 0 3px 0 rgba(0, 0, 0, .25); touch-action: manipulation; -webkit-user-select: none; user-select: none;
+  animation: chOtTha 1.1s ease-in-out infinite alternate;
+}
+@keyframes chOtTha { to { box-shadow: 0 10px 0 var(--dam), 0 0 0 18px rgba(233, 162, 59, .2); } }
+.ch-ot-tha:active:not(:disabled) { transform: translateY(8px); box-shadow: 0 2px 0 var(--dam), 0 0 0 10px rgba(233, 162, 59, .35); }
+.ch-ot-tha:disabled { animation: none; filter: saturate(.6); }
+.ch-ot-tha.is-chon { background: radial-gradient(circle at 35% 30%, #7fe0a8, var(--ok) 60%, #1d6340); }
+
+/* manh ghep / chon to: luoi nut */
+.ch-ot-ds { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ch-ot-nut {
+  --c: var(--giay); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  min-height: 84px; padding: 10px 8px; border-radius: 18px; cursor: pointer; font: inherit; color: var(--chu);
+  background: #fff; border: 3px solid var(--dam); box-shadow: 0 5px 0 var(--dam); touch-action: manipulation;
+}
+.ch-ot-nut b { font-size: 1.12rem; font-weight: 900; line-height: 1.2; }
+.ch-ot-nut small { font-size: .82rem; font-weight: 700; color: var(--nhat); }
+.ch-ot-nut:active:not(:disabled) { transform: translateY(4px); box-shadow: 0 1px 0 var(--dam); }
+.ch-ot-nut:disabled { opacity: .4; background: #efe7da; box-shadow: none; }
+.ch-ot-nut.is-to { background: var(--c); color: #fff; text-shadow: 0 2px 0 rgba(0, 0, 0, .2); }
+.ch-ot-nut.is-to small { color: #fff; opacity: .92; }
+.ch-ot-nut.is-chon, .ch-ot-o.is-chon { outline: 4px solid var(--vang-sang); outline-offset: 3px; opacity: 1; }
+
+/* o bang: cot 3 o nhu tren man chieu */
+.ch-ot-cot { display: grid; gap: 10px; }
+.ch-ot-o {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 76px; padding: 10px 18px;
+  border-radius: 18px; cursor: pointer; font: inherit; color: #1f3a52; touch-action: manipulation;
+  border: 3px solid var(--dam); box-shadow: 0 5px 0 var(--dam);
+  background: linear-gradient(145deg, #f3fbff, #bfe6fb);
+}
+.ch-ot-o b { font-size: 1.3rem; font-weight: 900; }
+.ch-ot-o small { font-size: 1rem; font-weight: 800; }
+.ch-ot-o.is-up { background: linear-gradient(145deg, #fff8d6, #ffe08a); color: var(--dam); animation: chOtUp 1s ease-in-out infinite alternate; }
+@keyframes chOtUp { to { filter: brightness(1.06); transform: translateY(-2px); } }
+.ch-ot-o.is-an, .ch-ot-o.is-daan { background: linear-gradient(145deg, #f0fff4, #b8ecc8); color: #1d6340; }
+.ch-ot-o.is-ca { background: linear-gradient(145deg, #fff3e0, #ffc98a); color: #8a4b00; }
+.ch-ot-o.is-nut { background: repeating-linear-gradient(135deg, #cfe3ef 0 10px, #b5cfdf 10px 20px); color: #5b7486; }
+.ch-ot-o:active:not(:disabled) { transform: translateY(4px); box-shadow: 0 1px 0 var(--dam); }
+.ch-ot-o:disabled { opacity: .5; box-shadow: none; animation: none; }
+
+/* da nop bai xep cau / noi tu */
+.ch-chon-o.ch-ot-nop { background: var(--giay); color: var(--chu); border: 3px solid var(--dam); font-weight: 900; font-size: 1.3rem; }
+
+/* man ket qua: trang thai doi truong + dong ket qua tung to */
+.ch-ot-cho {
+  margin: 4px 0; padding: 8px 14px; border-radius: 14px; border: 2.5px dashed var(--vang); background: #fff4d6;
+  font-weight: 800; color: #6b4a12; animation: chOtNhun .9s ease-in-out infinite alternate;
+}
+.ch-ot-cho.is-khac { border-color: var(--vien-nhat); background: var(--giay); color: var(--nhat); animation: none; }
+.ch-ot-tin { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; width: 100%; text-align: left; }
+.ch-ot-tin li {
+  --c: var(--vang); padding: 8px 12px; border-radius: 12px; background: var(--giay); border: 2px solid var(--vien-nhat);
+  border-left: 7px solid var(--c); font-weight: 700; font-size: .95rem; line-height: 1.35; animation: chPop .3s ease;
+}
+.ch-ot-tin li.la { background: #fff4d6; border-color: var(--vang); border-left-color: var(--c); }
+#hetBxh li.la { background: #fff1c2; box-shadow: inset 0 0 0 2px var(--vang); }
+
+@media (max-width: 360px) { .ch-ot-ds { grid-template-columns: 1fr; } }

@@ -8,13 +8,14 @@
 (function () {
   'use strict';
   var $ = function (s) { return document.getElementById(s); };
-  var MAN = ['manVao', 'manCho', 'manTo', 'manHoi', 'manDaChon', 'manKq', 'manHet', 'manXong'];
+  var MAN = ['manVao', 'manCho', 'manTo', 'manHoi', 'manDaChon', 'manKq', 'manHet', 'manXong', 'manOt'];
   var HINH = ['▲', '◆', '●', '■'];
   var CHU = ['A', 'B', 'C', 'D']; // Rung Chuong Vang dung chu cai nhu tren man chieu
   var KEY = 'hyv_choi';
   var s = { ma: '', pid: '', tok: '', qid: -1, pha: '', daChon: -1, poll: 0, dem: 0, conLai: 0, tai: 0, nhip: false, nhipI: -1, dangPh: false,
     chuong: false, cuuSeq: null, rcKhoa: '', rcNghi: false, rcVeQid: -1,
-    troMo: '', troTai: false, troPhu: null, troSao: '', tienHen: 0, tienCho: null, troVan: -1, troToKy: '' };
+    troMo: '', troTai: false, troPhu: null, troSao: '', tienHen: 0, tienCho: null, troVan: -1, troToKy: '',
+    onto: false, otGui: false, otKy: '', otLuot: 0, otDang: false };
   // Hinh minh hoa SVG (/images/game/duel-*.svg) thay cho emoji / ky hieu chu
   var ANH = '/images/game/duel-';
   var IC = { '✓': 'dung', '✗': 'sai', '⏱': 'gio', '🔔': 'bell', '🛟': 'phao', '🟡': 'san', '👀': 'mascot',
@@ -99,7 +100,7 @@
           if (e.status === 403 || e.status === 404) { xoaLuu(); veRa(e.message); return; }
           s.loiLienTiep = (s.loiLienTiep || 0) + 1;
         })
-        .then(function () { if (s.ma) s.poll = setTimeout(vong, s.pha === 'hoi' ? 1000 : 1500); });
+        .then(function () { if (s.ma) s.poll = setTimeout(vong, s.onto && s.pha === 'lat' ? 700 : s.pha === 'hoi' ? 1000 : 1500); });
     };
     vong();
   }
@@ -116,6 +117,9 @@
     s.nhip = d.kieu === 'nhip';
     if (d.kieu === 'chuong') { veChuong(d); return; }
     if (s.chuong) boChuong();
+    if (s.onto && d.kieu !== 'onto') $('moDaChon').textContent = 'Chờ cô lật đáp án nhé…'; // vua roi phong on bai theo to
+    s.onto = d.kieu === 'onto';
+    if (s.onto) { veOnTo(d); return; }
     if (d.kieu === 'tro') { veTro(d); return; }
     if (d.kieu === 'keo') { veKeo(d); return; }
     $('chanDiem').textContent = d.diem;
@@ -145,7 +149,7 @@
     if (c.k && window.CauDT) {
       $('cauZh').textContent = window.CauDT.deBai(c);
       $('cauZh').className = 'ch-cau ch-cau-nho';
-      window.CauDT.ve(o, c, function (tl) { guiNhip(tl, c); });
+      window.CauDT.ve(o, c, function (tl) { if (s.onto) guiOnTo(tl, c); else guiNhip(tl, c); });
       s.cau = c;
       hien('manHoi');
       rung(40);
@@ -168,6 +172,7 @@
   }
   function chon(i, c) {
     if (s.nhip) { chonNhip(i, c); return; }
+    if (s.onto) { guiOnTo({ chon: i }, c); return; }
     if (s.daChon >= 0) return;
     s.daChon = i;
     Array.prototype.forEach.call($('opts').querySelectorAll('button'), function (b) { b.disabled = true; });
@@ -640,8 +645,10 @@
     } else if (s.troToKy !== ky || $('manTo').hidden) {
       s.troToKy = ky;
       $('tenTo').textContent = d.ten;
+      $('moTo').textContent = s.onto ? 'Cả lớp cùng trả lời từng câu — tổ có từ ' + Math.round((d.nguong || 0.5) * 100) + '% bạn đúng trở lên được chơi lượt đó. Bạn đúng nhanh nhất làm đội trưởng!'
+        : 'Điểm tổ là điểm trung bình của cả tổ, cả tổ cùng xong còn được thưởng — cùng cố gắng nhé!';
       $('dsTo').innerHTML = d.dsTo.map(function (x, i) {
-        return '<button type="button" class="ch-to-nut" data-to="' + i + '" style="--c:' + MAU_TO[i % 4] + '"><b>' + esc(x.ten) + '</b><small>' + x.soTv + ' bạn</small></button>';
+        return '<button type="button" class="ch-to-nut" data-to="' + i + '" style="--c:' + (x.mau || MAU_TO[i % 4]) + '"><b>' + esc(x.ten) + '</b><small>' + x.soTv + ' bạn</small></button>';
       }).join('');
     }
     if ($('manTo').hidden) hien('manTo');
@@ -724,6 +731,190 @@
     $('hetBxh').innerHTML = ds.map(function (r, i) {
       return '<li><span>' + huyChuong(i) + '</span><b>' + esc(r.ten) + '</b><i>' + r.diem + '</i></li>';
     }).join('');
+    hien('manHet');
+  }
+
+  /* ---- On bai theo to qua ma QR (phong kieu 'onto'): Gap thu bong / Xay lau dai / Duong bang bi mat ----
+     Chon to -> moi vong tra loi cau chung (trac nghiem / xep / noi) -> lat: dung / sai + to em dung x/n ban;
+     neu em la doi truong luot nay (dung nhanh nhat cua to duoc thuong) thi hien man chon (THA / manh / o bang / to). */
+  var TEN_OT = { gapthu: '🧸 Gắp thú bông', laudai: '🏰 Xây lâu đài', duongbang: '🐧 Đường băng bí mật' };
+  var DONG_OT = { gapthu: 'gắp thú', laudai: 'xây thêm mảnh', duongbang: 'bước lên ô băng' };
+  var NHAN_O = { '': '❓ Chưa lật', an: '✓ An toàn', daan: '✓ An toàn', ca: '🐟 Cá thưởng', nut: '💦 Lỗ nước' };
+  function phanTram() { return Math.round((s.otNguong || 0.5) * 100); }
+  function veOnTo(d) {
+    var toEm = d.to >= 0 ? d.dsTo[d.to] : null;
+    s.otGame = d.game; s.otNguong = d.nguong;
+    $('chanTen').textContent = d.ten + (toEm ? ' · ' + toEm.ten : '');
+    $('chanDiem').textContent = d.diem;
+    if (d.dong) { clearInterval(s.dem); clearInterval(s.otDem); veHetOnTo(d); clearTimeout(s.poll); s.ma = ''; xoaLuu(); return; }
+    if (d.to < 0) { clearInterval(s.dem); s.pha = ''; veChonTo(d); return; }
+    s.pha = d.pha;
+    if (d.pha === 'cho') {
+      clearInterval(s.dem); clearInterval(s.otDem);
+      var ky = 'cho:' + d.van + ':' + d.to;
+      if (s.otKy !== ky || $('manCho').hidden) {
+        s.otKy = ky;
+        s.qid = d.qid;
+        datIc($('icCho'), '👀');
+        $('tenCho').textContent = d.ten + ' · ' + toEm.ten;
+        $('titCho').textContent = 'Em thi cho ' + toEm.ten + '!';
+        $('moCho').innerHTML = 'Trò chơi: <b>' + (TEN_OT[d.game] || '') + '</b>. Mỗi vòng cả lớp cùng trả lời một câu — tổ có từ ' + phanTram() + '% bạn đúng được ' +
+          DONG_OT[d.game] + '. Trả lời đúng <b>nhanh nhất tổ</b> thì em làm đội trưởng! Chờ cô bắt đầu nhé…';
+        hien('manCho');
+      }
+      return;
+    }
+    if (d.pha === 'hoi') {
+      clearInterval(s.otDem);
+      if (d.qid !== s.qid) {
+        s.qid = d.qid; s.daChon = -1; s.otGui = !!d.daGui; s.otDang = false; s.otKy = '';
+        if (d.daGui) { s.cau = d.cau; veDaGuiOnTo(d); } else veCau(d);
+      } else if (d.daGui && !s.otGui) { s.otGui = true; veDaGuiOnTo(d); }
+      demNguoc(d.conLai);
+      return;
+    }
+    if (d.pha === 'lat') { clearInterval(s.dem); s.qid = d.qid; veLatOnTo(d); return; }
+    if (d.pha === 'het') veHetOnTo(d);
+  }
+  // tl = { chon } | { xep } | { noi } — may chu cham, chua bao dung / sai truoc khi lat
+  function guiOnTo(tl, c) {
+    if (s.otGui || s.otDang) return;
+    s.otDang = true;
+    if (!c.k) Array.prototype.forEach.call($('opts').querySelectorAll('button'), function (b) { b.disabled = true; });
+    rung(25);
+    api('POST', '/api/live/' + s.ma + '/tl', Object.assign({ pid: s.pid, tok: s.tok, qid: s.qid }, tl)).then(function () {
+      s.otDang = false;
+      s.otGui = true;
+      veDaGuiOnTo({ cau: c, chon: tl.chon != null ? tl.chon : -1 });
+    }).catch(function (e) {
+      s.otDang = false;
+      if (e.status === 409) { $('soCau').textContent = e.message; if (e.d && e.d.chonTo) batDauPoll(); return; }
+      if (c.k && window.CauDT) window.CauDT.moLai($('opts'));
+      else Array.prototype.forEach.call($('opts').querySelectorAll('button'), function (b) { b.disabled = false; });
+      baoNhanh(e.message);
+    });
+  }
+  function veDaGuiOnTo(d) {
+    var c = d.cau || s.cau || {};
+    if (!c.k && d.chon >= 0 && c.opts) veDaChon({ cau: c, chon: d.chon });
+    else {
+      $('oDaChon').className = 'ch-chon-o ch-ot-nop';
+      $('oDaChon').innerHTML = '<span>📝 Đã nộp bài</span>';
+      hien('manDaChon');
+    }
+    $('moDaChon').textContent = 'Chờ các bạn trong tổ… Tổ có từ ' + phanTram() + '% bạn đúng sẽ được ' + (DONG_OT[s.otGame] || 'chơi') + '!';
+  }
+  function veLatOnTo(d) {
+    var k = d.kq || {}, L = d.luot;
+    if (d.daGui) saoCau('ot' + d.van + '-' + d.qid, !!k.dung);
+    if (L && L.la && !L.xong) { veLuotOnTo(d, L); return; }
+    clearInterval(s.otDem);
+    var ky = d.qid + '|' + (L ? L.id + ':' + (L.xong ? 1 : 0) : '-') + '|' + (d.tin || []).map(function (x) { return x.id; }).join(',');
+    if (ky === s.otKy && !$('manKq').hidden) return;
+    var moi = $('manKq').hidden || String(s.otKy).split('|')[0] !== String(d.qid);
+    s.otKy = ky;
+    var c = d.cau || s.cau || { opts: [] }, dung = !!k.dung;
+    var toEm = d.dsTo[d.to] || { ten: '' }, x = (k.to || [])[d.to] || { dung: 0, soTv: 0 }, thu = (k.duoc || []).indexOf(d.to);
+    $('manKq').className = 'ch-man ch-kq ' + (dung ? 'dung' : 'sai');
+    datIc($('kqIc'), dung ? '✓' : d.daGui ? '✗' : '⏱');
+    $('kqTit').textContent = dung ? 'Chính xác!' : d.daGui ? 'Chưa đúng rồi' : 'Chưa kịp trả lời';
+    $('kqCong').textContent = '';
+    $('kqDung').innerHTML = dung ? '' : c.k && window.CauDT ? 'Đáp án: ' + window.CauDT.dapHtml(c, k.dap)
+      : c.opts && c.opts[k.dap] != null ? 'Đáp án: <b>' + HINH[k.dap] + ' ' + esc(c.opts[k.dap]) + '</b>' : '';
+    var dt = thu >= 0 && k.doiTruong ? k.doiTruong[d.to] : null;
+    $('kqHang').innerHTML = '👥 <b>' + esc(toEm.ten) + '</b> đúng ' + x.dung + '/' + x.soTv + ' bạn' +
+      (thu >= 0 ? '<br>🎯 Tổ em được ' + DONG_OT[d.game] + ((k.duoc || []).length > 1 ? ' (lượt ' + (thu + 1) + ')' : '') + '!' : '<br><small>Tổ em chưa được lượt này — cố lên câu sau!</small>') +
+      (dt ? '<br>👑 Đội trưởng: <b>' + esc(dt.ten) + '</b>' : '');
+    var trang = '';
+    if (L && !L.xong) {
+      trang = L.to === d.to ? '<div class="ch-ot-cho">⏳ Đội trưởng <b>' + esc(L.ten) + '</b> đang chọn…</div>'
+        : '<div class="ch-ot-cho is-khac">⏳ <b>' + esc((d.dsTo[L.to] || {}).ten || '') + '</b> đang chơi lượt…</div>';
+    } else if (L && L.xong && L.to === d.to) trang = '<div class="ch-ot-cho">👀 Nhìn lên bảng xem kết quả nhé!</div>';
+    var tin = (d.tin || []).map(function (t) {
+      var m = t.to >= 0 && d.dsTo[t.to] ? d.dsTo[t.to].mau : '';
+      return '<li' + (t.to === d.to ? ' class="la"' : '') + (m ? ' style="--c:' + m + '"' : '') + '>' + esc(t.txt) + '</li>';
+    }).join('');
+    $('kqViTri').innerHTML = trang + (tin ? '<ul class="ch-ot-tin">' + tin + '</ul>' : '');
+    $('kqWhy').textContent = k.why ? '💡 ' + k.why : '';
+    $('nutTiep').hidden = true;
+    if (moi) { hien('manKq'); rung(dung ? [30, 40, 30] : 120); }
+  }
+  // Man doi truong: chon trong han (dem nguoc theo may chu)
+  function veLuotOnTo(d, L) {
+    if (s.otLuot !== L.id || $('manOt').hidden) {
+      s.otLuot = L.id; s.otKy = ''; s.otDang = false;
+      var toEm = d.dsTo[d.to] || { ten: '' };
+      $('otTit').textContent = { tha: 'Bấm THẢ đúng lúc!', manh: 'Chọn mảnh ghép', o: 'Chọn một ô băng', cuop: 'Chọn tổ để “mượn” thú' }[L.loai] || 'Chọn nhé!';
+      $('otMo').textContent = {
+        tha: 'Nhìn cần gắp trên bảng — khi cần ở ngay trên thú bông em muốn thì bấm THẢ!',
+        manh: 'Xây mảnh nào cho lâu đài của ' + toEm.ten + '?',
+        o: 'Ô nào an toàn? Ô đã lật giống trên bảng; lỗ nước không bước vào được.',
+        cuop: 'Lấy ngẫu nhiên 1 thú bông trong tủ của tổ em chọn.'
+      }[L.loai] || '';
+      var html;
+      if (L.loai === 'tha') html = '<button type="button" class="ch-ot-tha" data-v="tha">THẢ!</button>';
+      else if (L.loai === 'o') {
+        html = '<div class="ch-ot-cot">' + L.ds.map(function (x) {
+          return '<button type="button" class="ch-ot-o is-' + (x.loai || 'up') + '" data-v="' + esc(x.v) + '"' + (x.tat ? ' disabled' : '') + '>' +
+            '<b>' + esc(x.nhan) + '</b><small>' + (NHAN_O[x.loai || ''] || '') + '</small></button>';
+        }).join('') + '</div>';
+      } else {
+        html = '<div class="ch-ot-ds">' + L.ds.map(function (x) {
+          var m = L.loai === 'cuop' && d.dsTo[+x.v] ? d.dsTo[+x.v].mau : '';
+          return '<button type="button" class="ch-ot-nut' + (m ? ' is-to' : '') + '" data-v="' + esc(x.v) + '"' + (x.tat ? ' disabled' : '') + (m ? ' style="--c:' + m + '"' : '') + '>' +
+            '<b>' + esc(x.nhan) + '</b>' + (x.phu ? '<small>' + esc(x.phu) + '</small>' : '') + '</button>';
+        }).join('') + '</div>';
+      }
+      $('otChon').innerHTML = html;
+      hien('manOt');
+      rung([60, 40, 60]);
+    }
+    if (!s.otDang) demOt(L.conLai);
+  }
+  function demOt(ms) {
+    clearInterval(s.otDem);
+    var het = Date.now() + (ms || 0);
+    var paint = function () {
+      var con = Math.max(0, Math.ceil((het - Date.now()) / 1000));
+      $('otDem').textContent = con + 's';
+      $('otDem').classList.toggle('thap', con <= 3);
+      if (con <= 0) clearInterval(s.otDem);
+    };
+    paint();
+    s.otDem = setInterval(paint, 250);
+  }
+  $('otChon').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-v]');
+    if (!b || b.disabled || !s.ma || s.otDang) return;
+    s.otDang = true;
+    Array.prototype.forEach.call($('otChon').querySelectorAll('button'), function (x) { x.disabled = true; });
+    b.classList.add('is-chon');
+    rung(50);
+    api('POST', '/api/live/' + s.ma + '/hanh', { pid: s.pid, tok: s.tok, id: s.otLuot, v: b.getAttribute('data-v') }).then(function () {
+      clearInterval(s.otDem);
+      $('otDem').textContent = '';
+      $('otMo').textContent = 'Đã chọn! Nhìn lên bảng xem kết quả nhé 👀';
+    }).catch(function (er) {
+      // mat mang: ve lai man chon o lan hoi sau (neu luot van mo); het luot thi lan hoi sau ra ket qua
+      s.otDang = false; s.otLuot = 0;
+      baoNhanh(er.message);
+    });
+  });
+  function veHetOnTo(d) {
+    clearInterval(s.dem); clearInterval(s.otDem);
+    var ket = d.ket, toEm = d.to >= 0 ? d.dsTo[d.to] : null;
+    var ky = 'het:' + d.van + ':' + (ket ? ket.hang.length : 0) + ':' + (d.dong ? 1 : 0) + ':' + d.diem;
+    if (ky === s.otKy && !$('manHet').hidden) return;
+    s.otKy = ky;
+    var r = ket && toEm ? ket.hang.filter(function (x) { return x.to === d.to; })[0] : null;
+    datIc($('hetIc'), r && r.hang === 1 ? '🎉' : '🏁');
+    $('hetTit').textContent = r && r.hang === 1 ? toEm.ten + ' vô địch!' : d.dong ? 'Kết thúc!' : 'Hết ván!';
+    $('manHet').className = 'ch-man';
+    $('hetHang').innerHTML = (r ? '👥 ' + esc(toEm.ten) + ' xếp hạng <b>' + r.hang + '</b> · ' + r.diem + ' ' + esc(ket.don) + '<br>' : '') +
+      'Em trả lời đúng <b>' + d.diem + '</b>/' + (d.soCau || 0) + ' câu' + (d.dong ? '' : '<br><small>Chờ cô bấm “Chơi lại” để chơi ván mới…</small>');
+    $('hetBxh').innerHTML = ket ? ket.hang.slice().sort(function (a, b) { return a.hang - b.hang; }).map(function (x) {
+      return '<li' + (x.to === d.to ? ' class="la"' : '') + '><span>' + huyChuong(x.hang - 1) + '</span><b>' + esc((d.dsTo[x.to] || {}).ten || '') + '</b><i>' + x.diem + ' ' + esc(ket.don) + '</i></li>';
+    }).join('') : '';
     hien('manHet');
   }
 

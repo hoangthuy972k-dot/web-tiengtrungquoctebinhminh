@@ -214,8 +214,9 @@
     nhay(i);
     veTo();
   }
-  function chon(c, h) {
-    if (T.pha !== 'chon') return;
+  // tuQr: lua chon cua doi truong gui tu dien thoai (thi qua ma QR thi bam o tren bang khong tinh)
+  function chon(c, h, tuQr) {
+    if (T.pha !== 'chon' || (G.qr && !tuQr)) return;
     var i = T.luot, p = vi(i);
     if (c !== p.c + 1) return;
     var o = T.cot[c][h];
@@ -289,6 +290,8 @@
   }
   function hetLuot() {
     if (G.pha !== 'choi' || T.pha === 'het') return;
+    // thi qua ma QR: bao xong luot cua to nay — lop-onto-qr.js chuyen to / vong
+    if (G.qr) { T.pha = 'cho'; veO(); var el = G.$('#dbTin'); G.qr.het(el ? el.textContent : ''); return; }
     T.luot++;
     if (T.luot >= G.cfg.soTo) {
       T.luot = 0;
@@ -328,6 +331,44 @@
       veKhung();
       batLuot();
       G.sau(60, function () { datQuan(true); });
+    },
+    // Thi qua ma QR (lop-onto-qr.js): moi to duoc thuong buoc 1 o — doi truong chon o bang tren dien thoai
+    qr: {
+      batDau: function (g) {
+        G = g;
+        T = { L: DAI[G.cfg.x.dai] || 9, luot: -1, vongHt: 1, pha: 'cho', doi: [] };
+        T.cot = taoHo(T.L);
+        for (var i = 0; i < G.cfg.soTo; i++) T.doi.push({ lich: [{ c: 0, h: -1 }], dung: 0 });
+        veKhung();
+        tin('📱 Cả lớp trả lời trên điện thoại — tổ đủ bạn đúng được bước lên ô băng!');
+        G.sau(60, function () { datQuan(true); });
+      },
+      hanh: function (i) {
+        T.luot = i;
+        T.doi[i].dung++;
+        var p = vi(i), t = G.to(i);
+        if (p.c === T.L) { T.pha = 'lat'; diToi(i, { c: dich(), h: -1 }); G.sau(700, veDich); return; }
+        var c = p.c + 1;
+        T.pha = 'chon';
+        veO(); veTo(); datQuan();
+        tin('📱 <b style="color:' + t.mau + '">' + G.esc(t.ten) + '</b> — đội trưởng chọn một ô băng phía trước trên điện thoại');
+        G.snd.bam();
+        var ok = [0, 1, 2].filter(function (h) { var o = T.cot[c][h]; return !(o.mo && o.loai === 'nut'); });
+        G.qr.chon({
+          loai: 'o',
+          ds: [0, 1, 2].map(function (h) {
+            var o = T.cot[c][h];
+            return { v: String(h), nhan: 'Ô ' + (h + 1), loai: o.mo ? (o.loai === 'ca' && o.an ? 'daan' : o.loai) : '', tat: ok.indexOf(h) < 0 };
+          }),
+          tuDong: function () { return ok[Math.floor(Math.random() * ok.length)]; }
+        }, function (h) {
+          h = +h;
+          if (ok.indexOf(h) < 0) h = ok[0];
+          chon(c, h, true);
+        });
+      },
+      xong: function () { return !T || T.pha === 'het'; },
+      ketThuc: function () { if (T && T.pha !== 'het') ketThuc('Hết ' + G.cfg.vong + ' vòng — tổ đi xa nhất thắng.'); }
     },
     doiCo: function () { if (T && G.$('#dbHo')) datQuan(true); },
     phim: function (e, g, k) {

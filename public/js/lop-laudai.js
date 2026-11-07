@@ -228,11 +228,27 @@
         return {
           t: '<span class="ld-chon-hinh">' + hinhManh(l, t.mau) + '</span><span class="ld-chon-chu"><b>' + m.ten + '</b><small>' +
             '★'.repeat(m.diem) + ' · ' + (d >= m.max ? 'đã đủ' : m.co > co ? 'cần câu khó hơn' : 'còn ' + (m.max - d)) + '</small></span>' + (ok ? '<kbd>' + k + '</kbd>' : ''),
-          cls: 'ld-chon-nut co' + m.co, tat: !ok, phim: ok ? String(k) : '',
+          cls: 'ld-chon-nut co' + m.co, tat: !ok || !!G.qr, phim: ok ? String(k) : '',
           fn: function () { G.dongHop(); datManh(l); }
         };
       })
     });
+    // thi qua ma QR: doi truong chon manh tren dien thoai; het gio thi may chon manh nhieu diem nhat
+    if (G.qr) {
+      var dsOk = duoc.slice().sort(function (a, b) { return MANH[b].diem - MANH[a].diem; });
+      G.qr.chon({
+        loai: 'manh',
+        ds: THU_TU.map(function (l) {
+          var m = MANH[l], d = demManh(T.ld[i])[l];
+          return { v: l, nhan: m.ic + ' ' + m.ten, phu: '★'.repeat(m.diem) + ' · ' + (d >= m.max ? 'đã đủ' : m.co > co ? 'cần câu khó hơn' : 'còn ' + (m.max - d)), tat: duoc.indexOf(l) < 0 };
+        }),
+        tuDong: function () { return dsOk[0]; }
+      }, function (l) {
+        if (duoc.indexOf(l) < 0) l = dsOk[0];
+        G.dongHop();
+        datManh(l);
+      });
+    }
   }
   function datManh(loai) {
     var i = T.luot, t = G.to(i);
@@ -250,6 +266,8 @@
   }
   function hetLuot() {
     if (G.pha !== 'choi') return;
+    // thi qua ma QR: bao xong luot cua to nay — lop-onto-qr.js chuyen to / vong (gio lon xet o qr.ketVong)
+    if (G.qr) { var el = G.$('#ldTin'); G.qr.het(el ? el.textContent : ''); return; }
     T.luot++;
     if (T.luot < G.cfg.soTo) { batLuot(); return; }
     // het vong: co the noi gio
@@ -292,6 +310,8 @@
         bay.push({ i: i, loai: l, k: demManh(ds)[l] - 1 });
         loi.push([i, GIO_LOI[l]]);
       });
+      // thi qua ma QR: bao gio lon cho dien thoai
+      if (G.qr && G.qr.tin) loi.forEach(function (x) { G.qr.tin(x[0], '🌬️ Gió lớn — ' + G.to(x[0]).ten + ': ' + x[1]); });
       bay.forEach(function (b) {
         var o = G.$all('.ld-o')[b.i];
         if (!o) return;
@@ -312,7 +332,10 @@
             }).join('') + '</ul>' +
             (an.length ? '<p>💪 ' + an.join(', ') + ' trả lời đúng nên lâu đài vững như bàn thạch!</p>' : ''),
           mau: '#5aa9e6',
-          nut: [{ t: (cuoi ? '🏆 Xem kết quả' : 'Vòng tiếp ▶') + ' <kbd>Enter</kbd>', cls: 'ot-nut--vang ot-nut--to', phim: 'enter', fn: function () { G.dongHop(); sangVong(cuoi); } }]
+          nut: [{ t: (cuoi ? '🏆 Xem kết quả' : 'Vòng tiếp ▶') + ' <kbd>Enter</kbd>', cls: 'ot-nut--vang ot-nut--to', phim: 'enter', fn: function () {
+            G.dongHop();
+            if (T.qrXong) { var f = T.qrXong; T.qrXong = null; f(); } else sangVong(cuoi);
+          } }]
         });
       });
     });
@@ -351,6 +374,32 @@
       if (!T) return false;
       if ((k === 'enter' || k === ' ') && T.pha === 'cho') { moCau(); return true; }
       return false;
+    },
+    // Thi qua ma QR (lop-onto-qr.js): moi to duoc thuong chon manh (doi truong chon tren dien thoai);
+    // het moi cau (= mot vong) co the noi gio lon voi cac to khong duoc thuong
+    qr: {
+      batDau: function (g) {
+        G = g;
+        T = { luot: -1, vongHt: 1, pha: 'cho', ld: [], sao: [], saiVong: [], daGio: false, gioVong: -9, qrXong: null };
+        for (var i = 0; i < G.cfg.soTo; i++) { T.ld.push([]); T.sao.push(0); T.saiVong.push(false); }
+        veKhung();
+        tin('📱 Cả lớp trả lời trên điện thoại — tổ đủ bạn đúng được xây thêm mảnh!');
+      },
+      hanh: function (i, c) { T.luot = i; T.pha = 'hoi'; veDat(); chonManh(capDo(c)); },
+      // sai: cac to khong duoc hanh dong o cau nay; n: so cau (vong) hien tai; xong(): sang cau tiep / ket thuc
+      ketVong: function (sai, n, cuoi, xong) {
+        T.vongHt = n;
+        T.luot = -1;
+        T.saiVong = T.saiVong.map(function (x, i) { return sai.indexOf(i) >= 0; });
+        var noiGio = G.cfg.x.gio === 'bat' && sai.length && T.gioVong !== T.vongHt - 1 &&
+          (Math.random() < 0.4 || (!T.daGio && T.vongHt >= Math.ceil(G.cfg.vong / 2)));
+        var het = function () { T.saiVong = T.saiVong.map(function () { return false; }); veDat(); xong(); };
+        if (!noiGio) { het(); return; }
+        T.qrXong = het;
+        gioLon(sai, cuoi);
+      },
+      xong: function () { return !T; },
+      ketThuc: function () { if (T) ketThuc(); }
     },
     dong: function () { T = null; }
   });

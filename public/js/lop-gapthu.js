@@ -327,15 +327,22 @@
     };
     capNhatX();
     T.raf = requestAnimationFrame(buoc);
+    // Thi qua ma QR: doi truong bam THA tren dien thoai; may chu gui lai thoi diem bam (ms tinh tu luc mo luot)
+    if (G.qr) {
+      b.hidden = true;
+      tin('📱 <b style="color:' + t.mau + '">' + G.esc(t.ten) + '</b> — đội trưởng bấm <b>THẢ</b> trên điện thoại đúng lúc nhé!');
+      G.qr.chon({ loai: 'tha', dongHo: function (t0) { T.t0 = t0; }, tuDong: function () { return null; } }, function (ms) { tha(ms); });
+    }
   }
-  function capNhatX() {
-    var goc = T.goc + (performance.now() - T.t0) / 1000 * (TOC[G.cfg.x.toc] || TOC.vua);
+  function capNhatX(luc) {
+    var goc = T.goc + ((typeof luc === 'number' ? luc : performance.now()) - T.t0) / 1000 * (TOC[G.cfg.x.toc] || TOC.vua);
     T.x = (X0 + X1) / 2 + (X1 - X0) / 2 * 1.02 * Math.sin(goc);
     datCang(T.x);
   }
-  function tha() {
+  // ms (thi qua ma QR): tha dung vi tri can luc doi truong bam (ms sau luc mo luot); khong co thi lay vi tri hien tai
+  function tha(ms) {
     if (T.pha !== 'lac') return;
-    capNhatX();
+    capNhatX(typeof ms === 'number' ? T.t0 + ms : null);
     T.pha = 'tha';
     cancelAnimationFrame(T.raf);
     var b = G.$('#gtTha');
@@ -463,6 +470,13 @@
     var hen = setInterval(function () { if (q) q.textContent = chu[n++ % 2]; G.snd.bam(); }, 140);
     G.sau(1500, function () {
       clearInterval(hen);
+      if (kq === 'luot' && G.qr) {
+        // qua ma QR: tu sang luot gap them, doi truong bam THA tiep tren dien thoai
+        G.hop({ html: hinh + '<h3>🔁 Thêm 1 lượt gắp!</h3><p>' + G.esc(G.to(i).ten) + ' được gắp thêm một lần nữa — đội trưởng chuẩn bị bấm THẢ!</p>', mau: '#9b5de5' });
+        G.snd.thang();
+        G.sau(1800, function () { G.dongHop(); choGap(); });
+        return;
+      }
       if (kq === 'luot') {
         G.hop({
           html: hinh + '<h3>🔁 Thêm 1 lượt gắp!</h3><p>' + G.esc(G.to(i).ten) + ' được điều khiển cần gắp thêm một lần nữa — không cần trả lời câu hỏi.</p>',
@@ -478,10 +492,23 @@
         nut: coCuop.map(function (j, k) {
           var t = G.to(j);
           return { t: '<img class="gt-hop-to" src="' + G.esc(t.hinh) + '" alt="">' + G.esc(t.ten) + ' <small>(' + T.ke[j].length + ' món)</small>', cls: 'gt-nut-to', phim: String(k + 1),
-            fn: function () { G.dongHop(); cuop(j); } };
+            tat: !!G.qr, fn: function () { G.dongHop(); cuop(j); } };
         })
       });
       clearInterval(hen);
+      // qua ma QR: doi truong chon to bi "muon" thu tren dien thoai (het gio thi may chon ngau nhien)
+      if (G.qr) {
+        G.qr.chon({
+          loai: 'cuop',
+          ds: coCuop.map(function (j) { return { v: String(j), nhan: G.to(j).ten, phu: T.ke[j].length + ' món · ' + diemTo(j) + ' điểm' }; }),
+          tuDong: function () { return coCuop[Math.floor(Math.random() * coCuop.length)]; }
+        }, function (j) {
+          j = +j;
+          if (coCuop.indexOf(j) < 0) j = coCuop[0];
+          G.dongHop();
+          cuop(j);
+        });
+      }
     });
     setTimeout(function () { clearInterval(hen); }, 1600);
   }
@@ -504,6 +531,8 @@
     if (G.pha !== 'choi') return;
     var cang = G.$('#gtCang');
     if (cang) { cang.classList.remove('is-dong', 'is-di'); cang.classList.add('is-mo'); }
+    // thi qua ma QR: bao xong luot cua to nay (kem dong ket qua) — lop-onto-qr.js chuyen to / vong
+    if (G.qr) { var el = G.$('#gtTin'); veKe(); G.qr.het(el ? el.textContent : ''); return; }
     T.luot++;
     if (T.luot >= G.cfg.soTo) {
       T.luot = 0;
@@ -545,6 +574,21 @@
       T.x = (X0 + X1) / 2;
       veKhung();
       batLuot();
+    },
+    // Thi qua ma QR (lop-onto-qr.js): dung canh may gap, moi to duoc thuong gap mot luot (doi truong bam THA tren dien thoai)
+    qr: {
+      batDau: function (g) {
+        G = g;
+        T = moi();
+        for (var i = 0; i < G.cfg.soTo; i++) { T.ke.push([]); T.x2.push(false); }
+        taoMay();
+        T.x = (X0 + X1) / 2;
+        veKhung();
+        tin('📱 Cả lớp trả lời trên điện thoại — tổ đủ bạn đúng được gắp thú!');
+      },
+      hanh: function (i) { T.luot = i; veKe(); choGap(); },
+      xong: function () { return !T || !conThu(); },
+      ketThuc: function () { if (T) ketThuc(conThu() ? '' : 'Máy đã hết thú bông!'); }
     },
     doiCo: function () { if (T && G.$('#gtKinh')) datViTri(); },
     phim: function (e, g, k) {

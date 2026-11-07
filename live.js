@@ -17,6 +17,11 @@
 // (giao vien chon cap). Moi cau giao vien ra (/cau), ai thuoc hai to tra loi tren dien thoai; lat dap an:
 // to co TI LE ban dung cao hon (dung / so thanh vien, nen to dong nguoi khong loi the) keo day 1 nac,
 // bang nhau thi to tra loi dung nhanh hon (trung binh) keo; keo du so nac la thang.
+// Kieu 'onto' (public/js/lop-onto-qr.js): Gap thu bong / Xay lau dai / Duong bang bi mat qua ma QR — hoc sinh chon to,
+// moi vong ca lop tra loi cung mot cau (trac nghiem / xep cau / noi tu, may chu cham). Lat dap an: to co ti le dung >= nguong
+// (50% / 70%) duoc hanh dong (khong to nao dat thi to tot nhat co it nhat 1 ban dung), xep theo ti le roi toc do. Moi to duoc
+// hanh dong: ban dung nhanh nhat la "doi truong luot nay", bam tren dien thoai (/hanh) — chi dung luot, dung nguoi, mot lan.
+// Canh tro choi (diem, thu bong, lau dai, o bang) tinh tren man chieu; may chu chi giu ten, to, dap an va ket qua cuoi.
 const crypto = require('crypto');
 const CauHoi = require('./cau-hoi');
 
@@ -226,7 +231,44 @@ function bxhTro(p) {
 }
 function hangTro(p, h) { return [...p.hs.values()].sort(soSanh(p)).indexOf(h) + 1; }
 // Ten cac to cua phong co chia to (tro / keo co)
-function tenToPhong(p) { return p.tro ? p.tro.to : p.keo ? p.keo.to : []; }
+function tenToPhong(p) { return p.tro ? p.tro.to : p.keo ? p.keo.to : p.onto ? p.onto.to : []; }
+
+/* ---- On bai theo to qua ma QR (kieu 'onto') ---- */
+const GAME_ONTO = { gapthu: 1, laudai: 1, duongbang: 1 };
+const LOAI_LUOT = { tha: 1, manh: 1, o: 1, cuop: 1 };
+const LOAI_O = { an: 1, nut: 1, ca: 1, daan: 1 };
+function sachMau(m) { return /^#[0-9a-f]{3,8}$/i.test(String(m || '')) ? String(m) : ''; }
+function toOnTo(b) { return Array.isArray(b.to) ? b.to.map((x) => sachTen(x)).filter(Boolean).slice(0, 6) : []; }
+function tvOnTo(p, to) { return [...p.hs.values()].filter((h) => h.to === to); }
+function daTlOnTo(p, h) { return !!(h.tl && h.tl.qid === p.qid); }
+function dungOnTo(p, h) { return daTlOnTo(p, h) && h.tl.dung; }
+// Lat dap an: thong ke tung to, to nao duoc hanh dong (theo thu tu) va doi truong (ban dung nhanh nhat)
+function latOnTo(p) {
+  const o = p.onto;
+  const ds = o.to.map((ten, i) => {
+    const tv = tvOnTo(p, i);
+    const dung = tv.filter((h) => dungOnTo(p, h)).sort((a, b) => a.tl.ms - b.tl.ms);
+    const ms = dung.length ? Math.round(dung.reduce((s, h) => s + h.tl.ms, 0) / dung.length) : 0;
+    return { to: i, soTv: tv.length, daTL: tv.filter((h) => daTlOnTo(p, h)).length, dung: dung.length, tiLe: tv.length ? dung.length / tv.length : 0, ms, dt: dung.map((h) => h.pid) };
+  });
+  const xep = (a, b) => b.tiLe - a.tiLe || a.ms - b.ms || a.to - b.to;
+  let duoc = ds.filter((x) => x.dung > 0 && x.tiLe >= o.nguong - 1e-9);
+  if (!duoc.length) duoc = ds.filter((x) => x.dung > 0).sort(xep).slice(0, 1);
+  duoc.sort(xep);
+  for (const h of p.hs.values()) if (dungOnTo(p, h)) { h.diem++; h.dungSo = (h.dungSo || 0) + 1; }
+  o.dt = {};
+  ds.forEach((x) => { o.dt[x.to] = x.dt; });
+  const doiTruong = {};
+  duoc.forEach((x) => { const h = p.hs.get(x.dt[0]); if (h) doiTruong[x.to] = { pid: h.pid, ten: h.ten }; });
+  o.kq = { qid: p.qid, dap: CauHoi.dapAn(o.c), why: o.c.why || '', duoc: duoc.map((x) => x.to), doiTruong,
+    to: ds.map((x) => ({ to: x.to, soTv: x.soTv, daTL: x.daTL, dung: x.dung, tiLe: x.tiLe, ms: x.ms })) };
+  p.pha = 'lat';
+}
+function luotCong(o) {
+  const l = o.luot;
+  return l && { id: l.id, to: l.to, pid: l.pid, ten: l.ten, loai: l.loai, v: l.v, xong: l.xong, tuDong: l.tuDong };
+}
+function dsToOnTo(p) { return p.onto.to.map((ten, i) => ({ ten, mau: p.onto.mau[i] || '', soTv: tvOnTo(p, i).length })); }
 
 /* ---- Keo co qua ma QR (kieu 'keo') ---- */
 function tvKeo(p, to) { return [...p.hs.values()].filter((h) => h.to === to); }
@@ -331,8 +373,17 @@ module.exports = function gan(app) {
     if (!ma) return res.status(503).json({ error: 'Chưa tạo được mã phòng, thử lại nhé.' });
     ds.push(Date.now()); taoTheoIp.set(ip, ds);
     const k0 = (req.body || {}).kieu;
-    const kieu = k0 === 'nhip' || k0 === 'dua' || k0 === 'the' || k0 === 'chuong' || k0 === 'tro' || k0 === 'keo' ? k0 : 'gv';
+    const kieu = k0 === 'nhip' || k0 === 'dua' || k0 === 'the' || k0 === 'chuong' || k0 === 'tro' || k0 === 'keo' || k0 === 'onto' ? k0 : 'gv';
     const p = { ma, kieu, khoa: token(), tao: Date.now(), cham: Date.now(), pha: 'cho', qid: 0, cau: null, dung: -1, batDau: 0, hs: new Map(), soVao: 0, ds: null };
+    if (kieu === 'onto') {
+      // game: tro dang choi; to / mau: cac to cua lop (2–6); secs: giay moi cau; nguong: ti le dung de duoc hanh dong
+      const b = req.body || {}, to = toOnTo(b);
+      if (to.length < 2) return res.status(400).json({ error: 'Cần ít nhất 2 tổ.' });
+      p.onto = { game: GAME_ONTO[b.game] ? b.game : 'gapthu', to, mau: (Array.isArray(b.mau) ? b.mau : []).slice(0, 6).map(sachMau),
+        secs: [15, 20, 30].indexOf(Number(b.secs)) >= 0 ? Number(b.secs) : 20, nguong: Number(b.nguong) === 0.7 ? 0.7 : 0.5,
+        van: 1, soCau: 0, c: null, kq: null, dt: {}, luot: null, luotSeq: 0, tin: [], tinSeq: 0, ket: null };
+      p.dong = false;
+    }
     // Kieu 'tro': ten tro choi co dinh tu luc tao phong; bo cau gui kem khi bat dau
     if (kieu === 'keo') {
       // to: ten cac to cua lop (2–6); L, R: hai to dang dau; max: so nac de thang
@@ -357,6 +408,20 @@ module.exports = function gan(app) {
   app.post('/api/live/:ma/cau', (req, res) => {
     const p = layPhong(req, res); if (!p || !laGv(p, req, res)) return;
     const b = req.body || {};
+    if (p.kieu === 'onto') {
+      // { cau: { trac nghiem | xep | noi } (cau-hoi.js), so, tong } — ca lop cung tra loi, may chu giu dap an
+      const c = CauHoi.chuan(b.cau);
+      if (!c) return res.status(400).json({ error: 'Câu hỏi không hợp lệ.' });
+      const o = p.onto;
+      p.qid++;
+      p.pha = 'hoi';
+      o.soCau++;
+      o.c = c; o.kq = null; o.luot = null; o.dt = {};
+      p.cau = { secs: o.secs, so: so(b.so, 1, 999), tong: so(b.tong, 0, 999) };
+      p.batDau = Date.now();
+      for (const h of p.hs.values()) h.tl = null;
+      return res.json({ ok: true, qid: p.qid });
+    }
     const opts = Array.isArray(b.opts) ? b.opts.slice(0, 4).map((o) => chuoi(o, 120)) : [];
     if (opts.length < 2) return res.status(400).json({ error: 'Câu hỏi cần ít nhất 2 đáp án.' });
     const dung = Number(b.dung);
@@ -382,6 +447,10 @@ module.exports = function gan(app) {
 
   app.post('/api/live/:ma/lat', (req, res) => {
     const p = layPhong(req, res); if (!p || !laGv(p, req, res)) return;
+    if (p.kieu === 'onto') {
+      if (p.pha === 'hoi' && p.onto.c) latOnTo(p);
+      return res.json({ ok: true, kq: p.onto.kq });
+    }
     if (p.kieu === 'keo') {
       if (p.pha === 'hoi') latKeo(p, req.body || {});
       return res.json({ ok: true, kq: p.keo.kq, keo: p.keo });
@@ -500,7 +569,19 @@ module.exports = function gan(app) {
 
   app.post('/api/live/:ma/xong', (req, res) => {
     const p = layPhong(req, res); if (!p || !laGv(p, req, res)) return;
-    if ((p.kieu === 'chuong' || p.kieu === 'tro' || p.kieu === 'keo') && (req.body || {}).dong) p.dong = true;
+    if ((p.kieu === 'chuong' || p.kieu === 'tro' || p.kieu === 'keo' || p.kieu === 'onto') && (req.body || {}).dong) p.dong = true;
+    if (p.kieu === 'onto') {
+      // { hang: [{ to, hang, diem }], don } — ket qua cuoi do man chieu tinh (canh tro choi nam o man chieu)
+      const b = req.body || {}, o = p.onto, n = o.to.length;
+      if (Array.isArray(b.hang)) {
+        const da = {};
+        o.ket = { don: chuoi(b.don, 12) || 'điểm', hang: b.hang.slice(0, 6).map((x) => x && ({ to: Number(x.to), hang: so(x.hang, 1, 6), diem: so(x.diem, 0, 9999) }))
+          .filter((x) => x && Number.isInteger(x.to) && x.to >= 0 && x.to < n && !da[x.to] && (da[x.to] = 1)) };
+      }
+      o.luot = null;
+      p.pha = 'het';
+      return res.json({ ok: true });
+    }
     p.pha = 'het';
     if (p.kieu === 'tro') return res.json({ ok: true, bxh: bxhTro(p), to: dsTo(p) });
     res.json({ ok: true, bxh: bangXepHang(p).slice(0, 10), tk: tuLam(p) ? (p.tk || null) : undefined });
@@ -515,6 +596,13 @@ module.exports = function gan(app) {
   app.get('/api/live/:ma/gv', (req, res) => {
     const p = layPhong(req, res); if (!p || !laGv(p, req, res)) return;
     if (p.kieu === 'the') return res.json({ kieu: 'the', pha: p.pha, qid: p.qid, tl: p.theTl, lenh: p.lenh, quetLuc: p.quetLuc, may: !!p.may, mayLuc: p.mayLuc || 0 });
+    if (p.kieu === 'onto') {
+      const o = p.onto;
+      return res.json({ kieu: 'onto', game: o.game, pha: p.pha, qid: p.qid, soHs: p.hs.size,
+        ds: [...p.hs.values()].sort((a, b) => a.vao - b.vao).map((h) => ({ pid: h.pid, ten: h.ten, to: h.to == null ? -1 : h.to })),
+        to: o.to.map((ten, i) => { const tv = tvOnTo(p, i); return { soTv: tv.length, daTL: tv.filter((h) => daTlOnTo(p, h)).length }; }),
+        luot: luotCong(o), kq: p.pha === 'lat' ? o.kq : null });
+    }
     if (p.kieu === 'keo') {
       const k = p.keo;
       return res.json({ kieu: 'keo', pha: p.pha, qid: p.qid, soHs: p.hs.size, keo: { L: k.L, R: k.R, nac: k.nac, max: k.max, thang: k.thang },
@@ -620,7 +708,7 @@ module.exports = function gan(app) {
     const p = layPhong(req, res); if (!p) return;
     if (p.kieu === 'the') return res.status(400).json({ error: 'Phòng này dùng thẻ giấy, không vào bằng điện thoại.' });
     // phong tro choi: het van van vao duoc (cho van choi lai), chi khi co dong phong moi thoi
-    if (p.pha === 'het' && !(p.kieu === 'tro' && !p.dong)) return res.status(410).json({ error: 'Phòng này đã kết thúc.' });
+    if (p.pha === 'het' && !((p.kieu === 'tro' || p.kieu === 'onto') && !p.dong)) return res.status(410).json({ error: 'Phòng này đã kết thúc.' });
     let ten = sachTen((req.body || {}).ten);
     if (!ten) return res.status(400).json({ error: 'Em nhập tên trước nhé.' });
     const toiDa = p.kieu === 'chuong' ? MAX_HS_CHUONG : MAX_HS;
@@ -643,6 +731,7 @@ module.exports = function gan(app) {
     if (p.kieu === 'chuong') Object.assign(h, { con: !p.daBatDau, muon: !!p.daBatDau, roiCau: 0, roiLuc: 0, vang: false, cuuSeq: 0, cuuSo: 0, kq: null });
     if (p.kieu === 'tro') Object.assign(h, { lam: 0, dungSo: 0, loi: 0, giay: 0, xong: false, xongLuc: 0, to: p.tro.to.length ? null : -1 });
     if (p.kieu === 'keo') h.to = null;
+    if (p.kieu === 'onto') { h.to = null; h.dungSo = 0; }
     p.hs.set(h.pid, h);
     res.json({ pid: h.pid, tok: h.tok, ten: h.ten });
   });
@@ -685,6 +774,17 @@ module.exports = function gan(app) {
       });
     }
     if (p.pha !== 'hoi' || Number(b.qid) !== p.qid) return res.status(409).json({ error: 'Câu này đã đóng rồi.' });
+    if (p.kieu === 'onto') {
+      // { qid, chon | xep | noi } — may chu cham, chua bao dung / sai truoc khi lat
+      const o = p.onto;
+      if (h.to == null || h.to < 0 || h.to >= o.to.length) return res.status(409).json({ error: 'Em chọn tổ trước nhé.', chonTo: true });
+      if (daTlOnTo(p, h)) return res.json({ ok: true, daGui: true });
+      if (Date.now() > p.batDau + o.secs * 1000 + 1500) return res.status(409).json({ error: 'Hết giờ rồi!' });
+      const kq = CauHoi.cham(o.c, b);
+      if (!kq.hopLe) return res.status(400).json({ error: 'Đáp án không hợp lệ.' });
+      h.tl = { qid: p.qid, dung: kq.dung, ms: Date.now() - p.batDau, chon: o.c.k ? -1 : kq.o };
+      return res.json({ ok: true, daGui: true });
+    }
     if (p.kieu === 'keo' && h.to !== p.keo.L && h.to !== p.keo.R) return res.status(409).json({ error: 'Tổ em đang cổ vũ — chờ lượt tổ em nhé!' });
     if (h.tl && h.tl.qid === p.qid) return res.json({ ok: true, chon: h.tl.chon });
     if (p.kieu === 'chuong') {
@@ -712,12 +812,13 @@ module.exports = function gan(app) {
     const b = req.body || {};
     const h = layHs(p, b, res); if (!h) return;
     const ten = tenToPhong(p);
-    if ((p.kieu !== 'tro' && p.kieu !== 'keo') || !ten.length) return res.status(400).json({ error: 'Phòng này không chia tổ.' });
+    if ((p.kieu !== 'tro' && p.kieu !== 'keo' && p.kieu !== 'onto') || !ten.length) return res.status(400).json({ error: 'Phòng này không chia tổ.' });
     const to = Number(b.to);
     if (!Number.isInteger(to) || to < 0 || to >= ten.length) return res.status(400).json({ error: 'Tổ không hợp lệ.' });
     if (p.kieu === 'tro' && h.to !== to && p.pha === 'choi' && (h.lam || h.xong) && h.to != null) return res.status(409).json({ error: 'Em đang chơi rồi, không đổi tổ được nữa.' });
     // keo co: dang co cau hoi ma em vua tra loi thi khong doi to (khoi gian lan ti le)
     if (p.kieu === 'keo' && h.to !== to && h.to != null && h.to >= 0 && h.tl && h.tl.qid === p.qid && p.pha === 'hoi') return res.status(409).json({ error: 'Đợi hết câu này rồi hãy đổi tổ nhé.' });
+    if (p.kieu === 'onto' && h.to !== to && h.to != null && h.to >= 0 && daTlOnTo(p, h) && (p.pha === 'hoi' || p.pha === 'lat')) return res.status(409).json({ error: 'Đợi hết câu này rồi hãy đổi tổ nhé.' });
     h.to = to;
     res.json({ ok: true, to, ten: ten[to] });
   });
@@ -731,6 +832,91 @@ module.exports = function gan(app) {
     if (b.max != null) k.max = so(b.max, 3, 9);
     if (b.moi) { k.nac = 0; k.thang = -1; k.kq = null; p.pha = 'cho'; p.cau = null; p.dung = -1; for (const h of p.hs.values()) { h.tl = null; h.diem = 0; } }
     res.json({ ok: true, keo: k });
+  });
+
+  /* ---- On bai theo to qua ma QR (kieu 'onto') ---- */
+  function laOnTo(p, res) {
+    if (p.kieu !== 'onto') { res.status(400).json({ error: 'Phòng này không phải ôn bài theo tổ.' }); return false; }
+    return true;
+  }
+  // Cai dat phong (giu phong khi giao vien doi tro / so to): { game, to, mau, secs, nguong, moi } — moi: van moi, xoa diem
+  app.post('/api/live/:ma/onto', (req, res) => {
+    const p = layPhong(req, res); if (!p || !laGv(p, req, res) || !laOnTo(p, res)) return;
+    const b = req.body || {}, o = p.onto;
+    if (GAME_ONTO[b.game]) o.game = b.game;
+    const to = toOnTo(b);
+    if (to.length >= 2) {
+      o.to = to;
+      o.mau = (Array.isArray(b.mau) ? b.mau : []).slice(0, 6).map(sachMau);
+      for (const h of p.hs.values()) if (h.to != null && h.to >= to.length) h.to = null;
+    }
+    if ([15, 20, 30].indexOf(Number(b.secs)) >= 0) o.secs = Number(b.secs);
+    if (b.nguong != null) o.nguong = Number(b.nguong) === 0.7 ? 0.7 : 0.5;
+    if (b.moi) {
+      o.van++; o.soCau = 0; o.c = null; o.kq = null; o.dt = {}; o.luot = null; o.tin = []; o.ket = null;
+      p.pha = 'cho'; p.cau = null; p.dong = false;
+      for (const h of p.hs.values()) { h.tl = null; h.diem = 0; h.dungSo = 0; }
+    }
+    res.json({ ok: true, to: o.to, pha: p.pha });
+  });
+  // Mo luot hanh dong cho mot to duoc thuong: { to, loai: tha|manh|o|cuop, ds: [{ v, nhan, phu, loai, tat }], han (giay) }
+  // Doi truong = ban dung nhanh nhat cua to con trong phong. Khong con ai -> khongCo (man chieu tu chon).
+  app.post('/api/live/:ma/luot', (req, res) => {
+    const p = layPhong(req, res); if (!p || !laGv(p, req, res) || !laOnTo(p, res)) return;
+    const b = req.body || {}, o = p.onto, to = Number(b.to);
+    if (p.pha !== 'lat' || !o.kq) return res.status(409).json({ error: 'Chưa lật đáp án.' });
+    if (!Number.isInteger(to) || o.kq.duoc.indexOf(to) < 0) return res.status(400).json({ error: 'Tổ này không được hành động lượt này.' });
+    const loai = LOAI_LUOT[b.loai] ? b.loai : 'tha';
+    const ds = (Array.isArray(b.ds) ? b.ds : []).slice(0, 8).map((x) => x && ({
+      v: chuoi(x.v, 20), nhan: chuoi(x.nhan, 40), phu: chuoi(x.phu, 60), loai: LOAI_O[x.loai] ? x.loai : '', tat: !!x.tat,
+    })).filter((x) => x && x.v);
+    if (loai !== 'tha' && !ds.some((x) => !x.tat)) return res.status(400).json({ error: 'Không có lựa chọn nào.' });
+    const pid = (o.dt[to] || []).find((id) => { const h = p.hs.get(id); return h && h.to === to; });
+    const h = pid ? p.hs.get(pid) : null;
+    o.luot = { id: ++o.luotSeq, to, loai, ds, han: so(b.han, 5, 20) * 1000, pid: h ? h.pid : '', ten: h ? h.ten : '', batDau: Date.now(),
+      v: null, xong: !h, tuDong: !h };
+    res.json({ ok: true, id: o.luot.id, pid: o.luot.pid, ten: o.luot.ten, han: o.luot.han, khongCo: !h });
+  });
+  // Het gio (hoac doi truong khong bam): chot luot — tra lai lua chon cua doi truong neu kip, khong thi tuDong
+  app.post('/api/live/:ma/chot', (req, res) => {
+    const p = layPhong(req, res); if (!p || !laGv(p, req, res) || !laOnTo(p, res)) return;
+    const l = p.onto.luot;
+    if (!l || l.id !== Number((req.body || {}).id)) return res.status(409).json({ error: 'Lượt này đã qua.' });
+    if (!l.xong) { l.xong = true; l.tuDong = true; }
+    res.json({ ok: true, v: l.v, tuDong: l.tuDong });
+  });
+  // Dong ket qua cua mot luot cho dien thoai: { to, txt }
+  app.post('/api/live/:ma/tin', (req, res) => {
+    const p = layPhong(req, res); if (!p || !laGv(p, req, res) || !laOnTo(p, res)) return;
+    const b = req.body || {}, o = p.onto, to = Number(b.to);
+    const txt = chuoi(b.txt, 200).replace(/[\u0000-\u001f<>]/g, '').trim();
+    if (txt) {
+      o.tin.push({ id: ++o.tinSeq, qid: p.qid, to: Number.isInteger(to) && to >= 0 && to < o.to.length ? to : -1, txt });
+      if (o.tin.length > 12) o.tin.shift();
+    }
+    o.luot = null;
+    res.json({ ok: true });
+  });
+  // Doi truong bam tren dien thoai: { pid, tok, id, v } — chi doi truong cua luot dang mo, mot lan, trong han
+  app.post('/api/live/:ma/hanh', (req, res) => {
+    const p = layPhong(req, res); if (!p) return;
+    const b = req.body || {};
+    const h = layHs(p, b, res); if (!h) return;
+    if (!laOnTo(p, res)) return;
+    const l = p.onto.luot, now = Date.now();
+    if (!l || l.id !== Number(b.id) || p.pha !== 'lat') return res.status(409).json({ error: 'Lượt này đã qua rồi.' });
+    if (l.pid !== h.pid) return res.status(403).json({ error: 'Chỉ đội trưởng lượt này được chọn.' });
+    if (l.xong) return res.status(409).json({ error: l.tuDong ? 'Hết giờ — máy đã tự chọn.' : 'Em đã chọn rồi.' });
+    if (now > l.batDau + l.han + 1000) return res.status(409).json({ error: 'Hết giờ rồi!' });
+    let v;
+    if (l.loai === 'tha') v = Math.max(0, Math.min(l.han, now - l.batDau));
+    else {
+      const x = l.ds.find((y) => y.v === chuoi(b.v, 20) && !y.tat);
+      if (!x) return res.status(400).json({ error: 'Lựa chọn không hợp lệ.' });
+      v = x.v;
+    }
+    l.v = v; l.xong = true;
+    res.json({ ok: true });
   });
   // { pid, tok, lam, dung, loi, giay, diem, xong } — tin dien thoai nhung kep gia tri; da xong thi khong sua nua
   app.post('/api/live/:ma/tien', (req, res) => {
@@ -812,6 +998,26 @@ module.exports = function gan(app) {
         out.soVang = xh.filter((x) => x.vang).length;
         out.bxh = xh.slice(0, 5).map((x) => ({ ten: x.ten, diem: x.diem, con: !!x.con, vang: !!x.vang }));
       }
+      return res.json(out);
+    }
+    if (p.kieu === 'onto') {
+      const o = p.onto, now = Date.now();
+      const out = { kieu: 'onto', game: o.game, pha: p.pha, qid: p.qid, ten: h.ten, diem: h.diem || 0, soHs: p.hs.size, dong: !!p.dong,
+        to: h.to == null ? -1 : h.to, dsTo: dsToOnTo(p), van: o.van, soCau: o.soCau, nguong: o.nguong };
+      if (o.c && (p.pha === 'hoi' || p.pha === 'lat')) {
+        out.cau = Object.assign(CauHoi.choHs(o.c), { so: p.cau ? p.cau.so : o.soCau, tong: p.cau ? p.cau.tong : 0 });
+        out.daGui = daTlOnTo(p, h);
+        out.chon = out.daGui ? h.tl.chon : -1;
+        if (p.pha === 'hoi') out.conLai = Math.max(0, o.secs * 1000 - (now - p.batDau));
+      }
+      if (p.pha === 'lat' && o.kq) {
+        out.kq = { dap: o.kq.dap, why: o.kq.why, dung: dungOnTo(p, h), duoc: o.kq.duoc, to: o.kq.to, doiTruong: o.kq.doiTruong };
+        const l = o.luot;
+        if (l) out.luot = { id: l.id, to: l.to, ten: l.ten, la: l.pid === h.pid, loai: l.loai, ds: l.pid === h.pid ? l.ds : [],
+          conLai: Math.max(0, l.batDau + l.han - now), xong: l.xong, tuDong: l.tuDong };
+        out.tin = o.tin.filter((x) => x.qid === p.qid);
+      }
+      if (p.pha === 'het') out.ket = o.ket;
       return res.json(out);
     }
     if (p.kieu === 'keo') {

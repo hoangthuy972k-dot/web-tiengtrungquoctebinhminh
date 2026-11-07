@@ -173,12 +173,16 @@
   function luuPref() {
     if (!S.def || !S.cfg) return;
     var c = S.cfg;
-    ghiLS(prefKey(), { soTo: c.soTo, ten: c.ten, tenGoc: c.tenGoc, vong: c.vong, loai: c.loai, x: c.x, sound: S.sound });
+    ghiLS(prefKey(), { soTo: c.soTo, ten: c.ten, tenGoc: c.tenGoc, vong: c.vong, loai: c.loai, x: c.x, sound: S.sound, cach: c.cach, secs: c.secs, nguong: c.nguong });
   }
+  // Cach choi qua ma QR (lop-onto-qr.js): chi hien khi co module
+  function laQr() { return !!(window.LopOnToQr && S.cfg && S.cfg.cach === 'qr'); }
+  function nhanBatDau() { return laQr() ? '📱 Mở phòng QR <kbd>Enter</kbd>' : '▶ Bắt đầu <kbd>Enter</kbd>'; }
   function chip(k, v, nhan, on) {
     return '<button type="button" class="ot-opt' + (on ? ' is-on' : '') + '" data-k="' + k + '" data-v="' + esc(v) + '">' + nhan + '</button>';
   }
   function veSanh() {
+    if (window.LopOnToQr) window.LopOnToQr.nghi();
     tatNhac();
     S.van++;
     S.pha = 'sanh';
@@ -200,20 +204,28 @@
       return '<div class="ot-hang"><span class="ot-nhan">' + esc(h.ten) + '</span><div class="ot-chon">' +
         h.ds.map(function (o) { return chip('x-' + h.k, o[0], o[1], String(c.x[h.k]) === String(o[0])); }).join('') + '</div></div>';
     }).join('');
+    var anQr = c.cach === 'qr' ? '' : ' hidden';
+    var cach = window.LopOnToQr ? '<div class="ot-hang"><span class="ot-nhan">Cách chơi</span><div class="ot-chon">' +
+      chip('cach', 'bang', '🖥️ Chơi trên bảng', c.cach !== 'qr') + chip('cach', 'qr', '📱 Thi đấu qua mã QR', c.cach === 'qr') + '</div></div>' : '';
+    var qr = window.LopOnToQr ? '<div class="ot-hang ot-hang--qr"' + anQr + '><span class="ot-nhan">Mỗi câu</span><div class="ot-chon">' +
+        [15, 20, 30].map(function (n) { return chip('secs', n, n + ' giây', c.secs === n); }).join('') + '</div></div>' +
+      '<div class="ot-hang ot-hang--qr"' + anQr + '><span class="ot-nhan">Tổ được hành động</span><div class="ot-chon">' +
+        chip('nguong', 50, '≥ 50% bạn đúng', c.nguong !== 70) + chip('nguong', 70, '≥ 70% bạn đúng', c.nguong === 70) +
+        '<span class="ot-ghi">Không tổ nào đạt thì tổ tốt nhất có bạn đúng được đi.</span></div></div>' : '';
     $('#otMan').innerHTML =
       '<div class="ot-the ot-sanh">' +
         '<div class="ot-sanh-dau">' +
           '<div class="ot-logo" aria-hidden="true">' + d.logo + '</div>' +
           '<div><h2>' + esc(d.ten) + '</h2><p class="ot-luat">' + d.luat + '</p></div>' +
-        '</div>' +
+        '</div>' + cach +
         '<div class="ot-hang"><span class="ot-nhan">Số tổ</span><div class="ot-chon">' + to + '</div></div>' +
         '<div class="ot-hang"><span class="ot-nhan">Tên tổ</span><div class="ot-chon ot-chon-ten">' + ten + '</div></div>' +
         '<div class="ot-hang"><span class="ot-nhan">' + esc(d.vong.ten || 'Số vòng') + '</span><div class="ot-chon">' + vong +
           '<span class="ot-ghi" id="otSoCau"></span></div></div>' +
         '<div class="ot-hang"><span class="ot-nhan">Dạng câu hỏi</span><div class="ot-chon">' + loai + '</div></div>' +
-        them +
+        them + qr +
         '<div class="ot-nut-hang"><button type="button" class="ot-nut" id="otVe">← Về danh sách trò chơi</button>' +
-          '<button type="button" class="ot-nut ot-nut--do ot-nut--to" id="otBatDau">▶ Bắt đầu <kbd>Enter</kbd></button></div>' +
+          '<button type="button" class="ot-nut ot-nut--do ot-nut--to" id="otBatDau">' + nhanBatDau() + '</button></div>' +
       '</div>';
     veSoCau();
     $all('.ot-opt').forEach(function (b) {
@@ -224,6 +236,11 @@
           $all('.ot-ten-to').forEach(function (l, j) { l.hidden = j >= c.soTo; });
         } else if (k === 'vong') c.vong = +v;
         else if (k === 'loai') c.loai = v;
+        else if (k === 'cach') {
+          c.cach = v === 'qr' ? 'qr' : 'bang';
+          $all('.ot-hang--qr').forEach(function (r) { r.hidden = c.cach !== 'qr'; });
+          $('#otBatDau').innerHTML = nhanBatDau();
+        } else if (k === 'secs' || k === 'nguong') c[k] = +v;
         else if (k.indexOf('x-') === 0) {
           var hk = k.slice(2), h = (d.them || []).filter(function (x) { return x.k === hk; })[0];
           c.x[hk] = h && typeof h.ds[0][0] === 'number' ? +v : v;
@@ -243,7 +260,7 @@
   }
   function veSoCau() {
     var el = $('#otSoCau');
-    if (el) el.textContent = '≈ ' + (S.cfg.vong * S.cfg.soTo) + ' câu cho ' + S.cfg.soTo + ' tổ';
+    if (el) el.textContent = laQr() ? '≈ ' + S.cfg.vong + ' câu, cả lớp cùng trả lời mỗi câu' : '≈ ' + (S.cfg.vong * S.cfg.soTo) + ' câu cho ' + S.cfg.soTo + ' tổ';
   }
 
   /* ---------------- bo cau ---------------- */
@@ -311,6 +328,14 @@
       }
       S.pool = tron(ds);
       S.daDung = [];
+      // Thi dau qua ma QR: sanh cho (ma QR, cac to) — lop-onto-qr.js dieu khien tu day
+      if (laQr()) {
+        S.pha = 'qr';
+        window.LopOnToQr.mo(G);
+        if (S.ghiChu) toast(S.ghiChu);
+        return;
+      }
+      if (window.LopOnToQr) window.LopOnToQr.dong();
       S.pha = 'choi';
       nhacNen(S.def.nhac);
       S.def.batDau(G);
@@ -513,10 +538,18 @@
         (o.loi ? '<p class="ot-ket-loi">' + o.loi + '</p>' : '') +
         '<div class="ot-buc">' + thuTu.map(cot).join('') + '</div>' +
         (con ? '<ol class="ot-con">' + con + '</ol>' : '') +
-        '<div class="ot-nut-hang"><button type="button" class="ot-nut" id="otLai">↺ Chơi lại</button>' +
+        '<div class="ot-nut-hang">' + (G.qr
+          ? '<button type="button" class="ot-nut" id="otCaiDat">⚙ Về cài đặt</button>' +
+            '<button type="button" class="ot-nut ot-nut--vang" id="otLai">🔁 Chơi lại (giữ phòng)</button>'
+          : '<button type="button" class="ot-nut" id="otLai">↺ Chơi lại</button>') +
           '<button type="button" class="ot-nut ot-nut--do" id="otRa">✕ Thoát về danh sách</button></div>' +
       '</div>';
-    $('#otLai').addEventListener('click', veSanh);
+    $('#otLai').addEventListener('click', G.qr ? batDau : veSanh);
+    if (G.qr) {
+      $('#otCaiDat').addEventListener('click', veSanh);
+      // bao ket qua cuoi cho dien thoai: hang cua tung to
+      G.qr.ketThuc(ds.map(function (x, k) { return { to: x.i, hang: hang[k], diem: x.diem }; }), o.don || 'điểm');
+    }
     $('#otRa').addEventListener('click', dong);
     snd.ken();
   }
@@ -556,6 +589,8 @@
       }
       return;
     }
+    // Thi qua ma QR: phim Enter / Space do lop-onto-qr.js xu ly (khong dung phim cua tro tren bang)
+    if (G.qr) { if (G.qr.phim(k)) xong(); return; }
     if (S.pha === 'choi' && S.def.phim && S.def.phim(e, G, k)) xong();
   }
 
@@ -585,7 +620,10 @@
       tenGoc: tenLop,
       vong: d.vong.ds.indexOf(+p.vong) >= 0 ? +p.vong : d.vong.md,
       loai: LOAI[p.loai] ? p.loai : 'honhop',
-      x: x
+      x: x,
+      cach: p.cach === 'qr' ? 'qr' : 'bang',
+      secs: [15, 20, 30].indexOf(p.secs) >= 0 ? p.secs : 20,
+      nguong: p.nguong === 70 ? 70 : 50
     };
     root.className = 'ot ot--' + d.id;
     root.setAttribute('aria-label', d.ten);
@@ -598,6 +636,7 @@
   }
   function dong() {
     tatNhac();
+    if (window.LopOnToQr) window.LopOnToQr.dong();
     if (!root) return;
     S.van++;
     S.pha = 'sanh';
@@ -626,7 +665,15 @@
     },
     kho: kho, tenDang: tenDang,
     hoi: hoi, hop: hop, dongHop: dongHop, toast: toast, bao: bao, veVong: veVong, ketThuc: ketThuc,
-    dangHoi: function () { return !!S.hoi; }
+    dangHoi: function () { return !!S.hoi; },
+    // ---- cho lop-onto-qr.js (thi qua ma QR) ----
+    qr: null,                                   // dieu khien QR khi dang thi qua ma QR (null = choi tren bang)
+    get def() { return S.def; },
+    get nhan() { return (S.opt && S.opt.nhan) || ''; },
+    cauTiep: cauTiep,
+    vaoChoi: function () { S.van++; S.pha = 'choi'; nhacNen(S.def.nhac); },
+    veSanh: function () { veSanh(); },
+    dong: function () { dong(); }
   };
 
   window.LopOnTo = {

@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="/css/lop-bay.css">
 <link rel="stylesheet" href="/css/lop-doantau.css">
 <link rel="stylesheet" href="/css/tro-cau.css">
+<link rel="stylesheet" href="/css/choi-onto.css">
 </head>
 <body>
 <main class="ch" id="ch">
@@ -48,7 +49,7 @@
   <section class="ch-man" id="manTo" hidden>
     <div class="ch-ten" id="tenTo"></div>
     <h2 class="ch-tit">Em thi cho tổ nào?</h2>
-    <p class="ch-mo">Điểm tổ là điểm trung bình của cả tổ, cả tổ cùng xong còn được thưởng — cùng cố gắng nhé!</p>
+    <p class="ch-mo" id="moTo">Điểm tổ là điểm trung bình của cả tổ, cả tổ cùng xong còn được thưởng — cùng cố gắng nhé!</p>
     <div class="ch-to" id="dsTo"></div>
   </section>
 
@@ -81,6 +82,14 @@
     <div class="ch-vt" id="kqViTri"></div>
     <p class="ch-mo ch-why" id="kqWhy"></p>
     <button type="button" class="ch-nut ch-nut-tiep" id="nutTiep" hidden>Câu tiếp →</button>
+  </section>
+
+  <!-- On bai theo to qua ma QR: doi truong luot nay chon tren dien thoai (tha can gap / manh / o bang / to) -->
+  <section class="ch-man ch-ot" id="manOt" hidden>
+    <div class="ch-ot-dau"><span class="ch-ot-vai">👑 Đội trưởng lượt này</span><span class="ch-dem" id="otDem"></span></div>
+    <h2 class="ch-tit" id="otTit"></h2>
+    <p class="ch-mo" id="otMo"></p>
+    <div class="ch-ot-chon" id="otChon"></div>
   </section>
 
   <!-- Tu lam: da lam xong ca bo cau -->

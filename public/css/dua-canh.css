@@ -1,0 +1,96 @@
+/* Cuoc dua ki thu — duong dua trong rung (public/js/dua-canh.js). Dung chung man chieu va dien thoai. */
+.dc-canh {
+  --h: clamp(34px, calc(52vh / var(--so)), 86px);   /* cao moi lan chay */
+  --troi: 150px;
+  position: relative; display: flex; flex-direction: column; width: 100%;
+  border: 4px solid #2b1d3a; border-radius: 26px; overflow: hidden;
+  background: linear-gradient(180deg, #8fd3ff 0, #c9eeff calc(var(--troi) * .7), #8ccf67 calc(var(--troi) * .7));
+  box-shadow: 0 8px 0 rgba(43, 29, 58, .25);
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+}
+.dc-canh.gon { --h: 40px; --troi: 86px; border-radius: 20px; border-width: 3px; }
+/* bau troi */
+.dc-troi { position: relative; height: calc(var(--troi) * .62); flex: none; overflow: hidden; }
+.dc-mat-troi { position: absolute; right: 7%; top: 14%; width: 54px; height: 54px; border-radius: 50%; background: #ffd54a; border: 3px solid #2b1d3a;
+  box-shadow: 0 0 0 10px rgba(255, 213, 74, .35), 0 0 40px 14px rgba(255, 200, 60, .45); animation: dc-nang 4s ease-in-out infinite alternate; }
+.gon .dc-mat-troi { width: 30px; height: 30px; box-shadow: 0 0 0 6px rgba(255, 213, 74, .35); }
+@keyframes dc-nang { to { transform: scale(1.08); } }
+.dc-may { position: absolute; height: 22px; border-radius: 20px; background: #fff; box-shadow: 18px -8px 0 2px #fff, 38px 0 0 -2px #fff; opacity: .95; animation: dc-may 38s linear infinite; }
+.dc-may.m1 { top: 18%; left: -10%; width: 60px; }
+.dc-may.m2 { top: 42%; left: 30%; width: 48px; animation-duration: 52s; animation-delay: -20s; }
+.dc-may.m3 { top: 12%; left: 62%; width: 40px; animation-duration: 46s; animation-delay: -34s; }
+.gon .dc-may { height: 14px; box-shadow: 11px -5px 0 1px #fff, 24px 0 0 -2px #fff; }
+@keyframes dc-may { from { transform: translateX(-20vw); } to { transform: translateX(110vw); } }
+.dc-chim { position: absolute; width: 16px; height: 8px; border-top: 3px solid #2b1d3a; border-radius: 50% 50% 0 0; animation: dc-chim 14s linear infinite; }
+.dc-chim::after { content: ''; position: absolute; left: 13px; top: -3px; width: 16px; height: 8px; border-top: 3px solid #2b1d3a; border-radius: 50% 50% 0 0; }
+.dc-chim.c1 { top: 30%; left: -5%; }
+.dc-chim.c2 { top: 50%; left: -12%; animation-delay: -6s; transform: scale(.7); }
+@keyframes dc-chim { from { translate: 0 0; } 50% { translate: 55vw -8px; } to { translate: 110vw 0; } }
+/* doi + rung xa */
+.dc-doi { position: absolute; left: 0; top: calc(var(--troi) * .38); width: 100%; height: calc(var(--troi) * .34); pointer-events: none; }
+.dc-rung-xa { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: flex-end; height: calc(var(--troi) * .4); margin-top: calc(var(--troi) * -.06); padding: 0 1%; flex: none; }
+.dc-rung-xa img { height: 80%; width: auto; aspect-ratio: 1; max-height: 100%; margin: 0 -1.2%; filter: drop-shadow(0 3px 0 rgba(43, 29, 58, .18)); transform-origin: bottom center; animation: dc-gio 5s ease-in-out infinite alternate; animation-delay: calc(var(--i) * -.6s); }
+@keyframes dc-gio { from { rotate: -1.5deg; } to { rotate: 1.5deg; } }
+/* duong chay */
+.dc-duong { position: relative; z-index: 2; flex: none; margin: 0 1.2%; padding: 6px 0; border-radius: 16px;
+  background: linear-gradient(180deg, #6fb64b 0 6px, #d9b77a 6px calc(100% - 6px), #6fb64b calc(100% - 6px)); }
+.dc-lans { position: relative; display: flex; flex-direction: column; }
+.dc-lan { position: relative; height: var(--h); border-bottom: 2px dashed rgba(255, 248, 228, .65); }
+.dc-lan:last-child { border-bottom: 0; }
+.dc-lan.le { background: rgba(255, 255, 255, .07); }
+.dc-lan.la { background: linear-gradient(90deg, rgba(255, 213, 74, .0), rgba(255, 213, 74, .55) 20%, rgba(255, 213, 74, .55) 80%, rgba(255, 213, 74, 0)); }
+.dc-trong { margin: 0; padding: 26px; text-align: center; font-weight: 800; color: #5b4632; }
+/* vach xuat phat / dich */
+.dc-vach { position: absolute; top: 0; bottom: 0; z-index: 1; width: 0; pointer-events: none; }
+.dc-xp { left: 4%; border-left: 4px solid rgba(255, 255, 255, .9); }
+.dc-dich { left: 86%; }
+.dc-dich::before { content: ''; position: absolute; top: 0; bottom: 0; left: -7px; width: 14px;
+  background: repeating-conic-gradient(#2b1d3a 0 25%, #fff 0 50%) 0 0 / 14px 14px; border: 2px solid #2b1d3a; }
+.dc-vach img { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); width: clamp(54px, 7vw, 110px); height: auto; }
+.dc-xp img { width: clamp(40px, 4.5vw, 70px); }
+.dc-vach b { position: absolute; bottom: calc(100% + clamp(34px, 4.6vw, 72px)); left: 50%; transform: translateX(-50%); z-index: 1;
+  font-family: 'Noto Serif SC', serif; font-weight: 900; font-size: clamp(.8rem, 1.3vw, 1.4rem); color: #c62828; text-shadow: 0 1px 0 #fff; white-space: nowrap; }
+.dc-dich b { bottom: calc(100% + clamp(48px, 6.6vw, 104px)); color: #fff; text-shadow: 0 2px 0 #2b1d3a; }
+.dc-xp b { bottom: calc(100% + clamp(22px, 2.6vw, 40px)); }
+.gon .dc-vach img { width: 40px; }
+.gon .dc-xp img { width: 28px; }
+.gon .dc-vach b { font-size: .7rem; bottom: calc(100% + 26px); }
+.gon .dc-dich b { bottom: calc(100% + 36px); }
+.gon .dc-xp b { bottom: calc(100% + 16px); }
+/* linh vat */
+.dc-vat { position: absolute; bottom: 2px; z-index: 3; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;
+  transition: left 1.1s cubic-bezier(.3, 1.3, .5, 1); }
+.dc-hinh { height: calc(var(--h) * 1.25); width: auto; transform: scaleX(-1); filter: drop-shadow(0 3px 0 rgba(43, 29, 58, .25)); animation: dc-tho 2.2s ease-in-out infinite; transform-origin: bottom center; }
+@keyframes dc-tho { 50% { translate: 0 -2px; } }
+.dc-vat.chay .dc-hinh { animation: dc-chay .32s ease-in-out 4; }
+@keyframes dc-chay { 0%, 100% { translate: 0 0; rotate: 0deg; } 50% { translate: 0 -22%; rotate: -6deg; } }
+.dc-bui { position: absolute; left: -30%; bottom: 0; width: 40%; height: 40%; border-radius: 50%; background: rgba(255, 244, 220, .9); opacity: 0; }
+.dc-vat.chay .dc-bui { animation: dc-bui .9s ease-out; }
+@keyframes dc-bui { 0% { opacity: .9; transform: scale(.4); } 100% { opacity: 0; transform: translateX(-60%) scale(1.6); } }
+.dc-ten { position: absolute; bottom: calc(100% - 4px); left: 50%; transform: translateX(-50%); white-space: nowrap; max-width: 16ch; overflow: hidden; text-overflow: ellipsis;
+  padding: 1px 8px; border: 2px solid #2b1d3a; border-radius: 999px; background: #fff; color: #2b1d3a;
+  font-weight: 800; font-size: clamp(.62rem, calc(var(--h) * .27), 1rem); line-height: 1.3; box-shadow: 0 2px 0 #2b1d3a; }
+.dc-lan.la .dc-ten { background: #ffd54a; }
+.dc-vat.ve .dc-ten { background: #d6f2c9; }
+.dc-vuong { position: absolute; top: calc(var(--h) * -.62); right: -6%; font-size: calc(var(--h) * .42); animation: dc-vuong 1.4s ease-in-out infinite alternate; }
+@keyframes dc-vuong { to { translate: 0 -3px; rotate: 10deg; } }
+.dc-vat.ve .dc-hinh { animation: dc-mung 1s ease-in-out infinite; }
+@keyframes dc-mung { 0%, 100% { translate: 0 0; } 30% { translate: 0 -14%; } }
+/* rung gan */
+.dc-rung-gan { position: relative; z-index: 4; display: flex; justify-content: space-around; align-items: flex-end; height: calc(var(--troi) * .34); margin-top: calc(var(--troi) * -.12); flex: none; pointer-events: none; }
+.dc-rung-gan img { height: 70%; width: auto; aspect-ratio: 1; max-height: 100%; }
+.gon .dc-rung-gan { height: 26px; margin-top: -10px; }
+.dc-an { position: relative; z-index: 5; margin: 0; padding: 0 0 6px; text-align: center; font-size: .8rem; font-weight: 800; color: #2e5d1b; }
+/* ten sat mep duong: neo ten vao trong khung */
+.dc-vat.sat-trai .dc-ten { left: -10px; transform: none; }
+.dc-vat.sat-phai .dc-ten { left: auto; right: -10px; transform: none; }
+.dc-vat.dau .dc-ten { background: #ffd54a; }
+/* ten nam ngang ben trai con vat (phia sau, vi chay sang phai) — khong de len lan tren; sat vach xuat phat thi ten ra phia truoc */
+.dc-vat { flex-direction: row; align-items: center; gap: 2px; transform: translateX(calc(-100% + var(--h) * .72)); }
+.dc-ten { position: static; transform: none; order: 0; align-self: center; margin-bottom: calc(var(--h) * .18); }
+.dc-hinh { order: 1; height: calc(var(--h) * 1.42); margin-bottom: calc(var(--h) * -.12); }
+.dc-vat.sat-trai { transform: translateX(calc(var(--h) * -.72)); }
+.dc-vat.sat-trai .dc-ten { order: 2; left: auto; transform: none; }
+.dc-vat.sat-phai .dc-ten { left: auto; right: auto; transform: none; }
+.dc-bui { left: auto; right: 60%; }
+.dc-ten { flex: none; }

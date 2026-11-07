@@ -1,0 +1,80 @@
+/* Cuoc dua ki thu — man chieu (public/js/lop-dua.js). Sang, tuoi: troi xanh, rung xanh, the kem vien nau. */
+html.ldu-open, html.ldu-open body { overflow: hidden; }
+.ldu {
+  --vien: #2b1d3a; --kem: #fffaf0; --nau: #5b4632; --vang: #ffc83d; --do: #b8322b;
+  position: fixed; inset: 0; z-index: 80; display: flex; flex-direction: column; color: var(--vien);
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  background: linear-gradient(180deg, #8fd3ff 0, #d7f2ff 34%, #bfe6a3 34%, #94cf6f 100%);
+}
+.ldu[hidden], .ldu [hidden] { display: none !important; }
+.ldu [lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.ldu-bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 18px; background: rgba(255, 250, 240, .92); border-bottom: 3px solid var(--vien); }
+.ldu-tit { font-size: 1.3rem; font-weight: 900; color: var(--do); }
+.ldu-tit [lang="zh"] { color: var(--nau); font-size: .85em; }
+.ldu-nhan { padding: 3px 12px; border-radius: 999px; background: #ffe9a8; font-weight: 800; color: var(--nau); }
+.ldu-gian { flex: 1; }
+.ldu-nut-nho { font: inherit; font-weight: 800; padding: 7px 14px; border: 2.5px solid var(--vien); border-radius: 12px; background: #fff; box-shadow: 0 3px 0 var(--vien); cursor: pointer; }
+.ldu-man { flex: 1; min-height: 0; overflow: auto; padding: 18px; }
+.ldu-cho { margin: 0; padding: 18px; text-align: center; font-weight: 800; color: var(--nau); }
+.ldu-go {
+  font: inherit; font-weight: 900; font-size: 1.35rem; padding: 14px 30px; border: 3px solid var(--vien); border-radius: 20px; cursor: pointer;
+  background: linear-gradient(180deg, #ffd96a, #ffb92e); box-shadow: 0 6px 0 var(--vien); color: var(--vien);
+}
+.ldu-go:disabled { background: #e6dfd3; color: #a09685; cursor: default; }
+.ldu-go:active { transform: translateY(3px); box-shadow: 0 3px 0 var(--vien); }
+/* sanh */
+.ldu-sanh { display: grid; grid-template-columns: minmax(260px, 360px) 1fr; gap: 22px; align-items: start; max-width: 1400px; margin: 0 auto; }
+.ldu-qr-the { padding: 18px; border: 4px solid var(--vien); border-radius: 26px; background: var(--kem); box-shadow: 0 8px 0 var(--vien); text-align: center; }
+.ldu-qr svg { width: 100%; height: auto; display: block; }
+.ldu-qr-the p { margin: 6px 0 0; font-weight: 700; }
+.ldu-lb { color: var(--nau); }
+.ldu-ma { font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 900; letter-spacing: .08em; color: #2a1a5e; }
+.ldu-sanh-phai { display: flex; flex-direction: column; gap: 14px; padding: 18px; border: 4px solid var(--vien); border-radius: 26px; background: rgba(255, 250, 240, .95); box-shadow: 0 8px 0 var(--vien); }
+.ldu-sanh-phai h2 { margin: 0; font-size: clamp(1.3rem, 2.4vw, 2rem); color: var(--do); }
+.ldu-sanh-phai h2 [lang="zh"] { color: var(--nau); font-size: .8em; }
+.ldu-ds { display: flex; flex-wrap: wrap; gap: 10px; min-height: 120px; align-content: flex-start; padding: 12px; border-radius: 18px; background: #eaf7e1; border: 3px dashed #8ccf67; }
+.ldu-hs { display: flex; flex-direction: column; align-items: center; width: 108px; animation: ldu-vao .45s cubic-bezier(.3, 1.6, .5, 1); }
+.ldu-hs img { width: 78px; height: 78px; transform: scaleX(-1); animation: ldu-nhun 1.2s ease-in-out infinite; }
+.ldu-hs b { max-width: 100%; padding: 1px 8px; border: 2px solid var(--vien); border-radius: 999px; background: #fff; font-size: .85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@keyframes ldu-vao { from { transform: scale(.3) translateY(30px); opacity: 0; } }
+@keyframes ldu-nhun { 50% { translate: 0 -5px; } }
+.ldu-chon { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-weight: 800; }
+.ldu-chon button { font: inherit; font-weight: 800; padding: 8px 16px; border: 2.5px solid var(--vien); border-radius: 999px; background: #fff; cursor: pointer; }
+.ldu-chon button.on { background: var(--vang); box-shadow: 0 3px 0 var(--vien); }
+.ldu-luat { margin: 0; color: var(--nau); font-weight: 600; }
+/* dang dua */
+.ldu-chay { display: grid; grid-template-columns: 1fr minmax(240px, 300px); gap: 16px; align-items: start; }
+.ldu-duong .dc-canh { --troi: 170px; --h: clamp(34px, calc((100vh - 330px) / var(--so)), 86px); }
+.ldu-ben { display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 4px solid var(--vien); border-radius: 22px; background: rgba(255, 250, 240, .96); box-shadow: 0 6px 0 var(--vien); }
+.ldu-ben-qr { display: flex; align-items: center; gap: 10px; font-size: .85rem; font-weight: 700; }
+.ldu-ben-qr svg { width: 84px; height: 84px; flex: none; }
+.ldu-ben-h { font-weight: 900; color: var(--do); margin-top: 4px; }
+.ldu-top { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.ldu-top li, .ldu-bxh li { display: grid; grid-template-columns: 28px 38px 1fr auto; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 12px; background: #fff; border: 2px solid #eadfcf; font-weight: 700; }
+.ldu-top img, .ldu-bxh img { width: 36px; height: 36px; transform: scaleX(-1); }
+.ldu-top b, .ldu-bxh b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ldu-top small, .ldu-bxh small { color: var(--nau); font-variant-numeric: tabular-nums; }
+.ldu-tin p { margin: 0 0 4px; padding: 4px 8px; border-radius: 10px; background: #fff7e0; font-size: .88rem; font-weight: 600; animation: ldu-vao .4s ease; }
+.ldu-xong { margin: 4px 0; font-weight: 800; text-align: center; }
+/* buc trao giai */
+.ldu-het { display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 980px; margin: 0 auto; }
+.ldu-het h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.6rem); color: var(--do); text-shadow: 0 2px 0 #fff; }
+.ldu-buc { display: flex; align-items: flex-end; justify-content: center; gap: 14px; width: 100%; }
+.ldu-buc-o { display: flex; flex-direction: column; align-items: center; width: 30%; }
+.ldu-buc-ten { padding: 4px 16px; border: 3px solid var(--vien); border-radius: 999px; background: #fff; font-weight: 900; font-size: 1.2rem; box-shadow: 0 3px 0 var(--vien); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ldu-buc-o img { width: clamp(110px, 14vw, 190px); height: auto; transform: scaleX(-1); animation: ldu-nhun 1s ease-in-out infinite; }
+.ldu-buc-khoi { width: 100%; display: flex; flex-direction: column; align-items: center; padding-top: 10px; border: 4px solid var(--vien); border-radius: 18px 18px 0 0; }
+.ldu-buc-o.b1 .ldu-buc-khoi { height: 200px; background: #ffd54a; }
+.ldu-buc-o.b2 .ldu-buc-khoi { height: 150px; background: #dfe6ee; }
+.ldu-buc-o.b3 .ldu-buc-khoi { height: 130px; background: #f0b98a; }
+.ldu-buc-khoi b { font-size: 3rem; }
+.ldu-buc-khoi small { font-weight: 900; font-size: 1.1rem; }
+.ldu-bxh { list-style: none; margin: 0; padding: 0; width: 100%; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 6px; }
+@media (max-width: 900px) { .ldu-sanh, .ldu-chay { grid-template-columns: 1fr; } }
+/* cot ben gon lai cho vua man chieu 720p */
+.ldu-ben { max-height: calc(100vh - 110px); overflow: auto; gap: 6px; padding: 10px 12px; }
+.ldu-ben-qr svg { width: 64px; height: 64px; }
+.ldu-top li { padding: 2px 8px; }
+.ldu-top img { width: 30px; height: 30px; }
+.ldu-ben .ldu-go { font-size: 1.05rem; padding: 10px 14px; }
+.ldu-tin p { font-size: .82rem; }

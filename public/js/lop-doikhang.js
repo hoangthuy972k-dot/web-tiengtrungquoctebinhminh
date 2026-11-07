@@ -101,7 +101,8 @@
   }
 
   function moPhong() {
-    S.cau = tron(S.goc).slice(0, MAX_CAU).map(chuanCau);
+    // bo cau tu ngan hang Kiem tra bai cu (da dung dinh dang cau-hoi.js) hoac cau trac nghiem cu
+    S.cau = S.dt ? tron(S.goc).slice(0, MAX_CAU) : tron(S.goc).slice(0, MAX_CAU).map(chuanCau);
     return fetch('/api/dk/tao', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ cau: S.cau, nhan: S.nhan, giay: S.giay })
@@ -483,7 +484,9 @@
     S.giay = GIAY.indexOf(p.giay) >= 0 ? p.giay : 120;
     S.thang = !!p.thang;
     S.sound = p.sound !== false;
-    S.goc = (opt.cau || []).filter(function (q) {
+    // opt.cauDt: bo cau dien thoai (trac nghiem + xep cau + noi tu) tu ngan hang Kiem tra bai cu
+    S.dt = Array.isArray(opt.cauDt) && opt.cauDt.length > 0;
+    S.goc = S.dt ? opt.cauDt.slice() : (opt.cau || []).filter(function (q) {
       return q && Array.isArray(q.options) && q.options.length >= 2;
     });
     S.nhan = opt.nhan || '';

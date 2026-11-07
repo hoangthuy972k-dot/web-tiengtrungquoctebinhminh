@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Cuộc đua kì thú · Hi Hán 喜汉</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#8fd3ff">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/dua-canh.css">
+<link rel="stylesheet" href="/css/cau-dt.css">
+<link rel="stylesheet" href="/css/dua.css">
+<link rel="stylesheet" href="/css/sao-game.css">
+</head>
+<body>
+<main class="du" id="du">
+
+  <!-- Vao phong -->
+  <section class="du-man" id="manVao">
+    <a class="du-ve" href="/"><span aria-hidden="true">←</span> Về trang học</a>
+    <div class="du-logo" aria-hidden="true"><img src="/images/dua/cay-tron.svg" alt=""><img src="/images/dua/tho.svg" alt="" class="lat"><img src="/images/dua/rua.svg" alt="" class="lat"></div>
+    <h1 class="du-tit">Cuộc đua kì thú <span lang="zh">奇妙赛跑</span></h1>
+    <p class="du-mo">Nhập mã phòng trên bảng và tên của em.</p>
+    <form class="du-the du-form" id="formVao" autocomplete="off">
+      <label for="oMa">Mã phòng</label>
+      <input id="oMa" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="123456" required>
+      <label for="oTen">Tên hiện trên con vật của em</label>
+      <input id="oTen" maxlength="16" placeholder="Ví dụ: Minh Anh" required>
+      <button type="submit" class="du-nut">Chọn linh vật ▶</button>
+      <p class="du-loi" id="loiVao" role="alert"></p>
+    </form>
+  </section>
+
+  <!-- Chon linh vat -->
+  <section class="du-man" id="manLv" hidden>
+    <h2 class="du-tit">Chọn linh vật của em <span lang="zh">选动物</span></h2>
+    <p class="du-mo">Con vật này sẽ chạy trên đường đua mang tên <b id="lvTen"></b></p>
+    <div class="du-lv" id="dsLv" role="listbox" aria-label="Linh vật"></div>
+    <button type="button" class="du-nut du-nut-to" id="nutVaoDua" disabled>Vào đường đua 🏁</button>
+    <button type="button" class="du-nut du-nut-phu" id="nutLvLui">← Sửa tên / mã phòng</button>
+    <p class="du-loi" id="loiLv" role="alert"></p>
+  </section>
+
+  <!-- Cho xuat phat -->
+  <section class="du-man" id="manCho" hidden>
+    <div class="du-em">
+      <span class="du-em-ten" id="choTen"></span>
+      <img class="du-em-hinh" id="choHinh" src="" alt="" draggable="false">
+      <span class="du-em-co" aria-hidden="true"></span>
+    </div>
+    <h2 class="du-tit" id="choTit">Đã vào vạch xuất phát!</h2>
+    <p class="du-mo" id="choMo">Nhìn lên bảng — cô sắp bắn súng xuất phát 🔫</p>
+    <p class="du-lv-zh" id="choLv"></p>
+  </section>
+
+  <!-- Cau hoi -->
+  <section class="du-man du-man-hoi" id="manHoi" hidden>
+    <div class="du-dau">
+      <span id="soCau"></span>
+      <span class="du-mini" aria-hidden="true"><i id="miniVach"></i><img id="miniHinh" src="" alt=""></span>
+    </div>
+    <div class="du-the du-hoi">
+      <p class="du-lenh" id="cauLenh" hidden></p>
+      <div class="du-cau" id="cauZh"></div>
+      <div class="du-ctx" id="cauCtx"></div>
+    </div>
+    <div class="du-opts" id="opts"></div>
+  </section>
+
+  <!-- Ket qua cau -->
+  <section class="du-man du-kq" id="manKq" hidden>
+    <div class="du-kq-vat"><img id="kqHinh" src="" alt="" draggable="false"><span class="du-kq-hieu" id="kqHieu" aria-hidden="true"></span></div>
+    <h2 class="du-tit" id="kqTit"></h2>
+    <p class="du-kq-cong" id="kqCong"></p>
+    <p class="du-kq-dap" id="kqDap"></p>
+    <p class="du-kq-why" id="kqWhy"></p>
+    <button type="button" class="du-nut du-nut-to" id="nutTiep">Câu tiếp →</button>
+  </section>
+
+  <!-- Toan canh duong dua -->
+  <section class="du-man du-tc" id="manTc" hidden>
+    <h2 class="du-tit"><span aria-hidden="true">🌳</span> Toàn cảnh đường đua</h2>
+    <p class="du-tc-hang" id="tcHang"></p>
+    <div class="du-tc-canh" id="tcCanh"></div>
+    <button type="button" class="du-nut du-nut-to" id="nutChayTiep">Chạy tiếp →</button>
+  </section>
+
+  <!-- Ve dich -->
+  <section class="du-man du-tc" id="manXong" hidden>
+    <h2 class="du-tit">👏 Em đã làm xong tất cả câu hỏi!</h2>
+    <p class="du-tc-hang" id="xongHang"></p>
+    <div class="du-tc-canh" id="xongCanh"></div>
+    <p class="du-mo">Chờ cô kết thúc để lên bục trao giải nhé.</p>
+  </section>
+
+  <!-- Ket thuc -->
+  <section class="du-man" id="manHet" hidden>
+    <h2 class="du-tit">🏆 Bục trao giải</h2>
+    <div class="du-buc" id="hetBuc"></div>
+    <p class="du-tc-hang" id="hetHang"></p>
+    <button type="button" class="du-nut du-nut-phu" id="nutLai">Vào phòng khác</button>
+  </section>
+
+  <footer class="du-chan" id="chan" hidden>
+    <img class="du-chan-hinh" id="chanHinh" src="" alt="">
+    <span id="chanTen"></span>
+    <span class="du-chan-bao" id="chanBao" role="status" aria-live="polite" hidden></span>
+    <b id="chanBuoc">0 bước</b>
+  </footer>
+</main>
+<script src="/js/sao-game.js"></script>
+<script src="/js/dua-canh.js"></script>
+<script src="/js/cau-dt.js"></script>
+<script src="/js/dua.js"></script>
+</body>
+</html>

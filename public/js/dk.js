@@ -183,8 +183,18 @@
     s.cau = c.cau;
     $('soCau').textContent = 'Câu ' + (c.i + 1) + '/' + c.tong;
     var q = c.cau;
-    $('cauZh').textContent = (q.ctx ? '🗣️ ' + q.ctx + '\n' : '') + (q.zh || '');
+    $('cauLenh').textContent = q.lenh || '';
+    $('cauLenh').hidden = !q.lenh;
     var o = $('opts');
+    // xep cau (keo tha) / noi tu: ve bang cau-dt.js
+    if (q.k && window.CauDT) {
+      $('cauZh').textContent = window.CauDT.deBai(q);
+      $('cauZh').className = 'dk-cau dk-cau-nho';
+      window.CauDT.ve(o, q, function (tl) { gui(tl); });
+      return;
+    }
+    $('cauZh').className = 'dk-cau';
+    $('cauZh').textContent = (q.ctx ? '🗣️ ' + q.ctx + '\n' : '') + (q.zh || '');
     o.className = 'dk-opts n' + q.opts.length;
     o.innerHTML = q.opts.map(function (t, k) {
       return '<button type="button" class="dk-opt o' + k + '" data-i="' + k + '">' +
@@ -202,20 +212,26 @@
   }
 
   function chon(k) {
-    if (s.gui || s.fxDen > Date.now() || s.i < 0) return;
-    s.gui = true;
-    khoaNut(true);
-    var cau = s.cau;
     var nut = $('opts').querySelector('[data-i="' + k + '"]');
-    if (nut) nut.classList.add('da-chon');
-    api('POST', '/api/dk/' + s.ma + '/tl', { pid: s.pid, tok: s.tok, i: s.i, chon: k }).then(function (r) {
+    if (nut && !s.gui && !(s.fxDen > Date.now())) nut.classList.add('da-chon');
+    gui({ chon: k });
+  }
+  // tl = { chon } (trac nghiem) | { xep } | { noi } — xem cau-hoi.js
+  function gui(tl) {
+    var cau = s.cau, dacBiet = !!(cau && cau.k && window.CauDT);
+    if (s.gui || s.fxDen > Date.now() || s.i < 0) { if (dacBiet) window.CauDT.moLai($('opts')); return; }
+    s.gui = true;
+    if (!dacBiet) khoaNut(true);
+    api('POST', '/api/dk/' + s.ma + '/tl', Object.assign({ pid: s.pid, tok: s.tok, i: s.i }, tl)).then(function (r) {
       s.gui = false;
       s.ver++;
       if (window.SaoGame) { if (r.dung) window.SaoGame.dung(); else window.SaoGame.sai(); }
-      phanHoi(r.dung, r.dung ? '' : (CHU[r.dap] + '. ' + (cau && cau.opts[r.dap] || '')), r.dung ? 450 : 1500);
+      var dap = r.dung ? '' : dacBiet ? window.CauDT.dapText(cau, r.dap) : (CHU[r.dap] + '. ' + (cau && cau.opts[r.dap] || ''));
+      phanHoi(r.dung, dap, r.dung ? 450 : (dacBiet ? 2600 : 1500));
       if (r.tt) { s.tt = r.tt; if (r.tt.cap) veDay(r.tt.cap); }
     }).catch(function (e) {
       s.gui = false;
+      if (dacBiet) window.CauDT.moLai($('opts'));
       if (e.status === 429) { phanHoi(null, '', e.d && e.d.khoa || 800); return; }
       khoaNut(false);
       if (e.d && e.d.tt) { s.i = -1; ve(e.d.tt); }

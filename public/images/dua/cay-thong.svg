@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="85.5" rx="28" ry="5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="44.5" y="72" width="11" height="14" rx="3" fill="#7a4a30"/>
+<path d="M52 76V83" stroke="#5c3520"/>
+<path d="M50 42Q64 60.7 81 76Q73.3 80 65.5 76Q57.8 80 50 76Q42.3 80 34.5 76Q26.8 80 19 76Q36.1 60.7 50 42Z" fill="#2c7348" stroke="none"/><path d="M50 42Q64 60.7 81 76Q73.3 80 65.5 76Q60.9 62.4 50 42Z" fill="#1f5a37" stroke="none"/>
+<ellipse cx="36.1" cy="63.1" rx="5.3" ry="1.8" fill="#4f9a6c" stroke="none" transform="rotate(-50 36.1 63.1)"/>
+<path d="M50 42Q64 60.7 81 76Q73.3 80 65.5 76Q57.8 80 50 76Q42.3 80 34.5 76Q26.8 80 19 76Q36.1 60.7 50 42Z" fill="none"/>
+<path d="M50 28Q61.3 45.6 75 60Q68.8 64 62.5 60Q56.3 64 50 60Q43.8 64 37.5 60Q31.3 64 25 60Q38.8 45.6 50 28Z" fill="#30794c" stroke="none"/><path d="M50 28Q61.3 45.6 75 60Q68.8 64 62.5 60Q58.8 47.2 50 28Z" fill="#20603a" stroke="none"/>
+<ellipse cx="38.8" cy="47.8" rx="4.3" ry="1.8" fill="#56a373" stroke="none" transform="rotate(-50 38.8 47.8)"/>
+<path d="M50 28Q61.3 45.6 75 60Q68.8 64 62.5 60Q56.3 64 50 60Q43.8 64 37.5 60Q31.3 64 25 60Q38.8 45.6 50 28Z" fill="none"/>
+<path d="M50 15Q58.6 31.5 69 45Q64.3 49 59.5 45Q54.8 49 50 45Q45.3 49 40.5 45Q35.8 49 31 45Q41.5 31.5 50 15Z" fill="#358052" stroke="none"/><path d="M50 15Q58.6 31.5 69 45Q64.3 49 59.5 45Q56.7 33 50 15Z" fill="#22653d" stroke="none"/>
+<ellipse cx="41.5" cy="33.6" rx="3.2" ry="1.8" fill="#5cab7a" stroke="none" transform="rotate(-50 41.5 33.6)"/>
+<path d="M50 15Q58.6 31.5 69 45Q64.3 49 59.5 45Q54.8 49 50 45Q45.3 49 40.5 45Q35.8 49 31 45Q41.5 31.5 50 15Z" fill="none"/>
+<path d="M50 4Q55.4 18.3 62 30Q59 34 56 30Q53 34 50 30Q47 34 44 30Q41 34 38 30Q44.6 18.3 50 4Z" fill="#3a8857" stroke="none"/><path d="M50 4Q55.4 18.3 62 30Q59 34 56 30Q54.2 19.6 50 4Z" fill="#256a41" stroke="none"/>
+<ellipse cx="44.6" cy="20.1" rx="2.5" ry="1.8" fill="#63b382" stroke="none" transform="rotate(-50 44.6 20.1)"/>
+<path d="M50 4Q55.4 18.3 62 30Q59 34 56 30Q53 34 50 30Q47 34 44 30Q41 34 38 30Q44.6 18.3 50 4Z" fill="none"/>
+</g>
+</svg>

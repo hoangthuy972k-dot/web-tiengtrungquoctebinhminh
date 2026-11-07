@@ -66,6 +66,12 @@
       hien('manCho');
       batDauPoll();
     }).catch(function (e) {
+      // Phong Cuoc dua ki thu: sang /dua de chon linh vat
+      if (e.d && e.d.dua) {
+        try { localStorage.setItem('hyv_choi_ten', ten); } catch (er) { /* bo qua */ }
+        location.href = '/dua?ma=' + ma;
+        return;
+      }
       // Ma cua phong Thi tren lop (/thi) chu khong phai phong choi -> chuyen sang phong thi
       if (e.status === 404) {
         return fetch('/api/thi-lop/' + ma + '/thong-tin').then(function (r) {
@@ -123,9 +129,22 @@
   function veCau(d) {
     var c = d.cau || { opts: [] };
     $('soCau').textContent = 'Câu ' + (c.so || d.qid) + (c.tong ? '/' + c.tong : '');
-    $('cauZh').textContent = (c.ctx ? '🗣️ ' + c.ctx + String.fromCharCode(10) : '') + (c.zh || '');
+    $('cauLenh').textContent = c.lenh || '';
+    $('cauLenh').hidden = !c.lenh;
     $('demGio').hidden = !!s.nhip;
     var o = $('opts');
+    // xep cau (keo tha) / noi tu: ve bang cau-dt.js
+    if (c.k && window.CauDT) {
+      $('cauZh').textContent = window.CauDT.deBai(c);
+      $('cauZh').className = 'ch-cau ch-cau-nho';
+      window.CauDT.ve(o, c, function (tl) { guiNhip(tl, c); });
+      s.cau = c;
+      hien('manHoi');
+      rung(40);
+      return;
+    }
+    $('cauZh').className = 'ch-cau';
+    $('cauZh').textContent = (c.ctx ? '🗣️ ' + c.ctx + String.fromCharCode(10) : '') + (c.zh || '');
     o.className = 'ch-opts n' + c.opts.length;
     o.innerHTML = c.opts.map(function (t, i) {
       return '<button type="button" class="ch-opt o' + i + '" data-i="' + i + '">' +
@@ -299,12 +318,14 @@
       veCau(d);
     }
   }
-  function chonNhip(i, c) {
+  function chonNhip(i, c) { guiNhip({ chon: i }, c); }
+  // tl = { chon } (trac nghiem) | { xep } | { noi } — xem cau-hoi.js
+  function guiNhip(tl, c) {
     if (s.dangPh) return;
     s.dangPh = true;
-    Array.prototype.forEach.call($('opts').querySelectorAll('button'), function (b) { b.disabled = true; });
+    if (!c.k) Array.prototype.forEach.call($('opts').querySelectorAll('button'), function (b) { b.disabled = true; });
     rung(25);
-    api('POST', '/api/live/' + s.ma + '/tl', { pid: s.pid, tok: s.tok, i: s.nhipI, chon: i }).then(function (r) {
+    api('POST', '/api/live/' + s.ma + '/tl', Object.assign({ pid: s.pid, tok: s.tok, i: s.nhipI }, tl)).then(function (r) {
       $('chanDiem').textContent = r.diem;
       if (r.dung == null) { s.dangPh = false; s.nhipI = -1; return; }
       saoCau('n' + s.nhipI, r.dung);
@@ -312,7 +333,7 @@
       datIc($('kqIc'), r.dung ? '✓' : '✗');
       $('kqTit').textContent = r.dung ? 'Chính xác!' : 'Chưa đúng rồi';
       $('kqCong').textContent = r.dung ? '+' + r.cong + (r.chuoi >= 2 ? '  🔥 chuỗi ' + r.chuoi : '') : '';
-      $('kqDung').innerHTML = r.dung ? '' : 'Đáp án: <b>' + HINH[r.dap] + ' ' + esc(c.opts[r.dap] || '') + '</b>';
+      $('kqDung').innerHTML = r.dung ? '' : c.k && window.CauDT ? 'Đáp án: ' + window.CauDT.dapHtml(c, r.dap) : 'Đáp án: <b>' + HINH[r.dap] + ' ' + esc(c.opts[r.dap] || '') + '</b>';
       $('kqHang').innerHTML = '';
       $('kqViTri').innerHTML = r.vt ? viTriHtml(r.vt, r) : '';
       $('kqWhy').textContent = r.why ? '💡 ' + r.why : '';
@@ -324,7 +345,10 @@
     }).catch(function (e) {
       s.dangPh = false;
       s.nhipI = -1; // lech cau (vd. mo 2 tab): lay lai cau hien tai
-      if (e.status !== 409) Array.prototype.forEach.call($('opts').querySelectorAll('button'), function (b) { b.disabled = false; });
+      if (e.status !== 409) {
+        if (c.k && window.CauDT) window.CauDT.moLai($('opts'));
+        else Array.prototype.forEach.call($('opts').querySelectorAll('button'), function (b) { b.disabled = false; });
+      }
       batDauPoll();
     });
   }

@@ -6,6 +6,7 @@
 // Le mot ban thi ghep voi "Ro-bot" (dung ~60%, tra loi sau 2.5-5.5 giay ngau nhien).
 // Phong chi luu trong bo nho — tat may chu la mat, du cho mot tiet hoc.
 const crypto = require('crypto');
+const CauHoi = require('./cau-hoi');
 
 const MAX_PHONG = 200;
 const MAX_HS = 80;
@@ -51,15 +52,8 @@ function tron(a) {
 function ngauNhien(a, b) { return a + Math.floor(Math.random() * (b - a)); }
 function soGiay(v, mac) { const n = Number(v); return Number.isFinite(n) ? Math.max(30, Math.min(600, Math.round(n))) : mac; }
 
-// Kiem tra bo cau giao vien gui len: { zh, ctx, why, opts[2..4], dung }
-function chuanBoCau(ds) {
-  return (Array.isArray(ds) ? ds : []).slice(0, MAX_CAU).map((c) => {
-    c = c || {};
-    const opts = Array.isArray(c.opts) ? c.opts.slice(0, 4).map((o) => chuoi(o, 120)) : [];
-    const dung = Number(c.dung);
-    return { zh: chuoi(c.zh, 300), ctx: chuoi(c.ctx, 200), why: chuoi(c.why, 300), opts, dung: Number.isInteger(dung) && dung >= 0 && dung < opts.length ? dung : -1 };
-  }).filter((c) => c.opts.length >= 2 && c.dung >= 0 && c.opts.every((o) => o.trim()));
-}
+// Kiem tra bo cau giao vien gui len: trac nghiem / xep cau / noi tu (xem cau-hoi.js)
+function chuanBoCau(ds) { return CauHoi.chuanBo(ds, MAX_CAU); }
 
 /* ---------------- cap dau ---------------- */
 // cap = { id, vong, pid: [pidA, pidB|null], ten: [..], day (+ ve phia A), i, keo, sai, khoa, thuTu, bot, kq, lyDo }
@@ -182,7 +176,7 @@ function trangThaiHs(p, h) {
     };
     if (!c.kq && !hetCau(p, c, s)) {
       const q = p.ds[c.thuTu[c.i[s]]];
-      o.cau = { zh: q.zh, ctx: q.ctx, opts: q.opts };
+      o.cau = CauHoi.choHs(q);
     }
     out.cap = o;
   }
@@ -336,13 +330,13 @@ module.exports = function gan(app) {
     const now = Date.now();
     if (now < c.khoa[s]) return res.status(429).json({ error: 'Đợi một chút rồi chọn tiếp nhé.', khoa: c.khoa[s] - now });
     const q = p.ds[c.thuTu[c.i[s]]];
-    const chon = Number(b.chon);
-    if (!Number.isInteger(chon) || chon < 0 || chon >= q.opts.length) return res.status(400).json({ error: 'Đáp án không hợp lệ.' });
-    const dung = chon === q.dung;
+    const kq = CauHoi.cham(q, b);
+    if (!kq.hopLe) return res.status(400).json({ error: 'Đáp án không hợp lệ.' });
+    const dung = kq.dung;
     if (dung) { h.keo++; h.dung++; } else h.sai++;
     traLoi(p, c, s, dung, now);
     xemHetVong(p);
-    res.json({ dung, dap: q.dung, why: q.why, tt: trangThaiHs(p, h) });
+    res.json({ dung, dap: CauHoi.dapAn(q), why: q.why, tt: trangThaiHs(p, h) });
   });
 };
 

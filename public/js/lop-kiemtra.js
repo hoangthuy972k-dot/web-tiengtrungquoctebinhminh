@@ -427,7 +427,60 @@
     return chonLoai(P, all.filter(function (x) { return Math.abs(KHO[x] - kho) === min; }), nho);
   }
 
+  /* Bo cau cho tro choi tren dien thoai (Thi dua tren dien thoai, Doi khang, Cuoc dua ki thu):
+     lay tu ngan hang Kiem tra bai cu, chi cac dang may tu cham duoc — KHONG co cau dich.
+     Tra ve dinh dang cua cau-hoi.js (may chu): trac nghiem { lenh, zh, ctx, why, opts, dung },
+     xep cau { k:'xep', lenh, ctx, why, tu, dap }, noi tu { k:'noi', lenh, why, trai, phai, dap }. */
+  var LOAI_DT = ['nghia', 'viet', 'nguphap', 'dien', 'xepcau', 'noi'];
+  function nhieuTu(P, v, khoa, n) {
+    var thay = {}; thay[v[khoa]] = 1;
+    return tron(P.vocab.filter(function (w) { if (!w[khoa] || thay[w[khoa]]) return false; thay[w[khoa]] = 1; return true; })).slice(0, n);
+  }
+  function sangDt(P, q) {
+    var de = q.de || {}, dap = q.dap || {}, l = q.loai, opts, x;
+    if (l === 'nghia' || l === 'viet') {
+      x = q.tu;
+      var khoa = l === 'nghia' ? 'vn' : 'zh';
+      var ds = [x].concat(nhieuTu(P, x, khoa, 3));
+      if (ds.length < 3) return null;
+      opts = tron(ds.map(function (w) { return w[khoa]; }));
+      return l === 'nghia'
+        ? { lenh: 'Từ này nghĩa là gì?', zh: x.zh, ctx: x.py || '', why: x.hv ? 'Hán Việt: ' + x.hv : '', opts: opts, dung: opts.indexOf(x.vn) }
+        : { lenh: 'Chọn chữ Hán đúng nghĩa', zh: x.vn, ctx: '', why: x.py ? x.zh + ' — ' + x.py : '', opts: opts, dung: opts.indexOf(x.zh) };
+    }
+    if ((l === 'nguphap' || l === 'dien') && q.luaChon && de.mc) {
+      return { lenh: q.lenh, zh: de.mc.pre + (de.mc.noBlank ? '' : '＿＿') + de.mc.post, ctx: de.phu || '', why: dap.giai || dap.them || '',
+        opts: q.luaChon.opts.slice(0, 4), dung: q.luaChon.dung };
+    }
+    if (l === 'xepcau' && de.tu && dap.zh) return { k: 'xep', lenh: 'Xếp các từ thành câu đúng', ctx: dap.vn || de.phu || '', why: dap.giai || '', tu: de.tu.slice(), dap: dap.zh };
+    if (l === 'noi' && de.noi) return { k: 'noi', lenh: 'Nối từ với nghĩa đúng', why: '', trai: de.noi.trai, phai: de.noi.phai, dap: de.noi.dap };
+    return null;
+  }
+  // n cau, cac dang xen ke deu nhau; ds = danh sach dang (mac dinh LOAI_DT)
+  function boCauDt(opt, n, ds) {
+    var P = chuanHoa(opt), nho = nhoSach({}), out = [], thay = {}, lan = 0;
+    while (out.length < n && lan < n * 4) {
+      lan++;
+      var l = chonLoai(P, ds || LOAI_DT, nho);
+      if (!l) break;
+      var q = taoCauP(P, l, nho);
+      if (!q || thay[q.key]) continue;
+      var c = sangDt(P, q);
+      if (!c || (c.opts && c.dung < 0)) continue;
+      thay[q.key] = 1;
+      out.push(c);
+    }
+    return out;
+  }
+  // So cau toi da lam duoc (de giao vien chon "Tat ca")
+  function soCauDt(opt) {
+    var P = chuanHoa(opt);
+    return P.vocab.length * 2 + P.mcs.length + P.dien.length + P.sorts.length + Math.floor(P.vocab.length / 4);
+  }
+
   var LOI = {
+    _boCauDt: boCauDt,
+    _soCauDt: soCauDt,
     _taoCau: function (opt, loai, nho) { return taoCauP(chuanHoa(opt), loai, nho); },
     _loaiCo: function (opt) { return loaiCo(chuanHoa(opt)); },
     _taoTheoKho: function (opt, kho, ds, nho) {

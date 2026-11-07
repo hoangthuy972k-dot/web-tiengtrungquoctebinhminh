@@ -207,7 +207,7 @@ function sendVersionedHtml(res, filePath) {
 // CDN cua Hostinger phuc vu thang cac duong dan co duoi .html nen chung khong di
 // qua day, khong duoc dong dau ?v= va trinh duyet giu mai ban CSS/JS cu. Cac trang
 // dung thuong xuyen co them duong dan khong duoi file de luon qua Node.
-const CLEAN_PAGES = { '/lop': 'lop.html', '/choi': 'choi.html', '/quet': 'quet.html', '/nghieng': 'nghieng.html', '/van-dong': 'van-dong.html', '/dk': 'dk.html','/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html', '/nong-trai': 'nong-trai.html', '/thi-lop': 'thi-lop.html', '/thi': 'exam/test/index.html' };
+const CLEAN_PAGES = { '/lop': 'lop.html', '/choi': 'choi.html', '/quet': 'quet.html', '/nghieng': 'nghieng.html', '/van-dong': 'van-dong.html', '/dk': 'dk.html', '/dua': 'dua.html','/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html', '/nong-trai': 'nong-trai.html', '/thi-lop': 'thi-lop.html', '/thi': 'exam/test/index.html' };
 
 // Trang Phat am da bo: ai con giu duong dan cu thi dua ve trang chu
 app.get(['/phat-am', '/phat-am.html'], (req, res) => res.redirect(301, '/'));

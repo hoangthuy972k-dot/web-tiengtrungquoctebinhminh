@@ -1343,7 +1343,8 @@
     }
     var d = l.info || { pha: 'cho', ds: [], bxh: [], soHs: 0 };
     var link = location.origin + '/choi?ma=' + l.ma;
-    var tong = pickedMcs().length;
+    // bo cau dien thoai gom ca tu vung, xep cau, noi tu (ngan hang Kiem tra bai cu) -> nhieu hon so cau trac nghiem
+    var tong = Math.max(10, Math.min(60, pickedMcs().length + pickedSorts().length + 20));
     // Dung khung mot lan cho moi pha, cac lan hoi sau chi cap nhat phan dong
     if (l.ve !== d.pha) {
       l.ve = d.pha;
@@ -1614,23 +1615,38 @@
     veChua();
   }
 
+  // Bo cau cho tro choi tren dien thoai: ngan hang Kiem tra bai cu cua cac bai dang chon (tu vung, ngu phap,
+  // dien tu, xep cau keo tha, noi tu — khong lay cau dich). Thieu du lieu thi dung cau trac nghiem cu.
+  function cauDienThoai(n) {
+    return loadPickedVocab().then(function (v) {
+      var ds = window.LopKiemTra && window.LopKiemTra._boCauDt
+        ? window.LopKiemTra._boCauDt({ vocab: v.map(boPy), mcs: pickedMcs(), sorts: pickedSorts() }, n) : [];
+      if (ds.length) return ds;
+      return boc(pickedMcs(), n).map(function (q) {
+        var thu = shuffle(q.options.map(function (_, i) { return i; }));
+        return { zh: q.pre + (q.noBlank ? '' : '＿＿') + q.post, ctx: q.context || '', why: q.why || '',
+          opts: thu.map(function (oi) { return q.options[oi]; }), dung: thu.indexOf(q.answer) };
+      });
+    });
+  }
+  // Ban sao cho man chieu (thong ke chua bai): xep cau / noi tu hien nhu cau 2 lua chon Dung / Sai
+  function cauChoChua(c) {
+    if (c.k === 'xep') return { zh: '🔀 ' + c.dap, ctx: c.ctx || '', why: c.why || '', opts: ['Xếp đúng', 'Xếp sai'], dung: 0 };
+    if (c.k === 'noi') return { zh: '🔗 ' + c.trai.map(function (t, i) { return t + ' – ' + c.phai[c.dap[i]]; }).join(' · '), ctx: '', why: '', opts: ['Nối đúng', 'Nối sai'], dung: 0 };
+    return c;
+  }
   function nhipBatDau() {
     var l = state.live;
     if (!l) return;
     var b = $('#lopNhipGo');
     b.disabled = true;
-    var cau = boc(pickedMcs(), state.nhipSo).map(function (q) {
-      var thu = shuffle(q.options.map(function (_, i) { return i; }));
-      return {
-        zh: q.pre + (q.noBlank ? '' : '＿＿') + q.post,
-        ctx: q.context || '', why: q.why || '',
-        opts: thu.map(function (oi) { return q.options[oi]; }),
-        dung: thu.indexOf(q.answer),
-      };
-    });
-    liveApi('POST', 'batdau', { cau: cau }).then(function () {
+    cauDienThoai(state.nhipSo).then(function (cau) {
+      if (state.live !== l) return;
+      return liveApi('POST', 'batdau', { cau: cau }).then(function () { return cau; });
+    }).then(function (cau) {
+      if (!cau) return;
       l.bd = Date.now();
-      l.cau = cau;
+      l.cau = cau.map(cauChoChua);
       try { sndFanfare(); } catch (e) { /* */ }
       nhipTai();
     }).catch(function (e) { b.disabled = false; alert(e.message); });
@@ -3228,7 +3244,13 @@
     if (game === 'luot' && window.LopLuot) { window.LopLuot.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
     if (game === 'bay' && window.LopBay) { window.LopBay.mo({ cau: pickedSorts(), nhan: pickedLabel() }); return; }
     if (game === 'doantau' && window.LopDoanTau) { window.LopDoanTau.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
-    if (game === 'doikhang' && window.LopDoiKhang) { window.LopDoiKhang.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
+    // Cuoc dua ki thu: bo cau lay tu ngan hang Kiem tra bai cu (khong co cau dich)
+    if (game === 'dua' && window.LopDua) { window.LopDua.mo({ layCau: cauDienThoai, nhan: pickedLabel() }); return; }
+    if (game === 'doikhang' && window.LopDoiKhang) {
+      // cau lay tu ngan hang Kiem tra bai cu (khong co cau dich): trac nghiem, xep cau keo tha, noi tu
+      cauDienThoai(200).then(function (ds) { window.LopDoiKhang.mo({ cauDt: ds, cau: pickedMcs(), nhan: pickedLabel() }); });
+      return;
+    }
     if (game === 'zombie' && window.LopZombie) { window.LopZombie.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
     if (game === 'ghep' && window.LopGhep) { window.LopGhep.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
     if (game === 'ochu' && window.LopOChu) {
@@ -3547,14 +3569,14 @@
     { ten: '⚡ Khởi động nhanh — cả lớp cùng chơi', g: ['chuong', 'abc', 'zombie', 'listen', 'match', 'hv'] },
     { ten: '🤸 Vận động trước webcam', g: ['nghieng', 'chem', 'theduc', 'ngoisao'] },
     { ten: '🏆 Đấu tổ kịch tính', g: ['tug', 'train', 'mine', 'ghep', 'luot'] },
-    { ten: '📱 Học sinh dùng điện thoại', g: ['nhip', 'doikhang'] },
+    { ten: '📱 Học sinh dùng điện thoại', g: ['dua', 'nhip', 'doikhang'] },
     { ten: '📚 Ôn từ vựng', g: ['bingo', 'ochu', 'guess', 'tiles', 'hanzi', 'chain'] },
     { ten: '🧩 Câu & ngữ pháp', g: ['errfix', 'sort', 'bay', 'doantau', 'trans'] },
     { ten: '🎤 Nói – viết', g: ['taboo', 'role', 'write'] }
   ];
   var GAME_TAGS = {
     abc: ['3–5′', 'cả lớp'], nghieng: ['5′', 'webcam', 'từng bạn'], chem: ['5′', 'webcam', 'từng bạn'], theduc: ['5′', 'webcam', 'vận động'], ngoisao: ['5′', 'webcam', '2 bạn đấu'],
-    zombie: ['3–5′', 'cả lớp'], chuong: ['15′', 'cả lớp', 'bảng con / điện thoại'], luot: ['10–15′', '2–4 tổ'], bay: ['5′', 'bảng tương tác'], doantau: ['5′', 'kéo thả'], doikhang: ['5–10′', 'quét mã QR', '1–1'],
+    zombie: ['3–5′', 'cả lớp'], dua: ['10–15′', 'quét mã QR', 'chọn linh vật'], chuong: ['15′', 'cả lớp', 'bảng con / điện thoại'], luot: ['10–15′', '2–4 tổ'], bay: ['5′', 'bảng tương tác'], doantau: ['5′', 'kéo thả'], doikhang: ['5–10′', 'quét mã QR', '1–1'],
     ghep: ['10′', 'theo tổ'], ochu: ['5–10′', 'cả lớp / tổ'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
     bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
     errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],

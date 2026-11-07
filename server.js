@@ -1589,8 +1589,12 @@ async function loadStar(userId) {
     lastTickMs: Number(r.last_tick_ms), updatedMs: Number(r.updated_ms),
   };
 }
+// Su kien cho nong trai (nong-trai-thidua.js): moi lan luu sao (dua hoc 24 gio), cham diem mieng (Co thuong)
+const suKienNt = new (require('events'))();
+function baoNt(ten, ...a) { try { suKienNt.emit(ten, ...a); } catch (e) { console.error('Nong trai su kien ' + ten + ':', e.message); } }
 async function saveStar(userId, s) {
   s.updatedMs = Date.now();
+  baoNt('sao', userId, s);
   if (!USE_DB) {
     const all = readJsonFile(STARS_FILE) || {};
     all[userId] = s;
@@ -1798,6 +1802,7 @@ const nongTrai = require('./nong-trai')(app, {
   DATA_DIR, USE_DB, db: () => dbPool, readJsonFile, writeJsonFile, requireAuth, asyncRoute,
   loadStar, vnDayKey, loadClassState, loadUserNames,
   loadAllStars, starsToday, vnWeekKey, secondsToVnWeekEnd, loadScoreOf, baiOnCua, tuVungBai, findUserById,
+  suKien: suKienNt, requireAdmin,
 });
 // Thi tren lop (/thi-lop giao vien, /thi hoc sinh): de lay tu kho thi thu HSK — xem thi-lop.js
 const thiLop = require('./thi-lop')(app, {
@@ -1836,9 +1841,16 @@ async function loadStarAnswerKeys(userId) {
 
 function tenNguonOn(ds, loai) {
   if (!ds.length) return '';
-  const so = ds.map((x) => x.so).filter((n) => n != null).sort((a, b) => a - b);
-  const bai = so.length ? (so[0] === so[so.length - 1] ? 'Bài ' + so[0] : 'Bài ' + so[0] + '–' + so[so.length - 1]) : '';
-  return 'Ôn từ ' + [bai, MUC_LUC_BAI.tenCap[ds[0].lv] || ''].filter(Boolean).join(' · ') + ' (' + loai + ')';
+  // ghi dung tung bai (1, 2, 5) — chi viet "1–3" khi cac bai lien nhau
+  const theoCap = {};
+  ds.forEach((x) => { (theoCap[x.lv] = theoCap[x.lv] || []).push(x.so); });
+  const phan = Object.keys(theoCap).map((lv) => {
+    const so = theoCap[lv].filter((n) => n != null).sort((a, b) => a - b);
+    const lien = so.length > 2 && so.every((n, i) => i === 0 || n === so[i - 1] + 1);
+    const bai = !so.length ? '' : so.length === 1 ? 'Bài ' + so[0] : lien ? 'Bài ' + so[0] + '–' + so[so.length - 1] : 'Bài ' + so.join(', ');
+    return [bai, MUC_LUC_BAI.tenCap[lv] || ''].filter(Boolean).join(' · ');
+  });
+  return 'Ôn từ ' + phan.join(' + ') + ' (' + loai + ')';
 }
 
 app.get('/api/farm/on', requireAuth, asyncRoute(async (req, res) => { res.json(await baiOnCua(req.user)); }));
@@ -1875,35 +1887,43 @@ async function baiOnCua(user) {
     (Array.isArray(ds) ? ds : []).forEach((z) => { if (typeof z === 'string' && sai.length < 80 && sai.indexOf(z) < 0) sai.push(z); });
   });
 
+  // Bo bai cho cau hoi nong trai = (a) bai em DA HOC + (b) bai thay co GIAO cho lop. Khong bao gio lay bai
+  // em chua hoc ma cung khong duoc giao (co giao: "tuyet doi khong ra cau hoi ma hoc sinh chua hoc").
+  // Khong co bai nao -> urls rong: nong trai bao em hoc 1 bai truoc, khong tu ra cau.
   const daLam = Object.keys(hd).map((u) => Object.assign({}, MUC_LUC_BAI.theoUrl[u], hd[u]));
+  let ds = [], lv = '';
   if (daLam.length) {
     // Cap em dang hoc: cap cua bai lam GAN NHAT (neu biet thoi diem), khong thi cap em lam nhieu nhat
     const ganNhat = daLam.filter((x) => x.t > 0).sort((a, b) => b.t - a.t)[0];
-    let lv = ganNhat && ganNhat.lv;
+    lv = ganNhat && ganNhat.lv;
     if (!lv) {
       const tong = {};
       daLam.forEach((x) => { tong[x.lv] = (tong[x.lv] || 0) + x.cau; });
       lv = Object.keys(tong).sort((a, b) => tong[b] - tong[a])[0];
     }
-    // 4 bai em lam gan day nhat trong cap do (chua biet thoi diem thi lay bai sau cung)
-    const ds = daLam.filter((x) => x.lv === lv).sort((a, b) => (b.t - a.t) || (b.i - a.i)).slice(0, 4).sort((a, b) => a.i - b.i);
-    return { urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài em đã làm'), sai, cap: lv };
+    // toi da 6 bai em lam gan day nhat trong cap do (chua biet thoi diem thi lay bai sau cung)
+    ds = daLam.filter((x) => x.lv === lv).sort((a, b) => (b.t - a.t) || (b.i - a.i)).slice(0, 6);
   }
-  // Chua lam bai nao: bai thay co giao cho lop, roi den dau cap em chon luc dang ky
+  // Bai thay co giao cho lop (giao = da day tren lop): 6 bai giao gan nhat, ke ca bai em chua mo
   const st = await loadClassState();
   const mem = st.members[uid];
+  const giao = [];
   if (mem) {
-    const giao = numberedAssignments(st, mem.classId).reverse().map((a) => MUC_LUC_BAI.theoUrl[a.lessonUrl]).filter(Boolean);
-    const ds = [];
-    giao.forEach((x) => { if (ds.length < 4 && ds.indexOf(x) < 0 && x.lv === giao[0].lv) ds.push(x); });
-    if (ds.length) {
-      ds.sort((a, b) => a.i - b.i);
-      return { urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài thầy cô giao'), sai, cap: ds[0].lv };
-    }
+    numberedAssignments(st, mem.classId).reverse().forEach((a) => {
+      const x = MUC_LUC_BAI.theoUrl[a.lessonUrl];
+      if (x && giao.length < 6 && giao.indexOf(x) < 0) giao.push(x);
+    });
   }
-  const lv = MUC_LUC_BAI.theoCap[user.level] ? user.level : 'hsk1';
-  const ds = (MUC_LUC_BAI.theoCap[lv] || []).slice(0, 3);
-  return { urls: ds.map((x) => x.url), nguon: tenNguonOn(ds, 'bài đầu cấp của em'), sai, cap: lv };
+  const daCo = {};
+  ds.forEach((x) => { daCo[x.url] = 1; });
+  const coGiao = giao.filter((x) => !daCo[x.url]);
+  ds = ds.map((x) => MUC_LUC_BAI.theoUrl[x.url]).concat(coGiao);
+  if (!lv && ds.length) lv = ds[0].lv;
+  ds.sort((a, b) => (a.lv === b.lv ? a.i - b.i : a.lv < b.lv ? -1 : 1));
+  const loai = daLam.length && giao.length ? 'bài em đã học + bài được giao' : daLam.length ? 'bài em đã học' : 'bài thầy cô giao';
+  // gan: bai em hoc gan nhat (nut 'Học kiếm sao' mo bai nay), chua hoc bai nao thi bai giao moi nhat
+  const ganUrl = (daLam.filter((x) => x.t > 0).sort((a, b) => b.t - a.t)[0] || {}).url || (giao[0] && giao[0].url) || (ds[0] && ds[0].url) || '';
+  return { urls: ds.map((x) => x.url), gan: ganUrl, nguon: tenNguonOn(ds, loai), sai, cap: lv || '' };
 }
 // Tu vung 1 bai: doc vocabData trong public/js/<bai>-data.js (chi doc 1 lan, giu trong bo nho)
 const tuVungCache = new Map();
@@ -4307,6 +4327,8 @@ app.post('/api/admin/oral', requireAdmin, asyncRoute(async (req, res) => {
     await classDbWrite('INSERT INTO oral_checks (id, class_id, roster_id, ms, score) VALUES (?,?,?,?,?)',
       [row.id, row.classId, row.rosterId, row.ms, row.score]);
   }
+  // diem tu 9: nong trai cua em (chi khi ten trong danh sach da gan tai khoan) nhan qua 'Co thuong'
+  baoNt('mieng', { id: row.id, classId, score, userId: r.userId || null });
   res.json({ ok: true, id: row.id });
 }));
 // Xoa mot lan cham mieng vua ghi nham (man "Cham diem mieng" o Che do lop hoc co nut Hoan tac)
@@ -4322,6 +4344,7 @@ app.delete('/api/admin/oral/:id', requireAdmin, asyncRoute(async (req, res) => {
   } else {
     await classDbWrite('DELETE FROM oral_checks WHERE id = ?', [id]);
   }
+  baoNt('mieng-xoa', id);
   res.json({ ok: true });
 }));
 

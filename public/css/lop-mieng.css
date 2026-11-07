@@ -133,3 +133,12 @@ html.lmi-open, html.lmi-open body { overflow: hidden; }
 .lmi-o b.lmi-tb-gioi, .lmi-o b.lmi-tb-kha, .lmi-o b.lmi-tb-tb, .lmi-o b.lmi-tb-yeu, .lmi-o b.lmi-tb-chua { background: none; }
 .lmi-o b.lmi-tb-gioi { color: #2f8a57; } .lmi-o b.lmi-tb-kha { color: #3f88c5; } .lmi-o b.lmi-tb-tb { color: #b07a10 !important; } .lmi-o b.lmi-tb-yeu { color: #c0392b; }
 @media (max-width: 1100px) { .lmi-tk { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Thuong nong trai (qua cho san o nong trai cua em) */
+.lmi-nt { margin-top: 14px; padding: 12px 14px; border-radius: 16px; background: #fff7e6; border: 2px solid #e8c98f; }
+.lmi-nt h3 { margin: 0 0 4px; font-size: 1rem; }
+.lmi-nt-phu { margin: 0 0 8px; font-size: 0.82rem; color: #6b5a4a; }
+.lmi-nt-qua { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.lmi-nt-qua button { font: inherit; font-weight: 700; font-size: 0.86rem; padding: 6px 10px; border-radius: 999px; border: 2px solid #d8bf94; background: #fff; cursor: pointer; }
+.lmi-nt-qua button.on { background: #ffd56b; border-color: #2b1d3a; }
+.lmi-nt-nut { display: flex; flex-wrap: wrap; gap: 8px; }

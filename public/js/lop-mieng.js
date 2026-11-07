@@ -8,6 +8,9 @@
   'use strict';
   var PW_KEY = 'hyv_admin_pw', LIST_KEY = 'hyv_ufo_lists', PREF_KEY = 'hyv_mieng_nguon';
   var NOI_DUNG = ['Viết chữ Hán', 'Đọc bài', 'Từ vựng', 'Ngữ pháp', 'Hội thoại'];
+  // Thuong nong trai (POST /api/admin/farm-thuong): qua cho san, em mo nong trai la nhan. Diem 9–10 tu gui qua.
+  var QUA_NT = [['xu50', '🪙 50 xu'], ['xu100', '🪙 100 xu'], ['hat', '🌱 Hạt giống quý'], ['con', '🐄 Vật nuôi quý']];
+  var quaChon = 'xu50';
   var S = { built: false, src: '', classes: [], kids: [], chon: null, loc: '', homNay: [], noiDung: '', dangTai: false, loi: '',
     xem: 'cham', bLoc: 'tat', bSx: 'no', bKy: 'all' };
   var root;
@@ -246,7 +249,7 @@
     var nk = '<div class="lmi-nk"><h3>Hôm nay đã chấm · ' + hn.length + ' lượt</h3>' + (hn.length ? '<ol>' + hn.slice().reverse().map(function (x) {
       return '<li><b>' + esc(x.ten) + '</b><span class="lmi-nk-diem">' + x.diem + '</span><small>' + esc(x.nd || '') + ' · ' + x.gio + '</small>' +
         '<button type="button" class="lmi-nut-nho" data-huy="' + x.key + '">↶ Hoàn tác</button></li>';
-    }).join('') + '</ol>' : '<p class="lmi-trong">Chưa chấm bạn nào.</p>') + '</div>';
+    }).join('') + '</ol>' : '<p class="lmi-trong">Chưa chấm bạn nào.</p>') + '</div>' + htmlThuongNt(k);
     if (!k) {
       el.innerHTML = tabs() + '<div class="lmi-cho"><span class="lmi-cho-ic" aria-hidden="true">✍️</span><h2>Bấm tên bạn vừa lên bảng</h2>' +
         '<p>Hoặc bấm <b>🎲 Gọi ngẫu nhiên</b> — máy ưu tiên bạn lâu chưa được gọi.</p></div>' + nk;
@@ -264,7 +267,41 @@
       '<p class="lmi-meo">' + (S.src.indexOf('sv:') === 0 ? 'Điểm lên cột “Miệng” của bảng lớp (điểm Miệng = trung bình các lần).' : 'Danh sách nhanh: điểm chỉ lưu trên máy này.') + '</p>' +
       '</div>' + nk;
   }
+  // O "Thuong nong trai": chon qua -> thuong ban dang chon hoac ca lop (chi lop tren he thong)
+  function htmlThuongNt(k) {
+    if (S.src.indexOf('sv:') !== 0) return '';
+    return '<div class="lmi-nt"><h3>🎁 Thưởng nông trại</h3>' +
+      '<p class="lmi-nt-phu">Quà chờ sẵn — em mở Nông trại là nhận. Điểm 9–10 tự gửi quà (10: vật nuôi quý, 9: hạt giống quý) nếu bạn đã chọn tên trong lớp.</p>' +
+      '<div class="lmi-nt-qua" role="group" aria-label="Loại quà">' + QUA_NT.map(function (q) {
+        return '<button type="button" data-qua="' + q[0] + '" class="' + (quaChon === q[0] ? 'on' : '') + '">' + q[1] + '</button>';
+      }).join('') + '</div><div class="lmi-nt-nut">' +
+      (k ? '<button type="button" class="lmi-nut lmi-nut-vang" data-thuong="' + esc(k.id) + '">🎁 Thưởng ' + esc(k.name) + '</button>' : '') +
+      '<button type="button" class="lmi-nut" data-thuong="*">🎁 Thưởng cả lớp</button></div></div>';
+  }
+  function thuongNt(rid, nut) {
+    var ten = rid === '*' ? 'cả lớp' : ((S.kids.filter(function (x) { return x.id === rid; })[0] || {}).name || '');
+    var tenQua = (QUA_NT.filter(function (q) { return q[0] === quaChon; })[0] || ['', ''])[1];
+    if (rid === '*' && !confirm('Thưởng ' + tenQua + ' cho cả lớp?')) return;
+    nut.disabled = true;
+    api('/api/admin/farm-thuong', { method: 'POST', body: JSON.stringify({ classId: S.src.slice(3), rosterId: rid, loai: quaChon, ly: 'Cô thưởng cho em' + (S.noiDung ? ' (' + S.noiDung.toLowerCase() + ')' : '') }) }).then(function (d) {
+      nut.disabled = false;
+      var el = $('#lmiBao');
+      el.innerHTML = '🎁 Đã gửi ' + esc(tenQua) + ' cho <b>' + esc(ten) + '</b> (' + d.so + ' bạn có tài khoản' + (d.khongTk ? ', ' + d.khongTk + ' bạn chưa chọn tên trong lớp' : '') + ') <button type="button" class="lmi-nut-nho" data-huynt="' + esc(d.lan) + '">↶ Hoàn tác</button>';
+      el.hidden = false;
+      clearTimeout(henBao);
+      henBao = setTimeout(function () { el.hidden = true; }, 8000);
+    }).catch(function (e) { nut.disabled = false; bao('⚠️ ' + esc(e.message)); });
+  }
   function bam(e) {
+    var q = e.target.closest('[data-qua], [data-thuong], [data-huynt]');
+    if (q && q.hasAttribute('data-qua')) { quaChon = q.getAttribute('data-qua'); vePhai(); return; }
+    if (q && q.hasAttribute('data-thuong')) { thuongNt(q.getAttribute('data-thuong'), q); return; }
+    if (q && q.hasAttribute('data-huynt')) {
+      q.disabled = true;
+      api('/api/admin/farm-thuong/' + encodeURIComponent(q.getAttribute('data-huynt')), { method: 'DELETE' })
+        .then(function (d) { bao('↶ Đã rút lại quà nông trại (' + d.rut + ' quà chưa nhận).'); }, function (er) { q.disabled = false; bao('⚠️ ' + esc(er.message)); });
+      return;
+    }
     var b = e.target.closest('[data-act], [data-hs], [data-diem], [data-nd], [data-huy], [data-xem], [data-bloc], [data-chamhs]');
     if (!b) return;
     if (b.hasAttribute('data-xem')) { S.xem = b.getAttribute('data-xem'); vePhai(); return; }

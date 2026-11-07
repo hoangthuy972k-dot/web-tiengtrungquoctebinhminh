@@ -304,7 +304,7 @@ module.exports = function ganHoatDongChung(app, d, h) {
   app.post('/api/farm/ct/cau', d.requireAuth, d.asyncRoute(async (req, res) => {
     const me = req.user.id;
     const ds = await deGach(req.user);
-    if (ds.length < 4) return res.status(400).json({ error: 'Chưa đủ từ vựng để ra câu — học thêm bài rồi quay lại nhé!' });
+    if (ds.length < 4) return res.status(400).json({ error: 'Em hãy học ít nhất một bài (hoặc bài thầy cô giao) để có câu hỏi nhé!', chuaHoc: true });
     await h.traLoi(res, h.lanLuot(me, async () => {
       const f = await h.doc(me);
       if (gachHomNay(f) >= CT_GACH_NGAY) throw loi('Hôm nay em đã góp đủ ' + CT_GACH_NGAY + ' viên gạch — mai góp tiếp nhé!');
@@ -563,7 +563,7 @@ module.exports = function ganHoatDongChung(app, d, h) {
     const thay = {}, ds = [];
     const lay = (nguon, n) => { let c = 0; for (const q of nguon) { if (c >= n) break; if (!thay[q.zh]) { thay[q.zh] = 1; ds.push(q); c++; } } };
     lay(da.ds, TD_SO / 2); lay(db.ds, TD_SO - ds.length); lay(da.ds, TD_SO - ds.length);
-    if (ds.length < 5) return res.status(400).json({ error: 'Chưa đủ từ vựng để ra đề thách đấu.' });
+    if (ds.length < 5) return res.status(400).json({ error: 'Em hãy học ít nhất một bài (hoặc bài thầy cô giao) để có câu hỏi nhé!', chuaHoc: true });
     const tid = Math.random().toString(36).slice(2, 10);
     const td = { id: tid, a: me, b: id, t: Date.now(), ds: tronMang(ds), kq: {}, xong: 0, thang: null };
     await ghiC('td:' + tid, td);
@@ -907,7 +907,7 @@ module.exports = function ganHoatDongChung(app, d, h) {
     const st = await d.loadClassState();
     if (!st.members[me]) return res.status(400).json({ error: 'Vào lớp (nhập mã lớp ở trang học) để lên lôi đài cùng lớp nhé!' });
     const de = await h.deChuHan(req.user);
-    if (de.ds.length < 4) return res.status(400).json({ error: 'Chưa đủ từ vựng để ra câu — học thêm bài rồi quay lại nhé!' });
+    if (de.ds.length < 4) return res.status(400).json({ error: 'Em hãy học ít nhất một bài (hoặc bài thầy cô giao) để có câu hỏi nhé!', chuaHoc: true });
     await h.traLoi(res, h.lanLuot(me, async () => {
       const f = await h.doc(me);
       f.ldq = { ngay: d.vnDayKey(), ds: de.ds.slice(0, LD_SO_CAU), i: 0 };

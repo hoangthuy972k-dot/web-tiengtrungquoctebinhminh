@@ -143,7 +143,7 @@
     $('soCau').textContent = 'Câu ' + (c.so || d.qid) + (c.tong ? '/' + c.tong : '');
     $('cauLenh').textContent = c.lenh || '';
     $('cauLenh').hidden = !c.lenh;
-    $('demGio').hidden = !!s.nhip;
+    $('demGio').hidden = !!s.nhip && !s.han;
     var o = $('opts');
     // xep cau (keo tha) / noi tu: ve bang cau-dt.js
     if (c.k && window.CauDT) {
@@ -235,6 +235,9 @@
       return '<li><span>' + huyChuong(i) + '</span><b>' + esc(r.ten) + '</b><i>' + r.diem + '</i></li>';
     }).join('');
     hien('manHet');
+    // Phong ban be tu mo con giu de choi lai: van o trong phong, cho chu phong bam "Choi lai"
+    if (d.giu) { $('hetHang').innerHTML += '<br><small>Chờ bạn chủ phòng bấm “Chơi lại” để chơi ván mới…</small>'; return; }
+    if (d.hsChu && d.dong) $('hetHang').innerHTML += '<br><small>Bạn chủ phòng đã đóng phòng.</small>';
     xoaLuu();
     clearTimeout(s.poll);
     s.ma = '';
@@ -313,8 +316,21 @@
     (d.tin || []).forEach(function (t) {
       if (t.loai === 'biVuot') { baoNhanh('⚠️ ' + t.ten + ' vừa vượt bạn — cố lên! 加油！'); rung([60, 40, 60]); }
     });
+    // Phong ban be tu mo (On bai cu tren /game — live.js p.hsChu): khong co co giao, chu phong bam Bat dau / Choi lai
+    if (d.hsChu && !s.hsChu) {
+      s.hsChu = true;
+      $('titCho').textContent = 'Em đã vào phòng!';
+      $('moCho').textContent = 'Chờ bạn chủ phòng bấm Bắt đầu nhé…';
+      var moXong = $('manXong').querySelector('p.ch-mo:last-of-type');
+      if (moXong) moXong.textContent = 'Chờ các bạn làm xong để xem bảng vàng nhé.';
+    }
+    // Ghe nong (phong co dong ho chung): hien dong ho dem nguoc tren cau hoi
+    s.han = d.han || 0;
+    if (s.han && d.pha === 'choi' && d.conLai != null) demNguoc(d.conLai); else if (s.han) clearInterval(s.dem);
     if (d.pha === 'cho') { if (doi) hien('manCho'); return; }
-    if (d.pha === 'het') { if (doi) { s.dangPh = false; veHet(d); } return; }
+    // het van: phong con giu (d.giu) thi hoi tiep de cho van choi lai; chu phong dong han (d.dong) moi thoi
+    if (d.pha === 'het') { if (doi || (s.giu && !d.giu)) { s.dangPh = false; veHet(d); } s.giu = !!d.giu; return; }
+    if (doi) { s.nhipI = -1; s.dangPh = false; } // van moi trong cung phong
     if (d.xong) {
       if (s.dangPh) return; // dang xem dap an cau cuoi
       $('xongTk').textContent = 'Đúng ' + d.dungSo + '/' + d.tong + ' câu · ' + d.diem + ' điểm';
@@ -920,6 +936,8 @@
 
   /* ---- khoi tao ---- */
   var q = new URLSearchParams(location.search);
+  // Mo trong khung cua chu phong (On bai cu tren /game): khong can nut sang phong khac
+  if (q.get('chu')) $('nutLai').hidden = true;
   if (q.get('ma')) $('oMa').value = q.get('ma').replace(/\D/g, '').slice(0, 6);
   try { $('oTen').value = localStorage.getItem('hyv_choi_ten') || ''; } catch (e) { /* bo qua */ }
   var cu = null;

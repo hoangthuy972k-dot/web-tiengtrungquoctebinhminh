@@ -488,7 +488,15 @@
       return l ? taoCauP(P, l, nho) : null;
     },
     _chuanHoa: chuanHoa,
-    _KHO: KHO
+    _KHO: KHO,
+    // Cho trang tu on cua hoc sinh (public/js/on-bai-cu.js): lam viec tren kho P da chuan hoa san (khong chuan hoa lai moi cau)
+    _taoCauP: taoCauP,
+    _sangDt: sangDt,
+    _coLoai: coLoai,
+    _chonLoai: chonLoai,
+    _loaiTheoKho: loaiTheoKho,
+    _khoaZh: khoaZh,
+    _TEN_LOAI: TEN_LOAI
   };
 
   if (typeof document === 'undefined') {

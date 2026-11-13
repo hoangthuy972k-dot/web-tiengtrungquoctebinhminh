@@ -35,6 +35,54 @@ const TAO_MOI_GIO = 12;                   // moi IP tao toi da 12 phong / gio
 const phong = new Map();     // ma -> phong
 const taoTheoIp = new Map(); // ip -> [thoi diem tao]
 
+// Phong do HOC SINH tu mo de on bai voi ban (trang /game -> "On bai cu" -> "On voi ban", public/js/on-bai-cu.js).
+// Chi kieu 'nhip' / 'dua', phai dang nhap moi mo duoc (ban be vao bang ma QR thi khong can tai khoan) va gioi han
+// chat hon phong giao vien: moi tai khoan 1 phong dang mo, toi da 12 ban, toi da 30 cau, 30 phut khong ai choi thi
+// tu dong, moi gio mo toi da 6 phong / tai khoan (20 / IP — ca lop hay chung mot dia chi mang cua truong).
+// p.hsChu = id tai khoan chu phong. p.han (giay, chi phong hoc sinh): "Ghe nong" — ca phong cung mot dong ho, het gio
+// la het van; xep hang theo so cau dung, bang nhau thi ai sai it hon dung tren.
+const HS_MAX_BAN = 12;
+const HS_MAX_CAU = 30;
+const HS_NGHI_MS = 30 * 60 * 1000;
+const HS_DONG_GIU_MS = 2 * 60 * 1000;   // dong roi giu them 2 phut cho dien thoai kip xem bang cuoi
+const HS_TAO_GIO_TK = 6;
+const HS_TAO_GIO_IP = 20;
+const HS_HAN = [60, 90, 120];
+const phongCuaHs = new Map(); // id tai khoan -> ma phong dang mo
+const taoTheoHs = new Map();  // 'u:<id>' | 'i:<ip>' -> [thoi diem tao]
+function xoaPhong(ma, p) {
+  phong.delete(ma);
+  if (p && p.hsChu && phongCuaHs.get(p.hsChu) === ma) phongCuaHs.delete(p.hsChu);
+}
+function dongHs(p, ly) {
+  if (p.dong) return;
+  p.dong = true; p.dongLuc = Date.now(); p.dongLy = ly || '';
+  p.pha = 'het';
+  if (phongCuaHs.get(p.hsChu) === p.ma) phongCuaHs.delete(p.hsChu);
+}
+// Phong hoc sinh: het gio Ghe nong -> het van; lau khong ai choi -> dong; dong qua 2 phut -> xoa. Tra ve false neu da xoa.
+function xetHs(p, now) {
+  if (!p.hsChu) return true;
+  if (p.dong) { if (now - p.dongLuc > HS_DONG_GIU_MS) { xoaPhong(p.ma, p); return false; } return true; }
+  if (p.han && p.pha === 'choi' && now >= p.hetLuc) { p.pha = 'het'; tinPhong(p, '⏰ Hết giờ!'); }
+  if (now - p.hdLuc > HS_NGHI_MS) dongHs(p, 'nghi');
+  return true;
+}
+function lanGanDay(k, now) {
+  const ds = (taoTheoHs.get(k) || []).filter((t) => now - t < 3600000);
+  if (ds.length) taoTheoHs.set(k, ds); else taoTheoHs.delete(k);
+  return ds;
+}
+// Bo < > trong moi chuoi cua bo cau hoc sinh gui len (dien thoai ban be hien bang textContent / esc, day la lop chan thu hai)
+function sachSau(x, sau) {
+  if (typeof x === 'string') return x.replace(/[<>]/g, '');
+  if (!x || typeof x !== 'object' || sau > 3) return x;
+  if (Array.isArray(x)) return x.slice(0, 40).map((y) => sachSau(y, sau + 1));
+  const o = {};
+  Object.keys(x).slice(0, 12).forEach((k) => { o[k] = sachSau(x[k], sau + 1); });
+  return o;
+}
+
 function token() { return crypto.randomBytes(12).toString('hex'); }
 function maMoi() {
   for (let i = 0; i < 50; i++) {
@@ -45,7 +93,8 @@ function maMoi() {
 }
 function donPhong() {
   const now = Date.now();
-  for (const [ma, p] of phong) if (now - p.cham > HET_HAN_MS) phong.delete(ma);
+  for (const [ma, p] of phong) { if (now - p.cham > HET_HAN_MS) xoaPhong(ma, p); else xetHs(p, now); }
+  for (const k of [...taoTheoHs.keys()]) lanGanDay(k, now);
   for (const [ip, ds] of taoTheoIp) {
     const con = ds.filter((t) => now - t < 3600000);
     if (con.length) taoTheoIp.set(ip, con); else taoTheoIp.delete(ip);
@@ -86,6 +135,8 @@ function soSanh(p) {
   // Kieu 'tro': diem truoc, roi ai xong, roi lam duoc nhieu hon, roi it giay hon
   if (p.kieu === 'tro') return (a, b) => (b.diem || 0) - (a.diem || 0) || (b.xong ? 1 : 0) - (a.xong ? 1 : 0) ||
     (b.lam || 0) - (a.lam || 0) || (a.giay || 0) - (b.giay || 0) || a.vao - b.vao;
+  // Ghe nong (phong hoc sinh co gioi han thoi gian): so cau dung, bang nhau thi ai sai it hon (ti le dung cao hon)
+  if (tuLam(p) && p.han) return (a, b) => (b.dungSo || 0) - (a.dungSo || 0) || (a.i || 0) - (b.i || 0) || b.diem - a.diem || dongHo(a, b);
   if (tuLam(p)) return (a, b) => (b.dungSo || 0) - (a.dungSo || 0) || b.diem - a.diem || dongHo(a, b);
   // Kieu 'chuong': con tren san truoc, roi den diem, roi san muon hon thi xep tren
   if (p.kieu === 'chuong') return (a, b) => (b.con ? 1 : 0) - (a.con ? 1 : 0) || (b.vang ? 1 : 0) - (a.vang ? 1 : 0) ||
@@ -343,10 +394,12 @@ function xetHetVan(p) {
   if (choi.length && choi.every((h) => h.xong)) { p.pha = 'het'; tinPhong(p, '🏁 Tất cả các bạn đã chơi xong!'); }
 }
 
-module.exports = function gan(app) {
+module.exports = function gan(app, tuy) {
+  // tuy.auth: middleware dang nhap cua server.js (gan req.user) — chi dung cho phong hoc sinh tu mo
+  const canDangNhap = (tuy && tuy.auth) || ((req, res) => res.status(401).json({ error: 'Chưa đăng nhập.' }));
   function layPhong(req, res) {
     const p = phong.get(String(req.params.ma || ''));
-    if (!p) { res.status(404).json({ error: 'Không tìm thấy phòng. Em kiểm tra lại mã trên bảng nhé.' }); return null; }
+    if (!p || !xetHs(p, Date.now())) { res.status(404).json({ error: 'Không tìm thấy phòng. Em kiểm tra lại mã trên bảng nhé.' }); return null; }
     p.cham = Date.now();
     return p;
   }
@@ -403,6 +456,47 @@ module.exports = function gan(app) {
     if (kieu === 'chuong') { p.daBatDau = false; p.ketQua = null; p.tatCaSai = null; p.khoaTl = false; p.dungLuc = 0; p.dong = false; }
     phong.set(ma, p);
     res.json(kieu === 'the' ? { ma, khoa: p.khoa, quet: p.quet } : { ma, khoa: p.khoa });
+  });
+
+  // ---- hoc sinh tu mo phong on bai voi ban (phai dang nhap) ----
+  app.post('/api/live/tao-hs', canDangNhap, (req, res) => {
+    donPhong();
+    const now = Date.now();
+    const uid = String((req.user && req.user.id) || '');
+    if (!uid) return res.status(401).json({ error: 'Chưa đăng nhập.' });
+    const k0 = (req.body || {}).kieu;
+    if (k0 !== 'nhip' && k0 !== 'dua') return res.status(400).json({ error: 'Kiểu phòng không hợp lệ.' });
+    const cu = phong.get(phongCuaHs.get(uid) || '');
+    if (cu && cu.hsChu === uid && xetHs(cu, now) && !cu.dong) {
+      return res.status(409).json({ error: 'Em đang có một phòng mở (mã ' + cu.ma + '). Đóng phòng đó rồi mới mở phòng mới được nhé.', daCo: true, ma: cu.ma });
+    }
+    const ip = String(req.headers['x-forwarded-for'] || '').split(',').pop().trim() || req.socket.remoteAddress || 'x';
+    const dsTk = lanGanDay('u:' + uid, now), dsIp = lanGanDay('i:' + ip, now);
+    if (dsTk.length >= HS_TAO_GIO_TK || dsIp.length >= HS_TAO_GIO_IP) return res.status(429).json({ error: 'Em mở phòng nhiều quá rồi, nghỉ một lúc rồi mở lại nhé.' });
+    if (phong.size >= MAX_PHONG) return res.status(503).json({ error: 'Máy chủ đang có quá nhiều phòng, thử lại sau nhé.' });
+    const ma = maMoi();
+    if (!ma) return res.status(503).json({ error: 'Chưa tạo được mã phòng, thử lại nhé.' });
+    dsTk.push(now); taoTheoHs.set('u:' + uid, dsTk);
+    dsIp.push(now); taoTheoHs.set('i:' + ip, dsIp);
+    const p = { ma, kieu: k0, khoa: token(), tao: now, cham: now, pha: 'cho', qid: 0, cau: null, dung: -1, batDau: 0, hs: new Map(), soVao: 0, ds: null,
+      hsChu: uid, hdLuc: now, dong: false, dongLuc: 0, dongLy: '', han: 0, hetLuc: 0 };
+    phong.set(ma, p);
+    phongCuaHs.set(uid, ma);
+    res.json({ ma, khoa: p.khoa, toiDa: HS_MAX_BAN, toiDaCau: HS_MAX_CAU });
+  });
+  // Dong phong cua chinh minh ma khong can khoa phong (vd. lo dong the trinh duyet, mo lai tren may khac)
+  app.post('/api/live/dong-hs', canDangNhap, (req, res) => {
+    const uid = String((req.user && req.user.id) || '');
+    const p = phong.get(phongCuaHs.get(uid) || '');
+    if (p && p.hsChu === uid) dongHs(p, 'chu');
+    res.json({ ok: true, da: !!p });
+  });
+  // Chu phong roi di (bam Dong phong, hoac dong trang — sendBeacon kem khoa tren duong dan)
+  app.post('/api/live/:ma/dong', (req, res) => {
+    const p = layPhong(req, res); if (!p || !laGv(p, req, res)) return;
+    if (!p.hsChu) return res.status(400).json({ error: 'Phòng này không đóng kiểu này được.' });
+    dongHs(p, 'chu');
+    res.json({ ok: true });
   });
 
   app.post('/api/live/:ma/cau', (req, res) => {
@@ -518,11 +612,22 @@ module.exports = function gan(app) {
       return res.json({ ok: true, tong: t.tong, van: t.van });
     }
     if (!tuLam(p)) return res.status(400).json({ error: 'Phòng này không phải kiểu tự làm.' });
+    if (p.hsChu && p.dong) return res.status(410).json({ error: 'Phòng này đã đóng.' });
     // Cuoc dua: hien toan canh sau moi 3 hoac 5 cau
     if (p.kieu === 'dua') p.moc = Number((req.body || {}).moc) === 5 ? 5 : 3;
-    // cau trac nghiem / xep cau (keo tha) / noi tu — xem cau-hoi.js
-    const ds = CauHoi.chuanBo((req.body || {}).cau, 200);
+    // cau trac nghiem / xep cau (keo tha) / noi tu — xem cau-hoi.js. Phong hoc sinh: toi da 30 cau, bo < > trong moi chuoi
+    const cauGui = (req.body || {}).cau;
+    const ds = p.hsChu ? CauHoi.chuanBo(sachSau(Array.isArray(cauGui) ? cauGui.slice(0, HS_MAX_CAU) : [], 0), HS_MAX_CAU)
+      : CauHoi.chuanBo(cauGui, 200);
     if (!ds.length) return res.status(400).json({ error: 'Chưa có câu hỏi nào.' });
+    if (p.hsChu) {
+      // Ghe nong: ca phong cung mot dong ho (60 / 90 / 120 giay), het gio la het van
+      const han = Number((req.body || {}).han);
+      p.han = p.kieu === 'nhip' && HS_HAN.indexOf(han) >= 0 ? han : 0;
+      p.hetLuc = p.han ? Date.now() + p.han * 1000 : 0;
+      p.hdLuc = Date.now();
+      p.su = [];
+    }
     p.ds = ds;
     // Thong ke chua bai: moi cau dem so ban chon tung dap an (xep / noi: [dung, sai])
     p.tk = ds.map(CauHoi.tkMoi);
@@ -583,6 +688,7 @@ module.exports = function gan(app) {
       return res.json({ ok: true });
     }
     p.pha = 'het';
+    if (p.hsChu) p.hdLuc = Date.now();
     if (p.kieu === 'tro') return res.json({ ok: true, bxh: bxhTro(p), to: dsTo(p) });
     res.json({ ok: true, bxh: bangXepHang(p).slice(0, 10), tk: tuLam(p) ? (p.tk || null) : undefined });
   });
@@ -640,9 +746,11 @@ module.exports = function gan(app) {
     }
     if (tuLam(p)) {
       const bxh = bangXepHang(p);
-      return res.json({ kieu: p.kieu, pha: p.pha, soHs: p.hs.size, tong: p.ds ? p.ds.length : 0, batDau: p.batDau, moc: p.moc || 0,
+      const hsPhu = p.hsChu ? { hsChu: true, dong: !!p.dong, dongLy: p.dongLy || '', toiDa: HS_MAX_BAN, han: p.han || 0,
+        conLai: p.han && p.pha === 'choi' ? Math.max(0, p.hetLuc - Date.now()) : 0 } : null;
+      return res.json(Object.assign({ kieu: p.kieu, pha: p.pha, soHs: p.hs.size, tong: p.ds ? p.ds.length : 0, batDau: p.batDau, moc: p.moc || 0,
         ds: [...p.hs.values()].sort((a, b) => a.vao - b.vao).map((h) => ({ pid: h.pid, ten: h.ten, lv: h.lv || '' })),
-        soXong: bxh.filter((r) => r.xong).length, bxh, su: p.su || [], tk: p.tk || null });
+        soXong: bxh.filter((r) => r.xong).length, bxh, su: p.su || [], tk: p.tk || null }, hsPhu));
     }
     res.json({
       pha: p.pha, qid: p.qid, soHs: p.hs.size, daTL,
@@ -708,10 +816,10 @@ module.exports = function gan(app) {
     const p = layPhong(req, res); if (!p) return;
     if (p.kieu === 'the') return res.status(400).json({ error: 'Phòng này dùng thẻ giấy, không vào bằng điện thoại.' });
     // phong tro choi: het van van vao duoc (cho van choi lai), chi khi co dong phong moi thoi
-    if (p.pha === 'het' && !((p.kieu === 'tro' || p.kieu === 'onto') && !p.dong)) return res.status(410).json({ error: 'Phòng này đã kết thúc.' });
+    if (p.pha === 'het' && !((p.kieu === 'tro' || p.kieu === 'onto' || p.hsChu) && !p.dong)) return res.status(410).json({ error: 'Phòng này đã kết thúc.' });
     let ten = sachTen((req.body || {}).ten);
     if (!ten) return res.status(400).json({ error: 'Em nhập tên trước nhé.' });
-    const toiDa = p.kieu === 'chuong' ? MAX_HS_CHUONG : MAX_HS;
+    const toiDa = p.hsChu ? HS_MAX_BAN : p.kieu === 'chuong' ? MAX_HS_CHUONG : MAX_HS;
     if (p.hs.size >= toiDa) return res.status(409).json({ error: 'Phòng đã đủ ' + toiDa + ' bạn.' });
     const trung = new Set([...p.hs.values()].map((h) => h.ten.toLowerCase()));
     if (trung.has(ten.toLowerCase())) {
@@ -727,6 +835,7 @@ module.exports = function gan(app) {
     }
     const h = { pid: token().slice(0, 10), tok: token(), ten, diem: 0, chuoi: 0, cong: 0, hang: 0, tl: null, vao: ++p.soVao, lv };
     if (tuLam(p) && p.ds) giaoBo(p, h);
+    if (p.hsChu) p.hdLuc = Date.now();
     // Rung Chuong Vang: vao truoc khi bat dau thi len san; vao muon thi dung ngoai, co co the cho len
     if (p.kieu === 'chuong') Object.assign(h, { con: !p.daBatDau, muon: !!p.daBatDau, roiCau: 0, roiLuc: 0, vang: false, cuuSeq: 0, cuuSo: 0, kq: null });
     if (p.kieu === 'tro') Object.assign(h, { lam: 0, dungSo: 0, loi: 0, giay: 0, xong: false, xongLuc: 0, to: p.tro.to.length ? null : -1 });
@@ -747,6 +856,7 @@ module.exports = function gan(app) {
       const c = p.ds[h.thuTu[h.i]];
       const kq = CauHoi.cham(c, b);
       if (!kq.hopLe) return res.status(400).json({ error: 'Đáp án không hợp lệ.' });
+      if (p.hsChu) p.hdLuc = Date.now();
       const dung = kq.dung;
       if (p.tk && p.tk[h.thuTu[h.i]]) p.tk[h.thuTu[h.i]][kq.o]++;
       const truoc = thuTuPid(p);
@@ -973,6 +1083,12 @@ module.exports = function gan(app) {
       if (p.pha === 'choi') out.vt = viTri(p, h);
       if (h.tin && h.tin.length) { out.tin = h.tin; h.tin = []; }
       if (p.pha === 'het') out.bxh = bangXepHang(p).slice(0, 5).map((r) => ({ ten: r.ten, diem: r.diem }));
+      // Phong hoc sinh: giu = het van van giu phong cho chu phong bam "Choi lai"; dong = chu phong da dong han
+      if (p.hsChu) {
+        out.hsChu = true; out.giu = !p.dong; out.dong = !!p.dong;
+        if (p.han) { out.han = p.han; if (p.pha === 'choi') out.conLai = Math.max(0, p.hetLuc - Date.now()); }
+        if (p.han && p.pha === 'het') out.bxh = bangXepHang(p).slice(0, 5).map((r) => ({ ten: r.ten, diem: r.dungSo + ' từ' }));
+      }
       return res.json(out);
     }
     if (p.kieu === 'chuong') {

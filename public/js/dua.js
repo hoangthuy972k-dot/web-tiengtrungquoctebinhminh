@@ -49,6 +49,8 @@
 
   /* ---------------- vao phong + chon linh vat ---------------- */
   var q0 = new URLSearchParams(location.search);
+  // Mo trong khung cua chu phong (On bai cu tren /game): khong can nut sang phong khac
+  if (q0.get('chu')) $('nutLai').hidden = true;
   if (q0.get('ma')) $('oMa').value = q0.get('ma').replace(/\D/g, '').slice(0, 6);
   try { $('oTen').value = localStorage.getItem('hyv_choi_ten') || ''; } catch (e) { /* bo qua */ }
   $('formVao').addEventListener('submit', function (ev) {
@@ -123,8 +125,21 @@
     (d.tin || []).forEach(function (t) { if (t.loai === 'biVuot') { baoNhanh('⚠️ ' + t.ten + ' vừa vượt lên trước em — chạy nhanh lên! 加油！'); rung([60, 40, 60]); } });
     var doi = d.pha !== s.pha;
     s.pha = d.pha;
+    // Phong ban be tu mo (On bai cu tren /game — live.js p.hsChu): chu phong bam Bat dau / Choi lai
+    if (d.hsChu && !s.hsChu) {
+      s.hsChu = true;
+      $('choMo').textContent = 'Chờ bạn chủ phòng bấm Bắt đầu 🔫';
+      var moXong = $('manXong').querySelector('p.du-mo');
+      if (moXong) moXong.textContent = 'Chờ các bạn về đích để lên bục trao giải nhé.';
+    }
     if (d.pha === 'cho') { if (doi || $('manCho').hidden) hien('manCho'); return; }
-    if (d.pha === 'het') { if (doi) veHet(d); return; }
+    if (d.pha === 'het') {
+      if (doi || (d.dong && !s.daDong)) veHet(d);
+      // chu phong da dong han phong: thoi hoi (phong con giu thi hoi tiep, cho van choi lai)
+      if (d.dong) { s.daDong = true; clearTimeout(s.poll); s.ma = ''; s.pid = ''; xoaLuu(); }
+      return;
+    }
+    if (doi) { s.cho = false; s.canh = null; s.i = -1; s.gui = false; } // van moi trong cung phong
     if (s.cho) return; // dang xem ket qua / toan canh
     if (d.xong) { veXong(d); return; }
     if (d.cau && (d.i !== s.i || $('manHoi').hidden)) { s.i = d.i; veCau(d.cau, d); }
@@ -236,8 +251,10 @@
       return '<div class="du-buc-o b' + (i + 1) + (r.la ? ' la' : '') + '"><span class="du-buc-ten">' + esc(r.ten) + '</span><img src="' + anh(r.lv) + '" alt="">' +
         '<div class="du-buc-khoi"><b>' + ['🥇', '🥈', '🥉'][i] + '</b><small>' + r.buoc + ' bước</small></div></div>';
     }).join('');
-    $('hetHang').innerHTML = dua.hang ? 'Em về <b>hạng ' + dua.hang + '/' + dua.soHs + '</b>' + (dua.hang <= 3 ? ' — xuất sắc! 🎉' : ' — cố lên lần sau nhé!') : '';
+    $('hetHang').innerHTML = (dua.hang ? 'Em về <b>hạng ' + dua.hang + '/' + dua.soHs + '</b>' + (dua.hang <= 3 ? ' — xuất sắc! 🎉' : ' — cố lên lần sau nhé!') : '') +
+      (d.giu ? '<br><small>Chờ bạn chủ phòng bấm “Chơi lại” để đua ván mới…</small>' : d.hsChu && d.dong ? '<br><small>Bạn chủ phòng đã đóng phòng.</small>' : '');
     hien('manHet');
+    if (d.giu) return; // phong con giu de choi lai: van o trong phong
     xoaLuu();
   }
   $('nutLai').addEventListener('click', function () { clearTimeout(s.poll); s.ma = ''; s.pid = ''; $('oMa').value = ''; hien('manVao'); });

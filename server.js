@@ -85,7 +85,8 @@ app.use((req, res, next) => {
 app.use(compression());
 app.use(express.json({ limit: '10mb' }));
 // Phien choi truc tiep tren dien thoai (Che do lop hoc -> /choi)
-require('./live')(app);
+// (auth: hoc sinh da dang nhap moi duoc tu mo phong on bai voi ban — requireAuth khai bao phia duoi nen goi qua ham boc)
+require('./live')(app, { auth: (req, res, next) => requireAuth(req, res, next) });
 // Game doi khang 1-1 tren dien thoai (/dk) — phong trong bo nho nhu live.js
 require('./doikhang')(app);
 // Cache — ba muc:

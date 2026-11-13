@@ -93,7 +93,9 @@
           return {
             zh: v.zh, py: v.py || '', vn: v.vn, hv: v.hv || '',
             em: v.em || '', pos: v.pos || '',     // pos: tro xep tu theo tu loai can
-            hanzi: Array.isArray(v.hanzi) ? v.hanzi : []
+            hanzi: Array.isArray(v.hanzi) ? v.hanzi : [],
+            // cau vi du cua tu: On bai cu (on-bai-cu.js) dung cho dang 'dien tu vao cau'
+            ex_zh: v.ex_zh || '', ex_py: v.ex_py || '', ex_vn: v.ex_vn || ''
           };
         }));
       };
@@ -266,6 +268,21 @@
     $('#ghStage').innerHTML = '<p class="gh-dangtai">' + (g.canCau ? 'Đang lấy câu của bài…' : 'Đang lấy từ vựng…') + '</p>';
     document.body.classList.toggle('gh-dang-lop', state.cheDo === 'lop');
 
+    // Tro tu lo du lieu (On bai cu — on-bai-cu.js): can ca tu vung (con pinyin, tro tu bo), cau trac nghiem va cau sap xep
+    if (g.tuLay) {
+      $('#ghStage').innerHTML = '<p class="gh-dangtai">Đang lấy từ vựng và câu của bài…</p>';
+      Promise.all([napDaChon(), napCauDaChon('mcs'), napCauDaChon('sorts')]).then(function (r) {
+        if ($('#ghPlay').hidden) return; // da thoat trong luc tai
+        if (state.phien) state.phien.dung();
+        state.phien = g.mo($('#ghStage'), {
+          vocab: r[0], mcs: r[1], sorts: r[2], level: state.level,
+          nhan: ds.map(function (l) { return 'Bài ' + l.so; }).join(' · '),
+          thoat: thoat
+        });
+      });
+      return;
+    }
+
     // Tro dung cau (tro-nha-cau.js): lay cau sap xep / trac nghiem thay cho tu vung
     if (g.canCau) {
       napCauDaChon(g.canCau).then(function (cau) {
@@ -342,6 +359,17 @@
 
     veCapDo();
     veBai();
+
+    // /game?tro=<khoa>: mo thang mot tro (vd. lien ket 'On bai cu' tu trang chu). Chua chon bai thi cuon toi the tro do.
+    var tro = '';
+    try { tro = new URLSearchParams(location.search).get('tro') || ''; } catch (e) { /* bo qua */ }
+    if (tro && window.Arcade.kho[tro]) {
+      if (state.lessons.some(function (l) { return state.picked[l.url]; })) batDau(tro);
+      else {
+        var the = $('.gh-game[data-game="' + tro + '"]');
+        if (the) { the.classList.add('gh-game-goi'); try { the.scrollIntoView({ block: 'center' }); } catch (e) { /* bo qua */ } }
+      }
+    }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', chay);

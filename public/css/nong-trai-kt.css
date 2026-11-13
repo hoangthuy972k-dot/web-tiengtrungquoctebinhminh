@@ -219,3 +219,50 @@ button.kt-o:hover { transform: translateY(-2px); background: #fffbef; }
   .kt-av.to { width: 56px; height: 56px; }
 }
 .kt-can small { font-weight: 600; color: var(--mo); margin-left: 2px; }
+
+/* ---------- nha may tren nong trai (vat xg-*, 2x2): ranh / dang chay (khoi + banh rang + dem nguoc) / xong (bong bong san pham) ---------- */
+.nt-vat[class*="nt-k-xg-"] .nt-bong { width: 36%; top: -16%; }
+.nt-vat.tt-xgxong .nt-hinh { animation: nt-nhun 1.6s ease-in-out infinite; }
+.nt-xg-khoi { position: absolute; right: 22%; top: -6%; width: 22%; height: 30%; pointer-events: none; }
+.nt-xg-khoi i { position: absolute; left: 30%; bottom: 0; width: 46%; aspect-ratio: 1; border-radius: 50%; background: #fff; border: 2px solid var(--vien); opacity: 0; animation: kt-khoi 2.4s ease-out infinite; }
+.nt-xg-khoi i:nth-child(2) { animation-delay: 0.8s; }
+.nt-xg-khoi i:nth-child(3) { animation-delay: 1.6s; }
+@keyframes kt-khoi { 0% { transform: translate(0, 0) scale(0.5); opacity: 0; } 15% { opacity: 0.95; } 100% { transform: translate(40%, -170%) scale(1.25); opacity: 0; } }
+.nt-xg-rang { position: absolute; left: 8%; top: 30%; font-size: calc(var(--o, 64px) * 0.34); line-height: 1; color: #5d4037; text-shadow: 0 0 0 var(--vien); pointer-events: none; animation: kt-rang 2.2s linear infinite; }
+@keyframes kt-rang { to { transform: rotate(360deg); } }
+.nt-xg-dem {
+  position: absolute; left: 50%; top: -14%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 3px;
+  padding: 1px 8px 1px 3px; border-radius: 999px; background: #fff; border: 2px solid var(--vien); box-shadow: 0 2px 0 var(--vien);
+  font-size: 0.72rem; font-weight: 900; font-variant-numeric: tabular-nums; white-space: nowrap; pointer-events: none;
+}
+.nt-xg-dem img { width: 20px; height: 20px; }
+.kt-xg-tui { margin: 8px 0; padding: 8px 10px; border-radius: 12px; background: #fff3d6; border: 2px dashed #e0b25a; font-weight: 600; font-size: 0.88rem; }
+
+/* ---------- nhan cong di lai tren nong trai (toi da 3; chi transform + keyframes) ---------- */
+.kt-ncf { position: absolute; left: 0; top: 0; pointer-events: none; transition: transform 0ms linear; will-change: transform; }
+.kt-ncf-nut { display: block; width: 52%; margin: 0 auto; padding: 0; border: 0; background: none; pointer-events: auto; cursor: pointer; overflow: visible; -webkit-tap-highlight-color: transparent; }
+.kt-ncf-nut svg { display: block; width: 192%; margin-left: -46%; height: auto; pointer-events: none; overflow: visible; filter: drop-shadow(0 1px 0 rgba(43, 29, 58, 0.25)); }
+.kt-ncf.trai .kt-ncf-nut svg { transform: scaleX(-1); }
+.kt-ncf .nc-chan { transform-box: fill-box; transform-origin: 50% 0; }
+.kt-ncf.di .nc-chan-a { animation: kt-chan 0.34s ease-in-out infinite alternate; }
+.kt-ncf.di .nc-chan-b { animation: kt-chan 0.34s ease-in-out infinite alternate-reverse; }
+.kt-ncf.di .nc-than, .kt-ncf.di .nc-do { animation: kt-buoc 0.34s ease-in-out infinite alternate; }
+@keyframes kt-chan { from { transform: rotate(-24deg); } to { transform: rotate(24deg); } }
+@keyframes kt-buoc { from { transform: translateY(0); } to { transform: translateY(-1.6px); } }
+.kt-ncf:not(.nghi) .nc-ngoi, .kt-ncf.nghi .nc-dung, .kt-ncf-anh .nc-ngoi { display: none; }
+.kt-ncf.nghi .nc-than { transform: translateY(13px); }
+.kt-ncf.nghi.vt-van .nc-do { transform: translateY(2px); }
+.kt-ncf-bong {
+  position: absolute; left: 50%; bottom: 100%; transform: translateX(-50%); z-index: 2;
+  padding: 1px 7px; border-radius: 10px; background: #fff; border: 2px solid var(--vien); box-shadow: 0 2px 0 var(--vien);
+  font-size: 0.72rem; font-weight: 800; white-space: nowrap; pointer-events: none;
+}
+.kt-ncf-bong.dai { white-space: normal; width: 150px; text-align: center; line-height: 1.25; padding: 3px 7px; }
+.kt-ncf-mat { position: absolute; right: 8%; top: 2%; z-index: 1; font-size: 0.8rem; line-height: 1; pointer-events: none; }
+body.dang-dat .kt-ncf-nut, body.keo-vat .kt-ncf-nut { pointer-events: none; }
+body.kt-an .kt-ncf *, body.kt-an .nt-xg-khoi i, body.kt-an .nt-xg-rang { animation-play-state: paused; }
+.kt-ncf-dau { gap: 8px; }
+.kt-ncf-anh { display: inline-block; width: 46px; flex: none; }
+.kt-ncf-anh svg { width: 100%; height: auto; display: block; }
+.kt-ncf-log { margin: 4px 0; padding-left: 18px; font-size: 0.82rem; font-weight: 600; color: var(--mo); }
+.kt-ncf-nutds { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }

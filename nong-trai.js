@@ -303,8 +303,10 @@ function lvTuXp(xp) {
 }
 function xpCuaLv(n) { return 5 * n * (n - 1); }
 
+// Nha may che bien dat tren nong trai: vat 'xg-<ma>' rong 2x2 (nong-trai-xuong.js)
+const xgCua = (k) => (/^xg-/.test(String(k)) && XuongCat.XUONG[String(k).slice(3)] ? String(k).slice(3) : '');
 function rong(o) {
-  if (o.k === 'nha' || o.k === 'kho') return 2;
+  if (o.k === 'nha' || o.k === 'kho' || xgCua(o.k)) return 2;
   return (TT[o.k] && TT[o.k].w) || 1;
 }
 
@@ -343,6 +345,7 @@ function diemDep(f) {
     if (o.k === 'nha') d += NHA[o.n || 1].dep;
     else if (o.k === 'kho') d += KHO.dep;
     else if (TT[o.k]) d += TT[o.k].dep;
+    else if (xgCua(o.k)) d += XuongCat.DEP;
   });
   return d;
 }
@@ -732,6 +735,7 @@ function nhatCon(f, ds, dacSanEm, congSp) {
 
 module.exports = function ganNongTrai(app, d) {
   let thiDua = null; // nong-trai-thidua.js (gan o cuoi)
+  let xuongMod = null; // nong-trai-xuong.js (gan o cuoi)
   const FILE = path.join(d.DATA_DIR, 'farms.json');
   const khoa = new Map(); // userId -> Promise (xu ly lan luot tung nguoi)
   const vaoHook = [];  // async (user, f) -> true neu da doi f (chay trong khoa cua em khi mo nong trai)
@@ -1116,11 +1120,11 @@ module.exports = function ganNongTrai(app, d) {
       // mua moi (tra tien) hoac lay tu tui do ra dat (mien phi)
       const k = String(b.k || '');
       const x = Number(b.x), y = Number(b.y);
-      const laO = k === 'o', con = CON[k], tt = TT[k];
-      if (!laO && !con && !tt) throw loi('Không có món này.');
+      const laO = k === 'o', con = CON[k], tt = TT[k], xgK = xgCua(k), xgM = xgK ? XuongCat.XUONG[xgK] : null;
+      if (!laO && !con && !tt && !xgM) throw loi('Không có món này.');
       if (a === 'mua' && tt && tt.doc) throw loi('Món này là quà độc quyền (Bộ sưu tập chữ Hán, công trình lớp, lễ hội) — không bán ở cửa hàng.');
-      const w = tt && tt.w ? 2 : 1;
-      if (!datDuoc(f, x, y, w)) throw loi('Chỗ này không đặt được.');
+      const w = (tt && tt.w) || xgM ? 2 : 1;
+      if (!datDuoc(f, x, y, w)) throw loi(xgM ? 'Nhà máy cần khoảng trống 2×2 ô — chọn chỗ rộng hơn, dời bớt đồ hoặc mở rộng đất nhé.' : 'Chỗ này không đặt được.');
       if (a === 'dat') {
         if (!(f.tui[k] > 0)) throw loi('Trong túi không còn món này.');
         f.tui[k]--;
@@ -1136,6 +1140,16 @@ module.exports = function ganNongTrai(app, d) {
           const soCon = f.o.filter((o) => o.k === k).length + (f.tui[k] || 0);
           if (soCon >= CON_TOI_DA) throw loi('Mỗi loại nuôi tối đa ' + CON_TOI_DA + ' con.');
           await tieuSao(con.sao);
+        } else if (xgM) {
+          // xay nha may: tra xu, ghi so huu (f.xuong.b) roi dat ngay len nong trai
+          if (lv < MO_TN.xuong.lv) throw loi('Nhà máy mở ở cấp ' + MO_TN.xuong.lv + '.');
+          if (xgM.lv > lv) throw loi('Lên cấp ' + xgM.lv + ' để xây ' + xgM.vn + '.');
+          f.xuong = f.xuong || {}; f.xuong.b = f.xuong.b || {};
+          if (f.xuong.b[xgK]) throw loi('Em đã xây ' + xgM.vn + ' rồi.');
+          if (f.xu < xgM.xu) throw loi('Cần ' + xgM.xu + ' xu để xây ' + xgM.vn + ' — em đang có ' + f.xu + ' xu.');
+          f.xu -= xgM.xu;
+          f.xuong.b[xgK] = { q: [], t: now };
+          them.xp += 15;
         } else if (tt.sao) await tieuSao(tt.sao);
         else tieuXu(tt.xu);
         if (tt) them.xp += Math.ceil(tt.dep / 2);
@@ -1154,6 +1168,7 @@ module.exports = function ganNongTrai(app, d) {
       if (o.k === 'nha' || o.k === 'kho') throw loi('Không cất được nhà.');
       if (o.k === 'o' && o.c) throw loi('Thu hoạch xong mới cất ô ruộng được.');
       if (CON[o.k] && o.h) throw loi(o.h > now ? 'Đợi con vật làm xong sản phẩm đã.' : 'Thu sản phẩm trước đã.');
+      if (xgCua(o.k) && f.xuong && f.xuong.b && f.xuong.b[xgCua(o.k)] && (f.xuong.b[xgCua(o.k)].q || []).length) throw loi('Nhà máy đang có mẻ hàng — đợi xong và thu hàng rồi mới cất được.');
       f.o = f.o.filter((x) => x !== o);
       f.tui[o.k] = (f.tui[o.k] || 0) + 1;
     } else if (a === 'morong') {
@@ -2110,7 +2125,7 @@ module.exports = function ganNongTrai(app, d) {
       ten: ten[id] || '', lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], now, hv: svb.total || 0,
       // chi gui hinh dang nong trai + sap hang, khong gui xu / kho
       o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t })),
-      sap: sapHien(f.sap), av: f.av || null,
+      sap: sapHien(f.sap), av: f.av || null, xg: xuongMod ? xuongMod.xgTom(f) : {}, nc: xuongMod ? xuongMod.ncTom(f, false) : [],
       daTim: fm.tham.d === ngay && fm.tham.ids.indexOf(id) >= 0,
       daChao: !!(fm.chao && fm.chao.d === ngay && fm.chao.ids.indexOf(id) >= 0),
       conGiup: GIUP_NGAY - (fm.giup && fm.giup.d === ngay ? fm.giup.n : 0),
@@ -2531,12 +2546,12 @@ module.exports = function ganNongTrai(app, d) {
   const hKt = {
     doc, ghi, lanLuot, haiLuot, loi, traLoi, trangThai, ghiNk, docNhieu, thiTruong, hanMuc, ghiBanNgay, lvTuXp, saoHoc, taiCongDong, boNhoCongDong,
     tuHocCua, boKtbc, chonKt, taoCau, cauDung, chamCau, onCau, ketQuaCau, ghiOn, thuRuong, nhatCon, donHomNay, moQua, vaoHook, ttThem, banCungLop,
-    MO_TN, SP, CAY, CON, TT, CA, MON, HANG, LUONG, LUONG_PY, CON_TOI_DA, CAY_HIEM, BAN_MOI_SAO, Ktbc, CauHoi, CATALOG, NHOM_TT: null,
+    MO_TN, SP, CAY, CON, TT, CA, MON, HANG, LUONG, LUONG_PY, CON_TOI_DA, CAY_HIEM, BAN_MOI_SAO, Ktbc, CauHoi, CATALOG, NHOM_TT: null, datDuoc, rong,
   };
   const phieuLuu = require('./nong-trai-phieuluu')(app, d, hKt, chung);
   hKt.phieuLuu = phieuLuu;
   require('./nong-trai-kt')(app, d, hKt, chung);
-  require('./nong-trai-xuong').gan(app, d, hKt, chung);
+  xuongMod = require('./nong-trai-xuong').gan(app, d, hKt, chung);
   async function initTatCa() { await initTable(); await chung.initTable(); }
 
   // _thuCau: chi de chay tools/thu-cau-nong-trai.js (kiem tra cau hoi chi thuoc bai em da hoc / duoc giao)

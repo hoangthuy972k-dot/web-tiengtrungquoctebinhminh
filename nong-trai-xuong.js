@@ -79,7 +79,8 @@ function hangCua(f) {
   const b = (f.xuong && f.xuong.b) || {};
   return Object.keys(b).reduce((a, k) => a.concat(XUONG[k] ? XUONG[k].r : []), []);
 }
-const CAT = { NL, HANG_GC, XUONG, LUONG, LUONG_PY, dangKySp, hangCua };
+const DEP = 15; // diem dep cua 1 nha may dat tren nong trai
+const CAT = { NL, HANG_GC, XUONG, LUONG, LUONG_PY, DEP, dangKySp, hangCua };
 
 function gan(app, d, h, c) {
   const loi = h.loi, SP = h.SP;
@@ -89,6 +90,35 @@ function gan(app, d, h, c) {
   const truKho = (f, k, n) => { f.kho[k] -= n; if (!f.kho[k]) delete f.kho[k]; };
 
   /* ======================= NHA MAY ======================= */
+  // Nha may la vat 'xg-<ma>' (2x2) tren nong trai. viTri: 'dat' = dang dat, 'tui' = trong tui do, '' = chua co vat (du lieu cu)
+  const viTri = (f, bk) => (f.o.some((o) => o.k === 'xg-' + bk) ? 'dat' : (f.tui['xg-' + bk] || 0) > 0 ? 'tui' : '');
+  // tim cho trong 2x2 (uu tien gan nha kho, quet tu tren xuong); khong con cho -> null
+  function choTrong(f) {
+    const kich = f.o.reduce((m, o) => ({ w: Math.max(m.w, o.x + h.rong(o)), h: Math.max(m.h, o.y + h.rong(o)) }), { w: 0, h: 0 });
+    for (let y = 0; y < 40; y++) for (let x = 0; x < 40; x++) if (h.datDuoc(f, x, y, 2)) return { x, y };
+    return kich && null;
+  }
+  // Tai khoan da xay nha may truoc khi nha may hien tren nong trai: tu dat vao cho trong, het cho thi cat vao tui
+  function diTru(f) {
+    const b = f.xuong && f.xuong.b;
+    if (!b) return false;
+    let doi = false;
+    Object.keys(b).forEach((bk) => {
+      if (!XUONG[bk] || viTri(f, bk)) return;
+      const c0 = choTrong(f);
+      if (c0) { f.nid = f.nid || 10; f.o.push({ id: f.nid++, k: 'xg-' + bk, x: c0.x, y: c0.y }); }
+      else f.tui['xg-' + bk] = 1;
+      doi = true;
+    });
+    return doi;
+  }
+  h.vaoHook.push(async (user, f) => diTru(f));
+  // hang doi tung nha may (cho client ve trang thai tren nong trai: ranh / dang lam / xong)
+  function xgTom(f) {
+    const b = (f.xuong && f.xuong.b) || {}, ra = {};
+    Object.keys(b).forEach((bk) => { ra[bk] = (b[bk].q || []).map((j) => ({ r: j.r, bd: j.bd, kt: j.kt })); });
+    return ra;
+  }
   // Chuyen cac me da xong vao kho; tra ve { k: n }
   function thuXong(f, chiB) {
     const x = xg(f), now = Date.now(), ra = {};
@@ -110,7 +140,7 @@ function gan(app, d, h, c) {
       now, hang: hangDoi(lv), nhanh: { con: Math.max(0, NHANH_NGAY - nh), toiDa: NHANH_NGAY },
       ds: Object.keys(XUONG).map((b) => {
         const m = XUONG[b], co = x.b[b];
-        return { b, zh: m.zh, py: m.py, vn: m.vn, lv: m.lv, xu: m.xu, co: !!co, khoa: m.lv > lv,
+        return { b, zh: m.zh, py: m.py, vn: m.vn, lv: m.lv, xu: m.xu, co: !!co, khoa: m.lv > lv, o: co ? viTri(f, b) : '',
           q: co ? (co.q || []).map((j) => ({ id: j.id, r: j.r, bd: j.bd, kt: j.kt, xong: j.kt <= now, chay: j.bd <= now && j.kt > now, cho: j.cho && j.cho > now ? j.cho : 0 })) : [],
           r: m.r.map((r) => ({ k: r, can: HANG_GC[r].can, phut: HANG_GC[r].phut, ban: SP[r].ban })) };
       }),
@@ -132,10 +162,13 @@ function gan(app, d, h, c) {
         if (x.b[bk]) throw loi('Em đã xây ' + m.vn + ' rồi.');
         if (m.lv > lv) throw loi('Lên cấp ' + m.lv + ' để xây ' + m.vn + '.');
         if (f.xu < m.xu) throw loi('Cần ' + m.xu + ' xu để xây ' + m.vn + ' — em đang có ' + f.xu + ' xu.');
+        // (client moi xay bang cach chon cho dat — act 'mua' k 'xg-<ma>'; duong cu nay tu tim cho trong)
         f.xu -= m.xu; x.b[bk] = { q: [], t: Date.now() }; f.xp += 15;
+        diTru(f);
       } else if (a === 'lam') {
         const co = x.b[bk], r = String(b.r || ''), ct = HANG_GC[r];
         if (!co) throw loi('Xây ' + m.vn + ' trước đã.');
+        if (viTri(f, bk) !== 'dat') throw loi(m.vn + ' đang cất trong túi đồ — đặt lên nông trại (Kho → Túi đồ) rồi mới chạy máy được.');
         if (!ct || m.r.indexOf(r) < 0) throw loi('Nhà máy này không làm món đó.');
         co.q = co.q || [];
         if (co.q.length >= hangDoi(lv)) throw loi('Hàng chờ đầy (' + hangDoi(lv) + ' mẻ) — đợi xong hoặc thu hàng trước.');
@@ -291,6 +324,19 @@ function gan(app, d, h, c) {
     return doi;
   }
   h.vaoHook.push(chayNc);
+  // Tom tat nhan cong de ve tren nong trai (nha em: kem viec hom nay; ban sang tham: chi ten, viec, trang thai)
+  function ncTom(f, rieng) {
+    const n = f.nc;
+    if (!n || !n.ds || !n.ds.length) return [];
+    const hom = ngay(), dau = Date.parse(hom + 'T00:00:00Z') - 7 * 3600000;
+    return n.ds.slice(0, 3).map((w) => {
+      const st = n.ngay && n.ngay.d === hom ? n.ngay.w[w.id] : null;
+      const x = { id: w.id, vt: w.vt, ten: w.ten, vui: w.vui == null ? NC_VUI_DAU : w.vui, tt: st ? st.tt : '',
+        hom: { thu: st ? st.thu || 0 : 0, nhat: st ? st.nhat || 0 : 0, giao: st ? st.giao || 0 : 0, xg: st ? st.xg || 0 : 0 } };
+      if (rieng) x.log = (n.log || []).filter((e) => e.id === w.id && e.t >= dau).slice(0, 4).map((e) => e.s);
+      return x;
+    });
+  }
   function ncChoHs(f, lv, homNay) {
     const n = nc(f), hom = ngay();
     return {
@@ -456,10 +502,10 @@ function gan(app, d, h, c) {
     let xongXg = 0;
     Object.keys(x).forEach((b) => (x[b].q || []).forEach((j) => { if (j.kt <= now) xongXg++; }));
     const xkToi = f.xk && f.xk.gui ? f.xk.gui.filter((g) => !g.xong && g.den <= now).length : 0;
-    return { xongXg, soXg: Object.keys(x).length, soNc: f.nc && f.nc.ds ? f.nc.ds.length : 0, ncTb: f.nc && f.nc.tb ? f.nc.tb.length : 0, xkToi };
+    return { xg: xgTom(f), nc: ncTom(f, true), ncSao: NC_SAO, xongXg, soXg: Object.keys(x).length, soNc: f.nc && f.nc.ds ? f.nc.ds.length : 0, ncTb: f.nc && f.nc.tb ? f.nc.tb.length : 0, xkToi };
   });
   Object.assign(h.CATALOG, { XG: { XUONG, HANG_GC, NL, NHANH_NGAY }, NC_VT, NC_SAO });
-  return { thuXong, hopDong };
+  return { thuXong, hopDong, xgTom, diTru, ncTom };
 }
 
 module.exports = { CAT, gan };

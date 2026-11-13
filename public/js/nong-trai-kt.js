@@ -487,10 +487,17 @@
     }
     if (!d) { than.innerHTML = '<p class="nt-trong">Đang mở nhà máy…</p>'; return; }
     var html = N.htmlGt('xuong') + '<p class="kt-mk-dau">Mỗi nhà máy xếp được ' + d.hang + ' mẻ · làm nhanh còn ' + d.nhanh.con + '/' + d.nhanh.toiDa + ' lần hôm nay</p>';
-    d.ds.forEach(function (x) {
+    var chi = N.bangDang().tab || '', dsXem = d.ds.filter(function (x) { return !chi || x.b === chi; });
+    if (!dsXem.length) dsXem = d.ds;
+    if (chi && dsXem.length < d.ds.length) html += '<p><button type="button" class="nt-nut nt-nut-nho" data-xg-tatca>🏭 Xem tất cả nhà máy</button></p>';
+    dsXem.forEach(function (x) {
       html += '<section class="kt-xg' + (x.co ? '' : ' chua') + '"><header>' + img('xg-' + x.b) + '<span>' + tenHtml(x) + '</span>' +
         (x.co ? (x.q.some(function (j) { return j.xong; }) ? '<button type="button" class="nt-nut nt-nut-xanh nt-nut-nho" data-xg-thu="' + x.b + '">📦 Thu hàng</button>' : '')
           : x.khoa ? '<span class="kt-khoa">Cấp ' + x.lv + '</span>' : '<button type="button" class="nt-nut nt-nut-vang nt-nut-nho" data-xg-xay="' + x.b + '">' + img('ic-xu') + x.xu + ' · Xây</button>') + '</header>';
+      if (x.co && x.o !== 'dat') {
+        html += '<p class="kt-xg-tui">📦 Nhà máy đang cất trong túi đồ — đặt lên nông trại (cần khoảng trống 2×2 ô) để chạy máy. ' +
+          '<button type="button" class="nt-nut nt-nut-nho nt-nut-vang" data-xg-dat="' + x.b + '">Đặt lên nông trại</button></p>';
+      }
       if (x.co) {
         html += '<ul class="kt-q">' + (x.q.length ? x.q.map(function (j) {
           var m = sp(j.r);
@@ -503,15 +510,32 @@
         html += '<div class="kt-ct">' + x.r.map(function (r) {
           var m = sp(r.k);
           return '<div class="kt-ct-o">' + img('sp-' + r.k) + '<b lang="zh">' + esc(m.zh) + '</b><small>' + esc(m.vn) + ' · ' + N.thoiLuong(r.phut) + ' · bán ~' + r.ban + ' xu</small>' +
-            '<div class="kt-can-ds">' + dongCan(r.can) + '</div><button type="button" class="nt-nut nt-nut-nho nt-nut-xanh" data-xg-lam="' + x.b + '" data-r="' + r.k + '"' + (x.q.length >= d.hang ? ' disabled' : '') + '>Làm</button></div>';
+            '<div class="kt-can-ds">' + dongCan(r.can) + '</div><button type="button" class="nt-nut nt-nut-nho nt-nut-xanh" data-xg-lam="' + x.b + '" data-r="' + r.k + '"' + (x.q.length >= d.hang || x.o !== 'dat' ? ' disabled' : '') + '>Làm</button></div>';
         }).join('') + '</div>';
       } else html += '<p class="kt-nho">Làm: ' + x.r.map(function (r) { return esc(sp(r.k).vn); }).join(', ') + '</p>';
       html += '</section>';
     });
-    html += '<p class="nt-meo">Hàng chế biến bán đắt hơn, cần cho nhà hàng (bánh mì phô mai, sữa chua trái cây), đơn hàng và xuất khẩu. Làm nhanh không tốn xu — chỉ cần trả lời đúng câu hỏi từ bài em đã học.</p>';
+    html += '<p class="nt-meo">Nhà máy nằm ngay trên nông trại: chạm vào nhà máy để mở bảng này, có hàng xong thì chạm bong bóng để thu; nhấn giữ rồi kéo để dời chỗ. Hàng chế biến bán đắt hơn, cần cho nhà hàng (bánh mì phô mai, sữa chua trái cây), đơn hàng và xuất khẩu. Làm nhanh không tốn xu — chỉ cần trả lời đúng câu hỏi từ bài em đã học.</p>';
     than.innerHTML = html;
     var gui = function (body, ok) { return goi('/api/farm/xuong', body).then(function (r) { XG.d = r.xuong; N.nhanTrangThai(r.st); if (ok) ok(r); N.veBang(); capNhatPhu(); }, loiGoi); };
-    $all('[data-xg-xay]', than).forEach(function (b) { b.addEventListener('click', function () { gui({ a: 'xay', b: b.getAttribute('data-xg-xay') }, function () { N.tieng('len'); bao('🏭 Đã xây xong nhà máy!'); }); }); });
+    // xay / dat lai: chon cho tren nong trai (2x2). Het cho thi nhac em don do hoac mo rong dat
+    var chonCho = function (bk, nguon) {
+      var k = S.st.kich, co = false;
+      for (var y = 0; y < k.h - 1 && !co; y++) for (var x = 0; x < k.w - 1; x++) if (N.datDuoc(x, y, 2)) { co = true; break; }
+      if (!co) { bao('Nông trại chưa còn khoảng trống 2×2 ô cho nhà máy — em dời bớt đồ (nhấn giữ rồi kéo), cất vài món vào túi, hoặc mở rộng đất ở Cửa hàng → Đất & nhà nhé!', 'loi'); return; }
+      XG.t = 0;
+      N.batDauDat('xg-' + bk, nguon);
+    };
+    $all('[data-xg-xay]', than).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var bk = b.getAttribute('data-xg-xay'), m = S.cat.XG.XUONG[bk];
+        if (S.st.xu < m.xu) { bao('Cần ' + m.xu + ' xu để xây ' + m.vn + ' — em đang có ' + S.st.xu + ' xu.', 'loi'); return; }
+        chonCho(bk, 'mua');
+      });
+    });
+    $all('[data-xg-dat]', than).forEach(function (b) { b.addEventListener('click', function () { chonCho(b.getAttribute('data-xg-dat'), 'dat'); }); });
+    var tc = $('[data-xg-tatca]', than);
+    if (tc) tc.addEventListener('click', function () { N.bangDang().tab = ''; N.veBang(); });
     $all('[data-xg-lam]', than).forEach(function (b) { b.addEventListener('click', function () { var r = b.getAttribute('data-r'); gui({ a: 'lam', b: b.getAttribute('data-xg-lam'), r: r }, function () { N.tieng('mua'); N.doc(sp(r).zh); bao('Đã cho vào máy: ' + sp(r).vn); }); }); });
     $all('[data-xg-thu]', than).forEach(function (b) {
       b.addEventListener('click', function () {
@@ -591,6 +615,163 @@
     veNc(than);
     if (!NC.d || Date.now() - (NC.t || 0) > 4000) taiNc();
   });
+
+  /* ================= 5b) NHAN CONG TREN NONG TRAI =================
+     Moi nguoi lam la 1 hinh nho di lai tren ban do (toi da 3). Chi de nhin: may chu quyet dinh viec da lam
+     (st.kt.nc: trang thai + so viec hom nay); o day chi cho ho di giua ruong / chuong / nha may - kho va hien bong bong.
+     Ngay nghi phep: ngoi canh nha, bong bong 💤. Chi dung transform (translate) + keyframes; tab an thi dung. */
+  var V = '#2b1d3a';
+  var NC_MAU = { thu: ['#7cc456', '#ffd54f'], chan: ['#64b5f6', '#1e88e5'], van: ['#ffb74d', '#e65100'] };
+  function ncSvg(vt) {
+    var m = NC_MAU[vt] || NC_MAU.thu, s = '<svg viewBox="0 0 64 84" aria-hidden="true">' +
+      '<ellipse cx="32" cy="80" rx="15" ry="3.5" fill="#000" opacity=".16"/>';
+    // xe day cua nguoi van chuyen (ve truoc de nam sau nguoi)
+    if (vt === 'van') s += '<g class="nc-do"><path d="M40 60H60V72H40Z" fill="#c98a5a" stroke="' + V + '" stroke-width="2.4" stroke-linejoin="round"/>' +
+      '<rect x="43" y="50" width="14" height="10" rx="2" fill="#ffe0b2" stroke="' + V + '" stroke-width="2.2"/><path d="M46 55h8" stroke="' + V + '" stroke-width="1.8"/>' +
+      '<circle cx="50" cy="75" r="4.5" fill="#6d4c41" stroke="' + V + '" stroke-width="2.2"/><path d="M40 62L33 54" stroke="' + V + '" stroke-width="2.6" stroke-linecap="round"/></g>';
+    // chan: dung (2 chan dao nhau khi di) / ngoi (duoi thang)
+    s += '<g class="nc-dung"><path class="nc-chan nc-chan-a" d="M28 60V76" stroke="' + V + '" stroke-width="8" stroke-linecap="round"/><path class="nc-chan nc-chan-a" d="M28 60V76" stroke="#5d4037" stroke-width="4" stroke-linecap="round"/>' +
+      '<path class="nc-chan nc-chan-b" d="M36 60V76" stroke="' + V + '" stroke-width="8" stroke-linecap="round"/><path class="nc-chan nc-chan-b" d="M36 60V76" stroke="#5d4037" stroke-width="4" stroke-linecap="round"/></g>' +
+      '<g class="nc-ngoi"><path d="M28 74H44M36 78H50" stroke="' + V + '" stroke-width="8" stroke-linecap="round"/><path d="M28 74H44M36 78H50" stroke="#5d4037" stroke-width="4" stroke-linecap="round"/></g>';
+    s += '<g class="nc-than">' +
+      '<path d="M20 62Q20 40 32 40Q44 40 44 62Z" fill="' + m[0] + '" stroke="' + V + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+      (vt === 'chan' ? '<path d="M25 62V48H39V62" fill="' + m[1] + '" stroke="' + V + '" stroke-width="2.2"/><circle cx="28" cy="51" r="1.5" fill="#ffd54f"/><circle cx="36" cy="51" r="1.5" fill="#ffd54f"/>' : '') +
+      (vt === 'van' ? '<path d="M26 41V62M38 41V62" stroke="' + m[1] + '" stroke-width="3"/>' : '') +
+      '<circle cx="32" cy="27" r="13" fill="#ffd9b8" stroke="' + V + '" stroke-width="2.6"/>' +
+      '<circle cx="28" cy="28" r="1.8" fill="' + V + '"/><circle cx="37" cy="28" r="1.8" fill="' + V + '"/><path d="M29 33Q33 36 37 33" fill="none" stroke="' + V + '" stroke-width="1.8" stroke-linecap="round"/>' +
+      '<circle cx="25" cy="32" r="2" fill="#ffab91" opacity=".7"/>';
+    if (vt === 'thu') s += '<path d="M10 20Q32 8 54 20Q32 26 10 20Z" fill="#ffe082" stroke="' + V + '" stroke-width="2.4" stroke-linejoin="round"/><path d="M22 18Q24 6 32 6Q40 6 42 18Z" fill="#ffd54f" stroke="' + V + '" stroke-width="2.4" stroke-linejoin="round"/><path d="M23 16Q32 19 41 16" fill="none" stroke="#e5533d" stroke-width="2.2"/>';
+    else s += '<path d="M19 22Q20 10 32 10Q44 10 45 22Z" fill="' + m[1] + '" stroke="' + V + '" stroke-width="2.4" stroke-linejoin="round"/><path d="M40 21H52" stroke="' + V + '" stroke-width="5" stroke-linecap="round"/><path d="M40 21H52" stroke="' + m[1] + '" stroke-width="2.4" stroke-linecap="round"/>';
+    // do nghe: gio lua (thu hoach) / xo sua (chan nuoi) / tay day xe (van chuyen)
+    if (vt === 'thu') s += '<g class="nc-do"><path d="M40 52H56L53 64H43Z" fill="#c98a5a" stroke="' + V + '" stroke-width="2.4" stroke-linejoin="round"/><path d="M41 52Q48 40 55 52" fill="none" stroke="' + V + '" stroke-width="2.2"/>' +
+      '<path d="M44 52V46M48 52V44M52 52V46" stroke="#ffd54f" stroke-width="2.6" stroke-linecap="round"/><path d="M42 48L44 52" stroke="' + V + '" stroke-width="0"/></g>';
+    if (vt === 'chan') s += '<g class="nc-do"><path d="M42 54H56L54 68H44Z" fill="#cfd8dc" stroke="' + V + '" stroke-width="2.4" stroke-linejoin="round"/><path d="M42 54Q49 44 56 54" fill="none" stroke="' + V + '" stroke-width="2.2"/><path d="M44 57H54" stroke="#fff" stroke-width="2.6"/></g>';
+    s += '<path d="M42 46Q46 50 ' + (vt === 'van' ? '36 55' : '46 54') + '" fill="none" stroke="' + V + '" stroke-width="6" stroke-linecap="round"/><path d="M42 46Q46 50 ' + (vt === 'van' ? '36 55' : '46 54') + '" fill="none" stroke="' + m[0] + '" stroke-width="2.8" stroke-linecap="round"/>';
+    return s + '</g></svg>';
+  }
+  var NCF = { ds: [], boi: '', luot: 0 };
+  function ncDuLieu() { return S.tham ? (S.tham.nc || []) : ((S.st && S.st.kt && S.st.kt.nc) || []); }
+  function ncDangLam(w) { return w.tt === 'lam'; }
+  // diem dung nghi: canh nha, moi nguoi 1 cho
+  function ncChoNghi(d, i) {
+    var nha = d.o.filter(function (o) { return o.k === 'nha'; })[0] || { x: 1, y: 1 };
+    // ngoi thanh hang ngay truoc hien nha (hang o ngay duoi nha)
+    return [Math.max(0.1, Math.min(d.kich.w - 0.8, nha.x - 0.1 + i * 0.8)), Math.min(d.kich.h - 1, nha.y + 2.05)];
+  }
+  // cac diem lam viec theo vai tro (toa do o, co the le)
+  function ncDich(d, w) {
+    var c = S.cat, ds = [];
+    if (w.vt === 'thu') d.o.forEach(function (o) { if (o.k === 'o') ds.push([o.x, o.y + 0.1]); });
+    else if (w.vt === 'chan') d.o.forEach(function (o) { if (c.CON[o.k]) ds.push([o.x + 0.55, o.y + 0.15]); });
+    else d.o.forEach(function (o) { if (o.k === 'kho' || N.xgCua(o.k)) ds.push([o.x + 0.5, o.y + 1.25]); });
+    if (!ds.length) { var nha = d.o.filter(function (o) { return o.k === 'nha'; })[0] || { x: 1, y: 1 }; ds.push([nha.x + 1, nha.y + 2.2], [nha.x + 2.5, nha.y + 2.4]); }
+    return ds.filter(function (p) { return p[0] >= 0 && p[1] >= 0 && p[0] <= d.kich.w - 0.5 && p[1] <= d.kich.h - 0.6; });
+  }
+  function ncBongViec(w) {
+    var h = w.hom || {};
+    if (w.vt === 'thu') return h.thu ? '🌾 +' + h.thu : '';
+    if (w.vt === 'chan') return h.nhat ? '🥚 +' + h.nhat : '';
+    return h.xg && (!h.giao || Math.random() < 0.6) ? '📦 → kho' : h.giao ? '🧾 +' + h.giao + ' đơn' : '';
+  }
+  function ncDat(n, ms) {
+    var T = S.o, w = T * 1.05;
+    n.el.style.width = w + 'px';
+    n.el.style.transitionDuration = (ms || 0) + 'ms';
+    n.el.style.transform = 'translate(' + ((n.x + 0.5) * T - w / 2).toFixed(1) + 'px,' + ((n.y + 0.95) * T - w * 1.31).toFixed(1) + 'px)';
+    n.el.style.zIndex = Math.round((n.y + 1) * 10 + 6);
+  }
+  function ncBong(n, chu, ms) {
+    var b = n.el.querySelector('.kt-ncf-bong');
+    if (!b) return;
+    clearTimeout(n.henBong);
+    b.textContent = chu;
+    b.hidden = !chu;
+    if (chu && ms) n.henBong = setTimeout(function () { if (n.el) { b.hidden = true; if (n.nghi) { b.textContent = '💤'; b.hidden = false; b.classList.remove('dai'); } } }, ms);
+  }
+  // Goi sau moi lan ve lai ban do: gan lai cac hinh nhan cong (giu vi tri cu neu cung ban do)
+  function veNcf() {
+    var d = N.duLieuBanDo(), dat = $('#ntDat');
+    if (!d || !dat || !S.cat) return;
+    var boi = S.tham ? 'tham:' + S.tham.id : 'nha', ws = ncDuLieu().slice(0, 3);
+    var cu = boi === NCF.boi ? NCF.ds : [];
+    NCF.boi = boi;
+    NCF.ds = ws.map(function (w, i) {
+      var c = cu.filter(function (x) { return x.id === w.id; })[0];
+      var nghi = !ncDangLam(w), cho = ncChoNghi(d, i);
+      var n = c || { id: w.id, x: cho[0], y: cho[1], sau: Date.now() + 1200 + i * 900 };
+      if (c) clearTimeout(c.henBong);
+      if (nghi) { n.x = cho[0]; n.y = cho[1]; }
+      else if (c && c.nghi) n.sau = Date.now() + 600; // vua het nghi: di lam ngay
+      n.w = w; n.nghi = nghi; n.i = i;
+      var el = document.createElement('div');
+      el.className = 'kt-ncf vt-' + w.vt + (nghi ? ' nghi' : '') + (n.trai ? ' trai' : '');
+      el.innerHTML = '<span class="kt-ncf-bong" hidden></span>' + (w.vui < 30 ? '<span class="kt-ncf-mat" title="Đang buồn">😟</span>' : '') +
+        '<button type="button" class="kt-ncf-nut" aria-label="' + esc(w.ten.zh + ' — ' + (S.cat.NC_VT[w.vt] || {}).vn) + '">' + ncSvg(w.vt) + '</button>';
+      n.el = el;
+      ncDat(n, 0);
+      dat.appendChild(el);
+      if (nghi) ncBong(n, '💤');
+      el.querySelector('.kt-ncf-nut').addEventListener('click', function (e) { e.stopPropagation(); ncCham(n); });
+      return n;
+    });
+  }
+  // Moi giay: nguoi dang lam di toi 1 diem lam viec moi; nguoi nghi thi thinh thoang nhac em hoc bai
+  function nhipNcf() {
+    var d = N.duLieuBanDo();
+    if (!d || !NCF.ds.length || document.hidden) return;
+    var now = Date.now();
+    NCF.luot++;
+    NCF.ds.forEach(function (n) {
+      if (!n.el || !n.el.isConnected) return;
+      if (n.nghi) {
+        // 12 giay 1 lan, lan luot tung nguoi noi cau nghi phep (5 giay)
+        if (NCF.luot % 12 === 2 && Math.floor(NCF.luot / 12) % NCF.ds.length === n.i) {
+          var b = n.el.querySelector('.kt-ncf-bong');
+          b.classList.add('dai');
+          ncBong(n, n.w.tt === 'no' ? '😟 chưa có lương hôm nay…' : '💤 nghỉ phép — học bài để mình làm việc nhé!', 5000);
+        }
+        return;
+      }
+      if (now < n.sau) return;
+      var ds = ncDich(d, n.w);
+      var t = ds[Math.floor(Math.random() * ds.length)];
+      if (!t) return;
+      var kc = Math.abs(t[0] - n.x) + Math.abs(t[1] - n.y), ms = Math.max(500, Math.round(kc * 560));
+      if (Math.abs(t[0] - n.x) > 0.05) { n.trai = t[0] < n.x; n.el.classList.toggle('trai', n.trai); }
+      n.x = t[0]; n.y = t[1];
+      n.el.classList.add('di');
+      ncDat(n, ms);
+      var el = n.el;
+      setTimeout(function () {
+        if (n.el !== el) return;
+        el.classList.remove('di');
+        var chu = Math.random() < 0.55 ? ncBongViec(n.w) : '';
+        if (chu) ncBong(n, chu, 2400);
+      }, ms);
+      n.sau = now + ms + 2600 + Math.random() * 4200;
+    });
+  }
+  var TT_NCF = { lam: 'đang làm việc', nghi: 'nghỉ phép hôm nay', no: 'chưa được trả lương hôm nay', '': 'chờ em học đủ sao' };
+  function ncCham(n) {
+    var w = n.w, vt = S.cat.NC_VT[w.vt] || {}, vui = Math.max(0, Math.min(100, w.vui || 0));
+    var html = '<div class="nt-noi-dau kt-ncf-dau"><span class="kt-ncf-anh vt-' + w.vt + '">' + ncSvg(w.vt) + '</span><span class="kt-ten"><b lang="zh">' + esc(w.ten.zh) + '</b><small>' + esc(w.ten.py) + '</small>' +
+      '<span>' + esc(vt.vn || '') + ' <span lang="zh">' + esc(vt.zh || '') + '</span></span></span></div>';
+    if (S.tham) { N.moNoi(n.el, html + '<p class="nt-noi-phu">Nhân công của bạn · ' + (TT_NCF[w.tt] || TT_NCF['']) + '</p>', 'nc' + w.id); N.doc(vt.zh || ''); return; }
+    var sao = (S.st.kt && S.st.kt.ncSao) || 10, hoc = (S.st.hoc && S.st.hoc.homNay) || 0;
+    html += '<p class="nt-noi-phu"><b>' + (TT_NCF[w.tt] || TT_NCF['']) + '</b> · tâm trạng ' + (vui >= 60 ? '😊' : vui >= 30 ? '😐' : '😟') + ' ' + vui + '/100</p>';
+    html += (w.log && w.log.length) ? '<ul class="kt-ncf-log">' + w.log.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '<p class="nt-noi-phu">Hôm nay chưa làm việc gì.</p>';
+    if (!ncDangLam(w)) html += '<p class="nt-noi-phu">Em mới học ' + hoc + '/' + sao + ' sao hôm nay — học đủ thì mình đi làm ngay!</p>';
+    var cta = $('#ntHocCta');
+    html += '<div class="kt-ncf-nutds"><button type="button" class="nt-nut nt-nut-nho" data-ncf-ql>👷 Quản lý</button>' +
+      (!ncDangLam(w) && w.tt !== 'no' ? '<a class="nt-nut nt-nut-nho nt-nut-xanh" href="' + esc((cta && cta.getAttribute('href')) || '/') + '">📚 Học kiếm sao</a>' : '') + '</div>';
+    N.moNoi(n.el, html, 'nc' + w.id);
+    N.doc(vt.zh || '');
+    var ql = $('#ntNoi [data-ncf-ql]');
+    if (ql) ql.addEventListener('click', function () { N.dongNoi(); N.moBang('kt-nc'); });
+  }
+  N.sauVe.push(veNcf);
+  N.nhip.push(nhipNcf);
+  document.addEventListener('visibilitychange', function () { document.body.classList.toggle('kt-an', document.hidden); });
 
   /* ================= 6) XUAT KHAU ================= */
   var XK = { d: null, cau: null };

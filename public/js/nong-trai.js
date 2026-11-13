@@ -1528,7 +1528,11 @@
       '<h3>Gọi tên món hàng bằng tiếng Trung</h3>' +
       '<div class="nt-goi-mon">' + img('sp-' + k) + '<span><b>' + esc(m.vn) + '</b><small>Bán ' + n + ' cái</small></span></div>' +
       '<p class="nt-goi-luat">Chọn đúng chữ Hán: <b>' + dung + ' xu</b> (+10%) · Chọn sai: chỉ <b>' + sai + ' xu</b></p>' +
-      '<div class="nt-ch-lua zh">' + lua.map(function (z) { return '<button type="button" data-goi="' + esc(z) + '" lang="zh">' + esc(z) + '</button>'; }).join('') + '</div>' +
+      // ten mon hang khong nam trong bai hoc -> luon kem pinyin duoi chu Han (hoc sinh HSK1 chua doc duoc)
+      '<div class="nt-ch-lua zh co-py">' + lua.map(function (z) {
+        var py = ''; Object.keys(c.SP).forEach(function (x) { if (c.SP[x].zh === z) py = c.SP[x].py || ''; });
+        return '<button type="button" data-goi="' + esc(z) + '" lang="zh">' + esc(z) + (py ? '<small class="nt-ch-py" lang="zh-Latn">' + esc(py) + '</small>' : '') + '</button>';
+      }).join('') + '</div>' +
       '<p class="nt-ch-giai" id="ntGoiGiai" aria-live="polite"></p>' +
       '<div class="nt-hang-nut"><button type="button" class="nt-nut" id="ntGoiVe">Về kho</button></div></div>');
     var xong = false;

@@ -266,3 +266,7 @@ body.kt-an .kt-ncf *, body.kt-an .nt-xg-khoi i, body.kt-an .nt-xg-rang { animati
 .kt-ncf-anh svg { width: 100%; height: auto; display: block; }
 .kt-ncf-log { margin: 4px 0; padding-left: 18px; font-size: 0.82rem; font-weight: 600; color: var(--mo); }
 .kt-ncf-nutds { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+
+/* Hoi ten mon hang: pinyin duoi chu Han (ten mon khong nam trong bai hoc) */
+.nt-ch-lua.co-py button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; line-height: 1.15; padding-block: 8px; }
+.nt-ch-lua.co-py .nt-ch-py { font-family: 'Be Vietnam Pro', system-ui, sans-serif; font-size: .95rem; font-weight: 700; color: #7a5c3e; letter-spacing: .01em; }

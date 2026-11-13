@@ -346,7 +346,11 @@
     var than = $('#ntBangThan');
     than.innerHTML = '<div class="kt-ban">' + hinhSp(k) + '<p>Bán <b>' + esc(m.vn) + '</b> cho chợ · ' + x.gia + ' xu / món ' + muiTen(x.xu) + '</p>' +
       soLuong('mk', n, max) + '<p class="kt-ban-tong">Thành tiền: <b data-tong>' + n * x.gia + '</b> xu' + (maxHm < co ? ' <small>(hạn mức còn ' + d.hm.con + ' xu)</small>' : '') + '</p>' +
-      '<p><b>Món này tên chữ Hán là gì?</b></p><div class="nt-ch-lua zh">' + lua.map(function (z) { return '<button type="button" lang="zh" data-goi="' + esc(z) + '">' + esc(z) + '</button>'; }).join('') + '</div>' +
+      // ten mon hang khong nam trong bai hoc -> luon kem pinyin duoi chu Han (hoc sinh HSK1 chua doc duoc)
+      '<p><b>Món này tên chữ Hán là gì?</b></p><div class="nt-ch-lua zh co-py">' + lua.map(function (z) {
+        var py = ''; d.ban.forEach(function (y) { var t = tenSp(y.k); if (t.zh === z) py = t.py || ''; });
+        return '<button type="button" lang="zh" data-goi="' + esc(z) + '">' + esc(z) + (py ? '<small class="nt-ch-py" lang="zh-Latn">' + esc(py) + '</small>' : '') + '</button>';
+      }).join('') + '</div>' +
       '<button type="button" class="nt-nut nt-nut-nho" data-mk-thoi>← Quay lại</button></div>';
     $all('img', than).forEach(function (im) { im.addEventListener('error', function () { im.classList.add('hong'); }, { once: true }); });
     ganSoLuong(than, max, function (v) { n = v; $('[data-tong]', than).textContent = v * x.gia; });

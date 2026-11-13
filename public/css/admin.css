@@ -428,3 +428,4 @@
 .qmk-thu input { padding: 6px 10px; border-radius: 8px; border: 1px solid #c6dff5; font: inherit; min-width: 220px; }
 .qmk-da-gui { color: #1f6b3f; font-weight: 700; }
 .qmk-loi-gui { color: #a8321f; font-weight: 600; }
+.nt-tin-ct { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }

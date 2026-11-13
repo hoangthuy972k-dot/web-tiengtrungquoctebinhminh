@@ -63,6 +63,7 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
     if (tu) { q.zh = tu.zh; q.py = tu.py; q.vn = tu.vn; }
     q.doc = them && them.doc != null ? them.doc : (c.k === 'xep' ? c.dap : tu ? tu.zh : '');
     if (them && them.nghe) { q.hoi.nghe = b64(them.nghe); q.hoi.p = b64(them.nghe); q.hoi.nghePy = 1; }
+    if (them && them.pyCau) q.pyCau = them.pyCau; // pinyin ca cau (goi y khi em tra loi sai trong cot truyen)
     return q;
   }
   const loc = (ng, src) => Object.assign({}, ng, { mcs: ng.mcs.filter((m) => src.indexOf(m.src) >= 0) });
@@ -119,7 +120,7 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
       const nhieu = tron(tatCa.filter((z) => z !== x.b.zh && z !== x.a.zh)).slice(0, 3);
       if (nhieu.length < 3) continue;
       const opts = tron([x.b.zh].concat(nhieu));
-      const q = boc({ lenh: 'Bạn nói câu này — em đáp thế nào?', zh: x.a.zh, ctx: '', why: x.a.zh + ' (' + x.a.vn + ') → ' + x.b.zh + ' (' + x.b.vn + ')', opts, dung: opts.indexOf(x.b.zh) }, x.u, null, { doc: x.b.zh });
+      const q = boc({ lenh: 'Bạn nói câu này — em đáp thế nào?', zh: x.a.zh, ctx: '', why: x.a.zh + ' (' + x.a.vn + ') → ' + x.b.zh + ' (' + x.b.vn + ')', opts, dung: opts.indexOf(x.b.zh) }, x.u, null, { doc: x.b.zh, pyCau: x.a.py });
       if (q) { thay[key] = 1; return q; }
     }
     return null;
@@ -189,6 +190,43 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
       if (q) { q.kv = k; ra.push(q); }
     }
     return ra.length >= Math.min(n, 3) ? ra : [];
+  }
+  /* ---- Cot truyen (nong-trai-cottruyen.js): "khoanh khac tieng Trung" — cau NGUYEN VAN cua bai em hoc ----
+     nghia: 1 cau hoi thoai / cau vi du cua bai -> chon nghia tieng Viet (cac nghia nhieu cung la cau cua bai)
+     dap  : chon cau dap trong hoi thoai cua bai · xep: xep tu thanh cau (cau xep cua bai) */
+  function cauNghiaCau(ng, canh, thay) {
+    let cau = [];
+    canh.forEach((sc) => sc.lines.forEach((l) => { if (l.zh.length <= 60 && l.vn && l.vn.length <= 110) cau.push({ u: sc.u, zh: l.zh, py: l.py, vn: l.vn }); }));
+    if (cau.length < 4) ng.vocab.forEach((v) => { if (v.ex_zh && v.ex_vn && v.ex_zh !== v.zh && v.ex_zh.length <= 60 && v.ex_vn.length <= 110) cau.push({ u: v.u, zh: v.ex_zh, py: v.ex_py, vn: v.ex_vn }); });
+    const daZh = {}, daVn = {};
+    cau = cau.filter((x) => { if (daZh[x.zh] || daVn[x.vn]) return false; daZh[x.zh] = 1; daVn[x.vn] = 1; return true; });
+    if (cau.length < 4) return null;
+    for (const x of tron(cau)) {
+      const key = 'nc|' + x.zh;
+      if (thay[key]) continue;
+      const opts = tron([x.vn].concat(tron(cau.filter((y) => y !== x)).slice(0, 3).map((y) => y.vn)));
+      const q = boc({ lenh: 'Câu này nghĩa là gì?', zh: x.zh, ctx: '', why: x.py || '', opts, dung: opts.indexOf(x.vn) }, x.u, null, { doc: x.zh, pyCau: x.py });
+      if (q) { thay[key] = 1; return q; }
+    }
+    return null;
+  }
+  // 1 cau cho cot truyen; null = bai em hoc chua du du lieu (hoac em chua hoc bai nao)
+  function cauTruyen(bo, kieu, ctx) {
+    ctx = ctx || { thay: {}, tuDa: {} };
+    if (!bo || !bo.tu || bo.tu.length < 4) return null;
+    const ng = Ktbc.nguonBai(bo.urls || [], bo.cap);
+    if (ng.vocab.length < 4) return null;
+    const canh = boHoiThoai(bo), { thay, tuDa } = ctx;
+    const kt = (n, ds) => h.chonKt(n, ds, 1, { thay, tuDa, coPy: true })[0] || null;
+    const nghia = () => cauNghiaCau(ng, canh, thay);
+    const hk = () => (loc(ng, ['hk', 'bai']).mcs.length ? kt(loc(ng, ['hk', 'bai']), ['nguphap']) : null);
+    const xepCau = () => (Ktbc.coDang(ng, 'xepcau') ? kt(ng, ['xepcau']) : null);
+    const tu = () => (Ktbc.coDang(ng, 'nghia') ? kt(ng, ['nghia']) : null);
+    const thu = kieu === 'dap' ? [() => cauDap(canh, thay), nghia, hk, xepCau, tu]
+      : kieu === 'xep' ? [xepCau, () => cauXepHt(canh, thay), nghia, hk, tu]
+        : [nghia, hk, xepCau, tu];
+    for (const fn of thu) { const q = fn(); if (q) { q.kv = kieu; return q; } }
+    return null;
   }
   async function layCau(user, vk, n, opt) {
     const bo = await h.tuHocCua(user);
@@ -293,6 +331,7 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
         const lanDau = dat && r.t >= s.length;
         let qua = [], xuLai = 0;
         if (dat) {
+          if (h.suKien) h.suKien(f, 'pl', 1);
           if (lanDau) { s.push(sao); qua = phatQua(f, v, r.t, lv); f.xp += 5; }
           else {
             s[r.t] = Math.max(s[r.t] || 0, sao);
@@ -315,6 +354,6 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
   }));
 
   Object.assign(h.CATALOG, { PL_VUNG: VUNG.map((v) => ({ k: v.k, zh: v.zh, py: v.py, vn: v.vn, chu: v.chu, mau: v.mau, qua: v.qua })) });
-  return { VUNG, VUNG_MAP, deVung, layCau, daToi, moVung, soQua, bienThanh };
+  return { VUNG, VUNG_MAP, deVung, layCau, daToi, moVung, soQua, bienThanh, cauTruyen };
 };
 module.exports.VUNG = VUNG;

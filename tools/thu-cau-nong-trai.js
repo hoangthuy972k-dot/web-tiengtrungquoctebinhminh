@@ -79,6 +79,31 @@ console.log('Ban do ->', loi ? loi + ' LOI (tong)' : 'tat ca thuoc bai cho phep 
 const r3 = VUNG.every((v) => deVung({ tu: [], sai: [], den: [], urls: [], cap, nguon: '', chu: [], coBai: false }, v.k, v.so, {}).length === 0);
 console.log('Ban do, hoc sinh chua hoc bai nao:', r3 ? 'khong ra cau (dung) ✓' : 'VAN RA CAU ✗');
 if (!r3) loi++;
+// ---- Cot truyen (nong-trai-cottruyen.js): "khoanh khac tieng Trung" chi lay cau nguyen van cua bai cho phep ----
+const { cauTruyen } = nt._thuCau;
+const cauBai = new Set(), nghiaBai = new Set();
+urls.forEach((u) => Ktbc.hoiThoaiBai(u).forEach((sc) => sc.lines.forEach((l) => { cauBai.add(l.zh); nghiaBai.add(l.vn); })));
+ng.vocab.forEach((v) => { if (v.ex_zh) cauBai.add(v.ex_zh); if (v.ex_vn) nghiaBai.add(v.ex_vn); });
+let soTruyen = 0;
+const theoTruyen = {};
+['nghia', 'dap', 'xep'].forEach((kieu) => {
+  for (let i = 0; i < 150; i++) {
+    const q = cauTruyen(bo, kieu, { thay: {}, tuDa: {} });
+    if (!q) { bao({ k: kieu }, 'cot truyen khong ra cau ' + kieu); continue; }
+    soTruyen++;
+    const lenh = q.c.lenh || '';
+    theoTruyen[kieu + ':' + (/nghĩa là gì?$/.test(lenh) && cauBai.has(q.c.zh) ? 'nghia-cau' : /em đáp/.test(lenh) ? 'dap' : q.k)] = (theoTruyen[kieu + ':' + (/nghĩa là gì?$/.test(lenh) && cauBai.has(q.c.zh) ? 'nghia-cau' : /em đáp/.test(lenh) ? 'dap' : q.k)] || 0) + 1;
+    kiemVung('truyen', q);
+    if (lenh === 'Câu này nghĩa là gì?') {
+      if (!cauBai.has(q.c.zh)) bao(q, 'cau truyen khong phai cau cua bai: ' + q.c.zh);
+      q.lua.forEach((o) => { if (!nghiaBai.has(o)) bao(q, 'nghia truyen ngoai bai: ' + o); });
+    }
+  }
+});
+console.log('Cot truyen: da kiem', soTruyen, 'cau', JSON.stringify(theoTruyen), '->', loi ? loi + ' LOI (tong)' : 'deu la cau nguyen van cua bai cho phep ✓');
+const r4 = ['nghia', 'dap', 'xep'].every((k) => cauTruyen({ tu: [], sai: [], den: [], urls: [], cap, nguon: '', chu: [], coBai: false }, k) === null);
+console.log('Cot truyen, hoc sinh chua hoc bai nao:', r4 ? 'khong ra cau (dung) ✓' : 'VAN RA CAU ✗');
+if (!r4) loi++;
 // bo rong: khong duoc ra cau nao
 const rong = { tu: [], sai: [], den: [], urls: [], cap, nguon: '', chu: [], coBai: false };
 const r1 = deChuHanKt(rong, { nghe: true, viet: true }), r2 = deCaKt(rong, 3, {});

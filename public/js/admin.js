@@ -517,7 +517,9 @@
       b.classList.toggle('active', on);
       b.setAttribute('aria-selected', on ? 'true' : 'false');
     });
-    var classes = name === 'classes', gopy = name === 'gopy', nhac = name === 'nhac', qmk = name === 'qmk';
+    var classes = name === 'classes', gopy = name === 'gopy', nhac = name === 'nhac', qmk = name === 'qmk', ntin = name === 'ntin';
+    var nt = $('#trNtTin');
+    if (nt) nt.hidden = !ntin;
     var qb = $('#trQmk');
     if (qb) qb.hidden = !qmk;
     $('#trClasses').hidden = !classes;
@@ -525,11 +527,12 @@
     if (gy) gy.hidden = !gopy;
     var nh = $('#trNhac');
     if (nh) nh.hidden = !nhac;
-    if (classes || gopy || nhac || qmk) { $('#trClass').hidden = true; $('#trDetail').hidden = true; }
+    if (classes || gopy || nhac || qmk || ntin) { $('#trClass').hidden = true; $('#trDetail').hidden = true; }
     else { closeStudent(); }
     if (gopy && window.__trGopY) window.__trGopY.render();
     if (nhac && window.__trNhac) window.__trNhac.render();
     if (qmk && window.__trQmk) window.__trQmk.render();
+    if (ntin && window.__trNtTin) window.__trNtTin.render();
   }
   $all('.tr-tab').forEach(function (b) {
     b.addEventListener('click', function () { showTab(b.getAttribute('data-tab')); });

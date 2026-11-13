@@ -260,6 +260,7 @@
       else h += '<p>' + (k.xuLai ? 'Chơi lại: +' + k.xuLai + ' xu' : 'Chơi lại: hôm nay đã đủ xu thưởng chơi lại') + '</p>';
       if (k.moiMo === 'het') h += '<p class="kt-ket-to">🏁 Em đã đi hết ' + esc(v.vn) + '!</p>';
       N.tieng('len'); N.doc('太棒了');
+      if (N.fx) { N.fx.mung({ x: innerWidth / 2, y: innerHeight * 0.38 }, k.sao >= 3); if (k.lanDau) N.fx.bangRon('⭐ Qua trạm ' + (k.t + 1) + '!'); }
     } else {
       h += '<h2>Chưa qua trạm</h2><p>Đúng ' + k.dung + '/' + k.so + ' — cần ' + (v.k === 'de' ? 8 : 4) + '. Ôn lại bài rồi thử lại nhé!</p>';
     }
@@ -544,7 +545,7 @@
     $all('[data-xg-thu]', than).forEach(function (b) {
       b.addEventListener('click', function () {
         gui({ a: 'thu', b: b.getAttribute('data-xg-thu') }, function (r) {
-          N.tieng('thu');
+          N.tieng('thu'); if (N.fx) N.fx.mung(b);
           bao('📦 Thu ' + Object.keys(r.ra).map(function (k) { return r.ra[k] + ' ' + sp(k).vn.toLowerCase(); }).join(', ') + ' vào kho');
         });
       });
@@ -866,7 +867,7 @@
   }
   function baoDg(e) {
     if (e.loai === 'xu') bao('🔨 ' + (e.ly || 'Đấu giá') + ': +' + e.xu + ' xu');
-    else bao('🔨 ' + (e.ly || 'Đấu giá') + ': ' + tenVat(e.vat).vn);
+    else { bao('🔨 ' + (e.ly || 'Đấu giá') + ': ' + tenVat(e.vat).vn); if (N.fx && /thắng/i.test(e.ly || '')) { N.fx.mung({ x: innerWidth / 2, y: innerHeight * 0.35 }, true); N.tieng('mung'); } }
   }
   function veDg(than) {
     var d = DG.d;
@@ -929,6 +930,273 @@
     }, 5000);
   });
 
+  /* ================= 8) COT TRUYEN & NHAN VAT =================
+     Noi dung (loi thoai, viec, qua) do may chu giu (nong-trai-truyen.js); o day ve the thoai kieu truyen tranh:
+     chan dung + ten + loi, nut "Tiếp". "Khoanh khac tieng Trung" la cau cua bai em hoc — may chu cham,
+     sai thi nhan vat nhac lai kem pinyin va em lam lai. */
+  var TR = { d: null, doc: false, xl: null, ket: null, tai: false };
+  var TR_AO = { lan: '#b39ddb', tu: '#81c784', mai: '#f48fb1', minh: '#ef5350', bach: '#bcaaa4' };
+  // Chan dung phang vien dam; bc: '' | 'vui' | 'ngac'
+  function chanDung(k, bc) {
+    var da = k === 'bach' || k === 'lan' ? '#f5cfa8' : '#ffd9b8';
+    if (k === 'ke' || !TR_AO[k]) return '<svg viewBox="0 0 120 130" aria-hidden="true"><rect x="22" y="30" width="76" height="70" rx="8" fill="#fff3d6" stroke="' + V + '" stroke-width="4"/><path d="M60 34V96M32 48H52M32 60H52M32 72H52M68 48H88M68 60H88M68 72H88" stroke="' + V + '" stroke-width="3" stroke-linecap="round"/></svg>';
+    var s = '<svg viewBox="0 0 120 130" aria-hidden="true">' +
+      '<path d="M14 130Q14 92 60 92Q106 92 106 130Z" fill="' + TR_AO[k] + '" stroke="' + V + '" stroke-width="4" stroke-linejoin="round"/>' +
+      (k === 'minh' ? '<path d="M46 94L60 108L74 94" fill="#ffd54f" stroke="' + V + '" stroke-width="3" stroke-linejoin="round"/>' : '<path d="M48 94L60 106L72 94" fill="#fff" stroke="' + V + '" stroke-width="3" stroke-linejoin="round"/>');
+    // toc phia sau
+    if (k === 'mai') s += '<path d="M24 60Q20 18 60 16Q100 18 96 60V96H24Z" fill="#3e2723" stroke="' + V + '" stroke-width="4" stroke-linejoin="round"/>';
+    if (k === 'lan') s += '<circle cx="60" cy="14" r="12" fill="#cfd8dc" stroke="' + V + '" stroke-width="4"/>';
+    s += '<circle cx="60" cy="56" r="34" fill="' + da + '" stroke="' + V + '" stroke-width="4"/>';
+    // toc / mu phia truoc
+    if (k === 'lan') s += '<path d="M27 50Q30 22 60 22Q90 22 93 50Q76 34 60 36Q44 34 27 50Z" fill="#cfd8dc" stroke="' + V + '" stroke-width="4" stroke-linejoin="round"/><circle cx="26" cy="64" r="3" fill="#ffd54f" stroke="' + V + '" stroke-width="2"/><circle cx="94" cy="64" r="3" fill="#ffd54f" stroke="' + V + '" stroke-width="2"/>';
+    if (k === 'tu') s += '<path d="M24 44Q26 18 60 18Q94 18 96 44Z" fill="#8d6e63" stroke="' + V + '" stroke-width="4" stroke-linejoin="round"/><path d="M20 44H104" stroke="' + V + '" stroke-width="9" stroke-linecap="round"/><path d="M20 44H104" stroke="#a1887f" stroke-width="4" stroke-linecap="round"/>';
+    if (k === 'mai') s += '<path d="M28 48Q40 24 60 26Q84 24 92 50Q72 42 62 30Q50 44 28 48Z" fill="#3e2723" stroke="' + V + '" stroke-width="3.5" stroke-linejoin="round"/>';
+    if (k === 'minh') s += '<path d="M27 48Q26 26 42 22L44 12L54 20L62 8L68 20L80 12L80 24Q94 30 93 48Q76 36 60 38Q44 36 27 48Z" fill="#212121" stroke="' + V + '" stroke-width="3.5" stroke-linejoin="round"/>';
+    if (k === 'bach') s += '<path d="M26 54Q22 40 32 32M94 54Q98 40 88 32" fill="none" stroke="#eceff1" stroke-width="9" stroke-linecap="round"/><path d="M26 54Q22 40 32 32M94 54Q98 40 88 32" fill="none" stroke="' + V + '" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>';
+    // mat + may
+    var my = bc === 'ngac' ? 36 : 40;
+    s += '<path d="M40 ' + my + 'Q46 ' + (my - 4) + ' 52 ' + my + 'M68 ' + my + 'Q74 ' + (my - 4) + ' 80 ' + my + '" fill="none" stroke="' + (k === 'bach' || k === 'lan' ? '#b0bec5' : V) + '" stroke-width="3" stroke-linecap="round"/>';
+    if (bc === 'vui') s += '<path d="M40 54Q46 47 52 54M68 54Q74 47 80 54" fill="none" stroke="' + V + '" stroke-width="3.5" stroke-linecap="round"/>';
+    else s += '<circle cx="46" cy="53" r="' + (bc === 'ngac' ? 5.5 : 4.2) + '" fill="' + V + '"/><circle cx="74" cy="53" r="' + (bc === 'ngac' ? 5.5 : 4.2) + '" fill="' + V + '"/><circle cx="47.5" cy="51.5" r="1.4" fill="#fff"/><circle cx="75.5" cy="51.5" r="1.4" fill="#fff"/>';
+    if (k === 'mai') s += '<circle cx="46" cy="53" r="10" fill="none" stroke="' + V + '" stroke-width="2.6"/><circle cx="74" cy="53" r="10" fill="none" stroke="' + V + '" stroke-width="2.6"/><path d="M56 53H64" stroke="' + V + '" stroke-width="2.6"/>';
+    s += '<circle cx="36" cy="66" r="5" fill="#ff8a80" opacity=".55"/><circle cx="84" cy="66" r="5" fill="#ff8a80" opacity=".55"/>';
+    // mieng
+    if (k === 'bach') s += '<path d="M38 66Q60 110 82 66Q72 74 60 72Q48 74 38 66Z" fill="#eceff1" stroke="' + V + '" stroke-width="3.5" stroke-linejoin="round"/>';
+    if (k === 'tu') s += '<path d="M44 68Q52 62 60 67Q68 62 76 68Q68 72 60 70Q52 72 44 68Z" fill="#5d4037" stroke="' + V + '" stroke-width="2.5" stroke-linejoin="round"/>';
+    var yM = k === 'tu' ? 77 : k === 'bach' ? 78 : 72;
+    if (bc === 'vui') s += '<path d="M48 ' + yM + 'Q60 ' + (yM + 14) + ' 72 ' + yM + 'Z" fill="#c62828" stroke="' + V + '" stroke-width="3" stroke-linejoin="round"/>';
+    else if (bc === 'ngac') s += '<ellipse cx="60" cy="' + (yM + 3) + '" rx="5.5" ry="7" fill="#c62828" stroke="' + V + '" stroke-width="3"/>';
+    else s += '<path d="M50 ' + yM + 'Q60 ' + (yM + 8) + ' 70 ' + yM + '" fill="none" stroke="' + V + '" stroke-width="3.5" stroke-linecap="round"/>';
+    return s + '</svg>';
+  }
+  function trNv(k) { return ((TR.d && TR.d.nv) || S.cat.TR_NV || {})[k] || { ten: '' }; }
+  function trNhan(r) { TR.d = r; TR.t = Date.now(); if (r.st) N.nhanTrangThai(r.st); capNhatPhu(); }
+  function taiTr() {
+    if (TR.tai) return;
+    TR.tai = true;
+    goi('/api/farm/truyen').then(function (r) { TR.tai = false; trNhan(r); veLai('kt-truyen'); }, function (e) { TR.tai = false; loiGoi(e); });
+  }
+  // lan dau gap nhan vat: gioi thieu ten Trung + pinyin + vai
+  function trDaGap(k) {
+    var ds;
+    try { ds = (localStorage.getItem('hyv_nt_tr_gap') || '').split(','); } catch (e) { ds = []; }
+    if (ds.indexOf(k) >= 0) return true;
+    try { localStorage.setItem('hyv_nt_tr_gap', ds.concat(k).filter(Boolean).join(',')); } catch (e) { /* bo qua */ }
+    return false;
+  }
+  function htmlThe(c, duoi) {
+    var nv = trNv(c.ai), ke = c.ai === 'ke' || !nv.ten;
+    var gioiThieu = !ke && !c.daGap && !trDaGap(c.ai);
+    return '<div class="kt-tr-the' + (ke ? ' ke' : '') + '">' +
+      (ke ? '' : '<div class="kt-tr-cd">' + chanDung(c.ai, c.bc) + '</div>') +
+      '<div class="kt-tr-thoai">' + (ke ? '' : '<p class="kt-tr-ten"><b>' + esc(nv.ten) + '</b> <span lang="zh">' + esc(nv.zh || '') + '</span> <small>' + esc(nv.py || '') + '</small></p>') +
+      (gioiThieu ? '<p class="kt-tr-gt">✨ ' + esc(nv.vai || '') + ' — ' + esc(nv.tinh || '') + '</p>' : '') +
+      '<p class="kt-tr-loi">' + esc(c.t) + '</p>' + (duoi || '') + '</div></div>';
+  }
+  function trGui(url, body) { return goi(url, body || {}).then(function (r) { if (r.ket) TR.ket = r.ket; trNhan(r); N.veBang(); return r; }, loiGoi); }
+  function veTrDanhSach(than) {
+    var d = TR.d;
+    var html = N.htmlGt('truyen') + '<p class="kt-mk-dau"><b>' + esc(d.mua.ten) + '</b> <span lang="zh">' + esc(d.mua.zh) + '</span> ' + esc(d.mua.py) + ' · đã đọc ' + d.xong + '/' + d.so + ' chương · mỗi tuần mở 1 chương mới</p>' +
+      '<div class="kt-tr-nvds">' + Object.keys(d.nv).filter(function (k) { return k !== 'ke'; }).map(function (k) {
+        return '<span class="kt-tr-nv" title="' + esc(d.nv[k].vai + ' — ' + d.nv[k].tinh) + '">' + chanDung(k, 'vui') + '<b>' + esc(d.nv[k].ten) + '</b><small lang="zh">' + esc(d.nv[k].zh) + '</small></span>';
+      }).join('') + '</div><ol class="kt-tr-ds">' + d.ds.map(function (c) {
+        var nut = c.tt === 'mo' ? '<button type="button" class="nt-nut nt-nut-xanh nt-nut-nho" data-tr-mo="' + c.i + '">📖 Đọc</button>'
+          : c.tt === 'dang' ? '<button type="button" class="nt-nut nt-nut-vang nt-nut-nho" data-tr-doc>Đọc tiếp →</button>'
+            : c.tt === 'xong' ? '<button type="button" class="nt-nut nt-nut-nho" data-tr-xem="' + c.i + '">Xem lại</button>' : '<span class="kt-khoa">🔒</span>';
+        return '<li class="' + c.tt + '"><span class="kt-tram-so">' + (c.tt === 'xong' ? '✔' : c.i + 1) + '</span><span><b>Chương ' + (c.i + 1) + ' · ' + esc(c.ten) + '</b>' +
+          '<small>' + esc(c.tt === 'cho' || c.tt === 'khoa' ? c.ly : c.tom) + '</small><small>🎁 ' + esc(c.qua) + '</small></span>' + nut + '</li>';
+      }).join('') + '</ol><p class="nt-meo">Câu tiếng Trung trong truyện lấy nguyên văn từ bài em đã học (hoặc bài thầy cô giao). Trả lời sai không sao cả — nhân vật sẽ nói lại chậm hơn kèm pinyin.</p>';
+    than.innerHTML = html;
+    $all('[data-tr-mo]', than).forEach(function (b) { b.addEventListener('click', function () { TR.doc = true; N.tieng('mua'); trGui('/api/farm/truyen/mo', { i: +b.getAttribute('data-tr-mo') }); }); });
+    var dt = $('[data-tr-doc]', than);
+    if (dt) dt.addEventListener('click', function () { TR.doc = true; N.veBang(); });
+    $all('[data-tr-xem]', than).forEach(function (b) {
+      b.addEventListener('click', function () { goi('/api/farm/truyen/xem', { i: +b.getAttribute('data-tr-xem') }).then(function (r) { TR.xl = { i: r.i, ten: r.ten, canh: r.canh, vt: 0 }; N.veBang(); }, loiGoi); });
+    });
+  }
+  function veTrXemLai(than) {
+    var x = TR.xl, c = x.canh[x.vt], het = x.vt >= x.canh.length - 1;
+    than.innerHTML = '<p class="kt-tram-dau">Xem lại · Chương ' + (x.i + 1) + ' · ' + esc(x.ten) + ' <small>(' + (x.vt + 1) + '/' + x.canh.length + ')</small></p>' +
+      htmlThe(Object.assign({ daGap: 1 }, c), c.daQua ? '<p class="kt-tr-gt">💬 (Khoảnh khắc tiếng Trung — em đã trả lời đúng ở lần đọc đầu.)</p>' : '') +
+      '<div class="kt-tr-nut"><button type="button" class="nt-nut nt-nut-nho" data-tr-thoat>← Danh sách</button><button type="button" class="nt-nut nt-nut-xanh" data-tr-xl>' + (het ? 'Hết chương ✔' : 'Tiếp →') + '</button></div>';
+    $('[data-tr-thoat]', than).addEventListener('click', function () { TR.xl = null; N.veBang(); });
+    $('[data-tr-xl]', than).addEventListener('click', function () { if (het) TR.xl = null; else x.vt++; N.veBang(); });
+  }
+  function veTrKet(than) {
+    var k = TR.ket;
+    than.innerHTML = '<div class="nt-chuc kt-ket"><span class="kt-sao-to">📖✨</span><h2>Hết chương ' + (k.ch + 1) + '!</h2><p>' + esc(k.ten) + '</p>' +
+      (k.qua.length ? '<div class="kt-qua-ds">' + k.qua.map(function (q) { var t = tenQuaPl(q); return '<span>' + img(t.hinh) + esc(t.t) + (q.ky ? ' · kỷ vật lên kệ cúp' : '') + '</span>'; }).join('') + '</div>' : '') +
+      '<p class="kt-nho">' + (k.hetMua ? '🎉 Em đã đọc hết mùa 1 — cả làng Tre Xanh cảm ơn em!' : 'Chương tiếp theo mở vào tuần sau. Đồ trang trí đã vào Kho → Túi đồ.') + '</p>' +
+      '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh" data-tr-ve>Về danh sách chương</button></div></div>';
+    if (N.fx) { N.fx.mung({ x: innerWidth / 2, y: innerHeight * 0.4 }, true); N.tieng('mung'); }
+    $('[data-tr-ve]', than).addEventListener('click', function () { TR.ket = null; TR.doc = false; N.veBang(); });
+  }
+  function veTrDoc(than) {
+    var v = TR.d.dang, dau = '<p class="kt-tram-dau"><button type="button" class="nt-nut nt-nut-nho" data-tr-thoat>← Chương</button> Chương ' + (v.ch + 1) + ' · ' + esc(TR.d.ds[v.ch].ten) +
+      (v.p === 'viec' ? ' · việc cần làm' : ' <small>(' + (v.p === 'ket' ? 'kết' : 'mở đầu') + ' ' + (v.i + 1) + '/' + v.so + ')</small>') + '</p>';
+    var ganThoat = function () { $('[data-tr-thoat]', than).addEventListener('click', function () { TR.doc = false; N.veBang(); }); };
+    if (v.p === 'viec') {
+      than.innerHTML = dau + '<ul class="kt-tr-viec">' + v.viec.map(function (x) {
+        var nv = trNv(x.ai || '');
+        return '<li class="' + (x.xong ? 'xong' : '') + '"><span class="kt-tr-vd">' + (x.xong ? '✔' : '○') + '</span><span><b>' + esc(x.mo) + '</b>' +
+          (x.giao ? '<small>' + Object.keys(x.giao).map(function (k) { return x.giao[k] + ' ' + sp(k).vn.toLowerCase() + ' (kho có ' + ((S.st.kho || {})[k] || 0) + ')'; }).join(' · ') + '</small>'
+            : '<small>' + x.co + '/' + x.can + (x.hoc ? ' sao học hôm nay' : '') + '</small>') +
+          '<span class="kt-thanh"><i style="width:' + Math.round(Math.min(1, x.co / x.can) * 100) + '%"></i></span></span>' +
+          (x.giao && !x.xong ? '<button type="button" class="nt-nut nt-nut-nho' + (x.du ? ' nt-nut-vang' : '') + '" data-tr-giao="' + x.idx + '"' + (x.du ? '' : ' disabled') + '>' + (x.du ? 'Giao' + (nv.ten ? ' cho ' + esc(nv.ten) : '') : 'Chưa đủ hàng') + '</button>' : '') +
+          (x.hoc && !x.xong ? '<a class="nt-nut nt-nut-nho nt-nut-xanh" href="' + esc(N.moiBaiHoc()) + '">📚 Học</a>' : '') + '</li>';
+      }).join('') + '</ul><div class="kt-tr-nut"><button type="button" class="nt-nut" data-tr-dong>🏡 Về nông trại làm việc</button>' +
+        '<button type="button" class="nt-nut nt-nut-xanh" data-tr-tiep' + (v.xongHet ? '' : ' disabled') + '>Kể tiếp →</button></div>';
+      ganThoat();
+      $('[data-tr-dong]', than).addEventListener('click', function () { N.dongBang(); });
+      $('[data-tr-tiep]', than).addEventListener('click', function () { if (N.fx) N.fx.dongDau(null, '✔ XONG VIỆC'); N.tieng('dau'); trGui('/api/farm/truyen/tiep'); });
+      $all('[data-tr-giao]', than).forEach(function (b) { b.addEventListener('click', function () { b.disabled = true; N.tieng('mua'); trGui('/api/farm/truyen/giao', { v: +b.getAttribute('data-tr-giao') }); }); });
+      return;
+    }
+    var c = v.the, nutTiep = '<div class="kt-tr-nut"><button type="button" class="nt-nut nt-nut-xanh nt-nut-to" data-tr-tiep>Tiếp →</button></div>';
+    if (!c.zh) {
+      than.innerHTML = dau + htmlThe(c) + nutTiep;
+    } else if (c.chuaHoc) {
+      than.innerHTML = dau + htmlThe(c, '<div class="kt-tr-chuahoc">💬 Nhân vật đang nói tiếng Trung, mà em chưa học bài nào để nghe hiểu. Em hãy học ít nhất một bài (hoặc bài thầy cô giao) rồi quay lại nhé!<br>' +
+        '<a class="nt-nut nt-nut-xanh" href="' + esc(N.moiBaiHoc()) + '">📚 Học kiếm sao</a></div>');
+    } else if (c.xong) {
+      than.innerHTML = dau + htmlThe(c, '<div class="kt-tr-dung"><p class="kt-cau-dg dung">✔ Em hiểu đúng rồi!</p>' + N.giaiKt(c.kq, { k: c.kq.kt === 'xep' ? 'xep' : 'kt', hoi: { k: c.kq.kt } }) + '</div>') + nutTiep;
+    } else {
+      var q = c.cau;
+      than.innerHTML = dau + htmlThe(c, (c.goiY ? '<p class="kt-tr-goiy">🔁 ' + esc(trNv(c.ai).ten || 'Bạn ấy') + ' nói lại chậm hơn — ' + esc(c.goiY) + '</p>' : '')) +
+        '<div class="kt-cau kt-tr-cau"><p class="kt-cau-so">💬 <b>' + esc((q.hoi && q.hoi.lenh) || '') + '</b></p>' + N.htmlKt(q, 'tr') + '</div>';
+      if (q.k === 'kt' && q.hoi.zh && CO_HAN.test(q.hoi.zh) && !TR.daDoc) { TR.daDoc = 1; N.doc(q.hoi.zh); }
+      var khoa = false;
+      N.ganKt(than, q, 'tr', function (b, chon) {
+        if (khoa) return;
+        khoa = true;
+        goi('/api/farm/truyen/tl', b).then(function (r) {
+          TR.daDoc = 0;
+          if (r.dung) { N.tieng('dung'); N.danhDauKt(than, q, r, chon, 'tr'); N.docKt(r); setTimeout(taiTr, 500); }
+          else { N.tieng('sai'); setTimeout(taiTr, 350); }
+        }, function (e) { khoa = false; N.moLaiKt(than, q); loiGoi(e); });
+      });
+    }
+    ganThoat();
+    var t = $('[data-tr-tiep]', than);
+    if (t) t.addEventListener('click', function () { t.disabled = true; TR.daDoc = 0; trGui('/api/farm/truyen/tiep'); });
+  }
+  N.dangKy('kt-truyen', function (than) {
+    $('#ntBangTit').textContent = 'Câu chuyện làng Tre Xanh';
+    N.datTab([], '');
+    if (!TR.d) { than.innerHTML = '<p class="nt-trong">Đang mở sách truyện…</p>'; taiTr(); return; }
+    if (TR.ket) return veTrKet(than);
+    if (TR.xl) return veTrXemLai(than);
+    if (TR.doc && TR.d.dang) return veTrDoc(than);
+    veTrDanhSach(than);
+    if (Date.now() - (TR.t || 0) > 6000) taiTr();
+  });
+  // Bong bong nhan vat tren nong trai khi chuong dang co viec ("Bà Lan đang chờ 2 quả trứng")
+  function veBongTruyen() {
+    var tr = S.st && S.st.kt && S.st.kt.tr, b = $('#ktTrBong');
+    if (!tr || !tr.cho || S.tham) { if (b) b.hidden = true; return; }
+    if (!b) {
+      b = document.createElement('button');
+      b.type = 'button'; b.id = 'ktTrBong'; b.className = 'kt-tr-bong';
+      document.body.appendChild(b);
+      b.addEventListener('click', function () { if (S.tham) return; N.dongThiTran(); TR.doc = true; TR.t = 0; TR.d = null; N.moBang('kt-truyen'); });
+    }
+    var nv = trNv(tr.cho.ai), khoa = tr.cho.ai + '|' + tr.cho.mo + '|' + tr.cho.co;
+    b.hidden = false;
+    if (b.getAttribute('data-k') === khoa) return;
+    b.setAttribute('data-k', khoa);
+    b.className = 'kt-tr-bong' + (tr.cho.xong ? ' xong' : '');
+    b.innerHTML = '<span class="kt-tr-bong-cd">' + chanDung(tr.cho.ai, tr.cho.xong ? 'vui' : '') + '</span><span><b>' + esc(nv.ten || 'Câu chuyện') + '</b>' +
+      esc(tr.cho.xong ? tr.cho.mo : 'đang chờ: ' + tr.cho.mo) + (tr.cho.co != null && !tr.cho.xong ? ' <em>' + tr.cho.co + '/' + tr.cho.can + '</em>' : '') + '</span>';
+  }
+  N.sau.push(veBongTruyen);
+
+  /* ================= 9) TIN NHAN TU DO (ban cung lop) =================
+     May chu loc va gioi han (nong-trai-tin.js); o day chi co o viet, goi y cau tieng Trung tu bai em hoc,
+     va trong Nhat ky: tra loi / bao cao / chan. Chu cua ban luon hien bang esc() (khong bao gio chen HTML). */
+  var TN = { tt: {}, nhap: '' };
+  var TN_NHAC = 'Hãy nói lời tử tế với bạn nhé 💛';
+  function tnDem(v) { return Array.from(v || '').length; }
+  function tnO(giu) {
+    return '<div class="kt-tn-o"><textarea rows="2" maxlength="240" placeholder="Viết tin nhắn…" data-tn-nhap aria-label="Viết tin nhắn">' + esc(giu || '') + '</textarea>' +
+      '<div class="kt-tn-duoi"><small data-tn-dem>' + tnDem(giu) + '/120</small><button type="button" class="nt-nut nt-nut-xanh" data-tn-gui>Gửi</button></div>' +
+      '<p class="kt-tn-nhac">' + TN_NHAC + '</p></div>';
+  }
+  // gan o viet: gui(tx) -> Promise; sau khi gui xong goi xong(r)
+  function tnGan(goc, idBan, xong) {
+    var nhap = $('[data-tn-nhap]', goc), dem = $('[data-tn-dem]', goc), nut = $('[data-tn-gui]', goc);
+    var capNhat = function () { var n = tnDem(nhap.value); dem.textContent = n + '/120'; dem.classList.toggle('qua', n > 120); nut.disabled = !nhap.value.trim() || n > 120; TN.nhap = nhap.value; };
+    nhap.addEventListener('input', capNhat);
+    capNhat();
+    $all('[data-tn-goiy]', goc).forEach(function (b) {
+      b.addEventListener('click', function () { nhap.value = b.getAttribute('data-tn-goiy'); N.doc(nhap.value); capNhat(); nhap.focus(); });
+    });
+    nut.addEventListener('click', function () {
+      nut.disabled = true;
+      goi('/api/farm/tn/gui/' + encodeURIComponent(idBan), { tx: nhap.value }).then(function (r) {
+        TN.nhap = ''; nhap.value = ''; capNhat();
+        if (r.st) N.nhanTrangThai(r.st);
+        N.tieng('mua');
+        bao('Đã gửi tin nhắn' + (r.zh ? ' · 中文 👍' + (r.them && r.them.xu ? ' +1 xu vì viết tiếng Trung!' : '') : '') + '.');
+        if (xong) xong(r);
+      }, function (e) { nut.disabled = false; loiGoi(e); });
+    });
+  }
+  // The "✏️ Viết tin" trong bang Noi chuyen (dang tham nha ban)
+  N.veTinViet = function (than, t) {
+    var tt = TN.tt[t.id];
+    if (!tt || Date.now() - tt.luc > 30000) {
+      than.innerHTML = '<p class="nt-trong">Đang mở…</p>';
+      goi('/api/farm/tn/tt/' + encodeURIComponent(t.id)).then(function (r) { r.luc = Date.now(); TN.tt[t.id] = r; var b = N.bangDang(); if (b && b.loai === 'tin' && b.tab === 'viet') N.veBang(); }, loiGoi);
+      return;
+    }
+    if (!tt.duoc) { than.innerHTML = '<p class="nt-trong">' + esc(tt.ly || 'Chưa viết tin tự do được — em dùng câu mẫu nhé.') + '</p>'; return; }
+    var het = t.conTin <= 0;
+    than.innerHTML = '<p class="nt-meo">' + (het ? 'Hôm nay em đã nhắn ' + esc(t.ten) + ' đủ ' + S.cat.TIN_BAN_NGAY + ' tin — mai nói chuyện tiếp nhé!'
+      : 'Viết cho <b>' + esc(t.ten) + '</b> bằng tiếng Việt hoặc tiếng Trung (tối đa 120 ký tự). Còn <b>' + t.conTin + '</b> tin hôm nay.' +
+        (tt.zhCon > 0 ? ' Viết từ 2 chữ Hán trở lên: <b>+1 xu</b> (còn ' + tt.zhCon + ' lần hôm nay).' : '')) + '</p>' +
+      (het ? '' : (tt.goiY.length ? '<p class="nt-tin-buoc">Gợi ý câu tiếng Trung (từ bài em đã học) — bấm để điền:</p><div class="kt-tn-goiy">' + tt.goiY.map(function (g) {
+        return '<button type="button" data-tn-goiy="' + esc(g.zh) + '" title="' + esc((g.py || '') + ' — ' + (g.vn || '')) + '"><b lang="zh">' + esc(g.zh) + '</b><small>' + esc(g.vn || '') + '</small></button>';
+      }).join('') + '</div>' : '') + tnO(TN.nhap));
+    if (het) return;
+    tnGan(than, t.id, function (r) { t.conTin = r.conTin; if (TN.tt[t.id]) TN.tt[t.id].luc = 0; N.veBang(); });
+  };
+  // 1 dong nhat ky "tin nhan tu do": chu cua ban + nut tra loi / bao cao / chan
+  N.htmlTn = function (e, ai) {
+    var m = ((S.st.kt || {}).tn || {})[e.mid];
+    if (!m) return ai + ' đã gửi một tin nhắn <i class="kt-tn-an">(tin không còn hiển thị)</i>';
+    var chan = ((S.st.kt || {}).tnChan || []).indexOf(e.ai) >= 0;
+    return ai + ' nhắn cho em:' + (m.zh ? ' <span class="kt-tn-zh">中文 👍</span>' : '') + '<br><span class="kt-tn-chu"' + (CO_HAN.test(m.tx) ? ' data-doc="' + esc(m.tx) + '"' : '') + '>' + esc(m.tx) + '</span>' +
+      '<span class="kt-tn-nut"><button type="button" class="nt-link" data-tn-tl="' + esc(e.ai) + '">↩ Trả lời</button>' +
+      '<button type="button" class="nt-link" data-tn-bc="' + esc(e.mid) + '">🚩 Báo cáo</button>' +
+      '<button type="button" class="nt-link" data-tn-chan="' + esc(e.ai) + '"' + (chan ? ' data-bo="1"' : '') + '>' + (chan ? 'Bỏ chặn bạn này' : 'Chặn bạn này') + '</button></span>';
+  };
+  N.ganTn = function (than) {
+    $all('[data-tn-tl]', than).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var li = b.closest('li') || b.parentNode, cu = $('.kt-tn-o', li);
+        if (cu) { cu.remove(); return; }
+        var hop = document.createElement('div');
+        hop.innerHTML = tnO('');
+        li.appendChild(hop.firstChild);
+        tnGan(li, b.getAttribute('data-tn-tl'), function () { var o = $('.kt-tn-o', li); if (o) o.remove(); });
+        $('[data-tn-nhap]', li).focus();
+      });
+    });
+    $all('[data-tn-bc]', than).forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (!confirm('Báo cáo tin nhắn này? Tin sẽ được ẩn đi.')) return;
+        goi('/api/farm/tn/baocao', { id: b.getAttribute('data-tn-bc') }).then(function (r) { N.nhanTrangThai(r.st); bao('Đã báo cáo và ẩn tin nhắn. Cảm ơn em!'); N.veBang(); }, loiGoi);
+      });
+    });
+    $all('[data-tn-chan]', than).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var bo = b.hasAttribute('data-bo');
+        if (!bo && !confirm('Chặn bạn này? Bạn ấy sẽ không gửi tin tự do cho em được nữa (câu mẫu vẫn gửi được).')) return;
+        goi('/api/farm/tn/chan', { id: b.getAttribute('data-tn-chan'), bo: bo }).then(function (r) { N.nhanTrangThai(r.st); bao(bo ? 'Đã bỏ chặn.' : 'Đã chặn tin tự do của bạn này.'); N.veBang(); }, loiGoi);
+      });
+    });
+  };
+
   /* ================= cham do, dong chu phu tren o "Thêm", thong bao khi mo nong trai ================= */
   var daBao = false;
   function capNhatPhu() {
@@ -948,6 +1216,7 @@
     cham('ntXkCham', kt.xkToi > 0);
     cham('ntTiemCham', kt.tiemTb > 0);
     cham('ntDgCham', kt.dgTb > 0);
+    if (kt.tr) { cham('ntTrCham', kt.tr.cham); dat('ntTrPhu', kt.tr.xong >= kt.tr.so ? 'đã đọc hết mùa 1 · xem lại' : kt.tr.cho ? 'chương ' + (kt.tr.xong + 1) + ' đang chờ em' : 'chương ' + Math.min(kt.tr.so, kt.tr.xong + 1) + '/' + kt.tr.so + ' · mỗi tuần một chương'); }
     if (daBao) return;
     daBao = true;
     // thong bao cho em (1 lan khi mo nong trai): tiem ban duoc hang, nhan cong da lam, ket qua dau gia

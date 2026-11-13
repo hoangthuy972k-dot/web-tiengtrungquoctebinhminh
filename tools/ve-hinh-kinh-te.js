@@ -155,6 +155,45 @@ H['ic-x2'] = svg(bong(30) + g('<path d="M30 80Q34 50 40 30M50 82V26M70 80Q66 50 
   '<path d="M30 64H70" stroke="#e5533d" stroke-width="6"/>') +
   '<rect x="54" y="62" width="34" height="22" rx="8" fill="#e5533d" stroke="' + V + '" stroke-width="3"/><text x="71" y="79" text-anchor="middle" font-size="15" font-weight="900" fill="#fff">×2</text>');
 
+// ---- cot truyen (nong-trai-truyen.js): o "Câu chuyện" + do trang tri tung chuong + ky vat cuoi mua ----
+H['tb-truyen'] = svg(bong(34) + g('<path d="M14 26Q32 18 50 26V80Q32 72 14 80Z" fill="#fff8ec"/><path d="M86 26Q68 18 50 26V80Q68 72 86 80Z" fill="#fff3d6"/>' +
+  '<path d="M22 38Q32 34 42 38M22 48Q32 44 42 48M22 58Q32 54 42 58M58 38Q68 34 78 38M58 48Q68 44 78 48" fill="none" stroke-width="2.5"/>') +
+  '<path d="M62 54Q70 50 78 54V70L70 64L62 70Z" fill="#e5533d" stroke="' + V + '" stroke-width="2.5" stroke-linejoin="round"/>');
+H['tr-fengling'] = svg(bong(22) + g('<path d="M50 8V20" /><path d="M30 34Q30 20 50 20Q70 20 70 34Z" fill="#4fc3f7"/><path d="M26 34H74" stroke-width="4"/>' +
+  '<path d="M36 34V56M50 34V64M64 34V56" stroke-width="2.5"/><rect x="32" y="56" width="8" height="16" rx="3" fill="#ffd54f"/><rect x="60" y="56" width="8" height="16" rx="3" fill="#ffd54f"/>' +
+  '<rect x="44" y="64" width="12" height="18" rx="3" fill="#ff8a65"/>') + '<path d="M76 50Q84 54 80 62M20 46Q14 52 20 58" fill="none" stroke="#90caf9" stroke-width="2.5" stroke-linecap="round"/>');
+H['tr-zhulan'] = svg(bong(32) + g('<path d="M22 50Q50 12 78 50" fill="none" stroke-width="7"/><path d="M22 50Q50 12 78 50" fill="none" stroke="#c98a5a" stroke-width="3"/>' +
+  '<path d="M18 50H82L74 82H26Z" fill="#e0b97a"/><path d="M22 60H78M24 70H76M34 50L36 82M50 50V82M66 50L64 82" stroke="#a67c42" stroke-width="2.5"/>') +
+  '<g stroke="' + V + '" stroke-width="2.2"><ellipse cx="40" cy="48" rx="8" ry="10" fill="#fff3d6"/><ellipse cx="56" cy="46" rx="8" ry="10" fill="#ffe0b2"/></g>');
+H['tr-heiban'] = svg(bong(34) + g('<path d="M26 84L34 64M74 84L66 64" stroke-width="5"/><rect x="14" y="20" width="72" height="48" rx="4" fill="#8d6e63"/><rect x="20" y="26" width="60" height="36" rx="2" fill="#2e5d4b"/>') +
+  '<text x="50" y="50" text-anchor="middle" font-size="14" font-weight="900" fill="#fff">ā á ǎ à</text><rect x="62" y="64" width="12" height="4" rx="1" fill="#fff" stroke="' + V + '" stroke-width="1.5"/>');
+H['tr-suanpan'] = svg(bong(34) + g('<rect x="14" y="30" width="72" height="50" rx="5" fill="#a1887f"/><rect x="20" y="36" width="60" height="38" rx="2" fill="#fff3d6"/><path d="M20 48H80" stroke-width="3"/>' +
+  '<path d="M30 36V74M44 36V74M58 36V74M72 36V74" stroke-width="2"/>') +
+  '<g stroke="' + V + '" stroke-width="2"><ellipse cx="30" cy="42" rx="5" ry="3.5" fill="#e5533d"/><ellipse cx="44" cy="44" rx="5" ry="3.5" fill="#e5533d"/><ellipse cx="58" cy="42" rx="5" ry="3.5" fill="#e5533d"/><ellipse cx="72" cy="44" rx="5" ry="3.5" fill="#e5533d"/>' +
+  '<ellipse cx="30" cy="58" rx="5" ry="3.5" fill="#ffb300"/><ellipse cx="30" cy="66" rx="5" ry="3.5" fill="#ffb300"/><ellipse cx="44" cy="54" rx="5" ry="3.5" fill="#ffb300"/><ellipse cx="58" cy="62" rx="5" ry="3.5" fill="#ffb300"/><ellipse cx="58" cy="70" rx="5" ry="3.5" fill="#ffb300"/><ellipse cx="72" cy="56" rx="5" ry="3.5" fill="#ffb300"/></g>');
+H['tr-huoguo'] = svg(bong(36) + g('<path d="M30 84L36 70M70 84L64 70" stroke-width="5"/><ellipse cx="50" cy="68" rx="38" ry="8" fill="#c98a5a"/>' +
+  '<path d="M26 44H74V56Q74 66 50 66Q26 66 26 56Z" fill="#b0bec5"/><ellipse cx="50" cy="44" rx="24" ry="7" fill="#e53935"/><path d="M50 37V51" stroke-width="2.5"/><path d="M18 46H26M74 46H82" stroke-width="5"/>') +
+  '<g stroke="' + V + '" stroke-width="1.8"><circle cx="40" cy="43" r="3.5" fill="#fff"/><circle cx="60" cy="45" r="3.5" fill="#7cc456"/><circle cx="44" cy="47" r="2.5" fill="#ffd54f"/></g>' +
+  '<path d="M40 30Q36 24 40 18M52 30Q48 22 52 14M62 30Q58 24 62 18" fill="none" stroke="#cfd8dc" stroke-width="3" stroke-linecap="round"/>');
+H['tr-yusan'] = svg(bong(26) + g('<path d="M50 30V78Q50 86 42 84" fill="none" stroke-width="4"/><path d="M12 48Q14 18 50 16Q86 18 88 48Q78 40 69 48Q60 40 50 48Q40 40 31 48Q22 40 12 48Z" fill="#e53935"/>' +
+  '<path d="M50 16Q40 30 31 48M50 16Q60 30 69 48M50 16V48" fill="none" stroke-width="2.2"/><path d="M50 16V10" stroke-width="4"/>') +
+  '<path d="M20 62L17 70M80 60L77 68M30 74L27 82" stroke="#4fc3f7" stroke-width="3" stroke-linecap="round"/>');
+H['tr-zhenglong'] = svg(bong(34) + g('<rect x="18" y="56" width="64" height="24" rx="8" fill="#e0b97a"/><rect x="18" y="36" width="64" height="24" rx="8" fill="#ecc98c"/>' +
+  '<path d="M18 48H82M18 68H82" stroke="#a67c42" stroke-width="2.5"/><path d="M22 36Q50 14 78 36Z" fill="#d7a866"/><circle cx="50" cy="22" r="4" fill="#a67c42"/>') +
+  '<path d="M34 14Q30 8 34 2M50 10Q46 4 50 -2M66 14Q62 8 66 2" fill="none" stroke="#cfd8dc" stroke-width="3" stroke-linecap="round"/>');
+H['tr-caideng'] = svg(bong(40) + g('<path d="M16 86V30M84 86V30" stroke-width="7"/><path d="M16 86V30M84 86V30" stroke="#c62828" stroke-width="3.5"/>' +
+  '<path d="M8 30H92L86 18H14Z" fill="#e53935"/><path d="M16 36Q50 56 84 36" fill="none" stroke-width="2.5"/>') +
+  '<g stroke="' + V + '" stroke-width="2.2"><ellipse cx="30" cy="50" rx="6" ry="8" fill="#ffd54f"/><ellipse cx="50" cy="56" rx="6" ry="8" fill="#ff8a65"/><ellipse cx="70" cy="50" rx="6" ry="8" fill="#81c784"/></g>' +
+  '<text x="50" y="28" text-anchor="middle" font-size="9" font-weight="900" fill="#ffd54f" font-family="Noto Serif SC, serif">青竹村</text>');
+H['tr-heying'] = svg(bong(32) + g('<path d="M34 86L42 66M66 86L58 66" stroke-width="5"/><rect x="14" y="18" width="72" height="52" rx="4" fill="#ffd54f"/><rect x="21" y="25" width="58" height="38" rx="2" fill="#bfe3f7"/>' +
+  '<path d="M21 54Q50 44 79 54V63H21Z" fill="#9ad66f" stroke-width="2"/>') +
+  '<g stroke="' + V + '" stroke-width="2"><circle cx="32" cy="46" r="5" fill="#f5cfa8"/><circle cx="44" cy="43" r="5" fill="#ffd9b8"/><circle cx="56" cy="46" r="5.5" fill="#ffd9b8"/><circle cx="68" cy="44" r="5" fill="#f5cfa8"/>' +
+  '<path d="M27 58Q32 50 37 58M39 56Q44 48 49 56M50 59Q56 51 62 59M63 57Q68 49 73 57" fill="#ef5350"/></g>');
+
+H['tb-sotay'] = svg(bong(30) + g('<rect x="22" y="14" width="56" height="70" rx="6" fill="#ffd54f"/><rect x="30" y="14" width="48" height="70" rx="5" fill="#fff8ec"/>' +
+  '<path d="M38 30H68M38 42H68M38 54H58" stroke-width="3"/><path d="M22 26H30M22 40H30M22 54H30M22 68H30" stroke-width="3"/>') +
+  '<circle cx="64" cy="66" r="11" fill="#4caf50" stroke="' + V + '" stroke-width="3"/><text x="64" y="71.5" text-anchor="middle" font-size="15" font-weight="900" fill="#fff">?</text>');
+
 let n = 0;
 Object.keys(H).forEach((k) => {
   const f = path.join(DIR, k + '.svg');

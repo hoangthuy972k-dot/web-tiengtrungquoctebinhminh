@@ -119,6 +119,7 @@ module.exports = function ganKinhTe(app, d, h, c) {
       const xu = kq.n * kq.don;
       f.kho[k] -= kq.n; if (!f.kho[k]) delete f.kho[k];
       f.xu += xu; h.ghiBanNgay(f, xu); f.xp += Math.min(8, kq.n);
+      if (h.suKien) h.suKien(f, 'cho', 1);
       await h.ghi(me, f);
       return { ok: true, n: kq.n, xu, goiDung, don: kq.don, catBot: muon - kq.n, st: await h.trangThai(me, f) };
     }));

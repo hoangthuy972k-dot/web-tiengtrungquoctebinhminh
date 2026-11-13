@@ -177,6 +177,7 @@ function gan(app, d, h, c) {
         const now = Date.now(), cuoi = co.q.length ? co.q[co.q.length - 1].kt : now;
         const bd = Math.max(now, cuoi);
         co.q.push({ id: x.nid++, r, bd, kt: bd + ct.phut * 60000 });
+        if (h.suKien) h.suKien(f, 'xg', 1);
         f.xp += 2;
       } else if (a === 'thu') {
         const ra = thuXong(f, bk);
@@ -303,6 +304,7 @@ function gan(app, d, h, c) {
           if (dacSanEm == null) { try { dacSanEm = (await h.thiTruong(me)).dacSan[me] || ''; } catch (e) { dacSanEm = ''; } }
           const r = h.thuRuong(f, ds, dacSanEm, congSp);
           f.xp += r.xp; st.thu += ds.length; doi = true;
+          if (h.suKien) h.suKien(f, 'thu', ds.length);
           ghiLog(f, w, 'thu hoạch ' + ds.length + ' ô ruộng'); tom.push({ s: w.ten.zh + ' thu hoạch ' + ds.length + ' ô', sp: cong.sp });
         }
       } else if (w.vt === 'chan') {
@@ -311,6 +313,7 @@ function gan(app, d, h, c) {
           if (dacSanEm == null) { try { dacSanEm = (await h.thiTruong(me)).dacSan[me] || ''; } catch (e) { dacSanEm = ''; } }
           const r = h.nhatCon(f, ds, dacSanEm, congSp);
           f.xp += r.xp; st.nhat += ds.length; doi = true;
+          if (h.suKien) h.suKien(f, 'nhat', ds.length);
           ghiLog(f, w, 'nhặt sản phẩm của ' + ds.length + ' con vật'); tom.push({ s: w.ten.zh + ' nhặt ' + ds.length + ' sản phẩm', sp: cong.sp });
         }
       } else if (w.vt === 'van') {

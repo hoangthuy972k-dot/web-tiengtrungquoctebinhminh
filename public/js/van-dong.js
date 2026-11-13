@@ -8,6 +8,8 @@
    Cau hoi nhan qua localStorage 'hyv_vandong' do trang goi ghi truoc khi mo:
      { nguon: 'lop' | 'nha', nhan, tro: 'chem' | 'theduc' | 'ngoisao' | 'dam' (chon san, tuy chon),
        cau: [{ hoi, ctx, opts: [2..4 chuoi], dung, why, docTruoc, docSau, zhOpt, hoiZh, py }] }
+   ?phong=<ma> (hoc sinh vao bang ma QR tren lop): che do phong — bo cau, tro va cai dat lay tu phong qua cam-phong.js
+   (bien PH), choi bang camera truoc hoac bang cham, bao tung cau len may chu; khong ap dung cho 'ngoisao'.
    ?tro=... tren dia chi cung chon san tro choi. File nay nap duoc trong Node de test
    cac ham thuan (dem ngon tay, nhan dang dang nguoi).                                  */
 (function (goc) {
@@ -267,7 +269,10 @@
     return kq;
   }
 
-  var cfg = docLS('hyv_vandong', null);
+  // Che do phong (ma QR tren lop — cam-phong.js): moi em choi tren dien thoai voi bo cau cua phong, bao tung cau len may chu;
+  // camera khong dung duoc thi choi bang cham (S.cham). Khi do bo qua cau hinh trong localStorage.
+  var PH = window.CamPhong && window.CamPhong.bat ? window.CamPhong : null;
+  var cfg = PH ? null : docLS('hyv_vandong', null);
   var lop = !!(cfg && cfg.nguon === 'lop');
   var dsCau = chuanHoa(cfg && cfg.cau);
   var hoiTro = /[?&]tro=(chem|theduc|ngoisao|dam)\b/.exec(location.search);
@@ -339,7 +344,7 @@
     tone(784, 0.8, 'sine', 0.1, 0.42);
   }
   function docZh(t) {
-    if (!S.tieng || !t || !window.speechSynthesis) return;
+    if (PH || !S.tieng || !t || !window.speechSynthesis) return; // phong QR: ca lop cung choi, khong doc to / khong nhac nen
     try {
       speechSynthesis.cancel();
       var u = new SpeechSynthesisUtterance(t);
@@ -349,7 +354,7 @@
   }
   // Nhac nen: chay tu luc dem nguoc den man ket qua; tat khi tat tieng
   function nhac(bat) {
-    if (!window.NhacNen) return;
+    if (!window.NhacNen || PH) return;
     // chem / theduc: nhac vui; cuoc dua ngoi sao: nhac gap; nut bat/tat rieng tren thanh tren
     if (bat && S.tieng) window.NhacNen.bat({ ctx: ac, kieu: S.tro === 'ngoisao' || S.tro === 'dam' ? 'gap' : 'vui', nut: false }); else window.NhacNen.tat();
   }
@@ -560,7 +565,7 @@
         function tao(dv) {
           var co = { baseOptions: { modelAssetPath: loai === 'tay' ? MH_TAY : MH_NGUOI, delegate: dv }, runningMode: 'VIDEO' };
           if (loai === 'tay') {
-            co.numHands = 2; co.minHandDetectionConfidence = 0.5; co.minHandPresenceConfidence = 0.5; co.minTrackingConfidence = 0.5;
+            co.numHands = PH && S.tro === 'chem' ? 1 : 2; co.minHandDetectionConfidence = 0.5; co.minHandPresenceConfidence = 0.5; co.minTrackingConfidence = 0.5;
             return MP.HandLandmarker.createFromOptions(fs, co);
           }
           co.numPoses = 1;
@@ -577,21 +582,40 @@
     var v = $('vdVideo');
     if (v.srcObject && v.srcObject.active) { S.video = v; return Promise.resolve(); }
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return Promise.reject(new Error('Trình duyệt này không mở được camera.'));
-    return navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 480 } } })
+    // dien thoai trong phong QR: hinh nho hon cho nhe may
+    return navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: 'user', width: { ideal: PH ? 480 : 640 }, height: { ideal: PH ? 360 : 480 } } })
       .then(function (st) {
         v.srcObject = st;
         S.video = v;
         return v.play().catch(function () { /* da muted */ });
       });
   }
+  // Choi bang cham (phong QR): tat camera, chi con cham / vuot vao dap an
+  function datCham(bat) {
+    S.cham = !!bat;
+    $('vd').classList.toggle('is-cham', S.cham);
+    if (!S.cham) return;
+    var v = $('vdVideo');
+    if (v.srcObject) { try { v.srcObject.getTracks().forEach(function (t) { t.stop(); }); } catch (e) { /* bo qua */ } v.srcObject = null; }
+    S.video = null; S.nguoi = null; S.tay = [null, null];
+    S.dam.tay = [tayMoi(), tayMoi()];
+    tb('');
+    if (S.pha === 'hoi') goiY(goiYCham());
+  }
+  function goiYCham() {
+    return S.tro === 'chem' ? (S.da === 'qua' ? 'Vuốt ngón tay qua quả mang đáp án đúng! 👆' : 'Chạm vào bong bóng mang đáp án đúng! 👆')
+      : S.tro === 'dam' ? 'Chạm vào thẻ mang đáp án đúng! 🥊' : 'Chạm vào đáp án đúng! 👆';
+  }
 
-  function batDau() {
+  // kieu (chi phong QR): 'cam' choi bang camera, 'cham' choi bang cham
+  function batDau(kieu) {
     var b = $('vdBatDau');
     if (!dsCau.length) return;
     b.disabled = true;
     $('vdLoi').textContent = '';
     tone(1, 0.01); // mo khoa am thanh trong cu bam
     b.textContent = 'Đang mở camera…';
+    if (PH) PH.trangThai(kieu === 'cam' ? b.textContent : '');
     var ten = [$('vdTen0').value.trim() || 'Bạn trái', $('vdTen1').value.trim() || 'Bạn phải'];
     S.luot = S.tro !== 'ngoisao' && S.ds.length > 0;
     if (S.luot) { (S.cap || []).forEach(function (t) { S.daChoi[t] = 1; }); S.cap = null; S.tenLuot = $('vdTen0').value.trim() || 'Bạn lên chơi'; }
@@ -601,12 +625,18 @@
       (S.cap || []).forEach(function (t) { S.daChoi[t] = 1; });
       S.cap = null;
     }
-    moCamera().then(function () {
-      b.textContent = S.tro === 'theduc' ? 'Đang tải bộ nhận diện dáng người…' : 'Đang tải bộ nhận diện bàn tay…';
-      return taiMoHinh(S.tro === 'theduc' ? 'nguoi' : 'tay');
-    }).then(function () {
+    var moMay = function () {
+      return moCamera().then(function () {
+        b.textContent = S.tro === 'theduc' ? 'Đang tải bộ nhận diện dáng người…' : 'Đang tải bộ nhận diện bàn tay…';
+        if (PH) PH.trangThai(b.textContent);
+        return taiMoHinh(S.tro === 'theduc' ? 'nguoi' : 'tay');
+      });
+    };
+    // phong QR: camera / bo nhan dien khong dung duoc thi PH.thu tra ve false -> choi bang cham
+    (PH ? PH.thu(kieu, moMay) : moMay()).then(function (coCam) {
+      if (PH) { datCham(coCam === false); PH.vaoChoi(!S.cham); }
       var ds = dsCau.slice();
-      S.cau = S.tro === 'ngoisao' || S.luot ? tron(ds) : lop ? ds : tron(ds).slice(0, 12);
+      S.cau = PH ? ds : S.tro === 'ngoisao' || S.luot ? tron(ds) : lop ? ds : tron(ds).slice(0, 12);
       S.moiBan = lop && S.tro !== 'ngoisao' && !S.luot && $('vdMoiBan').checked;
       S.muc = 0; // cuoc dua ngoi sao: thang theo vong N cau, khong dung som
       S.vong = { n: +$('vdMuc').value || 5, tu: 0, so: 1 };
@@ -615,6 +645,7 @@
       if (S.luot && S.tro !== 'ngoisao') S.lichSu = [];
       S.lichSu = [];
       S.i = 0; S.diem = 0; S.dung = 0; S.chuoi = 0; S.chuoiMax = 0;
+      if (PH) { S.diem = PH.diem0; S.dung = PH.dung0; } // tai lai trang giua van: lam tiep, giu diem da bao
       if (window.SaoGame && !lop) window.SaoGame.batDauVan();
       S.p = [nguoiMoi(ten[0]), nguoiMoi(ten[1])];
       S.vat = []; S.hat = []; S.nguoi = null; S.tay = [null, null];
@@ -626,7 +657,7 @@
       $('vdKq').hidden = true;
       $('vdChoi').hidden = false;
       $('vdDiem').hidden = S.tro === 'ngoisao';
-      $('vdDiem').textContent = '0';
+      $('vdDiem').textContent = S.diem;
       $('vdP0').hidden = $('vdP1').hidden = S.tro !== 'ngoisao';
       $('vdDau').hidden = S.tro !== 'theduc';
       $('vdDam').hidden = S.tro !== 'dam';
@@ -655,7 +686,7 @@
     S.pha = 'dem';
     nhac(true);
     $('vdHoi').innerHTML = '<span class="vd-dem" id="vdDemSo">3</span>';
-    $('vdDuoi').textContent = S.tro === 'theduc' ? 'Lùi lại cho camera thấy từ đầu đến bụng nhé!'
+    $('vdDuoi').textContent = S.cham ? 'Sẵn sàng… chạm vào đáp án đúng nhé! 👆' : S.tro === 'theduc' ? 'Lùi lại cho camera thấy từ đầu đến bụng nhé!'
       : S.tro === 'ngoisao' ? 'Hai bạn đứng hai bên, giơ tay lên nào!'
       : S.tro === 'dam' ? 'Đứng cách màn hình một sải tay, giơ hai nắm tay lên nào! 🥊' : 'Giơ bàn tay lên trước camera nhé!';
     // bam Thoat giua chung -> S.phien doi -> dung han dem nguoc (khong mo cau hoi nua)
@@ -708,10 +739,12 @@
   function nhanDien() {
     var v = S.video, lm = S.tro === 'theduc' ? S.lmNguoi : S.lmTay, now = performance.now();
     if (!v || !lm || v.readyState < 2) return;
-    if (now - S.lanDo < 30 || v.currentTime === S.tsCuoi) return;
+    // phong QR: dien thoai cham thi nhan dien thua ra (PH.nhip tu chinh theo thoi gian moi lan nhan dien)
+    if (now - S.lanDo < (PH ? PH.nhip : 30) || v.currentTime === S.tsCuoi) return;
     S.lanDo = now; S.tsCuoi = v.currentTime;
     var kq;
     try { kq = lm.detectForVideo(v, now); } catch (e) { return; }
+    if (PH) { PH.do(performance.now() - now); if (S.cham) return; }
     if (S.tro === 'chem') tayChem(kq, now);
     else if (S.tro === 'theduc') nguoiTheDuc(kq, now);
     else if (S.tro === 'dam') tayDam(kq, now);
@@ -1445,7 +1478,17 @@
         sCombo(S.chuoi >= 10 ? 2 : S.chuoi >= 5 ? 1 : 0);
       }
       $('vdChuoi').textContent = S.chuoi >= 2 ? '🔥 Combo x' + S.chuoi : '';
-      if (D.hp <= 0) {
+      if (D.hp <= 0 && PH) {
+        // phong QR: ai cung lam het bo cau, khong ket thuc som va khong co diem thuong ngoai diem tung cau —
+        // ha duoc Bao Cat U thi no day lai, dau hiep moi
+        var conCau = D.hoi < D.n, hi = $('vdDamCombo');
+        D.ha = (D.ha || 0) + 1;
+        if (conCau) D.hp = D.hpMax;
+        hi.hidden = true; void hi.offsetWidth;
+        hi.textContent = '🏆 Hạ ' + TEN_DICH + '!' + (conCau ? ' Hiệp ' + (D.ha + 1) : '');
+        hi.hidden = false;
+        lopU(conCau ? 'is-dau' : 'is-guc'); sGuc();
+      } else if (D.hp <= 0) {
         D.thang = true;
         // ha Bao Cat U som: thuong diem cho so cau con lai
         S.diem += 200 + 100 * Math.max(0, D.n - D.hoi);
@@ -1455,8 +1498,8 @@
     } else {
       D.sai++;
       // tren lop khong ai bi "ha" truoc ca lop: the luc khong ve 0, luot van choi het so cau
-      D.tl = Math.max(lop ? 0.1 : 0, 1 - D.sai * 0.2);
-      if (!lop && D.sai >= 5) D.guc = true;
+      D.tl = Math.max(lop || PH ? 0.1 : 0, 1 - D.sai * 0.2);
+      if (!lop && !PH && D.sai >= 5) D.guc = true;
       $('vdChuoi').textContent = '';
       lopU('is-cuoi');
       var b = $('vdDamBan');
@@ -1562,6 +1605,7 @@
     $('vdSo').textContent = S.tro === 'ngoisao'
       ? 'Vòng ' + S.vong.so + ' · Câu ' + (S.i - S.vong.tu + 1) + '/' + S.vong.n
       : S.luot ? '🙋 ' + S.tenLuot + ' · Câu ' + (S.i - S.vong.tu + 1) + '/' + S.vong.n
+      : PH ? 'Câu ' + (PH.daLam + S.i + 1) + '/' + PH.tong
       : 'Câu ' + (S.i + 1) + '/' + S.cau.length;
     $('vdChuoi').textContent = S.tro === 'dam' ? (S.chuoi >= 2 ? '🔥 Combo x' + S.chuoi : '')
       : S.tro !== 'ngoisao' && S.chuoi >= 2 ? '🔥 ' + S.chuoi + ' câu đúng liên tiếp' : '';
@@ -1569,7 +1613,7 @@
       '<div class="vd-hoi-chu' + (c.hoiZh ? ' is-zh' : '') + '">' + esc(c.hoi).replace('＿＿', '<span class="vd-trong">＿＿</span>') + '</div>' +
       '';
     veThe();
-    S.conMs = (S.tro === 'chem' ? (lop ? 25 : 20) : (lop ? 20 : 15)) * 1000;
+    S.conMs = (PH ? PH.secs : S.tro === 'chem' ? (lop ? 25 : 20) : (lop ? 20 : 15)) * 1000;
     S.hetLuc = now + S.conMs;
     S.giayCu = -1;
     S.khongTay = now;
@@ -1593,6 +1637,7 @@
       $('vdTim').textContent = '';
       goiY('Hạ hai tay xuống một chút…');
     }
+    if (S.cham) goiY(goiYCham());
     docZh(c.docTruoc);
     demGio();
   }
@@ -1630,6 +1675,7 @@
     }
     S.diem += cong;
     $('vdDiem').textContent = S.diem;
+    if (PH) PH.bao(c._k, dung, cong); // phong QR: bao cau nay len may chu (dung / sai + diem)
     var the = (S.tro === 'dam' ? $('vdDamThe') : $('vdDap')).children;
     Array.prototype.forEach.call(the, function (el, i) {
       el.style.setProperty('--p', 0);
@@ -1662,7 +1708,8 @@
       $('vdTiep').addEventListener('click', tiep);
       S.pha = 'cho';
     } else {
-      hen(tiep, cuoi ? 2200 : 2800);
+      // phong QR (nhieu cau, moi em mot may): chuyen cau nhanh hon, sai thi dung lau hon de doc dap an
+      hen(tiep, PH ? (dung ? 1500 : 2500) : cuoi ? 2200 : 2800);
     }
     return cong;
   }
@@ -1730,8 +1777,19 @@
   }
   function ketThuc() {
     sHet();
-    var dam = S.tro === 'dam', n = S.cau.length, pt = n ? S.dung / n : 0;
-    var sao = dam ? saoDam() : pt >= 0.9 ? 3 : pt >= 0.7 ? 2 : pt >= 0.4 ? 1 : 0, moi = kyLuc(S.diem);
+    var dam = S.tro === 'dam', n = PH ? PH.tong : S.cau.length, pt = n ? S.dung / n : 0;
+    var sao = dam && !PH ? saoDam() : pt >= 0.9 ? 3 : pt >= 0.7 ? 2 : pt >= 0.4 ? 1 : 0;
+    if (PH) {
+      // phong QR: man ket qua + thu hang do cam-phong.js ve; cho co ket thuc / choi lai
+      S.pha = 'het'; S.vat = []; S.hat = [];
+      if (KH.w) cx.clearRect(0, 0, KH.w, KH.h);
+      $('vdChoi').hidden = true;
+      $('vd').classList.remove('is-choi');
+      PH.xong({ diem: S.diem, dung: S.dung, sao: sao, saoHtml: window.SaoGame ? window.SaoGame.tongKetHtml() : '' });
+      if (sao >= 2) phaoGiay();
+      return;
+    }
+    var moi = kyLuc(S.diem);
     veKq('<div class="vd-kq-sao">' + [0, 1, 2].map(function (i) { return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.2) + 's">' + anhTag(i < sao ? 'star' : 'star-empty') + '</span>'; }).join('') + '</div>' +
       '<h2>' + (dam ? tdDam('') : sao >= 3 ? 'Xuất sắc!' : sao >= 2 ? 'Giỏi lắm!' : sao >= 1 ? 'Khá lắm!' : 'Cố lên nhé!') + '</h2>' +
       '<div class="vd-kq-diem">' + S.diem + ' <small>điểm</small></div>' +
@@ -1853,6 +1911,22 @@
   veNhac();
   veSanh();
   $('vdBatDau').addEventListener('click', batDau);
+  // Phong QR: lay bo cau + cai dat cua phong (tro, giay moi cau, qua / bong) roi hien sanh rieng cua cam-phong.js
+  if (PH) PH.san(function (du) {
+    cfg = { nguon: 'phong', tro: du.tro, cau: du.cau };
+    dsCau = chuanHoa(du.cau);
+    S.tro = du.tro; S.da = PH.da;
+    $('vd').setAttribute('data-tro', S.tro);
+    $('vdTieuDe').textContent = TEN_TRO[S.tro];
+    $('vdLoi').textContent = '';
+    PH.tatCam = function () { datCham(true); };
+    PH.sanh({
+      ten: TEN_TRO[S.tro], nhan: S.tro === 'theduc' ? 'dáng người' : 'bàn tay', onChon: batDau,
+      meo: S.tro === 'chem' ? (S.da === 'qua' ? '☝️ Giơ tay trước camera, vung nhanh <b>đầu ngón trỏ</b> qua quả mang đáp án đúng.' : '☝️ Đưa <b>đầu ngón trỏ</b> chạm vào bong bóng mang đáp án đúng.')
+        : S.tro === 'dam' ? '🥊 Dựng điện thoại lên bàn, lùi lại một chút. Đưa nắm tay tới thẻ mang đáp án đúng rồi <b>đấm về phía màn hình</b> (hoặc giữ yên trên thẻ).'
+        : '🧍 Dựng điện thoại lên bàn, lùi lại cho camera thấy <b>từ đầu đến bụng</b>, rồi tạo dáng A · B · C · D để chọn đáp án.'
+    });
+  }, ['chem', 'theduc', 'dam']);
   napNguonLop();
   $('vdLop').addEventListener('change', function () { chonNguonLop(this.value); });
   $('vdBoc').addEventListener('click', function () { if (S.tro === 'ngoisao') bocHaiBan(); else bocMotBan(); });

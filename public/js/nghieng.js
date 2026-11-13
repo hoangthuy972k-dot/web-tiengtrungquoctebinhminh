@@ -42,7 +42,10 @@
     $('nhDau').innerHTML = anhTag('face-' + ten);
   }
 
-  var cfg = docLS('hyv_nghieng', null);
+  // Che do phong (ma QR tren lop — cam-phong.js): moi em choi tren dien thoai voi bo cau cua phong, bao tung cau len may chu;
+  // camera khong dung duoc thi choi bang cham (S.cham). Khi do bo qua cau hinh trong localStorage.
+  var PH = window.CamPhong && window.CamPhong.bat ? window.CamPhong : null;
+  var cfg = PH ? null : docLS('hyv_nghieng', null);
   var lop = !!(cfg && cfg.nguon === 'lop');
   var S = {
     cheDo: 'nghieng', moiBan: false, cau: [], i: 0, diem: 0, dung: 0, chuoi: 0, chuoiMax: 0,
@@ -83,7 +86,7 @@
     tone(784, 0.8, 'sine', 0.1, 0.42);
   }
   function docZh(t) {
-    if (!S.tieng || !t || !window.speechSynthesis) return;
+    if (PH || !S.tieng || !t || !window.speechSynthesis) return; // phong QR: ca lop cung choi, khong doc to
     try {
       speechSynthesis.cancel();
       var u = new SpeechSynthesisUtterance(t);
@@ -146,7 +149,8 @@
   }
   function moCamera() {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return Promise.reject(new Error('Trình duyệt này không mở được camera.'));
-    return navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 480 } } })
+    // dien thoai trong phong QR: hinh nho hon cho nhe may
+    return navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: 'user', width: { ideal: PH ? 480 : 640 }, height: { ideal: PH ? 360 : 480 } } })
       .then(function (st) {
         var v = $('nhVideo');
         v.srcObject = st;
@@ -154,31 +158,55 @@
         return v.play().catch(function () { /* da muted */ });
       });
   }
+  // Choi bang cham (phong QR): tat camera, cham vao mot trong hai o dap an
+  function datCham(bat) {
+    S.cham = !!bat;
+    $('nh').classList.toggle('is-cham', S.cham);
+    if (!S.cham) return;
+    var v = $('nhVideo');
+    if (v.srcObject) { try { v.srcObject.getTracks().forEach(function (t) { t.stop(); }); } catch (e) { /* bo qua */ } v.srcObject = null; }
+    S.video = null;
+    $('nhTb').hidden = true;
+    S.canThang = false;
+    if (S.pha === 'hoi') { $('nhDuoi').textContent = 'Chạm vào đáp án đúng! 👆'; veHuong(); }
+  }
+  function veHuong() {
+    $('nhHuongTrai').textContent = S.cham ? '👆 Chạm' : S.cheDo === 'nghieng' ? '⬅ Nghiêng trái' : '😄 Cười';
+    $('nhHuongPhai').textContent = S.cham ? 'Chạm 👆' : S.cheDo === 'nghieng' ? 'Nghiêng phải ➡' : 'Há miệng 😮';
+  }
 
-  function batDau() {
+  // kieu (chi phong QR): 'cam' choi bang camera, 'cham' choi bang cham
+  function batDau(kieu) {
     var b = $('nhBatDau');
     b.disabled = true;
     $('nhLoi').textContent = '';
     tone(1, 0.01); // mo khoa am thanh trong cu bam
     b.textContent = 'Đang mở camera…';
-    var camP = moCamera();
-    camP.then(function () {
-      if (S.lm) return S.lm;
-      b.textContent = S.lm ? '' : 'Đang tải bộ nhận diện khuôn mặt…';
-      return choMP().then(taoLm).then(function (lm) { S.lm = lm; return lm; });
-    }).then(function () {
+    if (PH) PH.trangThai(kieu === 'cam' ? b.textContent : '');
+    var moMay = function () {
+      return moCamera().then(function () {
+        if (S.lm) return S.lm;
+        b.textContent = S.lm ? '' : 'Đang tải bộ nhận diện khuôn mặt…';
+        if (PH) PH.trangThai(b.textContent);
+        return choMP().then(taoLm).then(function (lm) { S.lm = lm; return lm; });
+      });
+    };
+    // phong QR: camera / bo nhan dien khong dung duoc thi PH.thu tra ve false -> choi bang cham
+    (PH ? PH.thu(kieu, moMay) : moMay()).then(function (coCam) {
+      if (PH) { datCham(coCam === false); PH.vaoChoi(!S.cham); }
       var ds = cfg.cau.slice();
       // tren lop: luot dau giu thu tu co chon; ban khac choi tiep thi xao lai de khong thuoc dap an luot truoc
       S.luot = (S.luot || 0) + 1;
-      S.cau = lop ? (S.luot > 1 ? tron(ds) : ds) : tron(ds).slice(0, 12);
+      S.cau = PH ? ds : lop ? (S.luot > 1 ? tron(ds) : ds) : tron(ds).slice(0, 12);
       S.moiBan = lop && $('nhMoiBan').checked;
       S.i = 0; S.diem = 0; S.dung = 0; S.chuoi = 0; S.chuoiMax = 0;
+      if (PH) { S.diem = PH.diem0; S.dung = PH.dung0; } // tai lai trang giua van: lam tiep, giu diem da bao
       if (window.SaoGame) window.SaoGame.batDauVan();
       $('nhSanh').hidden = true;
       $('nhKq').hidden = true;
       $('nhChoi').hidden = false;
       $('nhDiem').hidden = false;
-      $('nhDiem').textContent = '0';
+      $('nhDiem').textContent = S.diem;
       if (!S.chay) { S.chay = true; requestAnimationFrame(vong); }
       return demNguoc();
     }).then(function () { moCau(); }).catch(function (e) {
@@ -194,9 +222,9 @@
 
   function demNguoc() {
     S.pha = 'dem';
-    if (window.NhacNen && S.tieng) window.NhacNen.bat({ ctx: ac, kieu: 'vui' });
+    if (window.NhacNen && S.tieng && !PH) window.NhacNen.bat({ ctx: ac, kieu: 'vui' });
     $('nhHoi').innerHTML = '<span class="nh-dem" id="nhDemSo">3</span>';
-    $('nhDuoi').textContent = 'Ngồi thẳng, nhìn vào camera nhé!';
+    $('nhDuoi').textContent = S.cham ? 'Sẵn sàng… chạm vào đáp án đúng nhé! 👆' : 'Ngồi thẳng, nhìn vào camera nhé!';
     // bam Thoat giua chung -> S.phien doi -> dung han dem nguoc
     var ph = S.phien;
     var buoc = function (f) { return function () { return ph !== S.phien ? new Promise(function () {}) : f(); }; };
@@ -213,9 +241,14 @@
     requestAnimationFrame(vong);
     var v = S.video;
     if (!v || !S.lm || v.readyState < 2 || v.currentTime === S.tsCuoi) return;
+    // phong QR: dien thoai cham thi nhan dien thua ra (PH.nhip tu chinh theo thoi gian moi lan nhan dien)
+    var luc = performance.now();
+    if (PH && luc - (S.lanDo || 0) < PH.nhip) return;
+    S.lanDo = luc;
     S.tsCuoi = v.currentTime;
     var kq;
-    try { kq = S.lm.detectForVideo(v, performance.now()); } catch (e) { return; }
+    try { kq = S.lm.detectForVideo(v, luc); } catch (e) { return; }
+    if (PH) { PH.do(performance.now() - luc); if (S.cham) return; }
     var mat = kq && kq.faceLandmarks && kq.faceLandmarks[0];
     var ben = -1;
     if (!mat) {
@@ -277,8 +310,8 @@
   function moCau() {
     var c = S.cau[S.i];
     S.pha = 'hoi';
-    S.ben = -1; S.canThang = true; S.thangTu = 0;
-    $('nhSo').textContent = 'Câu ' + (S.i + 1) + '/' + S.cau.length;
+    S.ben = -1; S.canThang = !S.cham; S.thangTu = 0;
+    $('nhSo').textContent = PH ? 'Câu ' + (PH.daLam + S.i + 1) + '/' + PH.tong : 'Câu ' + (S.i + 1) + '/' + S.cau.length;
     $('nhChuoi').textContent = S.chuoi >= 2 ? '🔥 ' + S.chuoi + ' câu đúng liên tiếp' : '';
     $('nhHoi').innerHTML = (c.ctx ? '<div class="nh-ctx">' + esc(c.ctx) + '</div>' : '') +
       '<div class="nh-hoi-chu' + (c.hoiZh ? ' is-zh' : '') + '">' + esc(c.hoi).replace('＿＿', '<span class="nh-trong">＿＿</span>') + '</div>' +
@@ -289,9 +322,9 @@
       el.style.setProperty('--p', 0);
       el.querySelector('.nh-opt-t').textContent = x[1];
     });
-    $('nhHuongTrai').textContent = S.cheDo === 'nghieng' ? '⬅ Nghiêng trái' : '😄 Cười';
-    $('nhHuongPhai').textContent = S.cheDo === 'nghieng' ? 'Nghiêng phải ➡' : 'Há miệng 😮';
-    S.conMs = (lop ? 20 : GIAY) * 1000;
+    veHuong();
+    if (S.cham) $('nhDuoi').textContent = 'Chạm vào đáp án đúng! 👆';
+    S.conMs = (PH ? PH.secs : lop ? 20 : GIAY) * 1000;
     S.hetLuc = performance.now() + S.conMs;
     S.giayCu = -1;
     docZh(c.docTruoc);
@@ -317,15 +350,18 @@
     var dung = ben === c.dung;
     var conLai = Math.max(0, S.hetLuc - performance.now());
     if (window.SaoGame) { if (dung) window.SaoGame.dung(); else window.SaoGame.sai(); }
+    var cong = 0;
     if (dung) {
       S.dung++; S.chuoi++; S.chuoiMax = Math.max(S.chuoiMax, S.chuoi);
-      S.diem += 100 + Math.round(50 * conLai / S.conMs) + Math.min(5, S.chuoi - 1) * 10;
+      cong = 100 + Math.round(50 * conLai / S.conMs) + Math.min(5, S.chuoi - 1) * 10;
+      S.diem += cong;
       sDung();
     } else {
       S.chuoi = 0;
       sSai();
     }
     $('nhDiem').textContent = S.diem;
+    if (PH) PH.bao(c._k, dung, cong); // phong QR: bao cau nay len may chu (dung / sai + diem)
     var dEl = c.dung === 0 ? $('nhTrai') : $('nhPhai');
     dEl.classList.add('is-dung');
     if (ben !== -1 && !dung) (ben === 0 ? $('nhTrai') : $('nhPhai')).classList.add('is-sai');
@@ -339,7 +375,8 @@
       $('nhTiep').addEventListener('click', tiep);
       S.pha = 'cho';
     } else {
-      hen(tiep, cuoi ? 2200 : 2600);
+      // phong QR (nhieu cau, moi em mot may): chuyen cau nhanh hon, sai thi dung lau hon de doc dap an
+      hen(tiep, PH ? (dung ? 1500 : 2500) : cuoi ? 2200 : 2600);
     }
   }
   function tiep() {
@@ -353,8 +390,15 @@
     S.pha = 'het';
     if (window.NhacNen) window.NhacNen.tat();
     sHet();
-    var pt = S.cau.length ? S.dung / S.cau.length : 0;
+    var tongCau = PH ? PH.tong : S.cau.length;
+    var pt = tongCau ? S.dung / tongCau : 0;
     var sao = pt >= 0.9 ? 3 : pt >= 0.7 ? 2 : pt >= 0.4 ? 1 : 0;
+    if (PH) {
+      // phong QR: man ket qua + thu hang do cam-phong.js ve; cho co ket thuc / choi lai
+      $('nhChoi').hidden = true;
+      PH.xong({ diem: S.diem, dung: S.dung, sao: sao, saoHtml: window.SaoGame ? window.SaoGame.tongKetHtml() : '' });
+      return;
+    }
     var moi = false;
     if (!lop) {
       var kl = parseInt(localStorage.getItem(KL_KEY) || '0', 10) || 0;
@@ -385,6 +429,18 @@
   veTieng();
   veSanh();
   $('nhBatDau').addEventListener('click', batDau);
+  // Phong QR: lay bo cau cua phong (moi cau 2 dap an: opts[0] ben trai, opts[1] ben phai) roi hien sanh rieng cua cam-phong.js
+  if (PH) PH.san(function (du) {
+    cfg = { nguon: 'phong', cau: du.cau.map(function (c) {
+      return { hoi: c.hoi, ctx: c.ctx, why: c.why, trai: c.opts[0], phai: c.opts[1], dung: c.dung, zhOpt: c.zhOpt, hoiZh: c.hoiZh, _k: c._k };
+    }) };
+    $('nhLoi').textContent = '';
+    PH.tatCam = function () { datCham(true); };
+    PH.sanh({
+      ten: '🙆 Quiz nghiêng đầu', nhan: 'khuôn mặt', onChon: batDau,
+      meo: '↔️ Cầm điện thoại thẳng trước mặt, <b>nghiêng đầu sang trái hoặc phải</b> và giữ một chút để chọn 1 trong 2 đáp án.'
+    });
+  }, ['nghieng']);
   // Tren lop: dang choi ma bam "Thoat" -> ve man chuan bi (giu bai da chon) de moi ban khac len;
   // dang o man chuan bi thi Thoat moi ve Che do lop hoc
   $('nhThoat').addEventListener('click', function (e) {

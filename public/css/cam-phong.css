@@ -1,0 +1,114 @@
+/* Che do phong (ma QR tren lop) cua cac tro camera tren dien thoai — public/js/cam-phong.js.
+   Dung chung cho /van-dong va /nghieng: sanh xin quyen camera, dai duoi (nut "Choi bang cham" + thu hang),
+   man ket qua, va bo cuc khi choi bang cham (khong co hinh camera). Tong mau sang kieu Kiem tra bai cu:
+   nen kem, the trang vien dam, tieu de do gach. html.cp-bat = dang o che do phong, html.cp-cham = choi bang cham. */
+html.cp-bat .vd-sanh, html.cp-bat .nh-sanh { display: none !important; }
+html.cp-bat #vdThoat, html.cp-bat #nhThoat, html.cp-bat #vdNhac, html.cp-bat #vdFull, html.cp-bat #nhFull { display: none !important; }
+html.cp-bat .vd-bar-t span, html.cp-bat .nh-bar-t span { display: none; }
+html.cp-bat .vd, html.cp-bat .nh { padding-bottom: calc(50px + env(safe-area-inset-bottom)); }
+
+.cp-lop {
+  --cp-vien: #2b1d3a; --cp-do: #b2311e; --cp-nau: #5b4632;
+  position: fixed; inset: 0; z-index: 60; display: flex; align-items: flex-start; justify-content: center; overflow: auto;
+  padding: calc(env(safe-area-inset-top) + 18px) 14px calc(env(safe-area-inset-bottom) + 18px);
+  background: #fbf5ea radial-gradient(circle at 20% 0, #fff3c9 0, transparent 45%) no-repeat;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: var(--cp-vien);
+}
+.cp-lop[hidden] { display: none; }
+.cp-the {
+  width: 100%; max-width: 430px; margin: auto; padding: 18px 16px 16px; text-align: center;
+  background: #fffdf7; border: 3px solid var(--cp-vien); border-radius: 26px; box-shadow: 0 7px 0 var(--cp-vien);
+  animation: cp-vao .35s cubic-bezier(.3, 1.4, .5, 1) both;
+}
+@keyframes cp-vao { from { transform: translateY(14px) scale(.96); opacity: 0; } }
+.cp-phong { display: inline-block; padding: 4px 14px; border-radius: 999px; background: #ffe9a8; border: 2px solid var(--cp-vien); font-weight: 700; font-size: .92rem; color: var(--cp-nau); }
+.cp-the h1 { margin: 12px 0 2px; font-size: 1.7rem; font-weight: 900; line-height: 1.2; color: var(--cp-do); }
+.cp-tk { margin: 0 0 12px; font-weight: 700; color: var(--cp-nau); }
+.cp-mo { margin: 8px 0 14px; font-weight: 600; color: var(--cp-nau); line-height: 1.5; }
+.cp-cam { display: flex; gap: 10px; align-items: flex-start; text-align: left; padding: 12px; border-radius: 18px; background: #eaf5ff; border: 2.5px dashed #4f93cf; }
+.cp-cam > span { font-size: 1.9rem; line-height: 1; }
+.cp-cam > div > b { display: block; font-weight: 800; }
+.cp-cam small { display: block; margin-top: 3px; font-size: .9rem; line-height: 1.45; color: #3d4f63; }
+.cp-meo { margin: 10px 0 0; padding: 10px 12px; border-radius: 16px; background: #fff3d6; text-align: left; font-size: .93rem; font-weight: 600; line-height: 1.45; color: var(--cp-nau); }
+.cp-nut {
+  display: block; width: 100%; margin-top: 12px; padding: 14px 12px; font: inherit; font-size: 1.2rem; font-weight: 900; color: var(--cp-vien);
+  border: 3px solid var(--cp-vien); border-radius: 18px; background: linear-gradient(180deg, #ffd96a, #ffb92e); box-shadow: 0 5px 0 var(--cp-vien);
+  cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+}
+.cp-nut small { display: block; margin-top: 2px; font-size: .8rem; font-weight: 600; color: var(--cp-nau); }
+.cp-nut-phu { background: #fff; font-size: 1.1rem; }
+.cp-nut:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 2px 0 var(--cp-vien); }
+.cp-nut:disabled { opacity: .55; }
+.cp-tt { min-height: 1.4em; margin: 10px 0 0; font-weight: 700; color: var(--cp-do); }
+
+/* dai duoi luc dang choi */
+.cp-dai {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 6px 12px calc(6px + env(safe-area-inset-bottom)); background: rgba(255, 250, 240, .96); border-top: 3px solid #2b1d3a;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #2b1d3a;
+}
+.cp-dai[hidden], .cp-dai [hidden] { display: none; }
+.cp-dai-nut {
+  font: inherit; font-weight: 800; font-size: .95rem; padding: 6px 14px; min-height: 36px; border: 2.5px solid #2b1d3a; border-radius: 999px; background: #fff;
+  box-shadow: 0 3px 0 #2b1d3a; color: #2b1d3a; cursor: pointer; touch-action: manipulation;
+}
+.cp-dai-nut:active { transform: translateY(2px); box-shadow: 0 1px 0 #2b1d3a; }
+.cp-dai-cham { font-weight: 800; font-size: .92rem; color: #5b4632; }
+.cp-dai-hang { margin-left: auto; font-weight: 800; font-size: .95rem; font-variant-numeric: tabular-nums; color: #b2311e; white-space: nowrap; }
+
+/* nhan dem sao goc duoi (sao-game.css) se che dong goi y / dai duoi tren dien thoai: an di, tong ket sao hien o man ket qua */
+html.cp-bat .sg-nhan { display: none !important; }
+
+/* thong bao nhanh */
+.cp-tb {
+  position: fixed; left: 12px; right: 12px; top: calc(env(safe-area-inset-top) + 64px); z-index: 70; margin: 0 auto; max-width: 420px; padding: 12px 16px;
+  border: 3px solid #2b1d3a; border-radius: 18px; background: #fff8dc; box-shadow: 0 5px 0 #2b1d3a; text-align: center;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif; font-weight: 800; line-height: 1.4; color: #2b1d3a; animation: cp-vao .3s ease-out both;
+}
+.cp-tb[hidden] { display: none; }
+
+/* man ket qua */
+.cp-sao { display: flex; justify-content: center; gap: 6px; }
+.cp-sao img { width: 58px; height: 58px; animation: cp-sao .5s cubic-bezier(.3, 1.6, .5, 1) both; }
+.cp-sao img:nth-child(2) { width: 72px; height: 72px; margin-top: -8px; }
+@keyframes cp-sao { from { transform: scale(0) rotate(-40deg); opacity: 0; } }
+.cp-diem {
+  display: inline-block; margin: 6px 0; padding: 2px 26px; border-radius: 999px; font-size: 2.5rem; font-weight: 900; color: #3b2300; font-variant-numeric: tabular-nums;
+  background: linear-gradient(180deg, #ffe48a, #ffd23f); border: 3px solid #2b1d3a; box-shadow: 0 5px 0 #2b1d3a;
+}
+.cp-diem small { font-size: 1rem; color: #5a3a00; }
+.cp-hang { margin: 6px 0 4px; padding: 10px 12px; border-radius: 16px; background: #eef8e6; border: 2.5px solid #7fc35c; font-weight: 700; line-height: 1.5; }
+.cp-hang b { color: #b2311e; font-size: 1.15em; }
+.cp-hang-to { margin-top: 6px; padding-top: 6px; border-top: 2px dashed #b9dba5; }
+.cp-nhe { margin: 10px 0 0; font-weight: 600; color: #5b4632; }
+
+/* ---- choi bang cham: khong co hinh camera ---- */
+.vd.is-cham .vd-dau, .vd.is-cham .vd-tb { display: none !important; }
+/* the <video> khong con hinh camera: dung lam nen troi sang cho san (canvas va the dap an van nam tren no) */
+.vd.is-cham .vd-san video { background: linear-gradient(180deg, #bfe6ff 0, #e6f6ff 55%, #dff3c8 100%); filter: none; transform: none; }
+/* The duc ABC bang cham: khong can san camera — bon the dap an chiem cho */
+.vd.is-cham[data-tro="theduc"] .vd-san { display: none; }
+.vd.is-cham[data-tro="theduc"] .vd-dap { flex: 1; grid-template-columns: 1fr; grid-auto-rows: minmax(64px, 1fr); align-content: stretch; }
+.vd.is-cham[data-tro="theduc"] .vd-the { display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 10px; padding: 10px 14px 14px; text-align: left; }
+.vd.is-cham[data-tro="theduc"] .vd-the-hinh, .vd.is-cham[data-tro="theduc"] .vd-the-tl { display: none; }
+.vd.is-cham[data-tro="theduc"] .vd-the-chu { font-size: 1.25rem; }
+.nh.is-cham .nh-cam { display: none; }
+.nh.is-cham .nh-san { grid-template-areas: 'trai phai'; grid-template-rows: minmax(200px, 1fr); flex: 1; }
+html.cp-bat .vd-the, html.cp-bat .nh-opt { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+/* ---- dien thoai doc trong phong: the dap an xep doc (chu khong bi ngat giua tu), chuoi dung xuong duoi cau hoi ---- */
+@media (max-width: 640px) {
+  html.cp-bat .vd-chuoi, html.cp-bat .nh-chuoi { grid-column: 1 / -1; grid-row: 3; justify-self: center; margin-top: 3px; font-size: .82rem; }
+  html.cp-bat .vd-the-chu span, html.cp-bat .vd-the-chu span.is-zh { overflow-wrap: break-word; }
+  html.cp-bat .vd[data-tro="chem"] .vd-dap, html.cp-bat .vd[data-tro="chem"] .vd-dap[data-n="3"] { grid-template-columns: 1fr; gap: 5px; }
+  html.cp-bat .vd[data-tro="chem"] .vd-the { padding: 4px 12px 9px; }
+  html.cp-bat .vd[data-tro="chem"] .vd-the-chu { justify-content: flex-start; text-align: left; }
+  html.cp-bat .vd[data-tro="chem"] .vd-the-chu span, html.cp-bat .vd[data-tro="chem"] .vd-the-chu span.is-zh { font-size: 1.2rem; }
+  html.cp-bat .vd[data-tro="theduc"] .vd-the-chu span, html.cp-bat .vd[data-tro="theduc"] .vd-the-chu span.is-zh { font-size: 1.15rem; }
+  html.cp-bat .vd-hoi-chu { font-size: clamp(1.35rem, 6vw, 2rem); }
+  html.cp-bat .vd-hoi-chu.is-zh { font-size: clamp(1.8rem, 8.5vw, 2.8rem); }
+  html.cp-bat .vd-duoi { min-height: 2.2em; }
+}
+/* The duc ABC bang cham: the to nen chu dap an cung to */
+html.cp-cham .vd[data-tro="theduc"] .vd-the-chu span, html.cp-cham .vd[data-tro="theduc"] .vd-the-chu span.is-zh { font-size: clamp(1.35rem, 6.4vw, 2rem); }
+@media (prefers-reduced-motion: reduce) { .cp-the, .cp-sao img, .cp-tb { animation: none; } }

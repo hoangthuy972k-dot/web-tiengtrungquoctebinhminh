@@ -204,8 +204,12 @@
         '<input type="text" maxlength="24" data-i="' + i + '" value="' + esc(S.ten[i] || ('Tổ ' + (i + 1))) + '" aria-label="Tên đội ' + (i + 1) + '"></label>';
     }
     var n = S.goc.length, cau = '';
-    ['5', '8', '10'].forEach(function (v) { if (+v < n) cau += chipNut('cau', v, v + ' câu', S.soCau === v); });
+    MOC_CAU.forEach(function (v) { if (+v < n) cau += chipNut('cau', v, v + ' câu', S.soCau === v); });
     cau += chipNut('cau', 'het', 'Tất cả <small>' + n + ' câu</small>', S.soCau === 'het' || +S.soCau >= n);
+    // so khac: 2..n (khong qua 100)
+    var khac = S.soCau !== 'het' && +S.soCau < n && MOC_CAU.indexOf(S.soCau) < 0;
+    if (n > 5) cau += '<label class="sc-khac' + (khac ? ' on' : '') + '">Số khác <input type="number" class="sc-o" id="byCauKhac" inputmode="numeric" min="2" max="' + Math.min(n, 100) +
+      '" step="1" value="' + (khac ? esc(S.soCau) : '') + '" placeholder="2–' + Math.min(n, 100) + '" aria-label="Số câu khác"></label><small class="sc-bao" id="byCauBao" hidden></small>';
     $('#byMan').innerHTML =
       '<div class="by-the by-sanh">' +
         '<div class="by-sanh-dau">' +
@@ -244,13 +248,36 @@
           S.soTo = +v;
           $all('.by-ten-to').forEach(function (l, i) { l.hidden = i >= S.soTo; });
           $('#byHangTen').hidden = S.soTo < 2;
-        } else if (k === 'cau') S.soCau = v;
+        } else if (k === 'cau') {
+          S.soCau = v;
+          var ok = $('#byCauKhac');
+          if (ok) { ok.value = ''; ok.parentNode.classList.remove('on'); $('#byCauBao').hidden = true; }
+        }
         else if (k === 'toc') S.toc = v;
         else if (k === 'nhieu') S.nhieu = +v;
         $all('.by-opt[data-k="' + k + '"]').forEach(function (x) { x.classList.toggle('is-on', x === b); });
         luuPref();
       });
     });
+    // o "So khac": go so cau tuy y; lon hon so cau bai co thi lay het va bao "Bai nay chi co n cau"
+    var oKhac = $('#byCauKhac');
+    if (oKhac) {
+      var docKhac = function (chot) {
+        var v = parseInt(oKhac.value, 10), toiDa = Math.min(n, 100), bao = $('#byCauBao');
+        if (!(v > 0)) { bao.hidden = true; return; }
+        var so = Math.max(2, Math.min(toiDa, v));
+        bao.textContent = v > toiDa ? 'Bài này chỉ có ' + toiDa + ' câu' : '';
+        bao.hidden = v <= toiDa;
+        if (chot && v !== so) oKhac.value = so;
+        S.soCau = so >= n ? 'het' : String(so);
+        var trung = S.soCau === 'het' || MOC_CAU.indexOf(S.soCau) >= 0;
+        oKhac.parentNode.classList.toggle('on', !trung);
+        $all('.by-opt[data-k="cau"]').forEach(function (x) { x.classList.toggle('is-on', trung && x.getAttribute('data-v') === S.soCau); });
+        luuPref();
+      };
+      oKhac.addEventListener('input', function () { docKhac(false); });
+      oKhac.addEventListener('change', function () { docKhac(true); });
+    }
     $all('.by-ten-to input').forEach(function (inp) {
       inp.addEventListener('input', function () { S.ten[+inp.getAttribute('data-i')] = inp.value.trim(); luuPref(); });
     });
@@ -953,7 +980,9 @@
     var b = $('#byBatDau');
     if (b) b.focus();
   }
-  function soCauHop(v) { return v === '5' || v === '8' || v === '10' || v === 'het'; }
+  // '5' … '50' la cac moc co san; so khac (2..100) do co go vao o "So khac"
+  var MOC_CAU = ['5', '8', '10', '20', '30', '40', '50'];
+  function soCauHop(v) { return v === 'het' || (typeof v === 'string' && /^\d{1,3}$/.test(v) && +v >= 2 && +v <= 100); }
 
   // Nguoi choi bam dong / ve: dong roi bao trang goi (che do mot nguoi)
   function dongBam() {

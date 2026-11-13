@@ -13,6 +13,7 @@
 // dien thoai tu cham roi bao tien do / diem len (tin dien thoai, nhung kep trong khoang hop ly).
 // Co the chia 2–4 to: hoc sinh tu chon to tren dien thoai; diem to = TRUNG BINH diem cac ban
 // + thuong "ca to cung ve dich" (+20 moi khi ca to xong cau k / ca to ve ga). Choi lai giu phong.
+// Cung kieu 'tro' con co 4 tro camera qua ma QR ('chem', 'theduc', 'dam', 'nghieng' — public/js/lop-cam.js): xem TRO_CAM ben duoi.
 // Kieu 'keo' (public/js/lop-keo-qr.js): Keo co tri thuc qua ma QR — hoc sinh chon to, hai to dau nhau
 // (giao vien chon cap). Moi cau giao vien ra (/cau), ai thuoc hai to tra loi tren dien thoai; lat dap an:
 // to co TI LE ban dung cao hon (dung / so thanh vien, nen to dong nguoi khong loi the) keo day 1 nac,
@@ -252,15 +253,36 @@ function bangXepHang(p) {
 }
 
 /* ---- Tro choi tren dien thoai (kieu 'tro') ---- */
-const TRO = { bay: 1, doantau: 1 };
+const TRO = { bay: 1, doantau: 1, chem: 1, theduc: 1, dam: 1, nghieng: 1 };
+// Tro dieu khien bang camera qua ma QR (public/js/lop-cam.js): dien thoai mo /van-dong hoac /nghieng o che do phong
+// (public/js/cam-phong.js), choi bang camera truoc hoac bang cham, bao TUNG CAU len (/tien { i, d, diem }):
+// moi cau chi nhan mot lan, diem moi cau kep 0..CAM_DIEM_CAU, khong the lam nhanh hon ~0,8 giay / cau.
+// Thuong to: ca to cung xong moi CAM_MOC cau (va khi ca to xong het) +THUONG_CAM.
+const TRO_CAM = { chem: 1, theduc: 1, dam: 1, nghieng: 1 };
+const CAM_MAX_CAU = 100;
+const CAM_DIEM_CAU = 200;
+const CAM_SECS = [10, 15, 20, 30];
+const CAM_MOC = 5;
+const THUONG_CAM = 50;
 const TOC_BAY = ['cham', 'vua', 'nhanh'];
 const MUC_TAU = ['de', 'vua', 'kho'];
 function so(v, min, max) { const n = Math.round(Number(v)); return Number.isFinite(n) ? Math.max(min, Math.min(max, n)) : min; }
 // Bo cau giao vien gui: chi giu cac truong tro choi dung, cat do dai
 function sachCauTro(tro, ds) {
   if (!Array.isArray(ds)) return [];
+  if (TRO_CAM[tro]) {
+    // { hoi, ctx, why, opts[2..4] (nghieng dau: 2), dung, zhOpt, hoiZh } — toi da 100 cau
+    const soDap = tro === 'nghieng' ? 2 : 4;
+    return ds.slice(0, CAM_MAX_CAU).map((q) => {
+      if (!q || !Array.isArray(q.opts)) return null;
+      const opts = q.opts.slice(0, soDap).map((o) => chuoi(o, 100));
+      const dung = Number(q.dung);
+      if (opts.length < 2 || opts.some((o) => !o.trim()) || !Number.isInteger(dung) || dung < 0 || dung >= opts.length) return null;
+      return { hoi: chuoi(q.hoi, 300), ctx: chuoi(q.ctx, 300), why: chuoi(q.why, 500), opts, dung, zhOpt: !!q.zhOpt, hoiZh: !!q.hoiZh };
+    }).filter(Boolean);
+  }
   if (tro === 'bay') {
-    return ds.slice(0, 60).map((q) => q && Array.isArray(q.words) && {
+    return ds.slice(0, 100).map((q) => q && Array.isArray(q.words) && {
       words: q.words.slice(0, 30).map((w) => chuoi(w, 40)), answer: chuoi(q.answer, 300),
       context: chuoi(q.context, 300), why: chuoi(q.why, 500),
     }).filter((q) => q && q.words.filter((w) => w.trim()).length >= 2);
@@ -277,8 +299,14 @@ function bxhTro(p) {
   const tong = p.tro ? p.tro.tong : 0;
   return [...p.hs.values()].sort(soSanh(p)).map((h, i) => ({
     pid: h.pid, ten: h.ten, diem: h.diem || 0, hang: i + 1, lam: h.lam || 0, tong, dung: h.dungSo || 0,
-    loi: h.loi || 0, giay: h.giay || 0, xong: !!h.xong,
+    loi: h.loi || 0, giay: h.giay || 0, xong: !!h.xong, vet: h.vet || '',
   }));
+}
+// Tro camera: ket qua tung cau cua mot em thanh chuoi '1' dung / '0' sai / '-' chua lam (dien thoai tai lai trang thi lam tiep)
+function kqCam(h, tong) {
+  let s = '';
+  for (let i = 0; i < tong; i++) s += h.kq && h.kq[i] ? (h.kq[i].d ? '1' : '0') : '-';
+  return s;
 }
 function hangTro(p, h) { return [...p.hs.values()].sort(soSanh(p)).indexOf(h) + 1; }
 // Ten cac to cua phong co chia to (tro / keo co)
@@ -353,7 +381,11 @@ function latKeo(p, b) {
 }
 const THUONG_TO = 20;
 // Moc da qua cua mot em: bay = so cau da xep xong; doan tau = 1 khi tau ve ga
-function mocTro(p, h) { return p.tro.game === 'bay' ? (h.xong ? p.tro.tong : h.lam || 0) : (h.xong ? 1 : 0); }
+function mocTro(p, h) {
+  // tro camera: mot moc moi CAM_MOC cau, moc cuoi khi xong ca bo cau
+  if (TRO_CAM[p.tro.game]) return h.xong ? Math.ceil(p.tro.tong / CAM_MOC) : Math.floor((h.lam || 0) / CAM_MOC);
+  return p.tro.game === 'bay' ? (h.xong ? p.tro.tong : h.lam || 0) : (h.xong ? 1 : 0);
+}
 // Cac to: diem trung binh cua thanh vien + thuong, xep hang; moi to kem danh sach thanh vien
 function dsTo(p) {
   const t = p.tro;
@@ -365,7 +397,7 @@ function dsTo(p) {
     return {
       i, ten, tb, thuong: t.thuong[i] ? t.thuong[i].diem : 0, diem: tb + (t.thuong[i] ? t.thuong[i].diem : 0),
       soTv: tv.length, soXong: tv.filter((h) => h.xong).length, gioi: gioi && gioi.diem > 0 ? { ten: gioi.ten, diem: gioi.diem } : null,
-      tv: tv.map((h) => ({ pid: h.pid, ten: h.ten, lam: h.lam || 0, diem: h.diem || 0, xong: !!h.xong })),
+      tv: tv.map((h) => ({ pid: h.pid, ten: h.ten, lam: h.lam || 0, diem: h.diem || 0, xong: !!h.xong, vet: h.vet || '' })),
     };
   });
   const xep = ds.slice().sort((a, b) => b.diem - a.diem || b.soXong - a.soXong || a.i - b.i);
@@ -380,11 +412,12 @@ function xetThuongTo(p, h) {
   if (!tv.length) return;
   const th = t.thuong[h.to] || (t.thuong[h.to] = { diem: 0, moc: {} });
   const min = Math.min(...tv.map((x) => mocTro(p, x)));
+  const cam = TRO_CAM[t.game];
   for (let k = 1; k <= min; k++) {
     if (th.moc[k]) continue;
     th.moc[k] = 1;
-    th.diem += THUONG_TO;
-    tinPhong(p, t.game === 'bay' ? '🎉 ' + t.to[h.to] + ' cả tổ xong câu ' + k + '! +' + THUONG_TO : '🎉 ' + t.to[h.to] + ' cả tổ về ga! +' + THUONG_TO);
+    th.diem += cam ? THUONG_CAM : THUONG_TO;
+    tinPhong(p, cam ? '🎉 ' + t.to[h.to] + ' cả tổ xong ' + Math.min(k * CAM_MOC, t.tong) + ' câu! +' + THUONG_CAM : t.game === 'bay' ? '🎉 ' + t.to[h.to] + ' cả tổ xong câu ' + k + '! +' + THUONG_TO : '🎉 ' + t.to[h.to] + ' cả tổ về ga! +' + THUONG_TO);
     p.su[0].to = h.to;
   }
 }
@@ -446,9 +479,11 @@ module.exports = function gan(app, tuy) {
       p.dong = false;
     }
     if (kieu === 'tro') {
-      // to: 2–4 ten to (khong co = ca lop, xep hang ca nhan)
-      const to = Array.isArray((req.body || {}).to) ? req.body.to.map((x) => sachTen(x)).filter(Boolean).slice(0, 4) : [];
-      p.tro = { game: TRO[(req.body || {}).tro] ? req.body.tro : 'bay', cau: [], tong: 0, opt: {}, to: to.length >= 2 ? to : [], thuong: {}, van: 0 };
+      // to: 2–4 ten to (tro camera: 2–6, kem mau cua to) — khong co = ca lop, xep hang ca nhan
+      const cam = !!TRO_CAM[(req.body || {}).tro];
+      const to = Array.isArray((req.body || {}).to) ? req.body.to.map((x) => sachTen(x)).filter(Boolean).slice(0, cam ? 6 : 4) : [];
+      p.tro = { game: TRO[(req.body || {}).tro] ? req.body.tro : 'bay', cau: [], tong: 0, opt: {}, to: to.length >= 2 ? to : [], thuong: {}, van: 0,
+        mau: cam && Array.isArray(req.body.mau) ? req.body.mau.slice(0, 6).map(sachMau) : [] };
       p.dong = false;
     }
     // Kieu 'the': khoa quet rieng cho dien thoai (nam trong ma QR) — chi quet va bam lat/tiep
@@ -601,14 +636,17 @@ module.exports = function gan(app, tuy) {
       if (cau.length < 2) return res.status(400).json({ error: t.game === 'bay' ? 'Cần ít nhất 2 câu sắp xếp.' : 'Cần ít nhất 2 câu trắc nghiệm.' });
       t.cau = cau;
       t.tong = cau.length;
-      t.opt = t.game === 'bay' ? { toc: TOC_BAY.indexOf(b.toc) >= 0 ? b.toc : 'vua', nhieu: so(b.nhieu, 0, 2) } : { muc: MUC_TAU.indexOf(b.muc) >= 0 ? b.muc : 'vua' };
+      t.opt = t.game === 'bay' ? { toc: TOC_BAY.indexOf(b.toc) >= 0 ? b.toc : 'vua', nhieu: so(b.nhieu, 0, 2) }
+        // tro camera: secs = giay moi cau, da = kieu do vat cua Chem hoa qua (qua / bong)
+        : TRO_CAM[t.game] ? { secs: CAM_SECS.indexOf(Number(b.secs)) >= 0 ? Number(b.secs) : 20, da: b.da === 'bong' ? 'bong' : 'qua' }
+        : { muc: MUC_TAU.indexOf(b.muc) >= 0 ? b.muc : 'vua' };
       // bam lai (Choi lai) = van moi trong cung phong, giu ten va to cua cac em
       t.van++;
       t.thuong = {};
       p.pha = 'choi';
       p.batDau = Date.now();
       p.su = [];
-      for (const h of p.hs.values()) Object.assign(h, { diem: 0, lam: 0, dungSo: 0, loi: 0, giay: 0, xong: false, xongLuc: 0 });
+      for (const h of p.hs.values()) Object.assign(h, { diem: 0, lam: 0, dungSo: 0, loi: 0, giay: 0, xong: false, xongLuc: 0, kq: null, vet: '', bd: 0 });
       return res.json({ ok: true, tong: t.tong, van: t.van });
     }
     if (!tuLam(p)) return res.status(400).json({ error: 'Phòng này không phải kiểu tự làm.' });
@@ -914,7 +952,14 @@ module.exports = function gan(app, tuy) {
     if (p.kieu !== 'tro') return res.status(400).json({ error: 'Phòng này không phải trò chơi điện thoại.' });
     if (p.pha !== 'choi') return res.status(409).json({ error: 'Cô chưa bắt đầu hoặc đã kết thúc.' });
     if (p.tro.to.length && (h.to == null || h.to < 0)) return res.status(409).json({ error: 'Em chọn tổ trước nhé.', chonTo: true });
-    res.json({ tro: p.tro.game, cau: p.tro.cau, opt: p.tro.opt, tong: p.tro.tong, van: p.tro.van });
+    const du = { tro: p.tro.game, cau: p.tro.cau, opt: p.tro.opt, tong: p.tro.tong, van: p.tro.van };
+    if (TRO_CAM[p.tro.game]) {
+      // em bat dau tinh gio tu luc lay bo cau; tai lai trang thi lam tiep cac cau chua bao (kq)
+      if (!h.bd) h.bd = Date.now();
+      Object.assign(du, { ten: h.ten, toTen: h.to != null && h.to >= 0 ? p.tro.to[h.to] || '' : '', kq: kqCam(h, p.tro.tong),
+        diem: h.diem || 0, dungSo: h.dungSo || 0, xong: !!h.xong });
+    }
+    res.json(du);
   });
   // Hoc sinh chon to { pid, tok, to } — doi duoc khi chua bat dau lam van nay
   app.post('/api/live/:ma/to', (req, res) => {
@@ -1037,6 +1082,31 @@ module.exports = function gan(app, tuy) {
     if (p.pha !== 'choi' && !h.xong) return res.status(409).json({ error: 'Cô chưa bắt đầu hoặc đã kết thúc.' });
     // diem cua van truoc gui tre (co da bam Choi lai) thi bo
     if (b.van != null && Number(b.van) !== p.tro.van) return res.status(409).json({ error: 'Ván này đã kết thúc.', van: p.tro.van });
+    if (TRO_CAM[p.tro.game]) {
+      // { i, d, diem }: cau thu i (thu tu choi cua em, 0..tong-1) dung / sai va diem cau do. Bao trung hoac da xong thi bo qua.
+      const tong = p.tro.tong || 1, i = Number(b.i), now = Date.now();
+      if (!Number.isInteger(i) || i < 0 || i >= tong) return res.status(400).json({ error: 'Câu không hợp lệ.' });
+      h.kq = h.kq || [];
+      if (!h.xong && !h.kq[i]) {
+        if ((h.lam || 0) + 1 > (now - p.batDau) / 800 + 2) return res.status(429).json({ error: 'Nhanh quá — chờ một chút nhé.', som: true });
+        const truoc = h.diem > 0 ? hangTro(p, h) : 0;
+        const d = b.d === true || b.d === 1 || b.d === '1';
+        h.kq[i] = { d, diem: d ? so(b.diem, 0, CAM_DIEM_CAU) : 0 };
+        h.lam = (h.lam || 0) + 1;
+        if (d) h.dungSo = (h.dungSo || 0) + 1;
+        h.loi = h.lam - (h.dungSo || 0);
+        h.diem = (h.diem || 0) + h.kq[i].diem;
+        h.vet = ((h.vet || '') + (d ? '1' : '0')).slice(-8);
+        h.giay = Math.min(3 * 3600, Math.round((now - (h.bd || p.batDau)) / 1000));
+        if (h.lam >= tong) {
+          h.xong = true; h.xongLuc = now;
+          tinPhong(p, '🏁 ' + h.ten + ' hoàn thành — ' + h.diem + ' điểm');
+        } else if (hangTro(p, h) === 1 && truoc !== 1 && h.diem > 0 && !p.tro.to.length) tinPhong(p, '👑 ' + h.ten + ' lên dẫn đầu!');
+        xetThuongTo(p, h);
+        if (h.xong) xetHetVan(p);
+      }
+      return res.json({ ok: true, hang: hangTro(p, h), soHs: p.hs.size, diem: h.diem || 0, lam: h.lam || 0, xong: !!h.xong });
+    }
     if (!h.xong) {
       const tong = p.tro.tong || 1;
       const truoc = h.diem > 0 ? hangTro(p, h) : 0;
@@ -1066,7 +1136,7 @@ module.exports = function gan(app, tuy) {
       if (p.tro.to.length) {
         const ds = dsTo(p);
         out.to = h.to == null ? -1 : h.to;
-        out.dsTo = ds.map((x) => ({ ten: x.ten, soTv: x.soTv, diem: x.diem, hang: x.hang, soXong: x.soXong }));
+        out.dsTo = ds.map((x) => ({ ten: x.ten, soTv: x.soTv, diem: x.diem, hang: x.hang, soXong: x.soXong, mau: (p.tro.mau && p.tro.mau[x.i]) || '' }));
       }
       if (h.xong || p.pha === 'het') out.hang = hangTro(p, h);
       if (p.pha === 'het') out.bxh = bxhTro(p).slice(0, 5).map((r) => ({ ten: r.ten, diem: r.diem }));

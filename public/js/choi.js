@@ -533,7 +533,21 @@
   $('rcCuuOk').addEventListener('click', function () { $('rcCuu').hidden = true; });
 
   /* ---- Tro choi tren dien thoai (phong kieu 'tro'): Tu ngu biet bay / Doan tau tri thuc ---- */
-  var TEN_TRO = { bay: '🦋 Từ ngữ biết bay', doantau: '🚂 Đoàn tàu tri thức' };
+  var TEN_TRO = { bay: '🦋 Từ ngữ biết bay', doantau: '🚂 Đoàn tàu tri thức', chem: '🍉 Chém hoa quả', theduc: '🤸 Thể dục ABC', dam: '🥊 Võ sĩ chữ Hán', nghieng: '🙆 Quiz nghiêng đầu' };
+  // Tro camera qua ma QR (lop-cam.js): co bam Bat dau thi dien thoai sang trang tro choi o che do phong (cam-phong.js);
+  // choi xong / het van thi trang do quay ve day de xem thu hang va cho "Choi lai"
+  var TRO_CAM = { chem: '/van-dong', theduc: '/van-dong', dam: '/van-dong', nghieng: '/nghieng' };
+  function sangCam(d) {
+    if (s.dangSang) return;
+    s.dangSang = true;
+    luu();
+    clearTimeout(s.poll);
+    location.href = TRO_CAM[d.tro] + '?phong=' + s.ma;
+  }
+  // bam nut Back tu trang tro choi (trang nay duoc trinh duyet giu lai nguyen trang thai): hoi may tiep
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted && s.dangSang) { s.dangSang = false; if (s.ma) batDauPoll(); }
+  });
   function mayTro(tro) { return tro === 'doantau' ? window.LopDoanTau : window.LopBay; }
   var MAU_TO = ['#e0573f', '#3f88c5', '#4f9d69', '#e8a33d'];
   function veTro(d) {
@@ -553,6 +567,7 @@
         $('tenCho').textContent = d.ten + (toEm ? ' · ' + toEm.ten : '');
         $('titCho').textContent = 'Em đã vào phòng!';
         $('moCho').textContent = 'Trò chơi: ' + (TEN_TRO[d.tro] || '') + '. ' + (toEm ? 'Em thi cho ' + toEm.ten + ' — điểm tổ là điểm trung bình của cả tổ. ' : '') +
+          (TRO_CAM[d.tro] ? 'Trò này dùng camera trước của điện thoại: khi được hỏi, em bấm “Cho phép” (không muốn dùng camera thì chọn “Chơi bằng chạm”). ' : '') +
           'Chờ cô bấm Bắt đầu rồi chơi ngay trên điện thoại nhé…';
         hien('manCho');
       }
@@ -574,6 +589,7 @@
       if ($('manXong').hidden) hien('manXong');
       return;
     }
+    if (TRO_CAM[d.tro]) { sangCam(d); return; }
     if (!s.troMo && !s.troTai) moTro(d);
   }
   // Lay bo cau cua phong roi mo tro o che do mot nguoi (khong dong duoc, khong choi lai)

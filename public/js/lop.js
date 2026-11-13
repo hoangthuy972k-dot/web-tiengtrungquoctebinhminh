@@ -1323,6 +1323,13 @@
     $('#lopScorebar').hidden = true;
     stopTimer();
     state.nhipSo = state.nhipSo || 10;
+    // so cau toi da cac bai dang chon lam duoc (can nap tu vung): co roi thi ve lai o chon "So cau" voi "Tat ca (n cau)" dung
+    state.nhipMax = 0;
+    soCauDtToiDa().then(function (n) {
+      state.nhipMax = n;
+      var l = state.live;
+      if (state.game === 'nhip' && l && l.kieu === 'nhip' && l.ve === 'cho') { l.ve = ''; renderNhip(); }
+    });
     $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Đang mở phòng…</span></div>';
     fetch('/api/live/tao', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ kieu: 'nhip' }) })
       .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || 'Lỗi kết nối'); return d; }); })
@@ -1362,13 +1369,14 @@
     var d = l.info || { pha: 'cho', ds: [], bxh: [], soHs: 0 };
     var link = location.origin + '/choi?ma=' + l.ma;
     // bo cau dien thoai gom ca tu vung, xep cau, noi tu (ngan hang Kiem tra bai cu) -> nhieu hon so cau trac nghiem
-    var tong = Math.max(10, Math.min(60, pickedMcs().length + pickedSorts().length + 20));
+    // (state.nhipMax = so chinh xac, toi da 100; chua nap xong tu vung thi tam uoc luong)
+    var tong = state.nhipMax || Math.max(10, Math.min(100, pickedMcs().length + pickedSorts().length + 20));
     // Dung khung mot lan cho moi pha, cac lan hoi sau chi cap nhat phan dong
     if (l.ve !== d.pha) {
       l.ve = d.pha;
       if (d.pha === 'cho') {
-        var so = [10, 20, 30].filter(function (n) { return n < tong; }).concat([tong]);
-        if (so.indexOf(state.nhipSo) < 0) state.nhipSo = so[0];
+        // So cau: 10 / 20 / 30 / 40 / 50, "Tat ca (n cau)" hoac so khac 5..n (lop-socau.js)
+        state.nhipSo = window.LopSoCau.kep(state.nhipSo, tong);
         $('#lopStage').innerHTML =
           '<div class="lop-nhip-card">' +
             '<div class="lop-live-top">' +
@@ -1382,24 +1390,18 @@
             '</div>' +
             '<div class="lop-live-dem" id="lopLiveDem"></div>' +
             '<div class="lop-live-ds" id="lopLiveDs"></div>' +
-            '<div class="lop-nhip-so"><span>Mỗi em làm</span>' + so.map(function (n) {
-              return '<button type="button" data-so="' + n + '" class="' + (n === state.nhipSo ? 'on' : '') + '">' + (n === tong ? 'Tất cả ' + n : n) + ' câu</button>';
-            }).join('') + '</div>' +
+            '<div class="lop-nhip-so" id="lopNhipSo"><span>Mỗi em làm</span>' + window.LopSoCau.html(state.nhipSo, tong) + '</div>' +
             '<div class="lop-fx-actions"><button type="button" class="lop-act" id="lopNhipGo">Bắt đầu cho cả lớp làm ▶</button></div>' +
           '</div>';
-        $all('#lopStage [data-so]').forEach(function (b) {
-          b.addEventListener('click', function () {
-            state.nhipSo = parseInt(b.getAttribute('data-so'), 10);
-            $all('#lopStage [data-so]').forEach(function (x) { x.classList.toggle('on', x === b); });
-          });
-        });
+        window.LopSoCau.gan($('#lopNhipSo'), tong, function (n) { state.nhipSo = n; });
         $('#lopNhipGo').addEventListener('click', nhipBatDau);
       } else if (d.pha === 'choi') {
         $('#lopStage').innerHTML =
           '<div class="lop-nhip-head">' +
             '<div class="lop-nhip-tk"><div>📱 Phòng <b>' + liveMa() + '</b></div>' +
               '<div><b class="lop-live-big" id="lopNhipXong">0</b> / <span id="lopNhipSoHs">0</span> bạn đã làm xong · ⏱ <span id="lopNhipGio">00:00</span></div>' +
-              '<div class="lop-nhip-goi">Vào muộn? Quét mã bên cạnh hoặc vào ' + esc(location.host) + '/choi</div></div>' +
+              '<div class="lop-nhip-goi">Vào muộn? Quét mã bên cạnh hoặc vào ' + esc(location.host) + '/choi</div>' +
+              (l.thieu ? '<div class="lop-nhip-goi lop-nhip-thieu">ℹ️ Bài này chỉ có ' + l.thieu + ' câu (cô chọn ' + state.nhipSo + ') — các em làm ' + l.thieu + ' câu.</div>' : '') + '</div>' +
             '<div class="lop-nhip-qr">' + qrSvg(link) + '</div>' +
           '</div>' +
           '<div class="lop-leo" id="lopLeo">' +
@@ -1647,6 +1649,14 @@
       });
     });
   }
+  // So cau toi da bo cau dien thoai lam duoc voi cac bai dang chon — cho o chon "So cau" (lop-socau.js tu kep 100 cau / lan)
+  function soCauDtToiDa() {
+    return loadPickedVocab().then(function (v) {
+      var kt = window.LopKiemTra;
+      var n = kt && kt._soCauDt ? kt._soCauDt({ vocab: v.map(boPy), mcs: pickedMcs(), sorts: pickedSorts() }) : 0;
+      return Math.max(1, n || pickedMcs().length);
+    }).catch(function () { return Math.max(1, pickedMcs().length); });
+  }
   // Ban sao cho man chieu (thong ke chua bai): xep cau / noi tu hien nhu cau 2 lua chon Dung / Sai
   function cauChoChua(c) {
     if (c.k === 'xep') return { zh: '🔀 ' + c.dap, ctx: c.ctx || '', why: c.why || '', opts: ['Xếp đúng', 'Xếp sai'], dung: 0 };
@@ -1660,6 +1670,8 @@
     b.disabled = true;
     cauDienThoai(state.nhipSo).then(function (cau) {
       if (state.live !== l) return;
+      // bai khong du cau nhu da chon: lam voi so cau co, bao cho co biet (khong lap lai cau)
+      l.thieu = cau.length < state.nhipSo ? cau.length : 0;
       return liveApi('POST', 'batdau', { cau: cau }).then(function () { return cau; });
     }).then(function (cau) {
       if (!cau) return;
@@ -2608,8 +2620,10 @@
   /* ---------------- quiz nghieng dau (trang /nghieng, mo tab moi) ----------------
      Moi cau A/B/C rut gon con 2 phuong an: dap an dung + 1 phuong an sai ngau nhien,
      dat ngau nhien trai / phai. Cau hoi chuyen qua localStorage 'hyv_nghieng'.   */
-  function moNghieng() {
-    var cau = boc(pickedMcs(), 10).map(function (q) {
+  // n: so cau (mac dinh 10 nhu truoc gio; the chon cua lop-cam.js cho co chon 10–100 / tat ca)
+  // ds: bo cau da boc san (phong QR uu tien cau co dap an ngan — xem bocChoDt)
+  function cauNghieng(n, ds) {
+    return (ds || boc(pickedMcs(), n || 10)).map(function (q) {
       var sai = shuffle(q.options.map(function (_, i) { return i; }).filter(function (i) { return i !== q.answer; }))[0];
       var dung = Math.random() < 0.5 ? 0 : 1;
       var dd = q.options[q.answer], ss = q.options[sai];
@@ -2619,15 +2633,19 @@
         docSau: q.noBlank ? '' : (q.pre || '') + dd + (q.post || '')
       };
     }).filter(function (c) { return c.trai && c.phai; });
+  }
+  function moNghieng(n) {
+    var cau = cauNghieng(n);
     if (!cau.length) return;
     try { localStorage.setItem('hyv_nghieng', JSON.stringify({ nguon: 'lop', nhan: pickedLabel(), cau: cau, luc: Date.now() })); } catch (e) { return; }
     window.open('/nghieng', '_blank');
   }
 
   // Tro van dong truoc webcam (trang /van-dong, mo tab moi): cau A–D giu toi da 4 phuong an
-  function moVanDong(tro) {
-    var cau = boc(pickedMcs(), 10).map(function (q) {
-      var sai = shuffle(q.options.map(function (_, i) { return i; }).filter(function (i) { return i !== q.answer; })).slice(0, 3);
+  // n: so cau (mac dinh 10 nhu truoc gio); soSai: so phuong an sai giu lai (mac dinh 3)
+  function cauVanDong(n, soSai, ds) {
+    return (ds || boc(pickedMcs(), n || 10)).map(function (q) {
+      var sai = shuffle(q.options.map(function (_, i) { return i; }).filter(function (i) { return i !== q.answer; })).slice(0, soSai || 3);
       var thu = shuffle(sai.concat([q.answer]));
       return {
         hoi: (q.pre || '') + (q.noBlank ? '' : '＿＿') + (q.post || ''), ctx: q.context || '', why: q.why || '',
@@ -2635,9 +2653,40 @@
         docSau: q.noBlank ? '' : (q.pre || '') + q.options[q.answer] + (q.post || '')
       };
     });
+  }
+  function moVanDong(tro, n) {
+    var cau = cauVanDong(n);
     if (!cau.length) return;
     try { localStorage.setItem('hyv_vandong', JSON.stringify({ nguon: 'lop', nhan: pickedLabel(), tro: tro, cau: cau, luc: Date.now() })); } catch (e) { return; }
     window.open('/van-dong?tro=' + tro, '_blank');
+  }
+  // Chem hoa qua / The duc ABC / Vo si chu Han / Quiz nghieng dau: the chon "Choi tren bang (webcam lop)" hay
+  // "Moi em choi tren dien thoai (ma QR)" + so cau (lop-cam.js). Phong QR mo ngay tren trang nay; bo cau cho dien thoai
+  // la cau trac nghiem cua bai (nghieng dau: 2 dap an trai / phai; chem: 3 qua cho man hinh dien thoai do roi).
+  // Boc n cau cho man hinh dien thoai: uu tien cau ma moi dap an deu ngan (chu tren qua / the / o dap an con doc duoc),
+  // khong du moi lay them cau dap an dai (vd. cau dich ca cau)
+  function bocChoDt(n) {
+    var ngan = function (q) {
+      return (q.options || []).every(function (o) { o = String(o == null ? '' : o); return o.length <= (/[㐀-鿿]/.test(o) ? 10 : 24); });
+    };
+    var ds = pickedMcs(), kq = boc(ds.filter(ngan), n);
+    if (kq.length < n) kq = kq.concat(boc(ds.filter(function (q) { return !ngan(q); }), n - kq.length));
+    return kq;
+  }
+  function moCamChon(game) {
+    var max = pickedMcs().length;
+    if (!max) return;
+    var to = [];
+    for (var i = 0; i < TEAM_DEF.length; i++) to.push({ ten: teamName(i), mau: teamColor(i) });
+    window.LopCam.mo({
+      game: game, nhan: pickedLabel(), max: max, to: to, soTo: state.teams,
+      moBang: function (n) { if (game === 'nghieng') moNghieng(n); else moVanDong(game, n); },
+      layCau: function (n) {
+        var ds = bocChoDt(n);
+        if (game === 'nghieng') return cauNghieng(n, ds).map(function (c) { return { hoi: c.hoi, ctx: c.ctx, why: c.why, opts: [c.trai, c.phai], dung: c.dung, zhOpt: true }; });
+        return cauVanDong(n, game === 'chem' ? 2 : 3, ds).map(function (c) { return { hoi: c.hoi, ctx: c.ctx, why: c.why, opts: c.opts, dung: c.dung, zhOpt: true }; });
+      }
+    });
   }
 
   /* ================= KIEM TRA DAU GIO =================
@@ -3282,6 +3331,9 @@
 
   function startGame(game) {
     if (window.LopOnTo && window.LopOnTo.co(game)) { moOnTo(game); return; }
+    // Tro camera: hoi truoc "choi tren bang (webcam lop)" hay "moi em choi tren dien thoai (ma QR)" — lop-cam.js.
+    // Cuoc dua ngoi sao (hai ban chung mot webcam) chi choi tren bang.
+    if (game !== 'ngoisao' && window.LopCam && window.LopCam.co(game)) { moCamChon(game); return; }
     if (game === 'nghieng') { moNghieng(); return; }
     if (game === 'chem' || game === 'theduc' || game === 'ngoisao' || game === 'dam') { moVanDong(game); return; }
     if (game === 'chuong' && window.LopChuong) { window.LopChuong.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
@@ -3292,7 +3344,7 @@
     // choi tren bang nhu cu, hoac mo phong QR — moi em choi tren dien thoai, man chieu hien bang xep hang theo to (lop-tro.js)
     if ((game === 'bay' || game === 'doantau') && window.LopTro) { moTroQr(game); return; }
     // Cuoc dua ki thu: bo cau lay tu ngan hang Kiem tra bai cu (khong co cau dich)
-    if (game === 'dua' && window.LopDua) { window.LopDua.mo({ layCau: cauDienThoai, nhan: pickedLabel() }); return; }
+    if (game === 'dua' && window.LopDua) { window.LopDua.mo({ layCau: cauDienThoai, toiDa: soCauDtToiDa, nhan: pickedLabel() }); return; }
     if (game === 'doikhang' && window.LopDoiKhang) {
       // cau lay tu ngan hang Kiem tra bai cu (khong co cau dich): trac nghiem, xep cau keo tha, noi tu
       cauDienThoai(200).then(function (ds) { window.LopDoiKhang.mo({ cauDt: ds, cau: pickedMcs(), nhan: pickedLabel() }); });
@@ -3623,7 +3675,7 @@
     { ten: '🎤 Nói – viết', g: ['taboo', 'role', 'write'] }
   ];
   var GAME_TAGS = {
-    abc: ['3–5′', 'cả lớp'], thegiay: ['5–15′', 'thẻ giấy in', 'không cần điện thoại'], nghieng: ['5′', 'webcam', 'từng bạn'], chem: ['5′', 'webcam', 'từng bạn'], theduc: ['5′', 'webcam', 'vận động'], ngoisao: ['5′', 'webcam', '2 bạn đấu'], dam: ['5′', 'webcam', 'từng bạn', 'vận động'],
+    abc: ['3–5′', 'cả lớp'], thegiay: ['5–15′', 'thẻ giấy in', 'không cần điện thoại'], nghieng: ['5′', 'webcam lớp', 'hoặc mã QR'], chem: ['5′', 'webcam lớp', 'hoặc mã QR'], theduc: ['5′', 'webcam lớp', 'hoặc mã QR', 'vận động'], ngoisao: ['5′', 'webcam', '2 bạn đấu'], dam: ['5′', 'webcam lớp', 'hoặc mã QR', 'vận động'],
     zombie: ['3–5′', 'cả lớp'], dua: ['10–15′', 'quét mã QR', 'chọn linh vật'], chuong: ['15′', 'cả lớp', 'bảng con / điện thoại'], luot: ['10–15′', '2–4 tổ'], bay: ['5–10′', 'trên bảng', 'hoặc mã QR theo tổ'], doantau: ['5–10′', 'trên bảng', 'hoặc mã QR theo tổ'], doikhang: ['5–10′', 'quét mã QR', '1–1'],
     ghep: ['10′', 'theo tổ'], ochu: ['5–10′', 'cả lớp / tổ'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
     bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],

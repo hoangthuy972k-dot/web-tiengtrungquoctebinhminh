@@ -36,6 +36,7 @@
 <link rel="stylesheet" href="/css/lop-duongbang.css">
 <link rel="stylesheet" href="/css/lop-onto-qr.css">
 <link rel="stylesheet" href="/css/lop-quanly.css">
+<link rel="stylesheet" href="/css/lop-cam.css">
 <script>
 // CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
 // va trinh duyet giu mai ban CSS/JS cu. Chuyen sang /lop de luon qua may chu.
@@ -202,31 +203,31 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
         <button type="button" class="lop-game-card" data-game="nghieng">
           <span class="lop-game-emoji">🙆</span>
           <span class="lop-game-name">Quiz nghiêng đầu</span>
-          <span class="lop-game-desc">Mời từng bạn lên trước webcam: nghiêng đầu trái/phải (hoặc cười / há miệng) để chọn 1 trong 2 đáp án. Có đếm giờ, âm thanh, điểm và chuỗi đúng.</span>
+          <span class="lop-game-desc">Nghiêng đầu trái/phải (hoặc cười / há miệng) để chọn 1 trong 2 đáp án. Mời từng bạn lên trước webcam lớp, hoặc chiếu mã QR để mỗi em chơi trên điện thoại của mình.</span>
           <span class="lop-game-count lop-count-mc">—</span>
         </button>
         <button type="button" class="lop-game-card" data-game="chem">
           <span class="lop-game-emoji">🍉</span>
           <span class="lop-game-name">Chém hoa quả / Bắt bóng</span>
-          <span class="lop-game-desc">Học sinh vung tay trước webcam để chém quả (hoặc chọc bóng) mang đáp án đúng.</span>
+          <span class="lop-game-desc">Học sinh vung tay trước webcam để chém quả (hoặc chọc bóng) mang đáp án đúng. Chơi trên bảng, hoặc chiếu mã QR để mỗi em chơi trên điện thoại của mình.</span>
           <span class="lop-game-count lop-count-mc">—</span>
         </button>
         <button type="button" class="lop-game-card" data-game="theduc">
           <span class="lop-game-emoji">🤸</span>
           <span class="lop-game-name">Thể dục ABC</span>
-          <span class="lop-game-desc">Mỗi đáp án là một động tác: giơ hai tay, giơ tay phải, giơ tay trái, dang tay. Làm đúng động tác để trả lời.</span>
+          <span class="lop-game-desc">Mỗi đáp án là một động tác: giơ hai tay, giơ tay phải, giơ tay trái, dang tay. Làm đúng động tác để trả lời. Chơi trên bảng, hoặc mỗi em chơi trên điện thoại qua mã QR.</span>
           <span class="lop-game-count lop-count-mc">—</span>
         </button>
         <button type="button" class="lop-game-card" data-game="ngoisao">
           <span class="lop-game-emoji">⭐</span>
           <span class="lop-game-name">Cuộc đua ngôi sao</span>
-          <span class="lop-game-desc">Hai bạn đấu nhau trước webcam, giơ 1–4 ngón tay để chọn A–D. Ai đúng trước lấy sao.</span>
+          <span class="lop-game-desc">Hai bạn đấu nhau trước webcam, giơ 1–4 ngón tay để chọn A–D. Ai đúng trước lấy sao. Chỉ chơi trên bảng (hai bạn chung một webcam).</span>
           <span class="lop-game-count lop-count-mc">—</span>
         </button>
         <button type="button" class="lop-game-card" data-game="dam">
           <span class="lop-game-emoji">🥊</span>
           <span class="lop-game-name">Võ sĩ chữ Hán</span>
-          <span class="lop-game-desc">Hai nắm tay thành găng đỏ trên màn hình: đấm trúng thẻ mang đáp án đúng để hạ Bao Cát Ú. Đúng liên tiếp có combo; gọi từng bạn theo danh sách lớp.</span>
+          <span class="lop-game-desc">Hai nắm tay thành găng đỏ trên màn hình: đấm trúng thẻ mang đáp án đúng để hạ Bao Cát Ú. Đúng liên tiếp có combo; gọi từng bạn theo danh sách lớp, hoặc mỗi em chơi trên điện thoại qua mã QR.</span>
           <span class="lop-game-count lop-count-mc">—</span>
         </button>
         <button type="button" class="lop-game-card" data-game="zombie">
@@ -574,7 +575,9 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/lop-doikhang.js"></script>
 <script src="/js/dua-canh.js"></script>
 <script src="/js/lop-dua.js"></script>
+<script src="/js/lop-socau.js"></script>
 <script src="/js/lop-tro.js"></script>
+<script src="/js/lop-cam.js"></script>
 <script src="/js/lop-keo-qr.js"></script>
 <script src="/js/lop-mieng.js"></script>
 <script src="/js/lop-diemdanh.js"></script>

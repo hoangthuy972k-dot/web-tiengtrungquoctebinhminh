@@ -1,0 +1,88 @@
+/* Tro camera qua ma QR — man chieu (public/js/lop-cam.js). Khung chung lay tu lop-tro.css (.ltr-*);
+   o day la tong mau sang kieu Kiem tra bai cu (nen kem cham bi, the trang vien dam, tieu de do gach),
+   the chon cach choi (.lcm-chon), vet ✓/✗ cua tung ban (.lcm-vet) va o chon so cau dung chung (.sc-*). */
+.ltr.is-cam {
+  --nhan: #b2311e; --thanh: linear-gradient(90deg, #ffb92e, #ff8a3d);
+  background: #fbf3e2 radial-gradient(#ecdcbc 1.6px, transparent 1.7px) 0 0 / 22px 22px;
+}
+.ltr.is-cam .ltr-bar { background: #fffdf7; }
+.ltr.is-cam .ltr-qr-the, .ltr.is-cam .ltr-sanh-phai, .ltr.is-cam .ltr-ben { background: #fff; border-width: 3px; box-shadow: 6px 6px 0 var(--vien); }
+.ltr.is-cam .ltr-ma { color: var(--nhan); }
+.ltr.is-cam .ltr-ds { background: #fff8e6; border-color: #e8c77a; }
+/* cot ben: nut "Ket thuc" luon nam trong man hinh, phan dien bien dai thi tu cuon */
+.ltr.is-cam .ltr-ben { overflow: hidden; }
+.ltr.is-cam .ltr-ben > * { flex: none; }
+.ltr.is-cam .ltr-ben .ltr-tin { flex: 1 1 auto; min-height: 48px; overflow: auto; }
+.ltr.is-cam .ltr-luat b { color: var(--vien); }
+
+/* ---------- the chon cach choi ---------- */
+.lcm-chon {
+  max-width: 900px; margin: 0 auto; padding: 20px 24px 22px; border: 3px solid var(--vien); border-radius: 26px; background: #fff; box-shadow: 7px 7px 0 var(--vien);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.lcm-chon h2 { margin: 0 0 10px; font-size: clamp(1.5rem, 2.8vw, 2.2rem); color: var(--nhan); }
+.lcm-chon h2 [lang="zh"] { color: var(--nau); font-size: .7em; }
+.lcm-chon .ltr-chon > span { min-width: 96px; color: var(--nau); }
+.lcm-chon .ltr-chon button { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.25; padding: 7px 13px; }
+.lcm-so .sc-khac { padding-top: 2px; padding-bottom: 2px; }
+.lcm-so .sc-o { width: 4.6em; }
+.lcm-chon .ltr-chon button small { font-size: .78rem; }
+.lcm-cach button { flex: 1 1 240px; padding: 12px 16px; border-radius: 18px; font-size: 1.1rem; }
+.lcm-cach button.on { box-shadow: 0 4px 0 var(--vien); }
+.lcm-mo { margin: 0 0 10px; padding: 10px 14px; border-radius: 14px; background: #fff6dc; border: 2px dashed #e8c77a; }
+.lcm-ghi { margin: -2px 0 10px 104px; font-size: .92rem; font-weight: 600; color: var(--nau); }
+.lcm-to { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: -2px 0 10px 104px; }
+.lcm-to span { --c: #e0573f; padding: 3px 12px; border-radius: 999px; background: var(--c); color: #fff; font-weight: 800; font-size: .92rem; }
+.lcm-to small { flex-basis: 100%; color: var(--nau); font-weight: 600; }
+.lcm-chon .ltr-het-nut { margin-top: 8px; }
+.lcm-thieu { background: #fff1c2 !important; color: #8a4b00; }
+
+/* ---------- o chon so cau dung chung (lop-socau.js) ---------- */
+.sc-khac { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; padding: 3px 4px 3px 12px; border: 2.5px dashed #c9b99b; border-radius: 999px; background: #fff; color: inherit; white-space: nowrap; }
+.sc-khac.on { border-style: solid; border-color: currentColor; background: #ffe9a8; }
+.sc-o { width: 5.2em; font: inherit; font-weight: 800; text-align: center; padding: 5px 4px; border: 2px solid #c9b99b; border-radius: 999px; background: #fff; color: inherit; }
+.sc-o:focus { outline: 3px solid #ffc83d; outline-offset: 1px; }
+.sc-bao { flex-basis: 100%; font-weight: 800; color: #b2311e; }
+.sc-bao[hidden] { display: none; }
+
+/* bai khong du so cau da chon (Thi dua tren dien thoai, Cuoc dua ki thu) */
+.ldu-thieu, .lop-nhip-thieu { margin: 4px 0; padding: 4px 10px; border-radius: 10px; background: #fff1c2; color: #8a4b00; font-weight: 700; font-size: .9rem; }
+.lop-nhip-so .sc-bao { text-align: center; }
+
+/* ---------- vet ✓/✗ cac cau gan nhat ---------- */
+.lcm-vet { display: inline-flex; gap: 3px; align-items: center; min-height: 18px; }
+.lcm-vet u {
+  display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; text-decoration: none;
+  font-size: .68rem; font-weight: 900; line-height: 1; color: #fff; background: #2f9a52; animation: lcm-vet .35s cubic-bezier(.3, 1.6, .5, 1) both;
+}
+.lcm-vet u.s { background: #d8432c; }
+.lcm-vet u:last-child { box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px currentColor; color: #fff; }
+.lcm-vet u.d:last-child { box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px #2f9a52; }
+.lcm-vet u.s:last-child { box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px #d8432c; }
+@keyframes lcm-vet { from { transform: scale(0); } }
+.ltr-the.lcm-the { gap: 1px; padding: 5px 8px 6px; }
+.ltr-the.lcm-the i em { font-style: normal; font-weight: 900; color: var(--nhan); font-variant-numeric: tabular-nums; }
+.ltr.is-cam .ltr-lan-o .ltr-lan-tv { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); }
+.ltr.is-cam .ltr-lan, .ltr.is-cam .ltr-sanh-to { row-gap: 14px; }
+.ltr.is-cam .ltr-lan-dau .ltr-lan-ten { white-space: normal; font-size: 1.12rem; line-height: 1.15; }
+.ltr.is-cam .ltr-lan-diem b { font-size: 1.75rem; }
+/* bang ca nhan: lop dong van thay vet ✓/✗ (2 cot khi > 10 ban, 3 cot khi > 30 ban) */
+.ltr.is-cam .ltr-hang { grid-template-columns: 44px minmax(90px, 1.1fr) 1.6fr 108px 84px; }
+.ltr.is-cam .ltr-bang.is-hai .ltr-hang { grid-template-columns: 34px minmax(70px, 1fr) 1fr 100px 72px; padding: 4px 10px; }
+.ltr.is-cam .ltr-bang.is-hai .ltr-hang-ct { display: inline-flex; }
+.ltr.is-cam .ltr-bang.is-hai .ltr-hang-d { font-size: 1.22rem; }
+.ltr.is-cam .ltr-bang.is-ba { grid-template-columns: 1fr 1fr 1fr; }
+.ltr.is-cam .ltr-bang.is-ba .ltr-hang { grid-template-columns: 26px minmax(54px, 1fr) 54px 60px 56px; gap: 6px; padding: 3px 8px; border-width: 2.5px; }
+.ltr.is-cam .ltr-bang.is-ba .lcm-vet u:nth-last-child(n+4) { display: none; } /* lop dong: chi 3 cau gan nhat */
+.ltr.is-cam .ltr-bang.is-ba .ltr-tien { height: 22px; }
+.ltr.is-cam .ltr-bang.is-ba .ltr-tien em { font-size: .74rem; line-height: 18px; }
+.ltr.is-cam .ltr-bang.is-ba .ltr-hang-ten { font-size: .92rem; }
+.ltr.is-cam .ltr-bang.is-ba .ltr-hang-so { font-size: 1.05rem; }
+.ltr.is-cam .ltr-bang.is-ba .ltr-hang-d { font-size: 1.1rem; }
+.ltr.is-cam .ltr-buc-khoi em { font-style: normal; font-weight: 700; font-size: .85rem; color: var(--nau); }
+
+@media (max-width: 900px) {
+  .lcm-ghi, .lcm-to { margin-left: 0; }
+  .ltr.is-cam .ltr-bang.is-ba { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .lcm-vet u { animation: none; } }

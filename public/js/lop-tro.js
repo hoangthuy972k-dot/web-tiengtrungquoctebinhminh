@@ -215,7 +215,7 @@
   }
   function boCau() {
     if (S.tro === 'bay') {
-      return tron(S.goc).slice(0, Math.max(2, Math.min(S.cfg.so || 8, 60))).map(function (q) {
+      return tron(S.goc).slice(0, Math.max(2, Math.min(S.cfg.so || 8, 100))).map(function (q) {
         return { words: q.words, answer: q.answer, context: q.context || '', why: q.why || '' };
       });
     }

@@ -116,15 +116,15 @@
       '<div class="ldu-sanh-phai">' +
         '<h2>Chọn linh vật — vào vạch xuất phát! <span lang="zh">各就各位</span></h2>' +
         '<div class="ldu-ds" id="lduDs"></div>' +
-        '<div class="ldu-chon"><span>Số câu</span>' + [10, 15, 20, 30].map(function (n) {
-          return '<button type="button" data-so="' + n + '" class="' + (S.so === n ? 'on' : '') + '">' + n + ' câu</button>';
-        }).join('') + '</div>' +
+        // So cau: 10 / 20 / 30 / 40 / 50, "Tat ca (n cau)" hoac so khac 5..n (lop-socau.js); n = so cau cac bai dang chon lam duoc
+        '<div class="ldu-chon" id="lduSo"><span>Số câu</span>' + window.LopSoCau.html(S.so, S.max || 30) + '</div>' +
         '<div class="ldu-chon"><span>Toàn cảnh đường đua trên điện thoại sau mỗi</span>' + [3, 5].map(function (n) {
           return '<button type="button" data-moc="' + n + '" class="' + (S.moc === n ? 'on' : '') + '">' + n + ' câu</button>';
         }).join('') + '</div>' +
         '<p class="ldu-luat">✅ Đúng = linh vật chạy 1 bước · ❌ Sai = vấp ngã, đứng yên · Câu hỏi: từ vựng, ngữ pháp, xếp câu kéo thả, nối từ (ngân hàng Kiểm tra bài cũ).</p>' +
         '<button type="button" class="ldu-go" data-act="batdau" id="lduGo">🔫 Xuất phát!</button>' +
       '</div></div>';
+    window.LopSoCau.gan($('#lduSo'), S.max || 30, function (n) { S.so = n; luu(); });
     veDsSanh();
   }
   function veDsSanh() {
@@ -142,6 +142,8 @@
     b.textContent = 'Đang chuẩn bị câu hỏi…';
     S.layCau(S.so).then(function (cau) {
       if (!cau || !cau.length) throw new Error('Bài đang chọn chưa có câu hỏi phù hợp.');
+      // bai khong du cau nhu da chon: dua voi so cau co, bao cho co biet (khong lap lai cau)
+      S.thieu = cau.length < S.so ? cau.length : 0;
       return api('POST', 'batdau', { cau: cau, moc: S.moc });
     }).then(function () {
       S.pha = 'chay'; S.su = 0;
@@ -160,6 +162,7 @@
         '<div class="ldu-ben-h">🏆 Dẫn đầu</div><ol class="ldu-top" id="lduTop"></ol>' +
         '<div class="ldu-ben-h">📣 Diễn biến</div><div class="ldu-tin" id="lduTin"></div>' +
         '<p class="ldu-xong" id="lduXong"></p>' +
+        (S.thieu ? '<p class="ldu-thieu">ℹ️ Bài này chỉ có ' + S.thieu + ' câu (cô chọn ' + S.so + ')</p>' : '') +
         '<button type="button" class="ldu-go" data-act="ketthuc">🏁 Kết thúc &amp; trao giải</button>' +
       '</aside></div>';
   }
@@ -199,10 +202,17 @@
     if (!S.built) dung();
     if (S.room) dongPhong();
     var p = docLS(PREF, {});
-    S.so = [10, 15, 20, 30].indexOf(p.so) >= 0 ? p.so : 15;
+    S.so = p.so >= 5 && p.so <= 100 ? p.so : 20;
     S.moc = p.moc === 5 ? 5 : 3;
     S.sound = p.sound !== false;
     S.layCau = opt.layCau;
+    // so cau toi da cac bai dang chon lam duoc (lop.js soCauDtToiDa, can nap tu vung): co roi thi ve lai o chon so cau
+    S.max = 0; S.thieu = 0;
+    if (opt.toiDa) opt.toiDa().then(function (n) {
+      S.max = n;
+      S.so = window.LopSoCau.kep(S.so, n);
+      if (!root.hidden && S.pha === 'sanh' && S.room && S.room.ma) veSanh();
+    }).catch(function () { /* giu uoc luong */ });
     S.nhan = opt.nhan || '';
     $('#lduNhan').textContent = S.nhan;
     $('#lduTieng').textContent = S.sound ? '🔊' : '🔇';

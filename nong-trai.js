@@ -28,7 +28,12 @@ const CAY = {
   khoaitay: { zh: '土豆', py: 'tǔdòu', vn: 'Khoai tây', lv: 5, gia: 18, phut: 240, ban: 30, xp: 7 },
   duahau: { zh: '西瓜', py: 'xīguā', vn: 'Dưa hấu', lv: 7, gia: 38, phut: 600, ban: 66, xp: 12 },
   nho: { zh: '葡萄', py: 'pútao', vn: 'Nho', lv: 8, gia: 46, phut: 720, ban: 80, xp: 14 },
+  // Cay quy 珍稀 (2026-11-13): KHONG mua hat duoc — chi gieo bang hat quy (vong quay, ban do phieu luu, dau gia).
+  // lv 99 = khong bao gio "mo khoa theo cap" -> khong vao don hang, dac san, hop qua, gieo hang loat.
+  nhansam: { zh: '人参', py: 'rénshēn', vn: 'Nhân sâm', lv: 99, gia: 0, phut: 480, ban: 110, xp: 10, hiem: 1 },
+  tuyetlien: { zh: '雪莲', py: 'xuělián', vn: 'Tuyết liên', lv: 99, gia: 0, phut: 720, ban: 160, xp: 14, hiem: 1 },
 };
+const CAY_HIEM = Object.keys(CAY).filter((k) => CAY[k].hiem);
 const THU_MOI_O = 2; // moi o dat thu duoc 2 nong san
 const XU_MOI_SAO = 1; // doi 1 sao hoc tap = 1 xu nong trai
 // Ruong hoc tap: hoc du so sao trong ngay (lam bai, hoc du gio, tro choi tu hoc...) thi mo ruong lay xu.
@@ -40,21 +45,32 @@ const CHUA_HOC = 'Em hãy học ít nhất một bài (hoặc bài thầy cô gi
 // Vong quay may man 幸运大转盘 (y tuong cua co giao): luot quay moi ngay theo viec hoc —
 // dang nhap hoc +1, hoc tu 30 sao +1, hoc tu 80 sao +2 (cong don, toi da 4 luot / ngay; luot khong cong sang hom sau).
 // O quay do may chu chon theo trong so (w); "Thêm 1 lượt" tra lai luot vua quay.
+// 2026-11-13 (co giao: "tang them ti le voi nhieu phan thuong, hoac quay vao o mat luot hoac bi mat san vat"):
+// them moc 10 sao (+1 luot hoc tap), 12 o co ca o xau (mat luot, chuot an san vat). Ti le hien o nut "ℹ️ Tỉ lệ".
 const VQ_MOC = [
   { sao: 0, luot: 1, ten: 'Đăng nhập học hôm nay' },
+  { sao: 10, luot: 1, ten: 'Học từ 10 sao hôm nay' },
   { sao: 30, luot: 1, ten: 'Học từ 30 sao hôm nay' },
   { sao: 80, luot: 2, ten: 'Học từ 80 sao hôm nay' },
 ];
+// w = trong so (tong 100 -> w chinh la %). Thu tu = thu tu o tren banh xe.
 const VQ_O = [
-  { loai: 'xu', n: 5, w: 20, zh: '金币', ten: '5 xu' },
-  { loai: 'sp', n: 3, w: 16, zh: '农产品', ten: 'Nông sản ×3', nhan: 'Nông sản' },
-  { loai: 'xu', n: 10, w: 18, zh: '金币', ten: '10 xu' },
-  { loai: 'tt', n: 1, w: 10, zh: '装饰', ten: 'Đồ trang trí', nhan: 'Trang trí' },
-  { loai: 'xu', n: 20, w: 12, zh: '金币', ten: '20 xu' },
-  { loai: 'luot', n: 1, w: 8, zh: '再来一次', ten: 'Thêm 1 lượt', nhan: '+1 lượt' },
-  { loai: 'xu', n: 50, w: 5, zh: '大奖', ten: '50 xu' },
-  { loai: 'con', n: 1, w: 3, zh: '动物', ten: 'Vật nuôi' },
+  { loai: 'xu', n: 10, w: 16, zh: '金币', ten: '10 xu', mo: 'Nhận 10 xu' },
+  { loai: 'hat', n: 4, w: 12, zh: '种子', ten: 'Hạt giống ×4', nhan: 'Hạt ×4', mo: '4 hạt giống của một loại cây em trồng được (gieo miễn phí)' },
+  { loai: 'xu', n: 20, w: 14, zh: '金币', ten: '20 xu', mo: 'Nhận 20 xu' },
+  { loai: 'mat', n: 0, w: 9, zh: '谢谢参与', ten: 'Mất lượt', nhan: 'Mất lượt', xau: 1, mo: 'Không được gì — lượt sau may hơn!' },
+  { loai: 'sp', n: 4, w: 10, zh: '农产品', ten: 'Nông sản ×4', nhan: 'Nông sản', mo: '4 nông sản (cây em trồng được / sản phẩm vật nuôi)' },
+  { loai: 'xu', n: 60, w: 6, zh: '大奖', ten: '60 xu', mo: 'Giải lớn 60 xu' },
+  { loai: 'tt', n: 1, w: 8, zh: '装饰', ten: 'Đồ trang trí', nhan: 'Trang trí', mo: '1 đồ trang trí vào túi đồ' },
+  { loai: 'chuot', n: 0, w: 7, zh: '老鼠来了', ten: 'Chuột ăn sản vật', nhan: 'Chuột!', xau: 1,
+    mo: 'Chuột gặm mất 1–3 món của một loại hàng trong kho (không quá 10% kho, không bao giờ đụng hàng quý). Kho trống thì chuột đói bụng đi về.' },
+  { loai: 'x2', n: 2, w: 8, zh: '双倍收获', ten: '×2 thu hoạch', nhan: '×2 thu', mo: 'Lần thu hoạch ruộng tới được gấp đôi (tối đa ' + 8 + ' ô)' },
+  { loai: 'luot', n: 1, w: 6, zh: '再来一次', ten: 'Thêm 1 lượt', nhan: '+1 lượt', mo: 'Quay thêm 1 lượt' },
+  { loai: 'hatquy', n: 1, w: 3, zh: '珍稀种子', ten: 'Hạt giống quý', nhan: 'Hạt quý', hiem: 1, mo: '1 hạt nhân sâm 人参 hoặc tuyết liên 雪莲 — cây quý, bán được giá cao' },
+  { loai: 'con', n: 1, w: 1, zh: '稀有动物', ten: 'Vật nuôi hiếm', nhan: 'Thú hiếm', hiem: 1, mo: 'Một vật nuôi (có thể là loài trên cấp em tới 3 cấp)' },
 ];
+const VQ_X2_O = 8; // ×2 thu hoach ap dung toi da 8 o ruong
+const VQ_CHUOT_TOI_DA = 3, VQ_CHUOT_PHAN = 0.1;
 const RUONG = [
   { sao: 20, xu: 15, xp: 3, ten: 'Rương gỗ' },
   { sao: 50, xu: 30, xp: 6, ten: 'Rương bạc' },
@@ -90,7 +106,10 @@ const SP = {
   kongdan: { zh: '恐龙蛋', py: 'kǒnglóng dàn', vn: 'Trứng khủng long', ban: 300 },
   gaubong: { zh: '熊猫玩偶', py: 'xióngmāo wán\'ǒu', vn: 'Gấu bông gấu trúc', ban: 420 },
 };
-Object.keys(CAY).forEach((k) => { SP[k] = { zh: CAY[k].zh, py: CAY[k].py, vn: CAY[k].vn, ban: CAY[k].ban }; });
+Object.keys(CAY).forEach((k) => { SP[k] = { zh: CAY[k].zh, py: CAY[k].py, vn: CAY[k].vn, ban: CAY[k].ban }; if (CAY[k].hiem) SP[k].hiem = 1; });
+// Hang che bien (nha may) + hang mua o cho (nguyen lieu, thuc an chan nuoi) — danh muc o nong-trai-xuong.js
+const XuongCat = require('./nong-trai-xuong').CAT;
+XuongCat.dangKySp(SP);
 // Bep: mon an can nhieu loai nong san (mot nong trai thuong khong tu du -> mua cua ban). hinh = tranh 3D /images/wu/<ma>.png
 const MON = {
   com: { zh: '米饭', py: 'mǐfàn', vn: 'Cơm trắng', hinh: '1f35a', can: { lua: 2 } },
@@ -110,6 +129,9 @@ const MON = {
   'songlu-fan': { zh: '松露炒饭', py: 'sōnglù chǎofàn', vn: 'Cơm chiên nấm truffle', hinh: '1f958', can: { songlu: 1, lua: 2, trungvit: 1 }, lv: 10 },
   'manhan': { zh: '满汉全席', py: 'Mǎn-Hàn quánxí', vn: 'Đại tiệc Mãn Hán', hinh: '1f37d', can: { cakoi: 1, songlu: 1, mat: 1, nho: 1, sua: 1 }, lv: 15 },
   'konglong-gao': { zh: '恐龙蛋糕', py: 'kǒnglóng dàngāo', vn: 'Bánh kem trứng khủng long', hinh: '1f382', can: { kongdan: 1, sua: 2, dautay: 2 }, lv: 25 },
+  // Mon dung hang che bien (nha may 2026-11-13)
+  'nailao-mianbao': { zh: '奶酪面包', py: 'nǎilào miànbāo', vn: 'Bánh mì phô mai', hinh: '1f35e', can: { mianbao: 1, nailao: 1 }, lv: 7 },
+  'suannai-bei': { zh: '水果酸奶', py: 'shuǐguǒ suānnǎi', vn: 'Sữa chua trái cây', hinh: '1f347', can: { suannai: 1, dautay: 2 }, lv: 7 },
 };
 function tinhGiaMon() {
   Object.keys(MON).forEach((k) => {
@@ -154,6 +176,7 @@ const LUONG = { lua: '斤', carot: '根', ngo: '根', caibap: '棵', dautay: '�
   sua: '瓶', len: '斤', mat: '瓶', com: '碗', 'nuoc-carot': '杯', 'com-rang': '份', 'chao-bi': '碗', 'canh-ngo': '碗', 'sui-cao': '盘', 'sua-mat': '杯', 'banh-dau': '个' };
 Object.keys(CA).forEach((k) => { LUONG[k] = '条'; });
 Object.assign(LUONG, { 'yu-tang': '碗', 'fanqie-dan': '盘', 'hongshao-yu': '盘', 'xigua-zhi': '杯', shuiguo: '盘', 'songlu-fan': '碗', manhan: '桌', 'konglong-gao': '个' });
+Object.assign(LUONG, { nhansam: '根', tuyetlien: '朵', 'nailao-mianbao': '个', 'suannai-bei': '杯' }, XuongCat.LUONG);
 const SO_ZH = ['', '一', '两', '三', '四', '五'];
 // Bang "Can mua" o cho cong dong: moi em toi da 2 tin, xu giu lai khi dang, qua 2 ngay tu huy tra xu
 const CAN_TOI_DA = 2, CAN_SL_TOI_DA = 5, CAN_HAN_MS = 2 * 86400000;
@@ -169,7 +192,7 @@ const MAC_CA = [
 const VN_MAC_CA = { '这个多少钱？': 'Cái này bao nhiêu tiền?', '这个怎么卖？': 'Cái này bán thế nào?', '太贵了，便宜一点儿吧！': 'Đắt quá, rẻ chút đi!',
   '能便宜一点儿吗？': 'Rẻ chút được không?', '好，我买了。': 'Được, tôi mua.', '好的，我要这个。': 'Được, tôi lấy cái này.' };
 const SO_PY = ['', 'yì', 'liǎng', 'sān', 'sì', 'wǔ'];
-const LUONG_PY = { '斤': 'jīn', '根': 'gēn', '棵': 'kē', '个': 'ge', '朵': 'duǒ', '瓶': 'píng', '碗': 'wǎn', '杯': 'bēi', '份': 'fèn', '盘': 'pán', '串': 'chuàn', '张': 'zhāng', '条': 'tiáo', '桌': 'zhuō' };
+const LUONG_PY = { '袋': 'dài', '盒': 'hé', '块': 'kuài', '斤': 'jīn', '根': 'gēn', '棵': 'kē', '个': 'ge', '朵': 'duǒ', '瓶': 'píng', '碗': 'wǎn', '杯': 'bēi', '份': 'fèn', '盘': 'pán', '串': 'chuàn', '张': 'zhāng', '条': 'tiáo', '桌': 'zhuō' };
 
 // Do trang tri: tra bang sao hoac xu; dep = diem "dep" cua nong trai; w = 2 la vat 2x2
 const TT = {
@@ -226,6 +249,12 @@ const TT = {
   'cup-vang': { zh: '金杯', py: 'jīnbēi', vn: 'Cúp vàng thị trấn', lv: 1, doc: 1, dep: 30 },
   'cup-bac': { zh: '银杯', py: 'yínbēi', vn: 'Cúp bạc thị trấn', lv: 1, doc: 1, dep: 24 },
   'cup-dong': { zh: '铜杯', py: 'tóngbēi', vn: 'Cúp đồng thị trấn', lv: 1, doc: 1, dep: 18 },
+  // Doc quyen: qua tram cuoi moi vung dat tren Ban do phieu luu (nong-trai-phieuluu.js)
+  'pl-lang': { zh: '拼音石', py: 'pīnyīn shí', vn: 'Bia đá pinyin', lv: 1, doc: 1, dep: 25 },
+  'pl-thung': { zh: '词汇树', py: 'cíhuì shù', vn: 'Cây từ vựng', lv: 1, doc: 1, dep: 30 },
+  'pl-pho': { zh: '茶馆', py: 'cháguǎn', vn: 'Quán trà giao tiếp', lv: 1, doc: 1, dep: 35 },
+  'pl-dao': { zh: '灯塔', py: 'dēngtǎ', vn: 'Ngọn hải đăng ngữ pháp', lv: 1, doc: 1, dep: 40 },
+  'pl-de': { zh: '金龙像', py: 'jīnlóng xiàng', vn: 'Tượng rồng vàng Đế Chế', lv: 1, doc: 1, dep: 60 },
 };
 // Bo suu tap chu Han: 1 chu tra loi dung 3 lan trong Thu thach = 1 the; du moc thi nhan do doc quyen
 const THE_DUNG = 3;
@@ -333,7 +362,7 @@ function donHang(f, userId, ngay, ngoai) {
   const coCon = {};
   f.o.forEach((o) => { if (CON[o.k]) coCon[o.k] = 1; });
   const hang = Object.keys(CAY).filter((k) => CAY[k].lv <= lv)
-    .concat(Object.keys(CON).filter((k) => coCon[k]).map((k) => CON[k].sp));
+    .concat(Object.keys(CON).filter((k) => coCon[k]).map((k) => CON[k].sp), XuongCat.hangCua(f));
   const r = soNgauNhien(userId + '|' + ngay);
   const ds = [];
   for (let i = 0; i < 3; i++) {
@@ -460,6 +489,14 @@ const MO_TN = {
   vuon: { lv: 2, zh: '难词花园', vn: 'Vườn từ khó', gt: 'Từ em hay sai thành hạt giống. Ôn đúng từ đó vào ngày đến hạn thì cây lớn; 3 lần thì nở hoa và cho quà hiếm. Ôn sai cây chỉ héo một chút, không bao giờ chết.' },
   bc: { lv: 3, zh: '最美农场', vn: 'Bình chọn nông trại đẹp', gt: 'Sang thăm nông trại bạn và bấm 👍 Thích (mỗi ngày 5 lượt). Top 3 tuần được gắn ruy băng trên nông trại.' },
   tdh: { lv: 3, zh: '学习挑战', vn: 'Thách đấu học 24 giờ', gt: 'Mời một bạn cùng lớp đua học trong 24 giờ: ai kiếm được nhiều sao học hơn thì thắng (+60 xu), cả hai cùng học được +10 xu.' },
+  // them 2026-11-13 (kinh te nong trai) — xem nong-trai-kt.js, nong-trai-xuong.js, nong-trai-phieuluu.js
+  pl: { lv: 1, zh: '冒险地图', vn: 'Bản đồ phiêu lưu', gt: 'Năm vùng đất: Làng Khởi Đầu (pinyin), Thung Lũng Từ Vựng, Thành Phố Giao Tiếp (hội thoại), Đảo Ngữ Pháp và Đế Chế Hán Ngữ. Mỗi trạm 5 câu từ bài em đã học — đúng 4/5 là qua trạm, nhận quà lần đầu.' },
+  cho: { lv: 3, zh: '农贸市场', vn: 'Chợ nông sản', gt: 'Giá ở chợ lên xuống theo cung cầu cả lớp: nhiều bạn bán thì giá giảm, nhiều bạn mua thì giá tăng. Bán đúng lúc giá cao (vẫn tính hạn mức bán ngày), mua hạt giống, đường, muối, thức ăn chăn nuôi.' },
+  xuong: { lv: 5, zh: '加工厂', vn: 'Nhà máy chế biến', gt: 'Xây cối xay bột, lò bánh, xưởng sữa, xưởng nước ép: biến nông sản thành hàng chế biến đắt hơn — cần cho nhà hàng, đơn hàng và xuất khẩu. Muốn làm nhanh? Trả lời 1–3 câu từ bài đã học.' },
+  tiem: { lv: 6, zh: '我的小店', vn: 'Cửa hàng riêng', gt: 'Mở tiệm riêng: bày hàng với giá trong khoảng ±30% giá chợ, các bạn cùng lớp vào mua. Chợ thu phí 5%; hàng bày quá 48 giờ tự về kho.' },
+  nc: { lv: 7, zh: '雇工', vn: 'Nhân công', gt: 'Thuê người thu hoạch, người chăn nuôi, người vận chuyển. Họ chỉ đi làm vào ngày em học đủ 10 sao (ngày em không học, họ nghỉ phép và không lấy lương). Tưới nước, cho ăn vẫn là việc của em!' },
+  xk: { lv: 8, zh: '出口', vn: 'Xuất khẩu', gt: 'Chở hàng sang các vùng đất trên Bản đồ phiêu lưu: mỗi tuần mỗi vùng cần hàng khác nhau, trả thêm 20–60%. Giấy tờ là câu hỏi tiếng Trung theo kiểu của vùng đất — trả lời đúng mới xuất hàng được.' },
+  dg: { lv: 10, zh: '拍卖会', vn: 'Đấu giá', gt: 'Mỗi tuần có phiên đấu giá hạt giống quý, vật nuôi hiếm, đồ trang trí đặc biệt. Đặt giá bằng xu — xu được giữ lại, ai trả cao hơn thì em được hoàn xu ngay.' },
 };
 // Giai dau thi dua theo cap nong trai
 const GIAI = [
@@ -619,10 +656,86 @@ function kiemNhanVat(v) {
   return av;
 }
 
+// ---- Vong quay: chon 1 o theo trong so va phat qua vao f (ham thuan, dung lai trong tools/thu-kinh-te-nong-trai.js) ----
+// rnd = ham ngau nhien [0,1). Tra ve { i: chi so o, qua: {loai, k, n, ...}, sp: {k: n} hang vao kho }
+function hangChuotAn(k) {
+  const s = SP[k];
+  return !!s && !s.hiem && !s.nl && !s.mon && !s.ca && (s.gc || (CAY[k] && !CAY[k].hiem) || (s.ban < 95 && Object.keys(CON).some((c) => CON[c].sp === k)));
+}
+function quayO(f, lv, rnd) {
+  const tong = VQ_O.reduce((a, o) => a + o.w, 0);
+  let r = rnd() * tong, i = 0;
+  while (i < VQ_O.length - 1 && r >= VQ_O[i].w) { r -= VQ_O[i].w; i++; }
+  const o = VQ_O[i], chon = (ds) => ds[Math.floor(rnd() * ds.length)];
+  const cayMo = Object.keys(CAY).filter((k) => !CAY[k].hiem && CAY[k].lv <= Math.max(1, lv));
+  const out = { i, qua: { loai: o.loai, n: o.n } };
+  f.hat = f.hat || {};
+  const themTui = (k) => { f.tui[k] = (f.tui[k] || 0) + 1; };
+  const ttNgau = () => chon(Object.keys(TT).filter((x) => TT[x].lv <= lv + 1 && !TT[x].doc));
+  if (o.loai === 'xu') f.xu += o.n;
+  else if (o.loai === 'hat') { const k = chon(cayMo); f.hat[k] = (f.hat[k] || 0) + o.n; out.qua.k = k; }
+  else if (o.loai === 'hatquy') { const k = chon(CAY_HIEM); f.hat[k] = (f.hat[k] || 0) + o.n; out.qua.k = k; }
+  else if (o.loai === 'sp') {
+    const coCon = {};
+    f.o.forEach((x) => { if (CON[x.k]) coCon[CON[x.k].sp] = 1; });
+    const ds = cayMo.concat(Object.keys(coCon).filter((k) => SP[k].ban < 95));
+    const k = chon(ds);
+    f.kho[k] = (f.kho[k] || 0) + o.n; out.qua.k = k; out.sp = { [k]: o.n };
+  } else if (o.loai === 'tt') { const k = ttNgau(); themTui(k); out.qua.k = k; }
+  else if (o.loai === 'con') {
+    const ds = Object.keys(CON).filter((k) => CON[k].lv <= lv + 3 && f.o.filter((x) => x.k === k).length + (f.tui[k] || 0) < CON_TOI_DA);
+    if (ds.length) { const k = chon(ds); themTui(k); out.qua.k = k; } else { const k = ttNgau(); themTui(k); out.qua = { loai: 'tt', k, n: 1 }; }
+  } else if (o.loai === 'x2') {
+    // dang co ×2 chua dung -> doi thanh 10 xu (khong cong don)
+    if (f.x2thu) { f.xu += 10; out.qua = { loai: 'x2', n: 2, du: 1, xu: 10 }; } else f.x2thu = 1;
+  } else if (o.loai === 'chuot') {
+    // chuot gam 1–3 mon cua 1 loai hang thuong; khong qua 10% tong kho, khong dung hang quy / ca / mon an / hang mua o cho
+    const tongKho = Object.keys(f.kho).reduce((a, k) => a + (f.kho[k] || 0), 0);
+    const tran = Math.floor(tongKho * VQ_CHUOT_PHAN);
+    const ds = Object.keys(f.kho).filter((k) => f.kho[k] > 0 && hangChuotAn(k));
+    const muon = 1 + Math.floor(rnd() * VQ_CHUOT_TOI_DA);
+    if (!ds.length || tran < 1) out.qua = { loai: 'chuot', n: 0, doi: 1 };
+    else {
+      const k = chon(ds), n = Math.min(muon, tran, f.kho[k]);
+      f.kho[k] -= n; if (!f.kho[k]) delete f.kho[k];
+      out.qua = { loai: 'chuot', k, n };
+    }
+  }
+  return out;
+}
+// Thu hoach cac o ruong da chin (em bam hoac nguoi lam thue): ×2 tu vong quay ap dung toi da VQ_X2_O o
+function thuRuong(f, ds, dacSanEm, congSp) {
+  let x2 = f.x2thu ? VQ_X2_O : 0, dung = 0, xp = 0, dacSan = '';
+  ds.forEach((o) => {
+    let n = (taiHieu(f, 'thu') || THU_MOI_O) + (o.c === dacSanEm ? 1 : 0);
+    if (x2 > 0) { n *= 2; x2--; dung++; }
+    congSp(o.c, n);
+    if (o.c === dacSanEm) dacSan = o.c;
+    xp += CAY[o.c].xp;
+    o.c = null; o.h = null; o.t = 0;
+  });
+  if (dung) delete f.x2thu;
+  return { xp, dacSan, x2: dung };
+}
+// Nhat san pham vat nuoi (dac san +1, an thuc an chan nuoi +1)
+function nhatCon(f, ds, dacSanEm, congSp) {
+  let xp = 0, dacSan = '';
+  ds.forEach((o) => {
+    const sp = CON[o.k].sp;
+    congSp(sp, (sp === dacSanEm ? 2 : 1) + (o.sl ? 1 : 0));
+    if (sp === dacSanEm) dacSan = sp;
+    xp += CON[o.k].xp;
+    o.h = null; delete o.sl;
+  });
+  return { xp, dacSan };
+}
+
 module.exports = function ganNongTrai(app, d) {
   let thiDua = null; // nong-trai-thidua.js (gan o cuoi)
   const FILE = path.join(d.DATA_DIR, 'farms.json');
   const khoa = new Map(); // userId -> Promise (xu ly lan luot tung nguoi)
+  const vaoHook = [];  // async (user, f) -> true neu da doi f (chay trong khoa cua em khi mo nong trai)
+  const ttThem = [];   // (userId, f, st) -> them truong vao trang thai gui client
 
   async function initTable() {
     if (!d.USE_DB) return;
@@ -780,7 +893,7 @@ module.exports = function ganNongTrai(app, d) {
       vq: vongQuay(f, sh.homNay),
       nv: nhiemVu(f, sh.homNay, lv),
       cau: moiCa({ n: f.hc && f.hc.d === ngay ? f.hc.n || 0 : 0 }, sh.homNay),
-      ban: { da: daBanHomNay(f), toiDa: BAN_CO_BAN + BAN_MOI_SAO * sh.homNay },
+      ban: { da: daBanHomNay(f), toiDa: BAN_CO_BAN + BAN_MOI_SAO * sh.homNay }, x2thu: !!f.x2thu,
       the: soThe(f), theMoc: f.theMoc || 0,
       xu: f.xu, xp: f.xp, lv, xpLv: xpCuaLv(lv), xpSau: xpCuaLv(lv + 1),
       dat: f.dat, kich: DAT[f.dat], o: f.o, kho: f.kho, tui: f.tui,
@@ -797,6 +910,7 @@ module.exports = function ganNongTrai(app, d) {
       nk: await nhatKy(f), nkMoi: (f.nk || []).filter((e) => e.t > (f.nkXem || 0)).length,
       tai: taiChoHs(f), taiVua: f.tai && f.tai.xong === 'ok' && Date.now() - f.tai.kt < 60000 ? f.tai.k : '',
       thiTruong: await tomThiTruong(userId),
+      kt: ttThem.reduce((o, fn) => { try { Object.assign(o, fn(userId, f, lv)); } catch (e) { /* bo qua */ } return o; }, {}),
       tt: thanhTich(f), cay7: thiDua ? thiDua.cay7ChoHs(f) : null, hat: f.hat || {},
     };
   }
@@ -821,7 +935,7 @@ module.exports = function ganNongTrai(app, d) {
   function loi(msg) { const e = new Error(msg); e.farm = true; return e; }
 
   /* ---- Cung - cau trong lop: dac san 特产, don can hang cua ban, bang "Lop dang can", gia theo cung - cau ---- */
-  const HANG = Object.keys(CAY).concat(Object.keys(CON).map((k) => CON[k].sp));
+  const HANG = Object.keys(CAY).filter((k) => !CAY[k].hiem).concat(Object.keys(CON).map((k) => CON[k].sp));
   const tuanSo = () => Math.floor(Date.parse(d.vnWeekKey() + 'T00:00:00Z') / (7 * 86400000));
   const ttNho = new Map(); // pham vi -> { t, data } (luu 60 giay)
   async function phamViTt(userId) {
@@ -930,7 +1044,8 @@ module.exports = function ganNongTrai(app, d) {
       const c = CAY[b.c];
       if (o.k !== 'o' || o.c) throw loi('Ô này đang có cây.');
       if (!c) throw loi('Không có loại hạt này.');
-      if (c.lv > lv) throw loi('Lên cấp ' + c.lv + ' để trồng ' + c.vn + '.');
+      if (c.hiem && !(f.hat && f.hat[b.c] > 0)) throw loi(c.vn + ' là cây quý — chỉ gieo được bằng hạt quý (vòng quay, bản đồ phiêu lưu, đấu giá).');
+      if (c.lv > lv && !c.hiem) throw loi('Lên cấp ' + c.lv + ' để trồng ' + c.vn + '.');
       if (taiHieu(f, 'khongTrong')) throw loi(TAI[f.tai.k].zh + '！' + TAI[f.tai.k].hieu + ' — chống thiên tai trước (bấm thanh thiên tai).');
       // hat giong quy (Co thuong) gieo khong ton xu
       if (f.hat && f.hat[b.c] > 0) { f.hat[b.c]--; if (!f.hat[b.c]) delete f.hat[b.c]; } else tieuXu(c.gia);
@@ -957,33 +1072,35 @@ module.exports = function ganNongTrai(app, d) {
     } else if (a === 'thu') {
       const ds = b.id === 'het' ? f.o.filter((o) => o.k === 'o' && o.c && o.h <= now) : [timO()];
       if (!ds.length) throw loi('Chưa có ô nào chín.');
-      ds.forEach((o) => {
-        if (o.k !== 'o' || !o.c || o.h > now) throw loi('Cây chưa chín.');
-        congSp(o.c, (taiHieu(f, 'thu') || THU_MOI_O) + (o.c === dacSanEm ? 1 : 0));
-        if (o.c === dacSanEm) them.dacSan = o.c;
-        them.xp += CAY[o.c].xp;
-        o.c = null; o.h = null; o.t = 0;
-      });
+      ds.forEach((o) => { if (o.k !== 'o' || !o.c || o.h > now) throw loi('Cây chưa chín.'); });
+      const r = thuRuong(f, ds, dacSanEm, congSp);
+      them.xp += r.xp;
+      if (r.dacSan) them.dacSan = r.dacSan;
+      if (r.x2) them.x2 = r.x2;
     } else if (a === 'choan') {
       const o = timO();
       if (!CON[o.k]) throw loi('Không phải vật nuôi.');
       if (o.h) throw loi(o.h > now ? 'Con vật đang no rồi.' : 'Hãy thu sản phẩm trước.');
       o.h = now + Math.round(CON[o.k].phut * PHUT * heSoTai(f, 'con'));
       them.xp += 2; // vua tra loi dung 3 cau on tu
+      // thuc an chan nuoi 饲料 (mua o cho): lan nay con vat cho them 1 san pham
+      if (b.sl) {
+        if (!((f.kho.siliao || 0) > 0)) throw loi('Kho chưa có thức ăn chăn nuôi 饲料 — mua ở Chợ nông sản nhé.');
+        f.kho.siliao--; if (!f.kho.siliao) delete f.kho.siliao;
+        o.sl = 1; them.sl = 1;
+      }
     } else if (a === 'nhat') {
       const ds = b.id === 'het' ? f.o.filter((o) => CON[o.k] && o.h && o.h <= now && (!b.k || o.k === b.k)) : [timO()];
       if (!ds.length) throw loi('Chưa có sản phẩm.');
-      ds.forEach((o) => {
-        if (!CON[o.k] || !o.h || o.h > now) throw loi('Chưa có sản phẩm.');
-        congSp(CON[o.k].sp, CON[o.k].sp === dacSanEm ? 2 : 1);
-        if (CON[o.k].sp === dacSanEm) them.dacSan = CON[o.k].sp;
-        them.xp += CON[o.k].xp;
-        o.h = null;
-      });
+      ds.forEach((o) => { if (!CON[o.k] || !o.h || o.h > now) throw loi('Chưa có sản phẩm.'); });
+      const r = nhatCon(f, ds, dacSanEm, congSp);
+      them.xp += r.xp;
+      if (r.dacSan) them.dacSan = r.dacSan;
     } else if (a === 'ban') {
       const k = String(b.k || '');
       const n = Math.floor(Number(b.n) || 0);
       if (!SP[k] || n < 1 || (f.kho[k] || 0) < n) throw loi('Không đủ hàng để bán.');
+      if (SP[k].nl) throw loi(SP[k].vn + ' mua ở chợ để dùng (nấu, chế biến, chăn nuôi) — không bán lại được.');
       const goiDung = String(b.goi || '') === SP[k].zh;
       const tien = Math.max(1, Math.round(SP[k].ban * n * (goiDung ? 1.1 : 0.7) * heSoCua(tt, k) * heSoTai(f, 'ban')));
       const homNay = saoHoc(await d.loadStar(userId)).homNay;
@@ -1083,6 +1200,7 @@ module.exports = function ganNongTrai(app, d) {
       const n = Math.floor(Number(b.n) || 0);
       const gia = Math.floor(Number(b.gia) || 0);
       if (!SP[k] || n < 1 || n > SAP_SL_TOI_DA || (f.kho[k] || 0) < n) throw loi('Không đủ hàng để bày sạp.');
+      if (SP[k].nl) throw loi(SP[k].vn + ' mua ở chợ để dùng — không bày bán lại được.');
       if (f.sap.length >= soOSap(lv)) throw loi('Sạp đã đầy ' + soOSap(lv) + ' ô' + (lv < 5 ? ' — lên cấp 5 có thêm 2 ô.' : '.'));
       const hs = heSoCua(tt, k);
       const kg = khoangGia(k, n, hs);
@@ -1189,30 +1307,19 @@ module.exports = function ganNongTrai(app, d) {
       f.xu += n * XU_MOI_SAO;
       them.xu += n * XU_MOI_SAO;
     } else if (a === 'quay') {
-      // Vong quay may man: may chu chon o theo trong so, roi phat qua
+      // Vong quay may man: may chu chon o theo trong so (quayO), roi phat qua; client chi quay banh xe den o do
       const homNay = saoHoc(await d.loadStar(userId)).homNay;
       const vq = vongQuay(f, homNay);
-      if (vq.con <= 0) throw loi('Hết lượt quay hôm nay — học thêm để có lượt mới (30 sao +1, 80 sao +2)!');
-      const tong = VQ_O.reduce((a, o) => a + o.w, 0);
-      let r = Math.random() * tong, i = 0;
-      while (i < VQ_O.length - 1 && r >= VQ_O[i].w) { r -= VQ_O[i].w; i++; }
-      const o = VQ_O[i], chon = (ds) => ds[Math.floor(Math.random() * ds.length)];
+      if (vq.con <= 0) throw loi('Hết lượt quay hôm nay — học thêm để có lượt mới (10 sao +1, 30 sao +1, 80 sao +2)!');
       const v = f.vq && f.vq.d === ngay ? f.vq : { d: ngay, n: 0, them: 0 };
       v.n += 1;
-      let qua = { loai: o.loai, k: o.loai, n: o.n };
-      if (o.loai === 'xu') { f.xu += o.n; them.xu += o.n; }
-      else if (o.loai === 'luot') { v.them = (v.them || 0) + 1; }
-      else if (o.loai === 'sp') {
-        const k = chon(Object.keys(SP).filter((x) => CAY[x] ? CAY[x].lv <= lv + 1 : !MON[x] && !CA[x]));
-        congSp(k, o.n); qua = { loai: 'sp', k, n: o.n };
-      } else {
-        const con = o.loai === 'con' ? Object.keys(CON).filter((k) => CON[k].lv <= lv + 1 && f.o.filter((x) => x.k === k).length + (f.tui[k] || 0) < CON_TOI_DA) : [];
-        const k = con.length ? chon(con) : chon(Object.keys(TT).filter((x) => TT[x].lv <= lv + 1 && !TT[x].doc));
-        f.tui[k] = (f.tui[k] || 0) + 1;
-        qua = { loai: con.length ? 'con' : 'tt', k, n: 1 };
-      }
+      const r = quayO(f, lv, Math.random);
+      if (r.qua.loai === 'luot') v.them = (v.them || 0) + 1;
+      if (r.qua.loai === 'xu') them.xu += r.qua.n;
+      if (r.qua.xu) them.xu += r.qua.xu;
+      if (r.sp) Object.keys(r.sp).forEach((k) => { them.sp[k] = (them.sp[k] || 0) + r.sp[k]; });
       f.vq = { d: ngay, n: v.n, them: v.them || 0 };
-      them.quay = { o: i, qua };
+      them.quay = { o: r.i, qua: r.qua };
     } else {
       throw loi('Hành động không hợp lệ.');
     }
@@ -1224,7 +1331,7 @@ module.exports = function ganNongTrai(app, d) {
     return { ok: true, them, lenCap: st.lv > lvCu ? st.lv : 0, st };
   }
 
-  const CATALOG = { MO_TN, GIAI, KHIEN_SAO, CA, CA_BAC, VQ_O, VQ_MOC, CAN_TOI_DA, CAN_SL_TOI_DA, MON, LUONG, LUONG_PY, CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO, RUONG,
+  const CATALOG = { VQ_X2_O, CAY_HIEM, MO_TN, GIAI, KHIEN_SAO, CA, CA_BAC, VQ_O, VQ_MOC, CAN_TOI_DA, CAN_SL_TOI_DA, MON, LUONG, LUONG_PY, CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO, RUONG,
     MOC_THE, HOC_VI, THE_DUNG, BAN_CO_BAN, BAN_MOI_SAO, TAI, TAI_GIUP_XU,
     TIN_TU, TIN_MAU, TIN_HOI, TIN_BAN_NGAY, QUA_NGAY };
 
@@ -1238,8 +1345,8 @@ module.exports = function ganNongTrai(app, d) {
     const tuLam = (k) => (CAY[k] && CAY[k].lv <= lv) || coCon[k];
     let cho = {};
     try { (await taiCongDong()).forEach((x) => { if (x.id !== userId) x.sap.forEach((o) => { cho[o.k] = (cho[o.k] || 0) + o.n; }); }); } catch (e) { cho = {}; }
-    let ung = Object.keys(cho).filter((k) => SP[k] && k !== 'len' && !tuLam(k));
-    if (!ung.length) ung = Object.keys(SP).filter((k) => k !== 'len' && !CA[k] && !(MON[k] && MON[k].lv) && !tuLam(k));
+    let ung = Object.keys(cho).filter((k) => SP[k] && k !== 'len' && !SP[k].nl && !tuLam(k));
+    if (!ung.length) ung = Object.keys(SP).filter((k) => k !== 'len' && !CA[k] && !SP[k].hiem && !SP[k].nl && !(MON[k] && MON[k].lv) && !tuLam(k));
     if (!ung.length) ung = Object.keys(MON);
     const can = {};
     tronMang(ung).slice(0, Math.random() < 0.5 ? 1 : 2).forEach((k) => { can[k] = Math.max(1, Math.min(3, cho[k] || 2, 1 + Math.floor(Math.random() * 3))); });
@@ -1265,6 +1372,8 @@ module.exports = function ganNongTrai(app, d) {
       if (xetThienTai(f)) await ghi(req.user.id, f);
       // khien bao ve: hoc du KHIEN_SAO sao hom nay -> thien tai khong con tac dung
       if (taiDang(f) && !f.tai.khien && saoHoc(await d.loadStar(req.user.id)).homNay >= KHIEN_SAO) { f.tai.khien = 1; await ghi(req.user.id, f); }
+      // cac module kinh te (nhan cong lam viec, hang tiem het han ve kho, hop thu dau gia...) — moi ham tu ghi neu doi
+      for (const fn of vaoHook) { try { if (await fn(req.user, f)) await ghi(req.user.id, f); } catch (e) { console.error('Nong trai (vao):', e.message); } }
       return trangThai(req.user.id, f);
     });
     res.json(req.query.cat ? Object.assign({ cat: CATALOG }, st) : st);
@@ -1789,7 +1898,7 @@ module.exports = function ganNongTrai(app, d) {
       return { loai: 'tt', k, n: 1, hiem: r >= 85 ? 'Quý' : 'Đẹp' };
     }
     if (r >= 45) { const n = 20 + Math.floor(Math.random() * 21); f.xu += n; return { loai: 'xu', k: 'xu', n, hiem: 'Thường' }; }
-    const sp = Object.keys(SP).filter((k) => !CA[k] && (!CAY[k] || CAY[k].lv <= lv + 1));
+    const sp = Object.keys(SP).filter((k) => !CA[k] && !SP[k].hiem && !SP[k].nl && (!CAY[k] || CAY[k].lv <= lv + 1));
     const k = chon(sp), n = CAY[k] ? 3 : 2;
     f.kho[k] = (f.kho[k] || 0) + n;
     return { loai: 'sp', k, n, hiem: 'Thường' };
@@ -2395,6 +2504,9 @@ module.exports = function ganNongTrai(app, d) {
         const f = await doc(req.user.id);
         if (Number.isFinite(Number(b.xp))) f.xp = Math.max(0, Math.floor(Number(b.xp)));
         if (Number.isFinite(Number(b.xu))) f.xu = Math.max(0, Math.floor(Number(b.xu)));
+        // thu kinh te: dat kho / tui / hat, lam chin moi o ruong + vat nuoi dang lam
+        ['kho', 'tui', 'hat'].forEach((k) => { if (b[k] && typeof b[k] === 'object') f[k] = Object.assign(f[k] || {}, b[k]); });
+        if (b.chin) f.o.forEach((o) => { if ((o.k === 'o' && o.c) || (CON[o.k] && o.h)) o.h = Date.now() - 1000; });
         await ghi(req.user.id, f);
         return { ok: true, st: await trangThai(req.user.id, f) };
       }));
@@ -2414,8 +2526,22 @@ module.exports = function ganNongTrai(app, d) {
     doc, ghi, lanLuot, haiLuot, loi, traLoi, trangThai, lvTuXp, saoHoc, taiCongDong, coTheChoi, ghiNk, moQua, ghiOn, tuHocCua, taoCau,
     MO_TN, GIAI, giaiCua, KHIEN_SAO, CAY, CON, CON_TOI_DA,
   }, chung);
+  // Kinh te nong trai 2026-11-13: ban do phieu luu (cau hoi theo vung dat), cho nong san + tiem rieng + dau gia,
+  // nha may che bien + nhan cong + xuat khau sang cac vung dat
+  const hKt = {
+    doc, ghi, lanLuot, haiLuot, loi, traLoi, trangThai, ghiNk, docNhieu, thiTruong, hanMuc, ghiBanNgay, lvTuXp, saoHoc, taiCongDong, boNhoCongDong,
+    tuHocCua, boKtbc, chonKt, taoCau, cauDung, chamCau, onCau, ketQuaCau, ghiOn, thuRuong, nhatCon, donHomNay, moQua, vaoHook, ttThem, banCungLop,
+    MO_TN, SP, CAY, CON, TT, CA, MON, HANG, LUONG, LUONG_PY, CON_TOI_DA, CAY_HIEM, BAN_MOI_SAO, Ktbc, CauHoi, CATALOG, NHOM_TT: null,
+  };
+  const phieuLuu = require('./nong-trai-phieuluu')(app, d, hKt, chung);
+  hKt.phieuLuu = phieuLuu;
+  require('./nong-trai-kt')(app, d, hKt, chung);
+  require('./nong-trai-xuong').gan(app, d, hKt, chung);
   async function initTatCa() { await initTable(); await chung.initTable(); }
 
   // _thuCau: chi de chay tools/thu-cau-nong-trai.js (kiem tra cau hoi chi thuoc bai em da hoc / duoc giao)
-  return { initTable: initTatCa, _thuCau: { deChuHanKt, deCaKt, ghiOn } };
+  return { initTable: initTatCa, _thuCau: { deChuHanKt, deCaKt, ghiOn, deVung: phieuLuu.deVung, VUNG: phieuLuu.VUNG } };
 };
+
+// Cho cong cu thu (tools/thu-kinh-te-nong-trai.js): ham thuan cua vong quay
+module.exports._thuVq = { quayO, VQ_O, VQ_X2_O, SP, CAY, CON, TT, thuRuong, hangChuotAn };

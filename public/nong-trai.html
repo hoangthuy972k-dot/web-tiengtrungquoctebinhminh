@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/cau-dt.css">
 <link rel="stylesheet" href="/css/nong-trai.css">
+<link rel="stylesheet" href="/css/nong-trai-kt.css">
 </head>
 <body class="nt">
 
@@ -61,6 +62,7 @@
     <button type="button" class="nt-nut nt-nut-hong" id="ntThamTim">❤ Thả tim</button>
     <button type="button" class="nt-nut" id="ntThamChao">💬 Nói chuyện</button>
     <button type="button" class="nt-nut nt-nut-vang" id="ntThamSap">🛒 Sạp của bạn</button>
+    <button type="button" class="nt-nut nt-nut-vang" id="ntThamTiem">🏪 Tiệm của bạn</button>
     <button type="button" class="nt-nut" id="ntThamTt">🏘 Thị trấn</button>
     <button type="button" class="nt-nut nt-nut-hong" id="ntThamTai" hidden>🆘 Giúp chống thiên tai</button>
     <button type="button" class="nt-nut nt-nut-vang" id="ntThamThich" hidden>👍 Thích nông trại</button>
@@ -95,6 +97,9 @@
     </div>
     <div class="nt-tt-nut">
       <button type="button" class="nt-nut nt-nut-vang" data-tt="cho">🛒 Chợ lớp</button>
+      <button type="button" class="nt-nut nt-nut-vang" data-tt="kt-mk">📈 Chợ nông sản</button>
+      <button type="button" class="nt-nut" data-tt="kt-tiem">🏪 Các tiệm</button>
+      <button type="button" class="nt-nut" data-tt="kt-dg">🔨 Đấu giá</button>
       <button type="button" class="nt-nut" data-tt="thu" id="ntTtThu">📜 Nhật ký</button>
       <button type="button" class="nt-nut" data-tt="cac">🏙 Các thị trấn</button>
       <button type="button" class="nt-nut nt-nut-vang" data-tt="ld">⚔ Lôi đài</button>
@@ -156,6 +161,13 @@
   <span class="nt-ch-ic nt-hc-ic" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="none" stroke="#2b1d3a" stroke-width="2.2" stroke-linecap="round"><path d="M8 34L30 6"/><path d="M30 6Q36 14 32 24" stroke-width="1.4"/></g><path d="M14 30C18 23 28 23 32 28L37 24V34L32 31C28 36 18 36 14 30Z" fill="#ff9f43" stroke="#2b1d3a" stroke-width="2" stroke-linejoin="round"/><circle cx="19" cy="29" r="1.6" fill="#2b1d3a"/></svg></span>
   <span class="nt-muc-chu"><b>Hồ câu cá</b><small id="ntHcPhu">câu cá · trả lời chữ Hán</small></span>
 </button>
+        <button type="button" class="nt-them-o nt-them-pl" data-mo="kt-pl"><img src="/images/farm/tb-bando.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Bản đồ phiêu lưu</b><small id="ntPlPhu">5 vùng đất · câu hỏi từ bài em học</small></span></button>
+        <button type="button" class="nt-them-o" data-mo="kt-mk"><img src="/images/farm/tb-cho.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Chợ nông sản</b><small id="ntMkPhu">giá lên xuống theo cung cầu</small></span></button>
+        <button type="button" class="nt-them-o" data-mo="kt-xuong"><img src="/images/farm/tb-xuong.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Nhà máy chế biến</b><small id="ntXgPhu">bột, bánh, sữa, nước ép</small></span><i class="nt-cham" id="ntXgCham" hidden></i></button>
+        <button type="button" class="nt-them-o" data-mo="kt-tiem"><img src="/images/farm/tb-tiem.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Cửa hàng riêng</b><small id="ntTiemPhu">mở tiệm bán cho bạn cùng lớp</small></span><i class="nt-cham" id="ntTiemCham" hidden></i></button>
+        <button type="button" class="nt-them-o" data-mo="kt-nc"><img src="/images/farm/tb-nhancong.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Nhân công</b><small id="ntNcPhu">thuê người giúp việc nông trại</small></span></button>
+        <button type="button" class="nt-them-o" data-mo="kt-xk"><img src="/images/farm/tb-xuatkhau.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Xuất khẩu</b><small id="ntXkPhu">chở hàng tới các vùng đất</small></span><i class="nt-cham" id="ntXkCham" hidden></i></button>
+        <button type="button" class="nt-them-o" data-mo="kt-dg"><img src="/images/farm/tb-daugia.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Đấu giá</b><small id="ntDgPhu">hàng quý mỗi tuần</small></span><i class="nt-cham" id="ntDgCham" hidden></i></button>
         <button type="button" class="nt-them-o" data-mo="don"><img src="/images/farm/tb-don.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Đơn hàng</b><small>giao nông sản lấy xu</small></span><i class="nt-cham" id="ntDonCham" hidden></i></button>
         <button type="button" class="nt-them-o" data-mo="chung"><img src="/images/farm/tb-hoatdong.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Cùng nhau</b><small>công trình lớp · thách đấu · lễ hội</small></span><i class="nt-cham" id="ntChungCham" hidden></i></button>
         <button type="button" class="nt-them-o" data-mo="congdong"><img src="/images/farm/tb-congdong.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Cộng đồng</b><small>chợ chung · bạn bè các lớp</small></span></button>
@@ -221,5 +233,6 @@
 <script src="/js/nong-trai-nv.js"></script>
 <script src="/js/cau-dt.js"></script>
 <script src="/js/nong-trai.js"></script>
+<script src="/js/nong-trai-kt.js"></script>
 </body>
 </html>

@@ -167,4 +167,26 @@ function coDang(ng, l) {
   return false;
 }
 
-module.exports = { nguonBai, nguonCau, taoCau, coDang, khoaZh, LOAI_DT, KHO: LOI._KHO, CauHoi };
+// Hoi thoai / bai khoa cua 1 bai (dialogData trong <bai>-data.js): [{ lines: [{ sp, zh, py, vn }] }]
+// — cho Thanh Pho Giao Tiep tren Ban do phieu luu (chon cau dap, xep cau hoi thoai)
+const htCache = new Map();
+function hoiThoaiBai(url) {
+  if (htCache.has(url)) return htCache.get(url);
+  let ds = [];
+  const m = /^\/lessons\/([a-z0-9-]+)\.html$/.exec(String(url || ''));
+  const file = m && path.join(JS, m[1] + '-data.js');
+  if (file && fs.existsSync(file)) {
+    try {
+      const sb = { window: {}, document: { addEventListener() {}, querySelector() { return null; } } };
+      vm.runInNewContext(fs.readFileSync(file, 'utf8') + '\n;this.__ht = typeof dialogData !== "undefined" ? dialogData : null;', sb, { timeout: 2000 });
+      ds = (Array.isArray(sb.__ht) ? sb.__ht : []).map((sc) => ({
+        lines: (sc && Array.isArray(sc.lines) ? sc.lines : []).filter((l) => l && /[㐀-鿿]/.test(l.zh || ''))
+          .map((l) => ({ sp: l.sp, zh: String(l.zh).trim(), py: String(l.py || ''), vn: String(l.vn || '') })),
+      })).filter((sc) => sc.lines.length >= 2);
+    } catch (err) { ds = []; }
+  }
+  htCache.set(url, ds);
+  return ds;
+}
+
+module.exports = { nguonBai, nguonCau, taoCau, coDang, khoaZh, hoiThoaiBai, LOAI_DT, KHO: LOI._KHO, CauHoi };

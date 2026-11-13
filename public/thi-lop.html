@@ -174,11 +174,13 @@
       <div id="tlKetQua" hidden>
         <div class="tl-kq-nut">
           <label class="tl-cong-bo"><input type="checkbox" id="tlCongBo" /> <span>Công bố điểm và đáp án cho học sinh</span></label>
+          <button type="button" class="tl-nut" id="tlXemDe">📄 Đề thi</button>
           <button type="button" class="tl-nut" id="tlTaiCsv">Tải bảng điểm (Excel)</button>
           <button type="button" class="tl-nut" id="tlInKq">In bảng điểm</button>
         </div>
         <div class="tl-tong" id="tlTong"></div>
         <div class="tl-the tl-bang-the">
+          <p class="tl-bang-goi-y" id="tlBangGoiY" hidden>Bấm vào tên một bạn để xem bài làm và các câu bạn ấy làm sai.</p>
           <div class="tl-bang-cuon"><table class="tl-bang" id="tlBang"></table></div>
         </div>
         <div class="tl-the">
@@ -189,6 +191,33 @@
       </div>
     </section>
   </main>
+
+  <!-- Bai lam cua tung em / de thi + dap an (ve bang chinh phong thi /thi?xem=1 trong khung) -->
+  <div class="tl-xem" id="tlXem" role="dialog" aria-modal="true" aria-labelledby="tlXemTen" hidden>
+    <div class="tl-xem-dau">
+      <div class="tl-xem-hang">
+        <h2 id="tlXemTen"></h2>
+        <div class="tl-xem-nut">
+          <label class="tl-xem-an"><input type="checkbox" id="tlXemAn" /> <span>Ẩn tên khi chiếu</span></label>
+          <button type="button" class="tl-nut" id="tlXemTruoc">‹ Bạn trước</button>
+          <button type="button" class="tl-nut" id="tlXemSau">Bạn sau ›</button>
+          <button type="button" class="tl-nut" id="tlXemIn">🖨️ In bài làm</button>
+          <button type="button" class="tl-nut tl-xem-dong" id="tlXemDong" aria-label="Đóng">✕</button>
+        </div>
+      </div>
+      <div class="tl-xem-tt" id="tlXemTt"></div>
+      <div class="tl-xem-hang tl-xem-hang2">
+        <div class="tl-xem-loc" id="tlXemLoc" role="radiogroup" aria-label="Lọc câu">
+          <button type="button" role="radio" data-loc="sai"></button>
+          <button type="button" role="radio" data-loc="tat"></button>
+        </div>
+        <span class="tl-xem-chu-giai" id="tlXemChuGiai"><i class="dung"></i>đúng <i class="sai"></i>sai <i class="trong"></i>bỏ trống</span>
+      </div>
+      <div class="tl-xem-nhay" id="tlXemNhay" aria-label="Nhảy tới câu"></div>
+    </div>
+    <p class="tl-xem-bao" id="tlXemBao" hidden></p>
+    <iframe class="tl-xem-khung" id="tlXemKhung" title="Bài làm"></iframe>
+  </div>
 
   <div id="tlHop"></div>
   <script src="/js/vendor/qrcode.js"></script>

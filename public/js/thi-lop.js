@@ -250,6 +250,7 @@
   /* ---------------- Phong thi ---------------- */
   function moPhong(ma) {
     dungPoll();
+    dongXem();
     T.ma = ma;
     T.ph = null;
     try { localStorage.setItem(PHONG_GV, ma); } catch (e) { /* bo qua */ }
@@ -267,6 +268,7 @@
   }
   function raNgoai() {
     dungPoll();
+    dongXem();
     var a = $('#tlAudio'); a.pause();
     T.ma = ''; T.ph = null;
     try { localStorage.removeItem(PHONG_GV); } catch (e) { /* bo qua */ }
@@ -456,18 +458,22 @@
       return (b.kq ? 1 : 0) - (a.kq ? 1 : 0) || (b.kq && a.kq ? b.kq.score - a.kq.score || a.kq.giay - b.kq.giay : 0) || a.ten.localeCompare(b.ten, 'vi');
     });
     var hang = 0;
+    // thu tu bang diem = thu tu "Ban truoc / Ban sau" va so "Hoc sinh #k" khi an ten (bai lam tung em)
+    T.dsXem = []; T.hangXem = {};
     $('#tlBang').innerHTML = '<thead><tr><th>#</th><th>Họ tên</th><th>Điểm</th><th>Đúng</th>' +
       phan.map(function (p) { return '<th>' + TEN_PHAN[p] + '</th>'; }).join('') + '<th>Thời gian</th><th>Kết quả</th></tr></thead><tbody>' +
       ds.map(function (h) {
         if (!h.kq) return '<tr class="chua"><td></td><td>' + esc(h.ten) + '</td><td colspan="' + (4 + phan.length) + '">' + (ph.pha === 'xong' ? 'Không nộp bài' : 'Đang làm · ' + h.lam + '/' + ph.tong + ' câu') + '</td></tr>';
         hang++;
+        T.dsXem.push(h.pid); T.hangXem[h.pid] = hang;
         var k = h.kq;
-        return '<tr><td>' + hang + '</td><td>' + esc(h.ten) + (h.auto ? ' <small title="Hết giờ, máy tự nộp">⏰</small>' : '') + '</td>' +
+        return '<tr class="tl-co-bai" data-xem="' + esc(h.pid) + '"><td>' + hang + '</td><td><button type="button" class="tl-ten-nut" data-xem="' + esc(h.pid) + '" title="Xem bài làm của ' + esc(h.ten) + '">' + esc(h.ten) + '</button>' + (h.auto ? ' <small title="Hết giờ, máy tự nộp">⏰</small>' : '') + '</td>' +
           '<td class="so"><b>' + k.score + '</b><small>/' + k.max + '</small></td><td class="so">' + k.correct + '/' + k.total + '</td>' +
           phan.map(function (p) { var s = (k.sec || []).filter(function (x) { return x.id === p; })[0]; return '<td class="so">' + (s ? s.score + ' <small>(' + s.c + '/' + s.t + ')</small>' : '') + '</td>'; }).join('') +
           '<td class="so">' + mmss(k.giay) + '</td><td>' + (k.pass ? '<i class="tl-dat">Đạt</i>' : '<i class="tl-chua-dat">Chưa đạt</i>') + '</td></tr>';
       }).join('') +
       ph.chuaVao.map(function (ten) { return '<tr class="chua"><td></td><td>' + esc(ten) + '</td><td colspan="' + (4 + phan.length) + '">Vắng — chưa vào phòng thi</td></tr>'; }).join('') + '</tbody>';
+    $('#tlBangGoiY').hidden = !hang;
     veThongKeCau(nop);
   }
   function veThongKeCau(nop) {
@@ -536,6 +542,189 @@
     document.body.appendChild(a); a.click(); a.remove();
   }
 
+  /* ---------------- Bai lam tung em + de thi kem dap an ----------------
+     Ve bang chinh phong thi cua hoc sinh: khung /thi?xem=1 (exam.js che do XEM), goi HYV_XEM.ve(...)
+     voi de da loc phan thi / phan may soan, bai lam (tl) va dung/sai may chu da cham (dung). */
+  var AN_TEN = 'hyv_thilop_an_ten';
+  T.xem = { pid: '', de: false, chiSai: true, kq: null, tk: null, san: false, cho: null, daTai: '' };
+  T.dsXem = []; T.hangXem = {};
+  function anTen() { try { return localStorage.getItem(AN_TEN) === '1'; } catch (e) { return false; } }
+  function tenXem(h) { return anTen() ? 'Học sinh #' + (T.hangXem[h.pid] || '?') : h.ten; }
+  function hsXem() { return T.ph ? T.ph.hs.filter(function (h) { return h.pid === T.xem.pid; })[0] : null; }
+  function baoXem(chu) {
+    $('#tlXemBao').textContent = chu || '';
+    $('#tlXemBao').hidden = !chu;
+    $('#tlXemKhung').hidden = !!chu;
+  }
+  function moXem(pid) {
+    if (!T.ph) return;
+    T.xem.pid = pid || '';
+    T.xem.de = !pid;
+    T.xem.chiSai = true; // mo bai mot em: mac dinh chi hien cau sai
+    $('#tlXem').hidden = false;
+    document.body.classList.add('tl-xem-mo');
+    $('#tlXemDong').focus();
+    // bang diem tai khong kem bai lam tung cau (chiTiet) thi lay them mot lan
+    var coCT = T.ph.hs.some(function (h) { return h.kq && h.tl !== undefined; });
+    if (coCT || !T.ph.hs.some(function (h) { return h.kq; }) || T.xem.daTai === T.ma) { veXem(); return; }
+    T.xem.daTai = T.ma;
+    baoXem('Đang tải bài làm…');
+    api('GET', '/api/thi-lop/' + T.ma + '/gv?chiTiet=1').then(function (p) { nhanPhong(p); veTatCa(); veXem(); })
+      .catch(function (e) { baoXem(e.message); });
+  }
+  function dongXem() {
+    if ($('#tlXem').hidden) return;
+    $('#tlXem').hidden = true;
+    document.body.classList.remove('tl-xem-mo');
+    var w = $('#tlXemKhung').contentWindow;
+    try { if (w && w.HYV_XEM) w.HYV_XEM.dungNghe(); } catch (e) { /* bo qua */ }
+  }
+  // Khung /thi?xem=1 tai mot lan, cac lan sau ve lai ngay
+  function khungXem(xong) {
+    var f = $('#tlXemKhung');
+    if (T.xem.san && f.contentWindow && f.contentWindow.HYV_XEM) { xong(f.contentWindow.HYV_XEM); return; }
+    T.xem.cho = xong;
+    if (f.getAttribute('src')) return; // dang tai
+    f.addEventListener('load', function () {
+      var H = f.contentWindow && f.contentWindow.HYV_XEM;
+      if (!H) { baoXem('Không mở được trang xem bài. Tải lại trang rồi thử lại.'); return; }
+      T.xem.san = true;
+      var c = T.xem.cho; T.xem.cho = null;
+      if (c) c(H);
+    }, { once: true });
+    f.setAttribute('src', '/thi?xem=1');
+  }
+  // De dua vao khung: chi cac phan cua phong, phan Doc / Viet may soan thay cho de goc
+  function deXem() {
+    var ph = T.ph;
+    var sections = T.exam.sections.filter(function (s) { return ph.phan.indexOf(s.id) !== -1; })
+      .map(function (s) { return (ph.soan && ph.soan[s.id]) || s; });
+    return JSON.stringify(Object.assign({}, T.exam, { title: ph.tieuDe, sections: sections, maxScore: ph.max, passScore: ph.dat }));
+  }
+  function chipXem(h) {
+    var k = h.kq;
+    return ['<b>' + k.score + '</b>/' + k.max + ' điểm', 'Đúng <b>' + k.correct + '/' + k.total + '</b> câu']
+      .concat((k.sec || []).map(function (s) { return esc(TEN_PHAN[s.id] || s.id) + ' <b>' + s.score + '</b> (' + s.c + '/' + s.t + ')'; }))
+      .concat(['Thời gian <b>' + mmss(k.giay) + '</b>' + (h.auto ? ' ⏰' : ''), k.pass ? '<i class="tl-dat">Đạt</i>' : '<i class="tl-chua-dat">Chưa đạt</i>']);
+  }
+  function veXem() {
+    var ph = T.ph, de = T.xem.de, h = de ? null : hsXem();
+    if (!ph) return;
+    if (!de && (!h || !h.kq)) { dongXem(); return; }
+    var i = de ? -1 : T.dsXem.indexOf(h.pid);
+    $('#tlXemTruoc').hidden = $('#tlXemSau').hidden = de;
+    $('#tlXemTruoc').disabled = i <= 0;
+    $('#tlXemSau').disabled = i === -1 || i >= T.dsXem.length - 1;
+    $('#tlXemLoc').hidden = $('#tlXemChuGiai').hidden = de;
+    $('#tlXemIn').textContent = de ? '🖨️ In đề + đáp án' : '🖨️ In bài làm';
+    $('#tlXemAn').checked = anTen();
+    $('#tlXemKhung').title = de ? 'Đề thi kèm đáp án' : 'Bài làm';
+    T.xem.kq = null; T.xem.tk = null;
+    $('#tlXemNhay').innerHTML = '';
+    var coCT = ph.hs.filter(function (x) { return x.kq && x.dung; });
+    if (de) {
+      $('#tlXemTen').textContent = '📄 Đề thi · ' + ph.tieuDe;
+      $('#tlXemTt').innerHTML = coCT.length
+        ? '<span><b>' + coCT.length + '</b> bài đã chấm</span><span>Mỗi câu ghi số bạn làm đúng' + (anTen() ? '' : ' · bấm “Ai sai?” để xem tên') + '</span><span class="tl-xem-mau">Ô số câu: <i style="background:hsl(120 62% 86%)"></i>dễ → <i style="background:hsl(0 62% 86%)"></i>nhiều bạn sai</span>'
+        : '<span>' + (ph.hs.some(function (x) { return x.kq; }) ? 'Bài thi cũ chưa lưu đáp án từng câu' : 'Chưa có bài nộp') + ' — chỉ xem đề và đáp án.</span>';
+      if (coCT.length) {
+        T.xem.tk = {};
+        T.cau.forEach(function (c) {
+          var sai = coCT.filter(function (x) { return !x.dung[c.n]; });
+          T.xem.tk[c.n] = { d: coCT.length - sai.length, t: coCT.length, sai: anTen() ? null : sai.map(function (x) { return x.ten; }) };
+        });
+      }
+    } else {
+      $('#tlXemTen').textContent = '📄 Bài làm của ' + tenXem(h);
+      $('#tlXemTt').innerHTML = chipXem(h).map(function (x) { return '<span>' + x + '</span>'; }).join('');
+    }
+    if (!T.exam) { baoXem('Chưa tải được đề thi.'); return; }
+    if (!de && h.tl === undefined) { $('#tlXemLoc').hidden = $('#tlXemChuGiai').hidden = true; baoXem('Bài thi cũ chưa lưu đáp án từng câu — chỉ xem được điểm ở bảng kết quả.'); return; }
+    baoXem('');
+    var pid = T.xem.pid;
+    khungXem(function (H) {
+      if ($('#tlXem').hidden || T.xem.pid !== pid || T.xem.de !== de) return; // da dong / da sang ban khac
+      T.xem.kq = H.ve({ data: deXem(), tl: de ? {} : h.tl || {}, dung: de ? null : h.dung || null, deThi: de, tk: T.xem.tk, dau: dauInXem(h) });
+      if (!de) H.loc(T.xem.chiSai);
+      veNhayXem();
+    });
+  }
+  // Dau trang khi in (nam trong khung, chi hien luc in)
+  function dauInXem(h) {
+    var ph = T.ph;
+    var dong2 = esc(ph.tieuDe) + (ph.tenLop ? ' · ' + esc(ph.tenLop) : '') + ' · Mã phòng ' + ph.ma + (ph.batDau ? ' · ' + ngay(ph.batDau) : '');
+    if (!h) return '<h1>Đề thi kèm đáp án</h1><p>' + dong2 + '</p>';
+    return '<h1>Bài làm của ' + esc(tenXem(h)) + '</h1><p>' + dong2 + '</p><p>' + chipXem(h).join(' · ') + '</p>';
+  }
+  function veNhayXem() {
+    var kq = T.xem.kq || {}, tk = T.xem.tk, de = T.xem.de, nhom = '';
+    var TEN_TT = { dung: 'đúng', sai: 'sai', trong: 'bỏ trống' };
+    var sai = 0;
+    $('#tlXemNhay').innerHTML = T.cau.map(function (c) {
+      var dau = c.sec.id !== nhom ? '<span class="tl-xem-nhom">' + esc(c.sec.name) + '</span>' : '';
+      nhom = c.sec.id;
+      if (de) {
+        var t = tk && tk[c.n], pt = t && t.t ? Math.round(t.d / t.t * 100) : -1;
+        return dau + '<button type="button" class="tl-xem-so" data-nhay="' + c.n + '"' + (pt >= 0 ? ' style="background:hsl(' + Math.round(pt * 1.2) + ' 62% 86%)" title="Câu ' + c.n + ': ' + t.d + '/' + t.t + ' bạn đúng"' : ' title="Câu ' + c.n + '"') + '>' + c.n + '</button>';
+      }
+      var tt = kq[c.n] || 'trong';
+      if (tt !== 'dung') sai++;
+      return dau + '<button type="button" class="tl-xem-so ' + tt + '" data-nhay="' + c.n + '" title="Câu ' + c.n + ': ' + TEN_TT[tt] + '">' + c.n + '</button>';
+    }).join('');
+    if (!de) {
+      var b = $all('#tlXemLoc [data-loc]');
+      b[0].innerHTML = 'Chỉ câu sai <b>' + sai + '</b>';
+      b[1].innerHTML = 'Tất cả câu <b>' + T.cau.length + '</b>';
+      veLocXem();
+    }
+  }
+  function veLocXem() {
+    $all('#tlXemLoc [data-loc]').forEach(function (b) {
+      var on = (b.getAttribute('data-loc') === 'sai') === T.xem.chiSai;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-checked', String(on));
+    });
+  }
+  function hXem() { var w = $('#tlXemKhung').contentWindow; return T.xem.san && w && w.HYV_XEM; }
+  function locXem(chiSai) {
+    T.xem.chiSai = chiSai;
+    veLocXem();
+    var H = hXem(); if (H) H.loc(chiSai);
+  }
+  function nhayXem(n) {
+    var H = hXem(); if (!H) return;
+    if (!T.xem.de && T.xem.chiSai && T.xem.kq && T.xem.kq[n] === 'dung') locXem(false); // cau dung dang bi an
+    H.toi(n);
+    $all('#tlXemNhay [data-nhay]').forEach(function (b) { b.classList.toggle('dang', +b.getAttribute('data-nhay') === n); });
+  }
+  function doiBanXem(buoc) {
+    var i = T.dsXem.indexOf(T.xem.pid) + buoc;
+    if (T.xem.de || i < 0 || i >= T.dsXem.length) return;
+    T.xem.pid = T.dsXem[i];
+    veXem();
+  }
+  $('#tlXemDe').addEventListener('click', function () { moXem(''); });
+  $('#tlXemDong').addEventListener('click', dongXem);
+  $('#tlXemTruoc').addEventListener('click', function () { doiBanXem(-1); });
+  $('#tlXemSau').addEventListener('click', function () { doiBanXem(1); });
+  $('#tlXemIn').addEventListener('click', function () { var w = $('#tlXemKhung').contentWindow; if (hXem()) w.print(); });
+  $('#tlXemLoc').addEventListener('click', function (e) { var b = e.target.closest('[data-loc]'); if (b) locXem(b.getAttribute('data-loc') === 'sai'); });
+  $('#tlXemNhay').addEventListener('click', function (e) { var b = e.target.closest('[data-nhay]'); if (b) nhayXem(+b.getAttribute('data-nhay')); });
+  $('#tlXemAn').addEventListener('change', function () {
+    try { localStorage.setItem(AN_TEN, this.checked ? '1' : '0'); } catch (e) { /* bo qua */ }
+    if (T.xem.de) { veXem(); return; } // so ban dung / ten ban sai ve lai
+    var h = hsXem(); if (!h) return;
+    $('#tlXemTen').textContent = '📄 Bài làm của ' + tenXem(h);
+    try { var d = $('#tlXemKhung').contentDocument.querySelector('.ex-xem-dau'); if (d) d.innerHTML = dauInXem(h); } catch (e) { /* bo qua */ }
+  });
+  document.addEventListener('keydown', function (e) {
+    if ($('#tlXem').hidden || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === 'Escape') { dongXem(); return; }
+    if (/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;
+    if (e.key === 'ArrowLeft') doiBanXem(-1);
+    else if (e.key === 'ArrowRight') doiBanXem(1);
+  });
+
   /* ---------------- Su kien ---------------- */
   document.addEventListener('click', function (e) {
     var t = e.target;
@@ -555,6 +744,8 @@
       });
       return;
     }
+    var xemB = t.closest('#tlBang [data-xem]');
+    if (xemB) { moXem(xemB.getAttribute('data-xem')); return; }
     var tab = t.closest('.tl-tab [data-tab]');
     if (tab) { doiTab(tab.getAttribute('data-tab')); return; }
     var gio = t.closest('[data-gio]');

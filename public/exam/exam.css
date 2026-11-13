@@ -767,3 +767,51 @@ body.ex-in .ex-textarea, body.ex-in .ex-input { background: repeating-linear-gra
   .ex-judge img, .ex-pic img { max-width: 150px; }
   .ex-in-k { border-color: #333; }
 }
+
+/* ============================================================
+   Xem lại bài cho thầy cô (/thi?xem=1, nằm trong khung của /thi-lop) — chỉ áp dụng body.ex-xem
+   ============================================================ */
+html:has(body.ex-xem) { font-size: 17px; }
+body.ex-xem { background-image: none; }
+body.ex-xem .ex-top, body.ex-xem .ex-side { display: none !important; }
+body.ex-xem .ex-layout { grid-template-columns: minmax(0, 1fr); max-width: 1080px; padding: 14px 20px 60px; }
+body.ex-xem .ex-sec-head { top: 0; }
+body.ex-xem .ex-card, body.ex-xem .ex-row { scroll-margin-top: 92px; }
+body.ex-xem .ex-flag { display: none; }
+/* chieu len bang: chu tren nut da khoa van dam (khong mo xam nhu nut disabled mac dinh) */
+:where(body.ex-xem) :where(.ex-opt, .ex-letter, .ex-tf, .ex-chip):where(:disabled) { color: var(--ex-ink); }
+body.ex-xem .ex-explain .zh, body.ex-xem .hanzi { font-family: 'Noto Serif SC', 'Be Vietnam Pro', serif; }
+body.ex-xem .ex-row[data-xl] { border-radius: 12px; padding-left: 10px; padding-right: 10px; margin: 2px -10px; border-top-color: transparent; }
+body.ex-xem .ex-row[data-xl="sai"] { background: var(--ex-red-soft); box-shadow: inset 4px 0 0 var(--ex-red); }
+body.ex-xem .ex-row[data-xl="trong"] { background: #fff8dc; box-shadow: inset 4px 0 0 #e0b400; }
+body.ex-xem .ex-row[data-xl="dung"] { box-shadow: inset 4px 0 0 var(--ex-green); }
+body.ex-xem .ex-explain .ans { font-size: 1rem; }
+body.ex-xem .ex-explain .ans.ex-xem-bad { color: var(--ex-red); }
+.ex-xem-sai, .ex-xem-dung, .ex-xem-trong { display: inline-block; padding: 1px 10px; border-radius: 999px; font-weight: 800; }
+.ex-xem-sai { background: var(--ex-red); color: #fff; }
+.ex-xem-dung { background: var(--ex-green); color: #fff; }
+.ex-xem-trong { background: #f3e2a4; color: #6b5200; }
+.ex-xem-sai .hanzi { font-weight: 700; }
+.ex-xem-viet { font-size: 1.15rem; padding: 4px 6px; }
+.ex-xem-tk { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--ex-line); }
+.ex-xem-tk-so { padding: 3px 12px; border-radius: 999px; font-weight: 600; color: var(--ex-ink); }
+.ex-xem-ai { border: 1.5px solid var(--ex-line); background: var(--ex-card); border-radius: 999px; padding: 3px 12px; font-weight: 700; color: var(--ex-navy); }
+.ex-xem-ai:hover, .ex-xem-ai[aria-expanded="true"] { border-color: var(--ex-navy); background: var(--ex-navy-soft); }
+.ex-xem-ds { flex-basis: 100%; color: var(--ex-mid); }
+.ex-xem-ca { color: var(--ex-green); font-weight: 700; }
+.ex-xem-het { text-align: center; font-weight: 700; color: var(--ex-green); font-size: 1.15rem; }
+.ex-xem-dau { display: none; }
+@keyframes exXemNhay { 0%, 100% { outline-color: transparent; } 30% { outline-color: #e0a100; } }
+.ex-xem-nhay { outline: 3px solid transparent; outline-offset: 3px; animation: exXemNhay 1.4s ease 1; }
+@media (prefers-reduced-motion: reduce) { .ex-xem-nhay { animation: none; } }
+@media print {
+  html:has(body.ex-xem) { font-size: 14px; }
+  body.ex-xem .ex-layout { padding: 0; max-width: none; }
+  body.ex-xem .ex-play, body.ex-xem .ex-xem-ai { display: none !important; }
+  body.ex-xem .ex-xem-ds { display: block !important; }
+  .ex-xem-dau { display: block; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #333; }
+  .ex-xem-dau h1 { font-size: 1.3rem; margin: 0 0 4px; }
+  .ex-xem-dau p { margin: 2px 0; }
+  .ex-xem-sai, .ex-xem-dung, .ex-xem-trong { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body.ex-xem .ex-row[data-xl], body.ex-xem .ex-opt, body.ex-xem .ex-tf, body.ex-xem .ex-letter, body.ex-xem .ex-input { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

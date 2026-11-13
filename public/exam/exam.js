@@ -26,10 +26,14 @@
   };
 
   var QS = new URLSearchParams(location.search);
+  // Xem lai bai cho thay co (/thi?xem=1, nam trong khung cua /thi-lop): chi ve de + danh dau dung / sai,
+  // du lieu (de, bai lam, dung/sai) do trang thay co dua vao qua window.HYV_XEM.ve(...) — xem xemKhoiDong()
+  var XEM = QS.get('xem') === '1';
+  var xem = { dung: null, deThi: false, daBind: false };
   // Thi tren lop (/thi?ma=123456): de, dong ho, phan Nghe do may giao vien dieu khien — xem thi-lop.js
-  var LOP = /^\d{6}$/.test(QS.get('ma') || '') ? QS.get('ma') : '';
+  var LOP = !XEM && /^\d{6}$/.test(QS.get('ma') || '') ? QS.get('ma') : '';
   // Ban in (/thi?in=1&id=...&phan=listen,read&kem=de|phieu|dapan): de giay, phieu tra loi, dap an
-  var IN = !LOP && QS.get('in') === '1';
+  var IN = !XEM && !LOP && QS.get('in') === '1';
   var id = QS.get('id') || 'hsk2-test-1';
   var STORE = LOP ? 'hyv_thilop_' + LOP : 'hyv_exam_' + id;
   // phong: trang thai phong tu may chu, lech: gio may chu - gio may em, tlMay: bai da luu tren may chu (doi may)
@@ -50,7 +54,8 @@
     s.onerror = function () { $('#exMain').innerHTML = '<div class="ex-card"><h3>Không tìm thấy đề thi</h3><p><a href="/exam/">← Quay lại danh sách đề</a></p></div>'; };
     document.head.appendChild(s);
   }
-  if (LOP) lopKhoiDong();
+  if (XEM) xemKhoiDong();
+  else if (LOP) lopKhoiDong();
   else if (!IN && /^\/thi\/?$/.test(location.pathname)) lopNhapMa();
   else taiDe(id);
 
@@ -251,7 +256,7 @@
       // sang phan sau thi phan truoc bi khoa, khong xem lai duoc. Nop bai xong thi hien het de xem lai.
       html += '<div class="ex-sec" data-sec="' + sec.id + '"' + (!IN && !state.submitted && si !== curSec() ? ' hidden' : '') + '>';
       // Thi tren lop / ban in: khong co nut nghe — bai nghe phat qua loa cua thay co
-      var coAudio = sec.audio && !LOP && !IN;
+      var coAudio = sec.audio && !LOP && !IN && !XEM;
       html += '<div class="ex-sec-head" id="sec-' + sec.id + '"><span class="ex-sec-icon">' + (ICONS[sec.icon] || '') + '</span>' +
         '<span class="ex-sec-title">' + esc(sec.name) + ': (' + total + ' câu)</span>' +
         (coAudio ? '<audio id="exAudio" class="ex-sec-audio" controls preload="metadata" src="' + esc(sec.audio) + '" aria-label="Audio cả phần ' + esc(sec.name) + '"></audio>' : '') +
@@ -275,6 +280,7 @@
       html += '</div>';
     });
     $('#exMain').innerHTML = html;
+    if (XEM) { applyAnswersToDom(); return; } // trang xem lai cua thay co: khong co bang cau hoi / dong ho
     if (!state.submitted) { sumEnter(); saveState(); }
     renderSide();
     bindMain();
@@ -901,8 +907,29 @@
     } catch (e) { /* ignore */ }
   }
 
-  function showResult() {
-    var res = state.result;
+  // Dung / sai mot cau: trang xem lai cua thay co lay ket qua may chu da cham (xem.dung) neu co
+  function dungCau(n, v) {
+    if (xem.dung && Object.prototype.hasOwnProperty.call(xem.dung, n)) return !!xem.dung[n];
+    return isRight(n, v);
+  }
+  // Phan "Ban chon / Ban viet ..." sau dap an. Thay co xem bai cua em (?xem=1): "Học sinh ...", "Bỏ trống";
+  // xem de trong (khong co bai cua em) thi bo qua
+  function hsLam(chosen, ok, viet, gt) {
+    if (xem.deThi) return '';
+    if (!XEM) return chosen === undefined ? (viet ? ' · Bạn chưa làm' : ' · Bạn chưa chọn') : ok ? (viet ? ' · Bạn làm đúng' : ' · Bạn chọn đúng') : (viet ? ' · Bạn viết: ' : ' · Bạn chọn: ') + gt;
+    return chosen === undefined ? ' · <b class="ex-xem-trong">Bỏ trống</b>'
+      : ok ? ' · <b class="ex-xem-dung">✓ Học sinh ' + (viet ? 'làm' : 'chọn') + ' đúng</b>'
+      : ' · <b class="ex-xem-sai">✗ Học sinh ' + (viet ? 'viết' : 'chọn') + ': ' + gt + '</b>';
+  }
+  function chuaLam() { return XEM ? '<b class="ex-xem-trong">Bỏ trống</b>' : 'Bạn chưa làm'; }
+  // Dong "Cham so bo" cua cau viet (bai lam cua em) — xem de trong thi khong co
+  function dongCham(ok, noiDung) {
+    if (xem.deThi) return '';
+    return '<div class="ans' + (XEM ? (ok ? ' ex-xem-ok' : ' ex-xem-bad') : '') + '">' + noiDung + '</div>';
+  }
+
+  // Danh dau tung cau sau khi nop — dung chung cho hoc sinh xem lai (showResult) va trang xem lai cua thay co (xemVe)
+  function danhDauBai() {
     // Nop xong: mo lai tat ca cac phan de xem dap an
     $all('#exMain .ex-sec').forEach(function (el) { el.hidden = false; });
     $all('#exMain .ex-next').forEach(function (el) { el.hidden = true; });
@@ -910,10 +937,10 @@
     $all('#exMain .ex-sum-write').forEach(function (el) { el.hidden = false; });
     // đánh dấu từng câu
     allQuestions.forEach(function (it) {
-      var q = it.q, chosen = state.answers[q.n], ok = isRight(q.n, chosen);
+      var q = it.q, chosen = state.answers[q.n], ok = dungCau(q.n, chosen);
       if (chosen === '') chosen = undefined;
       var card = document.getElementById('q-' + q.n);
-      if (card) card.classList.add(chosen === undefined ? 'is-skip' : ok ? 'is-correct' : 'is-wrong');
+      if (card && !xem.deThi) card.classList.add(chosen === undefined ? 'is-skip' : ok ? 'is-correct' : 'is-wrong');
       $all('#exMain [data-n="' + q.n + '"][data-v]').forEach(function (b) {
         var v = b.getAttribute('data-v'); if (v === 'true') v = true; else if (v === 'false') v = false;
         b.classList.remove('sel');
@@ -923,9 +950,9 @@
       });
       $all('#exMain [data-chip="' + q.n + '"], #exMain [data-placed="' + q.n + '"]').forEach(function (c) { c.disabled = true; });
       var inp = $('#exMain [data-input="' + q.n + '"]');
-      if (inp) { inp.disabled = true; inp.classList.add(chosen === undefined ? 'skip' : ok ? 'ok' : 'bad'); }
+      if (inp) { inp.disabled = true; if (!xem.deThi) inp.classList.add(chosen === undefined ? 'skip' : ok ? 'ok' : 'bad'); }
       var line = $('#exMain [data-line="' + q.n + '"]');
-      if (line) line.classList.add(chosen === undefined ? 'skip' : ok ? 'ok' : 'bad');
+      if (line && !xem.deThi) line.classList.add(chosen === undefined ? 'skip' : ok ? 'ok' : 'bad');
       var clrBtn = $('#exMain [data-clear="' + q.n + '"]');
       if (clrBtn) clrBtn.hidden = true;
       var ex = $('[data-explain="' + q.n + '"]');
@@ -933,24 +960,26 @@
         var ansTxt = typeof q.answer === 'boolean' ? (q.answer ? '✓ Đúng' : '✗ Sai') : q.answer;
         var ec = it.essay ? essayCheck(q, chosen) : null;
         var sc = it.sum ? summaryCheck(q, chosen) : null;
+        var aiBox = chosen !== undefined && !XEM ? '<div class="ex-ai-box" data-ai="' + q.n + '"><button type="button" class="ex-btn-ghost ex-ai-btn" data-ai-cham="' + q.n + '">Nhờ AI chấm chi tiết</button></div>' : '';
+        var moMau = XEM ? ' open' : ''; // thay co xem bai: mo san bai mau canh bai cua em
         var h = it.sum
-          ? '<div class="ans">' + (chosen === undefined ? 'Bạn chưa làm' : 'Chấm sơ bộ: ' + (ok ? 'đạt' : 'chưa đạt') + ' — ' + sc.n + ' chữ' +
-              (sc.n < (q.minHan || 300) ? ' · bài cần khoảng ' + (q.soChu || 400) + ' chữ' : sc.n > sc.max ? ' · bài quá dài, cần khoảng ' + (q.soChu || 400) + ' chữ' : '')) + '</div>' +
-            (chosen !== undefined ? '<div class="ex-ai-box" data-ai="' + q.n + '"><button type="button" class="ex-btn-ghost ex-ai-btn" data-ai-cham="' + q.n + '">Nhờ AI chấm chi tiết</button></div>' : '') +
+          ? dongCham(ok, chosen === undefined ? chuaLam() : 'Chấm sơ bộ: ' + (ok ? 'đạt' : 'chưa đạt') + ' — ' + sc.n + ' chữ' +
+              (sc.n < (q.minHan || 300) ? ' · bài cần khoảng ' + (q.soChu || 400) + ' chữ' : sc.n > sc.max ? ' · bài quá dài, cần khoảng ' + (q.soChu || 400) + ' chữ' : '')) +
+            aiBox +
             '<details class="ex-essay-mau"><summary>Bài đọc gốc</summary><div class="hanzi ex-sum-goc">' + paras(q.text) + '</div>' + (q.textVn ? '<div class="vn">' + paras(q.textVn) + '</div>' : '') + '</details>' +
-            '<details class="ex-essay-mau"><summary>Bài tóm tắt mẫu</summary><div class="hanzi">' + paras(q.answer) + '</div>' + (q.vn ? '<div class="vn">' + paras(q.vn) + '</div>' : '') + '</details>'
+            '<details class="ex-essay-mau"' + moMau + '><summary>Bài tóm tắt mẫu</summary><div class="hanzi">' + paras(q.answer) + '</div>' + (q.vn ? '<div class="vn">' + paras(q.vn) + '</div>' : '') + '</details>'
           : it.essay
-          ? '<div class="ans">' + (chosen === undefined ? 'Bạn chưa làm' : 'Chấm sơ bộ: ' + (ok ? 'đạt' : 'chưa đạt') + ' — ' + ec.n + ' chữ' +
+          ? dongCham(ok, chosen === undefined ? chuaLam() : 'Chấm sơ bộ: ' + (ok ? 'đạt' : 'chưa đạt') + ' — ' + ec.n + ' chữ' +
               (q.words ? (ec.thieu.length ? ' · còn thiếu: <span class="hanzi">' + esc(ec.thieu.join('、')) + '</span>' : ' · dùng đủ 5 từ') : '') +
-              (ec.n < (q.minHan || 60) ? ' · cần khoảng 80 chữ' : '')) + '</div>' +
-            (chosen !== undefined ? '<div class="ex-ai-box" data-ai="' + q.n + '"><button type="button" class="ex-btn-ghost ex-ai-btn" data-ai-cham="' + q.n + '">Nhờ AI chấm chi tiết</button></div>' : '') +
-            '<details class="ex-essay-mau"><summary>Bài mẫu tham khảo</summary><div class="hanzi">' + esc(q.answer) + '</div>' + (q.vn ? '<div class="vn">' + esc(q.vn) + '</div>' : '') + '</details>'
+              (ec.n < (q.minHan || 60) ? ' · cần khoảng 80 chữ' : '')) +
+            aiBox +
+            '<details class="ex-essay-mau"' + moMau + '><summary>Bài mẫu tham khảo</summary><div class="hanzi">' + esc(q.answer) + '</div>' + (q.vn ? '<div class="vn">' + esc(q.vn) + '</div>' : '') + '</details>'
           : it.pw
-          ? '<div class="ans">' + (chosen === undefined ? 'Bạn chưa làm' : ok ? 'Chấm sơ bộ: đạt (có dùng 「' + esc(q.word) + '」, câu đủ ý)' : 'Chấm sơ bộ: chưa đạt — câu phải dùng 「' + esc(q.word) + '」 và dài khoảng 5–40 chữ') + '</div>' +
+          ? dongCham(ok, chosen === undefined ? chuaLam() : ok ? 'Chấm sơ bộ: đạt (có dùng 「' + esc(q.word) + '」, câu đủ ý)' : 'Chấm sơ bộ: chưa đạt — câu phải dùng 「' + esc(q.word) + '」 và dài khoảng 5–40 chữ') +
             '<div class="ans">Câu mẫu: <span class="hanzi">' + esc(q.answer) + '</span>' + (q.accept && q.accept.length ? '<br>Cách khác: <span class="hanzi">' + esc(q.accept.join(' / ')) + '</span>' : '') + '</div>'
           : it.text
-          ? '<div class="ans">Đáp án: <span class="hanzi">' + esc(q.answer) + '</span>' + (chosen === undefined ? ' · Bạn chưa làm' : ok ? ' · Bạn làm đúng' : ' · Bạn viết: <span class="hanzi">' + esc(chosen) + '</span>') + '</div>'
-          : '<div class="ans">Đáp án: ' + esc(ansTxt) + (chosen === undefined ? ' · Bạn chưa chọn' : ok ? ' · Bạn chọn đúng' : ' · Bạn chọn: ' + esc(typeof chosen === 'boolean' ? (chosen ? '✓' : '✗') : chosen)) + '</div>';
+          ? '<div class="ans">Đáp án: <span class="hanzi">' + esc(q.answer) + '</span>' + hsLam(chosen, ok, true, '<span class="hanzi">' + esc(chosen) + '</span>') + '</div>'
+          : '<div class="ans">Đáp án: ' + esc(ansTxt) + hsLam(chosen, ok, false, esc(typeof chosen === 'boolean' ? (chosen ? '✓' : '✗') : chosen)) + '</div>';
         if (q.items) {
           // Ghep ba cau theo dung thu tu; cau nao khong co dau cau o cuoi thi noi bang dau phay
           var doan = String(q.answer).split('').map(function (k) { var x = q.items.filter(function (y) { return y.k === k; })[0]; return x ? x.zh : ''; });
@@ -964,6 +993,11 @@
         ex.innerHTML = h; ex.hidden = false;
       }
     });
+  }
+
+  function showResult() {
+    var res = state.result;
+    danhDauBai();
     // sidebar kết quả
     var pct = Math.round(res.score / res.max * 100);
     var C = 2 * Math.PI * 80;
@@ -1295,6 +1329,122 @@
     el.classList.add('on');
     clearTimeout(lop.toast);
     lop.toast = setTimeout(function () { el.classList.remove('on'); }, 4000);
+  }
+
+  /* ============================================================
+     Xem lại bài cho thầy cô (/thi?xem=1) — trang này nằm trong khung của /thi-lop.
+     Trang thầy cô gọi window.HYV_XEM.ve({ data, tl, dung, deThi, dau, tk }): đề được vẽ bằng chính
+     render() + danhDauBai() của phòng thi, nên giống hệt màn xem lại của học sinh.
+     ============================================================ */
+  function xemKhoiDong() {
+    document.body.classList.add('ex-xem');
+    $('#exMain').innerHTML = '<div class="ex-card"><p>Trang này mở từ màn hình <a href="/thi-lop">Thi trên lớp</a> của thầy cô.</p></div>';
+    $('#exSide').innerHTML = '';
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-ai-sai]');
+      if (!b) return;
+      var ds = b.parentNode.querySelector('.ex-xem-ds');
+      if (ds) { ds.hidden = !ds.hidden; b.setAttribute('aria-expanded', String(!ds.hidden)); }
+    });
+    window.HYV_XEM = { ve: xemVe, loc: xemLoc, toi: xemToi, dungNghe: function () { stopClip(); } };
+  }
+  function xemO(n) { return $('#exMain .ex-card[data-n="' + n + '"], #exMain .ex-row[data-n="' + n + '"]'); }
+  // Cau sap xep: may chu chi luu chuoi dap an em xep -> doan lai thu tu cac manh de ve nhu luc em lam
+  function xemThuTu(q, v) {
+    if (typeof v !== 'string' || !v) return null;
+    if (q.items) {
+      var ks = q.items.map(function (x) { return x.k; });
+      var o = v.split('').map(function (k) { return ks.indexOf(k); });
+      return o.indexOf(-1) === -1 ? o : null;
+    }
+    if (!q.words) return null;
+    var con = v, ord = [];
+    while (con) {
+      var tot = -1;
+      q.words.forEach(function (w, i) {
+        if (ord.indexOf(i) === -1 && w && con.indexOf(w) === 0 && (tot === -1 || w.length > q.words[tot].length)) tot = i;
+      });
+      if (tot === -1) return null;
+      ord.push(tot);
+      con = con.slice(q.words[tot].length);
+    }
+    return ord;
+  }
+  // o.data: de (chuoi JSON, da loc phan thi + phan may soan) · o.tl: bai lam · o.dung: dung/sai may chu da cham
+  // o.deThi: chi xem de + dap an · o.tk: { n: { d, t, sai: [ten] | null } } so ban dung tung cau · o.dau: dau trang khi in
+  // Tra ve { n: 'dung' | 'sai' | 'trong' } cho thanh nhay cau cua trang thay co
+  function xemVe(o) {
+    stopClip();
+    data = JSON.parse(o.data);
+    state = { answers: o.tl || {}, startedAt: 0, submitted: true, result: null, order: {} };
+    xem.dung = o.dung || null;
+    xem.deThi = !!o.deThi;
+    questionIndex = {};
+    indexQuestions();
+    // de trong: o xep cau hien san thu tu dung
+    allQuestions.forEach(function (it) { var t = xemThuTu(it.q, xem.deThi ? it.q.answer : state.answers[it.q.n]); if (t) state.order[it.q.n] = t; });
+    render();
+    danhDauBai();
+    // the nhom (vd cau 41–45 chung kho tu) trung id voi cau dau nhom: mau dung/sai chi dat tren tung dong cau
+    $all('#exMain [data-group]').forEach(function (g) { g.classList.remove('is-correct', 'is-wrong', 'is-skip'); });
+    if (!xem.daBind) { xem.daBind = true; bindMain(); }
+    $all('#exMain [data-line]').forEach(function (line) {
+      var n = parseInt(line.getAttribute('data-line'), 10), v = state.answers[n];
+      if (state.order[n]) { if (xem.deThi) line.classList.add('ok'); return; }
+      line.innerHTML = v ? '<span class="hanzi ex-xem-viet">' + esc(v) + '</span>' : '<span class="ex-arrange-ph">' + (xem.deThi ? '' : 'Bỏ trống') + '</span>';
+    });
+    var kq = {};
+    allQuestions.forEach(function (it) {
+      var n = it.q.n, v = state.answers[n];
+      kq[n] = v === undefined || v === '' ? 'trong' : dungCau(n, v) ? 'dung' : 'sai';
+      var el = xemO(n);
+      if (el && !xem.deThi) el.setAttribute('data-xl', kq[n]);
+      var t = o.tk && o.tk[n], ex = $('[data-explain="' + n + '"]');
+      if (!t || !ex) return;
+      var pt = t.t ? Math.round(t.d / t.t * 100) : 0;
+      ex.insertAdjacentHTML('beforeend', '<div class="ex-xem-tk"><span class="ex-xem-tk-so" style="background:hsl(' + Math.round(pt * 1.2) + ' 62% 86%)"><b>' + t.d + '/' + t.t + '</b> bạn đúng</span>' +
+        (t.sai && t.sai.length ? '<button type="button" class="ex-xem-ai" data-ai-sai="' + n + '" aria-expanded="false">Ai sai? (' + t.sai.length + ')</button><span class="ex-xem-ds" hidden>' + t.sai.map(esc).join(', ') + '</span>'
+          : t.sai ? '<span class="ex-xem-ca">Cả lớp làm đúng</span>' : '') + '</div>');
+    });
+    if (o.dau) $('#exMain').insertAdjacentHTML('afterbegin', '<div class="ex-xem-dau">' + o.dau + '</div>');
+    document.title = data.title + ' — Xem lại';
+    $all('#exMain img').forEach(function (im) { im.loading = 'eager'; }); // in ra giay du hinh
+    $all('#exMain textarea').forEach(function (t) { t.style.height = 'auto'; t.style.height = (t.scrollHeight + 6) + 'px'; });
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    return kq;
+  }
+  // Chi cau sai (va bo trong): an cau dung, an luon nhom / dang bai / phan thi khong con cau nao
+  function xemLoc(chiSai) {
+    $all('#exMain [data-xl]').forEach(function (el) { el.hidden = chiSai && el.getAttribute('data-xl') === 'dung'; });
+    $all('#exMain [data-group]').forEach(function (g) { g.hidden = chiSai && !$('[data-xl]:not([hidden])', g); });
+    var con = 0;
+    $all('#exMain .ex-sec').forEach(function (sec) {
+      var intro = null, co = false, coPhan = false;
+      var dong = function () {
+        if (!intro) return;
+        intro.hidden = chiSai && !co;
+        var vd = intro.nextElementSibling;
+        if (vd && vd.classList.contains('ex-example-part')) vd.hidden = intro.hidden;
+      };
+      Array.prototype.forEach.call(sec.children, function (el) {
+        if (el.classList.contains('ex-part-intro')) { dong(); intro = el; co = false; return; }
+        if (el.matches('[data-xl], [data-group]') && !el.hidden) { co = true; coPhan = true; }
+      });
+      dong();
+      sec.hidden = chiSai && !coPhan;
+      if (!sec.hidden) con++;
+    });
+    var tb = $('#exXemHet');
+    if (!tb) { tb = document.createElement('div'); tb.id = 'exXemHet'; tb.className = 'ex-card ex-xem-het'; tb.textContent = 'Không có câu sai nào — em làm đúng hết.'; $('#exMain').appendChild(tb); }
+    tb.hidden = !chiSai || con > 0;
+  }
+  function xemToi(n) {
+    var el = xemO(n);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.classList.remove('ex-xem-nhay');
+    void el.offsetWidth;
+    el.classList.add('ex-xem-nhay');
   }
 
   /* ============================================================

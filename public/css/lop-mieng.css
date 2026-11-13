@@ -142,3 +142,8 @@ html.lmi-open, html.lmi-open body { overflow: hidden; }
 .lmi-nt-qua button { font: inherit; font-weight: 700; font-size: 0.86rem; padding: 6px 10px; border-radius: 999px; border: 2px solid #d8bf94; background: #fff; cursor: pointer; }
 .lmi-nt-qua button.on { background: #ffd56b; border-color: #2b1d3a; }
 .lmi-nt-nut { display: flex; flex-wrap: wrap; gap: 8px; }
+/* Hoan san vat (Thuong nong trai) */
+.lmi-nt-sp { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0; }
+.lmi-nt-sp label { display: flex; flex-direction: column; gap: 4px; font-weight: 700; color: var(--nau); font-size: .9rem; }
+.lmi-nt-sp select, .lmi-nt-sp input { font: inherit; font-size: 1rem; padding: 8px 10px; border: 2px solid #e0c99f; border-radius: 10px; background: #fff; color: var(--vien); }
+.lmi-nt-sp input { width: 90px; }

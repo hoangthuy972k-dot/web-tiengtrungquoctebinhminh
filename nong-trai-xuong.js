@@ -256,16 +256,24 @@ function gan(app, d, h, c) {
   const nc = (f) => { f.nc = f.nc || {}; f.nc.ds = f.nc.ds || []; f.nc.log = f.nc.log || []; f.nc.nid = f.nc.nid || 1; return f.nc; };
   function ghiLog(f, w, s) { const n = nc(f); n.log.unshift({ t: Date.now(), id: w ? w.id : 0, ai: w ? w.ten.zh : '', s }); n.log = n.log.slice(0, NC_LOG); }
   // Giao don hang ngay ma kho da du (nguoi van chuyen)
+  // KHONG tu dung hang quy (gia ban >= HANG_QUY_GIA, hang hiem: vd trung khung long) — hoc sinh phan anh bi "mat trung":
+  // don can hang quy thi de em tu giao bang tay.
+  const HANG_QUY_GIA = 95;
+  const laHangQuy = (k) => !SP[k] || SP[k].hiem || (SP[k].ban || 0) >= HANG_QUY_GIA;
   function giaoDon(f, me) {
     const ds = h.donHomNay(f, me, ngay()).ds;
     let n = 0, xu = 0;
+    const dung = {};
     ds.forEach((o, i) => {
       if (f.don.x[i]) return;
+      if (Object.keys(o.can).some(laHangQuy)) return;
       if (!Object.keys(o.can).every((k) => (f.kho[k] || 0) >= o.can[k])) return;
-      Object.keys(o.can).forEach((k) => truKho(f, k, o.can[k]));
+      Object.keys(o.can).forEach((k) => { truKho(f, k, o.can[k]); dung[k] = (dung[k] || 0) + o.can[k]; });
       f.don.x[i] = 1; f.xu += o.xu; f.xp += o.xp; n++; xu += o.xu;
     });
-    return { n, xu };
+    // ghi ro da lay hang gi trong kho de em biet hang di dau
+    const ghi = Object.keys(dung).map((k) => dung[k] + ' ' + SP[k].vn.toLowerCase()).join(', ');
+    return { n, xu, ghi };
   }
   // Moi lan em mo nong trai: nhan cong lam viec (chi ngay em hoc du NC_SAO sao). Tra ve true neu doi f
   async function chayNc(user, f) {
@@ -320,7 +328,7 @@ function gan(app, d, h, c) {
         const ra = thuXong(f), so = Object.values(ra).reduce((s, m) => s + m, 0);
         if (so) { st.xg += so; doi = true; ghiLog(f, w, 'chở ' + so + ' mẻ hàng nhà máy về kho'); tom.push({ s: w.ten.zh + ' chở ' + so + ' mẻ hàng về kho', sp: ra }); }
         const g = giaoDon(f, me);
-        if (g.n) { st.giao += g.n; doi = true; ghiLog(f, w, 'giao ' + g.n + ' đơn hàng (+' + g.xu + ' xu)'); tom.push({ s: w.ten.zh + ' giao ' + g.n + ' đơn · +' + g.xu + ' xu' }); }
+        if (g.n) { st.giao += g.n; doi = true; ghiLog(f, w, 'giao ' + g.n + ' đơn hàng (+' + g.xu + ' xu) · lấy trong kho: ' + g.ghi); tom.push({ s: w.ten.zh + ' giao ' + g.n + ' đơn (dùng ' + g.ghi + ') · +' + g.xu + ' xu' }); }
       }
     }
     if (tom.length) { n.tb = (n.tb || []).concat(tom).slice(-6); doi = true; }

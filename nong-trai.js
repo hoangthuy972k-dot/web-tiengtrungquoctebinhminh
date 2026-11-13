@@ -2553,7 +2553,7 @@ module.exports = function ganNongTrai(app, d) {
   // Thi dua giua cac nong trai + vuon tu kho + co thuong + cay cham chi
   thiDua = require('./nong-trai-thidua')(app, d, {
     doc, ghi, lanLuot, haiLuot, loi, traLoi, trangThai, lvTuXp, saoHoc, taiCongDong, coTheChoi, ghiNk, moQua, ghiOn, tuHocCua, taoCau,
-    MO_TN, GIAI, giaiCua, KHIEN_SAO, CAY, CON, CON_TOI_DA,
+    MO_TN, GIAI, giaiCua, KHIEN_SAO, CAY, CON, CON_TOI_DA, SP,
   }, chung);
   // Kinh te nong trai 2026-11-13: ban do phieu luu (cau hoi theo vung dat), cho nong san + tiem rieng + dau gia,
   // nha may che bien + nhan cong + xuat khau sang cac vung dat

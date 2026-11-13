@@ -5110,11 +5110,12 @@
         if (!q) return;
         var m = q.loai === 'xu' ? { zh: '铜钱', py: 'tóngqián', vn: q.n + ' xu', hinh: 'ic-xu' }
           : q.loai === 'con' ? (function () { var x = tenMon(q.k); return { zh: x.zh, py: x.py, vn: x.vn + ' (vật nuôi quý)', hinh: q.k }; })()
+          : q.loai === 'sp' ? (function () { var x = S.cat.SP[q.k] || {}; return { zh: x.zh || '', py: x.py || '', vn: q.n + ' ' + (x.vn || '').toLowerCase(), hinh: 'sp-' + q.k }; })()
           : (function () { var x = S.cat.CAY[q.k] || {}; return { zh: x.zh || '', py: x.py || '', vn: q.n + ' hạt ' + (x.vn || '').toLowerCase() + ' quý (gieo miễn phí)', hinh: 'sp-' + q.k }; })();
         tieng('len');
         moBangNho('<div class="nt-chuc nt-co-thuong"><span class="nt-co-nhan">👩‍🏫 Cô thưởng</span><h2>' + (/^🏅/.test(q.ly || '') ? '' : '🎁 ') + esc(q.ly || 'Cô thưởng cho em') + '</h2>' +
           '<div class="nt-co-qua">' + img(m.hinh) + '<b lang="zh">' + esc(m.zh) + '</b><small>' + esc(m.py) + ' · ' + esc(m.vn) + '</small></div>' +
-          '<p>' + (q.loai === 'con' ? 'Đã cất vào <b>Kho → Túi đồ</b> — đặt lên nông trại khi nào em muốn.' : q.loai === 'hat' ? 'Chạm ô đất trống để gieo — hạt quý không tốn xu.' : 'Đã cộng vào xu của em.') + '</p>' +
+          '<p>' + (q.loai === 'sp' ? 'Đã cất vào <b>Kho</b> của em.' : q.loai === 'con' ? 'Đã cất vào <b>Kho → Túi đồ</b> — đặt lên nông trại khi nào em muốn.' : q.loai === 'hat' ? 'Chạm ô đất trống để gieo — hạt quý không tốn xu.' : 'Đã cộng vào xu của em.') + '</p>' +
           '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh nt-nut-to" data-dong>Cảm ơn cô! 谢谢老师！</button></div></div>');
         doc('谢谢老师');
         var b = $('#ntBangThan [data-dong]');

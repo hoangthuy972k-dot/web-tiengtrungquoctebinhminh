@@ -454,7 +454,9 @@ module.exports = function ganThiDua(app, d, h, c) {
 
   /* ======================= 6) CO THUONG ======================= */
   // Qua cho san: farm_chung 'cothuong:<uid>' = [{ id, loai, xu?, ly, oral?, t }]
-  const LOAI_CO = { xu50: 'xu50', xu100: 'xu100', hat: 'hat', con: 'con' };
+  // sp = "Hoàn sản vật": thay co tra lai 1 mon hang em bi mat (vd trung khung long) — chi 1 em, toi da 20 mon
+  const LOAI_CO = { xu50: 'xu50', xu100: 'xu100', hat: 'hat', con: 'con', sp: 'sp' };
+  const SP_HOAN_TOI_DA = 20;
   async function themCo(uid, qua) {
     await c.khoaC('cothuong:' + uid, async () => {
       const ds = (await c.docC('cothuong:' + uid)) || [];
@@ -525,6 +527,11 @@ module.exports = function ganThiDua(app, d, h, c) {
     const lv = h.lvTuXp(f.xp);
     if (q.loai === 'xu50' || q.loai === 'xu100') { f.xu += CO_XU[q.loai]; return { loai: 'xu', n: CO_XU[q.loai] }; }
     if (q.loai === 'diem') { const n = Math.max(0, Math.min(3 * DT_XU, Math.round(Number(q.xu)) || 0)); f.xu += n; return { loai: 'xu', n }; }
+    if (q.loai === 'sp') {
+      const n = Math.max(0, Math.min(SP_HOAN_TOI_DA, Math.round(Number(q.n)) || 0));
+      if (h.SP[q.k] && n) { f.kho[q.k] = (f.kho[q.k] || 0) + n; return { loai: 'sp', k: q.k, n }; }
+      return { loai: 'xu', n: 0 };
+    }
     if (q.loai === 'con') {
       const k = conQuy(f, lv);
       if (k) { f.tui[k] = (f.tui[k] || 0) + 1; return { loai: 'con', k, n: 1 }; }
@@ -554,6 +561,13 @@ module.exports = function ganThiDua(app, d, h, c) {
   app.post('/api/admin/farm-thuong', d.requireAdmin, d.asyncRoute(async (req, res) => {
     const b = req.body || {}, loai = LOAI_CO[String(b.loai || '')], classId = String(b.classId || ''), rosterId = String(b.rosterId || '');
     if (!loai) return res.status(400).json({ error: 'Chọn loại quà.' });
+    let spK = '', spN = 0;
+    if (loai === 'sp') {
+      spK = String(b.k || ''); spN = Math.round(Number(b.n) || 0);
+      if (!h.SP[spK]) return res.status(400).json({ error: 'Chọn món cần hoàn lại.' });
+      if (spN < 1 || spN > SP_HOAN_TOI_DA) return res.status(400).json({ error: 'Số lượng từ 1 đến ' + SP_HOAN_TOI_DA + '.' });
+      if (rosterId === '*') return res.status(400).json({ error: 'Hoàn sản vật chỉ cho từng bạn, không cho cả lớp.' });
+    }
     const now = Date.now();
     while (coLog.length && now - coLog[0] > 3600000) coLog.shift();
     if (coLog.length >= 60) return res.status(429).json({ error: 'Thưởng nhiều quá trong 1 giờ — đợi một lúc nhé.' });
@@ -562,7 +576,9 @@ module.exports = function ganThiDua(app, d, h, c) {
     if (!ro.length) return res.status(404).json({ error: 'Không tìm thấy học sinh trong lớp này.' });
     const coTk = ro.filter((r) => r.userId), lan = 'm' + now.toString(36);
     for (const r of coTk) {
-      await themCo(r.userId, { id: lan + r.id, lan, loai, ly: String(b.ly || '').trim().slice(0, 80) || 'Cô thưởng cho em', t: now });
+      const qua = { id: lan + r.id, lan, loai, ly: String(b.ly || '').trim().slice(0, 80) || 'Cô thưởng cho em', t: now };
+      if (loai === 'sp') { qua.k = spK; qua.n = spN; qua.ly = String(b.ly || '').trim().slice(0, 80) || 'Cô hoàn lại ' + spN + ' ' + h.SP[spK].vn.toLowerCase() + ' cho em'; }
+      await themCo(r.userId, qua);
     }
     coLog.push(now);
     const log = (await c.docC('cothuong:log')) || [];
@@ -570,6 +586,11 @@ module.exports = function ganThiDua(app, d, h, c) {
     await c.ghiC('cothuong:log', log.slice(0, 100));
     res.json({ ok: true, lan, so: coTk.length, khongTk: ro.length - coTk.length });
   }));
+  // Danh muc san vat de thay co chon khi "Hoàn sản vật" (khong gom hang mua o cho)
+  app.get('/api/admin/farm-sp', d.requireAdmin, (req, res) => {
+    res.json({ ds: Object.keys(h.SP).filter((k) => !h.SP[k].nl).map((k) => ({ k, vn: h.SP[k].vn, zh: h.SP[k].zh, ban: h.SP[k].ban || 0 }))
+      .sort((a, b) => b.ban - a.ban) });
+  });
   // Hoan tac 1 lan thuong tay (qua chua nhan thi rut lai)
   app.delete('/api/admin/farm-thuong/:lan', d.requireAdmin, d.asyncRoute(async (req, res) => {
     const lan = String(req.params.lan || '');

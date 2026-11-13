@@ -9,8 +9,10 @@
   var PW_KEY = 'hyv_admin_pw', LIST_KEY = 'hyv_ufo_lists', PREF_KEY = 'hyv_mieng_nguon';
   var NOI_DUNG = ['Viết chữ Hán', 'Đọc bài', 'Từ vựng', 'Ngữ pháp', 'Hội thoại'];
   // Thuong nong trai (POST /api/admin/farm-thuong): qua cho san, em mo nong trai la nhan. Diem 9–10 tu gui qua.
-  var QUA_NT = [['xu50', '🪙 50 xu'], ['xu100', '🪙 100 xu'], ['hat', '🌱 Hạt giống quý'], ['con', '🐄 Vật nuôi quý']];
+  var QUA_NT = [['xu50', '🪙 50 xu'], ['xu100', '🪙 100 xu'], ['hat', '🌱 Hạt giống quý'], ['con', '🐄 Vật nuôi quý'], ['sp', '📦 Hoàn sản vật']];
   var quaChon = 'xu50';
+  // "Hoàn sản vật": tra lai mon hang em bi mat (chi tung ban). Danh muc lay tu GET /api/admin/farm-sp
+  var SP_DS = null, spK = '', spN = 1;
   var S = { built: false, src: '', classes: [], kids: [], chon: null, loc: '', homNay: [], noiDung: '', dangTai: false, loi: '',
     xem: 'cham', bLoc: 'tat', bSx: 'no', bKy: 'all' };
   var root;
@@ -57,6 +59,11 @@
       '<div class="lmi-bao" id="lmiBao" hidden></div>';
     document.body.appendChild(root);
     root.addEventListener('click', bam);
+    // nho mon / so luong "Hoàn sản vật" khi bang ve lai
+    root.addEventListener('change', function (e) {
+      if (e.target.id === 'lmiSpK') spK = e.target.value;
+      if (e.target.id === 'lmiSpN') spN = Math.max(1, Math.min(20, Math.round(Number(e.target.value)) || 1));
+    });
     $('#lmiNguon').addEventListener('change', function () { chonNguon(this.value); });
     $('#lmiTim').addEventListener('input', function () { S.loc = this.value; veDs(); });
     $('#lmiKhoaForm').addEventListener('submit', function (e) {
@@ -300,16 +307,38 @@
       '<p class="lmi-nt-phu">Quà chờ sẵn — em mở Nông trại là nhận. Điểm 9–10 tự gửi quà (10: vật nuôi quý, 9: hạt giống quý) nếu bạn đã chọn tên trong lớp.</p>' +
       '<div class="lmi-nt-qua" role="group" aria-label="Loại quà">' + QUA_NT.map(function (q) {
         return '<button type="button" data-qua="' + q[0] + '" class="' + (quaChon === q[0] ? 'on' : '') + '">' + q[1] + '</button>';
-      }).join('') + '</div><div class="lmi-nt-nut">' +
+      }).join('') + '</div>' +
+      (quaChon === 'sp' ? htmlHoanSp(k) : '<div class="lmi-nt-nut">' +
       (k ? '<button type="button" class="lmi-nut lmi-nut-vang" data-thuong="' + esc(k.id) + '">🎁 Thưởng ' + esc(k.name) + '</button>' : '') +
-      '<button type="button" class="lmi-nut" data-thuong="*">🎁 Thưởng cả lớp</button></div></div>';
+      '<button type="button" class="lmi-nut" data-thuong="*">🎁 Thưởng cả lớp</button></div>') + '</div>';
+  }
+  function htmlHoanSp(k) {
+    if (!SP_DS) {
+      api('/api/admin/farm-sp').then(function (d) { SP_DS = d.ds || []; if (!spK && SP_DS.length) spK = SP_DS[0].k; vePhai(); }, function (e) { bao('⚠️ ' + esc(e.message)); });
+      return '<p class="lmi-nt-phu">Đang tải danh sách sản vật…</p>';
+    }
+    if (!k) return '<p class="lmi-nt-phu">Bấm tên bạn bị mất hàng ở danh sách bên trái để hoàn lại (chỉ hoàn cho từng bạn).</p>';
+    return '<div class="lmi-nt-sp"><label>Món <select id="lmiSpK">' + SP_DS.map(function (x) {
+        return '<option value="' + esc(x.k) + '"' + (x.k === spK ? ' selected' : '') + '>' + esc(x.vn) + ' ' + esc(x.zh) + '</option>';
+      }).join('') + '</select></label>' +
+      '<label>Số lượng <input type="number" id="lmiSpN" min="1" max="20" value="' + spN + '"></label></div>' +
+      '<div class="lmi-nt-nut"><button type="button" class="lmi-nut lmi-nut-vang" data-thuong="' + esc(k.id) + '">📦 Hoàn lại cho ' + esc(k.name) + '</button></div>';
   }
   function thuongNt(rid, nut) {
     var ten = rid === '*' ? 'cả lớp' : ((S.kids.filter(function (x) { return x.id === rid; })[0] || {}).name || '');
     var tenQua = (QUA_NT.filter(function (q) { return q[0] === quaChon; })[0] || ['', ''])[1];
     if (rid === '*' && !confirm('Thưởng ' + tenQua + ' cho cả lớp?')) return;
+    var than = { classId: S.src.slice(3), rosterId: rid, loai: quaChon, ly: 'Cô thưởng cho em' + (S.noiDung ? ' (' + S.noiDung.toLowerCase() + ')' : '') };
+    if (quaChon === 'sp') {
+      var selK = $('#lmiSpK'), selN = $('#lmiSpN');
+      spK = selK ? selK.value : spK; spN = Math.max(1, Math.min(20, Math.round(Number(selN ? selN.value : spN)) || 1));
+      var mon = (SP_DS || []).filter(function (x) { return x.k === spK; })[0];
+      if (!mon) { bao('⚠️ Chọn món cần hoàn lại.'); return; }
+      than.k = spK; than.n = spN; than.ly = 'Cô hoàn lại ' + spN + ' ' + mon.vn.toLowerCase() + ' cho em';
+      tenQua = spN + ' ' + mon.vn.toLowerCase();
+    }
     nut.disabled = true;
-    api('/api/admin/farm-thuong', { method: 'POST', body: JSON.stringify({ classId: S.src.slice(3), rosterId: rid, loai: quaChon, ly: 'Cô thưởng cho em' + (S.noiDung ? ' (' + S.noiDung.toLowerCase() + ')' : '') }) }).then(function (d) {
+    api('/api/admin/farm-thuong', { method: 'POST', body: JSON.stringify(than) }).then(function (d) {
       nut.disabled = false;
       var el = $('#lmiBao');
       el.innerHTML = '🎁 Đã gửi ' + esc(tenQua) + ' cho <b>' + esc(ten) + '</b> (' + d.so + ' bạn có tài khoản' + (d.khongTk ? ', ' + d.khongTk + ' bạn chưa chọn tên trong lớp' : '') + ') <button type="button" class="lmi-nut-nho" data-huynt="' + esc(d.lan) + '">↶ Hoàn tác</button>';

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Găng đấm đỏ đấm trúng thẻ đáp án, bao cát lật đật đứng bên cạnh, trước camera">
+  <defs>
+    <linearGradient id="vddam-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b693ff"/>
+      <stop offset="1" stop-color="#6a3fc4"/>
+    </linearGradient>
+    <path id="vddam-spark" d="M0 -7 Q1 -1 7 0 Q1 1 0 7 Q-1 1 -7 0 Q-1 -1 0 -7 Z" fill="#fff8ec"/>
+  </defs>
+
+  <rect width="400" height="240" fill="url(#vddam-bg)"/>
+  <circle cx="58" cy="42" r="72" fill="#fff8ec" opacity="0.12"/>
+  <circle cx="362" cy="70" r="56" fill="#fff8ec" opacity="0.1"/>
+  <circle cx="330" cy="222" r="96" fill="#4a2a96" opacity="0.25"/>
+  <path d="M0 200 Q200 180 400 200 V240 H0 Z" fill="#55309f"/>
+  <path d="M0 200 Q200 180 400 200" fill="none" stroke="#d6c2ff" stroke-width="3" opacity="0.45"/>
+
+  <!-- the trai (mo) -->
+  <g transform="rotate(-5 92 78)" opacity="0.92">
+    <rect x="40" y="46" width="104" height="66" rx="16" fill="#fffdf8" stroke="#2b1d3a" stroke-width="4"/>
+    <path d="M44 100 H140 V96 Q140 108 128 108 H56 Q44 108 44 96 Z" fill="#1fa89a"/>
+    <text x="92" y="88" text-anchor="middle" font-family="'Noto Serif SC','Songti SC',serif" font-weight="700" font-size="30" fill="#3a2a24">你好</text>
+  </g>
+
+  <!-- the phai (bi dam trung, nut) -->
+  <g transform="rotate(7 212 82)">
+    <rect x="158" y="48" width="112" height="70" rx="16" fill="#e3f7ea" stroke="#2b1d3a" stroke-width="4"/>
+    <path d="M162 106 H266 V102 Q266 114 254 114 H174 Q162 114 162 102 Z" fill="#2f8a57"/>
+    <text x="214" y="92" text-anchor="middle" font-family="'Noto Serif SC','Songti SC',serif" font-weight="700" font-size="32" fill="#145a32">谢谢</text>
+    <path d="M232 50 L224 66 L236 74 L226 92 L238 100 L232 116" fill="none" stroke="#2b1d3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- vu no BOP -->
+  <path d="M236 122 L250 96 L262 120 L290 106 L282 134 L312 140 L286 156 L300 182 L270 172 L262 202 L246 176 L218 190 L226 162 L198 152 L226 142 Z" fill="#ffd23f" stroke="#2b1d3a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M242 132 L252 116 L260 132 L278 124 L272 142 L290 146 L274 156 L282 172 L264 166 L258 184 L248 168 L230 176 L236 158 L218 152 L236 146 Z" fill="#fff3a6"/>
+
+  <!-- gang dam -->
+  <g transform="translate(222 150) rotate(-38)">
+    <rect x="-20" y="40" width="42" height="64" rx="8" fill="#fff8ec" stroke="#2b1d3a" stroke-width="4"/>
+    <rect x="-18" y="52" width="38" height="7" fill="#ffc94d"/>
+    <path d="M-24 46 C-30 26 -32 4 -22 -14 C-14 -30 16 -34 32 -20 C46 -8 46 18 36 34 C34 38 32 42 31 46 Z" fill="#ef4f43" stroke="#2b1d3a" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M31 45 C32 42 34 38 36 34 C46 18 46 -8 32 -20 C40 -2 36 26 22 45 Z" fill="#c9342c"/>
+    <path d="M-12 16 C0 22 14 21 27 13" fill="none" stroke="#2b1d3a" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+    <path d="M-21 8 C-35 3 -46 14 -43 26 C-40 38 -28 43 -18 36 C-13 28 -14 14 -21 8 Z" fill="#f2635a" stroke="#2b1d3a" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="-6" cy="-14" rx="10" ry="5.5" fill="#fff" opacity="0.6" transform="rotate(-25 -6 -14)"/>
+  </g>
+
+  <!-- vach toc do -->
+  <g stroke="#fff8ec" stroke-width="5" stroke-linecap="round" opacity="0.8">
+    <path d="M150 212 L172 190"/>
+    <path d="M128 200 L146 182"/>
+    <path d="M176 222 L190 208"/>
+  </g>
+
+  <!-- bao cat lat dat -->
+  <ellipse cx="338" cy="214" rx="38" ry="7" fill="#2b1d3a" opacity="0.25"/>
+  <g transform="rotate(12 338 210)">
+    <path d="M338 92 C363 92 376 124 376 158 C376 190 361 210 338 210 C315 210 300 190 300 158 C300 124 313 92 338 92 Z" fill="#3cc0b0"/>
+    <path d="M302.5 178 C308 198 321 208 338 208 C355 208 368 198 373.500 178 Z" fill="#16877a"/>
+    <path d="M301 166 C325 173 351 173 375 166 L374 178 C351 185 325 185 302 178 Z" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M338 92 C363 92 376 124 376 158 C376 190 361 210 338 210 C315 210 300 190 300 158 C300 124 313 92 338 92 Z" fill="none" stroke="#2b1d3a" stroke-width="4"/>
+    <ellipse cx="319" cy="116" rx="5.500" ry="11" fill="#fff" opacity="0.45" transform="rotate(22 319 116)"/>
+    <path d="M313 112 C328 119 348 119 363 112" fill="none" stroke="#ef4f43" stroke-width="7" stroke-linecap="round"/>
+    <path d="M362 112 l12 -6 M362 113 l13 4" stroke="#ef4f43" stroke-width="5" stroke-linecap="round"/>
+    <path d="M321 133 l9 5 -9 5 M355 133 l-9 5 9 5" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="338" cy="152" rx="5" ry="6" fill="#2b1d3a"/>
+    <ellipse cx="316" cy="148" rx="6" ry="3.500" fill="#ff9fae" opacity="0.8"/>
+    <ellipse cx="360" cy="148" rx="6" ry="3.500" fill="#ff9fae" opacity="0.8"/>
+  </g>
+
+  <!-- thanh nang luong -->
+  <rect x="290" y="62" width="92" height="16" rx="8" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3.500"/>
+  <rect x="294" y="66" width="46" height="8" rx="4" fill="#ef6a4f"/>
+
+  <use href="#vddam-spark" transform="translate(300 40) scale(1.2)"/>
+  <use href="#vddam-spark" transform="translate(150 30)"/>
+  <use href="#vddam-spark" transform="translate(60 150) scale(0.8)"/>
+  <circle cx="110" cy="140" r="3" fill="#fff8ec" opacity="0.8"/>
+  <circle cx="200" cy="34" r="2.500" fill="#fff8ec" opacity="0.8"/>
+
+  <!-- khung ngam camera -->
+  <g fill="none" stroke="#fff8ec" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+    <path d="M24 52 V32 Q24 18 38 18 H58"/>
+    <path d="M342 18 H362 Q376 18 376 32 V52"/>
+    <path d="M24 188 V208 Q24 222 38 222 H58"/>
+    <path d="M342 222 H362 Q376 222 376 208 V188"/>
+  </g>
+  <circle cx="352" cy="40" r="6" fill="#ff4d6d" stroke="#fff8ec" stroke-width="2.500"/>
+</svg>

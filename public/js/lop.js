@@ -3283,7 +3283,7 @@
   function startGame(game) {
     if (window.LopOnTo && window.LopOnTo.co(game)) { moOnTo(game); return; }
     if (game === 'nghieng') { moNghieng(); return; }
-    if (game === 'chem' || game === 'theduc' || game === 'ngoisao') { moVanDong(game); return; }
+    if (game === 'chem' || game === 'theduc' || game === 'ngoisao' || game === 'dam') { moVanDong(game); return; }
     if (game === 'chuong' && window.LopChuong) { window.LopChuong.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
     // The giay A/B/C/D: cau trac nghiem tu ngan hang Kiem tra bai cu + cau A/B/C cua bai; chua chon bai thi la cau tu do
     if (game === 'thegiay' && window.LopTheGiay) { loadPickedVocab().then(function (v) { window.LopTheGiay.mo({ vocab: v.map(boPy), mcs: pickedMcs(), nhan: pickedLabel() }); }); return; }
@@ -3614,7 +3614,7 @@
   /* ---- sap xep lai man hinh chuan bi: nhom tro choi + nhan thoi luong / cach choi ---- */
   var GAME_GROUPS = [
     { ten: '⚡ Khởi động nhanh — cả lớp cùng chơi', g: ['chuong', 'abc', 'thegiay', 'zombie', 'listen', 'match', 'hv'] },
-    { ten: '🤸 Vận động trước webcam', g: ['nghieng', 'chem', 'theduc', 'ngoisao'] },
+    { ten: '🤸 Vận động trước webcam', g: ['nghieng', 'chem', 'theduc', 'ngoisao', 'dam'] },
     { ten: '🏆 Đấu tổ kịch tính', g: ['tug', 'train', 'mine', 'ghep', 'luot'] },
     { ten: '🧸 Ôn bài theo tổ — gắp thú, xây lâu đài, vượt hồ băng', g: ['gapthu', 'laudai', 'duongbang'] },
     { ten: '📱 Học sinh dùng điện thoại', g: ['dua', 'nhip', 'doikhang'] },
@@ -3623,7 +3623,7 @@
     { ten: '🎤 Nói – viết', g: ['taboo', 'role', 'write'] }
   ];
   var GAME_TAGS = {
-    abc: ['3–5′', 'cả lớp'], thegiay: ['5–15′', 'thẻ giấy in', 'không cần điện thoại'], nghieng: ['5′', 'webcam', 'từng bạn'], chem: ['5′', 'webcam', 'từng bạn'], theduc: ['5′', 'webcam', 'vận động'], ngoisao: ['5′', 'webcam', '2 bạn đấu'],
+    abc: ['3–5′', 'cả lớp'], thegiay: ['5–15′', 'thẻ giấy in', 'không cần điện thoại'], nghieng: ['5′', 'webcam', 'từng bạn'], chem: ['5′', 'webcam', 'từng bạn'], theduc: ['5′', 'webcam', 'vận động'], ngoisao: ['5′', 'webcam', '2 bạn đấu'], dam: ['5′', 'webcam', 'từng bạn', 'vận động'],
     zombie: ['3–5′', 'cả lớp'], dua: ['10–15′', 'quét mã QR', 'chọn linh vật'], chuong: ['15′', 'cả lớp', 'bảng con / điện thoại'], luot: ['10–15′', '2–4 tổ'], bay: ['5–10′', 'trên bảng', 'hoặc mã QR theo tổ'], doantau: ['5–10′', 'trên bảng', 'hoặc mã QR theo tổ'], doikhang: ['5–10′', 'quét mã QR', '1–1'],
     ghep: ['10′', 'theo tổ'], ochu: ['5–10′', 'cả lớp / tổ'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
     bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],

@@ -1,10 +1,12 @@
-/* Van dong tra loi (/van-dong) — 3 tro choi dieu khien bang camera:
+/* Van dong tra loi (/van-dong) — 4 tro choi dieu khien bang camera:
    - chem: chem hoa qua / bat bong bong bang dau ngon tro (MediaPipe Hand Landmarker)
    - theduc: the duc ABC, tao dang de chon dap an (MediaPipe Pose Landmarker lite)
    - ngoisao: cuoc dua ngoi sao, hai ban gio 1-4 ngon tay (Hand Landmarker, 2 tay)
+   - dam: Vo si chu Han — hai nam tay la hai gang do, dam trung the mang dap an dung de lam
+     Bao Cat U (lat dat) tut nang luong (Hand Landmarker, 2 tay)
    Mo hinh chay ngay tren trinh duyet (van-dong-mp.js nap tu CDN), hinh anh khong gui di dau.
    Cau hoi nhan qua localStorage 'hyv_vandong' do trang goi ghi truoc khi mo:
-     { nguon: 'lop' | 'nha', nhan, tro: 'chem' | 'theduc' | 'ngoisao' (chon san, tuy chon),
+     { nguon: 'lop' | 'nha', nhan, tro: 'chem' | 'theduc' | 'ngoisao' | 'dam' (chon san, tuy chon),
        cau: [{ hoi, ctx, opts: [2..4 chuoi], dung, why, docTruoc, docSau, zhOpt, hoiZh, py }] }
    ?tro=... tren dia chi cung chon san tro choi. File nay nap duoc trong Node de test
    cac ham thuan (dem ngon tay, nhan dang dang nguoi).                                  */
@@ -77,7 +79,84 @@
     else if (ngang(tay[0], -1) && ngang(tay[1], 1) && kc(tay[0].w, tay[1].w, ty) > 2.4 * sw) kq = 3;
     return kq < (soDap || 4) ? kq : -1;
   }
-  var THU = { demNgon: demNgon, phanLoaiTuThe: phanLoaiTuThe, kcDoan: kcDoan };
+  /* ---- Vo si chu Han: nhan ra cu dam tu chuoi vi tri + co cua nam tay ----
+     Don vi: nx, ny = tam nam tay tinh theo CHIEU CAO khung hinh camera (nx da lat guong, nhan ty le rong/cao);
+     s = co ban tay (max cua be ngang 5–17 va co tay–goc ngon giua) cung theo chieu cao khung — khong dung pixel.
+     Cu dam = trong cua so ~170 ms, diem P = (toc do lon len cua ban tay) / tangNhanh + (toc do truot 2D) / tocNhanh >= 1
+     VA tam nam tay dang nam trong mot the. Dam xong phai cho `hoi` ms va rut tay ve (ban tay nho lai con `lui`
+     lan luc dam, hoac ra khoi moi the) moi dam tiep duoc — de tay len the khong tinh la dam.
+     Du phong cho may cham / ban nhut nhat: giu gang trong mot the `giu` ms (phai dua gang tu ngoai vao). */
+  var DAM = {
+    cua: 170,        // ms: so sanh voi mau cach day toi da ngan nay
+    cuaMin: 55,      // ms: mau so sanh phai cu it nhat ngan nay (tranh chia cho khoang qua ngan)
+    tangMin: 0.07,   // ban tay phai to len it nhat 7% trong cua so moi tinh la lao ve phia camera
+    tangNhanh: 1.0,  // to len 100% / giay = du mot cu dam thang
+    diMin: 0.05,     // tam nam tay phai di it nhat 5% chieu cao khung trong cua so
+    tocNhanh: 1.9,   // truot 1.9 lan chieu cao khung / giay = du mot cu dam ngang (moc)
+    hoi: 500,        // ms nghi sau moi cu dam
+    lui: 0.9,        // rut tay: co ban tay con <= 90% luc dam
+    giu: 600,        // ms giu gang tren the thi chon (du phong)
+    nhay: 0.6,       // tam nhay xa hon ngan nay giua hai mau = doi tay -> bo lich su
+    mat: 400         // ms khong thay tay -> coi nhu tay moi
+  };
+  function tayMoi() {
+    return { co: false, t: 0, nx: 0, ny: 0, s: 0, ls: [], tt: 'san', damLuc: 0, sDinh: 0, the: -1, giuTu: 0, ngoai: false, p: 0, P: 0, goc: 0 };
+  }
+  // Cap nhat mot ban tay voi mau moi m = { nx, ny, s }.
+  //   the    = chi so the nam duoi tam nam tay (vung trung day du), -1 = ngoai moi the
+  //   theGiu = chi so the tinh theo vung trong hep hon (cho kieu giu), -1 = khong
+  //   mo     = dang nhan dap an (false: chi theo doi chuyen dong, khong dam / giu)
+  // Tra ve { dam, giu, the }.
+  function damBuoc(T, m, the, theGiu, now, mo) {
+    var dx = m.nx - T.nx, dy = m.ny - T.ny, kq = { dam: false, giu: false, the: -1 };
+    if (!T.co || now - T.t > DAM.mat || Math.sqrt(dx * dx + dy * dy) > DAM.nhay) {
+      T.ls = []; T.nx = m.nx; T.ny = m.ny; T.s = m.s; T.the = -1; T.p = 0;
+    } else { // lam muot nhe de bot rung; tinh theo thoi gian nen may cham (it hinh/giay) khong bi tre them
+      var kp = 1 - Math.exp(-(now - T.t) / 30), ks = 1 - Math.exp(-(now - T.t) / 45);
+      T.nx += dx * kp; T.ny += dy * kp; T.s += (m.s - T.s) * ks;
+    }
+    T.co = true; T.t = now;
+    T.ls.push({ t: now, nx: T.nx, ny: T.ny, s: T.s });
+    while (T.ls.length > 2 && now - T.ls[0].t > 400) T.ls.shift();
+    // mau so sanh: mau cu nhat con trong cua so; may cham (it hinh/giay) thi lay mau ngay truoc
+    var a = null, i, n = T.ls.length;
+    for (i = 0; i < n - 1; i++) if (now - T.ls[i].t <= DAM.cua) { a = T.ls[i]; break; }
+    if (!a && n > 1 && now - T.ls[n - 2].t <= DAM.cua * 2) a = T.ls[n - 2];
+    var P = 0;
+    if (a && now - a.t >= DAM.cuaMin) {
+      var dts = (now - a.t) / 1000, tang = (T.s - a.s) / Math.max(a.s, 1e-4);
+      var ax = T.nx - a.nx, ay = T.ny - a.ny, di = Math.sqrt(ax * ax + ay * ay);
+      if (tang >= DAM.tangMin) P += tang / dts / DAM.tangNhanh;
+      if (di >= DAM.diMin) P += di / dts / DAM.tocNhanh;
+      if (tang < -DAM.tangMin) P = 0; // dang rut tay ve -> khong phai dam
+    }
+    T.P = P;
+    if (T.tt === 'hoi') {
+      if (now - T.damLuc < 250) T.sDinh = Math.max(T.sDinh, T.s);
+      if (now - T.damLuc >= DAM.hoi && (the < 0 || T.s <= T.sDinh * DAM.lui)) T.tt = 'san';
+    }
+    if (!mo) { T.the = -1; T.p = 0; return kq; }
+    if (the < 0) T.ngoai = true;
+    if (T.tt === 'san' && P >= 1 && the >= 0) {
+      T.tt = 'hoi'; T.damLuc = now; T.sDinh = T.s; T.the = -1; T.p = 0; T.ngoai = false;
+      kq.dam = true; kq.the = the;
+      return kq;
+    }
+    if (theGiu >= 0 && T.ngoai && T.tt === 'san') {
+      if (T.the !== theGiu) { T.the = theGiu; T.giuTu = now; }
+      T.p = Math.min(1, (now - T.giuTu) / DAM.giu);
+      if (T.p >= 1) {
+        T.tt = 'hoi'; T.damLuc = now; T.sDinh = T.s; T.the = -1; T.p = 0; T.ngoai = false;
+        kq.giu = true; kq.the = theGiu;
+      }
+    } else { T.the = -1; T.p = 0; }
+    return kq;
+  }
+  // Suc dam theo chuoi dung lien tiep (combo 3 / 5 / 10 dam manh hon)
+  function sucDam(chuoi) { return chuoi >= 10 ? 2 : chuoi >= 5 ? 1.5 : chuoi >= 3 ? 1.25 : 1; }
+  // Nang luong cua Bao Cat U cho mot luot n cau: can dung khoang 80% so cau (it hon neu co combo)
+  function mauDich(n) { return Math.max(2, Math.floor(n * 0.8)); }
+  var THU = { demNgon: demNgon, phanLoaiTuThe: phanLoaiTuThe, kcDoan: kcDoan, DAM: DAM, tayMoi: tayMoi, damBuoc: damBuoc, sucDam: sucDam, mauDich: mauDich };
   if (typeof document === 'undefined') {
     if (typeof module !== 'undefined' && module.exports) module.exports = THU;
     return;
@@ -120,12 +199,32 @@
   var BONG = ['a', 'b', 'c', 'd'].map(function (k) { return taiAnh('balloon-' + k); });
   var BONG_OK = taiAnh('balloon-ok');
   // hinh DOM: nap truoc de khong nhap nhay lan dau hien
+  var GANG = taiAnh('glove'); // gang dam do (Vo si chu Han), mui gang huong len tren
   ['heart', 'heart-empty', 'hand-open', 'fist', 'star', 'star-empty', 'pose-idle', 'trophy', 'star-pair'].forEach(function (t) {
     new Image().src = ANH + t + '.svg';
   });
   var EMOJI = '"Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif';
   var TU_THE = ['Hai tay chụm trên đầu', 'Giơ tay phải', 'Giơ tay trái', 'Dang hai tay ngang vai'];
-  var TEN_TRO = { chem: '🍉 Chém hoa quả', theduc: '🤸 Thể dục ABC', ngoisao: '⭐ Cuộc đua ngôi sao' };
+  var TEN_TRO = { chem: '🍉 Chém hoa quả', theduc: '🤸 Thể dục ABC', ngoisao: '⭐ Cuộc đua ngôi sao', dam: '🥊 Võ sĩ chữ Hán' };
+  var TEN_DICH = 'Bao Cát Ú'; // doi thu tap luyen: bao cat lat dat (khong phai nguoi)
+  var MAU_DAM = ['#ef6a4f', '#1fa89a', '#e9a21f']; // vien mau cua 2–3 the tren san
+  // Bao Cat U ve bang SVG ngay trong trang de doi net mat theo lop: m0 binh thuong, m1 bi dam, m2 chiu thua, m3 cuoi
+  var SVG_U = '<svg viewBox="0 0 120 150" aria-hidden="true"><ellipse cx="60" cy="141" rx="38" ry="6" fill="#2b1d3a" opacity=".22"/>' +
+    '<g class="vd-u-than"><path d="M60 8C86 8 100 42 100 80C100 114 84 136 60 136C36 136 20 114 20 80C20 42 34 8 60 8Z" fill="#3cc0b0"/>' +
+    '<path d="M22.5 100C28 122 42 134 60 134C78 134 92 122 97.5 100Z" fill="#16877a"/>' +
+    '<path d="M21 88C46 96 74 96 99 88L98 101C74 109 46 109 22 101Z" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3.5" stroke-linejoin="round"/>' +
+    '<path d="M60 91l2.6 5.2 5.8.8-4.2 4 1 5.7-5.2-2.7-5.2 2.7 1-5.7-4.2-4 5.8-.8Z" fill="#ffc94d" stroke="#2b1d3a" stroke-width="2" stroke-linejoin="round"/>' +
+    '<path d="M60 8C86 8 100 42 100 80C100 114 84 136 60 136C36 136 20 114 20 80C20 42 34 8 60 8Z" fill="none" stroke="#2b1d3a" stroke-width="4"/>' +
+    '<ellipse cx="40" cy="36" rx="5.5" ry="11" fill="#fff" opacity=".45" transform="rotate(22 40 36)"/>' +
+    '<path d="M34 30C50 37 70 37 86 30" fill="none" stroke="#ef4f43" stroke-width="7" stroke-linecap="round"/>' +
+    '<path d="M85 30l12-6M85 31l13 4" stroke="#ef4f43" stroke-width="5" stroke-linecap="round"/>' +
+    '<ellipse cx="38" cy="68" rx="6" ry="3.5" fill="#ff9fae" opacity=".8"/><ellipse cx="82" cy="68" rx="6" ry="3.5" fill="#ff9fae" opacity=".8"/>' +
+    '<g class="vd-u-m0"><circle cx="47" cy="58" r="5.5" fill="#2b1d3a"/><circle cx="73" cy="58" r="5.5" fill="#2b1d3a"/><circle cx="48.8" cy="56" r="1.8" fill="#fff"/><circle cx="74.8" cy="56" r="1.8" fill="#fff"/>' +
+    '<path d="M52 69Q60 77 68 69" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linecap="round"/></g>' +
+    '<g class="vd-u-m1"><path d="M42 53l9 5-9 5M78 53l-9 5 9 5" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="60" cy="72" rx="5" ry="6" fill="#2b1d3a"/></g>' +
+    '<g class="vd-u-m2"><path d="M42 53l10 10M52 53l-10 10M68 53l10 10M78 53l-10 10" stroke="#2b1d3a" stroke-width="3.5" stroke-linecap="round"/><path d="M50 73q5-5 10 0t10 0" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linecap="round"/></g>' +
+    '<g class="vd-u-m3"><path d="M42 60q5-8 10 0M68 60q5-8 10 0" fill="none" stroke="#2b1d3a" stroke-width="3.5" stroke-linecap="round"/><path d="M51 68Q60 82 69 68Z" fill="#2b1d3a" stroke="#2b1d3a" stroke-width="2" stroke-linejoin="round"/></g>' +
+    '</g></svg>';
   var XUONG = [[11, 12], [11, 13], [13, 15], [12, 14], [14, 16], [11, 23], [12, 24], [23, 24]];
   var NOI_TAY = [[0, 1], [1, 2], [2, 3], [3, 4], [0, 5], [5, 6], [6, 7], [7, 8], [5, 9], [9, 10], [10, 11], [11, 12],
     [9, 13], [13, 14], [14, 15], [15, 16], [13, 17], [17, 18], [18, 19], [19, 20], [0, 17]];
@@ -171,7 +270,7 @@
   var cfg = docLS('hyv_vandong', null);
   var lop = !!(cfg && cfg.nguon === 'lop');
   var dsCau = chuanHoa(cfg && cfg.cau);
-  var hoiTro = /[?&]tro=(chem|theduc|ngoisao)\b/.exec(location.search);
+  var hoiTro = /[?&]tro=(chem|theduc|ngoisao|dam)\b/.exec(location.search);
   var itDong = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   var tenLuu = docLS('hyv_vandong_ten', null) || [];
 
@@ -179,7 +278,7 @@
     return { ten: ten, sao: 0, ben: -1, giuTu: 0, tick: -1, khoa: -1, canThang: true, thangTu: 0, n: -1, p: 0, khoaHien: '' };
   }
   var S = {
-    tro: hoiTro ? hoiTro[1] : (cfg && /^(chem|theduc|ngoisao)$/.test(cfg.tro) ? cfg.tro : 'chem'),
+    tro: hoiTro ? hoiTro[1] : (cfg && /^(chem|theduc|ngoisao|dam)$/.test(cfg.tro) ? cfg.tro : 'chem'),
     da: 'qua', moiBan: false, muc: 5, phien: 0,
     cau: [], i: 0, diem: 0, dung: 0, chuoi: 0, chuoiMax: 0,
     pha: 'sanh', video: null, chay: false, tsCuoi: -1, lanDo: 0, tCu: 0,
@@ -191,7 +290,9 @@
     p: [nguoiMoi('Bạn trái'), nguoiMoi('Bạn phải')],
     // cuoc dua ngoi sao theo vong: ds = ten ca lop, vang/daChoi theo ten, vong = { n cau, tu cau so }
     ds: [], vang: {}, daChoi: {}, vong: { n: 5, tu: 0, so: 0 }, lichSu: [], camSan: false,
-    cheBam: 'chon', oChon: 0, luot: false, // luot: chem / theduc theo tung ban, moi luot N cau
+    cheBam: 'chon', oChon: 0, luot: false, // luot: chem / theduc / dam theo tung ban, moi luot N cau
+    // Vo si chu Han: hp/hpMax nang luong Bao Cat U, tl the luc nguoi choi (0..1), tay = 2 ban tay dang theo doi
+    dam: { hp: 1, hpMax: 1, tl: 1, sai: 0, hoi: 0, n: 0, thang: false, guc: false, moLuc: 0, khung: [], tay: [tayMoi(), tayMoi()], cu: [0, 0] },
     tieng: docLS('hyv_vandong_tieng', true) !== false,
     nhac: window.NhacNen ? window.NhacNen.batDuoc() : false
   };
@@ -224,6 +325,10 @@
   function sSai() { tone(220, 0.35, 'sawtooth', 0.09, 0, 140); tone(180, 0.4, 'square', 0.05, 0.05, 110); }
   function sChem() { tone(1500, 0.13, 'sawtooth', 0.05, 0, 260); tone(170, 0.2, 'sine', 0.25, 0.04, 70); }
   function sNo() { tone(700, 0.08, 'sine', 0.25, 0, 1900); tone(260, 0.07, 'triangle', 0.1, 0.02, 120); }
+  // Vo si chu Han: tieng "bop" (thup tram + tach), combo (may not di len nhanh), Bao Cat U do
+  function sBop() { tone(170, 0.2, 'sine', 0.3, 0, 55); tone(900, 0.06, 'square', 0.06, 0, 220); tone(110, 0.14, 'triangle', 0.2, 0.02, 60); }
+  function sCombo(bac) { [659, 880, 1175, 1568].slice(0, 2 + Math.min(2, bac)).forEach(function (f, i) { tone(f, 0.12, 'square', 0.07, 0.12 + i * 0.06); }); }
+  function sGuc() { tone(520, 0.5, 'triangle', 0.16, 0.1, 130); tone(90, 0.35, 'sine', 0.3, 0.55, 45); }
   function sSao() {
     [784, 988, 1175, 1568].forEach(function (f, i) { tone(f, 0.18, 'triangle', 0.16, i * 0.07); });
     tone(2093, 0.5, 'sine', 0.08, 0.3);
@@ -246,7 +351,7 @@
   function nhac(bat) {
     if (!window.NhacNen) return;
     // chem / theduc: nhac vui; cuoc dua ngoi sao: nhac gap; nut bat/tat rieng tren thanh tren
-    if (bat && S.tieng) window.NhacNen.bat({ ctx: ac, kieu: S.tro === 'ngoisao' ? 'gap' : 'vui', nut: false }); else window.NhacNen.tat();
+    if (bat && S.tieng) window.NhacNen.bat({ ctx: ac, kieu: S.tro === 'ngoisao' || S.tro === 'dam' ? 'gap' : 'vui', nut: false }); else window.NhacNen.tat();
   }
   function dangChoi() { return $('vd').classList.contains('is-choi'); }
   function veNhac() {
@@ -270,6 +375,11 @@
         ? buoc('☝️', 'Ngón trỏ là lưỡi dao', 'Giơ tay trước camera, vung nhanh đầu ngón trỏ qua quả mang đáp án đúng.')
         : buoc('☝️', 'Chạm ngón trỏ vào bong bóng', 'Đưa đầu ngón trỏ chạm vào bong bóng mang đáp án đúng để làm nó nổ.'));
       ds.push(buoc('❤️', 'Nhầm thì được thử lại', 'Câu có từ 3 đáp án: chọn nhầm một lần vẫn được thử tiếp (ít điểm hơn). Dùng chuột kéo qua cũng chơi được.'));
+    } else if (S.tro === 'dam') {
+      ds.push(buoc('🧍', 'Đứng cách màn hình một sải tay, xung quanh không có đồ vật', 'Lùi lại cho camera thấy cả hai tay; không đứng sát bàn ghế, bảng hay bạn khác.'));
+      ds.push(buoc('🥊', 'Hai nắm tay là hai chiếc găng đỏ', 'Giơ nắm tay lên trước camera — găng sẽ đi theo tay bạn. Lúc đang nghĩ thì để găng phía dưới các thẻ.'));
+      ds.push(buoc('💥', 'Đấm trúng thẻ mang đáp án đúng', 'Đưa găng tới thẻ rồi đấm nhanh về phía màn hình. Chưa quen thì giữ găng yên trên thẻ một chút (vòng tròn đầy) cũng chọn được. Bấm chuột vào thẻ hoặc phím 1 · 2 · 3 cũng được.'));
+      ds.push(buoc('🔥', 'Đúng liên tiếp là có combo', 'Mỗi cú đấm đúng làm ' + TEN_DICH + ' tụt năng lượng; combo x3, x5, x10 đấm mạnh hơn. Đấm sai thì mình tụt thể lực' + (lop ? ' (trên lớp không ai bị loại, chỉ ít sao hơn).' : '.')));
     } else if (S.tro === 'theduc') {
       ds.push(buoc('🧍', 'Đứng lùi lại cho camera thấy nửa người', 'Cả đầu, vai và hai tay đều phải nằm trong khung hình.'));
       ds.push(buoc('🙆', 'Tạo dáng để chọn đáp án', 'A: hai tay chụm trên đầu · B: giơ tay phải · C: giơ tay trái · D: dang hai tay ngang vai. Giữ dáng đến khi ô đầy màu, rồi hạ tay xuống.'));
@@ -281,7 +391,7 @@
     }
     ds.push(buoc('📋', n ? 'Gồm ' + Math.min(n, lop ? n : 12) + ' câu hỏi' : 'Chưa có câu hỏi'));
     $('vdCachDs').innerHTML = ds.join('');
-    $('vdSanhIc').innerHTML = anhTag(S.tro === 'chem' ? (S.da === 'qua' ? 'watermelon' : 'balloon-a') : S.tro === 'theduc' ? 'pose-d' : 'star');
+    $('vdSanhIc').innerHTML = anhTag(S.tro === 'chem' ? (S.da === 'qua' ? 'watermelon' : 'balloon-a') : S.tro === 'theduc' ? 'pose-d' : S.tro === 'dam' ? 'glove' : 'star');
     $('vdDa').hidden = S.tro !== 'chem';
     var ns = S.tro === 'ngoisao';
     $('vdTenO').hidden = !ns && !lop && !S.ds.length && !$('vdLop').value;
@@ -500,6 +610,8 @@
       S.moiBan = lop && S.tro !== 'ngoisao' && !S.luot && $('vdMoiBan').checked;
       S.muc = 0; // cuoc dua ngoi sao: thang theo vong N cau, khong dung som
       S.vong = { n: +$('vdMuc').value || 5, tu: 0, so: 1 };
+      // luot theo tung ban ma bai co it cau hon mot luot -> lap lai bo cau cho du
+      while (S.luot && S.cau.length < S.vong.n) S.cau = S.cau.concat(tron(ds));
       if (S.luot && S.tro !== 'ngoisao') S.lichSu = [];
       S.lichSu = [];
       S.i = 0; S.diem = 0; S.dung = 0; S.chuoi = 0; S.chuoiMax = 0;
@@ -517,7 +629,10 @@
       $('vdDiem').textContent = '0';
       $('vdP0').hidden = $('vdP1').hidden = S.tro !== 'ngoisao';
       $('vdDau').hidden = S.tro !== 'theduc';
+      $('vdDam').hidden = S.tro !== 'dam';
       $('vdDap').innerHTML = '';
+      $('vdDamThe').innerHTML = '';
+      if (S.tro === 'dam') damMoi();
       $('vdTim').textContent = '';
       $('vdChuoi').textContent = '';
       if (S.tro === 'ngoisao') { veNguoi(0); veNguoi(1); }
@@ -541,7 +656,8 @@
     nhac(true);
     $('vdHoi').innerHTML = '<span class="vd-dem" id="vdDemSo">3</span>';
     $('vdDuoi').textContent = S.tro === 'theduc' ? 'Lùi lại cho camera thấy từ đầu đến bụng nhé!'
-      : S.tro === 'ngoisao' ? 'Hai bạn đứng hai bên, giơ tay lên nào!' : 'Giơ bàn tay lên trước camera nhé!';
+      : S.tro === 'ngoisao' ? 'Hai bạn đứng hai bên, giơ tay lên nào!'
+      : S.tro === 'dam' ? 'Đứng cách màn hình một sải tay, giơ hai nắm tay lên nào! 🥊' : 'Giơ bàn tay lên trước camera nhé!';
     // bam Thoat giua chung -> S.phien doi -> dung han dem nguoc (khong mo cau hoi nua)
     var ph = S.phien;
     var buoc = function (f) { return function () { return ph !== S.phien ? new Promise(function () {}) : f(); }; };
@@ -566,8 +682,8 @@
     cx.setTransform(dpr, 0, 0, dpr, 0, 0);
     var v = S.video;
     KH.vw = (v && v.videoWidth) || 640; KH.vh = (v && v.videoHeight) || 480;
-    // chem: video object-fit cover (bi cat bot); theduc / ngoisao: contain (thay ca khung hinh)
-    KH.sc = S.tro === 'chem' ? Math.max(w / KH.vw, h / KH.vh) : Math.min(w / KH.vw, h / KH.vh);
+    // chem / dam: video object-fit cover (bi cat bot); theduc / ngoisao: contain (thay ca khung hinh)
+    KH.sc = S.tro === 'chem' || S.tro === 'dam' ? Math.max(w / KH.vw, h / KH.vh) : Math.min(w / KH.vw, h / KH.vh);
     KH.ox = (w - KH.vw * KH.sc) / 2; KH.oy = (h - KH.vh * KH.sc) / 2;
     return true;
   }
@@ -585,6 +701,7 @@
     cx.clearRect(0, 0, KH.w, KH.h);
     if (S.tro === 'chem') veChem(dt);
     else if (S.tro === 'theduc') veTheDuc();
+    else if (S.tro === 'dam') veDam(dt);
     else veNgoiSao();
   }
   // nhan dien toi da ~30 hinh/giay, bo qua neu khung video chua doi
@@ -597,6 +714,7 @@
     try { kq = lm.detectForVideo(v, now); } catch (e) { return; }
     if (S.tro === 'chem') tayChem(kq, now);
     else if (S.tro === 'theduc') nguoiTheDuc(kq, now);
+    else if (S.tro === 'dam') tayDam(kq, now);
     else tayNgoiSao(kq, now);
   }
   function tb(m) {
@@ -824,6 +942,21 @@
       } else if (p.l === 'v') {
         cx.beginPath(); cx.arc(p.x, p.y, p.r * (1 + (1 - a) * 0.7), 0, Math.PI * 2);
         cx.lineWidth = 6 * a + 1; cx.strokeStyle = p.mau; cx.stroke();
+      } else if (p.l === 'b') { // vu no "BOP!": ngoi sao gai phong ra roi mo dan
+        var rb = p.r * (0.45 + 0.55 * Math.min(1, p.t / 0.11)) * (1 + 0.05 * Math.sin(p.t * 34)), ib, ab, r2;
+        cx.translate(p.x, p.y); cx.rotate(p.rot);
+        cx.beginPath();
+        for (ib = 0; ib < 22; ib++) {
+          ab = ib / 22 * Math.PI * 2; r2 = ib % 2 ? rb * 0.64 : rb;
+          if (ib) cx.lineTo(Math.cos(ab) * r2, Math.sin(ab) * r2); else cx.moveTo(Math.cos(ab) * r2, Math.sin(ab) * r2);
+        }
+        cx.closePath();
+        cx.fillStyle = p.mau; cx.fill();
+        cx.lineJoin = 'round'; cx.lineWidth = Math.max(3, rb * 0.07); cx.strokeStyle = '#2b1d3a'; cx.stroke();
+        cx.rotate(-p.rot - 0.1);
+        cx.font = '900 ' + Math.round(rb * 0.46) + 'px "Be Vietnam Pro","Noto Serif SC",sans-serif'; cx.textAlign = 'center'; cx.textBaseline = 'middle';
+        cx.lineWidth = Math.max(4, rb * 0.1); cx.strokeStyle = '#fff'; cx.strokeText(p.chu, 0, rb * 0.03);
+        cx.fillStyle = p.mau2; cx.fillText(p.chu, 0, rb * 0.03);
       } else if (p.l === 'c') {
         p.y -= KH.h * 0.12 * dt;
         cx.font = '800 ' + Math.round(p.co) + 'px "Be Vietnam Pro","Noto Serif SC",sans-serif'; cx.textAlign = 'center'; cx.textBaseline = 'middle';
@@ -1124,8 +1257,284 @@
     cx.restore();
   }
 
+  /* ================= tro 4: Vo si chu Han (dam trung dap an) ================= */
+  // Bat dau mot luot: nap day nang luong Bao Cat U va the luc nguoi choi
+  function damMoi() {
+    var D = S.dam;
+    D.n = S.luot ? S.vong.n : S.cau.length;
+    D.hpMax = D.hp = mauDich(D.n);
+    D.tl = 1; D.sai = 0; D.hoi = 0; D.thang = false; D.guc = false; D.khung = []; D.moLuc = 0;
+    D.tay = [tayMoi(), tayMoi()]; D.cu = [0, 0];
+    $('vdDamTen').textContent = S.luot ? S.tenLuot : 'Võ sĩ';
+    $('vdDamU').className = 'vd-dam-u';
+    $('vdDamU').innerHTML = SVG_U;
+    $('vdDamCombo').hidden = true;
+    $('vdDamBan').classList.remove('is-rung');
+    veThanhDam();
+  }
+  function veThanhDam() {
+    var D = S.dam, pd = Math.max(0, D.hp / D.hpMax), pt = Math.max(0, D.tl);
+    $('vdDamHp').style.width = (pd * 100).toFixed(1) + '%';
+    $('vdDamHp').parentNode.classList.toggle('is-it', pd <= 0.34);
+    $('vdDamHpSo').textContent = Math.round(pd * 100) + '%';
+    $('vdDamTl').style.width = (pt * 100).toFixed(1) + '%';
+    $('vdDamTl').parentNode.classList.toggle('is-it', pt <= 0.4);
+  }
+  // net mat / dang dieu cua Bao Cat U: 'is-dau' bi dam, 'is-cuoi' cuoi, 'is-guc' chiu thua (giu nguyen den luot sau)
+  function lopU(l) {
+    var u = $('vdDamU'), ph = S.phien;
+    if (u.classList.contains('is-guc')) return;
+    u.classList.remove('is-dau', 'is-cuoi');
+    void u.offsetWidth; // chay lai hieu ung
+    if (!l) return;
+    u.classList.add(l);
+    if (l !== 'is-guc') setTimeout(function () { if (ph === S.phien) u.classList.remove(l); }, 950);
+  }
+  // Cau cho tro dam: chi giu 2 the (3 the neu cau co tu 3 dap an va san du rong), luon co dap an dung, xao vi tri.
+  // Tra ve ban sao — khong dung den cau goc trong dsCau.
+  function damCau(c) {
+    if (c._dam) return c;
+    var dai = 0, sai = [], k, o = {};
+    for (k = 0; k < c.opts.length; k++) dai = Math.max(dai, c.opts[k].length);
+    // dap an la ca cau dai thi chi 2 the cho chu van to, doc duoc tu xa
+    var n = c.opts.length >= 3 && san.clientWidth >= 900 && dai <= (c.zhOpt ? 9 : 22) ? 3 : 2;
+    for (k = 0; k < c.opts.length; k++) if (k !== c.dung) sai.push(k);
+    var thu = tron(tron(sai).slice(0, n - 1).concat([c.dung]));
+    for (k in c) if (Object.prototype.hasOwnProperty.call(c, k)) o[k] = c[k];
+    o.opts = thu.map(function (i) { return c.opts[i]; });
+    o.dung = thu.indexOf(c.dung);
+    o._dam = true;
+    return o;
+  }
+  function veTheDam() {
+    var c = S.cau[S.i], h = '';
+    c.opts.forEach(function (o, i) {
+      h += '<button type="button" class="vd-the vd-dam-o" data-i="' + i + '" style="--m:' + MAU_DAM[i] + '">' +
+        '<span class="vd-the-chu"><span' + (c.zhOpt ? ' class="is-zh"' : '') + '>' + esc(o) + '</span></span>' +
+        '<span class="vd-the-day" aria-hidden="true"></span><span class="vd-dam-nut" aria-hidden="true"></span>' +
+        '<kbd aria-hidden="true">' + (i + 1) + '</kbd></button>';
+    });
+    var d = $('vdDamThe');
+    d.innerHTML = h;
+    d.setAttribute('data-n', c.opts.length);
+    vuaChuDam();
+    S.dam.khung = [];
+  }
+  // chu dap an dai qua thi thu nho dan cho vua the (chu van to nhat co the)
+  function vuaChuDam() {
+    Array.prototype.forEach.call($('vdDamThe').children, function (el) {
+      var chu = el.querySelector('.vd-the-chu > span'), lan = 0, co, cs, rong, dai = 0;
+      if (!chu) return;
+      chu.style.fontSize = '';
+      cs = getComputedStyle(chu);
+      co = parseFloat(cs.fontSize) || 32;
+      rong = chu.parentNode.clientWidth || el.clientWidth - 28;
+      // tu tieng Viet / pinyin dai nhat phai nam tron tren mot dong (chu Han thi ngat dau cung duoc)
+      cx.save();
+      cx.font = cs.fontWeight + ' ' + co + 'px ' + cs.fontFamily;
+      chu.textContent.split(/\s+/).forEach(function (t) { if (!/[㐀-鿿]/.test(t)) dai = Math.max(dai, cx.measureText(t).width); });
+      cx.restore();
+      if (dai > rong) { co = Math.max(15, co * rong / dai * 0.97); chu.style.fontSize = co.toFixed(1) + 'px'; }
+      while (lan++ < 14 && co > 15 && chu.offsetHeight > el.clientHeight - 26) {
+        co *= 0.9; chu.style.fontSize = co.toFixed(1) + 'px';
+      }
+    });
+  }
+  // khung trung cua tung the theo toa do canvas (offset* khong bi anh huong boi hieu ung transform)
+  function khungThe() {
+    var cha = $('vdDamThe'), ds = cha.children, kq = [], i;
+    for (i = 0; i < ds.length; i++) {
+      kq.push({ x: cha.offsetLeft + ds[i].offsetLeft, y: cha.offsetTop + ds[i].offsetTop, w: ds[i].offsetWidth, h: ds[i].offsetHeight });
+    }
+    return kq;
+  }
+  // the nam duoi diem (x, y); co > 0 noi rong khung, co < 0 thu hep (ty le theo canh the)
+  function theTai(x, y, co) {
+    var K = S.dam.khung, i, b, dx, dy;
+    for (i = 0; i < K.length; i++) {
+      b = K[i]; dx = b.w * co; dy = b.h * co;
+      if (x >= b.x - dx && x <= b.x + b.w + dx && y >= b.y - dy && y <= b.y + b.h + dy) return i;
+    }
+    return -1;
+  }
+  function gocGon(a) { while (a > Math.PI) a -= Math.PI * 2; while (a < -Math.PI) a += Math.PI * 2; return a; }
+  function manDam(T, ty) { return { x: KH.ox + T.nx / ty * KH.vw * KH.sc, y: KH.oy + T.ny * KH.vh * KH.sc }; }
+  function tayDam(kq, now) {
+    var ds = ((kq && kq.landmarks) || []).slice(0, 2), ty = tyLe(), D = S.dam;
+    var mau = ds.map(function (lm) {
+      var a = raMan(lm[0]), b = raMan(lm[9]), dai = kc(lm[0], lm[9], ty);
+      return {
+        nx: (1 - (lm[5].x + lm[9].x + lm[13].x + lm[17].x) / 4) * ty, // tam nam tay = giua 4 khop goc ngon
+        ny: (lm[5].y + lm[9].y + lm[13].y + lm[17].y) / 4,
+        s: Math.max(kc(lm[5], lm[17], ty), dai * 0.85),
+        goc: Math.atan2(b.y - a.y, b.x - a.x) + Math.PI / 2, dai: dai
+      };
+    });
+    // ghep mau voi ban tay dang theo doi (gan nhat), giong tayChem
+    function phi(k, m) {
+      var T = D.tay[k];
+      return T.co && now - T.t < DAM.mat ? Math.sqrt((T.nx - m.nx) * (T.nx - m.nx) + (T.ny - m.ny) * (T.ny - m.ny)) : 0.45;
+    }
+    var gan = [];
+    if (mau.length === 1) gan = [[phi(0, mau[0]) <= phi(1, mau[0]) ? 0 : 1, mau[0]]];
+    else if (mau.length === 2) {
+      var doi = phi(0, mau[1]) + phi(1, mau[0]) < phi(0, mau[0]) + phi(1, mau[1]);
+      gan = [[0, mau[doi ? 1 : 0]], [1, mau[doi ? 0 : 1]]];
+    }
+    if (!D.khung.length && $('vdDamThe').children.length) D.khung = khungThe();
+    var mo = S.pha === 'hoi' && now - D.moLuc >= 550; // the vua hien: cho hoc sinh doc da
+    gan.forEach(function (g) {
+      var T = D.tay[g[0]], m = g[1], moi = !T.co || now - T.t > DAM.mat;
+      var p = manDam(m, ty);
+      var r = damBuoc(T, m, theTai(p.x, p.y, 0.04), theTai(p.x, p.y, -0.12), now, mo);
+      // goc gang: lam muot; nam tay chia thang vao camera (doan co tay – goc ngon rat ngan) thi giu goc cu
+      if (moi) { T.goc = m.goc; T.lat = p.x < KH.w / 2; }
+      else if (m.dai > m.s * 0.5) T.goc = gocGon(T.goc + gocGon(m.goc - T.goc) * 0.35);
+      if (r.dam || r.giu) damTrung(r.the, p.x, p.y, g[0]);
+    });
+    // hai tay cung co mat: gang ben trai man hinh lat lai cho ngon cai quay vao trong
+    var T0 = D.tay[0], T1 = D.tay[1];
+    if (gan.length === 2) { T0.lat = T0.nx < T1.nx; T1.lat = !T0.lat; }
+    // vong giu tren the (du phong): to mau the dang duoc giu
+    if (S.pha === 'hoi') {
+      Array.prototype.forEach.call($('vdDamThe').children, function (el, i) {
+        var pg = Math.max(T0.the === i && now - T0.t < 200 ? T0.p : 0, T1.the === i && now - T1.t < 200 ? T1.p : 0);
+        el.style.setProperty('--p', pg.toFixed(2));
+        el.classList.toggle('is-chon', pg > 0);
+      });
+    }
+    if (mau.length) { S.khongTay = now; tb(''); }
+    else if (S.pha !== 'hoi') tb('');
+    else if (now - S.khongTay > 2000) tb('Giơ hai nắm tay lên trước camera nhé 🥊');
+  }
+  // Mot cu dam (hoac giu / bam chuot / phim) trung the k tai diem (x, y) tren san
+  function damTrung(k, x, y, kTay) {
+    if (S.pha !== 'hoi') return;
+    var c = S.cau[S.i], dung = k === c.dung, nho = Math.min(KH.w, KH.h), r = Math.max(46, nho * 0.2), i, a, sp;
+    if (kTay >= 0) S.dam.cu[kTay] = performance.now();
+    sBop();
+    var cong = chot(k);
+    S.hat.push({ l: 'b', x: x, y: y, r: dung ? r : r * 0.72, chu: dung ? 'BỐP!' : 'Nhầm!', mau: dung ? '#ffd23f' : '#e6dcef', mau2: dung ? '#d8432c' : '#6e5a4e',
+      rot: ngau(-0.3, 0.3), t: 0, het: dung ? 0.8 : 0.65 });
+    if (!dung) return;
+    for (i = 0; i < 16; i++) {
+      a = Math.random() * Math.PI * 2; sp = ngau(0.8, 1.8) * r * 3;
+      S.hat.push({ l: 'g', x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - r, r: ngau(3, 7) * Math.max(1, r / 70), mau: i % 2 ? '#ffd23f' : '#ffffff', t: 0, het: ngau(0.45, 0.8) });
+    }
+    if (cong) S.hat.push({ l: 'c', x: x, y: y - r * 0.95, chu: '+' + cong, mau: '#7ee2a2', co: Math.max(28, r * 0.5), t: 0, het: 1.1 });
+  }
+  function damBam(i) { // chuot / ban phim: dam the thu i
+    if (S.tro !== 'dam' || S.pha !== 'hoi') return;
+    if (!S.dam.khung.length) S.dam.khung = khungThe();
+    var b = S.dam.khung[i];
+    if (b) damTrung(i, b.x + b.w / 2, b.y + b.h / 2, -1);
+  }
+  // Sau khi chot mot cau (goi tu chot): tru nang luong Bao Cat U / the luc nguoi choi, combo, ket thuc luot som
+  function damSau(chon, dung) {
+    var D = S.dam, the = $('vdDamThe').children;
+    D.hoi++;
+    Array.prototype.forEach.call(the, function (el) { el.style.setProperty('--p', 0); });
+    if (dung) {
+      D.hp = Math.max(0, D.hp - sucDam(S.chuoi));
+      if (the[chon]) the[chon].classList.add('is-bop');
+      if (S.chuoi === 3 || S.chuoi === 5 || S.chuoi === 10) {
+        var cb = $('vdDamCombo');
+        cb.hidden = true; void cb.offsetWidth;
+        cb.textContent = '🔥 Combo x' + S.chuoi;
+        cb.hidden = false;
+        sCombo(S.chuoi >= 10 ? 2 : S.chuoi >= 5 ? 1 : 0);
+      }
+      $('vdChuoi').textContent = S.chuoi >= 2 ? '🔥 Combo x' + S.chuoi : '';
+      if (D.hp <= 0) {
+        D.thang = true;
+        // ha Bao Cat U som: thuong diem cho so cau con lai
+        S.diem += 200 + 100 * Math.max(0, D.n - D.hoi);
+        $('vdDiem').textContent = S.diem;
+        lopU('is-guc'); sGuc();
+      } else lopU('is-dau');
+    } else {
+      D.sai++;
+      // tren lop khong ai bi "ha" truoc ca lop: the luc khong ve 0, luot van choi het so cau
+      D.tl = Math.max(lop ? 0.1 : 0, 1 - D.sai * 0.2);
+      if (!lop && D.sai >= 5) D.guc = true;
+      $('vdChuoi').textContent = '';
+      lopU('is-cuoi');
+      var b = $('vdDamBan');
+      b.classList.remove('is-rung'); void b.offsetWidth; b.classList.add('is-rung');
+    }
+    veThanhDam();
+  }
+  function saoDam() { // sao cuoi luot: thang + it sai thi nhieu sao
+    var D = S.dam, pt = D.hoi ? S.dung / D.hoi : 0;
+    return D.thang ? (D.sai <= 1 ? 3 : 2) : pt >= 0.6 ? 2 : pt >= 0.3 ? 1 : 0;
+  }
+  function tdDam(ten) {
+    var D = S.dam;
+    if (D.thang) return ten ? esc(ten) + ' hạ được ' + TEN_DICH + '!' : 'Chiến thắng! ' + TEN_DICH + ' chịu thua!';
+    if (D.guc) return 'Hết thể lực rồi — nghỉ chút rồi đấu lại nhé!';
+    return ten ? esc(ten) + ' cố lên nhé!' : TEN_DICH + ' vẫn đứng vững — cố lên nhé!';
+  }
+  function dongDam() {
+    var D = S.dam;
+    return 'Đấm trúng ' + S.dung + '/' + D.hoi + ' câu' + (S.chuoiMax >= 3 ? ' · combo cao nhất x' + S.chuoiMax : '') +
+      ' · thể lực còn ' + Math.round(D.tl * 100) + '%';
+  }
+  function veGang(x, y, r, goc, lat) {
+    var im = hinh(GANG), s = r * 2.5;
+    cx.save();
+    cx.translate(x, y); cx.rotate(goc);
+    if (lat) cx.scale(-1, 1);
+    if (im) cx.drawImage(im, -s * 0.52, -s * 0.43, s, s); // than gang (khong tinh co gang) nam quanh tam
+    else {
+      cx.beginPath(); cx.arc(0, 0, r, 0, Math.PI * 2);
+      cx.fillStyle = '#ef4f43'; cx.fill(); cx.lineWidth = Math.max(3, r * 0.1); cx.strokeStyle = '#2b1d3a'; cx.stroke();
+    }
+    cx.restore();
+  }
+  function veDam(dt) {
+    var now = performance.now(), D = S.dam, ty = tyLe(), nho = Math.min(KH.w, KH.h);
+    if (D.wCu !== KH.w || D.hCu !== KH.h) { // doi co man hinh: do lai khung the + co chu
+      D.wCu = KH.w; D.hCu = KH.h; D.khung = [];
+      vuaChuDam();
+    }
+    D.tay.forEach(function (T, k) {
+      if (!T.co || now - T.t > 280) return;
+      var p = manDam(T, ty), tu = now - D.cu[k];
+      // gang to theo ban tay (co gioi han de khong che het the)
+      var r = Math.max(nho * 0.07, Math.min(nho * 0.2, T.s * KH.vh * KH.sc));
+      if (tu < 240) r *= 1 + 0.35 * (1 - tu / 240); // gang phong to luc dam trung
+      // gang dang nam tren the (ngoai luc vua dam): ve trong bot de van doc duoc chu dap an phia sau
+      var trong = tu > 450 && theTai(p.x, p.y, 0.1) >= 0;
+      cx.save();
+      if (trong) cx.globalAlpha = 0.62;
+      // bong mo phia sau khi gang dang lao nhanh
+      if (T.P >= 0.55 && T.ls.length > 2) {
+        [3, 2].forEach(function (lui, j) {
+          var m = T.ls[T.ls.length - lui];
+          if (!m) return;
+          cx.save(); cx.globalAlpha *= j ? 0.3 : 0.16;
+          var q = manDam(m, ty);
+          veGang(q.x, q.y, r * (j ? 0.94 : 0.88), T.goc, T.lat);
+          cx.restore();
+        });
+      }
+      veGang(p.x, p.y, r, T.goc, T.lat);
+      cx.restore();
+      if (T.p > 0 && S.pha === 'hoi') { // vong tron day dan khi giu gang tren the
+        cx.save(); cx.lineCap = 'round';
+        cx.beginPath(); cx.arc(p.x, p.y, r * 1.28, 0, Math.PI * 2);
+        cx.lineWidth = Math.max(6, r * 0.2); cx.strokeStyle = 'rgba(43,29,58,.55)'; cx.stroke();
+        cx.beginPath(); cx.arc(p.x, p.y, r * 1.28, -Math.PI / 2, -Math.PI / 2 + T.p * Math.PI * 2);
+        cx.lineWidth = Math.max(4, r * 0.13); cx.strokeStyle = '#ffd23f'; cx.stroke();
+        cx.restore();
+      }
+    });
+    veHat(dt); // vu no "BOP!" + tia sang ve sau cung, de len gang
+  }
+
   /* ================= cau hoi chung ================= */
   function veThe() {
+    if (S.tro === 'dam') { veTheDam(); return; }
     var c = S.cau[S.i], h = '';
     c.opts.forEach(function (o, i) {
       var tag = S.tro === 'chem' ? 'div' : 'button';
@@ -1147,13 +1556,15 @@
 
   function moCau() {
     var c = S.cau[S.i], now = performance.now();
+    if (S.tro === 'dam') c = S.cau[S.i] = damCau(c);
     S.pha = 'hoi';
     S.ben = -1; S.canThang = true; S.thangTu = 0; S.goiY = null; S.saiCau = 0;
     $('vdSo').textContent = S.tro === 'ngoisao'
       ? 'Vòng ' + S.vong.so + ' · Câu ' + (S.i - S.vong.tu + 1) + '/' + S.vong.n
       : S.luot ? '🙋 ' + S.tenLuot + ' · Câu ' + (S.i - S.vong.tu + 1) + '/' + S.vong.n
       : 'Câu ' + (S.i + 1) + '/' + S.cau.length;
-    $('vdChuoi').textContent = S.tro !== 'ngoisao' && S.chuoi >= 2 ? '🔥 ' + S.chuoi + ' câu đúng liên tiếp' : '';
+    $('vdChuoi').textContent = S.tro === 'dam' ? (S.chuoi >= 2 ? '🔥 Combo x' + S.chuoi : '')
+      : S.tro !== 'ngoisao' && S.chuoi >= 2 ? '🔥 ' + S.chuoi + ' câu đúng liên tiếp' : '';
     $('vdHoi').innerHTML = (c.ctx ? '<div class="vd-ctx">' + esc(c.ctx) + '</div>' : '') +
       '<div class="vd-hoi-chu' + (c.hoiZh ? ' is-zh' : '') + '">' + esc(c.hoi).replace('＿＿', '<span class="vd-trong">＿＿</span>') + '</div>' +
       '';
@@ -1170,6 +1581,14 @@
       S.p.forEach(function (P) { P.ben = -1; P.khoa = -1; P.canThang = true; P.thangTu = 0; P.p = 0; P.khoaHien = ''; });
       veNguoi(0); veNguoi(1);
       goiY('Giơ 1–' + c.opts.length + ' ngón tay rồi giữ yên để khoá đáp án');
+    } else if (S.tro === 'dam') {
+      $('vdTim').textContent = '';
+      S.dam.moLuc = now; S.dam.khung = [];
+      // gang dang nam san cho the vua hien thi phai dua ra ngoai roi vao lai moi tinh la "giu"
+      S.dam.tay.forEach(function (T) { T.ngoai = false; T.the = -1; T.p = 0; });
+      $('vdDamCombo').hidden = true;
+      lopU('');
+      goiY('Đấm vào thẻ mang đáp án đúng! 🥊');
     } else {
       $('vdTim').textContent = '';
       goiY('Hạ hai tay xuống một chút…');
@@ -1211,7 +1630,7 @@
     }
     S.diem += cong;
     $('vdDiem').textContent = S.diem;
-    var the = $('vdDap').children;
+    var the = (S.tro === 'dam' ? $('vdDamThe') : $('vdDap')).children;
     Array.prototype.forEach.call(the, function (el, i) {
       el.style.setProperty('--p', 0);
       el.classList.remove('is-chon');
@@ -1220,11 +1639,22 @@
       else if (!el.classList.contains('is-sai')) el.classList.add('is-mo');
     });
     if (S.tro === 'chem') loChem();
-    var tb2 = chon === -1 ? '⏰ Hết giờ!' : dung ? (lan2 ? '👍 Đúng rồi (lần hai)!' : '🎉 Chính xác!') : '😅 Chưa đúng rồi';
+    var dam = S.tro === 'dam';
+    if (dam) damSau(chon, dung);
+    var tb2 = chon === -1 ? '⏰ Hết giờ!' : dung ? (lan2 ? '👍 Đúng rồi (lần hai)!' : dam ? '🥊 Bốp! Chính xác!' : '🎉 Chính xác!') : '😅 Chưa đúng rồi';
     S.goiY = null;
-    $('vdDuoi').innerHTML = '<b class="' + (dung ? 'is-dung' : 'is-sai') + '">' + tb2 + (dung ? '' : ' Đáp án: ' + CHU[c.dung]) + '</b>' +
+    // tro dam khong co chu A/B/C tren the -> ghi thang dap an dung
+    $('vdDuoi').innerHTML = '<b class="' + (dung ? 'is-dung' : 'is-sai') + '">' + tb2 + (dung ? '' : ' Đáp án: ' + (dam ? esc(c.opts[c.dung]) : CHU[c.dung])) + '</b>' +
       (c.why ? '<span>' + esc(c.why) + '</span>' : '');
     setTimeout(function () { docZh(c.docSau); }, 700);
+    // Bao Cat U het nang luong (thang) hoac minh het the luc (chi khi choi o nha) -> ket thuc luot som
+    if (dam && (S.dam.thang || S.dam.guc)) {
+      $('vdDuoi').insertAdjacentHTML('beforeend', S.dam.thang
+        ? '<b class="is-dung">🏆 ' + TEN_DICH + ' chịu thua rồi!</b>' : '<b class="is-sai">😮‍💨 Hết thể lực rồi!</b>');
+      S.pha = 'cho-luot';
+      hen(S.luot ? ketThucLuot : ketThuc, 2800);
+      return cong;
+    }
     var cuoi = S.luot ? S.i + 1 - S.vong.tu >= S.vong.n : S.i + 1 >= S.cau.length;
     if (S.luot && cuoi) { S.pha = 'cho-luot'; hen(ketThucLuot, 2200); return cong; }
     if (S.moiBan && !cuoi) {
@@ -1277,6 +1707,8 @@
     $('vdSanh').hidden = false;
     $('vdDiem').hidden = true;
     $('vdP0').hidden = $('vdP1').hidden = true;
+    $('vdDam').hidden = true;
+    $('vdDamThe').innerHTML = '';
     $('vdTieuDe').textContent = '🤸 Vận động trả lời';
     $('vdBatDau').disabled = false;
     $('vdBatDau').textContent = '▶ Bắt đầu';
@@ -1298,26 +1730,27 @@
   }
   function ketThuc() {
     sHet();
-    var n = S.cau.length, pt = n ? S.dung / n : 0;
-    var sao = pt >= 0.9 ? 3 : pt >= 0.7 ? 2 : pt >= 0.4 ? 1 : 0, moi = kyLuc(S.diem);
+    var dam = S.tro === 'dam', n = S.cau.length, pt = n ? S.dung / n : 0;
+    var sao = dam ? saoDam() : pt >= 0.9 ? 3 : pt >= 0.7 ? 2 : pt >= 0.4 ? 1 : 0, moi = kyLuc(S.diem);
     veKq('<div class="vd-kq-sao">' + [0, 1, 2].map(function (i) { return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.2) + 's">' + anhTag(i < sao ? 'star' : 'star-empty') + '</span>'; }).join('') + '</div>' +
-      '<h2>' + (sao >= 3 ? 'Xuất sắc!' : sao >= 2 ? 'Giỏi lắm!' : sao >= 1 ? 'Khá lắm!' : 'Cố lên nhé!') + '</h2>' +
+      '<h2>' + (dam ? tdDam('') : sao >= 3 ? 'Xuất sắc!' : sao >= 2 ? 'Giỏi lắm!' : sao >= 1 ? 'Khá lắm!' : 'Cố lên nhé!') + '</h2>' +
       '<div class="vd-kq-diem">' + S.diem + ' <small>điểm</small></div>' +
-      '<p>' + (S.tro === 'chem' ? 'Đúng ngay lần đầu ' : 'Đúng ') + S.dung + '/' + n +
-      (S.chuoiMax > 1 ? ' · chuỗi dài nhất ' + S.chuoiMax : '') + (moi ? ' · 🏆 Kỷ lục mới!' : '') + '</p>');
+      '<p>' + (dam ? dongDam() : (S.tro === 'chem' ? 'Đúng ngay lần đầu ' : 'Đúng ') + S.dung + '/' + n +
+      (S.chuoiMax > 1 ? ' · chuỗi dài nhất ' + S.chuoiMax : '')) + (moi ? ' · 🏆 Kỷ lục mới!' : '') + '</p>');
     if (sao >= 2) phaoGiay();
   }
   // Het luot cua mot ban (Chem hoa qua / The duc ABC dung danh sach lop)
   function ketThucLuot() {
     sHet();
-    S.lichSu.push({ ten: S.tenLuot, dung: S.dung, n: S.vong.n, diem: S.diem });
+    var dam = S.tro === 'dam'; // tro dam co the xong luot som (ha duoc Bao Cat U) -> tinh theo so cau da hoi
+    S.lichSu.push({ ten: S.tenLuot, dung: S.dung, n: dam ? S.dam.hoi : S.vong.n, diem: S.diem });
     var bxh = S.lichSu.slice().sort(function (a, b) { return b.diem - a.diem; });
-    var pt = S.dung / S.vong.n, sao = pt >= 0.9 ? 3 : pt >= 0.6 ? 2 : pt >= 0.3 ? 1 : 0;
+    var pt = S.dung / S.vong.n, sao = dam ? saoDam() : pt >= 0.9 ? 3 : pt >= 0.6 ? 2 : pt >= 0.3 ? 1 : 0;
     var chua = coMat().filter(function (t) { return !S.daChoi[t]; });
     veKq('<div class="vd-kq-sao">' + [0, 1, 2].map(function (i) { return '<span class="' + (i < sao ? 'on' : '') + '" style="animation-delay:' + (i * 0.2) + 's">' + anhTag(i < sao ? 'star' : 'star-empty') + '</span>'; }).join('') + '</div>' +
-      '<h2>' + esc(S.tenLuot) + (sao >= 2 ? ' giỏi lắm!' : ' cố lên nhé!') + '</h2>' +
+      '<h2>' + (dam ? tdDam(S.tenLuot) : esc(S.tenLuot) + (sao >= 2 ? ' giỏi lắm!' : ' cố lên nhé!')) + '</h2>' +
       '<div class="vd-kq-diem">' + S.diem + ' <small>điểm</small></div>' +
-      '<p>Đúng ' + S.dung + '/' + S.vong.n + ' câu</p>' +
+      '<p>' + (dam ? dongDam() : 'Đúng ' + S.dung + '/' + S.vong.n + ' câu') + '</p>' +
       (bxh.length > 1 ? '<div class="vd-vong-ds"><b>Bảng điểm các bạn đã chơi</b>' + bxh.map(function (r, i) {
         return '<div><span>' + (i + 1) + '.</span><span class="' + (i === 0 ? 'is-thang' : '') + '">' + esc(r.ten) + '</span><i>' + r.dung + '/' + r.n + '</i><span>' + r.diem + ' điểm</span></div>';
       }).join('') + '</div>' : '') +
@@ -1350,6 +1783,8 @@
     $('vdDiem').hidden = false;
     $('vdDiem').textContent = '0';
     $('vdDap').innerHTML = '';
+    $('vdDamThe').innerHTML = '';
+    if (S.tro === 'dam') damMoi();
     $('vdChuoi').textContent = '';
     $('vdHoi').innerHTML = '<div class="vd-hoi-chu">🙋 Mời ' + esc(S.tenLuot) + ' lên!</div>';
     demNguoc().then(function () { S.i = tu; moCau(); });
@@ -1473,6 +1908,11 @@
       khoaNS(e.clientX - r.left < r.width / 2 ? 0 : 1, i);
     }
   });
+  // Vo si chu Han: bam chuot / cham vao the cung la mot cu dam (du phong khi camera hong, va de thu)
+  $('vdDamThe').addEventListener('click', function (e) {
+    var el = e.target.closest ? e.target.closest('.vd-the') : null;
+    if (el) damBam(+el.getAttribute('data-i'));
+  });
   document.addEventListener('keydown', function (e) {
     if (e.target && /^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;
     if ((e.code === 'Space' || e.key === 'Enter') && S.pha === 'cho') { e.preventDefault(); tiep(); return; }
@@ -1480,6 +1920,7 @@
     var n = S.cau[S.i].opts.length, k = '1234'.indexOf(e.key), k2 = '7890'.indexOf(e.key), kc2 = 'abcd'.indexOf(e.key.toLowerCase());
     if (S.tro === 'theduc') { var i = k >= 0 ? k : kc2; if (i >= 0 && i < n) chot(i); }
     else if (S.tro === 'chem') { if (k >= 0 && S.vat[k] && S.vat[k].tt === 'bay' && !S.vat[k].sang) trung(S.vat[k], 1, -0.4); }
+    else if (S.tro === 'dam') { if (k >= 0 && k < n) damBam(k); }
     else {
       if (k >= 0 && k < n) khoaNS(0, k);
       if (k2 >= 0 && k2 < n) khoaNS(1, k2);

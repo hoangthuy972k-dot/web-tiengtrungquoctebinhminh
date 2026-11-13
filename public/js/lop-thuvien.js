@@ -12,7 +12,7 @@
   var LOAI = {
     thilop: ['dt', 'on'], kiemtra: ['goi', 'on'], noi: ['goi', 'on'], ufo: ['goi'], goiten: ['goi', 'doi'], rong: [], the: ['on'],
     't:dictation': ['on'], 't:quiz': ['on'], 't:phatam': ['on', 'goi'], 't:paper': ['on'],
-    nghieng: ['vd', 'goi'], chem: ['vd'], theduc: ['vd'], ngoisao: ['vd', 'goi'],
+    nghieng: ['vd', 'goi'], chem: ['vd'], theduc: ['vd'], ngoisao: ['vd', 'goi'], dam: ['vd', 'goi'],
     zombie: ['on'], ghep: ['doi', 'on'], ochu: ['on'], luot: ['doi'], bay: ['on', 'dt', 'doi'], doantau: ['on', 'dt', 'doi'],
     doikhang: ['dt'], chuong: ['on', 'dt'], dua: ['dt'], nhip: ['dt', 'on'], tug: ['doi', 'dt'], train: ['doi'], mine: ['doi'],
     errfix: ['on', 'doi'], abc: ['on'], sort: ['on', 'vd', 'doi'], bingo: ['on'], guess: ['on', 'doi'], tiles: ['on', 'doi'],
@@ -37,6 +37,7 @@
     chem: { b: ['Chọn bài, mở trò và cho phép webcam.', 'Mời một bạn đứng trước màn hình.', 'Theo dõi điểm, hết lượt thì đổi bạn.'], hs: 'Vung tay chém quả (hoặc chọc bóng) mang đáp án đúng.' },
     theduc: { b: ['Chọn bài, mở trò và cho phép webcam.', 'Giới thiệu 4 động tác ứng với A–D.', 'Câu hiện ra, học sinh làm động tác — máy chấm.'], hs: 'Làm đúng động tác (giơ hai tay, tay phải, tay trái, dang tay) để trả lời.' },
     ngoisao: { b: ['Chọn bài và danh sách lớp, mở trò.', 'Máy bốc hai bạn có mặt lên đấu trước webcam.', 'Ai đúng trước lấy sao, rồi bốc cặp mới.'], hs: 'Giơ 1–4 ngón tay để chọn A–D, nhanh hơn bạn đấu.' },
+    dam: { b: ['Chọn bài, mở trò và cho phép webcam; chọn danh sách lớp để máy gọi từng bạn.', 'Bạn được gọi đứng cách màn hình một sải tay, xung quanh không có đồ vật.', 'Mỗi bạn một lượt 3–10 câu; hết lượt gọi ngẫu nhiên bạn tiếp hoặc chọn bạn xung phong.'], hs: 'Nắm tay làm găng, đấm trúng thẻ mang đáp án đúng (hoặc giữ găng trên thẻ) để hạ Bao Cát Ú.' },
     zombie: { b: ['Chọn bài rồi mở trò.', 'Zombie mang đáp án tiến về hàng rào.', 'Cả lớp hô đáp án, cô bấm bắn zombie đúng.'], hs: 'Cùng hô to đáp án đúng trước khi zombie tràn qua.' },
     ghep: { b: ['Chọn bài và số tổ, mở trò.', 'Từng tổ chọn ô và trả lời câu hỏi.', 'Đúng thì lật mảnh ghép; đoán ra bức tranh được điểm lớn.'], hs: 'Bàn trong tổ để trả lời, rồi đoán bức tranh văn hoá phía sau.' },
     ochu: { b: ['Chọn bài, mở trò — web tự xếp ô chữ.', 'Chọn một hàng, đọc gợi ý nghĩa tiếng Việt.', 'Ai / tổ nào đúng thì điền chữ vào ô.'], hs: 'Đoán từ theo nghĩa, nói chữ Hán hoặc pinyin.' },

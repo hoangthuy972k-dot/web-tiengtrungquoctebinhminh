@@ -33,6 +33,7 @@
         <button type="button" data-tro="chem"><span aria-hidden="true"><img src="/images/game/cam-watermelon.svg" alt="" draggable="false"></span><b>Chém hoa quả</b><small>Ngón trỏ làm dao</small></button>
         <button type="button" data-tro="theduc"><span aria-hidden="true"><img src="/images/game/cam-pose-d.svg" alt="" draggable="false"></span><b>Thể dục ABC</b><small>Tạo dáng chọn đáp án</small></button>
         <button type="button" data-tro="ngoisao"><span aria-hidden="true"><img src="/images/game/cam-star.svg" alt="" draggable="false"></span><b>Cuộc đua ngôi sao</b><small>Hai bạn thi giơ ngón tay</small></button>
+        <button type="button" data-tro="dam"><span aria-hidden="true"><img src="/images/game/cam-glove.svg" alt="" draggable="false"></span><b>Võ sĩ chữ Hán</b><small>Đấm trúng đáp án đúng</small></button>
       </div>
       <div class="vd-chedo" id="vdDa" role="group" aria-label="Kiểu đồ vật">
         <button type="button" data-da="qua" class="is-on"><img src="/images/game/cam-orange.svg" alt="" draggable="false"> Hoa quả</button>
@@ -78,6 +79,19 @@
     <div class="vd-san" id="vdSan">
       <video id="vdVideo" playsinline muted autoplay></video>
       <canvas id="vdCv"></canvas>
+      <!-- Vo si chu Han: the dap an + thanh the luc / nang luong Bao Cat U nam tren khung camera (gang ve tren canvas) -->
+      <div class="vd-dam" id="vdDam" hidden>
+        <div class="vd-dam-the" id="vdDamThe"></div>
+        <div class="vd-dam-combo" id="vdDamCombo" hidden></div>
+        <div class="vd-dam-ban" id="vdDamBan">
+          <img src="/images/game/cam-glove.svg" alt="" draggable="false">
+          <div><b id="vdDamTen">Võ sĩ</b><span class="vd-dam-thanh ban"><i id="vdDamTl"></i></span><small>💪 Thể lực</small></div>
+        </div>
+        <div class="vd-dam-dich" id="vdDamDich">
+          <div class="vd-dam-u" id="vdDamU" aria-hidden="true"></div>
+          <div><b>Bao Cát Ú</b><span class="vd-dam-thanh dich"><i id="vdDamHp"></i></span><small>⚡ Năng lượng <em id="vdDamHpSo">100%</em></small></div>
+        </div>
+      </div>
       <div class="vd-chia" aria-hidden="true"></div>
       <div class="vd-nguoi trai" id="vdP0" hidden></div>
       <div class="vd-nguoi phai" id="vdP1" hidden></div>

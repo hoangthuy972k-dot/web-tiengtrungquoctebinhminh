@@ -207,7 +207,7 @@
   /* ---------------- danh sach tro choi ---------------- */
   // Tranh minh hoa ve rieng cho tung tro (public/images/tro-choi/<key>.svg); tro moi chua co tranh thi dung emoji
   var TRANH = { tocdo: 1, thelat: 1, keoco: 1, doantau: 1, manhghep: 1, zombie: 1, chemqua: 1, nghieng: 1, domin: 1, keotha: 1,
-    vd_chem: 1, vd_theduc: 1, vd_ngoisao: 1 };
+    vd_chem: 1, vd_theduc: 1, vd_ngoisao: 1, vd_dam: 1 };
   var TRANH_V = '2';
   function veTro() {
     var wrap = $('#ghGames');

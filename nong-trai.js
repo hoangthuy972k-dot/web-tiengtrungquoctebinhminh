@@ -295,7 +295,7 @@ const DAT = [
   { w: 28, h: 26, xu: 20000, lv: 30, zh: '皇家庄园', py: 'huángjiā zhuāngyuán', vn: 'Điền trang hoàng gia' },
 ];
 const O_MIEN_PHI = 4;
-const CHAI_XU = 3; // chai troi dat vao dao moi ngay (bam nhat)
+const CHAI_XU = 3; // gio qua giau trong bui cay canh ruong moi ngay (bam nhat; ten hanh dong 'chai' giu nguyen)
 function giaODat(soO) { return 3 + Math.max(0, soO - O_MIEN_PHI); }
 function oToiDa(lv) { return Math.min(40, 6 + 2 * lv); }
 
@@ -1254,8 +1254,8 @@ module.exports = function ganNongTrai(app, d) {
     } else if (a === 'xemnk') {
       f.nkXem = now;
     } else if (a === 'chai') {
-      // Chai troi dat vao dao (2026-11): nhat 1 lan / ngay VN -> +3 xu (lanLuot khoa theo hoc sinh, lan 2 bao loi)
-      if (f.chai === ngay) throw loi('Hôm nay em đã nhặt chai rồi — mai biển lại dạt chai mới nhé!');
+      // Gio qua trong bui cay (2026-11): nhat 1 lan / ngay VN -> +3 xu (lanLuot khoa theo hoc sinh, lan 2 bao loi)
+      if (f.chai === ngay) throw loi('Hôm nay em đã nhặt giỏ quà rồi — mai quay lại ruộng tìm giỏ mới nhé!');
       f.chai = ngay;
       f.xu += CHAI_XU;
       them.xu += CHAI_XU;
@@ -2249,7 +2249,7 @@ module.exports = function ganNongTrai(app, d) {
       const x = { id, ten: ten[id], la: id === req.user.id, co: !!f, tuan: tuanCua[id] || 0, hv: tongCua[id] || 0 };
       if (f) Object.assign(x, {
         lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], sap: (f.sap || []).length, av: f.av || null,
-        // dao tren ban do quan dao: co vang trai so 1 + ruy bang nong trai dep cua tuan (chi them truong, khong doi gi khac)
+        // lo dat tren thi tran: co vang trai so 1 + ruy bang nong trai dep cua tuan (chi them truong, khong doi gi khac)
         coVang: thanhTich(f).coVang, ruy: thanhTich(f).ruy,
         o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t })),
       });
@@ -2543,7 +2543,7 @@ module.exports = function ganNongTrai(app, d) {
         const f = await doc(req.user.id);
         if (Number.isFinite(Number(b.xp))) f.xp = Math.max(0, Math.floor(Number(b.xp)));
         if (Number.isFinite(Number(b.xu))) f.xu = Math.max(0, Math.floor(Number(b.xu)));
-        // thu dao: doi kich thuoc dat (chi tang hoac giam khi moi do vat van nam trong dat moi)
+        // thu nong trai: doi kich thuoc dat (chi tang hoac giam khi moi do vat van nam trong dat moi)
         if (Number.isInteger(b.dat) && DAT[b.dat] && f.o.every((o) => o.x + rong(o) <= DAT[b.dat].w && o.y + rong(o) <= DAT[b.dat].h)) f.dat = b.dat;
         if (b.chaiLai) delete f.chai;
         // thu kinh te: dat kho / tui / hat, lam chin moi o ruong + vat nuoi dang lam

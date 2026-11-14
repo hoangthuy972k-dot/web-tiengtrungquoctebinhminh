@@ -14,7 +14,7 @@
   var $ = function (s, g) { return (g || document).querySelector(s); };
   var $all = function (s, g) { return Array.prototype.slice.call((g || document).querySelectorAll(s)); };
   var ANH = '/images/farm/';
-  var V = '?v=1';
+  var V = '?v=2'; // 2026-11: ve lai duong da cuoi, o ruong, hang rao
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -56,8 +56,11 @@
     chon: null,      // id vat dang chon (che do sap xep)
     tham: null,      // nong trai ban dang tham { id, ten, ... }
     o: 64,           // kich thuoc 1 o (px)
+    ng: 0,           // goc nhin nghieng 2.5D (nong-trai-que.js): 0 = phang (kieu cu); >0 = he so nen hang (cos goc nghieng)
     ban: false       // dang gui hanh dong
   };
+  // chieu cao 1 hang o tren man hinh (px): phang = S.o, nghieng = S.o * S.ng
+  function hangPx() { return S.o * (S.ng || 1); }
   function bayGio() { return Date.now() + S.lech; }
 
   try { var z = +localStorage.getItem('hyv_nt_zoom'); if (z >= 40 && z <= 110) S.o = z; } catch (e) { /* bo qua */ }
@@ -345,8 +348,11 @@
     var T = S.o, w = rong(o), t = trangThai(o);
     var phang = o.k === 'o' || (S.cat.TT[o.k] && S.cat.TT[o.k].phang);
     var cls = 'nt-vat nt-k-' + o.k + (phang ? ' phang' : '') + (t.loai ? ' tt-' + t.loai : '') + (S.chon === o.id ? ' chon' : '');
+    // nghieng: do phang (o ruong, duong) cung xep theo hang de ngon cay / ao khong de len do dung phia sau
     var h = '<button type="button" class="' + cls + '" data-id="' + o.id + '" style="left:' + o.x * T + 'px;top:' + o.y * T +
-      'px;width:' + w * T + 'px;height:' + w * T + 'px;z-index:' + (phang ? 1 : (o.y + w) * 10) + ';--lech:-' + ((o.id * 0.73) % 3).toFixed(2) + 's" aria-label="' + esc(tenMon(o.k, o.n).vn) + '">';
+      'px;width:' + w * T + 'px;height:' + w * T + 'px;z-index:' + (phang && !S.ng ? 1 : (o.y + w) * 10) + ';--lech:-' + ((o.id * 0.73) % 3).toFixed(2) + 's" aria-label="' + esc(tenMon(o.k, o.n).vn) + '">';
+    // nghieng: phan "dung" (hinh, bong bong, thanh thoi gian) nam trong .nt-dung de dung thang tren mat dat nghieng
+    if (S.ng) h += '<span class="nt-dung">';
     h += '<img class="nt-hinh" src="' + anh(t.hinh) + '" alt="" draggable="false">';
     // dang tham ban: bong bong chi cho viec giup duoc (tuoi cay, cho an)
     var bong = S.tham ? (o.k === 'o' && t.loai === 'lon' && !o.t ? 'ic-tuoi' : t.loai === 'doi' ? 'ic-doi' : null) : t.bong;
@@ -355,6 +361,7 @@
       '<span class="nt-xg-dem">' + img('sp-' + t.r) + '<b>' + demNgan(t.con) + '</b></span>';
     if (t.con != null) h += '<span class="nt-thoi"><i style="width:' + Math.round(t.tile * 100) + '%"></i></span>';
     if (t.tuoi) h += '<span class="nt-giot" aria-hidden="true"></span>';
+    if (S.ng) h += '</span>';
     h += '</button>';
     return h;
   }
@@ -612,7 +619,8 @@
   /* ---------------- bam vao ban do ---------------- */
   function oTuSuKien(e) {
     var r = $('#ntDat').getBoundingClientRect();
-    return { x: Math.floor((e.clientX - r.left) / S.o), y: Math.floor((e.clientY - r.top) / S.o) };
+    // nghieng: mat dat chi nen theo chieu doc (scaleY) -> nghich dao = chia cho chieu cao hang tren man hinh
+    return { x: Math.floor((e.clientX - r.left) / S.o), y: Math.floor((e.clientY - r.top) / hangPx()) };
   }
   function datDuoc(x, y, w, boQua) {
     var d = S.st;
@@ -720,7 +728,8 @@
     if (!noiCua) return;
     var n = $('#ntNoi');
     var el = document.querySelector('.nt-vat[data-id="' + noiCua.id + '"]') || noiCua.el;
-    var r = el.getBoundingClientRect();
+    // nghieng: neo vao hinh dung thang (cao hon o dat) de bong noi khong che mat do vat
+    var r = ((S.ng && el.querySelector && el.querySelector('.nt-dung')) || el).getBoundingClientRect();
     var w = n.offsetWidth, h = n.offsetHeight;
     if (innerWidth <= 640) {
       var duoi = $('#ntDuoi').getBoundingClientRect().top;
@@ -923,10 +932,12 @@
       else if (!kv.chuot && Math.abs(dx) + Math.abs(dy) > 10) { clearTimeout(kv.hen); kv = null; return; } // dang vuot de cuon
       if (!kv.dang) return;
     }
-    kv.el.style.translate = dx + 'px ' + dy + 'px';
+    // nghieng: do vat nam trong mat dat da nen -> doi do dich doc cua ngon tay ve don vi mat dat
+    var dyd = dy / (S.ng || 1);
+    kv.el.style.translate = dx + 'px ' + dyd + 'px';
     var w = rong(kv.o), k = S.st.kich;
     var nx = Math.max(0, Math.min(k.w - w, Math.round((kv.o.x * S.o + dx) / S.o)));
-    var ny = Math.max(0, Math.min(k.h - w, Math.round((kv.o.y * S.o + dy) / S.o)));
+    var ny = Math.max(0, Math.min(k.h - w, Math.round((kv.o.y * S.o + dyd) / S.o)));
     kv.nx = nx; kv.ny = ny; kv.ok = datDuoc(nx, ny, w, kv.o.id);
     var d = $('#ntDich');
     if (d) { d.style.left = nx * S.o + 'px'; d.style.top = ny * S.o + 'px'; d.classList.toggle('sai', !kv.ok); }
@@ -997,10 +1008,13 @@
     k.addEventListener('scroll', datViTriNoi, { passive: true });
   }
   function zoom(d) {
+    // nghieng: giu nguyen diem dat dang o giua man hinh sau khi phong to / thu nho (nong-trai-que.js)
+    var giu = window.NTQue && NTQue.giuTam ? NTQue.giuTam() : null;
     S.o = Math.max(40, Math.min(110, S.o + d));
     try { localStorage.setItem('hyv_nt_zoom', S.o); } catch (e) { /* bo qua */ }
     dongNoi();
     veBanDo();
+    if (giu) giu();
   }
 
   /* ---------------- bang truot: cua hang / kho / don / ban / kiem sao ---------------- */
@@ -2139,7 +2153,8 @@
       veThamGoi();
       document.body.classList.add('dang-tham');
       veBanDo();
-      if (window.NTDao) NTDao.canh(); else $('#ntKhung').scrollTo(0, 0);
+      // nghieng: vung que rong hon ruong -> cuon toi nha / ruong cua ban
+      if (S.ng && window.NTQue) NTQue.canh(); else $('#ntKhung').scrollTo(0, 0);
       setTimeout(function () { if (S.tham && S.tham.id === id) noi('chu', '欢迎！', 'Huānyíng!', 4000); }, 700);
     }, function (err) { bao(err.message, 'loi'); });
   }
@@ -3998,8 +4013,7 @@
     // so lo moi hang theo be rong man hinh -> chen 1 con pho truoc moi hang
     var cot = soCotTt = soCot(luoi), html = '', hang = 0, dung = 0;
     // trang trai lon chiem 2 o; xep lan luot, o lon khong vua cho trong thi lay lo nho ke tiep chen vao
-    // (quan dao: dao to nho theo dat nen moi dao 1 o)
-    var cho = r.ds.map(function (b, i) { return { b: b, i: i, u: laDatLon(b) && !window.NTDao ? Math.min(2, cot) : 1 }; });
+    var cho = r.ds.map(function (b, i) { return { b: b, i: i, u: laDatLon(b) ? Math.min(2, cot) : 1 }; });
     while (cho.length) {
       if (dung === 0) html += hangPho(hang++);
       var j = -1;
@@ -4038,8 +4052,6 @@
   }
   function laDatLon(b) { return !!(b.co && b.kich && b.kich.w >= 20); }
   function oPho(b, i, to) {
-    // quan dao: moi o la 1 hon dao giua bien (khong co den / cay ven duong)
-    if (window.NTDao) return '<div class="nt-o-pho nt-o-dao">' + loDat(b, i) + '</div>';
     // ven duong: den long goc tren, cay / chau hoa goc duoi (moi lo mot kieu)
     return '<div class="nt-o-pho' + (to ? ' to' : '') + '">' + loDat(b, i) +
       '<img class="nt-vd nt-vd-den" src="' + anh('den-long') + '" alt="" draggable="false">' +
@@ -4150,43 +4162,16 @@
     tt.insertBefore(troi, tt.firstChild);
   }
   var HUY_TT = ['🥇', '🥈', '🥉'];
-  // Thi tran = quan dao (2026-11): moi ban 1 hon dao nho (hinh dao that theo dat + ma ban), vai bieu tuong nha / do trang tri
-  function monDaoNho(b) {
-    var c = S.cat, ds = [];
-    var nha = b.o.filter(function (o) { return o.k === 'nha'; })[0];
-    if (nha) ds.push({ o: nha, src: anh('nha-' + (nha.n || 1)), to: true });
-    var tt = b.o.filter(function (o) { return c.TT[o.k] && !c.TT[o.k].phang; })
-      .sort(function (a, z) { return (c.TT[z.k].dep || 0) - (c.TT[a.k].dep || 0) || a.id - z.id; });
-    var daCo = {};
-    tt.forEach(function (o) { if (ds.length < 4 && !daCo[o.k]) { daCo[o.k] = 1; ds.push({ o: o, src: anh(o.k) }); } });
-    var xg = b.o.filter(function (o) { return xgCua(o.k); })[0];
-    if (xg && ds.length < 5) ds.push({ o: xg, src: anh(xg.k) });
-    var con = b.o.filter(function (o) { return c.CON[o.k]; })[0];
-    if (con && ds.length < 5) ds.push({ o: con, src: anh(con.k) });
-    return ds.map(function (m) { var r = rong(m.o); return { x: m.o.x + r / 2, y: m.o.y + r * 0.9, src: m.src, to: m.to }; });
-  }
   function loDat(b, hang) {
     var huy = hang < 3 && b.dep > 0 ? HUY_TT[hang] + ' ' : '';
-    if (window.NTDao) {
-      var l = NTDao.lech(b.id), nv = '<span class="nt-lo-nv">' + NV.svg(b.av || NV.macDinh(b.id)) + '</span>';
-      var dao = b.co ? NTDao.daoNho(b, { mon: monDaoNho(b), them: nv + (b.coVang ? '<span class="nt-dn-co" title="Trại vô địch tuần">🚩</span>' : '') })
-        : NTDao.daoNho({ id: b.id, kich: { w: 6, h: 4 } }, { them: '<span class="nt-dn-hoang">🌴</span>' });
-      return '<button type="button" class="nt-lo nt-lo-dao' + (b.la ? ' la' : '') + (b.co ? '' : ' hoang') + '" data-lo="' + esc(b.id) + '" style="--dx:' + l.x + 'px;--dy:' + l.y + 'px" aria-label="' + (b.la ? 'Đảo của em' : 'Đảo nông trại của ' + esc(b.ten)) + '">' +
-        '<span class="nt-lo-dat">' + (b.la ? '<span class="nt-lo-em">Đảo của em</span>' : '') + dao + '</span>' +
-        '<span class="nt-lo-bien"><b>' + huy + huyHv(b.hv, true) + esc(b.ten) + (b.la ? ' (em)' : '') + '</b><small>' +
-        (b.co ? 'Cấp ' + b.lv + ' · đẹp ' + b.dep + ' · ❤ ' + b.tim + (b.sap ? ' · 🛒 ' + b.sap : '') : 'Đảo hoang — chờ bạn mở nông trại') +
-        (b.tuan ? ' · ⭐ ' + b.tuan + ' tuần' : '') + '</small>' +
-        (b.ruy ? '<span class="nt-lo-ruy">🎀 Nông trại đẹp #' + b.ruy + '</span>' : '') +
-        (b.coVang ? '<span class="nt-lo-ruy vang">🚩 Trại vô địch tuần</span>' : '') +
-        (laDatLon(b) ? '<span class="nt-lo-to">🏝 ' + (b.kich.w >= 28 ? 'Điền trang hoàng gia <span lang="zh">皇家庄园</span>' : b.kich.w >= 24 ? 'Điền trang <span lang="zh">庄园</span>' : 'Trang trại lớn <span lang="zh">大农场</span>') + ' · ' + b.kich.w + '×' + b.kich.h + '</span>' : '') +
-        (b.vuaHoc ? '<span class="nt-lo-vua">👑 Chăm học nhất tuần</span>' : '') + '</span></button>';
-    }
     return '<button type="button" class="nt-lo' + (b.la ? ' la' : '') + '" data-lo="' + esc(b.id) + '" aria-label="Nông trại của ' + esc(b.ten) + '">' +
       '<div class="nt-lo-dat">' + (b.co ? farmNho(b) : '<div class="nt-lo-trong">Đất trống — chờ ' + esc(b.ten) + ' mở nông trại</div>') +
       '<span class="nt-lo-nv">' + NV.svg(b.av || NV.macDinh(b.id)) + '</span></div>' +
       '<div class="nt-lo-bien"><b>' + huy + huyHv(b.hv, true) + esc(b.ten) + (b.la ? ' (em)' : '') + '</b><small>' +
       (b.co ? 'Cấp ' + b.lv + ' · đẹp ' + b.dep + ' · ❤ ' + b.tim + (b.sap ? ' · 🛒 ' + b.sap : '') : 'Chưa mở nông trại') +
       (b.tuan ? ' · ⭐ ' + b.tuan + ' tuần' : '') + '</small>' +
+      (b.ruy ? '<span class="nt-lo-ruy">🎀 Nông trại đẹp #' + b.ruy + '</span>' : '') +
+      (b.coVang ? '<span class="nt-lo-ruy vang">🚩 Trại vô địch tuần</span>' : '') +
       (laDatLon(b) ? '<span class="nt-lo-to">🏰 ' + (b.kich.w >= 28 ? 'Điền trang hoàng gia <span lang="zh">皇家庄园</span>' : b.kich.w >= 24 ? 'Điền trang <span lang="zh">庄园</span>' : 'Trang trại lớn <span lang="zh">大农场</span>') + ' · ' + b.kich.w + '×' + b.kich.h + '</span>' : '') + (b.vuaHoc ? '<span class="nt-lo-vua">👑 Chăm học nhất tuần</span>' : '') + '</div></button>';
   }
   // Ve thu nho: vi tri tinh theo % kich thuoc dat nen lo nao cung vua khung
@@ -5555,6 +5540,7 @@
     capEm: capEm, dongThiTran: dongThiTran, veNha: veNha, htmlTen: htmlTen, soGon: soGon, tenMon: tenMon, moBangNho: moBangNho, thoiLuong: thoiLuong,
     dangKy: function (loai, fn) { NGOAI[loai] = fn; },
     batDauDat: batDauDat, datDuoc: datDuoc, rong: rong, xgCua: xgCua, moNoi: moNoi, dongNoi: dongNoi, duLieuBanDo: duLieuBanDo, bayGio: bayGio,
+    veBanDo: veBanDo, hangPx: hangPx,
     fx: FX, moiBaiHoc: function () { return (hocTiep && hocTiep.url) || '/'; },
     sauBang: [], // ham goi sau moi lan ve 1 bang (bangDang) — nut ❓ + huong dan lan dau
     sauVe: [], // ham goi sau moi lan ve lai ban do (innerHTML thay het)
@@ -5572,9 +5558,10 @@
       datLinkHoc();
       taiThiDua(true);
       setInterval(function () { if (!document.hidden) taiThiDua(false); }, 5 * 60000);
-      // dien thoai: cuon ban do (dao) vao giua
+      // dien thoai: cuon ban do vao giua
       var k = $('#ntKhung');
-      if (window.NTDao) NTDao.canh(); else k.scrollLeft = (k.scrollWidth - k.clientWidth) / 2;      ganNhac();
+      if (S.ng && window.NTQue) NTQue.canh(); else k.scrollLeft = (k.scrollWidth - k.clientWidth) / 2;
+      ganNhac();
       meoKeoTha();
       setInterval(nhip, 1000);
       lamMoiDinhKy();

@@ -40,4 +40,5 @@
 <path d="M18 149H26" stroke="#fff3c4" stroke-width="2.5"/>
 <path d="M17 146V170M29 146V170" stroke="#c0392b" stroke-width="2.5"/>
 </g>
+<!-- lop bong do mem 2026-11 --><defs><linearGradient id="kho-sh" x1="0" y1="0" x2="1" y2=".35"><stop offset="0" stop-color="#fff" stop-opacity=".26"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2b1d3a" stop-opacity=".2"/></linearGradient><linearGradient id="kho-day" x1="0" y1="0" x2="0" y2="1"><stop offset=".6" stop-color="#2b1d3a" stop-opacity="0"/><stop offset="1" stop-color="#2b1d3a" stop-opacity=".18"/></linearGradient></defs><g pointer-events="none"><path d="M37 165V99L58 64L100 43L142 64L163 99V165Z" fill="url(#kho-sh)"/><path d="M37 165V120H163V165Z" fill="url(#kho-day)"/><path d="M60 66L98 46" stroke="#fff" stroke-opacity=".45" stroke-width="4" stroke-linecap="round" fill="none"/></g>
 </svg>

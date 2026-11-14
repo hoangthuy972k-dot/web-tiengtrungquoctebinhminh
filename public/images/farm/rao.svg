@@ -1,23 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
 <defs>
+<linearGradient id="rao-gc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fbd79c"/><stop offset=".5" stop-color="#ebb56a"/><stop offset="1" stop-color="#c98a45"/></linearGradient>
+<linearGradient id="rao-gn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0c27e"/><stop offset="1" stop-color="#c48443"/></linearGradient>
 <g id="rao-p" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-<path d="M0 84V48L6 41L12 48V84Z" fill="#f0c27b"/>
-<path d="M9 49V81" stroke="#d39a52" stroke-width="3"/>
-<path d="M3.2 50V60" stroke="#fde3b8" stroke-width="2"/>
-<path d="M0 84V48L6 41L12 48V84Z" fill="none"/>
-<circle cx="6" cy="57.5" r="1" fill="#8d5a3b" stroke="none"/><circle cx="6" cy="73.5" r="1" fill="#8d5a3b" stroke="none"/>
+<path d="M0 84V47L6 39L12 47V84Z" fill="url(#rao-gc)"/>
+<path d="M3 49V64" stroke="#fff1d6" stroke-width="2" fill="none"/>
+<path d="M0 84V47L6 39L12 47V84Z" fill="none"/>
+<path d="M2 81H10" stroke="#9a6431" stroke-width="2.2"/>
+<circle cx="6" cy="57.5" r="1.2" fill="#6e4322" stroke="none"/><circle cx="6" cy="73.5" r="1.2" fill="#6e4322" stroke="none"/>
 </g>
 </defs>
-<ellipse cx="50" cy="84.5" rx="48" ry="3.5" fill="#000" opacity=".15"/>
+<ellipse cx="52" cy="85" rx="48" ry="4" fill="#2b1d3a" opacity=".18"/>
 <g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-<rect x="2" y="54" width="96" height="7" rx="2.5" fill="#d9a05a"/>
-<rect x="2" y="70" width="96" height="7" rx="2.5" fill="#d9a05a"/>
-<path d="M5 56.5H95M5 72.5H95" stroke="#efc184" stroke-width="1.8"/>
+<rect x="2" y="53" width="96" height="8" rx="3" fill="url(#rao-gn)"/>
+<rect x="2" y="69" width="96" height="8" rx="3" fill="url(#rao-gn)"/>
+<path d="M6 55.5H94M6 71.5H94" stroke="#ffe1b0" stroke-width="1.8"/>
 </g>
 <use href="#rao-p" x="6"/>
 <use href="#rao-p" x="25"/>
 <use href="#rao-p" x="44"/>
 <use href="#rao-p" x="63"/>
 <use href="#rao-p" x="82"/>
-<g fill="#5cb85c" stroke="#2b1d3a" stroke-width="1.5" stroke-linejoin="round"><path d="M18 86L20 80L22 84L24 79L26 86Z"/><path d="M57 86L59 81L61 84L63 80L65 86Z"/></g>
+<g fill="#5cb85c" stroke="#2b1d3a" stroke-width="1.5" stroke-linejoin="round"><path d="M17 86L19 79L21 84L23 78L25 86Z"/><path d="M57 86L59 80L61 84L63 79L65 86Z"/></g>
+<g stroke="#2b1d3a" stroke-width="1"><circle cx="34" cy="83" r="2.4" fill="#fff"/><circle cx="34" cy="83" r=".9" fill="#ffd54f" stroke="none"/><circle cx="88" cy="84" r="2.2" fill="#ff8fb1"/></g>
 </svg>

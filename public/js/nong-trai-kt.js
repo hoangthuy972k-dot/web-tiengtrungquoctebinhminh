@@ -682,7 +682,8 @@
     var T = S.o, w = T * 1.05;
     n.el.style.width = w + 'px';
     n.el.style.transitionDuration = (ms || 0) + 'ms';
-    n.el.style.transform = 'translate(' + ((n.x + 0.5) * T - w / 2).toFixed(1) + 'px,' + ((n.y + 0.95) * T - w * 1.31).toFixed(1) + 'px)';
+    // goc nhin nghieng (S.ng): keo dan nguoc chieu doc quanh chan (transform-origin 50% 100% trong CSS) de dung thang
+    n.el.style.transform = 'translate(' + ((n.x + 0.5) * T - w / 2).toFixed(1) + 'px,' + ((n.y + 0.95) * T - w * 1.31).toFixed(1) + 'px)' + (S.ng ? ' scaleY(' + (1 / S.ng).toFixed(4) + ')' : '');
     n.el.style.zIndex = Math.round((n.y + 1) * 10 + 6);
   }
   function ncBong(n, chu, ms) {

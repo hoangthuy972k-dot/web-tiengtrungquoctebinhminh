@@ -438,10 +438,10 @@
   }
 
   /* ---------------- khoi dong ---------------- */
-  var chon = docGoc(), ngDau = chon === 'nghieng' || (chon === '' && !mayYeu());
+  // Co giao (2026-11-14): mac dinh quay ve giao dien cu (Phang). Chi bat Nghieng khi em tu chon trong ⋯ Thêm → Góc nhìn.
+  var chon = docGoc(), ngDau = chon === 'nghieng' && !mayYeu();
   S.ng = ngDau ? NG_C : 0;
   document.body.classList.toggle('nt-ng', ngDau);
-  if (chon === '' && !ngDau) { ghiGoc('phang-tu'); setTimeout(function () { N.bao('📱 Máy này cấu hình nhẹ ' + BAO_YEU); }, 3500); }
   taoNutGoc();
   apNang();
   N.sauVe.push(veQue);

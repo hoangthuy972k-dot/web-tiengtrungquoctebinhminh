@@ -35,7 +35,28 @@
       <div class="tl-tao">
         <div class="tl-the">
           <h2>Tạo bài thi trên lớp</h2>
-          <div class="tl-buoc">
+          <div class="tl-nguon" role="tablist" aria-label="Nguồn đề">
+            <button type="button" role="tab" data-nguon="hsk" class="on" aria-selected="true">📝 Đề thi HSK</button>
+            <button type="button" role="tab" data-nguon="sbt" aria-selected="false">📓 Sách bài tập</button>
+          </div>
+          <!-- Sach bai tap tren lop: bai tap sach bai tap cua mot bai (sbt-de.js tren may chu) -->
+          <div id="tlSbt" hidden>
+            <div class="tl-buoc">
+              <h3>1 · Chọn bài</h3>
+              <div class="tl-cap" id="tlSbtCap" role="tablist" aria-label="Giáo trình"></div>
+              <div class="tl-de-ds" id="tlSbtBai"><p class="tl-mo">Đang tải danh sách bài…</p></div>
+            </div>
+            <div class="tl-buoc" id="tlSbtBuoc2" hidden>
+              <h3>2 · Bài tập và thời gian</h3>
+              <p class="tl-goi-y">Học sinh làm đúng các bài tập trong sách bài tập của bài này. Bỏ tích bài nào không muốn kiểm tra.</p>
+              <div class="tl-phan tl-sbt-bt" id="tlSbtBt"></div>
+              <label class="tl-dong">Thời gian làm bài
+                <span class="tl-phut"><input type="number" id="tlSbtPhut" min="1" max="240" value="20" /> phút</span>
+              </label>
+              <p class="tl-goi-y" id="tlSbtGoiY"></p>
+            </div>
+          </div>
+          <div class="tl-buoc" id="tlBuocDe">
             <h3>1 · Chọn đề</h3>
             <div class="tl-cap" id="tlCap" role="tablist" aria-label="Cấp độ"></div>
             <div class="tl-de-ds" id="tlDeDs"></div>

@@ -571,7 +571,7 @@
             '<div class="ex-write-sent zh">' + esc(q.pre) +
               '<ruby class="ex-write-ruby"><span class="ex-blank ex-blank-write" data-wblank="' + q.n + '"></span><rt>' + esc(q.py) + '</rt></ruby>' +
               esc(q.post) + '</div>' +
-            '<input type="text" class="ex-input" data-input="' + q.n + '" maxlength="4" autocomplete="off" spellcheck="false" lang="zh" placeholder="Nhập đáp án..." aria-label="Đáp án câu ' + q.n + '" />' +
+            '<input type="text" class="ex-input" data-input="' + q.n + '" maxlength="' + (q.maxlength || 4) + '" autocomplete="off" spellcheck="false" lang="zh" placeholder="Nhập đáp án..." aria-label="Đáp án câu ' + q.n + '" />' +
           '</div>' + explainBox(q.n) + '</div>';
       });
     }
@@ -893,9 +893,11 @@
         qs.forEach(function (q) { if (isRight(q.n, state.answers[q.n])) pr.correct++; });
         sr.correct += pr.correct; sr.total += pr.total; sr.parts.push(pr);
       });
-      sr.score = Math.round(sr.correct / sr.total * (data.maxScore / data.sections.length));
+      // data.theoCau (sach bai tap tren lop): diem theo so cau dung tren ca de — giong gradeExam may chu
+      sr.score = data.theoCau ? Math.round(sr.correct / allQuestions.length * data.maxScore) : Math.round(sr.correct / sr.total * (data.maxScore / data.sections.length));
       res.correct += sr.correct; res.score += sr.score; res.sections.push(sr);
     });
+    if (data.theoCau) res.score = Math.round(res.total ? res.correct / res.total * data.maxScore : 0);
     res.pass = res.score >= data.passScore;
     return res;
   }
@@ -1098,7 +1100,7 @@
     try { nho = JSON.parse(localStorage.getItem(ID_LOP) || 'null'); } catch (e) { /* bo qua */ }
     if (!nho || !nho.pid) { lopVeVao(); return; }
     lopNhoMay(nho.pid, nho.tok);
-    lopApi('GET', '/hs?pid=' + encodeURIComponent(lop.pid) + '&tok=' + encodeURIComponent(lop.tok))
+    lopApi('GET', '/hs?pid=' + encodeURIComponent(lop.pid) + '&tok=' + encodeURIComponent(lop.tok) + '&de=1')
       .then(function (ph) { lopCapNhat(ph); lopPoll(); })
       .catch(function (e) {
         if (e.raKhoi) { lopQuenMay(); lopVeVao(); return; }
@@ -1158,7 +1160,8 @@
     clearInterval(lop.poll);
     lop.poll = setInterval(function () {
       if (!lop.pid) return;
-      lopApi('GET', '/hs?pid=' + encodeURIComponent(lop.pid) + '&tok=' + encodeURIComponent(lop.tok))
+      // de sach bai tap do may chu gui: chi xin kem (de=1) khi may em chua co de
+      lopApi('GET', '/hs?pid=' + encodeURIComponent(lop.pid) + '&tok=' + encodeURIComponent(lop.tok) + (lop.daTai ? '' : '&de=1'))
         .then(lopCapNhat)
         .catch(function (e) { if (e.raKhoi) lopBiDay(); });
     }, 3000);
@@ -1182,7 +1185,11 @@
     lop.phong = ph;
     lop.lech = ph.now - Date.now();
     if (ph.pha === 'cho') { lopVeCho(); return; }
-    if (!lop.daTai) { lop.daTai = true; id = ph.examId; taiDe(ph.examId); return; }
+    if (!lop.daTai) {
+      // Sach bai tap tren lop: de nam ngay trong trang thai phong (chua kem dap an), khong co tep de rieng
+      if (ph.sbt) { if (!ph.de) return; lop.daTai = true; id = ph.examId; data = JSON.parse(JSON.stringify(ph.de)); init(); return; }
+      lop.daTai = true; id = ph.examId; taiDe(ph.examId); return;
+    }
     if (!data || !allQuestions.length) return;
     if (!state.submitted) {
       if (ph.pha === 'xong' || ph.daNop) { submit(true); return; }
@@ -1234,7 +1241,7 @@
     if (!el) return;
     var ng = lop.phong.nghe;
     if (lop.phong.ngheXong) { el.textContent = 'Bài nghe đã kết thúc.'; return; }
-    if (!ng || !ng.cau) el.textContent = ng && ng.phat ? 'Đang phát phần hướng dẫn…' : 'Chờ thầy cô phát bài nghe…';
+    if (!ng || !ng.cau) el.textContent = ng && ng.phat ? (ng.ten ? 'Đang phát: ' + ng.ten : 'Đang phát phần hướng dẫn…') : ng && ng.ten ? 'Tạm dừng: ' + ng.ten : 'Chờ thầy cô phát bài nghe…';
     else el.textContent = (ng.phat ? 'Đang đọc câu ' : 'Tạm dừng ở câu ') + ng.cau;
     var cau = ng ? ng.cau : 0;
     if (cau === lop.cauNghe) return;
@@ -1296,6 +1303,8 @@
   function lopHienKetQua() {
     lop.daHien = true;
     var sv = lop.phong && lop.phong.soan;
+    // sach bai tap: de day du (dap an, giai thich, loi bai nghe) chi den khi duoc xem ket qua
+    if (!sv && lop.phong && lop.phong.de) { sv = {}; lop.phong.de.sections.forEach(function (s) { sv[s.id] = s; }); }
     if (sv) Object.keys(sv).forEach(function (id) {
       (sv[id].parts || []).forEach(function (p) {
         (p.groups || [p]).forEach(function (g) {
@@ -1310,6 +1319,8 @@
             if (q.answer !== undefined) it.q.answer = q.answer;
             if (q.accept) it.q.accept = q.accept;
             if (q.vn) it.q.vn = q.vn;
+            if (q.script) it.q.script = q.script;
+            if (q.scriptVn) it.q.scriptVn = q.scriptVn;
           });
         });
       });

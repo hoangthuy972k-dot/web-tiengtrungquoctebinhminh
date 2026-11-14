@@ -310,3 +310,15 @@ body.tl-xem-mo { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) { .tl-xem { animation: none; } .tl-xem-so, .tl-xem-loc button { transition: none; } }
 @media print { .tl-xem { display: none !important; } }
+
+/* ---------- Nguon de: De thi HSK / Sach bai tap tren lop ---------- */
+.tl-nguon { display: inline-flex; gap: 4px; padding: 4px; margin-bottom: 14px; border-radius: 999px; background: var(--tl-chip); }
+.tl-nguon button { border: none; background: transparent; border-radius: 999px; padding: 8px 18px; font-weight: 700; color: var(--tl-mid); }
+.tl-nguon button.on { background: var(--tl-card); color: var(--tl-ink); box-shadow: 0 2px 6px rgba(40, 32, 24, 0.12); }
+.tl-nguon + #tlSbt[hidden] + .tl-buoc, .tl-nguon + #tlSbt:not([hidden]) .tl-buoc:first-child { border-top: none; padding-top: 0; }
+.tl-sbt-bt { flex-direction: column; flex-wrap: nowrap; }
+.tl-sbt-bt .tl-phan-o { align-items: flex-start; }
+.tl-sbt-bt .tl-phan-o input { margin-top: 3px; flex: none; }
+.tl-de .zh { font-family: 'Noto Serif SC', serif; font-weight: 600; }
+.tl-nghe-cau button[data-doan] { padding: 0 12px; font-variant-numeric: normal; }
+@media (max-width: 560px) { .tl-nguon { display: flex; } .tl-nguon button { flex: 1; padding: 8px 10px; } }

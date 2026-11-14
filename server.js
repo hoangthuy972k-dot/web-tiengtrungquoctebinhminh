@@ -1808,7 +1808,7 @@ const nongTrai = require('./nong-trai')(app, {
 // Thi tren lop (/thi-lop giao vien, /thi hoc sinh): de lay tu kho thi thu HSK — xem thi-lop.js
 const thiLop = require('./thi-lop')(app, {
   DATA_DIR, USE_DB, db: () => dbPool, readJsonFile, writeJsonFile, requireAdmin, asyncRoute,
-  loadClassState, loadUserNames, optionalUserId, loadExamDef, listExamDefs, gradeExam, cleanExamAnswers,
+  loadClassState, loadUserNames, optionalUserId, loadExamDef, listExamDefs, gradeExam, cleanExamAnswers, PUBLIC_DIR,
 });
 
 // ---------- Bai on cho nong trai ----------
@@ -2076,7 +2076,9 @@ function gradeExam(def, answers) {
       chamCau(n, ans, isText);
       dung[n] = c > c0;
     });
-    const sc = Math.round(sec0.answers.length ? (c / sec0.answers.length) * perSection : 0);
+    // def.theoCau (de sach bai tap tren lop): diem theo so cau dung tren ca de, khong chia deu tung phan
+    const sc = def.theoCau ? Math.round(def.total ? (c / def.total) * def.maxScore : 0)
+      : Math.round(sec0.answers.length ? (c / sec0.answers.length) * perSection : 0);
     sec.push({ id: sec0.id, c, t: sec0.answers.length, score: sc });
     correct += c;
     score += sc;
@@ -2104,6 +2106,7 @@ function gradeExam(def, answers) {
       else if (answers[n] === ans) c++;
     }
   });
+  if (def.theoCau) score = Math.round(def.total ? (correct / def.total) * def.maxScore : 0);
   return { correct, total: def.total, score, sec, dung };
 }
 

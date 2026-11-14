@@ -103,6 +103,16 @@ function dapAnPhanSoan(sec) {
   });
   return { id: sec.id, name: sec.name, answers };
 }
+// De sach bai tap (sbt-de.js) gui hoc sinh khi chua duoc xem ket qua: bo dap an, giai thich, loi bai nghe
+function anDapAnSbt(de) {
+  const bo = (q) => { const o = Object.assign({}, q); delete o.answer; delete o.accept; delete o.vn; delete o.script; delete o.scriptVn; return o; };
+  return Object.assign({}, de, { sections: de.sections.map((s) => Object.assign({}, s, { parts: s.parts.map((p) => {
+    const x = Object.assign({}, p);
+    if (p.groups) x.groups = p.groups.map((g) => Object.assign({}, g, { questions: g.questions.map(bo) }));
+    else x.questions = p.questions.map(bo);
+    return x;
+  }) })) });
+}
 // Ban gui hoc sinh khi chua duoc xem ket qua: bo dap an + loi dich
 function anDapAn(sec) {
   const bo = (q) => { const o = Object.assign({}, q); delete o.answer; delete o.accept; delete o.vn; return o; };
@@ -120,6 +130,8 @@ function soSanhTen(s) { return sachTen(s).toLowerCase().normalize('NFC'); }
 
 module.exports = function ganThiLop(app, d) {
   const FILE = path.join(d.DATA_DIR, 'thi_lop.json');
+  // Sach bai tap tren lop: de doi tu wbData cua bai hoc — xem sbt-de.js
+  const sbt = require('./sbt-de')(d.PUBLIC_DIR || path.join(__dirname, 'public'));
   const phong = new Map(); // ma -> phong (dang dung)
   const ban = new Set();   // ma cac phong co thay doi chua ghi
 
@@ -205,6 +217,12 @@ module.exports = function ganThiLop(app, d) {
   // ---------- cham ----------
   // De chi gom cac phan giao vien chon; moi phan van toi da 100 diem nhu de that
   function deCuaPhong(p) {
+    if (p.de) {
+      // sach bai tap: de da luu san trong phong (luc tao), diem 100 theo so cau dung
+      const sections = p.de.sections.filter((s) => p.phan.indexOf(s.id) !== -1).map(dapAnPhanSoan);
+      return { id: p.examId, level: p.de.level, title: p.tieuDe, theoCau: true, maxScore: p.de.maxScore, passScore: p.de.passScore,
+        durationSec: p.phut * 60, sections, total: sections.reduce((a, s) => a + s.answers.length, 0) };
+    }
     const def = d.loadExamDef(p.examId);
     if (!def) return null;
     const per = def.maxScore / def.sections.length;
@@ -245,7 +263,8 @@ module.exports = function ganThiLop(app, d) {
     h.thay = Date.now();
     return h;
   }
-  function trangThaiHs(p, h) {
+  // deDay: gui kem de sach bai tap (may em hoi ?de=1 khi chua co de; vao phong giua gio) — khong gui moi lan hoi
+  function trangThaiHs(p, h, deDay) {
     const o = {
       ma: p.ma, tieuDe: p.tieuDe, examId: p.pha === 'cho' ? '' : p.examId, phan: p.phan, pha: p.pha, now: Date.now(),
       batDau: p.batDau || 0, hetLuc: p.hetLuc || 0, ngheXong: !!p.ngheXong, nghe: p.nghe || null,
@@ -258,6 +277,10 @@ module.exports = function ganThiLop(app, d) {
     if (p.soan && p.pha !== 'cho') {
       o.soan = {};
       Object.keys(p.soan).forEach((k) => { o.soan[k] = o.kq ? p.soan[k] : anDapAn(p.soan[k]); });
+    }
+    if (p.de && p.pha !== 'cho') {
+      o.sbt = true;
+      if (deDay || o.kq) o.de = o.kq ? p.de : anDapAnSbt(p.de);
     }
     return o;
   }
@@ -315,21 +338,21 @@ module.exports = function ganThiLop(app, d) {
       h.tok = token(); h.moLai = false; h.thay = Date.now();
       if (u) h.userId = u.id;
       ban.add(p.ma);
-      return res.json({ pid: h.pid, tok: h.tok, tl: h.tl || {}, sec: h.sec || 0, phong: trangThaiHs(p, h) });
+      return res.json({ pid: h.pid, tok: h.tok, tl: h.tl || {}, sec: h.sec || 0, phong: trangThaiHs(p, h, true) });
     }
     if (p.pha === 'xong') return res.status(403).json({ error: 'Bài thi này đã thu bài rồi.' });
     if (p.hs.size >= MAX_HS) return res.status(403).json({ error: 'Phòng thi đã đủ ' + MAX_HS + ' bạn.' });
     h = { pid: token().slice(0, 10), tok: token(), ten, rosterId: rosterId || null, userId: u ? u.id : null, vao: Date.now(), thay: Date.now(), tl: {}, sec: 0, lam: 0, nop: 0, kq: null, auto: false, moLai: false };
     p.hs.set(h.pid, h);
     ghiNgay(p);
-    res.json({ pid: h.pid, tok: h.tok, tl: {}, sec: 0, phong: trangThaiHs(p, h) });
+    res.json({ pid: h.pid, tok: h.tok, tl: {}, sec: 0, phong: trangThaiHs(p, h, true) });
   }));
 
   app.get('/api/thi-lop/:ma/hs', d.asyncRoute(async (req, res) => {
     const p = await layPhong(req.params.ma);
     if (!p) return res.status(404).json({ error: 'Không tìm thấy phòng thi.' });
     const h = layHs(p, req.query, res); if (!h) return;
-    res.json(trangThaiHs(p, h));
+    res.json(trangThaiHs(p, h, req.query.de === '1'));
   }));
 
   function nhanBaiLam(raw) {
@@ -377,12 +400,24 @@ module.exports = function ganThiLop(app, d) {
     res.json({ items });
   });
 
+  // Sach bai tap tren lop: cap -> bai co sach bai tap -> cac bai tap cham duoc (sbt-de.js)
+  app.get('/api/thi-lop/sbt', d.requireAdmin, (req, res) => {
+    res.json({ cap: sbt.dsCap() });
+  });
+
   app.post('/api/thi-lop/tao', d.requireAdmin, d.asyncRoute(async (req, res) => {
     const b = req.body || {};
-    const def = d.loadExamDef(String(b.examId || ''));
-    if (!def) return res.status(404).json({ error: 'Không tìm thấy đề thi.' });
-    const coPhan = def.sections.map((s) => s.id);
-    const phan = (Array.isArray(b.phan) ? b.phan : coPhan).filter((x) => PHAN_HOP_LE.indexOf(x) !== -1 && coPhan.indexOf(x) !== -1);
+    let def = null, deSbt = null;
+    if (b.nguon === 'sbt') {
+      deSbt = sbt.taoDe(String(b.bai || ''), Array.isArray(b.bt) ? b.bt.slice(0, 60).map(String) : null);
+      if (!deSbt) return res.status(404).json({ error: 'Không tìm thấy sách bài tập của bài này.' });
+      if (!deSbt.sections.length) return res.status(400).json({ error: deSbt.n ? 'Chọn ít bài tập hơn (tối đa 200 câu).' : 'Chọn ít nhất một bài tập.' });
+    } else {
+      def = d.loadExamDef(String(b.examId || ''));
+      if (!def) return res.status(404).json({ error: 'Không tìm thấy đề thi.' });
+    }
+    const coPhan = deSbt ? deSbt.sections.map((s) => s.id) : def.sections.map((s) => s.id);
+    const phan = deSbt ? coPhan : (Array.isArray(b.phan) ? b.phan : coPhan).filter((x) => PHAN_HOP_LE.indexOf(x) !== -1 && coPhan.indexOf(x) !== -1);
     if (!phan.length) return res.status(400).json({ error: 'Chọn ít nhất một phần thi.' });
     let dangMo = 0;
     for (const x of phong.values()) if (x.pha !== 'xong') dangMo++;
@@ -398,8 +433,21 @@ module.exports = function ganThiLop(app, d) {
       ds = st.roster.filter((r) => r.classId === lop.id).sort((x, y) => x.sort - y.sort).map((r) => ({ id: r.id, ten: r.name }));
       if (!ds.length) return res.status(400).json({ error: 'Lớp ' + lop.name + ' chưa có danh sách học sinh.' });
     }
-    const phut = Math.max(1, Math.min(240, Math.round(Number(b.phut) || def.durationSec / 60 || 60)));
+    const phut = Math.max(1, Math.min(240, Math.round(Number(b.phut) || (deSbt ? deSbt.phutGoiY : def.durationSec / 60) || 60)));
     let soan = null;
+    if (deSbt) {
+      deSbt.durationSec = phut * 60;
+      delete deSbt.n; delete deSbt.phutGoiY;
+      const p = {
+        ma, examId: 'sbt:' + deSbt.baiId, tieuDe: deSbt.title, de: deSbt, soan: null,
+        phan, phut, tao: Date.now(), cham: Date.now(), pha: 'cho', batDau: 0, hetLuc: 0, thuLuc: 0,
+        ngheXong: phan[0] !== 'listen', nghe: null, hienKq: b.hienKq === 'ngay' ? 'ngay' : 'sau', congBo: false,
+        classId: ds ? String(b.classId) : null, tenLop, ds, hs: new Map(),
+      };
+      phong.set(ma, p);
+      await ghi(p);
+      return res.json({ ma });
+    }
     if (b.soan && typeof b.soan === 'object') {
       for (const k of ['read', 'write']) {
         if (!b.soan[k] || phan.indexOf(k) < 0) continue;
@@ -434,7 +482,7 @@ module.exports = function ganThiLop(app, d) {
     res.json({ items: list.map((p) => {
       const nop = [...p.hs.values()].filter((h) => h.nop);
       return {
-        ma: p.ma, tieuDe: p.tieuDe, tenLop: p.tenLop || '', tao: p.tao, pha: p.pha, soHs: p.hs.size, soNop: nop.length,
+        ma: p.ma, tieuDe: p.tieuDe, tenLop: p.tenLop || '', tao: p.tao, pha: p.pha, soHs: p.hs.size, soNop: nop.length, sbt: !!p.de,
         tb: nop.length ? Math.round(nop.reduce((s, h) => s + h.kq.score, 0) / nop.length) : null, max: nop[0] ? nop[0].kq.max : null,
       };
     }) });
@@ -445,11 +493,13 @@ module.exports = function ganThiLop(app, d) {
     if (!p) { res.status(404).json({ error: 'Không tìm thấy phòng thi.' }); return null; }
     return p;
   }
-  function trangThaiGv(p, chiTiet) {
+  // deDay: kem de sach bai tap (day du dap an) — trang thay co chi xin mot lan khi mo phong
+  function trangThaiGv(p, chiTiet, deDay) {
     const now = Date.now();
     const def = deCuaPhong(p);
     return {
       ma: p.ma, examId: p.examId, tieuDe: p.tieuDe, phan: p.phan, phut: p.phut, pha: p.pha, now,
+      sbt: !!p.de, de: deDay && p.de ? p.de : undefined,
       tao: p.tao, batDau: p.batDau, hetLuc: p.hetLuc, thuLuc: p.thuLuc, ngheXong: !!p.ngheXong, nghe: p.nghe,
       hienKq: p.hienKq, congBo: !!p.congBo, tenLop: p.tenLop || '', classId: p.classId, soan: p.soan || null,
       max: def ? def.maxScore : 0, dat: def ? def.passScore : 0, tong: def ? def.total : 0,
@@ -468,7 +518,7 @@ module.exports = function ganThiLop(app, d) {
 
   app.get('/api/thi-lop/:ma/gv', d.requireAdmin, d.asyncRoute(async (req, res) => {
     const p = await phongGv(req, res); if (!p) return;
-    res.json(trangThaiGv(p, req.query.chiTiet === '1'));
+    res.json(trangThaiGv(p, req.query.chiTiet === '1', req.query.de === '1'));
   }));
 
   app.post('/api/thi-lop/:ma/batdau', d.requireAdmin, d.asyncRoute(async (req, res) => {
@@ -499,6 +549,7 @@ module.exports = function ganThiLop(app, d) {
     const p = await phongGv(req, res); if (!p) return;
     const b = req.body || {};
     p.nghe = { cau: Math.max(0, Math.min(200, Number(b.cau) || 0)), phat: !!b.phat, luc: Date.now() };
+    if (b.ten) p.nghe.ten = sachTen(b.ten); // sach bai tap: ten doan nghe dang phat (khong co moc tung cau)
     if (b.xong && !p.ngheXong) { p.ngheXong = true; await ghi(p); }
     res.json({ ok: true, ngheXong: !!p.ngheXong });
   }));

@@ -87,6 +87,7 @@
       $('#tlCap').innerHTML = caps.map(function (c) { return '<button type="button" role="tab" data-cap="' + c + '">' + esc(TEN_CAP[c] || c) + '</button>'; }).join('');
       veCap();
       hien('tao');
+      if (new URLSearchParams(location.search).get('nguon') === 'sbt' || T.nguon === 'sbt') doiNguon('sbt');
       api('GET', '/api/admin/oral').then(function (o) {
         T.lop = o.classes || [];
         $('#tlLop').innerHTML = '<option value="">Không chọn — học sinh tự gõ họ tên</option>' +
@@ -219,7 +220,85 @@
       if (w) w.location.href = url; else window.open(url, '_blank');
     }, function (e) { if (w) w.close(); baoLoi('#tlTaoLoi', e.message); });
   }
+  /* ---------------- Sach bai tap tren lop (de doi tu sach bai tap cua bai — sbt-de.js tren may chu) ---------------- */
+  T.nguon = 'hsk';
+  T.sbt = { ds: null, cap: '', bai: '', dangTai: false };
+  function doiNguon(n) {
+    T.nguon = n === 'sbt' ? 'sbt' : 'hsk';
+    $all('.tl-nguon [data-nguon]').forEach(function (b) { var on = b.getAttribute('data-nguon') === T.nguon; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+    var sbt = T.nguon === 'sbt';
+    $('#tlSbt').hidden = !sbt;
+    $('#tlBuocDe').hidden = sbt;
+    $('#tlBuocPhan').hidden = sbt || !T.chon;
+    $('.tl-in').hidden = sbt; // ban in giay chi co cho de HSK
+    var san = sbt ? !!baiSbt() : !!T.chon;
+    $('#tlBuocLop').hidden = $('#tlHanhDong').hidden = !san;
+    baoLoi('#tlTaoLoi', '');
+    if (sbt) taiSbt();
+  }
+  function capSbt() { return (T.sbt.ds || []).filter(function (c) { return c.id === T.sbt.cap; })[0] || null; }
+  function baiSbt() { var c = capSbt(); return c ? c.bai.filter(function (b) { return b.id === T.sbt.bai; })[0] || null : null; }
+  function taiSbt() {
+    if (T.sbt.ds) { veSbt(); return; }
+    if (T.sbt.dangTai) return;
+    T.sbt.dangTai = true;
+    api('GET', '/api/thi-lop/sbt').then(function (d) {
+      T.sbt.dangTai = false;
+      T.sbt.ds = d.cap || [];
+      // Mo tu /lop (?nguon=sbt&cap=&bai=) hoac lay cap + bai moi nhat dang chon o Che do lop hoc
+      var qs = new URLSearchParams(location.search), lop = {};
+      try { lop = JSON.parse(localStorage.getItem('hyv_lop') || '{}') || {}; } catch (e) { /* bo qua */ }
+      var coCap = function (id) { return T.sbt.ds.some(function (c) { return c.id === id; }); };
+      T.sbt.cap = coCap(qs.get('cap')) ? qs.get('cap') : coCap(lop.level) ? lop.level : (T.sbt.ds[0] || {}).id || '';
+      var c = capSbt();
+      if (c) {
+        var bai = qs.get('bai');
+        if (!c.bai.some(function (b) { return b.id === bai; })) {
+          var daChon = (lop.level === c.id && Array.isArray(lop.picked) ? lop.picked : []).map(function (u) { var m = /\/lessons\/([a-z0-9-]+)\.html$/.exec(u); return m ? m[1] : ''; });
+          var hop = c.bai.filter(function (b) { return daChon.indexOf(b.id) !== -1; });
+          bai = hop.length ? hop[hop.length - 1].id : '';
+        }
+        if (bai) chonSbtBai(bai); else veSbt();
+      } else veSbt();
+    }).catch(function (e) { T.sbt.dangTai = false; $('#tlSbtBai').innerHTML = '<p class="tl-loi">' + esc(e.message) + '</p>'; });
+  }
+  var ICON_PHAN = { listen: '🎧', read: '📖', write: '✍️' };
+  function veSbt() {
+    var ds = T.sbt.ds || [];
+    $('#tlSbtCap').innerHTML = ds.map(function (c) {
+      var on = c.id === T.sbt.cap;
+      return '<button type="button" role="tab" data-sbt-cap="' + esc(c.id) + '" class="' + (on ? 'on' : '') + '" aria-selected="' + on + '">' + esc(c.ten) + '</button>';
+    }).join('');
+    var c = capSbt();
+    $('#tlSbtBai').innerHTML = c ? c.bai.map(function (b) {
+      var so = b.bt.reduce(function (a, x) { return a + x.so; }, 0), nghe = b.bt.some(function (x) { return x.nghe; });
+      return '<button type="button" class="tl-de' + (b.id === T.sbt.bai ? ' on' : '') + '" data-sbt-bai="' + esc(b.id) + '"><b>Bài ' + b.so + (b.zh ? ' · <span class="zh">' + esc(b.zh) + '</span>' : '') + '</b>' +
+        '<span>' + (b.ten ? esc(b.ten) + ' · ' : '') + b.bt.length + ' bài tập · ' + so + ' câu' + (nghe ? ' · có nghe' : '') + '</span></button>';
+    }).join('') : '<p class="tl-mo">Chưa có bài nào có sách bài tập.</p>';
+    var b = baiSbt();
+    $('#tlSbtBuoc2').hidden = !b;
+    if (T.nguon === 'sbt') $('#tlBuocLop').hidden = $('#tlHanhDong').hidden = !b;
+    if (!b) return;
+    $('#tlSbtBt').innerHTML = b.bt.map(function (x) {
+      return '<label class="tl-phan-o"><input type="checkbox" value="' + esc(x.id) + '" checked /><span><b>' + ICON_PHAN[x.phan] + ' ' + esc(x.ten) + '</b>' +
+        esc(x.tieu) + ' · ' + x.so + ' câu</span></label>';
+    }).join('');
+    tinhPhutSbt();
+  }
+  function chonSbtBai(id) { T.sbt.bai = id; veSbt(); }
+  function btChon() { return $all('#tlSbtBt input:checked').map(function (i) { return i.value; }); }
+  function tinhPhutSbt() {
+    var b = baiSbt(); if (!b) return;
+    var ch = btChon(), xs = b.bt.filter(function (x) { return ch.indexOf(x.id) !== -1; });
+    var so = xs.reduce(function (a, x) { return a + x.so; }, 0), nghe = xs.some(function (x) { return x.phan === 'listen'; });
+    // giong goi y cua may chu: ~0,8 phut / cau, them 5 phut khi co phan nghe
+    $('#tlSbtPhut').value = so ? Math.max(5, Math.round(so * 0.8) + (nghe ? 5 : 0)) : 20;
+    $('#tlSbtGoiY').textContent = !so ? 'Chọn ít nhất một bài tập.'
+      : so + ' câu' + (nghe ? ' · có phần nghe: thầy cô phát file nghe của sách bài tập qua loa lớp' : '') + ' · điểm 100 tính theo số câu đúng, đạt từ 60.';
+  }
+
   function taoPhong() {
+    if (T.nguon === 'sbt') { taoPhongSbt(); return; }
     if (!T.chon) return;
     var b = $('#tlTaoBtn');
     b.disabled = true;
@@ -234,12 +313,27 @@
       .catch(function (e) { baoLoi('#tlTaoLoi', e.message); })
       .then(function () { b.disabled = false; });
   }
+  function taoPhongSbt() {
+    var b = baiSbt();
+    if (!b) { baoLoi('#tlTaoLoi', 'Chọn một bài trước.'); return; }
+    var bt = btChon();
+    if (!bt.length) { baoLoi('#tlTaoLoi', 'Chọn ít nhất một bài tập.'); return; }
+    var nut = $('#tlTaoBtn');
+    nut.disabled = true;
+    baoLoi('#tlTaoLoi', '');
+    api('POST', '/api/thi-lop/tao', {
+      nguon: 'sbt', bai: b.id, bt: bt, phut: parseInt($('#tlSbtPhut').value, 10) || 0,
+      classId: $('#tlLop').value || '', hienKq: ($('input[name="tlKq"]:checked') || {}).value
+    }).then(function (r) { moPhong(r.ma); })
+      .catch(function (e) { baoLoi('#tlTaoLoi', e.message); })
+      .then(function () { nut.disabled = false; });
+  }
   function taiLichSu() {
     api('GET', '/api/thi-lop/ds').then(function (d) {
       var ds = d.items || [];
       $('#tlLichSu').innerHTML = ds.length ? '<ul class="tl-ls">' + ds.map(function (x) {
         var tt = x.pha === 'cho' ? '<i class="tl-tt cho">Chờ bắt đầu</i>' : x.pha === 'lam' ? '<i class="tl-tt lam">Đang thi</i>' : '<i class="tl-tt xong">Đã thu bài</i>';
-        return '<li><button type="button" class="tl-ls-mo" data-mo="' + x.ma + '"><b>' + esc(x.tieuDe) + '</b>' +
+        return '<li><button type="button" class="tl-ls-mo" data-mo="' + x.ma + '"><b>' + (x.sbt ? '📓 ' : '') + esc(x.tieuDe) + '</b>' +
           '<span>' + ngay(x.tao) + (x.tenLop ? ' · ' + esc(x.tenLop) : '') + ' · mã ' + x.ma + '</span>' +
           '<span>' + tt + ' ' + x.soNop + '/' + x.soHs + ' bài' + (x.tb != null ? ' · TB <b>' + x.tb + '</b>/' + x.max : '') + '</span></button>' +
           '<button type="button" class="tl-ls-xoa" data-xoa="' + x.ma + '" aria-label="Xoá bài thi ' + esc(x.tieuDe) + '">✕</button></li>';
@@ -257,7 +351,7 @@
     T.cauXem = 0;
     $('#tlCauCt').hidden = true;
     $('#tlBang').innerHTML = $('#tlTong').innerHTML = $('#tlCauTk').innerHTML = '';
-    api('GET', '/api/thi-lop/' + ma + '/gv').then(function (ph) {
+    api('GET', '/api/thi-lop/' + ma + '/gv?de=1').then(function (ph) {
       hien('phong');
       nhanPhong(ph);
       taiExam(ph.examId, function () { doiTab(ph.pha === 'xong' ? 'kq' : 'theo'); veTatCa(); });
@@ -292,7 +386,9 @@
   }
   // Tai de (de lay file nghe, moc thoi gian tung cau, dap an de thong ke)
   function taiExam(examId, xong) {
-    if (T.examId === examId && T.exam) { lapCau(); xong(); return; }
+    // Sach bai tap: de (kem dap an) do may chu gui cung trang thai phong (?de=1) — hai phong cung bai co the khac bai tap chon
+    if (T.ph && T.ph.de) { T.examId = examId; T.exam = T.ph.de; lapCau(); xong(); return; }
+    if (T.examId === examId && T.exam && !T.exam.sbt) { lapCau(); xong(); return; }
     var s = document.createElement('script');
     s.src = '/exam/tests/' + encodeURIComponent(examId) + '.js';
     s.onload = function () {
@@ -319,10 +415,33 @@
     });
     var nghe = T.exam.sections.filter(function (s) { return s.id === 'listen'; })[0];
     var a = $('#tlAudio');
+    // Sach bai tap: moi phan sach mot file nghe (khong co moc thoi gian tung cau) -> nut phat tung doan
+    T.doan = nghe && nghe.tracks && nghe.tracks.length ? nghe.tracks : null;
+    if (T.doan) {
+      var dang = T.doan.map(function (x) { return x.src; }).indexOf(a.getAttribute('src'));
+      if (dang < 0) { dang = 0; a.src = T.doan[0].src; }
+      T.doanDang = dang;
+      $('#tlNgheDs').innerHTML = T.doan.map(function (x, i) {
+        return '<button type="button" data-doan="' + i + '"' + (i === dang ? ' class="on"' : '') + '>▶ ' + esc(x.ten) + '</button>';
+      }).join('');
+      $('#tlNgheCau').textContent = 'Bấm ▶ để phát ' + T.doan[dang].ten;
+      return;
+    }
     if (nghe && nghe.audio && a.getAttribute('src') !== nghe.audio) a.src = nghe.audio;
     $('#tlNgheDs').innerHTML = T.cau.filter(function (c) { return c.sec.id === 'listen' && c.audio; }).map(function (c) {
       return '<button type="button" data-tua="' + c.n + '">' + c.n + '</button>';
     }).join('');
+  }
+  function phatDoan(i, choi) {
+    if (!T.doan || !T.doan[i]) return;
+    var a = $('#tlAudio');
+    T.doanDang = i;
+    if (a.getAttribute('src') !== T.doan[i].src) a.src = T.doan[i].src;
+    else if (choi) a.currentTime = 0;
+    $all('#tlNgheDs [data-doan]').forEach(function (b) { b.classList.toggle('on', +b.getAttribute('data-doan') === i); });
+    $('#tlNgheHet').classList.remove('noi');
+    if (choi) a.play().catch(function () { /* bo qua */ });
+    guiNghe(true);
   }
   function khoaCau(part, g, q, coNhom) {
     var t = part.type;
@@ -420,6 +539,14 @@
   }
   function guiNghe(ep) {
     var a = $('#tlAudio');
+    if (T.doan) {
+      var d = T.doan[T.doanDang || 0], dp = !a.paused && !a.ended;
+      $('#tlNgheCau').textContent = (dp ? 'Đang phát ' : a.ended ? 'Đã phát xong ' : 'Bấm ▶ để phát ') + d.ten;
+      if (!ep && dp === T.nghe.phat && T.nghe.doan === T.doanDang && Date.now() - T.nghe.gui < 10000) return;
+      T.nghe = { cau: 0, phat: dp, doan: T.doanDang, gui: Date.now() };
+      api('POST', '/api/thi-lop/' + T.ma + '/nghe', { cau: 0, phat: dp, ten: d.ten }).catch(function () { /* lan sau */ });
+      return;
+    }
     var cau = cauDangDoc(a.currentTime), phat = !a.paused && !a.ended;
     $('#tlNgheCau').textContent = phat ? (cau ? 'Đang đọc câu ' + cau : 'Đang phát hướng dẫn / ví dụ') : (a.ended ? 'Đã phát hết bài nghe' : cau ? 'Tạm dừng ở câu ' + cau : 'Bấm ▶ để phát bài nghe');
     $all('#tlNgheDs [data-tua]').forEach(function (b) { b.classList.toggle('on', +b.getAttribute('data-tua') === cau); });
@@ -538,7 +665,7 @@
     var csv = '﻿' + dong.map(function (r) { return r.map(function (v) { v = String(v == null ? '' : v); return /[",;\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(','); }).join('\r\n');
     var a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
-    a.download = 'diem-' + (T.examId || 'thi') + '-' + ph.ma + '.csv';
+    a.download = 'diem-' + (T.examId || 'thi').replace(/[^\w-]+/g, '-') + '-' + ph.ma + '.csv';
     document.body.appendChild(a); a.click(); a.remove();
   }
 
@@ -765,6 +892,14 @@
       });
       return;
     }
+    var ng = t.closest('.tl-nguon [data-nguon]');
+    if (ng) { doiNguon(ng.getAttribute('data-nguon')); return; }
+    var sc = t.closest('#tlSbtCap [data-sbt-cap]');
+    if (sc) { T.sbt.cap = sc.getAttribute('data-sbt-cap'); T.sbt.bai = ''; veSbt(); return; }
+    var sb = t.closest('[data-sbt-bai]');
+    if (sb) { chonSbtBai(sb.getAttribute('data-sbt-bai')); return; }
+    var doan = t.closest('[data-doan]');
+    if (doan) { phatDoan(+doan.getAttribute('data-doan'), true); return; }
     var tua = t.closest('[data-tua]');
     if (tua) {
       var c = T.cau.filter(function (x) { return x.n === +tua.getAttribute('data-tua'); })[0];
@@ -781,6 +916,7 @@
     }
   });
   $('#tlPhan').addEventListener('change', function () { tinhPhut(); boSoan(); });
+  $('#tlSbtBt').addEventListener('change', tinhPhutSbt);
   $all('input[name="tlNguon"]').forEach(function (r) { r.addEventListener('change', function () { boSoan(); veSoanKhung(); }); });
   $('#tlKhoa').addEventListener('change', function () { T.bai = []; boSoan(); taiDsBai(); });
   $('#tlSoanBtn').addEventListener('click', function () { soanDe().catch(function () { /* da bao */ }); });
@@ -828,6 +964,13 @@
   a0.addEventListener('timeupdate', function () { guiNghe(false); });
   a0.addEventListener('ended', function () {
     guiNghe(true);
+    // Sach bai tap: con doan sau thi nap san, thay co bam ▶ la phat tiep
+    if (T.doan && T.doanDang < T.doan.length - 1) {
+      var tiep = T.doanDang + 1;
+      phatDoan(tiep, false);
+      $('#tlNgheCau').textContent = 'Xong đoạn ' + tiep + '. Bấm ▶ để phát ' + T.doan[tiep].ten;
+      return;
+    }
     $('#tlNgheHet').classList.add('noi');
     $('#tlNgheHetChu').textContent = 'Đã phát hết bài nghe. Bấm để cả lớp sang phần tiếp theo.';
   });

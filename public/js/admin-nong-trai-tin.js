@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   var PW_KEY = 'hyv_admin_pw';
-  var state = { d: null, lop: '' };
+  var state = { d: null, lop: '', qua: null };
   function $(s, r) { return (r || document).querySelector(s); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function goi(url, opts) {
@@ -16,7 +16,10 @@
   function demTab(n) { var el = $('#ntinTabDem'); if (!el) return; el.hidden = !n; el.textContent = n > 99 ? '99+' : String(n); }
   function tai() {
     if (!sessionStorage.getItem(PW_KEY)) return Promise.resolve();
-    return goi('/api/admin/farm-tin' + (state.lop ? '?lop=' + encodeURIComponent(state.lop) : '')).then(function (d) { state.d = d; state.lop = d.lop; demTab(d.tongBaoCao || 0); }).catch(function () { /* chua dang nhap */ });
+    return goi('/api/admin/farm-tin' + (state.lop ? '?lop=' + encodeURIComponent(state.lop) : '')).then(function (d) { state.d = d; state.lop = d.lop; demTab(d.tongBaoCao || 0); })
+      // nhat ky qua tang (tu thien) cua cung lop — chi xem
+      .then(function () { return goi('/api/admin/farm-qua?lop=' + encodeURIComponent(state.lop || '')).then(function (q) { state.qua = q; }, function () { state.qua = null; }); })
+      .catch(function () { /* chua dang nhap */ });
   }
   function ve() {
     var hop = $('#trNtTin'), d = state.d;
@@ -37,7 +40,20 @@
           '<div class="gy-hanh-dong"><button type="button" class="btn btn-outline" data-nt-xoa>Xoá tin</button>' +
           '<button type="button" class="btn btn-outline" data-nt-khoa="' + esc(x.tu) + '" data-ngay="3">Khoá nhắn tự do của ' + esc(x.tenTu || 'em này') + ' 3 ngày</button>' +
           '<button type="button" class="btn btn-outline" data-nt-khoa="' + esc(x.tu) + '" data-ngay="7">7 ngày</button></div><p class="gy-kq" aria-live="polite"></p></article>';
-      }).join('') + '</div>' : '<p class="admin-empty">Lớp này chưa có tin nhắn tự do nào.</p>') + '</section>';
+      }).join('') + '</div>' : '<p class="admin-empty">Lớp này chưa có tin nhắn tự do nào.</p>') + '</section>' + veQua();
+  }
+  // Qua tang giua cac em (Tu thien, nong-trai-tuthien.js): ai tang ai, mon gi, luc nao — de co nhan ra ep buoc / "mua chuộc"
+  function veQua() {
+    var q = state.qua;
+    if (!q || q.lop !== state.lop) return '';
+    var icon = { xu: '💰', sp: '🧺', hat: '🌱' };
+    return '<section class="admin-section"><div class="admin-section-title">🎁 Quà tặng giữa các em (Từ thiện)</div>' +
+      '<p class="tc-hint">Chỉ xem. Học sinh cùng lớp tặng nhau xu, nông sản, hạt giống ở nông trại (không giới hạn số lần; hàng quý và hàng mua ở chợ không tặng được). Một em tặng rất nhiều cho cùng một bạn có thể là bị ép hoặc "mua chuộc" — cô kiểm tra nhé.</p>' +
+      (q.tuanNay.length ? '<p class="tc-hint"><b>Tuần này:</b> ' + q.tuanNay.map(function (g) { return '<b>' + esc(g.ten || '(đã xoá)') + '</b> tặng ' + g.lan + ' lần cho ' + g.soBan + ' bạn' + (g.xu ? ' (' + g.xu + ' xu)' : ''); }).join(' · ') + '</p>' : '') +
+      (q.ds.length ? '<div class="gy-ds">' + q.ds.map(function (x) {
+        return '<article class="gy-muc"><header class="gy-dau"><b class="gy-ten">' + esc(x.tenTu) + '</b>' + (x.khacLop ? ' (lớp khác)' : '') + ' → ' + esc(x.tenDen) +
+          '<span class="gy-tg">' + esc(thoiGian(x.t)) + '</span></header><p class="gy-nd">' + (icon[x.loai] || '🎁') + ' ' + esc(x.mon) + (x.cam ? ' · 💛 đã cảm ơn' : '') + '</p></article>';
+      }).join('') + '</div>' : '<p class="admin-empty">Lớp này chưa có quà tặng nào.</p>') + '</section>';
   }
   document.addEventListener('change', function (e) {
     var t = e.target;

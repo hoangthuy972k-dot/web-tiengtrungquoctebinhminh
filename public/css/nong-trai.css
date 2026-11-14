@@ -423,17 +423,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid #1e88e5; outline-offs
 .nt-hoi-bao { margin: 0; min-height: 1.5em; text-align: center; font-weight: 700; }
 .nt-hoi-nguon { margin: 0; text-align: center; font-size: 0.8rem; font-weight: 700; color: #7a6a86; }
 
-/* ---------- tham nong trai ban ---------- */
-.nt-tham {
-  position: fixed; left: 50%; top: 66px; z-index: 55; transform: translateX(-50%);
-  display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;
-  max-width: calc(100vw - 20px);
-  padding: 8px 10px 8px 16px; border-radius: 18px; background: #ffe1ea; border: 3px solid var(--vien); box-shadow: var(--bong);
-}
-.nt-tham[hidden] { display: none; }
-.nt-tham-chu { display: flex; flex-direction: column; }
-.nt-tham-chu span { font-size: 0.85rem; color: var(--mo); font-weight: 700; }
-body.dang-tham .nt-khung { padding-top: 140px; }
 
 /* ---------- chua dang nhap ---------- */
 .nt-lop-dac { align-items: center; background: linear-gradient(180deg, #8fd3f7, #b9e48f); }
@@ -487,10 +476,6 @@ body.dang-tham .nt-khung { padding-top: 140px; }
   .nt-the-anh { height: 78px; }
   .nt-the-anh img { width: 74px; height: 74px; }
   .nt-thu-het { bottom: 96px; }
-  .nt-tham { top: 60px; width: calc(100vw - 16px); padding: 8px; gap: 6px; }
-  .nt-tham-chu { flex-basis: 100%; text-align: center; }
-  .nt-tham .nt-nut { padding: 6px 12px; font-size: 0.9rem; box-shadow: 0 3px 0 var(--vien); }
-  body.dang-tham .nt-khung { padding-top: 170px; }
   .nt-lop { padding: 0; }
   .nt-bang { border-radius: 22px 22px 0 0; max-height: 88vh; }
 }
@@ -501,13 +486,6 @@ body.co-bang .hw-fab-stack, body.co-hoi .hw-fab-stack { display: none !important
 .nt-hd { text-align: left; grid-template-columns: 1fr; margin: 6px 0 10px; width: 100%; }
 
 /* ---------- choi cung ban: sap hang, cho lop, giup ban, loi chao, nhat ky ---------- */
-.nt-tham-nut { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-.nt-tham-goi { flex-basis: 100%; margin: 0; text-align: center; font-size: 0.82rem; font-weight: 700; color: var(--mo); }
-.nt-tham-goi:empty { display: none; }
-/* hang nut quay lai: ve thi tran vua xem (neu sang tu thi tran) + ve nong trai cua em */
-.nt-tham-ve { flex-basis: 100%; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-.nt-tham-ve [hidden] { display: none; }
-body.dang-tham .nt-khung { padding-top: 180px; }
 .nt-sap-ds { display: grid; grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 12px; }
 .nt-sap-o { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px; border: 3px solid var(--vien); border-radius: 16px; background: #fff; box-shadow: 0 4px 0 var(--vien); text-align: center; }
 .nt-sap-o > img { width: 64px; height: 64px; }
@@ -542,8 +520,6 @@ body.dang-tham .nt-khung { padding-top: 180px; }
 .nt-nk .nt-nk-chao { display: inline-block; margin-top: 2px; padding: 2px 8px; border-radius: 10px; background: #eef7ff; border: 1.5px solid #9cc7ea; font: inherit; cursor: pointer; }
 @media (max-width: 640px) {
   .nt-sap-ds { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
-  .nt-tham-nut { gap: 6px; }
-  body.dang-tham .nt-khung { padding-top: 220px; }
 }
 
 /* ---------- thi tran cua lop ---------- */
@@ -851,22 +827,6 @@ body.o-thi-tran .nt-zoom, body.o-thi-tran .nt-thu-het { display: none !important
 body.dang-tham .nt-khung { padding-top: var(--tham-duoi, 140px); }
 body.dang-tham .nt-muc { display: none; }
 @media (max-width: 640px) {
-  .nt-tham {
-    top: 56px; width: calc(100vw - 16px); padding: 6px 8px; gap: 5px;
-    display: flex; flex-direction: column; align-items: stretch;
-  }
-  .nt-tham-nut { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
-  .nt-tham-goi { margin: 0; font-size: 0.78rem; text-align: center; }
-  .nt-tham-ve { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 5px; }
-  #ntThamVe, #ntThamLui { min-height: 38px; padding: 4px 8px; font-size: 0.8rem; }
-  .nt-tham-chu { flex-direction: row; align-items: baseline; justify-content: center; gap: 8px; flex-wrap: wrap; text-align: center; }
-  .nt-tham-chu b { font-size: 0.98rem; }
-  .nt-tham-chu span { font-size: 0.78rem; }
-  .nt-tham .nt-nut {
-    padding: 5px 4px; min-height: 40px; font-size: 0.74rem; line-height: 1.15; border-width: 2.5px;
-    box-shadow: 0 3px 0 var(--vien); white-space: normal; text-align: center;
-  }
-  body.dang-tham .nt-khung { padding-top: var(--tham-duoi, 150px); }
   /* bong noi = the duoi man hinh, ngay tren thanh nut */
   .nt-noi { width: calc(100vw - 16px); max-height: 46vh; }
 }
@@ -2297,7 +2257,6 @@ body.co-bang .nt-bao.hien, body.co-them .nt-bao.hien, body.co-hoi .nt-bao.hien, 
 }
 .nt-trai-cot[hidden], .nt-trai-cot:empty { display: none; }
 body.o-thi-tran .nt-trai-cot, body.o-ho-cau .nt-trai-cot { display: none !important; }
-body.dang-tham .nt-trai-cot { top: calc(var(--tham-duoi, 170px) + 4px); }
 .nt-cot-o {
   display: flex; align-items: center; gap: 6px; max-width: 100%; padding: 3px 10px 3px 3px;
   border-radius: 999px; border: 2.5px solid var(--vien); background: var(--kem); box-shadow: 0 3px 0 var(--vien);
@@ -2568,3 +2527,82 @@ body.nt-ng .nt-lo.la { background-color: #ffc83d; }
 body.nt-ng .nt-lo-dat { border: 6px solid #c98a4b; border-image: repeating-linear-gradient(90deg, #e3ad66 0, #e3ad66 9px, #8f5a2e 9px, #8f5a2e 11px) 6; border-radius: 0; box-shadow: 0 0 0 2px var(--vien), 0 6px 0 rgba(43, 29, 58, 0.22); }
 body.nt-ng .nt-pho { background: linear-gradient(180deg, transparent 5px, rgba(120, 92, 60, 0.35) 5px, rgba(120, 92, 60, 0.35) 8px, transparent 8px, transparent calc(100% - 8px), rgba(120, 92, 60, 0.35) calc(100% - 8px), rgba(120, 92, 60, 0.35) calc(100% - 5px), transparent calc(100% - 5px)); }
 body.nt-ng .nt-pho-vach { display: none; }
+
+/* =====================================================================
+   Sang tham nong trai ban (2026-11-14, co giao: "xóa bỏ kiểu đè chữ này lên giao diện"):
+   chi con 1 vien ten nho o giua tren + thanh duoi rieng (thay thanh duoi cua em) + nut ve thi tran o goc trai.
+   Loi nhac giup ban la 1 thong bao luc vua sang (hang doi .nt-bao), khong nam tren nong trai.
+   ===================================================================== */
+.nt-tham { display: contents; }
+.nt-tham[hidden] { display: none !important; }
+body.dang-tham #ntDuoi, body.dang-tham .nt-top .nt-ve, body.dang-tham .nt-top .nt-nv-nut, body.dang-tham .nt-trai-cot { display: none !important; }
+body.o-thi-tran .nt-tham-dock, body.o-ho-cau .nt-tham-dock, body.o-thi-tran .nt-tham-chu, body.o-thi-tran .nt-tham-tl { display: none !important; }
+/* vien ten ban */
+.nt-tham-chu {
+  position: fixed; left: 50%; top: 12px; z-index: 52; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 8px; max-width: min(520px, calc(100vw - 940px)); min-width: 0;
+  height: 38px; padding: 0 14px; border-radius: 999px; white-space: nowrap;
+  background: #ffe1ea; border: 2.5px solid var(--vien); box-shadow: 0 3px 0 var(--vien);
+}
+.nt-tham-chu b { font-size: 0.9rem; font-weight: 900; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.nt-tham-chu span { font-size: 0.78rem; font-weight: 700; color: var(--mo); flex: none; }
+.nt-tham-ke {
+  flex: none; width: 28px; height: 28px; margin-right: -8px; padding: 0; border-radius: 50%; border: 2px solid var(--vien); background: #fff;
+  font-size: 0.9rem; line-height: 1; cursor: pointer;
+}
+/* nut quay lai (cho nut "← Học bài") */
+.nt-tham-tl { position: fixed; top: 10px; left: clamp(10px, 2vw, 20px); z-index: 52; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; max-width: calc(50vw - 30px); }
+.nt-tham-lui {
+  display: inline-block; max-width: 100%; height: 42px; padding: 0 14px; border-radius: 999px;
+  background: var(--kem); border: 3px solid var(--vien); box-shadow: var(--bong);
+  font: inherit; font-weight: 800; font-size: 0.9rem; color: var(--chu); cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.nt-tham-lui:hover { background: var(--kem-2); }
+/* thanh duoi khi tham: cung kieu thanh duoi cua em; 2 nhom nut cuon ngang duoc tren dien thoai, nut "Về nhà" noi o giua */
+.nt-tham-dock { align-items: flex-end; gap: 4px; }
+.nt-tham-cuon {
+  display: flex; align-items: flex-end; gap: 4px; min-width: 0; flex: 0 1 auto;
+  overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; scroll-snap-type: x proximity;
+  padding-top: 6px; margin-top: -6px; /* cho hieu ung nhay len khi hover khong bi cat */
+}
+.nt-tham-cuon::-webkit-scrollbar { display: none; }
+.nt-tham-dock .nt-tc { flex: none; width: 84px; scroll-snap-align: start; cursor: pointer; }
+.nt-tc-ic { display: grid; place-items: center; width: 46px; height: 46px; font-size: 30px; line-height: 1; }
+.nt-tc-chu { white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+#ntThamTim .nt-tc-ic { color: #e5533d; }
+.nt-tham-dock .nt-tc.xong { color: var(--mo); }
+.nt-tham-dock .nt-tc.xong .nt-tc-ic { filter: grayscale(0.85); opacity: 0.55; }
+.nt-tham-dock .nt-tc.xong::after {
+  content: '✓'; position: absolute; top: 2px; right: 8px; width: 20px; height: 20px; display: grid; place-items: center;
+  border-radius: 50%; background: var(--xanh); color: #fff; border: 2px solid var(--vien); font-size: 0.72rem; font-weight: 900;
+}
+.nt-tham-dock .nt-tc:disabled { cursor: default; transform: none; background: transparent; }
+#ntThamQua .nt-tc-ic { animation: nt-qua-lac 2.6s ease-in-out infinite; }
+@keyframes nt-qua-lac { 0%, 80%, 100% { transform: rotate(0); } 85% { transform: rotate(-12deg); } 90% { transform: rotate(10deg); } 95% { transform: rotate(-6deg); } }
+.nt-tham-venha { flex: none; color: #b25d00; }
+.nt-tham-venha .nt-cta-hinh { background: radial-gradient(circle at 35% 30%, #fff1b8, #ffc83d 70%); font-size: 38px; line-height: 1; animation: none; }
+.nt-tham-dock #ntThamHd { flex: none; align-self: center; width: 40px; height: 40px; margin: 0 4px; padding: 0; border-radius: 50%; box-shadow: 0 3px 0 var(--vien); }
+body.dang-tham .nt-top .nt-hud { margin-left: auto; }
+@media (max-width: 1199px) {
+  .nt-tham-chu { top: 60px; max-width: calc(100vw - 24px); }
+}
+@media (max-width: 640px) {
+  .nt-tham-chu { top: 50px; height: 32px; padding: 0 12px; gap: 6px; }
+  .nt-tham-chu b { font-size: 0.82rem; }
+  .nt-tham-chu span { font-size: 0.72rem; }
+  .nt-tham-tl { top: 8px; left: 8px; }
+  /* dien thoai: chi con bieu tuong (nhu nut "←" Hoc bai), chu day du van doc duoc qua title / trinh doc man hinh */
+  .nt-tham-tl { flex-direction: row; }
+  .nt-tham-lui { width: 38px; height: 34px; padding: 0; font-size: 0; border-width: 2.5px; box-shadow: 0 3px 0 var(--vien); text-align: center; }
+  #ntThamLui::before { content: "←"; font-size: 1.05rem; }
+  #ntThamTt::before { content: "🏘"; font-size: 1rem; }
+  .nt-tham-dock { gap: 2px; padding: 6px; }
+  .nt-tham-dock .nt-tc { width: 60px; font-size: 0.66rem; letter-spacing: -0.02em; }
+  .nt-tc-ic { width: 36px; height: 36px; font-size: 24px; }
+  .nt-tham-dock .nt-tc.xong::after { right: 4px; width: 17px; height: 17px; font-size: 0.62rem; }
+  .nt-tham-venha .nt-cta-hinh { font-size: 30px; }
+  .nt-tham-venha { width: 72px; }
+  .nt-tham-dock #ntThamHd { width: 34px; height: 34px; font-size: 0.85rem; }
+  /* con nut an ben phai -> mo dan o mep de em biet vuot ngang duoc */
+  .nt-tham-cuon { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 18px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 18px), transparent); padding-right: 14px; }
+}

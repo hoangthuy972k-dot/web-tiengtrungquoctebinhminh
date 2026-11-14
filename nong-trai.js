@@ -503,6 +503,8 @@ const MO_TN = {
   tiem: { lv: 6, zh: '我的小店', vn: 'Cửa hàng riêng', gt: 'Mở tiệm riêng: bày hàng với giá trong khoảng ±30% giá chợ, các bạn cùng lớp vào mua. Chợ thu phí 5%; hàng bày quá 48 giờ tự về kho.' },
   nc: { lv: 7, zh: '雇工', vn: 'Nhân công', gt: 'Thuê người thu hoạch, người chăn nuôi, người vận chuyển. Họ chỉ đi làm vào ngày em học đủ 10 sao (ngày em không học, họ nghỉ phép và không lấy lương). Tưới nước, cho ăn vẫn là việc của em!' },
   xk: { lv: 8, zh: '出口', vn: 'Xuất khẩu', gt: 'Chở hàng sang các vùng đất trên Bản đồ phiêu lưu: mỗi tuần mỗi vùng cần hàng khác nhau, trả thêm 20–60%. Giấy tờ là câu hỏi tiếng Trung theo kiểu của vùng đất — trả lời đúng mới xuất hàng được.' },
+  // them 2026-11-14 (tu thien / tang qua cho ban) — xem nong-trai-tuthien.js
+  qt: { lv: 2, zh: '爱心礼物', vn: 'Từ thiện · Tặng quà cho bạn', gt: 'Tặng xu, nông sản trong kho hoặc hạt giống cho bạn cùng lớp, kèm một lời chúc tiếng Trung. Bạn nhận quà bấm “Cảm ơn 谢谢！” thì em được +1 ❤. Hàng quý và hàng mua ở chợ không tặng được.' },
   dg: { lv: 10, zh: '拍卖会', vn: 'Đấu giá', gt: 'Mỗi tuần có phiên đấu giá hạt giống quý, vật nuôi hiếm, đồ trang trí đặc biệt. Đặt giá bằng xu — xu được giữ lại, ai trả cao hơn thì em được hoàn xu ngay.' },
 };
 // Giai dau thi dua theo cap nong trai
@@ -741,6 +743,7 @@ module.exports = function ganNongTrai(app, d) {
   let thiDua = null; // nong-trai-thidua.js (gan o cuoi)
   let xuongMod = null; // nong-trai-xuong.js (gan o cuoi)
   let tinMod = null;   // nong-trai-tin.js (gan o cuoi)
+  let qtMod = null;    // nong-trai-tuthien.js (gan o cuoi)
   const FILE = path.join(d.DATA_DIR, 'farms.json');
   const khoa = new Map(); // userId -> Promise (xu ly lan luot tung nguoi)
   const suKienHook = []; // (f, ten su kien, so) — cot truyen dem viec
@@ -930,7 +933,7 @@ module.exports = function ganNongTrai(app, d) {
   function thanhTich(f) {
     const tuan = d.vnWeekKey(), k = f.ke || {};
     return { coVang: f.coVang === tuan, ruy: f.ruy && f.ruy.tuan === tuan ? f.ruy.hang : 0,
-      cup: (k.cup || []).slice(0, 8), dep: (k.dep || []).slice(0, 8), td: k.td || 0, kn: (k.kn || []).slice(0, 8) };
+      cup: (k.cup || []).slice(0, 8), dep: (k.dep || []).slice(0, 8), td: k.td || 0, kn: (k.kn || []).slice(0, 8), tb: (k.tb || []).slice(0, 8) };
   }
 
   // Kiem tra o (x, y) rong w x w co nam trong dat va khong de len vat khac
@@ -2156,6 +2159,7 @@ module.exports = function ganNongTrai(app, d) {
       tt: thanhTich(f), cay7: thiDua ? thiDua.cay7ChoHs(f) : null,
       daThich: !!(fm.bc && fm.bc.d === ngay && fm.bc.ids.indexOf(id) >= 0),
       tnMo: tinMod ? (await tinMod.duocNhan(req.user.id, id)).duoc : false,
+      qtMo: qtMod ? await qtMod.cungLopThat(req.user.id, id) : false,
     });
   }));
 
@@ -2584,6 +2588,8 @@ module.exports = function ganNongTrai(app, d) {
   require('./nong-trai-cottruyen')(app, d, hKt, chung);
   // Tin nhan tu do giua ban cung lop (co bo loc + thay co kiem duyet)
   tinMod = require('./nong-trai-tin')(app, d, hKt, chung);
+  // Tu thien: tang xu / nong san / hat giong cho ban cung lop
+  qtMod = require('./nong-trai-tuthien')(app, d, hKt, chung);
   async function initTatCa() { await initTable(); await chung.initTable(); }
 
   // _thuCau: chi de chay tools/thu-cau-nong-trai.js (kiem tra cau hoi chi thuoc bai em da hoc / duoc giao)

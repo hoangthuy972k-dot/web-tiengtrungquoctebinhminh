@@ -130,7 +130,7 @@ window.NT_HUONGDAN = {
       meo: 'Thị trấn xếp hạng theo điểm đẹp, công trình và số sao cả lớp học trong tuần.', mo: { nut: '#ntDuoi [data-mo="thitran"]' } },
     thamban: { ten: 'Thăm nông trại bạn', ic: '❤️', nhom: 'thi', lv: 1, tom: 'Thả tim, giúp bạn, nhắn tin tiếng Trung, mua hàng.',
       de: 'Sang chơi nhà bạn, giúp bạn và mua hàng của bạn.',
-      buoc: [['❤️', 'Thả tim: mỗi bạn 1 lần mỗi ngày, em được +3 xu (tối đa 10 bạn).'], ['💧', 'Giúp bạn tưới cây hoặc cho vật nuôi ăn bằng cách trả lời câu hỏi (6 lần mỗi ngày).'], ['💬', 'Nói chuyện: gửi lời chào, ghép câu tiếng Trung, tặng quà.'], ['🛒', 'Sạp và Tiệm của bạn: mua nông sản em còn thiếu.']],
+      buoc: [['❤️', 'Thả tim: mỗi bạn 1 lần mỗi ngày, em được +3 xu (tối đa 10 bạn).'], ['💧', 'Giúp bạn tưới cây hoặc cho vật nuôi ăn bằng cách trả lời câu hỏi (6 lần mỗi ngày).'], ['💬', 'Thanh dưới: Nói chuyện (lời chào, ghép câu tiếng Trung), 🎁 Tặng quà (xu, nông sản, hạt giống cho bạn cùng lớp).'], ['🛒', 'Sạp và Tiệm của bạn: mua nông sản em còn thiếu. Bấm 🏡 Về nhà ở giữa thanh dưới để về nông trại của em.']],
       meo: 'Mọi tin nhắn đều là câu tiếng Trung mẫu — vừa chơi với bạn vừa luyện câu.', mo: { nut: '#ntDuoi [data-mo="thitran"]' } },
     cungnhau: { ten: 'Cùng nhau', ic: '🤝', nhom: 'thi', lv: 1, tom: 'Công trình lớp, thách đấu chữ Hán, bạn học, lễ hội.',
       de: 'Những việc cả lớp làm chung.',
@@ -157,6 +157,11 @@ window.NT_HUONGDAN = {
       buoc: [['🏆', 'Cúp trại: có khi lớp em vào top 3 của tuần.'], ['🎀', 'Ruy băng: có khi nông trại em vào top 3 nông trại đẹp.'], ['⚔️', 'Số lần thắng thách đấu học 24 giờ.'], ['📖', 'Kỷ vật câu chuyện: có khi em đọc hết một mùa truyện.']],
       meo: 'Cúp không mua được bằng xu — chỉ có nhờ học và chơi cùng lớp.', mo: { bang: 'thidua', tab: 'ke' } },
 
+    tuthien: { ten: 'Từ thiện · Tặng quà 爱心礼物 (àixīn lǐwù)', ic: '🎁', nhom: 'thi', tn: 'qt', tom: 'Tặng xu, nông sản, hạt giống cho bạn cùng lớp.',
+      de: 'Tặng quà cho bạn cùng lớp kèm một lời chúc tiếng Trung — giúp bạn đang thiếu hàng, thiếu xu.',
+      buoc: [['🎁', 'Sang nhà bạn bấm “Tặng quà” ở thanh dưới, hoặc mở ⋯ Thêm → Từ thiện rồi chọn bạn.'], ['🧺', 'Chọn Xu, Hàng trong kho hoặc Hạt giống, chọn món và số lượng (bấm “Tất cả” để tặng hết).'], ['💌', 'Chọn một lời chúc tiếng Trung như 加油！ (jiāyóu — cố lên) rồi bấm “Tặng”.'], ['💛', 'Bạn bấm “Cảm ơn 谢谢！” thì em được +1 ❤ (tối đa 5 ❤ cảm ơn mỗi ngày). Ai tặng quà cho nhiều bạn khác nhau nhất tuần thành “Bạn tốt bụng nhất tuần”.']],
+      meo: 'Hàng quý (giá từ 95 xu, hạt quý) và hàng mua ở chợ (đường, muối, thức ăn chăn nuôi) không tặng được. Lời chúc luôn có pinyin — đọc to lên nhé!', mo: { bang: 'tuthien' } },
+
     /* ---------- Phiêu lưu & truyện ---------- */
     bando: { ten: 'Bản đồ phiêu lưu 冒险地图 (màoxiǎn dìtú)', ic: '🗺️', nhom: 'pl', tn: 'pl', tom: '5 vùng đất, mỗi vùng luyện một kỹ năng.',
       de: 'Đi qua 5 vùng đất để luyện pinyin, từ vựng, hội thoại, ngữ pháp và thử thách tổng hợp.',
@@ -175,10 +180,10 @@ window.NT_HUONGDAN = {
       congdong: tab === 'tl' ? 'thuonglai' : 'congdong', thientai: 'thientai', chung: tab === 'hd' ? 'donhang' : 'cungnhau',
       cacthitran: 'thitran', loidai: 'thitran', dukhach: 'thitran', bangtin: 'thitran', vongquay: 'vongquay',
       thidua: tab === 'dep' ? 'binhchon' : tab === 'tdh' ? 'thachdau' : tab === 'ke' ? 'kecup' : 'cup', vuon: 'vuon', cay7: 'cay7',
-      'kt-pl': 'bando', 'kt-mk': 'cho', 'kt-tiem': 'tiem', 'kt-xuong': 'xuong', 'kt-nc': 'nhancong', 'kt-xk': 'xuatkhau', 'kt-dg': 'daugia', 'kt-truyen': 'truyen',
+      'kt-pl': 'bando', 'kt-mk': 'cho', 'kt-tiem': 'tiem', 'kt-xuong': 'xuong', 'kt-nc': 'nhancong', 'kt-xk': 'xuatkhau', 'kt-dg': 'daugia', 'kt-truyen': 'truyen', tuthien: 'tuthien',
     };
     return B[loai] || '';
   },
   // Khoa MO_TN (the gioi thieu khi mo tinh nang) -> ma huong dan
-  theoTn: { cau: 'hocau', hd: 'donhang', tl: 'thuonglai', nh: 'nhahang', vuon: 'vuon', bc: 'binhchon', tdh: 'thachdau', pl: 'bando', cho: 'cho', xuong: 'xuong', tiem: 'tiem', nc: 'nhancong', xk: 'xuatkhau', dg: 'daugia', truyen: 'truyen' },
+  theoTn: { cau: 'hocau', hd: 'donhang', tl: 'thuonglai', nh: 'nhahang', vuon: 'vuon', bc: 'binhchon', tdh: 'thachdau', pl: 'bando', cho: 'cho', xuong: 'xuong', tiem: 'tiem', nc: 'nhancong', xk: 'xuatkhau', dg: 'daugia', truyen: 'truyen', qt: 'tuthien' },
 };

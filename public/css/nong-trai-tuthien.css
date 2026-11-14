@@ -1,0 +1,87 @@
+/* ══════════ Nong trai — Tu thien / Tang qua cho ban (2026-11-14) ══════════
+   Cung kieu vien dam, nen sang cua nong-trai.css (--vien, --kem, --mo...). Chu Han dung Noto Serif SC, luon kem pinyin. */
+.qt-tb {
+  display: flex; gap: 10px; align-items: flex-start; margin: 0 0 12px; padding: 10px 12px;
+  border-radius: 16px; background: #fff7d6; border: 3px solid var(--vien); box-shadow: 0 3px 0 var(--vien);
+}
+.qt-tb-ic { font-size: 1.8rem; line-height: 1; animation: qt-dap 1.6s ease-in-out infinite; }
+@keyframes qt-dap { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.18); } 30% { transform: scale(1); } 45% { transform: scale(1.1); } }
+.qt-tb-tit { font-weight: 900; }
+.qt-tb-tit [lang] { font-family: 'Noto Serif SC', serif; color: #c2185b; margin-left: 4px; }
+.qt-tb p { margin: 2px 0; font-weight: 600; }
+.qt-tb small { display: block; color: var(--mo); font-weight: 600; font-size: 0.8rem; line-height: 1.35; }
+.qt-tim { display: flex; align-items: center; gap: 8px; padding: 6px 12px; margin-bottom: 10px; border: 3px solid var(--vien); border-radius: 999px; background: #fff; }
+.qt-tim input { flex: 1; min-width: 0; border: 0; outline: 0; font: inherit; font-weight: 600; background: transparent; padding: 4px 0; }
+.qt-ds, .qt-ls { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.qt-ds li {
+  display: flex; align-items: center; gap: 10px; padding: 6px 10px 6px 6px;
+  border: 3px solid var(--vien); border-radius: 16px; background: #fff; box-shadow: 0 3px 0 var(--vien);
+}
+.qt-ds li.qt-trong { justify-content: center; color: var(--mo); font-weight: 700; padding: 14px; box-shadow: none; border-style: dashed; }
+.qt-av-khung { width: 46px; height: 46px; flex: none; border-radius: 50%; background: #e8f6ff; border: 2px solid var(--vien); overflow: hidden; display: grid; place-items: center; }
+.qt-av-khung svg { width: 54px; height: 54px; margin-top: 8px; }
+.qt-ten { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.qt-ten b { font-weight: 800; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.qt-ten small { color: var(--mo); font-weight: 600; font-size: 0.78rem; }
+.qt-ds .nt-nut { flex: none; padding: 6px 12px; }
+/* lich su */
+.qt-ls li { display: flex; gap: 10px; align-items: center; padding: 8px 10px; border: 2px solid #e4d6c6; border-radius: 14px; background: #fff; }
+.qt-ls li.nhan { border-color: #f3b4c8; background: #fff6f9; }
+.qt-ls li > img { width: 38px; height: 38px; flex: none; }
+.qt-ls p { flex: 1; margin: 0; line-height: 1.45; min-width: 0; }
+.qt-ls small { display: block; color: var(--mo); font-weight: 700; font-size: 0.76rem; }
+.qt-ls-chuc { font-size: 0.85rem; color: var(--mo); }
+.qt-ls-chuc b { color: #c2185b; font-family: 'Noto Serif SC', serif; }
+.qt-ls .nt-nut { flex: none; }
+/* bang tang */
+.qt-tang .kt-h3 { margin: 14px 0 6px; }
+.qt-dau { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.qt-dau p { margin: 0; font-size: 1.05rem; font-weight: 700; }
+.qt-loai { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.qt-loai button, .qt-mon button, .qt-chuc-ds button {
+  font: inherit; color: var(--chu); cursor: pointer; background: #fff; border: 3px solid var(--vien); border-radius: 14px; box-shadow: 0 3px 0 var(--vien);
+  transition: transform 0.12s, background 0.12s;
+}
+.qt-loai button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 4px; font-weight: 800; font-size: 0.86rem; }
+.qt-loai button span { font-size: 1.5rem; line-height: 1.1; }
+.qt-loai button:hover, .qt-mon button:hover, .qt-chuc-ds button:hover { transform: translateY(-2px); }
+.qt-loai button.bat, .qt-mon button.bat, .qt-chuc-ds button.bat { background: #ffe08a; box-shadow: 0 3px 0 var(--vien), inset 0 0 0 2px #fff; }
+.qt-co { display: flex; align-items: center; gap: 6px; margin: 0; font-weight: 700; }
+.qt-co img { width: 28px; height: 28px; }
+.qt-mon { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; max-height: 300px; overflow-y: auto; padding: 2px 2px 6px; }
+.qt-mon button { position: relative; display: flex; flex-direction: column; align-items: center; padding: 6px 4px; line-height: 1.2; }
+.qt-mon button img { width: 44px; height: 44px; }
+.qt-mon button b { font-family: 'Noto Serif SC', serif; font-size: 1.02rem; }
+.qt-mon button small { color: var(--mo); font-weight: 600; font-size: 0.72rem; }
+.qt-mon button span { font-weight: 700; font-size: 0.78rem; }
+.qt-mon button em { position: absolute; top: 4px; right: 5px; font-style: normal; font-size: 0.7rem; font-weight: 900; background: var(--vang); border: 2px solid var(--vien); border-radius: 8px; padding: 0 4px; }
+.qt-sl small { font-weight: 800; color: var(--mo); }
+.qt-chuc-ds { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+.qt-chuc-ds button { padding: 6px 10px; text-align: left; }
+.qt-chuc { display: flex; flex-direction: column; line-height: 1.25; }
+.qt-chuc b { font-family: 'Noto Serif SC', serif; font-size: 1.05rem; color: #c2185b; }
+.qt-chuc small { color: var(--mo); font-weight: 600; font-size: 0.76rem; }
+.qt-chuc span { font-weight: 700; font-size: 0.82rem; }
+.qt-xem { margin: 14px 0 0; padding: 8px 12px; border-radius: 12px; background: #f1f8e9; border: 2px dashed #8bc34a; font-weight: 600; }
+.qt-xem [lang] { font-family: 'Noto Serif SC', serif; color: #c2185b; }
+.qt-ly { margin: 14px 0 0; padding: 8px 12px; border-radius: 12px; background: #fff0ec; border: 2px dashed #e5533d; font-weight: 700; }
+/* the qua moi */
+.qt-the { text-align: center; }
+.qt-the-nhan { display: inline-block; padding: 3px 12px; border-radius: 999px; background: #ffe1ea; border: 2px solid var(--vien); font-weight: 800; font-size: 0.85rem; }
+.qt-the h2 { margin: 10px 0 6px; font-size: 1.25rem; }
+.qt-the-qua { display: flex; flex-direction: column; align-items: center; gap: 2px; margin: 6px auto 10px; }
+.qt-the-qua img { width: 86px; height: 86px; animation: qt-nay 1.4s ease-in-out infinite; }
+@keyframes qt-nay { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-6px) rotate(-4deg); } }
+.qt-the-qua b { font-family: 'Noto Serif SC', serif; font-size: 1.4rem; }
+.qt-the-qua small { color: var(--mo); font-weight: 700; }
+.qt-chuc.to { align-items: center; margin: 0 auto; padding: 8px 14px; max-width: 320px; border-radius: 14px; background: #fff6f9; border: 2px solid #f3b4c8; }
+.qt-chuc.to b { font-size: 1.3rem; }
+.qt-the p { font-weight: 600; color: var(--mo); }
+.qt-the .nt-hang-nut { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+@media (max-width: 420px) {
+  .qt-loai button { font-size: 0.74rem; }
+  .qt-mon { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); }
+  .qt-chuc-ds { grid-template-columns: 1fr 1fr; }
+  .qt-ds .nt-nut { padding: 5px 9px; font-size: 0.85rem; }
+}
+.qt-tb-tit .qt-py { display: inline; font-size: 0.78rem; color: var(--mo); font-weight: 600; }

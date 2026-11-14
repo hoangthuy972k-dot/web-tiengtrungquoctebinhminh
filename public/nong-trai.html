@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/css/cau-dt.css">
 <link rel="stylesheet" href="/css/nong-trai.css">
 <link rel="stylesheet" href="/css/nong-trai-kt.css">
+<link rel="stylesheet" href="/css/nong-trai-tuthien.css">
 </head>
 <body class="nt">
 
@@ -53,26 +54,34 @@
 <!-- Goc trai: cay cham chi, thach dau dang dien ra, co vang / ruy bang / ke cup (ca khi ban sang tham) -->
 <div class="nt-trai-cot" id="ntTraiCot"></div>
 
+<!-- Sang tham nong trai ban (2026-11-14, co giao: khong de chu len giao dien): ten ban = 1 vien nho o giua tren,
+     nut quay lai thi tran o goc trai tren (cho nut "Học bài"), cac viec lam = thanh duoi rieng thay thanh duoi cua em. -->
 <div class="nt-tham" id="ntTham" hidden>
-  <div class="nt-tham-chu">
+  <div class="nt-tham-chu" id="ntThamChu">
     <b id="ntThamTen"></b>
     <span id="ntThamPhu"></span>
+    <button type="button" class="nt-tham-ke" id="ntThamKe" data-cot="ke" hidden aria-label="Kệ cúp của bạn">🏆</button>
   </div>
-  <div class="nt-tham-nut">
-    <button type="button" class="nt-nut nt-nut-hong" id="ntThamTim">❤ Thả tim</button>
-    <button type="button" class="nt-nut" id="ntThamChao">💬 Nói chuyện</button>
-    <button type="button" class="nt-nut nt-nut-vang" id="ntThamSap">🛒 Sạp của bạn</button>
-    <button type="button" class="nt-nut nt-nut-vang" id="ntThamTiem">🏪 Tiệm của bạn</button>
-    <button type="button" class="nt-nut" id="ntThamTt">🏘 Thị trấn</button>
-    <button type="button" class="nt-nut nt-nut-hong" id="ntThamTai" hidden>🆘 Giúp chống thiên tai</button>
-    <button type="button" class="nt-nut nt-nut-vang" id="ntThamThich" hidden>👍 Thích nông trại</button>
-    <button type="button" class="nt-nut" id="ntThamTdh" hidden>⚔ Thách đấu học</button>
+  <div class="nt-tham-tl">
+    <button type="button" class="nt-tham-lui" id="ntThamLui" hidden>← Về thị trấn</button>
+    <button type="button" class="nt-tham-lui" id="ntThamTt">🏘 Thị trấn</button>
   </div>
-  <p class="nt-tham-goi" id="ntThamGoi"></p>
-  <div class="nt-tham-ve">
-    <button type="button" class="nt-nut nt-nut-vang" id="ntThamLui" hidden>← Về thị trấn</button>
-    <button type="button" class="nt-nut" id="ntThamVe">🏠 Về nông trại của em</button>
-  </div>
+  <nav class="nt-duoi nt-tham-dock" aria-label="Việc làm ở nông trại bạn">
+    <div class="nt-tham-cuon nt-tham-trai">
+      <button type="button" class="nt-cu nt-tc" id="ntThamTim"><span class="nt-tc-ic" aria-hidden="true">❤</span><span class="nt-tc-chu">Thả tim</span></button>
+      <button type="button" class="nt-cu nt-tc" id="ntThamChao"><span class="nt-tc-ic" aria-hidden="true">💬</span><span class="nt-tc-chu">Nói chuyện</span></button>
+      <button type="button" class="nt-cu nt-tc" id="ntThamQua" hidden><span class="nt-tc-ic" aria-hidden="true">🎁</span><span class="nt-tc-chu">Tặng quà</span></button>
+      <button type="button" class="nt-cu nt-tc" id="ntThamSap"><span class="nt-tc-ic" aria-hidden="true">🛒</span><span class="nt-tc-chu">Sạp</span></button>
+    </div>
+    <button type="button" class="nt-cu nt-cu-cta nt-tham-venha" id="ntThamVe"><span class="nt-cta-hinh" aria-hidden="true">🏡</span><span>Về nhà</span></button>
+    <div class="nt-tham-cuon nt-tham-nut">
+      <button type="button" class="nt-cu nt-tc" id="ntThamTiem"><span class="nt-tc-ic" aria-hidden="true">🏪</span><span class="nt-tc-chu">Tiệm</span></button>
+      <button type="button" class="nt-cu nt-tc" id="ntThamTai" hidden><span class="nt-tc-ic" aria-hidden="true">🆘</span><span class="nt-tc-chu">Giúp bạn</span></button>
+      <button type="button" class="nt-cu nt-tc" id="ntThamThich" hidden><span class="nt-tc-ic" aria-hidden="true">👍</span><span class="nt-tc-chu">Thích</span></button>
+      <button type="button" class="nt-cu nt-tc" id="ntThamTdh" hidden><span class="nt-tc-ic" aria-hidden="true">⚔</span><span class="nt-tc-chu">Thách đấu</span></button>
+    </div>
+  </nav>
+  <p class="nt-tham-goi" id="ntThamGoi" hidden></p>
 </div>
 
 <main class="nt-khung" id="ntKhung">
@@ -176,6 +185,7 @@
         <button type="button" class="nt-them-o" data-mo="kt-dg"><img src="/images/farm/tb-daugia.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Đấu giá</b><small id="ntDgPhu">hàng quý mỗi tuần</small></span><i class="nt-cham" id="ntDgCham" hidden></i></button>
         <button type="button" class="nt-them-o" data-mo="don"><img src="/images/farm/tb-don.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Đơn hàng</b><small>giao nông sản lấy xu</small></span><i class="nt-cham" id="ntDonCham" hidden></i></button>
         <button type="button" class="nt-them-o" data-mo="chung"><img src="/images/farm/tb-hoatdong.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Cùng nhau</b><small>công trình lớp · thách đấu · lễ hội</small></span><i class="nt-cham" id="ntChungCham" hidden></i></button>
+        <button type="button" class="nt-them-o" data-mo="tuthien" id="ntThemQua"><span class="nt-them-emo" aria-hidden="true">🎁</span><span class="nt-muc-chu"><b>Từ thiện</b><small id="ntQtPhu">tặng quà cho bạn cùng lớp</small></span><i class="nt-cham" id="ntQtCham" hidden></i></button>
         <button type="button" class="nt-them-o" data-mo="congdong"><img src="/images/farm/tb-congdong.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Cộng đồng</b><small>chợ chung · bạn bè các lớp</small></span></button>
         <button type="button" class="nt-them-o" data-mo="thidua" data-mo-tab="cup"><span class="nt-them-emo" aria-hidden="true">🏆</span><span class="nt-muc-chu"><b>Cúp các trại</b><small>trại học chăm nhất tuần · nông trại đẹp · thách đấu</small></span><i class="nt-cham" id="ntTdCham" hidden></i></button>
         <button type="button" class="nt-them-o" data-mo="vuon" id="ntThemVuon" hidden><span class="nt-them-emo" aria-hidden="true">🌱</span><span class="nt-muc-chu"><b>Vườn từ khó</b><small id="ntVuonPhu">ôn từ hay sai cho cây nở hoa</small></span><i class="nt-cham" id="ntVuonCham" hidden></i></button>
@@ -241,6 +251,7 @@
 <script src="/js/nong-trai-fx.js"></script>
 <script src="/js/nong-trai.js"></script>
 <script src="/js/nong-trai-kt.js"></script>
+<script src="/js/nong-trai-tuthien.js"></script>
 <script src="/js/nong-trai-que.js"></script>
 <script src="/js/nong-trai-huongdan.js"></script>
 <script src="/js/nong-trai-hd.js"></script>

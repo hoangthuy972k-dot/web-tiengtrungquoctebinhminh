@@ -44,9 +44,9 @@ window.NT_HUONGDAN = {
       de: 'Nơi mua vật nuôi, đồ trang trí và ô ruộng mới cho nông trại.',
       buoc: [['🐄', 'Chọn thẻ Vật nuôi, Trang trí hoặc Đất & nhà.'], ['⭐', 'Món có giá sao thì trả bằng sao học tập, món có giá xu thì trả bằng xu.'], ['👆', 'Bấm giá để mua, rồi chạm một ô cỏ trống trên nông trại để đặt.'], ['🔒', 'Món có khoá “Cấp …” sẽ mở khi nông trại lên đủ cấp.']],
       meo: 'Thiếu sao? Bấm “Học kiếm sao” — mỗi bài học, mỗi câu đúng trên web đều cho sao.', mo: { bang: 'cuahang' } },
-    morong: { ten: 'Mở rộng đất & nâng nhà', ic: '🏡', nhom: 'trong', lv: 2, tom: 'Đất rộng hơn, thêm ô ruộng, nhà đẹp hơn.',
+    morong: { ten: 'Mở rộng đất & nâng nhà', ic: '🏡', nhom: 'trong', lv: 2, tom: 'Đất rộng hơn (đảo to ra), thêm ô ruộng, nhà đẹp hơn.',
       de: 'Nông trại chật thì mở rộng đất để đặt thêm ruộng, chuồng, nhà máy.',
-      buoc: [['🏪', 'Vào Cửa hàng → thẻ “Đất & nhà”.'], ['🟫', 'Mua thêm ô ruộng bằng sao (cấp càng cao được càng nhiều ô).'], ['↔️', 'Mở rộng đất: đủ cấp thì trả sao (các mức đầu) hoặc xu (trang trại lớn từ cấp 12).'], ['🏠', 'Nâng cấp nhà ở cấp 5 và cấp 8 để tăng điểm đẹp.']],
+      buoc: [['🏪', 'Vào Cửa hàng → thẻ “Đất & nhà”.'], ['🟫', 'Mua thêm ô ruộng bằng sao (cấp càng cao được càng nhiều ô).'], ['↔️', 'Mở rộng đất: đủ cấp thì trả sao (các mức đầu) hoặc xu (trang trại lớn từ cấp 12) — hòn đảo của em to ra theo.'], ['🏠', 'Nâng cấp nhà ở cấp 5 và cấp 8 để tăng điểm đẹp.']],
       meo: 'Lên cấp nhanh nhất là chăm trồng trọt, giao đơn hàng và trả lời câu hỏi mỗi ngày.', mo: { bang: 'cuahang', tab: 'dat' } },
     kho: { ten: 'Kho', ic: '🧺', nhom: 'trong', lv: 1, tom: 'Nông sản, chuồng, bếp, sạp và túi đồ.',
       de: 'Kho giữ mọi thứ em thu hoạch được và là nơi bán hàng cho cửa hàng.',
@@ -124,9 +124,9 @@ window.NT_HUONGDAN = {
       meo: 'Mỗi tuần xuất tối đa 6 chuyến. Tiền hàng tính vào hạn mức bán ngày — học thêm sao để nhận đủ.', mo: { bang: 'kt-xk' } },
 
     /* ---------- Thi đua & bạn bè ---------- */
-    thitran: { ten: 'Thị trấn của lớp', ic: '🏘️', nhom: 'thi', lv: 1, tom: 'Nông trại của cả lớp nằm chung một thị trấn.',
+    thitran: { ten: 'Thị trấn của lớp', ic: '🏘️', nhom: 'thi', lv: 1, tom: 'Nông trại của cả lớp là các hòn đảo chung một vùng biển.',
       de: 'Xem nông trại các bạn cùng lớp và cùng nhau làm việc chung.',
-      buoc: [['🏡', 'Mỗi lô đất là nông trại của một bạn — chạm vào để sang thăm.'], ['🛒', 'Các nút phía trên: Chợ lớp, Chợ nông sản, Các tiệm, Đấu giá, Nhật ký.'], ['⚔️', 'Lôi đài: trả lời câu hỏi kiếm điểm cho lớp. Bảng tin: nhắn cả lớp bằng câu tiếng Trung mẫu.'], ['🏙️', '“Các thị trấn”: xem thị trấn lớp khác và cổ vũ.']],
+      buoc: [['🏝️', 'Mỗi hòn đảo là nông trại của một bạn (đất rộng thì đảo to) — chạm vào đảo để sang thăm. Đảo của em có viền sáng vàng.'], ['🛒', 'Các nút phía trên: Chợ lớp, Chợ nông sản, Các tiệm, Đấu giá, Nhật ký.'], ['⚔️', 'Lôi đài: trả lời câu hỏi kiếm điểm cho lớp. Bảng tin: nhắn cả lớp bằng câu tiếng Trung mẫu.'], ['🏙️', '“Các thị trấn”: xem thị trấn lớp khác và cổ vũ.']],
       meo: 'Thị trấn xếp hạng theo điểm đẹp, công trình và số sao cả lớp học trong tuần.', mo: { nut: '#ntDuoi [data-mo="thitran"]' } },
     thamban: { ten: 'Thăm nông trại bạn', ic: '❤️', nhom: 'thi', lv: 1, tom: 'Thả tim, giúp bạn, nhắn tin tiếng Trung, mua hàng.',
       de: 'Sang chơi nhà bạn, giúp bạn và mua hàng của bạn.',

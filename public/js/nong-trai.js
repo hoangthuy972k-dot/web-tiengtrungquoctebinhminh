@@ -2139,7 +2139,7 @@
       veThamGoi();
       document.body.classList.add('dang-tham');
       veBanDo();
-      $('#ntKhung').scrollTo(0, 0);
+      if (window.NTDao) NTDao.canh(); else $('#ntKhung').scrollTo(0, 0);
       setTimeout(function () { if (S.tham && S.tham.id === id) noi('chu', '欢迎！', 'Huānyíng!', 4000); }, 700);
     }, function (err) { bao(err.message, 'loi'); });
   }
@@ -3998,7 +3998,8 @@
     // so lo moi hang theo be rong man hinh -> chen 1 con pho truoc moi hang
     var cot = soCotTt = soCot(luoi), html = '', hang = 0, dung = 0;
     // trang trai lon chiem 2 o; xep lan luot, o lon khong vua cho trong thi lay lo nho ke tiep chen vao
-    var cho = r.ds.map(function (b, i) { return { b: b, i: i, u: laDatLon(b) ? Math.min(2, cot) : 1 }; });
+    // (quan dao: dao to nho theo dat nen moi dao 1 o)
+    var cho = r.ds.map(function (b, i) { return { b: b, i: i, u: laDatLon(b) && !window.NTDao ? Math.min(2, cot) : 1 }; });
     while (cho.length) {
       if (dung === 0) html += hangPho(hang++);
       var j = -1;
@@ -4037,6 +4038,8 @@
   }
   function laDatLon(b) { return !!(b.co && b.kich && b.kich.w >= 20); }
   function oPho(b, i, to) {
+    // quan dao: moi o la 1 hon dao giua bien (khong co den / cay ven duong)
+    if (window.NTDao) return '<div class="nt-o-pho nt-o-dao">' + loDat(b, i) + '</div>';
     // ven duong: den long goc tren, cay / chau hoa goc duoi (moi lo mot kieu)
     return '<div class="nt-o-pho' + (to ? ' to' : '') + '">' + loDat(b, i) +
       '<img class="nt-vd nt-vd-den" src="' + anh('den-long') + '" alt="" draggable="false">' +
@@ -4147,8 +4150,37 @@
     tt.insertBefore(troi, tt.firstChild);
   }
   var HUY_TT = ['🥇', '🥈', '🥉'];
+  // Thi tran = quan dao (2026-11): moi ban 1 hon dao nho (hinh dao that theo dat + ma ban), vai bieu tuong nha / do trang tri
+  function monDaoNho(b) {
+    var c = S.cat, ds = [];
+    var nha = b.o.filter(function (o) { return o.k === 'nha'; })[0];
+    if (nha) ds.push({ o: nha, src: anh('nha-' + (nha.n || 1)), to: true });
+    var tt = b.o.filter(function (o) { return c.TT[o.k] && !c.TT[o.k].phang; })
+      .sort(function (a, z) { return (c.TT[z.k].dep || 0) - (c.TT[a.k].dep || 0) || a.id - z.id; });
+    var daCo = {};
+    tt.forEach(function (o) { if (ds.length < 4 && !daCo[o.k]) { daCo[o.k] = 1; ds.push({ o: o, src: anh(o.k) }); } });
+    var xg = b.o.filter(function (o) { return xgCua(o.k); })[0];
+    if (xg && ds.length < 5) ds.push({ o: xg, src: anh(xg.k) });
+    var con = b.o.filter(function (o) { return c.CON[o.k]; })[0];
+    if (con && ds.length < 5) ds.push({ o: con, src: anh(con.k) });
+    return ds.map(function (m) { var r = rong(m.o); return { x: m.o.x + r / 2, y: m.o.y + r * 0.9, src: m.src, to: m.to }; });
+  }
   function loDat(b, hang) {
     var huy = hang < 3 && b.dep > 0 ? HUY_TT[hang] + ' ' : '';
+    if (window.NTDao) {
+      var l = NTDao.lech(b.id), nv = '<span class="nt-lo-nv">' + NV.svg(b.av || NV.macDinh(b.id)) + '</span>';
+      var dao = b.co ? NTDao.daoNho(b, { mon: monDaoNho(b), them: nv + (b.coVang ? '<span class="nt-dn-co" title="Trại vô địch tuần">🚩</span>' : '') })
+        : NTDao.daoNho({ id: b.id, kich: { w: 6, h: 4 } }, { them: '<span class="nt-dn-hoang">🌴</span>' });
+      return '<button type="button" class="nt-lo nt-lo-dao' + (b.la ? ' la' : '') + (b.co ? '' : ' hoang') + '" data-lo="' + esc(b.id) + '" style="--dx:' + l.x + 'px;--dy:' + l.y + 'px" aria-label="' + (b.la ? 'Đảo của em' : 'Đảo nông trại của ' + esc(b.ten)) + '">' +
+        '<span class="nt-lo-dat">' + (b.la ? '<span class="nt-lo-em">Đảo của em</span>' : '') + dao + '</span>' +
+        '<span class="nt-lo-bien"><b>' + huy + huyHv(b.hv, true) + esc(b.ten) + (b.la ? ' (em)' : '') + '</b><small>' +
+        (b.co ? 'Cấp ' + b.lv + ' · đẹp ' + b.dep + ' · ❤ ' + b.tim + (b.sap ? ' · 🛒 ' + b.sap : '') : 'Đảo hoang — chờ bạn mở nông trại') +
+        (b.tuan ? ' · ⭐ ' + b.tuan + ' tuần' : '') + '</small>' +
+        (b.ruy ? '<span class="nt-lo-ruy">🎀 Nông trại đẹp #' + b.ruy + '</span>' : '') +
+        (b.coVang ? '<span class="nt-lo-ruy vang">🚩 Trại vô địch tuần</span>' : '') +
+        (laDatLon(b) ? '<span class="nt-lo-to">🏝 ' + (b.kich.w >= 28 ? 'Điền trang hoàng gia <span lang="zh">皇家庄园</span>' : b.kich.w >= 24 ? 'Điền trang <span lang="zh">庄园</span>' : 'Trang trại lớn <span lang="zh">大农场</span>') + ' · ' + b.kich.w + '×' + b.kich.h + '</span>' : '') +
+        (b.vuaHoc ? '<span class="nt-lo-vua">👑 Chăm học nhất tuần</span>' : '') + '</span></button>';
+    }
     return '<button type="button" class="nt-lo' + (b.la ? ' la' : '') + '" data-lo="' + esc(b.id) + '" aria-label="Nông trại của ' + esc(b.ten) + '">' +
       '<div class="nt-lo-dat">' + (b.co ? farmNho(b) : '<div class="nt-lo-trong">Đất trống — chờ ' + esc(b.ten) + ' mở nông trại</div>') +
       '<span class="nt-lo-nv">' + NV.svg(b.av || NV.macDinh(b.id)) + '</span></div>' +
@@ -5516,7 +5548,7 @@
   /* ---------------- API cho cac bang kinh te (public/js/nong-trai-kt.js) ---------------- */
   var NGOAI = {};
   window.NTX = {
-    S: S, $: $, $all: $all, esc: esc, img: img, anh: anh, goi: goi, bao: bao, tieng: tieng, doc: doc, docKiem: docKiem,
+    S: S, $: $, $all: $all, esc: esc, img: img, anh: anh, goi: goi, lam: lam, bao: bao, tieng: tieng, doc: doc, docKiem: docKiem,
     mayKhongNghe: mayKhongNghe, giaiNghe: giaiNghe, xinCauNghe: xinCauNghe, moBang: moBang, veBang: veBang, dongBang: dongBang,
     datTab: datTab, bangDang: function () { return bangDang; }, conLai: conLai, nhanTrangThai: nhanTrangThai,
     htmlKt: htmlKt, ganKt: ganKt, danhDauKt: danhDauKt, giaiKt: giaiKt, docKt: docKt, moLaiKt: moLaiKt, moTn: moTn, htmlGt: htmlGt, htmlKhoaTn: htmlKhoaTn,
@@ -5540,10 +5572,9 @@
       datLinkHoc();
       taiThiDua(true);
       setInterval(function () { if (!document.hidden) taiThiDua(false); }, 5 * 60000);
-      // dien thoai: cuon ban do vao giua
+      // dien thoai: cuon ban do (dao) vao giua
       var k = $('#ntKhung');
-      k.scrollLeft = (k.scrollWidth - k.clientWidth) / 2;
-      ganNhac();
+      if (window.NTDao) NTDao.canh(); else k.scrollLeft = (k.scrollWidth - k.clientWidth) / 2;      ganNhac();
       meoKeoTha();
       setInterval(nhip, 1000);
       lamMoiDinhKy();

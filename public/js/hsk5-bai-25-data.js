@@ -1300,27 +1300,20 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 67) + luyện tập 3 (tr. 69) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
-  {left:'冒',right:'风险'},
-  {left:'游览',right:'名胜'},
   {left:'承受',right:'压力'},
   {left:'威胁',right:'生命'},
   {left:'形状',right:'相似'},
-  {left:'气候',right:'恶劣'},
   {left:'营养',right:'平衡'},
   {left:'态度',right:'严肃'},
   {left:'彻底',right:'解决'},
-  {left:'谨慎地',right:'处理'},
-  {left:'摔',right:'碎'},
   {left:'一吨',right:'粮食'},
   {left:'一起',right:'意外'},
-  {left:'神情',right:'慌张'},
-  {left:'打开',right:'货舱'},
   {left:'万丈',right:'深渊'},
   {left:'狂风',right:'巨浪'},
-  {left:'温室',right:'效应'},
   {left:'两腿',right:'发抖'},
   {left:'做一天和尚',right:'撞一天钟'}
 ];
@@ -1329,55 +1322,32 @@ var matchData = [
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'因为天气突然变坏，飞机起飞半个小时后被迫',blank:'返航',post:'。',hint:'(quay về nơi xuất phát)',ans:'返航'},
-  {pre:'考试不',blank:'可怕',post:'，可怕的是不努力。',hint:'(đáng sợ)',ans:'可怕'},
-  {pre:'今天海上',blank:'风浪',post:'很大，渔船都不敢出海。',hint:'(sóng gió)',ans:'风浪'},
-  {pre:'为了省钱，我们这次买的是经济',blank:'舱',post:'的机票。',hint:'(khoang, hạng ghế)',ans:'舱'},
-  {pre:'这个瓶子我',blank:'使劲',post:'儿拧了半天也打不开。',hint:'(dùng sức)',ans:'使劲'},
-  {pre:'小女孩一看见我，就',blank:'朝',post:'我笑了笑。',hint:'(về phía)',ans:'朝',exp:'朝 + người/hướng + V = về phía, hướng về: 朝我笑了笑.'},
-  {pre:'石头扔进河里，很快就',blank:'沉',post:'下去了。',hint:'(chìm)',ans:'沉'},
-  {pre:'一场',blank:'猛烈',post:'的暴风雨过后，路边的很多树都倒了。',hint:'(dữ dội)',ans:'猛烈'},
-  {pre:'',blank:'狂',post:'风把门前的大树都刮倒了。',hint:'(dữ, điên cuồng)',ans:'狂'},
-  {pre:'这辆卡车最多能装五',blank:'吨',post:'货物。',hint:'(tấn)',ans:'吨'},
-  {pre:'运动员们靠',blank:'钢铁',post:'般的意志坚持跑完了全程。',hint:'(sắt thép)',ans:'钢铁'},
-  {pre:'学外语要先打好',blank:'根基',post:'，发音和基本语法都很重要。',hint:'(nền móng)',ans:'根基'},
-  {pre:'行李的',blank:'重量',post:'超过了二十公斤，要另外交钱。',hint:'(trọng lượng)',ans:'重量'},
-  {pre:'下龙湾',blank:'风景',post:'如画，每年吸引很多外国游客。',hint:'(phong cảnh)',ans:'风景'},
-  {pre:'这条小巷又',blank:'窄',post:'又长，汽车根本开不进去。',hint:'(hẹp)',ans:'窄'},
-  {pre:'山路非常窄，两边是',blank:'万丈',post:'深渊。',hint:'(vạn trượng)',ans:'万丈'},
-  {pre:'沉迷网络游戏，可能会让一个学生陷入失败的',blank:'深渊',post:'。',hint:'(vực thẳm)',ans:'深渊'},
-  {pre:'到了北京，我们先去',blank:'游览',post:'了长城和故宫。',hint:'(tham quan)',ans:'游览'},
-  {pre:'外面下着大雪，小猫冻得浑身',blank:'发抖',post:'。',hint:'(run rẩy)',ans:'发抖'},
-  {pre:'士兵们每天都要进行',blank:'负重',post:'训练。',hint:'(mang vác nặng)',ans:'负重'},
-  {pre:'下雨天路滑，奶奶出门时差点儿',blank:'摔倒',post:'。',hint:'(ngã)',ans:'摔倒'},
-  {pre:'三八',blank:'妇女',post:'节那天，我给妈妈买了一束花。',hint:'(phụ nữ)',ans:'妇女'},
-  {pre:'今天早上这条路上发生了一',blank:'起',post:'交通事故。',hint:'(lượng từ: vụ)',ans:'起',exp:'起 là lượng từ cho vụ việc, sự cố: 一起交通事故.'},
-  {pre:'这么多年过去了，他的样子',blank:'丝毫',post:'没有变。',hint:'(chút nào)',ans:'丝毫',exp:'丝毫 + 不/没 = không một chút nào: 丝毫没有变.'},
-  {pre:'足球',blank:'滚',post:'到马路上了，你快去捡回来。',hint:'(lăn)',ans:'滚'},
-  {pre:'温室',blank:'效应',post:'让地球的气温越来越高。',hint:'(hiệu ứng)',ans:'效应'},
-  {pre:'站的时候要挺',blank:'胸',post:'抬头，别总低着头看手机。',hint:'(ngực)',ans:'胸'},
-  {pre:'山上的寺庙里住着一个老',blank:'和尚',post:'和一个小和尚。',hint:'(hòa thượng)',ans:'和尚'},
-  {pre:'新年的',blank:'钟',post:'声响起来了，大家都高兴地欢呼起来。',hint:'(chuông)',ans:'钟'},
-  {pre:'高三学生每天都要',blank:'承受',post:'很大的学习压力。',hint:'(chịu đựng)',ans:'承受'}
+  {pre:'天气突然变坏，飞机只好',blank:'返航',post:'。',hint:'(quay về nơi xuất phát)',ans:'返航',exp:'返航 = (tàu, máy bay) quay về nơi xuất phát giữa đường.'},
+  {pre:'那艘船撞上了石头，很快就',blank:'沉',post:'下去了。',hint:'(chìm)',ans:'沉',exp:'沉 = chìm (xuống nước); 下沉, 沉下去.'},
+  {pre:'这座桥最多只能通过二十',blank:'吨',post:'重的车。',hint:'(tấn)',ans:'吨',exp:'吨 = tấn (1000 kg), lượng từ đo trọng lượng: 几万吨, 二十吨.'},
+  {pre:'这座桥是用',blank:'钢铁',post:'做的，非常结实。',hint:'(sắt thép)',ans:'钢铁',exp:'钢铁 = sắt thép; 钢铁巨轮 = tàu thép khổng lồ.'},
+  {pre:'这里的',blank:'风景',post:'真漂亮，我们拍几张照片吧。',hint:'(phong cảnh)',ans:'风景',exp:'风景 = phong cảnh; 风景区 = khu thắng cảnh.'},
+  {pre:'这条路太',blank:'窄',post:'了，两辆车过不去。',hint:'(hẹp)',ans:'窄',exp:'窄 = hẹp (đường, cửa, giường…).'},
+  {pre:'风太大了，他冻得一直',blank:'发抖',post:'。',hint:'(run, run rẩy)',ans:'发抖',exp:'发抖 = run (vì lạnh, sợ); 冻得发抖, 吓得发抖.'},
+  {pre:'下雪天路滑，奶奶不小心',blank:'摔倒',post:'了。',hint:'(ngã)',ans:'摔倒',exp:'摔倒 = ngã xuống (vì trượt, vấp); 不小心摔倒了.'},
+  {pre:'三月八号是国际',blank:'妇女',post:'节。',hint:'(phụ nữ)',ans:'妇女',exp:'妇女 = phụ nữ (văn viết, đã trưởng thành); 妇女节 = ngày Phụ nữ.'},
+  {pre:'这个月这条路上已经发生了两',blank:'起',post:'意外了。',hint:'(vụ — lượng từ)',ans:'起',exp:'起 làm lượng từ cho sự cố, tai nạn = vụ: 一起意外, 两起事情.'},
+  {pre:'球从桌子上',blank:'滚',post:'到了地上。',hint:'(lăn)',ans:'滚',exp:'滚 = lăn (vật tròn); 滚下去 = lăn xuống.'},
+  {pre:'山上的和尚每天早上都要敲',blank:'钟',post:'。',hint:'(chuông)',ans:'钟',exp:'钟 = cái chuông (lớn); còn có nghĩa đồng hồ treo tường. 撞钟 / 敲钟 = gõ chuông.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (朝 · 简直) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我们学校的','正门','坐西','朝东','。'],ans:'我们学校的正门坐西朝东。',audio:'我们学校的正门坐西朝东。'},
-  {words:['我仿佛','看到','胜利','正朝我们','走来','。'],ans:'我仿佛看到胜利正朝我们走来。',audio:'我仿佛看到胜利正朝我们走来。'},
-  {words:['小女孩','朝我','笑了笑','。'],ans:'小女孩朝我笑了笑。',audio:'小女孩朝我笑了笑。'},
-  {words:['船长','简直','是','疯了','。'],ans:'船长简直是疯了。',audio:'船长简直是疯了。'},
-  {words:['我','简直','不敢相信','自己的耳朵','。'],ans:'我简直不敢相信自己的耳朵。',audio:'我简直不敢相信自己的耳朵。'},
-  {words:['李老师的书房','简直','就是','一个小图书馆','。'],ans:'李老师的书房简直就是一个小图书馆。',audio:'李老师的书房简直就是一个小图书馆。'},
-  {words:['一个偶然的机会','彻底','改变了','他的命运','。'],ans:'一个偶然的机会彻底改变了他的命运。',audio:'一个偶然的机会彻底改变了他的命运。'},
-  {words:['陈工程师','也有','与老人','相似的','经历','。'],ans:'陈工程师也有与老人相似的经历。',audio:'陈工程师也有与老人相似的经历。'},
-  {words:['船','在有一定重量的时候','是','最安全的','。'],ans:'船在有一定重量的时候是最安全的。',audio:'船在有一定重量的时候是最安全的。'},
-  {words:['狂风巨浪','依然猛烈','，','对船的威胁','却','减小了','。'],ans:'狂风巨浪依然猛烈，对船的威胁却减小了。',audio:'狂风巨浪依然猛烈，对船的威胁却减小了。'},
-  {words:['那些','有责任感的人','才能','承受住','压力','。'],ans:'那些有责任感的人才能承受住压力。',audio:'那些有责任感的人才能承受住压力。'},
-  {words:['我们','必须','谨慎地','对待','这个问题','。'],ans:'我们必须谨慎地对待这个问题。',audio:'我们必须谨慎地对待这个问题。'},
-  {words:['看着','船长严肃的表情','，','水手们','还是','照做了','。'],ans:'看着船长严肃的表情，水手们还是照做了。',audio:'看着船长严肃的表情，水手们还是照做了。'}
+  {words:['他','站在','门口','朝我','挥了挥手','。'],ans:'他站在门口朝我挥了挥手。',audio:'他站在门口朝我挥了挥手。'},
+  {words:['这座','房子','坐北朝南','，','冬天','很','暖和','。'],ans:'这座房子坐北朝南，冬天很暖和。',audio:'这座房子坐北朝南，冬天很暖和。'},
+  {words:['那只狗','一直','朝着','我','叫','。'],ans:'那只狗一直朝着我叫。',audio:'那只狗一直朝着我叫。'},
+  {words:['这里的','风景','简直','像','画儿','一样','。'],ans:'这里的风景简直像画儿一样。',audio:'这里的风景简直像画儿一样。'},
+  {words:['他的','汉语','说得','简直','跟','中国人','一样','。'],ans:'他的汉语说得简直跟中国人一样。',audio:'他的汉语说得简直跟中国人一样。'},
+  {words:['门','坏了','，','他','使劲儿','推了','半天','也','没推开','。'],ans:'门坏了，他使劲儿推了半天也没推开。',audio:'门坏了，他使劲儿推了半天也没推开。'},
+  {words:['做','重要的','决定','以前','，','一定','要','谨慎','。'],ans:'做重要的决定以前，一定要谨慎。',audio:'做重要的决定以前，一定要谨慎。'},
+  {words:['这件事','让','他','彻底','失去了','信心','。'],ans:'这件事让他彻底失去了信心。',audio:'这件事让他彻底失去了信心。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1385,72 +1355,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'一次返航中，天气____，他们的船遇到了巨大风浪。',opts:['恶劣','猛烈','严肃','相似'],ans:0,
-   exp:'Thời tiết xấu → 天气恶劣 (bảng 词语搭配: 恶劣的天气). 猛烈 tả sức gió, sóng (风浪猛烈), không nói 天气猛烈; 严肃 tả nét mặt; 相似 sai nghĩa.'},
-  {wrong:'对这种行为____的队员只能让他离开球队。',opts:['恶劣','严格','谨慎','彻底'],ans:0,
-   exp:'Hành vi tồi tệ → 行为恶劣 (bài tập 1 của sách). 严格, 谨慎 là nghĩa tốt; 彻底 không tả hành vi.'},
-  {wrong:'李岩之所以那么____地返回北京，是因为得知了这个坏消息。',opts:['慌张','紧张','严肃','谨慎'],ans:0,
-   exp:'Hành động vội vã, cuống cuồng → 慌张地返回 (bài tập 2 của sách). 紧张 là hồi hộp trong lòng, không tả dáng vẻ vội vàng khi đi.'},
-  {wrong:'明天就要考试了，我____得睡不着觉。',opts:['紧张','慌张','恶劣','猛烈'],ans:0,
-   exp:'Hồi hộp trong lòng trước kỳ thi → 紧张得睡不着. 慌张 thiên về hành động luống cuống bên ngoài.'},
-  {wrong:'昨晚的比赛太精彩了，林丹____太厉害了！',opts:['简直','几乎','完全','差不多'],ans:0,
-   exp:'简直 + 太……了: giọng phóng đại, cảm thán (bài tập 1 của sách). 几乎, 差不多 chỉ "gần như" trung tính, không đi với 太……了.'},
-  {wrong:'听到这个消息时，我____不敢相信自己的耳朵。',opts:['简直','彻底','丝毫','谨慎'],ans:0,
-   exp:'简直不敢相信 — phóng đại cảm xúc. 丝毫 phải đi với 不/没 và mang nghĩa "chút nào", ở đây không hợp.'},
-  {wrong:'看着船长____的表情，水手们还是照做了。',opts:['严肃','严格','猛烈','恶劣'],ans:0,
-   exp:'Nét mặt nghiêm nghị → 严肃的表情 (bảng 词语搭配). 严格 không tả nét mặt.'},
-  {wrong:'实验过程中，温度、水分等条件都要____地控制。',opts:['严格','严肃','慌张','相似'],ans:0,
-   exp:'Kiểm soát theo đúng tiêu chuẩn → 严格地控制 (做一做 của sách).'},
-  {wrong:'在人口压力面前，经济发展、社会进步都受到了巨大____。',opts:['威胁','风险','效应','根基'],ans:0,
-   exp:'受到威胁 = bị đe dọa (bài tập 1 của sách). 风险 không đi với 受到; 效应, 根基 sai nghĩa.'},
-  {wrong:'初学骑自行车最重要的是注意保持____。',opts:['平衡','平安','重量','相似'],ans:0,
-   exp:'保持平衡 = giữ thăng bằng (bài tập 1 của sách). 平安 là bình an, không đi với 保持 trong nghĩa này.'},
-  {wrong:'陈工程师也有与老人____的经历。',opts:['相似','平衡','彻底','严肃'],ans:0,
-   exp:'与……相似的经历 = trải nghiệm tương tự (câu 30 sách bài tập).'},
-  {wrong:'你决定在海外投资，有没有考虑到____？',opts:['风险','危险','冒险','威胁'],ans:0,
-   exp:'Đầu tư thì nói RỦI RO → 风险 (bài tập 1 của sách). 危险 là nguy hiểm trước mắt; 冒险 là động từ "mạo hiểm"; 威胁 là đe dọa.'},
-  {wrong:'这毕竟是高考择校，我们必须____对待。',opts:['谨慎','慌张','丝毫','猛烈'],ans:0,
-   exp:'谨慎对待 = thận trọng (bài tập 1 của sách).'},
-  {wrong:'你的病好得不____，还应该再休息几天。',opts:['彻底','完全','简直','丝毫'],ans:0,
-   exp:'Bổ ngữ "khỏi chưa dứt điểm" → 好得不彻底 (bài tập 2 của sách). 完全 không làm bổ ngữ sau 得 kiểu này.'},
-  {wrong:'我____同意你的看法。',opts:['完全','彻底','简直','丝毫'],ans:0,
-   exp:'Đồng ý trọn vẹn → 完全同意. 彻底 đi với động từ thay đổi, giải quyết; 丝毫 chỉ dùng trong phủ định.'},
-  {wrong:'我实在不敢____这么贵重的礼物。',opts:['接受','承受','享受','感受'],ans:0,
-   exp:'Nhận quà → 接受 (bài tập 2 của sách). 承受 là chịu đựng điều nặng nề (压力, 痛苦).'},
-  {wrong:'不是你努力得不够，____是努力的方向错了。',opts:['恐怕','可怕','害怕','怕'],ans:0,
-   exp:'恐怕 (phó từ) = e rằng, có lẽ — đứng trước nhận định (bài tập 2 của sách). 可怕 là tính từ "đáng sợ".'},
-  {wrong:'我仿佛看到胜利正____我们走来。',opts:['朝','对','给','跟'],ans:0,
-   exp:'朝 + người / hướng + 走来: chỉ phương hướng chuyển động (注释 1). 对 chỉ đối tượng của thái độ (对我很好); 给, 跟 sai nghĩa.'}
+  {wrong:'我们老师对学生要求很____，作业一点儿也不能马虎。',opts:['严格','严肃','谨慎','猛烈'],ans:0,exp:'Yêu cầu, quản lý chặt chẽ → 要求严格. 严肃 tả nét mặt, thái độ nghiêm nghị; 谨慎 là thận trọng; 猛烈 là dữ dội.'},
+  {wrong:'爸爸一脸____地说：“我们得好好谈谈。”',opts:['严肃','严格','恶劣','相似'],ans:0,exp:'Nét mặt, thái độ nghiêm nghị → 一脸严肃. 严格 dùng cho yêu cầu, quy định; 恶劣, 相似 không hợp.'},
+  {wrong:'明天就要面试了，我____得一晚上都没睡好。',opts:['紧张','慌张','恶劣','猛烈'],ans:0,exp:'Trạng thái lo, căng thẳng trong lòng → 紧张. 慌张 là cuống quýt, luống cuống thể hiện qua hành động (慌张地跑出去); 恶劣, 猛烈 không hợp.'},
+  {wrong:'听到着火了，他____地跑了出去，连手机都忘了拿。',opts:['慌张','谨慎','严肃','丝毫'],ans:0,exp:'Cuống cuồng, luống cuống trong hành động → 慌张地跑. 谨慎 (thận trọng) trái với 忘了拿手机; 严肃, 丝毫 không hợp.'},
+  {wrong:'这两个字的意思____不一样。',opts:['完全','彻底','简直','丝毫'],ans:0,exp:'完全 = hoàn toàn, dùng để đánh giá mức độ (完全不一样, 完全同意). 彻底 nhấn mạnh làm đến tận cùng một hành động (彻底解决); 简直, 丝毫 không hợp.'},
+  {wrong:'医生说，你的病还没有____好，药还不能停。',opts:['彻底','丝毫','简直','相似'],ans:0,exp:'彻底 = triệt để, hoàn toàn (khỏi bệnh, giải quyết, thay đổi đến tận cùng): 没有彻底好. 丝毫 đi với phủ định nhưng không đứng trước 好 như vậy; 简直 là phóng đại; 相似 là giống nhau.'},
+  {wrong:'这个孩子画得太好了，____像大人画的。',opts:['简直','丝毫','彻底','谨慎'],ans:0,exp:'简直 + 像…… = quả thực là, gần như (phóng đại). 丝毫 cần phủ định; 彻底, 谨慎 không hợp.'},
+  {wrong:'他站起来，____门口走去。',opts:['朝','对','给','跟'],ans:0,exp:'朝 + hướng/nơi chốn + 走 = đi về phía. 对 dùng cho đối tượng của thái độ (对他很好); 给 là cho; 跟 là cùng với.'},
+  {wrong:'他对这件事____不感兴趣。',opts:['丝毫','简直','相似','严格'],ans:0,exp:'丝毫 + 不/没 = không một chút nào. 简直 không đi với 不感兴趣 theo nghĩa này; 相似, 严格 không hợp.'},
+  {wrong:'这座桥能____三十吨的重量。',opts:['承受','接受','享受','感受'],ans:0,exp:'承受 + 重量/压力 = chịu được (sức nặng). 接受 là nhận (quà, ý kiến); 享受 là hưởng thụ; 感受 là cảm nhận.'},
+  {wrong:'开公司有____，你要想清楚。',opts:['风险','危险','威胁','效应'],ans:0,exp:'Khả năng thua lỗ, thất bại trong làm ăn → 风险. 危险 nói nguy hiểm đến tính mạng, an toàn; 威胁 là sự đe doạ; 效应 là hiệu ứng.'},
+  {wrong:'他们俩长得很____，很多人以为他们是兄弟。',opts:['相似','平衡','严肃','猛烈'],ans:0,exp:'相似 = giống nhau, tương tự. 平衡 là cân bằng; 严肃 là nghiêm nghị; 猛烈 là dữ dội.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tuy chỉ là một bài kiểm tra nhỏ nhưng tôi hồi hộp đến run cả tay, gần như chẳng dám nhìn vào đề.',zh:'虽然只是一次小测验，但是我紧张得手都发抖，简直不敢看题目。',py:'Suīrán zhǐshì yí cì xiǎo cèyàn, dànshì wǒ jǐnzhāng de shǒu dōu fādǒu, jiǎnzhí bù gǎn kàn tímù.',goiY:['虽然……但是……','发抖','简直'],giai:'虽然……但是…… nối hai vế trái ý; 简直 là phó từ phóng đại đứng trước 不敢 — "gần như chẳng dám", không dịch 简直 thành "đơn giản".'},
   {vi:'Thấy thầy giáo mặt nghiêm nghị đi về phía mình, tôi mới phát hiện hóa ra mình đã ngủ gật trong giờ học.',zh:'看到老师一脸严肃地朝我走过来，我才发现原来自己上课时睡着了。',py:'Kàndào lǎoshī yì liǎn yánsù de cháo wǒ zǒu guòlai, wǒ cái fāxiàn yuánlái zìjǐ shàngkè shí shuìzháo le.',goiY:['朝','严肃','原来'],giai:'朝 + người + động từ chỉ hướng của động tác, cụm "朝我" đứng TRƯỚC 走过来 (không nói 走朝我); 原来 = hóa ra, dùng khi phát hiện sự thật.'},
-  {vi:'Bài thi toán lần này đúng là kinh khủng, thảo nào ai bước ra khỏi phòng thi cũng mặt mày hoảng hốt.',zh:'这次数学考试简直太可怕了，难怪大家走出考场时都一脸慌张。',py:'Zhè cì shùxué kǎoshì jiǎnzhí tài kěpà le, nánguài dàjiā zǒuchū kǎochǎng shí dōu yì liǎn huāngzhāng.',goiY:['简直','可怕','难怪','慌张'],giai:'简直 + 太 + tính từ + 了 là lối nói phóng đại; 难怪 = thảo nào, đứng đầu vế sau khi đã hiểu ra nguyên nhân.'},
-  {vi:'Chỉ cần khi ôn tập luôn cẩn trọng, không bỏ qua dù một chi tiết nhỏ, thì lúc thi sẽ không bị mất điểm vì cẩu thả.',zh:'只要复习时保持谨慎，不放过丝毫细节，考试时就不会因为粗心而丢分。',py:'Zhǐyào fùxí shí bǎochí jǐnshèn, bú fàngguò sīháo xìjié, kǎoshì shí jiù bú huì yīnwèi cūxīn ér diū fēn.',goiY:['只要……就……','谨慎','丝毫','细节'],giai:'只要 (điều kiện đủ) đi với 就; 丝毫 thường đi với phủ định (不放过丝毫…… / 丝毫没有) = "dù chỉ một chút".'},
-  {vi:'Cho dù áp lực năm lớp 12 nặng đến mức gần như khiến người ta nghẹt thở, chúng ta cũng phải học cách chịu đựng chứ không phải buông xuôi hoàn toàn.',zh:'即使高三的压力大得简直让人喘不过气，我们也要学会承受，而不是彻底放弃。',py:'Jíshǐ gāo-sān de yālì dà de jiǎnzhí ràng rén chuǎn bu guò qì, wǒmen yě yào xuéhuì chéngshòu, ér bú shì chèdǐ fàngqì.',goiY:['即使……也……','承受','彻底'],giai:'即使 + giả thiết ("dù có … đến đâu"), 也 + thái độ không đổi; 而不是 = "chứ không phải", đặt sau vế khẳng định.'},
+  {vi:'Bài thi toán lần này đúng là kinh khủng, vì thế ai bước ra khỏi phòng thi cũng mặt mày hoảng hốt.',zh:'这次数学考试简直太可怕了，所以大家走出考场时都一脸慌张。',py:'Zhè cì shùxué kǎoshì jiǎnzhí tài kěpà le, suǒyǐ dàjiā zǒuchū kǎochǎng shí dōu yì liǎn huāngzhāng.',goiY:['简直','可怕','所以','慌张'],giai:'简直 + 太 + tính từ + 了 là lối nói phóng đại; 一脸 + tính từ = cả khuôn mặt lộ vẻ … (一脸慌张, 一脸严肃).'},
   {vi:'Cuối tuần trước cả nhà tôi lên núi tham quan, không những được ngắm phong cảnh tuyệt đẹp mà còn gặp một bầy khỉ trên con đường núi rất hẹp.',zh:'上个周末我们全家去山里游览，不但看到了美丽的风景，而且还在一条很窄的山路上遇到了一群猴子。',py:'Shàng ge zhōumò wǒmen quánjiā qù shān li yóulǎn, búdàn kàndàole měilì de fēngjǐng, érqiě hái zài yì tiáo hěn zhǎi de shānlù shang yùdàole yì qún hóuzi.',goiY:['不但……而且……','游览','风景','窄'],giai:'不但……而且…… chỉ quan hệ tăng tiến, 而且 hay đi kèm 还; 窄 (hẹp) là tính từ, 很窄的 đứng trước 山路 làm định ngữ.'},
-  {vi:'Đã biết vay tiền qua mạng có rủi ro lớn thì bạn nên thận trọng một chút, đừng vì tò mò nhất thời mà mắc lừa.',zh:'既然你已经知道网上借钱有很大的风险，就应该谨慎一点儿，千万别因为一时好奇而上当。',py:'Jìrán nǐ yǐjīng zhīdào wǎngshang jiè qián yǒu hěn dà de fēngxiǎn, jiù yīnggāi jǐnshèn yìdiǎnr, qiānwàn bié yīnwèi yìshí hàoqí ér shàngdàng.',goiY:['既然……就……','风险','谨慎','上当'],giai:'既然 nêu sự thật đã biết, 就 nêu kết luận nên làm — "đã … thì …" ở đây không dịch thành 已经……就; 因为……而…… = vì … mà ….'},
-  {vi:'Một mặt cậu ấy phải gánh áp lực thi đại học, mặt khác còn phải chăm bà nội bị ốm, vậy mà vẫn luôn giữ được cân bằng giữa hai việc.',zh:'他一方面要承受高考的压力，另一方面还要照顾生病的奶奶，却始终在两者之间保持着平衡。',py:'Tā yì fāngmiàn yào chéngshòu gāokǎo de yālì, lìng yì fāngmiàn hái yào zhàogù shēngbìng de nǎinai, què shǐzhōng zài liǎng zhě zhījiān bǎochízhe pínghéng.',goiY:['一方面……另一方面……','承受','平衡','却'],giai:'一方面……另一方面…… liệt kê hai mặt cùng tồn tại; 却 ở vế cuối chỉ kết quả đáng ngạc nhiên — "vậy mà vẫn".'},
-  {vi:'Dù tình thế trận đấu bất lợi đến đâu, huấn luyện viên cũng yêu cầu chúng tôi dốc hết sức lao về đích, vì chỉ có kiên trì đến giây cuối cùng mới có khả năng thắng.',zh:'无论比赛的形势多么不利，教练都要求我们朝着终点使劲儿冲，因为只有坚持到最后一秒，才有赢的可能。',py:'Wúlùn bǐsài de xíngshì duōme búlì, jiàoliàn dōu yāoqiú wǒmen cháozhe zhōngdiǎn shǐjìnr chōng, yīnwèi zhǐyǒu jiānchí dào zuìhòu yì miǎo, cái yǒu yíng de kěnéng.',goiY:['无论……都……','朝','使劲','只有……才……'],giai:'无论 + 多么 + 都: dù thế nào kết quả cũng không đổi; 只有……才 là điều kiện duy nhất, khác 只要……就 (điều kiện đủ). 朝着终点 đứng trước động từ 冲.'},
-  {vi:'Thay vì cứ nghĩ đến kỳ thi đại học là run bắn lên, chi bằng học cách chịu đựng áp lực, dù sao mang một chút gánh nặng vừa phải lại giúp ta bước đi vững vàng hơn.',zh:'与其一想到高考就紧张得发抖，不如学会承受压力，毕竟适当的负重反而能让人走得更稳。',py:'Yǔqí yì xiǎngdào gāokǎo jiù jǐnzhāng de fādǒu, bùrú xuéhuì chéngshòu yālì, bìjìng shìdàng de fùzhòng fǎn\'ér néng ràng rén zǒu de gèng wěn.',goiY:['与其……不如……','承受','负重','反而'],giai:'与其 A 不如 B = bỏ A chọn B (B tốt hơn); 反而 = trái lại, dùng khi kết quả ngược với điều người ta vẫn nghĩ.'}
+  {vi:'Đã biết vay tiền qua mạng có rủi ro lớn thì bạn nên thận trọng một chút, đừng vì tò mò nhất thời mà mắc lừa.',zh:'既然你已经知道网上借钱有很大的风险，就应该谨慎一点儿，千万别因为一时好奇而上当。',py:'Jìrán nǐ yǐjīng zhīdào wǎngshang jiè qián yǒu hěn dà de fēngxiǎn, jiù yīnggāi jǐnshèn yìdiǎnr, qiānwàn bié yīnwèi yìshí hàoqí ér shàngdàng.',goiY:['既然……就……','风险','谨慎','上当'],giai:'既然 nêu sự thật đã biết, 就 nêu kết luận nên làm; 因为……而…… = vì … mà ….'},
+  {vi:'Một mặt cậu ấy phải gánh áp lực thi đại học, mặt khác còn phải chăm bà nội bị ốm, vậy mà vẫn luôn giữ được cân bằng giữa việc học và gia đình.',zh:'他一方面要承受高考的压力，另一方面还要照顾生病的奶奶，却始终在学习和家庭之间保持着平衡。',py:'Tā yì fāngmiàn yào chéngshòu gāokǎo de yālì, lìng yì fāngmiàn hái yào zhàogù shēngbìng de nǎinai, què shǐzhōng zài xuéxí hé jiātíng zhījiān bǎochízhe pínghéng.',goiY:['一方面……另一方面……','承受','平衡','却'],giai:'一方面……另一方面…… liệt kê hai mặt cùng tồn tại; 却 ở vế cuối chỉ kết quả đáng ngạc nhiên — "vậy mà vẫn".'},
+  {vi:'Dù tình hình trận đấu tệ đến đâu, chúng tôi cũng phải dốc hết sức chạy về đích, vì chỉ có kiên trì đến giây cuối cùng mới có khả năng thắng.',zh:'不管比赛的情况多么不好，我们都要朝着终点使劲儿跑，因为只有坚持到最后一秒，才有赢的可能。',py:'Bùguǎn bǐsài de qíngkuàng duōme bù hǎo, wǒmen dōu yào cháozhe zhōngdiǎn shǐjìnr pǎo, yīnwèi zhǐyǒu jiānchí dào zuìhòu yì miǎo, cái yǒu yíng de kěnéng.',goiY:['不管……都……','朝','使劲','只有……才……'],giai:'不管 + 多么 + 都: dù thế nào kết quả cũng không đổi; 只有……才 là điều kiện duy nhất, khác 只要……就. 朝着终点 đứng trước động từ 跑.'}
 ];
 
-// Chiều Trung → Việt — câu của bài khoá
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Trên đường trở về, thời tiết đột nhiên trở nên khắc nghiệt, thế là con tàu gặp phải một cơn sóng gió khủng khiếp.',zh:'返航途中天气突然变得恶劣，于是船遇到了可怕的巨大风浪。',py:'Fǎnháng túzhōng tiānqì tūrán biàn de èliè, yúshì chuán yùdàole kěpà de jùdà fēnglàng.',goiY:['返航 = quay về (tàu, máy bay)','恶劣 = khắc nghiệt','于是 = thế là'],giai:'于是 nối hai sự việc nối tiếp, vế sau là hệ quả tự nhiên; 恶劣 dùng cho thời tiết, môi trường, hành vi — dịch "khắc nghiệt / tồi tệ", không dịch "ác liệt".'},
-  {vi:'Các thủy thủ đang hoảng loạn không biết làm sao, ông thuyền trưởng già lại ra lệnh cho mọi người ra sức xả nước vào khoang hàng.',zh:'水手们正慌张得不知如何是好，老船长却命令大家使劲儿朝货舱里放水。',py:'Shuǐshǒumen zhèng huāngzhāng de bù zhī rúhé shì hǎo, lǎo chuánzhǎng què mìnglìng dàjiā shǐjìnr cháo huòcāng li fàng shuǐ.',goiY:['慌张 = hoảng hốt','朝 = về phía (giới từ)','却 = lại (trái ý)'],giai:'却 là phó từ, đứng sau chủ ngữ vế sau, chỉ sự trái ngược với tình huống vế trước; 朝 + nơi chốn + động từ = "(làm gì) về phía …".'},
-  {vi:'Người thủy thủ trẻ cho rằng thuyền trưởng đúng là điên rồi, vì đổ nước vào tàu chỉ khiến nó chìm nhanh hơn.',zh:'年轻的水手认为船长简直是疯了，因为往船里放水只会让船沉得更快。',py:'Niánqīng de shuǐshǒu rènwéi chuánzhǎng jiǎnzhí shì fēng le, yīnwèi wǎng chuán li fàng shuǐ zhǐ huì ràng chuán chén de gèng kuài.',goiY:['简直 = quả thực, đúng là (phóng đại)','沉 = chìm'],giai:'简直是 mang sắc thái phóng đại — dịch "đúng là / quả thực là", không dịch "đơn giản là"; 因为 ở vế sau giải thích lý do.'},
+  {vi:'Trên đường trở về, thời tiết đột nhiên trở nên khắc nghiệt, thế là con tàu gặp phải một cơn sóng gió khủng khiếp.',zh:'返航的时候，天气突然变得恶劣，于是船遇到了可怕的巨大风浪。',py:'Fǎnháng de shíhou, tiānqì tūrán biàn de èliè, yúshì chuán yùdàole kěpà de jùdà fēnglàng.',goiY:['返航 = quay về (tàu, máy bay)','恶劣 = khắc nghiệt','于是 = thế là'],giai:'于是 nối hai sự việc nối tiếp, vế sau là hệ quả tự nhiên; 恶劣 dùng cho thời tiết, môi trường, hành vi — dịch "khắc nghiệt / tồi tệ".'},
+  {vi:'Các thủy thủ đang hoảng loạn không biết làm sao, ông thuyền trưởng già lại ra lệnh cho mọi người ra sức xả nước vào khoang hàng.',zh:'水手们慌张得不知如何是好，老船长却命令大家使劲儿朝货舱里放水。',py:'Shuǐshǒumen huāngzhāng de bù zhī rúhé shì hǎo, lǎo chuánzhǎng què mìnglìng dàjiā shǐjìnr cháo huòcāng li fàng shuǐ.',goiY:['慌张 = hoảng hốt','朝 = về phía (giới từ)','却 = lại (trái ý)'],giai:'却 là phó từ, đứng sau chủ ngữ vế sau, chỉ sự trái ngược với tình huống vế trước; 朝 + nơi chốn + động từ = "(làm gì) về phía …".'},
   {vi:'Tuy cuồng phong sóng dữ vẫn dữ dội, nhưng khi mực nước dâng lên, mối đe dọa của sóng gió với con tàu lại ngày càng nhỏ đi.',zh:'虽然狂风巨浪依然猛烈，但是随着水位升高，风浪对船的威胁却越来越小。',py:'Suīrán kuángfēng jùlàng yīrán měngliè, dànshì suízhe shuǐwèi shēnggāo, fēnglàng duì chuán de wēixié què yuè lái yuè xiǎo.',goiY:['猛烈 = dữ dội','威胁 = mối đe dọa','虽然……但是……却……'],giai:'虽然……但是 có thể thêm 却 ở vế sau để nhấn mạnh sự trái ngược; 随着 + sự thay đổi = "cùng với việc / khi …".'},
   {vi:'Những con tàu thép khổng lồ nặng mấy vạn tấn rất hiếm khi bị lật, thứ bị lật thường là những chiếc thuyền nhỏ nền móng nhẹ; có thể thấy phải có một sức nặng nhất định mới đem lại sự cân bằng.',zh:'几万吨的钢铁巨轮很少被打翻，被打翻的往往是那些根基很轻的小船，可见一定的重量才能带来平衡。',py:'Jǐ wàn dūn de gāngtiě jùlún hěn shǎo bèi dǎfān, bèi dǎfān de wǎngwǎng shì nàxiē gēnjī hěn qīng de xiǎochuán, kějiàn yídìng de zhòngliàng cái néng dàilái pínghéng.',goiY:['钢铁 = sắt thép','根基 = nền móng','可见 = có thể thấy (rút ra kết luận)'],giai:'可见 đứng đầu vế cuối để rút ra kết luận từ sự thật vừa nêu; 被打翻的 = "thứ bị lật" (cụm 的 thay cho danh từ).'},
-  {vi:'Đoạn đường núi ấy rất hẹp, hai bên đều là vực sâu thăm thẳm, vì vậy mỗi khi hướng dẫn viên dẫn khách tới tham quan đều nhất định bắt mọi người đeo theo chút đồ.',zh:'那段山路非常窄，两边都是万丈深渊，所以导游带游客来这里游览时，一定要让大家背点儿东西。',py:'Nà duàn shānlù fēicháng zhǎi, liǎngbiān dōu shì wànzhàng shēnyuān, suǒyǐ dǎoyóu dài yóukè lái zhèli yóulǎn shí, yídìng yào ràng dàjiā bēi diǎnr dōngxi.',goiY:['万丈深渊 = vực sâu thăm thẳm','游览 = tham quan','所以 = vì vậy'],giai:'Vế cuối là quy định bắt buộc: 一定要让 + ai + làm gì = "nhất định bắt ai làm gì"; 背 ở đây đọc bēi (đeo, cõng).'},
-  {vi:'Một người phụ nữ không hiểu: bản thân không cầm gì mà hai chân đã run, nếu còn mang vác nặng mà đi thì chẳng phải càng dễ ngã hơn sao?',zh:'一位妇女不理解：自己不拿东西两腿都发抖，如果再负重前行，岂不是更容易摔倒？',py:'Yí wèi fùnǚ bù lǐjiě: zìjǐ bù ná dōngxi liǎng tuǐ dōu fādǒu, rúguǒ zài fùzhòng qiánxíng, qǐ bú shì gèng róngyì shuāidǎo?',goiY:['负重 = mang vật nặng','摔倒 = ngã','岂不是 = chẳng phải … sao'],giai:'岂不是……？ là câu phản vấn, nghĩa khẳng định "chắc chắn càng dễ ngã"; 如果再…… = nếu lại còn … (再 chỉ thêm một điều nữa).'},
-  {vi:'Những người gặp nạn trước đây đều là du khách không hề cảm thấy chút áp lực nào; còn người địa phương ngày nào cũng mang đồ qua lại mà chưa từng có ai lăn xuống.',zh:'以前出事的都是丝毫没感到压力的游客；当地人每天背着东西来来往往，却从来没人滚下去。',py:'Yǐqián chū shì de dōu shì sīháo méi gǎndào yālì de yóukè; dāngdìrén měi tiān bēizhe dōngxi láiláiwǎngwǎng, què cónglái méi rén gǔn xiàqu.',goiY:['丝毫 = mảy may (đi với phủ định)','滚 = lăn','却 = vậy mà lại'],giai:'Dấu ；ngăn hai vế đối lập (du khách ↔ người địa phương); 却 ở vế cuối nhấn mạnh kết quả trái với suy nghĩ thông thường.'},
   {vi:'Hướng dẫn viên giải thích rằng nếu bạn cảm nhận được rủi ro, bạn sẽ thận trọng mang vác mà đi, như thế trái lại còn an toàn hơn so với chẳng mang gì.',zh:'导游解释说，假如你感觉到了风险，就会谨慎地负重前行，反而比什么都不拿更安全。',py:'Dǎoyóu jiěshì shuō, jiǎrú nǐ gǎnjué dàole fēngxiǎn, jiù huì jǐnshèn de fùzhòng qiánxíng, fǎn\'ér bǐ shénme dōu bù ná gèng ānquán.',goiY:['假如……就…… = nếu … thì …','谨慎 = thận trọng','反而 = trái lại'],giai:'反而 chỉ kết quả ngược với điều người ta tưởng (mang nặng tưởng nguy hiểm hơn); 假如 = 如果, sắc thái văn viết.'},
-  {vi:'Người mang hoài bão sở dĩ chịu được áp lực là vì họ giống như con tàu chở đầy nước; còn kẻ sống được ngày nào hay ngày ấy thì thường bị sóng gió đánh lật hoàn toàn.',zh:'胸怀理想的人之所以能承受住压力，是因为他们像装满水的船；而做一天和尚撞一天钟的人，往往会被风浪彻底打翻。',py:'Xiōnghuái lǐxiǎng de rén zhīsuǒyǐ néng chéngshòu zhù yālì, shì yīnwèi tāmen xiàng zhuāngmǎn shuǐ de chuán; ér zuò yì tiān héshang zhuàng yì tiān zhōng de rén, wǎngwǎng huì bèi fēnglàng chèdǐ dǎfān.',goiY:['之所以……是因为…… = sở dĩ … là vì …','承受住 = chịu nổi','做一天和尚撞一天钟 = sống qua ngày'],giai:'之所以 đặt kết quả trước, 是因为 giải thích nguyên nhân sau; 而 đứng đầu vế sau để đối lập hai kiểu người.'}
+  {vi:'Đây chính là "hiệu ứng áp lực": người có lý tưởng trong lòng thì chịu nổi áp lực, còn kẻ sống ngày nào hay ngày ấy thì một trận sóng gió cũng đủ đánh gục hoàn toàn.',zh:'这就是“压力效应”：胸怀理想的人能承受住压力，而做一天和尚撞一天钟的人，一场风浪就能把他们彻底打翻。',py:'Zhè jiù shì “yālì xiàoyìng”: xiōnghuái lǐxiǎng de rén néng chéngshòu zhù yālì, ér zuò yì tiān héshang zhuàng yì tiān zhōng de rén, yì cháng fēnglàng jiù néng bǎ tāmen chèdǐ dǎfān.',goiY:['效应 = hiệu ứng','胸怀理想 = mang lý tưởng trong lòng','承受住 = chịu nổi','做一天和尚撞一天钟 = sống qua ngày'],giai:'Dấu ：mở phần giải thích; 而 đứng đầu vế sau để đối lập hai kiểu người; 把 + người + 彻底打翻 = đánh gục hoàn toàn.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1514,30 +1452,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (câu 29–31 lấy từ sách bài tập)
   sapXep:[
-    {manh:['彻底改变了','一个偶然的机会','他的命运'],
-     dap:'一个偶然的机会彻底改变了他的命运。',
-     vn:'Một cơ hội tình cờ đã thay đổi hoàn toàn số phận của anh ấy.',
-     giai:'Chủ ngữ 一个偶然的机会 → trạng ngữ 彻底 + động từ 改变了 → tân ngữ 他的命运. (Câu 29 sách bài tập)'},
-    {manh:['与老人','陈工程师','相似的经历','也有'],
-     dap:'陈工程师也有与老人相似的经历。',
-     vn:'Kỹ sư Trần cũng có trải nghiệm tương tự ông cụ.',
-     giai:'Chủ ngữ 陈工程师 + 也有 + định ngữ 与老人相似的 + 经历. (Câu 30 sách bài tập)'},
-    {manh:['简直就是','李老师的书房','一个小图书馆'],
-     dap:'李老师的书房简直就是一个小图书馆。',
-     vn:'Phòng đọc của thầy Lý quả thực là một thư viện nhỏ.',
-     giai:'Chủ ngữ 李老师的书房 + 简直就是 + tân ngữ; 简直 đứng trước 就是. (Câu 31 sách bài tập)'},
-    {manh:['正朝我们','我仿佛看到','走来','胜利'],
-     dap:'我仿佛看到胜利正朝我们走来。',
-     vn:'Tôi như thấy chiến thắng đang tiến về phía chúng ta.',
-     giai:'我仿佛看到 + mệnh đề tân ngữ (胜利 + 正朝我们 + 走来); cụm 朝我们 đứng TRƯỚC động từ.'},
-    {manh:['承受住','有责任感的人','压力','才能'],
-     dap:'有责任感的人才能承受住压力。',
-     vn:'Người có tinh thần trách nhiệm mới chịu đựng được áp lực.',
-     giai:'Chủ ngữ + 才能 + 承受住 (bổ ngữ kết quả 住) + tân ngữ 压力.'},
-    {manh:['谨慎地','这个问题','我们必须','对待'],
-     dap:'我们必须谨慎地对待这个问题。', chap:['这个问题我们必须谨慎地对待。'],
-     vn:'Chúng ta phải thận trọng xử lý vấn đề này.',
-     giai:'谨慎地 là trạng ngữ đứng trước 对待; tân ngữ 这个问题 đặt sau động từ (hoặc đảo lên đầu câu làm chủ đề).'}
+    {manh:['彻底','房间','打扫了','一遍','他把'],dap:'他把房间彻底打扫了一遍。',vn:'Anh ấy đã dọn dẹp căn phòng một lượt thật kỹ.',giai:'Câu 把: 他把 + tân ngữ 房间 → trạng ngữ 彻底 → động từ 打扫了 + bổ ngữ số lần 一遍.'},
+    {manh:['与老人','陈工程师','相似的经历','也有'],dap:'陈工程师也有与老人相似的经历。',vn:'Kỹ sư Trần cũng có trải nghiệm tương tự ông cụ.',giai:'Chủ ngữ 陈工程师 + 也有 + định ngữ 与老人相似的 + 经历. (Câu 30 sách bài tập)'},
+    {manh:['简直就是','李老师的书房','一个小图书馆'],dap:'李老师的书房简直就是一个小图书馆。',vn:'Phòng đọc của thầy Lý quả thực là một thư viện nhỏ.',giai:'Chủ ngữ 李老师的书房 + 简直就是 + tân ngữ; 简直 đứng trước 就是. (Câu 31 sách bài tập)'},
+    {manh:['朝南','我房间的','窗户'],dap:'我房间的窗户朝南。',vn:'Cửa sổ phòng tôi quay về hướng nam.',giai:'朝 làm động từ = quay về phía: chủ ngữ 我房间的窗户 + 朝南.'},
+    {manh:['承受住','有责任感的人','压力','才能'],dap:'有责任感的人才能承受住压力。',vn:'Người có tinh thần trách nhiệm mới chịu đựng được áp lực.',giai:'Chủ ngữ + 才能 + 承受住 (bổ ngữ kết quả 住) + tân ngữ 压力.'},
+    {manh:['谨慎地','这个问题','我们必须','对待'],dap:'我们必须谨慎地对待这个问题。',chap:['这个问题我们必须谨慎地对待。'],vn:'Chúng ta phải thận trọng xử lý vấn đề này.',giai:'谨慎地 là trạng ngữ đứng trước 对待; tân ngữ 这个问题 đặt sau động từ (hoặc đảo lên đầu câu làm chủ đề).'}
   ]
 };
 
@@ -1547,30 +1467,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (如何面对压力 · áp lực và động lực). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 承受 · 简直 · 彻底 · 谨慎 · 平衡 · 风险 · 慌张 · 严肃.',
   questions:[
-    {q_zh:'目前，你遇到的最大的压力来自哪方面？说说你的情况。',
-     q_vn:'Hiện nay, áp lực lớn nhất em gặp phải đến từ đâu? Hãy kể về tình hình của em.',
-     hint:'Nói nguồn áp lực + mức độ; dùng 简直, 承受',
-     sample:'我现在最大的压力来自高考。每天的作业和考试多得简直让我喘不过气来，有时候我觉得自己快承受不了了。',
-     sample_vn:'Áp lực lớn nhất của tôi bây giờ đến từ kỳ thi đại học. Bài tập và kiểm tra mỗi ngày nhiều đến mức tôi gần như không thở nổi, có lúc tôi thấy mình sắp không chịu nổi nữa.',
-     note:'Câu hỏi có hai ý: nguồn áp lực và tình hình cụ thể — nói đủ cả hai.'},
-    {q_zh:'你觉得压力给你带来了什么影响？有什么好处和坏处？',
-     q_vn:'Em thấy áp lực đã ảnh hưởng đến em thế nào? Có mặt tốt và mặt xấu gì?',
-     hint:'Dùng 一方面……，另一方面……; 不仅……而且……',
-     sample:'压力的影响有两方面。一方面，它让我更努力，学习效率也提高了；另一方面，压力太大的时候，我会慌张，晚上也睡不好。',
-     sample_vn:'Ảnh hưởng của áp lực có hai mặt. Một mặt, nó khiến tôi cố gắng hơn, hiệu quả học tập cũng tăng; mặt khác, khi áp lực quá lớn, tôi hay luống cuống, tối cũng ngủ không ngon.',
-     note:'Hỏi "tốt và xấu" → dùng 一方面……，另一方面…… cho bố cục rõ ràng.'},
-    {q_zh:'如果你觉得压力过大时，你有什么好的减轻压力的办法吗？',
-     q_vn:'Khi thấy áp lực quá lớn, em có cách gì hay để giảm áp lực không?',
-     hint:'Liệt kê 2–3 cách; dùng 先……，再……; 保持平衡',
-     sample:'压力太大的时候，我先出去跑跑步，再听听音乐。我还会谨慎地安排时间，在学习和休息之间保持平衡。',
-     sample_vn:'Khi áp lực quá lớn, tôi ra ngoài chạy bộ trước, rồi nghe nhạc. Tôi còn thận trọng sắp xếp thời gian, giữ cân bằng giữa học và nghỉ.',
-     note:'Nêu cách cụ thể, có từ nối trình tự — người chấm đánh giá cao hơn câu chung chung.'},
-    {q_zh:'你听说过“有压力才会有动力”这句话吗？你是否同意这种观点？为什么？',
-     q_vn:'Em đã nghe câu "có áp lực mới có động lực" chưa? Em có đồng ý không? Vì sao?',
-     hint:'Nêu quan điểm → lý do → ví dụ từ bài khoá (船 / 鬼谷)',
-     sample:'我同意。就像课文里的船一样，有一定重量的时候才最安全。没有一点压力的人，就像风暴中的空船，反而容易被打翻。',
-     sample_vn:'Tôi đồng ý. Giống như con tàu trong bài khoá, khi có trọng lượng nhất định mới an toàn nhất. Người không có chút áp lực nào giống con tàu rỗng giữa cơn bão, trái lại dễ bị lật.',
-     note:'Câu hỏi quan điểm: nói rõ ĐỒNG Ý hay KHÔNG trước, rồi mới giải thích.'}
+    {q_zh:'目前，你遇到的最大的压力来自哪方面？说说你的情况。',q_vn:'Hiện nay, áp lực lớn nhất em gặp phải đến từ đâu? Hãy kể về tình hình của em.',hint:'Nói nguồn áp lực + mức độ; dùng 简直',sample:'我现在最大的压力来自高考。每天的作业和考试多得简直做不完，有时候连周末都不能休息。',sample_vn:'Áp lực lớn nhất của tôi bây giờ đến từ kỳ thi đại học. Bài tập và kiểm tra mỗi ngày nhiều đến mức gần như làm không xuể, có lúc cuối tuần cũng không được nghỉ.',note:'Câu hỏi có hai ý: nguồn áp lực và tình hình cụ thể — nói đủ cả hai.'},
+    {q_zh:'你觉得压力给你带来了什么影响？',q_vn:'Em thấy áp lực đã ảnh hưởng đến em thế nào?',hint:'Dùng 一方面……，另一方面……',sample:'压力的影响有两方面。一方面，它让我更努力，成绩也提高了；另一方面，压力一大，我就容易慌张，晚上也睡不好。',sample_vn:'Ảnh hưởng của áp lực có hai mặt. Một mặt, nó khiến tôi cố gắng hơn, thành tích cũng tăng; mặt khác, hễ áp lực lớn là tôi dễ luống cuống, tối cũng ngủ không ngon.',note:'Nói cả mặt tốt lẫn mặt xấu → dùng 一方面……，另一方面…… cho bố cục rõ ràng.'},
+    {q_zh:'如果你觉得压力过大，你有什么好办法减轻压力吗？',q_vn:'Khi thấy áp lực quá lớn, em có cách gì hay để giảm áp lực không?',hint:'Liệt kê 2–3 cách; dùng 先……，再……; 保持平衡',sample:'觉得自己快不行的时候，我先出去跑跑步，再听听音乐。我还会谨慎地安排时间，在学习和休息之间保持平衡。',sample_vn:'Khi thấy mình sắp không trụ nổi, tôi ra ngoài chạy bộ trước, rồi nghe nhạc. Tôi còn thận trọng sắp xếp thời gian, giữ cân bằng giữa học và nghỉ.',note:'Nêu cách cụ thể, có từ nối trình tự — người chấm đánh giá cao hơn câu chung chung.'},
+    {q_zh:'有人说，人有一点儿压力反而更好。你是否同意？为什么？',q_vn:'Có người nói con người có chút áp lực lại càng tốt. Em có đồng ý không? Vì sao?',hint:'Nêu quan điểm → lý do → ví dụ từ bài khoá (船 / 鬼谷)',sample:'我同意。就像课文里的船一样，有一定重量的时候才最安全。没有一点压力的人，就像风暴中的空船，反而容易被打翻。',sample_vn:'Tôi đồng ý. Giống như con tàu trong bài khoá, khi có trọng lượng nhất định mới an toàn nhất. Người không có chút áp lực nào giống con tàu rỗng giữa cơn bão, trái lại dễ bị lật.',note:'Câu hỏi quan điểm: nói rõ ĐỒNG Ý hay KHÔNG trước, rồi mới giải thích.'}
   ]
 };
 
@@ -1661,45 +1561,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng lớp than phiền vì sắp thi mà bài vở quá nhiều.',
-     a:{sp:'Bạn',zh:'下周就要考试了，作业还这么多，我快受不了了！',vn:'Tuần sau thi rồi mà bài tập còn nhiều thế này, tớ sắp chịu hết nổi rồi!'},
-     need:['Dùng 简直','Đồng cảm với bạn'],
-     sample:'我也是，这几天的作业简直多得做不完，我们一起想想办法吧。',
-     samplePy:'Wǒ yě shì, zhè jǐ tiān de zuòyè jiǎnzhí duō de zuò bu wán, wǒmen yìqǐ xiǎngxiang bànfǎ ba.',
-     sampleVn:'Tớ cũng thế, bài tập mấy hôm nay nhiều đến mức làm không hết, mình cùng nghĩ cách đi.',
-     tip:'简直 + phóng đại; không viết 简直很多.'},
-
-    {scene:'Em trai hỏi em đường đến thư viện trong khu phố.',
-     a:{sp:'Em trai',zh:'图书馆怎么走啊？',vn:'Thư viện đi đường nào hả anh/chị?'},
-     need:['Dùng 朝','Chỉ đường rõ ràng'],
-     sample:'出了小区大门，你朝东走，过两个路口就到了。',
-     samplePy:'Chūle xiǎoqū dàmén, nǐ cháo dōng zǒu, guò liǎng ge lùkǒu jiù dào le.',
-     sampleVn:'Ra khỏi cổng khu nhà, em đi về hướng đông, qua hai ngã tư là tới.',
-     tip:'朝 + hướng + 走 — cụm 朝东 đứng TRƯỚC động từ.'},
-
-    {scene:'Bạn định dồn hết tiền tiết kiệm để mua một đôi giày rất đắt.',
-     a:{sp:'Bạn',zh:'这双鞋太好看了，我想把存的钱都拿出来买！',vn:'Đôi giày này đẹp quá, tớ định lấy hết tiền tiết kiệm ra mua!'},
-     need:['Dùng 谨慎','Khuyên bạn suy nghĩ kỹ'],
-     sample:'花这么多钱，你还是谨慎一点儿吧，想清楚了再买也不迟。',
-     samplePy:'Huā zhème duō qián, nǐ háishi jǐnshèn yìdiǎnr ba, xiǎng qīngchu le zài mǎi yě bù chí.',
-     sampleVn:'Tiêu nhiều tiền thế, cậu nên thận trọng một chút, nghĩ kỹ rồi mua cũng chưa muộn.',
-     tip:'谨慎 là tính từ: 谨慎一点儿 / 谨慎地考虑.'},
-
-    {scene:'Bạn hỏi vì sao em bỏ hẳn thói quen thức khuya chơi game.',
-     a:{sp:'Bạn',zh:'你以前每天玩游戏到半夜，现在怎么不玩了？',vn:'Trước cậu ngày nào cũng chơi game đến nửa đêm, giờ sao không chơi nữa?'},
-     need:['Dùng 彻底','Nói lý do thay đổi'],
-     sample:'上次考试没考好，我下决心彻底改掉这个坏习惯了。',
-     samplePy:'Shàng cì kǎoshì méi kǎohǎo, wǒ xià juéxīn chèdǐ gǎidiào zhège huài xíguàn le.',
-     sampleVn:'Lần thi trước làm bài không tốt, tớ quyết tâm bỏ hẳn thói quen xấu này rồi.',
-     tip:'彻底 + 改掉 / 改变 — đứng trước động từ.'},
-
-    {scene:'Mẹ lo em học quá sức, không chịu nghỉ ngơi.',
-     a:{sp:'Mẹ',zh:'你天天学到这么晚，身体受得了吗？',vn:'Ngày nào con cũng học khuya thế, sức khỏe có chịu nổi không?'},
-     need:['Dùng 承受 hoặc 平衡','Trấn an mẹ'],
-     sample:'妈，您放心，我能承受住。我会在学习和休息之间保持平衡的。',
-     samplePy:'Mā, nín fàngxīn, wǒ néng chéngshòu zhù. Wǒ huì zài xuéxí hé xiūxi zhījiān bǎochí pínghéng de.',
-     sampleVn:'Mẹ yên tâm, con chịu được mà. Con sẽ giữ cân bằng giữa học và nghỉ.',
-     tip:'承受住 = chịu được; 在 A 和 B 之间保持平衡.'}
+    {scene:'Bạn cùng lớp than phiền vì bài vở quá nhiều.',a:{sp:'Bạn',zh:'这个星期的作业多得写不完，我快坚持不下去了！',vn:'Bài tập tuần này nhiều đến mức viết không xuể, tớ sắp không trụ nổi rồi!'},need:['Dùng 简直','Đồng cảm với bạn'],sample:'我也是，这几天的作业简直多得做不完，我们一起想想办法吧。',samplePy:'Wǒ yě shì, zhè jǐ tiān de zuòyè jiǎnzhí duō de zuò bu wán, wǒmen yìqǐ xiǎngxiang bànfǎ ba.',sampleVn:'Tớ cũng thế, bài tập mấy hôm nay nhiều đến mức làm không hết, mình cùng nghĩ cách đi.',tip:'简直 + phóng đại; không viết 简直很多.'},
+    {scene:'Em trai hỏi em đường đến thư viện gần nhà.',a:{sp:'Em trai',zh:'图书馆怎么走啊？',vn:'Thư viện đi đường nào hả anh/chị?'},need:['Dùng 朝','Chỉ đường rõ ràng'],sample:'出了学校大门，你一直朝东走，看到银行再朝北走一点儿就到了。',samplePy:'Chūle xuéxiào dàmén, nǐ yìzhí cháo dōng zǒu, kàndào yínháng zài cháo běi zǒu yìdiǎnr jiù dào le.',sampleVn:'Ra khỏi cổng trường, em cứ đi thẳng về hướng đông, thấy ngân hàng thì đi tiếp về hướng bắc một chút là tới.',tip:'朝 + hướng + 走 — cụm 朝东 đứng TRƯỚC động từ.'},
+    {scene:'Bạn định dồn hết tiền tiết kiệm để mua một chiếc máy tính rất đắt.',a:{sp:'Bạn',zh:'这台电脑太好看了，我想把存的钱都拿出来买！',vn:'Chiếc máy tính này đẹp quá, tớ định lấy hết tiền tiết kiệm ra mua!'},need:['Dùng 谨慎','Khuyên bạn suy nghĩ kỹ'],sample:'花这么多钱，你还是谨慎一点儿吧，想清楚了再买也来得及。',samplePy:'Huā zhème duō qián, nǐ háishi jǐnshèn yìdiǎnr ba, xiǎng qīngchu le zài mǎi yě láidejí.',sampleVn:'Tiêu nhiều tiền thế, cậu nên thận trọng một chút, nghĩ kỹ rồi mua cũng còn kịp.',tip:'谨慎 là tính từ: 谨慎一点儿 / 谨慎地考虑.'},
+    {scene:'Bạn hỏi vì sao em bỏ hẳn thói quen thức khuya chơi game.',a:{sp:'Bạn',zh:'你以前每天玩游戏到半夜，现在怎么不玩了？',vn:'Trước cậu ngày nào cũng chơi game đến nửa đêm, giờ sao không chơi nữa?'},need:['Dùng 彻底','Nói lý do thay đổi'],sample:'上次考试没考好，我下决心彻底改掉这个坏习惯了。',samplePy:'Shàng cì kǎoshì méi kǎohǎo, wǒ xià juéxīn chèdǐ gǎidiào zhège huài xíguàn le.',sampleVn:'Lần thi trước làm bài không tốt, tớ quyết tâm bỏ hẳn thói quen xấu này rồi.',tip:'彻底 + 改掉 / 改变 — đứng trước động từ.'},
+    {scene:'Mẹ lo em học quá sức, không chịu nghỉ ngơi.',a:{sp:'Mẹ',zh:'你天天学到这么晚，身体能行吗？',vn:'Ngày nào con cũng học khuya thế, sức khỏe có ổn không?'},need:['Dùng 承受 hoặc 平衡','Trấn an mẹ'],sample:'妈妈，您放心，我能承受住。我会在学习和休息之间保持平衡的。',samplePy:'Māma, nín fàngxīn, wǒ néng chéngshòu zhù. Wǒ huì zài xuéxí hé xiūxi zhījiān bǎochí pínghéng de.',sampleVn:'Mẹ yên tâm, con chịu được mà. Con sẽ giữ cân bằng giữa học và nghỉ.',tip:'承受住 = chịu được; 在 A 和 B 之间保持平衡.'}
   ]
 };
 
@@ -1710,29 +1576,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Bản tin thời tiết trên truyền hình.',
-     a:'明天海上风浪很大，大家别出海了啊。',b:'受恶劣天气影响，明天海上风浪较大，渔船请勿出海。',better:'b',
-     why:'Bản tin dùng giọng văn viết, trang trọng: 受……影响, 较大, 请勿. Câu a là lời dặn miệng.'},
-
-    {scene:'Em nhắn tin rủ bạn thân đi leo núi cuối tuần.',
-     a:'周末去爬山吧？听说那儿风景特别美！',b:'兹定于周末组织游览活动，敬请准时参加。',better:'a',
-     why:'Với bạn thân, câu khẩu ngữ tự nhiên. Câu b như thông báo của cơ quan.'},
-
-    {scene:'Em viết bài văn nghị luận về áp lực nộp cô giáo.',
-     a:'压力嘛，有点儿也挺好的。',b:'那些胸怀理想、有责任感的人，才能承受住压力。',better:'b',
-     why:'Văn nghị luận cần câu văn viết, có hình ảnh và lập luận: 胸怀理想, 承受住. Câu a là khẩu ngữ.'},
-
-    {scene:'Bạn vừa ngã xe đạp, em chạy đến hỏi han.',
-     a:'你没事吧？摔着哪儿了？',b:'请问您是否因失去平衡而摔倒？',better:'a',
-     why:'Tình huống gấp, thân mật → câu ngắn, khẩu ngữ. Câu b cứng nhắc như biên bản.'},
-
-    {scene:'Hướng dẫn viên nhắc đoàn khách trước đoạn đường nguy hiểm.',
-     a:'前面路段较窄，请大家谨慎通行，注意安全。',b:'前面的路窄死了，小心点儿啊！',better:'a',
-     why:'Hướng dẫn viên nói với khách cần lịch sự, rõ ràng: 请大家, 谨慎通行. Câu b quá suồng sã (窄死了).'},
-
-    {scene:'Em an ủi em gái đang rất hoảng vì làm mất chìa khóa.',
-     a:'别慌张，我们先想想你今天去过哪儿。',b:'遇事应保持冷静，切勿慌张。',better:'a',
-     why:'Nói với em nhỏ đang hoảng → câu gần gũi, kèm gợi ý cụ thể. Câu b như khẩu hiệu, văn viết (切勿).'}
+    {scene:'Bản tin thời tiết trên truyền hình.',a:'明天海上风浪很大，大家别出海了啊。',b:'由于天气恶劣，明天海上风浪很大，请所有船只不要出海。',better:'b',why:'Bản tin dùng giọng văn viết, trang trọng: 由于天气恶劣, 请所有船只. Câu a là lời dặn miệng.'},
+    {scene:'Em nhắn tin rủ bạn thân đi leo núi cuối tuần.',a:'周末去山里玩儿吧？听说那儿风景特别漂亮！',b:'本单位于本周末组织游览活动，请各位准时参加。',better:'a',why:'Với bạn thân, câu khẩu ngữ tự nhiên. Câu b như thông báo của cơ quan (本单位, 组织游览活动, 请各位).'},
+    {scene:'Em viết bài văn nghị luận về áp lực nộp cô giáo.',a:'压力啊，有点儿也挺好的。',b:'有一定的压力能使人进步，关键在于如何面对它。',better:'b',why:'Văn nghị luận cần câu văn viết, có lập luận: 有一定的压力, 关键在于如何面对. Câu a là khẩu ngữ.'},
+    {scene:'Bạn vừa ngã xe đạp, em chạy đến hỏi han.',a:'你没事吧？哪儿疼？',b:'请问您是否由于失去平衡而摔倒？',better:'a',why:'Tình huống gấp, thân mật → câu ngắn, khẩu ngữ. Câu b cứng nhắc như biên bản.'},
+    {scene:'Hướng dẫn viên nhắc đoàn khách trước đoạn đường nguy hiểm.',a:'前面的路很窄，请大家谨慎前行，注意安全。',b:'前面的路窄死了，小心点儿啊！',better:'a',why:'Hướng dẫn viên nói với khách cần lịch sự, rõ ràng: 请大家, 谨慎前行. Câu b quá suồng sã (窄死了).'},
+    {scene:'Em an ủi em gái đang rất hoảng vì làm mất chìa khóa.',a:'别慌张，我们先想想你今天去过哪儿。',b:'发生问题时必须保持冷静，千万不可慌张。',better:'a',why:'Nói với em nhỏ đang hoảng → câu gần gũi, kèm gợi ý cụ thể. Câu b như khẩu hiệu, văn viết (必须, 不可).'}
   ]
 };
 

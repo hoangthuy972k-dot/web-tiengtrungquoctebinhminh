@@ -1123,86 +1123,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 của sách (tr. 166) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'调整',right:'价格'},
   {left:'活跃',right:'气氛'},
   {left:'古典',right:'音乐'},
   {left:'交通',right:'规则'},
-  {left:'设计',right:'方案'},
+  {left:'设计',right:'服装'},
   {left:'业余',right:'爱好'},
-  {left:'一组',right:'照片'},
   {left:'一幅',right:'画儿'},
-  {left:'欣赏',right:'风景'},
   {left:'确认',right:'身份'},
   {left:'分辨',right:'真假'},
-  {left:'挥手',right:'告别'},
   {left:'随手',right:'关灯'},
-  {left:'签',right:'合同'},
-  {left:'洒上',right:'颜料'},
-  {left:'抽象派',right:'画家'},
   {left:'可靠的',right:'证据'},
-  {left:'热门',right:'话题'},
-  {left:'中国',right:'元素'},
-  {left:'由此',right:'可见'}
+  {left:'热门',right:'话题'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'对有些人来说，',blank:'抽象',post:'艺术没有古典艺术那么容易欣赏。',hint:'(trừu tượng)',ans:'抽象'},
-  {pre:'我爷爷每天早上都听',blank:'古典',post:'音乐。',hint:'(cổ điển)',ans:'古典'},
-  {pre:'周末我们去美术馆',blank:'欣赏',post:'了一些名画。',hint:'(thưởng thức)',ans:'欣赏'},
-  {pre:'奶奶用一块旧',blank:'布',post:'给我做了一个书包。',hint:'(vải)',ans:'布'},
-  {pre:'这些可都是抽象',blank:'派',post:'大师的作品。',hint:'(trường phái)',ans:'派'},
-  {pre:'这次展览一共展出了一百多件艺术',blank:'作品',post:'。',hint:'(tác phẩm)',ans:'作品'},
-  {pre:'他不小心把咖啡',blank:'洒',post:'在了作业本上。',hint:'(làm đổ, sánh ra)',ans:'洒'},
-  {pre:'《蒙娜丽莎》',blank:'神秘',post:'的微笑吸引了无数游客。',hint:'(bí ẩn)',ans:'神秘'},
-  {pre:'这些画作在有人看来极其神秘甚至',blank:'丑陋',post:'。',hint:'(xấu xí)',ans:'丑陋'},
-  {pre:'下午是',blank:'自由',post:'活动时间，大家可以随便逛逛。',hint:'(tự do)',ans:'自由'},
-  {pre:'这套衣服是姐姐自己',blank:'设计',post:'的。',hint:'(thiết kế)',ans:'设计'},
-  {pre:'老师让我们两两一',blank:'组',post:'，互相检查作业。',hint:'(nhóm)',ans:'组',exp:'两两一组 = cứ hai người một nhóm; 组 làm lượng từ chỉ nhóm.'},
-  {pre:'刚出生的',blank:'婴儿',post:'每天要睡十几个小时。',hint:'(trẻ sơ sinh)',ans:'婴儿'},
-  {pre:'动物园里的那只黑',blank:'猩猩',post:'会用笔画画儿。',hint:'(tinh tinh)',ans:'猩猩'},
-  {pre:'学校不允许学生在墙上',blank:'涂鸦',post:'。',hint:'(vẽ nguệch ngoạc)',ans:'涂鸦'},
-  {pre:'考完试别忘了在试卷上',blank:'签',post:'上自己的名字。',hint:'(ký)',ans:'签'},
-  {pre:'坐飞机的时候一定要带',blank:'身份',post:'证。',hint:'(thân phận)',ans:'身份'},
-  {pre:'出发前，请再',blank:'确认',post:'一下航班时间。',hint:'(xác nhận)',ans:'确认'},
-  {pre:'这对双胞胎长得太像了，我根本',blank:'分辨',post:'不出来谁是哥哥。',hint:'(phân biệt)',ans:'分辨'},
-  {pre:'火车开动了，他一直向我们',blank:'挥',post:'手告别。',hint:'(vẫy)',ans:'挥'},
-  {pre:'这件衣服的设计加入了很多中国',blank:'元素',post:'。',hint:'(yếu tố)',ans:'元素'},
-  {pre:'我们换个',blank:'位置',post:'坐吧，这儿看不清黑板。',hint:'(vị trí, chỗ)',ans:'位置'},
-  {pre:'这句话的',blank:'含意',post:'很深，我想了很久才明白。',hint:'(hàm ý)',ans:'含意'},
-  {pre:'这个',blank:'区域',post:'禁止吸烟。',hint:'(khu vực)',ans:'区域'},
-  {pre:'这套房子的',blank:'布局',post:'很合理，每个房间都很亮。',hint:'(bố cục)',ans:'布局'},
-  {pre:'别说这个了，我们换个',blank:'话题',post:'吧。',hint:'(đề tài)',ans:'话题'},
-  {pre:'警察终于找到了他偷东西的',blank:'证据',post:'。',hint:'(bằng chứng)',ans:'证据'},
-  {pre:'摄影只不过是我的',blank:'业余',post:'爱好。',hint:'(ngoài giờ, nghiệp dư)',ans:'业余'},
-  {pre:'考试前要',blank:'调整',post:'好心态，别太紧张。',hint:'(điều chỉnh)',ans:'调整'},
-  {pre:'',blank:'事实',post:'证明，他的办法是对的。',hint:'(sự thật)',ans:'事实'},
-  {pre:'只有一个房间亮着灯，',blank:'其余',post:'窗户都是黑的。',hint:'(còn lại)',ans:'其余'},
-  {pre:'连这么简单的题你都不会，',blank:'可见',post:'你上课没有认真听。',hint:'(có thể thấy)',ans:'可见',exp:'可见 = có thể thấy (rút ra kết luận từ sự việc trước).'}
+  {pre:'这幅画太',blank:'抽象',post:'了，我看了半天也不知道画的是什么。',hint:'(trừu tượng)',ans:'抽象',exp:'抽象 = trừu tượng (khó hình dung). 抽象画 = tranh trừu tượng.'},
+  {pre:'妈妈买了一块红',blank:'布',post:'，打算给我做一件衣服。',hint:'(vải)',ans:'布',exp:'布 = vải; lượng từ 块: 一块布. 画布 = vải vẽ tranh.'},
+  {pre:'这次比赛一共收到了三百多件学生的',blank:'作品',post:'。',hint:'(tác phẩm)',ans:'作品',exp:'作品 = tác phẩm (tranh, sách, bài hát…); lượng từ 件/幅.'},
+  {pre:'这个地方很少有人去过，大家都觉得它很',blank:'神秘',post:'。',hint:'(bí ẩn, huyền bí)',ans:'神秘',exp:'神秘 = bí ẩn, huyền bí: 神秘的地方, 神秘的人.'},
+  {pre:'这件衣服是她自己',blank:'设计',post:'的。',hint:'(thiết kế)',ans:'设计',exp:'设计 vừa là động từ (thiết kế) vừa là danh từ (bản thiết kế).'},
+  {pre:'收到快递的时候要',blank:'签',post:'字。',hint:'(ký)',ans:'签',exp:'签字 / 签名 = ký tên.'},
+  {pre:'火车开了，他一直站在那儿向我们',blank:'挥',post:'手。',hint:'(vẫy)',ans:'挥',exp:'挥手 = vẫy tay; 挥笔 = vung bút (viết, vẽ).'},
+  {pre:'这件衣服用了很多越南传统',blank:'元素',post:'。',hint:'(yếu tố, nét đặc trưng)',ans:'元素',exp:'元素 = yếu tố, thành tố: 中国元素, 传统元素, 画面元素.'},
+  {pre:'这套房子的',blank:'布局',post:'很好，每个房间都很亮。',hint:'(bố cục, cách bố trí)',ans:'布局',exp:'布局 = bố cục, cách sắp xếp tổng thể (nhà, tranh, bài văn).'},
+  {pre:'我们换个',blank:'话题',post:'吧，别再说考试了。',hint:'(đề tài, chủ đề câu chuyện)',ans:'话题',exp:'话题 = đề tài nói chuyện; 换个话题 = đổi chủ đề, 热门话题 = chủ đề nóng.'},
+  {pre:'这首诗的',blank:'含意',post:'很深，我读了好几遍才明白。',hint:'(hàm ý)',ans:'含意',exp:'含意 = hàm ý, ý nghĩa ẩn bên trong (诗, 画, 话).'},
+  {pre:'墙上那些',blank:'涂鸦',post:'是附近的孩子画的。',hint:'(hình vẽ nguệch ngoạc)',ans:'涂鸦',exp:'涂鸦 = vẽ/viết nguệch ngoạc; cũng chỉ tranh graffiti trên tường.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (极其 · 其余 · 可见) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['这是','一个','极其','重要的','决定','。'],ans:'这是一个极其重要的决定。',audio:'这是一个极其重要的决定。'},
-  {words:['上海','给我','留下了','极其','深刻的','印象','。'],ans:'上海给我留下了极其深刻的印象。',audio:'上海给我留下了极其深刻的印象。'},
-  {words:['怎么','只有','你们两个人','？','其余的','同学','呢','？'],ans:'怎么只有你们两个人？其余的同学呢？',audio:'怎么只有你们两个人？其余的同学呢？'},
-  {words:['我','只认识','这两个字','，','其余的','都','不认识','。'],ans:'我只认识这两个字，其余的都不认识。',audio:'我只认识这两个字，其余的都不认识。'},
-  {words:['连这么简单的题','你都不会','，','可见','你上课','没有认真听','。'],ans:'连这么简单的题你都不会，可见你上课没有认真听。',audio:'连这么简单的题你都不会，可见你上课没有认真听。'},
-  {words:['由此','可见','，','志愿者','能够','感知','艺术家的用心','。'],ans:'由此可见，志愿者能够感知艺术家的用心。',audio:'由此可见，志愿者能够感知艺术家的用心。'},
-  {words:['他','一有时间','就去看父母','，','可见','他','很孝敬父母','。'],ans:'他一有时间就去看父母，可见他很孝敬父母。',audio:'他一有时间就去看父母，可见他很孝敬父母。'},
-  {words:['哪怕','熬夜','，','我今天','也得','把这个计划','做完','。'],ans:'哪怕熬夜，我今天也得把这个计划做完。',audio:'哪怕熬夜，我今天也得把这个计划做完。'},
-  {words:['研究者','设计了','一个','有趣的','实验','。'],ans:'研究者设计了一个有趣的实验。',audio:'研究者设计了一个有趣的实验。'},
-  {words:['一些签名','被','故意','弄错了','。'],ans:'一些签名被故意弄错了。',audio:'一些签名被故意弄错了。'},
-  {words:['每个人','对抽象艺术','可以有','不同的','解读','。'],ans:'每个人对抽象艺术可以有不同的解读。',audio:'每个人对抽象艺术可以有不同的解读。'},
-  {words:['我们的大脑','注意到了','原作的','布局','。'],ans:'我们的大脑注意到了原作的布局。',audio:'我们的大脑注意到了原作的布局。'},
-  {words:['请','再','确认','一下','航班时间','。'],ans:'请再确认一下航班时间。',audio:'请再确认一下航班时间。'}
+  {words:['这里的','冬天','极其','寒冷','，','最低','到零下三十度','。'],ans:'这里的冬天极其寒冷，最低到零下三十度。',audio:'这里的冬天极其寒冷，最低到零下三十度。'},
+  {words:['我们班','有四十个学生','，','一半','是女生','，','其余的','都是','男生','。'],ans:'我们班有四十个学生，一半是女生，其余的都是男生。',audio:'我们班有四十个学生，一半是女生，其余的都是男生。'},
+  {words:['他','每天','都','第一个','到教室','，','可见','他','很喜欢','这门课','。'],ans:'他每天都第一个到教室，可见他很喜欢这门课。',audio:'他每天都第一个到教室，可见他很喜欢这门课。'},
+  {words:['这么多人','来看画','，','由此可见','大家','对抽象艺术','越来越','感兴趣','。'],ans:'这么多人来看画，由此可见大家对抽象艺术越来越感兴趣。',audio:'这么多人来看画，由此可见大家对抽象艺术越来越感兴趣。'},
+  {words:['哪怕','只有','一个人','来','，','我们','也要','把演出','做好','。'],ans:'哪怕只有一个人来，我们也要把演出做好。',audio:'哪怕只有一个人来，我们也要把演出做好。'},
+  {words:['他','不小心','把咖啡','洒在了','书上','。'],ans:'他不小心把咖啡洒在了书上。',audio:'他不小心把咖啡洒在了书上。'},
+  {words:['他','随手','把衣服','扔在了','床上','。'],ans:'他随手把衣服扔在了床上。',audio:'他随手把衣服扔在了床上。'},
+  {words:['这个问题','目前','还','没有办法','解决','。'],ans:'这个问题目前还没有办法解决。',audio:'这个问题目前还没有办法解决。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1210,80 +1178,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'那个人长得____丑。',opts:['极其','非常','其余','极了'],ans:1,
-   exp:'丑 là tính từ MỘT âm tiết → dùng 非常. 极其 chỉ đi với từ hai âm tiết trở lên (极其丑陋). 极了 phải đứng SAU tính từ (丑极了).'},
-  {wrong:'在中国，餐桌上放一把刀是____少见的现象。',opts:['其余','随手','极其','可见'],ans:2,
-   exp:'Phó từ chỉ mức độ trước tính từ hai âm tiết 少见 → 极其 (câu của sách). 其余, 随手, 可见 không bổ nghĩa cho tính từ.'},
-  {wrong:'上海给我留下了____深刻的印象。',opts:['极其','哪怕','随手','其余'],ans:0,
-   exp:'极其 + tính từ hai âm tiết 深刻 (câu 29 sách bài tập).'},
-  {wrong:'书房的墙上挂着一____静物画。',opts:['组','块','位','幅'],ans:3,
-   exp:'Lượng từ của tranh → 幅 (一幅画). 组 là một nhóm, 块 dùng cho vải / đá, 位 dùng cho người.'},
-  {wrong:'这次展出的一____服装是由七套戏服组成的。',opts:['幅','组','位','块'],ans:1,
-   exp:'Nhiều bộ trang phục hợp thành MỘT NHÓM → 一组服装. 幅 dùng cho tranh, vải vóc.'},
-  {wrong:'这幅画____一个十岁孩子之手。',opts:['出现','设计','出自','分辨'],ans:2,
-   exp:'出自……之手 = do tay … làm ra. 出现 là "xuất hiện", không đi với 之手.'},
-  {wrong:'成语“画龙点睛”便____关于他的传说。',opts:['出自','发明','设计','确认'],ans:0,
-   exp:'Nguồn gốc của thành ngữ → 出自 + truyền thuyết / sách (câu 31 sách bài tập).'},
-  {wrong:'可能出门时我____把钥匙放在门口的桌子上了。',opts:['按时','随手','到底','极其'],ans:1,
-   exp:'Tiện tay đặt chìa khoá khi ra cửa → 随手. 按时 (đúng giờ), 到底 (rốt cuộc), 极其 (vô cùng) sai nghĩa.'},
-  {wrong:'他____在纸上画了几笔，没想到画得这么好。',opts:['其余','可见','极其','随手'],ans:3,
-   exp:'Tiện tay vẽ vài nét → 随手 + V.'},
-  {wrong:'____熬夜，我今天也得把这个计划做完。',opts:['哪怕','虽然','因为','可见'],ans:0,
-   exp:'Vế sau có 也 → 哪怕……也…… (dù cho). 虽然 đi với 但是; 因为 đi với 所以.'},
-  {wrong:'____是一分钟他也不愿意再等了。',opts:['可见','其余','哪怕','虽然'],ans:2,
-   exp:'哪怕 + điều kiện cực đoan (chỉ một phút) + 也…… (câu 30 sách bài tập).'},
-  {wrong:'每次晚会他都是主持人，要靠他来____气氛。',opts:['调整','活跃','欣赏','确认'],ans:1,
-   exp:'活跃气氛 = khuấy động không khí (bảng 词语搭配 của sách).'},
-  {wrong:'她性格开朗，在班里很____。',opts:['业余','其余','活跃','抽象'],ans:2,
-   exp:'Tả tính cách sôi nổi, năng động → 活跃 (làm tính từ).'},
-  {wrong:'过马路的时候，一定要遵守交通____。',opts:['规则','布局','位置','元素'],ans:0,
-   exp:'遵守 + 规则 (tuân thủ quy tắc). 交通规则 = luật giao thông.'},
-  {wrong:'这块布上只有一些不____的色块，我看不出来画的是什么。',opts:['古典','业余','活跃','规则'],ans:3,
-   exp:'不规则 = không theo quy tắc, lộn xộn (tính từ).'},
-  {wrong:'到____为止，事情还没有任何变化。',opts:['以前','目前','将来','从前'],ans:1,
-   exp:'到目前为止 = cho đến nay (khoảng thời gian từ trước tới giờ). 以前 / 将来 / 从前 không dùng trong khung 到……为止 với nghĩa này.'},
-  {wrong:'我认为你们其实忽略了一个十分重要的____。',opts:['实际','事实','随手','其余'],ans:1,
-   exp:'Làm tân ngữ, có định ngữ 重要的 → danh từ 事实. 实际 chủ yếu là tính từ (实际情况) hoặc trạng ngữ (实际上).'},
-  {wrong:'我只认识这两个字，____的都不认识。',opts:['其中','其实','其余','极其'],ans:2,
-   exp:'Phần CÒN LẠI ngoài hai chữ đã nói → 其余的. 其中 (trong đó), 其实 (thật ra), 极其 (vô cùng) sai nghĩa.'},
-  {wrong:'他已经住院好几天了，一直诊断不出是什么问题，____情况不太好。',opts:['哪怕','即使','随手','可见'],ans:3,
-   exp:'Từ căn cứ ở vế trước rút ra kết luận → 可见 (câu của sách).'},
-  {wrong:'大师____笔写下了四个大字。',opts:['洒','挥','签','派'],ans:1,
-   exp:'挥笔 = vung bút (viết / vẽ). 洒 là vẩy, 签 là ký, 派 là cử đi.'},
-  {wrong:'我们只是一支____的乐队，不够专业水平。',opts:['古典','神秘','业余','规则'],ans:2,
-   exp:'不够专业水平 → nghiệp dư → 业余 (đối lập với 专业).'},
-  {wrong:'如果没有可靠的____，你就不能这么说。',opts:['话题','证据','元素','身份'],ans:1,
-   exp:'可靠的证据 = bằng chứng đáng tin (bài tập của sách).'}
+  {wrong:'那个房间____小，只能放一张桌子。',opts:['非常','极其','其余','可见'],ans:0,exp:'Tính từ MỘT âm tiết (小) đi với 非常. 极其 chỉ đứng trước tính từ/động từ hai âm tiết trở lên (极其重要, 极其丑陋); 其余, 可见 không chỉ mức độ.'},
+  {wrong:'他的态度____认真，每个字都要检查好几遍。',opts:['极其','其余','随手','可见'],ans:0,exp:'极其 + tính từ hai âm tiết = vô cùng (văn viết). 其余 là “phần còn lại”; 随手 là “tiện tay”; 可见 là “có thể thấy”.'},
+  {wrong:'这些苹果你拿三个，____的给弟弟。',opts:['其余','其中','其实','所有'],ans:0,exp:'其余的 = phần còn lại (ngoài ba quả đã lấy). 其中 là “trong đó”; 其实 là “thật ra”; 所有的 là “tất cả” — mâu thuẫn với 你拿三个.'},
+  {wrong:'他一句话也没说就走了，____他真的生气了。',opts:['可见','哪怕','随手','目前'],ans:0,exp:'Từ sự việc ở vế trước rút ra kết luận → 可见 (có thể thấy). 哪怕 cần vế 也……; 随手, 目前 không hợp.'},
+  {wrong:'吃完饭，请____把碗洗了。',opts:['随手','随便','其余','极其'],ans:0,exp:'随手 + V = tiện tay làm luôn (khi đang làm việc khác). 随便 là “tuỳ tiện, sao cũng được”, không mang nghĩa “tiện thể”; 其余, 极其 sai nghĩa.'},
+  {wrong:'这是正式的会议，你不能穿得太____。',opts:['随便','随手','神秘','活跃'],ans:0,exp:'穿得很随便 = ăn mặc tuỳ tiện. 随手 chỉ làm trạng ngữ trước động từ, không làm bổ ngữ sau 得; 神秘, 活跃 không hợp.'},
+  {wrong:'别担心，我____就出发，二十分钟后到。',opts:['现在','目前','其余','当时'],ans:0,exp:'现在就 + V = ngay bây giờ (sắp làm ngay). 目前 chỉ giai đoạn hiện nay (目前的情况), không đi với 就出发; 当时 là “lúc đó” (quá khứ).'},
+  {wrong:'客厅的墙上挂着一____山水画。',opts:['幅','件','条','位'],ans:0,exp:'Lượng từ của tranh → 幅. 件 dùng cho quần áo, việc; 条 cho vật dài; 位 cho người.'},
+  {wrong:'这本小说____一个普通的大学生之手。',opts:['出自','来到','出现','创造'],ans:0,exp:'出自……之手 = do tay … làm ra. 来到 là đến nơi nào; 出现 là xuất hiện; 创造 không đi với 之手.'},
+  {wrong:'她上课的时候特别____，总是第一个举手。',opts:['活跃','业余','抽象','神秘'],ans:0,exp:'活跃 làm tính từ = sôi nổi, năng nổ. 业余 là nghiệp dư; 抽象 là trừu tượng; 神秘 là bí ẩn.'},
+  {wrong:'他说的都是____，我可以证明。',opts:['事实','实际','实在','证据'],ans:0,exp:'事实 = sự thật (danh từ). 实际 chủ yếu làm tính từ (实际情况); 实在 là phó từ/tính từ “thật sự”; 证据 là bằng chứng — không nói “lời anh ấy đều là bằng chứng”.'},
+  {wrong:'____再忙，他每天也要跑步半小时。',opts:['哪怕','虽然','只要','可见'],ans:0,exp:'哪怕 + điều kiện (再忙)，也…… = dù cho… cũng…. 虽然 đi với 但是; 只要 đi với 就; 可见 không đứng đầu vế điều kiện.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Kỳ thi toán lần này cực kỳ quan trọng, vì vậy dù có phải thức khuya tôi cũng phải làm lại một lượt những câu đã sai.', zh:'这次数学考试极其重要，所以我哪怕熬夜也要把错题再做一遍。', py:'Zhè cì shùxué kǎoshì jíqí zhòngyào, suǒyǐ wǒ nǎpà áoyè yě yào bǎ cuòtí zài zuò yí biàn.', goiY:['极其','哪怕……也……','熬夜'], giai:'极其 + tính từ hai âm tiết (极其重要), không đứng trước từ một âm tiết; 哪怕 nêu tình huống xấu nhất, 也 giữ nguyên quyết tâm.'},
-  {vi:'Cả lớp chỉ có tôi và bạn cùng bàn chọn môn Mỹ thuật, các bạn còn lại đều đăng ký vào đội bóng đá nghiệp dư.', zh:'全班只有我和同桌选了美术课，其余的同学都报名参加了业余足球队。', py:'Quán bān zhǐyǒu wǒ hé tóngzhuō xuǎnle měishù kè, qíyú de tóngxué dōu bàomíng cānjiāle yèyú zúqiú duì.', goiY:['只有……，其余的……都……','业余','美术'], giai:'Mẫu 只有 A，其余的 B 都…… = chỉ có A, còn lại B đều…; 其余 luôn chỉ phần còn lại của nhóm vừa nhắc tới, nên cần vế "chỉ có…" đứng trước.'},
-  {vi:'Câu dễ thế này mà cậu cũng làm sai, chứng tỏ trước khi nộp bài cậu chẳng hề kiểm tra lại đáp án cẩn thận.', zh:'你连这么简单的题都做错了，可见你交卷前根本没有仔细确认答案。', py:'Nǐ lián zhème jiǎndān de tí dōu zuòcuò le, kějiàn nǐ jiāo juàn qián gēnběn méiyǒu zǐxì quèrèn dá\'àn.', goiY:['连……都……','可见','确认'], giai:'可见 đứng đầu vế sau, rút ra kết luận từ sự việc vừa nêu — "chứng tỏ, có thể thấy"; 确认 = xác nhận lại cho chắc, khác 确定 (quyết định dứt khoát).'},
-  {vi:'Tuy bức tranh trừu tượng này trông như ai đó tiện tay vẽ nguệch ngoạc, nhưng thầy nói bố cục của nó đã được thiết kế rất công phu.', zh:'虽然这幅抽象画看起来像是随手涂鸦，但是老师说它的布局经过了精心设计。', py:'Suīrán zhè fú chōuxiàng huà kàn qilai xiàng shì suíshǒu túyā, dànshì lǎoshī shuō tā de bùjú jīngguòle jīngxīn shèjì.', goiY:['虽然……但是……','随手涂鸦','布局'], giai:'Lượng từ thường dùng cho tranh là 幅 (这幅画); 随手涂鸦 = tiện tay vẽ bậy, 随手 nhấn mạnh sự tuỳ tiện, không chủ ý.'},
-  {vi:'Đã thích nhạc cổ điển đến vậy thì cậu nên tận dụng thời gian rảnh tự mình đến nhà hát nghe biểu diễn, chứ đừng chỉ nghe trên điện thoại.', zh:'既然你对古典音乐这么感兴趣，就应该利用业余时间亲自去音乐厅欣赏演出，而不是只在手机上听。', py:'Jìrán nǐ duì gǔdiǎn yīnyuè zhème gǎn xìngqù, jiù yīnggāi lìyòng yèyú shíjiān qīnzì qù yīnyuètīng xīnshǎng yǎnchū, ér bú shì zhǐ zài shǒujī shang tīng.', goiY:['既然……就……','业余时间','而不是'], giai:'既然 + sự thật đã biết, 就 + lời khuyên — đừng nhầm với 虽然; "chứ đừng…" dịch bằng 而不是 đặt ở vế cuối.'},
-  {vi:'Lớp tôi mỗi khi thảo luận thì không khí luôn sôi nổi, dù là chủ đề cực kỳ trừu tượng, mọi người cũng đều thoải mái nói ra suy nghĩ của mình.', zh:'我们班讨论问题时气氛一向很活跃，哪怕是极其抽象的话题，大家也都能自由地说出自己的看法。', py:'Wǒmen bān tǎolùn wèntí shí qìfēn yíxiàng hěn huóyuè, nǎpà shì jíqí chōuxiàng de huàtí, dàjiā yě dōu néng zìyóu de shuōchū zìjǐ de kànfǎ.', goiY:['哪怕……也……','活跃','极其抽象'], giai:'活跃 = sôi nổi, thường đi với 气氛/思维; 哪怕是 + danh từ nêu trường hợp khó nhất, 也 + kết quả không đổi — không dùng 虽然 vì đây là giả định.'},
-  {vi:'Cô chia chúng tôi thành bốn nhóm, mỗi nhóm chỉ một người phụ trách thiết kế áp phích, số còn lại thì chia nhau đi tìm tư liệu, nhờ vậy tiết kiệm được khá nhiều thời gian.', zh:'老师把我们分成四组，每组只有一个人负责设计海报，其余的人则分工去找资料，从而节省了不少时间。', py:'Lǎoshī bǎ wǒmen fēnchéng sì zǔ, měi zǔ zhǐyǒu yí ge rén fùzé shèjì hǎibào, qíyú de rén zé fēngōng qù zhǎo zīliào, cóng\'ér jiéshěngle bù shǎo shíjiān.', goiY:['其余的……则……','从而','设计'], giai:'其余的人则…… đối lập với vế trước (một người… còn lại thì…); 从而 mở ra kết quả đạt được nhờ cách làm ở trước — "nhờ đó".'},
-  {vi:'Cậu ấy tiện tay ký tên lên vở bài tập, nét chữ vô cùng mờ nhạt; nếu không có mã số học sinh ghi bên cạnh thì thầy hoàn toàn không xác nhận được bài này là của ai.', zh:'他在作业本上随手签了个名，字迹极其模糊，要不是旁边写着学号，老师根本无法确认这份作业出自谁之手。', py:'Tā zài zuòyèběn shang suíshǒu qiānle ge míng, zìjì jíqí móhu, yào bú shì pángbiān xiězhe xuéhào, lǎoshī gēnběn wúfǎ quèrèn zhè fèn zuòyè chūzì shéi zhī shǒu.', goiY:['要不是……','出自……之手','随手'], giai:'要不是 A，B = nếu không nhờ có A thì đã B (giả định ngược với thực tế); 签名 là động từ ly hợp nên nói 签了个名.'},
-  {vi:'Mặc dù hiện nay vẫn chưa có bằng chứng cho thấy chơi điện thoại nhất định ảnh hưởng đến việc học, nhưng người ngày nào cũng lướt video đến nửa đêm thì hôm sau lên lớp chắc chắn uể oải.', zh:'尽管目前还没有证据证明玩手机一定会影响成绩，但每天刷视频到半夜的人，第二天上课肯定没精神。', py:'Jǐnguǎn mùqián hái méiyǒu zhèngjù zhèngmíng wán shǒujī yídìng huì yǐngxiǎng chéngjì, dàn měi tiān shuā shìpín dào bànyè de rén, dì-èr tiān shàngkè kěndìng méi jīngshen.', goiY:['尽管……但……','目前','证据'], giai:'尽管 = mặc dù (sự thật), vế sau dùng 但/却; "chưa có bằng chứng cho thấy…" dịch là 没有证据证明……, không cần dịch chữ "thấy".'},
-  {vi:'Cô giáo điều chỉnh vị trí của vài yếu tố trên tấm áp phích, tuy chúng tôi gần như không nhận ra điểm khác, nhưng cả tác phẩm trông dễ chịu hơn hẳn, chứng tỏ bố cục cực kỳ quan trọng.', zh:'老师调整了海报上几个元素的位置，虽然我们几乎分辨不出来，整幅作品却舒服多了，可见布局极其重要。', py:'Lǎoshī tiáozhěngle hǎibào shang jǐ ge yuánsù de wèizhi, suīrán wǒmen jīhū fēnbiàn bu chūlái, zhěng fú zuòpǐn què shūfu duō le, kějiàn bùjú jíqí zhòngyào.', goiY:['虽然……却……','分辨不出来','可见'], giai:'虽然 và 却 có thể nằm ở hai vế khác chủ ngữ; 却 phải đứng sau chủ ngữ (整幅作品却……), không đứng đầu vế như 但是.'}
+  {vi:'Bài kiểm tra toán lần này vô cùng quan trọng, nên dù phải thức khuya tôi cũng phải làm lại một lượt những câu đã sai.',zh:'这次数学考试极其重要，所以我哪怕熬夜也要把错题再做一遍。',py:'Zhè cì shùxué kǎoshì jíqí zhòngyào, suǒyǐ wǒ nǎpà áoyè yě yào bǎ cuò tí zài zuò yí biàn.',goiY:['极其','哪怕……也……','把'],giai:'极其 + tính từ hai âm tiết (重要); 哪怕 A 也 B = dù cho A cũng B, đứng sau chủ ngữ cũng được (我哪怕熬夜……).'},
+  {vi:'Cả lớp chỉ có tôi và Tiểu Vương chọn môn mỹ thuật, các bạn còn lại đều đi học bơi.',zh:'全班只有我和小王选了美术课，其余的同学都去学了游泳。',py:'Quán bān zhǐyǒu wǒ hé Xiǎo Wáng xuǎnle měishù kè, qíyú de tóngxué dōu qù xuéle yóuyǒng.',goiY:['其余','只有……','都'],giai:'其余的 + N = những … còn lại; vế sau thường có 都 để bao quát toàn bộ phần còn lại.'},
+  {vi:'Câu dễ thế này mà cậu cũng làm sai, có thể thấy lúc thi cậu đã không kiểm tra lại đáp án cẩn thận.',zh:'你连这么简单的题都做错了，可见你考试的时候没有仔细确认答案。',py:'Nǐ lián zhème jiǎndān de tí dōu zuòcuò le, kějiàn nǐ kǎoshì de shíhou méiyǒu zǐxì quèrèn dá\'àn.',goiY:['连……都……','可见','确认'],giai:'可见 đứng đầu vế sau, nêu kết luận rút ra từ sự việc vế trước; 连……都…… nhấn mạnh trường hợp dễ nhất cũng sai.'},
+  {vi:'Tuy bức tranh trừu tượng này trông giống nét vẽ nguệch ngoạc tiện tay, nhưng thầy giáo nói bố cục của nó đã được thiết kế rất kỹ.',zh:'虽然这幅抽象画看起来像是随手涂鸦，但是老师说它的布局经过了认真的设计。',py:'Suīrán zhè fú chōuxiàng huà kàn qǐlai xiàng shì suíshǒu túyā, dànshì lǎoshī shuō tā de bùjú jīngguòle rènzhēn de shèjì.',goiY:['虽然……但是……','随手','涂鸦','布局'],giai:'看起来像是…… = trông giống như…; 经过了……的设计 = đã qua thiết kế…, dịch thuận là "được thiết kế…".'},
+  {vi:'Đã thích nhạc cổ điển như vậy thì cậu nên dùng thời gian rảnh tự mình đi nghe một buổi hoà nhạc, chứ không phải chỉ nghe trên điện thoại.',zh:'既然你对古典音乐这么感兴趣，就应该用业余时间亲自去听一场音乐会，而不是只在手机上听。',py:'Jìrán nǐ duì gǔdiǎn yīnyuè zhème gǎn xìngqù, jiù yīnggāi yòng yèyú shíjiān qīnzì qù tīng yì chǎng yīnyuèhuì, ér bú shì zhǐ zài shǒujī shang tīng.',goiY:['既然……就……','古典','业余','而不是'],giai:'业余时间 = thời gian ngoài giờ làm/học; 而不是 bổ sung vế phủ định, đối lập với lời khuyên phía trước.'},
+  {vi:'Tuy hiện nay vẫn chưa có bằng chứng chứng minh chơi điện thoại nhất định ảnh hưởng đến kết quả học, nhưng người ngày nào cũng chơi điện thoại đến nửa đêm thì hôm sau đi học chắc chắn không có tinh thần.',zh:'尽管目前还没有证据证明玩手机一定会影响成绩，但每天玩手机到半夜的人，第二天上课肯定没精神。',py:'Jǐnguǎn mùqián hái méiyǒu zhèngjù zhèngmíng wán shǒujī yídìng huì yǐngxiǎng chéngjì, dàn měi tiān wán shǒujī dào bànyè de rén, dì-èr tiān shàngkè kěndìng méi jīngshen.',goiY:['尽管……但……','目前','证据'],giai:'目前 = hiện nay (giai đoạn này), văn viết hơn 现在; 尽管 nêu sự thật, vế sau 但 chuyển ý.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Với một số người, nghệ thuật trừu tượng không dễ thưởng thức như nghệ thuật cổ điển, bởi những mảng màu không theo quy tắc kia chẳng nhìn ra có ý nghĩa gì.', zh:'对有些人来说，抽象艺术没有古典艺术那么容易欣赏，因为那些不规则的色块看不出有什么意义。', py:'Duì yǒuxiē rén lái shuō, chōuxiàng yìshù méiyǒu gǔdiǎn yìshù nàme róngyì xīnshǎng, yīnwèi nàxiē bù guīzé de sèkuài kàn bu chū yǒu shénme yìyì.', goiY:['A 没有 B 那么…… = A không … bằng B','不规则 = không theo quy tắc','因为 = bởi vì'], giai:'A 没有 B 那么 + tính từ là câu so sánh kém: "A không … bằng B"; 看不出有什么意义 nên dịch thoáng "chẳng nhìn ra ý nghĩa gì".'},
-  {vi:'Trong mắt một số người, tác phẩm của trường phái trừu tượng vô cùng bí ẩn, thậm chí xấu xí, nhưng có người lại cảm nhận được từ đó sự ca ngợi tự do.', zh:'抽象派的作品在有人看来极其神秘甚至丑陋，有人却从中感受到对自由的赞美。', py:'Chōuxiàngpài de zuòpǐn zài yǒu rén kànlái jíqí shénmì shènzhì chǒulòu, yǒu rén què cóng zhōng gǎnshòu dào duì zìyóu de zànměi.', goiY:['在……看来 = trong mắt…','甚至 = thậm chí','却 = lại (trái ngược)'], giai:'有人……，有人却…… đối lập hai nhóm người: "có người… nhưng có người lại…"; 在有人看来 dịch là "trong mắt một số người", không dịch từng chữ.'},
-  {vi:'Trong thí nghiệm chỉ có một phần ba số tranh không ký tên, còn những bức còn lại đều ghi rõ danh tính tác giả.', zh:'实验中只有三分之一的画作没有签名，而其余的则都标明了作者的身份。', py:'Shíyàn zhōng zhǐyǒu sān fēn zhī yī de huàzuò méiyǒu qiānmíng, ér qíyú de zé dōu biāomíngle zuòzhě de shēnfèn.', goiY:['其余的 = phần còn lại','而……则…… = còn … thì','身份 = danh tính'], giai:'而其余的则…… đối chiếu với phần vừa nêu: "còn phần còn lại thì…"; 身份 ở đây là danh tính tác giả, không dịch là "thân phận".'},
-  {vi:'Vì một số chữ ký bị cố ý ghi sai, tình nguyện viên tưởng đó là nét vẽ nguệch ngoạc tiện tay của tinh tinh, nhưng thực tế lại có thể là tác phẩm của một hoạ sĩ nổi tiếng.', zh:'由于一些签名被故意弄错了，志愿者以为是猩猩的随手涂鸦，实际上却可能出自著名艺术家之手。', py:'Yóuyú yìxiē qiānmíng bèi gùyì nòngcuò le, zhìyuànzhě yǐwéi shì xīngxing de suíshǒu túyā, shíjì shang què kěnéng chūzì zhùmíng yìshùjiā zhī shǒu.', goiY:['由于 = do, vì','以为 = tưởng (nhầm)','出自……之手 = do … làm ra'], giai:'以为 là "tưởng" (thường là tưởng sai), khác 认为 "cho rằng"; 却 ở vế cuối cho thấy sự thật trái với điều họ tưởng.'},
-  {vi:'Có lẽ có người cho rằng tình nguyện viên hoàn toàn không phân biệt được, thế nhưng trong mọi lần thử nghiệm, những tác phẩm mọi người thích hơn đều do hoạ sĩ con người vung bút tạo nên.', zh:'也许有人认为志愿者根本分辨不出来，然而在每一次测试中，大家更喜欢的都是人类艺术家挥笔完成的作品。', py:'Yěxǔ yǒu rén rènwéi zhìyuànzhě gēnběn fēnbiàn bu chūlái, rán\'ér zài měi yí cì cèshì zhōng, dàjiā gèng xǐhuan de dōu shì rénlèi yìshùjiā huībǐ wánchéng de zuòpǐn.', goiY:['然而 = thế nhưng','分辨不出来 = không phân biệt được','挥笔 = vung bút (vẽ)'], giai:'然而 là từ văn viết, nghĩa như 但是, mở ra kết quả trái với dự đoán; 人类艺术家 = hoạ sĩ là con người (đối lập với tinh tinh, em bé).'},
-  {vi:'Từ đó có thể thấy, tình nguyện viên cảm nhận được tâm huyết của người hoạ sĩ qua bức tranh, dù họ không giải thích được lý do.', zh:'由此可见，志愿者能够从画作中感知艺术家的用心，哪怕他们不能够解释其中的原因。', py:'Yóu cǐ kějiàn, zhìyuànzhě nénggòu cóng huàzuò zhōng gǎnzhī yìshùjiā de yòngxīn, nǎpà tāmen bù nénggòu jiěshì qízhōng de yuányīn.', goiY:['由此可见 = từ đó có thể thấy','哪怕 = dù cho','感知 = cảm nhận'], giai:'哪怕 đặt ở vế sau là cách bổ sung nhượng bộ: "dù (họ) không…"; 用心 ở đây là danh từ "tâm huyết, dụng tâm", không phải "chăm chỉ".'},
-  {vi:'Sau khi nhà nghiên cứu thay đổi vị trí các yếu tố trong tranh, hầu như ai cũng thích bản gốc hơn, hơn nữa vùng não liên quan đến ý nghĩa cũng hoạt động kém đi.', zh:'研究者调整了画面元素的位置后，几乎每个人都更喜欢原作，而且大脑中有关含意的区域活跃性下降了。', py:'Yánjiūzhě tiáozhěngle huàmiàn yuánsù de wèizhi hòu, jīhū měi ge rén dōu gèng xǐhuan yuánzuò, érqiě dànǎo zhōng yǒuguān hányì de qūyù huóyuèxìng xiàjiàng le.', goiY:['……后 = sau khi…','而且 = hơn nữa','活跃性下降 = mức độ hoạt động giảm'], giai:'Cụm dài 大脑中有关含意的区域 là chủ ngữ — tìm trung tâm ngữ 区域 trước ("vùng"), rồi mới thêm định ngữ "liên quan đến ý nghĩa trong não".'},
-  {vi:'Não bộ chúng ta đã chú ý đến bố cục của bản gốc; cho dù bản thân ta chưa cảm nhận rõ sự thật này, não vẫn nhận ra được dụng ý phía sau.', zh:'我们的大脑注意到了原作的布局，即使我们还没有清楚地感受到这个事实，大脑也能感知其背后的用意。', py:'Wǒmen de dànǎo zhùyì dàole yuánzuò de bùjú, jíshǐ wǒmen hái méiyǒu qīngchu de gǎnshòu dào zhège shìshí, dànǎo yě néng gǎnzhī qí bèihòu de yòngyì.', goiY:['即使……也…… = cho dù… vẫn…','布局 = bố cục','其背后的用意 = dụng ý phía sau nó'], giai:'即使 nêu giả thiết/nhượng bộ, 也 giữ nguyên kết quả; 其 là đại từ văn viết, tương đương "của nó".'},
-  {vi:'Ít nhất hiện nay có thể nói thế này: chưa có bằng chứng nào cho thấy tinh tinh hay trẻ sơ sinh cũng làm được như vậy, chứng tỏ khả năng cảm nhận nghệ thuật của con người vẫn rất đặc biệt.', zh:'至少目前可以这么说：没有证据表明猩猩或者婴儿也能这样做，可见人类对艺术的感知还是十分独特的。', py:'Zhìshǎo mùqián kěyǐ zhème shuō: méiyǒu zhèngjù biǎomíng xīngxing huòzhě yīng\'ér yě néng zhèyàng zuò, kějiàn rénlèi duì yìshù de gǎnzhī háishi shífēn dútè de.', goiY:['没有证据表明 = chưa có bằng chứng cho thấy','目前 = hiện nay','可见 = chứng tỏ'], giai:'没有证据表明…… là cách nói thận trọng của văn khoa học; 可见 ở đầu vế cuối rút ra kết luận, dịch "chứng tỏ / có thể thấy".'},
-  {vi:'Rốt cuộc não bộ cảm nhận nghệ thuật trừu tượng như thế nào vẫn là một đề tài thú vị; tuy vậy mỗi người đều có thể có cách hiểu riêng, điều đó vừa là thách thức, vừa là sự tự do.', zh:'大脑究竟如何感知抽象艺术，仍是一个有趣的话题；不过每个人都可以有自己的解读，这既是挑战，也是自由。', py:'Dànǎo jiūjìng rúhé gǎnzhī chōuxiàng yìshù, réng shì yí ge yǒuqù de huàtí; búguò měi ge rén dōu kěyǐ yǒu zìjǐ de jiědú, zhè jì shì tiǎozhàn, yě shì zìyóu.', goiY:['究竟 = rốt cuộc','既是……也是…… = vừa là… vừa là…','解读 = cách hiểu, lý giải'], giai:'Vế đầu 大脑究竟如何感知抽象艺术 là câu hỏi gián tiếp làm chủ ngữ; 既是……也是…… nối hai mặt song song của cùng một sự việc.'}
+  {vi:'Có người thấy so với nghệ thuật cổ điển, nghệ thuật trừu tượng khó thưởng thức hơn, vì những mảng màu và đường nét trên vải vẽ rất không theo quy tắc.',zh:'有些人觉得，跟古典艺术比起来，抽象艺术更难欣赏，因为画布上的色块和线条很不规则。',py:'Yǒuxiē rén juéde, gēn gǔdiǎn yìshù bǐ qǐlai, chōuxiàng yìshù gèng nán xīnshǎng, yīnwèi huàbù shang de sèkuài hé xiàntiáo hěn bù guīzé.',goiY:['跟……比起来 = so với…','欣赏 = thưởng thức','不规则 = không theo quy tắc'],giai:'跟 A 比起来，B 更…… = so với A thì B … hơn; 不规则 dịch "không theo quy tắc, lộn xộn".'},
+  {vi:'Nhìn một bức tranh trừu tượng, có người thấy vô cùng xấu xí, có người lại thấy trong đó sự tự do và sự sống.',zh:'看到一幅抽象画，有人觉得极其丑陋，有人却从中看到了自由和生命。',py:'Kàndào yì fú chōuxiàng huà, yǒu rén juéde jíqí chǒulòu, yǒu rén què cóng zhōng kàndàole zìyóu hé shēngmìng.',goiY:['有人……有人却…… = có người… có người lại…','极其 = vô cùng','丑陋 = xấu xí'],giai:'有人……，有人却…… đối lập hai cách nhìn; 从中 = "từ trong đó", dịch gọn là "trong đó".'},
+  {vi:'Trong thí nghiệm, mỗi nhóm có hai bức tranh: một bức do một hoạ sĩ nổi tiếng vẽ, bức kia có thể là nét vẽ nguệch ngoạc của trẻ sơ sinh hoặc đười ươi.',zh:'实验中，每组有两幅画，一幅出自著名画家之手，另一幅可能是婴儿或者猩猩的涂鸦。',py:'Shíyàn zhōng, měi zǔ yǒu liǎng fú huà, yì fú chūzì zhùmíng huàjiā zhī shǒu, lìng yì fú kěnéng shì yīng\'ér huòzhě xīngxing de túyā.',goiY:['出自……之手 = do… làm ra','婴儿 = trẻ sơ sinh','猩猩 = đười ươi, tinh tinh'],giai:'一幅……，另一幅…… = một bức…, bức kia…; 出自……之手 dịch "do … vẽ/làm ra".'},
+  {vi:'Vì có một số chữ ký được cố ý viết sai, nên tình nguyện viên không thể xác định rốt cuộc tác giả của bức tranh là ai.',zh:'因为有些签名是故意写错的，所以志愿者无法确认画的作者到底是谁。',py:'Yīnwèi yǒuxiē qiānmíng shì gùyì xiěcuò de, suǒyǐ zhìyuànzhě wúfǎ quèrèn huà de zuòzhě dàodǐ shì shéi.',goiY:['是……的 = nhấn mạnh cách thức','确认 = xác nhận, xác định','到底 = rốt cuộc'],giai:'是故意写错的 dùng 是……的 nhấn mạnh cách thức (cố ý); 无法 = 没有办法 (văn viết).'},
+  {vi:'Sau khi các nhà nghiên cứu điều chỉnh vị trí của một số yếu tố trên tranh, vùng não liên quan đến hàm ý không còn hoạt động mạnh như trước nữa.',zh:'研究者把画上一些元素的位置调整了以后，大脑中有关含意的区域就没有那么活跃了。',py:'Yánjiūzhě bǎ huà shang yìxiē yuánsù de wèizhi tiáozhěngle yǐhòu, dànǎo zhōng yǒuguān hányì de qūyù jiù méiyǒu nàme huóyuè le.',goiY:['把……调整了以后 = sau khi điều chỉnh…','元素 = yếu tố','区域 = khu vực, vùng','活跃 = sôi nổi, hoạt động mạnh'],giai:'Câu 把 có tân ngữ dài (画上一些元素的位置); 没有那么活跃了 = "không còn hoạt động mạnh như thế nữa".'},
+  {vi:'Ít nhất là hiện nay vẫn chưa có bằng chứng cho thấy đười ươi hay trẻ sơ sinh cũng có thể cảm nhận được bố cục của bức tranh.',zh:'至少目前还没有证据表明，猩猩或者婴儿也能感知画作的布局。',py:'Zhìshǎo mùqián hái méiyǒu zhèngjù biǎomíng, xīngxing huòzhě yīng\'ér yě néng gǎnzhī huàzuò de bùjú.',goiY:['至少 = ít nhất','目前 = hiện nay','证据 = bằng chứng','布局 = bố cục'],giai:'没有证据表明…… = chưa có bằng chứng cho thấy…; 目前 nhấn mạnh kết luận chỉ đúng ở thời điểm hiện tại.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1346,30 +1274,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
   sapXep:[
-    {manh:['给我留下了','上海','极其深刻的','印象'],
-     dap:'上海给我留下了极其深刻的印象。',
-     vn:'Thượng Hải để lại cho tôi ấn tượng vô cùng sâu sắc.',
-     giai:'Câu 29 sách bài tập. Chủ ngữ 上海 → 给我 → 留下了 → định ngữ 极其深刻的 → tân ngữ 印象.'},
-    {manh:['他也','哪怕是','不愿意再等了','一分钟'],
-     dap:'哪怕是一分钟他也不愿意再等了。',
-     vn:'Dù chỉ một phút anh ấy cũng không muốn chờ thêm nữa.',
-     giai:'Câu 30 sách bài tập. 哪怕是 + điều kiện cực đoan (一分钟) đứng đầu, vế sau 他也…….'},
-    {manh:['出自','成语“画龙点睛”','便','关于他的传说'],
-     dap:'成语“画龙点睛”便出自关于他的传说。',
-     vn:'Thành ngữ "vẽ rồng điểm mắt" chính là xuất phát từ truyền thuyết về ông ấy.',
-     giai:'Câu 31 sách bài tập. Chủ ngữ → phó từ 便 → động từ 出自 → nguồn gốc.'},
-    {manh:['签名','没有','三分之一的画作','作者'],
-     dap:'三分之一的画作作者没有签名。',
-     vn:'Một phần ba số tranh không có chữ ký của tác giả.',
-     giai:'Định ngữ 三分之一的画作 + chủ ngữ 作者 → 没有 → 签名.'},
-    {manh:['可见','一有时间就去看父母，','他很孝敬父母','他'],
-     dap:'他一有时间就去看父母，可见他很孝敬父母。',
-     vn:'Hễ có thời gian là anh ấy về thăm bố mẹ, có thể thấy anh ấy rất hiếu thảo.',
-     giai:'Căn cứ (一……就…… — ôn HSK 4) đứng TRƯỚC, 可见 + kết luận đứng SAU.'},
-    {manh:['被','画面元素','调整了','研究者'],
-     dap:'画面元素被研究者调整了。',
-     vn:'Các yếu tố trong bức tranh đã bị nhà nghiên cứu điều chỉnh.',
-     giai:'Câu 被 (ôn HSK 3–4): đối tượng chịu tác động + 被 + người làm + động từ + 了.'}
+    {manh:['给我留下了','上海','极其深刻的','印象'],dap:'上海给我留下了极其深刻的印象。',vn:'Thượng Hải để lại cho tôi ấn tượng vô cùng sâu sắc.',giai:'Câu 29 sách bài tập. Chủ ngữ 上海 → 给我 → 留下了 → định ngữ 极其深刻的 → tân ngữ 印象.'},
+    {manh:['他也','哪怕是','不愿意再等了','一分钟'],dap:'哪怕是一分钟他也不愿意再等了。',vn:'Dù chỉ một phút anh ấy cũng không muốn chờ thêm nữa.',giai:'Câu 30 sách bài tập. 哪怕是 + điều kiện cực đoan (一分钟) đứng đầu, vế sau 他也…….'},
+    {manh:['出自','这句话','一本','很有名的书'],dap:'这句话出自一本很有名的书。',vn:'Câu nói này xuất phát từ một cuốn sách rất nổi tiếng.',giai:'Theo mẫu câu 31 sách bài tập: chủ ngữ → động từ 出自 → nguồn gốc (lượng từ 一本 + định ngữ + 书).'},
+    {manh:['签名','没有','三分之一的画作','作者'],dap:'三分之一的画作作者没有签名。',vn:'Một phần ba số tranh không có chữ ký của tác giả.',giai:'Định ngữ 三分之一的画作 + chủ ngữ 作者 → 没有 → 签名.'},
+    {manh:['可见','一有时间就去看父母，','他很孝敬父母','他'],dap:'他一有时间就去看父母，可见他很孝敬父母。',vn:'Hễ có thời gian là anh ấy về thăm bố mẹ, có thể thấy anh ấy rất hiếu thảo.',giai:'Căn cứ (一……就…… — ôn HSK 4) đứng TRƯỚC, 可见 + kết luận đứng SAU.'},
+    {manh:['被','画面元素','调整了','研究者'],dap:'画面元素被研究者调整了。',vn:'Các yếu tố trong bức tranh đã bị nhà nghiên cứu điều chỉnh.',giai:'Câu 被 (ôn HSK 3–4): đối tượng chịu tác động + 被 + người làm + động từ + 了.'}
   ]
 };
 
@@ -1379,30 +1289,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (艺术形式). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 抽象 · 欣赏 · 作品 · 极其 · 可见 · 哪怕 · 分辨 · 业余.',
   questions:[
-    {q_zh:'文章中说“每个人对抽象艺术可以有不同的解读”，你同意这种说法吗？',
-     q_vn:'Bài viết nói "mỗi người có thể có cách hiểu khác nhau về nghệ thuật trừu tượng", em có đồng ý không?',
-     hint:'Nêu rõ đồng ý hay không + một lý do, dùng 虽然……但是……',
-     sample:'我同意。虽然抽象画看起来没有什么规则，但是每个人的经历不一样，看到的东西也不一样。有人觉得它极其神秘，有人却感受到了自由。',
-     sample_vn:'Tôi đồng ý. Tuy tranh trừu tượng trông như không theo quy tắc nào, nhưng trải nghiệm của mỗi người khác nhau nên thứ họ nhìn thấy cũng khác. Có người thấy nó vô cùng bí ẩn, có người lại cảm nhận được sự tự do.',
-     note:'Câu hỏi 你同意吗 → câu đầu tiên phải trả lời thẳng 我同意 / 我不太同意, sau đó mới giải thích.'},
-    {q_zh:'你对哪些艺术形式感兴趣？',
-     q_vn:'Em quan tâm đến những loại hình nghệ thuật nào?',
-     hint:'Kể 2–3 loại hình, dùng 不仅……也…… hoặc 其余',
-     sample:'我不仅喜欢音乐，也喜欢摄影。业余时间我常常去公园拍照。其余的艺术形式，比如京剧，我还不太了解。',
-     sample_vn:'Tôi không chỉ thích âm nhạc mà còn thích nhiếp ảnh. Thời gian rảnh tôi thường ra công viên chụp ảnh. Các loại hình nghệ thuật còn lại, ví dụ Kinh kịch, tôi vẫn chưa hiểu lắm.',
-     note:'Dùng được 其余 ở đây rất tự nhiên: nói những thứ mình thích trước, 其余的 sau.'},
-    {q_zh:'请介绍一种你最喜欢的艺术，并说说喜欢的理由或你对它的看法。',
-     q_vn:'Hãy giới thiệu một loại hình nghệ thuật em thích nhất và nói lý do em thích hoặc quan điểm của em về nó.',
-     hint:'Giới thiệu + 2 lý do, dùng 极其 và 哪怕',
-     sample:'我最喜欢越南的水上木偶戏。它的故事极其有趣，音乐也很美。哪怕看过很多次，我每次去看也还是觉得很新鲜。',
-     sample_vn:'Tôi thích nhất múa rối nước Việt Nam. Câu chuyện của nó vô cùng thú vị, âm nhạc cũng rất hay. Dù đã xem nhiều lần, lần nào đi xem tôi vẫn thấy rất mới mẻ.',
-     note:'Giới thiệu nghệ thuật của Việt Nam bằng tiếng Trung là đề tài HSKK rất hay gặp — nên chuẩn bị sẵn.'},
-    {q_zh:'你觉得自己能分辨出大师的作品和孩子的涂鸦吗？为什么？',
-     q_vn:'Em có nghĩ mình phân biệt được tác phẩm của bậc thầy và nét vẽ nguệch ngoạc của trẻ con không? Vì sao?',
-     hint:'Trả lời + dẫn kết quả thí nghiệm trong bài, dùng 可见',
-     sample:'我觉得我分辨不出来。不过课文里的实验说，大部分人更喜欢艺术家的作品，可见我们的大脑能感知艺术家的用心。',
-     sample_vn:'Tôi nghĩ mình không phân biệt được. Nhưng thí nghiệm trong bài nói phần lớn mọi người thích tác phẩm của nghệ sĩ hơn, có thể thấy não bộ của chúng ta cảm nhận được tâm huyết của người nghệ sĩ.',
-     note:'Dẫn lại nội dung bài khoá làm bằng chứng — câu trả lời sẽ thuyết phục hơn.'}
+    {q_zh:'文章中说“每个人对抽象艺术可以有不同的解读”，你同意这句话吗？',q_vn:'Bài viết nói "mỗi người có thể có cách hiểu khác nhau về nghệ thuật trừu tượng", em có đồng ý không?',hint:'Nêu rõ đồng ý hay không + một lý do, dùng 虽然……但是……',sample:'我同意。虽然抽象画看起来没有什么规则，但是每个人的经历不一样，看到的东西也不一样。有人觉得它极其神秘，有人却很喜欢它的颜色。',sample_vn:'Tôi đồng ý. Tuy tranh trừu tượng trông như không theo quy tắc nào, nhưng trải nghiệm của mỗi người khác nhau nên thứ họ nhìn thấy cũng khác. Có người thấy nó vô cùng bí ẩn, có người lại rất thích màu sắc của nó.',note:'Câu hỏi 你同意吗 → câu đầu tiên phải trả lời thẳng 我同意 / 我不太同意, sau đó mới giải thích.'},
+    {q_zh:'你对哪些艺术形式感兴趣？',q_vn:'Em quan tâm đến những loại hình nghệ thuật nào?',hint:'Kể 2–3 loại hình, dùng 不仅……也…… hoặc 其余',sample:'我不仅喜欢音乐，也喜欢摄影。业余时间我常常去公园拍照。其余的艺术形式，比如京剧，我还不太了解。',sample_vn:'Tôi không chỉ thích âm nhạc mà còn thích nhiếp ảnh. Thời gian rảnh tôi thường ra công viên chụp ảnh. Các loại hình nghệ thuật còn lại, ví dụ Kinh kịch, tôi vẫn chưa hiểu lắm.',note:'Dùng được 其余 ở đây rất tự nhiên: nói những thứ mình thích trước, 其余的 sau.'},
+    {q_zh:'请介绍一种你最喜欢的艺术，并说说你为什么喜欢它。',q_vn:'Hãy giới thiệu một loại hình nghệ thuật em thích nhất và nói vì sao em thích nó.',hint:'Giới thiệu + 2 lý do, dùng 极其 và 哪怕',sample:'我最喜欢越南的传统音乐。它的声音极其优美，故事也很有意思。哪怕听过很多次，我每次听也还是觉得很新鲜。',sample_vn:'Tôi thích nhất âm nhạc truyền thống Việt Nam. Âm thanh của nó vô cùng du dương, câu chuyện cũng rất thú vị. Dù đã nghe nhiều lần, lần nào nghe tôi vẫn thấy rất mới mẻ.',note:'Giới thiệu nghệ thuật của Việt Nam bằng tiếng Trung là đề tài HSKK rất hay gặp — nên chuẩn bị sẵn.'},
+    {q_zh:'你觉得自己能分辨出著名画家的作品和孩子的涂鸦吗？为什么？',q_vn:'Em có nghĩ mình phân biệt được tác phẩm của hoạ sĩ nổi tiếng và nét vẽ nguệch ngoạc của trẻ con không? Vì sao?',hint:'Trả lời + dẫn kết quả thí nghiệm trong bài, dùng 可见',sample:'我觉得我分辨不出来。不过课文里的实验说，大部分人更喜欢艺术家的作品，可见我们的大脑能感知艺术家的用心。',sample_vn:'Tôi nghĩ mình không phân biệt được. Nhưng thí nghiệm trong bài nói phần lớn mọi người thích tác phẩm của nghệ sĩ hơn, có thể thấy não bộ của chúng ta cảm nhận được tâm huyết của người nghệ sĩ.',note:'Dẫn lại nội dung bài khoá làm bằng chứng — câu trả lời sẽ thuyết phục hơn.'}
   ]
 };
 
@@ -1493,45 +1383,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Đi xem triển lãm tranh trừu tượng, bạn em than không hiểu gì.',
-     a:{sp:'Bạn',zh:'这些画我一幅也看不懂，有什么好看的？',vn:'Mấy bức tranh này tớ chẳng hiểu bức nào, có gì hay mà xem?'},
-     need:['Dùng 极其','Khuyên bạn nhìn theo cách khác'],
-     sample:'抽象画是极其自由的艺术，你别想它画的是什么，感受一下颜色就行了。',
-     samplePy:'Chōuxiànghuà shì jíqí zìyóu de yìshù, nǐ bié xiǎng tā huà de shì shénme, gǎnshòu yíxià yánsè jiù xíng le.',
-     sampleVn:'Tranh trừu tượng là nghệ thuật vô cùng tự do, cậu đừng nghĩ nó vẽ cái gì, cảm nhận màu sắc là được rồi.',
-     tip:'极其 + từ HAI âm tiết (自由, 神秘, 重要). Đừng viết 极其好.'},
-
-    {scene:'Cả lớp đi dã ngoại, cô giáo chỉ thấy có hai bạn ở điểm tập trung.',
-     a:{sp:'Cô',zh:'怎么只有你们两个人？',vn:'Sao chỉ có hai em thế này?'},
-     need:['Dùng 其余','Giải thích các bạn còn lại đang ở đâu'],
-     sample:'老师，其余的同学去买水了，马上就回来。',
-     samplePy:'Lǎoshī, qíyú de tóngxué qù mǎi shuǐ le, mǎshàng jiù huílai.',
-     sampleVn:'Thưa cô, các bạn còn lại đi mua nước rồi, sẽ về ngay ạ.',
-     tip:'其余的 + N chỉ phần còn lại ngoài phần đã nói (hai em). Câu của sách: 其余的同学呢？'},
-
-    {scene:'Bạn em thấy một cậu bạn cùng lớp ngày nào cũng ở lại phòng vẽ đến tối.',
-     a:{sp:'Bạn',zh:'小林每天放学都在画室画到很晚。',vn:'Ngày nào tan học Tiểu Lâm cũng ở phòng vẽ đến rất muộn.'},
-     need:['Dùng 可见','Rút ra một kết luận về Tiểu Lâm'],
-     sample:'可见他真的很喜欢画画儿，以后说不定能成为画家呢。',
-     samplePy:'Kějiàn tā zhēn de hěn xǐhuan huà huàr, yǐhòu shuō bu dìng néng chéngwéi huàjiā ne.',
-     sampleVn:'Có thể thấy cậu ấy thật sự rất thích vẽ, sau này biết đâu lại thành hoạ sĩ ấy chứ.',
-     tip:'Căn cứ đã có trong lời bạn nói, em chỉ cần 可见 + kết luận.'},
-
-    {scene:'Mai là ngày nộp bài dự thi vẽ, bạn khuyên em đi ngủ sớm.',
-     a:{sp:'Bạn',zh:'都十二点了，你先睡吧，明天再画。',vn:'Mười hai giờ rồi, cậu ngủ trước đi, mai vẽ tiếp.'},
-     need:['Dùng 哪怕……也……','Thể hiện quyết tâm'],
-     sample:'不行，明天就要交了。哪怕熬夜，我今天也得把这幅画画完。',
-     samplePy:'Bù xíng, míngtiān jiù yào jiāo le. Nǎpà áoyè, wǒ jīntiān yě děi bǎ zhè fú huà huàwán.',
-     sampleVn:'Không được, mai là phải nộp rồi. Dù có phải thức khuya, hôm nay tớ cũng phải vẽ xong bức này.',
-     tip:'Câu này gần giống bài tập 3 của sách: 哪怕熬夜，我今天也得把这个计划做完. Kết hợp thêm câu 把 (ôn HSK 3–4).'},
-
-    {scene:'Em không tìm thấy chìa khoá, mẹ hỏi em để đâu.',
-     a:{sp:'Mẹ',zh:'钥匙呢？你放哪儿了？',vn:'Chìa khoá đâu? Con để đâu rồi?'},
-     need:['Dùng 随手','Đoán nơi mình có thể đã để'],
-     sample:'我也不记得了，可能进门的时候随手放在鞋柜上了。',
-     samplePy:'Wǒ yě bú jìde le, kěnéng jìnmén de shíhou suíshǒu fàng zài xiéguì shang le.',
-     sampleVn:'Con cũng không nhớ nữa, có lẽ lúc vào nhà con tiện tay để trên tủ giày rồi.',
-     tip:'随手 + động từ tay (放, 关, 拿). Đừng nhầm với 随便 (tuỳ tiện).'}
+    {scene:'Đi xem triển lãm tranh trừu tượng, bạn em than không hiểu gì.',a:{sp:'Bạn',zh:'这些画看起来都差不多，有什么好看的？',vn:'Mấy bức tranh này trông bức nào cũng na ná nhau, có gì hay mà xem?'},need:['Dùng 极其','Khuyên bạn nhìn theo cách khác'],sample:'抽象画是极其自由的艺术，你别想它画的是什么，感受一下颜色就行了。',samplePy:'Chōuxiànghuà shì jíqí zìyóu de yìshù, nǐ bié xiǎng tā huà de shì shénme, gǎnshòu yíxià yánsè jiù xíng le.',sampleVn:'Tranh trừu tượng là nghệ thuật vô cùng tự do, cậu đừng nghĩ nó vẽ cái gì, cảm nhận màu sắc là được rồi.',tip:'极其 + từ HAI âm tiết (自由, 神秘, 重要). Đừng viết 极其好.'},
+    {scene:'Cả lớp đi dã ngoại, cô giáo chỉ thấy có hai bạn ở điểm tập trung.',a:{sp:'Cô',zh:'怎么只有你们两个人？',vn:'Sao chỉ có hai em thế này?'},need:['Dùng 其余','Giải thích các bạn còn lại đang ở đâu'],sample:'老师，其余的同学去买水了，马上就回来。',samplePy:'Lǎoshī, qíyú de tóngxué qù mǎi shuǐ le, mǎshàng jiù huílai.',sampleVn:'Thưa cô, các bạn còn lại đi mua nước rồi, sẽ về ngay ạ.',tip:'其余的 + N chỉ phần còn lại ngoài phần đã nói (hai em). Câu của sách: 其余的同学呢？'},
+    {scene:'Bạn em thấy một cậu bạn cùng lớp ngày nào cũng ở lại phòng vẽ đến tối.',a:{sp:'Bạn',zh:'小林每天放学都留在学校画画，画到很晚。',vn:'Ngày nào tan học Tiểu Lâm cũng ở phòng vẽ đến rất muộn.'},need:['Dùng 可见','Rút ra một kết luận về Tiểu Lâm'],sample:'可见他真的很喜欢画画儿，以后说不定能成为画家呢。',samplePy:'Kějiàn tā zhēn de hěn xǐhuan huà huàr, yǐhòu shuō bu dìng néng chéngwéi huàjiā ne.',sampleVn:'Có thể thấy cậu ấy thật sự rất thích vẽ, sau này biết đâu lại thành hoạ sĩ ấy chứ.',tip:'Căn cứ đã có trong lời bạn nói, em chỉ cần 可见 + kết luận.'},
+    {scene:'Mai là ngày nộp bài dự thi vẽ, bạn khuyên em đi ngủ sớm.',a:{sp:'Bạn',zh:'都十二点了，你先睡吧，明天再画。',vn:'Mười hai giờ rồi, cậu ngủ trước đi, mai vẽ tiếp.'},need:['Dùng 哪怕……也……','Thể hiện quyết tâm'],sample:'不行，明天就要交了。哪怕熬夜，我今天也得把这幅画画完。',samplePy:'Bù xíng, míngtiān jiù yào jiāo le. Nǎpà áoyè, wǒ jīntiān yě děi bǎ zhè fú huà huàwán.',sampleVn:'Không được, mai là phải nộp rồi. Dù có phải thức khuya, hôm nay tớ cũng phải vẽ xong bức này.',tip:'Câu này gần giống bài tập 3 của sách: 哪怕熬夜，我今天也得把这个计划做完. Kết hợp thêm câu 把 (ôn HSK 3–4).'},
+    {scene:'Em không tìm thấy chìa khoá, mẹ hỏi em để đâu.',a:{sp:'Mẹ',zh:'钥匙呢？你放哪儿了？',vn:'Chìa khoá đâu? Con để đâu rồi?'},need:['Dùng 随手','Đoán nơi mình có thể đã để'],sample:'我也不记得了，可能进门的时候随手放在桌子上了。',samplePy:'Wǒ yě bú jìde le, kěnéng jìnmén de shíhou suíshǒu fàng zài zhuōzi shang le.',sampleVn:'Con cũng không nhớ nữa, có lẽ lúc vào nhà con tiện tay để trên bàn rồi.',tip:'随手 + động từ tay (放, 关, 拿). Đừng nhầm với 随便 (tuỳ tiện).'}
   ]
 };
 
@@ -1542,29 +1398,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết bài giới thiệu triển lãm cho báo tường của trường.',
-     a:'这些画可奇怪了，谁也看不懂。',b:'这些抽象派作品在有人看来极其神秘，有人却从中感受到了自由。',better:'b',
-     why:'Bài viết cho báo tường cần giọng VĂN VIẾT: 极其, 在有人看来, 从中感受到. Câu a là khẩu ngữ (可奇怪了, 谁也看不懂).'},
-
-    {scene:'Em nói chuyện với bạn thân trong phòng tranh.',
-     a:'这幅画可真好看！',b:'此幅作品极其优美，令人赞叹。',better:'a',
-     why:'Với bạn thân, nói tự nhiên: 这幅画可真好看！ Câu b dùng 此, 令人赞叹 — văn viết, nói ra nghe như đọc thuyết minh.'},
-
-    {scene:'Em trình bày kết quả thí nghiệm trong bài thuyết trình môn Sinh học.',
-     a:'由此可见，人的大脑能够感知作品的布局。',b:'所以说啊，咱们的脑子挺厉害的。',better:'a',
-     why:'Thuyết trình dùng giọng trang trọng: 由此可见, 能够感知. Câu b khẩu ngữ (咱们, 脑子, 挺厉害).'},
-
-    {scene:'Bạn hỏi em muốn ăn gì, em thấy món nào cũng được.',
-     a:'我对食物没有特别的要求，请您决定。',b:'随便，你点吧！',better:'b',
-     why:'Với bạn bè, 随便 là cách nói tự nhiên. Câu a dùng 您, 请……决定 — quá khách sáo.'},
-
-    {scene:'Thông báo của câu lạc bộ mỹ thuật dán trên bảng tin.',
-     a:'画室这周不开，大家别来了啊！',b:'因画室布局调整，本周暂停开放。',better:'b',
-     why:'Thông báo chính thức: ngắn gọn, văn viết (因, 布局调整, 暂停开放). Câu a như nhắn tin cho bạn.'},
-
-    {scene:'Em xin lỗi cô giáo vì nộp bài muộn.',
-     a:'老师，对不起，我没按时交作业，下次一定注意。',b:'哎呀，忘了忘了，明天给你吧。',better:'a',
-     why:'Với thầy cô phải lễ phép, nhận lỗi và hứa sửa. Câu b quá suồng sã, dùng 你 với cô giáo.'}
+    {scene:'Em viết bài giới thiệu triển lãm cho báo tường của trường.',a:'这些画可奇怪了，谁也看不懂。',b:'这些抽象派作品在有人看来极其神秘，有人却从中感受到了自由。',better:'b',why:'Bài viết cho báo tường cần giọng VĂN VIẾT: 极其, 在有人看来, 从中感受到. Câu a là khẩu ngữ (可奇怪了, 谁也看不懂).'},
+    {scene:'Em nói chuyện với bạn thân trong phòng tranh.',a:'这幅画可真好看！',b:'这幅作品极其优美，令人难忘。',better:'a',why:'Với bạn thân, nói tự nhiên: 这幅画可真好看！ Câu b dùng 极其优美, 令人难忘 — văn viết, nói ra nghe như đọc thuyết minh.'},
+    {scene:'Em trình bày kết quả thí nghiệm trong bài thuyết trình môn Sinh học.',a:'由此可见，人的大脑能够感知作品的布局。',b:'所以说啊，咱们的脑子挺厉害的。',better:'a',why:'Thuyết trình dùng giọng trang trọng: 由此可见, 能够感知. Câu b khẩu ngữ (咱们, 脑子, 挺厉害).'},
+    {scene:'Bạn hỏi em muốn ăn gì, em thấy món nào cũng được.',a:'我对食物没有特别的要求，请您决定。',b:'随便，你点吧！',better:'b',why:'Với bạn bè, 随便 là cách nói tự nhiên. Câu a dùng 您, 请……决定 — quá khách sáo.'},
+    {scene:'Thông báo của câu lạc bộ mỹ thuật dán trên bảng tin.',a:'这周我们不活动，大家别来了啊！',b:'由于教室布局调整，本周活动改到下周。',better:'b',why:'Thông báo chính thức: ngắn gọn, văn viết (由于, 布局调整, 本周). Câu a như nhắn tin cho bạn.'},
+    {scene:'Em xin lỗi cô giáo vì nộp bài muộn.',a:'老师，对不起，我没按时交作业，以后不会再这样了。',b:'哎呀，忘了忘了，明天给你吧。',better:'a',why:'Với thầy cô phải lễ phép, nhận lỗi và hứa sửa. Câu b quá suồng sã, dùng 你 với cô giáo.'}
   ]
 };
 

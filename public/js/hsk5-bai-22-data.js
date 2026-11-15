@@ -1200,90 +1200,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 43) + bài tập 3 của sách (tr. 45) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'承认',right:'错误'},
   {left:'转变',right:'观念'},
-  {left:'交换',right:'意见'},
-  {left:'坚持',right:'主张'},
+  {left:'交换',right:'礼物'},
   {left:'完美的',right:'计划'},
-  {left:'平等的',right:'权利'},
   {left:'自私的',right:'行为'},
-  {left:'过分地',right:'强调'},
-  {left:'全面地',right:'了解'},
-  {left:'公平地',right:'对待'},
   {left:'属于',right:'我们'},
-  {left:'拥有',right:'幸福'},
   {left:'巨大的',right:'变化'},
   {left:'讲',right:'童话'},
-  {left:'价值',right:'判断'},
   {left:'疼爱',right:'孩子'},
   {left:'得出',right:'结论'},
-  {left:'实现',right:'梦想'},
-  {left:'划',right:'火柴'},
-  {left:'提出',right:'观点'}
+  {left:'提出',right:'观点'},
+  {left:'公平地',right:'对待'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bảng 生词 có ít nhất một câu
+// ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'很多家长可能',blank:'过分',post:'强调阅读的作用。',hint:'(quá mức)',ans:'过分',exp:'过分 + động từ/tính từ = quá mức, quá đáng: 过分强调.'},
-  {pre:'老师一再',blank:'强调',post:'，考试的时候千万不能紧张。',hint:'(nhấn mạnh)',ans:'强调'},
-  {pre:'这篇',blank:'作文',post:'写得很好，老师给了九十分。',hint:'(bài văn)',ans:'作文'},
-  {pre:'讨论的时候，每个同学都可以提出自己的',blank:'观点',post:'。',hint:'(quan điểm)',ans:'观点'},
-  {pre:'人都是有感情甚至自私的，很难做到任何时候都很',blank:'客观',post:'。',hint:'(khách quan)',ans:'客观'},
-  {pre:'学校希望学生德、智、体',blank:'全面',post:'发展。',hint:'(toàn diện)',ans:'全面'},
-  {pre:'你可以试着',blank:'转变',post:'一下思路，可能会快一点解决问题。',hint:'(thay đổi)',ans:'转变'},
-  {pre:'很多老人的传统',blank:'观念',post:'很难改变。',hint:'(quan niệm)',ans:'观念'},
-  {pre:'停电了，奶奶划了一根',blank:'火柴',post:'，点上了蜡烛。',hint:'(que diêm)',ans:'火柴'},
-  {pre:'很久没人住了，桌子上有一层',blank:'灰',post:'。',hint:'(bụi)',ans:'灰'},
-  {pre:'网上报名的资料',blank:'一旦',post:'提交，就不能更改了。',hint:'(một khi)',ans:'一旦',exp:'一旦…，就… = một khi… thì…; nói điều kiện xảy ra thì kết quả theo ngay.'},
-  {pre:'这座',blank:'王宫',post:'已经有三百多年的历史了。',hint:'(hoàng cung)',ans:'王宫'},
-  {pre:'很多童话的结尾都是',blank:'王子',post:'和公主幸福地生活在一起。',hint:'(hoàng tử)',ans:'王子'},
-  {pre:'她的梦想实现了，一切幸福都',blank:'属于',post:'她。',hint:'(thuộc về)',ans:'属于'},
-  {pre:'考试失败了，要冷静地',blank:'对待',post:'，别太难过。',hint:'(đối mặt, đối xử)',ans:'对待'},
-  {pre:'新年晚会上，同学们互相',blank:'交换',post:'了礼物。',hint:'(trao đổi)',ans:'交换'},
-  {pre:'中国',blank:'拥有',post:'五千多年的历史。',hint:'(có, sở hữu)',ans:'拥有'},
-  {pre:'这十年，我的家乡发生了',blank:'巨大',post:'的变化。',hint:'(to lớn)',ans:'巨大'},
-  {pre:'虽然这次的错误有点儿严重，但你应该勇敢地',blank:'承认',post:'。',hint:'(thừa nhận)',ans:'承认'},
-  {pre:'另外还要承认',blank:'人性',post:'中一些先天的不完美。',hint:'(bản tính con người)',ans:'人性'},
-  {pre:'世界上没有',blank:'完美',post:'的人，每个人都有缺点。',hint:'(hoàn hảo)',ans:'完美'},
-  {pre:'刚开始工作，这样的错误是',blank:'难免',post:'的。',hint:'(khó tránh khỏi)',ans:'难免',exp:'难免 = khó tránh khỏi; 是…难免的 = chuyện khó tránh.'},
-  {pre:'奶奶最',blank:'疼爱',post:'我这个小孙女了。',hint:'(thương yêu)',ans:'疼爱'},
-  {pre:'法律面前人人',blank:'平等',post:'。',hint:'(bình đẳng)',ans:'平等'},
-  {pre:'只想着自己的人太',blank:'自私',post:'了，没有人愿意跟他交朋友。',hint:'(ích kỷ)',ans:'自私'},
-  {pre:'两个方案我更',blank:'倾向',post:'于第一个。',hint:'(nghiêng về)',ans:'倾向'},
-  {pre:'希望你能给我一个好的',blank:'理由',post:'，解释清楚你为什么这么做。',hint:'(lý do)',ans:'理由'},
-  {pre:'学校不仅要教知识，也要教学生讲',blank:'道德',post:'。',hint:'(đạo đức)',ans:'道德'},
-  {pre:'',blank:'自从',post:'我听说了这件事，就开始思考应该如何阅读。',hint:'(từ khi)',ans:'自从',exp:'自从…(以后)，… = từ khi…; chỉ mốc trong quá khứ, không dùng cho tương lai.'},
-  {pre:'小时候，妈妈每天晚上都给我讲一个',blank:'童话',post:'故事。',hint:'(truyện cổ tích)',ans:'童话'},
-  {pre:'你的这个建议很有',blank:'价值',post:'，我马上告诉总裁。',hint:'(giá trị)',ans:'价值'},
-  {pre:'他太',blank:'单纯',post:'了，这样很容易被人骗。',hint:'(đơn thuần, ngây thơ)',ans:'单纯'},
-  {pre:'他',blank:'主张',post:'将会议地点改在上海。',hint:'(chủ trương, cho là nên)',ans:'主张'},
-  {pre:'所谓“',blank:'知感',post:'”就是别人告诉你、要求你记住的那一部分。',hint:'(tri giác)',ans:'知感'},
-  {pre:'安徒生写过一个很有名的童话，叫《',blank:'卖火柴的小女孩儿',post:'》。',hint:'(Cô bé bán diêm)',ans:'卖火柴的小女孩儿'},
-  {pre:'《',blank:'灰姑娘',post:'》是众所周知的童话。',hint:'(Cô bé Lọ Lem)',ans:'灰姑娘'}
+  {pre:'他对自己的要求',blank:'过分',post:'严格，一点儿小错都不能接受。',hint:'(quá mức)',ans:'过分',exp:'过分 làm vị ngữ = quá đáng (太过分了); đứng trước động từ = quá mức (过分担心).'},
+  {pre:'老师一再',blank:'强调',post:'，考试的时候一定要仔细检查。',hint:'(nhấn mạnh)',ans:'强调',exp:'强调 + điều quan trọng = nhấn mạnh; 一再 (bài 13) = nhiều lần.'},
+  {pre:'这篇新闻只听了一个人的话，写得不够',blank:'客观',post:'。',hint:'(khách quan)',ans:'客观',exp:'客观 = khách quan, nhìn đủ các phía, không theo ý riêng.'},
+  {pre:'厨房里的',blank:'火柴',post:'用完了，你去买一些回来吧。',hint:'(diêm)',ans:'火柴',exp:'火柴 = que diêm; lượng từ 根 (một que diêm).'},
+  {pre:'他今天穿了一件',blank:'灰',post:'色的外套。',hint:'(xám)',ans:'灰',exp:'灰 = tro, bụi; làm tính từ chỉ màu xám: 灰色.'},
+  {pre:'这辆自行车不',blank:'属于',post:'我，是我向朋友借的。',hint:'(thuộc về)',ans:'属于',exp:'属于 + người/nhóm = thuộc về (sở hữu, phạm vi). Phủ định: 不属于.'},
+  {pre:'他终于',blank:'承认',post:'是自己弄坏了电脑。',hint:'(thừa nhận)',ans:'承认',exp:'承认 + sự thật/lỗi = thừa nhận (dù không muốn).'},
+  {pre:'爷爷奶奶特别',blank:'疼爱',post:'小孙子，他要什么就给他买什么。',hint:'(thương yêu, cưng chiều)',ans:'疼爱',exp:'疼爱 = thương yêu, cưng chiều — bề trên với bề dưới (ông bà, cha mẹ với con cháu).'},
+  {pre:'他只想着自己，从来不管别人，真',blank:'自私',post:'。',hint:'(ích kỷ)',ans:'自私',exp:'自私 = ích kỷ, chỉ nghĩ cho mình.'},
+  {pre:'小时候，妈妈每天晚上都给我讲一个',blank:'童话',post:'故事。',hint:'(cổ tích, đồng thoại)',ans:'童话',exp:'童话 = truyện cổ tích, truyện thiếu nhi: 讲童话, 童话故事.'},
+  {pre:'比起坐飞机，我更',blank:'倾向',post:'于坐火车，可以看看外面的风光。',hint:'(nghiêng về)',ans:'倾向',exp:'倾向于 + lựa chọn = nghiêng về, thiên về; còn làm danh từ: 自然倾向.'},
+  {pre:'她什么事都想做得',blank:'完美',post:'，所以常常把自己弄得很累。',hint:'(hoàn hảo)',ans:'完美',exp:'完美 = hoàn hảo, không có khuyết điểm: 完美的计划, 做得很完美.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (一旦 · 难免 · 自从) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['网上报名的资料','一旦','提交','，','就','不能更改了','。'],ans:'网上报名的资料一旦提交，就不能更改了。',audio:'网上报名的资料一旦提交，就不能更改了。'},
-  {words:['女人','一旦','做了母亲','，','就','变得矛盾了','。'],ans:'女人一旦做了母亲，就变得矛盾了。',audio:'女人一旦做了母亲，就变得矛盾了。'},
-  {words:['一旦','有人闯入这个空间','，','我们','就会','感觉不舒服','。'],ans:'一旦有人闯入这个空间，我们就会感觉不舒服。',audio:'一旦有人闯入这个空间，我们就会感觉不舒服。'},
-  {words:['刚开始工作','，','这样的错误','是','难免的','。'],ans:'刚开始工作，这样的错误是难免的。',audio:'刚开始工作，这样的错误是难免的。'},
-  {words:['朋友间','难免','会产生','矛盾和误会','。'],ans:'朋友间难免会产生矛盾和误会。',audio:'朋友间难免会产生矛盾和误会。'},
-  {words:['考试时','紧张','是','难免的','。'],ans:'考试时紧张是难免的。',audio:'考试时紧张是难免的。'},
-  {words:['自从','我听说了这件事','，','就','开始思考','应该如何阅读','。'],ans:'自从我听说了这件事，就开始思考应该如何阅读。',audio:'自从我听说了这件事，就开始思考应该如何阅读。'},
-  {words:['自从','城市出现后','，','它','就成为','人类生活的中心','。'],ans:'自从城市出现后，它就成为人类生活的中心。',audio:'自从城市出现后，它就成为人类生活的中心。'},
-  {words:['自从','上了高中','，','他','每天都','坚持','跑步','。'],ans:'自从上了高中，他每天都坚持跑步。',audio:'自从上了高中，他每天都坚持跑步。'},
-  {words:['老师','把','人性的价值判断','给了','孩子们','。'],ans:'老师把人性的价值判断给了孩子们。',audio:'老师把人性的价值判断给了孩子们。'},
-  {words:['我们','需要','转变','自己的','观念','。'],ans:'我们需要转变自己的观念。',audio:'我们需要转变自己的观念。'},
-  {words:['单纯地主张阅读','而','不强调思考','是','片面的','。'],ans:'单纯地主张阅读而不强调思考是片面的。',audio:'单纯地主张阅读而不强调思考是片面的。'},
-  {words:['他','为公司','提供了','很多','有价值的建议','。'],ans:'他为公司提供了很多有价值的建议。',audio:'他为公司提供了很多有价值的建议。'}
+  {words:['一旦','养成了','坏习惯','，','就','很难','改掉','。'],ans:'一旦养成了坏习惯，就很难改掉。',audio:'一旦养成了坏习惯，就很难改掉。'},
+  {words:['这种病','一旦','发现得晚','，','治起来','就','麻烦了','。'],ans:'这种病一旦发现得晚，治起来就麻烦了。',audio:'这种病一旦发现得晚，治起来就麻烦了。'},
+  {words:['离开','父母','去上大学','，','难免','会','想家','。'],ans:'离开父母去上大学，难免会想家。',audio:'离开父母去上大学，难免会想家。'},
+  {words:['两个人','一起','生活','，','吵架','是','难免的','。'],ans:'两个人一起生活，吵架是难免的。',audio:'两个人一起生活，吵架是难免的。'},
+  {words:['自从','搬到','这儿','以后','，','我','每天','都','走路上班','。'],ans:'自从搬到这儿以后，我每天都走路上班。',audio:'自从搬到这儿以后，我每天都走路上班。'},
+  {words:['自从','他','当上了','经理','，','就','很少','跟我们','一起吃饭了','。'],ans:'自从他当上了经理，就很少跟我们一起吃饭了。',audio:'自从他当上了经理，就很少跟我们一起吃饭了。'},
+  {words:['我们','应该','尊重','每个人','不同的','观点','。'],ans:'我们应该尊重每个人不同的观点。',audio:'我们应该尊重每个人不同的观点。'},
+  {words:['在','法律','面前','，','人人','平等','。'],ans:'在法律面前，人人平等。',audio:'在法律面前，人人平等。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1291,76 +1255,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'你可以试着____一下思路，可能会快一点解决问题。',opts:['转变','变化','改正','交换'],ans:0,
-   exp:'转变 + 思路 / 观念 / 态度: chủ động thay đổi cái trừu tượng (bài tập 2 của sách). 变化 thường không mang tân ngữ; 改正 đi với 错误; 交换 là đổi cho nhau.'},
-  {wrong:'我不同意你的____，我觉得这部电影很不错。',opts:['观点','观念','理由','价值'],ans:0,
-   exp:'Ý kiến cụ thể về một bộ phim, đi với 同意 → 观点 (bài tập 2 của sách). 观念 là quan niệm lâu dài, không đi với 同意.'},
-  {wrong:'这次新产品销售得不好的____是宣传推广做得不够。',opts:['原因','理由','价值','观点'],ans:0,
-   exp:'Nguyên nhân khách quan dẫn tới kết quả → 原因 (bài tập 2 của sách). 理由 là lý lẽ con người đưa ra để biện minh.'},
-  {wrong:'他太____了，这样很容易被人骗。',opts:['单纯','单调','自私','客观'],ans:0,
-   exp:'Ngây thơ, đơn giản → dễ bị lừa: 单纯 (bài tập 2 của sách). 单调 = đơn điệu, tẻ nhạt, dùng cho cuộc sống, màu sắc.'},
-  {wrong:'作为法官，你做事应该____。',opts:['公平','平等','巨大','完美'],ans:0,
-   exp:'Xử lý việc hợp tình hợp lý, không thiên vị → 公平 (做一做 của sách). 平等 nói về quyền lợi, địa vị ngang nhau.'},
-  {wrong:'人生来是____的，人人都有权追求自由和幸福。',opts:['平等','公平','客观','全面'],ans:0,
-   exp:'Quyền lợi của con người nói chung là ngang nhau → 平等 (做一做 của sách).'},
-  {wrong:'刚开始工作，这样的错误是____的。',opts:['难免','一旦','过分','完美'],ans:0,
-   exp:'是难免的 = là khó tránh khỏi (câu ví dụ của sách). 一旦 là phó từ, không đứng trong 是……的 như vậy.'},
-  {wrong:'____我来中国以后，我的汉语进步得很快。',opts:['自从','一旦','难免','属于'],ans:0,
-   exp:'Bắt đầu từ một thời điểm trong quá khứ đến nay → 自从……以后. 一旦 dùng cho điều kiện chưa xảy ra hoặc giả định.'},
-  {wrong:'____明天开始，我每天早上都去跑步。',opts:['从','自从','一旦','难免'],ans:0,
-   exp:'自从 CHỈ dùng cho quá khứ. Thời điểm tương lai (明天) phải dùng 从: 从明天开始.'},
-  {wrong:'这件事你做得太____了，我不能接受！',opts:['过分','客观','巨大','单纯'],ans:0,
-   exp:'太过分了 = quá đáng lắm (bài tập 1 của sách).'},
-  {wrong:'他从来不____自己的错误，总说是别人的问题。',opts:['承认','属于','拥有','倾向'],ans:0,
-   exp:'承认 + 错误 / 事实 (bảng 词语搭配).'},
-  {wrong:'老师____每个学生都很公平。',opts:['对待','疼爱','交换','属于'],ans:0,
-   exp:'对待 + người + 公平 = đối xử công bằng với ai. 疼爱 là thương yêu, không đi với 公平.'},
-  {wrong:'一个已经____巨大幸福的人，应该原谅和理解那些伤害过自己的人。',opts:['拥有','属于','承认','交换'],ans:0,
-   exp:'拥有 + điều quý giá (幸福). 属于 ngược hướng: 幸福属于她.'},
-  {wrong:'这些书____学校图书馆，不能带回家。',opts:['属于','拥有','对待','主张'],ans:0,
-   exp:'A 属于 B = A là của B. Nếu dùng 拥有 phải đảo: 学校图书馆拥有这些书.'},
-  {wrong:'开会以前，我们先____一下意见吧。',opts:['交换','转变','承认','对待'],ans:0,
-   exp:'交换 + 意见 (bảng 词语搭配).'},
-  {wrong:'看问题要____，不能只听一个人的话。',opts:['客观','自私','单纯','巨大'],ans:0,
-   exp:'Nhìn nhận theo sự thật, không thiên kiến → 客观.'},
-  {wrong:'两个方案我更____于第一个。',opts:['倾向','主张','承认','属于'],ans:0,
-   exp:'倾向于 + lựa chọn = nghiêng về. 主张 không đi với 于.'},
-  {wrong:'孩子大了，有自己的____了，我有什么办法？',opts:['主张','理由','人性','道德'],ans:0,
-   exp:'有自己的主张 = có chính kiến riêng (bài nghe 4 sách bài tập).'},
-  {wrong:'____有人闯入这个空间，我们就会感觉不舒服。',opts:['一旦','自从','难免','虽然'],ans:0,
-   exp:'一旦……就…… = một khi … thì … (câu ví dụ của sách).'},
-  {wrong:'他的时间____很强，从来没迟到过。',opts:['观念','观点','理由','道德'],ans:0,
-   exp:'时间观念 = ý thức giờ giấc — cụm cố định.'}
+  {wrong:'老师给分要____，不能因为喜欢谁就给谁多打几分。',opts:['公平','平等','完美','巨大'],ans:0,exp:'Xử lý, đánh giá theo cùng một tiêu chuẩn, không thiên vị → 公平. 平等 nói về địa vị, quyền lợi ngang nhau (人人平等); 完美, 巨大 không hợp.'},
+  {wrong:'现在男女____了，女孩子也能上大学、当领导。',opts:['平等','公平','完美','客观'],ans:0,exp:'Địa vị, quyền lợi ngang nhau giữa người với người → 男女平等. 公平 nói cách xử lý công bằng; 完美, 客观 không hợp.'},
+  {wrong:'在会上，他提出了一个新的____，大家都觉得很有道理。',opts:['观点','观念','童话','价值'],ans:0,exp:'Ý kiến, cách nhìn về MỘT vấn đề cụ thể → 观点 (提出观点). 观念 là tư tưởng, quan niệm hình thành lâu dài; 童话, 价值 không hợp.'},
+  {wrong:'老人的____很传统，觉得女孩子不用读太多书。',opts:['观念','观点','道德','倾向'],ans:0,exp:'Cách nghĩ lâu đời, ăn sâu → 传统观念. 观点 là ý kiến về một vấn đề cụ thể, không nói 观点很传统; 道德, 倾向 không hợp.'},
+  {wrong:'你找什么____都没用，迟到就是迟到。',opts:['理由','原因','观点','价值'],ans:0,exp:'Lời giải thích, cái cớ người ta đưa ra để biện minh → 理由 (找理由). 原因 là nguyên nhân khách quan dẫn đến sự việc, không "tìm" ra để biện minh; 观点, 价值 không hợp.'},
+  {wrong:'医生说，他经常头疼的____是睡得太少。',opts:['原因','理由','主张','倾向'],ans:0,exp:'Nguyên nhân thật sự dẫn đến kết quả (头疼) → 原因. 理由 là lý lẽ con người đưa ra để giải thích việc mình làm; 主张, 倾向 không hợp.'},
+  {wrong:'____你决定了，就要坚持下去，不要随便放弃。',opts:['一旦','自从','难免','单纯'],ans:0,exp:'一旦……就…… = một khi đã… thì…. 自从 chỉ mốc thời gian đã qua và cần sự việc quá khứ; 难免, 单纯 không đứng đầu vế điều kiện.'},
+  {wrong:'____上了大学，他就很少回家了。',opts:['自从','一旦','难免','过分'],ans:0,exp:'自从 + sự việc đã xảy ra (上了大学) = từ khi…; vế sau 就 + tình trạng kéo dài đến nay. 一旦 dùng cho giả định "hễ mà"; 难免, 过分 không hợp.'},
+  {wrong:'刚学开车，____会有点儿紧张。',opts:['难免','一旦','曾经','过分'],ans:0,exp:'难免 + 会 + V = khó tránh khỏi (điều không mong muốn nhưng tự nhiên). 一旦 cần vế sau có 就; 曾经 chỉ việc đã qua, không đi với 会; 过分紧张 = căng thẳng quá mức, không đi với 会有点儿.'},
+  {wrong:'他大学毕业才三年，就____了一家自己的公司。',opts:['拥有','属于','对待','承认'],ans:0,exp:'拥有 + thứ quý (公司, 财产, 机会) = có, sở hữu. 属于 thì vật đứng trước: 公司属于他; 对待, 承认 không hợp.'},
+  {wrong:'你应该友好地____新来的同学。',opts:['对待','疼爱','交换','承认'],ans:0,exp:'对待 + người = đối xử (友好地对待). 疼爱 chỉ dùng cho bề trên thương bề dưới; 交换, 承认 không hợp.'},
+  {wrong:'拿了别人的东西不还，这是不____的行为。',opts:['道德','人性','价值','理由'],ans:0,exp:'不道德的行为 = hành vi vô đạo đức. 人性, 价值, 理由 không đứng sau 不 làm định ngữ như vậy.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Lần đầu diễn thuyết trước toàn trường thì khó tránh khỏi hồi hộp, vì vậy bạn không cần lo lắng quá mức.', zh:'第一次在全校面前演讲难免会紧张，所以你不必过分担心。', py:'Dì-yī cì zài quánxiào miànqián yǎnjiǎng nánmiǎn huì jǐnzhāng, suǒyǐ nǐ búbì guòfèn dānxīn.', goiY:['难免会','过分','所以'], giai:'难免会 + V: khó tránh khỏi điều không mong muốn; 过分 + động từ = quá mức (过分担心), khác 过分 làm vị ngữ nghĩa "quá đáng" (你太过分了).'},
-  {vi:'Từ khi ngày nào cũng kiên trì viết nhật ký, trình độ viết văn của tôi đã dần dần được nâng lên.', zh:'自从每天坚持写日记以后，我的作文水平就逐渐提高了。', py:'Zìcóng měi tiān jiānchí xiě rìjì yǐhòu, wǒ de zuòwén shuǐpíng jiù zhújiàn tígāo le.', goiY:['自从……以后，……就……','作文','逐渐'], giai:'自从 chỉ mốc thời gian trong quá khứ, thường đi với 以后 và vế sau có 就/一直; không dùng 自从 cho việc tương lai.'},
-  {vi:'Quan điểm trong bài văn này chưa đủ khách quan, vì em chỉ nhấn mạnh mặt xấu của Internet mà không nhắc đến mặt tốt của nó.', zh:'这篇作文的观点不够客观，因为你只强调了网络的坏处而没提它的好处。', py:'Zhè piān zuòwén de guāndiǎn búgòu kèguān, yīnwèi nǐ zhǐ qiángdiàole wǎngluò de huàichù ér méi tí tā de hǎochù.', goiY:['因为','强调','客观'], giai:'客观 = khách quan (nhìn cả hai mặt); "mà không…" dịch bằng 而没/而不, 而 nối hai vế trái ngược nhau.'},
-  {vi:'Một khi đã quen thức khuya lướt điện thoại thì rất khó bỏ, hôm sau lên lớp cũng khó tránh khỏi uể oải.', zh:'一旦养成了熬夜刷手机的习惯，就很难改掉，第二天上课也难免没精神。', py:'Yídàn yǎngchéngle áoyè shuā shǒujī de xíguàn, jiù hěn nán gǎidiào, dì-èr tiān shàngkè yě nánmiǎn méi jīngshen.', goiY:['一旦……就……','难免','熬夜'], giai:'一旦 nêu việc hễ đã xảy ra thì kéo theo hậu quả, vế sau dùng 就 (không dùng 所以); 难免 + V/tính từ = khó tránh khỏi.'},
-  {vi:'Thầy cô nên đối xử bình đẳng với từng học sinh, dù em đó học giỏi hay không cũng không thể chỉ quý những đứa trẻ ngoan ngoãn.', zh:'老师应该平等地对待每一个学生，不管他成绩好不好，都不能只喜欢那些听话的孩子。', py:'Lǎoshī yīnggāi píngděng de duìdài měi yí ge xuésheng, bùguǎn tā chéngjì hǎo bu hǎo, dōu bù néng zhǐ xǐhuan nàxiē tīnghuà de háizi.', goiY:['平等地对待','不管……都……','听话'], giai:'平等地对待 + người = đối xử bình đẳng với ai (地 nối trạng ngữ với động từ); 不管 + câu hỏi chính phản (好不好), vế sau phải có 都.'},
-  {vi:'Muốn viết văn hay, không chỉ phải đọc nhiều sách mà còn phải học cách suy nghĩ độc lập, nếu không thì đọc nhiều mấy cũng chỉ là đơn thuần tích luỹ kiến thức.', zh:'要想写好作文，不仅要多读书，而且要学会独立思考，否则读得再多也只是单纯地积累知识。', py:'Yào xiǎng xiěhǎo zuòwén, bùjǐn yào duō dúshū, érqiě yào xuéhuì dúlì sīkǎo, fǒuzé dú de zài duō yě zhǐshì dānchún de jīlěi zhīshi.', goiY:['不仅……而且……','否则','单纯地'], giai:'否则 = nếu không thì, mở vế hậu quả; V 得再多也…… = dù … nhiều đến mấy cũng… (再 + tính từ + 也).'},
-  {vi:'Từ khi em gái ra đời, tôi luôn cảm thấy bố mẹ thương em hơn, mãi đến khi lớn lên tôi mới hiểu tình yêu bố mẹ dành cho hai chị em thật ra là như nhau.', zh:'自从妹妹出生以后，我总觉得爸妈更疼爱她，直到长大了我才明白，父母对我们的爱其实是平等的。', py:'Zìcóng mèimei chūshēng yǐhòu, wǒ zǒng juéde bàmā gèng téng\'ài tā, zhídào zhǎngdà le wǒ cái míngbai, fùmǔ duì wǒmen de ài qíshí shì píngděng de.', goiY:['自从……以后','直到……才……','疼爱'], giai:'疼爱 = thương yêu, cưng chiều (bề trên với bề dưới); 直到……才…… = mãi đến… mới…, nhấn mạnh việc xảy ra muộn.'},
-  {vi:'Một khi đã có được cơ hội mà người khác không có, bạn không nên kiêu ngạo quá mức, mà nên học cách thấu hiểu và giúp đỡ những người kém may mắn hơn mình.', zh:'一旦你拥有了别人没有的机会，就不应该过分骄傲，而应该学会理解和帮助那些不如你幸运的人。', py:'Yídàn nǐ yōngyǒule biérén méiyǒu de jīhuì, jiù bù yīnggāi guòfèn jiāo\'ào, ér yīnggāi xuéhuì lǐjiě hé bāngzhù nàxiē bùrú nǐ xìngyùn de rén.', goiY:['一旦……就……','拥有','不应该……，而应该……'], giai:'Mẫu 不应该 A，而应该 B = không nên A mà nên B; 拥有 dùng cho thứ quý giá, trừu tượng (机会/幸福), trang trọng hơn 有.'},
-  {vi:'Cô giáo nói, thay vì chỉ học thuộc bài văn mẫu, chi bằng trước tiên thay đổi cách nghĩ, học cách nhìn vấn đề một cách toàn diện, khách quan, như vậy bài văn viết ra mới có giá trị.', zh:'老师说，与其单纯地背范文，不如先转变观念，学会用全面、客观的眼光看问题，这样写出来的作文才有价值。', py:'Lǎoshī shuō, yǔqí dānchún de bèi fànwén, bùrú xiān zhuǎnbiàn guānniàn, xuéhuì yòng quánmiàn, kèguān de yǎnguāng kàn wèntí, zhèyàng xiě chulai de zuòwén cái yǒu jiàzhí.', goiY:['与其……不如……','转变观念','全面、客观'], giai:'与其 A 不如 B = thay vì A chi bằng B (chọn B); 转变观念 = thay đổi cách nghĩ, nhận thức; 这样……才…… = như thế… mới….'},
-  {vi:'Tôi thừa nhận trước đây mình rất ích kỷ, nhưng từ khi làm tình nguyện viên, tôi mới hiểu rằng một người hễ chỉ nghĩ cho bản thân thì rất khó có được những người bạn thật lòng.', zh:'我承认自己以前很自私，但自从当了志愿者，我才明白一个人一旦只想着自己，就很难交到真正的朋友。', py:'Wǒ chéngrèn zìjǐ yǐqián hěn zìsī, dàn zìcóng dāngle zhìyuànzhě, wǒ cái míngbai yí ge rén yídàn zhǐ xiǎngzhe zìjǐ, jiù hěn nán jiāodào zhēnzhèng de péngyou.', goiY:['自从……','一旦……就……','承认'], giai:'Câu lồng hai lớp: 自从 chỉ mốc thay đổi, sau 明白 là mệnh đề 一旦……就……; 承认 + sự thật về mình = thừa nhận, đừng nhầm với 认为.'}
+  {vi:'Lần đầu một mình đi làm ở nơi xa thì khó tránh khỏi gặp chút rắc rối, vì vậy bạn không cần lo lắng quá mức.',zh:'第一次一个人去外地工作，难免会遇到一些麻烦，所以你不必过分担心。',py:'Dì-yī cì yí ge rén qù wàidì gōngzuò, nánmiǎn huì yùdào yìxiē máfan, suǒyǐ nǐ búbì guòfèn dānxīn.',goiY:['难免会','过分','不必'],giai:'难免会 + V: khó tránh khỏi điều không mong muốn; 过分 + động từ = quá mức (过分担心), khác 过分 làm vị ngữ nghĩa "quá đáng" (你太过分了).'},
+  {vi:'Từ khi ngày nào cũng kiên trì viết nhật ký, trình độ viết văn của tôi đã dần dần được nâng lên.',zh:'自从每天坚持写日记以后，我的作文水平就逐渐提高了。',py:'Zìcóng měi tiān jiānchí xiě rìjì yǐhòu, wǒ de zuòwén shuǐpíng jiù zhújiàn tígāo le.',goiY:['自从……以后，……就……','作文','逐渐'],giai:'自从 chỉ mốc thời gian trong quá khứ, thường đi với 以后 và vế sau có 就/一直; không dùng 自从 cho việc tương lai.'},
+  {vi:'Quan điểm trong bài văn này chưa đủ khách quan, vì em chỉ nhấn mạnh mặt xấu của Internet mà không nhắc đến mặt tốt của nó.',zh:'这篇作文的观点不够客观，因为你只强调了网络的缺点而没提它的优点。',py:'Zhè piān zuòwén de guāndiǎn búgòu kèguān, yīnwèi nǐ zhǐ qiángdiàole wǎngluò de quēdiǎn ér méi tí tā de yōudiǎn.',goiY:['因为','强调','客观'],giai:'客观 = khách quan (nhìn cả hai mặt); "mà không…" dịch bằng 而没/而不, 而 nối hai vế trái ngược nhau.'},
+  {vi:'Thầy cô nên đối xử bình đẳng với từng học sinh, dù em đó học giỏi hay không cũng không thể chỉ quý những đứa trẻ ngoan ngoãn.',zh:'老师应该平等地对待每一个学生，不管他成绩好不好，都不能只喜欢那些听话的孩子。',py:'Lǎoshī yīnggāi píngděng de duìdài měi yí ge xuésheng, bùguǎn tā chéngjì hǎo bu hǎo, dōu bù néng zhǐ xǐhuan nàxiē tīnghuà de háizi.',goiY:['平等地对待','不管……都……','听话'],giai:'平等地对待 + người = đối xử bình đẳng với ai (地 nối trạng ngữ với động từ); 不管 + câu hỏi chính phản (好不好), vế sau phải có 都.'},
+  {vi:'Một khi đã có được cơ hội mà người khác không có, bạn không nên kiêu ngạo quá mức, mà nên học cách thấu hiểu và giúp đỡ những người không có cơ hội ấy.',zh:'一旦你拥有了别人没有的机会，就不应该过分骄傲，而应该学会理解和帮助那些没有这种机会的人。',py:'Yídàn nǐ yōngyǒule biérén méiyǒu de jīhuì, jiù bù yīnggāi guòfèn jiāo\'ào, ér yīnggāi xuéhuì lǐjiě hé bāngzhù nàxiē méiyǒu zhè zhǒng jīhuì de rén.',goiY:['一旦……就……','拥有','不应该……，而应该……'],giai:'Mẫu 不应该 A，而应该 B = không nên A mà nên B; 拥有 dùng cho thứ quý giá, trừu tượng (机会/幸福), trang trọng hơn 有.'},
+  {vi:'Tôi thừa nhận trước đây mình rất ích kỷ, nhưng từ khi làm tình nguyện viên, tôi mới hiểu rằng một người hễ chỉ nghĩ cho bản thân thì rất khó có được những người bạn thật lòng.',zh:'我承认自己以前很自私，但自从当了志愿者，我才明白一个人一旦只想着自己，就很难交到真正的朋友。',py:'Wǒ chéngrèn zìjǐ yǐqián hěn zìsī, dàn zìcóng dāngle zhìyuànzhě, wǒ cái míngbai yí ge rén yídàn zhǐ xiǎngzhe zìjǐ, jiù hěn nán jiāodào zhēnzhèng de péngyou.',goiY:['自从……','一旦……就……','承认'],giai:'Câu lồng hai lớp: 自从 chỉ mốc thay đổi, sau 明白 là mệnh đề 一旦……就……; 承认 + sự thật về mình = thừa nhận, đừng nhầm với 认为.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Nhiều phụ huynh đề cao quá mức tác dụng của việc đọc, cho rằng chỉ cần đọc nhiều sách là viết được văn hay.', zh:'很多家长过分强调阅读的作用，认为只要多读书就能把作文写好。', py:'Hěn duō jiāzhǎng guòfèn qiángdiào yuèdú de zuòyòng, rènwéi zhǐyào duō dúshū jiù néng bǎ zuòwén xiěhǎo.', goiY:['过分强调 = nhấn mạnh quá mức','只要……就…… = chỉ cần… là…','作文 = bài văn'], giai:'只要……就…… nêu điều kiện đủ: "chỉ cần… là…"; 过分 + động từ = quá mức, dịch "đề cao quá mức", không dịch "quá phận".'},
-  {vi:'Tác giả cho rằng quan điểm này vừa không khách quan vừa không toàn diện, vì vậy chúng ta cần thay đổi quan niệm của mình.', zh:'作者认为这个观点既不客观，也不全面，因此我们需要转变自己的观念。', py:'Zuòzhě rènwéi zhège guāndiǎn jì bú kèguān, yě bù quánmiàn, yīncǐ wǒmen xūyào zhuǎnbiàn zìjǐ de guānniàn.', goiY:['既……也…… = vừa… vừa…','因此 = vì vậy','转变 = chuyển đổi, thay đổi'], giai:'既不 A，也不 B = vừa không A vừa không B, phủ định cả hai; 因此 mở kết luận, trang trọng hơn 所以.'},
-  {vi:'Thầy trò không những từng thảo luận xem truyện "Cô bé bán diêm" được viết cho ai đọc, mà còn thảo luận cả câu chuyện "Cô bé Lọ Lem".', zh:'老师和学生不但讨论过《卖火柴的小女孩儿》是写给谁看的，而且还讨论过《灰姑娘》的故事。', py:'Lǎoshī hé xuésheng búdàn tǎolùnguo 《Mài Huǒchái de Xiǎo Nǚháir》 shì xiěgěi shéi kàn de, érqiě hái tǎolùnguo 《Huīgūniang》 de gùshi.', goiY:['不但……而且…… = không những… mà còn…','卖火柴的小女孩儿 = Cô bé bán diêm','灰姑娘 = Lọ Lem'], giai:'不但……而且…… nối hai việc theo quan hệ tăng tiến; 是写给谁看的 là câu 是……的 nhấn mạnh đối tượng: "được viết cho ai đọc".'},
-  {vi:'Một khi Lọ Lem đã vào hoàng cung, trở thành người trong lòng của hoàng tử, mọi hạnh phúc đều thuộc về cô, vậy cô nên đối xử với mẹ kế thế nào?', zh:'灰姑娘一旦进了王宫，成了王子的心上人，一切幸福都属于她了，那她应该怎样对待继母呢？', py:'Huīgūniang yídàn jìnle wánggōng, chéngle wángzǐ de xīnshàngrén, yíqiè xìngfú dōu shǔyú tā le, nà tā yīnggāi zěnyàng duìdài jìmǔ ne?', goiY:['一旦 = một khi','属于 = thuộc về','对待 = đối xử'], giai:'Ba vế đầu cùng nằm dưới 一旦 ("một khi…, …, …"), vế cuối mở bằng 那 = "vậy thì"; 心上人 = người trong lòng, người yêu.'},
-  {vi:'Sở dĩ phải thảo luận vấn đề này là vì đây là một sự trao đổi tình cảm, chứ không đơn thuần là kể một câu chuyện cổ tích.', zh:'之所以要讨论这个问题，是因为这是一种情感交换，而不只是单纯地讲一个童话。', py:'Zhīsuǒyǐ yào tǎolùn zhège wèntí, shì yīnwèi zhè shì yì zhǒng qínggǎn jiāohuàn, ér bù zhǐshì dānchún de jiǎng yí ge tónghuà.', goiY:['之所以……是因为…… = sở dĩ… là vì…','情感交换 = trao đổi tình cảm','单纯地 = đơn thuần'], giai:'之所以 + kết quả, 是因为 + nguyên nhân: đưa kết quả lên trước; khi dịch giữ thứ tự "sở dĩ… là vì…".'},
-  {vi:'Một người đã có được hạnh phúc lớn lao thì nên tha thứ và thấu hiểu những người từng làm tổn thương mình, chứ không phải ôm hận với họ.', zh:'一个已经拥有巨大幸福的人，应该原谅和理解那些伤害过自己的人，而不是记恨他们。', py:'Yí ge yǐjīng yōngyǒu jùdà xìngfú de rén, yīnggāi yuánliàng hé lǐjiě nàxiē shānghàiguo zìjǐ de rén, ér bú shì jìhèn tāmen.', goiY:['拥有 = có được','巨大 = to lớn','而不是 = chứ không phải'], giai:'Chủ ngữ dài 一个已经拥有巨大幸福的人 có trung tâm ngữ là 人: "một người đã có…"; 伤害过 = từng làm tổn thương (过 chỉ trải nghiệm).'},
-  {vi:'Là một người mẹ, giữa con gái ruột và Lọ Lem, bà khó tránh khỏi việc thương con ruột hơn, vì vậy rất khó đối xử hoàn toàn công bằng với các cô.', zh:'作为母亲，在亲生女儿和灰姑娘之间，她难免会更疼爱自己的女儿，所以很难完全平等地对待她们。', py:'Zuòwéi mǔqīn, zài qīnshēng nǚ\'ér hé Huīgūniang zhījiān, tā nánmiǎn huì gèng téng\'ài zìjǐ de nǚ\'ér, suǒyǐ hěn nán wánquán píngděng de duìdài tāmen.', goiY:['难免会 = khó tránh khỏi','疼爱 = thương yêu','平等地对待 = đối xử công bằng'], giai:'难免会 + V nói về điều tự nhiên, khó tránh (không mang ý trách móc); 作为 + thân phận = "với tư cách là, là…".'},
-  {vi:'Tuy bạn có thể thấy mẹ kế rất ích kỷ, nhưng hành vi này có lý do từ khuynh hướng tự nhiên, chẳng hề có quan hệ tất yếu với đạo đức.', zh:'虽然你可能觉得继母很自私，但这种行为有自然倾向的理由，与道德并没有必然的关系。', py:'Suīrán nǐ kěnéng juéde jìmǔ hěn zìsī, dàn zhè zhǒng xíngwéi yǒu zìrán qīngxiàng de lǐyóu, yǔ dàodé bìng méiyǒu bìrán de guānxi.', goiY:['虽然……但…… = tuy… nhưng…','倾向 = khuynh hướng','与……没有必然的关系 = không có quan hệ tất yếu với…'], giai:'与……有/没有关系 = có/không liên quan tới…; 并 đặt trước phủ định để nhấn mạnh "hoàn toàn không" (bác bỏ một suy nghĩ).'},
-  {vi:'Từ khi nghe chuyện này, tác giả bắt đầu suy nghĩ nên đọc sách thế nào, bởi ông nhận ra người thầy kia đã trao cho bọn trẻ cả sự phán đoán giá trị về nhân tính.', zh:'自从听说了这件事，作者就开始思考应该如何阅读，因为他发现老师已经在把人性的价值判断交给孩子们。', py:'Zìcóng tīngshuōle zhè jiàn shì, zuòzhě jiù kāishǐ sīkǎo yīnggāi rúhé yuèdú, yīnwèi tā fāxiàn lǎoshī yǐjīng zài bǎ rénxìng de jiàzhí pànduàn jiāo gěi háizimen.', goiY:['自从……就…… = từ khi… thì…','如何 = thế nào','价值判断 = phán đoán giá trị'], giai:'自从 + sự việc quá khứ, vế sau có 就 nêu thay đổi bắt đầu từ đó; 人性的价值判断 là cụm danh từ dài làm tân ngữ của 把, dịch "sự phán đoán giá trị về nhân tính".'},
-  {vi:'Nếu chỉ đơn thuần cổ xuý việc đọc mà không nhấn mạnh suy nghĩ thì như thế là phiến diện; bởi chỉ có "tri cảm" thì chưa đủ, còn phải có nhận thức và suy ngẫm.', zh:'如果只是单纯地主张阅读而不强调思考，那是片面的；因为只有知感是不够的，还要有认识和思考。', py:'Rúguǒ zhǐshì dānchún de zhǔzhāng yuèdú ér bù qiángdiào sīkǎo, nà shì piànmiàn de; yīnwèi zhǐyǒu zhīgǎn shì bú gòu de, hái yào yǒu rènshi hé sīkǎo.', goiY:['如果……那…… = nếu… thì…','主张 = chủ trương, cổ xuý','只有……是不够的 = chỉ có… thì chưa đủ'], giai:'只有 A 是不够的，还要 B = chỉ có A thì chưa đủ, còn phải B (khác 只有……才……); 片面 = phiến diện, trái nghĩa với 全面.'}
+  {vi:'Tác giả cho rằng quan điểm này vừa không khách quan vừa không toàn diện, vì vậy chúng ta cần thay đổi quan niệm của mình.',zh:'作者认为这个观点既不客观，也不全面，因此我们需要转变自己的观念。',py:'Zuòzhě rènwéi zhège guāndiǎn jì bú kèguān, yě bù quánmiàn, yīncǐ wǒmen xūyào zhuǎnbiàn zìjǐ de guānniàn.',goiY:['既不……也不…… = vừa không… vừa không…','全面 = toàn diện','转变观念 = thay đổi quan niệm'],giai:'观点 (ý kiến về một vấn đề) khác 观念 (tư tưởng lâu dài); 转变观念 là cụm cố định.'},
+  {vi:'Theo tác giả, "tri cảm" chỉ là phần người khác nói cho bạn biết, bắt bạn ghi nhớ; ngoài ra bạn còn phải tự mình nhận thức và suy nghĩ.',zh:'作者认为，“知感”只是别人告诉你、要求你记住的东西，另外，还需要自己去认识和思考。',py:'Zuòzhě rènwéi, “zhīgǎn” zhǐshì biérén gàosu nǐ, yāoqiú nǐ jìzhù de dōngxi, lìngwài, hái xūyào zìjǐ qù rènshi hé sīkǎo.',goiY:['知感 = tri cảm (phần người khác truyền cho mình)','只是 = chỉ là','另外 = ngoài ra'],giai:'只是……，还需要…… = chỉ là…, còn cần…; 别人告诉你、要求你记住的 là định ngữ dài của 东西.'},
+  {vi:'Một khi Lọ Lem đã vào hoàng cung, trở thành người trong lòng của hoàng tử, mọi hạnh phúc đều thuộc về cô, vậy cô nên đối xử với mẹ kế thế nào?',zh:'灰姑娘一旦进了王宫，成了王子的心上人，一切幸福都属于她了，那她应该怎样对待继母呢？',py:'Huīgūniang yídàn jìnle wánggōng, chéngle wángzǐ de xīnshàngrén, yíqiè xìngfú dōu shǔyú tā le, nà tā yīnggāi zěnyàng duìdài jìmǔ ne?',goiY:['一旦 = một khi','属于 = thuộc về','对待 = đối xử'],giai:'Ba vế đầu cùng nằm dưới 一旦 ("một khi…, …, …"), vế cuối mở bằng 那 = "vậy thì"; 心上人 = người trong lòng.'},
+  {vi:'Một người đã sống rất hạnh phúc thì nên học cách tha thứ cho những người từng làm tổn thương mình, chứ đừng mãi ôm hận.',zh:'一个已经过得很幸福的人，应该学会原谅那些伤害过自己的人，而不是一直记恨他们。',py:'Yí ge yǐjīng guò de hěn xìngfú de rén, yīnggāi xuéhuì yuánliàng nàxiē shānghàiguo zìjǐ de rén, ér bú shì yìzhí jìhèn tāmen.',goiY:['伤害过 = từng làm tổn thương','原谅 = tha thứ','而不是 = chứ không phải'],giai:'Chủ ngữ dài 一个已经过得很幸福的人 có trung tâm ngữ là 人; 伤害过 = từng làm tổn thương (过 chỉ trải nghiệm).'},
+  {vi:'Bà là một người mẹ, giữa con gái ruột và Lọ Lem, bà khó tránh khỏi đối xử với con ruột tốt hơn một chút, vì vậy rất khó đối xử hoàn toàn công bằng với các cô.',zh:'她是一位母亲，在亲生女儿和灰姑娘之间，难免会对亲生女儿更好一些，所以很难完全平等地对待她们。',py:'Tā shì yí wèi mǔqīn, zài qīnshēng nǚ\'ér hé Huīgūniang zhījiān, nánmiǎn huì duì qīnshēng nǚ\'ér gèng hǎo yìxiē, suǒyǐ hěn nán wánquán píngděng de duìdài tāmen.',goiY:['难免会 = khó tránh khỏi','更好一些 = tốt hơn một chút','平等地对待 = đối xử công bằng'],giai:'难免会 + V nói về điều tự nhiên, khó tránh (không mang ý trách móc); 在 A 和 B 之间 = giữa A và B.'},
+  {vi:'Tuy bạn có thể thấy mẹ kế rất ích kỷ, nhưng hành vi này có lý do từ khuynh hướng tự nhiên, chẳng hề có quan hệ tất yếu với đạo đức.',zh:'虽然你可能觉得继母很自私，但这种行为有自然倾向的理由，与道德并没有必然的关系。',py:'Suīrán nǐ kěnéng juéde jìmǔ hěn zìsī, dàn zhè zhǒng xíngwéi yǒu zìrán qīngxiàng de lǐyóu, yǔ dàodé bìng méiyǒu bìrán de guānxi.',goiY:['虽然……但…… = tuy… nhưng…','倾向 = khuynh hướng','与……没有必然的关系 = không có quan hệ tất yếu với…'],giai:'与……有/没有关系 = có/không liên quan tới…; 并 đặt trước phủ định để nhấn mạnh "hoàn toàn không" (bác bỏ một suy nghĩ).'}
 ];
 
 // ══════════════════════════════════════════
@@ -1421,30 +1349,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
   sapXep:[
-    {manh:['而不强调思考','单纯地主张阅读','是片面的'],
-     dap:'单纯地主张阅读而不强调思考是片面的。',
-     vn:'Chỉ đơn thuần cổ xuý việc đọc mà không nhấn mạnh việc suy nghĩ là phiến diện.',
-     giai:'Câu 29 sách bài tập. Cụm chủ ngữ "A 而 不B" (单纯地主张阅读而不强调思考) → vị ngữ 是片面的.'},
-    {manh:['很多有价值的建议','他为公司','提供了'],
-     dap:'他为公司提供了很多有价值的建议。',
-     vn:'Anh ấy đã đưa ra cho công ty nhiều đề xuất có giá trị.',
-     giai:'Câu 30 sách bài tập. Chủ ngữ + 为 + đối tượng → 提供了 → tân ngữ 很多有价值的建议.'},
-    {manh:['男女不平等的现象','仍然存在着','现在'],
-     dap:'现在仍然存在着男女不平等的现象。',
-     vn:'Hiện nay vẫn còn tồn tại hiện tượng nam nữ không bình đẳng.',
-     giai:'Câu 31 sách bài tập. Câu tồn hiện: thời gian (现在) + 仍然存在着 + sự vật tồn tại.'},
-    {manh:['就不能更改了','一旦','资料','提交'],
-     dap:'资料一旦提交，就不能更改了。',
-     vn:'Hồ sơ một khi đã nộp thì không sửa được nữa.',
-     giai:'Chủ ngữ 资料 đứng trước 一旦; vế sau 就 + kết quả.'},
-    {manh:['是难免的','刚开始工作时','犯这样的错误'],
-     dap:'刚开始工作时犯这样的错误是难免的。',
-     vn:'Mới bắt đầu đi làm mà mắc lỗi như vậy là khó tránh khỏi.',
-     giai:'Cụm thời gian + sự việc (刚开始工作时犯这样的错误) làm chủ ngữ → 是难免的.'},
-    {manh:['就开始思考','自从','应该如何阅读','我听说了这件事'],
-     dap:'自从我听说了这件事，就开始思考应该如何阅读。',
-     vn:'Từ khi nghe chuyện này, tôi bắt đầu suy nghĩ nên đọc như thế nào.',
-     giai:'自从 + sự việc quá khứ đứng đầu câu; 就开始 + V + tân ngữ (应该如何阅读).'}
+    {manh:['而不强调思考','单纯地主张阅读','是片面的'],dap:'单纯地主张阅读而不强调思考是片面的。',vn:'Chỉ đơn thuần cổ xuý việc đọc mà không nhấn mạnh việc suy nghĩ là phiến diện.',giai:'Câu 29 sách bài tập. Cụm chủ ngữ "A 而 不B" (单纯地主张阅读而不强调思考) → vị ngữ 是片面的.'},
+    {manh:['很多有价值的建议','他为公司','提供了'],dap:'他为公司提供了很多有价值的建议。',vn:'Anh ấy đã đưa ra cho công ty nhiều đề xuất có giá trị.',giai:'Câu 30 sách bài tập. Chủ ngữ + 为 + đối tượng → 提供了 → tân ngữ 很多有价值的建议.'},
+    {manh:['男女不平等的现象','仍然存在着','现在'],dap:'现在仍然存在着男女不平等的现象。',vn:'Hiện nay vẫn còn tồn tại hiện tượng nam nữ không bình đẳng.',giai:'Câu 31 sách bài tập. Câu tồn hiện: thời gian (现在) + 仍然存在着 + sự vật tồn tại.'},
+    {manh:['就不会再有了','一旦','这个机会','错过了'],dap:'这个机会一旦错过了，就不会再有了。',vn:'Cơ hội này một khi đã bỏ lỡ thì sẽ không có lại nữa.',giai:'Chủ ngữ 这个机会 đứng trước 一旦; vế sau 就 + kết quả.'},
+    {manh:['会出现','刚开始','难免','这样的问题'],dap:'刚开始难免会出现这样的问题。',vn:'Lúc mới bắt đầu thì khó tránh khỏi xuất hiện những vấn đề như thế này.',giai:'Trạng ngữ thời gian 刚开始 → 难免 + 会 + động từ 出现 → tân ngữ.'},
+    {manh:['就再也没','自从','回来过','他搬走以后'],dap:'自从他搬走以后，就再也没回来过。',vn:'Từ khi anh ấy chuyển đi, anh ấy không quay lại lần nào nữa.',giai:'自从 + sự việc quá khứ (他搬走以后) đứng đầu câu; vế sau 就再也没 + V + 过.'}
   ]
 };
 
@@ -1454,30 +1364,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (阅读与思考 · 灰姑娘应该怎么做). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 一旦 · 对待 · 承认 · 难免 · 平等 · 疼爱 · 观点 · 强调.',
   questions:[
-    {q_zh:'你读过《灰姑娘》这篇童话吗？简单地讲讲这个故事。',
-     q_vn:'Em đã đọc truyện cổ tích "Cô bé Lọ Lem" chưa? Hãy kể ngắn gọn câu chuyện.',
-     hint:'Kể theo trình tự: hoàn cảnh → vũ hội → kết thúc; dùng 一……就…… và 后来 / 最后',
-     sample:'读过。灰姑娘的妈妈去世以后，继母和两个姐姐对她很不好。后来在仙女的帮助下，她去王宫参加了舞会，王子一看见她就爱上了她。最后王子找到了灰姑娘，他们幸福地生活在一起。',
-     sample_vn:'Đọc rồi. Sau khi mẹ Lọ Lem mất, mẹ kế và hai người chị đối xử với cô rất tệ. Sau đó, nhờ bà tiên giúp, cô đến hoàng cung dự vũ hội, hoàng tử vừa nhìn thấy đã yêu cô. Cuối cùng hoàng tử tìm được Lọ Lem, họ sống hạnh phúc bên nhau.',
-     note:'Câu hỏi 1 trong 话题讨论 của sách. Kể chuyện cần từ nối thời gian (后来, 最后) để mạch lạc.'},
-    {q_zh:'如果你是灰姑娘，成为王子的心上人并进入王宫以后，你会怎么对待继母和姐姐？',
-     q_vn:'Nếu em là Lọ Lem, sau khi trở thành người trong mộng của hoàng tử và vào hoàng cung, em sẽ đối xử với mẹ kế và các chị thế nào?',
-     hint:'Nêu rõ lựa chọn + lý do, dùng 虽然……但是…… và 对待',
-     sample:'我会原谅她们。虽然她们以前对我不好，但是我已经拥有了巨大的幸福，没必要再生气。我会平等地对待她们，希望一家人能好好相处。',
-     sample_vn:'Tôi sẽ tha thứ cho họ. Tuy trước đây họ đối xử không tốt với tôi, nhưng tôi đã có hạnh phúc to lớn rồi, không cần phải giận nữa. Tôi sẽ đối xử bình đẳng với họ, mong cả nhà có thể sống hoà thuận.',
-     note:'Câu hỏi 2 của sách. Dùng lại ý kết luận của bài khoá (拥有巨大幸福的人应该原谅……).'},
-    {q_zh:'作者认为应该承认人性中一些先天的不完美，你同意他的看法吗？',
-     q_vn:'Tác giả cho rằng nên thừa nhận một số điểm chưa hoàn hảo bẩm sinh trong bản tính con người, em có đồng ý không?',
-     hint:'Trả lời 同意 / 不同意 rồi đưa ví dụ, dùng 难免',
-     sample:'我同意。每个人都有缺点，父母难免会更疼爱自己亲生的孩子，这是很自然的事。承认这一点，我们就能更客观地看问题，也更容易理解别人。',
-     sample_vn:'Tôi đồng ý. Ai cũng có khuyết điểm, cha mẹ khó tránh khỏi thương con ruột của mình hơn, đó là chuyện rất tự nhiên. Thừa nhận điều này, chúng ta sẽ nhìn vấn đề khách quan hơn và dễ thông cảm cho người khác hơn.',
-     note:'Câu hỏi 3 của sách. Nêu quan điểm → ví dụ → hệ quả là bố cục nói gọn và chắc.'},
-    {q_zh:'你喜欢写作文吗？你觉得有哪些提高写作水平的好方法？',
-     q_vn:'Em có thích viết văn không? Em thấy có những cách hay nào để nâng cao khả năng viết?',
-     hint:'Nêu 2 cách cụ thể, dùng 不仅……也…… hoặc 不能过分……',
-     sample:'我挺喜欢写作文的。我觉得多读书很重要，但是不能过分强调阅读，还要多思考、多练习。读完一本书以后，我会写一写自己的观点，这样作文水平提高得很快。',
-     sample_vn:'Tôi khá thích viết văn. Tôi thấy đọc nhiều sách rất quan trọng, nhưng không thể quá nhấn mạnh việc đọc, mà còn phải suy nghĩ nhiều, luyện nhiều. Đọc xong một cuốn sách, tôi sẽ viết ra quan điểm của mình, như vậy khả năng viết tiến bộ rất nhanh.',
-     note:'Câu hỏi 2 của phần 热身. Liên hệ ý chính của bài khoá: đọc thôi chưa đủ, phải suy nghĩ.'}
+    {q_zh:'你读过《灰姑娘》这篇童话吗？简单地讲讲这个故事。',q_vn:'Em đã đọc truyện cổ tích "Cô bé Lọ Lem" chưa? Hãy kể ngắn gọn câu chuyện.',hint:'Kể theo trình tự: hoàn cảnh → buổi tiệc → kết thúc; dùng 一……就…… và 后来 / 最后',sample:'读过。灰姑娘的妈妈去世以后，继母和两个姐姐对她很不好。后来有人帮助了她，她去王宫参加了一个晚会，王子一看见她就爱上了她。最后王子找到了灰姑娘，他们幸福地生活在一起。',sample_vn:'Đọc rồi. Sau khi mẹ Lọ Lem mất, mẹ kế và hai người chị đối xử với cô rất tệ. Sau đó có người giúp cô, cô đến hoàng cung dự một buổi dạ tiệc, hoàng tử vừa nhìn thấy đã yêu cô. Cuối cùng hoàng tử tìm được Lọ Lem, họ sống hạnh phúc bên nhau.',note:'Câu hỏi 1 trong 话题讨论 của sách. Kể chuyện cần từ nối thời gian (后来, 最后) để mạch lạc.'},
+    {q_zh:'如果你是灰姑娘，成为王子的心上人并进入王宫以后，你会怎么对待继母和姐姐？',q_vn:'Nếu em là Lọ Lem, sau khi trở thành người trong mộng của hoàng tử và vào hoàng cung, em sẽ đối xử với mẹ kế và các chị thế nào?',hint:'Nêu rõ lựa chọn + lý do, dùng 虽然……但是…… và 对待',sample:'我会原谅她们。虽然她们以前对我不好，但是现在我过得很幸福，没必要再生气。我会平等地对待她们，希望一家人能好好相处。',sample_vn:'Tôi sẽ tha thứ cho họ. Tuy trước đây họ đối xử không tốt với tôi, nhưng bây giờ tôi sống rất hạnh phúc, không cần phải giận nữa. Tôi sẽ đối xử bình đẳng với họ, mong cả nhà có thể sống hoà thuận.',note:'Câu hỏi 2 của sách. Dùng lại ý kết luận của bài khoá (người hạnh phúc nên biết tha thứ).'},
+    {q_zh:'作者认为应该承认人性中一些先天的不完美，你同意他的看法吗？',q_vn:'Tác giả cho rằng nên thừa nhận một số điểm chưa hoàn hảo bẩm sinh trong bản tính con người, em có đồng ý không?',hint:'Trả lời 同意 / 不同意 rồi đưa ví dụ, dùng 难免',sample:'我同意。谁都有不完美的地方，父母难免会更疼爱自己亲生的孩子，这是很自然的事。承认这一点，我们就能更客观地看问题，也更容易理解别人。',sample_vn:'Tôi đồng ý. Ai cũng có chỗ chưa hoàn hảo, cha mẹ khó tránh khỏi thương con ruột của mình hơn, đó là chuyện rất tự nhiên. Thừa nhận điều này, chúng ta sẽ nhìn vấn đề khách quan hơn và dễ thông cảm cho người khác hơn.',note:'Câu hỏi 3 của sách. Nêu quan điểm → ví dụ → hệ quả là bố cục nói gọn và chắc.'},
+    {q_zh:'你喜欢写作文吗？你觉得有哪些提高写作水平的好方法？',q_vn:'Em có thích viết văn không? Em thấy có những cách hay nào để nâng cao khả năng viết?',hint:'Nêu 2 cách cụ thể, dùng 不仅……也…… hoặc 不能过分……',sample:'我挺喜欢写作文的。我觉得多读书很重要，但是不能过分强调阅读，还要多思考、多练习。读完一本书以后，我会写一写自己的观点，这样作文水平提高得很快。',sample_vn:'Tôi khá thích viết văn. Tôi thấy đọc nhiều sách rất quan trọng, nhưng không thể quá nhấn mạnh việc đọc, mà còn phải suy nghĩ nhiều, luyện nhiều. Đọc xong một cuốn sách, tôi sẽ viết ra quan điểm của mình, như vậy khả năng viết tiến bộ rất nhanh.',note:'Câu hỏi của phần khởi động trong sách. Liên hệ ý chính của bài khoá: đọc thôi chưa đủ, phải suy nghĩ.'}
   ]
 };
 
@@ -1568,45 +1458,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng lớp định bấm nộp ngay hồ sơ đăng ký thi trên mạng mà chưa kiểm tra lại.',
-     a:{sp:'Bạn',zh:'好了，我现在就点“提交”！',vn:'Xong rồi, tớ bấm "Nộp" luôn đây!'},
-     need:['Dùng 一旦……就……','Nhắc bạn kiểm tra kỹ'],
-     sample:'等一下，你再仔细看看吧，资料一旦提交，就不能更改了。',
-     samplePy:'Děng yíxià, nǐ zài zǐxì kànkan ba, zīliào yídàn tíjiāo, jiù bù néng gēnggǎi le.',
-     sampleVn:'Khoan đã, cậu xem kỹ lại đi, hồ sơ một khi đã nộp thì không sửa được nữa đâu.',
-     tip:'一旦 đứng sau chủ ngữ 资料; vế sau phải có 就. Đúng dạng câu nghe 2 của sách bài tập.'},
-
-    {scene:'Em họ lớp 10 buồn vì lần đầu thuyết trình trước lớp bị run.',
-     a:{sp:'Em họ',zh:'我第一次在全班面前演讲，紧张得说不出话来，太丢人了！',vn:'Lần đầu em thuyết trình trước cả lớp, run đến mức nói không nên lời, xấu hổ quá!'},
-     need:['Dùng 难免','An ủi, động viên'],
-     sample:'别难过，第一次上台，紧张是难免的，多练几次就好了。',
-     samplePy:'Bié nánguò, dì-yī cì shàngtái, jǐnzhāng shì nánmiǎn de, duō liàn jǐ cì jiù hǎo le.',
-     sampleVn:'Đừng buồn, lần đầu lên bục thì căng thẳng là khó tránh, luyện thêm vài lần là ổn thôi.',
-     tip:'是难免的 hoặc 难免会紧张 — đúng dạng 练一练 của sách (完成对话 dùng 难免).'},
-
-    {scene:'Bạn mới quen hỏi quan hệ của em với bạn cùng phòng ký túc xá bây giờ thế nào.',
-     a:{sp:'Bạn',zh:'你跟你同屋现在的关系怎么样？',vn:'Bây giờ cậu với bạn cùng phòng quan hệ thế nào?'},
-     need:['Dùng 自从','Kể một sự thay đổi'],
-     sample:'刚开始我们常常吵架，自从一起参加了篮球比赛，我们就成了好朋友。',
-     samplePy:'Gāng kāishǐ wǒmen chángcháng chǎojià, zìcóng yìqǐ cānjiāle lánqiú bǐsài, wǒmen jiù chéngle hǎo péngyou.',
-     sampleVn:'Lúc đầu bọn tớ hay cãi nhau, từ khi cùng tham gia giải bóng rổ thì thành bạn thân luôn.',
-     tip:'自从 + sự việc QUÁ KHỨ (参加了); vế sau dùng 就. Đây chính là câu 练一练 (3) của mục 自从.'},
-
-    {scene:'Mẹ phàn nàn con đọc nhiều sách mà viết văn vẫn không hay.',
-     a:{sp:'Mẹ',zh:'你每天看那么多书，作文怎么还是写不好？',vn:'Ngày nào con cũng đọc bao nhiêu sách, sao viết văn vẫn chưa hay?'},
-     need:['Dùng 强调 hoặc 单纯','Nêu ý chính của bài khoá'],
-     sample:'妈，单纯地多读书是不够的，老师强调读完以后还要思考，我以后会多写读书笔记。',
-     samplePy:'Mā, dānchún de duō dú shū shì bú gòu de, lǎoshī qiángdiào dúwán yǐhòu hái yào sīkǎo, wǒ yǐhòu huì duō xiě dúshū bǐjì.',
-     sampleVn:'Mẹ ơi, chỉ đọc nhiều thôi thì chưa đủ, cô giáo nhấn mạnh đọc xong còn phải suy nghĩ, sau này con sẽ viết nhiều ghi chép đọc sách hơn.',
-     tip:'单纯(地) + V = chỉ đơn thuần …; 强调 + mệnh đề. Không nói 强调地.'},
-
-    {scene:'Bạn thân từng bị một bạn khác nói xấu, nay bạn kia đến xin lỗi.',
-     a:{sp:'Bạn thân',zh:'他以前那样说我，现在来道歉，我该原谅他吗？',vn:'Trước đây nó nói xấu tớ như thế, giờ đến xin lỗi, tớ có nên tha thứ không?'},
-     need:['Dùng 承认 hoặc 对待','Đưa ra lời khuyên'],
-     sample:'他已经承认了自己的错误，你就原谅他吧，以后还是友好地对待他。',
-     samplePy:'Tā yǐjīng chéngrènle zìjǐ de cuòwù, nǐ jiù yuánliàng tā ba, yǐhòu háishi yǒuhǎo de duìdài tā.',
-     sampleVn:'Nó đã thừa nhận lỗi rồi, cậu tha thứ cho nó đi, sau này vẫn cư xử thân thiện với nó.',
-     tip:'承认 + 错误; 友好地 + 对待. Liên hệ kết luận của bài: người hạnh phúc nên biết tha thứ.'}
+    {scene:'Bạn cùng lớp định đăng ảnh hộ chiếu của mình lên mạng xã hội.',a:{sp:'Bạn',zh:'我想把护照的照片发到网上，大家看看我的新照片！',vn:'Tớ muốn đăng ảnh hộ chiếu lên mạng cho mọi người xem ảnh mới của tớ!'},need:['Dùng 一旦……就……','Khuyên bạn đừng làm'],sample:'千万别发！个人信息一旦放到网上，就收不回来了。',samplePy:'Qiānwàn bié fā! Gèrén xìnxī yídàn fàngdào wǎng shang, jiù shōu bu huílai le.',sampleVn:'Tuyệt đối đừng đăng! Thông tin cá nhân một khi đã đưa lên mạng thì không lấy lại được nữa đâu.',tip:'一旦 đứng sau chủ ngữ (个人信息); vế sau phải có 就 nêu hậu quả.'},
+    {scene:'Em họ lớp 10 buồn vì lần đầu nói trước lớp bị run.',a:{sp:'Em họ',zh:'我第一次在全班同学面前讲话，紧张得说不出话来，太丢人了！',vn:'Lần đầu em nói trước cả lớp, run đến mức nói không nên lời, xấu hổ quá!'},need:['Dùng 难免','An ủi, động viên'],sample:'别难过，谁第一次上台都会这样，有点儿紧张也难免，多练几次就好了。',samplePy:'Bié nánguò, shéi dì-yī cì shàngtái dōu huì zhèyàng, yǒudiǎnr jǐnzhāng yě nánmiǎn, duō liàn jǐ cì jiù hǎo le.',sampleVn:'Đừng buồn, ai lần đầu lên bục cũng vậy cả, hơi run một chút cũng khó tránh, luyện thêm vài lần là ổn thôi.',tip:'难免 có thể đứng cuối câu làm vị ngữ (……也难免) — một cách dùng khác ngoài 是难免的 và 难免会.'},
+    {scene:'Bạn mới quen hỏi quan hệ của em với người hàng xóm bây giờ thế nào.',a:{sp:'Bạn',zh:'你跟你邻居现在的关系怎么样？',vn:'Bây giờ cậu với hàng xóm quan hệ thế nào?'},need:['Dùng 自从','Kể một sự thay đổi'],sample:'刚搬来的时候我们几乎不说话，自从上次他帮我搬了家，我们就常常一起吃饭了。',samplePy:'Gāng bānlái de shíhou wǒmen jīhū bù shuōhuà, zìcóng shàng cì tā bāng wǒ bānle jiā, wǒmen jiù chángcháng yìqǐ chīfàn le.',sampleVn:'Lúc mới chuyển đến bọn tớ gần như không nói chuyện, từ lần anh ấy giúp tớ chuyển nhà, bọn tớ hay ăn cơm cùng nhau.',tip:'自从 + sự việc QUÁ KHỨ (帮我搬了家); vế sau dùng 就 + tình trạng kéo dài đến nay.'},
+    {scene:'Mẹ phàn nàn con đọc nhiều sách mà viết văn vẫn không hay.',a:{sp:'Mẹ',zh:'你每天看那么多书，作文怎么还是写不好？',vn:'Ngày nào con cũng đọc bao nhiêu sách, sao viết văn vẫn chưa hay?'},need:['Dùng 强调 hoặc 单纯','Nêu ý chính của bài khoá'],sample:'妈妈，单纯地多读书是不够的，老师强调读完以后还要思考，我以后会多写读书笔记。',samplePy:'Māma, dānchún de duō dú shū shì bú gòu de, lǎoshī qiángdiào dúwán yǐhòu hái yào sīkǎo, wǒ yǐhòu huì duō xiě dúshū bǐjì.',sampleVn:'Mẹ ơi, chỉ đọc nhiều thôi thì chưa đủ, cô giáo nhấn mạnh đọc xong còn phải suy nghĩ, sau này con sẽ viết nhiều ghi chép đọc sách hơn.',tip:'单纯(地) + V = chỉ đơn thuần …; 强调 + mệnh đề. Không nói 强调地.'},
+    {scene:'Bạn thân từng bị một bạn khác nói xấu, nay bạn kia đến xin lỗi.',a:{sp:'Bạn thân',zh:'他以前那样说我，现在来道歉，我该原谅他吗？',vn:'Trước đây nó nói xấu tớ như thế, giờ đến xin lỗi, tớ có nên tha thứ không?'},need:['Dùng 承认 hoặc 对待','Đưa ra lời khuyên'],sample:'既然他已经承认了自己的错误，你就别再生他的气了，以后还是友好地对待他吧。',samplePy:'Jìrán tā yǐjīng chéngrènle zìjǐ de cuòwù, nǐ jiù bié zài shēng tā de qì le, yǐhòu háishi yǒuhǎo de duìdài tā ba.',sampleVn:'Đã nó thừa nhận lỗi rồi thì cậu đừng giận nó nữa, sau này vẫn cư xử thân thiện với nó nhé.',tip:'承认 + 错误; 友好地 + 对待. Liên hệ kết luận của bài: người hạnh phúc nên biết tha thứ.'}
   ]
 };
 
@@ -1617,29 +1473,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết bài văn nghị luận nộp thầy giáo.',
-     a:'如果只是单纯地主张阅读而不强调思考，那是片面的。',b:'光看书不动脑子，那可不行。',better:'a',
-     why:'Văn nghị luận cần giọng văn viết: 单纯地主张, 强调思考, 片面. Câu b là khẩu ngữ (光, 动脑子, 可不行).'},
-
-    {scene:'Em giải thích cho em trai 8 tuổi vì sao đọc truyện xong nên suy nghĩ.',
-     a:'看完故事，你也想一想：要是你是灰姑娘，你会怎么做？',b:'阅读时应当强调思考，从而形成正确的价值判断。',better:'a',
-     why:'Nói với trẻ nhỏ cần câu hỏi gần gũi, cụ thể. Câu b đúng tinh thần bài khoá nhưng quá sách vở (应当, 从而, 价值判断).'},
-
-    {scene:'Trong buổi thảo luận trên lớp, em muốn phản bác ý kiến của một bạn.',
-     a:'我不太同意你的观点，我认为这个看法不够全面。',b:'你说得不对，你根本不懂！',better:'a',
-     why:'Thảo luận cần lịch sự, nói "không đồng ý với quan điểm" chứ không phủ nhận con người. Câu b dễ gây cãi nhau.'},
-
-    {scene:'Em nhắn tin xin lỗi bạn thân vì lỡ hẹn hôm qua.',
-     a:'对不起啊，昨天是我不好，下次请你喝奶茶！',b:'本人承认昨日未能按约定时间到达，特此致歉。',better:'a',
-     why:'Với bạn thân dùng giọng thân mật. Câu b (本人, 昨日, 特此致歉) như văn bản hành chính, nghe rất xa cách.'},
-
-    {scene:'Thông báo chính thức của nhà trường về cuộc thi viết văn.',
-     a:'本次作文比赛将坚持公平、公正的原则，欢迎同学们积极参加。',b:'这次作文比赛绝对公平，大家快来参加吧！',better:'a',
-     why:'Thông báo chính thức dùng 本次, 坚持……的原则, 欢迎……积极参加. Câu b giống lời rủ rê của bạn bè.'},
-
-    {scene:'Em trấn an bà khi bà lo em căng thẳng trước kỳ thi.',
-     a:'奶奶，考试紧张是难免的，您别担心，我没事儿。',b:'奶奶，考前焦虑属于正常心理现象，无须过分担忧。',better:'a',
-     why:'Nói với bà cần giản dị, ấm áp. Câu b (属于正常心理现象, 无须) nghe như bác sĩ tâm lý đọc báo cáo.'}
+    {scene:'Em viết bài văn nghị luận nộp thầy giáo.',a:'只阅读而不思考，作文水平是很难真正提高的。',b:'光看书不想问题，那可不行。',better:'a',why:'Văn nghị luận cần giọng văn viết: 只阅读而不思考, 很难真正提高. Câu b là khẩu ngữ (光, 那可不行).'},
+    {scene:'Em giải thích cho em trai 8 tuổi vì sao đọc truyện xong nên suy nghĩ.',a:'看完故事，你也想一想：灰姑娘会原谅她的姐姐们吗？为什么？',b:'阅读时必须强调思考，从而形成正确的价值判断。',better:'a',why:'Nói với trẻ nhỏ cần câu hỏi gần gũi, cụ thể. Câu b đúng tinh thần bài khoá nhưng quá sách vở (必须强调, 从而, 价值判断).'},
+    {scene:'Trong buổi thảo luận trên lớp, em muốn phản bác ý kiến của một bạn.',a:'我不太同意你的观点，我认为这个看法不够全面。',b:'你说得不对，你根本不懂！',better:'a',why:'Thảo luận cần lịch sự, nói "không đồng ý với quan điểm" chứ không phủ nhận con người. Câu b dễ gây cãi nhau.'},
+    {scene:'Em nhắn tin xin lỗi bạn thân vì lỡ hẹn hôm qua.',a:'昨天是我不好，让你等了那么久，下次我请你吃饭！',b:'对于昨天没有准时到的情况，本人表示道歉。',better:'a',why:'Với bạn thân dùng giọng thân mật. Câu b (对于……的情况, 本人表示道歉) như văn bản hành chính, nghe rất xa cách.'},
+    {scene:'Thông báo chính thức của nhà trường về cuộc thi viết văn.',a:'本次作文比赛的标准公开、公平，欢迎同学们积极参加。',b:'这次作文比赛绝对公平，大家快来参加吧！',better:'a',why:'Thông báo chính thức dùng 本次, 标准公开、公平, 欢迎……积极参加. Câu b giống lời rủ rê của bạn bè.'},
+    {scene:'Em trấn an bà khi bà lo em căng thẳng trước kỳ thi.',a:'奶奶，大家考试前都会有点儿紧张，过两天就好了，您别着急。',b:'奶奶，考试前产生紧张情绪属于正常的心理现象，对身体没有什么影响。',better:'a',why:'Nói với bà cần giản dị, ấm áp. Câu b (产生紧张情绪, 属于正常的心理现象) nghe như bác sĩ tâm lý đọc báo cáo.'}
   ]
 };
 

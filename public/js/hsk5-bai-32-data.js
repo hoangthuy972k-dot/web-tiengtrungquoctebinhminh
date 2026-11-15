@@ -1341,94 +1341,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 126), bài tập 3 (tr. 128) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'贡献',right:'力量'},
   {left:'放弃',right:'幻想'},
-  {left:'改变',right:'命运'},
   {left:'鼓舞',right:'人心'},
   {left:'态度',right:'消极'},
   {left:'话题',right:'敏感'},
   {left:'联系',right:'密切'},
-  {left:'心神',right:'不安'},
   {left:'破坏',right:'环境'},
   {left:'掌握',right:'知识'},
-  {left:'真实的',right:'原因'},
-  {left:'夸张的',right:'动作'},
-  {left:'自觉地',right:'遵守'},
-  {left:'死于',right:'车祸'},
-  {left:'开发',right:'资源'},
-  {left:'基础',right:'设施'},
   {left:'燃烧',right:'煤炭'},
   {left:'汽车',right:'尾气'},
   {left:'公布',right:'数据'},
-  {left:'大型',right:'工厂'},
-  {left:'可再生',right:'能源'}
+  {left:'大型',right:'工厂'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'记录、保存将要',blank:'消失',post:'的事物是摄影非常重要的作用。',hint:'(biến mất)',ans:'消失'},
-  {pre:'去年夏天这里发了一场大',blank:'洪水',post:'，很多房子都被冲走了。',hint:'(lũ lụt)',ans:'洪水'},
-  {pre:'昨天夜里发生了一次小',blank:'地震',post:'，很多人都被吓醒了。',hint:'(động đất)',ans:'地震'},
-  {pre:'乱扔垃圾不但会',blank:'破坏',post:'环境，还会影响城市的形象。',hint:'(phá hoại)',ans:'破坏'},
-  {pre:'有些地区的森林已经几乎被人',blank:'砍',post:'光了。',hint:'(chặt, đốn)',ans:'砍'},
-  {pre:'很多河流被污染，不再适合鱼类',blank:'生存',post:'。',hint:'(sinh tồn)',ans:'生存'},
-  {pre:'有的地区原本是草原，如今已变为',blank:'沙漠',post:'。',hint:'(sa mạc)',ans:'沙漠'},
-  {pre:'大赛的作品将被放在网上，由网友打分，比赛结果于四月十五日',blank:'公布',post:'。',hint:'(công bố)',ans:'公布'},
-  {pre:'',blank:'数据',post:'显示，今年城市的空气质量有所改善。',hint:'(số liệu)',ans:'数据'},
-  {pre:'这部电影是根据一个',blank:'真实',post:'的故事拍的。',hint:'(có thật)',ans:'真实'},
-  {pre:'你说他一顿饭吃了十碗米饭？太',blank:'夸张',post:'了吧！',hint:'(phóng đại)',ans:'夸张'},
-  {pre:'我们应该节约水',blank:'资源',post:'，洗完手要关好水龙头。',hint:'(tài nguyên)',ans:'资源'},
-  {pre:'下雨天路滑，开车要小心，很容易出',blank:'车祸',post:'。',hint:'(tai nạn giao thông)',ans:'车祸'},
-  {pre:'接到电话，她感到有些',blank:'不安',post:'，急忙连夜赶回家中。',hint:'(lo lắng, bất an)',ans:'不安'},
-  {pre:'这座城市的',blank:'工业',post:'很发达，但空气不太好。',hint:'(công nghiệp)',ans:'工业'},
-  {pre:'越南是一个',blank:'农业',post:'大国，大米出口很多。',hint:'(nông nghiệp)',ans:'农业'},
-  {pre:'这家工厂每年',blank:'生产',post:'十万辆汽车。',hint:'(sản xuất)',ans:'生产'},
-  {pre:'我家附近新开了一家',blank:'大型',post:'超市，东西又多又便宜。',hint:'(cỡ lớn)',ans:'大型'},
-  {pre:'他高中毕业以后去了一家',blank:'工厂',post:'工作。',hint:'(nhà máy)',ans:'工厂'},
-  {pre:'工厂排放的',blank:'废',post:'水必须处理以后才能排到河里。',hint:'(thải — nước thải)',ans:'废'},
-  {pre:'木头',blank:'燃烧',post:'时会产生很多烟。',hint:'(cháy)',ans:'燃烧'},
-  {pre:'以前冬天，北方很多家庭都烧',blank:'煤炭',post:'取暖。',hint:'(than đá)',ans:'煤炭'},
-  {pre:'还有一部分污染和我们的日常生活',blank:'密切',post:'相关。',hint:'(mật thiết)',ans:'密切'},
-  {pre:'城市里的车越来越多，汽车',blank:'尾气',post:'污染也越来越严重。',hint:'(khí thải xe)',ans:'尾气'},
-  {pre:'船翻了，他很',blank:'幸运',post:'地抱住一根木头，游到一个小岛上。',hint:'(may mắn)',ans:'幸运'},
-  {pre:'家里的老人对空气污染比较',blank:'敏感',post:'，最近最好少出门。',hint:'(nhạy cảm)',ans:'敏感'},
-  {pre:'父母不在家，他也能',blank:'自觉',post:'地完成作业。',hint:'(tự giác)',ans:'自觉'},
-  {pre:'新学校的体育',blank:'设施',post:'很先进，有游泳馆和网球场。',hint:'(cơ sở vật chất)',ans:'设施'},
-  {pre:'为了节约',blank:'能源',post:'，离开教室时要关灯。',hint:'(năng lượng)',ans:'能源'},
-  {pre:'云计算应用市场规模正在',blank:'逐步',post:'扩大。',hint:'(từng bước)',ans:'逐步',exp:'逐步 = từng bước (có kế hoạch, có trình tự): 逐步扩大.'},
-  {pre:'老年人要',blank:'尽量',post:'少吃油炸食品。',hint:'(cố gắng hết mức)',ans:'尽量',exp:'尽量 + V = cố gắng hết mức có thể: 尽量少吃.'},
-  {pre:'这是我的',blank:'私人',post:'物品，请不要随便动。',hint:'(cá nhân, riêng)',ans:'私人'},
-  {pre:'张老师对每个学生都很好，大家都很',blank:'尊敬',post:'她。',hint:'(kính trọng)',ans:'尊敬'},
-  {pre:'谈判的成功给了他极大的',blank:'鼓舞',post:'。',hint:'(cổ vũ)',ans:'鼓舞'},
-  {pre:'考试失败了也别太',blank:'消极',post:'，下次再努力吧。',hint:'(tiêu cực)',ans:'消极'},
-  {pre:'小时候，他常',blank:'幻想',post:'着自己有一天也能成为一名导演。',hint:'(mơ tưởng)',ans:'幻想'},
-  {pre:'咱们也为绿色出行做点儿',blank:'贡献',post:'吧。',hint:'(đóng góp)',ans:'贡献'},
-  {pre:'很多人相信，读书可以改变',blank:'命运',post:'。',hint:'(số phận)',ans:'命运'},
-  {pre:'学外语最重要的是',blank:'掌握',post:'正确的学习方法。',hint:'(nắm vững)',ans:'掌握'}
+  {pre:'这种鸟已经从我们这儿',blank:'消失',post:'二十多年了，现在只能在照片上看到。',hint:'(biến mất)',ans:'消失',exp:'消失 = biến mất (không còn tồn tại / không thấy nữa): 从……消失, 慢慢消失.'},
+  {pre:'昨天晚上发生了一次',blank:'地震',post:'，很多人吓得从楼里跑了出来。',hint:'(động đất)',ans:'地震',exp:'地震 = động đất: 发生地震; 洪水 = lũ lụt.'},
+  {pre:'这棵树太老了，再不',blank:'砍',post:'掉，大风一来就会倒在房子上。',hint:'(chặt, đốn)',ans:'砍',exp:'砍 = chặt, đốn (bằng dao, rìu): 砍树, 砍掉, 砍光.'},
+  {pre:'',blank:'沙漠',post:'里很少下雨，白天特别热，晚上却很冷。',hint:'(sa mạc)',ans:'沙漠',exp:'沙漠 = sa mạc; 变为沙漠 = biến thành sa mạc.'},
+  {pre:'广告里说喝了这种饮料一个星期就能瘦十公斤，这也太',blank:'夸张',post:'了。',hint:'(phóng đại, cường điệu)',ans:'夸张',exp:'夸张 = nói quá sự thật, phóng đại: 太夸张了, 夸张的动作.'},
+  {pre:'他开车的时候总是看手机，结果出了',blank:'车祸',post:'。',hint:'(tai nạn giao thông)',ans:'车祸',exp:'车祸 = tai nạn xe cộ; động từ đi kèm là 出 / 发生: 出车祸.'},
+  {pre:'我们老家主要靠',blank:'农业',post:'生活，大部分人家都种菜、种水果。',hint:'(nông nghiệp)',ans:'农业',exp:'农业 = nông nghiệp (trồng trọt, chăn nuôi); 工业 = công nghiệp.'},
+  {pre:'这家工厂把',blank:'废',post:'水直接放进了河里，河里的鱼全死了。',hint:'(thải — nước thải)',ans:'废',exp:'废 = bỏ đi, thải ra: 废水 (nước thải), 废气 (khí thải), 废物 (đồ bỏ đi).'},
+  {pre:'上班时间最好不要打',blank:'私人',post:'电话。',hint:'(riêng, cá nhân)',ans:'私人',exp:'私人 = của riêng cá nhân: 私人电话, 私人汽车 — đối lập với 公司的, 公共的.'},
+  {pre:'没有水，人和动物都无法',blank:'生存',post:'。',hint:'(sinh tồn, sống)',ans:'生存',exp:'生存 = sinh tồn, tồn tại để sống: 无法生存, 适合生存.'},
+  {pre:'他在面试时说的经历都是',blank:'真实',post:'的，没有一句假话。',hint:'(chân thực, có thật)',ans:'真实',exp:'真实 = đúng với sự thật, không giả: 真实的经历, 真实的情况.'},
+  {pre:'我能遇到这么好的老师，真是太',blank:'幸运',post:'了。',hint:'(may mắn)',ans:'幸运',exp:'幸运 = may mắn (tính từ): 真幸运; 幸运的是…… = may mắn là….'}
 ];
 
 // ══════════════════════════════════════════
 // SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['刘医生','密切地','观察着','病人的','情况','。'],ans:'刘医生密切地观察着病人的情况。',audio:'刘医生密切地观察着病人的情况。'},
-  {words:['两国','之间的','联系','越来越','密切了','。'],ans:'两国之间的联系越来越密切了。',audio:'两国之间的联系越来越密切了。'},
-  {words:['老年人','要','尽量','少吃','油炸食品','。'],ans:'老年人要尽量少吃油炸食品。',audio:'老年人要尽量少吃油炸食品。'},
-  {words:['我们','应该','尽量','多骑','自行车','。'],ans:'我们应该尽量多骑自行车。',audio:'我们应该尽量多骑自行车。'},
-  {words:['为了节约能源','，','请大家','尽量','使用','节能电器','。'],ans:'为了节约能源，请大家尽量使用节能电器。',audio:'为了节约能源，请大家尽量使用节能电器。'},
-  {words:['云计算','应用市场','规模','正在','逐步','扩大','。'],ans:'云计算应用市场规模正在逐步扩大。',audio:'云计算应用市场规模正在逐步扩大。'},
-  {words:['受灾群众','已','逐步','恢复了','正常的','生活','。'],ans:'受灾群众已逐步恢复了正常的生活。',audio:'受灾群众已逐步恢复了正常的生活。'},
-  {words:['我的','汉语水平','正在','逐步','提高','。'],ans:'我的汉语水平正在逐步提高。',audio:'我的汉语水平正在逐步提高。'},
-  {words:['有些地区的','森林','已经几乎','被人','砍光了','。'],ans:'有些地区的森林已经几乎被人砍光了。',audio:'有些地区的森林已经几乎被人砍光了。'},
-  {words:['这些','数据','确实','令人','不安','。'],ans:'这些数据确实令人不安。',audio:'这些数据确实令人不安。'},
-  {words:['幸运的是','，','越来越多的人','认识到了','环境问题的','严重','。'],ans:'幸运的是，越来越多的人认识到了环境问题的严重。',audio:'幸运的是，越来越多的人认识到了环境问题的严重。'},
-  {words:['人类的','命运','由我们自己','掌握','。'],ans:'人类的命运由我们自己掌握。',audio:'人类的命运由我们自己掌握。'},
-  {words:['我们应该','把地球','看作','一个','属于自己的','大房间','。'],ans:'我们应该把地球看作一个属于自己的大房间。',audio:'我们应该把地球看作一个属于自己的大房间。'}
+  {words:['我','会','尽量','在周五以前','把报告','交给你','。'],ans:'我会尽量在周五以前把报告交给你。',audio:'我会尽量在周五以前把报告交给你。'},
+  {words:['考试时','，','尽量','先做','简单的题','。'],ans:'考试时，尽量先做简单的题。',audio:'考试时，尽量先做简单的题。'},
+  {words:['我们俩','是','邻居','，','两家的关系','一直','很','密切','。'],ans:'我们俩是邻居，两家的关系一直很密切。',audio:'我们俩是邻居，两家的关系一直很密切。'},
+  {words:['工厂','打算','逐步','减少','煤炭的','使用','。'],ans:'工厂打算逐步减少煤炭的使用。',audio:'工厂打算逐步减少煤炭的使用。'},
+  {words:['进入','十月','，','天气','逐渐','凉快','了','。'],ans:'进入十月，天气逐渐凉快了。',audio:'进入十月，天气逐渐凉快了。'},
+  {words:['这个','好消息','非常','鼓舞','人心','。'],ans:'这个好消息非常鼓舞人心。',audio:'这个好消息非常鼓舞人心。'},
+  {words:['村里的人','都','很','尊敬','这位','老医生','。'],ans:'村里的人都很尊敬这位老医生。',audio:'村里的人都很尊敬这位老医生。'},
+  {words:['这些','数据','说明','，','这里的','工业','发展','得','很快','。'],ans:'这些数据说明，这里的工业发展得很快。',audio:'这些数据说明，这里的工业发展得很快。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1436,172 +1396,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {
-    wrong:'虽然我不同意你的看法，但我还是____你的选择。',
-    opts:['尊敬','尊重','重视','珍惜'],
-    ans:1,
-    exp:'Đối tượng là “lựa chọn” (sự việc) và quan hệ ngang hàng → 尊重你的选择 (bài tập 2 của sách). 尊敬 dùng cho người trên (thầy cô, người già); 重视 là coi trọng việc gì; 珍惜 là trân trọng, quý (thời gian, cơ hội).'
-  },
-  {
-    wrong:'作品充分地表达了作者内心____的情感。',
-    opts:['真实','确实','实在','老实'],
-    ans:0,
-    exp:'Làm định ngữ: 真实的情感 = tình cảm chân thật (bài tập 2 của sách). 确实 / 实在 chủ yếu là phó từ “quả thật”; 老实 tả tính cách thật thà của người.'
-  },
-  {
-    wrong:'那个城市的基础____还不够完善。',
-    opts:['设备','设施','设计','措施'],
-    ans:1,
-    exp:'基础设施 = cơ sở hạ tầng (bài tập 2 của sách), đi với 完善 (bảng 搭配). 设备 là máy móc cụ thể; 设计 là thiết kế; 措施 (bài 16) là biện pháp — 采取措施.'
-  },
-  {
-    wrong:'这次考试能否通过，我实在没什么____。',
-    opts:['掌握','把握','握手','控制'],
-    ans:1,
-    exp:'没(有)把握 = không chắc chắn — ở đây 把握 là DANH TỪ (bài tập 2 của sách). 掌握 là động từ “nắm vững”, không nói 没什么掌握.'
-  },
-  {
-    wrong:'父母平时应____孩子多参加体育活动。',
-    opts:['鼓舞','鼓励','鼓掌','安慰'],
-    ans:1,
-    exp:'Người thúc đẩy người khác làm việc gì → 鼓励 + người + V (词语辨析 của bài). 鼓舞 chủ ngữ thường là sự việc; 鼓掌 là vỗ tay; 安慰 (bài 8) là an ủi.'
-  },
-  {
-    wrong:'年初制定的目标顺利实现，取得的成绩令人十分____。',
-    opts:['鼓励','鼓舞','支持','安慰'],
-    ans:1,
-    exp:'Dùng như tính từ sau 令人十分 → chỉ 鼓舞 (phấn khởi). 鼓励 / 支持 / 安慰 đều là động từ, không đứng sau 令人十分 theo cách này.'
-  },
-  {
-    wrong:'秋天到了，天气____冷了起来。',
-    opts:['逐步','逐渐','尽量','一再'],
-    ans:1,
-    exp:'Biến đổi TỰ NHIÊN, đứng trước tính từ 冷 → 逐渐 (bài 10). 逐步 dùng cho việc con người làm có kế hoạch; 尽量 là cố gắng; 一再 (bài 13) là hết lần này đến lần khác.'
-  },
-  {
-    wrong:'老年人要____少吃油炸食品。',
-    opts:['尽量','尽快','尽管','尽力'],
-    ans:0,
-    exp:'尽量 + 少 + V = cố gắng … ít đi (điểm ngữ pháp 2). 尽快 là càng nhanh càng tốt; 尽管 là mặc dù; 尽力 là dốc sức (尽力而为), không đi với 少吃.'
-  },
-  {
-    wrong:'还有一部分污染和我们的日常生活____相关。',
-    opts:['密切','亲切','亲密','仔细'],
-    ans:0,
-    exp:'密切相关 = liên quan mật thiết (điểm ngữ pháp 1). 亲切 là thân thiện (thái độ); 亲密 là thân mật (giữa người với người); 仔细 là tỉ mỉ.'
-  },
-  {
-    wrong:'水____短缺问题就连科学家们也不知道该如何解决。',
-    opts:['资源','资料','能源','来源'],
-    ans:0,
-    exp:'水资源 = tài nguyên nước. 资料 (bài 9) là tài liệu; 能源 là nguồn năng lượng; 来源 là nguồn gốc.'
-  },
-  {
-    wrong:'调整____消费结构，逐步向可再生能源转变。',
-    opts:['能源','能量','能力','动力'],
-    ans:0,
-    exp:'能源消费结构 = cơ cấu tiêu thụ năng lượng; vế sau có 可再生能源. 能量 là năng lượng (khái niệm vật lý); 能力 là năng lực; 动力 là động lực.'
-  },
-  {
-    wrong:'船翻了，他很____地抱住一根木头，游到一个小岛上。',
-    opts:['幸运','幸福','运气','愉快'],
-    ans:0,
-    exp:'幸运地 + V = may mắn làm được … (bài tập 1 của sách). 幸福 là hạnh phúc lâu dài; 运气 là danh từ (vận may); 愉快 là vui vẻ.'
-  },
-  {
-    wrong:'比赛结果于四月十五日____。',
-    opts:['公布','发表','发现','出版'],
-    ans:0,
-    exp:'公布结果 = công bố kết quả (bài tập 1 của sách). 发表 dùng cho bài viết, ý kiến (发表文章); 发现 là phát hiện; 出版 (bài 20) là xuất bản sách.'
-  },
-  {
-    wrong:'收入是个____话题，第一次见面最好别问。',
-    opts:['敏感','感动','感觉','灵敏'],
-    ans:0,
-    exp:'敏感话题 = chủ đề nhạy cảm (bài tập 3 của sách). 灵敏 là nhạy (máy móc, giác quan), không nói 灵敏话题; 感动 / 感觉 sai nghĩa.'
-  },
-  {
-    wrong:'大家都应该____地遵守交通规则。',
-    opts:['自觉','自然','自由','自信'],
-    ans:0,
-    exp:'自觉地遵守 = tự giác tuân thủ (bảng 搭配). 自然 là tự nhiên; 自由 (bài 18) là tự do; 自信 là tự tin.'
-  },
-  {
-    wrong:'房间脏了，____的逃避不能解决问题。',
-    opts:['消极','积极','消失','消费'],
-    ans:0,
-    exp:'Trốn tránh là thái độ tiêu cực → 消极的逃避. 积极 ngược nghĩa; 消失 là biến mất; 消费 (bài 8) là tiêu dùng.'
-  },
-  {
-    wrong:'小时候，他常____着自己有一天也能成为一名导演。',
-    opts:['幻想','思想','理想','感想'],
-    ans:0,
-    exp:'幻想 dùng như ĐỘNG TỪ: 幻想着 + điều mơ tưởng (bài tập 1 của sách). 理想 / 思想 / 感想 đều là danh từ, không đi với 着 như thế này.'
-  },
-  {
-    wrong:'每个人都应该为保护环境做出____。',
-    opts:['贡献','意义','价值','作用'],
-    ans:0,
-    exp:'做出贡献 = có đóng góp (bài khoá). Nói 发挥作用 chứ không nói 做出作用; 意义 / 价值 không đi với 做出.'
-  },
-  {
-    wrong:'人类的____由我们自己掌握。',
-    opts:['命运','运气','运动','幸运'],
-    ans:0,
-    exp:'掌握命运 = nắm giữ vận mệnh. 运气 là vận may nhất thời, không “nắm giữ” được; 运动 là thể thao; 幸运 là tính từ.'
-  },
-  {
-    wrong:'他熟练地____了三门外语。',
-    opts:['掌握','把握','握住','拿住'],
-    ans:0,
-    exp:'掌握 + 语言 / 知识 / 技术 (bảng 搭配). 把握 hay đi với 机会 / 时机 / 方向; 握住 / 拿住 là cầm chặt đồ vật.'
-  },
-  {
-    wrong:'一部分环境污染是由工业农业____活动造成的。',
-    opts:['生产','生活','产生','出产'],
-    ans:0,
-    exp:'生产活动 = hoạt động sản xuất. 产生 là “sinh ra” (产生废气), không làm định ngữ cho 活动; 出产 là (vùng đất) sản sinh ra sản vật.'
-  },
-  {
-    wrong:'有的工厂要大量____煤炭，从而产生大量废气。',
-    opts:['燃烧','点燃','着火','烧烤'],
-    ans:0,
-    exp:'大量燃烧煤炭 = đốt lượng lớn than. 点燃 là châm lửa (một lần); 着火 (bài 3) là bốc cháy, không mang tân ngữ; 烧烤 là nướng thịt.'
-  },
-  {
-    wrong:'还有一部分污染和日常生活密切相关，汽车____就是其中之一。',
-    opts:['尾气','空气','天气','力气'],
-    ans:0,
-    exp:'汽车尾气 = khí thải ô tô. 空气 là không khí; 天气 là thời tiết; 力气 là sức lực.'
-  }
+  {wrong:'妈妈总是____我多参加学校的活动。',opts:['鼓励','鼓舞','鼓掌','感动'],ans:0,exp:'鼓励 + người + làm gì = khuyến khích ai làm gì. 鼓舞 không dùng theo mẫu này (thường là 鼓舞人心, 令人鼓舞); 鼓掌 là vỗ tay; 感动 là cảm động.'},
+  {wrong:'我们班得了第一名，这个消息真让人____。',opts:['鼓舞','鼓励','支持','关心'],ans:0,exp:'让人鼓舞 / 令人鼓舞 = khiến người ta phấn chấn. 鼓励 không dùng như tính từ sau 让人; 支持, 关心 cần có tân ngữ, không hợp nghĩa.'},
+  {wrong:'吃了药以后，他的脸色____好了起来。',opts:['逐渐','逐步','尽量','密切'],ans:0,exp:'Thay đổi tự nhiên + tính từ (好起来) → 逐渐. 逐步 chỉ việc có kế hoạch từng bước, không đứng trước tính từ; 尽量, 密切 không hợp.'},
+  {wrong:'选什么专业是孩子自己的事，父母应该____他的决定。',opts:['尊重','尊敬','鼓舞','掌握'],ans:0,exp:'尊重 + ý kiến, quyết định, lựa chọn = tôn trọng. 尊敬 dùng cho người bề trên (尊敬老师); 鼓舞, 掌握 không hợp.'},
+  {wrong:'饮食习惯和身体健康____相关。',opts:['密切','亲切','亲自','仔细'],ans:0,exp:'A 和 B 密切相关 = liên quan mật thiết. 亲切 là thân thiết, ân cần (tả thái độ); 亲自 là đích thân; 仔细 là tỉ mỉ.'},
+  {wrong:'明天的考试很重要，今晚你____别玩儿手机了。',opts:['尽量','尽快','尽管','逐渐'],ans:0,exp:'尽量 + V = cố gắng hết mức. 尽快 là “càng nhanh càng tốt”, không đi với 别 trong lời khuyên này; 尽管 là “mặc dù”; 逐渐 không dùng trong lời khuyên.'},
+  {wrong:'这个国家的森林____非常丰富。',opts:['资源','能源','资料','来源'],ans:0,exp:'森林资源 / 水资源 = tài nguyên. 能源 là nguồn năng lượng (điện, than…); 资料 là tài liệu; 来源 là nguồn gốc.'},
+  {wrong:'这家工厂每天____五千台电脑。',opts:['生产','产生','生活','发生'],ans:0,exp:'生产 + sản phẩm = sản xuất. 产生 + 影响/问题/废气 = sinh ra (cái trừu tượng); 生活, 发生 không mang tân ngữ này.'},
+  {wrong:'我的皮肤很____，一用新的东西就会红。',opts:['敏感','感动','灵活','自觉'],ans:0,exp:'对……敏感 / 皮肤敏感 = nhạy cảm, dễ phản ứng. 感动 là cảm động; 灵活 là linh hoạt; 自觉 là tự giác.'},
+  {wrong:'失败一次就____得什么都不想做，这样可不行。',opts:['消极','积极','消失','自然'],ans:0,exp:'消极 = tiêu cực, bi quan, trái với 积极. 消失 là biến mất (động từ); 自然 không hợp nghĩa.'},
+  {wrong:'他总是____有一天能突然变成有钱人，却从来不努力。',opts:['幻想','理想','思想','想象'],ans:0,exp:'幻想 (động từ) = mơ tưởng viển vông, nghĩa hơi xấu. 理想, 思想 là danh từ; 想象 là tưởng tượng, không mang ý “mơ hão” này.'},
+  {wrong:'他只学了半年，就____了开车的技术。',opts:['掌握','把握','掌声','发明'],ans:0,exp:'掌握 + kiến thức, kỹ thuật, phương pháp = nắm vững. 把握 là “sự chắc chắn” (有把握); 掌声 là tiếng vỗ tay; 发明 là phát minh.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Vì tài nguyên của Trái Đất có hạn nên các bạn lớp mình đều cố gắng không dùng đũa dùng một lần.',zh:'因为地球的资源有限，所以我们班同学都尽量不用一次性筷子。',py:'Yīnwèi dìqiú de zīyuán yǒuxiàn, suǒyǐ wǒmen bān tóngxué dōu jǐnliàng bú yòng yícìxìng kuàizi.',goiY:['因为……所以……','资源','尽量 + 不 + V'],giai:'尽量 + 不 + V = "cố hết sức không…"; 尽量 đứng trước phần phủ định, không nói 不尽量用.'},
-  {vi:'Chỉ cần mỗi người đều tự giác tiết kiệm điện là đã có thể góp một phần vào việc bảo vệ môi trường.',zh:'只要每个人都自觉节约用电，就能为保护环境作出一点贡献。',py:'Zhǐyào měi ge rén dōu zìjué jiéyuē yòng diàn, jiù néng wèi bǎohù huánjìng zuòchū yìdiǎn gòngxiàn.',goiY:['只要……就……','自觉','作出……贡献'],giai:'"Góp phần vào…" dịch là 为……作出贡献; 自觉 đứng trước động từ làm trạng ngữ (tự giác làm gì).'},
-  {vi:'Sở dĩ thành tích của cậu ấy từng bước được nâng lên là vì cậu ấy đã nắm được phương pháp học đúng đắn.',zh:'他的成绩之所以逐步提高，是因为他掌握了正确的学习方法。',py:'Tā de chéngjì zhīsuǒyǐ zhúbù tígāo, shì yīnwèi tā zhǎngwòle zhèngquè de xuéxí fāngfǎ.',goiY:['之所以……是因为……','逐步提高','掌握'],giai:'逐步 + động từ (提高 / 扩大 / 实现) = từng bước; không dùng 逐步 trước tính từ (✗逐步好), khi đó phải dùng 逐渐.'},
-  {vi:'Số liệu công bố trên mạng chưa chắc đã là thật, có cái thậm chí còn rất phóng đại, vì vậy trước khi chia sẻ nhất định phải kiểm chứng đã.',zh:'网上公布的数据不一定真实，有的甚至很夸张，所以转发之前一定要先核实。',py:'Wǎng shang gōngbù de shùjù bù yídìng zhēnshí, yǒude shènzhì hěn kuāzhāng, suǒyǐ zhuǎnfā zhīqián yídìng yào xiān héshí.',goiY:['公布','数据','甚至','夸张'],giai:'不一定 = "chưa chắc"; 甚至 nâng mức độ lên ("thậm chí còn…"); "kiểm chứng" dịch là 核实.'},
+  {vi:'Vì tài nguyên của Trái Đất có hạn nên các bạn lớp mình đều cố gắng dùng ít túi nilon.',zh:'因为地球的资源有限，所以我们班同学都尽量少用塑料袋。',py:'Yīnwèi dìqiú de zīyuán yǒuxiàn, suǒyǐ wǒmen bān tóngxué dōu jǐnliàng shǎo yòng sùliàodài.',goiY:['因为……所以……','资源','尽量少 + V'],giai:'尽量 + 少 + V = "cố gắng… ít nhất có thể"; 尽量 đứng trước 少, 少 đứng ngay trước động từ.'},
+  {vi:'Chỉ cần mỗi người đều tự giác tiết kiệm điện là đã có thể góp một phần vào việc bảo vệ môi trường.',zh:'只要每个人都自觉节约用电，就能为保护环境做出一点贡献。',py:'Zhǐyào měi ge rén dōu zìjué jiéyuē yòng diàn, jiù néng wèi bǎohù huánjìng zuòchū yìdiǎn gòngxiàn.',goiY:['只要……就……','自觉','做出……贡献'],giai:'"Góp phần vào…" dịch là 为……做出贡献; 自觉 đứng trước động từ làm trạng ngữ (tự giác làm gì).'},
+  {vi:'Sở dĩ thành tích của cậu ấy từng bước được nâng lên là vì cậu ấy đã nắm được phương pháp học đúng đắn.',zh:'他的成绩之所以逐步提高，是因为他掌握了正确的学习方法。',py:'Tā de chéngjì zhīsuǒyǐ zhúbù tígāo, shì yīnwèi tā zhǎngwòle zhèngquè de xuéxí fāngfǎ.',goiY:['之所以……是因为……','逐步提高','掌握'],giai:'逐步 + động từ (提高 / 实现 / 改善) = từng bước; không dùng 逐步 trước tính từ (✗逐步好), khi đó phải dùng 逐渐.'},
   {vi:'Kết quả học tập có liên quan mật thiết đến chất lượng giấc ngủ, vì vậy dù thi cử căng thẳng đến mấy cũng cố gắng đừng thức khuya.',zh:'学习成绩和睡眠质量密切相关，因此即使考试再紧张，也尽量不要熬夜。',py:'Xuéxí chéngjì hé shuìmián zhìliàng mìqiè xiāngguān, yīncǐ jíshǐ kǎoshì zài jǐnzhāng, yě jǐnliàng búyào áoyè.',goiY:['A 和 B 密切相关','即使……也……','尽量','熬夜'],giai:'A 和 B 密切相关 = A và B liên quan mật thiết; 即使 + 再 + tính từ, 也…… = "dù… đến mấy cũng…".'},
-  {vi:'Thay vì ôm những mộng tưởng viển vông về tương lai, chi bằng hãy chân đạp đất, từng bước thực hiện mục tiêu của mình.',zh:'与其对未来抱着不切实际的幻想，不如脚踏实地，逐步实现自己的目标。',py:'Yǔqí duì wèilái bàozhe bú qiè shíjì de huànxiǎng, bùrú jiǎotà-shídì, zhúbù shíxiàn zìjǐ de mùbiāo.',goiY:['与其……不如……','幻想','逐步实现'],giai:'与其 A 不如 B: bỏ A chọn B; "viển vông" dịch là 不切实际的, đặt trước danh từ 幻想.'},
-  {vi:'Tôi rất kính trọng cô chủ nhiệm lớp mình: cô không chỉ giúp chúng tôi nắm vững phương pháp học mà còn luôn động viên mỗi khi chúng tôi có tâm trạng tiêu cực.',zh:'我很尊敬我们的班主任，她不但帮我们掌握了学习方法，而且总在我们情绪消极的时候鼓舞我们。',py:'Wǒ hěn zūnjìng wǒmen de bānzhǔrèn, tā búdàn bāng wǒmen zhǎngwòle xuéxí fāngfǎ, érqiě zǒng zài wǒmen qíngxù xiāojí de shíhou gǔwǔ wǒmen.',goiY:['尊敬','不但……而且……','消极','鼓舞'],giai:'不但……而且…… khi hai vế cùng chủ ngữ thì chủ ngữ đặt trước 不但; 尊敬 dùng cho người, còn "tôn trọng ý kiến" phải dùng 尊重.'},
-  {vi:'Từ khi gần nhà mọc lên một nhà máy lớn, không khí ngày càng tệ, người dân cũng ngày càng bất an, không ít người thậm chí còn định chuyển nhà.',zh:'自从家附近建了一座大型工厂，空气就越来越差，居民们也越来越不安，不少人甚至打算搬家。',py:'Zìcóng jiā fùjìn jiànle yí zuò dàxíng gōngchǎng, kōngqì jiù yuè lái yuè chà, jūmínmen yě yuè lái yuè bù\'ān, bù shǎo rén shènzhì dǎsuan bānjiā.',goiY:['自从……就……','大型工厂','越来越','不安'],giai:'自从 + mốc thời gian trong quá khứ, vế sau thường có 就 hoặc 以后; 越来越 + tính từ không thêm 很 (✗越来越很差).'},
-  {vi:'Lớp tôi quyết định tổ chức "Tuần lễ giảm khí thải" trong trường: một mặt cố gắng đạp xe đi học để giảm khí thải ô tô, mặt khác tắt đèn khi ra khỏi phòng để tiết kiệm năng lượng.',zh:'我们班决定在学校开展“减碳周”活动：一方面尽量骑车上学，减少汽车尾气；另一方面随手关灯，节约能源。',py:'Wǒmen bān juédìng zài xuéxiào kāizhǎn “jiǎn tàn zhōu” huódòng: yì fāngmiàn jǐnliàng qí chē shàngxué, jiǎnshǎo qìchē wěiqì; lìng yì fāngmiàn suíshǒu guān dēng, jiéyuē néngyuán.',goiY:['一方面……另一方面……','尽量','尾气','能源'],giai:'一方面……另一方面…… liệt kê hai việc song song; 随手关灯 = "tiện tay tắt đèn" — không dịch sát từng chữ "tay theo".'},
+  {vi:'Tôi rất kính trọng cô giáo của lớp mình: cô không chỉ giúp chúng tôi nắm vững phương pháp học mà còn thường động viên mỗi khi chúng tôi có tâm trạng tiêu cực.',zh:'我很尊敬我们班的老师，她不但帮我们掌握了学习方法，而且常常在我们情绪消极的时候鼓舞我们。',py:'Wǒ hěn zūnjìng wǒmen bān de lǎoshī, tā búdàn bāng wǒmen zhǎngwòle xuéxí fāngfǎ, érqiě chángcháng zài wǒmen qíngxù xiāojí de shíhou gǔwǔ wǒmen.',goiY:['尊敬','不但……而且……','消极','鼓舞'],giai:'不但……而且…… khi hai vế cùng chủ ngữ thì chủ ngữ đặt trước 不但; 尊敬 dùng cho người, còn "tôn trọng ý kiến" phải dùng 尊重.'},
   {vi:'Hoạt động môi trường lần này không chỉ giúp chúng tôi nắm được nhiều kiến thức về bảo vệ môi trường mà còn làm tình cảm giữa các bạn trong lớp thêm gắn bó, đúng là một công đôi việc.',zh:'这次环保活动不仅让我们掌握了很多环保知识，而且密切了同学之间的关系，真是一举两得。',py:'Zhè cì huánbǎo huódòng bùjǐn ràng wǒmen zhǎngwòle hěn duō huánbǎo zhīshi, érqiě mìqièle tóngxué zhījiān de guānxi, zhēn shì yìjǔ-liǎngdé.',goiY:['不仅……而且……','掌握','密切了……的关系'],giai:'密切 ở đây là động từ: 密切了 + ……的关系 = làm quan hệ gắn bó hơn; 不仅……而且…… nối hai lợi ích cùng chiều.'}
 ];
+
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
   {vi:'Do con người không ngừng chặt cây, nhiều khu rừng trên Trái Đất đang dần dần biến mất.',zh:'由于人类不断地砍树，地球上的很多森林正在逐步消失。',py:'Yóuyú rénlèi búduàn de kǎn shù, dìqiú shang de hěn duō sēnlín zhèngzài zhúbù xiāoshī.',goiY:['由于 = do, bởi vì','砍 = chặt','逐步 = từng bước, dần dần'],giai:'由于 thường dùng trong văn viết, tương đương 因为; 逐步消失 nhấn mạnh quá trình diễn ra từng bước.'},
   {vi:'Lũ lụt và động đất tuy đáng sợ, nhưng sự tàn phá của con người đối với môi trường đôi khi còn nghiêm trọng hơn.',zh:'洪水和地震虽然可怕，但人类对环境的破坏有时更加严重。',py:'Hóngshuǐ hé dìzhèn suīrán kěpà, dàn rénlèi duì huánjìng de pòhuài yǒushí gèngjiā yánzhòng.',goiY:['虽然……但…… = tuy… nhưng…','破坏 = sự tàn phá','更加 = càng thêm, còn… hơn'],giai:'破坏 ở đây là danh từ (对……的破坏 = sự tàn phá đối với…); 更加 + tính từ hai âm tiết, dịch "còn… hơn".'},
-  {vi:'Nếu con người tiếp tục tàn phá môi trường thì sự sống còn của chính chúng ta cũng sẽ bị đe doạ.',zh:'如果人类继续破坏环境，我们自己的生存也会受到威胁。',py:'Rúguǒ rénlèi jìxù pòhuài huánjìng, wǒmen zìjǐ de shēngcún yě huì shòudào wēixié.',goiY:['如果……也…… = nếu… thì cũng…','破坏 = tàn phá','生存 = sự sinh tồn'],giai:'生存 là "sinh tồn, sống còn"; 受到威胁 mang nghĩa bị động "bị đe doạ" dù không có 被.'},
   {vi:'Những vụ tai nạn giao thông xảy ra hằng ngày khiến người ta thấy bất an, thế nhưng với thứ ô nhiễm không nhìn thấy được thì nhiều người lại chẳng nhạy cảm chút nào.',zh:'每天发生的车祸会让人感到不安，可是对于看不见的污染，很多人却一点儿也不敏感。',py:'Měi tiān fāshēng de chēhuò huì ràng rén gǎndào bù\'ān, kěshì duìyú kàn bu jiàn de wūrǎn, hěn duō rén què yìdiǎnr yě bù mǐngǎn.',goiY:['车祸 = tai nạn giao thông','不安 = bất an','对……不敏感 = không nhạy cảm với…'],giai:'可是……却…… nhấn mạnh sự trái ngược giữa hai thái độ; 一点儿也不 + tính từ = "chẳng… chút nào".'},
-  {vi:'Hoạt động sản xuất công nghiệp và nông nghiệp có quan hệ mật thiết với ô nhiễm môi trường, vì thế chính phủ phải theo dõi sát sao nước thải và khí thải của các nhà máy lớn.',zh:'工业和农业生产活动与环境污染关系密切，因此，政府必须密切关注大型工厂的废水和废气。',py:'Gōngyè hé nóngyè shēngchǎn huódòng yǔ huánjìng wūrǎn guānxi mìqiè, yīncǐ, zhèngfǔ bìxū mìqiè guānzhù dàxíng gōngchǎng de fèishuǐ hé fèiqì.',goiY:['关系密切 = quan hệ mật thiết','密切关注 = theo dõi sát sao','废水 / 废气 = nước thải / khí thải'],giai:'Cùng một chữ 密切: đứng sau 关系 là tính từ ("mật thiết"), đứng trước động từ 关注 là trạng ngữ ("sát sao") — dịch khác nhau cho tự nhiên.'},
   {vi:'Việc đốt than đá và khí thải ô tô đều gây ô nhiễm không khí, vì vậy chúng ta nên cố gắng ít đi ô tô riêng, đi phương tiện công cộng nhiều hơn.',zh:'燃烧煤炭和汽车尾气都会污染空气，所以我们应该尽量少开私人汽车，多坐公共交通。',py:'Ránshāo méitàn hé qìchē wěiqì dōu huì wūrǎn kōngqì, suǒyǐ wǒmen yīnggāi jǐnliàng shǎo kāi sīrén qìchē, duō zuò gōnggòng jiāotōng.',goiY:['燃烧煤炭 = đốt than đá','尾气 = khí thải xe','尽量少 + V = cố gắng ít… nhất có thể'],giai:'尽量少 + V / 多 + V: 少, 多 đứng trước động từ; dịch "ít… đi / … nhiều hơn" chứ không dịch sát "nhiều ngồi".'},
-  {vi:'Tài nguyên và năng lượng trên Trái Đất không hề vô hạn; một khi đã dùng hết, vận mệnh của loài người sẽ trở nên vô cùng nguy hiểm.',zh:'地球上的资源和能源并不是无限的，一旦用完了，人类的命运就会变得十分危险。',py:'Dìqiú shang de zīyuán hé néngyuán bìng bú shì wúxiàn de, yídàn yòngwán le, rénlèi de mìngyùn jiù huì biàn de shífēn wēixiǎn.',goiY:['并不是 = hoàn toàn không phải','一旦……就…… = một khi… thì…','命运 = vận mệnh'],giai:'一旦 nêu một giả thiết không mong muốn, vế sau dùng 就 chỉ hậu quả; 并 + phủ định nhấn mạnh việc bác bỏ suy nghĩ thông thường.'},
-  {vi:'Hôm nay chúng ta vẫn còn được hít thở không khí trong lành, như thế đã là may mắn lắm rồi; nhưng nếu mọi người không tự giác bảo vệ môi trường thì sớm muộn gì sự may mắn ấy cũng sẽ biến mất.',zh:'我们今天还能呼吸新鲜空气，已经很幸运了；但如果大家都不自觉保护环境，这份幸运迟早会消失。',py:'Wǒmen jīntiān hái néng hūxī xīnxiān kōngqì, yǐjīng hěn xìngyùn le; dàn rúguǒ dàjiā dōu bú zìjué bǎohù huánjìng, zhè fèn xìngyùn chízǎo huì xiāoshī.',goiY:['幸运 = may mắn','自觉 = tự giác','迟早 = sớm muộn gì'],giai:'迟早 đứng trước động từ, dịch "sớm muộn gì cũng…"; dấu ；tách phần nhận xét hiện tại và phần cảnh báo.'},
   {vi:'Bảo vệ môi trường không dựa vào mộng tưởng, cũng chẳng dựa vào những lời than phiền tiêu cực, mà là mỗi người từng bước nắm vững kiến thức môi trường và bắt đầu từ những việc nhỏ quanh mình.',zh:'保护环境靠的不是幻想，也不是消极的抱怨，而是每个人逐步掌握环保知识，从身边的小事做起。',py:'Bǎohù huánjìng kào de bú shì huànxiǎng, yě bú shì xiāojí de bàoyuàn, ér shì měi ge rén zhúbù zhǎngwò huánbǎo zhīshi, cóng shēnbiān de xiǎoshì zuòqǐ.',goiY:['不是……也不是……而是…… = không phải… cũng không phải… mà là…','消极 = tiêu cực','逐步掌握 = từng bước nắm vững'],giai:'Chuỗi phủ định 不是……也不是…… rồi khẳng định bằng 而是……; 从……做起 = "bắt đầu từ…".'},
-  {vi:'Những người đóng góp cho việc bảo vệ môi trường thật đáng kính trọng; câu chuyện của họ sở dĩ truyền cảm hứng được là vì họ đã chứng minh: vận mệnh của Trái Đất nằm trong tay mỗi người.',zh:'为环保作出贡献的人值得尊敬，他们的故事之所以能鼓舞人心，是因为他们证明了：地球的命运掌握在每个人手里。',py:'Wèi huánbǎo zuòchū gòngxiàn de rén zhíde zūnjìng, tāmen de gùshi zhīsuǒyǐ néng gǔwǔ rénxīn, shì yīnwèi tāmen zhèngmíngle: dìqiú de mìngyùn zhǎngwò zài měi ge rén shǒu li.',goiY:['之所以……是因为…… = sở dĩ… là vì…','鼓舞人心 = cổ vũ lòng người','命运掌握在……手里 = vận mệnh nằm trong tay…'],giai:'之所以 đặt ở vế kết quả, 是因为 ở vế nguyên nhân; 掌握在……手里 = "nằm trong tay…", không dịch là "nắm vững".'}
+  {vi:'Những người đóng góp cho việc bảo vệ môi trường thật đáng kính trọng; câu chuyện của họ sở dĩ truyền cảm hứng được là vì họ đã chứng minh: vận mệnh của Trái Đất nằm trong tay mỗi người.',zh:'为环保做出贡献的人值得尊敬，他们的故事之所以能鼓舞人心，是因为他们证明了：地球的命运掌握在每个人手里。',py:'Wèi huánbǎo zuòchū gòngxiàn de rén zhíde zūnjìng, tāmen de gùshi zhīsuǒyǐ néng gǔwǔ rénxīn, shì yīnwèi tāmen zhèngmíngle: dìqiú de mìngyùn zhǎngwò zài měi ge rén shǒu li.',goiY:['之所以……是因为…… = sở dĩ… là vì…','鼓舞人心 = cổ vũ lòng người','命运掌握在……手里 = vận mệnh nằm trong tay…'],giai:'之所以 đặt ở vế kết quả, 是因为 ở vế nguyên nhân; 掌握在……手里 = "nằm trong tay…", không dịch là "nắm vững".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1686,12 +1514,12 @@ var writingData = {
     {ten:'为……做出贡献',nhan:'贡献',vd:'我们每个人都能为保护地球做出贡献。',khi:'Câu KẾT: kêu gọi, quay về đề bài.'}
   ],
   sapXep:[
-    {manh:['其实不然','很多人觉得','环保离自己很远'],dap:'很多人觉得环保离自己很远，其实不然。',vn:'Nhiều người nghĩ bảo vệ môi trường xa vời với mình, thật ra không phải vậy.',giai:'Quan niệm (很多人觉得……) đứng trước, lời phủ định 其实不然 đứng cuối.'},
-    {manh:['开始','环保','从身边的小事','可以'],dap:'环保可以从身边的小事开始。',vn:'Bảo vệ môi trường có thể bắt đầu từ những việc nhỏ quanh ta.',giai:'Chủ ngữ + 可以 + 从……开始.'},
-    {manh:['骑自行车','出门','尽量','多'],dap:'出门尽量多骑自行车。',vn:'Ra ngoài cố gắng đi xe đạp nhiều hơn.',giai:'尽量 + 多 + V: 尽量 đứng trước 多, 多 đứng ngay trước động từ.'},
-    {manh:['把剩菜','自觉地','吃饭时','打包'],dap:'吃饭时自觉地把剩菜打包。',vn:'Ăn xong tự giác gói đồ ăn thừa mang về.',giai:'Thời gian + trạng ngữ (自觉地) + 把 + tân ngữ + V.'},
-    {manh:['就会','好习惯','逐步形成','只要每个人都做一点儿'],dap:'只要每个人都做一点儿，好习惯就会逐步形成。',vn:'Chỉ cần mỗi người làm một chút, thói quen tốt sẽ dần dần hình thành.',giai:'只要…… ở vế trước; vế sau: chủ ngữ + 就会 + 逐步 + V.'},
-    {manh:['做出贡献','为保护地球','我们每个人','都能'],dap:'我们每个人都能为保护地球做出贡献。',vn:'Mỗi chúng ta đều có thể góp phần bảo vệ Trái Đất.',giai:'Chủ ngữ + 都能 + 为 + mục tiêu + 做出贡献.'}
+    {manh:['关系','我跟她','很密切'],dap:'我跟她关系很密切。',vn:'Tôi với cô ấy có quan hệ rất thân thiết.',giai:'Chủ ngữ (我跟她) + 关系 + 很密切: cụm chủ–vị làm vị ngữ.'},
+    {manh:['早点儿','你','回来','尽量'],dap:'你尽量早点儿回来。',vn:'Con cố gắng về sớm một chút.',giai:'尽量 đứng sau chủ ngữ, trước cụm 早点儿 + V.'},
+    {manh:['公布了','学校','比赛结果','已经'],dap:'学校已经公布了比赛结果。',vn:'Nhà trường đã công bố kết quả cuộc thi.',giai:'Chủ ngữ + 已经 + V + 了 + tân ngữ.'},
+    {manh:['尊敬','这位老师','值得','我们'],dap:'这位老师值得我们尊敬。',vn:'Thầy giáo này đáng để chúng ta kính trọng.',giai:'A + 值得 + người + V = A đáng để ai làm gì.'},
+    {manh:['被','那棵大树','砍掉了','昨天'],dap:'那棵大树昨天被砍掉了。',vn:'Cái cây lớn đó hôm qua bị chặt mất rồi.',giai:'Câu bị động: chủ ngữ + thời gian + 被 + V + 掉了 (被 có thể không cần người làm).'},
+    {manh:['逐步','我们的','提高了','生活水平'],dap:'我们的生活水平逐步提高了。',vn:'Mức sống của chúng ta từng bước được nâng cao.',giai:'逐步 đứng ngay trước động từ 提高.'}
   ]
 };
 
@@ -1701,38 +1529,10 @@ var writingData = {
 var speakingData = {
   intro:'Ba câu đầu là <b>话题讨论</b> của sách (tr. 129: 环保), câu 4 mở rộng. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố dùng từ mới: 破坏 · 尽量 · 逐步 · 自觉 · 设施 · 资源 · 密切相关.',
   questions:[
-    {
-      q_zh:'说说你每天从身边观察到的不环保的行为。',
-      q_vn:'Hãy kể những hành vi không bảo vệ môi trường mà hằng ngày em quan sát thấy quanh mình.',
-      hint:'Kể 2–3 hành vi cụ thể (dùng 有的……有的……还有……), cuối cùng nhận xét (dùng 破坏)',
-      sample:'我每天都能看到一些不环保的行为。比如，有的同学喝完饮料就把瓶子随手扔在地上；有的人离开教室不关灯、不关空调；还有人买东西总要很多塑料袋。这些事虽然小，但对环境的破坏很大。',
-      sample_vn:'Ngày nào tôi cũng thấy một số hành vi không bảo vệ môi trường. Ví dụ, có bạn uống xong nước là tiện tay vứt chai xuống đất; có người ra khỏi lớp không tắt đèn, không tắt điều hoà; còn có người mua đồ lúc nào cũng lấy rất nhiều túi nilon. Những việc này tuy nhỏ nhưng tác hại với môi trường rất lớn.',
-      note:'有的……有的……还有…… giúp liệt kê gọn; 随手 (bài 18) = tiện tay; 对……的破坏 = sự tàn phá đối với ….'
-    },
-    {
-      q_zh:'结合自己的经历，谈谈你对环保的认识。',
-      q_vn:'Kết hợp trải nghiệm của bản thân, hãy nói về nhận thức của em đối với việc bảo vệ môi trường.',
-      hint:'Kể một trải nghiệm: trước đây em nghĩ gì — chuyện gì xảy ra — bây giờ em hiểu gì (dùng 密切相关)',
-      sample:'以前我觉得环保是政府和工厂的事，跟我没什么关系。后来学校组织我们去河边捡垃圾，我看到河水又脏又臭，心里很不安。从那以后我才明白，环境和我们的生活密切相关，每个人都有责任。',
-      sample_vn:'Trước đây tôi nghĩ bảo vệ môi trường là việc của chính phủ và nhà máy, chẳng liên quan gì đến tôi. Sau đó trường tổ chức cho chúng tôi ra bờ sông nhặt rác, tôi thấy nước sông vừa bẩn vừa hôi, trong lòng rất bất an. Từ đó tôi mới hiểu, môi trường liên quan mật thiết đến cuộc sống của chúng ta, ai cũng có trách nhiệm.',
-      note:'Khung “以前……后来……从那以后我才明白……” kể sự thay đổi nhận thức rất tự nhiên; 才 nhấn mạnh “đến lúc đó mới”.'
-    },
-    {
-      q_zh:'请介绍几件生活中我们可以做到的环保实事。',
-      q_vn:'Hãy giới thiệu vài việc thiết thực bảo vệ môi trường mà chúng ta có thể làm trong cuộc sống.',
-      hint:'Liệt kê theo 第一、第二、第三, cuối cùng dùng 只要……就…… và 逐步',
-      sample:'我们能做的事其实很多：第一，尽量少用塑料袋，买东西自己带购物袋；第二，做到垃圾分类；第三，出门多坐公交车或者骑车。只要大家都自觉地去做，环境就会逐步改善。',
-      sample_vn:'Những việc chúng ta làm được thật ra rất nhiều: thứ nhất, cố gắng dùng ít túi nilon, đi mua đồ tự mang túi; thứ hai, thực hiện phân loại rác; thứ ba, ra ngoài đi xe buýt hoặc đạp xe nhiều hơn. Chỉ cần mọi người đều tự giác làm, môi trường sẽ từng bước được cải thiện.',
-      note:'Ôn cả hai điểm ngữ pháp 尽量 + 少 + V và 逐步 + 改善; 只要……就…… (HSK 4).'
-    },
-    {
-      q_zh:'你们学校或者你家附近有哪些环保设施？你觉得还需要增加什么？',
-      q_vn:'Trường em hoặc gần nhà em có những công trình bảo vệ môi trường nào? Em thấy còn cần thêm gì?',
-      hint:'Kể cái đã có, rồi đề xuất cái cần thêm và lý do (dùng 设施, 资源, 既……也……)',
-      sample:'我们学校有分类垃圾桶，还有太阳能热水器。不过我觉得还可以增加一些节水设施，比如会自动关水的水龙头。这样既能节约水资源，也能提醒大家保护环境。',
-      sample_vn:'Trường tôi có thùng rác phân loại, còn có máy nước nóng năng lượng mặt trời. Nhưng tôi thấy còn có thể thêm một số thiết bị tiết kiệm nước, ví dụ vòi nước tự động khoá. Như vậy vừa tiết kiệm được tài nguyên nước, vừa nhắc mọi người bảo vệ môi trường.',
-      note:'设施 là cả hệ thống, công trình — 环保设施 / 节水设施; 既……也……: vừa … vừa ….'
-    }
+    {q_zh:'说说你每天从身边观察到的不环保的行为。',q_vn:'Hãy kể những hành vi không bảo vệ môi trường mà hằng ngày em quan sát thấy quanh mình.',hint:'Kể 2–3 hành vi cụ thể (dùng 有的……有的……还有……), cuối cùng nhận xét (dùng 破坏)',sample:'我每天都能看到一些不环保的行为。比如，有的同学喝完饮料就把瓶子随手扔在地上；有的人离开教室不关灯、不关空调；还有人买东西总要很多塑料袋。这些事虽然小，但对环境的破坏很大。',sample_vn:'Ngày nào tôi cũng thấy một số hành vi không bảo vệ môi trường. Ví dụ, có bạn uống xong nước là tiện tay vứt chai xuống đất; có người ra khỏi lớp không tắt đèn, không tắt điều hoà; còn có người mua đồ lúc nào cũng lấy rất nhiều túi nilon. Những việc này tuy nhỏ nhưng tác hại với môi trường rất lớn.',note:'有的……有的……还有…… giúp liệt kê gọn; 随手 (bài 18) = tiện tay; 对……的破坏 = sự tàn phá đối với ….'},
+    {q_zh:'谈谈你自己的经历和你对环保的认识。',q_vn:'Hãy kể trải nghiệm của bản thân và nói về nhận thức của em đối với việc bảo vệ môi trường.',hint:'Kể một trải nghiệm: trước đây em nghĩ gì — chuyện gì xảy ra — bây giờ em hiểu gì (dùng 密切相关)',sample:'以前我觉得环保是大公司和工厂的事，跟我没什么关系。后来学校组织我们去河边打扫，我看到河水又脏又黑，心里很不安。从那以后我才明白，环境和我们的生活密切相关，每个人都有责任。',sample_vn:'Trước đây tôi nghĩ bảo vệ môi trường là việc của các công ty lớn và nhà máy, chẳng liên quan gì đến tôi. Sau đó trường tổ chức cho chúng tôi ra bờ sông dọn vệ sinh, tôi thấy nước sông vừa bẩn vừa đen, trong lòng rất bất an. Từ đó tôi mới hiểu, môi trường liên quan mật thiết đến cuộc sống của chúng ta, ai cũng có trách nhiệm.',note:'Khung “以前……后来……从那以后我才明白……” kể sự thay đổi nhận thức rất tự nhiên; 才 nhấn mạnh “đến lúc đó mới”.'},
+    {q_zh:'请介绍几件生活中我们可以做到的环保小事。',q_vn:'Hãy giới thiệu vài việc nhỏ bảo vệ môi trường mà chúng ta có thể làm trong cuộc sống.',hint:'Liệt kê theo 第一、第二、第三, cuối cùng dùng 只要……就…… và 逐步',sample:'我们能做的事其实很多：第一，尽量少用塑料袋，出门自己带水杯；第二，做到垃圾分类；第三，出门多坐公交车或者骑车。只要大家都坚持下去，环境就会逐步改善。',sample_vn:'Những việc chúng ta làm được thật ra rất nhiều: thứ nhất, cố gắng dùng ít túi nilon, ra ngoài tự mang cốc nước; thứ hai, thực hiện phân loại rác; thứ ba, ra ngoài đi xe buýt hoặc đạp xe nhiều hơn. Chỉ cần mọi người đều kiên trì, môi trường sẽ từng bước được cải thiện.',note:'Ôn cả hai điểm ngữ pháp 尽量 + 少 + V và 逐步 + 改善; 只要……就…… (HSK 4).'},
+    {q_zh:'你们学校或者你家附近有哪些环保设施？你觉得还需要增加什么？',q_vn:'Trường em hoặc gần nhà em có những công trình bảo vệ môi trường nào? Em thấy còn cần thêm gì?',hint:'Kể cái đã có, rồi đề xuất cái cần thêm và lý do (dùng 设施, 资源, 既……也……)',sample:'我们学校有分类垃圾桶，教室里用的也都是节能灯。不过我觉得还可以增加一些节水设施，比如会自动关水的水龙头。这样既能节约水资源，也能提醒大家保护环境。',sample_vn:'Trường tôi có thùng rác phân loại, trong lớp cũng toàn dùng đèn tiết kiệm điện. Nhưng tôi thấy còn có thể thêm một số thiết bị tiết kiệm nước, ví dụ vòi nước tự động khoá. Như vậy vừa tiết kiệm được tài nguyên nước, vừa nhắc mọi người bảo vệ môi trường.',note:'设施 là cả hệ thống, công trình — 环保设施 / 节水设施; 既……也……: vừa … vừa ….'}
   ]
 };
 
@@ -1832,51 +1632,11 @@ var listenExamData = {
 var situationData = {
   intro:'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items:[
-    {
-      scene:'Trường chỉ cách nhà hai cây số, nhưng bố muốn sáng nào cũng lái ô tô đưa em đi học.',
-      a:{sp:'Bố',zh:'明天爸爸开车送你上学吧？',vn:'Mai bố lái xe đưa con đi học nhé?'},
-      need:['Dùng 尽量'],
-      sample:'不用了，爸爸。学校离家不远，我想尽量多骑自行车，少坐私家车，也为环保做点儿贡献。',
-      samplePy:'Búyòng le, bàba. Xuéxiào lí jiā bù yuǎn, wǒ xiǎng jǐnliàng duō qí zìxíngchē, shǎo zuò sījiāchē, yě wèi huánbǎo zuò diǎnr gòngxiàn.',
-      sampleVn:'Không cần đâu bố. Trường cách nhà không xa, con muốn cố gắng đạp xe nhiều hơn, ít đi ô tô riêng, cũng là góp chút sức bảo vệ môi trường.',
-      tip:'尽量多 + V，少 + V — đúng mẫu câu bài khoá (điểm ngữ pháp 2).'
-    },
-    {
-      scene:'Bạn thắc mắc vì sao sáng nào em cũng xem dự báo chất lượng không khí.',
-      a:{sp:'Bạn',zh:'你怎么每天早上都看空气质量预报啊？',vn:'Sao sáng nào cậu cũng xem dự báo chất lượng không khí thế?'},
-      need:['Dùng 密切','Dùng 敏感'],
-      sample:'因为我奶奶对空气污染特别敏感，空气好不好和她的健康密切相关，所以我得每天看看。',
-      samplePy:'Yīnwèi wǒ nǎinai duì kōngqì wūrǎn tèbié mǐngǎn, kōngqì hǎo bu hǎo hé tā de jiànkāng mìqiè xiāngguān, suǒyǐ wǒ děi měi tiān kànkan.',
-      sampleVn:'Vì bà tớ đặc biệt nhạy cảm với ô nhiễm không khí, không khí tốt hay xấu liên quan mật thiết đến sức khoẻ của bà, nên ngày nào tớ cũng phải xem.',
-      tip:'A 对 B 很敏感; A 和 B 密切相关 (điểm ngữ pháp 1).'
-    },
-    {
-      scene:'Cô giáo hỏi em định cải thiện khả năng nói tiếng Trung thế nào.',
-      a:{sp:'Cô giáo',zh:'你的汉语口语还不太流利，打算怎么提高呢？',vn:'Khẩu ngữ tiếng Trung của em còn chưa lưu loát lắm, em định nâng cao thế nào?'},
-      need:['Dùng 逐步'],
-      sample:'我打算每天先大声读课文，再找同学练习对话，逐步提高自己的口语水平。',
-      samplePy:'Wǒ dǎsuàn měi tiān xiān dàshēng dú kèwén, zài zhǎo tóngxué liànxí duìhuà, zhúbù tígāo zìjǐ de kǒuyǔ shuǐpíng.',
-      sampleVn:'Em định mỗi ngày đọc to bài khoá trước, rồi tìm bạn luyện hội thoại, từng bước nâng cao khả năng nói của mình.',
-      tip:'Có kế hoạch, từng bước (先……再……) → 逐步 + 提高 (điểm ngữ pháp 3).'
-    },
-    {
-      scene:'Bạn nản lòng: một mình mình phân loại rác thì chẳng thay đổi được gì.',
-      a:{sp:'Bạn',zh:'就我一个人垃圾分类有什么用？别人都不做。',vn:'Một mình tớ phân loại rác thì có ích gì? Người khác đều không làm.'},
-      need:['Dùng 自觉','Dùng 贡献'],
-      sample:'别这么消极嘛！只要每个人都自觉地去做，环境就会变好。你做一点儿，也是对环境的一点儿贡献啊。',
-      samplePy:'Bié zhème xiāojí ma! Zhǐyào měi ge rén dōu zìjué de qù zuò, huánjìng jiù huì biàn hǎo. Nǐ zuò yìdiǎnr, yě shì duì huánjìng de yìdiǎnr gòngxiàn a.',
-      sampleVn:'Đừng tiêu cực thế chứ! Chỉ cần mỗi người đều tự giác làm, môi trường sẽ tốt lên. Cậu làm một chút cũng là góp một phần cho môi trường mà.',
-      tip:'自觉地 + V; 对……的贡献; ôn 消极 và 只要……就…….'
-    },
-    {
-      scene:'Bạn hỏi thăm vì nghe tin quê em năm nay bị lũ lớn.',
-      a:{sp:'Bạn',zh:'听说你老家今年发洪水了，家里没事吧？',vn:'Nghe nói quê cậu năm nay bị lũ, nhà cậu không sao chứ?'},
-      need:['Dùng 幸运的是'],
-      sample:'洪水很大，村里很多农田都被淹了。幸运的是，我家的房子在山坡上，家里人都没事。',
-      samplePy:'Hóngshuǐ hěn dà, cūn li hěn duō nóngtián dōu bèi yān le. Xìngyùn de shì, wǒ jiā de fángzi zài shānpō shang, jiā li rén dōu méi shì.',
-      sampleVn:'Lũ to lắm, nhiều ruộng trong làng bị ngập hết. May mà nhà tớ ở trên sườn đồi, cả nhà đều không sao.',
-      tip:'幸运的是，…… chuyển từ tin xấu sang tin tốt, như bài khoá; ôn 洪水 và câu 被.'
-    }
+    {scene:'Trường chỉ cách nhà hai cây số, nhưng bố muốn sáng nào cũng lái ô tô đưa em đi học.',a:{sp:'Bố',zh:'明天爸爸开车送你上学吧？',vn:'Mai bố lái xe đưa con đi học nhé?'},need:['Dùng 尽量'],sample:'不用了，爸爸。学校离家不远，我想尽量自己骑车去，这样既能锻炼身体，又能保护环境。',samplePy:'Búyòng le, bàba. Xuéxiào lí jiā bù yuǎn, wǒ xiǎng jǐnliàng zìjǐ qí chē qù, zhèyàng jì néng duànliàn shēntǐ, yòu néng bǎohù huánjìng.',sampleVn:'Không cần đâu bố. Trường cách nhà không xa, con muốn cố gắng tự đạp xe đi, như thế vừa rèn luyện sức khoẻ vừa bảo vệ được môi trường.',tip:'尽量 + V (điểm ngữ pháp 2); 既……又…… nêu hai lợi ích.'},
+    {scene:'Bạn thắc mắc vì sao sáng nào em cũng xem dự báo chất lượng không khí.',a:{sp:'Bạn',zh:'你怎么每天早上都看空气质量预报啊？',vn:'Sao sáng nào cậu cũng xem dự báo chất lượng không khí thế?'},need:['Dùng 密切','Dùng 敏感'],sample:'因为我奶奶对空气污染特别敏感，空气好不好和她的健康密切相关，所以我得每天看看。',samplePy:'Yīnwèi wǒ nǎinai duì kōngqì wūrǎn tèbié mǐngǎn, kōngqì hǎo bu hǎo hé tā de jiànkāng mìqiè xiāngguān, suǒyǐ wǒ děi měi tiān kànkan.',sampleVn:'Vì bà tớ đặc biệt nhạy cảm với ô nhiễm không khí, không khí tốt hay xấu liên quan mật thiết đến sức khoẻ của bà, nên ngày nào tớ cũng phải xem.',tip:'A 对 B 很敏感; A 和 B 密切相关 (điểm ngữ pháp 1).'},
+    {scene:'Cô giáo hỏi em định cải thiện khả năng nói tiếng Trung thế nào.',a:{sp:'Cô giáo',zh:'你说汉语还不太流利，打算怎么提高呢？',vn:'Em nói tiếng Trung còn chưa lưu loát lắm, em định nâng cao thế nào?'},need:['Dùng 逐步'],sample:'我打算每天先大声读课文，再找同学练习对话，逐步提高自己说汉语的水平。',samplePy:'Wǒ dǎsuàn měi tiān xiān dàshēng dú kèwén, zài zhǎo tóngxué liànxí duìhuà, zhúbù tígāo zìjǐ shuō Hànyǔ de shuǐpíng.',sampleVn:'Em định mỗi ngày đọc to bài khoá trước, rồi tìm bạn luyện hội thoại, từng bước nâng cao trình độ nói tiếng Trung của mình.',tip:'Có kế hoạch, từng bước (先……再……) → 逐步 + 提高 (điểm ngữ pháp 3).'},
+    {scene:'Bạn nản lòng: một mình mình phân loại rác thì chẳng thay đổi được gì.',a:{sp:'Bạn',zh:'就我一个人垃圾分类有什么用？别人都不做。',vn:'Một mình tớ phân loại rác thì có ích gì? Người khác đều không làm.'},need:['Dùng 自觉','Dùng 贡献'],sample:'别这么消极啊！只要每个人都自觉地去做，环境就会变好。你做一点儿，也是对环境的一点儿贡献啊。',samplePy:'Bié zhème xiāojí a! Zhǐyào měi ge rén dōu zìjué de qù zuò, huánjìng jiù huì biàn hǎo. Nǐ zuò yìdiǎnr, yě shì duì huánjìng de yìdiǎnr gòngxiàn a.',sampleVn:'Đừng tiêu cực thế chứ! Chỉ cần mỗi người đều tự giác làm, môi trường sẽ tốt lên. Cậu làm một chút cũng là góp một phần cho môi trường mà.',tip:'自觉地 + V; 对……的贡献; ôn 消极 và 只要……就…….'},
+    {scene:'Bạn hỏi thăm vì nghe tin quê em năm nay bị lũ lớn.',a:{sp:'Bạn',zh:'听说你老家今年发洪水了，家里没事吧？',vn:'Nghe nói quê cậu năm nay bị lũ, nhà cậu không sao chứ?'},need:['Dùng 幸运的是'],sample:'洪水很大，村里很多房子都进了水。幸运的是，我家住得比较高，家里人都没事。',samplePy:'Hóngshuǐ hěn dà, cūn li hěn duō fángzi dōu jìnle shuǐ. Xìngyùn de shì, wǒ jiā zhù de bǐjiào gāo, jiā li rén dōu méi shì.',sampleVn:'Lũ to lắm, nhiều nhà trong làng bị ngập nước. May mà nhà tớ ở chỗ khá cao, cả nhà đều không sao.',tip:'幸运的是，…… chuyển từ tin xấu sang tin tốt, như bài khoá; ôn 洪水.'}
   ]
 };
 
@@ -1886,48 +1646,12 @@ var situationData = {
 var registerData = {
   intro:'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items:[
-    {
-      scene:'Thông báo dán ở bảng tin của ban quản lý khu chung cư.',
-      a:'请各位居民自觉做好垃圾分类，感谢您的配合。',
-      b:'大家扔垃圾的时候分一下类啊，别乱扔。',
-      better:'a',
-      why:'Thông báo công cộng cần lịch sự, trang trọng: 各位居民, 自觉, 感谢您的配合. Câu b là khẩu ngữ, như hàng xóm nhắc nhau.'
-    },
-    {
-      scene:'Em nhắn tin rủ bạn thân đạp xe đi chơi thay vì gọi taxi.',
-      a:'为减少汽车尾气排放，建议选择绿色出行方式。',
-      b:'别打车了，咱们骑车去吧，又环保又能锻炼！',
-      better:'b',
-      why:'Nhắn bạn thân nên tự nhiên, gần gũi: 咱们, 又……又……. Câu a như khẩu hiệu tuyên truyền.'
-    },
-    {
-      scene:'Phát thanh viên đọc bản tin môi trường trên truyền hình.',
-      a:'据环保部门公布的数据，本市空气质量正在逐步改善。',
-      b:'听说咱们这儿的空气最近好多了。',
-      better:'a',
-      why:'Bản tin cần chính xác, có nguồn: 据……公布的数据, 逐步改善. Câu b là “nghe nói”, không hợp với tin tức.'
-    },
-    {
-      scene:'Em an ủi bạn thân đang buồn vì thi trượt.',
-      a:'面对失败，消极逃避不能解决问题，望你积极面对。',
-      b:'别想太多了，一次没考好没关系，下次咱们一起复习！',
-      better:'b',
-      why:'An ủi bạn cần ấm áp, gần gũi. Câu a đúng ý nhưng giọng lên lớp, như văn bản (望你积极面对).'
-    },
-    {
-      scene:'Lớp trưởng phát biểu khai mạc hoạt động bảo vệ môi trường trước toàn trường.',
-      a:'尊敬的各位老师、亲爱的同学们：今天，我们在这里举行环保主题活动。',
-      b:'老师们、同学们，今天咱们一块儿搞个环保活动啊。',
-      better:'a',
-      why:'Phát biểu trước toàn trường dùng lời chào trang trọng 尊敬的……、亲爱的……. Câu b quá suồng sã (一块儿, 搞个…啊).'
-    },
-    {
-      scene:'Mẹ dặn con trước khi ra khỏi nhà vào ngày nhiều khói bụi.',
-      a:'外面雾霾很重，能不出门就尽量别出门，出门记得戴口罩。',
-      b:'鉴于空气污染严重，建议减少外出并采取防护措施。',
-      better:'a',
-      why:'Lời mẹ dặn con là khẩu ngữ, thân mật: 尽量别……, 记得……. Câu b như thông báo của cơ quan y tế (鉴于, 采取防护措施).'
-    }
+    {scene:'Thông báo dán ở bảng tin của ban quản lý khu chung cư.',a:'请大家自觉把垃圾分好再扔，谢谢合作。',b:'扔垃圾的时候分一下啊，别乱扔。',better:'a',why:'Thông báo công cộng cần lịch sự, trang trọng: 请大家, 自觉, 谢谢合作. Câu b là khẩu ngữ, như hàng xóm nhắc nhau.'},
+    {scene:'Em nhắn tin rủ bạn thân đạp xe đi chơi thay vì gọi taxi.',a:'为减少汽车尾气排放，建议选择绿色出行方式。',b:'别打车了，咱们骑车去吧，又环保又能锻炼！',better:'b',why:'Nhắn bạn thân nên tự nhiên, gần gũi: 咱们, 又……又……. Câu a như khẩu hiệu tuyên truyền.'},
+    {scene:'Phát thanh viên đọc bản tin môi trường trên truyền hình.',a:'环保部门公布的数据说明，这里的空气质量正在逐步改善。',b:'听说咱们这儿的空气最近好多了。',better:'a',why:'Bản tin cần chính xác, có nguồn: 公布的数据, 逐步改善. Câu b là “nghe nói”, không hợp với tin tức.'},
+    {scene:'Em an ủi bạn thân đang buồn vì thi trượt.',a:'面对失败，消极逃避不能解决问题，希望你积极面对。',b:'别想太多了，一次没考好没关系，下次咱们一起复习！',better:'b',why:'An ủi bạn cần ấm áp, gần gũi. Câu a đúng ý nhưng giọng lên lớp, như văn bản.'},
+    {scene:'Lớp trưởng phát biểu khai mạc hoạt động bảo vệ môi trường trước toàn trường.',a:'尊敬的各位老师，同学们：今天，我们在这里举行环保活动。',b:'老师们、同学们，今天咱们一块儿搞个环保活动啊。',better:'a',why:'Phát biểu trước toàn trường dùng lời chào trang trọng 尊敬的……. Câu b quá suồng sã (一块儿, 搞个…啊).'},
+    {scene:'Mẹ dặn con trước khi ra khỏi nhà vào ngày không khí ô nhiễm.',a:'外面空气不好，能不出门就尽量别出门。',b:'由于空气污染严重，建议大家减少外出。',better:'a',why:'Lời mẹ dặn con là khẩu ngữ, thân mật: 能不……就尽量别……. Câu b như thông báo của cơ quan y tế (由于, 建议大家).'}
   ]
 };
 

@@ -1017,92 +1017,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — lấy theo bảng 词语搭配 của sách (tr. 158) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
-  {left:'争取',right:'胜利'},
-  {left:'主持',right:'会议'},
-  {left:'深刻的',right:'道理'},
-  {left:'烂',right:'苹果'},
-  {left:'迅速地',right:'做出反应'},
+  {left:'主持',right:'节目'},
+  {left:'深刻的',right:'印象'},
   {left:'灵活地',right:'运用'},
-  {left:'集中',right:'注意力'},
+  {left:'集中',right:'精力'},
   {left:'体会',right:'父母的辛苦'},
   {left:'举行',right:'婚礼'},
-  {left:'投入',right:'资金'},
-  {left:'舞台',right:'美术'},
-  {left:'良好的',right:'习惯'},
   {left:'糟糕的',right:'结局'},
   {left:'愉快地',right:'度过周末'},
   {left:'向大家',right:'告别'},
   {left:'很有',right:'魅力'},
-  {left:'奥运会',right:'开幕式'},
   {left:'忽视',right:'细节'},
-  {left:'客观地',right:'评价'},
-  {left:'演出',right:'道具'},
-  {left:'死记',right:'硬背'},
-  {left:'获得',right:'诺贝尔奖'}
+  {left:'推荐',right:'一本好书'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'心理学家丹尼尔·卡内曼将这一现象命名为“',blank:'峰终定律',post:'”。',hint:'(quy luật cao điểm – điểm cuối)',ans:'峰终定律'},
-  {pre:'我们对',blank:'事物',post:'的记忆仅在高峰和结尾。',hint:'(sự vật)',ans:'事物'},
-  {pre:'每天早上七点到九点是上班',blank:'高峰',post:'，路上特别堵。',hint:'(cao điểm)',ans:'高峰'},
-  {pre:'他第一个跑到了',blank:'终点',post:'，大家都为他鼓掌。',hint:'(đích, điểm cuối)',ans:'终点'},
-  {pre:'事情发生后，领导',blank:'迅速',post:'采取了措施。',hint:'(nhanh chóng)',ans:'迅速'},
-  {pre:'这次旅行给我留下了',blank:'深刻',post:'的印象。',hint:'(sâu sắc)',ans:'深刻'},
-  {pre:'京剧是中国最有名的传统',blank:'戏剧',post:'。',hint:'(kịch, sân khấu)',ans:'戏剧'},
-  {pre:'为了这次演出，大家',blank:'投入',post:'了很多时间和精力。',hint:'(bỏ vào)',ans:'投入'},
-  {pre:'越南的民族',blank:'服装',post:'叫“奥黛”。',hint:'(trang phục)',ans:'服装'},
-  {pre:'演出前，演员们要花很长时间',blank:'化妆',post:'。',hint:'(hoá trang, trang điểm)',ans:'化妆'},
-  {pre:'这把刀只是演出用的',blank:'道具',post:'，不是真的。',hint:'(đạo cụ)',ans:'道具'},
-  {pre:'我最喜欢上',blank:'美术',post:'课，因为可以画画儿。',hint:'(mỹ thuật)',ans:'美术'},
-  {pre:'我们要从小养成',blank:'良好',post:'的学习习惯。',hint:'(tốt — trang trọng)',ans:'良好'},
-  {pre:'机会要靠自己去',blank:'争取',post:'。',hint:'(giành lấy)',ans:'争取'},
-  {pre:'这是最容易被人',blank:'忽视',post:'的细节。',hint:'(bỏ qua, xem nhẹ)',ans:'忽视'},
-  {pre:'这位老师上课很有',blank:'魅力',post:'，学生们都喜欢他。',hint:'(sức cuốn hút)',ans:'魅力'},
-  {pre:'',blank:'糟糕',post:'！我把钥匙忘在家里了。',hint:'(Chết rồi! — câu cảm thán)',ans:'糟糕'},
-  {pre:'他们打算明年春天举行',blank:'婚礼',post:'。',hint:'(lễ cưới)',ans:'婚礼'},
-  {pre:'成绩好不',blank:'等于',post:'能力强。',hint:'(bằng; có nghĩa là)',ans:'等于',exp:'A不等于B = A không có nghĩa là B: 成绩好不等于能力强.'},
-  {pre:'我在外公外婆身边',blank:'度过',post:'了美好的童年。',hint:'(trải qua)',ans:'度过'},
-  {pre:'毕业那天，我们一一向老师',blank:'告别',post:'。',hint:'(chào từ biệt)',ans:'告别'},
-  {pre:'他',blank:'平常',post:'总是来得很早，今天却迟到了。',hint:'(ngày thường)',ans:'平常'},
-  {pre:'十几年过去了，她',blank:'依然',post:'那么美丽。',hint:'(vẫn)',ans:'依然',exp:'依然 = vẫn như cũ (văn viết, như 仍然): 依然那么美丽.'},
-  {pre:'你能给我',blank:'推荐',post:'几本适合高中生看的书吗？',hint:'(giới thiệu)',ans:'推荐'},
-  {pre:'比赛中，他把自己的水平发挥得',blank:'淋漓尽致',post:'。',hint:'(trọn vẹn, hết mức)',ans:'淋漓尽致'},
-  {pre:'大家对这位新老师的',blank:'评价',post:'都很高。',hint:'(đánh giá)',ans:'评价'},
-  {pre:'这个苹果',blank:'烂',post:'了，别吃了。',hint:'(thối, hỏng)',ans:'烂'},
-  {pre:'今天的会议由王经理',blank:'主持',post:'。',hint:'(chủ trì)',ans:'主持'},
-  {pre:'学知识不能死记硬背，要懂得灵活地',blank:'运用',post:'。',hint:'(vận dụng)',ans:'运用'},
-  {pre:'运动会的',blank:'开幕式',post:'将在下周一举行。',hint:'(lễ khai mạc)',ans:'开幕式'},
-  {pre:'我',blank:'宁可',post:'多花点儿钱，也要买一个质量好点儿的。',hint:'(thà)',ans:'宁可',exp:'宁可A，也要B = thà A còn hơn, cũng phải B; chọn phương án chịu thiệt để đạt mục đích.'},
-  {pre:'你复习时要',blank:'集中',post:'注意力，效果才会好。',hint:'(tập trung)',ans:'集中'},
-  {pre:'当了父母以后，才能',blank:'体会',post:'到父母的辛苦。',hint:'(thấm thía)',ans:'体会'},
-  {pre:'因为这个认知而获得',blank:'诺贝尔奖',post:'的，是一位心理学家。',hint:'(giải Nô-ben)',ans:'诺贝尔奖'},
-  {pre:'“峰终定律”是心理学家',blank:'丹尼尔·卡内曼',post:'提出来的。',hint:'(Daniel Kahneman)',ans:'丹尼尔·卡内曼'},
-  {pre:'我们准备服装、道具，',blank:'以',post:'创造良好的效果。',hint:'(để, nhằm)',ans:'以',exp:'以 + mục đích = để, nhằm (văn viết), nối vế sau chỉ mục đích.'}
+  {pre:'下班',blank:'高峰',post:'的时候，地铁里人特别多。',hint:'(cao điểm)',ans:'高峰',exp:'高峰 = đỉnh cao; 上下班高峰 = giờ cao điểm đi làm, tan làm.'},
+  {pre:'这趟车的',blank:'终点',post:'是火车站，你坐到最后一站就行。',hint:'(điểm cuối, bến cuối)',ans:'终点',exp:'终点 = điểm cuối, đích; 终点站 = bến cuối. Trái nghĩa 起点.'},
+  {pre:'她从小就喜欢表演，大学学的是',blank:'戏剧',post:'。',hint:'(kịch, sân khấu)',ans:'戏剧',exp:'戏剧 = kịch, nghệ thuật sân khấu; 戏剧演出 = buổi diễn kịch.'},
+  {pre:'她在大学旁边开了一家',blank:'服装',post:'店，卖年轻人喜欢的衣服。',hint:'(trang phục, quần áo — văn viết)',ans:'服装',exp:'服装 = trang phục (từ chung, văn viết); 服装店 = cửa hàng quần áo, 演出服装 = trang phục biểu diễn.'},
+  {pre:'妈妈出门前常常要花半个小时',blank:'化妆',post:'。',hint:'(trang điểm)',ans:'化妆',exp:'化妆 = trang điểm, hoá trang (cho mình hoặc cho diễn viên).'},
+  {pre:'演员们正在把桌子、椅子这些',blank:'道具',post:'搬上舞台。',hint:'(đạo cụ)',ans:'道具',exp:'道具 = đạo cụ (đồ dùng trên sân khấu, phim trường).'},
+  {pre:'我妹妹从小喜欢画画，现在是一名',blank:'美术',post:'老师。',hint:'(mỹ thuật)',ans:'美术',exp:'美术 = mỹ thuật (hội hoạ, điêu khắc…): 美术课, 美术老师.'},
+  {pre:'下个月哥哥结婚，我们全家都要去参加他的',blank:'婚礼',post:'。',hint:'(lễ cưới)',ans:'婚礼',exp:'婚礼 = lễ cưới; 举行婚礼 = tổ chức lễ cưới, 参加婚礼 = dự đám cưới.'},
+  {pre:'今晚的节目由我和小王一起',blank:'主持',post:'。',hint:'(dẫn (chương trình), chủ trì)',ans:'主持',exp:'主持 = dẫn chương trình, chủ trì: 主持节目, 主持会议; 主持人 = MC.'},
+  {pre:'运动会的',blank:'开幕式',post:'上，学生们表演了很多节目。',hint:'(lễ khai mạc)',ans:'开幕式',exp:'开幕式 = lễ khai mạc; trái nghĩa 闭幕式 = lễ bế mạc.'},
+  {pre:'公司今年',blank:'投入',post:'了很多钱研究新产品。',hint:'(bỏ vào, đầu tư)',ans:'投入',exp:'投入 + tiền/thời gian/sức lực = bỏ vào, đầu tư; làm tính từ = say sưa (唱得很投入).'},
+  {pre:'去北京留学前，他回老家跟爷爷奶奶',blank:'告别',post:'。',hint:'(chào từ biệt)',ans:'告别',exp:'跟/向 + người + 告别 = chào từ biệt ai (không nói ✗告别爷爷奶奶 với nghĩa này).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (以 · 平常 · 宁可) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我们','准备了','服装和道具','，','以','创造','良好的效果','。'],ans:'我们准备了服装和道具，以创造良好的效果。',audio:'我们准备了服装和道具，以创造良好的效果。'},
-  {words:['他每天','坚持锻炼','，','以','保持健康','。'],ans:'他每天坚持锻炼，以保持健康。',audio:'他每天坚持锻炼，以保持健康。'},
-  {words:['学生们','以','足球','为','比赛工具','。'],ans:'学生们以足球为比赛工具。',audio:'学生们以足球为比赛工具。'},
-  {words:['他平常','总是','来得','很早','。'],ans:'他平常总是来得很早。',audio:'他平常总是来得很早。'},
-  {words:['这部电影的','剧情','平平常常','，','没什么','特别的','。'],ans:'这部电影的剧情平平常常，没什么特别的。',audio:'这部电影的剧情平平常常，没什么特别的。'},
-  {words:['我','宁可','自己累一点儿','，','也不想','麻烦别人','。'],ans:'我宁可自己累一点儿，也不想麻烦别人。',audio:'我宁可自己累一点儿，也不想麻烦别人。'},
-  {words:['我宁可','多花点儿钱','，','也要','买','质量好的','。'],ans:'我宁可多花点儿钱，也要买质量好的。',audio:'我宁可多花点儿钱，也要买质量好的。'},
-  {words:['终点','出现得','越迅速','，','印象','就','越深刻','。'],ans:'终点出现得越迅速，印象就越深刻。',audio:'终点出现得越迅速，印象就越深刻。'},
-  {words:['这是','最容易','被人','忽视的','细节','。'],ans:'这是最容易被人忽视的细节。',audio:'这是最容易被人忽视的细节。'},
-  {words:['老刘刚','给我','推荐了','一份','工作','。'],ans:'老刘刚给我推荐了一份工作。',audio:'老刘刚给我推荐了一份工作。'},
-  {words:['他','要','给自己','争取','更多的时间','。'],ans:'他要给自己争取更多的时间。',audio:'他要给自己争取更多的时间。'},
-  {words:['我们','把更多的精力','集中在','闭幕式上','。'],ans:'我们把更多的精力集中在闭幕式上。',audio:'我们把更多的精力集中在闭幕式上。'},
-  {words:['我','愉快地','度过了','两个小时','。'],ans:'我愉快地度过了两个小时。',audio:'我愉快地度过了两个小时。'}
+  {words:['我','每天早上','听','半个小时','中文广播','，','以','提高','自己的汉语水平','。'],ans:'我每天早上听半个小时中文广播，以提高自己的汉语水平。',audio:'我每天早上听半个小时中文广播，以提高自己的汉语水平。'},
+  {words:['他','考上了','北京大学','，','全家人','都','以他','为骄傲','。'],ans:'他考上了北京大学，全家人都以他为骄傲。',audio:'他考上了北京大学，全家人都以他为骄傲。'},
+  {words:['我','宁可','走路去','，','也不想','在车上','等','一个小时','。'],ans:'我宁可走路去，也不想在车上等一个小时。',audio:'我宁可走路去，也不想在车上等一个小时。'},
+  {words:['她','宁可','少睡','一会儿','，','也要','把明天的课','准备好','。'],ans:'她宁可少睡一会儿，也要把明天的课准备好。',audio:'她宁可少睡一会儿，也要把明天的课准备好。'},
+  {words:['这','只是','一件','很平常的','小事','，','你','别','放在心上','。'],ans:'这只是一件很平常的小事，你别放在心上。',audio:'这只是一件很平常的小事，你别放在心上。'},
+  {words:['他','平常','很少','说话','，','今天','却','一直在笑','。'],ans:'他平常很少说话，今天却一直在笑。',audio:'他平常很少说话，今天却一直在笑。'},
+  {words:['接到通知后','，','大家','迅速','回到了','教室','。'],ans:'接到通知后，大家迅速回到了教室。',audio:'接到通知后，大家迅速回到了教室。'},
+  {words:['考上大学','并不','等于','成功了','。'],ans:'考上大学并不等于成功了。',audio:'考上大学并不等于成功了。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1110,76 +1072,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'以前我们____了教育问题，现在要赶上去。',opts:['忽视','轻视','评价','运用'],ans:0,
-   exp:'Không chú ý tới (vô ý) → 忽视. 轻视 là coi thường (cố ý); 评价 (đánh giá), 运用 (vận dụng) sai nghĩa.'},
-  {wrong:'你可别____他，他看起来很平常，其实很能干。',opts:['轻视','忽视','推荐','告别'],ans:0,
-   exp:'"Trông bình thường nhưng thật ra rất giỏi" → đừng COI THƯỜNG anh ta → 轻视 (看不起).'},
-  {wrong:'这部电影很____，我觉得没必要去看。',opts:['平常','平时','依然','良好'],ans:0,
-   exp:'Sau 很 cần tính từ "bình thường, tầm thường" → 平常. 平时 chỉ là danh từ; 依然 là phó từ; 良好 nghĩa ngược (tốt).'},
-  {wrong:'这次旅行给我留下了____的印象。',opts:['深刻','深','迅速','集中'],ans:0,
-   exp:'深刻的印象 là cụm cố định. 深 một âm tiết phải thêm 很: 很深的印象.'},
-  {wrong:'他被____为本校今年的十大“优秀毕业生”之一。',opts:['评','评价','运用','度过'],ans:0,
-   exp:'被评为 = được bình chọn là (bài tập 2 của sách). 评价 là "đánh giá", không đi với 为.'},
-  {wrong:'大家要迅速地熟悉新产品，____更好地向顾客推广。',opts:['以','用','把','被'],ans:0,
-   exp:'Vế sau nêu MỤC ĐÍCH của vế trước → liên từ 以 (= để). 用 là giới từ "dùng" + công cụ.'},
-  {wrong:'作为母亲，她____自己累一点儿，也不想委屈了孩子。',opts:['宁可','依然','平常','迅速'],ans:0,
-   exp:'Cặp 宁可……也不…… = thà … chứ không ….'},
-  {wrong:'成绩好不____能力强。',opts:['等于','度过','体会','集中'],ans:0,
-   exp:'A 不等于 B = A không có nghĩa là B.'},
-  {wrong:'这个暑假我是在奶奶家____的。',opts:['度过','过度','告别','等于'],ans:0,
-   exp:'Trải qua một khoảng thời gian (暑假) → 度过. 过度 là "quá mức" (过度疲劳) — bẫy đảo chữ.'},
-  {wrong:'他跟大家一____，就上了火车。',opts:['告别','度过','推荐','评价'],ans:0,
-   exp:'跟 + người + 告别 = chào từ biệt ai.'},
-  {wrong:'你复习时要____注意力，效果才会好。',opts:['集中','集合','投入','争取'],ans:0,
-   exp:'集中注意力 = tập trung chú ý. 集合 là tập hợp người (集合队伍), không đi với 注意力.'},
-  {wrong:'当了父母以后，才能____到父母的辛苦。',opts:['体会','忽视','运用','评价'],ans:0,
-   exp:'体会到 + điều cảm nhận = thấm thía được.'},
-  {wrong:'学知识不能死记硬背，要懂得灵活地____。',opts:['运用','体会','争取','主持'],ans:0,
-   exp:'灵活地运用 = vận dụng linh hoạt (bảng 词语搭配 của sách).'},
-  {wrong:'这次期末考试我一定____考好。',opts:['争取','推荐','依然','集中'],ans:0,
-   exp:'争取 + V = cố gắng để làm được: 争取考好.'},
-  {wrong:'为了这次演出，大家____了很多时间和精力。',opts:['投入','集中','度过','告别'],ans:0,
-   exp:'Bỏ thời gian, tâm sức vào một việc → 投入. 度过 cần tân ngữ là khoảng thời gian cụ thể, không đi với 精力.'},
-  {wrong:'糟糕的____会给人留下难以忘记的坏印象。',opts:['结局','魅力','道具','事物'],ans:0,
-   exp:'Kết cục tồi tệ → 糟糕的结局. 魅力 là sức hút (nghĩa tốt), không đi với 糟糕.'},
-  {wrong:'小明演讲时太紧张，把准备好的内容全忘了，结果很____。',opts:['糟糕','良好','深刻','平常'],ans:0,
-   exp:'Quên sạch bài → kết quả tồi tệ → 糟糕.'},
-  {wrong:'她唱得特别____，连眼睛都闭上了。',opts:['投入','集中','深刻','迅速'],ans:0,
-   exp:'投入 làm tính từ = say sưa, nhập tâm: 唱得很投入.'},
-  {wrong:'这件衣服太____了，不能再穿了。',opts:['烂','深刻','迅速','良好'],ans:0,
-   exp:'Quần áo rách nát → 烂 (烂衣服).'},
-  {wrong:'这家饭馆的菜很有特色，我____你去尝尝。',opts:['推荐','评价','主持','运用'],ans:0,
-   exp:'Giới thiệu cho người khác thử → 推荐.'}
+  {wrong:'他太忙了，____了自己的身体，结果病倒了。',opts:['忽视','轻视','集中','运用'],ans:0,exp:'Vì bận mà không để ý tới (vô tình) → 忽视. 轻视 là coi thường (cố ý, thái độ xem nhẹ ai/việc gì), không hợp với 太忙了; 集中, 运用 sai nghĩa.'},
+  {wrong:'他的成绩很____，可是他做什么事都很认真。',opts:['平常','平时','依然','迅速'],ans:0,exp:'Sau 很 cần tính từ “bình thường, tầm thường” → 平常. 平时 chỉ là danh từ (ngày thường), không đứng sau 很; 依然, 迅速 không hợp.'},
+  {wrong:'这次比赛让我明白了一个____的道理：做事不能只看开头。',opts:['深刻','深','迅速','良好'],ans:0,exp:'一个 + tính từ hai âm tiết + 的 + danh từ: 一个深刻的道理. 深 một âm tiết không đứng kiểu này (phải nói 很深); 迅速, 良好 không tả 道理.'},
+  {wrong:'爷爷和奶奶一起生活了五十年，感情特别____。',opts:['深','深刻','迅速','糟糕'],ans:0,exp:'感情很深 = tình cảm sâu nặng — dùng 深. 深刻 đi với 印象, 道理, 认识, không nói 感情深刻; 迅速, 糟糕 sai nghĩa.'},
+  {wrong:'他把手机放在客厅里，____集中精力学习。',opts:['以','用','对','跟'],ans:0,exp:'Vế sau nêu MỤC ĐÍCH → liên từ 以 (= để, văn viết). 用 là “dùng” + công cụ; 对, 跟 là giới từ cần tân ngữ người/vật.'},
+  {wrong:'这家饭馆太贵了，我____在家自己做饭，也不去那儿吃。',opts:['宁可','虽然','只要','因为'],ans:0,exp:'宁可 A，也不 B = thà A chứ không B. 虽然 đi với 但是; 只要 đi với 就; 因为 đi với 所以 — đều không hợp với 也不.'},
+  {wrong:'虽然下着大雨，比赛____进行。',opts:['依然','宁可','平常','等于'],ans:0,exp:'依然 = vẫn (như cũ), văn viết của 还是. 宁可 cần vế 也……; 平常, 等于 không hợp nghĩa.'},
+  {wrong:'最近他把精力都____在工作上，很少回家。',opts:['集中','争取','体会','告别'],ans:0,exp:'把精力集中在……上 = dồn sức vào…. 争取, 体会, 告别 không đi với khung 把……在……上 này.'},
+  {wrong:'我在奶奶家____了一个快乐的春节。',opts:['度过','告别','等于','推荐'],ans:0,exp:'度过 + khoảng thời gian (春节, 一个周末, 两个小时) = trải qua. 告别, 等于, 推荐 không mang tân ngữ chỉ thời gian.'},
+  {wrong:'这件衣服已经穿____了，该买新的了。',opts:['烂','糟糕','深','平常'],ans:0,exp:'穿烂了 = mặc đến rách nát (烂 làm bổ ngữ kết quả). 糟糕, 深, 平常 không làm bổ ngữ sau 穿.'},
+  {wrong:'他从小养成了____的生活习惯，每天早睡早起。',opts:['良好','糟糕','深刻','依然'],ans:0,exp:'良好的习惯 = thói quen tốt (văn viết). 糟糕 trái với 早睡早起; 深刻 không tả 习惯; 依然 là phó từ.'},
+  {wrong:'自己做了饭以后，我才____到妈妈每天有多辛苦。',opts:['体会','运用','评价','争取'],ans:0,exp:'体会到 + điều cảm nhận = thấm thía được. 运用 là vận dụng; 评价 là đánh giá; 争取 là cố giành lấy.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi thà cuối tuần chơi ít đi một chút, cũng phải tập trung sức lực viết xong bài văn này.', zh:'我宁可周末少玩一会儿，也要集中精力把这篇作文写完。', py:'Wǒ nìngkě zhōumò shǎo wán yíhuìr, yě yào jízhōng jīnglì bǎ zhè piān zuòwén xiěwán.', goiY:['宁可……也要……','集中','精力'], giai:'宁可 A，也要 B: chấp nhận thiệt thòi A để đạt được B; 集中精力 = "dồn sức, tập trung".'},
-  {vi:'Ngày thường cậu ấy nói năng chậm rãi, nhưng hễ đứng lên sân khấu là trở nên cuốn hút vô cùng.', zh:'他平常说话慢吞吞的，可是一站上舞台就变得魅力十足。', py:'Tā píngcháng shuōhuà màntūntūn de, kěshì yí zhànshang wǔtái jiù biàn de mèilì shízú.', goiY:['平常','可是','一……就……','魅力'], giai:'平常 (danh từ = ngày thường) đứng sau chủ ngữ, trước động từ; 一……就…… diễn tả hễ có A là lập tức có B.'},
-  {vi:'Đã đặt ra mục tiêu rồi thì ngày nào tôi cũng dậy lúc sáu giờ sáng học thuộc từ vựng, để cố gắng đạt kết quả tốt trong kỳ thi đại học.', zh:'既然定下了目标，我就每天早上六点起床背单词，以争取在高考中取得良好的成绩。', py:'Jìrán dìngxiàle mùbiāo, wǒ jiù měi tiān zǎoshang liù diǎn qǐchuáng bèi dāncí, yǐ zhēngqǔ zài gāokǎo zhōng qǔdé liánghǎo de chéngjì.', goiY:['既然……就……','以 + V','争取','良好'], giai:'以 (liên từ, văn viết) đứng đầu vế sau, nêu mục đích = "để, nhằm"; 争取 + mục tiêu = "cố gắng giành lấy".'},
-  {vi:'Khi thi, một khi bỏ qua một chi tiết nào đó trong đề thì kết quả có thể rất tệ, vì vậy tuyệt đối không được cẩu thả.', zh:'考试时一旦忽视了题目中的某个细节，结果就可能很糟糕，所以千万不能粗心大意。', py:'Kǎoshì shí yídàn hūshìle tímù zhōng de mǒu ge xìjié, jiéguǒ jiù kěnéng hěn zāogāo, suǒyǐ qiānwàn bù néng cūxīn dàyì.', goiY:['一旦……就……','忽视','细节','糟糕'], giai:'一旦 nêu giả thiết về việc xấu, vế sau 就 nói hậu quả; 忽视 là "xem nhẹ, bỏ qua" (vô tình), khác 轻视 "coi thường".'},
-  {vi:'Tuy đánh giá trên mạng về bộ phim này không tốt lắm, tôi vẫn muốn giới thiệu nó cho cậu, vì đoạn kết của nó khiến tôi rất cảm động.', zh:'尽管这部电影的网上评价不太好，我依然想把它推荐给你，因为它的结尾让我深受感动。', py:'Jǐnguǎn zhè bù diànyǐng de wǎng shang píngjià bú tài hǎo, wǒ yīrán xiǎng bǎ tā tuījiàn gěi nǐ, yīnwèi tā de jiéwěi ràng wǒ shēn shòu gǎndòng.', goiY:['尽管……依然……','评价','推荐'], giai:'尽管 + sự thật, vế sau dùng 依然/仍然 (vẫn); 把它推荐给你 — tân ngữ 它 đưa lên trước bằng 把 khi phía sau có 给你.'},
-  {vi:'Để chuẩn bị cho buổi diễn kịch lần này, chúng tôi không chỉ tự thiết kế trang phục và đạo cụ mà còn nhờ thầy dạy mỹ thuật trang điểm giúp, bỏ ra tròn một tháng trời.', zh:'为了这次话剧演出，我们不但自己设计了服装和道具，而且还请美术老师帮忙化妆，投入了整整一个月的时间。', py:'Wèile zhè cì huàjù yǎnchū, wǒmen búdàn zìjǐ shèjìle fúzhuāng hé dàojù, érqiě hái qǐng měishù lǎoshī bāngmáng huàzhuāng, tóurùle zhěngzhěng yí ge yuè de shíjiān.', goiY:['不但……而且……','服装','道具','投入'], giai:'不但……而且…… nối hai việc tăng tiến, cùng chủ ngữ 我们 nên 不但 đứng sau chủ ngữ; 投入 + thời gian/công sức = "bỏ ra, dồn vào".'},
-  {vi:'Ba năm cấp ba sắp kết thúc rồi, thay vì khóc lóc sướt mướt lúc chia tay, chi bằng chúng ta cùng trải qua một đêm tốt nghiệp khó quên, để lại cho nhau những kỷ niệm sâu sắc.', zh:'高中三年就要结束了，我们与其在告别时哭哭啼啼，不如一起度过难忘的毕业之夜，给彼此留下深刻的回忆。', py:'Gāozhōng sān nián jiù yào jiéshù le, wǒmen yǔqí zài gàobié shí kūkutítí, bùrú yìqǐ dùguò nánwàng de bìyè zhī yè, gěi bǐcǐ liúxià shēnkè de huíyì.', goiY:['与其……不如……','告别','度过','彼此'], giai:'与其 A，不如 B — chọn B; 度过 + khoảng thời gian (一个……之夜) = "trải qua", không dùng 度过 với sự kiện như 晚会.'},
-  {vi:'Buổi sinh hoạt lớp lần này do tôi dẫn chương trình, tôi thà bỏ thêm mấy ngày chuẩn bị cho kỹ, chứ không muốn thể hiện một cách be bét trước mặt mọi người.', zh:'这次班会由我来主持，我宁可多花几天认真准备，也不愿意在大家面前表现得一团糟。', py:'Zhè cì bānhuì yóu wǒ lái zhǔchí, wǒ nìngkě duō huā jǐ tiān rènzhēn zhǔnbèi, yě bú yuànyì zài dàjiā miànqián biǎoxiàn de yìtuánzāo.', goiY:['宁可……也不……','主持','表现'], giai:'宁可 A，也不 B: thà chịu A chứ không chấp nhận B; 由 + người + 来 + V = "do ai phụ trách làm".'},
-  {vi:'Cậu ấy luôn lấy bà nội làm tấm gương, ngày thường cho dù việc học bận đến đâu cũng kiên trì tuần nào cũng đến khu dân cư làm tình nguyện viên, điều này đối với một học sinh cấp ba thật không hề bình thường.', zh:'他一直以奶奶为榜样，平常即使学习再忙，也坚持每周去社区当志愿者，这对一个高中生来说很不平常。', py:'Tā yìzhí yǐ nǎinai wéi bǎngyàng, píngcháng jíshǐ xuéxí zài máng, yě jiānchí měi zhōu qù shèqū dāng zhìyuànzhě, zhè duì yí ge gāozhōngshēng lái shuō hěn bù píngcháng.', goiY:['以……为……','即使……也……','平常','志愿者'], giai:'以 A 为 B = "lấy A làm B"; 平常 xuất hiện hai lần với hai nghĩa: danh từ "ngày thường" (平常即使……) và tính từ "bình thường" (很不平常).'},
-  {vi:'Nếu vận dụng "định luật đỉnh – kết" vào việc học, mỗi lần ôn bài đều kết thúc bằng một bài tập mình làm giỏi nhất, thì việc học sẽ không còn đồng nghĩa với khổ sở, trái lại sẽ trở thành niềm vui.', zh:'如果把“峰终定律”运用到学习中，每次复习都以一道拿手的题目结束，学习就不再等于痛苦，反而会变成享受。', py:'Rúguǒ bǎ “Fēngzhōng Dìnglǜ” yùnyòng dào xuéxí zhōng, měi cì fùxí dōu yǐ yí dào náshǒu de tímù jiéshù, xuéxí jiù bú zài děngyú tòngkǔ, fǎn’ér huì biànchéng xiǎngshòu.', goiY:['如果……就……','以……结束','等于','反而'], giai:'以 + N + 结束 = "kết thúc bằng…" (以 là giới từ "bằng"); 反而 (trái lại) mở đầu vế cuối, nêu kết quả ngược với điều người ta vẫn nghĩ.'}
+  {vi:'Tôi thà cuối tuần chơi ít đi một chút, cũng phải tập trung sức lực đọc xong cuốn sách này.',zh:'我宁可周末少玩一会儿，也要集中精力把这本书看完。',py:'Wǒ nìngkě zhōumò shǎo wán yíhuìr, yě yào jízhōng jīnglì bǎ zhè běn shū kànwán.',goiY:['宁可……也要……','集中','精力'],giai:'宁可 A，也要 B: chấp nhận thiệt thòi A để đạt được B; 集中精力 = "dồn sức, tập trung".'},
+  {vi:'Ngày thường cậu ấy nói năng chậm rãi, nhưng hễ đứng lên sân khấu là trở nên rất cuốn hút.',zh:'他平常说话很慢，可是一站上舞台就变得很有魅力。',py:'Tā píngcháng shuōhuà hěn màn, kěshì yí zhànshang wǔtái jiù biàn de hěn yǒu mèilì.',goiY:['平常','可是','一……就……','魅力'],giai:'平常 (danh từ = ngày thường) đứng sau chủ ngữ, trước động từ; 一……就…… diễn tả hễ có A là lập tức có B.'},
+  {vi:'Đã quyết tâm rồi thì ngày nào tôi cũng dậy lúc sáu giờ sáng học thuộc từ mới, để cố gắng đạt kết quả tốt trong kỳ thi.',zh:'既然下了决心，我就每天早上六点起床背生词，以争取在考试中取得良好的成绩。',py:'Jìrán xiàle juéxīn, wǒ jiù měi tiān zǎoshang liù diǎn qǐchuáng bèi shēngcí, yǐ zhēngqǔ zài kǎoshì zhōng qǔdé liánghǎo de chéngjì.',goiY:['既然……就……','以 + V','争取','良好'],giai:'以 (liên từ, văn viết) đứng đầu vế sau, nêu mục đích = "để"; 争取 + V = cố gắng để đạt được.'},
+  {vi:'Tuy đánh giá trên mạng về bộ phim này không tốt lắm, tôi vẫn muốn giới thiệu nó cho cậu, vì đoạn kết của nó khiến tôi rất cảm động.',zh:'尽管这部电影的网上评价不太好，我依然想把它推荐给你，因为它的结尾让我特别感动。',py:'Jǐnguǎn zhè bù diànyǐng de wǎng shang píngjià bú tài hǎo, wǒ yīrán xiǎng bǎ tā tuījiàn gěi nǐ, yīnwèi tā de jiéwěi ràng wǒ tèbié gǎndòng.',goiY:['尽管……依然……','评价','推荐'],giai:'尽管 + sự thật, vế sau dùng 依然/仍然 = "vẫn"; 把 + vật + 推荐给 + người = "giới thiệu … cho ai".'},
+  {vi:'Để chuẩn bị cho buổi diễn kịch lần này, chúng tôi không chỉ tự chuẩn bị trang phục và đạo cụ mà còn nhờ thầy dạy mỹ thuật trang điểm giúp, bỏ ra hơn một tháng trời.',zh:'为了这次戏剧演出，我们不但自己准备了服装和道具，而且还请美术老师帮忙化妆，投入了一个多月的时间。',py:'Wèile zhè cì xìjù yǎnchū, wǒmen búdàn zìjǐ zhǔnbèile fúzhuāng hé dàojù, érqiě hái qǐng měishù lǎoshī bāngmáng huàzhuāng, tóurùle yí ge duō yuè de shíjiān.',goiY:['不但……而且……','服装','道具','投入'],giai:'不但……而且还…… nêu hai việc theo mức tăng dần; 投入 + thời gian = "bỏ ra"; 一个多月 = hơn một tháng (多 đứng sau lượng từ).'},
+  {vi:'Buổi sinh hoạt lớp lần này do tôi dẫn chương trình, tôi thà bỏ thêm mấy ngày chuẩn bị cho kỹ, chứ không muốn thể hiện tệ hại trước mặt mọi người.',zh:'这次班会由我来主持，我宁可多花几天认真准备，也不愿意在大家面前表现得很糟糕。',py:'Zhè cì bānhuì yóu wǒ lái zhǔchí, wǒ nìngkě duō huā jǐ tiān rènzhēn zhǔnbèi, yě bú yuànyì zài dàjiā miànqián biǎoxiàn de hěn zāogāo.',goiY:['宁可……也不……','主持','糟糕'],giai:'宁可 A，也不 B: thà chịu A chứ không chịu B; 由 + người + 来 + V nhấn mạnh người phụ trách.'}
 ];
 
-// Chiều Trung → Việt — câu của bài khoá
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Sau đỉnh cao, điểm kết thúc đến càng nhanh thì ấn tượng mà việc đó để lại cho chúng ta càng sâu sắc.', zh:'高峰过后，终点出现得越迅速，这件事给我们留下的印象就越深刻。', py:'Gāofēng guòhòu, zhōngdiǎn chūxiàn de yuè xùnsù, zhè jiàn shì gěi wǒmen liúxià de yìnxiàng jiù yuè shēnkè.', goiY:['越……越…… = càng… càng…','迅速 = nhanh chóng','深刻 = sâu sắc'], giai:'越 A，越 B (vế sau thường có 就) = "càng A thì càng B"; 出现得越迅速 là bổ ngữ trạng thái với 得.'},
-  {vi:'Điều khiến chúng ta nhớ nhất về một sự việc thường không phải toàn bộ quá trình, mà là cảm nhận ở lúc cao trào và lúc kết thúc.', zh:'我们对一件事物印象最深的，往往不是整个过程，而是高峰和结尾时的体验。', py:'Wǒmen duì yí jiàn shìwù yìnxiàng zuì shēn de, wǎngwǎng bú shì zhěnggè guòchéng, ér shì gāofēng hé jiéwěi shí de tǐyàn.', goiY:['不是……而是…… = không phải… mà là…','事物 = sự vật, sự việc','高峰 = đỉnh cao, cao trào'], giai:'不是 A，而是 B nhấn mạnh B; "印象最深的" là cụm danh từ làm chủ ngữ — dịch "điều khiến ta nhớ nhất".'},
-  {vi:'Daniel Kahneman không chỉ là nhà tâm lý học mà còn từng đoạt giải Nobel; "định luật đỉnh – kết" do ông đưa ra đến nay vẫn được vận dụng rộng rãi.', zh:'丹尼尔·卡内曼不仅是一位心理学家，而且还获得过诺贝尔奖，他提出的“峰终定律”至今仍被广泛运用。', py:'Dānní’ěr Kǎnèimàn bùjǐn shì yí wèi xīnlǐxuéjiā, érqiě hái huòdéguo Nuòbèi’ěr Jiǎng, tā tíchū de “Fēngzhōng Dìnglǜ” zhìjīn réng bèi guǎngfàn yùnyòng.', goiY:['不仅……而且…… = không chỉ… mà còn…','诺贝尔奖 = giải Nobel','峰终定律 = định luật đỉnh – kết','运用 = vận dụng'], giai:'不仅……而且还…… nêu hai thông tin tăng tiến về cùng một người; 被广泛运用 là câu bị động, dịch "được vận dụng rộng rãi".'},
-  {vi:'Vì một buổi diễn kịch, chúng ta bỏ ra rất nhiều thời gian chuẩn bị trang phục và đạo cụ để tạo nên hiệu quả tốt, nhưng lại thường xem nhẹ khâu sắp xếp lúc buổi diễn kết thúc.', zh:'为了一场戏剧演出，我们投入大量时间准备服装和道具，以创造良好的效果，却常常忽视演出结束时的安排。', py:'Wèile yì chǎng xìjù yǎnchū, wǒmen tóurù dàliàng shíjiān zhǔnbèi fúzhuāng hé dàojù, yǐ chuàngzào liánghǎo de xiàoguǒ, què chángcháng hūshì yǎnchū jiéshù shí de ānpái.', goiY:['以 = để, nhằm','却 = nhưng lại','投入 = bỏ ra, dồn vào','忽视 = xem nhẹ'], giai:'以 + V ở giữa câu nêu mục đích của hành động trước; 却 đặt trước động từ, chuyển sang ý trái ngược — chủ ngữ vẫn là 我们.'},
-  {vi:'Ngược lại, nếu đoạn kết của một bộ phim rất dở thì khán giả thường cũng không đánh giá nó cao lắm, những chỗ hay ở phía trước gần như coi như uổng phí.', zh:'相反，如果一部电影的结尾很烂，那么观众对它的评价往往也不会太高，前面的精彩几乎等于白费。', py:'Xiāngfǎn, rúguǒ yí bù diànyǐng de jiéwěi hěn làn, nàme guānzhòng duì tā de píngjià wǎngwǎng yě bú huì tài gāo, qiánmiàn de jīngcǎi jīhū děngyú báifèi.', goiY:['如果……那么…… = nếu… thì…','烂 = dở, tệ','评价 = đánh giá','等于 = bằng với, coi như'], giai:'等于 + kết quả = "coi như là…"; 烂 trong khẩu ngữ là "dở tệ", không dịch "nát".'},
-  {vi:'Một bộ phim dù đoạn đầu có hơi nhàm chán, chỉ cần nửa tiếng cuối thể hiện cảm xúc một cách trọn vẹn, khán giả vẫn sẽ giới thiệu nó cho bạn bè.', zh:'一部电影哪怕前面有些无聊，只要最后半个小时把情感表达得淋漓尽致，观众依然会向朋友推荐它。', py:'Yí bù diànyǐng nǎpà qiánmiàn yǒuxiē wúliáo, zhǐyào zuìhòu bàn ge xiǎoshí bǎ qínggǎn biǎodá de línlí jìnzhì, guānzhòng yīrán huì xiàng péngyou tuījiàn tā.', goiY:['哪怕……只要…… = dù… chỉ cần…','淋漓尽致 = trọn vẹn, thấu đáo','推荐 = giới thiệu, đề cử'], giai:'哪怕 nêu nhượng bộ (dù có điểm kém), 只要 nêu điều kiện đủ cho kết quả ở vế cuối; 淋漓尽致 dịch "một cách trọn vẹn/đến tận cùng".'},
-  {vi:'Nếu phần kết của một đám cưới được sắp xếp rất tệ, thì cho dù phần trước có tổ chức náo nhiệt đến đâu, điều khách khứa nhớ được thường cũng chỉ là cái kết không vui ấy.', zh:'如果一场婚礼的结尾安排得很糟糕，那么即使前面办得再热闹，客人记住的也往往只是那个不愉快的结尾。', py:'Rúguǒ yì chǎng hūnlǐ de jiéwěi ānpái de hěn zāogāo, nàme jíshǐ qiánmiàn bàn de zài rènao, kèrén jìzhù de yě wǎngwǎng zhǐshì nàge bù yúkuài de jiéwěi.', goiY:['如果……那么…… = nếu… thì…','即使……也…… = cho dù… cũng…','婚礼 = đám cưới','糟糕 = tệ hại'], giai:'Câu lồng hai quan hệ: 如果 (giả thiết lớn) và 即使……也…… (nhượng bộ) trong vế sau; 办得再热闹 = "tổ chức náo nhiệt đến mấy".'},
-  {vi:'Khi tổ chức những sự kiện lớn, chúng ta thà dồn nhiều sức lực hơn vào lễ bế mạc, chứ không thể chỉ lo lễ khai mạc mà xem nhẹ phần kết.', zh:'举办大型活动时，我们宁可把更多精力集中在闭幕式上，也不能只顾开幕式而忽视了结尾。', py:'Jǔbàn dàxíng huódòng shí, wǒmen nìngkě bǎ gèng duō jīnglì jízhōng zài bìmùshì shang, yě bù néng zhǐ gù kāimùshì ér hūshìle jiéwěi.', goiY:['宁可……也不能…… = thà… chứ không thể…','开幕式 = lễ khai mạc','集中 = tập trung, dồn'], giai:'宁可 A，也不 B chọn A và dứt khoát loại B; 只顾……而忽视…… = "chỉ lo… mà bỏ qua…".'},
-  {vi:'Khi chia tay bạn bè, thay vì tuỳ tiện nói một câu "tạm biệt" như mọi khi, chi bằng ôm nhau thật chân thành, như vậy quãng thời gian đã cùng trải qua mới được ghi nhớ lâu dài.', zh:'和朋友告别时，与其像平常一样随便说声“再见”，不如认真地拥抱一下，这样一起度过的时光才会被长久地记住。', py:'Hé péngyou gàobié shí, yǔqí xiàng píngcháng yíyàng suíbiàn shuō shēng “zàijiàn”, bùrú rènzhēn de yōngbào yíxià, zhèyàng yìqǐ dùguò de shíguāng cái huì bèi chángjiǔ de jìzhù.', goiY:['与其……不如…… = thay vì… chi bằng…','像平常一样 = như mọi khi','度过 = trải qua'], giai:'像平常一样 — 平常 là danh từ "ngày thường"; 这样……才…… nhấn mạnh chỉ khi làm vậy mới đạt kết quả.'},
-  {vi:'Một chuyến đi sở dĩ khiến người ta khó quên không phải vì cả hành trình đều hoàn hảo, mà là vì khoảnh khắc cao trào và lời tạm biệt cuối cùng đã giúp người ta cảm nhận được sức hấp dẫn của nó.', zh:'一次旅行之所以让人难忘，并不是因为全程都很完美，而是因为高峰时刻和最后的告别让人体会到它的魅力。', py:'Yí cì lǚxíng zhīsuǒyǐ ràng rén nánwàng, bìng bú shì yīnwèi quánchéng dōu hěn wánměi, ér shì yīnwèi gāofēng shíkè hé zuìhòu de gàobié ràng rén tǐhuì dào tā de mèilì.', goiY:['之所以……不是因为……而是因为…… = sở dĩ… không phải vì… mà là vì…','体会 = cảm nhận, thấm thía','魅力 = sức hút'], giai:'之所以 + kết quả, 不是因为 A，而是因为 B: phủ định nguyên nhân A, khẳng định nguyên nhân B; 让人体会到 = "khiến người ta cảm nhận được".'}
+  {vi:'Điều khiến chúng ta nhớ nhất về một sự việc thường không phải toàn bộ quá trình, mà là cảm nhận ở lúc cao trào và lúc kết thúc.',zh:'我们对一件事物印象最深的，往往不是整个过程，而是高峰和结尾时的感受。',py:'Wǒmen duì yí jiàn shìwù yìnxiàng zuì shēn de, wǎngwǎng bú shì zhěnggè guòchéng, ér shì gāofēng hé jiéwěi shí de gǎnshòu.',goiY:['不是……而是…… = không phải… mà là…','事物 = sự vật, sự việc','高峰 = đỉnh cao, cao trào'],giai:'不是 A，而是 B phủ định A để khẳng định B; 印象最深的 là cụm 的 làm chủ ngữ = "điều gây ấn tượng sâu nhất".'},
+  {vi:'Daniel Kahneman không chỉ là nhà tâm lý học mà còn từng đoạt giải Nobel; "định luật đỉnh – kết" do ông đưa ra đến nay vẫn được vận dụng rộng rãi.',zh:'丹尼尔·卡内曼不仅是一位心理学家，而且还获得过诺贝尔奖，他提出的“峰终定律”到现在依然被广泛运用。',py:'Dānní\'ěr Kǎnèimàn bùjǐn shì yí wèi xīnlǐxuéjiā, érqiě hái huòdéguo Nuòbèi\'ěr Jiǎng, tā tíchū de “Fēngzhōng Dìnglǜ” dào xiànzài yīrán bèi guǎngfàn yùnyòng.',goiY:['不仅……而且…… = không chỉ… mà còn…','诺贝尔奖 = giải Nobel','运用 = vận dụng'],giai:'不仅……而且还…… nêu hai thông tin theo mức tăng; 被广泛运用 là bị động mang nghĩa tích cực → dịch "được vận dụng rộng rãi".'},
+  {vi:'Ngược lại, nếu đoạn kết của một bộ phim rất dở thì khán giả thường cũng không đánh giá nó cao lắm, những chỗ hay ở phía trước gần như coi như không có.',zh:'相反，如果一部电影的结尾很烂，那么观众对它的评价往往也不会太高，前面的精彩几乎等于没有。',py:'Xiāngfǎn, rúguǒ yí bù diànyǐng de jiéwěi hěn làn, nàme guānzhòng duì tā de píngjià wǎngwǎng yě bú huì tài gāo, qiánmiàn de jīngcǎi jīhū děngyú méiyǒu.',goiY:['如果……那么…… = nếu… thì…','烂 = dở, tệ','等于 = coi như là'],giai:'烂 (khẩu ngữ) tả phim, sách dở; 等于 ở đây = "coi như là", không dịch cứng "bằng".'},
+  {vi:'Một bộ phim dù đoạn đầu có hơi nhàm chán, chỉ cần nửa tiếng cuối thể hiện cảm xúc một cách trọn vẹn, khán giả vẫn sẽ giới thiệu nó cho bạn bè.',zh:'一部电影即使前面有些无聊，只要最后半个小时把情感表达得淋漓尽致，观众依然会向朋友推荐它。',py:'Yí bù diànyǐng jíshǐ qiánmiàn yǒuxiē wúliáo, zhǐyào zuìhòu bàn ge xiǎoshí bǎ qínggǎn biǎodá de línlí jìnzhì, guānzhòng yīrán huì xiàng péngyou tuījiàn tā.',goiY:['即使……只要…… = dù… chỉ cần…','淋漓尽致 = trọn vẹn, đến tận cùng','推荐 = giới thiệu'],giai:'即使 nêu giả thiết nhượng bộ (= dù cho), 只要 nêu điều kiện đủ; 表达得淋漓尽致 dịch "thể hiện trọn vẹn".'},
+  {vi:'Nếu phần kết của một đám cưới được sắp xếp rất tệ, thì cho dù phần trước có náo nhiệt đến đâu, điều khách khứa nhớ được thường cũng chỉ là cái kết không vui ấy.',zh:'如果一场婚礼的结尾安排得很糟糕，那么即使前面再热闹，客人记住的也往往只是那个不愉快的结尾。',py:'Rúguǒ yì chǎng hūnlǐ de jiéwěi ānpái de hěn zāogāo, nàme jíshǐ qiánmiàn zài rènao, kèrén jìzhù de yě wǎngwǎng zhǐshì nàge bù yúkuài de jiéwěi.',goiY:['如果……那么…… = nếu… thì…','即使……也…… = cho dù… cũng…','糟糕 = tệ'],giai:'即使 + 再 + tính từ，也…… = "dù … đến đâu cũng…"; 客人记住的 là cụm 的 làm chủ ngữ = "điều khách nhớ được".'},
+  {vi:'Khi tổ chức sự kiện, chúng ta thà dồn nhiều sức lực hơn vào lễ bế mạc, chứ không thể chỉ coi trọng lễ khai mạc mà xem nhẹ phần kết.',zh:'举办活动的时候，我们宁可把更多精力集中在闭幕式上，也不能只重视开幕式而忽视了结尾。',py:'Jǔbàn huódòng de shíhou, wǒmen nìngkě bǎ gèng duō jīnglì jízhōng zài bìmùshì shang, yě bù néng zhǐ zhòngshì kāimùshì ér hūshìle jiéwěi.',goiY:['宁可……也不能…… = thà… chứ không thể…','开幕式 = lễ khai mạc','忽视 = xem nhẹ'],giai:'宁可 A，也不能 B: chọn A dù tốn công, nhất quyết không để B xảy ra; 只……而…… = "chỉ… mà…".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1243,30 +1169,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (câu 29–31 của sách bài tập + câu bài khoá)
   sapXep:[
-    {manh:['争取','他要','更多的时间','给自己'],
-     dap:'他要给自己争取更多的时间。',
-     vn:'Anh ấy muốn giành thêm nhiều thời gian cho bản thân.',
-     giai:'Chủ ngữ + năng nguyện 要 → 给自己 (giới từ + đối tượng) → động từ 争取 → tân ngữ. Cụm 给 + người đứng TRƯỚC động từ.'},
-    {manh:['推荐了','老刘','一份工作','刚给我'],
-     dap:'老刘刚给我推荐了一份工作。',
-     vn:'Lão Lưu vừa giới thiệu cho tôi một công việc.',
-     giai:'Phó từ 刚 đứng sau chủ ngữ, trước cụm 给我; động từ 推荐了 + tân ngữ 一份工作.'},
-    {manh:['被人忽视的','这是','细节','最容易'],
-     dap:'这是最容易被人忽视的细节。',
-     vn:'Đây là chi tiết dễ bị người ta bỏ qua nhất.',
-     giai:'这是 + định ngữ dài (最容易被人忽视的) + danh từ trung tâm 细节.'},
-    {manh:['深刻的印象','这次旅行','给我','留下了'],
-     dap:'这次旅行给我留下了深刻的印象。',
-     vn:'Chuyến đi này để lại cho tôi ấn tượng sâu sắc.',
-     giai:'Mẫu cố định: A + 给 + người + 留下了 + 深刻的印象.'},
-    {manh:['那么美丽','依然','她','十几年过去了，'],
-     dap:'十几年过去了，她依然那么美丽。',
-     vn:'Mười mấy năm trôi qua, cô ấy vẫn đẹp như vậy.',
-     giai:'Phó từ 依然 đứng sau chủ ngữ 她, trước 那么 + tính từ (bài tập 3 của sách).'},
-    {manh:['也要','宁可','多花点儿钱，','我','买质量好的'],
-     dap:'我宁可多花点儿钱，也要买质量好的。',
-     vn:'Tôi thà tốn thêm chút tiền, cũng phải mua cái chất lượng tốt.',
-     giai:'Chủ ngữ + 宁可 + A，也要 + B.'}
+    {manh:['争取','他要','更多的时间','给自己'],dap:'他要给自己争取更多的时间。',vn:'Anh ấy muốn giành thêm nhiều thời gian cho bản thân.',giai:'Chủ ngữ + năng nguyện 要 → 给自己 (giới từ + đối tượng) → động từ 争取 → tân ngữ. Cụm 给 + người đứng TRƯỚC động từ.'},
+    {manh:['推荐了','老刘','一份工作','刚给我'],dap:'老刘刚给我推荐了一份工作。',vn:'Lão Lưu vừa giới thiệu cho tôi một công việc.',giai:'Phó từ 刚 đứng sau chủ ngữ, trước cụm 给我; động từ 推荐了 + tân ngữ 一份工作.'},
+    {manh:['被人忽视的','这是','细节','最容易'],dap:'这是最容易被人忽视的细节。',vn:'Đây là chi tiết dễ bị người ta bỏ qua nhất.',giai:'这是 + định ngữ dài (最容易被人忽视的) + danh từ trung tâm 细节.'},
+    {manh:['深刻的印象','那场演出','给观众','留下了'],dap:'那场演出给观众留下了深刻的印象。',vn:'Buổi biểu diễn ấy để lại ấn tượng sâu sắc cho khán giả.',giai:'Mẫu cố định: A + 给 + người + 留下了 + 深刻的印象.'},
+    {manh:['那么美丽','依然','她','十几年过去了，'],dap:'十几年过去了，她依然那么美丽。',vn:'Mười mấy năm trôi qua, cô ấy vẫn đẹp như vậy.',giai:'Phó từ 依然 đứng sau chủ ngữ 她, trước 那么 + tính từ (bài tập 3 của sách).'},
+    {manh:['也要','宁可','多花点儿钱，','我','买质量好的'],dap:'我宁可多花点儿钱，也要买质量好的。',vn:'Tôi thà tốn thêm chút tiền, cũng phải mua cái chất lượng tốt.',giai:'Chủ ngữ + 宁可 + A，也要 + B.'}
   ]
 };
 
@@ -1276,30 +1184,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (婚礼 · 峰终定律). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 婚礼 · 深刻 · 平常 · 宁可 · 告别 · 依然 · 推荐 · 评价.',
   questions:[
-    {q_zh:'你了解过或参加过中国人的婚礼吗？印象深刻的地方是什么？',
-     q_vn:'Em đã tìm hiểu hay dự đám cưới người Trung Quốc chưa? Điều gì khiến em ấn tượng sâu sắc?',
-     hint:'Nếu chưa dự: kể điều em biết qua phim, dùng 深刻 + 印象',
-     sample:'我没参加过，但是在电视剧里看过。中国人的婚礼上到处都是红色，新娘穿红色的衣服，这给我留下了深刻的印象。',
-     sample_vn:'Tôi chưa dự bao giờ, nhưng đã xem trong phim truyền hình. Đám cưới người Trung Quốc đâu đâu cũng màu đỏ, cô dâu mặc đồ đỏ, điều đó để lại cho tôi ấn tượng sâu sắc.',
-     note:'Chưa từng dự thì nói thật và kể điều mình biết — đừng bịa. Người chấm HSKK đánh giá cách diễn đạt, không đánh giá trải nghiệm.'},
-    {q_zh:'你们国家的婚礼和中国人的婚礼有哪些不同？',
-     q_vn:'Đám cưới ở nước em khác đám cưới người Trung Quốc ở những điểm nào?',
-     hint:'Nêu 1 điểm giống + 2 điểm khác, dùng 与……相比',
-     sample:'越南和中国的婚礼都很热闹。与中国相比，越南的婚礼有“问名”“迎亲”这些仪式，新娘一般穿奥黛。',
-     sample_vn:'Đám cưới Việt Nam và Trung Quốc đều rất náo nhiệt. So với Trung Quốc, đám cưới Việt Nam có các nghi lễ như dạm ngõ, đón dâu, cô dâu thường mặc áo dài.',
-     note:'Bố cục "giống trước, khác sau" giúp câu trả lời mạch lạc.'},
-    {q_zh:'你觉得什么样的婚礼能给人留下令人难忘的美好记忆？',
-     q_vn:'Em thấy một đám cưới như thế nào mới để lại kỷ niệm đẹp khó quên?',
-     hint:'Liên hệ "峰终定律" của bài, dùng 宁可……也要……',
-     sample:'我觉得婚礼不用太长。宁可时间短一点儿，也要让最后的部分最感人，比如新人给父母鞠躬、感谢父母，这样大家会记得很清楚。',
-     sample_vn:'Tôi thấy đám cưới không cần quá dài. Thà thời gian ngắn một chút, cũng phải để phần cuối cảm động nhất, ví dụ cô dâu chú rể cúi chào, cảm ơn bố mẹ, như vậy mọi người sẽ nhớ rất rõ.',
-     note:'Vận dụng ý của bài khoá (cao điểm + điểm cuối) để câu trả lời có chiều sâu.'},
-    {q_zh:'你同意“人们应该在最美好的时候离开”这句话吗？请举一个例子。',
-     q_vn:'Em có đồng ý câu "con người nên rời đi vào lúc tốt đẹp nhất" không? Hãy nêu một ví dụ.',
-     hint:'Đồng ý / không + ví dụ trong đời sống học sinh, dùng 依然 hoặc 告别',
-     sample:'我同意。上次同学聚会，我们玩儿得最开心的时候就早早地告别了，到现在我依然觉得那次聚会特别美好。',
-     sample_vn:'Tôi đồng ý. Lần họp lớp trước, chúng tôi chia tay sớm đúng lúc đang vui nhất, đến giờ tôi vẫn thấy buổi họp ấy đặc biệt đẹp.',
-     note:'Ví dụ càng GẦN đời sống của em càng thuyết phục.'}
+    {q_zh:'你了解过中国人的婚礼吗？参加过吗？印象深刻的地方是什么？',q_vn:'Em đã tìm hiểu hay dự đám cưới người Trung Quốc chưa? Điều gì khiến em ấn tượng sâu sắc?',hint:'Nếu chưa dự: kể điều em biết qua ti vi, phim ảnh, dùng 连……也……',sample:'我没参加过，但是在电视上看过。中国人的婚礼上到处都是红色，连新人穿的衣服也是红色的，这一点我到现在还记得很清楚。',sample_vn:'Tôi chưa dự bao giờ, nhưng đã xem trên ti vi. Đám cưới người Trung Quốc đâu đâu cũng màu đỏ, ngay cả quần áo cô dâu chú rể cũng màu đỏ, điểm này đến giờ tôi vẫn nhớ rất rõ.',note:'Chưa từng dự thì nói thật và kể điều mình biết — đừng bịa. Người chấm HSKK đánh giá cách diễn đạt, không đánh giá trải nghiệm.'},
+    {q_zh:'你们国家的婚礼和中国人的婚礼有哪些不同？',q_vn:'Đám cưới ở nước em khác đám cưới người Trung Quốc ở những điểm nào?',hint:'Nêu 1 điểm giống + 2 điểm khác, dùng 与……相比',sample:'越南和中国的婚礼都很热闹。与中国相比，越南的婚礼要先去女方家，新人一般穿越南的传统服装。',sample_vn:'Đám cưới Việt Nam và Trung Quốc đều rất náo nhiệt. So với Trung Quốc, đám cưới Việt Nam phải đến nhà gái trước, cô dâu chú rể thường mặc trang phục truyền thống Việt Nam.',note:'Bố cục "giống trước, khác sau" giúp câu trả lời mạch lạc.'},
+    {q_zh:'你觉得什么样的婚礼能给人留下令人难忘的美好记忆？',q_vn:'Em thấy một đám cưới như thế nào mới để lại kỷ niệm đẹp khó quên?',hint:'Liên hệ "峰终定律" của bài, dùng 宁可……也要……',sample:'我觉得婚礼不用太长。宁可时间短一点儿，也要让最后的部分最感人，比如最后让新人感谢父母，这样大家会记得很清楚。',sample_vn:'Tôi thấy đám cưới không cần quá dài. Thà thời gian ngắn một chút, cũng phải để phần cuối cảm động nhất, ví dụ cuối cùng để cô dâu chú rể cảm ơn bố mẹ, như vậy mọi người sẽ nhớ rất rõ.',note:'Vận dụng ý của bài khoá (cao điểm + điểm cuối) để câu trả lời có chiều sâu.'},
+    {q_zh:'你同意“人们应该在最美好的时候离开”这句话吗？你有过这样的经历吗？',q_vn:'Em có đồng ý câu "con người nên rời đi vào lúc tốt đẹp nhất" không? Em đã từng trải qua chuyện như vậy chưa?',hint:'Đồng ý / không + ví dụ trong đời sống học sinh, dùng 依然 hoặc 告别',sample:'我同意。上次同学聚会，我们玩儿得最开心的时候就早早地告别了，到现在我依然觉得那次聚会特别美好。',sample_vn:'Tôi đồng ý. Lần họp lớp trước, chúng tôi chia tay sớm đúng lúc đang vui nhất, đến giờ tôi vẫn thấy buổi họp ấy đặc biệt đẹp.',note:'Ví dụ càng GẦN đời sống của em càng thuyết phục.'}
   ]
 };
 
@@ -1391,45 +1279,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Cả nhóm bạn bàn chuyến du lịch Hà Nội – Thành phố Hồ Chí Minh, bạn hỏi ý em.',
-     a:{sp:'Bạn',zh:'这次旅行，你觉得我们是坐飞机去好还是坐火车去好？',vn:'Chuyến đi này, cậu thấy mình đi máy bay hay đi tàu thì hơn?'},
-     need:['Dùng 宁可……也……','Nêu lý do lựa chọn'],
-     sample:'我宁可多花点儿钱坐飞机，也不想在火车上坐三十多个小时。',
-     samplePy:'Wǒ nìngkě duō huā diǎnr qián zuò fēijī, yě bù xiǎng zài huǒchē shang zuò sānshí duō ge xiǎoshí.',
-     sampleVn:'Tớ thà tốn thêm chút tiền đi máy bay, chứ không muốn ngồi tàu hơn ba mươi tiếng.',
-     tip:'宁可 đi cặp với 也 (也要 / 也不), không đi với 但是. Đây chính là bài 练一练 (3) của sách.'},
-
-    {scene:'Bạn thấy em vừa đọc xong một cuốn tiểu thuyết đang nổi.',
-     a:{sp:'Bạn',zh:'你觉得这本书怎么样？',vn:'Cậu thấy cuốn sách này thế nào?'},
-     need:['Dùng 平常 (tính từ)','Nêu nhận xét cụ thể'],
-     sample:'故事很平常，没什么特别的，结尾也不太感人，我不太推荐你看。',
-     samplePy:'Gùshi hěn píngcháng, méi shénme tèbié de, jiéwěi yě bú tài gǎnrén, wǒ bú tài tuījiàn nǐ kàn.',
-     sampleVn:'Câu chuyện rất bình thường, chẳng có gì đặc biệt, phần kết cũng không cảm động lắm, tớ không khuyên cậu đọc lắm.',
-     tip:'平常 làm tính từ: đứng sau 很. Không nói 很平时.'},
-
-    {scene:'Bạn cùng lớp ngạc nhiên vì em tự nấu cơm mang đi học.',
-     a:{sp:'Bạn',zh:'你周末一般在外边吃饭吗？',vn:'Cuối tuần cậu thường ăn ngoài à?'},
-     need:['Dùng 平常 (danh từ)','So sánh ngày thường với cuối tuần'],
-     sample:'周末偶尔出去吃，平常我一般都是自己做饭吃。',
-     samplePy:'Zhōumò ǒu\'ěr chūqu chī, píngcháng wǒ yìbān dōu shì zìjǐ zuò fàn chī.',
-     sampleVn:'Cuối tuần thỉnh thoảng đi ăn ngoài, ngày thường tớ thường tự nấu cơm ăn.',
-     tip:'平常 làm danh từ = 平时, đứng đầu câu hoặc sau chủ ngữ.'},
-
-    {scene:'Bạn lo lắng vì tháng sau thi HSK 5.',
-     a:{sp:'Bạn',zh:'下个月就要考HSK五级了，我好紧张啊！',vn:'Tháng sau thi HSK 5 rồi, tớ căng thẳng quá!'},
-     need:['Dùng 以 (liên từ, chỉ mục đích)','Khuyên bạn một cách cụ thể'],
-     sample:'别紧张，你每天做一套练习题，以熟悉考试的题型。',
-     samplePy:'Bié jǐnzhāng, nǐ měi tiān zuò yí tào liànxítí, yǐ shúxī kǎoshì de tíxíng.',
-     sampleVn:'Đừng căng thẳng, mỗi ngày cậu làm một đề luyện tập để quen với các dạng bài.',
-     tip:'以 (liên từ) đứng đầu VẾ SAU, sau nó là mục đích. Đây là bài 练一练 (2) của sách.'},
-
-    {scene:'Hôm qua em dự đám cưới anh họ, hôm nay bạn hỏi thăm.',
-     a:{sp:'Bạn',zh:'昨天的婚礼怎么样？',vn:'Đám cưới hôm qua thế nào?'},
-     need:['Dùng 深刻','Kể một chi tiết đáng nhớ'],
-     sample:'婚礼不长，但是最后新郎新娘给父母鞠躬的那一刻给我留下了深刻的印象。',
-     samplePy:'Hūnlǐ bù cháng, dànshì zuìhòu xīnláng xīnniáng gěi fùmǔ jūgōng de nà yí kè gěi wǒ liúxiàle shēnkè de yìnxiàng.',
-     sampleVn:'Đám cưới không dài, nhưng khoảnh khắc cuối cùng cô dâu chú rể cúi chào bố mẹ đã để lại cho tớ ấn tượng sâu sắc.',
-     tip:'Đúng tinh thần 峰终定律: người ta nhớ nhất phần KẾT. 给 + người + 留下 + 深刻的印象.'}
+    {scene:'Cả nhóm bạn bàn chuyến du lịch Hà Nội – Thành phố Hồ Chí Minh, bạn hỏi ý em.',a:{sp:'Bạn',zh:'这次旅行，你觉得我们是坐飞机去好还是坐火车去好？',vn:'Chuyến đi này, cậu thấy mình đi máy bay hay đi tàu thì hơn?'},need:['Dùng 宁可……也……','Nêu lý do lựa chọn'],sample:'我宁可坐飞机贵一点儿，也不想在火车上坐三十多个小时。',samplePy:'Wǒ nìngkě zuò fēijī guì yìdiǎnr, yě bù xiǎng zài huǒchē shang zuò sānshí duō ge xiǎoshí.',sampleVn:'Tớ thà đi máy bay đắt hơn một chút, chứ không muốn ngồi tàu hơn ba mươi tiếng.',tip:'宁可 đi cặp với 也 (也要 / 也不), không đi với 但是. Đây chính là bài 练一练 (3) của sách.'},
+    {scene:'Bạn thấy em vừa đọc xong một cuốn tiểu thuyết đang nổi.',a:{sp:'Bạn',zh:'这本小说你看完了，写得怎么样？',vn:'Cuốn tiểu thuyết này cậu đọc xong rồi, viết thế nào?'},need:['Dùng 平常 (tính từ)','Nêu nhận xét cụ thể'],sample:'故事很平常，没什么特别的，结尾也不太感人，我不太推荐你看。',samplePy:'Gùshi hěn píngcháng, méi shénme tèbié de, jiéwěi yě bú tài gǎnrén, wǒ bú tài tuījiàn nǐ kàn.',sampleVn:'Câu chuyện rất bình thường, chẳng có gì đặc biệt, phần kết cũng không cảm động lắm, tớ không khuyên cậu đọc lắm.',tip:'平常 làm tính từ: đứng sau 很. Không nói 很平时.'},
+    {scene:'Bạn cùng lớp ngạc nhiên vì em tự nấu cơm mang đi học.',a:{sp:'Bạn',zh:'你周末一般在外边吃饭吗？',vn:'Cuối tuần cậu thường ăn ngoài à?'},need:['Dùng 平常 (danh từ)','So sánh ngày thường với cuối tuần'],sample:'周末偶尔出去吃，平常我一般都是自己做饭吃。',samplePy:'Zhōumò ǒu\'ěr chūqu chī, píngcháng wǒ yìbān dōu shì zìjǐ zuò fàn chī.',sampleVn:'Cuối tuần thỉnh thoảng đi ăn ngoài, ngày thường tớ thường tự nấu cơm ăn.',tip:'平常 làm danh từ = 平时, đứng đầu câu hoặc sau chủ ngữ.'},
+    {scene:'Bạn lo lắng vì tháng sau thi HSK 5.',a:{sp:'Bạn',zh:'下个月就要考HSK了，我好紧张啊！',vn:'Tháng sau thi HSK rồi, tớ căng thẳng quá!'},need:['Dùng 以 (liên từ, chỉ mục đích)','Khuyên bạn một cách cụ thể'],sample:'别紧张，你每天做一些练习，以适应考试的时间。',samplePy:'Bié jǐnzhāng, nǐ měi tiān zuò yìxiē liànxí, yǐ shìyìng kǎoshì de shíjiān.',sampleVn:'Đừng căng thẳng, mỗi ngày cậu làm một ít bài luyện để quen với thời gian làm bài thi.',tip:'以 (liên từ) đứng đầu VẾ SAU, sau nó là mục đích. Đây là bài 练一练 (2) của sách.'},
+    {scene:'Hôm qua em dự đám cưới anh họ, hôm nay bạn hỏi thăm.',a:{sp:'Bạn',zh:'昨天的婚礼怎么样？',vn:'Đám cưới hôm qua thế nào?'},need:['Dùng 深刻','Kể một chi tiết đáng nhớ'],sample:'婚礼不长，但是最后新人感谢父母的那一刻让我印象特别深刻。',samplePy:'Hūnlǐ bù cháng, dànshì zuìhòu xīnrén gǎnxiè fùmǔ de nà yí kè ràng wǒ yìnxiàng tèbié shēnkè.',sampleVn:'Đám cưới không dài, nhưng khoảnh khắc cuối cùng cô dâu chú rể cảm ơn bố mẹ khiến tớ ấn tượng đặc biệt sâu sắc.',tip:'Đúng tinh thần 峰终定律: người ta nhớ nhất phần KẾT. 印象很深刻 / 留下深刻的印象 đều đúng.'}
   ]
 };
 
@@ -1440,29 +1294,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết bài bình phim đăng báo tường của trường.',
-     a:'这电影太烂了，千万别看！',b:'这部电影开头很精彩，但结尾过于平常，令人失望。',better:'b',
-     why:'Bài bình phim cần giọng VĂN VIẾT, có lý lẽ: 过于, 令人失望. Câu a là khẩu ngữ (烂, 千万别看), chỉ hợp khi nói với bạn.'},
-
-    {scene:'Em nhắn tin cho bạn thân giới thiệu một quán ăn.',
-     a:'这家店超好吃，推荐你去试试！',b:'本人诚恳地向您推荐此餐厅。',better:'a',
-     why:'Với bạn thân, câu a tự nhiên, gần gũi. Câu b dùng 本人, 您, 此 — trang trọng như quảng cáo, nghe rất xa cách.'},
-
-    {scene:'Báo cáo tổng kết hoạt động văn nghệ gửi thầy cô.',
-     a:'我们投入了大量时间准备服装和道具，以创造良好的效果。',b:'我们花了好多时间弄衣服什么的，想让效果好点儿。',better:'a',
-     why:'Báo cáo dùng giọng văn viết: 投入, 大量, 以, 良好. Câu b là khẩu ngữ (弄, 什么的, 好点儿).'},
-
-    {scene:'Đến rạp thì em chợt phát hiện quên vé, em nói với bạn đi cùng.',
-     a:'糟糕！我把票忘在家里了！',b:'非常遗憾，本人未携带门票。',better:'a',
-     why:'糟糕！là câu cảm thán tự nhiên khi chợt phát hiện chuyện không hay. Câu b như văn bản hành chính — nói với bạn thì buồn cười.'},
-
-    {scene:'Cô giáo chủ nhiệm viết nhận xét vào học bạ.',
-     a:'这孩子挺聪明的，学得不错。',b:'该生学习认真，能灵活运用所学知识。',better:'b',
-     why:'Học bạ là văn bản chính thức: 该生, 灵活运用, 所学知识. Câu a là lời nói chuyện thân mật.'},
-
-    {scene:'Em là MC, nói lời kết thúc buổi văn nghệ của trường.',
-     a:'好了，就这样吧，大家回家吧。',b:'今天的晚会到这里就结束了，感谢大家的参与，我们明年再见！',better:'b',
-     why:'Lời kết của MC cần trang trọng, ấm áp — đúng tinh thần 峰终定律: kết thúc đẹp để khán giả nhớ lâu. Câu a cụt lủn, làm hỏng ấn tượng cả buổi.'}
+    {scene:'Em viết bài bình phim đăng báo tường của trường.',a:'这电影太烂了，千万别看！',b:'这部电影开头很精彩，但结尾十分平常，令人失望。',better:'b',why:'Bài bình phim cần giọng VĂN VIẾT, có lý lẽ: 十分平常, 令人失望. Câu a là khẩu ngữ (烂, 千万别看), chỉ hợp khi nói với bạn.'},
+    {scene:'Em nhắn tin cho bạn thân giới thiệu một quán ăn.',a:'这家店特别好吃，推荐你去试试！',b:'本人诚恳地向您推荐这家餐厅。',better:'a',why:'Với bạn thân, câu a tự nhiên, gần gũi. Câu b dùng 本人, 诚恳地, 您 — trang trọng như quảng cáo, nghe rất xa cách.'},
+    {scene:'Báo cáo tổng kết hoạt động văn nghệ gửi thầy cô.',a:'我们投入了大量时间准备服装和道具，以创造良好的效果。',b:'我们花了好多时间弄衣服什么的，想让效果好点儿。',better:'a',why:'Báo cáo dùng giọng văn viết: 投入, 大量, 以, 良好. Câu b là khẩu ngữ (弄, 什么的, 好点儿).'},
+    {scene:'Đến rạp thì em chợt phát hiện quên vé, em nói với bạn đi cùng.',a:'糟糕！我把票忘在家里了！',b:'本人没有带门票，十分抱歉。',better:'a',why:'糟糕！là câu cảm thán tự nhiên khi chợt phát hiện chuyện không hay. Câu b như văn bản hành chính — nói với bạn thì buồn cười.'},
+    {scene:'Cô giáo chủ nhiệm viết nhận xét vào học bạ.',a:'这孩子挺聪明的，学得不错。',b:'该生学习认真，能灵活运用所学知识。',better:'b',why:'Học bạ là văn bản chính thức: 该生, 灵活运用, 所学知识. Câu a là lời nói chuyện thân mật.'},
+    {scene:'Em là MC, nói lời kết thúc buổi văn nghệ của trường.',a:'好了，就这样吧，大家回家吧。',b:'今天的晚会到这里就结束了，感谢大家的参与，我们下次再见！',better:'b',why:'Lời kết của MC cần trang trọng, ấm áp — đúng tinh thần 峰终定律: kết thúc đẹp để khán giả nhớ lâu. Câu a cụt lủn, làm hỏng ấn tượng cả buổi.'}
   ]
 };
 

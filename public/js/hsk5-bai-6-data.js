@@ -917,86 +917,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — lấy bảng 词语搭配 của giáo trình (tr. 59) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'制造',right:'麻烦'},
   {left:'表达',right:'谢意'},
   {left:'天真的',right:'孩子'},
   {left:'整个',right:'房间'},
   {left:'仔细地',right:'询问'},
-  {left:'准确地',right:'表达'},
-  {left:'除',right:'掉'},
-  {left:'吓得',right:'什么似的'},
   {left:'放',right:'鞭炮'},
   {left:'吃',right:'年夜饭'},
-  {left:'下定',right:'决心'},
-  {left:'打听',right:'消息'},
   {left:'敲响',right:'锅和盆子'},
   {left:'形成',right:'风俗'},
   {left:'一箭',right:'射死'},
   {left:'死死地',right:'咬住'},
-  {left:'自然',right:'灾害'},
-  {left:'很有',right:'意义'},
-  {left:'议论',right:'纷纷'},
-  {left:'英俊',right:'高大'}
+  {left:'很有',right:'意义'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'在中国，人们把农历十二月三十日叫作',blank:'除夕',post:'。',hint:'(đêm giao thừa)',ans:'除夕'},
-  {pre:'老师给我们讲了春节的',blank:'由来',post:'，大家听得都很认真。',hint:'(nguồn gốc)',ans:'由来'},
-  {pre:'中秋节是',blank:'农历',post:'八月十五，在公历中每年都不固定。',hint:'(âm lịch)',ans:'农历'},
-  {pre:'除夕晚上，全家人一起吃完年夜饭，然后熬夜',blank:'守岁',post:'。',hint:'(thức đón giao thừa)',ans:'守岁'},
-  {pre:'弟弟最喜欢看有',blank:'怪物',post:'的动画片，可是看完又不敢一个人睡觉。',hint:'(quái vật)',ans:'怪物'},
-  {pre:'经常熬夜对身体的',blank:'伤害',post:'极大。',hint:'(sự tổn hại)',ans:'伤害'},
-  {pre:'百姓对“夕”',blank:'恨',post:'之入骨，但是又十分无奈。',hint:'(căm hận)',ans:'恨'},
-  {pre:'多喝牛奶对',blank:'骨头',post:'有好处。',hint:'(xương)',ans:'骨头'},
-  {pre:'姑娘脸上表现出很',blank:'无奈',post:'的样子。',hint:'(bất lực, hết cách)',ans:'无奈'},
-  {pre:'他救了落水的孩子，大家都叫他小',blank:'英雄',post:'。',hint:'(anh hùng)',ans:'英雄'},
-  {pre:'这条狗非常勇敢，无论',blank:'咬',post:'住什么都不会松口。',hint:'(cắn)',ans:'咬'},
-  {pre:'见了',blank:'外公',post:'，你替我向他问好。',hint:'(ông ngoại)',ans:'外公'},
-  {pre:'孩子们',blank:'天真',post:'的笑容让人忘记了烦恼。',hint:'(hồn nhiên, ngây thơ)',ans:'天真'},
-  {pre:'李阳要去留学了，我们都',blank:'替',post:'他高兴。',hint:'(cho, vì — giới từ)',ans:'替',exp:'替 + người + V = cho, thay cho ai: 替他高兴 = mừng cho anh ấy.'},
-  {pre:'七郎要替百姓',blank:'除',post:'掉这个制造灾害的东西。',hint:'(trừ khử)',ans:'除',exp:'除掉 = trừ khử, loại bỏ (除 + bổ ngữ kết quả 掉).'},
-  {pre:'两岁的果果是我们家最能',blank:'制造',post:'麻烦的人。',hint:'(gây ra)',ans:'制造'},
-  {pre:'越南中部每年都会发生不少自然',blank:'灾害',post:'。',hint:'(thiên tai, tai hoạ)',ans:'灾害'},
-  {pre:'到天亮前，它又会逃得连',blank:'影子',post:'都找不着了。',hint:'(cái bóng)',ans:'影子'},
-  {pre:'他喜欢音乐、电影、运动，',blank:'此外',post:'还喜欢旅行。',hint:'(ngoài ra)',ans:'此外',exp:'此外 = ngoài ra (văn viết), bổ sung thêm thông tin; tương đương 另外.'},
-  {pre:'周末他起得晚，这会儿',blank:'说不定',post:'还在睡觉呢。',hint:'(không chừng)',ans:'说不定',exp:'说不定 = không chừng, có khi (đoán khả năng): 这会儿说不定还在睡觉.'},
-  {pre:'为了准备考试，他',blank:'熬夜',post:'学习，第二天上课一直打哈欠。',hint:'(thức khuya)',ans:'熬夜'},
-  {pre:'还真让你说对了，他',blank:'果然',post:'还不知道这件事。',hint:'(quả nhiên)',ans:'果然',exp:'果然 = quả nhiên (đúng như dự đoán). Khác 居然/竟然 là việc ngoài dự đoán.'},
-  {pre:'它想吃一户人家的',blank:'姑娘',post:'，被这家人发现了。',hint:'(cô gái)',ans:'姑娘'},
-  {pre:'他们立刻敲响了家中的锅和',blank:'盆子',post:'。',hint:'(chậu)',ans:'盆子'},
-  {pre:'',blank:'整个',post:'下午，他们都在跳舞。',hint:'(cả, suốt cả)',ans:'整个'},
-  {pre:'我不敢相信这是真的，好像做梦',blank:'似的',post:'。',hint:'(như … vậy)',ans:'似的',exp:'好像/像…似的 = giống như… vậy: 好像做梦似的. 似的 đứng cuối cụm so sánh.'},
-  {pre:'七郎跑上前去，一箭',blank:'射',post:'死了“夕”。',hint:'(bắn)',ans:'射'},
-  {pre:'要下雨了，路上的人',blank:'纷纷',post:'往家里跑。',hint:'(nhao nhao, nối nhau)',ans:'纷纷',exp:'纷纷 = nhao nhao, lần lượt (nhiều người/vật cùng làm): 纷纷往家里跑. Chủ ngữ phải là số nhiều.'},
-  {pre:'人的思想感情是非常丰富的，有些是无法用语言准确',blank:'表达',post:'的。',hint:'(diễn đạt)',ans:'表达'},
-  {pre:'过年不放',blank:'鞭炮',post:'，好像缺少点儿过年的气氛。',hint:'(pháo)',ans:'鞭炮'},
-  {pre:'就这样一代代传下来，形成了除夕夜守岁、放鞭炮的',blank:'风俗',post:'。',hint:'(phong tục)',ans:'风俗'},
-  {pre:'传说在很久以前，有个叫作“',blank:'夕',post:'”的怪物。',hint:'(tên con quái vật)',ans:'夕'}
+  {pre:'听说明天放假，弟弟高兴得什么',blank:'似的',post:'。',hint:'(… không tả nổi — chỉ mức độ cực cao)',ans:'似的',exp:'V/Adj + 得 + 什么似的 = … đến mức không biết tả thế nào; đã có 什么 thì chỉ dùng 似的, không dùng 一样.'},
+  {pre:'为了看足球比赛，他昨天又',blank:'熬夜',post:'了，今天上课的时候一直想睡觉。',hint:'(thức khuya)',ans:'熬夜',exp:'熬夜 = thức khuya (vì học, làm việc, chơi…); sau 熬夜 thêm 了 để nói việc đã xảy ra.'},
+  {pre:'他的那句话深深地',blank:'伤害',post:'了妈妈。',hint:'(làm tổn thương)',ans:'伤害',exp:'伤害 + người/tình cảm/sức khoẻ = làm tổn thương, gây hại; dùng được cho cả thể xác lẫn tinh thần.'},
+  {pre:'虽然他骗了我，可是我一点儿也不',blank:'恨',post:'他。',hint:'(căm ghét, oán hận)',ans:'恨',exp:'恨 = căm ghét, oán hận; nặng hơn nhiều so với 不喜欢.'},
+  {pre:'我家的小狗最喜欢吃',blank:'骨头',post:'，每次都吃得很开心。',hint:'(xương)',ans:'骨头',exp:'骨头 = xương (của người, động vật): 吃骨头, 骨头断了.'},
+  {pre:'他跟父母说了很多次，父母还是不同意，他只好',blank:'无奈',post:'地放弃了。',hint:'(đành chịu, bất lực)',ans:'无奈',exp:'无奈地 + V = làm gì trong thế bất lực, không còn cách nào khác; hay đi với 只好.'},
+  {pre:'五岁的女儿',blank:'天真',post:'地问我：“月亮上住着人吗？”',hint:'(ngây thơ, hồn nhiên)',ans:'天真',exp:'天真 tả sự ngây thơ của trẻ con; nói người lớn 太天真了 là chê suy nghĩ đơn giản.'},
+  {pre:'每年这个时候，这个地区都会发生一些自然',blank:'灾害',post:'。',hint:'(tai hoạ, thiên tai)',ans:'灾害',exp:'自然灾害 = thiên tai (lũ, bão, hạn…); động từ đi kèm thường là 发生.'},
+  {pre:'晚上走在路上，路灯把我的',blank:'影子',post:'拉得很长。',hint:'(cái bóng)',ans:'影子',exp:'影子 = cái bóng; 连影子都没有 = mất tăm, không thấy bóng dáng.'},
+  {pre:'汤还在',blank:'锅',post:'里，你自己去拿吧。',hint:'(nồi)',ans:'锅',exp:'锅 = nồi, chảo; lượng từ là 口 (一口锅); 一锅汤 = một nồi canh.'},
+  {pre:'后面突然有人大声叫我的名字，把我',blank:'吓',post:'坏了。',hint:'(làm giật mình, làm sợ)',ans:'吓',exp:'吓 = làm cho sợ: 把我吓坏了, 吓了我一下; 被……吓哭了.'},
+  {pre:'这块肉太老了，奶奶',blank:'咬',post:'不动。',hint:'(cắn)',ans:'咬',exp:'咬不动 = cắn không nổi (bổ ngữ khả năng); 咬住 = cắn chặt.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (替 · 说不定 · 似的 · 纷纷) ít nhất 3 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['七郎','要','替','百姓','除掉','这个','怪物','。'],ans:'七郎要替百姓除掉这个怪物。',audio:'七郎要替百姓除掉这个怪物。'},
-  {words:['见了外公','，','你','替','我','向他','问好','。'],ans:'见了外公，你替我向他问好。',audio:'见了外公，你替我向他问好。'},
-  {words:['路上的人','都','替','他','着急','。'],ans:'路上的人都替他着急。',audio:'路上的人都替他着急。'},
-  {words:['“夕”','说不定','晚上','要','出来','伤害大家','。'],ans:'“夕”说不定晚上要出来伤害大家。',audio:'“夕”说不定晚上要出来伤害大家。'},
-  {words:['别放弃','，','说不定','下次','就','成功了','。'],ans:'别放弃，说不定下次就成功了。',audio:'别放弃，说不定下次就成功了。'},
-  {words:['出发的时间','还','说不定','。'],ans:'出发的时间还说不定。',audio:'出发的时间还说不定。'},
-  {words:['“夕”','吓得','什么','似的','，','急忙往外逃','。'],ans:'“夕”吓得什么似的，急忙往外逃。',audio:'“夕”吓得什么似的，急忙往外逃。'},
-  {words:['我','不敢相信','这是真的','，','好像','做梦','似的','。'],ans:'我不敢相信这是真的，好像做梦似的。',audio:'我不敢相信这是真的，好像做梦似的。'},
-  {words:['他','下班回到家','累得','什么似的','。'],ans:'他下班回到家累得什么似的。',audio:'他下班回到家累得什么似的。'},
-  {words:['百姓','纷纷','对','七郎','表达','谢意','。'],ans:'百姓纷纷对七郎表达谢意。',audio:'百姓纷纷对七郎表达谢意。'},
-  {words:['要下雨了','，','路上的人','纷纷','往家里','跑','。'],ans:'要下雨了，路上的人纷纷往家里跑。',audio:'要下雨了，路上的人纷纷往家里跑。'},
-  {words:['秋风','刮起','，','落叶','纷纷','。'],ans:'秋风刮起，落叶纷纷。',audio:'秋风刮起，落叶纷纷。'},
-  {words:['他们','立刻','敲响了','家中的','锅和盆子','。'],ans:'他们立刻敲响了家中的锅和盆子。',audio:'他们立刻敲响了家中的锅和盆子。'}
+  {words:['我','这几天','出差','，','你','能','替我','照顾','一下','小狗','吗','？'],ans:'我这几天出差，你能替我照顾一下小狗吗？',audio:'我这几天出差，你能替我照顾一下小狗吗？'},
+  {words:['他','这么','聪明','，','说不定','早就','知道','答案','了','。'],ans:'他这么聪明，说不定早就知道答案了。',audio:'他这么聪明，说不定早就知道答案了。'},
+  {words:['他','说','汉语','说得','像','中国人','似的','。'],ans:'他说汉语说得像中国人似的。',audio:'他说汉语说得像中国人似的。'},
+  {words:['听说','超市','打折','，','大家','纷纷','跑去','买东西','。'],ans:'听说超市打折，大家纷纷跑去买东西。',audio:'听说超市打折，大家纷纷跑去买东西。'},
+  {words:['看到','大狗','跑过来','，','小猫','吓得','赶紧','逃','走了','。'],ans:'看到大狗跑过来，小猫吓得赶紧逃走了。',audio:'看到大狗跑过来，小猫吓得赶紧逃走了。'},
+  {words:['整个','周末','，','他','都','在','家里','打游戏','。'],ans:'整个周末，他都在家里打游戏。',audio:'整个周末，他都在家里打游戏。',alt:['他整个周末都在家里打游戏。']},
+  {words:['我','猜','他','会','喜欢','这个','礼物','，','他','果然','很','高兴','。'],ans:'我猜他会喜欢这个礼物，他果然很高兴。',audio:'我猜他会喜欢这个礼物，他果然很高兴。'},
+  {words:['他','不太','会','用','语言','表达','自己的','感情','。'],ans:'他不太会用语言表达自己的感情。',audio:'他不太会用语言表达自己的感情。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1004,70 +972,18 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'你____给他回个电话，他好像有什么急事找你。',opts:['赶紧','急忙','果然','此外'],ans:0,
-   exp:'Câu cầu khiến (bảo người khác làm ngay) → 赶紧. 急忙 không dùng trong câu mệnh lệnh; 果然 (quả nhiên) và 此外 (ngoài ra) không hợp nghĩa.'},
-  {wrong:'明星的影响力____不一般。',opts:['果然','居然','赶紧','纷纷'],ans:0,
-   exp:'Ai cũng biết ngôi sao có ảnh hưởng lớn — kết quả đúng như dự đoán → 果然. 居然 dùng cho điều bất ngờ; 赶紧 (mau) và 纷纷 (nhao nhao) không hợp.'},
-  {wrong:'我到处打听也没____到这家公司。',opts:['打听','询问','表达','伤害'],ans:0,
-   exp:'Có bổ ngữ kết quả 到 → 打听 (打听到). 询问 không mang 到; 表达 (bày tỏ) và 伤害 (làm hại) sai nghĩa.'},
-  {wrong:'七郎看到女孩的外公坐在路边哭，于是上前____。',opts:['询问','打听','表达','制造'],ans:0,
-   exp:'Hỏi trực tiếp người trước mặt, văn kể trang trọng → 询问 (nguyên văn bài). 打听 là dò hỏi tin tức, không dùng "上前打听" với chính người đang khóc; 表达, 制造 sai nghĩa.'},
-  {wrong:'你放心吧，他借的钱我会____他还给你的。',opts:['替','被','把','比'],ans:0,
-   exp:'替 + người + V: làm thay ai (trả tiền thay anh ấy). 被 là bị động, 把 cần tân ngữ bị xử lý đứng sau (把钱), 比 dùng để so sánh — đều sai.'},
-  {wrong:'你看，天阴得这么厉害，____一会儿要下大雨。',opts:['说不定','果然','此外','整个'],ans:0,
-   exp:'Phỏng đoán khả năng sắp xảy ra → 说不定. 果然 dùng khi điều đã dự đoán thành sự thật; 此外 (ngoài ra), 整个 (cả) không hợp.'},
-  {wrong:'七郎____带着他的狗出发了。',opts:['于是','此外','说不定','似的'],ans:0,
-   exp:'于是 nối việc xảy ra tiếp theo (vì vậy mà) — đúng nguyên văn bài. 此外 dùng để bổ sung thông tin; 说不定 là phỏng đoán; 似的 là trợ từ so sánh.'},
-    {wrong:'一见到“夕”就赶紧____东西，大家一起把“夕”杀掉。',opts:['敲打','表达','制造','询问'],ans:0,
-   exp:'敲打东西 = gõ đập đồ vật tạo tiếng động (vì "Tịch" sợ tiếng động). 表达, 制造, 询问 không kết hợp với 东西 theo nghĩa này.'},
-  {wrong:'七郎的狗____上了“夕”，并死死地咬住了它。',opts:['追','逃','射','杀'],ans:0,
-   exp:'追上 = đuổi kịp. 逃 là chạy trốn (ngược chủ thể); 射, 杀 không đi với bổ ngữ 上 trong nghĩa này.'},
-  {wrong:'“夕”吓得什么似的，急忙往外____。',opts:['逃','追','咬','除'],ans:0,
-   exp:'往外逃 = chạy trốn ra ngoài. 追 (đuổi theo) cần đối tượng; 咬 (cắn), 除 (trừ khử) sai nghĩa.'},
-  {wrong:'七郎跑上前去，一____射死了“夕”。',opts:['箭','刀','球','锅'],ans:0,
-   exp:'一箭射死 = bắn một phát tên chết. 射 đi với 箭 (mũi tên); 刀 (dao) không "bắn"; 球 (quả bóng) và 锅 (cái nồi) không thể bắn chết ai.'},
-  {wrong:'七郎____高大、力大无比。',opts:['英俊','天真','无奈','漂亮'],ans:0,
-   exp:'Khen đàn ông khôi ngô → 英俊. 漂亮 thường dùng cho nữ; 天真 (ngây thơ), 无奈 (bất lực) sai nghĩa.'},
-  {wrong:'当时有个____叫作七郎，他为百姓除掉了“夕”。',opts:['英雄','英俊','怪物','姑娘'],ans:0,
-   exp:'Danh từ chỉ người tài giỏi, dũng cảm → 英雄. 英俊 là tính từ; 怪物 là quái vật; 姑娘 là cô gái — không hợp với 七郎.'},
-  {wrong:'端午节吃粽子的风俗是怎么来的？你知道它的____吗？',opts:['由来','由于','意义','风俗'],ans:0,
-   exp:'Câu hỏi "是怎么来的" (từ đâu mà có) → hỏi 由来 (nguồn gốc). 由于 là liên từ (bởi vì), không làm danh từ; 意义 là ý nghĩa, không phải nguồn gốc; 风俗 đã có ở vế trước.'},
-  {wrong:'这次去山区支教的活动很有教育____。',opts:['意义','意思','意见','由来'],ans:0,
-   exp:'教育意义 = ý nghĩa giáo dục — cụm cố định. 意思 (thú vị/ý) không đi với 教育; 意见 (ý kiến), 由来 (nguồn gốc) sai nghĩa.'},
-  {wrong:'过年的时候，很多人都喜欢放____。',opts:['鞭炮','灾害','箭','锅'],ans:0,
-   exp:'放鞭炮 = đốt pháo. 灾害 (tai hoạ), 箭 (mũi tên), 锅 (nồi) đều không đi với 放 theo nghĩa này.'},
-  {wrong:'你突然站在我后面，____了我一跳！',opts:['吓','怕','逃','恨'],ans:0,
-   exp:'A 吓了 B 一跳 = A làm B giật mình. 怕 (sợ) là trạng thái của người sợ, không nói 怕了我一跳; 逃, 恨 sai nghĩa.'},
-  {wrong:'说话的时候要注意，别____了别人的感情。',opts:['伤害','灾害','害怕','吓'],ans:0,
-   exp:'伤害 + 感情 = làm tổn thương tình cảm. 灾害 là danh từ (thiên tai); 害怕 là "sợ", không mang tân ngữ 感情; 吓 là doạ cho sợ, không đi với 感情.'},
-  {wrong:'这种药能____死房间里的蚊子。',opts:['杀','射','咬','除'],ans:0,
-   exp:'杀死 = giết chết (diệt muỗi). 射死 là bắn chết (cần cung/súng); 咬死 là cắn chết; 除 đi với 掉/去 (除掉), không nói 除死.'},
-  {wrong:'我不____他，我只是不想再见到他。',opts:['恨','咬','吓','杀'],ans:0,
-   exp:'恨 + người = hận ai. Câu sau nói về cảm xúc (không muốn gặp lại) → 恨. 咬, 吓, 杀 là hành động, không hợp.'},
-  {wrong:'七郎____下定决心一定要杀死“夕”。',opts:['暗暗','纷纷','整个','果然'],ans:0,
-   exp:'暗暗 (bài 1) = thầm, ngầm trong lòng — đúng nguyên văn. 纷纷 cần chủ ngữ số nhiều; 整个 là tính từ làm định ngữ; 果然 dùng khi đúng như dự đoán.'},
-    {wrong:'只要你认真练习，就一定能____中目标。',opts:['射','追','咬','逃'],ans:0,
-   exp:'射中目标 = bắn trúng mục tiêu. Bổ ngữ 中 (zhòng) đi với 射; 追, 咬, 逃 không kết hợp với 中目标.'},
-  {wrong:'那个穿红衣服的小____是我妹妹。',opts:['姑娘','英雄','外公','怪物'],ans:0,
-   exp:'小姑娘 = cô bé. Em gái → phải là 姑娘; 英雄, 外公, 怪物 không hợp.'},
-    {wrong:'他们立刻敲响了家中的____和盆子。',opts:['锅','箭','鞭炮','骨头'],ans:0,
-   exp:'锅和盆子 = nồi và chậu — đồ dùng trong bếp, gõ vào phát ra tiếng vang. 箭, 鞭炮, 骨头 không gõ như vậy.'},
-  {wrong:'____是中国人一年中最重要的晚上，全家人都要回家团圆。',opts:['除夕','农历','风俗','由来'],ans:0,
-   exp:'除夕 = đêm giao thừa — "buổi tối" quan trọng nhất. 农历 (âm lịch), 风俗 (phong tục), 由来 (nguồn gốc) không phải là "một buổi tối".'},
-  {wrong:'中国人过春节时有“____”的习惯：除夕晚上大家一起熬夜，迎接新年。',opts:['守岁','熬夜','除夕','表达'],ans:0,
-   exp:'守岁 = thức đón giao thừa — tên riêng của tục này. 熬夜 chỉ là thức khuya nói chung; 除夕 là đêm giao thừa (danh từ), không phải tập tục; 表达 sai.'},
-  {wrong:'今年春节，我们去了____外婆家，吃了很多好吃的。',opts:['外公','爷爷','七郎','英雄'],ans:0,
-   exp:'外公外婆 = ông bà ngoại (đi thành cặp). 爷爷 đi với 奶奶 (bên nội); 七郎, 英雄 sai.'},
-  {wrong:'传说“七郎”和“____”的故事就是除夕的由来。',opts:['夕','七夕','夕阳','除夕'],ans:0,
-   exp:'Con quái vật trong truyện tên là “夕”. 七夕 là lễ Thất tịch, 夕阳 là mặt trời lặn, 除夕 là đêm giao thừa.'},
-  {wrong:'把“夕”杀死的英雄叫作____。',opts:['七郎','七夕','外公','姑娘'],ans:0,
-   exp:'Người anh hùng trong truyện là 七郎 (Thất Lang). 七夕 là tên ngày lễ; 外公, 姑娘 là nhân vật khác.'},
-  {wrong:'我们要保护环境，别让工厂____更多的污染。',opts:['制造','制作','表达','伤害'],ans:0,
-   exp:'制造 + 污染/麻烦/灾害 = gây ra (điều xấu). 制作 là làm, chế tác (đồ vật, phim); 表达 (bày tỏ); 伤害 cần tân ngữ là người/sức khoẻ, không nói 伤害污染.'},
-  {wrong:'今天下大雨，比赛只好取消了，大家都很____。',opts:['无奈','天真','英俊','整个'],ans:0,
-   exp:'Việc ngoài khả năng, đành chịu → 无奈. 天真 (ngây thơ), 英俊 (khôi ngô) sai nghĩa; 整个 không làm vị ngữ.'},
-  {wrong:'这只小狗叼着一块____跑了。',opts:['骨头','影子','盆子','箭'],ans:0,
-   exp:'一块骨头 = một khúc xương — thứ chó hay ngậm. 影子 không "ngậm" được; 盆子 dùng lượng từ 个; 箭 dùng lượng từ 支.'}
+  {wrong:'听说你考上了大学，我真____你高兴！',opts:['替','给','对','跟'],ans:0,exp:'替 + người + 高兴/担心 = mừng/lo thay cho ai. Không nói 给你高兴, 对你高兴, 跟你高兴 với nghĩa này.'},
+  {wrong:'我早就猜到他会迟到，他____又迟到了。',opts:['果然','居然','突然','此外'],ans:0,exp:'Đúng như đã đoán trước → 果然. 居然 (bài 1) dùng khi trái với dự đoán — mâu thuẫn với 早就猜到; 突然 là đột ngột; 此外 là ngoài ra.'},
+  {wrong:'他平时成绩那么好，这次考试____考了最后一名。',opts:['居然','果然','赶紧','纷纷'],ans:0,exp:'Kết quả trái hẳn với dự đoán (học giỏi mà đứng cuối) → 居然. 果然 là đúng như dự đoán; 赶紧 là vội vàng; 纷纷 cần chủ ngữ số nhiều.'},
+  {wrong:'时间不早了，你____去睡觉吧，明天还要上课呢。',opts:['赶紧','急忙','此外','整个'],ans:0,exp:'Câu giục, đề nghị → 赶紧 + V. 急忙 chỉ dùng kể lại hành động đã xảy ra (他急忙跑出去), không dùng trong câu cầu khiến; 此外, 整个 không hợp.'},
+  {wrong:'小王，向你____个人，你认识一个叫小林的人吗？',opts:['打听','询问','表达','伤害'],ans:0,exp:'Hỏi thăm tin tức trong khẩu ngữ → 打听 (打听个人, 打听一下). 询问 trang trọng, không đi với 个人 kiểu này; 表达, 伤害 không hợp nghĩa.'},
+  {wrong:'新年快到了，各大商店____打折。',opts:['纷纷','此外','似的','整个'],ans:0,exp:'Nhiều chủ thể lần lượt làm cùng một việc → 纷纷 + V. 此外 là liên từ, 似的 là trợ từ cuối, 整个 đứng trước danh từ.'},
+  {wrong:'这个房间又大又亮，____，房租也不贵。',opts:['此外','似的','整个','天真'],ans:0,exp:'Bổ sung thêm một ưu điểm → 此外 (= ngoài ra), đứng đầu vế sau, có dấu phẩy. Các phương án kia không làm liên từ được.'},
+  {wrong:'你别给我____麻烦了！',opts:['制造','发生','表达','形成'],ans:0,exp:'制造麻烦 = gây phiền phức (cho ai). 发生 không mang tân ngữ người chịu (không nói 给我发生麻烦); 表达, 形成 không đi với 麻烦.'},
+  {wrong:'我妈妈的爸爸是我的____，他今年七十岁了。',opts:['外公','爷爷','舅舅','姑姑'],ans:0,exp:'Bố của mẹ là 外公 (ông ngoại). 爷爷 là ông nội; 舅舅 là cậu; 姑姑 là cô (bài 2).'},
+  {wrong:'越南人和中国人一样，过的都是____新年。',opts:['农历','除夕','风俗','由来'],ans:0,exp:'农历新年 = Tết âm lịch. 除夕 là đêm giao thừa, không làm định ngữ cho 新年 như vậy; 风俗 là phong tục, 由来 là nguồn gốc — đều không hợp.'},
+  {wrong:'除夕晚上，很多中国人一家人坐在一起____，一直到十二点。',opts:['守岁','意义','风俗','由来'],ans:0,exp:'Thức đón giao thừa → 守岁 (động từ). 意义, 风俗, 由来 đều là danh từ, không làm vị ngữ ở đây.'},
+  {wrong:'他从大火里救出了三个孩子，大家都叫他____。',opts:['英雄','英俊','姑娘','怪物'],ans:0,exp:'Người dũng cảm cứu người → 英雄 (danh từ). 英俊 là tính từ "đẹp trai"; 姑娘 là cô gái; 怪物 là quái vật.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1075,29 +991,21 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var translateData = [
   {vi:'Không chừng sắp mưa đến nơi rồi, nên tụi mình mau về nhà thôi.',zh:'说不定马上就要下雨了，所以我们还是赶紧回家吧。',py:'Shuōbudìng mǎshàng jiù yào xià yǔ le, suǒyǐ wǒmen háishi gǎnjǐn huí jiā ba.',goiY:['说不定','所以','赶紧'],giai:'说不定 = không chừng, biết đâu (phỏng đoán khả năng cao); 赶紧 = mau, nhanh chóng, đứng trước động từ, dùng khi việc gấp.'},
-  {vi:'Dạo này cậu đừng thức khuya ôn bài nữa, nếu không bố mẹ lại lo cho cậu đến mất ngủ đấy.',zh:'你最近别再熬夜复习了，否则爸妈又要替你担心得睡不着觉了。',py:'Nǐ zuìjìn bié zài áoyè fùxí le, fǒuzé bà mā yòu yào tì nǐ dānxīn de shuì bu zháo jiào le.',goiY:['熬夜','否则','替……担心'],giai:'替 + người + 担心 = lo lắng cho ai; 否则 = nếu không thì, nêu hậu quả xấu ở vế sau.'},
+  {vi:'Dạo này cậu đừng thức khuya ôn bài nữa, nếu không bố mẹ lại lo cho cậu đến mất ngủ đấy.',zh:'你最近别再熬夜复习了，否则父母又要替你担心得睡不着了。',py:'Nǐ zuìjìn bié zài áoyè fùxí le, fǒuzé fùmǔ yòu yào tì nǐ dānxīn de shuì bu zháo le.',goiY:['熬夜','否则','替……担心'],giai:'替 + người + 担心 = lo lắng cho ai; 否则 = nếu không thì, nêu hậu quả xấu ở vế sau.'},
   {vi:'Thầy bất ngờ gọi tên cậu ấy, thế là cậu ấy giật mình cứ như vừa làm sai chuyện gì vậy.',zh:'老师突然叫了他的名字，结果他吓得像做错了事似的。',py:'Lǎoshī tūrán jiàole tā de míngzi, jiéguǒ tā xià de xiàng zuòcuòle shì shìde.',goiY:['结果','吓得','像……似的'],giai:'像/好像 + … + 似的 = cứ như là…; V + 得 + 像…似的 là bổ ngữ mức độ, tiếng Việt dịch "… cứ như…".'},
-  {vi:'Nghe tin cô chủ nhiệm ốm phải nằm viện, các bạn lần lượt vào nhóm lớp hỏi thăm, thế là lớp trưởng đề nghị cuối tuần cả lớp cùng đến bệnh viện thăm cô.',zh:'听说班主任生病住院了，同学们纷纷在群里表达关心，于是班长提议周末一起去医院看望她。',py:'Tīngshuō bānzhǔrèn shēngbìng zhùyuàn le, tóngxuémen fēnfēn zài qún li biǎodá guānxīn, yúshì bānzhǎng tíyì zhōumò yìqǐ qù yīyuàn kànwàng tā.',goiY:['纷纷','表达','于是'],giai:'纷纷 = lần lượt, tới tấp (nhiều người cùng làm), chủ ngữ phải số nhiều; 表达关心 dịch tự nhiên "hỏi thăm, bày tỏ sự quan tâm".'},
-  {vi:'Đón Tết không chỉ phải ăn bữa cơm tất niên mà còn phải đi chúc Tết người lớn; ngoài ra, nhiều nơi đến nay vẫn giữ phong tục đốt pháo.',zh:'过春节不仅要吃年夜饭，还要给长辈拜年；此外，很多地方至今还保留着放鞭炮的风俗。',py:'Guò Chūnjié bùjǐn yào chī niányèfàn, hái yào gěi zhǎngbèi bàinián; cǐwài, hěn duō dìfang zhìjīn hái bǎoliúzhe fàng biānpào de fēngsú.',goiY:['不仅……还……','此外','鞭炮','风俗'],giai:'不仅…还… liệt kê tăng tiến; 此外 (= ngoài ra) mở đầu vế bổ sung ý mới, thường có dấu phẩy ngay sau.'},
-  {vi:'Thấy bạn thân bị người ta đổ oan, tôi ấm ức thay cho bạn vô cùng, nhưng lại không đưa ra được chứng cứ nào, trong lòng hết sức bất lực.',zh:'看到好朋友被人冤枉，我替她委屈得不行，可是又拿不出证据，心里十分无奈。',py:'Kàndào hǎo péngyou bèi rén yuānwang, wǒ tì tā wěiqu de bùxíng, kěshì yòu ná bu chū zhèngjù, xīnli shífēn wúnài.',goiY:['替','委屈得不行','可是','无奈'],giai:'替 + ai + 委屈 = ấm ức thay cho ai; 无奈 = bất lực, đành chịu — không dịch "vô nại".'},
+  {vi:'Đón Tết không chỉ phải ăn bữa cơm tất niên mà còn phải đi thăm ông bà; ngoài ra, nhiều nơi đến nay vẫn còn phong tục đốt pháo.',zh:'过春节不仅要吃年夜饭，还要去看看爷爷奶奶；此外，很多地方至今还有放鞭炮的风俗。',py:'Guò Chūnjié bùjǐn yào chī niányèfàn, hái yào qù kànkan yéye nǎinai; cǐwài, hěn duō dìfang zhìjīn hái yǒu fàng biānpào de fēngsú.',goiY:['不仅……还……','此外','鞭炮','风俗'],giai:'不仅…还… liệt kê tăng tiến; 此外 (= ngoài ra) mở đầu vế bổ sung ý mới, thường có dấu phẩy ngay sau; 至今 (bài 4).'},
   {vi:'Phòng cậu ấy còn sáng đèn thì biết đâu lại đang thức khuya chơi game, tôi đẩy cửa nhìn vào, quả nhiên đoán không sai.',zh:'既然他的灯还亮着，说不定又在熬夜打游戏，我推开门一看，果然没猜错。',py:'Jìrán tā de dēng hái liàngzhe, shuōbudìng yòu zài áoyè dǎ yóuxì, wǒ tuīkāi mén yí kàn, guǒrán méi cāicuò.',goiY:['既然','说不定','熬夜','果然'],giai:'既然 + sự thật đã thấy → suy đoán ở vế sau; 果然 = quả nhiên (đúng như dự đoán), khác 居然 (trái với dự đoán).'},
-  {vi:'Phát ngôn trên mạng nhất định phải cẩn thận, một khi lỡ lời thì biết đâu sẽ làm tổn thương người khác, đến lúc đó có hối hận cũng không kịp.',zh:'在网上发言一定要小心，一旦说错了话，说不定就会伤害到别人，到时候后悔也来不及了。',py:'Zài wǎngshang fāyán yídìng yào xiǎoxīn, yídàn shuōcuòle huà, shuōbudìng jiù huì shānghài dào biérén, dào shíhou hòuhuǐ yě láibují le.',goiY:['一旦','说不定','伤害'],giai:'一旦 = một khi (giả định điều không mong muốn); 伤害 dùng cho cả thể xác và tình cảm — ở đây dịch "làm tổn thương".'},
-  {vi:'Nhà tôi sở dĩ năm nào đêm giao thừa cũng thức đón năm mới là vì ông nội cho rằng cả nhà đoàn tụ là điều ý nghĩa nhất; dù buồn ngủ díp mắt, chúng tôi vẫn ngồi cùng ông đến lúc sang năm mới.',zh:'我们家之所以每年除夕都要守岁，是因为爷爷觉得一家人团圆最有意义；哪怕困得不行，我们也要陪他坐到零点。',py:'Wǒmen jiā zhīsuǒyǐ měi nián chúxī dōu yào shǒusuì, shì yīnwèi yéye juéde yì jiā rén tuányuán zuì yǒu yìyì; nǎpà kùn de bùxíng, wǒmen yě yào péi tā zuò dào língdiǎn.',goiY:['之所以……是因为……','守岁','团圆','哪怕……也……'],giai:'之所以…是因为… nêu lý do; 哪怕…也… = dù có… cũng… (nhượng bộ giả định). 守岁 = thức đón giao thừa, không dịch "giữ tuổi".'},
-  {vi:'Chuông tan học vừa reo, học sinh ùa ra khỏi lớp như bị cái gì đuổi theo, mặc cho thầy ở phía sau gọi thế nào cũng không một ai ngoảnh lại.',zh:'放学铃一响，同学们纷纷冲出教室，像被什么追着似的，不管老师在后面怎么喊，都没有一个人回头。',py:'Fàngxué líng yì xiǎng, tóngxuémen fēnfēn chōngchū jiàoshì, xiàng bèi shénme zhuīzhe shìde, bùguǎn lǎoshī zài hòumiàn zěnme hǎn, dōu méiyǒu yí ge rén huítóu.',goiY:['纷纷','像……似的','不管……都……'],giai:'纷纷 + V = lũ lượt, tới tấp; 不管 + từ để hỏi (怎么) + 都… = mặc cho… thế nào cũng…; 像…似的 so sánh ví von.'}
+  {vi:'Tan học, học sinh ùa ra khỏi lớp như bị cái gì đuổi theo, mặc cho thầy ở phía sau gọi thế nào cũng không một ai ngoảnh lại.',zh:'一下课，同学们就纷纷冲出教室，像被什么追着似的，不管老师在后面怎么喊，都没有一个人回头。',py:'Yí xiàkè, tóngxuémen jiù fēnfēn chōngchū jiàoshì, xiàng bèi shénme zhuīzhe shìde, bùguǎn lǎoshī zài hòumiàn zěnme hǎn, dōu méiyǒu yí ge rén huítóu.',goiY:['纷纷','像……似的','不管……都……'],giai:'纷纷 + V = lũ lượt, tới tấp; 不管 + từ để hỏi (怎么) + 都… = mặc cho… thế nào cũng…; 像…似的 so sánh ví von.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Giao thừa là ngày cuối cùng của một năm âm lịch, vì vậy tối hôm đó cả nhà đều quây quần ăn bữa cơm tất niên.',zh:'除夕是农历一年中的最后一天，所以这天晚上全家人都会聚在一起吃年夜饭。',py:'Chúxī shì nónglì yì nián zhōng de zuìhòu yì tiān, suǒyǐ zhè tiān wǎnshang quán jiā rén dōu huì jù zài yìqǐ chī niányèfàn.',goiY:['除夕 = đêm giao thừa','农历 = âm lịch','所以 = vì vậy'],giai:'农历 dịch "âm lịch" (không dịch "nông lịch"); 年夜饭 = bữa cơm tất niên đêm 30.'},
   {vi:'Tương truyền “Tịch” là một con quái vật thường ra làm hại dân lành, người dân căm ghét nó thấu xương nhưng lại đành bất lực.',zh:'传说“夕”是一个经常出来伤害百姓的怪物，百姓对它恨之入骨却又十分无奈。',py:'Chuánshuō “Xī” shì yí ge jīngcháng chūlai shānghài bǎixìng de guàiwu, bǎixìng duì tā hèn zhī rù gǔ què yòu shífēn wúnài.',goiY:['怪物 = quái vật','恨之入骨 = căm ghét thấu xương','却又 = nhưng lại','无奈 = bất lực'],giai:'却又 nối hai trạng thái trái ngược cùng tồn tại (căm ghét — nhưng bất lực); 恨之入骨 là thành ngữ, dịch "căm thù đến tận xương tuỷ".'},
   {vi:'Thất Lang là một anh hùng cao lớn, khôi ngô; con chó của chàng hễ đã cắn vào thứ gì thì tuyệt không nhả ra.',zh:'七郎是个英俊高大的英雄，他的狗无论咬住什么都不会松口。',py:'Qīláng shì ge yīngjùn gāodà de yīngxióng, tā de gǒu wúlùn yǎozhù shénme dōu bú huì sōng kǒu.',goiY:['英俊 = khôi ngô, đẹp trai','无论……都…… = bất kể… đều…','咬住 = cắn chặt'],giai:'无论 + từ để hỏi (什么) + 都 = bất kể… cũng…; 松口 = nhả miệng ra — 咬住…不松口 dịch "cắn chặt không nhả".'},
   {vi:'Thất Lang thấy ông ngoại của cô bé nhà hàng xóm ngồi khóc bên đường, bèn tiến lại hỏi han mới biết hoá ra cô bé ngây thơ đáng yêu đã bị “Tịch” ăn thịt.',zh:'七郎看到邻居家女孩的外公坐在路边哭，上前询问后才知道，原来天真可爱的女孩被“夕”吃掉了。',py:'Qīláng kàndào línjū jiā nǚhái de wàigōng zuò zài lùbiān kū, shàngqián xúnwèn hòu cái zhīdào, yuánlái tiānzhēn kě\'ài de nǚhái bèi “Xī” chīdiào le.',goiY:['外公 = ông ngoại','询问 = hỏi han','原来 = hoá ra','天真 = ngây thơ'],giai:'…后才知道，原来… = sau khi… mới biết hoá ra…; 被…吃掉 là câu bị động, 掉 chỉ mất hẳn.'},
   {vi:'Thất Lang thầm hạ quyết tâm: dù có phải tìm khắp thiên hạ cũng nhất định giết cho được “Tịch”, trừ khử con quái vật gây tai hoạ này thay cho dân lành.',zh:'七郎暗暗下定决心，即使找遍天下，也一定要杀死“夕”，替百姓除掉这个制造灾害的怪物。',py:'Qīláng àn\'àn xiàdìng juéxīn, jíshǐ zhǎobiàn tiānxià, yě yídìng yào shāsǐ “Xī”, tì bǎixìng chúdiào zhège zhìzào zāihài de guàiwu.',goiY:['暗暗 = thầm','即使……也…… = dù… cũng…','替 = thay cho','制造灾害 = gây tai hoạ'],giai:'替 + người + V = làm việc gì thay/vì ai; 即使…也… nhấn mạnh quyết tâm không đổi dù hoàn cảnh khó khăn đến đâu.'},
-  {vi:'Suốt một năm qua, tuy Thất Lang vẫn chưa tìm được “Tịch”, nhưng đã dò hỏi được rằng trước khi trời sáng nó sẽ trốn mất tăm, ngay cả cái bóng cũng không thấy; ngoài ra, nó còn đặc biệt sợ tiếng động.',zh:'这一年来，七郎虽然一直没找到“夕”，但是打听到它天亮前就会逃得连影子都找不着；此外，它还特别害怕声响。',py:'Zhè yì nián lái, Qīláng suīrán yìzhí méi zhǎodào “Xī”, dànshì dǎtingdào tā tiān liàng qián jiù huì táo de lián yǐngzi dōu zhǎo bu zháo; cǐwài, tā hái tèbié hàipà shēngxiǎng.',goiY:['打听到 = dò hỏi được','逃得连影子都找不着 = trốn mất tăm','此外 = ngoài ra'],giai:'连…都… phóng đại mức độ (ngay cả cái bóng cũng không tìm thấy) — dịch thoát "trốn mất tăm"; 此外 mở ra thông tin bổ sung.'},
-  {vi:'Thất Lang cho rằng không chừng đêm nay “Tịch” sẽ ra hại người, thế là bảo dân chúng thức đêm canh chừng, hễ thấy nó là lập tức gõ đập đồ vật.',zh:'七郎觉得“夕”说不定今晚会出来害人，于是让百姓们熬夜等着，一见到它就赶紧敲打东西。',py:'Qīláng juéde “Xī” shuōbudìng jīnwǎn huì chūlai hài rén, yúshì ràng bǎixìngmen áoyè děngzhe, yí jiàndào tā jiù gǎnjǐn qiāodǎ dōngxi.',goiY:['说不定 = không chừng','于是 = thế là','熬夜 = thức đêm','赶紧 = vội, lập tức'],giai:'说不定 đứng sau chủ ngữ 夕, chỉ phỏng đoán; 一…就… = hễ… là…; 熬夜 ở đây là thức đêm canh chừng, không phải "thức khuya" vì học hành.'},
   {vi:'Đến tối, quả nhiên “Tịch” xuất hiện; nó định ăn thịt cô con gái của một gia đình, nhà ấy liền gõ vang nồi và chậu, tiếp đó cả thị trấn đều vang lên theo.',zh:'到了晚上，“夕”果然出来了，它想吃一户人家的姑娘，这家人立刻敲响了锅和盆子，接着整个镇子都响了起来。',py:'Dàole wǎnshang, “Xī” guǒrán chūlai le, tā xiǎng chī yí hù rénjiā de gūniang, zhè jiā rén lìkè qiāoxiǎngle guō hé pénzi, jiēzhe zhěnggè zhènzi dōu xiǎngle qilai.',goiY:['果然 = quả nhiên','立刻 = lập tức','锅和盆子 = nồi và chậu','接着 = tiếp đó'],giai:'果然 xác nhận dự đoán của Thất Lang đã đúng; 响了起来: 起来 ở đây chỉ động tác bắt đầu và tiếp diễn — "vang lên".'},
-  {vi:'“Tịch” sợ hết hồn, vội vàng tháo chạy ra ngoài; con chó của Thất Lang đuổi theo cắn chặt lấy nó, thế là Thất Lang chạy tới, bắn một mũi tên giết chết nó.',zh:'“夕”吓得什么似的，急忙往外逃，七郎的狗追上去死死地咬住了它，于是七郎跑上前去，一箭射死了它。',py:'“Xī” xià de shénme shìde, jímáng wǎng wài táo, Qīláng de gǒu zhuī shangqu sǐsǐ de yǎozhùle tā, yúshì Qīláng pǎo shàngqián qu, yí jiàn shèsǐle tā.',goiY:['吓得什么似的 = sợ hết hồn','追 = đuổi','于是 = thế là','一箭射死 = bắn một mũi tên chết'],giai:'V/Adj + 得 + 什么似的 = … đến mức không tả nổi — dịch "sợ hết hồn, sợ chết khiếp"; 一箭射死 = một mũi tên bắn chết (số lượng + động từ + kết quả).'},
-  {vi:'Vì ngày hôm đó mang ý nghĩa đặc biệt, nên cứ đến đêm giao thừa hằng năm, người ta lại thức trắng cả đêm, gõ đập tạo ra tiếng động; truyền từ đời này sang đời khác, từ đó hình thành phong tục thức đón giao thừa và đốt pháo.',zh:'由于这一天很有意义，人们每年除夕都整晚不睡，敲打出响声，一代代传下来，从而形成了守岁、放鞭炮的风俗。',py:'Yóuyú zhè yì tiān hěn yǒu yìyì, rénmen měi nián chúxī dōu zhěng wǎn bú shuì, qiāodǎ chū xiǎngshēng, yídàidài chuán xialai, cóng\'ér xíngchéngle shǒusuì, fàng biānpào de fēngsú.',goiY:['由于 = do, vì','意义 = ý nghĩa','从而 = từ đó','风俗 = phong tục'],giai:'由于… nêu nguyên nhân, 从而 dẫn ra kết quả cuối cùng của cả chuỗi sự việc; 守岁 = thức đón giao thừa, 放鞭炮 = đốt pháo.'}
+  {vi:'“Tịch” sợ chết khiếp, vội chạy ra ngoài; con chó của Thất Lang đuổi theo cắn chặt lấy nó, thế là Thất Lang chạy tới, bắn một mũi tên giết chết nó.',zh:'“夕”吓坏了，马上往外逃，七郎的狗追上去死死地咬住了它，于是七郎跑上前去，一箭射死了它。',py:'“Xī” xiàhuài le, mǎshàng wǎng wài táo, Qīláng de gǒu zhuī shangqu sǐsǐ de yǎozhùle tā, yúshì Qīláng pǎo shàngqián qu, yí jiàn shèsǐle tā.',goiY:['吓坏 = sợ chết khiếp','追 = đuổi','于是 = thế là','一箭射死 = bắn một mũi tên chết'],giai:'吓坏了: 坏 làm bổ ngữ chỉ mức độ rất cao; 一箭射死 = một mũi tên bắn chết (số lượng + động từ + kết quả).'}
 ];
 
 // ══════════════════════════════════════════
@@ -1157,30 +1065,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
   sapXep:[
-    {manh:['纷纷','来','亲戚朋友','拜年'],
-     dap:'亲戚朋友纷纷来拜年。',
-     vn:'Họ hàng bạn bè nối nhau đến chúc Tết.',
-     giai:'Chủ ngữ số nhiều 亲戚朋友 → phó từ 纷纷 → động từ 来 + mục đích 拜年. 纷纷 luôn đứng TRƯỚC động từ.'},
-    {manh:['替','高兴','我们都','他'],
-     dap:'我们都替他高兴。',
-     vn:'Chúng tôi đều mừng cho anh ấy.',
-     giai:'Giới từ 替 + người (他) đứng trước tính từ tâm trạng 高兴. 都 đi sau chủ ngữ, trước cụm giới từ.'},
-    {manh:['说不定','还在','他','睡觉呢'],
-     dap:'他说不定还在睡觉呢。', chap:['说不定他还在睡觉呢。'],
-     vn:'Không chừng cậu ấy vẫn đang ngủ.',
-     giai:'说不定 là phó từ, đứng trước hoặc sau chủ ngữ đều được. 还在 + V + 呢: vẫn đang….'},
-    {manh:['吓得','小狗','什么似的','被鞭炮声'],
-     dap:'小狗被鞭炮声吓得什么似的。',
-     vn:'Con chó con bị tiếng pháo làm cho sợ hết hồn.',
-     giai:'Câu 被 (HSK 3–4): Chủ ngữ + 被 + tác nhân + V + 得 + bổ ngữ. ……得什么似的 là cấu trúc của bài.'},
-    {manh:['守岁的','中国人','有','习惯'],
-     dap:'中国人有守岁的习惯。',
-     vn:'Người Trung Quốc có tục thức đón giao thừa.',
-     giai:'守岁的 là định ngữ, đứng ngay trước danh từ 习惯. Chủ ngữ + 有 + định ngữ + 的 + danh từ.'},
-    {manh:['很有','除夕','对中国人来说','意义'],
-     dap:'除夕对中国人来说很有意义。', chap:['对中国人来说除夕很有意义。'],
-     vn:'Đối với người Trung Quốc, đêm giao thừa rất có ý nghĩa.',
-     giai:'对……来说 (HSK 4) có thể đứng đầu câu hoặc sau chủ ngữ. 很有 + 意义 — không nói 很意义.'}
+    {manh:['纷纷','来我家','亲戚朋友','过年'],dap:'亲戚朋友纷纷来我家过年。',vn:'Họ hàng bạn bè lần lượt kéo đến nhà tôi ăn Tết.',giai:'Chủ ngữ số nhiều 亲戚朋友 → phó từ 纷纷 → động từ 来我家 + mục đích 过年. 纷纷 luôn đứng TRƯỚC động từ.'},
+    {manh:['替','高兴','我们都','他'],dap:'我们都替他高兴。',vn:'Chúng tôi đều mừng cho anh ấy.',giai:'Giới từ 替 + người (他) đứng trước tính từ tâm trạng 高兴. 都 đi sau chủ ngữ, trước cụm giới từ.'},
+    {manh:['说不定','还在','他','睡觉呢'],dap:'他说不定还在睡觉呢。',chap:['说不定他还在睡觉呢。'],vn:'Không chừng cậu ấy vẫn đang ngủ.',giai:'说不定 là phó từ, đứng trước hoặc sau chủ ngữ đều được. 还在 + V + 呢: vẫn đang….'},
+    {manh:['吓得','小狗','什么似的','被鞭炮声'],dap:'小狗被鞭炮声吓得什么似的。',vn:'Con chó con bị tiếng pháo làm cho sợ hết hồn.',giai:'Câu 被 (HSK 3–4): Chủ ngữ + 被 + tác nhân + V + 得 + bổ ngữ. ……得什么似的 là cấu trúc của bài.'},
+    {manh:['守岁的','中国人','有','习惯'],dap:'中国人有守岁的习惯。',vn:'Người Trung Quốc có tục thức đón giao thừa.',giai:'守岁的 là định ngữ, đứng ngay trước danh từ 习惯. Chủ ngữ + 有 + định ngữ + 的 + danh từ.'},
+    {manh:['很有','除夕','对中国人来说','意义'],dap:'除夕对中国人来说很有意义。',chap:['对中国人来说除夕很有意义。'],vn:'Đối với người Trung Quốc, đêm giao thừa rất có ý nghĩa.',giai:'对……来说 (HSK 4) có thể đứng đầu câu hoặc sau chủ ngữ. 很有 + 意义 — không nói 很意义.'}
   ]
 };
 
@@ -1190,30 +1080,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (lấy theo phần 话题讨论 của sách). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 除夕 · 守岁 · 熬夜 · 鞭炮 · 风俗 · 意义 · 纷纷 · 说不定.',
   questions:[
-    {q_zh:'你知道中国的除夕是什么日子吗？除夕和春节有什么关系？',
-     q_vn:'Em có biết đêm giao thừa ở Trung Quốc là ngày nào không? Giao thừa và Tết có quan hệ gì?',
-     hint:'Dùng 农历 + 叫作 + 除夕',
-     sample:'除夕是农历十二月的最后一天，也就是春节的前一天晚上。这天晚上，全家人要一起吃年夜饭、守岁，等着新年的到来。',
-     sample_vn:'Giao thừa là ngày cuối cùng của tháng Chạp âm lịch, tức là tối trước ngày mùng một Tết. Tối hôm đó cả nhà cùng ăn cơm tất niên, thức đón giao thừa, chờ năm mới đến.',
-     note:'Câu hỏi kiến thức — trả lời rõ "là ngày nào" trước, rồi mới kể thêm hoạt động.'},
-    {q_zh:'有关春节的风俗习惯，你比较了解的是什么？',
-     q_vn:'Về phong tục Tết, em hiểu rõ nhất phong tục nào?',
-     hint:'Chọn MỘT phong tục, kể cụ thể + ý nghĩa của nó',
-     sample:'我比较了解放鞭炮的风俗。传说“夕”特别害怕声响，所以人们在除夕夜放鞭炮，希望新的一年平平安安。',
-     sample_vn:'Tôi hiểu rõ hơn cả là tục đốt pháo. Truyền thuyết kể rằng "Tịch" rất sợ tiếng động, nên người ta đốt pháo vào đêm giao thừa, mong năm mới bình an.',
-     note:'Nói về MỘT phong tục cho sâu sẽ hay hơn liệt kê năm, sáu phong tục.'},
-    {q_zh:'越南人和中国人过新年，有什么相同或不同的地方？',
-     q_vn:'Người Việt và người Trung Quốc ăn Tết có gì giống và khác nhau?',
-     hint:'So sánh, dùng 都…… / 不过…… / 此外……',
-     sample:'越南人和中国人都过农历新年，都要吃年夜饭、给孩子红包。不过中国北方人过年吃饺子，我们越南人吃粽子。此外，越南现在已经不让放鞭炮了。',
-     sample_vn:'Người Việt và người Trung Quốc đều ăn Tết âm lịch, đều ăn cơm tất niên, lì xì cho trẻ con. Nhưng người miền Bắc Trung Quốc ăn sủi cảo, còn người Việt ăn bánh chưng. Ngoài ra, Việt Nam giờ đã cấm đốt pháo.',
-     note:'Dạng so sánh — nói cả điểm GIỐNG lẫn điểm KHÁC mới đủ ý.'},
-    {q_zh:'如果你能在中国过春节的话，你最想做的是什么？为什么？',
-     q_vn:'Nếu được ăn Tết ở Trung Quốc, em muốn làm gì nhất? Vì sao?',
-     hint:'Nêu mong muốn + lý do, có thể dùng 说不定',
-     sample:'我最想跟中国朋友一起包饺子、守岁。因为我觉得这样才能真正感受到中国春节的气氛，说不定我还能吃到包着硬币的饺子呢！',
-     sample_vn:'Tôi muốn nhất là cùng bạn Trung Quốc gói sủi cảo và thức đón giao thừa. Vì tôi thấy như vậy mới thật sự cảm nhận được không khí Tết Trung Quốc, không chừng tôi còn ăn trúng chiếc sủi cảo có đồng xu nữa!',
-     note:'Phải có LÝ DO. 说不定 ở câu cuối giúp câu trả lời tự nhiên, sinh động.'}
+    {q_zh:'你知道中国的除夕是什么日子吗？除夕和春节有什么关系？',q_vn:'Em có biết đêm giao thừa ở Trung Quốc là ngày nào không? Giao thừa và Tết có quan hệ gì?',hint:'Dùng 农历 + 叫作 + 除夕',sample:'除夕是农历十二月的最后一天，也就是春节的前一天晚上，一家人吃完年夜饭要一起守岁。除夕这个名字的由来跟一个叫“夕”的怪物有关。',sample_vn:'Giao thừa là ngày cuối cùng của tháng Chạp âm lịch, tức là tối trước ngày mùng một Tết, cả nhà ăn cơm tất niên xong sẽ cùng thức đón giao thừa. Nguồn gốc cái tên 除夕 có liên quan đến một con quái vật tên là "Tịch".',note:'Câu hỏi kiến thức — trả lời rõ "là ngày nào" trước, rồi mới kể thêm hoạt động.'},
+    {q_zh:'有关春节的风俗习惯，你比较了解的是什么？',q_vn:'Về phong tục Tết, em hiểu rõ nhất phong tục nào?',hint:'Chọn MỘT phong tục, kể cụ thể + ý nghĩa của nó',sample:'我比较了解放鞭炮的风俗。传说“夕”特别害怕声响，所以人们在除夕夜放鞭炮，希望新的一年一切都好。',sample_vn:'Tôi hiểu rõ hơn cả là tục đốt pháo. Truyền thuyết kể rằng "Tịch" rất sợ tiếng động, nên người ta đốt pháo vào đêm giao thừa, mong năm mới mọi sự đều tốt đẹp.',note:'Nói về MỘT phong tục cho sâu sẽ hay hơn liệt kê năm, sáu phong tục.'},
+    {q_zh:'越南人和中国人过新年，有什么相同和不同的地方？',q_vn:'Người Việt và người Trung Quốc ăn Tết có gì giống và khác nhau?',hint:'So sánh, dùng 都…… / 不过…… / 此外……',sample:'越南人和中国人都过农历新年，都要吃年夜饭、给孩子红包。不过很多中国人过年吃饺子，越南人不吃饺子。此外，越南现在已经不让放鞭炮了。',sample_vn:'Người Việt và người Trung Quốc đều ăn Tết âm lịch, đều ăn cơm tất niên, lì xì cho trẻ con. Nhưng nhiều người Trung Quốc ăn sủi cảo dịp Tết, còn người Việt thì không. Ngoài ra, Việt Nam giờ đã cấm đốt pháo.',note:'Dạng so sánh — nói cả điểm GIỐNG lẫn điểm KHÁC mới đủ ý.'},
+    {q_zh:'如果你能在中国过春节的话，你最想做的是什么？为什么？',q_vn:'Nếu được ăn Tết ở Trung Quốc, em muốn làm gì nhất? Vì sao?',hint:'Nêu mong muốn + lý do, có thể dùng 说不定',sample:'我最想跟中国朋友一起包饺子、守岁。因为我觉得这样才能真正了解中国的春节，说不定我还能学会做饺子呢！',sample_vn:'Tôi muốn nhất là cùng bạn Trung Quốc gói sủi cảo và thức đón giao thừa. Vì tôi thấy như vậy mới thật sự hiểu được Tết Trung Quốc, không chừng tôi còn học được cách làm sủi cảo nữa!',note:'Phải có LÝ DO. 说不定 ở câu cuối giúp câu trả lời tự nhiên, sinh động.'}
   ]
 };
 
@@ -1304,45 +1174,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn Trung Quốc mới quen hỏi em về Tết ở Việt Nam.',
-     a:{sp:'Bạn',zh:'你们越南人也过除夕吗？',vn:'Người Việt các cậu cũng đón giao thừa à?'},
-     need:['Dùng 除夕 và 风俗','Kể ít nhất MỘT phong tục cụ thể'],
-     sample:'当然过！除夕晚上我们全家一起吃年夜饭，然后熬夜守岁。这个风俗跟中国差不多。',
-     samplePy:'Dāngrán guò! Chúxī wǎnshang wǒmen quánjiā yìqǐ chī niányèfàn, ránhòu áoyè shǒusuì. Zhège fēngsú gēn Zhōngguó chàbuduō.',
-     sampleVn:'Có chứ! Tối giao thừa cả nhà mình cùng ăn cơm tất niên, rồi thức đón giao thừa. Phong tục này cũng giống Trung Quốc.',
-     tip:'Trả lời câu hỏi có/không xong phải KỂ THÊM — đừng chỉ nói 过.'},
-
-    {scene:'Bạn cùng lớp bị sốt, không đến buổi sinh hoạt lớp được.',
-     a:{sp:'Bạn',zh:'我发烧了，明天的班会去不了了……',vn:'Tớ bị sốt rồi, buổi sinh hoạt lớp ngày mai không đi được…'},
-     need:['Dùng 替','Hứa giúp bạn một việc CỤ THỂ'],
-     sample:'别担心，我替你跟老师请假，班会的笔记我也替你记好。',
-     samplePy:'Bié dānxīn, wǒ tì nǐ gēn lǎoshī qǐngjià, bānhuì de bǐjì wǒ yě tì nǐ jìhǎo.',
-     sampleVn:'Đừng lo, tớ xin phép cô giúp cậu, ghi chép buổi sinh hoạt tớ cũng ghi giúp cậu luôn.',
-     tip:'替 là giới từ: 替 + người + ĐỘNG TỪ. Đừng viết 我替你 rồi bỏ lửng không có động từ.'},
-
-    {scene:'Đã quá giờ hẹn mà một bạn trong nhóm vẫn chưa đến.',
-     a:{sp:'Bạn',zh:'小明怎么还没来？都过了二十分钟了。',vn:'Tiểu Minh sao vẫn chưa đến? Quá hai mươi phút rồi.'},
-     need:['Dùng 说不定','Đưa ra một phỏng đoán HỢP LÝ'],
-     sample:'他家住得远，说不定路上堵车了。我给他打个电话问问吧。',
-     samplePy:'Tā jiā zhù de yuǎn, shuōbudìng lù shang dǔchē le. Wǒ gěi tā dǎ ge diànhuà wènwen ba.',
-     sampleVn:'Nhà cậu ấy xa, không chừng bị tắc đường. Để tớ gọi điện hỏi thử.',
-     tip:'说不定 dùng cho PHỎNG ĐOÁN — nên có lý do đi kèm (家住得远) thì câu mới thuyết phục.'},
-
-    {scene:'Sáng ra mẹ thấy mắt em thâm quầng.',
-     a:{sp:'Mẹ',zh:'你昨晚是不是又熬夜了？',vn:'Tối qua con lại thức khuya đúng không?'},
-     need:['Dùng 熬夜 (đúng cách ly hợp từ nếu có thời lượng)','Dùng ……得什么似的'],
-     sample:'是的，我熬了半夜复习考试，现在困得什么似的。以后我一定早点儿睡。',
-     samplePy:'Shì de, wǒ áole bàn yè fùxí kǎoshì, xiànzài kùn de shénme shìde. Yǐhòu wǒ yídìng zǎo diǎnr shuì.',
-     sampleVn:'Vâng, con thức nửa đêm ôn thi, giờ buồn ngủ díp cả mắt. Lần sau con nhất định ngủ sớm.',
-     tip:'Ly hợp từ: 熬了半夜 / 熬了一夜 — KHÔNG nói 熬夜了半夜.'},
-
-    {scene:'Cô giáo hỏi về buổi xem biểu diễn chào năm mới của lớp.',
-     a:{sp:'Cô',zh:'昨天的新年晚会，同学们觉得怎么样？',vn:'Buổi dạ hội năm mới hôm qua, các em thấy thế nào?'},
-     need:['Dùng 纷纷','Chủ ngữ phải là SỐ NHIỀU'],
-     sample:'大家都很喜欢！晚会结束以后，同学们纷纷说明年还想再去。',
-     samplePy:'Dàjiā dōu hěn xǐhuan! Wǎnhuì jiéshù yǐhòu, tóngxuémen fēnfēn shuō míngnián hái xiǎng zài qù.',
-     sampleVn:'Mọi người đều rất thích ạ! Buổi dạ hội kết thúc, các bạn nhao nhao nói sang năm còn muốn đi nữa.',
-     tip:'纷纷 không dùng cho một người: ✗ 我纷纷说…….'}
+    {scene:'Bạn Trung Quốc mới quen hỏi em về Tết ở Việt Nam.',a:{sp:'Bạn',zh:'你们越南人也过除夕吗？',vn:'Người Việt các cậu cũng đón giao thừa à?'},need:['Dùng 除夕 và 风俗','Kể ít nhất MỘT phong tục cụ thể'],sample:'当然过！除夕晚上我们全家一起吃年夜饭，吃完饭大家坐在一起守岁，这个风俗跟中国差不多。',samplePy:'Dāngrán guò! Chúxī wǎnshang wǒmen quánjiā yìqǐ chī niányèfàn, chīwán fàn dàjiā zuò zài yìqǐ shǒusuì, zhège fēngsú gēn Zhōngguó chàbuduō.',sampleVn:'Có chứ! Tối giao thừa cả nhà mình cùng ăn cơm tất niên, ăn xong mọi người ngồi quây quần đón giao thừa, phong tục này cũng giống Trung Quốc.',tip:'Trả lời câu hỏi có/không xong phải KỂ THÊM — đừng chỉ nói 过.'},
+    {scene:'Bạn cùng lớp bị sốt, không đến buổi sinh hoạt lớp được.',a:{sp:'Bạn',zh:'我发烧了，明天的班会去不了了……',vn:'Tớ bị sốt rồi, buổi sinh hoạt lớp ngày mai không đi được…'},need:['Dùng 替','Hứa giúp bạn một việc CỤ THỂ'],sample:'别担心，我替你跟老师请假，班会的笔记我也替你记好。',samplePy:'Bié dānxīn, wǒ tì nǐ gēn lǎoshī qǐngjià, bānhuì de bǐjì wǒ yě tì nǐ jìhǎo.',sampleVn:'Đừng lo, tớ xin phép cô giúp cậu, ghi chép buổi sinh hoạt tớ cũng ghi giúp cậu luôn.',tip:'替 là giới từ: 替 + người + ĐỘNG TỪ. Đừng viết 我替你 rồi bỏ lửng không có động từ.'},
+    {scene:'Đã quá giờ hẹn mà một bạn trong nhóm vẫn chưa đến.',a:{sp:'Bạn',zh:'小明怎么还没来？都过了二十分钟了。',vn:'Tiểu Minh sao vẫn chưa đến? Quá hai mươi phút rồi.'},need:['Dùng 说不定','Đưa ra một phỏng đoán HỢP LÝ'],sample:'他家住得远，说不定路上堵车了。我给他打个电话问问吧。',samplePy:'Tā jiā zhù de yuǎn, shuōbudìng lù shang dǔchē le. Wǒ gěi tā dǎ ge diànhuà wènwen ba.',sampleVn:'Nhà cậu ấy xa, không chừng bị tắc đường. Để tớ gọi điện hỏi thử.',tip:'说不定 dùng cho PHỎNG ĐOÁN — nên có lý do đi kèm (家住得远) thì câu mới thuyết phục.'},
+    {scene:'Sáng ra mẹ thấy mắt em thâm quầng.',a:{sp:'Mẹ',zh:'你昨晚是不是又熬夜了？',vn:'Tối qua con lại thức khuya đúng không?'},need:['Dùng 熬夜','Dùng ……得不行 (bài 4)'],sample:'是的，我昨天熬夜复习考试了，现在困得不行。以后我一定早点儿睡。',samplePy:'Shì de, wǒ zuótiān áoyè fùxí kǎoshì le, xiànzài kùn de bùxíng. Yǐhòu wǒ yídìng zǎo diǎnr shuì.',sampleVn:'Vâng, hôm qua con thức khuya ôn thi, giờ buồn ngủ không chịu nổi. Lần sau con nhất định ngủ sớm.',tip:'熬夜 là ly hợp từ: muốn nói thời lượng thì chen vào giữa (熬了一夜), không nói 熬夜了一夜.'},
+    {scene:'Cô giáo hỏi về buổi xem biểu diễn chào năm mới của lớp.',a:{sp:'Cô',zh:'昨天的新年晚会，同学们觉得怎么样？',vn:'Buổi dạ hội năm mới hôm qua, các em thấy thế nào?'},need:['Dùng 纷纷','Chủ ngữ phải là SỐ NHIỀU'],sample:'大家都很喜欢！晚会结束以后，同学们纷纷说明年还想再去。',samplePy:'Dàjiā dōu hěn xǐhuan! Wǎnhuì jiéshù yǐhòu, tóngxuémen fēnfēn shuō míngnián hái xiǎng zài qù.',sampleVn:'Mọi người đều rất thích ạ! Buổi dạ hội kết thúc, các bạn nhao nhao nói sang năm còn muốn đi nữa.',tip:'纷纷 không dùng cho một người: ✗ 我纷纷说…….'}
   ]
 };
 
@@ -1353,29 +1189,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em nhắn tin hỏi bạn thân.',
-     a:'我跟你打听一下，学校附近有什么好吃的？',b:'我想向你询问一下学校附近餐厅的情况。',better:'a',
-     why:'打听 là KHẨU NGỮ, hợp với tin nhắn bạn bè. 询问 thiên văn viết — nói với bạn thân nghe như đang làm khảo sát.'},
-
-    {scene:'Em viết biên bản cuộc họp nộp cho công ty.',
-     a:'经理打听了一下项目怎么样了。',b:'经理仔细地询问了项目的进展情况。',better:'b',
-     why:'Văn bản công ty là VĂN VIẾT → 询问 + 情况. 打听 nghe như dò la, không hợp ngữ cảnh chính thức.'},
-
-    {scene:'Em viết thư cảm ơn thầy chủ nhiệm cuối năm.',
-     a:'谢谢老师啦！',b:'老师，我想借这个机会向您表达我的谢意。',better:'b',
-     why:'Thư gửi thầy cô cần trang trọng: 向您表达谢意. Câu a đúng nhưng quá suồng sã cho một bức thư.'},
-
-    {scene:'Đã 11 giờ đêm, em nhắc em trai nhỏ đi ngủ.',
-     a:'别玩了，赶紧睡觉！',b:'请你尽快休息。',better:'a',
-     why:'Nói với em nhỏ trong nhà, khẩu ngữ tự nhiên là 赶紧 + V. 请你尽快休息 nghe như thông báo của khách sạn.'},
-
-    {scene:'Em viết bài văn kể lại truyền thuyết "Tịch" nộp cho cô.',
-     a:'“夕”吓死了，马上跑了。',b:'“夕”吓得什么似的，急忙往外逃。',better:'b',
-     why:'Bài văn cần sinh động và thiên văn viết: 吓得什么似的 + 急忙往外逃. Câu a quá khẩu ngữ, nghe như kể chuyện miệng.'},
-
-    {scene:'Em gọi điện chúc Tết ông bà.',
-     a:'新年快乐啊！',b:'爷爷奶奶，祝你们新年快乐，身体健康，万事如意！',better:'b',
-     why:'Chúc Tết người lớn tuổi phải có xưng hô và lời chúc đầy đủ. Câu a chỉ hợp khi nhắn cho bạn bè.'}
+    {scene:'Em nhắn tin hỏi bạn thân.',a:'我跟你打听一下，学校附近有什么好吃的？',b:'我想向你询问一下学校附近餐厅的情况。',better:'a',why:'打听 là KHẨU NGỮ, hợp với tin nhắn bạn bè. 询问 thiên văn viết — nói với bạn thân nghe như đang làm khảo sát.'},
+    {scene:'Em viết biên bản cuộc họp nộp cho công ty.',a:'经理打听了一下新公司的事怎么样了。',b:'经理仔细地询问了新公司的情况。',better:'b',why:'Văn bản công ty là VĂN VIẾT → 询问 + 情况. 打听 nghe như dò la, không hợp ngữ cảnh chính thức.'},
+    {scene:'Em viết thư cảm ơn thầy chủ nhiệm cuối năm.',a:'老师，太谢谢您了！',b:'老师，我想借这个机会向您表达我的谢意。',better:'b',why:'Thư gửi thầy cô cần trang trọng: 向您表达谢意. Câu a hợp nói miệng khi gặp thầy hơn là viết trong một bức thư.'},
+    {scene:'Đã 11 giờ đêm, em nhắc em trai nhỏ đi ngủ.',a:'别玩了，赶紧睡觉！',b:'请你立刻放下游戏，按时休息。',better:'a',why:'Nói với em nhỏ trong nhà, khẩu ngữ tự nhiên là 赶紧 + V. Câu b nghe như thông báo, nội quy.'},
+    {scene:'Em viết bài văn kể lại truyền thuyết "Tịch" nộp cho cô.',a:'“夕”很害怕，马上跑了。',b:'“夕”吓得什么似的，急忙逃走了。',better:'b',why:'Bài văn cần sinh động: 吓得什么似的 + 急忙逃走. Câu a quá đơn giản, nghe như kể chuyện miệng.'},
+    {scene:'Em gọi điện chúc Tết ông bà.',a:'新年好！',b:'爷爷奶奶，祝您二位新年身体健康，天天开心！',better:'b',why:'Chúc Tết người lớn tuổi phải có xưng hô và lời chúc đầy đủ. Câu a chỉ hợp khi nhắn cho bạn bè.'}
   ]
 };
 

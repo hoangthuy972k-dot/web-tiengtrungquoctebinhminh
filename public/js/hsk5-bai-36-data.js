@@ -1229,94 +1229,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 160) + bài tập 3 của sách (tr. 162)
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'结合',right:'实际'},
-  {left:'应付',right:'挑战'},
-  {left:'装饰',right:'街道'},
-  {left:'保留',right:'观点'},
+  {left:'保留',right:'传统'},
   {left:'气候',right:'潮湿'},
   {left:'服装',right:'鲜艳'},
   {left:'情况',right:'紧急'},
   {left:'动作',right:'熟练'},
-  {left:'鲜艳的',right:'图案'},
-  {left:'潮湿的',right:'台阶'},
-  {left:'紧急',right:'集合'},
-  {left:'熟练地',right:'使用'},
   {left:'一朵',right:'花'},
   {left:'一把',right:'剪刀'},
   {left:'抢救',right:'病人'},
-  {left:'庆祝',right:'胜利'},
-  {left:'分享',right:'经验'},
-  {left:'热爱',right:'大自然'},
-  {left:'追求',right:'真理'},
-  {left:'回报',right:'社会'},
-  {left:'捡',right:'石头'},
-  {left:'为理想而',right:'奋斗'}
+  {left:'庆祝',right:'生日'},
+  {left:'分享',right:'快乐'},
+  {left:'热爱',right:'生活'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — đủ 38 từ của bài
+// ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'作家老舍先生爱花，他',blank:'养',post:'的花很多，满满摆了一院子。',hint:'(trồng, nuôi)',ans:'养'},
-  {pre:'可',blank:'除非',post:'是那些好种易活的花草，否则他是不养的。',hint:'(trừ phi)',ans:'除非',exp:'除非A，否则B = trừ phi A, nếu không thì B.'},
-  {pre:'为了考上理想的大学，他每天都在努力',blank:'奋斗',post:'。',hint:'(phấn đấu)',ans:'奋斗'},
-  {pre:'老舍把养花当作一种生活',blank:'乐趣',post:'。',hint:'(thú vui)',ans:'乐趣'},
-  {pre:'老李对儿子面试没被录取的事显得满不',blank:'在乎',post:'。',hint:'(để tâm)',ans:'在乎'},
-  {pre:'他用剪刀剪出了一',blank:'朵',post:'美丽的花。',hint:'(bông — lượng từ)',ans:'朵',exp:'朵 là lượng từ cho hoa, mây: 一朵花.'},
-  {pre:'这个袋子很结实，用手撕不开，去拿把',blank:'剪刀',post:'。',hint:'(cái kéo)',ans:'剪刀'},
-  {pre:'有时蹲下',blank:'捡',post:'几块小石头放在花盆里。',hint:'(nhặt)',ans:'捡'},
-  {pre:'新年快到了，我们用彩灯把教室',blank:'装饰',post:'得很漂亮。',hint:'(trang trí)',ans:'装饰'},
-  {pre:'这项规定是',blank:'结合',post:'了我校的实际情况而制定的。',hint:'(kết hợp, gắn với)',ans:'结合'},
-  {pre:'一年夏天，下了',blank:'暴雨',post:'，邻居家的墙倒了。',hint:'(mưa lớn)',ans:'暴雨'},
-  {pre:'因为天气原因，飞机不得不',blank:'紧急',post:'降落。',hint:'(khẩn cấp)',ans:'紧急'},
-  {pre:'情况紧急，他就得',blank:'劳驾',post:'全家人抢救花草。',hint:'(làm phiền)',ans:'劳驾'},
-  {pre:'经过医生们的全力',blank:'抢救',post:'，病人终于脱离了危险。',hint:'(cấp cứu)',ans:'抢救'},
-  {pre:'又做了个两小时的手术，累得我',blank:'腰',post:'都直不起来了。',hint:'(lưng)',ans:'腰'},
-  {pre:'父亲听说儿子卖了房子，气得',blank:'直',post:'发抖。',hint:'(liên tục, cứ)',ans:'直',exp:'直 + V = cứ…, liên tục: 气得直发抖.'},
-  {pre:'多亏了这条铁路，',blank:'不然',post:'这么多煤炭怎么运出去？',hint:'(nếu không thì)',ans:'不然',exp:'不然 = nếu không thì; nêu hậu quả khi không có điều kiện ở vế trước.'},
-  {pre:'任何事都要有付出，不然怎么会有',blank:'回报',post:'？',hint:'(sự đền đáp)',ans:'回报'},
-  {pre:'科学家们一生都在追求',blank:'真理',post:'。',hint:'(chân lý)',ans:'真理'},
-  {pre:'有的花喜干，就别多',blank:'浇',post:'水。',hint:'(tưới)',ans:'浇'},
-  {pre:'有的花喜欢',blank:'潮湿',post:'的环境，就别放在太阳地里。',hint:'(ẩm ướt)',ans:'潮湿'},
-  {pre:'春天到了，农民们忙着给庄稼',blank:'施肥',post:'。',hint:'(bón phân)',ans:'施肥'},
-  {pre:'我觉得你们的动作好像还不太',blank:'熟练',post:'，还得多练习练习。',hint:'(thuần thục)',ans:'熟练'},
-  {pre:'一个星期的迎来送往，她已经有点儿',blank:'应付',post:'不了了。',hint:'(đối phó, kham)',ans:'应付'},
-  {pre:'这次演出需要设计色彩',blank:'鲜艳',post:'的服装。',hint:'(tươi sáng, rực rỡ)',ans:'鲜艳'},
-  {pre:'我们的产品改善了许多人的生活，这是我们非常',blank:'自豪',post:'的事情。',hint:'(tự hào)',ans:'自豪'},
-  {pre:'你别',blank:'吹',post:'了，上次考试你才考了六十分。',hint:'(khoác lác)',ans:'吹'},
-  {pre:'她很有',blank:'爱心',post:'，常常照顾路边的流浪猫。',hint:'(lòng yêu thương)',ans:'爱心'},
-  {pre:'请你和大家',blank:'分享',post:'一下你学汉语的经验。',hint:'(chia sẻ)',ans:'分享'},
-  {pre:'每到',blank:'昙花',post:'开放的时候，他就约上几位朋友来家里赏花。',hint:'(hoa quỳnh)',ans:'昙花'},
-  {pre:'国庆节期间，本市会举行大规模的',blank:'庆祝',post:'活动。',hint:'(kỷ niệm, ăn mừng)',ans:'庆祝'},
-  {pre:'对于他们这种做法，我',blank:'保留',post:'自己的意见。',hint:'(bảo lưu)',ans:'保留'},
-  {pre:'秋天到了，公园里的',blank:'菊花',post:'都开了。',hint:'(hoa cúc)',ans:'菊花'},
-  {pre:'树上掉下来一个苹果，正好',blank:'砸',post:'在他的头上。',hint:'(đập trúng)',ans:'砸'},
-  {pre:'听到这个',blank:'悲伤',post:'的消息，大家都哭了。',hint:'(đau buồn)',ans:'悲伤'},
-  {pre:'不管你们谁去，',blank:'反正',post:'我不会去。',hint:'(dù sao)',ans:'反正',exp:'不管…，反正… = dù… thì dù sao…; 反正 nhấn mạnh kết luận không thay đổi.'},
-  {pre:'老舍是一个',blank:'热爱',post:'生活、热爱大自然的人。',hint:'(yêu tha thiết)',ans:'热爱'},
-  {pre:'北京有个',blank:'老舍',post:'茶馆，是以他的名字命名的。',hint:'(Lão Xá)',ans:'老舍'}
+  {pre:'我家',blank:'养',post:'了一只小猫，它每天都在沙发上睡觉。',hint:'(nuôi)',ans:'养',exp:'养 = nuôi (động vật), trồng (hoa): 养猫, 养花; 养活 = nuôi sống.'},
+  {pre:'为了让家人过上好日子，他在城市里努力',blank:'奋斗',post:'了十年。',hint:'(phấn đấu)',ans:'奋斗',exp:'奋斗 = phấn đấu (lâu dài, vì mục tiêu lớn): 为……而奋斗.'},
+  {pre:'对我来说，周末和朋友一起打球是最大的',blank:'乐趣',post:'。',hint:'(niềm vui, thú vui)',ans:'乐趣',exp:'乐趣 = niềm vui, thú vui (danh từ): 生活的乐趣, 最大的乐趣.'},
+  {pre:'看到地上有垃圾，他马上',blank:'捡',post:'起来扔进了垃圾桶。',hint:'(nhặt)',ans:'捡',exp:'捡 = nhặt (vật ở dưới đất): 捡起来, 捡石头.'},
+  {pre:'她用几张照片',blank:'装饰',post:'了一下自己的房间。',hint:'(trang trí)',ans:'装饰',exp:'装饰 = trang trí (động từ) / đồ trang trí (danh từ): 装饰房间.'},
+  {pre:'',blank:'劳驾',post:'，能帮我开一下门吗？我手里东西太多了。',hint:'(làm phiền — lời nhờ vả lịch sự)',ans:'劳驾',exp:'劳驾 = làm phiền (anh/chị)…, dùng khi nhờ người khác làm việc nhỏ: 劳驾，让一下.'},
+  {pre:'在电脑前坐了一天，我的',blank:'腰',post:'疼得厉害。',hint:'(lưng, thắt lưng)',ans:'腰',exp:'腰 = lưng, thắt lưng: 腰疼, 腰酸腿疼, 直不起腰来.'},
+  {pre:'父母为我付出了那么多，我一定要好好',blank:'回报',post:'他们。',hint:'(báo đáp, đền đáp)',ans:'回报',exp:'回报 = báo đáp (động từ) / sự đền đáp (danh từ): 回报父母, 得到回报.'},
+  {pre:'我出差的时候，请你帮我给花',blank:'浇',post:'水。',hint:'(tưới)',ans:'浇',exp:'浇 = tưới (nước): 浇水, 浇花.'},
+  {pre:'这些菜长得不太好，该给它们',blank:'施肥',post:'了。',hint:'(bón phân)',ans:'施肥',exp:'施肥 = bón phân: 给花施肥, 浇水施肥.'},
+  {pre:'他总是',blank:'吹',post:'自己会说五门外语，其实只会说几句简单的。',hint:'(khoác lác, khoe khoang)',ans:'吹',exp:'吹 (khẩu ngữ) = khoác lác, nói khoe quá sự thật: 别吹了, 乱吹.'},
+  {pre:'这位老人很有',blank:'爱心',post:'，每个月都拿出一些钱帮助山区的孩子。',hint:'(lòng nhân ái, lòng yêu thương)',ans:'爱心',exp:'爱心 = lòng yêu thương, lòng nhân ái: 很有爱心.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (除非 · 直 · 反正) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['除非','急需','一大笔钱','，','我','才会考虑','卖了这房子','。'],ans:'除非急需一大笔钱，我才会考虑卖了这房子。',audio:'除非急需一大笔钱，我才会考虑卖了这房子。'},
-  {words:['除非你','每天坚持练习','，','不然','口语','是提高不了的','。'],ans:'除非你每天坚持练习，不然口语是提高不了的。',audio:'除非你每天坚持练习，不然口语是提高不了的。'},
-  {words:['这种机器','，','除非李阳','，','没人','修得好','。'],ans:'这种机器，除非李阳，没人修得好。',audio:'这种机器，除非李阳，没人修得好。'},
-  {words:['这趟车','可以','直达','北京','。'],ans:'这趟车可以直达北京。',audio:'这趟车可以直达北京。'},
-  {words:['父亲','听说','儿子卖了房子','，','气得','直','发抖','。'],ans:'父亲听说儿子卖了房子，气得直发抖。',audio:'父亲听说儿子卖了房子，气得直发抖。'},
-  {words:['他','朝我','直','摇头','，','我','故意装作','没看见','。'],ans:'他朝我直摇头，我故意装作没看见。',audio:'他朝我直摇头，我故意装作没看见。'},
-  {words:['不管','你们','谁去','，','反正','我','不会去','。'],ans:'不管你们谁去，反正我不会去。',audio:'不管你们谁去，反正我不会去。'},
-  {words:['算了','，','反正','不是','什么','要紧事','。'],ans:'算了，反正不是什么要紧事。',audio:'算了，反正不是什么要紧事。'},
-  {words:['你','别再说了','，','反正','我','是不会','考虑的','。'],ans:'你别再说了，反正我是不会考虑的。',audio:'你别再说了，反正我是不会考虑的。'},
-  {words:['老舍','把','养花','当作','一种','生活乐趣','。'],ans:'老舍把养花当作一种生活乐趣。',audio:'老舍把养花当作一种生活乐趣。'},
-  {words:['给花','换盆剪枝的','活儿','他','越做','越熟练','。'],ans:'给花换盆剪枝的活儿他越做越熟练。',audio:'给花换盆剪枝的活儿他越做越熟练。'},
-  {words:['菊花','被','砸死了','一百多棵','。'],ans:'菊花被砸死了一百多棵。',audio:'菊花被砸死了一百多棵。'},
-  {words:['老舍','很有','爱心','，','更懂得','快乐','要分享','。'],ans:'老舍很有爱心，更懂得快乐要分享。',audio:'老舍很有爱心，更懂得快乐要分享。'}
+  {words:['除非','你','亲自','去请他','，','否则','他','是不会','来的','。'],ans:'除非你亲自去请他，否则他是不会来的。',audio:'除非你亲自去请他，否则他是不会来的。'},
+  {words:['除非','大家','都','同意','，','我们','才能','改变','计划','。'],ans:'除非大家都同意，我们才能改变计划。',audio:'除非大家都同意，我们才能改变计划。'},
+  {words:['今天','零下','五度','，','我','冻得','直','发抖','。'],ans:'今天零下五度，我冻得直发抖。',audio:'今天零下五度，我冻得直发抖。'},
+  {words:['这条路','又宽','又直','，','开车','很舒服','。'],ans:'这条路又宽又直，开车很舒服。',audio:'这条路又宽又直，开车很舒服。'},
+  {words:['不管','你们','怎么','劝','，','反正','我','已经','决定','了','。'],ans:'不管你们怎么劝，反正我已经决定了。',audio:'不管你们怎么劝，反正我已经决定了。'},
+  {words:['他','根本','不在乎','别人','怎么说','。'],ans:'他根本不在乎别人怎么说。',audio:'他根本不在乎别人怎么说。'},
+  {words:['她','已经','能','熟练地','用汉语','打电话','了','。'],ans:'她已经能熟练地用汉语打电话了。',audio:'她已经能熟练地用汉语打电话了。'},
+  {words:['医生','正在','抢救','一个','紧急','送来的','病人','。'],ans:'医生正在抢救一个紧急送来的病人。',audio:'医生正在抢救一个紧急送来的病人。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1324,76 +1284,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'一连取得两场胜利，李岩____得不得了，以为冠军非他莫属了。',opts:['自豪','骄傲','热爱','鲜艳'],ans:1,
-   exp:'Nghĩa XẤU "kiêu ngạo, tự cao" → 骄傲 (bài tập 2 của sách). 自豪 chỉ mang nghĩa tốt.'},
-  {wrong:'对于他们这种做法，我____自己的意见。',opts:['保存','保留','分享','结合'],ans:1,
-   exp:'保留意见 = bảo lưu ý kiến (bài tập 2 của sách). 保存 là cất giữ đồ vật, dữ liệu.'},
-  {wrong:'看到五星红旗在赛场上升起，我的眼圈____了。',opts:['潮湿','湿润','鲜艳','紧急'],ans:1,
-   exp:'Mắt rưng rưng vì xúc động → 湿润 (bài tập 2 của sách). 潮湿 dùng cho không khí, khí hậu, đồ vật bị ẩm.'},
-  {wrong:'他是个工作狂，生活中____工作还是工作。',opts:['除非','除了','不然','反正'],ans:1,
-   exp:'"Ngoài … ra (chỉ còn) …" → 除了……还是…… (bài tập 2 của sách). 除非 nêu điều kiện duy nhất.'},
-  {wrong:'洗衣机的包装纸箱，既占地方又没什么用，快____了吧。',opts:['应付','处理','保留','装饰'],ans:1,
-   exp:'Sắp xếp, dọn bỏ đồ vật → 处理 (词语辨析 của sách). 应付 không có nghĩa này.'},
-  {wrong:'小林学习不认真，完全是在____父母和老师。',opts:['处理','应付','回报','劳驾'],ans:1,
-   exp:'Làm qua loa, chiếu lệ cho xong → 应付.'},
-  {wrong:'我非常尊敬他，但同时也觉得他是个不好____的人。',opts:['应付','处理','在乎','分享'],ans:0,
-   exp:'"Người khó đối phó / khó chiều" → 不好应付的人 (做一做 của sách).'},
-  {wrong:'____是那些好种易活的花草，否则他是不养的。',opts:['除非','除了','不然','反正'],ans:0,
-   exp:'Vế sau có 否则 → vế trước dùng 除非 (điều kiện duy nhất) — 注释 1.'},
-  {wrong:'我不知道花草们感谢我不感谢，____我要感谢它们。',opts:['反正','不然','除非','直'],ans:0,
-   exp:'Câu dạng "A không A" + kết quả không đổi → 反正 (注释 3).'},
-  {wrong:'几百盆花要很快地抢到屋里去，累得腰酸腿疼，热汗____流。',opts:['直','反正','紧急','熟练'],ans:0,
-   exp:'直 + V đơn âm: liên tục không ngừng — 热汗直流 (注释 2).'},
-  {wrong:'快点儿走吧，____我们就赶不上最后一班车了。',opts:['不然','除非','反正','在乎'],ans:0,
-   exp:'"Nếu không thì" (kết quả xấu) → 不然.'},
-  {wrong:'我们班赢了比赛，大家决定晚上去吃火锅____一下。',opts:['庆祝','祝贺','分享','回报'],ans:0,
-   exp:'Ăn mừng một sự kiện → 庆祝. 祝贺 là chúc mừng một NGƯỜI (祝贺你).'},
-  {wrong:'她把旅行的照片____给了班里的同学。',opts:['分享','保留','庆祝','装饰'],ans:0,
-   exp:'把 + N + 分享给 + ai = chia sẻ … cho ai.'},
-  {wrong:'学了三年，她已经能____地使用汉语了。',opts:['熟练','鲜艳','潮湿','紧急'],ans:0,
-   exp:'熟练地 + V: làm gì một cách thành thạo (bảng 搭配 của sách).'},
-  {wrong:'经过医生们的全力____，病人终于脱离了危险。',opts:['抢救','回报','应付','结合'],ans:0,
-   exp:'经过抢救 = qua cấp cứu; nói về bệnh nhân nguy kịch.'},
-  {wrong:'只有努力付出，才能得到____。',opts:['回报','真理','乐趣','爱心'],ans:0,
-   exp:'有付出才有回报 — câu chân lý của bài khoá.'},
-  {wrong:'学语言要把听、说、读、写____起来。',opts:['结合','装饰','保留','浇'],ans:0,
-   exp:'把 A 和 B 结合起来 = kết hợp A với B.'},
-  {wrong:'这个袋子很结实，用手撕不开，去拿把____。',opts:['剪刀','菊花','腰','朵'],ans:0,
-   exp:'Xé không ra thì dùng kéo; lượng từ 把 đi với 剪刀 (扩展 của sách).'},
-  {wrong:'他的成功只是____一现，很快就被人忘记了。',opts:['昙花','菊花','暴雨','真理'],ans:0,
-   exp:'Thành ngữ 昙花一现 = sớm nở tối tàn.'},
-  {wrong:'树上掉下来一个苹果，正好____在他的头上。',opts:['砸','捡','浇','吹'],ans:0,
-   exp:'Vật nặng rơi trúng → 砸.'}
+  {wrong:'这些旧书你打算怎么____？卖了还是送人？',opts:['处理','应付','装饰','结合'],ans:0,exp:'处理 + đồ vật = xử lý (bán, cho, vứt). 应付 là đối phó với người/việc, không dùng cho đồ vật; 装饰, 结合 không hợp.'},
+  {wrong:'他写作业只是为了____老师，根本没认真做。',opts:['应付','处理','回报','劳驾'],ans:0,exp:'应付 (nghĩa xấu) = làm qua loa cho xong, đối phó. 处理 là giải quyết thật sự; 回报 là báo đáp; 劳驾 là lời nhờ vả.'},
+  {wrong:'取得一点儿成绩就____起来，这样可不好。',opts:['骄傲','自豪','热爱','悲伤'],ans:0,exp:'骄傲 có nghĩa xấu = kiêu ngạo (lời phê bình). 自豪 chỉ mang nghĩa tốt, không dùng để phê bình; 热爱, 悲伤 không hợp.'},
+  {wrong:'喝不完的牛奶要____在冰箱里。',opts:['保存','保留','装饰','结合'],ans:0,exp:'保存 + 在 + nơi = cất giữ, bảo quản cho khỏi hỏng (thức ăn, tài liệu). 保留 là giữ nguyên, không bỏ đi (truyền thống, ý kiến); 装饰, 结合 không hợp.'},
+  {wrong:'老师把自己的经验毫无____地告诉了我们。',opts:['保留','保存','回报','结合'],ans:0,exp:'毫无保留 (cụm cố định) = không giữ lại chút nào, hết lòng. Không nói 毫无保存; 回报, 结合 không hợp.'},
+  {wrong:'____你答应我一个条件，否则我不帮你。',opts:['除非','除了','反正','不然'],ans:0,exp:'除非 A，否则 B = trừ phi A, nếu không thì B. 除了 đi với 都/也/还 (ngoài… ra); 反正, 不然 không đứng đầu vế điều kiện.'},
+  {wrong:'你们不用等我了，____我也不饿，你们先吃吧。',opts:['反正','除非','不然','难怪'],ans:0,exp:'反正 = dù sao thì, đằng nào cũng (nêu lý do khẳng định, khỏi bàn). 除非 cần vế 否则/才; 不然 là “nếu không thì”; 难怪 là “thảo nào”.'},
+  {wrong:'你最好穿厚一点儿，____会感冒的。',opts:['不然','除非','反正','竟然'],ans:0,exp:'不然 = nếu không thì (nêu hậu quả). 除非 nêu điều kiện duy nhất; 反正 là “dù sao”; 竟然 là “vậy mà”.'},
+  {wrong:'____你考上了大学！',opts:['祝贺','庆祝','分享','回报'],ans:0,exp:'祝贺 + người / việc của người đó = chúc mừng ai. 庆祝 là ăn mừng một sự kiện (庆祝生日, 庆祝胜利), không nói với người; 分享, 回报 không hợp.'},
+  {wrong:'我想和大家____一下我学汉语的方法。',opts:['分享','分开','庆祝','保留'],ans:0,exp:'和……分享 = chia sẻ với ai (kinh nghiệm, niềm vui). 分开 là tách ra; 庆祝 là ăn mừng; 保留 là giữ lại — ngược ý.'},
+  {wrong:'她喜欢穿颜色____的衣服，看起来很有精神。',opts:['鲜艳','新鲜','潮湿','熟练'],ans:0,exp:'颜色鲜艳 = màu sắc tươi, rực rỡ. 新鲜 dùng cho thức ăn, không khí; 潮湿 là ẩm ướt; 熟练 là thành thạo.'},
+  {wrong:'下了一个星期的雨，房间里又____又冷，衣服都干不了。',opts:['潮湿','湿润','干燥','鲜艳'],ans:0,exp:'潮湿 = ẩm ướt (nghĩa không dễ chịu). 湿润 là ẩm dễ chịu (空气湿润); 干燥 ngược nghĩa với 衣服干不了; 鲜艳 không hợp.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Trừ phi ngày nào cậu cũng kiên trì luyện tập, nếu không thì rất khó chơi thành thạo nhạc cụ này.',zh:'除非你每天坚持练习，否则很难熟练地掌握这门乐器。',py:'Chúfēi nǐ měi tiān jiānchí liànxí, fǒuzé hěn nán shúliàn de zhǎngwò zhè mén yuèqì.',goiY:['除非……否则……','熟练','掌握'],giai:'除非 + điều kiện duy nhất，否则 + kết quả xấu nếu không đạt; 除非 không đi với 就 (✗ 除非……就……).'},
-  {vi:'Dù người khác đánh giá lựa chọn của tớ thế nào thì tớ cũng chẳng để tâm chút nào.',zh:'不管别人怎么评价我的选择，反正我自己一点儿也不在乎。',py:'Bùguǎn biérén zěnme píngjià wǒ de xuǎnzé, fǎnzhèng wǒ zìjǐ yìdiǎnr yě bú zàihu.',goiY:['不管……反正……','评价','在乎'],giai:'不管……，反正…… = "dù thế nào thì… vẫn…" (thái độ không đổi); 在乎 thường dùng ở dạng phủ định 不在乎 = "không để tâm".'},
-  {vi:'Câu chuyện cười cậu ấy kể buồn cười quá, đến cả thầy giáo cũng cười gập cả người.',zh:'他讲的笑话太好笑了，连老师都笑得直不起腰来。',py:'Tā jiǎng de xiàohua tài hǎoxiào le, lián lǎoshī dōu xiào de zhí bu qǐ yāo lai.',goiY:['连……都……','直不起腰来'],giai:'连……都…… nhấn mạnh "đến cả…"; 直不起腰来 = không đứng thẳng lưng lên được (直 = làm cho thẳng) — dịch thoáng "cười gập cả người".'},
-  {vi:'Lúc tan học trời bỗng đổ mưa to, tớ không mang ô, về đến nhà thì lạnh run cầm cập, may mà mẹ đã nấu sẵn bát canh gừng nóng.',zh:'放学时突然下起了暴雨，我没带伞，回到家时冷得直发抖，幸亏妈妈早就煮好了热姜汤。',py:'Fàngxué shí tūrán xiàqǐle bàoyǔ, wǒ méi dài sǎn, huídào jiā shí lěng de zhí fādǒu, xìngkuī māma zǎo jiù zhǔhǎole rè jiāngtāng.',goiY:['暴雨','冷得直发抖','幸亏'],giai:'Adj + 得 + 直 + V đơn âm tiết (直发抖, 直流, 直摇头) = "… không ngừng"; 幸亏 = "may mà", đứng đầu vế nói về điều may mắn.'},
-  {vi:'Chỉ khi kỳ thi cuối kỳ lần này môn nào cũng qua, bố mẹ mới đưa tớ ra biển mừng sinh nhật.',zh:'除非这次期末考试每门都及格，爸妈才会带我去海边庆祝生日。',py:'Chúfēi zhè cì qīmò kǎoshì měi mén dōu jígé, bà mā cái huì dài wǒ qù hǎibiān qìngzhù shēngrì.',goiY:['除非……才……','及格','庆祝'],giai:'除非……才…… = "chỉ khi… mới…" (giống 只有……才……); 才 đứng sau chủ ngữ vế sau (爸妈才会……).'},
-  {vi:'Niềm vui của việc đọc sách không chỉ nằm ở chỗ thu được kiến thức mà còn ở chỗ được chia sẻ cảm nhận của mình với bạn bè.',zh:'读书的乐趣不仅在于获得知识，而且在于能和朋友分享自己的感受。',py:'Dú shū de lèqù bùjǐn zàiyú huòdé zhīshi, érqiě zàiyú néng hé péngyou fēnxiǎng zìjǐ de gǎnshòu.',goiY:['乐趣','不仅……而且……','在于','分享'],giai:'A 在于 B = "A nằm ở B"; 不仅……而且…… lặp 在于 ở cả hai vế cho cân đối; 和 + người + 分享 = chia sẻ với ai.'},
-  {vi:'Bài tập phải làm cẩn thận, không thể chỉ để đối phó với thầy cô, nếu không đến lúc thi người chịu thiệt vẫn là chính cậu.',zh:'作业要认真完成，不能只是为了应付老师，不然到考试时吃亏的还是你自己。',py:'Zuòyè yào rènzhēn wánchéng, bù néng zhǐ shì wèile yìngfu lǎoshī, bùrán dào kǎoshì shí chīkuī de hái shì nǐ zìjǐ.',goiY:['应付','不然','吃亏'],giai:'应付 ở đây là "làm chiếu lệ, đối phó cho xong"; 不然 = "nếu không thì", đứng đầu vế nêu hậu quả.'},
-  {vi:'Chỉ cần cậu chịu phấn đấu vì ước mơ thì nhất định sẽ được đền đáp; dù tạm thời chưa thấy kết quả, cũng đừng nản lòng.',zh:'只要你肯为梦想奋斗，就一定会得到回报；即使暂时看不到结果，也千万不要灰心。',py:'Zhǐyào nǐ kěn wèi mèngxiǎng fèndòu, jiù yídìng huì dédào huíbào; jíshǐ zànshí kàn bu dào jiéguǒ, yě qiānwàn búyào huīxīn.',goiY:['只要……就……','奋斗','即使……也……','回报'],giai:'只要……就…… (điều kiện đủ) và 即使……也…… (giả thiết – kết quả không đổi) là hai quan hệ khác nhau; 为 + mục tiêu + 奋斗 = phấn đấu vì…'},
-  {vi:'Đằng nào cậu cũng đến thư viện, phiền cậu trả giúp tớ hai cuốn sách này nhé, nếu quá hạn là bị phạt tiền đấy.',zh:'反正你也要去图书馆，劳驾帮我把这两本书还了吧，要是超过期限就要罚款了。',py:'Fǎnzhèng nǐ yě yào qù túshūguǎn, láojià bāng wǒ bǎ zhè liǎng běn shū huán le ba, yàoshi chāoguò qīxiàn jiù yào fákuǎn le.',goiY:['反正','劳驾','要是……就……'],giai:'反正 + lý do = "đằng nào thì…" (đưa ra lý do để đề nghị); 劳驾 là lời nhờ vả lịch sự "phiền anh/chị…".'},
-  {vi:'Bà nội say mê trồng hoa, dù trời nóng nực đến đâu bà vẫn kiên trì tưới nước bón phân; mỗi khi những bông hoa rực rỡ nở kín sân, bà luôn vô cùng tự hào.',zh:'奶奶热爱养花，无论天气多么炎热，她都坚持浇水施肥；每当鲜艳的花朵开满院子，她总是十分自豪。',py:'Nǎinai rè\'ài yǎng huā, wúlùn tiānqì duōme yánrè, tā dōu jiānchí jiāo shuǐ shīféi; měi dāng xiānyàn de huāduǒ kāimǎn yuànzi, tā zǒngshì shífēn zìháo.',goiY:['热爱','无论……都……','浇水施肥','鲜艳'],giai:'无论 + 多么 + Adj，都…… = "dù… đến đâu cũng…"; 养花 là "trồng hoa" (养 = chăm nuôi), không dịch "nuôi hoa".'}
+  {vi:'Trừ phi ngày nào cậu cũng kiên trì luyện tập, nếu không thì rất khó nói thành thạo một ngoại ngữ.',zh:'除非你每天坚持练习，否则很难熟练地掌握一门外语。',py:'Chúfēi nǐ měi tiān jiānchí liànxí, fǒuzé hěn nán shúliàn de zhǎngwò yì mén wàiyǔ.',goiY:['除非……否则……','熟练','掌握'],giai:'除非 nêu điều kiện duy nhất, 否则 nêu hậu quả khi không có điều kiện đó; 熟练地 + V = một cách thành thạo.'},
+  {vi:'Dù người khác đánh giá lựa chọn của tớ thế nào thì tớ cũng chẳng để tâm chút nào.',zh:'不管别人怎么评价我的选择，反正我自己一点儿也不在乎。',py:'Bùguǎn biérén zěnme píngjià wǒ de xuǎnzé, fǎnzhèng wǒ zìjǐ yìdiǎnr yě bú zàihu.',goiY:['不管……','反正','在乎'],giai:'不管……，反正…… = bất kể… thì dù sao…; 一点儿也不 + V/tính từ = chẳng… chút nào.'},
+  {vi:'Câu chuyện cười cậu ấy kể buồn cười quá, đến cả thầy giáo cũng cười gập cả người.',zh:'他讲的笑话太好笑了，连老师都笑得直不起腰来。',py:'Tā jiǎng de xiàohua tài hǎoxiào le, lián lǎoshī dōu xiào de zhí bu qǐ yāo lai.',goiY:['连……都……','直不起腰来','笑话'],giai:'直不起腰来 = không đứng thẳng lưng lên được (直 = thẳng); 连……都…… nhấn mạnh người khó cười nhất cũng cười.'},
+  {vi:'Niềm vui của việc đọc sách không chỉ nằm ở chỗ thu được kiến thức mà còn ở chỗ được chia sẻ cảm nhận của mình với bạn bè.',zh:'读书的乐趣不仅在于获得知识，而且在于能和朋友分享自己的感受。',py:'Dú shū de lèqù bùjǐn zàiyú huòdé zhīshi, érqiě zàiyú néng hé péngyou fēnxiǎng zìjǐ de gǎnshòu.',goiY:['乐趣','不仅……而且……','在于','分享'],giai:'在于 = nằm ở, là ở; 和 + người + 分享 + điều gì = chia sẻ với ai.'},
+  {vi:'Bài tập phải làm cẩn thận, không thể chỉ để đối phó với thầy cô, nếu không đến lúc thi người chịu thiệt vẫn là chính cậu.',zh:'作业要认真完成，不能只是为了应付老师，不然到考试时吃亏的还是你自己。',py:'Zuòyè yào rènzhēn wánchéng, bù néng zhǐshì wèile yìngfu lǎoshī, bùrán dào kǎoshì shí chīkuī de háishi nǐ zìjǐ.',goiY:['应付','不然','吃亏'],giai:'应付 ở đây mang nghĩa xấu: làm qua loa cho xong; 不然 = nếu không thì, nêu hậu quả.'},
+  {vi:'Bà nội say mê trồng hoa, dù trời nóng nực đến đâu bà vẫn kiên trì tưới nước bón phân; mỗi khi những bông hoa rực rỡ nở kín sân, bà luôn vô cùng tự hào.',zh:'奶奶热爱养花，无论天气多么炎热，她都坚持浇水施肥；每当鲜艳的花朵开满院子，她总是十分自豪。',py:'Nǎinai rè\'ài yǎng huā, wúlùn tiānqì duōme yánrè, tā dōu jiānchí jiāo shuǐ shī féi; měi dāng xiānyàn de huāduǒ kāimǎn yuànzi, tā zǒngshì shífēn zìháo.',goiY:['热爱','无论……都……','浇水施肥','自豪'],giai:'无论 + 多么 + tính từ, 都…… = dù… đến đâu cũng…; 自豪 chỉ niềm tự hào tích cực (khác 骄傲 có thể mang nghĩa xấu).'}
 ];
 
-// Chiều Trung → Việt — câu của bài khoá
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Trừ phi là những loài hoa cỏ tự biết "phấn đấu", còn không thì Lão Xá không trồng.',zh:'除非是那些自己会奋斗的花草，否则老舍是不养的。',py:'Chúfēi shì nàxiē zìjǐ huì fèndòu de huācǎo, fǒuzé Lǎo Shě shì bù yǎng de.',goiY:['除非……否则…… = trừ phi… nếu không thì…','奋斗 = phấn đấu','养 = trồng, chăm'],giai:'除非 + điều kiện duy nhất，否则 + kết quả phủ định; 是……的 nhấn mạnh thái độ dứt khoát — dịch "còn không thì… không trồng".'},
-  {vi:'Chỉ cần hoa nở là Lão Xá vui rồi, ông hoàn toàn không để tâm hoa nở to hay nhỏ, đẹp hay xấu.',zh:'只要花能开老舍就高兴，他根本不在乎花开得大小好坏。',py:'Zhǐyào huā néng kāi Lǎo Shě jiù gāoxìng, tā gēnběn bú zàihu huā kāi de dàxiǎo hǎohuài.',goiY:['只要……就…… = chỉ cần… là…','根本不 = hoàn toàn không','在乎 = để tâm'],giai:'只要……就…… nêu điều kiện đủ; 大小好坏 là các cặp từ trái nghĩa làm bổ ngữ — dịch "to hay nhỏ, đẹp hay xấu".'},
-  {vi:'Lão Xá kết hợp rất tốt lao động trí óc với lao động chân tay, vì vậy cả thân thể lẫn tinh thần đều được thư giãn.',zh:'老舍把脑力劳动和体力劳动很好地结合起来，因此身心都得到了放松。',py:'Lǎo Shě bǎ nǎolì láodòng hé tǐlì láodòng hěn hǎo de jiéhé qǐlai, yīncǐ shēnxīn dōu dédàole fàngsōng.',goiY:['把 A 和 B 结合起来 = kết hợp A với B','劳动 = lao động','因此 = vì vậy'],giai:'把 A 和 B 结合起来 là câu chữ 把 với bổ ngữ xu hướng 起来 (gộp lại); 因此 dẫn ra kết quả — 身心 dịch "thân tâm / cả thể chất lẫn tinh thần".'},
-  {vi:'Khi viết văn, Lão Xá thường viết vài chục chữ trước, rồi ra sân đi dạo, cầm kéo tỉa cành, hoặc nhặt mấy hòn đá nhỏ về trang trí.',zh:'老舍写作时常常先写几十个字，然后到院子里转转，拿剪刀剪剪枝，或者捡几块石头做装饰。',py:'Lǎo Shě xiězuò shí chángcháng xiān xiě jǐ shí ge zì, ránhòu dào yuànzi li zhuànzhuan, ná jiǎndāo jiǎnjian zhī, huòzhě jiǎn jǐ kuài shítou zuò zhuāngshì.',goiY:['先……然后…… = trước… sau đó…','剪刀 = cái kéo','捡 = nhặt','装饰 = trang trí'],giai:'先……然后…… sắp xếp trình tự hành động; động từ lặp (转转, 剪剪) diễn tả làm nhẹ nhàng, thong thả — dịch "đi dạo", "tỉa tỉa".'},
-  {vi:'Hễ gặp mưa to gió lớn, tình hình khẩn cấp, Lão Xá lại phải phiền cả nhà cùng cứu hoa, mệt đến mỏi lưng đau chân, mồ hôi chảy ròng ròng.',zh:'一旦遇上狂风暴雨，情况紧急，老舍就得劳驾全家人一起抢救花草，累得腰酸腿疼，热汗直流。',py:'Yídàn yùshàng kuángfēng bàoyǔ, qíngkuàng jǐnjí, Lǎo Shě jiù děi láojià quán jiā rén yìqǐ qiǎngjiù huācǎo, lèi de yāo suān tuǐ téng, rè hàn zhí liú.',goiY:['一旦……就…… = một khi… thì…','紧急 = khẩn cấp','劳驾 = làm phiền, nhờ','热汗直流 = mồ hôi chảy ròng ròng'],giai:'直 + V đơn âm tiết (直流) = "không ngừng"; 劳驾 + người + V = nhờ ai làm gì (lịch sự), 抢救 = cứu gấp.'},
-  {vi:'Lão Xá chưa bao giờ than phiền, vì ông cho rằng việc gì cũng phải bỏ công sức trước, nếu không sẽ chẳng có đền đáp, đó chính là chân lý của cuộc sống.',zh:'老舍从不抱怨，因为他认为任何事都要先付出，不然就不会有回报，这就是生活的真理。',py:'Lǎo Shě cóng bú bàoyuàn, yīnwèi tā rènwéi rènhé shì dōu yào xiān fùchū, bùrán jiù bú huì yǒu huíbào, zhè jiù shì shēnghuó de zhēnlǐ.',goiY:['抱怨 = than phiền','不然 = nếu không thì','回报 = sự đền đáp','真理 = chân lý'],giai:'不然 nối điều kiện ngầm "nếu không bỏ công sức"; 这就是…… khái quát lại — 付出 là "bỏ công sức ra", không dịch "trả tiền".'},
-  {vi:'Có loài hoa ưa khô, tưới nhiều nước quá ngược lại sẽ chết; có loài ưa môi trường ẩm ướt thì không thể đặt dưới nắng.',zh:'有的花喜欢干燥，浇水太多反而会死；有的花喜欢潮湿的环境，就不能放在太阳底下。',py:'Yǒu de huā xǐhuan gānzào, jiāo shuǐ tài duō fǎn\'ér huì sǐ; yǒu de huā xǐhuan cháoshī de huánjìng, jiù bù néng fàng zài tàiyáng dǐxia.',goiY:['有的……有的…… = có loài… có loài…','浇水 = tưới nước','反而 = ngược lại','潮湿 = ẩm ướt'],giai:'有的……有的…… đối chiếu hai trường hợp, tách bằng dấu ；; 反而 chỉ kết quả trái với ý định (tưới nhiều để tốt mà lại chết).'},
-  {vi:'Những việc như thay chậu, tỉa cành, bón phân ông càng làm càng thạo; hoa bị bệnh, bị sâu, ông cũng biết nên xử lý thế nào.',zh:'换盆、剪枝、施肥这些活儿他越做越熟练，花生了病、长了虫，他也知道该如何应付了。',py:'Huàn pén, jiǎn zhī, shīféi zhèxiē huór tā yuè zuò yuè shúliàn, huā shēngle bìng, zhǎngle chóng, tā yě zhīdào gāi rúhé yìngfu le.',goiY:['越……越…… = càng… càng…','施肥 = bón phân','熟练 = thành thạo','应付 = ứng phó, xử lý'],giai:'越做越熟练 = "càng làm càng thạo"; 应付 ở đây là "ứng phó, xử lý" (nghĩa tích cực), khác 应付 = làm chiếu lệ.'},
-  {vi:'Lão Xá rất giàu lòng yêu thương, mỗi khi hoa quỳnh nở, ông lại hẹn bạn bè đến ngắm hoa ăn mừng; hoa tách rễ, ông lại đem tặng bạn bè không giữ lại chút nào.',zh:'老舍很有爱心，每当昙花开放，他就约朋友来赏花庆祝；花分了根，他又会毫无保留地送给朋友们。',py:'Lǎo Shě hěn yǒu àixīn, měi dāng tánhuā kāifàng, tā jiù yuē péngyou lái shǎng huā qìngzhù; huā fēnle gēn, tā yòu huì háo wú bǎoliú de sòng gěi péngyoumen.',goiY:['爱心 = lòng yêu thương','昙花 = hoa quỳnh','庆祝 = ăn mừng','毫无保留 = không giữ lại chút nào'],giai:'每当……就…… = "mỗi khi… lại…"; 又 nối thêm một việc làm cùng tinh thần, 毫无保留地 là trạng ngữ "không giữ lại chút nào".'},
-  {vi:'Tuy Lão Xá buồn mất mấy ngày khi những cây hoa cúc bị đè chết, nhưng ông vẫn nói: "Hoa cỏ có cảm ơn tôi hay không thì tôi cũng phải cảm ơn chúng."',zh:'虽然菊花被砸死时老舍悲伤了好几天，但他依然说：“花草感谢我不感谢，反正我要感谢它们。”',py:'Suīrán júhuā bèi zá sǐ shí Lǎo Shě bēishāngle hǎo jǐ tiān, dàn tā yīrán shuō: “Huācǎo gǎnxiè wǒ bù gǎnxiè, fǎnzhèng wǒ yào gǎnxiè tāmen.”',goiY:['菊花 = hoa cúc','砸死 = đè chết','悲伤 = đau buồn','A 不 A，反正…… = dù có… hay không thì…'],giai:'A 不 A，反正…… = "dù có A hay không thì vẫn…" (kết quả không đổi); 虽然……但……依然 nhấn mạnh thái độ không thay đổi dù buồn.'}
+  {vi:'Chỉ cần hoa nở là Lão Xá vui rồi, ông hoàn toàn không để tâm hoa nở to hay nhỏ, đẹp hay xấu.',zh:'只要花能开老舍就高兴，他根本不在乎花开得大小好坏。',py:'Zhǐyào huā néng kāi Lǎo Shě jiù gāoxìng, tā gēnběn bú zàihu huā kāi de dàxiǎo hǎohuài.',goiY:['只要……就…… = chỉ cần… là…','根本不 = hoàn toàn không','在乎 = để tâm'],giai:'根本 + phủ định = hoàn toàn không (bài 35); 在乎 thường dùng trong câu phủ định: 不在乎.'},
+  {vi:'Khi viết văn, Lão Xá thường viết vài chục chữ trước, rồi ra sân đi dạo, cầm kéo tỉa cành, hoặc nhặt mấy hòn đá nhỏ về trang trí.',zh:'老舍写作时常常先写几十个字，然后到院子里转转，拿剪刀剪剪枝，或者捡几块石头做装饰。',py:'Lǎo Shě xiězuò shí chángcháng xiān xiě jǐshí ge zì, ránhòu dào yuànzi li zhuànzhuan, ná jiǎndāo jiǎnjian zhī, huòzhě jiǎn jǐ kuài shítou zuò zhuāngshì.',goiY:['剪刀 = cái kéo','捡 = nhặt','装饰 = đồ trang trí'],giai:'先……然后…… chỉ trình tự; 转转, 剪剪 là động từ lặp lại — làm nhẹ nhàng, thư thả.'},
+  {vi:'Hễ gặp mưa to gió lớn, Lão Xá lại phải phiền cả nhà cùng khẩn cấp cứu hoa, mệt đến mỏi lưng đau chân, mồ hôi chảy ròng ròng.',zh:'一旦碰上狂风暴雨，老舍就得劳驾全家人一起紧急抢救花草，累得腰酸腿疼，热汗直流。',py:'Yídàn pèngshang kuángfēng bàoyǔ, Lǎo Shě jiù děi láojià quán jiā rén yìqǐ jǐnjí qiǎngjiù huācǎo, lèi de yāo suān tuǐ téng, rè hàn zhí liú.',goiY:['暴雨 = mưa to','劳驾 = làm phiền, nhờ','抢救 = cứu gấp','直流 = chảy ròng ròng'],giai:'一旦……就…… = hễ… là…; 直 + V (直流, 直发抖) = cứ… liên tục không ngừng.'},
+  {vi:'Lão Xá chưa bao giờ than phiền, vì ông cho rằng việc gì cũng phải bỏ công sức trước, nếu không sẽ chẳng có đền đáp, đó chính là chân lý của cuộc sống.',zh:'老舍从不抱怨，因为他认为任何事都要先付出，不然就不会有回报，这就是生活的真理。',py:'Lǎo Shě cóng bú bàoyuàn, yīnwèi tā rènwéi rènhé shì dōu yào xiān fùchū, bùrán jiù bú huì yǒu huíbào, zhè jiù shì shēnghuó de zhēnlǐ.',goiY:['不然 = nếu không thì','回报 = sự đền đáp','真理 = chân lý'],giai:'不然 nối vế điều kiện ngầm và hậu quả; 任何……都…… = bất cứ… nào cũng….'},
+  {vi:'Lão Xá rất giàu lòng yêu thương, mỗi khi hoa quỳnh nở, ông lại hẹn bạn bè đến ngắm hoa ăn mừng; hoa tách rễ, ông lại đem tặng bạn bè không giữ lại chút nào.',zh:'老舍很有爱心，每当昙花开放，他就约朋友来赏花庆祝；花分了根，他又会毫无保留地送给朋友们。',py:'Lǎo Shě hěn yǒu àixīn, měi dāng tánhuā kāifàng, tā jiù yuē péngyou lái shǎng huā qìngzhù; huā fēnle gēn, tā yòu huì háowú bǎoliú de sòng gěi péngyoumen.',goiY:['昙花 = hoa quỳnh','庆祝 = ăn mừng','毫无保留 = không giữ lại chút nào'],giai:'每当……就…… = mỗi khi… thì…; 毫无保留地 + V = (làm) hết lòng, không giữ lại.'},
+  {vi:'Tuy Lão Xá buồn mất mấy ngày khi những cây hoa cúc bị đè chết, nhưng ông vẫn nói: "Hoa cỏ có cảm ơn tôi hay không thì tôi cũng phải cảm ơn chúng."',zh:'虽然菊花被砸死时老舍悲伤了好几天，但他依然说：“花草感谢我不感谢，反正我要感谢它们。”',py:'Suīrán júhuā bèi zá sǐ shí Lǎo Shě bēishāngle hǎo jǐ tiān, dàn tā yīrán shuō: “Huācǎo gǎnxiè wǒ bù gǎnxiè, fǎnzhèng wǒ yào gǎnxiè tāmen.”',goiY:['菊花 = hoa cúc','砸 = đè, đập','悲伤 = đau buồn','反正 = dù sao thì'],giai:'A 不 A, 反正…… = dù có… hay không thì…; 依然 = vẫn (văn viết).'}
 ];
 
 // ══════════════════════════════════════════
@@ -1455,30 +1379,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
   sapXep:[
-    {manh:['唯一在乎的人','她是','生命中','我'],
-     dap:'她是我生命中唯一在乎的人。',
-     vn:'Cô ấy là người duy nhất tôi quan tâm trong đời.',
-     giai:'Câu 29 sách bài tập. 她是 + (我生命中唯一在乎的) + 人: định ngữ dài đứng trước 人.'},
-    {manh:['色彩鲜艳的','这次演出','服装','需要设计'],
-     dap:'这次演出需要设计色彩鲜艳的服装。',
-     vn:'Buổi biểu diễn lần này cần thiết kế trang phục có màu sắc tươi sáng.',
-     giai:'Câu 30 sách bài tập. Chủ ngữ 这次演出 → 需要设计 → tân ngữ 色彩鲜艳的服装.'},
-    {manh:['一朵美丽的花','他','剪出了','用剪刀'],
-     dap:'他用剪刀剪出了一朵美丽的花。',
-     vn:'Anh ấy dùng kéo cắt ra một bông hoa đẹp.',
-     giai:'Câu 31 sách bài tập. Chủ ngữ → 用剪刀 (công cụ) → 剪出了 → 一朵美丽的花.'},
-    {manh:['当作','老舍','一种生活乐趣','把养花'],
-     dap:'老舍把养花当作一种生活乐趣。',
-     vn:'Lão Xá coi việc trồng hoa là một thú vui trong cuộc sống.',
-     giai:'Câu của bài khoá: Chủ ngữ + 把 A + 当作 + B.'},
-    {manh:['否则','除非下雨','每天都去跑步','他'],
-     dap:'除非下雨，否则他每天都去跑步。',
-     vn:'Trừ phi trời mưa, nếu không thì ngày nào anh ấy cũng đi chạy bộ.',
-     giai:'除非 + điều kiện đứng đầu, 否则 mở vế kết quả; chủ ngữ 他 đứng sau 否则.'},
-    {manh:['被暴雨','菊花','一百多棵','砸死了'],
-     dap:'菊花被暴雨砸死了一百多棵。',
-     vn:'Hơn một trăm cây hoa cúc bị mưa lớn làm dập chết.',
-     giai:'Câu 被 (ôn HSK 3–4): đối tượng + 被 + tác nhân + V + bổ ngữ + số lượng.'}
+    {manh:['唯一在乎的人','她是','生命中','我'],dap:'她是我生命中唯一在乎的人。',vn:'Cô ấy là người duy nhất tôi quan tâm trong đời.',giai:'Câu 29 sách bài tập. 她是 + (我生命中唯一在乎的) + 人: định ngữ dài đứng trước 人.'},
+    {manh:['色彩鲜艳的','这次演出','服装','需要设计'],dap:'这次演出需要设计色彩鲜艳的服装。',vn:'Buổi biểu diễn lần này cần thiết kế trang phục có màu sắc tươi sáng.',giai:'Câu 30 sách bài tập. Chủ ngữ 这次演出 → 需要设计 → tân ngữ 色彩鲜艳的服装.'},
+    {manh:['捡了起来','他','把地上的垃圾','随手'],dap:'他随手把地上的垃圾捡了起来。',vn:'Anh ấy tiện tay nhặt rác dưới đất lên.',giai:'Chủ ngữ + 随手 + 把 + tân ngữ + V + 了 + bổ ngữ xu hướng (起来).'},
+    {manh:['当作','老舍','一种生活乐趣','把养花'],dap:'老舍把养花当作一种生活乐趣。',vn:'Lão Xá coi việc trồng hoa là một thú vui trong cuộc sống.',giai:'Câu của bài khoá: Chủ ngữ + 把 A + 当作 + B.'},
+    {manh:['否则','除非下雨','每天都去跑步','他'],dap:'除非下雨，否则他每天都去跑步。',vn:'Trừ phi trời mưa, nếu không thì ngày nào anh ấy cũng đi chạy bộ.',giai:'除非 + điều kiện đứng đầu, 否则 mở vế kết quả; chủ ngữ 他 đứng sau 否则.'},
+    {manh:['被暴雨','菊花','一百多棵','砸死了'],dap:'菊花被暴雨砸死了一百多棵。',vn:'Hơn một trăm cây hoa cúc bị mưa lớn làm dập chết.',giai:'Câu 被 (ôn HSK 3–4): đối tượng + 被 + tác nhân + V + bổ ngữ + số lượng.'}
   ]
 };
 
@@ -1488,30 +1394,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (人与自然 — con người và thiên nhiên). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 热爱 · 乐趣 · 鲜艳 · 潮湿 · 暴雨 · 除非 · 反正 · 分享 · 保留.',
   questions:[
-    {q_zh:'描述一个给你留下深刻印象的自然景观，说说你的感受。',
-     q_vn:'Hãy miêu tả một cảnh quan thiên nhiên để lại ấn tượng sâu sắc cho em, nói cảm nhận của em.',
-     hint:'Nói tên nơi, cảnh vật (dùng 鲜艳), cảm nhận (dùng 直 hoặc 身心得到放松)',
-     sample:'去年夏天我去了下龙湾。那里的海水特别蓝，山也很美，到处都是鲜艳的花。我站在船上，高兴得直拍照，身心都得到了放松。',
-     sample_vn:'Mùa hè năm ngoái em đã đến vịnh Hạ Long. Nước biển ở đó đặc biệt xanh, núi cũng rất đẹp, khắp nơi là hoa rực rỡ. Em đứng trên thuyền, vui đến mức chụp ảnh liên tục, thân tâm đều được thư giãn.',
-     note:'描述 = miêu tả: nói cụ thể nơi chốn, màu sắc, âm thanh; 感受 = cảm nhận của bản thân.'},
-    {q_zh:'有人说，大自然和人类就像母子一样，你同意这种说法吗？',
-     q_vn:'Có người nói thiên nhiên và con người giống như mẹ và con, em có đồng ý với cách nói này không?',
-     hint:'Trả lời thẳng 同意 / 不同意, giải thích bằng 不仅……也……',
-     sample:'我同意。大自然不仅给了我们空气、水和食物，也给了我们很多乐趣。就像妈妈照顾孩子一样，大自然一直在照顾我们。',
-     sample_vn:'Em đồng ý. Thiên nhiên không chỉ cho chúng ta không khí, nước và thức ăn, mà còn cho chúng ta rất nhiều niềm vui. Giống như mẹ chăm sóc con, thiên nhiên luôn chăm sóc chúng ta.',
-     note:'Câu hỏi 你同意吗 → mở đầu bằng 我同意 / 我不太同意, rồi đưa lý do.'},
-    {q_zh:'有人认为人类应该尊重大自然，也有人认为人类可以征服大自然，你同意哪种观点？',
-     q_vn:'Có người cho rằng con người nên tôn trọng thiên nhiên, cũng có người cho rằng con người có thể chinh phục thiên nhiên; em đồng ý với quan điểm nào?',
-     hint:'Chọn một quan điểm, dùng 除非……否则…… và ví dụ 暴雨 / 洪水',
-     sample:'我认为人类应该尊重大自然。人类的力量是有限的，暴雨、台风来了，我们只能想办法应付。除非我们保护好环境，否则大自然会“惩罚”我们。',
-     sample_vn:'Em cho rằng con người nên tôn trọng thiên nhiên. Sức mạnh của con người có hạn, mưa lớn, bão đến thì chúng ta chỉ có thể tìm cách ứng phó. Trừ phi chúng ta bảo vệ tốt môi trường, nếu không thiên nhiên sẽ "trừng phạt" chúng ta.',
-     note:'征服 (zhēngfú) = chinh phục. Câu hỏi chọn quan điểm → 我同意第一种观点 / 我认为…….'},
-    {q_zh:'你养过花或者小动物吗？说说你的经验和乐趣。',
-     q_vn:'Em đã từng trồng hoa hay nuôi con vật nhỏ nào chưa? Kể về kinh nghiệm và niềm vui của em.',
-     hint:'Kể một kinh nghiệm (dùng 浇水 / 潮湿), một niềm vui (dùng 乐趣, 分享)',
-     sample:'我养过一盆小花。我发现它不喜欢太潮湿的环境，所以不能天天浇水。每次开花的时候，我都拍照片和朋友分享，这是我最大的乐趣。',
-     sample_vn:'Em từng trồng một chậu hoa nhỏ. Em phát hiện nó không thích môi trường quá ẩm, nên không thể ngày nào cũng tưới. Mỗi lần hoa nở, em đều chụp ảnh chia sẻ với bạn bè, đó là niềm vui lớn nhất của em.',
-     note:'Liên hệ bài khoá: kinh nghiệm trồng hoa của Lão Xá (有的花喜干，就别多浇水).'}
+    {q_zh:'说一个给你留下深刻印象的地方，说说你的感受。',q_vn:'Hãy kể về một nơi để lại cho em ấn tượng sâu sắc và nói cảm nhận của em.',hint:'Nói tên nơi, cảnh vật (dùng 鲜艳), cảm nhận (dùng 直 hoặc 身心得到放松)',sample:'去年春天我去了奶奶的老家。那里的山特别高，水特别干净，到处都是鲜艳的花。我高兴得直拍照，身心都得到了放松。',sample_vn:'Mùa xuân năm ngoái tôi về quê bà nội. Núi ở đó rất cao, nước rất trong, đâu đâu cũng là hoa rực rỡ. Tôi vui đến mức chụp ảnh liên tục, cả thân thể lẫn tinh thần đều được thư giãn.',note:'Kể theo trình tự: đi đâu → thấy gì → cảm thấy thế nào; 直 + V = liên tục, không ngừng.'},
+    {q_zh:'有人说，大自然就像人类的妈妈一样，你同意这个看法吗？',q_vn:'Có người nói, thiên nhiên giống như mẹ của loài người, em có đồng ý không?',hint:'Trả lời thẳng 同意 / 不同意, giải thích bằng 不仅……也……',sample:'我同意。大自然不仅给了我们空气、水和食物，也给了我们很多乐趣。就像妈妈照顾孩子一样，大自然一直在照顾我们。',sample_vn:'Tôi đồng ý. Thiên nhiên không chỉ cho chúng ta không khí, nước và thức ăn, mà còn cho chúng ta nhiều niềm vui. Giống như mẹ chăm sóc con, thiên nhiên luôn chăm sóc chúng ta.',note:'就像……一样 = giống như…; dùng phép so sánh để làm rõ ý của câu hỏi.'},
+    {q_zh:'有人认为人类应该尊重大自然，也有人认为人类可以改变大自然，你同意哪种看法？',q_vn:'Có người cho rằng con người nên tôn trọng thiên nhiên, cũng có người cho rằng con người có thể thay đổi thiên nhiên. Em đồng ý với quan điểm nào?',hint:'Chọn một quan điểm, dùng 除非……否则…… và ví dụ 暴雨 / 洪水',sample:'我认为人类应该尊重大自然。人的力量并不大，暴雨、台风来了，我们只能想办法应付。除非我们保护好环境，否则大自然会给我们带来更大的麻烦。',sample_vn:'Tôi cho rằng con người nên tôn trọng thiên nhiên. Sức người không lớn, mưa bão đến thì chúng ta chỉ có thể tìm cách đối phó. Trừ khi chúng ta bảo vệ tốt môi trường, nếu không thiên nhiên sẽ mang đến cho chúng ta rắc rối lớn hơn.',note:'尊重 + 大自然 / 意见 (bài 32); 应付 = đối phó với tình huống khó.'},
+    {q_zh:'你养过花或者小动物吗？说说你的经验和乐趣。',q_vn:'Em đã từng trồng hoa hoặc nuôi con vật nhỏ chưa? Hãy kể kinh nghiệm và niềm vui của em.',hint:'Kể một kinh nghiệm (dùng 浇水 / 潮湿), một niềm vui (dùng 乐趣, 分享)',sample:'我养过一盆小花。我发现它不喜欢太潮湿的环境，所以不能天天浇水。每次开花的时候，我都拍照片和朋友分享，养花的乐趣就在这里。',sample_vn:'Tôi từng trồng một chậu hoa nhỏ. Tôi phát hiện nó không thích môi trường quá ẩm nên không thể ngày nào cũng tưới. Mỗi lần hoa nở, tôi đều chụp ảnh chia sẻ với bạn bè, niềm vui trồng hoa là ở đó.',note:'Kinh nghiệm (经验) + niềm vui (乐趣) — trả lời đủ hai ý của câu hỏi.'}
   ]
 };
 
@@ -1602,45 +1488,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn rủ em cuối tuần đi xem phim, nhưng em sắp thi.',
-     a:{sp:'Bạn',zh:'这个周末你陪我去看场电影，行吗？',vn:'Cuối tuần này cậu đi xem phim với mình được không?'},
-     need:['Dùng 除非','Đặt điều kiện để em đồng ý đi'],
-     sample:'除非你先陪我复习完数学，否则我是不会去的。',
-     samplePy:'Chúfēi nǐ xiān péi wǒ fùxí wán shùxué, fǒuzé wǒ shì bú huì qù de.',
-     sampleVn:'Trừ phi cậu ôn xong môn Toán với mình trước, nếu không thì mình không đi đâu.',
-     tip:'Bài 练一练 của sách: 想让我答应你，除非……. 除非 + 否则 / 才.'},
-
-    {scene:'Chị gái chê chiếc áo em mới mua.',
-     a:{sp:'Chị gái',zh:'这是今年最流行的颜色？你真没眼力。',vn:'Đây là màu thịnh hành nhất năm nay à? Em đúng là chẳng có mắt nhìn.'},
-     need:['Dùng 反正','Khẳng định em vẫn thích chiếc áo'],
-     sample:'流行不流行我不管，反正我喜欢，穿着也舒服。',
-     samplePy:'Liúxíng bu liúxíng wǒ bù guǎn, fǎnzhèng wǒ xǐhuan, chuānzhe yě shūfu.',
-     sampleVn:'Thịnh hành hay không em mặc kệ, dù sao em thích, mặc cũng thoải mái.',
-     tip:'反正 nêu kết quả không đổi dù tình huống khác nhau (注释 3); ôn 不管.'},
-
-    {scene:'Bạn hỏi em hôm qua đi leo núi có mệt không.',
-     a:{sp:'Bạn',zh:'昨天爬山累不累？',vn:'Hôm qua leo núi có mệt không?'},
-     need:['Dùng 直','Tả em mệt / đổ mồ hôi thế nào'],
-     sample:'太累了！爬到山顶的时候，我热汗直流，腿也直发抖。',
-     samplePy:'Tài lèi le! Pádào shāndǐng de shíhou, wǒ rè hàn zhí liú, tuǐ yě zhí fādǒu.',
-     sampleVn:'Mệt lắm! Lúc leo lên đến đỉnh, mồ hôi chảy ròng ròng, chân cũng run lẩy bẩy.',
-     tip:'直 + V đơn âm tiết: liên tục không ngừng (热汗直流 — câu của bài khoá).'},
-
-    {scene:'Em đi du lịch một tuần, nhờ hàng xóm trông giúp chậu hoa.',
-     a:{sp:'Hàng xóm',zh:'你的花要怎么照顾啊？我可没养过花。',vn:'Hoa của cháu phải chăm thế nào? Bác chưa trồng hoa bao giờ đâu.'},
-     need:['Dùng 浇 và 潮湿','Hướng dẫn cách chăm hoa'],
-     sample:'这盆花喜欢潮湿的环境，您每天给它浇一次水就行，别放在太阳地里。',
-     samplePy:'Zhè pén huā xǐhuan cháoshī de huánjìng, nín měi tiān gěi tā jiāo yí cì shuǐ jiù xíng, bié fàng zài tàiyáng dì li.',
-     sampleVn:'Chậu hoa này ưa môi trường ẩm, mỗi ngày bác tưới cho nó một lần là được, đừng để ngoài nắng.',
-     tip:'Dùng lại kinh nghiệm trồng hoa của Lão Xá; 给 + N + 浇水.'},
-
-    {scene:'Lớp em thắng giải bóng rổ của trường, lớp trưởng hỏi ý kiến.',
-     a:{sp:'Lớp trưởng',zh:'我们赢了！大家说怎么办？',vn:'Chúng ta thắng rồi! Mọi người nói nên làm gì đây?'},
-     need:['Dùng 庆祝 và 分享','Đề xuất một hoạt động'],
-     sample:'我们晚上一起去吃火锅庆祝一下吧！再把比赛的照片分享给老师和家长。',
-     samplePy:'Wǒmen wǎnshang yìqǐ qù chī huǒguō qìngzhù yíxià ba! Zài bǎ bǐsài de zhàopiàn fēnxiǎng gěi lǎoshī hé jiāzhǎng.',
-     sampleVn:'Tối nay chúng ta cùng đi ăn lẩu ăn mừng đi! Rồi chia sẻ ảnh trận đấu cho thầy cô và phụ huynh.',
-     tip:'庆祝 + 一下; 把 + N + 分享给 + ai.'}
+    {scene:'Bạn rủ em cuối tuần đi xem phim, nhưng em sắp thi.',a:{sp:'Bạn',zh:'这个周末你陪我去看场电影，行吗？',vn:'Cuối tuần này cậu đi xem phim với tớ được không?'},need:['Dùng 除非','Đặt điều kiện để em đồng ý đi'],sample:'除非你先陪我复习完数学，否则我是不会去的。',samplePy:'Chúfēi nǐ xiān péi wǒ fùxí wán shùxué, fǒuzé wǒ shì bú huì qù de.',sampleVn:'Trừ khi cậu ôn xong toán với tớ trước, không thì tớ không đi đâu.',tip:'除非 A，否则 B: A là điều kiện duy nhất (điểm ngữ pháp 1).'},
+    {scene:'Chị gái chê chiếc áo em mới mua.',a:{sp:'Chị gái',zh:'这是今年最流行的颜色？一点儿也不好看。',vn:'Đây là màu thịnh hành nhất năm nay à? Chẳng đẹp tí nào.'},need:['Dùng 反正','Khẳng định em vẫn thích chiếc áo'],sample:'流行不流行我不管，反正我喜欢，穿着也舒服。',samplePy:'Liúxíng bu liúxíng wǒ bù guǎn, fǎnzhèng wǒ xǐhuan, chuānzhe yě shūfu.',sampleVn:'Thịnh hành hay không em không quan tâm, dù sao em thích, mặc lại thoải mái.',tip:'A 不 A……，反正…… = dù thế nào thì… (điểm ngữ pháp 3).'},
+    {scene:'Bạn hỏi em hôm qua đi leo núi có mệt không.',a:{sp:'Bạn',zh:'昨天爬山累不累？',vn:'Hôm qua leo núi có mệt không?'},need:['Dùng 直','Tả em mệt / đổ mồ hôi thế nào'],sample:'太累了！走到山顶的时候，我热汗直流，腿也直发抖。',samplePy:'Tài lèi le! Zǒudào shāndǐng de shíhou, wǒ rè hàn zhí liú, tuǐ yě zhí fādǒu.',sampleVn:'Mệt lắm! Lúc lên đến đỉnh núi, mồ hôi tớ chảy ròng ròng, chân cũng run lẩy bẩy.',tip:'直 + V = cứ… liên tục không ngừng (điểm ngữ pháp 2).'},
+    {scene:'Em đi du lịch một tuần, nhờ hàng xóm trông giúp chậu hoa.',a:{sp:'Hàng xóm',zh:'你的花要怎么照顾啊？我可没养过花。',vn:'Hoa của cháu phải chăm thế nào? Bác chưa trồng hoa bao giờ.'},need:['Dùng 浇 và 潮湿','Hướng dẫn cách chăm hoa'],sample:'这盆花喜欢潮湿的环境，您每天给它浇一次水就行，别放在太阳地里。',samplePy:'Zhè pén huā xǐhuan cháoshī de huánjìng, nín měi tiān gěi tā jiāo yí cì shuǐ jiù xíng, bié fàng zài tàiyáng dì li.',sampleVn:'Chậu hoa này ưa môi trường ẩm, bác mỗi ngày tưới một lần là được, đừng để ngoài nắng.',tip:'Nhờ người lớn tuổi phải dùng 您; 浇 + 水 / 花.'},
+    {scene:'Lớp em thắng giải bóng rổ của trường, lớp trưởng hỏi ý kiến.',a:{sp:'Lớp trưởng',zh:'我们赢了！大家说怎么办？',vn:'Chúng ta thắng rồi! Mọi người nói xem làm gì đây?'},need:['Dùng 庆祝 và 分享','Đề xuất một hoạt động'],sample:'我们晚上一起去吃火锅庆祝一下吧！再把比赛的照片分享给老师和家长。',samplePy:'Wǒmen wǎnshang yìqǐ qù chī huǒguō qìngzhù yíxià ba! Zài bǎ bǐsài de zhàopiàn fēnxiǎng gěi lǎoshī hé jiāzhǎng.',sampleVn:'Tối nay cả lớp đi ăn lẩu ăn mừng đi! Rồi chia sẻ ảnh trận đấu cho thầy cô và phụ huynh.',tip:'庆祝 + sự kiện; 把……分享给 + người.'}
   ]
 };
 
@@ -1651,29 +1503,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Trên xe buýt đông người, em muốn nhờ một bác lớn tuổi tránh đường để xuống xe.',
-     a:'劳驾，请让一下，我下车。',b:'让开，我要下车！',better:'a',
-     why:'Nhờ người lạ, nhất là người lớn tuổi, cần lịch sự: 劳驾，请让一下. Câu b cộc lốc, dễ gây khó chịu.'},
-
-    {scene:'Em viết bài giới thiệu nhà văn Lão Xá cho báo tường của trường.',
-     a:'老舍一生酷爱养花，是一个热爱生活、热爱大自然的人。',b:'老舍特喜欢种花，觉得生活挺好玩儿的。',better:'a',
-     why:'Bài viết giới thiệu cần văn phong trang trọng: 一生酷爱, 热爱生活. Câu b (特, 挺好玩儿的) quá khẩu ngữ.'},
-
-    {scene:'Bạn thân khoe điểm thi cao, em trêu bạn.',
-     a:'你别吹了，不就是比我多考了两分吗？',b:'请您不要过于骄傲，您的成绩仅比我高两分。',better:'a',
-     why:'Nói đùa với bạn thân dùng khẩu ngữ tự nhiên: 别吹了, 不就是……吗. Câu b dùng 您, 过于, 仅 — trang trọng đến mức lạ lùng.'},
-
-    {scene:'Trung tâm khí tượng phát thông báo trên truyền hình.',
-     a:'今天下午将有暴雨，请市民做好防范准备，尽量减少外出。',b:'下午要下大雨了，大家别出门啊！',better:'a',
-     why:'Thông báo chính thức: 将有暴雨, 做好防范准备, 尽量减少外出. Câu b giống lời nhắc trong gia đình.'},
-
-    {scene:'Em nhắn tin cho mẹ lúc mẹ đi vắng.',
-     a:'妈，我已经给阳台上的花浇过水了，您放心吧！',b:'母亲大人：阳台花卉已按时浇灌完毕，特此告知。',better:'a',
-     why:'Nhắn tin cho mẹ nói tự nhiên, thân mật. Câu b (花卉, 浇灌完毕, 特此告知) như công văn, nghe buồn cười.'},
-
-    {scene:'Người dẫn chương trình phát biểu trong lễ kỷ niệm của trường.',
-     a:'今天，我们在这里隆重庆祝学校成立五十周年。',b:'今天咱们一块儿给学校过个五十岁生日吧。',better:'a',
-     why:'Lễ kỷ niệm trang trọng: 隆重庆祝……周年. Câu b (咱们一块儿, 过个生日) chỉ hợp khi nói vui.'}
+    {scene:'Trên xe buýt đông người, em muốn nhờ một bác lớn tuổi tránh đường để xuống xe.',a:'劳驾，请让一下，我下车。',b:'让开，我要下车！',better:'a',why:'Nhờ người lạ, nhất là người lớn tuổi, phải lịch sự: 劳驾, 请让一下. Câu b như ra lệnh.'},
+    {scene:'Em viết bài giới thiệu nhà văn Lão Xá cho báo tường của trường.',a:'老舍一生热爱养花，是一个热爱生活、热爱大自然的人。',b:'老舍很喜欢种花，觉得生活挺好玩儿的。',better:'a',why:'Bài viết giới thiệu cần văn viết: 一生, 热爱. Câu b là khẩu ngữ (挺好玩儿的).'},
+    {scene:'Bạn thân khoe điểm thi cao, em trêu bạn.',a:'你别吹了，不就是比我多考了两分吗？',b:'请您不要太骄傲，您的成绩只比我高两分。',better:'a',why:'Trêu bạn thân dùng khẩu ngữ: 别吹了, 不就是……吗？ Câu b dùng 您, 请 với bạn thân nghe như mỉa mai.'},
+    {scene:'Trung tâm khí tượng phát thông báo trên truyền hình.',a:'今天下午会有暴雨，请市民尽量减少外出。',b:'下午要下大雨了，大家别出门啊！',better:'a',why:'Thông báo chính thức dùng văn viết: 暴雨, 请市民, 尽量减少外出. Câu b như người nhà dặn nhau.'},
+    {scene:'Em nhắn tin cho mẹ lúc mẹ đi vắng.',a:'妈妈，花我已经浇过水了，不用担心啦！',b:'妈妈您好：家里的花草今天已经按时浇过水了，现在向您报告一下。',better:'a',why:'Nhắn tin cho mẹ dùng lời thân mật. Câu b như báo cáo công việc gửi cấp trên.'},
+    {scene:'Người dẫn chương trình phát biểu trong lễ kỷ niệm của trường.',a:'今天，我们在这里热烈庆祝学校成立五十周年。',b:'今天咱们一块儿给学校过个五十岁生日吧。',better:'a',why:'Phát biểu trong lễ kỷ niệm dùng văn viết, trang trọng: 热烈庆祝, 成立……周年. Câu b quá suồng sã.'}
   ]
 };
 

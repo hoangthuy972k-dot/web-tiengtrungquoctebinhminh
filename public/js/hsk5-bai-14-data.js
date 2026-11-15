@@ -1297,93 +1297,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP CỤM — theo bảng 词语搭配 của sách (tr. 130–131)
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
-  {left:'具备', right:'功能'},
-  {left:'创造', right:'奇迹'},
-  {left:'产生', right:'矛盾'},
-  {left:'日常', right:'用语'},
-  {left:'与世无争的', right:'日子'},
-  {left:'广泛', right:'调查'},
-  {left:'组合', right:'起来'},
-  {left:'兴趣', right:'广泛'},
-  {left:'准备', right:'充分'},
-  {left:'接待', right:'客人'},
-  {left:'关闭', right:'大门'},
-  {left:'种', right:'竹子'},
-  {left:'用大盆养', right:'金鱼'},
-  {left:'令人', right:'感动'},
-  {left:'跟邻居', right:'打交道'},
-  {left:'尊重', right:'长辈'},
-  {left:'劳动', right:'人民'},
-  {left:'东西', right:'厢房'},
-  {left:'封闭式的', right:'小环境'},
-  {left:'浓浓的', right:'情感'}
+  {left:'具备',right:'功能'},
+  {left:'创造',right:'奇迹'},
+  {left:'产生',right:'矛盾'},
+  {left:'日常',right:'生活'},
+  {left:'准备',right:'充分'},
+  {left:'接待',right:'客人'},
+  {left:'关闭',right:'大门'},
+  {left:'种',right:'竹子'},
+  {left:'用大盆养',right:'金鱼'},
+  {left:'令人',right:'感动'},
+  {left:'跟邻居',right:'打交道'},
+  {left:'劳动',right:'人民'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'北京的', blank:'四合院', post:'十分具有代表性。', hint:'(tứ hợp viện)', ans:'四合院'},
-  {pre:'四合院是中国华北地区', blank:'民居', post:'中的一种组合建筑形式。', hint:'(nhà ở dân gian)', ans:'民居'},
-  {pre:'这本书是由三个部分', blank:'组合', post:'起来的。', hint:'(ghép, kết hợp)', ans:'组合'},
-  {pre:'这就是我们家乡的标志性', blank:'建筑', post:'。', hint:'(công trình kiến trúc)', ans:'建筑'},
-  {pre:'相对而言，我觉得功能比', blank:'形式', post:'重要。', hint:'(hình thức)', ans:'形式'},
-  {pre:'很多时候，烦恼是自己找来的，这就是', blank:'所谓', post:'的“自寻烦恼”。', hint:'(cái gọi là)', ans:'所谓',exp:'所谓的… = cái gọi là…; dùng để dẫn ra một khái niệm, cách nói.'},
-  {pre:'四面房屋围在一起，中间形成一个', blank:'方', post:'形的院子。', hint:'(vuông)', ans:'方'},
-  {pre:'这个问题需要进行', blank:'广泛', post:'调查，然后才能做出决定。', hint:'(rộng rãi)', ans:'广泛'},
-  {pre:'这台空调功能不错，但是', blank:'样式', post:'不太适合我们家的装修风格。', hint:'(kiểu dáng)', ans:'样式'},
-  {pre:'在各种各样的四合院中，北京四合院可以', blank:'代表', post:'其主要特点。', hint:'(đại diện)', ans:'代表'},
-  {pre:'有钱人家的四合院，', blank:'通常', post:'是由好几座四合院并列组成的。', hint:'(thông thường)', ans:'通常',exp:'通常 = thông thường, thường thì (nói quy luật chung).'},
-  {pre:'这次比赛，他们俩', blank:'并列', post:'第一。', hint:'(ngang hàng, đồng)', ans:'并列'},
-  {pre:'手机已经成为人们生活中的重要', blank:'组成', post:'部分。', hint:'(cấu thành)', ans:'组成'},
-  {pre:'正房一般包括', blank:'长辈', post:'的卧室和客厅。', hint:'(bậc bề trên)', ans:'长辈'},
-  {pre:'现在的手机都', blank:'具备', post:'很多功能，不再只是个打电话的工具。', hint:'(có đủ)', ans:'具备'},
-  {pre:'刚开始学中文的时候，我学的主要是一些', blank:'日常', post:'用语。', hint:'(hằng ngày)', ans:'日常'},
-  {pre:'这是我第一次负责', blank:'接待', post:'这么大的一个代表团。', hint:'(tiếp đón)', ans:'接待'},
-  {pre:'这种手表有测量心跳的', blank:'功能', post:'。', hint:'(chức năng)', ans:'功能'},
-  {pre:'院子的两边是东西', blank:'厢房', post:'，是晚辈们生活的地方。', hint:'(nhà chái)', ans:'厢房'},
-  {pre:'下课的时候，不要在', blank:'走廊', post:'里跑。', hint:'(hành lang)', ans:'走廊'},
-  {pre:'院子是十分理想的室外生活', blank:'空间', post:'。', hint:'(không gian)', ans:'空间'},
-  {pre:'爷爷在院子里', blank:'种', post:'了很多菜。', hint:'(trồng)', ans:'种'},
-  {pre:'熊猫最爱吃', blank:'竹子', post:'。', hint:'(tre, trúc)', ans:'竹子'},
-  {pre:'猫享受独处的快乐，而狗', blank:'则', post:'是希望和别人分享快乐。', hint:'(còn … thì)', ans:'则',exp:'A…，而B则… = A thì…, còn B thì… (văn viết, đối chiếu hai đối tượng).'},
-  {pre:'有的人家喜欢用大盆养', blank:'金鱼', post:'。', hint:'(cá vàng)', ans:'金鱼'},
-  {pre:'他三年就打下这么大一片市场，真是', blank:'创造', post:'了一个奇迹。', hint:'(tạo ra)', ans:'创造'},
-  {pre:'姥姥养花、养鸟，生活很有', blank:'情趣', post:'。', hint:'(thú vị, có gu)', ans:'情趣'},
-  {pre:'他坚持锻炼，', blank:'因而', post:'身体很好。', hint:'(do đó)', ans:'因而',exp:'因而 = do đó, vì thế (văn viết), nối kết quả với nguyên nhân.'},
-  {pre:'考试开始前，请大家', blank:'关闭', post:'手机。', hint:'(đóng, tắt)', ans:'关闭'},
-  {pre:'住在四合院里的人不常与周围的邻居', blank:'打交道', post:'。', hint:'(giao thiệp)', ans:'打交道'},
-  {pre:'在小院里，一家人过着与世无争的', blank:'日子', post:'。', hint:'(cuộc sống, ngày tháng)', ans:'日子'},
-  {pre:'考试前他做了', blank:'充分', post:'的准备，所以一点儿也不紧张。', hint:'(đầy đủ)', ans:'充分'},
-  {pre:'他的故事', blank:'令', post:'人感动。', hint:'(khiến)', ans:'令',exp:'令 + người + cảm xúc = khiến ai… (văn viết, như 让/使): 令人感动.'},
-  {pre:'在国外听到有人说越南语，我感到特别', blank:'亲切', post:'。', hint:'(thân thương)', ans:'亲切'},
-  {pre:'大杂院的住户多为普通', blank:'劳动', post:'人民。', hint:'(lao động)', ans:'劳动'},
-  {pre:'老人家里的两个儿子常常闹', blank:'矛盾', post:'。', hint:'(mâu thuẫn)', ans:'矛盾'},
-  {pre:'今天雾很', blank:'浓', post:'，对面的建筑都看不清了。', hint:'(dày, đậm)', ans:'浓'},
-  {pre:'四合院主要分布在中国', blank:'华北', post:'地区。', hint:'(Hoa Bắc)', ans:'华北'}
+  {pre:'这座',blank:'建筑',post:'已经有一百多年的历史了。',hint:'(công trình kiến trúc)',ans:'建筑',exp:'建筑 = công trình kiến trúc (danh từ); lượng từ 座: 一座建筑.'},
+  {pre:'这件衣服的',blank:'样式',post:'很新，颜色也好看。',hint:'(kiểu dáng)',ans:'样式',exp:'样式 = kiểu dáng, mẫu: 衣服的样式, 房子的样式.'},
+  {pre:'在越南，吃饭的时候要先请',blank:'长辈',post:'动筷子。',hint:'(bề trên, người lớn tuổi trong nhà)',ans:'长辈',exp:'长辈 = bậc cha chú, người lớn tuổi hơn trong gia đình; trái nghĩa 晚辈.'},
+  {pre:'教室外面的',blank:'走廊',post:'上站着几个学生。',hint:'(hành lang)',ans:'走廊',exp:'走廊 = hành lang; 在走廊上.'},
+  {pre:'房间太小了，放了一张大桌子以后就没有什么',blank:'空间',post:'了。',hint:'(không gian, chỗ trống)',ans:'空间',exp:'空间 = không gian, khoảng trống để dùng: 没有空间, 生活空间.'},
+  {pre:'熊猫最喜欢吃',blank:'竹子',post:'。',hint:'(cây trúc, tre)',ans:'竹子',exp:'竹子 = cây trúc/tre; 种竹子 = trồng trúc.'},
+  {pre:'他们俩性格不一样，经常发生',blank:'矛盾',post:'。',hint:'(mâu thuẫn)',ans:'矛盾',exp:'发生矛盾 / 有矛盾 = xảy ra mâu thuẫn, xích mích.'},
+  {pre:'这杯咖啡太',blank:'浓',post:'了，我喝了晚上会睡不着。',hint:'(đậm, đặc)',ans:'浓',exp:'浓 = đậm, đặc (trà, cà phê, sương mù, tình cảm): 浓茶, 浓浓的感情.'},
+  {pre:'第一次见面，王老师就热情地跟我打招呼，还问我生活上有没有困难，让我感到特别',blank:'亲切',post:'。',hint:'(thân thiết, gần gũi)',ans:'亲切',exp:'亲切 = gần gũi, ấm áp khiến người khác thấy thân quen.'},
+  {pre:'这个手机的',blank:'功能',post:'很多，可以拍照、上网、看电影。',hint:'(chức năng)',ans:'功能',exp:'功能 = chức năng, công năng của đồ vật: 具备……功能.'},
+  {pre:'爷爷不工作了以后，每天写写字、钓钓鱼，日子过得很有',blank:'情趣',post:'。',hint:'(cái thú, sự thú vị)',ans:'情趣',exp:'有情趣 = có thú vui, cuộc sống không nhàm chán: 生活情趣.'},
+  {pre:'这次比赛他们两个人得分一样，',blank:'并列',post:'第一名。',hint:'(đứng ngang hàng, đồng hạng)',ans:'并列',exp:'并列 = đặt song song, ngang hàng: 并列第一 = đồng hạng nhất.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (所谓 · 则 · 为……所…… · 起) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['这', '就是', '所谓的', '“自寻烦恼”', '。'], ans:'这就是所谓的“自寻烦恼”。', audio:'这就是所谓的“自寻烦恼”。'},
-  {words:['所谓', '四合', '，', '“四”', '指', '东、西、南、北', '四面', '。'], ans:'所谓四合，“四”指东、西、南、北四面。', audio:'所谓四合，“四”指东、西、南、北四面。'},
-  {words:['北京的冬天', '，', '有风', '则', '寒', '，', '无风', '则', '暖', '。'], ans:'北京的冬天，有风则寒，无风则暖。', audio:'北京的冬天，有风则寒，无风则暖。'},
-  {words:['猫', '享受', '独处的快乐', '，', '而', '狗', '则', '希望', '和别人分享快乐', '。'], ans:'猫享受独处的快乐，而狗则希望和别人分享快乐。', audio:'猫享受独处的快乐，而狗则希望和别人分享快乐。'},
-  {words:['大家', '都', '为', '他的精神', '所', '感动', '。'], ans:'大家都为他的精神所感动。', audio:'大家都为他的精神所感动。'},
-  {words:['四合院', '最', '为', '人们', '所', '喜爱', '。'], ans:'四合院最为人们所喜爱。', audio:'四合院最为人们所喜爱。'},
-  {words:['他', '拉起', '我的手', '，', '走', '进了', '教室', '。'], ans:'他拉起我的手，走进了教室。', audio:'他拉起我的手，走进了教室。'},
-  {words:['只要', '关闭起', '大门', '，', '四合院内', '便', '形成', '一个', '封闭式的', '小环境', '。'], ans:'只要关闭起大门，四合院内便形成一个封闭式的小环境。', audio:'只要关闭起大门，四合院内便形成一个封闭式的小环境。'},
-  {words:['我们', '要', '建立起', '一套', '有效的', '制度', '。'], ans:'我们要建立起一套有效的制度。', audio:'我们要建立起一套有效的制度。'},
-  {words:['周末', '他', '通常', '去', '父母家', '过', '。'], ans:'周末他通常去父母家过。', audio:'周末他通常去父母家过。', alt:['他周末通常去父母家过。']},
-  {words:['我们班', '由', '三十个', '学生', '组成', '。'], ans:'我们班由三十个学生组成。', audio:'我们班由三十个学生组成。'},
-  {words:['我', '不常', '跟', '邻居', '打交道', '。'], ans:'我不常跟邻居打交道。', audio:'我不常跟邻居打交道。'},
-  {words:['这次比赛的', '结果', '令', '大家', '都', '很', '满意', '。'], ans:'这次比赛的结果令大家都很满意。', audio:'这次比赛的结果令大家都很满意。'},
-  {words:['现在的', '手机', '都', '具备', '很多', '功能', '。'], ans:'现在的手机都具备很多功能。', audio:'现在的手机都具备很多功能。'}
+  {words:['所谓','“学好汉语”','，','不只是','会说','，','还要','会写','。'],ans:'所谓“学好汉语”，不只是会说，还要会写。',audio:'所谓“学好汉语”，不只是会说，还要会写。'},
+  {words:['妈妈','负责','做饭','，','爸爸','则','负责','洗碗','。'],ans:'妈妈负责做饭，爸爸则负责洗碗。',audio:'妈妈负责做饭，爸爸则负责洗碗。'},
+  {words:['这个','故事','为','很多人','所','熟悉','。'],ans:'这个故事为很多人所熟悉。',audio:'这个故事为很多人所熟悉。'},
+  {words:['同学们','一见面','就','讲起了','放假时的','经历','。'],ans:'同学们一见面就讲起了放假时的经历。',audio:'同学们一见面就讲起了放假时的经历。'},
+  {words:['他的','话','令','我','很','感动','。'],ans:'他的话令我很感动。',audio:'他的话令我很感动。'},
+  {words:['他','很喜欢','跟人','打交道','，','朋友','特别多','。'],ans:'他很喜欢跟人打交道，朋友特别多。',audio:'他很喜欢跟人打交道，朋友特别多。'},
+  {words:['长时间','坐在','封闭的','房间里','学习','，','很容易','头疼','。'],ans:'长时间坐在封闭的房间里学习，很容易头疼。',audio:'长时间坐在封闭的房间里学习，很容易头疼。'},
+  {words:['这次','考试的','形式','跟以前','不一样','，','大家','都有点儿','紧张','。'],ans:'这次考试的形式跟以前不一样，大家都有点儿紧张。',audio:'这次考试的形式跟以前不一样，大家都有点儿紧张。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1391,54 +1352,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'正房是具备日常____、接待客人等功能的地方。', opts:['起居', '起来', '居民', '日子'], ans:0, exp:'日常起居 = sinh hoạt thường ngày (ăn ở, nghỉ ngơi) → 起居. 起来 là bổ ngữ; 居民 là cư dân; 日子 là cuộc sống, không đi sau 日常.'},
-  {wrong:'认识他的人，没有人不____他认真的工作态度所感动。', opts:['为', '对', '让', '给'], ans:0, exp:'Khung cố định 为……所…… (văn viết, nghĩa như 被). 对, 让, 给 không kết hợp với 所 + V.'},
-  {wrong:'只要关闭起大门，四合院内便形成一个____式的小环境。', opts:['封闭', '关闭', '亲切', '方'], ans:0, exp:'封闭式 = kiểu khép kín là cách nói cố định. 关闭 là hành động đóng cửa, không nói ✗关闭式.'},
-  {wrong:'大杂院的住户多为普通劳动____。', opts:['人民', '人们', '人家', '人物'], ans:0, exp:'劳动人民 (nhân dân lao động) là cụm cố định. 人们 = người ta nói chung; 人家 = hộ gia đình; 人物 = nhân vật.'},
-  {wrong:'在____情况下，火车是不会晚点的。', opts:['通常', '常常', '经常', '往往'], ans:0, exp:'Cần một từ làm ĐỊNH NGỮ cho 情况 → chỉ 通常 (tính từ). 常常, 经常, 往往 đều là phó từ.'},
-  {wrong:'她____在家帮妈妈干活儿。', opts:['常常', '通常的', '日常', '平常的'], ans:0, exp:'Đứng trước động từ, nói việc lặp lại nhiều lần → phó từ 常常. 通常的, 平常的 có 的 chỉ đứng trước danh từ; 日常 cũng chỉ làm định ngữ.'},
-  {wrong:'我们班由三十个学生____。', opts:['组成', '组合', '并列', '具备'], ans:0, exp:'由……组成 là khung cố định (gồm có). 组合 cần bổ ngữ phía sau (组合起来); 并列, 具备 không hợp nghĩa.'},
-  {wrong:'他把几个旧零件____到一起，做成了一台收音机。', opts:['组合', '组成', '创造', '代表'], ans:0, exp:'Nhấn quá trình GHÉP bộ phận + bổ ngữ 到一起 → 组合. 组成 không đi với 到一起.'},
-  {wrong:'是那位工程师____我把机器安装在这儿。', opts:['让', '令', '被', '为'], ans:0, exp:'Bảo ai làm một việc cụ thể → 让. 令 chỉ dùng cho cảm xúc (令人感动); 被, 为 là bị động, sai nghĩa.'},
-  {wrong:'他的兴趣爱好非常____，跟谁都能聊到一块儿。', opts:['广泛', '广大', '充分', '宽'], ans:0, exp:'兴趣 / 爱好 + 广泛 (theo 词语搭配 của sách). 广大 đi với diện tích, quần chúng (广大群众); 充分 đi với 准备, 理由.'},
-  {wrong:'他坚持锻炼，____身体很好。', opts:['因而', '反而', '然而', '但是'], ans:0, exp:'Vế sau là KẾT QUẢ của vế trước → 因而. 反而 (ngược lại), 然而 / 但是 (nhưng) đều mang ý trái ngược.'},
-  {wrong:'他已经____了当老师的条件。', opts:['具备', '准备', '组成', '接待'], ans:0, exp:'具备 + 条件 = có đủ điều kiện. 准备 là chuẩn bị (không nói 准备了条件 với nghĩa "có đủ"); 组成, 接待 không hợp.'},
-  {wrong:'父母努力工作，为我们____了很好的学习条件。', opts:['创造', '制造', '建筑', '组合'], ans:0, exp:'创造条件 = tạo điều kiện. 制造 dùng cho sản phẩm, hoặc việc xấu (制造麻烦); 建筑, 组合 không đi với 条件.'},
-  {wrong:'我们要____利用课余时间多读书。', opts:['充分', '充满', '广泛', '浓'], ans:0, exp:'充分利用 = tận dụng triệt để. 充满 là động từ "tràn đầy" (充满希望); 广泛, 浓 không bổ nghĩa cho 利用.'},
-  {wrong:'那位老人很____，总是笑着跟我们打招呼。', opts:['亲切', '亲人', '热闹', '封闭'], ans:0, exp:'Tả thái độ gần gũi, ấm áp của một người → 亲切. 亲人 là danh từ (người thân); 热闹 tả nơi chốn đông vui; 封闭 là khép kín.'},
-  {wrong:'去还是不去？我心里____极了。', opts:['矛盾', '问题', '麻烦', '日子'], ans:0, exp:'心里很矛盾 / 矛盾极了 = trong lòng giằng co khó quyết. 问题, 麻烦, 日子 không làm vị ngữ kiểu 心里……极了.'},
-  {wrong:'现在农村人的____越过越好了。', opts:['日子', '日常', '天气', '时间'], ans:0, exp:'日子越过越好 = cuộc sống ngày càng khấm khá (过日子). 日常 chỉ làm định ngữ; 天气, 时间 không đi với 过.'},
-  {wrong:'晚上别喝太____的茶，不然睡不着觉。', opts:['浓', '深', '重', '厚'], ans:0, exp:'Trà, cà phê đặc → 浓茶. 深 dùng cho màu sắc, độ sâu; 重 là nặng; 厚 là dày (sách, quần áo).'},
-  {wrong:'他____的“新闻”，其实我们早就知道了！', opts:['所谓', '所以', '称为', '通常'], ans:0, exp:'所谓的“……” = cái mà anh ta gọi là … (hàm ý mỉa mai). 所以 là “cho nên”; 称为 cần tân ngữ phía sau; 通常 không đi với 的 + ngoặc kép kiểu này.'}
+  {wrong:'他____的“好办法”，其实就是让别人帮他做。',opts:['所谓','所以','所有','以为'],ans:0,exp:'所谓 + khái niệm = cái gọi là… (thường mang ý chê nhẹ). 所以 là “vì vậy”; 所有 là “tất cả”; 以为 là “tưởng rằng”.'},
+  {wrong:'哥哥喜欢吃辣的，弟弟____一点儿辣都不能吃。',opts:['则','才','便','再'],ans:0,exp:'A……，B 则…… = còn B thì… (đối chiếu hai người). 才, 便, 再 không mang nghĩa đối chiếu.'},
+  {wrong:'大家都____他的故事所感动。',opts:['为','把','对','给'],ans:0,exp:'为 (wéi) + tác nhân + 所 + V = bị động văn viết: 为他的故事所感动. 把, 对, 给 không đi với 所 như vậy.'},
+  {wrong:'____，越南人过春节前都要把房子打扫干净。',opts:['通常','常常','经常','一再'],ans:0,exp:'通常 nói quy luật chung, đứng được ở đầu câu. 常常, 经常 chỉ tần suất, phải đứng sau chủ ngữ; 一再 là “nhiều lần”.'},
+  {wrong:'一年由十二个月____。',opts:['组成','组合','具备','创造'],ans:0,exp:'由……组成 = do… hợp thành (cấu tạo cố định). 组合 là ghép các phần rời lại; 具备, 创造 không đi với 由.'},
+  {wrong:'他把几种不同的水果____在一起，做了一杯好喝的果汁。',opts:['组合','组成','封闭','并列'],ans:0,exp:'把 A 组合在一起 = ghép, kết hợp những thứ riêng lẻ lại. 组成 đi với 由……组成, không đi với 在一起; 封闭, 并列 không hợp.'},
+  {wrong:'老师____我们明天早点儿来。',opts:['让','令','为','被'],ans:0,exp:'Yêu cầu ai làm gì → 让. 令 dùng cho cảm xúc (令人感动), không dùng để sai bảo việc cụ thể; 为, 被 không hợp.'},
+  {wrong:'这家店的东西又好又便宜，____顾客特别多。',opts:['因而','反而','何况','仿佛'],ans:0,exp:'因而 = vì thế (nêu kết quả, văn viết). 反而 là “ngược lại”; 何况 là “huống chi”; 仿佛 là “dường như”.'},
+  {wrong:'他的兴趣很____，音乐、运动、画画儿都喜欢。',opts:['广泛','广大','充分','亲切'],ans:0,exp:'兴趣广泛 = sở thích rộng. 广大 tả diện tích, số đông (广大地区); 充分 là đầy đủ; 亲切 là gần gũi.'},
+  {wrong:'考试前他做了____的准备，所以一点儿也不紧张。',opts:['充分','广泛','浓','日常'],ans:0,exp:'充分的准备 = sự chuẩn bị đầy đủ. 广泛 là rộng rãi; 浓 là đậm; 日常 là hằng ngày.'},
+  {wrong:'想当一名好老师，必须____这些条件。',opts:['具备','功能','组成','接待'],ans:0,exp:'具备 + 条件/功能 = có đủ. 功能 là danh từ (chức năng), không làm động từ; 组成, 接待 không đi với 条件.'},
+  {wrong:'公司让小王去机场____客人。',opts:['接待','打交道','接受','封闭'],ans:0,exp:'接待客人 = đón tiếp khách. 打交道 không mang tân ngữ (phải nói 跟客人打交道); 接受 là tiếp nhận (ý kiến, quà); 封闭 là khép kín.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi thích ôn bài trong không gian yên tĩnh, còn bạn cùng bàn thì quen vừa nghe nhạc vừa làm bài.', zh:'我喜欢在安静的空间里复习，同桌则习惯一边听音乐一边做题。', py:'Wǒ xǐhuan zài ānjìng de kōngjiān li fùxí, tóngzhuō zé xíguàn yìbiān tīng yīnyuè yìbiān zuò tí.', goiY:['则','一边……一边……','空间'], giai:'A……，B 则…… dùng để đối chiếu hai người/hai việc (= "còn … thì"); 则 đứng SAU chủ ngữ 同桌, không đứng đầu vế.'},
-  {vi:'Tuy cốt truyện của bộ phim này rất đơn giản, nhưng cả lớp đều xúc động trước lòng hiếu thảo của nhân vật chính đối với người lớn trong nhà.', zh:'虽然这部电影的情节很简单，但是全班同学都为主人公对长辈的孝顺所感动。', py:'Suīrán zhè bù diànyǐng de qíngjié hěn jiǎndān, dànshì quán bān tóngxué dōu wéi zhǔréngōng duì zhǎngbèi de xiàoshùn suǒ gǎndòng.', goiY:['虽然……但是……','为……所……','长辈','孝顺'], giai:'为 + tác nhân + 所 + V là bị động văn viết (= 被……感动), 为 đọc wéi; dịch thuận là "xúc động trước…", không dịch "bị… làm cảm động".'},
-  {vi:'Cái gọi là "học bá" thường không phải người chỉ biết học vẹt, mà là người biết sắp xếp thời gian hằng ngày một cách hợp lý.', zh:'所谓“学霸”，通常不是只会死读书的人，而是懂得合理安排日常时间的人。', py:'Suǒwèi “xuébà”, tōngcháng bú shì zhǐ huì sǐ dúshū de rén, ér shì dǒngde hélǐ ānpái rìcháng shíjiān de rén.', goiY:['所谓','不是……而是……','通常','日常'], giai:'所谓 + khái niệm, sau đó giải thích = "cái gọi là…"; 不是 A 而是 B — vế sau mở bằng 而是, không dùng 但是.'},
-  {vi:'Chỉ cần đóng cửa phòng lại là cậu ấy có thể dồn hết tâm trí làm bài tập trong không gian nhỏ khép kín ấy, bên ngoài có ồn đến đâu cũng không ảnh hưởng được.', zh:'只要关闭起房门，他就能在封闭的小空间里全神贯注地写作业，外面再吵也影响不了他。', py:'Zhǐyào guānbì qǐ fángmén, tā jiù néng zài fēngbì de xiǎo kōngjiān li quánshén guànzhù de xiě zuòyè, wàimiàn zài chǎo yě yǐngxiǎng bu liǎo tā.', goiY:['只要……就……','关闭起','封闭','再……也……'], giai:'V + 起 (关闭起) nhấn hành động khép kín lại đã hoàn tất; 再 + tính từ + 也…… = "có… đến đâu cũng…"; 全神贯注 (dồn hết tâm trí) là trạng ngữ, cần 地.'},
-  {vi:'Cái mà cậu ấy gọi là "chuẩn bị kỹ càng" thật ra chỉ là thức khuya lật sách giáo khoa một lượt vào đêm trước ngày thi, thảo nào lần này kết quả chẳng ra sao.', zh:'他所谓的“充分准备”，其实只是考试前一天熬夜把课本翻了一遍，难怪这次成绩这么不理想。', py:'Tā suǒwèi de “chōngfèn zhǔnbèi”, qíshí zhǐshì kǎoshì qián yì tiān áoyè bǎ kèběn fānle yí biàn, nánguài zhè cì chéngjì zhème bù lǐxiǎng.', goiY:['所谓的','充分','熬夜','难怪'], giai:'(Ai đó) 所谓的 "…" mang ý mỉa mai, không thừa nhận — dịch "cái mà … gọi là…"; 难怪 (thảo nào) mở đầu vế cuối, nêu kết quả mà giờ đã hiểu nguyên nhân.'},
-  {vi:'Dù ở hoàn cảnh nào, cậu ấy nói chuyện cũng tỏ ra gần gũi, tự nhiên như vậy, nhờ thế nhanh chóng được các bạn mới đón nhận.', zh:'不管在什么场合，他说话都显得那么亲切自然，因而很快就为新同学所接受。', py:'Bùguǎn zài shénme chǎnghé, tā shuōhuà dōu xiǎnde nàme qīnqiè zìrán, yīn’ér hěn kuài jiù wéi xīn tóngxué suǒ jiēshòu.', goiY:['不管……都……','为……所……','亲切','因而'], giai:'不管 + câu hỏi (什么场合), vế sau bắt buộc có 都; 为新同学所接受 = 被新同学接受, dịch "được … đón nhận"; 因而 (vì thế) là văn viết của 所以.'},
-  {vi:'Đã biết sau này khó tránh phải giao thiệp với đủ kiểu người, thì nên học cách bao dung lẫn nhau, đừng vì một chút xích mích nhỏ mà cãi nhau với bạn cùng phòng.', zh:'既然将来免不了要跟各种各样的人打交道，那就应该学会彼此包容，不要因为一点小矛盾就跟室友吵架。', py:'Jìrán jiānglái miǎn bu liǎo yào gēn gèzhǒng-gèyàng de rén dǎ jiāodao, nà jiù yīnggāi xuéhuì bǐcǐ bāoróng, búyào yīnwèi yìdiǎn xiǎo máodùn jiù gēn shìyǒu chǎojià.', goiY:['既然……就……','打交道','彼此','矛盾'], giai:'既然 nêu tiền đề đã rõ, vế sau 就 đưa ra lời khuyên; 打交道 là cụm động từ: 跟 + người + 打交道, không nói 打交道别人.'},
-  {vi:'Học tập giống như chèo thuyền ngược dòng, không tiến ắt sẽ lùi; nếu những ngày nghỉ một chữ cũng không đọc, thì khai giảng rồi sẽ rất khó theo kịp tiến độ của thầy cô.', zh:'学习就像逆水行舟，不进则退，如果放假的日子里一点儿书都不看，开学后就很难跟上老师的进度。', py:'Xuéxí jiù xiàng nì shuǐ xíng zhōu, bú jìn zé tuì, rúguǒ fàngjià de rìzi li yìdiǎnr shū dōu bú kàn, kāixué hòu jiù hěn nán gēnshàng lǎoshī de jìndù.', goiY:['不进则退','如果……就……','日子'], giai:'则 ở đây là văn viết của 就, nối điều kiện với kết quả (不进则退 = không tiến thì lùi); vế 如果……就…… cụ thể hoá cho câu thành ngữ.'},
-  {vi:'Từ khi cô chủ nhiệm lập ra nhóm học tập, mọi người không chỉ có đủ không gian để trao đổi, mà ngay cả bạn nhút nhát nhất cũng dần dần bắt đầu chủ động phát biểu.', zh:'自从班主任组织起学习小组，大家不仅有了充分交流的空间，甚至连最内向的同学也逐渐开始主动发言了。', py:'Zìcóng bānzhǔrèn zǔzhī qǐ xuéxí xiǎozǔ, dàjiā bùjǐn yǒule chōngfèn jiāoliú de kōngjiān, shènzhì lián zuì nèixiàng de tóngxué yě zhújiàn kāishǐ zhǔdòng fāyán le.', goiY:['自从……','组织起','不仅……甚至连……也……','逐渐'], giai:'V + 起 (组织起) nhấn việc gom mọi người lại thành một khối; 不仅……甚至连……也…… tăng tiến tới mức bất ngờ nhất — 连 đặt ngay trước người được nhấn mạnh.'},
-  {vi:'Ngày nay điện thoại tuy có đủ loại chức năng, nhưng nếu suốt ngày bị nó điều khiển, đến thời gian trò chuyện với người nhà cũng không có, thì nó đã đánh mất ý nghĩa vốn có.', zh:'如今手机虽然具备各种功能，但如果整天为它所控制，连跟家人聊天的时间都没有，那就失去了本来的意义。', py:'Rújīn shǒujī suīrán jùbèi gè zhǒng gōngnéng, dàn rúguǒ zhěngtiān wéi tā suǒ kòngzhì, lián gēn jiārén liáotiān de shíjiān dōu méiyǒu, nà jiù shīqùle běnlái de yìyì.', goiY:['虽然……但……','为……所……','连……都……','具备'], giai:'为它所控制 = 被它控制 (bị động văn viết); 连……都…… nhấn mạnh mức độ cực đoan; cuối cùng 那就 kéo ra hệ quả của giả thiết 如果.'}
+  {vi:'Tôi thích ôn bài trong không gian yên tĩnh, còn bạn thân tôi thì quen vừa nghe nhạc vừa làm bài tập.',zh:'我喜欢在安静的空间里复习，我的好朋友则习惯一边听音乐一边做作业。',py:'Wǒ xǐhuan zài ānjìng de kōngjiān li fùxí, wǒ de hǎo péngyou zé xíguàn yìbiān tīng yīnyuè yìbiān zuò zuòyè.',goiY:['则','一边……一边……','空间'],giai:'A……，B 则…… dùng để đối chiếu hai người/hai việc (= "còn … thì"); 则 đứng SAU chủ ngữ, không đứng đầu vế.'},
+  {vi:'Tuy bộ phim này rất đơn giản, nhưng cả lớp đều xúc động trước lòng hiếu thảo của đứa trẻ trong phim đối với người lớn trong nhà.',zh:'虽然这个电影很简单，但是全班同学都为电影里孩子对长辈的孝顺所感动。',py:'Suīrán zhège diànyǐng hěn jiǎndān, dànshì quán bān tóngxué dōu wéi diànyǐng li háizi duì zhǎngbèi de xiàoshùn suǒ gǎndòng.',goiY:['虽然……但是……','为……所……','长辈','孝顺'],giai:'为 + tác nhân + 所 + V là bị động văn viết (= 被……感动), 为 đọc wéi; dịch thuận là "xúc động trước…", không dịch "bị… làm cảm động".'},
+  {vi:'Cái gọi là "học sinh giỏi" thường không phải người chỉ biết đọc sách, mà là người biết sắp xếp tốt thời gian hằng ngày.',zh:'所谓“好学生”，通常不是只会读书的人，而是懂得安排好日常时间的人。',py:'Suǒwèi “hǎo xuésheng”, tōngcháng bú shì zhǐ huì dúshū de rén, ér shì dǒngde ānpái hǎo rìcháng shíjiān de rén.',goiY:['所谓','不是……而是……','通常','日常'],giai:'所谓 + khái niệm, sau đó giải thích = "cái gọi là…"; 不是 A 而是 B — vế sau mở bằng 而是, không dùng 但是.'},
+  {vi:'Chỉ cần đóng cửa phòng lại là cậu ấy có thể dồn hết tâm trí làm bài tập trong không gian nhỏ yên tĩnh ấy, bên ngoài có ồn đến đâu cũng không ảnh hưởng được.',zh:'只要把房门一关，他就能在安静的小空间里全神贯注地写作业，外面再吵也影响不了他。',py:'Zhǐyào bǎ fángmén yì guān, tā jiù néng zài ānjìng de xiǎo kōngjiān li quánshén guànzhù de xiě zuòyè, wàimiàn zài chǎo yě yǐngxiǎng bu liǎo tā.',goiY:['只要……就……','把……一关','再……也……'],giai:'把 + tân ngữ + 一 + V = chỉ cần làm một cái; 再 + tính từ + 也…… = "có… đến đâu cũng…"; 全神贯注 (bài 7) là trạng ngữ, cần 地.'},
+  {vi:'Dù nói chuyện với ai, cậu ấy cũng tỏ ra gần gũi, tự nhiên như vậy, nhờ thế nhanh chóng được các bạn mới đón nhận.',zh:'不管跟谁说话，他都显得那么亲切自然，因而很快就为新同学所接受。',py:'Bùguǎn gēn shéi shuōhuà, tā dōu xiǎnde nàme qīnqiè zìrán, yīn\'ér hěn kuài jiù wéi xīn tóngxué suǒ jiēshòu.',goiY:['不管……都……','为……所……','亲切','因而'],giai:'不管 + câu hỏi (跟谁), vế sau bắt buộc có 都; 为新同学所接受 = 被新同学接受, dịch "được … đón nhận"; 因而 (vì thế) là văn viết của 所以.'},
+  {vi:'Đã biết sau này chắc chắn phải giao thiệp với đủ kiểu người, thì nên học cách hiểu nhau, đừng vì một chút xích mích nhỏ mà cãi nhau với người khác.',zh:'既然将来一定要跟各种各样的人打交道，那就应该学会互相理解，不要因为一点小矛盾就跟别人吵架。',py:'Jìrán jiānglái yídìng yào gēn gèzhǒng-gèyàng de rén dǎ jiāodao, nà jiù yīnggāi xuéhuì hùxiāng lǐjiě, búyào yīnwèi yìdiǎn xiǎo máodùn jiù gēn biérén chǎojià.',goiY:['既然……就……','打交道','矛盾'],giai:'既然 nêu tiền đề đã rõ, vế sau 就 đưa ra lời khuyên; 打交道 là cụm động từ: 跟 + người + 打交道, không nói 打交道别人.'}
 ];
-// Chiều Trung → Việt
+
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Cái gọi là "tứ hợp viện" chính là kiểu nhà mà các dãy nhà ở bốn phía đông, tây, nam, bắc quây lại với nhau, ở giữa tạo thành một khoảng sân vuông.', zh:'所谓“四合院”，就是东、西、南、北四面的房屋围在一起，中间形成一个方形的院子。', py:'Suǒwèi “sìhéyuàn”, jiù shì dōng, xī, nán, běi sìmiàn de fángwū wéi zài yìqǐ, zhōngjiān xíngchéng yí ge fāngxíng de yuànzi.', goiY:['所谓……就是…… = cái gọi là… chính là…','四合院 = tứ hợp viện','方形 = hình vuông'], giai:'所谓 A，就是 B: đưa ra khái niệm rồi giải thích; 围在一起 = "quây lại với nhau", 形成 = "tạo thành".'},
-  {vi:'Vì tứ hợp viện có lịch sử lâu đời nhất và phân bố rộng rãi nhất trong các kiểu nhà ở dân gian của người Hán, nên nó được xem là tiêu biểu cho nhà ở truyền thống Trung Quốc.', zh:'由于四合院在汉族民居中历史最悠久、分布最广泛，因而被看作是中国传统民居的代表。', py:'Yóuyú sìhéyuàn zài Hànzú mínjū zhōng lìshǐ zuì yōujiǔ, fēnbù zuì guǎngfàn, yīn’ér bèi kànzuò shì Zhōngguó chuántǒng mínjū de dàibiǎo.', goiY:['由于……因而…… = do… nên…','民居 = nhà ở dân gian','广泛 = rộng rãi','代表 = đại diện, tiêu biểu'], giai:'由于 nêu nguyên nhân, 因而 (văn viết của 所以) nêu kết quả; 被看作是 = "được xem là".'},
-  {vi:'Các phòng trong tứ hợp viện được nối với nhau bằng hành lang, nên cho dù gặp trời mưa, người ta đi lại trong sân cũng không bị ướt.', zh:'四合院的各个房间由走廊连接起来，即使遇到下雨天，人们在院子里走动也不会被淋湿。', py:'Sìhéyuàn de gège fángjiān yóu zǒuláng liánjiē qǐlai, jíshǐ yùdào xiàyǔtiān, rénmen zài yuànzi li zǒudòng yě bú huì bèi línshī.', goiY:['即使……也…… = cho dù… cũng…','由 = bằng, do','走廊 = hành lang'], giai:'由 + phương tiện + 连接起来 = "được nối bằng…"; 即使 + giả thiết, 也 + kết quả không đổi.'},
-  {vi:'Gian nhà chính rộng nhất, không chỉ là nơi sinh hoạt hằng ngày của người lớn tuổi trong nhà mà còn có chức năng tiếp đãi khách.', zh:'正房面积最大，不仅是长辈日常起居的地方，而且还具备接待客人的功能。', py:'Zhèngfáng miànjī zuì dà, bùjǐn shì zhǎngbèi rìcháng qǐjū de dìfang, érqiě hái jùbèi jiēdài kèrén de gōngnéng.', goiY:['不仅……而且…… = không chỉ… mà còn…','起居 = sinh hoạt hằng ngày','具备……功能 = có chức năng…','接待 = tiếp đãi'], giai:'不仅……而且还…… nêu hai công dụng theo mức tăng dần; 具备 + 功能/条件 = "có (đủ)…", dịch gọn là "có chức năng…".'},
-  {vi:'Chỉ cần đóng cổng lớn lại, bên trong tứ hợp viện liền thành một thế giới nhỏ khép kín, cả nhà sống những ngày tháng yên bình trong đó.', zh:'只要关闭起大门，四合院内便形成一个封闭式的小环境，一家人在里面过着平静的日子。', py:'Zhǐyào guānbì qǐ dàmén, sìhéyuàn nèi biàn xíngchéng yí ge fēngbìshì de xiǎo huánjìng, yì jiā rén zài lǐmiàn guòzhe píngjìng de rìzi.', goiY:['只要……便…… = chỉ cần… là…','关闭起 = đóng lại','封闭 = khép kín'], giai:'便 là văn viết của 就, đi với 只要 thành "chỉ cần… là…"; 关闭起 = V + 起, nhấn việc đóng kín lại.'},
-  {vi:'Có nhà trồng trúc trong sân, có nhà thì lại nuôi cá vàng; dù là cách nào thì cũng đều làm cuộc sống thường ngày thêm nhiều thú vị.', zh:'有的人家在院子里种竹子，有的人家则养金鱼，不管哪一种，都给日常生活增添了不少情趣。', py:'Yǒu de rénjiā zài yuànzi li zhòng zhúzi, yǒu de rénjiā zé yǎng jīnyú, bùguǎn nǎ yì zhǒng, dōu gěi rìcháng shēnghuó zēngtiānle bù shǎo qíngqù.', goiY:['……，……则…… = …, còn… thì…','不管……都…… = dù… đều…','情趣 = thú vui, niềm vui thú'], giai:'则 dùng để đối chiếu hai trường hợp (有的……有的……则……); 增添情趣 = "thêm thú vị", đừng dịch word-by-word "tăng thêm tình thú".'},
-  {vi:'Gian nhà chính phía bắc do người lớn tuổi ở, còn các dãy nhà ngang hai bên đông tây là nơi sinh hoạt của con cháu; có thể thấy cách bố trí của tứ hợp viện cũng thể hiện truyền thống kính trọng người trên.', zh:'北面的正房由长辈居住，东西两边的厢房则是晚辈的起居空间，可见四合院的布局也体现了尊敬长辈的传统。', py:'Běimiàn de zhèngfáng yóu zhǎngbèi jūzhù, dōng xī liǎngbiān de xiāngfáng zé shì wǎnbèi de qǐjū kōngjiān, kějiàn sìhéyuàn de bùjú yě tǐxiànle zūnjìng zhǎngbèi de chuántǒng.', goiY:['则 = còn … thì','可见 = có thể thấy','厢房 = nhà ngang (hai bên sân)','起居 = sinh hoạt'], giai:'由 + người + V (由长辈居住) = "do ai ở"; 则 đối chiếu 正房 với 厢房; 可见 rút ra kết luận từ hai vế trước.'},
-  {vi:'Vì mấy thế hệ cùng sống trong một khoảng sân, cùng lao động, cùng trải qua ngày tháng, nên giữa họ đã gây dựng nên tình thân sâu đậm.', zh:'因为几代人同住在一个院子里，一起劳动，一起过日子，所以彼此之间建立起了浓浓的亲情。', py:'Yīnwèi jǐ dài rén tóng zhù zài yí ge yuànzi li, yìqǐ láodòng, yìqǐ guò rìzi, suǒyǐ bǐcǐ zhījiān jiànlì qǐle nóngnóng de qīnqíng.', goiY:['因为……所以…… = vì… nên…','建立起 = gây dựng nên','浓浓的 = đậm đà, sâu đậm'], giai:'建立起 + tân ngữ: V + 起 biểu thị kết quả được dựng lên, hình thành; 浓浓的亲情 nên dịch "tình thân sâu đậm" thay vì "tình thân đặc".'},
-  {vi:'Hàng xóm trong ngõ ngày nào cũng qua lại với nhau, cho dù có xích mích thì cũng nhanh chóng làm lành; thứ tình cảm gần gũi ấy đến nay vẫn được nhiều người Bắc Kinh xưa nhớ mãi.', zh:'胡同里的邻居们天天打交道，即使闹了矛盾也很快就和好，这种亲切的感情至今仍为许多老北京人所怀念。', py:'Hútòng li de línjūmen tiāntiān dǎ jiāodao, jíshǐ nàole máodùn yě hěn kuài jiù héhǎo, zhè zhǒng qīnqiè de gǎnqíng zhìjīn réng wéi xǔduō lǎo Běijīngrén suǒ huáiniàn.', goiY:['即使……也…… = cho dù… cũng…','打交道 = giao thiệp, qua lại','为……所…… = được/bị … (bị động văn viết)','至今 = đến nay'], giai:'为 + người + 所 + V là bị động văn viết, dịch thuận "được … nhớ mãi"; 即使……也…… nêu giả thiết, không dịch thành "tuy… nhưng…".'},
-  {vi:'Sở dĩ tứ hợp viện được mọi người yêu thích không chỉ vì ở thoải mái, mà hơn nữa là vì khoảng sân đã tạo cho cả nhà một không gian gần gũi với thiên nhiên.', zh:'四合院之所以深受人们欢迎，不仅是因为住着舒适，更是因为院子为全家创造了一个亲近自然的空间。', py:'Sìhéyuàn zhīsuǒyǐ shēn shòu rénmen huānyíng, bùjǐn shì yīnwèi zhùzhe shūshì, gèng shì yīnwèi yuànzi wèi quán jiā chuàngzàole yí ge qīnjìn zìrán de kōngjiān.', goiY:['之所以……不仅是因为……更是因为…… = sở dĩ… không chỉ vì… mà còn vì…','创造 = tạo ra','空间 = không gian'], giai:'之所以 nêu kết quả trước, sau đó liệt kê hai nguyên nhân tăng dần (不仅是因为……更是因为……); 为 + người + 创造 = "tạo ra cho ai" (为 đọc wèi).'}
+  {vi:'Cái gọi là "tứ hợp viện" chính là kiểu nhà ở dân gian bốn phía đều có nhà, ở giữa là một khoảng sân vuông.',zh:'所谓“四合院”，就是四面都有房屋、中间是一个方形院子的民居。',py:'Suǒwèi “sìhéyuàn”, jiù shì sìmiàn dōu yǒu fángwū, zhōngjiān shì yí ge fāngxíng yuànzi de mínjū.',goiY:['所谓……就是…… = cái gọi là… chính là…','方形 = hình vuông','民居 = nhà ở dân gian'],giai:'所谓 A，就是 B: nêu khái niệm rồi giải thích; định ngữ dài (四面都有房屋、中间是……的) đứng trước 民居 — tiếng Việt đảo ra sau: "kiểu nhà … mà…".'},
+  {vi:'Vì tứ hợp viện có lịch sử lâu đời nhất và phân bố rộng nhất trong các kiểu nhà ở dân gian của người Hán, nên nó trở thành kiểu nhà tiêu biểu cho nhà ở truyền thống Trung Quốc.',zh:'由于四合院在汉族民居中历史最悠久、分布最广，因而成了中国传统民居的代表。',py:'Yóuyú sìhéyuàn zài Hànzú mínjū zhōng lìshǐ zuì yōujiǔ, fēnbù zuì guǎng, yīn\'ér chéngle Zhōngguó chuántǒng mínjū de dàibiǎo.',goiY:['由于……因而…… = do… nên…','民居 = nhà ở dân gian','代表 = đại diện, tiêu biểu'],giai:'由于 nêu nguyên nhân, 因而 (văn viết của 所以) nêu kết quả; 成了……的代表 = "trở thành tiêu biểu cho…".'},
+  {vi:'Gian nhà chính rộng hơn các phòng khác, không chỉ là nơi sinh hoạt hằng ngày của người lớn tuổi trong nhà mà còn có chức năng tiếp đãi khách.',zh:'正房比其他房间大，不仅是长辈日常起居的地方，而且还具备接待客人的功能。',py:'Zhèngfáng bǐ qítā fángjiān dà, bùjǐn shì zhǎngbèi rìcháng qǐjū de dìfang, érqiě hái jùbèi jiēdài kèrén de gōngnéng.',goiY:['不仅……而且…… = không chỉ… mà còn…','起居 = sinh hoạt hằng ngày','具备……功能 = có chức năng…','接待 = tiếp đãi'],giai:'不仅……而且还…… nêu hai công dụng theo mức tăng dần; 具备 + 功能/条件 = "có (đủ)…", dịch gọn là "có chức năng…".'},
+  {vi:'Có nhà trồng trúc trong sân, có nhà thì lại nuôi cá vàng; dù là cách nào thì cũng đều làm cuộc sống thường ngày thêm nhiều thú vị.',zh:'有的人家在院子里种竹子，有的人家则养金鱼，不管哪一种，都让日常生活多了不少情趣。',py:'Yǒu de rénjiā zài yuànzi li zhòng zhúzi, yǒu de rénjiā zé yǎng jīnyú, bùguǎn nǎ yì zhǒng, dōu ràng rìcháng shēnghuó duōle bù shǎo qíngqù.',goiY:['……，……则…… = …, còn… thì…','不管……都…… = dù… đều…','情趣 = thú vui, niềm vui thú'],giai:'则 dùng để đối chiếu hai trường hợp (有的……有的……则……); 让……多了不少情趣 = "làm… thêm thú vị", đừng dịch word-by-word.'},
+  {vi:'Gian nhà chính phía bắc là nơi người lớn tuổi ở, còn các dãy nhà ngang hai bên đông tây là không gian sinh hoạt của con cháu.',zh:'北面的正房是长辈住的地方，东西两边的厢房则是晚辈的起居空间。',py:'Běimiàn de zhèngfáng shì zhǎngbèi zhù de dìfang, dōng xī liǎngbiān de xiāngfáng zé shì wǎnbèi de qǐjū kōngjiān.',goiY:['则 = còn … thì','厢房 = nhà ngang (hai bên sân)','起居 = sinh hoạt'],giai:'则 đối chiếu 正房 với 厢房 → "còn… thì…"; 晚辈 (con cháu) đối với 长辈 (người trên).'},
+  {vi:'Vì cả nhà cùng sống trong một khoảng sân, cùng lao động, cùng trải qua ngày tháng, nên tình cảm giữa mọi người đặc biệt sâu đậm.',zh:'因为一家人都住在一个院子里，一起劳动，一起过日子，所以彼此之间的感情特别浓。',py:'Yīnwèi yì jiā rén dōu zhù zài yí ge yuànzi li, yìqǐ láodòng, yìqǐ guò rìzi, suǒyǐ bǐcǐ zhījiān de gǎnqíng tèbié nóng.',goiY:['因为……所以…… = vì… nên…','过日子 = sống, trải qua ngày tháng','浓 = đậm, sâu đậm'],giai:'过日子 = sống cuộc sống hằng ngày; 感情很浓 nên dịch "tình cảm sâu đậm", không dịch "tình cảm đặc".'}
 ];
 
 
@@ -1501,30 +1448,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (29–31 là đáp án của sách bài tập)
   sapXep:[
-    {manh:['很具有','北京四合院的','代表性','样式'],
-     dap:'北京四合院的样式很具有代表性。',
-     vn:'Kiểu dáng của tứ hợp viện Bắc Kinh rất tiêu biểu.',
-     giai:'Định ngữ 北京四合院的 + chủ ngữ 样式 → 很具有 + tân ngữ 代表性. (Câu 29 sách bài tập.)'},
-    {manh:['基本功能','该产品','具备了','已经'],
-     dap:'该产品已经具备了基本功能。',
-     vn:'Sản phẩm này đã có đủ các chức năng cơ bản.',
-     giai:'Chủ ngữ 该产品 → phó từ 已经 → 具备了 → tân ngữ 基本功能. 该 = “này” trong văn viết. (Câu 30.)'},
-    {manh:['我很感激','曾经给我的帮助','那位','亲切的长辈'],
-     dap:'我很感激那位亲切的长辈曾经给我的帮助。',
-     vn:'Tôi rất biết ơn sự giúp đỡ mà vị bề trên thân thiện ấy từng dành cho tôi.',
-     giai:'我很感激 + tân ngữ dài: 那位 + 亲切的长辈 + 曾经给我的 + 帮助. Lượng từ 位 đứng trước định ngữ 亲切的. (Câu 31.)'},
-    {manh:['通常','有钱人家的四合院','由好几座院子','组成'],
-     dap:'有钱人家的四合院通常由好几座院子组成。', chap:['通常有钱人家的四合院由好几座院子组成。'],
-     vn:'Tứ hợp viện của nhà giàu thường do mấy toà sân hợp thành.',
-     giai:'通常 đứng trước cụm 由……组成 (có thể đưa lên đầu câu vì là tính từ/phó từ chỉ quy luật).'},
-    {manh:['所','院子','为人们','最','喜爱'],
-     dap:'院子最为人们所喜爱。',
-     vn:'Khoảng sân được mọi người yêu thích nhất.',
-     giai:'Khung 为 + người + 所 + V; phó từ 最 đứng TRƯỚC 为 (最为人们所喜爱 — câu trong bài khoá).'},
-    {manh:['常常','他们俩','矛盾','闹'],
-     dap:'他们俩常常闹矛盾。',
-     vn:'Hai người họ thường xuyên xích mích.',
-     giai:'Chủ ngữ → phó từ 常常 → động từ 闹 → tân ngữ 矛盾 (闹矛盾 là cụm cố định).'}
+    {manh:['很具有','北京四合院的','代表性','样式'],dap:'北京四合院的样式很具有代表性。',vn:'Kiểu dáng của tứ hợp viện Bắc Kinh rất tiêu biểu.',giai:'Định ngữ 北京四合院的 + chủ ngữ 样式 → 很具有 + tân ngữ 代表性. (Câu 29 sách bài tập.)'},
+    {manh:['很多功能','该产品','具备了','已经'],dap:'该产品已经具备了很多功能。',vn:'Sản phẩm này đã có rất nhiều chức năng.',giai:'Chủ ngữ 该产品 → phó từ 已经 → 具备了 → tân ngữ 很多功能. 该 = “này” trong văn viết.'},
+    {manh:['我很感激','曾经给我的帮助','那位','亲切的长辈'],dap:'我很感激那位亲切的长辈曾经给我的帮助。',vn:'Tôi rất biết ơn sự giúp đỡ mà vị bề trên thân thiện ấy từng dành cho tôi.',giai:'我很感激 + tân ngữ dài: 那位 + 亲切的长辈 + 曾经给我的 + 帮助. Lượng từ 位 đứng trước định ngữ 亲切的. (Câu 31.)'},
+    {manh:['通常','有钱人家的四合院','由好几座院子','组成'],dap:'有钱人家的四合院通常由好几座院子组成。',chap:['通常有钱人家的四合院由好几座院子组成。'],vn:'Tứ hợp viện của nhà giàu thường do mấy toà sân hợp thành.',giai:'通常 đứng trước cụm 由……组成 (có thể đưa lên đầu câu vì là tính từ/phó từ chỉ quy luật).'},
+    {manh:['所','院子','为人们','最','喜爱'],dap:'院子最为人们所喜爱。',vn:'Khoảng sân được mọi người yêu thích nhất.',giai:'Khung 为 + người + 所 + V; phó từ 最 đứng TRƯỚC 为 (最为人们所喜爱 — câu trong bài khoá).'},
+    {manh:['终于','他们俩的','解决了','矛盾'],dap:'他们俩的矛盾终于解决了。',vn:'Mâu thuẫn giữa hai người họ cuối cùng cũng được giải quyết.',giai:'Định ngữ 他们俩的 + chủ ngữ 矛盾 → phó từ 终于 → 解决了. Câu bị động ý nghĩa (vật làm chủ ngữ), không cần 被.'}
   ]
 };
 
@@ -1534,30 +1463,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (建筑与旅游). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 建筑 · 样式 · 代表 · 功能 · 空间 · 亲切 · 所谓 · 则.',
   questions:[
-    {q_zh:'你最喜欢（或印象最深）的建筑是什么？你是怎么知道它的？',
-     q_vn:'Công trình kiến trúc em thích nhất (hoặc ấn tượng nhất) là gì? Em biết đến nó như thế nào?',
-     hint:'Tên công trình + ở đâu + biết qua đâu, dùng 是……的',
-     sample:'我印象最深的建筑是会安古城的老房子。我是去年跟家人去旅游的时候知道的，那些房子的样式很有特点。',
-     sample_vn:'Công trình tôi ấn tượng nhất là những ngôi nhà cổ ở phố cổ Hội An. Tôi biết đến khi đi du lịch cùng gia đình năm ngoái, kiểu dáng của những ngôi nhà ấy rất đặc sắc.',
-     note:'Câu hỏi 你是怎么知道的 hợp với cấu trúc 是……的 (ôn HSK 3): 我是……的时候知道的.'},
-    {q_zh:'请介绍一下你了解到的这座建筑的情况。',
-     q_vn:'Hãy giới thiệu những gì em biết về công trình ấy.',
-     hint:'Lịch sử + kiểu dáng + công năng, dùng 具备 / 由……组成',
-     sample:'这些房子已经有两百多年历史了，一般由前后两部分组成，前面做生意，后面则是一家人生活的地方。',
-     sample_vn:'Những ngôi nhà này đã có hơn hai trăm năm lịch sử, thường gồm hai phần trước và sau: phía trước để buôn bán, còn phía sau là nơi cả nhà sinh hoạt.',
-     note:'Dùng 则 để đối chiếu hai phần (前面……，后面则……) giống như câu trong bài khoá.'},
-    {q_zh:'通过旅行来了解各地的建筑，你有什么感受和收获？',
-     q_vn:'Tìm hiểu kiến trúc các nơi qua du lịch, em có cảm nhận và thu hoạch gì?',
-     hint:'Nêu 2 điều học được, dùng 不仅……也……',
-     sample:'通过旅行，我不仅看到了很多美丽的建筑，也了解到了各地不同的历史和文化。',
-     sample_vn:'Qua những chuyến đi, tôi không chỉ được ngắm nhiều công trình đẹp mà còn hiểu thêm lịch sử và văn hoá khác nhau của từng nơi.',
-     note:'Lấy ý từ phần 背景分析: kiến trúc là “trí nhớ” của một đất nước, một thành phố.'},
-    {q_zh:'你更喜欢住在四合院那样的老房子里，还是住在现代的公寓楼里？为什么？',
-     q_vn:'Em thích sống trong nhà cổ kiểu tứ hợp viện hay trong chung cư hiện đại hơn? Vì sao?',
-     hint:'Chọn một bên + 2 lý do, dùng 虽然……但是……',
-     sample:'我更喜欢四合院。公寓楼虽然方便，但是邻居之间很少打交道；四合院里有院子，大家常常互帮互助，让人觉得很亲切。',
-     sample_vn:'Tôi thích tứ hợp viện hơn. Chung cư tuy tiện lợi nhưng hàng xóm ít giao thiệp với nhau; tứ hợp viện có sân, mọi người hay giúp đỡ nhau, khiến người ta thấy rất gần gũi.',
-     note:'So sánh hai bên rồi mới chốt ý — câu trả lời có bố cục được chấm cao hơn.'}
+    {q_zh:'你最喜欢的建筑是什么？你是怎么知道它的？',q_vn:'Công trình kiến trúc em thích nhất là gì? Em biết đến nó như thế nào?',hint:'Tên công trình + ở đâu + biết qua đâu, dùng 是……的',sample:'我最喜欢的建筑是河内的一座老房子。我是去年跟家人去旅游的时候知道的，那座房子的样式很有特点。',sample_vn:'Công trình tôi thích nhất là một ngôi nhà cổ ở Hà Nội. Tôi biết đến nó khi đi du lịch cùng gia đình năm ngoái, kiểu dáng của ngôi nhà ấy rất đặc sắc.',note:'Câu hỏi 你是怎么知道的 hợp với cấu trúc 是……的 (ôn HSK 3): 我是……的时候知道的.'},
+    {q_zh:'请介绍一下你了解到的这座建筑的情况。',q_vn:'Hãy giới thiệu những gì em biết về công trình ấy.',hint:'Lịch sử + kiểu dáng + công năng, dùng 具备 / 由……组成',sample:'这座房子已经有两百多年历史了，由前后两部分组成，前面做生意，后面则是一家人生活的地方。',sample_vn:'Ngôi nhà này đã có hơn hai trăm năm lịch sử, gồm hai phần trước và sau: phía trước để buôn bán, còn phía sau là nơi cả nhà sinh hoạt.',note:'Dùng 则 để đối chiếu hai phần (前面……，后面则……) giống như câu trong bài khoá.'},
+    {q_zh:'旅行的时候去看各地的建筑，你觉得有什么意义？',q_vn:'Khi đi du lịch đi xem kiến trúc các nơi, em thấy việc đó có ý nghĩa gì?',hint:'Nêu 2 điều học được, dùng 不仅……也……',sample:'通过旅行，我不仅看到了很多美丽的建筑，也了解到了各地不同的历史和文化。',sample_vn:'Qua những chuyến đi, tôi không chỉ được ngắm nhiều công trình đẹp mà còn hiểu thêm lịch sử và văn hoá khác nhau của từng nơi.',note:'Lấy ý từ phần phân tích của sách: kiến trúc là “trí nhớ” của một đất nước, một thành phố.'},
+    {q_zh:'你更喜欢住在四合院那样的老房子里，还是住在现代的高楼里？为什么？',q_vn:'Em thích sống trong nhà cổ kiểu tứ hợp viện hay trong nhà cao tầng hiện đại hơn? Vì sao?',hint:'Chọn một bên + 2 lý do, dùng 虽然……但是……',sample:'我更喜欢四合院。高楼虽然方便，但是邻居之间很少打交道；四合院里有院子，大家常常互帮互助，让人觉得很亲切。',sample_vn:'Tôi thích tứ hợp viện hơn. Nhà cao tầng tuy tiện lợi nhưng hàng xóm ít giao thiệp với nhau; tứ hợp viện có sân, mọi người hay giúp đỡ nhau, khiến người ta thấy rất gần gũi.',note:'So sánh hai bên rồi mới chốt ý — câu trả lời có bố cục được chấm cao hơn.'}
   ]
 };
 
@@ -1648,45 +1557,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Một bạn Trung Quốc hỏi em về “nhà ống” — kiểu nhà rất phổ biến ở Việt Nam.',
-     a:{sp:'Bạn',zh:'什么是“管状房”？',vn:'“Nhà ống” là gì vậy?'},
-     need:['Dùng 所谓','Giải thích đặc điểm chính'],
-     sample:'所谓“管状房”，就是又窄又长的房子，前面窄，后面很长，像一根管子。',
-     samplePy:'Suǒwèi “guǎnzhuàngfáng”, jiù shì yòu zhǎi yòu cháng de fángzi, qiánmian zhǎi, hòumian hěn cháng, xiàng yì gēn guǎnzi.',
-     sampleVn:'Cái gọi là “nhà ống” chính là loại nhà vừa hẹp vừa dài: mặt tiền hẹp, phía sau rất dài, giống như một cái ống.',
-     tip:'所谓 + khái niệm, 就是 + lời giải thích — đúng như câu 所谓四合，“四”指…… trong bài.'},
-
-    {scene:'Bạn hỏi em anh chị em trong nhà có sở thích giống nhau không.',
-     a:{sp:'Bạn',zh:'你和你姐姐的爱好一样吗？',vn:'Cậu với chị gái có sở thích giống nhau không?'},
-     need:['Dùng 则 để đối chiếu','Nêu sở thích của hai người'],
-     sample:'不一样。我喜欢运动，周末常常去踢球；姐姐则喜欢安静，最爱在家看书。',
-     samplePy:'Bù yíyàng. Wǒ xǐhuan yùndòng, zhōumò chángcháng qù tī qiú; jiějie zé xǐhuan ānjìng, zuì ài zài jiā kàn shū.',
-     sampleVn:'Không giống. Tớ thích thể thao, cuối tuần hay đi đá bóng; còn chị tớ thì thích yên tĩnh, mê nhất là ở nhà đọc sách.',
-     tip:'则 đứng SAU chủ ngữ của vế thứ hai (姐姐则……), không đứng đầu vế như 但是.'},
-
-    {scene:'Cô giáo hỏi vì sao thầy chủ nhiệm cũ được cả trường yêu quý.',
-     a:{sp:'Cô',zh:'为什么大家都那么喜欢王老师？',vn:'Vì sao mọi người đều quý thầy Vương như vậy?'},
-     need:['Dùng 为……所……','Nêu một phẩm chất của thầy'],
-     sample:'王老师对每个学生都非常亲切，认识他的人没有不为他的热情所感动的。',
-     samplePy:'Wáng lǎoshī duì měi ge xuésheng dōu fēicháng qīnqiè, rènshi tā de rén méiyǒu bù wéi tā de rèqíng suǒ gǎndòng de.',
-     sampleVn:'Thầy Vương rất gần gũi với từng học sinh, ai quen thầy cũng đều cảm động trước sự nhiệt tình của thầy.',
-     tip:'为……所…… là văn viết, nghĩa như 被. Nói với thầy cô dùng được vì giọng trang trọng; 为 ở đây đọc wéi.'},
-
-    {scene:'Bạn thấy em chuyển nhà lên chung cư, hỏi em có quen không.',
-     a:{sp:'Bạn',zh:'住进楼房以后，你习惯吗？',vn:'Chuyển lên chung cư rồi, cậu quen chưa?'},
-     need:['Dùng 打交道','Có ý so sánh với nhà cũ'],
-     sample:'条件是好多了，但是关上门谁也不认识谁，不像以前那样常跟邻居打交道了。',
-     samplePy:'Tiáojiàn shì hǎo duō le, dànshì guānshang mén shéi yě bú rènshi shéi, bú xiàng yǐqián nàyàng cháng gēn línjū dǎ jiāodào le.',
-     sampleVn:'Điều kiện thì tốt hơn nhiều, nhưng đóng cửa lại là chẳng ai biết ai, không còn hay giao thiệp với hàng xóm như trước nữa.',
-     tip:'跟 / 与 + người + 打交道 — người đứng TRƯỚC 打交道, không nói ✗打交道邻居.'},
-
-    {scene:'Em rủ bạn cùng đi tham quan tứ hợp viện ở Bắc Kinh vào kỳ nghỉ.',
-     a:{sp:'Bạn',zh:'四合院有什么好看的？',vn:'Tứ hợp viện thì có gì hay mà xem?'},
-     need:['Dùng 具有代表性 hoặc 代表','Thuyết phục bạn'],
-     sample:'四合院是北京最有代表性的民居，去北京不看四合院，就像去越南不吃河粉一样！',
-     samplePy:'Sìhéyuàn shì Běijīng zuì yǒu dàibiǎoxìng de mínjū, qù Běijīng bú kàn sìhéyuàn, jiù xiàng qù Yuènán bù chī héfěn yíyàng!',
-     sampleVn:'Tứ hợp viện là kiểu nhà dân tiêu biểu nhất của Bắc Kinh, đến Bắc Kinh mà không xem tứ hợp viện thì giống như sang Việt Nam mà không ăn phở vậy!',
-     tip:'Cấu trúc so sánh 就像……一样 (ôn HSK 3) giúp lời thuyết phục sinh động hơn.'}
+    {scene:'Một bạn Trung Quốc hỏi em về từ “打工人” mà giới trẻ hay dùng.',a:{sp:'Bạn',zh:'什么是“打工人”？',vn:'“打工人” là gì vậy?'},need:['Dùng 所谓','Giải thích đặc điểm chính'],sample:'所谓“打工人”，就是每天上班挣钱的普通人，现在年轻人常常这样说自己。',samplePy:'Suǒwèi “dǎgōngrén”, jiù shì měi tiān shàngbān zhèng qián de pǔtōngrén, xiànzài niánqīngrén chángcháng zhèyàng shuō zìjǐ.',sampleVn:'Cái gọi là “打工人” chính là người bình thường ngày nào cũng đi làm kiếm tiền, giới trẻ bây giờ hay tự gọi mình như vậy.',tip:'所谓 + khái niệm, 就是 + lời giải thích — đúng như câu 所谓四合，“四”指…… trong bài.'},
+    {scene:'Bạn hỏi em anh chị em trong nhà có sở thích giống nhau không.',a:{sp:'Bạn',zh:'你和你姐姐的爱好一样吗？',vn:'Cậu với chị gái có sở thích giống nhau không?'},need:['Dùng 则 để đối chiếu','Nêu sở thích của hai người'],sample:'不一样。我喜欢运动，周末常常去踢球；姐姐则喜欢安静，最爱在家看书。',samplePy:'Bù yíyàng. Wǒ xǐhuan yùndòng, zhōumò chángcháng qù tī qiú; jiějie zé xǐhuan ānjìng, zuì ài zài jiā kàn shū.',sampleVn:'Không giống. Tớ thích thể thao, cuối tuần hay đi đá bóng; còn chị tớ thì thích yên tĩnh, mê nhất là ở nhà đọc sách.',tip:'则 đứng SAU chủ ngữ của vế thứ hai (姐姐则……), không đứng đầu vế như 但是.'},
+    {scene:'Cô giáo hỏi vì sao thầy chủ nhiệm cũ được cả trường yêu quý.',a:{sp:'Cô',zh:'为什么大家都那么喜欢王老师？',vn:'Vì sao mọi người đều quý thầy Vương như vậy?'},need:['Dùng 为……所……','Nêu một phẩm chất của thầy'],sample:'王老师对每个学生都非常亲切，认识他的人没有不为他的热情所感动的。',samplePy:'Wáng lǎoshī duì měi ge xuésheng dōu fēicháng qīnqiè, rènshi tā de rén méiyǒu bù wéi tā de rèqíng suǒ gǎndòng de.',sampleVn:'Thầy Vương rất gần gũi với từng học sinh, ai quen thầy cũng đều cảm động trước sự nhiệt tình của thầy.',tip:'为……所…… là văn viết, nghĩa như 被. Nói với thầy cô dùng được vì giọng trang trọng; 为 ở đây đọc wéi.'},
+    {scene:'Bạn thấy em chuyển nhà lên chung cư, hỏi em có quen không.',a:{sp:'Bạn',zh:'住进楼房以后，你习惯吗？',vn:'Chuyển lên chung cư rồi, cậu quen chưa?'},need:['Dùng 打交道','Có ý so sánh với nhà cũ'],sample:'条件是好多了，但是关上门谁也不认识谁，不像以前那样常跟邻居打交道了。',samplePy:'Tiáojiàn shì hǎo duō le, dànshì guānshang mén shéi yě bú rènshi shéi, bú xiàng yǐqián nàyàng cháng gēn línjū dǎ jiāodào le.',sampleVn:'Điều kiện thì tốt hơn nhiều, nhưng đóng cửa lại là chẳng ai biết ai, không còn hay giao thiệp với hàng xóm như trước nữa.',tip:'跟 / 与 + người + 打交道 — người đứng TRƯỚC 打交道, không nói ✗打交道邻居.'},
+    {scene:'Em rủ bạn cùng đi tham quan tứ hợp viện ở Bắc Kinh vào kỳ nghỉ.',a:{sp:'Bạn',zh:'四合院有什么好看的？',vn:'Tứ hợp viện thì có gì hay mà xem?'},need:['Dùng 具有代表性 hoặc 代表','Thuyết phục bạn'],sample:'四合院是北京最有代表性的民居，去北京不看四合院，就像来越南不喝咖啡一样！',samplePy:'Sìhéyuàn shì Běijīng zuì yǒu dàibiǎoxìng de mínjū, qù Běijīng bú kàn sìhéyuàn, jiù xiàng lái Yuènán bù hē kāfēi yíyàng!',sampleVn:'Tứ hợp viện là kiểu nhà dân tiêu biểu nhất của Bắc Kinh, đến Bắc Kinh mà không xem tứ hợp viện thì giống như sang Việt Nam mà không uống cà phê vậy!',tip:'Cấu trúc so sánh 就像……一样 (ôn HSK 3) giúp lời thuyết phục sinh động hơn.'}
   ]
 };
 
@@ -1697,29 +1572,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết bài giới thiệu tứ hợp viện cho tờ báo tường của trường.',
-     a:'四合院在中国汉族民居中历史最悠久，分布最广泛。',b:'四合院老早就有了，到处都是。',better:'a',
-     why:'Bài viết cần giọng VĂN VIẾT, chính xác: 历史悠久, 分布广泛. Câu b là khẩu ngữ (老早, 到处都是), nghe như nói chuyện phiếm.'},
-
-    {scene:'Em nhắn tin cho bạn thân kể về chuyến đi Bắc Kinh.',
-     a:'北京四合院最为游客所喜爱。',b:'北京的四合院超好玩儿，你一定得去看看！',better:'b',
-     why:'Nhắn tin cho bạn thân dùng khẩu ngữ tự nhiên (超好玩儿, 一定得). 为……所…… là cấu trúc văn viết, dùng trong tin nhắn nghe rất gượng.'},
-
-    {scene:'Hướng dẫn viên giới thiệu với đoàn khách du lịch.',
-     a:'大家请看，院中的北房是正房，一般是长辈住的地方。',b:'你们看，北边那个大屋子是老人住的。',better:'a',
-     why:'Hướng dẫn viên cần lịch sự (大家请看) và dùng thuật ngữ chính xác (正房, 长辈). Câu b quá suồng sã với khách.'},
-
-    {scene:'Ở nhà, em hỏi mẹ có thể trồng gì ngoài ban công.',
-     a:'妈，咱们阳台上种点儿竹子怎么样？',b:'母亲，请问我们能否在阳台上种植竹子？',better:'a',
-     why:'Nói với mẹ ở nhà dùng khẩu ngữ thân mật: 妈, 咱们, 种点儿……怎么样. Câu b (母亲, 能否, 种植) trang trọng như văn bản, nghe xa cách.'},
-
-    {scene:'Thông báo của ban quản lý khu chung cư dán ở thang máy.',
-     a:'明天停水，别忘了存水啊！',b:'因管道维修，本小区明日上午停水，请各位住户提前做好准备。',better:'b',
-     why:'Thông báo chính thức dùng giọng văn viết, đủ thông tin: 因……, 本小区, 住户, 做好准备. Câu a như lời nhắc của người nhà.'},
-
-    {scene:'Em viết đoạn kết cho bài văn “Ngôi nhà của bà”.',
-     a:'反正我觉得奶奶家挺好的。',b:'那个小院令我感到无比亲切，因而成了我心中最美的地方。',better:'b',
-     why:'Đoạn kết bài văn nên dùng từ ngữ văn viết giàu cảm xúc: 令……感到……, 因而. Câu a (反正, 挺好的) khẩu ngữ, nhạt.'}
+    {scene:'Em viết bài giới thiệu tứ hợp viện cho tờ báo tường của trường.',a:'四合院历史悠久，在华北地区分布十分广泛。',b:'四合院老早就有了，到处都是。',better:'a',why:'Bài viết cần giọng VĂN VIẾT, chính xác: 历史悠久, 分布广泛. Câu b là khẩu ngữ (老早, 到处都是), nghe như nói chuyện phiếm.'},
+    {scene:'Em nhắn tin cho bạn thân kể về chuyến đi Bắc Kinh.',a:'北京四合院深为外国朋友所喜爱。',b:'北京的四合院特别好玩儿，你一定得去看看！',better:'b',why:'Nhắn tin cho bạn thân dùng khẩu ngữ tự nhiên (特别好玩儿, 一定得). 为……所…… là cấu trúc văn viết, dùng trong tin nhắn nghe rất gượng.'},
+    {scene:'Hướng dẫn viên giới thiệu với đoàn khách du lịch.',a:'大家请看，院中的北房是正房，一般是长辈住的地方。',b:'你们看，北边那个大屋子是老人住的。',better:'a',why:'Hướng dẫn viên cần lịch sự (大家请看) và dùng thuật ngữ chính xác (正房, 长辈). Câu b quá suồng sã với khách.'},
+    {scene:'Ở nhà, em hỏi mẹ có thể trồng gì ngoài sân.',a:'妈妈，咱们在院子里种点儿竹子怎么样？',b:'母亲，请问我们是否可以在院子里种竹子？',better:'a',why:'Nói với mẹ ở nhà dùng khẩu ngữ thân mật: 妈妈, 咱们, 种点儿……怎么样. Câu b (母亲, 是否可以) trang trọng như văn bản, nghe xa cách.'},
+    {scene:'Thông báo của ban quản lý toà nhà dán ở thang máy.',a:'明天停水，别忘了存水啊！',b:'本楼明天上午停水，请各位提前做好准备。',better:'b',why:'Thông báo chính thức dùng giọng văn viết, đủ thông tin: 本楼, 各位, 提前做好准备. Câu a như lời nhắc của người nhà.'},
+    {scene:'Em viết đoạn kết cho bài văn “Ngôi nhà của bà”.',a:'我觉得奶奶家就是挺好的。',b:'那个小院令我感到无比亲切，因而成了我心中最美的地方。',better:'b',why:'Đoạn kết bài văn nên dùng từ ngữ văn viết giàu cảm xúc: 令……感到……, 因而. Câu a (就是挺好的) khẩu ngữ, nhạt.'}
   ]
 };
 

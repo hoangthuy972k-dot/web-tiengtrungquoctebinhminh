@@ -1416,90 +1416,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — lấy từ bảng 词语搭配 và bài tập 画线连接 của giáo trình
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
-  {left:'享受',right:'自由'},
   {left:'导致',right:'失眠'},
-  {left:'危害',right:'社会'},
-  {left:'避免',right:'麻烦'},
   {left:'满足',right:'愿望'},
-  {left:'稳定',right:'情绪'},
-  {left:'集中',right:'精神'},
-  {left:'重视',right:'传统'},
   {left:'难忘的',right:'记忆'},
   {left:'准确地',right:'模仿'},
-  {left:'计算',right:'出来'},
-  {left:'清醒',right:'过来'},
-  {left:'光线',right:'昏暗'},
   {left:'拉开',right:'窗帘'},
   {left:'呼吸',right:'新鲜空气'},
-  {left:'量',right:'血压'},
-  {left:'采用',right:'新技术'},
-  {left:'电子',right:'产品'},
   {left:'打乱',right:'生物钟'},
-  {left:'做',right:'实验'}
+  {left:'做',right:'实验'},
+  {left:'采用',right:'新技术'},
+  {left:'情绪',right:'低落'},
+  {left:'享受',right:'生活'},
+  {left:'危害',right:'健康'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'如果早上有课，为了不迟到，我晚上睡觉前都会定上',blank:'闹钟',post:'。',hint:'(đồng hồ báo thức)',ans:'闹钟'},
-  {pre:'保护地球就是保护',blank:'人类',post:'自己。',hint:'(loài người)',ans:'人类'},
-  {pre:'出汗是身体的一种自我保护',blank:'机制',post:'。',hint:'(cơ chế)',ans:'机制'},
-  {pre:'地球上的',blank:'生物',post:'都离不开水和阳光。',hint:'(sinh vật)',ans:'生物'},
-  {pre:'生命在于运动，有',blank:'规律',post:'的运动对于身体健康大有好处。',hint:'(đều đặn, có quy luật)',ans:'规律'},
-  {pre:'这里',blank:'光线',post:'太暗了，看书对眼睛不好。',hint:'(ánh sáng)',ans:'光线'},
-  {pre:'在婚姻问题上，听听父母的意见还是很有',blank:'必要',post:'的。',hint:'(cần thiết)',ans:'必要'},
-  {pre:'擦擦办公桌，整理一下文件，可以让你从休息状态自然',blank:'过渡',post:'到工作状态。',hint:'(chuyển tiếp)',ans:'过渡'},
-  {pre:'我睡得很',blank:'浅',post:'，连蚊子的声音都能把我吵醒。',hint:'(nông, không sâu)',ans:'浅'},
-  {pre:'紧张的',blank:'现代',post:'生活，使很多上班的人无法享受轻松舒适的睡眠。',hint:'(hiện đại)',ans:'现代'},
-  {pre:'为了',blank:'享受',post:'轻松的生活，夫妻俩决定把家搬到这个安静的小镇。',hint:'(tận hưởng)',ans:'享受'},
-  {pre:'手机的',blank:'用途',post:'越来越广，不只是打电话。',hint:'(công dụng)',ans:'用途'},
-  {pre:'我最喜欢上生物课，因为可以做',blank:'实验',post:'。',hint:'(thí nghiệm)',ans:'实验'},
-  {pre:'上课',blank:'铃',post:'一响，同学们就跑回了教室。',hint:'(chuông)',ans:'铃'},
-  {pre:'正如你',blank:'所',post:'估计的那样，李岩确实改变了主意。',hint:'(trợ từ đứng trước động từ)',ans:'所',exp:'(正)如…所 + V + 的那样 = đúng như… đã…; 所 đứng trước động từ trong cấu trúc văn viết.'},
-  {pre:'今天比赛，他的',blank:'状态',post:'特别好，跑了第一名。',hint:'(trạng thái, phong độ)',ans:'状态'},
-  {pre:'考试的时候一定要保持头脑',blank:'清醒',post:'。',hint:'(tỉnh táo)',ans:'清醒'},
-  {pre:'周末我们去郊区',blank:'呼吸',post:'新鲜空气吧。',hint:'(hít thở)',ans:'呼吸'},
-  {pre:'考试前很多学生都有很大的',blank:'心理',post:'压力。',hint:'(tâm lý)',ans:'心理'},
-  {pre:'他很会控制自己的',blank:'情绪',post:'，从来不乱发脾气。',hint:'(cảm xúc, tâm trạng)',ans:'情绪'},
-  {pre:'比赛输了以后，队员们的情绪都很',blank:'低落',post:'。',hint:'(sa sút, ủ rũ)',ans:'低落'},
-  {pre:'那个夏天是我童年最难忘的',blank:'记忆',post:'。',hint:'(ký ức)',ans:'记忆'},
-  {pre:'他用了半个小时才把结果',blank:'计算',post:'出来。',hint:'(tính toán)',ans:'计算'},
-  {pre:'这些能力最多为正常状态的65%，与醉酒者',blank:'相当',post:'。',hint:'(tương đương)',ans:'相当',exp:'与…相当 = tương đương với…: 与醉酒者相当.'},
-  {pre:'这场雨',blank:'持续',post:'下了两个多小时。',hint:'(kéo dài liên tục)',ans:'持续'},
-  {pre:'每晚坚持学习半小时，坚持',blank:'数',post:'年之后，成功就会向你招手。',hint:'(vài, mấy — văn viết)',ans:'数',exp:'数 (shù) + lượng từ = vài, mấy (văn viết): 数年 = vài năm.'},
-  {pre:'长期熬夜会',blank:'导致',post:'失眠。',hint:'(dẫn đến)',ans:'导致',exp:'导致 + kết quả xấu = dẫn đến: 长期熬夜会导致失眠.'},
-  {pre:'考试前我紧张得',blank:'失眠',post:'了，一晚上都没睡着。',hint:'(mất ngủ)',ans:'失眠'},
-  {pre:'医学',blank:'专家',post:'建议，中学生每天应该睡够八个小时。',hint:'(chuyên gia)',ans:'专家'},
-  {pre:'天黑了，把',blank:'窗帘',post:'拉上吧。',hint:'(rèm cửa sổ)',ans:'窗帘'},
-  {pre:'台灯的光线很',blank:'柔和',post:'，看书眼睛不累。',hint:'(êm dịu)',ans:'柔和'},
-  {pre:'小孩子喜欢',blank:'模仿',post:'大人说话。',hint:'(bắt chước)',ans:'模仿'},
-  {pre:'为了',blank:'避免',post:'迟到，我提前半个小时出门。',hint:'(tránh)',ans:'避免'},
-  {pre:'经常熬夜会打乱人的',blank:'生物钟',post:'。',hint:'(đồng hồ sinh học)',ans:'生物钟'}
+  {pre:'我们的身体里有一个“',blank:'生物钟',post:'”，每天到了这个时间就会觉得困。',hint:'(đồng hồ sinh học)',ans:'生物钟',exp:'生物钟 = đồng hồ sinh học: nhịp ngủ – thức tự nhiên của cơ thể; 打乱生物钟 = làm rối loạn nó.'},
+  {pre:'这个房间窗户很小，',blank:'光线',post:'不太好，白天也得开灯。',hint:'(ánh sáng)',ans:'光线',exp:'光线 = ánh sáng chiếu vào một nơi: 光线好 / 光线不好.'},
+  {pre:'这条河很',blank:'浅',post:'，小孩子下去玩也没有危险。',hint:'(nông, cạn)',ans:'浅',exp:'浅 = nông (nước), trái nghĩa 深; còn dùng cho giấc ngủ: 浅睡 = ngủ không sâu.'},
+  {pre:'这台旧电脑还有别的',blank:'用途',post:'，可以留给孩子学习用。',hint:'(công dụng)',ans:'用途',exp:'用途 = công dụng, chỗ dùng của một vật: 有很多用途.'},
+  {pre:'她第一次上台讲话，心里很',blank:'慌张',post:'，连准备好的话都忘了。',hint:'(luống cuống, bối rối)',ans:'慌张',exp:'慌张 = luống cuống vì căng thẳng, vội vàng: 心里很慌张, 别慌张.'},
+  {pre:'跟爷爷一起钓鱼的日子，是我小时候最美好的',blank:'记忆',post:'。',hint:'(ký ức)',ans:'记忆',exp:'记忆 làm danh từ = ký ức; làm động từ / danh từ năng lực = trí nhớ: 记忆能力.'},
+  {pre:'他喝了太多酒，已经不太',blank:'清醒',post:'了，你别让他开车。',hint:'(tỉnh táo)',ans:'清醒',exp:'清醒 = đầu óc tỉnh táo, nhận thức rõ; 清醒过来 = tỉnh lại.'},
+  {pre:'这家公司的',blank:'产品',post:'质量很好，在越南也卖得不错。',hint:'(sản phẩm)',ans:'产品',exp:'产品 = sản phẩm do nhà máy, công ty làm ra: 新产品, 电子产品.'},
+  {pre:'最近他压力很大，晚上常常',blank:'失眠',post:'，白天上课没有精神。',hint:'(mất ngủ)',ans:'失眠',exp:'失眠 = mất ngủ, là nội động từ: 常常失眠, 导致失眠 (không nói 失眠我).'},
+  {pre:'小孩子特别喜欢',blank:'模仿',post:'大人说话的样子。',hint:'(bắt chước)',ans:'模仿',exp:'模仿 = bắt chước, làm theo cái có sẵn: 模仿大人, 模仿声音.'},
+  {pre:'多运动可以加快',blank:'新陈代谢',post:'，对减肥也有帮助。',hint:'(sự trao đổi chất)',ans:'新陈代谢',exp:'新陈代谢 = trao đổi chất; 加快新陈代谢 = tăng tốc trao đổi chất.'},
+  {pre:'人在紧张或者害怕的时候，身体会产生更多的',blank:'肾上腺素',post:'，心跳也会变快。',hint:'(adrenaline)',ans:'肾上腺素',exp:'肾上腺素 = adrenaline, hormone cơ thể tiết ra khi căng thẳng, sợ hãi.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['早晨','醒来','，','我','发现','窗外','正下着','大雪','。'],ans:'早晨醒来，我发现窗外正下着大雪。',audio:'早晨醒来，我发现窗外正下着大雪。'},
-  {words:['天上的星星','那么多','，','谁','数得','过来','呀','？'],ans:'天上的星星那么多，谁数得过来呀？',audio:'天上的星星那么多，谁数得过来呀？'},
-  {words:['过了半天','，','他','才','清醒','过来','。'],ans:'过了半天，他才清醒过来。',audio:'过了半天，他才清醒过来。'},
-  {words:['这','就是','我','所','知道的','情况','。'],ans:'这就是我所知道的情况。',audio:'这就是我所知道的情况。'},
-  {words:['调查显示','，','女性的','职场幸福感','有所','提高','。'],ans:'调查显示，女性的职场幸福感有所提高。',audio:'调查显示，女性的职场幸福感有所提高。'},
-  {words:['我和李阳','是','无所不谈的','好朋友','。'],ans:'我和李阳是无所不谈的好朋友。',audio:'我和李阳是无所不谈的好朋友。'},
-  {words:['这些能力','与','醉酒者','相当','。'],ans:'这些能力与醉酒者相当。',audio:'这些能力与醉酒者相当。'},
-  {words:['我','对','这里的服务','相当','满意','。'],ans:'我对这里的服务相当满意。',audio:'我对这里的服务相当满意。'},
-  {words:['我觉得','北京最美的公园','要','数','颐和园了','。'],ans:'我觉得北京最美的公园要数颐和园了。',audio:'我觉得北京最美的公园要数颐和园了。'},
-  {words:['他','努力了','数年','，','终于','拿到了','博士学位','。'],ans:'他努力了数年，终于拿到了博士学位。',audio:'他努力了数年，终于拿到了博士学位。'},
-  {words:['我','大概','数了一下','，','车上','有','32个学生','。'],ans:'我大概数了一下，车上有32个学生。',audio:'我大概数了一下，车上有32个学生。'},
-  {words:['自然醒','是','最符合','人体生物钟','规律的','。'],ans:'自然醒是最符合人体生物钟规律的。',audio:'自然醒是最符合人体生物钟规律的。'},
-  {words:['人','逐渐','从熟睡','过渡到','浅睡','。'],ans:'人逐渐从熟睡过渡到浅睡。',audio:'人逐渐从熟睡过渡到浅睡。'},
-  {words:['这场雨','持续','下了','两个多小时','。'],ans:'这场雨持续下了两个多小时。',audio:'这场雨持续下了两个多小时。'},
-  {words:['光闹钟','可以','避免','传统闹钟','对人体的','伤害','。'],ans:'光闹钟可以避免传统闹钟对人体的伤害。',audio:'光闹钟可以避免传统闹钟对人体的伤害。'}
+  {words:['他的','病','已经','持续了','数月','，','还是','没好','。'],ans:'他的病已经持续了数月，还是没好。',audio:'他的病已经持续了数月，还是没好。'},
+  {words:['老师','所说的','话','，','我','都','记在','本子上了','。'],ans:'老师所说的话，我都记在本子上了。',audio:'老师所说的话，我都记在本子上了。'},
+  {words:['今天的','作业','相当','多','，','我','得','早点儿','开始写','。'],ans:'今天的作业相当多，我得早点儿开始写。',audio:'今天的作业相当多，我得早点儿开始写。'},
+  {words:['只要','生活','有规律','，','精神','就会','好很多','。'],ans:'只要生活有规律，精神就会好很多。',audio:'只要生活有规律，精神就会好很多。'},
+  {words:['考试前','很多人','都会','有','紧张的','心理','。'],ans:'考试前很多人都会有紧张的心理。',audio:'考试前很多人都会有紧张的心理。'},
+  {words:['水','是','人类','生活中','不可','缺少的','东西','。'],ans:'水是人类生活中不可缺少的东西。',audio:'水是人类生活中不可缺少的东西。'},
+  {words:['紧张的','现代生活','让','很多人','没有时间','享受','生活','。'],ans:'紧张的现代生活让很多人没有时间享受生活。',audio:'紧张的现代生活让很多人没有时间享受生活。'},
+  {words:['考试','没考好','，','他的','情绪','一直','很低落','。'],ans:'考试没考好，他的情绪一直很低落。',audio:'考试没考好，他的情绪一直很低落。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1507,42 +1471,18 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'他的行为已经严重____到了社会安全。',opts:['危害','保护','享受','避免'],ans:0,
-   exp:'Hành vi xấu gây hại nghiêm trọng cho an ninh xã hội → 危害. 保护 (bảo vệ), 享受 (tận hưởng) ngược nghĩa; 避免 (tránh) không đi với 到了 + đối tượng bị hại.'},
-  {wrong:'听到老师叫自己的名字，他____地站了起来。',opts:['慌张','柔和','传统','必要'],ans:0,
-   exp:'Tả thái độ luống cuống khi bất ngờ bị gọi → 慌张地 + V. 柔和 dùng cho âm thanh, ánh sáng; 传统, 必要 không tả được dáng vẻ của người.'},
-  {wrong:'实验失败了没关系，打起____从头再来。',opts:['精神','情绪','心理','状态'],ans:0,
-   exp:'打起精神 = lấy lại tinh thần, là cụm cố định. Không nói 打起情绪 / 打起心理 / 打起状态.'},
-  {wrong:'如果你必须定个闹钟，应____柔和的声音或音乐。',opts:['采用','采取','享受','模仿'],ans:0,
-   exp:'Chọn dùng một thứ cụ thể (âm thanh, phương pháp, kỹ thuật) → 采用. 采取 đi với 措施 / 行动 / 态度; 享受 là tận hưởng; 模仿 là bắt chước.'},
-  {wrong:'妈妈满足了我的生日____，给我买了一只小狗。',opts:['愿望','愿意','失望','盼望'],ans:0,
-   exp:'满足 + 愿望, 生日愿望 là kết hợp cố định; 愿望 là danh từ. 愿意, 盼望 là động từ; 失望 là tính từ "thất vọng".'},
-  {wrong:'近年来，____上出现了一种新的电子产品，名为“光闹钟”。',opts:['市场','产品','用途','机制'],ans:0,
-   exp:'Nơi hàng hóa xuất hiện, được mua bán → 市场上. 产品 là chính món hàng; 用途 (công dụng), 机制 (cơ chế) không đi với 上 chỉ nơi chốn.'},
-  {wrong:'这家公司的____质量很好，价格也不贵。',opts:['产品','市场','生物','人类'],ans:0,
-   exp:'Thứ có chất lượng và giá cả do công ty làm ra → 产品. 市场 là thị trường; 生物, 人类 không phải hàng hóa.'},
-  {wrong:'春节是中国最重要的____节日。',opts:['传统','现代','必要','柔和'],ans:0,
-   exp:'传统节日 = ngày lễ truyền thống, kết hợp cố định. 现代节日 không dùng cho Tết; 必要, 柔和 không đi với 节日.'},
-  {wrong:'多运动可以促进____，让身体更健康。',opts:['新陈代谢','肾上腺素','生物钟','血压'],ans:0,
-   exp:'促进新陈代谢 = thúc đẩy trao đổi chất. Không nói 促进血压 (làm tăng huyết áp không phải điều tốt), 促进生物钟 hay 促进肾上腺素.'},
-  {wrong:'人在害怕的时候，身体会分泌大量的____。',opts:['肾上腺素','新陈代谢','生物钟','光线'],ans:0,
-   exp:'Thứ cơ thể TIẾT RA (分泌) khi sợ hãi là hoóc-môn → 肾上腺素. Trao đổi chất, đồng hồ sinh học, ánh sáng không "tiết ra" được.'},
-  {wrong:'爷爷每天早上都要量____。',opts:['血压','呼吸','心理','情绪'],ans:0,
-   exp:'量血压 = đo huyết áp. 量 (đo) không đi với 心理, 情绪; hơi thở thì nói 数呼吸 hoặc 测呼吸, không phải 量呼吸.'},
-  {wrong:'我被一阵吵闹声突然惊醒，过了半天，脑子才清醒____。',opts:['过来','过去','起来','下来'],ans:0,
-   exp:'过来 sau động từ chỉ TRỞ LẠI trạng thái bình thường (tỉnh táo lại). 过去 thì ngược lại — MẤT trạng thái bình thường (昏过去 = ngất đi).'},
-  {wrong:'最近手头的工作太多了，我都忙不____了。',opts:['过来','起来','下去','出来'],ans:0,
-   exp:'V + 不 + 过来 = không đủ sức làm xuể (vì quá nhiều). 忙不过来 là cách nói cố định.'},
-  {wrong:'山水画____表现的是人与自然的关系。',opts:['所','的','被','把'],ans:0,
-   exp:'所 đứng trước động từ trong cụm "(A) 所 V 的", chỉ đối tượng của hành động: 山水画所表现的 = cái mà tranh sơn thủy thể hiện.'},
-  {wrong:'菜的味道好极了，服务也挺周到，我____满意。',opts:['相当','相同','相比','相似'],ans:0,
-   exp:'相当 làm phó từ chỉ mức độ khá cao: 相当满意 = khá hài lòng. 相同, 相似 là tính từ "giống nhau"; 相比 là "so với", không đứng trước 满意.'},
-  {wrong:'要说我们班跑得最快的，那就____李阳了。',opts:['数','让','比','把'],ans:0,
-   exp:'"(最)……的 (要 / 就) 数……" = kể ra thì … là nhất. 数 ở đây đọc shǔ.'},
-  {wrong:'休息十分钟，我们再____上课。',opts:['继续','持续','连续','陆续'],ans:0,
-   exp:'Dừng giữa chừng rồi làm TIẾP → 继续. 持续 chỉ liên tục không gián đoạn; 连续 là "liền nhau" (连续三天); 陆续 là "lần lượt".'},
-  {wrong:'小明发烧已经____三天了，家里人都很着急。',opts:['持续','继续','坚持','保持'],ans:0,
-   exp:'Sốt kéo dài liên tục, có bổ ngữ thời lượng (三天) → 持续. 继续 thường không mang bổ ngữ thời lượng; 坚持, 保持 không hợp với 发烧.'}
+  {wrong:'大雨____了两天两夜，很多路都不能走了。',opts:['持续','继续','坚持','打扰'],ans:0,exp:'Trạng thái (mưa, nóng) kéo dài liên tục không ngừng → 持续 + thời gian. 继续 là tiếp tục một việc sau khi dừng; 坚持 cần người làm chủ ngữ; 打扰 là làm phiền.'},
+  {wrong:'去中国留学是我从小的____。',opts:['愿望','盼望','意义','想象'],ans:0,exp:'Danh từ “điều mong ước” → 愿望 (我的愿望). 盼望 chỉ là động từ, không đứng sau 的 làm danh từ; 意义 là ý nghĩa; 想象 là tưởng tượng.'},
+  {wrong:'酒后开车会____别人的生命安全。',opts:['危害','伤害','导致','避免'],ans:0,exp:'危害 + 安全/健康/xã hội = gây nguy hại (phạm vi rộng, nghiêm trọng). 伤害 đi với người, tình cảm cụ thể, không đi với 安全; 导致 cần kết quả phía sau; 避免 ngược nghĩa.'},
+  {wrong:'这家饭馆的菜____好吃，就是离学校太远了。',opts:['相当','相同','相处','相信'],ans:0,exp:'相当 + tính từ = khá, rất (phó từ chỉ mức độ). 相同 là giống nhau; 相处 là chung sống; 相信 là tin.'},
+  {wrong:'这就是我____知道的全部情况。',opts:['所','被','把','给'],ans:0,exp:'所 + động từ + 的 + danh từ = cái mà… (văn viết): 我所知道的情况. 被, 把, 给 là giới từ, cần tân ngữ phía sau.'},
+  {wrong:'教室里只坐着十____个学生，很多人还没来。',opts:['来','去','过','起'],ans:0,exp:'Số chẵn + 来 + lượng từ = khoảng, chừng (十来个 = khoảng mười người). 去, 过, 起 không dùng chỉ số ước lượng.'},
+  {wrong:'今天客人太多了，服务员一个人忙不____。',opts:['过来','起来','下去','出来'],ans:0,exp:'V + 不过来 = việc quá nhiều, làm không xuể: 忙不过来, 看不过来. 起来, 下去, 出来 không mang nghĩa này.'},
+  {wrong:'他喝醉了，睡了一整天才醒____。',opts:['过来','起来','下来','出去'],ans:0,exp:'V + 过来 = trở lại trạng thái bình thường: 醒过来 (tỉnh lại). Không nói 醒起来, 醒下来, 醒出去.'},
+  {wrong:'为了____迟到，我每天都提前十分钟出门。',opts:['避免','导致','采用','享受'],ans:0,exp:'避免 + điều không muốn xảy ra = tránh. 导致 là gây ra (ngược nghĩa); 采用 là áp dụng (phương pháp); 享受 là hưởng thụ.'},
+  {wrong:'王老师____了一种新的教学方法，同学们都很喜欢。',opts:['采用','享受','计算','呼吸'],ans:0,exp:'采用 + phương pháp/kỹ thuật = chọn dùng, áp dụng. 享受, 计算, 呼吸 không đi với 方法.'},
+  {wrong:'这件事很简单，没有____再开会讨论了。',opts:['必要','重要','主要','要求'],ans:0,exp:'没有必要 + V = không cần thiết phải…. 重要, 主要 là tính từ, không đứng sau 没有 như vậy; 要求 là yêu cầu.'},
+  {wrong:'春节是中国最重要的____节日。',opts:['传统','规律','状态','现代'],ans:0,exp:'传统节日 = ngày lễ truyền thống. 规律 là quy luật; 状态 là trạng thái; 现代节日 không hợp với Tết.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1550,28 +1490,20 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var translateData = [
   {vi:'Vì dạo này bài tập nhiều đến mức làm không xuể nên tinh thần em khá tệ.',zh:'因为最近作业多得做不过来，所以我的精神状态相当差。',py:'Yīnwèi zuìjìn zuòyè duō de zuò bu guòlái, suǒyǐ wǒ de jīngshén zhuàngtài xiāngdāng chà.',goiY:['因为……所以……','做不过来','相当','精神状态'],giai:'V + 不过来 = làm không xuể (việc quá nhiều); 相当 + tính từ = khá, tương đối — ở đây không dịch là “tương đương”.'},
-  {vi:'Trong lớp em, người sinh hoạt điều độ nhất phải kể đến Tiểu Lâm, thảo nào lúc nào bạn ấy cũng tươi tỉnh như thế.',zh:'我们班作息最有规律的要数小林，难怪她的精神总是那么好。',py:'Wǒmen bān zuòxī zuì yǒu guīlǜ de yào shǔ Xiǎo Lín, nánguài tā de jīngshen zǒngshì nàme hǎo.',goiY:['要数','规律','难怪'],giai:'最……的 + 要数 + người = … nhất phải kể đến…; 数 ở đây đọc shǔ (đếm, kể đến); 难怪 = thảo nào.'},
   {vi:'Thức khuya chơi điện thoại lâu ngày không những gây mất ngủ mà còn khiến ban ngày người uể oải, thiếu sức sống.',zh:'长期熬夜玩手机不但会导致失眠，而且会让人白天没有精神。',py:'Chángqī áoyè wán shǒujī búdàn huì dǎozhì shīmián, érqiě huì ràng rén báitiān méiyǒu jīngshen.',goiY:['不但……而且……','导致','失眠'],giai:'导致 + kết quả xấu = dẫn đến, gây ra (thường là hậu quả tiêu cực); 没有精神 = uể oải, không tỉnh táo.'},
-  {vi:'Lần nào vừa bước vào phòng thi em cũng cuống lên, thở gấp, thậm chí đến những từ mới học thuộc cũng không nhớ ra nổi.',zh:'每次一进考场我就特别慌张，呼吸加快，甚至连刚背过的单词都想不起来了。',py:'Měi cì yí jìn kǎochǎng wǒ jiù tèbié huāngzhāng, hūxī jiākuài, shènzhì lián gāng bèi guo de dāncí dōu xiǎng bu qǐlái le.',goiY:['一……就……','慌张','呼吸','甚至连……都……'],giai:'一……就…… = hễ/vừa… là…; 甚至连……都…… nhấn mạnh mức độ cao nhất; 想不起来 = không nhớ ra được.'},
-  {vi:'Cái “ngủ sớm” mà em nói không phải là chín giờ đã lên giường, mà là để giờ giấc sinh hoạt của mình có quy luật.',zh:'我所说的“早睡”并不是指九点就上床，而是要让自己的作息有规律。',py:'Wǒ suǒ shuō de “zǎo shuì” bìng bú shì zhǐ jiǔ diǎn jiù shàng chuáng, ér shì yào ràng zìjǐ de zuòxī yǒu guīlǜ.',goiY:['所说的','不是……而是……','规律'],giai:'所 + V + 的 = cái mà… (所说的 = điều mình nói), sắc thái văn viết; 并不是 A 而是 B = hoàn toàn không phải A mà là B.'},
-  {vi:'Trường em là một trường nội trú, chuông báo thức mỗi sáng chẳng khác gì một chiếc đồng hồ báo thức khổng lồ, muốn ngủ thêm năm phút cũng không được.',zh:'我们学校是一所寄宿学校，每天早上的起床铃相当于一个巨大的闹钟，哪怕想多睡五分钟也不可能。',py:'Wǒmen xuéxiào shì yì suǒ jìsù xuéxiào, měi tiān zǎoshang de qǐchuáng líng xiāngdāngyú yí ge jùdà de nàozhōng, nǎpà xiǎng duō shuì wǔ fēnzhōng yě bù kěnéng.',goiY:['一所','相当于','哪怕……也……','闹钟'],giai:'所 còn là lượng từ cho trường học, bệnh viện (一所学校); A 相当于 B = A tương đương, chẳng khác gì B; 哪怕……也…… = dù chỉ… cũng không….'},
-  {vi:'Chuyên gia khuyên rằng thay vì dùng đồng hồ báo thức kêu thật to để đánh thức mình, chi bằng trước khi ngủ kéo hé rèm cửa, để ánh sáng ấm áp dịu nhẹ gọi bạn dậy.',zh:'专家建议，与其用声音很大的闹钟把自己吵醒，不如睡前把窗帘拉开一点儿，让温暖柔和的光线把你叫醒。',py:'Zhuānjiā jiànyì, yǔqí yòng shēngyīn hěn dà de nàozhōng bǎ zìjǐ chǎo xǐng, bùrú shuì qián bǎ chuānglián lā kāi yìdiǎnr, ràng wēnnuǎn róuhé de guāngxiàn bǎ nǐ jiào xǐng.',goiY:['与其……不如……','闹钟','窗帘','光线'],giai:'与其 A，不如 B = thay vì A, chi bằng B; 吵醒 = làm ồn khiến tỉnh dậy, 叫醒 = gọi dậy — bổ ngữ kết quả 醒 đứng ngay sau động từ.'},
-  {vi:'Khi thi không tốt, tâm trạng sa sút là chuyện bình thường, nhưng chỉ cần nó không kéo dài quá lâu thì không cần phải cả ngày rầu rĩ.',zh:'考试没考好的时候，情绪低落是正常的，但只要持续的时间不太长，就没有必要整天发愁。',py:'Kǎoshì méi kǎo hǎo de shíhou, qíngxù dīluò shì zhèngcháng de, dàn zhǐyào chíxù de shíjiān bú tài cháng, jiù méiyǒu bìyào zhěngtiān fāchóu.',goiY:['情绪低落','只要……就……','持续','没有必要'],giai:'只要……就…… nêu điều kiện đủ; 没有必要 + V = không cần thiết phải…; 持续 = kéo dài liên tục (dùng cho trạng thái, thời gian).'},
-  {vi:'Nửa đêm qua em mơ thấy mình đi thi muộn, giật mình tỉnh dậy, hít thở sâu mấy lần mới tỉnh táo lại, hóa ra chỉ là một giấc mơ.',zh:'昨天半夜我梦见自己考试迟到了，吓得一下子醒了过来，深呼吸了好几次才清醒过来，原来只是一场梦。',py:'Zuótiān bànyè wǒ mèngjiàn zìjǐ kǎoshì chídào le, xià de yíxiàzi xǐng le guòlái, shēn hūxī le hǎo jǐ cì cái qīngxǐng guòlái, yuánlái zhǐ shì yì chǎng mèng.',goiY:['醒了过来','清醒过来','呼吸','原来'],giai:'醒过来 = tỉnh dậy, 清醒过来 = tỉnh táo trở lại (V + 过来: trở về trạng thái bình thường); 原来 = hóa ra (phát hiện sự thật).'},
-  {vi:'Áp lực mà học sinh lớp 12 phải gánh chịu khá lớn, ngày nào cũng dựa vào đồng hồ báo thức để dậy; một khi tình trạng này kéo dài vài tháng thì có thể gây mất ngủ, giảm trí nhớ và nhiều vấn đề khác.',zh:'高三学生所承受的压力相当大，每天靠闹钟起床，一旦这种状态持续数月，就可能导致失眠、记忆力下降等问题。',py:'Gāosān xuésheng suǒ chéngshòu de yālì xiāngdāng dà, měi tiān kào nàozhōng qǐchuáng, yídàn zhè zhǒng zhuàngtài chíxù shù yuè, jiù kěnéng dǎozhì shīmián, jìyìlì xiàjiàng děng wèntí.',goiY:['所承受的','一旦……就……','持续数月','导致'],giai:'所 + V + 的 bổ nghĩa cho danh từ (所承受的压力 = áp lực phải gánh chịu); 数月 = vài tháng (数 đọc shù); 一旦……就…… = một khi… thì….'}
+  {vi:'Lần nào vừa bước vào phòng thi em cũng cuống lên, thở gấp, thậm chí đến những từ mới vừa học thuộc cũng không nhớ ra nổi.',zh:'每次一进考场我就特别慌张，呼吸加快，甚至连刚背过的生词都想不起来了。',py:'Měi cì yí jìn kǎochǎng wǒ jiù tèbié huāngzhāng, hūxī jiākuài, shènzhì lián gāng bèi guo de shēngcí dōu xiǎng bu qǐlái le.',goiY:['一……就……','慌张','呼吸','甚至连……都……'],giai:'一……就…… = hễ/vừa… là…; 甚至连……都…… nhấn mạnh mức độ cao nhất; 想不起来 = không nhớ ra được.'},
+  {vi:'Chuyên gia khuyên đừng dùng đồng hồ báo thức kêu thật to để đánh thức mình; tốt nhất trước khi ngủ nên kéo hé rèm cửa, để ánh sáng ấm áp dịu nhẹ gọi bạn dậy.',zh:'专家建议，别用声音很大的闹钟把自己吵醒，最好睡前把窗帘拉开一点儿，让温暖柔和的光线把你叫醒。',py:'Zhuānjiā jiànyì, bié yòng shēngyīn hěn dà de nàozhōng bǎ zìjǐ chǎo xǐng, zuìhǎo shuì qián bǎ chuānglián lā kāi yìdiǎnr, ràng wēnnuǎn róuhé de guāngxiàn bǎ nǐ jiào xǐng.',goiY:['最好','闹钟','窗帘','柔和'],giai:'最好 + V = tốt nhất nên…; 吵醒 = làm ồn khiến tỉnh dậy, 叫醒 = gọi dậy — bổ ngữ kết quả 醒 đứng ngay sau động từ.'},
+  {vi:'Khi thi không tốt, tâm trạng sa sút là chuyện bình thường, nhưng chỉ cần nó không kéo dài quá lâu thì không cần phải ngày nào cũng rầu rĩ.',zh:'考试没考好的时候，情绪低落是正常的，但只要持续的时间不太长，就没有必要每天发愁。',py:'Kǎoshì méi kǎo hǎo de shíhou, qíngxù dīluò shì zhèngcháng de, dàn zhǐyào chíxù de shíjiān bú tài cháng, jiù méiyǒu bìyào měi tiān fāchóu.',goiY:['情绪低落','只要……就……','持续','没有必要'],giai:'只要……就…… nêu điều kiện đủ; 没有必要 + V = không cần thiết phải…; 持续 = kéo dài liên tục (dùng cho trạng thái, thời gian).'},
+  {vi:'Nửa đêm qua em mơ thấy mình đi thi muộn, giật mình tỉnh dậy, hít thở sâu mấy lần mới tỉnh táo lại, hóa ra chỉ là một giấc mơ.',zh:'昨天半夜我梦见自己考试迟到了，吓得一下子醒了过来，深呼吸了好几次才清醒过来，原来只是一场梦。',py:'Zuótiān bànyè wǒ mèngjiàn zìjǐ kǎoshì chídào le, xià de yíxiàzi xǐng le guòlái, shēn hūxī le hǎo jǐ cì cái qīngxǐng guòlái, yuánlái zhǐ shì yì chǎng mèng.',goiY:['醒了过来','清醒过来','呼吸','原来'],giai:'醒过来 = tỉnh dậy, 清醒过来 = tỉnh táo trở lại (V + 过来: trở về trạng thái bình thường); 原来 = hóa ra (phát hiện sự thật).'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
   {vi:'Giấc ngủ của con người có cơ chế riêng của nó, vì vậy tốt nhất đừng tùy tiện dùng đồng hồ báo thức làm rối loạn nó.',zh:'人类的睡眠有自己的机制，所以最好不要随便用闹钟打乱它。',py:'Rénlèi de shuìmián yǒu zìjǐ de jīzhì, suǒyǐ zuìhǎo bú yào suíbiàn yòng nàozhōng dǎluàn tā.',goiY:['所以 = vì vậy','机制 = cơ chế','打乱 = làm rối loạn'],giai:'所以 nêu kết quả/lời khuyên rút ra; 人类 = loài người, nói về giấc ngủ thì dịch “con người” cho tự nhiên.'},
-  {vi:'Nhiều người đi làm không được tận hưởng việc tự nhiên tỉnh giấc, đành ngày nào cũng dựa vào đồng hồ báo thức để dậy.',zh:'很多上班族无法享受自然醒，只好每天依靠闹钟起床。',py:'Hěn duō shàngbānzú wúfǎ xiǎngshòu zìrán xǐng, zhǐhǎo měi tiān yīkào nàozhōng qǐchuáng.',goiY:['只好 = đành phải','享受 = tận hưởng','无法 = không thể'],giai:'只好 chỉ lựa chọn bất đắc dĩ; 上班族 = giới đi làm, dịch tự nhiên “người đi làm”.'},
-  {vi:'Giấc ngủ gồm ngủ sâu và ngủ nông, hơn nữa hai giai đoạn này luôn luân phiên nhau theo một quy luật nhất định.',zh:'睡眠是由深睡和浅睡组成的，而且它们总是按一定的规律交替出现。',py:'Shuìmián shì yóu shēn shuì hé qiǎn shuì zǔchéng de, érqiě tāmen zǒngshì àn yídìng de guīlǜ jiāotì chūxiàn.',goiY:['由……组成 = gồm, do… tạo thành','而且 = hơn nữa','浅 = nông'],giai:'由 A 和 B 组成 = gồm A và B; 浅睡 = ngủ nông (không sâu), 浅 vốn nghĩa là cạn/nông.'},
   {vi:'Ánh sáng là điều kiện cần thiết để tỉnh giấc tự nhiên; chỉ khi ánh sáng mạnh dần lên, con người mới từ từ chuyển từ trạng thái ngủ sang trạng thái tỉnh táo.',zh:'光线是自然醒的必要条件，只有光线逐渐变强，人才会慢慢从睡眠状态过渡到清醒状态。',py:'Guāngxiàn shì zìrán xǐng de bìyào tiáojiàn, zhǐyǒu guāngxiàn zhújiàn biàn qiáng, rén cái huì mànmàn cóng shuìmián zhuàngtài guòdù dào qīngxǐng zhuàngtài.',goiY:['只有……才…… = chỉ khi… mới…','必要条件 = điều kiện cần thiết','过渡到 = chuyển sang'],giai:'只有 + điều kiện duy nhất, 才 + kết quả; 从 A 过渡到 B = chuyển dần từ A sang B (quá trình từ từ, không đột ngột).'},
-  {vi:'Các nhà khoa học từng làm thí nghiệm thế này: nếu người đang ngủ sâu mà đột ngột bị chuông báo thức đánh thức thì nhịp tim và huyết áp sẽ tăng lên ngay.',zh:'科学家做过这样的实验：如果人在深睡时突然被闹铃叫醒，心跳和血压就会立刻升高。',py:'Kēxuéjiā zuò guo zhèyàng de shíyàn: rúguǒ rén zài shēn shuì shí tūrán bèi nàolíng jiào xǐng, xīntiào hé xuèyā jiù huì lìkè shēnggāo.',goiY:['如果……就…… = nếu… thì…','实验 = thí nghiệm','血压 = huyết áp'],giai:'如果……就…… nêu giả thiết – kết quả; 被闹铃叫醒 là câu bị động → “bị chuông báo thức đánh thức”.'},
-  {vi:'Sau khi bị đồng hồ báo thức làm thức giấc, cơ thể tiết ra nhiều adrenaline, vì thế con người thấy bồn chồn, luống cuống, tâm trạng cũng có vẻ khá sa sút.',zh:'被闹钟吵醒后，人体会分泌大量肾上腺素，因此人会感到慌张，情绪也显得相当低落。',py:'Bèi nàozhōng chǎo xǐng hòu, réntǐ huì fēnmì dàliàng shènshàngxiànsù, yīncǐ rén huì gǎndào huāngzhāng, qíngxù yě xiǎnde xiāngdāng dīluò.',goiY:['因此 = vì thế','分泌 = tiết ra','相当 = khá'],giai:'因此 nối nguyên nhân sinh lý với kết quả tâm lý; 相当 + tính từ = khá, tương đối (相当低落 = khá sa sút).'},
-  {vi:'Không chỉ vậy, trí nhớ và khả năng tính toán của con người cũng bị ảnh hưởng, tình trạng này có thể kéo dài suốt cả buổi sáng.',zh:'不仅如此，人的记忆和计算能力也会受到影响，这种状态可能会持续整个上午。',py:'Bùjǐn rúcǐ, rén de jìyì hé jìsuàn nénglì yě huì shòudào yǐngxiǎng, zhè zhǒng zhuàngtài kěnéng huì chíxù zhěnggè shàngwǔ.',goiY:['不仅如此 = không chỉ vậy','持续 = kéo dài','记忆 = trí nhớ'],giai:'不仅如此 nối tiếp ý trước theo kiểu tăng tiến (“không chỉ thế”); 受到影响 = bị ảnh hưởng.'},
+  {vi:'Các nhà khoa học từng làm thí nghiệm thế này: nếu người đang ngủ sâu mà đột ngột bị chuông báo thức đánh thức thì tim sẽ đập nhanh ngay, huyết áp cũng tăng lên.',zh:'科学家做过这样的实验：如果人在深睡时突然被闹铃叫醒，心跳就会立刻加快，血压也会变高。',py:'Kēxuéjiā zuò guo zhèyàng de shíyàn: rúguǒ rén zài shēn shuì shí tūrán bèi nàolíng jiào xǐng, xīntiào jiù huì lìkè jiākuài, xuèyā yě huì biàn gāo.',goiY:['如果……就…… = nếu… thì…','实验 = thí nghiệm','血压 = huyết áp'],giai:'如果……就…… nêu giả thiết – kết quả; 被闹铃叫醒 là câu bị động → “bị chuông báo thức đánh thức”.'},
+  {vi:'Không chỉ vậy, trí nhớ và khả năng tính toán của con người cũng bị ảnh hưởng, tình trạng này có thể kéo dài suốt cả buổi sáng.',zh:'不仅这样，人的记忆和计算能力也会受到影响，这种状态可能会持续整个上午。',py:'Bùjǐn zhèyàng, rén de jìyì hé jìsuàn nénglì yě huì shòudào yǐngxiǎng, zhè zhǒng zhuàngtài kěnéng huì chíxù zhěnggè shàngwǔ.',goiY:['不仅这样 = không chỉ vậy','持续 = kéo dài','记忆 = trí nhớ'],giai:'不仅这样 (văn viết: 不仅如此) nối tiếp ý trước theo kiểu tăng tiến (“không chỉ thế”); 受到影响 = bị ảnh hưởng.'},
   {vi:'Chuyên gia cho rằng tác hại của đồng hồ báo thức với cơ thể khá lớn; nếu tình trạng này kéo dài vài tháng, thậm chí có thể dẫn đến cao huyết áp.',zh:'专家认为，闹钟对人体的危害相当大，如果这种情况持续数月，甚至会导致高血压。',py:'Zhuānjiā rènwéi, nàozhōng duì réntǐ de wēihài xiāngdāng dà, rúguǒ zhè zhǒng qíngkuàng chíxù shù yuè, shènzhì huì dǎozhì gāo xuèyā.',goiY:['如果……甚至…… = nếu… thậm chí…','数月 = vài tháng','危害 = tác hại'],giai:'数 đọc shù khi đứng trước lượng từ/thời gian = vài (数月 = vài tháng, văn viết); 甚至 đẩy hậu quả lên mức nghiêm trọng hơn.'},
-  {vi:'Vì vậy chuyên gia khuyên, nếu buộc phải dùng đồng hồ báo thức thì nên chọn loại có âm thanh êm dịu, để tránh bị giật mình tỉnh giấc.',zh:'所以专家建议，如果非用闹钟不可，就应该采用声音柔和的闹钟，以免被突然吓醒。',py:'Suǒyǐ zhuānjiā jiànyì, rúguǒ fēi yòng nàozhōng bùkě, jiù yīnggāi cǎiyòng shēngyīn róuhé de nàozhōng, yǐmiǎn bèi tūrán xià xǐng.',goiY:['非……不可 = buộc phải','采用 = chọn dùng','以免 = để tránh'],giai:'非……不可 = không… không được, buộc phải; 以免 + điều không mong muốn = để khỏi, để tránh — đặt ở vế cuối.'},
   {vi:'Trên thị trường có một sản phẩm mới gọi là đồng hồ báo thức ánh sáng; nó mô phỏng sự thay đổi của ánh sáng tự nhiên buổi sớm, giúp người ta tỉnh dậy từ từ, nhờ đó tránh được tác hại do báo thức gây ra.',zh:'市场上有一种新产品叫光闹钟，它能模仿早晨自然光线的变化，让人慢慢醒来，从而避免闹钟带来的危害。',py:'Shìchǎng shang yǒu yì zhǒng xīn chǎnpǐn jiào guāng nàozhōng, tā néng mófǎng zǎochen zìrán guāngxiàn de biànhuà, ràng rén mànmàn xǐnglái, cóng\'ér bìmiǎn nàozhōng dàilái de wēihài.',goiY:['模仿 = mô phỏng','醒来 = tỉnh dậy','从而 = nhờ đó','避免 = tránh'],giai:'从而 nêu kết quả đạt được nhờ cách làm ở vế trước (văn viết) → “nhờ đó”; 醒来 = tỉnh dậy (来 chỉ trở về trạng thái tỉnh).'}
 ];
 
@@ -1635,30 +1567,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (3 câu đầu là câu 29–31 sách bài tập)
   sapXep:[
-    {manh:['是为了','放慢脚步','享受生活'],
-     dap:'放慢脚步是为了享受生活。',
-     vn:'Chậm bước lại là để tận hưởng cuộc sống.',
-     giai:'Chủ ngữ là cụm động từ 放慢脚步; 是为了 + mục đích (享受生活) làm vị ngữ.'},
-    {manh:['是很正常的','人偶尔','情绪低落'],
-     dap:'人偶尔情绪低落是很正常的。',
-     vn:'Con người thỉnh thoảng tâm trạng sa sút là chuyện rất bình thường.',
-     giai:'Cả cụm chủ–vị 人偶尔情绪低落 làm chủ ngữ; 是很正常的 (是……的) đặt cuối câu để nhận xét.'},
-    {manh:['一般都较短','雷阵雨','持续的时间'],
-     dap:'雷阵雨持续的时间一般都较短。',
-     vn:'Mưa rào kèm sấm thường kéo dài không lâu.',
-     giai:'持续 làm định ngữ cho 时间 (雷阵雨持续的时间); phó từ 一般都 đứng trước vị ngữ 较短.'},
-    {manh:['导致','会','长期熬夜','失眠'],
-     dap:'长期熬夜会导致失眠。',
-     vn:'Thức khuya lâu ngày sẽ dẫn đến mất ngủ.',
-     giai:'A (长期熬夜) + 会 + 导致 + kết quả xấu (失眠). Động từ năng nguyện 会 đứng trước 导致.'},
-    {manh:['我们的愿望','自然醒','最符合'],
-     dap:'自然醒最符合我们的愿望。',
-     vn:'Tự nhiên tỉnh giấc hợp với mong muốn của chúng ta nhất.',
-     giai:'符合 + 愿望 là kết hợp cố định; 最 đứng trước động từ 符合.'},
-    {manh:['伤害','可以避免','光闹钟','对人体的'],
-     dap:'光闹钟可以避免对人体的伤害。',
-     vn:'Đồng hồ báo thức ánh sáng có thể tránh được tổn hại cho cơ thể.',
-     giai:'避免 + tân ngữ (伤害); 对人体的 làm định ngữ đứng trước 伤害.'}
+    {manh:['是为了','早点儿睡觉','第二天更有精神'],dap:'早点儿睡觉是为了第二天更有精神。',vn:'Ngủ sớm là để hôm sau tỉnh táo hơn.',giai:'Chủ ngữ là cụm động từ 早点儿睡觉; 是为了 + mục đích (第二天更有精神) làm vị ngữ.'},
+    {manh:['是很正常的','人偶尔','情绪低落'],dap:'人偶尔情绪低落是很正常的。',vn:'Con người thỉnh thoảng tâm trạng sa sút là chuyện rất bình thường.',giai:'Cả cụm chủ–vị 人偶尔情绪低落 làm chủ ngữ; 是很正常的 (是……的) đặt cuối câu để nhận xét.'},
+    {manh:['一般都不长','雷阵雨','持续的时间'],dap:'雷阵雨持续的时间一般都不长。',vn:'Mưa rào kèm sấm thường kéo dài không lâu.',giai:'持续 làm định ngữ cho 时间 (雷阵雨持续的时间); phó từ 一般都 đứng trước vị ngữ 不长.'},
+    {manh:['导致','会','长期熬夜','失眠'],dap:'长期熬夜会导致失眠。',vn:'Thức khuya lâu ngày sẽ dẫn đến mất ngủ.',giai:'A (长期熬夜) + 会 + 导致 + kết quả xấu (失眠). Động từ năng nguyện 会 đứng trước 导致.'},
+    {manh:['我们的愿望','自然醒','最符合'],dap:'自然醒最符合我们的愿望。',vn:'Tự nhiên tỉnh giấc hợp với mong muốn của chúng ta nhất.',giai:'符合 + 愿望 là kết hợp cố định; 最 đứng trước động từ 符合.'},
+    {manh:['伤害','可以避免','光闹钟','对人体的'],dap:'光闹钟可以避免对人体的伤害。',vn:'Đồng hồ báo thức ánh sáng có thể tránh được tổn hại cho cơ thể.',giai:'避免 + tân ngữ (伤害); 对人体的 làm định ngữ đứng trước 伤害.'}
   ]
 };
 
@@ -1668,30 +1582,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề giấc ngủ và đồng hồ báo thức. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 闹钟 · 失眠 · 导致 · 避免 · 精神 · 规律 · 享受.',
   questions:[
-    {q_zh:'你是从什么时候开始使用闹钟的？为什么要用闹钟？',
-     q_vn:'Em bắt đầu dùng đồng hồ báo thức từ khi nào? Vì sao phải dùng?',
-     hint:'Kể mốc thời gian + lý do, dùng 从……开始 / 因为……所以……',
-     sample:'我是从上初中开始用闹钟的。因为学校七点就上课，我怕迟到，所以每天晚上都定好闹钟。',
-     sample_vn:'Tôi bắt đầu dùng đồng hồ báo thức từ khi lên cấp hai. Vì trường bảy giờ đã vào học, tôi sợ đến muộn nên tối nào cũng đặt sẵn báo thức.',
-     note:'Câu hỏi 什么时候开始 nên trả lời bằng 是……的 để nhấn mạnh thời điểm.'},
-    {q_zh:'本文的观点你认为哪些是有道理的？',
-     q_vn:'Trong các quan điểm của bài, em thấy những điểm nào có lý?',
-     hint:'Nêu 1–2 quan điểm của bài + kinh nghiệm của em chứng minh',
-     sample:'我觉得“突然被闹钟叫醒会使人情绪低落”很有道理。我被闹钟吵醒的时候，一上午都没有精神。',
-     sample_vn:'Tôi thấy ý "đột ngột bị báo thức gọi dậy khiến người ta tâm trạng sa sút" rất có lý. Những lúc bị báo thức đánh thức, cả buổi sáng tôi chẳng có tinh thần.',
-     note:'Dẫn lại ý của bài rồi thêm trải nghiệm thật — cách trả lời ăn điểm ở HSKK.'},
-    {q_zh:'你有没有关于实现“自然醒”的好的经验或做法？',
-     q_vn:'Em có kinh nghiệm hay cách làm nào hay để được "tự nhiên tỉnh giấc" không?',
-     hint:'Đưa ra 2–3 cách cụ thể, dùng 首先……其次…… hoặc 只要……就……',
-     sample:'我的经验是生活要有规律。只要每天晚上十点半睡觉，早上六点左右我就能自然醒。另外，睡前别玩手机。',
-     sample_vn:'Kinh nghiệm của tôi là sinh hoạt phải điều độ. Chỉ cần tối nào cũng ngủ lúc mười rưỡi thì khoảng sáu giờ sáng tôi sẽ tự tỉnh. Ngoài ra, trước khi ngủ đừng chơi điện thoại.',
-     note:'Nêu cách làm CỤ THỂ (giờ giấc, việc làm) thuyết phục hơn nói chung chung "ngủ sớm".'},
-    {q_zh:'你真的需要闹钟吗？为什么？',
-     q_vn:'Em có thật sự cần đồng hồ báo thức không? Vì sao?',
-     hint:'Chọn rõ một phía (cần / không cần) rồi đưa lý do, dùng 虽然……但是……',
-     sample:'虽然闹钟对身体有一些危害，但是我现在还需要它。不过我会采用柔和的音乐，避免被突然惊醒。',
-     sample_vn:'Tuy đồng hồ báo thức có hại cho cơ thể, nhưng hiện tại tôi vẫn cần nó. Có điều tôi sẽ dùng nhạc êm dịu để tránh bị giật mình tỉnh giấc.',
-     note:'Câu hỏi 真的……吗 cần một câu trả lời dứt khoát trước, rồi mới giải thích.'}
+    {q_zh:'你是从什么时候开始使用闹钟的？为什么要用闹钟？',q_vn:'Em bắt đầu dùng đồng hồ báo thức từ khi nào? Vì sao phải dùng?',hint:'Kể mốc thời gian + lý do, dùng 从……开始 / 因为……所以……',sample:'我是从上大学开始用闹钟的。因为第一节课七点就开始，我怕迟到，所以每天晚上睡觉前都会检查一下闹钟。',sample_vn:'Tôi bắt đầu dùng đồng hồ báo thức từ khi lên đại học. Vì tiết đầu bảy giờ đã bắt đầu, tôi sợ đến muộn nên tối nào trước khi ngủ cũng kiểm tra lại báo thức.',note:'Câu hỏi 什么时候开始 nên trả lời bằng 是……的 để nhấn mạnh thời điểm.'},
+    {q_zh:'你觉得课文里说的哪些话是对的？',q_vn:'Em thấy những điều nào bài khoá nói là đúng?',hint:'Nêu 1–2 ý của bài + kinh nghiệm của em chứng minh',sample:'我觉得“突然被闹钟叫醒会使人情绪低落”说得很对。我被闹钟吵醒的时候，整个上午都觉得很累。',sample_vn:'Tôi thấy ý "đột ngột bị báo thức gọi dậy khiến người ta tâm trạng sa sút" rất đúng. Những lúc bị báo thức đánh thức, cả buổi sáng tôi đều thấy mệt.',note:'Dẫn lại ý của bài rồi thêm trải nghiệm thật — cách trả lời ăn điểm ở HSKK.'},
+    {q_zh:'你有没有让自己“自然醒”的好办法？',q_vn:'Em có cách nào hay để được "tự nhiên tỉnh giấc" không?',hint:'Đưa ra 2–3 cách cụ thể, dùng 首先……其次…… hoặc 只要……就……',sample:'我的经验是生活要有规律。我每天晚上都在十一点左右睡觉，睡前也不玩手机，所以早上常常不用闹钟就能醒过来。',sample_vn:'Kinh nghiệm của tôi là sinh hoạt phải điều độ. Tối nào tôi cũng ngủ khoảng mười một giờ, trước khi ngủ cũng không chơi điện thoại, nên sáng ra thường không cần báo thức vẫn tự tỉnh.',note:'Nêu cách làm CỤ THỂ (giờ giấc, việc làm) thuyết phục hơn nói chung chung "ngủ sớm".'},
+    {q_zh:'你真的需要闹钟吗？为什么？',q_vn:'Em có thật sự cần đồng hồ báo thức không? Vì sao?',hint:'Chọn rõ một phía (cần / không cần) rồi đưa lý do, dùng 虽然……但是……',sample:'虽然闹钟对身体有一些危害，但是我现在还需要它。不过我会采用柔和的音乐，避免被突然惊醒。',sample_vn:'Tuy đồng hồ báo thức có hại cho cơ thể, nhưng hiện tại tôi vẫn cần nó. Có điều tôi sẽ dùng nhạc êm dịu để tránh bị giật mình tỉnh giấc.',note:'Câu hỏi 真的……吗 cần một câu trả lời dứt khoát trước, rồi mới giải thích.'}
   ]
 };
 
@@ -1783,45 +1677,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn thân than rằng sáng nào cũng bị báo thức làm giật mình.',
-     a:{sp:'Bạn',zh:'每天早上被闹钟吵醒，我都特别难受。',vn:'Sáng nào bị báo thức đánh thức tớ cũng khó chịu lắm.'},
-     need:['Dùng 避免 hoặc 采用','Đưa ra một lời khuyên CỤ THỂ'],
-     sample:'你可以把铃声换成柔和的音乐，这样就能避免被突然惊醒了。',
-     samplePy:'Nǐ kěyǐ bǎ língshēng huànchéng róuhé de yīnyuè, zhèyàng jiù néng bìmiǎn bèi tūrán jīngxǐng le.',
-     sampleVn:'Cậu có thể đổi chuông thành nhạc êm dịu, như vậy sẽ tránh được việc bị giật mình tỉnh giấc.',
-     tip:'避免 + điều xấu: 避免被惊醒. Đừng viết 避免不被惊醒 — thừa 不.'},
-
-    {scene:'Mẹ hỏi vì sao dạo này em trông uể oải.',
-     a:{sp:'Mẹ',zh:'你最近怎么总是没精神？',vn:'Dạo này sao con cứ uể oải thế?'},
-     need:['Dùng 失眠 hoặc 导致','Nêu nguyên nhân CỤ THỂ'],
-     sample:'最近作业太多，我每天都睡得很晚，结果导致失眠了。',
-     samplePy:'Zuìjìn zuòyè tài duō, wǒ měi tiān dōu shuì de hěn wǎn, jiéguǒ dǎozhì shīmián le.',
-     sampleVn:'Dạo này bài tập nhiều quá, ngày nào con cũng ngủ muộn, kết quả là bị mất ngủ.',
-     tip:'导致 đi với kết quả XẤU (失眠). 失眠 là nội động từ, không nói 失眠我.'},
-
-    {scene:'Bạn hỏi em làm thế nào mà sáng nào cũng tự dậy được.',
-     a:{sp:'Bạn',zh:'你是怎么做到每天自然醒的？',vn:'Cậu làm thế nào mà ngày nào cũng tự tỉnh vậy?'},
-     need:['Dùng 规律','Dùng 只要……就……'],
-     sample:'我的生活很有规律，只要晚上十点半睡觉，早上六点就自然醒了。',
-     samplePy:'Wǒ de shēnghuó hěn yǒu guīlǜ, zhǐyào wǎnshang shí diǎn bàn shuìjiào, zǎoshang liù diǎn jiù zìrán xǐng le.',
-     sampleVn:'Sinh hoạt của tớ rất điều độ, chỉ cần mười rưỡi tối đi ngủ là sáu giờ sáng tự tỉnh.',
-     tip:'生活很有规律 = sinh hoạt điều độ. Đây là nghĩa tính từ của 规律 mà người Việt hay quên.'},
-
-    {scene:'Cô giáo giao cho em — lớp trưởng — quá nhiều việc cùng lúc.',
-     a:{sp:'Cô',zh:'这些工作你一个人能做完吗？',vn:'Chỗ việc này một mình em làm xong được không?'},
-     need:['Dùng V + 不 + 过来','Giữ lễ phép với thầy cô'],
-     sample:'老师，工作太多了，我一个人恐怕忙不过来，能不能再找一个同学帮忙？',
-     samplePy:'Lǎoshī, gōngzuò tài duō le, wǒ yí ge rén kǒngpà máng bu guòlái, néng bu néng zài zhǎo yí ge tóngxué bāngmáng?',
-     sampleVn:'Thưa cô, việc nhiều quá, một mình em e là làm không xuể, cô có thể tìm thêm một bạn giúp được không ạ?',
-     tip:'忙不过来 / 做不过来: không chèn 了 vào giữa (không nói 忙不了过来).'},
-
-    {scene:'Bạn hỏi em thấy quán ăn mới mở thế nào.',
-     a:{sp:'Bạn',zh:'那家新开的饭馆怎么样？',vn:'Quán mới mở đó thế nào?'},
-     need:['Dùng 相当 (phó từ "khá")','Nêu một chi tiết chứng minh'],
-     sample:'相当不错！菜的味道好极了，服务也挺周到的，我下次还想去。',
-     samplePy:'Xiāngdāng búcuò! Cài de wèidào hǎo jí le, fúwù yě tǐng zhōudào de, wǒ xià cì hái xiǎng qù.',
-     sampleVn:'Khá ổn đấy! Món ăn ngon tuyệt, phục vụ cũng chu đáo, lần sau tớ còn muốn đi nữa.',
-     tip:'相当 đã chỉ mức độ — không thêm 很: nói 相当不错, không nói 相当很不错.'}
+    {scene:'Bạn thân than rằng sáng nào cũng bị báo thức làm giật mình.',a:{sp:'Bạn',zh:'每天早上被闹钟吵醒，我都特别难受。',vn:'Sáng nào bị báo thức đánh thức tớ cũng khó chịu lắm.'},need:['Dùng 避免 hoặc 采用','Đưa ra một lời khuyên CỤ THỂ'],sample:'你可以把铃声换一下，用柔和的音乐，这样就能避免被突然惊醒了。',samplePy:'Nǐ kěyǐ bǎ língshēng huàn yíxià, yòng róuhé de yīnyuè, zhèyàng jiù néng bìmiǎn bèi tūrán jīngxǐng le.',sampleVn:'Cậu có thể đổi chuông đi, dùng nhạc êm dịu, như vậy sẽ tránh được việc bị giật mình tỉnh giấc.',tip:'避免 + điều xấu: 避免被惊醒. Đừng viết 避免不被惊醒 — thừa 不.'},
+    {scene:'Mẹ hỏi vì sao dạo này em trông uể oải.',a:{sp:'Mẹ',zh:'你最近怎么总是没精神？',vn:'Dạo này sao con cứ uể oải thế?'},need:['Dùng 失眠 hoặc 导致','Nêu nguyên nhân CỤ THỂ'],sample:'最近作业太多，我每天都睡得很晚，结果导致失眠了。',samplePy:'Zuìjìn zuòyè tài duō, wǒ měi tiān dōu shuì de hěn wǎn, jiéguǒ dǎozhì shīmián le.',sampleVn:'Dạo này bài tập nhiều quá, ngày nào con cũng ngủ muộn, kết quả là bị mất ngủ.',tip:'导致 đi với kết quả XẤU (失眠). 失眠 là nội động từ, không nói 失眠我.'},
+    {scene:'Bạn hỏi em làm thế nào mà sáng nào cũng tự dậy được.',a:{sp:'Bạn',zh:'你是怎么做到每天自然醒的？',vn:'Cậu làm thế nào mà ngày nào cũng tự tỉnh vậy?'},need:['Dùng 规律','Dùng 只要……就……'],sample:'我的生活很有规律，只要晚上十点半睡觉，早上六点就自然醒了。',samplePy:'Wǒ de shēnghuó hěn yǒu guīlǜ, zhǐyào wǎnshang shí diǎn bàn shuìjiào, zǎoshang liù diǎn jiù zìrán xǐng le.',sampleVn:'Sinh hoạt của tớ rất điều độ, chỉ cần mười rưỡi tối đi ngủ là sáu giờ sáng tự tỉnh.',tip:'生活很有规律 = sinh hoạt điều độ. Đây là nghĩa tính từ của 规律 mà người Việt hay quên.'},
+    {scene:'Cô giáo giao cho em — lớp trưởng — quá nhiều việc cùng lúc.',a:{sp:'Cô',zh:'这些工作你一个人能做完吗？',vn:'Chỗ việc này một mình em làm xong được không?'},need:['Dùng V + 不 + 过来','Giữ lễ phép với thầy cô'],sample:'老师，工作太多了，我一个人恐怕忙不过来，能不能再找一个同学帮忙？',samplePy:'Lǎoshī, gōngzuò tài duō le, wǒ yí ge rén kǒngpà máng bu guòlái, néng bu néng zài zhǎo yí ge tóngxué bāngmáng?',sampleVn:'Thưa cô, việc nhiều quá, một mình em e là làm không xuể, cô có thể tìm thêm một bạn giúp được không ạ?',tip:'忙不过来 / 做不过来: không chèn 了 vào giữa (không nói 忙不了过来).'},
+    {scene:'Bạn hỏi em thấy quán ăn mới mở thế nào.',a:{sp:'Bạn',zh:'那家新开的饭馆怎么样？',vn:'Quán mới mở đó thế nào?'},need:['Dùng 相当 (phó từ "khá")','Nêu một chi tiết chứng minh'],sample:'相当不错！菜的味道好极了，服务员也很热情，我下次还想去。',samplePy:'Xiāngdāng búcuò! Cài de wèidào hǎo jí le, fúwùyuán yě hěn rèqíng, wǒ xià cì hái xiǎng qù.',sampleVn:'Khá ổn đấy! Món ăn ngon tuyệt, nhân viên phục vụ cũng rất nhiệt tình, lần sau tớ còn muốn đi nữa.',tip:'相当 đã chỉ mức độ — không thêm 很: nói 相当不错, không nói 相当很不错.'}
   ]
 };
 
@@ -1833,29 +1693,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Bài 11 là bài khoa học — rất hợp để luyện phân biệt giọng VĂN VIẾT khoa học với giọng NÓI hằng ngày.',
   items: [
-    {scene:'Em viết báo cáo khoa học về giấc ngủ cho câu lạc bộ sinh học.',
-     a:'这种状态如果持续数月，将导致失眠。',b:'要是这样过几个月，就会睡不着觉。',better:'a',
-     why:'Báo cáo là VĂN VIẾT khoa học: 数月, 将, 导致 trang trọng, chính xác. Câu b đúng nhưng giọng nói chuyện.'},
-
-    {scene:'Em nhắn tin cho bạn thân kể chuyện tối qua.',
-     a:'昨晚我出现了失眠状况。',b:'昨晚我又睡不着了，烦死了！',better:'b',
-     why:'Nhắn tin bạn thân mà viết 出现了失眠状况 nghe như bệnh án. Khẩu ngữ tự nhiên: 睡不着, 烦死了.'},
-
-    {scene:'Sáng ra, em gọi em trai dậy.',
-     a:'请将窗帘拉开，以便光线进入室内。',b:'把窗帘拉开，让太阳照进来吧。',better:'b',
-     why:'Nói với em trong nhà thì dùng 把 + 让, câu ngắn. 将……以便…… là giọng văn bản hướng dẫn.'},
-
-    {scene:'Chuyên gia y tế phát biểu trên chương trình truyền hình.',
-     a:'被闹铃惊醒的人比自然醒的人血压更高。',b:'被闹钟吓醒的人，血压比睡到自然醒的人高多了。',better:'a',
-     why:'Chuyên gia nói trên TV dùng từ chuẩn xác: 惊醒, 血压更高. 吓醒, 高多了 mang màu khẩu ngữ, kém trang trọng.'},
-
-    {scene:'Trên xe buýt dã ngoại, thầy hỏi em đã đếm đủ người chưa.',
-     a:'老师，我数了一下，车上有32个学生。',b:'老师，经统计，车上共有学生32名。',better:'a',
-     why:'Trả lời miệng ngay trên xe thì 数了一下 tự nhiên. 经统计……共有……名 là giọng báo cáo giấy tờ.'},
-
-    {scene:'Em viết thư cảm ơn cô giáo cũ nhân ngày Nhà giáo.',
-     a:'是您在我失败时鼓励我继续前进。',b:'您在我失败的时候说：别灰心，接着干！',better:'a',
-     why:'Thư cảm ơn là văn viết trang trọng: 在……时, 继续前进 hợp hơn 接着干 (khẩu ngữ, hơi suồng sã).'}
+    {scene:'Em viết báo cáo khoa học về giấc ngủ cho câu lạc bộ sinh học.',a:'这种状态如果持续数月，将导致失眠。',b:'要是这样过几个月，就会睡不着。',better:'a',why:'Báo cáo là VĂN VIẾT khoa học: 数月, 将, 导致 trang trọng, chính xác. Câu b đúng nhưng giọng nói chuyện.'},
+    {scene:'Em nhắn tin cho bạn thân kể chuyện tối qua.',a:'昨晚我出现了失眠的情况。',b:'昨晚我又睡不着了，真难受！',better:'b',why:'Nhắn tin bạn thân mà viết 出现了失眠的情况 nghe như bệnh án. Khẩu ngữ tự nhiên: 睡不着, 真难受.'},
+    {scene:'Sáng ra, em gọi em trai dậy.',a:'为了使光线进入室内，请拉开窗帘。',b:'把窗帘拉开，让太阳照进来吧。',better:'b',why:'Nói với em trong nhà thì dùng 把 + 让, câu ngắn. 为了使……，请…… là giọng văn bản hướng dẫn.'},
+    {scene:'Chuyên gia y tế phát biểu trên chương trình truyền hình.',a:'被闹铃惊醒的人比自然醒的人血压更高。',b:'被闹钟吓醒的人，血压比睡到自然醒的人高多了。',better:'a',why:'Chuyên gia nói trên TV dùng từ chuẩn xác: 惊醒, 血压更高. 吓醒, 高多了 mang màu khẩu ngữ, kém trang trọng.'},
+    {scene:'Trên xe buýt dã ngoại, thầy hỏi em đã đếm đủ người chưa.',a:'老师，我数了一下，车上有32个学生。',b:'老师，经过检查，车上学生一共32名。',better:'a',why:'Trả lời miệng ngay trên xe thì 数了一下 tự nhiên. 经过检查……一共……名 là giọng báo cáo giấy tờ.'},
+    {scene:'Em viết thư cảm ơn cô giáo cũ nhân ngày Nhà giáo.',a:'是您在我失败时鼓励我继续前进。',b:'您在我失败的时候说：别难过，接着干！',better:'a',why:'Thư cảm ơn là văn viết trang trọng: 在……时, 继续前进 hợp hơn 接着干 (khẩu ngữ, hơi suồng sã).'}
   ]
 };
 

@@ -1478,28 +1478,21 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — lấy bảng 词语搭配 của giáo trình (tr. 71) + cụm trong bài khoá
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
-  {left:'寻找',right:'机会'},
   {left:'确定',right:'时间'},
   {left:'片面地',right:'看问题'},
   {left:'连续',right:'工作'},
-  {left:'摸到',right:'大象的耳朵'},
-  {left:'打',right:'碎'},
+  {left:'一把',right:'扇子'},
   {left:'一支',right:'笔'},
   {left:'一根',right:'绳子'},
-  {left:'他的伤',right:'不要紧'},
-  {left:'反应',right:'很快'},
   {left:'摇摇',right:'头'},
   {left:'摆好',right:'姿势'},
-  {left:'全神贯注地',right:'听'},
-  {left:'善于',right:'骑马射箭'},
-  {left:'被称为',right:'“飞将军”'},
   {left:'下',right:'结论'},
   {left:'一头',right:'大象'},
   {left:'一面',right:'墙'},
-  {left:'一把',right:'扇子'},
   {left:'用尽',right:'全力'}
 ];
 
@@ -1507,59 +1500,33 @@ var matchData = [
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'他在四处',blank:'寻找',post:'，但至今仍然没有结果。',hint:'(tìm kiếm)',ans:'寻找'},
-  {pre:'国王叫',blank:'盲人',post:'们去摸一摸大象。',hint:'(người mù)',ans:'盲人'},
-  {pre:'我最喜欢听爷爷讲',blank:'成语',post:'故事。',hint:'(thành ngữ)',ans:'成语'},
-  {pre:'今天我们学习两',blank:'则',post:'成语故事。',hint:'(lượng từ: mẩu, bản)',ans:'则',exp:'则 là lượng từ cho mẩu chuyện, tin tức ngắn: 两则成语故事, 一则新闻.'},
-  {pre:'很久以前，有一个很有',blank:'智慧',post:'的国王。',hint:'(trí tuệ, sáng suốt)',ans:'智慧'},
-  {pre:'国王的',blank:'士兵',post:'们分别去不同地方寻找。',hint:'(binh lính)',ans:'士兵'},
-  {pre:'摸到',blank:'牙齿',post:'的盲人说：“我觉得像一个角。”',hint:'(răng, ngà)',ans:'牙齿'},
-  {pre:'可爱的小狗摇着',blank:'尾巴',post:'冲我跑过来。',hint:'(cái đuôi)',ans:'尾巴'},
-  {pre:'摸到尾巴的盲人说：“它像一条',blank:'绳子',post:'。”',hint:'(dây thừng)',ans:'绳子'},
-  {pre:'我觉得像一面又高又',blank:'平',post:'的墙。',hint:'(bằng phẳng)',ans:'平'},
-  {pre:'教室的',blank:'墙',post:'上挂着一张中国地图。',hint:'(bức tường)',ans:'墙'},
-  {pre:'大象的耳朵又大又薄，像一把',blank:'扇子',post:'。',hint:'(cái quạt)',ans:'扇子'},
-  {pre:'只有片面的认识是不能下',blank:'结论',post:'的。',hint:'(kết luận)',ans:'结论'},
-  {pre:'西汉时期有一位著名的',blank:'将军',post:'叫李广。',hint:'(vị tướng)',ans:'将军'},
-  {pre:'他作战勇敢，被',blank:'称',post:'为“飞将军”。',hint:'(gọi là)',ans:'称',exp:'被称为 = được gọi là (văn viết): 被称为“飞将军”.'},
-  {pre:'一天傍晚，他正带着士兵们在山中',blank:'打猎',post:'。',hint:'(đi săn)',ans:'打猎'},
-  {pre:'他忽然发现远处',blank:'蹲',post:'着一只大老虎。',hint:'(ngồi xổm, thu mình ngồi)',ans:'蹲'},
-  {pre:'只见他从箭袋里取出一',blank:'支',post:'箭。',hint:'(lượng từ cho vật dài, cứng)',ans:'支',exp:'支 là lượng từ cho vật dài, cứng: 一支箭, 一支笔.'},
-  {pre:'他',blank:'摆',post:'好姿势，用尽全力向老虎射去。',hint:'(bày, lấy tư thế)',ans:'摆'},
-  {pre:'写字的时候',blank:'姿势',post:'要正确，不然眼睛会越来越差。',hint:'(tư thế)',ans:'姿势'},
-  {pre:'同学们都在',blank:'全神贯注',post:'地听老师讲成语故事。',hint:'(dồn hết tinh thần)',ans:'全神贯注'},
-  {pre:'过了一会儿，老虎没什么',blank:'反应',post:'。',hint:'(phản ứng)',ans:'反应'},
-  {pre:'士兵们小心地走上前去，想',blank:'确定',post:'它是不是死了。',hint:'(xác định)',ans:'确定'},
-  {pre:'被射中的竟不是老虎，而是一块大',blank:'石头',post:'。',hint:'(hòn đá)',ans:'石头'},
-  {pre:'这次他',blank:'连续',post:'换了几根箭，都没能再射进去。',hint:'(liên tiếp)',ans:'连续',exp:'连续 + V = liên tục, liên tiếp (nhiều lần không ngắt quãng): 连续换了几根箭.'},
-  {pre:'是谁把玻璃打',blank:'碎',post:'了？',hint:'(vỡ)',ans:'碎'},
-  {pre:'这支笔的笔',blank:'杆',post:'是木头做的。',hint:'(thân, cán)',ans:'杆'},
-  {pre:'即使像',blank:'金属',post:'和石头那样硬的东西也会被打动。',hint:'(kim loại)',ans:'金属'},
-  {pre:'这个面包放了三天，已经',blank:'硬',post:'得咬不动了。',hint:'(cứng)',ans:'硬'},
-  {pre:'“精诚所至，金石为开”这一成语也',blank:'便',post:'由此流传下来。',hint:'(thì, liền — văn viết)',ans:'便',exp:'便 = thì, liền (văn viết, như 就): 便由此流传下来.'},
-  {pre:'这个成语故事发生在',blank:'西汉',post:'时期。',hint:'(nhà Tây Hán)',ans:'西汉'},
-  {pre:'“飞将军”指的是西汉的名将',blank:'李广',post:'。',hint:'(Lý Quảng)',ans:'李广'},
-  {pre:'人们去问当时最有影响力的学者',blank:'扬雄',post:'。',hint:'(Dương Hùng)',ans:'扬雄'},
-  {pre:'别难过了，虽然成绩不理想，但你已经',blank:'尽力',post:'了。',hint:'(cố hết sức)',ans:'尽力'}
+  {pre:'他的一只眼睛小时候就',blank:'瞎',post:'了，可是他跑步特别快。',hint:'(mù, không nhìn thấy)',ans:'瞎',exp:'瞎 là động từ "bị mù": 眼睛瞎了; làm phó từ thì là "bừa, linh tinh": 瞎说, 瞎担心.'},
+  {pre:'这次比赛的第一、二、三名',blank:'分别',post:'是小林、小王和我。',hint:'(lần lượt là)',ans:'分别',exp:'A、B、C + 分别是 + X、Y、Z = lần lượt là, theo đúng thứ tự.'},
+  {pre:'我掉了一',blank:'根',post:'筷子，服务员，能再给我一根吗？',hint:'(lượng từ — vật dài, mảnh)',ans:'根',exp:'根 dùng cho vật dài mảnh từng chiếc: 一根筷子, 一根绳子; cả đôi đũa thì dùng 一双筷子.'},
+  {pre:'他每天吃很多糖，结果',blank:'牙齿',post:'都坏了。',hint:'(răng)',ans:'牙齿',exp:'牙齿 = răng: 保护牙齿, 牙齿坏了.'},
+  {pre:'我家客厅的',blank:'墙',post:'上有很多孩子画的画儿。',hint:'(bức tường)',ans:'墙',exp:'墙 = tường; lượng từ 一面墙; 墙上 = trên tường.'},
+  {pre:'你只听了他一个人的话，这样看问题太',blank:'片面',post:'了。',hint:'(phiến diện)',ans:'片面',exp:'片面 = chỉ thấy một mặt; 片面地看问题, 太片面了.'},
+  {pre:'我的小狗一听到我的声音，',blank:'尾巴',post:'就摇个不停。',hint:'(cái đuôi)',ans:'尾巴',exp:'尾巴 = cái đuôi; động từ đi kèm thường là 摇 (摇尾巴).'},
+  {pre:'他',blank:'蹲',post:'下来，跟三岁的小女孩说话。',hint:'(ngồi xổm)',ans:'蹲',exp:'蹲 = ngồi xổm (gập gối, không ngồi hẳn xuống); 蹲下来 = ngồi thụp xuống.'},
+  {pre:'路上有一块大',blank:'石头',post:'，车过不去了。',hint:'(hòn đá)',ans:'石头',exp:'石头 = đá, hòn đá; lượng từ 一块石头.'},
+  {pre:'盘子掉到地上，',blank:'碎',post:'了。',hint:'(vỡ)',ans:'碎',exp:'碎 = vỡ vụn; 打碎, 掉碎 — đồ thuỷ tinh, sứ vỡ dùng 碎, không dùng 断.'},
+  {pre:'这个杯子是',blank:'金属',post:'做的，掉在地上也不会碎。',hint:'(kim loại)',ans:'金属',exp:'金属 = kim loại (sắt, nhôm…); 金属做的 = làm bằng kim loại.'},
+  {pre:'桌子不太',blank:'平',post:'，杯子老是往一边滑。',hint:'(bằng phẳng)',ans:'平',exp:'平 là tính từ "phẳng": 桌子不平, 路很平; 放平 = đặt cho phẳng.'},
+  {pre:'这支笔的笔',blank:'杆',post:'断了，不能用了。',hint:'(thân, cán (vật dài))',ans:'杆',exp:'杆 = thân, cán của vật dài: 笔杆, 箭杆.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (瞎 · 分别 · 根 · 便) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['你','就','别','替他','瞎担心','了','。'],ans:'你就别替他瞎担心了。',audio:'你就别替他瞎担心了。'},
-  {words:['他','出生时','眼睛','就','瞎了','。'],ans:'他出生时眼睛就瞎了。',audio:'他出生时眼睛就瞎了。'},
-  {words:['士兵们','分别','去','不同地方','寻找','。'],ans:'士兵们分别去不同地方寻找。',audio:'士兵们分别去不同地方寻找。'},
-  {words:['我们','已经','分别','二十年','了','。'],ans:'我们已经分别二十年了。',audio:'我们已经分别二十年了。'},
-  {words:['他','连续','换了','几根','箭','。'],ans:'他连续换了几根箭。',audio:'他连续换了几根箭。'},
-  {words:['摸到尾巴的盲人','说','大象','像','一根绳子','。'],ans:'摸到尾巴的盲人说大象像一根绳子。',audio:'摸到尾巴的盲人说大象像一根绳子。'},
-  {words:['这一成语','也','便','由此','流传下来','。'],ans:'这一成语也便由此流传下来。',audio:'这一成语也便由此流传下来。'},
-  {words:['他','一','出门','便','发现','没带钥匙','。'],ans:'他一出门便发现没带钥匙。',audio:'他一出门便发现没带钥匙。'},
-  {words:['国王','叫','盲人们','去','摸一摸','大象','。'],ans:'国王叫盲人们去摸一摸大象。',audio:'国王叫盲人们去摸一摸大象。'},
-  {words:['他','善于','骑马射箭','，','被称为','“飞将军”','。'],ans:'他善于骑马射箭，被称为“飞将军”。',audio:'他善于骑马射箭，被称为“飞将军”。'},
-  {words:['远处','蹲着','一只','大老虎','。'],ans:'远处蹲着一只大老虎。',audio:'远处蹲着一只大老虎。'},
-  {words:['只有片面的认识','是','不能','下结论','的','。'],ans:'只有片面的认识是不能下结论的。',audio:'只有片面的认识是不能下结论的。'},
-  {words:['连','李广自己','都','不相信','。'],ans:'连李广自己都不相信。',audio:'连李广自己都不相信。'}
+  {words:['事情','还没','弄清楚','，','你','别','在','这儿','瞎猜','了','。'],ans:'事情还没弄清楚，你别在这儿瞎猜了。',audio:'事情还没弄清楚，你别在这儿瞎猜了。'},
+  {words:['老师','分别','找了','几个','同学','谈话','。'],ans:'老师分别找了几个同学谈话。',audio:'老师分别找了几个同学谈话。'},
+  {words:['桌子上','只','剩下','一根','香蕉','了','。'],ans:'桌子上只剩下一根香蕉了。',audio:'桌子上只剩下一根香蕉了。'},
+  {words:['他','一','到家','便','给','妈妈','打了','个','电话','。'],ans:'他一到家便给妈妈打了个电话。',audio:'他一到家便给妈妈打了个电话。'},
+  {words:['他','全神贯注地','看着','电脑','，','连','饭','都','忘了','吃','。'],ans:'他全神贯注地看着电脑，连饭都忘了吃。',audio:'他全神贯注地看着电脑，连饭都忘了吃。'},
+  {words:['他','连续','两年','考了','全班','第一','。'],ans:'他连续两年考了全班第一。',audio:'他连续两年考了全班第一。'},
+  {words:['不管','结果','怎么样','，','我们','都','要','尽力','去','做','。'],ans:'不管结果怎么样，我们都要尽力去做。',audio:'不管结果怎么样，我们都要尽力去做。'},
+  {words:['唉','，','又','下雨了','，','今天','又','不能','去','打球','了','。'],ans:'唉，又下雨了，今天又不能去打球了。',audio:'唉，又下雨了，今天又不能去打球了。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1567,80 +1534,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'国王叫盲人们去____一摸大象。',opts:['摸','摇','摆','蹲'],ans:0,
-   exp:'Dùng tay chạm vào để biết hình dáng → 摸 (lặp: 摸一摸). 摇 là lắc, 摆 là bày/sắp đặt, 蹲 là ngồi xổm — không mang tân ngữ 大象 theo nghĩa này.'},
-  {wrong:'他让士兵们去找一头____。',opts:['大象','扇子','绳子','石头'],ans:0,
-   exp:'Lượng từ 头 dùng cho thú lớn như voi, bò → 一头大象. Quạt dùng 把 (一把扇子); dây dùng 根/条; đá dùng 块 — và binh lính cũng không cần "tìm" những thứ này để thử người mù.'},
-  {wrong:'别听他____说，不用害怕。',opts:['瞎','盲','平','硬'],ans:0,
-   exp:'瞎 làm phó từ: làm việc không có căn cứ → 瞎说 (nói bậy). 盲 không làm phó từ như vậy; 平, 硬 là tính từ, không đi với 说 theo nghĩa này.'},
-  {wrong:'他自己的问题，他会想办法的，你就别替他____担心了。',opts:['瞎','胡说','片面','分别'],ans:0,
-   exp:'瞎 + động từ = làm vô ích, không có lý do → 瞎担心 (lo hão). 胡说 là động từ, không đứng trước 担心; 片面, 分别 không mang nghĩa "vô ích".'},
-  {wrong:'士兵们____去不同地方寻找。',opts:['分别','区别','特别','告别'],ans:0,
-   exp:'Mỗi người đi một nơi → phó từ 分别 (riêng rẽ). 区别 là danh từ/động từ "khác biệt"; 特别 là "đặc biệt"; 告别 là "từ biệt", không làm phó từ trước 去.'},
-  {wrong:'一张桌子上放着三瓶饮料，____是茶、可乐和咖啡。',opts:['分别','各自','一起','连续'],ans:0,
-   exp:'Liệt kê lần lượt từng thứ → 分别是……. 各自 là đại từ "ai nấy", không dùng liệt kê; 一起 là "cùng nhau"; 连续 là "liên tiếp".'},
-  {wrong:'“____！”摸到尾巴的盲人说，“它像一条绳子。”',opts:['胡说','瞎','唉','便'],ans:0,
-   exp:'Câu cảm thán phản bác "Nói bậy!" → 胡说！ 瞎 là phó từ, không đứng một mình thành câu; 唉 là tiếng thở dài, không mang nghĩa phản bác; 便 là phó từ "thì, liền".'},
-  {wrong:'不能这样____地看问题，而要多方面地考虑。',opts:['片面','全面','平','硬'],ans:0,
-   exp:'Vế sau đối lập với "nhiều mặt" → vế trước phải là 片面 (phiến diện). 全面 trái nghĩa, mâu thuẫn với câu; 平, 硬 không làm trạng ngữ cho 看问题.'},
-  {wrong:'她很爱护学生，也很____教育他们。',opts:['善于','对于','关于','由于'],ans:0,
-   exp:'Giỏi làm việc gì → 善于 + động từ (善于教育). 对于, 关于 là giới từ; 由于 là liên từ chỉ nguyên nhân — không đứng trước động từ theo nghĩa "giỏi".'},
-  {wrong:'刚才还是晴天，____就下起大雨来了。',opts:['忽然','当然','既然','仍然'],ans:0,
-   exp:'Việc xảy ra rất nhanh, bất ngờ → 忽然. 当然 = dĩ nhiên; 既然 = đã … thì …; 仍然 = vẫn như cũ.'},
-  {wrong:'每天我一回家，可爱的小狗就____着尾巴冲我跑过来。',opts:['摇','摸','摆','蹲'],ans:0,
-   exp:'Vẫy đuôi → 摇尾巴 (câu trong 练习 2 của sách). 摸 là sờ; 摆 là bày; 蹲 là ngồi xổm — đều không kết hợp với 尾巴 theo nghĩa vẫy.'},
-  {wrong:'我们班有个同学被车撞了，还好伤得不重，____。',opts:['不要紧','不耐烦','不得了','不客气'],ans:0,
-   exp:'Vết thương không nặng, không sao → 不要紧. 不耐烦 (bài 1) là mất kiên nhẫn; 不得了 là ghê gớm, nghiêm trọng — ngược nghĩa; 不客气 là "đừng khách sáo".'},
-  {wrong:'这件事还是得从____上解决，只解决表面问题是不行的。',opts:['根','杆','墙','尾巴'],ans:0,
-   exp:'根 là danh từ "gốc rễ", nghĩa bóng là nền tảng → 从根上解决 (giải quyết tận gốc). 杆 là cán, 墙 là tường, 尾巴 là đuôi — không hợp nghĩa.'},
-  {wrong:'可是，这次他连续换了几____箭，都没能再射进去。',opts:['根','头','把','面'],ans:0,
-   exp:'根 là lượng từ cho vật dài, mảnh → 几根箭 (câu trong bài). 头 dùng cho thú lớn; 把 cho đồ có tay cầm; 面 cho vật phẳng như tường, gương.'},
-  {wrong:'____，我想到了一个办法，你们看看行不行。',opts:['哎','唉','便','瞎'],ans:0,
-   exp:'Gọi người khác chú ý để nói một ý mới → 哎 (āi). 唉 (ài) là tiếng thở dài buồn bã, không hợp với tin vui "nghĩ ra cách"; 便, 瞎 là phó từ, không đứng một mình đầu câu.'},
-  {wrong:'____！就差一分，太可惜了！',opts:['唉','哎','胡说','不要紧'],ans:0,
-   exp:'Tiếc nuối, thở dài → 唉 (ài). 哎 thiên về ngạc nhiên hoặc gọi người; 胡说 là mắng người nói bậy; 不要紧 (không sao) mâu thuẫn với 太可惜了.'},
-  {wrong:'他去了五次，老教授终于答应了，真是____。',opts:['精诚所至，金石为开','盲人摸象','全神贯注','胡说八道'],ans:0,
-   exp:'Kiên trì, chân thành nên việc khó đã thành → 精诚所至，金石为开. 盲人摸象 là nhìn phiến diện; 全神贯注 là tập trung; 胡说八道 là nói nhảm.'},
-  {wrong:'我真的需要休息了，我已经____工作20个小时了。',opts:['连续','继续','陆续','手续'],ans:0,
-   exp:'Làm liền 20 tiếng không nghỉ, có số lượng → 连续 (câu trong 练习 2 của sách). 继续 là làm tiếp sau khi dừng; 陆续 là lần lượt (nhiều người/vật); 手续 là thủ tục (danh từ).'},
-  {wrong:'对我们提出的意见，老板还没有做出____。',opts:['反应','反映','反对','反而'],ans:0,
-   exp:'做出反应 = có phản ứng/phản hồi (câu trong 练习 2). 反映 là phản ánh/trình bày lên trên, không đi với 做出; 反对 là phản đối (động từ); 反而 là liên từ "ngược lại".'},
-  {wrong:'你____他就是我们要找的那位英雄吗？',opts:['确定','确实','一定','决定'],ans:0,
-   exp:'Hỏi xem người nghe có CHẮC CHẮN không → 你确定……吗？ 确实 là phó từ "quả thật"; 一定 là "nhất định", không làm động từ chính mang mệnh đề; 决定 là "quyết định" làm gì.'},
-  {wrong:'这件事我一定____帮你，你放心吧。',opts:['尽力','尽管','力气','全力'],ans:0,
-   exp:'Hứa cố hết sức làm gì → 尽力 + động từ. 尽管 (jǐnguǎn) là liên từ "mặc dù" hoặc phó từ "cứ việc", không mang nghĩa cố hết sức; 力气, 全力 là danh từ, không đứng trước động từ 帮.'},
-  {wrong:'如果诚心实意，即使像金属和石头那样____的东西也会被打动。',opts:['硬','平','碎','软'],ans:0,
-   exp:'Kim loại và đá có đặc điểm chung là cứng → 硬. 平 là phẳng; 碎 là vỡ vụn; 软 là mềm — trái nghĩa.'}
+  {wrong:'他辞职的消息太____了，大家都没有准备。',opts:['突然','忽然','连续','便'],ans:0,exp:'太 + 突然 + 了: 突然 là tính từ, làm vị ngữ được. 忽然 chỉ là phó từ, phải đứng trước động từ (忽然下雨了), không nói 太忽然了; 连续, 便 không hợp.'},
+  {wrong:'我叫了他好几声，他都没有____，原来是睡着了。',opts:['反应','反映','结论','姿势'],ans:0,exp:'Đáp lại một kích thích (tiếng gọi) → 反应. 反映 (bài 5) là phản ánh, báo cáo lên trên; 结论, 姿势 không hợp.'},
+  {wrong:'雨停了，大家____往山上走。',opts:['继续','连续','忽然','确定'],ans:0,exp:'Làm tiếp việc đang làm dở sau khi dừng → 继续. 连续 nhấn mạnh nhiều lần nối liền nhau, thường đi với số lượng (连续三天); 忽然, 确定 không hợp.'},
+  {wrong:'这个电影我____看了三遍，还想再看。',opts:['连续','继续','分别','尽力'],ans:0,exp:'连续 + V + số lần = liền một mạch nhiều lần. 继续 là làm tiếp (không đi với 看了三遍); 分别 cần chủ ngữ số nhiều; 尽力 không hợp nghĩa.'},
+  {wrong:'她很____照顾别人，大家都喜欢她。',opts:['善于','对于','关于','由于'],ans:0,exp:'善于 + V = giỏi (làm gì). 对于, 关于, 由于 đều là giới từ/liên từ, không làm vị ngữ sau 很.'},
+  {wrong:'____，你的钱包掉了！',opts:['哎','唉','便','根'],ans:0,exp:'Gọi người khác chú ý, nhắc nhở → 哎 (āi). 唉 (ài) là tiếng thở dài, tiếc nuối; 便, 根 không làm thán từ.'},
+  {wrong:'我今天在网上看到了一____很有意思的新闻。',opts:['则','根','支','头'],ans:0,exp:'则 là lượng từ cho tin tức, truyện ngắn, thành ngữ: 一则新闻. 根 cho vật dài mảnh; 支 cho bút, mũi tên; 头 cho con vật lớn.'},
+  {wrong:'他是一个很有____的老人，大家遇到问题都去问他。',opts:['智慧','结论','姿势','金属'],ans:0,exp:'有智慧 = sáng suốt, khôn ngoan. 结论, 姿势, 金属 không đi với 很有 để tả người.'},
+  {wrong:'没有看到就别____，这样会伤害别人的。',opts:['胡说','瞎','片面','尽力'],ans:0,exp:'胡说 là động từ "nói bậy", đứng một mình sau 别 được. 瞎 làm phó từ phải có động từ đi sau (瞎说); 片面 là tính từ; 尽力 ngược nghĩa.'},
+  {wrong:'这两年他一直在____一份适合自己的工作。',opts:['寻找','确定','分别','摸'],ans:0,exp:'Tìm kiếm (việc làm, cơ hội) → 寻找. 确定 là xác định điều đã có; 分别 là riêng rẽ; 摸 là sờ.'},
+  {wrong:'天太黑了，我只好____着墙往前走。',opts:['摸','摇','蹲','摆'],ans:0,exp:'Dùng tay sờ để dò đường → 摸着墙. 摇 là lắc, vẫy; 蹲 là ngồi xổm; 摆 là bày, đặt.'},
+  {wrong:'时间已经____了，下周三上午九点。',opts:['确定','分别','尽力','寻找'],ans:0,exp:'Thời gian đã chốt → 确定了. 分别, 尽力, 寻找 không dùng cho thời gian đã được quyết định.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Đã chưa biết chắc điểm thi thế nào thì cậu đừng ngồi đây lo hão nữa.',zh:'既然考试成绩还没确定，你就别在这儿瞎担心了。',py:'Jìrán kǎoshì chéngjì hái méi quèdìng, nǐ jiù bié zài zhèr xiā dānxīn le.',goiY:['既然……就……','确定','瞎担心'],giai:'既然 + sự thật đã biết, 就 + lời khuyên; 瞎 + động từ = làm bừa, vô ích (瞎担心 = lo hão), không dịch “lo mù”.'},
-  {vi:'Tuy em đã cố hết sức nhưng ba lần thi thử liên tiếp điểm đều không được như ý.',zh:'虽然我已经尽力了，但是连续三次模拟考试的成绩都不太理想。',py:'Suīrán wǒ yǐjīng jìnlì le, dànshì liánxù sān cì mónǐ kǎoshì de chéngjì dōu bú tài lǐxiǎng.',goiY:['虽然……但是……','尽力','连续'],giai:'虽然……但是…… nối hai ý trái ngược; 连续 đứng trước số lượng: 连续三次 (ba lần liên tiếp), không nói 三次连续.'},
-  {vi:'Chỉ cần trong giờ học tập trung cao độ nghe giảng thì em không cần ngày nào cũng thức khuya ôn bài.',zh:'只要上课全神贯注地听讲，你便不需要每天熬夜复习。',py:'Zhǐyào shàngkè quánshénguànzhù de tīngjiǎng, nǐ biàn bù xūyào měi tiān áoyè fùxí.',goiY:['只要……便……','全神贯注','熬夜'],giai:'只要 + điều kiện, 便 + kết quả; 便 = 就 nhưng trang trọng hơn và đứng sau chủ ngữ (你便…), không đặt trước chủ ngữ.'},
-  {vi:'Cô giáo bảo bốn đứa chúng tôi mỗi người tìm hiểu một vấn đề, sau đó đem kết luận của từng người ra thảo luận chung.',zh:'老师让我们四个人分别调查一个问题，然后再把各自的结论放在一起讨论。',py:'Lǎoshī ràng wǒmen sì ge rén fēnbié diàochá yí ge wèntí, ránhòu zài bǎ gèzì de jiélùn fàng zài yìqǐ tǎolùn.',goiY:['分别','然后','各自','结论'],giai:'Chủ ngữ số nhiều + 分别 + V = mỗi người làm riêng phần mình; 然后 nối bước tiếp theo. “Kết luận của từng người” = 各自的结论.'},
-  {vi:'Cậu mới xem một bài đăng của người ta đã vội kết luận thì phiến diện quá, huống hồ hai người vốn chẳng thân nhau.',zh:'你只看了他的一条朋友圈就下结论，未免太片面了，何况你们根本不熟。',py:'Nǐ zhǐ kàn le tā de yì tiáo péngyouquān jiù xià jiélùn, wèimiǎn tài piànmiàn le, hékuàng nǐmen gēnběn bù shú.',goiY:['下结论','片面','何况'],giai:'何况 = huống hồ, thêm một lý do mạnh hơn ở vế cuối; “vội kết luận” = 就下结论 (động từ đi với 结论 là 下).'},
-  {vi:'Học kém thì phải tìm nguyên nhân từ gốc rễ; thay vì ngày nào cũng bận rộn vô ích, chi bằng củng cố nền tảng cho vững trước đã.',zh:'学习成绩不好，要从根上找原因；与其每天瞎忙，不如先把基础打扎实。',py:'Xuéxí chéngjì bù hǎo, yào cóng gēn shang zhǎo yuányīn; yǔqí měi tiān xiā máng, bùrú xiān bǎ jīchǔ dǎ zhāshi.',goiY:['从根上','与其……不如……','瞎忙'],giai:'与其 A，不如 B = thay vì A thì chi bằng B (người nói chọn B); 从根上 + V = (giải quyết) từ gốc rễ. 瞎忙 = bận rộn mà vô ích.'},
-  {vi:'Dù trong tay chỉ có một sợi dây, những đứa trẻ giỏi tưởng tượng cũng có thể nghĩ ra mấy kiểu chơi khác nhau.',zh:'哪怕手里只有一根绳子，善于想象的孩子也能想出好几种玩法来。',py:'Nǎpà shǒu li zhǐ yǒu yì gēn shéngzi, shànyú xiǎngxiàng de háizi yě néng xiǎng chū hǎo jǐ zhǒng wánfǎ lái.',goiY:['哪怕……也……','一根绳子','善于'],giai:'哪怕 + giả thiết (điều kiện rất ít ỏi), 也 + kết quả vẫn không đổi; 根 là lượng từ cho vật dài mảnh (一根绳子), không dùng 个.'},
-  {vi:'Cậu ta vậy mà ba ngày liền lên mạng đăng bài nói bậy bạ; sở dĩ tôi vẫn chưa phản ứng gì là vì không muốn làm to chuyện.',zh:'他居然连续三天在网上发帖胡说八道，我之所以一直没有反应，是因为不想把事情闹大。',py:'Tā jūrán liánxù sān tiān zài wǎng shang fā tiě húshuō bādào, wǒ zhīsuǒyǐ yìzhí méiyǒu fǎnyìng, shì yīnwèi bù xiǎng bǎ shìqing nào dà.',goiY:['居然','之所以……是因为……','胡说','反应'],giai:'之所以 + kết quả, 是因为 + nguyên nhân: nêu kết quả trước, giải thích sau; 居然 (vậy mà) đặt trước cụm 连续三天, không đặt cuối câu.'},
-  {vi:'Ôi, em lỡ tay làm vỡ cái cốc bà tặng, vốn sợ bà giận, không ngờ bà lại cười bảo không sao.',zh:'唉，我不小心把奶奶送的杯子摔碎了，本来担心她会生气，没想到她反而笑着说不要紧。',py:'Āi, wǒ bù xiǎoxīn bǎ nǎinai sòng de bēizi shuāi suì le, běnlái dānxīn tā huì shēngqì, méi xiǎngdào tā fǎn\'ér xiàozhe shuō bú yàojǐn.',goiY:['摔碎','反而','不要紧'],giai:'反而 = trái lại, dùng khi kết quả ngược với điều mình lo/đoán ở vế trước; 摔碎 = làm rơi vỡ (động từ + bổ ngữ kết quả 碎), cần 把 + tân ngữ đặt trước.'},
-  {vi:'Một khi đã quen gặp chuyện gì cũng đoán mò, em sẽ rất dễ giống mấy ông thầy bói xem voi, chỉ dựa vào chút thông tin phiến diện là vội đưa ra kết luận.',zh:'一旦养成了遇事瞎猜的习惯，你就很容易像摸象的盲人那样，只凭一点片面的信息便得出结论。',py:'Yídàn yǎngchéng le yù shì xiā cāi de xíguàn, nǐ jiù hěn róngyì xiàng mō xiàng de mángrén nàyàng, zhǐ píng yìdiǎn piànmiàn de xìnxī biàn déchū jiélùn.',goiY:['一旦……就……','瞎猜','片面','便'],giai:'一旦 + điều kiện (chưa xảy ra), 就 + hậu quả; vế cuối dùng 便 thay 就 cho khỏi lặp. “Thầy bói xem voi” là cách nói của người Việt, tiếng Trung là 盲人摸象.'}
+  {vi:'Đã chưa có điểm thi thì cậu đừng nghĩ linh tinh nữa.',zh:'既然考试成绩还没出来，你就别瞎想了。',py:'Jìrán kǎoshì chéngjì hái méi chūlai, nǐ jiù bié xiā xiǎng le.',goiY:['既然……就……','瞎想'],giai:'既然 + sự thật đã biết, 就 + lời khuyên; 瞎 + động từ = làm bừa, vô ích (瞎想 = nghĩ linh tinh), không dịch "nghĩ mù".'},
+  {vi:'Tuy em đã rất cố gắng nhưng ba lần thi liên tiếp điểm đều không được như ý.',zh:'我虽然很努力，但是连续三次考试的成绩都不太理想。',py:'Wǒ suīrán hěn nǔlì, dànshì liánxù sān cì kǎoshì de chéngjì dōu bú tài lǐxiǎng.',goiY:['虽然……但是……','连续','理想'],giai:'虽然……但是…… nối hai ý trái ngược; 连续 đứng trước số lượng: 连续三次 (ba lần liên tiếp), không nói 三次连续.'},
+  {vi:'Chỉ cần trong giờ học tập trung cao độ nghe giảng thì em không cần ngày nào cũng thức khuya ôn bài.',zh:'只要上课全神贯注地听讲，你便不需要每天熬夜复习。',py:'Zhǐyào shàngkè quánshénguànzhù de tīngjiǎng, nǐ biàn bù xūyào měi tiān áoyè fùxí.',goiY:['只要……便……','全神贯注','熬夜'],giai:'只要 + điều kiện, 便 + kết quả; 便 = 就 nhưng trang trọng hơn và đứng sau chủ ngữ (你便…), không đặt trước chủ ngữ. 熬夜 (bài 6).'},
+  {vi:'Cô giáo bảo bốn đứa chúng tôi mỗi người tìm hiểu một vấn đề, sau đó đem kết luận của từng người ra thảo luận chung.',zh:'老师让我们四个人分别调查一个问题，然后再把各自的结论放在一起讨论。',py:'Lǎoshī ràng wǒmen sì ge rén fēnbié diàochá yí ge wèntí, ránhòu zài bǎ gèzì de jiélùn fàng zài yìqǐ tǎolùn.',goiY:['分别','然后','各自','结论'],giai:'Chủ ngữ số nhiều + 分别 + V = mỗi người làm riêng phần mình; 然后 nối bước tiếp theo. "Kết luận của từng người" = 各自的结论 (bài 3).'},
+  {vi:'Cho dù trong tay chỉ có một sợi dây, những đứa trẻ giỏi tưởng tượng cũng có thể nghĩ ra mấy cách chơi khác nhau.',zh:'即使手里只有一根绳子，善于想象的孩子也能想出好几种玩儿的办法来。',py:'Jíshǐ shǒu li zhǐ yǒu yì gēn shéngzi, shànyú xiǎngxiàng de háizi yě néng xiǎng chū hǎo jǐ zhǒng wánr de bànfǎ lái.',goiY:['即使……也……','一根绳子','善于'],giai:'即使 + giả thiết (điều kiện rất ít ỏi), 也 + kết quả vẫn không đổi; 根 là lượng từ cho vật dài mảnh (一根绳子), không dùng 个.'},
+  {vi:'Ôi, em lỡ tay làm vỡ cái cốc bà tặng, vốn sợ bà giận, không ngờ bà lại cười bảo không sao.',zh:'唉，我不小心把奶奶送的杯子打碎了，本来担心她会生气，没想到她反而笑着说不要紧。',py:'Āi, wǒ bù xiǎoxīn bǎ nǎinai sòng de bēizi dǎsuì le, běnlái dānxīn tā huì shēngqì, méi xiǎngdào tā fǎn\'ér xiàozhe shuō bú yàojǐn.',goiY:['打碎','反而','不要紧'],giai:'反而 (bài 4) = trái lại, dùng khi kết quả ngược với điều mình lo ở vế trước; 打碎 = làm vỡ (động từ + bổ ngữ kết quả 碎), cần 把 + tân ngữ đặt trước.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Nhà vua sai binh lính tìm về một con voi, rồi mời mấy người mù, mỗi người tự đến sờ.',zh:'国王让士兵们找来一头大象，然后请几个盲人分别去摸。',py:'Guówáng ràng shìbīngmen zhǎo lái yì tóu dàxiàng, ránhòu qǐng jǐ ge mángrén fēnbié qù mō.',goiY:['然后 = sau đó, rồi','分别 = mỗi người (làm) riêng'],giai:'分别 đứng trước động từ, chủ ngữ số nhiều → dịch “mỗi người/từng người… riêng”, không dịch là “chia tay”.'},
-  {vi:'Người mù sờ trúng ngà voi thì nói con voi giống củ cải, còn người sờ trúng đuôi lại bảo nó giống sợi dây thừng.',zh:'摸到牙齿的盲人说大象像一根萝卜，摸到尾巴的却说大象像一根绳子。',py:'Mō dào yáchǐ de mángrén shuō dàxiàng xiàng yì gēn luóbo, mō dào wěiba de què shuō dàxiàng xiàng yì gēn shéngzi.',goiY:['却 = lại (trái ngược)','一根 = một (vật dài, mảnh)'],giai:'却 đứng sau chủ ngữ, trước động từ, nối hai vế đối lập → “còn… lại…”; 根 là lượng từ, dịch theo danh từ (củ, sợi).'},
-  {vi:'Vì mỗi người mù chỉ sờ được một phần thân con voi nên kết luận họ đưa ra đều rất phiến diện.',zh:'由于每个盲人都只摸到了大象身体的一部分，所以他们得出的结论都很片面。',py:'Yóuyú měi ge mángrén dōu zhǐ mō dào le dàxiàng shēntǐ de yí bùfen, suǒyǐ tāmen déchū de jiélùn dōu hěn piànmiàn.',goiY:['由于……所以…… = vì… nên…','片面 = phiến diện'],giai:'由于 trang trọng hơn 因为, vẫn đi với 所以; 得出的结论 = kết luận rút ra, dịch gọn “kết luận họ đưa ra”.'},
-  {vi:'Mấy người mù tranh nhau nói mình đúng, chẳng ai chịu ai, có người còn sốt ruột mắng người khác nói bậy.',zh:'盲人们争着说自己对，谁也不服谁，有的甚至不耐烦地骂别人胡说。',py:'Mángrénmen zhēngzhe shuō zìjǐ duì, shéi yě bù fú shéi, yǒude shènzhì bú nàifán de mà biérén húshuō.',goiY:['甚至 = thậm chí, còn','不耐烦 = mất kiên nhẫn','胡说 = nói bậy'],giai:'甚至 đưa ra mức độ cao hơn ở vế cuối; 谁也不服谁 = chẳng ai chịu ai, không dịch từng chữ “ai cũng không phục ai”.'},
-  {vi:'Câu thành ngữ này cho ta biết nhìn vấn đề không thể chỉ nhìn một mặt, nếu không sẽ giống thầy bói xem voi mà rút ra kết luận sai.',zh:'这则成语告诉我们，看问题不能只看一个方面，否则就会像盲人摸象一样得出错误的结论。',py:'Zhè zé chéngyǔ gàosu wǒmen, kàn wèntí bù néng zhǐ kàn yí ge fāngmiàn, fǒuzé jiù huì xiàng mángrén mō xiàng yíyàng déchū cuòwù de jiélùn.',goiY:['则 = (lượng từ) câu, mẩu','否则 = nếu không thì'],giai:'否则 nêu hậu quả khi không làm theo vế trước → “nếu không thì”; 则 ở đây là lượng từ cho thành ngữ/tin tức, không phải “thì”.'},
-  {vi:'Tướng quân Lý Quảng thời Tây Hán không những giỏi cưỡi ngựa mà tài bắn cung còn đặc biệt cao, vì thế người đời gọi ông là “Phi tướng quân”.',zh:'西汉将军李广不但善于骑马，而且射箭的本领特别高，因此人们称他为“飞将军”。',py:'Xī Hàn jiāngjūn Lǐ Guǎng búdàn shànyú qí mǎ, érqiě shè jiàn de běnlǐng tèbié gāo, yīncǐ rénmen chēng tā wéi “Fēi Jiāngjūn”.',goiY:['不但……而且…… = không những… mà còn…','善于 = giỏi về','称……为…… = gọi… là…'],giai:'不但……而且…… tăng tiến, 因此 nêu kết quả; 称 A 为 B = gọi A là B (văn viết), dịch “gọi ông là…”.'},
-  {vi:'Một lần Lý Quảng đi săn, bỗng thấy trong bụi cỏ hình như có con hổ đang rình, thế là ông lập tức tập trung cao độ giương cung bắn một mũi tên.',zh:'有一次李广去打猎，忽然看见草丛里好像蹲着一只老虎，于是立刻全神贯注地拉弓射了一箭。',py:'Yǒu yí cì Lǐ Guǎng qù dǎliè, hūrán kànjiàn cǎocóng li hǎoxiàng dūnzhe yì zhī lǎohǔ, yúshì lìkè quánshénguànzhù de lā gōng shè le yí jiàn.',goiY:['忽然 = bỗng nhiên','于是 = thế là','全神贯注 = tập trung cao độ'],giai:'于是 nối hành động xảy ra ngay sau, do vế trước gây nên; 蹲着 tả tư thế nằm rình của con hổ, dịch linh hoạt, không cần “ngồi xổm”.'},
-  {vi:'Lại gần nhìn, ông mới biết chắc đó không phải con hổ mà là một tảng đá lớn, vậy mà mũi tên lại cắm sâu vào trong đá.',zh:'走近一看，他才确定那不是老虎，而是一块大石头，可是箭居然深深地射进了石头里。',py:'Zǒu jìn yí kàn, tā cái quèdìng nà bú shì lǎohǔ, ér shì yí kuài dà shítou, kěshì jiàn jūrán shēnshēn de shè jìn le shítou li.',goiY:['不是……而是…… = không phải… mà là…','居然 = vậy mà (bất ngờ)','确定 = biết chắc'],giai:'不是 A 而是 B phủ định A, khẳng định B; 居然 diễn tả điều ngoài dự đoán → “vậy mà/thế mà”.'},
-  {vi:'Lý Quảng lại vào tư thế, bắn liên tiếp mấy mũi tên, nhưng hễ chạm vào đá là tên vỡ vụn, không mũi nào cắm vào được.',zh:'李广又摆好姿势连续射了几箭，可是箭一碰到石头便碎了，连一支也没射进去。',py:'Lǐ Guǎng yòu bǎi hǎo zīshì liánxù shè le jǐ jiàn, kěshì jiàn yí pèng dào shítou biàn suì le, lián yì zhī yě méi shè jìnqu.',goiY:['一……便…… = hễ… là…','连……也…… = ngay cả… cũng…','摆好姿势 = vào tư thế'],giai:'一 + V1，便 + V2 = vừa/hễ V1 là V2 ngay (便 = 就, văn viết); 连一支也没… = không một mũi nào…, dịch thành câu phủ định.'},
-  {vi:'Dương Hùng cho rằng sở dĩ Lý Quảng bắn được tên vào đá là vì ông tưởng tảng đá là hổ nên dốc hết sức; đó chính là đạo lý “lòng thành cảm động cả đá vàng”.',zh:'扬雄认为，李广之所以能把箭射进石头，是因为他把石头当成了老虎，尽了全力，这正是“精诚所至，金石为开”的道理。',py:'Yáng Xióng rènwéi, Lǐ Guǎng zhīsuǒyǐ néng bǎ jiàn shè jìn shítou, shì yīnwèi tā bǎ shítou dàngchéng le lǎohǔ, jìn le quánlì, zhè zhèng shì “jīngchéng suǒ zhì, jīnshí wéi kāi” de dàolǐ.',goiY:['之所以……是因为…… = sở dĩ… là vì…','精诚所至，金石为开 = lòng thành cảm động cả đá vàng'],giai:'之所以 nêu kết quả trước, 是因为 giải thích sau → “sở dĩ… là vì…”; 把 A 当成 B = tưởng A là B, coi A như B.'}
+  {vi:'Nhà vua sai binh lính tìm về một con voi, rồi mời mấy người mù, mỗi người tự đến sờ.',zh:'国王让士兵们找来一头大象，然后请几个盲人分别去摸。',py:'Guówáng ràng shìbīngmen zhǎo lái yì tóu dàxiàng, ránhòu qǐng jǐ ge mángrén fēnbié qù mō.',goiY:['然后 = sau đó, rồi','分别 = mỗi người (làm) riêng'],giai:'分别 đứng trước động từ, chủ ngữ số nhiều → dịch "mỗi người/từng người… riêng", không dịch là "chia tay".'},
+  {vi:'Người mù sờ trúng ngà voi thì nói con voi giống cái sừng, còn người sờ trúng đuôi lại bảo nó giống sợi dây thừng.',zh:'摸到牙齿的盲人说大象像一个角，摸到尾巴的却说大象像一根绳子。',py:'Mō dào yáchǐ de mángrén shuō dàxiàng xiàng yí ge jiǎo, mō dào wěiba de què shuō dàxiàng xiàng yì gēn shéngzi.',goiY:['却 = lại (trái ngược)','一根 = một (vật dài, mảnh)'],giai:'却 đứng sau chủ ngữ, trước động từ, nối hai vế đối lập → "còn… lại…"; 根 là lượng từ, dịch theo danh từ (sợi).'},
+  {vi:'Câu thành ngữ này cho ta biết nhìn vấn đề không thể chỉ nhìn một mặt, nếu không sẽ giống mấy người mù kia mà rút ra kết luận sai.',zh:'这则成语告诉我们，看问题不能只看一个方面，否则就会像那几个盲人一样得出错误的结论。',py:'Zhè zé chéngyǔ gàosu wǒmen, kàn wèntí bù néng zhǐ kàn yí ge fāngmiàn, fǒuzé jiù huì xiàng nà jǐ ge mángrén yíyàng déchū cuòwù de jiélùn.',goiY:['则 = (lượng từ) câu, mẩu','否则 = nếu không thì'],giai:'否则 nêu hậu quả khi không làm theo vế trước → "nếu không thì"; 则 ở đây là lượng từ cho thành ngữ/tin tức, không phải "thì".'},
+  {vi:'Tướng quân Lý Quảng thời Tây Hán không những giỏi cưỡi ngựa mà tài bắn cung còn đặc biệt cao, vì thế người đời gọi ông là “Phi tướng quân”.',zh:'西汉将军李广不但善于骑马，而且射箭的本领特别高，因此人们称他为“飞将军”。',py:'Xī Hàn jiāngjūn Lǐ Guǎng búdàn shànyú qí mǎ, érqiě shè jiàn de běnlǐng tèbié gāo, yīncǐ rénmen chēng tā wéi “Fēi Jiāngjūn”.',goiY:['不但……而且…… = không những… mà còn…','善于 = giỏi về','称……为…… = gọi… là…'],giai:'不但……而且…… tăng tiến, 因此 nêu kết quả; 称 A 为 B = gọi A là B (văn viết), dịch "gọi ông là…".'},
+  {vi:'Một lần Lý Quảng đi săn, bỗng thấy đằng xa hình như có con hổ đang rình, thế là ông lập tức tập trung cao độ bắn một mũi tên.',zh:'有一次李广去打猎，忽然看见远处好像蹲着一只老虎，于是立刻全神贯注地射了一箭。',py:'Yǒu yí cì Lǐ Guǎng qù dǎliè, hūrán kànjiàn yuǎnchù hǎoxiàng dūnzhe yì zhī lǎohǔ, yúshì lìkè quánshénguànzhù de shè le yí jiàn.',goiY:['忽然 = bỗng nhiên','于是 = thế là','全神贯注 = tập trung cao độ'],giai:'于是 nối hành động xảy ra ngay sau, do vế trước gây nên; 蹲着 tả tư thế nằm rình của con hổ, dịch linh hoạt, không cần "ngồi xổm".'},
+  {vi:'Lý Quảng lại vào tư thế, bắn liên tiếp mấy mũi tên, nhưng tảng đá quá cứng, tên hễ chạm vào đá là vỡ vụn, không mũi nào cắm vào được.',zh:'李广又摆好姿势连续射了几箭，可是石头太硬了，箭一碰到石头便碎了，连一支也没射进去。',py:'Lǐ Guǎng yòu bǎi hǎo zīshì liánxù shè le jǐ jiàn, kěshì shítou tài yìng le, jiàn yí pèng dào shítou biàn suì le, lián yì zhī yě méi shè jìnqu.',goiY:['硬 = cứng','一……便…… = hễ… là…','连……也…… = ngay cả… cũng…','摆好姿势 = vào tư thế'],giai:'一 + V1，便 + V2 = vừa/hễ V1 là V2 ngay (便 = 就, văn viết); 连一支也没… = không một mũi nào…, dịch thành câu phủ định.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1702,30 +1629,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (câu 1–3 lấy từ đáp án 书写 29–31 sách bài tập)
   sapXep:[
-    {manh:['五六支箭','我','射了','连续'],
-     dap:'我连续射了五六支箭。',
-     vn:'Tôi bắn liền năm sáu mũi tên.',
-     giai:'连续 làm trạng ngữ đứng TRƯỚC động từ 射; số lượng + lượng từ 支 + 箭 làm tân ngữ đứng sau.'},
-    {manh:['一定能','相信你','寻找到','最终的结论'],
-     dap:'相信你一定能寻找到最终的结论。',
-     vn:'Tin rằng bạn nhất định sẽ tìm ra kết luận cuối cùng.',
-     giai:'相信 + mệnh đề; trong mệnh đề: 一定能 + 寻找到 + tân ngữ 最终的结论.'},
-    {manh:['我完全','反应过来','他说这话的时候','没有'],
-     dap:'他说这话的时候，我完全没有反应过来。',
-     vn:'Lúc anh ấy nói câu đó, tôi hoàn toàn chưa kịp phản ứng.',
-     giai:'Trạng ngữ thời gian (……的时候) đứng đầu câu; 完全 + 没有 + 反应过来.'},
-    {manh:['被称为','李广','“飞将军”','作战勇敢'],
-     dap:'李广作战勇敢，被称为“飞将军”。',
-     vn:'Lý Quảng đánh trận dũng cảm, được gọi là "Phi tướng quân".',
-     giai:'Chủ ngữ 李广 → nguyên nhân 作战勇敢 → kết quả 被称为 + danh hiệu (ôn câu 被).'},
-    {manh:['片面地','看问题','不能','我们'],
-     dap:'我们不能片面地看问题。',
-     vn:'Chúng ta không thể nhìn vấn đề phiến diện.',
-     giai:'Trật tự trạng ngữ: động từ năng nguyện 不能 → trạng ngữ cách thức 片面地 → động từ 看.'},
-    {manh:['瞎担心','你就别','替他','了'],
-     dap:'你就别替他瞎担心了。',
-     vn:'Cậu đừng lo hão thay cậu ấy nữa.',
-     giai:'别 → giới từ 替他 → phó từ 瞎 + động từ 担心 → 了 cuối câu.'}
+    {manh:['五六支箭','我','射了','连续'],dap:'我连续射了五六支箭。',vn:'Tôi bắn liền năm sáu mũi tên.',giai:'连续 làm trạng ngữ đứng TRƯỚC động từ 射; số lượng + lượng từ 支 + 箭 làm tân ngữ đứng sau.'},
+    {manh:['一定能','相信你','寻找到','答案'],dap:'相信你一定能寻找到答案。',vn:'Tin rằng bạn nhất định sẽ tìm ra câu trả lời.',giai:'相信 + mệnh đề; trong mệnh đề: 一定能 + 寻找到 + tân ngữ 答案.'},
+    {manh:['我完全','反应过来','他说这话的时候','没有'],dap:'他说这话的时候，我完全没有反应过来。',vn:'Lúc anh ấy nói câu đó, tôi hoàn toàn chưa kịp phản ứng.',giai:'Trạng ngữ thời gian (……的时候) đứng đầu câu; 完全 + 没有 + 反应过来.'},
+    {manh:['被同学们','他','称为','“小老师”'],dap:'他被同学们称为“小老师”。',vn:'Cậu ấy được các bạn gọi là "thầy giáo nhí".',giai:'Câu 被 (ôn HSK 4): Chủ ngữ + 被 + tác nhân + 称为 + danh hiệu. 称为 = gọi là (văn viết).'},
+    {manh:['片面的','结论','我们','不能下'],dap:'我们不能下片面的结论。',vn:'Chúng ta không thể đưa ra kết luận phiến diện.',giai:'Chủ ngữ 我们 → 不能下 → định ngữ 片面的 → danh từ 结论. Động từ đi với 结论 là 下.'},
+    {manh:['瞎担心','你就别','替他','了'],dap:'你就别替他瞎担心了。',vn:'Cậu đừng lo hão thay cậu ấy nữa.',giai:'别 → giới từ 替他 → phó từ 瞎 + động từ 担心 → 了 cuối câu.'}
   ]
 };
 
@@ -1735,30 +1644,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 确定 · 全神贯注 · 尽力 · 片面 · 结论 · 精诚所至，金石为开.',
   questions:[
-    {q_zh:'你学习过射箭吗？应该怎么做才能更容易射中目标？',
-     q_vn:'Em đã học bắn cung chưa? Phải làm thế nào mới dễ bắn trúng đích hơn?',
-     hint:'Dùng 摆好姿势 + 全神贯注',
-     sample:'我没学过射箭，但我觉得要先摆好姿势，然后全神贯注地看着目标，不能着急。',
-     sample_vn:'Tôi chưa học bắn cung, nhưng tôi nghĩ trước hết phải vào đúng tư thế, sau đó dồn hết tinh thần nhìn vào mục tiêu, không được vội.',
-     note:'Chưa làm bao giờ cũng không sao — nói "tôi chưa… nhưng tôi nghĩ…" vẫn trả lời được trọn câu.'},
-    {q_zh:'在学习、工作或者生活中，我们同样需要有目标，你的目标是什么？',
-     q_vn:'Trong học tập, công việc hay cuộc sống, chúng ta cũng cần có mục tiêu. Mục tiêu của em là gì?',
-     hint:'Dùng 给自己确定了…… + 为了……',
-     sample:'我给自己确定了一个目标：明年通过HSK五级。为了这个目标，我每天都尽力学习一个小时。',
-     sample_vn:'Tôi đặt cho mình một mục tiêu: sang năm thi đỗ HSK 5. Vì mục tiêu đó, ngày nào tôi cũng cố học một tiếng.',
-     note:'Mục tiêu phải CỤ THỂ (con số, thời hạn) thì câu trả lời mới có sức thuyết phục.'},
-    {q_zh:'你觉得给自己确定什么样的目标才是最合适的？',
-     q_vn:'Em thấy nên đặt cho mình mục tiêu như thế nào mới là phù hợp nhất?',
-     hint:'Nêu tiêu chí + lý do, dùng 如果……就……',
-     sample:'我觉得目标不能太远，也不能太近。如果目标太远，就像箭射不到太远的地方一样，再努力也没用。',
-     sample_vn:'Tôi thấy mục tiêu không được quá xa, cũng không được quá gần. Nếu mục tiêu quá xa thì giống như mũi tên không bắn tới chỗ quá xa, cố mấy cũng vô ích.',
-     note:'Liên hệ với phần 背景分析 của sách (tầm bắn của mũi tên có giới hạn) sẽ rất ghi điểm.'},
-    {q_zh:'“盲人摸象”的故事告诉我们什么道理？你有没有过类似的经历？',
-     q_vn:'Câu chuyện "thầy bói xem voi" cho chúng ta đạo lý gì? Em đã từng có trải nghiệm tương tự chưa?',
-     hint:'Dùng 片面 + 下结论, kể một việc cụ thể',
-     sample:'这个故事告诉我们，不能片面地看问题。以前我只见过新同学一次，就觉得他不友好，后来才发现我错了。',
-     sample_vn:'Câu chuyện cho chúng ta biết không được nhìn vấn đề phiến diện. Trước đây tôi mới gặp bạn mới một lần đã cho rằng cậu ấy không thân thiện, về sau mới biết mình sai.',
-     note:'Nêu đạo lý xong phải có VÍ DỤ của bản thân — thiếu ví dụ là câu trả lời bị "rỗng".'}
+    {q_zh:'你学习过射箭吗？应该怎么做才能更容易射中？',q_vn:'Em đã học bắn cung chưa? Phải làm thế nào mới dễ bắn trúng hơn?',hint:'Dùng 摆好姿势 + 全神贯注',sample:'我没学过射箭，但我觉得要先摆好姿势，然后全神贯注，不能着急。',sample_vn:'Tôi chưa học bắn cung, nhưng tôi nghĩ trước hết phải vào đúng tư thế, sau đó dồn hết tinh thần, không được vội.',note:'Chưa làm bao giờ cũng không sao — nói "tôi chưa… nhưng tôi nghĩ…" vẫn trả lời được trọn câu.'},
+    {q_zh:'在学习、工作或者生活中，你给自己确定过什么计划吗？',q_vn:'Trong học tập, công việc hay cuộc sống, em đã từng đặt cho mình kế hoạch gì chưa?',hint:'Dùng 为了…… + 尽力',sample:'我的计划是：后年考过HSK5。为了做到这一点，我每天都尽力学习一个小时，因为我相信精诚所至，金石为开这句话。',sample_vn:'Kế hoạch của tôi là: năm sau nữa thi đỗ HSK 5. Để làm được điều đó, ngày nào tôi cũng cố học một tiếng, vì tôi tin câu "lòng thành cảm động cả đá vàng".',note:'Kế hoạch phải CỤ THỂ (con số, thời hạn) thì câu trả lời mới có sức thuyết phục.'},
+    {q_zh:'你觉得给自己确定什么样的计划才是最合适的？',q_vn:'Em thấy nên đặt cho mình kế hoạch như thế nào mới là phù hợp nhất?',hint:'Nêu tiêu chí + lý do, dùng 如果……就……',sample:'我觉得计划不能太难，也不能太容易。如果太难，就像箭射不到太远的地方一样，再努力也没用。',sample_vn:'Tôi thấy kế hoạch không được quá khó, cũng không được quá dễ. Nếu quá khó thì giống như mũi tên không bắn tới chỗ quá xa, cố mấy cũng vô ích.',note:'Liên hệ với phần phân tích bối cảnh của sách (tầm bắn của mũi tên có giới hạn) sẽ rất ghi điểm.'},
+    {q_zh:'盲人摸大象的故事告诉我们什么？你有没有过这样的经历？',q_vn:'Câu chuyện thầy bói xem voi cho chúng ta biết điều gì? Em đã từng có trải nghiệm như vậy chưa?',hint:'Dùng 片面 hoặc 下结论, kể một việc cụ thể',sample:'我从这个故事里学到的是，不能只看到一点就下结论。以前我只见过新同学一次，就觉得他不友好，后来才发现我错了。',sample_vn:'Điều tôi học được từ câu chuyện này là không được chỉ thấy một chút đã vội kết luận. Trước đây tôi mới gặp bạn mới một lần đã cho rằng cậu ấy không thân thiện, về sau mới biết mình sai.',note:'Nêu bài học xong phải có VÍ DỤ của bản thân — thiếu ví dụ là câu trả lời bị "rỗng".'}
   ]
 };
 
@@ -1849,45 +1738,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn thân lo lắng cho một bạn khác sắp thi.',
-     a:{sp:'Bạn',zh:'小王明天就要考试了，我真担心他考不好。',vn:'Mai Tiểu Vương thi rồi, tớ lo cậu ấy thi không tốt quá.'},
-     need:['Dùng 瞎 (phó từ)','Đưa ra một lý do để trấn an'],
-     sample:'他复习得那么认真，你就别替他瞎担心了。',
-     samplePy:'Tā fùxí de nàme rènzhēn, nǐ jiù bié tì tā xiā dānxīn le.',
-     sampleVn:'Cậu ấy ôn bài chăm thế, cậu đừng lo hão thay cậu ấy nữa.',
-     tip:'瞎 phó từ đứng NGAY TRƯỚC động từ: 别瞎担心, 别瞎说. Không nói 瞎别担心.'},
-
-    {scene:'Em bị ngã trong giờ thể dục, bạn chạy lại hỏi.',
-     a:{sp:'Bạn',zh:'你没事吧？流血了！',vn:'Cậu không sao chứ? Chảy máu rồi kìa!'},
-     need:['Dùng 不要紧','Nói rõ tình trạng của mình'],
-     sample:'不要紧，只是擦破了一点儿皮，休息一下就好了。',
-     samplePy:'Bú yàojǐn, zhǐshì cāpòle yìdiǎnr pí, xiūxi yíxià jiù hǎo le.',
-     sampleVn:'Không sao, chỉ trầy chút da thôi, nghỉ một lát là khỏi.',
-     tip:'不要紧 đọc bú yàojǐn (biến điệu 不). Dùng để TRẤN AN, đặt ở đầu câu.'},
-
-    {scene:'Bạn vội vàng kết luận về một bạn cùng lớp.',
-     a:{sp:'Bạn',zh:'他今天又没来上课，肯定是不想学了。',vn:'Hôm nay cậu ấy lại không đi học, chắc chắn là không muốn học nữa rồi.'},
-     need:['Dùng 片面 hoặc 下结论','Đề nghị một cách làm hợp lý hơn'],
-     sample:'你这样想太片面了，还是先问问他是怎么回事再下结论吧。',
-     samplePy:'Nǐ zhèyàng xiǎng tài piànmiàn le, háishi xiān wènwen tā shì zěnme huí shì zài xià jiélùn ba.',
-     sampleVn:'Cậu nghĩ vậy phiến diện quá, hay là hỏi xem cậu ấy bị sao đã rồi hẵng kết luận.',
-     tip:'Đây chính là bài học "thầy bói xem voi": chỉ thấy một phần thì đừng vội 下结论.'},
-
-    {scene:'Cô giáo hỏi kế hoạch nghỉ đông của hai chị em.',
-     a:{sp:'Cô',zh:'快放寒假了，你们假期有什么打算？',vn:'Sắp nghỉ đông rồi, kỳ nghỉ các em có dự định gì?'},
-     need:['Dùng 分别 (phó từ: mỗi người làm riêng)','Nói rõ hai việc khác nhau'],
-     sample:'我和妹妹打算分别去爷爷家和外婆家住一个星期。',
-     samplePy:'Wǒ hé mèimei dǎsuàn fēnbié qù yéye jiā hé wàipó jiā zhù yí ge xīngqī.',
-     sampleVn:'Em và em gái định mỗi người về ở nhà ông nội và nhà bà ngoại một tuần.',
-     tip:'分别 phó từ cần chủ ngữ SỐ NHIỀU (我和妹妹, 他们) và đứng trước động từ.'},
-
-    {scene:'Bạn thấy em mắt thâm quầng.',
-     a:{sp:'Bạn',zh:'你怎么看起来这么累？',vn:'Sao trông cậu mệt thế?'},
-     need:['Dùng 连续','Có số lượng thời gian cụ thể'],
-     sample:'为了准备比赛，我已经连续三天熬夜了。',
-     samplePy:'Wèile zhǔnbèi bǐsài, wǒ yǐjīng liánxù sān tiān áoyè le.',
-     sampleVn:'Để chuẩn bị cho cuộc thi, tớ đã thức khuya liền ba đêm rồi.',
-     tip:'连续 + số lượng + V: 连续三天熬夜. Đừng nhầm với 继续 (làm tiếp).'}
+    {scene:'Bạn thân lo lắng cho một bạn khác sắp thi.',a:{sp:'Bạn',zh:'小王明天就要考试了，我真担心他考不好。',vn:'Mai Tiểu Vương thi rồi, tớ lo cậu ấy thi không tốt quá.'},need:['Dùng 瞎 (phó từ)','Đưa ra một lý do để trấn an'],sample:'他复习得那么认真，肯定没问题，你别瞎担心了。',samplePy:'Tā fùxí de nàme rènzhēn, kěndìng méi wèntí, nǐ bié xiā dānxīn le.',sampleVn:'Cậu ấy ôn bài chăm thế, chắc chắn không sao đâu, cậu đừng lo hão nữa.',tip:'瞎 phó từ đứng NGAY TRƯỚC động từ: 别瞎担心, 别瞎说. Không nói 瞎别担心.'},
+    {scene:'Em bị ngã trong giờ thể dục, bạn chạy lại hỏi.',a:{sp:'Bạn',zh:'疼不疼？流血了！',vn:'Có đau không? Chảy máu rồi kìa!'},need:['Dùng 不要紧','Nói rõ tình trạng của mình'],sample:'我的腿不要紧，休息一下就好了。',samplePy:'Wǒ de tuǐ bú yàojǐn, xiūxi yíxià jiù hǎo le.',sampleVn:'Chân tớ không sao đâu, nghỉ một lát là khỏi.',tip:'不要紧 đọc bú yàojǐn (biến điệu 不). Dùng để TRẤN AN: (cái gì) + 不要紧.'},
+    {scene:'Bạn vội vàng kết luận về một bạn cùng lớp.',a:{sp:'Bạn',zh:'他这个星期两次没来上课，肯定是不想学了。',vn:'Tuần này cậu ấy hai lần không đi học, chắc chắn là không muốn học nữa rồi.'},need:['Dùng 片面 hoặc 下结论','Đề nghị một cách làm hợp lý hơn'],sample:'你这样想太片面了，还是先问问他是怎么回事再下结论吧。',samplePy:'Nǐ zhèyàng xiǎng tài piànmiàn le, háishi xiān wènwen tā shì zěnme huí shì zài xià jiélùn ba.',sampleVn:'Cậu nghĩ vậy phiến diện quá, hay là hỏi xem cậu ấy bị sao đã rồi hẵng kết luận.',tip:'Đây chính là bài học "thầy bói xem voi": chỉ thấy một phần thì đừng vội 下结论.'},
+    {scene:'Cô giáo hỏi kế hoạch nghỉ đông của hai chị em.',a:{sp:'Cô',zh:'快放寒假了，你们假期有什么打算？',vn:'Sắp nghỉ đông rồi, kỳ nghỉ các em có dự định gì?'},need:['Dùng 分别 (phó từ: mỗi người làm riêng)','Nói rõ hai việc khác nhau'],sample:'我和妹妹打算分别去爷爷家和外公家住一个星期。',samplePy:'Wǒ hé mèimei dǎsuàn fēnbié qù yéye jiā hé wàigōng jiā zhù yí ge xīngqī.',sampleVn:'Em và em gái định mỗi người về ở nhà ông nội và nhà ông ngoại một tuần.',tip:'分别 phó từ cần chủ ngữ SỐ NHIỀU (我和妹妹, 他们) và đứng trước động từ.'},
+    {scene:'Bạn thấy em mắt thâm quầng.',a:{sp:'Bạn',zh:'你怎么看起来这么累？',vn:'Sao trông cậu mệt thế?'},need:['Dùng 连续','Có số lượng thời gian cụ thể'],sample:'为了准备比赛，我已经连续三天熬夜了。',samplePy:'Wèile zhǔnbèi bǐsài, wǒ yǐjīng liánxù sān tiān áoyè le.',sampleVn:'Để chuẩn bị cho cuộc thi, tớ đã thức khuya liền ba đêm rồi.',tip:'连续 + số lượng + V: 连续三天熬夜. Đừng nhầm với 继续 (làm tiếp).'}
   ]
 };
 
@@ -1898,29 +1753,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết bài văn kể chuyện nộp cho cô giáo.',
-     a:'他一出门，便发现自己没带钥匙。',b:'他一出门，就发现自己没带钥匙。',better:'a',
-     why:'便 = 就 nhưng mang sắc thái VĂN VIẾT. Trong bài văn kể chuyện, 便 làm câu văn trang nhã hơn; nói chuyện hằng ngày thì dùng 就.'},
-
-    {scene:'Em trấn an bạn thân đang lo lắng.',
-     a:'你别瞎担心了，没事儿的。',b:'你不必过于担心，一切都会好的。',better:'a',
-     why:'瞎担心 là khẩu ngữ thân mật, hợp khi nói với bạn. Câu b đúng nhưng trịnh trọng như thư từ, nói với bạn thân nghe xa cách.'},
-
-    {scene:'Thầy giáo nói một điều em cho là chưa đúng.',
-     a:'胡说！不是这样的。',b:'老师，我觉得可能不是这样的。',better:'b',
-     why:'胡说 là lời phản bác rất MẠNH, thậm chí thô lỗ. Với thầy cô, người lớn phải dùng cách nói mềm: 我觉得可能…….'},
-
-    {scene:'Em viết báo cáo góp ý cho một bản kế hoạch ở công ty.',
-     a:'这个结论有点儿片面，建议多方面地考虑。',b:'你这是瞎说。',better:'a',
-     why:'Văn bản công việc cần khách quan, lịch sự: 片面 + 建议 là cách góp ý chuẩn. 瞎说 là khẩu ngữ, mang tính chê trách.'},
-
-    {scene:'Em xác nhận lại lịch hẹn với khách hàng.',
-     a:'您确定是明天上午十点吗？',b:'你没记错吧？',better:'a',
-     why:'Với khách hàng dùng 您 và 确定 để hỏi lại lịch sự. 你没记错吧 nghe như nghi ngờ người ta nhớ nhầm.'},
-
-    {scene:'Em thi trượt, nhắn tin than với bạn.',
-     a:'唉，又没考好。',b:'哎，又没考好。',better:'a',
-     why:'Than thở, tiếc nuối → 唉 (ài, tiếng thở dài). 哎 (āi) thiên về ngạc nhiên hoặc gọi người, không diễn tả nỗi buồn.'}
+    {scene:'Em viết bài văn kể chuyện nộp cho cô giáo.',a:'他一出门，便发现自己没带钥匙。',b:'他一出门，就发现自己没带钥匙。',better:'a',why:'便 = 就 nhưng mang sắc thái VĂN VIẾT. Trong bài văn kể chuyện, 便 làm câu văn trang nhã hơn; nói chuyện hằng ngày thì dùng 就.'},
+    {scene:'Em trấn an bạn thân đang lo lắng.',a:'别瞎想了，没事儿的。',b:'请你不要太担心，一切都会好的。',better:'a',why:'别瞎想 là khẩu ngữ thân mật, hợp khi nói với bạn. Câu b đúng nhưng trịnh trọng như thư từ, nói với bạn thân nghe xa cách.'},
+    {scene:'Thầy giáo nói một điều em cho là chưa đúng.',a:'胡说！不是这样的。',b:'老师，我觉得可能不是这样的。',better:'b',why:'胡说 là lời phản bác rất MẠNH, thậm chí thô lỗ. Với thầy cô, người lớn phải dùng cách nói mềm: 我觉得可能…….'},
+    {scene:'Em viết báo cáo góp ý cho một bản kế hoạch ở công ty.',a:'这个结论有点儿片面，建议再从别的方面考虑一下。',b:'你这是瞎说。',better:'a',why:'Văn bản công việc cần khách quan, lịch sự: 片面 + 建议 là cách góp ý chuẩn. 瞎说 là khẩu ngữ, mang tính chê trách.'},
+    {scene:'Em xác nhận lại lịch hẹn với khách hàng.',a:'您确定是明天上午十点吗？',b:'你没记错吧？',better:'a',why:'Với khách hàng dùng 您 và 确定 để hỏi lại lịch sự. 你没记错吧 nghe như nghi ngờ người ta nhớ nhầm.'},
+    {scene:'Em thi trượt, nhắn tin than với bạn.',a:'唉，又没考好。',b:'哎，又没考好。',better:'a',why:'Than thở, tiếc nuối → 唉 (ài, tiếng thở dài). 哎 (āi) thiên về ngạc nhiên hoặc gọi người, không diễn tả nỗi buồn.'}
   ]
 };
 

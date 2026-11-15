@@ -1202,29 +1202,20 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 107–108) + bài tập 3 của sách (tr. 110)
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
-  {left:'改善',right:'关系'},
-  {left:'刺激',right:'购买力'},
   {left:'有利的',right:'条件'},
-  {left:'巧妙的',right:'回答'},
-  {left:'不断',right:'积累'},
   {left:'无意中',right:'听到'},
   {left:'概念',right:'抽象'},
-  {left:'设备',right:'笨重'},
   {left:'体会',right:'深刻'},
-  {left:'效率',right:'惊人'},
-  {left:'说话',right:'巧妙'},
   {left:'经济',right:'落后'},
-  {left:'方法',right:'实用'},
   {left:'世界',right:'和平'},
-  {left:'延长',right:'寿命'},
   {left:'逃避',right:'责任'},
   {left:'挖掘',right:'潜力'},
   {left:'构成',right:'威胁'},
   {left:'面临',right:'危机'},
-  {left:'充满',right:'活力'},
   {left:'进入',right:'决赛'},
   {left:'最佳',right:'状态'}
 ];
@@ -1233,61 +1224,31 @@ var matchData = [
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'西班牙人特别喜欢吃',blank:'沙丁鱼',post:'。',hint:'(cá mòi)',ans:'沙丁鱼'},
-  {pre:'这些水果要用冷藏车',blank:'运输',post:'，不然很快就会坏。',hint:'(vận chuyển)',ans:'运输'},
-  {pre:'船慢慢地靠',blank:'岸',post:'了，乘客们纷纷走了下来。',hint:'(bờ)',ans:'岸'},
-  {pre:'这家超市的',blank:'商品',post:'种类很多，价格也不贵。',hint:'(hàng hóa)',ans:'商品'},
-  {pre:'由于报名的考生太多，学校决定适当',blank:'延长',post:'报名时间。',hint:'(kéo dài)',ans:'延长'},
-  {pre:'这种植物在沙漠里也能',blank:'存活',post:'下来。',hint:'(sống sót)',ans:'存活'},
-  {pre:'这几年，农村的生活条件得到了很大的',blank:'改善',post:'。',hint:'(cải thiện)',ans:'改善'},
-  {pre:'她在收拾花园时，',blank:'无意',post:'地找到了这只耳环。',hint:'(tình cờ)',ans:'无意',exp:'无意 = vô tình, không cố ý: 无意地找到了这只耳环.'},
-  {pre:'他',blank:'巧妙',post:'地回答了记者的问题，大家都很佩服。',hint:'(khéo léo)',ans:'巧妙'},
-  {pre:'公司在产品包装、宣传推广和销售等方面积累了相当丰富、',blank:'实用',post:'的经验。',hint:'(thiết thực)',ans:'实用'},
-  {pre:'猫是老鼠的',blank:'天敌',post:'，老鼠一看见猫就跑。',hint:'(kẻ thù tự nhiên)',ans:'天敌'},
-  {pre:'这在经济学上被称为“',blank:'鲇鱼',post:'效应”。',hint:'(cá nheo)',ans:'鲇鱼'},
-  {pre:'这家医院的',blank:'设备',post:'齐全，医生的水平也很高。',hint:'(thiết bị)',ans:'设备'},
-  {pre:'全世界的人民都希望世界',blank:'和平',post:'。',hint:'(hòa bình)',ans:'和平'},
-  {pre:'我不觉得他可以对我',blank:'构成',post:'威胁。',hint:'(gây ra, tạo thành)',ans:'构成'},
-  {pre:'遇到困难不应该',blank:'逃避',post:'，应该积极地面对。',hint:'(trốn tránh)',ans:'逃避'},
-  {pre:'随着经济',blank:'不断',post:'发展，人们的生活越来越好。',hint:'(không ngừng)',ans:'不断',exp:'不断 + V = không ngừng: 经济不断发展.'},
-  {pre:'年轻人精力',blank:'旺盛',post:'，熬一次夜好像没什么影响。',hint:'(dồi dào)',ans:'旺盛'},
-  {pre:'我们是理工科学校，男老师占的',blank:'比例',post:'太大了。',hint:'(tỷ lệ)',ans:'比例'},
-  {pre:'来中国一年多了，你有什么',blank:'感想',post:'？',hint:'(cảm nghĩ)',ans:'感想'},
-  {pre:'我最大的',blank:'体会',post:'就是中国太大了，要学的东西太多了。',hint:'(điều thấm thía)',ans:'体会'},
-  {pre:'这个',blank:'概念',post:'太抽象了，你能举个例子吗？',hint:'(khái niệm)',ans:'概念'},
-  {pre:'掌握',blank:'核心',post:'技术，企业才能在竞争中不落后。',hint:'(cốt lõi)',ans:'核心'},
-  {pre:'必须采取措施',blank:'刺激',post:'企业活跃起来。',hint:'(kích thích)',ans:'刺激'},
-  {pre:'每天早上跑步，让我一整天都充满',blank:'活力',post:'。',hint:'(sức sống)',ans:'活力'},
-  {pre:'中国各地区经济发展水平不平衡，中西部',blank:'落后',post:'于东南沿海地区。',hint:'(tụt lại, lạc hậu)',ans:'落后'},
-  {pre:'看问题不能只看表面，要看清它的',blank:'本质',post:'。',hint:'(bản chất)',ans:'本质'},
-  {pre:'公司每年都会培训新',blank:'员工',post:'。',hint:'(nhân viên)',ans:'员工'},
-  {pre:'那场经济',blank:'危机',post:'让很多公司破产了。',hint:'(khủng hoảng)',ans:'危机'},
-  {pre:'很多研究发现，适度的压力',blank:'有利',post:'于我们保持良好的状态。',hint:'(có lợi)',ans:'有利'},
-  {pre:'好老师善于',blank:'挖掘',post:'每个学生的优点。',hint:'(khai thác, tìm ra)',ans:'挖掘'},
-  {pre:'这个年轻人很有',blank:'潜力',post:'，将来一定能成为优秀的运动员。',hint:'(tiềm năng)',ans:'潜力'},
-  {pre:'我们班的篮球队终于进入了',blank:'决赛',post:'。',hint:'(chung kết)',ans:'决赛'},
-  {pre:'参加本届运动会的运动员人数',blank:'接近',post:'一万人。',hint:'(gần tới)',ans:'接近'},
-  {pre:'早上是背单词的最',blank:'佳',post:'时间。',hint:'(tốt)',ans:'佳'},
-  {pre:'他',blank:'的确',post:'是我所教过的学生中最聪明的。',hint:'(quả thực)',ans:'的确',exp:'的确 = quả thực, đúng là (khẳng định mạnh).'}
+  {pre:'这批新鲜水果要从南方',blank:'运输',post:'到北方，路上不能超过两天。',hint:'(vận chuyển — 2 chữ)',ans:'运输',exp:'运输 = vận chuyển (hàng hoá bằng xe, tàu…): 运输水果, 运输公司.'},
+  {pre:'坐了三天船，终于又站在',blank:'岸',post:'上了，大家都很高兴。',hint:'(bờ)',ans:'岸',exp:'岸 = bờ (sông, biển, hồ): 上岸, 靠岸, 岸上.'},
+  {pre:'大家都还没玩儿够，老师就把活动时间',blank:'延长',post:'了半个小时。',hint:'(kéo dài)',ans:'延长',exp:'延长 + thời gian = kéo dài thêm: 延长时间, 延长了半个小时.'},
+  {pre:'这种小树特别容易',blank:'存活',post:'，种下去一个月就长出了新叶子。',hint:'(sống sót, sống được — 2 chữ)',ans:'存活',exp:'存活 = sống sót, tồn tại được: 存活期, 存活的比例.'},
+  {pre:'大鱼是小鱼的',blank:'天敌',post:'。',hint:'(thiên địch, kẻ thù tự nhiên)',ans:'天敌',exp:'天敌 = thiên địch, loài săn bắt loài kia trong tự nhiên.'},
+  {pre:'这个房间里的电脑和其他',blank:'设备',post:'都是今年新买的。',hint:'(thiết bị)',ans:'设备',exp:'设备 = thiết bị, máy móc; lượng từ 套: 一套设备.'},
+  {pre:'春天到了，院子里的草长得十分',blank:'旺盛',post:'。',hint:'(tươi tốt, mạnh mẽ)',ans:'旺盛',exp:'旺盛 = tươi tốt, dồi dào, mạnh mẽ: 长得旺盛, 精力旺盛, 生命力旺盛.'},
+  {pre:'我们学校男生和女生的',blank:'比例',post:'差不多是一比一。',hint:'(tỷ lệ)',ans:'比例',exp:'比例 = tỷ lệ: ……的比例是一比一, 占的比例很高.'},
+  {pre:'新来的几位年轻老师给学校带来了很多',blank:'活力',post:'。',hint:'(sức sống)',ans:'活力',exp:'活力 = sức sống, sinh khí: 充满活力, 带来活力.'},
+  {pre:'这家公司对',blank:'员工',post:'很好，每年都给大家涨工资。',hint:'(nhân viên)',ans:'员工',exp:'员工 = công nhân viên, nhân viên của một đơn vị: 新员工, 公司员工.'},
+  {pre:'这两种方法看起来很不一样，可是从',blank:'本质',post:'上说是一样的。',hint:'(bản chất)',ans:'本质',exp:'从本质上说 = xét về bản chất; trái với 表面 (bề ngoài).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (无意 · 有利 · 的确) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['后来','一位渔民','无意中','发现了','一种','巧妙的','方法','。'],ans:'后来一位渔民无意中发现了一种巧妙的方法。',audio:'后来一位渔民无意中发现了一种巧妙的方法。'},
-  {words:['他的','这些话','无意中','接近了','事实','。'],ans:'他的这些话无意中接近了事实。',audio:'他的这些话无意中接近了事实。'},
-  {words:['我','无意','打扰您','，','只想','问一个问题','。'],ans:'我无意打扰您，只想问一个问题。',audio:'我无意打扰您，只想问一个问题。'},
-  {words:['适度的','压力','有利于','我们','保持','良好的','状态','。'],ans:'适度的压力有利于我们保持良好的状态。',audio:'适度的压力有利于我们保持良好的状态。'},
-  {words:['高高的个子','是','他的','有利','条件','。'],ans:'高高的个子是他的有利条件。',audio:'高高的个子是他的有利条件。'},
-  {words:['经常','熬夜','不利于','身体','健康','。'],ans:'经常熬夜不利于身体健康。',audio:'经常熬夜不利于身体健康。'},
-  {words:['他','的确','是','我教过的','学生中','最聪明的','。'],ans:'他的确是我教过的学生中最聪明的。',audio:'他的确是我教过的学生中最聪明的。'},
-  {words:['我','觉得','这个方法','的确','很','巧妙','。'],ans:'我觉得这个方法的确很巧妙。',audio:'我觉得这个方法的确很巧妙。'},
-  {words:['“鲇鱼效应”','的确','对','挖掘员工潜力','具有','积极的','意义','。'],ans:'“鲇鱼效应”的确对挖掘员工潜力具有积极的意义。',audio:'“鲇鱼效应”的确对挖掘员工潜力具有积极的意义。'},
-  {words:['必须','采取措施','刺激','企业','活跃起来','。'],ans:'必须采取措施刺激企业活跃起来。',audio:'必须采取措施刺激企业活跃起来。'},
-  {words:['这种','商品','占的','比例','太高了','。'],ans:'这种商品占的比例太高了。',audio:'这种商品占的比例太高了。'},
-  {words:['为了','逃避','天敌','，','沙丁鱼','不断地','加速游动','。'],ans:'为了逃避天敌，沙丁鱼不断地加速游动。',audio:'为了逃避天敌，沙丁鱼不断地加速游动。'},
-  {words:['学校','决定','适当','延长','报名时间','。'],ans:'学校决定适当延长报名时间。',audio:'学校决定适当延长报名时间。'}
+  {words:['这次比赛的','规则','对','我们','很','有利','。'],ans:'这次比赛的规则对我们很有利。',audio:'这次比赛的规则对我们很有利。'},
+  {words:['这样做','对','谁','都','不利','。'],ans:'这样做对谁都不利。',audio:'这样做对谁都不利。'},
+  {words:['这家店的','商品','的确','又便宜','又好','。'],ans:'这家店的商品的确又便宜又好。',audio:'这家店的商品的确又便宜又好。'},
+  {words:['他的','汉语水平','在','不断','提高','。'],ans:'他的汉语水平在不断提高。',audio:'他的汉语水平在不断提高。'},
+  {words:['这本书里的','方法','简单','又','实用','。'],ans:'这本书里的方法简单又实用。',audio:'这本书里的方法简单又实用。'},
+  {words:['他','生病','请了','两周假','，','学习','落后了','不少','。'],ans:'他生病请了两周假，学习落后了不少。',audio:'他生病请了两周假，学习落后了不少。'},
+  {words:['这场比赛的','比分','非常','接近','。'],ans:'这场比赛的比分非常接近。',audio:'这场比赛的比分非常接近。'},
+  {words:['这次','旅行','回来','，','妈妈','让我','把感想','写下来','。'],ans:'这次旅行回来，妈妈让我把感想写下来。',audio:'这次旅行回来，妈妈让我把感想写下来。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1295,80 +1256,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'你听谁说刘方要结婚了？消息____吗？',opts:['的确','确实','真正','到底'],ans:1,
-   exp:'Làm vị ngữ trong câu hỏi → cần TÍNH TỪ 确实 (bài tập 2 của sách). 的确 chỉ là phó từ, không đứng cuối làm vị ngữ.'},
-  {wrong:'主任临时有点儿事，下午的会____到明天了。',opts:['延长','推迟','落后','逃避'],ans:1,
-   exp:'Lùi thời điểm họp sang ngày mai → 推迟 (bài tập 2 của sách). 延长 là kéo dài khoảng thời gian.'},
-  {wrong:'让孩子____到自己的意见受到尊重，这一点很重要。',opts:['感想','体会','概念','本质'],ans:1,
-   exp:'Sau có 到 + tân ngữ → cần động từ 体会 (bài tập 2 của sách). 感想 chỉ là danh từ.'},
-  {wrong:'他____就看不见这些美丽的花呀。',opts:['本质','根本','核心','潜力'],ans:1,
-   exp:'Phó từ nhấn mạnh phủ định "hoàn toàn (không)" → 根本 (bài tập 2 của sách). 本质 là danh từ.'},
-  {wrong:'做这个动作时，大腿要尽量____胸部。',opts:['接近','靠近','改善','构成'],ans:1,
-   exp:'Vị trí cụ thể của bộ phận cơ thể → 靠近 (câu mẫu phần 词语辨析).'},
-  {wrong:'直到天快亮的时候，他的体温才____正常。',opts:['靠近','接近','延长','刺激'],ans:1,
-   exp:'Nhiệt độ là số lượng / trạng thái → 接近; 靠近 không dùng cho số lượng.'},
-  {wrong:'考试周图书馆____了开放时间，一直开到晚上十一点。',opts:['延长','推迟','落后','存活'],ans:0,
-   exp:'Mở cửa thêm đến 11 giờ đêm = KÉO DÀI thời gian → 延长. 推迟 là lùi giờ bắt đầu.'},
-  {wrong:'遇到困难不应该____，应该积极地面对。',opts:['逃避','落后','刺激','构成'],ans:0,
-   exp:'Đối lập với 面对 (đối mặt) → 逃避 (trốn tránh) — bài tập 1 của sách.'},
-  {wrong:'中国各地区经济发展水平不平衡，中西部____于东南沿海地区。',opts:['接近','落后','有利','靠近'],ans:1,
-   exp:'不平衡 (không đồng đều) → miền Trung, Tây TỤT SAU → 落后于 (bài tập 1 của sách).'},
-  {wrong:'很多研究发现，适度的压力____于我们保持良好的状态。',opts:['有利','有用','实用','活力'],ans:0,
-   exp:'Mẫu cố định A 有利于 B (注释 2 của sách).'},
-  {wrong:'后来一位渔民____中发现了一种巧妙而实用的方法。',opts:['无意','故意','的确','不断'],ans:0,
-   exp:'无意中 + 发现 = tình cờ phát hiện (注释 1). 故意 là cố ý, không đi với 中.'},
-  {wrong:'因为鲇鱼是食肉鱼，无法和沙丁鱼____共处。',opts:['和平','实用','旺盛','巧妙'],ans:0,
-   exp:'和平共处 = chung sống hòa bình (cụm cố định).'},
-  {wrong:'它会四处游动寻找小鱼吃，对沙丁鱼____威胁。',opts:['构成','刺激','改善','挖掘'],ans:0,
-   exp:'对……构成威胁 = gây ra mối đe dọa đối với ….'},
-  {wrong:'一个市场如果能采取一种措施，____企业活跃起来，就能使企业获得足够的活力。',opts:['刺激','改善','延长','存活'],ans:0,
-   exp:'刺激 + đối tượng + 活跃起来: kích thích cái gì trở nên năng động.'},
-  {wrong:'适度的压力更加有助于____我们的潜力。',opts:['挖掘','改善','逃避','构成'],ans:0,
-   exp:'挖掘潜力 = khai thác tiềm năng (cụm cố định).'},
-  {wrong:'看问题不能只看表面，要看清它的____。',opts:['本质','比例','活力','设备'],ans:0,
-   exp:'本质 (bản chất) đối lập với 表面 (bề ngoài).'},
-  {wrong:'那场经济____让很多公司破产了。',opts:['危机','危险','感想','比例'],ans:0,
-   exp:'经济危机 = khủng hoảng kinh tế. 危险 là nguy hiểm, không nói 经济危险.'},
-  {wrong:'这个年轻人很有____，将来一定能成为优秀的运动员。',opts:['潜力','设备','比例','天敌'],ans:0,
-   exp:'很有潜力 = rất có tiềm năng — nói về khả năng phát triển sau này.'},
-  {wrong:'直到比赛结束前一分钟，我们队还____两个球。',opts:['落后','靠近','逃避','延长'],ans:0,
-   exp:'落后 + số lượng = bị dẫn (thua) bao nhiêu.'},
-  {wrong:'这座桥的设计非常____，既美观又实用。',opts:['巧妙','旺盛','和平','有利'],ans:0,
-   exp:'巧妙 đi với 设计 (bảng 搭配 của sách): thiết kế tài tình.'},
-  {wrong:'我听他说了他的想法，我觉得____很巧妙。',opts:['的确','确定','本质','无意'],ans:0,
-   exp:'Phó từ khẳng định trước 很巧妙 → 的确 (bài nghe số 5).'},
-  {wrong:'看到这里，你有什么____和体会呢？',opts:['感想','概念','比例','核心'],ans:0,
-   exp:'感想和体会 (cảm nghĩ và nhận thức) — câu của bài khoá.'}
+  {wrong:'外面在下大雨，你别____窗户。',opts:['靠近','接近','构成','延长'],ans:0,exp:'靠近 = sát gần, dựa gần (vị trí cụ thể): 靠近窗户. 接近 thiên về gần tới một mức, một con số, một trạng thái (接近九十分); 构成, 延长 không hợp nghĩa.'},
+  {wrong:'我们班的平均分已经____九十分了。',opts:['接近','靠近','存活','构成'],ans:0,exp:'接近 + con số / mức độ / trạng thái = gần đạt tới. 靠近 dùng cho vị trí không gian; 存活, 构成 không hợp nghĩa.'},
+  {wrong:'这个数字不太____，你最好再检查一遍。',opts:['确实','的确','核心','有利'],ans:0,exp:'Ở đây cần TÍNH TỪ làm vị ngữ (不太 + tính từ) → 确实 (= chính xác, xác thực). 的确 chỉ là phó từ, không làm vị ngữ; 核心 là danh từ; 有利 là “có lợi”.'},
+  {wrong:'你说得____有道理，我同意你的看法。',opts:['的确','无意','实用','不断'],ans:0,exp:'的确 (phó từ) = quả thật, khẳng định điều vừa nói, đứng trước vị ngữ. 无意 là không cố ý / tình cờ; 实用 là tiện dụng; 不断 là không ngừng.'},
+  {wrong:'只有自己当了父母，才能真正____到父母的辛苦。',opts:['体会','感想','概念','本质'],ans:0,exp:'体会 làm động từ được: 体会到 = cảm nhận, thấm thía. 感想 chỉ là danh từ (cảm tưởng), không mang 到 + tân ngữ; 概念, 本质 là danh từ.'},
+  {wrong:'我在网上____中看到了小学同学的照片。',opts:['无意','的确','不断','有利'],ans:0,exp:'无意中 + V = tình cờ, không cố ý mà… (无意中发现, 无意中看到). Lưu ý 无意 KHÔNG phải “vô ý = sơ ý” (sơ ý là 不小心).'},
+  {wrong:'多吃蔬菜____身体健康。',opts:['有利于','有利','对','利益'],ans:0,exp:'有利 là tính từ, KHÔNG mang tân ngữ trực tiếp → phải dùng 有利于 + N (hoặc 对……有利). 对 thiếu động từ; 利益 là danh từ.'},
+  {wrong:'晚上吃得太饱，____睡眠。',opts:['不利于','不有利于','没有利','有利'],ans:0,exp:'Phủ định của 有利于 là 不利于 (không nói 不有利于, 没有利). 有利 vừa sai nghĩa vừa thiếu 于.'},
+  {wrong:'这件事是你做的，你不能____责任。',opts:['逃避','落后','延长','存活'],ans:0,exp:'逃避 + 责任 / 困难 / 问题 = trốn tránh. 落后 là tụt lại; 延长 là kéo dài; 存活 là sống sót.'},
+  {wrong:'他的成绩那么好，对我____了很大的压力。',opts:['构成','改善','延长','挖掘'],ans:0,exp:'对……构成 + 威胁 / 压力 = tạo thành, gây ra (đối với ai). 改善 là cải thiện; 延长 là kéo dài; 挖掘 là khai thác.'},
+  {wrong:'换了新经理以后，公司和员工的关系得到了很大的____。',opts:['改善','存活','延长','挖掘'],ans:0,exp:'得到改善 = được cải thiện (关系, 条件, 生活). 存活 là sống sót; 延长 là kéo dài (thời gian); 挖掘 là khai thác — không đi với 关系.'},
+  {wrong:'如果不努力，你很快就会____于别人。',opts:['落后','接近','逃避','构成'],ans:0,exp:'落后于 + người / nơi = tụt lại phía sau ai. 接近 không đi với 于 như vậy; 逃避, 构成 không hợp nghĩa.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tớ không có ý làm phiền cậu ôn bài, nhưng bài vật lý này quả thật làm khó tớ rồi.',zh:'我无意打扰你复习，可是这道物理题的确把我难住了。',py:'Wǒ wúyì dǎrǎo nǐ fùxí, kěshì zhè dào wùlǐ tí díquè bǎ wǒ nánzhù le.',goiY:['无意 + V','可是','的确'],giai:'无意 + V là động từ "không có ý định làm gì" — không phải "vô ý" (sơ ý là 不小心); 的确 đứng trước cụm động từ để khẳng định "quả thật".'},
-  {vi:'Chỉ cần cậu và bạn cùng bàn chủ động nói chuyện với nhau, quan hệ giữa hai người sẽ không ngừng được cải thiện.',zh:'只要你和同桌主动沟通，你们的关系就会不断改善。',py:'Zhǐyào nǐ hé tóngzhuō zhǔdòng gōutōng, nǐmen de guānxi jiù huì búduàn gǎishàn.',goiY:['只要……就……','主动沟通','不断改善'],giai:'只要 (điều kiện đủ) …… 就 (kết quả); 就 đứng sau chủ ngữ vế sau (你们的关系就会……). "Cải thiện quan hệ" dùng 改善, không dùng 提高.'},
-  {vi:'Trước kỳ thi hơi hồi hộp một chút lại có lợi cho việc giữ phong độ tốt nhất, nên cậu không cần lo lắng quá.',zh:'考试前有一点儿紧张反而有利于保持最佳状态，所以你不必太担心。',py:'Kǎoshì qián yǒu yìdiǎnr jǐnzhāng fǎn\'ér yǒulì yú bǎochí zuìjiā zhuàngtài, suǒyǐ nǐ bú bì tài dānxīn.',goiY:['反而','有利于','最佳状态','所以'],giai:'A 有利于 B = A có lợi cho B (phủ định là 不利于, không nói 不有利); 反而 báo hiệu điều trái với suy nghĩ thông thường.'},
-  {vi:'Cho dù trận chung kết bóng rổ lần này có thua, chúng ta cũng không được trốn tránh thất bại mà phải nghiêm túc rút ra bài học.',zh:'即使这次篮球决赛输了，我们也不能逃避失败，而要认真吸取教训。',py:'Jíshǐ zhè cì lánqiú juésài shū le, wǒmen yě bù néng táobì shībài, ér yào rènzhēn xīqǔ jiàoxun.',goiY:['即使……也……','决赛','逃避','吸取教训'],giai:'即使 nêu giả thiết (chưa chắc đã xảy ra), 也 đứng sau chủ ngữ vế sau; "trốn tránh" là 逃避, không dùng 逃跑 (bỏ chạy thật sự).'},
-  {vi:'Sở dĩ cậu ấy tiến bộ nhanh như vậy là vì bạn mới chuyển đến học rất giỏi, thúc đẩy cậu ấy không ngừng khai thác tiềm năng của bản thân.',zh:'他之所以进步得这么快，是因为新来的同学成绩很好，刺激他不断挖掘自己的潜力。',py:'Tā zhīsuǒyǐ jìnbù de zhème kuài, shì yīnwèi xīn lái de tóngxué chéngjì hěn hǎo, cìjī tā búduàn wājué zìjǐ de qiánlì.',goiY:['之所以……是因为……','刺激','挖掘','潜力'],giai:'之所以 (kết quả) …… 是因为 (nguyên nhân): kết quả nói trước, ngược thứ tự 因为……所以……; "khai thác tiềm năng" là cụm cố định 挖掘 + 潜力; 刺激 + người + V = thúc đẩy ai làm gì.'},
-  {vi:'Phần mềm học tập này không những được thiết kế rất khéo mà còn cực kỳ tiện dụng, thảo nào ngày càng nhiều người tải về.',zh:'这个学习软件不但设计得很巧妙，而且非常实用，难怪下载的人越来越多。',py:'Zhège xuéxí ruǎnjiàn búdàn shèjì de hěn qiǎomiào, érqiě fēicháng shíyòng, nánguài xiàzài de rén yuè lái yuè duō.',goiY:['不但……而且……','巧妙','实用','难怪'],giai:'不但……而且…… nối hai ưu điểm tăng tiến; 难怪 (thảo nào) đứng đầu vế kết quả sau khi đã nêu nguyên nhân.'},
-  {vi:'Ngủ sớm dậy sớm có lợi cho việc duy trì sức lực dồi dào, nhưng một khi đã quen thức khuya thì rất khó sửa lại.',zh:'早睡早起有利于保持旺盛的精力，可是一旦养成了熬夜的习惯，就很难改过来了。',py:'Zǎo shuì zǎo qǐ yǒulì yú bǎochí wàngshèng de jīnglì, kěshì yídàn yǎngchéngle áoyè de xíguàn, jiù hěn nán gǎi guòlai le.',goiY:['有利于','旺盛','一旦……就……','熬夜'],giai:'一旦……就…… = "một khi… thì…" (điều kiện dẫn tới hậu quả khó thay đổi); 旺盛 đi với 精力 / 生命力, không đi với 身体.'},
-  {vi:'Tớ tình cờ phát hiện ra rằng, thay vì một mình học vẹt thì chi bằng cùng bạn đặt câu hỏi cho nhau, cách này quả thật hiệu quả hơn.',zh:'我无意中发现，与其一个人死记硬背，不如和同学互相提问，这种方法的确更有效。',py:'Wǒ wúyì zhōng fāxiàn, yǔqí yí ge rén sǐjì-yìngbèi, bùrú hé tóngxué hùxiāng tíwèn, zhè zhǒng fāngfǎ díquè gèng yǒuxiào.',goiY:['无意中','与其……不如……','死记硬背','的确'],giai:'无意中 + V = "tình cờ" (việc đã xảy ra), khác 无意 + V = "không định"; 与其 A 不如 B: bỏ A, chọn B.'},
-  {vi:'Nếu một lớp học thiếu sự cạnh tranh thì mọi người dễ mất đi sức sống, thậm chí ngay cả những bạn vốn học khá cũng sẽ dần dần tụt lại phía sau.',zh:'如果一个班级缺乏竞争，大家就容易失去活力，甚至连成绩原本不错的同学也会慢慢落后。',py:'Rúguǒ yí ge bānjí quēfá jìngzhēng, dàjiā jiù róngyì shīqù huólì, shènzhì lián chéngjì yuánběn búcuò de tóngxué yě huì mànmàn luòhòu.',goiY:['如果……就……','缺乏','甚至连……也……','落后'],giai:'甚至 đẩy ý lên mức cao hơn, kết hợp 连……也…… để nhấn mạnh "ngay cả… cũng…"; "tụt lại phía sau" là 落后, đứng cuối câu làm vị ngữ.'},
-  {vi:'Thầy nói bản chất của thi cử không phải là để xếp hạng học sinh mà là giúp chúng ta phát hiện chỗ còn thiếu sót; chỉ khi đối diện đúng đắn với cảm giác khủng hoảng thì mới biến được áp lực thành động lực.',zh:'老师说，考试的本质不是给学生排名，而是帮我们发现不足；只有正确面对危机感，才能把压力变成动力。',py:'Lǎoshī shuō, kǎoshì de běnzhì bú shì gěi xuésheng páimíng, ér shì bāng wǒmen fāxiàn bùzú; zhǐyǒu zhèngquè miànduì wēijīgǎn, cái néng bǎ yālì biànchéng dònglì.',goiY:['本质','不是……而是……','只有……才……','危机感'],giai:'不是 A 而是 B phủ định A để khẳng định B; 只有……才…… nêu điều kiện duy nhất — không dùng 只有……就…….'}
+  {vi:'Tớ không muốn làm phiền cậu ôn bài, nhưng câu hỏi này quả thật làm tớ bí rồi.',zh:'我无意打扰你复习，可是这个问题的确把我难住了。',py:'Wǒ wúyì dǎrǎo nǐ fùxí, kěshì zhège wèntí díquè bǎ wǒ nánzhù le.',goiY:['无意','的确','把……难住'],giai:'无意 + V (động từ) = không có ý, không muốn làm; 的确 đứng trước vị ngữ để khẳng định; 难住 = làm ai bí.'},
+  {vi:'Chỉ cần cậu chủ động trao đổi với cậu ấy, quan hệ của hai người sẽ không ngừng được cải thiện.',zh:'只要你主动跟他沟通，你们的关系就会不断改善。',py:'Zhǐyào nǐ zhǔdòng gēn tā gōutōng, nǐmen de guānxì jiù huì búduàn gǎishàn.',goiY:['只要……就……','不断','改善'],giai:'不断 (phó từ) đứng trước động từ: 不断改善, 不断提高.'},
+  {vi:'Cho dù trận chung kết bóng rổ lần này có thua, chúng ta cũng không được trốn tránh thất bại, mà phải nghiêm túc rút ra bài học.',zh:'即使这次篮球决赛输了，我们也不能逃避失败，而要认真吸取教训。',py:'Jíshǐ zhè cì lánqiú juésài shū le, wǒmen yě bù néng táobì shībài, ér yào rènzhēn xīqǔ jiàoxùn.',goiY:['即使……也……','决赛','逃避'],giai:'即使……也…… nêu giả thiết nhượng bộ; 不……而…… = không… mà….'},
+  {vi:'Bạn mới đến học rất giỏi, điều này kích thích cậu ấy không ngừng khai thác tiềm năng của mình, nên cậu ấy tiến bộ rất nhanh.',zh:'新来的同学成绩很好，这刺激他不断挖掘自己的潜力，所以他进步得很快。',py:'Xīn lái de tóngxué chéngjì hěn hǎo, zhè cìjī tā búduàn wājué zìjǐ de qiánlì, suǒyǐ tā jìnbù de hěn kuài.',goiY:['刺激','挖掘','潜力'],giai:'刺激 + người + V = kích thích ai làm gì; 挖掘潜力 = khai thác tiềm năng.'},
+  {vi:'Chiếc cặp sách này không những được thiết kế rất khéo, mà còn rất tiện dụng, vì vậy người mua ngày càng nhiều.',zh:'这个书包不但设计得很巧妙，而且非常实用，所以买的人越来越多。',py:'Zhège shūbāo búdàn shèjì de hěn qiǎomiào, érqiě fēicháng shíyòng, suǒyǐ mǎi de rén yuè lái yuè duō.',goiY:['巧妙','实用','不但……而且……'],giai:'设计得很巧妙 — V + 得 + bổ ngữ; 巧妙 = khéo léo, tài tình; 实用 = thiết thực.'},
+  {vi:'Thầy nói, bản chất của kỳ thi không phải là so xem ai giỏi ai kém, mà là giúp chúng ta phát hiện thiếu sót.',zh:'老师说，考试的本质不是比较谁好谁差，而是帮我们发现不足。',py:'Lǎoshī shuō, kǎoshì de běnzhì bú shì bǐjiào shéi hǎo shéi chà, ér shì bāng wǒmen fāxiàn bùzú.',goiY:['本质','不是……而是……'],giai:'……的本质 = bản chất của…; 不是 A 而是 B phủ định A, khẳng định B.'}
 ];
 
-// Chiều Trung → Việt — câu của bài khoá
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Cá mòi hễ rời khỏi biển là rất khó sống sót, vì vậy việc vận chuyển trở thành vấn đề khiến ngư dân đau đầu nhất.',zh:'沙丁鱼一离开大海就很难存活，所以运输成了渔民最头疼的问题。',py:'Shādīngyú yì líkāi dàhǎi jiù hěn nán cúnhuó, suǒyǐ yùnshū chéngle yúmín zuì tóuténg de wèntí.',goiY:['一……就…… = hễ… là…','存活 = sống sót','运输 = vận chuyển'],giai:'一……就…… chỉ hai việc nối tiếp ngay (hễ… là…); 所以 dẫn ra hệ quả — 运输 ở đây là danh từ "việc vận chuyển".'},
-  {vi:'Nếu lúc lên bờ cá mòi vẫn còn sống thì giá bán của loại hàng này có thể tăng lên gấp mấy lần.',zh:'如果上岸时沙丁鱼还活着，这种商品的卖价就能涨好几倍。',py:'Rúguǒ shàng àn shí shādīngyú hái huózhe, zhè zhǒng shāngpǐn de màijià jiù néng zhǎng hǎo jǐ bèi.',goiY:['如果……就…… = nếu… thì…','上岸 = lên bờ','商品 = hàng hoá'],giai:'如果……就…… là giả thiết – kết quả; 好几倍 = "gấp mấy lần" (好 nhấn mạnh số nhiều), không dịch là "tốt mấy lần".'},
-  {vi:'Tuy ngư dân đã nghĩ ra rất nhiều cách để kéo dài thời gian sống của cá mòi, nhưng tình hình vẫn không được cải thiện là mấy.',zh:'渔民们虽然想了很多办法来延长沙丁鱼的存活期，但是情况仍然没有得到太大的改善。',py:'Yúmínmen suīrán xiǎngle hěn duō bànfǎ lái yáncháng shādīngyú de cúnhuóqī, dànshì qíngkuàng réngrán méiyǒu dédào tài dà de gǎishàn.',goiY:['虽然……但是…… = tuy… nhưng…','延长 = kéo dài','改善 = cải thiện'],giai:'虽然……但是…… là nhượng bộ (sự thật đã xảy ra); 没有得到太大的改善 dịch thoáng là "không được cải thiện là mấy".'},
-  {vi:'Về sau một ngư dân tình cờ phát hiện ra rằng chỉ cần thả vài con cá nheo vào thiết bị chứa cá thì cá mòi có thể sống sót khi lên bờ.',zh:'后来一位渔民无意中发现，只要把几条鲇鱼放进装鱼的设备里，沙丁鱼就能活着上岸。',py:'Hòulái yí wèi yúmín wúyì zhōng fāxiàn, zhǐyào bǎ jǐ tiáo niányú fàngjìn zhuāng yú de shèbèi li, shādīngyú jiù néng huózhe shàng àn.',goiY:['无意中 = tình cờ','只要……就…… = chỉ cần… thì…','鲇鱼 = cá nheo','设备 = thiết bị'],giai:'无意中 + V là phó từ "tình cờ, không cố ý"; 只要……就…… nêu điều kiện đủ — vế sau là nội dung của 发现.'},
-  {vi:'Do cá nheo là thiên địch của cá mòi, không thể chung sống hoà bình với chúng, nên để trốn tránh nguy hiểm, cá mòi đành phải không ngừng bơi nhanh hơn.',zh:'由于鲇鱼是沙丁鱼的天敌，无法跟它们和平共处，沙丁鱼为了逃避危险，只好不断地加速游动。',py:'Yóuyú niányú shì shādīngyú de tiāndí, wúfǎ gēn tāmen hépíng gòngchǔ, shādīngyú wèile táobì wēixiǎn, zhǐhǎo búduàn de jiāsù yóudòng.',goiY:['由于 = do, bởi vì','天敌 = thiên địch','和平共处 = chung sống hoà bình','只好 = đành phải'],giai:'由于 nêu nguyên nhân ở vế đầu; 只好 = "đành phải" (không còn cách nào khác) — không dịch thành "chỉ tốt".'},
-  {vi:'Sự xuất hiện của cá nheo đe doạ cá mòi, nhưng ngược lại lại giúp chúng duy trì sức sống mạnh mẽ, nhờ đó tỉ lệ sống sót được nâng lên rất nhiều.',zh:'鲇鱼的出现对沙丁鱼构成了威胁，反而使它们保持了旺盛的生命力，从而大大提高了存活的比例。',py:'Niányú de chūxiàn duì shādīngyú gòuchéngle wēixié, fǎn\'ér shǐ tāmen bǎochíle wàngshèng de shēngmìnglì, cóng\'ér dàdà tígāole cúnhuó de bǐlì.',goiY:['构成……威胁 = gây ra mối đe doạ','反而 = ngược lại','从而 = nhờ đó, từ đó','比例 = tỉ lệ'],giai:'反而 chỉ kết quả trái với dự đoán (bị đe doạ mà lại sống khoẻ hơn); 从而 dẫn ra kết quả tiếp theo — dịch "nhờ đó / từ đó".'},
-  {vi:'Đọc xong câu chuyện này, cảm nghĩ và điều thấm thía của mỗi người tuy khác nhau nhưng ai cũng cho rằng cách làm của người ngư dân quả thật rất gợi mở.',zh:'读完这个故事，每个人的感想和体会虽然不同，但都认为渔民的办法的确很有启发。',py:'Dúwán zhège gùshi, měi ge rén de gǎnxiǎng hé tǐhuì suīrán bù tóng, dàn dōu rènwéi yúmín de bànfǎ díquè hěn yǒu qǐfā.',goiY:['感想 = cảm nghĩ','体会 = điều thấm thía','虽然……但…… = tuy… nhưng…','的确 = quả thật'],giai:'虽然 đứng sau chủ ngữ (每个人的感想……虽然不同); 很有启发 dịch "rất gợi mở / rất đáng suy ngẫm", không dịch sát "có khởi phát".'},
-  {vi:'Cốt lõi của khái niệm "hiệu ứng cá nheo" là: một khi thị trường áp dụng biện pháp kích thích doanh nghiệp, doanh nghiệp sẽ tràn đầy sức sống và không đến nỗi tụt hậu trong cạnh tranh.',zh:'“鲇鱼效应”这个概念的核心在于：一旦市场采取措施刺激企业，企业就会充满活力，在竞争中不至于落后。',py:'“Niányú xiàoyìng” zhège gàiniàn de héxīn zàiyú: yídàn shìchǎng cǎiqǔ cuòshī cìjī qǐyè, qǐyè jiù huì chōngmǎn huólì, zài jìngzhēng zhōng bú zhìyú luòhòu.',goiY:['核心在于 = cốt lõi nằm ở','一旦……就…… = một khi… thì…','不至于 = không đến nỗi'],giai:'一旦……就…… nêu điều kiện một khi xảy ra thì kéo theo kết quả; 不至于 + V = "không đến nỗi", dùng cho kết quả xấu tránh được.'},
-  {vi:'Xét về bản chất, hiệu ứng cá nheo chính là một loại hiệu ứng áp lực: nó khiến nhân viên nảy sinh cảm giác khủng hoảng, từ đó tích cực khai thác tiềm năng của bản thân hơn.',zh:'从本质上说，鲇鱼效应就是一种压力效应：它让员工产生危机感，从而更积极地挖掘自己的潜力。',py:'Cóng běnzhì shang shuō, niányú xiàoyìng jiù shì yì zhǒng yālì xiàoyìng: tā ràng yuángōng chǎnshēng wēijīgǎn, cóng\'ér gèng jījí de wājué zìjǐ de qiánlì.',goiY:['从本质上说 = xét về bản chất','员工 = nhân viên','危机感 = cảm giác khủng hoảng','从而 = từ đó'],giai:'就是 ở đây khẳng định "chính là"; 让 + người + V là câu kiêm ngữ (khiến ai làm gì), 从而 nối kết quả tiếp theo.'},
-  {vi:'Khi thi đấu trận chung kết, vận động viên nhất định phải điều chỉnh bản thân về trạng thái gần như tốt nhất; nếu không có chút áp lực nào thì ngược lại sẽ bất lợi cho việc đạt thành tích tốt.',zh:'运动员参加决赛时，一定要把自己调整到接近最佳的状态；如果一点儿压力都没有，反而不利于取得好成绩。',py:'Yùndòngyuán cānjiā juésài shí, yídìng yào bǎ zìjǐ tiáozhěng dào jiējìn zuìjiā de zhuàngtài; rúguǒ yìdiǎnr yālì dōu méiyǒu, fǎn\'ér búlì yú qǔdé hǎo chéngjì.',goiY:['决赛 = trận chung kết','接近最佳 = gần như tốt nhất','一点儿……都没有 = không có chút… nào','反而 = ngược lại'],giai:'把 + O + 调整到 + trạng thái (câu chữ 把 có bổ ngữ kết quả); 不利于 là phủ định của 有利于 — dịch "bất lợi cho".'}
+  {vi:'Cá mòi hễ rời biển là rất khó sống sót, vì vậy vận chuyển trở thành vấn đề đau đầu nhất của ngư dân.',zh:'沙丁鱼一离开大海就很难存活，所以运输成了渔民最头疼的问题。',py:'Shādīngyú yì líkāi dàhǎi jiù hěn nán cúnhuó, suǒyǐ yùnshū chéngle yúmín zuì tóuténg de wèntí.',goiY:['沙丁鱼 = cá mòi','存活 = sống sót','运输 = vận chuyển'],giai:'一……就…… = hễ… là…; 头疼 ở đây = đau đầu (khó giải quyết).'},
+  {vi:'Về sau một ngư dân tình cờ phát hiện, chỉ cần thả vài con cá nheo vào thùng chứa cá, cá mòi sẽ còn sống khi lên bờ.',zh:'后来一位渔民无意中发现，只要把几条鲇鱼放进装鱼的设备里，沙丁鱼就能活着上岸。',py:'Hòulái yí wèi yúmín wúyì zhōng fāxiàn, zhǐyào bǎ jǐ tiáo niányú fàngjìn zhuāng yú de shèbèi li, shādīngyú jiù néng huózhe shàng àn.',goiY:['无意中 = tình cờ','鲇鱼 = cá nheo','设备 = thiết bị','上岸 = lên bờ'],giai:'无意中 + V = tình cờ mà…; 只要……就…… nêu điều kiện đủ.'},
+  {vi:'Vì cá nheo là thiên địch của cá mòi, không thể chung sống hoà bình với chúng, nên để trốn kẻ thù, cá mòi đành không ngừng bơi nhanh hơn.',zh:'由于鲇鱼是沙丁鱼的天敌，无法跟它们和平共处，沙丁鱼为了逃避危险，只好不断地加速游动。',py:'Yóuyú niányú shì shādīngyú de tiāndí, wúfǎ gēn tāmen hépíng gòngchǔ, shādīngyú wèile táobì wēixiǎn, zhǐhǎo búduàn de jiāsù yóudòng.',goiY:['天敌 = thiên địch','和平共处 = chung sống hoà bình','逃避 = trốn tránh','不断 = không ngừng'],giai:'由于 nêu nguyên nhân; 为了 + mục đích; 只好 = đành phải.'},
+  {vi:'Sự xuất hiện của cá nheo đe doạ cá mòi, trái lại lại giúp chúng giữ được sức sống dồi dào, nhờ đó tỷ lệ sống sót tăng lên rất nhiều.',zh:'鲇鱼的出现对沙丁鱼构成了威胁，反而使它们保持了旺盛的生命力，从而大大提高了存活的比例。',py:'Niányú de chūxiàn duì shādīngyú gòuchéngle wēixié, fǎn\'ér shǐ tāmen bǎochíle wàngshèng de shēngmìnglì, cóng\'ér dàdà tígāole cúnhuó de bǐlì.',goiY:['构成威胁 = gây đe doạ','旺盛 = dồi dào','比例 = tỷ lệ','从而 = nhờ đó'],giai:'对……构成威胁 = tạo thành mối đe doạ với…; 从而 nối kết quả.'},
+  {vi:'Cốt lõi của khái niệm này là: nếu thị trường có biện pháp kích thích doanh nghiệp, doanh nghiệp sẽ tràn đầy sức sống và không đến nỗi tụt hậu trong cạnh tranh.',zh:'这个概念的核心是：市场如果能采取措施刺激企业，企业就会充满活力，在竞争中不至于落后。',py:'Zhège gàiniàn de héxīn shì: shìchǎng rúguǒ néng cǎiqǔ cuòshī cìjī qǐyè, qǐyè jiù huì chōngmǎn huólì, zài jìngzhēng zhōng bú zhìyú luòhòu.',goiY:['概念 = khái niệm','核心 = cốt lõi','刺激 = kích thích','不至于 = không đến nỗi'],giai:'不至于 + V = không đến mức (ôn bài 26); 充满活力 = tràn đầy sức sống.'},
+  {vi:'Xét về bản chất, hiệu ứng cá nheo là một loại hiệu ứng áp lực: nó khiến nhân viên có cảm giác khủng hoảng, nhờ đó tích cực khai thác tiềm năng của bản thân hơn.',zh:'从本质上说，鲇鱼效应就是一种压力效应：它让员工产生危机感，从而更积极地挖掘自己的潜力。',py:'Cóng běnzhì shang shuō, niányú xiàoyìng jiù shì yì zhǒng yālì xiàoyìng: tā ràng yuángōng chǎnshēng wēijīgǎn, cóng\'ér gèng jījí de wājué zìjǐ de qiánlì.',goiY:['本质 = bản chất','员工 = nhân viên','危机感 = cảm giác khủng hoảng','挖掘潜力 = khai thác tiềm năng'],giai:'从本质上说 = xét về bản chất; 让 + người + V = khiến ai….'}
 ];
 
 // ══════════════════════════════════════════
@@ -1431,30 +1352,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
   sapXep:[
-    {manh:['无意中','他的这些话','事实','接近了'],
-     dap:'他的这些话无意中接近了事实。',
-     vn:'Những lời này của anh ấy vô tình lại gần đúng với sự thật.',
-     giai:'Câu 29 sách bài tập. Chủ ngữ 他的这些话 → trạng ngữ 无意中 → 接近了 + 事实.'},
-    {manh:['刺激企业','必须','采取措施','活跃起来'],
-     dap:'必须采取措施刺激企业活跃起来。',
-     vn:'Phải áp dụng biện pháp kích thích doanh nghiệp năng động lên.',
-     giai:'Câu 30 sách bài tập. 必须 → 采取措施 (cách làm) → 刺激企业 → 活跃起来 (kết quả).'},
-    {manh:['比例','这种商品','太高了','占的'],
-     dap:'这种商品占的比例太高了。',
-     vn:'Loại hàng này chiếm tỷ lệ quá cao.',
-     giai:'Câu 31 sách bài tập. 这种商品占的 làm định ngữ cho 比例 → vị ngữ 太高了.'},
-    {manh:['有利于','适度的压力','保持良好的状态','我们'],
-     dap:'适度的压力有利于我们保持良好的状态。',
-     vn:'Áp lực vừa phải có lợi cho việc chúng ta giữ được trạng thái tốt.',
-     giai:'Câu của bài khoá: A + 有利于 + (chủ thể + V + O).'},
-    {manh:['的确','这个方法','实用','很'],
-     dap:'这个方法的确很实用。',
-     vn:'Phương pháp này quả thực rất thiết thực.',
-     giai:'Phó từ 的确 đứng sau chủ ngữ, trước 很 + tính từ.'},
-    {manh:['被','沙丁鱼','渔民','运上了岸'],
-     dap:'沙丁鱼被渔民运上了岸。',
-     vn:'Cá mòi được ngư dân chở lên bờ.',
-     giai:'Câu 被 (ôn HSK 3–4): đối tượng + 被 + người làm + V + bổ ngữ.'}
+    {manh:['无意中','他的这些话','事实','接近了'],dap:'他的这些话无意中接近了事实。',vn:'Những lời này của anh ấy vô tình lại gần đúng với sự thật.',giai:'Câu 29 sách bài tập. Chủ ngữ 他的这些话 → trạng ngữ 无意中 → 接近了 + 事实.'},
+    {manh:['刺激企业','必须','采取措施','活跃起来'],dap:'必须采取措施刺激企业活跃起来。',vn:'Phải áp dụng biện pháp kích thích doanh nghiệp năng động lên.',giai:'Câu 30 sách bài tập. 必须 → 采取措施 (cách làm) → 刺激企业 → 活跃起来 (kết quả).'},
+    {manh:['比例','这种商品','太高了','占的'],dap:'这种商品占的比例太高了。',vn:'Loại hàng này chiếm tỷ lệ quá cao.',giai:'Câu 31 sách bài tập. 这种商品占的 làm định ngữ cho 比例 → vị ngữ 太高了.'},
+    {manh:['有利于','多运动','睡眠','改善'],dap:'多运动有利于改善睡眠。',vn:'Vận động nhiều có lợi cho việc cải thiện giấc ngủ.',giai:'A + 有利于 + V + O: 有利于 phải có 于 trước tân ngữ.'},
+    {manh:['的确','这个方法','实用','很'],dap:'这个方法的确很实用。',vn:'Phương pháp này quả thực rất thiết thực.',giai:'Phó từ 的确 đứng sau chủ ngữ, trước 很 + tính từ.'},
+    {manh:['已经','沙丁鱼','被渔民','带上了岸'],dap:'沙丁鱼已经被渔民带上了岸。',vn:'Cá mòi đã được ngư dân mang lên bờ.',giai:'Câu 被 (ôn HSK 3–4): đối tượng + 已经 + 被 + người làm + V + bổ ngữ.'}
   ]
 };
 
@@ -1464,30 +1367,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (你喜欢竞争吗？). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 有利 · 潜力 · 挖掘 · 落后 · 逃避 · 的确 · 刺激 · 活力 · 危机.',
   questions:[
-    {q_zh:'请列举一些生活中的实例，说明竞争给我们带来的好处。',
-     q_vn:'Hãy nêu vài ví dụ trong đời sống để chứng minh những cái lợi mà cạnh tranh mang lại cho chúng ta.',
-     hint:'Nêu 2 ví dụ: trong trường học và ngoài thị trường, dùng 比如 và 落后',
-     sample:'比如在学校，同学之间比赛学习，大家都不想落后，所以学习更努力了。再比如商店之间有竞争，商品的价格就会便宜一些，服务也会更好。',
-     sample_vn:'Chẳng hạn ở trường, các bạn thi đua học tập với nhau, ai cũng không muốn bị tụt lại nên học chăm hơn. Lại chẳng hạn các cửa hàng cạnh tranh nhau thì giá hàng sẽ rẻ hơn một chút, phục vụ cũng tốt hơn.',
-     note:'Câu hỏi 列举实例 → phải có ví dụ CỤ THỂ, đừng nói chung chung.'},
-    {q_zh:'你有过在竞争中失败的经历吗？说说它对你有何影响。',
-     q_vn:'Em đã từng thất bại trong cạnh tranh chưa? Hãy kể xem nó ảnh hưởng đến em thế nào.',
-     hint:'Kể một lần cụ thể, dùng 虽然……但是…… và 决赛',
-     sample:'有。去年我参加汉语演讲比赛，没能进入决赛。虽然当时很难过，但是这次失败让我找到了自己的不足，后来我练习得更努力了。',
-     sample_vn:'Có. Năm ngoái em tham gia cuộc thi hùng biện tiếng Trung, không vào được chung kết. Tuy lúc đó rất buồn, nhưng lần thất bại này giúp em nhận ra thiếu sót của mình, sau đó em luyện tập chăm chỉ hơn.',
-     note:'有何影响 = 有什么影响 (văn viết); trả lời cả chuyện xảy ra và ảnh hưởng.'},
-    {q_zh:'如果竞争是不可避免的，你认为应该如何面对？',
-     q_vn:'Nếu cạnh tranh là điều không tránh khỏi, theo em nên đối mặt thế nào?',
-     hint:'Dùng 逃避, 的确, 有利于',
-     sample:'我认为不应该逃避。竞争的确会带来压力，但是适度的压力有利于挖掘我们的潜力。我们要调整好心态，把对手当作学习的榜样。',
-     sample_vn:'Em cho rằng không nên trốn tránh. Cạnh tranh quả thực sẽ mang lại áp lực, nhưng áp lực vừa phải có lợi cho việc khai thác tiềm năng của chúng ta. Chúng ta phải điều chỉnh tốt tâm lý, coi đối thủ là tấm gương để học hỏi.',
-     note:'Câu hỏi 你认为 → mở đầu bằng 我认为 / 我觉得.'},
-    {q_zh:'你觉得你们班需要一条“鲇鱼”吗？为什么？',
-     q_vn:'Em thấy lớp em có cần một “con cá nheo” không? Vì sao?',
-     hint:'Trả lời thẳng + lý do, dùng 危机感 và 活力',
-     sample:'我觉得需要。如果班里来了一个特别优秀的同学，大家就会有危机感，学习也会更有活力。',
-     sample_vn:'Em thấy là cần. Nếu lớp có thêm một bạn đặc biệt giỏi, mọi người sẽ có cảm giác nguy cơ, việc học cũng sẽ sôi nổi hơn.',
-     note:'Vận dụng khái niệm 鲇鱼效应 vào đời sống của chính mình.'}
+    {q_zh:'请谈谈生活中的竞争给我们带来了哪些好处。',q_vn:'Hãy nói xem cạnh tranh trong cuộc sống mang lại cho chúng ta những lợi ích gì.',hint:'Nêu 2 ví dụ: trong trường học và ngoài thị trường, dùng 比如 và 落后',sample:'比如在学校，同学之间比赛学习，大家都不想落后，所以都比以前用功了。再比如商店之间有竞争，商品的价格就会便宜一些，服务也会更好。',sample_vn:'Chẳng hạn ở trường, các bạn thi đua học tập với nhau, ai cũng không muốn bị tụt lại nên đều chăm hơn trước. Lại chẳng hạn các cửa hàng cạnh tranh nhau thì giá hàng sẽ rẻ hơn một chút, phục vụ cũng tốt hơn.',note:'Câu hỏi này cần ví dụ CỤ THỂ, đừng nói chung chung.'},
+    {q_zh:'你有过在竞争中失败的经历吗？它对你有什么影响？',q_vn:'Em đã từng thất bại trong cạnh tranh chưa? Nó ảnh hưởng đến em thế nào?',hint:'Kể một lần cụ thể, dùng 虽然……但是…… và 决赛',sample:'有。去年我参加学校的汉语比赛，没能进入决赛。虽然当时很难过，但是这次失败让我找到了自己的不足，后来我练习得更努力了。',sample_vn:'Có. Năm ngoái em tham gia cuộc thi tiếng Trung của trường, không vào được chung kết. Tuy lúc đó rất buồn, nhưng lần thất bại này giúp em nhận ra thiếu sót của mình, sau đó em luyện tập chăm chỉ hơn.',note:'Trả lời cả chuyện xảy ra và ảnh hưởng của nó.'},
+    {q_zh:'如果竞争是不可避免的，你认为应该怎么面对？',q_vn:'Nếu cạnh tranh là điều không tránh khỏi, theo em nên đối mặt thế nào?',hint:'Dùng 逃避, 的确, 有利于',sample:'我觉得要积极面对，逃避是没有用的。竞争的确会带来压力，但是适度的压力有利于挖掘我们的潜力。我们应该把对手当成老师，多向他们学习。',sample_vn:'Em thấy phải tích cực đối mặt, trốn tránh là vô ích. Cạnh tranh quả thực sẽ mang lại áp lực, nhưng áp lực vừa phải có lợi cho việc khai thác tiềm năng của chúng ta. Chúng ta nên coi đối thủ là thầy, học hỏi họ nhiều hơn.',note:'Câu hỏi 你认为 → mở đầu bằng 我认为 / 我觉得.'},
+    {q_zh:'你觉得你们班需要一条“鲇鱼”吗？为什么？',q_vn:'Em thấy lớp em có cần một “con cá nheo” không? Vì sao?',hint:'Trả lời thẳng + lý do, dùng 危机感 và 活力',sample:'我觉得需要。如果班里来了一个特别优秀的同学，大家就会有危机感，学习也会更有活力。',sample_vn:'Em thấy là cần. Nếu lớp có thêm một bạn đặc biệt giỏi, mọi người sẽ có cảm giác nguy cơ, việc học cũng sẽ sôi nổi hơn.',note:'Vận dụng khái niệm 鲇鱼效应 vào đời sống của chính mình.'}
   ]
 };
 
@@ -1578,45 +1461,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn em thi bị điểm kém, định giấu không cho bố mẹ biết.',
-     a:{sp:'Bạn',zh:'这次考得太差了，我不想让爸妈知道……',vn:'Lần này thi tệ quá, mình không muốn bố mẹ biết…'},
-     need:['Dùng 逃避','Khuyên bạn nói thật với bố mẹ'],
-     sample:'逃避不是办法，你还是跟他们说清楚吧，他们会理解你的。',
-     samplePy:'Táobì bú shì bànfǎ, nǐ háishi gēn tāmen shuō qīngchu ba, tāmen huì lǐjiě nǐ de.',
-     sampleVn:'Trốn tránh không phải là cách, cậu cứ nói rõ với bố mẹ đi, họ sẽ hiểu cho cậu thôi.',
-     tip:'逃避 làm chủ ngữ: 逃避不是办法 (giống bài nghe số 7).'},
-
-    {scene:'Bạn em sợ áp lực nên định không tham gia cuộc thi hùng biện.',
-     a:{sp:'Bạn',zh:'比赛压力太大了，我还是不参加了吧？',vn:'Thi áp lực quá, hay là mình không tham gia nữa nhỉ?'},
-     need:['Dùng 有利于','Khuyên bạn cứ tham gia'],
-     sample:'适度的压力有利于挖掘你的潜力，参加吧！不管结果怎么样，都是一次锻炼。',
-     samplePy:'Shìdù de yālì yǒulì yú wājué nǐ de qiánlì, cānjiā ba! Bùguǎn jiéguǒ zěnmeyàng, dōu shì yí cì duànliàn.',
-     sampleVn:'Áp lực vừa phải có lợi cho việc khai thác tiềm năng của cậu, tham gia đi! Dù kết quả thế nào cũng là một lần rèn luyện.',
-     tip:'有利于 + cụm động từ; ôn 不管……都…….'},
-
-    {scene:'Bạn cùng phòng làm hỏng tai nghe của em, rất lo em giận.',
-     a:{sp:'Bạn',zh:'对不起，你的耳机被我弄坏了，我真不是故意的！',vn:'Xin lỗi, tai nghe của cậu bị mình làm hỏng rồi, mình thật sự không cố ý!'},
-     need:['Dùng 无意','Tỏ ý thông cảm, không trách bạn'],
-     sample:'没关系，我知道你是无意的，别放在心上。',
-     samplePy:'Méi guānxi, wǒ zhīdào nǐ shì wúyì de, bié fàng zài xīn shang.',
-     sampleVn:'Không sao, mình biết cậu không cố ý mà, đừng để bụng.',
-     tip:'是无意的 = không cố ý (trái với 故意). Nhớ: 无意 KHÔNG phải "vô ý = sơ ý".'},
-
-    {scene:'Mẹ hỏi em thấy nhà hàng mới mở gần nhà thế nào.',
-     a:{sp:'Mẹ',zh:'你觉得新开的那家饭馆怎么样？',vn:'Con thấy nhà hàng mới mở kia thế nào?'},
-     need:['Dùng 的确','Đánh giá cụ thể (món ăn, giá, phục vụ)'],
-     sample:'那家饭馆的确不错，菜好吃，价格也不贵，服务员还特别热情。',
-     samplePy:'Nà jiā fànguǎn díquè búcuò, cài hǎochī, jiàgé yě bú guì, fúwùyuán hái tèbié rèqíng.',
-     sampleVn:'Nhà hàng đó quả thật không tệ, món ăn ngon, giá cũng không đắt, nhân viên còn đặc biệt nhiệt tình.',
-     tip:'的确 đứng sau chủ ngữ, trước vị ngữ; ôn 热情 (bài 24).'},
-
-    {scene:'Bạn thắc mắc vì sao siêu thị gần trường giảm giá liên tục.',
-     a:{sp:'Bạn',zh:'学校旁边那家超市怎么天天打折啊？',vn:'Sao siêu thị cạnh trường ngày nào cũng giảm giá thế?'},
-     need:['Dùng 落后','Giải thích nguyên nhân là cạnh tranh'],
-     sample:'附近又开了两家超市，竞争很激烈，它不降价就会落后啊。',
-     samplePy:'Fùjìn yòu kāile liǎng jiā chāoshì, jìngzhēng hěn jīliè, tā bú jiàngjià jiù huì luòhòu a.',
-     sampleVn:'Gần đó lại mở thêm hai siêu thị, cạnh tranh rất gay gắt, nó không giảm giá thì sẽ bị tụt lại thôi.',
-     tip:'Ôn 激烈 (bài 13); 不……就…… (nếu không … thì …).'}
+    {scene:'Bạn em thi bị điểm kém, định giấu không cho bố mẹ biết.',a:{sp:'Bạn',zh:'这次考得太差了，我不想让爸妈知道……',vn:'Lần này thi tệ quá, mình không muốn bố mẹ biết…'},need:['Dùng 逃避','Khuyên bạn nói thật với bố mẹ'],sample:'逃避不是办法，你还是跟他们说清楚吧，他们会理解你的。',samplePy:'Táobì bú shì bànfǎ, nǐ háishi gēn tāmen shuō qīngchu ba, tāmen huì lǐjiě nǐ de.',sampleVn:'Trốn tránh không phải là cách, cậu cứ nói rõ với bố mẹ đi, họ sẽ hiểu cho cậu thôi.',tip:'逃避 làm chủ ngữ: 逃避不是办法.'},
+    {scene:'Bạn em sợ áp lực nên định không tham gia cuộc thi hùng biện.',a:{sp:'Bạn',zh:'比赛压力太大了，我还是不参加了吧？',vn:'Thi áp lực quá, hay là mình không tham gia nữa nhỉ?'},need:['Dùng 有利于','Khuyên bạn cứ tham gia'],sample:'适度的压力有利于挖掘你的潜力，参加吧！不管结果好不好，都是一次锻炼。',samplePy:'Shìdù de yālì yǒulì yú wājué nǐ de qiánlì, cānjiā ba! Bùguǎn jiéguǒ hǎo bu hǎo, dōu shì yí cì duànliàn.',sampleVn:'Áp lực vừa phải có lợi cho việc khai thác tiềm năng của cậu, tham gia đi! Dù kết quả tốt hay không cũng là một lần rèn luyện.',tip:'有利于 + cụm động từ; ôn 不管……都…….'},
+    {scene:'Bạn cùng phòng làm hỏng ô của em, rất lo em giận.',a:{sp:'Bạn',zh:'对不起，你的雨伞被我弄坏了，我真不是故意的！',vn:'Xin lỗi, ô của cậu bị mình làm hỏng rồi, mình thật sự không cố ý!'},need:['Dùng 无意','Tỏ ý thông cảm, không trách bạn'],sample:'没关系，我知道你是无意的，别放在心上。',samplePy:'Méi guānxi, wǒ zhīdào nǐ shì wúyì de, bié fàng zài xīn shang.',sampleVn:'Không sao, mình biết cậu không cố ý mà, đừng để bụng.',tip:'是无意的 = không cố ý (trái với 故意). Nhớ: 无意 KHÔNG phải "vô ý = sơ ý".'},
+    {scene:'Mẹ hỏi em thấy nhà hàng mới mở gần nhà thế nào.',a:{sp:'Mẹ',zh:'你觉得新开的那家饭馆怎么样？',vn:'Con thấy nhà hàng mới mở kia thế nào?'},need:['Dùng 的确','Đánh giá cụ thể (món ăn, giá, phục vụ)'],sample:'那家饭馆的确不错，菜好吃，也不太贵，服务员还特别热情。',samplePy:'Nà jiā fànguǎn díquè búcuò, cài hǎochī, yě bú tài guì, fúwùyuán hái tèbié rèqíng.',sampleVn:'Nhà hàng đó quả thật không tệ, món ăn ngon, cũng không đắt lắm, nhân viên còn đặc biệt nhiệt tình.',tip:'的确 đứng sau chủ ngữ, trước vị ngữ; ôn 热情.'},
+    {scene:'Bạn thắc mắc vì sao siêu thị gần trường giảm giá liên tục.',a:{sp:'Bạn',zh:'学校旁边那家超市怎么天天打折啊？',vn:'Sao siêu thị cạnh trường ngày nào cũng giảm giá thế?'},need:['Dùng 落后','Giải thích nguyên nhân là cạnh tranh'],sample:'附近又开了两家超市，竞争很激烈，它要是不打折，就会落后啊。',samplePy:'Fùjìn yòu kāile liǎng jiā chāoshì, jìngzhēng hěn jīliè, tā yàoshi bù dǎzhé, jiù huì luòhòu a.',sampleVn:'Gần đó lại mở thêm hai siêu thị, cạnh tranh rất gay gắt, nó mà không giảm giá thì sẽ bị tụt lại thôi.',tip:'Ôn 激烈 (bài 13); 要是……就…… (nếu… thì…).'}
   ]
 };
 
@@ -1627,29 +1476,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Giám đốc phát biểu trong hội nghị doanh nghiệp.',
-     a:'我们要采取有效措施，刺激企业活跃起来，不断提高市场竞争力。',b:'咱们得想想办法，让公司热闹起来。',better:'a',
-     why:'Hội nghị chính thức cần văn phong trang trọng: 采取措施, 刺激……活跃起来, 不断提高. Câu b quá khẩu ngữ (咱们得, 热闹起来).'},
-
-    {scene:'Em nhắn tin cho bạn thân ngay sau buổi thi.',
-     a:'这次考试的难度的确超出了我的预期。',b:'这次考试真的太难了，我差点儿哭了！',better:'b',
-     why:'Nhắn tin bạn thân thì nói tự nhiên, bộc lộ cảm xúc. Câu a (难度超出预期) giống báo cáo, nghe cứng.'},
-
-    {scene:'Em viết báo cáo khoa học về thí nghiệm nuôi cá.',
-     a:'鲇鱼的加入使沙丁鱼存活的比例大大提高。',b:'放了几条鲇鱼以后，沙丁鱼就不怎么死了。',better:'a',
-     why:'Báo cáo khoa học dùng từ ngữ chính xác, văn viết: 使……存活的比例大大提高. Câu b là cách kể chuyện thường ngày.'},
-
-    {scene:'Em an ủi em trai vừa thua một trận cờ.',
-     a:'没事儿，你们俩水平差不多，下次加油！',b:'鉴于双方水平接近，此次失利实属正常。',better:'a',
-     why:'An ủi người thân nên nói nhẹ nhàng, gần gũi. Câu b (鉴于, 此次失利实属正常) như bình luận viên, lạnh lùng.'},
-
-    {scene:'Em gọi điện hỏi bài thầy giáo vào giờ nghỉ trưa.',
-     a:'老师，我无意打扰您休息，只是有个问题想请教您。',b:'喂，老师，问你个事儿。',better:'a',
-     why:'Nói với thầy cô, nhất là khi làm phiền giờ nghỉ, cần lịch sự: 无意打扰您, 请教您. Câu b suồng sã, dùng 你 thay vì 您.'},
-
-    {scene:'Em giải thích khái niệm kinh tế trong bài thuyết trình trên lớp.',
-     a:'“鲇鱼效应”指的是通过引入竞争者，使整体保持活力的现象。',b:'就是说放条鲇鱼进去，大家就都动起来了呗。',better:'a',
-     why:'Thuyết trình cần định nghĩa rõ ràng, văn viết: 指的是……的现象. Câu b (呗, 动起来) chỉ hợp khi tán gẫu.'}
+    {scene:'Giám đốc phát biểu trong hội nghị doanh nghiệp.',a:'我们要采取有效的措施，不断提高公司的竞争能力。',b:'咱们得想想办法，让公司热闹起来。',better:'a',why:'Hội nghị chính thức cần văn phong trang trọng: 采取有效的措施, 不断提高. Câu b quá khẩu ngữ (咱们得, 热闹起来).'},
+    {scene:'Em nhắn tin cho bạn thân ngay sau buổi thi.',a:'本次考试难度的确很高。',b:'这次考试真的太难了，我差点儿哭了！',better:'b',why:'Nhắn tin bạn thân thì nói tự nhiên, bộc lộ cảm xúc. Câu a (本次, 难度) giống báo cáo, nghe cứng.'},
+    {scene:'Em viết báo cáo khoa học về thí nghiệm nuôi cá.',a:'鲇鱼的出现使沙丁鱼存活的比例大大提高。',b:'放了几条鲇鱼以后，沙丁鱼就不怎么死了。',better:'a',why:'Báo cáo khoa học dùng từ ngữ chính xác, văn viết: 使……存活的比例大大提高. Câu b là cách kể chuyện thường ngày.'},
+    {scene:'Em an ủi em trai vừa thua một trận cờ.',a:'没事儿，你们俩水平差不多，下次再来！',b:'由于双方水平接近，本场比赛输掉是很正常的。',better:'a',why:'An ủi người thân nên nói nhẹ nhàng, gần gũi. Câu b (由于双方水平接近, 本场比赛) như bình luận viên, lạnh lùng.'},
+    {scene:'Em gọi điện hỏi bài thầy giáo vào giờ nghỉ trưa.',a:'老师，对不起，这个时间给您打电话，我有个问题想请教您。',b:'喂，老师，问你个事儿。',better:'a',why:'Nói với thầy cô, nhất là khi làm phiền giờ nghỉ, cần lịch sự: 对不起, 请教您. Câu b suồng sã, dùng 你 thay vì 您.'},
+    {scene:'Em giải thích khái niệm kinh tế trong bài thuyết trình trên lớp.',a:'“鲇鱼效应”指的是：有了竞争，整体才能保持活力。',b:'就是说放条鲇鱼进去，大家就都动起来了。',better:'a',why:'Thuyết trình cần định nghĩa rõ ràng, văn viết: 指的是……. Câu b (放条鲇鱼进去, 动起来) chỉ hợp khi tán gẫu.'}
   ]
 };
 

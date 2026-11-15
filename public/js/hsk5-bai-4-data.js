@@ -4674,500 +4674,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 của giáo trình
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
-  {
-    "left": "下",
-    "right": "决心"
-  },
-  {
-    "left": "占",
-    "right": "座位"
-  },
-  {
-    "left": "诚恳的",
-    "right": "态度"
-  },
-  {
-    "left": "精美的",
-    "right": "食物"
-  },
-  {
-    "left": "委屈地",
-    "right": "哭"
-  },
-  {
-    "left": "勤奋地",
-    "right": "学习"
-  },
-  {
-    "left": "流传",
-    "right": "至今"
-  },
-  {
-    "left": "扶",
-    "right": "一把"
-  },
-  {
-    "left": "孝敬",
-    "right": "父母"
-  },
-  {
-    "left": "打听",
-    "right": "消息"
-  },
-  {
-    "left": "满足",
-    "right": "孩子的要求"
-  },
-  {
-    "left": "顶着",
-    "right": "大雪"
-  },
-  {
-    "left": "背",
-    "right": "米袋"
-  },
-  {
-    "left": "身体",
-    "right": "结实"
-  },
-  {
-    "left": "有",
-    "right": "本领"
-  },
-  {
-    "left": "做",
-    "right": "官"
-  },
-  {
-    "left": "取得",
-    "right": "成就"
-  },
-  {
-    "left": "物质",
-    "right": "条件"
-  },
-  {
-    "left": "雪地",
-    "right": "很滑"
-  },
-  {
-    "left": "吃",
-    "right": "团圆饭"
-  }
+  {left:'下',right:'决心'},
+  {left:'占',right:'座位'},
+  {left:'诚恳的',right:'态度'},
+  {left:'委屈地',right:'哭'},
+  {left:'勤奋地',right:'学习'},
+  {left:'流传',right:'至今'},
+  {left:'扶',right:'一把'},
+  {left:'孝敬',right:'父母'},
+  {left:'打听',right:'消息'},
+  {left:'顶着',right:'大风'},
+  {left:'取得',right:'成就'},
+  {left:'物质',right:'条件'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {
-    "pre": "书包太重了，我妹妹根本",
-    "blank": "背",
-    "post": "不动。",
-    "hint": "(vác, đeo)",
-    "ans": "背"
-  },
-  {
-    "pre": "",
-    "blank": "从前",
-    "post": "，这里是一个很小的村子，现在已经变成了大城市。",
-    "hint": "(trước đây, ngày xưa)",
-    "exp": "从前 = ngày trước, xưa kia; đối lập với 现在 ở vế sau.",
-    "ans": "从前"
-  },
-  {
-    "pre": "高中是人生中最重要的",
-    "blank": "时期",
-    "post": "之一。",
-    "hint": "(thời kỳ)",
-    "ans": "时期"
-  },
-  {
-    "pre": "这是个在中国",
-    "blank": "流传",
-    "post": "了近千年的民间故事。",
-    "hint": "(lưu truyền)",
-    "ans": "流传"
-  },
-  {
-    "pre": "我在北京出生、长大，",
-    "blank": "至今",
-    "post": "还没离开过呢。",
-    "hint": "(đến nay)",
-    "exp": "至今 = cho đến nay (văn viết): 至今还没离开过.",
-    "ans": "至今"
-  },
-  {
-    "pre": "我想用打工挣的钱给奶奶买件礼物，",
-    "blank": "孝敬",
-    "post": "她老人家。",
-    "hint": "(hiếu kính)",
-    "ans": "孝敬"
-  },
-  {
-    "pre": "我姥姥姥爷一辈子都在农村当",
-    "blank": "农民",
-    "post": "。",
-    "hint": "(nông dân)",
-    "ans": "农民"
-  },
-  {
-    "pre": "由于连年的",
-    "blank": "战争",
-    "post": "，家里生活非常困难。",
-    "hint": "(chiến tranh)",
-    "ans": "战争"
-  },
-  {
-    "pre": "这个手机太旧了，已经不能",
-    "blank": "满足",
-    "post": "我学习的需要了。",
-    "hint": "(đáp ứng)",
-    "ans": "满足"
-  },
-  {
-    "pre": "想到妈妈每天那么辛苦，我感到很",
-    "blank": "惭愧",
-    "post": "。",
-    "hint": "(hổ thẹn)",
-    "ans": "惭愧"
-  },
-  {
-    "pre": "他暗下",
-    "blank": "决心",
-    "post": "：今年一定要通过HSK五级考试。",
-    "hint": "(quyết tâm)",
-    "ans": "决心"
-  },
-  {
-    "pre": "我的坏脾气让她受了不少",
-    "blank": "委屈",
-    "post": "。",
-    "hint": "(tủi thân, oan ức)",
-    "ans": "委屈"
-  },
-  {
-    "pre": "我向邻居",
-    "blank": "打听",
-    "post": "了一下，才知道他家已经搬走了。",
-    "hint": "(hỏi thăm)",
-    "ans": "打听"
-  },
-  {
-    "pre": "这只小狗一直在门口等它的",
-    "blank": "主人",
-    "post": "回家。",
-    "hint": "(người chủ)",
-    "ans": "主人"
-  },
-  {
-    "pre": "这个箱子很",
-    "blank": "结实",
-    "post": "，放多少书都没问题。",
-    "hint": "(chắc chắn)",
-    "ans": "结实"
-  },
-  {
-    "pre": "她学习非常",
-    "blank": "勤奋",
-    "post": "，每天都复习到很晚。",
-    "hint": "(chăm chỉ)",
-    "ans": "勤奋"
-  },
-  {
-    "pre": "他在外面干了一年活儿，才挣了十两",
-    "blank": "银子",
-    "post": "。",
-    "hint": "(bạc)",
-    "ans": "银子"
-  },
-  {
-    "pre": "说",
-    "blank": "老实",
-    "post": "话，我不太喜欢这部电影。",
-    "hint": "(thật)",
-    "ans": "老实"
-  },
-  {
-    "pre": "每个周末，姥姥都要去",
-    "blank": "镇",
-    "post": "上买东西。",
-    "hint": "(thị trấn)",
-    "ans": "镇"
-  },
-  {
-    "pre": "我坐了一天电脑，",
-    "blank": "后背",
-    "post": "疼得不行。",
-    "hint": "(lưng)",
-    "ans": "后背"
-  },
-  {
-    "pre": "下雨天路很",
-    "blank": "滑",
-    "post": "，开车一定要慢一点儿。",
-    "hint": "(trơn)",
-    "ans": "滑"
-  },
-  {
-    "pre": "车突然停下来，我手里的书被",
-    "blank": "甩",
-    "post": "到了地上。",
-    "hint": "(văng)",
-    "ans": "甩"
-  },
-  {
-    "pre": "你",
-    "blank": "扶",
-    "post": "我一把，我的脚有点儿疼。",
-    "hint": "(đỡ)",
-    "ans": "扶"
-  },
-  {
-    "pre": "每年春节，在外地打工的人都要回家跟家人",
-    "blank": "团圆",
-    "post": "。",
-    "hint": "(đoàn tụ)",
-    "ans": "团圆"
-  },
-  {
-    "pre": "爷爷",
-    "blank": "去世",
-    "post": "已经三年了，我至今还常常想起他。",
-    "hint": "(qua đời)",
-    "ans": "去世"
-  },
-  {
-    "pre": "春秋时期有很多小国，每个国家都有自己的",
-    "blank": "国君",
-    "post": "。",
-    "hint": "(vua)",
-    "ans": "国君"
-  },
-  {
-    "pre": "年轻人要多学点儿",
-    "blank": "本领",
-    "post": "，将来才能找到好工作。",
-    "hint": "(kỹ năng, tài năng)",
-    "ans": "本领"
-  },
-  {
-    "pre": "学校的任务是为国家培养",
-    "blank": "人才",
-    "post": "。",
-    "hint": "(nhân tài)",
-    "ans": "人才"
-  },
-  {
-    "pre": "古代有个大",
-    "blank": "官",
-    "post": "，叫公孙仪，很喜欢吃鱼。",
-    "hint": "(quan)",
-    "ans": "官"
-  },
-  {
-    "pre": "现在人们的",
-    "blank": "物质",
-    "post": "生活越来越丰富了。",
-    "hint": "(vật chất)",
-    "ans": "物质"
-  },
-  {
-    "pre": "天气非常寒冷，子路",
-    "blank": "顶着",
-    "post": "大雪往前走。",
-    "hint": "(đội, chống chọi)",
-    "exp": "V + 着 + tân ngữ + V2: 顶着大雪往前走 = đội tuyết mà đi; V1着 chỉ trạng thái kèm theo.",
-    "ans": "顶着"
-  },
-  {
-    "pre": "他心里烦",
-    "blank": "得很",
-    "post": "，自言自语地抱怨：“怎么还有那么远啊！”",
-    "hint": "(… lắm — bổ ngữ mức độ)",
-    "exp": "Tính từ + 得很 = …lắm (bổ ngữ mức độ): 烦得很. Không thêm 很 trước tính từ.",
-    "ans": "得很"
-  }
+  {pre:'他三年前借了我五百块钱，',blank:'至今',post:'也没还。',hint:'(đến nay — văn viết)',ans:'至今',exp:'至今 = cho đến bây giờ, đứng đầu vế hoặc trước động từ: 至今也没还; không thêm 到 phía trước.'},
+  {pre:'为了早点儿到家，他',blank:'顶',post:'着大雪开了一夜的车。',hint:'(đội, bất chấp (mưa, tuyết, gió))',ans:'顶',exp:'顶着 + 大雪/大雨/大风 + V = bất chấp thời tiết mà vẫn làm gì; phải có 着.'},
+  {pre:'他没有因为考得不好而放弃，',blank:'反而',post:'学习得更努力了。',hint:'(trái lại, ngược lại)',ans:'反而',exp:'反而 nêu kết quả NGƯỢC với điều người ta nghĩ (thi kém → tưởng bỏ cuộc → lại càng chăm hơn).'},
+  {pre:'我们的图书馆太小了，已经不能',blank:'满足',post:'同学们的需要了。',hint:'(đáp ứng, thoả mãn)',ans:'满足',exp:'满足 + 需要/要求 = đáp ứng nhu cầu; 满意 không mang tân ngữ kiểu này.'},
+  {pre:'这种塑料袋很',blank:'结实',post:'，放十斤苹果也不会破。',hint:'(chắc chắn, bền)',ans:'结实',exp:'结实 tả đồ vật chắc, bền (塑料袋很结实) hoặc cơ thể khoẻ mạnh (身体结实).'},
+  {pre:'地上有水，很',blank:'滑',post:'，奶奶走路的时候你扶着她点儿。',hint:'(trơn)',ans:'滑',exp:'滑 là tính từ "trơn" (路很滑) và động từ "trượt" (滑了一下, 滑倒).'},
+  {pre:'妈妈说，不管多忙，过年的时候全家人一定要',blank:'团圆',post:'。',hint:'(đoàn tụ, sum họp)',ans:'团圆',exp:'团圆 = cả nhà sum họp (thường dịp Tết, Trung thu); 团圆饭 = bữa cơm đoàn viên.'},
+  {pre:'爷爷',blank:'去世',post:'以后，奶奶一个人住在老家。',hint:'(qua đời — cách nói lịch sự)',ans:'去世',exp:'去世 là cách nói lịch sự, trang trọng của 死, dùng khi nói về người thân, người lớn tuổi.'},
+  {pre:'这张桌子太大了，',blank:'占',post:'了房间一半的地方。',hint:'(chiếm)',ans:'占',exp:'占 + chỗ/phần trăm: 占地方, 占座位, 占一半.'},
+  {pre:'妹妹走不动了，爸爸就把她',blank:'背',post:'在后背上。',hint:'(cõng)',ans:'背',exp:'背 (bēi) = cõng, vác trên lưng: 把她背在后背上; 后背 (bèi) là danh từ "cái lưng".'},
+  {pre:'姥姥家在一个小',blank:'镇',post:'上，离县里不远。',hint:'(thị trấn)',ans:'镇',exp:'镇 = thị trấn, nhỏ hơn 县: 小镇, 镇上.'},
+  {pre:'这次去中国旅行，我最喜欢的是那里各种各样的',blank:'食物',post:'。',hint:'(đồ ăn, thức ăn)',ans:'食物',exp:'食物 là danh từ chung chỉ mọi thứ ăn được, hơi trang trọng hơn 吃的.'}
 ];
 
 // ══════════════════════════════════════════
 // SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {
-    "words": [
-      "我在北京",
-      "出生、长大",
-      "，",
-      "至今",
-      "还",
-      "没离开过",
-      "北京",
-      "。"
-    ],
-    "ans": "我在北京出生、长大，至今还没离开过北京。",
-    "audio": "我在北京出生、长大，至今还没离开过北京。"
-  },
-  {
-    "words": [
-      "流传至今的",
-      "“百里背米”",
-      "讲的",
-      "就是",
-      "他孝敬父母",
-      "的故事",
-      "。"
-    ],
-    "ans": "流传至今的“百里背米”讲的就是他孝敬父母的故事。",
-    "audio": "流传至今的“百里背米”讲的就是他孝敬父母的故事。"
-  },
-  {
-    "words": [
-      "子路",
-      "顶着",
-      "大雪",
-      "往前",
-      "走",
-      "。"
-    ],
-    "ans": "子路顶着大雪往前走。",
-    "audio": "子路顶着大雪往前走。"
-  },
-  {
-    "words": [
-      "他",
-      "能用头",
-      "顶起",
-      "20斤重的东西",
-      "。"
-    ],
-    "ans": "他能用头顶起20斤重的东西。",
-    "audio": "他能用头顶起20斤重的东西。"
-  },
-  {
-    "words": [
-      "扶着米袋的",
-      "双手",
-      "冻得",
-      "不行",
-      "。"
-    ],
-    "ans": "扶着米袋的双手冻得不行。",
-    "audio": "扶着米袋的双手冻得不行。"
-  },
-  {
-    "words": [
-      "这个地方",
-      "这么热闹",
-      "，",
-      "孩子们",
-      "高兴得",
-      "不得了",
-      "。"
-    ],
-    "ans": "这个地方这么热闹，孩子们高兴得不得了。",
-    "audio": "这个地方这么热闹，孩子们高兴得不得了。"
-  },
-  {
-    "words": [
-      "他",
-      "不但",
-      "不孝顺父母",
-      "，",
-      "反而",
-      "经常跟他们吵架",
-      "。"
-    ],
-    "ans": "他不但不孝顺父母，反而经常跟他们吵架。",
-    "audio": "他不但不孝顺父母，反而经常跟他们吵架。"
-  },
-  {
-    "words": [
-      "他",
-      "没有因为",
-      "物质条件好",
-      "而感到欢喜",
-      "，",
-      "反而",
-      "更想念父母了",
-      "。"
-    ],
-    "ans": "他没有因为物质条件好而感到欢喜，反而更想念父母了。",
-    "audio": "他没有因为物质条件好而感到欢喜，反而更想念父母了。"
-  },
-  {
-    "words": [
-      "背上的",
-      "米袋",
-      "差点儿",
-      "被",
-      "甩出去",
-      "。"
-    ],
-    "ans": "背上的米袋差点儿被甩出去。",
-    "audio": "背上的米袋差点儿被甩出去。"
-  },
-  {
-    "words": [
-      "子路",
-      "把剩下的工钱",
-      "都交给了",
-      "父母",
-      "。"
-    ],
-    "ans": "子路把剩下的工钱都交给了父母。",
-    "audio": "子路把剩下的工钱都交给了父母。"
-  },
-  {
-    "words": [
-      "只要能",
-      "饱饱地",
-      "吃上一顿米饭",
-      "，",
-      "也就",
-      "满足啦",
-      "！"
-    ],
-    "ans": "只要能饱饱地吃上一顿米饭，也就满足啦！",
-    "audio": "只要能饱饱地吃上一顿米饭，也就满足啦！"
-  },
-  {
-    "words": [
-      "老师",
-      "对我这次的作业",
-      "非常",
-      "满意",
-      "。"
-    ],
-    "ans": "老师对我这次的作业非常满意。",
-    "audio": "老师对我这次的作业非常满意。"
-  },
-  {
-    "words": [
-      "子路",
-      "发现",
-      "银子",
-      "比应该得到的",
-      "多了许多",
-      "。"
-    ],
-    "ans": "子路发现银子比应该得到的多了许多。",
-    "audio": "子路发现银子比应该得到的多了许多。"
-  },
-  {
-    "words": [
-      "孝顺父母",
-      "是",
-      "各种美德中",
-      "占第一位的",
-      "。"
-    ],
-    "ans": "孝顺父母是各种美德中占第一位的。",
-    "audio": "孝顺父母是各种美德中占第一位的。"
-  }
+  {words:['毕业','十年了','，','我们','至今','还','常常','联系','。'],ans:'毕业十年了，我们至今还常常联系。',audio:'毕业十年了，我们至今还常常联系。'},
+  {words:['农民们','顶着','大太阳','在','地里','干活儿','。'],ans:'农民们顶着大太阳在地里干活儿。',audio:'农民们顶着大太阳在地里干活儿。'},
+  {words:['坐了','十个小时','飞机','，','我的','腿','疼得','不行','。'],ans:'坐了十个小时飞机，我的腿疼得不行。',audio:'坐了十个小时飞机，我的腿疼得不行。'},
+  {words:['他','比我','小','五岁','，','懂的','东西','反而','比我','多','。'],ans:'他比我小五岁，懂的东西反而比我多。',audio:'他比我小五岁，懂的东西反而比我多。'},
+  {words:['大家','都','说','他','是','一个','孝顺的','儿子','。'],ans:'大家都说他是一个孝顺的儿子。',audio:'大家都说他是一个孝顺的儿子。'},
+  {words:['你','帮我','打听','一下','，','这附近','有没有','便宜的','房子','。'],ans:'你帮我打听一下，这附近有没有便宜的房子。',audio:'你帮我打听一下，这附近有没有便宜的房子。'},
+  {words:['为了','不让','父母','担心','，','她','从来','不','说','自己的','委屈','。'],ans:'为了不让父母担心，她从来不说自己的委屈。',audio:'为了不让父母担心，她从来不说自己的委屈。',alt:['她为了不让父母担心，从来不说自己的委屈。']},
+  {words:['他','诚恳地','向','我们','说明了','迟到的','原因','。'],ans:'他诚恳地向我们说明了迟到的原因。',audio:'他诚恳地向我们说明了迟到的原因。'}
 ];
 
 // ══════════════════════════════════════════
@@ -5175,233 +4729,39 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {
-    "wrong": "他____着大雪往前走，一点儿也不怕冷。",
-    "opts": [
-      "顶",
-      "背",
-      "扶",
-      "甩"
-    ],
-    "ans": 0,
-    "exp": "顶着大雪 = đội tuyết, ngược tuyết mà đi. 背 là vác trên lưng, 扶 là đỡ, 甩 là quăng — đều không đi với 大雪."
-  },
-  {
-    "wrong": "我这____新帽子怎么样？",
-    "opts": [
-      "条",
-      "顶",
-      "块",
-      "袋"
-    ],
-    "ans": 1,
-    "exp": "Lượng từ của 帽子 là 顶 (一顶帽子). 条 dùng cho vật dài, 块 cho miếng, 袋 cho bao/túi."
-  },
-  {
-    "wrong": "扶着米袋的双手冻得____，就停下来暖暖。",
-    "opts": [
-      "不行",
-      "不好",
-      "不对",
-      "不可以"
-    ],
-    "ans": 0,
-    "exp": "Adj + 得 + 不行 chỉ mức độ rất cao (lạnh cóng không chịu nổi). 冻得不好 / 冻得不对 / 冻得不可以 đều không có."
-  },
-  {
-    "wrong": "雨不但没停，____越下越大了。",
-    "opts": [
-      "而且",
-      "反而",
-      "所以",
-      "并且"
-    ],
-    "ans": 1,
-    "exp": "Kết quả NGƯỢC với mong đợi (mong mưa tạnh) → 反而. 而且 / 并且 chỉ nối thêm ý cùng chiều; 所以 chỉ kết quả."
-  },
-  {
-    "wrong": "他找到了一份____的工作。",
-    "opts": [
-      "满足",
-      "满意",
-      "满分",
-      "充满"
-    ],
-    "ans": 1,
-    "exp": "Làm ĐỊNH NGỮ (……的工作) → 满意. 满足 thường không làm định ngữ; 满分 là điểm tuyệt đối; 充满 là tràn đầy."
-  },
-  {
-    "wrong": "他____的态度让大家都很感动。",
-    "opts": [
-      "诚恳",
-      "勤奋",
-      "结实",
-      "滑"
-    ],
-    "ans": 0,
-    "exp": "诚恳的态度 = thái độ thành khẩn. 勤奋 nói về học tập, làm việc; 结实 nói về cơ thể, đồ vật; 滑 là trơn."
-  },
-  {
-    "wrong": "这位科学家在医学上取得了很大的____。",
-    "opts": [
-      "成就",
-      "人才",
-      "美德",
-      "战争"
-    ],
-    "ans": 0,
-    "exp": "取得 + 成就: đạt được thành tựu. 人才 là người có tài, 美德 là đức tính tốt, 战争 là chiến tranh — không đi với 取得."
-  },
-  {
-    "wrong": "在____，人们出远门只能走路或者骑马。",
-    "opts": [
-      "古代",
-      "现代",
-      "至今",
-      "将来"
-    ],
-    "ans": 0,
-    "exp": "Chỉ có thể đi bộ, cưỡi ngựa → thời XƯA (古代). 至今 là phó từ, không đứng sau 在."
-  },
-  {
-    "wrong": "他对父母非常____，每天下班都回家陪他们吃饭。",
-    "opts": [
-      "孝顺",
-      "结实",
-      "勤奋",
-      "满足"
-    ],
-    "ans": 0,
-    "exp": "对父母很孝顺 = rất hiếu thảo với bố mẹ. 结实 là khoẻ/chắc, 勤奋 là chăm chỉ — không nói “对父母勤奋”."
-  },
-  {
-    "wrong": "尊敬老人是中国人的传统____。",
-    "opts": [
-      "美德",
-      "美食",
-      "美丽",
-      "美好"
-    ],
-    "ans": 0,
-    "exp": "传统美德 = mỹ đức truyền thống. 美食 là món ngon; 美丽, 美好 là tính từ, không làm trung tâm ngữ sau 传统 ở đây."
-  },
-  {
-    "wrong": "我们班女生____一半多。",
-    "opts": [
-      "占",
-      "站",
-      "战",
-      "点"
-    ],
-    "ans": 0,
-    "exp": "占 (zhàn, chiếm) + 一半 = chiếm một nửa. Coi chừng chữ đồng âm 站 (đứng), 战 (chiến)."
-  },
-  {
-    "wrong": "天气热的时候，____很容易坏。",
-    "opts": [
-      "食物",
-      "植物",
-      "动物",
-      "人物"
-    ],
-    "ans": 0,
-    "exp": "食物 = đồ ăn (dễ hỏng khi trời nóng). BẪY Hán–Việt: 植物 mới là “thực vật” (cây cỏ)."
-  },
-  {
-    "wrong": "孔子最年长的学生叫____。",
-    "opts": [
-      "子路",
-      "孔子",
-      "楚国",
-      "春秋"
-    ],
-    "ans": 0,
-    "exp": "Theo bài khoá: 子路是孔子最年长的学生. 楚国 là tên nước, 春秋 là tên thời kỳ."
-  },
-  {
-    "wrong": "孔子和子路都是____时期的人。",
-    "opts": [
-      "春秋",
-      "楚国",
-      "国君",
-      "食物"
-    ],
-    "ans": 0,
-    "exp": "春秋时期 = thời Xuân Thu (770–476 TCN). 楚国 là tên nước, 国君 là vua."
-  },
-  {
-    "wrong": "____是中国古代著名的教育家，他有很多学生。",
-    "opts": [
-      "孔子",
-      "子路",
-      "楚国",
-      "国君"
-    ],
-    "ans": 0,
-    "exp": "Nhà giáo dục nổi tiếng thời xưa, có nhiều học trò → 孔子 (Khổng Tử). 子路 là học trò của ông."
-  },
-  {
-    "wrong": "子路的父母去世后，他南下到了____。",
-    "opts": [
-      "楚国",
-      "春秋",
-      "孔子",
-      "农民"
-    ],
-    "ans": 0,
-    "exp": "南下到 + tên nơi chốn → 楚国 (nước Sở). 春秋 là thời kỳ, không phải nơi chốn."
-  },
-  {
-    "wrong": "只要能饱饱地吃上一顿米饭，也就____啦！",
-    "opts": [
-      "满意",
-      "满足",
-      "满分",
-      "充满"
-    ],
-    "ans": 1,
-    "exp": "Ý “không đòi hỏi gì thêm nữa” → 满足. 满意 nhấn mạnh HỢP Ý khi đánh giá việc gì."
-  },
-  {
-    "wrong": "这个故事从古____，一直在民间流传。",
-    "opts": [
-      "至今",
-      "从前",
-      "以前",
-      "现在"
-    ],
-    "ans": 0,
-    "exp": "从古至今 là cụm cố định = từ xưa đến nay."
-  }
+  {wrong:'这次考试我考了九十五分，老师对我很____。',opts:['满意','满足','惭愧','孝顺'],ans:0,exp:'对 + người + 很满意 = hài lòng về ai. 满足 nói "thấy đủ" hoặc mang tân ngữ 要求/需要, không dùng với 对我; 惭愧, 孝顺 không hợp nghĩa.'},
+  {wrong:'他每天都给父母打电话，大家都说他很____。',opts:['孝顺','孝敬','满足','惭愧'],ans:0,exp:'很 + 孝顺: 孝顺 làm tính từ được. 孝敬 là động từ, phải có tân ngữ (孝敬父母), không nói 很孝敬; 满足, 惭愧 không khớp với "ngày nào cũng gọi cho bố mẹ".'},
+  {wrong:'考试____，老师又给我们复习了一遍。',opts:['以前','从前','古代','时期'],ans:0,exp:'Động từ/sự việc + 以前 = trước khi… 从前 chỉ "ngày xưa", đứng một mình đầu câu, không đứng sau động từ; 古代, 时期 không dùng như vậy.'},
+  {wrong:'这件衣服很便宜，质量____比贵的还好。',opts:['反而','而且','至今','从前'],ans:0,exp:'Rẻ thì tưởng chất lượng kém → thực tế ngược lại → 反而. 而且 chỉ thêm ý cùng chiều; 至今, 从前 là từ chỉ thời gian.'},
+  {wrong:'我想____一下，去火车站怎么走？',opts:['打听','听说','告诉','回答'],ans:0,exp:'打听一下 = hỏi thăm (thông tin, đường đi). 听说 là nghe nói; 告诉 là báo cho người khác; 回答 là trả lời — đều không hợp với câu hỏi đường.'},
+  {wrong:'这只小猫的____去外地了，所以先放在我家。',opts:['主人','主意','人才','国君'],ans:0,exp:'Người nuôi con vật → 主人 (chủ). 主意 là ý kiến, cách; 人才 là người tài; 国君 là vua.'},
+  {wrong:'他会说四种语言，还会开飞机，真有____！',opts:['本领','人才','美德','物质'],ans:0,exp:'有本领 = có bản lĩnh, giỏi nhiều việc. 人才 là người (他是人才), không nói 有人才 với nghĩa này; 美德 là đức tính; 物质 là vật chất.'},
+  {wrong:'帮朋友搬了一上午家，现在我的____又酸又疼。',opts:['后背','背着','顶着','扶着'],ans:0,exp:'Bộ phận cơ thể bị đau → danh từ 后背 (cái lưng). 背着, 顶着, 扶着 đều là động từ + 着, không làm chủ ngữ cho 又酸又疼.'},
+  {wrong:'只要有____，什么困难都不怕。',opts:['决心','决定','满足','惭愧'],ans:0,exp:'有决心 = có quyết tâm. 决定 là việc đã quyết (做决定), không nói 有决定 với nghĩa ý chí; 满足, 惭愧 là trạng thái tâm lý, không hợp.'},
+  {wrong:'他的道歉很____，大家都原谅他了。',opts:['诚恳','结实','勤奋','满足'],ans:0,exp:'Lời xin lỗi chân thành → 诚恳. 结实 tả đồ vật/cơ thể; 勤奋 tả việc học, làm; 满足 là thấy đủ.'},
+  {wrong:'大学四年是我人生中最开心的一段____。',opts:['时期','时代','时刻','时候'],ans:0,exp:'一段时期 = một giai đoạn (của đời người). 时代 là thời đại lịch sử (bài 3); 时刻 là khoảnh khắc; 时候 không đi với 一段.'},
+  {wrong:'我爷爷是____，一辈子都在农村种地。',opts:['农民','工人','主人','国君'],ans:0,exp:'Làm ruộng ở nông thôn → 农民. 工人 làm trong nhà máy (bài 3); 主人 là chủ; 国君 là vua thời xưa.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tuy đã tốt nghiệp tiểu học nhiều năm rồi, nhưng những bài thơ cổ học thuộc hồi đó đến giờ tôi vẫn còn nhớ.',zh:'虽然小学毕业已经很多年了，但是那时背的古诗我至今还记得。',py:'Suīrán xiǎoxué bìyè yǐjīng hěn duō nián le, dànshì nà shí bèi de gǔshī wǒ zhìjīn hái jìde.',goiY:['虽然……但是……','背','至今'],giai:'至今 + 还 + V = đến nay vẫn…; không thêm 到 trước 至今. 背 (bèi) ở đây là "học thuộc".'},
   {vi:'Ngoài trời mưa to khủng khiếp, vậy mà em trai tôi vẫn đội mưa đến trường mang ô cho tôi.',zh:'外面的雨大得不行，弟弟却顶着大雨去学校给我送伞。',py:'Wàimiàn de yǔ dà de bùxíng, dìdi què dǐngzhe dàyǔ qù xuéxiào gěi wǒ sòng sǎn.',goiY:['Adj + 得不行','却','顶着'],giai:'Adj + 得不行 = … vô cùng/khủng khiếp (khẩu ngữ); 顶着 + mưa/gió = đội, bất chấp — khi làm kèm động tác khác phải dùng 顶着.'},
-  {vi:'Nếu cậu không bằng lòng với thành tích hiện tại thì phải chăm chỉ hơn người khác một chút.',zh:'如果你不满足于现在的成绩，就应该比别人更勤奋一点儿。',py:'Rúguǒ nǐ bù mǎnzú yú xiànzài de chéngjì, jiù yīnggāi bǐ biérén gèng qínfèn yìdiǎnr.',goiY:['如果……就……','满足于','勤奋'],giai:'满足于 + danh từ = hài lòng/bằng lòng với…; câu so sánh 比别人更勤奋 — 更 đứng trước tính từ, không nói 比别人很勤奋.'},
-  {vi:'Sau khi tôi thi hỏng, mẹ chẳng những không trách móc câu nào mà ngược lại còn cười an ủi tôi, điều đó khiến tôi càng thấy hổ thẹn.',zh:'我考砸了以后，妈妈不但没有抱怨一句，反而笑着安慰我，这让我心里更加惭愧。',py:'Wǒ kǎozále yǐhòu, māma búdàn méiyǒu bàoyuàn yí jù, fǎn\'ér xiàozhe ānwèi wǒ, zhè ràng wǒ xīnli gèngjiā cánkuì.',goiY:['不但……反而……','抱怨','惭愧'],giai:'不但不/没…，反而… : vế sau trái hẳn với điều người ta chờ đợi; 反而 là phó từ, đứng sau chủ ngữ, trước động từ.'},
-  {vi:'Thấy bố mẹ vất vả làm thuê vì mình, tôi thầm quyết tâm: chỉ có thi đỗ một trường đại học tốt mới có thể không để bố mẹ phải chịu thiệt thòi nữa.',zh:'看到父母为了我辛苦打工，我暗下决心：只有考上好大学，才能不让他们再受委屈。',py:'Kàndào fùmǔ wèile wǒ xīnkǔ dǎgōng, wǒ ànxià juéxīn: zhǐyǒu kǎoshang hǎo dàxué, cái néng bú ràng tāmen zài shòu wěiqu.',goiY:['下决心','只有……才……','委屈'],giai:'只有…才… nêu điều kiện duy nhất; 受委屈 = chịu thiệt thòi/tủi thân tuỳ ngữ cảnh — ở đây nói về cha mẹ nên dịch "chịu thiệt thòi".'},
-  {vi:'Đã muốn học được bản lĩnh thật sự thì đừng chỉ mải chơi, trước hết hãy đi hỏi thăm xem huấn luyện viên nào nhiều kinh nghiệm nhất.',zh:'既然你想学到真本领，就别只顾着玩儿，先去打听一下哪位教练最有经验吧。',py:'Jìrán nǐ xiǎng xuédào zhēn běnlǐng, jiù bié zhǐ gùzhe wánr, xiān qù dǎting yíxià nǎ wèi jiàoliàn zuì yǒu jīngyàn ba.',goiY:['既然……就……','本领','打听'],giai:'既然…就… : đã có sự thật/quyết định thì nên làm gì; 打听 = hỏi thăm, dò hỏi (tin tức về người/việc), khác 问 (hỏi trực tiếp).'},
-  {vi:'Cậu ấy thà thật thà nói với thầy là chưa làm xong bài tập chứ không chịu chép bài của bạn; thái độ thành thật đó khiến thầy rất cảm động.',zh:'他宁可老老实实地告诉老师作业没写完，也不愿意抄同学的，这种诚恳的态度让老师很感动。',py:'Tā nìngkě lǎolǎoshíshí de gàosu lǎoshī zuòyè méi xiěwán, yě bú yuànyì chāo tóngxué de, zhè zhǒng chéngkěn de tàidu ràng lǎoshī hěn gǎndòng.',goiY:['宁可……也不……','老老实实','诚恳'],giai:'宁可 A，也不 B: chấp nhận A (dù thiệt) để tránh B; 老老实实地 là tính từ lặp làm trạng ngữ, đứng trước động từ, dịch "thật thà".'},
-  {vi:'Nhiều người cứ tưởng hiếu thảo là đem lại cho cha mẹ sự đầy đủ về vật chất, thật ra điều cha mẹ mong mỏi hơn không phải là tiền, mà là con cái thường xuyên về nhà ăn bữa cơm đoàn tụ.',zh:'很多人以为孝顺就是给父母物质上的满足，其实父母更盼望的不是钱，而是孩子能常回家吃顿团圆饭。',py:'Hěn duō rén yǐwéi xiàoshùn jiù shì gěi fùmǔ wùzhì shang de mǎnzú, qíshí fùmǔ gèng pànwàng de bú shì qián, ér shì háizi néng cháng huí jiā chī dùn tuányuán fàn.',goiY:['以为','物质','不是……而是……','团圆'],giai:'以为 = cứ tưởng (điều hoá ra không đúng), khác 认为; 不是 A 而是 B đặt điều cha mẹ thật sự cần ở vế sau.'},
-  {vi:'Tuy người ông cả đời làm nông của tôi đã mất mấy năm rồi, nhưng dáng vẻ cần cù, chất phác của ông đến giờ tôi vẫn nhớ rõ mồn một.',zh:'当了一辈子农民的爷爷尽管已经去世好几年了，但他勤奋、老实的样子，我至今还记得清清楚楚。',py:'Dāngle yíbèizi nóngmín de yéye jǐnguǎn yǐjīng qùshì hǎo jǐ nián le, dàn tā qínfèn, lǎoshi de yàngzi, wǒ zhìjīn hái jì de qīngqīngchǔchǔ.',goiY:['一辈子','尽管……但……','去世','至今'],giai:'尽管…但… nối sự thật đã xảy ra với điều vẫn không đổi; 至今 + 还 + V = đến nay vẫn…; 去世 là cách nói trang trọng của "mất".'},
-  {vi:'Chị họ tôi sở dĩ bỏ công việc ổn định ở thành phố lớn về thị trấn làm cô giáo là vì chị cho rằng thành tựu của một đời người không thể chỉ đo bằng vật chất.',zh:'表姐之所以放弃大城市稳定的工作回镇上当老师，是因为她认为人生的成就不能只用物质来衡量。',py:'Biǎojiě zhīsuǒyǐ fàngqì dà chéngshì wěndìng de gōngzuò huí zhèn shang dāng lǎoshī, shì yīnwèi tā rènwéi rénshēng de chéngjiù bù néng zhǐ yòng wùzhì lái héngliáng.',goiY:['之所以……是因为……','稳定','成就','物质'],giai:'之所以 + kết quả, 是因为 + nguyên nhân; 用…来衡量 = đo bằng…; 人生的成就 dịch thoát "thành tựu của một đời người".'}
+  {vi:'Tôi thi không tốt, mẹ chẳng những không trách một câu nào mà ngược lại còn cười bảo không sao, điều đó khiến tôi càng thấy hổ thẹn.',zh:'我考得不好，妈妈不但没有抱怨一句，反而笑着说没关系，这让我心里更惭愧了。',py:'Wǒ kǎo de bù hǎo, māma búdàn méiyǒu bàoyuàn yí jù, fǎn\'ér xiàozhe shuō méi guānxi, zhè ràng wǒ xīnli gèng cánkuì le.',goiY:['不但……反而……','抱怨','惭愧'],giai:'不但不/没…，反而… : vế sau trái hẳn với điều người ta chờ đợi; 反而 là phó từ, đứng sau chủ ngữ (nếu có), trước động từ.'},
+  {vi:'Thấy bố mẹ vất vả làm thuê vì mình, tôi thầm quyết tâm: chỉ có thi đỗ một trường đại học tốt mới có thể không để bố mẹ phải chịu thiệt thòi nữa.',zh:'看到父母为了我辛苦打工，我暗下决心：只有考上好大学，才能不再委屈他们。',py:'Kàndào fùmǔ wèile wǒ xīnkǔ dǎgōng, wǒ ànxià juéxīn: zhǐyǒu kǎoshang hǎo dàxué, cái néng bú zài wěiqu tāmen.',goiY:['下决心','只有……才……','委屈'],giai:'只有…才… nêu điều kiện duy nhất; 委屈 + người = để ai chịu thiệt thòi (động từ), như câu trong bài 不能再委屈他们了.'},
+  {vi:'Đã muốn học được bản lĩnh thật sự thì đừng ngày nào cũng chỉ nghĩ đến chơi, trước hết hãy đi hỏi thăm xem thầy nào nhiều kinh nghiệm nhất.',zh:'既然你想学到真本领，就别每天只想着玩儿，先去打听一下哪位老师最有经验吧。',py:'Jìrán nǐ xiǎng xuédào zhēn běnlǐng, jiù bié měi tiān zhǐ xiǎngzhe wánr, xiān qù dǎting yíxià nǎ wèi lǎoshī zuì yǒu jīngyàn ba.',goiY:['既然……就……','本领','打听'],giai:'既然…就… : đã có sự thật/quyết định thì nên làm gì; 打听 = hỏi thăm, dò hỏi (tin tức về người/việc), khác 问 (hỏi trực tiếp).'},
+  {vi:'Nhiều người cứ tưởng hiếu thảo là đem lại cho cha mẹ sự đầy đủ về vật chất, thật ra điều cha mẹ mong mỏi hơn không phải là tiền, mà là con cái thường xuyên về nhà ăn bữa cơm đoàn tụ.',zh:'很多人以为孝顺就是给父母物质上的满足，其实父母更盼望的不是钱，而是孩子能常回家吃顿团圆饭。',py:'Hěn duō rén yǐwéi xiàoshùn jiù shì gěi fùmǔ wùzhì shang de mǎnzú, qíshí fùmǔ gèng pànwàng de bú shì qián, ér shì háizi néng cháng huí jiā chī dùn tuányuán fàn.',goiY:['以为','物质','不是……而是……','团圆'],giai:'以为 = cứ tưởng (điều hoá ra không đúng), khác 认为; 不是 A 而是 B đặt điều cha mẹ thật sự cần ở vế sau; 盼望 (bài 3).'},
+  {vi:'Tuy người ông cả đời làm nông của tôi đã mất mấy năm rồi, nhưng dáng vẻ cần cù, chất phác của ông đến giờ tôi vẫn nhớ rất rõ.',zh:'当了一辈子农民的爷爷尽管已经去世好几年了，但他勤奋、老实的样子，我至今还记得很清楚。',py:'Dāngle yíbèizi nóngmín de yéye jǐnguǎn yǐjīng qùshì hǎo jǐ nián le, dàn tā qínfèn, lǎoshi de yàngzi, wǒ zhìjīn hái jì de hěn qīngchu.',goiY:['一辈子','尽管……但……','去世','至今'],giai:'尽管…但… nối sự thật đã xảy ra với điều vẫn không đổi; 至今 + 还 + V = đến nay vẫn…; 去世 là cách nói trang trọng của "mất".'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
   {vi:'Do chiến tranh liên miên, cha mẹ làm nông của Tử Lộ sống vô cùng khốn khó.',zh:'由于连年的战争，子路那对当农民的父母生活得非常困难。',py:'Yóuyú liánnián de zhànzhēng, Zǐlù nà duì dāng nóngmín de fùmǔ shēnghuó de fēicháng kùnnan.',goiY:['由于 = do','战争 = chiến tranh','农民 = nông dân'],giai:'由于 đứng đầu vế nguyên nhân; 连年 = "liên miên nhiều năm", dịch "chiến tranh liên miên".'},
-  {vi:'Nghe cha mẹ nói chỉ cần được ăn một bữa cơm là đã mãn nguyện, Tử Lộ thấy vô cùng hổ thẹn trong lòng.',zh:'听到父母说只要能吃上一顿米饭就满足了，子路心里十分惭愧。',py:'Tīngdào fùmǔ shuō zhǐyào néng chīshang yí dùn mǐfàn jiù mǎnzú le, Zǐlù xīnli shífēn cánkuì.',goiY:['只要……就…… = chỉ cần… là…','满足 = hài lòng, mãn nguyện','惭愧 = hổ thẹn'],giai:'只要…就… nằm trong lời thuật lại của cha mẹ; 惭愧 là xấu hổ vì thấy mình chưa làm tròn trách nhiệm — dịch "hổ thẹn/áy náy".'},
-  {vi:'Dù có vất vả đến đâu, Tử Lộ cũng thầm quyết tâm không để cha mẹ phải chịu khổ nữa.',zh:'无论有多辛苦，子路都暗暗下定决心不再让父母受委屈。',py:'Wúlùn yǒu duō xīnkǔ, Zǐlù dōu àn\'àn xiàdìng juéxīn bú zài ràng fùmǔ shòu wěiqu.',goiY:['无论……都…… = dù… cũng…','暗暗 = thầm','委屈 = thiệt thòi, khổ sở'],giai:'无论 + từ để hỏi (多辛苦) + 都 = dù… đến đâu cũng…; 都 đứng sau chủ ngữ 子路.'},
-  {vi:'Tử Lộ dò hỏi được rằng ở nơi cách trăm dặm có một nhà đang thiếu người làm, thế là tìm đến; chủ nhà thấy anh khoẻ mạnh rắn rỏi nên giữ anh lại.',zh:'子路打听到百里之外有户人家缺人干活儿，于是赶了过去；主人见他身体结实，就留下了他。',py:'Zǐlù dǎtingdào bǎi lǐ zhī wài yǒu hù rénjiā quē rén gàn huór, yúshì gǎnle guòqu; zhǔrén jiàn tā shēntǐ jiēshi, jiù liúxiàle tā.',goiY:['打听 = dò hỏi','于是 = thế là','结实 = rắn chắc, khoẻ mạnh'],giai:'于是 nối hành động xảy ra ngay sau; 结实 nói về cơ thể dịch "khoẻ mạnh, rắn rỏi" (nói về đồ vật mới là "chắc chắn").'},
+  {vi:'Tử Lộ dò hỏi được rằng ở nơi cách trăm dặm có một nhà giàu đang cần người làm, thế là tìm đến; chủ nhà thấy anh khoẻ mạnh rắn rỏi nên giữ anh lại.',zh:'子路打听到百里之外有个有钱人家需要干活儿的人，于是赶了过去；主人见他身体结实，就留下了他。',py:'Zǐlù dǎtingdào bǎi lǐ zhī wài yǒu ge yǒuqián rénjiā xūyào gàn huór de rén, yúshì gǎnle guòqu; zhǔrén jiàn tā shēntǐ jiēshi, jiù liúxiàle tā.',goiY:['打听 = dò hỏi','于是 = thế là','结实 = rắn chắc, khoẻ mạnh'],giai:'于是 nối hành động xảy ra ngay sau; 结实 nói về cơ thể dịch "khoẻ mạnh, rắn rỏi" (nói về đồ vật mới là "chắc chắn").'},
   {vi:'Tử Lộ làm lụng rất chăm chỉ; nửa năm sau, anh phát hiện số bạc chủ nhà trả nhiều hơn hẳn, nhưng anh lại thật thà nói với chủ nhà.',zh:'子路干活儿十分勤奋，半年后发现主人给的银子多了许多，他却老老实实地告诉了主人。',py:'Zǐlù gàn huór shífēn qínfèn, bàn nián hòu fāxiàn zhǔrén gěi de yínzi duōle xǔduō, tā què lǎolǎoshíshí de gàosule zhǔrén.',goiY:['勤奋 = chăm chỉ','银子 = bạc (tiền)','却 = lại, nhưng','老老实实 = thật thà'],giai:'却 cho thấy hành động trung thực trái với lẽ thường (có lợi mà không nhận); 多了许多 = nhiều hơn hẳn, không dịch "nhiều nhiều".'},
   {vi:'Nền tuyết rất trơn, Tử Lộ sơ ý trượt chân một cái, suýt nữa thì bao gạo trên lưng văng ra ngoài.',zh:'雪地非常滑，子路不小心滑了一下，结果背上的米袋差点儿被甩出去。',py:'Xuědì fēicháng huá, Zǐlù bù xiǎoxīn huále yíxià, jiéguǒ bèi shang de mǐdài chàdiǎnr bèi shuǎi chuqu.',goiY:['滑 = trơn; trượt','结果 = kết quả là','差点儿 = suýt','甩 = văng, quăng'],giai:'差点儿 + V = suýt nữa thì (việc không xảy ra); 背上 (bèi) là "trên lưng", phân biệt với 被 (bèi) bị động ngay sau.'},
-  {vi:'Anh đội tuyết lớn mà đi, đôi tay giữ bao gạo tuy lạnh cóng đến tê dại nhưng anh chỉ dừng lại hơ cho ấm một chút rồi lại tiếp tục lên đường.',zh:'他顶着大雪往前走，扶着米袋的双手虽然冻得不行，但他只停下来暖一暖，又继续赶路。',py:'Tā dǐngzhe dàxuě wǎng qián zǒu, fúzhe mǐdài de shuāngshǒu suīrán dòng de bùxíng, dàn tā zhǐ tíng xialai nuǎn yi nuǎn, yòu jìxù gǎnlù.',goiY:['顶着 = đội, bất chấp','扶 = đỡ, giữ','冻得不行 = lạnh cóng','虽然……但…… = tuy… nhưng…'],giai:'顶着大雪 = đội tuyết/bất chấp tuyết (顶着 + thời tiết); V/Adj + 得不行 chỉ mức độ cực độ — "lạnh cóng đến tê dại".'},
-  {vi:'Tử Lộ vác gạo đi trăm dặm chỉ để cha mẹ được ăn một bữa cơm đoàn viên, thảo nào câu chuyện này được lưu truyền từ thời Xuân Thu cho đến tận ngày nay.',zh:'子路背米百里只为让父母吃上一顿团圆饭，难怪这个故事从春秋时期一直流传至今。',py:'Zǐlù bēi mǐ bǎi lǐ zhǐ wèi ràng fùmǔ chīshang yí dùn tuányuán fàn, nánguài zhège gùshi cóng Chūnqiū shíqī yìzhí liúchuán zhìjīn.',goiY:['背 (bēi) = vác, cõng','团圆饭 = bữa cơm đoàn viên','难怪 = thảo nào','流传至今 = lưu truyền đến nay'],giai:'难怪 rút ra điều đã hiểu từ vế trước; 流传至今 là cụm cố định "lưu truyền đến nay" — không thêm 到.'},
-  {vi:'Vua nước Sở giữ Tử Lộ lại làm quan, nhưng ông chẳng hề vì điều kiện vật chất sung túc mà vui mừng, ngược lại còn thường xuyên nhớ về cha mẹ đã khuất.',zh:'楚国国君留子路做了官，可是他并没有因为物质条件好而感到高兴，反而常常怀念去世的父母。',py:'Chǔguó guójūn liú Zǐlù zuòle guān, kěshì tā bìng méiyǒu yīnwèi wùzhì tiáojiàn hǎo ér gǎndào gāoxìng, fǎn\'ér chángcháng huáiniàn qùshì de fùmǔ.',goiY:['国君 = vua (một nước)','并没有 = chẳng hề','反而 = ngược lại','去世 = qua đời'],giai:'并没有因为 A 而 B = chẳng hề vì A mà B; 反而 dẫn ra phản ứng ngược với điều người ta nghĩ.'},
+  {vi:'Vua nước Sở giữ Tử Lộ lại làm quan, nhưng ông chẳng hề vì điều kiện vật chất sung túc mà vui mừng, ngược lại còn thường xuyên nhớ về cha mẹ đã khuất.',zh:'楚国国君留子路做了官，可是他并没有因为物质条件好而感到高兴，反而常常想起去世的父母。',py:'Chǔguó guójūn liú Zǐlù zuòle guān, kěshì tā bìng méiyǒu yīnwèi wùzhì tiáojiàn hǎo ér gǎndào gāoxìng, fǎn\'ér chángcháng xiǎngqǐ qùshì de fùmǔ.',goiY:['国君 = vua (một nước)','并没有 = chẳng hề','反而 = ngược lại','去世 = qua đời'],giai:'并没有因为 A 而 B = chẳng hề vì A mà B; 反而 dẫn ra phản ứng ngược với điều người ta nghĩ.'},
   {vi:'Tử Lộ thường thành khẩn nói rằng giờ đây tuy mình đã có chút thành tựu, nhưng cha mẹ đã qua đời, dù có muốn vác gạo trăm dặm về phụng dưỡng hai người thì cũng không thể nữa rồi.',zh:'子路常常诚恳地说，自己虽然有了一点儿成就，可是父母已经去世了，即使再想背米百里去孝敬他们，也不可能了。',py:'Zǐlù chángcháng chéngkěn de shuō, zìjǐ suīrán yǒule yìdiǎnr chéngjiù, kěshì fùmǔ yǐjīng qùshì le, jíshǐ zài xiǎng bēi mǐ bǎi lǐ qù xiàojìng tāmen, yě bù kěnéng le.',goiY:['诚恳 = thành khẩn','虽然……可是…… = tuy… nhưng…','即使……也…… = dù… cũng…','孝敬 = hiếu kính, phụng dưỡng'],giai:'Câu ghép ba tầng: 虽然…可是… (sự thật trái ngược) + 即使…也… (giả thiết không thể thay đổi kết quả); 孝敬 ở đây dịch "phụng dưỡng", không dịch từng chữ "hiếu kính".'}
 ];
 
@@ -5549,75 +4909,12 @@ var writingData = {
     }
   ],
   "sapXep": [
-    {
-      "manh": [
-        "反而",
-        "他的病",
-        "更重了",
-        "吃了药以后"
-      ],
-      "dap": "吃了药以后他的病反而更重了。",
-      "chap": [
-        "他的病吃了药以后反而更重了。"
-      ],
-      "vn": "Uống thuốc xong, bệnh anh ấy trái lại còn nặng hơn.",
-      "giai": "Thời gian 吃了药以后 đứng đầu (hoặc sau chủ ngữ) → chủ ngữ 他的病 → 反而 → vị ngữ 更重了. 反而 luôn đứng SAU chủ ngữ."
-    },
-    {
-      "manh": [
-        "至今",
-        "这个故事",
-        "在民间",
-        "流传"
-      ],
-      "dap": "这个故事在民间流传至今。",
-      "vn": "Câu chuyện này lưu truyền trong dân gian đến tận ngày nay.",
-      "giai": "流传至今 là cụm cố định (至今 làm bổ ngữ sau 流传); 在民间 là trạng ngữ nơi chốn, đứng trước động từ."
-    },
-    {
-      "manh": [
-        "冻得",
-        "他的",
-        "不行",
-        "双手"
-      ],
-      "dap": "他的双手冻得不行。",
-      "vn": "Hai tay anh ấy lạnh cóng không chịu nổi.",
-      "giai": "Chủ ngữ 他的双手 → động từ + 得 → bổ ngữ mức độ 不行."
-    },
-    {
-      "manh": [
-        "满足",
-        "父母",
-        "我们的要求",
-        "总是想办法"
-      ],
-      "dap": "父母总是想办法满足我们的要求。",
-      "vn": "Bố mẹ luôn tìm cách đáp ứng yêu cầu của chúng ta.",
-      "giai": "满足 + tân ngữ 要求. 总是想办法 đứng trước động từ chính 满足."
-    },
-    {
-      "manh": [
-        "孝顺父母",
-        "各种美德中",
-        "是",
-        "占第一位的"
-      ],
-      "dap": "孝顺父母是各种美德中占第一位的。",
-      "vn": "Hiếu thảo với cha mẹ đứng hàng đầu trong mọi đức tính tốt.",
-      "giai": "Câu 是……的: 孝顺父母 + 是 + (各种美德中 + 占第一位) + 的. 各种美德中 là phạm vi, đứng trước 占."
-    },
-    {
-      "manh": [
-        "下决心",
-        "我",
-        "早睡早起",
-        "从明天开始"
-      ],
-      "dap": "我下决心从明天开始早睡早起。",
-      "vn": "Tôi quyết tâm từ ngày mai sẽ ngủ sớm dậy sớm.",
-      "giai": "Chủ ngữ 我 → 下决心 → nội dung quyết tâm (从明天开始早睡早起). Thời gian 从明天开始 thuộc về việc sẽ làm nên đứng SAU 下决心."
-    }
+    {manh:['反而','他的病','更重了','吃了药以后'],dap:'吃了药以后他的病反而更重了。',chap:['他的病吃了药以后反而更重了。'],vn:'Uống thuốc xong, bệnh anh ấy trái lại còn nặng hơn.',giai:'Thời gian 吃了药以后 đứng đầu (hoặc sau chủ ngữ) → chủ ngữ 他的病 → 反而 → vị ngữ 更重了. 反而 luôn đứng SAU chủ ngữ.'},
+    {manh:['至今','这个故事','在中国','流传'],dap:'这个故事在中国流传至今。',vn:'Câu chuyện này lưu truyền ở Trung Quốc đến tận ngày nay.',giai:'流传至今 là cụm cố định (至今 làm bổ ngữ sau 流传); 在中国 là trạng ngữ nơi chốn, đứng trước động từ.'},
+    {manh:['冻得','他的','不行','双手'],dap:'他的双手冻得不行。',vn:'Hai tay anh ấy lạnh cóng không chịu nổi.',giai:'Chủ ngữ 他的双手 → động từ + 得 → bổ ngữ mức độ 不行.'},
+    {manh:['满足','父母','我们的要求','总是想办法'],dap:'父母总是想办法满足我们的要求。',vn:'Bố mẹ luôn tìm cách đáp ứng yêu cầu của chúng ta.',giai:'满足 + tân ngữ 要求. 总是想办法 đứng trước động từ chính 满足.'},
+    {manh:['孝顺父母','各种美德中','是','占第一位的'],dap:'孝顺父母是各种美德中占第一位的。',vn:'Hiếu thảo với cha mẹ đứng hàng đầu trong mọi đức tính tốt.',giai:'Câu 是……的: 孝顺父母 + 是 + (各种美德中 + 占第一位) + 的. 各种美德中 là phạm vi, đứng trước 占.'},
+    {manh:['下决心','我','每天跑步','从今天开始'],dap:'我下决心从今天开始每天跑步。',vn:'Tôi quyết tâm từ hôm nay sẽ chạy bộ mỗi ngày.',giai:'Chủ ngữ 我 → 下决心 → nội dung quyết tâm (从今天开始每天跑步). Thời gian 从今天开始 thuộc về việc sẽ làm nên đứng SAU 下决心.'}
   ]
 };
 
@@ -5627,38 +4924,10 @@ var writingData = {
 var speakingData = {
   "intro": "Bốn câu hỏi mở về chủ đề của bài — ba câu đầu là phần 话题讨论 “什么是孝顺？” trong sách. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố dùng được từ mới của bài: 孝顺 · 孝敬 · 满足 · 委屈 · 惭愧 · 反而 · 流传至今.",
   "questions": [
-    {
-      "q_zh": "中国人说的“孝”是什么意思？",
-      "q_vn": "Chữ “hiếu” mà người Trung Quốc nói nghĩa là gì?",
-      "hint": "Dùng 我觉得“孝”就是…… + 孝顺 / 孝敬",
-      "sample": "我觉得“孝”就是孝顺父母、尊敬老人。不但要让父母吃好、穿好，而且要常常陪他们聊天儿，让他们心情愉快。",
-      "sample_vn": "Tôi nghĩ “hiếu” chính là hiếu thảo với cha mẹ, kính trọng người già. Không những phải để cha mẹ ăn ngon mặc đẹp, mà còn phải thường xuyên trò chuyện cùng họ, để họ vui vẻ.",
-      "note": "Trả lời câu hỏi “là gì” ở HSKK: nêu định nghĩa trước, rồi thêm 1–2 ví dụ cụ thể."
-    },
-    {
-      "q_zh": "你认为应该如何去关爱你的父母？",
-      "q_vn": "Em nghĩ nên quan tâm, yêu thương bố mẹ như thế nào?",
-      "hint": "Dùng 我认为…… + 只要……就…… + 满足",
-      "sample": "我认为关爱父母不一定要花很多钱。每天跟他们聊聊天儿，帮他们做点儿家务，他们就会很满足。",
-      "sample_vn": "Tôi cho rằng yêu thương bố mẹ không nhất thiết phải tốn nhiều tiền. Mỗi ngày trò chuyện với họ, giúp họ làm chút việc nhà, họ sẽ rất mãn nguyện.",
-      "note": "Ôn 如何 (bài 1) — câu hỏi dùng 如何 nhưng khi trả lời bằng khẩu ngữ không cần lặp lại 如何."
-    },
-    {
-      "q_zh": "如果有一天，你的父母身体不好了，需要有人照顾时，你会怎么做？",
-      "q_vn": "Nếu một ngày bố mẹ em yếu đi, cần người chăm sóc, em sẽ làm gì?",
-      "hint": "Dùng 如果……，我会…… + 即使……也…… + 委屈",
-      "sample": "如果父母需要照顾，我会尽量留在他们身边。即使工作再忙，我也会常常回家，不能让他们受委屈。",
-      "sample_vn": "Nếu bố mẹ cần chăm sóc, tôi sẽ cố gắng ở bên cạnh họ. Dù công việc bận đến đâu, tôi cũng sẽ thường xuyên về nhà, không để họ phải chịu thiệt thòi.",
-      "note": "即使……也…… lấy từ chính bài khoá (即使再想……也不可能了) — dùng lại được là điểm cộng."
-    },
-    {
-      "q_zh": "在你们国家，有没有流传很久的关于孝敬父母的故事？",
-      "q_vn": "Ở nước em có câu chuyện nào về hiếu kính cha mẹ được lưu truyền lâu đời không?",
-      "hint": "Dùng 流传至今 + 意思是说……",
-      "sample": "在越南，也有很多流传至今的孝顺故事。越南人常说“父亲的功劳像泰山，母亲的恩情像泉水”，意思是说父母的恩情很大，我们一定要孝敬他们。",
-      "sample_vn": "Ở Việt Nam cũng có nhiều câu chuyện về lòng hiếu thảo được lưu truyền đến nay. Người Việt hay nói “Công cha như núi Thái Sơn, nghĩa mẹ như nước trong nguồn chảy ra”, nghĩa là công ơn cha mẹ rất lớn, chúng ta nhất định phải hiếu kính cha mẹ.",
-      "note": "Đây là câu hỏi 热身 2 của sách. 意思是说…… là cách giải thích một câu nói — học từ câu “百善孝为先” trong bài."
-    }
+    {q_zh:'你觉得怎样才是孝顺父母？',q_vn:'Theo em, thế nào mới là hiếu thảo với cha mẹ?',hint:'Dùng 我觉得…… + 孝顺 / 孝敬',sample:'我觉得孝顺父母，不但要让他们吃好、穿好，而且要常常陪他们聊天儿，让他们心情愉快。',sample_vn:'Tôi nghĩ hiếu thảo với cha mẹ không những phải để cha mẹ ăn ngon mặc đẹp, mà còn phải thường xuyên trò chuyện cùng họ, để họ vui vẻ.',note:'Trả lời câu hỏi “thế nào là…” ở HSKK: nêu ý chính trước, rồi thêm 1–2 ví dụ cụ thể.'},
+    {q_zh:'你认为应该如何去关爱你的父母？',q_vn:'Em nghĩ nên quan tâm, yêu thương bố mẹ như thế nào?',hint:'Dùng 我认为…… + 只要……就…… + 满足',sample:'我认为关爱父母不一定要花很多钱。每天跟他们聊聊天儿，帮他们做做饭、打扫打扫房间，他们就会很满足。',sample_vn:'Tôi cho rằng yêu thương bố mẹ không nhất thiết phải tốn nhiều tiền. Mỗi ngày trò chuyện với họ, giúp họ nấu cơm, dọn dẹp phòng, họ sẽ rất mãn nguyện.',note:'Ôn 如何 (bài 1) — câu hỏi dùng 如何 nhưng khi trả lời bằng khẩu ngữ không cần lặp lại 如何.'},
+    {q_zh:'如果有一天，你的父母身体不好了，需要有人照顾时，你打算怎么照顾他们？',q_vn:'Nếu một ngày bố mẹ em yếu đi, cần người chăm sóc, em định chăm sóc họ thế nào?',hint:'Dùng 如果……，我会…… + 即使……也…… + 委屈',sample:'如果父母需要照顾，我会想办法留在他们身边。即使工作再忙，我也会常常回家，不能再委屈他们。',sample_vn:'Nếu bố mẹ cần chăm sóc, tôi sẽ tìm cách ở bên cạnh họ. Dù công việc bận đến đâu, tôi cũng sẽ thường xuyên về nhà, không để họ phải chịu thiệt thòi nữa.',note:'即使……也…… lấy từ chính bài khoá (即使再想……也不可能了) — dùng lại được là điểm cộng.'},
+    {q_zh:'在你们国家，有没有流传很久的关于孝敬父母的故事？',q_vn:'Ở nước em có câu chuyện nào về hiếu kính cha mẹ được lưu truyền lâu đời không?',hint:'Dùng 流传至今 + 意思是说……',sample:'在越南，也有很多流传至今的孝顺故事。越南人常说，父母的爱像山一样高、像水一样长，意思是说我们一定要孝敬父母。',sample_vn:'Ở Việt Nam cũng có nhiều câu chuyện về lòng hiếu thảo được lưu truyền đến nay. Người Việt hay nói tình cha mẹ cao như núi, dài như sông, nghĩa là chúng ta nhất định phải hiếu kính cha mẹ.',note:'Đây là câu hỏi khởi động 2 của sách. 意思是说…… là cách giải thích một câu nói — học từ câu “百善孝为先” trong bài.'}
   ]
 };
 
@@ -5890,86 +5159,11 @@ var listenExamData = {
 var situationData = {
   "intro": "Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.",
   "items": [
-    {
-      "scene": "Mẹ gọi điện hỏi thăm em đang ở ký túc xá.",
-      "a": {
-        "sp": "Mẹ",
-        "zh": "你一个人在外面，生活怎么样？",
-        "vn": "Con ở ngoài một mình, cuộc sống thế nào?"
-      },
-      "need": [
-        "Dùng 满足 hoặc 满意",
-        "Nói để mẹ yên tâm"
-      ],
-      "sample": "妈，您放心吧，我在这儿吃得好、住得好，对现在的生活很满足。",
-      "samplePy": "Mā, nín fàngxīn ba, wǒ zài zhèr chī de hǎo, zhù de hǎo, duì xiànzài de shēnghuó hěn mǎnzú.",
-      "sampleVn": "Mẹ yên tâm ạ, con ở đây ăn ngon ở tốt, rất mãn nguyện với cuộc sống hiện tại.",
-      "tip": "对……很满足 / 很满意 đều được. Nhưng nếu muốn khen một thứ cụ thể làm định ngữ (满意的宿舍) thì chỉ dùng 满意."
-    },
-    {
-      "scene": "Bạn thấy em về nhà ướt sũng, run cầm cập.",
-      "a": {
-        "sp": "Bạn",
-        "zh": "你怎么这么晚才回来？衣服都湿了！",
-        "vn": "Sao muộn thế này cậu mới về? Quần áo ướt hết rồi!"
-      },
-      "need": [
-        "Dùng 顶着",
-        "Dùng ……得不行"
-      ],
-      "sample": "路上突然下大雨，我没带伞，只好顶着大雨走回来，冻得不行。",
-      "samplePy": "Lù shang tūrán xià dàyǔ, wǒ méi dài sǎn, zhǐhǎo dǐngzhe dàyǔ zǒu huilai, dòng de bùxíng.",
-      "sampleVn": "Trên đường đột nhiên mưa to, tớ không mang ô, đành đội mưa đi về, lạnh cóng không chịu nổi.",
-      "tip": "顶着 + 大雨/大雪/大风 phải có 着. Không viết 很冻得不行 — đã có 得不行 thì bỏ 很."
-    },
-    {
-      "scene": "Bạn thân thấy dạo này em học hành chăm hẳn lên.",
-      "a": {
-        "sp": "Bạn",
-        "zh": "你最近学习怎么这么努力？",
-        "vn": "Dạo này sao cậu học chăm thế?"
-      },
-      "need": [
-        "Dùng 下决心",
-        "Dùng 惭愧"
-      ],
-      "sample": "上次考得太差了，我觉得很惭愧，就下决心每天多学一个小时。",
-      "samplePy": "Shàng cì kǎo de tài chà le, wǒ juéde hěn cánkuì, jiù xià juéxīn měi tiān duō xué yí ge xiǎoshí.",
-      "sampleVn": "Lần trước thi kém quá, tớ thấy xấu hổ lắm, nên quyết tâm mỗi ngày học thêm một tiếng.",
-      "tip": "Động từ đi với 决心 là 下, không phải 做. 惭愧 là tính từ: 觉得很惭愧."
-    },
-    {
-      "scene": "Cô giáo hỏi cảm nhận của em về nhân vật trong bài.",
-      "a": {
-        "sp": "Cô",
-        "zh": "你觉得子路是个什么样的人？",
-        "vn": "Em thấy Tử Lộ là người như thế nào?"
-      },
-      "need": [
-        "Dùng ít nhất 2 từ: 孝顺 / 勤奋 / 老实",
-        "Nêu một CHI TIẾT trong bài để chứng minh"
-      ],
-      "sample": "我觉得子路很孝顺，也很老实。主人多给了他银子，他老老实实地告诉了主人。",
-      "samplePy": "Wǒ juéde Zǐlù hěn xiàoshùn, yě hěn lǎoshi. Zhǔrén duō gěile tā yínzi, tā lǎolǎoshíshí de gàosule zhǔrén.",
-      "sampleVn": "Em thấy Tử Lộ rất hiếu thảo, cũng rất thật thà. Chủ nhà đưa thừa bạc, ông thật thà nói lại với chủ nhà.",
-      "tip": "Nhận xét phải kèm DẪN CHỨNG từ bài — thói quen bắt buộc ở HSK 5, cả phần nói lẫn phần viết."
-    },
-    {
-      "scene": "Trời mưa, bạn ngạc nhiên thấy em vẫn đi chạy bộ.",
-      "a": {
-        "sp": "Bạn",
-        "zh": "下这么大的雨，你还去跑步？不难受吗？",
-        "vn": "Mưa to thế này cậu vẫn đi chạy bộ à? Không khó chịu sao?"
-      },
-      "need": [
-        "Dùng 反而",
-        "Giải thích lý do"
-      ],
-      "sample": "下雨天跑步不但不难受，反而很舒服，空气也特别好。",
-      "samplePy": "Xià yǔ tiān pǎobù búdàn bù nánshòu, fǎn'ér hěn shūfu, kōngqì yě tèbié hǎo.",
-      "sampleVn": "Chạy bộ ngày mưa chẳng những không khó chịu mà trái lại còn rất dễ chịu, không khí cũng cực kỳ trong lành.",
-      "tip": "反而 dùng khi kết quả NGƯỢC với điều người kia nghĩ (họ nghĩ “khó chịu” → mình nói “dễ chịu”)."
-    }
+    {scene:'Mẹ gọi điện hỏi thăm em đang ở xa nhà.',a:{sp:'Mẹ',zh:'你一个人在外面，生活怎么样？',vn:'Con ở ngoài một mình, cuộc sống thế nào?'},need:['Dùng 满足 hoặc 满意','Nói để mẹ yên tâm'],sample:'妈妈，您别担心，我在这儿吃得好、住得好，对现在的生活很满足。',samplePy:'Māma, nín bié dānxīn, wǒ zài zhèr chī de hǎo, zhù de hǎo, duì xiànzài de shēnghuó hěn mǎnzú.',sampleVn:'Mẹ đừng lo ạ, con ở đây ăn ngon ở tốt, rất mãn nguyện với cuộc sống hiện tại.',tip:'对……很满足 / 很满意 đều được. Nhưng nếu muốn khen một thứ cụ thể làm định ngữ (满意的房间) thì chỉ dùng 满意.'},
+    {scene:'Bạn thấy em về nhà muộn, mặt đỏ ửng vì lạnh.',a:{sp:'Bạn',zh:'你怎么这么晚才回来？脸都冻红了！',vn:'Sao muộn thế này cậu mới về? Mặt đỏ hết vì lạnh rồi kìa!'},need:['Dùng 顶着','Dùng ……得不行'],sample:'路上突然下大雪，公共汽车也不来，我只好顶着大雪走回来，冻得不行。',samplePy:'Lù shang tūrán xià dàxuě, gōnggòng qìchē yě bù lái, wǒ zhǐhǎo dǐngzhe dàxuě zǒu huilai, dòng de bùxíng.',sampleVn:'Trên đường đột nhiên tuyết rơi dày, xe buýt cũng không đến, tớ đành đội tuyết đi bộ về, lạnh cóng không chịu nổi.',tip:'顶着 + 大雨/大雪/大风 phải có 着. Không viết 很冻得不行 — đã có 得不行 thì bỏ 很.'},
+    {scene:'Bạn thân thấy dạo này em học hành chăm hẳn lên.',a:{sp:'Bạn',zh:'你最近学习怎么这么努力？',vn:'Dạo này sao cậu học chăm thế?'},need:['Dùng 下决心','Dùng 惭愧'],sample:'上次考得太差了，我觉得很惭愧，就下决心每天多学一个小时。',samplePy:'Shàng cì kǎo de tài chà le, wǒ juéde hěn cánkuì, jiù xià juéxīn měi tiān duō xué yí ge xiǎoshí.',sampleVn:'Lần trước thi kém quá, tớ thấy xấu hổ lắm, nên quyết tâm mỗi ngày học thêm một tiếng.',tip:'Động từ đi với 决心 là 下, không phải 做. 惭愧 là tính từ: 觉得很惭愧.'},
+    {scene:'Cô giáo hỏi cảm nhận của em về nhân vật trong bài.',a:{sp:'Cô',zh:'你觉得子路是个什么样的人？',vn:'Em thấy Tử Lộ là người như thế nào?'},need:['Dùng ít nhất 2 từ: 孝顺 / 勤奋 / 老实','Nêu một CHI TIẾT trong bài để chứng minh'],sample:'我觉得子路很孝顺，也很老实。主人多给了他银子，他马上把这件事告诉了主人。',samplePy:'Wǒ juéde Zǐlù hěn xiàoshùn, yě hěn lǎoshi. Zhǔrén duō gěile tā yínzi, tā mǎshàng bǎ zhè jiàn shì gàosule zhǔrén.',sampleVn:'Em thấy Tử Lộ rất hiếu thảo, cũng rất thật thà. Chủ nhà đưa thừa bạc, ông lập tức nói lại chuyện đó với chủ nhà.',tip:'Nhận xét phải kèm DẪN CHỨNG từ bài — thói quen bắt buộc ở HSK 5, cả phần nói lẫn phần viết.'},
+    {scene:'Trời mưa, bạn ngạc nhiên thấy em vẫn đi chạy bộ.',a:{sp:'Bạn',zh:'下这么大的雨，你还去跑步？不难受吗？',vn:'Mưa to thế này cậu vẫn đi chạy bộ à? Không khó chịu sao?'},need:['Dùng 反而','Giải thích lý do'],sample:'下雨天跑步不但不难受，反而很舒服，空气也特别好。',samplePy:'Xià yǔ tiān pǎobù búdàn bù nánshòu, fǎn\'ér hěn shūfu, kōngqì yě tèbié hǎo.',sampleVn:'Chạy bộ ngày mưa chẳng những không khó chịu mà trái lại còn rất dễ chịu, không khí cũng cực kỳ trong lành.',tip:'反而 dùng khi kết quả NGƯỢC với điều người kia nghĩ (họ nghĩ “khó chịu” → mình nói “dễ chịu”).'}
   ]
 };
 
@@ -5979,48 +5173,12 @@ var situationData = {
 var registerData = {
   "intro": "Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.",
   "items": [
-    {
-      "scene": "Em viết bài văn kể về người ông đã mất để gửi dự thi.",
-      "a": "我的爷爷去年去世了。",
-      "b": "我的爷爷去年死了。",
-      "better": "a",
-      "why": "Nói về người thân, người lớn tuổi đã mất phải dùng 去世 — lịch sự, trang trọng. 死 nghe lạnh lùng, thiếu kính trọng."
-    },
-    {
-      "scene": "Lễ tân khách sạn xin lỗi vì chưa có phòng tốt cho khách.",
-      "a": "请您先委屈一晚，明天我们就给您换个好的房间。",
-      "b": "你先在这儿住一晚吧，明天给你换。",
-      "better": "a",
-      "why": "Với khách hàng phải dùng 您; 委屈一晚 là lời xin lỗi khéo (“để quý khách chịu thiệt một đêm”). Câu b đúng nhưng cộc lốc."
-    },
-    {
-      "scene": "Em phát biểu trong lễ tri ân thầy cô và cha mẹ ở trường.",
-      "a": "中国古代有句话叫“百善孝为先”，孝顺父母是各种美德中占第一位的。",
-      "b": "对爸妈好是最重要的事儿。",
-      "better": "a",
-      "why": "Diễn văn là văn nói TRANG TRỌNG: dẫn câu cổ, dùng 孝顺, 美德, 占第一位. Câu b quá khẩu ngữ (爸妈, 事儿)."
-    },
-    {
-      "scene": "Em nhắn tin nhờ bạn thân giữ chỗ trong thư viện.",
-      "a": "你到了帮我占个座儿，好吗？",
-      "b": "请您到达以后为我保留一个座位，可以吗？",
-      "better": "a",
-      "why": "Nhắn cho bạn thân dùng khẩu ngữ: 占个座儿. Câu b khách sáo như văn bản hành chính, nghe xa cách."
-    },
-    {
-      "scene": "Em viết thư xin lỗi chính thức gửi ban giám hiệu vì vi phạm nội quy.",
-      "a": "我诚恳地向学校道歉，保证以后不再犯同样的错误。",
-      "b": "对不起啦，下次不会了。",
-      "better": "a",
-      "why": "Thư gửi nhà trường là văn viết trang trọng: 诚恳地道歉, 保证. Câu b chỉ hợp khi xin lỗi bạn bè."
-    },
-    {
-      "scene": "Em kể với bạn cùng phòng chuyện hôm qua đi học về.",
-      "a": "昨天我累得不行，一回宿舍就睡了。",
-      "b": "昨日本人极度疲劳，归来后即入睡。",
-      "better": "a",
-      "why": "Kể chuyện thường ngày với bạn: 累得不行 tự nhiên. Câu b dùng lối văn viết cổ (昨日, 本人, 即) — nghe rất buồn cười trong hội thoại."
-    }
+    {scene:'Em viết bài văn kể về người ông đã mất để gửi dự thi.',a:'我的爷爷去年去世了。',b:'我的爷爷去年死了。',better:'a',why:'Nói về người thân, người lớn tuổi đã mất phải dùng 去世 — lịch sự, trang trọng. 死 nghe lạnh lùng, thiếu kính trọng.'},
+    {scene:'Lễ tân khách sạn xin lỗi vì chỉ còn phòng nhỏ cho khách.',a:'非常抱歉，今晚只剩这个小房间了，请您先委屈一下。',b:'没有别的房间了，你就住这个吧。',better:'a',why:'Với khách hàng phải dùng 您; 委屈一下 là lời xin lỗi khéo (“để quý khách chịu thiệt một chút”). Câu b đúng nhưng cộc lốc.'},
+    {scene:'Em phát biểu trong lễ tri ân thầy cô và cha mẹ ở trường.',a:'中国古代有句话叫“百善孝为先”，意思是孝顺是最重要的美德。',b:'对爸爸妈妈好是最重要的事儿。',better:'a',why:'Diễn văn là văn nói TRANG TRỌNG: dẫn câu cổ, dùng 孝顺, 美德. Câu b quá khẩu ngữ (对爸爸妈妈好, 事儿).'},
+    {scene:'Em nhắn tin nhờ bạn thân giữ chỗ trong thư viện.',a:'你到了帮我占个座儿，好吗？',b:'请您到了以后为我留一个座位，可以吗？',better:'a',why:'Nhắn cho bạn thân dùng khẩu ngữ: 占个座儿. Câu b khách sáo như văn bản hành chính (请您, 为我), nghe xa cách.'},
+    {scene:'Em viết thư xin lỗi chính thức gửi ban giám hiệu vì vi phạm nội quy.',a:'我诚恳地向学校道歉，以后一定不再做这样的事。',b:'对不起，下次不会了。',better:'a',why:'Thư gửi nhà trường là văn viết trang trọng: 诚恳地道歉 + lời hứa rõ ràng. Câu b chỉ hợp khi xin lỗi bạn bè.'},
+    {scene:'Em kể với bạn cùng phòng chuyện hôm qua đi học về.',a:'昨天我累得不行，一回家就睡了。',b:'本人昨天十分辛苦，回家后马上休息。',better:'a',why:'Kể chuyện thường ngày với bạn: 累得不行 tự nhiên. Câu b dùng lối văn báo cáo (本人, 十分, 回家后) — nghe rất buồn cười trong hội thoại.'}
   ]
 };
 

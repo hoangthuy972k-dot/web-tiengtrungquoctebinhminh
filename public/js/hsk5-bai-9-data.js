@@ -1443,92 +1443,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — bảng 词语搭配 của giáo trình (tr. 87) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'讲究',right:'卫生'},
-  {left:'戒',right:'烟'},
+  {left:'戒',right:'酒'},
   {left:'地道的',right:'北京小吃'},
   {left:'高档的',right:'家具'},
-  {left:'算得上',right:'行家'},
   {left:'保存',right:'至今'},
   {left:'一条',right:'胡同'},
   {left:'一首',right:'诗'},
   {left:'表现',right:'突出'},
   {left:'描写得',right:'十分形象'},
   {left:'独特的',right:'见解'},
-  {left:'大方',right:'好客'},
-  {left:'呼朋',right:'唤友'},
   {left:'欢迎',right:'光临'},
-  {left:'爱好',right:'交际'},
-  {left:'在家',right:'招待朋友'},
-  {left:'历史',right:'资料'},
-  {left:'醉眼',right:'蒙眬'},
-  {left:'平均每周',right:'去一次'},
-  {left:'位于',right:'菜市口附近'}
+  {left:'在家',right:'招待朋友'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài là đáp án ít nhất một lần
+// ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'他平时成绩一般，但在今晚的比赛中',blank:'表现',post:'得很突出。',hint:'(thể hiện)',ans:'表现'},
-  {pre:'这一点在民国时期表现得尤其',blank:'突出',post:'。',hint:'(nổi bật)',ans:'突出'},
-  {pre:'鲁迅是中国现代最伟大的',blank:'文学家',post:'之一。',hint:'(nhà văn)',ans:'文学家'},
-  {pre:'这钱就',blank:'算',post:'我借给你的，将来你有了的时候再还我。',hint:'(coi như)',ans:'算',exp:'算 = coi như, tính là: 这钱就算我借给你的.'},
-  {pre:'来北京一定要尝尝',blank:'地道',post:'的北京小吃。',hint:'(chính gốc)',ans:'地道'},
-  {pre:'我爸爸是修车的',blank:'行家',post:'，什么车都会修。',hint:'(người thạo nghề)',ans:'行家'},
-  {pre:'他对许多美食都有独特的',blank:'见解',post:'。',hint:'(cách nhìn, quan điểm)',ans:'见解'},
-  {pre:'我对从1840年到1919年的中国',blank:'近代',post:'历史很感兴趣。',hint:'(thời cận đại)',ans:'近代'},
-  {pre:'现在骑自行车上班成了一种新',blank:'时尚',post:'。',hint:'(mốt, trào lưu)',ans:'时尚'},
-  {pre:'多读书可以提高',blank:'写作',post:'水平。',hint:'(viết văn)',ans:'写作'},
-  {pre:'你快尝尝这地道的传统',blank:'点心',post:'。',hint:'(bánh ngọt, điểm tâm)',ans:'点心'},
-  {pre:'我们的语文老师读过很多书，很有',blank:'学问',post:'。',hint:'(học thức)',ans:'学问'},
-  {pre:'筷子是中餐最主要的进餐用具，在使用上也有很多',blank:'讲究',post:'。',hint:'(điều phải chú ý)',ans:'讲究'},
-  {pre:'他',blank:'平均',post:'每两个星期要招待一次客人。',hint:'(trung bình)',ans:'平均'},
-  {pre:'我爷爷在北京的一条老',blank:'胡同',post:'里住了几十年。',hint:'(ngõ, hẻm)',ans:'胡同'},
-  {pre:'我们学校',blank:'位于',post:'市中心，交通很方便。',hint:'(nằm ở)',ans:'位于',exp:'位于 + nơi chốn = nằm ở (văn viết): 位于市中心.'},
-  {pre:'刘半农1920年写了一',blank:'首',post:'题为《教我如何不想她》的小诗，流传至今。',hint:'(lượng từ của bài thơ)',ans:'首',exp:'首 là lượng từ cho bài thơ, bài hát: 一首诗, 一首歌.'},
-  {pre:'广和居算不上',blank:'豪华',post:'，但却很适合朋友在这里聚会。',hint:'(sang trọng)',ans:'豪华'},
-  {pre:'服务员一看见我们就说：“欢迎',blank:'光临',post:'！请问几位？”',hint:'(quý khách đến — lời kính trọng)',ans:'光临'},
-  {pre:'她很善于',blank:'交际',post:'，到哪儿都能交到朋友。',hint:'(giao tiếp)',ans:'交际'},
-  {pre:'越南人热情',blank:'好客',post:'，常常请朋友到家里吃饭。',hint:'(hiếu khách)',ans:'好客'},
-  {pre:'一到周末，哥哥就',blank:'呼朋唤友',post:'去踢足球。',hint:'(rủ rê bạn bè)',ans:'呼朋唤友'},
-  {pre:'谢谢你们的热情',blank:'招待',post:'！',hint:'(tiếp đãi)',ans:'招待'},
-  {pre:'这家店只卖',blank:'高档',post:'服装，价格都很贵。',hint:'(cao cấp)',ans:'高档'},
-  {pre:'他因为',blank:'胃',post:'病而戒了酒。',hint:'(dạ dày)',ans:'胃'},
-  {pre:'新鲜的葡萄不易',blank:'保存',post:'，因此其价格也比较高。',hint:'(bảo quản, giữ gìn)',ans:'保存'},
-  {pre:'为了写这篇文章，我在图书馆查了很多',blank:'资料',post:'。',hint:'(tài liệu)',ans:'资料'},
-  {pre:'早上六点，弟弟睡眼',blank:'蒙眬',post:'地起了床。',hint:'(lờ mờ, ngái ngủ)',ans:'蒙眬'},
-  {pre:'蓝天上，白云',blank:'悠悠',post:'地飘着。',hint:'(lững lờ, thong thả)',ans:'悠悠'},
-  {pre:'郁达夫的这首诗描写得十分',blank:'形象',post:'。',hint:'(sinh động)',ans:'形象'},
-  {pre:'《阿Q正传》的作者是著名文学家',blank:'鲁迅',post:'。',hint:'(Lỗ Tấn)',ans:'鲁迅'},
-  {pre:'广和居在',blank:'民国',post:'时期非常出名。',hint:'(thời Dân Quốc)',ans:'民国'},
-  {pre:'鲁迅还很爱吃',blank:'稻香村',post:'的点心。',hint:'(tiệm bánh Đạo Hương Thôn)',ans:'稻香村'},
-  {pre:'在众多餐馆里，鲁迅去得最多、最喜欢的是',blank:'广和居',post:'。',hint:'(nhà hàng Quảng Hòa Cư)',ans:'广和居'},
-  {pre:'广和居的位置很好，它位于',blank:'菜市口',post:'附近。',hint:'(Thái Thị Khẩu)',ans:'菜市口'},
-  {pre:'现在保存的历史资料记载，鲁迅和',blank:'郁达夫',post:'一起喝酒的次数最多。',hint:'(Úc Đạt Phu)',ans:'郁达夫'},
-  {pre:'《呐喊》和《',blank:'彷徨',post:'》是鲁迅的两部小说集。',hint:'(“Bàng hoàng”)',ans:'彷徨'},
-  {pre:'《阿Q正传》收在鲁迅的第一部小说集《',blank:'呐喊',post:'》里。',hint:'(“Gào thét”)',ans:'呐喊'}
+  {pre:'小林的汉语成绩在班里一直很',blank:'突出',post:'，老师常常让她帮助别的同学。',hint:'(nổi bật)',ans:'突出',exp:'突出 = nổi bật, vượt hẳn người khác: 成绩突出, 表现突出.'},
+  {pre:'我舅舅卖了二十年水果，是这方面的',blank:'行家',post:'，一看就知道哪个甜。',hint:'(người trong nghề, người sành)',ans:'行家',exp:'行家 (hángjia) = người thạo nghề; 是……的行家 = rành về lĩnh vực nào đó.'},
+  {pre:'对于如何学好汉语，这位老教授有很多自己的',blank:'见解',post:'。',hint:'(kiến giải, cách nhìn riêng)',ans:'见解',exp:'见解 = cách nhìn, quan điểm riêng (thường sâu sắc): 有见解, 独特的见解.'},
+  {pre:'要想提高',blank:'写作',post:'水平，光看书是不够的，还得每天动笔写。',hint:'(viết văn, sáng tác)',ans:'写作',exp:'写作 = viết văn, sáng tác: 写作水平, 写作能力.'},
+  {pre:'客人来了，奶奶赶紧拿出茶和几块',blank:'点心',post:'招待他们。',hint:'(bánh ngọt, điểm tâm)',ans:'点心',exp:'点心 (diǎnxin) = bánh ngọt, đồ điểm tâm ăn kèm trà.'},
+  {pre:'这个班学生的',blank:'平均',post:'年龄是二十岁，最小的十八岁，最大的二十五岁。',hint:'(trung bình)',ans:'平均',exp:'平均 = trung bình, bình quân: 平均年龄, 平均分, 平均每天.'},
+  {pre:'他特别喜欢热闹，每个周末都要',blank:'呼朋唤友',post:'，到家里来吃饭聊天。',hint:'(gọi bạn gọi bè, rủ rê bạn bè)',ans:'呼朋唤友',exp:'呼朋唤友 = gọi bạn bè đến tụ tập; thành ngữ, làm vị ngữ.'},
+  {pre:'别看他年龄不大，书却读得特别多，很有',blank:'学问',post:'。',hint:'(học thức, học vấn)',ans:'学问',exp:'有学问 = có học thức, hiểu biết rộng (nhờ đọc và học nhiều).'},
+  {pre:'这几天天气太热，大家都没有',blank:'胃口',post:'，晚饭吃得很少。',hint:'(cảm giác thèm ăn)',ans:'胃口',exp:'没有胃口 = không thấy muốn ăn. 胃口 là cảm giác thèm ăn, khác 胃 (dạ dày).'},
+  {pre:'那天晚上他喝多了，醉眼',blank:'蒙眬',post:'地被朋友扶回了家。',hint:'(lờ mờ, chếnh choáng)',ans:'蒙眬',exp:'蒙眬 = lờ mờ, mắt nhắm mắt mở (lúc buồn ngủ, say rượu); bài đọc có 醉眼蒙眬.'},
+  {pre:'小船在河上',blank:'悠悠',post:'地走着，一点儿也不着急。',hint:'(thong thả, chậm rãi)',ans:'悠悠',exp:'悠悠 = thong thả, lững lờ, chậm rãi; thường làm trạng ngữ: 悠悠地.'},
+  {pre:'为了感谢大家，校长',blank:'亲自',post:'给每位老师打了电话。',hint:'(đích thân)',ans:'亲自',exp:'亲自 là phó từ, đứng trước động từ; dùng cho người có địa vị, mang ý coi trọng.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (算 · 作为 · 曾经) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['这钱','就算','我','借给你','的','。'],ans:'这钱就算我借给你的。',audio:'这钱就算我借给你的。'},
-  {words:['广和居','算不上','豪华','，','但','很适合','朋友聚会','。'],ans:'广和居算不上豪华，但很适合朋友聚会。',audio:'广和居算不上豪华，但很适合朋友聚会。'},
-  {words:['不就是','一个空瓶子','吗','？','扔掉','算了','。'],ans:'不就是一个空瓶子吗？扔掉算了。',audio:'不就是一个空瓶子吗？扔掉算了。'},
-  {words:['作为','大作家','，鲁迅','对吃','很讲究','。'],ans:'作为大作家，鲁迅对吃很讲究。',audio:'作为大作家，鲁迅对吃很讲究。'},
-  {words:['我','把','那儿','作为','每晚散步','的','去处','。'],ans:'我把那儿作为每晚散步的去处。',audio:'我把那儿作为每晚散步的去处。'},
-  {words:['郁达夫在1933年','曾经','作诗','形容他','。'],ans:'郁达夫在1933年曾经作诗形容他。',audio:'郁达夫在1933年曾经作诗形容他。'},
-  {words:['我曾经','在北京','学过','一年汉语','。'],ans:'我曾经在北京学过一年汉语。',audio:'我曾经在北京学过一年汉语。'},
-  {words:['他','曾经','戒过','烟','，','可现在','又抽上了','。'],ans:'他曾经戒过烟，可现在又抽上了。',audio:'他曾经戒过烟，可现在又抽上了。'},
-  {words:['鲁迅','平均每周','都要','去一次','广和居','。'],ans:'鲁迅平均每周都要去一次广和居。',audio:'鲁迅平均每周都要去一次广和居。'},
-  {words:['他明明','知道','自己有胃病','，','却很难','戒掉','。'],ans:'他明明知道自己有胃病，却很难戒掉。',audio:'他明明知道自己有胃病，却很难戒掉。'},
-  {words:['这里','特别欢迎','文人','的','光临','。'],ans:'这里特别欢迎文人的光临。',audio:'这里特别欢迎文人的光临。'},
-  {words:['那里的菜','样样','都','让人','有胃口','。'],ans:'那里的菜样样都让人有胃口。',audio:'那里的菜样样都让人有胃口。'},
-  {words:['你','快','尝尝','这','地道的','传统点心','。'],ans:'你快尝尝这地道的传统点心。',audio:'你快尝尝这地道的传统点心。'}
+  {words:['外面','雨','太大了','，','今天','不去','算了','。'],ans:'外面雨太大了，今天不去算了。',audio:'外面雨太大了，今天不去算了。'},
+  {words:['他','把','写作','作为','自己','最大的','爱好','。'],ans:'他把写作作为自己最大的爱好。',audio:'他把写作作为自己最大的爱好。'},
+  {words:['我','曾经','在','这条','胡同里','住过','三年','。'],ans:'我曾经在这条胡同里住过三年。',audio:'我曾经在这条胡同里住过三年。',alt:['我在这条胡同里曾经住过三年。']},
+  {words:['这个菜','明明','很咸','，','他','却说','味道','刚好','。'],ans:'这个菜明明很咸，他却说味道刚好。',audio:'这个菜明明很咸，他却说味道刚好。'},
+  {words:['我的','房间','算不上','大','，','但是','住着','很舒服','。'],ans:'我的房间算不上大，但是住着很舒服。',audio:'我的房间算不上大，但是住着很舒服。'},
+  {words:['奶奶','对吃','很讲究','，','从来','不买','不新鲜的','蔬菜','。'],ans:'奶奶对吃很讲究，从来不买不新鲜的蔬菜。',audio:'奶奶对吃很讲究，从来不买不新鲜的蔬菜。'},
+  {words:['这些','重要的','资料','，','你','一定要','保存好','。'],ans:'这些重要的资料，你一定要保存好。',audio:'这些重要的资料，你一定要保存好。'},
+  {words:['作为','父母','，','应该','多','听听','孩子的','意见','。'],ans:'作为父母，应该多听听孩子的意见。',audio:'作为父母，应该多听听孩子的意见。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1536,42 +1498,18 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'这份礼物是市长____为生病的小女孩儿做的。',opts:['亲自','自己','自然','自由'],ans:0,
-   exp:'Người có địa vị (thị trưởng) tự tay làm, mang ý coi trọng → 亲自 (phó từ đứng trước động từ). 自己 cũng chỉ “tự mình” nhưng không có sắc thái trang trọng này; 自然, 自由 không hợp nghĩa.'},
-  {wrong:'请大家带好____的资料。',opts:['自己','亲自','亲身','本来'],ans:0,
-   exp:'Làm định ngữ (…的资料) — chỉ đại từ 自己 làm được. 亲自, 亲身 là phó từ, không đứng trước 的; 本来 là “vốn dĩ”.'},
-  {wrong:'____大作家、大学问家，鲁迅对吃很讲究。',opts:['作为','成为','因为','认为'],ans:0,
-   exp:'Nêu THÂN PHẬN của chủ ngữ ở đầu câu → giới từ 作为. 成为 là “trở thành” (cần chủ ngữ đứng trước); 因为 nêu nguyên nhân; 认为 là “cho rằng”.'},
-  {wrong:'人们____把西红柿当做有害的果子。',opts:['曾经','已经','正在','马上'],ans:0,
-   exp:'Việc trong quá khứ, nay không còn nữa → 曾经. 已经 nhấn mạnh việc đã xong và còn kéo dài đến nay — không hợp vì bây giờ người ta không nghĩ thế nữa.'},
-  {wrong:'这怎么是个缺点呢？____是个优点呀！',opts:['明明','居然','往往','刚刚'],ans:0,
-   exp:'Nhấn mạnh sự thật rõ ràng để bác bỏ ý người khác → 明明. 居然 là “không ngờ lại” (bài 1); 往往 là “thường thường”; 刚刚 là “vừa mới”.'},
-  {wrong:'你咳嗽得这么厉害，真得____烟了！',opts:['戒','抽','停','改'],ans:0,
-   exp:'Bỏ hẳn thói quen hút thuốc → 戒烟 (cụm cố định). 抽烟 là “hút thuốc” — ngược nghĩa; 停, 改 không kết hợp với 烟 như vậy.'},
-  {wrong:'我今天胃不太舒服，所以没什么____。',opts:['胃口','口味','胃','味道'],ans:0,
-   exp:'没(什么)胃口 = không thấy thèm ăn. 胃 là dạ dày (bộ phận cơ thể); 口味, 味道 là mùi vị của món ăn, không nói về cảm giác muốn ăn của người.'},
-  {wrong:'他爱好交际，____好客，常呼朋唤友。',opts:['大方','大家','方便','豪华'],ans:0,
-   exp:'Tả tính cách rộng rãi → 大方 (thường đi đôi 大方好客). 豪华 tả nơi chốn/đồ vật sang trọng, không tả người; 大家, 方便 không hợp nghĩa.'},
-  {wrong:'郁达夫曾经作诗____他，描写得十分形象。',opts:['形容','形象','想象','表现'],ans:0,
-   exp:'Dùng thơ để MIÊU TẢ một người → 形容 (động từ, mang tân ngữ 他). 形象 là tính từ “sinh động”; 想象 là “tưởng tượng”; 表现 là “thể hiện”.'},
-  {wrong:'这个学期小明在班里的____很好，老师表扬了他。',opts:['表现','表达','表示','表演'],ans:0,
-   exp:'Danh từ “biểu hiện, thành tích” của một người → 表现. 表达 là diễn đạt ý bằng lời; 表示 là “bày tỏ”; 表演 là “biểu diễn”.'},
-  {wrong:'我对从1840年到1919年的中国____历史很感兴趣。',opts:['近代','现代','当代','古代'],ans:0,
-   exp:'Từ 1840 đến 1919 là thời CẬN ĐẠI (近代) trong lịch sử Trung Quốc. 现代 là sau 1919; 当代 là đương đại; 古代 là cổ đại (trước 1840).'},
-  {wrong:'广和居____不上豪华，但却很适合朋友聚会。',opts:['算','看','找','拿'],ans:0,
-   exp:'算不上 = không đáng được coi là. 看不上 là “coi thường”, không hợp; 找不上, 拿不上 không mang nghĩa đánh giá.'},
-  {wrong:'学习要____方法，不能只靠时间。',opts:['讲究','讲话','讲述','告诉'],ans:0,
-   exp:'讲究 + 方法 = chú trọng phương pháp (bảng 词语搭配). 讲话 là “phát biểu”; 讲述 là “kể lại”; 告诉 là “nói cho biết” — đều không đi với 方法 theo nghĩa này.'},
-  {wrong:'他的普通话说得非常____，一点儿也听不出是外国人。',opts:['地道','地方','道理','知道'],ans:0,
-   exp:'Nói chuẩn như người bản xứ → 地道 (tính từ, đứng sau 非常). 地方, 道理 là danh từ; 知道 là động từ.'},
-  {wrong:'这些都是宝贵的资料，应该好好儿____下来。',opts:['保存','保证','保持','保险'],ans:0,
-   exp:'Giữ lại tài liệu cho khỏi mất → 保存下来. 保证 là “bảo đảm”; 保持 là “duy trì” (保持安静); 保险 là “bảo hiểm”.'},
-  {wrong:'这____歌我听了很多遍，还是很喜欢。',opts:['首','张','本','篇'],ans:0,
-   exp:'Lượng từ của bài hát, bài thơ → 首. 张 cho vật phẳng; 本 cho sách; 篇 cho bài văn.'},
-  {wrong:'你以为这是____酒店啊，别穷讲究了。',opts:['高档','高兴','高大','高速'],ans:0,
-   exp:'Khách sạn cao cấp → 高档酒店. 高兴 là “vui”; 高大 là “to cao”; 高速 là “tốc độ cao”.'},
-  {wrong:'越南____东南亚。',opts:['位于','对于','由于','关于'],ans:0,
-   exp:'Nằm ở vị trí nào → 位于 + nơi chốn. 对于, 关于 là giới từ “đối với, về”; 由于 là “do, bởi vì”.'}
+  {wrong:'每个人都应该对____的选择负责。',opts:['自己','亲自','悄悄','立刻'],ans:0,exp:'Làm định ngữ (…的选择) — chỉ đại từ 自己 làm được. 亲自 là phó từ, chỉ đứng trước động từ; 悄悄, 立刻 cũng là phó từ.'},
+  {wrong:'爷爷年轻的时候____去过很多地方，现在还常给我们讲那时候的故事。',opts:['曾经','已经','正在','刚刚'],ans:0,exp:'Trải nghiệm thời trẻ, nay đã qua → 曾经 + V + 过. 已经 nói việc đã xong, kết quả còn đến nay, không hợp với 年轻的时候; 正在, 刚刚 sai về thời gian.'},
+  {wrong:'第一次用汉语打电话，我紧张得不知道怎么____自己的意思。',opts:['表达','表现','表演','表扬'],ans:0,exp:'Nói ra ý nghĩ bằng lời → 表达意思. 表现 là thể hiện qua hành động, thành tích; 表演 là biểu diễn; 表扬 là khen.'},
+  {wrong:'____留学生，我们更应该了解这个国家的文化。',opts:['作为','成为','对于','以为'],ans:0,exp:'Nêu thân phận ở đầu câu → 作为 + thân phận, vế sau có chủ ngữ 我们. 成为 là “trở thành” (cần chủ ngữ phía trước); 对于 là “đối với”; 以为 là “tưởng rằng”.'},
+  {wrong:'这次考试我考了八十分，在我们班____不错的了。',opts:['算','像','叫','当'],ans:0,exp:'算 + lời đánh giá = được coi là, tính là: 算不错的了. 像, 叫, 当 không mang nghĩa đánh giá như vậy.'},
+  {wrong:'你____说过今天来接我，怎么又忘了？',opts:['明明','往往','从来','纷纷'],ans:0,exp:'明明 = rõ ràng (nhấn mạnh sự thật), vế sau nêu điều trái ngược. 往往 chỉ quy luật lặp lại, không đi với 过; 从来 cần phủ định; 纷纷 cần chủ ngữ số nhiều.'},
+  {wrong:'我____不舒服，医生让我少吃辣的东西。',opts:['胃','胃口','味道','样子'],ans:0,exp:'Bộ phận cơ thể khó chịu → 胃 (dạ dày). 胃口 là cảm giác thèm ăn (không nói 胃口不舒服); 味道 là mùi vị món ăn; 样子 là dáng vẻ.'},
+  {wrong:'爸爸的胃不好，他决定从今天起____酒。',opts:['戒','除','替','摸'],ans:0,exp:'Bỏ hẳn một thói quen → 戒 (戒酒 = bỏ rượu). 除 là “trừ, diệt bỏ” (除了, 除夕), không đi với 酒; 替, 摸 không hợp nghĩa.'},
+  {wrong:'他给女朋友写了一____诗。',opts:['首','条','块','张'],ans:0,exp:'首 là lượng từ của bài thơ, bài hát: 一首诗. 条 cho vật dài; 块 cho miếng, cục; 张 cho vật phẳng.'},
+  {wrong:'我们住的酒店非常____，房间又大又漂亮，家具也都是新的。',opts:['豪华','大方','好客','老实'],ans:0,exp:'Tả nơi chốn, đồ vật sang trọng → 豪华. 大方, 好客, 老实 đều tả tính cách con người.'},
+  {wrong:'收到礼物时，我的心情真是没办法用语言来____。',opts:['形容','形象','形状','想象'],ans:0,exp:'形容 là động từ “miêu tả, diễn tả” (用语言来形容). 形象 là tính từ/danh từ; 形状 là hình dạng; 想象 là tưởng tượng.'},
+  {wrong:'她总是穿得很____，同学们都问她衣服是在哪儿买的。',opts:['时尚','时代','时刻','时期'],ans:0,exp:'穿得很时尚 = ăn mặc hợp mốt (tính từ). 时代, 时期 là danh từ chỉ giai đoạn; 时刻 là thời khắc.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1582,26 +1520,18 @@ var translateData = [
   {vi:'Rõ ràng em nhớ là đã lưu tài liệu trong máy tính rồi, sao lại không tìm thấy nhỉ?',zh:'我明明记得把资料保存在电脑里了，怎么却找不到了？',py:'Wǒ míngmíng jìde bǎ zīliào bǎocún zài diànnǎo li le, zěnme què zhǎo bu dào le?',goiY:['明明……却……','保存','资料'],giai:'明明 (rõ ràng) + sự thật, vế sau dùng 却 để nêu điều trái ngược; 保存在 + nơi chốn = lưu ở đâu.'},
   {vi:'Quán nhỏ trước cổng trường tuy chẳng sang trọng gì, nhưng bánh trái bán ở đó vừa rẻ vừa đúng vị.',zh:'学校门口那家小店虽然算不上豪华，可是卖的点心又便宜又地道。',py:'Xuéxiào ménkǒu nà jiā xiǎo diàn suīrán suàn bu shàng háohuá, kěshì mài de diǎnxin yòu piányi yòu dìdao.',goiY:['虽然……可是……','算不上','地道'],giai:'算不上 + tính từ/danh từ = chưa thể coi là, chưa tới mức; 地道 (dìdao) = chính gốc, đúng vị; 又……又…… = vừa… vừa….'},
   {vi:'Em từng nghĩ học tốt ngữ pháp là đủ, về sau mới nhận ra chỉ có đọc nhiều viết nhiều thì khả năng viết văn mới thật sự tiến bộ.',zh:'我曾经以为学好语法就够了，后来才发现，只有多读多写，写作水平才能真正提高。',py:'Wǒ céngjīng yǐwéi xué hǎo yǔfǎ jiù gòu le, hòulái cái fāxiàn, zhǐyǒu duō dú duō xiě, xiězuò shuǐpíng cái néng zhēnzhèng tígāo.',goiY:['曾经','只有……才……','写作'],giai:'曾经 + động từ = đã từng (nay không còn thế); 只有 + điều kiện duy nhất, 才 + kết quả — không dùng 就 sau 只有.'},
-  {vi:'Cô em rất cầu kỳ chuyện ăn mặc; tuy không chạy theo hàng hiệu cao cấp nhưng lúc nào cô cũng ăn mặc rất hợp mốt.',zh:'我姑姑对穿衣服特别讲究，她虽然不追求高档品牌，却总能穿得很时尚。',py:'Wǒ gūgu duì chuān yīfu tèbié jiǎngjiu, tā suīrán bù zhuīqiú gāodàng pǐnpái, què zǒng néng chuān de hěn shíshàng.',goiY:['讲究','虽然……却……','高档','时尚'],giai:'对 + lĩnh vực + 讲究 = cầu kỳ, kỹ tính về…; 却 đứng sau chủ ngữ, trước động từ, không đứng đầu vế như 但是.'},
-  {vi:'Kỳ thi này điểm trung bình của lớp em được coi là cao nhất khối, đủ thấy công sức cả lớp bỏ ra học kỳ này không uổng phí.',zh:'这次考试我们班的平均分算是全年级最高的，可见大家这学期的努力没有白费。',py:'Zhè cì kǎoshì wǒmen bān de píngjūn fēn suàn shì quán niánjí zuì gāo de, kějiàn dàjiā zhè xuéqī de nǔlì méiyǒu báifèi.',goiY:['算是','平均','可见'],giai:'A 算是 B = A được coi là B (đánh giá tương đối); 可见 = đủ thấy, rút kết luận từ sự việc ở vế trước.'},
   {vi:'Mấy hôm nay em ăn không ngon miệng, món mẹ nấu em chẳng nuốt nổi miếng nào, mẹ đành bảo: “Thôi, muốn ăn gì thì tự gọi đồ ăn ngoài đi.”',zh:'这几天我胃口不好，妈妈做的菜我一口也吃不下，她只好说：“算了，想吃什么自己点外卖吧。”',py:'Zhè jǐ tiān wǒ wèikǒu bù hǎo, māma zuò de cài wǒ yì kǒu yě chī bu xià, tā zhǐhǎo shuō: “Suàn le, xiǎng chī shénme zìjǐ diǎn wàimài ba.”',goiY:['胃口不好','一……也……','只好','算了'],giai:'一 + lượng từ + 也 + phủ định = không… chút nào (一口也吃不下); 只好 = đành; 算了 = thôi, cho qua.'},
-  {vi:'Là một người Bắc Kinh chính gốc, cậu em không những thuộc từng con ngõ mà còn có những nhận xét rất riêng về đồ ăn vặt Bắc Kinh.',zh:'作为一个地道的北京人，舅舅不但熟悉每一条胡同，而且对北京小吃也很有自己的见解。',py:'Zuòwéi yí ge dìdao de Běijīngrén, jiùjiu búdàn shúxī měi yì tiáo hútòng, érqiě duì Běijīng xiǎochī yě hěn yǒu zìjǐ de jiànjiě.',goiY:['作为','不但……而且……','胡同','见解'],giai:'作为 + thân phận ở đầu câu (với tư cách là…), chủ ngữ 舅舅 đứng sau dấu phẩy; 有见解 = có cách nhìn riêng, sâu sắc.'},
-  {vi:'Mẹ em hào phóng, mến khách; mỗi lần em rủ rê bạn bè đến nhà chơi, mẹ chẳng những không ngại phiền mà còn đích thân vào bếp đãi mọi người.',zh:'妈妈大方好客，每当我呼朋唤友来家里玩，她不但不嫌麻烦，反而亲自下厨招待大家。',py:'Māma dàfang hàokè, měi dāng wǒ hūpéng-huànyǒu lái jiā li wán, tā búdàn bù xián máfan, fǎn\'ér qīnzì xiàchú zhāodài dàjiā.',goiY:['不但不……反而……','呼朋唤友','亲自','招待'],giai:'不但不 A，反而 B = chẳng những không A mà ngược lại còn B; 大方 (dàfang) ở đây = hào phóng, không phải “rộng rãi” về diện tích.'},
-  {vi:'Đã coi việc trở thành nhà văn là mục tiêu thì em không thể chỉ đọc tiểu thuyết mạng, mà còn phải quan sát cuộc sống nhiều hơn, nếu không nhân vật dưới ngòi bút của em khó mà sống động được.',zh:'既然你把成为作家作为目标，就不能只看网络小说，还应该多观察生活，否则笔下的人物很难写得形象。',py:'Jìrán nǐ bǎ chéngwéi zuòjiā zuòwéi mùbiāo, jiù bù néng zhǐ kàn wǎngluò xiǎoshuō, hái yīnggāi duō guānchá shēnghuó, fǒuzé bǐ xià de rénwù hěn nán xiě de xíngxiàng.',goiY:['既然……就……','把……作为……','否则','形象'],giai:'把 A 作为 B = lấy A làm B, coi A là B; 否则 = nếu không thì, nêu hậu quả. 形象 ở đây là tính từ: sinh động, sống động.'}
+  {vi:'Là một người Bắc Kinh chính gốc, cậu em không những thuộc từng con ngõ mà còn có những nhận xét rất riêng về đồ ăn vặt Bắc Kinh.',zh:'作为一个地道的北京人，舅舅不但熟悉每一条胡同，而且对北京小吃也很有自己的见解。',py:'Zuòwéi yí ge dìdao de Běijīngrén, jiùjiu búdàn shúxī měi yì tiáo hútòng, érqiě duì Běijīng xiǎochī yě hěn yǒu zìjǐ de jiànjiě.',goiY:['作为','不但……而且……','胡同','见解'],giai:'作为 + thân phận ở đầu câu (với tư cách là…), chủ ngữ 舅舅 đứng sau dấu phẩy; 有见解 = có cách nhìn riêng, sâu sắc.'}
 ];
 
-// Chiều Trung → Việt — câu của bài đọc
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
   {vi:'Lỗ Tấn không chỉ là nhà văn nổi tiếng thời cận đại mà còn là một người sành ăn thực thụ.',zh:'鲁迅不仅是近代著名的文学家，还是一位地道的美食行家。',py:'Lǔ Xùn bùjǐn shì jìndài zhùmíng de wénxuéjiā, hái shì yí wèi dìdao de měishí hángjia.',goiY:['不仅……还…… = không chỉ… mà còn…','地道 = chính cống, thực thụ','行家 = người sành'],giai:'不仅……还…… nối hai thân phận theo kiểu tăng tiến; 行家 = người trong nghề, người sành → dịch theo ngữ cảnh “người sành ăn”.'},
-  {vi:'Lỗ Tấn rất cầu kỳ chuyện ăn uống, vì thế ông có cách nhìn độc đáo của riêng mình về rất nhiều món ngon.',zh:'鲁迅对吃很讲究，因此对许多美食都有自己独特的见解。',py:'Lǔ Xùn duì chī hěn jiǎngjiu, yīncǐ duì xǔduō měishí dōu yǒu zìjǐ dútè de jiànjiě.',goiY:['因此 = vì thế','讲究 = cầu kỳ, chú trọng','见解 = cách nhìn, quan điểm'],giai:'因此 nêu kết quả (văn viết hơn 所以); 对……有见解 = có cách nhìn/quan điểm về…'},
-  {vi:'Nhật ký của Lỗ Tấn ghi lại tên mấy chục nhà hàng, đủ thấy hồi sống ở Bắc Kinh ông từng là khách quen của các quán ăn.',zh:'鲁迅的日记里记载了几十家饭馆的名字，可见他在北京生活时曾经是饭馆的常客。',py:'Lǔ Xùn de rìjì li jìzǎi le jǐ shí jiā fànguǎn de míngzi, kějiàn tā zài Běijīng shēnghuó shí céngjīng shì fànguǎn de chángkè.',goiY:['记载 = ghi chép lại','可见 = đủ thấy','曾经 = đã từng'],giai:'可见 rút ra kết luận từ bằng chứng ở vế trước → “đủ thấy”; 曾经 chỉ việc đã qua, dịch “từng”.'},
   {vi:'Quảng Hòa Cư nằm gần Thái Thị Khẩu, rất gần con ngõ Lỗ Tấn ở lúc bấy giờ, vì vậy trở thành quán ăn ông hay lui tới.',zh:'广和居位于菜市口附近，离鲁迅当时住的胡同很近，所以成了他经常光临的饭馆。',py:'Guǎnghéjū wèiyú Càishìkǒu fùjìn, lí Lǔ Xùn dāngshí zhù de hútòng hěn jìn, suǒyǐ chéng le tā jīngcháng guānglín de fànguǎn.',goiY:['位于 = nằm ở','所以 = vì vậy','光临 = ghé tới (kính ngữ)'],giai:'位于 + địa điểm = nằm ở (văn viết); 光临 là từ kính trọng chỉ khách đến, dịch “lui tới, ghé”.'},
   {vi:'Món ăn ở đó vừa có loại cao cấp, vừa có loại dân thường ăn được, vì thế Lỗ Tấn hay đãi bạn bè ở đó.',zh:'那里的菜既有高档的，也有普通老百姓吃得起的，因此鲁迅常在那里招待朋友。',py:'Nàli de cài jì yǒu gāodàng de, yě yǒu pǔtōng lǎobǎixìng chī de qǐ de, yīncǐ Lǔ Xùn cháng zài nàli zhāodài péngyou.',goiY:['既……也…… = vừa… vừa…','高档 = cao cấp','招待 = chiêu đãi, thết đãi'],giai:'既……也…… liệt kê hai loại song song; 吃得起 = đủ tiền để ăn (bổ ngữ khả năng), dịch “ăn được, ăn nổi”.'},
-  {vi:'Lỗ Tấn thích giao du, hào phóng và mến khách; hễ có bánh trái ngon là ông lại rủ rê bạn bè cùng thưởng thức.',zh:'鲁迅爱好交际，大方好客，只要有好吃的点心，他总是要呼朋唤友一起分享。',py:'Lǔ Xùn àihào jiāojì, dàfang hàokè, zhǐyào yǒu hǎochī de diǎnxin, tā zǒngshì yào hūpéng-huànyǒu yìqǐ fēnxiǎng.',goiY:['只要……总是…… = hễ… là…','大方好客 = hào phóng, mến khách','呼朋唤友 = rủ rê bạn bè'],giai:'只要 + điều kiện, 总是 + thói quen → “hễ… là…”; 爱好交际 = thích giao du, không dịch “yêu thích xã giao”.'},
-  {vi:'Là người miền Nam, vậy mà Lỗ Tấn lại đặc biệt thích bánh ngọt của tiệm Đạo Hương Thôn ở Bắc Kinh, thường mua một lần là mấy hộp liền.',zh:'作为一个南方人，鲁迅却特别爱吃北京稻香村的点心，常常一买就是好几盒。',py:'Zuòwéi yí ge nánfāngrén, Lǔ Xùn què tèbié ài chī Běijīng Dàoxiāngcūn de diǎnxin, chángcháng yì mǎi jiù shì hǎo jǐ hé.',goiY:['作为 = là, với tư cách là','却 = lại, vậy mà','一……就是…… = một lần… là…'],giai:'作为 + thân phận nêu tiền đề, 却 cho thấy điều trái kỳ vọng (người miền Nam mà mê bánh Bắc Kinh); 一买就是好几盒 nhấn mạnh số lượng nhiều.'},
-  {vi:'Lỗ Tấn biết rõ dạ dày mình không tốt, bác sĩ cũng khuyên ông bỏ thuốc bỏ rượu, thế nhưng ông bỏ mãi không được.',zh:'鲁迅明明知道自己胃不好，医生也劝他戒烟戒酒，可他却怎么也戒不掉。',py:'Lǔ Xùn míngmíng zhīdào zìjǐ wèi bù hǎo, yīshēng yě quàn tā jiè yān jiè jiǔ, kě tā què zěnme yě jiè bu diào.',goiY:['明明……却…… = rõ ràng… mà vẫn…','戒不掉 = bỏ không được'],giai:'明明 nêu sự thật hiển nhiên, 却 nêu hành động trái ngược; 戒不掉 là bổ ngữ khả năng phủ định = không bỏ được.'},
-  {vi:'Năm 1933, Úc Đạt Phu từng làm thơ miêu tả Lỗ Tấn; tuy chỉ vỏn vẹn vài câu nhưng đã khắc họa hình ảnh ông vô cùng sống động.',zh:'1933年郁达夫曾经写诗形容鲁迅，虽然只有短短几句，却把他的形象描写得非常生动。',py:'Yī jiǔ sān sān nián Yù Dáfū céngjīng xiě shī xíngróng Lǔ Xùn, suīrán zhǐ yǒu duǎnduǎn jǐ jù, què bǎ tā de xíngxiàng miáoxiě de fēicháng shēngdòng.',goiY:['曾经 = đã từng','虽然……却…… = tuy… nhưng…','形象 = hình ảnh'],giai:'形象 ở đây là danh từ (hình ảnh, hình tượng), khác với tính từ “sinh động”; 却 nối vế trái ngược, dịch “nhưng”.'},
-  {vi:'Nhiều người chỉ coi Lỗ Tấn là một nhà văn nghiêm nghị mà không biết ông cũng là người bình thường biết ăn biết chơi; đủ thấy hiểu biết của chúng ta về người nổi tiếng thường rất phiến diện.',zh:'很多人把鲁迅作为严肃的文学家来看，却不知道他也是个懂吃会玩的普通人，可见我们对名人的了解常常很片面。',py:'Hěn duō rén bǎ Lǔ Xùn zuòwéi yánsù de wénxuéjiā lái kàn, què bù zhīdào tā yě shì ge dǒng chī huì wán de pǔtōngrén, kějiàn wǒmen duì míngrén de liǎojiě chángcháng hěn piànmiàn.',goiY:['把……作为……来看 = coi… là…','却 = mà lại','可见 = đủ thấy'],giai:'把 A 作为 B (来看) = coi A là B; 可见 rút ra nhận xét chung từ ví dụ Lỗ Tấn → “đủ thấy”.'}
+  {vi:'Lỗ Tấn thích giao du, hào phóng và mến khách; hễ có bánh trái ngon là ông lại rủ rê bạn bè đến cùng nếm thử.',zh:'鲁迅爱好交际，大方好客，只要有好吃的点心，他总是要呼朋唤友一起来尝尝。',py:'Lǔ Xùn àihào jiāojì, dàfang hàokè, zhǐyào yǒu hǎochī de diǎnxin, tā zǒngshì yào hūpéng-huànyǒu yìqǐ lái chángchang.',goiY:['只要……总是…… = hễ… là…','大方好客 = hào phóng, mến khách','呼朋唤友 = rủ rê bạn bè'],giai:'只要 + điều kiện, 总是 + thói quen → “hễ… là…”; 爱好交际 = thích giao du, không dịch “yêu thích xã giao”.'},
+  {vi:'Lỗ Tấn biết rõ dạ dày mình không tốt, bác sĩ cũng dặn ông đừng uống rượu nữa, thế nhưng ông bỏ mãi không được.',zh:'鲁迅明明知道自己胃不好，医生也让他别再喝酒了，可他却怎么也戒不掉。',py:'Lǔ Xùn míngmíng zhīdào zìjǐ wèi bù hǎo, yīshēng yě ràng tā bié zài hē jiǔ le, kě tā què zěnme yě jiè bu diào.',goiY:['明明……却…… = rõ ràng… mà vẫn…','戒不掉 = bỏ không được'],giai:'明明 nêu sự thật hiển nhiên, 却 nêu hành động trái ngược; 戒不掉 là bổ ngữ khả năng phủ định = không bỏ được.'},
+  {vi:'Năm 1933, Úc Đạt Phu từng làm thơ miêu tả Lỗ Tấn; tuy chỉ vỏn vẹn vài câu nhưng đã khắc họa hình ảnh ông vô cùng sống động.',zh:'1933年郁达夫曾经写诗形容鲁迅，虽然只有短短几句，却把他的形象描写得非常生动。',py:'Yī jiǔ sān sān nián Yù Dáfū céngjīng xiě shī xíngróng Lǔ Xùn, suīrán zhǐ yǒu duǎnduǎn jǐ jù, què bǎ tā de xíngxiàng miáoxiě de fēicháng shēngdòng.',goiY:['曾经 = đã từng','虽然……却…… = tuy… nhưng…','形象 = hình ảnh'],giai:'形象 ở đây là danh từ (hình ảnh, hình tượng), khác với tính từ “sinh động”; 却 nối vế trái ngược, dịch “nhưng”.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1665,30 +1595,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — 3 câu đầu là đáp án 29–31 của sách bài tập
   sapXep:[
-    {manh:['戒了酒','他','而','因为胃病'],
-     dap:'他因为胃病而戒了酒。',
-     vn:'Anh ấy vì bệnh dạ dày mà bỏ rượu.',
-     giai:'因为……而…… (văn viết): chủ ngữ 他 → 因为 + nguyên nhân → 而 + kết quả. 而 luôn đứng ngay trước vế kết quả.'},
-    {manh:['传统点心','你快','这地道的','尝尝'],
-     dap:'你快尝尝这地道的传统点心。',
-     vn:'Cậu mau nếm thử món bánh truyền thống chính gốc này đi.',
-     giai:'Chủ ngữ + 快 + động từ lặp 尝尝 + tân ngữ. Định ngữ 这地道的 đứng trước danh từ 传统点心.'},
-    {manh:['要招待','一次客人','他平均','每两个星期'],
-     dap:'他平均每两个星期要招待一次客人。',
-     vn:'Trung bình cứ hai tuần anh ấy lại tiếp khách một lần.',
-     giai:'平均 + 每 + thời gian đứng trước động từ; số lần 一次 đứng giữa động từ và tân ngữ: 招待一次客人.'},
-    {manh:['在北京','曾经','这位作家','生活过'],
-     dap:'这位作家曾经在北京生活过。', chap:['这位作家在北京曾经生活过。'],
-     vn:'Nhà văn này từng sống ở Bắc Kinh.',
-     giai:'Chủ ngữ → 曾经 → 在 + nơi chốn → V + 过. 曾经 thường đứng trước cụm giới từ.'},
-    {manh:['算不上','这家餐馆','但菜很地道','豪华，'],
-     dap:'这家餐馆算不上豪华，但菜很地道。',
-     vn:'Nhà hàng này không thể coi là sang trọng, nhưng món ăn rất chuẩn vị.',
-     giai:'A + 算不上 + B: A không đáng được coi là B. Vế sau có 但 lật lại.'},
-    {manh:['作为','我们','应该好好学习','学生，'],
-     dap:'作为学生，我们应该好好学习。',
-     vn:'Là học sinh, chúng ta nên học hành chăm chỉ.',
-     giai:'作为 + thân phận đứng đầu câu, vế sau có chủ ngữ 我们 — chính là 学生.'}
+    {manh:['戒了酒','他','而','因为胃病'],dap:'他因为胃病而戒了酒。',vn:'Anh ấy vì bệnh dạ dày mà bỏ rượu.',giai:'因为……而…… (văn viết): chủ ngữ 他 → 因为 + nguyên nhân → 而 + kết quả. 而 luôn đứng ngay trước vế kết quả.'},
+    {manh:['北京点心','你快','这地道的','尝尝'],dap:'你快尝尝这地道的北京点心。',vn:'Cậu mau nếm thử món bánh Bắc Kinh chính gốc này đi.',giai:'Chủ ngữ + 快 + động từ lặp 尝尝 + tân ngữ. Định ngữ 这地道的 đứng trước danh từ 北京点心.'},
+    {manh:['要招待','一次客人','他平均','每两个星期'],dap:'他平均每两个星期要招待一次客人。',vn:'Trung bình cứ hai tuần anh ấy lại tiếp khách một lần.',giai:'平均 + 每 + thời gian đứng trước động từ; số lần 一次 đứng giữa động từ và tân ngữ: 招待一次客人.'},
+    {manh:['在北京','曾经','这位作家','生活过'],dap:'这位作家曾经在北京生活过。',chap:['这位作家在北京曾经生活过。'],vn:'Nhà văn này từng sống ở Bắc Kinh.',giai:'Chủ ngữ → 曾经 → 在 + nơi chốn → V + 过. 曾经 thường đứng trước cụm giới từ.'},
+    {manh:['算不上','这家餐馆','但菜很地道','豪华，'],dap:'这家餐馆算不上豪华，但菜很地道。',vn:'Nhà hàng này không thể coi là sang trọng, nhưng món ăn rất chuẩn vị.',giai:'A + 算不上 + B: A không đáng được coi là B. Vế sau có 但 lật lại.'},
+    {manh:['作为','我们','应该好好学习','学生，'],dap:'作为学生，我们应该好好学习。',vn:'Là học sinh, chúng ta nên học hành chăm chỉ.',giai:'作为 + thân phận đứng đầu câu, vế sau có chủ ngữ 我们 — chính là 学生.'}
   ]
 };
 
@@ -1698,30 +1610,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 作为 · 曾经 · 算 · 讲究 · 地道 · 招待 · 胃口.',
   questions:[
-    {q_zh:'你喜欢的名人是谁？简单介绍一下有关他/她的情况。',
-     q_vn:'Người nổi tiếng em thích là ai? Giới thiệu ngắn gọn về người đó.',
-     hint:'Dùng 作为…… + 曾经……',
-     sample:'我喜欢的名人是鲁迅。作为中国著名的文学家，他写了《呐喊》和《彷徨》。他曾经在日本学过医。',
-     sample_vn:'Người nổi tiếng tôi thích là Lỗ Tấn. Là nhà văn nổi tiếng của Trung Quốc, ông đã viết “Gào thét” và “Bàng hoàng”. Ông từng học y ở Nhật Bản.',
-     note:'Câu hỏi trong phần 讨论话题 của sách — nói thành đoạn 3–4 câu: là ai → thân phận → một chuyện nổi bật.'},
-    {q_zh:'你如何评价他/她？你喜欢他/她的理由是什么？',
-     q_vn:'Em đánh giá người đó thế nào? Lý do em thích người đó là gì?',
-     hint:'Dùng 我觉得…… + 因为……',
-     sample:'我觉得他不但是个大作家，而且是个很真实的人。因为他也爱吃、爱交朋友，一点儿也不像课本里那么严肃。',
-     sample_vn:'Tôi thấy ông không những là nhà văn lớn mà còn là một người rất thật. Vì ông cũng thích ăn, thích kết bạn, chẳng hề nghiêm nghị như trong sách giáo khoa.',
-     note:'如何评价 = đánh giá thế nào (如何 — bài 1). Phải nêu LÝ DO cụ thể.'},
-    {q_zh:'你跟朋友聚会时常常去哪儿？为什么？',
-     q_vn:'Khi tụ tập với bạn bè em hay đi đâu? Vì sao?',
-     hint:'Dùng 算不上……，但…… / 平均……',
-     sample:'我们常去学校附近的一家小饭馆。那儿算不上豪华，但菜很地道，价格也便宜，我们平均每个月去两次。',
-     sample_vn:'Chúng tôi hay đến một quán nhỏ gần trường. Ở đó không thể coi là sang trọng, nhưng món ăn rất chuẩn vị, giá lại rẻ, trung bình mỗi tháng chúng tôi đến hai lần.',
-     note:'Câu hỏi này giống phần khởi động 热身 2 của sách — nêu địa điểm + hoạt động + lý do.'},
-    {q_zh:'你对吃讲究吗？说说你最喜欢的一道菜。',
-     q_vn:'Em có cầu kỳ chuyện ăn không? Kể về món ăn em thích nhất.',
-     hint:'Dùng 讲究 / 地道 / 让人有胃口',
-     sample:'我对吃不太讲究，但是很喜欢妈妈做的鱼汤。每次一闻到那个味道，就让人特别有胃口。',
-     sample_vn:'Tôi không cầu kỳ chuyện ăn lắm, nhưng rất thích món canh cá mẹ nấu. Mỗi lần ngửi thấy mùi là thấy rất thèm ăn.',
-     note:'Trả lời “có / không” xong phải có VÍ DỤ cụ thể thì mới đủ ý.'}
+    {q_zh:'你喜欢的名人是谁？简单介绍一下有关他/她的情况。',q_vn:'Người nổi tiếng em thích là ai? Giới thiệu ngắn gọn về người đó.',hint:'Dùng 作为…… + 曾经……',sample:'我最喜欢的名人是一位越南作家。作为作家，她写的小说年轻人都很喜欢。她曾经一个人去国外留学，吃了很多苦。',sample_vn:'Người nổi tiếng tôi thích nhất là một nữ nhà văn Việt Nam. Là nhà văn, tiểu thuyết bà viết rất được giới trẻ yêu thích. Bà từng một mình đi du học nước ngoài, chịu nhiều vất vả.',note:'Câu hỏi trong phần thảo luận của sách — nói thành đoạn 3–4 câu: là ai → thân phận → một chuyện nổi bật.'},
+    {q_zh:'你觉得他/她是一个什么样的人？你为什么喜欢他/她？',q_vn:'Em thấy người đó là người thế nào? Vì sao em thích người đó?',hint:'Dùng 我觉得…… + 因为……',sample:'我觉得她不但很有本领，而且对人很诚恳，从来不骄傲。我喜欢她，是因为她的经历让我明白，一个人只要不放弃，就能改变自己的生活。',sample_vn:'Tôi thấy bà không những rất tài giỏi mà còn chân thành với mọi người, chưa bao giờ kiêu ngạo. Tôi thích bà vì những trải nghiệm của bà giúp tôi hiểu rằng chỉ cần không bỏ cuộc thì con người có thể thay đổi cuộc sống của mình.',note:'Phải nêu LÝ DO cụ thể — đừng chỉ nói “người đó rất tốt”.'},
+    {q_zh:'你跟朋友聚会时常常去哪儿？为什么？',q_vn:'Khi tụ tập với bạn bè em hay đi đâu? Vì sao?',hint:'Dùng 平均…… / 地道',sample:'我们常去学校后面的一家小饭馆。那里环境一般，可是做的北方菜很地道，价格也便宜，我们平均每个月要去两三次。',sample_vn:'Chúng tôi hay đến một quán nhỏ phía sau trường. Không gian ở đó bình thường, nhưng món miền Bắc nấu rất chuẩn vị, giá lại rẻ, trung bình mỗi tháng chúng tôi đến hai ba lần.',note:'Giống phần khởi động của sách — nêu địa điểm + hoạt động + lý do.'},
+    {q_zh:'你对吃讲究吗？说说你最喜欢的一道菜。',q_vn:'Em có cầu kỳ chuyện ăn không? Kể về món ăn em thích nhất.',hint:'Dùng 讲究 / 地道 / 让人有胃口',sample:'我对吃不太讲究，但是很喜欢妈妈做的鱼汤。每次回家，只要桌子上有这个汤，我就特别有胃口。',sample_vn:'Tôi không cầu kỳ chuyện ăn lắm, nhưng rất thích món canh cá mẹ nấu. Mỗi lần về nhà, hễ trên bàn có món canh này là tôi ăn rất ngon miệng.',note:'Trả lời “có / không” xong phải có VÍ DỤ cụ thể thì mới đủ ý.'}
   ]
 };
 
@@ -1813,45 +1705,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn rủ em đi ăn mừng sinh nhật, hỏi ý em về một quán gần trường.',
-     a:{sp:'Bạn',zh:'学校旁边那家饭馆怎么样？环境好吗？',vn:'Quán gần trường thế nào? Không gian có đẹp không?'},
-     need:['Dùng 算不上……，但……','Khen một điểm CỤ THỂ của quán'],
-     sample:'那家饭馆算不上豪华，但菜很地道，而且很适合朋友聚会。',
-     samplePy:'Nà jiā fànguǎn suàn bu shàng háohuá, dàn cài hěn dìdao, érqiě hěn shìhé péngyou jùhuì.',
-     sampleVn:'Quán đó không thể coi là sang trọng, nhưng món ăn rất chuẩn vị, lại rất hợp để bạn bè tụ tập.',
-     tip:'算不上 + tính từ/danh từ. Đừng viết 不算上豪华 — sai trật tự.'},
-
-    {scene:'Cô giáo hỏi em về một người nổi tiếng em thích.',
-     a:{sp:'Cô',zh:'你最喜欢哪位名人？能介绍一下吗？',vn:'Em thích nhất người nổi tiếng nào? Giới thiệu cô nghe được không?'},
-     need:['Dùng 作为','Dùng 曾经 kể một chuyện trong quá khứ'],
-     sample:'我最喜欢鲁迅。作为一位大作家，他曾经说过，他是把别人喝咖啡的时间都用在了学习上。',
-     samplePy:'Wǒ zuì xǐhuan Lǔ Xùn. Zuòwéi yí wèi dà zuòjiā, tā céngjīng shuōguo, tā shì bǎ biérén hē kāfēi de shíjiān dōu yòng zài le xuéxí shang.',
-     sampleVn:'Em thích nhất Lỗ Tấn. Là một nhà văn lớn, ông từng nói ông đem thời gian người khác uống cà phê dùng hết vào việc học.',
-     tip:'作为 + thân phận xong, vế sau phải có chủ ngữ đúng là người đó (他), đừng đổi sang chủ ngữ khác.'},
-
-    {scene:'Em thấy bố lại cầm điếu thuốc dù bác sĩ đã dặn phải bỏ.',
-     a:{sp:'Bố',zh:'就抽一根，没关系的。',vn:'Hút một điếu thôi, không sao đâu.'},
-     need:['Dùng 明明','Dùng 戒'],
-     sample:'爸爸，您明明知道自己胃不好，医生也让您戒烟，怎么又抽上了？',
-     samplePy:'Bàba, nín míngmíng zhīdào zìjǐ wèi bù hǎo, yīshēng yě ràng nín jiè yān, zěnme yòu chōushang le?',
-     sampleVn:'Bố ơi, bố biết rõ dạ dày mình không tốt, bác sĩ cũng bảo bố bỏ thuốc, sao lại hút nữa?',
-     tip:'明明 + sự thật, vế sau nêu điều trái ngược. Nói với bố mẹ dùng 您 cho lễ phép.'},
-
-    {scene:'Bạn nước ngoài đến nhà em chơi lần đầu, cảm ơn cả nhà.',
-     a:{sp:'Bạn',zh:'谢谢你们！今天的菜太好吃了。',vn:'Cảm ơn cả nhà! Món ăn hôm nay ngon quá.'},
-     need:['Dùng 招待 hoặc 光临','Giữ giọng khách sáo, lịch sự'],
-     sample:'不客气，欢迎你常来！要是招待得不好，请多原谅。',
-     samplePy:'Bú kèqi, huānyíng nǐ cháng lái! Yàoshi zhāodài de bù hǎo, qǐng duō yuánliàng.',
-     sampleVn:'Không có gì, chào mừng cậu thường xuyên ghé chơi! Nếu tiếp đãi chưa chu đáo thì bỏ quá cho nhé.',
-     tip:'Người Trung Quốc hay khiêm tốn: 招待不周 / 招待得不好. Không nói 你光临得很好 — 光临 không đi với bổ ngữ như vậy.'},
-
-    {scene:'Bạn rủ đi ăn lẩu cay nhưng em đang đau dạ dày.',
-     a:{sp:'Bạn',zh:'晚上一起去吃火锅吧！',vn:'Tối nay đi ăn lẩu nhé!'},
-     need:['Dùng 胃 và 胃口','Từ chối khéo, hẹn lần khác'],
-     sample:'真不好意思，我这几天胃不太舒服，吃什么都没胃口。下次吧！',
-     samplePy:'Zhēn bù hǎoyìsi, wǒ zhè jǐ tiān wèi bú tài shūfu, chī shénme dōu méi wèikǒu. Xià cì ba!',
-     sampleVn:'Thật ngại quá, mấy hôm nay dạ dày tớ không ổn, ăn gì cũng không thấy ngon. Để lần sau nhé!',
-     tip:'胃 là dạ dày, 胃口 là cảm giác thèm ăn — đừng dùng lẫn: ✗ 我胃口疼.'}
+    {scene:'Bạn hỏi em về căn phòng trọ em mới thuê.',a:{sp:'Bạn',zh:'你新租的房子怎么样？大不大？',vn:'Phòng cậu mới thuê thế nào? Có rộng không?'},need:['Dùng 算不上……，但……','Nêu một ưu điểm CỤ THỂ'],sample:'房子算不上大，但是离公司很近，走路十分钟就到。',samplePy:'Fángzi suàn bu shàng dà, dànshì lí gōngsī hěn jìn, zǒulù shí fēnzhōng jiù dào.',sampleVn:'Phòng thì không thể gọi là rộng, nhưng gần công ty, đi bộ mười phút là tới.',tip:'算不上 + tính từ/danh từ. Đừng viết 不算上大 — sai trật tự.'},
+    {scene:'Cô giáo hỏi em về một người nổi tiếng em thích.',a:{sp:'Cô',zh:'你最喜欢哪位名人？能介绍一下吗？',vn:'Em thích nhất người nổi tiếng nào? Giới thiệu cô nghe được không?'},need:['Dùng 作为','Dùng 曾经 kể một chuyện trong quá khứ'],sample:'我最喜欢鲁迅。作为一位大作家，他曾经说过，他是把别人喝咖啡的时间都用在了学习上。',samplePy:'Wǒ zuì xǐhuan Lǔ Xùn. Zuòwéi yí wèi dà zuòjiā, tā céngjīng shuōguo, tā shì bǎ biérén hē kāfēi de shíjiān dōu yòng zài le xuéxí shang.',sampleVn:'Em thích nhất Lỗ Tấn. Là một nhà văn lớn, ông từng nói ông đem thời gian người khác uống cà phê dùng hết vào việc học.',tip:'作为 + thân phận xong, vế sau phải có chủ ngữ đúng là người đó (他), đừng đổi sang chủ ngữ khác.'},
+    {scene:'Em thấy bố lại rót rượu dù bác sĩ đã dặn phải bỏ.',a:{sp:'Bố',zh:'就喝一杯，没关系的。',vn:'Uống một ly thôi, không sao đâu.'},need:['Dùng 明明','Dùng 戒'],sample:'爸爸，医生明明说过您的胃不能再喝酒了，您怎么还喝？快把酒戒了吧！',samplePy:'Bàba, yīshēng míngmíng shuōguo nín de wèi bù néng zài hē jiǔ le, nín zěnme hái hē? Kuài bǎ jiǔ jiè le ba!',sampleVn:'Bố ơi, bác sĩ đã nói rõ là dạ dày bố không được uống rượu nữa, sao bố vẫn uống? Bố bỏ rượu nhanh đi!',tip:'明明 + sự thật, vế sau nêu điều trái ngược. Nói với bố mẹ dùng 您 cho lễ phép.'},
+    {scene:'Bạn nước ngoài đến nhà em chơi lần đầu, cảm ơn cả nhà.',a:{sp:'Bạn',zh:'今天的菜太好吃了，真是麻烦你们了！',vn:'Món ăn hôm nay ngon quá, thật làm phiền cả nhà rồi!'},need:['Dùng 招待 hoặc 光临','Giữ giọng khách sáo, lịch sự'],sample:'不麻烦，欢迎你常来！要是招待得不好，请多原谅。',samplePy:'Bù máfan, huānyíng nǐ cháng lái! Yàoshi zhāodài de bù hǎo, qǐng duō yuánliàng.',sampleVn:'Không phiền gì đâu, chào mừng cậu thường xuyên ghé chơi! Nếu tiếp đãi chưa chu đáo thì bỏ quá cho nhé.',tip:'Người Trung Quốc hay khiêm tốn: 招待不周 / 招待得不好. Không nói 你光临得很好 — 光临 không đi với bổ ngữ như vậy.'},
+    {scene:'Bạn rủ đi ăn lẩu cay nhưng em đang đau dạ dày.',a:{sp:'Bạn',zh:'晚上一起去吃火锅吧！',vn:'Tối nay đi ăn lẩu nhé!'},need:['Dùng 胃 và 胃口','Từ chối khéo, hẹn lần khác'],sample:'对不起啊，我这几天胃疼，一点儿胃口都没有，下次我请你吧！',samplePy:'Duìbuqǐ a, wǒ zhè jǐ tiān wèi téng, yìdiǎnr wèikǒu dōu méiyǒu, xià cì wǒ qǐng nǐ ba!',sampleVn:'Xin lỗi nhé, mấy hôm nay tớ đau dạ dày, chẳng thấy muốn ăn gì cả, lần sau tớ mời cậu nhé!',tip:'胃 là dạ dày, 胃口 là cảm giác thèm ăn — đừng dùng lẫn: không nói 我胃口疼.'}
   ]
 };
 
@@ -1862,29 +1720,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Nhân viên nhà hàng chào khách ở cửa.',
-     a:'欢迎光临！',b:'你来了！',better:'a',
-     why:'光临 là lời kính trọng dành cho KHÁCH — đúng vai nhân viên phục vụ. 你来了 chỉ dùng với người quen.'},
-
-    {scene:'Em viết bài giới thiệu địa điểm cho tạp chí du lịch.',
-     a:'广和居就在菜市口旁边。',b:'广和居位于菜市口附近。',better:'b',
-     why:'位于 là cách nói VĂN VIẾT, trang trọng — hợp với bài giới thiệu. 就在……旁边 là khẩu ngữ.'},
-
-    {scene:'Em nhắn tin rủ bạn thân đi ăn cuối tuần.',
-     a:'周末去那家店吃吧，菜挺地道的！',b:'周末我们前往该店用餐，其菜品十分地道。',better:'a',
-     why:'Câu b dùng 前往, 该店, 用餐, 其 — giọng văn công văn, nhắn bạn thân nghe rất buồn cười. Khẩu ngữ thân mật dùng câu a.'},
-
-    {scene:'Lớp em mời thầy hiệu trưởng dự buổi văn nghệ.',
-     a:'希望您能亲自来参加我们的活动。',b:'你自己来参加吧。',better:'a',
-     why:'Mời người có địa vị cao → 您 + 亲自, thể hiện sự tôn trọng (đúng phần 词语辨析 của bài). Câu b nghe như ra lệnh.'},
-
-    {scene:'Em viết bài thuyết trình lịch sử về Lỗ Tấn.',
-     a:'鲁迅那会儿特爱喝酒。',b:'鲁迅生前十分爱喝酒。',better:'b',
-     why:'那会儿, 特 là khẩu ngữ. Bài thuyết trình dùng 生前 (lúc sinh thời), 十分 — trang trọng hơn.'},
-
-    {scene:'Bạn cùng phòng hỏi có nên giữ cái chai rỗng không.',
-     a:'不就是一个空瓶子吗？扔掉算了。',b:'此物已无保存价值，建议丢弃。',better:'a',
-     why:'Chuyện vặt giữa bạn bè, 算了 (thôi bỏ đi) rất tự nhiên — đúng câu ví dụ của sách. Câu b là văn bản hành chính.'}
+    {scene:'Nhân viên nhà hàng chào khách ở cửa.',a:'欢迎光临！',b:'你来了！',better:'a',why:'光临 là lời kính trọng dành cho KHÁCH — đúng vai nhân viên phục vụ. 你来了 chỉ dùng với người quen.'},
+    {scene:'Em viết bài giới thiệu trường mình đăng trên trang web của trường.',a:'我们学校在市中心，坐车挺方便的。',b:'学校位于市中心，交通十分方便。',better:'b',why:'位于, 交通十分方便 là cách nói VĂN VIẾT, trang trọng — hợp với bài giới thiệu. 在……，挺方便的 là khẩu ngữ.'},
+    {scene:'Em nhắn tin rủ bạn thân đi ăn cuối tuần.',a:'周末去那家店吃吧，菜挺地道的！',b:'周末我们前往该店用餐，该店的菜十分地道。',better:'a',why:'Câu b dùng 前往, 该店, 用餐 — giọng văn công văn, nhắn bạn thân nghe rất buồn cười. Khẩu ngữ thân mật dùng câu a.'},
+    {scene:'Lớp em mời thầy hiệu trưởng dự buổi văn nghệ.',a:'希望您能亲自来参加我们的活动。',b:'你自己来参加吧。',better:'a',why:'Mời người có địa vị cao → 您 + 亲自, thể hiện sự tôn trọng (đúng phần 词语辨析 của bài). Câu b nghe như ra lệnh.'},
+    {scene:'Em viết bài thuyết trình lịch sử về Lỗ Tấn.',a:'鲁迅那会儿可爱喝酒了。',b:'鲁迅生前十分爱喝酒。',better:'b',why:'那会儿, 可……了 là khẩu ngữ. Bài thuyết trình dùng 生前 (lúc sinh thời), 十分 — trang trọng hơn.'},
+    {scene:'Bạn cùng phòng hỏi có nên giữ cái chai rỗng không.',a:'不就是一个空瓶子吗？扔掉算了。',b:'该瓶子不需要保存，建议扔掉。',better:'a',why:'Chuyện vặt giữa bạn bè, 算了 (thôi bỏ đi) rất tự nhiên — đúng câu ví dụ của sách. Câu b là giọng văn bản hành chính.'}
   ]
 };
 

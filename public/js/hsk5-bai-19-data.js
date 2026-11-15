@@ -1406,84 +1406,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 18) + luyện tập 3 (tr. 20) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'切',right:'蛋糕'},
   {left:'预防',right:'感冒'},
   {left:'民族',right:'色彩'},
-  {left:'中国的',right:'特色'},
   {left:'搅拌',right:'均匀'},
-  {left:'烫',right:'手'},
   {left:'盖上',right:'盖子'},
   {left:'煮',right:'饺子'},
-  {left:'炒',right:'肉丝'},
   {left:'闻',right:'味道'},
   {left:'口味',right:'清淡'},
-  {left:'色彩',right:'丰富'},
-  {left:'玻璃',right:'透明'},
-  {left:'特色',right:'明显'},
-  {left:'呼吸',right:'均匀'},
   {left:'赏心',right:'悦目'},
   {left:'外焦',right:'里嫩'},
   {left:'一路',right:'平安'},
-  {left:'淋一圈',right:'油'},
-  {left:'趁热',right:'吃'}
+  {left:'淋一圈',right:'油'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我的',blank:'家乡',post:'在越南中部，那儿的海特别漂亮。',hint:'(quê nhà)',ans:'家乡'},
-  {pre:'研究发现，常吃胡',blank:'萝卜',post:'能起到保护眼睛的效果。',hint:'(củ cải)',ans:'萝卜'},
-  {pre:'家乡的萝卜有',blank:'青',post:'、红、紫三种。',hint:'(xanh)',ans:'青'},
-  {pre:'她穿了一条',blank:'紫',post:'色的裙子，特别好看。',hint:'(tím)',ans:'紫'},
-  {pre:'公园里的花都开了，让人',blank:'赏心悦目',post:'。',hint:'(đẹp mắt vui lòng)',ans:'赏心悦目'},
-  {pre:'说起那段往事，她的脸上露出了阳光',blank:'般',post:'的笑容。',hint:'(giống như)',ans:'般',exp:'Danh từ + 般 = giống như… (văn viết, như 一样): 阳光般的笑容.'},
-  {pre:'医生说我最近要吃得',blank:'清淡',post:'一点儿。',hint:'(nhạt, thanh đạm)',ans:'清淡'},
-  {pre:'妈妈做的饭菜又便宜又',blank:'可口',post:'。',hint:'(ngon miệng)',ans:'可口'},
-  {pre:'今天我被老师',blank:'夸',post:'了，特别开心。',hint:'(khen)',ans:'夸'},
-  {pre:'过年的时候，家里总是摆着一盘',blank:'橘子',post:'。',hint:'(quả quýt)',ans:'橘子'},
-  {pre:'妈妈给我削了一个',blank:'梨',post:'。',hint:'(quả lê)',ans:'梨'},
-  {pre:'我会做的第一个菜是西红柿',blank:'炒',post:'鸡蛋。',hint:'(xào)',ans:'炒'},
-  {pre:'饺子',blank:'煮',post:'熟后要趁热吃才好。',hint:'(luộc, nấu)',ans:'煮'},
-  {pre:'',blank:'油炸',post:'食品不健康，少吃一点儿就行了。',hint:'(chiên ngập dầu)',ans:'油炸'},
-  {pre:'你帮我把生日蛋糕',blank:'切',post:'成八块吧。',hint:'(cắt)',ans:'切'},
-  {pre:'我最爱吃妈妈炒的土豆',blank:'丝',post:'。',hint:'(sợi)',ans:'丝'},
-  {pre:'咖啡里放了糖，你',blank:'搅拌',post:'一下再喝。',hint:'(khuấy)',ans:'搅拌'},
-  {pre:'做这道菜的',blank:'原料',post:'很简单，只有鸡蛋和西红柿。',hint:'(nguyên liệu)',ans:'原料'},
-  {pre:'包饺子的时候，奶奶',blank:'擀',post:'皮，我来包。',hint:'(cán bột)',ans:'擀'},
-  {pre:'天冷了，别穿那么',blank:'薄',post:'的衣服出门。',hint:'(mỏng)',ans:'薄'},
-  {pre:'这把椅子可以',blank:'折叠',post:'，放在车里很方便。',hint:'(gập lại)',ans:'折叠'},
-  {pre:'我今天没带伞，被雨',blank:'淋',post:'湿了。',hint:'(dầm, xối)',ans:'淋'},
-  {pre:'我每天晚上绕着操场跑五',blank:'圈',post:'。',hint:'(vòng)',ans:'圈'},
-  {pre:'睡觉时要把被子',blank:'盖',post:'好，别着凉了。',hint:'(đắp, đậy)',ans:'盖'},
-  {pre:'这锅鸡汤要用',blank:'文火',post:'慢慢煮两个小时。',hint:'(lửa nhỏ)',ans:'文火'},
-  {pre:'鸡蛋炒好以后，最后放入',blank:'少许',post:'盐就可以了。',hint:'(một chút)',ans:'少许',exp:'少许 = một chút, một ít (văn viết, thường trong công thức nấu ăn): 少许盐.'},
-  {pre:'炒的时候，少放',blank:'酱油',post:'，颜色会更好看。',hint:'(xì dầu)',ans:'酱油'},
-  {pre:'北方人吃饺子的时候喜欢蘸一点儿',blank:'醋',post:'。',hint:'(giấm)',ans:'醋'},
-  {pre:'感冒以后，他嗓子里总是有',blank:'痰',post:'。',hint:'(đờm)',ans:'痰'},
-  {pre:'你们到各地去旅游，老话说：百',blank:'闻',post:'不如一见。',hint:'(nghe — nghĩa ngữ tố)',ans:'闻'}
+  {pre:'妈妈用',blank:'萝卜',post:'做了一锅汤，又甜又清淡。',hint:'(củ cải)',ans:'萝卜',exp:'萝卜 = củ cải (có loại xanh, đỏ, tím).'},
+  {pre:'她最喜欢',blank:'紫',post:'色，衣服、包都是这个颜色。',hint:'(tím)',ans:'紫',exp:'紫色 = màu tím; 青 = xanh, 红 = đỏ.'},
+  {pre:'冬天的时候，我最爱吃',blank:'橘子',post:'，又酸又甜。',hint:'(quả quýt)',ans:'橘子',exp:'橘子 = quả quýt; 梨 = quả lê.'},
+  {pre:'请把这些苹果',blank:'切',post:'开，每人一块。',hint:'(cắt, bổ)',ans:'切',exp:'切 = cắt, thái, bổ bằng dao: 切开, 切丝.'},
+  {pre:'妈妈切的萝卜',blank:'丝',post:'又长又好看，跟面条差不多。',hint:'(sợi)',ans:'丝',exp:'丝 = sợi (thứ thái mảnh như sợi): 萝卜丝, 切丝.'},
+  {pre:'做这个蛋糕的',blank:'原料',post:'很简单，只要鸡蛋、牛奶和糖。',hint:'(nguyên liệu)',ans:'原料',exp:'原料 = nguyên liệu (để làm ra món ăn, sản phẩm).'},
+  {pre:'这本书很',blank:'薄',post:'，一天就能看完。',hint:'(mỏng)',ans:'薄',exp:'薄 (báo) = mỏng; trái nghĩa 厚 = dày.'},
+  {pre:'这个杯子是',blank:'透明',post:'的，杯子里有什么一看就知道。',hint:'(trong suốt)',ans:'透明',exp:'透明 = trong suốt, nhìn xuyên qua được.'},
+  {pre:'这个汤太酸了，你是不是放了太多',blank:'醋',post:'？',hint:'(giấm)',ans:'醋',exp:'醋 = giấm (vị chua); 酱油 = xì dầu.'},
+  {pre:'包饺子以前，要先把面',blank:'擀',post:'得薄薄的。',hint:'(cán (bột))',ans:'擀',exp:'擀 = cán bột bằng cây lăn: 擀面.'},
+  {pre:'这张桌子可以',blank:'折叠',post:'起来，不用的时候放在门后。',hint:'(gấp lại)',ans:'折叠',exp:'折叠 = gấp, gập lại: 折叠起来, 折叠桌.'},
+  {pre:'',blank:'油炸',post:'的东西虽然好吃，但吃多了对身体不好。',hint:'(chiên ngập dầu)',ans:'油炸',exp:'油炸 = chiên ngập dầu; khác 炒 (xào) và 煮 (luộc, nấu).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (般 · 闻 · 趁) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['紫的','像','山泉','般','清淡','可口','。'],ans:'紫的像山泉般清淡可口。',audio:'紫的像山泉般清淡可口。'},
-  {words:['她的脸上','露出了','阳光般的','笑容','。'],ans:'她的脸上露出了阳光般的笑容。',audio:'她的脸上露出了阳光般的笑容。'},
-  {words:['我的眼泪','雨点般','不停地','往下掉','。'],ans:'我的眼泪雨点般不停地往下掉。',audio:'我的眼泪雨点般不停地往下掉。'},
-  {words:['我','一进门','就','闻到了','一股香味','。'],ans:'我一进门就闻到了一股香味。',audio:'我一进门就闻到了一股香味。'},
-  {words:['他','把壶盖儿','打开','，','闻了闻','。'],ans:'他把壶盖儿打开，闻了闻。',audio:'他把壶盖儿打开，闻了闻。'},
-  {words:['萝卜饼','要','趁热','吃','。'],ans:'萝卜饼要趁热吃。',audio:'萝卜饼要趁热吃。'},
-  {words:['趁着','这几天','休息','，','我们','去看看房子吧','。'],ans:'趁着这几天休息，我们去看看房子吧。',audio:'趁着这几天休息，我们去看看房子吧。'},
-  {words:['趁','电影','还没开始','，','我','去买','两瓶水','。'],ans:'趁电影还没开始，我去买两瓶水。',audio:'趁电影还没开始，我去买两瓶水。'},
-  {words:['高手','往往','把面','擀得','薄如白纸','。'],ans:'高手往往把面擀得薄如白纸。',audio:'高手往往把面擀得薄如白纸。'},
-  {words:['先','把萝卜','洗净','切丝','，','再','搅拌均匀','。'],ans:'先把萝卜洗净切丝，再搅拌均匀。',audio:'先把萝卜洗净切丝，再搅拌均匀。'},
-  {words:['盖锅前','须','放进','一些温水','，','预防','糊底','。'],ans:'盖锅前须放进一些温水，预防糊底。',audio:'盖锅前须放进一些温水，预防糊底。'},
-  {words:['三种萝卜','看起来','赏心悦目','。'],ans:'三种萝卜看起来赏心悦目。',audio:'三种萝卜看起来赏心悦目。'},
-  {words:['萝卜饼','是','最','让我','怀念的','。'],ans:'萝卜饼是最让我怀念的。',audio:'萝卜饼是最让我怀念的。'}
+  {words:['孩子们的','笑声','像','音乐','般','好听','。'],ans:'孩子们的笑声像音乐般好听。',audio:'孩子们的笑声像音乐般好听。'},
+  {words:['收到礼物以后','，','他','像孩子般地','笑了起来','。'],ans:'收到礼物以后，他像孩子般地笑了起来。',audio:'收到礼物以后，他像孩子般地笑了起来。'},
+  {words:['你','闻闻','，','这牛奶','是不是','坏了','？'],ans:'你闻闻，这牛奶是不是坏了？',audio:'你闻闻，这牛奶是不是坏了？'},
+  {words:['趁','年轻','，','多','出去','走走看看','吧','。'],ans:'趁年轻，多出去走走看看吧。',audio:'趁年轻，多出去走走看看吧。'},
+  {words:['趁','大家','都在','，','我们','把下周的事','讨论一下','。'],ans:'趁大家都在，我们把下周的事讨论一下。',audio:'趁大家都在，我们把下周的事讨论一下。'},
+  {words:['先','用大火','煮开','，','再','用文火','煮','二十分钟','。'],ans:'先用大火煮开，再用文火煮二十分钟。',audio:'先用大火煮开，再用文火煮二十分钟。'},
+  {words:['我','只会','炒鸡蛋','，','别的菜','都','不会做','。'],ans:'我只会炒鸡蛋，别的菜都不会做。',audio:'我只会炒鸡蛋，别的菜都不会做。'},
+  {words:['大家','都','夸','她做的菜','又好看','又可口','。'],ans:'大家都夸她做的菜又好看又可口。',audio:'大家都夸她做的菜又好看又可口。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1491,72 +1461,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'奶奶去世已经五年了，我们都很____她。',opts:['怀念','想念','想起','想法'],ans:0,
-   exp:'Người đã khuất → 怀念 (văn viết, không thể gặp lại). 想念 dùng với người còn sống, mong gặp lại; 想起 là "nhớ ra"; 想法 là danh từ "ý nghĩ".'},
-  {wrong:'女儿告诉我，她很____出差的爸爸。',opts:['想念','怀念','纪念','念书'],ans:0,
-   exp:'Bố đi công tác sẽ về, con mong gặp lại → 想念 (khẩu ngữ). 怀念 dùng cho người đã khuất / quá khứ; 纪念 là kỷ niệm; 念书 là đi học.'},
-  {wrong:'尽管这话里感情____很重，但也不是没有道理。',opts:['色彩','颜色','特色','口味'],ans:0,
-   exp:'感情色彩 = sắc thái cảm xúc (nghĩa bóng) → chỉ 色彩. 颜色 là màu cụ thể; 特色, 口味 sai nghĩa.'},
-  {wrong:'女儿安静地睡在她身旁，呼吸也很____。',opts:['均匀','平均','平安','透明'],ans:0,
-   exp:'Hơi thở đều → 呼吸均匀. 平均 là "bình quân" (平均分数), không tả hơi thở; 平安, 透明 sai nghĩa.'},
-  {wrong:'饼熟之后表皮是____的，能透过表皮看见萝卜丝儿。',opts:['透明','清淡','均匀','可口'],ans:0,
-   exp:'Nhìn xuyên qua được → 透明 (trong suốt).'},
-  {wrong:'汤太____了，等一会儿再喝吧。',opts:['烫','焦','糊','嫩'],ans:0,
-   exp:'Nóng đến mức uống vào bị bỏng → 烫. 焦, 糊 là cháy; 嫩 là mềm.'},
-  {wrong:'研究发现，常吃胡萝卜能起到保护眼睛、____近视的效果。',opts:['预防','防止','保护','预报'],ans:0,
-   exp:'Phòng ngừa bệnh tật → 预防近视 (câu của sách). 防止 nhấn mạnh chặn một việc cụ thể sắp xảy ra; 保护 đã dùng cho 眼睛; 预报 là dự báo.'},
-  {wrong:'我光顾着看手机，锅里的菜都炒____了。',opts:['糊','嫩','淋','薄'],ans:0,
-   exp:'Nấu quá lửa đến cháy khét → 炒糊了. 嫩 (mềm), 淋 (rưới), 薄 (mỏng) không làm bổ ngữ ở đây.'},
-  {wrong:'火最好用文火，等能____到香味时，便可开锅了。',opts:['闻','听','看','尝'],ans:0,
-   exp:'Cảm nhận mùi bằng mũi → 闻到香味. Người Việt hay nhầm vì "văn" = nghe; nghe là 听.'},
-  {wrong:'萝卜饼要____热吃，喜欢口味重的，还可以加少许酱油和醋。',opts:['趁','等','在','从'],ans:0,
-   exp:'Tận dụng lúc bánh còn nóng → 趁热吃. 等热 là "đợi nóng" — ngược nghĩa.'},
-  {wrong:'____我们从天津回来时，才听说她出国的事。',opts:['等','趁','把','被'],ans:0,
-   exp:'"Đợi đến khi … mới …" → 等……时，才……. 趁 là tận dụng cơ hội để làm việc gì, không hợp với 才听说 (bài tập 2 của sách).'},
-  {wrong:'怎么你今天吃得这么少？是不是这些菜不合你的____？',opts:['口味','口感','味道','特色'],ans:0,
-   exp:'合口味 = hợp khẩu vị (cụm cố định). 口感 là cảm giác khi nhai; không nói 合味道, 合特色.'},
-  {wrong:'刚出锅的萝卜饼，香味扑鼻，外____里嫩。',opts:['焦','糊','烫','薄'],ans:0,
-   exp:'Cụm cố định 外焦里嫩 — ngoài vàng giòn, trong mềm. 糊 là cháy khét (hỏng), không dùng để khen.'},
-  {wrong:'这块牛肉做得很____，老人也咬得动。',opts:['嫩','焦','透明','清淡'],ans:0,
-   exp:'Thịt mềm, dễ nhai → 嫩. 焦 là cháy; 透明 là trong suốt; 清淡 là nhạt, không nói độ mềm.'},
-  {wrong:'请你给我们推荐几个你们这儿的____菜吧。',opts:['特色','特点','色彩','口味'],ans:0,
-   exp:'特色菜 = món đặc sản (cụm cố định). Không nói 特点菜.'},
-  {wrong:'了解李阳的人都说，李阳最大的____就是胆大、敢干。',opts:['特点','特色','色彩','口味'],ans:0,
-   exp:'Nói tính cách con người → 特点. 特色 dùng cho món ăn, vùng đất, tác phẩm (bài tập 2 của sách).'},
-  {wrong:'也许是药物的作用，这一夜他____地度过了。',opts:['平安','平均','均匀','清淡'],ans:0,
-   exp:'Qua đêm an toàn, không có chuyện gì → 平安地度过 (bài tập 1 của sách).'},
-  {wrong:'萝卜饼就是用这三种____的萝卜做成的。',opts:['颜色','色彩','特色','口感'],ans:0,
-   exp:'Có số lượng cụ thể (三种) → 颜色. 色彩 chỉ màu sắc tổng thể, không đếm theo 种 như vậy.'}
+  {wrong:'离开家快一年了，我很____爸爸妈妈，真想马上回去看他们。',opts:['想念','怀念','纪念','想法'],ans:0,exp:'Nhớ người còn sống, mong gặp lại → 想念. 怀念 dùng cho người đã khuất hoặc quãng thời gian đã qua; 纪念 là kỷ niệm (ngày lễ, vật); 想法 là danh từ “ý nghĩ”.'},
+  {wrong:'工作以后，我常常____大学时简单快乐的生活。',opts:['怀念','纪念','想法','平均'],ans:0,exp:'Nhớ về quãng thời gian đã qua, không quay lại được → 怀念. 纪念 là tưởng niệm, làm kỷ niệm (纪念日); 想法 là danh từ; 平均 là bình quân.'},
+  {wrong:'这件衣服有三种____，你要哪一种？',opts:['颜色','色彩','特色','口味'],ans:0,exp:'Màu cụ thể, đếm được (三种颜色) → 颜色. 色彩 là màu sắc tổng thể hoặc nghĩa bóng (感情色彩, 民族色彩), không đếm theo 种; 特色, 口味 sai nghĩa.'},
+  {wrong:'他最大的____是做事认真。',opts:['特点','特色','颜色','原料'],ans:0,exp:'Nói tính cách con người → 特点. 特色 dùng cho món ăn, vùng đất, tác phẩm (特色菜, 地方特色); 颜色, 原料 sai nghĩa.'},
+  {wrong:'这家饭馆的____菜是酸辣鱼，来的客人都会点。',opts:['特色','特点','色彩','均匀'],ans:0,exp:'特色菜 = món đặc sản (cụm cố định). Không nói 特点菜, 色彩菜; 均匀 là tính từ “đều”.'},
+  {wrong:'酱油要淋得____，每块肉都要有。',opts:['均匀','平均','透明','可口'],ans:0,exp:'淋得均匀 = rưới đều (phân bố đều khắp). 平均 là chia bình quân (平均分, 平均成绩), không làm bổ ngữ tả cách rưới; 透明, 可口 sai nghĩa.'},
+  {wrong:'刚出锅的萝卜饼很____，别用手拿。',opts:['烫','焦','嫩','青'],ans:0,exp:'Nóng đến mức chạm vào bị bỏng → 烫. 焦 là cháy sém; 嫩 là mềm; 青 là màu xanh.'},
+  {wrong:'火太大了，萝卜饼的下面都____了，吃起来苦苦的。',opts:['糊','嫩','薄','清淡'],ans:0,exp:'Nấu quá lửa đến cháy khét, có vị đắng → 糊 (hỏng). 嫩, 薄, 清淡 không mang nghĩa cháy.'},
+  {wrong:'这鱼做得很____，一点儿也不老。',opts:['嫩','薄','透明','紫'],ans:0,exp:'Thịt, cá mềm, không dai → 嫩 (trái nghĩa 老). 薄 là mỏng; 透明 là trong suốt; 紫 là màu tím.'},
+  {wrong:'这几天鼻子不舒服，饭菜再香我也____不到。',opts:['闻','听','看','想'],ans:0,exp:'Cảm nhận mùi bằng mũi → 闻. Người Việt hay nhầm vì Hán Việt "văn" = nghe, nhưng nghe là 听; 看, 想 không đi với 味道.'},
+  {wrong:'____天还没黑，我们快点儿回家吧。',opts:['趁','等','把','向'],ans:0,exp:'趁 + thời cơ = nhân lúc (tranh thủ khi điều kiện còn thuận lợi). 等天还没黑 sai nghĩa (“đợi trời chưa tối”); 把, 向 là giới từ không hợp.'},
+  {wrong:'医生说他最近要吃得____一点儿，少吃油炸的东西。',opts:['清淡','透明','均匀','嫩'],ans:0,exp:'吃得清淡 = ăn thanh đạm (ít dầu mỡ, ít gia vị). 透明, 均匀, 嫩 không tả cách ăn uống.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tuy món bà nấu có vị thanh đạm, nhưng lần nào về quê tôi cũng ăn ngon miệng lạ thường.', zh:'虽然奶奶做的菜口味清淡，但是每次回家乡我的胃口都特别好。', py:'Suīrán nǎinai zuò de cài kǒuwèi qīngdàn, dànshì měi cì huí jiāxiāng wǒ de wèikǒu dōu tèbié hǎo.', goiY:['虽然……但是……','口味清淡','胃口'], giai:'虽然 + sự thật, 但是 + ý trái ngược; “vị thanh đạm” là 口味清淡, đừng dịch thành 味道很淡 (nghe như chê nhạt).'},
-  {vi:'Nhân lúc mẹ chưa tan làm, tôi xào sẵn món khoai tây sợi mà mẹ thích nhất.', zh:'趁妈妈还没下班，我先把她最爱吃的土豆丝炒好了。', py:'Chèn māma hái méi xiàbān, wǒ xiān bǎ tā zuì ài chī de tǔdòusī chǎo hǎo le.', goiY:['趁……','先把……炒好','土豆丝'], giai:'趁 + thời cơ (还没下班) đặt đầu câu, vế sau là việc tranh thủ làm; không dịch “nhân lúc” thành 当……的时候 vì mất ý tranh thủ.'},
-  {vi:'Tôi vừa vào cửa đã ngửi thấy mùi giấm, hoá ra bố đang làm cá sốt chua ngọt trong bếp.', zh:'我一进门就闻到了一股醋的味道，原来爸爸正在厨房里做糖醋鱼。', py:'Wǒ yí jìn mén jiù wéndàole yì gǔ cù de wèidao, yuánlái bàba zhèngzài chúfáng li zuò tángcùyú.', goiY:['一……就……','闻到','原来'], giai:'闻 ở đây là “ngửi” (không phải “nghe”); 原来 mở vế giải thích điều vừa phát hiện — “hoá ra”.'},
-  {vi:'Từ khi xa quê lên thành phố học cấp ba, tôi đặc biệt nhớ món bánh củ cải mẹ làm, nhất là cái vị ngoài giòn trong mềm của nó.', zh:'自从离开家乡去城里读高中，我就格外想念妈妈做的萝卜饼，尤其是它那外焦里嫩的口感。', py:'Zìcóng líkāi jiāxiāng qù chéng li dú gāozhōng, wǒ jiù géwài xiǎngniàn māma zuò de luóbobǐng, yóuqí shì tā nà wài jiāo lǐ nèn de kǒugǎn.', goiY:['自从……就……','格外想念','外焦里嫩'], giai:'自从 + mốc quá khứ, vế sau dùng 就 chỉ trạng thái kéo dài đến nay; 格外 đứng trước động từ tâm lý 想念, không đặt sau.'},
-  {vi:'Chỉ cần trộn đều trứng với bột mì, rồi rán từ từ bằng lửa nhỏ, thì bánh sẽ không dễ bị cháy.', zh:'只要把鸡蛋和面粉搅拌均匀，再用文火慢慢地煎，饼就不容易糊。', py:'Zhǐyào bǎ jīdàn hé miànfěn jiǎobàn jūnyún, zài yòng wénhuǒ mànmàn de jiān, bǐng jiù bù róngyì hú.', goiY:['只要……就……','搅拌均匀','文火'], giai:'只要 + điều kiện đủ, 就 + kết quả; 就 đứng sau chủ ngữ 饼 chứ không đứng trước chủ ngữ.'},
-  {vi:'Quán ăn nhỏ này tuy không rộng nhưng rất có nét riêng, đến cả bạn nước ngoài cũng khen đồ ăn ở đây vừa chuẩn vị vừa ngon miệng.', zh:'这家小饭馆虽然不大，却很有特色，连外国朋友都夸这里的菜又地道又可口。', py:'Zhè jiā xiǎo fànguǎn suīrán bú dà, què hěn yǒu tèsè, lián wàiguó péngyou dōu kuā zhèlǐ de cài yòu dìdao yòu kěkǒu.', goiY:['虽然……却……','连……都……','夸'], giai:'却 là phó từ, đứng sau chủ ngữ (ở đây được lược) chứ không đứng đầu câu như 但是; 连……都 nhấn mạnh trường hợp ít ngờ nhất.'},
-  {vi:'Tranh thủ cuối tuần rảnh, chúng tôi ra ngoại ô hái quýt và lê, không những được ăn trái cây tươi mà còn được ngắm phong cảnh đẹp mắt.', zh:'趁着周末有空，我们去郊区摘橘子和梨，不但吃到了新鲜的水果，而且看到了赏心悦目的风景。', py:'Chènzhe zhōumò yǒu kòng, wǒmen qù jiāoqū zhāi júzi hé lí, búdàn chīdàole xīnxiān de shuǐguǒ, érqiě kàndàole shǎngxīn-yuèmù de fēngjǐng.', goiY:['趁着……','不但……而且……','赏心悦目'], giai:'趁着 + thời cơ đứng đầu câu; 不但……而且 nối hai lợi ích cùng chiều, hai vế nên song song (吃到了… / 看到了…).'},
-  {vi:'Bác sĩ nói mùa đông uống nhiều canh củ cải có thể phòng cảm cúm, vì thế tuần nào bà cũng nấu cho chúng tôi một nồi to, còn tự mình đứng xem chúng tôi uống hết lúc còn nóng.', zh:'医生说，冬天多喝点萝卜汤可以预防感冒，因此奶奶每个星期都给我们煮一大锅，还要亲自看着我们趁热喝完。', py:'Yīshēng shuō, dōngtiān duō hē diǎn luóbo tāng kěyǐ yùfáng gǎnmào, yīncǐ nǎinai měi ge xīngqī dōu gěi wǒmen zhǔ yí dà guō, hái yào qīnzì kànzhe wǒmen chèn rè hē wán.', goiY:['预防感冒','因此','趁热'], giai:'因此 nối kết quả với nguyên nhân ở vế trước; “uống lúc còn nóng” là 趁热喝, không nói 在热的时候喝.'},
-  {vi:'Thay vì ngày nào cũng đặt đồ chiên rán vị đậm trên mạng, chi bằng cuối tuần theo mẹ học nấu vài món cơm nhà, vừa ăn uống lành mạnh lại tiết kiệm được khối tiền.', zh:'与其每天在网上点口味很重的油炸食品，不如周末跟妈妈学做几道家常菜，既吃得健康，又能节省不少钱。', py:'Yǔqí měi tiān zài wǎng shang diǎn kǒuwèi hěn zhòng de yóuzhá shípǐn, bùrú zhōumò gēn māma xué zuò jǐ dào jiāchángcài, jì chī de jiànkāng, yòu néng jiéshěng bù shǎo qián.', goiY:['与其……不如……','既……又……','油炸'], giai:'与其 A 不如 B: bỏ A chọn B (B tốt hơn), đừng nhầm với 不但……而且; 既……又…… nêu hai lợi ích song song.'},
-  {vi:'Dù xa quê đã nhiều năm, tôi vẫn không quên được nụ cười ấm áp như nắng của bà, mỗi lần ngửi thấy mùi bánh củ cải là lại không kìm được nhớ đến bà.', zh:'哪怕离开家乡很多年，我也忘不了奶奶那阳光般温暖的笑容，每次闻到萝卜饼的香味，都会忍不住想起她。', py:'Nǎpà líkāi jiāxiāng hěn duō nián, wǒ yě wàng bu liǎo nǎinai nà yángguāng bān wēnnuǎn de xiàoróng, měi cì wéndào luóbobǐng de xiāngwèi, dōu huì rěn bu zhù xiǎngqǐ tā.', goiY:['哪怕……也……','阳光般','忍不住'], giai:'哪怕 + điều kiện nhượng bộ, 也 + kết quả không đổi; N + 般 đứng SAU danh từ so sánh (阳光般温暖), không nói 般阳光.'}
+  {vi:'Nhân lúc mẹ chưa tan làm, tôi đã làm xong món trứng xào cà chua mà mẹ thích ăn nhất.',zh:'趁妈妈还没下班，我先把她最爱吃的西红柿炒鸡蛋做好了。',py:'Chèn māma hái méi xiàbān, wǒ xiān bǎ tā zuì ài chī de xīhóngshì chǎo jīdàn zuòhǎo le.',goiY:['趁','把……做好','炒'],giai:'趁 + thời cơ đứng đầu câu; câu 把 nhấn mạnh kết quả (做好了); định ngữ 她最爱吃的 đứng trước tên món.'},
+  {vi:'Vừa vào cửa tôi đã ngửi thấy mùi giấm, hoá ra bố đang làm cá sốt chua ngọt trong bếp.',zh:'我一进门就闻到了醋的味道，原来爸爸正在厨房里做糖醋鱼。',py:'Wǒ yí jìn mén jiù wéndàole cù de wèidao, yuánlái bàba zhèngzài chúfáng li zuò tángcùyú.',goiY:['一……就……','闻到','原来'],giai:'闻到 = ngửi thấy (闻 + bổ ngữ kết quả 到); 原来 = hoá ra (phát hiện điều trước đó chưa biết).'},
+  {vi:'Từ khi rời quê lên thành phố học cấp ba, tôi đặc biệt nhớ bánh củ cải mẹ làm, nhất là cái vị ngoài giòn trong mềm của nó.',zh:'离开家乡去城里读高中以后，我就格外想念妈妈做的萝卜饼，尤其是它那外焦里嫩的口感。',py:'Líkāi jiāxiāng qù chéng li dú gāozhōng yǐhòu, wǒ jiù géwài xiǎngniàn māma zuò de luóbobǐng, yóuqí shì tā nà wài jiāo lǐ nèn de kǒugǎn.',goiY:['想念','尤其','外焦里嫩'],giai:'Món ăn mẹ làm vẫn còn, có thể ăn lại → 想念 (không dùng 怀念); 尤其是 bổ sung điểm nổi bật nhất.'},
+  {vi:'Chỉ cần trộn đều sợi củ cải với trứng, rồi dùng lửa nhỏ làm từ từ, bánh củ cải sẽ không dễ bị cháy.',zh:'只要把萝卜丝和鸡蛋搅拌均匀，再用文火慢慢地做，萝卜饼就不容易糊。',py:'Zhǐyào bǎ luóbosī hé jīdàn jiǎobàn jūnyún, zài yòng wénhuǒ mànmàn de zuò, luóbobǐng jiù bù róngyì hú.',goiY:['只要……就……','搅拌均匀','文火','糊'],giai:'只要……就…… nêu điều kiện đủ; 搅拌均匀 = trộn đều (均匀 là bổ ngữ kết quả); 糊 = cháy khét.'},
+  {vi:'Quán ăn nhỏ này tuy không lớn nhưng rất có nét riêng, đến cả bạn nước ngoài cũng khen món ở đây vừa chuẩn vị vừa ngon miệng.',zh:'这家小饭馆虽然不大，却很有特色，连外国朋友都夸这里的菜又地道又可口。',py:'Zhè jiā xiǎo fànguǎn suīrán bú dà, què hěn yǒu tèsè, lián wàiguó péngyou dōu kuā zhèli de cài yòu dìdao yòu kěkǒu.',goiY:['虽然……却……','特色','夸','可口'],giai:'很有特色 (không nói 很特色); 连……都…… nhấn mạnh; 夸 + người/vật + nội dung khen.'},
+  {vi:'Bác sĩ nói mùa đông uống nhiều canh củ cải có thể phòng cảm cúm, vì thế tuần nào bà cũng nấu cho chúng tôi một nồi to, còn tự mình trông chúng tôi uống hết lúc còn nóng.',zh:'医生说，冬天多喝点萝卜汤可以预防感冒，因此奶奶每个星期都给我们煮一大锅，还要亲自看着我们趁热喝完。',py:'Yīshēng shuō, dōngtiān duō hē diǎn luóbo tāng kěyǐ yùfáng gǎnmào, yīncǐ nǎinai měi ge xīngqī dōu gěi wǒmen zhǔ yí dà guō, hái yào qīnzì kànzhe wǒmen chèn rè hēwán.',goiY:['预防','因此','煮','趁热'],giai:'预防 + bệnh = phòng ngừa; 因此 nối nguyên nhân với kết quả; 趁热 + V = làm khi còn nóng.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Sở dĩ tôi đặc biệt hoài niệm quê hương là vì không quên được món bánh củ cải ở đó.', zh:'我之所以特别怀念家乡，是因为忘不了那里的萝卜饼。', py:'Wǒ zhīsuǒyǐ tèbié huáiniàn jiāxiāng, shì yīnwèi wàng bu liǎo nàlǐ de luóbobǐng.', goiY:['之所以……是因为…… = sở dĩ… là vì…','怀念 = hoài niệm, nhớ về'], giai:'之所以 nêu kết quả trước, 是因为 nêu nguyên nhân sau — dịch xuôi “sở dĩ… là vì…”, không đảo thành “vì… nên…” làm mất ý nhấn mạnh.'},
-  {vi:'Củ cải quê tôi không những màu sắc đẹp mắt mà ăn vào còn thanh mát, ngon miệng.', zh:'家乡的萝卜不但色彩赏心悦目，而且吃起来清淡可口。', py:'Jiāxiāng de luóbo búdàn sècǎi shǎngxīn-yuèmù, érqiě chī qǐlái qīngdàn kěkǒu.', goiY:['不但……而且…… = không những… mà còn…','赏心悦目 = đẹp mắt, vui lòng','清淡可口 = thanh mát, ngon miệng'], giai:'不但……而且 nối hai ưu điểm cùng chiều; 清淡 ở đây là “thanh, nhẹ”, không dịch là “nhạt nhẽo”.'},
-  {vi:'Nguyên liệu làm bánh củ cải rất đơn giản, chẳng trách ngay cả trẻ con không biết nấu ăn cũng học được.', zh:'萝卜饼的原料很简单，难怪连不会做饭的小孩儿都学得会。', py:'Luóbobǐng de yuánliào hěn jiǎndān, nánguài lián bú huì zuòfàn de xiǎoháir dōu xué de huì.', goiY:['难怪 = chẳng trách, thảo nào','连……都…… = ngay cả… cũng…','原料 = nguyên liệu'], giai:'难怪 đứng đầu vế sau, nêu điều đã hiểu ra nhờ vế trước; 学得会 là bổ ngữ khả năng (học được), không phải “đã học xong”.'},
-  {vi:'Làm bánh củ cải không cần xào hay luộc, cũng không phải chiên dầu, chỉ cần thái củ cải thành sợi nhỏ rồi trộn đều cùng bột mì và trứng là được.', zh:'做萝卜饼既不必炒或煮，也不用油炸，只要把萝卜切成细丝，再和面粉、鸡蛋一起搅拌均匀就可以了。', py:'Zuò luóbobǐng jì búbì chǎo huò zhǔ, yě búyòng yóuzhá, zhǐyào bǎ luóbo qiēchéng xì sī, zài hé miànfěn, jīdàn yìqǐ jiǎobàn jūnyún jiù kěyǐ le.', goiY:['既……也…… = không cần… cũng không…','只要……就…… = chỉ cần… là…','搅拌均匀 = trộn đều'], giai:'既……也…… phủ định song song hai cách làm; 只要……就可以了 = “chỉ cần… là được”; 煮 ở đây là “luộc, nấu trong nước”.'},
-  {vi:'Người khéo tay thường cán bột mỏng như tờ giấy trắng, dù gấp lại mấy lớp thì vẫn gần như trong suốt.', zh:'高手往往能把面擀得像白纸般薄，即使折叠好几层，也依然几乎是透明的。', py:'Gāoshǒu wǎngwǎng néng bǎ miàn gǎn de xiàng báizhǐ bān báo, jíshǐ zhédié hǎo jǐ céng, yě yīrán jīhū shì tòumíng de.', goiY:['像……般 = như…','即使……也…… = dù… vẫn…','折叠 = gấp'], giai:'像 + N + 般 + Adj làm bổ ngữ so sánh (mỏng như giấy); 即使 nêu giả thiết, vế 也 giữ nguyên kết quả.'},
-  {vi:'Khi rán bánh nhất định phải dùng lửa nhỏ, hơn nữa trước khi đậy vung phải rưới một chút nước ấm, nếu không bánh rất dễ bị cháy.', zh:'煎饼的时候一定要用文火，而且盖锅前要淋少许温水，否则饼很容易糊。', py:'Jiān bǐng de shíhou yídìng yào yòng wénhuǒ, érqiě gài guō qián yào lín shǎoxǔ wēnshuǐ, fǒuzé bǐng hěn róngyì hú.', goiY:['否则 = nếu không thì','文火 = lửa nhỏ','少许 = một chút, ít'], giai:'否则 mở vế nêu hậu quả khi không làm theo vế trước; 糊 là “cháy khét” (khác 焦 = xém vàng, giòn).'},
-  {vi:'Bánh củ cải vừa ra chảo ngoài giòn trong mềm, phải ăn ngay lúc còn nóng, nếu đợi nguội mới ăn thì mùi vị kém hẳn.', zh:'刚出锅的萝卜饼外焦里嫩，要趁热吃，要是等凉了再吃，味道就差远了。', py:'Gāng chū guō de luóbobǐng wài jiāo lǐ nèn, yào chèn rè chī, yàoshi děng liángle zài chī, wèidao jiù chà yuǎn le.', goiY:['外焦里嫩 = ngoài giòn trong mềm','趁热 = lúc còn nóng','要是……就…… = nếu… thì…'], giai:'趁热吃 = tranh thủ ăn lúc nóng; 差远了 là “kém xa”, không phải “khác xa”.'},
-  {vi:'Loại bánh này không chỉ ăn ngay được, mà còn có thể chấm chút xì dầu và giấm cho đổi vị — đó cũng là nét đặc sắc trong cách ăn của quê tôi.', zh:'这种饼不仅可以直接吃，还可以蘸少许酱油和醋换换口味，这也是家乡吃法的特色。', py:'Zhè zhǒng bǐng bùjǐn kěyǐ zhíjiē chī, hái kěyǐ zhàn shǎoxǔ jiàngyóu hé cù huànhuan kǒuwèi, zhè yě shì jiāxiāng chīfǎ de tèsè.', goiY:['不仅……还…… = không chỉ… mà còn…','换换口味 = đổi vị','特色 = nét đặc sắc'], giai:'不仅……还…… thêm một cách ăn nữa; 蘸 là “chấm” (khác 淋 = rưới).'},
-  {vi:'Người già thường nói “cá sinh nhiệt, thịt sinh đờm, rau xanh củ cải giữ bình an”, có thể thấy ăn uống thanh đạm không những phòng được nhiều bệnh mà còn rất có lợi cho sức khoẻ.', zh:'老人常说“鱼生火，肉生痰，青菜萝卜保平安”，可见清淡的饮食不但能预防很多病，而且对身体大有好处。', py:'Lǎorén cháng shuō “yú shēng huǒ, ròu shēng tán, qīngcài luóbo bǎo píng\'ān”, kějiàn qīngdàn de yǐnshí búdàn néng yùfáng hěn duō bìng, érqiě duì shēntǐ dà yǒu hǎochu.', goiY:['可见 = có thể thấy','不但……而且……','平安 = bình an'], giai:'可见 rút ra kết luận từ câu nói ở vế trước; 青菜 là “rau xanh” nói chung, không phải riêng “rau cải xanh”.'},
-  {vi:'Xa quê rồi, tôi đã được ăn không ít món ngon, nhưng vẫn mãi không quên được món bánh củ cải mẹ làm; mỗi lần ngửi thấy mùi thơm tương tự, tôi lại bất giác nhớ về những ngày tháng ấy.', zh:'离开家乡后，我吃过不少美食，却始终忘不了母亲做的萝卜饼，每次闻到类似的香味，都会不由得怀念那段日子。', py:'Líkāi jiāxiāng hòu, wǒ chīguo bù shǎo měishí, què shǐzhōng wàng bu liǎo mǔqīn zuò de luóbobǐng, měi cì wéndào lèisì de xiāngwèi, dōu huì bùyóude huáiniàn nà duàn rìzi.', goiY:['却 = nhưng, lại (chuyển ý)','始终 = trước sau vẫn, mãi','不由得 = bất giác'], giai:'却 đứng sau chủ ngữ (được lược), nối ý trái ngược; 闻到 là “ngửi thấy”, đừng dịch thành “nghe thấy”.'}
+  {vi:'Tôi sở dĩ đặc biệt nhớ quê là vì không quên được món bánh củ cải ở đó.',zh:'我之所以特别怀念家乡，是因为忘不了那里的萝卜饼。',py:'Wǒ zhīsuǒyǐ tèbié huáiniàn jiāxiāng, shì yīnwèi wàng bu liǎo nàli de luóbobǐng.',goiY:['之所以……是因为…… = sở dĩ… là vì…','怀念 = nhớ, hoài niệm'],giai:'之所以 nêu kết quả trước, 是因为 nêu nguyên nhân sau — tiếng Việt dịch "sở dĩ… là vì…".'},
+  {vi:'Người quê thường khen củ cải của mình, nói nó còn ngọt hơn cả quýt và lê.',zh:'家乡的人常常夸自己的萝卜，说它比橘子、梨还甜。',py:'Jiāxiāng de rén chángcháng kuā zìjǐ de luóbo, shuō tā bǐ júzi, lí hái tián.',goiY:['夸 = khen','比……还…… = còn… hơn cả…','梨 = quả lê'],giai:'比 A 还 + tính từ = "còn … hơn cả A" (nhấn mạnh); 夸 + người/vật = khen.'},
+  {vi:'Bánh củ cải vừa ra lò ngoài giòn trong mềm, phải ăn lúc còn nóng, nếu đợi nguội rồi mới ăn thì vị kém đi nhiều.',zh:'刚出锅的萝卜饼外焦里嫩，要趁热吃，要是等冷了再吃，味道就差远了。',py:'Gāng chū guō de luóbobǐng wài jiāo lǐ nèn, yào chèn rè chī, yàoshi děng lěng le zài chī, wèidao jiù chà yuǎn le.',goiY:['趁热 = lúc còn nóng','外焦里嫩 = ngoài giòn trong mềm','差远了 = kém xa'],giai:'趁热吃 đối lập với 等冷了再吃; 差远了 = "kém xa", dịch thoáng là "kém đi nhiều".'},
+  {vi:'Bánh củ cải không chỉ có thể ăn ngay, mà còn có thể thêm chút xì dầu và giấm để đổi vị, đây cũng là nét đặc trưng trong cách ăn ở quê.',zh:'萝卜饼不仅可以直接吃，还可以加少许酱油和醋换换口味，这也是家乡吃法的特色。',py:'Luóbobǐng bùjǐn kěyǐ zhíjiē chī, hái kěyǐ jiā shǎoxǔ jiàngyóu hé cù huànhuan kǒuwèi, zhè yě shì jiāxiāng chīfǎ de tèsè.',goiY:['不仅……还…… = không chỉ… mà còn…','少许 = một chút','口味 = khẩu vị'],giai:'少许 (văn viết) = 一点儿; 换换口味 = đổi vị, đổi khẩu vị cho đỡ ngán.'},
+  {vi:'Người già thường nói "cá sinh nhiệt, thịt sinh đờm, rau xanh củ cải giữ bình an", có thể thấy ăn uống thanh đạm không chỉ phòng được nhiều bệnh mà còn rất có lợi cho sức khoẻ.',zh:'老人常说“鱼生火，肉生痰，青菜萝卜保平安”，可见清淡的饮食不但能预防很多病，而且对身体大有好处。',py:'Lǎorén cháng shuō “yú shēng huǒ, ròu shēng tán, qīngcài luóbo bǎo píng\'ān”, kějiàn qīngdàn de yǐnshí búdàn néng yùfáng hěn duō bìng, érqiě duì shēntǐ dà yǒu hǎochù.',goiY:['可见 = có thể thấy','痰 = đờm','平安 = bình an','清淡 = thanh đạm'],giai:'Câu tục ngữ dịch giữ nhịp và ý; 可见 rút ra kết luận từ câu tục ngữ; 大有好处 = "rất có lợi".'},
+  {vi:'Từ khi đi làm xa, tôi đã ăn không ít món ngon, nhưng trước sau vẫn không quên được bánh củ cải mẹ làm; mỗi lần ngửi thấy mùi thơm này, tôi lại bất giác nhớ về những ngày ấy.',zh:'到外地工作以后，我吃过不少美食，却始终忘不了母亲做的萝卜饼，每次闻到这种香味，都会不由得怀念那段日子。',py:'Dào wàidì gōngzuò yǐhòu, wǒ chīguo bù shǎo měishí, què shǐzhōng wàng bu liǎo mǔqin zuò de luóbobǐng, měi cì wéndào zhè zhǒng xiāngwèi, dōu huì bùyóude huáiniàn nà duàn rìzi.',goiY:['始终 = trước sau, luôn luôn','不由得 = bất giác, không kìm được','怀念 = hoài niệm'],giai:'Nhớ quãng ngày đã qua → 怀念; 始终 + phủ định = "trước sau vẫn không…"; 闻到 = ngửi thấy.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1619,30 +1557,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (câu 29–31 lấy từ sách bài tập)
   sapXep:[
-    {manh:['趁热吃','饺子','才好','煮熟后要'],
-     dap:'饺子煮熟后要趁热吃才好。',
-     vn:'Sủi cảo luộc chín rồi phải ăn lúc còn nóng mới ngon.',
-     giai:'Chủ ngữ 饺子 → thời gian 煮熟后 → 要 + 趁热 + 吃 → 才好 ở cuối. 趁热 đứng TRƯỚC động từ 吃.'},
-    {manh:['吹来','深夜的','像刀子般地','寒风'],
-     dap:'深夜的寒风像刀子般地吹来。',
-     vn:'Gió lạnh đêm khuya thổi tới như dao cắt.',
-     giai:'Định ngữ 深夜的 + 寒风 làm chủ ngữ; 像……般地 làm trạng ngữ đứng trước động từ 吹来.'},
-    {manh:['闻到一股','就','扑鼻的香味','我一进门'],
-     dap:'我一进门就闻到一股扑鼻的香味。',
-     vn:'Tôi vừa vào cửa đã ngửi thấy một mùi thơm xộc vào mũi.',
-     giai:'一……就……; lượng từ 一股 đứng trước định ngữ 扑鼻的 + 香味.'},
-    {manh:['是','萝卜饼','怀念的','最让我'],
-     dap:'萝卜饼是最让我怀念的。',
-     vn:'Bánh củ cải là món khiến tôi hoài niệm nhất.',
-     giai:'Chủ ngữ 萝卜饼 + 是 + 最让我怀念的 (cụm chữ 的 làm tân ngữ).'},
-    {manh:['薄如白纸','高手','把面擀得','往往'],
-     dap:'高手往往把面擀得薄如白纸。',
-     vn:'Người giỏi thường cán bột mỏng như tờ giấy trắng.',
-     giai:'Phó từ 往往 đứng trước 把; 把 + 面 + 擀得 + bổ ngữ 薄如白纸.'},
-    {manh:['我们去看看房子吧','这几天休息，','趁着'],
-     dap:'趁着这几天休息，我们去看看房子吧。', chap:['我们趁着这几天休息，去看看房子吧。'],
-     vn:'Nhân mấy hôm nay được nghỉ, chúng ta đi xem nhà đi.',
-     giai:'趁着 + thời cơ đứng đầu câu (hoặc sau chủ ngữ), vế sau nêu việc làm.'}
+    {manh:['趁热吃','饺子','才好','煮好后要'],dap:'饺子煮好后要趁热吃才好。',vn:'Sủi cảo luộc chín rồi phải ăn lúc còn nóng mới ngon.',giai:'Chủ ngữ 饺子 → thời gian 煮好后 → 要 + 趁热 + 吃 → 才好 ở cuối. 趁热 đứng TRƯỚC động từ 吃.'},
+    {manh:['跑了过来','他','像风','般地'],dap:'他像风般地跑了过来。',vn:'Cậu ấy chạy đến nhanh như gió.',giai:'像 + N + 般地 làm trạng ngữ, đứng sau chủ ngữ và trước động từ 跑了过来.'},
+    {manh:['闻到了','厨房里','我','饭菜的香味'],dap:'我闻到了厨房里饭菜的香味。',chap:['厨房里我闻到了饭菜的香味。'],vn:'Tôi ngửi thấy mùi thơm của cơm canh trong bếp.',giai:'Chủ ngữ 我 → 闻到了 (động từ + bổ ngữ kết quả) → tân ngữ có định ngữ 厨房里 + 饭菜的香味.'},
+    {manh:['越来越','怀念','我','小时候的生活'],dap:'我越来越怀念小时候的生活。',vn:'Tôi ngày càng nhớ cuộc sống hồi nhỏ.',giai:'Chủ ngữ 我 → 越来越 + động từ tâm lý 怀念 → tân ngữ 小时候的生活.'},
+    {manh:['薄如白纸','高手','把面擀得','往往'],dap:'高手往往把面擀得薄如白纸。',vn:'Người giỏi thường cán bột mỏng như tờ giấy trắng.',giai:'Phó từ 往往 đứng trước 把; 把 + 面 + 擀得 + bổ ngữ 薄如白纸.'},
+    {manh:['我们去看看房子吧','这几天休息，','趁着'],dap:'趁着这几天休息，我们去看看房子吧。',chap:['我们趁着这几天休息，去看看房子吧。'],vn:'Nhân mấy hôm nay được nghỉ, chúng ta đi xem nhà đi.',giai:'趁着 + thời cơ đứng đầu câu (hoặc sau chủ ngữ), vế sau nêu việc làm.'}
   ]
 };
 
@@ -1652,30 +1572,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (中国菜 · 家乡美食). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 口味 · 清淡 · 特色 · 趁 · 闻 · 怀念 · 切 · 炒 · 煮.',
   questions:[
-    {q_zh:'你喜欢什么口味的菜？不喜欢什么味道的菜？你比较喜欢哪些中国菜？',
-     q_vn:'Em thích món ăn khẩu vị thế nào? Không thích vị gì? Em thích những món Trung Quốc nào?',
-     hint:'Nói khẩu vị + món không thích + 1–2 món Trung Quốc, dùng 口味, 清淡',
-     sample:'我的口味比较清淡，不太喜欢太辣、太油的菜。中国菜里，我最喜欢西红柿炒鸡蛋和饺子，又好吃又简单。',
-     sample_vn:'Khẩu vị tôi khá nhạt, không thích món quá cay, quá nhiều dầu mỡ. Trong các món Trung Quốc, tôi thích nhất trứng xào cà chua và sủi cảo, vừa ngon vừa đơn giản.',
-     note:'Câu hỏi có BA ý — trả lời đủ cả ba, theo đúng thứ tự, người chấm sẽ đánh giá cao.'},
-    {q_zh:'你学过做中国菜吗？学的是什么菜？',
-     q_vn:'Em đã từng học nấu món Trung Quốc chưa? Học món gì?',
-     hint:'Kể ai dạy, khi nào, món gì; dùng 是……的',
-     sample:'学过。去年春节，我是跟一个中国朋友学包饺子的。一开始我擀的饺子皮又厚又不圆，后来慢慢就好多了。',
-     sample_vn:'Có rồi. Tết năm ngoái, tôi học gói sủi cảo với một người bạn Trung Quốc. Lúc đầu vỏ tôi cán vừa dày vừa không tròn, sau dần dần khá hơn nhiều.',
-     note:'Dùng 是……的 để nhấn mạnh thời gian, người dạy (ôn HSK 3–4).'},
-    {q_zh:'你能介绍一下这个菜是怎么做的吗？',
-     q_vn:'Em có thể giới thiệu món đó làm như thế nào không?',
-     hint:'Dùng 先……，再……，然后……，最后……; 把 + 切 / 搅拌',
-     sample:'先把西红柿切成块，把鸡蛋搅拌均匀。然后在锅里放油，先炒鸡蛋，再放西红柿。最后加少许盐和糖，就可以趁热吃了。',
-     sample_vn:'Trước hết cắt cà chua thành miếng, đánh đều trứng. Sau đó cho dầu vào chảo, xào trứng trước rồi cho cà chua vào. Cuối cùng thêm chút muối và đường là có thể ăn nóng được rồi.',
-     note:'Tả cách nấu phải có TỪ NỐI trình tự; câu 把 là trợ thủ đắc lực nhất.'},
-    {q_zh:'你的家乡有什么特色美食？离开家乡以后，你最怀念的是什么？',
-     q_vn:'Quê em có món ăn đặc sắc gì? Rời quê rồi, em hoài niệm nhất điều gì?',
-     hint:'Dùng 特色, 怀念 / 想念, có thể dùng 般 để so sánh',
-     sample:'我的家乡最有特色的是米粉。离开家乡以后，我最怀念的是早上一进门就能闻到妈妈煮的米粉汤的香味。',
-     sample_vn:'Quê tôi đặc sắc nhất là bún. Rời quê rồi, điều tôi hoài niệm nhất là sáng sáng vừa bước vào nhà đã ngửi thấy mùi nồi nước dùng mẹ nấu.',
-     note:'Chú ý phân biệt: nhớ người còn sống → 想念; nhớ quãng thời gian đã qua → 怀念.'}
+    {q_zh:'你喜欢什么口味的菜？不喜欢什么味道的菜？你比较喜欢哪些中国菜？',q_vn:'Em thích món ăn khẩu vị thế nào? Không thích vị gì? Em thích những món Trung Quốc nào?',hint:'Nói khẩu vị + món không thích + 1–2 món Trung Quốc, dùng 口味, 清淡',sample:'我的口味比较清淡，不太喜欢太辣、太咸的菜。中国菜里，我最喜欢西红柿炒鸡蛋和饺子，又好吃又简单。',sample_vn:'Khẩu vị tôi khá nhạt, không thích món quá cay, quá mặn. Trong các món Trung Quốc, tôi thích nhất trứng xào cà chua và sủi cảo, vừa ngon vừa đơn giản.',note:'Câu hỏi có BA ý — trả lời đủ cả ba, theo đúng thứ tự, người chấm sẽ đánh giá cao.'},
+    {q_zh:'你学过做中国菜吗？学的是什么菜？',q_vn:'Em đã từng học nấu món Trung Quốc chưa? Học món gì?',hint:'Kể ai dạy, khi nào, món gì; dùng 是……的',sample:'学过。去年春节，我是跟一个中国朋友学包饺子的。一开始我擀得又厚又难看，后来慢慢就好多了。',sample_vn:'Có rồi. Tết năm ngoái, tôi học gói sủi cảo với một người bạn Trung Quốc. Lúc đầu tôi cán vỏ vừa dày vừa xấu, sau dần dần khá hơn nhiều.',note:'Dùng 是……的 để nhấn mạnh thời gian, người dạy (ôn HSK 3–4).'},
+    {q_zh:'你能介绍一下这个菜是怎么做的吗？',q_vn:'Em có thể giới thiệu món đó làm như thế nào không?',hint:'Dùng 先……，再……，然后……，最后……; 把 + 切 / 搅拌',sample:'先把西红柿切成块，把鸡蛋搅拌均匀。然后在锅里淋一圈油，先炒鸡蛋，再放西红柿。最后加少许盐和糖，就可以趁热吃了。',sample_vn:'Trước hết cắt cà chua thành miếng, đánh đều trứng. Sau đó rưới một vòng dầu vào chảo, xào trứng trước rồi cho cà chua vào. Cuối cùng thêm chút muối và đường là có thể ăn nóng được rồi.',note:'Tả cách nấu phải có TỪ NỐI trình tự; câu 把 là trợ thủ đắc lực nhất.'},
+    {q_zh:'你的家乡有什么特色美食？离开家乡以后，你最怀念的是什么？',q_vn:'Quê em có món ăn đặc sắc gì? Rời quê rồi, em hoài niệm nhất điều gì?',hint:'Dùng 特色, 怀念 / 想念, có thể dùng 般 để so sánh',sample:'我的家乡最有特色的是一种鱼汤。离开家乡以后，我最怀念的是早上一进门就能闻到妈妈煮的鱼汤的香味。',sample_vn:'Quê tôi đặc sắc nhất là một món canh cá. Rời quê rồi, điều tôi hoài niệm nhất là sáng sáng vừa bước vào nhà đã ngửi thấy mùi canh cá mẹ nấu.',note:'Chú ý phân biệt: nhớ người còn sống → 想念; nhớ quãng thời gian đã qua → 怀念.'}
   ]
 };
 
@@ -1766,45 +1666,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Mẹ vừa bưng bát canh nóng lên, em còn đang mải xem điện thoại.',
-     a:{sp:'Mẹ',zh:'汤做好了，快过来吃饭！',vn:'Canh xong rồi, mau lại ăn cơm!'},
-     need:['Dùng 趁','Đáp lời mẹ lễ phép'],
-     sample:'来了来了！汤要趁热喝才好喝，我马上过来。',
-     samplePy:'Lái le lái le! Tāng yào chèn rè hē cái hǎohē, wǒ mǎshàng guòlai.',
-     sampleVn:'Con đến đây! Canh phải uống lúc nóng mới ngon, con qua ngay ạ.',
-     tip:'趁 + 热 đứng trước động từ 喝. Đừng viết 喝趁热.'},
-
-    {scene:'Bạn Trung Quốc hỏi em về món bún chả Hà Nội.',
-     a:{sp:'Bạn',zh:'你们越南有什么特色菜？',vn:'Việt Nam các cậu có món gì đặc sắc?'},
-     need:['Dùng 特色','Giới thiệu ngắn một món'],
-     sample:'河内的烤肉米线很有特色，肉烤得外焦里嫩，再蘸上酸甜的汁，特别好吃。',
-     samplePy:'Hénèi de kǎoròu mǐxiàn hěn yǒu tèsè, ròu kǎo de wài jiāo lǐ nèn, zài zhànshàng suāntián de zhī, tèbié hǎochī.',
-     sampleVn:'Bún chả Hà Nội rất đặc sắc, thịt nướng ngoài giòn trong mềm, chấm thêm nước chấm chua ngọt, ngon cực.',
-     tip:'很有特色, không viết 很特色. Tận dụng luôn 外焦里嫩 của bài.'},
-
-    {scene:'Bạn hỏi vì sao em biết bánh trong lò đã chín.',
-     a:{sp:'Bạn',zh:'你怎么知道饼已经好了？你又没打开看。',vn:'Sao cậu biết bánh chín rồi? Cậu có mở ra xem đâu.'},
-     need:['Dùng 闻','Giải thích bằng mùi thơm'],
-     sample:'我闻到香味了呀！能闻到香味，就说明饼差不多做好了。',
-     samplePy:'Wǒ wéndào xiāngwèi le ya! Néng wéndào xiāngwèi, jiù shuōmíng bǐng chàbuduō zuòhǎo le.',
-     sampleVn:'Tớ ngửi thấy mùi thơm mà! Ngửi được mùi thơm là chứng tỏ bánh gần xong rồi.',
-     tip:'Ngửi là 闻, KHÔNG phải 听. Bổ ngữ kết quả: 闻到.'},
-
-    {scene:'Bạn cũ nhắn tin: em đã chuyển trường một năm, có nhớ lớp cũ không.',
-     a:{sp:'Bạn',zh:'你转学已经一年了，想我们吗？',vn:'Cậu chuyển trường một năm rồi, có nhớ bọn tớ không?'},
-     need:['Dùng 想念 hoặc 怀念 cho đúng','Nói rõ nhớ ai / nhớ điều gì'],
-     sample:'当然想念你们！我也常常怀念我们一起在食堂抢饭的日子。',
-     samplePy:'Dāngrán xiǎngniàn nǐmen! Wǒ yě chángcháng huáiniàn wǒmen yìqǐ zài shítáng qiǎng fàn de rìzi.',
-     sampleVn:'Tất nhiên là nhớ các cậu! Tớ cũng hay hoài niệm những ngày cùng nhau tranh cơm ở căng tin.',
-     tip:'Nhớ BẠN (còn gặp lại được) → 想念; nhớ NHỮNG NGÀY đã qua → 怀念.'},
-
-    {scene:'Em muốn tả nụ cười của cô giáo chủ nhiệm trong bài văn.',
-     a:{sp:'Bạn',zh:'你们班主任是什么样的人？',vn:'Cô chủ nhiệm lớp cậu là người thế nào?'},
-     need:['Dùng 般','So sánh giàu hình ảnh'],
-     sample:'她特别温柔，每次看到我们，脸上总是带着阳光般的笑容。',
-     samplePy:'Tā tèbié wēnróu, měi cì kàndào wǒmen, liǎn shang zǒngshì dàizhe yángguāng bān de xiàoróng.',
-     sampleVn:'Cô rất dịu dàng, mỗi lần gặp chúng tớ trên mặt lúc nào cũng nở nụ cười rạng rỡ như ánh nắng.',
-     tip:'N + 般的 + N làm định ngữ. Đã có 般 thì không thêm 一样 nữa.'}
+    {scene:'Mẹ vừa bưng bát canh nóng lên, em còn đang mải xem điện thoại.',a:{sp:'Mẹ',zh:'汤做好了，快过来吃饭！',vn:'Canh xong rồi, mau lại ăn cơm!'},need:['Dùng 趁','Đáp lời mẹ lễ phép'],sample:'来了来了！汤要趁热喝才好喝，我马上过来。',samplePy:'Lái le lái le! Tāng yào chèn rè hē cái hǎohē, wǒ mǎshàng guòlai.',sampleVn:'Con đến đây! Canh phải uống lúc nóng mới ngon, con qua ngay ạ.',tip:'趁 + 热 đứng trước động từ 喝. Đừng viết 喝趁热.'},
+    {scene:'Bạn Trung Quốc hỏi Việt Nam có thứ gì đặc sắc.',a:{sp:'Bạn',zh:'你们越南有什么有特色的东西吗？',vn:'Việt Nam các cậu có thứ gì đặc sắc không?'},need:['Dùng 特色','Giới thiệu ngắn một thứ + dùng 夸'],sample:'越南的咖啡很有特色，又浓又香，很多外国朋友喝过以后都夸它好喝。',samplePy:'Yuènán de kāfēi hěn yǒu tèsè, yòu nóng yòu xiāng, hěn duō wàiguó péngyou hēguo yǐhòu dōu kuā tā hǎohē.',sampleVn:'Cà phê Việt Nam rất đặc sắc, vừa đậm vừa thơm, nhiều bạn nước ngoài uống rồi đều khen ngon.',tip:'很有特色, không viết 很特色. 浓 (bài 14) tả cà phê, trà đậm.'},
+    {scene:'Bạn hỏi vì sao em biết bánh trong lò đã chín.',a:{sp:'Bạn',zh:'你怎么知道萝卜饼已经好了？你又没打开看。',vn:'Sao cậu biết bánh chín rồi? Cậu có mở ra xem đâu.'},need:['Dùng 闻','Giải thích bằng mùi thơm'],sample:'我闻到香味了呀！能闻到香味，就说明萝卜饼差不多做好了。',samplePy:'Wǒ wéndào xiāngwèi le ya! Néng wéndào xiāngwèi, jiù shuōmíng luóbobǐng chàbuduō zuòhǎo le.',sampleVn:'Tớ ngửi thấy mùi thơm mà! Ngửi được mùi thơm là chứng tỏ bánh gần xong rồi.',tip:'Ngửi là 闻, KHÔNG phải 听. Bổ ngữ kết quả: 闻到.'},
+    {scene:'Bạn cũ nhắn tin: em đã chuyển trường một năm, có nhớ lớp cũ không.',a:{sp:'Bạn',zh:'你转学已经一年了，想我们吗？',vn:'Cậu chuyển trường một năm rồi, có nhớ bọn tớ không?'},need:['Dùng 想念 hoặc 怀念 cho đúng','Nói rõ nhớ ai / nhớ điều gì'],sample:'当然想念你们！我也常常怀念我们一起在学校门口吃早饭的日子。',samplePy:'Dāngrán xiǎngniàn nǐmen! Wǒ yě chángcháng huáiniàn wǒmen yìqǐ zài xuéxiào ménkǒu chī zǎofàn de rìzi.',sampleVn:'Tất nhiên là nhớ các cậu! Tớ cũng hay hoài niệm những ngày cùng nhau ăn sáng ở cổng trường.',tip:'Nhớ BẠN (còn gặp lại được) → 想念; nhớ NHỮNG NGÀY đã qua → 怀念.'},
+    {scene:'Bạn hỏi về cô giáo dạy tiếng Trung của em.',a:{sp:'Bạn',zh:'你们的汉语老师是什么样的人？',vn:'Cô giáo tiếng Trung của các cậu là người thế nào?'},need:['Dùng 般','So sánh giàu hình ảnh'],sample:'她对我们特别亲切，说起话来像春风般温暖。',samplePy:'Tā duì wǒmen tèbié qīnqiè, shuō qǐ huà lai xiàng chūnfēng bān wēnnuǎn.',sampleVn:'Cô rất gần gũi với chúng tớ, nói chuyện ấm áp như gió xuân.',tip:'像 + N + 般 + tính từ = … như …. Đã có 般 thì không thêm 一样 nữa.'}
   ]
 };
 
@@ -1815,29 +1681,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết công thức nấu ăn để đăng lên trang web của câu lạc bộ ẩm thực.',
-     a:'放点儿酱油就行，别太多啊。',b:'最后加入少许酱油，搅拌均匀即可。',better:'b',
-     why:'Công thức nấu ăn dùng giọng văn viết ngắn gọn: 少许, 加入, 即可. Câu a là lời dặn miệng.'},
-
-    {scene:'Em gọi bạn thân vào ăn bánh vừa rán xong.',
-     a:'快来，趁热吃！',b:'建议您趁热食用，口感更佳。',better:'a',
-     why:'Với bạn thân, câu ngắn khẩu ngữ tự nhiên. Câu b như lời trên bao bì sản phẩm, nghe khách sáo.'},
-
-    {scene:'Em viết bài văn tả quê hương nộp cô giáo.',
-     a:'我特别想家里的萝卜饼，好吃极了。',b:'家乡的众多美食中，萝卜饼是最让我怀念的。',better:'b',
-     why:'Bài văn cần giọng văn viết: 众多, 怀念, cấu trúc 最让我……的. Câu a là khẩu ngữ.'},
-
-    {scene:'Em nhắn tin cho mẹ đang đi công tác xa.',
-     a:'妈妈，我好想你啊！你什么时候回来？',b:'母亲，我十分怀念您。',better:'a',
-     why:'Mẹ đi công tác sẽ về → 想 / 想念 (khẩu ngữ, thân mật). 怀念 dùng cho người đã khuất — dùng ở đây rất không hợp!'},
-
-    {scene:'Người phục vụ nhà hàng giới thiệu món với khách.',
-     a:'这是我们店的特色菜，您尝尝。',b:'这个菜挺特别的，你吃吃看。',better:'a',
-     why:'Phục vụ nói với khách dùng 您 và thuật ngữ 特色菜. Câu b dùng 你, nghe suồng sã.'},
-
-    {scene:'Em giải thích với bà vì sao phải đậy vung khi rán bánh.',
-     a:'奶奶，盖上锅盖，放点儿水，饼就不会糊了。',b:'盖锅前须放进温水，以预防糊底。',better:'a',
-     why:'Nói chuyện với bà trong bếp, câu a dễ hiểu, gần gũi. Câu b là văn viết (须, 以) — hợp sách dạy nấu ăn, không hợp lời nói.'}
+    {scene:'Em viết công thức nấu ăn để đăng lên trang web của câu lạc bộ ẩm thực.',a:'放点儿酱油就行，别太多啊。',b:'最后放少许酱油，搅拌均匀即可。',better:'b',why:'Công thức nấu ăn dùng giọng văn viết ngắn gọn: 少许, 即可. Câu a là lời dặn miệng.'},
+    {scene:'Em gọi bạn thân vào ăn bánh vừa rán xong.',a:'快来，趁热吃！',b:'建议您趁热吃，口感会更好。',better:'a',why:'Với bạn thân, câu ngắn khẩu ngữ tự nhiên. Câu b như lời trên bao bì sản phẩm, nghe khách sáo.'},
+    {scene:'Em viết bài văn tả quê hương nộp cô giáo.',a:'我特别想家里的萝卜饼，好吃极了。',b:'在家乡的各种美食中，最让我怀念的就是萝卜饼。',better:'b',why:'Bài văn cần giọng văn viết: 各种美食, 怀念, cấu trúc 最让我……的就是……. Câu a là khẩu ngữ.'},
+    {scene:'Em nhắn tin cho mẹ đang đi công tác xa.',a:'妈妈，我好想你啊！你什么时候回来？',b:'母亲，我十分怀念您。',better:'a',why:'Mẹ đi công tác sẽ về → 想 / 想念 (khẩu ngữ, thân mật). 怀念 dùng cho người đã khuất — dùng ở đây rất không hợp!'},
+    {scene:'Người phục vụ nhà hàng giới thiệu món với khách.',a:'这是我们店的特色菜，您尝尝。',b:'这个菜挺特别的，你吃吃看。',better:'a',why:'Phục vụ nói với khách dùng 您 và thuật ngữ 特色菜. Câu b dùng 你, nghe suồng sã.'},
+    {scene:'Em giải thích với bà vì sao phải đậy vung khi rán bánh.',a:'奶奶，盖上锅盖，放点儿水，饼就不会糊了。',b:'盖锅前须放进温水，以预防糊底。',better:'a',why:'Nói chuyện với bà trong bếp, câu a dễ hiểu, gần gũi. Câu b là văn viết (须, 以) — hợp sách dạy nấu ăn, không hợp lời nói.'}
   ]
 };
 

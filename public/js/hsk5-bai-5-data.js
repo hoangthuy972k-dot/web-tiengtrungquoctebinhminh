@@ -1585,28 +1585,21 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP CỤM — bảng 词语搭配 (tr. 51) + bài 3 画线连接 (tr. 53)
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'充满',right:'希望'},
   {left:'反映',right:'生活水平'},
   {left:'悠久的',right:'历史'},
-  {left:'独特的',right:'建筑'},
-  {left:'生动地',right:'描写'},
-  {left:'逐渐',right:'形成'},
   {left:'晕',right:'过去'},
-  {left:'救',right:'活'},
+  {left:'治',right:'病'},
   {left:'碰',right:'见'},
-  {left:'抢',right:'光'},
-  {left:'打',right:'晕'},
   {left:'善良的',right:'性格'},
   {left:'广大的',right:'农村'},
   {left:'埋入',right:'地下'},
-  {left:'由南向北',right:'斜'},
   {left:'挡住了',right:'路'},
   {left:'冲出',right:'地表'},
-  {left:'变为',right:'火成岩'},
-  {left:'赞美',right:'家乡'},
   {left:'心存',right:'感激'}
 ];
 
@@ -1614,65 +1607,33 @@ var matchData = [
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'越南是一个有着',blank:'悠久',post:'历史的国家。',hint:'(lâu đời)',ans:'悠久'},
-  {pre:'汉字是世界上最古老的',blank:'文字',post:'之一。',hint:'(chữ viết)',ans:'文字'},
-  {pre:'据',blank:'记载',post:'，这座桥已经有八百多年的历史了。',hint:'(ghi chép)',ans:'记载'},
-  {pre:'这块石头的',blank:'形状',post:'像一只小猫。',hint:'(hình dạng)',ans:'形状'},
-  {pre:'这首诗主要',blank:'描写',post:'了一对年轻人的恋爱经历。',hint:'(miêu tả)',ans:'描写'},
-  {pre:'这首',blank:'诗',post:'我一读就会背了。',hint:'(bài thơ)',ans:'诗'},
-  {pre:'济南的',blank:'老百姓',post:'住在泉边，喝着这甜美的泉水。',hint:'(người dân)',ans:'老百姓'},
-  {pre:'新产品很受顾客欢迎，使我对公司的未来',blank:'充满',post:'信心。',hint:'(tràn đầy)',ans:'充满'},
-  {pre:'换一个角度考虑，也许正好就能发现问题的关键，',blank:'从而',post:'找到解决问题的答案。',hint:'(nhờ đó, từ đó)',ans:'从而',exp:'从而 = từ đó, nhờ đó (văn viết); nối kết quả hoặc mục đích đạt được nhờ hành động trước.'},
-  {pre:'我担心长期吃这种药会对身体',blank:'产生',post:'不好的影响。',hint:'(gây ra, nảy sinh)',ans:'产生'},
-  {pre:'关于还剑湖，越南有一个很有名的',blank:'传说',post:'。',hint:'(truyền thuyết)',ans:'传说'},
-  {pre:'我的同桌心地',blank:'善良',post:'，经常帮助别人。',hint:'(lương thiện)',ans:'善良'},
-  {pre:'医生们努力了三个小时，终于把他',blank:'救',post:'过来了。',hint:'(cứu)',ans:'救'},
-  {pre:'天气太热了，有个同学在操场上',blank:'晕',post:'倒了。',hint:'(ngất)',ans:'晕'},
-  {pre:'在中国和越南的文化里，',blank:'龙',post:'都代表着好运。',hint:'(con rồng)',ans:'龙'},
-  {pre:'爷爷每天早上都要泡一',blank:'壶',post:'茶。',hint:'(ấm)',ans:'壶'},
-  {pre:'小狗把骨头',blank:'埋',post:'在了花园里。',hint:'(chôn)',ans:'埋'},
-  {pre:'弟弟一看见妈妈回来，就把手机',blank:'藏',post:'起来了。',hint:'(giấu)',ans:'藏'},
-  {pre:'越南的少数民族主要',blank:'分布',post:'在北部山区。',hint:'(phân bố)',ans:'分布'},
-  {pre:'妈妈只买',blank:'天然',post:'食品，不买加了很多东西的饮料。',hint:'(tự nhiên)',ans:'天然'},
-  {pre:'一个人的字能',blank:'反映',post:'出他的性格。',hint:'(phản ánh)',ans:'反映'},
-  {pre:'妈妈生日那天，爸爸送了她一条',blank:'珍珠',post:'项链。',hint:'(ngọc trai)',ans:'珍珠'},
-  {pre:'我从小就',blank:'形成',post:'了早睡早起的好习惯。',hint:'(hình thành)',ans:'形成'},
-  {pre:'刘经理毕业',blank:'于',post:'北京大学经济学院。',hint:'(từ — giới từ văn viết)',ans:'于',exp:'于 = ở, tại, từ (giới từ văn viết) đặt sau động từ: 毕业于北京大学.'},
-  {pre:'这个节目受到了',blank:'广大',post:'观众的欢迎。',hint:'(đông đảo)',ans:'广大'},
-  {pre:'越南大约有一',blank:'亿',post:'人口。',hint:'(một trăm triệu)',ans:'亿'},
-  {pre:'沿海',blank:'地区',post:'的经济发展得比较快。',hint:'(khu vực, vùng)',ans:'地区'},
-  {pre:'从父母的',blank:'角度',post:'看，他们只是希望你安全。',hint:'(góc độ)',ans:'角度'},
-  {pre:'这幅画挂得有点儿',blank:'斜',post:'，你帮我扶正吧。',hint:'(lệch, nghiêng)',ans:'斜'},
-  {pre:'办公室让我通知你明天下午的活动改',blank:'为',post:'下周一了。',hint:'(thành — đọc wéi)',ans:'为',exp:'V + 为 (wéi) = thành: 改为下周一, 称为, 选为. 为 ở đây đứng sau động từ chỉ kết quả thay đổi.'},
-  {pre:'我昨天在超市',blank:'碰',post:'见了小学同学。',hint:'(tình cờ gặp)',ans:'碰'},
-  {pre:'前面的人太高了，',blank:'挡',post:'住了我的视线。',hint:'(che, chắn)',ans:'挡'},
-  {pre:'下课铃一响，同学们就',blank:'冲',post:'出了教室。',hint:'(lao ra)',ans:'冲'},
-  {pre:'这里',blank:'地势',post:'平坦，很适合骑自行车。',hint:'(địa thế)',ans:'地势'},
-  {pre:'海边有很多形状奇特的',blank:'岩石',post:'。',hint:'(đá)',ans:'岩石'},
-  {pre:'地球',blank:'表面',post:'大约百分之七十是水。',hint:'(bề mặt)',ans:'表面'},
-  {pre:'',blank:'济南',post:'被人们称为“泉城”。',hint:'(Tế Nam)',ans:'济南'},
-  {pre:'相传很久以前，济南城里有个善良的青年，名叫',blank:'鲍全',post:'。',hint:'(Bào Toàn)',ans:'鲍全'}
+  {pre:'这位老师来自',blank:'于',post:'越南南方。',hint:'(từ — văn viết, đứng sau 来自)',ans:'于',exp:'V + 于 + nơi chốn/thời gian là lối văn viết: 来自于, 毕业于.'},
+  {pre:'这个小地方十年里变',blank:'为',post:'了一个热闹的小镇。',hint:'(thành — đọc wéi)',ans:'为',exp:'变为 (biànwéi) = biến thành, văn viết của 变成; 为 đọc wéi khi đứng sau động từ: 变为, 改为, 选为.'},
+  {pre:'他把我的手机藏了',blank:'起来',post:'，我找了半天也没找到。',hint:'(đi — giấu kín)',ans:'起来',exp:'藏起来: 起来 chỉ từ chỗ lộ ra → bị giấu kín; tương tự 收起来, 存起来.'},
+  {pre:'这本小说',blank:'描写',post:'了一个农村女孩上大学的经历。',hint:'(miêu tả)',ans:'描写',exp:'描写 + người/cảnh/cuộc sống: miêu tả bằng lời văn — hay dùng cho tác phẩm, bài văn.'},
+  {pre:'我一坐船就头',blank:'晕',post:'，一点儿东西也吃不下。',hint:'(choáng, chóng mặt)',ans:'晕',exp:'头晕 = chóng mặt; 晕倒 = ngất xỉu.'},
+  {pre:'你站在这儿',blank:'挡',post:'住了后面的人，往旁边走一点儿吧。',hint:'(che, chắn)',ans:'挡',exp:'挡住 + người/đường/ánh sáng = chắn mất, che mất.'},
+  {pre:'你的字写得有点儿',blank:'斜',post:'，你再认真写一遍吧。',hint:'(nghiêng, xiêu)',ans:'斜',exp:'斜 là tính từ "nghiêng, lệch": 写得斜, 挂斜了.'},
+  {pre:'这种饮料是用',blank:'天然',post:'的水果做的，什么别的东西也没放。',hint:'(tự nhiên, thiên nhiên)',ans:'天然',exp:'天然 = có sẵn trong tự nhiên, không do con người tạo ra: 天然的水果, 天然泉.'},
+  {pre:'关于这个地方的历史，书里没有任何',blank:'记载',post:'。',hint:'(ghi chép)',ans:'记载',exp:'记载 vừa là động từ (书上记载了……) vừa là danh từ (没有记载 = không có ghi chép).'},
+  {pre:'天上的云一会儿一个',blank:'形状',post:'，真有意思。',hint:'(hình dạng)',ans:'形状',exp:'形状 = hình dạng bên ngoài: 一个形状, 各种形状.'},
+  {pre:'你应该站在别人的',blank:'角度',post:'想一想。',hint:'(góc độ, góc nhìn)',ans:'角度',exp:'站在……的角度 / 从……的角度 + V = đứng ở góc nhìn của… mà nghĩ.'},
+  {pre:'这种花主要',blank:'分布',post:'在南方的山区。',hint:'(phân bố)',ans:'分布',exp:'分布在 + nơi chốn = phân bố ở…; 分布着 + số lượng (câu tồn tại).'},
+  {pre:'这个小女孩很',blank:'善良',post:'，看到路边的小猫没吃的，就把自己的面包给了它。',hint:'(tốt bụng, lương thiện)',ans:'善良',exp:'善良 tả tấm lòng tốt của con người: 善良的人, 心地善良.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (起来 · 于 · 从而 · 为) ít nhất hai câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['他','把','壶','埋入地下','藏了','起来','。'],ans:'他把壶埋入地下藏了起来。',audio:'他把壶埋入地下藏了起来。'},
-  {words:['地下水','被','火成岩','挡住了路','，','就','积蓄起来了','。'],ans:'地下水被火成岩挡住了路，就积蓄起来了。',audio:'地下水被火成岩挡住了路，就积蓄起来了。'},
-  {words:['济南的泉水','来自于','济南市以南的','广大山区','。'],ans:'济南的泉水来自于济南市以南的广大山区。',audio:'济南的泉水来自于济南市以南的广大山区。'},
-  {words:['多运动','有助于','身体健康','。'],ans:'多运动有助于身体健康。',audio:'多运动有助于身体健康。'},
-  {words:['这家公司','成立','于','1997年','。'],ans:'这家公司成立于1997年。',audio:'这家公司成立于1997年。'},
-  {words:['他','每天','坚持','复习','，','从而','取得了','好成绩','。'],ans:'他每天坚持复习，从而取得了好成绩。',audio:'他每天坚持复习，从而取得了好成绩。'},
-  {words:['老百姓','对泉水','充满感激之情','，','从而','产生了','许多传说','。'],ans:'老百姓对泉水充满感激之情，从而产生了许多传说。',audio:'老百姓对泉水充满感激之情，从而产生了许多传说。'},
-  {words:['济南市区的','地下岩石','变为了','火成岩','。'],ans:'济南市区的地下岩石变为了火成岩。',audio:'济南市区的地下岩石变为了火成岩。'},
-  {words:['办公室','把','报名时间','改为了','下周一','。'],ans:'办公室把报名时间改为了下周一。',audio:'办公室把报名时间改为了下周一。'},
-  {words:['他','被','同学们','选为','班长','。'],ans:'他被同学们选为班长。',audio:'他被同学们选为班长。'},
-  {words:['济南市区内','分布着','七百多个','天然泉','。'],ans:'济南市区内分布着七百多个天然泉。',audio:'济南市区内分布着七百多个天然泉。'},
-  {words:['地下水','冲出','地表','，','形成了','众多的泉水','。'],ans:'地下水冲出地表，形成了众多的泉水。',audio:'地下水冲出地表，形成了众多的泉水。'},
-  {words:['这里','流传着','许多','美丽的','传说','。'],ans:'这里流传着许多美丽的传说。',audio:'这里流传着许多美丽的传说。'},
-  {words:['她','有','一颗','美丽善良的','心','。'],ans:'她有一颗美丽善良的心。',audio:'她有一颗美丽善良的心。'},
-  {words:['这么多','泉水','是','如何','形成的','？'],ans:'这么多泉水是如何形成的？',audio:'这么多泉水是如何形成的？'}
+  {words:['吃完饭','，','妈妈','让','我','把','桌子上的','东西','收','起来','。'],ans:'吃完饭，妈妈让我把桌子上的东西收起来。',audio:'吃完饭，妈妈让我把桌子上的东西收起来。'},
+  {words:['今年','来','这里','旅游的','人','多于','去年','。'],ans:'今年来这里旅游的人多于去年。',audio:'今年来这里旅游的人多于去年。'},
+  {words:['这家','饭馆','降低了','价格','，','从而','吸引了','更多的','客人','。'],ans:'这家饭馆降低了价格，从而吸引了更多的客人。',audio:'这家饭馆降低了价格，从而吸引了更多的客人。'},
+  {words:['他们','把','这个','小房间','改为了','办公室','。'],ans:'他们把这个小房间改为了办公室。',audio:'他们把这个小房间改为了办公室。'},
+  {words:['以前','去北京','要坐','好几天的车','，','如今','坐飞机','两个小时','就到了','。'],ans:'以前去北京要坐好几天的车，如今坐飞机两个小时就到了。',audio:'以前去北京要坐好几天的车，如今坐飞机两个小时就到了。'},
+  {words:['下班的时候','，','我','在','电梯里','碰见了','新来的','经理','。'],ans:'下班的时候，我在电梯里碰见了新来的经理。',audio:'下班的时候，我在电梯里碰见了新来的经理。'},
+  {words:['一','听到','好消息','，','他','就','冲出','办公室','告诉','大家','。'],ans:'一听到好消息，他就冲出办公室告诉大家。',audio:'一听到好消息，他就冲出办公室告诉大家。'},
+  {words:['来','这里','旅游的','人','都','赞美','这里的','泉水','。'],ans:'来这里旅游的人都赞美这里的泉水。',audio:'来这里旅游的人都赞美这里的泉水。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1680,44 +1641,18 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'她的善良受到了大家的____。',opts:['赞美','描写','感激','反映'],ans:0,
-   exp:'受到……的赞美 = được … ca ngợi. 描写 (miêu tả) và 反映 (phản ánh) không đi với 受到 theo nghĩa này; 感激 là lòng biết ơn của người được giúp, không phải lời khen.'},
-  {wrong:'你帮了我这么大的忙，我真不知道该怎么____你。',opts:['感激','感动','充满','赞美'],ans:0,
-   exp:'感激 + người = biết ơn, đền ơn ai. 感动 là "cảm động" (让我很感动), không mang nghĩa đền ơn; 充满 phải có tân ngữ trừu tượng (充满信心); 赞美 là ca ngợi, không hợp tình huống được giúp đỡ.'},
-  {wrong:'十年前这里还是农村，____已经变成了一个热闹的城市。',opts:['如今','当时','从前','将来'],ans:0,
-   exp:'Đối chiếu quá khứ (十年前) với hiện tại → 如今 (ngày nay). 当时 và 从前 chỉ quá khứ; 将来 là tương lai, không đi với 已经.'},
-  {wrong:'演员们的动作十分____。',opts:['优美','美丽','善良','天然'],ans:0,
-   exp:'Động tác đem lại cảm giác đẹp → 优美. 美丽 thiên về vẻ ngoài nhìn thấy (dung mạo, cảnh vật), sách ghi rõ động tác dùng 优美; 善良 tả lòng tốt; 天然 là "có sẵn trong tự nhiên".'},
-  {wrong:'这家小店的牛肉面有一种____的味道，别的地方吃不到。',opts:['独特','优美','善良','广大'],ans:0,
-   exp:'Hương vị riêng, chỗ khác không có → 独特的味道. 优美 không tả mùi vị; 善良 tả con người; 广大 là rộng lớn / đông đảo.'},
-  {wrong:'奶奶送给我一块____，说能带来好运。',opts:['玉','壶','龙','诗'],ans:0,
-   exp:'Lượng từ 块 + vật quý đem lại may mắn → 玉 (ngọc). 壶 dùng lượng từ 把; 龙 dùng 条; 诗 dùng 首.'},
-  {wrong:'商店一打折，东西很快就被____光了。',opts:['抢','救','埋','藏'],ans:0,
-   exp:'抢光 = tranh nhau mua hết sạch. 救 (cứu), 埋 (chôn), 藏 (giấu) đều không kết hợp với 光 trong ngữ cảnh mua sắm.'},
-  {wrong:'这种药能____感冒。',opts:['治','救','碰','挡'],ans:0,
-   exp:'治 + bệnh = chữa bệnh (治感冒, 治病). 救 đi với người (救人), không nói 救感冒; 碰 (chạm) và 挡 (chắn) không hợp nghĩa.'},
-  {wrong:'在这种____地区，陆地表面的水很容易进入地下。',opts:['石灰岩','火成岩','珍珠','天然'],ans:0,
-   exp:'Nước thấm xuống dễ dàng là đặc điểm của đá vôi → 石灰岩地区. 火成岩 lại CHẶN nước; 珍珠 là ngọc trai; 天然地区 không phải cụm từ.'},
-  {wrong:'地下水流到这里，碰到____挡住了路，就积蓄起来。',opts:['火成岩','石灰岩','地势','表面'],ans:0,
-   exp:'Thứ chặn đường nước ngầm là đá mác-ma cứng → 火成岩. 石灰岩 cho nước thấm qua; 地势 (địa thế) và 表面 (bề mặt) không "chặn đường" được.'},
-  {wrong:'鲍全救的那位老人其实是____的哥哥。',opts:['东海龙王','鲍全','舜','济南'],ans:0,
-   exp:'Theo bài khoá: 这老人其实是东海龙王的哥哥. 鲍全 là chính người cứu; 舜 là vua Thuấn (tên suối 舜泉); 济南 là tên thành phố.'},
-  {wrong:'被称为“天下第一泉”的是____。',opts:['趵突泉','珍珠泉','黑虎泉','舜泉'],ans:0,
-   exp:'Mỹ danh 天下第一泉 thuộc về 趵突泉 (suối Báo Đột). Ba suối còn lại là ví dụ về cách đặt tên: theo hình dạng, con vật, tên người.'},
-  {wrong:'以人名命名的泉水是____泉。',opts:['舜','珍珠','黑虎','趵突'],ans:0,
-   exp:'舜泉 đặt theo tên vua Thuấn (人名). 珍珠泉 đặt theo hình dạng, 黑虎泉 theo con vật, 趵突泉 tả nước phun lên.'},
-  {wrong:'为了不被坏人抢走，他把壶埋入地下藏了____。',opts:['起来','下去','出来','过去'],ans:0,
-   exp:'V + 起来 biểu thị từ chỗ lộ ra thành chỗ kín (藏起来, 躲起来) — điểm ngữ pháp của bài. 出来 ngược lại (lộ ra); 下去, 过去 không đi với 藏 theo nghĩa này.'},
-  {wrong:'比赛前做好思想准备可以减少运动员的压力，____取得比赛的成功。',opts:['从而','因为','虽然','而且'],ans:0,
-   exp:'Vế trước là cách làm, vế sau là kết quả đạt được nhờ đó → 从而. 因为 nêu nguyên nhân, 虽然 nêu nhượng bộ; 而且 chỉ tăng tiến, không nêu kết quả.'},
-  {wrong:'这家公司成立____1997年。',opts:['于','在于','对于','关于'],ans:0,
-   exp:'V + 于 + thời gian: 成立于1997年 (văn viết của 在1997年成立). 在于 = "nằm ở, do ở"; 对于, 关于 đứng đầu câu/cụm, không đứng sau động từ.'},
-  {wrong:'每个人都会遇到各种压力，可是，压力也可以变____动力。',opts:['为','成为','给','于'],ans:0,
-   exp:'变为 = biến thành (为 đọc wéi, làm bổ ngữ sau động từ). "变成为" thừa chữ; 给 và 于 không mang nghĩa "trở thành".'},
-  {wrong:'____是五点，再过一刻钟小明就放学了。',opts:['现在','如今','以来','当时'],ans:0,
-   exp:'Nói giờ giấc cụ thể → 现在. 如今 chỉ "ngày nay" đối chiếu với xưa, không dùng cho giờ; 以来 đứng sau mốc thời gian (bài 2); 当时 là "lúc đó" trong quá khứ.'},
-  {wrong:'我这次来是想当面向你表示____的。',opts:['感谢','感激','赞美','充满'],ans:0,
-   exp:'表示感谢 là cụm cố định — bày tỏ lời cảm ơn. 感激 nhấn mạnh tình cảm trong lòng, ít đi với 表示; 赞美 là ca ngợi; 充满 không làm tân ngữ của 表示.'}
+  {wrong:'____几点了？我忘了带手机。',opts:['现在','如今','从前','以来'],ans:0,exp:'Hỏi giờ ngay lúc này → 现在. 如今 chỉ "thời nay" (so với ngày xưa), không dùng để hỏi giờ; 从前 là ngày xưa; 以来 đứng sau mốc thời gian.'},
+  {wrong:'他每天坚持说半个小时汉语，____很快提高了说汉语的水平。',opts:['从而','因为','虽然','如果'],ans:0,exp:'Vế sau là KẾT QUẢ đạt được nhờ cách làm ở vế trước → 从而. 因为 nêu nguyên nhân, 虽然 nêu nhượng bộ, 如果 nêu giả thiết — đều không đứng đầu vế kết quả.'},
+  {wrong:'在越南住了一年，他对越南菜____了兴趣，现在自己也会做了。',opts:['产生','发生','形成','反映'],ans:0,exp:'对……产生兴趣 = nảy sinh hứng thú với… 发生 dùng cho sự việc (发生了一件事); 形成 dùng cho thói quen, hình dạng; 反映 là phản ánh.'},
+  {wrong:'这本小说____了上个世纪普通人的生活。',opts:['反映','产生','分布','形成'],ans:0,exp:'Tác phẩm thể hiện hiện thực cuộc sống → 反映. 产生, 分布, 形成 không mang tân ngữ 生活 theo nghĩa này.'},
+  {wrong:'她跳舞的动作非常____。',opts:['优美','美丽','悠久','善良'],ans:0,exp:'Động tác, giọng hát, câu văn đẹp, uyển chuyển → 优美. 美丽 tả vẻ đẹp bề ngoài (美丽的眼睛), không tả động tác; 悠久 nói lịch sử; 善良 nói tấm lòng.'},
+  {wrong:'服务员，再给我们来一____茶。',opts:['壶','张','条','双'],ans:0,exp:'Trà pha trong ấm → 一壶茶. 张 cho vật phẳng; 条 cho vật dài; 双 cho đôi.'},
+  {wrong:'汉字是世界上历史最长的____之一。',opts:['文字','文章','句子','汉语'],ans:0,exp:'Hệ thống chữ viết → 文字. 文章 là bài văn; 句子 là câu; 汉语 là tiếng Hán — 汉字 là chữ, không phải một "ngôn ngữ".'},
+  {wrong:'我们学校有一百多年的历史，是这个城市历史最____的学校。',opts:['悠久','广大','天然','善良'],ans:0,exp:'历史悠久 là kết hợp cố định (lịch sử lâu đời). 广大 tả vùng đất rộng, số đông người; 天然 là tự nhiên; 善良 tả tấm lòng.'},
+  {wrong:'我找不到我的手机了，一定是弟弟把它____起来了。',opts:['藏','埋','抢','救'],ans:0,exp:'Giấu đồ đi để người khác không thấy → 藏起来. 埋 là chôn xuống đất; 抢 là giật lấy; 救 là cứu.'},
+  {wrong:'这位医生____好了很多人的病。',opts:['治','救','抢','碰'],ans:0,exp:'治 + 病 = chữa bệnh (治好了病). 救 đi với người (救人), không nói 救好了病; 抢, 碰 không hợp nghĩa.'},
+  {wrong:'这个新办法得到了____老百姓的支持。',opts:['广大','天然','悠久','优美'],ans:0,exp:'广大 + 老百姓/观众/学生 = đông đảo. 天然, 悠久, 优美 không dùng để tả số đông người.'},
+  {wrong:'一个孩子突然从马路边____了出来，司机马上停了车。',opts:['冲','碰','挡','埋'],ans:0,exp:'Lao ra rất nhanh → 冲出来. 碰 là va chạm, 挡 là chặn, 埋 là chôn — không đi với 出来 theo nghĩa này.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1725,29 +1660,21 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var translateData = [
   {vi:'Tôi chơi điện thoại đến mức chóng cả mặt, thế là mẹ đem nó giấu biệt đi.',zh:'我玩儿手机玩儿得头都晕了，于是妈妈把它藏了起来。',py:'Wǒ wánr shǒujī wánr de tóu dōu yūn le, yúshì māma bǎ tā cángle qilai.',goiY:['晕','于是','藏了起来'],giai:'藏起来: 起来 chỉ từ chỗ lộ ra → giấu kín; tân ngữ đưa lên trước bằng 把 (把它藏了起来), không nói 藏起来它.'},
-  {vi:'Ngày nào cũng kiên trì tập thể dục giúp thả lỏng tinh thần, nhờ đó nâng cao hiệu quả học tập.',zh:'每天坚持运动有助于放松心情，从而提高学习效率。',py:'Měi tiān jiānchí yùndòng yǒuzhù yú fàngsōng xīnqíng, cóng\'ér tígāo xuéxí xiàolǜ.',goiY:['有助于','从而'],giai:'有助于 + N/V = có ích cho, giúp…; 从而 (văn viết) nối kết quả đạt được nhờ vế trước, đứng đầu vế sau và dùng chung chủ ngữ.'},
-  {vi:'Vì Tiểu Lâm sống tốt bụng, chân thành lại hay giúp đỡ người khác nên được mọi người bầu làm lớp trưởng.',zh:'因为小林为人善良诚恳、乐于助人，所以被大家选为班长。',py:'Yīnwèi Xiǎo Lín wéirén shànliáng chéngkěn, lèyú zhùrén, suǒyǐ bèi dàjiā xuǎnwéi bānzhǎng.',goiY:['因为……所以……','善良','选为'],giai:'选为 (xuǎnwéi): 为 đọc wéi = "làm, trở thành", đứng sau động từ 选; khác 为 (wèi) = "vì, cho". 乐于 = vui lòng, sẵn lòng (于 + đối tượng).'},
-  {vi:'Trường chúng tôi tuy lịch sử lâu đời nhưng khuôn viên lúc nào cũng tràn đầy sức sống, thảo nào đến giờ các cựu học sinh vẫn thường quay về thăm trường.',zh:'我们学校虽然历史悠久，校园里却充满了活力，难怪毕业的学生至今还常常回来看看。',py:'Wǒmen xuéxiào suīrán lìshǐ yōujiǔ, xiàoyuán li què chōngmǎnle huólì, nánguài bìyè de xuésheng zhìjīn hái chángcháng huílai kànkan.',goiY:['虽然……却……','悠久','充满','至今'],giai:'虽然…却…: 却 là phó từ nên đứng sau chủ ngữ 校园里; 历史悠久 là cụm cố định "lịch sử lâu đời"; 难怪 nêu điều giờ đã hiểu.'},
-  {vi:'Ngày nay, dù đi du lịch thành phố nào, giới trẻ cũng lên mạng dò hỏi trước xem có món ăn đặc sắc gì.',zh:'如今，无论去哪个城市旅游，年轻人都会先上网打听一下有什么独特的美食。',py:'Rújīn, wúlùn qù nǎge chéngshì lǚyóu, niánqīngrén dōu huì xiān shàngwǎng dǎting yíxià yǒu shénme dútè de měishí.',goiY:['如今','无论……都……','打听','独特'],giai:'无论 + từ để hỏi (哪个) + 都 = bất kể… đều…; 如今 = ngày nay, đứng đầu câu, trang trọng hơn 现在.'},
-  {vi:'Thầy vừa cho cả lớp tập trung trên sân thì trời đổ mưa to, các bạn đành lấy cặp che đầu chạy ào vào toà nhà học.',zh:'老师刚让大家在操场上集合起来，天上就下起了大雨，同学们只好用书包挡着头冲进教学楼。',py:'Lǎoshī gāng ràng dàjiā zài cāochǎng shang jíhé qilai, tiān shang jiù xiàqǐle dàyǔ, tóngxuémen zhǐhǎo yòng shūbāo dǎngzhe tóu chōngjìn jiàoxuélóu.',goiY:['集合起来','只好','挡','冲进'],giai:'集合起来: 起来 chỉ từ phân tán → tập trung; 刚…就… = vừa… thì đã…; 冲进 = lao/chạy ào vào, diễn tả động tác nhanh, mạnh.'},
-  {vi:'Bài văn này lấy cuộc đời của bà làm mạch chính, qua nhiều chi tiết miêu tả mà phản ánh được cuộc sống của người bình thường trong thời đại đó.',zh:'这篇作文以奶奶的一生为主线，通过许多细节描写，从而反映出了那个时代普通人的生活。',py:'Zhè piān zuòwén yǐ nǎinai de yìshēng wéi zhǔxiàn, tōngguò xǔduō xìjié miáoxiě, cóng\'ér fǎnyìng chūle nàge shídài pǔtōngrén de shēnghuó.',goiY:['以……为……','细节','从而','反映'],giai:'以 A 为 B = lấy A làm B (为 đọc wéi); 通过…，从而… = thông qua…, nhờ đó mà… — 从而 dẫn kết quả.'},
-  {vi:'Bài thơ này sở dĩ được lưu truyền đến nay và được nhiều người ca ngợi đến thế là vì nó không chỉ có ngôn từ đẹp đẽ mà còn chan chứa lòng biết ơn đối với người mẹ.',zh:'这首诗之所以能流传至今，受到那么多人的赞美，是因为它不但语言优美，而且充满了对母亲的感激之情。',py:'Zhè shǒu shī zhīsuǒyǐ néng liúchuán zhìjīn, shòudào nàme duō rén de zànměi, shì yīnwèi tā búdàn yǔyán yōuměi, érqiě chōngmǎnle duì mǔqīn de gǎnjī zhī qíng.',goiY:['之所以……是因为……','流传至今','优美','感激'],giai:'之所以…是因为… lồng thêm 不但…而且… để nêu hai lý do; 充满…之情 = chan chứa tình cảm…, không dịch "đầy tràn".'},
-  {vi:'Toà thư viện này được xây từ thế kỷ trước, nay đã được đổi thành trung tâm sinh hoạt của học sinh, nhưng những dòng chữ khắc trên tường đến giờ vẫn còn giữ được nguyên vẹn.',zh:'这座图书馆建于上个世纪，如今已经改为学生活动中心，可是墙上刻的那些文字至今还保存得很好。',py:'Zhè zuò túshūguǎn jiàn yú shàng ge shìjì, rújīn yǐjīng gǎiwéi xuésheng huódòng zhōngxīn, kěshì qiáng shang kè de nàxiē wénzì zhìjīn hái bǎocún de hěn hǎo.',goiY:['建于','改为','可是','至今'],giai:'V + 于 + thời gian (建于…) = được xây vào…, lối văn viết; 改为 (gǎiwéi) = đổi thành. 如今 và 至今 đều chỉ hiện tại nhưng 至今 nhấn mạnh sự kéo dài từ quá khứ.'},
-  {vi:'Bài tập địa lý lần này, một mặt chúng tôi phải khảo sát sự phân bố của các mạch suối tự nhiên ở địa phương, mặt khác phải tìm hiểu rõ chúng được hình thành như thế nào.',zh:'这次地理作业，我们一方面要调查本地天然泉水的分布，另一方面要弄清它们是如何形成的。',py:'Zhè cì dìlǐ zuòyè, wǒmen yì fāngmiàn yào diàochá běndì tiānrán quánshuǐ de fēnbù, lìng yì fāngmiàn yào nòngqīng tāmen shì rúhé xíngchéng de.',goiY:['一方面……另一方面……','分布','如何','形成'],giai:'一方面…另一方面… trình bày hai nhiệm vụ song song; 是如何形成的 dùng cấu trúc 是…的 nhấn mạnh cách thức — dịch "được hình thành như thế nào".'}
+  {vi:'Ngày nay, dù đi du lịch thành phố nào, giới trẻ cũng lên mạng dò hỏi trước xem có món ăn vặt đặc sắc gì.',zh:'如今，无论去哪个城市旅游，年轻人都会先上网打听一下有什么独特的小吃。',py:'Rújīn, wúlùn qù nǎge chéngshì lǚyóu, niánqīngrén dōu huì xiān shàngwǎng dǎting yíxià yǒu shénme dútè de xiǎochī.',goiY:['如今','无论……都……','打听','独特'],giai:'无论 + từ để hỏi (哪个) + 都 = bất kể… đều…; 如今 = ngày nay, đứng đầu câu, trang trọng hơn 现在; 打听 (bài 4).'},
+  {vi:'Mỗi ngày cô ấy dậy sớm nửa tiếng để đọc tiếng Trung, nhờ đó mà kỳ thi lần này đạt được kết quả tốt.',zh:'她每天早起半个小时读汉语，从而在这次考试中取得了好成绩。',py:'Tā měi tiān zǎo qǐ bàn ge xiǎoshí dú Hànyǔ, cóng\'ér zài zhè cì kǎoshì zhōng qǔdéle hǎo chéngjì.',goiY:['从而','取得','成绩'],giai:'从而 (văn viết) mở vế kết quả, dùng chung chủ ngữ với vế trước — không lặp lại 她; "đạt kết quả tốt" là 取得好成绩.'},
+  {vi:'Tốt nghiệp xong, anh ấy về quê, biến căn nhà cũ của ông bà thành một quán cà phê nhỏ.',zh:'读完大学，他回到老家，把爷爷奶奶的老房子变为了一家小咖啡店。',py:'Dúwán dàxué, tā huídào lǎojiā, bǎ yéye nǎinai de lǎo fángzi biànwéile yì jiā xiǎo kāfēidiàn.',goiY:['把','变为','家 (lượng từ)'],giai:'把 + A + 变为 + B = biến A thành B; 为 đọc wéi. Lượng từ của quán, cửa hàng là 家.'},
+  {vi:'Loại trà này đến từ miền Nam, hương vị rất độc đáo, ngay cả nhiều người nước ngoài cũng rất thích.',zh:'这种茶来自于南方，味道很独特，连很多外国人都很喜欢。',py:'Zhè zhǒng chá láizì yú nánfāng, wèidào hěn dútè, lián hěn duō wàiguórén dōu hěn xǐhuan.',goiY:['来自于','独特','连……都……'],giai:'来自于 + nơi chốn = đến từ (văn viết); 连…都… nhấn mạnh "ngay cả… cũng…".'},
+  {vi:'Mười năm trước quê tôi còn rất nghèo, ngày nay cuộc sống của người dân đã khá hơn nhiều, ai nấy đều tràn đầy hy vọng vào tương lai.',zh:'十年前我的老家还很穷，如今老百姓的生活好多了，大家对未来都充满了希望。',py:'Shí nián qián wǒ de lǎojiā hái hěn qióng, rújīn lǎobǎixìng de shēnghuó hǎo duō le, dàjiā duì wèilái dōu chōngmǎnle xīwàng.',goiY:['如今','老百姓','对……充满……'],giai:'如今 đối lập với 十年前 — "ngày nay" so với ngày trước; 对 + đối tượng + 充满 + 希望/信心 = tràn đầy hy vọng vào…'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Ngay từ hơn hai nghìn năm trước đã có văn tự ghi chép về suối nước ở Tế Nam, đủ thấy lịch sử của nó lâu đời đến nhường nào.',zh:'早在两千多年前就有了关于济南泉水的文字记载，可见它的历史非常悠久。',py:'Zǎo zài liǎngqiān duō nián qián jiù yǒule guānyú Jǐnán quánshuǐ de wénzì jìzǎi, kějiàn tā de lìshǐ fēicháng yōujiǔ.',goiY:['文字记载 = ghi chép bằng văn tự','可见 = đủ thấy','悠久 = lâu đời'],giai:'可见 rút ra kết luận từ dữ kiện vế trước; 早在…就… = ngay từ… đã…, nhấn mạnh thời điểm rất sớm.'},
-  {vi:'Nhiều văn nhân từng miêu tả âm thanh và màu sắc của suối nước, lại còn để lại rất nhiều thơ văn ca ngợi suối.',zh:'许多文人都描写过泉水的声音和颜色，而且留下了许多赞美泉水的诗文。',py:'Xǔduō wénrén dōu miáoxiěguo quánshuǐ de shēngyīn hé yánsè, érqiě liúxiàle xǔduō zànměi quánshuǐ de shīwén.',goiY:['描写 = miêu tả','而且 = hơn nữa, lại còn','赞美 = ca ngợi'],giai:'而且 nối hai hành động tăng tiến; 诗文 = thơ văn — không dịch cứng "thi văn".'},
   {vi:'Người dân chan chứa lòng biết ơn đối với suối nước, từ đó mà nảy sinh nhiều truyền thuyết đẹp về suối.',zh:'老百姓对泉水充满了感激之情，从而产生了许多关于泉水的美丽传说。',py:'Lǎobǎixìng duì quánshuǐ chōngmǎnle gǎnjī zhī qíng, cóng\'ér chǎnshēngle xǔduō guānyú quánshuǐ de měilì chuánshuō.',goiY:['充满 = tràn đầy, chan chứa','感激 = biết ơn','从而 = từ đó, nhờ đó','传说 = truyền thuyết'],giai:'从而 đứng đầu vế sau, nối kết quả với nguyên nhân ở vế trước; 产生 đi với 传说/感情 — dịch "nảy sinh, ra đời".'},
-  {vi:'Bào Toàn là một chàng trai tốt bụng, anh không những học nghề thuốc cứu được rất nhiều người, mà còn đưa một cụ già bị ngất về nhà chăm sóc.',zh:'鲍全是个善良的青年，他不但学医救了很多人，而且还把一位晕倒的老人接回家照顾。',py:'Bào Quán shì ge shànliáng de qīngnián, tā búdàn xué yī jiùle hěn duō rén, érqiě hái bǎ yí wèi yūndǎo de lǎorén jiē huí jiā zhàogù.',goiY:['善良 = tốt bụng, lương thiện','不但……而且…… = không những… mà còn…','晕倒 = ngất xỉu'],giai:'不但…而且… nêu hai việc tốt tăng dần; 晕倒 = ngất xỉu (晕 + bổ ngữ kết quả 倒).'},
   {vi:'Hoá ra cụ già ấy là anh trai của Long Vương Biển Đông, thế là Bào Toàn xin được từ Long Vương một chiếc bình ngọc trắng có thể chữa bệnh cứu người.',zh:'原来这位老人是东海龙王的哥哥，于是鲍全从龙王那儿求到了一把能治病救人的白玉壶。',py:'Yuánlái zhè wèi lǎorén shì Dōnghǎi Lóngwáng de gēge, yúshì Bào Quán cóng Lóngwáng nàr qiúdàole yì bǎ néng zhì bìng jiù rén de báiyù hú.',goiY:['原来 = hoá ra','于是 = thế là','治病救人 = chữa bệnh cứu người','壶 = bình, ấm'],giai:'原来 hé lộ thân phận thật; 求到 = cầu xin được (V + 到 chỉ kết quả đạt được).'},
-  {vi:'Để không bị kẻ xấu cướp mất, Bào Toàn chôn chiếc bình xuống đất giấu đi, kết quả là nơi đó về sau biến thành suối Báo Đột — “đệ nhất tuyền trong thiên hạ”.',zh:'为了不被坏人抢走，鲍全把壶埋入地下藏了起来，结果那里后来变成了“天下第一泉”趵突泉。',py:'Wèile bú bèi huàirén qiǎngzǒu, Bào Quán bǎ hú máirù dìxià cángle qilai, jiéguǒ nàli hòulái biànchéngle “tiānxià dì-yī quán” Bàotū Quán.',goiY:['抢走 = cướp mất','埋 = chôn','藏了起来 = giấu đi','结果 = kết quả là'],giai:'藏了起来: 起来 chỉ chuyển từ lộ ra → giấu kín; 为了不被… = để không bị…, câu bị động phủ định đặt sau 为了.'},
   {vi:'Ngày nay trong nội thành Tế Nam không chỉ có hơn bảy trăm mạch suối tự nhiên phân bố khắp nơi, mà tên gọi của các suối cũng rất độc đáo, chẳng hạn như suối Trân Châu được đặt tên theo hình dáng.',zh:'如今济南市区内不仅分布着七百多个天然泉，而且泉水的名字也十分独特，比如以形状命名的珍珠泉。',py:'Rújīn Jǐnán shìqū nèi bùjǐn fēnbùzhe qībǎi duō ge tiānrán quán, érqiě quánshuǐ de míngzi yě shífēn dútè, bǐrú yǐ xíngzhuàng mìngmíng de Zhēnzhū Quán.',goiY:['分布 = phân bố','不仅……而且…… = không chỉ… mà còn…','独特 = độc đáo','形状 = hình dáng'],giai:'V + 着 (分布着) diễn tả trạng thái tồn tại, tiếng Việt dịch "có… phân bố khắp"; 以…命名 = đặt tên theo…'},
   {vi:'Nước suối Tế Nam bắt nguồn từ vùng núi rộng lớn ở phía nam; do nơi đó là vùng đá vôi hình thành từ bốn trăm triệu năm trước nên nước trên bề mặt đất liền rất dễ ngấm xuống lòng đất.',zh:'济南的泉水来自于南边的广大山区，由于那里是四亿年前形成的石灰岩地区，因此陆地表面的水很容易进入地下。',py:'Jǐnán de quánshuǐ láizì yú nánbian de guǎngdà shānqū, yóuyú nàli shì sì yì nián qián xíngchéng de shíhuīyán dìqū, yīncǐ lùdì biǎomiàn de shuǐ hěn róngyì jìnrù dìxià.',goiY:['来自于 = đến từ','由于……因此…… = do… nên…','石灰岩 = đá vôi','表面 = bề mặt'],giai:'来自于: 于 (văn viết) đứng ngay sau động từ, chỉ nguồn gốc; 由于…因此… là cặp nhân quả trang trọng, dùng nhiều trong văn thuyết minh.'},
   {vi:'Khi nước ngầm chảy về phía bắc tới nội thành, do đá dưới lòng đất ở đó đã chuyển thành đá mác-ma, nước gặp phải liền bị chặn đường, đành tích tụ lại, càng tụ càng nhiều.',zh:'地下水向北流到市区时，由于那里的岩石变为了火成岩，水碰到它就被挡住了路，只好积蓄起来，越积越多。',py:'Dìxiàshuǐ xiàng běi liúdào shìqū shí, yóuyú nàli de yánshí biànwéile huǒchéngyán, shuǐ pèngdào tā jiù bèi dǎngzhùle lù, zhǐhǎo jīxù qilai, yuè jī yuè duō.',goiY:['变为 = biến thành','碰到 = gặp phải','挡住 = chặn lại','积蓄起来 = tích tụ lại'],giai:'变为 (biànwéi): 为 đọc wéi = thành; 积蓄起来: 起来 chỉ từ phân tán → tập trung; 越…越… = càng… càng….'},
-  {vi:'Khu phố cổ có địa thế thấp, có chỗ thậm chí còn thấp hơn mực nước ngầm, thế nên nước ngầm trào lên khỏi mặt đất, tạo thành vô số mạch suối — thảo nào Tế Nam được gọi là “Thành phố suối”.',zh:'旧城一带地势低，有的地方甚至低于地下水的水面，地下水就冲出地表，形成了众多泉水，难怪济南被称为“泉城”。',py:'Jiùchéng yídài dìshì dī, yǒude dìfang shènzhì dī yú dìxiàshuǐ de shuǐmiàn, dìxiàshuǐ jiù chōngchū dìbiǎo, xíngchéngle zhòngduō quánshuǐ, nánguài Jǐnán bèi chēngwéi “Quánchéng”.',goiY:['地势 = địa thế','低于 = thấp hơn','甚至 = thậm chí','称为 = gọi là'],giai:'Adj + 于 + N (低于) là lối so sánh văn viết = 比…低; 称为 (chēngwéi): 为 đọc wéi. 难怪 kết luận điều giờ đã rõ.'}
+  {vi:'Khu phố cổ có địa thế thấp, có chỗ thậm chí còn thấp hơn mực nước ngầm, thế nên nước ngầm trào lên khỏi mặt đất, tạo thành vô số mạch suối — vì thế người ta gọi Tế Nam là “Thành phố suối”.',zh:'旧城一带地势低，有的地方甚至低于地下水的水面，地下水就冲出地表，形成了众多泉水，所以人们叫济南“泉城”。',py:'Jiùchéng yídài dìshì dī, yǒude dìfang shènzhì dī yú dìxiàshuǐ de shuǐmiàn, dìxiàshuǐ jiù chōngchū dìbiǎo, xíngchéngle zhòngduō quánshuǐ, suǒyǐ rénmen jiào Jǐnán “Quánchéng”.',goiY:['地势 = địa thế','低于 = thấp hơn','甚至 = thậm chí','冲出 = trào ra, xông ra'],giai:'Adj + 于 + N (低于) là lối so sánh văn viết = 比…低; 冲出地表 = trào lên khỏi mặt đất (冲 + bổ ngữ xu hướng 出).'}
 ];
 
 // ══════════════════════════════════════════
@@ -1812,30 +1739,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
   sapXep:[
-    {manh:['藏了','他把壶','起来','埋入地下'],
-     dap:'他把壶埋入地下藏了起来。',
-     vn:'Anh ấy chôn chiếc bình xuống đất giấu đi.',
-     giai:'Câu 把: 他把壶 + 埋入地下 + 藏了起来. V + 起来 biểu thị từ lộ ra thành giấu kín.'},
-    {manh:['济南市以南的','来自于','广大山区','济南的泉水'],
-     dap:'济南的泉水来自于济南市以南的广大山区。',
-     vn:'Nước suối Tế Nam đến từ vùng núi rộng lớn phía nam thành phố Tế Nam.',
-     giai:'Chủ ngữ 济南的泉水 → động từ 来自于 → định ngữ 济南市以南的 → danh từ trung tâm 广大山区. 于 đứng ngay sau động từ.'},
-    {manh:['从而','提高了产品质量','加强管理','公司通过'],
-     dap:'公司通过加强管理，从而提高了产品质量。',
-     vn:'Công ty thông qua tăng cường quản lý, nhờ đó nâng cao chất lượng sản phẩm.',
-     giai:'通过 + cách làm ở vế trước; 从而 mở vế kết quả ở sau. 从而 không bao giờ đứng đầu câu.'},
-    {manh:['可以','变为动力','压力','也'],
-     dap:'压力也可以变为动力。',
-     vn:'Áp lực cũng có thể biến thành động lực.',
-     giai:'Chủ ngữ 压力 → 也可以 (phó từ + động từ năng nguyện) → 变为 + 动力. 为 đọc wéi, làm bổ ngữ sau 变.'},
-    {manh:['充满','对未来','他','信心'],
-     dap:'他对未来充满信心。',
-     vn:'Anh ấy tràn đầy niềm tin vào tương lai.',
-     giai:'对 + đối tượng đứng TRƯỚC động từ: 他 + 对未来 + 充满 + 信心.'},
-    {manh:['分布着','七百多个','济南市区内','天然泉'],
-     dap:'济南市区内分布着七百多个天然泉。',
-     vn:'Trong nội thành Tế Nam phân bố hơn bảy trăm suối tự nhiên.',
-     giai:'Câu tồn hiện: Nơi chốn + 分布着 + số lượng + danh từ. Nơi chốn đứng đầu câu, không cần 在.'}
+    {manh:['藏了','他把壶','起来','埋入地下'],dap:'他把壶埋入地下藏了起来。',vn:'Anh ấy chôn chiếc bình xuống đất giấu đi.',giai:'Câu 把: 他把壶 + 埋入地下 + 藏了起来. V + 起来 biểu thị từ lộ ra thành giấu kín.'},
+    {manh:['济南市以南的','来自于','广大山区','济南的泉水'],dap:'济南的泉水来自于济南市以南的广大山区。',vn:'Nước suối Tế Nam đến từ vùng núi rộng lớn phía nam thành phố Tế Nam.',giai:'Chủ ngữ 济南的泉水 → động từ 来自于 → định ngữ 济南市以南的 → danh từ trung tâm 广大山区. 于 đứng ngay sau động từ.'},
+    {manh:['从而','提高了汉语水平','多听多说','他通过'],dap:'他通过多听多说，从而提高了汉语水平。',vn:'Nhờ nghe nhiều nói nhiều, anh ấy đã nâng cao trình độ tiếng Trung.',giai:'通过 + cách làm ở vế trước; 从而 mở vế kết quả ở sau. 从而 không bao giờ đứng đầu câu.'},
+    {manh:['选为','被','他','班长'],dap:'他被选为班长。',vn:'Cậu ấy được bầu làm lớp trưởng.',giai:'Câu bị động: 他 + 被 + 选为 + chức vụ. 为 đọc wéi = "làm, thành"; không nói 被选成班长.'},
+    {manh:['充满','对未来','他','信心'],dap:'他对未来充满信心。',vn:'Anh ấy tràn đầy niềm tin vào tương lai.',giai:'对 + đối tượng đứng TRƯỚC động từ: 他 + 对未来 + 充满 + 信心.'},
+    {manh:['分布着','七百多个','济南市区内','天然泉'],dap:'济南市区内分布着七百多个天然泉。',vn:'Trong nội thành Tế Nam phân bố hơn bảy trăm suối tự nhiên.',giai:'Câu tồn hiện: Nơi chốn + 分布着 + số lượng + danh từ. Nơi chốn đứng đầu câu, không cần 在.'}
   ]
 };
 
@@ -1845,30 +1754,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (ba câu đầu là 话题讨论 “水与我们的生活” của sách). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 天然 · 充满 · 从而 · 如今 · 传说 · 优美 · 独特.',
   questions:[
-    {q_zh:'在我们的生活中，哪些事是离不开水的？',
-     q_vn:'Trong cuộc sống của chúng ta, những việc nào không thể thiếu nước?',
-     hint:'Liệt kê ít nhất 3 việc, dùng 连……都……',
-     sample:'做饭、洗衣服、洗澡都离不开水。其实，连我们的身体都离不开水，一个人几天不喝水就会有生命危险。',
-     sample_vn:'Nấu cơm, giặt quần áo, tắm rửa đều không thể thiếu nước. Thật ra ngay cả cơ thể chúng ta cũng không thể thiếu nước, một người mấy ngày không uống nước là sẽ nguy hiểm đến tính mạng.',
-     note:'Liệt kê xong phải có một câu NÂNG Ý (连……都……) — câu trả lời sẽ có chiều sâu hơn.'},
-    {q_zh:'地球上有些地方遇到了缺水的问题，你了解这方面的情况吗？',
-     q_vn:'Một số nơi trên Trái Đất đang gặp vấn đề thiếu nước, em có biết tình hình này không?',
-     hint:'Nêu một nơi cụ thể + nguyên nhân + ảnh hưởng, dùng 越来越',
-     sample:'我知道越南湄公河三角洲有时候会缺水。天气越来越热，河水越来越少，老百姓的生活受到了很大的影响。',
-     sample_vn:'Tôi biết đồng bằng sông Cửu Long có lúc bị thiếu nước. Trời ngày càng nóng, nước sông ngày càng ít, cuộc sống của người dân bị ảnh hưởng rất lớn.',
-     note:'Nói về Việt Nam giúp em có nội dung cụ thể — giám khảo chấm cao phần có dẫn chứng.'},
-    {q_zh:'你觉得哪些做法是对水的浪费？怎样可以减少这种浪费？',
-     q_vn:'Em thấy những cách làm nào là lãng phí nước? Làm thế nào để giảm sự lãng phí đó?',
-     hint:'Hai phần: lãng phí gì + cách giải quyết, dùng 只要……就…… hoặc 从而',
-     sample:'刷牙的时候一直开着水龙头就是一种浪费。我们可以把洗菜的水收集起来浇花，从而减少浪费。',
-     sample_vn:'Khi đánh răng mà để vòi nước chảy mãi chính là một kiểu lãng phí. Chúng ta có thể gom nước rửa rau lại để tưới hoa, nhờ đó giảm lãng phí.',
-     note:'Câu hỏi có HAI vế — trả lời thiếu một vế là mất nửa điểm.'},
-    {q_zh:'你的家乡有没有美丽的传说或者有名的风景？请介绍一下。',
-     q_vn:'Quê em có truyền thuyết đẹp hay phong cảnh nổi tiếng nào không? Hãy giới thiệu một chút.',
-     hint:'Mở bằng 相传……, kể theo trình tự thời gian',
-     sample:'我的家乡是河内。相传很久以前，一位国王从湖里的神龟那儿借了一把宝剑，打败敌人以后，又把剑还给了神龟。所以这个湖叫“还剑湖”。',
-     sample_vn:'Quê tôi là Hà Nội. Tương truyền rất lâu trước kia, một vị vua mượn thanh gươm báu từ Rùa thần dưới hồ, đánh thắng giặc rồi lại trả gươm cho Rùa thần. Vì thế hồ này tên là “Hồ Hoàn Kiếm”.',
-     note:'Kể lại truyền thuyết giống hệt cách bài khoá kể về 趵突泉 — tận dụng 相传, 从……那儿, 把…….'}
+    {q_zh:'在我们的生活中，哪些事都需要用水？',q_vn:'Trong cuộc sống của chúng ta, những việc nào cần dùng đến nước?',hint:'Liệt kê ít nhất 3 việc, dùng 连……都……',sample:'做饭、洗衣服、洗澡都需要用水。其实，连我们的身体都需要水，一个人几天不喝水就会有生命危险。',sample_vn:'Nấu cơm, giặt quần áo, tắm rửa đều cần dùng nước. Thật ra ngay cả cơ thể chúng ta cũng cần nước, một người mấy ngày không uống nước là sẽ nguy hiểm đến tính mạng.',note:'Liệt kê xong phải có một câu NÂNG Ý (连……都……) — câu trả lời sẽ có chiều sâu hơn.'},
+    {q_zh:'地球上有些地方水不够用，你了解这方面的情况吗？',q_vn:'Một số nơi trên Trái Đất không đủ nước dùng, em có biết tình hình này không?',hint:'Nêu một nơi cụ thể + nguyên nhân + ảnh hưởng, dùng 越来越',sample:'我知道越南南方有些地区有时候水不够用。天气越来越热，河水越来越少，老百姓的生活变得很困难。',sample_vn:'Tôi biết một số vùng ở miền Nam Việt Nam có lúc không đủ nước dùng. Trời ngày càng nóng, nước sông ngày càng ít, cuộc sống của người dân trở nên rất khó khăn.',note:'Nói về Việt Nam giúp em có nội dung cụ thể — giám khảo chấm cao phần có dẫn chứng.'},
+    {q_zh:'你觉得哪些做法是对水的浪费？怎样可以减少这种浪费？',q_vn:'Em thấy những cách làm nào là lãng phí nước? Làm thế nào để giảm sự lãng phí đó?',hint:'Hai phần: lãng phí gì + cách giải quyết, dùng 只要……就…… hoặc 从而',sample:'刷牙的时候一直开着水龙头就是一种浪费。我们可以把洗菜的水留起来冲厕所，从而减少浪费。',sample_vn:'Khi đánh răng mà để vòi nước chảy mãi chính là một kiểu lãng phí. Chúng ta có thể giữ lại nước rửa rau để dội nhà vệ sinh, nhờ đó giảm lãng phí.',note:'Câu hỏi có HAI vế — trả lời thiếu một vế là mất nửa điểm.'},
+    {q_zh:'你的老家有没有美丽的传说或者有名的地方？请介绍一下。',q_vn:'Quê em có truyền thuyết đẹp hay nơi nổi tiếng nào không? Hãy giới thiệu một chút.',hint:'Giới thiệu nơi đó có gì độc đáo, dùng 独特 / 赞美',sample:'我的老家是下龙。那里有很多形状独特的石灰岩，很多诗人都写诗赞美过它。',sample_vn:'Quê tôi là Hạ Long. Ở đó có rất nhiều núi đá vôi hình thù độc đáo, nhiều nhà thơ đã làm thơ ca ngợi nơi này.',note:'Giới thiệu một nơi: nói tên → nét độc đáo → người ta đánh giá thế nào. Tận dụng từ của bài: 形状, 独特, 石灰岩, 赞美, 诗.'}
   ]
 };
 
@@ -1960,45 +1849,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Một bạn nước ngoài hỏi em về quê hương.',
-     a:{sp:'Bạn',zh:'你的家乡有什么好玩儿的地方吗？',vn:'Quê cậu có chỗ nào hay không?'},
-     need:['Dùng 历史悠久 hoặc 风景优美','Nêu một điểm ĐỘC ĐÁO (dùng 独特)'],
-     sample:'我的家乡有一座历史悠久的古城，那里的建筑很独特，风景也很优美。',
-     samplePy:'Wǒ de jiāxiāng yǒu yí zuò lìshǐ yōujiǔ de gǔchéng, nàli de jiànzhù hěn dútè, fēngjǐng yě hěn yōuměi.',
-     sampleVn:'Quê tôi có một phố cổ lâu đời, kiến trúc ở đó rất độc đáo, phong cảnh cũng rất đẹp.',
-     tip:'悠久 chỉ dùng cho lịch sử, văn hoá, truyền thống — đừng nói 风景很悠久.'},
-
-    {scene:'Bạn cùng lớp thắc mắc vì sao Tế Nam lại có nhiều suối như vậy.',
-     a:{sp:'Bạn',zh:'济南为什么有那么多泉水？',vn:'Sao Tế Nam lại có nhiều suối thế?'},
-     need:['Dùng 从而 hoặc 形成','Giải thích ít nhất HAI nguyên nhân'],
-     sample:'因为地下水被火成岩挡住了路，积蓄起来，旧城一带地势又低，地下水就冲出地表，从而形成了众多的泉水。',
-     samplePy:'Yīnwèi dìxiàshuǐ bèi huǒchéngyán dǎngzhùle lù, jīxù qǐlai, jiùchéng yídài dìshì yòu dī, dìxiàshuǐ jiù chōngchū dìbiǎo, cóng\'ér xíngchéngle zhòngduō de quánshuǐ.',
-     sampleVn:'Vì nước ngầm bị đá mác-ma chắn đường nên tích tụ lại, mà khu phố cổ địa thế lại thấp, nước ngầm liền xông lên khỏi mặt đất, nhờ đó tạo thành vô số dòng suối.',
-     tip:'从而 dẫn KẾT QUẢ cuối cùng — đặt ở vế sau cùng, không đặt đầu câu.'},
-
-    {scene:'Hôm trước em bị ngất, bác hàng xóm đưa em đi viện. Hôm nay em sang cảm ơn.',
-     a:{sp:'Bác hàng xóm',zh:'哎呀，你怎么还专门来一趟？',vn:'Ôi, sao cháu còn cất công sang tận đây?'},
-     need:['Dùng 表示感谢 hoặc 感激','Nói rõ bác đã giúp gì'],
-     sample:'那天我晕倒了，是您把我送到医院的。我这次来是想当面向您表示感谢，我们全家都很感激您。',
-     samplePy:'Nà tiān wǒ yūndǎo le, shì nín bǎ wǒ sòngdào yīyuàn de. Wǒ zhè cì lái shì xiǎng dāngmiàn xiàng nín biǎoshì gǎnxiè, wǒmen quán jiā dōu hěn gǎnjī nín.',
-     sampleVn:'Hôm đó cháu bị ngất, là bác đưa cháu đến bệnh viện. Lần này cháu sang là muốn trực tiếp cảm ơn bác, cả nhà cháu đều rất biết ơn bác.',
-     tip:'表示感谢 là cụm cố định (nói ra lời cảm ơn); 感激 nói tình cảm trong lòng. Với người lớn tuổi xưng 您.'},
-
-    {scene:'Mẹ thấy em để vòi nước chảy mãi khi đánh răng.',
-     a:{sp:'Mẹ',zh:'刷牙的时候别一直开着水龙头！',vn:'Đánh răng thì đừng để vòi nước chảy mãi!'},
-     need:['Nhận lỗi','Dùng 起来 hoặc 从而 để nói cách tiết kiệm'],
-     sample:'对不起，妈妈。以后我先用杯子把水接起来再刷牙，从而节约用水。',
-     samplePy:'Duìbuqǐ, māma. Yǐhòu wǒ xiān yòng bēizi bǎ shuǐ jiē qǐlai zài shuāyá, cóng\'ér jiéyuē yòng shuǐ.',
-     sampleVn:'Con xin lỗi mẹ. Sau này con sẽ hứng nước vào cốc trước rồi mới đánh răng, như vậy tiết kiệm được nước.',
-     tip:'接起来 = hứng lại, gom lại — 起来 ở đây biểu thị "từ phân tán thành tập trung", đúng điểm ngữ pháp của bài.'},
-
-    {scene:'Bạn Trung Quốc hỏi em về truyền thuyết của Việt Nam.',
-     a:{sp:'Bạn',zh:'越南有没有什么美丽的传说？',vn:'Việt Nam có truyền thuyết nào đẹp không?'},
-     need:['Dùng 传说 hoặc 相传','Kể ngắn 2–3 câu theo đúng trình tự'],
-     sample:'有啊。相传很久以前，一位国王从湖里的神龟那儿借了一把宝剑，打败敌人以后又把剑还给了神龟，所以那个湖就叫“还剑湖”。',
-     samplePy:'Yǒu a. Xiāngchuán hěn jiǔ yǐqián, yí wèi guówáng cóng hú li de shénguī nàr jièle yì bǎ bǎojiàn, dǎbài dírén yǐhòu yòu bǎ jiàn huán gěile shénguī, suǒyǐ nàge hú jiù jiào “Huánjiàn Hú”.',
-     sampleVn:'Có chứ. Tương truyền rất lâu trước kia, một vị vua mượn thanh gươm báu từ Rùa thần dưới hồ, đánh thắng giặc rồi lại trả gươm cho Rùa thần, vì thế hồ đó tên là “Hồ Hoàn Kiếm”.',
-     tip:'相传很久以前…… là câu mở truyền thuyết y như bài khoá. 从 + người + 那儿 = từ chỗ ai.'}
+    {scene:'Một bạn nước ngoài hỏi em về quê hương.',a:{sp:'Bạn',zh:'你的老家有什么好玩儿的地方吗？',vn:'Quê cậu có chỗ nào hay không?'},need:['Dùng 历史悠久','Nêu một điểm ĐỘC ĐÁO (dùng 独特)'],sample:'我的老家有一个历史悠久的小镇，那里的小吃很独特，每个周末都有很多人去。',samplePy:'Wǒ de lǎojiā yǒu yí ge lìshǐ yōujiǔ de xiǎozhèn, nàli de xiǎochī hěn dútè, měi ge zhōumò dōu yǒu hěn duō rén qù.',sampleVn:'Quê tôi có một thị trấn nhỏ lâu đời, đồ ăn vặt ở đó rất độc đáo, cuối tuần nào cũng đông người đến.',tip:'悠久 chỉ dùng cho lịch sử, văn hoá, truyền thống — đừng nói 小吃很悠久.'},
+    {scene:'Bạn cùng lớp thắc mắc vì sao Tế Nam lại có nhiều suối như vậy.',a:{sp:'Bạn',zh:'济南为什么有那么多泉水？',vn:'Sao Tế Nam lại có nhiều suối thế?'},need:['Dùng 从而 hoặc 形成','Giải thích ít nhất HAI nguyên nhân'],sample:'因为南边山区的水流到地下，到了市区被火成岩挡住，只好往上冲，从而形成了很多泉水。',samplePy:'Yīnwèi nánbian shānqū de shuǐ liúdào dìxià, dàole shìqū bèi huǒchéngyán dǎngzhù, zhǐhǎo wǎng shàng chōng, cóng\'ér xíngchéngle hěn duō quánshuǐ.',sampleVn:'Vì nước ở vùng núi phía nam chảy xuống lòng đất, đến nội thành thì bị đá mác-ma chặn lại, đành trào ngược lên, nhờ đó tạo thành rất nhiều suối.',tip:'从而 dẫn KẾT QUẢ cuối cùng — đặt ở vế sau cùng, không đặt đầu câu.'},
+    {scene:'Hôm trước em bị ngất, bác hàng xóm đưa em đi viện. Hôm nay em sang cảm ơn.',a:{sp:'Bác hàng xóm',zh:'你怎么还专门来一趟？',vn:'Sao cháu còn cất công sang tận đây?'},need:['Dùng 感激','Nói rõ bác đã giúp gì'],sample:'那天我晕倒了，是您把我送到医院，救了我。今天我专门来谢谢您，我们全家都很感激您。',samplePy:'Nà tiān wǒ yūndǎo le, shì nín bǎ wǒ sòngdào yīyuàn, jiùle wǒ. Jīntiān wǒ zhuānmén lái xièxie nín, wǒmen quán jiā dōu hěn gǎnjī nín.',sampleVn:'Hôm đó cháu bị ngất, là bác đưa cháu đến bệnh viện, cứu cháu. Hôm nay cháu sang để cảm ơn bác, cả nhà cháu đều rất biết ơn bác.',tip:'感激 nói tình cảm biết ơn trong lòng (很感激您); lời cảm ơn nói ra miệng dùng 谢谢 / 感谢. Với người lớn tuổi xưng 您.'},
+    {scene:'Mẹ thấy em để vòi nước chảy mãi khi đánh răng.',a:{sp:'Mẹ',zh:'刷牙的时候别一直开着水龙头！',vn:'Đánh răng thì đừng để vòi nước chảy mãi!'},need:['Nhận lỗi','Dùng 起来 để nói cách tiết kiệm'],sample:'对不起，妈妈。以后我先用杯子把水接起来再刷牙，这样就能少用很多水。',samplePy:'Duìbuqǐ, māma. Yǐhòu wǒ xiān yòng bēizi bǎ shuǐ jiē qilai zài shuāyá, zhèyàng jiù néng shǎo yòng hěn duō shuǐ.',sampleVn:'Con xin lỗi mẹ. Sau này con sẽ hứng nước vào cốc trước rồi mới đánh răng, như vậy dùng ít nước hơn nhiều.',tip:'接起来 = hứng lại, gom lại — 起来 ở đây biểu thị "từ phân tán thành tập trung", đúng điểm ngữ pháp của bài.'},
+    {scene:'Bạn Trung Quốc hỏi em về truyền thuyết của Việt Nam.',a:{sp:'Bạn',zh:'越南有没有什么美丽的传说？',vn:'Việt Nam có truyền thuyết nào đẹp không?'},need:['Dùng 传说','Kể ngắn 2–3 câu theo đúng trình tự'],sample:'有啊。传说很久以前，有一条龙从天上下来，帮老百姓赶走了坏人，后来它就住在了那里，所以那个地方叫“下龙”。',samplePy:'Yǒu a. Chuánshuō hěn jiǔ yǐqián, yǒu yì tiáo lóng cóng tiān shang xiàlai, bāng lǎobǎixìng gǎnzǒule huàirén, hòulái tā jiù zhù zàile nàli, suǒyǐ nàge dìfang jiào “Xià Lóng”.',sampleVn:'Có chứ. Tương truyền rất lâu trước kia, có một con rồng từ trên trời xuống giúp người dân đuổi kẻ xấu, về sau nó ở lại luôn nơi đó, vì thế vùng ấy tên là “Hạ Long” (rồng hạ xuống).',tip:'传说很久以前…… là câu mở truyền thuyết quen thuộc. 从 + nơi chốn + 下来 = từ… xuống.'}
   ]
 };
 
@@ -2010,29 +1865,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Bài này có nhiều từ văn viết (于, 为, 从而, 如今) — rất hợp để luyện cảm giác "văn viết hay khẩu ngữ".',
   items: [
-    {scene:'Em viết bài giới thiệu du lịch đăng trên trang web của trường.',
-     a:'济南的泉水来自于济南市以南的广大山区。',b:'济南的泉水是从济南南边的山里来的。',better:'a',
-     why:'来自于, 广大山区 là văn viết, hợp bài giới thiệu. Câu b không sai nhưng nghe như đang nói chuyện.'},
-
-    {scene:'Em giải thích cho em trai học lớp 3.',
-     a:'这些泉水是从南边的山里来的，流到城里就冒出来了。',b:'这些泉水来自于南部山区，流至市区后冲出地表。',better:'a',
-     why:'Nói với trẻ nhỏ phải dùng khẩu ngữ đơn giản; 来自于, 流至, 冲出地表 quá sách vở với em lớp 3.'},
-
-    {scene:'Em viết bài văn so sánh quê hương xưa và nay để nộp cho cô.',
-     a:'以前这里是一片农田，如今已经变为热闹的小城了。',b:'以前这里是一片农田，现在变成热闹的小城了。',better:'a',
-     why:'Bài văn nên dùng 如今, 变为 — giọng văn viết. Câu b đúng nhưng khẩu ngữ hơn.'},
-
-    {scene:'Em nhắn tin cảm ơn bạn thân đã cho mượn vở.',
-     a:'谢谢你啊，帮了我大忙！',b:'对于你的帮助，我充满感激之情。',better:'a',
-     why:'Với bạn thân, câu b quá trang trọng, nghe như thư cảm ơn chính thức — lại thành xa cách.'},
-
-    {scene:'Cả nhà em viết thư cảm ơn bác sĩ đã cứu ông.',
-     a:'谢谢你啊，医生！',b:'对于您的救治，我们全家充满感激之情。',better:'b',
-     why:'Thư cảm ơn gửi bác sĩ là văn bản trang trọng: xưng 您, dùng 充满感激之情. Câu a hợp nói miệng hơn.'},
-
-    {scene:'Em thuyết trình trước lớp về cách suối Tế Nam hình thành.',
-     a:'地下水积蓄起来以后，从地势低的地方冲出地表，从而形成了泉水。',b:'地下的水越来越多，就从低的地方冒出来了，就有了泉水。',better:'a',
-     why:'Thuyết trình khoa học cần từ chính xác: 积蓄, 地势, 冲出地表, 从而形成. Câu b đúng nhưng khẩu ngữ, lại lặp 就.'}
+    {scene:'Em viết bài giới thiệu du lịch đăng trên trang web của trường.',a:'这些泉水来自于城市南边的广大山区。',b:'这些泉水是从城市南边的山里来的。',better:'a',why:'来自于, 广大山区 là văn viết, hợp bài giới thiệu. Câu b không sai nhưng nghe như đang nói chuyện.'},
+    {scene:'Em giải thích cho em trai học lớp 3 vì sao có suối.',a:'地下的水太多了，没地方去，就从地上跑出来了。',b:'由于地势低，积蓄在地下的水就冲出地表，从而形成泉水。',better:'a',why:'Nói với trẻ nhỏ phải dùng khẩu ngữ đơn giản; 积蓄, 地势, 冲出地表, 从而 quá sách vở với em lớp 3.'},
+    {scene:'Em viết bài văn so sánh quê hương xưa và nay để nộp cho cô.',a:'二十年前这里还是农村，如今已经变为一个热闹的小镇了。',b:'二十年前这里还是农村，现在变成一个热闹的小镇了。',better:'a',why:'Bài văn nên dùng 如今, 变为 — giọng văn viết. Câu b đúng nhưng khẩu ngữ hơn.'},
+    {scene:'Em nhắn tin cảm ơn bạn thân đã cho mượn vở.',a:'谢谢你啊，帮了我大忙！',b:'对于你的帮助，我充满感激之情。',better:'a',why:'Với bạn thân, câu b quá trang trọng, nghe như thư cảm ơn chính thức — lại thành xa cách.'},
+    {scene:'Cả nhà em viết thư cảm ơn bác sĩ đã chữa khỏi bệnh cho bố.',a:'医生，太谢谢了！',b:'您治好了我父亲的病，我们全家对您充满感激。',better:'b',why:'Thư cảm ơn gửi bác sĩ là văn bản trang trọng: xưng 您, nói rõ việc được giúp, dùng 充满感激. Câu a hợp nói miệng hơn.'},
+    {scene:'Em thuyết trình trước lớp về cách suối Tế Nam hình thành.',a:'地下水积蓄起来以后，从地势低的地方冲出地表，从而形成了泉水。',b:'地下的水越来越多，就从低的地方跑出来了，就有了泉水。',better:'a',why:'Thuyết trình khoa học cần từ chính xác: 积蓄, 地势, 冲出地表, 从而形成. Câu b đúng nhưng khẩu ngữ, lại lặp 就.'}
   ]
 };
 

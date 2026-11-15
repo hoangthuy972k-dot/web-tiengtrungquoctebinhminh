@@ -1223,101 +1223,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bài tập 3 (画线连接) + bảng 词语搭配 của sách (tr. 51, 53)
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'征求',right:'意见'},
-  {left:'面临',right:'危机'},
-  {left:'出席',right:'宴会'},
   {left:'担任',right:'经理'},
-  {left:'一致的',right:'结论'},
-  {left:'精彩的',right:'讲座'},
-  {left:'陌生的',right:'单位'},
-  {left:'能干的',right:'主席'},
+  {left:'出席',right:'会议'},
   {left:'遵守',right:'纪律'},
-  {left:'违反',right:'规定'},
-  {left:'基本的',right:'条件'},
-  {left:'及时地',right:'沟通'},
-  {left:'轻轻地',right:'吻'},
-  {left:'学习',right:'刻苦'},
-  {left:'目标',right:'远大'},
+  {left:'精彩的',right:'讲座'},
   {left:'建立',right:'友谊'},
-  {left:'录取',right:'通知书'},
   {left:'横穿',right:'马路'},
-  {left:'泡',right:'酒吧'},
-  {left:'组织',right:'活动'},
-  {left:'忍不住',right:'流下了眼泪'},
-  {left:'保持',right:'沉默'}
+  {left:'保持',right:'沉默'},
+  {left:'学习',right:'刻苦'},
+  {left:'面临',right:'选择'},
+  {left:'名牌',right:'大学'},
+  {left:'录取',right:'通知书'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这孩子真',blank:'乖',post:'，吃完饭就自己去写作业了。',hint:'(ngoan)',ans:'乖'},
-  {pre:'他学习非常',blank:'刻苦',post:'，每天早上六点就起床背单词。',hint:'(chăm chỉ, chịu khó)',ans:'刻苦'},
-  {pre:'开车的时候一定要',blank:'遵守',post:'交通规则。',hint:'(tuân thủ)',ans:'遵守'},
-  {pre:'上课玩手机是违反课堂',blank:'纪律',post:'的。',hint:'(kỷ luật)',ans:'纪律'},
-  {pre:'这件事情，我建议你先回去',blank:'征求',post:'一下父母的意见。',hint:'(hỏi — ý kiến)',ans:'征求'},
-  {pre:'我哥哥在河内',blank:'念',post:'大学，学的是经济。',hint:'(học — khẩu ngữ)',ans:'念'},
-  {pre:'这个工程已经',blank:'基本',post:'完成了。',hint:'(về cơ bản)',ans:'基本'},
-  {pre:'这个项目已经进入了最后',blank:'阶段',post:'。',hint:'(giai đoạn)',ans:'阶段'},
-  {pre:'',blank:'亲爱',post:'的同学们，欢迎你们来到我们学校！',hint:'(thân mến)',ans:'亲爱'},
-  {pre:'在公共场所抽烟是',blank:'违反',post:'规定的。',hint:'(vi phạm)',ans:'违反'},
-  {pre:'按照我们家的老',blank:'规矩',post:'，吃饭时长辈先动筷子。',hint:'(phép tắc, lệ)',ans:'规矩'},
-  {pre:'小李是经理最',blank:'能干',post:'的助手。',hint:'(giỏi giang)',ans:'能干'},
-  {pre:'学校下周要举办一场关于留学的',blank:'讲座',post:'。',hint:'(buổi toạ đàm)',ans:'讲座'},
-  {pre:'校长将',blank:'出席',post:'明天的毕业典礼。',hint:'(có mặt, dự)',ans:'出席'},
-  {pre:'周末晚上，这条',blank:'酒吧',post:'街特别热闹。',hint:'(quán bar)',ans:'酒吧'},
-  {pre:'这次比赛由我',blank:'担任',post:'翻译。',hint:'(đảm nhiệm)',ans:'担任'},
-  {pre:'大学期间，我曾经当过学生会',blank:'主席',post:'。',hint:'(chủ tịch)',ans:'主席'},
-  {pre:'班长',blank:'组织',post:'全班同学去公园打扫卫生。',hint:'(tổ chức)',ans:'组织'},
-  {pre:'妈妈以前希望她当',blank:'外交',post:'官。',hint:'(ngoại giao)',ans:'外交'},
-  {pre:'她觉得',blank:'经商',post:'才是自己的目标。',hint:'(kinh doanh)',ans:'经商'},
-  {pre:'为了实现这个',blank:'目标',post:'，他每天都学习到十一点。',hint:'(mục tiêu)',ans:'目标'},
-  {pre:'我姐姐是河内国家大学中文',blank:'系',post:'的学生。',hint:'(khoa)',ans:'系'},
-  {pre:'结果12所世界',blank:'名牌',post:'大学录取了她。',hint:'(danh tiếng)',ans:'名牌'},
-  {pre:'我昨天收到了大学的',blank:'录取',post:'通知书。',hint:'(trúng tuyển)',ans:'录取'},
-  {pre:'高三学生都',blank:'面临',post:'着考大学的压力。',hint:'(đứng trước)',ans:'面临'},
-  {pre:'专家们',blank:'一致',post:'认为这是一种成功的产品，可以放心使用。',hint:'(nhất trí)',ans:'一致'},
-  {pre:'夫妻之间吵架时，要懂得互相',blank:'让步',post:'。',hint:'(nhường nhịn)',ans:'让步'},
-  {pre:'我',blank:'隐约',post:'听到门外有人在叫我的名字。',hint:'(lờ mờ)',ans:'隐约'},
-  {pre:'小孩子不要随便给',blank:'陌生',post:'人开门。',hint:'(lạ)',ans:'陌生'},
-  {pre:'妈妈感到她们好像交换了',blank:'某',post:'种身份。',hint:'(nào đó)',ans:'某',exp:'某 + lượng từ + danh từ = …nào đó (không nói rõ): 某种身份.'},
-  {pre:'我和同桌在三年里',blank:'建立',post:'了深厚的友谊。',hint:'(xây dựng)',ans:'建立'},
-  {pre:'你下午有时间吗？我想和你',blank:'单独',post:'谈谈。',hint:'(riêng)',ans:'单独'},
-  {pre:'有问题要及时跟父母',blank:'沟通',post:'。',hint:'(trao đổi)',ans:'沟通'},
-  {pre:'过马路要走人行横道，不要随便',blank:'横',post:'穿马路。',hint:'(ngang)',ans:'横'},
-  {pre:'孩子们在',blank:'沙滩',post:'上玩儿得特别开心。',hint:'(bãi cát)',ans:'沙滩'},
-  {pre:'文文',blank:'沉默',post:'了很久，最后吻了妈妈一下。',hint:'(im lặng)',ans:'沉默'},
-  {pre:'妈妈轻轻地',blank:'吻',post:'了一下孩子的额头。',hint:'(hôn)',ans:'吻'},
-  {pre:'他的话太好笑了，大家都',blank:'忍不住',post:'笑了起来。',hint:'(không nhịn được)',ans:'忍不住',exp:'忍不住 + V = không nhịn được mà…: 忍不住笑了起来.'},
-  {pre:'',blank:'幸亏',post:'你提醒了我，要不然我就忘了。',hint:'(may mà)',ans:'幸亏',exp:'幸亏…，要不然… = may mà…, nếu không thì…; nói nhờ điều kiện thuận lợi mà tránh được điều xấu.'},
-  {pre:'太阳下山以后，天慢慢',blank:'暗',post:'下来了。',hint:'(tối)',ans:'暗'},
-  {pre:'',blank:'文文',post:'从小是个乖乖女，学习刻苦，遵守纪律。',hint:'(tên cô con gái trong bài)',ans:'文文'},
-  {pre:'法国和德国都是',blank:'欧盟',post:'国家。',hint:'(EU)',ans:'欧盟'},
-  {pre:'能被',blank:'牛津大学',post:'这样的世界名校录取多好啊！',hint:'(Đại học Oxford)',ans:'牛津大学'},
-  {pre:'几年后，妈妈去',blank:'洛杉矶',post:'看在美国工作的女儿。',hint:'(Los Angeles)',ans:'洛杉矶'},
-  {pre:'母女俩躺在',blank:'夏威夷',post:'的沙滩上谈心。',hint:'(Hawaii)',ans:'夏威夷'}
+  {pre:'这孩子真',blank:'乖',post:'，一个人在家写完了作业才去玩儿。',hint:'(ngoan)',ans:'乖',exp:'乖 = ngoan, biết nghe lời (thường nói về trẻ con); 乖乖女 = cô bé ngoan.'},
+  {pre:'这次考试的题我',blank:'基本',post:'上都会做，只有一道没做完。',hint:'(về cơ bản)',ans:'基本',exp:'基本上 = về cơ bản, phần lớn; 基本 còn là tính từ "cơ bản": 基本的条件.'},
+  {pre:'学汉语的第一个',blank:'阶段',post:'，最重要的是多听多说。',hint:'(giai đoạn)',ans:'阶段',exp:'阶段 = giai đoạn trong một quá trình: 大学阶段, 第一个阶段.'},
+  {pre:'',blank:'亲爱',post:'的妈妈，祝您生日快乐！',hint:'(thân yêu)',ans:'亲爱',exp:'亲爱的 + người = … thân yêu (mở đầu thư, lời chúc).'},
+  {pre:'开车的时候打电话是',blank:'违反',post:'交通规则的。',hint:'(vi phạm)',ans:'违反',exp:'违反 + 规则/纪律/规定 = vi phạm; trái nghĩa 遵守.'},
+  {pre:'在别人家吃饭要懂',blank:'规矩',post:'，长辈还没动筷子，你就不能先吃。',hint:'(phép tắc, nề nếp)',ans:'规矩',exp:'规矩 = phép tắc, lễ nghĩa không thành văn: 懂规矩, 守规矩. 规定 là quy định bằng văn bản, không nói 懂规定.'},
+  {pre:'她又',blank:'能干',post:'又热情，什么事交给她都能做好。',hint:'(giỏi giang, tháo vát)',ans:'能干',exp:'能干 = giỏi giang, làm việc gì cũng được việc.'},
+  {pre:'今天下午学校有一个关于找工作的',blank:'讲座',post:'，你去听吗？',hint:'(buổi toạ đàm, báo cáo chuyên đề)',ans:'讲座',exp:'讲座 = buổi giảng chuyên đề, toạ đàm; 听讲座 = đi nghe toạ đàm.'},
+  {pre:'他周末常常跟朋友去',blank:'酒吧',post:'听音乐。',hint:'(quán bar)',ans:'酒吧',exp:'酒吧 = quán bar; khẩu ngữ: 泡酒吧 = la cà quán bar.'},
+  {pre:'他大学毕业后没去公司上班，而是回老家',blank:'经商',post:'了。',hint:'(kinh doanh, buôn bán)',ans:'经商',exp:'经商 = làm kinh doanh, buôn bán (văn viết, không mang tân ngữ).'},
+  {pre:'我是中文',blank:'系',post:'的学生，今年念大二。',hint:'(khoa (của trường đại học))',ans:'系',exp:'系 (xì) = khoa trong trường đại học: 中文系, 本系.'},
+  {pre:'房间里太',blank:'暗',post:'了，把灯打开吧。',hint:'(tối)',ans:'暗',exp:'暗 = tối, thiếu ánh sáng; trái nghĩa 亮.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (一致 · 某 · 幸亏) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['文文','跟父母的','意见','不一致','。'],ans:'文文跟父母的意见不一致。',audio:'文文跟父母的意见不一致。'},
-  {words:['专家们','一致','认为','这是','一种','成功的产品','。'],ans:'专家们一致认为这是一种成功的产品。',audio:'专家们一致认为这是一种成功的产品。'},
-  {words:['我们','终于','取得','一致','了','。'],ans:'我们终于取得一致了。',audio:'我们终于取得一致了。'},
-  {words:['妈妈','感到','她们好像','交换了','某种','身份','。'],ans:'妈妈感到她们好像交换了某种身份。',audio:'妈妈感到她们好像交换了某种身份。'},
-  {words:['我好像','在','某个地方','见过','他','。'],ans:'我好像在某个地方见过他。',audio:'我好像在某个地方见过他。'},
-  {words:['幸亏','你','提醒了我','，','我','才','没迟到','。'],ans:'幸亏你提醒了我，我才没迟到。',audio:'幸亏你提醒了我，我才没迟到。'},
-  {words:['幸亏','我昨天','带了伞','，','才','没被','雨淋湿','。'],ans:'幸亏我昨天带了伞，才没被雨淋湿。',audio:'幸亏我昨天带了伞，才没被雨淋湿。'},
-  {words:['她是个','遵守纪律的','乖孩子','。'],ans:'她是个遵守纪律的乖孩子。',audio:'她是个遵守纪律的乖孩子。'},
-  {words:['我的目标','是','被','名牌大学','录取','。'],ans:'我的目标是被名牌大学录取。',audio:'我的目标是被名牌大学录取。'},
-  {words:['他','很善于','和陌生人','沟通','。'],ans:'他很善于和陌生人沟通。',audio:'他很善于和陌生人沟通。'},
-  {words:['她','参加了学生会','并','担任了','学生会主席','。'],ans:'她参加了学生会并担任了学生会主席。',audio:'她参加了学生会并担任了学生会主席。'},
-  {words:['妈妈','忍不住','流下了','眼泪','。'],ans:'妈妈忍不住流下了眼泪。',audio:'妈妈忍不住流下了眼泪。'},
-  {words:['这一次','妈妈','让步了','。'],ans:'这一次妈妈让步了。',audio:'这一次妈妈让步了。'}
+  {words:['我们俩的','看法','完全','一致','。'],ans:'我们俩的看法完全一致。',audio:'我们俩的看法完全一致。'},
+  {words:['全班同学','一致','同意','由他','担任','班长','。'],ans:'全班同学一致同意由他担任班长。',audio:'全班同学一致同意由他担任班长。'},
+  {words:['这句话','我','在','某本书里','看到过','。'],ans:'这句话我在某本书里看到过。',audio:'这句话我在某本书里看到过。'},
+  {words:['学校的','某些','规定','，','学生们','不太','理解','。'],ans:'学校的某些规定，学生们不太理解。',audio:'学校的某些规定，学生们不太理解。'},
+  {words:['幸亏','有','你','帮忙','，','要不','我','一个人','搬不完','。'],ans:'幸亏有你帮忙，要不我一个人搬不完。',audio:'幸亏有你帮忙，要不我一个人搬不完。'},
+  {words:['老师','想','单独','跟你','谈一谈','。'],ans:'老师想单独跟你谈一谈。',audio:'老师想单独跟你谈一谈。'},
+  {words:['父母','应该','多','跟孩子','沟通','。'],ans:'父母应该多跟孩子沟通。',audio:'父母应该多跟孩子沟通。'},
+  {words:['我','姐姐','在','北京','念','大学','，','学的是','外交','。'],ans:'我姐姐在北京念大学，学的是外交。',audio:'我姐姐在北京念大学，学的是外交。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1325,72 +1278,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'这所大学为女生提供了____的考试，引起了激烈争论。',opts:['单独','独自','一致','陌生'],ans:0,
-   exp:'Làm định ngữ trước 的考试 → 单独 (tính từ: riêng). 独自 không làm định ngữ; 一致, 陌生 sai nghĩa.'},
-  {wrong:'教练为他____安排了训练。',opts:['单独','独自','基本','隐约'],ans:0,
-   exp:'Sắp xếp buổi tập riêng, tách khỏi người khác → 单独. 独自 phải là chính chủ ngữ tự làm một mình.'},
-  {wrong:'我喜欢早起，____去公园散步，顺便考虑一下一天的工作。',opts:['独自','单独的','一致','基本'],ans:0,
-   exp:'Một mình tôi đi dạo → 独自 (phó từ). 单独的 là định ngữ, không đứng trước động từ.'},
-  {wrong:'我儿子要是能这样懂____，该有多么好啊！',opts:['规矩','规定','纪律','目标'],ans:0,
-   exp:'懂规矩 = biết phép tắc (cụm cố định). Không nói 懂规定 / 懂纪律.'},
-  {wrong:'学校____，上课时不能用手机。',opts:['规定','规矩','纪律','目标'],ans:0,
-   exp:'Cần ĐỘNG TỪ "quy định rằng" → 规定. 规矩, 纪律 chỉ là danh từ.'},
-  {wrong:'____了吴县长，咱不用出村就把苹果都卖了。',opts:['多亏','幸亏','一致','沟通'],ans:0,
-   exp:'多亏 + 了 + người = nhờ có ai (bài tập 2 của sách). 幸亏 là phó từ, đứng trước một mệnh đề, không mang 了 + danh từ.'},
-  {wrong:'我给他打电话的____是看他回来了没有。',opts:['目的','目标','阶段','规矩'],ans:0,
-   exp:'Nói lý do của việc gọi điện → 目的. 目标 là cái đích muốn đạt tới.'},
-  {wrong:'他的建议一提出，就得到了大家的____认可。',opts:['一致','一样','陌生','单独'],ans:0,
-   exp:'一致认可 = nhất trí công nhận. 一样 nói về sự giống nhau khi so sánh, không đứng trước 认可.'},
-  {wrong:'公司已与这家银行____起了良好的业务关系。',opts:['建立','建设','组织','担任'],ans:0,
-   exp:'建立 + 关系 (thiết lập quan hệ). 建设 là xây dựng công trình, đất nước.'},
-  {wrong:'你跟幼儿园的老师____一下，看看到底是什么原因。',opts:['沟通','征求','面临','录取'],ans:0,
-   exp:'跟 + người + 沟通 = trao đổi với ai. 征求 phải có tân ngữ 意见.'},
-  {wrong:'喜欢篮球的观众对姚明这个名字一定不会____。',opts:['陌生','沉默','单独','刻苦'],ans:0,
-   exp:'对……不陌生 = không lạ gì với ….'},
-  {wrong:'那个小姑娘既____又漂亮。',opts:['能干','刻苦','一致','陌生'],ans:0,
-   exp:'既能干又漂亮 = vừa giỏi giang vừa xinh. 刻苦 dùng cho việc học, luyện tập.'},
-  {wrong:'妈妈在电话那端____了一会儿说：“真抱歉！我差点儿忘了。”',opts:['沉默','隐约','让步','沟通'],ans:0,
-   exp:'Im lặng một lúc rồi mới nói → 沉默了一会儿.'},
-  {wrong:'她参加了学生会并____了学生会主席。',opts:['担任','出席','组织','面临'],ans:0,
-   exp:'担任 + chức vụ (主席). 出席 + sự kiện (会议, 宴会).'},
-  {wrong:'下个月的国际会议，将有三十多个国家的代表____。',opts:['出席','担任','录取','建立'],ans:0,
-   exp:'Có mặt tại hội nghị trang trọng → 出席.'},
-  {wrong:'当____是否选择牛津大学时，她们全家开会。',opts:['面临','录取','出席','征求'],ans:0,
-   exp:'当面临……时 = khi đứng trước (lựa chọn, khó khăn).'},
-  {wrong:'这件事，你应该先____一下父母的意见。',opts:['征求','沟通','要求','建立'],ans:0,
-   exp:'征求 + (người + 的) + 意见 = hỏi ý kiến. 沟通 không mang tân ngữ 意见.'},
-  {wrong:'人们如果长期进行____一方面的训练，就可以提高大脑的反应能力。',opts:['某','每','各','另'],ans:0,
-   exp:'某一方面 = một mặt nào đó (không xác định) — câu ví dụ của sách.'}
+  {wrong:'这件事我想跟你____谈谈，别让其他人知道。',opts:['单独','独自','一致','陌生'],ans:0,exp:'单独 = riêng, không có người khác cùng tham gia: 跟你单独谈. 独自 = tự mình một người, không đi với 跟你; 一致, 陌生 không hợp.'},
+  {wrong:'这个孩子长大了，需要一个____的房间。',opts:['单独','独自','一致','亲爱'],ans:0,exp:'单独 là tính từ, làm định ngữ được: 单独的房间 = phòng riêng. 独自 chỉ là phó từ, không đứng trước 的 + danh từ; 一致, 亲爱 không hợp.'},
+  {wrong:'按照公司的____，每年可以放十五天假。',opts:['规定','规矩','目标','阶段'],ans:0,exp:'Quy định chính thức (bằng văn bản) của cơ quan → 规定. 规矩 là phép tắc, nề nếp không thành văn; 目标, 阶段 không hợp.'},
+  {wrong:'我这次来北京的____是参加一个讲座。',opts:['目的','目标','规定','阶段'],ans:0,exp:'Lý do, ý định của một việc cụ thể → 目的. 目标 là cái đích lớn cần phấn đấu để đạt tới; 规定, 阶段 không hợp.'},
+  {wrong:'今年我的____是读完五十本中文书。',opts:['目标','目的','阶段','规矩'],ans:0,exp:'Đích cần phấn đấu đạt được → 目标. 目的 là mục đích của một hành động cụ thể (来这儿的目的); 阶段, 规矩 không hợp.'},
+  {wrong:'关于这次活动的安排，大家的意见很____。',opts:['一致','单独','陌生','隐约'],ans:0,exp:'意见一致 = ý kiến thống nhất (一致 làm vị ngữ). 单独 là riêng lẻ; 陌生 là xa lạ; 隐约 là lờ mờ.'},
+  {wrong:'我在____本杂志上看到过这篇文章，可是想不起来是哪本了。',opts:['某','每','各','另'],ans:0,exp:'某 = một … nào đó (không xác định / không nhớ rõ). 每, 各 là "mỗi, các" — trái với 想不起来是哪本; 另 cần 一: 另一本.'},
+  {wrong:'____我带了伞，才没被雨淋。',opts:['幸亏','难免','一旦','居然'],ans:0,exp:'幸亏 + điều kiện may mắn，……才…… = may mà… nên mới tránh được chuyện xấu. 难免, 一旦, 居然 không đi với 才 theo nghĩa này.'},
+  {wrong:'你有什么想法应该跟父母好好____，别一个人生气。',opts:['沟通','征求','面临','录取'],ans:0,exp:'跟 + người + 沟通 = trao đổi, trò chuyện cho hiểu nhau. 征求 phải có tân ngữ 意见; 面临, 录取 không hợp.'},
+  {wrong:'老师在出题之前，____了同学们的意见。',opts:['征求','要求','沟通','建立'],ans:0,exp:'征求 + 意见 = hỏi ý kiến. 要求 là yêu cầu (không đi với 意见 theo nghĩa này); 沟通 không mang tân ngữ 意见; 建立 là thiết lập.'},
+  {wrong:'大学快读完了，我们都____着找工作的压力。',opts:['面临','录取','出席','担任'],ans:0,exp:'面临 + 压力/选择/问题 = đối mặt, đứng trước. 录取 là tuyển vào; 出席 là có mặt (hội nghị); 担任 là đảm nhiệm (chức vụ).'},
+  {wrong:'他被一所名牌大学____了，全家人都特别高兴。',opts:['录取','面临','组织','建立'],ans:0,exp:'被 + trường + 录取 = được trường nhận vào học. 面临, 组织, 建立 không dùng cho việc trường nhận học sinh.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'May mà cậu nhắc tớ, nếu không tớ đã lỡ mất buổi toạ đàm chiều nay rồi.', zh:'幸亏你提醒了我，要不然我就错过今天下午的讲座了。', py:'Xìngkuī nǐ tíxǐngle wǒ, yàobùrán wǒ jiù cuòguò jīntiān xiàwǔ de jiǎngzuò le.', goiY:['幸亏……，要不然……','讲座','错过'], giai:'幸亏 + điều may mắn, 要不然 + hậu quả xấu đã tránh được; vế sau thường có 就……了.'},
-  {vi:'Tuy tôi và bố mẹ không thống nhất ý kiến về việc chọn chuyên ngành, nhưng cuối cùng bố mẹ vẫn nhượng bộ.', zh:'虽然我跟父母在选专业上意见不一致，但最后他们还是让步了。', py:'Suīrán wǒ gēn fùmǔ zài xuǎn zhuānyè shang yìjiàn bù yízhì, dàn zuìhòu tāmen háishi ràngbù le.', goiY:['虽然……但……','意见不一致','让步'], giai:'一致 làm vị ngữ sau 意见: 意见不一致 (không nói 不一致意见); 一 trong 一致 đọc yí vì đứng trước thanh 4.'},
-  {vi:'Chỉ cần mỗi người đều giữ kỷ luật thì chuyến tham quan bảo tàng lần này sẽ không có vấn đề gì.', zh:'只要每个人都遵守纪律，这次去博物馆参观就不会出问题。', py:'Zhǐyào měi ge rén dōu zūnshǒu jìlǜ, zhè cì qù bówùguǎn cānguān jiù bú huì chū wèntí.', goiY:['只要……就……','遵守纪律'], giai:'遵守 đi với 纪律/规则/规定 = tuân thủ, giữ; 只要……就…… nêu điều kiện đủ "chỉ cần… thì…", 就 đứng sau chủ ngữ của vế sau.'},
-  {vi:'Ở một giai đoạn nào đó, ai cũng khó tránh khỏi cảm giác mơ hồ, nhưng chỉ cần chăm chỉ nỗ lực, mục tiêu sẽ ngày càng rõ ràng.', zh:'在某个阶段，每个人都难免会觉得迷茫，但只要刻苦努力，目标就会越来越清楚。', py:'Zài mǒu ge jiēduàn, měi ge rén dōu nánmiǎn huì juéde mímáng, dàn zhǐyào kèkǔ nǔlì, mùbiāo jiù huì yuè lái yuè qīngchu.', goiY:['某个阶段','难免','只要……就……'], giai:'某 + lượng từ + danh từ = "một … nào đó" (không xác định); 越来越 + tính từ diễn tả mức độ tăng dần theo thời gian.'},
-  {vi:'Bạn cùng bàn của tôi không những học hành chăm chỉ mà còn rất giỏi giang, năm lớp 11 đã làm chủ tịch hội học sinh, lại thường xuyên tổ chức đủ loại hoạt động ngoại khoá.', zh:'我的同桌不但学习刻苦，而且非常能干，高二时就担任了学生会主席，还经常组织各种课外活动。', py:'Wǒ de tóngzhuō búdàn xuéxí kèkǔ, érqiě fēicháng nénggàn, gāo\'èr shí jiù dānrènle xuéshēnghuì zhǔxí, hái jīngcháng zǔzhī gè zhǒng kèwài huódòng.', goiY:['不但……而且……','担任','组织'], giai:'担任 + chức vụ = đảm nhận (担任主席), trang trọng hơn 当; 能干 = giỏi giang, tháo vát (tính từ, không mang tân ngữ).'},
-  {vi:'Trước khi đưa ra những quyết định quan trọng nào đó, cậu nên hỏi ý kiến bố mẹ trước, nếu không lỡ xảy ra chuyện thì hối hận cũng không kịp.', zh:'在做某些重要的决定之前，你应该先征求一下父母的意见，否则万一出了问题，后悔就来不及了。', py:'Zài zuò mǒu xiē zhòngyào de juédìng zhīqián, nǐ yīnggāi xiān zhēngqiú yíxià fùmǔ de yìjiàn, fǒuzé wànyī chūle wèntí, hòuhuǐ jiù láibují le.', goiY:['征求……的意见','否则','万一'], giai:'征求意见 là cụm cố định "hỏi/xin ý kiến"; 否则 = nếu không thì, 万一 = lỡ như (việc xấu ít khả năng xảy ra).'},
-  {vi:'Lúc mới vào trường mới, tôi thấy mọi thứ xung quanh đều xa lạ, may mà bạn cùng bàn chủ động trò chuyện với tôi, tôi mới dần dần có được sự tự tin.', zh:'刚进新学校时，我对周围的一切都很陌生，幸亏同桌主动和我沟通，我才慢慢建立了自信。', py:'Gāng jìn xīn xuéxiào shí, wǒ duì zhōuwéi de yíqiè dōu hěn mòshēng, xìngkuī tóngzhuō zhǔdòng hé wǒ gōutōng, wǒ cái mànmàn jiànlìle zìxìn.', goiY:['幸亏……，(我)才……','陌生','沟通'], giai:'幸亏 A，才 B = nhờ có A nên mới B; 陌生 dùng cho người/nơi chốn xa lạ, cấu trúc 对……很陌生.'},
-  {vi:'Các bạn trong lớp nhất trí để tôi tổ chức hoạt động lần này, nhưng tôi chưa từng một mình phụ trách việc lớn như vậy, trong lòng khó tránh khỏi hơi hồi hộp.', zh:'同学们一致同意由我来组织这次活动，可是我从来没有单独负责过这么大的事，心里难免有点儿紧张。', py:'Tóngxuémen yízhì tóngyì yóu wǒ lái zǔzhī zhè cì huódòng, kěshì wǒ cónglái méiyǒu dāndú fùzéguo zhème dà de shì, xīnli nánmiǎn yǒudiǎnr jǐnzhāng.', goiY:['一致同意','单独','可是'], giai:'一致 làm phó từ phải đứng TRƯỚC động từ: 一致同意/一致认为; 单独 + V = một mình làm, 从来没有……过 = chưa từng.'},
-  {vi:'Cậu ấy từ nhỏ đã rất ngoan, chưa bao giờ vi phạm nội quy của trường, không ngờ đến lúc đứng trước kỳ thi đại học, cậu ấy lại bỏ trường danh tiếng để chọn học chuyên ngành mình thích.', zh:'他从小就很乖，从不违反学校的规矩，没想到面临高考时，他居然放弃了名牌大学，选择去学自己喜欢的专业。', py:'Tā cóngxiǎo jiù hěn guāi, cóng bù wéifǎn xuéxiào de guīju, méi xiǎngdào miànlín gāokǎo shí, tā jūrán fàngqìle míngpái dàxué, xuǎnzé qù xué zìjǐ xǐhuan de zhuānyè.', goiY:['没想到……居然……','违反……规矩','面临'], giai:'面临 + tình huống/thử thách = đứng trước, đối mặt (面临高考/面临选择); 居然 diễn tả điều bất ngờ, đứng sau chủ ngữ.'},
-  {vi:'Trong lễ tốt nghiệp, cô chủ nhiệm im lặng rất lâu mới cất lời, các bạn lần lượt rơi nước mắt, may mà trong hội trường ánh đèn khá tối nên chẳng ai thấy ai đang khóc.', zh:'毕业典礼上，班主任沉默了很久才开口，同学们纷纷流下了眼泪，幸亏礼堂里灯光很暗，谁也没看见谁在哭。', py:'Bìyè diǎnlǐ shang, bānzhǔrèn chénmòle hěn jiǔ cái kāikǒu, tóngxuémen fēnfēn liúxiàle yǎnlèi, xìngkuī lǐtáng li dēngguāng hěn àn, shéi yě méi kànjiàn shéi zài kū.', goiY:['幸亏','沉默','纷纷'], giai:'幸亏 + điều may, ngầm hiểu hậu quả đã tránh được (bị thấy khóc); 谁也没看见谁 — hai chữ 谁 chỉ hai người khác nhau: "không ai thấy ai".'}
+  {vi:'May mà hôm qua cậu báo cho tớ, nếu không tớ đã lỡ mất buổi toạ đàm chiều nay rồi.',zh:'幸亏你昨天告诉了我，要不我就错过今天下午的讲座了。',py:'Xìngkuī nǐ zuótiān gàosule wǒ, yàobù wǒ jiù cuòguò jīntiān xiàwǔ de jiǎngzuò le.',goiY:['幸亏……，要不……','讲座','错过'],giai:'幸亏 + điều may mắn, 要不 (bài 8) + hậu quả xấu đã tránh được; vế sau thường có 就……了.'},
+  {vi:'Tuy tôi và bố mẹ không thống nhất ý kiến về việc chọn chuyên ngành, nhưng cuối cùng bố mẹ vẫn nhượng bộ.',zh:'虽然我跟父母在选专业上意见不一致，但最后他们还是让步了。',py:'Suīrán wǒ gēn fùmǔ zài xuǎn zhuānyè shang yìjiàn bù yízhì, dàn zuìhòu tāmen háishi ràngbù le.',goiY:['虽然……但……','意见不一致','让步'],giai:'一致 làm vị ngữ sau 意见: 意见不一致 (không nói 不一致意见); 一 trong 一致 đọc yí vì đứng trước thanh 4.'},
+  {vi:'Chỉ cần mỗi người đều giữ kỷ luật thì chuyến tham quan bảo tàng lần này sẽ không có vấn đề gì.',zh:'只要每个人都遵守纪律，这次去博物馆参观就不会出问题。',py:'Zhǐyào měi ge rén dōu zūnshǒu jìlǜ, zhè cì qù bówùguǎn cānguān jiù bú huì chū wèntí.',goiY:['只要……就……','遵守纪律'],giai:'遵守 đi với 纪律/规则/规定 = tuân thủ, giữ; 只要……就…… nêu điều kiện đủ "chỉ cần… thì…".'},
+  {vi:'Trước khi đưa ra những quyết định quan trọng nào đó, cậu nên hỏi ý kiến bố mẹ trước, nếu không xảy ra chuyện thì hối hận cũng không kịp.',zh:'在做某些重要的决定之前，你应该先征求一下父母的意见，否则出了问题，后悔就来不及了。',py:'Zài zuò mǒu xiē zhòngyào de juédìng zhīqián, nǐ yīnggāi xiān zhēngqiú yíxià fùmǔ de yìjiàn, fǒuzé chūle wèntí, hòuhuǐ jiù láibují le.',goiY:['征求……的意见','否则','某些'],giai:'征求意见 là cụm cố định "hỏi/xin ý kiến"; 否则 = nếu không thì; 某些 + danh từ = một số … nào đó.'},
+  {vi:'Các bạn trong lớp nhất trí để tôi tổ chức hoạt động lần này, nhưng tôi chưa từng một mình phụ trách việc lớn như vậy, trong lòng khó tránh khỏi hơi hồi hộp.',zh:'同学们一致同意由我来组织这次活动，可是我从来没有单独负责过这么大的事，心里难免有点儿紧张。',py:'Tóngxuémen yízhì tóngyì yóu wǒ lái zǔzhī zhè cì huódòng, kěshì wǒ cónglái méiyǒu dāndú fùzéguo zhème dà de shì, xīnli nánmiǎn yǒudiǎnr jǐnzhāng.',goiY:['一致同意','单独','难免'],giai:'一致 làm phó từ phải đứng TRƯỚC động từ: 一致同意/一致认为; 单独 + V = một mình làm; 难免 (bài 22) = khó tránh khỏi.'},
+  {vi:'Cậu ấy từ nhỏ đã rất ngoan, chưa bao giờ vi phạm nội quy của trường, không ngờ đến lúc đứng trước kỳ thi đại học, cậu ấy lại bỏ trường danh tiếng để chọn học chuyên ngành mình thích.',zh:'他从小就很乖，从不违反学校的规矩，没想到面临高考时，他居然放弃了名牌大学，选择去学自己喜欢的专业。',py:'Tā cóngxiǎo jiù hěn guāi, cóng bù wéifǎn xuéxiào de guīju, méi xiǎngdào miànlín gāokǎo shí, tā jūrán fàngqìle míngpái dàxué, xuǎnzé qù xué zìjǐ xǐhuan de zhuānyè.',goiY:['没想到……居然……','违反……规矩','面临'],giai:'面临 + tình huống/thử thách = đứng trước, đối mặt (面临高考/面临选择); 居然 diễn tả điều bất ngờ, đứng sau chủ ngữ.'}
 ];
 
-// Chiều Trung → Việt — câu của bài khoá
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Văn Văn không những từ nhỏ đã học hành chăm chỉ, mà còn luôn là một cô bé ngoan biết giữ kỷ luật.', zh:'文文不但从小学习刻苦，而且一直是个遵守纪律的乖乖女。', py:'Wénwen búdàn cóngxiǎo xuéxí kèkǔ, érqiě yìzhí shì ge zūnshǒu jìlǜ de guāiguāinǚ.', goiY:['不但……而且…… = không những… mà còn…','刻苦 = chăm chỉ, chịu khó','乖乖女 = cô con gái ngoan'], giai:'刻苦 = chịu khó, chịu cực để học (mức độ cao hơn 努力); 不但 đứng sau chủ ngữ khi hai vế cùng một chủ ngữ (文文不但……).'},
-  {vi:'Đến giai đoạn đại học, cô con gái yêu quý vậy mà dần dần có chính kiến riêng.', zh:'到了大学阶段，亲爱的女儿竟然逐渐有了自己的主见。', py:'Dàole dàxué jiēduàn, qīn\'ài de nǚ\'ér jìngrán zhújiàn yǒule zìjǐ de zhǔjiàn.', goiY:['阶段 = giai đoạn','竟然 = vậy mà (bất ngờ)','主见 = chính kiến'], giai:'竟然 cho thấy người mẹ bất ngờ trước sự thay đổi — dịch "vậy mà / lại"; 到了……阶段 = bước sang giai đoạn….'},
-  {vi:'Tuy mẹ nói việc lớn việc nhỏ đều sẽ hỏi ý kiến cô, nhưng học trường nào, học ngành gì thì về cơ bản đều do mẹ quyết.', zh:'尽管妈妈表示大事小事都要征求她的意见，但上哪所学校、念什么专业基本上都是妈妈说了算。', py:'Jǐnguǎn māma biǎoshì dàshì xiǎoshì dōu yào zhēngqiú tā de yìjiàn, dàn shàng nǎ suǒ xuéxiào, niàn shénme zhuānyè jīběn shang dōu shì māma shuōle suàn.', goiY:['尽管……但…… = mặc dù… nhưng…','征求……意见 = hỏi ý kiến','说了算 = có quyền quyết định'], giai:'说了算 = có quyền quyết định (khẩu ngữ), không dịch "nói xong thì tính"; 念 ở đây = học (念专业), không phải "đọc".'},
-  {vi:'Cô trốn học để đi nghe đủ loại buổi toạ đàm, còn dự tiệc của Phòng Thương mại EU, thậm chí làm chủ tịch hội sinh viên, tổ chức đủ loại hoạt động xã hội.', zh:'她逃课去听各种讲座，还出席了欧盟商会的酒会，甚至担任了学生会主席，组织各种社会活动。', py:'Tā táokè qù tīng gè zhǒng jiǎngzuò, hái chūxíle Ōuméng shānghuì de jiǔhuì, shènzhì dānrènle xuéshēnghuì zhǔxí, zǔzhī gè zhǒng shèhuì huódòng.', goiY:['出席 = có mặt, dự (sự kiện trang trọng)','甚至 = thậm chí','担任 = đảm nhiệm'], giai:'出席 dùng cho hội nghị, tiệc, lễ trang trọng — trang trọng hơn 参加; 甚至 đưa ra việc "đáng ngạc nhiên nhất" trong chuỗi việc.'},
-  {vi:'Trước đây mẹ muốn cô làm nhà ngoại giao, nhưng trong mắt cô kế hoạch ấy thật chẳng có gì thú vị, cô thấy kinh doanh mới là mục tiêu của mình.', zh:'妈妈以前要她当外交官，可是在她眼里这个计划实在没什么意思，她觉得经商才是自己的目标。', py:'Māma yǐqián yào tā dāng wàijiāoguān, kěshì zài tā yǎn li zhège jìhuà shízài méi shénme yìsi, tā juéde jīngshāng cái shì zìjǐ de mùbiāo.', goiY:['可是 = nhưng','经商 = kinh doanh, buôn bán','……才是…… = … mới là…'], giai:'才是 nhấn mạnh "mới chính là" (đối lập với kế hoạch của mẹ); 要 + người + V = muốn ai làm gì.'},
-  {vi:'Kết quả là có mấy trường đại học danh tiếng thế giới nhận cô, nhưng khi đứng trước việc có chọn Đại học Oxford hay không, ý kiến của cô và bố mẹ lại không thống nhất.', zh:'结果好几所世界名牌大学录取了她，当面临是否选择牛津大学时，她跟父母的意见却不一致。', py:'Jiéguǒ hǎo jǐ suǒ shìjiè míngpái dàxué lùqǔle tā, dāng miànlín shìfǒu xuǎnzé Niújīn Dàxué shí, tā gēn fùmǔ de yìjiàn què bù yízhì.', goiY:['录取 = nhận (vào trường)','当……时 = khi…','意见却不一致 = ý kiến lại không thống nhất'], giai:'当 + sự việc + 时 = khi…; 是否 = có… hay không (văn viết); 却 báo hiệu điều trái với mong đợi sau tin vui.'},
-  {vi:'Lần này mẹ đã nhượng bộ, vì bà lờ mờ cảm thấy mình nên buông tay hoàn toàn rồi, không ngờ chính lần buông tay ấy lại khiến cánh diều bay mỗi lúc một cao.', zh:'这一次妈妈让步了，因为她隐隐约约觉得自己该完全放手了，没想到正是这次放手让风筝越飞越高。', py:'Zhè yí cì māma ràngbù le, yīnwèi tā yǐnyǐnyuēyuē juéde zìjǐ gāi wánquán fàngshǒu le, méi xiǎngdào zhèng shì zhè cì fàngshǒu ràng fēngzheng yuè fēi yuè gāo.', goiY:['让步 = nhượng bộ','隐隐约约 = lờ mờ, mang máng','越……越…… = càng… càng…'], giai:'正是 + chủ ngữ + 让…… nhấn mạnh "chính điều đó đã khiến…"; 风筝越飞越高 là hình ảnh ẩn dụ cho người con ngày càng tiến xa.'},
-  {vi:'Ở Los Angeles – một nơi xa lạ, lúc đầu mẹ vừa không thể ra ngoài một mình vừa không giao tiếp được với ai, việc gì cũng phải dựa vào con gái.', zh:'在洛杉矶这个陌生的地方，妈妈最初既不能单独出门，也无法与人沟通，什么事都要靠女儿。', py:'Zài Luòshānjī zhège mòshēng de dìfang, māma zuìchū jì bù néng dāndú chūmén, yě wúfǎ yǔ rén gōutōng, shénme shì dōu yào kào nǚ\'ér.', goiY:['既……也…… = vừa… vừa…','单独 = một mình','沟通 = giao tiếp'], giai:'洛杉矶这个陌生的地方 là cấu trúc đồng vị "Los Angeles – nơi xa lạ này"; 既不……也无法…… phủ định cả hai khả năng.'},
-  {vi:'Về sau con gái khuyến khích bà tự ra ngoài, bà bắt đầu từ siêu thị trước cửa nhà, càng đi càng xa, cuối cùng vậy mà một mình đi xuyên cả nước Mỹ.', zh:'后来女儿鼓励她自己出去，她从家门口的超市开始越走越远，最后竟然单独把美国横穿了一遍。', py:'Hòulái nǚ\'ér gǔlì tā zìjǐ chūqu, tā cóng jiā ménkǒu de chāoshì kāishǐ yuè zǒu yuè yuǎn, zuìhòu jìngrán dāndú bǎ Měiguó héngchuānle yí biàn.', goiY:['越……越…… = càng… càng…','竟然 = vậy mà (bất ngờ)','横穿 = đi xuyên ngang'], giai:'把 + nơi chốn + 横穿了一遍 = đi xuyên qua … một lượt; 从……开始 chỉ điểm xuất phát, 越走越远 = càng đi càng xa.'},
-  {vi:'Sau khi mẹ xin lỗi trên bãi biển vì trước kia "không chịu buông tay", Văn Văn im lặng rất lâu mới hôn mẹ một cái; mẹ không kìm được mà khóc, may mà đêm đó trời rất tối.', zh:'妈妈在沙滩上为以前的“不放手”道歉后，文文沉默了很久，才吻了她一下；妈妈忍不住哭了，幸亏那晚天色很暗。', py:'Māma zài shātān shang wèi yǐqián de “bú fàngshǒu” dàoqiàn hòu, Wénwen chénmòle hěn jiǔ, cái wěnle tā yíxià; māma rěn bu zhù kū le, xìngkuī nà wǎn tiānsè hěn àn.', goiY:['为……道歉 = xin lỗi vì…','忍不住 = không kìm được','幸亏 = may mà'], giai:'幸亏那晚天色很暗 ngầm ý "may mà trời tối nên con không thấy mẹ khóc" — dịch giữ nguyên hàm ý, không cần thêm; 为 + lý do + 道歉 = xin lỗi vì….'}
+  {vi:'Cô trốn học để đi nghe đủ loại buổi toạ đàm, còn dự tiệc của Phòng Thương mại EU, thậm chí làm chủ tịch hội sinh viên, tổ chức đủ loại hoạt động xã hội.',zh:'她逃课去听各种讲座，还出席了欧盟商会的酒会，甚至担任了学生会主席，组织各种社会活动。',py:'Tā táokè qù tīng gè zhǒng jiǎngzuò, hái chūxíle Ōuméng shānghuì de jiǔhuì, shènzhì dānrènle xuéshēnghuì zhǔxí, zǔzhī gè zhǒng shèhuì huódòng.',goiY:['出席 = có mặt, dự (sự kiện trang trọng)','甚至 = thậm chí','担任 = đảm nhiệm'],giai:'出席 dùng cho hội nghị, tiệc, lễ trang trọng — trang trọng hơn 参加; 甚至 đưa ra việc "đáng ngạc nhiên nhất" trong chuỗi việc.'},
+  {vi:'Trước đây mẹ muốn cô làm nhà ngoại giao, nhưng trong mắt cô kế hoạch ấy thật chẳng có gì thú vị, cô thấy kinh doanh mới là mục tiêu của mình.',zh:'妈妈以前要她当外交官，可是在她眼里这个计划实在没什么意思，她觉得经商才是自己的目标。',py:'Māma yǐqián yào tā dāng wàijiāoguān, kěshì zài tā yǎn li zhège jìhuà shízài méi shénme yìsi, tā juéde jīngshāng cái shì zìjǐ de mùbiāo.',goiY:['可是 = nhưng','经商 = kinh doanh, buôn bán','……才是…… = … mới là…'],giai:'才是 nhấn mạnh "mới chính là" (đối lập với kế hoạch của mẹ); 要 + người + V = muốn ai làm gì.'},
+  {vi:'Kết quả là có mấy trường đại học danh tiếng thế giới nhận cô, nhưng khi đứng trước việc có chọn Đại học Oxford hay không, ý kiến của cô và bố mẹ lại không thống nhất.',zh:'结果好几所世界名牌大学录取了她，当面临是否选择牛津大学时，她跟父母的意见却不一致。',py:'Jiéguǒ hǎo jǐ suǒ shìjiè míngpái dàxué lùqǔle tā, dāng miànlín shìfǒu xuǎnzé Niújīn Dàxué shí, tā gēn fùmǔ de yìjiàn què bù yízhì.',goiY:['录取 = nhận (vào trường)','当……时 = khi…','意见却不一致 = ý kiến lại không thống nhất'],giai:'当 + sự việc + 时 = khi…; 是否 = có… hay không (văn viết); 却 báo hiệu điều trái với mong đợi sau tin vui.'},
+  {vi:'Ở Los Angeles – một nơi xa lạ, lúc đầu mẹ vừa không thể ra ngoài một mình vừa không giao tiếp được với ai, việc gì cũng phải dựa vào con gái.',zh:'在洛杉矶这个陌生的地方，妈妈最初既不能单独出门，也无法与人沟通，什么事都要靠女儿。',py:'Zài Luòshānjī zhège mòshēng de dìfang, māma zuìchū jì bù néng dāndú chūmén, yě wúfǎ yǔ rén gōutōng, shénme shì dōu yào kào nǚ\'ér.',goiY:['既……也…… = vừa… vừa…','单独 = một mình','沟通 = giao tiếp'],giai:'洛杉矶这个陌生的地方 là cấu trúc đồng vị "Los Angeles – nơi xa lạ này"; 既不……也无法…… phủ định cả hai khả năng.'},
+  {vi:'Về sau con gái khuyến khích bà tự ra ngoài, bà bắt đầu từ siêu thị trước cửa nhà, càng đi càng xa, cuối cùng vậy mà một mình đi xuyên cả nước Mỹ.',zh:'后来女儿鼓励她自己出去，她从家门口的超市开始越走越远，最后竟然独自把美国横穿了一遍。',py:'Hòulái nǚ\'ér gǔlì tā zìjǐ chūqu, tā cóng jiā ménkǒu de chāoshì kāishǐ yuè zǒu yuè yuǎn, zuìhòu jìngrán dúzì bǎ Měiguó héngchuānle yí biàn.',goiY:['越……越…… = càng… càng…','独自 = một mình (tự mình)','横穿 = đi xuyên ngang'],giai:'独自 = tự mình một người (phó từ); 把 + nơi chốn + 横穿了一遍 = đi xuyên qua … một lượt; 越走越远 = càng đi càng xa.'},
+  {vi:'Sau khi mẹ xin lỗi trên bãi biển vì trước kia "không chịu buông tay", Văn Văn im lặng rất lâu mới hôn mẹ một cái; mẹ không kìm được mà khóc, may mà đêm đó trời rất tối.',zh:'妈妈在沙滩上为以前的“不放手”道歉后，文文沉默了很久，才吻了她一下；妈妈忍不住哭了，幸亏那晚天色很暗。',py:'Māma zài shātān shang wèi yǐqián de “bú fàngshǒu” dàoqiàn hòu, Wénwen chénmòle hěn jiǔ, cái wěnle tā yíxià; māma rěn bu zhù kū le, xìngkuī nà wǎn tiānsè hěn àn.',goiY:['为……道歉 = xin lỗi vì…','忍不住 = không kìm được','幸亏 = may mà'],giai:'幸亏那晚天色很暗 ngầm ý "may mà trời tối nên con không thấy mẹ khóc"; 为 + lý do + 道歉 = xin lỗi vì….'}
 ];
 
 // ══════════════════════════════════════════
@@ -1454,31 +1375,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (câu 29–31 của sách bài tập + câu bài khoá)
   sapXep:[
-    {manh:['乖孩子','遵守纪律的','她是个'],
-     dap:'她是个遵守纪律的乖孩子。',
-     vn:'Cô bé là một đứa trẻ ngoan, biết giữ kỷ luật.',
-     giai:'她是个 + định ngữ (遵守纪律的) + danh từ trung tâm 乖孩子. Câu 29 sách bài tập.'},
-    {manh:['被名牌大学','目标是','录取','我的'],
-     dap:'我的目标是被名牌大学录取。',
-     chap:['被名牌大学录取是我的目标。'],
-     vn:'Mục tiêu của tôi là được một trường đại học danh tiếng nhận vào.',
-     giai:'我的目标是 + cụm bị động 被名牌大学录取. Cũng có thể đảo: 被名牌大学录取是我的目标 (câu 30 sách bài tập).'},
-    {manh:['和陌生人','善于','他很','沟通'],
-     dap:'他很善于和陌生人沟通。',
-     vn:'Anh ấy rất giỏi giao tiếp với người lạ.',
-     giai:'他很善于 + (和 + người + 沟通). Cụm 和陌生人 đứng TRƯỚC động từ 沟通 (câu 31 sách bài tập).'},
-    {manh:['一致','专家们','认为','这是一种成功的产品'],
-     dap:'专家们一致认为这是一种成功的产品。',
-     vn:'Các chuyên gia nhất trí cho rằng đây là một sản phẩm thành công.',
-     giai:'一致 làm phó từ, đứng sau chủ ngữ, trước động từ 认为.'},
-    {manh:['提醒了我，','幸亏你','才没迟到','我'],
-     dap:'幸亏你提醒了我，我才没迟到。',
-     vn:'May mà cậu nhắc tớ, tớ mới không bị muộn.',
-     giai:'幸亏 + nguyên nhân tốt，chủ ngữ + 才 + kết quả.'},
-    {manh:['交换了','她们好像','某种身份','妈妈感到'],
-     dap:'妈妈感到她们好像交换了某种身份。',
-     vn:'Người mẹ cảm thấy hai mẹ con như đã đổi cho nhau một thân phận nào đó.',
-     giai:'妈妈感到 + mệnh đề (她们好像交换了某种身份); 某种 + danh từ.'}
+    {manh:['乖孩子','遵守纪律的','她是个'],dap:'她是个遵守纪律的乖孩子。',vn:'Cô bé là một đứa trẻ ngoan, biết giữ kỷ luật.',giai:'她是个 + định ngữ (遵守纪律的) + danh từ trung tâm 乖孩子. Câu 29 sách bài tập.'},
+    {manh:['被名牌大学','目标是','录取','我的'],dap:'我的目标是被名牌大学录取。',chap:['被名牌大学录取是我的目标。'],vn:'Mục tiêu của tôi là được một trường đại học danh tiếng nhận vào.',giai:'我的目标是 + cụm bị động 被名牌大学录取. Cũng có thể đảo: 被名牌大学录取是我的目标 (câu 30 sách bài tập).'},
+    {manh:['和陌生人','善于','他很','沟通'],dap:'他很善于和陌生人沟通。',vn:'Anh ấy rất giỏi giao tiếp với người lạ.',giai:'他很善于 + (和 + người + 沟通). Cụm 和陌生人 đứng TRƯỚC động từ 沟通 (câu 31 sách bài tập).'},
+    {manh:['一致','两个人的','并不','兴趣爱好'],dap:'两个人的兴趣爱好并不一致。',vn:'Sở thích của hai người không hề giống nhau.',giai:'Chủ ngữ 两个人的兴趣爱好 → 并不 (nhấn mạnh phủ định) → tính từ 一致 làm vị ngữ.'},
+    {manh:['才','幸亏','没出大问题','发现得及时'],dap:'幸亏发现得及时，才没出大问题。',vn:'May mà phát hiện kịp thời nên mới không xảy ra chuyện lớn.',giai:'幸亏 + điều kiện may mắn (发现得及时)，才 + kết quả tránh được (没出大问题).'},
+    {manh:['某些','同意','我不','他的','看法'],dap:'我不同意他的某些看法。',vn:'Tôi không đồng ý với một số quan điểm của anh ấy.',giai:'我不同意 + tân ngữ; 某些 đứng sau 他的, trước danh từ 看法.'}
   ]
 };
 
@@ -1488,30 +1390,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (子女教育 · 放手). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 沟通 · 一致 · 征求 · 目标 · 幸亏 · 让步 · 能干 · 陌生.',
   questions:[
-    {q_zh:'在学习问题上，你和父母有过争吵吗？',
-     q_vn:'Về chuyện học hành, em và bố mẹ đã từng cãi nhau chưa?',
-     hint:'Kể một lần bất đồng, dùng 意见不一致 và 让步',
-     sample:'有过。上高一的时候，我想学画画儿，可是爸爸妈妈希望我多上数学补习班，我们的意见很不一致。后来我们好好谈了一次，他们让步了。',
-     sample_vn:'Có ạ. Hồi lớp 10, em muốn học vẽ, nhưng bố mẹ muốn em học thêm toán nhiều hơn, ý kiến cả nhà rất khác nhau. Sau đó cả nhà nói chuyện đàng hoàng một lần, bố mẹ đã nhượng bộ.',
-     note:'Kể có đầu có cuối: bất đồng → nói chuyện → kết quả. Giám khảo HSKK chấm mạch lạc.'},
-    {q_zh:'你和父母交流时，你感觉你们是平等的吗？',
-     q_vn:'Khi trò chuyện với bố mẹ, em có cảm thấy hai bên bình đẳng không?',
-     hint:'Nêu cảm nhận + ví dụ, dùng 征求 + 意见',
-     sample:'我觉得基本上是平等的。现在家里有什么事，爸爸妈妈都会先征求我的意见，就算我们的看法不一样，他们也会听我说完。',
-     sample_vn:'Em thấy về cơ bản là bình đẳng. Bây giờ nhà có việc gì, bố mẹ đều hỏi ý kiến em trước, dù quan điểm khác nhau thì bố mẹ cũng nghe em nói hết.',
-     note:'Dùng 基本上 để câu trả lời chừng mực, không tuyệt đối.'},
-    {q_zh:'当你遇到问题或犯了错误时，父母是怎么帮助你的？举例说明。',
-     q_vn:'Khi em gặp khó khăn hoặc mắc lỗi, bố mẹ đã giúp em thế nào? Hãy nêu ví dụ.',
-     hint:'Kể một ví dụ cụ thể, dùng 幸亏 ở câu kết',
-     sample:'有一次我考试没考好，不敢告诉妈妈。妈妈知道以后没有批评我，而是跟我一起找原因。幸亏有她的鼓励，我下次考得好多了。',
-     sample_vn:'Có lần em thi không tốt, không dám nói với mẹ. Mẹ biết rồi không mắng em, mà cùng em tìm nguyên nhân. May mà có mẹ động viên, lần sau em thi tốt hơn nhiều.',
-     note:'Ví dụ càng GẦN đời sống của em càng thuyết phục.'},
-    {q_zh:'你怎么看“望子成龙”？你觉得父母应该什么时候对孩子“放手”？',
-     q_vn:'Em nghĩ gì về "望子成龙" (mong con thành tài)? Em thấy bố mẹ nên "buông tay" với con cái từ lúc nào?',
-     hint:'Nêu quan điểm, liên hệ câu chuyện của Văn Văn, dùng 沟通 / 目标',
-     sample:'父母望子成龙是可以理解的，但是每个孩子都有自己的目标。我觉得孩子上了高中，父母就应该慢慢放手，多跟孩子沟通，让他们自己做决定。',
-     sample_vn:'Bố mẹ mong con thành tài là điều dễ hiểu, nhưng đứa trẻ nào cũng có mục tiêu riêng. Em thấy khi con lên cấp ba, bố mẹ nên dần buông tay, trò chuyện với con nhiều hơn, để con tự quyết định.',
-     note:'Bố cục "thừa nhận mặt đúng → nêu ý của mình" giúp câu trả lời có chiều sâu.'}
+    {q_zh:'在学习问题上，你和父母的意见一致吗？',q_vn:'Về chuyện học hành, ý kiến của em và bố mẹ có thống nhất không?',hint:'Kể một lần bất đồng, dùng 意见不一致 và 让步',sample:'不太一致。上高一的时候，我想学画画儿，可是爸爸妈妈希望我多花时间学数学，我们的意见很不一致。后来我们好好谈了一次，他们让步了。',sample_vn:'Không thống nhất lắm. Hồi lớp 10, em muốn học vẽ, nhưng bố mẹ muốn em dành nhiều thời gian học toán hơn, ý kiến cả nhà rất khác nhau. Sau đó cả nhà nói chuyện đàng hoàng một lần, bố mẹ đã nhượng bộ.',note:'Kể có đầu có cuối: bất đồng → nói chuyện → kết quả. Giám khảo HSKK chấm mạch lạc.'},
+    {q_zh:'你和父母交流时，你感觉你们是平等的吗？',q_vn:'Khi trò chuyện với bố mẹ, em có cảm thấy hai bên bình đẳng không?',hint:'Nêu cảm nhận + ví dụ, dùng 征求 + 意见',sample:'我觉得基本上是平等的。现在家里有什么事，爸爸妈妈都会先征求我的意见，就算我们的看法不一样，他们也会听我说完。',sample_vn:'Em thấy về cơ bản là bình đẳng. Bây giờ nhà có việc gì, bố mẹ đều hỏi ý kiến em trước, dù quan điểm khác nhau thì bố mẹ cũng nghe em nói hết.',note:'Dùng 基本上 để câu trả lời chừng mực, không tuyệt đối.'},
+    {q_zh:'当你遇到问题的时候，父母是怎么帮助你的？请说一件你记得最清楚的事。',q_vn:'Khi em gặp khó khăn, bố mẹ đã giúp em thế nào? Hãy kể một chuyện em nhớ rõ nhất.',hint:'Kể một ví dụ cụ thể, dùng 幸亏 ở câu kết',sample:'有一次我考试没考好，不敢告诉妈妈。妈妈知道以后没有批评我，而是跟我一起找原因。幸亏有她的鼓励，我下次考得好多了。',sample_vn:'Có lần em thi không tốt, không dám nói với mẹ. Mẹ biết rồi không mắng em, mà cùng em tìm nguyên nhân. May mà có mẹ động viên, lần sau em thi tốt hơn nhiều.',note:'Ví dụ càng GẦN đời sống của em càng thuyết phục.'},
+    {q_zh:'你觉得父母应该什么时候对孩子“放手”？为什么？',q_vn:'Em thấy bố mẹ nên "buông tay" với con cái từ lúc nào? Vì sao?',hint:'Nêu quan điểm, liên hệ câu chuyện của Văn Văn, dùng 沟通 / 目标',sample:'每个孩子都有自己的目标。我觉得孩子上了高中，父母就应该慢慢放手，多跟孩子沟通，让他们自己做决定。文文的妈妈放手以后，文文反而越来越能干了。',sample_vn:'Đứa trẻ nào cũng có mục tiêu riêng. Em thấy khi con lên cấp ba, bố mẹ nên dần buông tay, trò chuyện với con nhiều hơn, để con tự quyết định. Mẹ Văn Văn buông tay rồi, Văn Văn ngược lại càng ngày càng giỏi giang.',note:'Nêu ý của mình rồi lấy dẫn chứng từ bài khoá để câu trả lời có sức thuyết phục.'}
   ]
 };
 
@@ -1602,45 +1484,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Hôm qua mưa rất to, sáng nay bạn thấy em không hề bị ướt.',
-     a:{sp:'Bạn',zh:'昨天下那么大的雨，你怎么没淋湿？',vn:'Hôm qua mưa to thế, sao cậu không bị ướt?'},
-     need:['Dùng 幸亏……才……','Nêu lý do cụ thể'],
-     sample:'幸亏我出门的时候带了伞，才没被淋湿。',
-     samplePy:'Xìngkuī wǒ chū mén de shíhou dàile sǎn, cái méi bèi línshī.',
-     sampleVn:'May mà lúc ra khỏi nhà tớ mang ô, nên mới không bị ướt.',
-     tip:'幸亏 đứng đầu vế nguyên nhân; vế sau dùng 才 (không dùng 所以). Đây là dạng 练一练 của sách.'},
-
-    {scene:'Lớp em vừa họp chọn địa điểm đi dã ngoại mùa xuân, bạn lớp khác hỏi kết quả.',
-     a:{sp:'Bạn',zh:'你们班春游的地点定了吗？',vn:'Lớp cậu chọn xong chỗ đi dã ngoại chưa?'},
-     need:['Dùng 一致 (phó từ hoặc tính từ)','Nói rõ địa điểm'],
-     sample:'定了，大家一致同意去下龙湾。',
-     samplePy:'Dìng le, dàjiā yízhì tóngyì qù Xiàlóng Wān.',
-     sampleVn:'Chọn rồi, cả lớp nhất trí đi vịnh Hạ Long.',
-     tip:'一致 (phó từ) đứng trước 同意 / 认为 / 表示. Cũng có thể nói: 大家的意见很一致.'},
-
-    {scene:'Bạn thân hỏi em đã chọn ngành đại học chưa, trong khi bố mẹ muốn em học ngành khác.',
-     a:{sp:'Bạn',zh:'你决定念什么专业了吗？',vn:'Cậu quyết định học ngành gì chưa?'},
-     need:['Dùng 沟通','Nói đến ý kiến của bố mẹ'],
-     sample:'我想念中文，可是爸爸妈妈希望我念经济。我打算这个周末好好跟他们沟通一下。',
-     samplePy:'Wǒ xiǎng niàn Zhōngwén, kěshì bàba māma xīwàng wǒ niàn jīngjì. Wǒ dǎsuàn zhège zhōumò hǎohāor gēn tāmen gōutōng yíxià.',
-     sampleVn:'Tớ muốn học tiếng Trung, nhưng bố mẹ muốn tớ học kinh tế. Tớ định cuối tuần này nói chuyện đàng hoàng với bố mẹ.',
-     tip:'跟 + người + 沟通, không nói 沟通他们.'},
-
-    {scene:'Ở trạm xe buýt, em cứ nhìn mãi một người, bạn đi cùng thắc mắc.',
-     a:{sp:'Bạn',zh:'你怎么一直看那个人？你认识他吗？',vn:'Sao cậu cứ nhìn người kia mãi thế? Cậu quen à?'},
-     need:['Dùng 某 (某个 / 某种)','Nói rằng em không nhớ rõ'],
-     sample:'我好像在某个地方见过他，可是一下子想不起来了。',
-     samplePy:'Wǒ hǎoxiàng zài mǒu ge dìfang jiànguo tā, kěshì yíxiàzi xiǎng bu qǐlái le.',
-     sampleVn:'Hình như tớ đã gặp anh ấy ở đâu đó, nhưng nhất thời không nhớ ra.',
-     tip:'某个地方 = một nơi nào đó (không xác định). 某 là văn viết hơn 哪个.'},
-
-    {scene:'Đầu năm lớp 12, cô chủ nhiệm hỏi mục tiêu của em.',
-     a:{sp:'Cô giáo',zh:'高三这一年，你有什么目标？',vn:'Năm lớp 12 này, em có mục tiêu gì?'},
-     need:['Dùng 目标 (我的目标是……)','Nói em sẽ cố gắng thế nào'],
-     sample:'我的目标是被河内国家大学录取，所以我每天都会刻苦学习。',
-     samplePy:'Wǒ de mùbiāo shì bèi Hénèi Guójiā Dàxué lùqǔ, suǒyǐ wǒ měi tiān dōu huì kèkǔ xuéxí.',
-     sampleVn:'Mục tiêu của em là được Đại học Quốc gia Hà Nội nhận vào, nên ngày nào em cũng sẽ học hành chăm chỉ.',
-     tip:'我的目标是 + 被……录取 — đúng câu 30 của sách bài tập.'}
+    {scene:'Sáng nay tắc đường kinh khủng, nhưng em vẫn đến công ty đúng giờ, đồng nghiệp ngạc nhiên.',a:{sp:'Đồng nghiệp',zh:'今天早上堵车那么厉害，你怎么没迟到？',vn:'Sáng nay tắc đường kinh khủng thế, sao cậu không bị muộn?'},need:['Dùng 幸亏……，要不……','Nêu lý do cụ thể'],sample:'幸亏我今天出门早，坐地铁来的，要不肯定迟到了。',samplePy:'Xìngkuī wǒ jīntiān chūmén zǎo, zuò dìtiě lái de, yàobù kěndìng chídào le.',sampleVn:'May mà hôm nay tớ ra khỏi nhà sớm, đi tàu điện ngầm đến, không thì chắc chắn muộn rồi.',tip:'幸亏 đứng đầu vế nguyên nhân may mắn; vế sau 要不 + hậu quả đã tránh được.'},
+    {scene:'Lớp em vừa họp chọn chỗ đi chơi cuối tuần, bạn lớp khác hỏi kết quả.',a:{sp:'Bạn',zh:'你们班周末去哪儿玩儿，商量好了吗？',vn:'Lớp cậu cuối tuần đi chơi đâu, bàn xong chưa?'},need:['Dùng 一致 (phó từ hoặc tính từ)','Nói rõ địa điểm'],sample:'商量好了，大家一致同意去郊区。',samplePy:'Shāngliang hǎo le, dàjiā yízhì tóngyì qù jiāoqū.',sampleVn:'Bàn xong rồi, cả lớp nhất trí đi ngoại ô.',tip:'一致 (phó từ) đứng trước 同意 / 认为 / 表示. Cũng có thể nói: 大家的意见很一致.'},
+    {scene:'Bạn thân hỏi em đã chọn ngành đại học chưa, trong khi bố mẹ muốn em học ngành khác.',a:{sp:'Bạn',zh:'你决定念什么专业了吗？',vn:'Cậu quyết định học ngành gì chưa?'},need:['Dùng 沟通','Nói đến ý kiến của bố mẹ'],sample:'我想念中文，可是爸爸妈妈希望我念经济。我打算这个周末好好跟他们沟通一下。',samplePy:'Wǒ xiǎng niàn Zhōngwén, kěshì bàba māma xīwàng wǒ niàn jīngjì. Wǒ dǎsuàn zhège zhōumò hǎohāor gēn tāmen gōutōng yíxià.',sampleVn:'Tớ muốn học tiếng Trung, nhưng bố mẹ muốn tớ học kinh tế. Tớ định cuối tuần này nói chuyện đàng hoàng với bố mẹ.',tip:'跟 + người + 沟通, không nói 沟通他们.'},
+    {scene:'Ở trạm xe buýt, em cứ nhìn mãi một người, bạn đi cùng thắc mắc.',a:{sp:'Bạn',zh:'你怎么一直看那个人？你认识他吗？',vn:'Sao cậu cứ nhìn người kia mãi thế? Cậu quen à?'},need:['Dùng 某 (某个 / 某种)','Nói rằng em không nhớ rõ'],sample:'我好像在某个地方见过他，可是一下子想不起来了。',samplePy:'Wǒ hǎoxiàng zài mǒu ge dìfang jiànguo tā, kěshì yíxiàzi xiǎng bu qǐlái le.',sampleVn:'Hình như tớ đã gặp anh ấy ở đâu đó, nhưng nhất thời không nhớ ra.',tip:'某个地方 = một nơi nào đó (không xác định). 某 là văn viết hơn 哪个.'},
+    {scene:'Đầu năm lớp 12, cô chủ nhiệm hỏi mục tiêu của em.',a:{sp:'Cô giáo',zh:'高三这一年，你有什么目标？',vn:'Năm lớp 12 này, em có mục tiêu gì?'},need:['Dùng 目标','Nói em sẽ cố gắng thế nào'],sample:'我给自己的目标是考上河内国家大学，所以每天都会刻苦学习。',samplePy:'Wǒ gěi zìjǐ de mùbiāo shì kǎoshang Hénèi Guójiā Dàxué, suǒyǐ měi tiān dōu huì kèkǔ xuéxí.',sampleVn:'Mục tiêu em đặt ra cho mình là đỗ Đại học Quốc gia Hà Nội, nên ngày nào em cũng sẽ học hành chăm chỉ.',tip:'目标 là cái đích cần phấn đấu; 刻苦学习 = học hành chăm chỉ, chịu khó.'}
   ]
 };
 
@@ -1651,29 +1499,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết thiệp tri ân thầy chủ nhiệm trong lễ tốt nghiệp.',
-     a:'老师，谢谢啦，您真好！',b:'感谢您三年来的关心和帮助，是您的鼓励让我找到了自己的目标。',better:'b',
-     why:'Thiệp tri ân cần trang trọng, cụ thể: 三年来, 关心和帮助, 找到了目标. Câu a (谢谢啦) quá xuề xoà, như nhắn tin.'},
-
-    {scene:'Em nhắn tin rủ bạn thân cuối tuần đi xem phim.',
-     a:'周末有空吗？一起去看电影呗！',b:'本人诚邀您于周末出席电影放映活动。',better:'a',
-     why:'Với bạn thân, câu a tự nhiên, gần gũi (呗). Câu b dùng 本人, 诚邀, 出席 — như giấy mời chính thức, nghe rất buồn cười.'},
-
-    {scene:'Biên bản họp của hội học sinh gửi Ban giám hiệu.',
-     a:'经过讨论，全体委员一致同意举办英语演讲比赛。',b:'我们聊了半天，大家都说办个英语比赛挺好的。',better:'a',
-     why:'Biên bản dùng giọng văn viết: 经过讨论, 全体委员, 一致同意, 举办. Câu b là khẩu ngữ (聊了半天, 挺好的).'},
-
-    {scene:'Em không đồng ý với mẹ về chuyện chọn ngành, em muốn mở lời.',
-     a:'妈妈，我知道您是为我好，但我想跟您好好沟通一下我的想法。',b:'你别管我了，这是我的事！',better:'a',
-     why:'Câu a thừa nhận thiện ý của mẹ rồi mới nêu mong muốn — đúng tinh thần 沟通 của bài. Câu b đúng ngữ pháp nhưng gay gắt, dễ biến trò chuyện thành cãi nhau.'},
-
-    {scene:'Em nhờ bạn cùng bàn xem giúp một bài toán.',
-     a:'哎，帮我看看这道题呗。',b:'请问您能否就此题目给予指导？',better:'a',
-     why:'Với bạn cùng bàn, câu a tự nhiên. Câu b (能否, 就此, 给予指导) là giọng văn bản trang trọng, nói với bạn thì rất xa cách.'},
-
-    {scene:'Em là chủ tịch hội học sinh, phát biểu trong lễ khai giảng.',
-     a:'喂，大家好好学啊，别违反纪律啊。',b:'亲爱的同学们，新的学期开始了，希望大家遵守纪律、刻苦学习，实现自己的目标！',better:'b',
-     why:'Phát biểu trước toàn trường cần mở đầu bằng 亲爱的同学们 và các từ văn viết (遵守纪律, 刻苦学习, 实现目标). Câu a (喂, 啊) chỉ hợp khi nói chuyện riêng.'}
+    {scene:'Em viết thiệp tri ân thầy chủ nhiệm trong lễ tốt nghiệp.',a:'老师，谢谢啦，您真好！',b:'感谢您三年来的关心和帮助，是您的鼓励让我找到了自己的目标。',better:'b',why:'Thiệp tri ân cần trang trọng, cụ thể: 三年来, 关心和帮助, 找到了目标. Câu a (谢谢啦) quá xuề xoà, như nhắn tin.'},
+    {scene:'Em nhắn tin rủ bạn thân cuối tuần đi xem phim.',a:'周末有空吗？一起去看电影吧！',b:'本人特别邀请您于周末出席电影活动。',better:'a',why:'Với bạn thân, câu a tự nhiên, gần gũi. Câu b dùng 本人, 邀请您, 出席 — như giấy mời chính thức, nghe rất buồn cười.'},
+    {scene:'Biên bản họp lớp gửi thầy chủ nhiệm.',a:'经过讨论，全班同学一致同意举行一次汉语比赛。',b:'我们说了半天，大家都觉得弄个汉语比赛挺好的。',better:'a',why:'Biên bản dùng giọng văn viết: 经过讨论, 一致同意, 举行. Câu b là khẩu ngữ (说了半天, 弄个, 挺好的).'},
+    {scene:'Em không đồng ý với mẹ về chuyện chọn ngành, em muốn mở lời.',a:'妈妈，我知道您是为我好，但我想跟您好好沟通一下我的想法。',b:'你别说了，这是我自己的事！',better:'a',why:'Câu a thừa nhận thiện ý của mẹ rồi mới nêu mong muốn — đúng tinh thần 沟通 của bài. Câu b gay gắt, dễ biến trò chuyện thành cãi nhau.'},
+    {scene:'Em nhờ bạn cùng bàn xem giúp một bài toán.',a:'哎，帮我看看这个问题吧。',b:'请问您是否愿意为我解释这个问题？',better:'a',why:'Với bạn cùng bàn, câu a tự nhiên. Câu b (请问您是否愿意) là giọng trang trọng, nói với bạn thì rất xa cách.'},
+    {scene:'Em là chủ tịch hội học sinh, phát biểu trong lễ khai giảng.',a:'喂，大家好好学啊，别违反纪律啊。',b:'亲爱的同学们，新的学期开始了，希望大家遵守纪律、刻苦学习，实现自己的目标！',better:'b',why:'Phát biểu trước toàn trường cần mở đầu bằng 亲爱的同学们 và các từ văn viết (遵守纪律, 刻苦学习, 实现目标). Câu a (喂, 啊) chỉ hợp khi nói chuyện riêng.'}
   ]
 };
 

@@ -1132,8 +1132,9 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 của sách (tr. 143–144) + bài tập 3
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'接触',right:'大自然'},
   {left:'爱惜',right:'粮食'},
@@ -1141,80 +1142,44 @@ var matchData = [
   {left:'一把',right:'梳子'},
   {left:'一块',right:'肥皂'},
   {left:'一双',right:'翅膀'},
-  {left:'一只',right:'昆虫'},
-  {left:'唯一的',right:'办法'},
-  {left:'明显的',right:'特征'},
-  {left:'光滑的',right:'羽毛'},
   {left:'干燥的',right:'气候'},
-  {left:'痛快地',right:'哭一场'},
-  {left:'热情地',right:'迎接'},
   {left:'保养',right:'汽车'},
-  {left:'秘密',right:'行动'},
   {left:'区分',right:'真假'},
-  {left:'概括为',right:'三点'},
   {left:'充当',right:'翻译'},
-  {left:'扮演',right:'角色'},
-  {left:'反复',right:'强调'},
-  {left:'随身',right:'物品'}
+  {left:'迎接',right:'新年'},
+  {left:'秘密',right:'行动'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我从来没',blank:'接触',post:'过这方面的业务。',hint:'(tiếp xúc)',ans:'接触'},
-  {pre:'区分鸟儿和其他动物的唯一',blank:'特征',post:'就是羽毛。',hint:'(đặc điểm)',ans:'特征'},
-  {pre:'要是我有一双',blank:'翅膀',post:'，我就能飞回家看妈妈了。',hint:'(cánh)',ans:'翅膀'},
-  {pre:'有些',blank:'昆虫',post:'和鸟类一样有翅膀。',hint:'(côn trùng)',ans:'昆虫'},
-  {pre:'雨停了，',blank:'天空',post:'中出现了一道彩虹。',hint:'(bầu trời)',ans:'天空'},
-  {pre:'这对双胞胎长得太像了，我很难',blank:'区分',post:'她们。',hint:'(phân biệt)',ans:'区分'},
-  {pre:'那件事将是我一生中',blank:'唯一',post:'的遗憾。',hint:'(duy nhất)',ans:'唯一'},
-  {pre:'这只小猫全身是白的，只有背上有几块黑色的',blank:'斑',post:'。',hint:'(đốm)',ans:'斑'},
-  {pre:'羽毛上的颜色和斑还能',blank:'充当',post:'保护色。',hint:'(làm, đảm nhiệm)',ans:'充当'},
-  {pre:'暑假我可能去上海、南京，还有杭州，',blank:'总之',post:'，想去南方几个城市转转。',hint:'(tóm lại)',ans:'总之',exp:'总之 = tóm lại, đặt đầu câu để tổng kết các ý vừa nói.'},
-  {pre:'在这部电影里，她扮演了一个很难演的',blank:'角色',post:'。',hint:'(vai)',ans:'角色'},
-  {pre:'我们要',blank:'爱惜',post:'粮食，不要浪费。',hint:'(quý trọng)',ans:'爱惜'},
-  {pre:'汽车要定期',blank:'保养',post:'，才能开得久。',hint:'(bảo dưỡng)',ans:'保养'},
-  {pre:'老板',blank:'反复',post:'强调过很多次了。',hint:'(nhiều lần)',ans:'反复',exp:'反复 + V = lặp đi lặp lại nhiều lần: 反复强调.'},
-  {pre:'院子里的几只鸡正在低头',blank:'啄',post:'米。',hint:'(mổ)',ans:'啄'},
-  {pre:'她总是',blank:'随身',post:'带着伞，说“不怕一万，就怕万一”。',hint:'(theo người)',ans:'随身'},
-  {pre:'他天天带着一把',blank:'梳子',post:'，碰到镜子就梳来梳去的。',hint:'(lược)',ans:'梳子'},
-  {pre:'经常使用我们的肥皂，您的皮肤将变得更加',blank:'光滑',post:'。',hint:'(mịn màng)',ans:'光滑'},
-  {pre:'警察一把把小偷给',blank:'抓',post:'住了。',hint:'(bắt, tóm)',ans:'抓'},
-  {pre:'鸟儿在理毛的时候，还会抓出一点儿',blank:'寄生',post:'虫。',hint:'(ký sinh)',ans:'寄生'},
-  {pre:'不过，鸟儿洗澡用不着',blank:'肥皂',post:'。',hint:'(xà phòng)',ans:'肥皂'},
-  {pre:'这个地区的动植物',blank:'种类',post:'多，数量大。',hint:'(chủng loại)',ans:'种类'},
-  {pre:'这次会议的精神可以',blank:'概括',post:'为三点。',hint:'(khái quát)',ans:'概括'},
-  {pre:'海鸟在',blank:'岛屿',post:'上生活，就会选择海水。',hint:'(đảo)',ans:'岛屿'},
-  {pre:'',blank:'知更鸟',post:'喜欢路旁的浅水坑。',hint:'(chim cổ đỏ)',ans:'知更鸟'},
-  {pre:'爷爷在院子里挖了一个',blank:'坑',post:'，种了一棵苹果树。',hint:'(hố)',ans:'坑'},
-  {pre:'小时候，我常常和小伙伴们在',blank:'池塘',post:'边抓鱼。',hint:'(ao)',ans:'池塘'},
-  {pre:'一只',blank:'老鹰',post:'在天空中飞来飞去，好像在找吃的。',hint:'(diều hâu)',ans:'老鹰'},
-  {pre:'你好容易来一趟，我们今晚一定要喝个',blank:'痛快',post:'！',hint:'(cho đã)',ans:'痛快'},
-  {pre:'全校师生都在门口热情地',blank:'迎接',post:'外国客人。',hint:'(đón)',ans:'迎接'},
-  {pre:'经过这次比赛的',blank:'洗礼',post:'，队员们成熟了很多。',hint:'(sự tôi luyện)',ans:'洗礼'},
-  {pre:'风太大了，我的眼睛里进了',blank:'沙子',post:'。',hint:'(cát)',ans:'沙子'},
-  {pre:'北京的冬天空气很',blank:'干燥',post:'，要多喝水。',hint:'(khô)',ans:'干燥'},
-  {pre:'这是我们俩的',blank:'秘密',post:'，你千万别告诉别人。',hint:'(bí mật)',ans:'秘密'}
+  {pre:'夏天草地上的',blank:'昆虫',post:'特别多，晚上出去要小心被咬。',hint:'(côn trùng)',ans:'昆虫',exp:'昆虫 = côn trùng (sâu bọ, muỗi, bướm…); 鸟 thì thuộc loài chim.'},
+  {pre:'城市里灯太多，晚上很难在',blank:'天空',post:'中看到星星。',hint:'(bầu trời)',ans:'天空',exp:'天空 = bầu trời (văn viết hơn 天上): 天空中, 蓝色的天空.'},
+  {pre:'这只小狗全是白色的，只有耳朵上有一块黑',blank:'斑',post:'。',hint:'(đốm, vết lốm đốm)',ans:'斑',exp:'斑 = đốm, vết màu khác trên nền: 黑斑, 斑点; lượng từ 块.'},
+  {pre:'在这部电影里，她演一个妈妈的',blank:'角色',post:'。',hint:'(vai, vai diễn)',ans:'角色',exp:'角色 = vai (trong phim, kịch) và vai trò (trong đời sống): 充当……的角色.'},
+  {pre:'那只鸟一下一下地',blank:'啄',post:'着树，好像在找吃的。',hint:'(mổ)',ans:'啄',exp:'啄 = (chim) mổ bằng mỏ: 啄米, 啄羽毛, 啄着树.'},
+  {pre:'她的头发又长又多，用普通的',blank:'梳子',post:'很难整理。',hint:'(cái lược)',ans:'梳子',exp:'梳子 = cái lược; lượng từ 把: 一把梳子.'},
+  {pre:'这张桌子用了几十年，表面被摸得非常',blank:'光滑',post:'。',hint:'(trơn bóng, nhẵn)',ans:'光滑',exp:'光滑 = trơn, nhẵn bóng: 皮肤光滑, 羽毛光滑, 表面很光滑.'},
+  {pre:'有一种很小的动物会',blank:'寄生',post:'在鱼的皮肤上，让鱼生病。',hint:'(ký sinh, sống bám)',ans:'寄生',exp:'寄生 = ký sinh, sống bám vào sinh vật khác: 寄生虫 = ký sinh trùng.'},
+  {pre:'吃饭以前，一定要用',blank:'肥皂',post:'把手洗干净。',hint:'(xà phòng)',ans:'肥皂',exp:'肥皂 = xà phòng; lượng từ 块: 一块肥皂.'},
+  {pre:'越南有很多美丽的',blank:'岛屿',post:'，夏天去那里旅游的人特别多。',hint:'(đảo, hòn đảo)',ans:'岛屿',exp:'岛屿 = đảo nói chung (văn viết): 美丽的岛屿, 在岛屿上生活.'},
+  {pre:'路上有个大',blank:'坑',post:'，下雨以后里面全是水，开车要小心。',hint:'(hố, vũng)',ans:'坑',exp:'坑 = hố, chỗ lõm trên mặt đất: 一个坑, 水坑.'},
+  {pre:'一只',blank:'老鹰',post:'从山上冲下来，把一只小鸟抓走了。',hint:'(diều hâu, chim ưng)',ans:'老鹰',exp:'老鹰 = diều hâu, loài chim lớn bắt mồi; 抓走 = bắt đi.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (总之 · 动词+过 · 动词+开) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['总之','，','羽毛','充当着','十分重要的','角色','。'],ans:'总之，羽毛充当着十分重要的角色。',audio:'总之，羽毛充当着十分重要的角色。'},
-  {words:['不管你去不去','，','总之','我','一定要去','。'],ans:'不管你去不去，总之我一定要去。',audio:'不管你去不去，总之我一定要去。'},
-  {words:['他','转过身','，','一句话','也不说','。'],ans:'他转过身，一句话也不说。',audio:'他转过身，一句话也不说。'},
-  {words:['你','回过头','就可以','看见我了','。'],ans:'你回过头就可以看见我了。',audio:'你回过头就可以看见我了。'},
-  {words:['接过书的','那一刻','，','老王','突然','明白了','。'],ans:'接过书的那一刻，老王突然明白了。',audio:'接过书的那一刻，老王突然明白了。'},
-  {words:['妈妈','张开','双臂','迎接我','。'],ans:'妈妈张开双臂迎接我。',audio:'妈妈张开双臂迎接我。'},
-  {words:['那件事情','已经','传开了','，','大家都知道了','。'],ans:'那件事情已经传开了，大家都知道了。',audio:'那件事情已经传开了，大家都知道了。'},
-  {words:['他','把纸','铺开','，','准备','练习书法','。'],ans:'他把纸铺开，准备练习书法。',audio:'他把纸铺开，准备练习书法。'},
-  {words:['鸟儿','洗澡','用不着','肥皂','。'],ans:'鸟儿洗澡用不着肥皂。',audio:'鸟儿洗澡用不着肥皂。'},
-  {words:['我','从来没','接触过','这方面的','业务','。'],ans:'我从来没接触过这方面的业务。',audio:'我从来没接触过这方面的业务。'},
-  {words:['老板','反复','强调过','很多次了','。'],ans:'老板反复强调过很多次了。',audio:'老板反复强调过很多次了。'},
-  {words:['请你','概括一下','今天学的','戏剧的种类','。'],ans:'请你概括一下今天学的戏剧的种类。',audio:'请你概括一下今天学的戏剧的种类。'},
-  {words:['我们','要','爱惜','粮食','，','不要浪费','。'],ans:'我们要爱惜粮食，不要浪费。',audio:'我们要爱惜粮食，不要浪费。'}
+  {words:['他','接过','我手里的','包','，','帮我','放到了','车上','。'],ans:'他接过我手里的包，帮我放到了车上。',audio:'他接过我手里的包，帮我放到了车上。'},
+  {words:['他','转过脸去','，','不想','让别人','看见','他','哭了','。'],ans:'他转过脸去，不想让别人看见他哭了。',audio:'他转过脸去，不想让别人看见他哭了。'},
+  {words:['老师','让我们','把桌子','分开','，','准备','考试','。'],ans:'老师让我们把桌子分开，准备考试。',audio:'老师让我们把桌子分开，准备考试。'},
+  {words:['孩子','张开','两只手','，','跑过去','迎接','爸爸','。'],ans:'孩子张开两只手，跑过去迎接爸爸。',audio:'孩子张开两只手，跑过去迎接爸爸。'},
+  {words:['我','喜欢','跑步','、','游泳','、','打篮球','，','总之','，','什么运动','都','喜欢','。'],ans:'我喜欢跑步、游泳、打篮球，总之，什么运动都喜欢。',audio:'我喜欢跑步、游泳、打篮球，总之，什么运动都喜欢。'},
+  {words:['出门','旅行','，','我','总是','随身','带着','护照','。'],ans:'出门旅行，我总是随身带着护照。',audio:'出门旅行，我总是随身带着护照。'},
+  {words:['北方的','冬天','很','干燥','，','皮肤','需要','好好','保养','。'],ans:'北方的冬天很干燥，皮肤需要好好保养。',audio:'北方的冬天很干燥，皮肤需要好好保养。'},
+  {words:['我','把','日记','放在了','一个','秘密的','地方','。'],ans:'我把日记放在了一个秘密的地方。',audio:'我把日记放在了一个秘密的地方。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1222,80 +1187,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'我已经____讲了多少次，你竟然还是忘了！',opts:['反复','区分','充当','概括'],ans:0,
-   exp:'Nói đi nói lại nhiều lần → 反复讲 (câu mẫu phần 做一做; ở câu này 重复 cũng được).'},
-  {wrong:'这个实验我已经____过两次了。',opts:['重复','反复','保养','接触'],ans:0,
-   exp:'Làm lại cùng một việc, sau có 过 + 两次 → động từ 重复. 反复 làm động từ chỉ dùng cho tình trạng xấu tái diễn.'},
-  {wrong:'他的病情出现了____，情况不太乐观。',opts:['反复','重复','秘密','特征'],ans:0,
-   exp:'Danh từ chỉ tình trạng xấu lặp lại → 出现了反复. 重复 không làm danh từ kiểu này.'},
-  {wrong:'我们要____粮食，不要浪费。',opts:['爱惜','爱护','保养','迎接'],ans:0,
-   exp:'Không lãng phí → quý trọng → 爱惜粮食 (bài tập 2 của sách). 爱护 nhấn mạnh bảo vệ, che chở.'},
-  {wrong:'我们要____小动物，不要伤害它们。',opts:['爱护','爱惜','保养','概括'],ans:0,
-   exp:'Bảo vệ con vật khỏi bị hại → 爱护动物. 爱惜 dùng cho đồ vật, thời gian, sức khoẻ.'},
-  {wrong:'她总是____带着伞，说“不怕一万，就怕万一”。',opts:['随身','随手','痛快','反复'],ans:0,
-   exp:'Mang theo người → 随身带着 (bài tập 2 của sách). 随手 = tiện tay làm luôn.'},
-  {wrong:'离开教室时请____关灯。',opts:['随手','随身','痛快','干燥'],ans:0,
-   exp:'Tiện tay tắt đèn → 随手关灯. 随身 chỉ mang theo người.'},
-  {wrong:'警察一把把小偷给____住了。',opts:['抓','拿','啄','梳'],ans:0,
-   exp:'Bắt, tóm người → 抓住 (bài tập 2 của sách). 拿 là cầm đồ vật; 啄 là chim mổ.'},
-  {wrong:'这个地区的动植物____多，数量大。',opts:['种类','类型','角色','特征'],ans:0,
-   exp:'Nhiều loài, nhiều loại → 种类多 (bài tập 2 của sách). 类型 là kiểu, loại hình (性格类型).'},
-  {wrong:'这是我们俩的____，你千万别告诉别人。',opts:['秘密','特征','角色','种类'],ans:0,
-   exp:'Điều không được nói cho người khác → 秘密 (danh từ).'},
-  {wrong:'区分鸟儿和其他动物的____特征就是羽毛。',opts:['唯一','光滑','干燥','痛快'],ans:0,
-   exp:'Chỉ có một đặc điểm → 唯一特征 (bảng 词语搭配: 唯一的特征).'},
-  {wrong:'在鸟儿的生活中，羽毛____着十分重要的角色。',opts:['充当','区分','接触','概括'],ans:0,
-   exp:'充当着……的角色 = đóng vai trò …. Kết hợp cố định trong bài khoá.'},
-  {wrong:'北京的冬天空气很____，要多喝水。',opts:['干燥','光滑','痛快','秘密'],ans:0,
-   exp:'Không khí khô → 空气干燥 (bảng 词语搭配: 干燥的空气).'},
-  {wrong:'你好容易来一趟，我们今晚一定要喝个____！',opts:['痛快','愉快','光滑','唯一'],ans:0,
-   exp:'V + 个 + 痛快 = … cho đã (bài tập 1 của sách). 愉快 không dùng trong mẫu này.'},
-  {wrong:'祝你旅途____！',opts:['愉快','痛快','光滑','干燥'],ans:0,
-   exp:'Lời chúc dùng 愉快 (祝你旅途愉快). 痛快 là "đã, sướng" — không dùng để chúc.'},
-  {wrong:'全校师生都在门口热情地____外国客人。',opts:['迎接','接触','抓住','充当'],ans:0,
-   exp:'热情地迎接 + khách (bảng 词语搭配).'},
-  {wrong:'暑假我可能去上海、南京，还有杭州，____，想去南方几个城市转转。',opts:['总之','比如','而且','另外'],ans:0,
-   exp:'Liệt kê vài nơi rồi khái quát lại → 总之 (câu ví dụ của sách).'},
-  {wrong:'海鸟在____上生活，就会选择海水。',opts:['岛屿','天空','池塘','翅膀'],ans:0,
-   exp:'Chim biển sống trên đảo → 岛屿上. 池塘 là ao nước ngọt, không có nước biển.'},
-  {wrong:'这次会议的精神可以____为三点。',opts:['概括','保养','反复','充当'],ans:0,
-   exp:'把……概括为三点 = khái quát thành ba điểm (bài tập 1 của sách).'},
-  {wrong:'你回____头就可以看见我了。',opts:['过','开','起','着'],ans:0,
-   exp:'V + 过: qua động tác, người đổi hướng → 回过头 (điểm ngữ pháp 2).'},
-  {wrong:'回家时，妈妈张____双臂迎接我。',opts:['开','过','起','着'],ans:0,
-   exp:'V + 开: biểu thị sự dang rộng, mở ra → 张开双臂 (điểm ngữ pháp 3).'},
-  {wrong:'那件事情已经传____了，大家都知道了。',opts:['开','过','起','着'],ans:0,
-   exp:'传开 = lan rộng ra khắp nơi (V + 开). Vì vậy 大家都知道了.'}
+  {wrong:'这种病很容易____，好了以后也要注意休息。',opts:['反复','重复','保养','区分'],ans:0,exp:'反复 làm động từ = (bệnh, tình trạng xấu) tái đi tái lại. 重复 là lặp lại một việc/một thứ, không mang nghĩa “tái phát”; 保养, 区分 không hợp.'},
+  {wrong:'你刚才说的话我没听清楚，请再____一遍。',opts:['重复','反复','概括','迎接'],ans:0,exp:'重复 + 一遍 = nói lại, làm lại một lần nữa. 反复 là phó từ “hết lần này đến lần khác”, không đi với 再……一遍; 概括 là tóm tắt; 迎接 là đón.'},
+  {wrong:'时间过得很快，我们要____每一分钟。',opts:['爱惜','爱护','保养','抓'],ans:0,exp:'爱惜 + thời gian, đồ vật, sức khoẻ = quý trọng, không lãng phí. 爱护 dùng cho người, động vật, cây cỏ cần che chở; 保养 là bảo dưỡng; 抓 là bắt.'},
+  {wrong:'孩子们都很____那只受伤的小鸟，每天给它喂吃的。',opts:['爱护','爱惜','充当','接触'],ans:0,exp:'爱护 + người, động vật = yêu thương che chở. 爱惜 dùng cho đồ vật, thời gian; 充当, 接触 không hợp.'},
+  {wrong:'出门的时候请____关门。',opts:['随手','随身','随便','痛快'],ans:0,exp:'随手 + động tác bằng tay (关门, 关灯) = tiện tay. 随身 là mang theo người; 随便 là tuỳ tiện; 痛快 là thoả thích.'},
+  {wrong:'坐飞机时，贵重的东西最好____带着。',opts:['随身','随手','唯一','秘密'],ans:0,exp:'随身带着 = mang theo bên người. 随手 là tiện tay làm việc nhỏ; 唯一, 秘密 không hợp.'},
+  {wrong:'这只猫跳起来，一下就把那只小鸟____住了。',opts:['抓','拿','带','啄'],ans:0,exp:'抓住 = chộp, bắt lấy (vật đang chạy, bay). 拿 là cầm (đồ vật đứng yên); 带 là mang theo; 啄 là hành động của chim, không phải của mèo.'},
+  {wrong:'他是我们班____一个去过中国的人。',opts:['唯一','只有','总之','秘密'],ans:0,exp:'唯一 + 一个 + danh từ = duy nhất, làm định ngữ. 只有 là phó từ/động từ, không đứng sau 是……班 như vậy; 总之, 秘密 không hợp.'},
+  {wrong:'考完试了，今天我们去公园玩个____！',opts:['痛快','愉快','光滑','干燥'],ans:0,exp:'V + 个 + 痛快 = làm cho thoả thích (khẩu ngữ). 愉快 không đi trong mẫu V个……; 光滑, 干燥 không hợp.'},
+  {wrong:'老师让我们____一下这次讨论的几个主要观点。',opts:['概括','总之','区分','充当'],ans:0,exp:'概括 (động từ) + nội dung = tóm tắt, khái quát. 总之 là liên từ “tóm lại”, đứng đầu câu, không làm động từ; 区分, 充当 không hợp.'},
+  {wrong:'我们可以坐火车，也可以坐飞机，____，下周一以前一定要到。',opts:['总之','比如','例如','何况'],ans:0,exp:'总之 = tóm lại, đứng sau phần liệt kê để chốt ý chính. 比如, 例如 dùng để nêu ví dụ; 何况 là huống chi.'},
+  {wrong:'我们迷路了，快把地图打____，看看该怎么走。',opts:['开','过','起','下'],ans:0,exp:'V + 开 = mở ra, tách ra: 打开地图, 张开翅膀. 打过 (đánh qua), 打起, 打下 không có nghĩa “mở ra”.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Vì chưa từng tiếp xúc với lập trình nên phần tư duy logic thầy giảng tớ phải nghiền ngẫm đi nghiền ngẫm lại mấy lần mới hiểu.',zh:'由于从来没接触过编程，老师讲的逻辑我得反复琢磨好几遍才弄明白。',py:'Yóuyú cónglái méi jiēchùguo biānchéng, lǎoshī jiǎng de luójí wǒ děi fǎnfù zuómo hǎo jǐ biàn cái nòng míngbai.',goiY:['由于','接触过','反复','逻辑'],giai:'由于 nêu nguyên nhân ở vế đầu (vế sau có thể không cần 所以); 接触 + 过 = "đã từng tiếp xúc", phủ định dùng 没 (没接触过), không dùng 不.'},
-  {vi:'Cuốn từ điển này là món quà duy nhất ông để lại cho tớ trước khi mất, vì vậy tớ luôn rất nâng niu nó.',zh:'这本词典是爷爷去世前留给我的唯一礼物，所以我一直非常爱惜它。',py:'Zhè běn cídiǎn shì yéye qùshì qián liú gěi wǒ de wéiyī lǐwù, suǒyǐ wǒ yìzhí fēicháng àixī tā.',goiY:['唯一','去世','所以','爱惜'],giai:'唯一 làm định ngữ đứng trước danh từ (唯一的 / 唯一礼物); 爱惜 = quý trọng, giữ gìn đồ vật / thời gian / sức khoẻ — với người thân thì dùng 疼爱.'},
-  {vi:'Dù tra bằng điện thoại hay lật sách giáo khoa, tóm lại cậu phải phân biệt rõ hai từ này trước đã.',zh:'不管用手机查还是翻课本，总之，你得先把这两个词区分开。',py:'Bùguǎn yòng shǒujī chá háishi fān kèběn, zǒngzhī, nǐ děi xiān bǎ zhè liǎng ge cí qūfēn kāi.',goiY:['不管……还是……','总之','把……区分开'],giai:'不管 A 还是 B，总之 + điều không đổi: sau khi nêu các khả năng, 总之 chốt lại ý chắc chắn; V + 开 (区分开) = tách rời ra.'},
-  {vi:'Tớ vừa bước ra khỏi phòng thi, mẹ đã dang rộng hai tay đón tớ, rồi dẫn tớ đi ăn một bữa thật đã.',zh:'我一走出考场，妈妈就张开双臂迎接我，然后带我去痛快地吃了一顿大餐。',py:'Wǒ yì zǒuchū kǎochǎng, māma jiù zhāngkāi shuāng bì yíngjiē wǒ, ránhòu dài wǒ qù tòngkuài de chīle yí dùn dàcān.',goiY:['一……就……','张开','迎接','然后'],giai:'张开 = V + 开 (dang ra, mở ra); 一……就…… nối hai việc liền nhau, 然后 tiếp nối hành động sau — "thật đã" dịch bằng 痛快地.'},
-  {vi:'Bạn cùng bàn nhận tờ giấy tớ đưa, đọc xong liền kẹp ngay vào cuốn sổ luôn mang theo bên mình, đủ thấy cậu ấy không muốn ai phát hiện ra bí mật của chúng tớ.',zh:'同桌接过我递来的纸条，看完后立刻把它夹进随身带的笔记本里，可见他不想让别人发现我们的秘密。',py:'Tóngzhuō jiēguo wǒ dì lái de zhǐtiáo, kànwán hòu lìkè bǎ tā jiājìn suíshēn dài de bǐjìběn li, kějiàn tā bù xiǎng ràng biérén fāxiàn wǒmen de mìmì.',goiY:['接过','随身','可见','秘密'],giai:'接过 = V + 过 (vật chuyển từ tay người này sang tay mình); 可见 dẫn ra kết luận rút từ sự việc vừa kể — dịch "đủ thấy, có thể thấy".'},
-  {vi:'Mùa đông miền Bắc rất hanh khô, thay vì đợi da nứt nẻ rồi mới đi khám, chi bằng mỗi ngày dành vài phút chăm sóc da cẩn thận.',zh:'北方的冬天特别干燥，与其等皮肤变得粗糙了再去看医生，不如每天花几分钟好好保养。',py:'Běifāng de dōngtiān tèbié gānzào, yǔqí děng pífū biàn de cūcāo le zài qù kàn yīshēng, bùrú měi tiān huā jǐ fēnzhōng hǎohǎo bǎoyǎng.',goiY:['干燥','与其……不如……','粗糙','保养'],giai:'与其 A 不如 B: bỏ cách A, chọn cách B; 等……再…… = "đợi… rồi mới…"; 保养 dùng cho da, cơ thể, máy móc.'},
-  {vi:'Hai loài bướm này trông rất giống nhau, chỉ có quan sát kỹ những đốm trên cánh mới phát hiện được đặc điểm khác nhau của chúng.',zh:'这两种蝴蝶长得非常像，只有仔细观察翅膀上的斑点，才能发现它们不同的特征。',py:'Zhè liǎng zhǒng húdié zhǎng de fēicháng xiàng, zhǐyǒu zǐxì guānchá chìbǎng shang de bāndiǎn, cái néng fāxiàn tāmen bùtóng de tèzhēng.',goiY:['只有……才……','翅膀','斑点','特征'],giai:'只有……才…… nêu điều kiện duy nhất; 特征 là danh từ "nét đặc trưng", không dùng như tính từ (✗ 很特征).'},
-  {vi:'Ảnh một khi đã lan truyền trên mạng thì không bao giờ xoá sạch được nữa, vì vậy cách duy nhất là kiểm tra kỹ nhiều lần trước khi đăng lên trang cá nhân.',zh:'照片一旦在网上传开，就再也删不干净了，所以唯一的办法就是发朋友圈之前反复检查。',py:'Zhàopiàn yídàn zài wǎng shang chuánkāi, jiù zài yě shān bu gānjìng le, suǒyǐ wéiyī de bànfǎ jiù shì fā péngyouquān zhīqián fǎnfù jiǎnchá.',goiY:['一旦……就……','传开','唯一','反复'],giai:'传开 = V + 开 (lan rộng ra); 一旦……就…… nêu hậu quả một khi xảy ra, 再也 + phủ định = "không bao giờ… nữa".'},
-  {vi:'Thầy bảo chúng tớ dùng một câu để khái quát bài văn này, có bạn nói là tình bạn, có bạn nói là sự trưởng thành, tóm lại mỗi người hiểu một kiểu.',zh:'老师让我们用一句话概括这篇文章，有的说是友谊，有的说是成长，总之，大家的理解各不相同。',py:'Lǎoshī ràng wǒmen yòng yí jù huà gàikuò zhè piān wénzhāng, yǒude shuō shì yǒuyì, yǒude shuō shì chéngzhǎng, zǒngzhī, dàjiā de lǐjiě gè bù xiāngtóng.',goiY:['概括','有的……有的……','总之','成长'],giai:'有的……有的…… liệt kê các ý, rồi 总之 khái quát lại ở phần kết (总之 không dùng để mở đầu); 概括 = tóm tắt ý chính.'},
-  {vi:'Khi làm bài tập nhóm, tớ không chỉ phải tìm tài liệu mà còn phải đảm nhận vai trò người dẫn dắt; tuy áp lực rất lớn nhưng trải nghiệm này lại khiến tớ tự tin hơn.',zh:'做小组作业时，我不仅要查资料，而且要充当主持人的角色；虽然压力很大，这段经历却让我更自信了。',py:'Zuò xiǎozǔ zuòyè shí, wǒ bùjǐn yào chá zīliào, érqiě yào chōngdāng zhǔchírén de juésè; suīrán yālì hěn dà, zhè duàn jīnglì què ràng wǒ gèng zìxìn le.',goiY:['不仅……而且……','充当……角色','虽然……却……'],giai:'充当 + 角色 = "đảm nhận vai trò"; 却 là phó từ, đứng sau chủ ngữ (这段经历却……), không đặt ở đầu vế như 但是.'}
+  {vi:'Cuốn từ điển này là món quà duy nhất ông để lại cho tớ trước khi mất, vì vậy tớ luôn rất nâng niu nó.',zh:'这本词典是爷爷去世前留给我的唯一礼物，所以我一直非常爱惜它。',py:'Zhè běn cídiǎn shì yéye qùshì qián liú gěi wǒ de wéiyī lǐwù, suǒyǐ wǒ yìzhí fēicháng àixī tā.',goiY:['唯一','爱惜','所以'],giai:'唯一 làm định ngữ đứng trước danh từ (唯一礼物); 爱惜 + đồ vật = quý trọng, giữ gìn.'},
+  {vi:'Tớ vừa bước ra khỏi phòng thi, mẹ đã dang rộng hai tay đón tớ, rồi dẫn tớ đi ăn một bữa thật đã.',zh:'我一走出考场，妈妈就张开两只手迎接我，然后带我去痛快地吃了一顿大餐。',py:'Wǒ yì zǒuchū kǎochǎng, māma jiù zhāngkāi liǎng zhī shǒu yíngjiē wǒ, ránhòu dài wǒ qù tòngkuai de chīle yí dùn dàcān.',goiY:['一……就……','V + 开 (张开)','迎接','痛快'],giai:'一……就…… nối hai hành động liền nhau; 张开 = dang ra, mở ra (V + 开); 痛快地 + V = làm cho thoả thích.'},
+  {vi:'Mùa đông miền Bắc rất hanh khô, thay vì đợi da nứt nẻ rồi mới đi khám, chi bằng mỗi ngày dành vài phút chăm sóc da cẩn thận.',zh:'北方的冬天特别干燥，与其等皮肤变得粗糙了再去看医生，不如每天花几分钟好好保养。',py:'Běifāng de dōngtiān tèbié gānzào, yǔqí děng pífū biàn de cūcāo le zài qù kàn yīshēng, bùrú měi tiān huā jǐ fēnzhōng hǎohǎo bǎoyǎng.',goiY:['干燥','与其……不如……','保养'],giai:'与其 A 不如 B (bài 33) = thay vì A, chi bằng B; 等……再…… = đợi… rồi mới…; 保养 = chăm sóc, giữ gìn (da, xe, máy).'},
+  {vi:'Hai loài bướm này trông rất giống nhau, chỉ có quan sát kỹ những đốm trên cánh mới phát hiện được đặc điểm khác nhau của chúng.',zh:'这两种蝴蝶长得非常像，只有仔细观察翅膀上的斑点，才能发现它们不同的特征。',py:'Zhè liǎng zhǒng húdié zhǎng de fēicháng xiàng, zhǐyǒu zǐxì guānchá chìbǎng shang de bāndiǎn, cái néng fāxiàn tāmen bù tóng de tèzhēng.',goiY:['只有……才……','翅膀','斑点','特征'],giai:'只有……才…… = "chỉ khi… mới…" (điều kiện duy nhất); 斑点 = đốm; 特征 = đặc điểm nhận dạng.'},
+  {vi:'Thầy bảo chúng tớ dùng một câu để khái quát bài văn này, có bạn nói là tình bạn, có bạn nói là sự trưởng thành, tóm lại mỗi người hiểu một kiểu.',zh:'老师让我们用一句话概括这篇文章，有的说是友谊，有的说是成长，总之，大家的理解各不相同。',py:'Lǎoshī ràng wǒmen yòng yí jù huà gàikuò zhè piān wénzhāng, yǒude shuō shì yǒuyì, yǒude shuō shì chéngzhǎng, zǒngzhī, dàjiā de lǐjiě gè bù xiāngtóng.',goiY:['概括','有的……有的……','总之'],giai:'总之 đứng sau phần liệt kê (有的……有的……) để chốt lại ý chung; 概括 là động từ "khái quát", khác 总之 là liên từ.'},
+  {vi:'Khi làm bài tập nhóm, tớ không chỉ phải tìm tài liệu mà còn phải đảm nhận vai trò người dẫn dắt; tuy áp lực rất lớn nhưng trải nghiệm này lại khiến tớ tự tin hơn.',zh:'做小组作业时，我不仅要找资料，而且要充当主持人的角色；虽然压力很大，这段经历却让我更自信了。',py:'Zuò xiǎozǔ zuòyè shí, wǒ bùjǐn yào zhǎo zīliào, érqiě yào chōngdāng zhǔchírén de juésè; suīrán yālì hěn dà, zhè duàn jīnglì què ràng wǒ gèng zìxìn le.',goiY:['不仅……而且……','充当……的角色','虽然……却……'],giai:'充当 + vai trò = đảm nhận vai; 却 đặt sau chủ ngữ (这段经历却……), không đứng đầu vế như 但是.'}
 ];
 
-// Chiều Trung → Việt — câu của bài khoá
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Đặc điểm duy nhất để phân biệt chim với các loài động vật khác là bộ lông, chứ không phải có biết bay hay không.',zh:'区分鸟儿和其他动物的唯一特征是羽毛，而不是会不会飞。',py:'Qūfēn niǎor hé qítā dòngwù de wéiyī tèzhēng shì yǔmáo, ér bú shì huì bu huì fēi.',goiY:['区分 = phân biệt','唯一特征 = đặc điểm duy nhất','而不是 = chứ không phải'],giai:'A 是 B，而不是 C = "là B chứ không phải C" (khẳng định trước, phủ định sau); 会不会飞 là câu hỏi chính phản làm tân ngữ — dịch "có biết bay hay không".'},
-  {vi:'Màu sắc và những đốm trên lông chim không chỉ đẹp mà còn có thể làm màu ngụy trang bảo vệ.',zh:'羽毛上的颜色和斑点不但很漂亮，而且还能充当保护色。',py:'Yǔmáo shang de yánsè hé bāndiǎn búdàn hěn piàoliang, érqiě hái néng chōngdāng bǎohùsè.',goiY:['斑点 = đốm','不但……而且…… = không những… mà còn…','充当 = đóng vai, làm'],giai:'不但……而且…… nối hai tác dụng tăng tiến; 充当 + N = "đảm nhận vai / làm…", 保护色 dịch "màu ngụy trang (bảo vệ)".'},
-  {vi:'Sở dĩ chim rất quý bộ lông là vì lông đóng vai trò quan trọng trong cuộc sống của chúng.',zh:'鸟儿之所以非常爱惜羽毛，是因为羽毛在它们的生活中充当着重要的角色。',py:'Niǎor zhīsuǒyǐ fēicháng àixī yǔmáo, shì yīnwèi yǔmáo zài tāmen de shēnghuó zhōng chōngdāngzhe zhòngyào de juésè.',goiY:['之所以……是因为…… = sở dĩ… là vì…','爱惜 = quý trọng','充当……角色 = đóng vai trò'],giai:'之所以 (kết quả) …… 是因为 (nguyên nhân): kết quả nói trước; 充当着……角色 dịch gọn là "đóng vai trò…".'},
-  {vi:'Chỉ cần rảnh là chim lại ngoảnh đầu ra sau, mổ rỉa bộ lông hết lần này đến lần khác, giống như lúc nào cũng mang theo một chiếc lược bên mình.',zh:'鸟儿只要有空，就会背过头去反复地啄羽毛，就像随身带着一把梳子一样。',py:'Niǎor zhǐyào yǒu kòng, jiù huì bèiguo tóu qu fǎnfù de zhuó yǔmáo, jiù xiàng suíshēn dàizhe yì bǎ shūzi yíyàng.',goiY:['只要……就…… = chỉ cần… là…','背过头去 = ngoảnh đầu ra sau','随身 = mang theo bên mình','梳子 = cái lược'],giai:'背过头去 = V + 过 + 头 + 去: đổi hướng đầu ra phía sau (tân ngữ 头 đứng giữa 过 và 去); 就像……一样 là so sánh "giống như…".'},
-  {vi:'Khi chim chải chuốt lông, một mặt có thể làm lông mượt hơn, mặt khác còn bắt ra được một số ký sinh trùng.',zh:'鸟儿整理羽毛的时候，一方面能让羽毛更光滑，另一方面还能抓出一些寄生虫。',py:'Niǎor zhěnglǐ yǔmáo de shíhou, yì fāngmiàn néng ràng yǔmáo gèng guānghuá, lìng yì fāngmiàn hái néng zhuāchū yìxiē jìshēngchóng.',goiY:['一方面……另一方面…… = một mặt… mặt khác…','光滑 = trơn mượt','抓 = bắt','寄生虫 = ký sinh trùng'],giai:'一方面……另一方面…… nêu hai tác dụng song song của cùng một việc; 抓出 = bắt ra (bổ ngữ xu hướng 出).'},
-  {vi:'Chim tắm tuy không cần đến xà phòng, nhưng mỗi loài chim lại chọn "nhà tắm" khác nhau; nói khái quát thì nguyên tắc là miễn sao tiện.',zh:'鸟儿洗澡虽然用不着肥皂，不同种类的鸟选择的“澡堂”却各不相同，概括来说就是以方便为原则。',py:'Niǎor xǐzǎo suīrán yòng bu zháo féizào, bùtóng zhǒnglèi de niǎo xuǎnzé de “zǎotáng” què gè bù xiāngtóng, gàikuò lái shuō jiù shì yǐ fāngbiàn wéi yuánzé.',goiY:['虽然……却…… = tuy… nhưng lại…','肥皂 = xà phòng','种类 = chủng loại','概括来说 = nói khái quát'],giai:'虽然……却……: 却 đứng sau chủ ngữ vế sau; 以 A 为原则 = "lấy A làm nguyên tắc" — dịch thoáng "miễn sao tiện".'},
-  {vi:'Chim biển sống trên đảo thì tắm bằng nước biển; còn chim vùng hàn đới vì khó tìm được ao hồ nên đành lấy tuyết thay nước.',zh:'海鸟住在岛屿上，就用海水洗澡；寒带的鸟因为很难找到池塘，只好以雪代水。',py:'Hǎiniǎo zhù zài dǎoyǔ shang, jiù yòng hǎishuǐ xǐzǎo; hándài de niǎo yīnwèi hěn nán zhǎodào chítáng, zhǐhǎo yǐ xuě dài shuǐ.',goiY:['岛屿 = đảo','池塘 = ao, đầm','因为……只好…… = vì… đành phải…','以雪代水 = lấy tuyết thay nước'],giai:'Dấu ； tách hai trường hợp đối chiếu; 只好 = "đành phải" (không còn lựa chọn khác), 以 A 代 B = lấy A thay B.'},
-  {vi:'Khi trời mưa, diều hâu chẳng những không trốn đi mà ngược lại còn dang rộng đôi cánh, khoan khoái đón nhận sự gột rửa của thiên nhiên.',zh:'下雨的时候，老鹰不但不躲起来，反而张开双翅，痛快地迎接大自然的洗礼。',py:'Xià yǔ de shíhou, lǎoyīng búdàn bù duǒ qǐlai, fǎn\'ér zhāngkāi shuāng chì, tòngkuài de yíngjiē dàzìrán de xǐlǐ.',goiY:['不但不……反而…… = chẳng những không… ngược lại còn…','张开 = dang ra','迎接 = đón nhận','洗礼 = sự gột rửa'],giai:'不但不……反而…… là mẫu "không những không… mà ngược lại…", khác 不但……而且…… (tăng tiến cùng chiều); 张开 = V + 开.'},
-  {vi:'Một số loài chim sống ở những môi trường khô hạn như sa mạc, rất khó tìm được nguồn nước, vì vậy chúng từ bỏ việc tắm bằng nước mà chọn "tắm" bằng cát.',zh:'有些鸟儿生活在沙漠等干燥的环境里，很难找到水源，因此它们放弃了用水洗澡，而选择用沙子“洗澡”。',py:'Yǒuxiē niǎor shēnghuó zài shāmò děng gānzào de huánjìng li, hěn nán zhǎodào shuǐyuán, yīncǐ tāmen fàngqìle yòng shuǐ xǐzǎo, ér xuǎnzé yòng shāzi “xǐzǎo”.',goiY:['沙漠 = sa mạc','干燥 = khô hạn','因此 = vì vậy','沙子 = cát'],giai:'因此 dẫn ra kết quả từ nguyên nhân đã nêu; 放弃 A，而选择 B = "bỏ A mà chọn B" — 而 nối hai hành động trái ngược.'},
-  {vi:'Chim chải lông, tắm nước, tắm cát… tóm lại có rất nhiều cách giữ gìn bộ lông; chúng ta hiếm khi thấy chim đang ngủ là vì chúng thường nấp ở những chỗ kín đáo để nghỉ ngơi.',zh:'鸟儿理毛、洗澡、沙浴，总之，保养方式多种多样；我们很少看到睡觉的鸟儿，那是因为它们常躲在秘密的地方休息。',py:'Niǎor lǐ máo, xǐzǎo, shāyù, zǒngzhī, bǎoyǎng fāngshì duōzhǒng-duōyàng; wǒmen hěn shǎo kàndào shuìjiào de niǎor, nà shì yīnwèi tāmen cháng duǒ zài mìmì de dìfang xiūxi.',goiY:['总之 = tóm lại','保养 = chăm sóc, giữ gìn','那是因为 = đó là vì','秘密 = bí mật, kín đáo'],giai:'总之 đặt sau phần liệt kê để khái quát; 那是因为…… giải thích nguyên nhân cho hiện tượng vừa nói — 秘密的地方 dịch "chỗ kín đáo".'}
+  {vi:'Màu sắc và những đốm trên lông chim không chỉ đẹp mà còn có thể làm màu ngụy trang bảo vệ.',zh:'羽毛上的颜色和斑点不但很漂亮，而且还能充当保护色。',py:'Yǔmáo shang de yánsè hé bāndiǎn búdàn hěn piàoliang, érqiě hái néng chōngdāng bǎohùsè.',goiY:['不但……而且…… = không chỉ… mà còn…','斑点 = đốm','充当 = làm, đóng vai'],giai:'充当 + vai trò / chức năng = đảm nhận, làm (保护色 = màu bảo vệ, màu ngụy trang).'},
+  {vi:'Sở dĩ chim rất quý bộ lông là vì lông đóng vai trò quan trọng trong cuộc sống của chúng.',zh:'鸟儿之所以非常爱惜羽毛，是因为羽毛在它们的生活中充当着重要的角色。',py:'Niǎor zhīsuǒyǐ fēicháng àixī yǔmáo, shì yīnwèi yǔmáo zài tāmen de shēnghuó zhōng chōngdāngzhe zhòngyào de juésè.',goiY:['之所以……是因为…… = sở dĩ… là vì…','爱惜 = quý, nâng niu','角色 = vai trò'],giai:'之所以 ở vế kết quả, 是因为 ở vế nguyên nhân; 充当着……的角色 = "đóng vai trò…".'},
+  {vi:'Chim tắm tuy không cần đến xà phòng, nhưng mỗi loài chim lại chọn "nhà tắm" khác nhau; nói khái quát thì nguyên tắc là miễn sao tiện.',zh:'鸟儿洗澡虽然用不着肥皂，不同种类的鸟选择的“澡堂”却各不相同，概括来说就是以方便为原则。',py:'Niǎor xǐzǎo suīrán yòng bu zháo féizào, bù tóng zhǒnglèi de niǎo xuǎnzé de “zǎotáng” què gè bù xiāngtóng, gàikuò lái shuō jiù shì yǐ fāngbiàn wéi yuánzé.',goiY:['用不着 = không cần đến','种类 = loài, chủng loại','概括来说 = nói khái quát'],giai:'虽然……却…… nhấn mạnh sự tương phản; 以……为原则 = "lấy… làm nguyên tắc" → dịch thoát là "miễn sao…".'},
+  {vi:'Chim biển sống trên đảo thì tắm bằng nước biển, chim cổ đỏ thích những vũng nước nhỏ ven đường, còn chim vùng hàn đới vì khó tìm được ao hồ nên đành lấy tuyết thay nước.',zh:'海鸟住在岛屿上，就用海水洗澡；知更鸟喜欢路边的小水坑；寒带的鸟因为很难找到池塘，只好以雪代水。',py:'Hǎiniǎo zhù zài dǎoyǔ shang, jiù yòng hǎishuǐ xǐzǎo; zhīgēngniǎo xǐhuan lù biān de xiǎo shuǐkēng; hándài de niǎo yīnwèi hěn nán zhǎodào chítáng, zhǐhǎo yǐ xuě dài shuǐ.',goiY:['岛屿 = đảo','知更鸟 = chim cổ đỏ','池塘 = ao','只好 = đành phải'],giai:'Dấu ；tách ba loài chim; 以 A 代 B = lấy A thay B (văn viết); 只好 = đành phải (không còn cách khác).'},
+  {vi:'Khi trời mưa, diều hâu chẳng những không tìm chỗ nấp mà ngược lại còn dang rộng đôi cánh, khoan khoái đón nhận sự gột rửa của thiên nhiên.',zh:'下雨的时候，老鹰不但不找地方藏起来，反而张开双翅，痛快地迎接大自然的洗礼。',py:'Xià yǔ de shíhou, lǎoyīng búdàn bù zhǎo dìfang cáng qǐlai, fǎn\'ér zhāngkāi shuāng chì, tòngkuai de yíngjiē dàzìrán de xǐlǐ.',goiY:['不但不……反而…… = chẳng những không… mà ngược lại…','张开 = dang ra','洗礼 = sự gột rửa, tôi luyện'],giai:'不但不……反而…… diễn tả hành động trái hẳn với dự đoán; 洗礼 vốn là "lễ rửa tội", ở đây dịch hình ảnh "sự gột rửa".'},
+  {vi:'Một số loài chim sống ở những môi trường khô hạn như sa mạc, rất khó tìm được nước, vì vậy chúng từ bỏ việc tắm bằng nước mà chọn "tắm" bằng cát.',zh:'有些鸟儿生活在沙漠等干燥的环境里，很难找到水，因此它们放弃了用水洗澡，而选择用沙子“洗澡”。',py:'Yǒuxiē niǎor shēnghuó zài shāmò děng gānzào de huánjìng li, hěn nán zhǎodào shuǐ, yīncǐ tāmen fàngqìle yòng shuǐ xǐzǎo, ér xuǎnzé yòng shāzi “xǐzǎo”.',goiY:['干燥 = khô hạn','因此 = vì vậy','沙子 = cát'],giai:'等 sau danh từ = "như…" (liệt kê chưa hết); 而 nối hai hành động trái ngược: bỏ A mà chọn B.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1359,31 +1284,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (câu 29–31 của sách bài tập + câu bài khoá)
   sapXep:[
-    {manh:['这方面的业务','我从来没','接触过'],
-     dap:'我从来没接触过这方面的业务。',
-     vn:'Tôi chưa bao giờ tiếp xúc với nghiệp vụ mảng này.',
-     giai:'从来没 + V + 过 + tân ngữ. Câu 29 sách bài tập.'},
-    {manh:['戏剧的种类','请你','概括一下','今天学的'],
-     dap:'请你概括一下今天学的戏剧的种类。',
-     vn:'Em hãy khái quát một chút các loại hí kịch hôm nay đã học.',
-     giai:'请你 + V一下 + tân ngữ dài (今天学的戏剧的种类). Câu 30 sách bài tập.'},
-    {manh:['强调过','老板','很多次了','反复'],
-     dap:'老板反复强调过很多次了。',
-     vn:'Sếp đã nhấn mạnh đi nhấn mạnh lại rất nhiều lần rồi.',
-     giai:'Phó từ 反复 đứng trước động từ; 强调过 + 很多次了. Câu 31 sách bài tập.'},
-    {manh:['充当着','在鸟儿的生活中，','十分重要的角色','羽毛'],
-     dap:'在鸟儿的生活中，羽毛充当着十分重要的角色。',
-     chap:['羽毛在鸟儿的生活中充当着十分重要的角色。'],
-     vn:'Trong cuộc sống của loài chim, lông vũ đóng vai trò vô cùng quan trọng.',
-     giai:'在……中 (trạng ngữ nơi chốn / phạm vi) + chủ ngữ + 充当着 + ……的角色. Trạng ngữ có thể đứng sau chủ ngữ.'},
-    {manh:['会在雨中','张开双翅','老鹰','迎接洗礼'],
-     dap:'老鹰会在雨中张开双翅迎接洗礼。',
-     vn:'Diều hâu dang rộng đôi cánh trong mưa để đón nhận "lễ tẩy rửa".',
-     giai:'Chủ ngữ + 会 + 在 + nơi chốn + V1 (张开双翅) + V2 (迎接洗礼): liên động, động tác trước là cách thức.'},
-    {manh:['转过身','他','也不说','一句话，'],
-     dap:'他转过身，一句话也不说。',
-     vn:'Anh ấy quay người lại, không nói một lời nào.',
-     giai:'V + 过 + 身: đổi hướng; 一 + lượng từ + N + 也不 + V: nhấn mạnh phủ định hoàn toàn.'}
+    {manh:['大自然','孩子们','多接触','应该'],dap:'孩子们应该多接触大自然。',vn:'Trẻ em nên tiếp xúc nhiều với thiên nhiên.',giai:'Chủ ngữ + 应该 + 多 + V + tân ngữ.'},
+    {manh:['回过头','她','看了我一眼'],dap:'她回过头看了我一眼。',vn:'Cô ấy quay đầu lại nhìn tôi một cái.',giai:'V + 过 (回过头) = quay sang hướng khác; theo sau là hành động tiếp theo (看了我一眼).'},
+    {manh:['打开了','他','把盒子','慢慢地'],dap:'他慢慢地把盒子打开了。',vn:'Anh ấy chầm chậm mở chiếc hộp ra.',giai:'Trạng ngữ (慢慢地) đứng trước 把; 把 + tân ngữ + V + 开 + 了.'},
+    {manh:['充当','这次','由我','翻译'],dap:'这次由我充当翻译。',vn:'Lần này để tôi làm phiên dịch.',giai:'由 + người + V = do ai đảm nhận; 充当 + vai trò.'},
+    {manh:['会在雨中','张开双翅','老鹰','迎接洗礼'],dap:'老鹰会在雨中张开双翅迎接洗礼。',vn:'Diều hâu dang rộng đôi cánh trong mưa để đón nhận "lễ tẩy rửa".',giai:'Chủ ngữ + 会 + 在 + nơi chốn + V1 (张开双翅) + V2 (迎接洗礼): liên động, động tác trước là cách thức.'},
+    {manh:['概括','请你','一下','这篇文章的内容'],dap:'请你概括一下这篇文章的内容。',vn:'Bạn hãy tóm tắt nội dung bài văn này.',giai:'请 + người + V + 一下 + tân ngữ.'}
   ]
 };
 
@@ -1393,30 +1299,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (养宠物 · loài chim chăm sóc bộ lông). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 接触 · 爱惜 · 反复 · 痛快 · 总之 · 概括 · 迎接 · 张开 / 转过身.',
   questions:[
-    {q_zh:'你养过宠物吗？你对养宠物有什么看法？',
-     q_vn:'Em đã từng nuôi thú cưng chưa? Em có suy nghĩ gì về việc nuôi thú cưng?',
-     hint:'Trả lời có / không + quan điểm, dùng 接触 / 既……又……',
-     sample:'我养过一只猫。我觉得养宠物既能让孩子多接触动物，又能培养责任心，不过也要花很多时间照顾它们。',
-     sample_vn:'Em từng nuôi một con mèo. Em thấy nuôi thú cưng vừa giúp trẻ em được tiếp xúc nhiều với động vật, vừa rèn tinh thần trách nhiệm, nhưng cũng phải mất nhiều thời gian chăm sóc chúng.',
-     note:'Câu hỏi 1 của sách. Nêu cả mặt tốt lẫn điều cần chú ý sẽ thuyết phục hơn.'},
-    {q_zh:'如果你养过或正在养宠物，请说说你和宠物的故事。',
-     q_vn:'Nếu em đã hoặc đang nuôi thú cưng, hãy kể câu chuyện giữa em và nó.',
-     hint:'Kể một chuyện cụ thể, dùng V + 过 / V + 开 / 痛快',
-     sample:'我家的小狗特别聪明。每次我回家，它一听到开门的声音，就转过身跑过来，张开两只前腿扑到我身上。周末我常带它去公园，让它痛痛快快地跑一跑。',
-     sample_vn:'Chú chó nhà em rất thông minh. Mỗi lần em về nhà, vừa nghe tiếng mở cửa là nó quay người chạy đến, dang hai chân trước chồm lên người em. Cuối tuần em hay dẫn nó ra công viên cho nó chạy nhảy thoả thích.',
-     note:'Câu hỏi 2 của sách. Dùng được 转过身 (V + 过) và 张开 (V + 开) là ăn điểm ngữ pháp của bài.'},
-    {q_zh:'如果你对养宠物没有兴趣，请说明原因。',
-     q_vn:'Nếu em không có hứng thú nuôi thú cưng, hãy nói rõ lý do.',
-     hint:'Nêu 2–3 lý do (一是……二是……), kết bằng 总之',
-     sample:'我对养宠物没什么兴趣。一是我学习太忙，没时间照顾它；二是我对猫毛过敏；三是宠物生病了也很麻烦。总之，现在我不适合养宠物。',
-     sample_vn:'Em không có hứng thú nuôi thú cưng lắm. Một là em học quá bận, không có thời gian chăm sóc; hai là em bị dị ứng lông mèo; ba là thú cưng bị ốm cũng rất phiền. Tóm lại, bây giờ em không hợp nuôi thú cưng.',
-     note:'Câu hỏi 3 của sách. Liệt kê 一是……二是……三是…… rồi chốt bằng 总之 — đúng cách dùng điểm ngữ pháp 1.'},
-    {q_zh:'读了这篇课文，你能概括一下鸟儿是怎样保养羽毛的吗？',
-     q_vn:'Đọc xong bài khoá, em có thể khái quát chim chăm sóc bộ lông như thế nào không?',
-     hint:'Tóm tắt 3 cách: 整理羽毛, 洗澡, 睡眠; dùng 反复 / 概括来说',
-     sample:'鸟儿保养羽毛的方法主要有三种：一是整理羽毛，它们会反复地啄着羽毛；二是洗澡，有的用水，有的用雪，有的用沙子；三是睡眠。概括来说，它们非常爱惜自己的“羽衣”。',
-     sample_vn:'Chim chăm sóc bộ lông chủ yếu có ba cách: một là chải chuốt lông, chúng rỉa lông hết lần này đến lần khác; hai là tắm, có loài dùng nước, có loài dùng tuyết, có loài dùng cát; ba là ngủ. Nói khái quát, chúng rất quý "chiếc áo lông" của mình.',
-     note:'Câu hỏi về bài khoá — luyện kỹ năng tóm tắt (概括), rất cần cho phần nói HSKK trung cấp.'}
+    {q_zh:'你家里有过小动物吗？你觉得孩子多接触动物好不好？',q_vn:'Nhà em từng có con vật nhỏ nào không? Em thấy trẻ em tiếp xúc nhiều với động vật có tốt không?',hint:'Trả lời có / không + quan điểm, dùng 接触 / 既……又……',sample:'我家以前有一只猫。我觉得孩子多接触动物既能学会照顾别人，又能变得更有责任心，不过也要花很多时间。',sample_vn:'Nhà tôi trước đây có một con mèo. Tôi thấy trẻ em tiếp xúc nhiều với động vật vừa học được cách chăm sóc người khác, vừa có trách nhiệm hơn, nhưng cũng phải bỏ ra nhiều thời gian.',note:'Trả lời đủ hai câu hỏi: có hay không → ý kiến của em và lý do.'},
+    {q_zh:'说说你和一只小动物的故事。',q_vn:'Hãy kể câu chuyện giữa em và một con vật nhỏ.',hint:'Kể một chuyện cụ thể, dùng V + 过 / V + 开 / 痛快',sample:'我家的小狗特别聪明。每次我回家，它一听到开门的声音，就转过头跑过来，张开两只前腿扑到我腿上。周末我常带它去公园，让它痛快地跑一跑。',sample_vn:'Con chó nhỏ nhà tôi rất thông minh. Mỗi lần tôi về nhà, vừa nghe tiếng mở cửa là nó quay đầu chạy tới, dang hai chân trước nhảy chồm lên chân tôi. Cuối tuần tôi hay dẫn nó đi công viên, cho nó chạy thoả thích.',note:'Dùng cả V + 过 (转过头) và V + 开 (张开) trong một câu chuyện liền mạch.'},
+    {q_zh:'如果你对小动物没有兴趣，请说明原因。',q_vn:'Nếu em không có hứng thú với động vật nhỏ, hãy giải thích lý do.',hint:'Nêu 2–3 lý do (一是……二是……), kết bằng 总之',sample:'我对小动物没什么兴趣。一是我学习太忙，没时间照顾它们；二是我对猫毛很敏感，一碰就不舒服；三是它们生病了也很麻烦。总之，现在我不适合在家里照顾小动物。',sample_vn:'Tôi không có hứng thú lắm với động vật nhỏ. Một là tôi học quá bận, không có thời gian chăm sóc; hai là tôi rất nhạy cảm với lông mèo, chạm vào là khó chịu; ba là chúng ốm cũng rất phiền. Tóm lại, bây giờ tôi không hợp để chăm sóc động vật ở nhà.',note:'一是……二是……三是…… liệt kê lý do rõ ràng; 总之 chốt lại ở câu cuối.'},
+    {q_zh:'读了这篇课文，你能概括一下鸟儿是怎样保养羽毛的吗？',q_vn:'Đọc xong bài khoá, em có thể khái quát chim giữ gìn bộ lông như thế nào không?',hint:'Tóm tắt 3 cách: 整理羽毛, 洗澡, 睡眠; dùng 反复 / 概括来说',sample:'鸟儿保养羽毛的方法主要有三种：一是整理羽毛，它们会反复地啄着羽毛；二是洗澡，有的用水，有的用雪，有的用沙子；三是睡眠。概括来说，它们非常爱惜自己的“羽衣”。',sample_vn:'Cách chim giữ gìn bộ lông chủ yếu có ba: một là chải chuốt lông, chúng mổ rỉa lông hết lần này đến lần khác; hai là tắm, có loài dùng nước, có loài dùng tuyết, có loài dùng cát; ba là ngủ. Nói khái quát, chúng rất quý “bộ áo lông” của mình.',note:'概括 nghĩa là nói ngắn gọn ý chính — đừng kể lại cả bài.'}
   ]
 };
 
@@ -1507,45 +1393,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng lớp hỏi kỳ nghỉ hè em định đi đâu. Em chưa quyết, nhưng đã có vài nơi muốn đến.',
-     a:{sp:'Bạn',zh:'暑假你打算去哪儿玩？',vn:'Nghỉ hè cậu định đi đâu chơi?'},
-     need:['Dùng 总之','Liệt kê vài nơi rồi khái quát'],
-     sample:'可能去大理、丽江，也可能去西双版纳，总之，想去云南转转。',
-     samplePy:'Kěnéng qù Dàlǐ, Lìjiāng, yě kěnéng qù Xīshuāngbǎnnà, zǒngzhī, xiǎng qù Yúnnán zhuànzhuan.',
-     sampleVn:'Có thể đi Đại Lý, Lệ Giang, cũng có thể đi Tây Song Bản Nạp, nói chung là muốn đi dạo một vòng Vân Nam.',
-     tip:'Liệt kê + 总之 + kết luận chung — giống câu ví dụ (1) của sách.'},
-
-    {scene:'Bạn hỏi bí quyết học tiếng Trung của em.',
-     a:{sp:'Bạn',zh:'你怎么能把汉语学得这么好？',vn:'Sao cậu học tiếng Trung giỏi thế?'},
-     need:['Dùng 总之','Nêu 2–3 cách học'],
-     sample:'我每天听中文歌、看中国电影，还常常和中国朋友聊天，总之，就是多听多说。',
-     samplePy:'Wǒ měi tiān tīng Zhōngwén gē, kàn Zhōngguó diànyǐng, hái chángcháng hé Zhōngguó péngyou liáotiān, zǒngzhī, jiù shì duō tīng duō shuō.',
-     sampleVn:'Ngày nào tớ cũng nghe nhạc Trung, xem phim Trung Quốc, còn hay tán gẫu với bạn Trung Quốc, tóm lại là nghe nhiều nói nhiều.',
-     tip:'Bài 练一练 (2) của điểm ngữ pháp 总之.'},
-
-    {scene:'Bạn gọi điện, nói đã đến quảng trường nhưng không thấy em đâu. Em đang đứng ngay phía sau bạn.',
-     a:{sp:'Bạn',zh:'你在哪儿呢？我怎么看不见你？',vn:'Cậu ở đâu thế? Sao tớ không thấy cậu?'},
-     need:['Dùng V + 过 (回过头 / 转过身)'],
-     sample:'我就在你后面，你回过头来就能看见我了。',
-     samplePy:'Wǒ jiù zài nǐ hòumiàn, nǐ huíguo tóu lai jiù néng kànjiàn wǒ le.',
-     sampleVn:'Tớ ở ngay sau lưng cậu, cậu quay đầu lại là thấy tớ.',
-     tip:'V + 过: qua động tác, người đổi hướng (giống bài 练一练 (1): 你回过头就可以看见我了).'},
-
-    {scene:'Em gái thấy chú chim non đứng mãi trên cành, sốt ruột hỏi em.',
-     a:{sp:'Em gái',zh:'小鸟怎么还不飞呢？',vn:'Sao chú chim non vẫn chưa bay nhỉ?'},
-     need:['Dùng V + 开 (张开)','Dùng 翅膀'],
-     sample:'别着急，等它张开翅膀，就能飞起来了。',
-     samplePy:'Bié zháojí, děng tā zhāngkāi chìbǎng, jiù néng fēi qǐlái le.',
-     sampleVn:'Đừng sốt ruột, đợi nó dang cánh ra là bay lên được thôi.',
-     tip:'V + 开: biểu thị sự dang ra, mở ra (张开翅膀 / 张开双臂 / 张开双翅).'},
-
-    {scene:'Bạn thân kể tuần này ngày nào cũng thức khuya học bài.',
-     a:{sp:'Bạn',zh:'这个星期我每天都学到半夜两点。',vn:'Tuần này ngày nào tớ cũng học đến 2 giờ sáng.'},
-     need:['Dùng 爱惜','Khuyên bạn'],
-     sample:'学习重要，身体更重要，你得爱惜身体啊！',
-     samplePy:'Xuéxí zhòngyào, shēntǐ gèng zhòngyào, nǐ děi àixī shēntǐ a!',
-     sampleVn:'Học quan trọng, sức khoẻ còn quan trọng hơn, cậu phải giữ gìn sức khoẻ chứ!',
-     tip:'爱惜身体 là cụm trong bảng 词语搭配 — giống lời người mẹ trong bài nghe số 2.'}
+    {scene:'Bạn cùng lớp hỏi kỳ nghỉ em định đi đâu. Em chưa quyết, nhưng đã có vài nơi muốn đến.',a:{sp:'Bạn',zh:'放假了，你打算去哪儿玩？',vn:'Được nghỉ rồi, cậu định đi đâu chơi?'},need:['Dùng 总之','Liệt kê vài nơi rồi khái quát'],sample:'可能去北京，也可能去上海，总之，想去中国几个大城市转转。',samplePy:'Kěnéng qù Běijīng, yě kěnéng qù Shànghǎi, zǒngzhī, xiǎng qù Zhōngguó jǐ ge dà chéngshì zhuànzhuan.',sampleVn:'Có thể đi Bắc Kinh, cũng có thể đi Thượng Hải, tóm lại là muốn đi dạo vài thành phố lớn của Trung Quốc.',tip:'总之 đứng SAU phần liệt kê, chốt ý chung (điểm ngữ pháp 1).'},
+    {scene:'Bạn hỏi bí quyết học tiếng Trung của em.',a:{sp:'Bạn',zh:'你怎么能把汉语学得这么好？',vn:'Sao cậu học tiếng Trung giỏi thế?'},need:['Dùng 总之','Nêu 2–3 cách học'],sample:'我每天看中国电影，还常常和中国朋友聊天，总之，就是多听多说。',samplePy:'Wǒ měi tiān kàn Zhōngguó diànyǐng, hái chángcháng hé Zhōngguó péngyou liáotiān, zǒngzhī, jiù shì duō tīng duō shuō.',sampleVn:'Ngày nào tớ cũng xem phim Trung Quốc, còn hay nói chuyện với bạn người Trung, tóm lại là nghe nhiều nói nhiều.',tip:'Nêu ví dụ cụ thể trước, 总之 + kết luận ngắn gọn sau.'},
+    {scene:'Bạn gọi điện, nói đã đến quảng trường nhưng không thấy em đâu. Em đang đứng ngay phía sau bạn.',a:{sp:'Bạn',zh:'我已经到广场了，可是怎么也找不到你。',vn:'Tớ đến quảng trường rồi, mà tìm mãi không thấy cậu.'},need:['Dùng V + 过 (转过头 / 回过头)'],sample:'我就在你后面呢，你转过头来看看！',samplePy:'Wǒ jiù zài nǐ hòumiàn ne, nǐ zhuǎnguo tóu lai kànkan!',sampleVn:'Tớ ở ngay sau lưng cậu đây, quay đầu lại xem!',tip:'V + 过 (转过头, 回过头) = quay sang hướng khác (điểm ngữ pháp 2).'},
+    {scene:'Em đưa em trai đi khám, bác sĩ muốn xem họng nhưng em trai sợ, mím chặt miệng.',a:{sp:'Bác sĩ',zh:'小朋友，让我看看你的嘴，好吗？',vn:'Bé ơi, cho bác xem miệng một chút nhé?'},need:['Dùng V + 开 (张开)','Động viên em trai'],sample:'别怕，把嘴张开，医生看一下就好了。',samplePy:'Bié pà, bǎ zuǐ zhāngkāi, yīshēng kàn yíxià jiù hǎo le.',sampleVn:'Đừng sợ, há miệng ra, bác sĩ xem một chút là xong.',tip:'V + 开 (张开, 打开) = mở ra, tách ra (điểm ngữ pháp 3); câu 把 + V开.'},
+    {scene:'Bạn thân kể tuần này ngày nào cũng thức khuya học bài.',a:{sp:'Bạn',zh:'这个星期我每天都学到半夜两点。',vn:'Tuần này ngày nào tớ cũng học đến hai giờ sáng.'},need:['Dùng 爱惜','Khuyên bạn'],sample:'学习重要，身体更重要，你要好好爱惜身体啊，每天至少睡七个小时。',samplePy:'Xuéxí zhòngyào, shēntǐ gèng zhòngyào, nǐ yào hǎohǎo àixī shēntǐ a, měi tiān zhìshǎo shuì qī ge xiǎoshí.',sampleVn:'Học quan trọng nhưng sức khoẻ còn quan trọng hơn, cậu phải giữ gìn sức khoẻ đấy, mỗi ngày ngủ ít nhất bảy tiếng.',tip:'爱惜 + 身体 / 时间 / 粮食 = quý trọng, không làm hao tổn.'}
   ]
 };
 
@@ -1556,29 +1408,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Biển báo dựng trong công viên.',
-     a:'请爱护花草，不要随手扔垃圾。',b:'别踩花草啊，垃圾也别乱扔！',better:'a',
-     why:'Biển báo dùng văn viết, ngắn gọn, lịch sự: 请爱护花草, 随手. Câu b là khẩu ngữ, như bác bảo vệ nhắc miệng.'},
-
-    {scene:'Em nhắc bạn thân mang ô khi đi dã ngoại.',
-     a:'带把伞吧，天气预报说下午有雨。',b:'请您随身携带雨具，以防降雨。',better:'a',
-     why:'Với bạn thân, câu a tự nhiên. Câu b giống thông báo của đài khí tượng (请您, 随身携带, 雨具, 以防降雨).'},
-
-    {scene:'Loa thông báo trên tàu điện ngầm khi sắp đến ga.',
-     a:'下车时请带好您的随身物品。',b:'下车了，东西别忘了拿啊！',better:'a',
-     why:'Thông báo công cộng dùng 请 + 您 + 随身物品 — trang trọng, chuẩn mực. Câu b như mẹ dặn con.'},
-
-    {scene:'Em thuyết trình khoa học về loài chim trước lớp.',
-     a:'羽毛是区分鸟类和其他动物的唯一特征。',b:'鸟就是有毛的，别的动物都没有。',better:'a',
-     why:'Thuyết trình khoa học cần từ chính xác: 区分, 鸟类, 唯一特征. Câu b là khẩu ngữ, lại không chính xác (thú cũng có lông).'},
-
-    {scene:'Em rủ bạn thân tối nay đi ăn lẩu mừng thi xong.',
-     a:'考完了！今晚咱们去吃火锅，吃个痛快！',b:'考试已经结束，建议今晚共进晚餐以示庆祝。',better:'a',
-     why:'Với bạn thân, câu a vui vẻ, tự nhiên (咱们, 吃个痛快). Câu b như công văn (建议, 共进晚餐, 以示庆祝).'},
-
-    {scene:'Câu kết trong bài văn nghị luận về việc nuôi thú cưng.',
-     a:'总之，养宠物既能给人带来快乐，也需要主人付出很多责任。',b:'反正养宠物挺好玩儿的，就是有点儿麻烦。',better:'a',
-     why:'Bài văn cần kết luận văn viết: 总之 + 既……也…… cân đối. Câu b dùng 反正, 挺好玩儿 — khẩu ngữ, thiếu trang trọng.'}
+    {scene:'Biển báo dựng trong công viên.',a:'请爱护花草，不要随手扔垃圾。',b:'别踩花草啊，垃圾也别乱扔！',better:'a',why:'Biển báo công cộng dùng văn viết lịch sự: 请爱护……, 不要随手……. Câu b như lời nhắc miệng.'},
+    {scene:'Em nhắc bạn thân mang áo khoác khi đi leo núi.',a:'山上冷，记得带件外套。',b:'建议您随身带好外套，注意保暖。',better:'a',why:'Nhắc bạn thân nên ngắn gọn, thân mật: 记得…… Câu b dùng 建议您 như thông báo của công ty du lịch.'},
+    {scene:'Loa thông báo trên tàu điện ngầm khi sắp đến ga.',a:'下车时请带好您随身带的东西。',b:'下车了，东西别忘了拿啊！',better:'a',why:'Thông báo công cộng cần lịch sự: 请, 您, 随身. Câu b như người nhà nhắc nhau.'},
+    {scene:'Em thuyết trình khoa học về loài chim trước lớp.',a:'羽毛是区分鸟和其他动物的唯一特征。',b:'鸟就是有毛的，别的动物都没有。',better:'a',why:'Thuyết trình khoa học cần chính xác: 区分, 唯一特征. Câu b vừa khẩu ngữ vừa sai (nhiều động vật khác cũng có lông).'},
+    {scene:'Em rủ bạn thân tối nay đi ăn lẩu mừng thi xong.',a:'考完了！今晚咱们去吃火锅，吃个痛快！',b:'考试已经结束，建议今晚大家一起用餐。',better:'a',why:'Rủ bạn thân dùng khẩu ngữ, cảm xúc: 咱们, 吃个痛快! Câu b cứng như thông báo.'},
+    {scene:'Câu kết trong bài văn nghị luận về điện thoại di động.',a:'总之，手机既能给人带来方便，也会让人浪费很多时间。',b:'手机挺好玩儿的，就是有点儿浪费时间。',better:'a',why:'Kết bài văn nghị luận dùng 总之 + câu khái quát cân bằng (既……也……). Câu b là khẩu ngữ (挺好玩儿的).'}
   ]
 };
 

@@ -1278,85 +1278,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 75) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'提倡',right:'节约'},
   {left:'耽误',right:'看病'},
   {left:'寂寞的',right:'心情'},
-  {left:'出色的',right:'成绩'},
-  {left:'大力',right:'提倡'},
-  {left:'长期',right:'投资'},
-  {left:'算',right:'不清'},
+  {left:'表现',right:'出色'},
+  {left:'一位',right:'大人物'},
   {left:'搞',right:'错'},
   {left:'一部',right:'纪录片'},
-  {left:'一批',right:'货'},
+  {left:'一批',right:'产品'},
   {left:'提高',right:'效率'},
   {left:'富有',right:'哲理'},
-  {left:'疲劳的',right:'身体'},
-  {left:'工作的',right:'奴隶'},
-  {left:'古代',right:'文明'},
-  {left:'当地的',right:'习俗'},
-  {left:'时时',right:'反省'},
-  {left:'很有',right:'个性'},
-  {left:'热带',right:'丛林'},
-  {left:'重要的',right:'步骤'}
+  {left:'尊重当地的',right:'习俗'},
+  {left:'打破',right:'纪录'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'高三的学生每天都很',blank:'忙碌',post:'，连周末都要上课。',hint:'(bận rộn)',ans:'忙碌'},
-  {pre:'我们没有提前准备，所以现在很',blank:'被动',post:'。',hint:'(bị động)',ans:'被动'},
-  {pre:'不要让自己变成手机的',blank:'奴隶',post:'。',hint:'(nô lệ)',ans:'奴隶'},
-  {pre:'他嘴上说支持我，心里却不这么想，真',blank:'虚伪',post:'！',hint:'(giả dối)',ans:'虚伪'},
-  {pre:'请不要把你的',blank:'思想',post:'强加给我。',hint:'(suy nghĩ, tư tưởng)',ans:'思想'},
-  {pre:'考试失败以后，我认真',blank:'反省',post:'了自己的学习方法。',hint:'(tự kiểm điểm)',ans:'反省'},
-  {pre:'',blank:'据说',post:'这家饭馆的烤鸭特别好吃，我们去尝尝吧。',hint:'(nghe nói)',ans:'据说',exp:'据说 = nghe nói, tương truyền; đặt đầu câu dẫn thông tin không trực tiếp.'},
-  {pre:'她的穿着很有',blank:'个性',post:'，大家一眼就能认出她。',hint:'(cá tính)',ans:'个性'},
-  {pre:'一个人去原始丛林太',blank:'冒险',post:'了。',hint:'(mạo hiểm)',ans:'冒险'},
-  {pre:'这些动物生活在热带',blank:'丛林',post:'里。',hint:'(rừng rậm)',ans:'丛林'},
-  {pre:'中国是世界上的',blank:'文明',post:'古国之一。',hint:'(văn minh)',ans:'文明'},
-  {pre:'学校带我们看了一部有关古代文明的',blank:'纪录',post:'片。',hint:'(tài liệu — phim tài liệu)',ans:'纪录'},
-  {pre:'爸爸妈妈工作太忙，就',blank:'雇',post:'了一位阿姨来照顾奶奶。',hint:'(thuê)',ans:'雇'},
-  {pre:'按照老人教的方法，他几乎每天都能钓到5斤',blank:'来',post:'重的大鱼。',hint:'(khoảng, chừng)',ans:'来',exp:'Số + 来 + lượng từ = khoảng, hơn kém một chút: 5斤来重 = chừng 5 cân.'},
-  {pre:'学校今年又来了一',blank:'批',post:'新老师。',hint:'(tốp, đợt — lượng từ)',ans:'批',exp:'批 là lượng từ cho một tốp, một đợt (người/hàng): 一批新老师.'},
-  {pre:'爷爷七十多岁了，爬山的时候还',blank:'健步如飞',post:'。',hint:'(bước đi thoăn thoắt)',ans:'健步如飞'},
-  {pre:'',blank:'一连',post:'下了一个星期的雨，衣服都干不了。',hint:'(liên tiếp, liền)',ans:'一连',exp:'一连 + V/số lượng = liền, liên tiếp: 一连下了一个星期的雨.'},
-  {pre:'很多外国公司纷纷来这里',blank:'投资',post:'。',hint:'(đầu tư)',ans:'投资'},
-  {pre:'孔子是中国历史上非常重要的',blank:'人物',post:'。',hint:'(nhân vật)',ans:'人物'},
-  {pre:'他说话太直，经常',blank:'得罪',post:'人。',hint:'(làm mất lòng)',ans:'得罪'},
-  {pre:'问题是我们怎样才能',blank:'搞',post:'到他的签名。',hint:'(làm, kiếm — khẩu ngữ)',ans:'搞'},
-  {pre:'到了别的国家，要尊重当地的',blank:'习俗',post:'。',hint:'(tập tục)',ans:'习俗'},
-  {pre:'他是这支球队的',blank:'灵魂',post:'，没有他就赢不了。',hint:'(linh hồn)',ans:'灵魂'},
-  {pre:'连续工作了十个小时，他感到非常',blank:'疲劳',post:'。',hint:'(mệt mỏi)',ans:'疲劳'},
-  {pre:'爷爷说的话虽然简单，但是很有',blank:'哲理',post:'。',hint:'(triết lý)',ans:'哲理'},
-  {pre:'现在饭馆都',blank:'提倡',post:'节约，不浪费食物。',hint:'(khuyến khích, đề xướng)',ans:'提倡'},
-  {pre:'你是按说明书上的',blank:'步骤',post:'安装的吗？',hint:'(các bước)',ans:'步骤'},
-  {pre:'考试前，哥哥决定',blank:'闭关',post:'一周，好好复习。',hint:'(bế quan)',ans:'闭关'},
-  {pre:'她有些',blank:'寂寞',post:'，想让我到她那儿陪她聊聊天。',hint:'(cô đơn)',ans:'寂寞'},
-  {pre:'晚上睡不好，第二天的学习',blank:'效率',post:'就很低。',hint:'(hiệu suất, hiệu quả)',ans:'效率'},
-  {pre:'这批当地人个个都表现',blank:'出色',post:'。',hint:'(xuất sắc)',ans:'出色'},
-  {pre:'经过沟通，大导演',blank:'总算',post:'搞明白了。',hint:'(cuối cùng cũng)',ans:'总算',exp:'总算 = cuối cùng cũng (sau nhiều cố gắng, chờ đợi): 总算搞明白了.'}
+  {pre:'结束了一天的',blank:'忙碌',post:'，他回到家只想好好休息。',hint:'(sự bận rộn)',ans:'忙碌',exp:'忙碌 = bận rộn; dùng được như danh từ: 一天的忙碌, 忙碌的生活.'},
+  {pre:'他从来不主动想办法，总是等经理安排，做什么都很',blank:'被动',post:'。',hint:'(bị động)',ans:'被动',exp:'被动 = bị động, chờ người khác đẩy mới làm; trái nghĩa 主动.'},
+  {pre:'他一放假就玩游戏，玩到不吃不睡，简直成了游戏的',blank:'奴隶',post:'。',hint:'(nô lệ)',ans:'奴隶',exp:'成了……的奴隶 = trở thành nô lệ của… (bị cái gì đó điều khiển hoàn toàn).'},
+  {pre:'他当面说你的画好看，背后却说难看，这种人太',blank:'虚伪',post:'了。',hint:'(giả dối)',ans:'虚伪',exp:'虚伪 = giả dối, ngoài mặt một đằng trong lòng một nẻo; trái nghĩa 真心.'},
+  {pre:'他特别喜欢',blank:'冒险',post:'，去年一个人骑自行车走完了整个越南。',hint:'(mạo hiểm, phiêu lưu)',ans:'冒险',exp:'冒险 = mạo hiểm, dám làm việc nguy hiểm; 喜欢冒险 = thích phiêu lưu (khác 危险 là tính từ “nguy hiểm”).'},
+  {pre:'我怕',blank:'得罪',post:'经理，所以开会时没敢说出自己的意见。',hint:'(làm phật lòng)',ans:'得罪',exp:'得罪 + người = làm ai phật lòng, mất lòng: 得罪经理, 把朋友得罪了.'},
+  {pre:'为了准备考试，他关掉手机，在家“',blank:'闭关',post:'”了一个星期，谁也不见。',hint:'(bế quan, ở lì không gặp ai)',ans:'闭关',exp:'闭关 = bế quan: tự nhốt mình một thời gian, không tiếp xúc ai để tập trung làm việc.'},
+  {pre:'孩子们都去外地工作了，老两口常常觉得很',blank:'寂寞',post:'。',hint:'(cô đơn, buồn tẻ)',ans:'寂寞',exp:'寂寞 = cô đơn, buồn tẻ vì không có ai bên cạnh: 感到寂寞, 寂寞的心情.'},
+  {pre:'这个菜做起来不难，一共只有三个',blank:'步骤',post:'。',hint:'(bước, trình tự)',ans:'步骤',exp:'步骤 = các bước làm một việc theo thứ tự: 三个步骤, 重要的步骤.'},
+  {pre:'他把这些年的积蓄都',blank:'投资',post:'在这家小咖啡店上了。',hint:'(đầu tư)',ans:'投资',exp:'投资 + 在……上 = bỏ vốn đầu tư vào…; 投资人 = nhà đầu tư.'},
+  {pre:'',blank:'一来',post:'房租便宜，二来离学校近，所以我决定住在这儿。',hint:'(một là)',ans:'一来',exp:'一来……，二来…… = một là…, hai là… — liệt kê lý do (điểm ngữ pháp 来).'},
+  {pre:'在地铁里大声打电话是不',blank:'文明',post:'的行为。',hint:'(văn minh)',ans:'文明',exp:'文明 ở đây là tính từ = văn minh, lịch sự nơi công cộng; còn là danh từ: 古代文明.'}
 ];
 
 // ══════════════════════════════════════════
 // SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['他','雇了','20来个','当地人','为他','带路','。'],ans:'他雇了20来个当地人为他带路。',audio:'他雇了20来个当地人为他带路。'},
-  {words:['这件衬衫','要','一千','来块钱','。'],ans:'这件衬衫要一千来块钱。',audio:'这件衬衫要一千来块钱。'},
-  {words:['我只知道','他是六班的学生','，','至于','住在哪儿','，','我就不清楚了','。'],ans:'我只知道他是六班的学生，至于住在哪儿，我就不清楚了。',audio:'我只知道他是六班的学生，至于住在哪儿，我就不清楚了。'},
-  {words:['你','至于','生','那么大的气','吗','？'],ans:'你至于生那么大的气吗？',audio:'你至于生那么大的气吗？'},
-  {words:['经过','沟通','，','大导演','总算','搞明白了','。'],ans:'经过沟通，大导演总算搞明白了。',audio:'经过沟通，大导演总算搞明白了。'},
-  {words:['总算','把','活儿','干完了','。'],ans:'总算把活儿干完了。',audio:'总算把活儿干完了。'},
-  {words:['人','几乎','成了','工作的','奴隶','。'],ans:'人几乎成了工作的奴隶。',audio:'人几乎成了工作的奴隶。'},
-  {words:['他','把自己','关在','一所','房子里','。'],ans:'他把自己关在一所房子里。',audio:'他把自己关在一所房子里。'},
-  {words:['一连','三天','，','他们','都很顺利','。'],ans:'一连三天，他们都很顺利。',audio:'一连三天，他们都很顺利。'},
-  {words:['时时','反省','可以','使我们','少走','弯路','。'],ans:'时时反省可以使我们少走弯路。',audio:'时时反省可以使我们少走弯路。'},
-  {words:['任何人','他','都','一律','不见','。'],ans:'任何人他都一律不见。',audio:'任何人他都一律不见。'},
-  {words:['忙碌的人们','，','请','多给自己','一点','思考的时间','吧','。'],ans:'忙碌的人们，请多给自己一点思考的时间吧。',audio:'忙碌的人们，请多给自己一点思考的时间吧。'}
+  {words:['他','每个月的','工资','只有','五千','来','块钱','。'],ans:'他每个月的工资只有五千来块钱。',audio:'他每个月的工资只有五千来块钱。'},
+  {words:['我的','行李','有','二十','来','公斤','重','。'],ans:'我的行李有二十来公斤重。',audio:'我的行李有二十来公斤重。'},
+  {words:['这个月','他','一连','迟到了','四次','，','被经理','批评了','。'],ans:'这个月他一连迟到了四次，被经理批评了。',audio:'这个月他一连迟到了四次，被经理批评了。',alt:['他这个月一连迟到了四次，被经理批评了。']},
+  {words:['你','还没','上大学','呢','，','至于','找什么工作','，','以后再说吧','。'],ans:'你还没上大学呢，至于找什么工作，以后再说吧。',audio:'你还没上大学呢，至于找什么工作，以后再说吧。'},
+  {words:['等了','一个多小时','，','我们','总算','打到了','车','。'],ans:'等了一个多小时，我们总算打到了车。',audio:'等了一个多小时，我们总算打到了车。'},
+  {words:['吵架','以后','，','他','关上门','认真','反省了','很久','。'],ans:'吵架以后，他关上门认真反省了很久。',audio:'吵架以后，他关上门认真反省了很久。'},
+  {words:['公司','提倡','大家','下班后','不要再','回','工作消息','。'],ans:'公司提倡大家下班后不要再回工作消息。',audio:'公司提倡大家下班后不要再回工作消息。'},
+  {words:['这家店的','衣服','今天','一律','打折','。'],ans:'这家店的衣服今天一律打折。',audio:'这家店的衣服今天一律打折。',alt:['今天这家店的衣服一律打折。']}
 ];
 
 // ══════════════════════════════════════════
@@ -1364,148 +1333,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {
-    wrong:'因为有大雾，飞机不能起飞。____了您的宝贵时间，非常抱歉！',
-    opts:['影响','耽误','推迟','延长'],
-    ans:1,
-    exp:'Làm lỡ, làm mất THỜI GIAN của ai → 耽误时间 (bài tập 2 của sách). 影响 là tác động nói chung, ít đi với 时间; 推迟 là hoãn (việc), 延长 là kéo dài — đều không đi với “thời gian quý báu của ngài”.'
-  },
-  {
-    wrong:'我只知道他是六班的学生，____住在哪儿，我就不清楚了。',
-    opts:['对于','至于','由于','甚至'],
-    ans:1,
-    exp:'Nói xong một việc, chuyển sang việc khác: “…，至于 + việc khác，…” (điểm ngữ pháp 2). 对于 là “đối với”, 由于 là “do”, 甚至 là “thậm chí”.'
-  },
-  {
-    wrong:'我只是和你开个玩笑，你____生那么大的气吗？',
-    opts:['至于','终于','关于','对于'],
-    ans:0,
-    exp:'至于 (động từ) + V + 吗？ = có đến mức … không? (câu phản vấn). 终于 là “cuối cùng”, 关于 / 对于 là giới từ.'
-  },
-  {
-    wrong:'为了保证病人的休息，午饭后____不准探视。',
-    opts:['一律','一共','一起','一直'],
-    ans:0,
-    exp:'Quy định áp dụng cho tất cả, không ngoại lệ → 一律不准 (bài tập 2 của sách). 一共 là tổng cộng, 一起 là cùng nhau, 一直 là luôn luôn.'
-  },
-  {
-    wrong:'用铅笔书写的答卷____无效。',
-    opts:['一律','一起','一向','一共'],
-    ans:0,
-    exp:'一律无效 = đều không có hiệu lực (câu 29 sách bài tập). 一向 là “xưa nay vẫn”, không hợp giọng quy định.'
-  },
-  {
-    wrong:'他多次想告诉她，但____没说出口。',
-    opts:['总算','终于','好像','刚才'],
-    ans:1,
-    exp:'Kết quả KHÔNG như ý (rốt cuộc không nói ra) → 终于. 总算 chỉ dùng cho kết quả mong muốn (词语辨析 của bài).'
-  },
-  {
-    wrong:'到北京的第二年，我____找到了一份比较满意的工作。',
-    opts:['总算','究竟','几乎','差点儿'],
-    ans:0,
-    exp:'Sau thời gian dài, điều mong muốn thành hiện thực → 总算. 究竟 dùng trong câu hỏi; 几乎 / 差点儿 là “suýt, gần như” — nghĩa ngược.'
-  },
-  {
-    wrong:'马向阳在那儿当县长时，____地完成了任务。',
-    opts:['优秀','出色','精彩','良好'],
-    ans:1,
-    exp:'Làm trạng ngữ + 地 + 完成 → 出色地完成 (bài tập 2 của sách). 优秀 nói phẩm chất chung (优秀学生), ít làm trạng ngữ; 精彩 tả tiết mục, trận đấu.'
-  },
-  {
-    wrong:'你怎么____的？不是说好了周末和小丽见面的吗？',
-    opts:['做','搞','办','造'],
-    ans:1,
-    exp:'怎么搞的？ là câu khẩu ngữ cố định: “Sao lại thế?” (bài tập 2 của sách). Không nói 怎么做的 với nghĩa trách móc này.'
-  },
-  {
-    wrong:'大导演到南美丛林拍有关古代____文明的纪录片。',
-    opts:['印加','埃及','希腊','罗马'],
-    ans:0,
-    exp:'Theo bài khoá: rừng rậm Nam Mỹ — văn minh Inca (印加). Ai Cập, Hy Lạp, La Mã không ở Nam Mỹ.'
-  },
-  {
-    wrong:'从20世纪80年代起，____每年都要进行两次为期一周的“闭关”。',
-    opts:['比尔·盖茨','爱因斯坦','孔子','哥伦布'],
-    ans:0,
-    exp:'Theo bài khoá: Bill Gates (比尔·盖茨) mỗi năm “bế quan” hai lần. Einstein, Khổng Tử, Columbus đều không sống ở thập niên 80.'
-  },
-  {
-    wrong:'在他们的____中，已经把忙与成功、闲与失败联系到一起。',
-    opts:['思考','思想','想念','想象'],
-    ans:1,
-    exp:'在……的思想中 = trong suy nghĩ, quan niệm của … → danh từ 思想. 思考 chủ yếu là động từ; 想念 là nhớ nhung; 想象 là tưởng tượng.'
-  },
-  {
-    wrong:'他在比赛中打破了全国____。',
-    opts:['记录','纪录','记忆','记者'],
-    ans:1,
-    exp:'Kỷ lục → 纪录 (打破纪录). 记录 là ghi chép, biên bản (xem bài 20).'
-  },
-  {
-    wrong:'第一种忙，总是被事情追着、赶着，人几乎成了工作的____。',
-    opts:['努力','奴隶','主人','能力'],
-    ans:1,
-    exp:'Bị công việc đuổi theo → thành NÔ LỆ của công việc (奴隶). 主人 là loại bận thứ hai. Đừng nhầm 奴隶 núlì với 努力 nǔlì.'
-  },
-  {
-    wrong:'与其抱怨别人，不如先____一下自己。',
-    opts:['反省','反对','反映','反应'],
-    ans:0,
-    exp:'Tự xét lại mình → 反省自己. 反对 là phản đối, 反映 là phản ánh, 反应 là phản ứng.'
-  },
-  {
-    wrong:'上海的那____货准备得怎么样了？',
-    opts:['批','张','条','场'],
-    ans:0,
-    exp:'Lô hàng → lượng từ 批 (一批货 — bảng 搭配, bài nghe 1 sách bài tập).'
-  },
-  {
-    wrong:'盖茨的“闭关”更是一种高____的工作方式。',
-    opts:['效率','效果','利率','比率'],
-    ans:0,
-    exp:'高效率 = hiệu suất cao. 效果 đi với 好 / 明显 (效果很好), không nói 高效果; 利率 là lãi suất; 比率 là tỉ lệ.'
-  },
-  {
-    wrong:'现在饭馆都____节约，不浪费食物。',
-    opts:['提倡','提供','提出','提前'],
-    ans:0,
-    exp:'Khuyến khích mọi người làm điều tốt → 提倡节约 (bài tập 1 của sách). 提供 là cung cấp, 提出 là đề ra (ý kiến), 提前 là làm sớm hơn.'
-  },
-  {
-    wrong:'她一个人在国外生活，常常感到很____。',
-    opts:['寂寞','安静','热闹','平静'],
-    ans:0,
-    exp:'Một mình nơi xa, không ai trò chuyện → 感到寂寞 (cô đơn). 安静 / 平静 tả không gian, tâm trạng yên; 热闹 là náo nhiệt — trái nghĩa.'
-  }
+  {wrong:'大家都希望他留下来，可他____还是辞职了。',opts:['终于','总算','一律','一连'],ans:0,exp:'Kết quả KHÔNG như mọi người mong (anh ấy vẫn nghỉ việc) → 终于……还是. 总算 chỉ dùng cho kết quả mong muốn; 一律 là “nhất loạt”; 一连 là “liên tiếp”.'},
+  {wrong:'虽然没拿到第一名，但学到了不少东西，这几个月____没白练。',opts:['总算','一律','据说','一连'],ans:0,exp:'总算 còn có nghĩa “dù sao cũng coi là”: 总算没白练 = dù sao cũng không tập uổng công. 一律, 据说, 一连 không hợp nghĩa.'},
+  {wrong:'地铁出了问题，____了我半个多小时。',opts:['耽误','影响','得罪','雇'],ans:0,exp:'耽误 + người + thời gian = làm ai lỡ mất (thời gian). 影响 không đi trực tiếp với một lượng thời gian; 得罪 là làm mất lòng; 雇 là thuê người.'},
+  {wrong:'父母经常吵架，会____孩子的心情。',opts:['影响','耽误','提倡','反省'],ans:0,exp:'影响 = tác động đến (心情, 健康, 学习). 耽误 nhấn mạnh làm lỡ việc / thời gian, không đi với 心情; 提倡, 反省 không hợp nghĩa.'},
+  {wrong:'比赛赢了，大家____高兴得叫了起来。',opts:['都','一律','总算','一连'],ans:0,exp:'Tả cảm xúc tự nhiên của mọi người → 都. 一律 chỉ dùng cho quy định “nhất loạt, không ngoại lệ”, không tả cảm xúc; 总算, 一连 không hợp.'},
+  {wrong:'这次考试，手机和书本____不能带进考场。',opts:['一律','一连','至于','总算'],ans:0,exp:'Quy định, không có ngoại lệ → 一律 + 不能. 一连 là “liên tiếp”; 至于 là “còn về”; 总算 là “cuối cùng cũng”.'},
+  {wrong:'这次旅行去哪儿已经决定了，____住哪家酒店，你们自己商量吧。',opts:['至于','由于','甚至','终于'],ans:0,exp:'A……，至于 B…… = nói xong việc A, chuyển sang việc B liên quan: “còn về B thì…”. 由于 nêu nguyên nhân; 甚至 là “thậm chí”; 终于 là “cuối cùng”.'},
+  {wrong:'我只是晚到了五分钟，你____发这么大的脾气吗？',opts:['至于','何必','总算','据说'],ans:0,exp:'(你)至于 + V + 吗？ = có đến mức… không? 何必 phải đi với 呢 chứ không đi với 吗; 总算, 据说 không hợp.'},
+  {wrong:'他平时那么认真，____连这么简单的题都做不出来吧。',opts:['不至于','不必','不得不','不仅'],ans:0,exp:'不至于 + V = chưa đến mức… (phỏng đoán, hay đi với 吧). 不必 là “không cần”; 不得不 là “buộc phải”; 不仅 là “không những”.'},
+  {wrong:'他们家____了一个司机，每天开车送孩子上学。',opts:['雇','租','借','搬'],ans:0,exp:'雇 + người (司机, 阿姨, 工人) = thuê người làm. 租 là thuê đồ vật (房子, 车); 借 là mượn; 搬 là chuyển.'},
+  {wrong:'这家公司____大家骑自行车上班，少开车。',opts:['提倡','提高','提供','提前'],ans:0,exp:'提倡 + người + V = khuyến khích ai làm gì. 提高 (nâng cao), 提供 (cung cấp), 提前 (làm sớm hơn) không mang “người + việc” như vậy.'},
+  {wrong:'在面试中，她____地回答了所有问题。',opts:['出色','优秀','疲劳','文明'],ans:0,exp:'出色 làm trạng ngữ được: 出色地完成 / 出色地回答. 优秀 thường làm định ngữ, vị ngữ (优秀的学生), không nói 优秀地; 疲劳, 文明 không hợp nghĩa.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi thức khuya ôn bài liền ba ngày, kết quả đến ngày thứ tư lên lớp mệt đến mức không mở nổi mắt.',zh:'我一连三天熬夜复习，结果第四天上课时疲劳得睁不开眼。',py:'Wǒ yìlián sān tiān áoyè fùxí, jiéguǒ dì-sì tiān shàngkè shí píláo de zhēng bu kāi yǎn.',goiY:['一连','熬夜','疲劳','结果'],giai:'一连 + số lượng + thời gian = "liền, liên tiếp", đặt trước động từ; 结果 dẫn ra kết quả ở vế sau (thường là không như ý).'},
-  {vi:'Tuy chỉ được khoảng sáu mươi điểm nhưng môn toán của tôi rốt cuộc cũng qua.',zh:'虽然只考了六十来分，但我的数学总算及格了。',py:'Suīrán zhǐ kǎole liùshí lái fēn, dàn wǒ de shùxué zǒngsuàn jígé le.',goiY:['虽然……但……','来','总算'],giai:'十 / 百 + 来 + lượng từ = số ước lượng "khoảng"; 总算 = rốt cuộc cũng (kết quả mong muốn, dù chưa hoàn hảo).'},
-  {vi:'Chẳng qua là kỷ lục trong game bị người khác phá thôi mà, có đến mức buồn tới nỗi bỏ cả cơm không?',zh:'不就是游戏里的纪录被别人打破了吗，你至于难过得连饭都不吃吗？',py:'Bú jiù shì yóuxì li de jìlù bèi biérén dǎpòle ma, nǐ zhìyú nánguò de lián fàn dōu bù chī ma?',goiY:['纪录','至于……吗','连……都……'],giai:'你至于……吗？ là câu phản vấn = "có đến mức … không?", ý là không cần thiết; 连……都 nhấn mạnh trường hợp cực đoan.'},
-  {vi:'Một là sẽ lỡ mất buổi học thêm, hai là chi phí cũng quá cao, nên tôi không định tham gia trại hè lần này.',zh:'一来会耽误补习课，二来费用也太高，所以我不打算参加这次夏令营。',py:'Yī lái huì dānwu bǔxí kè, èr lái fèiyong yě tài gāo, suǒyǐ wǒ bù dǎsuàn cānjiā zhè cì xiàlìngyíng.',goiY:['一来……二来……','耽误','所以'],giai:'一来……，二来…… liệt kê hai lý do, vế kết luận đặt sau với 所以; 耽误 = làm lỡ, làm chậm trễ (việc học, thời gian), khác 错过 (bỏ lỡ cơ hội).'},
-  {vi:'Nghe nói cậu "học bá" ấy mỗi ngày chỉ học tám tiếng mà lúc nào cũng đứng nhất, đủ thấy hiệu quả quan trọng hơn thời gian.',zh:'据说那位学霸每天只学八个小时，却总是考第一，可见效率比时间更重要。',py:'Jùshuō nà wèi xuébà měi tiān zhǐ xué bā ge xiǎoshí, què zǒngshì kǎo dì-yī, kějiàn xiàolǜ bǐ shíjiān gèng zhòngyào.',goiY:['据说','却','可见','效率'],giai:'据说 = nghe nói (nguồn tin không rõ), đứng đầu câu; 可见 rút ra kết luận từ sự việc vừa kể.'},
-  {vi:'Nếu lúc nào cũng thụ động chờ thầy cô giao việc, chúng ta sẽ trở thành nô lệ của bài tập chứ không phải người làm chủ việc học.',zh:'如果总是被动地等老师布置任务，我们就会变成作业的奴隶，而不是学习的主人。',py:'Rúguǒ zǒngshì bèidòng de děng lǎoshī bùzhì rènwu, wǒmen jiù huì biànchéng zuòyè de núlì, ér bú shì xuéxí de zhǔrén.',goiY:['如果……就……','被动','奴隶','而不是'],giai:'如果……就 là giả thiết – kết quả; 而不是 = "chứ không phải", đặt sau vế khẳng định để phủ định vế đối lập.'},
-  {vi:'Chỉ khi coi việc tự xem xét lại mình là một bước không thể thiếu trong học tập, chúng ta mới không càng đi càng xa trên con đường sai.',zh:'只有把反省当成学习中必不可少的步骤，我们才不会在错误的道路上越走越远。',py:'Zhǐyǒu bǎ fǎnxǐng dàngchéng xuéxí zhōng bì bù kě shǎo de bùzhòu, wǒmen cái bú huì zài cuòwù de dàolù shang yuè zǒu yuè yuǎn.',goiY:['只有……才……','反省','步骤','越……越……'],giai:'只有……才 nêu điều kiện duy nhất (thiếu nó thì không được); 越走越远 = càng đi càng xa.'},
-  {vi:'Anh họ tôi rất cá tính lại thích mạo hiểm, vừa tốt nghiệp đã sang Nam Mỹ du lịch; còn chuyện bố mẹ có đồng ý hay không thì anh ấy chẳng hề bận tâm.',zh:'表哥个性很强，又喜欢冒险，一毕业就去了南美旅行；至于父母同不同意，他根本不在乎。',py:'Biǎogē gèxìng hěn qiáng, yòu xǐhuan màoxiǎn, yí bìyè jiù qùle Nánměi lǚxíng; zhìyú fùmǔ tóng bu tóngyì, tā gēnběn bú zàihu.',goiY:['个性','冒险','至于'],giai:'至于 (giới từ) đứng đầu vế sau, chuyển sang một chuyện có liên quan = "còn về … thì"; ở đây không dịch là "đến mức".'},
-  {vi:'Bất kể học lực tốt hay kém, cô chủ nhiệm đều yêu cầu tất cả có mặt ở trường trước bảy giờ sáng, vì cô chủ trương dùng nếp sinh hoạt điều độ để nâng cao hiệu quả.',zh:'不管成绩好坏，班主任一律要求大家早上七点前到校，因为她提倡用规律的作息来提高效率。',py:'Bùguǎn chéngjì hǎohuài, bānzhǔrèn yílǜ yāoqiú dàjiā zǎoshang qī diǎn qián dào xiào, yīnwèi tā tíchàng yòng guīlǜ de zuòxī lái tígāo xiàolǜ.',goiY:['不管……一律……','提倡','效率'],giai:'不管 + hai mặt đối lập (好坏) + 都 / 一律: kết quả không đổi; 一律 = nhất loạt, không có ngoại lệ.'},
-  {vi:'Thay vì ngày nào cũng bận đến mức không có cả thời gian suy nghĩ, chi bằng thỉnh thoảng cho mình "bế quan" vài ngày; dù có hơi cô đơn, nó cũng giúp tâm hồn theo kịp cơ thể mệt mỏi.',zh:'与其每天忙得连思考的时间都没有，不如偶尔给自己“闭关”几天，哪怕有些寂寞，也能让灵魂追上疲劳的身体。',py:'Yǔqí měi tiān máng de lián sīkǎo de shíjiān dōu méiyǒu, bùrú ǒu\'ěr gěi zìjǐ "bìguān" jǐ tiān, nǎpà yǒuxiē jìmò, yě néng ràng línghún zhuīshang píláo de shēntǐ.',goiY:['与其……不如……','哪怕……也……','闭关','灵魂'],giai:'与其 A 不如 B: chọn B thay vì A; 哪怕……也 = dù (phải chịu chút thiệt) vẫn …, nhượng bộ giả định giống 即使.'}
+  {vi:'Tôi thức khuya ôn bài liền ba buổi tối, kết quả ngày thứ tư lên lớp mệt mỏi đến mức chẳng nghe vào được gì.',zh:'我一连三个晚上熬夜复习，结果第四天上课时疲劳得什么都听不进去。',py:'Wǒ yìlián sān ge wǎnshang áoyè fùxí, jiéguǒ dì-sì tiān shàngkè shí píláo de shénme dōu tīng bu jìnqu.',goiY:['一连','熬夜','疲劳'],giai:'一连 + số lượng thời gian (三个晚上) = liền, liên tiếp; 疲劳得 + bổ ngữ mức độ = mệt đến mức….'},
+  {vi:'Tuy chỉ được khoảng sáu mươi điểm nhưng môn toán của tôi rốt cuộc cũng qua.',zh:'虽然只考了六十来分，但我的数学总算考过了。',py:'Suīrán zhǐ kǎole liùshí lái fēn, dàn wǒ de shùxué zǒngsuàn kǎoguò le.',goiY:['来','总算'],giai:'Số chẵn chục + 来 + lượng từ = khoảng: 六十来分; 总算 (cuối cùng cũng / dù sao cũng) — kết quả mong muốn.'},
+  {vi:'Chẳng qua là kỷ lục trong game bị người khác phá thôi mà, có đến mức buồn tới nỗi bỏ cả cơm không?',zh:'不就是游戏里的纪录被别人打破了吗，你至于难过得连饭都不吃吗？',py:'Bú jiù shì yóuxì li de jìlù bèi biérén dǎpò le ma, nǐ zhìyú nánguò de lián fàn dōu bù chī ma?',goiY:['不就是……吗','至于……吗','连……都……'],giai:'(你)至于 + V + 吗？ là câu phản vấn = “có đến mức… không?”, ý là không cần thiết; 不就是……吗 = chẳng qua là… thôi mà.'},
+  {vi:'Một là sẽ lỡ mất buổi học thêm, hai là chi phí cũng quá cao, nên tôi không định tham gia chuyến du lịch lần này.',zh:'一来会耽误课外班，二来费用也太高，所以我不打算参加这次旅行。',py:'Yī lái huì dānwu kèwàibān, èr lái fèiyòng yě tài gāo, suǒyǐ wǒ bù dǎsuàn cānjiā zhè cì lǚxíng.',goiY:['一来……，二来……','耽误','费用'],giai:'一来……，二来…… liệt kê hai lý do, vế kết luận dùng 所以; 耽误 + việc = làm lỡ việc đó.'},
+  {vi:'Nghe nói bạn học giỏi ấy mỗi ngày chỉ học tám tiếng mà lúc nào cũng đứng nhất, đủ thấy hiệu quả quan trọng hơn thời gian.',zh:'据说那位同学每天只学八个小时，却总是考第一，可见效率比时间更重要。',py:'Jùshuō nà wèi tóngxué měi tiān zhǐ xué bā ge xiǎoshí, què zǒngshì kǎo dì-yī, kějiàn xiàolǜ bǐ shíjiān gèng zhòngyào.',goiY:['据说','效率','可见'],giai:'据说 đứng đầu câu, dẫn thông tin nghe được (không nói rõ nguồn); 可见 = đủ thấy (rút ra kết luận).'},
+  {vi:'Anh trai tôi rất có cá tính lại thích mạo hiểm, vừa tốt nghiệp đã sang Nam Mỹ du lịch; còn chuyện bố mẹ có đồng ý hay không thì anh ấy chẳng hề bận tâm.',zh:'我哥哥很有个性，又喜欢冒险，一毕业就去南美旅行了；至于父母同意不同意，他一点儿也不关心。',py:'Wǒ gēge hěn yǒu gèxìng, yòu xǐhuan màoxiǎn, yí bìyè jiù qù Nánměi lǚxíng le; zhìyú fùmǔ tóngyì bu tóngyì, tā yìdiǎnr yě bù guānxīn.',goiY:['个性','冒险','一……就……','至于'],giai:'至于 mở đầu vế sau để chuyển sang một chuyện liên quan (còn về…); 一……就…… = vừa… đã….'}
 ];
+
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Kiểu người thứ nhất bận một cách bị động, vì thế gần như đã trở thành nô lệ của công việc.',zh:'第一种人忙得很被动，因此几乎成了工作的奴隶。',py:'Dì-yī zhǒng rén máng de hěn bèidòng, yīncǐ jīhū chéngle gōngzuò de núlì.',goiY:['被动 = bị động','奴隶 = nô lệ','因此 = vì thế'],giai:'忙得很被动: bổ ngữ trạng thái V + 得 + mức độ; 因此 đứng đầu vế sau nêu kết quả, trang trọng hơn 所以.'},
-  {vi:'Sự bận rộn của kiểu người thứ ba có phần giả tạo, vì trong suy nghĩ họ đã gắn bận rộn với thành công.',zh:'第三种人的忙碌有些虚伪，因为他们在思想上把忙和成功联系到了一起。',py:'Dì-sān zhǒng rén de mánglù yǒuxiē xūwěi, yīnwèi tāmen zài sīxiǎng shang bǎ máng hé chénggōng liánxì dàole yìqǐ.',goiY:['忙碌 = bận rộn','虚伪 = giả tạo','思想 = tư tưởng, suy nghĩ'],giai:'因为 ở vế sau giải thích nguyên nhân; 把 A 和 B 联系到一起 = gắn A với B.'},
-  {vi:'Nghe nói có một đạo diễn lớn vì cực kỳ thích mạo hiểm nên đã đặc biệt tới rừng rậm Nam Mỹ quay một bộ phim tài liệu.',zh:'据说有位大导演因为极爱冒险，所以专门跑到南美丛林拍了一部纪录片。',py:'Jùshuō yǒu wèi dà dǎoyǎn yīnwèi jí ài màoxiǎn, suǒyǐ zhuānmén pǎodào Nánměi cónglín pāile yí bù jìlùpiàn.',goiY:['据说 = nghe nói','丛林 = rừng rậm','纪录片 = phim tài liệu'],giai:'因为……所以…… nguyên nhân – kết quả; 纪录片 viết với 纪 (ghi chép), không phải 记.'},
-  {vi:'Ông thuê khoảng hai mươi người địa phương dẫn đường và khuân hành lý; dù hành lý rất nặng, nhóm người này ai nấy đều đi nhanh như bay.',zh:'他雇了20来个当地人带路和搬行李，尽管行李很重，这批人却个个健步如飞。',py:'Tā gùle èrshí lái ge dāngdìrén dài lù hé bān xíngli, jǐnguǎn xíngli hěn zhòng, zhè pī rén què gègè jiànbù-rúfēi.',goiY:['来 = khoảng (số ước lượng)','尽管……却…… = mặc dù … vẫn …','健步如飞 = đi nhanh như bay'],giai:'20来个 = "khoảng hai mươi", 来 đứng sau số chẵn chục và trước lượng từ; 尽管……却: nhượng bộ một sự thật, 却 đứng sau chủ ngữ vế sau.'},
-  {vi:'Suốt ba ngày liền, nhóm người địa phương đều thể hiện rất xuất sắc, thế nhưng sang ngày thứ tư họ lại từ chối lên đường.',zh:'一连三天，这批当地人都表现得非常出色，可是到了第四天，他们却拒绝上路。',py:'Yìlián sān tiān, zhè pī dāngdìrén dōu biǎoxiàn de fēicháng chūsè, kěshì dàole dì-sì tiān, tāmen què jùjué shàng lù.',goiY:['一连 = liền, liên tiếp','出色 = xuất sắc','可是……却……'],giai:'可是 chuyển ý, 却 nhấn mạnh sự việc bất ngờ; 表现得 + tính từ = thể hiện (một cách) ….'},
-  {vi:'Đạo diễn sốt ruột như vậy, một là vì bị lỡ mất thời gian, hai là sợ chi phí tăng khiến nhà đầu tư không vui.',zh:'导演之所以非常着急，一来是因为耽误了时间，二来是怕费用增加让投资人不高兴。',py:'Dǎoyǎn zhīsuǒyǐ fēicháng zháojí, yī lái shì yīnwèi dānwule shíjiān, èr lái shì pà fèiyong zēngjiā ràng tóuzīrén bù gāoxìng.',goiY:['之所以 = sở dĩ','一来……二来…… = một là … hai là …','耽误 = làm lỡ'],giai:'之所以 + kết quả, sau đó 一来是……，二来是…… liệt kê từng nguyên nhân; 投资人 = nhà đầu tư (người bỏ vốn).'},
-  {vi:'Còn về nhà đầu tư của bộ phim thì đó là một nhân vật tầm cỡ, vì vậy đạo diễn dù thế nào cũng không dám làm phật lòng ông ta.',zh:'至于这部影片的投资人，那可是一位大人物，所以导演无论如何也不敢得罪他。',py:'Zhìyú zhè bù yǐngpiàn de tóuzīrén, nà kě shì yí wèi dà rénwù, suǒyǐ dǎoyǎn wúlùn rúhé yě bù gǎn dézuì tā.',goiY:['至于 = còn về','人物 = nhân vật','得罪 = làm mất lòng','无论如何'],giai:'至于 đứng đầu câu chuyển sang đề tài liên quan — "còn về …"; 无论如何也不 = dù thế nào cũng không.'},
-  {vi:'Sau khi trao đổi, đạo diễn cuối cùng cũng vỡ lẽ: hóa ra người địa phương từ xưa đã có tập tục cứ đi ba ngày thì phải nghỉ một ngày.',zh:'经过沟通，导演总算搞明白了：原来当地人自古就有一种习俗，每走三天就要休息一天。',py:'Jīngguò gōutōng, dǎoyǎn zǒngsuàn gǎo míngbai le: yuánlái dāngdìrén zìgǔ jiù yǒu yì zhǒng xísú, měi zǒu sān tiān jiù yào xiūxi yì tiān.',goiY:['总算 = cuối cùng cũng','搞明白 = hiểu ra','习俗 = tập tục','原来 = hóa ra'],giai:'总算 + V + 了 = rốt cuộc cũng đạt được điều mong muốn sau một thời gian; 原来 = hóa ra (phát hiện ra sự thật).'},
-  {vi:'Trong thời đại đề cao cạnh tranh này, chúng ta thường chỉ lo cúi đầu kéo xe mà quên ngẩng lên nhìn đường, càng thiếu đi bước quan trọng là suy nghĩ và tổng kết.',zh:'在这个提倡竞争的时代，我们常常只顾低头拉车，却忘了抬头看路，更少了思考和总结这一重要步骤。',py:'Zài zhège tíchàng jìngzhēng de shídài, wǒmen chángcháng zhǐ gù dītóu lā chē, què wàngle táitóu kàn lù, gèng shǎole sīkǎo hé zǒngjié zhè yí zhòngyào bùzhòu.',goiY:['提倡 = đề xướng, khuyến khích','只顾……却…… = chỉ lo … mà …','步骤 = bước'],giai:'低头拉车 / 抬头看路 là ẩn dụ: chỉ cắm cúi làm mà không nhìn phương hướng — dịch sát hình ảnh để giữ nghĩa bóng; 却 nối hai hành vi trái ngược.'},
-  {vi:'Bill Gates mỗi năm đều "bế quan" hai lần, bất kể là ai ông cũng không gặp; kiểu bế quan cô độc ấy không chỉ là nghỉ ngơi mà còn là một cách làm việc hiệu quả cao.',zh:'比尔·盖茨每年都要闭关两次，任何人他都一律不见；这种寂寞的闭关不仅是休息，更是一种高效率的工作方式。',py:'Bǐ\'ěr Gàicí měi nián dōu yào bìguān liǎng cì, rènhé rén tā dōu yílǜ bú jiàn; zhè zhǒng jìmò de bìguān bùjǐn shì xiūxi, gèng shì yì zhǒng gāo xiàolǜ de gōngzuò fāngshì.',goiY:['闭关 = bế quan (ở riêng một thời gian)','一律 = đều, không ngoại lệ','不仅……更…… = không chỉ … mà còn …'],giai:'任何人他都一律不见: tân ngữ 任何人 đảo lên đầu để nhấn mạnh, đi với 都 / 一律; 不仅……更…… là tăng tiến, 更 nhấn mạnh vế sau quan trọng hơn.'}
+  {vi:'Sự bận rộn của kiểu người thứ ba có phần giả tạo, vì trong suy nghĩ họ đã gắn bận rộn với thành công.',zh:'第三种人的忙碌有些虚伪，因为他们在思想上把忙和成功联系到了一起。',py:'Dì-sān zhǒng rén de mánglù yǒuxiē xūwěi, yīnwèi tāmen zài sīxiǎng shang bǎ máng hé chénggōng liánxì dàole yìqǐ.',goiY:['虚伪 = giả dối','思想 = suy nghĩ, tư tưởng','把 A 和 B 联系到一起 = gắn A với B'],giai:'在思想上 = trong suy nghĩ; câu 把 + A 和 B + 联系到一起 dịch thuận là “gắn A với B”.'},
+  {vi:'Nghe nói có một đạo diễn lớn vì cực kỳ thích mạo hiểm nên đã đặc biệt tới rừng rậm Nam Mỹ quay một bộ phim tài liệu.',zh:'据说有位大导演因为极爱冒险，所以专门跑到南美丛林拍了一部纪录片。',py:'Jùshuō yǒu wèi dà dǎoyǎn yīnwèi jí ài màoxiǎn, suǒyǐ zhuānmén pǎodào Nánměi cónglín pāile yí bù jìlùpiàn.',goiY:['据说 = nghe nói','丛林 = rừng rậm','纪录片 = phim tài liệu'],giai:'极 = cực kỳ (văn viết); 专门 = đặc biệt, chuyên để làm việc đó.'},
+  {vi:'Để khuân hành lý, đạo diễn thuê khoảng hai mươi người địa phương; dù hành lý rất nặng, nhóm người này ai nấy đều đi nhanh như bay.',zh:'为了搬行李，导演雇了二十来个当地人；尽管行李很重，这批人却个个健步如飞。',py:'Wèile bān xíngli, dǎoyǎn gùle èrshí lái ge dāngdìrén; jǐnguǎn xíngli hěn zhòng, zhè pī rén què gègè jiànbù rú fēi.',goiY:['雇 = thuê','二十来个 = khoảng hai mươi','批 = tốp, nhóm','健步如飞 = đi nhanh như bay'],giai:'二十来个 = khoảng hai mươi (来 chỉ số ước lượng); 尽管……却…… = mặc dù… nhưng…; 个个 = ai nấy.'},
+  {vi:'Người địa phương cứ đi ba ngày thì nghỉ một ngày; họ nói, chỉ như thế tâm hồn mới đuổi kịp cơ thể mệt mỏi.',zh:'当地人每走三天就要休息一天，他们说，只有这样，灵魂才能追上疲劳的身体。',py:'Dāngdìrén měi zǒu sān tiān jiù yào xiūxi yì tiān, tāmen shuō, zhǐyǒu zhèyàng, línghún cái néng zhuīshang píláo de shēntǐ.',goiY:['每……就…… = cứ… là…','只有……才…… = chỉ khi… mới…','灵魂 = linh hồn, tâm hồn'],giai:'每 + V + 三天就…… = cứ (làm) ba ngày thì…; 只有……才…… nêu điều kiện duy nhất.'},
+  {vi:'Nhà đầu tư của bộ phim đó là một nhân vật tầm cỡ, vì vậy đạo diễn dù thế nào cũng không dám làm phật lòng ông ta.',zh:'那部电影的投资人可是一位大人物，所以导演无论如何也不敢得罪他。',py:'Nà bù diànyǐng de tóuzīrén kě shì yí wèi dà rénwù, suǒyǐ dǎoyǎn wúlùn rúhé yě bù gǎn dézuì tā.',goiY:['投资人 = nhà đầu tư','大人物 = nhân vật tầm cỡ','得罪 = làm phật lòng'],giai:'可是 ở đây là phó từ nhấn mạnh (= thật sự là), không phải “nhưng”; 无论如何也不…… = dù thế nào cũng không….'},
+  {vi:'Bill Gates mỗi năm đều “bế quan” hai lần, bất kể là ai ông cũng không gặp; những ngày bế quan cô độc ấy giúp ông nghĩ thấu đáo được rất nhiều vấn đề.',zh:'比尔·盖茨每年都要闭关两次，任何人他都一律不见；这种寂寞的闭关能让他把很多问题想清楚。',py:'Bǐ\'ěr Gàicí měi nián dōu yào bìguān liǎng cì, rènhé rén tā dōu yílǜ bú jiàn; zhè zhǒng jìmò de bìguān néng ràng tā bǎ hěn duō wèntí xiǎng qīngchu.',goiY:['闭关 = bế quan','一律 = nhất loạt, không ngoại lệ','寂寞 = cô độc'],giai:'任何人他都一律不见 — tân ngữ 任何人 đảo lên đầu để nhấn mạnh; 把 + 问题 + 想清楚 = nghĩ cho rõ vấn đề.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1590,11 +1451,11 @@ var writingData = {
     {ten:'……能让 + N + 更 + tính từ',nhan:'让',vd:'认真思考能让生活更轻松。',khi:'Câu KẾT: nêu tác dụng, quay về đề bài.'}
   ],
   sapXep:[
-    {manh:['身体很疲劳','学到半夜','我每天'],dap:'我每天学到半夜，身体很疲劳。',vn:'Ngày nào tôi cũng học đến nửa đêm, cơ thể rất mệt mỏi.',giai:'Chủ ngữ + 每天 + V到 + thời điểm; vế sau nói kết quả: 身体很疲劳.'},
-    {manh:['效率','我学得很累','却很低'],dap:'我学得很累，效率却很低。',vn:'Tôi học rất vất vả mà hiệu quả lại rất thấp.',giai:'却 đứng sau chủ ngữ (效率) của vế sau, trước vị ngữ.'},
+    {manh:['让他','长时间的工作','感到非常疲劳'],dap:'长时间的工作让他感到非常疲劳。',vn:'Làm việc trong thời gian dài khiến anh ấy cảm thấy vô cùng mệt mỏi.',giai:'Chủ ngữ (长时间的工作) + 让 + người + 感到 + tính từ.'},
+    {manh:['明显','提高了','我的做题效率'],dap:'我的做题效率明显提高了。',vn:'Hiệu suất làm bài của tôi đã nâng lên rõ rệt.',giai:'Phó từ 明显 đứng trước động từ 提高了; chủ ngữ là cụm danh từ 我的做题效率.'},
     {manh:['反省一下','我每天晚上','自己','都会'],dap:'我每天晚上都会反省一下自己。',vn:'Mỗi tối tôi đều tự xem lại bản thân một chút.',giai:'Chủ ngữ + thời gian + 都会 + 反省一下 + 自己.'},
     {manh:['提高了','我的','总算','成绩'],dap:'我的成绩总算提高了。',vn:'Thành tích của tôi cuối cùng cũng tiến bộ.',giai:'Phó từ 总算 đứng sau chủ ngữ, trước động từ.'},
-    {manh:['认真思考','老师','提倡我们','一直'],dap:'老师一直提倡我们认真思考。',vn:'Thầy cô luôn khuyến khích chúng tôi suy nghĩ nghiêm túc.',giai:'提倡 + người + V: khuyến khích ai làm gì; 一直 đứng trước 提倡.'},
+    {manh:['把剩下的菜','提倡顾客','这家饭馆','带走'],dap:'这家饭馆提倡顾客把剩下的菜带走。',vn:'Nhà hàng này khuyến khích khách mang đồ ăn thừa về.',giai:'提倡 + người + V: khuyến khích ai làm gì; phần V dùng câu 把: 把剩下的菜带走.'},
     {manh:['更轻松','认真思考','让生活','能'],dap:'认真思考能让生活更轻松。',vn:'Suy nghĩ nghiêm túc có thể giúp cuộc sống nhẹ nhàng hơn.',giai:'Chủ ngữ (认真思考) + 能 + 让 + N + 更 + tính từ.'}
   ]
 };
@@ -1605,38 +1466,10 @@ var writingData = {
 var speakingData = {
   intro:'Ba câu đầu là <b>话题讨论</b> của sách (tr. 78: 学会思考), câu 4 mở rộng. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố dùng từ mới: 反省 · 效率 · 疲劳 · 步骤 · 总算 · 一来……二来…….',
   questions:[
-    {
-      q_zh:'你是一个平时爱思考的人吗？当你遇到不顺利的情况时，你通常会怎么做？',
-      q_vn:'Em có phải người hay suy nghĩ không? Khi gặp chuyện không thuận lợi, em thường làm gì?',
-      hint:'Trả lời có / không, rồi kể cách em thường làm (dùng 反省, 先……再……)',
-      sample:'我算是一个爱思考的人。遇到不顺利的事，我一般不马上着急，先安静下来反省一下，想想问题出在哪儿，再决定下一步怎么做。',
-      sample_vn:'Tôi được coi là người hay suy nghĩ. Gặp chuyện không thuận lợi, tôi thường không sốt ruột ngay, trước hết bình tĩnh lại tự xem xét, nghĩ xem vấn đề nằm ở đâu, rồi mới quyết định bước tiếp theo làm thế nào.',
-      note:'先……再…… (HSK 3) giúp kể các bước rõ ràng; 下一步 = bước tiếp theo.'
-    },
-    {
-      q_zh:'请以学习或工作中一次经历为例，说说思考对你有哪些帮助。',
-      q_vn:'Hãy lấy một trải nghiệm trong học tập hoặc công việc làm ví dụ, nói xem suy nghĩ đã giúp em những gì.',
-      hint:'Kể MỘT lần cụ thể: trước — suy nghĩ — sau (dùng 总算, 效率)',
-      sample:'高二的时候，我数学一直考不好，每天做很多题，可是效率很低。后来我反省了一下，发现自己总是不复习错题。改了方法以后，成绩总算提高了。',
-      sample_vn:'Hồi lớp 11, môn toán của tôi thi mãi không tốt, ngày nào cũng làm rất nhiều bài mà hiệu quả rất thấp. Sau đó tôi tự xem xét lại, phát hiện mình luôn không ôn lại những bài làm sai. Đổi cách học rồi, điểm cuối cùng cũng tiến bộ.',
-      note:'Đề yêu cầu “lấy một trải nghiệm làm ví dụ” — phải có câu chuyện cụ thể, không chỉ nói lý thuyết.'
-    },
-    {
-      q_zh:'思考和行动，两者哪个更重要？你怎么看这个问题？',
-      q_vn:'Suy nghĩ và hành động, cái nào quan trọng hơn? Em nhìn nhận vấn đề này thế nào?',
-      hint:'Chọn quan điểm rõ ràng, dùng 一来……，二来…… nêu lý do',
-      sample:'我觉得两者都重要，但应该先思考再行动。一来，想清楚了可以少走弯路；二来，行动的时候也更有信心。不过，只想不做也不行。',
-      sample_vn:'Tôi thấy cả hai đều quan trọng, nhưng nên suy nghĩ trước rồi hành động. Một là, nghĩ rõ ràng rồi có thể bớt đi đường vòng; hai là, lúc hành động cũng tự tin hơn. Tuy vậy, chỉ nghĩ mà không làm cũng không được.',
-      note:'Ôn điểm ngữ pháp 1: 一来……，二来…… để liệt kê lý do; 少走弯路 lấy từ phần 背景分析 của sách.'
-    },
-    {
-      q_zh:'你属于课文里说的哪一种“忙”？为什么？',
-      q_vn:'Em thuộc loại “bận” nào trong bài khoá? Vì sao?',
-      hint:'Chọn một trong ba loại (被动 / 主动 / 虚伪), dẫn một ví dụ',
-      sample:'说实话，我属于第一种忙。作业一多，我就被事情追着跑，很被动，每天都很疲劳。我希望以后能做工作的主人，忙而不乱。',
-      sample_vn:'Nói thật, tôi thuộc loại bận thứ nhất. Hễ bài tập nhiều là tôi bị công việc đuổi chạy, rất bị động, ngày nào cũng mệt mỏi. Tôi hy vọng sau này có thể làm chủ công việc, bận mà không rối.',
-      note:'Dùng lại cụm của bài khoá: 被事情追着, 工作的主人, 忙而不乱; 一……就…… (HSK 3).'
-    }
+    {q_zh:'你是一个平时爱思考的人吗？当你遇到不顺利的情况时，你通常会怎么做？',q_vn:'Em có phải người hay suy nghĩ không? Khi gặp chuyện không thuận lợi, em thường làm gì?',hint:'Trả lời có / không, rồi kể cách em thường làm (dùng 反省, 先……再……)',sample:'我算是一个爱思考的人。遇到不顺利的事，我一般不马上着急，先安静下来反省一下，想想问题出在哪儿，再决定下一步怎么做。',sample_vn:'Tôi được coi là người hay suy nghĩ. Gặp chuyện không thuận lợi, tôi thường không sốt ruột ngay, trước hết bình tĩnh lại tự xem xét, nghĩ xem vấn đề nằm ở đâu, rồi mới quyết định bước tiếp theo làm thế nào.',note:'先……再…… (HSK 3) giúp kể các bước rõ ràng; 下一步 = bước tiếp theo.'},
+    {q_zh:'请说说你学习中的一次经历：思考给了你哪些帮助？',q_vn:'Hãy kể một trải nghiệm trong học tập của em: suy nghĩ đã giúp em những gì?',hint:'Kể MỘT lần cụ thể: trước — suy nghĩ — sau (dùng 总算, 效率)',sample:'去年我的数学一直考不好，每天做很多题，可是效率很低。后来我反省了一下，发现自己总是不复习做错的题。改了方法以后，我的分数总算上去了。',sample_vn:'Năm ngoái môn toán của tôi thi mãi không tốt, ngày nào cũng làm rất nhiều bài mà hiệu quả rất thấp. Sau đó tôi tự xem xét lại, phát hiện mình luôn không ôn lại những bài làm sai. Đổi cách học rồi, điểm cuối cùng cũng tiến bộ.',note:'Đề yêu cầu kể một trải nghiệm — phải có câu chuyện cụ thể, không chỉ nói lý thuyết.'},
+    {q_zh:'思考和行动，哪个更重要？你怎么看这个问题？',q_vn:'Suy nghĩ và hành động, cái nào quan trọng hơn? Em nhìn nhận vấn đề này thế nào?',hint:'Chọn quan điểm rõ ràng, dùng 一来……，二来…… nêu lý do',sample:'我觉得都重要，但应该先思考再行动。一来，想清楚了可以少出错；二来，行动的时候也更有信心。不过，只想不做也不行。',sample_vn:'Tôi thấy cả hai đều quan trọng, nhưng nên suy nghĩ trước rồi hành động. Một là, nghĩ rõ ràng rồi có thể ít sai sót hơn; hai là, lúc hành động cũng tự tin hơn. Tuy vậy, chỉ nghĩ mà không làm cũng không được.',note:'Ôn điểm ngữ pháp: 一来……，二来…… để liệt kê lý do; 出错 = mắc lỗi, sai sót.'},
+    {q_zh:'你属于课文里说的哪一种“忙”？为什么？',q_vn:'Em thuộc loại “bận” nào trong bài khoá? Vì sao?',hint:'Chọn một trong ba loại (被动 / 主动 / 虚伪), dẫn một ví dụ',sample:'我觉得自己属于第一种忙。作业一多，我就被事情追着跑，很被动，每天都很疲劳。我希望以后能做工作的主人，忙而不乱。',sample_vn:'Tôi thấy mình thuộc loại bận thứ nhất. Hễ bài tập nhiều là tôi bị công việc đuổi chạy, rất bị động, ngày nào cũng mệt mỏi. Tôi hy vọng sau này có thể làm chủ công việc, bận mà không rối.',note:'Dùng lại cụm của bài khoá: 被事情追着, 工作的主人, 忙而不乱; 一……就…… (HSK 3).'}
   ]
 };
 
@@ -1736,51 +1569,11 @@ var listenExamData = {
 var situationData = {
   intro:'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items:[
-    {
-      scene:'Bạn thắc mắc vì sao dạo này em đi bộ đến trường mà không đi xe buýt.',
-      a:{sp:'Bạn',zh:'你最近怎么天天走路上学？为什么不坐公交车呢？',vn:'Dạo này sao ngày nào cậu cũng đi bộ đi học thế? Sao không đi xe buýt?'},
-      need:['Dùng 一来……，二来……'],
-      sample:'一来走路可以锻炼身体，二来早上公交车太挤了，走路也只要二十来分钟。',
-      samplePy:'Yī lái zǒu lù kěyǐ duànliàn shēntǐ, èr lái zǎoshang gōngjiāochē tài jǐ le, zǒu lù yě zhǐ yào èrshí lái fēnzhōng.',
-      sampleVn:'Một là đi bộ rèn luyện được sức khoẻ, hai là buổi sáng xe buýt đông quá, đi bộ cũng chỉ mất chừng hai mươi phút.',
-      tip:'一来……，二来…… liệt kê hai lý do (điểm ngữ pháp 1); 二十来分钟 = khoảng hai mươi phút — 来 chỉ số ước lượng.'
-    },
-    {
-      scene:'Bạn hỏi em về thầy giáo mới và lịch thi, nhưng em chỉ biết một nửa.',
-      a:{sp:'Bạn',zh:'新来的数学老师怎么样？什么时候期中考试？',vn:'Thầy toán mới thế nào? Bao giờ thi giữa kỳ?'},
-      need:['Dùng 至于'],
-      sample:'新老师讲课很清楚，也很有个性。至于什么时候考试，我也不太清楚，你问问班长吧。',
-      samplePy:'Xīn lǎoshī jiǎngkè hěn qīngchu, yě hěn yǒu gèxìng. Zhìyú shénme shíhou kǎoshì, wǒ yě bú tài qīngchu, nǐ wènwen bānzhǎng ba.',
-      sampleVn:'Thầy mới giảng rất dễ hiểu, cũng rất có cá tính. Còn khi nào thi thì mình cũng không rõ lắm, cậu hỏi lớp trưởng xem.',
-      tip:'Trả lời ý đã biết trước, rồi dùng 至于 chuyển sang ý chưa biết (điểm ngữ pháp 2).'
-    },
-    {
-      scene:'Mẹ hỏi bài tập nhóm em làm cả tháng nay đã xong chưa.',
-      a:{sp:'Mẹ',zh:'你们那个小组作业做完了没有？都一个月了。',vn:'Bài tập nhóm của các con làm xong chưa? Đã một tháng rồi đấy.'},
-      need:['Dùng 总算','Dùng 耽误'],
-      sample:'总算做完了！前几天有个同学生病，耽误了好几天，还好最后按时交了。',
-      samplePy:'Zǒngsuàn zuòwán le! Qián jǐ tiān yǒu ge tóngxué shēngbìng, dānwùle hǎo jǐ tiān, háihǎo zuìhòu ànshí jiāo le.',
-      sampleVn:'Cuối cùng cũng xong rồi mẹ ạ! Mấy hôm trước có bạn bị ốm, lỡ mất mấy ngày, may mà cuối cùng vẫn nộp đúng hạn.',
-      tip:'总算 thể hiện sự nhẹ nhõm sau thời gian dài (điểm ngữ pháp 3); 耽误了 + thời gian = lỡ mất ….'
-    },
-    {
-      scene:'Bạn thân khoe ngày nào cũng thức học đến 2 giờ sáng nhưng điểm vẫn không lên.',
-      a:{sp:'Bạn',zh:'我天天学到夜里两点，可成绩还是上不去，怎么办啊？',vn:'Ngày nào tớ cũng học đến 2 giờ sáng mà điểm vẫn không lên, làm sao bây giờ?'},
-      need:['Dùng 疲劳','Dùng 效率'],
-      sample:'你天天熬夜，身体太疲劳了，学习效率怎么会高呢？不如早点儿睡，早上再复习。',
-      samplePy:'Nǐ tiāntiān áoyè, shēntǐ tài píláo le, xuéxí xiàolǜ zěnme huì gāo ne? Bùrú zǎo diǎnr shuì, zǎoshang zài fùxí.',
-      sampleVn:'Cậu ngày nào cũng thức khuya, cơ thể mệt quá rồi, hiệu quả học sao mà cao được? Chi bằng ngủ sớm một chút, sáng dậy hẵng ôn.',
-      tip:'效率 đi với 高 / 低; câu phản vấn 怎么会……呢 nhấn mạnh “không thể”.'
-    },
-    {
-      scene:'Cả nhóm bị điểm thấp, một bạn cứ đổ lỗi cho đề khó và thầy chấm chặt.',
-      a:{sp:'Bạn',zh:'这次考得这么差，都怪题太难，老师又太严格！',vn:'Lần này thi tệ thế, đều tại đề khó quá, thầy lại khắt khe quá!'},
-      need:['Dùng 反省','Khuyên nhẹ nhàng'],
-      sample:'别总怪别人了，我们先反省一下自己吧，是不是复习的步骤有问题？',
-      samplePy:'Bié zǒng guài biérén le, wǒmen xiān fǎnxǐng yíxià zìjǐ ba, shì bu shì fùxí de bùzhòu yǒu wèntí?',
-      sampleVn:'Đừng cứ trách người khác nữa, bọn mình tự xem lại bản thân trước đi, có phải các bước ôn tập có vấn đề không?',
-      tip:'反省 + 自己: tự kiểm điểm — đúng tinh thần bài khoá “时时反省、总结”.'
-    }
+    {scene:'Bạn thắc mắc vì sao dạo này em đi bộ đến trường mà không đi xe nữa.',a:{sp:'Bạn',zh:'你最近怎么天天走路上学？为什么不骑车了？',vn:'Dạo này sao ngày nào cậu cũng đi bộ đi học thế? Sao không đạp xe nữa?'},need:['Dùng 一来……，二来……'],sample:'一来走路可以锻炼身体，二来早上路上车太多，走路也只要二十来分钟。',samplePy:'Yī lái zǒulù kěyǐ duànliàn shēntǐ, èr lái zǎoshang lù shang chē tài duō, zǒulù yě zhǐ yào èrshí lái fēnzhōng.',sampleVn:'Một là đi bộ rèn luyện được sức khoẻ, hai là buổi sáng đường đông xe quá, đi bộ cũng chỉ mất chừng hai mươi phút.',tip:'一来……，二来…… liệt kê hai lý do; 二十来分钟 = khoảng hai mươi phút — 来 chỉ số ước lượng.'},
+    {scene:'Bạn hỏi em về thầy giáo mới và lịch thi, nhưng em chỉ biết một nửa.',a:{sp:'Bạn',zh:'新来的数学老师怎么样？什么时候考试？',vn:'Thầy toán mới thế nào? Bao giờ thi?'},need:['Dùng 至于'],sample:'新老师讲课很清楚，也很有个性。至于什么时候考试，我也不太清楚，你问问班长吧。',samplePy:'Xīn lǎoshī jiǎngkè hěn qīngchu, yě hěn yǒu gèxìng. Zhìyú shénme shíhou kǎoshì, wǒ yě bú tài qīngchu, nǐ wènwen bānzhǎng ba.',sampleVn:'Thầy mới giảng rất dễ hiểu, cũng rất có cá tính. Còn khi nào thi thì mình cũng không rõ lắm, cậu hỏi lớp trưởng xem.',tip:'Trả lời ý đã biết trước, rồi dùng 至于 chuyển sang ý chưa biết.'},
+    {scene:'Mẹ hỏi bài tập nhóm em làm cả tháng nay đã xong chưa.',a:{sp:'Mẹ',zh:'你们那个小组作业做完了没有？都一个月了。',vn:'Bài tập nhóm của các con làm xong chưa? Đã một tháng rồi đấy.'},need:['Dùng 总算','Dùng 耽误'],sample:'昨天刚交上去，这下总算可以放心了！前几天有个同学生病，耽误了好几天。',samplePy:'Zuótiān gāng jiāo shàngqu, zhè xià zǒngsuàn kěyǐ fàngxīn le! Qián jǐ tiān yǒu ge tóngxué shēngbìng, dānwule hǎo jǐ tiān.',sampleVn:'Hôm qua vừa nộp xong ạ, lần này cuối cùng cũng yên tâm được rồi! Mấy hôm trước có bạn bị ốm, lỡ mất mấy ngày.',tip:'总算 thể hiện sự nhẹ nhõm sau thời gian dài; 耽误了 + thời gian = lỡ mất ….'},
+    {scene:'Bạn thân khoe ngày nào cũng thức học đến 2 giờ sáng nhưng điểm vẫn không lên.',a:{sp:'Bạn',zh:'我天天学到夜里两点，可成绩还是上不去，怎么办啊？',vn:'Ngày nào tớ cũng học đến 2 giờ sáng mà điểm vẫn không lên, làm sao bây giờ?'},need:['Dùng 疲劳','Dùng 效率'],sample:'你天天熬夜，身体太疲劳了，学习效率怎么会高呢？还是早点儿睡，早上再复习吧。',samplePy:'Nǐ tiāntiān áoyè, shēntǐ tài píláo le, xuéxí xiàolǜ zěnme huì gāo ne? Háishi zǎo diǎnr shuì, zǎoshang zài fùxí ba.',sampleVn:'Cậu ngày nào cũng thức khuya, cơ thể mệt quá rồi, hiệu quả học sao mà cao được? Tốt hơn là ngủ sớm một chút, sáng dậy hẵng ôn.',tip:'效率 đi với 高 / 低; câu phản vấn 怎么会……呢 nhấn mạnh “không thể”.'},
+    {scene:'Cả nhóm bị điểm thấp, một bạn cứ đổ lỗi cho đề khó và thầy chấm chặt.',a:{sp:'Bạn',zh:'这次考得这么差，都怪题太难，老师又太严格！',vn:'Lần này thi tệ thế, đều tại đề khó quá, thầy lại khắt khe quá!'},need:['Dùng 反省','Khuyên nhẹ nhàng'],sample:'别老怪别人了，我们先反省一下自己吧，是不是复习的步骤有问题？',samplePy:'Bié lǎo guài biérén le, wǒmen xiān fǎnxǐng yíxià zìjǐ ba, shì bu shì fùxí de bùzhòu yǒu wèntí?',sampleVn:'Đừng cứ trách người khác nữa, bọn mình tự xem lại bản thân trước đi, có phải các bước ôn tập có vấn đề không?',tip:'反省 + 自己: tự kiểm điểm — đúng tinh thần bài khoá “时时反省、总结”.'}
   ]
 };
 
@@ -1790,48 +1583,13 @@ var situationData = {
 var registerData = {
   intro:'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items:[
-    {
-      scene:'Loa thông báo ở sân bay.',
-      a:'按规定，小动物一律不准带上飞机。',
-      b:'小猫小狗什么的都别带上飞机啊。',
-      better:'a',
-      why:'Thông báo công cộng cần trang trọng: 按规定, 一律不准. Câu b là khẩu ngữ, như người nhà dặn nhau.'
-    },
-    {
-      scene:'Em nhắn tin cho bạn thân sau khi làm xong đống bài tập.',
-      a:'经过长时间的努力，本人已完成全部作业。',
-      b:'作业总算写完了，累死我了！',
-      better:'b',
-      why:'Nhắn bạn thân: 总算……了 + 累死我了 tự nhiên, có cảm xúc. Câu a cứng như báo cáo.'
-    },
-    {
-      scene:'Hãng hàng không gửi lời xin lỗi hành khách vì chuyến bay chậm.',
-      a:'由于天气原因，航班延误，耽误了您的宝贵时间，我们深表歉意。',
-      b:'不好意思啊，下雾了，飞机走不了，让你们等了半天。',
-      better:'a',
-      why:'Văn bản dịch vụ cần lịch sự, trang trọng: 由于, 您, 深表歉意. Câu b quá suồng sã.'
-    },
-    {
-      scene:'Hiệu trưởng phát biểu trong lễ chào cờ.',
-      a:'学校大力提倡同学们节约用水、用电。',
-      b:'大家可别乱用水电啊，太浪费钱了。',
-      better:'a',
-      why:'Phát biểu trước toàn trường dùng văn viết: 大力提倡, 节约. Câu b giống lời bố mẹ nhắc con.'
-    },
-    {
-      scene:'Em nhắn tin động viên bạn đang du học một mình.',
-      a:'独自在异国求学，难免感到寂寞，望保重。',
-      b:'一个人在国外肯定有点儿寂寞吧？想家了就给我打电话！',
-      better:'b',
-      why:'Tin nhắn bạn bè cần ấm áp, gần gũi: câu b tự nhiên. Câu a đúng nhưng như thư từ trang trọng (独自, 异国, 望保重).'
-    },
-    {
-      scene:'Một người lạ hỏi em đường đến thư viện và giờ đóng cửa.',
-      a:'关于图书馆闭馆时间的问题，本人无法提供准确信息。',
-      b:'图书馆就在前面左边，至于几点关门，我就不太清楚了。',
-      better:'b',
-      why:'Chỉ đường cho người lạ: câu b lịch sự mà tự nhiên, dùng 至于 chuyển ý. Câu a cứng như văn bản hành chính (本人, 无法提供).'
-    }
+    {scene:'Thông báo dán ở cửa phòng đọc của thư viện.',a:'图书馆规定：报纸、杂志一律不能带出去。',b:'报纸杂志可别拿走啊，看完放回去就行！',better:'a',why:'Thông báo chính thức cần ngắn gọn, trang trọng: 规定, 一律不能. Câu b là khẩu ngữ, như người nhà dặn nhau.'},
+    {scene:'Em nhắn tin cho bạn thân sau khi làm xong đống bài tập.',a:'经过长时间的努力，本人现在已经完成了全部作业。',b:'作业总算写完了，累死我了！',better:'b',why:'Nhắn bạn thân: 总算……了 + 累死我了 tự nhiên, có cảm xúc. Câu a cứng như báo cáo (经过长时间的努力, 本人).'},
+    {scene:'Em đến lớp muộn làm cả lớp phải chờ, em xin lỗi thầy.',a:'对不起，老师，我来晚了，耽误大家的时间了。',b:'哎呀，今天车特别多，我也没办法啊。',better:'a',why:'Xin lỗi thầy trước cả lớp cần lễ phép, nhận lỗi: 对不起 + 耽误大家的时间了. Câu b như đang đổ lỗi, thiếu lịch sự.'},
+    {scene:'Hiệu trưởng phát biểu trong lễ chào cờ.',a:'学校提倡同学们节约用水，从自己做起。',b:'大家可别乱用水啊，太浪费了。',better:'a',why:'Phát biểu trước toàn trường dùng văn viết: 提倡, 节约, 从自己做起. Câu b giống lời bố mẹ nhắc con.'},
+    {scene:'Em nhắn tin động viên bạn thân đang du học một mình.',a:'一个人在国外学习难免会感到寂寞，希望你注意身体，努力学习。',b:'一个人在国外肯定有点儿寂寞吧？想家了就给我打电话！',better:'b',why:'Tin nhắn bạn bè cần ấm áp, gần gũi: câu b tự nhiên. Câu a đúng nhưng giống lời thầy cô viết trong thư.'},
+    {scene:'Một người lạ hỏi em đường đến thư viện và giờ đóng cửa.',a:'关于图书馆几点关门的问题，本人无法提供准确的信息。',b:'图书馆就在前面左边，至于几点关门，我就不太清楚了。',better:'b',why:'Chỉ đường cho người lạ: câu b lịch sự mà tự nhiên, dùng 至于 chuyển ý. Câu a cứng như văn bản hành chính (本人, 无法提供).'},
+    {scene:'Trong cuộc họp, trưởng phòng nhắc một nhân viên vì tài liệu có số liệu sai.',a:'你又搞错了！到底怎么回事？',b:'这份材料里有几个数字不太准确，请你再检查一下。',better:'b',why:'Trong cuộc họp, nhắc nhở cần lịch sự, nói rõ vấn đề: 不太准确, 请你再检查一下. 又搞错了, 到底怎么回事 là khẩu ngữ trách móc, dễ làm người khác mất mặt.'}
   ]
 };
 

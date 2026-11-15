@@ -1437,28 +1437,21 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 của sách (tr. 92) + bài tập 3 (tr. 94) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'占',right:'优势'},
   {left:'体验',right:'新产品'},
-  {left:'扩大',right:'范围'},
-  {left:'制作',right:'乐器'},
+  {left:'考试',right:'范围'},
+  {left:'制作',right:'节目'},
   {left:'缺乏',right:'睡眠'},
-  {left:'一届',right:'学生'},
+  {left:'一届',right:'毕业生'},
   {left:'一份',right:'简历'},
-  {left:'一堆',right:'垃圾'},
+  {left:'一大堆',right:'脏衣服'},
   {left:'制订',right:'具体方案'},
   {left:'成立',right:'公司'},
-  {left:'制定',right:'法律'},
   {left:'光明的',right:'前途'},
-  {left:'应届',right:'毕业生'},
-  {left:'就业',right:'形势'},
-  {left:'现场',right:'直播'},
-  {left:'旅游',right:'体验师'},
-  {left:'出行',right:'顾问'},
-  {left:'休闲',right:'一日游'},
-  {left:'各行',right:'各业'},
   {left:'面对',right:'困难'}
 ];
 
@@ -1466,70 +1459,32 @@ var matchData = [
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'他是今年的应',blank:'届',post:'毕业生，下个月就毕业了。',hint:'(khoá)',ans:'届',exp:'届 = khóa, kỳ (lượng từ cho đợt tốt nghiệp, hội nghị): 应届毕业生 = sinh viên tốt nghiệp khóa năm nay.'},
-  {pre:'这个职位要求',blank:'本科',post:'以上学历。',hint:'(đại học chính quy)',ans:'本科'},
-  {pre:'',blank:'面对',post:'困难，我们不能放弃。',hint:'(đối mặt)',ans:'面对'},
-  {pre:'不管遇到什么困难，都要',blank:'乐观',post:'地面对生活。',hint:'(lạc quan)',ans:'乐观'},
-  {pre:'学好外语能给你带来更多的',blank:'就业',post:'机会。',hint:'(việc làm)',ans:'就业'},
-  {pre:'说',blank:'实话',post:'，这次考试我一点儿也没准备。',hint:'(lời nói thật)',ans:'实话'},
-  {pre:'会说汉语是你找工作的一大',blank:'优势',post:'。',hint:'(ưu thế)',ans:'优势'},
-  {pre:'毕业前，她给十几家公司投了',blank:'简历',post:'。',hint:'(CV)',ans:'简历'},
-  {pre:'这场足球比赛电视台会',blank:'现场',post:'直播。',hint:'(tại chỗ)',ans:'现场'},
-  {pre:'你来应聘我们网站的编辑',blank:'职位',post:'，有什么优势？',hint:'(vị trí)',ans:'职位'},
-  {pre:'这个暑假，我想去农村',blank:'体验',post:'生活。',hint:'(trải nghiệm)',ans:'体验'},
-  {pre:'李白听了老婆婆的话，很受感动。',blank:'从此',post:'他刻苦用功。',hint:'(từ đó)',ans:'从此',exp:'从此 = từ đó trở đi, mốc là việc vừa kể ở câu trước.'},
-  {pre:'这次比赛是在全国',blank:'范围',post:'内举行的。',hint:'(phạm vi)',ans:'范围'},
-  {pre:'我和她是',blank:'初中',post:'同学，已经认识六年了。',hint:'(cấp hai)',ans:'初中'},
-  {pre:'公司请了一位律师当法律',blank:'顾问',post:'。',hint:'(cố vấn)',ans:'顾问'},
-  {pre:'这只是我个人意见，仅供你',blank:'参考',post:'。',hint:'(tham khảo)',ans:'参考'},
-  {pre:'父母都希望孩子能健康快乐地',blank:'成长',post:'。',hint:'(lớn lên)',ans:'成长'},
-  {pre:'这个玩具是我爸爸亲手为我',blank:'制作',post:'的。',hint:'(làm ra)',ans:'制作'},
-  {pre:'新年晚会上，同学们都展示了自己的',blank:'才艺',post:'。',hint:'(tài lẻ)',ans:'才艺'},
-  {pre:'',blank:'假设',post:'我要从国贸到鼓楼大街，该怎么乘车？',hint:'(giả sử)',ans:'假设'},
-  {pre:'',blank:'乘',post:'地铁的时候，请给老人让座。',hint:'(đi — văn viết)',ans:'乘',exp:'乘 + phương tiện = đi, đáp (văn viết, như 坐): 乘地铁.'},
-  {pre:'我们已经安全地',blank:'到达',post:'目的地了。',hint:'(đến nơi)',ans:'到达'},
-  {pre:'这家饭馆的',blank:'老板',post:'对客人特别热情。',hint:'(ông chủ)',ans:'老板'},
-  {pre:'会议快要开始了，代表们',blank:'陆续',post:'走进了会场。',hint:'(lần lượt)',ans:'陆续',exp:'陆续 = lần lượt, nối tiếp nhau (không cùng một lúc): 陆续走进了会场.'},
-  {pre:'有不懂的地方，大家可以随时',blank:'提问',post:'。',hint:'(đặt câu hỏi)',ans:'提问'},
-  {pre:'这些零件怎么都',blank:'堆',post:'在这儿啊？',hint:'(chất đống)',ans:'堆'},
-  {pre:'公园里有很多年轻',blank:'情侣',post:'在散步。',hint:'(cặp đôi)',ans:'情侣'},
-  {pre:'考试以前，我',blank:'制订',post:'了一个详细的复习计划。',hint:'(lập ra)',ans:'制订'},
-  {pre:'周末我最喜欢的',blank:'休闲',post:'活动是去公园骑自行车。',hint:'(thư giãn)',ans:'休闲'},
-  {pre:'因为天气影响，我们的活动推迟了，',blank:'具体',post:'时间再等通知。',hint:'(cụ thể)',ans:'具体'},
-  {pre:'他看书的时候非常',blank:'专注',post:'，连妈妈叫他都没听见。',hint:'(tập trung)',ans:'专注'},
-  {pre:'前两局棋输给爸爸，他',blank:'显然',post:'并不担心。',hint:'(rõ ràng)',ans:'显然',exp:'显然 = rõ ràng (ai cũng thấy được): 他显然并不担心.'},
-  {pre:'我们学校',blank:'成立',post:'了一个汉语俱乐部。',hint:'(thành lập)',ans:'成立'},
-  {pre:'这个问题我们会反映给有关',blank:'部门',post:'。',hint:'(cơ quan, bộ phận)',ans:'部门'},
-  {pre:'她对音乐非常',blank:'执着',post:'，练了十年钢琴从没放弃。',hint:'(bền bỉ)',ans:'执着'},
-  {pre:'来我们公司工作，你的前途一片',blank:'光明',post:'！',hint:'(tươi sáng)',ans:'光明'},
-  {pre:'很多人觉得这个专业很有',blank:'前途',post:'。',hint:'(triển vọng)',ans:'前途'},
-  {pre:'我姐姐在旅游',blank:'行业',post:'工作了五年。',hint:'(ngành)',ans:'行业'},
-  {pre:'很多中学生学习压力大，',blank:'缺乏',post:'锻炼和睡眠。',hint:'(thiếu)',ans:'缺乏'},
-  {pre:'他叫',blank:'刘辰',post:'，是一个年仅23岁的应届本科毕业生。',hint:'(Lưu Thần)',ans:'刘辰'},
-  {pre:'',blank:'天津卫视',post:'的《非你莫属》节目组看了他的简历。',hint:'(Kênh truyền hình Thiên Tân)',ans:'天津卫视'},
-  {pre:'很多毕业生通过《',blank:'非你莫属',post:'》找到了工作。',hint:'("Chỉ thuộc về bạn")',ans:'非你莫属'},
-  {pre:'在',blank:'国贸',post:'坐1路车，到天安门东，换乘82路。',hint:'(Quốc Mậu)',ans:'国贸'},
-  {pre:'请问，我想去',blank:'鼓楼大街',post:'，应该怎么坐车？',hint:'(đường Cổ Lâu)',ans:'鼓楼大街'},
-  {pre:'在前面坐1路，到',blank:'天安门东',post:'，然后换乘3路。',hint:'(trạm Thiên An Môn Đông)',ans:'天安门东'}
+  {pre:'虽然病得很重，但他一直很',blank:'乐观',post:'，每天都笑着跟大家聊天。',hint:'(lạc quan)',ans:'乐观',exp:'乐观 = lạc quan, luôn nhìn về mặt tốt: 性格乐观, 乐观地面对.'},
+  {pre:'这个专业的',blank:'就业',post:'情况很好，毕业生很快都能找到工作。',hint:'(có việc làm, tìm việc)',ans:'就业',exp:'就业 = có việc làm: 就业情况, 就业形势, 就业机会.'},
+  {pre:'找工作以前，你得先写一份好的',blank:'简历',post:'。',hint:'(sơ yếu lý lịch, CV)',ans:'简历',exp:'简历 = CV; lượng từ 份: 一份简历; 写简历, 发简历.'},
+  {pre:'比赛',blank:'现场',post:'有两万多名观众，气氛非常热烈。',hint:'(nơi diễn ra, tại chỗ)',ans:'现场',exp:'现场 = nơi đang diễn ra sự việc: 比赛现场, 节目现场; 现场直播 = truyền hình trực tiếp.'},
+  {pre:'他在公司工作了十年，',blank:'职位',post:'越来越高，工资也越来越多。',hint:'(chức vụ, vị trí công việc)',ans:'职位',exp:'职位 = chức vụ, vị trí công việc: 职位高, 适合的职位.'},
+  {pre:'这次考试的',blank:'范围',post:'是第一课到第十课。',hint:'(phạm vi)',ans:'范围',exp:'范围 = phạm vi: 考试范围, 在……范围内.'},
+  {pre:'这家公司请了一位老教授当',blank:'顾问',post:'，遇到难题就去问他。',hint:'(cố vấn)',ans:'顾问',exp:'顾问 = cố vấn: 当顾问, 法律顾问, 技术顾问.'},
+  {pre:'写作文的时候，你可以',blank:'参考',post:'一下这几篇文章。',hint:'(tham khảo)',ans:'参考',exp:'参考 = tham khảo: 参考一下, 给你参考, 参考书.'},
+  {pre:'我们班',blank:'成立',post:'了一个汉语学习小组，每周活动一次。',hint:'(thành lập)',ans:'成立',exp:'成立 + 公司 / 小组 / 部门 = thành lập (tổ chức).'},
+  {pre:'这个问题我们解决不了，你应该去找有关',blank:'部门',post:'。',hint:'(bộ phận, cơ quan)',ans:'部门',exp:'部门 = bộ phận, phòng ban, cơ quan: 有关部门, 销售部门.'},
+  {pre:'你毕业以后想进哪个',blank:'行业',post:'？旅游、教育还是银行？',hint:'(ngành, nghề)',ans:'行业',exp:'行业 = ngành nghề: 旅游行业, 这个行业.'},
+  {pre:'他的房间里有一大',blank:'堆',post:'脏衣服，一个星期都没洗了。',hint:'(đống — lượng từ)',ans:'堆',exp:'堆 làm lượng từ cho đồ vật chất thành đống: 一堆衣服, 一大堆书.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (从此 · 假设 · 堆) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['小学六年级时，他','迷上了','公交车','，','从此','一直','关注','公交线路','。'],ans:'小学六年级时，他迷上了公交车，从此一直关注公交线路。',audio:'小学六年级时，他迷上了公交车，从此一直关注公交线路。'},
-  {words:['他十年前','来到中国','，','从此','爱上了','中国菜','。'],ans:'他十年前来到中国，从此爱上了中国菜。',audio:'他十年前来到中国，从此爱上了中国菜。'},
-  {words:['医生','让他','少吃肉','，','他从此','不再','吃','快餐','了','。'],ans:'医生让他少吃肉，他从此不再吃快餐了。',audio:'医生让他少吃肉，他从此不再吃快餐了。'},
-  {words:['假设','明天','下雨','，','我们','怎么办','？'],ans:'假设明天下雨，我们怎么办？',audio:'假设明天下雨，我们怎么办？'},
-  {words:['您','当年的','假设','已经','被','证明','是对的','。'],ans:'您当年的假设已经被证明是对的。',audio:'您当年的假设已经被证明是对的。'},
-  {words:['这是','一种','大胆的','假设','，','但','不一定','是科学的','。'],ans:'这是一种大胆的假设，但不一定是科学的。',audio:'这是一种大胆的假设，但不一定是科学的。'},
-  {words:['他','报了','一大堆','公交车','的','名字','。'],ans:'他报了一大堆公交车的名字。',audio:'他报了一大堆公交车的名字。'},
-  {words:['这些','零件','怎么','都','堆在','这儿','啊','？'],ans:'这些零件怎么都堆在这儿啊？',audio:'这些零件怎么都堆在这儿啊？'},
-  {words:['工厂','旁边','有','一个','建筑材料堆','。'],ans:'工厂旁边有一个建筑材料堆。',audio:'工厂旁边有一个建筑材料堆。'},
-  {words:['她的','反应','是','在','正常范围内','的','。'],ans:'她的反应是在正常范围内的。',audio:'她的反应是在正常范围内的。'},
-  {words:['代表们','已经','陆续','到达了','会场','。'],ans:'代表们已经陆续到达了会场。',audio:'代表们已经陆续到达了会场。'},
-  {words:['他的','成长过程','可以','给你','参考','。'],ans:'他的成长过程可以给你参考。',audio:'他的成长过程可以给你参考。'},
-  {words:['专注的人','永远','不缺','机会','！'],ans:'专注的人永远不缺机会！',audio:'专注的人永远不缺机会！'}
+  {words:['去年','他','在网上','认识了','一位中国朋友','，','从此','开始','学汉语','。'],ans:'去年他在网上认识了一位中国朋友，从此开始学汉语。',audio:'去年他在网上认识了一位中国朋友，从此开始学汉语。',alt:['他去年在网上认识了一位中国朋友，从此开始学汉语。']},
+  {words:['假设','明天','下雨','，','我们的','活动','怎么办','？'],ans:'假设明天下雨，我们的活动怎么办？',audio:'假设明天下雨，我们的活动怎么办？'},
+  {words:['别','把','东西','都','堆在','门口','，','大家','走不过去','。'],ans:'别把东西都堆在门口，大家走不过去。',audio:'别把东西都堆在门口，大家走不过去。'},
+  {words:['放假以后','，','同学们','陆续','回了','老家','。'],ans:'放假以后，同学们陆续回了老家。',audio:'放假以后，同学们陆续回了老家。'},
+  {words:['我们','打算','乘','晚上八点的','飞机','去上海','。'],ans:'我们打算乘晚上八点的飞机去上海。',audio:'我们打算乘晚上八点的飞机去上海。'},
+  {words:['做事','专注','是','她','最大的','优势','。'],ans:'做事专注是她最大的优势。',audio:'做事专注是她最大的优势。'},
+  {words:['弟弟','上了','初中','以后','，','变得','越来越','懂事了','。'],ans:'弟弟上了初中以后，变得越来越懂事了。',audio:'弟弟上了初中以后，变得越来越懂事了。'},
+  {words:['老师','刚','讲完','，','就有','好几个同学','举手','提问','。'],ans:'老师刚讲完，就有好几个同学举手提问。',audio:'老师刚讲完，就有好几个同学举手提问。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1537,76 +1492,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'那两只羊看见青草后是什么____？',opts:['反映','反应','反对','反而'],ans:1,
-   exp:'Hành động khi bị tác động → 反应 (câu mẫu phần 词语辨析 của sách).'},
-  {wrong:'请放心，我会把你的意见____给学校。',opts:['反应','报告','反映','提问'],ans:2,
-   exp:'Báo cáo ý kiến lên cấp trên → 反映给…… (câu của sách). 反应 không có nghĩa này.'},
-  {wrong:'这个电影____了中国年轻一代的新变化。',opts:['反映','反应','体验','到达'],ans:0,
-   exp:'Thể hiện bản chất, có tân ngữ → 反映. 反应 không mang tân ngữ.'},
-  {wrong:'我们已经安全地____目的地了。',opts:['达到','到达','成立','制订'],ans:1,
-   exp:'目的地 là địa điểm → 到达 (bài tập 2 của sách). 达到 dùng cho mục tiêu, tiêu chuẩn.'},
-  {wrong:'只要努力，你一定能____自己的目标。',opts:['到达','达到','面对','参考'],ans:1,
-   exp:'Mục tiêu trừu tượng → 达到.'},
-  {wrong:'这个玩具是我爸爸亲手为我____的。',opts:['制作','制造','制订','成立'],ans:0,
-   exp:'Tự tay làm đồ chơi → 制作 (bài tập 2 của sách). 制造 là sản xuất công nghiệp.'},
-  {wrong:'我们____他明天9点能出发，那么10点可以到这儿。',opts:['假如','假设','如果','要是'],ans:1,
-   exp:'Câu của sách (bài tập 2): 我们 + 假设 + mệnh đề — 假设 là động từ có chủ ngữ phía trước. 假如 / 如果 / 要是 là liên từ, không đứng sau chủ ngữ 我们 theo cách này.'},
-  {wrong:'来我们公司工作，你的前途一片____！',opts:['明亮','光明','光亮','明白'],ans:1,
-   exp:'前途一片光明 (bài tập 2 của sách). 明亮 tả ánh sáng thật (明亮的教室).'},
-  {wrong:'说实话，我觉得自己实在没什么____。',opts:['优秀','优美','优势','优良'],ans:2,
-   exp:'没什么优势 = không có ưu thế gì (câu trong bài). 优秀 là tính từ, không đứng sau 没什么 theo cách này.'},
-  {wrong:'这个球队个子高，在比赛中很占____。',opts:['优势','位置','职位','范围'],ans:0,
-   exp:'占优势 = chiếm ưu thế (bảng 搭配 của sách).'},
-  {wrong:'学校要求每个学生都要多参加运动，因为很多同学____锻炼。',opts:['缺点','缺乏','缺席','缺口'],ans:1,
-   exp:'缺乏锻炼 = thiếu vận động (bảng 搭配 của sách).'},
-  {wrong:'他反应虽然快，但____功没有小张好。',opts:['基础','基本','根本','本科'],ans:1,
-   exp:'基本功 = kỹ năng cơ bản (bài nghe số 5).'},
-  {wrong:'他有问必答，准确无误地报了一大____公交车的名字。',opts:['堆','群','份','届'],ans:0,
-   exp:'一大堆 + danh sách tên (đồ vật nhiều) → 堆 (注释 của sách).'},
-  {wrong:'一个小师弟结婚才半年，就跑过来找我诉苦，说妻子每天都要挑出他一大____毛病。',opts:['份','堆','届','位'],ans:1,
-   exp:'一大堆毛病 = cả đống tật xấu (注释 của sách).'},
-  {wrong:'我们学校第十____运动会下个月举行。',opts:['位','届','份','堆'],ans:1,
-   exp:'第 + số + 届 + sự kiện định kỳ (运动会, 会议).'},
-  {wrong:'他是个公交迷，北京市所有的公交线路他都了如____。',opts:['指导','指出','指掌','手指'],ans:2,
-   exp:'了如指掌 = rõ như lòng bàn tay (thành ngữ trong bài).'},
-  {wrong:'老总们甚至要专门为他____有关的部门。',opts:['建设','成立','组成','制订'],ans:1,
-   exp:'成立 + 部门 (câu trong bài). 建设 đi với 国家 / 家乡; 制订 đi với 计划 / 方案.'},
-  {wrong:'你们给的工资是不是太高了？——专业的、____的、优秀的人才是无价的。',opts:['执着','乐观','显然','具体'],ans:0,
-   exp:'Tả phẩm chất nhân tài: bền bỉ theo đuổi → 执着 (câu trong bài).'},
-  {wrong:'他的回答让台上的12位____都兴奋了起来。',opts:['老师','老板','老人','老家'],ans:1,
-   exp:'Người tuyển dụng trên sân khấu → 老板.'},
-  {wrong:'从上初中起，他就是同学们的出行____。',opts:['顾客','顾问','提问','学问'],ans:1,
-   exp:'出行顾问 = "cố vấn đi lại". 顾客 là khách hàng.'}
+  {wrong:'我把这件事告诉他，他一点儿____也没有，好像早就知道了。',opts:['反应','反映','反对','反省'],ans:0,exp:'反应 = phản ứng (của người trước một việc): 没有反应, 反应很快. 反映 là phản ánh, báo cáo lên trên; 反对 là phản đối; 反省 là tự kiểm điểm.'},
+  {wrong:'我们已经把这个问题____给经理了，他说明天给大家回答。',opts:['反映','反应','提问','参考'],ans:0,exp:'反映 + 问题 + 给 + người = báo cáo, phản ánh lên. 反应 không mang tân ngữ 问题 như vậy; 提问 là đặt câu hỏi (không đi với 给经理); 参考 là tham khảo.'},
+  {wrong:'飞机晚上十点____上海，我们去机场接他吧。',opts:['到达','达到','成立','面对'],ans:0,exp:'到达 + nơi chốn = đến (một địa điểm). 达到 + mục tiêu / tiêu chuẩn / trình độ, không đi với địa danh; 成立, 面对 không hợp nghĩa.'},
+  {wrong:'再练习一年，你的汉语一定能____这个水平。',opts:['达到','到达','成长','成立'],ans:0,exp:'达到 + 水平 / 目标 / 要求 = đạt tới (mức độ trừu tượng). 到达 chỉ dùng cho nơi chốn; 成长 là trưởng thành; 成立 là thành lập.'},
+  {wrong:'我们班用一个星期____了一个介绍越南菜的小节目。',opts:['制作','制造','制订','成立'],ans:0,exp:'制作 = làm ra (sản phẩm nhỏ, phim, chương trình, đồ thủ công). 制造 dùng cho sản xuất công nghiệp (máy móc, ô tô) hoặc 制造麻烦; 制订 + 计划 / 方案; 成立 + tổ chức.'},
+  {wrong:'这个国家____的手机卖到了全世界。',opts:['制造','制作','制订','成长'],ans:0,exp:'Sản xuất hàng công nghiệp hàng loạt (手机, 机器) → 制造. 制作 dùng cho đồ làm thủ công, chương trình; 制订 + 计划; 成长 là lớn lên.'},
+  {wrong:'小学五年级时，我得了一次游泳比赛的第一名，____每天早上都去游泳。',opts:['从此','从来','从前','曾经'],ans:0,exp:'从此 = từ đó trở đi, đứng đầu vế sau, sau một sự việc làm mốc (thường + 就 / 一直). 从来 đi với phủ định (从来不); 从前 là “ngày trước”; 曾经 là “đã từng” (việc đã qua), không nói thói quen kéo dài từ đó.'},
+  {wrong:'这只是一个____，还需要更多的研究来证明。',opts:['假设','假如','如果','要是'],ans:0,exp:'假设 còn là DANH TỪ (giả thuyết): 一个假设, 他的假设. 假如, 如果, 要是 chỉ là liên từ, không đứng sau 一个.'},
+  {wrong:'我想去农村住几天，____一下那里的生活。',opts:['体验','经验','实验','经过'],ans:0,exp:'体验 + 生活 = trải nghiệm. 经验 là danh từ (kinh nghiệm), không nói 经验一下; 实验 là thí nghiệm; 经过 là đi qua.'},
+  {wrong:'今年这一____毕业生找工作特别难。',opts:['届','堆','份','件'],ans:0,exp:'届 là lượng từ cho khoá tốt nghiệp, kỳ (hội nghị, đại hội): 这一届毕业生, 上一届. 堆 không dùng cho người đáng tôn trọng; 份 cho CV, báo; 件 cho đồ vật, sự việc.'},
+  {wrong:'光说“好好学习”没用，你得有一个____的计划。',opts:['具体','显然','乐观','专注'],ans:0,exp:'具体 = cụ thể, chi tiết: 具体的计划, 具体时间. 显然 là “rõ ràng là”; 乐观 là lạc quan; 专注 là chuyên chú — đều không tả 计划.'},
+  {wrong:'他连这么简单的问题都回答不出来，____没有认真复习。',opts:['显然','具体','执着','光明'],ans:0,exp:'显然 = rõ ràng là (suy ra từ sự thật trước đó), đứng trước vị ngữ. 具体, 执着, 光明 là tính từ, không mang nghĩa suy đoán này.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Hồi lên cấp hai, tôi mê vẽ vì một bộ phim hoạt hình, từ đó ngày nào cũng vẽ một tiếng.',zh:'上初中时我因为一部动画片迷上了画画，从此每天都要画一个小时。',py:'Shàng chūzhōng shí wǒ yīnwèi yí bù dònghuàpiàn míshangle huà huà, cóngcǐ měi tiān dōu yào huà yí ge xiǎoshí.',goiY:['初中','因为','从此'],giai:'从此 đứng đầu vế sau, sau một sự việc làm mốc = "từ đó trở đi"; không đặt mốc thời gian cụ thể ngay sau 从此.'},
-  {vi:'Tuy điểm của tôi không tệ, nhưng nói thật tôi cũng chẳng biết mình có thế mạnh gì.',zh:'虽然我成绩不错，但说实话我并不知道自己有什么优势。',py:'Suīrán wǒ chéngjì búcuò, dàn shuō shíhuà wǒ bìng bù zhīdào zìjǐ yǒu shénme yōushì.',goiY:['虽然……但……','说实话','优势'],giai:'说实话 = nói thật, là thành phần xen giữa câu; 并不 nhấn mạnh phủ định ("hoàn toàn không như người ta nghĩ").'},
-  {vi:'Trên bàn học của tôi chất cả một đống sách tham khảo, thảo nào mẹ bảo phòng tôi như thư viện.',zh:'我的书桌上堆着一大堆参考书，难怪妈妈说我的房间像个图书馆。',py:'Wǒ de shūzhuō shang duīzhe yí dà duī cānkǎoshū, nánguài māma shuō wǒ de fángjiān xiàng ge túshūguǎn.',goiY:['堆','参考书','难怪'],giai:'堆 dùng hai lần: động từ (堆着 = chất đống) và lượng từ (一大堆 = cả một đống); 难怪 = thảo nào.'},
-  {vi:'Giả sử mai bạn phải đi phỏng vấn mà đến một bản sơ yếu lý lịch cũng chưa chuẩn bị xong, thì bạn sẽ làm thế nào?',zh:'假设你明天就要去面试，却连一份简历都还没准备好，你会怎么办？',py:'Jiǎshè nǐ míngtiān jiù yào qù miànshì, què lián yí fèn jiǎnlì dōu hái méi zhǔnbèi hǎo, nǐ huì zěnme bàn?',goiY:['假设','连……都……','简历'],giai:'假设 + tình huống giả định ở đầu câu, câu hỏi đặt ở vế cuối; 连……都 nhấn mạnh ngay cả điều tối thiểu cũng chưa có.'},
-  {vi:'Cho dù không có tài lẻ gì đặc biệt, chỉ cần đủ chuyên tâm vào một việc, bạn sẽ tìm được chỗ đứng của riêng mình.',zh:'即使没有什么特别的才艺，只要对一件事足够专注，你就能找到属于自己的位置。',py:'Jíshǐ méiyǒu shénme tèbié de cáiyì, zhǐyào duì yí jiàn shì zúgòu zhuānzhù, nǐ jiù néng zhǎodào shǔyú zìjǐ de wèizhi.',goiY:['即使……','只要……就……','才艺','专注'],giai:'即使 nêu giả thiết bất lợi, 只要……就 nêu điều kiện đủ để thành công — hai quan hệ lồng vào nhau; 专注 = chuyên tâm, dồn hết sự chú ý.'},
-  {vi:'Lần nào bạn cũng phản ứng nhanh nhất trước câu hỏi của thầy cô, rõ ràng là nhờ đã chuẩn bị bài kỹ trước giờ học.',zh:'你每次都能对老师的提问做出最快的反应，显然是因为课前认真预习过。',py:'Nǐ měi cì dōu néng duì lǎoshī de tíwèn zuòchū zuì kuài de fǎnyìng, xiǎnrán shì yīnwèi kè qián rènzhēn yùxí guo.',goiY:['提问','反应','显然'],giai:'显然 = rõ ràng (suy luận chắc chắn từ sự thật), đứng đầu vế sau; 对……做出反应 = phản ứng trước ….'},
-  {vi:'Sau khi khai giảng, các bạn lần lượt gia nhập câu lạc bộ nhiếp ảnh mới thành lập, thế là nhà trường dành riêng cho nó một phòng sinh hoạt.',zh:'开学后，同学们陆续加入了新成立的摄影社，于是学校专门为它安排了一间活动室。',py:'Kāixué hòu, tóngxuémen lùxù jiārùle xīn chénglì de shèyǐngshè, yúshì xuéxiào zhuānmén wèi tā ānpáile yì jiān huódòngshì.',goiY:['陆续','成立','于是'],giai:'陆续 = lần lượt, nối tiếp nhau (nhiều người / việc trong một khoảng thời gian); 于是 nối sự việc tiếp theo do vế trước dẫn tới.'},
-  {vi:'Dù sau này bước vào ngành nào, nếu thiếu tinh thần kiên trì theo đuổi, bạn cũng khó mà đi được lâu dài.',zh:'无论将来进入哪个行业，如果缺乏执着的精神，你都很难走得长远。',py:'Wúlùn jiānglái jìnrù nǎge hángyè, rúguǒ quēfá zhízhuó de jīngshén, nǐ dōu hěn nán zǒu de chángyuǎn.',goiY:['无论……都……','缺乏','执着','行业'],giai:'无论 + từ nghi vấn (哪个) + 都: trong mọi trường hợp; 执着 ở đây mang nghĩa tích cực = kiên trì theo đuổi, không dịch "cố chấp".'},
-  {vi:'Lớp trưởng không chỉ giúp mọi người lập kế hoạch ôn tập cụ thể, thậm chí còn sắp xếp xong cả hoạt động giải trí cuối tuần, đúng là "cố vấn" của cả lớp.',zh:'班长不但帮大家制订了具体的复习计划，甚至连周末的休闲活动都安排好了，简直是全班的“顾问”。',py:'Bānzhǎng búdàn bāng dàjiā zhìdìngle jùtǐ de fùxí jìhuà, shènzhì lián zhōumò de xiūxián huódòng dōu ānpái hǎo le, jiǎnzhí shì quán bān de "gùwèn".',goiY:['不但……甚至……','制订','具体','简直'],giai:'不但……甚至…… tăng tiến, 甚至 đưa ra ví dụ cực điểm (thường kèm 连……都); 制订 = lập (kế hoạch, phương án), khác 制定 (đặt ra luật lệ).'},
-  {vi:'Trước tình hình việc làm chẳng mấy khả quan, thay vì cả ngày than phiền, chi bằng tập trung vào lĩnh vực mình yêu thích, bởi người kiên trì theo đuổi thường có tương lai tươi sáng.',zh:'面对并不乐观的就业形势，与其整天抱怨，不如专注于自己感兴趣的领域，因为执着的人往往会有光明的前途。',py:'Miànduì bìng bú lèguān de jiùyè xíngshì, yǔqí zhěngtiān bàoyuàn, bùrú zhuānzhù yú zìjǐ gǎn xìngqù de lǐngyù, yīnwèi zhízhuó de rén wǎngwǎng huì yǒu guāngmíng de qiántú.',goiY:['面对','与其……不如……','专注','光明的前途'],giai:'与其 A 不如 B = thay vì A chi bằng B; 面对 + danh từ trừu tượng (形势, 困难) = đối mặt với, trước ….'}
+  {vi:'Hồi cấp hai tôi mê vẽ vì một bộ phim hoạt hình, từ đó ngày nào cũng vẽ một tiếng đồng hồ.',zh:'上初中时我因为一部动画片迷上了画画，从此每天都要画一个小时。',py:'Shàng chūzhōng shí wǒ yīnwèi yí bù dònghuàpiàn míshangle huàhuà, cóngcǐ měi tiān dōu yào huà yí ge xiǎoshí.',goiY:['初中','迷上','从此'],giai:'Vế trước là sự việc làm mốc (迷上了画画), 从此 mở đầu vế sau nói thói quen kéo dài từ đó.'},
+  {vi:'Tuy thành tích của tôi không tệ, nhưng nói thật là tôi không hề biết mình có ưu thế gì.',zh:'虽然我成绩不错，但说实话我并不知道自己有什么优势。',py:'Suīrán wǒ chéngjì búcuò, dàn shuō shíhuà wǒ bìng bù zhīdào zìjǐ yǒu shénme yōushì.',goiY:['说实话','并不','优势'],giai:'说实话 làm thành phần chen vào câu (= nói thật); 并不 nhấn mạnh phủ định trái với điều người ta tưởng.'},
+  {vi:'Trên bàn học của tôi chất cả một đống sách tham khảo, vì vậy mẹ hay nói phòng tôi giống cái thư viện.',zh:'我的书桌上堆着一大堆参考书，所以妈妈常说我的房间像个图书馆。',py:'Wǒ de shūzhuō shang duīzhe yí dà duī cānkǎoshū, suǒyǐ māma cháng shuō wǒ de fángjiān xiàng ge túshūguǎn.',goiY:['堆着','一大堆'],giai:'Câu tồn hiện: nơi chốn + 堆着 (động từ) + 一大堆 (lượng từ) + N.'},
+  {vi:'Giả sử ngày mai cậu phải đi phỏng vấn mà đến một bản CV cũng chưa chuẩn bị xong, cậu sẽ làm thế nào?',zh:'假设你明天就要去面试，却连一份简历都还没准备好，你会怎么办？',py:'Jiǎshè nǐ míngtiān jiù yào qù miànshì, què lián yí fèn jiǎnlì dōu hái méi zhǔnbèi hǎo, nǐ huì zěnme bàn?',goiY:['假设……，……？','连……都……','简历'],giai:'假设 đứng đầu câu nêu tình huống giả định, vế sau là câu hỏi; 连……都…… nhấn mạnh.'},
+  {vi:'Cho dù không có tài lẻ gì đặc biệt, chỉ cần thật chuyên tâm vào một việc, bạn sẽ tìm được vị trí thuộc về mình.',zh:'即使没有什么特别的才艺，只要对一件事特别专注，你就能找到属于自己的位置。',py:'Jíshǐ méiyǒu shénme tèbié de cáiyì, zhǐyào duì yí jiàn shì tèbié zhuānzhù, nǐ jiù néng zhǎodào shǔyú zìjǐ de wèizhì.',goiY:['即使……也','才艺','只要……就……','专注'],giai:'即使 nêu giả thiết nhượng bộ; 只要……就…… nêu điều kiện đủ; 对……专注 = chuyên tâm vào….'},
+  {vi:'Dù sau này vào ngành nào, nếu thiếu tinh thần kiên trì theo đuổi, bạn đều khó đi được đường dài.',zh:'无论将来进入哪个行业，如果缺乏执着的精神，你都很难走得长远。',py:'Wúlùn jiānglái jìnrù nǎ ge hángyè, rúguǒ quēfá zhízhuó de jīngshén, nǐ dōu hěn nán zǒu de chángyuǎn.',goiY:['无论……都……','行业','缺乏','执着'],giai:'无论 + từ nghi vấn (哪个), vế sau có 都; 缺乏 + danh từ trừu tượng (精神, 经验).'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Tuy Lưu Thần — sinh viên đại học khóa năm nay — chỉ còn một tháng nữa là tốt nghiệp, nhưng công việc của cậu vẫn chưa đâu vào đâu.',zh:'虽然应届本科毕业生刘辰再过一个月就要毕业了，但他的工作还没有着落。',py:'Suīrán yìngjiè běnkē bìyèshēng Liú Chén zài guò yí ge yuè jiù yào bìyè le, dàn tā de gōngzuò hái méiyǒu zhuóluò.',goiY:['应届 = khóa (tốt nghiệp) năm nay','本科 = đại học chính quy','虽然……但……'],giai:'应届毕业生 = sinh viên tốt nghiệp khóa năm nay; 没有着落 (zhuóluò) = chưa đâu vào đâu, chưa có kết quả chắc chắn.'},
-  {vi:'Vì tình hình việc làm không mấy khả quan, Lưu Thần cảm thấy mình thực sự chẳng có ưu thế gì.',zh:'由于就业形势并不乐观，刘辰觉得自己实在没什么优势。',py:'Yóuyú jiùyè xíngshì bìng bú lèguān, Liú Chén juéde zìjǐ shízài méi shénme yōushì.',goiY:['由于 = do, vì','就业 = việc làm','优势 = ưu thế'],giai:'由于 (văn viết) nêu nguyên nhân, vế sau có thể không cần 所以; 并不 nhấn mạnh phủ định.'},
-  {vi:'Tổ chương trình xem sơ yếu lý lịch của cậu, thế là đồng ý cho cậu đến trường quay để xin việc.',zh:'节目组看了他的简历，于是同意让他到现场去求职。',py:'Jiémùzǔ kànle tā de jiǎnlì, yúshì tóngyì ràng tā dào xiànchǎng qù qiúzhí.',goiY:['简历 = sơ yếu lý lịch','现场 = hiện trường, trường quay','于是 = thế là'],giai:'于是 nối hành động xảy ra tiếp theo, do vế trước dẫn đến; 求职 = tìm việc, xin việc.'},
-  {vi:'Vì hồi lớp sáu mê xe buýt, từ đó cậu luôn để ý đến các tuyến xe buýt trong phạm vi thành phố Bắc Kinh.',zh:'因为小学六年级时迷上了公交车，他从此一直关注北京市范围内的公交线路。',py:'Yīnwèi xiǎoxué liù niánjí shí míshangle gōngjiāochē, tā cóngcǐ yìzhí guānzhù Běijīng Shì fànwéi nèi de gōngjiāo xiànlù.',goiY:['从此 = từ đó trở đi','范围 = phạm vi'],giai:'从此 đứng sau sự việc làm mốc (mê xe buýt), chỉ trạng thái kéo dài từ đó; 范围内 = trong phạm vi.'},
-  {vi:'Từ khi lên cấp hai, cậu đã trở thành "cố vấn đi lại" của bạn bè: ai muốn đi đâu, cậu cũng nhanh chóng nói ra được tuyến đường tiện nhất.',zh:'从上初中起，他就成了同学们的出行顾问，无论谁想去哪儿，他都能很快说出最方便的路线。',py:'Cóng shàng chūzhōng qǐ, tā jiù chéngle tóngxuémen de chūxíng gùwèn, wúlùn shéi xiǎng qù nǎr, tā dōu néng hěn kuài shuōchū zuì fāngbiàn de lùxiàn.',goiY:['从……起 = từ … (trở đi)','顾问 = cố vấn','无论……都……'],giai:'从 + mốc thời gian + 起 khác 从此 (从此 không kèm mốc cụ thể); 无论谁……都 = bất kể ai … cũng ….'},
-  {vi:'Người dẫn chương trình hỏi cậu giả sử đi từ Quốc Mậu đến phố Cổ Lâu thì nên đi xe thế nào, kết quả cậu phản ứng cực nhanh, lập tức nói ra lộ trình.',zh:'主持人问他假设从国贸到鼓楼大街该怎么乘车，结果他反应得非常快，马上说出了路线。',py:'Zhǔchírén wèn tā jiǎshè cóng Guómào dào Gǔlóu Dàjiē gāi zěnme chéng chē, jiéguǒ tā fǎnyìng de fēicháng kuài, mǎshàng shuōchūle lùxiàn.',goiY:['假设 = giả sử','乘车 = đi xe','反应 = phản ứng'],giai:'假设 dẫn ra tình huống giả định để đặt câu hỏi; 反应得 + tính từ = phản ứng (một cách) …; 结果 dẫn ra kết cục.'},
-  {vi:'Cậu không những đọc chính xác cả một loạt tên bến xe buýt, mà còn lập cho một cặp đôi phương án cụ thể cho chuyến đi chơi một ngày.',zh:'他不但准确地报出了一大堆公交车站的名字，而且还给一对情侣制订了休闲一日游的具体方案。',py:'Tā búdàn zhǔnquè de bàochūle yí dà duī gōngjiāo chēzhàn de míngzi, érqiě hái gěi yí duì qínglǚ zhìdìngle xiūxián yí rì yóu de jùtǐ fāng\'àn.',goiY:['一大堆 = cả đống, cả loạt','不但……而且……','情侣 = cặp đôi yêu nhau'],giai:'堆 là lượng từ chỉ số lượng lớn, dồn thành đống; 制订 (lập kế hoạch, phương án) khác 制定 (đặt ra luật, chính sách) — dễ viết nhầm.'},
-  {vi:'Câu trả lời của cậu khiến 12 vị ông chủ trên sân khấu đều phấn khích, họ lần lượt đặt câu hỏi, còn cậu thì hỏi gì đáp nấy, không chút bối rối.',zh:'他的回答令台上的12位老板都兴奋起来，他们陆续向他提问，他却有问必答，毫不慌张。',py:'Tā de huídá lìng tái shang de shí\'èr wèi lǎobǎn dōu xīngfèn qǐlai, tāmen lùxù xiàng tā tíwèn, tā què yǒu wèn bì dá, háo bù huāngzhāng.',goiY:['陆续 = lần lượt','提问 = đặt câu hỏi','有问必答 = hỏi gì đáp nấy'],giai:'却 ở đây chỉ sự tương phản (người hỏi dồn dập ↔ cậu vẫn bình tĩnh); 令 + ai + tính từ = khiến ai ….'},
-  {vi:'Sự chuyên tâm của cậu với xe buýt rõ ràng đã mở ra cánh cửa xin việc, có vị tổng giám đốc thậm chí sẵn sàng thành lập riêng một bộ phận vì cậu.',zh:'他对公交的专注显然为他打开了求职的大门，有的老总甚至愿意专门为他成立一个部门。',py:'Tā duì gōngjiāo de zhuānzhù xiǎnrán wèi tā dǎkāile qiúzhí de dàmén, yǒude lǎozǒng shènzhì yuànyì zhuānmén wèi tā chénglì yí ge bùmén.',goiY:['专注 = chuyên tâm','显然 = rõ ràng','甚至 = thậm chí'],giai:'甚至 đưa ra ví dụ cực điểm, mạnh hơn vế trước; 为 + ai + V = làm gì vì / cho ai.'},
-  {vi:'Nhân tài chuyên nghiệp và kiên trì sở dĩ vô giá là vì dù ở ngành nghề nào, thứ thiếu nhất mãi mãi vẫn là những người biết chuyên tâm.',zh:'专业而执着的人才之所以无价，是因为无论在哪个行业，最缺乏的永远都是专注的人。',py:'Zhuānyè ér zhízhuó de réncái zhīsuǒyǐ wújià, shì yīnwèi wúlùn zài nǎge hángyè, zuì quēfá de yǒngyuǎn dōu shì zhuānzhù de rén.',goiY:['之所以……是因为……','无论……都……','缺乏 = thiếu'],giai:'之所以 (kết quả) … 是因为 (nguyên nhân), bên trong lồng thêm 无论……都; 最缺乏的 = "thứ thiếu nhất" (cụm 的 thay danh từ).'}
+  {vi:'Lưu Thần là sinh viên đại học hệ chính quy năm nay tốt nghiệp, chỉ còn một tháng nữa là ra trường, nhưng cậu vẫn chưa tìm được việc.',zh:'刘辰是今年的应届本科毕业生，还有一个月就毕业了，但是他的工作还没找到。',py:'Liú Chén shì jīnnián de yìngjiè běnkē bìyèshēng, hái yǒu yí ge yuè jiù bìyè le, dànshì tā de gōngzuò hái méi zhǎodào.',goiY:['应届 = khoá tốt nghiệp năm nay','本科 = đại học chính quy'],giai:'应届毕业生 = sinh viên tốt nghiệp khoá năm nay (届 là lượng từ chỉ khoá); 还有……就……了 = chỉ còn… là….'},
+  {vi:'Vì hồi lớp sáu mê xe buýt, từ đó cậu luôn quan tâm đến các tuyến xe buýt trong phạm vi thành phố Bắc Kinh.',zh:'因为小学六年级时迷上了公交车，他从此一直关注北京市范围内的公交线路。',py:'Yīnwèi xiǎoxué liù niánjí shí míshangle gōngjiāochē, tā cóngcǐ yìzhí guānzhù Běijīng Shì fànwéi nèi de gōngjiāo xiànlù.',goiY:['从此 = từ đó','范围 = phạm vi','关注 = quan tâm'],giai:'从此 + 一直 = từ đó luôn luôn; ……范围内 = trong phạm vi ….'},
+  {vi:'MC hỏi cậu giả sử đi từ Quốc Mậu đến phố Cổ Lâu thì đi xe thế nào, kết quả cậu phản ứng rất nhanh, nói ngay ra lộ trình.',zh:'主持人问他假设从国贸到鼓楼大街该怎么乘车，结果他反应得非常快，马上说出了路线。',py:'Zhǔchírén wèn tā jiǎshè cóng Guómào dào Gǔlóu Dàjiē gāi zěnme chéng chē, jiéguǒ tā fǎnyìng de fēicháng kuài, mǎshàng shuōchūle lùxiàn.',goiY:['假设 = giả sử','乘车 = đi xe','反应 = phản ứng'],giai:'反应得非常快 — động từ + 得 + bổ ngữ trạng thái; 乘车 là cách nói văn viết của 坐车.'},
+  {vi:'Cậu không chỉ đọc chính xác tên cả một loạt trạm xe buýt, mà còn lập cho một đôi tình nhân phương án cụ thể cho chuyến du lịch thư giãn một ngày.',zh:'他不但准确地说出了一大堆公交车站的名字，而且还给一对情侣制订了休闲一日游的具体方案。',py:'Tā búdàn zhǔnquè de shuōchūle yí dà duī gōngjiāo chēzhàn de míngzi, érqiě hái gěi yí duì qínglǚ zhìdìngle xiūxián yí rì yóu de jùtǐ fāng\'àn.',goiY:['一大堆 = cả một đống','情侣 = đôi tình nhân','制订 = lập (kế hoạch)','休闲 = thư giãn'],giai:'不但……而且还…… = không những… mà còn…; 制订 + 方案 / 计划.'},
+  {vi:'Câu trả lời của cậu khiến 12 ông chủ trên sân khấu đều phấn khởi, họ lần lượt đặt câu hỏi, còn cậu thì hỏi gì đáp nấy, không hề căng thẳng.',zh:'他的回答令台上的12位老板都兴奋起来，他们陆续向他提问，他却有问必答，一点儿也不紧张。',py:'Tā de huídá lìng tái shang de shí\'èr wèi lǎobǎn dōu xīngfèn qǐlai, tāmen lùxù xiàng tā tíwèn, tā què yǒu wèn bì dá, yìdiǎnr yě bù jǐnzhāng.',goiY:['老板 = ông chủ','陆续 = lần lượt','提问 = đặt câu hỏi','有问必答 = hỏi gì đáp nấy'],giai:'令 + người + tính từ = khiến ai…; 向 + người + 提问 = đặt câu hỏi cho ai.'},
+  {vi:'Sự chuyên chú của cậu đối với xe buýt rõ ràng đã mở cửa cho cậu tìm việc, có vị giám đốc thậm chí sẵn lòng lập riêng cho cậu một bộ phận.',zh:'他对公交的专注显然为他打开了求职的大门，有的老总甚至愿意专门为他成立一个部门。',py:'Tā duì gōngjiāo de zhuānzhù xiǎnrán wèi tā dǎkāile qiúzhí de dàmén, yǒu de lǎozǒng shènzhì yuànyì zhuānmén wèi tā chénglì yí ge bùmén.',goiY:['专注 = chuyên chú','显然 = rõ ràng','成立 = thành lập','部门 = bộ phận'],giai:'为 + người + V = làm gì cho ai; 甚至 nhấn mạnh mức độ vượt dự đoán.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1667,30 +1586,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
   sapXep:[
-    {manh:['是在','正常范围内的','她的反应'],
-     dap:'她的反应是在正常范围内的。',
-     vn:'Phản ứng của cô ấy nằm trong phạm vi bình thường.',
-     giai:'Câu 29 sách bài tập. Chủ ngữ 她的反应 → 是在 + 正常范围内 + 的 (是……的 nhấn mạnh).'},
-    {manh:['到达了','代表们','会场','已经陆续'],
-     dap:'代表们已经陆续到达了会场。',
-     vn:'Các đại biểu đã lần lượt đến hội trường.',
-     giai:'Câu 30 sách bài tập. Chủ ngữ → 已经 + 陆续 (trạng ngữ) → 到达了 + 会场.'},
-    {manh:['给你参考','他的','可以','成长过程'],
-     dap:'他的成长过程可以给你参考。',
-     vn:'Quá trình trưởng thành của anh ấy có thể cho bạn tham khảo.',
-     giai:'Câu 31 sách bài tập. 他的成长过程 làm chủ ngữ → 可以 → 给你参考.'},
-    {manh:['堆着','桌子上','作业','一大堆'],
-     dap:'桌子上堆着一大堆作业。',
-     vn:'Trên bàn chất cả một đống bài tập.',
-     giai:'Câu tồn hiện: nơi chốn + 堆着 + 一大堆 + N.'},
-    {manh:['已经','被证明','他的假设','是对的'],
-     dap:'他的假设已经被证明是对的。',
-     vn:'Giả thuyết của ông ấy đã được chứng minh là đúng.',
-     giai:'假设 làm danh từ; câu 被: chủ ngữ + 已经 + 被证明 + 是对的.'},
-    {manh:['为他的求职','这种专注','打开了大门','显然'],
-     dap:'这种专注显然为他的求职打开了大门。',
-     vn:'Sự chuyên chú này rõ ràng đã mở ra cánh cửa cho việc tìm việc của cậu.',
-     giai:'Câu của bài khoá: chủ ngữ → 显然 → 为 + đối tượng → 打开了大门.'}
+    {manh:['是在','正常范围内的','她的反应'],dap:'她的反应是在正常范围内的。',vn:'Phản ứng của cô ấy nằm trong phạm vi bình thường.',giai:'Câu 29 sách bài tập. Chủ ngữ 她的反应 → 是在 + 正常范围内 + 的 (是……的 nhấn mạnh).'},
+    {manh:['到达了','代表们','会场','已经陆续'],dap:'代表们已经陆续到达了会场。',vn:'Các đại biểu đã lần lượt đến hội trường.',giai:'Câu 30 sách bài tập. Chủ ngữ → 已经 + 陆续 (trạng ngữ) → 到达了 + 会场.'},
+    {manh:['给你参考','他的','可以','成长过程'],dap:'他的成长过程可以给你参考。',vn:'Quá trình trưởng thành của anh ấy có thể cho bạn tham khảo.',giai:'Câu 31 sách bài tập. 他的成长过程 làm chủ ngữ → 可以 → 给你参考.'},
+    {manh:['堆着','桌子上','作业','一大堆'],dap:'桌子上堆着一大堆作业。',vn:'Trên bàn chất cả một đống bài tập.',giai:'Câu tồn hiện: nơi chốn + 堆着 + 一大堆 + N.'},
+    {manh:['已经','被证明','他的假设','是对的'],dap:'他的假设已经被证明是对的。',vn:'Giả thuyết của ông ấy đã được chứng minh là đúng.',giai:'假设 làm danh từ; câu 被: chủ ngữ + 已经 + 被证明 + 是对的.'},
+    {manh:['为他的求职','这种专注','打开了大门','显然'],dap:'这种专注显然为他的求职打开了大门。',vn:'Sự chuyên chú này rõ ràng đã mở ra cánh cửa cho việc tìm việc của cậu.',giai:'Câu của bài khoá: chủ ngữ → 显然 → 为 + đối tượng → 打开了大门.'}
   ]
 };
 
@@ -1700,30 +1601,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (找工作 · 寻找自己的优势). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 优势 · 面对 · 乐观 · 就业 · 简历 · 职位 · 缺乏 · 专注 · 执着 · 前途.',
   questions:[
-    {q_zh:'你喜欢“分配工作”还是“双向选择”？为什么？',
-     q_vn:'Em thích "được phân công việc làm" hay "hai bên cùng lựa chọn"? Vì sao?',
-     hint:'Chọn một, nêu lý do, dùng 虽然……但是……',
-     sample:'我喜欢双向选择。虽然分配工作比较稳定，但是双向选择能让我自己找到适合的职位，做自己感兴趣的事。',
-     sample_vn:'Tôi thích hai bên cùng lựa chọn. Tuy được phân công việc thì ổn định hơn, nhưng hai bên cùng lựa chọn giúp tôi tự tìm được vị trí phù hợp, làm việc mình thích.',
-     note:'Câu hỏi 还是 → trả lời thẳng lựa chọn của mình trước, rồi mới giải thích.'},
-    {q_zh:'一般的用人单位对员工可能有什么样的要求？',
-     q_vn:'Các đơn vị tuyển dụng thường có thể có những yêu cầu gì với nhân viên?',
-     hint:'Liệt kê 2–3 yêu cầu, dùng 不仅……也……',
-     sample:'一般的单位不仅要求员工有专业知识，也希望他们做事专注、执着，有团队精神，不缺乏责任心。',
-     sample_vn:'Các đơn vị thường không chỉ yêu cầu nhân viên có kiến thức chuyên môn, mà còn mong họ làm việc chuyên tâm, bền bỉ, có tinh thần đồng đội, không thiếu tinh thần trách nhiệm.',
-     note:'Ôn 专注, 执着 — hai phẩm chất được nhắc trong bài khoá.'},
-    {q_zh:'你认为自己有什么优势？面对找工作的问题，你应该做哪些准备？',
-     q_vn:'Em thấy mình có ưu thế gì? Đứng trước chuyện tìm việc, em nên chuẩn bị những gì?',
-     hint:'Nói 1 ưu thế + 2 việc chuẩn bị, dùng 面对 và 只要……就……',
-     sample:'我觉得我的优势是会说汉语，而且反应比较快。面对找工作的问题，我应该先写好简历，多参加实习。只要准备充分，就不怕没有机会。',
-     sample_vn:'Tôi thấy ưu thế của mình là biết tiếng Trung, lại phản ứng khá nhanh. Trước chuyện tìm việc, tôi nên viết CV thật tốt trước, tham gia thực tập nhiều. Chỉ cần chuẩn bị đầy đủ thì không sợ thiếu cơ hội.',
-     note:'Nói 我的优势是……, không nói 我很优势.'},
-    {q_zh:'如果你参加《非你莫属》这样的节目，你会向老板们展示什么才艺？',
-     q_vn:'Nếu em tham gia chương trình như "Chỉ thuộc về bạn", em sẽ thể hiện tài lẻ gì trước các ông chủ?',
-     hint:'Kể tài lẻ và vì sao nó giúp em, dùng 从此',
-     sample:'我会展示我画画的才艺。我小学的时候参加过一次画画比赛，从此就爱上了画画。我觉得这能证明我做事很专注。',
-     sample_vn:'Tôi sẽ thể hiện tài vẽ tranh. Hồi tiểu học tôi từng tham gia một cuộc thi vẽ, từ đó yêu thích vẽ tranh. Tôi thấy điều này chứng minh tôi làm việc rất tập trung.',
-     note:'Vế trước 从此 là sự việc làm mốc; vế sau nói sự thay đổi kéo dài.'}
+    {q_zh:'你希望学校帮你安排工作，还是自己去找工作？为什么？',q_vn:'Em muốn nhà trường sắp xếp việc làm cho em, hay tự mình đi tìm việc? Vì sao?',hint:'Chọn một, nêu lý do, dùng 虽然……但是……',sample:'我希望自己去找工作。虽然学校安排的工作比较稳定，但是自己找能让我找到适合的职位，做自己感兴趣的事。',sample_vn:'Tôi muốn tự đi tìm việc. Tuy việc nhà trường sắp xếp thì ổn định hơn, nhưng tự tìm giúp tôi tìm được vị trí phù hợp, làm việc mình thích.',note:'Câu hỏi 还是 → trả lời thẳng lựa chọn của mình trước, rồi mới giải thích.'},
+    {q_zh:'一般的用人单位对新人可能有什么样的要求？',q_vn:'Các đơn vị tuyển dụng thường có thể có những yêu cầu gì với người mới?',hint:'Liệt kê 2–3 yêu cầu, dùng 不仅……也……',sample:'一般的单位不仅要求新人有专业知识，也希望他们做事专注、执着，能和别人合作，有责任心。',sample_vn:'Các đơn vị thường không chỉ yêu cầu người mới có kiến thức chuyên môn, mà còn mong họ làm việc chuyên tâm, bền bỉ, biết hợp tác với người khác, có tinh thần trách nhiệm.',note:'Ôn 专注, 执着 — hai phẩm chất được nhắc trong bài khoá.'},
+    {q_zh:'你认为自己有什么优势？面对找工作的问题，你应该做哪些准备？',q_vn:'Em thấy mình có ưu thế gì? Đứng trước chuyện tìm việc, em nên chuẩn bị những gì?',hint:'Nói 1 ưu thế + 2 việc chuẩn bị, dùng 面对 và 只要……就……',sample:'我觉得我的优势是会说汉语，而且学东西比较快。面对找工作的问题，我应该先写好简历，多去公司体验一下真正的工作。只要准备充分，就不怕没有机会。',sample_vn:'Tôi thấy ưu thế của mình là biết tiếng Trung, lại học cái mới khá nhanh. Trước chuyện tìm việc, tôi nên viết CV thật tốt trước, đến công ty trải nghiệm công việc thật nhiều hơn. Chỉ cần chuẩn bị đầy đủ thì không sợ thiếu cơ hội.',note:'Nói 我的优势是……, không nói 我很优势.'},
+    {q_zh:'如果你参加《非你莫属》这样的节目，你会向老板们表演什么才艺？',q_vn:'Nếu em tham gia chương trình như "Chỉ thuộc về bạn", em sẽ thể hiện tài lẻ gì trước các ông chủ?',hint:'Kể tài lẻ và vì sao nó giúp em, dùng 从此',sample:'我会给大家做一个越南菜。我上初中的时候跟妈妈学会了做饭，从此家里的晚饭常常是我做的。我觉得这能说明我做事很认真。',sample_vn:'Tôi sẽ nấu một món Việt cho mọi người. Hồi cấp hai tôi học nấu ăn với mẹ, từ đó bữa tối ở nhà thường là tôi nấu. Tôi thấy điều này cho thấy tôi làm việc rất chu đáo.',note:'Vế trước 从此 là sự việc làm mốc; vế sau nói sự thay đổi kéo dài.'}
   ]
 };
 
@@ -1814,45 +1695,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn em nói lo sau này không tìm được việc vì học lực chỉ trung bình.',
-     a:{sp:'Bạn',zh:'我成绩一般，以后肯定找不到好工作。',vn:'Tớ học bình thường, sau này chắc chắn không tìm được việc tốt.'},
-     need:['Dùng 优势','Chỉ ra một điểm mạnh của bạn để động viên'],
-     sample:'别这么说，你篮球打得那么好，又会组织活动，这些都是你的优势啊！',
-     samplePy:'Bié zhème shuō, nǐ lánqiú dǎ de nàme hǎo, yòu huì zǔzhī huódòng, zhèxiē dōu shì nǐ de yōushì a!',
-     sampleVn:'Đừng nói thế, cậu chơi bóng rổ giỏi thế, lại biết tổ chức hoạt động, đó đều là ưu thế của cậu mà!',
-     tip:'……是你的优势 / 你在……方面有优势.'},
-
-    {scene:'Người nước ngoài hỏi em đường đến Hồ Gươm bằng xe buýt.',
-     a:{sp:'Du khách',zh:'请问，去还剑湖应该怎么坐车？',vn:'Xin hỏi, đi Hồ Gươm thì đi xe thế nào?'},
-     need:['Dùng 换乘 (乘)','Chỉ cách đi: tuyến nào, đổi ở đâu'],
-     sample:'您在前面坐9路，到大剧院下车，然后换乘2路，就可以到达了。',
-     samplePy:'Nín zài qiánmiàn zuò jiǔ lù, dào Dàjùyuàn xià chē, ránhòu huànchéng èr lù, jiù kěyǐ dàodá le.',
-     sampleVn:'Ông đi tuyến 9 ở phía trước, đến Nhà hát Lớn thì xuống, sau đó đổi sang tuyến 2 là tới.',
-     tip:'Mẫu chỉ đường trong bài: 坐……路，到……，换乘……路，就可以到达.'},
-
-    {scene:'Cô giáo hỏi em tại sao từ lớp 8 em lại học tiếng Trung chăm như vậy.',
-     a:{sp:'Cô',zh:'你为什么这么喜欢学汉语？',vn:'Sao em thích học tiếng Trung thế?'},
-     need:['Dùng 从此','Kể một sự việc làm mốc'],
-     sample:'初二的时候我看了一部中国电影，觉得特别有意思，从此就爱上了汉语。',
-     samplePy:'Chū\'èr de shíhou wǒ kànle yí bù Zhōngguó diànyǐng, juéde tèbié yǒu yìsi, cóngcǐ jiù àishangle Hànyǔ.',
-     sampleVn:'Hồi lớp 8 em xem một bộ phim Trung Quốc, thấy cực kỳ hay, từ đó em mê tiếng Trung luôn.',
-     tip:'Vế trước là mốc, 从此 mở đầu vế sau. 初二 = năm hai cấp hai.'},
-
-    {scene:'Bạn cùng nhóm đưa ra kế hoạch rất chung chung.',
-     a:{sp:'Bạn',zh:'我们的计划就是：好好准备，争取拿第一。',vn:'Kế hoạch của bọn mình là: chuẩn bị thật tốt, cố giành giải nhất.'},
-     need:['Dùng 具体','Đề nghị lập kế hoạch chi tiết hơn'],
-     sample:'这样太笼统了，我们应该制订一个具体的计划，每个人负责什么都要写清楚。',
-     samplePy:'Zhèyàng tài lǒngtǒng le, wǒmen yīnggāi zhìdìng yí ge jùtǐ de jìhuà, měi ge rén fùzé shénme dōu yào xiě qīngchu.',
-     sampleVn:'Thế thì chung chung quá, bọn mình nên lập một kế hoạch cụ thể, ai phụ trách gì đều phải ghi rõ.',
-     tip:'制订 + 具体的计划 (ôn 制订 số 29).'},
-
-    {scene:'Em trai than thở vì bài tập nhiều quá.',
-     a:{sp:'Em trai',zh:'今天的作业太多了，我不想写了！',vn:'Bài tập hôm nay nhiều quá, em không muốn làm nữa!'},
-     need:['Dùng 一大堆','Khuyên em làm dần từng bài'],
-     sample:'虽然作业有一大堆，但是一道一道地做，很快就能做完。',
-     samplePy:'Suīrán zuòyè yǒu yí dà duī, dànshì yí dào yí dào de zuò, hěn kuài jiù néng zuòwán.',
-     sampleVn:'Tuy bài tập cả đống, nhưng làm từng bài một thì chẳng mấy chốc là xong.',
-     tip:'一大堆 đọc yí dà duī; ôn 虽然……但是…….'}
+    {scene:'Bạn em nói lo sau này không tìm được việc vì học lực chỉ trung bình.',a:{sp:'Bạn',zh:'我成绩一般，以后肯定找不到好工作。',vn:'Tớ học bình thường, sau này chắc chắn không tìm được việc tốt.'},need:['Dùng 优势','Chỉ ra một điểm mạnh của bạn để động viên'],sample:'别这么说，你篮球打得那么好，又会组织活动，这些都是你的优势啊！',samplePy:'Bié zhème shuō, nǐ lánqiú dǎ de nàme hǎo, yòu huì zǔzhī huódòng, zhèxiē dōu shì nǐ de yōushì a!',sampleVn:'Đừng nói thế, cậu chơi bóng rổ giỏi thế, lại biết tổ chức hoạt động, đó đều là ưu thế của cậu mà!',tip:'……是你的优势 / 你在……方面有优势.'},
+    {scene:'Một du khách nước ngoài hỏi em đường đến ga Hà Nội.',a:{sp:'Du khách',zh:'请问，去河内火车站应该怎么走？',vn:'Xin hỏi, đi ga Hà Nội thì đi thế nào?'},need:['Dùng 换乘 (乘)','Chỉ cách đi: tuyến nào, đổi ở đâu'],sample:'您先坐地铁，坐三站下车，再换乘34路，就可以到达火车站了。',samplePy:'Nín xiān zuò dìtiě, zuò sān zhàn xià chē, zài huànchéng sānshísì lù, jiù kěyǐ dàodá huǒchēzhàn le.',sampleVn:'Ông đi tàu điện trước, đi ba ga thì xuống, rồi đổi sang tuyến 34 là tới ga tàu.',tip:'Mẫu chỉ đường: 先坐……，再换乘……路，就可以到达…….'},
+    {scene:'Cô giáo hỏi em tại sao em lại học tiếng Trung chăm như vậy.',a:{sp:'Cô',zh:'你为什么这么喜欢学汉语？',vn:'Sao em thích học tiếng Trung thế?'},need:['Dùng 从此','Kể một sự việc làm mốc'],sample:'上初中的时候我看了一部中国电影，被里面的故事吸引住了，从此就爱上了汉语。',samplePy:'Shàng chūzhōng de shíhou wǒ kànle yí bù Zhōngguó diànyǐng, bèi lǐmiàn de gùshi xīyǐn zhù le, cóngcǐ jiù àishangle Hànyǔ.',sampleVn:'Hồi cấp hai em xem một bộ phim Trung Quốc, bị câu chuyện trong phim cuốn hút, từ đó em mê tiếng Trung luôn.',tip:'Vế trước là mốc, 从此 mở đầu vế sau.'},
+    {scene:'Bạn cùng nhóm đưa ra kế hoạch rất chung chung.',a:{sp:'Bạn',zh:'我们的计划就是：好好准备，争取拿第一。',vn:'Kế hoạch của bọn mình là: chuẩn bị thật tốt, cố giành giải nhất.'},need:['Dùng 具体','Đề nghị lập kế hoạch chi tiết hơn'],sample:'这样说太简单了，我们应该制订一个具体的计划，每个人负责什么都要写清楚。',samplePy:'Zhèyàng shuō tài jiǎndān le, wǒmen yīnggāi zhìdìng yí ge jùtǐ de jìhuà, měi ge rén fùzé shénme dōu yào xiě qīngchu.',sampleVn:'Nói thế thì đơn giản quá, bọn mình nên lập một kế hoạch cụ thể, ai phụ trách gì đều phải ghi rõ.',tip:'制订 + 具体的计划.'},
+    {scene:'Em trai than thở vì bài tập nhiều quá.',a:{sp:'Em trai',zh:'作业怎么这么多啊，我不想写了！',vn:'Sao bài tập nhiều thế, em không muốn làm nữa!'},need:['Dùng 一大堆','Khuyên em làm dần từng bài'],sample:'虽然作业有一大堆，但是一个一个地做，很快就能做完。',samplePy:'Suīrán zuòyè yǒu yí dà duī, dànshì yí ge yí ge de zuò, hěn kuài jiù néng zuòwán.',sampleVn:'Tuy bài tập cả đống, nhưng làm từng bài một thì chẳng mấy chốc là xong.',tip:'一大堆 đọc yí dà duī; ôn 虽然……但是…….'}
   ]
 };
 
@@ -1863,29 +1710,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em trả lời nhà tuyển dụng trong buổi phỏng vấn: "Bạn có ưu thế gì?"',
-     a:'我的专业是计算机，电脑软件用得很熟练，另外我也很爱好文学。',b:'我啥都会，电脑、写东西都行！',better:'a',
-     why:'Phỏng vấn cần trang trọng, cụ thể: nêu chuyên ngành, kỹ năng (bài nghe số 3). Câu b (啥都会) quá khẩu ngữ, nghe khoác lác.'},
-
-    {scene:'Thông báo tuyển dụng đăng trên website của khách sạn.',
-     a:'我们要找个管钱的，会的快来！',b:'现酒店财务部需要招聘财务经理一名，要求相关专业研究生毕业。',better:'b',
-     why:'Tin tuyển dụng dùng văn viết: 现……需要招聘……一名, 要求…… (bài nghe 13–14). Câu a như nói miệng.'},
-
-    {scene:'Em hỏi đường một cô bán hàng ven đường.',
-     a:'请问，去鼓楼大街应该怎么坐车？',b:'敬请告知前往鼓楼大街之乘车路线。',better:'a',
-     why:'Hỏi đường thường ngày chỉ cần lịch sự, tự nhiên: 请问……怎么坐车? Câu b (敬请告知, 之) văn vẻ quá mức, nghe kỳ.'},
-
-    {scene:'Em viết thư cảm ơn công ty dù không được tuyển.',
-     a:'虽然没被录用，还是谢了啊！',b:'虽然贵公司没有录用我，但认真看过我的简历，也使我收获了面试经验，特此表示感谢。',better:'b',
-     why:'Thư gửi công ty cần trang trọng: 贵公司, 特此表示感谢 (bài nghe 11–12). Câu a như tin nhắn cho bạn.'},
-
-    {scene:'Em rủ bạn thân cuối tuần đi chơi.',
-     a:'周末有空吗？咱们去西湖边转转吧！',b:'本周末将安排休闲一日游，欢迎参加。',better:'a',
-     why:'Rủ bạn thân nói thân mật (咱们, 转转). Câu b là giọng thông báo của công ty du lịch.'},
-
-    {scene:'Người dẫn chương trình truyền hình giới thiệu thí sinh.',
-     a:'下面这位是刘辰，他是一名应届本科毕业生，让我们欢迎他！',b:'这哥们儿叫刘辰，刚毕业，大家鼓鼓掌呗。',better:'a',
-     why:'MC trên truyền hình dùng lời trang trọng, lịch sự: 下面这位是……, 让我们欢迎他. Câu b (哥们儿, 呗) quá suồng sã.'}
+    {scene:'Em trả lời nhà tuyển dụng trong buổi phỏng vấn: "Bạn có ưu thế gì?"',a:'我是学中文的，会用电脑，也参加过很多学校的活动，组织能力比较强。',b:'我什么都会，电脑啊、写东西啊都没问题！',better:'a',why:'Phỏng vấn cần trang trọng, cụ thể: nêu chuyên ngành, kỹ năng. Câu b (什么都会, 啊) quá khẩu ngữ, nghe khoác lác.'},
+    {scene:'Thông báo tuyển dụng đăng trên website công ty.',a:'我们要找个会说汉语的，会的快来！',b:'本公司销售部门需要招聘一名会说汉语的工作人员，要求本科毕业。',better:'b',why:'Tin tuyển dụng dùng văn viết: 本公司, 需要招聘……一名, 要求……. Câu a như nói miệng.'},
+    {scene:'Em hỏi đường một cô bán hàng ven đường.',a:'阿姨，请问去火车站怎么坐车？',b:'请您详细告诉我前往火车站的具体乘车路线。',better:'a',why:'Hỏi đường thường ngày chỉ cần lịch sự, tự nhiên: 请问……怎么坐车？ Câu b (前往, 具体乘车路线) văn vẻ quá mức, nghe kỳ.'},
+    {scene:'Em viết thư cảm ơn công ty dù không được tuyển.',a:'虽然没选上我，还是谢了啊！',b:'虽然这次没有机会到贵公司工作，但是我从面试中学到了很多，非常感谢您给我这次机会。',better:'b',why:'Thư gửi công ty cần trang trọng: 贵公司, 非常感谢您. Câu a như tin nhắn cho bạn.'},
+    {scene:'Em rủ bạn thân cuối tuần đi chơi.',a:'这个周末咱们去公园走走吧！',b:'本周末公司安排了休闲一日游，欢迎大家参加。',better:'a',why:'Rủ bạn thân nói thân mật (咱们, 走走). Câu b là giọng thông báo của công ty.'},
+    {scene:'Người dẫn chương trình truyền hình giới thiệu thí sinh.',a:'下面这位是刘辰，他是一名应届本科毕业生，让我们欢迎他！',b:'这小伙子叫刘辰，刚毕业，大家欢迎一下啊。',better:'a',why:'MC trên truyền hình dùng lời trang trọng, lịch sự: 下面这位是……, 让我们欢迎他. Câu b (小伙子, 欢迎一下啊) quá suồng sã.'}
   ]
 };
 

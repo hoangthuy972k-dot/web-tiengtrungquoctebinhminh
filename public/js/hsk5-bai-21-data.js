@@ -1513,88 +1513,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 34–35), bài tập 3 (tr. 36) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'追求',right:'梦想'},
-  {left:'公开',right:'秘密'},
-  {left:'收集',right:'雨水'},
-  {left:'完善',right:'制度'},
+  {left:'公开',right:'道歉'},
   {left:'提上',right:'日程'},
   {left:'符合',right:'逻辑'},
   {left:'受到',right:'称赞'},
-  {left:'下载',right:'资料'},
   {left:'克服',right:'困难'},
-  {left:'深深地',right:'佩服'},
-  {left:'反复',right:'思考'},
   {left:'抓紧',right:'时间'},
   {left:'输入',right:'密码'},
-  {left:'战胜',right:'疾病'},
   {left:'创办',right:'网站'},
-  {left:'查询',right:'话费'},
   {left:'识别',right:'真假'},
-  {left:'引起',right:'关注'},
   {left:'留下',right:'遗憾'},
-  {left:'古汉字',right:'经典'},
-  {left:'说',right:'方言'}
+  {left:'引起',right:'关注'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这篇文章讲的是一个美国人和汉字的',blank:'情缘',post:'。',hint:'(mối duyên gắn bó)',ans:'情缘'},
-  {pre:'他感觉汉字的一笔一画没有任何',blank:'逻辑',post:'，只能死记硬背。',hint:'(lô-gích)',ans:'逻辑'},
-  {pre:'学语法不能靠',blank:'死记硬背',post:'，要多用。',hint:'(học vẹt)',ans:'死记硬背'},
-  {pre:'如果了解汉字的来源和',blank:'演变',post:'过程，学起来就容易多了。',hint:'(biến đổi)',ans:'演变'},
-  {pre:'结论部分再完善一下，别留',blank:'遗憾',post:'。',hint:'(tiếc nuối)',ans:'遗憾'},
-  {pre:'1994年，理查德得了',blank:'心脏',post:'病。',hint:'(tim)',ans:'心脏'},
-  {pre:'老师希望我们学会独立',blank:'思考',post:'。',hint:'(suy nghĩ)',ans:'思考'},
-  {pre:'你',blank:'抓紧',post:'准备一下，争取下周把这个项目谈下来。',hint:'(khẩn trương)',ans:'抓紧'},
-  {pre:'收到邮件后，请',blank:'尽快',post:'回复。',hint:'(càng sớm càng tốt)',ans:'尽快'},
-  {pre:'就这样，一部部古汉字',blank:'经典',post:'进入他的资料库。',hint:'(kinh điển)',ans:'经典'},
-  {pre:'这些资料都已经放进他的资料',blank:'库',post:'里了。',hint:'(kho)',ans:'库'},
-  {pre:'仅仅复印、整理和把这些资料',blank:'输入',post:'电脑就用了8年。',hint:'(nhập vào)',ans:'输入'},
-  {pre:'2002年',blank:'元旦',post:'，他决定把网站公开。',hint:'(Tết Dương lịch)',ans:'元旦'},
-  {pre:'战胜',blank:'疾病',post:'的他决定把自己创办的网站公开。',hint:'(bệnh tật)',ans:'疾病'},
-  {pre:'他花光全部积蓄',blank:'创办',post:'了一个汉字网站。',hint:'(lập ra)',ans:'创办'},
-  {pre:'他不希望别人像他最初那样学得那么',blank:'痛苦',post:'。',hint:'(khổ sở)',ans:'痛苦'},
-  {pre:'有人把他的故事放到',blank:'微博',post:'上，引起了广泛关注。',hint:'(Weibo)',ans:'微博'},
-  {pre:'他因此被网友亲切地',blank:'称呼',post:'为“汉字叔叔”。',hint:'(gọi là)',ans:'称呼'},
-  {pre:'这个成语',blank:'包含',post:'着一个深刻的道理。',hint:'(chứa đựng)',ans:'包含'},
-  {pre:'台湾和香港现在还用',blank:'繁体字',post:'。',hint:'(chữ phồn thể)',ans:'繁体字'},
-  {pre:'我们在学校学的是',blank:'简体字',post:'，笔画比繁体字少。',hint:'(chữ giản thể)',ans:'简体字'},
-  {pre:'我爷爷只会说',blank:'方言',post:'，不会说普通话。',hint:'(tiếng địa phương)',ans:'方言'},
-  {pre:'你别骗我了，快把',blank:'真相',post:'告诉我吧。',hint:'(sự thật)',ans:'真相'},
-  {pre:'她对工作认真负责的态度很让人',blank:'佩服',post:'。',hint:'(khâm phục)',ans:'佩服'},
-  {pre:'网站上的内容，网友都可以免费',blank:'下载',post:'。',hint:'(tải về)',ans:'下载'},
-  {pre:'现在，有很多',blank:'单位',post:'向理查德发出了工作邀请。',hint:'(cơ quan)',ans:'单位'},
-  {pre:'网上的消息很多，我们要学会',blank:'识别',post:'真假。',hint:'(phân biệt)',ans:'识别'},
-  {pre:'考试成绩下周就可以在网上',blank:'查询',post:'了。',hint:'(tra cứu)',ans:'查询'},
-  {pre:'在北师大，他除了教',blank:'物理',post:'，还继续研究汉字。',hint:'(vật lý)',ans:'物理'},
-  {pre:'在中国，60多岁已经是',blank:'退休',post:'的年纪了。',hint:'(nghỉ hưu)',ans:'退休'},
-  {pre:'这几天的',blank:'日程',post:'怎么安排得这么满？你要注意身体。',hint:'(lịch trình)',ans:'日程'},
-  {pre:'我还要继续追求我的',blank:'梦想',post:'，我要“活到老，学到老”。',hint:'(ước mơ)',ans:'梦想'},
-  {pre:'这点儿困难不算什么，我一定可以',blank:'克服',post:'的。',hint:'(vượt qua)',ans:'克服'}
+  {pre:'他的话前后矛盾，一点儿',blank:'逻辑',post:'都没有。',hint:'(lô-gích)',ans:'逻辑',exp:'逻辑 = lô-gích, tính hợp lý; 没有逻辑 / 符合逻辑. 矛盾 (bài 14) = mâu thuẫn.'},
+  {pre:'学语法不能只靠',blank:'死记硬背',post:'，要在句子里多用才记得住。',hint:'(học vẹt)',ans:'死记硬背',exp:'死记硬背 = học thuộc lòng một cách máy móc, không hiểu.'},
+  {pre:'爷爷的',blank:'心脏',post:'不太好，医生让他少喝酒，多休息。',hint:'(tim)',ans:'心脏',exp:'心脏 = trái tim (cơ quan); 心脏病 = bệnh tim.'},
+  {pre:'打开网站以后，请先在这里',blank:'输入',post:'你的手机号码。',hint:'(nhập (vào máy))',ans:'输入',exp:'输入 = nhập (chữ, số, dữ liệu) vào máy: 输入密码, 输入电脑.'},
+  {pre:'一月一号是',blank:'元旦',post:'，学校放一天假。',hint:'(Tết Dương lịch)',ans:'元旦',exp:'元旦 = ngày 1/1, Tết Dương lịch; khác 春节 (Tết Âm lịch).'},
+  {pre:'为了写这本书，作家',blank:'收集',post:'了很多资料。',hint:'(thu thập)',ans:'收集',exp:'收集 + 资料/意见/信息 = thu thập. 收藏 (bài 20) là sưu tầm đồ quý để giữ, không đi với 资料 trong câu này.'},
+  {pre:'我听不懂奶奶说的',blank:'方言',post:'，只好请妈妈给我翻译。',hint:'(tiếng địa phương)',ans:'方言',exp:'方言 = phương ngữ, tiếng địa phương; đối lập với 普通话.'},
+  {pre:'警察终于弄清楚了事情的',blank:'真相',post:'。',hint:'(sự thật, chân tướng)',ans:'真相',exp:'真相 = sự thật bị che giấu: 事情的真相, 说出真相.'},
+  {pre:'他一边工作一边读书，还要照顾家人，我真',blank:'佩服',post:'他。',hint:'(khâm phục)',ans:'佩服',exp:'佩服 + người = khâm phục ai; 让人佩服 = đáng khâm phục.'},
+  {pre:'我们',blank:'单位',post:'离家很近，我每天走路去上班。',hint:'(cơ quan)',ans:'单位',exp:'单位 = cơ quan, nơi làm việc (khẩu ngữ Trung Quốc rất hay dùng).'},
+  {pre:'这次出差的',blank:'日程',post:'安排得太满了，连吃饭的时间都没有。',hint:'(lịch trình)',ans:'日程',exp:'日程 = lịch làm việc theo ngày; 日程安排得很满 = lịch kín.'},
+  {pre:'离考试只有一个星期了，你得',blank:'抓紧',post:'时间复习。',hint:'(tranh thủ, khẩn trương)',ans:'抓紧',exp:'抓紧时间 = tranh thủ thời gian; 抓紧 + V = làm khẩn trương.'}
 ];
 
 // ══════════════════════════════════════════
 // SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我说','不想去','，','妈妈','硬要','我','去','。'],ans:'我说不想去，妈妈硬要我去。',audio:'我说不想去，妈妈硬要我去。'},
-  {words:['虽然','药很苦','，','他','还是','硬把药','喝下去了','。'],ans:'虽然药很苦，他还是硬把药喝下去了。',audio:'虽然药很苦，他还是硬把药喝下去了。'},
-  {words:['这本书','是她','一次','逛书市时','偶然','发现的','。'],ans:'这本书是她一次逛书市时偶然发现的。',audio:'这本书是她一次逛书市时偶然发现的。'},
-  {words:['她','专心地','织着毛衣','，','偶然','也会','抬眼','看一下','挂钟','。'],ans:'她专心地织着毛衣，偶然也会抬眼看一下挂钟。',audio:'她专心地织着毛衣，偶然也会抬眼看一下挂钟。'},
-  {words:['李阳','喜欢','画画儿','并非','偶然','。'],ans:'李阳喜欢画画儿并非偶然。',audio:'李阳喜欢画画儿并非偶然。'},
-  {words:['你','尽快','把','过季的衣服','洗一洗','。'],ans:'你尽快把过季的衣服洗一洗。',audio:'你尽快把过季的衣服洗一洗。'},
-  {words:['我','要','抓紧时间','尽快','把资料','输入电脑','。'],ans:'我要抓紧时间尽快把资料输入电脑。',audio:'我要抓紧时间尽快把资料输入电脑。'},
-  {words:['收到','邮件','后','，','请','尽快','回复','。'],ans:'收到邮件后，请尽快回复。',audio:'收到邮件后，请尽快回复。'},
-  {words:['他','被','网友','亲切地','称呼为','“汉字叔叔”','。'],ans:'他被网友亲切地称呼为“汉字叔叔”。',audio:'他被网友亲切地称呼为“汉字叔叔”。'},
-  {words:['他','将','网站上的内容','全部','开放给','网友','。'],ans:'他将网站上的内容全部开放给网友。',audio:'他将网站上的内容全部开放给网友。'},
-  {words:['他','除了','教物理','，','还','继续','研究汉字','。'],ans:'他除了教物理，还继续研究汉字。',audio:'他除了教物理，还继续研究汉字。'},
-  {words:['汉字叔叔','每天的日程','却','安排得','很满','。'],ans:'汉字叔叔每天的日程却安排得很满。',audio:'汉字叔叔每天的日程却安排得很满。'},
-  {words:['了解','汉字的','演变过程','以后','，','学汉字','变得','越来越','轻松','了','。'],ans:'了解汉字的演变过程以后，学汉字变得越来越轻松了。',audio:'了解汉字的演变过程以后，学汉字变得越来越轻松了。'}
+  {words:['他','明明','不会唱','，','却','被朋友','硬','拉上了','台','。'],ans:'他明明不会唱，却被朋友硬拉上了台。',audio:'他明明不会唱，却被朋友硬拉上了台。'},
+  {words:['我','是','在书店里','偶然','遇到','他','的','。'],ans:'我是在书店里偶然遇到他的。',audio:'我是在书店里偶然遇到他的。'},
+  {words:['他','平时','不喝酒','，','偶然','也会','陪朋友','喝一点儿','。'],ans:'他平时不喝酒，偶然也会陪朋友喝一点儿。',audio:'他平时不喝酒，偶然也会陪朋友喝一点儿。'},
+  {words:['请','大家','尽快','把','自己的','意见','发给','班长','。'],ans:'请大家尽快把自己的意见发给班长。',audio:'请大家尽快把自己的意见发给班长。'},
+  {words:['这座','博物馆','从下个月起','免费','开放','。'],ans:'这座博物馆从下个月起免费开放。',audio:'这座博物馆从下个月起免费开放。'},
+  {words:['没能','参加','你的','婚礼','，','我','真的','觉得','很遗憾','。'],ans:'没能参加你的婚礼，我真的觉得很遗憾。',audio:'没能参加你的婚礼，我真的觉得很遗憾。'},
+  {words:['这本书','介绍了','汉字','几千年来的','演变','过程','。'],ans:'这本书介绍了汉字几千年来的演变过程。',audio:'这本书介绍了汉字几千年来的演变过程。'},
+  {words:['失去','亲人的','痛苦','，','别人','很难','真正','体会','。'],ans:'失去亲人的痛苦，别人很难真正体会。',audio:'失去亲人的痛苦，别人很难真正体会。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1602,156 +1568,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {
-    wrong:'明明是他忘了，他却____说是我没提醒他。',
-    opts:['硬','偶然','尽快','最初'],
-    ans:0,
-    exp:'Khăng khăng nói điều sai sự thật → 硬说 (phó từ 硬, nghĩa ①, câu 练一练 của sách). 偶然 = tình cờ; 尽快 = càng sớm càng tốt; 最初 = lúc đầu — đều không hợp.'
-  },
-  {
-    wrong:'一个____的机会，他发现了学习汉字的好方法。',
-    opts:['经常','偶然','偶尔','最初'],
-    ans:1,
-    exp:'一个偶然的机会 = một dịp tình cờ (câu bài khoá): nhấn mạnh sự BẤT NGỜ. 偶尔 nhấn mạnh số lần ít; 经常 ngược nghĩa; 最初 là thời điểm, không tả 机会.'
-  },
-  {
-    wrong:'虽然中药汤有点儿苦，但为了治病，他还是____把它喝下去了。',
-    opts:['尽快','偶然','最初','硬'],
-    ans:3,
-    exp:'Không muốn nhưng vẫn gắng gượng làm → 硬 (nghĩa ②, câu 注释 của sách). 尽快 nhấn mạnh tốc độ, không hợp với ý “cố chịu đắng”.'
-  },
-  {
-    wrong:'什么？小明受伤了，那____送医院呀！',
-    opts:['尽快','最初','赶快','偶尔'],
-    ans:2,
-    exp:'Tình huống gấp, câu cầu khiến khẩu ngữ, cần làm NGAY → 赶快 (câu 练习 2 của sách). 尽快 = càng sớm càng tốt, hay dùng khi yêu cầu, lên kế hoạch (请尽快回复).'
-  },
-  {
-    wrong:'新产品出了点儿问题，你和严经理____商量一下这事。',
-    opts:['偶尔','尽快','最初','硬'],
-    ans:1,
-    exp:'Yêu cầu xử lý nhanh nhất có thể → 尽快 + V (câu 注释 của sách). 偶尔 = thỉnh thoảng; 最初 = lúc đầu; 硬 = khăng khăng — đều không hợp.'
-  },
-  {
-    wrong:'有文字学家指出，____的文字就是可以读出来的图画。',
-    opts:['当初','刚才','后来','最初'],
-    ans:3,
-    exp:'Chữ viết thời kỳ ĐẦU TIÊN → 最初的文字 (câu 练习 2 của sách). 当初 = “hồi ấy” khi nhắc lại một việc cụ thể đã qua; 刚才 = vừa nãy; 后来 = về sau.'
-  },
-  {
-    wrong:'买车的事我还没想好，你让我再____几天。',
-    opts:['考虑','思考','追求','识别'],
-    ans:0,
-    exp:'Cân nhắc để ra QUYẾT ĐỊNH, có thời lượng 几天 → 考虑 (câu 练习 2 của sách). 思考 là suy ngẫm sâu một vấn đề, ít đi với thời lượng như vậy.'
-  },
-  {
-    wrong:'那时，他开始____自己的人生：“我该怎么办？我该做什么？”',
-    opts:['查询','思考','称呼','识别'],
-    ans:1,
-    exp:'Suy ngẫm sâu về cuộc đời → 思考人生 (câu bài khoá). 查询 = tra cứu thông tin; 称呼 = gọi; 识别 = nhận dạng.'
-  },
-  {
-    wrong:'令人____的是，中国至今还没有自己的国花。',
-    opts:['后悔','佩服','遗憾','痛苦'],
-    ans:2,
-    exp:'Tiếc một điều khách quan → 令人遗憾的是 (câu 练习 2 của sách). 后悔 là hối hận việc chính mình làm; 佩服, 痛苦 không hợp nghĩa.'
-  },
-  {
-    wrong:'其实，林峰与刘医生的恋情，在医院里已经是____的秘密了。',
-    opts:['开放','完善','经典','公开'],
-    ans:3,
-    exp:'Bí mật ai cũng biết → 公开的秘密 (câu 练习 1 của sách). 开放 là mở cửa cho mọi người vào / dùng, không đi với 秘密.'
-  },
-  {
-    wrong:'汉字叔叔将网站上的内容全部____给网友免费下载。',
-    opts:['开放','公开','输入','收集'],
-    ans:0,
-    exp:'Cho cư dân mạng vào DÙNG, tải về → 开放给 (câu bài khoá). 公开 nhấn mạnh làm cho mọi người BIẾT; 输入, 收集 không đi với 给网友.'
-  },
-  {
-    wrong:'采取任何行动之前都需要有____的计划。',
-    opts:['痛苦','完善','偶然','遗憾'],
-    ans:1,
-    exp:'完善的计划 = kế hoạch hoàn chỉnh, chu đáo (câu 书写 29 của 练习册). Ba từ còn lại không tả 计划 theo nghĩa tích cực.'
-  },
-  {
-    wrong:'刘校长在教改方面的成就值得____。',
-    opts:['称呼','克服','称赞','查询'],
-    ans:2,
-    exp:'值得称赞 = đáng khen ngợi (câu 书写 30 của 练习册). 称呼 = gọi tên; 克服 = vượt qua; 查询 = tra cứu.'
-  },
-  {
-    wrong:'我们是大学同学，那时候他就有了这个____老报纸的爱好。',
-    opts:['收集','追求','输入','下载'],
-    ans:0,
-    exp:'Sưu tầm báo cũ → 收集 (câu 练习 1 của sách). 追求 là theo đuổi mục tiêu; 输入, 下载 dùng cho dữ liệu máy tính.'
-  },
-  {
-    wrong:'爸爸平时常提醒我，生活上不要过于____享受。',
-    opts:['收集','克服','追求','公开'],
-    ans:2,
-    exp:'追求享受 = chạy theo hưởng thụ (bảng 词语搭配, câu 练习 1 của sách). 收集, 克服, 公开 không đi với 享受.'
-  },
-  {
-    wrong:'活动的目的是为了培养学生____困难的勇气。',
-    opts:['佩服','克服','收集','追求'],
-    ans:1,
-    exp:'克服困难 = vượt qua khó khăn (câu 书写 31 của 练习册). 佩服 = khâm phục; 收集 = thu thập; 追求 = theo đuổi.'
-  },
-  {
-    wrong:'1972年，22岁的____爱上了中文，后来被网友称为“汉字叔叔”。',
-    opts:['赵括','李广','许慎','理查德·希尔斯'],
-    ans:3,
-    exp:'Nhân vật chính của bài là Richard Sears (理查德·希尔斯). 赵括 (bài 15), 李广 (bài 7) là người xưa; 许慎 là tác giả 《说文解字》.'
-  },
-  {
-    wrong:'他要抓紧时间尽快把《____》电脑化。',
-    opts:['说文解字','西游记','红楼梦','三国演义'],
-    ans:0,
-    exp:'Bộ tự điển chữ Hán cổ mà Chú Chữ Hán muốn số hoá là 《说文解字》. Ba cuốn còn lại là tiểu thuyết.'
-  },
-  {
-    wrong:'理查德选择了去____教书，因为那里也有人在做汉字识别查询的研究。',
-    opts:['北京大学','北京师范大学','清华大学','复旦大学'],
-    ans:1,
-    exp:'Theo bài khoá, Richard chọn Đại học Sư phạm Bắc Kinh (北京师范大学, gọi tắt 北师大).'
-  },
-  {
-    wrong:'2011年，有人把他的故事放到____上，引起了广泛关注。',
-    opts:['报纸','电视','微博','单位'],
-    ans:2,
-    exp:'Theo bài khoá, câu chuyện được đưa lên Weibo (微博) — mạng xã hội nên mới lan rộng.'
-  }
+  {wrong:'这次成功不是____的，是他多年努力的结果。',opts:['偶然','偶尔','最初','尽快'],ans:0,exp:'偶然 là tính từ, làm vị ngữ được: 不是偶然的 = không phải ngẫu nhiên. 偶尔 chỉ là phó từ (thỉnh thoảng), không đứng sau 是……的; 最初, 尽快 không hợp.'},
+  {wrong:'这家公司把今年的收入情况向社会____了。',opts:['公开','开放','输入','完善'],ans:0,exp:'公开 = công bố cho mọi người biết (thông tin, bí mật, tình hình). 开放 là mở cửa (nơi chốn, thị trường) cho người ta vào; 输入, 完善 không hợp.'},
+  {wrong:'学校的图书馆周末也对外____，欢迎大家来看书。',opts:['开放','公开','创办','包含'],ans:0,exp:'Nơi chốn (图书馆, 公园, 博物馆) mở cho người ngoài vào → 对外开放. 公开 dùng cho thông tin; 创办 là sáng lập; 包含 là bao hàm.'},
+  {wrong:'早知道这么难，我就不选这个专业了，现在真____。',opts:['后悔','遗憾','佩服','称赞'],ans:0,exp:'Tự mình chọn sai, giờ tiếc vì việc mình đã làm → 后悔. 遗憾 dùng cho chuyện ngoài ý muốn, không do mình quyết định; 佩服, 称赞 trái nghĩa.'},
+  {wrong:'比赛只差一分就赢了，真是太____了！',opts:['遗憾','后悔','真相','经典'],ans:0,exp:'Kết quả không như ý mà mình không làm gì sai → 遗憾 (đáng tiếc). 后悔 phải có người hối hận về việc đã làm; 真相, 经典 là danh từ không hợp.'},
+  {wrong:'妈妈不让他一个人去，他____要去，谁也拦不住。',opts:['硬','偶尔','抓紧','最初'],ans:0,exp:'硬 + 要/说/V = khăng khăng, nhất quyết làm (dù người khác phản đối). 偶尔 là thỉnh thoảng; 抓紧 phải đi với 时间 hoặc động từ cụ thể; 最初 là lúc đầu.'},
+  {wrong:'着火了！大家____往外跑！',opts:['赶快','尽快','偶然','最初'],ans:0,exp:'Tình huống gấp, giục làm NGAY → 赶快. 尽快 là "càng sớm càng tốt" dùng cho kế hoạch, lời dặn, không dùng khi khẩn cấp; 偶然, 最初 không hợp.'},
+  {wrong:'这件事我们还需要研究一下，会____给您打电话。',opts:['尽快','偶然','最初','硬'],ans:0,exp:'Lời hứa trong công việc = sẽ làm sớm nhất có thể → 尽快 + V. 偶然 là tình cờ; 最初 là lúc đầu; 硬 là cố chấp.'},
+  {wrong:'老师在全班同学面前____了他写的故事。',opts:['称赞','称呼','佩服','识别'],ans:0,exp:'称赞 + việc/tác phẩm = khen ngợi. 称呼 là gọi, xưng hô; 佩服 là khâm phục (thường + người, không nói 在……面前佩服); 识别 là nhận dạng.'},
+  {wrong:'他____了很多困难，终于读完了大学。',opts:['克服','佩服','收集','公开'],ans:0,exp:'克服 + 困难/缺点 = vượt qua, khắc phục. 佩服 là khâm phục; 收集 là thu thập; 公开 là công khai.'},
+  {wrong:'____我以为他是老师，后来才知道他也是学生。',opts:['最初','偶然','尽快','经典'],ans:0,exp:'最初……，后来…… = lúc đầu…, về sau…. 偶然 là tình cờ; 尽快 là càng sớm càng tốt; 经典 là kinh điển.'},
+  {wrong:'考试结束两个星期以后，你可以在网上____自己的成绩。',opts:['查询','称呼','创办','追求'],ans:0,exp:'查询 + 成绩/信息 = tra cứu. 称呼 là xưng hô; 创办 là sáng lập; 追求 là theo đuổi.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cậu ta rõ ràng biết mình sai, vậy mà cứ khăng khăng nói tại tôi không cho cậu ta biết sự thật.', zh:'他明明知道自己错了，却硬说是我没把真相告诉他。', py:'Tā míngmíng zhīdào zìjǐ cuò le, què yìng shuō shì wǒ méi bǎ zhēnxiàng gàosu tā.', goiY:['明明……却……','硬说','真相'], giai:'硬说 = khăng khăng nói (硬 là phó từ, đứng ngay trước động từ, không thêm 地); 明明 nêu sự thật rõ ràng, 却 nêu hành động trái ngược.'},
-  {vi:'Chúng tôi chỉ tình cờ quen nhau trên Weibo, không ngờ sau này lại thành bạn thân nhất.', zh:'我们只是偶然在微博上认识的，没想到后来竟然成了最好的朋友。', py:'Wǒmen zhǐshì ǒurán zài wēibó shang rènshi de, méi xiǎngdào hòulái jìngrán chéngle zuì hǎo de péngyou.', goiY:['偶然','没想到……竟然……','微博'], giai:'偶然 + V = tình cờ (làm gì); 竟然 diễn tả điều bất ngờ, đứng sau chủ ngữ và trước động từ.'},
-  {vi:'Thầy bảo chúng tôi nhanh chóng gõ bài báo cáo vào máy tính, nếu không sẽ không kịp nộp trước Tết Dương lịch.', zh:'老师让我们尽快把报告输入电脑，否则就来不及在元旦前交了。', py:'Lǎoshī ràng wǒmen jǐnkuài bǎ bàogào shūrù diànnǎo, fǒuzé jiù láibují zài Yuándàn qián jiāo le.', goiY:['尽快把……','否则','输入'], giai:'尽快 + 把 + O + V = làm việc gì càng sớm càng tốt; 否则 mở vế hậu quả “nếu không thì”.'},
-  {vi:'Học chữ Hán, thay vì học vẹt, chi bằng tìm hiểu quá trình biến đổi của từng chữ, như thế không những nhớ lâu mà còn khó viết sai.', zh:'学汉字与其死记硬背，不如了解每个字的演变过程，这样不但记得牢，而且不容易写错。', py:'Xué Hànzì yǔqí sǐjì-yìngbèi, bùrú liǎojiě měi ge zì de yǎnbiàn guòchéng, zhèyàng búdàn jì de láo, érqiě bù róngyì xiěcuò.', goiY:['与其……不如……','死记硬背','演变'], giai:'与其 A 不如 B = bỏ A chọn B; 死记硬背 là thành ngữ “học vẹt”, không dịch từng chữ.'},
-  {vi:'Bình thường tôi ít chơi game điện thoại, chỉ thỉnh thoảng cuối tuần mới tải một trò về chơi, vì thế thành tích luôn ổn định.', zh:'我平时很少玩手机游戏，只是周末偶然也会下载一个玩玩，所以成绩一直很稳定。', py:'Wǒ píngshí hěn shǎo wán shǒujī yóuxì, zhǐshì zhōumò ǒurán yě huì xiàzài yí ge wánwan, suǒyǐ chéngjì yìzhí hěn wěndìng.', goiY:['偶然也会','下载','所以'], giai:'偶然 làm phó từ = thỉnh thoảng (ít khi), thường đi với 也(会); khác 偶然 tính từ “ngẫu nhiên” (一个偶然的机会).'},
-  {vi:'Để thực hiện ước mơ của mình, ngày nào cậu ấy cũng tranh thủ thời gian tập đàn, dù có ốm cũng cố gắng tập đủ hai tiếng.', zh:'为了实现自己的梦想，他每天都抓紧时间练琴，哪怕生病了，也硬是坚持练完两个小时。', py:'Wèile shíxiàn zìjǐ de mèngxiǎng, tā měi tiān dōu zhuājǐn shíjiān liàn qín, nǎpà shēngbìng le, yě yìngshì jiānchí liàn wán liǎng ge xiǎoshí.', goiY:['哪怕……也……','硬是','抓紧时间'], giai:'硬是 = gắng gượng làm dù điều kiện không cho phép; 哪怕 nêu tình huống xấu nhất, vế sau 也 giữ nguyên hành động.'},
-  {vi:'Đã thích môn Vật lý đến thế thì em nên chủ động suy nghĩ, tìm cách vượt qua khó khăn, chứ không phải hễ gặp bài khó là bỏ cuộc.', zh:'既然你对物理这么感兴趣，就应该主动思考，想办法克服困难，而不是一遇到难题就放弃。', py:'Jìrán nǐ duì wùlǐ zhème gǎn xìngqù, jiù yīnggāi zhǔdòng sīkǎo, xiǎng bànfǎ kèfú kùnnan, ér bú shì yí yùdào nántí jiù fàngqì.', goiY:['既然……就……','而不是','克服困难'], giai:'既然 + sự thật đã biết, 就 + kết luận/lời khuyên; đừng nhầm 既然 (đã… thì…) với 虽然 (tuy…).'},
-  {vi:'Điều khiến tôi khâm phục nhất là bạn cùng bàn tuy mới học tiếng Trung một năm, nhưng đã nhận biết được khá nhiều chữ phồn thể, ngay cả một số phương ngữ cũng nghe hiểu.', zh:'让我最佩服的是，同桌虽然只学了一年中文，却已经能识别不少繁体字，连一些方言也听得懂。', py:'Ràng wǒ zuì pèifú de shì, tóngzhuō suīrán zhǐ xuéle yì nián Zhōngwén, què yǐjīng néng shíbié bù shǎo fántǐzì, lián yìxiē fāngyán yě tīng de dǒng.', goiY:['虽然……却……','连……也……','繁体字'], giai:'Mẫu 让我最佩服的是 + mệnh đề đưa điểm nhấn lên đầu câu; 识别 = nhận biết, phân biệt được (không phải “quen biết”).'},
-  {vi:'Một khi thấy tim mình khó chịu thì phải đi viện kiểm tra càng sớm càng tốt, đừng vì sợ lỡ việc học mà cố gượng, kẻo sau này phải hối tiếc.', zh:'一旦发现自己心脏不舒服，就要尽快去医院检查，千万别因为怕耽误学习而硬撑着，以免将来留下遗憾。', py:'Yídàn fāxiàn zìjǐ xīnzàng bù shūfu, jiù yào jǐnkuài qù yīyuàn jiǎnchá, qiānwàn bié yīnwèi pà dānwu xuéxí ér yìng chēngzhe, yǐmiǎn jiānglái liúxià yíhàn.', goiY:['一旦……就……','尽快','以免'], giai:'硬撑着 = cố gượng chịu (硬 nghĩa gắng gượng); 以免 đứng đầu vế cuối nêu điều muốn tránh — “để khỏi, kẻo”.'},
-  {vi:'Lúc đầu tôi thấy chữ Hán chẳng có chút logic nào, học rất khổ sở, mãi đến khi tình cờ đọc một cuốn sách nói về nguồn gốc chữ Hán, tôi mới phát hiện hoá ra chữ Hán thú vị đến vậy.', zh:'最初我觉得汉字毫无逻辑，学得很痛苦，直到偶然读了一本讲汉字来源的书，才发现汉字原来这么有趣。', py:'Zuìchū wǒ juéde Hànzì háowú luójí, xué de hěn tòngkǔ, zhídào ǒurán dúle yì běn jiǎng Hànzì láiyuán de shū, cái fāxiàn Hànzì yuánlái zhème yǒuqù.', goiY:['直到……才……','毫无逻辑','原来'], giai:'直到 + thời điểm, 才 + sự việc muộn mới xảy ra — “mãi đến… mới…”; 原来 ở đây là “hoá ra”, còn “lúc đầu” là 最初.'}
+  {vi:'Cậu ta rõ ràng biết mình sai, vậy mà cứ khăng khăng nói tại tôi không cho cậu ta biết sự thật.',zh:'他明明知道自己错了，却硬说是我没把真相告诉他。',py:'Tā míngmíng zhīdào zìjǐ cuò le, què yìng shuō shì wǒ méi bǎ zhēnxiàng gàosu tā.',goiY:['明明……却……','硬说','真相'],giai:'硬说 = khăng khăng nói (điều không đúng); 明明 (bài 9) nêu sự thật rõ ràng, vế sau 却 chuyển ý.'},
+  {vi:'Chúng tôi chỉ tình cờ quen nhau trên Weibo, không ngờ sau này lại thành bạn thân nhất.',zh:'我们只是偶然在微博上认识的，没想到后来竟然成了最好的朋友。',py:'Wǒmen zhǐshì ǒurán zài Wēibó shang rènshi de, méi xiǎngdào hòulái jìngrán chéngle zuì hǎo de péngyou.',goiY:['偶然','微博','竟然'],giai:'偶然 làm trạng ngữ đứng trước cụm giới từ 在微博上; 是……的 nhấn mạnh cách quen nhau.'},
+  {vi:'Thầy bảo chúng tôi nhanh chóng nhập kết quả khảo sát vào máy tính, nếu không sẽ không kịp nộp trước Tết Dương lịch.',zh:'老师让我们尽快把调查结果输入电脑，否则就来不及在元旦前交了。',py:'Lǎoshī ràng wǒmen jǐnkuài bǎ diàochá jiéguǒ shūrù diànnǎo, fǒuzé jiù láibují zài Yuándàn qián jiāo le.',goiY:['尽快','把……输入电脑','否则','元旦'],giai:'尽快 đứng trước 把; 否则 = nếu không thì; 来不及 = không kịp.'},
+  {vi:'Đã thích môn Vật lý đến thế thì em nên chủ động suy nghĩ, tìm cách vượt qua khó khăn, chứ không phải hễ gặp bài khó là bỏ cuộc.',zh:'既然你对物理这么感兴趣，就应该主动思考，想办法克服困难，而不是一遇到难的问题就放弃。',py:'Jìrán nǐ duì wùlǐ zhème gǎn xìngqù, jiù yīnggāi zhǔdòng sīkǎo, xiǎng bànfǎ kèfú kùnnan, ér bú shì yí yùdào nán de wèntí jiù fàngqì.',goiY:['既然……就……','思考','克服','一……就……'],giai:'既然 nêu sự thật làm tiền đề; 而不是 = chứ không phải; 一……就…… = hễ… là….'},
+  {vi:'Điều khiến tôi khâm phục nhất là bạn ngồi cạnh tôi tuy mới học tiếng Trung một năm, nhưng đã nhận biết được khá nhiều chữ phồn thể, ngay cả một số phương ngữ cũng nghe hiểu.',zh:'让我最佩服的是，坐在我旁边的同学虽然只学了一年中文，却已经能识别不少繁体字，连一些方言也听得懂。',py:'Ràng wǒ zuì pèifu de shì, zuò zài wǒ pángbiān de tóngxué suīrán zhǐ xuéle yì nián Zhōngwén, què yǐjīng néng shíbié bù shǎo fántǐzì, lián yìxiē fāngyán yě tīng de dǒng.',goiY:['让我最佩服的是……','识别','繁体字','连……也……'],giai:'让我最佩服的是…… mở đầu câu nêu điều đáng khâm phục; 识别 = nhận biết, phân biệt.'},
+  {vi:'Lúc đầu tôi thấy chữ Hán chẳng có chút logic nào, học rất khổ sở, mãi đến khi tình cờ đọc một cuốn sách nói về nguồn gốc chữ Hán, tôi mới phát hiện hoá ra chữ Hán thú vị đến vậy.',zh:'最初我觉得汉字毫无逻辑，学得很痛苦，直到偶然读了一本讲汉字来源的书，才发现汉字原来这么有趣。',py:'Zuìchū wǒ juéde Hànzì háowú luóji, xué de hěn tòngkǔ, zhídào ǒurán dúle yì běn jiǎng Hànzì láiyuán de shū, cái fāxiàn Hànzì yuánlái zhème yǒuqù.',goiY:['最初','毫无','痛苦','直到……才……'],giai:'毫无 (bài 20) + 逻辑; 直到……才…… = mãi đến… mới…; 原来 = hoá ra.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Lúc đầu Richard cảm thấy chữ Hán chẳng có logic gì, nên chỉ có thể học vẹt.', zh:'理查德最初觉得汉字没有任何逻辑，所以只能死记硬背。', py:'Lǐchádé zuìchū juéde Hànzì méiyǒu rènhé luójí, suǒyǐ zhǐ néng sǐjì-yìngbèi.', goiY:['最初 = lúc đầu','逻辑 = logic','死记硬背 = học vẹt'], giai:'所以 nêu hệ quả của vế trước; 最初 = ban đầu (so với về sau), đứng sau chủ ngữ.'},
-  {vi:'Trong một dịp tình cờ, ông phát hiện chỉ cần hiểu quá trình biến đổi của chữ Hán thì học sẽ nhẹ nhàng hơn nhiều.', zh:'一个偶然的机会，他发现只要了解汉字的演变过程，学起来就轻松多了。', py:'Yí ge ǒurán de jīhuì, tā fāxiàn zhǐyào liǎojiě Hànzì de yǎnbiàn guòchéng, xué qǐlái jiù qīngsōng duō le.', goiY:['一个偶然的机会 = một dịp tình cờ','只要……就…… = chỉ cần… thì…','演变 = biến đổi, diễn biến'], giai:'偶然 là tính từ làm định ngữ (偶然的机会); 学起来 = “học vào thì…”, V + 起来 dùng để đánh giá cảm nhận.'},
-  {vi:'Tuy bác sĩ nói tim ông có vấn đề, nhưng ông lại càng tranh thủ thời gian nghiên cứu chữ Hán hơn.', zh:'虽然医生说他的心脏有问题，他却更加抓紧时间研究汉字了。', py:'Suīrán yīshēng shuō tā de xīnzàng yǒu wèntí, tā què gèngjiā zhuājǐn shíjiān yánjiū Hànzì le.', goiY:['虽然……却…… = tuy… nhưng lại…','抓紧时间 = tranh thủ thời gian'], giai:'却 đứng sau chủ ngữ 他 ở vế sau; 抓紧时间 = tranh thủ thời gian, không dịch là “nắm chặt thời gian”.'},
-  {vi:'Ông nghĩ, nếu mình chỉ còn sống được một năm nữa thì phải nhanh chóng số hoá cuốn 《Thuyết văn giải tự》, kẻo để lại nuối tiếc.', zh:'他想，假如自己只能再活一年，就要尽快把《说文解字》电脑化，免得留下遗憾。', py:'Tā xiǎng, jiǎrú zìjǐ zhǐ néng zài huó yì nián, jiù yào jǐnkuài bǎ 《Shuōwén Jiězì》 diànnǎohuà, miǎnde liúxià yíhàn.', goiY:['尽快把……电脑化 = nhanh chóng số hoá…','免得 = kẻo, để khỏi','遗憾 = nuối tiếc'], giai:'尽快 + 把 + O + V: làm càng sớm càng tốt; 遗憾 là “tiếc nuối”, không phải “oán hận”.'},
-  {vi:'Sau nhiều năm nỗ lực, ông không những vượt qua nỗi đau bệnh tật mà còn lập ra trang web chữ Hán của riêng mình.', zh:'经过多年的努力，他不但克服了疾病带来的痛苦，而且创办了自己的汉字网站。', py:'Jīngguò duō nián de nǔlì, tā búdàn kèfúle jíbìng dàilái de tòngkǔ, érqiě chuàngbànle zìjǐ de Hànzì wǎngzhàn.', goiY:['不但……而且…… = không những… mà còn…','克服 = vượt qua','创办 = sáng lập, lập ra'], giai:'不但 đứng sau chủ ngữ khi hai vế cùng chủ ngữ; 疾病带来的痛苦 là cụm định ngữ — “nỗi đau do bệnh tật mang lại”.'},
-  {vi:'Sau khi trang web được công khai, cư dân mạng khắp thế giới đều có thể tra cứu và tải về miễn phí, vì thế ông được thân mật gọi là “Chú Chữ Hán”.', zh:'网站公开以后，全世界的网友都可以免费查询和下载，因此他被亲切地称呼为“汉字叔叔”。', py:'Wǎngzhàn gōngkāi yǐhòu, quán shìjiè de wǎngyǒu dōu kěyǐ miǎnfèi cháxún hé xiàzài, yīncǐ tā bèi qīnqiè de chēnghu wéi “Hànzì shūshu”.', goiY:['因此 = vì thế','被……称呼为…… = được gọi là…','查询 = tra cứu'], giai:'被……称呼为…… là câu bị động “được gọi là”; 公开 ở đây là “công bố cho mọi người”, không phải “mở cửa”.'},
-  {vi:'Điều khiến người ta khâm phục hơn là trang web của ông thu thập rất nhiều tự hình chữ Hán cổ, gồm cả giáp cốt văn, kim văn…, hơn nữa đều mở cho cư dân mạng sử dụng.', zh:'更让人佩服的是，他的网站收集了大量古代汉字字形，包含甲骨文、金文等，而且全部对网友开放。', py:'Gèng ràng rén pèifú de shì, tā de wǎngzhàn shōujíle dàliàng gǔdài Hànzì zìxíng, bāohán jiǎgǔwén, jīnwén děng, érqiě quánbù duì wǎngyǒu kāifàng.', goiY:['更让人佩服的是 = điều đáng khâm phục hơn là','包含 = bao gồm','开放 = mở (cho dùng)'], giai:'Mẫu 让人 + cảm xúc + 的是…… đưa điểm nhấn lên đầu; 而且 bổ sung thêm một điểm cộng nữa.'},
-  {vi:'Ngày thường ông rất bận, chỉ thỉnh thoảng mới lên Weibo xem lời nhắn của cư dân mạng; thấy mọi người khen mình, ông lại luôn bảo trang web vẫn chưa đủ hoàn thiện.', zh:'他平时非常忙，只是偶然也会上微博看看网友的留言，看到大家称赞自己，他却总说网站还不够完善。', py:'Tā píngshí fēicháng máng, zhǐshì ǒurán yě huì shàng wēibó kànkan wǎngyǒu de liúyán, kàndào dàjiā chēngzàn zìjǐ, tā què zǒng shuō wǎngzhàn hái bú gòu wánshàn.', goiY:['偶然也会 = thỉnh thoảng cũng…','称赞 = khen ngợi','完善 = hoàn thiện'], giai:'偶然 làm phó từ nghĩa “thỉnh thoảng”, đi với 也会; 却 chỉ phản ứng trái với điều người nghe chờ đợi (được khen mà lại khiêm tốn).'},
-  {vi:'Cơ quan vốn định cho ông nghỉ hưu, nhưng ông nhất quyết không chịu, ông nói thay vì ở nhà hưởng nhàn, chi bằng tiếp tục theo đuổi ước mơ của mình.', zh:'单位本来要安排他退休，他却硬是不肯，他说与其在家享受清闲，不如继续追求自己的梦想。', py:'Dānwèi běnlái yào ānpái tā tuìxiū, tā què yìngshì bù kěn, tā shuō yǔqí zài jiā xiǎngshòu qīngxián, bùrú jìxù zhuīqiú zìjǐ de mèngxiǎng.', goiY:['硬是 = nhất quyết, khăng khăng','与其……不如…… = thay vì… chi bằng…','追求……梦想 = theo đuổi ước mơ'], giai:'硬是 + 不肯 = khăng khăng không chịu (硬 nghĩa ①); 单位 là “cơ quan, nơi làm việc”, không dịch là “đơn vị đo”.'},
-  {vi:'Người Mỹ đã số hoá những kinh điển như 《Thuyết văn giải tự》 này sở dĩ kiên trì được hai mươi năm là vì ông trước sau không buông bỏ được mối duyên với chữ Hán.', zh:'这位把《说文解字》等经典电脑化的美国人，之所以能坚持二十年，是因为他始终放不下与汉字的这段情缘。', py:'Zhè wèi bǎ 《Shuōwén Jiězì》 děng jīngdiǎn diànnǎohuà de Měiguórén, zhīsuǒyǐ néng jiānchí èrshí nián, shì yīnwèi tā shǐzhōng fàng bu xià yǔ Hànzì de zhè duàn qíngyuán.', goiY:['之所以……是因为…… = sở dĩ… là vì…','经典 = kinh điển','情缘 = mối duyên, tình cảm gắn bó'], giai:'Chủ ngữ dài (这位……的美国人) đứng trước 之所以, khi dịch giữ trật tự “sở dĩ… là vì…”; 放不下 = không buông bỏ được.'}
+  {vi:'Tuy bác sĩ nói tim ông có vấn đề, nhưng ông không buông được mối duyên với chữ Hán, lại càng tranh thủ thời gian nghiên cứu chữ Hán hơn.',zh:'虽然医生说他的心脏有问题，他却放不下与汉字的这段情缘，更加抓紧时间研究汉字了。',py:'Suīrán yīshēng shuō tā de xīnzàng yǒu wèntí, tā què fàng bu xià yǔ Hànzì de zhè duàn qíngyuán, gèngjiā zhuājǐn shíjiān yánjiū Hànzì le.',goiY:['心脏 = tim','情缘 = mối duyên','抓紧时间 = tranh thủ thời gian'],giai:'虽然……却…… chuyển ý; 更加 + V cụm = càng… hơn.'},
+  {vi:'Ông nghĩ, nếu mình chỉ còn sống được một năm nữa thì phải nhanh chóng số hoá cuốn 《Thuyết văn giải tự》, kẻo để lại nuối tiếc.',zh:'他想，假如自己只能再活一年，就要尽快把《说文解字》电脑化，要不就会留下遗憾。',py:'Tā xiǎng, jiǎrú zìjǐ zhǐ néng zài huó yì nián, jiù yào jǐnkuài bǎ 《Shuōwén Jiězì》 diànnǎohuà, yàobù jiù huì liúxià yíhàn.',goiY:['假如 = nếu','尽快 = càng sớm càng tốt','要不 = nếu không thì'],giai:'假如 (bài 20) = nếu; 要不 (bài 8) = nếu không thì; 留下遗憾 = để lại nuối tiếc.'},
+  {vi:'Sau nhiều năm nỗ lực, ông không những vượt qua nỗi đau bệnh tật mà còn lập ra trang web chữ Hán của riêng mình.',zh:'经过多年的努力，他不但克服了疾病带来的痛苦，而且创办了自己的汉字网站。',py:'Jīngguò duō nián de nǔlì, tā búdàn kèfúle jíbìng dàilái de tòngkǔ, érqiě chuàngbànle zìjǐ de Hànzì wǎngzhàn.',goiY:['疾病 = bệnh tật','痛苦 = nỗi đau','创办 = lập ra'],giai:'不但……而且…… = không những… mà còn…; 疾病带来的痛苦 là định ngữ dài trước danh từ.'},
+  {vi:'Ngày thường ông rất bận, chỉ thỉnh thoảng mới lên Weibo xem cư dân mạng nói gì; thấy mọi người khen mình, ông lại luôn bảo trang web vẫn chưa đủ hoàn thiện.',zh:'他平时非常忙，只是偶然也会上微博看看网友们说了什么，看到大家称赞自己，他却总是说网站还不够完善。',py:'Tā píngshí fēicháng máng, zhǐshì ǒurán yě huì shàng Wēibó kànkan wǎngyǒumen shuōle shénme, kàndào dàjiā chēngzàn zìjǐ, tā què zǒngshì shuō wǎngzhàn hái bú gòu wánshàn.',goiY:['偶然也会 = thỉnh thoảng cũng','称赞 = khen ngợi','完善 = hoàn thiện'],giai:'偶然 ở đây là phó từ = 偶尔 (thỉnh thoảng), hay đi với 也会.'},
+  {vi:'Cơ quan vốn định cho ông nghỉ hưu, nhưng ông nhất quyết không đồng ý, ông nói thay vì ở nhà nghỉ ngơi, ông muốn tiếp tục theo đuổi ước mơ của mình hơn.',zh:'单位本来要安排他退休，他却硬是不同意，他说比起在家休息，他更愿意继续追求自己的梦想。',py:'Dānwèi běnlái yào ānpái tā tuìxiū, tā què yìngshì bù tóngyì, tā shuō bǐqǐ zài jiā xiūxi, tā gèng yuànyì jìxù zhuīqiú zìjǐ de mèngxiǎng.',goiY:['单位 = cơ quan','硬是 = nhất quyết','比起……更…… = so với… thì… hơn'],giai:'硬是 (khẩu ngữ của 硬) nhấn mạnh thái độ kiên quyết; 比起 A，更愿意 B = thích B hơn A.'},
+  {vi:'Ông đưa gần mười vạn chữ Hán thu thập được vào kho dữ liệu của mình, gồm cả chữ phồn thể lẫn giản thể, còn có cả cách đọc tiếng phổ thông và một số phương ngữ.',zh:'他把收集来的近十万个汉字都放进了自己的资料库，既包含繁体字，也包含简体字，还有普通话和一些方言的读音。',py:'Tā bǎ shōují lái de jìn shíwàn ge Hànzì dōu fàngjìnle zìjǐ de zīliàokù, jì bāohán fántǐzì, yě bāohán jiǎntǐzì, hái yǒu pǔtōnghuà hé yìxiē fāngyán de dúyīn.',goiY:['收集 = thu thập','资料库 = kho dữ liệu','包含 = bao gồm'],giai:'既……也…… nối hai thành phần song song; 近 + số = gần.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1836,42 +1686,12 @@ var writingData = {
     {ten:'所以我要抓紧时间，尽快 + V',nhan:'尽快',vd:'所以我要抓紧时间，尽快把汉语学好。',khi:'Câu KẾT: hành động cụ thể.'}
   ],
   sapXep:[
-    {
-      manh:['爱上了','一个偶然的机会','汉语','我'],
-      dap:'一个偶然的机会，我爱上了汉语。',
-      vn:'Nhân một dịp tình cờ, tôi đã phải lòng tiếng Trung.',
-      giai:'一个偶然的机会 làm trạng ngữ đứng đầu câu, sau đó là Sub + V + O.'
-    },
-    {
-      manh:['克服了','我','困难','慢慢'],
-      dap:'我慢慢克服了困难。',
-      vn:'Tôi dần dần vượt qua được khó khăn.',
-      giai:'Trạng ngữ 慢慢 đứng trước động từ; 克服 + 困难.'
-    },
-    {
-      manh:['让我','汉字叔叔的故事','很佩服'],
-      dap:'汉字叔叔的故事让我很佩服。',
-      vn:'Câu chuyện của Chú Chữ Hán khiến tôi rất khâm phục.',
-      giai:'Câu kiêm ngữ: A + 让 + người + 很佩服.'
-    },
-    {
-      manh:['去中国留学','我的梦想','是'],
-      dap:'我的梦想是去中国留学。',
-      vn:'Ước mơ của tôi là đi Trung Quốc du học.',
-      giai:'我的梦想 làm chủ ngữ, 是 + cụm động từ.'
-    },
-    {
-      manh:['把汉语','我要','学好','尽快'],
-      dap:'我要尽快把汉语学好。',
-      vn:'Tôi phải học giỏi tiếng Trung càng sớm càng tốt.',
-      giai:'Trật tự: Sub + 要 + 尽快 + 把 + O + V + bổ ngữ.'
-    },
-    {
-      manh:['学起来','汉字的演变过程','了解','以后','容易多了'],
-      dap:'了解汉字的演变过程以后，学起来容易多了。',
-      vn:'Hiểu quá trình biến đổi của chữ Hán rồi thì học dễ hơn nhiều.',
-      giai:'Vế thời gian “V + O + 以后” đứng trước; 学起来 + Adj + 多了.'
-    }
+    {manh:['偶然','这次','我们的','见面','非常'],dap:'我们的这次见面非常偶然。',vn:'Lần gặp mặt này của chúng tôi rất tình cờ.',giai:'Chủ ngữ 我们的这次见面 (định ngữ 我们的 → chỉ định 这次 → danh từ) → phó từ 非常 → tính từ 偶然 làm vị ngữ.'},
+    {manh:['克服了','他','终于','心理上的','困难'],dap:'他终于克服了心理上的困难。',vn:'Cuối cùng anh ấy đã vượt qua được khó khăn về tâm lý.',giai:'Chủ ngữ 他 → phó từ 终于 → động từ 克服了 → tân ngữ có định ngữ 心理上的.'},
+    {manh:['完善','这个网站','还需要','不断地'],dap:'这个网站还需要不断地完善。',vn:'Trang web này còn cần được hoàn thiện không ngừng.',giai:'Chủ ngữ 这个网站 → 还需要 → trạng ngữ 不断地 → động từ 完善.'},
+    {manh:['已经','学校','在网上','公开了','考试成绩'],dap:'学校已经在网上公开了考试成绩。',vn:'Nhà trường đã công bố điểm thi trên mạng.',giai:'Chủ ngữ 学校 → 已经 → nơi chốn 在网上 → động từ 公开了 → tân ngữ.'},
+    {manh:['称赞','受到了','他的','大家的','作品'],dap:'他的作品受到了大家的称赞。',vn:'Tác phẩm của anh ấy được mọi người khen ngợi.',giai:'受到 + (người)的 + 称赞/欢迎/关注: 受到了大家的称赞.'},
+    {manh:['包含了','这本书','三千多个','汉字'],dap:'这本书包含了三千多个汉字。',vn:'Cuốn sách này gồm hơn ba nghìn chữ Hán.',giai:'Chủ ngữ 这本书 → động từ 包含了 → tân ngữ (số lượng 三千多个 + 汉字).'}
   ]
 };
 
@@ -1881,38 +1701,10 @@ var writingData = {
 var speakingData = {
   intro:'Ba câu đầu là <b>话题讨论</b> của sách (tr. 38: 学汉语), câu 4 mở rộng. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố dùng từ mới: 偶然 · 克服 · 死记硬背 · 尽快 · 佩服 · 梦想 · 追求.',
   questions:[
-    {
-      q_zh:'出于什么目的或原因，你做出了学汉语的决定？',
-      q_vn:'Vì mục đích hay lý do gì mà em quyết định học tiếng Trung?',
-      hint:'Kể một dịp CỤ THỂ, dùng 偶然 và 从此',
-      sample:'我学汉语是很偶然的。初中的时候，我偶然听到一首中文歌，觉得特别好听，从此就对汉语产生了兴趣。后来我想以后去中国公司工作，所以决定好好儿学汉语。',
-      sample_vn:'Tôi học tiếng Trung là rất tình cờ. Hồi cấp hai, tôi tình cờ nghe một bài hát tiếng Trung, thấy cực kỳ hay, từ đó bắt đầu thấy hứng thú với tiếng Trung. Về sau tôi muốn sau này làm việc ở công ty Trung Quốc, nên quyết định học tiếng Trung cho đàng hoàng.',
-      note:'Trả lời cả “lý do” (hứng thú) lẫn “mục đích” (công việc) thì câu trả lời đầy đặn hơn. 对……产生兴趣 là cụm rất hay dùng.'
-    },
-    {
-      q_zh:'你在学习过程中遇到过什么困难？你是怎么克服的？',
-      q_vn:'Trong quá trình học em đã gặp khó khăn gì? Em đã vượt qua bằng cách nào?',
-      hint:'Nêu MỘT khó khăn cụ thể, dùng 死记硬背, 克服',
-      sample:'我觉得最难的是汉字。刚开始我只会死记硬背，今天记住了，明天就忘了。后来老师教我们了解汉字的偏旁和演变过程，我就慢慢克服了这个困难。',
-      sample_vn:'Tôi thấy khó nhất là chữ Hán. Lúc đầu tôi chỉ biết học vẹt, hôm nay nhớ thì mai đã quên. Về sau thầy dạy chúng tôi tìm hiểu bộ thủ và quá trình biến đổi của chữ Hán, thế là tôi dần dần vượt qua được khó khăn này.',
-      note:'Câu hỏi hai vế: khó khăn là gì + vượt qua thế nào. Khung 刚开始……，后来…… giúp kể có trình tự.'
-    },
-    {
-      q_zh:'学汉语给你的生活带来了哪些改变？从中你得到了哪些收获？',
-      q_vn:'Học tiếng Trung đã mang lại những thay đổi gì cho cuộc sống của em? Em thu hoạch được gì từ đó?',
-      hint:'Nêu 2 thay đổi, dùng 不仅……而且……',
-      sample:'学汉语以后，我不仅能看懂中文电影，而且交了很多中国朋友。我最大的收获是更了解中国文化了，眼界也开阔了很多。',
-      sample_vn:'Từ khi học tiếng Trung, tôi không những xem hiểu được phim tiếng Trung mà còn kết bạn được với nhiều người Trung Quốc. Thu hoạch lớn nhất của tôi là hiểu văn hoá Trung Quốc hơn, tầm nhìn cũng rộng mở hơn nhiều.',
-      note:'收获 (thu hoạch) và 开阔眼界 (mở rộng tầm mắt) là từ trong phần 运用 của sách — dùng được là ăn điểm.'
-    },
-    {
-      q_zh:'你觉得汉字叔叔身上最让人佩服的是什么？',
-      q_vn:'Em thấy ở Chú Chữ Hán điều đáng khâm phục nhất là gì?',
-      hint:'Chọn MỘT điểm, dùng 最让人佩服的是……, 追求梦想',
-      sample:'我觉得最让人佩服的是他一直在追求自己的梦想。他得了心脏病，却没有放弃，还把网站免费开放给大家。六十多岁了也不退休，真是“活到老，学到老”。',
-      sample_vn:'Tôi thấy đáng khâm phục nhất là ông luôn theo đuổi ước mơ của mình. Ông mắc bệnh tim nhưng không bỏ cuộc, còn mở trang web miễn phí cho mọi người. Ngoài sáu mươi tuổi vẫn không nghỉ hưu, đúng là “sống đến già, học đến già”.',
-      note:'Mở bằng 最让人佩服的是…… (giống 更让人佩服的是 trong bài khoá) rồi đưa dẫn chứng từ bài.'
-    }
+    {q_zh:'你为什么决定学汉语？',q_vn:'Vì sao em quyết định học tiếng Trung?',hint:'Kể một dịp CỤ THỂ, dùng 偶然',sample:'我学汉语是很偶然的。上中学的时候，我偶然听到一个中国朋友说汉语，觉得特别好听，就对汉语产生了兴趣。后来我想以后去中国公司工作，所以决定好好儿学汉语。',sample_vn:'Tôi học tiếng Trung là rất tình cờ. Hồi trung học, tôi tình cờ nghe một người bạn Trung Quốc nói tiếng Trung, thấy cực kỳ hay, thế là bắt đầu hứng thú với tiếng Trung. Về sau tôi muốn sau này làm việc ở công ty Trung Quốc, nên quyết định học tiếng Trung cho đàng hoàng.',note:'Trả lời cả “lý do” (hứng thú) lẫn “mục đích” (công việc) thì câu trả lời đầy đặn hơn. 对……产生兴趣 là cụm rất hay dùng.'},
+    {q_zh:'你在学习过程中遇到过什么困难？你是怎么克服的？',q_vn:'Trong quá trình học em đã gặp khó khăn gì? Em đã vượt qua bằng cách nào?',hint:'Nêu MỘT khó khăn cụ thể, dùng 死记硬背, 克服',sample:'我觉得最难的是汉字。刚开始我只会死记硬背，今天记住了，明天就忘了。后来老师教我们了解每个字是怎么来的，我才慢慢不怕汉字了。',sample_vn:'Tôi thấy khó nhất là chữ Hán. Lúc đầu tôi chỉ biết học vẹt, hôm nay nhớ thì mai đã quên. Về sau thầy dạy chúng tôi tìm hiểu mỗi chữ từ đâu mà ra, tôi mới dần dần hết sợ chữ Hán.',note:'Câu hỏi hai vế: khó khăn là gì + vượt qua thế nào. Khung 刚开始……，后来…… giúp kể có trình tự.'},
+    {q_zh:'学汉语给你的生活带来了哪些改变？',q_vn:'Học tiếng Trung đã mang lại những thay đổi gì cho cuộc sống của em?',hint:'Nêu 2 thay đổi, dùng 不仅……而且……',sample:'学汉语以后，我不仅能看懂中文电影，而且交了很多中国朋友。最大的变化是我更了解中国文化了，看问题的角度也多了。',sample_vn:'Từ khi học tiếng Trung, tôi không những xem hiểu được phim tiếng Trung mà còn kết bạn được với nhiều người Trung Quốc. Thay đổi lớn nhất là tôi hiểu văn hoá Trung Quốc hơn, cách nhìn vấn đề cũng nhiều góc độ hơn.',note:'Nêu thay đổi cụ thể (xem phim, kết bạn) trước, rồi đến thay đổi trong suy nghĩ — câu trả lời có chiều sâu.'},
+    {q_zh:'你觉得汉字叔叔最让人佩服的是什么？',q_vn:'Em thấy ở Chú Chữ Hán điều đáng khâm phục nhất là gì?',hint:'Chọn MỘT điểm, dùng 最让人佩服的是……, 追求梦想',sample:'我觉得最让人佩服的是他一直在追求自己的梦想。他得了心脏病，却没有放弃，还把网站免费开放给大家。六十多岁了也不退休，每天的日程还安排得满满的。',sample_vn:'Tôi thấy đáng khâm phục nhất là ông luôn theo đuổi ước mơ của mình. Ông mắc bệnh tim nhưng không bỏ cuộc, còn mở trang web miễn phí cho mọi người. Ngoài sáu mươi tuổi vẫn không nghỉ hưu, lịch mỗi ngày vẫn kín mít.',note:'Mở bằng 最让人佩服的是…… (giống 更让人佩服的是 trong bài khoá) rồi đưa dẫn chứng từ bài.'}
   ]
 };
 
@@ -2012,51 +1804,11 @@ var listenExamData = {
 var situationData = {
   intro:'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items:[
-    {
-      scene:'Bạn cùng lớp than thở chữ Hán khó quá, chỉ biết học vẹt.',
-      a:{sp:'Bạn',zh:'汉字太难记了，我只能死记硬背。',vn:'Chữ Hán khó nhớ quá, tớ chỉ biết học vẹt.'},
-      need:['Dùng 死记硬背 hoặc 演变','Gợi ý một cách học tốt hơn'],
-      sample:'别再死记硬背了，你先了解一下汉字的演变过程，这样记得更快。',
-      samplePy:'Bié zài sǐjì-yìngbèi le, nǐ xiān liǎojiě yíxià Hànzì de yǎnbiàn guòchéng, zhèyàng jì de gèng kuài.',
-      sampleVn:'Đừng học vẹt nữa, cậu tìm hiểu quá trình biến đổi của chữ Hán trước đi, như thế nhớ nhanh hơn.',
-      tip:'别再……了 = đừng … nữa. Lời khuyên nên kèm cách làm cụ thể.'
-    },
-    {
-      scene:'Thầy giáo nhắn: kế hoạch đi dã ngoại của lớp phải nộp trước thứ Sáu.',
-      a:{sp:'Thầy',zh:'班里的出游计划周五以前要交给我。',vn:'Kế hoạch đi dã ngoại của lớp phải nộp cho thầy trước thứ Sáu.'},
-      need:['Dùng 尽快','Hứa sẽ hoàn thành'],
-      sample:'好的，老师，我们会尽快把计划写好，周四就交给您。',
-      samplePy:'Hǎo de, lǎoshī, wǒmen huì jǐnkuài bǎ jìhuà xiěhǎo, zhōusì jiù jiāo gěi nín.',
-      sampleVn:'Vâng thưa thầy, chúng em sẽ viết xong kế hoạch sớm nhất có thể, thứ Năm là nộp thầy ạ.',
-      tip:'尽快 + 把 … V好 — trả lời thầy cô dùng 您 và hứa mốc thời gian cụ thể.'
-    },
-    {
-      scene:'Bạn mới quen hỏi vì sao em học tiếng Trung.',
-      a:{sp:'Bạn mới',zh:'你为什么想学汉语？',vn:'Sao cậu lại muốn học tiếng Trung?'},
-      need:['Dùng 偶然','Dùng 从此'],
-      sample:'说起来很偶然：那年我偶然看了一部中国电影，从此就爱上了汉语。',
-      samplePy:'Shuō qilai hěn ǒurán: nà nián wǒ ǒurán kànle yí bù Zhōngguó diànyǐng, cóngcǐ jiù àishangle Hànyǔ.',
-      sampleVn:'Nói ra thì rất tình cờ: năm ấy tớ tình cờ xem một bộ phim Trung Quốc, từ đó phải lòng tiếng Trung luôn.',
-      tip:'说起来 (nói ra thì) — ôn bổ ngữ xu hướng 起来 nghĩa mở rộng.'
-    },
-    {
-      scene:'Em gái kể một bạn trong lớp cứ khăng khăng nói bài tập của em ấy là chép.',
-      a:{sp:'Em gái',zh:'我的作业明明是自己写的，他却说是我抄的！',vn:'Bài tập rõ ràng là em tự làm, thế mà bạn ấy lại bảo em chép!'},
-      need:['Dùng 硬','Dùng 真相 để an ủi em'],
-      sample:'他没有证据就硬说你抄的，太不讲道理了。别生气，真相总会清楚的。',
-      samplePy:'Tā méiyǒu zhèngjù jiù yìng shuō nǐ chāo de, tài bù jiǎng dàolǐ le. Bié shēngqì, zhēnxiàng zǒng huì qīngchu de.',
-      sampleVn:'Nó chẳng có bằng chứng gì mà cứ khăng khăng bảo em chép, thật vô lý. Đừng giận, sự thật rồi sẽ rõ thôi.',
-      tip:'硬说 = khăng khăng nói (điều không đúng); 讲道理 là từ bài 15.'
-    },
-    {
-      scene:'Ông nội sắp nghỉ hưu, lo sau này không biết làm gì.',
-      a:{sp:'Ông nội',zh:'下个月我就退休了，以后每天干什么呢？',vn:'Tháng sau ông nghỉ hưu rồi, sau này ngày nào cũng làm gì đây?'},
-      need:['Dùng 追求 hoặc 梦想','Dùng 活到老，学到老'],
-      sample:'爷爷，您不是一直想学画画儿吗？退休以后正好可以追求您的梦想，活到老，学到老嘛！',
-      samplePy:'Yéye, nín bú shì yìzhí xiǎng xué huà huàr ma? Tuìxiū yǐhòu zhènghǎo kěyǐ zhuīqiú nín de mèngxiǎng, huó dào lǎo, xué dào lǎo ma!',
-      sampleVn:'Ông ơi, chẳng phải ông luôn muốn học vẽ sao? Nghỉ hưu rồi vừa hay có thể theo đuổi ước mơ của ông, sống đến già, học đến già mà!',
-      tip:'不是……吗？ = chẳng phải … sao — câu phản vấn nhắc lại điều người nghe đã biết.'
-    }
+    {scene:'Bạn cùng lớp than thở chữ Hán khó quá, chỉ biết học vẹt.',a:{sp:'Bạn',zh:'汉字太难记了，我每天都背，可还是记不住。',vn:'Chữ Hán khó nhớ quá, ngày nào tớ cũng học thuộc mà vẫn không nhớ nổi.'},need:['Dùng 死记硬背 hoặc 演变','Gợi ý một cách học tốt hơn'],sample:'别再死记硬背了，你先了解一下汉字的演变过程，这样记得更快。',samplePy:'Bié zài sǐjì-yìngbèi le, nǐ xiān liǎojiě yíxià Hànzì de yǎnbiàn guòchéng, zhèyàng jì de gèng kuài.',sampleVn:'Đừng học vẹt nữa, cậu tìm hiểu quá trình biến đổi của chữ Hán trước đi, như thế nhớ nhanh hơn.',tip:'别再……了 = đừng … nữa. Lời khuyên nên kèm cách làm cụ thể.'},
+    {scene:'Thầy giáo nhắn: kế hoạch hoạt động của lớp phải nộp trước thứ Sáu.',a:{sp:'Thầy',zh:'班里的活动计划周五以前要交给我。',vn:'Kế hoạch hoạt động của lớp phải nộp cho thầy trước thứ Sáu.'},need:['Dùng 尽快','Hứa sẽ hoàn thành'],sample:'好的，老师，我们会尽快把计划写好，周四就交给您。',samplePy:'Hǎo de, lǎoshī, wǒmen huì jǐnkuài bǎ jìhuà xiěhǎo, zhōusì jiù jiāo gěi nín.',sampleVn:'Vâng thưa thầy, chúng em sẽ viết xong kế hoạch sớm nhất có thể, thứ Năm là nộp thầy ạ.',tip:'尽快 + 把 … V好 — trả lời thầy cô dùng 您 và hứa mốc thời gian cụ thể.'},
+    {scene:'Bạn mới quen hỏi vì sao em học tiếng Trung.',a:{sp:'Bạn mới',zh:'你怎么会对汉语感兴趣的？',vn:'Sao cậu lại thấy hứng thú với tiếng Trung thế?'},need:['Dùng 偶然','Kể một dịp cụ thể'],sample:'其实很偶然。有一次我陪朋友去上了一节汉语课，觉得特别有意思，就一直学下来了。',samplePy:'Qíshí hěn ǒurán. Yǒu yí cì wǒ péi péngyou qù shàngle yì jié Hànyǔ kè, juéde tèbié yǒu yìsi, jiù yìzhí xué xiàlai le.',sampleVn:'Thật ra rất tình cờ. Có lần tớ đi cùng bạn đến học thử một buổi tiếng Trung, thấy cực kỳ thú vị, thế là học luôn đến giờ.',tip:'偶然 làm vị ngữ (很偶然) để mở đầu câu chuyện; 学下来 = học tiếp tục đến nay (bổ ngữ xu hướng 下来).'},
+    {scene:'Em gái kể một bạn trong lớp cứ khăng khăng nói bài tập của em ấy là chép của người khác.',a:{sp:'Em gái',zh:'我的作业明明是自己写的，他却说是我照着别人的写的！',vn:'Bài tập rõ ràng là em tự làm, thế mà bạn ấy lại bảo em chép theo bài người khác!'},need:['Dùng 硬','Dùng 真相 để an ủi em'],sample:'他没有证据就硬说是你照着别人写的，太不讲道理了。别生气，真相早晚会清楚的。',samplePy:'Tā méiyǒu zhèngjù jiù yìng shuō shì nǐ zhàozhe biérén xiě de, tài bù jiǎng dàolǐ le. Bié shēngqì, zhēnxiàng zǎowǎn huì qīngchu de.',sampleVn:'Nó chẳng có bằng chứng gì mà cứ khăng khăng bảo em chép bài người khác, thật vô lý. Đừng giận, sớm muộn gì sự thật cũng sẽ rõ thôi.',tip:'硬说 = khăng khăng nói (điều không đúng); 讲道理 là từ bài 15.'},
+    {scene:'Ông nội sắp nghỉ hưu, lo sau này không biết làm gì.',a:{sp:'Ông nội',zh:'下个月我就退休了，以后每天干什么呢？',vn:'Tháng sau ông nghỉ hưu rồi, sau này ngày nào cũng làm gì đây?'},need:['Dùng 追求 hoặc 梦想','Gợi ý một việc cụ thể'],sample:'爷爷，您不是一直想学画画儿吗？退休以后正好可以追求您的梦想，时间多的是呢！',samplePy:'Yéye, nín bú shì yìzhí xiǎng xué huà huàr ma? Tuìxiū yǐhòu zhènghǎo kěyǐ zhuīqiú nín de mèngxiǎng, shíjiān duō de shì ne!',sampleVn:'Ông ơi, chẳng phải ông luôn muốn học vẽ sao? Nghỉ hưu rồi vừa hay có thể theo đuổi ước mơ của ông, thời gian thì có thừa mà!',tip:'不是……吗？ = chẳng phải … sao — câu phản vấn nhắc lại điều người nghe đã biết.'}
   ]
 };
 
@@ -2066,48 +1818,12 @@ var situationData = {
 var registerData = {
   intro:'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items:[
-    {
-      scene:'Em viết email cho thầy giáo, hứa sẽ gửi lại bài tập.',
-      a:'老师，作业我会尽快发给您。',
-      b:'老师，作业我马上就弄好，等着啊！',
-      better:'a',
-      why:'Viết cho thầy cô: 尽快 + 您 lịch sự, nghiêm túc. Câu b là khẩu ngữ suồng sã (弄好, 等着啊), chỉ hợp nói với bạn.'
-    },
-    {
-      scene:'Em nhắn tin rủ bạn thân tối nay sang nhà xem phim.',
-      a:'本人已将该电影下载完毕，欢迎今晚光临寒舍观看。',
-      b:'电影我下好了，晚上来我家看吧！',
-      better:'b',
-      why:'Nhắn tin bạn thân: 下好了, 来我家看吧 tự nhiên. Câu a dùng 本人, 完毕, 光临寒舍 — trang trọng tới mức buồn cười.'
-    },
-    {
-      scene:'Em giới thiệu Chú Chữ Hán trong buổi thuyết trình của câu lạc bộ tiếng Trung.',
-      a:'理查德先生克服种种困难，创办了汉字网站，这种精神值得我们学习。',
-      b:'这老头儿挺牛的，弄了个汉字网站。',
-      better:'a',
-      why:'Thuyết trình trước tập thể: 先生, 克服种种困难, 值得我们学习 trang trọng, tôn trọng. Câu b quá suồng sã (老头儿, 挺牛的).'
-    },
-    {
-      scene:'Thông báo chính thức dán ở cửa thư viện trường.',
-      a:'周末图书馆也开门，大家来吧。',
-      b:'本馆周末照常开放，欢迎同学们前来查阅资料。',
-      better:'b',
-      why:'Thông báo chính thức: 本馆, 照常开放, 前来查阅 đúng văn phong văn bản. Câu a là lời nói miệng.'
-    },
-    {
-      scene:'Em lịch sự từ chối lời mời đi chơi cuối tuần của một bạn mới quen.',
-      a:'我不去，没时间。',
-      b:'真遗憾，这个周末我的日程已经排满了，下次一定去！',
-      better:'b',
-      why:'Từ chối cần mềm mỏng: 真遗憾 + lý do cụ thể + hẹn lần sau. Câu a đúng nhưng cộc lốc.'
-    },
-    {
-      scene:'Em đăng Weibo khoe ảnh chụp ở Cố Cung.',
-      a:'有图有真相！我真的去故宫了！',
-      b:'兹附照片一张，以证明本人确已参观故宫。',
-      better:'a',
-      why:'Mạng xã hội: câu cửa miệng 有图有真相 vui, tự nhiên. Câu b giống văn bản hành chính (兹附, 本人确已).'
-    }
+    {scene:'Em viết email cho thầy giáo, hứa sẽ gửi lại bài tập.',a:'老师，作业我会尽快发给您。',b:'老师，作业我马上就弄好，等着啊！',better:'a',why:'Viết cho thầy cô: 尽快 + 您 lịch sự, nghiêm túc. Câu b là khẩu ngữ suồng sã (弄好, 等着啊), chỉ hợp nói với bạn.'},
+    {scene:'Em nhắn tin rủ bạn thân tối nay sang nhà xem phim.',a:'电影已经下载完成，欢迎您今晚光临，一起欣赏。',b:'电影我下好了，晚上来我家看吧！',better:'b',why:'Nhắn tin bạn thân: 下好了, 来我家看吧 tự nhiên. Câu a dùng 您, 下载完成, 光临 — trang trọng tới mức buồn cười.'},
+    {scene:'Em giới thiệu Chú Chữ Hán trong buổi thuyết trình của câu lạc bộ tiếng Trung.',a:'理查德先生克服种种困难，创办了汉字网站，这种精神值得我们学习。',b:'这老头儿挺厉害的，弄了个汉字网站。',better:'a',why:'Thuyết trình trước tập thể: 先生, 克服种种困难, 值得我们学习 trang trọng, tôn trọng. Câu b quá suồng sã (老头儿, 弄了个).'},
+    {scene:'Thông báo chính thức dán ở cửa thư viện trường.',a:'周末图书馆也开门，大家来吧。',b:'图书馆周末正常开放，欢迎同学们前来查询资料。',better:'b',why:'Thông báo chính thức: 正常开放, 前来查询资料 đúng văn phong văn bản. Câu a là lời nói miệng.'},
+    {scene:'Em lịch sự từ chối lời mời đi chơi cuối tuần của một bạn mới quen.',a:'我不去，没时间。',b:'真遗憾，这个周末我的日程已经安排满了，下次一定去！',better:'b',why:'Từ chối cần mềm mỏng: 真遗憾 + lý do cụ thể + hẹn lần sau. Câu a đúng nhưng cộc lốc.'},
+    {scene:'Em đăng Weibo khoe ảnh chụp ở Bắc Kinh.',a:'有图有真相！我真的到北京了！',b:'本人提供照片一张，证明本人确实到过北京。',better:'a',why:'Mạng xã hội: câu cửa miệng 有图有真相 vui, tự nhiên. Câu b giống văn bản hành chính (本人, 提供照片一张, 证明).'}
   ]
 };
 

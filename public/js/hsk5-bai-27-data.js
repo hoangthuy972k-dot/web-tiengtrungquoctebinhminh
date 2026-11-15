@@ -1195,89 +1195,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 83) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'吸取',right:'教训'},
-  {left:'珍惜',right:'时间'},
-  {left:'关键',right:'因素'},
-  {left:'严重的',right:'后果'},
+  {left:'造成',right:'损失'},
   {left:'仔细地',right:'观察'},
   {left:'充分地',right:'发挥'},
   {left:'睁大',right:'眼睛'},
-  {left:'把握',right:'机会'},
-  {left:'一盘',right:'棋'},
   {left:'一条',right:'原则'},
-  {left:'否认',right:'事实'},
+  {left:'碰',right:'运气'},
   {left:'犯',right:'错误'},
-  {left:'责备的',right:'眼光'},
-  {left:'考虑',right:'得失'},
   {left:'调整',right:'心态'},
-  {left:'失去',right:'记忆'},
-  {left:'造成',right:'损失'},
+  {left:'失去',right:'信心'},
   {left:'答应',right:'要求'},
-  {left:'象棋',right:'教练'},
-  {left:'碰',right:'运气'}
+  {left:'象棋',right:'教练'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bảng 生词 có ít nhất một câu
+// ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我父亲是一位',blank:'象棋',post:'教练。',hint:'(cờ tướng)',ans:'象棋'},
-  {pre:'比赛期间，我事先跟',blank:'教练',post:'打过招呼，他同意我外出。',hint:'(huấn luyện viên)',ans:'教练'},
-  {pre:'父亲要跟我下棋，我高兴地',blank:'答应',post:'了。',hint:'(nhận lời)',ans:'答应'},
-  {pre:'这次火灾造成了巨大的',blank:'损失',post:'。',hint:'(tổn thất)',ans:'损失'},
-  {pre:'早上一',blank:'睁',post:'开眼睛，我就看见窗外下雪了。',hint:'(mở mắt)',ans:'睁'},
-  {pre:'你就这样',blank:'眼睁睁',post:'地看着他摔倒了？！',hint:'(trơ mắt)',ans:'眼睁睁'},
-  {pre:'没办法，眼睁睁看着父亲“',blank:'将军',post:'”，我输了。',hint:'(chiếu tướng)',ans:'将军'},
-  {pre:'我不',blank:'服气',post:'，说：“这次运气不好，再来！”',hint:'(chịu phục)',ans:'服气'},
-  {pre:'小刘',blank:'运气',post:'真不错，刚来一年就成了主力队员。',hint:'(vận may)',ans:'运气'},
-  {pre:'第二',blank:'局',post:'又输了。',hint:'(ván)',ans:'局',exp:'局 là lượng từ cho ván cờ, hiệp đấu: 第二局.'},
-  {pre:'希望你在比赛中',blank:'发挥',post:'好，赛出好成绩！',hint:'(thể hiện, phát huy)',ans:'发挥'},
-  {pre:'这几次考试我都考得不太好，觉得有点儿',blank:'灰心',post:'。',hint:'(nản lòng)',ans:'灰心'},
-  {pre:'到了新公司，你一定要',blank:'吸取',post:'教训，争取留用。',hint:'(rút ra)',ans:'吸取'},
-  {pre:'只有吸取',blank:'教训',post:'，才能避免以后再次发生同样的问题。',hint:'(bài học)',ans:'教训'},
-  {pre:'你说得这么复杂，我觉得他',blank:'未必',post:'能听懂。',hint:'(chưa chắc)',ans:'未必',exp:'未必 = chưa chắc (phủ định nhẹ, như 不一定): 未必能听懂.'},
-  {pre:'钱是',blank:'次要',post:'的，最重要的是你喜欢这份工作。',hint:'(thứ yếu)',ans:'次要'},
-  {pre:'工作压力太大是影响幸福感的重要',blank:'因素',post:'。',hint:'(yếu tố)',ans:'因素'},
-  {pre:'我看，老板没有糟糕的，关键',blank:'在于',post:'你怎样去和他沟通。',hint:'(nằm ở chỗ)',ans:'在于',exp:'A在于B = A nằm ở B (chỉ ra điểm mấu chốt): 关键在于….'},
-  {pre:'考试前要调整好',blank:'心态',post:'，不要太紧张。',hint:'(tâm lý)',ans:'心态'},
-  {pre:'请',blank:'珍惜',post:'你已经拥有的一切。',hint:'(trân trọng)',ans:'珍惜'},
-  {pre:'我对小林是有些看法，这一点儿我不',blank:'否认',post:'。',hint:'(phủ nhận)',ans:'否认'},
-  {pre:'仔细',blank:'观察',post:'周围的大自然，你会发现很多有意思的东西。',hint:'(quan sát)',ans:'观察'},
-  {pre:'因为一场病，他',blank:'失去',post:'了记忆。',hint:'(mất)',ans:'失去'},
-  {pre:'在国外工作',blank:'期间',post:'，我一直很想念我的家乡和家人。',hint:'(trong thời gian)',ans:'期间',exp:'在…期间 = trong thời gian…: 在国外工作期间.'},
-  {pre:'只有做好准备的人才能',blank:'把握',post:'住机会。',hint:'(nắm bắt)',ans:'把握'},
-  {pre:'老师一问，他就',blank:'不假思索',post:'地说出了答案。',hint:'(không cần suy nghĩ)',ans:'不假思索'},
-  {pre:'谁都会',blank:'犯',post:'错误，重要的是要吸取教训。',hint:'(mắc)',ans:'犯'},
-  {pre:'考试的时候不要',blank:'过于',post:'紧张，正常发挥就好。',hint:'(quá)',ans:'过于',exp:'过于 + tính từ = quá (văn viết): 过于紧张.'},
-  {pre:'我问你，下棋的基本',blank:'原则',post:'是什么？',hint:'(nguyên tắc)',ans:'原则'},
-  {pre:'父亲用',blank:'责备',post:'的眼光看了我一眼。',hint:'(trách móc)',ans:'责备'},
-  {pre:'有得',blank:'必然',post:'有失，有失才会有得。',hint:'(ắt, tất yếu)',ans:'必然',exp:'必然 = tất yếu, ắt hẳn (theo quy luật): 有得必然有失.'},
-  {pre:'我们需要',blank:'事先',post:'做出准确的估计。',hint:'(từ trước)',ans:'事先',exp:'事先 = từ trước (trước khi việc xảy ra): 事先做出估计.'},
-  {pre:'奶奶很节省，买了新衣服也',blank:'舍不得',post:'穿。',hint:'(không nỡ)',ans:'舍不得',exp:'舍不得 + V = không nỡ…: 舍不得穿.'},
-  {pre:'你要想清楚，这样做的',blank:'后果',post:'很严重！',hint:'(hậu quả)',ans:'后果'},
-  {pre:'开始不考虑得失，后果就是',blank:'屡',post:'下屡败。',hint:'(nhiều lần)',ans:'屡',exp:'屡A屡B = nhiều lần A, nhiều lần B (văn viết): 屡下屡败.'}
+  {pre:'这次输给了一个比我小五岁的选手，我心里一直不',blank:'服气',post:'。',hint:'(phục, chịu thua)',ans:'服气',exp:'不服气 = không phục, không chịu thua; 服气 thường dùng ở dạng phủ định hoặc 不得不服气.'},
+  {pre:'他买车只看样子好不好看，至于价格，对他来说是',blank:'次要',post:'的。',hint:'(thứ yếu)',ans:'次要',exp:'次要 = thứ yếu, không quan trọng bằng; trái nghĩa 主要. Hay dùng 是次要的, 次要因素.'},
+  {pre:'考场上',blank:'心态',post:'很重要，太紧张了就会把会做的题也做错。',hint:'(tâm lý, trạng thái tâm lý)',ans:'心态',exp:'心态 = trạng thái tâm lý: 心态好, 调整心态.'},
+  {pre:'我们在一起的时间不多了，大家要好好',blank:'珍惜',post:'。',hint:'(trân trọng)',ans:'珍惜',exp:'珍惜 + 时间 / 机会 / 感情 = trân trọng, quý trọng (vì sợ mất đi).'},
+  {pre:'照片上的人明明是他，他却',blank:'否认',post:'自己去过那儿。',hint:'(phủ nhận)',ans:'否认',exp:'否认 + sự việc = phủ nhận, không thừa nhận; trái nghĩa 承认.'},
+  {pre:'放假',blank:'期间',post:'，图书馆每天只开半天。',hint:'(trong thời gian)',ans:'期间',exp:'N/V + 期间 = trong thời gian…: 放假期间, 比赛期间.'},
+  {pre:'机会来了就要',blank:'把握',post:'住，错过了就没有了。',hint:'(nắm bắt — 2 chữ)',ans:'把握',exp:'把握住机会 = nắm lấy cơ hội; 把握 còn là danh từ: 有把握 = nắm chắc.'},
+  {pre:'服务员问我想吃什么，我',blank:'不假思索',post:'地说：“跟上次一样！”',hint:'(không cần nghĩ ngợi)',ans:'不假思索',exp:'不假思索 = không cần suy nghĩ, buột miệng (làm trạng ngữ: 不假思索地 + V).'},
+  {pre:'妈妈',blank:'舍不得',post:'花钱，十年都没出去旅行过。',hint:'(không nỡ, tiếc)',ans:'舍不得',exp:'舍不得 + V = không nỡ làm, tiếc không muốn (花钱, 扔, 离开).'},
+  {pre:'我',blank:'答应',post:'过妹妹，周末带她去看电影。',hint:'(hứa, nhận lời)',ans:'答应',exp:'答应 + người (+ việc) = nhận lời, hứa với ai.'},
+  {pre:'他累得眼睛都',blank:'睁',post:'不开了，还在写作业。',hint:'(mở (mắt))',ans:'睁',exp:'睁 = mở (mắt): 睁开眼睛; 睁不开 = không mở nổi.'},
+  {pre:'老师讲的重点，你最好用本子记',blank:'下来',post:'。',hint:'(lại — ghi giữ lại)',ans:'下来',exp:'V + 下来 = cố định lại, lưu lại: 记下来, 写下来 (khác 下去 = tiếp tục).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (动词+下来 · 舍不得) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['几局','下来','，','基本上','都是','不到10分钟','我就','败下阵来','。'],ans:'几局下来，基本上都是不到10分钟我就败下阵来。',audio:'几局下来，基本上都是不到10分钟我就败下阵来。'},
-  {words:['说到这','，','父亲','停下来','，','把棋子','重新','摆好','。'],ans:'说到这，父亲停下来，把棋子重新摆好。',audio:'说到这，父亲停下来，把棋子重新摆好。'},
-  {words:['论文的','题目','定下来','了吗','？'],ans:'论文的题目定下来了吗？',audio:'论文的题目定下来了吗？'},
-  {words:['那张纸','是','从这本书里','撕下来','的','。'],ans:'那张纸是从这本书里撕下来的。',audio:'那张纸是从这本书里撕下来的。'},
-  {words:['我','把','老师说的话','都','记下来了','。'],ans:'我把老师说的话都记下来了。',audio:'我把老师说的话都记下来了。'},
-  {words:['奶奶','买了','新衣服','也','舍不得','穿','。'],ans:'奶奶买了新衣服也舍不得穿。',audio:'奶奶买了新衣服也舍不得穿。'},
-  {words:['我','真','舍不得','离开','老师和同学们','。'],ans:'我真舍不得离开老师和同学们。',audio:'我真舍不得离开老师和同学们。'},
-  {words:['把你最喜欢的玩具','送给','小朋友','，','你','舍得吗','？'],ans:'把你最喜欢的玩具送给小朋友，你舍得吗？',audio:'把你最喜欢的玩具送给小朋友，你舍得吗？'},
-  {words:['他','舍不得','花钱','买','这么贵的书','。'],ans:'他舍不得花钱买这么贵的书。',audio:'他舍不得花钱买这么贵的书。'},
-  {words:['最重要的问题','在于','你','心态','不对','。'],ans:'最重要的问题在于你心态不对。',audio:'最重要的问题在于你心态不对。'},
-  {words:['每走一步','，','你','事先','都应该','想清楚','。'],ans:'每走一步，你事先都应该想清楚。',audio:'每走一步，你事先都应该想清楚。'},
-  {words:['请','珍惜','你','已经','拥有的','一切','。'],ans:'请珍惜你已经拥有的一切。',audio:'请珍惜你已经拥有的一切。'},
-  {words:['老板的责备','把','职员们','都','吓坏了','。'],ans:'老板的责备把职员们都吓坏了。',audio:'老板的责备把职员们都吓坏了。'}
+  {words:['一个学期','下来','，','他的','汉语','进步了','很多','。'],ans:'一个学期下来，他的汉语进步了很多。',audio:'一个学期下来，他的汉语进步了很多。'},
+  {words:['奶奶','舍不得','扔掉','那些','旧报纸','。'],ans:'奶奶舍不得扔掉那些旧报纸。',audio:'奶奶舍不得扔掉那些旧报纸。'},
+  {words:['天气','是','影响','这场比赛的','一个','重要','因素','。'],ans:'天气是影响这场比赛的一个重要因素。',audio:'天气是影响这场比赛的一个重要因素。'},
+  {words:['我','眼睁睁地','看着','最后一班','地铁','开走了','。'],ans:'我眼睁睁地看着最后一班地铁开走了。',audio:'我眼睁睁地看着最后一班地铁开走了。'},
+  {words:['他','屡次','忘带作业','，','被老师','叫到了','办公室','。'],ans:'他屡次忘带作业，被老师叫到了办公室。',audio:'他屡次忘带作业，被老师叫到了办公室。'},
+  {words:['第一次','开店','就','损失了','不少钱','，','他','却','没有灰心','。'],ans:'第一次开店就损失了不少钱，他却没有灰心。',audio:'第一次开店就损失了不少钱，他却没有灰心。'},
+  {words:['你','过于','相信','别人','，','很容易','上当','。'],ans:'你过于相信别人，很容易上当。',audio:'你过于相信别人，很容易上当。'},
+  {words:['天天','熬夜','，','身体','必然','会','出问题','。'],ans:'天天熬夜，身体必然会出问题。',audio:'天天熬夜，身体必然会出问题。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1285,76 +1250,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'生意失败，他____了很多钱。',opts:['损失','失去','失败','丢掉'],ans:0,
-   exp:'Mất một khoản tiền (giảm bớt tài sản) → 损失 (做一做 của sách). 失去 thường chỉ mất hẳn điều trừu tượng: 失去记忆.'},
-  {wrong:'因为一场病，他____了记忆。',opts:['失去','损失','失败','减少'],ans:0,
-   exp:'Mất hẳn trí nhớ → 失去记忆 (做一做 của sách). 损失 là giảm bớt một phần tài sản.'},
-  {wrong:'如果有变动，请____24小时告诉我。',opts:['提前','事先','首先','原先'],ans:0,
-   exp:'Có lượng thời gian cụ thể (24小时) → 提前 (bài tập 2 của sách). 事先 không mang lượng thời gian.'},
-  {wrong:'你要想清楚，这样做的____很严重！',opts:['后果','结果','效果','成果'],ans:0,
-   exp:'Kết quả xấu + 很严重 → 后果 (bài tập 2 của sách). 结果 trung tính; 效果, 成果 thường mang nghĩa tốt.'},
-  {wrong:'在国外工作____，我一直很想念我的家乡和家人。',opts:['期间','时期','时代','年代'],ans:0,
-   exp:'Sự việc cụ thể + 期间 = trong thời gian … (bài tập 2 của sách). 时期 là giai đoạn dài mang tính lịch sử.'},
-  {wrong:'这几次考试我都考得不太好，觉得有点儿____。',opts:['灰心','死心','放心','小心'],ans:0,
-   exp:'Nản lòng vì thất bại → 灰心 (bài tập 2 của sách). 死心 = hết hy vọng hẳn, không đi với 有点儿 trong ngữ cảnh này.'},
-  {wrong:'你要吸取____，以后别再犯同样的错误。',opts:['教训','教练','教育','训练'],ans:0,
-   exp:'吸取教训 = rút ra bài học. 教练 = huấn luyện viên — chỉ khác một chữ, dễ nhầm.'},
-  {wrong:'只有做好准备的人才能____住机会。',opts:['把握','保持','坚持','拥有'],ans:0,
-   exp:'把握 + 住 + 机会 = nắm được cơ hội (bài tập 1 của sách; bảng 词语搭配: 把握 + 好 / 住).'},
-  {wrong:'要____时间，因为失去的时间永远都不会再回来。',opts:['珍惜','珍贵','可惜','爱好'],ans:0,
-   exp:'珍惜 là động từ + 时间. 珍贵 là tính từ (珍贵的礼物), không mang tân ngữ.'},
-  {wrong:'父亲要跟我下棋，我高兴地____了。',opts:['答应','回答','应该','答案'],ans:0,
-   exp:'Nhận lời đề nghị → 答应. 回答 là trả lời câu hỏi, không dùng cho lời mời.'},
-  {wrong:'考试的时候不要____紧张，正常发挥就好。',opts:['过于','过去','于是','对于'],ans:0,
-   exp:'过于 + tính từ hai âm tiết = quá … (ý chê).'},
-  {wrong:'这只是____因素，最重要的是心态。',opts:['次要','主要','重要','需要'],ans:0,
-   exp:'Đối lập với 最重要 → 次要因素 (yếu tố thứ yếu).'},
-  {wrong:'有得____有失，有失才会有得。',opts:['必然','当然','虽然','居然'],ans:0,
-   exp:'Có A ắt có B (quy luật tất yếu) → 必然. 当然 = đương nhiên, dùng khi khẳng định điều hiển nhiên.'},
-  {wrong:'你说得这么复杂，我觉得他____能听懂。',opts:['未必','必须','不必','务必'],ans:0,
-   exp:'未必 = chưa chắc (bài tập 3 của sách). 必须 / 务必 = nhất định phải; 不必 = không cần.'},
-  {wrong:'后三分之二的时间，你又____了相反的错误。',opts:['犯','做','有','出'],ans:0,
-   exp:'Mắc lỗi = 犯错误. Không nói 做错误.'},
-  {wrong:'你遇到问题总爱____别人，就不想从自己身上找找原因。',opts:['责备','表扬','否认','答应'],ans:0,
-   exp:'Đổ lỗi, trách người khác → 责备别人 (câu nghe 9 của sách bài tập).'},
-  {wrong:'“怎么不珍惜呀？我每走一步，都想半天。”我____说。',opts:['否认','承认','答应','责备'],ans:0,
-   exp:'Không thừa nhận lời bố nói → 否认. 承认 là nghĩa ngược lại.'},
-  {wrong:'买了件新衣服____穿，结果衣服小了，穿不了了。',opts:['舍不得','舍得','不得不','不得了'],ans:0,
-   exp:'Không nỡ mặc → 舍不得 + V (练一练 của sách). 舍得 dạng khẳng định dùng khi hỏi.'},
-  {wrong:'学习好不好，不____时间多少，而在于方法对不对。',opts:['在于','对于','关于','由于'],ans:0,
-   exp:'不在于 A，而在于 B = không nằm ở A mà ở B.'},
-  {wrong:'我仔细____过，你三分之二的棋子是在前三分之一的时间失去的。',opts:['观察','观点','观念','参观'],ans:0,
-   exp:'仔细 + 观察 (bảng 词语搭配). 观点 / 观念 là danh từ; 参观 là tham quan nơi chốn.'}
+  {wrong:'这次大雨给农民带来了很大的____。',opts:['损失','失去','因素','原则'],ans:0,exp:'损失 làm danh từ = thiệt hại (tiền, của): 带来损失, 造成损失. 失去 chỉ là động từ, không làm tân ngữ của 带来; 因素, 原则 không hợp nghĩa.'},
+  {wrong:'因为没按时报名，他____了参加比赛的机会。',opts:['失去','损失','犯','造成'],ans:0,exp:'失去 + 机会 / 信心 / 记忆 = mất đi (thứ trừu tượng). 损失 dùng cho tiền của, không nói 损失机会; 犯 đi với 错误; 造成 đi với hậu quả xấu.'},
+  {wrong:'会议____了半个小时开始，好多人都没来得及到。',opts:['提前','事先','过于','期间'],ans:0,exp:'提前 + lượng thời gian (半个小时) = sớm hơn dự định. 事先 chỉ là “từ trước”, không mang lượng thời gian phía sau; 过于, 期间 không hợp.'},
+  {wrong:'比赛的____出来了，我们班得了第二名。',opts:['结果','后果','因素','教训'],ans:0,exp:'结果 trung tính, dùng cho mọi kết cục (成绩, 比赛). 后果 chỉ kết quả XẤU; 因素 là yếu tố; 教训 là bài học.'},
+  {wrong:'不吃早饭看起来是小事，时间长了会造成严重的____。',opts:['后果','结果','原则','心态'],ans:0,exp:'造成严重的后果 = gây ra hậu quả nghiêm trọng — 后果 chỉ kết cục xấu. 结果 trung tính, không đi với 造成严重的; 原则, 心态 không hợp nghĩa.'},
+  {wrong:'他学习好是没错，可是____就适合当班长。',opts:['未必','必然','何必','不必'],ans:0,exp:'未必 = chưa chắc; 可是 cho thấy ý ngược lại nên chọn 未必. 必然 (tất yếu) ngược nghĩa; 何必 là “cần gì phải”; 不必 là “không cần”.'},
+  {wrong:'他做事____小心，常常错过好机会。',opts:['过于','至于','在于','对于'],ans:0,exp:'过于 + tính từ = quá mức (văn viết): 过于小心, 过于紧张. 至于, 在于, 对于 không đứng trước tính từ với nghĩa “quá”.'},
+  {wrong:'一个人幸福不幸福，____他怎么看自己的生活。',opts:['在于','属于','由于','关于'],ans:0,exp:'A + 在于 + B = A nằm ở / do B quyết định. 属于 là “thuộc về”; 由于 nêu nguyên nhân ở đầu câu; 关于 là “về (chủ đề)”.'},
+  {wrong:'这台电脑我用了八年，虽然很慢了，但我一直____扔。',opts:['舍不得','不得不','来不及','怪不得'],ans:0,exp:'舍不得 + V = không nỡ (扔, 花, 离开). 不得不 là “buộc phải” — trái với 但一直; 来不及 là “không kịp”; 怪不得 là “thảo nào”.'},
+  {wrong:'每个人都会____错误，重要的是下次别再错了。',opts:['犯','发生','造成','失去'],ans:0,exp:'犯 + 错误 = mắc lỗi (người làm chủ ngữ). 发生 dùng cho sự việc tự xảy ra (发生问题); 造成 + hậu quả; 失去 là mất đi.'},
+  {wrong:'车开到门口就停____了。',opts:['下来','下去','起来','出去'],ans:0,exp:'停下来 = dừng hẳn lại (V + 下来: chuyển sang trạng thái tĩnh, cố định). 下去 là tiếp tục; 起来 là bắt đầu; 出去 là đi ra ngoài.'},
+  {wrong:'这个故事太有意思了，你接着说____！',opts:['下去','下来','起来','出来'],ans:0,exp:'接着说下去 = nói tiếp đi (V + 下去: tiếp tục). 下来 là dừng / lưu lại; 起来, 出来 không hợp với 接着.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Lần thi đấu này tôi đấu không đúng sức là vì tâm lý quá căng thẳng.',zh:'这次比赛我之所以没发挥好，是因为心态太紧张了。',py:'Zhè cì bǐsài wǒ zhīsuǒyǐ méi fāhuī hǎo, shì yīnwèi xīntài tài jǐnzhāng le.',goiY:['之所以……是因为……','发挥','心态'],giai:'之所以 + kết quả, 是因为 + nguyên nhân (trật tự ngược với 因为……所以……); 没发挥好 = "không phát huy được, đấu/thi không đúng sức".'},
-  {vi:'Tôi quý đôi giày mới này vô cùng, nên hễ trời mưa là không nỡ đi.',zh:'我对这双新球鞋珍惜得不得了，所以一到下雨天就舍不得穿。',py:'Wǒ duì zhè shuāng xīn qiúxié zhēnxī de bùdéliǎo, suǒyǐ yí dào xià yǔ tiān jiù shěbude chuān.',goiY:['珍惜','舍不得','所以'],giai:'舍不得 + V = không nỡ làm gì (vì tiếc); bản thân đã mang nghĩa phủ định, không thêm 不 / 没 phía trước.'},
-  {vi:'Mấy nguyên tắc thầy tổng kết, tốt nhất bạn ghi lại ngay, nếu không lúc thi chưa chắc đã nhớ ra.',zh:'老师总结的这几条原则你最好马上记下来，否则考试时未必想得起来。',py:'Lǎoshī zǒngjié de zhè jǐ tiáo yuánzé nǐ zuìhǎo mǎshàng jì xiàlai, fǒuzé kǎoshì shí wèibì xiǎng de qǐlái.',goiY:['记下来','否则','未必','原则'],giai:'V + 下来 ở đây = ghi lại, giữ cố định (记下来); 否则 = nếu không thì, đứng đầu vế sau.'},
-  {vi:'Sau mấy ván, tôi gần như thua sạch trước bạn cùng bàn, nhưng huấn luyện viên nói không cần nản lòng, điều quan trọng là rút ra bài học.',zh:'几局下来，我几乎都输给了同桌，但是教练说不必灰心，关键在于吸取教训。',py:'Jǐ jú xiàlai, wǒ jīhū dōu shū gěile tóngzhuō, dànshì jiàoliàn shuō búbì huīxīn, guānjiàn zàiyú xīqǔ jiàoxùn.',goiY:['几局下来','灰心','在于','吸取教训'],giai:'几局下来 = sau mấy ván (下来 chỉ một quá trình đã kết thúc); 在于 = nằm ở, là ở — phía sau là danh từ hoặc cụm động từ.'},
-  {vi:'Dù bằng chứng sờ sờ trước mắt, cậu ta vẫn một mực chối không phải lỗi của mình, điều đó khiến thầy giáo rất thất vọng.',zh:'尽管证据就在眼前，他还是坚决否认是自己犯的错，这让老师非常失望。',py:'Jǐnguǎn zhèngjù jiù zài yǎnqián, tā háishi jiānjué fǒurèn shì zìjǐ fàn de cuò, zhè ràng lǎoshī fēicháng shīwàng.',goiY:['尽管……还是……','否认','犯'],giai:'尽管 + sự thật đã có, 还是 + kết quả không đổi (khác 即使 dùng cho giả thiết); 否认 + mệnh đề = phủ nhận rằng ….'},
-  {vi:'Thay vì vì tiếc không nỡ bỏ game mà mất thêm thời gian học, chi bằng ngay bây giờ đưa điện thoại cho bố mẹ giữ.',zh:'与其因为舍不得放弃游戏而失去更多学习时间，不如现在就把手机交给爸妈保管。',py:'Yǔqí yīnwèi shěbude fàngqì yóuxì ér shīqù gèng duō xuéxí shíjiān, bùrú xiànzài jiù bǎ shǒujī jiāo gěi bàmā bǎoguǎn.',goiY:['与其……不如……','舍不得','失去'],giai:'与其 A 不如 B = thay vì A chi bằng B (B là lựa chọn tốt hơn); 因为……而…… = vì … mà ….'},
-  {vi:'Khi thi tuyệt đối đừng viết bừa mà không suy nghĩ, chỉ khi nghĩ rõ hướng giải của đề từ trước thì bạn mới chắc chắn giành điểm cao.',zh:'考试时千万别不假思索地乱写，只有事先把题目的思路想清楚，你才有把握拿高分。',py:'Kǎoshì shí qiānwàn bié bù jiǎ sīsuǒ de luàn xiě, zhǐyǒu shìxiān bǎ tímù de sīlù xiǎng qīngchu, nǐ cái yǒu bǎwò ná gāo fēn.',goiY:['不假思索','只有……才……','事先','把握'],giai:'不假思索 = không cần nghĩ ngợi (ở đây mang ý chê: làm vội); 只有……才 nêu điều kiện duy nhất; 有把握 = nắm chắc, tự tin.'},
-  {vi:'Nếu bạn quá tự tin vào bản thân, trước kỳ thi không ôn tập nghiêm túc, thì hậu quả rất có thể là liên tục mắc lỗi ngớ ngẩn trong kỳ thi đại học.',zh:'如果你对自己过于自信，考前不认真复习，后果很可能是在高考中屡犯低级错误。',py:'Rúguǒ nǐ duì zìjǐ guòyú zìxìn, kǎo qián bú rènzhēn fùxí, hòuguǒ hěn kěnéng shì zài gāokǎo zhōng lǚ fàn dījí cuòwù.',goiY:['如果……','过于','后果','屡犯'],giai:'过于 + tính từ = quá mức (sắc thái chê, trang trọng hơn 太); 屡 = nhiều lần, thường đi với động từ đơn âm (屡犯, 屡败).'},
-  {vi:'Một khi đã lỡ đợt đăng ký lần này, bạn chỉ có thể trơ mắt nhìn người khác đi thi, lúc đó thiệt hại mới lớn.',zh:'一旦错过了这次报名机会，你就只能眼睁睁地看着别人去参加比赛，损失可就大了。',py:'Yídàn cuòguòle zhè cì bàomíng jīhuì, nǐ jiù zhǐ néng yǎnzhēngzhēng de kànzhe biérén qù cānjiā bǐsài, sǔnshī kě jiù dà le.',goiY:['一旦……就……','眼睁睁','损失'],giai:'一旦 = một khi (điều kiện xảy ra thì kéo theo kết quả), đi với 就; 眼睁睁 = trơ mắt nhìn mà bất lực.'},
-  {vi:'Đời người cũng như chơi cờ tướng: nếu thứ gì cũng không nỡ buông, thì dù vận may có tốt đến đâu cũng chưa chắc thắng được đến cuối.',zh:'人生和下象棋一样，如果什么都舍不得放弃，那么即使运气再好，也未必能赢到最后。',py:'Rénshēng hé xià xiàngqí yíyàng, rúguǒ shénme dōu shěbude fàngqì, nàme jíshǐ yùnqi zài hǎo, yě wèibì néng yíng dào zuìhòu.',goiY:['如果……那么……','舍不得','即使……也……','未必'],giai:'即使 + 再 + tính từ = dù có … đến đâu, 也 + kết quả không đổi; 未必 = chưa chắc, nhẹ hơn phủ định tuyệt đối 不.'}
+  {vi:'Mấy nguyên tắc thầy tổng kết em tốt nhất nên ghi lại ngay, nếu không lúc thi chưa chắc đã nhớ ra.',zh:'老师总结的这几条原则你最好马上记下来，否则考试时未必想得起来。',py:'Lǎoshī zǒngjié de zhè jǐ tiáo yuánzé nǐ zuìhǎo mǎshàng jì xiàlai, fǒuzé kǎoshì shí wèibì xiǎng de qǐlai.',goiY:['原则','记下来','否则','未必'],giai:'记下来 = ghi lại (V + 下来 lưu giữ); 否则 = nếu không thì; 未必 + V = chưa chắc.'},
+  {vi:'Đánh mấy ván cờ tướng với bạn cùng bàn, tôi chẳng thắng ván nào, nhưng huấn luyện viên nói không cần nản, quan trọng là rút ra bài học.',zh:'跟同学下了几局象棋，我一局也没赢，可是教练说不必灰心，关键在于吸取教训。',py:'Gēn tóngxué xiàle jǐ jú xiàngqí, wǒ yì jú yě méi yíng, kěshì jiàoliàn shuō búbì huīxīn, guānjiàn zàiyú xīqǔ jiàoxùn.',goiY:['局','灰心','在于','吸取教训'],giai:'一局也没赢 = không thắng ván nào (一 + lượng từ + 也没 + V); 关键在于 + V = mấu chốt nằm ở….'},
+  {vi:'Dù chứng cứ ở ngay trước mắt, cậu ta vẫn một mực phủ nhận lỗi là do mình gây ra, điều đó khiến thầy rất thất vọng.',zh:'尽管证据就在眼前，他还是坚决否认是自己犯的错，这让老师非常失望。',py:'Jǐnguǎn zhèngjù jiù zài yǎnqián, tā háishi jiānjué fǒurèn shì zìjǐ fàn de cuò, zhè ràng lǎoshī fēicháng shīwàng.',goiY:['尽管……还是……','否认','犯错'],giai:'尽管……还是…… = mặc dù… vẫn…; 否认 + mệnh đề (是自己犯的错).'},
+  {vi:'Lúc thi tuyệt đối đừng viết bừa không suy nghĩ; chỉ khi nghĩ kỹ cách làm bài từ trước, em mới nắm chắc được điểm cao.',zh:'考试时千万别不假思索地乱写，只有事先把题目想清楚，你才有把握拿高分。',py:'Kǎoshì shí qiānwàn bié bù jiǎ sīsuǒ de luàn xiě, zhǐyǒu shìxiān bǎ tímù xiǎng qīngchu, nǐ cái yǒu bǎwò ná gāofēn.',goiY:['不假思索','只有……才……','事先','把握'],giai:'事先 đứng trước động từ (= từ trước); 有把握 = nắm chắc; 只有……才…… nêu điều kiện duy nhất.'},
+  {vi:'Nếu em quá tự tin vào bản thân, trước kỳ thi không ôn tập nghiêm túc, hậu quả rất có thể là trong kỳ thi đại học em liên tục mắc những lỗi đơn giản.',zh:'如果你对自己过于自信，考前不认真复习，后果很可能是在高考中屡犯简单的错误。',py:'Rúguǒ nǐ duì zìjǐ guòyú zìxìn, kǎo qián bú rènzhēn fùxí, hòuguǒ hěn kěnéng shì zài gāokǎo zhōng lǚ fàn jiǎndān de cuòwù.',goiY:['过于','后果','屡'],giai:'过于 + tính từ = quá mức; 屡 + V (屡犯) = nhiều lần, liên tục (văn viết); 后果 dùng cho kết cục xấu.'},
+  {vi:'Lỡ mất lần đăng ký này, em chỉ có thể trơ mắt nhìn người khác đi thi, thiệt hại sẽ lớn lắm đấy.',zh:'错过了这次报名机会，你就只能眼睁睁地看着别人去参加比赛，损失可就大了。',py:'Cuòguòle zhè cì bàomíng jīhuì, nǐ jiù zhǐ néng yǎnzhēngzhēng de kànzhe biérén qù cānjiā bǐsài, sǔnshī kě jiù dà le.',goiY:['眼睁睁','损失'],giai:'眼睁睁地看着 = trơ mắt nhìn (bất lực); 可就……了 nhấn mạnh hậu quả.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Bố tôi là huấn luyện viên cờ tướng, nên hễ tôi được nghỉ về nhà là ông lại muốn chơi cờ với tôi.',zh:'父亲是一位象棋教练，所以我一放假回家他就要跟我下棋。',py:'Fùqīn shì yí wèi xiàngqí jiàoliàn, suǒyǐ wǒ yí fàngjià huí jiā tā jiù yào gēn wǒ xià qí.',goiY:['象棋 = cờ tướng','教练 = huấn luyện viên','一……就…… = hễ … là …'],giai:'一……就…… nối hai hành động xảy ra liền nhau hoặc lặp lại theo thói quen; 下棋 = chơi cờ (động từ 下).'},
-  {vi:'Chưa đầy ba phút tôi đã mất quá nửa số quân, rốt cuộc chỉ biết trơ mắt nhìn bố "chiếu tướng".',zh:'不到三分钟我就损失了一大半棋子，结果只能眼睁睁地看着父亲“将军”。',py:'Bú dào sān fēnzhōng wǒ jiù sǔnshīle yí dà bàn qízǐ, jiéguǒ zhǐ néng yǎnzhēngzhēng de kànzhe fùqīn "jiāngjūn".',goiY:['损失 = mất, tổn thất','眼睁睁 = trơ mắt','将军 = chiếu tướng'],giai:'将军 ở đây là động từ trong cờ tướng = "chiếu tướng", không phải "tướng quân"; 结果 dẫn ra kết cục.'},
-  {vi:'Tôi không phục, bảo lần này là do xui, thế nhưng ván thứ hai lại thua tiếp.',zh:'我不服气地说这次是运气不好，可是第二局又输了。',py:'Wǒ bù fúqì de shuō zhè cì shì yùnqi bù hǎo, kěshì dì-èr jú yòu shū le.',goiY:['服气 = phục','运气 = vận may','局 = ván'],giai:'局 là lượng từ cho ván cờ, trận đấu; 又 + V + 了 = lại (đã lặp lại); 可是 chuyển ý trái với mong muốn.'},
-  {vi:'Bố nói người mới học cờ thua là bình thường, nhưng nhất định phải rút ra bài học, nếu không thì có chơi thêm mười năm cũng chưa chắc thắng.',zh:'父亲说初学棋的人输了很正常，但一定要吸取教训，否则再下十年也未必能赢。',py:'Fùqīn shuō chū xué qí de rén shūle hěn zhèngcháng, dàn yídìng yào xīqǔ jiàoxùn, fǒuzé zài xià shí nián yě wèibì néng yíng.',goiY:['吸取教训 = rút ra bài học','否则 = nếu không thì','未必 = chưa chắc'],giai:'否则 nêu hậu quả nếu không làm theo vế trước; 再 + V + thời gian + 也 = có … thêm bao lâu nữa cũng ….'},
-  {vi:'Bố cho rằng kỹ thuật và kinh nghiệm không phải điều quan trọng nhất mà chỉ là yếu tố thứ yếu, vấn đề thật sự nằm ở tâm lý.',zh:'父亲认为技术和经验不是最重要的，而是次要因素，真正的问题在于心态。',py:'Fùqīn rènwéi jìshù hé jīngyàn bú shì zuì zhòngyào de, ér shì cìyào yīnsù, zhēnzhèng de wèntí zàiyú xīntài.',goiY:['不是……而是……','次要因素 = yếu tố thứ yếu','在于 = nằm ở'],giai:'不是 A 而是 B: phủ định A, khẳng định B; 在于 + danh từ = "nằm ở, là do".'},
-  {vi:'Tôi chối rằng mình không quý quân cờ, vì mỗi nước đi tôi đều phải nghĩ rất lâu.',zh:'我否认自己不珍惜棋子，因为我每走一步都要想半天。',py:'Wǒ fǒurèn zìjǐ bù zhēnxī qízǐ, yīnwèi wǒ měi zǒu yí bù dōu yào xiǎng bàntiān.',goiY:['否认 = phủ nhận','珍惜 = quý trọng'],giai:'否认 + mệnh đề = phủ nhận rằng …; 每……都…… = mỗi … đều …; 想半天 = nghĩ rất lâu (半天 phóng đại).'},
-  {vi:'Bố đã quan sát kỹ: hai phần ba số quân của tôi mất trong một phần ba thời gian đầu, vì trong khoảng đó tôi rất tự tin, đi cờ không cần suy nghĩ.',zh:'父亲仔细观察过，我三分之二的棋子是在前三分之一的时间失去的，因为这期间我很有把握，下棋时不假思索。',py:'Fùqīn zǐxì guānchá guo, wǒ sān fēn zhī èr de qízǐ shì zài qián sān fēn zhī yī de shíjiān shīqù de, yīnwèi zhè qījiān wǒ hěn yǒu bǎwò, xià qí shí bù jiǎ sīsuǒ.',goiY:['观察 = quan sát','期间 = trong khoảng thời gian','不假思索 = không cần nghĩ ngợi'],giai:'是……的 nhấn mạnh thời điểm mất quân (是在前三分之一的时间失去的); 三分之二 = hai phần ba (mẫu số đọc trước, tử số sau).'},
-  {vi:'Về sau tôi lại mắc lỗi ngược lại: quá quý quân cờ, một quân cũng không muốn mất, thế mà rốt cuộc lại mất từng quân một.',zh:'后来我又犯了相反的错误：对棋子过于珍惜，一个也不想失，反而一个一个都失去了。',py:'Hòulái wǒ yòu fànle xiāngfǎn de cuòwù: duì qízǐ guòyú zhēnxī, yí ge yě bù xiǎng shī, fǎn\'ér yí ge yí ge dōu shīqù le.',goiY:['犯 = mắc (lỗi)','过于 = quá mức','反而 = trái lại'],giai:'反而 chỉ kết quả ngược với mong muốn; 一个也不 + V = không … dù chỉ một (phủ định tuyệt đối).'},
-  {vi:'Bố dừng lại, trách móc nhìn tôi một cái rồi nói thắng không phải nguyên tắc mà là mục đích; còn nguyên tắc là phải tính toán được mất.',zh:'父亲停下来责备地看了我一眼，说赢不是原则，而是目的；至于原则，是要考虑得失。',py:'Fùqīn tíng xiàlai zébèi de kànle wǒ yì yǎn, shuō yíng bú shì yuánzé, ér shì mùdì; zhìyú yuánzé, shì yào kǎolǜ déshī.',goiY:['停下来 = dừng lại','责备 = trách móc','至于 = còn về (bài 26)'],giai:'V + 下来 ở đây = động tác dừng hẳn (停下来); 至于 chuyển sang đề tài liên quan — "còn về …".'},
-  {vi:'Bố nói có được ắt có mất, mỗi nước đi đều phải nghĩ trước xem mình chấp nhận mất gì; nếu không, đợi mất nhiều rồi mới tiếc thì hậu quả là đánh ván nào thua ván ấy.',zh:'父亲说有得必然有失，每走一步都要事先想清楚愿意失去什么，否则等失去多了再舍不得，后果就是屡下屡败。',py:'Fùqīn shuō yǒu dé bìrán yǒu shī, měi zǒu yí bù dōu yào shìxiān xiǎng qīngchu yuànyì shīqù shénme, fǒuzé děng shīqù duō le zài shěbude, hòuguǒ jiù shì lǚ xià lǚ bài.',goiY:['必然 = tất yếu','事先 = trước (khi làm)','否则 = nếu không','屡下屡败 = đánh lần nào thua lần ấy'],giai:'否则 nêu hậu quả khi không làm theo lời khuyên; 屡 A 屡 B = hễ A là B, lặp lại nhiều lần; 舍不得 ở đây = tiếc, không nỡ mất.'}
+  {vi:'Bố tôi là huấn luyện viên cờ tướng, vì vậy tôi vừa được nghỉ về nhà là bố đòi đánh cờ với tôi.',zh:'父亲是一位象棋教练，所以我一放假回家他就要跟我下棋。',py:'Fùqin shì yí wèi xiàngqí jiàoliàn, suǒyǐ wǒ yí fàngjià huí jiā tā jiù yào gēn wǒ xiàqí.',goiY:['象棋 = cờ tướng','教练 = huấn luyện viên','一……就…… = vừa… là…'],giai:'一……就…… nối hai việc xảy ra liền nhau; 要 ở đây = muốn, đòi.'},
+  {vi:'Chưa đến ba phút tôi đã mất hơn nửa số quân, cuối cùng chỉ biết trơ mắt nhìn bố “chiếu tướng”.',zh:'不到三分钟我就损失了一大半棋子，结果只能眼睁睁地看着父亲“将军”。',py:'Bú dào sān fēnzhōng wǒ jiù sǔnshīle yí dà bàn qízǐ, jiéguǒ zhǐ néng yǎnzhēngzhēng de kànzhe fùqin “jiāngjūn”.',goiY:['损失 = mất, tổn thất','眼睁睁 = trơ mắt','将军 = chiếu tướng'],giai:'不到 + thời gian + 就 = chưa đến… đã… (nhấn mạnh nhanh); 将军 ở đây là động từ trong cờ tướng.'},
+  {vi:'Tôi không phục, nói lần này là do xui, nhưng sang ván thứ hai tôi lại thua.',zh:'我不服气地说这次是运气不好，可是第二局又输了。',py:'Wǒ bù fúqì de shuō zhè cì shì yùnqi bù hǎo, kěshì dì-èr jú yòu shū le.',goiY:['服气 = chịu phục','运气 = vận may','局 = ván'],giai:'不服气地说 — tính từ + 地 làm trạng ngữ; 又 dùng cho việc lặp lại đã xảy ra.'},
+  {vi:'Bố đã quan sát kỹ: phần lớn quân của tôi mất trong khoảng thời gian đầu, vì lúc đó tôi có vẻ rất chắc ăn, đi cờ chẳng cần suy nghĩ.',zh:'父亲仔细观察过，我大部分的棋子是在前面那段时间失去的，因为这期间我好像很有把握，下棋时不假思索。',py:'Fùqin zǐxì guānchá guo, wǒ dà bùfen de qízǐ shì zài qiánmiàn nà duàn shíjiān shīqù de, yīnwèi zhè qījiān wǒ hǎoxiàng hěn yǒu bǎwò, xiàqí shí bù jiǎ sīsuǒ.',goiY:['观察 = quan sát','期间 = trong thời gian','有把握 = chắc chắn','不假思索 = không cần nghĩ'],giai:'是……的 nhấn mạnh thời điểm mất quân; 很有把握 = rất chắc chắn (把握 là danh từ).'},
+  {vi:'Về sau tôi lại mắc sai lầm ngược lại: quá tiếc quân cờ, một quân cũng không muốn mất, kết quả lại mất từng quân một.',zh:'后来我又犯了相反的错误：对棋子过于珍惜，一个也不想丢，反而一个一个都失去了。',py:'Hòulái wǒ yòu fànle xiāngfǎn de cuòwù: duì qízǐ guòyú zhēnxī, yí ge yě bù xiǎng diū, fǎn\'ér yí ge yí ge dōu shīqù le.',goiY:['犯错误 = mắc sai lầm','过于 = quá mức','反而 = ngược lại'],giai:'反而 diễn tả kết quả trái với mong muốn; 一个一个 = từng cái một.'},
+  {vi:'Bố dừng lại, nhìn tôi bằng ánh mắt trách móc, nói thắng không phải là nguyên tắc mà là mục đích; còn nguyên tắc thì phải cân nhắc được mất.',zh:'父亲停下来责备地看了我一眼，说赢不是原则，而是目的；至于原则，是要考虑得失。',py:'Fùqin tíng xiàlai zébèi de kànle wǒ yì yǎn, shuō yíng bú shì yuánzé, ér shì mùdì; zhìyú yuánzé, shì yào kǎolǜ déshī.',goiY:['停下来 = dừng lại','责备 = trách móc','不是……而是……','至于 = còn về'],giai:'停下来 = dừng hẳn lại (V + 下来); 不是 A 而是 B phủ định A khẳng định B.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1417,30 +1346,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
   sapXep:[
-    {manh:['做出准确的估计','我们需要','事先'],
-     dap:'我们需要事先做出准确的估计。',
-     vn:'Chúng ta cần đưa ra dự tính chính xác từ trước.',
-     giai:'Câu 29 sách bài tập. Chủ ngữ + 需要 → trạng ngữ 事先 đứng trước động từ → 做出准确的估计.'},
-    {manh:['你已经拥有的','请珍惜','一切'],
-     dap:'请珍惜你已经拥有的一切。',
-     vn:'Hãy trân trọng tất cả những gì bạn đang có.',
-     giai:'Câu 30 sách bài tập. 请 + 珍惜 + tân ngữ; định ngữ 你已经拥有的 đứng trước 一切.'},
-    {manh:['把职员们','都吓坏了','老板的责备'],
-     dap:'老板的责备把职员们都吓坏了。',
-     vn:'Lời quở trách của ông chủ làm các nhân viên sợ hết hồn.',
-     giai:'Câu 31 sách bài tập. Câu 把: chủ ngữ (老板的责备) + 把 + tân ngữ + 都 + V + bổ ngữ (吓坏了).'},
-    {manh:['舍不得','把这件新衣服','他','送给别人'],
-     dap:'他舍不得把这件新衣服送给别人。',
-     vn:'Cậu ấy không nỡ tặng bộ quần áo mới này cho người khác.',
-     giai:'舍不得 đứng trước cả cụm 把 (把 + tân ngữ + 送给 + người).'},
-    {manh:['在于','心态不对','最重要的问题','你'],
-     dap:'最重要的问题在于你心态不对。',
-     vn:'Vấn đề quan trọng nhất nằm ở chỗ tâm lý của con không đúng.',
-     giai:'Chủ ngữ 最重要的问题 + 在于 + mệnh đề (你心态不对).'},
-    {manh:['也未必能赢','否则','你就再下上10年'],
-     dap:'否则，你就再下上10年，也未必能赢。',
-     vn:'Nếu không, con có đánh thêm mười năm nữa cũng chưa chắc thắng được.',
-     giai:'否则 đứng đầu câu; 就 (= 就算) + giả thiết … 也 + 未必 + V.'}
+    {manh:['做出准确的估计','我们需要','事先'],dap:'我们需要事先做出准确的估计。',vn:'Chúng ta cần đưa ra dự tính chính xác từ trước.',giai:'Câu 29 sách bài tập. Chủ ngữ + 需要 → trạng ngữ 事先 đứng trước động từ → 做出准确的估计.'},
+    {manh:['你已经拥有的','请珍惜','一切'],dap:'请珍惜你已经拥有的一切。',vn:'Hãy trân trọng tất cả những gì bạn đang có.',giai:'Câu 30 sách bài tập. 请 + 珍惜 + tân ngữ; định ngữ 你已经拥有的 đứng trước 一切.'},
+    {manh:['责备孩子','父母','不应该','当着别人的面'],dap:'父母不应该当着别人的面责备孩子。',vn:'Bố mẹ không nên trách mắng con trước mặt người khác.',giai:'Chủ ngữ + 不应该 + trạng ngữ (当着别人的面) + 责备 + tân ngữ.'},
+    {manh:['舍不得','把这件新衣服','他','送给别人'],dap:'他舍不得把这件新衣服送给别人。',vn:'Cậu ấy không nỡ tặng bộ quần áo mới này cho người khác.',giai:'舍不得 đứng trước cả cụm 把 (把 + tân ngữ + 送给 + người).'},
+    {manh:['在于','成功的关键','坚持','能不能'],dap:'成功的关键在于能不能坚持。',vn:'Mấu chốt của thành công nằm ở chỗ có kiên trì được hay không.',giai:'Chủ ngữ 成功的关键 + 在于 + cụm động từ (能不能坚持).'},
+    {manh:['也未必能赢','否则','你就再下上10年'],dap:'否则，你就再下上10年，也未必能赢。',vn:'Nếu không, con có đánh thêm mười năm nữa cũng chưa chắc thắng được.',giai:'否则 đứng đầu câu; 就 (= 就算) + giả thiết … 也 + 未必 + V.'}
   ]
 };
 
@@ -1450,30 +1361,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (下棋 · 人生如棋). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 珍惜 · 失去 · 舍不得 · 必然 · 吸取 · 教训 · 事先 · 把握.',
   questions:[
-    {q_zh:'课文中父亲是怎样教育孩子的？',
-     q_vn:'Trong bài khoá, người bố đã dạy con như thế nào?',
-     hint:'Kể theo trình tự: để con đánh → quan sát → chỉ ra nguyên nhân; dùng 不是……而是…… và 在于',
-     sample:'父亲没有直接告诉我答案，而是先跟我下了几局棋。他仔细观察过我下棋，然后告诉我，技术只是次要因素，最重要的问题在于心态不对。最后他让我明白：下棋要考虑得失，人生也是如此。',
-     sample_vn:'Bố không nói thẳng đáp án cho tôi mà đánh với tôi mấy ván trước. Bố đã quan sát kỹ cách tôi đánh cờ, rồi bảo tôi rằng kỹ thuật chỉ là yếu tố thứ yếu, vấn đề quan trọng nhất nằm ở tâm lý không đúng. Cuối cùng bố giúp tôi hiểu: đánh cờ phải cân nhắc được mất, đời người cũng vậy.',
-     note:'Câu hỏi 1 trong 话题讨论 của sách. Nêu cách dạy (để con tự trải nghiệm rồi mới giảng) chứ không kể lại toàn bộ bài.'},
-    {q_zh:'你同意父亲的观点吗？为什么？',
-     q_vn:'Em có đồng ý với quan điểm của người bố không? Vì sao?',
-     hint:'Trả lời 同意 / 不同意 + ví dụ của bản thân; dùng 必然 và 事先',
-     sample:'我同意。有得必然有失，想什么都得到是不可能的。比如上了高中，为了学习好，我不得不失去一些玩儿的时间。所以每做一个决定，事先都应该想清楚自己愿意失去什么。',
-     sample_vn:'Tôi đồng ý. Có được ắt có mất, muốn có được tất cả là không thể. Ví dụ lên cấp ba, để học tốt, tôi buộc phải bỏ bớt thời gian vui chơi. Vì vậy mỗi lần quyết định việc gì, trước đó đều nên nghĩ kỹ mình chịu mất đi điều gì.',
-     note:'Câu hỏi 2 của sách. Bố cục: quan điểm → ví dụ → kết luận — nói gọn mà chắc.'},
-    {q_zh:'你对于“得”“失”有什么看法？',
-     q_vn:'Em nghĩ thế nào về "được" và "mất"?',
-     hint:'Nêu cách nhìn tích cực về "mất"; dùng 未必, 吸取教训, 珍惜',
-     sample:'我觉得“失”未必是坏事。失去了一次机会，我们可以吸取教训，下次好好把握。最重要的是珍惜已经拥有的东西，不要等到失去了才后悔。',
-     sample_vn:'Tôi thấy "mất" chưa chắc đã là chuyện xấu. Mất một cơ hội, ta có thể rút ra bài học, lần sau nắm bắt cho tốt. Quan trọng nhất là trân trọng những gì đang có, đừng đợi đến khi mất rồi mới hối hận.',
-     note:'Câu hỏi 3 của sách. 等到……才…… diễn tả sự muộn màng rất tự nhiên.'},
-    {q_zh:'你会哪种棋牌运动？你是怎么学会的？',
-     q_vn:'Em biết chơi môn cờ / bài nào? Em học như thế nào?',
-     hint:'Kể môn, người dạy, cảm nhận; dùng 是……的 và 灰心',
-     sample:'我会下象棋，是小时候跟爷爷学的。刚开始我常常输，有点儿灰心，爷爷就告诉我要吸取教训。现在我下得还不错，我觉得下棋不仅有意思，也能让人学会冷静地思考。',
-     sample_vn:'Tôi biết đánh cờ tướng, hồi nhỏ học với ông nội. Lúc đầu tôi hay thua, hơi nản, ông liền bảo tôi phải rút ra bài học. Bây giờ tôi đánh cũng khá, tôi thấy đánh cờ không chỉ thú vị mà còn giúp người ta học cách suy nghĩ bình tĩnh.',
-     note:'Câu hỏi 2 của phần 热身. Nói về chuyện đã qua nhấn mạnh người / thời điểm → 是……的.'}
+    {q_zh:'课文中父亲是怎样教育孩子的？',q_vn:'Trong bài khoá, người bố đã dạy con như thế nào?',hint:'Kể theo trình tự: để con đánh → quan sát → chỉ ra nguyên nhân; dùng 不是……而是…… và 在于',sample:'父亲没有直接告诉我答案，而是先跟我下了几局象棋，让我自己发现问题。他告诉我，输的原因不在技术，而在于心态。最后他让我明白：做什么事都要想清楚得到什么、愿意放弃什么，人生也是如此。',sample_vn:'Bố không nói thẳng đáp án cho tôi mà đánh với tôi mấy ván cờ trước, để tôi tự phát hiện vấn đề. Bố bảo tôi, nguyên nhân thua không phải ở kỹ thuật mà ở tâm lý. Cuối cùng bố giúp tôi hiểu: làm việc gì cũng phải nghĩ rõ mình được gì, chịu bỏ gì, đời người cũng vậy.',note:'Câu hỏi 1 trong 话题讨论 của sách. Nêu cách dạy (để con tự trải nghiệm rồi mới giảng) chứ không kể lại toàn bộ bài.'},
+    {q_zh:'你同意父亲的观点吗？为什么？',q_vn:'Em có đồng ý với quan điểm của người bố không? Vì sao?',hint:'Trả lời 同意 / 不同意 + ví dụ của bản thân; dùng 必然 và 事先',sample:'我同意。想什么都得到是不可能的，选择了一样，必然就要放弃另一样。比如上了高中，为了学习好，我不得不少玩儿一些。所以每做一个决定，事先都应该想清楚自己愿意放弃什么。',sample_vn:'Tôi đồng ý. Muốn có được tất cả là không thể, chọn thứ này thì tất yếu phải bỏ thứ kia. Ví dụ lên cấp ba, để học tốt, tôi buộc phải chơi ít đi. Vì vậy mỗi lần quyết định việc gì, trước đó đều nên nghĩ kỹ mình chịu bỏ đi điều gì.',note:'Câu hỏi 2 của sách. Bố cục: quan điểm → ví dụ → kết luận — nói gọn mà chắc.'},
+    {q_zh:'你怎么看生活中的“得到”和“失去”？',q_vn:'Em nghĩ thế nào về "được" và "mất" trong cuộc sống?',hint:'Nêu cách nhìn tích cực về "mất"; dùng 未必, 吸取教训, 珍惜',sample:'我觉得失去未必是坏事。失去了一次机会，我们可以吸取教训，下次好好把握。最重要的是珍惜已经拥有的东西，不要等到失去了才后悔。',sample_vn:'Tôi thấy mất đi chưa chắc đã là chuyện xấu. Mất một cơ hội, ta có thể rút ra bài học, lần sau nắm bắt cho tốt. Quan trọng nhất là trân trọng những gì đang có, đừng đợi đến khi mất rồi mới hối hận.',note:'Câu hỏi 3 của sách. 等到……才…… diễn tả sự muộn màng rất tự nhiên.'},
+    {q_zh:'你会下象棋吗？你是怎么学会的？',q_vn:'Em có biết đánh cờ tướng không? Em học như thế nào?',hint:'Kể môn, người dạy, cảm nhận; dùng 是……的 và 灰心',sample:'我会下象棋，是小时候跟爷爷学的。刚开始我常常输，有点儿灰心，爷爷就告诉我要吸取教训。现在我下得还不错，我觉得下棋不仅有意思，也能让人学会冷静地思考。',sample_vn:'Tôi biết đánh cờ tướng, hồi nhỏ học với ông nội. Lúc đầu tôi hay thua, hơi nản, ông liền bảo tôi phải rút ra bài học. Bây giờ tôi đánh cũng khá, tôi thấy đánh cờ không chỉ thú vị mà còn giúp người ta học cách suy nghĩ bình tĩnh.',note:'Câu hỏi khởi động của sách. Nói về chuyện đã qua nhấn mạnh người / thời điểm → 是……的.'}
   ]
 };
 
@@ -1564,45 +1455,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng lớp thua em ba ván cờ liền, cứ đổ tại xui.',
-     a:{sp:'Bạn',zh:'今天我运气太差了，再来一局！',vn:'Hôm nay tớ xui quá, thêm ván nữa!'},
-     need:['Dùng 吸取教训 hoặc 未必','Khuyên bạn tìm nguyên nhân'],
-     sample:'不是运气的问题，你先想想输在什么地方，吸取教训，不然再下十局也未必能赢。',
-     samplePy:'Bú shì yùnqi de wèntí, nǐ xiān xiǎngxiang shū zài shénme dìfang, xīqǔ jiàoxùn, bùrán zài xià shí jú yě wèibì néng yíng.',
-     sampleVn:'Không phải chuyện xui đâu, cậu nghĩ xem mình thua ở đâu, rút ra bài học đã, không thì đánh thêm mười ván cũng chưa chắc thắng.',
-     tip:'Dùng lại lời người bố trong bài khoá: 要知道输在什么地方，要吸取教训.'},
-
-    {scene:'Em sắp chuyển trường, bạn thân hỏi em cảm thấy thế nào.',
-     a:{sp:'Bạn thân',zh:'下个月你就要转学了，心里什么感觉？',vn:'Tháng sau cậu chuyển trường rồi, trong lòng thấy thế nào?'},
-     need:['Dùng 舍不得','Nói cảm xúc của mình'],
-     sample:'我真舍不得离开你们，以后我们一定要常常联系。',
-     samplePy:'Wǒ zhēn shěbude líkāi nǐmen, yǐhòu wǒmen yídìng yào chángcháng liánxì.',
-     sampleVn:'Tớ thật không nỡ xa các cậu, sau này chúng mình nhất định phải liên lạc thường xuyên nhé.',
-     tip:'舍不得 + 离开 + người; có thể thêm 真 để nhấn mạnh.'},
-
-    {scene:'Em trai định bấm mua ngay đôi giày rất đắt trên mạng mà chưa hỏi bố mẹ.',
-     a:{sp:'Em trai',zh:'这双鞋太酷了，我现在就买！',vn:'Đôi giày này ngầu quá, em mua luôn đây!'},
-     need:['Dùng 事先 hoặc 后果','Nhắc em suy nghĩ kỹ'],
-     sample:'等一下！买之前应该事先问问爸妈，要不然被他们知道了，后果你自己想想吧。',
-     samplePy:'Děng yíxià! Mǎi zhīqián yīnggāi shìxiān wènwen bà-mā, yàobùrán bèi tāmen zhīdào le, hòuguǒ nǐ zìjǐ xiǎngxiang ba.',
-     sampleVn:'Khoan đã! Trước khi mua nên hỏi bố mẹ trước, không thì bị bố mẹ biết, hậu quả thế nào em tự nghĩ đi.',
-     tip:'事先 + V (问问); 后果 dùng cho kết quả xấu.'},
-
-    {scene:'Bạn thi thử được điểm thấp, nói muốn bỏ luyện thi HSK.',
-     a:{sp:'Bạn',zh:'我复习了那么久还考得这么差，不想学了。',vn:'Tớ ôn lâu thế mà vẫn thi tệ như vậy, không muốn học nữa.'},
-     need:['Dùng 灰心 và 在于','Động viên bạn'],
-     sample:'别灰心！问题不在于你不努力，而在于方法不对，我们一起找找原因吧。',
-     samplePy:'Bié huīxīn! Wèntí bú zàiyú nǐ bù nǔlì, ér zàiyú fāngfǎ bú duì, wǒmen yìqǐ zhǎozhao yuányīn ba.',
-     sampleVn:'Đừng nản! Vấn đề không nằm ở chỗ cậu không cố gắng mà ở phương pháp chưa đúng, chúng mình cùng tìm nguyên nhân nhé.',
-     tip:'不在于 A，而在于 B — đúng cấu trúc của mục 在于.'},
-
-    {scene:'Tối trước kỳ thi, bạn phân vân nên chơi game hay ôn bài.',
-     a:{sp:'Bạn',zh:'今晚是玩游戏还是复习呢？我两个都想要。',vn:'Tối nay chơi game hay ôn bài đây? Tớ muốn cả hai.'},
-     need:['Dùng 必然 hoặc 珍惜','Đưa ra lời khuyên'],
-     sample:'有得必然有失，你不可能两个都要。明天就考试了，还是珍惜今晚的时间，好好复习吧。',
-     samplePy:'Yǒu dé bìrán yǒu shī, nǐ bù kěnéng liǎng ge dōu yào. Míngtiān jiù kǎoshì le, háishi zhēnxī jīnwǎn de shíjiān, hǎohāo fùxí ba.',
-     sampleVn:'Có được ắt có mất, cậu không thể lấy cả hai được. Mai thi rồi, thôi cứ trân trọng thời gian tối nay mà ôn bài cho tốt đi.',
-     tip:'有得必然有失 là câu then chốt của bài; 还是……吧 = tốt hơn là ….'}
+    {scene:'Bạn cùng lớp thua em ba ván cờ liền, cứ đổ tại xui.',a:{sp:'Bạn',zh:'今天我运气太差了，再来一局！',vn:'Hôm nay tớ xui quá, thêm ván nữa!'},need:['Dùng 吸取教训 hoặc 未必','Khuyên bạn tìm nguyên nhân'],sample:'不是运气的问题，你先想想输在什么地方，吸取教训，要不再下十局也未必能赢。',samplePy:'Bú shì yùnqi de wèntí, nǐ xiān xiǎngxiang shū zài shénme dìfang, xīqǔ jiàoxùn, yàobù zài xià shí jú yě wèibì néng yíng.',sampleVn:'Không phải chuyện xui đâu, cậu nghĩ xem mình thua ở đâu, rút ra bài học đã, không thì đánh thêm mười ván cũng chưa chắc thắng.',tip:'Dùng lại ý lời người bố trong bài khoá: phải biết thua ở đâu và rút ra bài học; 要不 = nếu không thì.'},
+    {scene:'Em sắp chuyển trường, bạn thân hỏi em cảm thấy thế nào.',a:{sp:'Bạn thân',zh:'下个月你就要转学了，心里什么感觉？',vn:'Tháng sau cậu chuyển trường rồi, trong lòng thấy thế nào?'},need:['Dùng 舍不得','Nói cảm xúc của mình'],sample:'我真舍不得离开你们，以后我们一定要常常联系。',samplePy:'Wǒ zhēn shěbude líkāi nǐmen, yǐhòu wǒmen yídìng yào chángcháng liánxì.',sampleVn:'Tớ thật không nỡ xa các cậu, sau này chúng mình nhất định phải liên lạc thường xuyên nhé.',tip:'舍不得 + 离开 + người; có thể thêm 真 để nhấn mạnh.'},
+    {scene:'Em trai định bấm mua ngay một chiếc điện thoại rất đắt trên mạng mà chưa hỏi bố mẹ.',a:{sp:'Em trai',zh:'这个手机太好看了，我现在就买！',vn:'Cái điện thoại này đẹp quá, em mua luôn đây!'},need:['Dùng 事先 hoặc 后果','Nhắc em suy nghĩ kỹ'],sample:'等一下！买之前应该事先问问爸妈，要不被他们知道了，后果你自己想想吧。',samplePy:'Děng yíxià! Mǎi zhīqián yīnggāi shìxiān wènwen bà-mā, yàobù bèi tāmen zhīdào le, hòuguǒ nǐ zìjǐ xiǎngxiang ba.',sampleVn:'Khoan đã! Trước khi mua nên hỏi bố mẹ trước, không thì bị bố mẹ biết, hậu quả thế nào em tự nghĩ đi.',tip:'事先 + V (问问); 后果 dùng cho kết quả xấu.'},
+    {scene:'Bạn thi thử được điểm thấp, nói muốn bỏ luyện thi HSK.',a:{sp:'Bạn',zh:'我复习了那么久还考得这么差，不想学了。',vn:'Tớ ôn lâu thế mà vẫn thi tệ như vậy, không muốn học nữa.'},need:['Dùng 灰心 và 在于','Động viên bạn'],sample:'别灰心！问题不在于你不努力，而在于方法不对，我们一起找找原因吧。',samplePy:'Bié huīxīn! Wèntí bú zàiyú nǐ bù nǔlì, ér zàiyú fāngfǎ bú duì, wǒmen yìqǐ zhǎozhao yuányīn ba.',sampleVn:'Đừng nản! Vấn đề không nằm ở chỗ cậu không cố gắng mà ở phương pháp chưa đúng, chúng mình cùng tìm nguyên nhân nhé.',tip:'不在于 A，而在于 B — đúng cấu trúc của mục 在于.'},
+    {scene:'Tối trước kỳ thi, bạn phân vân nên chơi game hay ôn bài.',a:{sp:'Bạn',zh:'今晚是玩游戏还是复习呢？我两个都想要。',vn:'Tối nay chơi game hay ôn bài đây? Tớ muốn cả hai.'},need:['Dùng 珍惜','Đưa ra lời khuyên'],sample:'两个都要是不可能的。明天就考试了，还是珍惜今晚的时间，好好复习吧，游戏考完再玩也不晚。',samplePy:'Liǎng ge dōu yào shì bù kěnéng de. Míngtiān jiù kǎoshì le, háishi zhēnxī jīnwǎn de shíjiān, hǎohāo fùxí ba, yóuxì kǎo wán zài wán yě bù wǎn.',sampleVn:'Muốn cả hai là không thể đâu. Mai thi rồi, thôi cứ trân trọng thời gian tối nay mà ôn bài cho tốt, game thi xong chơi cũng chưa muộn.',tip:'还是……吧 = tốt hơn là …; ……再……也不晚 = để sau… cũng chưa muộn.'}
   ]
 };
 
@@ -1613,29 +1470,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết bài văn nghị luận "得与失" nộp thầy giáo.',
-     a:'有得必然有失，只有学会放弃，才能得到更重要的东西。',b:'想啥都要，那哪儿行啊？',better:'a',
-     why:'Văn nghị luận cần giọng văn viết: 必然, 只有……才……. Câu b là khẩu ngữ (啥, 哪儿行啊).'},
-
-    {scene:'Em động viên em gái lớp 6 vừa thua cờ ông nội và đang khóc.',
-     a:'没事儿，输了再来！下次想好了再走，你肯定能赢一局。',b:'失败乃成功之母，应当吸取教训，调整心态。',better:'a',
-     why:'Nói với trẻ nhỏ cần giản dị, ấm áp. Câu b đúng ý nhưng quá sách vở (乃, 应当).'},
-
-    {scene:'Huấn luyện viên nói chuyện với cả đội trước trận chung kết.',
-     a:'大家放松心态，充分发挥自己的水平，我相信你们！',b:'你们随便打打吧，输了也没事儿。',better:'a',
-     why:'Lời HLV cần vừa động viên vừa nghiêm túc: 放松心态, 充分发挥. Câu b nghe như không coi trọng trận đấu.'},
-
-    {scene:'Em nhắn tin từ chối khéo lời rủ đi chơi của bạn thân vì phải ôn thi.',
-     a:'今天真不行，明天考试，下次我请你喝奶茶！',b:'本人因考试原因，无法答应您的邀请，敬请谅解。',better:'a',
-     why:'Với bạn thân dùng giọng thân mật. Câu b (本人, 您, 敬请谅解) như văn bản hành chính, nghe rất xa cách.'},
-
-    {scene:'Thông báo của nhà trường về an toàn khi đi dã ngoại.',
-     a:'请同学们事先做好准备，严格遵守活动规定，否则后果自负。',b:'大家记得带好东西，别乱跑啊，出事儿了可不管。',better:'a',
-     why:'Thông báo chính thức dùng 事先做好准备, 严格遵守, 后果自负. Câu b giống lời nhắc miệng.'},
-
-    {scene:'Em nói với bà khi bà tiếc không nỡ vứt chiếc bàn cũ đã hỏng.',
-     a:'奶奶，我知道您舍不得，那我们把它修一修，再用几年吧。',b:'奶奶，这个东西已经失去了使用价值，建议您尽快处理。',better:'a',
-     why:'Nói với bà cần thấu hiểu cảm xúc (我知道您舍不得). Câu b (失去了使用价值, 建议尽快处理) lạnh lùng như nhân viên thu mua.'}
+    {scene:'Em viết bài văn nghị luận về “được và mất” nộp thầy giáo.',a:'想得到什么，就必然要失去一些东西，关键在于你怎么选择。',b:'这个也要，那个也要，那哪儿行啊？',better:'a',why:'Văn nghị luận cần giọng văn viết: 必然, 关键在于. Câu b là khẩu ngữ (那哪儿行啊).'},
+    {scene:'Em động viên em gái lớp 6 vừa thua cờ ông nội và đang khóc.',a:'没事儿，输了再来！下次想好了再走，你肯定能赢一局。',b:'输赢是次要的，重要的是吸取教训，调整好自己的心态。',better:'a',why:'Nói với trẻ nhỏ cần giản dị, ấm áp. Câu b đúng ý nhưng quá sách vở (次要, 吸取教训, 调整心态).'},
+    {scene:'Huấn luyện viên nói chuyện với cả đội trước trận chung kết.',a:'大家放松心态，充分发挥自己的水平，我相信你们！',b:'你们随便打打吧，输了也没事儿。',better:'a',why:'Lời HLV cần vừa động viên vừa nghiêm túc: 放松心态, 充分发挥. Câu b nghe như không coi trọng trận đấu.'},
+    {scene:'Em nhắn tin từ chối khéo lời rủ đi chơi của bạn thân vì phải ôn thi.',a:'今天真不行，我得复习，考完我请你吃饭！',b:'由于本人需要准备考试，无法答应您的邀请，希望您能理解。',better:'a',why:'Với bạn thân dùng giọng thân mật. Câu b (本人, 您, 无法答应) như văn bản hành chính, nghe rất xa cách.'},
+    {scene:'Thông báo của nhà trường về an toàn khi đi dã ngoại.',a:'请同学们事先做好准备，严格遵守活动规定，否则一切后果由自己负责。',b:'大家记得带好东西，别乱跑啊，出事儿了可不管。',better:'a',why:'Thông báo chính thức dùng 事先做好准备, 严格遵守, 后果由自己负责. Câu b giống lời nhắc miệng.'},
+    {scene:'Em nói với bà khi bà tiếc không nỡ vứt chiếc tủ cũ.',a:'奶奶，我知道您舍不得，那我们把它擦干净，再用几年吧。',b:'奶奶，这个东西已经没有使用价值了，建议您马上扔掉。',better:'a',why:'Nói với bà cần thấu hiểu cảm xúc (我知道您舍不得). Câu b (没有使用价值, 建议马上扔掉) lạnh lùng như nhân viên thu mua.'}
   ]
 };
 

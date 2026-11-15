@@ -879,86 +879,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 26) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'从事',right:'职业'},
   {left:'办理',right:'手续'},
   {left:'粗糙的',right:'皮肤'},
   {left:'整齐的',right:'军队'},
-  {left:'登记',right:'清楚'},
-  {left:'碰',right:'翻'},
   {left:'一册',right:'书'},
   {left:'一笔',right:'押金'},
   {left:'生活',right:'单调'},
-  {left:'身材',right:'苗条'},
   {left:'毫无',right:'疑问'},
   {left:'印刷',right:'精美'},
-  {left:'物价',right:'上涨'},
-  {left:'各种',right:'题材'},
+  {left:'价格',right:'上涨'},
   {left:'网络',right:'游戏'},
-  {left:'娱乐',right:'活动'},
-  {left:'上了',right:'年纪'},
-  {left:'凭票',right:'进站'},
-  {left:'搭',right:'棚子'},
-  {left:'支着',right:'脑袋'},
-  {left:'打破世界',right:'纪录'}
+  {left:'身材',right:'苗条'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'记得小时候，我家附近就有个小人书',blank:'摊',post:'。',hint:'(sạp, quầy)',ans:'摊'},
-  {pre:'小人书，是一种以书的形式',blank:'出版',post:'的连环画。',hint:'(xuất bản)',ans:'出版'},
-  {pre:'爷爷小时候最爱看《西游记》',blank:'连环画',post:'，现在还留着好几本。',hint:'(truyện tranh liên hoàn)',ans:'连环画'},
-  {pre:'他觉得在中国的生活很',blank:'单调',post:'，我却觉得很丰富。',hint:'(đơn điệu)',ans:'单调'},
-  {pre:'宿舍的',blank:'网络',post:'太慢了，我连一个视频都看不了。',hint:'(mạng Internet)',ans:'网络'},
-  {pre:'弟弟一回家就打开电视看',blank:'动画片',post:'。',hint:'(phim hoạt hình)',ans:'动画片'},
-  {pre:'那时候，读小人书是儿童最主要的',blank:'娱乐',post:'之一。',hint:'(thú giải trí)',ans:'娱乐'},
-  {pre:'为了这次比赛，他已经练习了',blank:'无数',post:'次。',hint:'(vô số)',ans:'无数'},
-  {pre:'这本书内容健康，很适合',blank:'青少年',post:'阅读。',hint:'(thanh thiếu niên)',ans:'青少年'},
-  {pre:'周先生',blank:'从事',post:'文艺创作已经很多年了。',hint:'(làm, theo nghề)',ans:'从事'},
-  {pre:'对这个调皮的孩子，连老师也',blank:'毫无',post:'办法。',hint:'(hoàn toàn không có)',ans:'毫无',exp:'毫无 + danh từ = hoàn toàn không có: 毫无办法. 毫无 không đi trực tiếp với động từ.'},
-  {pre:'史学家对这个问题提出了不少',blank:'疑问',post:'。',hint:'(nghi vấn)',ans:'疑问'},
-  {pre:'下雨了，我们赶紧跑到路边的',blank:'棚子',post:'里躲雨。',hint:'(lều, lán)',ans:'棚子'},
-  {pre:'桌子腿不一样长，他在下面放了一块',blank:'砖头',post:'。',hint:'(viên gạch)',ans:'砖头'},
-  {pre:'这部手机做工比较',blank:'粗糙',post:'，还是买那部小的吧。',hint:'(thô, làm ẩu)',ans:'粗糙'},
-  {pre:'山里的人以前大多住在',blank:'木头',post:'房子里。',hint:'(gỗ)',ans:'木头'},
-  {pre:'这部电影以一个普通家庭的生活为',blank:'题材',post:'。',hint:'(đề tài)',ans:'题材'},
-  {pre:'请大家把书',blank:'翻',post:'到第二十二页。',hint:'(giở, lật)',ans:'翻'},
-  {pre:'他一进门就把外套',blank:'搭',post:'在椅子上了。',hint:'(vắt lên)',ans:'搭'},
-  {pre:'她的房间总是收拾得很',blank:'整齐',post:'。',hint:'(ngăn nắp)',ans:'整齐'},
-  {pre:'爷爷，您今年多大',blank:'年纪',post:'了？',hint:'(tuổi — hỏi người già)',ans:'年纪'},
-  {pre:'公园门票',blank:'成人',post:'五十元，儿童半价。',hint:'(người lớn)',ans:'成人'},
-  {pre:'在摊里看小人书，每',blank:'册',post:'1分钱。',hint:'(cuốn — lượng từ)',ans:'册',exp:'册 là lượng từ cho sách, tập: 每册1分钱.'},
-  {pre:'',blank:'假如',post:'明天下雨，运动会就改到下周。',hint:'(nếu, giả sử)',ans:'假如',exp:'假如 = nếu, giả sử (như 如果): 假如明天下雨，运动会就改到下周.'},
-  {pre:'住酒店的时候，要先在前台',blank:'登记',post:'。',hint:'(đăng ký)',ans:'登记'},
-  {pre:'现在在网上办签证，',blank:'手续',post:'比以前简单多了。',hint:'(thủ tục)',ans:'手续'},
-  {pre:'请96号顾客到2号窗口',blank:'办理',post:'业务。',hint:'(làm, giải quyết)',ans:'办理'},
-  {pre:'租这套房子要先付一笔',blank:'押金',post:'。',hint:'(tiền đặt cọc)',ans:'押金'},
-  {pre:'这本书的',blank:'印刷',post:'质量比较粗糙。',hint:'(in ấn)',ans:'印刷'},
-  {pre:'最近几年，物价',blank:'涨',post:'得很厉害。',hint:'(tăng, lên giá)',ans:'涨'},
-  {pre:'爷爷从年轻时就开始',blank:'收藏',post:'邮票。',hint:'(sưu tầm)',ans:'收藏'}
+  {pre:'他下班以后在路边摆了个小',blank:'摊',post:'，卖自己做的点心。',hint:'(sạp, quầy hàng)',ans:'摊',exp:'摊 = sạp hàng bày ở ngoài đường; 摆摊 = bày sạp bán hàng, 书摊 = sạp sách.'},
+  {pre:'弟弟每天晚上都要看半个小时',blank:'动画片',post:'，看完才去睡觉。',hint:'(phim hoạt hình)',ans:'动画片',exp:'动画片 = phim hoạt hình; 片 đọc piàn, đi với 看.'},
+  {pre:'他',blank:'毫无',post:'准备地走上了台，结果紧张得一句话也说不出来。',hint:'(không hề có chút — văn viết)',ans:'毫无',exp:'毫无 + danh từ hai chữ (准备, 办法, 兴趣, 疑问) = hoàn toàn không có; 毫无准备地 + V = làm gì mà không hề chuẩn bị.'},
+  {pre:'刮风的时候门老是开，他就搬了一块',blank:'砖头',post:'挡在门后面。',hint:'(viên gạch)',ans:'砖头',exp:'砖头 = viên gạch, lượng từ 块. Khác 石头 (hòn đá).'},
+  {pre:'她常年在地里干活儿，一双手变得很',blank:'粗糙',post:'。',hint:'(thô ráp, sần sùi)',ans:'粗糙',exp:'粗糙 = thô ráp (da tay, mặt bàn); cũng chỉ đồ làm ẩu, không tinh: 这张桌子做得很粗糙.'},
+  {pre:'这张桌子是用',blank:'木头',post:'做的，已经用了二十多年了，还很结实。',hint:'(gỗ)',ans:'木头',exp:'木头 = gỗ; 用木头做的 = làm bằng gỗ. 结实 (bài 4) = chắc chắn.'},
+  {pre:'这位作家最喜欢写农村',blank:'题材',post:'的小说。',hint:'(đề tài)',ans:'题材',exp:'题材 = đề tài của tác phẩm (sách, phim, tranh): 农村题材, 历史题材.'},
+  {pre:'他打完球，把毛巾',blank:'搭',post:'在肩膀上，一边走一边喝水。',hint:'(vắt (lên))',ans:'搭',exp:'搭 = vắt, mắc (khăn, áo) lên vật khác: 搭在肩膀上, 搭在椅子上; còn có nghĩa dựng (lều): 搭棚子.'},
+  {pre:'奶奶虽然上了',blank:'年纪',post:'，可是每天还坚持去公园散步。',hint:'(tuổi tác)',ans:'年纪',exp:'上了年纪 = đã có tuổi (nói về người già, lịch sự). Không nói ✗上了年龄.'},
+  {pre:'租这套房子，除了房租，还要先交一个月的',blank:'押金',post:'。',hint:'(tiền đặt cọc)',ans:'押金',exp:'押金 = tiền đặt cọc, trả lại khi trả nhà/trả đồ; lượng từ 笔: 一笔押金.'},
+  {pre:'今年的房租又',blank:'涨',post:'了两百块，我只好搬到远一点儿的地方去住。',hint:'(tăng, lên (giá))',ans:'涨',exp:'涨 (zhǎng) = tăng (giá, mực nước): 房租涨了, 河水涨了.'},
+  {pre:'他从十岁就开始',blank:'收藏',post:'各个国家的地图，现在已经有一千多张了。',hint:'(sưu tầm)',ans:'收藏',exp:'收藏 = sưu tầm và cất giữ (tem, bản đồ, tranh…); 收藏品 = đồ sưu tầm.'}
 ];
 
 // ══════════════════════════════════════════
 // SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['这','对于','那些','买不起书的人','来说','是件','大好事','。'],ans:'这对于那些买不起书的人来说是件大好事。',audio:'这对于那些买不起书的人来说是件大好事。',alt:['对于那些买不起书的人来说这是件大好事。']},
-  {words:['他家里','很穷','，','买不起','灯','。'],ans:'他家里很穷，买不起灯。',audio:'他家里很穷，买不起灯。'},
-  {words:['只有','经得起','考验的','朋友','才算是','真正的朋友','。'],ans:'只有经得起考验的朋友才算是真正的朋友。',audio:'只有经得起考验的朋友才算是真正的朋友。'},
-  {words:['他的','两只手','放在桌上','，','支着','脑袋','。'],ans:'他的两只手放在桌上，支着脑袋。',audio:'他的两只手放在桌上，支着脑袋。'},
-  {words:['里面','用','几块砖头','支着','木头板子','。'],ans:'里面用几块砖头支着木头板子。',audio:'里面用几块砖头支着木头板子。'},
-  {words:['给他','十支枪','，','他就能','拉起','一支军队','来','。'],ans:'给他十支枪，他就能拉起一支军队来。',audio:'给他十支枪，他就能拉起一支军队来。'},
-  {words:['请','旅客们','凭票','进站','。'],ans:'请旅客们凭票进站。',audio:'请旅客们凭票进站。'},
-  {words:['你','凭什么','怀疑','我','？'],ans:'你凭什么怀疑我？',audio:'你凭什么怀疑我？'},
-  {words:['干工作','不能','光','凭','经验','。'],ans:'干工作不能光凭经验。',audio:'干工作不能光凭经验。'},
-  {words:['假如','借走','回家看','，','则','每本每天','2分钱','。'],ans:'假如借走回家看，则每本每天2分钱。',audio:'假如借走回家看，则每本每天2分钱。'},
-  {words:['摊主','将','租书人的','姓名','登记在','本子上','。'],ans:'摊主将租书人的姓名登记在本子上。',audio:'摊主将租书人的姓名登记在本子上。'},
-  {words:['小人书','和','小人书摊','已','成为','历史的记忆','。'],ans:'小人书和小人书摊已成为历史的记忆。',audio:'小人书和小人书摊已成为历史的记忆。'},
-  {words:['窗外','响起了','一阵','整齐的','歌声','。'],ans:'窗外响起了一阵整齐的歌声。',audio:'窗外响起了一阵整齐的歌声。'}
+  {words:['刚工作的','年轻人','哪儿','租得起','市中心的','房子','？'],ans:'刚工作的年轻人哪儿租得起市中心的房子？',audio:'刚工作的年轻人哪儿租得起市中心的房子？'},
+  {words:['这么贵的','饭店','，','我们','学生','可','吃不起','。'],ans:'这么贵的饭店，我们学生可吃不起。',audio:'这么贵的饭店，我们学生可吃不起。'},
+  {words:['这种考试','不能','光凭','聪明','，','还要靠','平时的','努力','。'],ans:'这种考试不能光凭聪明，还要靠平时的努力。',audio:'这种考试不能光凭聪明，还要靠平时的努力。'},
+  {words:['他','用一根木头','把','窗户','支了','起来','。'],ans:'他用一根木头把窗户支了起来。',audio:'他用一根木头把窗户支了起来。'},
+  {words:['这套书','一共','有','十二册','，','比较','适合','成人','阅读','。'],ans:'这套书一共有十二册，比较适合成人阅读。',audio:'这套书一共有十二册，比较适合成人阅读。'},
+  {words:['医生','把','病人','每天的','变化','都','详细地','记录了下来','。'],ans:'医生把病人每天的变化都详细地记录了下来。',audio:'医生把病人每天的变化都详细地记录了下来。'},
+  {words:['这种衣服','在','八十年代','特别','流行','，','我爸爸妈妈','都','穿过','。'],ans:'这种衣服在八十年代特别流行，我爸爸妈妈都穿过。',audio:'这种衣服在八十年代特别流行，我爸爸妈妈都穿过。'},
+  {words:['假如','你','一年','不用','工作','，','你','最想','去哪儿','？'],ans:'假如你一年不用工作，你最想去哪儿？',audio:'假如你一年不用工作，你最想去哪儿？'}
 ];
 
 // ══════════════════════════════════════════
@@ -966,150 +934,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {
-    wrong:'这可以说是20世纪80____最流行的歌曲。',
-    opts:['时代','年代','世纪','时期'],
-    ans:1,
-    exp:'Sau số chẵn chục chỉ thập niên → 80年代 (câu 练习 2 của sách). 时代 là thời đại lớn (信息时代), không đi với số; 世纪 đã có ở trước; 时期 không đi thẳng sau số 80.'
-  },
-  {
-    wrong:'他____高大，动作灵活，很适合打篮球。',
-    opts:['身体','身材','身价','材料'],
-    ans:1,
-    exp:'Tả dáng người cao lớn → 身材高大 (bảng 搭配 + 练习 2 của sách). 身体 là sức khoẻ, thân thể (身体健康); 身价 là giá trị; 材料 là vật liệu.'
-  },
-  {
-    wrong:'我已经把这次会议的内容详细地____下来了。',
-    opts:['纪录','记录','登记','记忆'],
-    ans:1,
-    exp:'Làm ĐỘNG TỪ “ghi lại” + 下来 → 记录下来. 纪录 chỉ là danh từ (kỷ lục); 登记 là ghi tên vào sổ, không dùng cho nội dung cuộc họp; 记忆 là trí nhớ.'
-  },
-  {
-    wrong:'他在本次比赛中打破了世界____。',
-    opts:['记录','纪录','记忆','记者'],
-    ans:1,
-    exp:'Kỷ lục thế giới → 世界纪录 (词语辨析 của bài). 记录 là ghi chép, biên bản — đồng âm nhưng khác nghĩa.'
-  },
-  {
-    wrong:'请旅客们准备好车票，____票进站。',
-    opts:['凭','把','对','给'],
-    ans:0,
-    exp:'凭 + tân ngữ + động từ = căn cứ vào / bằng … mà làm … → 凭票进站 (điểm ngữ pháp 3). 把, 对, 给 không có nghĩa “căn cứ vào”.'
-  },
-  {
-    wrong:'干工作不能光____经验，还要有创新。',
-    opts:['凭','把','被','比'],
-    ans:0,
-    exp:'凭 (động từ) = dựa vào: 光凭经验 = chỉ dựa vào kinh nghiệm (câu của sách). Ba giới từ còn lại cần thêm động từ phía sau.'
-  },
-  {
-    wrong:'一般来说，一包香烟有二十____。',
-    opts:['册','支','本','张'],
-    ans:1,
-    exp:'Vật hình que (thuốc lá, bút) dùng lượng từ 支 (câu 练习 2 của sách). 册, 本 dùng cho sách; 张 cho vật phẳng.'
-  },
-  {
-    wrong:'快，这张桌子坏了，拿几块砖头把它____起来。',
-    opts:['支','翻','涨','收'],
-    ans:0,
-    exp:'支 (động từ) = chống, đỡ cho khỏi đổ → 支起来 (điểm ngữ pháp 2). 翻 là lật, 涨 là tăng, 收 là thu.'
-  },
-  {
-    wrong:'这对于那些想看又买不____书的人来说，毫无疑问是件大好事。',
-    opts:['起','完','动','开'],
-    ans:0,
-    exp:'V + 不 + 起 = không đủ điều kiện (tiền bạc) để làm → 买不起 (điểm ngữ pháp 1). 买不完 là mua không hết; 买不动, 买不开 không có nghĩa này.'
-  },
-  {
-    wrong:'只有经得____困难和时间考验的朋友才算是真正的朋友。',
-    opts:['起','到','完','见'],
-    ans:0,
-    exp:'经得起 = chịu đựng được (thử thách) — V + 得 + 起 biểu thị có khả năng chịu đựng (điểm ngữ pháp 1, câu của sách).'
-  },
-  {
-    wrong:'今天的课就到这儿，大家有什么____吗？',
-    opts:['怀疑','疑问','相信','问'],
-    ans:1,
-    exp:'有 + danh từ → 有疑问 = có thắc mắc (câu 练习 2 của sách). 怀疑 chủ yếu là động từ, không dùng hỏi “có thắc mắc gì không”.'
-  },
-  {
-    wrong:'窗外响起了一阵____的歌声。',
-    opts:['整齐','粗糙','无数','毫无'],
-    ans:0,
-    exp:'Tiếng hát đều nhau, khớp nhịp → 整齐的歌声 (bảng 搭配: 整齐的声音). 粗糙 tả bề mặt, chất lượng; 无数, 毫无 không tả tiếng hát.'
-  },
-  {
-    wrong:'我想____有挑战性的工作，因为那样可以更好地成长。',
-    opts:['办理','从事','登记','收藏'],
-    ans:1,
-    exp:'从事 + (……的) 工作 = làm công việc … (bảng 搭配, câu 练习 1). 办理 đi với 手续 / 业务; 登记, 收藏 không hợp nghĩa.'
-  },
-  {
-    wrong:'按规定，____离校手续时，如果交不出学生证，押金就不退还了。',
-    opts:['从事','办理','印刷','出版'],
-    ans:1,
-    exp:'办理 + 手续 = làm thủ tục (bảng 搭配). 从事 đi với 工作 / 职业; 印刷, 出版 dùng cho sách báo.'
-  },
-  {
-    wrong:'听说那套书很有收藏价值，价钱都____疯了。',
-    opts:['涨','翻','支','搭'],
-    ans:0,
-    exp:'Giá cả tăng lên → 涨 (涨疯了 = tăng điên cuồng, câu bài nghe 练习册). Ba động từ còn lại không nói về giá.'
-  },
-  {
-    wrong:'一些印刷精美的小人书身价大涨，成了____品，甚至进了博物馆。',
-    opts:['收藏','登记','办理','从事'],
-    ans:0,
-    exp:'收藏品 = đồ sưu tầm (câu bài khoá). Ba động từ còn lại không ghép với 品.'
-  },
-  {
-    wrong:'手续倒是挺简单，登记时才知道要交____，我没带那么多钱。',
-    opts:['押金','手续','记录','年纪'],
-    ans:0,
-    exp:'交押金 = nộp tiền đặt cọc — khớp với vế “không mang nhiều tiền thế” (bài nghe 练习册).'
-  },
-  {
-    wrong:'小人书如今只能在北京的____、护国寺等地的旧书摊上找到。',
-    opts:['潘家园','天安门','长城','故宫'],
-    ans:0,
-    exp:'Theo bài khoá: 潘家园 là khu chợ đồ cũ, đồ cổ nổi tiếng ở Bắc Kinh, nơi còn bán truyện tranh cũ. Ba nơi kia là danh thắng, không có sạp sách cũ.'
-  },
-  {
-    wrong:'小人书如今只能在北京的潘家园、____等地的旧书摊上找到。',
-    opts:['颐和园','护国寺','动物园','天坛'],
-    ans:1,
-    exp:'Theo bài khoá: 护国寺 là con phố thương mại ở Bắc Kinh có sạp sách cũ. 颐和园, 天坛 là danh thắng; 动物园 là sở thú.'
-  }
+  {wrong:'开会的时候请你帮忙做一下____，会后发给大家。',opts:['记录','纪录','记忆','手续'],ans:0,exp:'做记录 = ghi biên bản (记录 làm danh từ: bản ghi). 纪录 là kỷ lục; 记忆 là trí nhớ; 手续 là thủ tục.'},
+  {wrong:'他跑出了九秒八的好成绩，打破了学校的____。',opts:['纪录','记录','成绩','题材'],ans:0,exp:'打破纪录 = phá kỷ lục → 纪录 (thành tích tốt nhất). 记录 là ghi chép/biên bản; 打破 không đi với 成绩 (phải là 取得成绩); 题材 là đề tài.'},
+  {wrong:'我爸爸妈妈是在九十____认识的。',opts:['年代','时代','年纪','时期'],ans:0,exp:'Số chẵn chục + 年代 = thập niên (九十年代). 时代 là thời đại lớn, không đứng sau số; 年纪 là tuổi; 时期 không đi với 九十.'},
+  {wrong:'现在是网络____，不会上网的老人生活很不方便。',opts:['时代','年代','年纪','身材'],ans:0,exp:'网络时代 = thời đại Internet — một thời kỳ lớn gắn với đặc điểm của nó → 时代. 年代 cần số (八十年代); 年纪, 身材 không hợp.'},
+  {wrong:'钱包不见了，他____是邻居家的孩子拿的，可是又没有证据。',opts:['怀疑','疑问','询问','毫无'],ans:0,exp:'怀疑 là ĐỘNG TỪ, mang cả một mệnh đề phía sau (怀疑是邻居家的孩子拿的). 疑问 là danh từ (有疑问); 询问 là hỏi han; 毫无 cần danh từ theo sau.'},
+  {wrong:'看完说明书，我对这台机器的使用方法已经没有什么____了。',opts:['疑问','怀疑','记录','印刷'],ans:0,exp:'Chỗ chưa hiểu, muốn hỏi → 疑问 (danh từ). 怀疑 là nghi ngờ đúng sai, thật giả — không dùng cho chuyện chưa hiểu cách dùng; 记录, 印刷 không hợp nghĩa.'},
+  {wrong:'这辆车要三十万，我一个月才挣五千，哪儿买得____啊？',opts:['起','完','动','见'],ans:0,exp:'买得起 / 买不起 = có / không đủ tiền mua. 哪儿买得起啊？ là câu hỏi tu từ = mua sao nổi. 买得完, 买得动, 买得见 đều không có nghĩa này.'},
+  {wrong:'这本书早就卖完了，现在想买也买____了。',opts:['不到','不起','不动','不完'],ans:0,exp:'Hết hàng nên không mua được → 买不到. 买不起 là không đủ TIỀN mua (sách vẫn còn); 买不动, 买不完 không có nghĩa này.'},
+  {wrong:'我的笔找不到了，你能借我一____笔吗？',opts:['支','只','张','块'],ans:0,exp:'Bút là vật hình que dài → lượng từ 支 (cũng dùng cho 军队). 只 dùng cho con vật hoặc một chiếc trong một đôi; 张 cho vật mỏng phẳng (桌子, 地图); 块 cho miếng, cục.'},
+  {wrong:'他用一本书____着手机，一边吃饭一边看电影。',opts:['支','翻','搭','涨'],ans:0,exp:'支 (động từ) = chống, đỡ cho vật đứng vững: 用书支着手机. 翻 là lật; 搭 là vắt lên; 涨 là tăng giá.'},
+  {wrong:'你____什么说是我弄坏的？你又没看见。',opts:['凭','对','把','替'],ans:0,exp:'凭什么 + V？ = dựa vào đâu mà…, câu chất vấn không hài lòng. 对, 把, 替 không đi với 什么 theo nghĩa này.'},
+  {wrong:'我今天下午要去银行____一张信用卡。',opts:['办理','从事','登记','出版'],ans:0,exp:'办理 + 手续/业务/信用卡 = làm (thủ tục, giấy tờ). 从事 + nghề nghiệp; 登记 là ghi tên vào sổ; 出版 là xuất bản sách.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Bộ truyện tranh này tuy in rất đẹp, nhưng từ khi tăng giá thì tôi thật sự không mua nổi nữa.', zh:'这套连环画虽然印刷得很精美，可是涨价以后我实在买不起了。', py:'Zhè tào liánhuánhuà suīrán yìnshuā de hěn jīngměi, kěshì zhǎngjià yǐhòu wǒ shízài mǎi bu qǐ le.', goiY:['虽然……可是……','买不起','印刷'], giai:'买不起 = không đủ tiền mua (V + 不 + 起), không nói 不买起; 虽然 có thể đứng sau chủ ngữ 这套连环画.'},
-  {vi:'Nếu cậu không có bằng chứng thì không thể dựa vào cảm giác mà nói là tớ lấy sách của cậu.', zh:'假如你没有证据，就不能凭感觉说是我拿了你的书。', py:'Jiǎrú nǐ méiyǒu zhèngjù, jiù bù néng píng gǎnjué shuō shì wǒ nále nǐ de shū.', goiY:['假如……就……','凭感觉','证据'], giai:'凭 + N + V: dựa vào N để làm V (凭感觉说); 假如 = 如果, vế sau thường có 就.'},
-  {vi:'Mai là thi toán rồi, chẳng trách cậu ấy ngồi trước bàn hai tay chống đầu, chẳng có chút hứng ăn uống nào.', zh:'明天就要考数学了，难怪他两手支着脑袋坐在桌前，毫无胃口。', py:'Míngtiān jiù yào kǎo shùxué le, nánguài tā liǎng shǒu zhīzhe nǎodai zuò zài zhuō qián, háowú wèikǒu.', goiY:['难怪','支着脑袋','毫无胃口'], giai:'难怪 mở vế “thảo nào”, lý do nằm ở vế trước; 支着 = chống, đỡ (V + 着 chỉ trạng thái kéo dài).'},
-  {vi:'Chỉ cần xuất trình thẻ học sinh để đăng ký là có thể mượn đọc miễn phí truyện tranh của thư viện.', zh:'只要凭学生证登记一下，就能免费借阅图书馆里的连环画。', py:'Zhǐyào píng xuéshēngzhèng dēngjì yíxià, jiù néng miǎnfèi jièyuè túshūguǎn li de liánhuánhuà.', goiY:['只要……就……','凭学生证','登记'], giai:'凭 + giấy tờ = dựa vào/xuất trình (凭票入场); 只要 là điều kiện đủ, khác 只有 (điều kiện duy nhất, đi với 才).'},
-  {vi:'Chỉ khi chịu được thử thách của thất bại và khó khăn, thanh thiếu niên mới thật sự trưởng thành.', zh:'只有经得起失败和困难的考验，青少年才能真正长大成人。', py:'Zhǐyǒu jīng de qǐ shībài hé kùnnan de kǎoyàn, qīngshàonián cái néng zhēnzhèng zhǎngdà chéngrén.', goiY:['只有……才……','经得起','长大成人'], giai:'只有……才…… nêu điều kiện duy nhất; 经得起 = chịu đựng được (V + 得 + 起), phủ định là 经不起.'},
-  {vi:'Ngày nay trên mạng có biết bao thú giải trí, thanh thiếu niên lại ngày càng không thích đọc sách, có người thậm chí cả năm không đọc hết nổi một cuốn.', zh:'如今网络上的娱乐那么多，青少年却越来越不爱看书了，有的人甚至一年连一本书都读不完。', py:'Rújīn wǎngluò shang de yúlè nàme duō, qīngshàonián què yuè lái yuè bú ài kàn shū le, yǒu de rén shènzhì yì nián lián yì běn shū dōu dú bu wán.', goiY:['却','甚至','连……都……'], giai:'却 đứng sau chủ ngữ 青少年 chứ không đứng trước; 甚至 đưa ra mức độ cao hơn, thường đi kèm 连……都…….'},
-  {vi:'Khi làm thủ tục mượn sách ở thư viện, trừ khi bạn đã đóng tiền cọc, nếu không mỗi lần chỉ được mượn tối đa hai cuốn.', zh:'在图书馆办理借书手续时，除非你交了押金，否则一次最多只能借两册。', py:'Zài túshūguǎn bànlǐ jiè shū shǒuxù shí, chúfēi nǐ jiāole yājīn, fǒuzé yí cì zuì duō zhǐ néng jiè liǎng cè.', goiY:['除非……否则……','办理借书手续','押金'], giai:'除非 A，否则 B = phải có A, không thì B; đừng dịch thành 如果交了押金，否则…… vì sai logic.'},
-  {vi:'Ông tôi tuổi đã cao nhưng vẫn thích sưu tầm ảnh cũ và truyện tranh cũ, ông bảo chúng ghi lại những kỷ niệm đẹp nhất của thời đại ông.', zh:'爷爷年纪大了，却依然喜欢收藏老照片和旧连环画，他说那些记录了他那个年代最美好的回忆。', py:'Yéye niánjì dà le, què yīrán xǐhuan shōucáng lǎo zhàopiàn hé jiù liánhuánhuà, tā shuō nàxiē jìlùle tā nàge niándài zuì měihǎo de huíyì.', goiY:['却依然','收藏','记录'], giai:'却 + 依然 nhấn mạnh sự trái ngược “tuy… nhưng vẫn”; “tuổi đã cao” là 年纪大了, không nói 年代大了.'},
-  {vi:'Thay vì ngày nào cũng dành hết thời gian cho game online và phim hoạt hình, chi bằng giở sách ra đọc nhiều hơn, dù sao thế giới trong sách cũng hấp dẫn không kém, mà lại không làm mắt mỏi như vậy.', zh:'与其每天把时间都花在网络游戏和动画片上，不如多翻翻书，毕竟书里的世界同样精彩，而且不会让眼睛那么累。', py:'Yǔqí měi tiān bǎ shíjiān dōu huā zài wǎngluò yóuxì hé dònghuàpiàn shang, bùrú duō fānfan shū, bìjìng shū li de shìjiè tóngyàng jīngcǎi, érqiě bú huì ràng yǎnjing nàme lèi.', goiY:['与其……不如……','翻翻书','毕竟'], giai:'与其 A 不如 B: chọn B; 毕竟 = “dù sao thì, suy cho cùng”, đưa ra lý do then chốt.'},
-  {vi:'Dù sau này công việc có bận đến đâu, tôi cũng muốn giống như cụ già bày sạp sách kia, hết sức giúp đỡ những đứa trẻ muốn đọc sách mà không mua nổi sách.', zh:'哪怕将来从事的工作再忙，我也要像那位摆书摊的老人一样，尽力帮助那些想读书又买不起书的孩子。', py:'Nǎpà jiānglái cóngshì de gōngzuò zài máng, wǒ yě yào xiàng nà wèi bǎi shūtān de lǎorén yíyàng, jìnlì bāngzhù nàxiē xiǎng dú shū yòu mǎi bu qǐ shū de háizi.', goiY:['哪怕……再……也……','从事','买不起'], giai:'哪怕 + 再 + Adj，也…… = “dù… đến đâu cũng…”; 从事 đi với công việc, nghề nghiệp (从事教育工作), khác 做事 thông thường.'}
+  {vi:'Bộ truyện tranh này tuy in rất đẹp, nhưng từ khi tăng giá thì tôi thật sự không mua nổi nữa.',zh:'这套连环画虽然印刷得很精美，可是价格涨了以后我实在买不起了。',py:'Zhè tào liánhuánhuà suīrán yìnshuā de hěn jīngměi, kěshì jiàgé zhǎngle yǐhòu wǒ shízài mǎi bu qǐ le.',goiY:['虽然……可是……','印刷','涨','买不起'],giai:'买不起 = không đủ tiền mua (V + 不 + 起); 印刷得很精美 là bổ ngữ trạng thái sau 得; 套 là lượng từ cho bộ sách.'},
+  {vi:'Nếu cậu không có bằng chứng thì không thể dựa vào cảm giác mà nói là tớ lấy sách của cậu.',zh:'假如你没有证据，就不能凭感觉说是我拿了你的书。',py:'Jiǎrú nǐ méiyǒu zhèngjù, jiù bù néng píng gǎnjué shuō shì wǒ ná le nǐ de shū.',goiY:['假如……就……','凭','证据'],giai:'假如 = 如果 (văn viết hơn), vế sau dùng 就; 凭 + N + V: 凭感觉说 = dựa vào cảm giác mà nói.'},
+  {vi:'Ngày nay trên mạng có biết bao thú giải trí, thanh thiếu niên lại ngày càng không thích đọc sách, có người thậm chí cả năm không đọc hết nổi một cuốn.',zh:'如今网络上的娱乐那么多，青少年却越来越不爱看书了，有的人甚至一年连一本书都读不完。',py:'Rújīn wǎngluò shang de yúlè nàme duō, qīngshàonián què yuèláiyuè bú ài kàn shū le, yǒu de rén shènzhì yì nián lián yì běn shū dōu dú bu wán.',goiY:['如今','娱乐','青少年','连……都……'],giai:'如今 (bài 5) = ngày nay; 却 chuyển ý trái mong đợi; 连一本书都读不完 = đến một cuốn cũng đọc không hết.'},
+  {vi:'Khi làm thủ tục mượn sách ở thư viện, nếu chưa đóng tiền cọc thì mỗi lần chỉ được mượn tối đa hai cuốn.',zh:'在图书馆办理借书手续时，如果没交押金，一次最多只能借两册。',py:'Zài túshūguǎn bànlǐ jiè shū shǒuxù shí, rúguǒ méi jiāo yājīn, yí cì zuì duō zhǐ néng jiè liǎng cè.',goiY:['办理手续','押金','最多','册'],giai:'办理 + 手续 là cụm cố định; 最多 + 只能 = tối đa chỉ được; 册 là lượng từ cho sách (văn viết).'},
+  {vi:'Ông tôi tuổi đã cao nhưng vẫn thích sưu tầm ảnh cũ và truyện tranh cũ, ông bảo chúng ghi lại những kỷ niệm đẹp nhất của thời đại ông.',zh:'爷爷年纪大了，却依然喜欢收藏老照片和旧连环画，他说那些东西记录了他那个年代最美好的回忆。',py:'Yéye niánjì dà le, què yīrán xǐhuan shōucáng lǎo zhàopiàn hé jiù liánhuánhuà, tā shuō nàxiē dōngxi jìlùle tā nàge niándài zuì měihǎo de huíyì.',goiY:['年纪','依然','收藏','记录'],giai:'记录 ở đây là động từ (ghi lại) nên không viết 纪录; 那个年代 = thời ấy (年代 chỉ một quãng thời gian, ở đây không cần số).'},
+  {vi:'Dù sau này công việc có bận đến đâu, tôi cũng muốn giống như cụ già bày sạp sách kia, hết sức giúp đỡ những đứa trẻ muốn đọc sách mà không mua nổi sách.',zh:'哪怕将来从事的工作再忙，我也要像那位摆书摊的老人一样，尽力帮助那些想读书又买不起书的孩子。',py:'Nǎpà jiānglái cóngshì de gōngzuò zài máng, wǒ yě yào xiàng nà wèi bǎi shūtān de lǎorén yíyàng, jìnlì bāngzhù nàxiē xiǎng dú shū yòu mǎi bu qǐ shū de háizi.',goiY:['哪怕……也……','从事','尽力','买不起'],giai:'哪怕 (bài 18) + 再 + Adj，也…… = dù có… đến đâu cũng…; 尽力 (bài 7) = hết sức.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Cuộc sống những năm 50–60 rất đơn điệu, vì thế đọc truyện tranh trở thành thú giải trí chủ yếu nhất của trẻ con.', zh:'五六十年代的生活十分单调，因此看小人书成了孩子们最主要的娱乐。', py:'Wǔ liùshí niándài de shēnghuó shífēn dāndiào, yīncǐ kàn xiǎorénshū chéngle háizimen zuì zhǔyào de yúlè.', goiY:['因此 = vì thế','单调 = đơn điệu','娱乐 = giải trí'], giai:'因此 nêu kết quả của vế trước; 小人书 = truyện tranh khổ nhỏ (连环画), không dịch là “sách của người nhỏ”.'},
-  {vi:'Truyện tranh không chỉ trẻ nhỏ thích đọc, mà vô số thanh thiếu niên và người lớn cũng đọc say sưa.', zh:'小人书不仅小孩子爱看，而且无数青少年和成人也看得津津有味。', py:'Xiǎorénshū bùjǐn xiǎo háizi ài kàn, érqiě wúshù qīngshàonián hé chéngrén yě kàn de jīnjīn-yǒuwèi.', goiY:['不仅……而且…… = không chỉ… mà còn…','无数 = vô số','津津有味 = say sưa, ngon lành'], giai:'不仅……而且…… nối hai nhóm người cùng thích; 看得津津有味 là bổ ngữ trạng thái — “đọc say sưa”.'},
-  {vi:'Cái lán của sạp sách tuy chỉ dựng bằng gỗ, nhưng lúc nào cũng chật kín trẻ con đến đọc.', zh:'书摊的棚子虽然是用木头搭起来的，却总是挤满了看书的孩子。', py:'Shūtān de péngzi suīrán shì yòng mùtou dā qǐlái de, què zǒngshì jǐmǎnle kàn shū de háizi.', goiY:['虽然……却…… = tuy… nhưng…','搭 = dựng, bắc','棚子 = lán, chái'], giai:'虽然 và 却 đều đứng sau chủ ngữ; 搭起来 = dựng lên (thường là tạm bợ), không dịch là “xây”.'},
-  {vi:'Trong lán, mấy viên gạch kê đỡ những tấm ván thô ráp, mọi người cứ ngồi trên đó đọc sách, dù có chật một chút cũng chẳng ai phàn nàn.', zh:'棚子里用几块砖头支着粗糙的木板，大家就坐在上面看书，哪怕挤一点儿也毫无怨言。', py:'Péngzi li yòng jǐ kuài zhuāntóu zhīzhe cūcāo de mùbǎn, dàjiā jiù zuò zài shàngmian kàn shū, nǎpà jǐ yìdiǎnr yě háowú yuànyán.', goiY:['用……支着…… = dùng… kê, đỡ…','哪怕……也…… = dù… cũng…','毫无怨言 = không một lời than'], giai:'用 A 支着 B: A đỡ B (支 là động từ); 毫无 + danh từ hai âm tiết = “hoàn toàn không có”.'},
-  {vi:'Truyện tranh trên giá được xếp ngay ngắn, đề tài cũng rất phong phú, vừa có truyện lịch sử, lại có truyện ngụ ngôn và kiến thức khoa học.', zh:'书架上的小人书摆得整整齐齐，题材也很丰富，既有历史故事，又有寓言和科学知识。', py:'Shūjià shang de xiǎorénshū bǎi de zhěngzhěng-qíqí, tícái yě hěn fēngfù, jì yǒu lìshǐ gùshi, yòu yǒu yùyán hé kēxué zhīshi.', goiY:['既……又…… = vừa… lại…','整整齐齐 = ngay ngắn','题材 = đề tài'], giai:'既……又…… liệt kê song song; 题材 là “đề tài của tác phẩm”, khác 题目 (đầu bài, đề thi).'},
-  {vi:'Chủ sạp là một cụ già đã có tuổi, cụ không bắt đăng ký, cũng chẳng thu tiền cọc, hoàn toàn dựa vào sự tự giác của mọi người.', zh:'摊主是位上了年纪的老人，他既不要求登记，也不收押金，全凭大家自觉。', py:'Tānzhǔ shì wèi shàngle niánjì de lǎorén, tā jì bù yāoqiú dēngjì, yě bù shōu yājīn, quán píng dàjiā zìjué.', goiY:['既……也…… = không… cũng không…','全凭 = hoàn toàn dựa vào','上了年纪 = có tuổi'], giai:'全凭 + N: hoàn toàn dựa vào (凭 là động từ); 上了年纪 là cách nói lịch sự “đã có tuổi”.'},
-  {vi:'Nếu có ai chưa đọc xong đã phải về, cụ liền ghi lại vào sổ, để hôm sau người đó đến đọc tiếp.', zh:'假如有人没看完就得回家，老人便在本子上记录一下，让他第二天接着来看。', py:'Jiǎrú yǒu rén méi kàn wán jiù děi huí jiā, lǎorén biàn zài běnzi shang jìlù yíxià, ràng tā dì-èr tiān jiēzhe lái kàn.', goiY:['假如 = nếu như','便 = liền, thì (văn viết của 就)','记录 = ghi lại'], giai:'假如 = 如果, vế sau dùng 便/就; 接着 = tiếp tục việc đang dở, không phải “đón lấy”.'},
-  {vi:'Nhiều đứa trẻ đến một xu cũng không trả nổi, nhưng cụ trước sau chưa từng đuổi chúng đi; với những người muốn đọc mà không mua nổi sách, đây chắc chắn là một điều vô cùng tốt.', zh:'很多孩子一分钱也付不起，老人却始终没有赶他们走，这对那些想看又买不起书的人来说，毫无疑问是件大好事。', py:'Hěn duō háizi yì fēn qián yě fù bu qǐ, lǎorén què shǐzhōng méiyǒu gǎn tāmen zǒu, zhè duì nàxiē xiǎng kàn yòu mǎi bu qǐ shū de rén lái shuō, háowú yíwèn shì jiàn dà hǎoshì.', goiY:['付不起 / 买不起 = không trả nổi / không mua nổi','却始终 = nhưng trước sau vẫn','毫无疑问 = không nghi ngờ gì'], giai:'V + 不起 chỉ không đủ khả năng (tiền bạc); 对……来说 = “đối với…” đặt trước lời nhận xét, không dịch là “nói với…”.'},
-  {vi:'Từ khi có ti vi và mạng internet, truyện tranh dần rời khỏi đời sống của mọi người, còn những bản cũ in đẹp thì ngược lại giá trị tăng vọt, trở thành đồ sưu tầm.', zh:'自从有了电视和网络，小人书就逐渐退出了人们的生活，而那些印刷精美的老版本反而身价大涨，成了收藏品。', py:'Zìcóng yǒule diànshì hé wǎngluò, xiǎorénshū jiù zhújiàn tuìchūle rénmen de shēnghuó, ér nàxiē yìnshuā jīngměi de lǎo bǎnběn fǎn\'ér shēnjià dà zhǎng, chéngle shōucángpǐn.', goiY:['自从……就…… = từ khi… thì…','反而 = ngược lại, trái lại','身价大涨 = giá trị tăng vọt'], giai:'反而 chỉ kết quả trái với dự đoán (sách cũ lẽ ra mất giá lại tăng giá); 涨 đọc zhǎng khi nói giá cả, mực nước dâng lên.'},
-  {vi:'Ngày nay ở khu Phan Gia Viên, Hộ Quốc Tự vẫn còn tìm được những sạp bán truyện tranh cũ, có thể thấy lối giải trí xưa này vẫn chưa hề bị người ta hoàn toàn lãng quên.', zh:'如今在潘家园、护国寺一带，还能找到出售旧连环画的书摊，可见这种过去的娱乐方式并没有被人们完全忘记。', py:'Rújīn zài Pānjiāyuán, Hùguósì yídài, hái néng zhǎodào chūshòu jiù liánhuánhuà de shūtān, kějiàn zhè zhǒng guòqù de yúlè fāngshì bìng méiyǒu bèi rénmen wánquán wàngjì.', goiY:['可见 = có thể thấy','并没有 = chẳng hề, hoàn toàn không','一带 = khu vực, vùng'], giai:'可见 rút ra kết luận từ hiện tượng ở vế trước; 并 + 没有 nhấn mạnh phủ định điều người ta tưởng, dịch “chưa hề”.'}
+  {vi:'Cái lán của sạp sách tuy chỉ dựng bằng gỗ, nhưng lúc nào cũng chật kín trẻ con đến đọc.',zh:'书摊的棚子虽然是用木头搭起来的，却总是坐满了看书的孩子。',py:'Shūtān de péngzi suīrán shì yòng mùtou dā qǐlai de, què zǒngshì zuòmǎnle kàn shū de háizi.',goiY:['棚子 = lều, lán','搭 = dựng','坐满 = ngồi chật kín'],giai:'是……的 nhấn mạnh chất liệu (用木头); 搭起来 = dựng lên; 坐满了 + người = ngồi kín chỗ.'},
+  {vi:'Những cuốn truyện tranh ấy được xếp ngay ngắn, đề tài cũng rất phong phú, vừa có truyện lịch sử, lại có truyện ngụ ngôn và kiến thức khoa học.',zh:'那些小人书摆得十分整齐，题材也很丰富，既有历史故事，又有寓言和科学知识。',py:'Nàxiē xiǎorénshū bǎi de shífēn zhěngqí, tícái yě hěn fēngfù, jì yǒu lìshǐ gùshi, yòu yǒu yùyán hé kēxué zhīshi.',goiY:['整齐 = ngay ngắn','题材 = đề tài','既……又…… = vừa… vừa…'],giai:'摆得 + 十分整齐 là bổ ngữ trạng thái; 既……又…… nối hai đặc điểm cùng tồn tại.'},
+  {vi:'Chủ sạp là một cụ già đã có tuổi, cụ không bắt đăng ký, cũng chẳng thu tiền cọc, hoàn toàn dựa vào chữ tín của mọi người.',zh:'摊主是位上了年纪的老人，他既不要求登记，也不收押金，全凭大家讲信用。',py:'Tānzhǔ shì wèi shàngle niánjì de lǎorén, tā jì bù yāoqiú dēngjì, yě bù shōu yājīn, quán píng dàjiā jiǎng xìnyòng.',goiY:['上了年纪 = có tuổi','押金 = tiền cọc','全凭 = hoàn toàn dựa vào'],giai:'全凭 + N = hoàn toàn dựa vào; 既不……也不…… = không… cũng không….'},
+  {vi:'Nếu có ai chưa đọc xong đã phải về, cụ liền ghi lại vào sổ, để hôm sau người đó đến đọc tiếp.',zh:'假如有人没看完就得回家，老人便在本子上记录一下，让他第二天接着来看。',py:'Jiǎrú yǒu rén méi kànwán jiù děi huí jiā, lǎorén biàn zài běnzi shang jìlù yíxià, ràng tā dì-èr tiān jiēzhe lái kàn.',goiY:['假如 = nếu','便 = liền (văn viết của 就)','记录 = ghi lại'],giai:'便 (bài 7) = 就 trong văn viết; 记录一下 là động từ nên không thể là 纪录.'},
+  {vi:'Từ khi có ti vi và mạng internet, truyện tranh dần biến mất khỏi đời sống của mọi người, còn những cuốn cũ in đẹp thì ngược lại giá trị tăng vọt, trở thành đồ sưu tầm.',zh:'有了电视和网络以后，小人书就逐渐离开了人们的生活，而那些印刷精美的老书反而身价大涨，成了很多人收藏的东西。',py:'Yǒule diànshì hé wǎngluò yǐhòu, xiǎorénshū jiù zhújiàn líkāile rénmen de shēnghuó, ér nàxiē yìnshuā jīngměi de lǎo shū fǎn\'ér shēnjià dà zhǎng, chéngle hěn duō rén shōucáng de dōngxi.',goiY:['逐渐 = dần dần','反而 = ngược lại','身价大涨 = giá trị tăng vọt'],giai:'反而 (bài 4) chỉ kết quả trái với dự đoán; 涨 đọc zhǎng; 很多人收藏的东西 = thứ nhiều người sưu tầm.'},
+  {vi:'Ngày nay ở khu Phan Gia Viên, Hộ Quốc Tự vẫn còn tìm được những sạp bán truyện tranh cũ, có thể thấy lối giải trí xưa này vẫn chưa hề bị người ta hoàn toàn lãng quên.',zh:'如今在潘家园、护国寺一带，还能找到卖旧连环画的书摊，可见这种过去的娱乐方式并没有被人们完全忘记。',py:'Rújīn zài Pānjiāyuán, Hùguósì yídài, hái néng zhǎodào mài jiù liánhuánhuà de shūtān, kějiàn zhè zhǒng guòqù de yúlè fāngshì bìng méiyǒu bèi rénmen wánquán wàngjì.',goiY:['一带 = khu vực','可见 = có thể thấy','并没有 = hoàn toàn không'],giai:'可见 (bài 18) rút ra kết luận từ sự việc vừa nêu; 并 + 没有 nhấn mạnh phủ định, bác bỏ suy nghĩ ngược lại.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1194,12 +1052,12 @@ var writingData = {
     {ten:'假如……，我还是……',nhan:'假如',vd:'假如让我选择，我还是更喜欢那时候。',khi:'Câu KẾT: bày tỏ cảm nghĩ.'}
   ],
   sapXep:[
-    {manh:['是在','我的童年','度过的','农村'],dap:'我的童年是在农村度过的。',vn:'Tuổi thơ của tôi trải qua ở nông thôn.',giai:'是……的 kẹp phần cần nhấn mạnh: 是 + 在农村 + 度过的.'},
-    {manh:['比较单调','那个年代','生活'],dap:'那个年代，生活比较单调。',vn:'Thời ấy, cuộc sống khá đơn điệu.',giai:'Trạng ngữ thời gian 那个年代 đứng đầu câu; 生活 + 比较单调.'},
-    {manh:['就是','我们最主要的娱乐','看小人书'],dap:'我们最主要的娱乐就是看小人书。',vn:'Thú vui chủ yếu nhất của chúng tôi là đọc truyện tranh.',giai:'Chủ ngữ ……的娱乐 + 就是 + hoạt động.'},
-    {manh:['收藏了','爷爷','很多','小人书'],dap:'爷爷收藏了很多小人书。',vn:'Ông nội sưu tầm rất nhiều truyện tranh.',giai:'Sub + 收藏了 + số lượng + N.'},
-    {manh:['一看','就是','我常常','一下午'],dap:'我常常一看就是一下午。',vn:'Tôi thường cứ đọc là hết cả buổi chiều.',giai:'一 + V + 就是 + khoảng thời gian dài; 常常 đứng sau chủ ngữ.'},
-    {manh:['假如','我还是','让我选择','更喜欢那时候'],dap:'假如让我选择，我还是更喜欢那时候。',vn:'Nếu được chọn, tôi vẫn thích thời ấy hơn.',giai:'Vế giả thiết 假如…… đứng trước, vế kết quả 我还是…… đứng sau.'}
+    {manh:['出版了','已经','她','三本','小说'],dap:'她已经出版了三本小说。',vn:'Cô ấy đã xuất bản ba cuốn tiểu thuyết.',giai:'Chủ ngữ 她 → 已经 → động từ 出版了 → tân ngữ (số lượng 三本 + danh từ 小说).'},
+    {manh:['吸引了','这部动画片','无数的','小观众'],dap:'这部动画片吸引了无数的小观众。',vn:'Bộ phim hoạt hình này đã thu hút vô số khán giả nhỏ tuổi.',giai:'Chủ ngữ 这部动画片 → động từ 吸引了 → tân ngữ; 无数的 làm định ngữ đứng trước danh từ.'},
+    {manh:['登记','请先','一下','您的姓名','在这里'],dap:'请先在这里登记一下您的姓名。',vn:'Xin hãy đăng ký tên của ngài ở đây trước.',giai:'请 + 先 + 在这里 (nơi chốn đứng trước động từ) + 登记一下 + tân ngữ.'},
+    {manh:['题材','这本小说的','十分','新鲜'],dap:'这本小说的题材十分新鲜。',vn:'Đề tài của cuốn tiểu thuyết này rất mới mẻ.',giai:'Định ngữ 这本小说的 + chủ ngữ 题材 → phó từ 十分 → tính từ 新鲜.'},
+    {manh:['这套连环画的','价格','翻了','一倍'],dap:'这套连环画的价格翻了一倍。',vn:'Giá của bộ truyện tranh này đã tăng gấp đôi.',giai:'翻了一倍 = tăng gấp đôi; chủ ngữ là 价格, định ngữ 这套连环画的 đứng trước.'},
+    {manh:['摆得','桌子上的东西','非常整齐'],dap:'桌子上的东西摆得非常整齐。',vn:'Đồ đạc trên bàn được xếp rất ngay ngắn.',giai:'Chủ ngữ 桌子上的东西 → động từ 摆 + 得 + bổ ngữ trạng thái 非常整齐.'}
   ]
 };
 
@@ -1209,38 +1067,10 @@ var writingData = {
 var speakingData = {
   intro:'Ba câu đầu là <b>话题讨论</b> của sách (tr. 29: 童年的生活与记忆), câu 4 mở rộng. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố dùng từ mới: 年代 · 单调 · 娱乐 · 收藏 · 印象 · V不起.',
   questions:[
-    {
-      q_zh:'你的童年是在什么地方度过的？',
-      q_vn:'Tuổi thơ của em trải qua ở đâu?',
-      hint:'Dùng 是……的, tả thêm nơi đó một hai câu',
-      sample:'我的童年是在海边的一个小城市度过的。那时候家附近没有大商场，也没有网吧，可是有大海，我们天天在海边玩儿。',
-      sample_vn:'Tuổi thơ của tôi trải qua ở một thành phố nhỏ ven biển. Hồi ấy gần nhà không có trung tâm thương mại, cũng không có quán net, nhưng có biển, ngày nào chúng tôi cũng chơi ở bờ biển.',
-      note:'Câu hỏi 是在什么地方度过的 → trả lời bằng đúng khung 是在……度过的, rồi thêm chi tiết cho sinh động.'
-    },
-    {
-      q_zh:'童年生活中，哪些人、哪些事或者哪些东西给你留下的印象最深刻？',
-      q_vn:'Trong cuộc sống tuổi thơ, những người nào, việc gì hay đồ vật gì để lại cho em ấn tượng sâu sắc nhất?',
-      hint:'Chọn MỘT người / việc / đồ vật, kể cụ thể',
-      sample:'给我留下印象最深刻的是外公。他收藏了很多旧小人书，每次我去他家，他都让我随便翻。我常常一看就是一下午。',
-      sample_vn:'Người để lại cho tôi ấn tượng sâu sắc nhất là ông ngoại. Ông sưu tầm rất nhiều truyện tranh cũ, lần nào tôi đến nhà, ông cũng cho tôi tha hồ lật xem. Tôi thường cứ đọc là hết cả buổi chiều.',
-      note:'Đề hỏi “những ai, việc gì, đồ gì” nhưng chỉ cần chọn MỘT thứ và kể kỹ — nói lan man nhiều thứ dễ mất điểm.'
-    },
-    {
-      q_zh:'为什么这些人、这些事、这些东西给你留下了深刻的印象？',
-      q_vn:'Vì sao những người, những việc, những đồ vật ấy để lại cho em ấn tượng sâu sắc?',
-      hint:'Dùng 因为……, 那个年代…… và V不起',
-      sample:'因为那个年代生活很单调，家里又穷，买不起新书，外公的小人书就是我最主要的娱乐。现在想起来，还觉得特别温暖。',
-      sample_vn:'Vì thời ấy cuộc sống rất đơn điệu, nhà lại nghèo, không mua nổi sách mới, truyện tranh của ông ngoại chính là thú vui chủ yếu nhất của tôi. Bây giờ nghĩ lại vẫn thấy vô cùng ấm áp.',
-      note:'Ôn 买不起 (điểm ngữ pháp 1) và 想起来 (bổ ngữ xu hướng, HSK 4).'
-    },
-    {
-      q_zh:'你觉得现在孩子的童年和以前比，哪个更快乐？为什么？',
-      q_vn:'Em thấy tuổi thơ của trẻ con bây giờ so với ngày xưa, bên nào vui hơn? Vì sao?',
-      hint:'Chọn hẳn một bên, dùng 虽然……但是…… và 假如',
-      sample:'我觉得以前的孩子更快乐。现在的孩子虽然有网络、有动画片，但是作业太多，很少出去玩儿。假如让我选择，我更愿意过以前那种简单的生活。',
-      sample_vn:'Tôi thấy trẻ con ngày xưa vui hơn. Trẻ con bây giờ tuy có Internet, có phim hoạt hình, nhưng bài tập quá nhiều, rất ít ra ngoài chơi. Nếu được chọn, tôi muốn sống cuộc sống giản dị như ngày xưa hơn.',
-      note:'Dạng câu hỏi ý kiến — chọn một bên rồi đưa lý do, đừng trả lời “mỗi thời có cái hay riêng” rồi dừng.'
-    }
+    {q_zh:'你小时候是在什么地方长大的？',q_vn:'Hồi nhỏ em lớn lên ở đâu?',hint:'Dùng 是……的, tả thêm nơi đó một hai câu',sample:'我是在一个小城市长大的。那时候家附近没有大商场，也没有什么好玩儿的地方，可是有一座小山，我们天天去山上跑来跑去。',sample_vn:'Tôi lớn lên ở một thành phố nhỏ. Hồi ấy gần nhà không có trung tâm thương mại, cũng chẳng có chỗ nào vui chơi, nhưng có một ngọn đồi nhỏ, ngày nào chúng tôi cũng lên đồi chạy nhảy.',note:'Câu hỏi 是在什么地方长大的 → trả lời bằng đúng khung 是在……长大的, rồi thêm chi tiết cho sinh động.'},
+    {q_zh:'小时候，哪些人、哪些事或者哪些东西给你留下的印象最深刻？',q_vn:'Hồi nhỏ, người nào, việc gì hoặc đồ vật gì để lại ấn tượng sâu sắc nhất cho em?',hint:'Chọn MỘT người/vật, kể một chi tiết cụ thể',sample:'给我留下印象最深刻的是外公。他收藏了很多旧小人书，每次我去他家，他都让我随便翻，我一坐下就不想走了。',sample_vn:'Người để lại ấn tượng sâu sắc nhất cho tôi là ông ngoại. Ông sưu tầm rất nhiều truyện tranh cũ, mỗi lần tôi đến nhà ông, ông đều cho tôi tha hồ lật xem, tôi cứ ngồi xuống là không muốn về.',note:'Chỉ chọn một đối tượng để kể sâu, đừng liệt kê nhiều thứ.'},
+    {q_zh:'为什么这些人、这些事、这些东西给你留下了深刻的印象？',q_vn:'Vì sao những người, việc, đồ vật ấy để lại ấn tượng sâu sắc cho em?',hint:'Nêu lý do bằng 因为……, dùng V + 不起',sample:'因为那个年代生活很单调，家里又穷，买不起新书，外公的小人书就是我最主要的娱乐。直到今天，我还觉得特别温暖。',sample_vn:'Vì thời ấy cuộc sống rất đơn điệu, nhà lại nghèo, không mua nổi sách mới, truyện tranh của ông ngoại chính là thú giải trí chủ yếu nhất của tôi. Đến tận hôm nay tôi vẫn thấy rất ấm áp.',note:'Kết thúc bằng cảm xúc hiện tại giúp câu trả lời có chiều sâu.'},
+    {q_zh:'你觉得现在的孩子和以前的孩子比，谁更快乐？为什么？',q_vn:'Em thấy trẻ con bây giờ so với trẻ con ngày xưa, ai vui hơn? Vì sao?',hint:'Chọn một bên + lý do, dùng 假如',sample:'我觉得以前的孩子更快乐。现在的孩子虽然有网络、有动画片，但是作业太多，很少出去玩儿。假如能回到过去，我更愿意过以前那种简单的生活。',sample_vn:'Tôi thấy trẻ con ngày xưa vui hơn. Trẻ con bây giờ tuy có Internet, có phim hoạt hình, nhưng bài tập quá nhiều, rất ít khi ra ngoài chơi. Nếu được quay về quá khứ, tôi thích sống cuộc sống giản dị ngày xưa hơn.',note:'Nêu rõ quan điểm ngay câu đầu, sau đó mới giải thích.'}
   ]
 };
 
@@ -1340,51 +1170,11 @@ var listenExamData = {
 var situationData = {
   intro:'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items:[
-    {
-      scene:'Bạn rủ em mua đôi giày thể thao hàng hiệu giá rất đắt.',
-      a:{sp:'Bạn',zh:'这双运动鞋真好看，咱们一人买一双吧！',vn:'Đôi giày thể thao này đẹp quá, mỗi đứa mua một đôi đi!'},
-      need:['Dùng V + 不起','Gợi ý một cách khác'],
-      sample:'太贵了，我可买不起。咱们去看看别的店吧，说不定有便宜点儿的。',
-      samplePy:'Tài guì le, wǒ kě mǎi bu qǐ. Zánmen qù kànkan bié de diàn ba, shuōbudìng yǒu piányi diǎnr de.',
-      sampleVn:'Đắt quá, tớ không mua nổi đâu. Mình sang xem cửa hàng khác đi, biết đâu có đôi rẻ hơn.',
-      tip:'买不起 = không đủ tiền mua (điểm ngữ pháp 1). Khác 买不到 = mua không được (hết hàng).'
-    },
-    {
-      scene:'Nhân viên nhà ga hỏi em về vé khi vào ga.',
-      a:{sp:'Nhân viên',zh:'请问，您的车票呢？',vn:'Xin hỏi, vé tàu của anh/chị đâu ạ?'},
-      need:['Dùng 凭','Giải thích em dùng vé điện tử'],
-      sample:'我买的是电子票，听说可以凭身份证进站，对吗？',
-      samplePy:'Wǒ mǎi de shì diànzǐ piào, tīngshuō kěyǐ píng shēnfènzhèng jìn zhàn, duì ma?',
-      sampleVn:'Em mua vé điện tử, nghe nói có thể vào ga bằng căn cước công dân, đúng không ạ?',
-      tip:'凭 + giấy tờ + 进站 / 入场: vào bằng … (giống 凭票进站 của sách).'
-    },
-    {
-      scene:'Bạn cùng lớp định thuê xe đạp nhưng lo phải đặt cọc.',
-      a:{sp:'Bạn',zh:'租自行车是不是要交很多钱啊？',vn:'Thuê xe đạp có phải nộp nhiều tiền không nhỉ?'},
-      need:['Dùng 押金','Dùng 办理 hoặc 手续'],
-      sample:'要先交一百块押金，还车的时候会退给你。手续很简单，登记一下就行。',
-      samplePy:'Yào xiān jiāo yìbǎi kuài yājīn, huán chē de shíhou huì tuì gěi nǐ. Shǒuxù hěn jiǎndān, dēngjì yíxià jiù xíng.',
-      sampleVn:'Phải nộp trước một trăm tệ tiền cọc, lúc trả xe sẽ hoàn lại cho cậu. Thủ tục đơn giản lắm, đăng ký một chút là được.',
-      tip:'交押金 / 退押金 là cặp động từ đi với 押金.'
-    },
-    {
-      scene:'Bạn nước ngoài hỏi em hồi nhỏ trẻ con Việt Nam chơi gì.',
-      a:{sp:'Bạn',zh:'你小时候都有什么娱乐活动？',vn:'Hồi nhỏ cậu có những hoạt động giải trí gì?'},
-      need:['Dùng 娱乐','Dùng 不仅……还……'],
-      sample:'我们最主要的娱乐是在村子里放风筝，不仅好玩儿，还能交很多朋友。',
-      samplePy:'Wǒmen zuì zhǔyào de yúlè shì zài cūnzi li fàng fēngzheng, bùjǐn hǎowánr, hái néng jiāo hěn duō péngyou.',
-      sampleVn:'Thú vui chính của bọn tớ là thả diều trong làng, không chỉ vui mà còn kết được nhiều bạn.',
-      tip:'……最主要的娱乐是…… mượn ngay khung câu của bài khoá.'
-    },
-    {
-      scene:'Ông nội muốn bán bộ truyện tranh cũ đi cho gọn nhà.',
-      a:{sp:'Ông',zh:'这些旧小人书占地方，我想把它们卖了。',vn:'Mấy cuốn truyện tranh cũ này chật chỗ, ông định bán đi.'},
-      need:['Dùng 收藏','Dùng 涨'],
-      sample:'爷爷，别卖！这些小人书现在很有收藏价值，价钱涨了好多呢，您还是留着吧。',
-      samplePy:'Yéye, bié mài! Zhèxiē xiǎorénshū xiànzài hěn yǒu shōucáng jiàzhí, jiàqian zhǎngle hǎo duō ne, nín háishi liúzhe ba.',
-      sampleVn:'Ông ơi, đừng bán! Mấy cuốn truyện tranh này giờ rất có giá trị sưu tầm, giá lên nhiều lắm, ông cứ giữ lại đi ạ.',
-      tip:'Nói với người lớn dùng 您; 还是……吧 là lời khuyên nhẹ nhàng.'
-    }
+    {scene:'Bạn rủ em mua chiếc đồng hồ hàng hiệu giá rất đắt.',a:{sp:'Bạn',zh:'这块手表真好看，咱们一人买一块吧！',vn:'Chiếc đồng hồ này đẹp quá, mỗi đứa mua một chiếc đi!'},need:['Dùng V + 不起','Gợi ý một cách khác'],sample:'太贵了，我可买不起。咱们去别的店看看吧，说不定有便宜点儿的。',samplePy:'Tài guì le, wǒ kě mǎi bu qǐ. Zánmen qù bié de diàn kànkan ba, shuōbudìng yǒu piányi diǎnr de.',sampleVn:'Đắt quá, tớ không mua nổi đâu. Mình sang cửa hàng khác xem đi, biết đâu có cái rẻ hơn.',tip:'买不起 = không đủ tiền mua (điểm ngữ pháp 1). Khác 买不到 = mua không được (hết hàng).'},
+    {scene:'Nhân viên nhà ga hỏi em về vé khi vào ga.',a:{sp:'Nhân viên',zh:'请问，您的车票呢？',vn:'Xin hỏi, vé tàu của anh/chị đâu?'},need:['Dùng 凭','Hỏi lại cho chắc'],sample:'我买的是电子票，听说可以凭护照进站，对吗？',samplePy:'Wǒ mǎi de shì diànzǐ piào, tīngshuō kěyǐ píng hùzhào jìn zhàn, duì ma?',sampleVn:'Tôi mua vé điện tử, nghe nói có thể vào ga bằng hộ chiếu, đúng không ạ?',tip:'凭 + giấy tờ + V (凭护照进站) — cụm 凭…… luôn đứng TRƯỚC động từ chính.'},
+    {scene:'Bạn cùng lớp định thuê xe đạp nhưng lo phải đặt cọc.',a:{sp:'Bạn',zh:'租自行车是不是要交很多钱啊？',vn:'Thuê xe đạp có phải đóng nhiều tiền không?'},need:['Dùng 押金, 手续','Giải thích ngắn gọn'],sample:'要先交一百块押金，车还回去以后，押金会全部还给你。手续很简单，登记一下就行。',samplePy:'Yào xiān jiāo yìbǎi kuài yājīn, chē huán huíqu yǐhòu, yājīn huì quánbù huán gěi nǐ. Shǒuxù hěn jiǎndān, dēngjì yíxià jiù xíng.',sampleVn:'Phải đóng trước một trăm tệ tiền cọc, trả xe xong thì tiền cọc sẽ được trả lại hết. Thủ tục đơn giản lắm, đăng ký một chút là được.',tip:'押金 khác 租金 (tiền thuê): tiền cọc sẽ được trả lại.'},
+    {scene:'Bạn nước ngoài hỏi em hồi nhỏ trẻ con Việt Nam chơi gì.',a:{sp:'Bạn',zh:'你小时候都有什么娱乐活动？',vn:'Hồi nhỏ cậu có những trò giải trí gì?'},need:['Dùng 娱乐','Kể một hoạt động cụ thể'],sample:'我们最主要的娱乐是跟邻居家的孩子一起踢球，不仅好玩儿，还能交很多朋友。',samplePy:'Wǒmen zuì zhǔyào de yúlè shì gēn línjū jiā de háizi yìqǐ tī qiú, bùjǐn hǎowánr, hái néng jiāo hěn duō péngyou.',sampleVn:'Trò giải trí chủ yếu nhất của bọn tớ là đá bóng với trẻ con nhà hàng xóm, không chỉ vui mà còn kết được nhiều bạn.',tip:'Câu hỏi dùng 娱乐活动 thì trả lời cũng nên dùng lại 娱乐, rồi thêm chi tiết.'},
+    {scene:'Ông nội muốn bán bộ truyện tranh cũ đi cho gọn nhà.',a:{sp:'Ông',zh:'这些旧小人书占地方，我想把它们卖了。',vn:'Đống truyện tranh cũ này chiếm chỗ quá, ông muốn bán chúng đi.'},need:['Dùng 收藏','Thuyết phục ông giữ lại'],sample:'爷爷，别卖！这些小人书现在很值钱，有的还被博物馆收藏了呢，您还是留着吧。',samplePy:'Yéye, bié mài! Zhèxiē xiǎorénshū xiànzài hěn zhíqián, yǒu de hái bèi bówùguǎn shōucáng le ne, nín háishi liúzhe ba.',sampleVn:'Ông ơi, đừng bán! Mấy cuốn truyện tranh này bây giờ đáng giá lắm, có cuốn còn được viện bảo tàng sưu tầm nữa đấy, ông cứ giữ lại đi ạ.',tip:'Nói với ông bà dùng 您 và giọng nhẹ nhàng (……吧).'}
   ]
 };
 
@@ -1394,48 +1184,12 @@ var situationData = {
 var registerData = {
   intro:'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items:[
-    {
-      scene:'Loa phát thanh ở nhà ga thông báo cho hành khách.',
-      a:'请旅客们准备好车票，凭票进站。',
-      b:'大家把票拿出来，有票才能进去啊。',
-      better:'a',
-      why:'Thông báo công cộng cần trang trọng, gọn: 旅客们, 凭票进站. Câu b là khẩu ngữ, như người quen nhắc nhau.'
-    },
-    {
-      scene:'Em nhắn tin cho bạn thân sau khi xem giá đôi giày.',
-      a:'这双鞋价格过高，超出了我的经济能力。',
-      b:'这双鞋太贵了，我可买不起！',
-      better:'b',
-      why:'Nhắn tin bạn thân: 买不起 + 可……！ tự nhiên, thân mật. Câu a đúng nhưng nghe như báo cáo tài chính.'
-    },
-    {
-      scene:'Bài giới thiệu hiện vật trong viện bảo tàng.',
-      a:'这套连环画出版于二十世纪六十年代，印刷精美，具有很高的收藏价值。',
-      b:'这套小人书是六十年代的，印得挺好，现在可值钱了。',
-      better:'a',
-      why:'Văn bản bảo tàng dùng văn viết: 出版于, 印刷精美, 具有……价值. Câu b hợp khi kể với bạn bè.'
-    },
-    {
-      scene:'Ngân hàng gửi tin nhắn cho khách hàng.',
-      a:'您的信用卡已办理成功，请注意查收。',
-      b:'你的卡办好了，记得去拿啊。',
-      better:'a',
-      why:'Tin nhắn dịch vụ cần lịch sự, trang trọng: 您, 办理成功, 请注意查收. Câu b quá suồng sã.'
-    },
-    {
-      scene:'Em kể với bạn về sạp truyện tranh gần nhà hồi nhỏ.',
-      a:'我家附近有个小书摊，一分钱就能看一本，可便宜了！',
-      b:'本人住所附近曾设有一个从事租书业务的书摊，收费低廉。',
-      better:'a',
-      why:'Kể chuyện với bạn: câu a tự nhiên, có cảm xúc (可便宜了). Câu b đúng nhưng cứng như văn bản hành chính (本人, 设有, 低廉).'
-    },
-    {
-      scene:'Thầy giáo trả lời phụ huynh hỏi về một học sinh đang gặp khó khăn.',
-      a:'他家里穷，没钱，什么都买不起。',
-      b:'这孩子家里经济条件不太好，我们会想办法帮助他。',
-      better:'b',
-      why:'Nói về hoàn cảnh người khác cần tế nhị: 经济条件不太好 nhẹ nhàng hơn 穷, 没钱. Câu a thẳng thừng, dễ làm tổn thương.'
-    }
+    {scene:'Loa phát thanh ở nhà ga thông báo cho hành khách.',a:'请各位准备好车票，凭票上车。',b:'大家把票拿出来，有票才能上去啊。',better:'a',why:'Thông báo công cộng cần trang trọng, gọn: 请各位, 凭票上车. Câu b là khẩu ngữ, như người quen nhắc nhau.'},
+    {scene:'Em nhắn tin cho bạn thân sau khi xem giá chiếc điện thoại.',a:'这部手机的价格过高，以我目前的收入，暂时不考虑。',b:'这手机也太贵了，我一个月的工资都不够！',better:'b',why:'Nhắn tin bạn thân dùng khẩu ngữ, nói thẳng cảm xúc: 也太贵了！ Câu a như văn bản báo cáo (价格过高, 暂时不考虑), nghe rất lạ.'},
+    {scene:'Bài giới thiệu hiện vật trong viện bảo tàng.',a:'这套连环画出版于二十世纪六十年代，印刷精美，十分少见。',b:'这套小人书是六十年代出的，画得挺好，现在可值钱了。',better:'a',why:'Văn giới thiệu bảo tàng dùng văn viết: 出版于, 印刷精美, 十分少见. Câu b là lời kể chuyện thường ngày.'},
+    {scene:'Ngân hàng gửi tin nhắn cho khách hàng.',a:'您的信用卡已经办理成功，感谢您的支持。',b:'你的信用卡弄好了，记得去拿啊。',better:'a',why:'Tin nhắn của ngân hàng phải lịch sự, chuẩn mực: 您, 办理成功, 感谢您的支持. Câu b như bạn bè nhắn nhau.'},
+    {scene:'Em kể với bạn về sạp truyện tranh gần nhà hồi nhỏ.',a:'我家附近有个小书摊，一分钱就能看一本，可便宜了！',b:'本人住所附近曾经有一个从事租书业务的书摊，每册只收一分钱。',better:'a',why:'Kể chuyện với bạn thì dùng khẩu ngữ (可便宜了！). Câu b dùng 本人, 住所, 从事……业务 — giọng hồ sơ, nghe cứng.'},
+    {scene:'Thầy giáo trả lời phụ huynh hỏi về một học sinh đang gặp khó khăn.',a:'他家里穷，没钱，什么都买不起。',b:'这孩子家里经济条件不太好，我们会想办法帮助他。',better:'b',why:'Thầy giáo nói về học sinh cần tế nhị: 经济条件不太好 thay cho 穷, và nói thêm cách giúp đỡ. Câu a thẳng thừng, thiếu tôn trọng.'}
   ]
 };
 

@@ -1047,87 +1047,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 117–118) + bài tập 3 của sách (tr. 119)
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'缩短',right:'距离'},
   {left:'处理',right:'矛盾'},
-  {left:'狡猾的',right:'狐狸'},
-  {left:'了不起的',right:'发明'},
-  {left:'迫切地',right:'希望'},
   {left:'轻易',right:'放弃'},
-  {left:'图像',right:'模糊'},
-  {left:'态度',right:'冷淡'},
-  {left:'出示',right:'证件'},
-  {left:'赞成',right:'意见'},
-  {left:'编辑',right:'资料'},
-  {left:'报告',right:'消息'},
-  {left:'待人',right:'谦虚'},
-  {left:'愿望',right:'迫切'},
-  {left:'动作',right:'犹豫'},
   {left:'谈',right:'恋爱'},
   {left:'放低',right:'身段'},
-  {left:'圆形',right:'标志'},
-  {left:'社会',right:'实践'},
+  {left:'参加社会',right:'实践'},
   {left:'一份',right:'请愿书'},
-  {left:'值',right:'夜班'}
+  {left:'出示',right:'护照'},
+  {left:'照片',right:'模糊'},
+  {left:'对人',right:'冷淡'},
+  {left:'迫切',right:'需要'},
+  {left:'狡猾的',right:'骗子'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这家公司的',blank:'门槛',post:'很高，没有硕士学位很难进去。',hint:'(ngưỡng, tiêu chuẩn đầu vào)',ans:'门槛'},
-  {pre:'我姐姐大学毕业后，在一家',blank:'报社',post:'当记者。',hint:'(toà soạn báo)',ans:'报社'},
-  {pre:'她是一位杂志',blank:'编辑',post:'，每天都要看很多文章。',hint:'(biên tập viên)',ans:'编辑'},
-  {pre:'',blank:'嗯',post:'，没问题，我这就给她送去。',hint:'(ừ — đồng ý, đọc ǹg)',ans:'嗯'},
-  {pre:'他为人好强，',blank:'轻易',post:'不求人。',hint:'(ít khi — phó từ)',ans:'轻易',exp:'轻易不… = ít khi, không dễ gì…: 轻易不求人.'},
-  {pre:'不管遇到什么困难，你都不要',blank:'轻易',post:'放弃。',hint:'(dễ dàng, tuỳ tiện)',ans:'轻易',exp:'不要轻易 + V = đừng tùy tiện, dễ dàng…: 不要轻易放弃.'},
-  {pre:'你这样做，不了解情况的人很',blank:'容易',post:'误会。',hint:'(dễ — khả năng xảy ra)',ans:'容易',exp:'很容易 + V = dễ (xảy ra điều gì): 很容易误会. Nói khả năng xảy ra thì dùng 容易; 轻易 là \'tùy tiện, dễ dàng làm\' (不要轻易放弃).'},
-  {pre:'老师把这件事',blank:'处理',post:'得很好，两个同学又成了好朋友。',hint:'(xử lý, giải quyết)',ans:'处理'},
-  {pre:'周末我常常去',blank:'社区',post:'服务中心当志愿者。',hint:'(khu dân cư, cộng đồng)',ans:'社区'},
-  {pre:'大家',blank:'劝',post:'他别抽烟了，可是他就是不听。',hint:'(khuyên)',ans:'劝'},
-  {pre:'中秋节的月亮又大又',blank:'圆',post:'。',hint:'(tròn)',ans:'圆'},
-  {pre:'开车的时候，一定要注意路上的交通',blank:'标志',post:'。',hint:'(biển báo)',ans:'标志'},
-  {pre:'进考场的时候，每个考生都要',blank:'出示',post:'准考证。',hint:'(xuất trình)',ans:'出示'},
-  {pre:'我把计划跟他们一说，结果，没一个人',blank:'赞成',post:'。',hint:'(tán thành)',ans:'赞成'},
-  {pre:'三百多位居民在这份',blank:'请愿书',post:'上签了字。',hint:'(bản kiến nghị)',ans:'请愿书'},
-  {pre:'他们俩谈了三年',blank:'恋爱',post:'，今年终于结婚了。',hint:'(yêu đương)',ans:'恋爱'},
-  {pre:'这个山区',blank:'迫切',post:'需要更多的老师。',hint:'(cấp bách, rất cần)',ans:'迫切'},
-  {pre:'听说朋友需要帮助，他毫不',blank:'犹豫',post:'地答应了。',hint:'(do dự)',ans:'犹豫'},
-  {pre:'最近天气太冷，商店的生意很',blank:'冷淡',post:'。',hint:'(ế ẩm, lạnh nhạt)',ans:'冷淡'},
-  {pre:'去哪儿吃饭我',blank:'无所谓',post:'，你决定吧。',hint:'(sao cũng được)',ans:'无所谓',exp:'无所谓 = sao cũng được, không quan trọng: 去哪儿吃饭我无所谓.'},
-  {pre:'今天晚上是我',blank:'值班',post:'，我不能跟你们去看电影了。',hint:'(trực)',ans:'值班'},
-  {pre:'这份调查',blank:'报告',post:'明天必须交给老师。',hint:'(báo cáo)',ans:'报告'},
-  {pre:'他到现在还没来，',blank:'八成',post:'是忘了。',hint:'(chắc là)',ans:'八成',exp:'八成 = chắc là, tám phần (khẩu ngữ, đoán khả năng cao).'},
-  {pre:'时间太久了，小时候的事我只有一些',blank:'模糊',post:'的印象。',hint:'(mơ hồ)',ans:'模糊'},
-  {pre:'那个商人很',blank:'狡猾',post:'，我们差点儿上了他的当。',hint:'(xảo quyệt)',ans:'狡猾'},
-  {pre:'四大发明是中国古代',blank:'了不起',post:'的发明。',hint:'(vĩ đại, phi thường)',ans:'了不起'},
-  {pre:'这位经理愿意放下',blank:'身段',post:'，和员工一起在食堂吃饭。',hint:'(dáng bề trên)',ans:'身段'},
-  {pre:'高铁开通以后，从河内到海防的时间',blank:'缩短',post:'了一半。',hint:'(rút ngắn)',ans:'缩短'},
-  {pre:'不要',blank:'看不起',post:'农村来的同学。',hint:'(coi thường)',ans:'看不起'},
-  {pre:'他学习很好，但是待人非常',blank:'谦虚',post:'。',hint:'(khiêm tốn)',ans:'谦虚'},
-  {pre:'暑假里，学校组织我们去工厂参加社会',blank:'实践',post:'。',hint:'(thực tế, thực tiễn)',ans:'实践'}
+  {pre:'以前这个比赛的',blank:'门槛',post:'很低，谁都可以报名，现在没有比赛经验就不能参加了。',hint:'(ngưỡng, điều kiện tối thiểu)',ans:'门槛',exp:'门槛 = ngưỡng cửa; nghĩa bóng = điều kiện tối thiểu để vào: 门槛很高 / 门槛很低.'},
+  {pre:'这篇文章写得很好，你可以寄给',blank:'报社',post:'，说不定能发表在报纸上。',hint:'(toà soạn báo)',ans:'报社',exp:'报社 = toà soạn báo (nơi làm báo); 报纸 là tờ báo, 报告 là bản báo cáo.'},
+  {pre:'文章发表之前，',blank:'编辑',post:'会帮作者改掉写错的字和不合适的句子。',hint:'(biên tập viên)',ans:'编辑',exp:'编辑 = biên tập viên (danh từ), cũng là động từ “biên tập”: 编辑文章.'},
+  {pre:'医生一再',blank:'劝',post:'爸爸少喝酒，可是他总是不听。',hint:'(khuyên)',ans:'劝',exp:'劝 + người + V = khuyên ai làm gì: 劝他少喝酒, 劝她别哭了.'},
+  {pre:'这张桌子是',blank:'圆',post:'的，坐八个人也不挤。',hint:'(tròn)',ans:'圆',exp:'圆 = tròn: 圆桌子, 圆形的标志; 月亮圆了 = trăng tròn.'},
+  {pre:'春节那天我要在医院',blank:'值班',post:'，不能回老家过年了。',hint:'(trực, trực ca)',ans:'值班',exp:'值班 = trực (động từ ly hợp): 值一天班, 值夜班; 帮我值班.'},
+  {pre:'他已经两个小时没回我信息了，',blank:'八成',post:'是在开会。',hint:'(chắc là — “tám phần mười”)',ans:'八成',exp:'八成 = tám phần mười → chắc là (khẩu ngữ), đứng trước động từ: 八成是…, 八成会….'},
+  {pre:'这个骗子非常',blank:'狡猾',post:'，换了好几个名字骗钱，警察花了三年才找到他。',hint:'(xảo quyệt, ranh mãnh)',ans:'狡猾',exp:'狡猾 = xảo quyệt (nghĩa xấu): 狡猾的骗子. Khác 聪明 (thông minh, nghĩa tốt).'},
+  {pre:'当了经理以后，她仍然愿意放低',blank:'身段',post:'，经常听普通员工的意见。',hint:'(dáng vẻ bề trên)',ans:'身段',exp:'放低身段 = hạ cái tôi xuống, bỏ dáng bề trên; 身段 vốn là dáng người.'},
+  {pre:'',blank:'实践',post:'证明，只有多说多练，说汉语的水平才能真正提高。',hint:'(thực tiễn)',ans:'实践',exp:'实践证明 = thực tiễn chứng minh; 实践 còn là “thực hành”: 社会实践.'},
+  {pre:'我们',blank:'社区',post:'里新开了一家图书馆，周末带孩子去看书很方便。',hint:'(khu dân cư, cộng đồng)',ans:'社区',exp:'社区 = khu dân cư, cộng đồng nơi mình sống: 社区服务, 社区医院.'},
+  {pre:'为了让图书馆晚上多开一个小时，三百多名学生在',blank:'请愿书',post:'上签了名。',hint:'(đơn kiến nghị)',ans:'请愿书',exp:'请愿书 = đơn kiến nghị, thư thỉnh nguyện; lượng từ 份: 一份请愿书.'}
 ];
 
 // ══════════════════════════════════════════
 // SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['嗯','，','没问题','，','我这就','给她送去','。'],ans:'嗯，没问题，我这就给她送去。',audio:'嗯，没问题，我这就给她送去。'},
-  {words:['嗯','？','人','都','去哪儿了','？'],ans:'嗯？人都去哪儿了？',audio:'嗯？人都去哪儿了？'},
-  {words:['任何胜利','都不是','轻易','得到的','。'],ans:'任何胜利都不是轻易得到的。',audio:'任何胜利都不是轻易得到的。'},
-  {words:['他','为人好强','，','轻易','不求人','。'],ans:'他为人好强，轻易不求人。',audio:'他为人好强，轻易不求人。'},
-  {words:['我们','不要','轻易','相信','陌生人的话','。'],ans:'我们不要轻易相信陌生人的话。',audio:'我们不要轻易相信陌生人的话。'},
-  {words:['研究人员','把','同样的事情','分成','两个步骤','。'],ans:'研究人员把同样的事情分成两个步骤。',audio:'研究人员把同样的事情分成两个步骤。'},
-  {words:['这个','小小的行为','对','接下来的决定','产生了','重要影响','。'],ans:'这个小小的行为对接下来的决定产生了重要影响。',audio:'这个小小的行为对接下来的决定产生了重要影响。'},
-  {words:['直接说','八成儿','会','被','拒绝','。'],ans:'直接说八成儿会被拒绝。',audio:'直接说八成儿会被拒绝。'},
-  {words:['你','可以','先','向他','提出','一件','比较容易的事','。'],ans:'你可以先向他提出一件比较容易的事。',audio:'你可以先向他提出一件比较容易的事。'},
-  {words:['别人','并不会','看不起你','，','反而','会觉得你','很谦虚','。'],ans:'别人并不会看不起你，反而会觉得你很谦虚。',audio:'别人并不会看不起你，反而会觉得你很谦虚。'},
-  {words:['只要','能学到知识','，','辛苦一点儿','也','无所谓','。'],ans:'只要能学到知识，辛苦一点儿也无所谓。',audio:'只要能学到知识，辛苦一点儿也无所谓。'},
-  {words:['微笑','是','缩短','人与人之间距离的','好方法','。'],ans:'微笑是缩短人与人之间距离的好方法。',audio:'微笑是缩短人与人之间距离的好方法。'},
-  {words:['请','填写这张表格','并','出示','您的护照','。'],ans:'请填写这张表格并出示您的护照。',audio:'请填写这张表格并出示您的护照。'},
-  {words:['老师','希望','我','能','谦虚一点儿','。'],ans:'老师希望我能谦虚一点儿。',audio:'老师希望我能谦虚一点儿。'}
+  {words:['嗯','，','这个周末','我','有空','，','可以','陪你','去','。'],ans:'嗯，这个周末我有空，可以陪你去。',audio:'嗯，这个周末我有空，可以陪你去。'},
+  {words:['我爸爸','决定了的事','轻易','不','改变','。'],ans:'我爸爸决定了的事轻易不改变。',audio:'我爸爸决定了的事轻易不改变。'},
+  {words:['你','千万','别','看不起','刚来的','新同事','。'],ans:'你千万别看不起刚来的新同事。',audio:'你千万别看不起刚来的新同事。'},
+  {words:['去哪儿','旅行','我','都','无所谓','，','只要','能和家人在一起','就好','。'],ans:'去哪儿旅行我都无所谓，只要能和家人在一起就好。',audio:'去哪儿旅行我都无所谓，只要能和家人在一起就好。'},
+  {words:['他','犹豫了','半天','，','最后','还是','没把','真话','说出来','。'],ans:'他犹豫了半天，最后还是没把真话说出来。',audio:'他犹豫了半天，最后还是没把真话说出来。'},
+  {words:['这份','报告','写得','太','模糊','了','，','经理','让我','重新写','。'],ans:'这份报告写得太模糊了，经理让我重新写。',audio:'这份报告写得太模糊了，经理让我重新写。'},
+  {words:['大家','都','赞成','把','运动会','改到','下个月','。'],ans:'大家都赞成把运动会改到下个月。',audio:'大家都赞成把运动会改到下个月。'},
+  {words:['他','虽然','是','有名的','医生','，','说话','却','特别','谦虚','。'],ans:'他虽然是有名的医生，说话却特别谦虚。',audio:'他虽然是有名的医生，说话却特别谦虚。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1135,159 +1102,39 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {
-    wrong:'今天的考试特别____，我半个小时就答完了。',
-    opts:['轻易','容易','简直','随便'],
-    ans:1,
-    exp:'Làm vị ngữ độc lập, nói nội dung bài thi không khó → 容易 (词语辨析 của bài). 轻易 thường làm trạng ngữ, không đứng một mình làm vị ngữ; 简直 là phó từ “quả thực”; 随便 là tuỳ tiện.'
-  },
-  {
-    wrong:'他为人好强，____不求人。',
-    opts:['轻易','容易','简单','方便'],
-    ans:0,
-    exp:'Phó từ: “轻易不 + V” = rất ít khi … (ví dụ của sách). 容易 không có cách dùng phó từ này.'
-  },
-  {
-    wrong:'据说这位刘先生从不____花钱请人吃饭。',
-    opts:['容易','方便','简单','轻易'],
-    ans:3,
-    exp:'从不轻易 + V = chẳng bao giờ tuỳ tiện … (câu 做一做 của sách). 容易 không đi sau 从不 theo nghĩa này.'
-  },
-  {
-    wrong:'你自己一个人去花园里玩儿，妈妈____了吗？',
-    opts:['赞成','赞美','同意','称赞'],
-    ans:2,
-    exp:'Mẹ CHO PHÉP con làm một việc cụ thể → 同意 (bài tập 2 của sách). 赞成 là ủng hộ ý kiến, chủ trương; 赞美 / 称赞 là khen ngợi.'
-  },
-  {
-    wrong:'没想到，主任的态度很____，不同意他去。',
-    opts:['清淡','冷淡','冷静','平淡'],
-    ans:1,
-    exp:'态度冷淡 = thái độ lạnh nhạt (bảng 搭配, bài tập 2 của sách). 清淡 tả món ăn nhạt; 冷静 là bình tĩnh; 平淡 là bình thường, nhạt nhẽo (cuộc sống).'
-  },
-  {
-    wrong:'当经理有什么____的？',
-    opts:['了不起','不得了','来不及','对不起'],
-    ans:0,
-    exp:'有什么了不起的？ = có gì ghê gớm đâu (bài tập 2 của sách). 不得了 là “nghiêm trọng, hết sức”, không dùng trong khung này.'
-  },
-  {
-    wrong:'挺好的工作为什么要辞职？你怎么这么____啊？',
-    opts:['模糊','清楚','明白','糊涂'],
-    ans:3,
-    exp:'Trách người làm việc hồ đồ → 糊涂 (bài tập 2 của sách). 模糊 chỉ tả sự vật, hình ảnh không rõ.'
-  },
-  {
-    wrong:'宣传册有些地方印得比较____，得重新印。',
-    opts:['糊涂','清楚','模糊','漂亮'],
-    ans:2,
-    exp:'In không rõ → 印得模糊 (bài nghe 3 sách bài tập). 糊涂 chỉ nói con người.'
-  },
-  {
-    wrong:'当你放低身段时，会____与人的距离。',
-    opts:['延长','缩短','减少','降低'],
-    ans:1,
-    exp:'缩短距离 = rút ngắn khoảng cách (bảng 搭配). 延长 là kéo dài — nghĩa ngược; 减少 đi với số lượng; 降低 đi với mức độ, giá cả.'
-  },
-  {
-    wrong:'别人并不会____你，反而会觉得你为人谦虚。',
-    opts:['看不起','看不见','看不清','对不起'],
-    ans:0,
-    exp:'看不起 = coi thường; vế sau 反而……谦虚 là ý ngược lại. 看不见 / 看不清 là không nhìn thấy / nhìn không rõ.'
-  },
-  {
-    wrong:'你可能会说，这些小动作会让人觉得你很____。',
-    opts:['聪明','善良','谦虚','狡猾'],
-    ans:3,
-    exp:'Vế sau “但是不得不承认” cho thấy vế trước là nhận xét XẤU → 狡猾 (xảo quyệt). 聪明, 善良, 谦虚 đều là lời khen.'
-  },
-  {
-    wrong:'如果一开始就____地提出要跟她约会，女孩可能会犹豫。',
-    opts:['亲切','密切','迫切','确切'],
-    ans:2,
-    exp:'迫切地 + V = nôn nóng, gấp gáp làm gì. 亲切 là thân mật; 密切 là mật thiết (quan hệ); 确切 là chính xác.'
-  },
-  {
-    wrong:'别____了，既然房东同意续租，你就再住半年吧。',
-    opts:['冷淡','犹豫','谦虚','迫切'],
-    ans:1,
-    exp:'别犹豫了 = đừng do dự nữa (bài nghe 4 sách bài tập): người nghe đang phân vân có thuê tiếp hay không.'
-  },
-  {
-    wrong:'先向大家____一份赞成安全驾驶的请愿书。',
-    opts:['出示','出现','表示','指示'],
-    ans:0,
-    exp:'出示 + văn bản, giấy tờ = đưa ra cho xem. 出现 là xuất hiện (không có tân ngữ này); 表示 là bày tỏ; 指示 là chỉ thị.'
-  },
-  {
-    wrong:'他们派人到两个____，劝人们在屋前立一块圆形标志。',
-    opts:['社会','报社','社交','社区'],
-    ans:3,
-    exp:'社区 = khu dân cư (có nhà, có người ở). 社会 là xã hội nói chung; 报社 là toà soạn; 社交 là giao tiếp xã hội.'
-  },
-  {
-    wrong:'他到现在还没来，____是忘了。',
-    opts:['成功','完成','八成','成为'],
-    ans:2,
-    exp:'八成是 + phán đoán = chắc là …. Các phương án còn lại đều là động từ, không đặt trước 是 để phỏng đoán.'
-  },
-  {
-    wrong:'你想让同事帮你____或写报告什么的，直接说八成儿会被拒绝。',
-    opts:['上班','值班','加班','下班'],
-    ans:1,
-    exp:'帮人值班 = trực thay người khác (câu bài khoá). Không nói 帮你上班 / 下班; 加班 là làm thêm giờ của chính mình.'
-  },
-  {
-    wrong:'____证明，只要肯努力，谁都能学好汉语。',
-    opts:['实践','实现','实际','实在'],
-    ans:0,
-    exp:'实践证明 = thực tiễn chứng minh (câu bài khoá). 实现 là thực hiện (ước mơ); 实际 là thực tế (tính từ); 实在 là thật sự.'
-  },
-  {
-    wrong:'一个朋友在____当编辑。',
-    opts:['报告','报名','报纸','报社'],
-    ans:3,
-    exp:'Nơi làm việc → 报社 (toà soạn báo). 报纸 là tờ báo, không phải cơ quan; 报告 là báo cáo; 报名 là đăng ký.'
-  },
-  {
-    wrong:'每次比赛之前，我都要仔细记一些比赛线路周围的____。',
-    opts:['标准','目标','标志','标题'],
-    ans:2,
-    exp:'Nhớ các biển báo, ký hiệu quanh tuyến đường thi đấu → 标志 (bài tập 1 của sách). 标准 là tiêu chuẩn; 目标 là mục tiêu; 标题 là đầu đề.'
-  },
-  {
-    wrong:'只要能学到知识，辛苦一点儿也____。',
-    opts:['不得了','无所谓','来不及','了不起'],
-    ans:1,
-    exp:'……也无所谓 = … cũng không sao. 不得了 là “nguy to”; 来不及 là không kịp; 了不起 là phi thường.'
-  }
+  {wrong:'天气一冷，小孩子就很____感冒。',opts:['容易','轻易','简单','方便'],ans:0,exp:'Khả năng dễ xảy ra một thay đổi (dễ bị cảm) → 容易. 轻易 không có nghĩa này; 简单, 方便 không đứng trước động từ như vậy.'},
+  {wrong:'我姐姐很独立，再难的事也____不找人帮忙。',opts:['轻易','容易','随便','难得'],ans:0,exp:'轻易不 + V = rất ít khi, không dễ gì làm…. 容易不 không nói như vậy; 随便 là tuỳ ý; 难得 là hiếm có.'},
+  {wrong:'房东已经____我们在墙上挂画了。',opts:['同意','赞成','称赞','满意'],ans:0,exp:'Người có quyền CHO PHÉP ai làm một việc cụ thể → 同意. 赞成 là tán thành một ý kiến/kế hoạch; 称赞 là khen; 满意 là hài lòng.'},
+  {wrong:'我的眼镜丢了，黑板上的字看起来都是____的。',opts:['模糊','糊涂','冷淡','犹豫'],ans:0,exp:'Chữ, hình ảnh nhìn không rõ → 模糊. 糊涂 chỉ đầu óc con người lẫn lộn; 冷淡, 犹豫 không hợp nghĩa.'},
+  {wrong:'我真____，竟然把钥匙忘在家里了。',opts:['糊涂','模糊','狡猾','冷静'],ans:0,exp:'Con người làm việc hồ đồ, đãng trí → 糊涂. 模糊 chỉ dùng cho hình ảnh, âm thanh, ký ức; 狡猾 là xảo quyệt; 冷静 là bình tĩnh.'},
+  {wrong:'我打电话请他来参加聚会，他的态度特别____，说了两句就挂了。',opts:['冷淡','清楚','热情','谦虚'],ans:0,exp:'Thái độ hờ hững, không nhiệt tình → 冷淡. 热情 trái nghĩa với 说了两句就挂了; 清楚, 谦虚 không hợp.'},
+  {wrong:'借不借钱给他呢？他____了好几天也没有决定。',opts:['犹豫','拒绝','迫切','模仿'],ans:0,exp:'犹豫了好几天 = do dự mấy ngày liền, chưa quyết được. 拒绝 là đã quyết (từ chối), mâu thuẫn với 没有决定; 迫切 là tính từ, không đi với 了好几天; 模仿 là bắt chước.'},
+  {wrong:'山里的孩子们____希望能有新教室。',opts:['迫切','着急','急忙','紧张'],ans:0,exp:'迫切 + 希望/需要 = tha thiết, cấp bách. 着急, 紧张 không làm trạng ngữ cho 希望; 急忙 chỉ dùng cho hành động vội vã.'},
+  {wrong:'吃米饭还是吃面条，我都____，你点吧。',opts:['无所谓','不得了','看不起','说不定'],ans:0,exp:'A还是B + 都无所谓 = cái nào cũng được. 不得了 là “ghê gớm”; 看不起 là coi thường; 说不定 là “không chừng”.'},
+  {wrong:'你刚学了一年汉语就能当翻译了，真____！',opts:['了不起','看不起','对不起','来不及'],ans:0,exp:'真了不起 = thật giỏi, thật đáng nể. 看不起 là coi thường; 对不起 là xin lỗi; 来不及 là không kịp.'},
+  {wrong:'因为他家里穷，有些同学就____他，不愿意跟他一起玩儿。',opts:['看不起','了不起','看不见','想不起'],ans:0,exp:'看不起 + người = coi thường ai. 了不起 là tài giỏi; 看不见 là không nhìn thấy; 想不起 là không nhớ ra.'},
+  {wrong:'别人夸他的时候，他总是____地说：“我还差得远呢。”',opts:['谦虚','骄傲','冷淡','狡猾'],ans:0,exp:'Đáp lời khen bằng 我还差得远呢 = khiêm tốn → 谦虚. 骄傲 là kiêu ngạo, trái nghĩa; 冷淡, 狡猾 không hợp.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Ừ, kế hoạch này tớ tán thành, nhưng chúng mình phải hỏi ý kiến cô chủ nhiệm trước đã.',zh:'嗯，这个计划我赞成，但是我们得先问问班主任的意见。',py:'Ǹg, zhège jìhuà wǒ zànchéng, dànshì wǒmen děi xiān wènwen bānzhǔrèn de yìjiàn.',goiY:['嗯 (ǹg)','赞成','但是'],giai:'嗯 đọc thanh 4 (ǹg) + dấu phẩy = đồng ý, nhận lời; vế sau 但是 nêu điều kiện bổ sung — "phải… trước đã" dịch là 得先…….'},
-  {vi:'Tuy lần thi nào cũng đứng nhất nhưng cậu ấy chưa bao giờ tùy tiện coi thường người khác.',zh:'他虽然每次考试都是第一名，却从来不轻易看不起别人。',py:'Tā suīrán měi cì kǎoshì dōu shì dì-yī míng, què cónglái bù qīngyì kànbuqǐ biérén.',goiY:['虽然……却……','不轻易 + V','看不起'],giai:'不轻易 + V = không tuỳ tiện, rất ít khi làm gì (phó từ); 却 đứng sau chủ ngữ, trước động từ — không đặt 却 ở đầu vế như 但是.'},
+  {vi:'Ừ, kế hoạch này tớ tán thành, nhưng chúng mình phải hỏi ý kiến cô giáo trước đã.',zh:'嗯，这个计划我赞成，但是我们得先问问老师的意见。',py:'Ǹg, zhège jìhuà wǒ zànchéng, dànshì wǒmen děi xiān wènwen lǎoshī de yìjiàn.',goiY:['嗯 (ǹg)','赞成','但是'],giai:'嗯 đọc thanh 4 (ǹg) + dấu phẩy = đồng ý, nhận lời; vế sau 但是 nêu điều kiện bổ sung — "phải… trước đã" dịch là 得先…….'},
+  {vi:'Tuy lần thi nào cũng đứng nhất nhưng cậu ấy chưa bao giờ coi thường người khác.',zh:'他虽然每次考试都是第一名，却从来不看不起别人。',py:'Tā suīrán měi cì kǎoshì dōu shì dì-yī míng, què cónglái bú kànbuqǐ biérén.',goiY:['虽然……却……','从来不','看不起'],giai:'却 đứng sau chủ ngữ, trước động từ — không đặt 却 ở đầu vế như 但是; 从来不 + V = chưa bao giờ.'},
   {vi:'Tối nay đến lượt tớ trực ở thư viện trường nên chắc là không kịp dự tiệc sinh nhật cậu rồi.',zh:'今天晚上轮到我在学校图书馆值班，所以八成赶不上你的生日聚会了。',py:'Jīntiān wǎnshang lúndào wǒ zài xuéxiào túshūguǎn zhíbān, suǒyǐ bāchéng gǎn bu shàng nǐ de shēngrì jùhuì le.',goiY:['值班','八成','所以'],giai:'八成 = "chắc là, tám phần mười", đứng trước động từ giống 大概; "không kịp dự" dùng bổ ngữ khả năng 赶不上.'},
   {vi:'Hả? Lúc nãy cậu chẳng bảo đi đâu cũng được sao, sao vừa nghe nói đi leo núi lại chần chừ thế?',zh:'嗯？你刚才不是说去哪儿都无所谓吗，怎么一听要爬山，反而犹豫起来了？',py:'Ńg? Nǐ gāngcái bú shì shuō qù nǎr dōu wúsuǒwèi ma, zěnme yì tīng yào pá shān, fǎn\'ér yóuyù qǐlai le?',goiY:['嗯 (ńg)？','无所谓','反而','犹豫'],giai:'嗯 đọc thanh 2 (ńg) + dấu ？ để hỏi lại, ngạc nhiên; 反而 = "trái lại" — kết quả ngược với điều người nghe chờ đợi.'},
-  {vi:'Chỉ cần cậu sửa cho rõ những chỗ còn mơ hồ trong bản báo cáo, thầy sẽ không dễ gì trừ điểm cậu đâu.',zh:'只要你把报告里模糊的地方改清楚，老师就不会轻易给你扣分。',py:'Zhǐyào nǐ bǎ bàogào li móhu de dìfang gǎi qīngchu, lǎoshī jiù bú huì qīngyì gěi nǐ kòu fēn.',goiY:['只要……就……','模糊','报告'],giai:'只要……就…… = "chỉ cần… thì…" (điều kiện đủ); 就 đặt sau chủ ngữ của vế hai (老师就……), không đặt trước chủ ngữ.'},
-  {vi:'Thay vì lên mạng than phiền về quy định của trường, chi bằng mọi người cùng viết một lá đơn kiến nghị gửi thầy hiệu trưởng giải quyết.',zh:'与其在网上抱怨学校的规定，不如大家一起写一份请愿书，交给校长处理。',py:'Yǔqí zài wǎng shang bàoyuàn xuéxiào de guīdìng, bùrú dàjiā yìqǐ xiě yí fèn qǐngyuànshū, jiāo gěi xiàozhǎng chǔlǐ.',goiY:['与其……不如……','抱怨','请愿书','处理'],giai:'与其 A 不如 B: bỏ A, chọn B; "gửi… giải quyết" là cấu trúc liên động 交给 + người + 处理.'},
-  {vi:'Sở dĩ cậu ấy được mọi người quý mến như vậy là vì cậu ấy vừa khiêm tốn vừa nhiệt tình, chưa bao giờ coi thường những bạn học kém.',zh:'他之所以人缘这么好，是因为他既谦虚又热心，从来不看不起成绩差的同学。',py:'Tā zhīsuǒyǐ rényuán zhème hǎo, shì yīnwèi tā jì qiānxū yòu rèxīn, cónglái bú kànbuqǐ chéngjì chà de tóngxué.',goiY:['之所以……是因为……','既……又……','谦虚','看不起'],giai:'之所以 (kết quả)……是因为 (nguyên nhân): kết quả nêu trước, ngược thứ tự với 因为……所以……; 既……又…… nối hai tính từ cùng chiều.'},
-  {vi:'Ơ kìa! Mai phải nộp báo cáo hoạt động thực tế rồi mà cậu vẫn còn chơi game à? Nếu còn dây dưa nữa thì đến cuối tuần cũng đừng mong được nghỉ.',zh:'嗯！明天就要交社会实践报告了，你怎么还在打游戏？要是再拖下去，连周末也别想休息了。',py:'Ňg! Míngtiān jiù yào jiāo shèhuì shíjiàn bàogào le, nǐ zěnme hái zài dǎ yóuxì? Yàoshi zài tuō xiaqu, lián zhōumò yě bié xiǎng xiūxi le.',goiY:['嗯 (ňg)！','要是……连……也……','实践报告'],giai:'嗯 đọc thanh 3 (ňg) + ！ biểu thị bất ngờ, không hài lòng; 连……也 + phủ định nhấn mạnh "đến cả… cũng không".'},
-  {vi:'Muốn rút ngắn khoảng cách với bạn mới thì đừng tỏ ra quá sốt sắng, nếu không đối phương ngược lại sẽ trở nên lạnh nhạt; chi bằng hãy bắt đầu từ những việc nhỏ như cùng nhau học bài.',zh:'要想和新同学缩短距离，就别表现得太迫切，否则对方反而会变得冷淡；不如先从一起学习这样的小事做起。',py:'Yào xiǎng hé xīn tóngxué suōduǎn jùlí, jiù bié biǎoxiàn de tài pòqiè, fǒuzé duìfāng fǎn\'ér huì biàn de lěngdàn; bùrú xiān cóng yìqǐ xuéxí zhèyàng de xiǎoshì zuòqǐ.',goiY:['缩短距离','迫切','否则','反而'],giai:'否则 nêu hậu quả nếu không làm theo lời khuyên; 反而 đứng trước động từ (反而会变得……), chỉ kết quả trái với mong đợi.'},
-  {vi:'Nếu ngay từ đầu đã đưa ra yêu cầu lớn thì bố mẹ chắc là sẽ từ chối; chi bằng hãy bước qua một "bậc cửa" nhỏ trước, đợi bố mẹ đồng ý rồi mới dần dần đưa ra yêu cầu lớn hơn.',zh:'如果一开始就提出很大的要求，父母八成会拒绝；不如先跨过一个小门槛，等他们赞成了，再逐渐提出更大的要求。',py:'Rúguǒ yì kāishǐ jiù tíchū hěn dà de yāoqiú, fùmǔ bāchéng huì jùjué; bùrú xiān kuàguò yí ge xiǎo ménkǎn, děng tāmen zànchéng le, zài zhújiàn tíchū gèng dà de yāoqiú.',goiY:['如果……就……','八成','不如','门槛'],giai:'Câu nhiều vế: 如果……就…… (giả thiết) + 不如 (đề xuất cách tốt hơn) + 等……再…… (đợi… rồi mới…); 再 dùng cho hành động chưa xảy ra, không thay bằng 才.'}
+  {vi:'Chỉ cần cậu sửa cho rõ những chỗ còn mơ hồ trong bản báo cáo, thầy sẽ không dễ gì cho cậu điểm thấp đâu.',zh:'只要你把报告里模糊的地方改清楚，老师就不会轻易给你低分。',py:'Zhǐyào nǐ bǎ bàogào li móhu de dìfang gǎi qīngchu, lǎoshī jiù bú huì qīngyì gěi nǐ dī fēn.',goiY:['只要……就……','模糊','不会轻易 + V'],giai:'只要……就…… = "chỉ cần… thì…" (điều kiện đủ); 就 đặt sau chủ ngữ của vế hai (老师就……); 不会轻易 + V = sẽ không tuỳ tiện….'},
+  {vi:'Muốn rút ngắn khoảng cách với bạn mới thì đừng tỏ ra quá sốt sắng, nếu không đối phương ngược lại sẽ trở nên lạnh nhạt; chi bằng hãy bắt đầu từ những việc nhỏ như cùng nhau học bài.',zh:'要想和新同学缩短距离，就别表现得太迫切，否则对方反而会变得冷淡；不如先从一起学习这样的小事做起。',py:'Yào xiǎng hé xīn tóngxué suōduǎn jùlí, jiù bié biǎoxiàn de tài pòqiè, fǒuzé duìfāng fǎn\'ér huì biàn de lěngdàn; bùrú xiān cóng yìqǐ xuéxí zhèyàng de xiǎoshì zuòqǐ.',goiY:['缩短距离','迫切','否则','反而'],giai:'否则 nêu hậu quả nếu không làm theo lời khuyên; 反而 đứng trước động từ (反而会变得……), chỉ kết quả trái với mong đợi.'}
 ];
+
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
   {vi:'Vì công việc ở toà soạn quá bận nên sếp rất ít khi duyệt cho các biên tập viên nghỉ phép.',zh:'因为报社的工作太忙，领导轻易不批编辑们的假。',py:'Yīnwèi bàoshè de gōngzuò tài máng, lǐngdǎo qīngyì bù pī biānjímen de jià.',goiY:['报社 = toà soạn báo','编辑 = biên tập viên','轻易不 + V = rất ít khi, không dễ gì…'],giai:'轻易不 + V là phó từ "rất ít khi / không dễ gì mà…"; đừng dịch sát thành "dễ dàng không duyệt".'},
   {vi:'Ừ, mọi người đã tán thành thì chúng ta cứ thử làm ở khu dân cư trước đã.',zh:'嗯，既然大家都赞成，我们就先在社区里试一试。',py:'Ǹg, jìrán dàjiā dōu zànchéng, wǒmen jiù xiān zài shèqū li shì yi shì.',goiY:['嗯 (ǹg) = ừ, được (đồng ý)','既然……就…… = đã… thì…','社区 = khu dân cư'],giai:'既然 nêu một sự thật đã rõ rồi rút ra kết luận — dịch "đã… thì…", khác 如果 (giả thiết chưa xảy ra).'},
-  {vi:'Các nhà nghiên cứu khuyên cư dân đặt một tấm biển nhỏ trước cửa nhà, kết quả là hầu như ai cũng đồng ý.',zh:'研究人员劝居民在门前放一个小标志，结果几乎所有人都答应了。',py:'Yánjiū rényuán quàn jūmín zài mén qián fàng yí ge xiǎo biāozhì, jiéguǒ jīhū suǒyǒu rén dōu dāying le.',goiY:['劝 = khuyên','标志 = biển, dấu hiệu','结果 = kết quả là'],giai:'劝 + người + V = khuyên ai làm gì; 结果 đầu vế sau dẫn ra kết quả thực tế đã xảy ra.'},
-  {vi:'Hả? Ở khu dân cư thứ nhất vừa bắt đầu đã đưa ra yêu cầu lớn như vậy, thảo nào phần lớn cư dân đều từ chối.',zh:'嗯？在第一个社区一开始就提这么大的要求，难怪大多数居民都拒绝了。',py:'Ńg? Zài dì-yī ge shèqū yì kāishǐ jiù tí zhème dà de yāoqiú, nánguài dà duōshù jūmín dōu jùjué le.',goiY:['嗯 (ńg)？ = hả? (hỏi lại)','一……就…… = vừa… đã…','难怪 = thảo nào'],giai:'嗯 thanh 2 + ？ là hỏi lại vì ngạc nhiên; 难怪 đặt ở đầu vế kết quả sau khi đã biết nguyên nhân.'},
   {vi:'Ông biên tập viên lâu năm này thật đáng nể: ông không chỉ viết văn rất hay mà còn vô cùng khiêm tốn, chưa bao giờ coi thường người trẻ.',zh:'这位老编辑很了不起：他不但写得一手好文章，而且非常谦虚，从来不看不起年轻人。',py:'Zhè wèi lǎo biānjí hěn liǎobuqǐ: tā búdàn xiě de yì shǒu hǎo wénzhāng, érqiě fēicháng qiānxū, cónglái bú kànbuqǐ niánqīngrén.',goiY:['了不起 = giỏi, đáng nể','不但……而且…… = không những… mà còn…','看不起 = coi thường'],giai:'了不起 và 看不起 đều có 不 ở giữa nhưng nghĩa trái ngược: 了不起 "phi thường, đáng nể", 看不起 "coi thường".'},
-  {vi:'Ở khu dân cư thứ hai, các nhà nghiên cứu mời cư dân ký vào đơn kiến nghị trước, hai tuần sau mới đưa ra tấm biển lớn, vậy mà số người đồng ý lại nhiều hơn hẳn.',zh:'在第二个社区，研究人员先请居民在请愿书上签名，两周后再出示大标志，赞成的人反而多了很多。',py:'Zài dì-èr ge shèqū, yánjiū rényuán xiān qǐng jūmín zài qǐngyuànshū shang qiānmíng, liǎng zhōu hòu zài chūshì dà biāozhì, zànchéng de rén fǎn\'ér duōle hěn duō.',goiY:['先……再…… = trước… sau đó mới…','出示 = đưa ra cho xem','反而 = trái lại, vậy mà'],giai:'先……再…… chỉ trình tự hai bước; 反而 cho thấy kết quả trái với dự đoán (yêu cầu lớn hơn mà lại nhiều người đồng ý hơn).'},
   {vi:'Khi yêu, nếu ngay từ đầu đã nôn nóng đề nghị hẹn hò thì cô gái chắc là sẽ do dự, thậm chí trở nên lạnh nhạt.',zh:'谈恋爱的时候，如果一开始就迫切地提出约会，女孩八成会犹豫，甚至会变得冷淡。',py:'Tán liàn\'ài de shíhou, rúguǒ yì kāishǐ jiù pòqiè de tíchū yuēhuì, nǚhái bāchéng huì yóuyù, shènzhì huì biàn de lěngdàn.',goiY:['恋爱 = tình yêu','迫切 = nôn nóng, thiết tha','甚至 = thậm chí'],giai:'迫切地 + V: tính từ làm trạng ngữ chỉ thái độ nôn nóng; 甚至 đưa ra mức độ nặng hơn ở cuối câu.'},
-  {vi:'Thay vì tỏ ra ta đây giỏi giang, chi bằng hạ mình, khiêm tốn học hỏi người khác, như vậy mới thực sự rút ngắn được khoảng cách giữa đôi bên.',zh:'与其摆出一副了不起的样子，不如放低身段，虚心地向别人请教，这样才能真正缩短彼此的距离。',py:'Yǔqí bǎichū yí fù liǎobuqǐ de yàngzi, bùrú fàngdī shēnduàn, xūxīn de xiàng biérén qǐngjiào, zhèyàng cái néng zhēnzhèng suōduǎn bǐcǐ de jùlí.',goiY:['与其……不如…… = thay vì… chi bằng…','放低身段 = hạ mình, bỏ dáng vẻ bề trên','缩短 = rút ngắn'],giai:'与其 A 不如 B: người nói chọn B; 放低身段 là cách nói hình ảnh "hạ cái tôi xuống", không dịch sát là "hạ dáng người xuống".'},
-  {vi:'Có người cho rằng lợi dụng "hiệu ứng bước qua ngưỡng cửa" hơi xảo quyệt, nhưng chỉ cần yêu cầu hợp lý thì nó có thể giúp ta giải quyết các vấn đề trong quan hệ giữa người với người dễ dàng hơn.',zh:'有人觉得利用登门槛效应有点儿狡猾，可是只要要求合理，它就能帮我们更轻易地处理人际问题。',py:'Yǒu rén juéde lìyòng dēng ménkǎn xiàoyìng yǒudiǎnr jiǎohuá, kěshì zhǐyào yāoqiú hélǐ, tā jiù néng bāng wǒmen gèng qīngyì de chǔlǐ rénjì wèntí.',goiY:['狡猾 = xảo quyệt','只要……就…… = chỉ cần… thì…','轻易地 + V = một cách dễ dàng'],giai:'轻易 ở đây là tính từ làm trạng ngữ (轻易地处理 = giải quyết dễ dàng), khác 轻易不 (rất ít khi); 可是 đổi chiều ý so với vế đầu.'},
+  {vi:'Có người cho rằng lợi dụng "hiệu ứng bước qua ngưỡng cửa" hơi xảo quyệt, nhưng chỉ cần yêu cầu hợp lý thì nó có thể giúp ta giải quyết những vấn đề giữa người với người dễ dàng hơn.',zh:'有人觉得利用登门槛效应有点儿狡猾，可是只要要求合理，它就能帮我们更轻易地处理人和人之间的问题。',py:'Yǒu rén juéde lìyòng dēng ménkǎn xiàoyìng yǒudiǎnr jiǎohuá, kěshì zhǐyào yāoqiú hélǐ, tā jiù néng bāng wǒmen gèng qīngyì de chǔlǐ rén hé rén zhījiān de wèntí.',goiY:['狡猾 = xảo quyệt','只要……就…… = chỉ cần… thì…','轻易地 + V = một cách dễ dàng'],giai:'轻易 ở đây là tính từ làm trạng ngữ (轻易地处理 = giải quyết dễ dàng), khác 轻易不 (rất ít khi); 可是 đổi chiều ý so với vế đầu.'},
   {vi:'Anh biên tập viên ấy xin nghỉ được dễ dàng không phải vì sếp dễ tính, mà là vì anh ấy đưa ra một yêu cầu nhỏ trước, đợi sếp đồng ý rồi mới nói ra mục đích thật sự.',zh:'那位编辑能轻易请到假，不是因为领导好说话，而是因为他先提了个小要求，等领导答应后才说出真正目的。',py:'Nà wèi biānjí néng qīngyì qǐngdào jià, bú shì yīnwèi lǐngdǎo hǎo shuōhuà, ér shì yīnwèi tā xiān tíle ge xiǎo yāoqiú, děng lǐngdǎo dāying hòu cái shuōchū zhēnzhèng mùdì.',goiY:['不是……而是…… = không phải… mà là…','轻易 = dễ dàng','等……才…… = đợi… rồi mới…'],giai:'不是 A 而是 B phủ định nguyên nhân tưởng tượng rồi khẳng định nguyên nhân thật; 才 nhấn mạnh việc nói ra mục đích xảy ra muộn, sau khi sếp đã đồng ý.'}
 ];
 
@@ -1373,12 +1220,12 @@ var writingData = {
     {ten:'我……，是因为……',nhan:'因为',vd:'我拒绝他，是因为我想真正帮助他。',khi:'Giải thích lý do từ chối cho thuyết phục.'}
   ],
   sapXep:[
-    {manh:['请我','同学小王','替他写作业'],dap:'同学小王请我替他写作业。',vn:'Bạn Tiểu Vương nhờ tôi làm bài tập hộ.',giai:'Người nhờ + 请 + người được nhờ + 替 + người + V.'},
-    {manh:['很久','我','犹豫了'],dap:'我犹豫了很久。',vn:'Tôi do dự rất lâu.',giai:'Chủ ngữ + 犹豫了 + bổ ngữ thời lượng.'},
-    {manh:['不能','作业','轻易答应'],dap:'作业不能轻易答应。',vn:'Bài tập thì không thể dễ dàng nhận lời.',giai:'Chủ đề (作业) đứng đầu; 不能 + 轻易 + V.'},
-    {manh:['都无所谓','帮他','买个东西什么的'],dap:'帮他买个东西什么的都无所谓。',vn:'Giúp cậu ấy mua đồ hay việc gì đó thì sao cũng được.',giai:'Cụm việc làm chủ ngữ, 都无所谓 đứng cuối.'},
-    {manh:['赞成','他','我的办法','也'],dap:'他也赞成我的办法。',vn:'Cậu ấy cũng tán thành cách của tôi.',giai:'Phó từ 也 đứng trước động từ 赞成; tân ngữ 我的办法 sau cùng.'},
-    {manh:['处理得','这件事','不错','我'],dap:'这件事我处理得不错。',chap:['我这件事处理得不错。'],vn:'Việc này tôi xử lý khá ổn.',giai:'Chủ đề (这件事) + chủ ngữ + 处理得 + bổ ngữ trạng thái 不错.'}
+    {manh:['为人','她','谦虚','非常'],dap:'她为人非常谦虚。',vn:'Cô ấy sống rất khiêm tốn.',giai:'Chủ ngữ + 为人 (cách đối nhân xử thế) + phó từ 非常 + tính từ 谦虚.'},
+    {manh:['值班','今晚','轮到','我'],dap:'今晚轮到我值班。',vn:'Tối nay đến lượt tôi trực.',giai:'Thời gian (今晚) đứng đầu; 轮到 + người + V = đến lượt ai làm gì.'},
+    {manh:['交给经理了','我','把报告','已经'],dap:'我已经把报告交给经理了。',vn:'Tôi đã nộp bản báo cáo cho giám đốc rồi.',giai:'Chủ ngữ + 已经 + 把 + tân ngữ + V + 给 + người + 了.'},
+    {manh:['拍得','那张','很模糊','照片'],dap:'那张照片拍得很模糊。',vn:'Tấm ảnh đó chụp rất mờ.',giai:'那张 + danh từ làm chủ ngữ; V + 得 + bổ ngữ trạng thái (很模糊).'},
+    {manh:['别熬夜','妈妈','我','劝'],dap:'妈妈劝我别熬夜。',vn:'Mẹ khuyên tôi đừng thức khuya.',giai:'Người khuyên + 劝 + người được khuyên + 别 + V.'},
+    {manh:['有','一个','路边','圆形的标志'],dap:'路边有一个圆形的标志。',vn:'Bên đường có một tấm biển hình tròn.',giai:'Câu tồn tại: nơi chốn (路边) + 有 + số lượng + danh từ.'}
   ]
 };
 
@@ -1388,38 +1235,10 @@ var writingData = {
 var speakingData = {
   intro:'Ba câu đầu là <b>话题讨论</b> của sách (tr. 121: 交往之道——接受与拒绝), câu 4 mở rộng. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố dùng từ mới: 犹豫 · 轻易 · 处理 · 赞成 · 无所谓 · 谦虚 · 嗯.',
   questions:[
-    {
-      q_zh:'你觉得帮助别人对你会有影响吗？',
-      q_vn:'Em có nghĩ việc giúp người khác sẽ ảnh hưởng đến em không?',
-      hint:'Trả lời có / không, nêu một ảnh hưởng tốt và một ảnh hưởng không tốt (dùng 一方面……另一方面……)',
-      sample:'我觉得会有影响。一方面，帮助别人让我很开心，也交到了很多朋友；另一方面，如果什么请求都轻易答应，自己的时间就不够用了。',
-      sample_vn:'Tôi nghĩ là có ảnh hưởng. Một mặt, giúp người khác làm tôi rất vui, cũng kết được nhiều bạn; mặt khác, nếu yêu cầu gì cũng dễ dàng nhận lời thì thời gian của mình sẽ không đủ dùng.',
-      note:'一方面……另一方面…… (HSK 4) giúp trả lời hai mặt; 轻易答应 dùng từ mới của bài.'
-    },
-    {
-      q_zh:'介绍你拒绝别人的一次经历，那是什么事？你觉得自己的处理怎么样？',
-      q_vn:'Hãy kể một lần em từ chối người khác. Đó là chuyện gì? Em thấy cách mình xử lý thế nào?',
-      hint:'Kể MỘT lần cụ thể: ai nhờ — em từ chối thế nào — kết quả (dùng 犹豫, 处理)',
-      sample:'有一次，同学想借我的作业抄。我犹豫了一下，还是拒绝了，但是我说可以给他讲题。他开始有点儿不高兴，后来也理解了。我觉得我处理得还可以。',
-      sample_vn:'Có lần một bạn muốn mượn bài tập của tôi để chép. Tôi do dự một chút, rồi vẫn từ chối, nhưng tôi nói có thể giảng bài cho bạn ấy. Lúc đầu bạn ấy hơi không vui, sau cũng hiểu. Tôi thấy mình xử lý cũng tạm ổn.',
-      note:'Đề có hai câu hỏi — nhớ trả lời cả phần “你觉得自己的处理怎么样” ở cuối.'
-    },
-    {
-      q_zh:'在与人交往中，你处理“接受与拒绝”这类事情的原则是什么？',
-      q_vn:'Trong giao tiếp với mọi người, nguyên tắc của em khi xử lý chuyện “nhận lời và từ chối” là gì?',
-      hint:'Nêu 1–2 nguyên tắc rõ ràng, dùng 只要……就…… và 轻易不……',
-      sample:'我的原则很简单：只要是合理的请求，我能帮就帮；不合理的事，我轻易不答应。拒绝的时候，我会说清楚原因，不让对方觉得我冷淡。',
-      sample_vn:'Nguyên tắc của tôi rất đơn giản: chỉ cần là yêu cầu hợp lý, giúp được thì tôi giúp; việc không hợp lý thì tôi không dễ dàng nhận lời. Khi từ chối, tôi sẽ nói rõ lý do để đối phương không thấy tôi lạnh nhạt.',
-      note:'Ôn điểm ngữ pháp 2: 轻易不 + V = không dễ dàng …; 只要……就…… (HSK 4).'
-    },
-    {
-      q_zh:'你在生活中用过或者遇到过“登门槛效应”吗？说说那次的经历。',
-      q_vn:'Trong cuộc sống em đã từng dùng hoặc gặp “hiệu ứng bước chân qua ngưỡng cửa” chưa? Kể lại lần đó.',
-      hint:'Kể: yêu cầu nhỏ trước → yêu cầu lớn sau (dùng 先……再……, 嗯)',
-      sample:'有过。我想让妈妈给我买新手机，就先问她：“能不能帮我看看这个手机怎么样？”妈妈说：“嗯，还不错。”我再说想买，她就同意了。',
-      sample_vn:'Có chứ. Tôi muốn mẹ mua điện thoại mới cho mình, nên trước tiên hỏi mẹ: “Mẹ xem giúp con cái điện thoại này thế nào được không?” Mẹ nói: “Ừ, cũng được đấy.” Sau đó tôi mới nói muốn mua, mẹ liền đồng ý.',
-      note:'Chú ý: mẹ CHO PHÉP → dùng 同意 chứ không phải 赞成 (xem 赞成 — 同意).'
-    }
+    {q_zh:'你觉得帮助别人对你会有影响吗？',q_vn:'Em có nghĩ việc giúp người khác sẽ ảnh hưởng đến em không?',hint:'Trả lời có / không, nêu một ảnh hưởng tốt và một ảnh hưởng không tốt (dùng 不过)',sample:'我觉得会有影响。帮助别人让我很开心，也交到了很多朋友。不过，如果什么请求都轻易答应，自己的时间就不够用了。',sample_vn:'Tôi nghĩ là có ảnh hưởng. Giúp người khác làm tôi rất vui, cũng kết được nhiều bạn. Có điều, nếu yêu cầu gì cũng dễ dàng nhận lời thì thời gian của mình sẽ không đủ dùng.',note:'Nói hai mặt: mặt tốt trước, 不过 dẫn ra mặt chưa tốt; 轻易答应 dùng từ mới của bài.'},
+    {q_zh:'介绍你拒绝别人的一次经历，那是什么事？你觉得自己的处理怎么样？',q_vn:'Hãy kể một lần em từ chối người khác. Đó là chuyện gì? Em thấy cách mình xử lý thế nào?',hint:'Kể MỘT lần cụ thể: ai nhờ — em từ chối thế nào — kết quả (dùng 犹豫, 处理)',sample:'有一次，朋友让我周末帮他搬家，可是我第二天有考试。我犹豫了一下，还是拒绝了，但是我说考完试可以去帮他收拾房间。他很理解。我觉得我处理得还可以。',sample_vn:'Có lần một người bạn nhờ tôi cuối tuần giúp chuyển nhà, nhưng hôm sau tôi có bài thi. Tôi do dự một chút, rồi vẫn từ chối, nhưng tôi nói thi xong có thể đến giúp bạn dọn phòng. Bạn ấy rất thông cảm. Tôi thấy mình xử lý cũng tạm ổn.',note:'Đề có hai câu hỏi — nhớ trả lời cả phần “你觉得自己的处理怎么样” ở cuối.'},
+    {q_zh:'在与人交往中，你处理“接受与拒绝”这样的事情，有什么原则？',q_vn:'Trong giao tiếp với mọi người, khi xử lý chuyện “nhận lời và từ chối”, em có nguyên tắc gì?',hint:'Nêu 1–2 nguyên tắc rõ ràng, dùng 只要……就…… và 轻易不……',sample:'我的原则很简单：只要是合理的请求，我能帮就帮；不合理的事，我轻易不答应。拒绝的时候，我会说清楚原因，不让对方觉得我冷淡。',sample_vn:'Nguyên tắc của tôi rất đơn giản: chỉ cần là yêu cầu hợp lý, giúp được thì tôi giúp; việc không hợp lý thì tôi không dễ dàng nhận lời. Khi từ chối, tôi sẽ nói rõ lý do để đối phương không thấy tôi lạnh nhạt.',note:'Ôn điểm ngữ pháp 2: 轻易不 + V = không dễ dàng …; 只要……就…… (HSK 4).'},
+    {q_zh:'你在生活中用过或者遇到过“登门槛效应”吗？说说那次的经历。',q_vn:'Trong cuộc sống em đã từng dùng hoặc gặp “hiệu ứng bước chân qua ngưỡng cửa” chưa? Kể lại lần đó.',hint:'Kể: yêu cầu nhỏ trước → yêu cầu lớn sau (dùng 先……再……, 嗯)',sample:'有过。我想让妈妈给我买新手机，就先问她：“能不能帮我看看这个手机怎么样？”妈妈说：“嗯，还不错。”我再说想买，她就同意了。',sample_vn:'Có chứ. Tôi muốn mẹ mua điện thoại mới cho mình, nên trước tiên hỏi mẹ: “Mẹ xem giúp con cái điện thoại này thế nào được không?” Mẹ nói: “Ừ, cũng được đấy.” Sau đó tôi mới nói muốn mua, mẹ liền đồng ý.',note:'Chú ý: mẹ CHO PHÉP → dùng 同意 chứ không phải 赞成 (xem 赞成 — 同意).'}
   ]
 };
 
@@ -1519,51 +1338,11 @@ var listenExamData = {
 var situationData = {
   intro:'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items:[
-    {
-      scene:'Bạn cùng bàn hỏi em muốn ngồi cạnh cửa sổ hay cạnh lối đi.',
-      a:{sp:'Bạn',zh:'换座位了，你想坐窗户旁边还是走道旁边？',vn:'Đổi chỗ rồi, cậu muốn ngồi cạnh cửa sổ hay cạnh lối đi?'},
-      need:['Dùng 无所谓'],
-      sample:'坐哪儿我都无所谓，你先选吧。',
-      samplePy:'Zuò nǎr wǒ dōu wúsuǒwèi, nǐ xiān xuǎn ba.',
-      sampleVn:'Ngồi đâu tớ cũng được, cậu chọn trước đi.',
-      tip:'Đại từ nghi vấn (哪儿) + 都无所谓 — giống câu bài khoá 去看电影还是泡酒吧都无所谓.'
-    },
-    {
-      scene:'Bạn nhờ em trực nhật thay vào thứ Sáu vì phải đi khám răng.',
-      a:{sp:'Bạn',zh:'周五我要去看牙，你能帮我值一天班吗？',vn:'Thứ Sáu tớ phải đi khám răng, cậu trực thay tớ một hôm được không?'},
-      need:['Dùng 嗯','Dùng 值班'],
-      sample:'嗯，没问题，周五我帮你值班。下次你也帮我一次吧。',
-      samplePy:'Ǹg, méi wèntí, zhōuwǔ wǒ bāng nǐ zhíbān. Xià cì nǐ yě bāng wǒ yí cì ba.',
-      sampleVn:'Ừ, không vấn đề gì, thứ Sáu tớ trực thay cậu. Lần sau cậu cũng giúp tớ một lần nhé.',
-      tip:'嗯 (ǹg) + dấu phẩy = nhận lời (điểm ngữ pháp 1). 帮 + người + 值班.'
-    },
-    {
-      scene:'Lớp trưởng hỏi ý kiến em về kế hoạch cả lớp đi dã ngoại cuối tuần.',
-      a:{sp:'Lớp trưởng',zh:'我想周末组织全班去郊外爬山，你觉得怎么样？',vn:'Mình muốn cuối tuần tổ chức cả lớp đi leo núi ngoại ô, cậu thấy thế nào?'},
-      need:['Dùng 赞成'],
-      sample:'我举双手赞成！不过得先问问班主任同意不同意。',
-      samplePy:'Wǒ jǔ shuāng shǒu zànchéng! Búguò děi xiān wènwen bānzhǔrèn tóngyì bu tóngyì.',
-      sampleVn:'Tớ giơ cả hai tay tán thành! Có điều phải hỏi cô chủ nhiệm có đồng ý không đã.',
-      tip:'赞成 = ủng hộ kế hoạch; 同意 = người có quyền cho phép (phân biệt 赞成 — 同意).'
-    },
-    {
-      scene:'Em trai than ảnh chụp chung cả nhà bị mờ, hỏi em lý do.',
-      a:{sp:'Em trai',zh:'你看，这张全家福怎么拍成这样了？',vn:'Chị xem, tấm ảnh cả nhà này sao chụp ra thế này?'},
-      need:['Dùng 模糊','Dùng 八成'],
-      sample:'照片太模糊了，八成是拍的时候手动了一下。',
-      samplePy:'Zhàopiàn tài móhu le, bāchéng shì pāi de shíhou shǒu dòngle yíxià.',
-      sampleVn:'Ảnh mờ quá, chắc là lúc chụp tay bị rung một chút.',
-      tip:'模糊 tả hình ảnh không rõ (không dùng 糊涂); 八成是 + phỏng đoán nguyên nhân.'
-    },
-    {
-      scene:'Bạn thân định bỏ đội bóng chỉ vì thua một trận.',
-      a:{sp:'Bạn',zh:'我们又输了，我不想踢了，明天就退出球队。',vn:'Bọn mình lại thua rồi, tớ không muốn đá nữa, mai tớ rút khỏi đội.'},
-      need:['Dùng 轻易','Khuyên nhẹ nhàng'],
-      sample:'别这么轻易就放弃啊！输一场没什么，我们再多练练，下次一定能赢。',
-      samplePy:'Bié zhème qīngyì jiù fàngqì a! Shū yì chǎng méi shénme, wǒmen zài duō liànlian, xià cì yídìng néng yíng.',
-      sampleVn:'Đừng dễ dàng bỏ cuộc như thế chứ! Thua một trận có sao đâu, bọn mình tập thêm, lần sau nhất định thắng.',
-      tip:'轻易 + 放弃 (bảng 搭配: 轻易放弃); 别……啊 làm lời khuyên mềm mỏng.'
-    }
+    {scene:'Bạn cùng bàn hỏi em muốn ngồi cạnh cửa sổ hay cạnh cửa ra vào.',a:{sp:'Bạn',zh:'换座位了，你想坐窗户旁边还是门旁边？',vn:'Đổi chỗ rồi, cậu muốn ngồi cạnh cửa sổ hay cạnh cửa ra vào?'},need:['Dùng 无所谓'],sample:'坐哪儿我都无所谓，你先选吧。',samplePy:'Zuò nǎr wǒ dōu wúsuǒwèi, nǐ xiān xuǎn ba.',sampleVn:'Ngồi đâu tớ cũng được, cậu chọn trước đi.',tip:'Đại từ nghi vấn (哪儿) + 都无所谓 — giống câu bài khoá 去看电影还是泡酒吧都无所谓.'},
+    {scene:'Đồng nghiệp nhờ em trực thay vào thứ Sáu vì phải đi khám bệnh.',a:{sp:'Đồng nghiệp',zh:'周五我要去医院检查身体，你能帮我值一天班吗？',vn:'Thứ Sáu tôi phải đi bệnh viện khám sức khoẻ, cậu trực thay tôi một hôm được không?'},need:['Dùng 嗯','Dùng 值班'],sample:'嗯，行，周五我帮你值班。下次你也帮我一次吧。',samplePy:'Ǹg, xíng, zhōuwǔ wǒ bāng nǐ zhíbān. Xià cì nǐ yě bāng wǒ yí cì ba.',sampleVn:'Ừ, được, thứ Sáu tôi trực thay cậu. Lần sau cậu cũng giúp tôi một lần nhé.',tip:'嗯 (ǹg) + dấu phẩy = nhận lời (điểm ngữ pháp 1). 帮 + người + 值班.'},
+    {scene:'Lớp trưởng hỏi ý kiến em về kế hoạch cả lớp đi leo núi cuối tuần.',a:{sp:'Lớp trưởng',zh:'我想周末组织全班去爬山，你觉得怎么样？',vn:'Mình muốn cuối tuần tổ chức cả lớp đi leo núi, cậu thấy thế nào?'},need:['Dùng 赞成'],sample:'我举双手赞成！不过得先问问老师同意不同意。',samplePy:'Wǒ jǔ shuāng shǒu zànchéng! Búguò děi xiān wènwen lǎoshī tóngyì bu tóngyì.',sampleVn:'Tớ giơ cả hai tay tán thành! Có điều phải hỏi cô giáo có đồng ý không đã.',tip:'赞成 = ủng hộ kế hoạch; 同意 = người có quyền cho phép (phân biệt 赞成 — 同意).'},
+    {scene:'Em trai than ảnh chụp chung cả nhà bị mờ, hỏi em lý do.',a:{sp:'Em trai',zh:'你看，这张全家的照片怎么一点儿也不清楚？',vn:'Chị xem, tấm ảnh cả nhà này sao chẳng rõ gì cả?'},need:['Dùng 模糊','Dùng 八成'],sample:'照片太模糊了，八成是拍的时候手动了一下。',samplePy:'Zhàopiàn tài móhu le, bāchéng shì pāi de shíhou shǒu dòngle yíxià.',sampleVn:'Ảnh mờ quá, chắc là lúc chụp tay bị rung một chút.',tip:'模糊 tả hình ảnh không rõ (không dùng 糊涂); 八成是 + phỏng đoán nguyên nhân.'},
+    {scene:'Bạn thân định bỏ đá bóng chỉ vì đội thua một trận.',a:{sp:'Bạn',zh:'我们又输了，我以后再也不踢足球了。',vn:'Bọn mình lại thua rồi, từ nay tớ không đá bóng nữa.'},need:['Dùng 轻易','Khuyên nhẹ nhàng'],sample:'别这么轻易就放弃啊！输一场没什么，我们再多练练，下次一定能赢。',samplePy:'Bié zhème qīngyì jiù fàngqì a! Shū yì chǎng méi shénme, wǒmen zài duō liànlian, xià cì yídìng néng yíng.',sampleVn:'Đừng dễ dàng bỏ cuộc như thế chứ! Thua một trận có sao đâu, bọn mình tập thêm, lần sau nhất định thắng.',tip:'轻易 + 放弃 (bảng 搭配: 轻易放弃); 别……啊 làm lời khuyên mềm mỏng.'}
   ]
 };
 
@@ -1573,48 +1352,12 @@ var situationData = {
 var registerData = {
   intro:'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items:[
-    {
-      scene:'Nhân viên sân bay nói với hành khách tại quầy làm thủ tục.',
-      a:'请填写这张表格并出示您的护照。',
-      b:'你把这张表填了，护照拿出来给我看看。',
-      better:'a',
-      why:'Nhân viên phục vụ nói với khách cần lịch sự, trang trọng: 请, 您, 出示. Câu b cộc lốc như ra lệnh.'
-    },
-    {
-      scene:'Em nhắn tin trả lời bạn thân rủ đi ăn lẩu hay ăn nướng.',
-      a:'关于用餐地点的选择，本人没有特别的要求。',
-      b:'火锅还是烧烤都行，我无所谓！',
-      better:'b',
-      why:'Nhắn bạn thân: 都行，我无所谓 tự nhiên, thân mật. Câu a cứng như văn bản hành chính (关于, 用餐, 本人).'
-    },
-    {
-      scene:'Thư của cư dân gửi ban quản lý khu dân cư.',
-      a:'我们强烈要求在社区门口设立交通标志，以保证孩子们的安全。',
-      b:'门口车太多了，你们快弄个牌子吧，孩子过马路多危险啊！',
-      better:'a',
-      why:'Văn bản kiến nghị gửi cơ quan cần trang trọng: 强烈要求, 设立, 以保证. Câu b là khẩu ngữ, như than phiền với hàng xóm.'
-    },
-    {
-      scene:'Bạn cùng lớp khen em thi được điểm cao, em đáp lại.',
-      a:'哪里哪里，这次运气好，题也比较容易。',
-      b:'谢谢您的夸奖，本人将继续努力。',
-      better:'a',
-      why:'Đáp lời khen của bạn: 哪里哪里 + tự hạ mình là cách khiêm tốn tự nhiên (放低身段). Câu b như phát biểu nhận giải.'
-    },
-    {
-      scene:'Trưởng phòng thông báo trong cuộc họp kết quả biểu quyết.',
-      a:'这个方案大家基本上都挺喜欢的，就这么定了吧。',
-      b:'经过讨论，大部分同事对该方案表示赞成，方案通过。',
-      better:'b',
-      why:'Thông báo kết quả trong cuộc họp cần rõ ràng, trang trọng: 经过讨论, 表示赞成, 通过. Câu a hợp khi nói chuyện riêng.'
-    },
-    {
-      scene:'Em khuyên bạn thân đang phân vân có nên tham gia câu lạc bộ kịch không.',
-      a:'别犹豫了，想去就去吧，大不了不喜欢再退出嘛！',
-      b:'建议你尽快作出决定，以免错过报名时间。',
-      better:'a',
-      why:'Khuyên bạn thân: 别犹豫了 + 大不了 gần gũi, có cảm xúc. Câu b đúng nhưng như thông báo của nhà trường.'
-    }
+    {scene:'Nhân viên sân bay nói với hành khách tại quầy làm thủ tục.',a:'请您出示护照和机票。',b:'护照、机票拿出来给我看看。',better:'a',why:'Nhân viên phục vụ nói với khách cần lịch sự, trang trọng: 请, 您, 出示. Câu b cộc lốc như ra lệnh.'},
+    {scene:'Em nhắn tin trả lời bạn thân rủ đi ăn lẩu hay ăn bánh bao.',a:'关于吃饭地点的选择，本人没有特别的要求。',b:'火锅还是包子都行，我无所谓！',better:'b',why:'Nhắn bạn thân: 都行，我无所谓 tự nhiên, thân mật. Câu a cứng như văn bản hành chính (关于, 本人).'},
+    {scene:'Thư của cư dân gửi ban quản lý khu dân cư.',a:'我们希望在社区门口放一个交通标志，以保证孩子们的安全。',b:'门口车太多了，你们快想想办法吧，孩子过马路多危险啊！',better:'a',why:'Văn bản kiến nghị gửi cơ quan cần trang trọng, nêu rõ đề nghị và mục đích: 希望, 以保证. Câu b là khẩu ngữ, như than phiền với hàng xóm.'},
+    {scene:'Bạn cùng lớp khen em thi được điểm cao, em đáp lại.',a:'哪里哪里，这次运气好，题也比较容易。',b:'谢谢您的表扬，本人会继续努力。',better:'a',why:'Đáp lời khen của bạn: 哪里哪里 + tự hạ mình là cách khiêm tốn tự nhiên (放低身段). Câu b như phát biểu nhận giải.'},
+    {scene:'Trưởng phòng thông báo trong cuộc họp kết quả biểu quyết.',a:'这个方案大家基本上都挺喜欢的，那就用它吧。',b:'讨论以后，大部分同事对这个方案表示赞成，方案通过。',better:'b',why:'Thông báo kết quả trong cuộc họp cần rõ ràng, trang trọng: 表示赞成, 通过. Câu a hợp khi nói chuyện riêng.'},
+    {scene:'Em khuyên bạn thân đang phân vân có nên tham gia câu lạc bộ kịch không.',a:'想去就去吧，大不了不喜欢的话以后不去了！',b:'建议你尽快做出决定，不要错过报名时间。',better:'a',why:'Khuyên bạn thân: 想去就去吧 + 大不了 gần gũi, có cảm xúc. Câu b đúng nhưng như thông báo của nhà trường.'}
   ]
 };
 

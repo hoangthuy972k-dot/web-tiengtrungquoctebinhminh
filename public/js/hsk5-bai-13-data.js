@@ -1261,85 +1261,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — lấy theo bảng 词语搭配 của sách (tr. 122) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'缺乏',right:'信心'},
   {left:'造成',right:'浪费'},
-  {left:'激烈的',right:'争吵'},
-  {left:'节日',right:'气氛'},
-  {left:'艰苦地',right:'训练'},
-  {left:'准确地',right:'重复'},
-  {left:'不小心踩',right:'碎了'},
+  {left:'节日的',right:'气氛'},
   {left:'别瞧',right:'不起别人'},
   {left:'安装',right:'空调'},
   {left:'得到',right:'启发'},
-  {left:'一再',right:'强调'},
+  {left:'一再',right:'要求'},
   {left:'断断续续地',right:'进行'},
-  {left:'好奇地',right:'问父亲'},
-  {left:'连忙',right:'打车过来'},
   {left:'阻碍',right:'发展'},
   {left:'思维',right:'方式'},
   {left:'一把',right:'锯子'},
-  {left:'一筐',right:'桃子'},
-  {left:'看台的',right:'栏杆'},
-  {left:'甲乙',right:'两队'}
+  {left:'一筐',right:'桃子'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'一位球员连忙找来一把锯子把篮筐的底',blank:'锯',post:'掉。',hint:'(cưa)',ans:'锯'},
-  {pre:'当地人喜欢玩把球扔进桃子',blank:'筐',post:'的游戏。',hint:'(giỏ, sọt)',ans:'筐'},
-  {pre:'比赛前队员们缺乏',blank:'训练',post:'，所以最后输了。',hint:'(tập luyện)',ans:'训练'},
-  {pre:'在食物',blank:'缺乏',post:'的季节，动物为了活下去就只能多睡觉。',hint:'(thiếu)',ans:'缺乏'},
-  {pre:'太极拳是中国传统的体育',blank:'项目',post:'。',hint:'(môn, hạng mục)',ans:'项目'},
-  {pre:'越南人过春节喜欢在家里放一枝',blank:'桃',post:'花。',hint:'(đào)',ans:'桃'},
-  {pre:'要整理的东西太多了，这个箱子根本',blank:'装',post:'不下。',hint:'(đựng)',ans:'装'},
-  {pre:'老师的这句话给了我很大的',blank:'启发',post:'。',hint:'(gợi mở)',ans:'启发'},
-  {pre:'天气太热了，我们教室下个星期要',blank:'安装',post:'空调。',hint:'(lắp đặt)',ans:'安装'},
-  {pre:'下楼梯的时候请扶着',blank:'栏杆',post:'。',hint:'(lan can)',ans:'栏杆'},
-  {pre:'学生分为',blank:'甲',post:'乙两队，以足球为比赛工具。',hint:'(Giáp — đội thứ nhất)',ans:'甲'},
-  {pre:'这场比赛甲队以二比一赢了',blank:'乙',post:'队。',hint:'(Ất — đội thứ hai)',ans:'乙'},
-  {pre:'以足球为比赛',blank:'工具',post:'向篮内投。',hint:'(công cụ, dụng cụ)',ans:'工具'},
-  {pre:'哥哥每天放学以后都去操场练习',blank:'投篮',post:'。',hint:'(ném rổ)',ans:'投篮'},
-  {pre:'老师',blank:'一再',post:'提醒我们考试时要注意细节。',hint:'(nhiều lần)',ans:'一再',exp:'一再 = nhiều lần, hết lần này đến lần khác: 一再提醒.'},
-  {pre:'雨',blank:'断断续续',post:'地下了一整天。',hint:'(lúc tạnh lúc rơi)',ans:'断断续续',exp:'断断续续 = lúc có lúc không, đứt quãng; 雨断断续续地下了一整天.'},
-  {pre:'今天的晚会组织得相当好，',blank:'气氛',post:'轻松愉快。',hint:'(bầu không khí)',ans:'气氛'},
-  {pre:'连运动员都不满意，更',blank:'何况',post:'看比赛的球迷呢？',hint:'(huống chi)',ans:'何况',exp:'连A都…，更何况B呢？ = ngay A còn…, huống chi B? Câu phản vấn nhấn mạnh.'},
-  {pre:'越南队赢了，',blank:'球迷',post:'们都跑到街上庆祝。',hint:'(cổ động viên)',ans:'球迷'},
-  {pre:'我妹妹今年四岁，已经上',blank:'幼儿园',post:'了。',hint:'(nhà trẻ, mẫu giáo)',ans:'幼儿园'},
-  {pre:'孩子们对什么都很',blank:'好奇',post:'。',hint:'(tò mò)',ans:'好奇'},
-  {pre:'食堂楼下就有个小超市，',blank:'何必',post:'去学校外边呢？',hint:'(cần gì phải)',ans:'何必',exp:'何必 = cần gì phải (câu phản vấn, ý không cần): 何必去学校外边呢？'},
-  {pre:'',blank:'多亏',post:'了他这句话，人们如梦初醒。',hint:'(nhờ có, may mà)',ans:'多亏',exp:'多亏 = may nhờ có (nhờ ai/việc gì mà tránh được điều xấu hoặc đạt điều tốt).'},
-  {pre:'学外语能帮助我们了解不同的',blank:'思维',post:'方式。',hint:'(tư duy)',ans:'思维'},
-  {pre:'经历了那件事后，我',blank:'仿佛',post:'一夜之间长大成人了。',hint:'(dường như)',ans:'仿佛',exp:'仿佛 = dường như, như thể (văn viết, như 好像).'},
-  {pre:'害怕犯错会',blank:'阻碍',post:'我们学好外语。',hint:'(cản trở)',ans:'阻碍'},
-  {pre:'篮球运动是1891年在美国',blank:'马萨诸塞州',post:'产生的。',hint:'(bang Massachusetts)',ans:'马萨诸塞州'},
-  {pre:'篮球运动是由体育教师',blank:'詹姆士·奈史密斯',post:'博士发明的。',hint:'(James Naismith)',ans:'詹姆士·奈史密斯'},
-  {pre:'这些办法都没能让比赛',blank:'顺畅',post:'起来。',hint:'(trôi chảy)',ans:'顺畅'},
-  {pre:'失眠的问题',blank:'困扰',post:'了他好几年。',hint:'(làm khổ, làm phiền)',ans:'困扰'},
-  {pre:'我哥哥大学毕业以后当了软件',blank:'工程师',post:'。',hint:'(kỹ sư)',ans:'工程师'}
+  {pre:'爷爷用锯子把那棵树',blank:'锯',post:'断了。',hint:'(cưa)',ans:'锯',exp:'锯 = cưa (động từ); 锯子 = cái cưa. 锯断, 锯掉 = cưa đứt, cưa bỏ.'},
+  {pre:'奶奶提着一',blank:'筐',post:'鸡蛋去市场卖。',hint:'(giỏ, sọt — lượng từ)',ans:'筐',exp:'筐 = giỏ, sọt; làm lượng từ: 一筐鸡蛋, 一筐桃子.'},
+  {pre:'游泳是我最喜欢的运动',blank:'项目',post:'。',hint:'(môn, hạng mục)',ans:'项目',exp:'项目 = hạng mục; trong thể thao = môn thi đấu: 运动项目, 比赛项目.'},
+  {pre:'这些',blank:'桃',post:'子又大又甜，是从老家带来的。',hint:'((quả) đào)',ans:'桃',exp:'桃 = quả đào; khẩu ngữ hay nói 桃子.'},
+  {pre:'这个包太小了，',blank:'装',post:'不下这么多书。',hint:'(đựng, chứa)',ans:'装',exp:'装 = cho vào, đựng; 装不下 = đựng không hết. Khác 安装 (lắp đặt máy móc).'},
+  {pre:'别靠在',blank:'栏杆',post:'上，太危险了。',hint:'(lan can)',ans:'栏杆',exp:'栏杆 = lan can (ở cầu, ban công, cầu thang).'},
+  {pre:'对不起，我不小心',blank:'踩',post:'了你的脚。',hint:'(giẫm, đạp)',ans:'踩',exp:'踩 = giẫm lên: 踩了脚, 踩着梯子上去.'},
+  {pre:'他是个足球',blank:'球迷',post:'，每场比赛都看。',hint:'(người hâm mộ bóng)',ans:'球迷',exp:'球迷 = người mê xem bóng (đá, rổ…): 足球球迷.'},
+  {pre:'我哥哥大学学的是机器，现在是一名',blank:'工程师',post:'。',hint:'(kỹ sư)',ans:'工程师',exp:'工程师 = kỹ sư; lượng từ 名 hoặc 位.'},
+  {pre:'我妹妹今年四岁，每天早上妈妈送她去',blank:'幼儿园',post:'。',hint:'(nhà trẻ, trường mầm non)',ans:'幼儿园',exp:'幼儿园 = trường mầm non; 上幼儿园 = đi học mẫu giáo.'},
+  {pre:'多了一条地铁以后，这里的交通',blank:'顺畅',post:'多了。',hint:'(thông suốt, trôi chảy)',ans:'顺畅',exp:'顺畅 = thông suốt, trôi chảy, không bị tắc: 交通顺畅, 比赛进行得很顺畅.'},
+  {pre:'听到这个消息，他一下子',blank:'呆',post:'住了，半天说不出话来。',hint:'(ngây ra, sững sờ)',ans:'呆',exp:'呆住了 = đứng sững ra; 呆呆地 = ngây ra (bài đọc: 我们呆呆地去搬梯子).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (何况 · 何必 · 多亏) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['连运动员','都','不满意','，','何况','球迷','呢','？'],ans:'连运动员都不满意，何况球迷呢？',audio:'连运动员都不满意，何况球迷呢？'},
-  {words:['这道题','连老师','都','觉得难','，','何况','我们','呢','？'],ans:'这道题连老师都觉得难，何况我们呢？',audio:'这道题连老师都觉得难，何况我们呢？'},
-  {words:['你','何必','这么','着急','呢','？'],ans:'你何必这么着急呢？',audio:'你何必这么着急呢？'},
-  {words:['楼下','就有超市','，','何必','去','学校外边','呢','？'],ans:'楼下就有超市，何必去学校外边呢？',audio:'楼下就有超市，何必去学校外边呢？'},
-  {words:['多亏','你','提醒','，','要不','我','就','忘了','。'],ans:'多亏你提醒，要不我就忘了。',audio:'多亏你提醒，要不我就忘了。'},
-  {words:['多亏了','他','这句话','，','人们','如梦初醒','。'],ans:'多亏了他这句话，人们如梦初醒。',audio:'多亏了他这句话，人们如梦初醒。'},
-  {words:['比赛','不得不','断断续续地','进行','。'],ans:'比赛不得不断断续续地进行。',audio:'比赛不得不断断续续地进行。'},
-  {words:['他','从','这个游戏中','得到了','启发','。'],ans:'他从这个游戏中得到了启发。',audio:'他从这个游戏中得到了启发。'},
-  {words:['我们的','思维','被','篮筐的底','挡在了','半空中','。'],ans:'我们的思维被篮筐的底挡在了半空中。',audio:'我们的思维被篮筐的底挡在了半空中。'},
-  {words:['一位球员','连忙','找来','一把锯子','。'],ans:'一位球员连忙找来一把锯子。',audio:'一位球员连忙找来一把锯子。'},
-  {words:['复杂','都是','我们','自己','造成的','。'],ans:'复杂都是我们自己造成的。',audio:'复杂都是我们自己造成的。'},
-  {words:['他','把','两只篮筐','安装在','栏杆上','。'],ans:'他把两只篮筐安装在栏杆上。',audio:'他把两只篮筐安装在栏杆上。'},
-  {words:['这个箱子','根本','装不下','这么多','东西','。'],ans:'这个箱子根本装不下这么多东西。',audio:'这个箱子根本装不下这么多东西。'}
+  {words:['听说','妈妈','病了','，','他','连忙','请了假','回家','。'],ans:'听说妈妈病了，他连忙请了假回家。',audio:'听说妈妈病了，他连忙请了假回家。'},
+  {words:['多亏','你','帮忙','，','我','才','这么快','搬完了','家','。'],ans:'多亏你帮忙，我才这么快搬完了家。',audio:'多亏你帮忙，我才这么快搬完了家。'},
+  {words:['大人','都','觉得','累','，','何况','是','孩子','呢','？'],ans:'大人都觉得累，何况是孩子呢？',audio:'大人都觉得累，何况是孩子呢？'},
+  {words:['睡不好觉的','问题','已经','困扰了','她','很多年','。'],ans:'睡不好觉的问题已经困扰了她很多年。',audio:'睡不好觉的问题已经困扰了她很多年。'},
+  {words:['小孩子','对','什么','都','很','好奇','。'],ans:'小孩子对什么都很好奇。',audio:'小孩子对什么都很好奇。'},
+  {words:['手机','已经','成了','我们','学习的','重要','工具','。'],ans:'手机已经成了我们学习的重要工具。',audio:'手机已经成了我们学习的重要工具。'},
+  {words:['老师的','话','给了','我','很大的','启发','。'],ans:'老师的话给了我很大的启发。',audio:'老师的话给了我很大的启发。'},
+  {words:['这句话','你','已经','重复了','三遍','了','。'],ans:'这句话你已经重复了三遍了。',audio:'这句话你已经重复了三遍了。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1347,76 +1316,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'公共汽车上人太多，我的脚被人____了好几次。',opts:['踩','投','装','锯'],ans:0,
-   exp:'Chân bị người khác đặt chân lên → 踩 (giẫm). 投 là ném, 装 là đựng, 锯 là cưa — đều không hợp với 脚.'},
-  {wrong:'请你把刚才的话再____一遍。',opts:['重复','一再','造成','安装'],ans:0,
-   exp:'Nói lại một lần → 重复一遍. 一再 là phó từ, không làm động từ chính; 造成 (gây ra), 安装 (lắp đặt) không hợp nghĩa.'},
-  {wrong:'明天我去一家公司面试，听说竞争很____。',opts:['激烈','强烈','顺畅','好奇'],ans:0,
-   exp:'Cạnh tranh gay gắt → 激烈. 强烈 dùng cho ánh sáng, mùi vị, tình cảm, yêu cầu; 顺畅 (trôi chảy), 好奇 (tò mò) sai nghĩa.'},
-  {wrong:'学生们____要求重新安排考试。',opts:['强烈','激烈','顺畅','好奇'],ans:0,
-   exp:'Yêu cầu mạnh mẽ của con người → 强烈要求. 激烈 tả thi đấu, tranh luận, không làm trạng ngữ cho 要求.'},
-  {wrong:'工厂里的____坏了，工人们只好停下来。',opts:['机器','思维','项目','气氛'],ans:0,
-   exp:'Thứ bị "hỏng" (坏了) làm công nhân phải dừng việc → 机器 (máy). 思维, 项目, 气氛 là danh từ trừu tượng, không "hỏng" được.'},
-  {wrong:'一觉醒来发现已经8点多了，李阳____穿好衣服往公司赶。',opts:['连忙','何必','仿佛','一再'],ans:0,
-   exp:'Kể một việc làm vội ngay sau khi phát hiện muộn → 连忙. 何必 là "cần gì", 仿佛 là "dường như", 一再 là "nhiều lần" — đều không hợp.'},
-  {wrong:'要迟到了，你____走吧！',opts:['赶快','连忙','多亏','何况'],ans:0,
-   exp:'Câu mệnh lệnh có 吧 → 赶快. 连忙 chỉ dùng để kể việc đã xảy ra, không dùng giục người khác.'},
-  {wrong:'别____不起别人，每个人都有自己的长处。',opts:['瞧','听','踩','呆'],ans:0,
-   exp:'瞧不起 = coi thường (khẩu ngữ, như 看不起). Không có cụm 听不起, 踩不起, 呆不起 với nghĩa này.'},
-  {wrong:'听到这个消息，他一下子就____了，半天说不出话来。',opts:['呆','瞧','好奇','困扰'],ans:0,
-   exp:'Sững sờ, ngây người ra → 呆. 瞧 là "nhìn", 好奇 là "tò mò", 困扰 cần tân ngữ chỉ người.'},
-  {wrong:'每天大量饮酒给身体健康____了很大的伤害。',opts:['造成','形成','安装','启发'],ans:0,
-   exp:'Gây ra kết quả xấu (伤害) → 造成. 形成 là "hình thành" (形成习惯), trung tính, không đi với 伤害.'},
-  {wrong:'你们知道这个风俗是怎么____的吗？',opts:['形成','造成','安装','装'],ans:0,
-   exp:'Phong tục dần dần hình thành → 形成. 造成 thường đi với kết quả xấu và cần tân ngữ; 安装, 装 sai nghĩa.'},
-  {wrong:'我书包里____了一本书，不知道放哪儿了。',opts:['少','缺乏','阻碍','困扰'],ans:0,
-   exp:'Vật cụ thể có số lượng (一本书) → 少 (hoặc 缺少). 缺乏 dùng cho thứ trừu tượng, khái quát: 缺乏信心, 缺乏经验.'},
-  {wrong:'这个箱子太小了，____不下这么多衣服。',opts:['装','安装','踩','投'],ans:0,
-   exp:'Cho đồ vào vật chứa → 装; 装不下 = không đựng hết. 安装 là lắp thiết bị, không nói 安装不下衣服.'},
-  {wrong:'年轻人都受不了，____一个有病的老人呢？',opts:['何况','何必','多亏','仿佛'],ans:0,
-   exp:'Vế trước nêu trường hợp A, vế sau "huống chi" B → 何况……呢？ 何必 là "cần gì phải", không hợp logic.'},
-  {wrong:'你____亲自送一趟呢？叫个快递不就行了？',opts:['何必','何况','多亏','连忙'],ans:0,
-   exp:'"Cần gì phải đích thân đi" → 何必……呢？ 何况 nối hai vế tăng tiến, không đứng trước động từ như thế này.'},
-  {wrong:'今天搬家____有你在，你可帮我大忙了。',opts:['多亏','何必','何况','仿佛'],ans:0,
-   exp:'Nhờ có bạn nên mọi việc thuận lợi, có ý biết ơn → 多亏.'},
-  {wrong:'他一边听一边记，____对我的发言挺感兴趣似的。',opts:['仿佛','何必','连忙','一再'],ans:0,
-   exp:'Đi với 似的 ở cuối → 仿佛……似的 (dường như … vậy).'},
-  {wrong:'修了新路以后，这里的交通____多了。',opts:['顺畅','激烈','好奇','强烈'],ans:0,
-   exp:'Giao thông thông suốt → 交通顺畅. 激烈, 强烈 tả sự mạnh mẽ; 好奇 là tò mò.'},
-  {wrong:'一再重复的暂停行为影响了比赛的____。',opts:['气氛','空气','思维','项目'],ans:0,
-   exp:'Không khí TINH THẦN của trận đấu → 气氛. 空气 là không khí để thở — bẫy của người Việt.'},
-  {wrong:'我们的训练学校____在室内进行的运动项目。',opts:['缺乏','阻碍','造成','困扰'],ans:0,
-   exp:'Không có đủ (các môn thể thao) → 缺乏. 阻碍 (cản trở), 造成 (gây ra), 困扰 (làm khổ) sai nghĩa.'}
+  {wrong:'这个问题连老师都觉得难，____我们呢？',opts:['何况','何必','不必','多亏'],ans:0,exp:'连……都……，何况……呢？ = ngay cả… còn…, huống chi…. 何必 là “cần gì phải”; 不必 là “không cần”; 多亏 là “may nhờ”.'},
+  {wrong:'东西不贵，坏了再买一个就是了，你____这么难过呢？',opts:['何必','不必','何况','难道'],ans:0,exp:'何必 + V + 呢？ = cần gì phải… (câu hỏi tu từ). 不必 dùng trong câu trần thuật, không đi với 呢？; 何况 là “huống chi”; 难道 không đi với 这么难过呢 như vậy.'},
+  {wrong:'路不远，你____送我了，我自己走回去。',opts:['不必','何必','何况','连忙'],ans:0,exp:'Câu trần thuật “không cần làm” → 不必. 何必 phải dùng trong câu hỏi tu từ có 呢; 何况, 连忙 không hợp nghĩa.'},
+  {wrong:'____你提醒我，要不我就忘了带钥匙了。',opts:['多亏','何况','仿佛','一再'],ans:0,exp:'多亏 + người/việc giúp mình, vế sau 要不 nêu hậu quả nếu không có sự giúp đỡ đó. 何况, 仿佛, 一再 không đứng đầu câu với nghĩa này.'},
+  {wrong:'这场比赛进行得非常____，最后一分钟才分出输赢。',opts:['激烈','强烈','顺畅','好奇'],ans:0,exp:'Thi đấu, tranh luận gay go → 激烈. 强烈 tả cảm giác, ánh sáng, yêu cầu mạnh; 顺畅 là trôi chảy; 好奇 là tò mò.'},
+  {wrong:'中午的阳光太____了，出门记得戴帽子。',opts:['强烈','激烈','顺畅','仿佛'],ans:0,exp:'Ánh sáng, mùi, cảm xúc rất mạnh → 强烈. 激烈 dùng cho thi đấu, tranh luận; 顺畅, 仿佛 không hợp.'},
+  {wrong:'要下雨了，你____把衣服收进来！',opts:['赶快','连忙','何必','一再'],ans:0,exp:'Câu cầu khiến, giục người khác → 赶快. 连忙 chỉ dùng kể lại hành động đã xảy ra, không dùng để ra lệnh; 何必, 一再 không hợp.'},
+  {wrong:'老师____提醒我们，考试时要仔细检查。',opts:['一再','仿佛','好奇','顺畅'],ans:0,exp:'一再 + V = hết lần này đến lần khác. 仿佛 là “dường như”; 好奇 là “tò mò”; 顺畅 là “trôi chảy”.'},
+  {wrong:'他刚开始工作，还很____经验，遇到问题常常不知道该怎么做。',opts:['缺乏','减少','浪费','错过'],ans:0,exp:'缺乏 + 经验/信心/锻炼 = thiếu. 减少 là giảm bớt; 浪费 là lãng phí; 错过 là bỏ lỡ.'},
+  {wrong:'他的粗心____了很大的麻烦。',opts:['造成','启发','训练','安装'],ans:0,exp:'造成 + hậu quả xấu (麻烦, 伤害, 浪费) = gây ra. 启发, 训练, 安装 không mang tân ngữ này.'},
+  {wrong:'他站在那儿一动不动，____在想什么。',opts:['仿佛','何况','连忙','何必'],ans:0,exp:'仿佛 = dường như, hình như (văn viết). 何况, 何必 dùng trong câu phản vấn; 连忙 là vội vàng, trái với 一动不动.'},
+  {wrong:'旧的思维方式会____公司的发展。',opts:['阻碍','启发','重复','安装'],ans:0,exp:'阻碍 + 发展/进行 = cản trở. 启发 là gợi mở (nghĩa tốt); 重复 là lặp lại; 安装 là lắp đặt.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Ngay cả các thành viên đội tuyển trường ngày nào cũng tập luyện còn không chạy hết ba nghìn mét này, huống chi là bọn mình, những người ngày thường ít vận động?', zh:'连每天训练的校队队员都跑不完这三千米，何况我们这些平时缺乏锻炼的人呢？', py:'Lián měi tiān xùnliàn de xiàoduì duìyuán dōu pǎo bu wán zhè sānqiān mǐ, hékuàng wǒmen zhèxiē píngshí quēfá duànliàn de rén ne?', goiY:['连……都……，何况……呢','训练','缺乏'], giai:'Vế 1 dùng 连……都…… nêu trường hợp khó hơn mà còn không làm được, vế 2 何况……呢？ suy ra trường hợp hiển nhiên — cuối câu cần 呢 và dấu hỏi.'},
-  {vi:'Lần này chỉ là bài kiểm tra nhỏ cuối chương thôi, cậu cần gì phải ôn đi ôn lại đến tận nửa đêm?', zh:'这次只是单元小测验，你何必一再复习到半夜呢？', py:'Zhè cì zhǐ shì dānyuán xiǎo cèyàn, nǐ hébì yízài fùxí dào bànyè ne?', goiY:['何必……呢','一再','半夜'], giai:'何必 + V + 呢？ là câu hỏi tu từ = "cần gì phải…", ý khuyên không cần làm; 一再 (hết lần này đến lần khác) đứng trước động từ.'},
-  {vi:'May mà mẹ phát hiện tôi quên mang thẻ dự thi, vội vàng mang đến trường cho tôi, nếu không tôi đã không vào được phòng thi rồi.', zh:'多亏妈妈发现我忘了带准考证，连忙送到了学校，不然我就进不了考场了。', py:'Duōkuī māma fāxiàn wǒ wàngle dài zhǔnkǎozhèng, liánmáng sòngdàole xuéxiào, bùrán wǒ jiù jìn bu liǎo kǎochǎng le.', goiY:['多亏……，不然……','连忙'], giai:'多亏 nêu người/việc đã giúp mình tránh được hậu quả xấu (mang ý biết ơn), vế sau 不然/要不 nói hậu quả nếu không có sự giúp đỡ đó.'},
-  {vi:'Tuy nhóm chúng tôi thiếu kinh nghiệm khi làm dự án khoa học này, nhưng mọi người chia việc hợp tác, cải tiến hết lần này đến lần khác, cuối cùng vậy mà lại giành giải nhất.', zh:'虽然我们小组做这个科技项目时缺乏经验，但大家分工合作，一再改进，最后居然拿了一等奖。', py:'Suīrán wǒmen xiǎozǔ zuò zhège kējì xiàngmù shí quēfá jīngyàn, dàn dàjiā fēngōng hézuò, yízài gǎijìn, zuìhòu jūrán nále yīděngjiǎng.', goiY:['虽然……但……','缺乏','一再','居然'], giai:'虽然……但…… nối sự thật với kết quả trái chiều; 居然 (vậy mà) diễn tả kết quả bất ngờ, đặt trước động từ chứ không đứng đầu câu.'},
-  {vi:'Tôi không định đổi điện thoại mới, cái cũ dùng vẫn còn khá mượt, hơn nữa tôi phải vất vả lắm mới dành dụm được chút tiền này.', zh:'我不打算换新手机，旧的用起来还挺顺畅，何况我好不容易才攒了这点儿积蓄。', py:'Wǒ bù dǎsuàn huàn xīn shǒujī, jiù de yòng qǐlai hái tǐng shùnchàng, hékuàng wǒ hǎo bù róngyì cái zǎnle zhè diǎnr jīxù.', goiY:['何况','顺畅','积蓄'], giai:'Ở đây 何况 không mang giọng phản vấn mà bổ sung thêm một lý do (= hơn nữa), nên cuối câu không cần 呢？.'},
-  {vi:'Một khi đã nghiện game điện thoại, tư duy sẽ ngày càng lười biếng, từ đó khiến thành tích học tập sa sút.', zh:'一旦沉迷于手机游戏，思维就会变得越来越懒，从而造成成绩下降。', py:'Yídàn chénmí yú shǒujī yóuxì, sīwéi jiù huì biàn de yuè lái yuè lǎn, cóng\'ér zàochéng chéngjì xiàjiàng.', goiY:['一旦……就……','从而','造成'], giai:'一旦 nêu giả thiết "hễ đã xảy ra thì…", vế sau có 就; 从而 (từ đó) đứng đầu vế cuối để dẫn ra kết quả, không dùng ở đầu câu.'},
-  {vi:'Em gái tôi vừa đi mẫu giáo, thấy gì cũng tò mò hỏi "tại sao", không ngờ những câu hỏi của em lại thường gợi mở cho tôi rất nhiều.', zh:'我妹妹刚上幼儿园，不管看到什么都好奇地问“为什么”，没想到她的问题常常给我很大的启发。', py:'Wǒ mèimei gāng shàng yòu\'éryuán, bùguǎn kàndào shénme dōu hàoqí de wèn “wèi shénme”, méi xiǎngdào tā de wèntí chángcháng gěi wǒ hěn dà de qǐfā.', goiY:['不管……都……','好奇','启发'], giai:'不管 + từ nghi vấn (什么/谁/怎么), vế sau bắt buộc có 都 — không dùng 虽然 vì đây là "bất kể trường hợp nào".'},
-  {vi:'Đã hai bên đều xin lỗi nhau rồi, cậu cần gì cứ nhắc đi nhắc lại chuyện đó nữa? Làm vậy chỉ khiến không khí trong phòng ký túc càng thêm ngượng ngùng.', zh:'既然彼此都已经道歉了，你何必还一再提起那件事呢？这样只会让宿舍的气氛更尴尬。', py:'Jìrán bǐcǐ dōu yǐjīng dàoqiàn le, nǐ hébì hái yízài tíqǐ nà jiàn shì ne? Zhèyàng zhǐ huì ràng sùshè de qìfēn gèng gāngà.', goiY:['既然……','何必……呢','彼此','气氛'], giai:'既然 nêu sự thật đã xảy ra làm tiền đề (đã… thì…), khác 如果 là giả thiết; 何必……呢？ là câu hỏi tu từ, không cần trả lời.'},
-  {vi:'Tuần trước trong giờ thể dục, tôi giẫm lên lan can trèo lên để nhặt bóng, may mà thầy phát hiện kịp thời, vội kéo tôi xuống, nếu không hậu quả thật không dám tưởng tượng.', zh:'上周体育课上我为了捡球踩着栏杆往上爬，多亏老师及时发现，连忙把我拉了下来，否则后果真的不敢想象。', py:'Shàng zhōu tǐyù kè shang wǒ wèile jiǎn qiú cǎizhe lángān wǎng shàng pá, duōkuī lǎoshī jíshí fāxiàn, liánmáng bǎ wǒ lā le xiàlai, fǒuzé hòuguǒ zhēn de bù gǎn xiǎngxiàng.', goiY:['多亏……，否则……','踩','栏杆','连忙'], giai:'多亏……，否则…… = "may mà… nếu không…"; 连忙 chỉ dùng cho hành động đã xảy ra, không dùng trong câu mệnh lệnh (không nói 你连忙去吧).'},
-  {vi:'Thay vì chép đi chép lại từ vựng mấy chục lần như một cái máy, chi bằng nhờ đến những công cụ như sơ đồ tư duy, huống hồ thầy cô cũng đã nhiều lần nói học vẹt hiệu quả rất kém.', zh:'与其像机器一样把单词重复抄几十遍，不如借助思维导图等工具，何况老师也一再说死记硬背效果差。', py:'Yǔqí xiàng jīqì yíyàng bǎ dāncí chóngfù chāo jǐshí biàn, bùrú jièzhù sīwéi dǎotú děng gōngjù, hékuàng lǎoshī yě yízài shuō sǐ jì yìng bèi xiàoguǒ chà.', goiY:['与其……不如……','重复','工具','何况'], giai:'与其 A 不如 B: bỏ A, chọn B (B tốt hơn) — không đảo thành 不如……与其; 何况 ở vế cuối bổ sung thêm một lý do nữa.'}
+  {vi:'Ngay cả các vận động viên ngày nào cũng tập luyện còn không chạy hết ba nghìn mét này, huống chi là bọn mình, những người ngày thường ít vận động?',zh:'连每天训练的运动员都跑不完这三千米，何况我们这些平时缺乏锻炼的人呢？',py:'Lián měi tiān xùnliàn de yùndòngyuán dōu pǎo bu wán zhè sānqiān mǐ, hékuàng wǒmen zhèxiē píngshí quēfá duànliàn de rén ne?',goiY:['连……都……，何况……呢','训练','缺乏'],giai:'Vế 1 dùng 连……都…… nêu trường hợp khó hơn mà còn không làm được, vế 2 何况……呢？ suy ra trường hợp hiển nhiên — cuối câu cần 呢 và dấu hỏi.'},
+  {vi:'Lần này chỉ là một bài thi nhỏ thôi, cậu cần gì phải ôn đi ôn lại đến tận nửa đêm?',zh:'这次只是一个小考试，你何必一再复习到半夜呢？',py:'Zhè cì zhǐ shì yí ge xiǎo kǎoshì, nǐ hébì yízài fùxí dào bànyè ne?',goiY:['何必……呢','一再','半夜'],giai:'何必 + V + 呢？ là câu hỏi tu từ = "cần gì phải…", ý khuyên không cần làm; 一再 (hết lần này đến lần khác) đứng trước động từ.'},
+  {vi:'May mà mẹ phát hiện tôi quên mang hộ chiếu, vội vàng mang đến sân bay cho tôi, nếu không tôi đã không lên được máy bay rồi.',zh:'多亏妈妈发现我忘了带护照，连忙送到了机场，要不我就上不了飞机了。',py:'Duōkuī māma fāxiàn wǒ wàngle dài hùzhào, liánmáng sòngdàole jīchǎng, yàobù wǒ jiù shàng bu liǎo fēijī le.',goiY:['多亏……，要不……','连忙'],giai:'多亏 nêu người/việc đã giúp mình tránh được hậu quả xấu (mang ý biết ơn), vế sau 要不 (bài 8) nói hậu quả nếu không có sự giúp đỡ đó.'},
+  {vi:'Tôi không định đổi điện thoại mới, cái cũ dùng vẫn còn khá mượt, hơn nữa tôi phải vất vả lắm mới dành dụm được chút tiền này.',zh:'我不打算换新手机，旧的用起来还挺顺畅，何况我好不容易才存了这点儿积蓄。',py:'Wǒ bù dǎsuàn huàn xīn shǒujī, jiù de yòng qǐlai hái tǐng shùnchàng, hékuàng wǒ hǎo bù róngyì cái cúnle zhè diǎnr jīxù.',goiY:['何况','顺畅','积蓄'],giai:'Ở đây 何况 không mang giọng phản vấn mà bổ sung thêm một lý do (= hơn nữa), nên cuối câu không cần 呢？; 积蓄 (bài 3) = tiền dành dụm.'},
+  {vi:'Em gái tôi vừa đi mẫu giáo, thấy gì cũng tò mò hỏi "tại sao", không ngờ những câu hỏi của em lại thường gợi mở cho tôi rất nhiều.',zh:'我妹妹刚上幼儿园，不管看到什么都好奇地问“为什么”，没想到她的问题常常给我很大的启发。',py:'Wǒ mèimei gāng shàng yòu\'éryuán, bùguǎn kàndào shénme dōu hàoqí de wèn “wèi shénme”, méi xiǎngdào tā de wèntí chángcháng gěi wǒ hěn dà de qǐfā.',goiY:['不管……都……','好奇','启发'],giai:'不管 + từ nghi vấn (什么/谁/怎么), vế sau bắt buộc có 都 — không dùng 虽然 vì đây là "bất kể trường hợp nào".'},
+  {vi:'Đã hai bên đều xin lỗi nhau rồi, cậu cần gì cứ nhắc đi nhắc lại chuyện đó nữa? Làm vậy chỉ khiến không khí trong nhà càng thêm căng thẳng.',zh:'既然彼此都已经道歉了，你何必还一再提起那件事呢？这样只会让家里的气氛更紧张。',py:'Jìrán bǐcǐ dōu yǐjīng dàoqiàn le, nǐ hébì hái yízài tíqǐ nà jiàn shì ne? Zhèyàng zhǐ huì ràng jiā li de qìfēn gèng jǐnzhāng.',goiY:['既然……','何必……呢','彼此','气氛'],giai:'既然 nêu sự thật đã xảy ra làm tiền đề (đã… thì…), khác 如果 là giả thiết; 彼此 (bài 8) = lẫn nhau; 何必……呢？ là câu hỏi tu từ.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Vì cái giỏ lúc đó vốn dùng để đựng đào, có đáy, nên cứ mỗi lần ném bóng vào là phải có người trèo lên lấy bóng ra.', zh:'由于当时的球筐是装桃子用的，有底，所以每投进一个球，就得有人爬上去把球拿出来。', py:'Yóuyú dāngshí de qiúkuāng shì zhuāng táozi yòng de, yǒu dǐ, suǒyǐ měi tóujìn yí ge qiú, jiù děi yǒu rén pá shàngqu bǎ qiú ná chūlai.', goiY:['由于……所以…… = vì… nên…','每……就…… = cứ mỗi lần… là…','装 = đựng, chứa'], giai:'由于……所以…… nêu nguyên nhân – kết quả; 每……就…… = "cứ mỗi lần… là…", khi dịch đừng bỏ mất sắc thái lặp đi lặp lại.'},
-  {vi:'Trận đấu buộc phải diễn ra ngắt quãng, thiếu hẳn bầu không khí sôi nổi, ngay cả vận động viên còn không hài lòng, huống chi là khán giả hâm mộ?', zh:'比赛不得不断断续续地进行，缺乏激烈的气氛，连运动员都不满意，何况球迷呢？', py:'Bǐsài bùdébù duànduàn xùxù de jìnxíng, quēfá jīliè de qìfēn, lián yùndòngyuán dōu bù mǎnyì, hékuàng qiúmí ne?', goiY:['断断续续 = ngắt quãng','连……都……，何况……呢 = ngay cả… còn…, huống chi…'], giai:'Câu phản vấn 何况……呢？ dịch là "huống chi…" — không dịch thành câu hỏi thật "…thì sao?".'},
-  {vi:'Mặc dù trận đấu giữa hai đội Giáp và Ất rất được ưa chuộng, nhưng mỗi lần ném rổ thành công đều phải dừng lại lấy bóng, trận đấu chẳng thể nào sôi động nổi.', zh:'尽管甲、乙两队的比赛很受欢迎，但是每次投篮成功后都要停下来取球，比赛根本热闹不起来。', py:'Jǐnguǎn jiǎ, yǐ liǎng duì de bǐsài hěn shòu huānyíng, dànshì měi cì tóulán chénggōng hòu dōu yào tíng xiàlai qǔ qiú, bǐsài gēnběn rènao bu qǐlai.', goiY:['尽管……但是…… = mặc dù… nhưng…','投篮 = ném rổ','热闹不起来 = không sôi động lên được'], giai:'尽管……但是…… giống 虽然……但是…… (sự thật + chuyển ý); 热闹不起来 là bổ ngữ khả năng phủ định = "không thể sôi động lên".'},
-  {vi:'Để lấy bóng cho tiện, một kỹ sư thậm chí còn chế tạo riêng một loại máy, chỉ cần kéo ở bên dưới là bóng sẽ bật ra, thế nhưng trận đấu vẫn chưa đủ trôi chảy.', zh:'为了取球方便，一位工程师甚至专门制造了一种机器，只要在下面一拉，球就会弹出来，可是比赛依然不够顺畅。', py:'Wèile qǔ qiú fāngbiàn, yí wèi gōngchéngshī shènzhì zhuānmén zhìzàole yì zhǒng jīqì, zhǐyào zài xiàmiàn yì lā, qiú jiù huì tán chūlai, kěshì bǐsài yīrán bú gòu shùnchàng.', goiY:['甚至 = thậm chí','只要……就…… = chỉ cần… là…','顺畅 = trôi chảy'], giai:'甚至 nhấn mạnh việc làm vượt mức bình thường; 只要 + 一 + V (一拉)，就…… = "chỉ cần… một cái là…".'},
-  {vi:'Nhìn mọi người hết lần này đến lần khác trèo lên lấy bóng, cậu bé tò mò hỏi bố: "Cần gì phải phiền phức thế ạ? Cưa bỏ đáy giỏ đi chẳng phải là xong sao?"', zh:'看着人们一次次爬上去取球，小男孩好奇地问爸爸：“何必这么麻烦呢？把筐底锯掉不就行了吗？”', py:'Kànzhe rénmen yí cìcì pá shàngqu qǔ qiú, xiǎo nánhái hàoqí de wèn bàba: “Hébì zhème máfan ne? Bǎ kuāng dǐ jùdiào bú jiù xíng le ma?”', goiY:['何必……呢？……不就行了吗？ = cần gì phải…? … chẳng phải là xong sao?','锯掉 = cưa bỏ'], giai:'何必……呢？ phủ định sự cần thiết; ……不就行了吗？ là câu hỏi tu từ mang nghĩa khẳng định = "chẳng phải là được rồi sao".'},
-  {vi:'Nhờ gợi ý của cậu bé ấy mà người ta mới cưa bỏ đáy giỏ, từ đó các trận đấu trở nên vừa trôi chảy vừa gay cấn.', zh:'多亏了这个孩子的启发，人们才锯掉了筐底，比赛从此变得既顺畅又激烈。', py:'Duōkuīle zhège háizi de qǐfā, rénmen cái jùdiàole kuāng dǐ, bǐsài cóngcǐ biàn de jì shùnchàng yòu jīliè.', goiY:['多亏了…… = nhờ có…','既……又…… = vừa… vừa…'], giai:'多亏……，才…… nhấn mạnh nhờ có A mới có kết quả tốt B; 既……又…… nối hai tính chất cùng tồn tại.'},
-  {vi:'Sở dĩ một cách đơn giản như vậy mãi chẳng ai nghĩ ra là vì lối tư duy theo thói quen đã cản trở mọi người.', zh:'这么简单的办法之所以始终没人想到，是因为习惯性的思维阻碍了大家。', py:'Zhème jiǎndān de bànfǎ zhīsuǒyǐ shǐzhōng méi rén xiǎngdào, shì yīnwèi xíguànxìng de sīwéi zǔ\'àile dàjiā.', goiY:['之所以……，是因为…… = sở dĩ… là vì…','始终','阻碍 = cản trở'], giai:'之所以 nêu kết quả trước, 是因为 nêu nguyên nhân sau — dịch "sở dĩ… là vì…"; 始终 + phủ định = "mãi vẫn không".'},
-  {vi:'Cuộc sống giống như một chiếc giỏ bóng rổ, nhiều vấn đề vốn rất đơn giản, chỉ cần đổi góc nhìn nghĩ lại là có thể tìm ra lời giải.', zh:'生活仿佛一个篮筐，很多问题本来很简单，只要换个角度想一想，就能找到答案。', py:'Shēnghuó fǎngfú yí ge lánkuāng, hěn duō wèntí běnlái hěn jiǎndān, zhǐyào huàn ge jiǎodù xiǎng yi xiǎng, jiù néng zhǎodào dá\'àn.', goiY:['仿佛 = giống như','只要……就……','角度'], giai:'Ở câu này 仿佛 dùng để ví von (= giống như), không phải "hình như" chỉ sự phỏng đoán; 只要……就…… nêu điều kiện đủ.'},
-  {vi:'Nhiều rắc rối làm chúng ta phiền lòng thực ra không phải do bản thân vấn đề gây ra, mà là do chính chúng ta đã nghĩ việc đơn giản thành phức tạp.', zh:'许多困扰我们的麻烦其实并不是问题本身造成的，而是我们自己把简单的事情想复杂了。', py:'Xǔduō kùnrǎo wǒmen de máfan qíshí bìng bú shì wèntí běnshēn zàochéng de, ér shì wǒmen zìjǐ bǎ jiǎndān de shìqing xiǎng fùzá le.', goiY:['不是……而是…… = không phải… mà là…','困扰 = làm phiền lòng','造成 = gây ra'], giai:'并不是……而是…… phủ định A để khẳng định B; 把 + việc đơn giản + 想复杂了 = "nghĩ… thành phức tạp".'},
-  {vi:'Bạn xem, từ khi người ta lắp giỏ lên lan can, chuyện lấy bóng đã làm khổ mọi người suốt mấy năm trời, không ngờ lại được một đứa trẻ mẫu giáo giải quyết.', zh:'你瞧，人们把筐安装在栏杆上以后，取球问题困扰了大家好几年，没想到竟然被一个上幼儿园的孩子解决了。', py:'Nǐ qiáo, rénmen bǎ kuāng ānzhuāng zài lángān shang yǐhòu, qǔ qiú wèntí kùnrǎole dàjiā hǎo jǐ nián, méi xiǎngdào jìngrán bèi yí ge shàng yòu\'éryuán de háizi jiějué le.', goiY:['瞧 = nhìn, xem (khẩu ngữ)','困扰 = làm khổ, gây phiền','竟然 = vậy mà, không ngờ'], giai:'竟然 diễn tả kết quả ngoài dự đoán, đặt trước 被/động từ; câu bị động 被 + người + V dịch thuận là "được … giải quyết".'}
+  {vi:'Trận đấu buộc phải diễn ra ngắt quãng, thiếu hẳn bầu không khí sôi nổi, vận động viên không hài lòng, huống chi là khán giả đến xem?',zh:'比赛不得不断断续续地进行，缺乏激烈的气氛，运动员不满意，何况来看比赛的球迷呢？',py:'Bǐsài bùdébù duànduàn xùxù de jìnxíng, quēfá jīliè de qìfēn, yùndòngyuán bù mǎnyì, hékuàng lái kàn bǐsài de qiúmí ne?',goiY:['断断续续 = ngắt quãng','何况……呢 = huống chi…'],giai:'Câu phản vấn 何况……呢？ dịch là "huống chi…" — không dịch thành câu hỏi thật "…thì sao?".'},
+  {vi:'Mặc dù rất nhiều người thích xem hai đội Giáp và Ất thi đấu, nhưng mỗi lần ném rổ thành công đều phải dừng lại lấy bóng, trận đấu chẳng thể nào sôi động nổi.',zh:'尽管很多人喜欢看甲、乙两队比赛，但是每次投篮成功后都要停下来取球，比赛怎么也热闹不起来。',py:'Jǐnguǎn hěn duō rén xǐhuan kàn jiǎ, yǐ liǎng duì bǐsài, dànshì měi cì tóulán chénggōng hòu dōu yào tíng xiàlai qǔ qiú, bǐsài zěnme yě rènao bu qǐlai.',goiY:['尽管……但是…… = mặc dù… nhưng…','投篮 = ném rổ','热闹不起来 = không sôi động lên được'],giai:'尽管……但是…… giống 虽然……但是…… (sự thật + chuyển ý); 怎么也 + phủ định = thế nào cũng không…; 热闹不起来 là bổ ngữ khả năng phủ định.'},
+  {vi:'Để lấy bóng cho tiện, một kỹ sư thậm chí còn chế tạo riêng một loại máy, chỉ cần kéo ở bên dưới là bóng sẽ bật ra, thế nhưng trận đấu vẫn chưa đủ trôi chảy.',zh:'为了取球方便，一位工程师甚至专门制造了一种机器，只要在下面一拉，球就会弹出来，可是比赛还是不够顺畅。',py:'Wèile qǔ qiú fāngbiàn, yí wèi gōngchéngshī shènzhì zhuānmén zhìzàole yì zhǒng jīqì, zhǐyào zài xiàmiàn yì lā, qiú jiù huì tán chūlai, kěshì bǐsài háishi bú gòu shùnchàng.',goiY:['甚至 = thậm chí','只要……就…… = chỉ cần… là…','顺畅 = trôi chảy'],giai:'甚至 nhấn mạnh việc làm vượt mức bình thường; 只要 + 一 + V (一拉)，就…… = "chỉ cần… một cái là…".'},
+  {vi:'Cuộc sống giống như một chiếc giỏ bóng rổ, nhiều vấn đề vốn rất đơn giản, chỉ cần đổi góc nhìn nghĩ lại là có thể tìm ra lời giải.',zh:'生活仿佛一个篮筐，很多问题本来很简单，只要换个角度想一想，就能找到答案。',py:'Shēnghuó fǎngfú yí ge lánkuāng, hěn duō wèntí běnlái hěn jiǎndān, zhǐyào huàn ge jiǎodù xiǎng yi xiǎng, jiù néng zhǎodào dá\'àn.',goiY:['仿佛 = giống như','只要……就……','角度'],giai:'Ở câu này 仿佛 dùng để ví von (= giống như), không phải "hình như" chỉ sự phỏng đoán; 只要……就…… nêu điều kiện đủ.'},
+  {vi:'Nhiều rắc rối làm chúng ta phiền lòng thực ra không phải do vấn đề gây ra, mà là do chính chúng ta đã nghĩ việc đơn giản thành phức tạp.',zh:'许多困扰我们的麻烦其实不是问题造成的，而是我们自己把简单的事情想复杂了。',py:'Xǔduō kùnrǎo wǒmen de máfan qíshí bú shì wèntí zàochéng de, ér shì wǒmen zìjǐ bǎ jiǎndān de shìqing xiǎng fùzá le.',goiY:['不是……而是…… = không phải… mà là…','困扰 = làm phiền lòng','造成 = gây ra'],giai:'不是……而是…… phủ định A để khẳng định B; 把 + việc đơn giản + 想复杂了 = "nghĩ… thành phức tạp".'},
+  {vi:'Bạn xem, từ khi người ta lắp giỏ lên lan can, chuyện lấy bóng đã làm khổ mọi người suốt mấy năm trời, không ngờ lại được một đứa trẻ mẫu giáo giải quyết.',zh:'你瞧，人们把筐安装在栏杆上以后，取球问题困扰了大家好几年，没想到竟然被一个上幼儿园的孩子解决了。',py:'Nǐ qiáo, rénmen bǎ kuāng ānzhuāng zài lángān shang yǐhòu, qǔ qiú wèntí kùnrǎole dàjiā hǎo jǐ nián, méi xiǎngdào jìngrán bèi yí ge shàng yòu\'éryuán de háizi jiějué le.',goiY:['瞧 = nhìn, xem (khẩu ngữ)','困扰 = làm khổ, gây phiền','竟然 = vậy mà, không ngờ'],giai:'竟然 diễn tả kết quả ngoài dự đoán, đặt trước 被/động từ; câu bị động 被 + người + V dịch thuận là "được … giải quyết".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1512,30 +1445,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (运动与健康). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 训练 · 缺乏 · 激烈 · 何况 · 何必 · 多亏 · 思维.',
   questions:[
-    {q_zh:'你喜欢的运动是什么？你是怎么接触到并喜欢上它的？',
-     q_vn:'Môn thể thao em thích là gì? Em biết đến và thích nó như thế nào?',
-     hint:'Kể thời điểm + người giúp, dùng 多亏',
-     sample:'我喜欢打羽毛球。上初中的时候，我缺乏锻炼，身体不太好。多亏了一个同学每天拉我去打球，我才慢慢喜欢上了这项运动。',
-     sample_vn:'Tôi thích đánh cầu lông. Hồi cấp hai tôi ít vận động, sức khoẻ không tốt lắm. May có một bạn ngày nào cũng kéo tôi đi đánh cầu, tôi mới dần thích môn này.',
-     note:'Câu hỏi 你是怎么…… phải trả lời bằng một câu chuyện có thời gian, người, việc — đừng chỉ nói "我很喜欢".'},
-    {q_zh:'进行这项运动有什么要求或条件？它的好处是什么？',
-     q_vn:'Chơi môn này cần yêu cầu, điều kiện gì? Nó có lợi ích gì?',
-     hint:'Nêu 2 điều kiện + 2 lợi ích, dùng 不仅……也……',
-     sample:'打羽毛球不需要很多工具，有两个球拍就行了。它不仅能锻炼身体，也能让人反应更快。',
-     sample_vn:'Đánh cầu lông không cần nhiều dụng cụ, có hai cây vợt là được. Nó không chỉ rèn luyện sức khoẻ mà còn giúp phản xạ nhanh hơn.',
-     note:'Chia ý rõ ràng: 条件 trước, 好处 sau. Người chấm HSKK đánh giá cao câu trả lời có bố cục.'},
-    {q_zh:'有人说“生命在于运动”，也有人觉得饭后应该休息。你怎么看？',
-     q_vn:'Có người nói "sống là phải vận động", cũng có người thấy ăn xong nên nghỉ. Em nghĩ sao?',
-     hint:'Chọn một bên + lý do, có thể dùng 何必',
-     sample:'我觉得运动很重要，但是不用做太激烈的运动。饭后散散步就很好，何必一吃完饭就去跑步呢？',
-     sample_vn:'Tôi thấy vận động rất quan trọng nhưng không cần vận động quá mạnh. Ăn xong đi dạo một chút là tốt rồi, cần gì vừa ăn xong đã đi chạy?',
-     note:'Lấy ý từ phần 背景分析 của sách: vận động phải tuỳ người, tuỳ lúc.'},
-    {q_zh:'课文说“复杂都是我们自己造成的”，你同意吗？请举一个例子。',
-     q_vn:'Bài khoá nói "sự phức tạp đều do chính chúng ta tạo ra", em có đồng ý không? Hãy nêu một ví dụ.',
-     hint:'Đồng ý / không + một ví dụ trong học tập, dùng 思维',
-     sample:'我同意。以前我背单词总是一遍一遍地抄，后来老师让我换一种思维方式，用句子来记，结果又快又好。',
-     sample_vn:'Tôi đồng ý. Trước đây tôi học từ toàn chép đi chép lại, sau đó thầy bảo tôi đổi cách tư duy, học từ qua câu, kết quả vừa nhanh vừa tốt.',
-     note:'Ví dụ càng GẦN đời sống của em càng thuyết phục.'}
+    {q_zh:'你喜欢的运动是什么？你是怎么喜欢上它的？',q_vn:'Môn thể thao em thích là gì? Em thích nó như thế nào?',hint:'Kể thời điểm + người giúp, dùng 多亏',sample:'我喜欢打羽毛球。上大学的时候，我很少运动，身体不太好。多亏了一个同学每天拉我去打球，我才慢慢喜欢上了这项运动。',sample_vn:'Tôi thích đánh cầu lông. Hồi đại học tôi ít vận động, sức khoẻ không tốt lắm. May có một bạn ngày nào cũng kéo tôi đi đánh cầu, tôi mới dần thích môn này.',note:'Câu hỏi 你是怎么…… phải trả lời bằng một câu chuyện có thời gian, người, việc — đừng chỉ nói "我很喜欢".'},
+    {q_zh:'进行这项运动需要什么条件？它的好处是什么？',q_vn:'Chơi môn này cần điều kiện gì? Nó có lợi ích gì?',hint:'Nêu 2 điều kiện + 2 lợi ích, dùng 不仅……也……',sample:'打羽毛球不需要很多工具，有两个球拍就行了。它不仅能锻炼身体，也能让人反应更快。',sample_vn:'Đánh cầu lông không cần nhiều dụng cụ, có hai cây vợt là được. Nó không chỉ rèn luyện sức khoẻ mà còn giúp phản xạ nhanh hơn.',note:'Chia ý rõ ràng: 条件 trước, 好处 sau. Người chấm HSKK đánh giá cao câu trả lời có bố cục.'},
+    {q_zh:'有人说每天都应该运动，也有人觉得饭后应该休息。你的看法是什么？',q_vn:'Có người nói ngày nào cũng nên vận động, cũng có người thấy ăn xong nên nghỉ. Em nghĩ sao?',hint:'Chọn một bên + lý do, có thể dùng 何必',sample:'我觉得运动很重要，但是不用做太激烈的运动。饭后散散步就很好，何必一吃完饭就去跑步呢？',sample_vn:'Tôi thấy vận động rất quan trọng nhưng không cần vận động quá mạnh. Ăn xong đi dạo một chút là tốt rồi, cần gì vừa ăn xong đã đi chạy?',note:'Lấy ý từ phần phân tích của sách: vận động phải tuỳ người, tuỳ lúc.'},
+    {q_zh:'课文说“复杂都是我们自己造成的”，你同意吗？说说你自己的经历。',q_vn:'Bài khoá nói "sự phức tạp đều do chính chúng ta tạo ra", em có đồng ý không? Hãy kể trải nghiệm của em.',hint:'Đồng ý / không + một ví dụ trong học tập, dùng 思维',sample:'我同意。以前我记生词总是一遍一遍地写，后来老师让我换一种思维方式，用句子来记，结果又快又好。',sample_vn:'Tôi đồng ý. Trước đây tôi học từ toàn viết đi viết lại, sau đó thầy bảo tôi đổi cách tư duy, học từ qua câu, kết quả vừa nhanh vừa tốt.',note:'Ví dụ càng GẦN đời sống của em càng thuyết phục.'}
   ]
 };
 
@@ -1626,45 +1539,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng lớp định chép tay lại cả quyển sách để ôn thi.',
-     a:{sp:'Bạn',zh:'我打算把这本书全部抄一遍。',vn:'Tớ định chép lại toàn bộ quyển sách này.'},
-     need:['Dùng 何必……呢？','Gợi ý một cách đơn giản hơn'],
-     sample:'何必这么麻烦呢？把重点记下来不就行了吗？',
-     samplePy:'Hébì zhème máfan ne? Bǎ zhòngdiǎn jì xiàlai bú jiù xíng le ma?',
-     sampleVn:'Cần gì phiền phức thế? Ghi lại những điểm chính chẳng phải là được sao?',
-     tip:'何必 luôn đi với giọng phản vấn và 呢？ ở cuối. Đừng viết 何必这么麻烦。 — nghe cụt và sai giọng.'},
-
-    {scene:'Bạn rủ em vào đội bóng rổ của trường, nhưng em thấp và mới tập.',
-     a:{sp:'Bạn',zh:'你怎么不参加学校的篮球队？',vn:'Sao cậu không vào đội bóng rổ của trường?'},
-     need:['Dùng 何况','Nêu ít nhất HAI lý do'],
-     sample:'我个子不高，何况才开始学，投篮总是投不进。',
-     samplePy:'Wǒ gèzi bù gāo, hékuàng cái kāishǐ xué, tóu lán zǒngshì tóu bu jìn.',
-     sampleVn:'Tớ không cao, huống hồ mới bắt đầu học, ném rổ toàn trượt.',
-     tip:'Đây là cách dùng thứ hai của 何况: BỔ SUNG thêm lý do. Lý do sau thường mạnh hơn lý do trước.'},
-
-    {scene:'Hôm qua em quên mang tài liệu, bạn thân đã mang giúp đến lớp.',
-     a:{sp:'Bạn',zh:'昨天的材料你拿到了吗？',vn:'Tài liệu hôm qua cậu nhận được chưa?'},
-     need:['Dùng 多亏','Thể hiện sự biết ơn'],
-     sample:'拿到了，多亏你帮我带来了，要不我就麻烦了。',
-     samplePy:'Ná dào le, duōkuī nǐ bāng wǒ dài lái le, yàobù wǒ jiù máfan le.',
-     sampleVn:'Nhận được rồi, may mà cậu mang giúp, không thì tớ gặp rắc rối rồi.',
-     tip:'多亏……，要不…… là cặp rất tự nhiên khi cảm ơn. 多亏 chỉ dùng cho kết quả TỐT.'},
-
-    {scene:'Cô giáo hỏi vì sao bài kiểm tra lần này em làm không tốt.',
-     a:{sp:'Cô',zh:'这次考试怎么没考好？',vn:'Sao lần này em thi không tốt?'},
-     need:['Dùng 缺乏','Nhận trách nhiệm, không đổ lỗi'],
-     sample:'主要是我考前缺乏复习，时间也没安排好，下次一定注意。',
-     samplePy:'Zhǔyào shì wǒ kǎo qián quēfá fùxí, shíjiān yě méi ānpái hǎo, xià cì yídìng zhùyì.',
-     sampleVn:'Chủ yếu là em thiếu ôn tập trước khi thi, thời gian cũng sắp xếp chưa hợp lý, lần sau em nhất định chú ý.',
-     tip:'Với thầy cô, giọng phải lễ phép và có hứa hẹn sửa đổi. 缺乏 + danh từ/động từ trừu tượng (复习, 训练, 经验).'},
-
-    {scene:'Bạn vừa đọc xong chuyện bóng rổ bỏ đáy giỏ và hỏi ý em.',
-     a:{sp:'Bạn',zh:'一个小孩子都能想到，大人们怎么都没想到呢？',vn:'Một đứa trẻ còn nghĩ ra được, sao người lớn lại không nghĩ ra nhỉ?'},
-     need:['Dùng 思维','Nêu rõ ý kiến của mình'],
-     sample:'我觉得大人们的思维被习惯挡住了，小孩子反而想得简单。',
-     samplePy:'Wǒ juéde dàrénmen de sīwéi bèi xíguàn dǎngzhù le, xiǎo háizi fǎn\'ér xiǎng de jiǎndān.',
-     sampleVn:'Tôi thấy tư duy của người lớn bị thói quen chặn lại, trẻ con ngược lại nghĩ đơn giản hơn.',
-     tip:'Câu 被 (ôn HSK 3–4) rất hợp để diễn đạt ý của bài: 思维被……挡住了.'}
+    {scene:'Bạn cùng lớp định viết tay lại cả quyển sách để ôn thi.',a:{sp:'Bạn',zh:'我打算把这本书从头到尾再写一遍，这样就能记住了。',vn:'Tớ định viết lại cả quyển sách này từ đầu đến cuối, như thế là nhớ được.'},need:['Dùng 何必……呢？','Gợi ý một cách đơn giản hơn'],sample:'何必花那么多时间呢？把重点记下来不就行了吗？',samplePy:'Hébì huā nàme duō shíjiān ne? Bǎ zhòngdiǎn jì xiàlai bú jiù xíng le ma?',sampleVn:'Cần gì tốn nhiều thời gian thế? Ghi lại những điểm chính chẳng phải là được sao?',tip:'何必 luôn đi với giọng phản vấn và 呢？ ở cuối. Đừng viết 何必花那么多时间。 — nghe cụt và sai giọng.'},
+    {scene:'Bạn rủ em tham gia giải bóng rổ của trường, nhưng em thấp và mới tập.',a:{sp:'Bạn',zh:'你怎么不参加学校的篮球比赛？',vn:'Sao cậu không tham gia giải bóng rổ của trường?'},need:['Dùng 何况','Nêu ít nhất HAI lý do'],sample:'我个子不高，何况才开始学，投篮十次有八次不进。',samplePy:'Wǒ gèzi bù gāo, hékuàng cái kāishǐ xué, tóulán shí cì yǒu bā cì bú jìn.',sampleVn:'Tớ không cao, huống hồ mới bắt đầu học, ném rổ mười lần thì trượt tám.',tip:'Đây là cách dùng thứ hai của 何况: BỔ SUNG thêm lý do. Lý do sau thường mạnh hơn lý do trước.'},
+    {scene:'Hôm qua em quên mang tài liệu, bạn thân đã mang giúp đến lớp.',a:{sp:'Bạn',zh:'昨天的材料你拿到了吗？',vn:'Tài liệu hôm qua cậu nhận được chưa?'},need:['Dùng 多亏','Thể hiện sự biết ơn'],sample:'拿到了，多亏你帮我带来了，要不我就麻烦了。',samplePy:'Ná dào le, duōkuī nǐ bāng wǒ dài lái le, yàobù wǒ jiù máfan le.',sampleVn:'Nhận được rồi, may mà cậu mang giúp, không thì tớ gặp rắc rối rồi.',tip:'多亏……，要不…… là cặp rất tự nhiên khi cảm ơn. 多亏 chỉ dùng cho kết quả TỐT.'},
+    {scene:'Cô giáo hỏi vì sao bài kiểm tra lần này em làm không tốt.',a:{sp:'Cô',zh:'这次考试怎么没考好？',vn:'Sao lần này em thi không tốt?'},need:['Dùng 缺乏','Nhận trách nhiệm, không đổ lỗi'],sample:'主要是我考前缺乏复习，时间也没安排好，下次一定注意。',samplePy:'Zhǔyào shì wǒ kǎo qián quēfá fùxí, shíjiān yě méi ānpái hǎo, xià cì yídìng zhùyì.',sampleVn:'Chủ yếu là em thiếu ôn tập trước khi thi, thời gian cũng sắp xếp chưa hợp lý, lần sau em nhất định chú ý.',tip:'Với thầy cô, giọng phải lễ phép và có hứa hẹn sửa đổi. 缺乏 + danh từ/động từ trừu tượng (复习, 训练, 经验).'},
+    {scene:'Bạn vừa đọc xong chuyện bóng rổ bỏ đáy giỏ và hỏi ý em.',a:{sp:'Bạn',zh:'一个小孩子都能想到的办法，大人们为什么想不到？',vn:'Cách mà một đứa trẻ còn nghĩ ra được, sao người lớn lại không nghĩ ra?'},need:['Dùng 思维','Nêu rõ ý kiến của mình'],sample:'我觉得大人们的思维被习惯挡住了，小孩子反而想得简单。',samplePy:'Wǒ juéde dàrénmen de sīwéi bèi xíguàn dǎngzhù le, xiǎo háizi fǎn\'ér xiǎng de jiǎndān.',sampleVn:'Tôi thấy tư duy của người lớn bị thói quen chặn lại, trẻ con ngược lại nghĩ đơn giản hơn.',tip:'Câu 被 (ôn HSK 3–4) rất hợp để diễn đạt ý của bài: 思维被……挡住了.'}
   ]
 };
 
@@ -1675,29 +1554,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em đang xem bóng rổ cùng bạn thân.',
-     a:'你瞧，他又投进了！',b:'请您观察，他又一次投篮成功了。',better:'a',
-     why:'瞧 là khẩu ngữ, rất hợp khi nói chuyện với bạn. Câu b đúng nhưng trang trọng như bình luận viên, nghe khách sáo.'},
-
-    {scene:'Em viết báo cáo tổng kết giải đấu gửi nhà trường.',
-     a:'比赛老停，大家都不高兴。',b:'由于比赛断断续续地进行，运动员和观众都不太满意。',better:'b',
-     why:'Văn bản gửi nhà trường cần giọng VĂN VIẾT: 由于, 断断续续地进行, 满意. Câu a là khẩu ngữ (老停, 不高兴).'},
-
-    {scene:'Em viết đoạn kết cho bài văn nghị luận nộp cô giáo.',
-     a:'生活就像个筐子，咱得有把锯。',b:'生活仿佛篮筐，我们需要的只不过是一把锯子。',better:'b',
-     why:'仿佛 là từ văn viết, hợp với bài văn. Câu a dùng 咱, 得 — khẩu ngữ, không hợp bài viết.'},
-
-    {scene:'Em thay mặt lớp cảm ơn thầy hiệu trưởng trong buổi lễ.',
-     a:'多亏您的帮助，我们才能顺利完成这个项目。',b:'多亏你了，要不这事儿就黄了。',better:'a',
-     why:'Với thầy hiệu trưởng trong buổi lễ phải dùng 您 và lời lẽ trang trọng. 这事儿就黄了 là tiếng lóng (hỏng việc).'},
-
-    {scene:'Bạn thân định đi taxi chỉ để đến quán cách hai trăm mét.',
-     a:'我认为您没有必要乘坐出租车。',b:'何必打车呢？走过去不就行了？',better:'b',
-     why:'Với bạn thân, 何必……呢？……不就行了？ tự nhiên, gần gũi. Câu a dùng 您, 乘坐 — quá trang trọng, nghe như đang mỉa mai.'},
-
-    {scene:'Thông báo của nhà trường dán trên bảng tin.',
-     a:'篮球场这几天不能用，别去了啊！',b:'篮球场正在安装新设备，本周暂停使用。',better:'b',
-     why:'Thông báo chính thức dùng giọng văn viết, ngắn gọn: 安装, 暂停使用, 本周. Câu a như nhắn tin cho bạn.'}
+    {scene:'Em đang xem bóng rổ cùng bạn thân.',a:'你瞧，他又投进了！',b:'请您注意看，他又一次投篮成功了。',better:'a',why:'瞧 là khẩu ngữ, rất hợp khi nói chuyện với bạn. Câu b đúng nhưng trang trọng như bình luận viên, nghe khách sáo.'},
+    {scene:'Em viết báo cáo tổng kết giải đấu gửi nhà trường.',a:'比赛老停，大家都不高兴。',b:'由于比赛断断续续地进行，运动员和观众都不太满意。',better:'b',why:'Văn bản gửi nhà trường cần giọng VĂN VIẾT: 由于, 断断续续地进行, 满意. Câu a là khẩu ngữ (老停, 不高兴).'},
+    {scene:'Em viết đoạn kết cho bài văn nghị luận nộp cô giáo.',a:'生活就像个筐子，我们得有把锯。',b:'我们的生活仿佛也是一个篮筐，需要的只不过是一把锯子。',better:'b',why:'仿佛 là từ văn viết, hợp với bài văn. Câu a dùng 就像个筐子, 得有把锯 — khẩu ngữ, không hợp bài viết.'},
+    {scene:'Em thay mặt lớp cảm ơn thầy hiệu trưởng trong buổi lễ.',a:'多亏您的帮助，我们才能顺利完成这个项目。',b:'多亏你了，要不这事儿就完了。',better:'a',why:'Với thầy hiệu trưởng trong buổi lễ phải dùng 您 và lời lẽ trang trọng. 这事儿就完了 là khẩu ngữ suồng sã (hỏng việc).'},
+    {scene:'Bạn thân định đi taxi chỉ để đến quán cách hai trăm mét.',a:'我认为您没有必要乘坐出租车。',b:'何必打车呢？走过去不就行了？',better:'b',why:'Với bạn thân, 何必……呢？……不就行了？ tự nhiên, gần gũi. Câu a dùng 您, 乘坐 — quá trang trọng, nghe như đang mỉa mai.'},
+    {scene:'Thông báo của nhà trường dán trên bảng tin.',a:'篮球场这几天不能用，别去了啊！',b:'篮球场正在安装新的篮筐，本周不能使用。',better:'b',why:'Thông báo chính thức dùng giọng văn viết, ngắn gọn: 安装, 本周, 不能使用. Câu a như nhắn tin cho bạn.'}
   ]
 };
 

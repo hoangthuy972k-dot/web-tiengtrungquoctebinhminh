@@ -569,49 +569,53 @@ var hvBridgeData = {
 // ══════════════════════════════════════════
 // GHÉP TỪ
 // ══════════════════════════════════════════
-// Ghép cụm — lấy đúng bảng 词语搭配 của giáo trình
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'注意',right:'细节'},
-  {left:'爱护',right:'花草树木'},
-  {left:'抱怨',right:'餐厅的菜不好吃'},
-  {left:'详细地',right:'对比'},
-  {left:'电台的',right:'记者'},
+  {left:'爱护',right:'小动物'},
+  {left:'对比',right:'两张照片'},
   {left:'暗暗',right:'点头'},
   {left:'轮到',right:'我了'},
   {left:'伸出',right:'手指'},
   {left:'靠在',right:'肩膀上'},
   {left:'被蚊子',right:'叮醒'},
-  {left:'耐心',right:'等待'},
-  {left:'简单地',right:'叙述'}
+  {left:'幸福的',right:'婚姻'},
+  {left:'大声地',right:'喊'},
+  {left:'递给他',right:'一张纸条'},
+  {left:'一项',right:'重要的任务'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'画画儿的时候我们要注意',blank:'细节',post:'。',hint:'(chi tiết)',ans:'细节'},
-  {pre:'对比后，有三对夫妻',blank:'入围',post:'。',hint:'(lọt vào vòng trong)',ans:'入围'},
-  {pre:'他几年如一日地照顾她，从不',blank:'抱怨',post:'。',hint:'(than phiền)',ans:'抱怨'},
-  {pre:'评委们听了',blank:'暗暗',post:'点头。',hint:'(thầm)',ans:'暗暗',exp:'暗暗 = thầm, lặng lẽ (không nói ra): 暗暗点头, 暗暗高兴. Làm trạng ngữ trước động từ.'},
-  {pre:'男人的头',blank:'靠',post:'在女人的肩膀上，睡着了。',hint:'(tựa)',ans:'靠'},
-  {pre:'这个女人为了不影响丈夫睡觉，',blank:'居然',post:'放弃这次机会！',hint:'(không ngờ lại)',ans:'居然',exp:'居然 = không ngờ lại (việc vượt ngoài dự đoán, như 竟然): 居然放弃这次机会.'},
-  {pre:'今天',blank:'轮',post:'到我打扫教室了。',hint:'(đến lượt)',ans:'轮',exp:'轮到 + người + V = đến lượt ai làm gì: 今天轮到我打扫教室.'},
-  {pre:'昨晚半夜我被蚊子',blank:'叮',post:'醒了。',hint:'(muỗi đốt)',ans:'叮'},
-  {pre:'这个问题该',blank:'如何',post:'解决？',hint:'(như thế nào — văn viết)',ans:'如何',exp:'如何 = như thế nào (văn viết, như 怎么): 该如何解决. 如何 không dùng để hỏi nguyên nhân.'},
-  {pre:'机会是留给耐心',blank:'等待',post:'的人的。',hint:'(chờ đợi)',ans:'等待'}
+  {pre:'这个画家画的人很像真的，连头发这样的小',blank:'细节',post:'都画出来了。',hint:'(chi tiết)',ans:'细节',exp:'细节 là danh từ: 小细节, 注意细节 — không nói 很细节.'},
+  {pre:'参加比赛的有两百多人，最后只有十个人',blank:'入围',post:'，我的好朋友小林就是其中一个。',hint:'(lọt vào vòng trong)',ans:'入围',exp:'入围 là nội động từ, không mang tân ngữ: ……十个人入围 (không nói 入围比赛).'},
+  {pre:'新来的同事总是',blank:'抱怨',post:'工作太多，却从来不想办法解决。',hint:'(than phiền)',ans:'抱怨',exp:'抱怨 + việc = than phiền chung chung: 抱怨工作太多; muốn trách một người cụ thể thì dùng 埋怨.'},
+  {pre:'你们刚去上海旅游回来，那边的天气',blank:'如何',post:'？',hint:'(ra sao — văn viết, đứng cuối câu)',ans:'如何',exp:'如何 đứng cuối câu để hỏi tình hình: 天气如何？ — 怎么 không đứng một mình ở vị trí này.'},
+  {pre:'他没有',blank:'靠',post:'父母，一个人在城市里找到了工作。',hint:'(dựa vào)',ans:'靠',exp:'靠 + người/vật = dựa vào: 靠父母, 靠自己; phủ định dùng 没(有)靠 hoặc 不靠.'},
+  {pre:'这家饭馆的菜又贵又不好吃，可是每天',blank:'居然',post:'有那么多客人。',hint:'(vậy mà, không ngờ)',ans:'居然',exp:'居然 nêu việc ngoài dự đoán, đứng trước động từ: 居然有那么多客人.'},
+  {pre:'电影马上就要开始了，朋友在电话里一直',blank:'催',post:'我快点儿。',hint:'(giục)',ans:'催',exp:'催 + người + (làm gì) = giục ai làm gì: 催我快点儿.'},
+  {pre:'开会的时候，他把写好的计划',blank:'递',post:'给了经理。',hint:'(đưa tận tay)',ans:'递',exp:'递 + 给 + người = đưa (bằng tay) cho ai; hay đi trong câu 把: 把计划递给经理.'},
+  {pre:'我和姐姐小时候经常',blank:'吵架',post:'，现在却是最好的朋友。',hint:'(cãi nhau)',ans:'吵架',exp:'吵架 là ly hợp từ: 过/了 chen vào giữa (吵过架) — không nói 吵架过.'},
+  {pre:'楼上的邻居经常',blank:'半夜',post:'还在放音乐，真让人睡不着。',hint:'(nửa đêm)',ans:'半夜',exp:'半夜 là từ chỉ thời gian, đứng trước động từ làm trạng ngữ: 半夜还在放音乐.'},
+  {pre:'幸福的',blank:'婚姻',post:'需要两个人互相理解。',hint:'(hôn nhân)',ans:'婚姻',exp:'婚姻 là danh từ (hôn nhân); 结婚 mới là động từ "cưới".'},
+  {pre:'这家',blank:'电台',post:'每天晚上十点有一个讲中国历史的节目。',hint:'(đài phát thanh)',ans:'电台',exp:'电台 = đài phát thanh, lượng từ dùng 家: 一家电台.'},
+  {pre:'下一个就',blank:'轮',post:'到你唱歌了，准备好了吗？',hint:'(đến lượt)',ans:'轮',exp:'轮到 + người + V = đến lượt ai làm gì: 轮到你唱歌了.'}
 ];
 
 // ══════════════════════════════════════════
 // SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['电台','要','选出','一对','最恩爱的','夫妻','。'],ans:'电台要选出一对最恩爱的夫妻。',audio:'电台要选出一对最恩爱的夫妻。'},
-  {words:['男人','的','头','靠','在','女人的肩膀上','。'],ans:'男人的头靠在女人的肩膀上。',audio:'男人的头靠在女人的肩膀上。'},
-  {words:['她','居然','放弃','这次','机会','！'],ans:'她居然放弃这次机会！',audio:'她居然放弃这次机会！'},
-  {words:['他','几年如一日','地','照顾','她','，','从不','抱怨','。'],ans:'他几年如一日地照顾她，从不抱怨。',audio:'他几年如一日地照顾她，从不抱怨。'},
-  {words:['这个','问题','该','如何','解决','？'],ans:'这个问题该如何解决？',audio:'这个问题该如何解决？'},
-  {words:['评委们','等','得','有些','不耐烦','。'],ans:'评委们等得有些不耐烦。',audio:'评委们等得有些不耐烦。'},
-  {words:['她','伸出','手指','做','了','个','小声','的','动作','。'],ans:'她伸出手指做了个小声的动作。',audio:'她伸出手指做了个小声的动作。'}
+  {words:['请你','把','昨天发生的事情','简单地','叙述','一下','。'],ans:'请你把昨天发生的事情简单地叙述一下。',audio:'请你把昨天发生的事情简单地叙述一下。'},
+  {words:['我们','在门口','等了','一个多小时','，','大家','都','等得','不耐烦了','。'],ans:'我们在门口等了一个多小时，大家都等得不耐烦了。',audio:'我们在门口等了一个多小时，大家都等得不耐烦了。'},
+  {words:['这个包','太重了','，','我的','肩膀','都','疼了','。'],ans:'这个包太重了，我的肩膀都疼了。',audio:'这个包太重了，我的肩膀都疼了。'},
+  {words:['真正的','朋友','应该','患难与共','。'],ans:'真正的朋友应该患难与共。',audio:'真正的朋友应该患难与共。'},
+  {words:['这位女士','，','请您','在这儿','写上','您的名字','。'],ans:'这位女士，请您在这儿写上您的名字。',audio:'这位女士，请您在这儿写上您的名字。'},
+  {words:['你','觉得','这个办法','如何','？'],ans:'你觉得这个办法如何？',audio:'你觉得这个办法如何？'},
+  {words:['这么简单的题','，','我','居然','做错了','。'],ans:'这么简单的题，我居然做错了。',audio:'这么简单的题，我居然做错了。'},
+  {words:['我们','正在','等待','考试的','结果','。'],ans:'我们正在等待考试的结果。',audio:'我们正在等待考试的结果。'}
 ];
 
 // ══════════════════════════════════════════
@@ -619,52 +623,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'最近身体____？',opts:['如何','怎么','为什么','多少'],ans:0,
-   exp:'Đặt CUỐI câu để hỏi tình hình — chỉ 如何 làm được. 怎么 không đứng cuối câu kiểu này.'},
-  {wrong:'今天____这么冷？',opts:['怎么','如何','什么','哪儿'],ans:0,
-   exp:'Hỏi NGUYÊN NHÂN — 如何 không dùng để hỏi nguyên nhân, chỉ 怎么 làm được.'},
-  {wrong:'机会是留给耐心____的人的。',opts:['等待','等','等等','等到'],ans:0,
-   exp:'Đối tượng trừu tượng (cơ hội) và giọng văn trang trọng → 等待. 等 quá khẩu ngữ cho câu này.'},
-  {wrong:'妈妈____我回家太晚。',opts:['埋怨','抱怨','爱护','叙述'],ans:0,
-   exp:'TRÁCH cụ thể một người vì việc họ làm → 埋怨. 抱怨 là than phiền chung, không quy lỗi ai.'},
-  {wrong:'我们要____花草树木。',opts:['爱护','爱情','恩爱','抱怨'],ans:0,
-   exp:'爱护 mang tân ngữ là môi trường, cây cỏ, của công. 爱情 là danh từ, không làm động từ được.'},
-  {wrong:'他跟他老婆每星期都要____。',opts:['吵架','吵醒','喊醒','叮醒'],ans:0,
-   exp:'Hai người to tiếng với nhau → 吵架. 吵醒 là làm ồn khiến ai đó tỉnh dậy, khác hẳn.'},
-  {wrong:'这个女人为了不影响丈夫睡觉，____放弃这次机会！',opts:['居然','暗暗','一直','从来'],ans:0,
-   exp:'Ngoài dự liệu, gây kinh ngạc → 居然. 暗暗 là làm thầm trong lòng, không mang nghĩa bất ngờ.'},
-  {wrong:'她用左手____写下一行字。',opts:['歪歪扭扭','暗暗','简单','详细'],ans:0,
-   exp:'Tả chữ viết không ngay ngắn → 歪歪扭扭. Các từ còn lại không tả được hình dáng nét chữ.'}
+  {wrong:'你先____一下，我马上就来！',opts:['等','等待','催','轮'],ans:0,exp:'"Đợi một lát" trong khẩu ngữ → 等一下; 等待 trang trọng, thường đi với đối tượng trừu tượng (等待机会, 等待结果).'},
+  {wrong:'弟弟把我的电脑弄坏了，妈妈却____我没把电脑收好。',opts:['埋怨','抱怨','爱护','叙述'],ans:0,exp:'Trách một người cụ thể vì việc họ làm → 埋怨 (妈妈埋怨我); 抱怨 là than phiền chung, không quy lỗi cho ai.'},
+  {wrong:'外面下着大雨，你____没带雨伞就出去了？',opts:['怎么','如何','什么','哪里'],ans:0,exp:'Hỏi nguyên nhân "sao lại…" → 怎么; 如何 chỉ hỏi cách thức/tình hình, không hỏi nguyên nhân.'},
+  {wrong:'这家饭馆太____了，说话都听不清楚。',opts:['吵','吵架','喊','催'],ans:0,exp:'吵 là tính từ "ồn ào", đi được với 太……了; 吵架 là "cãi nhau", 喊 và 催 là động từ.'},
+  {wrong:'爷爷奶奶结婚五十年了，还像年轻的时候一样____。',opts:['恩爱','爱护','爱情','婚姻'],ans:0,exp:'恩爱 tả tình cảm vợ chồng mặn nồng, làm vị ngữ được; 爱护 cần tân ngữ, 爱情 và 婚姻 là danh từ.'},
+  {wrong:'公园里的花是大家的，我们都应该____。',opts:['爱护','恩爱','叙述','入围'],ans:0,exp:'爱护 = yêu quý giữ gìn (花, 动物, 东西 chung); 恩爱 chỉ dùng cho vợ chồng.'},
+  {wrong:'他们结婚才一年就____了，朋友们都觉得很可惜。',opts:['离婚','结婚','婚姻','恩爱'],ans:0,exp:'Cưới mới một năm mà bạn bè thấy tiếc → 离婚 (ly hôn); 结婚 vô lý vì họ đã cưới, 婚姻 là danh từ.'},
+  {wrong:'这____工作很重要，你一定要按时完成。',opts:['项','位','张','条'],ans:0,exp:'项 là lượng từ cho công việc, nhiệm vụ: 一项工作; 位 cho người, 张 cho vật phẳng, 条 cho vật dài.'},
+  {wrong:'他跟好朋友打电话说：“今天我____过生日，我得早点儿回家。”',opts:['老婆','老公','女士','评委'],ans:0,exp:'Nói chuyện thân mật với bạn, người chồng gọi vợ là 老婆; 老公 là chồng, 女士 là cách gọi lịch sự với người lạ.'},
+  {wrong:'听到自己考了第一名，她心里____高兴，可是什么也没说。',opts:['暗暗','居然','大声','终于'],ans:0,exp:'暗暗 = thầm (trong lòng, không để lộ ra) — khớp với "什么也没说"; 大声 thì ngược lại.'},
+  {wrong:'弟弟才五岁，字写得____，很难看清楚。',opts:['歪歪扭扭','很漂亮','非常好','很认真'],ans:0,exp:'歪歪扭扭 tả nét chữ xiêu vẹo, nguệch ngoạc — hợp với "很难看清楚"; các phương án kia mâu thuẫn với vế sau.'},
+  {wrong:'他____出手，接过了我手里的东西。',opts:['伸','递','喊','靠'],ans:0,exp:'伸出手 = chìa tay ra; 递 là đưa một vật cho người khác (递东西), không đi với 出手 ở đây.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tuy giám khảo cuộc thi lần này rất khắt khe, nhưng lớp mình vậy mà lại lọt vào vòng trong.', zh:'虽然这次比赛的评委很严格，但是我们班居然入围了。', py:'Suīrán zhè cì bǐsài de píngwěi hěn yángé, dànshì wǒmen bān jūrán rùwéi le.', goiY:['评委','入围','虽然……但是……','居然'], giai:'虽然…但是… nối hai vế trái ngược nhau; 居然 thường đứng sau chủ ngữ, trước động từ (我们班居然入围了) để diễn tả sự bất ngờ.'},
-  {vi:'Cứ hễ đến lượt tôi lên bục phát biểu là ngón tay tôi lại run không ngừng.', zh:'只要轮到我上台发言，我的手指就会不停地发抖。', py:'Zhǐyào lúndào wǒ shàng tái fāyán, wǒ de shǒuzhǐ jiù huì bù tíng de fādǒu.', goiY:['只要……就……','轮到','手指'], giai:'只要…就… = "cứ hễ/chỉ cần… là…" (điều kiện đủ); "đến lượt" dịch là 轮到, không nói 到了我.'},
-  {vi:'Cậu đã nhận lời giúp bạn ôn bài rồi thì đừng có cáu kỉnh than phiền nữa.', zh:'既然你已经答应帮同学复习，就别再不耐烦地抱怨了。', py:'Jìrán nǐ yǐjīng dāying bāng tóngxué fùxí, jiù bié zài bú nàifán de bàoyuàn le.', goiY:['既然……就……','不耐烦','抱怨'], giai:'既然…就…: vế trước là sự thật đã xảy ra, vế sau là lời khuyên/kết luận — khác 如果 (giả thiết).'},
-  {vi:'Dù nửa đêm có bị muỗi đốt tỉnh giấc mấy lần, sáng hôm sau cậu ấy vẫn dậy lúc sáu giờ học thuộc từ như thường.', zh:'哪怕半夜被蚊子叮醒好几次，他第二天早上也照样六点起床背单词。', py:'Nǎpà bànyè bèi wénzi dīngxǐng hǎo jǐ cì, tā dì-èr tiān zǎoshang yě zhàoyàng liù diǎn qǐchuáng bèi dāncí.', goiY:['哪怕……也……','蚊子','叮醒'], giai:'哪怕…也… nêu tình huống giả định khó khăn nhất mà kết quả vẫn không đổi; 也 phải đứng sau chủ ngữ (他…也…), không đặt trước chủ ngữ.'},
-  {vi:'Bài này nên giải như thế nào, thầy không nói thẳng cho chúng tôi mà bảo mọi người trước hết hãy so sánh hai cách làm.', zh:'这道题该如何解答，老师没有直接告诉我们，而是让大家先对比两种方法。', py:'Zhè dào tí gāi rúhé jiědá, lǎoshī méiyǒu zhíjiē gàosu wǒmen, ér shì ràng dàjiā xiān duìbǐ liǎng zhǒng fāngfǎ.', goiY:['如何','没有……而是……','对比'], giai:'没有/不是 A，而是 B: phủ định A để khẳng định B; 如何 (văn viết) đứng trước động từ 解答, nghĩa "như thế nào".'},
-  {vi:'Tuy hai đứa tôi hay cãi nhau vì những chuyện cỏn con, nhưng mỗi lần tôi gặp khó khăn, cô ấy luôn là người đầu tiên chìa tay ra giúp.', zh:'尽管我们俩常为一点儿小事吵架，但每次我遇到困难，她总是第一个伸出手来帮我。', py:'Jǐnguǎn wǒmen liǎ cháng wèi yìdiǎnr xiǎoshì chǎojià, dàn měi cì wǒ yùdào kùnnan, tā zǒngshì dì-yī ge shēnchū shǒu lai bāng wǒ.', goiY:['尽管……但……','吵架','伸出手来'], giai:'尽管…但(是)… giống 虽然…但是… nhưng nhấn mạnh hơn; "chìa tay giúp đỡ" dịch 伸出手来帮我, đừng dịch từng chữ.'},
-  {vi:'Sở dĩ mẹ cứ giục tôi đi ngủ sớm là vì mẹ cho rằng điểm thi không thể chỉ trông vào buổi ôn tối cuối cùng.', zh:'妈妈之所以一直催我早点儿睡，是因为她认为考试成绩不能只靠最后一晚的复习。', py:'Māma zhīsuǒyǐ yìzhí cuī wǒ zǎo diǎnr shuì, shì yīnwèi tā rènwéi kǎoshì chéngjì bù néng zhǐ kào zuìhòu yì wǎn de fùxí.', goiY:['之所以……是因为……','催','靠'], giai:'之所以 A，是因为 B: nêu kết quả trước, nguyên nhân sau; 靠 ở đây = "dựa vào, trông vào" (靠 + danh từ).'},
-  {vi:'Anh ấy làm người dẫn chương trình ở đài phát thanh đã mười năm, dù thính giả kể câu chuyện rắc rối đến đâu, anh ấy cũng nhanh chóng nắm được những chi tiết quan trọng.', zh:'他在电台做主持人已经十年了，不管听众叙述的故事多么复杂，他都能很快抓住重要的细节。', py:'Tā zài diàntái zuò zhǔchírén yǐjīng shí nián le, bùguǎn tīngzhòng xùshù de gùshi duōme fùzá, tā dōu néng hěn kuài zhuāzhù zhòngyào de xìjié.', goiY:['不管……多么……都……','叙述','细节'], giai:'不管…多么…，都… = "dù… đến đâu cũng…"; sau 不管 phải có từ để hỏi hoặc 多么, không nói 不管故事很复杂.'},
-  {vi:'Tôi cứ tưởng ông bà nội cưới nhau năm mươi năm rồi thì chẳng còn gì để nói với nhau, không ngờ ông bà chẳng những chưa bao giờ cãi nhau mà còn mặn nồng như người trẻ.', zh:'我以为爷爷奶奶结婚五十年早就没话可说了，没想到他们不但从不吵架，而且还像年轻人一样恩爱。', py:'Wǒ yǐwéi yéye nǎinai jiéhūn wǔshí nián zǎo jiù méi huà kě shuō le, méi xiǎngdào tāmen búdàn cóng bù chǎojià, érqiě hái xiàng niánqīngrén yíyàng ēn\'ài.', goiY:['以为','不但……而且……','恩爱'], giai:'不但…而且(还)… diễn tả tăng tiến; 以为 = "cứ tưởng" (điều hóa ra sai), khác 认为; tình cảm vợ chồng "mặn nồng" dùng 恩爱.'},
-  {vi:'Thay vì cứ lên mạng than phiền bố mẹ không hiểu mình, chi bằng bình tĩnh nghĩ xem nên nói chuyện với họ thế nào, dù sao họ mới là những người thương yêu che chở bạn nhất.', zh:'与其在网上一遍遍抱怨父母不懂你，不如静下心来想想该如何跟他们沟通，毕竟他们才是最爱护你的人。', py:'Yǔqí zài wǎngshang yíbiànbiàn bàoyuàn fùmǔ bù dǒng nǐ, bùrú jìngxià xīn lai xiǎngxiang gāi rúhé gēn tāmen gōutōng, bìjìng tāmen cái shì zuì àihù nǐ de rén.', goiY:['与其……不如……','如何','毕竟','爱护'], giai:'与其 A，不如 B: so sánh hai cách làm và chọn B; 如何 đứng trước động từ 沟通, còn 毕竟 = "dù sao thì", nêu lý do cốt lõi.'}
+  {vi:'Tuy giám khảo cuộc thi lần này rất khắt khe, nhưng lớp mình vậy mà lại lọt vào vòng trong.',zh:'虽然这次比赛的评委很严格，但是我们班居然入围了。',py:'Suīrán zhè cì bǐsài de píngwěi hěn yángé, dànshì wǒmen bān jūrán rùwéi le.',goiY:['评委','入围','虽然……但是……','居然'],giai:'虽然…但是… nối hai vế trái ngược; 居然 đứng sau chủ ngữ, trước động từ (我们班居然入围了) để diễn tả sự bất ngờ.'},
+  {vi:'Bác sĩ bảo anh ấy cử động ngón tay thử, xem có đau không.',zh:'医生让他动一动手指，看看疼不疼。',py:'Yīshēng ràng tā dòng yi dòng shǒuzhǐ, kànkan téng bu téng.',goiY:['让','动一动','手指'],giai:'让 + người + V = bảo ai làm gì; động từ lặp 动一动 làm nhẹ giọng "thử cử động"; "có đau không" → 疼不疼 (câu hỏi chính phản).'},
+  {vi:'Cậu đã đồng ý giúp bạn ôn bài rồi thì đừng có cáu kỉnh than phiền nữa.',zh:'既然你已经同意帮同学复习，就别再不耐烦地抱怨了。',py:'Jìrán nǐ yǐjīng tóngyì bāng tóngxué fùxí, jiù bié zài bú nàifán de bàoyuàn le.',goiY:['既然……就……','不耐烦','抱怨'],giai:'既然…就…: vế trước là sự thật đã có, vế sau là lời khuyên; 不耐烦地 làm trạng ngữ trước 抱怨.'},
+  {vi:'Dù nửa đêm bị muỗi đốt tỉnh giấc mấy lần, sáng hôm sau cậu ấy vẫn dậy từ sáu giờ.',zh:'即使半夜被蚊子叮醒了好几次，他第二天早上还是六点就起床了。',py:'Jíshǐ bànyè bèi wénzi dīngxǐngle hǎo jǐ cì, tā dì-èr tiān zǎoshang háishi liù diǎn jiù qǐchuáng le.',goiY:['即使……也/还是……','蚊子','叮醒'],giai:'即使… nêu tình huống giả định khó khăn mà kết quả không đổi; "bị muỗi đốt tỉnh" → 被蚊子叮醒; 就 nhấn mạnh "sớm".'},
+  {vi:'Bài này nên làm như thế nào, thầy không nói thẳng cho chúng tôi mà bảo mọi người trước hết hãy so sánh hai cách làm.',zh:'这个题该如何做，老师没有直接告诉我们，而是让大家先对比两种方法。',py:'Zhège tí gāi rúhé zuò, lǎoshī méiyǒu zhíjiē gàosu wǒmen, ér shì ràng dàjiā xiān duìbǐ liǎng zhǒng fāngfǎ.',goiY:['如何','没有……而是……','对比'],giai:'没有 A，而是 B: phủ định A để khẳng định B; 如何 (văn viết) đứng trước động từ 做.'},
+  {vi:'Tuy hai đứa tôi hay cãi nhau vì những chuyện cỏn con, nhưng mỗi lần tôi gặp khó khăn, cô ấy luôn là người đầu tiên chìa tay ra giúp.',zh:'尽管我们俩经常为一点儿小事吵架，但每次我遇到困难，她总是第一个伸出手来帮我。',py:'Jǐnguǎn wǒmen liǎ jīngcháng wèi yìdiǎnr xiǎoshì chǎojià, dàn měi cì wǒ yùdào kùnnan, tā zǒngshì dì-yī ge shēnchū shǒu lai bāng wǒ.',goiY:['尽管……但……','吵架','伸出手来'],giai:'尽管…但(是)… giống 虽然…但是… nhưng nhấn mạnh hơn; "chìa tay giúp đỡ" → 伸出手来帮我, đừng dịch từng chữ.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Đài phát thanh so sánh rất nhiều cặp vợ chồng, kết quả chỉ có ba cặp lọt vào vòng trong của cuộc bình chọn “Cặp vợ chồng mặn nồng nhất”.', zh:'电台对比了很多对夫妻，结果只有三对夫妻入围“最恩爱夫妻”评选。', py:'Diàntái duìbǐle hěn duō duì fūqī, jiéguǒ zhǐyǒu sān duì fūqī rùwéi “zuì ēn\'ài fūqī” píngxuǎn.', goiY:['对比 = so sánh, đối chiếu','结果 = kết quả là','入围 = lọt vào vòng trong'], giai:'结果 mở đầu vế sau, nêu kết cục của việc ở vế trước; 恩爱 chỉ tình cảm vợ chồng — dịch "mặn nồng, đằm thắm", không dịch "ân ái".'},
-  {vi:'Dù vợ bị liệt toàn thân mấy năm trời, người chồng lại chưa từng than phiền lấy một câu.', zh:'虽然妻子全身瘫痪了好几年，丈夫却从来没有抱怨过一句。', py:'Suīrán qīzi quánshēn tānhuànle hǎo jǐ nián, zhàngfu què cónglái méiyǒu bàoyuànguo yí jù.', goiY:['瘫痪 = bị liệt','虽然……却…… = tuy… nhưng lại…','抱怨 = than phiền'], giai:'虽然…却…: 却 là phó từ nên đứng SAU chủ ngữ 丈夫; tiếng Việt dịch "dù… (nhưng)… lại…".'},
-  {vi:'Hai người cưới nhau hơn chục năm chưa từng cãi nhau, vì thế được đài phát thanh bình chọn là “Cặp vợ chồng tương kính như tân”.', zh:'他们俩结婚十几年从来没吵过架，所以被电台评为“相敬如宾夫妻”。', py:'Tāmen liǎ jiéhūn shí jǐ nián cónglái méi chǎoguo jià, suǒyǐ bèi diàntái píngwéi “xiāng jìng rú bīn fūqī”.', goiY:['吵过架 = từng cãi nhau','所以 = vì thế','相敬如宾 = tôn trọng nhau như khách'], giai:'吵架 là động từ li hợp nên 过 chen vào giữa: 吵过架; 被 + tác nhân + 评为 = "được… bình chọn là".'},
-  {vi:'Khi đến lượt cặp thứ ba, các giám khảo đợi mãi vẫn không thấy người đâu, thế là hơi sốt ruột đi ra xem.', zh:'轮到第三对夫妻时，评委们等了很久也不见人，于是有些不耐烦地走出来看。', py:'Lúndào dì-sān duì fūqī shí, píngwěimen děngle hěn jiǔ yě bú jiàn rén, yúshì yǒuxiē bú nàifán de zǒu chulai kàn.', goiY:['轮到 = đến lượt','于是 = thế là, bèn','不耐烦 = sốt ruột'], giai:'于是 nối hành động xảy ra tiếp theo do vế trước gây nên; "等了很久也不见人" — 也 ở đây nghĩa "vẫn": "đợi mãi vẫn không thấy".'},
-  {vi:'Người đàn ông tựa đầu lên vai vợ ngủ thiếp đi, giám khảo định tiến lên gọi anh dậy, người vợ lại đưa ngón tay ra hiệu mọi người nói nhỏ thôi.', zh:'男人的头靠在妻子的肩膀上睡着了，评委想上前把他喊醒，妻子却伸出手指让大家小声点儿。', py:'Nánrén de tóu kào zài qīzi de jiānbǎng shang shuìzháo le, píngwěi xiǎng shàngqián bǎ tā hǎnxǐng, qīzi què shēnchū shǒuzhǐ ràng dàjiā xiǎo shēng diǎnr.', goiY:['靠 = tựa, dựa','肩膀 = vai','却 = lại (trái ý)','伸出手指 = đưa ngón tay ra'], giai:'靠 ở đây là động từ "tựa vào" (靠在…上); 却 báo hiệu phản ứng của người vợ trái với ý định của giám khảo.'},
-  {vi:'Để đầu chồng không rời khỏi vai phải của mình, cô đành dùng tay trái viết nguệch ngoạc một dòng chữ rồi đưa cho giám khảo.', zh:'她为了不让丈夫的脑袋离开自己的右肩，只好用左手歪歪扭扭地写了一行字递给评委。', py:'Tā wèile bú ràng zhàngfu de nǎodai líkāi zìjǐ de yòu jiān, zhǐhǎo yòng zuǒshǒu wāiwāiniǔniǔ de xiěle yì háng zì dì gěi píngwěi.', goiY:['为了 = để','只好 = đành','歪歪扭扭 = nguệch ngoạc','递给 = đưa cho'], giai:'为了… nêu mục đích, 只好 nêu cách làm bất đắc dĩ; 歪歪扭扭地 là trạng ngữ đứng trước động từ, tiếng Việt chuyển ra sau: "viết nguệch ngoạc".'},
-  {vi:'Mọi người đều sửng sốt: người phụ nữ này vì không muốn đánh thức chồng mà lại bỏ luôn cả cơ hội tham gia cuộc thi.', zh:'大家都很吃惊：这位女士为了不吵醒丈夫，居然连参加比赛的机会都放弃了。', py:'Dàjiā dōu hěn chījīng: zhè wèi nǚshì wèile bù chǎoxǐng zhàngfu, jūrán lián cānjiā bǐsài de jīhuì dōu fàngqì le.', goiY:['居然 = vậy mà (bất ngờ)','连……都…… = ngay cả… cũng…','吵醒 = làm thức giấc'], giai:'居然 + 连…都… nhấn mạnh việc vượt ngoài tưởng tượng; dịch "vậy mà… bỏ luôn cả…", đừng dịch 居然 thành "tự nhiên".'},
-  {vi:'Các giám khảo không giục họ mà quyết định chờ thêm một lát, vì họ muốn nghe chính cặp vợ chồng này kể lại.', zh:'评委们没有催他们，而是决定再等待一会儿，因为他们想听听这对夫妻自己的叙述。', py:'Píngwěimen méiyǒu cuī tāmen, ér shì juédìng zài děngdài yíhuìr, yīnwèi tāmen xiǎng tīngting zhè duì fūqī zìjǐ de xùshù.', goiY:['催 = giục','没有……而是…… = không… mà…','等待 = chờ đợi','叙述 = lời kể'], giai:'没有 A，而是 B: phủ định A để nói việc thực tế B; 叙述 ở đây là danh từ (lời kể) nhưng tiếng Việt dịch tự nhiên thành động từ "kể lại".'},
-  {vi:'Hóa ra nửa đêm người chồng bị muỗi đốt tỉnh giấc, sợ vợ cũng bị đánh thức nên đã đuổi muỗi cho cô suốt nửa đêm về sáng, thảo nào anh vừa tựa vào vợ là ngủ ngay.', zh:'原来丈夫半夜被蚊子叮醒后，怕老婆也被吵醒，就为她赶了后半夜的蚊子，难怪他靠着妻子就睡着了。', py:'Yuánlái zhàngfu bànyè bèi wénzi dīngxǐng hòu, pà lǎopo yě bèi chǎoxǐng, jiù wèi tā gǎnle hòu bànyè de wénzi, nánguài tā kàozhe qīzi jiù shuìzháo le.', goiY:['原来 = hóa ra','叮醒 = đốt tỉnh giấc','难怪 = thảo nào','靠着 = tựa vào'], giai:'原来 giải thích sự thật vừa biết, 难怪 nêu điều trước đó thấy lạ nay đã hiểu; 后半夜 là "nửa đêm về sáng", không phải "nửa đêm sau".'},
-  {vi:'Tuy đài phát thanh bình chọn cặp thứ nhất là “Cặp vợ chồng hoạn nạn có nhau”, nhưng lại trao giải “Cặp vợ chồng mặn nồng nhất” cho cặp thứ ba, đủ thấy các giám khảo coi trọng những chi tiết trong cuộc sống hơn.', zh:'电台虽然把第一对评为“患难与共夫妻”，却把“最恩爱夫妻”奖给了第三对，可见评委们更看重生活中的细节。', py:'Diàntái suīrán bǎ dì-yī duì píngwéi “huàn nàn yǔ gòng fūqī”, què bǎ “zuì ēn\'ài fūqī” jiǎng gěile dì-sān duì, kějiàn píngwěimen gèng kànzhòng shēnghuó zhōng de xìjié.', goiY:['虽然……却…… = tuy… nhưng lại…','患难与共 = hoạn nạn có nhau','可见 = đủ thấy','看重 = coi trọng'], giai:'可见 rút ra kết luận từ sự việc vừa nêu, dịch "đủ thấy, có thể thấy"; 评为 = "bình chọn là" (为 đọc wéi).'}
+  {vi:'Đài phát thanh so sánh rất nhiều cặp vợ chồng, kết quả chỉ có ba cặp lọt vào vòng trong.',zh:'电台对比了很多对夫妻，结果只有三对夫妻入围。',py:'Diàntái duìbǐle hěn duō duì fūqī, jiéguǒ zhǐyǒu sān duì fūqī rùwéi.',goiY:['对比 = so sánh, đối chiếu','结果 = kết quả là','入围 = lọt vào vòng trong'],giai:'结果 mở đầu vế sau, nêu kết cục của việc ở vế trước; 对 ở đây là lượng từ "cặp".'},
+  {vi:'Dù vợ bị liệt toàn thân mấy năm trời, thậm chí từng nghĩ đến chuyện tự sát, người chồng lại chưa từng than phiền lấy một câu.',zh:'虽然妻子全身瘫痪了好几年，甚至想过自杀，丈夫却从来没有抱怨过一句。',py:'Suīrán qīzi quánshēn tānhuànle hǎo jǐ nián, shènzhì xiǎngguo zìshā, zhàngfu què cónglái méiyǒu bàoyuànguo yí jù.',goiY:['瘫痪 = bị liệt','甚至 = thậm chí','自杀 = tự sát','虽然……却…… = tuy… nhưng lại…','抱怨 = than phiền'],giai:'虽然…却…: 却 là phó từ nên đứng SAU chủ ngữ 丈夫; dịch "dù… (nhưng)… lại…".'},
+  {vi:'Hai người cưới nhau hơn chục năm chưa từng cãi nhau, vì thế được đài phát thanh bình chọn là “Cặp vợ chồng tương kính như tân”.',zh:'他们俩结婚十几年从来没吵过架，所以被电台评为“相敬如宾夫妻”。',py:'Tāmen liǎ jiéhūn shí jǐ nián cónglái méi chǎoguo jià, suǒyǐ bèi diàntái píngwéi “xiāng jìng rú bīn fūqī”.',goiY:['吵过架 = từng cãi nhau','所以 = vì thế','相敬如宾 = tôn trọng nhau như khách'],giai:'吵架 là ly hợp từ nên 过 chen vào giữa: 吵过架; 被 + tác nhân + 评为 = "được… bình chọn là".'},
+  {vi:'Thấy chồng tựa đầu vào vai mình ngủ say, người vợ đưa ngón tay ra hiệu cho mọi người nói nhỏ thôi.',zh:'看到丈夫的脑袋靠在自己的肩膀上睡着了，妻子伸出手指让大家小声点儿。',py:'Kàndào zhàngfu de nǎodai kào zài zìjǐ de jiānbǎng shang shuìzháo le, qīzi shēnchū shǒuzhǐ ràng dàjiā xiǎo shēng diǎnr.',goiY:['脑袋 = cái đầu (khẩu ngữ)','靠在……上 = tựa vào','伸出手指 = đưa ngón tay ra'],giai:'靠 ở đây là động từ "tựa vào" (靠在…上); 小声点儿 = "nói nhỏ chút" — 点儿 làm nhẹ lời yêu cầu.'},
+  {vi:'Để đầu chồng không rời khỏi vai, cô đành dùng tay trái viết nguệch ngoạc một dòng chữ rồi đưa cho giám khảo.',zh:'为了不让丈夫的头离开自己的肩膀，她只好用左手歪歪扭扭地写了一行字递给评委。',py:'Wèile bú ràng zhàngfu de tóu líkāi zìjǐ de jiānbǎng, tā zhǐhǎo yòng zuǒshǒu wāiwāiniǔniǔ de xiěle yì háng zì dì gěi píngwěi.',goiY:['为了 = để','只好 = đành','歪歪扭扭 = nguệch ngoạc','递给 = đưa cho'],giai:'为了… nêu mục đích, 只好 nêu cách làm bất đắc dĩ; 歪歪扭扭地 là trạng ngữ đứng trước động từ, tiếng Việt chuyển ra sau: "viết nguệch ngoạc".'},
+  {vi:'Các giám khảo không giục họ mà quyết định chờ thêm một lát, vì họ muốn nghe chính cặp vợ chồng này kể lại.',zh:'评委们没有催他们，而是决定再等待一会儿，因为他们想听听这对夫妻自己的叙述。',py:'Píngwěimen méiyǒu cuī tāmen, ér shì juédìng zài děngdài yíhuìr, yīnwèi tāmen xiǎng tīngting zhè duì fūqī zìjǐ de xùshù.',goiY:['催 = giục','没有……而是…… = không… mà…','等待 = chờ đợi','叙述 = lời kể'],giai:'没有 A，而是 B: phủ định A để nói việc thực tế B; 叙述 ở đây là danh từ (lời kể), tiếng Việt dịch tự nhiên thành "kể lại".'}
 ];
 
 // ══════════════════════════════════════════
@@ -725,30 +717,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
   sapXep:[
-    {manh:['一直','这对夫妻','相敬如宾','结婚以后'],
-     dap:'这对夫妻结婚以后一直相敬如宾。', chap:['结婚以后这对夫妻一直相敬如宾。'],
-     vn:'Cặp vợ chồng này từ sau khi cưới luôn tôn trọng nhau như khách.',
-     giai:'Chủ ngữ 这对夫妻 → thời gian 结婚以后 → phó từ 一直 → vị ngữ 相敬如宾. Thời gian đứng TRƯỚC động từ (không đặt cuối câu như tiếng Việt).'},
-    {manh:['忘了','居然','自己的生日','他'],
-     dap:'他居然忘了自己的生日。',
-     vn:'Anh ấy lại quên mất sinh nhật của chính mình.',
-     giai:'居然 là phó từ: Chủ ngữ + 居然 + động từ. Không đặt 居然 trước chủ ngữ.'},
-    {manh:['靠在','把头','她','丈夫的肩膀上'],
-     dap:'她把头靠在丈夫的肩膀上。',
-     vn:'Cô ấy tựa đầu lên vai chồng.',
-     giai:'Câu 把 (HSK 3–4): Chủ ngữ + 把 + tân ngữ + động từ + 在 + nơi chốn. 靠在……上 là cấu trúc của bài.'},
-    {manh:['恩爱的','想知道','评委','他们是如何'],
-     dap:'评委想知道他们是如何恩爱的。',
-     vn:'Ban giám khảo muốn biết họ đằm thắm như thế nào.',
-     giai:'是 + 如何 + tính từ/động từ + 的: hỏi CÁCH THỨC theo lối văn viết. 如何 đứng ngay trước phần được hỏi.'},
-    {manh:['抱怨过','从来','妻子','没有'],
-     dap:'妻子从来没有抱怨过。',
-     vn:'Người vợ chưa bao giờ than phiền.',
-     giai:'从来 + 没(有) + V + 过 (HSK 3–4): nhấn mạnh chưa từng. 从来 luôn đứng trước 没有.'},
-    {manh:['藏在','往往','爱的细节','生活的小事里'],
-     dap:'爱的细节往往藏在生活的小事里。',
-     vn:'Chi tiết của tình yêu thường ẩn trong những chuyện nhỏ của cuộc sống.',
-     giai:'往往 là phó từ chỉ tần suất, đứng trước động từ 藏. V + 在 + nơi chốn làm bổ ngữ (藏在……里).'}
+    {manh:['一直','这对夫妻','相敬如宾','结婚以后'],dap:'这对夫妻结婚以后一直相敬如宾。',chap:['结婚以后这对夫妻一直相敬如宾。'],vn:'Cặp vợ chồng này từ sau khi cưới luôn tôn trọng nhau như khách.',giai:'Chủ ngữ 这对夫妻 → thời gian 结婚以后 → phó từ 一直 → vị ngữ 相敬如宾. Thời gian đứng TRƯỚC động từ (không đặt cuối câu như tiếng Việt).'},
+    {manh:['忘了','居然','自己的生日','他'],dap:'他居然忘了自己的生日。',vn:'Anh ấy lại quên mất sinh nhật của chính mình.',giai:'居然 là phó từ: Chủ ngữ + 居然 + động từ. Không đặt 居然 trước chủ ngữ.'},
+    {manh:['靠在','把头','她','丈夫的肩膀上'],dap:'她把头靠在丈夫的肩膀上。',vn:'Cô ấy tựa đầu lên vai chồng.',giai:'Câu 把 (HSK 3–4): Chủ ngữ + 把 + tân ngữ + động từ + 在 + nơi chốn. 靠在……上 là cấu trúc của bài.'},
+    {manh:['恩爱的','想知道','评委','他们是如何'],dap:'评委想知道他们是如何恩爱的。',vn:'Ban giám khảo muốn biết họ đằm thắm như thế nào.',giai:'是 + 如何 + tính từ/động từ + 的: hỏi CÁCH THỨC theo lối văn viết. 如何 đứng ngay trước phần được hỏi.'},
+    {manh:['抱怨过','从来','妻子','没有'],dap:'妻子从来没有抱怨过。',vn:'Người vợ chưa bao giờ than phiền.',giai:'从来 + 没(有) + V + 过 (HSK 3–4): nhấn mạnh chưa từng. 从来 luôn đứng trước 没有.'},
+    {manh:['出现在','往往','爱的细节','生活的小事里'],dap:'爱的细节往往出现在生活的小事里。',vn:'Chi tiết của tình yêu thường xuất hiện trong những chuyện nhỏ của cuộc sống.',giai:'往往 là phó từ chỉ tần suất, đứng trước động từ 出现. V + 在 + nơi chốn làm bổ ngữ (出现在……里).'}
   ]
 };
 
@@ -758,25 +732,25 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 恩爱 · 细节 · 抱怨 · 居然 · 相敬如宾 · 患难与共.',
   questions:[
-    {q_zh:'你觉得什么样的夫妻算恩爱？',
+    {q_zh:'你觉得什么样的夫妻才是恩爱的夫妻？',
      q_vn:'Em thấy vợ chồng thế nào thì gọi là đằm thắm?',
      hint:'Dùng 我觉得…… + 恩爱',
      sample:'我觉得恩爱的夫妻不一定天天说“我爱你”，而是在生活的细节里互相照顾。',
      sample_vn:'Tôi thấy vợ chồng đằm thắm không nhất thiết ngày nào cũng nói “anh yêu em”, mà là chăm sóc nhau trong những chi tiết của đời sống.',
      note:'Câu này rất hay gặp ở phần thi nói HSKK — nên tập nói thành một đoạn 3–4 câu.'},
-    {q_zh:'在你家，父母之间有哪些爱的细节？',
-     q_vn:'Ở nhà em, giữa bố mẹ có những chi tiết yêu thương nào?',
+    {q_zh:'在你家，爸爸妈妈平时是怎么互相照顾的？',
+     q_vn:'Ở nhà em, bố mẹ thường chăm sóc nhau thế nào?',
      hint:'Kể một việc CỤ THỂ, dùng 细节',
-     sample:'我爸爸每天早上都为妈妈做早饭，几年如一日，从不抱怨。这就是爱的细节。',
-     sample_vn:'Bố tôi sáng nào cũng nấu bữa sáng cho mẹ, mấy năm như một ngày, chưa bao giờ than phiền. Đó chính là chi tiết của tình yêu.',
+     sample:'我爸爸每天下班都会给妈妈带一点儿她爱吃的水果。这就是爱的细节。',
+     sample_vn:'Bố tôi ngày nào đi làm về cũng mang cho mẹ một ít hoa quả mẹ thích. Đó chính là chi tiết của tình yêu.',
      note:'Kể việc cụ thể luôn ghi điểm cao hơn nói chung chung.'},
-    {q_zh:'课文里三对夫妻，你最欣赏哪一对？为什么？',
+    {q_zh:'课文里三对夫妻，你最喜欢哪一对？为什么？',
      q_vn:'Trong ba cặp vợ chồng ở bài đọc, em thích cặp nào nhất? Vì sao?',
      hint:'Nêu ý kiến + lý do, dùng 因为……所以……',
-     sample:'我最欣赏第三对。因为他们没有说一句话，但那些细节已经说明了一切。',
+     sample:'我最喜欢第三对。因为他们没有说一句话，但是那些细节已经说明了一切。',
      sample_vn:'Tôi thích nhất cặp thứ ba. Vì họ không nói một lời nào, nhưng những chi tiết ấy đã nói lên tất cả.',
      note:'Phải có LÝ DO, chỉ nêu lựa chọn thì mất điểm.'},
-    {q_zh:'你认为“相敬如宾”和“无话不说”，哪个对婚姻更重要？',
+    {q_zh:'你认为“相敬如宾”和“什么话都能说”，哪个对婚姻更重要？',
      q_vn:'Em cho rằng “tương kính như tân” và “nói với nhau mọi chuyện”, điều nào quan trọng hơn với hôn nhân?',
      hint:'So sánh hai vế, dùng 比……更……',
      sample:'我认为相敬如宾更重要。因为互相尊重了，才能一直患难与共地走下去。',
@@ -883,7 +857,7 @@ var situationData = {
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
     {scene:'Sáng đến lớp, bạn thấy em mặt mũi phờ phạc.',
-     a:{sp:'Bạn',zh:'你今天怎么这么累？',vn:'Hôm nay sao cậu mệt thế?'},
+     a:{sp:'Bạn',zh:'你今天看起来没什么精神啊。',vn:'Hôm nay trông cậu chẳng có chút tinh thần nào.'},
      need:['Dùng 居然','Nói một lý do CỤ THỂ, đừng nói chung chung'],
      sample:'昨晚半夜我居然被蚊子叮醒了，后半夜一直没睡好。',
      samplePy:'Zuó wǎn bànyè wǒ jūrán bèi wénzi dīngxǐng le, hòu bànyè yìzhí méi shuìhǎo.',
@@ -893,33 +867,33 @@ var situationData = {
     {scene:'Cô giáo hỏi em về một cặp vợ chồng em quen.',
      a:{sp:'Cô',zh:'你觉得他们俩是什么样的夫妻？',vn:'Em thấy hai người họ là cặp vợ chồng thế nào?'},
      need:['Dùng 恩爱 hoặc 相敬如宾','Nêu một CHI TIẾT chứng minh'],
-     sample:'他们很恩爱。丈夫每天早上都为妻子做早饭，几年如一日，从不抱怨。',
-     samplePy:'Tāmen hěn ēn\'ài. Zhàngfu měi tiān zǎoshang dōu wèi qīzi zuò zǎofàn, jǐ nián rú yí rì, cóng bù bàoyuàn.',
-     sampleVn:'Họ rất đằm thắm. Người chồng sáng nào cũng nấu bữa sáng cho vợ, mấy năm như một ngày, chưa bao giờ than phiền.',
+     sample:'他们很恩爱。妻子生病的时候，丈夫每天晚上都在医院陪她。',
+     samplePy:'Tāmen hěn ēn\'ài. Qīzi shēngbìng de shíhou, zhàngfu měi tiān wǎnshang dōu zài yīyuàn péi tā.',
+     sampleVn:'Họ rất đằm thắm. Lúc người vợ ốm, tối nào người chồng cũng ở bệnh viện với vợ.',
      tip:'Nêu nhận xét rồi phải có DẪN CHỨNG — đây là thói quen bắt buộc ở HSK 5, cả phần nói lẫn phần viết.'},
 
     {scene:'Em đi phỏng vấn xin việc, nhà tuyển dụng hỏi.',
-     a:{sp:'Nhà tuyển dụng',zh:'请您简单地叙述一下以前的工作经历。',vn:'Mời bạn kể sơ qua kinh nghiệm làm việc trước đây.'},
+     a:{sp:'Nhà tuyển dụng',zh:'请您简单地叙述一下您的学习经历。',vn:'Mời bạn kể sơ qua quá trình học tập của mình.'},
      need:['Dùng 叙述 hoặc 之前','Giữ giọng TRANG TRỌNG, đừng dùng khẩu ngữ'],
-     sample:'好的。我之前在一家电台工作了三年，主要负责新闻采访。',
-     samplePy:'Hǎo de. Wǒ zhīqián zài yì jiā diàntái gōngzuòle sān nián, zhǔyào fùzé xīnwén cǎifǎng.',
-     sampleVn:'Vâng. Trước đây tôi làm ba năm ở một đài phát thanh, chủ yếu phụ trách phỏng vấn tin tức.',
+     sample:'好的。我大学学的是中文，之前还在一家电台工作过一年。',
+     samplePy:'Hǎo de. Wǒ dàxué xué de shì Zhōngwén, zhīqián hái zài yì jiā diàntái gōngzuòguo yì nián.',
+     sampleVn:'Vâng. Đại học tôi học tiếng Trung, trước đây còn từng làm một năm ở một đài phát thanh.',
      tip:'Hoàn cảnh trang trọng thì xưng 我 và dùng từ văn viết. Tránh 老婆, 脑袋 kiểu khẩu ngữ ở đây.'},
 
     {scene:'Bạn kể chuyện một người vợ bỏ cuộc thi để chồng được ngủ.',
      a:{sp:'Bạn',zh:'她为了不吵醒丈夫，放弃了比赛，你怎么看？',vn:'Cô ấy vì không muốn đánh thức chồng mà bỏ cuộc thi, cậu nghĩ sao?'},
      need:['Dùng 细节','Nêu rõ ý kiến của mình'],
-     sample:'我觉得真正的爱情就在这些小细节里，比说一百句"我爱你"更有说服力。',
-     samplePy:'Wǒ juéde zhēnzhèng de àiqíng jiù zài zhèxiē xiǎo xìjié li, bǐ shuō yì bǎi jù "wǒ ài nǐ" gèng yǒu shuōfúlì.',
-     sampleVn:'Tôi thấy tình yêu thật sự nằm ngay trong những chi tiết nhỏ ấy, có sức thuyết phục hơn nói trăm câu "anh yêu em".',
+     sample:'我很感动。她用这样一个小细节告诉我们，爱不是说出来的，而是做出来的。',
+     samplePy:'Wǒ hěn gǎndòng. Tā yòng zhèyàng yí ge xiǎo xìjié gàosu wǒmen, ài bú shì shuō chulai de, ér shì zuò chulai de.',
+     sampleVn:'Tôi rất cảm động. Cô ấy dùng một chi tiết nhỏ như thế để nói với chúng ta rằng tình yêu không phải nói ra, mà là làm ra.',
      tip:'Câu hỏi 你怎么看 bắt buộc phải NÊU Ý KIẾN. Trả lời "cũng được" là mất điểm.'},
 
     {scene:'Em đến muộn, cả nhóm đã chờ rất lâu.',
      a:{sp:'Bạn',zh:'我们等了你快一个小时了！',vn:'Bọn tớ chờ cậu gần một tiếng rồi đấy!'},
      need:['Xin lỗi','Dùng 不耐烦 hoặc 等待 đúng chỗ'],
-     sample:'真对不起，让你们等得这么不耐烦。路上堵车，我下次一定早点儿出发。',
-     samplePy:'Zhēn duìbuqǐ, ràng nǐmen děng de zhème bú nàifán. Lù shang dǔchē, wǒ xià cì yídìng zǎo diǎnr chūfā.',
-     sampleVn:'Thật xin lỗi, để mọi người chờ đến sốt ruột. Đường tắc, lần sau tôi nhất định đi sớm hơn.',
+     sample:'真对不起，让你们等得这么不耐烦。我出门太晚了，下次一定早点儿出发。',
+     samplePy:'Zhēn duìbuqǐ, ràng nǐmen děng de zhème bú nàifán. Wǒ chūmén tài wǎn le, xià cì yídìng zǎo diǎnr chūfā.',
+     sampleVn:'Thật xin lỗi, để mọi người chờ đến sốt ruột. Tôi ra khỏi nhà muộn quá, lần sau nhất định đi sớm hơn.',
      tip:'不耐烦 tả TRẠNG THÁI của người chờ. Không nói 我不耐烦你们 — nó không mang tân ngữ kiểu đó.'}
   ]
 };
@@ -958,8 +932,8 @@ var registerData = {
      why:'Câu a đúng ngữ pháp nhưng THIẾU LỄ ĐỘ — báo chứ không xin. Với cấp trên phải có 不好意思 + 想请假. HSK 5 chấm cả thái độ giao tiếp.'},
 
     {scene:'Cô giáo hỏi tình hình ôn thi của cả lớp trong cuộc họp phụ huynh.',
-     a:'同学们最近复习得怎么样？',b:'同学们近期的复习情况如何？',better:'b',
-     why:'Họp phụ huynh là hoàn cảnh trang trọng: 近期 + 情况如何 hợp hơn 最近 + 怎么样.'}
+     a:'同学们最近复习得怎么样？',b:'同学们最近的复习情况如何？',better:'b',
+     why:'Họp phụ huynh là hoàn cảnh trang trọng: 复习情况如何 hợp hơn lối nói chuyện 复习得怎么样.'}
   ]
 };
 
@@ -1733,74 +1707,6 @@ vocabData.forEach(function (v) {
   if (x.patterns) v.patterns = x.patterns;
   if (x.checkList) v.checkList = (v.checkList || []).concat(x.checkList).slice(0, 2);
 });
-
-// ══════════════════════════════════════════
-// LUYỆN TẬP — bổ sung cho bằng số câu của HSK 4 (điền 15 · sắp xếp 8 · chọn từ 10)
-// ══════════════════════════════════════════
-fillData.push(
-  {pre:'这件事不是一两句话就能',blank:'叙述',post:'清楚的。',hint:'(kể lại, thuật lại)',ans:'叙述'},
-  {pre:'妈妈一直',blank:'催',post:'我快点儿起床，不然就要迟到了。',hint:'(giục)',ans:'催'},
-  {pre:'他们结婚二十年了，一直',blank:'相敬如宾',post:'，从来没吵过架。',hint:'(tôn trọng nhau như khách)',ans:'相敬如宾'},
-  {pre:'请你把那本书',blank:'递',post:'给我，好吗？',hint:'(đưa, chuyển cho)',ans:'递'},
-  {pre:'夫妻之间应该',blank:'患难与共',post:'，不管遇到什么困难都不离开对方。',hint:'(hoạn nạn có nhau)',ans:'患难与共'}
-);
-sortData.push(
-  {words:['他们','被','评委','选为','最恩爱的','夫妻','。'],ans:'他们被评委选为最恩爱的夫妻。',audio:'他们被评委选为最恩爱的夫妻。'}
-);
-errorFixData.push(
-  {wrong:'孩子们应该从小学会____小动物。',opts:['爱护','爱情','恩爱','婚姻'],ans:0,
-   exp:'爱护 (yêu quý, bảo vệ) là động từ, mang được tân ngữ 小动物. 爱情 (tình yêu) và 婚姻 (hôn nhân) là danh từ; 恩爱 chỉ dùng cho vợ chồng và không mang tân ngữ.'},
-  {wrong:'等了半个小时，他开始有点儿____了。',opts:['不耐烦','不得了','不客气','不要紧'],ans:0,
-   exp:'不耐烦 (mất kiên nhẫn) hợp với tình huống chờ lâu và đi được sau 有点儿. 不得了 (ghê gớm, vô cùng) thường làm bổ ngữ: 高兴得不得了; 不客气, 不要紧 không hợp nghĩa.'}
-);
-
-// ══════════════════════════════════════════
-// LUYỆN TẬP — phủ đủ 38 từ và các điểm ngữ pháp của bài
-// ══════════════════════════════════════════
-fillData.push(
-  {pre:'爷爷每天早上一起床就听',blank:'电台',post:'的新闻节目。',hint:'(đài phát thanh)',ans:'电台'},
-  {pre:'虽然他们结婚三十年了，但是还像年轻时一样',blank:'恩爱',post:'。',hint:'(vợ chồng mặn nồng)',ans:'恩爱'},
-  {pre:'生了一场大病以后，爷爷的腿',blank:'瘫痪',post:'了，可是他一直很乐观。',hint:'(bị liệt)',ans:'瘫痪'},
-  {pre:'他们虽然有时候意见不同，但是从来没想过要',blank:'离婚',post:'。',hint:'(ly hôn)',ans:'离婚'},
-  {pre:'她生病以后曾经想过',blank:'自杀',post:'，是丈夫的爱让她重新有了生活的勇气。',hint:'(tự sát)',ans:'自杀'},
-  {pre:'幸福的',blank:'婚姻',post:'不是靠运气，而是靠两个人一起努力。',hint:'(hôn nhân)',ans:'婚姻'},
-  {pre:'他拍了拍我的',blank:'肩膀',post:'，说：“别担心，一切都会好起来的。”',hint:'(vai)',ans:'肩膀'},
-  {pre:'外面有人在大声',blank:'喊',post:'我的名字。',hint:'(gọi to)',ans:'喊'},
-  {pre:'妹妹才三岁，就会用',blank:'手指',post:'数到十了。',hint:'(ngón tay)',ans:'手指'},
-  {pre:'这道题太难了，我想得',blank:'脑袋',post:'都疼了，还是不会做。',hint:'(cái đầu)',ans:'脑袋'},
-  {pre:'这位',blank:'女士',post:'，请问您需要什么帮助？',hint:'(quý bà, quý cô — cách gọi lịch sự)',ans:'女士'},
-  {pre:'夏天一到，',blank:'蚊子',post:'就越来越多了。',hint:'(con muỗi)',ans:'蚊子'},
-  {pre:'他昨天学习到',blank:'半夜',post:'，所以今天上课的时候特别困。',hint:'(nửa đêm)',ans:'半夜'}
-);
-errorFixData.push(
-  {wrong:'比赛结束后，三位____一起选出了第一名。',opts:['评委','记者','电台','作者'],ans:0,
-   exp:'Người chấm và chọn ra người thắng trong cuộc thi là 评委 (giám khảo). 记者 (phóng viên) chỉ đưa tin; 电台 là đài phát thanh, không phải người nên không đi với 位; 作者 (tác giả) không liên quan đến cuộc thi.'},
-  {wrong:'你把这两张照片____一下，就能发现它们的不同。',opts:['对比','比如','对待','比赛'],ans:0,
-   exp:'Đặt hai thứ cạnh nhau để tìm chỗ khác → 对比 (đối chiếu), dùng được trong câu 把: 把A对比一下. 比如 là "ví dụ", không làm động từ; 对待 là "đối xử" (对待别人); 比赛 là "thi đấu", không mang nghĩa so sánh hai bức ảnh.'},
-  {wrong:'楼下的音乐太____了，我连一个字都看不进去。',opts:['吵','吵架','喊','叮'],ans:0,
-   exp:'吵 là tính từ "ồn ào", đứng được sau 太. 吵架 là động từ li hợp "cãi nhau", không nói 太吵架了; 喊 (gọi to) và 叮 (muỗi đốt) là động từ, không đi với 太……了 để tả âm thanh.'},
-  {wrong:'这个月，他们完成了三____重要的任务。',opts:['项','位','张','本'],ans:0,
-   exp:'项 là lượng từ cho công việc, nhiệm vụ, hạng mục: 一项任务, 一项工作. 位 dùng cho người (một cách lịch sự); 张 dùng cho vật phẳng (giấy, bàn); 本 dùng cho sách vở.'},
-  {wrong:'他一到家就对妻子说：“____，我回来了！”',opts:['老婆','老公','女士','婚姻'],ans:0,
-   exp:'Chồng gọi vợ thân mật trong khẩu ngữ → 老婆. 老公 là vợ gọi chồng, sai vai; 女士 là cách gọi lịch sự với người lạ, không dùng để gọi vợ; 婚姻 là danh từ "hôn nhân", không dùng để gọi người.'},
-  {wrong:'她____出手，接过了妈妈递过来的书。',opts:['伸','递','喊','靠'],ans:0,
-   exp:'Duỗi tay ra → 伸出手. 递 là "đưa vật cho người khác" (递书), không nói 递出手 với nghĩa này; 喊 là "gọi to"; 靠 là "tựa vào", đều không kết hợp với 出手 ở đây.'}
-);
-sortData.push(
-  {words:['她瘫痪以后','是','如何','重新','站起来的','？'],ans:'她瘫痪以后是如何重新站起来的？',audio:'她瘫痪以后是如何重新站起来的？'},
-  {words:['你们','的','婚姻生活','如何','？'],ans:'你们的婚姻生活如何？',audio:'你们的婚姻生活如何？'},
-  {words:['孩子','把','脑袋','靠在','妈妈的','肩膀上','睡着了','。'],ans:'孩子把脑袋靠在妈妈的肩膀上睡着了。',audio:'孩子把脑袋靠在妈妈的肩膀上睡着了。'},
-  {words:['他们结婚十几年','，','居然','从来','没','吵过','架','。'],ans:'他们结婚十几年，居然从来没吵过架。',audio:'他们结婚十几年，居然从来没吵过架。'},
-  {words:['昨天半夜','，','我','居然','被','一只蚊子','叮醒了','。'],ans:'昨天半夜，我居然被一只蚊子叮醒了。',audio:'昨天半夜，我居然被一只蚊子叮醒了。'}
-);
-matchData.push(
-  {left:'幸福的',right:'婚姻'},
-  {left:'递给',right:'评委'},
-  {left:'大声地',right:'喊'},
-  {left:'摇了摇',right:'脑袋'},
-  {left:'完成',right:'一项任务'},
-  {left:'半夜',right:'被吵醒'}
-);
 
 // ══════════════════════════════════════════
 // BÀI KHOÁ HSK 5 là MỘT bài liền và file nghe của giáo trình đọc liền cả bài —

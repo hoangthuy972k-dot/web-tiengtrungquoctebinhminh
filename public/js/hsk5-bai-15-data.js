@@ -1538,85 +1538,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 (tr. 139), bài tập 3 (tr. 141) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'轻视',right:'对方'},
-  {left:'善于',right:'总结'},
-  {left:'糊涂的',right:'脑子'},
-  {left:'宝贵的',right:'经验'},
-  {left:'独立地',right:'生活'},
-  {left:'主动地',right:'帮助'},
+  {left:'宝贵的',right:'时间'},
+  {left:'独立',right:'生活'},
   {left:'形势',right:'紧张'},
-  {left:'克服',right:'毛病'},
+  {left:'车出了',right:'毛病'},
   {left:'下',right:'命令'},
-  {left:'具备',right:'资格'},
-  {left:'阻止',right:'战争'},
-  {left:'抽象的',right:'道理'},
   {left:'散布',right:'谣言'},
   {left:'坚守',right:'阵地'},
   {left:'取得',right:'胜利'},
-  {left:'军事',right:'力量'},
-  {left:'作战',right:'方案'},
   {left:'考虑',right:'再三'},
-  {left:'上了个',right:'大当'},
-  {left:'讽刺',right:'社会现象'}
+  {left:'主动',right:'进攻'},
+  {left:'作战',right:'方案'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'现在我们完全不了解对方的情况，就拿方案，这不是',blank:'纸上谈兵',post:'嘛！',hint:'(bàn suông trên giấy)',ans:'纸上谈兵'},
-  {pre:'赵括从小读了不少兵书，对',blank:'军事',post:'理论很了解。',hint:'(quân sự)',ans:'军事'},
-  {pre:'花木兰替父参军并打败',blank:'敌人',post:'，从而闻名天下。',hint:'(kẻ địch)',ans:'敌人'},
-  {pre:'现在常用这个成语讽刺那些只会空谈',blank:'理论',post:'的人。',hint:'(lý thuyết)',ans:'理论'},
-  {pre:'他虽然读了很多兵书，但是没有实际',blank:'作战',post:'的经验。',hint:'(đánh trận)',ans:'作战'},
-  {pre:'儿子的',blank:'毛病',post:'是只会讲大道理，缺乏实际锻炼。',hint:'(tật xấu)',ans:'毛病'},
-  {pre:'你说的很有',blank:'道理',post:'，我听你的。',hint:'(lý lẽ)',ans:'道理'},
-  {pre:'如果让他当了大将，',blank:'迟早',post:'会害了赵国。',hint:'(sớm muộn)',ans:'迟早',exp:'迟早 = sớm muộn gì cũng (chắc chắn sẽ xảy ra): 迟早会害了赵国.'},
-  {pre:'这一年正好秦国',blank:'军队',post:'来打赵国。',hint:'(quân đội)',ans:'军队'},
-  {pre:'公司',blank:'派',post:'他去上海分公司当总经理。',hint:'(cử đi)',ans:'派'},
-  {pre:'我们队的实力比对方',blank:'弱',post:'一点儿，大家要更加努力。',hint:'(yếu)',ans:'弱'},
-  {pre:'经过大家的努力，公司的',blank:'形势',post:'开始好转了。',hint:'(tình hình)',ans:'形势'},
-  {pre:'将军下了',blank:'命令',post:'，士兵们马上出发了。',hint:'(mệnh lệnh)',ans:'命令'},
-  {pre:'几个士兵',blank:'守',post:'在城门口，谁也进不去。',hint:'(canh giữ)',ans:'守'},
-  {pre:'没有命令，谁也不能离开',blank:'阵地',post:'。',hint:'(trận địa)',ans:'阵地'},
-  {pre:'这次夏令营是一个',blank:'挑战',post:'，看看你是不是真的可以独立了。',hint:'(thử thách)',ans:'挑战'},
-  {pre:'为什么每次老张',blank:'骂',post:'你，你都不出声？',hint:'(mắng)',ans:'骂'},
-  {pre:'你连一只小狗都怕，真是个',blank:'胆小鬼',post:'！',hint:'(đồ nhát gan)',ans:'胆小鬼'},
-  {pre:'在网上',blank:'散布',post:'谣言是违法的。',hint:'(tung, phát tán)',ans:'散布'},
-  {pre:'不要相信网上的',blank:'谣言',post:'，要多看正式的新闻。',hint:'(tin đồn)',ans:'谣言'},
-  {pre:'买东西要多比较，别',blank:'上当',post:'。',hint:'(mắc lừa)',ans:'上当'},
-  {pre:'朋友请他做总经理，他考虑',blank:'再三',post:'，最后还是拒绝了。',hint:'(nhiều lần)',ans:'再三',exp:'考虑再三 = suy nghĩ nhiều lần; 再三 có thể đứng sau động từ (khác 一再 chỉ đứng trước).'},
-  {pre:'学校正式',blank:'任命',post:'李老师为校长。',hint:'(bổ nhiệm)',ans:'任命'},
-  {pre:'谁都没有',blank:'资格',post:'轻视别人。',hint:'(tư cách)',ans:'资格'},
-  {pre:'',blank:'公元',post:'前260年，赵括带兵出战。',hint:'(Công nguyên)',ans:'公元'},
-  {pre:'买东西不要',blank:'盲目',post:'跟风，要想想自己是不是真的需要。',hint:'(mù quáng)',ans:'盲目'},
-  {pre:'这个',blank:'方案',post:'大家都同意了，下周就开始实行。',hint:'(phương án)',ans:'方案'},
-  {pre:'天一亮，军队就发起了',blank:'进攻',post:'。',hint:'(tấn công)',ans:'进攻'},
-  {pre:'这个故事',blank:'讽刺',post:'的是那些不懂得灵活变通的人。',hint:'(châm biếm)',ans:'讽刺'},
-  {pre:'学了语法以后，要学会',blank:'灵活',post:'运用。',hint:'(linh hoạt)',ans:'灵活'},
-  {pre:'“纸上谈兵”的故事发生在',blank:'战国',post:'末期。',hint:'(thời Chiến Quốc)',ans:'战国'}
+  {pre:'我们跟他们只是比赛，不要把对方当成',blank:'敌人',post:'。',hint:'(kẻ thù, quân địch)',ans:'敌人',exp:'敌人 = kẻ địch, kẻ thù; 对方 chỉ là phía bên kia, không mang nghĩa thù địch.'},
+  {pre:'这位爷爷年轻的时候在',blank:'军队',post:'里工作过十年。',hint:'(quân đội)',ans:'军队',exp:'军队 = quân đội; 在军队里 = trong quân đội.'},
+  {pre:'公司',blank:'派',post:'小王到河内去开会。',hint:'(cử, phái đi)',ans:'派',exp:'派 + người + 到/去 + nơi + V = cử ai đi làm gì.'},
+  {pre:'孩子做错了事，父母应该好好跟他讲道理，不要一开口就',blank:'骂',post:'他。',hint:'(mắng, chửi)',ans:'骂',exp:'骂 = mắng, chửi; 骂人 = chửi người. Trái với 讲道理 (giảng giải lý lẽ).'},
+  {pre:'“学校明天放假”的消息原来是',blank:'谣言',post:'，大家别再转发了。',hint:'(tin đồn nhảm)',ans:'谣言',exp:'谣言 = tin đồn không có thật; 散布谣言 = tung tin đồn.'},
+  {pre:'他连晚上一个人去厕所都不敢，大家笑他是',blank:'胆小鬼',post:'。',hint:'(đồ nhát gan)',ans:'胆小鬼',exp:'胆小鬼 = kẻ nhát gan (khẩu ngữ, hơi trêu chọc).'},
+  {pre:'公司',blank:'任命',post:'她为新的经理。',hint:'(bổ nhiệm)',ans:'任命',exp:'任命 + người + 为 + chức vụ = bổ nhiệm ai làm…; 为 đọc wéi.'},
+  {pre:'他还没满十八岁，没有参加这次考试的',blank:'资格',post:'。',hint:'(tư cách, đủ điều kiện)',ans:'资格',exp:'有/没有……的资格 = có/không đủ tư cách, điều kiện để làm gì.'},
+  {pre:'这篇文章用笑话的方式',blank:'讽刺',post:'了那些只会说不会做的人。',hint:'(châm biếm, chế giễu)',ans:'讽刺',exp:'讽刺 = châm biếm; 纸上谈兵 thường dùng để 讽刺 người chỉ biết nói lý thuyết.'},
+  {pre:'这本书讲的是',blank:'公元',post:'前五百年左右的历史。',hint:'(Công nguyên)',ans:'公元',exp:'公元前 + năm = năm … trước Công nguyên; 公元 + năm = năm … sau Công nguyên.'},
+  {pre:'士兵们在',blank:'阵地',post:'上守了三天三夜。',hint:'(trận địa)',ans:'阵地',exp:'阵地 = trận địa; 守阵地 / 坚守阵地 = giữ vững trận địa.'},
+  {pre:'他对',blank:'军事',post:'很感兴趣，读了很多关于战争的书。',hint:'(quân sự)',ans:'军事',exp:'军事 = quân sự (việc quân, chiến tranh): 军事理论, 军事家.'}
 ];
 
 // ══════════════════════════════════════════
 // SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['跟他','谈论','军事','，','没有人','说得过','他','。'],ans:'跟他谈论军事，没有人说得过他。',audio:'跟他谈论军事，没有人说得过他。'},
-  {words:['年轻人','记忆力好','，','这一点','我','比不过','你们','。'],ans:'年轻人记忆力好，这一点我比不过你们。',audio:'年轻人记忆力好，这一点我比不过你们。',alt:['年轻人记忆力好，我这一点比不过你们。']},
-  {words:['我们的','产品','在价格上','竞争不过','他们','。'],ans:'我们的产品在价格上竞争不过他们。',audio:'我们的产品在价格上竞争不过他们。',alt:['在价格上我们的产品竞争不过他们。']},
-  {words:['这些','问题','迟早','会','得到','解决','。'],ans:'这些问题迟早会得到解决。',audio:'这些问题迟早会得到解决。'},
-  {words:['如果','不','努力','，','你','迟早','会','后悔','的','。'],ans:'如果不努力，你迟早会后悔的。',audio:'如果不努力，你迟早会后悔的。'},
-  {words:['母亲','再三','阻止','赵王','任命','儿子','为','大将','。'],ans:'母亲再三阻止赵王任命儿子为大将。',audio:'母亲再三阻止赵王任命儿子为大将。'},
-  {words:['他','考虑','再三','，','最后','还是','拒绝了','。'],ans:'他考虑再三，最后还是拒绝了。',audio:'他考虑再三，最后还是拒绝了。'},
-  {words:['廉颇','命令','士兵们','坚守','阵地','。'],ans:'廉颇命令士兵们坚守阵地。',audio:'廉颇命令士兵们坚守阵地。'},
-  {words:['秦军','多次','挑战','，','骂他','是','胆小鬼','。'],ans:'秦军多次挑战，骂他是胆小鬼。',audio:'秦军多次挑战，骂他是胆小鬼。'},
-  {words:['他们','在赵国','四处','散布','谣言','。'],ans:'他们在赵国四处散布谣言。',audio:'他们在赵国四处散布谣言。'},
-  {words:['谁','都','没有','资格','轻视','别人','。'],ans:'谁都没有资格轻视别人。',audio:'谁都没有资格轻视别人。'},
-  {words:['赵王','听到','谣言','，','果然','上当','了','。'],ans:'赵王听到谣言，果然上当了。',audio:'赵王听到谣言，果然上当了。'},
-  {words:['这个故事','讽刺的是','那些','不懂得','灵活变通','的人','。'],ans:'这个故事讽刺的是那些不懂得灵活变通的人。',audio:'这个故事讽刺的是那些不懂得灵活变通的人。'}
+  {words:['在我们班','，','没有人','跑得过','他','。'],ans:'在我们班，没有人跑得过他。',audio:'在我们班，没有人跑得过他。'},
+  {words:['我的','力气','比较弱','，','搬东西','肯定','比不过','哥哥','。'],ans:'我的力气比较弱，搬东西肯定比不过哥哥。',audio:'我的力气比较弱，搬东西肯定比不过哥哥。'},
+  {words:['只要','每天','坚持练习','，','你的汉语','迟早','会','说得','很流利','。'],ans:'只要每天坚持练习，你的汉语迟早会说得很流利。',audio:'只要每天坚持练习，你的汉语迟早会说得很流利。'},
+  {words:['他','再三','向我','道歉','，','我','就','原谅','他了','。'],ans:'他再三向我道歉，我就原谅他了。',audio:'他再三向我道歉，我就原谅他了。'},
+  {words:['光懂','理论','还不够','，','还要','联系','实际','。'],ans:'光懂理论还不够，还要联系实际。',audio:'光懂理论还不够，还要联系实际。'},
+  {words:['妈妈','让我','别','盲目','相信','网上的','广告','。'],ans:'妈妈让我别盲目相信网上的广告。',audio:'妈妈让我别盲目相信网上的广告。'},
+  {words:['经过','半年的','训练','，','我们','终于','取得了','胜利','。'],ans:'经过半年的训练，我们终于取得了胜利。',audio:'经过半年的训练，我们终于取得了胜利。'},
+  {words:['他','主动','帮我','把行李','搬到了','楼上','。'],ans:'他主动帮我把行李搬到了楼上。',audio:'他主动帮我把行李搬到了楼上。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1624,142 +1593,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {
-    wrong:'我相信这样的安排他是____不会同意的。',
-    opts:['完全','绝对','已经','曾经'],
-    ans:1,
-    exp:'Nhấn mạnh phán đoán chắc chắn 100% → 绝对不会 (câu 练习 2 của sách). 完全 nói mức độ trọn vẹn (完全了解, 完全改变); 已经, 曾经 là phó từ thời gian, không hợp nghĩa.'
-  },
-  {
-    wrong:'遇到问题，他总是____向老师请教，从来不等老师来问他。',
-    opts:['主动','被动','盲目','糊涂'],
-    ans:0,
-    exp:'Tự mình làm trước, không đợi người khác → 主动. 被动 ngược nghĩa; 盲目, 糊涂 mang ý chê, không hợp với 总是向老师请教.'
-  },
-  {
-    wrong:'谁坚持到最后，谁就是这场比赛的____者。',
-    opts:['成功','胜利','主动','独立'],
-    ans:1,
-    exp:'Đánh bại đối phương trong thi đấu → 胜利者 (người chiến thắng). 成功 không có nghĩa đánh bại đối phương; 主动, 独立 không ghép với 者 ở đây.'
-  },
-  {
-    wrong:'秦人必须想办法叫赵国把廉颇____回去。',
-    opts:['调','搬','骂','守'],
-    ans:0,
-    exp:'调回去 = điều (người) về, chuyển vị trí công tác. 搬 dùng cho đồ vật, dọn nhà; 骂 là chửi; 守 là canh giữ — đều không đi với 回去 theo nghĩa này.'
-  },
-  {
-    wrong:'我想帮那个小孩开门，却被朋友____了。',
-    opts:['停止','防止','禁止','阻止'],
-    ans:3,
-    exp:'Ngăn một người đang định làm gì → 阻止 (câu 练习 1 của sách). 停止 là tự dừng lại; 防止 là đề phòng việc xấu; 禁止 là cấm theo quy định (禁止吸烟).'
-  },
-  {
-    wrong:'家长应尽量创造一个能让孩子____生活和学习的环境。',
-    opts:['绝对','独立','主动','宝贵'],
-    ans:1,
-    exp:'独立生活 = sống tự lập (bảng 词语搭配). 主动生活 không phải cách nói; 绝对, 宝贵 không hợp nghĩa.'
-  },
-  {
-    wrong:'你这脑子可真____，银行卡的密码怎么能忘了呢？',
-    opts:['灵活','聪明','糊涂','宝贵'],
-    ans:2,
-    exp:'Quên mật khẩu → chê đầu óc lú lẫn → 糊涂. 灵活, 聪明 là khen — trái với vế sau; 宝贵 không tả đầu óc.'
-  },
-  {
-    wrong:'比赛的时候千万不能____对方，哪怕对方比我们弱。',
-    opts:['重视','讽刺','挑战','轻视'],
-    ans:3,
-    exp:'哪怕对方比我们弱 — dù đối thủ yếu cũng đừng coi thường → 轻视. 重视 ngược nghĩa (不能重视 vô lý); 讽刺, 挑战 không hợp ngữ cảnh.'
-  },
-  {
-    wrong:'任何经验都是____的，但并不是任何时候都是有效的。',
-    opts:['宝贵','糊涂','盲目','弱'],
-    ans:0,
-    exp:'Kinh nghiệm là thứ quý giá → 宝贵 (câu 练习 1 của sách). Ba từ còn lại không tả 经验.'
-  },
-  {
-    wrong:'两千多年前，____名将赵奢有个儿子叫赵括。',
-    opts:['秦国','赵国','汉朝','唐朝'],
-    ans:1,
-    exp:'Triệu Xa là danh tướng nước Triệu → 赵国. Nhà Hán, nhà Đường ra đời sau thời Chiến Quốc.'
-  },
-  {
-    wrong:'赵括的父亲____心里明白，儿子只会讲大道理。',
-    opts:['廉颇','赵王','赵奢','秦王'],
-    ans:2,
-    exp:'Cha của Triệu Quát là Triệu Xa (赵奢). Liêm Pha là lão tướng khác; vua Triệu là người bổ nhiệm Triệu Quát.'
-  },
-  {
-    wrong:'____从小读了不少兵书，跟别人谈论起军事来，没有人说得过他。',
-    opts:['廉颇','赵括','赵奢','花木兰'],
-    ans:1,
-    exp:'Người thuộc làu binh thư, không ai nói lại được là Triệu Quát (赵括) — nhân vật chính của thành ngữ 纸上谈兵.'
-  },
-  {
-    wrong:'战国末期，____渐渐强大，最后打败其他六国，统一了中国。',
-    opts:['赵国','齐国','秦国','燕国'],
-    ans:2,
-    exp:'Nước thống nhất Trung Quốc năm 221 TCN là nước Tần → 秦国 (phần 热身 của sách).'
-  },
-  {
-    wrong:'赵国派老将____带20万大军迎战，他命令士兵们坚守阵地。',
-    opts:['赵括','廉颇','赵奢','李广'],
-    ans:1,
-    exp:'Lão tướng giữ vững trận địa là Liêm Pha (廉颇). 李广 là tướng thời Tây Hán (bài 7).'
-  },
-  {
-    wrong:'这项实验如果研究____，将给成千上万的病人带来希望。',
-    opts:['成功','胜利','主动','独立'],
-    ans:0,
-    exp:'研究成功 — 成功 làm bổ ngữ, dùng cho thí nghiệm; 胜利 chỉ dùng cho chiến tranh, thi đấu hoặc việc lớn làm trạng ngữ (词语辨析 của bài).'
-  },
-  {
-    wrong:'师傅，最近我这车出了点儿____，空调总是不太凉。',
-    opts:['缺点','毛病','道理','资格'],
-    ans:1,
-    exp:'Máy móc trục trặc → 出毛病. 缺点 không dùng cho máy hỏng; 道理, 资格 không hợp nghĩa (câu 练习 2 của sách).'
-  },
-  {
-    wrong:'父母给我讲了许多做人的____，对我的影响很大。',
-    opts:['理论','道理','方案','形势'],
-    ans:1,
-    exp:'做人的道理 = đạo lý làm người → 道理. 理论 là hệ thống tri thức khoa học (câu 练习 2 của sách).'
-  },
-  {
-    wrong:'跟别人谈论起军事来，没有人说得____他。',
-    opts:['过','完','到','起'],
-    ans:0,
-    exp:'V + 得/不 + 过 = hơn được / không hơn được ai (điểm ngữ pháp 1 của bài): 说得过他 = nói thắng được hắn.'
-  }
+  {wrong:'这台电脑才用了一年就出____了，打开以后总是没有声音。',opts:['毛病','缺点','理论','形势'],ans:0,exp:'Máy móc trục trặc → 出毛病. 缺点 là khuyết điểm (của người, phương án), không “出” được; 理论, 形势 không hợp nghĩa.'},
+  {wrong:'他把自己的优点和____都写在了纸上，想看看自己适合做什么工作。',opts:['缺点','毛病','道理','资格'],ans:0,exp:'优点 đi cặp với 缺点 (ưu điểm — khuyết điểm). 毛病 không làm cặp với 优点; 道理, 资格 không hợp nghĩa.'},
+  {wrong:'明明是你错了，你还不讲____，太让人生气了！',opts:['道理','理论','方案','命令'],ans:0,exp:'讲道理 = biết lẽ phải, nói có lý; 不讲道理 = ngang ngược. Không nói 讲理论 theo nghĩa này; 方案, 命令 không hợp.'},
+  {wrong:'他大学学的是经济____，可是从来没做过生意。',opts:['理论','道理','形势','资格'],ans:0,exp:'Tri thức có hệ thống của một ngành → 理论 (经济理论, 军事理论). 道理 là lẽ phải trong cuộc sống; 形势, 资格 không hợp.'},
+  {wrong:'他第一次上台表演就非常____，观众都很喜欢。',opts:['成功','胜利','灵活','宝贵'],ans:0,exp:'Làm một việc đạt kết quả tốt → 成功 (表演成功, 实验成功). 胜利 dùng khi đánh bại đối phương (chiến tranh, thi đấu); 灵活, 宝贵 không hợp.'},
+  {wrong:'你____不能把这件事告诉别人！',opts:['绝对','迟早','宝贵','灵活'],ans:0,exp:'绝对 + 不/没 = tuyệt đối không. 迟早 là “sớm muộn”, không đi với 不能; 宝贵, 灵活 là tính từ, không hợp.'},
+  {wrong:'经理____提醒大家，开会的时候要关手机。',opts:['再三','灵活','宝贵','盲目'],ans:0,exp:'再三 + V = nhắc đi nhắc lại nhiều lần. 灵活, 宝贵 không làm trạng ngữ cho 提醒; 盲目 (mù quáng) không hợp nghĩa.'},
+  {wrong:'你别再这样乱花钱了，____会后悔的。',opts:['迟早','再三','主动','独立'],ans:0,exp:'迟早会……的 = sớm muộn gì cũng sẽ…. 再三 chỉ số lần, không đi với 会后悔; 主动, 独立 không hợp nghĩa.'},
+  {wrong:'他十八岁就离开家，开始____生活了。',opts:['独立','主动','灵活','宝贵'],ans:0,exp:'独立生活 = sống tự lập. Không nói 主动生活, 灵活生活; 宝贵 là tính từ “quý giá”.'},
+  {wrong:'这家店说买一送一，其实价格比别的店贵多了，你____了！',opts:['上当','骗','阻止','散布'],ans:0,exp:'上当 = mắc lừa (chủ ngữ là người bị lừa). 骗 là “lừa người khác” — 你骗了 thành “cậu đi lừa”; muốn dùng thì phải nói 你被骗了. 阻止, 散布 không hợp.'},
+  {wrong:'他做事从来不先想一想，总是____地跟着别人做。',opts:['盲目','灵活','宝贵','绝对'],ans:0,exp:'盲目地跟着别人 = làm theo người khác một cách mù quáng. 灵活 là khen, trái với 从来不先想一想; 宝贵, 绝对 không hợp.'},
+  {wrong:'现在找工作的____不太好，你得早点儿准备。',opts:['形势','形式','方案','命令'],ans:0,exp:'形势 = tình hình, cục diện (形势很好/不好). 形式 (bài 14) là hình thức — dễ nhầm vì cùng âm xíng; 方案, 命令 không hợp.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Về tài ăn nói thì tôi không nói lại được cậu ấy, nhưng nếu so xem đầu óc ai linh hoạt hơn thì cậu ấy chắc chắn không bì được với tôi.', zh:'论口才我说不过他，可要是比谁的思路更灵活，他绝对比不过我。', py:'Lùn kǒucái wǒ shuō bu guò tā, kě yàoshi bǐ shéi de sīlù gèng línghuó, tā juéduì bǐ bu guò wǒ.', goiY:['V + 不过','要是……','灵活','绝对'], giai:'V + 不 + 过 + người = "không hơn được/không bì được ai"; người bị so đặt SAU 过 (说不过他), không nói 不过他说.'},
-  {vi:'Nếu cậu cứ tiếp tục ngày nào cũng thức khuya chơi game thế này, sớm muộn gì cơ thể cũng sẽ sinh bệnh.', zh:'如果你再这样天天熬夜打游戏，身体迟早会出毛病的。', py:'Rúguǒ nǐ zài zhèyàng tiāntiān áoyè dǎ yóuxì, shēntǐ chízǎo huì chū máobing de.', goiY:['如果……','迟早会……的','毛病'], giai:'迟早 (sớm muộn) đứng sau chủ ngữ, trước 会/要, cuối câu thường có 的 để khẳng định; 出毛病 = "sinh bệnh, trục trặc".'},
-  {vi:'Cô giáo đã nhắc đi nhắc lại là phải kiểm tra phiếu trả lời thật kỹ, vậy mà tôi vẫn nhất thời lơ đễnh điền nhầm số câu.', zh:'老师再三提醒我们要仔细检查答题卡，可是我还是一时糊涂把题号填错了。', py:'Lǎoshī zàisān tíxǐng wǒmen yào zǐxì jiǎnchá dátíkǎ, kěshì wǒ háishi yìshí hútu bǎ tíhào tiáncuò le.', goiY:['再三','可是','糊涂'], giai:'再三 + động từ = "nhiều lần, hết lần này đến lần khác" (mạnh hơn 多次); 一时糊涂 = "nhất thời hồ đồ/lơ đễnh".'},
-  {vi:'Tin tức trên mạng thật giả khó phân biệt, một khi chúng ta dễ dàng tin vào tin đồn rồi chia sẻ khắp nơi thì rất dễ bị lừa, thậm chí còn làm tổn thương người khác.', zh:'网上的消息真假难辨，我们一旦轻易相信谣言并四处转发，就很容易上当，甚至还会伤害别人。', py:'Wǎng shang de xiāoxi zhēn jiǎ nán biàn, wǒmen yídàn qīngyì xiāngxìn yáoyán bìng sìchù zhuǎnfā, jiù hěn róngyì shàngdàng, shènzhì hái huì shānghài biéren.', goiY:['一旦……就……','甚至','谣言','上当'], giai:'一旦 nêu giả thiết về việc có thể xảy ra, vế sau 就 nói hậu quả; 上当 là cụm động từ = "mắc lừa", không mang tân ngữ phía sau.'},
-  {vi:'Học vật lý, thay vì chỉ học thuộc lý thuyết và công thức, chi bằng tự tay làm thí nghiệm nhiều hơn, nếu không sẽ thành ra lý thuyết suông.', zh:'学物理与其只背理论和公式，不如多动手做实验，不然就成了纸上谈兵。', py:'Xué wùlǐ yǔqí zhǐ bèi lǐlùn hé gōngshì, bùrú duō dòngshǒu zuò shíyàn, bùrán jiù chéngle zhǐshàng tánbīng.', goiY:['与其……不如……','不然','理论','纸上谈兵'], giai:'与其 A 不如 B: chọn B là cách tốt hơn; 纸上谈兵 (bàn binh trên giấy) dịch thoáng là "lý thuyết suông, nói mà không làm được".'},
-  {vi:'Tuy đề thi của cuộc thi toán lần này rất khó, nhưng cậu ấy lại chủ động đăng ký để thử thách bản thân.', zh:'虽然这次数学竞赛的题目难度很大，他却主动报了名，想挑战一下自己。', py:'Suīrán zhè cì shùxué jìngsài de tímù nándù hěn dà, tā què zhǔdòng bàole míng, xiǎng tiǎozhàn yíxià zìjǐ.', goiY:['虽然……却……','主动','挑战'], giai:'却 là phó từ, phải đứng SAU chủ ngữ (他却……), không đứng đầu vế như "nhưng"; 报名 tách được nên nói 报了名.'},
-  {vi:'Chỉ khi thật sự hiểu được khó khăn của người khác, chúng ta mới có tư cách đánh giá họ; bằng không thì đừng mù quáng coi thường bất kỳ ai.', zh:'只有真正了解别人的困难，我们才有资格评价别人，否则就不应该盲目轻视任何人。', py:'Zhǐyǒu zhēnzhèng liǎojiě biéren de kùnnan, wǒmen cái yǒu zīgé píngjià biéren, fǒuzé jiù bù yīnggāi mángmù qīngshì rènhé rén.', goiY:['只有……才……','否则','资格','轻视'], giai:'只有……才…… nêu điều kiện duy nhất; 否则 (nếu không thì) mở đầu vế cuối, nói điều xảy ra khi điều kiện không được thoả.'},
-  {vi:'Mặc dù bố mẹ đã nhiều lần ngăn cản, cậu ấy vẫn quyết định tự mình hoàn thành chuyến đạp xe đường dài lần này, vì cậu muốn chứng minh mình đã trưởng thành.', zh:'尽管爸妈再三阻止，他还是决定独立完成这次长途骑行，因为他想证明自己已经长大了。', py:'Jǐnguǎn bà mā zàisān zǔzhǐ, tā háishi juédìng dúlì wánchéng zhè cì chángtú qíxíng, yīnwèi tā xiǎng zhèngmíng zìjǐ yǐjīng zhǎngdà le.', goiY:['尽管……还是……','再三','阻止','独立'], giai:'尽管 nêu sự thật trái chiều, vế sau dùng 还是/却; 再三 đặt trước động từ 阻止, không đặt sau.'},
-  {vi:'Một khi cục diện trận đấu thay đổi, chúng ta phải linh hoạt điều chỉnh phương án chứ không phải khư khư giữ kế hoạch cũ, nếu không sớm muộn gì cũng sẽ thua.', zh:'比赛的形势一旦发生变化，我们就得灵活调整方案，而不是死守原来的计划，否则迟早会输掉比赛。', py:'Bǐsài de xíngshì yídàn fāshēng biànhuà, wǒmen jiù děi línghuó tiáozhěng fāng’àn, ér bú shì sǐ shǒu yuánlái de jìhuà, fǒuzé chízǎo huì shūdiào bǐsài.', goiY:['一旦……就……','否则','迟早','方案'], giai:'一旦 đặt sau chủ ngữ 比赛的形势; 而不是 bổ sung ý phủ định cho vế trước; 迟早会…… = "sớm muộn cũng sẽ…".'},
-  {vi:'Xét về năng khiếu, có lẽ tôi không bì được với những bạn học giỏi trong lớp, nhưng chỉ cần quý trọng thời gian quý báu, luyện đi luyện lại những phần mình còn yếu, thì sớm muộn gì tôi cũng đuổi kịp họ.', zh:'论天赋，我或许比不过班里的学霸，但只要珍惜宝贵的时间，反复练习自己的弱项，就迟早能赶上他们。', py:'Lùn tiānfù, wǒ huòxǔ bǐ bu guò bān li de xuébà, dàn zhǐyào zhēnxī bǎoguì de shíjiān, fǎnfù liànxí zìjǐ de ruòxiàng, jiù chízǎo néng gǎnshàng tāmen.', goiY:['比不过','只要……就……','宝贵','迟早'], giai:'比不过 = không bì được (người bị so đứng sau 过); 只要……就…… nêu điều kiện đủ, 迟早 đứng sau 就 và trước 能.'}
+  {vi:'Về ăn nói thì tôi không nói lại được cậu ấy, nhưng nếu so xem tư duy ai linh hoạt hơn thì cậu ấy chắc chắn không bì được với tôi.',zh:'说话我说不过他，可要是比谁的思维更灵活，他绝对比不过我。',py:'Shuōhuà wǒ shuō bu guò tā, kě yàoshi bǐ shéi de sīwéi gèng línghuó, tā juéduì bǐ bu guò wǒ.',goiY:['V + 不过','要是……','灵活','绝对'],giai:'V + 不 + 过 + người = "không hơn được/không bì được ai"; người bị so đặt SAU 过 (说不过他), không nói 不过他说; 思维 ôn bài 13.'},
+  {vi:'Nếu cậu cứ tiếp tục ngày nào cũng thức khuya chơi game thế này, sớm muộn gì cơ thể cũng sẽ sinh bệnh.',zh:'如果你再这样天天熬夜打游戏，身体迟早会出毛病的。',py:'Rúguǒ nǐ zài zhèyàng tiāntiān áoyè dǎ yóuxì, shēntǐ chízǎo huì chū máobing de.',goiY:['如果……','迟早会……的','毛病'],giai:'迟早 (sớm muộn) đứng sau chủ ngữ, trước 会/要, cuối câu thường có 的 để khẳng định; 出毛病 = "sinh bệnh, trục trặc".'},
+  {vi:'Cô giáo đã nhắc đi nhắc lại là phải kiểm tra đáp án thật kỹ, vậy mà tôi vẫn nhất thời lơ đễnh ghi nhầm số câu.',zh:'老师再三提醒我们要仔细检查答案，可是我还是一时糊涂把题号写错了。',py:'Lǎoshī zàisān tíxǐng wǒmen yào zǐxì jiǎnchá dá\'àn, kěshì wǒ háishi yìshí hútu bǎ tíhào xiěcuò le.',goiY:['再三','可是','糊涂','把'],giai:'再三 + động từ = "nhiều lần, hết lần này đến lần khác"; 一时糊涂 = "nhất thời hồ đồ/lơ đễnh"; câu 把 + V + 错了 nói kết quả sai.'},
+  {vi:'Tin tức trên mạng có thật có giả, nếu chúng ta tuỳ tiện tin vào tin đồn rồi chia sẻ khắp nơi thì rất dễ bị lừa, thậm chí còn làm tổn thương người khác.',zh:'网上的消息有真有假，如果我们随便相信谣言并四处转发，就很容易上当，甚至还会伤害别人。',py:'Wǎng shang de xiāoxi yǒu zhēn yǒu jiǎ, rúguǒ wǒmen suíbiàn xiāngxìn yáoyán bìng sìchù zhuǎnfā, jiù hěn róngyì shàngdàng, shènzhì hái huì shānghài biéren.',goiY:['如果……就……','甚至','谣言','上当'],giai:'如果……就…… nêu giả thiết và hậu quả; 上当 là cụm động từ = "mắc lừa", không mang tân ngữ phía sau; 甚至 đẩy mức độ lên cao hơn.'},
+  {vi:'Chỉ khi thật sự hiểu được khó khăn của người khác, chúng ta mới có tư cách phê bình họ; bằng không thì đừng mù quáng coi thường bất kỳ ai.',zh:'只有真正了解别人的困难，我们才有资格批评别人，否则就不应该盲目轻视任何人。',py:'Zhǐyǒu zhēnzhèng liǎojiě biéren de kùnnan, wǒmen cái yǒu zīgé pīpíng biéren, fǒuzé jiù bù yīnggāi mángmù qīngshì rènhé rén.',goiY:['只有……才……','否则','资格','轻视'],giai:'只有……才…… nêu điều kiện duy nhất; 否则 (nếu không thì) mở đầu vế cuối, nói điều xảy ra khi điều kiện không được thoả.'},
+  {vi:'Mặc dù bố mẹ đã nhiều lần ngăn cản, cậu ấy vẫn quyết định tự mình hoàn thành chuyến đi đường dài lần này, vì cậu muốn chứng minh mình đã trưởng thành.',zh:'尽管父母再三阻止，他还是决定独立完成这次长途旅行，因为他想证明自己已经长大了。',py:'Jǐnguǎn fùmǔ zàisān zǔzhǐ, tā háishi juédìng dúlì wánchéng zhè cì chángtú lǚxíng, yīnwèi tā xiǎng zhèngmíng zìjǐ yǐjīng zhǎngdà le.',goiY:['尽管……还是……','再三','阻止','独立'],giai:'尽管 nêu sự thật trái chiều, vế sau dùng 还是/却; 再三 đặt trước động từ 阻止, không đặt sau.'}
 ];
+
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Triệu Quát từ nhỏ đã đọc làu binh thư, hễ bàn đến chuyện quân sự thì ngay cả cha cậu là Triệu Xa cũng không nói lại được cậu.', zh:'赵括从小熟读兵书，谈起军事来，连他的父亲赵奢也说不过他。', py:'Zhào Kuò cóngxiǎo shúdú bīngshū, tán qǐ jūnshì lai, lián tā de fùqin Zhào Shē yě shuō bu guò tā.', goiY:['连……也…… = ngay cả… cũng…','说不过 = nói không lại','军事 = quân sự'], giai:'连 + người + 也 + V不过 = "ngay cả … cũng không (nói) lại được"; 谈起……来 = "hễ bàn đến…".'},
-  {vi:'Thế nhưng Triệu Xa lại cho rằng con trai chỉ biết bàn binh trên giấy, nếu để cậu ta cầm quân đánh trận thì sớm muộn cũng sẽ hại nước Triệu.', zh:'赵奢却认为儿子只会纸上谈兵，如果让他带兵打仗，迟早会害了赵国。', py:'Zhào Shē què rènwéi érzi zhǐ huì zhǐshàng tánbīng, rúguǒ ràng tā dài bīng dǎzhàng, chízǎo huì hàile Zhàoguó.', goiY:['却 = lại (trái với mong đợi)','纸上谈兵 = bàn binh trên giấy','迟早会…… = sớm muộn sẽ…'], giai:'却 đứng sau chủ ngữ, đối lập với câu trước (người khác khen, cha lại lo); 如果……，迟早会…… = "nếu… thì sớm muộn sẽ…".'},
-  {vi:'Liêm Pha biết quân đội nước Triệu yếu hơn quân Tần, vì vậy ra lệnh cho binh lính giữ vững trận địa, tuyệt đối không được chủ động ra đánh.', zh:'廉颇知道赵国的军队比秦军弱，于是命令士兵坚守阵地，绝对不许主动出战。', py:'Lián Pō zhīdào Zhàoguó de jūnduì bǐ Qín jūn ruò, yúshì mìnglìng shìbīng jiānshǒu zhèndì, juéduì bù xǔ zhǔdòng chūzhàn.', goiY:['于是 = thế là, vì vậy','阵地 = trận địa','主动 = chủ động'], giai:'于是 nối hành động xảy ra tiếp theo như kết quả tự nhiên của vế trước; 命令 + người + V = "ra lệnh cho ai làm gì".'},
-  {vi:'Quân Tần hết lần này đến lần khác kéo đến khiêu chiến, thậm chí còn mắng Liêm Pha là đồ hèn nhát, nhưng ông nhất quyết không mắc mưu, trước sau vẫn không chịu xuất quân.', zh:'秦军三番五次前来挑战，甚至骂廉颇是胆小鬼，可他就是不上当，始终不肯出兵。', py:'Qín jūn sānfān-wǔcì qiánlái tiǎozhàn, shènzhì mà Lián Pō shì dǎnxiǎoguǐ, kě tā jiùshì bú shàngdàng, shǐzhōng bù kěn chū bīng.', goiY:['甚至 = thậm chí','胆小鬼 = kẻ nhát gan','始终 = trước sau, từ đầu đến cuối'], giai:'甚至 đưa ra hành động ở mức cao hơn (từ khiêu chiến đến chửi mắng); 就是不…… = "nhất quyết không…".'},
-  {vi:'Thấy đánh mạnh không ăn thua, nước Tần bèn sai người sang nước Triệu tung tin đồn rằng điều quân Tần sợ nhất không phải là Liêm Pha mà là Triệu Quát.', zh:'秦国见硬攻不行，就派人到赵国散布谣言，说秦军最怕的不是廉颇，而是赵括。', py:'Qínguó jiàn yìng gōng bù xíng, jiù pài rén dào Zhàoguó sànbù yáoyán, shuō Qín jūn zuì pà de bú shì Lián Pō, ér shì Zhào Kuò.', goiY:['不是……而是…… = không phải… mà là…','散布谣言 = tung tin đồn','派 = cử, sai'], giai:'见……就…… = "thấy… bèn…"; 散布谣言 dịch "tung tin đồn", không dịch "phân phát tin đồn".'},
-  {vi:'Vua Triệu quả nhiên mắc mưu, phong Triệu Quát làm đại tướng; mẹ Triệu Quát nhiều lần xin vua rút lại mệnh lệnh, nhưng vua Triệu hoàn toàn không nghe.', zh:'赵王果然上当，任命赵括为大将，赵括的母亲再三请求赵王收回命令，可是赵王根本不听。', py:'Zhào wáng guǒrán shàngdàng, rènmìng Zhào Kuò wéi dàjiàng, Zhào Kuò de mǔqin zàisān qǐngqiú Zhào wáng shōuhuí mìnglìng, kěshì Zhào wáng gēnběn bù tīng.', goiY:['再三 = nhiều lần','任命……为…… = bổ nhiệm… làm…','果然 = quả nhiên'], giai:'任命 + người + 为 + chức vụ = "bổ nhiệm ai làm…" (为 đọc wéi); 再三请求 = "nhiều lần khẩn cầu"; 根本不 = "hoàn toàn không".'},
-  {vi:'Triệu Quát vừa đến tiền tuyến liền thay đổi phương án tác chiến của Liêm Pha, mù quáng hạ lệnh cho toàn quân chủ động tấn công, kết quả là trúng mai phục của quân Tần.', zh:'赵括一到前线就改变了廉颇的作战方案，盲目地下令全军主动进攻，结果中了秦军的埋伏。', py:'Zhào Kuò yí dào qiánxiàn jiù gǎibiànle Lián Pō de zuòzhàn fāng’àn, mángmù de xiàlìng quán jūn zhǔdòng jìngōng, jiéguǒ zhòngle Qín jūn de máifu.', goiY:['一……就…… = vừa… liền…','盲目 = mù quáng','结果 = kết quả là'], giai:'一……就…… nối hai hành động liền nhau; 结果 mở đầu vế cuối nêu kết cục (thường là xấu); 中埋伏 đọc zhòng = "trúng mai phục".'},
-  {vi:'Triệu Quát tưởng rằng chỉ cần dám tấn công là nhất định sẽ giành chiến thắng, nào ngờ bản thân đã sớm rơi vào bẫy của kẻ địch.', zh:'赵括以为只要敢于进攻，就一定能取得胜利，却没想到自己早已落入了敌人的圈套。', py:'Zhào Kuò yǐwéi zhǐyào gǎnyú jìngōng, jiù yídìng néng qǔdé shènglì, què méi xiǎngdào zìjǐ zǎoyǐ luòrùle dírén de quāntào.', goiY:['以为 = tưởng rằng (mà sai)','只要……就…… = chỉ cần… là…','却 = lại, nhưng lại','敌人 = kẻ địch'], giai:'以为 = tưởng (điều hoá ra sai), khác 认为; 只要……就…… nằm trong phần 以为; 却没想到 = "nào ngờ".'},
-  {vi:'Trong cuộc chiến năm 260 trước Công nguyên này, bốn mươi vạn quân Triệu gần như bị tiêu diệt toàn bộ, nước Triệu vì thế mà suy yếu nặng nề, từ đó không còn đủ sức đối chọi với nước Tần nữa.', zh:'公元前260年的这场战争中，赵国四十万军队几乎全军覆没，因此元气大伤，从此再也无力与秦国抗衡了。', py:'Gōngyuán qián èrbǎi liùshí nián de zhè chǎng zhànzhēng zhōng, Zhàoguó sìshí wàn jūnduì jīhū quán jūn fùmò, yīncǐ yuánqì dà shāng, cóngcǐ zài yě wúlì yǔ Qínguó kànghéng le.', goiY:['公元前 = trước Công nguyên','因此 = vì thế','全军覆没 = toàn quân bị tiêu diệt'], giai:'公元前260年 đọc là "năm 260 trước Công nguyên"; 因此 nối nguyên nhân (thua trận) với kết quả (suy yếu); 再也 + 不/无…… = "không bao giờ… nữa".'},
-  {vi:'Người ta dùng thành ngữ "bàn binh trên giấy" để châm biếm những kẻ chỉ hiểu lý thuyết mà không biết vận dụng linh hoạt; nó cho chúng ta biết: kiến thức sách vở dù phong phú đến đâu, không gắn với thực tế thì cũng vô ích.', zh:'人们用“纸上谈兵”讽刺只懂理论却不会灵活运用的人，它告诉我们：书本知识再丰富，不跟实际结合也没有用。', py:'Rénmen yòng “zhǐshàng tánbīng” fěngcì zhǐ dǒng lǐlùn què bú huì línghuó yùnyòng de rén, tā gàosu wǒmen: shūběn zhīshi zài fēngfù, bù gēn shíjì jiéhé yě méiyǒu yòng.', goiY:['却 = nhưng lại','再……也…… = dù… đến đâu cũng…','讽刺 = châm biếm','灵活运用 = vận dụng linh hoạt'], giai:'再 + tính từ，也…… là cấu trúc nhượng bộ = "dù … đến mấy cũng…"; 只懂理论却不会…… — 却 nối hai ý trái ngược của cùng một người.'}
+  {vi:'Triệu Quát từ nhỏ đã mê đọc binh thư, hễ bàn đến chuyện quân sự thì ngay cả cha cậu là Triệu Xa cũng không nói lại được cậu.',zh:'赵括从小就爱看兵书，谈起军事来，连他的父亲赵奢也说不过他。',py:'Zhào Kuò cóngxiǎo jiù ài kàn bīngshū, tán qǐ jūnshì lai, lián tā de fùqin Zhào Shē yě shuō bu guò tā.',goiY:['连……也…… = ngay cả… cũng…','说不过 = nói không lại','军事 = quân sự'],giai:'连 + người + 也 + V不过 = "ngay cả … cũng không (nói) lại được"; 谈起……来 = "hễ bàn đến…".'},
+  {vi:'Thế nhưng Triệu Xa lại thấy con trai chỉ biết bàn binh trên giấy, nếu để cậu ta dẫn quân đi đánh trận thì sớm muộn cũng sẽ gây ra rắc rối lớn cho nước Triệu.',zh:'赵奢却觉得儿子只会纸上谈兵，要是让他带着军队去作战，迟早会给赵国带来大麻烦。',py:'Zhào Shē què juéde érzi zhǐ huì zhǐshàng tánbīng, yàoshi ràng tā dàizhe jūnduì qù zuòzhàn, chízǎo huì gěi Zhàoguó dàilái dà máfan.',goiY:['却 = lại (trái với mong đợi)','纸上谈兵 = bàn binh trên giấy','迟早会…… = sớm muộn sẽ…'],giai:'却 đứng sau chủ ngữ, đối lập với câu trước (người khác khen, cha lại lo); 要是……，迟早会…… = "nếu… thì sớm muộn sẽ…"; 给……带来麻烦 = gây rắc rối cho….'},
+  {vi:'Liêm Pha biết quân đội nước Triệu yếu hơn quân Tần, vì vậy ra lệnh cho binh lính giữ vững trận địa, tuyệt đối không được chủ động ra đánh.',zh:'廉颇知道赵国的军队比秦军弱，于是命令士兵坚守阵地，绝对不能主动出战。',py:'Lián Pō zhīdào Zhàoguó de jūnduì bǐ Qín jūn ruò, yúshì mìnglìng shìbīng jiānshǒu zhèndì, juéduì bù néng zhǔdòng chūzhàn.',goiY:['于是 = thế là, vì vậy','阵地 = trận địa','主动 = chủ động'],giai:'于是 nối hành động xảy ra tiếp theo như kết quả tự nhiên của vế trước; 命令 + người + V = "ra lệnh cho ai làm gì".'},
+  {vi:'Thấy đánh không lại Liêm Pha, nước Tần bèn sai người sang nước Triệu tung tin đồn rằng điều quân Tần sợ nhất không phải là Liêm Pha mà là Triệu Quát.',zh:'秦国看打不过廉颇，就派人到赵国散布谣言，说秦军最怕的不是廉颇，而是赵括。',py:'Qínguó kàn dǎ bu guò Lián Pō, jiù pài rén dào Zhàoguó sànbù yáoyán, shuō Qín jūn zuì pà de bú shì Lián Pō, ér shì Zhào Kuò.',goiY:['不是……而是…… = không phải… mà là…','散布谣言 = tung tin đồn','派 = cử, sai'],giai:'打不过 = đánh không lại (V + 不过); 散布谣言 dịch "tung tin đồn", không dịch "phân phát tin đồn".'},
+  {vi:'Vua Triệu quả nhiên mắc mưu, phong Triệu Quát làm đại tướng; mẹ Triệu Quát nhiều lần xin vua rút lại mệnh lệnh, nhưng vua Triệu hoàn toàn không nghe.',zh:'赵王果然上当，任命赵括为大将，赵括的母亲再三请求赵王收回命令，可是赵王完全不听。',py:'Zhào wáng guǒrán shàngdàng, rènmìng Zhào Kuò wéi dàjiàng, Zhào Kuò de mǔqin zàisān qǐngqiú Zhào wáng shōuhuí mìnglìng, kěshì Zhào wáng wánquán bù tīng.',goiY:['再三 = nhiều lần','任命……为…… = bổ nhiệm… làm…','果然 = quả nhiên'],giai:'任命 + người + 为 + chức vụ = "bổ nhiệm ai làm…" (为 đọc wéi); 再三请求 = "nhiều lần khẩn cầu"; 完全不听 = "hoàn toàn không nghe".'},
+  {vi:'Triệu Quát vừa lên làm đại tướng liền thay đổi phương án tác chiến của Liêm Pha, mù quáng ra lệnh cho quân Triệu chủ động tấn công, kết quả là nước Triệu thua cuộc chiến này.',zh:'赵括一当上大将就改变了廉颇的作战方案，盲目地命令赵军主动进攻，结果赵国输掉了这场战争。',py:'Zhào Kuò yì dāngshang dàjiàng jiù gǎibiànle Lián Pō de zuòzhàn fāng\'àn, mángmù de mìnglìng Zhào jūn zhǔdòng jìngōng, jiéguǒ Zhàoguó shūdiàole zhè chǎng zhànzhēng.',goiY:['一……就…… = vừa… liền…','盲目 = mù quáng','结果 = kết quả là'],giai:'一……就…… nối hai hành động liền nhau; 结果 mở đầu vế cuối nêu kết cục (thường là xấu); 输掉 = thua mất (掉 nhấn mạnh kết quả mất đi).'}
 ];
 
 // ══════════════════════════════════════════
@@ -1844,43 +1711,12 @@ var writingData = {
     {ten:'做事一定要……，要……',nhan:'一定要',vd:'做事一定要灵活，要理论联系实际。',khi:'Câu KẾT: nêu bài học.'}
   ],
   sapXep:[
-    {
-      manh:['很了解','赵括','军事理论','对'],
-      dap:'赵括对军事理论很了解。',
-      vn:'Triệu Quát rất am hiểu lý luận quân sự.',
-      giai:'对 + đối tượng đứng TRƯỚC 很了解: Sub + 对 + N + 很了解.'
-    },
-    {
-      manh:['又','他','轻视对手','盲目自信'],
-      dap:'他盲目自信，又轻视对手。',
-      vn:'Hắn tự tin mù quáng, lại coi thường đối thủ.',
-      giai:'盲目 là trạng ngữ đứng trước 自信; 又 nối thêm khuyết điểm thứ hai, đứng trước động từ 轻视.'
-    },
-    {
-      manh:['迟早会','只会纸上谈兵','失败'],
-      dap:'只会纸上谈兵，迟早会失败。',
-      vn:'Chỉ biết bàn suông trên giấy thì sớm muộn sẽ thất bại.',
-      giai:'Vế điều kiện đứng trước; 迟早会 + V ở vế sau.'
-    },
-    {
-      manh:['要注意','做事','理论联系实际','一定要灵活'],
-      dap:'做事一定要灵活，要注意理论联系实际。',
-      vn:'Làm việc nhất định phải linh hoạt, phải chú ý gắn lý thuyết với thực tế.',
-      giai:'Câu cuối bài khoá: 做事 làm chủ đề, hai vế 要…… song song.'
-    },
-    {
-      manh:['比不过','这一点','我','你们'],
-      dap:'这一点我比不过你们。',
-      chap:['我这一点比不过你们。'],
-      vn:'Điểm này tôi không bằng các bạn.',
-      giai:'V + 不过 + người: 比不过你们. 这一点 làm chủ đề đứng đầu câu.'
-    },
-    {
-      manh:['参加比赛','他','邀请我','再三'],
-      dap:'他再三邀请我参加比赛。',
-      vn:'Anh ấy mời đi mời lại tôi tham gia cuộc thi.',
-      giai:'再三 là phó từ, đứng trước động từ 邀请: Sub + 再三 + 邀请 + người + V.'
-    }
+    {manh:['很了解','他','敌人的情况','对'],dap:'他对敌人的情况很了解。',vn:'Anh ấy rất hiểu tình hình của địch.',giai:'对 + đối tượng đứng TRƯỚC 很了解: Sub + 对 + N + 很了解.'},
+    {manh:['不但','这个方案','还很灵活','简单'],dap:'这个方案不但简单，还很灵活。',vn:'Phương án này không chỉ đơn giản mà còn rất linh hoạt.',giai:'Chủ ngữ 这个方案 → 不但 + tính từ thứ nhất, vế sau 还 + tính từ thứ hai (mức tăng dần).'},
+    {manh:['迟早会','这件事','被人发现','的'],dap:'这件事迟早会被人发现的。',vn:'Chuyện này sớm muộn gì cũng sẽ bị người ta phát hiện.',giai:'迟早 đứng sau chủ ngữ, trước 会 + cụm bị động 被人发现; 的 ở cuối câu nhấn mạnh sự chắc chắn.'},
+    {manh:['灵活地','老师','上课的方式','改变了'],dap:'老师灵活地改变了上课的方式。',vn:'Thầy giáo đã linh hoạt thay đổi cách lên lớp.',giai:'Trạng ngữ 灵活地 đứng trước động từ 改变了; tân ngữ 上课的方式 ở cuối.'},
+    {manh:['比不过','这一点','我','你们'],dap:'这一点我比不过你们。',chap:['我这一点比不过你们。'],vn:'Điểm này tôi không bằng các bạn.',giai:'V + 不过 + người: 比不过你们. 这一点 làm chủ đề đứng đầu câu.'},
+    {manh:['参加比赛','他','邀请我','再三'],dap:'他再三邀请我参加比赛。',vn:'Anh ấy mời đi mời lại tôi tham gia cuộc thi.',giai:'再三 là phó từ, đứng trước động từ 邀请: Sub + 再三 + 邀请 + người + V.'}
   ]
 };
 
@@ -1890,38 +1726,10 @@ var writingData = {
 var speakingData = {
   intro:'Ba câu đầu là <b>话题讨论</b> của sách (tr. 143: 理论与实际的关系), câu 4 mở rộng. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố dùng từ mới: 理论 · 盲目 · 轻视 · 迟早 · 灵活 · 纸上谈兵.',
   questions:[
-    {
-      q_zh:'赵括算不算一位出色的军事家？你认为赵括的死是什么原因造成的？',
-      q_vn:'Triệu Quát có được coi là nhà quân sự xuất sắc không? Theo em, cái chết của Triệu Quát do nguyên nhân gì?',
-      hint:'Trả lời đủ HAI vế, dùng 理论, 盲目, 轻视',
-      sample:'我觉得赵括不算出色的军事家。他虽然对军事理论很了解，但是没有实际作战的经验。他的死是他盲目自信、轻视秦军造成的。',
-      sample_vn:'Tôi thấy Triệu Quát không phải nhà quân sự xuất sắc. Hắn tuy rất am hiểu lý luận quân sự nhưng không có kinh nghiệm đánh trận thực tế. Cái chết của hắn là do tự tin mù quáng, coi thường quân Tần gây ra.',
-      note:'Câu hỏi hai vế — trả lời thiếu một vế là mất điểm. ……是……造成的 là khung câu nêu nguyên nhân rất gọn.'
-    },
-    {
-      q_zh:'赵括的死给你最大的启发是什么？',
-      q_vn:'Cái chết của Triệu Quát cho em bài học lớn nhất là gì?',
-      hint:'Dùng 灵活, 理论联系实际, 迟早',
-      sample:'最大的启发是：做事一定要灵活，要理论联系实际。只会纸上谈兵的人，迟早会失败。',
-      sample_vn:'Bài học lớn nhất là: làm việc nhất định phải linh hoạt, phải gắn lý thuyết với thực tế. Người chỉ biết bàn suông trên giấy, sớm muộn sẽ thất bại.',
-      note:'Mở bằng 最大的启发是…… rồi nêu thẳng bài học — không vòng vo.'
-    },
-    {
-      q_zh:'请举一个生活中类似的例子，并说说我们在生活中应该注意什么。',
-      q_vn:'Hãy nêu một ví dụ tương tự trong cuộc sống, và nói xem trong cuộc sống chúng ta nên chú ý điều gì.',
-      hint:'Kể một chuyện CỤ THỂ, dùng 以为……，结果……',
-      sample:'我表哥学开车的时候，把交通规则背得很熟，以为自己一定没问题，结果一上路就紧张得不得了。所以我们学东西一定要多实践。',
-      sample_vn:'Anh họ tôi hồi học lái xe học thuộc làu luật giao thông, tưởng mình chắc chắn không vấn đề gì, kết quả vừa ra đường đã căng thẳng kinh khủng. Vì vậy học cái gì chúng ta cũng phải thực hành nhiều.',
-      note:'Ôn 不得了 (bài 2) và câu 把. Ví dụ cụ thể luôn được điểm cao hơn nói chung chung.'
-    },
-    {
-      q_zh:'你觉得学汉语的时候，语法和说话哪个更重要？为什么？',
-      q_vn:'Em thấy khi học tiếng Trung, ngữ pháp và luyện nói cái nào quan trọng hơn? Vì sao?',
-      hint:'Chọn hẳn một bên, dùng 虽然……但是…… và 只要……就……',
-      sample:'我觉得说话更重要。虽然语法也很重要，但是如果不开口说，学过的东西迟早会忘。只要多跟别人聊天儿，就能说得越来越流利。',
-      sample_vn:'Tôi thấy luyện nói quan trọng hơn. Tuy ngữ pháp cũng quan trọng, nhưng nếu không mở miệng nói thì những gì đã học sớm muộn sẽ quên. Chỉ cần nói chuyện với người khác nhiều là sẽ nói ngày càng lưu loát.',
-      note:'Dạng câu hỏi ý kiến — chọn hẳn một bên rồi bảo vệ, đừng nói “cả hai đều quan trọng”.'
-    }
+    {q_zh:'赵括算不算一位优秀的军事家？你认为赵括的死是什么原因造成的？',q_vn:'Triệu Quát có được coi là nhà quân sự xuất sắc không? Theo em, cái chết của Triệu Quát do nguyên nhân gì?',hint:'Trả lời đủ HAI vế, dùng 却, 轻视',sample:'我觉得赵括不是一位优秀的军事家。他书读得不少，却一次也没有真正作战过。他的死主要是因为太骄傲，轻视了秦军。',sample_vn:'Tôi thấy Triệu Quát không phải nhà quân sự giỏi. Hắn đọc sách không ít nhưng chưa từng thật sự đánh trận lần nào. Hắn chết chủ yếu vì quá kiêu ngạo, coi thường quân Tần.',note:'Câu hỏi hai vế — trả lời thiếu một vế là mất điểm. 主要是因为…… là cách nêu nguyên nhân rất gọn.'},
+    {q_zh:'赵括的死给你最大的启发是什么？',q_vn:'Cái chết của Triệu Quát cho em bài học lớn nhất là gì?',hint:'Dùng 理论, 实际, 迟早',sample:'最大的启发是：光懂理论是不够的，书上学到的东西要放到实际中去用。只会说不会做，迟早会让大家失望。',sample_vn:'Bài học lớn nhất là: chỉ hiểu lý thuyết thôi thì chưa đủ, những gì học trong sách phải đem ra dùng trong thực tế. Chỉ biết nói mà không biết làm thì sớm muộn sẽ khiến mọi người thất vọng.',note:'Mở bằng 最大的启发是…… rồi nêu thẳng bài học — không vòng vo.'},
+    {q_zh:'生活中你见过跟赵括差不多的人吗？我们应该注意什么？',q_vn:'Trong cuộc sống em đã gặp người giống Triệu Quát chưa? Chúng ta nên chú ý điều gì?',hint:'Kể một chuyện CỤ THỂ, dùng 以为……，结果……',sample:'我有一个朋友学开车的时候，把书上的要求记得很清楚，以为自己一定没问题，结果一上路就紧张得不得了。所以学东西一定要多练习。',sample_vn:'Một người bạn của tôi hồi học lái xe nhớ rất rõ các yêu cầu trong sách, tưởng mình chắc chắn không vấn đề gì, kết quả vừa ra đường đã căng thẳng kinh khủng. Vì vậy học cái gì cũng phải luyện tập nhiều.',note:'Ôn 不得了 (bài 2) và câu 把. Ví dụ cụ thể luôn được điểm cao hơn nói chung chung.'},
+    {q_zh:'你觉得学汉语的时候，语法和说话哪个更重要？为什么？',q_vn:'Em thấy khi học tiếng Trung, ngữ pháp và luyện nói cái nào quan trọng hơn? Vì sao?',hint:'Chọn hẳn một bên, dùng 虽然……但是…… và 只要……就……',sample:'我觉得说话更重要。虽然语法也很重要，但是如果不开口说，学过的东西迟早会忘。只要多跟别人聊天儿，就能说得越来越流利。',sample_vn:'Tôi thấy luyện nói quan trọng hơn. Tuy ngữ pháp cũng quan trọng, nhưng nếu không mở miệng nói thì những gì đã học sớm muộn sẽ quên. Chỉ cần nói chuyện với người khác nhiều là sẽ nói ngày càng lưu loát.',note:'Dạng câu hỏi ý kiến — chọn hẳn một bên rồi bảo vệ, đừng nói “cả hai đều quan trọng”.'}
   ]
 };
 
@@ -2021,51 +1829,11 @@ var listenExamData = {
 var situationData = {
   intro:'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items:[
-    {
-      scene:'Bạn cùng đội khoe đã đọc hết sách hướng dẫn chơi bóng rổ nên chắc chắn thắng.',
-      a:{sp:'Bạn',zh:'篮球书我都看完了，明天的比赛我们肯定赢！',vn:'Sách bóng rổ tớ đọc hết rồi, trận mai bọn mình chắc chắn thắng!'},
-      need:['Dùng 纸上谈兵','Khuyên bạn đi luyện tập thực tế'],
-      sample:'光看书可不行，这不是纸上谈兵嘛！咱们今天下午还是去球场练练吧。',
-      samplePy:'Guāng kàn shū kě bù xíng, zhè bú shì zhǐshàng tánbīng ma! Zánmen jīntiān xiàwǔ háishi qù qiúchǎng liànlian ba.',
-      sampleVn:'Chỉ đọc sách thì không được đâu, thế chẳng phải bàn suông trên giấy sao! Chiều nay bọn mình ra sân tập đi.',
-      tip:'这不是……嘛 = thế chẳng phải là… sao — câu phản vấn, giống câu trong 练习册.'
-    },
-    {
-      scene:'Em trai sợ đi trại hè một mình.',
-      a:{sp:'Em trai',zh:'我不想一个人去夏令营，我害怕。',vn:'Em không muốn đi trại hè một mình, em sợ.'},
-      need:['Dùng 挑战','Dùng 独立'],
-      sample:'别怕，这是一个挑战，也是学会独立生活的好机会。',
-      samplePy:'Bié pà, zhè shì yí ge tiǎozhàn, yě shì xuéhuì dúlì shēnghuó de hǎo jīhuì.',
-      sampleVn:'Đừng sợ, đây là một thử thách, cũng là cơ hội tốt để học cách sống tự lập.',
-      tip:'挑战 làm danh từ: 一个挑战. 独立 làm trạng ngữ: 独立生活.'
-    },
-    {
-      scene:'Bạn thân bị lừa mua điện thoại giả trên mạng.',
-      a:{sp:'Bạn',zh:'我在网上买的手机是假的，气死我了！',vn:'Cái điện thoại tớ mua trên mạng là hàng giả, tức chết đi được!'},
-      need:['Dùng 上当','Dùng 盲目 để khuyên bạn'],
-      sample:'你又上当了？以后别盲目相信网上那些便宜的广告。',
-      samplePy:'Nǐ yòu shàngdàng le? Yǐhòu bié mángmù xiāngxìn wǎng shang nàxiē piányi de guǎnggào.',
-      sampleVn:'Cậu lại bị lừa à? Sau này đừng tin mù quáng mấy quảng cáo rẻ trên mạng nữa.',
-      tip:'上当 không mang tân ngữ. 盲目 + 相信: tin mù quáng.'
-    },
-    {
-      scene:'Cô giáo hỏi ý kiến cả lớp về kế hoạch đi dã ngoại.',
-      a:{sp:'Cô',zh:'大家对这个方案有什么意见？',vn:'Các em có ý kiến gì về phương án này không?'},
-      need:['Dùng 方案','Dùng 虽然……但是…… (HSK 4)'],
-      sample:'老师，虽然这个方案很好，但是路上要花的时间太多，我建议再改一改。',
-      samplePy:'Lǎoshī, suīrán zhège fāng\'àn hěn hǎo, dànshì lù shang yào huā de shíjiān tài duō, wǒ jiànyì zài gǎi yi gǎi.',
-      sampleVn:'Thưa cô, tuy phương án này rất hay, nhưng thời gian đi đường nhiều quá, em đề nghị sửa lại một chút ạ.',
-      tip:'Góp ý với thầy cô: khen trước, góp ý sau, dùng 建议 cho lịch sự.'
-    },
-    {
-      scene:'Bạn thách em đấu cờ, bảo em chắc chắn thua.',
-      a:{sp:'Bạn',zh:'你下棋肯定下不过我，敢不敢跟我比一比？',vn:'Cậu chơi cờ chắc chắn không thắng nổi tớ, có dám đấu với tớ không?'},
-      need:['Dùng V + 得过 / 不过','Nhận lời thách đấu'],
-      sample:'谁说我下不过你？比就比，你可别轻视我！',
-      samplePy:'Shéi shuō wǒ xià bu guò nǐ? Bǐ jiù bǐ, nǐ kě bié qīngshì wǒ!',
-      sampleVn:'Ai bảo tớ không thắng nổi cậu? Đấu thì đấu, cậu đừng có coi thường tớ!',
-      tip:'V + 不过 + người = không hơn được ai (điểm ngữ pháp 1). 比就比 = đấu thì đấu (khẩu ngữ).'
-    }
+    {scene:'Bạn cùng đội khoe đã đọc hết sách hướng dẫn chơi bóng rổ nên chắc chắn thắng.',a:{sp:'Bạn',zh:'篮球书我都看完了，明天的比赛我们肯定赢！',vn:'Sách bóng rổ tớ đọc hết rồi, trận mai bọn mình chắc chắn thắng!'},need:['Dùng 纸上谈兵','Khuyên bạn đi luyện tập thực tế'],sample:'光看书可不行，这不就是纸上谈兵吗？咱们今天下午还是去球场练练吧。',samplePy:'Guāng kàn shū kě bù xíng, zhè bú jiù shì zhǐshàng tánbīng ma? Zánmen jīntiān xiàwǔ háishi qù qiúchǎng liànlian ba.',sampleVn:'Chỉ đọc sách thì không được đâu, thế chẳng phải bàn suông trên giấy sao! Chiều nay bọn mình ra sân tập đi.',tip:'这不就是……吗？ = thế chẳng phải là… sao — câu phản vấn, nhẹ nhàng mà vẫn rõ ý.'},
+    {scene:'Em trai sợ một mình lên Bắc Kinh dự thi.',a:{sp:'Em trai',zh:'我不想一个人去北京参加比赛，我害怕。',vn:'Em không muốn một mình đi Bắc Kinh thi đấu, em sợ.'},need:['Dùng 挑战','Dùng 独立'],sample:'别怕，这是一个挑战，也是让你学会独立的好机会。',samplePy:'Bié pà, zhè shì yí ge tiǎozhàn, yě shì ràng nǐ xuéhuì dúlì de hǎo jīhuì.',sampleVn:'Đừng sợ, đây là một thử thách, cũng là cơ hội tốt để em học cách tự lập.',tip:'挑战 làm danh từ: 一个挑战. 学会独立 = học cách tự lập.'},
+    {scene:'Bạn thân bị lừa mua điện thoại giả trên mạng.',a:{sp:'Bạn',zh:'我在网上买的手机是假的，真让人生气！',vn:'Cái điện thoại tớ mua trên mạng là hàng giả, tức thật!'},need:['Dùng 上当','Dùng 盲目 để khuyên bạn'],sample:'你又上当了？以后别盲目相信网上那些便宜的广告。',samplePy:'Nǐ yòu shàngdàng le? Yǐhòu bié mángmù xiāngxìn wǎng shang nàxiē piányi de guǎnggào.',sampleVn:'Cậu lại bị lừa à? Sau này đừng tin mù quáng mấy quảng cáo rẻ trên mạng nữa.',tip:'上当 không mang tân ngữ. 盲目 + 相信: tin mù quáng.'},
+    {scene:'Cô giáo hỏi ý kiến cả lớp về kế hoạch đi dã ngoại.',a:{sp:'Cô',zh:'大家对这个方案有什么意见？',vn:'Các em có ý kiến gì về phương án này không?'},need:['Dùng 方案','Dùng 虽然……但是…… (HSK 4)'],sample:'老师，虽然这个方案很好，但是路上要花的时间太多，我建议再改一改。',samplePy:'Lǎoshī, suīrán zhège fāng\'àn hěn hǎo, dànshì lù shang yào huā de shíjiān tài duō, wǒ jiànyì zài gǎi yi gǎi.',sampleVn:'Thưa cô, tuy phương án này rất hay, nhưng thời gian đi đường nhiều quá, em đề nghị sửa lại một chút ạ.',tip:'Góp ý với thầy cô: khen trước, góp ý sau, dùng 建议 cho lịch sự.'},
+    {scene:'Bạn thách em đua xe đạp, bảo em chắc chắn thua.',a:{sp:'Bạn',zh:'骑自行车你肯定骑不过我，敢不敢跟我比一比？',vn:'Đạp xe thì cậu chắc chắn không nhanh bằng tớ, có dám đấu với tớ không?'},need:['Dùng V + 得过 / 不过','Nhận lời thách đấu'],sample:'谁说我骑不过你？比就比，你可别轻视我！',samplePy:'Shéi shuō wǒ qí bu guò nǐ? Bǐ jiù bǐ, nǐ kě bié qīngshì wǒ!',sampleVn:'Ai bảo tớ đạp không lại cậu? Đấu thì đấu, cậu đừng có coi thường tớ!',tip:'V + 不过 + người = không hơn được ai (điểm ngữ pháp 1). 比就比 = đấu thì đấu (khẩu ngữ).'}
   ]
 };
 
@@ -2075,48 +1843,12 @@ var situationData = {
 var registerData = {
   intro:'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items:[
-    {
-      scene:'Em viết bài giới thiệu lịch sử cho bảng tin của lớp.',
-      a:'公元前260年，赵国军队被秦军打败，数十万士兵失去了生命。',
-      b:'两千多年前赵国跟秦国打仗，输得可惨了。',
-      better:'a',
-      why:'Bài viết lịch sử là văn viết: có mốc 公元前, dùng 失去了生命. Câu b là khẩu ngữ (可惨了), hợp khi kể chuyện với bạn.'
-    },
-    {
-      scene:'Em nhắn tin trêu bạn thân sợ ma.',
-      a:'你真是个胆小鬼！',
-      b:'你是一位缺乏勇气的人。',
-      better:'a',
-      why:'Nhắn tin trêu bạn thân: 胆小鬼 khẩu ngữ, thân mật. Câu b trang trọng, nghe như lời phê bình nghiêm túc.'
-    },
-    {
-      scene:'Thầy giáo viết nhận xét vào sổ liên lạc.',
-      a:'该生理论知识扎实，但缺乏实际运用的能力。',
-      b:'这孩子光会背书，一用就不行。',
-      better:'a',
-      why:'Nhận xét chính thức: 该生, 缺乏…能力 trang trọng, khách quan. Câu b là lời nói miệng, hơi chê.'
-    },
-    {
-      scene:'Bạn cùng nhóm đưa ra một kế hoạch không thực tế, em góp ý.',
-      a:'你这计划有点儿纸上谈兵啊，咱们再想想？',
-      b:'你的方案完全脱离实际，属于纸上谈兵。',
-      better:'a',
-      why:'Góp ý với bạn: 有点儿 + câu hỏi 再想想？ làm lời nói mềm, giữ hoà khí. Câu b đúng nhưng nặng nề như văn bản phê bình.'
-    },
-    {
-      scene:'Người dẫn chương trình thời sự đưa tin.',
-      a:'有人在网上散布谣言，警方已经开始调查。',
-      b:'有人在网上瞎说，警察正查着呢。',
-      better:'a',
-      why:'Tin thời sự là văn phong trang trọng: 散布谣言, 警方. 瞎说, 正查着呢 là khẩu ngữ.'
-    },
-    {
-      scene:'Em từ chối lời mời của một người bạn sau khi đã suy nghĩ kỹ.',
-      a:'我不去。',
-      b:'我考虑再三，还是决定不去了，真不好意思。',
-      better:'b',
-      why:'Từ chối cần lịch sự: 考虑再三 cho thấy em đã suy nghĩ kỹ, thêm 真不好意思. Câu a đúng nhưng cộc lốc.'
-    }
+    {scene:'Em viết bài giới thiệu lịch sử cho bảng tin của lớp.',a:'公元前260年，赵国军队被秦军打败，数十万士兵失去了生命。',b:'两千多年前赵国跟秦国打起来了，赵国输得特别厉害。',better:'a',why:'Bài viết lịch sử là văn viết: có mốc 公元前, dùng 失去了生命. Câu b là khẩu ngữ (打起来了, 输得特别厉害), hợp khi kể chuyện với bạn.'},
+    {scene:'Em nhắn tin trêu bạn thân sợ ma.',a:'你真是个胆小鬼！',b:'我认为你在这方面表现得不够勇敢。',better:'a',why:'Nhắn tin trêu bạn thân: 胆小鬼 khẩu ngữ, thân mật. Câu b trang trọng, nghe như lời phê bình nghiêm túc.'},
+    {scene:'Thầy giáo viết nhận xét vào sổ liên lạc.',a:'该生理论知识丰富，但缺乏联系实际的能力。',b:'这孩子光会背书，一用就不行。',better:'a',why:'Nhận xét chính thức: 该生, 缺乏…能力 trang trọng, khách quan. Câu b là lời nói miệng, hơi chê.'},
+    {scene:'Bạn cùng nhóm đưa ra một kế hoạch không thực tế, em góp ý.',a:'你这计划有点儿纸上谈兵啊，咱们再想想？',b:'你的方案完全不符合实际，一点儿用也没有。',better:'a',why:'Góp ý với bạn: 有点儿 + câu hỏi 再想想？ làm lời nói mềm, giữ hoà khí. Câu b đúng nhưng nặng nề như văn bản phê bình.'},
+    {scene:'Người dẫn chương trình thời sự đưa tin.',a:'有人在网上散布谣言，有关方面已经开始调查了。',b:'有人在网上乱说，有人已经在找他了。',better:'a',why:'Tin thời sự là văn phong trang trọng: 散布谣言, 有关方面. 乱说, 有人已经在找他了 là khẩu ngữ, thiếu chính xác.'},
+    {scene:'Em từ chối lời mời của một người bạn sau khi đã suy nghĩ kỹ.',a:'我不去。',b:'我考虑再三，还是决定不去了，谢谢你的邀请。',better:'b',why:'Từ chối cần lịch sự: 考虑再三 cho thấy em đã suy nghĩ kỹ, thêm lời cảm ơn 谢谢你的邀请. Câu a đúng nhưng cộc lốc.'}
   ]
 };
 

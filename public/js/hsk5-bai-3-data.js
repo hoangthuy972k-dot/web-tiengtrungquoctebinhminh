@@ -1424,8 +1424,9 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — lấy bảng 词语搭配 + bài 3 (练习) của sách
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'轮流',right:'驾船'},
   {left:'盼望',right:'好消息'},
@@ -1436,74 +1437,42 @@ var matchData = [
   {left:'一顿',right:'海鲜'},
   {left:'一道',right:'闪电'},
   {left:'一艘',right:'帆船'},
-  {left:'驾驶',right:'汽车'},
-  {left:'等待',right:'机会'},
   {left:'舒适的',right:'座位'},
-  {left:'轻松的',right:'时刻'},
-  {left:'被车',right:'撞倒'},
   {left:'船身',right:'漏水'},
-  {left:'请勿',right:'吸烟'},
-  {left:'美好的',right:'未来'},
-  {left:'雨后',right:'彩虹'},
-  {left:'信息',right:'时代'},
-  {left:'各自的',right:'房间'},
-  {left:'航行了',right:'4000多海里'}
+  {left:'被车',right:'撞倒'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'考上大学只是',blank:'人生',post:'的一个开始，以后的路还很长。',hint:'(đời người)',ans:'人生'},
-  {pre:'他爸爸是一名铁路',blank:'工人',post:'，工作虽然辛苦，但是很稳定。',hint:'(công nhân)',ans:'工人'},
-  {pre:'这份工作收入',blank:'稳定',post:'，所以很多人都想来。',hint:'(ổn định)',ans:'稳定'},
-  {pre:'这家公司',blank:'待遇',post:'不错，每年还有两次旅行。',hint:'(đãi ngộ)',ans:'待遇'},
-  {pre:'通过电视，翟峰迷上了',blank:'帆船',post:'。',hint:'(thuyền buồm)',ans:'帆船'},
-  {pre:'这艘船已经在海上',blank:'航行',post:'了三个月。',hint:'(đi thuyền, giong thuyền)',ans:'航行'},
-  {pre:'爷爷用一辈子的',blank:'积蓄',post:'帮我付了大学的学费。',hint:'(tiền để dành)',ans:'积蓄'},
-  {pre:'哥哥在网上买了一辆',blank:'二手',post:'自行车，又便宜又好骑。',hint:'(đã qua sử dụng)',ans:'二手'},
-  {pre:'雨停了，天上出现了一道美丽的',blank:'彩虹',post:'。',hint:'(cầu vồng)',ans:'彩虹'},
-  {pre:'你',blank:'疯',post:'了吗？为什么突然要把房子卖了？',hint:'(phát điên)',ans:'疯'},
-  {pre:'他工作了十年，上个月突然',blank:'辞职',post:'了，想去看看世界。',hint:'(nghỉ việc, từ chức)',ans:'辞职'},
-  {pre:'喝了酒千万不能',blank:'驾驶',post:'汽车。',hint:'(lái, điều khiển)',ans:'驾驶'},
-  {pre:'爷爷周末常去湖边',blank:'钓',post:'鱼。',hint:'(câu)',ans:'钓'},
-  {pre:'这家餐厅的',blank:'海鲜',post:'又新鲜又便宜，所以客人特别多。',hint:'(hải sản)',ans:'海鲜'},
-  {pre:'每天',blank:'傍晚',post:'，爷爷奶奶都会去公园散步。',hint:'(lúc chạng vạng)',ans:'傍晚'},
-  {pre:'周末我常帮奶奶在院子里',blank:'干活儿',post:'。',hint:'(làm việc chân tay)',ans:'干活儿'},
-  {pre:'在海上航行了八个月，他们终于回到了',blank:'陆地',post:'。',hint:'(đất liền)',ans:'陆地'},
-  {pre:'外面又打',blank:'雷',post:'又闪电的，咱们等会儿再走吧。',hint:'(sấm)',ans:'雷'},
-  {pre:'天上突然出现了一道',blank:'闪电',post:'，接着就下起了大雨。',hint:'(tia chớp)',ans:'闪电'},
-  {pre:'比赛赢了，队员们高兴地',blank:'拥抱',post:'在一起。',hint:'(ôm)',ans:'拥抱'},
-  {pre:'一',blank:'海里',post:'大约是1852米。',hint:'(hải lý)',ans:'海里'},
-  {pre:'奶奶腿不好，上',blank:'台阶',post:'的时候要慢一点儿。',hint:'(bậc thềm)',ans:'台阶'},
-  {pre:'我们要为美好的',blank:'未来',post:'努力学习。',hint:'(tương lai)',ans:'未来'},
-  {pre:'',blank:'翟峰',post:'和妻子都是铁路工人，工作稳定、待遇不错。',hint:'(tên nhân vật chính — Trác Phong)',ans:'翟峰'},
-  {pre:'下一站，他们想去',blank:'澳洲',post:'和新西兰。',hint:'(nước Úc)',ans:'澳洲'},
-  {pre:'从澳洲坐船去',blank:'新西兰',post:'要好几天。',hint:'(New Zealand)',ans:'新西兰'},
-  {pre:'她正在为儿子上学的事',blank:'发愁',post:'。',hint:'(lo âu)',ans:'发愁'},
-  {pre:'有问题的话，你',blank:'随时',post:'可以来办公室找我。',hint:'(bất cứ lúc nào)',ans:'随时'},
-  {pre:'下午海面',blank:'平静',post:'时，翟峰会和妻子下海游泳或者钓鱼。',hint:'(lặng, yên ả)',ans:'平静'},
-  {pre:'汉语技能教学',blank:'包括',post:'听、说、读、写四个方面。',hint:'(bao gồm)',ans:'包括'}
+  {pre:'离开学校以后，大家',blank:'各自',post:'去了不同的城市工作。',hint:'(ai nấy, mỗi người một đường)',ans:'各自',exp:'各自 đứng sau chủ ngữ số nhiều, trước động từ: 大家各自去了…… = mỗi người tự đi một nơi.'},
+  {pre:'学校大门口写着：“请',blank:'勿',post:'停车”。',hint:'(chớ, đừng — văn viết)',ans:'勿',exp:'请勿 + V là lối văn viết trên biển báo, thông báo; nói chuyện thường ngày thì dùng 别 / 不要.'},
+  {pre:'这次旅行一共花了五千块，',blank:'包括',post:'飞机票和住的地方。',hint:'(bao gồm)',ans:'包括',exp:'包括 + các phần nằm trong tổng thể: 一共五千块，包括飞机票…….'},
+  {pre:'第一次站在台上唱歌，是我人生中最难忘的',blank:'时刻',post:'。',hint:'(thời khắc, giây phút)',ans:'时刻',exp:'时刻 là danh từ: 最难忘的时刻, 美好的时刻; còn làm phó từ "luôn luôn": 时刻准备着.'},
+  {pre:'在外地打工的这一年，他每天都',blank:'盼望',post:'着早点儿回家见孩子。',hint:'(mong mỏi, ngóng trông)',ans:'盼望',exp:'盼望着 = ngóng trông tha thiết, thường kèm 着; 希望 không đi với 着 như vậy.'},
+  {pre:'早上路上车太多，我的自行车被一辆出租车',blank:'撞',post:'了一下，还好人没事。',hint:'(đâm, va)',ans:'撞',exp:'撞 = đâm vào, va vào; hay dùng trong câu 被: 被车撞了.'},
+  {pre:'为了让儿子去外国读书，他们拿出了全部的',blank:'积蓄',post:'。',hint:'(tiền dành dụm)',ans:'积蓄',exp:'积蓄 là danh từ: 全部的积蓄 = toàn bộ tiền tích cóp; cũng làm động từ: 积蓄了一些钱.'},
+  {pre:'刚工作的时候钱不多，我在网上买了一台',blank:'二手',post:'电脑，用了三年也没坏。',hint:'(đã qua sử dụng, cũ)',ans:'二手',exp:'二手 + danh từ = đồ đã có người dùng: 二手电脑, 二手车 — không dịch từng chữ "hai tay".'},
+  {pre:'一听说下周放假，孩子们高兴得都快',blank:'疯',post:'了。',hint:'(phát điên)',ans:'疯',exp:'Tính từ + 得 + 快疯了 = … đến phát điên, chỉ mức độ rất cao (高兴得快疯了, 忙得快疯了).'},
+  {pre:'我早上没吃饭，中午一',blank:'顿',post:'就吃了三碗米饭。',hint:'(bữa — lượng từ)',ans:'顿',exp:'顿 là lượng từ của bữa ăn: 一顿饭, 一顿就吃了三碗 = một bữa ăn liền ba bát.'},
+  {pre:'中午太阳太大，我们等到',blank:'傍晚',post:'再去跑步吧。',hint:'(chạng vạng, chiều tối)',ans:'傍晚',exp:'傍晚 = lúc chạng vạng, mặt trời sắp lặn; sớm hơn 晚上.'},
+  {pre:'这份工作收入',blank:'稳定',post:'，就是离家太远。',hint:'(ổn định)',ans:'稳定',exp:'稳定 tả công việc, thu nhập, thành tích không lên xuống thất thường: 收入稳定.'},
+  {pre:'这些',blank:'工人',post:'每天在太阳下面干活儿，非常辛苦。',hint:'(công nhân)',ans:'工人',exp:'工人 = công nhân (lao động chân tay trong nhà máy, công trường); 干活儿 = làm việc chân tay.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (各自 / 勿 / 包括 / 时刻) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['下课后','，','同学们','各自','回','家','了','。'],ans:'下课后，同学们各自回家了。',audio:'下课后，同学们各自回家了。'},
-  {words:['他们','在','各自的','房间里','看书','。'],ans:'他们在各自的房间里看书。',audio:'他们在各自的房间里看书。'},
-  {words:['门上','挂着','一块','“请勿打扰”的','牌子','。'],ans:'门上挂着一块“请勿打扰”的牌子。',audio:'门上挂着一块“请勿打扰”的牌子。'},
-  {words:['为了','他人的健康','，','请勿','在公共场所','吸烟','。'],ans:'为了他人的健康，请勿在公共场所吸烟。',audio:'为了他人的健康，请勿在公共场所吸烟。'},
-  {words:['这次旅行的','费用','包括','机票和酒店','。'],ans:'这次旅行的费用包括机票和酒店。',audio:'这次旅行的费用包括机票和酒店。'},
-  {words:['汉语技能教学','包括','听、说、读、写','四个方面','。'],ans:'汉语技能教学包括听、说、读、写四个方面。',audio:'汉语技能教学包括听、说、读、写四个方面。'},
-  {words:['美好的','时刻','过去后','是','一个个','紧张的夜晚','。'],ans:'美好的时刻过去后是一个个紧张的夜晚。',audio:'美好的时刻过去后是一个个紧张的夜晚。'},
-  {words:['他','时时刻刻','提醒','自己','要注意安全','。'],ans:'他时时刻刻提醒自己要注意安全。',audio:'他时时刻刻提醒自己要注意安全。'},
-  {words:['白天','，','翟峰和妻子','轮流','驾','船','。'],ans:'白天，翟峰和妻子轮流驾船。',audio:'白天，翟峰和妻子轮流驾船。'},
-  {words:['他们','从不用','为','生活','发愁','。'],ans:'他们从不用为生活发愁。',audio:'他们从不用为生活发愁。'},
-  {words:['小船','随时','有可能','被','闪电','击到','。'],ans:'小船随时有可能被闪电击到。',audio:'小船随时有可能被闪电击到。'},
-  {words:['这样的生活','是','翟峰','盼望已久','的','。'],ans:'这样的生活是翟峰盼望已久的。',audio:'这样的生活是翟峰盼望已久的。'},
-  {words:['一家三口','紧紧地','拥抱','在一起','。'],ans:'一家三口紧紧地拥抱在一起。',audio:'一家三口紧紧地拥抱在一起。'},
-  {words:['他们','卖房卖车','，','买下了','一艘','二手船','。'],ans:'他们卖房卖车，买下了一艘二手船。',audio:'他们卖房卖车，买下了一艘二手船。'}
+  {words:['开完会','以后','，','大家','各自','回到了','自己的','办公室','。'],ans:'开完会以后，大家各自回到了自己的办公室。',audio:'开完会以后，大家各自回到了自己的办公室。'},
+  {words:['为了','大家的','安全','，','开车时','请勿','使用','手机','。'],ans:'为了大家的安全，开车时请勿使用手机。',audio:'为了大家的安全，开车时请勿使用手机。'},
+  {words:['这家','宾馆的','价格','包括','早饭','和','晚饭','。'],ans:'这家宾馆的价格包括早饭和晚饭。',audio:'这家宾馆的价格包括早饭和晚饭。'},
+  {words:['当老师的','这么多年','，','她','时刻','关心着','每一个学生','。'],ans:'当老师的这么多年，她时刻关心着每一个学生。',audio:'当老师的这么多年，她时刻关心着每一个学生。'},
+  {words:['每天晚上','，','我们','三个人','轮流','洗碗','。'],ans:'每天晚上，我们三个人轮流洗碗。',audio:'每天晚上，我们三个人轮流洗碗。',alt:['我们三个人每天晚上轮流洗碗。']},
+  {words:['出发','以来','，','这艘船','已经','航行了','两千多','海里','。'],ans:'出发以来，这艘船已经航行了两千多海里。',audio:'出发以来，这艘船已经航行了两千多海里。'},
+  {words:['一','发现','楼下','着火了','，','他们','就','立刻','打了','119','。'],ans:'一发现楼下着火了，他们就立刻打了119。',audio:'一发现楼下着火了，他们就立刻打了119。'},
+  {words:['两个','老朋友','一见面','就','高兴地','拥抱','在一起','。'],ans:'两个老朋友一见面就高兴地拥抱在一起。',audio:'两个老朋友一见面就高兴地拥抱在一起。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1511,74 +1480,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'听到这个好消息后，我激动的心情久久不能____。',opts:['冷静','平静','安静','稳定'],ans:1,
-   exp:'Tâm trạng xúc động mãi không LẮNG XUỐNG → 平静. 冷静 là "tỉnh táo, sáng suốt" khi suy nghĩ; 安静 là không ồn ào (nơi chốn); 稳定 là ổn định lâu dài, không đi với 激动的心情.'},
-  {wrong:'现在，父母、妻子和孩子都____着他早日学成回国。',opts:['希望','盼望','愿意','打算'],ans:1,
-   exp:'Cả nhà tha thiết chờ người thân trở về, có 着 → 盼望着. 希望 mức độ nhẹ và hiếm khi đi với 着; 愿意 là "bằng lòng", 打算 là "dự định" — đều không hợp nghĩa.'},
-  {wrong:'这款车内部空间宽大，乘坐____。',opts:['舒服','舒适','平静','冷静'],ans:1,
-   exp:'Câu văn viết giới thiệu sản phẩm, tả cảm giác chung → 舒适. 舒服 thiên về khẩu ngữ; 平静, 冷静 không tả cảm giác ngồi xe.'},
-  {wrong:'我今天脖子有点儿不____，左右转动时有点儿疼。',opts:['舒适','平静','舒服','稳定'],ans:2,
-   exp:'Cảm giác cụ thể của một bộ phận cơ thể → 不舒服. 舒适 tả môi trường; 平静, 稳定 không nói về cơ thể.'},
-  {wrong:'21世纪是一个信息____。',opts:['时刻','时代','时候','时间'],ans:1,
-   exp:'Một giai đoạn lịch sử dài → 时代 (信息时代). 时刻 là một thời điểm ngắn; 时候, 时间 không đi với 信息 thành cụm này.'},
-  {wrong:'在最后____，他为本队踢进了赢得比赛的关键一球。',opts:['时代','时期','时刻','年代'],ans:2,
-   exp:'Một thời điểm then chốt, ngắn → 最后时刻. 时代, 时期, 年代 đều chỉ một giai đoạn dài.'},
-  {wrong:'他们买下了一____二手船，翟峰叫它“彩虹号”。',opts:['艘','辆','架','顿'],ans:0,
-   exp:'Lượng từ của tàu thuyền là 艘. 辆 dùng cho xe; 架 dùng cho máy bay; 顿 dùng cho bữa ăn.'},
-  {wrong:'该吃饭时，妻子会给全家人做一____美味的海鲜。',opts:['张','顿','艘','项'],ans:1,
-   exp:'Lượng từ cho bữa ăn là 顿 (一顿海鲜). 张 cho vật phẳng; 艘 cho thuyền; 项 cho hạng mục, nhiệm vụ (bài 1).'},
-  {wrong:'中场休息时间到了，比赛双方队员____回场外休息。',opts:['互相','自从','相互','各自'],ans:3,
-   exp:'Mỗi đội tự về chỗ của mình → 各自. 互相 / 相互 là "lẫn nhau" (phải có hành động qua lại); 自从 là giới từ "từ khi".'},
-  {wrong:'非工作人员，请____入内。',opts:['没','勿','非','未'],ans:1,
-   exp:'Biển báo cấm đoán, văn viết → 请勿. 没 / 未 phủ định việc đã xảy ra; 非 là "không phải", không dùng để cấm.'},
-  {wrong:'我们班所有人，____最不爱运动的刘方，也都参加了这次运动会。',opts:['包括','包含','关于','对于'],ans:0,
-   exp:'Nhấn mạnh một người nằm trong số đông, "kể cả …" → 包括. 包含 thiên về chứa đựng bên trong (ý nghĩa, thành phần), không dùng để kể người; 关于, 对于 là giới từ "về, đối với".'},
-  {wrong:'小船____有可能被下一道闪电击到。',opts:['随便','随时','按时','准时'],ans:1,
-   exp:'Bất cứ lúc nào cũng có thể xảy ra → 随时有可能. 随便 là "tuỳ tiện"; 按时, 准时 là "đúng giờ".'},
-  {wrong:'白天，翟峰和妻子____驾船。',opts:['轮流','轮到','流行','交流'],ans:0,
-   exp:'Hai người thay phiên nhau làm → 轮流 + V. 轮到 là "đến lượt" (轮到我了, bài 1); 流行 là "thịnh hành"; 交流 là "trao đổi".'},
-  {wrong:'他走路时一直看手机，一下子____到了树上。',opts:['撞','击','拥','钓'],ans:0,
-   exp:'Người va mạnh vào vật → 撞到. 击 thiên về đánh, đập (văn viết: 被闪电击到); 拥 là ôm; 钓 là câu cá.'},
-  {wrong:'房顶太旧了，一下雨就____。',opts:['着火','漏','撞','击'],ans:1,
-   exp:'Nước mưa lọt qua mái → 漏 (dột). 着火 là bốc cháy; 撞, 击 là va, đánh — đều không hợp với mưa.'},
-  {wrong:'最近天气干燥，很容易____，千万别在这儿抽烟！',opts:['着急','着火','着凉','火车'],ans:1,
-   exp:'Trời hanh khô + hút thuốc → dễ bốc cháy → 着火. 着急 là sốt ruột; 着凉 là bị cảm lạnh; 火车 là tàu hoả.'},
-  {wrong:'一道闪电____中了那棵大树。',opts:['撞','漏','击','钓'],ans:2,
-   exp:'Sét đánh trúng → 击中 (văn viết). 撞 là va chạm của vật đang chuyển động (xe, người); 漏, 钓 không hợp nghĩa.'},
-  {wrong:'这位是我____，她是一名医生。',opts:['女士','太太','老公','丈夫'],ans:1,
-   exp:'Giới thiệu vợ mình một cách lịch sự → 我太太. 女士 là cách gọi phụ nữ nói chung, không nói 我女士; 老公, 丈夫 là chồng — sai vai.'},
-  {wrong:'他们有房有车，从不用为生活____。',opts:['发愁','发现','发展','发生'],ans:0,
-   exp:'为 + việc + 发愁: lo lắng vì …. 发现 (phát hiện), 发展 (phát triển), 发生 (xảy ra) không đi với 为生活.'}
+  {wrong:'昨天跑了十公里，今天全身都不____。',opts:['舒服','舒适','平静','稳定'],ans:0,exp:'Cảm giác của cơ thể → 舒服 (不舒服 = khó chịu, mỏi mệt). 舒适 tả môi trường, đồ vật (房间舒适); 平静, 稳定 không nói về cơ thể.'},
+  {wrong:'我____你别把这件事告诉别人。',opts:['希望','盼望','发愁','随时'],ans:0,exp:'Mong người khác làm/không làm gì → 希望 + câu. 盼望 là ngóng trông một việc tốt sắp đến (盼望放假), không dùng để dặn dò; 发愁, 随时 không hợp.'},
+  {wrong:'今天没有风，海面像镜子一样____。',opts:['平静','冷静','稳定','舒服'],ans:0,exp:'Mặt nước lặng sóng → 平静. 冷静 chỉ dùng cho người (giữ bình tĩnh); 稳定 nói tình hình, thu nhập; 舒服 nói cảm giác.'},
+  {wrong:'现在是互联网____，很多东西在手机上就能买到。',opts:['时代','时刻','时间','未来'],ans:0,exp:'Một giai đoạn lịch sử → 时代 (互联网时代). 时刻 là một thời điểm ngắn; 时间 là thời gian nói chung; 未来 là tương lai — "现在是未来" vô lý.'},
+  {wrong:'这家超市二十四小时开门，你____都可以来买东西。',opts:['随时','立刻','时刻','各自'],ans:0,exp:'Bất cứ lúc nào cũng được → 随时 (thường đi với 都可以). 立刻 là ngay lập tức; 时刻 là luôn luôn (时刻注意); 各自 là ai nấy.'},
+  {wrong:'河上有几____小船。',opts:['艘','辆','台','位'],ans:0,exp:'艘 là lượng từ của tàu thuyền. 辆 cho xe; 台 cho máy móc; 位 cho người (lịch sự).'},
+  {wrong:'王先生和他____都是大学老师。',opts:['太太','女士','丈夫','先生'],ans:0,exp:'Vợ của một người đàn ông → 太太 (lịch sự). 女士 là cách gọi phụ nữ nói chung, không dùng với 他; 丈夫, 先生 là chồng.'},
+  {wrong:'因为公司离家太远，姐姐打算下个月____，找一份近一点儿的工作。',opts:['辞职','毕业','放假','出差'],ans:0,exp:'Thôi việc để tìm việc khác → 辞职. 毕业 là tốt nghiệp ở trường; 放假, 出差 không làm thay đổi công việc.'},
+  {wrong:'在船上住了一个月，一回到____，他觉得走路都不习惯了。',opts:['陆地','海里','台阶','彩虹'],ans:0,exp:'Đối lập với trên biển là 陆地 (đất liền). 海里 là đơn vị đo (hải lý); 台阶 là bậc thềm; 彩虹 là cầu vồng.'},
+  {wrong:'这个塑料袋破了，牛奶都____出来了。',opts:['漏','撞','击','钓'],ans:0,exp:'Chất lỏng rỉ ra qua lỗ thủng → 漏 (漏水, 漏出来). 撞 là đâm vào; 击 là đánh; 钓 là câu (cá).'},
+  {wrong:'这个月的房租还没交，他正在为这件事____。',opts:['发愁','盼望','平静','稳定'],ans:0,exp:'为 + việc + 发愁 = lo rầu vì việc gì. 盼望 là ngóng trông điều tốt; 平静, 稳定 là tính từ, không đi với 为…….'},
+  {wrong:'打____的时候最好别在大树下面站着。',opts:['雷','闪电','彩虹','海鲜'],ans:0,exp:'打雷 = có sấm. Không nói 打闪电 (chỉ nói 有闪电 / 闪电了); 彩虹, 海鲜 không đi với 打.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Các bạn trực nhật trước tiên thay phiên nhau quét dọn sạch lớp học, sau đó mới ai về nhà nấy.',zh:'值日生们先轮流把教室打扫干净，然后才各自回家。',py:'Zhírìshēngmen xiān lúnliú bǎ jiàoshì dǎsǎo gānjìng, ránhòu cái gèzì huí jiā.',goiY:['先……然后……','轮流','各自'],giai:'先…然后… nêu thứ tự hai việc; 各自 đứng sau chủ ngữ số nhiều, trước động từ — "ai về nhà nấy", không nói 各自同学.'},
+  {vi:'Các bạn trong lớp trước tiên thay phiên nhau quét dọn sạch lớp học, sau đó mới ai về nhà nấy.',zh:'同学们先轮流把教室打扫干净，然后才各自回家。',py:'Tóngxuémen xiān lúnliú bǎ jiàoshì dǎsǎo gānjìng, ránhòu cái gèzì huí jiā.',goiY:['先……然后……','轮流','各自'],giai:'先…然后… nêu thứ tự hai việc; 各自 đứng sau chủ ngữ số nhiều, trước động từ — "ai về nhà nấy", không nói 各自同学.'},
   {vi:'Chỉ cần cậu đang lo lắng chuyện học hành thì cứ đến tìm tớ tâm sự bất cứ lúc nào.',zh:'只要你为学习上的事发愁，就随时来找我聊聊。',py:'Zhǐyào nǐ wèi xuéxí shang de shì fāchóu, jiù suíshí lái zhǎo wǒ liáoliao.',goiY:['只要……就……','为……发愁','随时'],giai:'为 + việc + 发愁 = lo lắng/rầu rĩ vì việc gì (为 đọc wèi); 随时 = "bất cứ lúc nào", đứng trước động từ.'},
-  {vi:'Quy chế thi rất nghiêm, vì vậy không được mang các thiết bị điện tử, kể cả đồng hồ, vào phòng thi.',zh:'考试规定很严格，所以请勿把包括手表在内的电子产品带进考场。',py:'Kǎoshì guīdìng hěn yángé, suǒyǐ qǐng wù bǎ bāokuò shǒubiǎo zài nèi de diànzǐ chǎnpǐn dàijìn kǎochǎng.',goiY:['所以','请勿','包括……在内'],giai:'请勿 + V (văn viết) = xin đừng/không được, dùng trong biển báo, quy định; 包括…在内 = "kể cả…", đặt trước danh từ nó bổ nghĩa.'},
-  {vi:'Tuy công việc cũ của anh họ tôi vừa ổn định, đãi ngộ lại tốt, nhưng anh ấy vẫn kiên quyết nghỉ việc để đi học thạc sĩ.',zh:'虽然表哥原来的工作既稳定，待遇也好，但是他还是坚决辞职去读研究生了。',py:'Suīrán biǎogē yuánlái de gōngzuò jì wěndìng, dàiyù yě hǎo, dànshì tā háishi jiānjué cízhí qù dú yánjiūshēng le.',goiY:['虽然……但是……','既……也……','待遇','辞职'],giai:'既…也… nối hai ưu điểm song song; 虽然…但是… đối lập với quyết định bất ngờ. "Nghỉ việc" là 辞职 (tự xin thôi), khác 被开除 (bị đuổi).'},
-  {vi:'Anh tôi hay nói: thay vì sống cả đời bình lặng mà nhàm chán, chi bằng tranh thủ lúc còn trẻ cho cuộc đời mình thêm nhiều lựa chọn.',zh:'我哥常说，与其一辈子过平静而无聊的生活，不如趁年轻给人生多一些选择。',py:'Wǒ gē cháng shuō, yǔqí yíbèizi guò píngjìng ér wúliáo de shēnghuó, bùrú chèn niánqīng gěi rénshēng duō yìxiē xuǎnzé.',goiY:['与其……不如……','一辈子','平静','人生'],giai:'与其 A，不如 B: bỏ A chọn B; 而 nối hai tính từ tương phản (平静而无聊 = bình lặng mà nhàm chán). 趁 = tranh thủ lúc.'},
-  {vi:'Trong giờ hoá, thầy luôn nhắc chúng tôi: một khi đèn cồn bắt lửa thì tuyệt đối đừng hoảng, phải lập tức lấy khăn ướt trùm lên.',zh:'化学课上老师时刻提醒我们：一旦酒精灯着火，千万别慌，应该立刻用湿布把它盖住。',py:'Huàxué kè shang lǎoshī shíkè tíxǐng wǒmen: yídàn jiǔjīngdēng zháohuǒ, qiānwàn bié huāng, yīnggāi lìkè yòng shī bù bǎ tā gàizhù.',goiY:['时刻','一旦','着火','立刻'],giai:'一旦 = một khi (giả định việc xấu có thể xảy ra); 时刻 làm trạng ngữ = "lúc nào cũng, luôn luôn". "Bắt lửa" là 着火 (zháo), không đọc zhuó.'},
-  {vi:'Anh tôi cuối cùng cũng lấy được tấm bằng lái mong chờ bấy lâu; anh không những lái xe chở cả nhà ra biển mà còn khao chúng tôi một bữa hải sản thịnh soạn.',zh:'哥哥终于拿到了盼望已久的驾驶证，他不但开车带全家去了海边，而且还请我们吃了一顿海鲜大餐。',py:'Gēge zhōngyú nádàole pànwàng yǐ jiǔ de jiàshǐzhèng, tā búdàn kāichē dài quánjiā qùle hǎibiān, érqiě hái qǐng wǒmen chīle yí dùn hǎixiān dàcān.',goiY:['盼望已久','不但……而且……','顿','海鲜'],giai:'盼望已久的 + danh từ = điều mong chờ bấy lâu (định ngữ); 顿 là lượng từ của bữa ăn (一顿饭), không dùng 个.'},
-  {vi:'Mẹ hay than rằng cuối tuần cả nhà sở dĩ ít khi trò chuyện là vì ai cũng ở lì trong phòng riêng của mình xem điện thoại, kể cả bố.',zh:'妈妈常抱怨，周末全家人之所以很少聊天，是因为包括爸爸在内，每个人都待在各自的房间里看手机。',py:'Māma cháng bàoyuàn, zhōumò quán jiā rén zhīsuǒyǐ hěn shǎo liáotiān, shì yīnwèi bāokuò bàba zài nèi, měi ge rén dōu dāi zài gèzì de fángjiān li kàn shǒujī.',goiY:['抱怨','之所以……是因为……','包括……在内','各自的'],giai:'之所以…是因为… đảo kết quả lên trước; 各自的 + danh từ = "… riêng của mỗi người"; 包括爸爸在内 dịch linh hoạt "kể cả bố", có thể đưa ra cuối câu.'},
-  {vi:'Cho dù trước kỳ thi đại học áp lực có lớn đến mấy, tôi cũng sẽ luôn tự nhắc mình: chỉ cần kiên trì đến cùng thì tương lai chắc chắn sẽ có nhiều lựa chọn hơn.',zh:'即使高考前压力大得不得了，我也会时刻提醒自己：只要坚持下去，未来就一定有更多选择。',py:'Jíshǐ gāokǎo qián yālì dà de bùdéliǎo, wǒ yě huì shíkè tíxǐng zìjǐ: zhǐyào jiānchí xiaqu, wèilái jiù yídìng yǒu gèng duō xuǎnzé.',goiY:['即使……也……','时刻','只要……就……','未来'],giai:'Câu có hai tầng: 即使…也… (giả thiết nhượng bộ) bao ngoài, 只要…就… (điều kiện đủ) nằm trong lời tự nhắc; 时刻 = luôn luôn, đứng trước động từ.'},
-  {vi:'Cửa thư viện ghi rõ ràng “Vui lòng không làm ồn”, vậy mà mấy bạn học càng nói chuyện càng hăng, mãi đến khi cô thủ thư khó chịu đi tới, họ mới ai nấy cúi đầu đọc sách.',zh:'图书馆门口明明写着“请勿大声喧哗”，几个同学却越聊越起劲，直到管理员不耐烦地走过来，他们才各自低头看书。',py:'Túshūguǎn ménkǒu míngmíng xiězhe “qǐng wù dàshēng xuānhuá”, jǐ ge tóngxué què yuè liáo yuè qǐjìn, zhídào guǎnlǐyuán bú nàifán de zǒu guolai, tāmen cái gèzì dītóu kàn shū.',goiY:['请勿','却','越……越……','各自'],giai:'越…越… diễn tả mức độ tăng theo; 直到…才… = mãi đến khi… mới…; 请勿 là lối văn viết trên biển báo, dịch "vui lòng không…".'}
+  {vi:'Quy chế thi rất nghiêm, vì vậy xin đừng mang bất cứ thứ gì vào phòng thi, kể cả điện thoại và đồng hồ.',zh:'考试规定很严格，所以请勿把任何东西带进教室，包括手机和手表。',py:'Kǎoshì guīdìng hěn yángé, suǒyǐ qǐng wù bǎ rènhé dōngxi dàijìn jiàoshì, bāokuò shǒujī hé shǒubiǎo.',goiY:['所以','请勿','任何','包括'],giai:'请勿 + V (văn viết) = xin đừng, dùng trong biển báo, quy định; 包括 + danh từ đặt cuối câu để nói rõ "kể cả…".'},
+  {vi:'Tuy công việc cũ của anh trai tôi vừa ổn định, đãi ngộ lại tốt, nhưng anh ấy vẫn kiên quyết nghỉ việc để đi học tiếp.',zh:'虽然哥哥原来的工作既稳定，待遇也好，但是他还是坚决辞职去读书了。',py:'Suīrán gēge yuánlái de gōngzuò jì wěndìng, dàiyù yě hǎo, dànshì tā háishi jiānjué cízhí qù dúshū le.',goiY:['虽然……但是……','既……也……','待遇','辞职'],giai:'既…也… nối hai ưu điểm song song; 虽然…但是… đối lập với quyết định bất ngờ. "Nghỉ việc" (tự xin thôi) là 辞职; 坚决 (bài 2) đứng trước động từ.'},
+  {vi:'Mẹ hay than rằng cuối tuần cả nhà ít khi trò chuyện, vì ai cũng ở trong phòng riêng của mình xem điện thoại, kể cả bố tôi.',zh:'妈妈常抱怨，周末全家人很少聊天，因为包括我爸爸在内，每个人都在各自的房间里看手机。',py:'Māma cháng bàoyuàn, zhōumò quán jiā rén hěn shǎo liáotiān, yīnwèi bāokuò wǒ bàba zài nèi, měi ge rén dōu zài gèzì de fángjiān li kàn shǒujī.',goiY:['抱怨','包括……在内','各自的'],giai:'包括…在内 đặt trước 每个人, tiếng Việt chuyển ra cuối câu "kể cả…"; 各自的 + danh từ = "… riêng của mỗi người".'},
+  {vi:'Cho dù trước kỳ thi áp lực có lớn đến mấy, tôi cũng sẽ luôn tự nhắc mình: chỉ cần kiên trì đến cùng thì tương lai chắc chắn sẽ có nhiều lựa chọn hơn.',zh:'即使考试前压力大得不得了，我也会时刻提醒自己：只要坚持下去，未来就一定有更多选择。',py:'Jíshǐ kǎoshì qián yālì dà de bùdéliǎo, wǒ yě huì shíkè tíxǐng zìjǐ: zhǐyào jiānchí xiaqu, wèilái jiù yídìng yǒu gèng duō xuǎnzé.',goiY:['即使……也……','时刻','只要……就……','未来'],giai:'Câu có hai tầng: 即使…也… (giả thiết nhượng bộ) bao ngoài, 只要…就… (điều kiện đủ) nằm trong lời tự nhắc; 时刻 = luôn luôn, đứng trước động từ.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Vì công việc của Trác Phong và vợ ổn định, đãi ngộ khá tốt nên họ chưa bao giờ phải lo nghĩ chuyện cơm áo.',zh:'因为翟峰和妻子的工作稳定、待遇不错，所以他们从来不用为生活发愁。',py:'Yīnwèi Zhái Fēng hé qīzi de gōngzuò wěndìng, dàiyù búcuò, suǒyǐ tāmen cónglái bú yòng wèi shēnghuó fāchóu.',goiY:['稳定 = ổn định','待遇 = đãi ngộ','为……发愁 = lo lắng vì…'],giai:'因为…所以… nối nguyên nhân – kết quả; 为生活发愁 dịch thoát "lo chuyện cơm áo" tự nhiên hơn "buồn rầu vì cuộc sống".'},
-  {vi:'Trác Phong luôn mong mỏi một sự đổi thay, vì anh không muốn cả đời cứ sống một cuộc sống bình lặng như thế.',zh:'翟峰一直盼望着改变，因为他不想一辈子都过这样平静的生活。',py:'Zhái Fēng yìzhí pànwàngzhe gǎibiàn, yīnwèi tā bù xiǎng yíbèizi dōu guò zhèyàng píngjìng de shēnghuó.',goiY:['盼望 = mong mỏi','因为 = vì','平静 = bình lặng, yên ả'],giai:'Vế sau bắt đầu bằng 因为 giải thích lý do cho vế trước; 盼望着 (V + 着) chỉ mong mỏi kéo dài, dịch "luôn mong mỏi".'},
-  {vi:'Trác Phong hình dung rằng chỉ cần có một chiếc thuyền buồm là có thể đi đến bất cứ nơi nào mình muốn.',zh:'翟峰想象着，只要有一艘帆船，就能航行到任何自己想去的地方。',py:'Zhái Fēng xiǎngxiàngzhe, zhǐyào yǒu yì sōu fānchuán, jiù néng hángxíng dào rènhé zìjǐ xiǎng qù de dìfang.',goiY:['只要……就…… = chỉ cần… là…','艘 = chiếc (thuyền)','航行 = đi (tàu thuyền)'],giai:'艘 là lượng từ cho tàu thuyền; 航行 chỉ tàu thuyền di chuyển trên nước — dịch "đi thuyền đến", không dịch "hàng hành".'},
-  {vi:'Vì không có nhiều tiền tích luỹ nên vợ chồng Trác Phong bán cả nhà lẫn xe, mua một chiếc thuyền cũ và đặt tên cho nó là “Cầu Vồng”.',zh:'由于没有什么积蓄，翟峰夫妇于是卖房卖车，买下了一艘二手船，还给它取名“彩虹号”。',py:'Yóuyú méiyǒu shénme jīxù, Zhái Fēng fūfù yúshì mài fáng mài chē, mǎixiàle yì sōu èrshǒu chuán, hái gěi tā qǔmíng “Cǎihóng Hào”.',goiY:['由于……于是…… = do… nên…','积蓄 = tiền tích luỹ','二手 = cũ, đã qua sử dụng'],giai:'由于 nêu nguyên nhân, 于是 nêu hành động tiếp theo; 二手船 là thuyền đã qua sử dụng — dịch "thuyền cũ", không dịch "thuyền hai tay".'},
-  {vi:'Thế nhưng tất cả mọi người, kể cả bố mẹ Trác Phong, đều cho rằng anh bị điên rồi, vậy mà lại đòi đưa cả nhà đi mạo hiểm lớn đến vậy.',zh:'可是，包括翟峰的父母在内，所有人都觉得他疯了，居然要带着家人去冒这么大的险。',py:'Kěshì, bāokuò Zhái Fēng de fùmǔ zài nèi, suǒyǒu rén dōu juéde tā fēng le, jūrán yào dàizhe jiārén qù mào zhème dà de xiǎn.',goiY:['包括……在内 = kể cả…','疯 = điên','居然 = vậy mà (bất ngờ)'],giai:'包括…在内 đặt trước 所有人, tiếng Việt thường chuyển thành phần chú thích "kể cả…"; 居然 thể hiện thái độ không tin nổi của người nói.'},
-  {vi:'Sau khi nghỉ việc, vợ chồng Trác Phong đưa con gái ra khơi; ban ngày hai vợ chồng thay phiên nhau lái thuyền, còn con gái thì vừa đọc sách vừa vẽ tranh trên thuyền.',zh:'辞职以后，翟峰夫妇带着女儿出海了；白天夫妻俩轮流驾驶帆船，女儿就在船上一边看书一边画画儿。',py:'Cízhí yǐhòu, Zhái Fēng fūfù dàizhe nǚ\'ér chū hǎi le; báitiān fūqī liǎ lúnliú jiàshǐ fānchuán, nǚ\'ér jiù zài chuán shang yìbiān kàn shū yìbiān huà huàr.',goiY:['辞职 = nghỉ việc','轮流 = thay phiên','驾驶 = lái, điều khiển','一边……一边…… = vừa… vừa…'],giai:'轮流 + động từ = thay phiên nhau làm; 一边…一边… chỉ hai việc làm cùng lúc — tiếng Việt "vừa… vừa…".'},
-  {vi:'Nếu buổi chiều mặt biển êm ả, họ sẽ xuống biển bơi hoặc câu cá; đến giờ ăn, người vợ sẽ nấu cho cả nhà một bữa hải sản ngon lành.',zh:'如果下午海面平静，他们就下海游泳或者钓鱼，到了吃饭的时候，妻子会给全家人做一顿美味的海鲜。',py:'Rúguǒ xiàwǔ hǎimiàn píngjìng, tāmen jiù xià hǎi yóuyǒng huòzhě diàoyú, dàole chīfàn de shíhou, qīzi huì gěi quán jiā rén zuò yí dùn měiwèi de hǎixiān.',goiY:['如果……就…… = nếu… thì…','钓鱼 = câu cá','顿 = bữa'],giai:'如果…就… giả thiết điều kiện thời tiết; 平静 nói về mặt biển dịch "êm ả, lặng sóng", không dịch "bình tĩnh".'},
-  {vi:'Chiều tối là khoảng thời gian dễ chịu nhất của cả nhà, làm xong việc mọi người lại ngồi quây quần trò chuyện; thế mà trước đây trên đất liền, họ lúc nào cũng ai ở phòng nấy.',zh:'傍晚是一家人最舒适的时刻，大家干完活儿就坐在一起聊天；可是以前在陆地上，他们总是待在各自的房间里。',py:'Bàngwǎn shì yì jiā rén zuì shūshì de shíkè, dàjiā gànwán huór jiù zuò zài yìqǐ liáotiān; kěshì yǐqián zài lùdì shang, tāmen zǒngshì dāi zài gèzì de fángjiān li.',goiY:['傍晚 = chiều tối','舒适 = dễ chịu, thoải mái','陆地 = đất liền','各自的 = … riêng của mỗi người'],giai:'可是 đối lập cuộc sống trên biển với trước kia trên đất liền; 各自的房间 dịch tự nhiên "ai ở phòng nấy".'},
+  {vi:'Vì không có nhiều tiền tích luỹ nên Trác Phong và vợ bán cả nhà lẫn xe, mua một chiếc thuyền buồm cũ và đặt tên cho nó là “Cầu Vồng”.',zh:'由于没有什么积蓄，翟峰和妻子卖房卖车，买了一艘二手帆船，还给它取名“彩虹号”。',py:'Yóuyú méiyǒu shénme jīxù, Zhái Fēng hé qīzi mài fáng mài chē, mǎile yì sōu èrshǒu fānchuán, hái gěi tā qǔmíng “Cǎihóng Hào”.',goiY:['由于 = do, vì','积蓄 = tiền tích luỹ','二手 = cũ, đã qua sử dụng'],giai:'由于 nêu nguyên nhân ở vế trước; 二手帆船 là thuyền đã qua sử dụng — dịch "thuyền cũ", không dịch "thuyền hai tay".'},
+  {vi:'Thế nhưng tất cả mọi người, kể cả bố mẹ anh, đều cho rằng anh bị điên rồi, vậy mà lại đòi đưa vợ con ra sống trên biển.',zh:'可是，包括他自己的父母，所有人都觉得他疯了，居然要带着妻子和女儿在海上生活。',py:'Kěshì, bāokuò tā zìjǐ de fùmǔ, suǒyǒu rén dōu juéde tā fēng le, jūrán yào dàizhe qīzi hé nǚ\'ér zài hǎi shang shēnghuó.',goiY:['包括 = kể cả','疯 = điên','居然 = vậy mà (bất ngờ)'],giai:'包括… đặt trước 所有人, tiếng Việt thường chuyển thành phần chú thích "kể cả…"; 居然 thể hiện thái độ không tin nổi của người nói.'},
+  {vi:'Sau khi nghỉ việc, Trác Phong và vợ đưa con gái ra khơi; ban ngày hai vợ chồng thay phiên nhau lái thuyền, còn con gái thì vừa đọc sách vừa vẽ tranh trên thuyền.',zh:'辞职以后，翟峰和妻子带着女儿出海了；白天两个人轮流驾船，女儿就在船上一边看书一边画画儿。',py:'Cízhí yǐhòu, Zhái Fēng hé qīzi dàizhe nǚ\'ér chū hǎi le; báitiān liǎng ge rén lúnliú jià chuán, nǚ\'ér jiù zài chuán shang yìbiān kàn shū yìbiān huà huàr.',goiY:['辞职 = nghỉ việc','轮流 = thay phiên','驾船 = lái thuyền','一边……一边…… = vừa… vừa…'],giai:'轮流 + động từ = thay phiên nhau làm; 一边…一边… chỉ hai việc làm cùng lúc — tiếng Việt "vừa… vừa…".'},
+  {vi:'Chiều tối là khoảng thời gian dễ chịu nhất của cả nhà, làm xong việc mọi người lại ngồi quây quần trò chuyện; thế mà trước đây trên đất liền, họ lúc nào cũng ai ở phòng nấy.',zh:'傍晚是一家人最舒适的时刻，大家干完活儿就坐在一起聊天；可是以前在陆地上，他们总是在各自的房间里。',py:'Bàngwǎn shì yì jiā rén zuì shūshì de shíkè, dàjiā gànwán huór jiù zuò zài yìqǐ liáotiān; kěshì yǐqián zài lùdì shang, tāmen zǒngshì zài gèzì de fángjiān li.',goiY:['傍晚 = chiều tối','舒适 = dễ chịu, thoải mái','陆地 = đất liền','各自的 = … riêng của mỗi người'],giai:'可是 đối lập cuộc sống trên biển với trước kia trên đất liền; 各自的房间 dịch tự nhiên "ai ở phòng nấy".'},
   {vi:'Điều họ sợ nhất là những lúc sấm chớp đùng đùng, vì con thuyền nhỏ có thể bị sét đánh trúng bất cứ lúc nào, nên cả nhà ba người chỉ biết ôm chặt lấy nhau, mong cho tia chớp mau qua đi.',zh:'他们最怕雷电交加的时刻，因为小船随时可能被闪电击中，所以一家三口只能紧紧拥抱在一起，盼望闪电快点儿过去。',py:'Tāmen zuì pà léi diàn jiāojiā de shíkè, yīnwèi xiǎo chuán suíshí kěnéng bèi shǎndiàn jīzhòng, suǒyǐ yì jiā sān kǒu zhǐ néng jǐnjǐn yōngbào zài yìqǐ, pànwàng shǎndiàn kuài diǎnr guòqu.',goiY:['时刻 = lúc, thời khắc','随时 = bất cứ lúc nào','被闪电击中 = bị sét đánh trúng','拥抱 = ôm'],giai:'因为…所以… giải thích nỗi sợ; 被…击中 là câu bị động, tiếng Việt chuyển "bị sét đánh trúng"; 时刻 ở đây là danh từ "lúc, thời khắc".'},
-  {vi:'Trác Phong cho rằng đi biển không phải là một chuyến du lịch đơn giản, mà là một đoạn bậc thềm dài trên con đường đời; chỉ khi bước lên từng bậc một mới có thể đi tới tương lai mà anh mong muốn.',zh:'翟峰认为，航海不是一次简单的旅行，而是人生道路上一段长长的台阶，只有一步步走上去，才能通向他想要的未来。',py:'Zhái Fēng rènwéi, hánghǎi bú shì yí cì jiǎndān de lǚxíng, ér shì rénshēng dàolù shang yí duàn chángcháng de táijiē, zhǐyǒu yíbùbù zǒu shangqu, cái néng tōngxiàng tā xiǎng yào de wèilái.',goiY:['不是……而是…… = không phải… mà là…','台阶 = bậc thềm','只有……才…… = chỉ khi… mới…','未来 = tương lai'],giai:'不是…而是… phủ định để khẳng định; 只有…才… nêu điều kiện duy nhất — khác 只要…就… (điều kiện đủ). 台阶 ở đây mang nghĩa bóng: từng bước tiến lên.'}
+  {vi:'Trác Phong cho rằng đi biển không phải là một chuyến du lịch đơn giản, mà là một đoạn bậc thềm dài trên con đường đời; chỉ khi kiên trì bước lên mới có thể đi tới tương lai mà anh mong muốn.',zh:'翟峰认为，航海不是一次简单的旅行，而是人生道路上一段长长的台阶，只有坚持往上走，才能通向他想要的未来。',py:'Zhái Fēng rènwéi, hánghǎi bú shì yí cì jiǎndān de lǚxíng, ér shì rénshēng dàolù shang yí duàn chángcháng de táijiē, zhǐyǒu jiānchí wǎng shàng zǒu, cái néng tōngxiàng tā xiǎng yào de wèilái.',goiY:['不是……而是…… = không phải… mà là…','台阶 = bậc thềm','只有……才…… = chỉ khi… mới…','未来 = tương lai'],giai:'不是…而是… phủ định để khẳng định; 只有…才… nêu điều kiện duy nhất — khác 只要…就… (điều kiện đủ). 台阶 ở đây mang nghĩa bóng: từng bước tiến lên.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1642,30 +1577,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (3 câu đầu là câu 29–31 sách bài tập)
   sapXep:[
-    {manh:['可以','我','开始干活儿','随时'],
-     dap:'我随时可以开始干活儿。', chap:['我可以随时开始干活儿。'],
-     vn:'Tôi có thể bắt đầu làm việc bất cứ lúc nào.',
-     giai:'随时 là phó từ, đứng trước 可以 (hoặc ngay trước động từ: 可以随时开始). Chủ ngữ 我 đứng đầu.'},
-    {manh:['待遇稳定','我对','就是','新工作的要求'],
-     dap:'我对新工作的要求就是待遇稳定。',
-     vn:'Yêu cầu của tôi với công việc mới chính là đãi ngộ ổn định.',
-     giai:'对 + đối tượng + 的 + 要求 làm chủ ngữ; 就是 nối với vị ngữ 待遇稳定.'},
-    {manh:['让他','一种平静','雨后的彩虹','感受到'],
-     dap:'雨后的彩虹让他感受到一种平静。',
-     vn:'Cầu vồng sau mưa khiến anh ấy cảm nhận được một sự bình yên.',
-     giai:'Câu kiêm ngữ (HSK 3–4): A + 让 + B + V. 感受到 (bài 2) + tân ngữ 一种平静.'},
-    {manh:['各自的','一家人','在','房间里','休息'],
-     dap:'一家人在各自的房间里休息。',
-     vn:'Cả nhà ai ở phòng nấy nghỉ ngơi.',
-     giai:'Chủ ngữ + 在 + nơi chốn + V. 各自的 làm định ngữ cho 房间.'},
-    {manh:['挂着','门上','一块','“请勿吸烟”的牌子'],
-     dap:'门上挂着一块“请勿吸烟”的牌子。',
-     vn:'Trên cửa treo một tấm biển "Xin đừng hút thuốc".',
-     giai:'Câu tồn tại (HSK 3–4): nơi chốn + V + 着 + số lượng + sự vật.'},
-    {manh:['轮流','夫妻俩','驾驶','白天','帆船'],
-     dap:'白天夫妻俩轮流驾驶帆船。', chap:['夫妻俩白天轮流驾驶帆船。'],
-     vn:'Ban ngày hai vợ chồng thay phiên nhau lái thuyền buồm.',
-     giai:'Thời gian 白天 đứng đầu câu hoặc sau chủ ngữ; 轮流 đứng ngay trước động từ 驾驶.'}
+    {manh:['可以','我','开始干活儿','随时'],dap:'我随时可以开始干活儿。',chap:['我可以随时开始干活儿。'],vn:'Tôi có thể bắt đầu làm việc bất cứ lúc nào.',giai:'随时 là phó từ, đứng trước 可以 (hoặc ngay trước động từ: 可以随时开始). Chủ ngữ 我 đứng đầu.'},
+    {manh:['待遇稳定','我对','就是','新工作的要求'],dap:'我对新工作的要求就是待遇稳定。',vn:'Yêu cầu của tôi với công việc mới chính là đãi ngộ ổn định.',giai:'对 + đối tượng + 的 + 要求 làm chủ ngữ; 就是 nối với vị ngữ 待遇稳定.'},
+    {manh:['让他','一种平静','雨后的彩虹','感受到'],dap:'雨后的彩虹让他感受到一种平静。',vn:'Cầu vồng sau mưa khiến anh ấy cảm nhận được một sự bình yên.',giai:'Câu kiêm ngữ (HSK 3–4): A + 让 + B + V. 感受到 (bài 2) + tân ngữ 一种平静.'},
+    {manh:['各自的','一家人','在','房间里','休息'],dap:'一家人在各自的房间里休息。',vn:'Cả nhà ai ở phòng nấy nghỉ ngơi.',giai:'Chủ ngữ + 在 + nơi chốn + V. 各自的 làm định ngữ cho 房间.'},
+    {manh:['请勿','把','自行车','放在门口'],dap:'请勿把自行车放在门口。',vn:'Xin đừng để xe đạp ở cửa.',giai:'请勿 (văn viết, dùng trên biển báo) đứng đầu câu; sau đó là câu 把: 把 + 自行车 + 放在 + nơi chốn.'},
+    {manh:['轮流','夫妻俩','驾驶','白天','帆船'],dap:'白天夫妻俩轮流驾驶帆船。',chap:['夫妻俩白天轮流驾驶帆船。'],vn:'Ban ngày hai vợ chồng thay phiên nhau lái thuyền buồm.',giai:'Thời gian 白天 đứng đầu câu hoặc sau chủ ngữ; 轮流 đứng ngay trước động từ 驾驶.'}
   ]
 };
 
@@ -1675,30 +1592,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 稳定 · 平静 · 盼望 · 轮流 · 随时 · 包括 · 未来.',
   questions:[
-    {q_zh:'你有什么爱好吗？它给你的生活带来了什么好处？',
-     q_vn:'Em có sở thích gì không? Nó mang lại lợi ích gì cho cuộc sống của em?',
-     hint:'Nêu sở thích + 1–2 lợi ích cụ thể',
-     sample:'我的爱好是画画儿。每次画画儿的时候，我的心情都会变得很平静，学习的压力也小多了。',
-     sample_vn:'Sở thích của tôi là vẽ tranh. Mỗi lần vẽ, lòng tôi trở nên rất bình yên, áp lực học tập cũng nhẹ đi nhiều.',
-     note:'Câu hỏi này rất hay gặp ở phần thi nói HSKK — nên tập nói thành một đoạn 3–4 câu.'},
-    {q_zh:'你觉得应该怎么处理爱好和学习、家庭、生活的关系？',
-     q_vn:'Em thấy nên cân bằng sở thích với học tập, gia đình, cuộc sống như thế nào?',
-     hint:'Nêu nguyên tắc + ví dụ, dùng 只要……就……',
-     sample:'我觉得爱好不能影响学习。比如我每天先做完作业再打篮球，只要安排好时间，就不会有问题。',
-     sample_vn:'Tôi thấy sở thích không được ảnh hưởng việc học. Ví dụ ngày nào tôi cũng làm xong bài tập rồi mới chơi bóng rổ, chỉ cần sắp xếp thời gian hợp lý thì sẽ không có vấn đề gì.',
-     note:'Đề sách yêu cầu 举例说明 — phải có VÍ DỤ, nói chung chung là mất điểm.'},
-    {q_zh:'如果你的爱好影响了你的正常生活，你会怎么办？',
-     q_vn:'Nếu sở thích ảnh hưởng đến cuộc sống bình thường của em, em sẽ làm gì?',
-     hint:'Dùng 如果……就…… + nêu cách giải quyết',
-     sample:'如果我的爱好影响了学习，我就会先少玩一些，等放假的时候再好好儿玩。',
-     sample_vn:'Nếu sở thích ảnh hưởng việc học, tôi sẽ tạm chơi ít đi, đợi đến kỳ nghỉ rồi chơi cho thoả.',
-     note:'Câu giả định: vế sau nên có 就 / 会 để nói rõ hành động của mình.'},
-    {q_zh:'你怎么看翟峰辞职去航海这件事？',
-     q_vn:'Em nghĩ sao về việc Trác Phong nghỉ việc để đi biển?',
-     hint:'Nêu ý kiến rõ ràng + lý do, dùng 虽然……但是……',
-     sample:'我很佩服他。虽然航海随时有危险，但是他敢为自己盼望已久的生活做出选择。',
-     sample_vn:'Tôi rất khâm phục anh ấy. Tuy đi biển lúc nào cũng có thể gặp nguy hiểm, nhưng anh ấy dám lựa chọn vì cuộc sống mình mong mỏi từ lâu.',
-     note:'Câu hỏi 你怎么看 bắt buộc NÊU Ý KIẾN rồi bảo vệ — đừng trả lời "cũng được".'}
+    {q_zh:'你有什么爱好吗？它给你的生活带来了什么好处？',q_vn:'Em có sở thích gì không? Nó mang lại lợi ích gì cho cuộc sống của em?',hint:'Nêu sở thích + 1–2 lợi ích cụ thể',sample:'我的爱好是钓鱼。每次在河边钓鱼的时候，我的心情都会变得很平静；有一次下完雨，我还看到了一道特别漂亮的彩虹。',sample_vn:'Sở thích của tôi là câu cá. Mỗi lần ngồi câu bên bờ sông, lòng tôi trở nên rất bình yên; có lần mưa vừa tạnh, tôi còn được ngắm một chiếc cầu vồng đẹp tuyệt.',note:'Câu hỏi này rất hay gặp ở phần thi nói HSKK — nên tập nói thành một đoạn 3–4 câu.'},
+    {q_zh:'爱好会不会影响学习和生活？你是怎么安排时间的？',q_vn:'Sở thích có ảnh hưởng đến học tập và cuộc sống không? Em sắp xếp thời gian thế nào?',hint:'Nêu nguyên tắc + ví dụ, dùng 只要……就……',sample:'我觉得爱好不能影响学习。比如我每天先做完作业再打篮球，只要安排好时间，就不会有问题。',sample_vn:'Tôi thấy sở thích không được ảnh hưởng việc học. Ví dụ ngày nào tôi cũng làm xong bài tập rồi mới chơi bóng rổ, chỉ cần sắp xếp thời gian hợp lý thì sẽ không có vấn đề gì.',note:'Đề sách yêu cầu nêu ví dụ — phải có VÍ DỤ cụ thể, nói chung chung là mất điểm.'},
+    {q_zh:'如果你的爱好影响了你的正常生活，你会怎么做？',q_vn:'Nếu sở thích ảnh hưởng đến cuộc sống bình thường của em, em sẽ làm gì?',hint:'Dùng 如果……就…… + nêu cách giải quyết',sample:'如果我的爱好影响了学习，我就会先少玩一些，等放假的时候再好好儿玩。',sample_vn:'Nếu sở thích ảnh hưởng việc học, tôi sẽ tạm chơi ít đi, đợi đến kỳ nghỉ rồi chơi cho thoả.',note:'Câu giả định: vế sau nên có 就 / 会 để nói rõ hành động của mình.'},
+    {q_zh:'你怎么看翟峰辞职去航海这件事？',q_vn:'Em nghĩ sao về việc Trác Phong nghỉ việc để đi biển?',hint:'Nêu ý kiến rõ ràng + lý do, dùng 虽然……但是……',sample:'我很支持他。虽然航海随时有危险，但是他敢为自己盼望已久的生活做出选择。',sample_vn:'Tôi rất ủng hộ anh ấy. Tuy đi biển lúc nào cũng có thể gặp nguy hiểm, nhưng anh ấy dám lựa chọn vì cuộc sống mình mong mỏi từ lâu.',note:'Câu hỏi 你怎么看 bắt buộc NÊU Ý KIẾN rồi bảo vệ — đừng trả lời "cũng được".'}
   ]
 };
 
@@ -1789,45 +1686,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn hỏi em sau này muốn làm công việc thế nào.',
-     a:{sp:'Bạn',zh:'你以后想找什么样的工作？',vn:'Sau này cậu muốn tìm công việc thế nào?'},
-     need:['Dùng 稳定 hoặc 待遇','Nêu rõ lý do'],
-     sample:'我想先找一份稳定的工作，待遇好一点儿，这样父母就不用为我发愁了。',
-     samplePy:'Wǒ xiǎng xiān zhǎo yí fèn wěndìng de gōngzuò, dàiyù hǎo yìdiǎnr, zhèyàng fùmǔ jiù búyòng wèi wǒ fāchóu le.',
-     sampleVn:'Tôi muốn tìm một công việc ổn định trước, đãi ngộ tốt một chút, như vậy bố mẹ không phải lo cho tôi nữa.',
-     tip:'Lượng từ của 工作 là 份: 一份稳定的工作. Đừng viết 一份工作稳定.'},
-
-    {scene:'Bạn rủ em cuối tuần đi xem phim, nhưng em phải ôn thi.',
-     a:{sp:'Bạn',zh:'周末一起去看电影吧？',vn:'Cuối tuần đi xem phim cùng nhé?'},
-     need:['Từ chối khéo','Dùng 随时'],
-     sample:'这个周末我要复习，考完试以后你随时可以找我。',
-     samplePy:'Zhège zhōumò wǒ yào fùxí, kǎowán shì yǐhòu nǐ suíshí kěyǐ zhǎo wǒ.',
-     sampleVn:'Cuối tuần này tớ phải ôn bài, thi xong cậu cứ tìm tớ lúc nào cũng được.',
-     tip:'随时 đứng trước 可以 hoặc ngay trước động từ. Từ chối mà có hẹn lại thì bạn không phật lòng.'},
-
-    {scene:'Mẹ hỏi cuối tuần ai dọn nhà.',
-     a:{sp:'Mẹ',zh:'这个周末谁来打扫房间？',vn:'Cuối tuần này ai dọn phòng đây?'},
-     need:['Dùng 轮流'],
-     sample:'我和妹妹轮流打扫吧，这周我来，下周她来。',
-     samplePy:'Wǒ hé mèimei lúnliú dǎsǎo ba, zhè zhōu wǒ lái, xià zhōu tā lái.',
-     sampleVn:'Con với em thay phiên nhau dọn nhé, tuần này con, tuần sau em.',
-     tip:'轮流 cần chủ ngữ từ HAI người trở lên. Không nói 我轮流打扫.'},
-
-    {scene:'Bạn kể chuyện Trác Phong bán nhà mua thuyền đi biển.',
-     a:{sp:'Bạn',zh:'翟峰卖房卖车去航海，你觉得他疯了吗？',vn:'Trác Phong bán nhà bán xe để đi biển, cậu thấy anh ấy có điên không?'},
-     need:['Dùng 包括 hoặc 盼望','Nêu rõ ý kiến của mình'],
-     sample:'我不觉得他疯了。包括我在内，很多人都盼望过这样的生活，只是没有勇气。',
-     samplePy:'Wǒ bù juéde tā fēng le. Bāokuò wǒ zài nèi, hěn duō rén dōu pànwàngguo zhèyàng de shēnghuó, zhǐ shì méiyǒu yǒngqì.',
-     sampleVn:'Tớ không thấy anh ấy điên. Kể cả tớ, nhiều người đều từng mong một cuộc sống như vậy, chỉ là không đủ can đảm.',
-     tip:'包括……在内 (không phải 以内). Câu hỏi có/không vẫn phải kèm LÝ DO.'},
-
-    {scene:'Ở thư viện, em thấy một người định châm thuốc ngay dưới biển cấm.',
-     a:{sp:'Người lạ',zh:'我就抽一支，没关系吧？',vn:'Tôi hút một điếu thôi, không sao chứ?'},
-     need:['Nhắc đến tấm biển có chữ 勿','Khuyên lịch sự, có lý do'],
-     sample:'不好意思，这里挂着“请勿吸烟”的牌子。最近天气干燥，很容易着火，您还是别抽了吧。',
-     samplePy:'Bù hǎoyìsi, zhèli guàzhe "qǐng wù xīyān" de páizi. Zuìjìn tiānqì gānzào, hěn róngyì zháohuǒ, nín háishi bié chōu le ba.',
-     sampleVn:'Xin lỗi, ở đây có treo biển "Cấm hút thuốc". Dạo này trời hanh khô, rất dễ cháy, anh/chị đừng hút thì hơn.',
-     tip:'勿 chỉ dùng trên biển báo. Khi nói trực tiếp với người khác thì dùng 别 / 不要 + 不好意思 cho lịch sự.'}
+    {scene:'Bạn hỏi em sau này muốn làm công việc thế nào.',a:{sp:'Bạn',zh:'你以后想找什么样的工作？',vn:'Sau này cậu muốn tìm công việc thế nào?'},need:['Dùng 稳定 hoặc 待遇','Nêu rõ lý do'],sample:'我想先找一份稳定的工作，待遇好一点儿，这样父母就不用为我发愁了。',samplePy:'Wǒ xiǎng xiān zhǎo yí fèn wěndìng de gōngzuò, dàiyù hǎo yìdiǎnr, zhèyàng fùmǔ jiù búyòng wèi wǒ fāchóu le.',sampleVn:'Tôi muốn tìm một công việc ổn định trước, đãi ngộ tốt một chút, như vậy bố mẹ không phải lo cho tôi nữa.',tip:'Lượng từ của 工作 là 份: 一份稳定的工作. Đừng viết 一份工作稳定.'},
+    {scene:'Bạn rủ em cuối tuần đi xem phim, nhưng em phải ôn thi.',a:{sp:'Bạn',zh:'周末一起去看电影吧？',vn:'Cuối tuần đi xem phim cùng nhé?'},need:['Từ chối khéo','Dùng 随时'],sample:'这个周末我要复习，考完试以后你随时可以找我。',samplePy:'Zhège zhōumò wǒ yào fùxí, kǎowán shì yǐhòu nǐ suíshí kěyǐ zhǎo wǒ.',sampleVn:'Cuối tuần này tớ phải ôn bài, thi xong cậu cứ tìm tớ lúc nào cũng được.',tip:'随时 đứng trước 可以 hoặc ngay trước động từ. Từ chối mà có hẹn lại thì bạn không phật lòng.'},
+    {scene:'Mẹ hỏi cuối tuần ai dọn nhà.',a:{sp:'Mẹ',zh:'这个周末谁来打扫房间？',vn:'Cuối tuần này ai dọn phòng đây?'},need:['Dùng 轮流'],sample:'我和妹妹轮流打扫吧，这周我来，下周她来。',samplePy:'Wǒ hé mèimei lúnliú dǎsǎo ba, zhè zhōu wǒ lái, xià zhōu tā lái.',sampleVn:'Con với em thay phiên nhau dọn nhé, tuần này con, tuần sau em.',tip:'轮流 cần chủ ngữ từ HAI người trở lên. Không nói 我轮流打扫.'},
+    {scene:'Bạn kể chuyện Trác Phong bán nhà mua thuyền đi biển.',a:{sp:'Bạn',zh:'翟峰卖房卖车去航海，你觉得他疯了吗？',vn:'Trác Phong bán nhà bán xe để đi biển, cậu thấy anh ấy có điên không?'},need:['Dùng 包括 hoặc 盼望','Nêu rõ ý kiến của mình'],sample:'我不觉得他疯了。很多人都盼望过这样的生活，包括我自己，只是不敢去做。',samplePy:'Wǒ bù juéde tā fēng le. Hěn duō rén dōu pànwàngguo zhèyàng de shēnghuó, bāokuò wǒ zìjǐ, zhǐ shì bù gǎn qù zuò.',sampleVn:'Tớ không thấy anh ấy điên. Nhiều người từng mong một cuộc sống như vậy, kể cả tớ, chỉ là không dám làm thôi.',tip:'包括 + người đặt sau để bổ sung "kể cả…". Câu hỏi có/không vẫn phải kèm LÝ DO.'},
+    {scene:'Ở phòng đọc, em thấy một người định gọi điện thoại ngay dưới tấm biển cấm nói to.',a:{sp:'Người lạ',zh:'我就打一个电话，没关系吧？',vn:'Tôi gọi một cuộc điện thoại thôi, không sao chứ?'},need:['Nhắc đến tấm biển có chữ 勿','Khuyên lịch sự, đưa ra cách khác'],sample:'不好意思，这里写着“请勿大声说话”，您可以到外面去打吗？',samplePy:'Bù hǎoyìsi, zhèli xiězhe “qǐng wù dàshēng shuōhuà”, nín kěyǐ dào wàimiàn qù dǎ ma?',sampleVn:'Xin lỗi, ở đây có ghi "Xin đừng nói to", anh/chị ra ngoài gọi được không ạ?',tip:'勿 chỉ dùng trên biển báo. Khi nói trực tiếp với người khác thì dùng 别 / 不要, thêm 不好意思 cho lịch sự.'}
   ]
 };
 
@@ -1838,29 +1701,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết thông báo dán ở cửa thư viện.',
-     a:'馆内请勿大声喧哗。',b:'别在这儿大声说话啊！',better:'a',
-     why:'Thông báo, biển báo là VĂN VIẾT: 请勿 ngắn gọn, trang trọng. Câu b là lời nói miệng, dán lên tường nghe rất suồng sã.'},
-
-    {scene:'Em nhắc bạn cùng phòng ký túc xá.',
-     a:'请勿在宿舍吸烟。',b:'别在宿舍抽烟了，对身体不好。',better:'b',
-     why:'Nói trực tiếp với bạn thân mà dùng 请勿 thì như đang đọc biển báo, rất xa cách. Khẩu ngữ dùng 别, thêm lý do cho mềm mỏng.'},
-
-    {scene:'Em viết bài giới thiệu khách sạn cho trang web du lịch.',
-     a:'房间干净舒适，交通方便。',b:'房间挺舒服的，去哪儿都方便。',better:'a',
-     why:'Văn bản giới thiệu là văn viết: 舒适 + câu bốn chữ gọn gàng. 挺舒服的 là giọng nói chuyện.'},
-
-    {scene:'Tắm nước nóng xong, em nhắn tin cho mẹ.',
-     a:'洗了个热水澡，真舒适！',b:'洗了个热水澡，真舒服！',better:'b',
-     why:'Cảm giác CỤ THỂ của cơ thể, lại là tin nhắn thân mật → 舒服. 舒适 dùng ở đây nghe như văn quảng cáo.'},
-
-    {scene:'Em giới thiệu vợ mình với khách hàng trong bữa tiệc.',
-     a:'这是我太太。',b:'这是我老婆。',better:'a',
-     why:'Trước khách hàng dùng 太太 (lịch sự). 老婆 là cách gọi thân mật trong nhà (bài 1) — không hợp hoàn cảnh này.'},
-
-    {scene:'Em viết đơn xin nghỉ việc gửi công ty.',
-     a:'我不想干了，明天不来了。',b:'因个人原因，我决定辞去现在的工作。',better:'b',
-     why:'Đơn từ là văn bản chính thức: 因个人原因 + 辞去工作. Câu a đúng ngữ pháp nhưng cộc lốc, 干 là khẩu ngữ.'}
+    {scene:'Em viết nội quy dán ở cửa phòng học.',a:'请勿在教室里吃东西。',b:'别在教室里吃东西啊！',better:'a',why:'Nội quy, biển báo là VĂN VIẾT: 请勿 ngắn gọn, trang trọng. Câu b là lời nói miệng, dán lên tường nghe rất suồng sã.'},
+    {scene:'Gần nửa đêm, em nhắc bạn cùng phòng đang mở nhạc to.',a:'请勿在晚上十一点以后听音乐。',b:'都十一点了，你把音乐关小一点儿吧，我明天还要考试。',better:'b',why:'Nói trực tiếp với bạn mà dùng 请勿 thì như đang đọc nội quy, rất xa cách. Khẩu ngữ dùng …吧, thêm lý do cho mềm mỏng.'},
+    {scene:'Em viết bài giới thiệu khách sạn cho trang web du lịch.',a:'房间干净舒适，交通方便。',b:'房间挺舒服的，去哪儿都方便。',better:'a',why:'Văn bản giới thiệu là văn viết: 舒适 + câu bốn chữ gọn gàng. 挺舒服的 là giọng nói chuyện.'},
+    {scene:'Tối về nhà nằm dài trên sofa xem tivi, em nhắn tin cho bạn thân.',a:'晚上躺在沙发上看电视，真舒适！',b:'晚上躺在沙发上看电视，真舒服！',better:'b',why:'Cảm giác CỤ THỂ của cơ thể, lại là tin nhắn thân mật → 舒服. 舒适 dùng ở đây nghe như văn quảng cáo.'},
+    {scene:'Em giới thiệu vợ mình với khách hàng trong bữa tiệc.',a:'李经理，我给您介绍一下，这位是我太太小林。',b:'李经理，我给您介绍一下，这是我老婆小林。',better:'a',why:'Trước khách hàng dùng 这位 + 太太 (lịch sự). 老婆 là cách gọi thân mật trong nhà (bài 1) — không hợp hoàn cảnh này.'},
+    {scene:'Em viết đơn xin nghỉ việc gửi công ty.',a:'我不想干了，明天不来了。',b:'由于家里有一些情况，我想在下个月底辞职，希望公司能同意。',better:'b',why:'Đơn từ là văn bản chính thức: 由于… + 辞职 + 希望公司能同意. Câu a đúng ngữ pháp nhưng cộc lốc, 干 là khẩu ngữ.'}
   ]
 };
 

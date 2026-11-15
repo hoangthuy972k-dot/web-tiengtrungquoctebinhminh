@@ -1180,88 +1180,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — lấy theo bảng 词语搭配 của giáo trình (tr. 79) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'限制',right:'年龄'},
   {left:'显得',right:'格外高兴'},
   {left:'固定的',right:'座位'},
-  {left:'消费',right:'群体'},
   {left:'完整地',right:'叙述'},
   {left:'跟家人',right:'相处'},
-  {left:'节省',right:'时间'},
-  {left:'一群',right:'猴子'},
   {left:'一颗',right:'牙齿'},
-  {left:'喂养',right:'宠物'},
   {left:'安慰',right:'朋友'},
   {left:'换一种',right:'方式'},
   {left:'粮食',right:'不足'},
   {left:'不分',right:'彼此'},
-  {left:'调皮地',right:'眨眼睛'},
-  {left:'劳动的',right:'果实'},
-  {left:'寓言',right:'故事'},
-  {left:'脸上的',right:'表情'},
-  {left:'吃了',right:'大亏'},
-  {left:'哈哈',right:'大笑'},
-  {left:'不文明的',right:'行为'}
+  {left:'秋天的',right:'果实'},
+  {left:'脸上的',right:'表情'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'学习不能',blank:'朝三暮四',post:'，今天学画画儿，明天学钢琴，最后什么都学不好。',hint:'(sáng ba chiều bốn — thay đổi thất thường)',ans:'朝三暮四'},
-  {pre:'多看书能帮助我们积累',blank:'词汇',post:'，写作文的时候就容易多了。',hint:'(từ vựng)',ans:'词汇'},
-  {pre:'这种产品有',blank:'固定',post:'的消费群体。',hint:'(cố định)',ans:'固定'},
-  {pre:'写作文以前，先想好文章的',blank:'结构',post:'。',hint:'(kết cấu, bố cục)',ans:'结构'},
-  {pre:'这篇文章',blank:'整体',post:'上写得不错，有些小地方还要再改改。',hint:'(tổng thể)',ans:'整体'},
-  {pre:'老师',blank:'综合',post:'了大家的意见，决定周五去参观博物馆。',hint:'(tổng hợp)',ans:'综合'},
-  {pre:'请你把昨晚的经历',blank:'完整',post:'地叙述一遍。',hint:'(trọn vẹn)',ans:'完整'},
-  {pre:'中国古代有一位',blank:'哲学家',post:'，在他的书中讲了一个寓言故事。',hint:'(nhà triết học)',ans:'哲学家'},
-  {pre:'小时候，奶奶常常给我讲',blank:'寓言',post:'故事。',hint:'(ngụ ngôn)',ans:'寓言'},
-  {pre:'从前有位老人，',blank:'喂养',post:'了一群猴子当宠物。',hint:'(nuôi)',ans:'喂养'},
-  {pre:'聚在电台门口的那',blank:'群',post:'人是干什么的？',hint:'(lượng từ: đám, nhóm)',ans:'群',exp:'群 là lượng từ cho đám đông người/động vật: 那群人, 一群羊.'},
-  {pre:'现在很多年轻人喜欢养',blank:'宠物',post:'，把猫狗当成家人。',hint:'(thú cưng)',ans:'宠物'},
-  {pre:'他性格很好，跟同学们',blank:'相处',post:'得很好。',hint:'(chung sống, cư xử)',ans:'相处'},
-  {pre:'我们是最好的朋友，不分',blank:'彼此',post:'。',hint:'(hai bên — làm tân ngữ)',ans:'彼此',exp:'彼此 = hai bên, lẫn nhau; 不分彼此 = không phân biệt của anh của tôi (rất thân).'},
-  {pre:'你不能每顿饭光吃肉，还得多吃',blank:'蔬菜',post:'。',hint:'(rau)',ans:'蔬菜'},
-  {pre:'一个普通的',blank:'家庭',post:'，财产不多，哪有那么大的财力养一群猴子呢？',hint:'(gia đình)',ans:'家庭'},
-  {pre:'年轻人的',blank:'消费',post:'习惯和父母很不一样。',hint:'(chi tiêu)',ans:'消费'},
-  {pre:'坐地铁上班可以',blank:'节省',post:'很多时间。',hint:'(tiết kiệm)',ans:'节省'},
-  {pre:'这次的作文不',blank:'限制',post:'字数，你可以想写多少就写多少。',hint:'(giới hạn)',ans:'限制'},
-  {pre:'小孩子嘛，多少都有点儿',blank:'淘气',post:'。',hint:'(nghịch ngợm)',ans:'淘气'},
-  {pre:'他输了这场比赛不是因为能力不够，而是因为准备',blank:'不足',post:'。',hint:'(không đủ)',ans:'不足',exp:'不足 = không đủ, thiếu (văn viết): 准备不足. Đứng sau danh từ làm vị ngữ.'},
-  {pre:'这件衣服质量',blank:'倒',post:'是挺好，就是价格太贵了。',hint:'(… thì … đấy — nhượng bộ)',ans:'倒',exp:'A倒是…，就是… = A thì… đấy, chỉ có điều…; 倒 dùng để nhượng bộ trước khi nói ý ngược.'},
-  {pre:'小明昨天掉了一',blank:'颗',post:'牙齿，这是他第一次换牙。',hint:'(lượng từ cho vật nhỏ tròn)',ans:'颗',exp:'颗 là lượng từ cho vật nhỏ, tròn: 一颗牙齿, 一颗星.'},
-  {pre:'他最近心情不太好，事情',blank:'似乎',post:'办得不太顺利。',hint:'(dường như — văn viết)',ans:'似乎',exp:'似乎 = dường như (văn viết, như 好像), đặt trước động từ/tính từ.'},
-  {pre:'他太老实了，跟人做生意常常',blank:'吃亏',post:'。',hint:'(chịu thiệt)',ans:'吃亏'},
-  {pre:'老人见猴子们不接受，就换了一种',blank:'方式',post:'。',hint:'(cách thức)',ans:'方式'},
-  {pre:'她跟丈夫离婚后非常伤心，朋友们轮流来',blank:'安慰',post:'她。',hint:'(an ủi)',ans:'安慰'},
-  {pre:'今天太晚了，',blank:'要不',post:'你明天再走吧。',hint:'(hay là)',ans:'要不',exp:'要不 = hay là (đề nghị phương án khác): 要不你明天再走吧.'},
-  {pre:'老王今天穿这件T恤',blank:'显得',post:'格外年轻。',hint:'(trông có vẻ)',ans:'显得',exp:'显得 + tính từ = trông có vẻ, tỏ ra (do một nguyên nhân nào đó): 穿这件T恤显得年轻.'},
-  {pre:'下雪了，路很滑，开车要',blank:'格外',post:'小心。',hint:'(hết sức, đặc biệt)',ans:'格外',exp:'格外 = đặc biệt, hơn hẳn bình thường: 格外小心.'},
-  {pre:'我还记得第一次来中国时的',blank:'情景',post:'。',hint:'(cảnh tượng)',ans:'情景'},
-  {pre:'吃多少拿多少，千万别浪费',blank:'粮食',post:'。',hint:'(lương thực)',ans:'粮食'}
+  {pre:'这件衣服样子',blank:'倒',post:'是挺好看，就是颜色我不太喜欢。',hint:'(… thì có… đấy (nhượng bộ))',ans:'倒',exp:'A 倒是 + ưu điểm，就是 + nhược điểm = … thì có…, chỉ có điều… — thừa nhận một mặt rồi chuyển ý.'},
+  {pre:'他在房间里走',blank:'来',post:'走去，一直在想这个问题。',hint:'(đi tới… lui)',ans:'来',exp:'V来V去 = làm đi làm lại, tới tới lui lui: 走来走去, 想来想去, 找来找去.'},
+  {pre:'他太老实了，在外面常常',blank:'吃亏',post:'。',hint:'(chịu thiệt)',ans:'吃亏',exp:'吃亏 là ly hợp từ: 了, 过 chen vào giữa hai chữ.'},
+  {pre:'这座房子的',blank:'结构',post:'很简单，三个房间，一个厨房。',hint:'(kết cấu, cấu trúc)',ans:'结构',exp:'结构 = cách các phần ghép lại thành tổng thể: 房子的结构, 句子的结构, 文章的结构.'},
+  {pre:'班长把大家的意见',blank:'综合',post:'起来，写成了一个计划。',hint:'(tổng hợp)',ans:'综合',exp:'综合起来 = gộp nhiều ý/nhiều phần lại thành một; 综合能力 = năng lực tổng hợp.'},
+  {pre:'要是你没有时间每天',blank:'喂养',post:'它，就别买宠物了。',hint:'(nuôi, cho ăn)',ans:'喂养',exp:'喂养 + con vật/trẻ nhỏ = cho ăn và chăm sóc hằng ngày.'},
+  {pre:'门口站着一',blank:'群',post:'人，不知道在等什么。',hint:'(đám, nhóm — lượng từ)',ans:'群',exp:'群 là lượng từ cho nhiều người/con vật tụ lại: 一群人, 一群猴子.'},
+  {pre:'上课的时候玩手机是一种不好的',blank:'行为',post:'。',hint:'(hành vi)',ans:'行为',exp:'行为 = hành vi, việc làm (thường để đánh giá tốt/xấu): 不好的行为.'},
+  {pre:'吵架的时候，两个人都觉得是',blank:'对方',post:'的错。',hint:'(đối phương, bên kia)',ans:'对方',exp:'对方 = người/bên kia trong mối quan hệ hai bên: 尊重对方, 对方的错.'},
+  {pre:'为了减肥，她每天只吃一点儿',blank:'蔬菜',post:'和水果。',hint:'(rau)',ans:'蔬菜',exp:'蔬菜 = rau củ nói chung (văn viết hơn 菜).'},
+  {pre:'这个月我的',blank:'消费',post:'太多了，下个月得少花点儿钱。',hint:'(chi tiêu)',ans:'消费',exp:'消费 = tiêu dùng, chi tiêu: 消费太多, 消费习惯, 减少消费.'},
+  {pre:'看到孩子们抢着帮老人拿东西的',blank:'情景',post:'，大家都很感动。',hint:'(cảnh tượng)',ans:'情景',exp:'情景 = cảnh tượng (người, việc đang diễn ra trước mắt hoặc trong ký ức).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (倒 · ……来……去 · 要不) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['用橡子','喂猴子','倒是','个办法','。'],ans:'用橡子喂猴子倒是个办法。',audio:'用橡子喂猴子倒是个办法。'},
-  {words:['这件衣服','质量','倒是','挺好','，','就是','太贵了','。'],ans:'这件衣服质量倒是挺好，就是太贵了。',audio:'这件衣服质量倒是挺好，就是太贵了。'},
-  {words:['你','倒是','说','句话','呀','！'],ans:'你倒是说句话呀！',audio:'你倒是说句话呀！'},
-  {words:['他们','研究来','讨论去','，','还是','没找出','原因','。'],ans:'他们研究来讨论去，还是没找出原因。',audio:'他们研究来讨论去，还是没找出原因。'},
-  {words:['猴子们','一个个','立起身子','跳来跳去','。'],ans:'猴子们一个个立起身子跳来跳去。',audio:'猴子们一个个立起身子跳来跳去。'},
-  {words:['他的手机不见了','，','急得','在房间里','走来走去','。'],ans:'他的手机不见了，急得在房间里走来走去。',audio:'他的手机不见了，急得在房间里走来走去。'},
-  {words:['4块','，','要不','我','不买','。'],ans:'4块，要不我不买。',audio:'4块，要不我不买。'},
-  {words:['今天太晚了','，','要不','你明天','再走吧','。'],ans:'今天太晚了，要不你明天再走吧。',audio:'今天太晚了，要不你明天再走吧。'},
-  {words:['快点儿走','，','要不','就','迟到了','。'],ans:'快点儿走，要不就迟到了。',audio:'快点儿走，要不就迟到了。'},
-  {words:['老人','喂养了','一群猴子','当','宠物','。'],ans:'老人喂养了一群猴子当宠物。',audio:'老人喂养了一群猴子当宠物。'},
-  {words:['猴子们','马上','安静下来','，','显得','格外','开心','。'],ans:'猴子们马上安静下来，显得格外开心。',audio:'猴子们马上安静下来，显得格外开心。'},
-  {words:['老人','把','节省下来的','粮食','拿去','喂养猴子','。'],ans:'老人把节省下来的粮食拿去喂养猴子。',audio:'老人把节省下来的粮食拿去喂养猴子。'},
-  {words:['这次的作文','不','限制','字数','。'],ans:'这次的作文不限制字数。',audio:'这次的作文不限制字数。'},
-  {words:['猴子们','似乎','觉得自己','吃了亏','。'],ans:'猴子们似乎觉得自己吃了亏。',audio:'猴子们似乎觉得自己吃了亏。'}
+  {words:['饭','还没','做好','，','要不','我们','先','出去','走走','吧','。'],ans:'饭还没做好，要不我们先出去走走吧。',audio:'饭还没做好，要不我们先出去走走吧。'},
+  {words:['他','在','网上','找来找去','，','终于','找到了','那本书','。'],ans:'他在网上找来找去，终于找到了那本书。',audio:'他在网上找来找去，终于找到了那本书。'},
+  {words:['这个','手机','倒是','很便宜','，','就是','有点儿','慢','。'],ans:'这个手机倒是很便宜，就是有点儿慢。',audio:'这个手机倒是很便宜，就是有点儿慢。'},
+  {words:['他','似乎','还','不','知道','这件事','。'],ans:'他似乎还不知道这件事。',audio:'他似乎还不知道这件事。'},
+  {words:['穿上','新衣服','，','她','显得','格外','漂亮','。'],ans:'穿上新衣服，她显得格外漂亮。',audio:'穿上新衣服，她显得格外漂亮。'},
+  {words:['自己','带','饭','去','公司','，','一个月','能','节省','不少钱','。'],ans:'自己带饭去公司，一个月能节省不少钱。',audio:'自己带饭去公司，一个月能节省不少钱。'},
+  {words:['这只','调皮的','小猴子','把','我的','帽子','拿走了','。'],ans:'这只调皮的小猴子把我的帽子拿走了。',audio:'这只调皮的小猴子把我的帽子拿走了。'},
+  {words:['新来的','同事','很','容易','相处','，','大家','都','很','喜欢','跟她','一起','工作','。'],ans:'新来的同事很容易相处，大家都很喜欢跟她一起工作。',audio:'新来的同事很容易相处，大家都很喜欢跟她一起工作。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1269,44 +1235,18 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'动物园里的____最受孩子们欢迎，它们会爬树，还会学人的动作。',opts:['猪','猴子','馒头','橡子'],ans:1,
-   exp:'Con vật biết leo cây, bắt chước người → 猴子 (con khỉ). 猪 (heo) không leo cây; 馒头 (màn thầu) và 橡子 (hạt dẻ) là đồ ăn, không phải con vật.'},
-  {wrong:'看他脸上的____，我就知道他考得不错。',opts:['表情','行为','情景','方式'],ans:0,
-   exp:'Cái hiện trên mặt → 表情 (nét mặt). 行为 là hành vi, việc làm; 情景 là cảnh tượng trước mắt; 方式 là cách thức — đều không "ở trên mặt".'},
-  {wrong:'在公共场所大声打电话是一种不文明的____。',opts:['表情','情景','行为','对方'],ans:2,
-   exp:'Đánh giá việc làm của con người (văn minh / không văn minh) → 行为. 表情 là nét mặt; 情景 là cảnh tượng; 对方 là người phía bên kia.'},
-  {wrong:'夫妻之间应该学会尊重____。',opts:['对方','互相','一起','方式'],ans:0,
-   exp:'Cần một TÂN NGỮ chỉ người sau 尊重 → 对方 (người kia). 互相 là phó từ, phải đứng trước động từ (互相尊重), không làm tân ngữ; 一起 cũng là phó từ; 方式 không hợp nghĩa.'},
-  {wrong:'老人把全部____都捐给了学校。',opts:['果实','财产','消费','家庭'],ans:1,
-   exp:'Của cải, tiền bạc đem cho → 财产 (tài sản). 果实 là quả; 消费 là chi tiêu (động từ); 家庭 là gia đình — không "quyên góp" được.'},
-  {wrong:'我外婆在农村养了两头____。',opts:['猴子','宠物','猪','群'],ans:2,
-   exp:'Lượng từ 头 dùng cho gia súc lớn như heo, bò → 两头猪. Khỉ đếm bằng 只; 宠物 thường đi với 只/个; 群 bản thân là lượng từ.'},
-  {wrong:'他的回答很____，把大家都逗笑了。',opts:['调皮','安慰','完整','固定'],ans:0,
-   exp:'Tinh nghịch, dí dỏm khiến người khác cười → 调皮. 安慰 là động từ "an ủi"; 完整 (hoàn chỉnh), 固定 (cố định) không tạo tiếng cười.'},
-  {wrong:'老人的朋友送给他很多____，这是一种猴子爱吃的果实。',opts:['馒头','蔬菜','橡子','猪肉'],ans:2,
-   exp:'Vế sau nói rõ đó là một loại QUẢ (果实) khỉ thích ăn → 橡子 (hạt dẻ). 馒头 là bánh bột mì, 蔬菜 là rau, 猪肉 là thịt — đều không phải 果实.'},
-  {wrong:'秋天到了，树上结满了____。',opts:['果实','粮食','蔬菜','财产'],ans:0,
-   exp:'Động từ 结 (ra quả) + 果实. Cây không "kết" lương thực, rau hay tài sản.'},
-  {wrong:'北方人早饭常常吃____、喝粥。',opts:['橡子','馒头','颗','宠物'],ans:1,
-   exp:'Món chính người miền Bắc Trung Quốc ăn sáng → 馒头. 橡子 là hạt dẻ cho khỉ; 颗 là lượng từ; 宠物 là thú cưng.'},
-  {wrong:'听完这个笑话，大家都____哈大笑起来。',opts:['哈','啊','呀','吧'],ans:0,
-   exp:'Tiếng cười lặp lại: 哈哈大笑. 啊, 呀, 吧 là trợ từ ngữ khí cuối câu, không tả tiếng cười.'},
-  {wrong:'你究竟去还是不去？____是说句话呀！',opts:['倒','却','才','就'],ans:0,
-   exp:'Giục người khác một cách sốt ruột → 倒是 + V + 呀. 却 chỉ sự chuyển ý; 才, 就 không có nghĩa thúc giục.'},
-  {wrong:'快点儿走，____我们就迟到了。',opts:['要是','要不','只要','不要'],ans:1,
-   exp:'"Nếu không (đi nhanh) thì sẽ muộn" → 要不, đứng trước chủ ngữ vế sau. 要是 / 只要 phải đặt ở vế ĐIỀU KIỆN; 不要 là "đừng".'},
-  {wrong:'这两个女孩儿关系非常好，____亲姐妹一样。',opts:['似乎','好像','格外','彼此'],ans:1,
-   exp:'Ví von với ……一样 → chỉ 好像. 似乎 không đi với 一样; 格外 là "đặc biệt"; 彼此 là "hai bên".'},
-  {wrong:'对同一个问题，____的认识不同，是很正常的事情。',opts:['互相','彼此','对方','一起'],ans:1,
-   exp:'Làm định ngữ (……的认识) và chỉ HAI BÊN → 彼此. 互相, 一起 là phó từ không đứng trước 的; 对方 chỉ một bên, không hợp "认识不同".'},
-  {wrong:'这个句子不____，少了一个动词。',opts:['完整','整体','综合','固定'],ans:0,
-   exp:'Thiếu thành phần → không 完整 (hoàn chỉnh). 整体 là danh từ, không đi sau 不; 综合, 固定 không hợp nghĩa.'},
-  {wrong:'我建议把下周会议讨论话题的顺序____下来。',opts:['一定','肯定','固定','必定'],ans:2,
-   exp:'把 + N + 固定下来 = cố định lại. 一定, 肯定, 必定 là phó từ/tính từ chỉ sự chắc chắn, không làm động từ mang bổ ngữ 下来.'},
-  {wrong:'汉语的____非常丰富，你得特别注意近义词之间的区别。',opts:['词','词汇','句子','字母'],ans:1,
-   exp:'Nói TOÀN BỘ từ của một ngôn ngữ + 丰富 → 词汇. 词 là một từ riêng lẻ; 句子 là câu; tiếng Hán không có 字母 (chữ cái).'},
-  {wrong:'猴子们觉得自己____了，一个个跳来跳去地发脾气。',opts:['吃亏','吃惊','吃苦','吃力'],ans:0,
-   exp:'Nghĩ mình bị thiệt (ít hạt dẻ hơn) → 吃亏. 吃惊 là giật mình; 吃苦 là chịu khổ; 吃力 là vất vả, tốn sức — đều không hợp.'}
+  {wrong:'快点儿吃，____上课就要迟到了。',opts:['要不','而且','于是','倒'],ans:0,exp:'要不 = nếu không thì (khẩu ngữ), dẫn ra hậu quả. 而且 thêm ý cùng chiều; 于是 nối việc xảy ra tiếp theo; 倒 là phó từ, không đứng đầu vế như liên từ.'},
+  {wrong:'他们俩认识很多年了，对____的习惯都很清楚。',opts:['彼此','互相','一起','共同'],ans:0,exp:'彼此 là đại từ, làm tân ngữ sau 对 được (对彼此). 互相, 一起, 共同 là phó từ, phải đứng trước động từ, không đứng sau giới từ.'},
+  {wrong:'她说得好像她自己看见了____。',opts:['一样','似乎','显得','格外'],ans:0,exp:'好像……一样 = cứ như là…; vế sau phải khép bằng 一样 (hoặc 似的). 似乎, 显得, 格外 không đứng cuối câu.'},
+  {wrong:'老师看完我写的文章，____不太满意，但是什么也没说。',opts:['似乎','格外','彼此','对方'],ans:0,exp:'Phỏng đoán qua thái độ → 似乎 (dường như), đứng trước cụm vị ngữ. 格外 là "đặc biệt", không đi với 不太; 彼此, 对方 là đại từ.'},
+  {wrong:'你的回答不太____，还少了最重要的一点。',opts:['完整','整体','综合','固定'],ans:0,exp:'Thiếu mất một phần → 不完整. 整体 là danh từ (从整体上看); 综合 là tổng hợp; 固定 là cố định.'},
+  {wrong:'他考试没考好，心里很难过，我们去____他吧。',opts:['安慰','安静','安全','满意'],ans:0,exp:'安慰 + người = an ủi. 安静, 安全, 满意 là tính từ, không mang tân ngữ người như vậy.'},
+  {wrong:'最近天天锻炼，爸爸____年轻了很多。',opts:['显得','格外','彼此','相处'],ans:0,exp:'显得 + tính từ = trông có vẻ, tỏ ra. 格外 chỉ mức độ (格外年轻), không đi với 了很多; 彼此, 相处 không hợp.'},
+  {wrong:'我的汉语____太少了，很多文章都看不懂。',opts:['词汇','结构','方式','情景'],ans:0,exp:'Vốn từ → 词汇. 结构 là kết cấu; 方式 là cách thức; 情景 là cảnh tượng.'},
+  {wrong:'盲人摸大象也是一个____，它告诉我们看问题不能片面。',opts:['寓言','词汇','哲学家','结构'],ans:0,exp:'Câu chuyện ngắn gửi gắm bài học → 寓言 (truyện ngụ ngôn). 词汇 là từ vựng; 哲学家 là người; 结构 là kết cấu.'},
+  {wrong:'奶奶家养了三____猪。',opts:['头','颗','张','本'],ans:0,exp:'头 là lượng từ cho con vật lớn (猪, 大象). 颗 cho vật nhỏ tròn; 张 cho vật phẳng; 本 cho sách.'},
+  {wrong:'她出生在一个普通的____，父母都是农民。',opts:['家庭','家人','对方','财产'],ans:0,exp:'一个普通的家庭 = một gia đình bình thường (đơn vị xã hội). 家人 là người nhà, không dùng với 一个普通的 ở đây; 对方, 财产 không hợp.'},
+  {wrong:'这些桌子是学校的____，大家要爱护。',opts:['财产','消费','粮食','果实'],ans:0,exp:'Đồ đạc thuộc sở hữu của trường → 财产 (tài sản). 消费 là chi tiêu; 粮食 là lương thực; 果实 là quả.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1314,29 +1254,21 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var translateData = [
   {vi:'Đã học đi học lại mấy từ vựng này mà vẫn không nhớ nổi thì hay là cậu thử đổi cách khác xem.',zh:'既然这些词汇你背来背去都记不住，要不就换一种方式试试吧。',py:'Jìrán zhèxiē cíhuì nǐ bèi lái bèi qù dōu jì bu zhù, yàobù jiù huàn yì zhǒng fāngshì shìshi ba.',goiY:['既然','背来背去','要不','方式'],giai:'V来V去 = làm đi làm lại mãi (背来背去 = học thuộc đi học thuộc lại); 要不……吧 = hay là… (đưa ra đề nghị), đặt ở đầu vế sau.'},
-  {vi:'Chỉ cần sống hòa thuận với bạn bè thì giữa đôi bên sẽ không có quá nhiều hiểu lầm.',zh:'只要跟朋友们好好相处，彼此之间就不会有太多误会。',py:'Zhǐyào gēn péngyoumen hǎohǎo xiāngchǔ, bǐcǐ zhījiān jiù bú huì yǒu tài duō wùhuì.',goiY:['只要……就……','相处','彼此'],giai:'只要 + điều kiện đủ, 就 + kết quả; 跟 + người + 相处 = sống/cư xử với ai; 彼此之间 = giữa đôi bên, giữa nhau.'},
   {vi:'Cuối tuần em thì cũng muốn đi chơi với bạn lắm, nhưng trước kỳ thi mẹ hạn chế không cho em ra ngoài.',zh:'周末我倒是想跟同学出去玩，可是考试前妈妈限制我出门。',py:'Zhōumò wǒ dàoshì xiǎng gēn tóngxué chūqu wán, kěshì kǎoshì qián māma xiànzhì wǒ chū mén.',goiY:['倒是……可是……','限制'],giai:'A 倒是…，可是 B = … thì cũng…, nhưng… (nhượng bộ một ý rồi chuyển); 限制 + người + V = hạn chế ai làm gì.'},
-  {vi:'Chiếc áo khoác này đẹp thì có đẹp, chỉ là đắt quá, vượt xa kế hoạch chi tiêu tháng này của em.',zh:'这件外套倒是挺好看的，就是价格太贵了，远远超出了我这个月的消费计划。',py:'Zhè jiàn wàitào dàoshì tǐng hǎokàn de, jiùshì jiàgé tài guì le, yuǎnyuǎn chāochū le wǒ zhège yuè de xiāofèi jìhuà.',goiY:['倒是……就是……','消费'],giai:'A 倒是 + ưu điểm，就是 + nhược điểm = … thì có…, chỉ là…; 就是 ở đây = chỉ có điều, không phải “chính là”.'},
-  {vi:'Thằng em ngày thường nghịch nhất nhà, hôm nay lại tỏ ra im lặng lạ thường, thảo nào mẹ tưởng nó bị ốm.',zh:'平时最调皮的弟弟，今天倒显得格外安静，难怪妈妈以为他生病了。',py:'Píngshí zuì tiáopí de dìdi, jīntiān dào xiǎnde géwài ānjìng, nánguài māma yǐwéi tā shēngbìng le.',goiY:['倒','显得格外','难怪'],giai:'倒 = lại (trái với lẽ thường), đứng trước động từ/tính từ; 难怪 = thảo nào, vế sau là điều trở nên dễ hiểu. “Tưởng” (nghĩ sai) = 以为, không dùng 认为.'},
-  {vi:'Nghĩ tới nghĩ lui, cuối cùng em quyết định xin lỗi bạn ấy trước, vì lúc cãi nhau cả hai đứa đều đã nói những lời quá đáng.',zh:'我想来想去，还是决定先向对方道歉，因为吵架的时候彼此都说了过分的话。',py:'Wǒ xiǎng lái xiǎng qù, háishi juédìng xiān xiàng duìfāng dàoqiàn, yīnwèi chǎojià de shíhou bǐcǐ dōu shuō le guòfèn de huà.',goiY:['想来想去','对方','彼此','吵架'],giai:'想来想去 = nghĩ đi nghĩ lại (V来V去: hành động lặp nhiều lần); 还是 + quyết định = rốt cuộc vẫn chọn…; “bạn ấy” ở đây nên dịch 对方 (người kia).'},
+  {vi:'Chiếc áo khoác này đẹp thì có đẹp, chỉ là đắt quá, vượt xa kế hoạch chi tiêu tháng này của em.',zh:'这件外套倒是挺好看的，就是价格太贵了，比我这个月的消费计划多了很多。',py:'Zhè jiàn wàitào dàoshì tǐng hǎokàn de, jiùshì jiàgé tài guì le, bǐ wǒ zhège yuè de xiāofèi jìhuà duōle hěn duō.',goiY:['倒是……就是……','消费','比……多了很多'],giai:'A 倒是 + ưu điểm，就是 + nhược điểm = … thì có…, chỉ là…; "vượt xa" có thể nói 比……多了很多 (so sánh + mức chênh).'},
+  {vi:'Nghĩ rất lâu, cuối cùng em quyết định xin lỗi bạn ấy trước, vì lúc cãi nhau cả hai đứa đều đã nói những lời khó nghe.',zh:'我想了很久，还是决定先向对方道歉，因为吵架的时候彼此都说了不好听的话。',py:'Wǒ xiǎngle hěn jiǔ, háishi juédìng xiān xiàng duìfāng dàoqiàn, yīnwèi chǎojià de shíhou bǐcǐ dōu shuōle bù hǎotīng de huà.',goiY:['对方','彼此','吵架'],giai:'还是 + quyết định = rốt cuộc vẫn chọn…; "bạn ấy" ở đây nên dịch 对方 (người kia); 吵架 (bài 1).'},
   {vi:'Con chó nhà em tuy rất nghịch, suốt ngày chạy tới chạy lui trong nhà, nhưng hình như nó hiểu được nét mặt của từng người.',zh:'我们家的小狗虽然很淘气，经常在屋子里跑来跑去，但它似乎能看懂每个人的表情。',py:'Wǒmen jiā de xiǎo gǒu suīrán hěn táoqì, jīngcháng zài wūzi li pǎo lái pǎo qù, dàn tā sìhū néng kàn dǒng měi ge rén de biǎoqíng.',goiY:['虽然……但……','跑来跑去','似乎','表情'],giai:'虽然……但…… nối hai ý trái ngược; 跑来跑去 = chạy tới chạy lui; 似乎 = hình như (phỏng đoán nhẹ), đứng trước động từ.'},
-  {vi:'Thay vì ngày nào cũng gọi đồ ăn ngoài, chi bằng tự mua ít rau về nấu cơm, vừa tốt cho sức khỏe lại tiết kiệm được khối tiền.',zh:'与其每天吃外卖，不如自己买些蔬菜回家做饭，这样既健康又能节省不少钱。',py:'Yǔqí měi tiān chī wàimài, bùrú zìjǐ mǎi xiē shūcài huí jiā zuò fàn, zhèyàng jì jiànkāng yòu néng jiéshěng bù shǎo qián.',goiY:['与其……不如……','既……又……','蔬菜','节省'],giai:'与其 A，不如 B = thay vì A thì chi bằng B (chọn B); 既……又…… nối hai lợi ích song song; 节省 + tiền/thời gian = tiết kiệm.'},
-  {vi:'Tốt nhất ngày nào em cũng làm bài tập đúng hạn, nếu không để đến trước kỳ thi mới thức khuya thì chắc chắn sẽ chịu thiệt.',zh:'你最好每天按时完成作业，要不等到考试前再熬夜，你一定会吃亏的。',py:'Nǐ zuìhǎo měi tiān ànshí wánchéng zuòyè, yàobù děngdào kǎoshì qián zài áoyè, nǐ yídìng huì chīkuī de.',goiY:['要不','等到','熬夜','吃亏'],giai:'Vế trước là lời khuyên, 要不 (= 要不然, 否则) dẫn ra hậu quả nếu không làm theo; 吃亏 = chịu thiệt, là động từ ly hợp (吃了亏).'},
-  {vi:'Có những bạn sở thích chẳng cố định, hôm nay học vẽ, mai lại học guitar, cả thèm chóng chán như vậy nên rốt cuộc chẳng học được gì ra hồn; đủ thấy kiên trì quan trọng biết bao.',zh:'有些同学的兴趣很不固定，今天学画画，明天又学吉他，这样朝三暮四，结果什么都没学好，可见坚持有多重要。',py:'Yǒuxiē tóngxué de xìngqù hěn bú gùdìng, jīntiān xué huàhuà, míngtiān yòu xué jítā, zhèyàng zhāosān-mùsì, jiéguǒ shénme dōu méi xué hǎo, kějiàn jiānchí yǒu duō zhòngyào.',goiY:['朝三暮四','结果','可见','固定'],giai:'Nghĩa hiện đại của 朝三暮四 = thay đổi thất thường, cả thèm chóng chán; 结果 nêu hậu quả, 可见 = đủ thấy, rút ra kết luận từ việc vừa kể.'}
+  {vi:'Tốt nhất ngày nào em cũng làm bài tập đúng hạn, nếu không để đến trước kỳ thi mới thức khuya thì chắc chắn sẽ chịu thiệt.',zh:'你最好每天按时完成作业，要不等到考试前再熬夜，你一定会吃亏的。',py:'Nǐ zuìhǎo měi tiān ànshí wánchéng zuòyè, yàobù děngdào kǎoshì qián zài áoyè, nǐ yídìng huì chīkuī de.',goiY:['要不','等到','熬夜','吃亏'],giai:'Vế trước là lời khuyên, 要不 (= 要不然, 否则) dẫn ra hậu quả nếu không làm theo; 吃亏 = chịu thiệt, là động từ ly hợp (吃了亏); 熬夜 (bài 6).'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Thành ngữ phần lớn có kết cấu cố định, vì vậy không được tùy tiện thay đổi các từ trong đó.',zh:'成语大多有固定的结构，所以不能随便改动其中的词汇。',py:'Chéngyǔ dàduō yǒu gùdìng de jiégòu, suǒyǐ bù néng suíbiàn gǎidòng qízhōng de cíhuì.',goiY:['固定的结构 = kết cấu cố định','所以 = vì vậy'],giai:'所以 nêu kết quả của vế trước; 其中 = trong đó, chỉ lại 成语 ở vế trước, dịch “các từ trong đó”.'},
-  {vi:'Hiểu thành ngữ không phải chỉ nhìn nghĩa mặt chữ, mà phải nắm ý nghĩa của nó một cách tổng hợp, trên tổng thể.',zh:'理解成语不是只看字面意思，而是要从整体上综合把握它的意义。',py:'Lǐjiě chéngyǔ bú shì zhǐ kàn zìmiàn yìsi, ér shì yào cóng zhěngtǐ shang zōnghé bǎwò tā de yìyì.',goiY:['不是……而是…… = không phải… mà là…','从整体上 = trên tổng thể'],giai:'不是 A 而是 B: phủ định cách hiểu A, khẳng định B; 字面意思 = nghĩa mặt chữ (nghĩa đen), 意义 = ý nghĩa thật sự.'},
-  {vi:'Lũ khỉ chỉ cần nhìn nét mặt và cử chỉ của ông lão là biết ông định làm gì.',zh:'猴子们只要看看老人的表情和行为，就知道他想干什么。',py:'Hóuzimen zhǐyào kànkan lǎorén de biǎoqíng hé xíngwéi, jiù zhīdào tā xiǎng gàn shénme.',goiY:['只要……就…… = chỉ cần… là…','表情 = nét mặt','行为 = hành vi, cử chỉ'],giai:'只要 + điều kiện đủ, 就 + kết quả → “chỉ cần… là…”; 行为 ở đây nên dịch “cử chỉ, hành động” cho tự nhiên.'},
-  {vi:'Ngày xưa có một ông lão nuôi một bầy khỉ làm thú cưng; vì sống với nhau lâu ngày nên ông và lũ khỉ đều hiểu ý nhau.',zh:'从前有个老人把一群猴子当宠物喂养，由于相处久了，他和猴子彼此都能明白对方的意思。',py:'Cóngqián yǒu ge lǎorén bǎ yì qún hóuzi dàng chǒngwù wèiyǎng, yóuyú xiāngchǔ jiǔ le, tā hé hóuzi bǐcǐ dōu néng míngbai duìfāng de yìsi.',goiY:['由于 = vì, do','彼此 = lẫn nhau','喂养 = nuôi'],giai:'由于 chỉ nguyên nhân (văn viết); 彼此都能明白对方的意思 nên dịch gọn “hiểu ý nhau”, không cần dịch cả 彼此 lẫn 对方.'},
-  {vi:'Về sau lương thực trong nhà ngày càng thiếu, ông lão trước tiên cắt giảm chi tiêu của người nhà, cuối cùng đành phải hạn chế thức ăn của lũ khỉ.',zh:'后来家里的粮食越来越不足，老人先减少了家人的消费，最后只好限制猴子的食物。',py:'Hòulái jiā li de liángshi yuè lái yuè bùzú, lǎorén xiān jiǎnshǎo le jiārén de xiāofèi, zuìhòu zhǐhǎo xiànzhì hóuzi de shíwù.',goiY:['越来越 = ngày càng','只好 = đành phải','不足 = thiếu, không đủ'],giai:'越来越 + tính từ = ngày càng…; 先……最后只好…… cho thấy trình tự và sự bất đắc dĩ → “trước tiên…, cuối cùng đành…”.'},
-  {vi:'Ông lão bảo từ nay sáng cho ba hạt dẻ, tối cho bốn hạt, thế là lũ khỉ vừa nghe đã tức giận nhảy loạn lên.',zh:'老人说以后早上给三颗橡子，晚上给四颗，结果猴子们一听就生气地跳来跳去。',py:'Lǎorén shuō yǐhòu zǎoshang gěi sān kē xiàngzi, wǎnshang gěi sì kē, jiéguǒ hóuzimen yì tīng jiù shēngqì de tiào lái tiào qù.',goiY:['结果 = kết quả là, thế là','跳来跳去 = nhảy tới nhảy lui','颗 = hạt'],giai:'一 + V，就 + … = vừa… đã…; 跳来跳去 tả hành động lặp lại liên tục, dịch “nhảy loạn lên / nhảy tới nhảy lui”.'},
+  {vi:'Thành ngữ phần lớn có kết cấu cố định, vì vậy không được tùy tiện thay đổi các từ trong đó.',zh:'成语的结构大多是固定的，所以不能随便改动其中的词汇。',py:'Chéngyǔ de jiégòu dàduō shì gùdìng de, suǒyǐ bù néng suíbiàn gǎidòng qízhōng de cíhuì.',goiY:['结构 = kết cấu','固定 = cố định','所以 = vì vậy'],giai:'所以 nêu kết quả của vế trước; 其中 = trong đó, chỉ lại 成语 ở vế trước, dịch "các từ trong đó".'},
+  {vi:'Ngày xưa có một ông lão nuôi một bầy khỉ làm thú cưng; vì sống với nhau lâu ngày nên ông và lũ khỉ đều hiểu ý nhau.',zh:'从前有个老人把一群猴子当宠物喂养，由于相处久了，他和猴子彼此都能明白对方的意思。',py:'Cóngqián yǒu ge lǎorén bǎ yì qún hóuzi dàng chǒngwù wèiyǎng, yóuyú xiāngchǔ jiǔ le, tā hé hóuzi bǐcǐ dōu néng míngbai duìfāng de yìsi.',goiY:['由于 = vì, do','彼此 = lẫn nhau','喂养 = nuôi'],giai:'由于 chỉ nguyên nhân (văn viết); 彼此都能明白对方的意思 nên dịch gọn "hiểu ý nhau", không cần dịch cả 彼此 lẫn 对方.'},
+  {vi:'Về sau lương thực trong nhà ngày càng thiếu, ông lão trước tiên cắt giảm chi tiêu của người nhà, cuối cùng đành phải hạn chế thức ăn của lũ khỉ.',zh:'后来家里的粮食越来越不足，老人先减少了家人的消费，最后只好限制猴子的食物。',py:'Hòulái jiā li de liángshi yuè lái yuè bùzú, lǎorén xiān jiǎnshǎo le jiārén de xiāofèi, zuìhòu zhǐhǎo xiànzhì hóuzi de shíwù.',goiY:['越来越 = ngày càng','只好 = đành phải','不足 = thiếu, không đủ'],giai:'越来越 + tính từ = ngày càng…; 先……最后只好…… cho thấy trình tự và sự bất đắc dĩ → "trước tiên…, cuối cùng đành…".'},
+  {vi:'Ông lão bảo từ nay ngoài bánh màn thầu, sáng cho thêm ba hạt dẻ, tối cho bốn hạt, thế là lũ khỉ vừa nghe đã tức giận nhảy loạn lên.',zh:'老人说以后除了馒头，早上再给三颗橡子，晚上给四颗，结果猴子们一听就生气地跳来跳去。',py:'Lǎorén shuō yǐhòu chúle mántou, zǎoshang zài gěi sān kē xiàngzi, wǎnshang gěi sì kē, jiéguǒ hóuzimen yì tīng jiù shēngqì de tiào lái tiào qù.',goiY:['馒头 = bánh màn thầu','结果 = kết quả là, thế là','跳来跳去 = nhảy tới nhảy lui','颗 = hạt'],giai:'一 + V，就 + … = vừa… đã…; 跳来跳去 tả hành động lặp lại liên tục, dịch "nhảy loạn lên / nhảy tới nhảy lui".'},
   {vi:'Lũ khỉ dường như cảm thấy mình bị thiệt, ông lão nghĩ tới nghĩ lui rồi bèn đổi sang một cách khác để dỗ dành chúng.',zh:'猴子们似乎觉得自己吃了亏，老人想来想去，于是换了一种方式来安慰它们。',py:'Hóuzimen sìhū juéde zìjǐ chī le kuī, lǎorén xiǎng lái xiǎng qù, yúshì huàn le yì zhǒng fāngshì lái ānwèi tāmen.',goiY:['似乎 = dường như','想来想去 = nghĩ tới nghĩ lui','于是 = bèn, thế là'],giai:'吃亏 là động từ ly hợp nên tách được: 吃了亏 = bị thiệt; 于是 nối hành động được quyết định sau khi suy nghĩ.'},
-  {vi:'Thật ra sáng bốn chiều ba hay sáng ba chiều bốn thì tổng số vẫn y như nhau, vậy mà lũ khỉ lại tỏ ra vui sướng lạ thường, ông lão nhìn cảnh ấy không nhịn được cười ha hả.',zh:'其实早四晚三和早三晚四的总数完全一样，可是猴子们倒显得格外高兴，老人看着这情景忍不住哈哈大笑。',py:'Qíshí zǎo sì wǎn sān hé zǎo sān wǎn sì de zǒngshù wánquán yíyàng, kěshì hóuzimen dào xiǎnde géwài gāoxìng, lǎorén kànzhe zhè qíngjǐng rěn bu zhù hāhā dà xiào.',goiY:['倒 = lại (trái lẽ thường)','显得格外 = tỏ ra vô cùng','情景 = cảnh tượng'],giai:'倒 báo hiệu phản ứng trái lẽ thường (số lượng không đổi mà lại vui); 显得 + tính từ = tỏ ra, trông có vẻ; 忍不住 = không nhịn được.'},
-  {vi:'“Sáng ba chiều bốn” vốn chỉ việc dùng cách khéo léo để lừa người, nay lại thường dùng để nói một người suy nghĩ và hành động cứ thay đổi xoành xoạch.',zh:'“朝三暮四”原来指用巧妙的方法骗人，如今却多用来形容一个人的想法和行为总是变来变去。',py:'“Zhāosān-mùsì” yuánlái zhǐ yòng qiǎomiào de fāngfǎ piàn rén, rújīn què duō yònglái xíngróng yí ge rén de xiǎngfǎ hé xíngwéi zǒngshì biàn lái biàn qù.',goiY:['原来……如今却…… = vốn…, nay lại…','变来变去 = thay đổi liên tục'],giai:'原来 (vốn dĩ) đối với 如今却 (nay lại) cho thấy nghĩa thành ngữ đã thay đổi; 变来变去 = đổi tới đổi lui → “thay đổi xoành xoạch”.'},
-  {vi:'Nhà triết học Trang Tử mượn truyện ngụ ngôn này để nói với mọi người rằng nhìn vấn đề phải xuất phát từ tổng thể, nếu không sẽ giống bầy khỉ kia, bị những thay đổi bề ngoài đánh lừa.',zh:'哲学家庄子借这则寓言告诉人们，看问题要从整体出发，要不然就会像那群猴子一样，被表面的变化骗了。',py:'Zhéxuéjiā Zhuāngzǐ jiè zhè zé yùyán gàosu rénmen, kàn wèntí yào cóng zhěngtǐ chūfā, yàobùrán jiù huì xiàng nà qún hóuzi yíyàng, bèi biǎomiàn de biànhuà piàn le.',goiY:['要不然 = nếu không thì','从整体出发 = xuất phát từ tổng thể','寓言 = truyện ngụ ngôn'],giai:'要不然 (= 要不, 否则) dẫn ra hậu quả nếu không làm theo lời khuyên ở vế trước; 被……骗了 là câu bị động → “bị… đánh lừa”.'}
+  {vi:'Một nhà triết học mượn truyện ngụ ngôn này để nói với mọi người rằng nhìn vấn đề phải xuất phát từ tổng thể, nếu không sẽ giống bầy khỉ kia, bị những thay đổi bề ngoài đánh lừa.',zh:'一位哲学家借这则寓言告诉人们，看问题要从整体出发，要不就会像那群猴子一样，被表面的变化骗了。',py:'Yí wèi zhéxuéjiā jiè zhè zé yùyán gàosu rénmen, kàn wèntí yào cóng zhěngtǐ chūfā, yàobù jiù huì xiàng nà qún hóuzi yíyàng, bèi biǎomiàn de biànhuà piàn le.',goiY:['哲学家 = nhà triết học','寓言 = truyện ngụ ngôn','从整体出发 = xuất phát từ tổng thể','要不 = nếu không thì'],giai:'要不 dẫn ra hậu quả nếu không làm theo lời khuyên ở vế trước; 被……骗了 là câu bị động → "bị… đánh lừa".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1390,30 +1322,12 @@ var writingData = {
     {ten:'从……我们可以看到……',nhan:'可以看到',vd:'从这个例子，我们可以看到词义是会变化的。',khi:'Câu KẾT — rút ra nhận xét.'}
   ],
   sapXep:[
-    {manh:['固定的','这种产品','消费群体','有'],
-     dap:'这种产品有固定的消费群体。',
-     vn:'Loại sản phẩm này có nhóm khách hàng cố định.',
-     giai:'Chủ ngữ 这种产品 → động từ 有 → định ngữ 固定的 + tân ngữ 消费群体. (Đề 书写 29 của sách bài tập.)'},
-    {manh:['完整地','请你','叙述一遍','把昨晚的经历'],
-     dap:'请你把昨晚的经历完整地叙述一遍。',
-     vn:'Mời bạn kể lại trọn vẹn những gì đã trải qua tối qua một lượt.',
-     giai:'Câu 把 (HSK 3–4): 请你 + 把 + tân ngữ + 完整地 + V + 一遍. Trạng ngữ 完整地 đứng ngay trước động từ.'},
-    {manh:['不能','家庭的财力','他的需要','满足'],
-     dap:'家庭的财力不能满足他的需要。',
-     vn:'Tài lực của gia đình không đáp ứng được nhu cầu của anh ấy.',
-     giai:'Chủ ngữ 家庭的财力 → 不能 → động từ 满足 → tân ngữ 他的需要. 满足 + 需要 là kết hợp cố định.'},
-    {manh:['格外','显得','猴子们','开心'],
-     dap:'猴子们显得格外开心。',
-     vn:'Lũ khỉ trông vô cùng vui vẻ.',
-     giai:'显得 + (phó từ mức độ 格外) + tính từ. 格外 đứng SAU 显得, ngay trước tính từ.'},
-    {manh:['只弄懂了','似乎','猴子们','一个“三”'],
-     dap:'猴子们似乎只弄懂了一个“三”。',
-     vn:'Lũ khỉ dường như chỉ hiểu mỗi chữ “ba”.',
-     giai:'Phó từ 似乎 đứng sau chủ ngữ, trước cụm động từ; 只 đứng sát động từ 弄懂.'},
-    {manh:['限制','该','他注意到','猴子的食量了'],
-     dap:'他注意到该限制猴子的食量了。',
-     vn:'Ông nhận ra đã đến lúc phải hạn chế khẩu phần ăn của lũ khỉ.',
-     giai:'注意到 + mệnh đề; trong mệnh đề: 该 (nên) + 限制 + tân ngữ + 了 (đã đến lúc).'}
+    {manh:['固定的','我们','座位','没有'],dap:'我们没有固定的座位。',vn:'Chúng tôi không có chỗ ngồi cố định.',giai:'Chủ ngữ 我们 → 没有 → định ngữ 固定的 → danh từ 座位. 固定 làm định ngữ thì thêm 的.'},
+    {manh:['完整地','请你','叙述一遍','把昨晚的经历'],dap:'请你把昨晚的经历完整地叙述一遍。',vn:'Mời bạn kể lại trọn vẹn những gì đã trải qua tối qua một lượt.',giai:'Câu 把 (HSK 3–4): 请你 + 把 + tân ngữ + 完整地 + V + 一遍. Trạng ngữ 完整地 đứng ngay trước động từ.'},
+    {manh:['不能','家庭的财力','他的需要','满足'],dap:'家庭的财力不能满足他的需要。',vn:'Tài lực của gia đình không đáp ứng được nhu cầu của anh ấy.',giai:'Chủ ngữ 家庭的财力 → 不能 → động từ 满足 → tân ngữ 他的需要. 满足 + 需要 là kết hợp cố định.'},
+    {manh:['格外','显得','猴子们','开心'],dap:'猴子们显得格外开心。',vn:'Lũ khỉ trông vô cùng vui vẻ.',giai:'显得 + (phó từ mức độ 格外) + tính từ. 格外 đứng SAU 显得, ngay trước tính từ.'},
+    {manh:['只弄懂了','似乎','猴子们','一个“三”'],dap:'猴子们似乎只弄懂了一个“三”。',vn:'Lũ khỉ dường như chỉ hiểu mỗi chữ “ba”.',giai:'Phó từ 似乎 đứng sau chủ ngữ, trước cụm động từ; 只 đứng sát động từ 弄懂.'},
+    {manh:['限制','该','他注意到','猴子的食量了'],dap:'他注意到该限制猴子的食量了。',vn:'Ông nhận ra đã đến lúc phải hạn chế khẩu phần ăn của lũ khỉ.',giai:'注意到 + mệnh đề; trong mệnh đề: 该 (nên) + 限制 + tân ngữ + 了 (đã đến lúc).'}
   ]
 };
 
@@ -1423,30 +1337,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 朝三暮四 · 词汇 · 固定 · 似乎 · 倒是 · 要不.',
   questions:[
-    {q_zh:'你知道哪些汉语词语的意思从古到今发生了变化？',
-     q_vn:'Em biết những từ tiếng Hán nào có nghĩa thay đổi từ xưa đến nay?',
-     hint:'Dùng 原来……，现在…… + 词汇',
-     sample:'比如“走”，原来是“跑”的意思，现在是慢慢地走。汉语的词汇在使用过程中，意思似乎一直在变化。',
-     sample_vn:'Ví dụ chữ “走”, ngày xưa nghĩa là “chạy”, bây giờ là đi bộ. Từ vựng tiếng Hán trong quá trình sử dụng dường như luôn thay đổi nghĩa.',
-     note:'Sách gợi ý các chữ 菜 · 金 · 汤 · 走 — chọn một chữ và nói rõ nghĩa XƯA và NAY.'},
-    {q_zh:'举一个你母语中词汇语义变化的例子。',
-     q_vn:'Hãy kể một ví dụ về sự thay đổi nghĩa của từ trong tiếng mẹ đẻ của em.',
-     hint:'Dùng 原来是……的意思，现在……',
-     sample:'越南语的“đỉnh”原来是“山顶”的意思，现在年轻人用它来说一件事特别好、特别棒。',
-     sample_vn:'Từ “đỉnh” trong tiếng Việt vốn nghĩa là “đỉnh núi”, giờ giới trẻ dùng để nói một việc gì đó rất hay, rất tuyệt.',
-     note:'Lấy ví dụ tiếng lóng của giới trẻ là cách dễ nói nhất — nhớ giải thích nghĩa cũ trước.'},
-    {q_zh:'你觉得了解这种语义变化对你的汉语学习有帮助吗？',
-     q_vn:'Em thấy hiểu hiện tượng thay đổi nghĩa này có giúp gì cho việc học tiếng Trung không?',
-     hint:'Nêu ý kiến + ví dụ, dùng 要不 (nếu không thì…)',
-     sample:'我觉得很有帮助。了解了词语的古今变化，才能用对成语，要不很容易闹笑话。',
-     sample_vn:'Tôi thấy rất có ích. Hiểu được sự thay đổi xưa nay của từ mới dùng đúng thành ngữ, nếu không rất dễ gây chuyện cười.',
-     note:'Sách yêu cầu 举例说明 — phải có ví dụ cụ thể, không chỉ nói "có ích".'},
-    {q_zh:'你身边有“朝三暮四”的人吗？你怎么看这种人？',
-     q_vn:'Xung quanh em có ai “sáng ba chiều bốn” không? Em nghĩ sao về kiểu người này?',
-     hint:'Dùng 倒是……就是…… để nhận xét hai mặt',
-     sample:'我有一个同学，他兴趣倒是很多，就是做什么都朝三暮四，最后什么都没学好。',
-     sample_vn:'Tôi có một bạn cùng lớp, sở thích thì nhiều đấy, chỉ có điều làm gì cũng cả thèm chóng chán, cuối cùng chẳng học tốt được gì.',
-     note:'Dùng 朝三暮四 theo nghĩa NGÀY NAY (hay thay đổi) — đừng dùng nghĩa trong truyện ngụ ngôn.'}
+    {q_zh:'你知道哪些汉语词语的意思从以前到现在发生了变化？',q_vn:'Em biết những từ tiếng Hán nào có nghĩa thay đổi từ xưa đến nay?',hint:'Dùng 原来……，现在…… + 词汇',sample:'比如走，原来是跑的意思，现在是慢慢地走。汉语的词汇在使用中，意思似乎一直在变化。',sample_vn:'Ví dụ chữ 走, ngày xưa nghĩa là "chạy", bây giờ là đi bộ. Từ vựng tiếng Hán trong quá trình sử dụng dường như luôn thay đổi nghĩa.',note:'Sách gợi ý vài chữ như 菜 · 汤 · 走 — chọn một chữ và nói rõ nghĩa XƯA và NAY.'},
+    {q_zh:'在越南话里，有没有意思发生了变化的词？请说一个。',q_vn:'Trong tiếng Việt có từ nào đã thay đổi nghĩa không? Hãy kể một từ.',hint:'Dùng 以前……，现在……',sample:'越南话里有一个词，以前只是山顶，现在年轻人用它来说一件事特别好、特别棒。',sample_vn:'Tiếng Việt có từ "đỉnh", trước đây chỉ là đỉnh núi, giờ giới trẻ dùng để nói một việc gì đó rất hay, rất tuyệt.',note:'Lấy ví dụ tiếng lóng của giới trẻ là cách dễ nói nhất — nhớ giải thích nghĩa cũ trước.'},
+    {q_zh:'你觉得了解词语意思的变化对你的汉语学习有帮助吗？',q_vn:'Em thấy hiểu sự thay đổi nghĩa của từ có giúp gì cho việc học tiếng Trung không?',hint:'Nêu ý kiến + ví dụ, dùng 要不 (nếu không thì…)',sample:'我觉得很有帮助。了解了词语从以前到现在的变化，才能用对成语，要不很容易让人笑话。',sample_vn:'Tôi thấy rất có ích. Hiểu được sự thay đổi xưa nay của từ mới dùng đúng thành ngữ, nếu không rất dễ bị người ta cười.',note:'Sách yêu cầu nêu ví dụ — phải có ví dụ cụ thể, không chỉ nói "có ích".'},
+    {q_zh:'你身边有朝三暮四的人吗？你怎么看这种人？',q_vn:'Xung quanh em có ai "sáng ba chiều bốn" không? Em nghĩ sao về kiểu người này?',hint:'Dùng 倒是……就是…… để nhận xét hai mặt',sample:'我有一个同学，他兴趣倒是很多，就是做什么都朝三暮四，最后什么都没学好。',sample_vn:'Tôi có một bạn cùng lớp, sở thích thì nhiều đấy, chỉ có điều làm gì cũng cả thèm chóng chán, cuối cùng chẳng học tốt được gì.',note:'Dùng 朝三暮四 theo nghĩa NGÀY NAY (hay thay đổi) — đừng dùng nghĩa trong truyện ngụ ngôn.'}
   ]
 };
 
@@ -1538,45 +1432,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn vừa sửa sang lại nhà, hỏi ý kiến em.',
-     a:{sp:'Bạn',zh:'你觉得这套房子装修得怎么样？',vn:'Cậu thấy căn nhà này sửa sang thế nào?'},
-     need:['Dùng 倒（是）……，就是……','Khen một điểm rồi góp ý một điểm'],
-     sample:'装修得倒是挺漂亮的，就是颜色有点儿深。',
-     samplePy:'Zhuāngxiū de dàoshì tǐng piàoliang de, jiùshì yánsè yǒudiǎnr shēn.',
-     sampleVn:'Sửa thì đẹp đấy, chỉ có điều màu hơi tối.',
-     tip:'倒是 đứng SAU chủ ngữ / sau 得, trước tính từ. Đừng viết 倒是装修得…… khi chưa có chủ ngữ rõ ràng.'},
-
-    {scene:'Bạn cùng lớp làm mất điện thoại, em hỏi thăm.',
-     a:{sp:'Bạn',zh:'我的手机找到了吗？你帮我找了吗？',vn:'Điện thoại của tớ tìm thấy chưa? Cậu có giúp tớ tìm không?'},
-     need:['Dùng ……来……去','Nói kết quả (tìm thấy hay không)'],
-     sample:'我在教室里找来找去，还是没找到。',
-     samplePy:'Wǒ zài jiàoshì li zhǎo lái zhǎo qù, háishi méi zhǎodào.',
-     sampleVn:'Tớ tìm đi tìm lại trong lớp mà vẫn không thấy.',
-     tip:'V来V去 không mang tân ngữ phía sau: không nói 找来找去手机.'},
-
-    {scene:'Tối qua bạn nhắn tin nhắc em mang bài tập.',
-     a:{sp:'Bạn',zh:'昨晚我给你发的短信，你看到了吗？',vn:'Tin nhắn tối qua tớ gửi cậu thấy chưa?'},
-     need:['Dùng 要不（然）','Nói kết quả nếu bạn KHÔNG nhắn'],
-     sample:'看到了，谢谢你！要不我今天肯定又忘带作业了。',
-     samplePy:'Kàndào le, xièxie nǐ! Yàobu wǒ jīntiān kěndìng yòu wàng dài zuòyè le.',
-     sampleVn:'Thấy rồi, cảm ơn cậu! Không thì hôm nay tớ chắc chắn lại quên mang bài tập.',
-     tip:'要不 đứng đầu vế sau, TRƯỚC chủ ngữ 我.'},
-
-    {scene:'Bạn rủ em cùng lên kế hoạch cho đêm Giao thừa.',
-     a:{sp:'Bạn',zh:'后天我们打算去中国朋友家过除夕，你有什么计划？',vn:'Ngày kia bọn tớ định sang nhà bạn Trung Quốc đón Giao thừa, cậu có kế hoạch gì?'},
-     need:['Dùng 要不 với nghĩa ĐỀ NGHỊ (hay là…)','Kết câu bằng 吧'],
-     sample:'我还没想好呢。要不我跟你们一起去吧？',
-     samplePy:'Wǒ hái méi xiǎnghǎo ne. Yàobu wǒ gēn nǐmen yìqǐ qù ba?',
-     sampleVn:'Tớ chưa nghĩ ra. Hay là tớ đi cùng các cậu nhé?',
-     tip:'Nghĩa thứ hai của 要不: đưa ra một lựa chọn khác, thường đi với 吧.'},
-
-    {scene:'Bạn kể về một người bạn chung hay đổi lớp học thêm.',
-     a:{sp:'Bạn',zh:'小王这个月已经换了三个兴趣班了。',vn:'Tháng này Tiểu Vương đã đổi ba lớp năng khiếu rồi.'},
-     need:['Dùng 朝三暮四 theo nghĩa ngày nay','Nêu nhận xét của em'],
-     sample:'他这样朝三暮四，最后什么都学不好。',
-     samplePy:'Tā zhèyàng zhāosān-mùsì, zuìhòu shénme dōu xué bu hǎo.',
-     sampleVn:'Cậu ấy cả thèm chóng chán như thế, rốt cuộc chẳng học tốt được gì.',
-     tip:'朝三暮四 mang nghĩa CHÊ — không dùng để khen ai năng động.'}
+    {scene:'Bạn vừa sửa sang lại nhà, hỏi ý kiến em.',a:{sp:'Bạn',zh:'你觉得这套房子装修得怎么样？',vn:'Cậu thấy căn nhà này sửa sang thế nào?'},need:['Dùng 倒（是）……，就是……','Khen một điểm rồi góp ý một điểm'],sample:'装修得倒是挺漂亮的，就是颜色有点儿深。',samplePy:'Zhuāngxiū de dàoshì tǐng piàoliang de, jiùshì yánsè yǒudiǎnr shēn.',sampleVn:'Sửa thì đẹp đấy, chỉ có điều màu hơi tối.',tip:'倒是 đứng SAU chủ ngữ / sau 得, trước tính từ. Đừng viết 倒是装修得…… khi chưa có chủ ngữ rõ ràng.'},
+    {scene:'Bạn cùng lớp làm mất điện thoại, em hỏi thăm.',a:{sp:'Bạn',zh:'我的手机找到了吗？你帮我找了吗？',vn:'Điện thoại của tớ tìm thấy chưa? Cậu có giúp tớ tìm không?'},need:['Dùng ……来……去','Nói kết quả (tìm thấy hay không)'],sample:'我在教室里找来找去，还是没找到。',samplePy:'Wǒ zài jiàoshì li zhǎo lái zhǎo qù, háishi méi zhǎodào.',sampleVn:'Tớ tìm đi tìm lại trong lớp mà vẫn không thấy.',tip:'V来V去 không mang tân ngữ phía sau: không nói 找来找去手机.'},
+    {scene:'Tối qua bạn nhắn tin nhắc em mang bài tập.',a:{sp:'Bạn',zh:'昨晚我给你发的短信，你看到了吗？',vn:'Tin nhắn tối qua tớ gửi cậu thấy chưa?'},need:['Dùng 要不（然）','Nói kết quả nếu bạn KHÔNG nhắn'],sample:'看到了，谢谢你！要不我今天肯定又忘带作业了。',samplePy:'Kàndào le, xièxie nǐ! Yàobu wǒ jīntiān kěndìng yòu wàng dài zuòyè le.',sampleVn:'Thấy rồi, cảm ơn cậu! Không thì hôm nay tớ chắc chắn lại quên mang bài tập.',tip:'要不 đứng đầu vế sau, TRƯỚC chủ ngữ 我.'},
+    {scene:'Bạn rủ em cùng lên kế hoạch cho đêm Giao thừa.',a:{sp:'Bạn',zh:'后天我们打算去中国朋友家过除夕，你有什么计划？',vn:'Ngày kia bọn tớ định sang nhà bạn Trung Quốc đón Giao thừa, cậu có kế hoạch gì?'},need:['Dùng 要不 với nghĩa ĐỀ NGHỊ (hay là…)','Kết câu bằng 吧'],sample:'我还没想好呢。要不我跟你们一起去吧？',samplePy:'Wǒ hái méi xiǎnghǎo ne. Yàobu wǒ gēn nǐmen yìqǐ qù ba?',sampleVn:'Tớ chưa nghĩ ra. Hay là tớ đi cùng các cậu nhé?',tip:'Nghĩa thứ hai của 要不: đưa ra một lựa chọn khác, thường đi với 吧.'},
+    {scene:'Bạn kể về một người bạn chung hay đổi lớp học thêm.',a:{sp:'Bạn',zh:'小王这个月已经换了三个兴趣班了。',vn:'Tháng này Tiểu Vương đã đổi ba lớp năng khiếu rồi.'},need:['Dùng 朝三暮四 theo nghĩa ngày nay','Nêu nhận xét của em'],sample:'他做事总是这样朝三暮四，我觉得他应该先选一个坚持下去。',samplePy:'Tā zuòshì zǒngshì zhèyàng zhāosān-mùsì, wǒ juéde tā yīnggāi xiān xuǎn yí ge jiānchí xiaqu.',sampleVn:'Cậu ấy làm gì cũng cả thèm chóng chán như thế, tớ thấy cậu ấy nên chọn lấy một lớp rồi theo đến cùng.',tip:'朝三暮四 mang nghĩa CHÊ — không dùng để khen ai năng động.'}
   ]
 };
 
@@ -1587,29 +1447,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết bài văn nghị luận nộp cô giáo.',
-     a:'这个成语的意义似乎发生了变化。',b:'这个成语的意思好像变了。',better:'a',
-     why:'Bài văn là VĂN VIẾT: 似乎 + 意义 + 发生变化 trang trọng hơn. 好像……变了 đúng nhưng mang giọng nói chuyện.'},
-
-    {scene:'Em nhắn tin hỏi bạn thân.',
-     a:'你似乎有点儿不高兴？',b:'你好像有点儿不高兴？',better:'b',
-     why:'Nhắn cho bạn thân nên dùng khẩu ngữ 好像. 似乎 ở đây nghe như đang viết văn.'},
-
-    {scene:'Cửa hàng dán thông báo trước quầy.',
-     a:'本店每位顾客限购两件。',b:'每个人最多只能买两件哦。',better:'a',
-     why:'Thông báo công khai dùng văn viết ngắn gọn: 限购 (hạn chế mua). Câu b thân mật, hợp nói miệng với khách quen hơn.'},
-
-    {scene:'Em an ủi bạn vừa thua trận bóng.',
-     a:'别难过，你们已经踢得很好了。',b:'失败乃成功之母，你们应当继续努力。',better:'a',
-     why:'An ủi bạn bè cần giọng GẦN GŨI. Câu b đúng nhưng nghe như bài diễn văn, xa cách.'},
-
-    {scene:'Em mặc cả ở chợ.',
-     a:'4块，要不我不买。',b:'如果您不能以4块的价格出售，我将放弃购买。',better:'a',
-     why:'Mặc cả ngoài chợ là khẩu ngữ: 要不 ngắn, tự nhiên. Câu b quá trang trọng, nghe rất buồn cười trong hoàn cảnh này.'},
-
-    {scene:'Lớp trưởng phát biểu trong lễ khai giảng.',
-     a:'希望大家彼此帮助，共同进步。',b:'大家互相帮帮忙哈。',better:'a',
-     why:'Phát biểu trang trọng: 彼此帮助，共同进步 hợp hơn. 帮帮忙哈 là khẩu ngữ rất suồng sã.'}
+    {scene:'Em viết bài văn nghị luận nộp cô giáo.',a:'这个成语的意义似乎发生了变化。',b:'这个成语的意思好像变了。',better:'a',why:'Bài văn là VĂN VIẾT: 似乎 + 意义 + 发生变化 trang trọng hơn. 好像……变了 đúng nhưng mang giọng nói chuyện.'},
+    {scene:'Em nhắn tin hỏi bạn thân.',a:'你似乎有点儿不高兴？',b:'你好像有点儿不高兴？',better:'b',why:'Nhắn cho bạn thân nên dùng khẩu ngữ 好像. 似乎 ở đây nghe như đang viết văn.'},
+    {scene:'Cửa hàng dán thông báo trước quầy.',a:'本店每位顾客只能买两件。',b:'每个人最多只能买两件啊。',better:'a',why:'Thông báo công khai dùng văn viết ngắn gọn: 本店, 每位顾客. Câu b thân mật, hợp nói miệng với khách quen hơn.'},
+    {scene:'Em an ủi bạn vừa thua trận bóng.',a:'别难过，你们已经踢得很好了。',b:'这次失败只是暂时的，希望你们继续努力，下次取得好成绩。',better:'a',why:'An ủi bạn bè cần giọng GẦN GŨI. Câu b đúng nhưng nghe như bài phát biểu, xa cách.'},
+    {scene:'Em mặc cả ở chợ.',a:'4块，要不我不买。',b:'如果您不同意以四块的价格卖给我，那我只好放弃了。',better:'a',why:'Mặc cả ngoài chợ là khẩu ngữ: 要不 ngắn, tự nhiên. Câu b quá trang trọng, nghe rất buồn cười trong hoàn cảnh này.'},
+    {scene:'Lớp trưởng phát biểu trong lễ khai giảng.',a:'希望大家彼此帮助，一起努力。',b:'大家互相帮帮忙哈。',better:'a',why:'Phát biểu trang trọng: 彼此帮助，一起努力 hợp hơn. 帮帮忙哈 là khẩu ngữ rất suồng sã.'}
   ]
 };
 

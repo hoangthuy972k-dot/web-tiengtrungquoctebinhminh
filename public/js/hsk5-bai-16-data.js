@@ -1181,28 +1181,21 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — lấy theo bảng 词语搭配 của sách (tr. 150) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'达到',right:'水平'},
-  {left:'分析',right:'病句'},
   {left:'意外的',right:'礼物'},
   {left:'可靠的',right:'朋友'},
   {left:'上升的',right:'趋势'},
   {left:'自然',right:'现象'},
-  {left:'主动',right:'表明'},
-  {left:'积极',right:'参与'},
   {left:'采取',right:'措施'},
-  {left:'跟踪',right:'调查'},
   {left:'外出',right:'就餐'},
-  {left:'身材',right:'苗条'},
+  {left:'想变得',right:'苗条'},
   {left:'找',right:'借口'},
   {left:'取得',right:'成果'},
-  {left:'研究',right:'人员'},
-  {left:'营养',right:'摄入'},
-  {left:'饮食',right:'模式'},
   {left:'称',right:'体重'},
-  {left:'纳入',right:'分析'},
   {left:'上下',right:'波动'}
 ];
 
@@ -1210,56 +1203,32 @@ var matchData = [
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'很多女孩子靠',blank:'节食',post:'减肥，这样对身体不好。',hint:'(ăn kiêng)',ans:'节食'},
-  {pre:'据',blank:'报道',post:'，医学专家进行了一项新研究。',hint:'(tin đưa)',ans:'报道'},
-  {pre:'牛奶很有',blank:'营养',post:'，每天都应该喝一杯。',hint:'(dinh dưỡng)',ans:'营养'},
-  {pre:'每天',blank:'摄入',post:'太多的糖对身体不好。',hint:'(nạp vào cơ thể)',ans:'摄入'},
-  {pre:'上大学以后，我的生活',blank:'模式',post:'完全变了。',hint:'(kiểu, mô hình)',ans:'模式'},
-  {pre:'节食者的体重会在一周内上下',blank:'波动',post:'。',hint:'(dao động)',ans:'波动'},
-  {pre:'这次旅行我们',blank:'总共',post:'花了五千块钱。',hint:'(tổng cộng)',ans:'总共',exp:'总共 + số lượng = tổng cộng: 总共花了五千块钱.'},
-  {pre:'学校鼓励学生积极',blank:'参与',post:'班级管理。',hint:'(tham gia, góp phần)',ans:'参与'},
-  {pre:'有问题可以问那边的工作',blank:'人员',post:'。',hint:'(nhân viên)',ans:'人员'},
-  {pre:'',blank:'相对',post:'来说，坐火车比坐飞机更舒服。',hint:'(tương đối)',ans:'相对',exp:'相对来说 = nói một cách tương đối, xét so sánh mà nói.'},
-  {pre:'你喜欢什么',blank:'类型',post:'的电影？',hint:'(loại, thể loại)',ans:'类型'},
-  {pre:'妈妈每天起床以后都要',blank:'称',post:'一下体重。',hint:'(cân)',ans:'称'},
-  {pre:'他办事很',blank:'可靠',post:'，你放心吧。',hint:'(đáng tin cậy)',ans:'可靠'},
-  {pre:'学校把游泳',blank:'纳入',post:'了体育课。',hint:'(đưa vào)',ans:'纳入'},
-  {pre:'我们先来',blank:'分析',post:'一下失败的原因。',hint:'(phân tích)',ans:'分析'},
-  {pre:'暑假我去博物馆当了一个月的',blank:'志愿者',post:'。',hint:'(tình nguyện viên)',ans:'志愿者'},
-  {pre:'记者对这件事进行了',blank:'跟踪',post:'报道。',hint:'(theo dõi)',ans:'跟踪'},
-  {pre:'经过三年的努力，他们终于取得了重大的',blank:'成果',post:'。',hint:'(thành quả)',ans:'成果'},
-  {pre:'这张照片拍得很',blank:'清晰',post:'，连远处的字都看得见。',hint:'(rõ nét)',ans:'清晰'},
-  {pre:'他可聪明了，什么东西一学',blank:'即',post:'会。',hint:'(liền, ngay — văn viết)',ans:'即',exp:'一…即… = vừa… liền… (văn viết, như 一…就…): 一学即会.'},
-  {pre:'太阳从东方',blank:'升',post:'起来了。',hint:'(lên, mọc lên)',ans:'升'},
-  {pre:'他的汉语已经',blank:'达到',post:'了HSK五级水平。',hint:'(đạt đến)',ans:'达到'},
-  {pre:'收到你的信，我感到很',blank:'意外',post:'。',hint:'(bất ngờ)',ans:'意外'},
-  {pre:'这个计划还',blank:'存在',post:'一些问题，需要再改一改。',hint:'(tồn tại, còn có)',ans:'存在'},
-  {pre:'南方和北方的饮食习惯',blank:'差异',post:'很大。',hint:'(sự khác biệt)',ans:'差异'},
-  {pre:'两个班',blank:'联合',post:'起来办了一场晚会。',hint:'(hợp sức)',ans:'联合'},
-  {pre:'除了',blank:'个别',post:'同学以外，全班都来了。',hint:'(một vài, cá biệt)',ans:'个别'},
-  {pre:'研究',blank:'表明',post:'，每天运动半小时对身体很有好处。',hint:'(cho thấy)',ans:'表明'},
-  {pre:'门口的牌子上写着：',blank:'非',post:'工作人员请勿入内。',hint:'(không phải, phi-)',ans:'非',exp:'非 = không phải, phi (văn viết): 非工作人员 = người không phải nhân viên.'},
-  {pre:'人们在周末会有更多的时间外出',blank:'就餐',post:'。',hint:'(dùng bữa)',ans:'就餐'},
-  {pre:'她身材',blank:'苗条',post:'，穿什么都好看。',hint:'(thon thả)',ans:'苗条'},
-  {pre:'别找',blank:'借口',post:'了，你就是不想去。',hint:'(cái cớ)',ans:'借口'}
+  {pre:'她每天不吃晚饭，想靠',blank:'节食',post:'来减肥。',hint:'(ăn kiêng)',ans:'节食',exp:'节食 = ăn kiêng, ăn bớt (không mang tân ngữ: không nói ✗节食晚饭).'},
+  {pre:'孩子正在长身体，饭菜一定要有',blank:'营养',post:'。',hint:'(dinh dưỡng)',ans:'营养',exp:'有营养 = bổ, có chất; 缺乏营养 = thiếu chất.'},
+  {pre:'机场的工作',blank:'人员',post:'帮我找回了丢了的行李。',hint:'(nhân viên, người làm việc)',ans:'人员',exp:'人员 = người (làm một công việc): 工作人员, 研究人员 — không đứng một mình.'},
+  {pre:'他不是我喜欢的',blank:'类型',post:'，我们只能做普通朋友。',hint:'(kiểu, loại (người))',ans:'类型',exp:'类型 = loại, kiểu: 你喜欢什么类型的人/电影?'},
+  {pre:'去医院检查时，护士先给我',blank:'称',post:'了体重。',hint:'(cân)',ans:'称',exp:'称 (chēng) = cân: 称体重, 称一下. Cùng chữ với 称 trong 称为 (gọi là).'},
+  {pre:'运动会需要很多',blank:'志愿者',post:'帮忙，他们都不拿工资。',hint:'(tình nguyện viên)',ans:'志愿者',exp:'志愿者 = tình nguyện viên; 当志愿者 = làm tình nguyện viên.'},
+  {pre:'这几年我工作太忙，很少陪孩子，现在想多',blank:'补偿',post:'他一些。',hint:'(bù đắp)',ans:'补偿',exp:'补偿 + người = bù đắp cho ai (vì đã thiệt thòi trước đó).'},
+  {pre:'医生对这些病人进行了半年的',blank:'跟踪',post:'调查。',hint:'(theo dõi liên tục)',ans:'跟踪',exp:'跟踪调查 = điều tra theo dõi trong một thời gian dài.'},
+  {pre:'最近菜的价格上下',blank:'波动',post:'很大。',hint:'(dao động, lên xuống)',ans:'波动',exp:'波动 = lên xuống thất thường: 价格波动, 体重波动, 情绪波动.'},
+  {pre:'医生建议他减少盐的',blank:'摄入',post:'。',hint:'(lượng nạp vào cơ thể)',ans:'摄入',exp:'摄入 = hấp thu, nạp vào (văn viết, y học): 营养摄入, 减少盐的摄入.'},
+  {pre:'电视上',blank:'报道',post:'了这次比赛的结果。',hint:'(đưa tin)',ans:'报道',exp:'报道 vừa là động từ (đưa tin) vừa là danh từ (bản tin): 据报道 = theo tin đưa.'},
+  {pre:'这个城市把保护老房子',blank:'纳入',post:'了五年计划。',hint:'(đưa vào (phạm vi, kế hoạch))',ans:'纳入',exp:'把 A 纳入 B = đưa A vào phạm vi/kế hoạch B (văn viết).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (即 · 个别 · 非) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['这些人的体重变化','表现出','清晰的模式','，','即','周末之后','体重升高','。'],ans:'这些人的体重变化表现出清晰的模式，即周末之后体重升高。',audio:'这些人的体重变化表现出清晰的模式，即周末之后体重升高。'},
-  {words:['他可聪明了','，','什么东西','一学','即','会','。'],ans:'他可聪明了，什么东西一学即会。',audio:'他可聪明了，什么东西一学即会。'},
-  {words:['不懂即问','是','他','最大的','优点','。'],ans:'不懂即问是他最大的优点。',audio:'不懂即问是他最大的优点。'},
-  {words:['除了','个别人','以外','，','大家','都','来了','。'],ans:'除了个别人以外，大家都来了。',audio:'除了个别人以外，大家都来了。'},
-  {words:['天气预报说','个别地区','可能','有','大雨','。'],ans:'天气预报说个别地区可能有大雨。',audio:'天气预报说个别地区可能有大雨。'},
-  {words:['门口的牌子上','写着','：','非工作人员','请勿','入内','。'],ans:'门口的牌子上写着：非工作人员请勿入内。',audio:'门口的牌子上写着：非工作人员请勿入内。'},
-  {words:['补办学生证的事','非','你本人','去','不可','。'],ans:'补办学生证的事非你本人去不可。',audio:'补办学生证的事非你本人去不可。'},
-  {words:['成功有时候','并非','想象中','那么','难','。'],ans:'成功有时候并非想象中那么难。',audio:'成功有时候并非想象中那么难。'},
-  {words:['研究人员','将','他们','分为','三种','类型','。'],ans:'研究人员将他们分为三种类型。',audio:'研究人员将他们分为三种类型。'},
-  {words:['应','及时','采取措施','阻止','这一','上升趋势','。'],ans:'应及时采取措施阻止这一上升趋势。',audio:'应及时采取措施阻止这一上升趋势。'},
-  {words:['周末','对饮食','稍微','有些放纵','影响不大','。'],ans:'周末对饮食稍微有些放纵影响不大。',audio:'周末对饮食稍微有些放纵影响不大。'},
-  {words:['我们','把','研究成果','交给了','老师','。'],ans:'我们把研究成果交给了老师。',audio:'我们把研究成果交给了老师。'}
+  {words:['我的愿望','只有一个','，','即','毕业以后','找一份','自己喜欢的','工作','。'],ans:'我的愿望只有一个，即毕业以后找一份自己喜欢的工作。',audio:'我的愿望只有一个，即毕业以后找一份自己喜欢的工作。'},
+  {words:['这篇文章','写得','不错','，','只有','个别','地方','需要','改一改','。'],ans:'这篇文章写得不错，只有个别地方需要改一改。',audio:'这篇文章写得不错，只有个别地方需要改一改。'},
+  {words:['这么重要的','会','，','你','非','参加','不可','。'],ans:'这么重要的会，你非参加不可。',audio:'这么重要的会，你非参加不可。'},
+  {words:['贵的东西','并非','都是','好东西','。'],ans:'贵的东西并非都是好东西。',audio:'贵的东西并非都是好东西。'},
+  {words:['你','别再','给自己','找借口了','，','快去','做作业','吧','。'],ans:'你别再给自己找借口了，快去做作业吧。',audio:'你别再给自己找借口了，快去做作业吧。'},
+  {words:['这两年','房子的','价格','升得','很快','。'],ans:'这两年房子的价格升得很快。',audio:'这两年房子的价格升得很快。'},
+  {words:['老师','讲得','很清晰','，','大家','一下子','就','明白了','。'],ans:'老师讲得很清晰，大家一下子就明白了。',audio:'老师讲得很清晰，大家一下子就明白了。'},
+  {words:['没想到','他','会来','参加','我的生日会','，','我','感到','很意外','。'],ans:'没想到他会来参加我的生日会，我感到很意外。',audio:'没想到他会来参加我的生日会，我感到很意外。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1267,72 +1236,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'调查结果显示，市民对电子阅读的兴趣____提高了。',opts:['明显','清楚','清晰','可靠'],ans:0,
-   exp:'Đứng trước động từ 提高, chỉ mức thay đổi dễ thấy → 明显提高. 清楚, 清晰 tả độ rõ của âm thanh, hình ảnh, suy nghĩ; 可靠 là đáng tin.'},
-  {wrong:'他们在工作日的体重并无____减轻。',opts:['明显','清晰','可靠','个别'],ans:0,
-   exp:'并无明显减轻 = không hề giảm rõ rệt. 清晰 (rõ nét) không tả mức giảm của cân nặng.'},
-  {wrong:'平时工作太忙，周末我想好好____一下家人。',opts:['补偿','摄入','纳入','放纵'],ans:0,
-   exp:'Bù đắp cho gia đình vì ngày thường bận → 补偿. 摄入 (nạp vào cơ thể), 纳入 (đưa vào phạm vi), 放纵 (buông thả) sai nghĩa.'},
-  {wrong:'接到通知后，请大家____出发。',opts:['立即','临时','相对','总共'],ans:0,
-   exp:'Xuất phát ngay → 立即. 临时 là "đến lúc mới …", 相对 là tương đối, 总共 là tổng cộng.'},
-  {wrong:'近年来，网上购物的人有增加的____。',opts:['趋势','模式','类型','差异'],ans:0,
-   exp:'有……的趋势 = có xu hướng … là cụm cố định. 模式, 类型, 差异 không đi với 有增加的.'},
-  {wrong:'早到了30分钟，所以我____决定去旁边的书店看看。',opts:['临时','暂时','总共','相对'],ans:0,
-   exp:'Đến lúc đó mới quyết định → 临时决定 (câu của sách). 暂时 chỉ một khoảng thời gian gần đây, không có nghĩa này.'},
-  {wrong:'这套房子我很喜欢，____还不打算卖掉。',opts:['暂时','临时','立即','总共'],ans:0,
-   exp:'Trong thời gian gần đây, trước mắt → 暂时 (câu của sách). 临时 không đứng trước 还不 theo nghĩa này.'},
-  {wrong:'下雨、打雷都是自然____。',opts:['现象','趋势','模式','措施'],ans:0,
-   exp:'自然现象 = hiện tượng tự nhiên (bảng 词语搭配).'},
-  {wrong:'考完试以后，他____自己玩了一个星期游戏。',opts:['放纵','补偿','采取','参与'],ans:0,
-   exp:'Không kiềm chế bản thân → 放纵自己. 补偿自己 có thể nói nhưng không hợp với "chơi game cả tuần" mang ý tiêu cực.'},
-  {wrong:'医生决定____中医的治疗方法。',opts:['采取','参与','达到','存在'],ans:0,
-   exp:'采取 + 方法 / 措施 / 办法 (câu 30 sách bài tập).'},
-  {wrong:'发现问题要及时采取有效的____。',opts:['措施','趋势','成果','模式'],ans:0,
-   exp:'采取措施 là kết hợp cố định; 有效的措施 = biện pháp hiệu quả.'},
-  {wrong:'研究发现，父亲对教育子女的____程度越高，孩子就越聪明。',opts:['参与','参加','纳入','联合'],ans:0,
-   exp:'参与程度 = mức độ tham gia. Không nói 参加程度 (bài tập 2 của sách).'},
-  {wrong:'我本来想完成这个计划以后再去美国，____现在那边有更重要的事，不得不提前去。',opts:['结果','成果','效果','后果'],ans:0,
-   exp:'Làm liên từ "rốt cuộc" đầu vế sau → chỉ 结果. 成果 chỉ là danh từ (bài tập 2 của sách).'},
-  {wrong:'关于空气质量问题，现在报纸、网络上相关的____特别多。',opts:['报道','报名','报到','波动'],ans:0,
-   exp:'Bài viết trên báo, mạng → 报道. 报名 là đăng ký, 报到 là trình diện.'},
-  {wrong:'只要每天坚持练习，你一定能____目的。',opts:['达到','到达','存在','升'],ans:0,
-   exp:'达到 + 目的 / 水平 / 要求 (trừu tượng). 到达 đi với nơi chốn: 到达北京.'},
-  {wrong:'我们的火车下午三点____北京。',opts:['到达','达到','升','纳入'],ans:0,
-   exp:'Đến nơi chốn → 到达. 达到 chỉ đi với mức độ, mục đích — không nói 达到北京.'},
-  {wrong:'这一下降____直至周五结束。',opts:['趋势','现象','措施','类型'],ans:0,
-   exp:'下降趋势 = xu hướng giảm (câu trong bài khoá).'},
-  {wrong:'他____家里有事，提前离开了会场。',opts:['借口','报道','采取','分析'],ans:0,
-   exp:'借口 làm động từ: lấy cớ … (bài tập 1 của sách).'}
+  {wrong:'飞机起飞前，机场____通知我们要晚点两个小时。',opts:['临时','暂时','相对','个别'],ans:0,exp:'临时 = đến lúc sát giờ mới (quyết định, thông báo, thay đổi). 暂时 là “tạm thời, trong thời gian ngắn” — không có nghĩa “đột xuất”; 相对, 个别 không hợp.'},
+  {wrong:'周末你能来____我的生日晚会吗？',opts:['参加','参与','联合','达到'],ans:0,exp:'Đi dự một buổi tiệc, cuộc thi, kỳ thi → 参加. 参与 nhấn vào việc góp phần vào quá trình (参与讨论, 参与程度), không dùng cho khách dự tiệc; 联合, 达到 không hợp.'},
+  {wrong:'这次调查显示，学生对学校活动的____程度越来越高。',opts:['参与','参加','跟踪','报道'],ans:0,exp:'参与 làm định ngữ được: 参与程度 = mức độ tham gia. Không nói ✗参加程度; 跟踪, 报道 không hợp nghĩa.'},
+  {wrong:'他本来打算周末去公园玩，____下了两天雨，只好在家看书。',opts:['结果','成果','效果','成绩'],ans:0,exp:'结果 làm liên từ “rốt cuộc, kết quả là”, đứng đầu vế sau. 成果, 效果, 成绩 chỉ là danh từ, không nối câu được.'},
+  {wrong:'这次旅行____花了八千块，比我们想的少。',opts:['总共','相对','个别','立即'],ans:0,exp:'总共 + động từ + số lượng = tổng cộng. 相对 là “tương đối”; 个别 là “cá biệt”; 立即 là “lập tức”.'},
+  {wrong:'接到电话以后，他____开车赶到了医院。',opts:['立即','暂时','相对','明显'],ans:0,exp:'立即 = lập tức (văn viết của 马上). 暂时 là “tạm thời”; 相对, 明显 không hợp nghĩa.'},
+  {wrong:'最近几年，城市里骑自行车上班的人有上升的____。',opts:['趋势','现象','模式','借口'],ans:0,exp:'有……的趋势 = có xu hướng…. 现象 không đi với 有上升的; 模式 là mô hình; 借口 là cái cớ.'},
+  {wrong:'为了让学生更安全，学校采取了很多____。',opts:['措施','成果','趋势','报道'],ans:0,exp:'采取 + 措施/办法 = áp dụng biện pháp. 采取成果, 采取趋势, 采取报道 đều sai kết hợp.'},
+  {wrong:'大部分同学都同意这个方案，只有____人不同意。',opts:['个别','个人','明显','相对'],ans:0,exp:'个别 + danh từ = một vài, số ít. 个人 là “cá nhân” (个人的事), không chỉ số lượng; 明显, 相对 không hợp.'},
+  {wrong:'要想学好汉语，____多说多练不可。',opts:['非','不','没','别'],ans:0,exp:'非……不可 = nhất định phải. 不, 没, 别 không đi với 不可 ở cuối câu.'},
+  {wrong:'“HSK”____汉语水平考试。',opts:['即','非','而','则'],ans:0,exp:'即 = 就是 (tức là), dùng để giải thích tên gọi. 非 là “không phải”; 而, 则 là liên từ nối hai vế.'},
+  {wrong:'放假的时候也不能太____自己，每天还是要早点儿睡。',opts:['放纵','补偿','采取','纳入'],ans:0,exp:'放纵自己 = buông thả bản thân. 补偿 là bù đắp (nghĩa tốt); 采取, 纳入 không mang tân ngữ 自己.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Ngoài một vài bạn nghỉ ốm ra, cả lớp đều đã tham gia hoạt động tình nguyện lần này.', zh:'除了个别同学因为生病请假以外，全班都参与了这次志愿者活动。', py:'Chúle gèbié tóngxué yīnwèi shēngbìng qǐngjià yǐwài, quán bān dōu cānyùle zhè cì zhìyuànzhě huódòng.', goiY:['除了……以外，……都……','个别','参与','志愿者'], giai:'个别 + N = "một số ít, cá biệt"; 除了……以外，……都…… là cấu trúc loại trừ ("ngoài… ra, … đều…"), vế sau bắt buộc có 都.'},
-  {vi:'Điểm lần này đã tụt rõ rệt như vậy thì cậu nhất định phải nói chuyện nghiêm túc với bố mẹ một phen.', zh:'既然这次成绩下降得这么明显，你就非跟爸妈好好谈一谈不可了。', py:'Jìrán zhè cì chéngjì xiàjiàng de zhème míngxiǎn, nǐ jiù fēi gēn bà mā hǎohǎo tán yi tán bùkě le.', goiY:['既然……就……','非……不可','明显'], giai:'非 + V + 不可 = "nhất định phải…" (phủ định kép thành khẳng định mạnh), không dịch thành "không phải… không được"; 既然 nêu sự thật đã rõ.'},
-  {vi:'Nghiên cứu cho thấy điểm số tốt hay kém không hẳn chỉ do năng khiếu quyết định, mà có quan hệ mật thiết với thói quen học tập.', zh:'研究表明，成绩好坏并非只取决于天赋，而是与学习习惯存在密切的关系。', py:'Yánjiū biǎomíng, chéngjì hǎohuài bìngfēi zhǐ qǔjué yú tiānfù, ér shì yǔ xuéxí xíguàn cúnzài mìqiè de guānxì.', goiY:['并非……而是……','表明','存在'], giai:'并非 (văn viết) = 并不是, đi với 而是 để phủ định A, khẳng định B; 取决于 = "do… quyết định".'},
-  {vi:'Cách học của lớp tôi rất đặc biệt, tức là mỗi tuần ai cũng phải lần lượt lên bảng giảng giải một bài, vì vậy không ai dám lười biếng.', zh:'我们班的学习模式很特别，即每个人每周都要轮流上台讲一道题，所以大家都不敢偷懒。', py:'Wǒmen bān de xuéxí móshì hěn tèbié, jí měi ge rén měi zhōu dōu yào lúnliú shàngtái jiǎng yí dào tí, suǒyǐ dàjiā dōu bù gǎn tōulǎn.', goiY:['即','模式','轮流','所以'], giai:'即 (văn viết) = 就是 "tức là": vế sau giải thích cụ thể cho 模式 ở vế trước; 所以 nêu kết quả ở vế cuối.'},
-  {vi:'Thi xong một cái là cậu ấy lấy cớ "thư giãn" để buông thả bản thân, kết quả càng chơi càng không dừng được, ngày nào cũng thức đến nửa đêm.', zh:'考试一结束，他就以“放松”为借口放纵自己，结果越玩越停不下来，天天熬到半夜。', py:'Kǎoshì yì jiéshù, tā jiù yǐ “fàngsōng” wéi jièkǒu fàngzòng zìjǐ, jiéguǒ yuè wán yuè tíng bu xiàlái, tiāntiān áo dào bànyè.', goiY:['以……为借口','放纵','越……越……','结果'], giai:'以 A 为借口 = "lấy A làm cớ"; 越……越…… diễn tả mức độ tăng theo; 结果 mở đầu vế nêu kết cục không mong muốn.'},
-  {vi:'Học kỳ này điểm của tôi tuy có lên xuống, nhưng nhìn chung có xu hướng tăng, so với học kỳ trước thì tiến bộ đã khá rõ rệt.', zh:'这学期我的成绩虽然有所波动，但总体呈上升趋势，相对于上学期，进步已经相当明显了。', py:'Zhè xuéqī wǒ de chéngjì suīrán yǒusuǒ bōdòng, dàn zǒngtǐ chéng shàngshēng qūshì, xiāngduì yú shàng xuéqī, jìnbù yǐjīng xiāngdāng míngxiǎn le.', goiY:['虽然……但……','波动','趋势','相对于'], giai:'呈……趋势 = "có xu hướng…"; 虽然 có thể đứng sau chủ ngữ (我的成绩虽然……); 相对于 + mốc so sánh = "so với…".'},
-  {vi:'Lỡ như hoạt động ngoài trời ngày mai bị huỷ đột xuất vì trời mưa, chúng ta phải lập tức có biện pháp khác, để khỏi khiến mọi người đi một chuyến công cốc.', zh:'万一明天的户外活动因为下雨临时取消，我们就得立即采取别的措施，免得大家白跑一趟。', py:'Wànyī míngtiān de hùwài huódòng yīnwèi xià yǔ línshí qǔxiāo, wǒmen jiù děi lìjí cǎiqǔ bié de cuòshī, miǎnde dàjiā bái pǎo yí tàng.', goiY:['万一……就……','免得','临时','采取'], giai:'万一 nêu khả năng xấu ít xảy ra (= "lỡ như"); 免得 (để khỏi) mở đầu vế cuối, nêu điều muốn tránh; 采取措施 = "áp dụng biện pháp".'},
-  {vi:'Chỉ khi hình thành thói quen không hiểu là hỏi ngay, ta mới có thể kịp thời phát hiện và sửa những lỗ hổng kiến thức lẻ tẻ, từ đó tránh để cùng một lỗi lặp đi lặp lại.', zh:'只有养成不懂即问的习惯，才能及时发现并纠正个别知识漏洞，从而避免同样的错误一再出现。', py:'Zhǐyǒu yǎngchéng bù dǒng jí wèn de xíguàn, cái néng jíshí fāxiàn bìng jiūzhèng gèbié zhīshi lòudòng, cóng’ér bìmiǎn tóngyàng de cuòwù yízài chūxiàn.', goiY:['只有……才……','不懂即问','个别','从而'], giai:'即 ở đây = 就 (liền, ngay): 不懂即问 = "không hiểu là hỏi ngay"; 只有……才…… là điều kiện duy nhất; 从而 nêu kết quả tiếp theo ở vế cuối.'},
-  {vi:'Thay vì ăn kiêng mù quáng để giảm cân, chi bằng sắp xếp lượng dinh dưỡng nạp vào cho hợp lý và kiên trì tập thể dục, nếu không cân nặng rất dễ tăng trở lại.', zh:'与其为了减肥而盲目节食，不如合理安排营养的摄入，并坚持运动，否则体重很容易出现反弹。', py:'Yǔqí wèile jiǎnféi ér mángmù jiéshí, bùrú hélǐ ānpái yíngyǎng de shèrù, bìng jiānchí yùndòng, fǒuzé tǐzhòng hěn róngyì chūxiàn fǎntán.', goiY:['与其……不如……','否则','节食','摄入'], giai:'与其 A 不如 B — chọn B; 为了……而…… nối mục đích với hành động; 否则 (nếu không) đưa ra hậu quả khi không làm theo B.'},
-  {vi:'Sau khi phân tích điểm số, cô giáo phát hiện vấn đề của phần lớn mọi người đều nằm ở bài văn, tức là không hiểu rõ đề, vì vậy cô cho rằng nhất định phải dạy cho chúng tôi một buổi về viết văn.', zh:'老师分析成绩后发现，大部分人的问题都出在作文上，即审题不清，因此她认为非给我们上一次作文课不可。', py:'Lǎoshī fēnxī chéngjì hòu fāxiàn, dà bùfen rén de wèntí dōu chū zài zuòwén shang, jí shěn tí bù qīng, yīncǐ tā rènwéi fēi gěi wǒmen shàng yí cì zuòwénkè bùkě.', goiY:['即','因此','非……不可','分析'], giai:'即 mở đầu phần giải thích cụ thể cho 问题; 非 + V + 不可 = "nhất định phải…", đứng sau động từ tâm lý 认为.'}
+  {vi:'Ngoài một vài bạn nghỉ ốm ra, cả lớp đều đã tham gia hoạt động tình nguyện lần này.',zh:'除了个别同学因为生病请假以外，全班都参与了这次志愿者活动。',py:'Chúle gèbié tóngxué yīnwèi shēngbìng qǐngjià yǐwài, quán bān dōu cānyùle zhè cì zhìyuànzhě huódòng.',goiY:['除了……以外，……都……','个别','参与','志愿者'],giai:'个别 + N = "một số ít, cá biệt"; 除了……以外，……都…… là cấu trúc loại trừ ("ngoài… ra, … đều…"), vế sau bắt buộc có 都.'},
+  {vi:'Điểm lần này đã tụt rõ rệt như vậy thì cậu nhất định phải nói chuyện nghiêm túc với bố mẹ một phen.',zh:'既然这次成绩下降得这么明显，你就非跟父母好好谈一谈不可了。',py:'Jìrán zhè cì chéngjì xiàjiàng de zhème míngxiǎn, nǐ jiù fēi gēn fùmǔ hǎohǎo tán yi tán bùkě le.',goiY:['既然……就……','非……不可','明显'],giai:'非 + V + 不可 = "nhất định phải…" (phủ định kép thành khẳng định mạnh), không dịch thành "không phải… không được"; 既然 nêu sự thật đã rõ.'},
+  {vi:'Điều tra cho thấy học giỏi hay không không hẳn chỉ liên quan đến sự thông minh, mà còn có quan hệ rất lớn với thói quen học tập.',zh:'调查表明，成绩好不好并非只跟聪明有关，而是跟学习习惯有很大的关系。',py:'Diàochá biǎomíng, chéngjì hǎo bu hǎo bìngfēi zhǐ gēn cōngming yǒuguān, ér shì gēn xuéxí xíguàn yǒu hěn dà de guānxì.',goiY:['并非……而是……','表明'],giai:'并非 (văn viết) = 并不是, đi với 而是 để phủ định A, khẳng định B; 调查表明 = "điều tra cho thấy".'},
+  {vi:'Thi xong một cái là cậu ấy lấy cớ "thư giãn" để buông thả bản thân, kết quả càng chơi càng không dừng được, ngày nào cũng chơi đến nửa đêm.',zh:'考试一结束，他就以“放松”为借口放纵自己，结果越玩越停不下来，天天玩到半夜。',py:'Kǎoshì yì jiéshù, tā jiù yǐ “fàngsōng” wéi jièkǒu fàngzòng zìjǐ, jiéguǒ yuè wán yuè tíng bu xiàlái, tiāntiān wán dào bànyè.',goiY:['以……为借口','放纵','越……越……','结果'],giai:'以 A 为借口 = "lấy A làm cớ"; 越……越…… diễn tả mức độ tăng theo; 结果 mở đầu vế nêu kết cục không mong muốn.'},
+  {vi:'Nếu trận đấu ngày mai vì trời mưa mà bị dời đột xuất sang buổi chiều, chúng ta phải lập tức báo cho mọi người, đừng để ai đến không công.',zh:'如果明天的比赛因为下雨临时改到下午，我们就得立即通知大家，别让大家白去一趟。',py:'Rúguǒ míngtiān de bǐsài yīnwèi xià yǔ línshí gǎidào xiàwǔ, wǒmen jiù děi lìjí tōngzhī dàjiā, bié ràng dàjiā bái qù yí tàng.',goiY:['如果……就……','临时','立即'],giai:'如果……就…… nêu giả thiết và việc phải làm; 临时 = "đột xuất, sát giờ mới thay đổi" (khác 暂时 = tạm thời); 白去一趟 = "đi một chuyến công cốc".'},
+  {vi:'Sau khi phân tích điểm số, cô giáo phát hiện vấn đề của phần lớn mọi người đều nằm ở phần đọc hiểu, tức là không hiểu ý của bài đọc, vì vậy cô cho rằng nhất định phải dạy cho chúng tôi một buổi đọc hiểu.',zh:'老师分析成绩后发现，大部分人的问题都出在阅读上，即没有看懂文章的意思，因此她认为非给我们上一次阅读课不可。',py:'Lǎoshī fēnxī chéngjì hòu fāxiàn, dà bùfen rén de wèntí dōu chū zài yuèdú shang, jí méiyǒu kàndǒng wénzhāng de yìsi, yīncǐ tā rènwéi fēi gěi wǒmen shàng yí cì yuèdúkè bùkě.',goiY:['即','因此','非……不可','分析'],giai:'即 mở đầu phần giải thích cụ thể cho 问题; 非 + V + 不可 = "nhất định phải…", đứng sau động từ tâm lý 认为.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Tuy sự thay đổi cân nặng của một vài tình nguyện viên có khác biệt so với số đông, nhưng xu hướng chung vẫn giống nhau.', zh:'虽然个别志愿者的体重变化跟大多数人存在差异，但总的趋势是一致的。', py:'Suīrán gèbié zhìyuànzhě de tǐzhòng biànhuà gēn dàduōshù rén cúnzài chāyì, dàn zǒng de qūshì shì yízhì de.', goiY:['虽然……但…… = tuy… nhưng…','个别 = cá biệt, một vài','差异 = sự khác biệt','趋势 = xu hướng'], giai:'个别 + N chỉ số ít, dịch "một vài/cá biệt"; 跟……存在差异 = "có khác biệt so với…".'},
-  {vi:'Các nhà nghiên cứu bất ngờ phát hiện ra rằng những người giảm cân thành công không phải cuối tuần nhịn ăn nhịn uống, mà là sẽ lập tức "bù lại" vào các ngày làm việc.', zh:'研究人员意外地发现，减肥成功的人并非周末不吃不喝，而是会在工作日立即进行“补偿”。', py:'Yánjiū rényuán yìwài de fāxiàn, jiǎnféi chénggōng de rén bìngfēi zhōumò bù chī bù hē, ér shì huì zài gōngzuòrì lìjí jìnxíng “bǔcháng”.', goiY:['并非……而是…… = không phải… mà là…','意外 = bất ngờ','补偿 = bù đắp, bù lại'], giai:'并非 = 并不是 (văn viết); 进行 + động từ hai âm tiết (进行补偿) chỉ việc tiến hành, khi dịch có thể bỏ 进行 cho gọn.'},
-  {vi:'Cân nặng thường xuống thấp nhất vào thứ Sáu, sang thứ Bảy và Chủ nhật lại tăng trở lại, có thể thấy chế độ ăn cuối tuần ảnh hưởng rất lớn đến cân nặng.', zh:'体重通常在周五达到最低点，到了周六和周日又会重新上升，可见周末的饮食对体重影响很大。', py:'Tǐzhòng tōngcháng zài zhōuwǔ dádào zuì dī diǎn, dàole zhōuliù hé zhōurì yòu huì chóngxīn shàngshēng, kějiàn zhōumò de yǐnshí duì tǐzhòng yǐngxiǎng hěn dà.', goiY:['可见 = có thể thấy','达到 = đạt tới','上升 = tăng lên'], giai:'达到最低点 dịch "xuống mức thấp nhất" (không dịch cứng "đạt tới điểm thấp nhất"); 可见 nêu kết luận rút ra từ số liệu.'},
-  {vi:'Vì cuối tuần mọi người có nhiều thời gian ra ngoài ăn uống hơn, ăn uống cũng tương đối buông thả, nên cân nặng đương nhiên sẽ dao động rõ rệt.', zh:'因为人们在周末有更多时间外出就餐，饮食也相对放纵，所以体重自然会出现明显的波动。', py:'Yīnwèi rénmen zài zhōumò yǒu gèng duō shíjiān wàichū jiùcān, yǐnshí yě xiāngduì fàngzòng, suǒyǐ tǐzhòng zìrán huì chūxiàn míngxiǎn de bōdòng.', goiY:['因为……所以…… = vì… nên…','就餐 = dùng bữa, ăn uống','放纵 = buông thả','波动 = dao động'], giai:'相对 ở đây là phó từ = "tương đối, khá"; 出现波动 dịch gọn là "dao động/lên xuống".'},
-  {vi:'Nghiên cứu phát hiện sự thay đổi cân nặng của những người này có một quy luật rõ ràng, tức là cân nặng tăng lên sau cuối tuần, rồi giảm dần vào các ngày làm việc.', zh:'研究发现，这些人的体重变化存在清晰的模式，即体重先在周末过后升高，然后在工作日逐渐下降。', py:'Yánjiū fāxiàn, zhèxiē rén de tǐzhòng biànhuà cúnzài qīngxī de móshì, jí tǐzhòng xiān zài zhōumò guòhòu shēnggāo, ránhòu zài gōngzuòrì zhújiàn xiàjiàng.', goiY:['即 = tức là','先……然后…… = trước… rồi…','清晰 = rõ ràng','模式 = mô hình, kiểu'], giai:'即 mở đầu phần giải thích cho 模式 ở vế trước; 先……然后…… sắp xếp hai giai đoạn theo thứ tự thời gian.'},
-  {vi:'Theo tin đưa, các nhà nghiên cứu đã theo dõi cân nặng của 80 người trưởng thành, trong đó chỉ những người cân liên tục từ bảy ngày trở lên mới được đưa vào phân tích.', zh:'据报道，研究人员对八十名成年人的体重进行了跟踪，其中只有连续称重七天以上的人，才会被纳入分析。', py:'Jù bàodào, yánjiū rényuán duì bāshí míng chéngniánrén de tǐzhòng jìnxíngle gēnzōng, qízhōng zhǐyǒu liánxù chēng zhòng qī tiān yǐshàng de rén, cái huì bèi nàrù fēnxī.', goiY:['据报道 = theo tin đưa','只有……才…… = chỉ khi/chỉ những… mới…','纳入 = đưa vào','跟踪 = theo dõi'], giai:'只有……才…… nêu điều kiện bắt buộc; 称重 là "cân (trọng lượng)", 称 đọc chēng; 被纳入分析 = "được đưa vào phân tích".'},
-  {vi:'Các nhà nghiên cứu chia những người tham gia thành ba nhóm theo mức thay đổi cân nặng; kết quả cho thấy dù thuộc nhóm nào, sau cuối tuần cân nặng cũng đều tăng lên đôi chút.', zh:'研究人员把参与者按体重变化分为三种类型，结果表明，无论属于哪一种类型，周末过后体重都会有所上升。', py:'Yánjiū rényuán bǎ cānyùzhě àn tǐzhòng biànhuà fēnwéi sān zhǒng lèixíng, jiéguǒ biǎomíng, wúlùn shǔyú nǎ yì zhǒng lèixíng, zhōumò guòhòu tǐzhòng dōu huì yǒusuǒ shàngshēng.', goiY:['无论……都…… = dù… đều…','类型 = loại, kiểu','表明 = cho thấy','有所 = có phần, đôi chút'], giai:'无论 + câu hỏi (哪一种) + 都……: dù thế nào kết quả cũng không đổi; 有所上升 = "có tăng đôi chút".'},
-  {vi:'Đã biết việc tăng cân cuối tuần chỉ là hiện tượng tạm thời, thì người ăn kiêng không cần quá căng thẳng, điều quan trọng là phải kịp thời điều chỉnh vào các ngày trong tuần.', zh:'既然周末体重上升只是一种临时现象，节食者就没有必要过分紧张，关键是工作日要及时调整。', py:'Jìrán zhōumò tǐzhòng shàngshēng zhǐshì yì zhǒng línshí xiànxiàng, jiéshízhě jiù méiyǒu bìyào guòfèn jǐnzhāng, guānjiàn shì gōngzuòrì yào jíshí tiáozhěng.', goiY:['既然……就…… = đã… thì…','临时 = tạm thời','现象 = hiện tượng','必要 = cần thiết'], giai:'既然 nêu tiền đề đã được xác nhận (khác 如果 là giả thiết), dịch "đã… thì…"; 就 đứng sau chủ ngữ 节食者.'},
-  {vi:'Những người muốn giữ dáng thon thả không nên lấy cuối tuần làm cái cớ để buông thả, mà nên áp dụng biện pháp, chẳng hạn hạn chế số lần ăn ngoài, để tránh cân nặng tăng liên tục.', zh:'想要保持苗条的人不应该把周末当作放纵的借口，而应该采取措施，比如控制就餐的次数，以免体重持续上升。', py:'Xiǎng yào bǎochí miáotiáo de rén bù yīnggāi bǎ zhōumò dàngzuò fàngzòng de jièkǒu, ér yīnggāi cǎiqǔ cuòshī, bǐrú kòngzhì jiùcān de cìshù, yǐmiǎn tǐzhòng chíxù shàngshēng.', goiY:['以免 = để tránh','借口 = cái cớ','采取措施 = áp dụng biện pháp'], giai:'把 A 当作 B = "coi A là B"; 以免 đứng đầu vế cuối, nêu điều cần tránh.'},
-  {vi:'Nghiên cứu này do nhiều cơ quan phối hợp thực hiện; tuy tổng cộng chỉ có 80 người tham gia, nhưng vì dữ liệu khá đáng tin cậy nên thành quả của nó vẫn đáng để các chuyên gia dinh dưỡng tham khảo.', zh:'该研究由多家机构联合完成，虽然总共只有八十人参与，但由于数据相当可靠，其成果仍值得营养专家参考。', py:'Gāi yánjiū yóu duō jiā jīgòu liánhé wánchéng, suīrán zǒnggòng zhǐyǒu bāshí rén cānyù, dàn yóuyú shùjù xiāngdāng kěkào, qí chéngguǒ réng zhíde yíngyǎng zhuānjiā cānkǎo.', goiY:['虽然……但由于…… = tuy… nhưng do…','联合 = liên kết, phối hợp','可靠 = đáng tin cậy','成果 = thành quả'], giai:'Câu có hai lớp quan hệ: 虽然……但…… (nhượng bộ) lồng với 由于 (nguyên nhân); 其 = 它的 (văn viết), dịch "của nó".'}
+  {vi:'Tuy sự thay đổi cân nặng của một vài tình nguyện viên có khác biệt so với số đông, nhưng xu hướng thay đổi vẫn giống nhau.',zh:'虽然个别志愿者的体重变化跟大多数人存在差异，但变化的趋势还是一样的。',py:'Suīrán gèbié zhìyuànzhě de tǐzhòng biànhuà gēn dàduōshù rén cúnzài chāyì, dàn biànhuà de qūshì háishi yíyàng de.',goiY:['虽然……但…… = tuy… nhưng…','个别 = cá biệt, một vài','差异 = sự khác biệt','趋势 = xu hướng'],giai:'个别 + N chỉ số ít, dịch "một vài/cá biệt"; 跟……存在差异 = "có khác biệt so với…".'},
+  {vi:'Các nhà nghiên cứu bất ngờ phát hiện ra rằng những người giảm cân thành công không phải cuối tuần nhịn ăn nhịn uống, mà là sẽ lập tức "bù lại" vào các ngày làm việc.',zh:'研究人员意外地发现，减肥成功的人并非周末不吃不喝，而是会在工作日立即进行“补偿”。',py:'Yánjiū rényuán yìwài de fāxiàn, jiǎnféi chénggōng de rén bìngfēi zhōumò bù chī bù hē, ér shì huì zài gōngzuòrì lìjí jìnxíng “bǔcháng”.',goiY:['并非……而是…… = không phải… mà là…','意外 = bất ngờ','补偿 = bù đắp, bù lại'],giai:'并非 = 并不是 (văn viết); 进行 + động từ hai âm tiết (进行补偿) chỉ việc tiến hành, khi dịch có thể bỏ 进行 cho gọn.'},
+  {vi:'Vì cuối tuần mọi người có nhiều thời gian ra ngoài ăn uống hơn, ăn uống cũng tương đối buông thả, nên cân nặng đương nhiên sẽ dao động rõ rệt.',zh:'因为人们在周末有更多时间外出就餐，饮食也相对放纵，所以体重自然会出现明显的波动。',py:'Yīnwèi rénmen zài zhōumò yǒu gèng duō shíjiān wàichū jiùcān, yǐnshí yě xiāngduì fàngzòng, suǒyǐ tǐzhòng zìrán huì chūxiàn míngxiǎn de bōdòng.',goiY:['因为……所以…… = vì… nên…','就餐 = dùng bữa, ăn uống','放纵 = buông thả','波动 = dao động'],giai:'相对 ở đây là phó từ = "tương đối, khá"; 出现波动 dịch gọn là "dao động/lên xuống".'},
+  {vi:'Các nhà nghiên cứu chia những người tham gia thành ba nhóm theo sự thay đổi cân nặng; kết quả cho thấy dù thuộc nhóm nào, sau cuối tuần cân nặng cũng đều tăng lên một chút.',zh:'研究人员根据体重变化把参与研究的人分为三种类型，结果表明，不管是哪一种类型，周末过后体重都会上升一些。',py:'Yánjiū rényuán gēnjù tǐzhòng biànhuà bǎ cānyù yánjiū de rén fēnwéi sān zhǒng lèixíng, jiéguǒ biǎomíng, bùguǎn shì nǎ yì zhǒng lèixíng, zhōumò guòhòu tǐzhòng dōu huì shàngshēng yìxiē.',goiY:['不管……都…… = dù… đều…','类型 = loại, kiểu','表明 = cho thấy'],giai:'把 A 分为 B = "chia A thành B"; 不管 + câu hỏi (哪一种) + 都……: dù thế nào kết quả cũng không đổi.'},
+  {vi:'Người muốn có dáng thon thả không nên coi cuối tuần là cái cớ để buông thả, mà nên áp dụng biện pháp, chẳng hạn ít ra ngoài ăn uống, không để cân nặng cứ tăng mãi.',zh:'想变苗条的人不应该把周末当成放纵的借口，而应该采取措施，比如少出去就餐，不让体重一直上升。',py:'Xiǎng biàn miáotiao de rén bù yīnggāi bǎ zhōumò dàngchéng fàngzòng de jièkǒu, ér yīnggāi cǎiqǔ cuòshī, bǐrú shǎo chūqu jiùcān, bú ràng tǐzhòng yìzhí shàngshēng.',goiY:['把 A 当成 B = coi A là B','借口 = cái cớ','采取措施 = áp dụng biện pháp'],giai:'不应该……，而应该…… đối lập điều không nên với điều nên làm; 把 A 当成 B = "coi A là B".'},
+  {vi:'Nghiên cứu này do mấy trường y phối hợp hoàn thành; tuy tổng cộng chỉ có 80 người tham gia, nhưng vì phương pháp đáng tin cậy nên mọi người đều rất coi trọng thành quả nghiên cứu này.',zh:'这项研究是几所医学院校联合完成的，虽然总共只有八十人参与，但是因为方法可靠，所以大家都很重视这个研究成果。',py:'Zhè xiàng yánjiū shì jǐ suǒ yīxué yuànxiào liánhé wánchéng de, suīrán zǒnggòng zhǐyǒu bāshí rén cānyù, dànshì yīnwèi fāngfǎ kěkào, suǒyǐ dàjiā dōu hěn zhòngshì zhège yánjiū chéngguǒ.',goiY:['是……的 = nhấn mạnh người thực hiện','联合 = liên kết, phối hợp','可靠 = đáng tin cậy','成果 = thành quả'],giai:'是……联合完成的 nhấn mạnh chủ thể thực hiện; câu có hai lớp quan hệ: 虽然……但是…… lồng với 因为……所以…….'}
 ];
 
 // ══════════════════════════════════════════
@@ -1395,30 +1332,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
   sapXep:[
-    {manh:['总共','两百多人','这次','有','来报名'],
-     dap:'这次总共有两百多人来报名。',
-     vn:'Lần này tổng cộng có hơn hai trăm người đến đăng ký.',
-     giai:'Câu 29 sách bài tập. 这次 (thời gian/chủ đề) → phó từ 总共 → 有 + số lượng + người → 来报名.'},
-    {manh:['中医的','决定采取','医生','治疗方法'],
-     dap:'医生决定采取中医的治疗方法。',
-     vn:'Bác sĩ quyết định áp dụng phương pháp điều trị Đông y.',
-     giai:'Câu 30 sách bài tập. Chủ ngữ 医生 → 决定采取 → định ngữ 中医的 → danh từ 治疗方法.'},
-    {manh:['小刘','经理觉得','办事','不太可靠'],
-     dap:'经理觉得小刘办事不太可靠。',
-     vn:'Giám đốc thấy Tiểu Lưu làm việc không đáng tin lắm.',
-     giai:'Câu 31 sách bài tập. 经理觉得 + mệnh đề (小刘 + 办事 + 不太可靠).'},
-    {manh:['联合进行的','这项研究','是','多所医学院校'],
-     dap:'这项研究是多所医学院校联合进行的。',
-     vn:'Nghiên cứu này do nhiều trường y liên kết thực hiện.',
-     giai:'Cấu trúc 是……的 (ôn HSK 3) nhấn mạnh người thực hiện: 是 + chủ thể + 联合进行的.'},
-    {manh:['并非','周末体重的','临时变化','真正的体重增加'],
-     dap:'周末体重的临时变化并非真正的体重增加。',
-     vn:'Thay đổi tạm thời của cân nặng cuối tuần không phải là tăng cân thật sự.',
-     giai:'并非 = 并不是, đứng giữa chủ ngữ và tân ngữ như 是.'},
-    {manh:['意外地','研究人员','一个新现象','发现了'],
-     dap:'研究人员意外地发现了一个新现象。',
-     vn:'Các nhà nghiên cứu bất ngờ phát hiện một hiện tượng mới.',
-     giai:'Trạng ngữ 意外地 đứng TRƯỚC động từ 发现了, sau chủ ngữ.'}
+    {manh:['总共','两百多人','这次','有','来报名'],dap:'这次总共有两百多人来报名。',vn:'Lần này tổng cộng có hơn hai trăm người đến đăng ký.',giai:'Câu 29 sách bài tập. 这次 (thời gian/chủ đề) → phó từ 总共 → 有 + số lượng + người → 来报名.'},
+    {manh:['新的','决定采取','学校','管理方法'],dap:'学校决定采取新的管理方法。',vn:'Nhà trường quyết định áp dụng phương pháp quản lý mới.',giai:'Chủ ngữ 学校 → 决定采取 → định ngữ 新的 → danh từ 管理方法 (theo mẫu câu 30 sách bài tập).'},
+    {manh:['小刘','经理觉得','做事','不太可靠'],dap:'经理觉得小刘做事不太可靠。',vn:'Giám đốc thấy Tiểu Lưu làm việc không đáng tin lắm.',giai:'Câu 31 sách bài tập. 经理觉得 + mệnh đề (小刘 + 做事 + 不太可靠).'},
+    {manh:['联合进行的','这项研究','是','多所医学院校'],dap:'这项研究是多所医学院校联合进行的。',vn:'Nghiên cứu này do nhiều trường y liên kết thực hiện.',giai:'Cấu trúc 是……的 (ôn HSK 3) nhấn mạnh người thực hiện: 是 + chủ thể + 联合进行的.'},
+    {manh:['并非','周末体重的','临时变化','真正的体重增加'],dap:'周末体重的临时变化并非真正的体重增加。',vn:'Thay đổi tạm thời của cân nặng cuối tuần không phải là tăng cân thật sự.',giai:'并非 = 并不是, đứng giữa chủ ngữ và tân ngữ như 是.'},
+    {manh:['意外地','研究人员','一个新现象','发现了'],dap:'研究人员意外地发现了一个新现象。',vn:'Các nhà nghiên cứu bất ngờ phát hiện một hiện tượng mới.',giai:'Trạng ngữ 意外地 đứng TRƯỚC động từ 发现了, sau chủ ngữ.'}
   ]
 };
 
@@ -1428,30 +1347,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (节食与减肥). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 节食 · 营养 · 明显 · 波动 · 借口 · 采取 · 措施 · 苗条.',
   questions:[
-    {q_zh:'你有过节食减肥的经历吗？结果满意吗？',
-     q_vn:'Em đã từng ăn kiêng giảm cân chưa? Kết quả có hài lòng không?',
-     hint:'Kể thời gian + cách làm + kết quả, dùng 虽然……但是……',
-     sample:'我有过。高二的时候，我每天不吃晚饭。虽然一个月后体重明显减轻了，但是我总觉得很累，一停止节食体重就又升上去了，所以我不太满意。',
-     sample_vn:'Có. Hồi lớp 11 ngày nào tôi cũng bỏ bữa tối. Tuy một tháng sau cân nặng giảm rõ rệt nhưng tôi luôn thấy mệt, vừa ngừng ăn kiêng là cân lại tăng, nên tôi không hài lòng lắm.',
-     note:'Câu hỏi 1 trong 话题讨论 của sách. Trả lời có câu chuyện cụ thể (thời gian, cách làm, kết quả) sẽ tự nhiên hơn "有/没有".'},
-    {q_zh:'对于节食减肥失败的原因，你有什么分析或经验？',
-     q_vn:'Về nguyên nhân ăn kiêng giảm cân thất bại, em có phân tích hay kinh nghiệm gì?',
-     hint:'Nêu 2 nguyên nhân, dùng 一是……二是…… hoặc 不仅……也……',
-     sample:'我觉得原因主要有两个：一是节食的人缺乏营养，身体受不了；二是很多人周末对饮食太放纵，总找借口吃美食。',
-     sample_vn:'Tôi thấy nguyên nhân chủ yếu có hai: một là người ăn kiêng thiếu dinh dưỡng, cơ thể không chịu nổi; hai là nhiều người cuối tuần ăn uống quá buông thả, luôn tìm cớ ăn đồ ngon.',
-     note:'Câu hỏi 2 của sách. Dùng 分析 và 原因 — đúng cụm 分析原因 trong bảng 词语搭配.'},
-    {q_zh:'如果要节食，你建议应该怎么做？',
-     q_vn:'Nếu phải ăn kiêng, em khuyên nên làm thế nào?',
-     hint:'Đưa 2–3 lời khuyên, dùng 采取……措施 và 只要……就……',
-     sample:'我建议采取比较健康的措施，比如少吃油和糖，多吃蔬菜，每天运动半小时。只要坚持下去，就不用饿肚子也能变苗条。',
-     sample_vn:'Tôi khuyên nên áp dụng biện pháp lành mạnh hơn, ví dụ ăn ít dầu mỡ và đường, ăn nhiều rau, mỗi ngày vận động nửa tiếng. Chỉ cần kiên trì thì không cần nhịn đói cũng có thể thon thả.',
-     note:'Câu hỏi 3 của sách. Lời khuyên nên cụ thể, có ví dụ (比如……).'},
-    {q_zh:'课文说周末体重增加是正常现象。你周末的饮食和平时有什么不同？',
-     q_vn:'Bài khoá nói cân nặng tăng vào cuối tuần là hiện tượng bình thường. Cuối tuần em ăn uống khác ngày thường thế nào?',
-     hint:'So sánh ngày thường / cuối tuần, dùng 一到……就…… hoặc 比',
-     sample:'平时我在学校食堂吃饭，比较简单。一到周末，爸爸妈妈就带我外出就餐，吃得比平时多多了，所以周一称体重的时候总会重一点儿。',
-     sample_vn:'Ngày thường tôi ăn ở căng tin trường, khá đơn giản. Hễ đến cuối tuần là bố mẹ đưa tôi đi ăn ngoài, ăn nhiều hơn hẳn ngày thường, nên thứ Hai cân lúc nào cũng nặng hơn một chút.',
-     note:'Liên hệ bài khoá: 外出就餐, 称体重. Câu so sánh 比 + 多多了 (ôn HSK 3).'}
+    {q_zh:'你有过节食减肥的经历吗？结果满意吗？',q_vn:'Em đã từng ăn kiêng giảm cân chưa? Kết quả có hài lòng không?',hint:'Kể thời gian + cách làm + kết quả, dùng 虽然……但是……',sample:'我有过。高二的时候，我晚饭只吃一个苹果。虽然一个月后体重明显减轻了，但是我常常觉得很累，一不节食体重就又升上去了，所以我不太满意。',sample_vn:'Có. Hồi lớp 11 bữa tối tôi chỉ ăn một quả táo. Tuy một tháng sau cân nặng giảm rõ rệt nhưng tôi hay thấy mệt, vừa thôi ăn kiêng là cân lại tăng, nên tôi không hài lòng lắm.',note:'Câu hỏi 1 trong phần thảo luận của sách. Trả lời có câu chuyện cụ thể (thời gian, cách làm, kết quả) sẽ tự nhiên hơn "有/没有".'},
+    {q_zh:'对于节食减肥失败的原因，你有什么分析和经验？',q_vn:'Về nguyên nhân ăn kiêng giảm cân thất bại, em có phân tích hay kinh nghiệm gì?',hint:'Nêu 2 nguyên nhân, dùng 一是……二是…… hoặc 不仅……也……',sample:'我觉得原因主要有两个：一是节食的人缺乏营养，身体受不了；二是很多人周末对饮食太放纵，老找借口吃美食。',sample_vn:'Tôi thấy nguyên nhân chủ yếu có hai: một là người ăn kiêng thiếu dinh dưỡng, cơ thể không chịu nổi; hai là nhiều người cuối tuần ăn uống quá buông thả, luôn tìm cớ ăn đồ ngon.',note:'Câu hỏi 2 của sách. Dùng 分析 và 原因 — cụm 分析原因 rất hay gặp.'},
+    {q_zh:'如果要节食，你建议应该怎么做？',q_vn:'Nếu phải ăn kiêng, em khuyên nên làm thế nào?',hint:'Đưa 2–3 lời khuyên, dùng 采取……措施 và 只要……就……',sample:'我建议采取比较健康的措施，比如少吃甜的，多吃蔬菜，每天运动半小时。只要每天都这样做，就不用饿肚子也能变苗条。',sample_vn:'Tôi khuyên nên áp dụng biện pháp lành mạnh hơn, ví dụ ăn ít đồ ngọt, ăn nhiều rau, mỗi ngày vận động nửa tiếng. Chỉ cần ngày nào cũng làm vậy thì không cần nhịn đói cũng có thể thon thả.',note:'Câu hỏi 3 của sách. Lời khuyên nên cụ thể, có ví dụ (比如……).'},
+    {q_zh:'课文说周末体重增加是正常现象。你周末的饮食跟平时有什么不同？',q_vn:'Bài khoá nói cân nặng tăng vào cuối tuần là hiện tượng bình thường. Cuối tuần em ăn uống khác ngày thường thế nào?',hint:'So sánh ngày thường / cuối tuần, dùng 比',sample:'平时我在学校吃饭，比较简单。周末爸爸妈妈常常带我外出就餐，吃得比平时多多了，所以周一称体重的时候往往会重一点儿。',sample_vn:'Ngày thường tôi ăn ở trường, khá đơn giản. Cuối tuần bố mẹ hay đưa tôi đi ăn ngoài, ăn nhiều hơn hẳn ngày thường, nên thứ Hai cân thường nặng hơn một chút.',note:'Liên hệ bài khoá: 外出就餐, 称体重. Câu so sánh 比 + 多多了 (ôn HSK 3).'}
   ]
 };
 
@@ -1542,45 +1441,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn thân than thứ Hai nào cân cũng nặng hơn, sợ mình béo lên.',
-     a:{sp:'Bạn',zh:'每到周一，我的体重就会重一点儿，是不是胖了？',vn:'Cứ thứ Hai là cân nặng của tớ lại tăng một chút, có phải tớ béo lên không?'},
-     need:['Dùng 而非 hoặc 并非','Giải thích bằng nội dung bài khoá'],
-     sample:'别担心，那只是周末的临时变化，而非真正的体重增加。',
-     samplePy:'Bié dānxīn, nà zhǐ shì zhōumò de línshí biànhuà, ér fēi zhēnzhèng de tǐzhòng zēngjiā.',
-     sampleVn:'Đừng lo, đó chỉ là thay đổi tạm thời của cuối tuần, chứ không phải tăng cân thật.',
-     tip:'而非 là cách nói văn viết của 而不是: A，而非 B. Đừng viết 非真正的 thiếu 而 ở giữa hai vế.'},
-
-    {scene:'Cô giáo chủ nhiệm hỏi sau chuyến dã ngoại cả lớp có ai bị ốm không.',
-     a:{sp:'Cô',zh:'这次郊游回来，同学们身体都还好吧？',vn:'Đi dã ngoại về, các em đều khoẻ cả chứ?'},
-     need:['Dùng 个别','Trả lời lễ phép với cô'],
-     sample:'都挺好的，只有个别同学有点儿感冒，已经吃过药了。',
-     samplePy:'Dōu tǐng hǎo de, zhǐyǒu gèbié tóngxué yǒudiǎnr gǎnmào, yǐjīng chīguo yào le.',
-     sampleVn:'Đều khoẻ ạ, chỉ có vài bạn hơi cảm, đã uống thuốc rồi ạ.',
-     tip:'个别 + danh từ (không cần 的): 个别同学. Đây đúng dạng bài 练一练 của sách: 完成对话 dùng 个别.'},
-
-    {scene:'Em trai muốn tự đi làm lại thẻ học sinh hộ chị gái, nhưng trường yêu cầu chính chủ.',
-     a:{sp:'Em trai',zh:'姐，你的学生证我帮你去补办吧？',vn:'Chị ơi, thẻ học sinh của chị để em đi làm lại giúp nhé?'},
-     need:['Dùng 非……不可','Giải thích lý do'],
-     sample:'谢谢你，不过学校说补办学生证非本人去不可。',
-     samplePy:'Xièxie nǐ, búguò xuéxiào shuō bǔbàn xuéshengzhèng fēi běnrén qù bùkě.',
-     sampleVn:'Cảm ơn em, nhưng trường bảo làm lại thẻ học sinh nhất định phải chính chủ đi.',
-     tip:'非 + (người) + V + 不可 = nhất định phải. Đừng quên 不可 ở cuối.'},
-
-    {scene:'Bạn cùng lớp hỏi vì sao gần đây em hiểu bài nhanh thế.',
-     a:{sp:'Bạn',zh:'你最近怎么学得这么快？有什么好办法？',vn:'Dạo này sao cậu học nhanh thế? Có cách gì hay không?'},
-     need:['Dùng 即','Giải thích "bí quyết" của mình'],
-     sample:'我的办法很简单，即不懂就问，当天的问题当天解决。',
-     samplePy:'Wǒ de bànfǎ hěn jiǎndān, jí bù dǒng jiù wèn, dàngtiān de wèntí dàngtiān jiějué.',
-     sampleVn:'Cách của tớ đơn giản lắm, tức là không hiểu thì hỏi ngay, vấn đề hôm nào giải quyết hôm đó.',
-     tip:'即 = 就是, dẫn ra phần giải thích cho 办法. Văn viết hơi trang trọng — nói với bạn có thể thay bằng 就是.'},
-
-    {scene:'Mẹ thấy em bỏ bữa tối mấy hôm liền để giảm cân.',
-     a:{sp:'Mẹ',zh:'你怎么又不吃晚饭？这样对身体不好。',vn:'Sao con lại không ăn tối? Thế không tốt cho sức khoẻ đâu.'},
-     need:['Dùng 节食 hoặc 营养','Hứa sẽ đổi cách giảm cân'],
-     sample:'妈，我知道了。只靠节食会缺乏营养，以后我好好吃饭，多运动。',
-     samplePy:'Mā, wǒ zhīdào le. Zhǐ kào jiéshí huì quēfá yíngyǎng, yǐhòu wǒ hǎohāo chīfàn, duō yùndòng.',
-     sampleVn:'Mẹ ơi, con biết rồi. Chỉ dựa vào ăn kiêng sẽ thiếu chất, từ giờ con ăn uống đàng hoàng và vận động nhiều hơn.',
-     tip:'节食 không mang tân ngữ (không nói 节食晚饭). 缺乏营养 = thiếu chất.'}
+    {scene:'Bạn thân than thứ Hai nào cân cũng nặng hơn, sợ mình béo lên.',a:{sp:'Bạn',zh:'我发现自己周一的体重比周五重了一公斤，是不是胖了？',vn:'Tớ thấy cân nặng thứ Hai của tớ nặng hơn thứ Sáu một cân, có phải tớ béo lên không?'},need:['Dùng 而非 hoặc 并非','Giải thích bằng nội dung bài khoá'],sample:'别担心，那只是周末的临时变化，而非真正的体重增加。',samplePy:'Bié dānxīn, nà zhǐ shì zhōumò de línshí biànhuà, ér fēi zhēnzhèng de tǐzhòng zēngjiā.',sampleVn:'Đừng lo, đó chỉ là thay đổi tạm thời của cuối tuần, chứ không phải tăng cân thật.',tip:'而非 là cách nói văn viết của 而不是: A，而非 B. Đừng viết 非真正的 thiếu 而 ở giữa hai vế.'},
+    {scene:'Cô giáo chủ nhiệm hỏi sau hội thao cả lớp có ai bị ốm không.',a:{sp:'Cô',zh:'这次运动会以后，同学们身体都还好吧？',vn:'Hội thao xong, các em đều khoẻ cả chứ?'},need:['Dùng 个别','Trả lời lễ phép với cô'],sample:'大家都很好，只有个别同学有点儿感冒，已经吃过药了。',samplePy:'Dàjiā dōu hěn hǎo, zhǐyǒu gèbié tóngxué yǒudiǎnr gǎnmào, yǐjīng chīguo yào le.',sampleVn:'Mọi người đều khoẻ ạ, chỉ có vài bạn hơi cảm, đã uống thuốc rồi ạ.',tip:'个别 + danh từ (không cần 的): 个别同学. Đây đúng dạng bài 练一练 của sách: 完成对话 dùng 个别.'},
+    {scene:'Em trai muốn ra bưu điện lấy đồ hộ chị gái, nhưng bưu điện yêu cầu chính chủ.',a:{sp:'Em trai',zh:'姐姐，你的东西我帮你去拿吧？',vn:'Chị ơi, đồ của chị để em đi lấy giúp nhé?'},need:['Dùng 非……不可','Giải thích lý do'],sample:'谢谢你，不过他们说非本人去拿不可。',samplePy:'Xièxie nǐ, búguò tāmen shuō fēi běnrén qù ná bùkě.',sampleVn:'Cảm ơn em, nhưng họ bảo nhất định phải chính chủ đến lấy.',tip:'非 + (người) + V + 不可 = nhất định phải. Đừng quên 不可 ở cuối.'},
+    {scene:'Bạn cùng lớp hỏi vì sao gần đây em hiểu bài nhanh thế.',a:{sp:'Bạn',zh:'你最近怎么学得这么快？有什么好办法？',vn:'Dạo này sao cậu học nhanh thế? Có cách gì hay không?'},need:['Dùng 即','Giải thích "bí quyết" của mình'],sample:'我的办法很简单，即不懂就问，当天的问题当天解决。',samplePy:'Wǒ de bànfǎ hěn jiǎndān, jí bù dǒng jiù wèn, dàngtiān de wèntí dàngtiān jiějué.',sampleVn:'Cách của tớ đơn giản lắm, tức là không hiểu thì hỏi ngay, vấn đề hôm nào giải quyết hôm đó.',tip:'即 = 就是, dẫn ra phần giải thích cho 办法. Văn viết hơi trang trọng — nói với bạn có thể thay bằng 就是.'},
+    {scene:'Mẹ thấy em bỏ bữa tối mấy hôm liền để giảm cân.',a:{sp:'Mẹ',zh:'你怎么又不吃晚饭？这样对身体不好。',vn:'Sao con lại không ăn tối? Thế không tốt cho sức khoẻ đâu.'},need:['Dùng 节食 hoặc 营养','Hứa sẽ đổi cách giảm cân'],sample:'妈妈，我知道了。只靠节食会缺乏营养，以后我好好吃饭，多运动。',samplePy:'Māma, wǒ zhīdào le. Zhǐ kào jiéshí huì quēfá yíngyǎng, yǐhòu wǒ hǎohāo chīfàn, duō yùndòng.',sampleVn:'Mẹ ơi, con biết rồi. Chỉ dựa vào ăn kiêng sẽ thiếu chất, từ giờ con ăn uống đàng hoàng và vận động nhiều hơn.',tip:'节食 không mang tân ngữ (không nói 节食晚饭). 缺乏营养 = thiếu chất.'}
   ]
 };
 
@@ -1591,29 +1456,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết báo cáo khoa học nộp cho câu lạc bộ sinh học.',
-     a:'研究表明，人们的体重在一周内会上下波动。',b:'我发现大家的体重一个星期里老是一会儿高一会儿低。',better:'a',
-     why:'Báo cáo khoa học cần giọng văn viết: 研究表明, 上下波动. Câu b là khẩu ngữ (老是, 一会儿……一会儿……).'},
-
-    {scene:'Em rủ bạn thân tối thứ Bảy đi ăn lẩu.',
-     a:'周六晚上咱们一起吃火锅去吧！',b:'周六晚上我们一同外出就餐如何？',better:'a',
-     why:'就餐, 如何 là từ trang trọng, hợp thông báo của nhà hàng. Nói với bạn thân dùng 吃火锅去吧 tự nhiên hơn.'},
-
-    {scene:'Thông báo của căng tin trường dán ở cửa.',
-     a:'今天中午食堂要打扫，大家别来吃了啊！',b:'今日中午食堂进行清洁，暂停就餐，请同学们谅解。',better:'b',
-     why:'Thông báo chính thức: 今日, 暂停就餐, 请……谅解 — gọn và trang trọng. Câu a như nhắn tin.'},
-
-    {scene:'Em giải thích với bà vì sao hôm nay cân nặng hơn hôm qua.',
-     a:'奶奶，周末吃得多，体重高一点儿很正常，过两天就下来了。',b:'奶奶，工作日和周末体重的临时变化应该被视为正常现象。',better:'a',
-     why:'Nói với bà cần lời lẽ giản dị, dễ hiểu. Câu b nguyên văn sách, đúng nhưng nghe như đọc báo cáo.'},
-
-    {scene:'Em viết đoạn kết bài văn nghị luận "Tôi phản đối ăn kiêng".',
-     a:'减肥的目的是健康，而非仅仅是变苗条。',b:'减肥是为了健康，不光是为了瘦。',better:'a',
-     why:'Bài văn nghị luận dùng 而非, 仅仅 — cấu trúc văn viết của bài. Câu b đúng nhưng là khẩu ngữ (不光, 瘦).'},
-
-    {scene:'Em muốn nhắn bạn thân đừng viện cớ bỏ buổi chạy bộ sáng mai.',
-     a:'明天早上不许找借口，六点准时跑步！',b:'请勿以任何理由缺席明日清晨之跑步活动。',better:'a',
-     why:'Với bạn thân dùng giọng thân mật: 不许找借口. Câu b dùng 请勿, 之, 明日清晨 — như văn bản hành chính, nghe buồn cười.'}
+    {scene:'Em viết báo cáo khoa học nộp cho câu lạc bộ sinh học.',a:'研究表明，人们的体重在一周内会上下波动。',b:'我发现大家的体重一个星期里老是一会儿高一会儿低。',better:'a',why:'Báo cáo khoa học cần giọng văn viết: 研究表明, 上下波动. Câu b là khẩu ngữ (老是, 一会儿……一会儿……).'},
+    {scene:'Em rủ bạn thân tối thứ Bảy đi ăn lẩu.',a:'周六晚上咱们一起吃火锅去吧！',b:'周六晚上我们一起外出就餐如何？',better:'a',why:'就餐, 如何 là từ trang trọng, hợp thông báo của nhà hàng. Nói với bạn thân dùng 吃火锅去吧 tự nhiên hơn.'},
+    {scene:'Thông báo của nhà hàng dán ở cửa.',a:'今天中午我们要打扫，大家别来吃了啊！',b:'本店今天中午进行打扫，不能接待顾客，请您原谅。',better:'b',why:'Thông báo chính thức: 本店, 进行打扫, 接待顾客, 请您原谅 — gọn và trang trọng. Câu a như nhắn tin.'},
+    {scene:'Em giải thích với bà vì sao hôm nay cân nặng hơn hôm qua.',a:'奶奶，周末吃得多，体重高一点儿很正常，过两天就下来了。',b:'奶奶，周末体重的临时上升是一种正常现象，您不必担心。',better:'a',why:'Nói với bà cần lời lẽ giản dị, dễ hiểu. Câu b dùng giọng văn sách vở (临时上升, 正常现象), đúng nhưng nghe như đọc báo cáo.'},
+    {scene:'Em viết đoạn kết bài văn nghị luận "Tôi phản đối ăn kiêng".',a:'减肥的目的是健康，而非仅仅是变苗条。',b:'减肥是为了健康，不光是为了瘦。',better:'a',why:'Bài văn nghị luận dùng 而非, 仅仅 — cấu trúc văn viết của bài. Câu b đúng nhưng là khẩu ngữ (不光, 瘦).'},
+    {scene:'Em muốn nhắn bạn thân đừng viện cớ bỏ buổi chạy bộ sáng mai.',a:'明天早上可别再找借口了，六点准时跑步！',b:'希望大家明天早上准时参加跑步活动，不要以任何借口不来。',better:'a',why:'Với bạn thân dùng giọng thân mật: 可别再找借口了. Câu b (希望大家, 以任何借口) như thông báo của nhà trường, nghe xa cách.'}
   ]
 };
 

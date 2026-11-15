@@ -2178,82 +2178,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP CỤM — theo bảng 词语搭配 của sách (tr. 24–25)
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
-  {left:'一串', right:'钥匙'},
-  {left:'断', right:'联系'},
-  {left:'晒', right:'太阳'},
-  {left:'强烈的', right:'对比'},
-  {left:'长途', right:'电话'},
-  {left:'一辈子', right:'没出过国'},
-  {left:'坚决', right:'改正'},
-  {left:'高兴得', right:'不得了'},
-  {left:'一套', right:'餐具'},
-  {left:'一阵', right:'歌声'},
-  {left:'打工', right:'挣钱'},
-  {left:'装修', right:'新房'},
-  {left:'满是', right:'灰尘'},
-  {left:'感受到', right:'温暖'},
-  {left:'悄悄地', right:'离开'},
-  {left:'临走', right:'那天'},
-  {left:'打扫', right:'卫生'},
-  {left:'脸上带着', right:'微笑'},
-  {left:'雪花', right:'飘下来'},
-  {left:'流下', right:'热泪'}
+  {left:'一串',right:'钥匙'},
+  {left:'断',right:'联系'},
+  {left:'晒',right:'太阳'},
+  {left:'强烈的',right:'对比'},
+  {left:'长途',right:'电话'},
+  {left:'一套',right:'家具'},
+  {left:'打工',right:'挣钱'},
+  {left:'装修',right:'卧室'},
+  {left:'满是',right:'灰尘'},
+  {left:'脸上带着',right:'微笑'},
+  {left:'流下',right:'热泪'},
+  {left:'一阵',right:'大风'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'桌子上有一', blank:'串', post:'钥匙。', hint:'(chuỗi, chùm)', ans:'串',exp:'串 là lượng từ cho vật kết thành chùm/chuỗi: 一串钥匙, 一串葡萄.'},
-  {pre:'父母', blank:'一辈子', post:'住在农村老家。', hint:'(cả đời)', ans:'一辈子'},
-  {pre:'长年', blank:'以来', post:'，父母很少离开老屋。', hint:'(từ… đến nay)', ans:'以来',exp:'(从)…以来 = từ… đến nay; nói khoảng thời gian kéo dài đến hiện tại: 长年以来.'},
-  {pre:'父母也', blank:'坚决', post:'不在城里住。', hint:'(kiên quyết)', ans:'坚决'},
-  {pre:'我们用', blank:'打工', post:'挣的钱买了一套新房。', hint:'(làm thuê)', ans:'打工'},
-  {pre:'父母第一次走进新房时，高兴得', blank:'不得了', post:'。', hint:'(vô cùng)', ans:'不得了',exp:'Tính từ + 得 + 不得了 = …vô cùng (bổ ngữ mức độ): 高兴得不得了.'},
-  {pre:'', blank:'临', post:'走那天，父亲从老家赶来送我们。', hint:'(ngay trước khi)', ans:'临',exp:'临 + động từ = lúc sắp…, ngay trước khi: 临走那天, 临睡前.'},
-  {pre:'父亲', blank:'悄悄', post:'把我拉到一边说话。', hint:'(khẽ khàng)', ans:'悄悄',exp:'悄悄 = lặng lẽ, khẽ (không để người khác biết), làm trạng ngữ: 悄悄把我拉到一边.'},
-  {pre:'温暖的气息', blank:'立刻', post:'扑面而来。', hint:'(lập tức)', ans:'立刻',exp:'立刻 = lập tức, ngay; nhấn mạnh việc xảy ra ngay sau đó.'},
-  {pre:'厨房里飘来', blank:'阵阵', post:'饭菜香。', hint:'(từng đợt)', ans:'阵阵',exp:'Lượng từ lặp 阵阵 = từng đợt, từng làn: 阵阵饭菜香, 阵阵笑声.'},
-  {pre:'他在城里打工，一个月能', blank:'挣', post:'五千多块钱。', hint:'(kiếm (tiền))', ans:'挣'},
-  {pre:'房子', blank:'装修', post:'好以后，父母就搬进来住了。', hint:'(sửa sang, trang trí nhà)', ans:'装修'},
-  {pre:'桌子上全是', blank:'灰尘', post:'，好久没人打扫了。', hint:'(bụi)', ans:'灰尘'},
-  {pre:'外面太冷了，我的手都', blank:'冻', post:'红了。', hint:'(lạnh cóng)', ans:'冻'},
-  {pre:'出门以前别忘了把门', blank:'锁', post:'好。', hint:'(khoá)', ans:'锁'},
-  {pre:'虽然他在城里住了十年，但是还是觉得', blank:'农村', post:'的生活更舒服。', hint:'(nông thôn)', ans:'农村'},
-  {pre:'他把', blank:'屋子', post:'打扫得干干净净，等父母回来。', hint:'(căn phòng, gian nhà)', ans:'屋子'},
-  {pre:'我小时候是跟着', blank:'姥姥', post:'长大的。', hint:'(bà ngoại)', ans:'姥姥'},
-  {pre:'他们家不在北京，在河北的一个小', blank:'县', post:'里。', hint:'(huyện)', ans:'县'},
-  {pre:'聚会上他喝', blank:'醉', post:'了，是朋友把他送回家的。', hint:'(say (rượu))', ans:'醉'},
-  {pre:'我们在姥姥家住了一', blank:'夜', post:'，第二天就回来了。', hint:'(đêm)', ans:'夜'},
-  {pre:'天越来越冷了，妈妈给我换了一床厚', blank:'被子', post:'。', hint:'(cái chăn)', ans:'被子'},
-  {pre:'坐了十几个小时的', blank:'长途', post:'汽车，大家都累极了。', hint:'(đường dài)', ans:'长途'},
-  {pre:'她总是', blank:'微笑', post:'着跟每个人打招呼。', hint:'(mỉm cười)', ans:'微笑'},
-  {pre:'一回到家，我就感到特别', blank:'温暖', post:'。', hint:'(ấm áp)', ans:'温暖'},
-  {pre:'这套房子有两间', blank:'卧室', post:'，一间给父母，一间给我。', hint:'(phòng ngủ)', ans:'卧室'},
-  {pre:'窗外', blank:'飘', post:'着雪花，屋子里却很暖和。', hint:'(bay lượn, lả tả)', ans:'飘'},
-  {pre:'第一次离开家，我才真正', blank:'感受', post:'到父母的不容易。', hint:'(cảm nhận)', ans:'感受'},
-  {pre:'看到父母为我做的这一切，我再也忍不住，', blank:'流泪', post:'了。', hint:'(chảy nước mắt)', ans:'流泪'}
+  {pre:'搬到这个城市',blank:'以来',post:'，哥哥一直在一家咖啡店打工，从来没跟家里要过钱。',hint:'(từ… đến nay)',ans:'以来',exp:'Mốc thời gian + 以来 = từ… đến nay, vế sau thường có 一直; 以后 chỉ "sau khi", không có ý "cho đến bây giờ".'},
+  {pre:'医生说，这种药',blank:'临',post:'睡前吃一次就可以了。',hint:'(ngay trước khi)',ans:'临',exp:'临 + động từ (+ 前/时) = ngay trước lúc làm gì: 临睡前, 临走时.'},
+  {pre:'奶奶辛苦了',blank:'一辈子',post:'，我们现在一定要好好照顾她。',hint:'(cả đời)',ans:'一辈子',exp:'一辈子 đứng sau động từ + 了 để nói thời gian kéo dài: 辛苦了一辈子, 忙了一辈子.'},
+  {pre:'他每个月',blank:'挣',post:'的钱不多，但是每次回家都给父母买很多东西。',hint:'(kiếm (tiền))',ans:'挣',exp:'挣钱 = kiếm tiền bằng sức lao động; 挣的钱 = tiền kiếm được.'},
+  {pre:'楼上的邻居正在',blank:'装修',post:'房子，每天早上八点就开始吵，真让人不耐烦。',hint:'(sửa sang (nhà))',ans:'装修',exp:'装修 + 房子/卧室/教室 = sửa sang, trang trí lại nhà cửa, không dùng cho việc sửa đồ hỏng.'},
+  {pre:'这本书在桌子上放了好几年，上面全是',blank:'灰尘',post:'。',hint:'(bụi)',ans:'灰尘',exp:'灰尘 là danh từ: 全是灰尘, 满是灰尘 = phủ đầy bụi.'},
+  {pre:'他昨天晚上和同事喝',blank:'醉',post:'了，今天早上居然忘了自己是怎么回家的。',hint:'(say (rượu))',ans:'醉',exp:'醉 làm bổ ngữ kết quả sau 喝: 喝醉了 = uống say rồi.'},
+  {pre:'天气预报说明天是晴天，正好可以把冬天的衣服拿出去',blank:'晒',post:'。',hint:'(phơi nắng)',ans:'晒',exp:'晒 = phơi nắng: 晒衣服, 晒被子, 晒太阳.'},
+  {pre:'外面零下十度，他在车站等了半个小时，手都被',blank:'冻',post:'红了。',hint:'(rét cóng)',ans:'冻',exp:'冻 là động từ: 被冻红了 = bị rét đến đỏ cả lên; 冷 là tính từ, không đứng sau 被.'},
+  {pre:'我跟他说了半天，可是他说不去就不去，态度十分',blank:'坚决',post:'。',hint:'(kiên quyết, dứt khoát)',ans:'坚决',exp:'坚决 là tính từ, làm vị ngữ được: 态度很坚决; 坚持 là động từ, không nói 态度很坚持.'},
+  {pre:'爸爸天还没',blank:'亮',post:'就开车去县里卖菜了。',hint:'(sáng)',ans:'亮',exp:'天亮 = trời sáng; 天还没亮就…… = trời chưa sáng đã…'},
+  {pre:'那位女士',blank:'微笑',post:'着对我说：“没关系，慢慢来。”',hint:'(mỉm cười)',ans:'微笑',exp:'微笑着 + V = vừa mỉm cười vừa làm gì; 微笑 còn là danh từ: 她的微笑.'}
 ];
 
 // ══════════════════════════════════════════
 // SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['父母', '一辈子', '住在', '农村', '老家', '。'], ans:'父母一辈子住在农村老家。', audio:'父母一辈子住在农村老家。'},
-  {words:['他', '坚决', '不', '同意', '这个', '计划', '。'], ans:'他坚决不同意这个计划。', audio:'他坚决不同意这个计划。'},
-  {words:['父母', '高兴', '得', '不得了', '。'], ans:'父母高兴得不得了。', audio:'父母高兴得不得了。'},
-  {words:['临走', '的时候', '，', '他', '给', '我', '打', '了', '电话', '。'], ans:'临走的时候，他给我打了电话。', audio:'临走的时候，他给我打了电话。', alt:['他临走的时候，给我打了电话。']},
-  {words:['温暖', '的', '气息', '立刻', '扑面而来', '。'], ans:'温暖的气息立刻扑面而来。', audio:'温暖的气息立刻扑面而来。'},
-  {words:['毕业', '以来', '，', '他', '一直', '在', '北京', '工作', '。'], ans:'毕业以来，他一直在北京工作。', audio:'毕业以来，他一直在北京工作。'},
-  {words:['门外', '传来', '一阵', '笑声', '。'], ans:'门外传来一阵笑声。', audio:'门外传来一阵笑声。'},
-  {words:['妈妈', '把', '被子', '拿到', '外面', '去', '晒了', '。'], ans:'妈妈把被子拿到外面去晒了。', audio:'妈妈把被子拿到外面去晒了。'},
-  {words:['姑姑', '结婚', '以来', '，', '一直', '住在', '县城', '。'], ans:'姑姑结婚以来，一直住在县城。', audio:'姑姑结婚以来，一直住在县城。'},
-  {words:['临', '睡', '前', '别', '在', '卧室', '里', '玩', '手机', '。'], ans:'临睡前别在卧室里玩手机。', audio:'临睡前别在卧室里玩手机。'},
-  {words:['姥姥', '立刻', '露出了', '温暖的', '微笑', '。'], ans:'姥姥立刻露出了温暖的微笑。', audio:'姥姥立刻露出了温暖的微笑。'},
-  {words:['临', '出门', '前', '，', '妈妈', '又', '检查了', '一遍', '门锁', '。'], ans:'临出门前，妈妈又检查了一遍门锁。', audio:'临出门前，妈妈又检查了一遍门锁。', alt:['妈妈临出门前，又检查了一遍门锁。']}
+  {words:['工作','以来','，','他','每个月','都','把','一半的钱','寄给','父母','。'],ans:'工作以来，他每个月都把一半的钱寄给父母。',audio:'工作以来，他每个月都把一半的钱寄给父母。'},
+  {words:['临','下车','前','，','请','检查','一下','自己的','东西','。'],ans:'临下车前，请检查一下自己的东西。',audio:'临下车前，请检查一下自己的东西。'},
+  {words:['一','听到','孩子的','哭声','，','妈妈','就','立刻','跑了','过去','。'],ans:'一听到孩子的哭声，妈妈就立刻跑了过去。',audio:'一听到孩子的哭声，妈妈就立刻跑了过去。'},
+  {words:['为了','不','打扰','别人','，','我','悄悄地','关上了','门','。'],ans:'为了不打扰别人，我悄悄地关上了门。',audio:'为了不打扰别人，我悄悄地关上了门。',alt:['我为了不打扰别人，悄悄地关上了门。']},
+  {words:['第一次','上台','唱歌','的时候','，','我','紧张得','不得了','。'],ans:'第一次上台唱歌的时候，我紧张得不得了。',audio:'第一次上台唱歌的时候，我紧张得不得了。',alt:['我第一次上台唱歌的时候，紧张得不得了。']},
+  {words:['我','一辈子','也','忘不了','那天','姥姥','给我做的','那碗面条','。'],ans:'我一辈子也忘不了那天姥姥给我做的那碗面条。',audio:'我一辈子也忘不了那天姥姥给我做的那碗面条。'},
+  {words:['他','想','放弃上大学','去城里','打工','，','可是','父母','强烈','反对','。'],ans:'他想放弃上大学去城里打工，可是父母强烈反对。',audio:'他想放弃上大学去城里打工，可是父母强烈反对。'},
+  {words:['楼下的','面包店','每天早上','都','飘出','阵阵','面包香','。'],ans:'楼下的面包店每天早上都飘出阵阵面包香。',audio:'楼下的面包店每天早上都飘出阵阵面包香。',alt:['每天早上楼下的面包店都飘出阵阵面包香。']}
 ];
 
 // ══════════════════════════════════════════
@@ -2261,125 +2233,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {
-    wrong: '别人都不知道，她只是____地把这件事告诉了我。',
-    opts: ['偷偷', '悄悄', '立刻', '坚决'],
-    ans: 0,
-    exp: 'Cố ý giấu không cho người khác biết → 偷偷. 悄悄 chỉ nhấn vào việc không gây tiếng động.'
-  },
-  {wrong:'孩子睡着了，爸爸在妈妈耳边____说了几句话。', opts:['悄悄', '偷偷', '强烈', '立刻'], ans:0, exp:'Sợ đánh thức con nên nói khẽ, không giấu ai → 悄悄.'},
-  {wrong:'天阴了，____就要下雨了。', opts:['马上', '立刻', '临', '以来'], ans:0, exp:'Nói việc SẮP xảy ra → 马上. 立刻 dùng cho phản ứng tức thì sau một việc đã xảy ra.'},
-  {wrong:'毕业____，他一直在北京工作。', opts:['以来', '以前', '以后', '的时候'], ans:0, exp:'Tính từ mốc quá khứ đến hiện tại, vế sau có 一直 → 以来.'},
-  {wrong:'____睡前不应该看手机。', opts:['临', '以来', '立刻', '坚决'], ans:0, exp:'临 + động từ một âm tiết + 前 = ngay trước khi.'},
-  {
-    wrong: '父母第一次走进新房时，高兴____不得了。',
-    opts: ['得', '的', '地', '了'],
-    ans: 0,
-    exp: '不得了 làm BỔ NGỮ TRÌNH ĐỘ nên phải dùng 得. Đây là lỗi học sinh Việt mắc nhiều nhất ở cấu trúc này.'
-  },
-  {wrong:'妈妈在院子里____被子。', opts:['晒', '铺', '扑', '锁'], ans:0, exp:'Đem ra nắng cho khô → 晒. 铺 là trải ra, 扑 là lao tới.'},
-  {wrong:'卧室床上的被子已____好。', opts:['铺', '扑', '晒', '冻'], ans:0, exp:'Trải chăn lên giường → 铺 (bộ 钅). Đừng nhầm với 扑 cùng đọc pū.'},
-  {
-    wrong: '我真不敢____，二十年前这里还是一片农村。',
-    opts: ['想象', '感受', '打算', '记得'],
-    ans: 0,
-    exp: '不敢想象 (không dám tưởng tượng) là cách nói quen dùng để bày tỏ sự ngạc nhiên. 感受 (cảm nhận) đi với cảm giác, không khí; 打算, 记得 không hợp nghĩa.'
-  },
-  {
-    wrong: '很多居民对这个计划表示____反对。',
-    opts: ['强烈', '温暖', '悄悄', '一辈子'],
-    ans: 0,
-    exp: '强烈反对 (phản đối mạnh mẽ) là kết hợp cố định. 温暖 (ấm áp) không đi với 反对; 悄悄 (lặng lẽ) trái với "bày tỏ" công khai; 一辈子 chỉ thời gian cả đời, không hợp.'
-  },
-  {
-    wrong: '妈妈的哥哥是我的____，他每年春节都来我们家。',
-    opts: ['舅舅', '叔叔', '姑姑', '姥姥'],
-    ans: 0,
-    exp: '舅舅 là anh/em trai của MẸ → đúng. 叔叔 là em trai của bố; 姑姑 là chị/em gái của bố (nữ); 姥姥 là bà ngoại — đều không phải "anh trai của mẹ".'
-  },
-  {
-    wrong: '爸爸的妹妹是我的____，她在医院当护士。',
-    opts: ['姑姑', '阿姨', '舅舅', '奶奶'],
-    ans: 0,
-    exp: '姑姑 là chị/em gái của BỐ → đúng. 阿姨 là dì (em gái của mẹ) hoặc cách gọi phụ nữ lớn tuổi nói chung; 舅舅 là cậu (nam, bên mẹ); 奶奶 là bà nội.'
-  },
-  {
-    wrong: '哥哥为了参加面试，特意买了一____新衣服。',
-    opts: ['套', '串', '阵', '条'],
-    ans: 0,
-    exp: '套 là lượng từ cho một BỘ gồm nhiều món (一套衣服, 一套房子) → đúng. 串 dùng cho chùm/chuỗi (一串钥匙); 阵 cho cơn/trận (一阵风); 条 dùng cho quần, váy từng chiếc chứ không nói 一条衣服.'
-  },
-  {
-    wrong: '下午突然刮起了一____大风，把晒着的被子都吹到了地上。',
-    opts: ['阵', '套', '串', '片'],
-    ans: 0,
-    exp: '阵 dùng cho hiện tượng xảy ra trong một khoảng ngắn: 一阵风, 一阵笑声 → đúng. 套 là bộ; 串 là chuỗi; 片 dùng cho mảnh, vùng (一片树叶), không dùng cho gió.'
-  },
-  {
-    wrong: '小狗一看见主人回家，就____了过去。',
-    opts: ['扑', '铺', '飘', '晒'],
-    ans: 0,
-    exp: '扑 = lao tới, nhào tới (扑过去) → đúng. 铺 cùng đọc pū nhưng nghĩa là trải ra (铺被子); 飘 là bay lơ lửng, dùng cho vật nhẹ; 晒 là phơi nắng.'
-  },
-  {
-    wrong: '已经晚上十点了，姥姥家的灯还____着。',
-    opts: ['亮', '晒', '飘', '醉'],
-    ans: 0,
-    exp: '灯亮着 = đèn vẫn đang sáng → 亮 đúng. 晒 là phơi; 飘 là bay lượn; 醉 là say rượu — không thể đi với 灯.'
-  },
-  {
-    wrong: '绳子太细了，一拉就____了。',
-    opts: ['断', '锁', '铺', '扑'],
-    ans: 0,
-    exp: '绳子断了 = sợi dây bị đứt → 断 đúng. 锁 là khoá; 铺 là trải; 扑 là lao tới — không nói về sợi dây bị kéo.'
-  },
-  {
-    wrong: '他的态度非常____，谁也说服不了他。',
-    opts: ['坚决', '坚持', '立刻', '温暖'],
-    ans: 0,
-    exp: '态度 + 很/非常 + 坚决: 坚决 là TÍNH TỪ, làm vị ngữ được. 坚持 là động từ (坚持锻炼, 坚持回老家), không nói 态度很坚持; 立刻 là phó từ; 温暖 không tả thái độ không lay chuyển.'
-  },
-  {
-    wrong: '外面太冷了，快进屋____一下吧。',
-    opts: ['暖和', '温暖', '微笑', '感受'],
-    ans: 0,
-    exp: '暖和 làm động từ trong khẩu ngữ: 进屋暖和一下 / 暖和暖和 (cho ấm người). 温暖 nói tình cảm (家的温暖) hoặc làm động từ trang trọng (温暖人心); 微笑, 感受 không hợp nghĩa.'
-  },
-  {
-    wrong: '听到儿子考上大学的消息，妈妈激动得____了。',
-    opts: ['流泪', '流利', '流行', '眼泪'],
-    ans: 0,
-    exp: '激动得 + 流泪 = xúc động đến rơi nước mắt (bổ ngữ trình độ). 流利 (lưu loát) tả cách nói; 流行 (thịnh hành) tả mốt; 眼泪 là danh từ, phải nói 流下了眼泪.'
-  }
+  {wrong:'飞机____就要起飞了，请大家把手机关上。',opts:['马上','立刻','临','以来'],ans:0,exp:'Việc SẮP xảy ra → 马上就要……了. 立刻 chỉ phản ứng ngay sau một việc, không đi với 就要……了; 临 phải có động từ theo sau; 以来 đứng sau mốc thời gian.'},
+  {wrong:'刚从外面回来，先喝杯热茶____一下吧。',opts:['暖和','温暖','冻','晒'],ans:0,exp:'暖和 làm động từ khẩu ngữ "cho ấm người": 暖和一下. 温暖 thiên về tình cảm (家的温暖); 冻 là rét cóng — ngược nghĩa; 晒 là phơi nắng.'},
+  {wrong:'刚到这个城市的时候，邻居们经常帮助我，让我觉得特别____。',opts:['温暖','暖和','热闹','亮'],ans:0,exp:'Ấm áp trong lòng vì được giúp đỡ → 温暖. 暖和 chỉ nói nhiệt độ (thời tiết, quần áo); 热闹 là đông vui, náo nhiệt; 亮 là sáng.'},
+  {wrong:'多年____，姥姥一直住在农村老家，到现在也不愿意搬到城市里住。',opts:['以来','以后','的时候','时间'],ans:0,exp:'Kéo dài từ quá khứ "到现在" → 以来. 以后 chỉ một thời điểm sau mốc, không đi với 到现在; 多年的时候 / 多年时间 sai ở vị trí này.'},
+  {wrong:'____毕业前，我们全班一起去外地旅游了一次。',opts:['临','正在','一辈子','立刻'],ans:0,exp:'临 + động từ + 前 = ngay trước khi: 临毕业前. 正在 chỉ việc đang diễn ra, không đi với 前; 一辈子 là cả đời; 立刻 không đứng trước cụm chỉ thời gian.'},
+  {wrong:'姑姑送给我一____中国历史书，一共十本。',opts:['套','串','双','阵'],ans:0,exp:'Nhiều cuốn sách thành một bộ → 一套书. 串 cho chùm, chuỗi (一串钥匙); 双 cho đôi (一双筷子); 阵 cho cơn, đợt (一阵风).'},
+  {wrong:'一推开门，饭菜香就____面而来。',opts:['扑','铺','飘','递'],ans:0,exp:'扑面而来 là cụm cố định: (mùi, hơi) ập thẳng vào mặt. 铺 cùng âm pū nhưng là "trải"; 飘 thì nói 飘来, không nói 飘面而来; 递 là đưa bằng tay.'},
+  {wrong:'奶奶在地上____了一张大报纸，让孩子们坐在上面吃西瓜。',opts:['铺','扑','晒','锁'],ans:0,exp:'铺 = trải (báo, chăn…) ra trên một mặt phẳng. 扑 là lao tới; 晒 là phơi nắng; 锁 là khoá.'},
+  {wrong:'妈妈指着照片说：“这是我弟弟，也就是你的____。”',opts:['舅舅','叔叔','姑姑','爷爷'],ans:0,exp:'Em trai của mẹ là 舅舅 (cậu). 叔叔 là em trai của bố; 姑姑 là chị/em gái của bố; 爷爷 là ông nội.'},
+  {wrong:'你____一下，十年以后的自己会是什么样子？',opts:['想象','感受','印象','感动'],ans:0,exp:'Hình dung điều chưa xảy ra → 想象. 感受 là cảm nhận điều đang trải qua; 印象 là danh từ (ấn tượng); 感动 là cảm động.'},
+  {wrong:'他已经十年没回家，跟家里的联系早就____了。',opts:['断','锁','冻','晒'],ans:0,exp:'联系断了 = mất liên lạc; 断 = đứt, cắt đứt. 锁 là khoá (cửa); 冻 là đóng băng; 晒 là phơi.'},
+  {wrong:'学汉语最重要的是每天____。',opts:['坚持','坚决','强烈','立刻'],ans:0,exp:'每天坚持 = kiên trì mỗi ngày (坚持 là động từ). 坚决 là thái độ dứt khoát, đi trước động từ (坚决反对); 强烈, 立刻 không đứng một mình ở cuối câu này.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Từ khi lên cấp ba đến nay, gần như ngày nào tôi cũng phải học đến nửa đêm mới đi ngủ.', zh:'自从上高中以来，我几乎每天都要学习到半夜才睡觉。', py:'Zìcóng shàng gāozhōng yǐlái, wǒ jīhū měi tiān dōu yào xuéxí dào bànyè cái shuìjiào.', goiY:['自从……以来','半夜','才'], giai:'自从 + mốc thời gian + 以来 = từ khi… đến nay, việc kéo dài tới hiện tại; 才 cho thấy đi ngủ muộn hơn bình thường. Không dùng 以来 cho tương lai.'},
-  {vi:'Lúc sắp ra khỏi nhà, mẹ phát hiện tôi quên mang ô, thế là lập tức cầm ô đuổi theo xuống tầng.', zh:'临出门时，妈妈发现我忘了带雨伞，于是立刻拿着伞追下楼来。', py:'Lín chūmén shí, māma fāxiàn wǒ wàngle dài yǔsǎn, yúshì lìkè názhe sǎn zhuī xià lóu lai.', goiY:['临……时','于是','立刻'], giai:'临 + động từ + 时 = lúc sắp làm gì (ngay trước khi); 于是 nối hành động xảy ra tiếp theo, 立刻 đứng trước động từ.'},
-  {vi:'Chỉ cần cuối tuần có nắng là bà ngoại sẽ mang chăn ra phơi.', zh:'只要周末出太阳，姥姥就会把被子拿出去晒一晒。', py:'Zhǐyào zhōumò chū tàiyáng, lǎolao jiù huì bǎ bèizi ná chuqu shài yi shài.', goiY:['只要……就……','姥姥','被子','晒'], giai:'只要…就… = chỉ cần… là…; "phơi chăn" dùng câu 把: 把被子拿出去晒, động từ lặp 晒一晒 làm giọng nhẹ nhàng.'},
-  {vi:'Tuy tiền cậu tôi làm thuê trên thành phố kiếm được không nhiều, nhưng tháng nào cậu cũng gửi một ít về quê cho bà ngoại và chưa bao giờ than phiền.', zh:'虽然舅舅在城里打工挣的钱不多，但是他每个月都会寄一些回农村给姥姥，从来没有抱怨过。', py:'Suīrán jiùjiu zài chéng li dǎgōng zhèng de qián bù duō, dànshì tā měi ge yuè dōu huì jì yìxiē huí nóngcūn gěi lǎolao, cónglái méiyǒu bàoyuànguo.', goiY:['虽然……但是……','打工','挣','抱怨'], giai:'虽然…但是… nối hai vế trái ý; "kiếm tiền" là 挣钱, "đi làm thuê" là 打工 — không dịch 做工作. 从来没有…过 = chưa bao giờ.'},
-  {vi:'Cho dù bố kiên quyết phản đối, chị tôi cũng không bỏ cuộc mà một mình đi xe khách đường dài đến tỉnh khác dự thi.', zh:'即使爸爸坚决反对，姐姐也没有放弃，一个人坐长途汽车去外地参加了考试。', py:'Jíshǐ bàba jiānjué fǎnduì, jiějie yě méiyǒu fàngqì, yí ge rén zuò chángtú qìchē qù wàidì cānjiāle kǎoshì.', goiY:['即使……也……','坚决','长途'], giai:'即使 + điều kiện bất lợi, 也 + kết quả không đổi; 也 đứng sau chủ ngữ 姐姐. 坚决 đứng trước động từ 反对.'},
-  {vi:'Phòng ngủ mới vừa sửa sang xong, khắp nhà toàn bụi, vậy thì con cứ ngủ ở phòng khách vài hôm đã.', zh:'既然新卧室刚装修完，满屋子都是灰尘，你就先在客厅睡几天吧。', py:'Jìrán xīn wòshì gāng zhuāngxiū wán, mǎn wūzi dōu shì huīchén, nǐ jiù xiān zài kètīng shuì jǐ tiān ba.', goiY:['既然……就……','装修','灰尘'], giai:'既然…就…: vế trước là sự thật đã rõ, vế sau là đề nghị; 满屋子 = khắp cả nhà (满 + danh từ).'},
-  {vi:'Tối qua cậu tôi say rượu ở đám cưới, chẳng những làm mất chùm chìa khoá mà còn nằm ngủ nguyên một đêm trên chiếc ghế dưới nhà.', zh:'舅舅昨晚在婚礼上喝醉了，不但把一串钥匙弄丢了，而且居然在楼下的椅子上睡了一夜。', py:'Jiùjiu zuówǎn zài hūnlǐ shang hēzuì le, búdàn bǎ yí chuàn yàoshi nòngdiū le, érqiě jūrán zài lóu xià de yǐzi shang shuìle yí yè.', goiY:['不但……而且……','醉','串','居然'], giai:'不但…而且… diễn tả mức độ tăng dần; 居然 chen sau 而且, trước động từ, thể hiện sự bất ngờ. Lượng từ của cả chùm chìa khoá là 串.'},
-  {vi:'Sở dĩ ngay trước kỳ thi tôi còn cãi nhau với mẹ là vì mấy hôm đó tôi căng thẳng kinh khủng, gặp chuyện nhỏ nhặt cũng thấy bực bội.', zh:'我之所以临考试前还跟妈妈吵架，是因为那几天心里紧张得不得了，遇到一点小事就不耐烦。', py:'Wǒ zhīsuǒyǐ lín kǎoshì qián hái gēn māma chǎojià, shì yīnwèi nà jǐ tiān xīnli jǐnzhāng de bùdéliǎo, yùdào yìdiǎn xiǎoshì jiù bú nàifán.', goiY:['之所以……是因为……','临……前','不得了','不耐烦'], giai:'之所以 A，是因为 B: kết quả trước, nguyên nhân sau; Adj + 得不得了 = "… kinh khủng", chỉ mức độ cực cao.'},
-  {vi:'Từ hồi ở ký túc xá đến giờ, tôi mới thật sự cảm nhận được gia đình ấm áp đến nhường nào; mỗi cuối tuần về nhà, vừa ngửi thấy mùi cơm canh bay ra từ bếp là tôi hết mệt ngay.', zh:'自从住校以来，我才真正感受到家有多温暖；每次周末回家，一闻到厨房里飘出的饭菜香，我立刻就不觉得累了。', py:'Zìcóng zhùxiào yǐlái, wǒ cái zhēnzhèng gǎnshòu dào jiā yǒu duō wēnnuǎn; měi cì zhōumò huí jiā, yì wéndào chúfáng li piāochū de fàncài xiāng, wǒ lìkè jiù bù juéde lèi le.', goiY:['自从……以来','感受','飘','立刻'], giai:'自从…以来 + 才: đến lúc đó mới nhận ra; 一…(立刻)就… = vừa… là… ngay. Mùi hương "bay ra" dùng 飘出, không dùng 飞.'},
-  {vi:'Thay vì trước khi ngủ nằm lướt điện thoại cả tiếng đồng hồ, chi bằng tắt đèn đi ngủ sớm một chút, nếu không hôm sau lên lớp chắc chắn bạn sẽ buồn ngủ kinh khủng.', zh:'与其临睡前躺在床上刷一个小时手机，不如早点儿把灯关掉，否则第二天上课你肯定困得不得了。', py:'Yǔqí lín shuì qián tǎng zài chuáng shang shuā yí ge xiǎoshí shǒujī, bùrú zǎo diǎnr bǎ dēng guāndiào, fǒuzé dì-èr tiān shàngkè nǐ kěndìng kùn de bùdéliǎo.', goiY:['与其……不如……','临','否则','不得了'], giai:'与其 A，不如 B: chọn B thay cho A; 否则 = "nếu không thì", nêu hậu quả. 临睡前 = ngay trước khi ngủ.'}
+  {vi:'Từ khi lên cấp ba đến nay, gần như ngày nào tôi cũng phải học đến nửa đêm mới đi ngủ.',zh:'读高中以来，我几乎每天都要学习到半夜才睡觉。',py:'Dú gāozhōng yǐlái, wǒ jīhū měi tiān dōu yào xuéxí dào bànyè cái shuìjiào.',goiY:['……以来','几乎','半夜','才'],giai:'Mốc thời gian + 以来 = từ khi… đến nay, việc kéo dài tới hiện tại; 才 cho thấy đi ngủ muộn hơn bình thường. Không dùng 以来 cho tương lai.'},
+  {vi:'Lúc sắp ra khỏi nhà, mẹ phát hiện tôi quên mang ô, thế là lập tức cầm ô chạy xuống tầng.',zh:'临出门时，妈妈发现我忘了带雨伞，于是立刻拿着伞跑下楼来。',py:'Lín chūmén shí, māma fāxiàn wǒ wàngle dài yǔsǎn, yúshì lìkè názhe sǎn pǎo xià lóu lai.',goiY:['临……时','于是','立刻'],giai:'临 + động từ + 时 = lúc sắp làm gì (ngay trước khi); 于是 nối hành động xảy ra tiếp theo, 立刻 đứng trước động từ.'},
+  {vi:'Chỉ cần cuối tuần có nắng là bà ngoại sẽ mang chăn ra phơi.',zh:'只要周末出太阳，姥姥就会把被子拿出去晒一晒。',py:'Zhǐyào zhōumò chū tàiyáng, lǎolao jiù huì bǎ bèizi ná chuqu shài yi shài.',goiY:['只要……就……','姥姥','被子','晒'],giai:'只要…就… = chỉ cần… là…; "phơi chăn" dùng câu 把: 把被子拿出去晒, động từ lặp 晒一晒 làm giọng nhẹ nhàng.'},
+  {vi:'Cho dù bố kiên quyết phản đối, chị tôi cũng không bỏ cuộc mà một mình đi xe khách đường dài đến tỉnh khác dự thi.',zh:'即使爸爸坚决反对，姐姐也没有放弃，一个人坐长途车去外地参加了考试。',py:'Jíshǐ bàba jiānjué fǎnduì, jiějie yě méiyǒu fàngqì, yí ge rén zuò chángtú chē qù wàidì cānjiāle kǎoshì.',goiY:['即使……也……','坚决','长途车'],giai:'即使 + điều kiện bất lợi, 也 + kết quả không đổi; 也 đứng sau chủ ngữ 姐姐. 坚决 đứng trước động từ 反对.'},
+  {vi:'Phòng ngủ mới vừa sửa sang xong, khắp nhà toàn bụi, vậy thì con cứ ngủ ở phòng khách vài hôm đã.',zh:'既然新卧室刚装修完，满屋子都是灰尘，你就先在客厅睡几天吧。',py:'Jìrán xīn wòshì gāng zhuāngxiū wán, mǎn wūzi dōu shì huīchén, nǐ jiù xiān zài kètīng shuì jǐ tiān ba.',goiY:['既然……就……','装修','灰尘'],giai:'既然…就…: vế trước là sự thật đã rõ, vế sau là đề nghị; 满屋子 = khắp cả nhà (满 + danh từ).'},
+  {vi:'Tối qua cậu tôi say rượu ở nhà bạn, chẳng những làm mất chùm chìa khoá mà còn nằm ngủ nguyên một đêm trên chiếc ghế dưới nhà.',zh:'舅舅昨晚在朋友家喝醉了，不但把一串钥匙弄丢了，而且居然在楼下的椅子上睡了一夜。',py:'Jiùjiu zuówǎn zài péngyou jiā hēzuì le, búdàn bǎ yí chuàn yàoshi nòngdiū le, érqiě jūrán zài lóu xià de yǐzi shang shuìle yí yè.',goiY:['不但……而且……','醉','串','居然'],giai:'不但…而且… diễn tả mức độ tăng dần; 居然 chen sau 而且, trước động từ, thể hiện sự bất ngờ. Lượng từ của cả chùm chìa khoá là 串.'}
 ];
-// Chiều Trung → Việt
+
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Tuy bà ngoại, cậu và cô đều sống trên thành phố, bố mẹ tôi vẫn nhất quyết không chịu rời căn nhà cũ ở quê.', zh:'尽管姥姥、舅舅和姑姑都住在城里，父母也坚决不肯离开农村的老屋。', py:'Jǐnguǎn lǎolao, jiùjiu hé gūgu dōu zhù zài chéng li, fùmǔ yě jiānjué bù kěn líkāi nóngcūn de lǎo wū.', goiY:['尽管……也…… = dù… vẫn…','坚决 = kiên quyết','农村 = nông thôn, quê'], giai:'尽管 nêu sự thật đã có, 也 nhấn mạnh kết quả không đổi; 坚决不肯 = "nhất quyết không chịu", đừng dịch cứng thành "kiên quyết không đồng ý".'},
-  {vi:'Nhờ hai vợ chồng tôi đi làm thuê dành dụm được ít tiền, năm ngoái cuối cùng cũng mua được một căn nhà mới trên huyện.', zh:'由于我和妻子打工挣了些钱，去年终于在县里买了一套新房。', py:'Yóuyú wǒ hé qīzi dǎgōng zhèngle xiē qián, qùnián zhōngyú zài xiàn li mǎile yí tào xīn fáng.', goiY:['由于 = do, nhờ','挣 = kiếm (tiền)','套 = căn (lượng từ)'], giai:'由于 nêu nguyên nhân ở vế trước; 套 là lượng từ của nhà/căn hộ — dịch "một căn", 县里 = "trên huyện".'},
-  {vi:'Vì bố say rượu nên vợ chồng tôi một mực giữ bố mẹ ở lại nhà mới một đêm rồi hãy về quê.', zh:'因为父亲喝醉了，所以我们强烈要求父母在新房住一夜再回老家。', py:'Yīnwèi fùqīn hēzuì le, suǒyǐ wǒmen qiángliè yāoqiú fùmǔ zài xīn fáng zhù yí yè zài huí lǎojiā.', goiY:['喝醉 = say rượu','强烈 = mạnh mẽ, một mực','一夜 = một đêm'], giai:'强烈要求 dịch tự nhiên là "một mực giữ lại"; 再 ở đây = "rồi hãy" (làm việc sau), không phải "lại lần nữa".'},
-  {vi:'Hôm sắp đi, bố khẽ kéo tôi ra một góc bảo: “Nhà mới đằng nào cũng khoá cửa để không, chi bằng để lại cho bố mẹ một chùm chìa khoá.”', zh:'临走那天，父亲悄悄把我拉到一边说：“既然新房只能上锁空着，不如留一串钥匙给我们。”', py:'Lín zǒu nà tiān, fùqīn qiāoqiāo bǎ wǒ lādào yìbiān shuō: “Jìrán xīn fáng zhǐ néng shàng suǒ kòngzhe, bùrú liú yí chuàn yàoshi gěi wǒmen.”', goiY:['临走 = lúc sắp đi','悄悄 = lặng lẽ, khẽ','既然 = đã… thì','不如 = chi bằng'], giai:'临走那天 = hôm sắp lên đường (临 + động từ); 既然…不如… nêu sự thật rồi đưa ra đề nghị tốt hơn — "đằng nào cũng… chi bằng…".'},
-  {vi:'Bố nói, nếu hôm nào bố mẹ muốn lên phố thì sẽ đến nhà mới ở vài hôm, tiện thể phơi chăn, dọn dẹp giúp vợ chồng tôi.', zh:'父亲说，要是他和母亲哪天想进城了，就来新房住几天，顺便帮我们晒晒被子、打扫卫生。', py:'Fùqīn shuō, yàoshi tā hé mǔqīn nǎ tiān xiǎng jìn chéng le, jiù lái xīn fáng zhù jǐ tiān, shùnbiàn bāng wǒmen shàishai bèizi, dǎsǎo wèishēng.', goiY:['要是……就…… = nếu… thì…','顺便 = tiện thể','晒被子 = phơi chăn'], giai:'要是…就… là câu giả thiết khẩu ngữ (= 如果…就…); động từ lặp 晒晒 làm giọng nhẹ nhàng — dịch "phơi chăn giúp", không dịch "phơi phơi".'},
-  {vi:'Chúng tôi ngồi xe khách đường dài suốt cả ngày, nửa đêm mới về tới huyện, vừa xuống xe con trai đã bị rét đến mức khóc ré lên.', zh:'我们坐了一整天长途车，半夜才到县城，结果刚一下车，儿子就被冻得大哭起来。', py:'Wǒmen zuòle yì zhěng tiān chángtú chē, bànyè cái dào xiànchéng, jiéguǒ gāng yí xià chē, érzi jiù bèi dòng de dà kū qilai.', goiY:['长途车 = xe khách đường dài','半夜 = nửa đêm','结果 = kết quả là','冻 = rét cóng'], giai:'被冻得 + kết quả: câu bị động chỉ mức độ (rét đến mức…); 半夜才到 — 才 cho thấy việc đến muộn hơn mong đợi.'},
-  {vi:'Vợ chồng tôi vốn tưởng tượng trong nhà hẳn là bụi phủ đầy, lạnh lẽo vắng tanh, không ngờ đến dưới toà nhà lại thấy cửa sổ nhà mình đang sáng đèn.', zh:'我和妻子本来想象家里一定满是灰尘、冷冷清清，没想到来到楼下，却发现自家的窗户亮着灯。', py:'Wǒ hé qīzi běnlái xiǎngxiàng jiā li yídìng mǎn shì huīchén, lěnglěngqīngqīng, méi xiǎngdào láidào lóu xià, què fāxiàn zìjiā de chuānghu liàngzhe dēng.', goiY:['想象 = tưởng tượng','灰尘 = bụi','却 = lại (trái với dự đoán)','亮着灯 = đang sáng đèn'], giai:'本来…没想到…却… diễn tả kết quả trái với dự đoán; 亮着灯 (V + 着) là trạng thái đang tiếp diễn — dịch "đang sáng đèn".'},
-  {vi:'Người ra mở cửa lại chính là bố mẹ đang mỉm cười; trong nhà không những đã được quét dọn sạch sẽ tinh tươm, mà chăn trong phòng ngủ cũng đã trải sẵn, từ bếp còn thoang thoảng từng đợt mùi cơm canh.', zh:'开门的居然是微笑着的父母，屋里不但打扫得干干净净，而且卧室的被子已经铺好，厨房里还飘来阵阵饭菜香。', py:'Kāi mén de jūrán shì wēixiàozhe de fùmǔ, wū li búdàn dǎsǎo de gāngānjìngjìng, érqiě wòshì de bèizi yǐjīng pūhǎo, chúfáng li hái piāolái zhènzhèn fàncài xiāng.', goiY:['居然 = vậy mà, lại (bất ngờ)','不但……而且…… = không những… mà còn…','铺 = trải','阵阵 = từng đợt'], giai:'不但…而且…还… liệt kê tăng dần; 阵阵 là lượng từ lặp chỉ từng đợt nối nhau — dịch "thoang thoảng từng đợt".'},
-  {vi:'Hoá ra hôm trước bố mẹ đã nhận được điện thoại; để chúng tôi vừa bước vào nhà là cảm nhận được hơi ấm gia đình, ông bà đã chu đáo đến từng chi tiết nhỏ nhất.', zh:'原来父母前一天就接到了电话，为了让我们一进门就能感受到家的温暖，他们连最小的细节都考虑到了。', py:'Yuánlái fùmǔ qián yì tiān jiù jiēdàole diànhuà, wèile ràng wǒmen yí jìn mén jiù néng gǎnshòu dào jiā de wēnnuǎn, tāmen lián zuì xiǎo de xìjié dōu kǎolǜ dào le.', goiY:['原来 = hoá ra','感受 = cảm nhận','连……都…… = ngay cả… cũng…','细节 = chi tiết'], giai:'原来 mở ra sự thật vừa được hé lộ; 连…都… nhấn mạnh mức độ — dịch thoát "chu đáo đến từng chi tiết nhỏ nhất" thay vì "ngay cả chi tiết nhỏ nhất cũng suy nghĩ tới".'},
-  {vi:'Bố mẹ sở dĩ xin một chùm chìa khoá không phải vì muốn lên phố hưởng phúc, mà vì muốn chúng tôi về đến nhà là cảm thấy ấm áp ngay; nghĩ đến đây, tôi lặng lẽ rơi nước mắt.', zh:'父母之所以要一串钥匙，不是因为想进城享福，而是因为想让我们回家时立刻感受到温暖；想到这里，我暗暗流泪。', py:'Fùmǔ zhīsuǒyǐ yào yí chuàn yàoshi, bú shì yīnwèi xiǎng jìn chéng xiǎngfú, ér shì yīnwèi xiǎng ràng wǒmen huí jiā shí lìkè gǎnshòu dào wēnnuǎn; xiǎngdào zhèli, wǒ àn\'àn liúlèi.', goiY:['之所以 = sở dĩ','不是……而是…… = không phải… mà là…','暗暗 = thầm, lặng lẽ','流泪 = rơi lệ'], giai:'之所以 A，不是因为 B，而是因为 C: nêu kết quả rồi phủ định nguyên nhân sai, khẳng định nguyên nhân đúng; dịch "sở dĩ… không phải vì… mà vì…".'}
+  {vi:'Tuy bà ngoại, cậu và cô đều sống trên thành phố, bố mẹ tôi vẫn nhất quyết không chịu rời căn nhà cũ ở quê.',zh:'尽管姥姥、舅舅和姑姑都住在城里，父母也坚决不愿意离开农村的老屋。',py:'Jǐnguǎn lǎolao, jiùjiu hé gūgu dōu zhù zài chéng li, fùmǔ yě jiānjué bú yuànyì líkāi nóngcūn de lǎo wū.',goiY:['尽管……也…… = dù… vẫn…','坚决 = kiên quyết','农村 = nông thôn, quê'],giai:'尽管 nêu sự thật đã có, 也 nhấn mạnh kết quả không đổi; 坚决不愿意 = "nhất quyết không chịu", đừng dịch cứng thành "kiên quyết không bằng lòng".'},
+  {vi:'Vì bố say rượu nên vợ chồng tôi một mực giữ bố mẹ ở lại nhà mới một đêm rồi hãy về quê.',zh:'因为父亲喝醉了，所以我们强烈要求父母在新房住一夜再回老家。',py:'Yīnwèi fùqīn hēzuì le, suǒyǐ wǒmen qiángliè yāoqiú fùmǔ zài xīn fáng zhù yí yè zài huí lǎojiā.',goiY:['喝醉 = say rượu','强烈 = mạnh mẽ, một mực','一夜 = một đêm'],giai:'强烈要求 dịch tự nhiên là "một mực giữ lại"; 再 ở đây = "rồi hãy" (làm việc sau), không phải "lại lần nữa".'},
+  {vi:'Chúng tôi ngồi xe khách đường dài suốt cả ngày, nửa đêm mới về tới huyện, vừa xuống xe con trai đã bị rét đến mức khóc ré lên.',zh:'我们坐了一天的长途车，半夜才到县里，结果刚一下车，儿子就被冻得大哭起来。',py:'Wǒmen zuòle yì tiān de chángtú chē, bànyè cái dào xiàn li, jiéguǒ gāng yí xià chē, érzi jiù bèi dòng de dà kū qilai.',goiY:['长途车 = xe khách đường dài','半夜 = nửa đêm','结果 = kết quả là','冻 = rét cóng'],giai:'被冻得 + kết quả: câu bị động chỉ mức độ (rét đến mức…); 半夜才到 — 才 cho thấy việc đến muộn hơn mong đợi.'},
+  {vi:'Vợ chồng tôi vốn tưởng tượng trong nhà hẳn là bụi phủ đầy, lạnh lẽo vắng tanh, không ngờ đến dưới toà nhà lại thấy cửa sổ nhà mình đang sáng đèn.',zh:'我和妻子本来想象家里一定满是灰尘、冷冷清清，没想到来到楼下，却发现自家的窗户亮着灯。',py:'Wǒ hé qīzi běnlái xiǎngxiàng jiā li yídìng mǎn shì huīchén, lěnglěngqīngqīng, méi xiǎngdào láidào lóu xià, què fāxiàn zìjiā de chuānghu liàngzhe dēng.',goiY:['想象 = tưởng tượng','灰尘 = bụi','却 = lại (trái với dự đoán)','亮着灯 = đang sáng đèn'],giai:'本来…没想到…却… diễn tả kết quả trái với dự đoán; 亮着灯 (V + 着) là trạng thái đang tiếp diễn — dịch "đang sáng đèn".'},
+  {vi:'Hoá ra hôm trước bố mẹ đã nhận được điện thoại; để chúng tôi vừa bước vào nhà là cảm nhận được hơi ấm gia đình, ông bà đã chu đáo đến từng chi tiết nhỏ nhất.',zh:'原来父母前一天就接到了电话，为了让我们一进门就能感受到家的温暖，他们连最小的细节都考虑到了。',py:'Yuánlái fùmǔ qián yì tiān jiù jiēdàole diànhuà, wèile ràng wǒmen yí jìn mén jiù néng gǎnshòu dào jiā de wēnnuǎn, tāmen lián zuì xiǎo de xìjié dōu kǎolǜ dào le.',goiY:['原来 = hoá ra','感受 = cảm nhận','连……都…… = ngay cả… cũng…','细节 = chi tiết'],giai:'原来 mở ra sự thật vừa được hé lộ; 连…都… nhấn mạnh mức độ — dịch thoát "chu đáo đến từng chi tiết nhỏ nhất" thay vì "ngay cả chi tiết nhỏ nhất cũng suy nghĩ tới".'},
+  {vi:'Bố mẹ xin chùm chìa khoá ấy không phải để mình ở, mà để chúng tôi về đến nhà là cảm thấy ấm áp ngay; nghĩ đến đây, tôi lặng lẽ rơi nước mắt.',zh:'父母要那串钥匙，不是为了自己住，而是为了让我们回家时立刻感受到温暖；想到这里，我暗暗流泪。',py:'Fùmǔ yào nà chuàn yàoshi, bú shì wèile zìjǐ zhù, ér shì wèile ràng wǒmen huí jiā shí lìkè gǎnshòu dào wēnnuǎn; xiǎngdào zhèli, wǒ àn\'àn liúlèi.',goiY:['不是为了……而是为了…… = không phải để… mà để…','暗暗 = thầm, lặng lẽ','流泪 = rơi lệ'],giai:'不是为了 A，而是为了 B: phủ định mục đích sai, khẳng định mục đích đúng; 暗暗流泪 dịch "lặng lẽ rơi nước mắt".'}
 ];
 
 // ══════════════════════════════════════════
@@ -2474,44 +2361,12 @@ var writingData = {
     {ten:'这件事让我感受到了……', nhan:'感受到', vd:'这件事让我感受到了家的温暖。', khi:'Câu KẾT — nói cảm nhận của mình.'}
   ],
   sapXep: [
-    {
-      manh: ['一辈子', '父母', '住在', '农村'],
-      dap: '父母一辈子住在农村。',
-      vn: 'Bố mẹ cả đời sống ở nông thôn.',
-      giai: '一辈子 là danh từ thời gian làm trạng ngữ: đứng SAU chủ ngữ, TRƯỚC động từ. Đừng đặt cuối câu theo kiểu tiếng Việt "sống ở nông thôn cả đời".'
-    },
-    {
-      manh: ['去城里', '为了挣钱', '爸爸', '打工'],
-      dap: '为了挣钱，爸爸去城里打工。',
-      chap: ['爸爸为了挣钱去城里打工。'],
-      vn: 'Để kiếm tiền, bố lên thành phố làm thuê.',
-      giai: '为了 + mục đích đứng đầu câu (hoặc sau chủ ngữ); 去 + nơi chốn + 打工: nơi chốn đứng TRƯỚC 打工.'
-    },
-    {
-      manh: ['立刻', '爸爸', '来学校看我', '坐长途车'],
-      dap: '爸爸立刻坐长途车来学校看我。',
-      vn: 'Bố lập tức bắt xe khách đường dài đến trường thăm tôi.',
-      giai: 'Chủ ngữ → 立刻 → động từ thứ nhất (坐车, cách thức) → động từ thứ hai (来看, mục đích). Câu liên động (HSK 3–4).'
-    },
-    {
-      manh: ['悄悄地', '放了一些钱', '他', '在我书包里'],
-      dap: '他悄悄地在我书包里放了一些钱。',
-      chap: ['他在我书包里悄悄地放了一些钱。'],
-      vn: 'Bố lặng lẽ bỏ vào cặp tôi một ít tiền.',
-      giai: '悄悄地 là trạng ngữ, đứng trước cụm 在 + nơi chốn + V (hoặc ngay trước động từ). 在……里 đứng TRƯỚC động từ.'
-    },
-    {
-      manh: ['上大学', '以来', '很想家', '我一直'],
-      dap: '上大学以来，我一直很想家。',
-      vn: 'Từ khi lên đại học, tôi luôn nhớ nhà.',
-      giai: '以来 đứng SAU mốc sự việc (上大学以来); vế sau thường có 一直.'
-    },
-    {
-      manh: ['温暖', '让我', '这件事', '感受到了家的'],
-      dap: '这件事让我感受到了家的温暖。',
-      vn: 'Chuyện này khiến tôi cảm nhận được hơi ấm gia đình.',
-      giai: 'Câu kiêm ngữ 让 + người + V: 这件事 + 让我 + 感受到了 + 家的温暖.'
-    }
+    {manh:['一辈子','父母','住在','农村'],dap:'父母一辈子住在农村。',vn:'Bố mẹ cả đời sống ở nông thôn.',giai:'一辈子 là danh từ thời gian làm trạng ngữ: đứng SAU chủ ngữ, TRƯỚC động từ. Đừng đặt cuối câu theo kiểu tiếng Việt "sống ở nông thôn cả đời".'},
+    {manh:['打工挣的钱','都寄回了','舅舅把','农村老家'],dap:'舅舅把打工挣的钱都寄回了农村老家。',vn:'Cậu gửi hết tiền làm thuê kiếm được về quê.',giai:'Câu 把: Chủ ngữ + 把 + tân ngữ (打工挣的钱) + 都 + động từ + bổ ngữ (寄回了) + nơi chốn. 都 đứng sau tân ngữ của 把, trước động từ.'},
+    {manh:['立刻','姑姑','赶到了医院','接到电话后'],dap:'姑姑接到电话后立刻赶到了医院。',chap:['接到电话后姑姑立刻赶到了医院。'],vn:'Cô nhận được điện thoại xong liền lập tức chạy đến bệnh viện.',giai:'Việc 1 (接到电话后) → 立刻 → việc 2 (赶到了医院). 立刻 là phó từ, đứng ngay TRƯỚC động từ của việc thứ hai.'},
+    {manh:['悄悄地','放了一些钱','他','在我书包里'],dap:'他悄悄地在我书包里放了一些钱。',chap:['他在我书包里悄悄地放了一些钱。'],vn:'Bố lặng lẽ bỏ vào cặp tôi một ít tiền.',giai:'悄悄地 là trạng ngữ, đứng trước cụm 在 + nơi chốn + V (hoặc ngay trước động từ). 在……里 đứng TRƯỚC động từ.'},
+    {manh:['上大学','以来','很想家','我一直'],dap:'上大学以来，我一直很想家。',vn:'Từ khi lên đại học, tôi luôn nhớ nhà.',giai:'以来 đứng SAU mốc sự việc (上大学以来); vế sau thường có 一直.'},
+    {manh:['温暖','让我','这件事','感受到了家的'],dap:'这件事让我感受到了家的温暖。',vn:'Chuyện này khiến tôi cảm nhận được hơi ấm gia đình.',giai:'Câu kiêm ngữ 让 + người + V: 这件事 + 让我 + 感受到了 + 家的温暖.'}
   ]
 };
 
@@ -2521,38 +2376,10 @@ var writingData = {
 var speakingData = {
   intro: 'Bốn câu hỏi mở về chủ đề gia đình. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng từ mới của bài: 一辈子 · 打工 · 坚决 · 悄悄 · 温暖 · 感受到.',
   questions: [
-    {
-      q_zh: '你的父母是做什么工作的？他们辛苦吗？',
-      q_vn: 'Bố mẹ em làm nghề gì? Có vất vả không?',
-      hint: 'Dùng 一辈子 hoặc 打工',
-      sample: '我爸爸是农民，一辈子都在农村种地，很辛苦。妈妈前几年去城里打工，挣钱供我上学。',
-      sample_vn: 'Bố tôi là nông dân, cả đời làm ruộng ở quê, rất vất vả. Mẹ tôi mấy năm trước lên thành phố làm thuê, kiếm tiền cho tôi ăn học.',
-      note: 'Nói nghề nghiệp phải cụ thể, đừng chỉ nói 他们很忙.'
-    },
-    {
-      q_zh: '父母为你做过的哪件小事让你印象最深？',
-      q_vn: 'Việc nhỏ nào bố mẹ làm cho em khiến em nhớ nhất?',
-      hint: 'Kể một VIỆC CỤ THỂ, dùng 悄悄',
-      sample: '有一次我生病了，妈妈悄悄地在我床边坐了一夜，第二天我才知道。',
-      sample_vn: 'Có lần tôi ốm, mẹ lặng lẽ ngồi bên giường tôi cả đêm, hôm sau tôi mới biết.',
-      note: 'Đề thi nói HSKK hay hỏi dạng này — kể một việc cụ thể luôn được điểm cao hơn.'
-    },
-    {
-      q_zh: '课文里父母为什么要那串钥匙？你怎么看？',
-      q_vn: 'Trong bài đọc, vì sao bố mẹ muốn chùm chìa khoá ấy? Em nghĩ sao?',
-      hint: 'Nêu lý do + cảm nghĩ, dùng 温暖',
-      sample: '他们要钥匙不是为了自己住，而是为了让孩子回来时能立刻感受到家的温暖。我觉得这就是父母的爱。',
-      sample_vn: 'Họ xin chìa khoá không phải để mình ở, mà để khi con về có thể lập tức cảm nhận hơi ấm của gia đình. Tôi thấy đó chính là tình yêu của cha mẹ.',
-      note: 'Dùng cấu trúc 不是……而是…… sẽ ghi điểm.'
-    },
-    {
-      q_zh: '你觉得年轻人应该跟父母住在一起吗？为什么？',
-      q_vn: 'Em cho rằng người trẻ có nên sống chung với bố mẹ không? Vì sao?',
-      hint: 'Chọn hẳn một bên, dùng 坚决 hoặc 我认为',
-      sample: '我认为应该。虽然生活习惯不一样，但是住在一起能互相照顾，父母年纪大了更需要我们。',
-      sample_vn: 'Tôi cho là nên. Tuy thói quen sinh hoạt khác nhau, nhưng ở cùng thì chăm sóc được nhau, bố mẹ già rồi càng cần chúng ta.',
-      note: 'Dạng câu hỏi ý kiến — phải chọn hẳn một bên rồi bảo vệ, đừng nói “tuỳ người”.'
-    }
+    {q_zh:'你的父母是做什么工作的？他们辛苦吗？',q_vn:'Bố mẹ em làm nghề gì? Có vất vả không?',hint:'Dùng 一辈子 hoặc 打工',sample:'我爸爸一辈子都在农村种地，很辛苦。妈妈前几年去城里打工，挣钱让我上学。',sample_vn:'Bố tôi cả đời làm ruộng ở quê, rất vất vả. Mẹ tôi mấy năm trước lên thành phố làm thuê, kiếm tiền cho tôi đi học.',note:'Nói nghề nghiệp phải cụ thể, đừng chỉ nói 他们很忙.'},
+    {q_zh:'父母为你做过的哪件小事让你印象最深？',q_vn:'Việc nhỏ nào bố mẹ làm cho em khiến em nhớ nhất?',hint:'Kể một VIỆC CỤ THỂ, dùng 悄悄',sample:'去年冬天我发烧了，妈妈悄悄地在我身边坐了一夜，第二天我才知道。',sample_vn:'Mùa đông năm ngoái tôi bị sốt, mẹ lặng lẽ ngồi bên cạnh tôi cả đêm, hôm sau tôi mới biết.',note:'Đề thi nói HSKK hay hỏi dạng này — kể một việc cụ thể luôn được điểm cao hơn.'},
+    {q_zh:'课文里父母为什么要那串钥匙？你觉得他们是怎样的父母？',q_vn:'Trong bài đọc, vì sao bố mẹ muốn chùm chìa khoá ấy? Em thấy họ là những người bố mẹ thế nào?',hint:'Nêu lý do + nhận xét, dùng 温暖',sample:'他们要钥匙，是想在我们回家以前把新房收拾好，让我们一进门就觉得温暖。我觉得他们是最爱孩子的父母。',sample_vn:'Họ xin chìa khoá là muốn dọn dẹp nhà mới trước khi chúng tôi về, để chúng tôi vừa bước vào là thấy ấm áp. Tôi thấy họ là những người bố mẹ thương con nhất.',note:'Nêu lý do bằng 是想……，让……; kết bằng nhận xét của chính mình.'},
+    {q_zh:'你觉得年轻人应该跟父母住在一起吗？为什么？',q_vn:'Em cho rằng người trẻ có nên sống chung với bố mẹ không? Vì sao?',hint:'Chọn hẳn một bên, dùng 坚决 hoặc 我认为',sample:'我认为应该。虽然生活习惯不一样，但是住在一起能互相照顾，父母老了更需要我们。',sample_vn:'Tôi cho là nên. Tuy thói quen sinh hoạt khác nhau, nhưng ở cùng thì chăm sóc được nhau, bố mẹ già rồi càng cần chúng ta.',note:'Dạng câu hỏi ý kiến — phải chọn hẳn một bên rồi bảo vệ, đừng nói “tuỳ người”.'}
   ]
 };
 
@@ -2653,51 +2480,11 @@ var listenExamData = {
 var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {
-      scene: 'Bạn cùng lớp hỏi kế hoạch nghỉ hè của em.',
-      a: {sp:'Bạn', zh:'暑假你有什么打算？', vn:'Nghỉ hè cậu định làm gì?'},
-      need: ['Dùng 打工 (chú ý: ly hợp từ)', 'Nói rõ mục đích kiếm tiền để làm gì'],
-      sample: '我想去超市打两个月工，挣点儿钱给妈妈买个生日礼物。',
-      samplePy: 'Wǒ xiǎng qù chāoshì dǎ liǎng ge yuè gōng, zhèng diǎnr qián gěi māma mǎi ge shēngrì lǐwù.',
-      sampleVn: 'Tớ muốn đi làm thêm ở siêu thị hai tháng, kiếm ít tiền mua quà sinh nhật cho mẹ.',
-      tip: '打工 là ly hợp từ: thời lượng chen vào giữa — 打两个月工. Kiếm tiền dùng 挣钱.'
-    },
-    {
-      scene: 'Bà ngoại gọi điện hỏi em ở ký túc xá có lạnh không.',
-      a: {sp:'Bà ngoại', zh:'天冷了，你在学校冷不冷？', vn:'Trời lạnh rồi, ở trường cháu có lạnh không?'},
-      need: ['Dùng 被子', 'Trấn an bà, xưng hô lễ phép'],
-      sample: '姥姥，您放心吧！我盖着厚被子，一点儿也不冷。',
-      samplePy: 'Lǎolao, nín fàngxīn ba! Wǒ gàizhe hòu bèizi, yìdiǎnr yě bù lěng.',
-      sampleVn: 'Bà ơi, bà yên tâm ạ! Cháu đắp chăn dày, chẳng lạnh chút nào.',
-      tip: 'Nói với ông bà dùng 您. Đắp chăn là 盖被子, không phải 穿被子.'
-    },
-    {
-      scene: 'Một bạn rủ em trốn tiết buổi chiều đi chơi.',
-      a: {sp:'Bạn', zh:'下午的课太无聊了，我们偷偷溜出去玩儿吧！', vn:'Tiết chiều chán quá, bọn mình lén trốn ra ngoài chơi đi!'},
-      need: ['Dùng 坚决', 'Nêu lý do, có thể dùng 不得了'],
-      sample: '不行，我坚决不去。要是被老师发现了，可不得了！',
-      samplePy: 'Bù xíng, wǒ jiānjué bú qù. Yàoshi bèi lǎoshī fāxiàn le, kě bùdéliǎo!',
-      sampleVn: 'Không được, tớ nhất quyết không đi. Nếu bị thầy phát hiện thì to chuyện đấy!',
-      tip: '坚决 đứng trước phần phủ định: 坚决不去. 不得了 đứng một mình = "to chuyện, gay go".'
-    },
-    {
-      scene: 'Cô giáo hỏi: kỳ nghỉ về nhà, có chuyện gì khiến em cảm động?',
-      a: {sp:'Cô', zh:'放假回家，有什么事让你特别感动？', vn:'Nghỉ lễ về nhà, có chuyện gì làm em đặc biệt cảm động?'},
-      need: ['Dùng 立刻 hoặc 温暖', 'Kể một CHI TIẾT cụ thể'],
-      sample: '我一进门，妈妈就立刻给我端来一碗热汤，我感受到了家的温暖。',
-      samplePy: 'Wǒ yí jìn mén, māma jiù lìkè gěi wǒ duānlái yì wǎn rè tāng, wǒ gǎnshòu dàole jiā de wēnnuǎn.',
-      sampleVn: 'Em vừa bước vào nhà, mẹ đã lập tức bưng ra cho em một bát canh nóng, em cảm nhận được hơi ấm gia đình.',
-      tip: '一……就立刻…… là cặp rất hay: hai việc nối liền nhau. Kể chi tiết cụ thể luôn ghi điểm hơn nói chung chung.'
-    },
-    {
-      scene: 'Bạn thân hỏi vì sao em thích căn phòng mới.',
-      a: {sp:'Bạn', zh:'你为什么这么喜欢你的新卧室？', vn:'Sao cậu thích phòng ngủ mới thế?'},
-      need: ['Dùng 亮', 'Dùng 既……又…… (HSK 4)'],
-      sample: '我的新卧室既亮又安静，窗外还能看到一棵大树。',
-      samplePy: 'Wǒ de xīn wòshì jì liàng yòu ānjìng, chuāng wài hái néng kàndào yì kē dà shù.',
-      sampleVn: 'Phòng ngủ mới của tớ vừa sáng vừa yên tĩnh, ngoài cửa sổ còn nhìn thấy một cái cây to.',
-      tip: '亮 làm tính từ (房间很亮) hoặc động từ (灯亮着). 既 + Adj + 又 + Adj nối hai ưu điểm.'
-    }
+    {scene:'Bạn cùng lớp hỏi kế hoạch kỳ nghỉ của em.',a:{sp:'Bạn',zh:'放假你有什么打算？',vn:'Nghỉ lễ cậu định làm gì?'},need:['Dùng 打工','Nói rõ mục đích kiếm tiền để làm gì'],sample:'我想去超市打工，挣点儿钱给妈妈买个生日礼物。',samplePy:'Wǒ xiǎng qù chāoshì dǎgōng, zhèng diǎnr qián gěi māma mǎi ge shēngrì lǐwù.',sampleVn:'Tớ muốn đi làm thêm ở siêu thị, kiếm ít tiền mua quà sinh nhật cho mẹ.',tip:'打工 không mang tân ngữ nơi chốn: 去超市打工 (không nói 打工超市). Kiếm tiền dùng 挣钱.'},
+    {scene:'Bà ngoại gọi điện hỏi em ở trường có lạnh không.',a:{sp:'Bà ngoại',zh:'天冷了，你在学校冷不冷？',vn:'Trời lạnh rồi, ở trường cháu có lạnh không?'},need:['Dùng 被子','Trấn an bà, xưng hô lễ phép'],sample:'姥姥，您放心吧！屋子里有暖气，被子也很暖和，一点儿也不冷。',samplePy:'Lǎolao, nín fàngxīn ba! Wūzi li yǒu nuǎnqì, bèizi yě hěn nuǎnhuo, yìdiǎnr yě bù lěng.',sampleVn:'Bà ơi, bà yên tâm ạ! Trong phòng có lò sưởi, chăn cũng rất ấm, chẳng lạnh chút nào.',tip:'Nói với ông bà dùng 您. Chăn, phòng ấm (nhiệt độ) dùng 暖和, không dùng 温暖.'},
+    {scene:'Một bạn rủ em trốn tiết buổi chiều đi chơi.',a:{sp:'Bạn',zh:'下午的课太无聊了，我们偷偷出去玩儿吧！',vn:'Tiết chiều chán quá, bọn mình lén ra ngoài chơi đi!'},need:['Dùng 坚决','Nêu lý do, có thể dùng 不得了'],sample:'我坚决不去。要是被老师发现了，那就不得了了！',samplePy:'Wǒ jiānjué bú qù. Yàoshi bèi lǎoshī fāxiàn le, nà jiù bùdéliǎo le!',sampleVn:'Tớ nhất quyết không đi. Nếu bị thầy phát hiện thì to chuyện đấy!',tip:'坚决 đứng trước phần phủ định: 坚决不去. 不得了 đứng một mình = "to chuyện, gay go".'},
+    {scene:'Cô giáo hỏi: kỳ nghỉ về nhà, có chuyện gì khiến em cảm động?',a:{sp:'Cô',zh:'放假回家，有什么事让你特别感动？',vn:'Nghỉ lễ về nhà, có chuyện gì làm em đặc biệt cảm động?'},need:['Dùng 立刻 hoặc 温暖','Kể một CHI TIẾT cụ thể'],sample:'我一进门，妈妈就立刻给我拿来一杯热茶，那一刻我觉得特别幸福。',samplePy:'Wǒ yí jìn mén, māma jiù lìkè gěi wǒ nálai yì bēi rè chá, nà yí kè wǒ juéde tèbié xìngfú.',sampleVn:'Em vừa bước vào nhà, mẹ đã lập tức mang cho em một cốc trà nóng, lúc đó em thấy hạnh phúc vô cùng.',tip:'一……就立刻…… là cặp rất hay: hai việc nối liền nhau. Kể chi tiết cụ thể luôn ghi điểm hơn nói chung chung.'},
+    {scene:'Bạn thân hỏi vì sao em thích căn phòng mới.',a:{sp:'Bạn',zh:'你为什么这么喜欢你的新卧室？',vn:'Sao cậu thích phòng ngủ mới thế?'},need:['Dùng 亮','Dùng 虽然……但是…… (HSK 4)'],sample:'我的新卧室虽然不大，但是又干净又亮，晚上在卧室里看书特别舒服。',samplePy:'Wǒ de xīn wòshì suīrán bú dà, dànshì yòu gānjìng yòu liàng, wǎnshang zài wòshì li kàn shū tèbié shūfu.',sampleVn:'Phòng ngủ mới của tớ tuy không to nhưng vừa sạch vừa sáng, buổi tối ngồi đọc sách trong phòng dễ chịu lắm.',tip:'亮 làm tính từ (房间很亮) hoặc động từ (灯亮着). 虽然 + nhược điểm, 但是 + ưu điểm: nói được cả hai mặt.'}
   ]
 };
 
@@ -2707,48 +2494,12 @@ var situationData = {
 var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {
-      scene: 'Em viết bản tin nộp cho đài phát thanh của trường.',
-      a: '居民们强烈反对这个计划。',
-      b: '大家说什么也不同意这个计划。',
-      better: 'a',
-      why: 'Bản tin là VĂN VIẾT: 强烈反对 gọn và trang trọng. 说什么也不同意 là khẩu ngữ, hợp khi kể chuyện với bạn.'
-    },
-    {
-      scene: 'Bạn gọi hỏi em đến chưa, em đang trên đường.',
-      a: '我立刻到。',
-      b: '马上到！',
-      better: 'b',
-      why: 'Trả lời nhanh trong khẩu ngữ dùng 马上. 立刻 nghe như mệnh lệnh, báo cáo — lạ tai trong câu nói thường ngày.'
-    },
-    {
-      scene: 'Em nhắn tin kể với bạn thân chuyện bố mẹ thấy nhà mới.',
-      a: '我爸妈看到新房，高兴得不得了！',
-      b: '我的父母看到新房，心情十分愉快。',
-      better: 'a',
-      why: 'Nhắn tin với bạn thân: 爸妈 + 高兴得不得了 tự nhiên, có cảm xúc. Câu b nghe như viết báo cáo.'
-    },
-    {
-      scene: 'Em viết bài giới thiệu cuộc đời một nhà văn.',
-      a: '他一辈子写了三十多本书。',
-      b: '他一生写了三十多部作品。',
-      better: 'b',
-      why: 'Viết về cuộc đời một nhân vật là văn viết trang trọng: 一生 + 作品 hợp hơn 一辈子 + 书 (khẩu ngữ).'
-    },
-    {
-      scene: 'Em gọi điện hỏi thăm bà ngoại.',
-      a: '姥姥，您身体好吗？',
-      b: '姥姥，你身体好吗？',
-      better: 'a',
-      why: 'Với ông bà, người lớn tuổi phải dùng 您 cho lễ phép. 你 không sai ngữ pháp nhưng thiếu kính trọng.'
-    },
-    {
-      scene: 'Ban quản lý toà nhà dán thông báo ở thang máy.',
-      a: '出门记得锁门啊！',
-      b: '请各位住户外出时锁好门窗。',
-      better: 'b',
-      why: 'Thông báo công cộng cần trang trọng: 请 + 各位住户 + 外出时. Câu a là lời mẹ dặn con ở nhà.'
-    }
+    {scene:'Em viết bản tin nộp cho đài phát thanh của trường.',a:'很多学生和家长强烈反对这个新规定。',b:'大家说什么也不同意这个新规定。',better:'a',why:'Bản tin là VĂN VIẾT: 强烈反对 gọn và trang trọng. 说什么也不同意 là khẩu ngữ, hợp khi kể chuyện với bạn.'},
+    {scene:'Bạn gọi hỏi em đến chưa, em đang trên đường.',a:'我立刻到。',b:'马上到！',better:'b',why:'Trả lời nhanh trong khẩu ngữ dùng 马上. 立刻 nghe như mệnh lệnh, báo cáo — lạ tai trong câu nói thường ngày.'},
+    {scene:'Em nhắn tin khoe với bạn thân là đã tìm được chỗ làm thêm.',a:'我找到打工的地方了，开心得不得了！',b:'我已经找到打工的地方，心情十分愉快。',better:'a',why:'Nhắn tin với bạn thân: 开心得不得了 tự nhiên, có cảm xúc. Câu b nghe như viết báo cáo.'},
+    {scene:'Em viết bài giới thiệu cuộc đời một nhà văn.',a:'他一辈子写了三十多本书。',b:'他的一生一共写了三十多本小说。',better:'b',why:'Viết về cuộc đời một nhân vật là văn viết: 一生 trang trọng hơn 一辈子 (khẩu ngữ), 小说 cụ thể hơn 书.'},
+    {scene:'Em gọi điện hỏi thăm bà ngoại.',a:'姥姥，您的腿最近还疼吗？',b:'姥姥，你的腿最近还疼吗？',better:'a',why:'Với ông bà, người lớn tuổi phải dùng 您 cho lễ phép. 你 không sai ngữ pháp nhưng thiếu kính trọng.'},
+    {scene:'Ban quản lý toà nhà dán thông báo ở thang máy.',a:'出门记得锁门啊！',b:'请各位出门时锁好房门。',better:'b',why:'Thông báo công cộng cần trang trọng: 请 + 各位 + 出门时. Câu a là lời mẹ dặn con ở nhà.'}
   ]
 };
 

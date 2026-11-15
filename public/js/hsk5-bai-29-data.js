@@ -1234,13 +1234,13 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 của sách (tr. 100) + bài khoá
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'培养',right:'兴趣'},
-  {left:'促使',right:'他成长'},
-  {left:'妨碍',right:'交通'},
-  {left:'促进',right:'两国友谊'},
+  {left:'热心地',right:'帮助别人'},
+  {left:'促进',right:'友谊'},
   {left:'一套',right:'公寓'},
   {left:'一节',right:'电池'},
   {left:'资金',right:'紧张'},
@@ -1248,79 +1248,40 @@ var matchData = [
   {left:'诚信',right:'经营'},
   {left:'垄断',right:'市场'},
   {left:'挤垮',right:'对手'},
-  {left:'媒体的',right:'采访对象'},
-  {left:'保持',right:'生态平衡'},
-  {left:'维持',right:'秩序'},
   {left:'获得',right:'利益'},
-  {left:'商业',right:'领域'},
-  {left:'快要',right:'倒闭'},
-  {left:'市场',right:'饱和'},
-  {left:'热心地',right:'帮助'},
-  {left:'适当',right:'休息'},
-  {left:'营业',right:'时间'},
-  {left:'以防',right:'万一'}
+  {left:'商业',right:'领域'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'让他们俩在一起多待一会儿吧，',blank:'培养',post:'一下感情。',hint:'(vun đắp)',ans:'培养'},
-  {pre:'我下棋从来没赢过爷爷，根本不是他的',blank:'对手',post:'。',hint:'(đối thủ)',ans:'对手'},
-  {pre:'我觉得这套',blank:'公寓',post:'不错，大小合适，价钱便宜。',hint:'(căn hộ)',ans:'公寓'},
-  {pre:'开学前，妈妈带我去买了一套新',blank:'文具',post:'。',hint:'(đồ dùng học tập)',ans:'文具'},
-  {pre:'我的手机',blank:'电池',post:'不行了，得去换一块。',hint:'(pin)',ans:'电池'},
-  {pre:'牙膏、毛巾、洗发水都是常见的',blank:'日用品',post:'。',hint:'(đồ dùng hằng ngày)',ans:'日用品'},
-  {pre:'我们这个是薄利多销，本来就没有多少',blank:'利润',post:'。',hint:'(lợi nhuận)',ans:'利润'},
-  {pre:'做生意最重要的是讲',blank:'诚信',post:'。',hint:'(chữ tín)',ans:'诚信'},
-  {pre:'听说你的书店开得挺红火的，最近都有',blank:'媒体',post:'来采访你了。',hint:'(báo chí)',ans:'媒体'},
-  {pre:'这次调查的',blank:'对象',post:'是三百名中学生。',hint:'(đối tượng)',ans:'对象'},
-  {pre:'这家超市24小时',blank:'营业',post:'，半夜也能买东西。',hint:'(mở cửa bán hàng)',ans:'营业'},
-  {pre:'这次去北京学习的名',blank:'额',post:'只有五个。',hint:'(suất)',ans:'额'},
-  {pre:'三家的营业额加起来还',blank:'不如',post:'他一家高。',hint:'(không bằng)',ans:'不如',exp:'A不如B (+ tính từ) = A không bằng B: 三家加起来还不如他一家高.'},
-  {pre:'我已经试了六次了，还是不行，我看我',blank:'干脆',post:'放弃好了。',hint:'(dứt khoát)',ans:'干脆',exp:'干脆 = dứt khoát, thôi thì… luôn: 我看我干脆放弃好了.'},
-  {pre:'坐车的人太多了，我',blank:'挤',post:'了半天才上了车。',hint:'(chen)',ans:'挤'},
-  {pre:'他每天工作十几个小时，身体终于累',blank:'垮',post:'了。',hint:'(gục, sụp)',ans:'垮'},
-  {pre:'一家公司',blank:'垄断',post:'了市场，价格就很难降下来。',hint:'(độc chiếm)',ans:'垄断'},
-  {pre:'由于经营不好，那家工厂去年',blank:'倒闭',post:'了。',hint:'(phá sản)',ans:'倒闭'},
-  {pre:'我们班长是个',blank:'热心',post:'人，谁有困难她都愿意帮忙。',hint:'(nhiệt tình)',ans:'热心'},
-  {pre:'这次活动，学校为我们提供了',blank:'资金',post:'支持。',hint:'(kinh phí)',ans:'资金'},
-  {pre:'你怎么这么',blank:'傻',post:'？就让他们倒霉，不好吗？',hint:'(dại)',ans:'傻'},
-  {pre:'真',blank:'倒霉',post:'，刚出门就下雨了，我又没带伞。',hint:'(xui)',ans:'倒霉'},
-  {pre:'乱砍树木会破坏当地的',blank:'生态',post:'环境。',hint:'(sinh thái)',ans:'生态'},
-  {pre:'周末我和朋友常去市中心的',blank:'商业',post:'街逛逛。',hint:'(thương mại)',ans:'商业'},
-  {pre:'这个理论已经被应用到商业',blank:'领域',post:'。',hint:'(lĩnh vực)',ans:'领域'},
-  {pre:'考试前也要',blank:'适当',post:'休息，别学得太累了。',hint:'(hợp lý, vừa phải)',ans:'适当'},
-  {pre:'最后老师的话',blank:'促使',post:'他改变了主意。',hint:'(khiến cho)',ans:'促使'},
-  {pre:'植物的',blank:'生长',post:'离不开阳光和水。',hint:'(sinh trưởng)',ans:'生长'},
-  {pre:'太晚了，我先走了，不',blank:'妨碍',post:'您休息。',hint:'(làm phiền)',ans:'妨碍'},
-  {pre:'旅游业的发展',blank:'促进',post:'了当地经济的发展。',hint:'(thúc đẩy)',ans:'促进'},
-  {pre:'我们不能只考虑个人',blank:'利益',post:'。',hint:'(lợi ích)',ans:'利益'},
-  {pre:'对她的',blank:'合理',post:'要求你不应该拒绝。',hint:'(hợp lý)',ans:'合理'},
-  {pre:'拿把伞吧，',blank:'万一',post:'下雨呢？',hint:'(lỡ như)',ans:'万一',exp:'万一 = lỡ như (khả năng nhỏ, thường là việc xấu): 万一下雨呢？'},
-  {pre:'警察正在路口',blank:'维持',post:'交通秩序。',hint:'(duy trì)',ans:'维持'},
-  {pre:'这个城市的奶茶店太多了，市场已经',blank:'饱和',post:'了。',hint:'(bão hoà)',ans:'饱和'},
-  {pre:'你们上次赢了，这次就肯定也能赢吗？我看',blank:'不见得',post:'。',hint:'(chưa chắc)',ans:'不见得',exp:'不见得 = chưa chắc (phủ định nhẹ, khẩu ngữ).'},
-  {pre:'',blank:'建伟',post:'在大学的一座公寓楼里开了一家书店。',hint:'(tên nhân vật chính)',ans:'建伟'}
+  {pre:'笔、本子这些',blank:'文具',post:'，学校门口的小店都能买到。',hint:'(đồ dùng học tập, văn phòng phẩm)',ans:'文具',exp:'文具 = văn phòng phẩm (笔, 本子…); 文具店 = cửa hàng văn phòng phẩm.'},
+  {pre:'搬进新家以后，我们先去超市买了毛巾、杯子这些',blank:'日用品',post:'。',hint:'(đồ dùng hằng ngày)',ans:'日用品',exp:'日用品 = đồ dùng hằng ngày (毛巾, 牙膏, 杯子…).'},
+  {pre:'这件事被',blank:'媒体',post:'报道以后，很多人都知道了。',hint:'(truyền thông)',ans:'媒体',exp:'媒体 = phương tiện truyền thông (báo, đài, mạng): 媒体报道, 媒体采访.'},
+  {pre:'我们这次活动的',blank:'对象',post:'是刚来越南的外国留学生。',hint:'(đối tượng)',ans:'对象',exp:'对象 = đối tượng (mà hoạt động hướng tới); khẩu ngữ 找对象 = tìm người yêu.'},
+  {pre:'这家店一天的营业',blank:'额',post:'有两万多块钱。',hint:'(mức, khoản — doanh thu)',ans:'额',exp:'额 = mức, khoản (số lượng quy định): 营业额 = doanh thu; 名额 = suất.'},
+  {pre:'真',blank:'倒霉',post:'！我刚把车洗干净，就下起大雨来了。',hint:'(xui xẻo)',ans:'倒霉',exp:'倒霉 = xui xẻo, đen đủi; hay dùng trong câu cảm thán: 真倒霉！'},
+  {pre:'运动要',blank:'适当',post:'，跑得太多反而对身体不好。',hint:'(vừa phải, thích hợp)',ans:'适当',exp:'适当 = vừa phải, thích hợp: 适当运动, 适当休息, 适当的时候.'},
+  {pre:'靠这点儿钱，很难',blank:'维持',post:'一家人的生活。',hint:'(duy trì)',ans:'维持',exp:'维持 + 生活 / 关系 = duy trì, giữ cho tiếp tục.'},
+  {pre:'大学毕业生越来越多，有些专业的工作已经',blank:'饱和',post:'了。',hint:'(bão hoà)',ans:'饱和',exp:'饱和 = bão hoà, đã đầy, không chứa thêm được: 市场饱和.'},
+  {pre:'公交车上人太多，我',blank:'挤',post:'了半天才下了车。',hint:'(chen, len)',ans:'挤',exp:'挤 làm động từ = chen, lách qua đám đông: 挤上车, 挤不进去.'},
+  {pre:'多晒晒太阳，这些花会',blank:'生长',post:'得更快。',hint:'(sinh trưởng — 2 chữ)',ans:'生长',exp:'生长 = sinh trưởng, mọc (cây cối, sinh vật); con người lớn lên dùng 成长.'},
+  {pre:'这家饭馆的菜越来越',blank:'不如',post:'以前好吃了。',hint:'(không bằng)',ans:'不如',exp:'A 不如 B (+ tính từ tích cực) = A không bằng B: 不如以前好吃.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (不如 · 干脆 · 万一) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['三家的','营业额','加起来','还不如','他一家','高','。'],ans:'三家的营业额加起来还不如他一家高。',audio:'三家的营业额加起来还不如他一家高。'},
-  {words:['我的','发音','不如','她','。'],ans:'我的发音不如她。',audio:'我的发音不如她。'},
-  {words:['在房间睡觉','不如','出去','走走','。'],ans:'在房间睡觉不如出去走走。',audio:'在房间睡觉不如出去走走。'},
-  {words:['我看','我','干脆','放弃','好了','。'],ans:'我看我干脆放弃好了。',audio:'我看我干脆放弃好了。'},
-  {words:['我求他帮忙','，','他','答应得','很干脆','。'],ans:'我求他帮忙，他答应得很干脆。',audio:'我求他帮忙，他答应得很干脆。'},
-  {words:['他上周迟到','，','这周','干脆','不来了','。'],ans:'他上周迟到，这周干脆不来了。',audio:'他上周迟到，这周干脆不来了。'},
-  {words:['拿把伞吧','，','万一','下雨','呢','？'],ans:'拿把伞吧，万一下雨呢？',audio:'拿把伞吧，万一下雨呢？'},
-  {words:['你','小心一点','，','万一','受伤','就麻烦了','。'],ans:'你小心一点，万一受伤就麻烦了。',audio:'你小心一点，万一受伤就麻烦了。'},
-  {words:['她','总是','带着','一把伞','，','以防万一','。'],ans:'她总是带着一把伞，以防万一。',audio:'她总是带着一把伞，以防万一。'},
-  {words:['对她的','合理要求','你','不应该','拒绝','。'],ans:'对她的合理要求你不应该拒绝。',audio:'对她的合理要求你不应该拒绝。'},
-  {words:['对手','不见得','会妨碍','我们的','发展','。'],ans:'对手不见得会妨碍我们的发展。',audio:'对手不见得会妨碍我们的发展。'},
-  {words:['这个理论','已经','被应用到','商业领域','。'],ans:'这个理论已经被应用到商业领域。',audio:'这个理论已经被应用到商业领域。'},
-  {words:['我','要继续','把对手','培养好','。'],ans:'我要继续把对手培养好。',audio:'我要继续把对手培养好。'}
+  {words:['这里的','交通','还','不如','十年前','方便','。'],ans:'这里的交通还不如十年前方便。',audio:'这里的交通还不如十年前方便。'},
+  {words:['外面','这么热','，','不如','我们','在家','看电影','吧','。'],ans:'外面这么热，不如我们在家看电影吧。',audio:'外面这么热，不如我们在家看电影吧。'},
+  {words:['既然','大家','都','没空','，','干脆','把会','改到','下周','吧','。'],ans:'既然大家都没空，干脆把会改到下周吧。',audio:'既然大家都没空，干脆把会改到下周吧。'},
+  {words:['万一','明天','我','起晚了','，','你','一定要','打电话','叫醒我','。'],ans:'万一明天我起晚了，你一定要打电话叫醒我。',audio:'万一明天我起晚了，你一定要打电话叫醒我。'},
+  {words:['那家','大超市','想','把','周围的','小店','都','挤垮','。'],ans:'那家大超市想把周围的小店都挤垮。',audio:'那家大超市想把周围的小店都挤垮。'},
+  {words:['他','嘴上','说','同意','，','心里','不见得','这么想','。'],ans:'他嘴上说同意，心里不见得这么想。',audio:'他嘴上说同意，心里不见得这么想。'},
+  {words:['由于','经营','不好','，','那家饭馆','开了','半年','就','倒闭了','。'],ans:'由于经营不好，那家饭馆开了半年就倒闭了。',audio:'由于经营不好，那家饭馆开了半年就倒闭了。'},
+  {words:['这次比赛的','失败','促使','我','开始','每天','锻炼','。'],ans:'这次比赛的失败促使我开始每天锻炼。',audio:'这次比赛的失败促使我开始每天锻炼。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1328,76 +1289,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'所有的事都____在这一个星期了。',opts:['挤','拥挤','垮','饱和'],ans:0,
-   exp:'Việc dồn vào cùng một khoảng thời gian → 挤 (câu mẫu phần 做一做 của sách). 拥挤 không có nghĩa này.'},
-  {wrong:'由于人群____，有人受了伤。',opts:['拥挤','挤垮','倒闭','饱和'],ans:0,
-   exp:'人群拥挤 = đám đông chen chúc (văn viết). 挤垮 là chèn cho sập; 倒闭 dùng cho công ty.'},
-  {wrong:'他假装伤心，____出了两滴眼泪。',opts:['挤','拥挤','促使','维持'],ans:0,
-   exp:'Nặn cho nước mắt chảy ra → 挤出. 拥挤 không có nghĩa "bóp, nặn".'},
-  {wrong:'最后老师的话____他改变了主意。',opts:['促使','促进','妨碍','培养'],ans:0,
-   exp:'促使 + 他 + 改变 (kiêm ngữ, sau tân ngữ còn động từ). 促进 chỉ mang tân ngữ danh từ (bài tập 2 của sách).'},
-  {wrong:'新技术的出现大大____了经济的发展。',opts:['促进','促使','维持','垄断'],ans:0,
-   exp:'促进 + 发展 (bảng 词语搭配). 促使 phải có động từ sau tân ngữ.'},
-  {wrong:'今年公司的____比去年增长了百分之二十。',opts:['利润','利益','资金','对象'],ans:0,
-   exp:'Con số tiền lãi, đi với 增长 → 利润. 利益 là lợi ích nói chung.'},
-  {wrong:'这项合作对双方都有____。',opts:['利益','利润','资金','营业'],ans:0,
-   exp:'Có lợi cho cả hai bên (nói chung) → 利益.'},
-  {wrong:'她的汉语说得很好，我的发音____她。',opts:['不如','没有','不见得','万一'],ans:0,
-   exp:'A 不如 B có thể kết thúc câu ngay sau B. 没有 phải có tính từ phía sau (没有她好) — bài tập 2 của sách.'},
-  {wrong:'我建议你别去看那个演出，我已经看过了，很____！',opts:['糟糕','倒霉','傻','热心'],ans:0,
-   exp:'Buổi diễn DỞ → 糟糕 (nói về sự việc). 倒霉 chỉ vận xui của người — bài tập 2 của sách.'},
-  {wrong:'阳台、卧室的整体感觉都不错。但是桌子摆这儿，明显不____。',opts:['合理','有理','适当地','干脆'],ans:0,
-   exp:'Cách bố trí không hợp lý → 不合理. 有理 là "có lý" khi tranh luận (说得有理).'},
-  {wrong:'我已经试了六次了，还是不行，我看我____放弃好了。',opts:['干脆','万一','不如','适当'],ans:0,
-   exp:'Thôi thì dứt khoát bỏ luôn → 干脆 + V. Câu ví dụ của sách.'},
-  {wrong:'拿把伞吧，____下雨呢？',opts:['万一','干脆','不见得','如果说'],ans:0,
-   exp:'Lỡ như trời mưa (việc không mong muốn, khả năng nhỏ) → 万一.'},
-  {wrong:'你们上次赢了，这次就肯定也能赢吗？我看____。',opts:['不见得','不如','干脆','万一'],ans:0,
-   exp:'Phản bác nhẹ "chưa chắc" → 我看不见得 (bài tập 1 của sách).'},
-  {wrong:'我觉得这____公寓不错，大小合适，价钱便宜。',opts:['套','节','块','张'],ans:0,
-   exp:'Lượng từ của căn hộ: 一套公寓 (bảng 词语搭配). 节 / 块 dùng cho pin.'},
-  {wrong:'这个遥控器要用两____电池。',opts:['节','套','所','间'],ans:0,
-   exp:'Pin tiểu: 一节电池 (bảng 词语搭配).'},
-  {wrong:'公司刚开始的时候资金很____。',opts:['紧张','合理','热心','饱和'],ans:0,
-   exp:'资金 + 紧张 / 不足 = vốn eo hẹp (bảng 词语搭配).'},
-  {wrong:'在图书馆里大声说话会____别人学习。',opts:['妨碍','促进','维持','培养'],ans:0,
-   exp:'妨碍 + 别人学习 = làm phiền người khác học (bảng 词语搭配).'},
-  {wrong:'学校应该____学生独立思考的能力。',opts:['培养','促使','维持','垄断'],ans:0,
-   exp:'培养 + 能力 (bảng 词语搭配). 促使 cần động từ sau tân ngữ.'},
-  {wrong:'我会在____的时候把这件事告诉她。',opts:['适当','合理','干脆','热心'],ans:0,
-   exp:'在适当的时候 = vào lúc thích hợp. 合理 nói về giá cả, cách sắp xếp.'},
-  {wrong:'警察正在路口____交通秩序。',opts:['维持','保持','促进','生长'],ans:0,
-   exp:'维持秩序 là kết hợp cố định. 保持 đi với 联系 / 健康 / 安静.'}
+  {wrong:'这种手机卖一台只有几十块钱的____。',opts:['利润','利益','资金','对象'],ans:0,exp:'利润 = tiền lãi cụ thể khi buôn bán. 利益 là lợi ích (trừu tượng, của người/tập thể); 资金 là vốn; 对象 là đối tượng.'},
+  {wrong:'他是为了大家的____，才放弃了自己的休息时间。',opts:['利益','利润','资金','领域'],ans:0,exp:'利益 = lợi ích của người / tập thể: 大家的利益, 个人利益. 利润 chỉ tiền lãi khi kinh doanh; 资金 là vốn; 领域 là lĩnh vực.'},
+  {wrong:'多读书能____孩子的成长。',opts:['促进','促使','妨碍','维持'],ans:0,exp:'促进 + danh từ (成长, 发展, 友谊) = thúc đẩy cho tốt hơn. 促使 phải là 促使 + người + V; 妨碍 là cản trở (ngược nghĩa); 维持 là giữ nguyên.'},
+  {wrong:'妈妈的病____他决定回老家工作。',opts:['促使','促进','培养','维持'],ans:0,exp:'促使 + người + V = khiến ai (quyết định) làm gì. 促进 chỉ mang danh từ (促进发展), không mang “người + động từ”; 培养, 维持 không hợp.'},
+  {wrong:'门口站了太多人，我们根本____不进去。',opts:['挤','拥挤','倒','垮'],ans:0,exp:'挤 là động từ = chen: 挤不进去 (chen không vào được). 拥挤 là tính từ (道路拥挤), không mang bổ ngữ 不进去; 倒, 垮 không hợp nghĩa.'},
+  {wrong:'做饭这方面，我可____我妈妈。',opts:['不如','没有','比','跟'],ans:0,exp:'A 不如 B có thể kết thúc câu luôn (= A không bằng B). 没有, 比, 跟 phải có tính từ phía sau (没有我妈妈好), đứng một mình thì câu chưa xong.'},
+  {wrong:'她做事很____，说买就买，说走就走。',opts:['干脆','适当','热心','合理'],ans:0,exp:'干脆 (tính từ) = dứt khoát, không do dự. 适当 là vừa phải; 热心 là nhiệt tình giúp người; 合理 là hợp lý.'},
+  {wrong:'____考上了大学，我就请大家吃饭。',opts:['如果','万一','不如','干脆'],ans:0,exp:'Đỗ đại học là chuyện TỐT → dùng 如果. 万一 chỉ dùng cho khả năng nhỏ, bất lợi (lỡ như); 不如, 干脆 không nêu giả thiết.'},
+  {wrong:'带上钥匙吧，____家里没人呢？',opts:['万一','不如','干脆','不见得'],ans:0,exp:'万一……呢？ = lỡ… thì sao? (khả năng xấu). 不如 là “chi bằng”; 干脆 là “dứt khoát”; 不见得 là “chưa chắc”.'},
+  {wrong:'价格高的东西____质量就好。',opts:['不见得','不必','何况','仿佛'],ans:0,exp:'不见得 + V/tính từ = chưa chắc, không hẳn. 不必 là “không cần”; 何况 là “huống chi”; 仿佛 là “dường như”.'},
+  {wrong:'邻居王阿姨很____，谁家有困难她都来帮忙。',opts:['热心','热闹','热烈','合理'],ans:0,exp:'热心 = nhiệt tình, sốt sắng giúp người. 热闹 tả nơi chốn đông vui; 热烈 tả không khí, tràng vỗ tay; 合理 là hợp lý.'},
+  {wrong:'晚上说话小声点儿，别____邻居休息。',opts:['妨碍','促进','维持','培养'],ans:0,exp:'妨碍 + người / việc = làm trở ngại, làm phiền: 妨碍休息, 妨碍交通. 促进, 维持, 培养 đều mang nghĩa tích cực, không hợp.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Đã biết khẩu ngữ của mình không trôi chảy bằng bạn cùng bàn, thì dứt khoát sáng nào cũng cùng bạn ấy đọc to bài khoá.', zh:'既然我的口语不如同桌流利，那干脆每天早上跟她一起朗读课文。', py:'Jìrán wǒ de kǒuyǔ bùrú tóngzhuō liúlì, nà gāncuì měi tiān zǎoshang gēn tā yìqǐ lǎngdú kèwén.', goiY:['A 不如 B + tính từ','既然……那……','干脆'], giai:'A 不如 B + tính từ tích cực (流利) = A không … bằng B, sau B không đặt tính từ tiêu cực; 干脆 làm phó từ = dứt khoát làm luôn cho gọn.'},
-  {vi:'Ra ngoài tốt nhất cậu nên mang theo sạc dự phòng, lỡ điện thoại hết pin thì sao?', zh:'你出门最好带上充电宝，万一手机电池没电了呢？', py:'Nǐ chūmén zuìhǎo dàishàng chōngdiànbǎo, wànyī shǒujī diànchí méi diàn le ne?', goiY:['……，万一……呢？','电池'], giai:'Mẫu ……，万一……呢？ = "lỡ… thì sao?", dùng để nhắc đề phòng việc xấu; 万一 chỉ khả năng rất nhỏ nhưng không mong muốn.'},
-  {vi:'Giá cả ở cửa hàng văn phòng phẩm này rất hợp lý, vì vậy học sinh gần đây đều thích đến đây mua vở và bút.', zh:'这家文具店的价格很合理，所以附近的学生都喜欢来这里买本子和笔。', py:'Zhè jiā wénjùdiàn de jiàgé hěn hélǐ, suǒyǐ fùjìn de xuésheng dōu xǐhuan lái zhèli mǎi běnzi hé bǐ.', goiY:['合理','文具','所以'], giai:'合理 = hợp lý (价格合理/要求合理); lượng từ của cửa hàng là 家 (这家店).'},
-  {vi:'Câu này tôi nghĩ nửa tiếng vẫn chưa ra, thay vì tiếp tục phí thời gian, chi bằng dứt khoát làm các câu phía sau trước.', zh:'这道题我想了半个小时也没想出来，与其继续浪费时间，不如干脆先做后面的题。', py:'Zhè dào tí wǒ xiǎngle bàn ge xiǎoshí yě méi xiǎng chulai, yǔqí jìxù làngfèi shíjiān, bùrú gāncuì xiān zuò hòumiàn de tí.', goiY:['与其……不如……','干脆','先'], giai:'与其 A 不如 B = thay vì A chi bằng B (khuyên chọn B); 不如 ở đây nghĩa "chi bằng", khác A 不如 B "A không bằng B".'},
-  {vi:'Trong học tập có một đối thủ ngang sức chưa chắc đã là chuyện xấu, trái lại còn có thể thúc đẩy chúng ta không ngừng tiến bộ.', zh:'学习上有一个实力相当的对手不见得是坏事，反而能促使我们不断进步。', py:'Xuéxí shang yǒu yí ge shílì xiāngdāng de duìshǒu bújiàndé shì huàishì, fǎn\'ér néng cùshǐ wǒmen búduàn jìnbù.', goiY:['不见得','反而','促使'], giai:'不见得 = chưa chắc (phủ định nhẹ nhàng một nhận định); 反而 = trái lại — kết quả ngược với điều người ta nghĩ; 促使 + người + V = thúc đẩy ai làm gì.'},
-  {vi:'Điện thoại tuy tiện lợi, nhưng nếu dùng không hợp lý thì sẽ cản trở việc học, thậm chí dẫn đến mất ngủ.', zh:'手机虽然方便，但是如果使用不合理，就会妨碍学习，甚至导致失眠。', py:'Shǒujī suīrán fāngbiàn, dànshì rúguǒ shǐyòng bù hélǐ, jiù huì fáng\'ài xuéxí, shènzhì dǎozhì shīmián.', goiY:['虽然……但是……','妨碍','甚至'], giai:'妨碍 + việc/hoạt động = cản trở (妨碍学习); 导致 + kết quả xấu = dẫn đến, gây ra.'},
-  {vi:'Câu lạc bộ của chúng tôi bán đồ thủ công tại hội chợ từ thiện của trường, tuy lợi nhuận không cao nhưng mọi người đều rất nhiệt tình, cuối cùng đã quyên toàn bộ số tiền thu được cho trẻ em có bố mẹ đi làm xa.', zh:'我们社团在校园义卖会上卖手工作品，虽然利润不高，但大家都很热心，最后把所有收入都捐给了留守儿童。', py:'Wǒmen shètuán zài xiàoyuán yìmàihuì shang mài shǒugōng zuòpǐn, suīrán lìrùn bù gāo, dàn dàjiā dōu hěn rèxīn, zuìhòu bǎ suǒyǒu shōurù dōu juān gěile liúshǒu értóng.', goiY:['虽然……但……','利润','热心'], giai:'热心 = nhiệt tình, sốt sắng (với việc chung); 把 + 收入 + 捐给 + ai = quyên số tiền cho ai, 都 nhấn mạnh "toàn bộ".'},
-  {vi:'Nếu trong lớp chỉ có một luồng ý kiến, mọi người không có gì để so sánh thì rất khó phát hiện vấn đề, vì vậy tranh luận ở mức vừa phải trái lại có thể thúc đẩy chúng ta suy nghĩ.', zh:'如果班里只有一种意见，大家没有了比较，就很难发现问题，因此适当的争论反而能促进我们思考。', py:'Rúguǒ bān li zhǐyǒu yì zhǒng yìjiàn, dàjiā méiyǒule bǐjiào, jiù hěn nán fāxiàn wèntí, yīncǐ shìdàng de zhēnglùn fǎn\'ér néng cùjìn wǒmen sīkǎo.', goiY:['如果……就……','适当','促进'], giai:'适当 = vừa phải, thích đáng (适当的争论/适当休息); 促进 + sự phát triển/tư duy = thúc đẩy, khác 促使 + người + V (khiến ai làm gì).'},
-  {vi:'Bố nói, lỡ sang năm không đỗ trường đại học mơ ước thì cũng chưa chắc đã là chuyện xấu, thay vì bây giờ lo lắng, chi bằng dồn sức vào ôn tập.', zh:'爸爸说，万一明年考不上理想的大学，也不见得就是坏事，与其现在担心，不如把精力集中在复习上。', py:'Bàba shuō, wànyī míngnián kǎo bu shàng lǐxiǎng de dàxué, yě bújiàndé jiù shì huàishì, yǔqí xiànzài dānxīn, bùrú bǎ jīnglì jízhōng zài fùxí shang.', goiY:['万一……也……','不见得','与其……不如……'], giai:'万一 + việc xấu ở vế trước; 不见得 = chưa chắc — phủ định nhẹ, lịch sự hơn 不是; 把精力集中在…… = dồn sức vào….'},
-  {vi:'Khi làm việc nhóm, nếu chỉ nghĩ đến lợi ích cá nhân, muốn chèn ép cho người khác thất bại, thì kết quả thường là cả nhóm cùng xui xẻo, điều đó cho thấy duy trì sự cân bằng trong nhóm quan trọng biết bao.', zh:'小组合作时，如果只考虑个人利益，想把别人挤垮，结果往往是大家一起倒霉，可见维持团队的平衡有多重要。', py:'Xiǎozǔ hézuò shí, rúguǒ zhǐ kǎolǜ gèrén lìyì, xiǎng bǎ biérén jǐkuǎ, jiéguǒ wǎngwǎng shì dàjiā yìqǐ dǎoméi, kějiàn wéichí tuánduì de pínghéng yǒu duō zhòngyào.', goiY:['如果……结果……','挤垮','可见'], giai:'挤垮 = chèn ép đến khi đổ (挤 + bổ ngữ kết quả 垮), thường dùng 把 + đối thủ + 挤垮; 有多重要 = quan trọng biết bao (câu cảm thán).'}
+  {vi:'Đã nói tiếng Trung không trôi chảy bằng bạn ấy, thế thì dứt khoát sáng nào tôi cũng đọc bài cùng bạn ấy.',zh:'既然我说汉语不如她流利，那干脆每天早上跟她一起读课文。',py:'Jìrán wǒ shuō Hànyǔ bùrú tā liúlì, nà gāncuì měi tiān zǎoshang gēn tā yìqǐ dú kèwén.',goiY:['既然……那……','不如','干脆'],giai:'A 不如 B + tính từ tích cực (流利); 干脆 (phó từ) đứng trước động từ, đưa ra cách giải quyết dứt khoát.'},
+  {vi:'Ra ngoài cậu tốt nhất nên mang thêm một cục pin, lỡ điện thoại không dùng được thì sao?',zh:'你出门最好多带一块电池，万一手机用不了了呢？',py:'Nǐ chūmén zuìhǎo duō dài yí kuài diànchí, wànyī shǒujī yòng bu liǎo le ne?',goiY:['电池','万一……呢？'],giai:'万一……呢？ = lỡ… thì sao? — dùng khi lo một khả năng xấu; 多带 = mang thêm.'},
+  {vi:'Giá ở cửa hàng văn phòng phẩm này rất hợp lý, nên học sinh quanh đây đều thích đến đây mua vở và bút.',zh:'这家文具店的价格很合理，所以附近的学生都喜欢来这里买本子和笔。',py:'Zhè jiā wénjùdiàn de jiàgé hěn hélǐ, suǒyǐ fùjìn de xuéshēng dōu xǐhuan lái zhèlǐ mǎi běnzi hé bǐ.',goiY:['文具店','合理'],giai:'价格合理 = giá hợp lý; lượng từ cửa hàng là 家.'},
+  {vi:'Trong học tập có một đối thủ ngang tài chưa chắc đã là chuyện xấu, ngược lại còn có thể khiến chúng ta không ngừng tiến bộ.',zh:'学习上有一个水平差不多的对手不见得是坏事，反而能促使我们不断进步。',py:'Xuéxí shang yǒu yí ge shuǐpíng chàbuduō de duìshǒu bújiàndé shì huàishì, fǎn\'ér néng cùshǐ wǒmen búduàn jìnbù.',goiY:['对手','不见得','反而','促使'],giai:'不见得 + 是 = chưa chắc là; 促使 + người + V = khiến ai làm gì.'},
+  {vi:'Điện thoại tuy tiện, nhưng nếu dùng không hợp lý sẽ cản trở việc học, thậm chí khiến bạn tối ngủ không ngon.',zh:'手机虽然方便，但是如果使用不合理，就会妨碍学习，甚至让你晚上睡不好。',py:'Shǒujī suīrán fāngbiàn, dànshì rúguǒ shǐyòng bù hélǐ, jiù huì fáng\'ài xuéxí, shènzhì ràng nǐ wǎnshang shuì bu hǎo.',goiY:['合理','妨碍','甚至'],giai:'妨碍 + việc = cản trở; 甚至 nêu mức độ nặng hơn.'},
+  {vi:'Nếu trong lớp chỉ có một ý kiến, mọi người không có gì để so sánh thì rất khó phát hiện vấn đề; vì vậy tranh luận vừa phải ngược lại có thể thúc đẩy chúng ta suy nghĩ.',zh:'如果班里只有一种意见，大家没有了比较，就很难发现问题，因此适当的争论反而能促进我们思考。',py:'Rúguǒ bān li zhǐ yǒu yì zhǒng yìjiàn, dàjiā méiyǒule bǐjiào, jiù hěn nán fāxiàn wèntí, yīncǐ shìdàng de zhēnglùn fǎn\'ér néng cùjìn wǒmen sīkǎo.',goiY:['适当','反而','促进'],giai:'适当的 + danh từ = … vừa phải; 促进 ở đây mang tân ngữ là cụm 我们思考.'}
 ];
 
-// Chiều Trung → Việt — câu của bài khoá
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Hiệu sách của Kiến Vĩ mở trong một toà nhà ký túc xá của trường đại học không những bán sách mà còn bán cả văn phòng phẩm, pin và các đồ dùng hằng ngày nhỏ khác.', zh:'建伟开在大学公寓楼里的书店不但卖书，而且还卖文具、电池等小日用品。', py:'Jiànwěi kāi zài dàxué gōngyùlóu li de shūdiàn búdàn mài shū, érqiě hái mài wénjù, diànchí děng xiǎo rìyòngpǐn.', goiY:['不但……而且…… = không những… mà còn…','公寓 = nhà ở tập thể, căn hộ','日用品 = đồ dùng hằng ngày'], giai:'Chủ ngữ dài 建伟开在大学公寓楼里的书店 có trung tâm ngữ là 书店: "hiệu sách của Kiến Vĩ mở trong…"; 等 đặt cuối liệt kê = "và các … khác".'},
-  {vi:'Tuy lợi nhuận trên mỗi món hàng đều không cao, nhưng nhờ kinh doanh trung thực mà anh làm cho hiệu sách ngày càng đông khách.', zh:'虽然每件商品的利润都并不高，但他靠诚信经营使书店生意越来越红火。', py:'Suīrán měi jiàn shāngpǐn de lìrùn dōu bìng bù gāo, dàn tā kào chéngxìn jīngyíng shǐ shūdiàn shēngyi yuè lái yuè hónghuo.', goiY:['虽然……但…… = tuy… nhưng…','诚信 = trung thực, giữ chữ tín','红火 = phát đạt, đông khách'], giai:'靠 + cách làm + 使 + kết quả = nhờ … mà khiến …; 红火 miêu tả việc làm ăn đông khách, phát đạt, không dịch "đỏ lửa".'},
-  {vi:'Do bị hiệu sách của Kiến Vĩ ảnh hưởng, doanh thu của ba hiệu sách còn lại cộng vào còn không bằng một mình hiệu của anh.', zh:'由于受到了建伟书店的影响，另外三家书店的营业额加起来还不如他一家高。', py:'Yóuyú shòudàole Jiànwěi shūdiàn de yǐngxiǎng, lìngwài sān jiā shūdiàn de yíngyè\'é jiā qilai hái bùrú tā yì jiā gāo.', goiY:['由于 = do','营业额 = doanh thu','A 还不如 B 高 = A còn không cao bằng B'], giai:'A 还不如 B + tính từ: 还 nhấn mạnh "thậm chí còn không bằng"; 加起来 = cộng lại.'},
-  {vi:'Sau khi làm ăn phát đạt, hiệu sách thậm chí còn trở thành đối tượng phỏng vấn của báo chí, nhiều người thân bạn bè liền khuyên anh dứt khoát chèn cho ba hiệu sách kia sập tiệm.', zh:'书店生意红火后，甚至成了媒体的采访对象，许多亲朋好友便建议他干脆把另三家书店挤垮。', py:'Shūdiàn shēngyi hónghuo hòu, shènzhì chéngle méitǐ de cǎifǎng duìxiàng, xǔduō qīnpéng hǎoyǒu biàn jiànyì tā gāncuì bǎ lìng sān jiā shūdiàn jǐkuǎ.', goiY:['甚至 = thậm chí','采访对象 = đối tượng phỏng vấn','干脆 = dứt khoát'], giai:'干脆 + 把……V = dứt khoát làm luôn cho xong; 便 = 就 (văn viết), "liền".'},
-  {vi:'Thế nhưng Kiến Vĩ không những không chèn ép đối thủ, trái lại còn thường giúp ba hiệu sách kia làm hoạt động tiếp thị, tìm cách để họ tiếp tục kinh doanh.', zh:'可建伟不但没有去挤垮对手，反而经常帮助三家书店搞营销活动，想办法让它们继续经营下去。', py:'Kě Jiànwěi búdàn méiyǒu qù jǐkuǎ duìshǒu, fǎn\'ér jīngcháng bāngzhù sān jiā shūdiàn gǎo yíngxiāo huódòng, xiǎng bànfǎ ràng tāmen jìxù jīngyíng xiàqu.', goiY:['不但没有……反而…… = không những không… trái lại còn…','对手 = đối thủ','经营下去 = tiếp tục kinh doanh'], giai:'不但没有 A，反而 B: việc làm ngược hẳn với điều người khác mong đợi; 下去 sau động từ chỉ sự tiếp diễn "tiếp tục…".'},
-  {vi:'Với một hiệu sách sắp phải đóng cửa, anh còn chủ động nhiệt tình cho họ vay vốn, thảo nào có người hỏi anh: "Sao anh dại thế?"', zh:'对于一家快要倒闭的书店，他还主动热心地借给其资金，难怪有人问他：“你怎么这么傻？”', py:'Duìyú yì jiā kuàiyào dǎobì de shūdiàn, tā hái zhǔdòng rèxīn de jiè gěi qí zījīn, nánguài yǒu rén wèn tā: “Nǐ zěnme zhème shǎ?”', goiY:['对于 = đối với','倒闭 = phá sản, đóng cửa','难怪 = thảo nào'], giai:'难怪 = thảo nào (đã hiểu nguyên nhân), vế trước nêu lý do; 借给其资金 — 其 = 他们 (văn viết): cho họ vay vốn.'},
-  {vi:'Kiến Vĩ cho rằng lĩnh vực kinh doanh thật ra cũng giống thế giới tự nhiên: sinh vật có một số "kẻ thù" ở mức vừa phải thì trái lại sẽ phát triển tốt hơn.', zh:'建伟认为，商业领域其实和自然界一样，生物适当有一些“敌人”，反而会促使它们生长得更好。', py:'Jiànwěi rènwéi, shāngyè lǐngyù qíshí hé zìránjiè yíyàng, shēngwù shìdàng yǒu yìxiē “dírén”, fǎn\'ér huì cùshǐ tāmen shēngzhǎng de gèng hǎo.', goiY:['和……一样 = giống như…','适当 = vừa phải','促使 = thúc đẩy, khiến'], giai:'促使 + đối tượng + V (促使它们生长) = khiến/thúc đẩy ai làm gì; 反而 cho thấy "kẻ thù" lại có tác dụng tốt — ngược với suy nghĩ thông thường.'},
-  {vi:'Tương tự, đối thủ không hề cản trở sự phát triển của anh mà đang thúc đẩy việc kinh doanh, bởi qua so sánh sinh viên mới biết giá của anh hợp lý.', zh:'同样，对手不是在妨碍他的发展，而是在促进他的经营，因为学生们通过比较才知道他的价格合理。', py:'Tóngyàng, duìshǒu bú shì zài fáng\'ài tā de fāzhǎn, ér shì zài cùjìn tā de jīngyíng, yīnwèi xuéshengmen tōngguò bǐjiào cái zhīdào tā de jiàgé hélǐ.', goiY:['不是……而是…… = không phải… mà là…','妨碍 = cản trở','促进 = thúc đẩy'], giai:'不是 A 而是 B phủ định A để khẳng định B; 通过比较才知道 = qua so sánh mới biết — 才 cho thấy điều kiện cần.'},
-  {vi:'Nếu chỉ còn mỗi hiệu sách của anh, giá có thấp đến đâu sinh viên cũng thấy đắt; lỡ họ sang chợ khác "so hàng ba nhà" thì hiệu sách của anh có thể phải đóng cửa.', zh:'如果只剩他一家书店，价格再低学生们也会觉得贵；万一他们去别的市场“货比三家”，他的书店就可能倒闭。', py:'Rúguǒ zhǐ shèng tā yì jiā shūdiàn, jiàgé zài dī xuéshengmen yě huì juéde guì; wànyī tāmen qù biéde shìchǎng “huò bǐ sān jiā”, tā de shūdiàn jiù kěnéng dǎobì.', goiY:['再……也…… = dù … đến đâu cũng…','万一 = lỡ như','货比三家 = so hàng ba nhà'], giai:'价格再低……也……: 再 + tính từ + 也 = dù có … đến mấy cũng…; 货比三家 là thành ngữ "so sánh nhiều nơi trước khi mua".'},
-  {vi:'Sở dĩ anh không chèn ép đối thủ đến sập tiệm là vì muốn duy trì "hệ sinh thái" bão hoà của các hiệu sách, tránh để đối thủ mạnh hơn chen chân vào, từ đó bảo vệ lợi ích lâu dài của mình.', zh:'他之所以不把对手挤垮，是因为要维持书店饱和的“生态”，避免更强的对手来插足，从而保护自己的长期利益。', py:'Tā zhīsuǒyǐ bù bǎ duìshǒu jǐkuǎ, shì yīnwèi yào wéichí shūdiàn bǎohé de “shēngtài”, bìmiǎn gèng qiáng de duìshǒu lái chāzú, cóng\'ér bǎohù zìjǐ de chángqī lìyì.', goiY:['之所以……是因为…… = sở dĩ… là vì…','维持 = duy trì','饱和 = bão hoà'], giai:'之所以……是因为…… đưa kết quả lên trước rồi giải thích; 插足 = chen chân vào (thị trường); 从而 nêu kết quả cuối cùng đạt được.'}
+  {vi:'Hiệu sách Kiến Vĩ mở trong khu nhà ở của trường đại học không chỉ bán sách mà còn bán văn phòng phẩm, pin và các đồ dùng hằng ngày nhỏ.',zh:'建伟开在大学公寓楼里的书店不但卖书，而且还卖文具、电池等小日用品。',py:'Jiànwěi kāi zài dàxué gōngyùlóu li de shūdiàn búdàn mài shū, érqiě hái mài wénjù, diànchí děng xiǎo rìyòngpǐn.',goiY:['公寓楼 = khu nhà ở','文具 = văn phòng phẩm','日用品 = đồ dùng hằng ngày'],giai:'开在……里的书店 — cụm “V + 在 + nơi chốn” làm định ngữ cho 书店; 等 = vân vân.'},
+  {vi:'Tuy lợi nhuận không cao, nhưng anh làm ăn giữ chữ tín, việc buôn bán của hiệu sách ngày càng tốt, đến cả truyền thông cũng tới phỏng vấn anh.',zh:'虽然利润不高，但是他做生意讲诚信，书店的生意越来越好，连媒体都来采访他。',py:'Suīrán lìrùn bù gāo, dànshì tā zuò shēngyi jiǎng chéngxìn, shūdiàn de shēngyi yuè lái yuè hǎo, lián méitǐ dōu lái cǎifǎng tā.',goiY:['利润 = lợi nhuận','诚信 = chữ tín','媒体 = truyền thông'],giai:'讲诚信 = giữ chữ tín; 连……都…… nhấn mạnh mức độ bất ngờ.'},
+  {vi:'Doanh thu của ba hiệu sách kia gộp lại cũng không bằng một mình hiệu của anh.',zh:'另外三家书店的营业额合起来，也比不上他一家。',py:'Lìngwài sān jiā shūdiàn de yíngyè\'é hé qǐlai, yě bǐ bu shàng tā yì jiā.',goiY:['营业额 = doanh thu','比不上 = không bằng'],giai:'比不上 = 不如 (không bằng); 合起来 = gộp lại.'},
+  {vi:'Với một hiệu sách sắp phá sản, anh còn chủ động cho họ vay tiền, có người cười anh quá ngốc.',zh:'对一家快要倒闭的书店，他还主动借钱给他们，有人笑他太傻了。',py:'Duì yì jiā kuàiyào dǎobì de shūdiàn, tā hái zhǔdòng jiè qián gěi tāmen, yǒu rén xiào tā tài shǎ le.',goiY:['倒闭 = phá sản','傻 = ngốc'],giai:'对 + đối tượng đặt đầu câu = với…, đối với…; 快要 + V = sắp; 借钱给 + người = cho ai vay tiền.'},
+  {vi:'Anh cho rằng đối thủ sẽ không cản trở sự phát triển của mình, trái lại còn thúc đẩy việc kinh doanh, giống như sinh vật trong tự nhiên có chút “kẻ thù” mới lớn lên tốt hơn.',zh:'他认为，对手不会妨碍他的发展，反而会促进他的经营，就像自然界的生物适当有些“敌人”才能生长得更好。',py:'Tā rènwéi, duìshǒu bú huì fáng\'ài tā de fāzhǎn, fǎn\'ér huì cùjìn tā de jīngyíng, jiù xiàng zìránjiè de shēngwù shìdàng yǒuxiē “dírén” cái néng shēngzhǎng de gèng hǎo.',goiY:['妨碍 = cản trở','促进 = thúc đẩy','生长 = sinh trưởng'],giai:'不会……，反而会…… = không… mà trái lại còn…; 就像…… = giống như….'},
+  {vi:'Duy trì “hệ sinh thái” bão hoà này có thể tránh để đối thủ mạnh hơn chen vào, điều đó có lợi hơn cho lợi ích lâu dài của anh.',zh:'维持这种饱和的“生态”，可以避免更强的对手进来，这对他的长期利益更有好处。',py:'Wéichí zhè zhǒng bǎohé de “shēngtài”, kěyǐ bìmiǎn gèng qiáng de duìshǒu jìnlai, zhè duì tā de chángqī lìyì gèng yǒu hǎochu.',goiY:['维持 = duy trì','饱和 = bão hoà','生态 = sinh thái','利益 = lợi ích'],giai:'维持 + 生态 / 平衡; 对……有好处 = có lợi cho….'}
 ];
 
 // ══════════════════════════════════════════
@@ -1461,31 +1386,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (câu 29–31 của sách bài tập + câu bài khoá)
   sapXep:[
-    {manh:['你不应该拒绝','对她的','合理要求'],
-     dap:'对她的合理要求你不应该拒绝。',
-     vn:'Với yêu cầu hợp lý của cô ấy, bạn không nên từ chối.',
-     giai:'Đưa tân ngữ lên đầu bằng 对……: 对 + 她的合理要求 + 你不应该拒绝. Câu 29 sách bài tập.'},
-    {manh:['会妨碍','对手','不见得','我们的发展'],
-     dap:'对手不见得会妨碍我们的发展。',
-     chap:['我们的发展不见得会妨碍对手。'],
-     vn:'Đối thủ chưa chắc sẽ cản trở sự phát triển của chúng ta.',
-     giai:'不见得 + 会 + V: phó từ đứng trước động từ năng nguyện. Sách bài tập chấp nhận cả cách đảo chủ ngữ (câu 30).'},
-    {manh:['应用到','这个理论','已经被','商业领域'],
-     dap:'这个理论已经被应用到商业领域。',
-     vn:'Lý thuyết này đã được ứng dụng vào lĩnh vực thương mại.',
-     giai:'Câu 被 không có tác nhân: chủ ngữ + 已经被 + V + 到 + nơi chốn. Câu 31 sách bài tập.'},
-    {manh:['还不如','三家的营业额','他一家高','加起来'],
-     dap:'三家的营业额加起来还不如他一家高。',
-     vn:'Doanh thu của cả ba hiệu cộng lại còn không bằng một mình hiệu của anh.',
-     giai:'A (三家的营业额加起来) + 还不如 + B (他一家) + 高.'},
-    {manh:['干脆','建议他','亲朋好友','把书店卖了'],
-     dap:'亲朋好友建议他干脆把书店卖了。',
-     vn:'Người thân bạn bè khuyên anh ấy dứt khoát bán hiệu sách đi.',
-     giai:'建议 + 他 + 干脆 + 把……V: 干脆 đứng trước 把.'},
-    {manh:['那就麻烦了','万一','下雨了，'],
-     dap:'万一下雨了，那就麻烦了。',
-     vn:'Lỡ như trời mưa thì phiền đấy.',
-     giai:'万一 + việc xấu，那就 + hậu quả.'}
+    {manh:['你不应该拒绝','对她的','合理要求'],dap:'对她的合理要求你不应该拒绝。',vn:'Với yêu cầu hợp lý của cô ấy, bạn không nên từ chối.',giai:'Đưa tân ngữ lên đầu bằng 对……: 对 + 她的合理要求 + 你不应该拒绝. Câu 29 sách bài tập.'},
+    {manh:['会妨碍','对手','不见得','我们的发展'],dap:'对手不见得会妨碍我们的发展。',chap:['我们的发展不见得会妨碍对手。'],vn:'Đối thủ chưa chắc sẽ cản trở sự phát triển của chúng ta.',giai:'不见得 + 会 + V: phó từ đứng trước động từ năng nguyện. Sách bài tập chấp nhận cả cách đảo chủ ngữ (câu 30).'},
+    {manh:['应用到','这个理论','已经被','商业领域'],dap:'这个理论已经被应用到商业领域。',vn:'Lý thuyết này đã được ứng dụng vào lĩnh vực thương mại.',giai:'Câu 被 không có tác nhân: chủ ngữ + 已经被 + V + 到 + nơi chốn. Câu 31 sách bài tập.'},
+    {manh:['不如','我做的菜','好吃','妈妈做的'],dap:'我做的菜不如妈妈做的好吃。',vn:'Món tôi nấu không ngon bằng món mẹ nấu.',giai:'A (我做的菜) + 不如 + B (妈妈做的) + tính từ tích cực (好吃).'},
+    {manh:['干脆','建议他','亲朋好友','把书店卖了'],dap:'亲朋好友建议他干脆把书店卖了。',vn:'Người thân bạn bè khuyên anh ấy dứt khoát bán hiệu sách đi.',giai:'建议 + 他 + 干脆 + 把……V: 干脆 đứng trước 把.'},
+    {manh:['那就麻烦了','万一','下雨了，'],dap:'万一下雨了，那就麻烦了。',vn:'Lỡ như trời mưa thì phiền đấy.',giai:'万一 + việc xấu，那就 + hậu quả.'}
   ]
 };
 
@@ -1495,30 +1401,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (适者生存 · cạnh tranh trong kinh doanh). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 对手 · 不如 · 干脆 · 万一 · 不见得 · 合理 · 促进 · 妨碍.',
   questions:[
-    {q_zh:'课文中建伟面对不如自己的竞争对手和亲友的建议，他是怎么做的？',
-     q_vn:'Trong bài, đứng trước những đối thủ kém mình và lời khuyên của người thân, Kiến Vĩ đã làm gì?',
-     hint:'Tóm tắt lời khuyên (干脆……挤垮) rồi việc Kiến Vĩ làm (不但没有……反而……)',
-     sample:'亲朋好友建议他干脆把另外三家书店挤垮，可是他不但没有这么做，反而经常帮他们搞营销活动，还借给一家快要倒闭的书店资金。',
-     sample_vn:'Người thân bạn bè khuyên anh dứt khoát chèn cho ba hiệu sách kia sập, nhưng anh không những không làm vậy, trái lại còn thường giúp họ làm tiếp thị, còn cho một hiệu sắp phá sản vay vốn.',
-     note:'Câu hỏi 1 của sách — trả lời bằng cấu trúc tương phản 不但没有……反而…… rất ăn điểm.'},
-    {q_zh:'你同意他的做法吗？你认为他的说法有没有道理？',
-     q_vn:'Em có đồng ý với cách làm của anh ấy không? Em thấy lời anh ấy nói có lý không?',
-     hint:'Nêu quan điểm + 1–2 lý do, dùng 不见得 / 万一',
-     sample:'我同意。只有一家书店，学生没有比较，不见得会觉得他的书便宜。万一来了一个更强的对手，他的生意就完了。所以我觉得他说得很有道理。',
-     sample_vn:'Em đồng ý. Chỉ có một hiệu sách thì sinh viên không có gì để so sánh, chưa chắc đã thấy sách của anh rẻ. Lỡ có một đối thủ mạnh hơn đến, việc làm ăn của anh coi như xong. Nên em thấy anh nói rất có lý.',
-     note:'Câu hỏi 2 của sách. Bố cục: quan điểm → lý do → kết luận.'},
-    {q_zh:'如果你是建伟，你会怎么做？',
-     q_vn:'Nếu em là Kiến Vĩ, em sẽ làm thế nào?',
-     hint:'Nói lựa chọn của em, dùng 合理 / 不如',
-     sample:'如果我是建伟，我会把价格定得合理一点儿，把服务做得更好。与其挤垮对手，不如跟对手一起进步。',
-     sample_vn:'Nếu em là Kiến Vĩ, em sẽ đặt giá hợp lý hơn một chút, phục vụ tốt hơn. Thay vì chèn ép đối thủ, chi bằng cùng đối thủ tiến bộ.',
-     note:'Câu hỏi 3 của sách. 与其……不如…… là cấu trúc HSK 5 rất hay dùng khi đưa ra lựa chọn.'},
-    {q_zh:'在学习上，你觉得有一个“对手”是好事还是坏事？',
-     q_vn:'Trong học tập, em thấy có một "đối thủ" là chuyện tốt hay xấu?',
-     hint:'Liên hệ bản thân, dùng 促进 / 妨碍 / 促使',
-     sample:'我觉得是好事。我们班有个同学数学比我好，她促使我每天多做几道题。适当的竞争不会妨碍友谊，反而能促进学习。',
-     sample_vn:'Em thấy là chuyện tốt. Lớp em có một bạn giỏi toán hơn em, bạn ấy khiến em mỗi ngày làm thêm mấy bài. Cạnh tranh vừa phải không cản trở tình bạn, trái lại còn thúc đẩy việc học.',
-     note:'Chuyển ý tưởng "nuôi đối thủ" của bài sang đời sống học sinh — ví dụ càng gần càng thuyết phục.'}
+    {q_zh:'课文中，大家都建议建伟把别的书店挤垮，他是怎么做的？',q_vn:'Trong bài, mọi người đều khuyên Kiến Vĩ chèn cho các hiệu sách khác sập, anh ấy đã làm gì?',hint:'Tóm tắt lời khuyên (干脆……挤垮) rồi việc Kiến Vĩ làm (不但没有……反而……)',sample:'亲朋好友建议他干脆把另外三家书店挤垮，可是他不但没有这么做，反而经常帮他们搞营销活动，还借给一家快要倒闭的书店资金。',sample_vn:'Người thân bạn bè khuyên anh dứt khoát chèn cho ba hiệu sách kia sập, nhưng anh không những không làm vậy, trái lại còn thường giúp họ làm tiếp thị, còn cho một hiệu sắp phá sản vay vốn.',note:'Câu hỏi 1 của sách — trả lời bằng cấu trúc tương phản 不但没有……反而…… rất ăn điểm.'},
+    {q_zh:'你同意他的做法吗？你觉得他说得有没有道理？',q_vn:'Em có đồng ý với cách làm của anh ấy không? Em thấy lời anh ấy nói có lý không?',hint:'Nêu quan điểm + 1–2 lý do, dùng 不见得 / 万一',sample:'我同意。只有一家书店，学生没有比较，不见得会觉得他的书便宜。万一有一家更大的书店开进来，他的生意就完了。所以我觉得他说得很有道理。',sample_vn:'Em đồng ý. Chỉ có một hiệu sách thì sinh viên không có gì để so sánh, chưa chắc đã thấy sách của anh rẻ. Lỡ có một hiệu sách lớn hơn mở vào đây, việc làm ăn của anh coi như xong. Nên em thấy anh nói rất có lý.',note:'Câu hỏi 2 của sách. Bố cục: quan điểm → lý do → kết luận.'},
+    {q_zh:'假如你也开了一家小店，旁边的店生意不如你，你会怎么对待它们？',q_vn:'Giả như em cũng mở một cửa hàng nhỏ, các cửa hàng bên cạnh làm ăn không bằng em, em sẽ đối xử với họ thế nào?',hint:'Nói lựa chọn của em, dùng 合理 / 不如',sample:'我不会想办法挤垮它们，而是把价格定得合理一点儿，把服务做得更好。我觉得跟对手一起进步，比一个人垄断市场好得多。',sample_vn:'Em sẽ không tìm cách chèn ép họ, mà đặt giá hợp lý hơn một chút, phục vụ tốt hơn. Em thấy cùng đối thủ tiến bộ tốt hơn nhiều so với một mình độc chiếm thị trường.',note:'Câu hỏi 3 của sách (đặt mình vào vị trí người bán). Dùng 不是……而是…… hoặc 不会……，而是…… để nêu lựa chọn rõ ràng.'},
+    {q_zh:'在学习上，你觉得有一个“对手”是好事还是坏事？',q_vn:'Trong học tập, em thấy có một "đối thủ" là chuyện tốt hay xấu?',hint:'Liên hệ bản thân, dùng 促进 / 妨碍 / 促使',sample:'我觉得是好事。我们班有个同学数学比我好，她促使我每天多做几个练习。适当的竞争不会妨碍友谊，反而能促进学习。',sample_vn:'Em thấy là chuyện tốt. Lớp em có một bạn giỏi toán hơn em, bạn ấy khiến em mỗi ngày làm thêm mấy bài tập. Cạnh tranh vừa phải không cản trở tình bạn, trái lại còn thúc đẩy việc học.',note:'Chuyển ý tưởng "nuôi đối thủ" của bài sang đời sống học sinh — ví dụ càng gần càng thuyết phục.'}
   ]
 };
 
@@ -1609,45 +1495,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn rủ em cuối tuần đi Vạn Lý Trường Thành, nhưng em nghe nói cuối tuần ở đó rất đông.',
-     a:{sp:'Bạn',zh:'周末咱们去趟长城怎么样？',vn:'Cuối tuần mình đi Trường Thành một chuyến nhé?'},
-     need:['Dùng 不如','Đề xuất thời gian khác'],
-     sample:'周末人太多了，不如下周一请一天假再去吧。',
-     samplePy:'Zhōumò rén tài duō le, bùrú xià zhōuyī qǐng yì tiān jià zài qù ba.',
-     sampleVn:'Cuối tuần đông quá, chi bằng thứ hai tuần sau xin nghỉ một hôm rồi đi.',
-     tip:'……，不如…… = chi bằng — đưa ra lựa chọn tốt hơn. Đây là bài 练一练 (1) của sách.'},
-
-    {scene:'Bạn cùng lớp hỏi thành tích học kỳ này của em so với học kỳ trước.',
-     a:{sp:'Bạn',zh:'与上学期相比，你这学期的成绩有进步吗？',vn:'So với học kỳ trước, học kỳ này thành tích của cậu có tiến bộ không?'},
-     need:['Dùng 不如','Nói thật về kết quả'],
-     sample:'没有进步，这学期的成绩还不如上学期呢。',
-     samplePy:'Méiyǒu jìnbù, zhè xuéqī de chéngjì hái bùrú shàng xuéqī ne.',
-     sampleVn:'Không tiến bộ, thành tích học kỳ này còn không bằng học kỳ trước ấy.',
-     tip:'A 还不如 B: nhấn mạnh A còn kém hơn. Bài 练一练 (2) của sách.'},
-
-    {scene:'Chị em than công việc vừa mệt vừa lương thấp.',
-     a:{sp:'Chị',zh:'现在这工作真没意思，又累挣得又少！',vn:'Công việc bây giờ chán thật, vừa mệt vừa kiếm được ít!'},
-     need:['Dùng 干脆','Đưa ra lời khuyên dứt khoát'],
-     sample:'那你干脆换个工作吧，别再勉强自己了。',
-     samplePy:'Nà nǐ gāncuì huàn ge gōngzuò ba, bié zài miǎnqiǎng zìjǐ le.',
-     sampleVn:'Thế thì chị dứt khoát đổi việc đi, đừng gượng ép bản thân nữa.',
-     tip:'干脆 + V + 吧: lời khuyên dứt khoát. Bài 练一练 của sách.'},
-
-    {scene:'Trời trông rất đẹp, bạn bảo không cần mang ô.',
-     a:{sp:'Bạn',zh:'天气看起来不错，不用带伞了。',vn:'Trời trông đẹp mà, không cần mang ô đâu.'},
-     need:['Dùng 万一','Thuyết phục bạn mang ô'],
-     sample:'还是带上吧，万一下雨呢？天气预报说下午有雨。',
-     samplePy:'Háishi dàishang ba, wànyī xià yǔ ne? Tiānqì yùbào shuō xiàwǔ yǒu yǔ.',
-     sampleVn:'Cứ mang theo đi, lỡ mưa thì sao? Dự báo thời tiết nói chiều có mưa.',
-     tip:'万一……呢？ = lỡ … thì sao? Chỉ dùng cho chuyện không mong muốn. Bài 练一练 (3) của sách.'},
-
-    {scene:'Bạn nói: đội bóng lớp mình lần trước thắng rồi, lần này chắc chắn cũng thắng.',
-     a:{sp:'Bạn',zh:'我们班上次赢了，这次肯定也能赢！',vn:'Lớp mình lần trước thắng rồi, lần này chắc chắn cũng thắng!'},
-     need:['Dùng 不见得','Nêu lý do'],
-     sample:'我看不见得，这次的对手比上次强多了，我们还得好好练。',
-     samplePy:'Wǒ kàn bújiàndé, zhè cì de duìshǒu bǐ shàng cì qiáng duō le, wǒmen hái děi hǎohāor liàn.',
-     sampleVn:'Tớ thấy chưa chắc, đối thủ lần này mạnh hơn lần trước nhiều, bọn mình còn phải luyện kỹ.',
-     tip:'我看不见得 = tôi thấy chưa chắc — phản bác nhẹ nhàng, lịch sự.'}
+    {scene:'Bạn rủ em cuối tuần đi công viên, nhưng em biết cuối tuần ở đó rất đông.',a:{sp:'Bạn',zh:'周末咱们去公园玩儿怎么样？',vn:'Cuối tuần mình đi công viên chơi nhé?'},need:['Dùng 不如','Đề xuất thời gian khác'],sample:'周末人太多了，不如下周一请一天假再去吧。',samplePy:'Zhōumò rén tài duō le, bùrú xià zhōuyī qǐng yì tiān jià zài qù ba.',sampleVn:'Cuối tuần đông quá, chi bằng thứ hai tuần sau xin nghỉ một hôm rồi đi.',tip:'……，不如…… = chi bằng — đưa ra lựa chọn tốt hơn. Đây là bài 练一练 (1) của sách.'},
+    {scene:'Bạn cùng lớp hỏi thành tích học kỳ này của em so với học kỳ trước.',a:{sp:'Bạn',zh:'与上学期相比，你这学期的成绩有进步吗？',vn:'So với học kỳ trước, học kỳ này thành tích của cậu có tiến bộ không?'},need:['Dùng 不如','Nói thật về kết quả'],sample:'没有进步，这学期的成绩还不如上学期呢。',samplePy:'Méiyǒu jìnbù, zhè xuéqī de chéngjì hái bùrú shàng xuéqī ne.',sampleVn:'Không tiến bộ, thành tích học kỳ này còn không bằng học kỳ trước ấy.',tip:'A 还不如 B: nhấn mạnh A còn kém hơn. Bài 练一练 (2) của sách.'},
+    {scene:'Chị em than công việc vừa mệt vừa lương thấp.',a:{sp:'Chị',zh:'现在这工作真没意思，又累挣得又少！',vn:'Công việc bây giờ chán thật, vừa mệt vừa kiếm được ít!'},need:['Dùng 干脆','Đưa ra lời khuyên dứt khoát'],sample:'那你干脆换个工作吧，没必要天天这么累。',samplePy:'Nà nǐ gāncuì huàn ge gōngzuò ba, méi bìyào tiāntiān zhème lèi.',sampleVn:'Thế thì chị dứt khoát đổi việc đi, chẳng cần ngày nào cũng mệt thế.',tip:'干脆 + V + 吧: lời khuyên dứt khoát. Bài 练一练 của sách.'},
+    {scene:'Bạn sắp đi phỏng vấn, định chỉ mang một bản CV.',a:{sp:'Bạn',zh:'我就带一份简历去面试，够了吧？',vn:'Tớ mang một bản CV đi phỏng vấn thôi, đủ rồi nhỉ?'},need:['Dùng 万一','Thuyết phục bạn chuẩn bị thêm'],sample:'还是多带两份吧，万一他们要好几份呢？',samplePy:'Háishi duō dài liǎng fèn ba, wànyī tāmen yào hǎo jǐ fèn ne?',sampleVn:'Cứ mang thêm hai bản đi, lỡ họ cần mấy bản thì sao?',tip:'万一……呢？ = lỡ … thì sao? Chỉ dùng cho chuyện không mong muốn. Bài 练一练 (3) của sách.'},
+    {scene:'Bạn nói: đội bóng lớp mình lần trước thắng rồi, lần này chắc chắn cũng thắng.',a:{sp:'Bạn',zh:'我们班上次赢了，这次肯定也能赢！',vn:'Lớp mình lần trước thắng rồi, lần này chắc chắn cũng thắng!'},need:['Dùng 不见得','Nêu lý do'],sample:'这次的对手比上次厉害多了，我们不见得能赢，还得好好练。',samplePy:'Zhè cì de duìshǒu bǐ shàng cì lìhai duō le, wǒmen bújiàndé néng yíng, hái děi hǎohāor liàn.',sampleVn:'Đối thủ lần này lợi hại hơn lần trước nhiều, bọn mình chưa chắc đã thắng, còn phải luyện kỹ.',tip:'不见得 + 能 + V = chưa chắc đã…; phản bác nhẹ nhàng, có lý do đi kèm.'}
   ]
 };
 
@@ -1658,29 +1510,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em ghé nhà cô giáo chơi, đã muộn, em muốn xin phép về.',
-     a:'太晚了，我先走了，不妨碍您休息了。',b:'我走了啊，拜拜！',better:'a',
-     why:'Với cô giáo (người lớn), câu a lịch sự, quan tâm đến người nghe (不妨碍您休息). Câu b quá xuề xoà, chỉ hợp với bạn bè.'},
-
-    {scene:'Bạn thân rủ em đi xem một bộ phim mà em thấy rất dở.',
-     a:'别去了，那部电影太没意思了，不如在家打游戏。',b:'该影片的艺术水平不如预期，建议您慎重考虑。',better:'a',
-     why:'Với bạn thân, câu a tự nhiên (别去了, 太没意思了). Câu b giống lời bình phim trên báo (该影片, 慎重考虑), nói với bạn nghe rất kỳ.'},
-
-    {scene:'Thông báo của siêu thị dán ở cửa ra vào.',
-     a:'本店24小时营业，商品价格合理，欢迎光临。',b:'我们店一直开着，东西也不贵，来吧！',better:'a',
-     why:'Thông báo công khai dùng văn viết: 本店, 24小时营业, 价格合理, 欢迎光临. Câu b là khẩu ngữ, như nói miệng với khách quen.'},
-
-    {scene:'Em nhắc bạn cùng phòng mang ô khi ra ngoài.',
-     a:'带把伞吧，万一下雨呢？',b:'为防止降雨带来不便，建议您随身携带雨具。',better:'a',
-     why:'Với bạn cùng phòng, câu a ngắn gọn, tự nhiên. Câu b giống thông báo của đài khí tượng (为防止, 雨具, 随身携带).'},
-
-    {scene:'Báo cáo kinh doanh của công ty gửi ban giám đốc.',
-     a:'今年公司利润增长了百分之二十，主要原因是市场竞争促进了产品质量的提高。',b:'今年我们赚了不少钱，因为跟别人比着干，东西越做越好了。',better:'a',
-     why:'Báo cáo cần từ ngữ văn viết, chính xác: 利润增长, 百分之二十, 市场竞争, 促进. Câu b là khẩu ngữ (赚了不少钱, 比着干).'},
-
-    {scene:'Bạn nói với em: "Cái điện thoại đắt nhất chắc chắn là tốt nhất." Em không đồng ý.',
-     a:'我看不见得，贵的不一定适合你。',b:'你说得完全不对！',better:'a',
-     why:'Câu a phản bác nhẹ nhàng (不见得, 不一定), vẫn giữ hoà khí. Câu b đúng ngữ pháp nhưng quá gay gắt, dễ làm bạn phật lòng.'}
+    {scene:'Em ghé nhà cô giáo chơi, đã muộn, em muốn xin phép về.',a:'老师，我该回去了，不妨碍您休息了，改天再来看您。',b:'我走了啊，回见！',better:'a',why:'Với cô giáo (người lớn), câu a lịch sự, quan tâm đến người nghe (不妨碍您休息). Câu b quá xuề xoà, chỉ hợp với bạn bè.'},
+    {scene:'Bạn thân rủ em đi xem một bộ phim mà em thấy rất dở.',a:'别去了，那部电影太没意思了，不如在家打游戏。',b:'这部电影的艺术水平不如大家希望的那么高，建议您认真考虑。',better:'a',why:'Với bạn thân, câu a tự nhiên (别去了, 太没意思了). Câu b giống lời bình phim trên báo (艺术水平, 建议您认真考虑), nói với bạn nghe rất kỳ.'},
+    {scene:'Thông báo của siêu thị dán ở cửa ra vào.',a:'本店24小时营业，商品价格合理，欢迎大家来购物。',b:'我们店一直开着，东西也不贵，来吧！',better:'a',why:'Thông báo công khai dùng văn viết: 本店, 24小时营业, 价格合理. Câu b là khẩu ngữ, như nói miệng với khách quen.'},
+    {scene:'Em dặn em trai trước khi đi dã ngoại qua đêm.',a:'多带一件衣服，万一晚上冷呢？',b:'为了避免晚上变冷带来的不便，建议你多带一件衣服。',better:'a',why:'Với em trai, câu a ngắn gọn, tự nhiên. Câu b giống thông báo chính thức (为了避免……带来的不便, 建议).'},
+    {scene:'Báo cáo kinh doanh của công ty gửi ban giám đốc.',a:'今年公司利润增长了百分之二十，主要原因是市场竞争促进了产品质量的提高。',b:'今年我们赚了不少钱，因为跟别人比着干，东西越做越好了。',better:'a',why:'Báo cáo cần từ ngữ văn viết, chính xác: 利润增长, 百分之二十, 市场竞争, 促进. Câu b là khẩu ngữ (赚了不少钱, 比着干).'},
+    {scene:'Bạn nói với em: "Cái điện thoại đắt nhất chắc chắn là tốt nhất." Em không đồng ý.',a:'那可不一定，最贵的不见得最适合你。',b:'你说得完全不对！',better:'a',why:'Câu a phản bác nhẹ nhàng (不一定, 不见得), vẫn giữ hoà khí. Câu b đúng ngữ pháp nhưng quá gay gắt, dễ làm bạn phật lòng.'}
   ]
 };
 

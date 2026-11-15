@@ -1361,28 +1361,21 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP CỤM — lấy từ bảng 词语搭配 của sách (tr. 96) và bài khoá
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'拍',right:'照片'},
   {left:'改进',right:'工作方法'},
   {left:'艰苦的',right:'条件'},
-  {left:'成熟的',right:'瓜果'},
-  {left:'围绕重点',right:'进行讨论'},
-  {left:'始终',right:'保持联系'},
   {left:'插进',right:'洞里'},
   {left:'拦住',right:'去路'},
   {left:'一匹',right:'马'},
   {left:'一场',right:'辩论'},
   {left:'说服',right:'对方'},
-  {left:'系',right:'领带'},
-  {left:'缩小',right:'差距'},
-  {left:'播放',right:'短片'},
   {left:'值得',right:'纪念'},
   {left:'重大',right:'发现'},
   {left:'请求',right:'帮助'},
-  {left:'电影',right:'导演'},
-  {left:'马的',right:'蹄子'},
   {left:'调查结果',right:'显示'}
 ];
 
@@ -1390,56 +1383,32 @@ var matchData = [
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'为了一道数学题，我跟同桌',blank:'争论',post:'了半天，最后只好去问老师。',hint:'(tranh cãi)',ans:'争论'},
-  {pre:'只要不放弃，就有可能创造',blank:'奇迹',post:'。',hint:'(kỳ tích)',ans:'奇迹'},
-  {pre:'今天的班会上，大家',blank:'围绕',post:'“中学生该不该带手机上学”进行了讨论。',hint:'(xoay quanh)',ans:'围绕'},
-  {pre:'一群马在草原上自由地',blank:'奔跑',post:'。',hint:'(phi, chạy nhanh)',ans:'奔跑'},
-  {pre:'马奔跑时',blank:'蹄子',post:'是否着地？',hint:'(móng guốc)',ans:'蹄子'},
-  {pre:'在昨天举行的',blank:'辩论',post:'赛上，他的表现得到了大家的好评。',hint:'(tranh biện)',ans:'辩论'},
-  {pre:'夏天的晚上，池塘里的',blank:'青蛙',post:'叫个不停。',hint:'(con ếch)',ans:'青蛙'},
-  {pre:'妈妈，我都十八岁',blank:'啦',post:'，能照顾好自己，您就放心吧。',hint:'(trợ từ = 了 + 啊)',ans:'啦',exp:'啦 = 了 + 啊, trợ từ cuối câu mang sắc thái nhấn mạnh, thân mật: 我都十八岁啦.'},
-  {pre:'毕业二十年以来，我们',blank:'始终',post:'保持着联系。',hint:'(trước sau vẫn)',ans:'始终',exp:'始终 = từ đầu đến cuối, trước sau vẫn (kéo dài suốt một khoảng thời gian): 始终保持着联系.'},
-  {pre:'两人争论得脸红',blank:'脖子',post:'粗，谁也不让谁。',hint:'(cái cổ)',ans:'脖子'},
-  {pre:'我始终没有办法',blank:'说服',post:'他接受这个结论。',hint:'(thuyết phục)',ans:'说服'},
-  {pre:'这张婚纱照是请',blank:'摄影师',post:'拍的，真不错！',hint:'(nhiếp ảnh gia)',ans:'摄影师'},
-  {pre:'别生他的气了，他',blank:'毕竟',post:'还是个孩子。',hint:'(dù sao, suy cho cùng)',ans:'毕竟',exp:'毕竟 = dù sao, suy cho cùng; nêu lý do quan trọng nhất: 他毕竟还是个孩子.'},
-  {pre:'下课以后，同学们都在',blank:'操场',post:'上打篮球。',hint:'(sân trường)',ans:'操场'},
-  {pre:'我的袜子破了一个',blank:'洞',post:'，得换一双了。',hint:'(lỗ thủng)',ans:'洞'},
-  {pre:'妈妈把花',blank:'插',post:'在花瓶里，房间一下子漂亮多了。',hint:'(cắm)',ans:'插'},
-  {pre:'他们在每个洞里插进了一根木',blank:'棍',post:'。',hint:'(gậy)',ans:'棍'},
-  {pre:'坐车的时候一定要',blank:'系',post:'好安全带。',hint:'(thắt — đọc jì)',ans:'系'},
-  {pre:'草原上有几',blank:'匹',post:'白马在吃草。',hint:'(lượng từ cho ngựa)',ans:'匹',exp:'匹 là lượng từ cho ngựa: 几匹白马.'},
-  {pre:'前面不知道发生了什么事，路被',blank:'拦',post:'住了。',hint:'(chặn)',ans:'拦'},
-  {pre:'这位导演',blank:'拍',post:'过二十几部电影，得过好几项国际大奖。',hint:'(quay phim)',ans:'拍'},
-  {pre:'我和他之间还有很大的',blank:'差距',post:'，我要向他学习，更加努力。',hint:'(khoảng cách trình độ)',ans:'差距'},
-  {pre:'调查',blank:'显示',post:'，只有37%的人愿意回到没有手机的时代。',hint:'(cho thấy)',ans:'显示'},
-  {pre:'他终于',blank:'意识',post:'到了自己的错误，向老师道了歉。',hint:'(nhận ra)',ans:'意识'},
-  {pre:'爷爷年轻的时候，生活条件非常',blank:'艰苦',post:'。',hint:'(gian khổ)',ans:'艰苦'},
-  {pre:'他们做了很多次',blank:'试验',post:'，终于成功了。',hint:'(thử nghiệm)',ans:'试验'},
-  {pre:'来中国半年以后，我',blank:'逐渐',post:'习惯了这里的生活。',hint:'(dần dần)',ans:'逐渐',exp:'逐渐 = dần dần (thay đổi từ từ, tự nhiên): 逐渐习惯了.'},
-  {pre:'听了大家的意见以后，老师',blank:'改进',post:'了上课的方法。',hint:'(cải tiến)',ans:'改进'},
-  {pre:'几年不见，他显得',blank:'成熟',post:'多了。',hint:'(chín chắn)',ans:'成熟'},
-  {pre:'他们',blank:'兄弟',post:'俩长得一模一样，我经常认错。',hint:'(anh em)',ans:'兄弟'}
+  {pre:'医生说他再也站不起来了，可他经过两年的努力又能走路了，大家都说这是一个',blank:'奇迹',post:'。',hint:'(kỳ tích, điều kỳ diệu)',ans:'奇迹',exp:'奇迹 = kỳ tích, điều tưởng không thể xảy ra: 出现奇迹, 创造奇迹.'},
+  {pre:'天气突然变冷，我出门时穿得太少，',blank:'脖子',post:'冷得不行。',hint:'(cổ)',ans:'脖子',exp:'脖子 = cái cổ; 冷得不行 (bài 4) = lạnh không chịu nổi.'},
+  {pre:'他是一名',blank:'摄影师',post:'，每天背着照相机到处拍照。',hint:'(nhiếp ảnh gia)',ans:'摄影师',exp:'摄影师 = người làm nghề chụp ảnh, quay phim chuyên nghiệp.'},
+  {pre:'一下课，孩子们就跑到',blank:'操场',post:'上踢足球去了。',hint:'(sân trường, sân thể thao)',ans:'操场',exp:'操场 = sân tập thể thao của trường; đi với 上: 在操场上.'},
+  {pre:'他把小狗',blank:'系',post:'在门口的树上，就进去买东西了。',hint:'(buộc — đọc jì)',ans:'系',exp:'系 (jì) = buộc, thắt: 系在树上, 系好绳子. Đọc xì khi là danh từ “khoa” (中文系).'},
+  {pre:'他刚要出门，就被妈妈',blank:'拦',post:'住了：“作业写完了吗？”',hint:'(chặn, cản lại)',ans:'拦',exp:'拦住 = chặn lại, không cho đi tiếp; 被……拦住 là câu bị động.'},
+  {pre:'我永远忘不了我们班获得第一名的那一',blank:'瞬间',post:'。',hint:'(khoảnh khắc)',ans:'瞬间',exp:'瞬间 = khoảnh khắc rất ngắn: 那一瞬间, 在这一瞬间.'},
+  {pre:'这块手表是爷爷留给我的，很有',blank:'纪念',post:'意义。',hint:'(kỷ niệm)',ans:'纪念',exp:'有纪念意义 = có ý nghĩa kỷ niệm; 纪念 còn làm động từ: 纪念这一天.'},
+  {pre:'他一直没有',blank:'意识',post:'到自己的错误，还觉得是别人不对。',hint:'(ý thức, nhận ra)',ans:'意识',exp:'意识到 + sự việc = nhận ra, ý thức được (thường là điều quan trọng trước đó chưa thấy).'},
+  {pre:'那时候家里没有钱，生活非常',blank:'艰苦',post:'，但是父母从来没让我们饿过。',hint:'(gian khổ, vất vả)',ans:'艰苦',exp:'艰苦 = gian khổ, thiếu thốn: 生活艰苦, 艰苦的条件.'},
+  {pre:'经过上百次的',blank:'试验',post:'，他们终于成功了。',hint:'(thử nghiệm)',ans:'试验',exp:'试验 = làm thử để kiểm tra kết quả (kỹ thuật, phương pháp mới); 上百次 = hơn trăm lần.'},
+  {pre:'今晚八点电视上会',blank:'播放',post:'那场足球比赛。',hint:'(phát sóng, chiếu)',ans:'播放',exp:'播放 = phát (trên TV, radio, máy tính): 播放比赛, 播放电影.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (毕竟 · 逐渐 · 或许) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['不过','摄影师','毕竟是','摄影师','，','主意','还是有的','。'],ans:'不过摄影师毕竟是摄影师，主意还是有的。',audio:'不过摄影师毕竟是摄影师，主意还是有的。'},
-  {words:['别生他的气了','，','他毕竟','还是个','孩子','。'],ans:'别生他的气了，他毕竟还是个孩子。',audio:'别生他的气了，他毕竟还是个孩子。'},
-  {words:['经过','艰苦的试验','，','电影拍摄技术','逐渐','改进、成熟','。'],ans:'经过艰苦的试验，电影拍摄技术逐渐改进、成熟。',audio:'经过艰苦的试验，电影拍摄技术逐渐改进、成熟。'},
-  {words:['来中国半年以后','，','我','逐渐','习惯了','这里的生活','。'],ans:'来中国半年以后，我逐渐习惯了这里的生活。',audio:'来中国半年以后，我逐渐习惯了这里的生活。'},
-  {words:['虽然','以前她不支持你','，','但或许','这次会有变化','。'],ans:'虽然以前她不支持你，但或许这次会有变化。',audio:'虽然以前她不支持你，但或许这次会有变化。'},
-  {words:['他','没来上课','，','或许是','生病了','。'],ans:'他没来上课，或许是生病了。',audio:'他没来上课，或许是生病了。'},
-  {words:['两个人','围绕这个问题','进行了','一场','辩论','。'],ans:'两个人围绕这个问题进行了一场辩论。',audio:'两个人围绕这个问题进行了一场辩论。'},
-  {words:['马','奔跑时','始终','有一蹄','着地','。'],ans:'马奔跑时始终有一蹄着地。',audio:'马奔跑时始终有一蹄着地。'},
-  {words:['两人','争论得','脸红脖子粗','，','谁也','说服不了','谁','。'],ans:'两人争论得脸红脖子粗，谁也说服不了谁。',audio:'两人争论得脸红脖子粗，谁也说服不了谁。'},
-  {words:['请','把','木棍','插进','洞里','。'],ans:'请把木棍插进洞里。',audio:'请把木棍插进洞里。'},
-  {words:['拦路的细线','被','马','一根一根地','撞断了','。'],ans:'拦路的细线被马一根一根地撞断了。',audio:'拦路的细线被马一根一根地撞断了。'},
-  {words:['调查','显示','，','只有37%的人','愿意','回到没有手机的时代','。'],ans:'调查显示，只有37%的人愿意回到没有手机的时代。',audio:'调查显示，只有37%的人愿意回到没有手机的时代。'},
-  {words:['连','麦布里奇','也','弄不清楚','。'],ans:'连麦布里奇也弄不清楚。',audio:'连麦布里奇也弄不清楚。'},
-  {words:['相机','连续','拍下了','24张','相片','。'],ans:'相机连续拍下了24张相片。',audio:'相机连续拍下了24张相片。'}
+  {words:['你','别','生他的气了','，','他','毕竟','还是个','孩子','。'],ans:'你别生他的气了，他毕竟还是个孩子。',audio:'你别生他的气了，他毕竟还是个孩子。'},
+  {words:['学了','一年','以后','，','我的','汉语','逐渐','流利起来了','。'],ans:'学了一年以后，我的汉语逐渐流利起来了。',audio:'学了一年以后，我的汉语逐渐流利起来了。'},
+  {words:['这个','问题','或许','可以','去问问','王老师','。'],ans:'这个问题或许可以去问问王老师。',audio:'这个问题或许可以去问问王老师。',alt:['或许这个问题可以去问问王老师。']},
+  {words:['虽然','失败了','很多次','，','但','他','始终','没有','放弃','。'],ans:'虽然失败了很多次，但他始终没有放弃。',audio:'虽然失败了很多次，但他始终没有放弃。'},
+  {words:['下过雨','以后','，','河边','出现了','好几只','青蛙','。'],ans:'下过雨以后，河边出现了好几只青蛙。',audio:'下过雨以后，河边出现了好几只青蛙。'},
+  {words:['他','向','公司','请求','再给他','一次','机会','。'],ans:'他向公司请求再给他一次机会。',audio:'他向公司请求再给他一次机会。'},
+  {words:['经过','这件事','，','他','变得','成熟','多了','。'],ans:'经过这件事，他变得成熟多了。',audio:'经过这件事，他变得成熟多了。'},
+  {words:['这两个','城市的','生活水平','差距','越来越','小了','。'],ans:'这两个城市的生活水平差距越来越小了。',audio:'这两个城市的生活水平差距越来越小了。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1447,44 +1416,18 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'电影频道每天晚上都____一些原版电影。',opts:['播放','发表','放弃','出版'],ans:0,
-   exp:'Chiếu phim trên TV → 播放. 发表 là đăng (bài báo, ý kiến); 放弃 là từ bỏ; 出版 là xuất bản sách.'},
-  {wrong:'我们一起拍张照片，留个____吧。',opts:['记录','纪念','记忆','经验'],ans:1,
-   exp:'留个纪念 = để làm kỷ niệm (cụm cố định). 记录 là ghi chép; 记忆 là trí nhớ; 经验 là kinh nghiệm.'},
-  {wrong:'这部电影的____是一位年轻人，这是他拍的第一部电影。',opts:['演员','观众','导演','记者'],ans:2,
-   exp:'Người quay (拍) bộ phim là 导演. 演员 đóng phim, 观众 xem phim, 记者 đưa tin.'},
-  {wrong:'看到妈妈的那一____，我忍不住哭了。',opts:['瞬间','时代','期间','阶段'],ans:0,
-   exp:'那一瞬间 = khoảnh khắc ấy (cực ngắn). 时代 là thời đại; 期间 là trong khoảng thời gian (thường dài); 阶段 là giai đoạn — đều không đi với 那一 để chỉ một khoảnh khắc.'},
-  {wrong:'他向老师____原谅，保证以后再也不迟到了。',opts:['请求','邀请','请客','申请'],ans:0,
-   exp:'请求原谅 = xin tha thứ (đề nghị lịch sự). 邀请 là mời; 请客 là mời ăn, khao; 申请 là làm đơn xin (申请签证), không đi với 原谅.'},
-  {wrong:'虽然以前她不支持你，但____这次会有变化。',opts:['或者','或许','还是','要是'],ans:1,
-   exp:'Phỏng đoán "có lẽ" → 或许. 或者 là "hoặc" (nối hai lựa chọn); 还是 dùng trong câu hỏi lựa chọn; 要是 là "nếu".'},
-  {wrong:'选大学专业是人生中一个____的决定。',opts:['重大','严重','高大','巨大'],ans:0,
-   exp:'重大 + 决定 / 发现 / 影响: to lớn và quan trọng. 严重 dùng cho việc xấu (病很严重); 高大 tả người, nhà cao to; 巨大 thiên về kích thước, số lượng (巨大的变化), không đi với 决定.'},
-  {wrong:'1872年的一天，在美国____的一个酒店里，两个人进行了一场辩论。',opts:['巴黎','加利福尼亚州','英国','亚太地区'],ans:1,
-   exp:'Theo bài khoá, cuộc tranh luận diễn ra ở bang California (加利福尼亚州) nước Mỹ. 巴黎 là nơi anh em Lumière chiếu phim; 英国 là quê của Muybridge; 亚太地区 là khu vực châu Á – Thái Bình Dương — cả ba đều không nằm "trong nước Mỹ".'},
-  {wrong:'____认为，马在跳起时四蹄应该都是不落地的。',opts:['科恩','麦布里奇','斯坦福','卢米埃尔'],ans:2,
-   exp:'Người cho rằng bốn móng ngựa đều rời đất là 斯坦福 (Stanford). 科恩 (Cohen) nghĩ ngược lại; 麦布里奇 là nhiếp ảnh gia được mời phân xử; 卢米埃尔 là anh em người Pháp chiếu phim năm 1895.'},
-  {wrong:'相片显示：马奔跑时始终有一蹄着地，____赢了。',opts:['斯坦福','科恩','麦布里奇','卢米埃尔'],ans:1,
-   exp:'Cohen (科恩) cho rằng luôn có một móng chạm đất — ảnh chứng minh ông đúng, nên ông thắng.'},
-  {wrong:'两人谁也说服不了谁，就请英国摄影师____来判断。',opts:['麦布里奇','斯坦福','科恩','卢米埃尔'],ans:0,
-   exp:'Nhiếp ảnh gia người Anh được mời đến phân xử là 麦布里奇 (Muybridge).'},
-  {wrong:'1895年12月28日，法国人____兄弟在巴黎第一次向公众播放了短片。',opts:['斯坦福','科恩','麦布里奇','卢米埃尔'],ans:3,
-   exp:'Anh em người Pháp chiếu phim ở Paris năm 1895 là 卢米埃尔兄弟 (anh em nhà Lumière).'},
-  {wrong:'几年不见，他____成熟多了。',opts:['显示','显得','表示','表现'],ans:1,
-   exp:'显得 + tính từ (成熟) = trông có vẻ. 显示 đi với danh từ hoặc câu nhỏ; 表示 là bày tỏ; 表现 phải dùng 表现得 + tính từ.'},
-  {wrong:'毕业二十年以来，我们____保持着联系。',opts:['终于','始终','总算','最后'],ans:1,
-   exp:'Duy trì suốt hai mươi năm → 始终. 终于 / 总算 / 最后 chỉ kết quả cuối cùng sau thời gian chờ đợi, không đi với 保持着.'},
-  {wrong:'我们之间还有很大的____，我要向他学习，更加努力。',opts:['距离','差距','区别','差不多'],ans:1,
-   exp:'Chênh lệch về trình độ → 差距. 距离 là khoảng cách không gian, thời gian; 区别 là chỗ khác nhau (không nói "học hỏi để thu hẹp区别"); 差不多 là "gần như".'},
-  {wrong:'在昨天举行的____赛上，他的表现得到了大家的好评。',opts:['争论','辩论','讨论','议论'],ans:1,
-   exp:'Cuộc thi tranh biện là 辩论赛. Không có 争论赛, 讨论赛 hay 议论赛.'},
-  {wrong:'吃中餐____西餐都可以，只是我不能吃太辣的。',opts:['或许','或者','还是','而且'],ans:1,
-   exp:'Nối hai lựa chọn trong câu trần thuật → 或者. 或许 là "có lẽ"; 还是 dùng trong câu hỏi lựa chọn; 而且 là "hơn nữa". (Câu 2.4 trong phần 练习 của SGK.)'},
-  {wrong:'不过摄影师____是摄影师，主意还是有的。',opts:['究竟','毕竟','终于','竟然'],ans:1,
-   exp:'A毕竟是A: dù sao vẫn là… (nêu bản chất không đổi). 究竟 dùng trong câu hỏi; 终于 là "cuối cùng thì" sau chờ đợi; 竟然 là "không ngờ".'},
-  {wrong:'这项运动首先在亚太地区流行，并____受到世界各地人们的欢迎。',opts:['突然','马上','逐渐','立刻'],ans:2,
-   exp:'Được yêu thích TỪNG BƯỚC, lan dần ra thế giới → 逐渐. 突然 / 马上 / 立刻 đều chỉ việc xảy ra nhanh, tức thì — trái với "từ từ".'}
+  {wrong:'检查结果____，他的身体非常健康。',opts:['显示','显得','表现','表达'],ans:0,exp:'Chủ ngữ là kết quả, số liệu → 显示 + một câu (cho thấy…). 显得 chỉ đi với tính từ; 表现, 表达 cần chủ ngữ là người.'},
+  {wrong:'病了一个星期，他____很累，脸色也不好。',opts:['显得','显示','似的','表示'],ans:0,exp:'显得 + tính từ = trông có vẻ (很累). 显示 cần tân ngữ là một sự việc; 似的 đứng cuối cụm so sánh; 表示 là bày tỏ.'},
+  {wrong:'下个月学校有一场____比赛，我们班选了我和小王参加。',opts:['辩论','争论','吵架','讨论'],ans:0,exp:'Cuộc thi có tổ chức, hai bên trình bày lý lẽ → 辩论比赛. 争论, 吵架 là cãi nhau tự phát, không thành “cuộc thi”; không nói 讨论比赛.'},
+  {wrong:'会上大家____得很厉害，最后也没有得出结论。',opts:['争论','说服','商量','讨厌'],ans:0,exp:'Mỗi người giữ ý mình, cãi qua cãi lại → 争论得很厉害. 说服 cần tân ngữ người; 商量 là bàn bạc nhẹ nhàng; 讨厌 là ghét.'},
+  {wrong:'从这儿____向东走，过两个红绿灯就到了。',opts:['一直','始终','逐渐','毕竟'],ans:0,exp:'Chỉ đường, đi thẳng một mạch → 一直. 始终 nói trạng thái không đổi từ đầu đến cuối một quá trình, không dùng chỉ hướng; 逐渐, 毕竟 không hợp.'},
+  {wrong:'你别怪他了，他____是第一次做饭，能做得这么好已经很不错了。',opts:['毕竟','居然','果然','究竟'],ans:0,exp:'Nêu lý do cốt lõi để thông cảm → 毕竟 (dù sao thì). 居然, 果然 nói kết quả bất ngờ / đúng dự đoán; 究竟 dùng trong câu hỏi.'},
+  {wrong:'来中国半年以后，我____习惯了这里的饭菜。',opts:['逐渐','立刻','忽然','赶紧'],ans:0,exp:'Thay đổi diễn ra từ từ qua thời gian → 逐渐. 立刻, 忽然 chỉ việc xảy ra ngay/bất ngờ; 赶紧 là vội vàng làm.'},
+  {wrong:'小王今天没来上班，____是生病了。',opts:['或许','或者','毕竟','始终'],ans:0,exp:'Phỏng đoán không chắc → 或许 (có lẽ). 或者 là liên từ “hoặc” nối hai lựa chọn; 毕竟, 始终 không mang nghĩa phỏng đoán.'},
+  {wrong:'草地上有一____白马在吃草。',opts:['匹','头','条','张'],ans:0,exp:'Lượng từ của ngựa → 匹. 头 dùng cho bò, lợn; 条 cho vật dài (cá, đường); 张 cho vật phẳng.'},
+  {wrong:'拍电影的时候，演员们都要听____的安排。',opts:['导演','观众','兄弟','奇迹'],ans:0,exp:'Người chỉ đạo việc quay phim → 导演. 观众 là người xem; 兄弟, 奇迹 không hợp nghĩa.'},
+  {wrong:'大家提的意见都很好，我们会根据这些意见____学习方法。',opts:['改进','成熟','进行','说服'],ans:0,exp:'改进 + phương pháp/công việc = cải tiến cho tốt hơn. 成熟 là tính từ; 进行 đi với hoạt động (进行讨论); 说服 đi với người.'},
+  {wrong:'不管我怎么说，都____不了他，他还是要辞职。',opts:['说服','说明','告诉','通知'],ans:0,exp:'Làm người khác đổi ý theo mình → 说服 (说服不了他). 说明 là giải thích sự việc; 告诉, 通知 không dùng với 不了 theo nghĩa này.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1492,29 +1435,21 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var translateData = [
   {vi:'Dù sao cậu ấy cũng mới lên lớp 10, cậu đừng đòi hỏi cậu ấy cao như thế.',zh:'他毕竟刚上高一，你就别对他要求那么高啦。',py:'Tā bìjìng gāng shàng gāoyī, nǐ jiù bié duì tā yāoqiú nàme gāo la.',goiY:['毕竟','对……要求','啦'],giai:'毕竟 = dù sao thì, suy cho cùng — nêu lý do cốt lõi để thông cảm; 啦 = 了 + 啊, làm giọng khuyên nhẹ nhàng hơn.'},
-  {vi:'Lớp em tổ chức một buổi tranh biện xoay quanh chủ đề “học sinh có nên mang điện thoại đến trường không”, nhưng từ đầu đến cuối hai bên vẫn không thuyết phục được nhau.',zh:'我们班围绕“学生该不该带手机上学”举行了一场辩论，可是双方始终没能说服对方。',py:'Wǒmen bān wéirào “xuésheng gāi bu gāi dài shǒujī shàngxué” jǔxíng le yì chǎng biànlùn, kěshì shuāngfāng shǐzhōng méi néng shuōfú duìfāng.',goiY:['围绕','辩论','始终','说服'],giai:'围绕 + chủ đề = xoay quanh…; 始终 = từ đầu đến cuối, trước sau vẫn (hay đi với phủ định 没/不).'},
-  {vi:'Tuy hồi mới lên cấp ba em rất không quen ở nội trú, nhưng rồi dần dần cũng thích nghi được với cuộc sống khá vất vả này.',zh:'虽然刚上高中时我很不习惯住校，但是逐渐地也适应了这种比较艰苦的生活。',py:'Suīrán gāng shàng gāozhōng shí wǒ hěn bù xíguàn zhùxiào, dànshì zhújiàn de yě shìyìng le zhè zhǒng bǐjiào jiānkǔ de shēnghuó.',goiY:['虽然……但是……','逐渐','艰苦'],giai:'逐渐 + động từ = dần dần (thay đổi từ từ, tự nhiên); 艰苦 = gian khổ, vất vả — thường đi với 生活/条件/环境.'},
+  {vi:'Lớp em tổ chức một buổi tranh biện xoay quanh chủ đề “trước kỳ thi có nên thức khuya không”, nhưng từ đầu đến cuối các bạn hai bên vẫn không thuyết phục được nhau.',zh:'我们班围绕“考试前该不该熬夜”举行了一场辩论，可是两边的同学始终没能说服对方。',py:'Wǒmen bān wéirào “kǎoshì qián gāi bu gāi áoyè” jǔxíng le yì chǎng biànlùn, kěshì liǎng biān de tóngxué shǐzhōng méi néng shuōfú duìfāng.',goiY:['围绕','辩论','始终','说服'],giai:'围绕 + chủ đề = xoay quanh…; 始终 = từ đầu đến cuối, trước sau vẫn (hay đi với phủ định 没/不).'},
+  {vi:'Tuy hồi mới vào đại học em rất không quen sống một mình bên ngoài, nhưng rồi dần dần cũng thích nghi được với cuộc sống khá vất vả này.',zh:'虽然刚上大学时我很不习惯一个人在外面住，但是逐渐地也适应了这种比较艰苦的生活。',py:'Suīrán gāng shàng dàxué shí wǒ hěn bù xíguàn yí ge rén zài wàimiàn zhù, dànshì zhújiàn de yě shìyìng le zhè zhǒng bǐjiào jiānkǔ de shēnghuó.',goiY:['虽然……但是……','逐渐','艰苦'],giai:'逐渐 + động từ = dần dần (thay đổi từ từ, tự nhiên); 艰苦 = gian khổ, vất vả — thường đi với 生活/条件/环境.'},
   {vi:'Ngày nào tan học cậu cũng chạy bộ ở sân trường, có lẽ đó chính là lý do sức khỏe cậu ngày càng tốt lên.',zh:'你每天放学都在操场跑步，或许这就是你身体越来越好的原因吧。',py:'Nǐ měi tiān fàngxué dōu zài cāochǎng pǎobù, huòxǔ zhè jiù shì nǐ shēntǐ yuè lái yuè hǎo de yuányīn ba.',goiY:['操场','或许……吧','越来越'],giai:'或许 = có lẽ, phỏng đoán không chắc chắn, hay đi với 吧 cuối câu; 越来越 + tính từ = ngày càng….'},
-  {vi:'Kết quả lần thi thử này cho thấy khoảng cách giữa em và người đứng đầu vẫn còn rất lớn, vì vậy em phải cải tiến phương pháp học.',zh:'这次模拟考试的成绩显示，我和第一名之间的差距还很大，所以我必须改进学习方法。',py:'Zhè cì mónǐ kǎoshì de chéngjì xiǎnshì, wǒ hé dì-yī míng zhījiān de chājù hái hěn dà, suǒyǐ wǒ bìxū gǎijìn xuéxí fāngfǎ.',goiY:['显示','差距','所以','改进'],giai:'显示 = cho thấy (chủ ngữ là kết quả, số liệu); A 和 B 之间的差距 = khoảng cách giữa A và B; 改进 + phương pháp/kỹ thuật = cải tiến.'},
-  {vi:'Từ khi lên cấp ba mê chụp ảnh, tay nghề nhiếp ảnh của anh em dần dần vững vàng, giờ đã thành một nhiếp ảnh gia có chút tiếng tăm.',zh:'自从上高中爱上拍照以后，哥哥的摄影技术逐渐成熟起来，如今已经成了一名小有名气的摄影师。',py:'Zìcóng shàng gāozhōng ài shang pāizhào yǐhòu, gēge de shèyǐng jìshù zhújiàn chéngshú qǐlái, rújīn yǐjīng chéng le yì míng xiǎo yǒu míngqì de shèyǐngshī.',goiY:['自从……以后','逐渐成熟起来','如今','摄影师'],giai:'逐渐 + tính từ + 起来 = dần dần trở nên…; 自从……以后 = kể từ khi… (mốc quá khứ kéo dài đến nay), vế sau hay có 如今/现在.'},
-  {vi:'Dù sao cậu ấy cũng là anh em tốt cùng tôi lớn lên từ nhỏ; cho dù lần này cậu ấy mắc lỗi, tôi cũng không thể bỏ mặc cậu ấy lúc khó khăn nhất.',zh:'他毕竟是我从小一起长大的好兄弟，即使他这次犯了错，我也不能在他最困难的时候不管他。',py:'Tā bìjìng shì wǒ cóngxiǎo yìqǐ zhǎngdà de hǎo xiōngdì, jíshǐ tā zhè cì fàn le cuò, wǒ yě bù néng zài tā zuì kùnnan de shíhou bù guǎn tā.',goiY:['毕竟','即使……也……','兄弟'],giai:'毕竟 nêu lý do cốt lõi (dù sao cũng là…); 即使 A，也 B = cho dù A thì vẫn B — quyết định ở vế sau không thay đổi.'},
-  {vi:'Nếu muốn bố mẹ đồng ý cho em đi trại hè, thay vì cãi lý với bố mẹ, chi bằng bình tĩnh nói ra đề nghị của mình, biết đâu bố mẹ sẽ đồng ý.',zh:'如果你想让爸妈同意你去参加夏令营，与其跟他们争论，不如冷静地提出请求，或许他们会答应的。',py:'Rúguǒ nǐ xiǎng ràng bà mā tóngyì nǐ qù cānjiā xiàlìngyíng, yǔqí gēn tāmen zhēnglùn, bùrú lěngjìng de tíchū qǐngqiú, huòxǔ tāmen huì dāying de.',goiY:['与其……不如……','争论','请求','或许'],giai:'与其 A，不如 B = thay vì A, chi bằng B; 提出请求 = đưa ra đề nghị; 或许 = có lẽ, biết đâu (chỉ khả năng).'},
-  {vi:'Khoảnh khắc cả lớp cùng nhảy lên trong ngày tốt nghiệp đã được chụp lại; mỗi lần nhìn tấm ảnh ấy, em lại nhớ về quãng thời gian tuy vất vả mà rất ấm áp.',zh:'毕业那天全班跳起来的瞬间被拍了下来，每当看到这张照片，我都会想起那段虽然艰苦却很温暖的日子。',py:'Bìyè nà tiān quán bān tiào qǐlái de shùnjiān bèi pāi le xiàlái, měi dāng kàndào zhè zhāng zhàopiàn, wǒ dōu huì xiǎngqǐ nà duàn suīrán jiānkǔ què hěn wēnnuǎn de rìzi.',goiY:['瞬间','虽然……却……','艰苦','温暖'],giai:'虽然……却…… có thể nằm gọn trong cụm định ngữ (虽然艰苦却很温暖的日子); 瞬间 = khoảnh khắc, 被拍了下来 = được chụp lại.'},
-  {vi:'Lần thi hỏng này dù sao cũng chẳng phải thất bại gì to tát; chỉ cần em nhận ra điểm yếu của mình và dần dần cải thiện, biết đâu lần sau sẽ đạt được kết quả như mong muốn.',zh:'这次考砸毕竟不是什么重大的失败，只要你意识到自己的不足并逐渐改进，下次或许就能考出理想的成绩。',py:'Zhè cì kǎo zá bìjìng bú shì shénme zhòngdà de shībài, zhǐyào nǐ yìshí dào zìjǐ de bùzú bìng zhújiàn gǎijìn, xià cì huòxǔ jiù néng kǎo chū lǐxiǎng de chéngjì.',goiY:['毕竟','只要……就……','意识到','或许'],giai:'Ba vế: 毕竟 (an ủi, nêu bản chất) → 只要……就…… (điều kiện đủ) → 或许 (khả năng); dịch “dù sao…, chỉ cần…, biết đâu…”.'}
+  {vi:'Dù sao cậu ấy cũng là anh em tốt cùng tôi lớn lên từ nhỏ; cho dù lần này cậu ấy làm sai, tôi cũng không thể bỏ mặc cậu ấy lúc khó khăn nhất.',zh:'他毕竟是我从小一起长大的好兄弟，即使他这次做错了事，我也不能在他最困难的时候不管他。',py:'Tā bìjìng shì wǒ cóngxiǎo yìqǐ zhǎngdà de hǎo xiōngdi, jíshǐ tā zhè cì zuòcuò le shì, wǒ yě bù néng zài tā zuì kùnnan de shíhou bù guǎn tā.',goiY:['毕竟','即使……也……','兄弟'],giai:'毕竟 nêu lý do cốt lõi (dù sao cũng là…); 即使 A，也 B = cho dù A thì vẫn B — quyết định ở vế sau không thay đổi.'},
+  {vi:'Khoảnh khắc cả lớp cùng nhảy lên trong ngày tốt nghiệp đã được chụp lại; mỗi lần nhìn tấm ảnh ấy, em lại nhớ về quãng thời gian tuy vất vả mà rất ấm áp.',zh:'毕业那天全班跳起来的瞬间被拍了下来，每当看到这张照片，我都会想起那段虽然艰苦却很温暖的日子。',py:'Bìyè nà tiān quán bān tiào qǐlái de shùnjiān bèi pāi le xiàlái, měi dāng kàndào zhè zhāng zhàopiàn, wǒ dōu huì xiǎngqǐ nà duàn suīrán jiānkǔ què hěn wēnnuǎn de rìzi.',goiY:['瞬间','虽然……却……','艰苦','温暖'],giai:'虽然……却…… có thể nằm gọn trong cụm định ngữ (虽然艰苦却很温暖的日子); 瞬间 = khoảnh khắc, 被拍了下来 = được chụp lại.'}
 ];
 
-// Chiều Trung → Việt — câu của bài khoá
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Stanford cho rằng khi ngựa phi, cả bốn vó sẽ cùng lúc rời khỏi mặt đất, còn Cohen lại cho rằng lúc nào cũng có một vó chạm đất.',zh:'斯坦福认为马奔跑时四蹄会同时离地，科恩却认为总有一蹄着地。',py:'Sītǎnfú rènwéi mǎ bēnpǎo shí sì tí huì tóngshí lí dì, Kē\'ēn què rènwéi zǒng yǒu yì tí zháodì.',goiY:['却 = lại (đối lập)','奔跑 = chạy nhanh, phi'],giai:'却 đặt sau chủ ngữ thứ hai để đối lập hai quan điểm → “còn… lại…”; 蹄 dùng một mình trong văn viết = 蹄子 (vó).'},
-  {vi:'Ảnh chụp cho thấy khi ngựa phi luôn có một vó chạm đất, đủ thấy Cohen đã đúng.',zh:'照片显示，马奔跑时始终有一只蹄子着地，可见科恩是对的。',py:'Zhàopiàn xiǎnshì, mǎ bēnpǎo shí shǐzhōng yǒu yì zhī tízi zháodì, kějiàn Kē\'ēn shì duì de.',goiY:['显示 = cho thấy','可见 = đủ thấy','始终 = luôn luôn'],giai:'显示 thường có chủ ngữ là ảnh/số liệu/khảo sát; 可见 rút ra kết luận → “đủ thấy, chứng tỏ”.'},
-  {vi:'Hai người tranh cãi mãi không ngã ngũ, bèn mời nhiếp ảnh gia Muybridge đến, nhờ ông dùng ảnh chụp để phân định ai đúng ai sai.',zh:'两人争论不下，于是请来摄影师麦布里奇，请求他用照片来判断谁对谁错。',py:'Liǎng rén zhēnglùn bú xià, yúshì qǐng lái shèyǐngshī Màibùlǐqí, qǐngqiú tā yòng zhàopiàn lái pànduàn shéi duì shéi cuò.',goiY:['于是 = thế là, bèn','请求 = nhờ, đề nghị','争论不下 = tranh cãi không ngã ngũ'],giai:'于是 nối hành động xảy ra do vế trước; V + 不下 = không phân được thắng thua → “tranh cãi mãi không ngã ngũ”.'},
-  {vi:'Stanford và Cohen tranh luận xoay quanh việc khi ngựa phi thì vó có chạm đất hay không, nhưng từ đầu đến cuối chẳng ai thuyết phục được ai.',zh:'斯坦福和科恩围绕马奔跑时蹄子是否着地展开了争论，但是始终谁也说服不了谁。',py:'Sītǎnfú hé Kē\'ēn wéirào mǎ bēnpǎo shí tízi shìfǒu zháodì zhǎnkāi le zhēnglùn, dànshì shǐzhōng shéi yě shuōfú bu liǎo shéi.',goiY:['围绕 = xoay quanh','始终 = từ đầu đến cuối','是否 = có… hay không'],giai:'是否 = có… hay không (văn viết của 是不是); 始终 nhấn mạnh tình trạng không đổi suốt quá trình.'},
+  {vi:'Stanford cho rằng khi ngựa phi, cả bốn vó sẽ cùng lúc rời khỏi mặt đất, còn Cohen lại cho rằng nhất định có một vó chạm đất.',zh:'斯坦福认为马奔跑时四蹄会同时离地，科恩却认为一定有一只蹄子着地。',py:'Sītǎnfú rènwéi mǎ bēnpǎo shí sì tí huì tóngshí lí dì, Kē\'ēn què rènwéi yídìng yǒu yì zhī tízi zháodì.',goiY:['却 = lại (đối lập)','奔跑 = chạy nhanh, phi'],giai:'却 đặt sau chủ ngữ thứ hai để đối lập hai quan điểm → “còn… lại…”; 蹄 dùng một mình trong văn viết = 蹄子 (vó).'},
+  {vi:'Ảnh chụp cho thấy khi ngựa phi luôn có một vó chạm đất, điều đó chứng tỏ Cohen đã đúng.',zh:'照片显示，马奔跑时始终有一只蹄子着地，这说明科恩是对的。',py:'Zhàopiàn xiǎnshì, mǎ bēnpǎo shí shǐzhōng yǒu yì zhī tízi zháodì, zhè shuōmíng Kē\'ēn shì duì de.',goiY:['显示 = cho thấy','说明 = chứng tỏ','始终 = luôn luôn'],giai:'显示 thường có chủ ngữ là ảnh/số liệu/khảo sát; 这说明 rút ra kết luận → “điều đó chứng tỏ”.'},
   {vi:'Muybridge trước tiên đặt 24 chiếc máy ảnh ở một bên đường chạy, sau đó đục 24 cái lỗ ở phía đối diện, mỗi lỗ cắm một cây gậy gỗ, rồi buộc dây lên gậy.',zh:'麦布里奇先在跑道一边放了24台照相机，然后在对面打了24个洞，分别插进木棍，再在木棍上系好绳子。',py:'Màibùlǐqí xiān zài pǎodào yìbiān fàng le èrshísì tái zhàoxiàngjī, ránhòu zài duìmiàn dǎ le èrshísì ge dòng, fēnbié chā jìn mùgùn, zài zài mùgùn shang jìhǎo shéngzi.',goiY:['先……然后……再…… = trước tiên… sau đó… rồi…','分别 = lần lượt (mỗi cái)','系好 = buộc chặt'],giai:'先……然后……再…… liệt kê các bước theo thứ tự; 分别插进木棍 = mỗi lỗ cắm một cây gậy; 系 ở đây đọc jì (buộc), không đọc xì.'},
   {vi:'Con ngựa vừa phi vừa làm đứt những sợi dây chắn ngang đường chạy, nhờ đó các máy ảnh lần lượt từng chiếc chụp lại dáng phi của nó.',zh:'马一边奔跑，一边撞断拦在跑道上的绳子，从而使照相机一台接一台地拍下它奔跑的样子。',py:'Mǎ yìbiān bēnpǎo, yìbiān zhuàng duàn lán zài pǎodào shang de shéngzi, cóng\'ér shǐ zhàoxiàngjī yì tái jiē yì tái de pāi xià tā bēnpǎo de yàngzi.',goiY:['一边……一边…… = vừa… vừa…','从而 = nhờ đó, từ đó','拦 = chắn'],giai:'从而 nối kết quả đạt được nhờ hành động trước (văn viết) → “nhờ đó”; 一台接一台 = lần lượt từng chiếc.'},
-  {vi:'Khi những bức ảnh này được chiếu liên tiếp, con ngựa đứng yên vậy mà chạy lên được, mọi người đều gọi đó là một kỳ tích.',zh:'当这些照片被连续播放时，静止的马竟然跑了起来，人们都把这称为一个奇迹。',py:'Dāng zhèxiē zhàopiàn bèi liánxù bōfàng shí, jìngzhǐ de mǎ jìngrán pǎo le qǐlái, rénmen dōu bǎ zhè chēngwéi yí ge qíjì.',goiY:['当……时 = khi…','竟然 = vậy mà, không ngờ','奇迹 = kỳ tích'],giai:'竟然 thể hiện sự ngạc nhiên trước điều không ngờ; 跑了起来 = bắt đầu chạy (起来 chỉ động tác bắt đầu).'},
-  {vi:'Nhờ rất nhiều người đã tiến hành vô số thử nghiệm gian khổ, kỹ thuật quay chụp không ngừng được cải tiến, điện ảnh cũng dần dần hoàn thiện.',zh:'由于许多人进行了无数次艰苦的试验，拍摄技术不断得到改进，电影也逐渐成熟起来。',py:'Yóuyú xǔduō rén jìnxíng le wúshù cì jiānkǔ de shìyàn, pāishè jìshù búduàn dédào gǎijìn, diànyǐng yě zhújiàn chéngshú qǐlái.',goiY:['由于 = do, nhờ','逐渐成熟起来 = dần dần hoàn thiện','试验 = thử nghiệm'],giai:'由于 nêu nguyên nhân, vế sau là kết quả; 成熟 ở đây là “hoàn thiện, chín muồi” về kỹ thuật, không dịch “chín”.'},
-  {vi:'Ngày 28 tháng 12 năm 1895, anh em nhà Lumière lần đầu tiên công chiếu phim ở Paris, vì thế về sau ngày này trở thành ngày kỷ niệm sự ra đời của điện ảnh.',zh:'1895年12月28日，卢米埃尔兄弟在巴黎第一次公开播放电影，因此这一天后来成了电影产生的纪念日。',py:'Yī bā jiǔ wǔ nián shí\'èr yuè èrshíbā rì, Lúmǐ\'āi\'ěr xiōngdì zài Bālí dì-yī cì gōngkāi bōfàng diànyǐng, yīncǐ zhè yì tiān hòulái chéng le diànyǐng chǎnshēng de jìniànrì.',goiY:['因此 = vì thế','播放 = chiếu, phát','纪念日 = ngày kỷ niệm'],giai:'因此 nêu kết quả; 产生 ở đây = ra đời, xuất hiện → “sự ra đời của điện ảnh”, không dịch “sản sinh”.'},
-  {vi:'Một cuộc tranh cãi tưởng như vô bổ cuối cùng lại thúc đẩy sự ra đời của điện ảnh; đủ thấy chỉ cần dám thử nghiệm thì biết đâu những phát hiện trọng đại đang ở ngay trước mắt ta.',zh:'一场看似无聊的争论，最后竟然推动了电影的产生；可见，只要敢于试验，重大的发现或许就在我们眼前。',py:'Yì chǎng kànsì wúliáo de zhēnglùn, zuìhòu jìngrán tuīdòng le diànyǐng de chǎnshēng; kějiàn, zhǐyào gǎnyú shìyàn, zhòngdà de fāxiàn huòxǔ jiù zài wǒmen yǎnqián.',goiY:['竟然 = vậy mà, không ngờ','可见 = đủ thấy','只要……就……','或许 = có lẽ, biết đâu'],giai:'Ba tầng ý: sự việc bất ngờ (竟然) → kết luận (可见) → điều kiện + khả năng (只要…或许就…); 看似 = trông như, tưởng như.'}
+  {vi:'Nhờ rất nhiều người đã tiến hành biết bao lần thử nghiệm gian khổ, kỹ thuật quay chụp dần dần được cải tiến, điện ảnh cũng ngày càng hoàn thiện.',zh:'由于许多人进行了很多次艰苦的试验，拍摄技术逐渐得到改进，电影也越来越成熟。',py:'Yóuyú xǔduō rén jìnxíng le hěn duō cì jiānkǔ de shìyàn, pāishè jìshù zhújiàn dédào gǎijìn, diànyǐng yě yuè lái yuè chéngshú.',goiY:['由于 = do, nhờ','得到改进 = được cải tiến','试验 = thử nghiệm'],giai:'由于 nêu nguyên nhân, vế sau là kết quả; 成熟 ở đây là “hoàn thiện, chín muồi” về kỹ thuật, không dịch “chín”.'},
+  {vi:'Cuối năm 1895, anh em nhà Lumière lần đầu tiên chiếu phim cho công chúng ở Paris, vì thế về sau ngày này trở thành ngày kỷ niệm sự ra đời của điện ảnh.',zh:'1895年年底，卢米埃尔兄弟在巴黎第一次向大家播放电影，因此这一天后来成了电影产生的纪念日。',py:'Yī bā jiǔ wǔ nián niándǐ, Lúmǐ\'āi\'ěr xiōngdì zài Bālí dì-yī cì xiàng dàjiā bōfàng diànyǐng, yīncǐ zhè yì tiān hòulái chéng le diànyǐng chǎnshēng de jìniànrì.',goiY:['因此 = vì thế','播放 = chiếu, phát','纪念日 = ngày kỷ niệm'],giai:'因此 nêu kết quả; 产生 ở đây = ra đời, xuất hiện → “sự ra đời của điện ảnh”, không dịch “sản sinh”.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1575,30 +1510,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (câu 1–3 là câu 29–31 của sách bài tập)
   sapXep:[
-    {manh:['将由此','你的人生','走向精彩','或许'],
-     dap:'你的人生或许将由此走向精彩。', chap:['或许你的人生将由此走向精彩。'],
-     vn:'Cuộc đời bạn có lẽ sẽ từ đó mà trở nên rực rỡ.',
-     giai:'或许 là phó từ: đứng sau chủ ngữ (你的人生或许……) hoặc đầu câu đều được. 将 (sẽ) + 由此 (từ đó) đứng trước động từ 走向.'},
-    {manh:['围绕去留问题','整个讨论','进行的','都是'],
-     dap:'整个讨论都是围绕去留问题进行的。',
-     vn:'Cả buổi thảo luận đều xoay quanh chuyện đi hay ở.',
-     giai:'Khung 是……的 (HSK 3–4) nhấn mạnh nội dung: 都是 + 围绕…… + 进行的. 围绕 + vấn đề + 进行 là cấu trúc của bài.'},
-    {manh:['始终','这位年轻人','很稳定','表现得'],
-     dap:'这位年轻人始终表现得很稳定。',
-     vn:'Chàng trai trẻ này trước sau vẫn thể hiện rất ổn định.',
-     giai:'Chủ ngữ → 始终 (phó từ) → 表现得 → bổ ngữ trình độ 很稳定.'},
-    {manh:['毕竟','他','你的亲弟弟','是'],
-     dap:'他毕竟是你的亲弟弟。', chap:['毕竟他是你的亲弟弟。'],
-     vn:'Dù sao cậu ấy cũng là em ruột của bạn.',
-     giai:'毕竟 thường đứng sau chủ ngữ, trước 是 (他毕竟是……); đặt đầu câu cũng được.'},
-    {manh:['天气','进入四月以后','暖和起来了','逐渐'],
-     dap:'进入四月以后天气逐渐暖和起来了。', chap:['天气进入四月以后逐渐暖和起来了。'],
-     vn:'Sang tháng Tư, trời dần dần ấm lên.',
-     giai:'逐渐 đứng ngay trước cụm động từ 暖和起来了; trạng ngữ thời gian đứng đầu câu hoặc ngay sau chủ ngữ.'},
-    {manh:['说服不了','谁也','谁','他们两个'],
-     dap:'他们两个谁也说服不了谁。',
-     vn:'Hai người họ chẳng ai thuyết phục được ai.',
-     giai:'Mẫu 谁也 + V不了 + 谁: 谁也 đứng trước động từ, 谁 thứ hai làm tân ngữ ở cuối câu.'}
+    {manh:['由此','你的人生','走向精彩','或许'],dap:'你的人生或许由此走向精彩。',chap:['或许你的人生由此走向精彩。'],vn:'Cuộc đời bạn có lẽ từ đó mà trở nên rực rỡ.',giai:'或许 là phó từ: đứng sau chủ ngữ (你的人生或许……) hoặc đầu câu đều được. 由此 (từ đó) đứng trước động từ 走向.'},
+    {manh:['围绕去留问题','整个讨论','进行的','都是'],dap:'整个讨论都是围绕去留问题进行的。',vn:'Cả buổi thảo luận đều xoay quanh chuyện đi hay ở.',giai:'Khung 是……的 (HSK 3–4) nhấn mạnh nội dung: 都是 + 围绕…… + 进行的. 围绕 + vấn đề + 进行 là cấu trúc của bài.'},
+    {manh:['始终','这位年轻人','很稳定','表现得'],dap:'这位年轻人始终表现得很稳定。',vn:'Chàng trai trẻ này trước sau vẫn thể hiện rất ổn định.',giai:'Chủ ngữ → 始终 (phó từ) → 表现得 → bổ ngữ trình độ 很稳定.'},
+    {manh:['毕竟','他','你的弟弟','是'],dap:'他毕竟是你的弟弟。',chap:['毕竟他是你的弟弟。'],vn:'Dù sao cậu ấy cũng là em trai của bạn.',giai:'毕竟 thường đứng sau chủ ngữ, trước 是 (他毕竟是……); đặt đầu câu cũng được.'},
+    {manh:['天气','进入四月以后','暖和起来了','逐渐'],dap:'进入四月以后天气逐渐暖和起来了。',chap:['天气进入四月以后逐渐暖和起来了。'],vn:'Sang tháng Tư, trời dần dần ấm lên.',giai:'逐渐 đứng ngay trước cụm động từ 暖和起来了; trạng ngữ thời gian đứng đầu câu hoặc ngay sau chủ ngữ.'},
+    {manh:['说服不了','谁也','谁','他们两个'],dap:'他们两个谁也说服不了谁。',vn:'Hai người họ chẳng ai thuyết phục được ai.',giai:'Mẫu 谁也 + V不了 + 谁: 谁也 đứng trước động từ, 谁 thứ hai làm tân ngữ ở cuối câu.'}
   ]
 };
 
@@ -1608,30 +1525,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài — ba câu đầu lấy từ phần 话题讨论 của sách. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 争论 · 毕竟 · 逐渐 · 或许 · 重大 · 奇迹.',
   questions:[
-    {q_zh:'读过课文后，你认为电影的发明最重要的原因是什么？',
-     q_vn:'Đọc xong bài khoá, em cho rằng nguyên nhân quan trọng nhất dẫn đến phát minh ra điện ảnh là gì?',
-     hint:'Dùng 我认为…… + 或许',
-     sample:'我认为最重要的原因是他们敢于争论，也愿意认真研究。如果斯坦福和科恩没有那场争论，或许就不会有电影了。',
-     sample_vn:'Tôi cho rằng nguyên nhân quan trọng nhất là họ dám tranh luận và chịu nghiên cứu nghiêm túc. Nếu Stanford và Cohen không có cuộc tranh cãi ấy, có lẽ đã không có điện ảnh.',
-     note:'Nêu MỘT nguyên nhân rõ ràng rồi chứng minh bằng chi tiết của bài — đừng kể lại cả bài.'},
-    {q_zh:'你还知道哪些重大发现或发明的故事？请简单介绍一下。',
-     q_vn:'Em còn biết câu chuyện nào về một phát hiện hay phát minh trọng đại? Hãy giới thiệu ngắn gọn.',
-     hint:'Kể theo trình tự: ai — làm gì — phát hiện ra gì, dùng 逐渐',
-     sample:'我知道牛顿和苹果的故事。据说牛顿看到苹果从树上掉下来，就开始想：苹果为什么往下掉，不往上飞？他认真研究，逐渐发现了万有引力。',
-     sample_vn:'Tôi biết câu chuyện Newton và quả táo. Nghe nói Newton thấy quả táo rơi từ trên cây xuống liền bắt đầu nghĩ: vì sao táo rơi xuống mà không bay lên? Ông nghiên cứu nghiêm túc và dần dần phát hiện ra định luật vạn vật hấp dẫn.',
-     note:'Câu hỏi "简单介绍" — giới thiệu NGẮN, 3–4 câu là đủ.'},
-    {q_zh:'从你介绍的这个发现或发明中你想到了什么？',
-     q_vn:'Từ phát hiện hay phát minh em vừa giới thiệu, em nghĩ đến điều gì?',
-     hint:'Rút ra bài học, dùng 只要……就…… hoặc 或许',
-     sample:'我想到，重大发现往往就藏在生活的小事里。只要我们留心生活的每一瞬间，或许也能有自己的发现。',
-     sample_vn:'Tôi nghĩ rằng phát hiện trọng đại thường ẩn trong những chuyện nhỏ của cuộc sống. Chỉ cần chúng ta để ý từng khoảnh khắc, có lẽ cũng sẽ có phát hiện của riêng mình.',
-     note:'Đây là câu "nâng ý" — phải nói được Ý NGHĨA, không lặp lại câu chuyện.'},
-    {q_zh:'你跟别人争论过吗？最后谁说服了谁？',
-     q_vn:'Em đã từng tranh luận với ai chưa? Cuối cùng ai thuyết phục được ai?',
-     hint:'Kể một lần cụ thể, dùng 争论 + 说服',
-     sample:'我跟同桌争论过“中学生该不该带手机上学”。我们争论得脸红脖子粗，谁也说服不了谁，不过我逐渐明白了他的想法。',
-     sample_vn:'Tôi từng tranh cãi với bạn cùng bàn về chuyện "học sinh trung học có nên mang điện thoại đến trường". Chúng tôi cãi nhau đỏ mặt tía tai, chẳng ai thuyết phục được ai, nhưng tôi dần dần hiểu được suy nghĩ của cậu ấy.',
-     note:'Nhớ trả lời CẢ HAI ý của câu hỏi: đã tranh luận chưa, và kết quả ra sao.'}
+    {q_zh:'读过课文后，你认为电影能出现，最重要的原因是什么？',q_vn:'Đọc xong bài khoá, em cho rằng nguyên nhân quan trọng nhất khiến điện ảnh ra đời là gì?',hint:'Dùng 我认为…… + 或许',sample:'我认为最重要的原因是他们敢于争论，也愿意认真研究。如果斯坦福和科恩没有那场争论，或许就不会有电影了。',sample_vn:'Tôi cho rằng nguyên nhân quan trọng nhất là họ dám tranh luận và chịu nghiên cứu nghiêm túc. Nếu Stanford và Cohen không có cuộc tranh cãi ấy, có lẽ đã không có điện ảnh.',note:'Nêu MỘT nguyên nhân rõ ràng rồi chứng minh bằng chi tiết của bài — đừng kể lại cả bài.'},
+    {q_zh:'你还知道哪些重大发现的故事？请简单介绍一下。',q_vn:'Em còn biết câu chuyện nào về một phát hiện trọng đại? Hãy giới thiệu ngắn gọn.',hint:'Kể theo trình tự: ai — làm gì — phát hiện ra gì, dùng 逐渐',sample:'很久以前，人们以为地是平的。后来有人坐船一直往前走，最后又回到了原来的地方，人们才逐渐明白地球不是平的。',sample_vn:'Ngày xưa người ta tưởng mặt đất phẳng. Về sau có người đi thuyền cứ thẳng về phía trước, cuối cùng lại quay về chỗ cũ, con người mới dần dần hiểu ra Trái Đất không phẳng.',note:'Câu hỏi yêu cầu giới thiệu NGẮN — 3–4 câu là đủ.'},
+    {q_zh:'从你介绍的这个发现中你想到了什么？',q_vn:'Từ phát hiện em vừa giới thiệu, em nghĩ đến điều gì?',hint:'Rút ra bài học, dùng 只要……就…… hoặc 或许',sample:'我想到，重大发现往往就藏在生活的小事里。只要我们留心生活的每一瞬间，或许也能有自己的发现。',sample_vn:'Tôi nghĩ rằng phát hiện trọng đại thường ẩn trong những chuyện nhỏ của cuộc sống. Chỉ cần chúng ta để ý từng khoảnh khắc, có lẽ cũng sẽ có phát hiện của riêng mình.',note:'Đây là câu "nâng ý" — phải nói được Ý NGHĨA, không lặp lại câu chuyện.'},
+    {q_zh:'你跟别人争论过吗？最后谁说服了谁？',q_vn:'Em đã từng tranh luận với ai chưa? Cuối cùng ai thuyết phục được ai?',hint:'Kể một lần cụ thể, dùng 争论 + 说服',sample:'我跟好朋友争论过上大学以后该不该打工。我觉得打工能锻炼自己，他却认为会影响学习。最后他说服了我，因为学习毕竟是最重要的。',sample_vn:'Tôi từng tranh luận với bạn thân chuyện lên đại học có nên đi làm thêm không. Tôi thấy làm thêm rèn luyện được bản thân, cậu ấy lại cho rằng sẽ ảnh hưởng việc học. Cuối cùng cậu ấy thuyết phục được tôi, vì dù sao việc học vẫn là quan trọng nhất.',note:'Nhớ trả lời CẢ HAI ý của câu hỏi: đã tranh luận chưa, và kết quả ra sao.'}
   ]
 };
 
@@ -1724,45 +1621,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Hôm qua em và bạn thân cãi nhau to, một bạn khác hỏi chuyện.',
-     a:{sp:'Bạn',zh:'你们俩昨天为什么吵起来了？',vn:'Hôm qua sao hai cậu lại cãi nhau thế?'},
-     need:['Dùng 围绕 + 争论','Nói rõ tranh cãi về chuyện gì'],
-     sample:'我们围绕周末去哪儿玩争论了半天，最后谁也说服不了谁。',
-     samplePy:'Wǒmen wéirào zhōumò qù nǎr wán zhēnglùnle bàntiān, zuìhòu shéi yě shuōfú bu liǎo shéi.',
-     sampleVn:'Bọn tớ cãi nhau cả buổi xoay quanh chuyện cuối tuần đi đâu chơi, cuối cùng chẳng ai thuyết phục được ai.',
-     tip:'Không nói 我争论他 — phải là 我跟他争论.'},
-
-    {scene:'Em trai làm hỏng sách của em, mẹ hỏi.',
-     a:{sp:'Mẹ',zh:'你弟弟又把你的书弄坏了，你不生气吗？',vn:'Em con lại làm hỏng sách của con rồi, con không giận à?'},
-     need:['Dùng 毕竟','Nói lý do em tha thứ'],
-     sample:'有点儿生气，不过他毕竟才六岁。以后我把书放高一点儿就好了。',
-     samplePy:'Yǒudiǎnr shēngqì, búguò tā bìjìng cái liù suì. Yǐhòu wǒ bǎ shū fàng gāo yìdiǎnr jiù hǎo le.',
-     sampleVn:'Có hơi giận ạ, nhưng dù sao em mới sáu tuổi. Sau này con để sách cao lên một chút là được.',
-     tip:'毕竟 đứng ở vế nêu LÝ DO, sau chủ ngữ: 他毕竟才六岁.'},
-
-    {scene:'Một bạn mới chuyển đến hỏi em về những ngày đầu ở trường.',
-     a:{sp:'Bạn mới',zh:'你刚来这个学校的时候，习惯吗？',vn:'Hồi mới đến trường này, cậu có quen không?'},
-     need:['Dùng 逐渐','Kể sự thay đổi theo thời gian'],
-     sample:'刚来的时候不太习惯，后来认识了很多朋友，就逐渐习惯了。',
-     samplePy:'Gāng lái de shíhou bú tài xíguàn, hòulái rènshile hěn duō péngyou, jiù zhújiàn xíguàn le.',
-     sampleVn:'Mới đến thì chưa quen lắm, sau đó quen được nhiều bạn, thế là dần dần quen.',
-     tip:'逐渐 cần một quá trình: có mốc "lúc đầu" và "về sau".'},
-
-    {scene:'Trận bóng sắp kết thúc, đội em đang thua hai bàn, bạn chán nản.',
-     a:{sp:'Bạn',zh:'还有五分钟，我们输了两个球，还有希望吗？',vn:'Còn năm phút, bọn mình đang thua hai bàn, còn hy vọng không?'},
-     need:['Dùng 或许','Động viên bạn'],
-     sample:'别放弃！还有五分钟呢，或许会出现奇迹。',
-     samplePy:'Bié fàngqì! Hái yǒu wǔ fēnzhōng ne, huòxǔ huì chūxiàn qíjì.',
-     sampleVn:'Đừng bỏ cuộc! Vẫn còn năm phút mà, có lẽ sẽ có kỳ tích.',
-     tip:'或许 làm lời động viên nhẹ nhàng — không hứa chắc chắn.'},
-
-    {scene:'Thầy giáo hỏi kết quả cuộc khảo sát nhóm em vừa làm.',
-     a:{sp:'Thầy',zh:'你们这次调查的结果怎么样？',vn:'Kết quả khảo sát lần này của nhóm em thế nào?'},
-     need:['Dùng 显示','Nêu một con số cụ thể'],
-     sample:'调查显示，我们班有80%的同学每天用手机超过两个小时。',
-     samplePy:'Diàochá xiǎnshì, wǒmen bān yǒu bǎi fēn zhī bāshí de tóngxué měi tiān yòng shǒujī chāoguò liǎng ge xiǎoshí.',
-     sampleVn:'Khảo sát cho thấy 80% bạn trong lớp mỗi ngày dùng điện thoại hơn hai tiếng.',
-     tip:'调查显示 + một câu hoàn chỉnh. Không nói 调查显得 — 显得 chỉ đi với tính từ.'}
+    {scene:'Hôm qua em và bạn thân cãi nhau to, một bạn khác hỏi chuyện.',a:{sp:'Bạn',zh:'你们俩昨天为什么吵起来了？',vn:'Hôm qua sao hai cậu lại cãi nhau thế?'},need:['Dùng 围绕 + 争论','Nói rõ tranh cãi về chuyện gì'],sample:'我们围绕周末去哪儿玩争论了半天，最后还是没有结果。',samplePy:'Wǒmen wéirào zhōumò qù nǎr wán zhēnglùnle bàntiān, zuìhòu háishi méiyǒu jiéguǒ.',sampleVn:'Bọn tớ cãi nhau cả buổi xoay quanh chuyện cuối tuần đi đâu chơi, cuối cùng vẫn chẳng đi đến đâu.',tip:'Không nói 我争论他 — phải là 我跟他争论.'},
+    {scene:'Em trai làm hỏng sách của em, mẹ hỏi.',a:{sp:'Mẹ',zh:'你弟弟又把你的书弄坏了，你不生气吗？',vn:'Em con lại làm hỏng sách của con rồi, con không giận à?'},need:['Dùng 毕竟','Nói lý do em tha thứ'],sample:'有点儿生气，不过他毕竟才六岁。以后我把书放高一点儿就好了。',samplePy:'Yǒudiǎnr shēngqì, búguò tā bìjìng cái liù suì. Yǐhòu wǒ bǎ shū fàng gāo yìdiǎnr jiù hǎo le.',sampleVn:'Có hơi giận ạ, nhưng dù sao em mới sáu tuổi. Sau này con để sách cao lên một chút là được.',tip:'毕竟 đứng ở vế nêu LÝ DO, sau chủ ngữ: 他毕竟才六岁.'},
+    {scene:'Một bạn mới chuyển đến hỏi em về những ngày đầu ở trường.',a:{sp:'Bạn mới',zh:'你刚来这个学校的时候，习惯吗？',vn:'Hồi mới đến trường này, cậu có quen không?'},need:['Dùng 逐渐','Kể sự thay đổi theo thời gian'],sample:'刚来的时候不太习惯，后来认识了很多朋友，就逐渐习惯了。',samplePy:'Gāng lái de shíhou bú tài xíguàn, hòulái rènshile hěn duō péngyou, jiù zhújiàn xíguàn le.',sampleVn:'Mới đến thì chưa quen lắm, sau đó quen được nhiều bạn, thế là dần dần quen.',tip:'逐渐 cần một quá trình: có mốc "lúc đầu" và "về sau".'},
+    {scene:'Trận bóng sắp kết thúc, đội em đang thua hai bàn, bạn chán nản.',a:{sp:'Bạn',zh:'还有五分钟，我们输了两个球，还有希望吗？',vn:'Còn năm phút, bọn mình đang thua hai bàn, còn hy vọng không?'},need:['Dùng 或许','Động viên bạn'],sample:'别放弃！还有五分钟呢，或许会出现奇迹。',samplePy:'Bié fàngqì! Hái yǒu wǔ fēnzhōng ne, huòxǔ huì chūxiàn qíjì.',sampleVn:'Đừng bỏ cuộc! Vẫn còn năm phút mà, có lẽ sẽ có kỳ tích.',tip:'或许 làm lời động viên nhẹ nhàng — không hứa chắc chắn.'},
+    {scene:'Thầy giáo hỏi kết quả cuộc khảo sát nhóm em vừa làm.',a:{sp:'Thầy',zh:'你们这次调查的结果怎么样？',vn:'Kết quả khảo sát lần này của nhóm em thế nào?'},need:['Dùng 显示','Nêu một con số cụ thể'],sample:'调查显示，全班有80%的同学每天用手机超过两个小时。',samplePy:'Diàochá xiǎnshì, quán bān yǒu bǎi fēn zhī bāshí de tóngxué měi tiān yòng shǒujī chāoguò liǎng ge xiǎoshí.',sampleVn:'Khảo sát cho thấy 80% bạn trong lớp mỗi ngày dùng điện thoại hơn hai tiếng.',tip:'调查显示 + một câu hoàn chỉnh. Không nói 调查显得 — 显得 chỉ đi với tính từ.'}
   ]
 };
 
@@ -1773,29 +1636,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết báo cáo thí nghiệm nộp cho thầy.',
-     a:'这种方法或许能解决这个问题。',b:'这种方法没准儿能解决这个问题。',better:'a',
-     why:'没准儿 là khẩu ngữ. Báo cáo là văn viết → 或许 hợp hơn.'},
-
-    {scene:'Em nhắn tin cho bạn thân lúc trời đổ mưa.',
-     a:'下雨啦，咱们别去操场了！',b:'由于降雨，我们取消前往操场的计划。',better:'a',
-     why:'Câu b giống thông báo của nhà trường. Nhắn bạn thân thì dùng khẩu ngữ, có 啦 cho tự nhiên.'},
-
-    {scene:'Lớp em viết thư xin nhà trường cho mượn hội trường.',
-     a:'求求你们，让我们用一下礼堂吧！',b:'我们请求学校同意我们使用礼堂。',better:'b',
-     why:'Thư gửi nhà trường cần trang trọng → 请求 + 同意. 求求你们 là năn nỉ kiểu khẩu ngữ.'},
-
-    {scene:'Người dẫn chương trình trên TV giới thiệu phim tối nay.',
-     a:'今晚电视上放这个电影。',b:'今晚本台将播放这部电影。',better:'b',
-     why:'Lời của đài truyền hình dùng 本台 + 将 + 播放 + 部. 放电影 là cách nói thường ngày.'},
-
-    {scene:'Em giới thiệu khách mời trong lễ kỷ niệm của trường.',
-     a:'下面请大家欢迎著名摄影师王先生。',b:'这是个拍照片的，姓王。',better:'a',
-     why:'Buổi lễ trang trọng → 著名摄影师 + 王先生. "拍照片的" là cách gọi suồng sã, thiếu tôn trọng.'},
-
-    {scene:'Hai bạn trong nhóm đang cãi nhau, em nói với họ.',
-     a:'别吵了，你们俩争论得脸红脖子粗，有什么意思呢？',b:'建议二位停止辩论，理性地交换意见。',better:'a',
-     why:'Nói với bạn bè thì khẩu ngữ, thân mật. Câu b nghe như biên bản cuộc họp — quá cứng.'}
+    {scene:'Em viết báo cáo thí nghiệm nộp cho thầy.',a:'这种方法或许能解决这个问题。',b:'这种方法说不定能解决这个问题。',better:'a',why:'说不定 thiên về khẩu ngữ. Báo cáo là văn viết → 或许 hợp hơn.'},
+    {scene:'Em nhắn tin cho bạn thân lúc trời đổ mưa.',a:'下雨啦，咱们别去操场了！',b:'因为下雨，今天的操场活动不再进行。',better:'a',why:'Câu b giống thông báo của nhà trường. Nhắn bạn thân thì dùng khẩu ngữ, có 啦 cho tự nhiên.'},
+    {scene:'Lớp em viết thư xin nhà trường cho mượn phòng học lớn.',a:'让我们用一下大教室吧，好不好？',b:'我们请求学校同意我们使用大教室。',better:'b',why:'Thư gửi nhà trường cần trang trọng → 请求 + 同意. Câu a là giọng nài nỉ kiểu nói chuyện.'},
+    {scene:'Người dẫn chương trình trên TV giới thiệu phim tối nay.',a:'今晚电视上放这个电影。',b:'今晚八点，本台为您播放一个新电影。',better:'b',why:'Lời của đài truyền hình dùng 本台 + 为您 + 播放. 放电影 là cách nói thường ngày.'},
+    {scene:'Em giới thiệu khách mời trong lễ kỷ niệm của trường.',a:'下面请大家欢迎著名摄影师王先生。',b:'这是个拍照片的，姓王。',better:'a',why:'Buổi lễ trang trọng → 著名摄影师 + 王先生. "拍照片的" là cách gọi suồng sã, thiếu tôn trọng.'},
+    {scene:'Hai bạn trong nhóm đang cãi nhau, em nói với họ.',a:'别吵了，你们俩争论得脸红脖子粗，有什么意思呢？',b:'建议两位不要再辩论了，冷静地讨论一下。',better:'a',why:'Nói với bạn bè thì khẩu ngữ, thân mật. Câu b nghe như biên bản cuộc họp — quá cứng.'}
   ]
 };
 

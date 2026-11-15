@@ -1176,93 +1176,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 của sách (tr. 152) + bài tập 3 + bài khoá
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'缓解',right:'疲劳'},
-  {left:'指挥',right:'军队'},
+  {left:'指挥',right:'交通'},
   {left:'补充',right:'营养'},
   {left:'遵守',right:'秩序'},
-  {left:'大量',right:'吸收'},
-  {left:'自动',right:'辞职'},
-  {left:'歇',right:'一会儿'},
-  {left:'恢复',right:'过来'},
-  {left:'一壶',right:'开水'},
-  {left:'一片',right:'草地'},
-  {left:'一根',right:'管子'},
-  {left:'一块',right:'玻璃'},
-  {left:'控制',right:'情绪'},
-  {left:'释放',right:'水汽'},
+  {left:'控制',right:'体重'},
   {left:'身体',right:'状况'},
-  {left:'供水',right:'系统'},
   {left:'公司',right:'内部'},
-  {left:'生活',right:'常识'},
-  {left:'营养',right:'成分'},
-  {left:'特殊',right:'情况'},
+  {left:'科学',right:'常识'},
   {left:'炎热的',right:'夏天'},
   {left:'放松',right:'肌肉'},
-  {left:'进行',right:'测验'},
-  {left:'蒸腾',right:'作用'}
+  {left:'一壶',right:'开水'},
+  {left:'一根',right:'管子'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — phủ đủ 35 từ mới
+// ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这里的夏天十分',blank:'炎热',post:'，最高气温能达到四十度。',hint:'(nóng bức)',ans:'炎热'},
-  {pre:'爬了两个小时山，大家都累了，咱们先',blank:'歇',post:'一会儿吧。',hint:'(nghỉ)',ans:'歇'},
-  {pre:'感冒的时候，要多喝点儿',blank:'开水',post:'，多休息。',hint:'(nước đun sôi)',ans:'开水'},
-  {pre:'运动完喝点儿温开水，可别吃',blank:'冰激凌',post:'什么的。',hint:'(kem)',ans:'冰激凌'},
-  {pre:'运动以前不做准备活动，很容易拉伤',blank:'肌肉',post:'。',hint:'(cơ bắp)',ans:'肌肉'},
-  {pre:'你昨天去看小兰了？她',blank:'恢复',post:'得怎么样？',hint:'(hồi phục)',ans:'恢复'},
-  {pre:'南方的气候比较',blank:'湿润',post:'，北方比较干燥。',hint:'(ẩm)',ans:'湿润'},
-  {pre:'太阳太晒了，我们找个',blank:'荫凉',post:'的地方坐一会儿吧。',hint:'(râm mát)',ans:'荫凉'},
-  {pre:'早上八点，警察站在路口',blank:'指挥',post:'交通。',hint:'(điều khiển)',ans:'指挥'},
-  {pre:'这份材料下午开会要用，你',blank:'赶快',post:'把它复印一下。',hint:'(mau)',ans:'赶快',exp:'赶快 + V = mau, nhanh chóng (thúc giục): 赶快把它复印一下.'},
-  {pre:'这时所有',blank:'汗腺',post:'开始工作，汗水就从毛孔里冒了出来。',hint:'(tuyến mồ hôi)',ans:'汗腺'},
-  {pre:'洗热水澡的时候，',blank:'毛孔',post:'会张开。',hint:'(lỗ chân lông)',ans:'毛孔'},
-  {pre:'刚做好的包子还',blank:'冒',post:'着热气呢，快趁热吃吧。',hint:'(bốc lên)',ans:'冒'},
-  {pre:'今天早上我只吃了两',blank:'片',post:'面包。',hint:'(lát)',ans:'片',exp:'片 là lượng từ cho vật mỏng, dẹt: 两片面包.'},
-  {pre:'植物用根吸收水分是大家都知道的',blank:'常识',post:'。',hint:'(điều thường thức)',ans:'常识'},
-  {pre:'仙人掌的',blank:'根',post:'非常发达，一旦下雨就会大量吸收水分。',hint:'(rễ)',ans:'根'},
-  {pre:'植物的根会',blank:'吸收',post:'养分和水分。',hint:'(hút)',ans:'吸收'},
-  {pre:'孩子还小呢，你要',blank:'控制',post:'一下自己的情绪，别吓着他。',hint:'(kiềm chế)',ans:'控制'},
-  {pre:'买饮料的时候，我会先看看它的营养',blank:'成分',post:'。',hint:'(thành phần)',ans:'成分'},
-  {pre:'一只小鸟站在树',blank:'梢',post:'上唱歌。',hint:'(ngọn)',ans:'梢'},
-  {pre:'水会顺着很细很细的',blank:'管子',post:'向上“爬”。',hint:'(ống)',ans:'管子'},
-  {pre:'踢球的时候，他不小心把教室的一块',blank:'玻璃',post:'打碎了。',hint:'(kính)',ans:'玻璃'},
-  {pre:'你这次',blank:'测验',post:'怎么样？——不太好，很多题我都没复习。',hint:'(bài kiểm tra)',ans:'测验'},
-  {pre:'胡说！我',blank:'根本',post:'不认识他。',hint:'(hoàn toàn)',ans:'根本',exp:'根本 + 不/没 = hoàn toàn không: 根本不认识他.'},
-  {pre:'冬天叶子都掉光了，只剩下光秃秃的',blank:'枝干',post:'。',hint:'(cành cây)',ans:'枝干'},
-  {pre:'植物利用光合作用，',blank:'释放',post:'出氧气。',hint:'(giải phóng)',ans:'释放'},
-  {pre:'办公室那台新复印机真不错，能',blank:'自动',post:'换纸、自动换页。',hint:'(tự động)',ans:'自动'},
-  {pre:'运动以后要及时',blank:'补充',post:'水分。',hint:'(bổ sung)',ans:'补充'},
-  {pre:'工作再忙，也要',blank:'抽',post:'时间陪陪父母。',hint:'(dành ra)',ans:'抽'},
-  {pre:'因为跟',blank:'蒸腾',post:'作用有关，这种提升力被称为“蒸腾拉力”。',hint:'(thoát hơi nước)',ans:'蒸腾'},
-  {pre:'如果没有',blank:'特殊',post:'原因，请不要请假。',hint:'(đặc biệt)',ans:'特殊'},
-  {pre:'这份材料是',blank:'内部',post:'资料，不能带出办公室。',hint:'(nội bộ)',ans:'内部'},
-  {pre:'要想学好汉语，就得',blank:'系统',post:'地学习语法。',hint:'(có hệ thống)',ans:'系统'},
-  {pre:'医生问了问爷爷最近的身体',blank:'状况',post:'。',hint:'(tình trạng)',ans:'状况'},
-  {pre:'目前人流量很大，请大家自觉遵守',blank:'秩序',post:'，排队进站。',hint:'(trật tự)',ans:'秩序'}
+  {pre:'走了这么久，你不累吗？坐下来',blank:'歇',post:'一会儿吧。',hint:'(nghỉ — 1 chữ, khẩu ngữ)',ans:'歇',exp:'歇 = nghỉ (khẩu ngữ, một chữ): 歇一会儿, 歇一歇; văn viết hơn là 休息.'},
+  {pre:'放学路上，弟弟一定要我给他买个',blank:'冰激凌',post:'。',hint:'(kem)',ans:'冰激凌',exp:'冰激凌 = kem (ăn): 吃冰激凌, 买个冰激凌.'},
+  {pre:'雨后的空气很',blank:'湿润',post:'，让人觉得很舒服。',hint:'(ẩm, ẩm ướt dễ chịu)',ans:'湿润',exp:'湿润 = ẩm (dễ chịu): 空气湿润, 气候湿润 — trái nghĩa với 干燥.'},
+  {pre:'大树下面很',blank:'荫凉',post:'，夏天老人们都喜欢在那儿下棋。',hint:'(râm mát)',ans:'荫凉',exp:'荫凉 = râm mát (chỗ có bóng cây che): 荫凉的地方, 大树下很荫凉.'},
+  {pre:'皮肤上有很多小小的',blank:'毛孔',post:'，汗就是从那里出来的。',hint:'(lỗ chân lông)',ans:'毛孔',exp:'毛孔 = lỗ chân lông; 汗腺 = tuyến mồ hôi.'},
+  {pre:'水开了，壶里不停地往外',blank:'冒',post:'水汽。',hint:'(bốc ra, toát ra)',ans:'冒',exp:'冒 = bốc lên, toát ra (hơi, khói, mồ hôi): 冒水汽, 冒汗, 冒出来.'},
+  {pre:'风一来，树',blank:'梢',post:'就跟着动起来。',hint:'(ngọn — 1 chữ)',ans:'梢',exp:'梢 = ngọn, đầu mút (cây, cành): 树梢 = ngọn cây.'},
+  {pre:'这个杯子是',blank:'玻璃',post:'做的，小心别打碎了。',hint:'(thuỷ tinh)',ans:'玻璃',exp:'玻璃 = thuỷ tinh, kính; lượng từ 块: 一块玻璃.'},
+  {pre:'冬天到了，树上的叶子掉光了，只剩下了',blank:'枝干',post:'。',hint:'(cành và thân cây)',ans:'枝干',exp:'枝干 = cành và thân cây (nói chung).'},
+  {pre:'这个周末你能',blank:'抽',post:'出一点儿时间帮我搬家吗？',hint:'(dành ra, rút ra)',ans:'抽',exp:'抽 + 时间 = dành ra (thời gian): 抽时间, 抽出半个小时.'},
+  {pre:'这个门是',blank:'自动',post:'的，人一走近它就打开了。',hint:'(tự động)',ans:'自动',exp:'自动 = tự động (máy móc, sự vật tự vận hành): 自动门, 自动打开.'},
+  {pre:'这棵树的',blank:'根',post:'长得很深，所以长得又高又结实。',hint:'(rễ)',ans:'根',exp:'根 = rễ cây; còn là lượng từ cho vật dài: 一根管子.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (赶快 · 片 · 根本) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我下个月要搬家','，','得','赶快','找房子','。'],ans:'我下个月要搬家，得赶快找房子。',audio:'我下个月要搬家，得赶快找房子。'},
-  {words:['一旦','温度上升','，','大脑','就会','指挥身体','赶快出汗','。'],ans:'一旦温度上升，大脑就会指挥身体赶快出汗。',audio:'一旦温度上升，大脑就会指挥身体赶快出汗。'},
-  {words:['他看到要下雨了','，','赶快','把衣服','收了回来','。'],ans:'他看到要下雨了，赶快把衣服收了回来。',audio:'他看到要下雨了，赶快把衣服收了回来。'},
-  {words:['请把','土豆','切成','片','。'],ans:'请把土豆切成片。',audio:'请把土豆切成片。'},
-  {words:['秋风中','，','叶子','一片片地','掉落','下来','。'],ans:'秋风中，叶子一片片地掉落下来。',audio:'秋风中，叶子一片片地掉落下来。'},
-  {words:['同学们听了','，','发出','一片','热烈的','欢呼声','。'],ans:'同学们听了，发出一片热烈的欢呼声。',audio:'同学们听了，发出一片热烈的欢呼声。'},
-  {words:['其实','他是位盲人','，','根本','看不见','你的动作','。'],ans:'其实他是位盲人，根本看不见你的动作。',audio:'其实他是位盲人，根本看不见你的动作。'},
-  {words:['毛细作用','根本','无法','把水分','送到','几十米高的地方','。'],ans:'毛细作用根本无法把水分送到几十米高的地方。',audio:'毛细作用根本无法把水分送到几十米高的地方。'},
-  {words:['这个办法','不能','从根本上','解决','问题','。'],ans:'这个办法不能从根本上解决问题。',audio:'这个办法不能从根本上解决问题。'},
-  {words:['玻璃管','越细','，','水','爬得','越高','。'],ans:'玻璃管越细，水爬得越高。',audio:'玻璃管越细，水爬得越高。'},
-  {words:['植物的根','会','吸收','养分和水分','。'],ans:'植物的根会吸收养分和水分。',audio:'植物的根会吸收养分和水分。'},
-  {words:['这种特殊的提升力','被称为','“蒸腾拉力”','。'],ans:'这种特殊的提升力被称为“蒸腾拉力”。',audio:'这种特殊的提升力被称为“蒸腾拉力”。'},
-  {words:['我们','之所以','能在大树下','享受荫凉','，','是因为','大树在“出汗”','。'],ans:'我们之所以能在大树下享受荫凉，是因为大树在“出汗”。',audio:'我们之所以能在大树下享受荫凉，是因为大树在“出汗”。'}
+  {words:['演出','七点','开始','，','我们','赶快','进去','吧','。'],ans:'演出七点开始，我们赶快进去吧。',audio:'演出七点开始，我们赶快进去吧。'},
+  {words:['妈妈','把','西瓜','切成','片','，','放在','盘子里','。'],ans:'妈妈把西瓜切成片，放在盘子里。',audio:'妈妈把西瓜切成片，放在盘子里。'},
+  {words:['楼下','是','一片','小树林','，','周末','很多人','在那儿','散步','。'],ans:'楼下是一片小树林，周末很多人在那儿散步。',audio:'楼下是一片小树林，周末很多人在那儿散步。'},
+  {words:['这件事','我','根本','不知道','，','你','别','问我','了','。'],ans:'这件事我根本不知道，你别问我了。',audio:'这件事我根本不知道，你别问我了。'},
+  {words:['光靠','吃药','不能','从根本上','治好','你的病','。'],ans:'光靠吃药不能从根本上治好你的病。',audio:'光靠吃药不能从根本上治好你的病。'},
+  {words:['这次','测验的题','不难','，','大家','都','考得','不错','。'],ans:'这次测验的题不难，大家都考得不错。',audio:'这次测验的题不难，大家都考得不错。'},
+  {words:['一','下课','，','同学们','就','很有秩序地','离开了','教室','。'],ans:'一下课，同学们就很有秩序地离开了教室。',audio:'一下课，同学们就很有秩序地离开了教室。'},
+  {words:['多喝水','对身体好','，','这是','生活中的','常识','。'],ans:'多喝水对身体好，这是生活中的常识。',audio:'多喝水对身体好，这是生活中的常识。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1270,74 +1231,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'这是你第几次错了？！怎么不____教训呢？',opts:['吸取','吸收','补充','控制'],ans:0,
-   exp:'吸取教训 = rút ra bài học (kết hợp cố định) — bài tập 2 của sách. 吸收 dùng cho vật chất cụ thể (水分, 营养).'},
-  {wrong:'植物的根会____养分和水分。',opts:['吸收','吸取','释放','补充'],ans:0,
-   exp:'Hút vật chất cụ thể → 吸收. 吸取 chỉ đi với 教训 / 经验; 释放 là toả ra (ngược nghĩa).'},
-  {wrong:'你太激动了，最好____一下你的情绪。',opts:['控制','限制','指挥','恢复'],ans:0,
-   exp:'控制情绪 = kiềm chế cảm xúc. 限制 là đặt giới hạn (限制人数 / 时间) — bài tập 2 của sách.'},
-  {wrong:'是他____提出要去参加这次比赛的。',opts:['主动','自动','赶快','根本'],ans:0,
-   exp:'Người tự giác đề xuất trước → 主动提出. 自动 thiên về máy móc, sự vật tự vận hành — bài tập 2 của sách.'},
-  {wrong:'今天的比赛____良好，没有球迷闹事。',opts:['秩序','规则','系统','成分'],ans:0,
-   exp:'秩序良好 = trật tự tốt. 规则 là luật lệ (比赛规则), không nói 规则良好 — bài tập 2 của sách.'},
-  {wrong:'我喜欢北京，____是北京的秋天。',opts:['特别','特殊','根本','赶快'],ans:0,
-   exp:'特别是…… = nhất là (尤其是). 特殊 không có cách dùng này — phần 做一做 của sách.'},
-  {wrong:'夏天运动后在大树下坐一会儿，喝口凉开水，____舒服。',opts:['特别','特殊','自动','根本'],ans:0,
-   exp:'Phó từ đứng trước tính từ (= 格外舒服) → 特别. 特殊 chỉ là tính từ.'},
-  {wrong:'一旦温度上升，大脑就会指挥我们的身体____出汗。',opts:['赶快','根本','特殊','自动'],ans:0,
-   exp:'赶快 + V: mau chóng làm gì (câu bài khoá, 注释 1).'},
-  {wrong:'瓶子里装着满满的石头、玻璃碎____和沙子。',opts:['片','根','块','管'],ans:0,
-   exp:'碎片 = mảnh vỡ — 片 làm danh từ chỉ vật mỏng dẹt (注释 2).'},
-  {wrong:'请帮我拿一____管子来。',opts:['根','片','块','壶'],ans:0,
-   exp:'Vật dài, mảnh → lượng từ 根 / 支: 一根管子 (bảng 词语搭配).'},
-  {wrong:'他不小心打碎了一____玻璃。',opts:['块','根','片','壶'],ans:0,
-   exp:'一块玻璃 = một tấm kính (bảng 词语搭配, bài tập 3).'},
-  {wrong:'妈妈烧了一____开水，给我们泡茶。',opts:['壶','片','根','块'],ans:0,
-   exp:'一壶开水 = một ấm nước sôi (bảng 词语搭配, bài tập 3).'},
-  {wrong:'这个办法只能救急，不能从____上解决问题。',opts:['根本','基本','特殊','内部'],ans:0,
-   exp:'从根本上解决 = giải quyết từ gốc rễ (根本 danh từ — 注释 3).'},
-  {wrong:'这项工作已经____完成了，只剩一点儿小问题。',opts:['基本','根本','自动','赶快'],ans:0,
-   exp:'基本完成 = về cơ bản đã xong (vẫn còn chút việc). 根本完成 lại là "hoàn toàn xong", mâu thuẫn với 只剩一点儿小问题.'},
-  {wrong:'叶子通过不停地向空气中____水汽，迫使树干中的水分前来补充。',opts:['释放','吸收','补充','抽'],ans:0,
-   exp:'Lá toả hơi nước vào không khí → 释放水汽 (câu bài khoá).'},
-  {wrong:'天一黑，路灯就____亮了。',opts:['自动','主动','赶快','根本'],ans:0,
-   exp:'Sự vật tự vận hành, không cần người tác động → 自动.'},
-  {wrong:'你的电脑太慢了，应该去给____做一下升级。',opts:['系统','秩序','状况','内部'],ans:0,
-   exp:'给系统升级 = nâng cấp hệ thống (bài tập 1 của sách).'},
-  {wrong:'警察站在路口____交通。',opts:['指挥','恢复','吸收','补充'],ans:0,
-   exp:'指挥交通 = điều khiển giao thông (ảnh 热身 1 của sách).'},
-  {wrong:'有时候，睡觉并不一定能缓解____。',opts:['疲劳','肌肉','常识','成分'],ans:0,
-   exp:'缓解疲劳 = giảm mệt mỏi (bảng 词语搭配, bài tập 1 của sách).'}
+  {wrong:'同样的错误你已经犯了三次了，应该好好____教训。',opts:['吸取','吸收','补充','释放'],ans:0,exp:'吸取 + 教训 / 经验 = rút ra (bài học). 吸收 dùng cho nước, dinh dưỡng, kiến thức; 补充 là bổ sung; 释放 là thải ra.'},
+  {wrong:'年轻人____新知识比老年人快。',opts:['吸收','吸取','控制','抽'],ans:0,exp:'吸收 + 知识 / 水分 / 营养 = tiếp thu, hấp thụ. 吸取 chỉ đi với 教训, 经验; 控制 là kiềm chế; 抽 là rút ra.'},
+  {wrong:'我____喜欢吃妈妈做的饺子。',opts:['特别','特殊','根本','自动'],ans:0,exp:'特别 làm phó từ = rất, vô cùng: 特别喜欢. 特殊 chỉ là tính từ (特殊情况), không đứng trước động từ; 根本, 自动 không hợp.'},
+  {wrong:'看到老人上车，他____站起来让座。',opts:['主动','自动','根本','特殊'],ans:0,exp:'Người tự giác làm trước, không đợi ai bảo → 主动. 自动 dùng cho máy móc, sự vật tự vận hành; 根本, 特殊 không hợp.'},
+  {wrong:'你发烧了，____去医院看看吧！',opts:['赶快','连忙','根本','自动'],ans:0,exp:'Lời giục, khuyên người khác làm ngay → 赶快. 连忙 chỉ kể lại hành động đã xảy ra, không dùng trong câu cầu khiến; 根本, 自动 không hợp.'},
+  {wrong:'房子已经____装修好了，下个月就能搬进去。',opts:['基本','根本','自动','赶快'],ans:0,exp:'基本 = về cơ bản, gần như (xong). 根本 thường đi với phủ định (根本不……) hoặc 从根本上; 自动, 赶快 không hợp.'},
+  {wrong:'医生说爸爸太胖了，得____一下饮食。',opts:['控制','指挥','释放','补充'],ans:0,exp:'控制 + 饮食 / 体重 / 情绪 = kiểm soát. 指挥 là chỉ huy (người, giao thông); 释放 là thải ra; 补充 là bổ sung — ngược ý.'},
+  {wrong:'红绿灯坏了，警察站在路口____车辆。',opts:['指挥','恢复','吸收','冒'],ans:0,exp:'指挥 + 交通 / 车辆 / 大家 = điều khiển, chỉ huy. 恢复 là hồi phục; 吸收 là hấp thụ; 冒 là bốc lên.'},
+  {wrong:'他病了一个月，现在身体已经____了。',opts:['恢复','补充','释放','状况'],ans:0,exp:'身体 / 精神 + 恢复了 = hồi phục. 补充, 释放 cần tân ngữ; 状况 là danh từ (tình trạng).'},
+  {wrong:'这份报告还不完整，请你再____几个数据。',opts:['补充','恢复','控制','冒'],ans:0,exp:'补充 + nội dung còn thiếu = bổ sung. 恢复 là khôi phục cái đã mất; 控制 là kiểm soát; 冒 là bốc lên.'},
+  {wrong:'开会的时候大家都在说话，会场____很乱。',opts:['秩序','规则','系统','成分'],ans:0,exp:'秩序 = trật tự (tình trạng có tổ chức hay không): 秩序很乱, 遵守秩序. 规则 là quy tắc (điều quy định); 系统 là hệ thống; 成分 là thành phần.'},
+  {wrong:'电脑的____出了问题，打不开了。',opts:['系统','秩序','成分','常识'],ans:0,exp:'系统 = hệ thống (máy tính, cơ thể…): 电脑系统. 秩序 là trật tự; 成分 là thành phần; 常识 là kiến thức thông thường.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nếu cậu không kiềm chế được bản thân khỏi chơi điện thoại thì mau đưa nó cho mẹ giữ hộ đi.',zh:'如果你控制不住自己玩手机，就赶快把它交给妈妈保管吧。',py:'Rúguǒ nǐ kòngzhì bu zhù zìjǐ wán shǒujī, jiù gǎnkuài bǎ tā jiāo gěi māma bǎoguǎn ba.',goiY:['如果……就……','控制不住','赶快 + 把……'],giai:'赶快 là phó từ đứng TRƯỚC 把 và động từ (赶快把它交给……), không đặt sau động từ; 控制不住 = bổ ngữ khả năng "không kiềm chế được".'},
-  {vi:'Học kỳ này cậu ấy gần như chẳng ôn bài gì cả, thảo nào bài kiểm tra lần này làm tệ như vậy.',zh:'他这学期根本没怎么复习，难怪这次测验考得这么差。',py:'Tā zhè xuéqī gēnběn méi zěnme fùxí, nánguài zhè cì cèyàn kǎo de zhème chà.',goiY:['根本没……','难怪','测验'],giai:'根本 + 没 / 不 là phó từ nhấn mạnh phủ định "hoàn toàn không"; nguyên nhân nói trước, 难怪 mở đầu vế kết quả.'},
-  {vi:'Vì sáng chỉ ăn một lát bánh mì và uống một cốc nước đun sôi nên chưa đến mười giờ tớ đã đói rồi.',zh:'因为早上只吃了一片面包、喝了一杯开水，所以还不到十点我就饿了。',py:'Yīnwèi zǎoshang zhǐ chīle yí piàn miànbāo, hēle yì bēi kāishuǐ, suǒyǐ hái bú dào shí diǎn wǒ jiù è le.',goiY:['因为……所以……','一片面包','开水'],giai:'一片 + 面包 / 药: 片 là lượng từ cho vật mỏng; 开水 là nước đã đun sôi (có thể để nguội), không phải "nước đang sôi".'},
-  {vi:'Trời oi bức thế này, thay vì tiếp tục đá bóng trên sân, chi bằng ra gốc cây nghỉ một lát, ăn cây kem.',zh:'天气这么炎热，与其在操场上继续踢球，不如去树下歇一会儿，吃个冰激凌。',py:'Tiānqì zhème yánrè, yǔqí zài cāochǎng shang jìxù tī qiú, bùrú qù shù xià xiē yíhuìr, chī ge bīngjīlíng.',goiY:['炎热','与其……不如……','歇','冰激凌'],giai:'与其 A 不如 B: bỏ A chọn B; 歇 = nghỉ (khẩu ngữ), hay đi với 一会儿 / 一歇; 炎热 chỉ thời tiết, không dùng cho đồ ăn.'},
-  {vi:'Sau khi vận động mạnh, chỉ có kịp thời bổ sung nước và để cơ bắp được thả lỏng hoàn toàn thì thể lực mới hồi phục nhanh được.',zh:'剧烈运动以后，只有及时补充水分，让肌肉充分放松，体力才能尽快恢复。',py:'Jùliè yùndòng yǐhòu, zhǐyǒu jíshí bǔchōng shuǐfèn, ràng jīròu chōngfèn fàngsōng, tǐlì cái néng jǐnkuài huīfù.',goiY:['只有……才……','补充','肌肉','恢复'],giai:'只有……才…… nêu điều kiện bắt buộc, 才 đứng sau chủ ngữ vế cuối (体力才能……); 补充水分 = bổ sung nước, 恢复体力 = hồi phục thể lực.'},
-  {vi:'Hiệu trưởng vừa tuyên bố lớp tớ giành chức vô địch, cả sân trường liền vang lên tiếng reo hò, kết quả là thầy cô mất mấy phút mới lập lại được trật tự.',zh:'校长一宣布我们班得了冠军，操场上就响起一片欢呼声，结果老师花了好几分钟才恢复秩序。',py:'Xiàozhǎng yì xuānbù wǒmen bān déle guànjūn, cāochǎng shang jiù xiǎngqǐ yí piàn huānhūshēng, jiéguǒ lǎoshī huāle hǎo jǐ fēnzhōng cái huīfù zhìxù.',goiY:['一……就……','一片欢呼声','结果','秩序'],giai:'一片 + 欢呼声 / 绿色: 片 dùng cho âm thanh, cảnh sắc bao trùm cả vùng — không dịch "một miếng"; 结果 dẫn ra kết quả thực tế đã xảy ra.'},
-  {vi:'Một khi sức khoẻ có vấn đề thì phải mau đi khám bác sĩ, tuyệt đối đừng vì sợ lỡ việc học mà cố chịu đựng.',zh:'一旦身体状况出了问题，就要赶快去看医生，千万不能因为怕耽误学习而硬撑。',py:'Yídàn shēntǐ zhuàngkuàng chūle wèntí, jiù yào gǎnkuài qù kàn yīshēng, qiānwàn bù néng yīnwèi pà dānwu xuéxí ér yìng chēng.',goiY:['一旦……就……','状况','赶快','因为……而……'],giai:'要 + 赶快 + V: "phải mau…" (thúc giục vì tình thế gấp); 因为 A 而 B = "vì A mà B", 而 đứng trước động từ kết quả.'},
-  {vi:'Mấu chốt để nâng cao thành tích không phải là thức khuya trước kỳ thi, mà là ngày thường chăm chỉ tiếp thu kiến thức trên lớp, như vậy mới giải quyết được vấn đề từ gốc rễ.',zh:'提高成绩的关键不是考前熬夜，而是平时认真吸收课堂上的知识，这样才能从根本上解决问题。',py:'Tígāo chéngjì de guānjiàn bú shì kǎo qián áoyè, ér shì píngshí rènzhēn xīshōu kètáng shang de zhīshi, zhèyàng cái néng cóng gēnběn shang jiějué wèntí.',goiY:['不是……而是……','熬夜','吸收','从根本上'],giai:'从根本上 + V = "từ gốc rễ, triệt để" (根本 là danh từ); 吸收 dùng cho kiến thức / dinh dưỡng, dịch "tiếp thu" — không dịch "hấp thụ" trong ngữ cảnh học tập.'},
-  {vi:'Học ngữ pháp không thể chỉ dựa vào học vẹt, chỉ cần sắp xếp các quy tắc một cách có hệ thống, bổ sung thêm vài ví dụ đặc biệt là sẽ thấy nó hoàn toàn không khó đến thế.',zh:'学语法不能只靠死记硬背，只要有系统地整理规则，再补充一些特殊的例子，就会发现它根本没有那么难。',py:'Xué yǔfǎ bù néng zhǐ kào sǐjì-yìngbèi, zhǐyào yǒu xìtǒng de zhěnglǐ guīzé, zài bǔchōng yìxiē tèshū de lìzi, jiù huì fāxiàn tā gēnběn méiyǒu nàme nán.',goiY:['只要……就……','系统','特殊','根本没有'],giai:'只要……就…… nêu điều kiện đủ; 有系统地 + V = "một cách có hệ thống"; 根本没有那么难 = "hoàn toàn không khó đến thế".'},
-  {vi:'Tuy bài tập nhiều nhưng ngày nào tớ cũng dành ra nửa tiếng để chạy bộ; vận động không chỉ giúp giải toả áp lực mà còn giúp lấy lại tinh thần, hiệu quả học tập ngược lại còn cao hơn.',zh:'虽然作业很多，但我每天还是会抽出半小时跑步；运动不但能释放压力，而且能恢复精神，学习效率反而更高了。',py:'Suīrán zuòyè hěn duō, dàn wǒ měi tiān háishi huì chōuchū bàn xiǎoshí pǎobù; yùndòng búdàn néng shìfàng yālì, érqiě néng huīfù jīngshén, xuéxí xiàolǜ fǎn\'ér gèng gāo le.',goiY:['抽出半小时','不但……而且……','释放压力','反而'],giai:'抽出 + thời gian = "dành ra, tranh thủ" (không dịch "rút ra"); 反而 chỉ kết quả trái với dự đoán: bớt thời gian học mà hiệu quả lại cao hơn.'}
+  {vi:'Nếu cậu không kiềm chế được bản thân khỏi chơi điện thoại thì mau đưa nó cho mẹ giữ hộ đi.',zh:'如果你控制不住自己玩手机，就赶快把它交给妈妈吧。',py:'Rúguǒ nǐ kòngzhì bu zhù zìjǐ wán shǒujī, jiù gǎnkuài bǎ tā jiāo gěi māma ba.',goiY:['如果……就……','控制不住','赶快'],giai:'控制不住 là bổ ngữ khả năng phủ định "không kiềm chế được"; 赶快 đứng trước động từ trong lời khuyên, giục người khác.'},
+  {vi:'Học kỳ này cậu ấy gần như chẳng ôn bài gì cả, thảo nào bài kiểm tra lần này làm tệ như vậy.',zh:'他这学期根本没怎么复习，难怪这次测验考得这么差。',py:'Tā zhè xuéqī gēnběn méi zěnme fùxí, nánguài zhè cì cèyàn kǎo de zhème chà.',goiY:['根本 + phủ định','难怪','测验'],giai:'根本没怎么 + V = gần như chẳng… gì cả; 难怪 (bài 33) đứng đầu vế kết quả sau khi đã biết nguyên nhân.'},
+  {vi:'Vì sáng chỉ ăn một lát bánh mì và uống một cốc nước đun sôi nên chưa đến mười giờ tớ đã đói rồi.',zh:'因为早上只吃了一片面包、喝了一杯开水，所以还不到十点我就饿了。',py:'Yīnwèi zǎoshang zhǐ chīle yí piàn miànbāo, hēle yì bēi kāishuǐ, suǒyǐ hái bú dào shí diǎn wǒ jiù è le.',goiY:['一片面包','开水','还不到……就……'],giai:'片 là lượng từ cho vật mỏng, dẹt (一片面包, 两片药); 还不到……就…… nhấn mạnh việc xảy ra sớm hơn mong đợi.'},
+  {vi:'Trời oi bức thế này, thay vì tiếp tục đá bóng trên sân, chi bằng ra gốc cây nghỉ một lát, ăn cây kem.',zh:'天气这么炎热，与其在操场上继续踢球，不如去树下歇一会儿，吃个冰激凌。',py:'Tiānqì zhème yánrè, yǔqí zài cāochǎng shang jìxù tī qiú, bùrú qù shù xià xiē yíhuìr, chī ge bīngjīlíng.',goiY:['炎热','与其……不如……','歇','冰激凌'],giai:'与其 A 不如 B (bài 33): bỏ A chọn B; 歇一会儿 = nghỉ một lát (khẩu ngữ).'},
+  {vi:'Mấu chốt để nâng cao thành tích không phải là thức khuya trước kỳ thi, mà là ngày thường chăm chỉ tiếp thu kiến thức học trên lớp, như vậy mới giải quyết được vấn đề từ gốc rễ.',zh:'提高成绩的关键不是考前熬夜，而是平时认真吸收上课时学到的知识，这样才能从根本上解决问题。',py:'Tígāo chéngjì de guānjiàn bú shì kǎo qián áoyè, ér shì píngshí rènzhēn xīshōu shàngkè shí xuédào de zhīshi, zhèyàng cái néng cóng gēnběn shang jiějué wèntí.',goiY:['不是……而是……','吸收','从根本上'],giai:'从根本上 + 解决 = giải quyết tận gốc; 吸收 + 知识 = tiếp thu (không dùng 吸取 với 知识).'},
+  {vi:'Tuy bài tập nhiều nhưng ngày nào tớ cũng dành ra nửa tiếng để chạy bộ; vận động không chỉ giúp giải toả áp lực mà còn giúp lấy lại tinh thần, hiệu quả học tập ngược lại còn cao hơn.',zh:'虽然作业很多，但我每天还是会抽出半小时跑步；运动不但能释放压力，而且能恢复精神，学习效率反而更高了。',py:'Suīrán zuòyè hěn duō, dàn wǒ měi tiān háishi huì chōuchū bàn xiǎoshí pǎobù; yùndòng búdàn néng shìfàng yālì, érqiě néng huīfù jīngshen, xuéxí xiàolǜ fǎn\'ér gèng gāo le.',goiY:['抽出……时间','释放压力','恢复','反而'],giai:'抽出 + thời gian = dành ra; 反而 chỉ kết quả trái với suy đoán (bận mà hiệu quả lại cao hơn).'}
 ];
 
-// Chiều Trung → Việt — câu của bài khoá
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Nếu mùa hè nóng bức đá bóng xong mà được vào nghỉ dưới bóng cây mát rượi thì thật không gì dễ chịu bằng.',zh:'如果炎热的夏天踢完球能到荫凉的大树下歇一歇，那真是再舒服不过了。',py:'Rúguǒ yánrè de xiàtiān tīwán qiú néng dào yīnliáng de dà shù xià xiē yi xiē, nà zhēn shì zài shūfu búguò le.',goiY:['如果……那…… = nếu… thì…','荫凉 = râm mát','歇一歇 = nghỉ một chút','再……不过了 = không gì… bằng'],giai:'再 + Adj + 不过了 là cách nói so sánh tuyệt đối "… nhất, không gì bằng"; 歇一歇 là động từ lặp lại, mang nghĩa "nghỉ một lát".'},
-  {vi:'Sở dĩ chúng ta được hưởng bầu không khí ẩm mát dưới gốc cây là vì cây lớn cũng đang "đổ mồ hôi".',zh:'我们之所以能在大树下享受湿润荫凉，是因为大树也在“出汗”。',py:'Wǒmen zhīsuǒyǐ néng zài dà shù xià xiǎngshòu shīrùn yīnliáng, shì yīnwèi dà shù yě zài “chū hàn”.',goiY:['之所以……是因为…… = sở dĩ… là vì…','享受 = hưởng thụ','湿润 = ẩm ướt (dễ chịu)'],giai:'之所以 đặt sau chủ ngữ, nêu kết quả trước; 是因为 giải thích nguyên nhân — 湿润荫凉 dịch gộp "ẩm mát".'},
-  {vi:'Một khi thân nhiệt tăng lên, não sẽ ra lệnh cho cơ thể mau đổ mồ hôi để hạ nhiệt.',zh:'一旦体温上升，大脑就会指挥身体赶快出汗来降低温度。',py:'Yídàn tǐwēn shàngshēng, dànǎo jiù huì zhǐhuī shēntǐ gǎnkuài chū hàn lái jiàngdī wēndù.',goiY:['一旦……就…… = một khi… thì…','指挥 = chỉ huy, ra lệnh','赶快 = mau chóng'],giai:'指挥 + đối tượng + V (câu kiêm ngữ) = "ra lệnh cho ai làm gì"; V1 + 来 + V2: V2 là mục đích của V1 (出汗来降低温度).'},
-  {vi:'Khi người đổ mồ hôi, mọi tuyến mồ hôi đều bắt đầu làm việc, mồ hôi toát ra từ lỗ chân lông; còn "mồ hôi" của cây lại toát ra từ khí khổng trên phiến lá.',zh:'人出汗时所有汗腺都开始工作，汗水从毛孔里冒出来；而大树的“汗”却是从叶片的气孔里冒出来的。',py:'Rén chū hàn shí suǒyǒu hànxiàn dōu kāishǐ gōngzuò, hànshuǐ cóng máokǒng li mào chulai; ér dà shù de “hàn” què shì cóng yèpiàn de qìkǒng li mào chulai de.',goiY:['汗腺 = tuyến mồ hôi','毛孔 = lỗ chân lông','冒出来 = toát ra','却 = lại (đối lập)'],giai:'Dấu ； tách hai vế so sánh người – cây, 而……却…… nhấn mạnh sự khác biệt; 叶片 = N + 片 (phiến lá).'},
-  {vi:'Cây lớn "đổ mồ hôi" không phải để hạ nhiệt độ mà là để vận chuyển chất dinh dưỡng và nước từ rễ lên tận ngọn cây.',zh:'大树“出汗”不是为了降低温度，而是为了把养分和水分从树根运输到树梢。',py:'Dà shù “chū hàn” bú shì wèile jiàngdī wēndù, ér shì wèile bǎ yǎngfèn hé shuǐfèn cóng shùgēn yùnshū dào shùshāo.',goiY:['不是……而是…… = không phải… mà là…','运输 = vận chuyển','树根 = rễ cây','树梢 = ngọn cây'],giai:'不是为了 A，而是为了 B: phủ định mục đích A, khẳng định mục đích B; 把 + O + 从 A 运输到 B = vận chuyển cái gì từ A đến B.'},
-  {vi:'Rễ cây hút chất dinh dưỡng và nước, đó là kiến thức phổ thông; nhưng cây kiểm soát những thành phần này và đưa chúng lên tận ngọn bằng cách nào?',zh:'植物的根会吸收养分和水分，这是常识；可是植物是怎么控制这些成分并把它们送到树梢的呢？',py:'Zhíwù de gēn huì xīshōu yǎngfèn hé shuǐfèn, zhè shì chángshí; kěshì zhíwù shì zěnme kòngzhì zhèxiē chéngfèn bìng bǎ tāmen sòngdào shùshāo de ne?',goiY:['吸收 = hấp thụ','常识 = kiến thức phổ thông','控制 = kiểm soát','成分 = thành phần'],giai:'可是 chuyển từ điều ai cũng biết sang câu hỏi mới; 是怎么……的 nhấn mạnh cách thức — dịch "bằng cách nào".'},
-  {vi:'Cái gọi là "hiện tượng mao dẫn" chính là nước sẽ "leo" lên theo những ống rất nhỏ; ống thuỷ tinh càng nhỏ thì nước leo càng cao.',zh:'所谓“毛细作用”，就是水会顺着很细的管子往上“爬”；玻璃管子越细，水爬升的高度就越高。',py:'Suǒwèi “máoxì zuòyòng”, jiù shì shuǐ huì shùnzhe hěn xì de guǎnzi wǎng shàng “pá”; bōli guǎnzi yuè xì, shuǐ páshēng de gāodù jiù yuè gāo.',goiY:['所谓……就是…… = cái gọi là… chính là…','管子 = ống','玻璃 = thuỷ tinh','越……越…… = càng… càng…'],giai:'所谓 A，就是 B dùng để giải thích một khái niệm; 越 A 越 B: B thay đổi theo A — 就 có thể đứng trước 越 thứ hai.'},
-  {vi:'Ban đầu người ta cho rằng cây lớn hút nước nhờ hiện tượng mao dẫn, nhưng qua đo đạc tính toán thì thấy hiện tượng này hoàn toàn không thể đưa nước lên nơi cao mấy chục mét.',zh:'最初人们认为大树是靠毛细作用提水的，可是经过测验计算发现，它根本无法把水送到几十米高的地方。',py:'Zuìchū rénmen rènwéi dà shù shì kào máoxì zuòyòng tí shuǐ de, kěshì jīngguò cèyàn jìsuàn fāxiàn, tā gēnběn wúfǎ bǎ shuǐ sòngdào jǐ shí mǐ gāo de dìfang.',goiY:['最初 = lúc đầu','可是 = nhưng','测验 = đo thử, kiểm nghiệm','根本无法 = hoàn toàn không thể'],giai:'最初……可是…… đối lập nhận thức ban đầu với kết quả thực tế; 根本 + 无法 là phó từ nhấn mạnh "hoàn toàn không".'},
-  {vi:'Phiến lá không ngừng thải hơi nước vào không khí, buộc nước trong cành và thân cây tự động dâng lên bù vào, nhờ đó nước mà rễ hút được "bị kéo" lên từng đoạn một.',zh:'叶片不停地向空气中释放水汽，迫使枝干里的水分自动前来补充，从而把树根吸收的水一节一节地“抽”了上来。',py:'Yèpiàn bù tíng de xiàng kōngqì zhōng shìfàng shuǐqì, pòshǐ zhīgàn li de shuǐfèn zìdòng qiánlái bǔchōng, cóng\'ér bǎ shùgēn xīshōu de shuǐ yì jié yì jié de “chōu” le shànglai.',goiY:['释放 = thải ra, toả ra','迫使 = buộc, ép','自动 = tự động','从而 = nhờ đó'],giai:'迫使 + đối tượng + V = "buộc ai/cái gì phải…"; 从而 dẫn ra kết quả cuối cùng, 抽上来 = hút/kéo lên (bổ ngữ xu hướng).'},
-  {vi:'Lực nâng đặc biệt này có liên quan đến sự thoát hơi nước nên được gọi là "lực kéo thoát hơi nước"; nhưng hệ thống cấp nước bên trong cây tuân theo trật tự nào thì đến nay vẫn là một bí ẩn.',zh:'这种特殊的提升力跟蒸腾作用有关，所以叫“蒸腾拉力”；不过大树内部的供水系统遵守什么秩序，至今还是个谜。',py:'Zhè zhǒng tèshū de tíshēnglì gēn zhēngténg zuòyòng yǒuguān, suǒyǐ jiào “zhēngténg lālì”; búguò dà shù nèibù de gōngshuǐ xìtǒng zūnshǒu shénme zhìxù, zhìjīn hái shì ge mí.',goiY:['特殊 = đặc biệt','蒸腾 = thoát hơi nước','内部 = bên trong','系统 = hệ thống','秩序 = trật tự'],giai:'Vế sau 不过 là câu hỏi gián tiếp làm chủ ngữ (…遵守什么秩序) — dịch "tuân theo trật tự nào thì…"; 至今 = đến nay.'}
+  {vi:'Nếu mùa hè nóng bức đá bóng xong mà được vào nghỉ dưới bóng cây mát rượi thì thật không gì dễ chịu bằng.',zh:'如果炎热的夏天踢完球能到荫凉的大树下歇一歇，那真是再舒服不过了。',py:'Rúguǒ yánrè de xiàtiān tī wán qiú néng dào yīnliáng de dà shù xià xiē yi xiē, nà zhēn shì zài shūfu búguò le.',goiY:['炎热 = nóng bức','荫凉 = râm mát','再……不过了 = không gì… bằng'],giai:'再 + tính từ + 不过了 = "… nhất, không gì bằng" — đừng dịch sát "lại… không qua".'},
+  {vi:'Khi người đổ mồ hôi, mọi tuyến mồ hôi đều bắt đầu làm việc, mồ hôi toát ra từ lỗ chân lông; còn "mồ hôi" của cây lại toát ra từ khí khổng trên phiến lá.',zh:'人出汗时所有汗腺都开始工作，汗水从毛孔里冒出来；而大树的“汗”却是从叶片的气孔里冒出来的。',py:'Rén chū hàn shí suǒyǒu hànxiàn dōu kāishǐ gōngzuò, hànshuǐ cóng máokǒng li mào chūlai; ér dà shù de “hàn” què shì cóng yèpiàn de qìkǒng li mào chūlai de.',goiY:['汗腺 = tuyến mồ hôi','毛孔 = lỗ chân lông','冒出来 = toát ra'],giai:'而……却…… so sánh hai đối tượng trái nhau (người / cây); 是……的 nhấn mạnh nơi toát ra.'},
+  {vi:'Rễ cây hút chất dinh dưỡng và nước, đó là kiến thức phổ thông; nhưng cây kiểm soát những thành phần này và đưa chúng lên tận ngọn bằng cách nào?',zh:'植物的根会吸收养分和水分，这是常识；可是植物是怎么控制这些成分并把它们送到树梢的呢？',py:'Zhíwù de gēn huì xīshōu yǎngfèn hé shuǐfèn, zhè shì chángshí; kěshì zhíwù shì zěnme kòngzhì zhèxiē chéngfèn bìng bǎ tāmen sòngdào shùshāo de ne?',goiY:['吸收 = hút, hấp thụ','常识 = kiến thức phổ thông','成分 = thành phần'],giai:'是怎么……的呢 hỏi về cách thức của việc đã/đang xảy ra; 并 nối hai động từ (控制 và 送).'},
+  {vi:'Ban đầu người ta cho rằng cây lớn hút nước nhờ hiện tượng mao dẫn, nhưng qua đo đạc tính toán thì thấy hiện tượng này hoàn toàn không thể đưa nước lên nơi cao mấy chục mét.',zh:'最初人们认为大树是靠毛细作用提水的，可是经过测验计算发现，它根本无法把水送到几十米高的地方。',py:'Zuìchū rénmen rènwéi dà shù shì kào máoxì zuòyòng tí shuǐ de, kěshì jīngguò cèyàn jìsuàn fāxiàn, tā gēnběn wúfǎ bǎ shuǐ sòngdào jǐshí mǐ gāo de dìfang.',goiY:['测验 = đo đạc, kiểm tra','根本无法 = hoàn toàn không thể'],giai:'根本 + phủ định (无法 / 不 / 没) = hoàn toàn không…; 经过……发现 = qua… thì phát hiện.'},
+  {vi:'Phiến lá không ngừng thải hơi nước vào không khí, buộc nước trong cành và thân cây tự động dâng lên bù vào, nhờ đó nước mà rễ hút được "bị kéo" lên từng đoạn một.',zh:'叶片不停地向空气中释放水汽，迫使枝干里的水分自动前来补充，从而把树根吸收的水一节一节地“抽”了上来。',py:'Yèpiàn bù tíng de xiàng kōngqì zhōng shìfàng shuǐqì, pòshǐ zhīgàn li de shuǐfèn zìdòng qiánlái bǔchōng, cóng\'ér bǎ shùgēn xīshōu de shuǐ yì jié yì jié de “chōu” le shànglai.',goiY:['释放 = thải ra','自动 = tự động','补充 = bổ sung','抽 = hút, kéo lên'],giai:'迫使 + đối tượng + V = buộc… phải…; 从而 dẫn ra kết quả; 抽 ở đây là "hút, bơm lên".'},
+  {vi:'Lực nâng đặc biệt này có liên quan đến sự thoát hơi nước nên được gọi là "lực kéo thoát hơi nước"; nhưng hệ thống cấp nước bên trong cây tuân theo trật tự nào thì đến nay vẫn là một bí ẩn.',zh:'这种特殊的提升力跟蒸腾作用有关，所以叫蒸腾拉力；不过大树内部的供水系统遵守什么秩序，至今还是个谜。',py:'Zhè zhǒng tèshū de tíshēnglì gēn zhēngténg zuòyòng yǒuguān, suǒyǐ jiào zhēngténg lālì; búguò dà shù nèibù de gōngshuǐ xìtǒng zūnshǒu shénme zhìxù, zhìjīn hái shì ge mí.',goiY:['特殊 = đặc biệt','蒸腾 = thoát hơi nước','内部 = bên trong','秩序 = trật tự'],giai:'特殊 chỉ là tính từ (特殊的提升力), không làm phó từ như 特别; 是个谜 = là một bí ẩn.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1401,30 +1328,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (câu 29–31 của sách bài tập + câu bài khoá)
   sapXep:[
-    {manh:['有可能','吃什么食物','缓解疲劳？'],
-     dap:'吃什么食物有可能缓解疲劳？',
-     vn:'Ăn thức ăn gì có thể giảm mệt mỏi?',
-     giai:'Chủ ngữ là cụm động từ 吃什么食物 + 有可能 + 缓解疲劳. Câu 29 sách bài tập.'},
-    {manh:['交来的','这是他','补充材料','上次面试后'],
-     dap:'这是他上次面试后交来的补充材料。',
-     vn:'Đây là tài liệu bổ sung anh ấy nộp sau lần phỏng vấn trước.',
-     giai:'这是 + định ngữ dài (他上次面试后交来的) + 补充材料. Câu 30 sách bài tập.'},
-    {manh:['是大家都知道的','植物用根','常识','吸收水分'],
-     dap:'植物用根吸收水分是大家都知道的常识。',
-     vn:'Cây dùng rễ để hút nước là điều ai cũng biết.',
-     giai:'Chủ ngữ là cụm 植物用根吸收水分 + 是 + 大家都知道的常识. Câu 31 sách bài tập.'},
-    {manh:['根本无法','毛细作用','把水分','送到树梢'],
-     dap:'毛细作用根本无法把水分送到树梢。',
-     vn:'Hiện tượng mao dẫn hoàn toàn không thể đưa nước lên ngọn cây.',
-     giai:'根本无法 đứng trước câu 把: 根本无法 + 把水分 + 送到…….'},
-    {manh:['赶快','大脑会','出汗','指挥身体'],
-     dap:'大脑会指挥身体赶快出汗。',
-     vn:'Não sẽ ra lệnh cho cơ thể mau chóng đổ mồ hôi.',
-     giai:'指挥 + 身体 + 赶快出汗: 赶快 đứng trước động từ 出汗.'},
-    {manh:['被称为','这种','特殊的提升力','“蒸腾拉力”'],
-     dap:'这种特殊的提升力被称为“蒸腾拉力”。',
-     vn:'Lực nâng đặc biệt này được gọi là "lực kéo thoát hơi nước".',
-     giai:'Câu 被 không có tác nhân: chủ ngữ + 被称为 + tên gọi.'}
+    {manh:['有可能','吃什么食物','缓解疲劳？'],dap:'吃什么食物有可能缓解疲劳？',vn:'Ăn thức ăn gì có thể giảm mệt mỏi?',giai:'Chủ ngữ là cụm động từ 吃什么食物 + 有可能 + 缓解疲劳. Câu 29 sách bài tập.'},
+    {manh:['交来的','这是他','补充材料','上次面试后'],dap:'这是他上次面试后交来的补充材料。',vn:'Đây là tài liệu bổ sung anh ấy nộp sau lần phỏng vấn trước.',giai:'这是 + định ngữ dài (他上次面试后交来的) + 补充材料. Câu 30 sách bài tập.'},
+    {manh:['是大家都知道的','植物用根','常识','吸收水分'],dap:'植物用根吸收水分是大家都知道的常识。',vn:'Cây dùng rễ để hút nước là điều ai cũng biết.',giai:'Chủ ngữ là cụm 植物用根吸收水分 + 是 + 大家都知道的常识. Câu 31 sách bài tập.'},
+    {manh:['根本无法','毛细作用','把水分','送到树梢'],dap:'毛细作用根本无法把水分送到树梢。',vn:'Hiện tượng mao dẫn hoàn toàn không thể đưa nước lên ngọn cây.',giai:'根本无法 đứng trước câu 把: 根本无法 + 把水分 + 送到…….'},
+    {manh:['赶快','大脑会','出汗','指挥身体'],dap:'大脑会指挥身体赶快出汗。',vn:'Não sẽ ra lệnh cho cơ thể mau chóng đổ mồ hôi.',giai:'指挥 + 身体 + 赶快出汗: 赶快 đứng trước động từ 出汗.'},
+    {manh:['被称为','这种','特殊的提升力','“蒸腾拉力”'],dap:'这种特殊的提升力被称为“蒸腾拉力”。',vn:'Lực nâng đặc biệt này được gọi là "lực kéo thoát hơi nước".',giai:'Câu 被 không có tác nhân: chủ ngữ + 被称为 + tên gọi.'}
   ]
 };
 
@@ -1434,30 +1343,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (植物的功能 · chức năng của thực vật). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 吸收 · 释放 · 特殊 · 根本 · 补充 · 恢复 · 荫凉 · 湿润.',
   questions:[
-    {q_zh:'你喜欢什么样的植物？为什么？',
-     q_vn:'Em thích loại cây nào? Vì sao?',
-     hint:'Nêu tên cây + 1–2 đặc điểm, dùng 特殊 / 片',
-     sample:'我喜欢竹子。竹子长得特别快，一片竹林又绿又荫凉，夏天在里面散步很舒服。而且竹子很特殊，中间是空的，却非常结实。',
-     sample_vn:'Em thích cây tre. Tre mọc rất nhanh, một rừng tre vừa xanh vừa râm mát, mùa hè đi dạo trong đó rất dễ chịu. Hơn nữa tre rất đặc biệt, ruột rỗng mà lại rất chắc.',
-     note:'Câu hỏi 1 của sách. Chú ý: 特别快 (phó từ) nhưng 很特殊 (tính từ).'},
-    {q_zh:'在你的国家最常见或最有名的植物是什么？',
-     q_vn:'Ở đất nước em, loài cây phổ biến hoặc nổi tiếng nhất là gì?',
-     hint:'Giới thiệu cây (tre / sen / lúa…) và ý nghĩa của nó',
-     sample:'在越南，最有名的植物是荷花和竹子。荷花生长在泥里，却非常干净美丽；竹子代表越南人坚强的性格，很多村子四周都种着一片片竹林。',
-     sample_vn:'Ở Việt Nam, loài cây nổi tiếng nhất là hoa sen và cây tre. Sen mọc trong bùn mà vẫn rất sạch đẹp; tre tượng trưng cho tính cách kiên cường của người Việt, quanh nhiều làng quê đều trồng những rặng tre.',
-     note:'Câu hỏi 2 của sách. 一片片竹林 — lặp lượng từ 片 để tả "từng rặng, khắp nơi".'},
-    {q_zh:'在你的生活中，植物起了什么作用？',
-     q_vn:'Trong cuộc sống của em, cây cối có tác dụng gì?',
-     hint:'Nói 2–3 tác dụng, dùng 释放 / 吸收 / 荫凉',
-     sample:'植物的作用很大。它们能吸收二氧化碳，释放出氧气；夏天大树下又湿润又荫凉；我们吃的米饭、水果也都来自植物。如果没有植物，我们根本无法生存。',
-     sample_vn:'Cây cối có tác dụng rất lớn. Chúng hấp thụ khí CO2, giải phóng ô-xy; mùa hè dưới gốc cây vừa ẩm mát vừa râm; cơm, hoa quả chúng ta ăn cũng đều từ thực vật. Nếu không có cây, chúng ta hoàn toàn không thể sống được.',
-     note:'Câu hỏi 3 của sách. Liệt kê bằng dấu chấm phẩy, kết bằng 根本无法 để nhấn mạnh.'},
-    {q_zh:'夏天运动以后，你常常用什么办法降温？效果怎么样？',
-     q_vn:'Mùa hè vận động xong, em thường hạ nhiệt bằng cách nào? Hiệu quả thế nào?',
-     hint:'Theo bài 热身 2 của sách — nêu cách, ưu điểm, nhược điểm; dùng 歇 / 补充 / 恢复',
-     sample:'我一般先到树下歇一会儿，喝点儿凉开水补充水分。这个办法对身体好，很快就能恢复体力。以前我喜欢吃冰激凌，虽然降温很快，但是对健康不利。',
-     sample_vn:'Em thường ra gốc cây nghỉ một lát trước, uống chút nước đun sôi để nguội bổ sung nước. Cách này tốt cho sức khoẻ, rất nhanh lấy lại sức. Trước đây em thích ăn kem, tuy hạ nhiệt nhanh nhưng không tốt cho sức khoẻ.',
-     note:'Nội dung bảng 热身 2 của sách (降温的办法 · 优点 · 缺点). Dùng 虽然……但是…… để nêu ưu–nhược.'}
+    {q_zh:'你喜欢什么样的植物？为什么？',q_vn:'Em thích loại cây nào? Vì sao?',hint:'Nêu tên cây + 1–2 đặc điểm, dùng 特别 / 片',sample:'我喜欢桃树。春天一到，一片片桃树林开满了花，看起来特别漂亮；夏天还能吃到又大又甜的桃子。',sample_vn:'Tôi thích cây đào. Xuân vừa đến, từng rừng đào nở đầy hoa, đẹp vô cùng; mùa hè còn được ăn những quả đào vừa to vừa ngọt.',note:'一片片 + danh từ = từng mảng, cả một vùng; 特别 làm phó từ (特别好看), không dùng 特殊.'},
+    {q_zh:'在你的国家，最常见、最有名的植物是什么？',q_vn:'Ở nước em, loại cây phổ biến nhất, nổi tiếng nhất là gì?',hint:'Giới thiệu một loại cây và ý nghĩa / công dụng của nó',sample:'在越南，到处都能看到香蕉树。香蕉树的叶子很大，以前人们常用它来包东西；香蕉又甜又有营养，越南人几乎每天都吃。',sample_vn:'Ở Việt Nam, đâu đâu cũng thấy cây chuối. Lá chuối rất to, ngày xưa người ta hay dùng để gói đồ; chuối vừa ngọt vừa bổ, người Việt gần như ngày nào cũng ăn.',note:'到处都能看到 = đâu cũng thấy; dùng 常用……来…… để nói công dụng.'},
+    {q_zh:'在你的生活中，植物起了什么作用？',q_vn:'Trong cuộc sống của em, cây cối có tác dụng gì?',hint:'Nói 2–3 tác dụng, dùng 吸收 / 荫凉 / 根本',sample:'植物的作用很大。它们能让空气变得更新鲜；夏天大树下又湿润又荫凉；我们吃的米饭、水果也都来自植物。如果没有植物，我们根本无法生存。',sample_vn:'Cây cối có tác dụng rất lớn. Chúng làm không khí trong lành hơn; mùa hè dưới gốc cây vừa ẩm vừa râm mát; cơm, hoa quả chúng ta ăn cũng đều từ thực vật mà ra. Nếu không có cây cối, chúng ta hoàn toàn không thể sống được.',note:'Liệt kê bằng dấu ；, kết bằng câu giả thiết 如果没有……，根本…….'},
+    {q_zh:'夏天运动以后，你常常用什么办法让自己凉快下来？效果怎么样？',q_vn:'Mùa hè vận động xong, em thường làm gì cho mát người? Hiệu quả thế nào?',hint:'Theo phần khởi động của sách — nêu cách, ưu điểm, nhược điểm; dùng 歇 / 补充 / 恢复',sample:'我一般先到树下歇一会儿，喝点儿凉开水补充水分。这个办法对身体好，很快就能恢复精神。以前我喜欢吃冰激凌，虽然一下子就凉快了，但是对健康不利。',sample_vn:'Tôi thường ra gốc cây nghỉ một lát trước, uống chút nước nguội để bổ sung nước. Cách này tốt cho cơ thể, rất nhanh lấy lại tinh thần. Trước đây tôi thích ăn kem, tuy mát ngay nhưng không tốt cho sức khoẻ.',note:'Nêu cả ưu điểm lẫn nhược điểm, so sánh cách cũ và cách mới cho câu trả lời có chiều sâu.'}
   ]
 };
 
@@ -1548,45 +1437,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Em trai vẫn đang chơi game, trong khi vé tàu về quê ngày mai chưa đặt.',
-     a:{sp:'Mẹ',zh:'你怎么还在玩儿游戏？火车票预定了吗？',vn:'Sao con vẫn còn chơi game? Vé tàu đặt chưa?'},
-     need:['Dùng 赶快','Hứa sẽ làm ngay'],
-     sample:'还没呢，我这就赶快在网上订。',
-     samplePy:'Hái méi ne, wǒ zhè jiù gǎnkuài zài wǎngshang dìng.',
-     sampleVn:'Chưa ạ, con đặt trên mạng ngay đây.',
-     tip:'赶快 + V: làm ngay, gấp. Bài 练一练 (3) của 注释 1.'},
-
-    {scene:'Em và bạn hẹn nhau đi xem phim, bạn vẫn đang chậm chạp chọn quần áo.',
-     a:{sp:'Bạn',zh:'别急，我再换一件衣服。',vn:'Đừng vội, để mình thay thêm một bộ nữa.'},
-     need:['Dùng 赶快','Nêu hậu quả nếu chậm'],
-     sample:'你赶快换好衣服吧，要不该赶上堵车了，电影七点就开始了。',
-     samplePy:'Nǐ gǎnkuài huànhǎo yīfu ba, yàobù gāi gǎnshang dǔchē le, diànyǐng qī diǎn jiù kāishǐ le.',
-     sampleVn:'Cậu mau thay đồ đi, không thì lại gặp tắc đường đấy, bảy giờ phim đã chiếu rồi.',
-     tip:'……赶快……，要不…… — thúc giục + hậu quả. Bài 练一练 (1) của 注释 1.'},
-
-    {scene:'Em cùng mẹ nấu ăn, em nhận phần thái khoai tây.',
-     a:{sp:'Mẹ',zh:'我来切菜吧，土豆怎么切？',vn:'Để mẹ thái rau, khoai tây thái thế nào?'},
-     need:['Dùng 片 (danh từ)','Nói cách thái'],
-     sample:'切成薄片吧，炒出来比较好吃。',
-     samplePy:'Qiēchéng báo piàn ba, chǎo chulai bǐjiào hǎochī.',
-     sampleVn:'Thái thành lát mỏng mẹ ạ, xào lên ngon hơn.',
-     tip:'切成片 / 薄片 — 片 làm danh từ. Bài 练一练 (1) của 注释 2.'},
-
-    {scene:'Bạn cùng phòng bị cảm, cầm hộp thuốc hỏi em cách uống.',
-     a:{sp:'Bạn',zh:'这药怎么吃？',vn:'Thuốc này uống thế nào?'},
-     need:['Dùng 片 (lượng từ)','Nói liều lượng'],
-     sample:'一天三次，一次两片，饭后吃。',
-     samplePy:'Yì tiān sān cì, yí cì liǎng piàn, fàn hòu chī.',
-     sampleVn:'Ngày ba lần, mỗi lần hai viên, uống sau khi ăn.',
-     tip:'一次 + số + 片: 片 làm lượng từ cho viên thuốc dẹt. Bài 练一练 (3) của 注释 2.'},
-
-    {scene:'Bạn hỏi ý kiến em về lời của một người mà em thấy hoàn toàn vô lý.',
-     a:{sp:'Bạn',zh:'你觉得他说的话有道理吗？',vn:'Cậu thấy lời anh ta nói có lý không?'},
-     need:['Dùng 根本','Nêu lý do'],
-     sample:'他说的根本没有道理，他连事情的经过都不了解。',
-     samplePy:'Tā shuō de gēnběn méiyǒu dàolǐ, tā lián shìqing de jīngguò dōu bù liǎojiě.',
-     sampleVn:'Anh ta nói hoàn toàn chẳng có lý gì, anh ta còn chẳng hiểu sự việc diễn ra thế nào.',
-     tip:'根本 + 没有 / 不 — phủ định hoàn toàn. Bài 练一练 (1) của 注释 3.'}
+    {scene:'Em trai vẫn đang chơi game, trong khi vé tàu về quê ngày mai chưa mua.',a:{sp:'Mẹ',zh:'你怎么还在玩儿游戏？明天的火车票买了吗？',vn:'Sao con vẫn còn chơi game thế? Vé tàu ngày mai mua chưa?'},need:['Dùng 赶快','Hứa sẽ làm ngay'],sample:'还没呢，我这就赶快在网上买。',samplePy:'Hái méi ne, wǒ zhè jiù gǎnkuài zài wǎng shang mǎi.',sampleVn:'Chưa ạ, con mua ngay trên mạng đây.',tip:'这就 + 赶快 + V = làm ngay lập tức (hứa hẹn).'},
+    {scene:'Em và bạn hẹn nhau đi xem phim, bạn vẫn đang chậm chạp chọn quần áo.',a:{sp:'Bạn',zh:'等一下，我再换一件衣服。',vn:'Đợi chút, tớ thay bộ khác đã.'},need:['Dùng 赶快','Nêu hậu quả nếu chậm'],sample:'你赶快换好衣服吧，要不该赶上堵车了，电影七点就开始了。',samplePy:'Nǐ gǎnkuài huàn hǎo yīfu ba, yàobù gāi gǎnshang dǔchē le, diànyǐng qī diǎn jiù kāishǐ le.',sampleVn:'Cậu thay nhanh lên, không thì sẽ gặp tắc đường đấy, bảy giờ phim đã chiếu rồi.',tip:'赶快 dùng được trong câu cầu khiến (khác 连忙); 要不 (bài 8) nêu hậu quả.'},
+    {scene:'Em cùng mẹ chuẩn bị đồ ăn, em nhận phần cắt hoa quả.',a:{sp:'Mẹ',zh:'你来切水果吧。',vn:'Con cắt hoa quả nhé.'},need:['Dùng 片 (danh từ)','Hỏi / nói cách cắt'],sample:'好的，苹果切成薄片吧，放在盘子里比较好看。',samplePy:'Hǎo de, píngguǒ qiēchéng báo piàn ba, fàng zài pánzi li bǐjiào hǎokàn.',sampleVn:'Vâng, táo cắt thành lát mỏng nhé, bày ra đĩa trông đẹp hơn.',tip:'切成片 / 切成薄片: 片 làm danh từ = lát mỏng (điểm ngữ pháp 2).'},
+    {scene:'Bạn cùng phòng bị cảm, cầm hộp thuốc hỏi em cách uống.',a:{sp:'Bạn',zh:'这药怎么吃？',vn:'Thuốc này uống thế nào?'},need:['Dùng 片 (lượng từ)','Nói liều lượng'],sample:'医生说早晚各吃一次，每次两片，要饭后吃。',samplePy:'Yīshēng shuō zǎo wǎn gè chī yí cì, měi cì liǎng piàn, yào fàn hòu chī.',sampleVn:'Bác sĩ dặn sáng tối mỗi buổi uống một lần, mỗi lần hai viên, uống sau ăn.',tip:'片 làm lượng từ cho thuốc viên dẹt: 两片药.'},
+    {scene:'Bạn hỏi ý kiến em về lời của một người mà em thấy hoàn toàn vô lý.',a:{sp:'Bạn',zh:'你觉得他说的话有道理吗？',vn:'Cậu thấy lời anh ta nói có lý không?'},need:['Dùng 根本','Nêu lý do'],sample:'他说的根本没有道理，他连事情的经过都不了解。',samplePy:'Tā shuō de gēnběn méiyǒu dàolǐ, tā lián shìqing de jīngguò dōu bù liǎojiě.',sampleVn:'Lời anh ta hoàn toàn vô lý, anh ta còn chẳng biết sự việc diễn ra thế nào.',tip:'根本 + 没 / 不 = hoàn toàn không (điểm ngữ pháp 3); 连……都…… nêu lý do.'}
   ]
 };
 
@@ -1597,29 +1452,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Bài giới thiệu khoa học trong sách giáo khoa Sinh học.',
-     a:'植物通过叶片释放水汽，产生蒸腾拉力，从而把根部吸收的水分运输到树梢。',b:'树叶一直往外冒水，就把下面的水给拉上去了。',better:'a',
-     why:'Văn bản khoa học cần thuật ngữ chính xác, văn viết: 释放水汽, 蒸腾拉力, 从而, 运输. Câu b là lời giải thích miệng cho em nhỏ.'},
-
-    {scene:'Đá bóng xong, em rủ bạn thân ra gốc cây nghỉ.',
-     a:'累死了，走，到那棵树下歇一会儿！',b:'我们需要到荫凉处休息片刻，以便恢复体力。',better:'a',
-     why:'Với bạn thân, câu a tự nhiên (累死了, 走, 歇一会儿). Câu b giống lời hướng dẫn trong tài liệu y tế (以便, 片刻, 恢复体力).'},
-
-    {scene:'Loa thông báo ở nhà ga lúc đông khách.',
-     a:'目前人流量很大，请大家自觉遵守秩序，排队进站。',b:'人太多了，大家别挤啊，排好队！',better:'a',
-     why:'Thông báo công cộng dùng văn trang trọng: 目前, 人流量, 自觉遵守秩序. Câu b giống tiếng hô của một người đứng xếp hàng.'},
-
-    {scene:'Em nhắc em trai đang mải chơi mà sắp muộn học.',
-     a:'快七点了，赶快走吧，要迟到了！',b:'鉴于时间紧迫，建议你尽快出发。',better:'a',
-     why:'Nói với em trong nhà, câu a ngắn gọn, tự nhiên. Câu b (鉴于, 紧迫, 建议) giống văn bản công vụ.'},
-
-    {scene:'Bạn hỏi em có quen người mà bạn đồn là "người yêu" em không. Em muốn phủ nhận nhưng vẫn giữ lịch sự.',
-     a:'没有的事，我跟他根本不熟。',b:'胡说八道！你脑子有问题吧！',better:'a',
-     why:'Câu a phủ nhận dứt khoát (根本不熟) mà vẫn lịch sự. Câu b đúng ngữ pháp nhưng thô lỗ, dễ gây cãi nhau.'},
-
-    {scene:'Nhãn trên hộp sữa ghi thông tin sản phẩm.',
-     a:'本产品含有多种营养成分，易于吸收。',b:'这个牛奶里有好多有营养的东西，喝了很容易吸收。',better:'a',
-     why:'Nhãn sản phẩm dùng văn viết ngắn gọn: 本产品, 含有, 营养成分, 易于. Câu b là khẩu ngữ, như lời người bán hàng giới thiệu.'}
+    {scene:'Bài giới thiệu khoa học trong sách giáo khoa Sinh học.',a:'植物通过叶片释放水汽，产生蒸腾拉力，从而把根吸收的水分运输到树梢。',b:'树上的叶子一直往外冒水，就把下面的水给拉上去了。',better:'a',why:'Sách khoa học dùng thuật ngữ chính xác: 释放水汽, 蒸腾拉力, 从而, 运输. Câu b là khẩu ngữ, nói đại khái.'},
+    {scene:'Đá bóng xong, em rủ bạn thân ra gốc cây nghỉ.',a:'累死了，走，到那棵树下歇一会儿！',b:'我们需要到荫凉的地方休息一会儿，以便恢复精神。',better:'a',why:'Nói với bạn thân dùng khẩu ngữ: 累死了, 走, 歇一会儿. Câu b cứng như hướng dẫn trong sách.'},
+    {scene:'Loa thông báo ở nhà ga lúc đông khách.',a:'现在进站的人很多，请大家自觉遵守秩序。',b:'这么多人，大家别挤啊，一个一个来！',better:'a',why:'Thông báo công cộng cần lịch sự, trang trọng: 请大家自觉遵守秩序. Câu b như nhân viên hét lên giữa đám đông.'},
+    {scene:'Em nhắc em trai đang mải chơi mà sắp muộn học.',a:'快七点了，赶快走吧，要迟到了！',b:'由于时间已经不多，建议你尽快出发。',better:'a',why:'Nhắc em trai dùng khẩu ngữ, giục giã: 赶快走吧. Câu b như văn bản (由于, 建议, 尽快出发).'},
+    {scene:'Bạn hỏi em có quen người mà bạn đồn là "người yêu" em không. Em muốn phủ nhận nhưng vẫn giữ lịch sự.',a:'没有的事，我跟他根本不认识。',b:'胡说！再这样乱说我就生气了！',better:'a',why:'根本不…… phủ nhận dứt khoát mà vẫn bình tĩnh. Câu b nóng nảy, dễ làm bạn mất lòng.'},
+    {scene:'Nhãn trên hộp sữa ghi thông tin sản phẩm.',a:'本产品有多种营养成分，容易被人体吸收。',b:'这个牛奶里有好多有营养的东西，喝了很容易吸收。',better:'a',why:'Nhãn sản phẩm dùng văn viết: 本产品, 营养成分, 被人体吸收. Câu b là khẩu ngữ (好多, 东西).'}
   ]
 };
 

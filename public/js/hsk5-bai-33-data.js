@@ -1326,98 +1326,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — theo bảng 词语搭配 của sách (tr. 134) + bài tập 3 (tr. 136) + cụm trong bài
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
-  {left:'展开',right:'辩论'},
+  {left:'展开',right:'调查'},
   {left:'扩大',right:'影响'},
   {left:'归纳',right:'观点'},
-  {left:'批准',right:'方案'},
-  {left:'缓解',right:'矛盾'},
-  {left:'取消',right:'限制'},
-  {left:'赔偿',right:'损失'},
-  {left:'期待',right:'胜利'},
   {left:'缓解',right:'压力'},
   {left:'取消',right:'资格'},
+  {left:'赔偿',right:'损失'},
   {left:'主观的',right:'愿望'},
   {left:'繁荣的',right:'经济'},
-  {left:'自愿',right:'报名'},
   {left:'虚心',right:'请教'},
-  {left:'课程',right:'改革'},
-  {left:'车厢',right:'拥挤'},
   {left:'家常',right:'便饭'},
-  {left:'单位',right:'面积'},
   {left:'商务',right:'大厦'},
-  {left:'购物',right:'广场'},
-  {left:'图',right:'省事'},
-  {left:'解放',right:'城市'}
+  {left:'图',right:'省事'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'道路修通后，灾民饮水困难的问题得到了',blank:'缓解',post:'。',hint:'(giảm bớt)',ans:'缓解'},
-  {pre:'以堵治堵——缓解交通有妙',blank:'招',post:'。',hint:'(chiêu)',ans:'招'},
-  {pre:'三十年前这里还是小渔村，现在已经变成了一个',blank:'繁荣',post:'的城市。',hint:'(thịnh vượng)',ans:'繁荣'},
-  {pre:'不同文化的差异在语言特别是词语上',blank:'体现',post:'得最突出。',hint:'(thể hiện)',ans:'体现'},
-  {pre:'每当体育馆有比赛举行，周围的交通就会出现',blank:'拥挤',post:'情况。',hint:'(đông nghịt)',ans:'拥挤'},
-  {pre:'堵车在大城市中已经成了',blank:'家常',post:'便饭。',hint:'(chuyện thường ngày)',ans:'家常'},
-  {pre:'我们学校的图书馆',blank:'面积',post:'不大，但是书很多。',hint:'(diện tích)',ans:'面积'},
-  {pre:'这条河有两百多米',blank:'宽',post:'。',hint:'(rộng)',ans:'宽'},
-  {pre:'你的看法太',blank:'主观',post:'了，应该多听听别人的意见。',hint:'(chủ quan)',ans:'主观'},
-  {pre:'这次活动',blank:'扩大',post:'了汉语在我们学校的影响。',hint:'(mở rộng)',ans:'扩大'},
-  {pre:'这种病现在还无法',blank:'根治',post:'，只能靠药物缓解。',hint:'(chữa dứt)',ans:'根治'},
-  {pre:'这道题你要是不会做，',blank:'不妨',post:'去问问老师。',hint:'(cứ thử)',ans:'不妨',exp:'不妨 + V = cứ thử…, không sao cả (gợi ý nhẹ nhàng).'},
-  {pre:'为了赢得顾客，双方一定会在服务方面',blank:'展开',post:'竞争。',hint:'(triển khai)',ans:'展开'},
-  {pre:'请把这篇文章的大意',blank:'归纳',post:'一下。',hint:'(tóm tắt)',ans:'归纳'},
-  {pre:'一个好的领导能',blank:'虚心',post:'听取不同的意见。',hint:'(khiêm tốn)',ans:'虚心'},
-  {pre:'手术有风险，小明父母',blank:'咨询',post:'了许多专家后，还是决定做。',hint:'(hỏi ý kiến)',ans:'咨询'},
-  {pre:'我们学校的期中考试一般安排在十月',blank:'中旬',post:'。',hint:'(trung tuần)',ans:'中旬'},
-  {pre:'虽然战争临近，但这里的日常生活，一切',blank:'照常',post:'。',hint:'(như thường)',ans:'照常',exp:'照常 = như thường, như bình thường: 一切照常.'},
-  {pre:'我爸爸每天下班后都去健身房',blank:'健身',post:'。',hint:'(tập thể dục)',ans:'健身'},
-  {pre:'他为',blank:'图',post:'省事没上天桥，而是横穿马路。',hint:'(ham)',ans:'图'},
-  {pre:'他踢足球的时候腿',blank:'受伤',post:'了，一个月不能上体育课。',hint:'(bị thương)',ans:'受伤'},
-  {pre:'小李办事太马虎，你派他去可不太',blank:'保险',post:'。',hint:'(chắc ăn)',ans:'保险'},
-  {pre:'车的问题已经处理好了，保险公司正在办理',blank:'赔偿',post:'手续。',hint:'(bồi thường)',ans:'赔偿'},
-  {pre:'市',blank:'政府',post:'决定明年在这里新建一个公园。',hint:'(chính quyền)',ans:'政府'},
-  {pre:'我向老师请了两天假，老师已经',blank:'批准',post:'了。',hint:'(phê duyệt)',ans:'批准'},
-  {pre:'这几年，我们学校进行了课程',blank:'改革',post:'，选修课越来越多。',hint:'(cải cách)',ans:'改革'},
-  {pre:'因为下大雨，今天下午的足球比赛',blank:'取消',post:'了。',hint:'(huỷ)',ans:'取消'},
-  {pre:'司机开车经过学校门口时，一定要礼让',blank:'行人',post:'。',hint:'(người đi bộ)',ans:'行人'},
-  {pre:'每天晚上，很多阿姨在',blank:'广场',post:'上跳舞。',hint:'(quảng trường)',ans:'广场'},
-  {pre:'我姐姐大学学的是',blank:'商务',post:'汉语。',hint:'(thương mại)',ans:'商务'},
-  {pre:'这座',blank:'大厦',post:'有六十多层，是我们城市最高的楼。',hint:'(cao ốc)',ans:'大厦'},
-  {pre:'这次活动大家',blank:'自愿',post:'报名，不想参加的可以不参加。',hint:'(tự nguyện)',ans:'自愿'},
-  {pre:'你的抽屉真乱，',blank:'难怪',post:'总是找不到东西。',hint:'(thảo nào)',ans:'难怪',exp:'难怪 = thảo nào (hiểu ra nguyên nhân): 抽屉真乱，难怪总是找不到东西.'},
-  {pre:'',blank:'与其',post:'说是采访，不如说是向他学习。',hint:'(thay vì)',ans:'与其',exp:'与其A，不如B = thay vì nói A, chi bằng nói B (B hợp hơn).'},
-  {pre:'这辆车很省油，一百公里只用五升',blank:'汽油',post:'。',hint:'(xăng)',ans:'汽油'},
-  {pre:'调查发现，有60%的人',blank:'明确',post:'表示愿意选择公交出行。',hint:'(rõ ràng)',ans:'明确'},
-  {pre:'全校同学都在',blank:'期待',post:'着这场比赛的胜利。',hint:'(mong đợi)',ans:'期待'},
-  {pre:'最后一门考完了，我终于',blank:'解放',post:'了！',hint:'(giải phóng)',ans:'解放'},
-  {pre:'这里我们不妨听听',blank:'佩·詹森',post:'的故事。',hint:'(Pay Jensen)',ans:'佩·詹森'},
-  {pre:'詹森一到',blank:'欧洲环境保护署',post:'交通部工作，就接到了一个任务。',hint:'(Cơ quan Bảo vệ Môi trường châu Âu)',ans:'欧洲环境保护署'},
-  {pre:'第二天早晨他还是',blank:'照常',post:'第一个来到单位。',hint:'(như thường lệ)',ans:'照常',exp:'照常 + V = như thường lệ: 照常第一个来到单位.'},
-  {pre:'听音乐可以',blank:'缓解',post:'考试前的紧张情绪。',hint:'(làm dịu)',ans:'缓解'}
+  {pre:'这个问题我实在没办法了，你还有什么好',blank:'招',post:'吗？',hint:'(chiêu, cách hay)',ans:'招',exp:'招 = chiêu, cách (khẩu ngữ): 好招, 没招了 (hết cách).'},
+  {pre:'这条马路有三十多米',blank:'宽',post:'，过马路的时候要特别小心。',hint:'(rộng)',ans:'宽',exp:'宽 = rộng (chiều ngang); số đo + 宽: 三十米宽; trái nghĩa là 窄.'},
+  {pre:'我家的房子',blank:'面积',post:'不大，只有六十平方米。',hint:'(diện tích)',ans:'面积',exp:'面积 = diện tích, đơn vị 平方米 (m²): 面积大 / 面积小.'},
+  {pre:'我们公司每个月',blank:'中旬',post:'发工资。',hint:'(trung tuần — ngày 11 đến 20)',ans:'中旬',exp:'中旬 = khoảng giữa tháng (ngày 11–20): 九月中旬, 每个月中旬.'},
+  {pre:'她每天下班后都去',blank:'健身',post:'房锻炼一个小时。',hint:'(rèn luyện thân thể — phòng gym)',ans:'健身',exp:'健身 = tập thể dục cho khoẻ, đẹp; 健身房 = phòng tập gym.'},
+  {pre:'他打篮球的时候不小心',blank:'受伤',post:'了，一个月不能运动。',hint:'(bị thương)',ans:'受伤',exp:'受伤 = bị thương: 腿受伤了, 不小心受伤了.'},
+  {pre:'每次去旅行以前，我都会买一份旅行',blank:'保险',post:'。',hint:'(bảo hiểm)',ans:'保险',exp:'保险 = bảo hiểm (danh từ): 买保险, 保险公司; tính từ = chắc ăn, an toàn.'},
+  {pre:'为了缓解堵车，',blank:'政府',post:'决定在市中心多开几条公交线路。',hint:'(chính quyền, chính phủ)',ans:'政府',exp:'政府 = chính phủ, chính quyền (các cấp): 政府决定……, 政府批准…….'},
+  {pre:'这条路周末不让开车，只让',blank:'行人',post:'通过。',hint:'(người đi bộ)',ans:'行人',exp:'行人 = người đi bộ, người đi đường (đối lập với người lái xe).'},
+  {pre:'最近',blank:'汽油',post:'的价格又高了，很多人开始坐地铁上班。',hint:'(xăng)',ans:'汽油',exp:'汽油 = xăng: 汽油的价格, 浪费汽油.'},
+  {pre:'孩子上大学以后，父母终于',blank:'解放',post:'了，可以出去旅行了。',hint:'(được giải phóng, tự do)',ans:'解放',exp:'解放 = giải phóng; khẩu ngữ: thoát khỏi việc nặng nề, được tự do: 我终于解放了!'},
+  {pre:'吃药只能让你舒服几天，要想',blank:'根治',post:'这个病，还得改变生活习惯。',hint:'(chữa dứt điểm, trị tận gốc)',ans:'根治',exp:'根治 = chữa tận gốc: 根治疾病, 根治堵车问题; 缓解 chỉ là làm giảm bớt.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (照常 · 难怪 · 与其) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['虽然','下雨了','，','但是','比赛','还是','照常','举行','。'],ans:'虽然下雨了，但是比赛还是照常举行。',audio:'虽然下雨了，但是比赛还是照常举行。'},
-  {words:['第二天','早晨','他','还是','照常','第一个','来到','单位','。'],ans:'第二天早晨他还是照常第一个来到单位。',audio:'第二天早晨他还是照常第一个来到单位。'},
-  {words:['春节','期间','，','那家','超市','照常','营业','。'],ans:'春节期间，那家超市照常营业。',audio:'春节期间，那家超市照常营业。'},
-  {words:['你的','抽屉','真乱','，','难怪','总是','找不到','东西','。'],ans:'你的抽屉真乱，难怪总是找不到东西。',audio:'你的抽屉真乱，难怪总是找不到东西。'},
-  {words:['汽油','明天','要涨价了','，','难怪','加油站','有这么多车','。'],ans:'汽油明天要涨价了，难怪加油站有这么多车。',audio:'汽油明天要涨价了，难怪加油站有这么多车。'},
-  {words:['这','也','难怪','，','他','每天','那么','忙','。'],ans:'这也难怪，他每天那么忙。',audio:'这也难怪，他每天那么忙。'},
-  {words:['与其','在这儿','等车','，','不如','走','过去','。'],ans:'与其在这儿等车，不如走过去。',audio:'与其在这儿等车，不如走过去。'},
-  {words:['与其','抱怨','别人','，','不如','改变','自己','。'],ans:'与其抱怨别人，不如改变自己。',audio:'与其抱怨别人，不如改变自己。'},
-  {words:['与其','找个','不认真的','小时工','，','我','宁可','自己','打扫','。'],ans:'与其找个不认真的小时工，我宁可自己打扫。',audio:'与其找个不认真的小时工，我宁可自己打扫。'},
-  {words:['请','把','这篇文章的','大意','归纳','一下','。'],ans:'请把这篇文章的大意归纳一下。',audio:'请把这篇文章的大意归纳一下。'},
-  {words:['不公平竞争','使','这里','繁荣的','商业','遭到了','破坏','。'],ans:'不公平竞争使这里繁荣的商业遭到了破坏。',audio:'不公平竞争使这里繁荣的商业遭到了破坏。'},
-  {words:['政府','批准了','他','提出的','改革措施','。'],ans:'政府批准了他提出的改革措施。',audio:'政府批准了他提出的改革措施。'},
-  {words:['自愿','放弃','开私家车','的人','越来越多','。'],ans:'自愿放弃开私家车的人越来越多。',audio:'自愿放弃开私家车的人越来越多。'}
+  {words:['虽然','生了病','，','爷爷','每天早上','还是','照常','去公园','散步','。'],ans:'虽然生了病，爷爷每天早上还是照常去公园散步。',audio:'虽然生了病，爷爷每天早上还是照常去公园散步。'},
+  {words:['原来','他','昨天晚上','加班','了','，','难怪','今天','这么累','。'],ans:'原来他昨天晚上加班了，难怪今天这么累。',audio:'原来他昨天晚上加班了，难怪今天这么累。'},
+  {words:['与其','坐车去','，','不如','走路去','，','只要','十分钟','就到了','。'],ans:'与其坐车去，不如走路去，只要十分钟就到了。',audio:'与其坐车去，不如走路去，只要十分钟就到了。'},
+  {words:['要是','你','周末','没事','，','不妨','跟我们','一起','去爬山','。'],ans:'要是你周末没事，不妨跟我们一起去爬山。',audio:'要是你周末没事，不妨跟我们一起去爬山。'},
+  {words:['刚来','公司的','时候','，','他','常常','虚心','向老同事','请教','。'],ans:'刚来公司的时候，他常常虚心向老同事请教。',audio:'刚来公司的时候，他常常虚心向老同事请教。'},
+  {words:['王老师','病了','，','今天下午的课','取消','了','。'],ans:'王老师病了，今天下午的课取消了。',audio:'王老师病了，今天下午的课取消了。'},
+  {words:['我们','都','很','期待','这次','去北京的','旅行','。'],ans:'我们都很期待这次去北京的旅行。',audio:'我们都很期待这次去北京的旅行。'},
+  {words:['老板','打算','把饭馆','再','扩大','一倍','。'],ans:'老板打算把饭馆再扩大一倍。',audio:'老板打算把饭馆再扩大一倍。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1425,76 +1381,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'用表格来说明问题是一种有条理的思考方法的____。',opts:['表现','体现','表示','表达'],ans:1,
-   exp:'Phương pháp tư duy được thể hiện cụ thể qua … → 体现 (câu mẫu phần 词语辨析 của sách).'},
-  {wrong:'人们一直认为，哭是胆小、软弱的____。',opts:['体现','表现','发现','出现'],ans:1,
-   exp:'……是……的表现: 表现 làm danh từ chỉ biểu hiện hành vi. 体现 không có cách dùng này với người.'},
-  {wrong:'丽丽是不会错过这个在大家面前____自己的机会的。',opts:['体现','表现','实现','发现'],ans:1,
-   exp:'表现自己 = phô bày bản thân; 体现 không có nghĩa này.'},
-  {wrong:'学校规定，旷课达到60节以上的学生____其考试的资格。',opts:['消失','取消','消除','取得'],ans:1,
-   exp:'Nhà trường chủ động huỷ, có tân ngữ 资格 → 取消 (bài tập 2 của sách). 消失 không mang tân ngữ.'},
-  {wrong:'汽油明天要涨价了，____加油站又有车在排队加油呢。',opts:['难道','难怪','难免','难过'],ans:1,
-   exp:'Hiểu ra nguyên nhân nên không thấy lạ → 难怪 (bài tập 2 của sách). 难道 dùng cho câu hỏi tu từ.'},
-  {wrong:'一个好的领导能____听取不同的意见。',opts:['谦虚','虚心','小心','用心'],ans:1,
-   exp:'虚心 + 听取 / 请教 / 接受: thái độ sẵn lòng tiếp thu (bài tập 2 của sách).'},
-  {wrong:'调查发现，有60%的人____表示愿意选择公交出行。',opts:['清楚','明确','明白','准确'],ans:1,
-   exp:'明确表示 = bày tỏ rõ ràng, dứt khoát (bài tập 2 của sách). 清楚 tả âm thanh, hình ảnh, sự hiểu biết.'},
-  {wrong:'____其堵在路上浪费时间和汽油，倒不如改乘公交出行。',opts:['与','以','所','尤'],ans:0,
-   exp:'与其……倒不如……: thay vì … chẳng thà … (注释 3 của sách).'},
-  {wrong:'与其说是采访，____说是向他学习。',opts:['而是','不如','还是','就是'],ans:1,
-   exp:'与其说……，不如说…… — vế sau dùng 不如, không dùng 而是 / 还是.'},
-  {wrong:'快过年了，那家超市春节____营业，你放心吧。',opts:['平常','照常','经常','通常'],ans:1,
-   exp:'照常营业 = vẫn mở cửa như thường (注释 1 của sách). 经常 / 通常 chỉ tần suất.'},
-  {wrong:'每当体育馆有比赛举行，周围的交通就会出现____情况。',opts:['拥挤','拥抱','拥有','热闹'],ans:0,
-   exp:'交通拥挤 (bài tập 1 của sách). 热闹 là tính từ tốt (náo nhiệt), không hợp với giao thông tắc.'},
-  {wrong:'为了赢得顾客，双方一定会在服务方面____竞争。',opts:['展开','打开','展示','开展'],ans:0,
-   exp:'展开竞争 (bài tập 1 của sách). 开展 hay đi với 活动 / 工作; 展示 là trưng bày.'},
-  {wrong:'考试前听听音乐，可以____紧张的情绪。',opts:['缓解','解决','解放','取消'],ans:0,
-   exp:'缓解 + (紧张)情绪 (bảng 搭配 của sách). 解决 đi với 问题 / 困难.'},
-  {wrong:'城市汽车数量迅速增长，最初被视为是经济____的体现。',opts:['繁荣','繁忙','热烈','富有'],ans:0,
-   exp:'经济繁荣 = kinh tế phồn thịnh. 富有 dùng cho người / nước giàu có, không đi với 经济 theo cách này.'},
-  {wrong:'但事实证明这只是我们美好的____愿望。',opts:['主要','主观','主动','主张'],ans:1,
-   exp:'主观愿望 = mong muốn chủ quan (câu trong bài; bảng 搭配 của sách).'},
-  {wrong:'这里我们____听听佩·詹森的故事。',opts:['不妨','不必','不然','不但'],ans:0,
-   exp:'不妨 + VV = cứ thử làm (gợi ý nhẹ nhàng). 不必 = không cần.'},
-  {wrong:'詹森的目标很明确，就是____能够解放城市。',opts:['等待','期待','对待','招待'],ans:1,
-   exp:'期待 + mệnh đề = mong có thể …. 等待 là chờ đợi (một thời gian).'},
-  {wrong:'城市本是为人而建，如今却被汽车____。',opts:['占有','拥有','具有','所有'],ans:0,
-   exp:'被……占有 = bị chiếm giữ (câu trong bài). 拥有 / 具有 không dùng với 被.'},
-  {wrong:'他为图省事没上天桥，而是____穿马路。',opts:['横','直','过','走'],ans:0,
-   exp:'横穿马路 = băng ngang qua đường (câu trong bài).'},
-  {wrong:'詹森一到交通部工作，就接到了研究如何解决城市____问题的任务。',opts:['拥堵','拥抱','拥有','拥护'],ans:0,
-   exp:'城市拥堵问题 = vấn đề ùn tắc đô thị. 拥堵 = 拥挤 + 堵塞.'}
+  {wrong:'这次比赛中，他____得非常冷静，像个老运动员。',opts:['表现','体现','发现','实现'],ans:0,exp:'Người + 表现得 + tính từ = tỏ ra, thể hiện (thái độ, phong cách) như thế nào. 体现 nói một tính chất trừu tượng được thể hiện qua sự vật, không dùng cho thái độ của người; 发现, 实现 không hợp.'},
+  {wrong:'你的汉语说得这么好，就别____了！',opts:['谦虚','虚心','小心','热心'],ans:0,exp:'谦虚 làm động từ: 别谦虚了 = đừng khiêm tốn nữa (khi được khen). 虚心 chỉ thái độ sẵn sàng tiếp thu, không nói 别虚心了; 小心 là cẩn thận; 热心 là nhiệt tình — đều không hợp với lời khen.'},
+  {wrong:'因为天气不好，学校____了明天的运动会。',opts:['取消','消失','消费','解放'],ans:0,exp:'Con người chủ động huỷ một việc đã định → 取消 + tân ngữ. 消失 là tự biến mất, không mang tân ngữ; 消费 là tiêu dùng; 解放 là giải phóng.'},
+  {wrong:'那只小狗一下子就____在人群里了。',opts:['消失','取消','拥挤','展开'],ans:0,exp:'消失 + 在 + nơi chốn = biến mất (tự nó không còn thấy). 取消 phải có người chủ động và tân ngữ; 拥挤 là chen chúc; 展开 là triển khai.'},
+  {wrong:'他在中国住了十年，____对那里的情况这么了解。',opts:['难怪','难道','难免','何况'],ans:0,exp:'Biết nguyên nhân rồi mới hiểu ra → 难怪 (thảo nào). 难道 dùng trong câu hỏi phản vấn; 难免 là khó tránh khỏi; 何况 là huống chi.'},
+  {wrong:'与其每天坐两个小时的车上班，____在公司附近租个房子。',opts:['不如','而是','并且','何况'],ans:0,exp:'与其 A，不如 B = thay vì A, chi bằng B (chọn B). 而是 đi với 不是; 并且, 何况 không đi với 与其.'},
+  {wrong:'虽然昨晚只睡了三个小时，他今天还是____来上班了。',opts:['照常','平常','经常','通常'],ans:0,exp:'照常 + V = vẫn như thường lệ (dù có chuyện bất thường). 平常, 通常 chỉ thói quen chung, không đi với 还是……了 cho một lần cụ thể; 经常 là thường xuyên.'},
+  {wrong:'要是一个人学习没意思，你____找个同学一起学。',opts:['不妨','不必','不但','不管'],ans:0,exp:'不妨 + V = cứ thử…, đừng ngại… (đưa lời gợi ý). 不必 là không cần; 不但 cần có 而且; 不管 cần có 都.'},
+  {wrong:'我们先____一下每个人的任务，再开始工作。',opts:['明确','明白','清楚','准确'],ans:0,exp:'明确 làm động từ được: 明确任务 / 明确目标 = làm rõ. 明白, 清楚, 准确 ở đây chỉ là tính từ, không mang tân ngữ theo mẫu 先……一下.'},
+  {wrong:'这家公司提供免费的法律____服务。',opts:['咨询','商量','讨论','请教'],ans:0,exp:'咨询 = tư vấn, hỏi ý kiến chuyên môn: 咨询服务, 咨询专家. 商量, 讨论 là bàn bạc giữa mọi người; 请教 là xin chỉ bảo, không kết hợp với 服务.'},
+  {wrong:'你把我的手机弄坏了，得____我。',opts:['赔偿','保险','批准','期待'],ans:0,exp:'赔偿 + người / 损失 = bồi thường. 保险 là bảo hiểm; 批准 là phê duyệt; 期待 là mong đợi.'},
+  {wrong:'你不能只凭自己的感觉判断，这样太____了。',opts:['主观','主动','主要','主张'],ans:0,exp:'主观 = chủ quan (chỉ dựa vào cảm nghĩ của mình). 主动 là chủ động; 主要 là chủ yếu; 主张 là chủ trương.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tuy dự báo thời tiết nói có mưa to, nhưng hội thao mà các bạn mong đợi từ lâu vẫn diễn ra như thường lệ.',zh:'虽然天气预报说有大雨，但同学们期待已久的运动会还是照常举行了。',py:'Suīrán tiānqì yùbào shuō yǒu dàyǔ, dàn tóngxuémen qīdài yǐ jiǔ de yùndònghuì háishi zhàocháng jǔxíng le.',goiY:['虽然……但……','期待已久','照常'],giai:'照常 là phó từ đứng thẳng trước động từ (照常举行), không thêm 地; hay đi với 虽然……但……还是 khi có hoàn cảnh đặc biệt mà mọi việc vẫn như thường.'},
-  {vi:'Ngày nào tan học cậu ấy cũng đến phòng gym tập luyện, thảo nào người rắn chắc thế.',zh:'他每天放学后都去健身房锻炼，难怪身体这么结实。',py:'Tā měi tiān fàngxué hòu dōu qù jiànshēnfáng duànliàn, nánguài shēntǐ zhème jiēshi.',goiY:['健身房','难怪','结实'],giai:'Nguyên nhân nói trước, 难怪 (thảo nào) mở đầu vế kết quả; "rắn chắc" (người) là 结实, không dùng 坚固 (chỉ đồ vật).'},
-  {vi:'Thay vì đứng suốt một tiếng trên chiếc xe buýt chật cứng, chi bằng đạp xe đến trường.',zh:'与其在拥挤的公交车上站一个小时，不如骑自行车去学校。',py:'Yǔqí zài yōngjǐ de gōngjiāochē shang zhàn yí ge xiǎoshí, bùrú qí zìxíngchē qù xuéxiào.',goiY:['与其……不如……','拥挤'],giai:'与其 A 不如 B: A là cách bị bỏ, B là cách được chọn — đừng đảo hai vế; "chật cứng người" là 拥挤.'},
-  {vi:'Đã chưa chắc lên đại học nên chọn ngành nào thì cậu cứ thử khiêm tốn hỏi ý kiến thầy cô tư vấn của trường trước xem.',zh:'既然你还不确定大学该选哪个专业，不妨先虚心咨询一下学校的顾问老师。',py:'Jìrán nǐ hái bú quèdìng dàxué gāi xuǎn nǎge zhuānyè, bùfáng xiān xūxīn zīxún yíxià xuéxiào de gùwèn lǎoshī.',goiY:['既然……不妨……','虚心','咨询','顾问'],giai:'既然 nêu sự thật đã rõ, vế sau đưa ra lời khuyên; 不妨 + V = "cứ thử… xem, chẳng sao" — giọng gợi ý nhẹ nhàng, không mang nghĩa bắt buộc.'},
-  {vi:'Cho dù kỳ thi cuối kỳ rơi vào ngay trung tuần tháng Một, sáng nào cậu ấy vẫn ra sân chạy bộ như thường, chưa bao giờ viện cớ.',zh:'即使期末考试就在一月中旬，他每天早上也照常去操场跑步，从来不找借口。',py:'Jíshǐ qīmò kǎoshì jiù zài yī yuè zhōngxún, tā měi tiān zǎoshang yě zhàocháng qù cāochǎng pǎobù, cónglái bù zhǎo jièkǒu.',goiY:['即使……也……','中旬','照常','借口'],giai:'即使……也…… nêu hoàn cảnh đặc biệt mà kết quả không đổi; 照常 (vẫn như thường) khác 经常 (thường xuyên — chỉ tần suất).'},
-  {vi:'Hoạt động tình nguyện lần này là do mọi người tự nguyện tham gia, không chỉ thể hiện sự nhiệt tình của các bạn mà còn rèn luyện khả năng tổ chức của chúng tớ.',zh:'这次志愿活动是大家自愿参加的，不仅体现了同学们的热心，而且锻炼了我们的组织能力。',py:'Zhè cì zhìyuàn huódòng shì dàjiā zìyuàn cānjiā de, bùjǐn tǐxiànle tóngxuémen de rèxīn, érqiě duànliànle wǒmen de zǔzhī nénglì.',goiY:['自愿','不仅……而且……','体现','组织'],giai:'是……的 nhấn mạnh cách thức (tự nguyện tham gia); 不仅……而且…… nối hai tác dụng tăng tiến, 体现 + phẩm chất = "thể hiện".'},
-  {vi:'Chỉ dựa vào làm thật nhiều bài thì không chữa dứt được tật cẩu thả, chỉ khi tổng hợp, sắp xếp lại các câu làm sai và tìm ra nguyên nhân thì mới thực sự tiến bộ.',zh:'光靠多做题是根治不了粗心的毛病的，只有把错题归纳整理好，找出错误的原因，才能真正进步。',py:'Guāng kào duō zuò tí shì gēnzhì bù liǎo cūxīn de máobìng de, zhǐyǒu bǎ cuòtí guīnà zhěnglǐ hǎo, zhǎochū cuòwù de yuányīn, cái néng zhēnzhèng jìnbù.',goiY:['根治','只有……才……','归纳','毛病'],giai:'根治不了 = bổ ngữ khả năng "không chữa dứt được"; 只有……才…… nêu điều kiện duy nhất, 才 đứng trước động từ vế sau.'},
-  {vi:'Mấy hôm nay bạn mới cứ im lặng suốt, điều đó cũng dễ hiểu thôi, bạn ấy vừa từ tỉnh khác chuyển đến, với môi trường mới vừa có chút mong chờ lại vừa có phần bất an.',zh:'新同学这几天一直很沉默，这也难怪，她刚从外地转来，对新环境既有期待，又有些不安。',py:'Xīn tóngxué zhè jǐ tiān yìzhí hěn chénmò, zhè yě nánguài, tā gāng cóng wàidì zhuǎnlai, duì xīn huánjìng jì yǒu qīdài, yòu yǒuxiē bù\'ān.',goiY:['这也难怪','既……又……','沉默','期待'],giai:'这也难怪 là động từ "cũng dễ hiểu", đứng riêng rồi mới giải thích lý do phía sau; 既……又…… nối hai trạng thái cùng tồn tại.'},
-  {vi:'Khi áp lực trước kỳ thi lớn, thay vì một mình trốn trong phòng buồn rầu, chi bằng tìm bạn bè tán gẫu, như vậy lại càng giúp giảm bớt căng thẳng.',zh:'考前压力大的时候，与其一个人躲在房间里发愁，不如找朋友聊聊天，这样反而更能缓解紧张的情绪。',py:'Kǎo qián yālì dà de shíhou, yǔqí yí ge rén duǒ zài fángjiān li fāchóu, bùrú zhǎo péngyou liáoliao tiān, zhèyàng fǎn\'ér gèng néng huǎnjiě jǐnzhāng de qíngxù.',goiY:['与其……不如……','发愁','反而','缓解'],giai:'与其……不如…… chọn cách tốt hơn; 反而 chỉ kết quả trái với suy nghĩ (đi chơi mà lại đỡ căng thẳng hơn); 缓解 đi với 压力 / 情绪 / 拥堵.'},
-  {vi:'Lớp trưởng nói rõ rằng thà hủy hoạt động lần này còn hơn là ép mọi người tham gia; không ngờ vừa mở đăng ký, số người tự nguyện tham gia lại còn đông hơn dự tính.',zh:'班长明确表示，与其强迫大家参加，宁可取消这次活动；没想到报名一开始，自愿参加的人反而比预想的还多。',py:'Bānzhǎng míngquè biǎoshì, yǔqí qiǎngpò dàjiā cānjiā, nìngkě qǔxiāo zhè cì huódòng; méi xiǎngdào bàomíng yì kāishǐ, zìyuàn cānjiā de rén fǎn\'ér bǐ yùxiǎng de hái duō.',goiY:['明确','与其……宁可……','取消','自愿'],giai:'与其 A，宁可 B: thà chọn B (dù thiệt) còn hơn làm A; tiếng Việt đảo lại "thà B còn hơn A" — đừng dịch nhầm vế nào bị bỏ.'}
+  {vi:'Tuy dự báo thời tiết nói có mưa to, nhưng hội thao mà các bạn mong đợi từ lâu vẫn diễn ra như thường lệ.',zh:'虽然天气预报说有大雨，但同学们期待已久的运动会还是照常举行了。',py:'Suīrán tiānqì yùbào shuō yǒu dàyǔ, dàn tóngxuémen qīdài yǐ jiǔ de yùndònghuì háishi zhàocháng jǔxíng le.',goiY:['虽然……但……','期待已久','照常举行'],giai:'照常 đứng trước động từ (照常举行 / 照常上课) = "vẫn … như thường lệ" dù có chuyện bất thường; "mong đợi từ lâu" là 期待已久, làm định ngữ có 的.'},
+  {vi:'Ngày nào tan học cậu ấy cũng đến phòng gym tập luyện, thảo nào người rắn chắc thế.',zh:'他每天放学后都去健身房锻炼，难怪身体这么结实。',py:'Tā měi tiān fàngxué hòu dōu qù jiànshēnfáng duànliàn, nánguài shēntǐ zhème jiēshi.',goiY:['健身房','难怪','结实'],giai:'难怪 đứng đầu vế kết quả, sau khi đã biết nguyên nhân; vế trước nêu nguyên nhân, vế sau nêu điều đã thấy lạ.'},
+  {vi:'Thay vì đứng suốt một tiếng trên chiếc xe buýt chật cứng, chi bằng đạp xe đến trường.',zh:'与其在拥挤的公交车上站一个小时，不如骑自行车去学校。',py:'Yǔqí zài yōngjǐ de gōngjiāochē shang zhàn yí ge xiǎoshí, bùrú qí zìxíngchē qù xuéxiào.',goiY:['与其……不如……','拥挤'],giai:'与其 A 不如 B: người nói bỏ A, chọn B; 拥挤 = chật cứng, làm định ngữ có 的 (拥挤的公交车).'},
+  {vi:'Đã chưa chắc lên đại học nên chọn ngành nào thì cậu cứ thử khiêm tốn hỏi ý kiến thầy cô tư vấn của trường trước xem.',zh:'既然你还不确定大学该选哪个专业，不妨先虚心咨询一下学校的顾问老师。',py:'Jìrán nǐ hái bú quèdìng dàxué gāi xuǎn nǎge zhuānyè, bùfáng xiān xūxīn zīxún yíxià xuéxiào de gùwèn lǎoshī.',goiY:['既然……','不妨','虚心','咨询'],giai:'既然 nêu sự thật làm tiền đề, vế sau đưa lời khuyên bằng 不妨 (cứ thử…); 虚心 + 咨询 = khiêm tốn hỏi ý kiến (thái độ sẵn sàng tiếp thu).'},
+  {vi:'Hoạt động tình nguyện lần này là do mọi người tự nguyện tham gia, không chỉ thể hiện sự nhiệt tình của các bạn mà còn rèn luyện khả năng tổ chức của chúng tớ.',zh:'这次志愿活动是大家自愿参加的，不仅体现了同学们的热心，而且锻炼了我们的组织能力。',py:'Zhè cì zhìyuàn huódòng shì dàjiā zìyuàn cānjiā de, bùjǐn tǐxiànle tóngxuémen de rèxīn, érqiě duànliànle wǒmen de zǔzhī nénglì.',goiY:['是……的','自愿','不仅……而且……','体现'],giai:'是……的 nhấn mạnh cách thức (tự nguyện); 体现 + phẩm chất trừu tượng (热心) = thể hiện qua việc làm cụ thể.'},
+  {vi:'Chỉ dựa vào làm thật nhiều bài thì không chữa dứt được tật cẩu thả, chỉ khi tổng hợp, sắp xếp lại các câu làm sai và tìm ra nguyên nhân thì mới thực sự tiến bộ.',zh:'光靠多做题是根治不了粗心的毛病的，只有把错题归纳整理好，找出错误的原因，才能真正进步。',py:'Guāng kào duō zuò tí shì gēnzhì bu liǎo cūxīn de máobìng de, zhǐyǒu bǎ cuò tí guīnà zhěnglǐ hǎo, zhǎochū cuòwù de yuányīn, cái néng zhēnzhèng jìnbù.',goiY:['光靠……','根治不了','只有……才……','归纳'],giai:'只有……才…… = "chỉ khi… mới…" (điều kiện duy nhất); 根治不了 là bổ ngữ khả năng phủ định "không chữa dứt được".'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Sự gia tăng nhanh chóng của ô tô lúc đầu được xem là biểu hiện của kinh tế phồn vinh, nhưng chẳng bao lâu đã mang đến những vấn đề mới.',zh:'汽车的迅速增长最初被看作经济繁荣的体现，但是很快就带来了新的问题。',py:'Qìchē de xùnsù zēngzhǎng zuìchū bèi kànzuò jīngjì fánróng de tǐxiàn, dànshì hěn kuài jiù dàiláile xīn de wèntí.',goiY:['被看作 = được xem là','繁荣 = phồn vinh','体现 = sự thể hiện, biểu hiện'],giai:'被看作 + N = "được coi là"; 体现 ở đây là danh từ (…的体现) — dịch "biểu hiện của…", không dịch "thể hiện của".'},
-  {vi:'Do đường sá ngày càng đông đúc, kẹt xe ở các thành phố lớn đã trở thành chuyện cơm bữa.',zh:'由于道路越来越拥挤，堵车在大城市里已经成了家常便饭。',py:'Yóuyú dàolù yuè lái yuè yōngjǐ, dǔchē zài dà chéngshì li yǐjīng chéngle jiācháng-biànfàn.',goiY:['由于 = do, vì','越来越 = ngày càng','家常便饭 = chuyện cơm bữa'],giai:'由于 nêu nguyên nhân; 家常便饭 nghĩa bóng là "chuyện thường ngày", dịch "chuyện cơm bữa" chứ không dịch sát "cơm nhà".'},
-  {vi:'Người ta cho rằng chỉ cần mở rộng diện tích đường sá là giải quyết được ùn tắc, nhưng thực tế chứng minh đó chỉ là mong muốn chủ quan.',zh:'人们以为只要扩大道路面积就能解决拥堵，但事实证明这只是一种主观愿望。',py:'Rénmen yǐwéi zhǐyào kuòdà dàolù miànjī jiù néng jiějué yōngdǔ, dàn shìshí zhèngmíng zhè zhǐ shì yì zhǒng zhǔguān yuànwàng.',goiY:['以为 = (tưởng) cho rằng','只要……就…… = chỉ cần… là…','扩大 = mở rộng','主观 = chủ quan'],giai:'以为 hàm ý điều nghĩ sai (khác 认为); 只要……就…… nằm trong nội dung của 以为, vế 但 phủ định lại suy nghĩ đó.'},
-  {vi:'Tốc độ nới rộng đường còn lâu mới đuổi kịp tốc độ tăng của xe cộ, vì vậy cách làm này hoàn toàn không thể giải quyết tận gốc nạn tắc đường.',zh:'道路加宽的速度远远赶不上车辆增加的速度，因此这种办法根本无法根治交通拥堵。',py:'Dàolù jiākuān de sùdù yuǎnyuǎn gǎn bu shàng chēliàng zēngjiā de sùdù, yīncǐ zhè zhǒng bànfǎ gēnběn wúfǎ gēnzhì jiāotōng yōngdǔ.',goiY:['加宽 = nới rộng','远远赶不上 = còn lâu mới theo kịp','因此 = vì vậy','根治 = trị tận gốc'],giai:'赶不上 là bổ ngữ khả năng phủ định, 远远 nhấn mạnh khoảng cách xa; 因此 dẫn ra kết luận — 根本无法 = "hoàn toàn không thể".'},
-  {vi:'Sau khi nhận nhiệm vụ, Jensen trước hết tiến hành điều tra, tổng kết đặc điểm của vấn đề, sau đó lại khiêm tốn hỏi ý kiến các chuyên gia liên quan.',zh:'詹森接到任务后，先展开调查，归纳问题的特点，然后又虚心咨询了有关专家。',py:'Zhānsēn jiēdào rènwu hòu, xiān zhǎnkāi diàochá, guīnà wèntí de tèdiǎn, ránhòu yòu xūxīn zīxúnle yǒuguān zhuānjiā.',goiY:['先……然后…… = trước… sau đó…','展开调查 = tiến hành điều tra','归纳 = quy nạp, tổng kết','虚心咨询 = khiêm tốn hỏi ý kiến'],giai:'先……然后又…… liệt kê các bước theo thứ tự; 展开 + 调查 / 讨论 = "triển khai, tiến hành" — không dịch là "mở ra".'},
-  {vi:'Một buổi sáng trung tuần tháng Chín, Jensen như thường lệ ra khỏi nhà sớm; trên đường, anh thấy một người đang tập thể dục vì ham tiện mà không đi cầu vượt, lại băng thẳng qua đường.',zh:'九月中旬的一天早上，詹森照常提前出门，路上他看见一个健身的人为了图省事，不走天桥，而是直接横穿马路。',py:'Jiǔ yuè zhōngxún de yì tiān zǎoshang, Zhānsēn zhàocháng tíqián chūmén, lù shang tā kànjiàn yí ge jiànshēn de rén wèile tú shěngshì, bù zǒu tiānqiáo, ér shì zhíjiē héng chuān mǎlù.',goiY:['中旬 = trung tuần','照常 = như thường lệ','图省事 = ham tiện, cho đỡ phiền','不……而是…… = không… mà…'],giai:'图 + lợi ích (图省事, 图方便) = "ham, mưu cầu"; 不 A 而是 B phủ định A khẳng định B — dịch "không… mà lại…".'},
-  {vi:'Người đó tuy bị thương không nặng, lại có công ty bảo hiểm chịu trách nhiệm bồi thường, nhưng tài xế vẫn bị một phen hết hồn.',zh:'那个人虽然受伤不重，而且有保险公司负责赔偿，但是司机还是被吓得不轻。',py:'Nàge rén suīrán shòushāng bú zhòng, érqiě yǒu bǎoxiǎn gōngsī fùzé péicháng, dànshì sījī háishi bèi xià de bù qīng.',goiY:['虽然……而且……但是…… = tuy… lại… nhưng…','受伤 = bị thương','赔偿 = bồi thường'],giai:'虽然 và 而且 cùng nêu các tình tiết nhẹ nhõm, 但是 mới là ý chính; 吓得不轻 = "sợ không nhẹ" → dịch "một phen hết hồn".'},
-  {vi:'Chính quyền đã phê duyệt các biện pháp cải cách của Jensen: bỏ đường hầm ở các ngã tư chính, không xây bãi đỗ xe gần các toà nhà thương mại, qua đó khiến việc lái xe không còn tiết kiệm thời gian và công sức nữa.',zh:'政府批准了詹森的改革措施：在主要路口取消地下通道，商务大厦附近不建停车场，从而让开车不再省时省力。',py:'Zhèngfǔ pīzhǔnle Zhānsēn de gǎigé cuòshī: zài zhǔyào lùkǒu qǔxiāo dìxià tōngdào, shāngwù dàshà fùjìn bú jiàn tíngchēchǎng, cóng\'ér ràng kāichē bú zài shěng shí shěng lì.',goiY:['批准 = phê duyệt','取消 = bãi bỏ','商务大厦 = toà nhà thương mại','从而 = qua đó, nhờ đó'],giai:'Dấu ： mở ra danh sách biện pháp; 从而 dẫn tới kết quả chung của các biện pháp — 不再 = "không còn… nữa".'},
-  {vi:'Người tự nguyện bỏ đi ô tô riêng ngày càng nhiều, điều đó cũng dễ hiểu, vì thay vì kẹt trên đường phí thời gian và xăng, chi bằng chuyển sang đi xe buýt.',zh:'自愿放弃开私家车的人越来越多，这也难怪，与其堵在路上浪费时间和汽油，倒不如改乘公交。',py:'Zìyuàn fàngqì kāi sījiāchē de rén yuè lái yuè duō, zhè yě nánguài, yǔqí dǔ zài lù shang làngfèi shíjiān hé qìyóu, dào bùrú gǎi chéng gōngjiāo.',goiY:['自愿 = tự nguyện','这也难怪 = cũng dễ hiểu thôi','与其……倒不如…… = thay vì… chi bằng…','汽油 = xăng'],giai:'这也难怪 đứng riêng, phía sau là lời giải thích; 倒不如 = 不如 nhưng thêm sắc thái "ngược lại còn hơn".'},
-  {vi:'Thành phố vốn được xây dựng cho con người, nay lại bị ô tô chiếm lĩnh; mục tiêu của Jensen rất rõ ràng, đó là để người đi bộ trở lại quảng trường và đường phố, qua đó giải phóng thành phố.',zh:'城市本来是为人而建的，如今却被汽车占领了；詹森的目标很明确，就是让行人重回广场和街道，从而解放城市。',py:'Chéngshì běnlái shì wèi rén ér jiàn de, rújīn què bèi qìchē zhànlǐng le; Zhānsēn de mùbiāo hěn míngquè, jiù shì ràng xíngrén chóng huí guǎngchǎng hé jiēdào, cóng\'ér jiěfàng chéngshì.',goiY:['本来……如今却…… = vốn… nay lại…','明确 = rõ ràng','行人 = người đi bộ','解放 = giải phóng'],giai:'本来……如今却…… đối lập quá khứ và hiện tại; 就是 giải thích mục tiêu, 从而 dẫn ra kết quả cuối cùng.'}
+  {vi:'Sự gia tăng nhanh chóng của ô tô lúc đầu được xem là biểu hiện của kinh tế phồn vinh, nhưng chẳng bao lâu đã mang đến những vấn đề mới.',zh:'汽车的迅速增长最初被看作经济繁荣的体现，但是很快就带来了新的问题。',py:'Qìchē de xùnsù zēngzhǎng zuìchū bèi kànzuò jīngjì fánróng de tǐxiàn, dànshì hěn kuài jiù dàiláile xīn de wèntí.',goiY:['被看作 = được xem là','繁荣 = phồn vinh','体现 = sự thể hiện, biểu hiện'],giai:'被看作…… dịch là "được xem là…"; ……的体现 = biểu hiện của một điều trừu tượng (kinh tế phồn vinh).'},
+  {vi:'Người ta cho rằng chỉ cần mở rộng diện tích đường sá là giải quyết được ùn tắc, nhưng thực tế chứng minh đó chỉ là mong muốn chủ quan.',zh:'人们以为只要扩大道路面积就能解决拥堵，但事实证明这只是一种主观愿望。',py:'Rénmen yǐwéi zhǐyào kuòdà dàolù miànjī jiù néng jiějué yōngdǔ, dàn shìshí zhèngmíng zhè zhǐ shì yì zhǒng zhǔguān yuànwàng.',goiY:['以为 = (tưởng) cho rằng','扩大面积 = mở rộng diện tích','主观愿望 = mong muốn chủ quan'],giai:'以为 hàm ý điều người ta nghĩ hoá ra không đúng; 只要……就…… là điều kiện đủ mà người ta tưởng.'},
+  {vi:'Sau khi nhận nhiệm vụ, Jensen trước hết tiến hành điều tra, tổng kết đặc điểm của vấn đề, sau đó lại khiêm tốn hỏi ý kiến các chuyên gia liên quan.',zh:'詹森接到任务后，先展开调查，归纳问题的特点，然后又虚心咨询了有关专家。',py:'Zhānsēn jiēdào rènwu hòu, xiān zhǎnkāi diàochá, guīnà wèntí de tèdiǎn, ránhòu yòu xūxīn zīxúnle yǒuguān zhuānjiā.',goiY:['展开调查 = tiến hành điều tra','归纳 = tổng kết, quy nạp','虚心咨询 = khiêm tốn hỏi ý kiến'],giai:'先……然后又…… chỉ trình tự các bước; 展开 ở đây là "tiến hành (trên quy mô rộng)", không dịch là "mở ra".'},
+  {vi:'Người đó tuy bị thương không nặng, lại có công ty bảo hiểm chịu trách nhiệm bồi thường, nhưng tài xế vẫn bị một phen hết hồn.',zh:'那个人虽然受伤不重，而且有保险公司负责赔偿，但是司机还是被吓得不轻。',py:'Nàge rén suīrán shòushāng bú zhòng, érqiě yǒu bǎoxiǎn gōngsī fùzé péicháng, dànshì sījī háishi bèi xià de bù qīng.',goiY:['受伤 = bị thương','保险公司 = công ty bảo hiểm','赔偿 = bồi thường'],giai:'被吓得不轻 = bị doạ không nhẹ → "một phen hết hồn"; 而且 bổ sung thêm một điều kiện thuận lợi trước khi 但是 chuyển ý.'},
+  {vi:'Chính quyền đã phê duyệt các biện pháp cải cách của Jensen: bỏ đường hầm ở các ngã tư chính, không xây bãi đỗ xe gần các toà nhà thương mại, qua đó khiến việc lái xe không còn tiết kiệm thời gian và công sức nữa.',zh:'政府批准了詹森的改革措施：在主要路口取消地下通道，商务大厦附近不建停车场，从而让开车不再省时省力。',py:'Zhèngfǔ pīzhǔnle Zhānsēn de gǎigé cuòshī: zài zhǔyào lùkǒu qǔxiāo dìxià tōngdào, shāngwù dàshà fùjìn bú jiàn tíngchēchǎng, cóng\'ér ràng kāi chē bú zài shěng shí shěng lì.',goiY:['批准 = phê duyệt','改革措施 = biện pháp cải cách','取消 = bỏ, huỷ bỏ'],giai:'Dấu hai chấm mở ra phần liệt kê các biện pháp; 从而 nối kết quả của các biện pháp đó ("qua đó, nhờ vậy").'},
+  {vi:'Thành phố vốn được xây dựng cho con người, nay lại bị ô tô chiếm lấy; mục tiêu của Jensen rất rõ ràng, đó là để người đi bộ trở lại quảng trường và đường phố, qua đó giải phóng thành phố.',zh:'城市本来是为人而建的，如今却被汽车占有了；詹森的目标很明确，就是让行人重回广场和街道，从而解放城市。',py:'Chéngshì běnlái shì wèi rén ér jiàn de, rújīn què bèi qìchē zhànyǒu le; Zhānsēn de mùbiāo hěn míngquè, jiù shì ràng xíngrén chóng huí guǎngchǎng hé jiēdào, cóng\'ér jiěfàng chéngshì.',goiY:['本来……如今却…… = vốn… nay lại…','明确 = rõ ràng','解放 = giải phóng'],giai:'本来 / 如今却 tạo đối lập giữa quá khứ và hiện tại; 行人 = người đi bộ; 解放城市 là cách nói hình ảnh "trả thành phố lại cho con người".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1557,31 +1477,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
   sapXep:[
-    {manh:['归纳一下','请把','这篇文章的','大意'],
-     dap:'请把这篇文章的大意归纳一下。',
-     vn:'Hãy tóm tắt ý chính của bài văn này.',
-     giai:'Câu 29 sách bài tập. Câu 把 cầu khiến: 请 + 把 + tân ngữ (这篇文章的大意) + 归纳一下.'},
-    {manh:['照常','第二天早晨','第一个来到单位','他还是'],
-     dap:'第二天早晨他还是照常第一个来到单位。',
-     chap:['他第二天早晨还是照常第一个来到单位。'],
-     vn:'Sáng hôm sau anh ấy vẫn như thường lệ là người đầu tiên đến cơ quan.',
-     giai:'Câu 30 sách bài tập. Thời gian → chủ ngữ → 还是 + 照常 (trạng ngữ) → 第一个来到单位.'},
-    {manh:['遭到了破坏','不公平竞争','繁荣的商业','使这里'],
-     dap:'不公平竞争使这里繁荣的商业遭到了破坏。',
-     vn:'Cạnh tranh không lành mạnh đã khiến nền thương mại phồn thịnh ở đây bị phá hoại.',
-     giai:'Câu 31 sách bài tập. Câu kiêm ngữ với 使: A + 使 + B + V: 不公平竞争 + 使 + 这里繁荣的商业 + 遭到了破坏.'},
-    {manh:['不如','与其','改乘公交','堵在路上'],
-     dap:'与其堵在路上，不如改乘公交。',
-     vn:'Thay vì tắc trên đường, chẳng thà chuyển sang đi xe buýt.',
-     giai:'与其 + vế bị bỏ (堵在路上)，不如 + vế được chọn (改乘公交).'},
-    {manh:['总是找不到东西','你的抽屉真乱','难怪'],
-     dap:'你的抽屉真乱，难怪总是找不到东西。',
-     vn:'Ngăn kéo của cậu bừa bộn thật, thảo nào lúc nào cũng không tìm được đồ.',
-     giai:'Nguyên nhân đứng trước, 难怪 dẫn ra kết quả không còn thấy lạ.'},
-    {manh:['批准了','政府','改革措施','他提出的'],
-     dap:'政府批准了他提出的改革措施。',
-     vn:'Chính quyền đã phê duyệt các biện pháp cải cách anh ấy đề xuất.',
-     giai:'Câu của bài khoá: chủ ngữ 政府 → 批准了 → định ngữ 他提出的 + 改革措施.'}
+    {manh:['批准了','经理','我的','请假要求'],dap:'经理批准了我的请假要求。',vn:'Giám đốc đã duyệt yêu cầu xin nghỉ của tôi.',giai:'Chủ ngữ + 批准了 + tân ngữ (我的请假要求).'},
+    {manh:['照常','爸爸','上班','周末也'],dap:'爸爸周末也照常上班。',vn:'Bố cuối tuần cũng vẫn đi làm như thường.',giai:'Chủ ngữ + thời gian + 也 + 照常 + V.'},
+    {manh:['取消了','被','那场比赛','临时'],dap:'那场比赛被临时取消了。',vn:'Trận đấu đó bị huỷ đột xuất.',giai:'Câu bị động: chủ ngữ + 被 + trạng ngữ (临时) + V + 了.'},
+    {manh:['面积','这个广场的','很大'],dap:'这个广场的面积很大。',vn:'Diện tích của quảng trường này rất lớn.',giai:'Định ngữ (这个广场的) + danh từ 面积 + 很大.'},
+    {manh:['期待','我们','你的','好消息'],dap:'我们期待你的好消息。',vn:'Chúng tôi mong tin tốt của bạn.',giai:'Chủ ngữ + 期待 + tân ngữ (你的好消息).'},
+    {manh:['向别人','他','学习','总是虚心'],dap:'他总是虚心向别人学习。',vn:'Anh ấy luôn khiêm tốn học hỏi người khác.',giai:'Chủ ngữ + 总是 + 虚心 + 向 + người + V.'}
   ]
 };
 
@@ -1591,30 +1492,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề của bài (出行方式 · 交通拥堵). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 拥挤 · 缓解 · 根治 · 与其 · 难怪 · 照常 · 自愿 · 取消 · 改革 · 期待.',
   questions:[
-    {q_zh:'你们国家道路交通情况怎么样？',
-     q_vn:'Tình hình giao thông đường bộ ở nước em thế nào?',
-     hint:'Tả thực trạng + giải thích nguyên nhân, dùng 越来越 và 难怪',
-     sample:'越南的大城市里摩托车特别多，一到上下班时间，马路上就非常拥挤。现在汽车也越来越多，难怪堵车成了家常便饭。',
-     sample_vn:'Ở các thành phố lớn của Việt Nam xe máy cực kỳ nhiều, hễ đến giờ đi làm tan làm là đường sá rất đông nghịt. Bây giờ ô tô cũng ngày càng nhiều, thảo nào tắc đường thành chuyện cơm bữa.',
-     note:'Dùng 一……就…… cho quy luật "hễ … là …"; 家常便饭 cho "chuyện cơm bữa".'},
-    {q_zh:'你平时出行一般采用何种方式？你家有私家车吗？使用情况如何？',
-     q_vn:'Bình thường em đi lại bằng cách nào? Nhà em có xe riêng không? Dùng thế nào?',
-     hint:'Nói phương tiện của em + của gia đình, dùng 照常 hoặc 虽然……但是……',
-     sample:'我平时骑自行车上学，下雨天也照常骑车。我家有一辆汽车，虽然很方便，但是爸爸只在周末用，平时他坐公交车上班。',
-     sample_vn:'Bình thường em đi xe đạp đến trường, ngày mưa cũng vẫn đạp xe như thường. Nhà em có một chiếc ô tô, tuy rất tiện nhưng bố chỉ dùng vào cuối tuần, ngày thường bố đi xe buýt đi làm.',
-     note:'照常 + V: vẫn làm như thường lệ dù có hoàn cảnh đặc biệt.'},
-    {q_zh:'你认为造成交通拥堵现象的主要原因是什么？应该如何解决？',
-     q_vn:'Em cho rằng nguyên nhân chính gây ra ùn tắc giao thông là gì? Nên giải quyết thế nào?',
-     hint:'1 nguyên nhân + 1–2 giải pháp, dùng 与其……不如…… và 缓解 / 根治',
-     sample:'我觉得主要原因是私家车太多。只加宽道路是不能根治拥堵的。与其修更多的路，不如大力发展公共交通，这样才能真正缓解交通压力。',
-     sample_vn:'Em thấy nguyên nhân chính là xe riêng quá nhiều. Chỉ mở rộng đường thì không trị tận gốc được ùn tắc. Thay vì làm thêm nhiều đường, chẳng thà ra sức phát triển giao thông công cộng, như vậy mới thật sự giảm tải được giao thông.',
-     note:'根治 (trị tận gốc) mạnh hơn 缓解 (giảm bớt) — dùng cả hai để thể hiện ý sâu.'},
-    {q_zh:'你觉得“以堵治堵”的办法适合你们的城市吗？为什么？',
-     q_vn:'Em thấy cách "dùng tắc trị tắc" có hợp với thành phố của em không? Vì sao?',
-     hint:'Nêu ý kiến rõ ràng, dùng 明确 / 不妨 / 期待',
-     sample:'我觉得有些办法我们不妨试一试，比如在市中心取消一些停车场。但是得先让公交车更方便，不然市民会抱怨。我期待我们的城市越来越适合人们生活。',
-     sample_vn:'Em thấy có một số cách mình cứ thử xem, ví dụ bỏ bớt một số bãi đỗ xe ở trung tâm. Nhưng trước hết phải làm xe buýt tiện hơn, nếu không người dân sẽ phàn nàn. Em mong thành phố của chúng ta ngày càng đáng sống.',
-     note:'不妨 + VV: gợi ý nhẹ nhàng, rất hợp khi đưa ý kiến.'}
+    {q_zh:'你们国家道路交通情况怎么样？',q_vn:'Tình hình giao thông đường bộ ở nước em thế nào?',hint:'Tả thực trạng + giải thích nguyên nhân, dùng 越来越 và 难怪',sample:'越南的大城市里车特别多，一到上下班时间，马路上就非常拥挤。现在汽车也越来越多，难怪堵车成了家常便饭。',sample_vn:'Ở các thành phố lớn của Việt Nam xe cộ rất nhiều, cứ đến giờ đi làm, tan làm là đường phố chật cứng. Bây giờ ô tô cũng ngày càng nhiều, thảo nào tắc đường thành chuyện cơm bữa.',note:'一……就……: cứ hễ… là…; 家常便饭 (thành ngữ) = chuyện thường ngày.'},
+    {q_zh:'你平时一般怎么出行？你家有私家车吗？用得多不多？',q_vn:'Bình thường em đi lại bằng phương tiện gì? Nhà em có ô tô riêng không? Dùng nhiều không?',hint:'Nói phương tiện của em + của gia đình, dùng 照常 hoặc 虽然……但是……',sample:'我平时骑自行车上学，下雨天也照常骑车。我家有一辆汽车，虽然很方便，但是爸爸只在周末用，平时他坐公交车上班。',sample_vn:'Bình thường tôi đạp xe đi học, ngày mưa cũng vẫn đạp xe như thường. Nhà tôi có một chiếc ô tô, tuy rất tiện nhưng bố chỉ dùng vào cuối tuần, ngày thường bố đi xe buýt đi làm.',note:'Trả lời đủ ba câu hỏi: bản thân → gia đình có xe không → dùng thế nào.'},
+    {q_zh:'你认为造成交通拥堵现象的主要原因是什么？应该如何解决？',q_vn:'Em cho rằng nguyên nhân chính gây ùn tắc giao thông là gì? Nên giải quyết thế nào?',hint:'1 nguyên nhân + 1–2 giải pháp, dùng 与其……不如…… và 缓解 / 根治',sample:'我觉得主要原因是私家车太多。只把道路变宽是不能根治拥堵的。与其让路越来越宽，不如大力发展公共交通，这样才能真正缓解交通压力。',sample_vn:'Tôi cho rằng nguyên nhân chính là ô tô riêng quá nhiều. Chỉ nới rộng đường thì không thể trị tận gốc ùn tắc. Thay vì làm đường ngày càng rộng, chi bằng ra sức phát triển giao thông công cộng, như vậy mới thực sự giảm được áp lực giao thông.',note:'根治 = trị tận gốc, 缓解 = làm giảm bớt — dùng đúng mức độ của từng từ.'},
+    {q_zh:'你觉得“以堵治堵”的办法适合你们的城市吗？为什么？',q_vn:'Em thấy cách “dùng tắc trị tắc” có hợp với thành phố của em không? Vì sao?',hint:'Nêu ý kiến rõ ràng, dùng 明确 / 不妨 / 期待',sample:'我觉得有些办法我们不妨试一试，比如在市中心取消一些停车场。但是得先让公交车更方便，要不市民会抱怨。我期待我们的城市越来越适合人们生活。',sample_vn:'Tôi thấy có vài cách chúng ta cứ thử xem, ví dụ bỏ bớt một số bãi đỗ xe ở trung tâm. Nhưng trước hết phải làm xe buýt tiện hơn, không thì người dân sẽ phàn nàn. Tôi mong thành phố của mình ngày càng đáng sống.',note:'要不 (bài 8) = nếu không thì; 期待 + mong muốn về tương lai.'}
   ]
 };
 
@@ -1705,45 +1586,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn em hỏi: mai có bão nhỏ, trường có cho nghỉ học không.',
-     a:{sp:'Bạn',zh:'明天有台风，学校还上课吗？',vn:'Mai có bão, trường còn học không?'},
-     need:['Dùng 照常','Trả lời rằng trường vẫn học bình thường'],
-     sample:'老师说台风不大，明天照常上课，大家别迟到。',
-     samplePy:'Lǎoshī shuō táifēng bú dà, míngtiān zhàocháng shàngkè, dàjiā bié chídào.',
-     sampleVn:'Cô bảo bão không lớn, mai vẫn học như thường, mọi người đừng đến muộn.',
-     tip:'照常 + 上课 / 营业 / 举行 — mẫu 练一练 của sách.'},
-
-    {scene:'Bạn cùng lớp kể: bạn Lan học tiếng Trung từ năm 6 tuổi.',
-     a:{sp:'Bạn',zh:'你知道吗？兰从六岁就开始学汉语了。',vn:'Cậu biết không? Lan học tiếng Trung từ năm 6 tuổi rồi.'},
-     need:['Dùng 难怪','Nói ra điều em đã thấy lạ trước đó'],
-     sample:'难怪她的发音那么标准，原来学了这么多年了！',
-     samplePy:'Nánguài tā de fāyīn nàme biāozhǔn, yuánlái xuéle zhème duō nián le!',
-     sampleVn:'Thảo nào phát âm của cậu ấy chuẩn thế, hoá ra học lâu vậy rồi!',
-     tip:'难怪 + kết quả; hay đi với 原来 (hoá ra).'},
-
-    {scene:'Đang giờ cao điểm, bạn rủ em gọi taxi đi xem phim.',
-     a:{sp:'Bạn',zh:'咱们打车去电影院吧？',vn:'Mình gọi taxi đến rạp nhé?'},
-     need:['Dùng 与其……不如……','Đề xuất đi tàu điện ngầm / xe buýt'],
-     sample:'现在是晚高峰，与其打车堵在路上，不如坐地铁，又快又便宜。',
-     samplePy:'Xiànzài shì wǎn gāofēng, yǔqí dǎchē dǔ zài lù shang, bùrú zuò dìtiě, yòu kuài yòu piányi.',
-     sampleVn:'Bây giờ đang giờ cao điểm tối, thay vì đi taxi tắc trên đường, chẳng thà đi tàu điện ngầm, vừa nhanh vừa rẻ.',
-     tip:'与其 đặt ở lựa chọn BỊ BỎ, 不如 ở lựa chọn được chọn.'},
-
-    {scene:'Em trai than thở học bài mãi mà vẫn quên.',
-     a:{sp:'Em trai',zh:'这些生词我背了好几遍，还是记不住。',vn:'Mấy từ mới này em học thuộc mấy lượt rồi mà vẫn không nhớ.'},
-     need:['Dùng 不妨','Gợi ý một cách học mới'],
-     sample:'你不妨把生词写在小卡片上，每天坐车的时候看一看。',
-     samplePy:'Nǐ bùfáng bǎ shēngcí xiě zài xiǎo kǎpiàn shang, měi tiān zuò chē de shíhou kàn yi kàn.',
-     sampleVn:'Em cứ thử viết từ mới lên thẻ nhỏ, mỗi ngày lúc ngồi xe thì xem một chút.',
-     tip:'不妨 + V: gợi ý nhẹ nhàng; ôn câu 把.'},
-
-    {scene:'Bạn em lo lắng vì trước kỳ thi rất căng thẳng.',
-     a:{sp:'Bạn',zh:'下周就考试了，我紧张得睡不着觉。',vn:'Tuần sau thi rồi, tớ căng thẳng đến mất ngủ.'},
-     need:['Dùng 缓解','Khuyên bạn một cách thư giãn'],
-     sample:'睡前听听音乐或者去跑跑步，都能缓解紧张的情绪。',
-     samplePy:'Shuì qián tīngting yīnyuè huòzhě qù pǎopao bù, dōu néng huǎnjiě jǐnzhāng de qíngxù.',
-     sampleVn:'Trước khi ngủ nghe nhạc hoặc đi chạy bộ một chút, đều giúp giảm bớt căng thẳng.',
-     tip:'缓解 + 紧张情绪 / 压力 (bảng 搭配 của sách).'}
+    {scene:'Bạn em hỏi: mai có bão nhỏ, trường có cho nghỉ học không.',a:{sp:'Bạn',zh:'明天有台风，学校还上课吗？',vn:'Mai có bão, trường còn học không?'},need:['Dùng 照常','Trả lời rằng trường vẫn học bình thường'],sample:'老师说台风不大，明天照常上课，大家别迟到。',samplePy:'Lǎoshī shuō táifēng bú dà, míngtiān zhàocháng shàngkè, dàjiā bié chídào.',sampleVn:'Cô nói bão không lớn, mai vẫn học bình thường, mọi người đừng đến muộn.',tip:'照常 + V: 照常上课 / 照常营业 / 照常举行 — đứng ngay trước động từ.'},
+    {scene:'Bạn cùng lớp kể: bạn Tiểu Lâm học tiếng Trung từ năm 6 tuổi.',a:{sp:'Bạn',zh:'你知道吗？小林从六岁就开始学汉语了。',vn:'Cậu biết không? Tiểu Lâm học tiếng Trung từ năm sáu tuổi rồi đấy.'},need:['Dùng 难怪','Nói ra điều em đã thấy lạ trước đó'],sample:'难怪她汉语说得那么好，原来学了这么多年了！',samplePy:'Nánguài tā Hànyǔ shuō de nàme hǎo, yuánlái xuéle zhème duō nián le!',sampleVn:'Thảo nào cô ấy nói tiếng Trung giỏi thế, hoá ra học bao nhiêu năm rồi!',tip:'难怪……，原来…… là cặp rất tự nhiên: điều thấy lạ + nguyên nhân vừa biết.'},
+    {scene:'Đang giờ cao điểm, bạn rủ em gọi taxi đi xem phim.',a:{sp:'Bạn',zh:'咱们打车去看电影吧？',vn:'Mình gọi taxi đi xem phim nhé?'},need:['Dùng 与其……不如……','Đề xuất đi tàu điện ngầm'],sample:'现在是晚高峰，与其坐出租车，不如坐地铁，又快又便宜。',samplePy:'Xiànzài shì wǎn gāofēng, yǔqí zuò chūzūchē, bùrú zuò dìtiě, yòu kuài yòu piányi.',sampleVn:'Giờ là cao điểm buổi tối, thay vì đi taxi chi bằng đi tàu điện ngầm, vừa nhanh vừa rẻ.',tip:'与其 A，不如 B: B là lựa chọn của mình; thêm lý do (又快又便宜) cho thuyết phục.'},
+    {scene:'Em trai than thở học bài mãi mà vẫn quên.',a:{sp:'Em trai',zh:'这些生词我背了好几遍，还是记不住。',vn:'Mấy từ mới này em học thuộc mấy lần rồi mà vẫn không nhớ.'},need:['Dùng 不妨','Gợi ý một cách học mới'],sample:'你不妨把生词写在本子上，每天坐车的时候看一看。',samplePy:'Nǐ bùfáng bǎ shēngcí xiě zài běnzi shang, měi tiān zuò chē de shíhou kàn yi kàn.',sampleVn:'Em thử chép từ mới vào sổ, mỗi ngày lúc ngồi xe thì lấy ra xem.',tip:'不妨 + V = cứ thử… — lời gợi ý nhẹ nhàng, không ép buộc.'},
+    {scene:'Bạn em lo lắng vì trước kỳ thi rất căng thẳng.',a:{sp:'Bạn',zh:'下周就考试了，我紧张得什么都不想吃。',vn:'Tuần sau thi rồi, tớ căng thẳng đến mức chẳng muốn ăn gì.'},need:['Dùng 缓解','Khuyên bạn một cách thư giãn'],sample:'睡前听听音乐或者去跑跑步，都能缓解紧张的情绪。',samplePy:'Shuì qián tīngting yīnyuè huòzhě qù pǎopao bù, dōu néng huǎnjiě jǐnzhāng de qíngxù.',sampleVn:'Trước khi ngủ nghe chút nhạc hoặc đi chạy bộ đều giúp giảm bớt căng thẳng.',tip:'缓解 + 情绪 / 压力 / 堵车 = làm dịu bớt (chưa phải giải quyết tận gốc).'}
   ]
 };
 
@@ -1754,29 +1601,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Thông báo của siêu thị dán ở cửa trước Tết.',
-     a:'春节期间本超市照常营业，欢迎广大顾客光临。',b:'过年我们也开门，来买东西吧！',better:'a',
-     why:'Thông báo của cửa hàng dùng văn viết trang trọng: 本超市, 照常营业, 欢迎……光临. Câu b như nói miệng với bạn.'},
-
-    {scene:'Em nhắn tin cho bạn thân rủ đi xe buýt thay vì gọi xe.',
-     a:'别打车了，坐公交吧，又便宜又不堵！',b:'为缓解交通压力，建议您选择公共交通出行。',better:'a',
-     why:'Nhắn bạn thân cần tự nhiên, thân mật. Câu b là giọng khẩu hiệu tuyên truyền của thành phố.'},
-
-    {scene:'Biển báo của sở giao thông đặt ở ngã tư.',
-     a:'过马路的时候小心点儿啊！',b:'行人请走地下通道，请勿横穿马路。',better:'b',
-     why:'Biển báo công cộng dùng văn viết ngắn gọn, trang trọng: 行人请……, 请勿……. Câu a như lời mẹ dặn con.'},
-
-    {scene:'Em hỏi nhân viên quầy tư vấn ở sân bay.',
-     a:'喂，南航在哪儿？',b:'您好，请问南航在哪儿办理登机牌？',better:'b',
-     why:'Hỏi nhân viên phục vụ cần lịch sự: 您好, 请问 (bài nghe số 5). Câu a (喂) cộc lốc, thiếu lịch sự.'},
-
-    {scene:'Bài báo phân tích tình hình giao thông đô thị.',
-     a:'堵车堵得烦死了，谁都受不了！',b:'随着车流量的增加，道路变得格外拥挤，堵车已经成了家常便饭。',better:'b',
-     why:'Văn báo chí dùng lối viết khách quan: 随着……, 格外, 成了家常便饭 (câu trong bài). Câu a là cảm xúc cá nhân, khẩu ngữ.'},
-
-    {scene:'Bạn được cô giáo khen, em muốn trêu bạn một chút.',
-     a:'老师夸你呢，你就别谦虚了！',b:'你应当虚心接受老师的肯定。',better:'a',
-     why:'Trêu bạn nói thân mật: 你就别谦虚了! Câu b cứng nhắc như lời phát biểu.'}
+    {scene:'Thông báo của siêu thị dán ở cửa trước Tết.',a:'春节期间本超市照常营业，欢迎广大顾客光临。',b:'过年我们也开门，来买东西吧！',better:'a',why:'Thông báo của cửa hàng cần trang trọng: 期间, 本超市, 照常营业, 欢迎……光临. Câu b như lời rao miệng.'},
+    {scene:'Em nhắn tin cho bạn thân rủ đi xe buýt thay vì gọi xe.',a:'坐公交吧，又便宜又方便！',b:'为了减轻交通压力，建议您选择公共交通出行。',better:'a',why:'Nhắn bạn thân nên ngắn, tự nhiên: 吧, 又……又……. Câu b như khẩu hiệu tuyên truyền, dùng 您 với bạn thân nghe xa cách.'},
+    {scene:'Biển báo của sở giao thông đặt ở ngã tư.',a:'过马路的时候小心点儿啊！',b:'行人请走地下通道，请勿横穿马路。',better:'b',why:'Biển báo dùng văn viết ngắn gọn, trang trọng: 行人请……, 请勿……. Câu a là lời nhắc thân mật.'},
+    {scene:'Em hỏi nhân viên quầy thông tin ở sân bay.',a:'喂，八号门在哪儿？',b:'您好，请问八号门怎么走？',better:'b',why:'Hỏi người lạ, nhất là nhân viên phục vụ, cần 您好, 请问. 喂 dùng gọi người lạ nghe thiếu lịch sự.'},
+    {scene:'Bài báo phân tích tình hình giao thông đô thị.',a:'车多得不得了，谁都受不了！',b:'随着汽车数量的增加，道路越来越拥挤，上下班时间堵车非常严重。',better:'b',why:'Bài báo cần văn viết khách quan: 随着……的增加, 拥挤, 严重. Câu a là cảm xúc khẩu ngữ (不得了, 受不了).'},
+    {scene:'Bạn được cô giáo khen, em muốn trêu bạn một chút.',a:'老师夸你呢，你还谦虚什么呀！',b:'你应该虚心接受老师的肯定。',better:'a',why:'Trêu bạn thân dùng khẩu ngữ: 还谦虚什么呀! Câu b cứng nhắc như lời dạy bảo; vả lại 虚心 hợp với tiếp thu ý kiến góp ý hơn là lời khen.'}
   ]
 };
 

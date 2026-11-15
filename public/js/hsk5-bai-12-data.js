@@ -1509,88 +1509,54 @@ var hvBridgeData = {
 };
 
 // ══════════════════════════════════════════
-// GHÉP TỪ — lấy theo bảng 词语搭配 của giáo trình (tr. 112–113)
+// GHÉP TỪ
 // ══════════════════════════════════════════
+// Ghép cụm — kết hợp từ của bài (bảng 词语搭配 giáo trình + cụm mới)
 var matchData = [
   {left:'推广',right:'新技术'},
-  {left:'注册',right:'邮箱'},
+  {left:'面对',right:'现实'},
   {left:'合作',right:'伙伴'},
-  {left:'研发',right:'中心'},
   {left:'顺利地',right:'召开'},
-  {left:'普遍地',right:'应用'},
-  {left:'开发',right:'成功'},
-  {left:'销售',right:'到海外'},
   {left:'一家',right:'企业'},
   {left:'一笔',right:'业务'},
   {left:'足球',right:'明星'},
-  {left:'现场',right:'直播'},
-  {left:'面对',right:'现实'},
   {left:'实现',right:'愿望'},
   {left:'社会',right:'地位'},
   {left:'当地',right:'时间'},
-  {left:'产品',right:'创新'},
   {left:'历史',right:'背景'},
-  {left:'经营',right:'饭馆'},
-  {left:'移动',right:'支付'}
+  {left:'经营得',right:'很成功'}
 ];
 
 // ══════════════════════════════════════════
 // ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这个应用的',blank:'用户',post:'越来越多，连我奶奶都在用。',hint:'(người dùng)',ans:'用户'},
-  {pre:'我弟弟练了一个月，现在能连续',blank:'颠球',post:'五十下了。',hint:'(tâng bóng)',ans:'颠球'},
-  {pre:'国际足球',blank:'明星',post:'梅西用微信直播自己的颠球技术。',hint:'(ngôi sao)',ans:'明星'},
-  {pre:'今晚电视台会',blank:'直播',post:'这场足球比赛，我们一起看吧！',hint:'(phát trực tiếp)',ans:'直播'},
-  {pre:'梅西把手机另一头一个正在哭的小',blank:'宝贝',post:'逗笑了。',hint:'(bé cưng)',ans:'宝贝'},
-  {pre:'这个演员说话真',blank:'逗',post:'，大家都笑得停不下来。',hint:'(hài, gây cười)',ans:'逗'},
-  {pre:'请全校同学看电影？这可真是大',blank:'手笔',post:'！',hint:'(sự mạnh tay, chịu chi)',ans:'手笔'},
-  {pre:'只要有手机号，就能',blank:'注册',post:'微信。',hint:'(đăng ký)',ans:'注册'},
-  {pre:'因为下大雨，大会没能按时',blank:'召开',post:'。',hint:'(tổ chức hội nghị)',ans:'召开'},
-  {pre:'我们公司和他们是多年的合作',blank:'伙伴',post:'了。',hint:'(đối tác)',ans:'伙伴'},
-  {pre:'腾讯',blank:'总裁',post:'刘炽平言语间充满了骄傲。',hint:'(chủ tịch)',ans:'总裁'},
-  {pre:'如今，微信已经',blank:'覆盖',post:'了200多个国家和地区。',hint:'(phủ, bao trùm)',ans:'覆盖'},
-  {pre:'现在很多人出门不带钱包，都用',blank:'移动',post:'支付。',hint:'(di động)',ans:'移动'},
-  {pre:'手机已经成了人们最重要的',blank:'通信',post:'工具。',hint:'(liên lạc, viễn thông)',ans:'通信'},
-  {pre:'我叔叔在一家大',blank:'企业',post:'工作，经常出差。',hint:'(doanh nghiệp)',ans:'企业'},
-  {pre:'这支球队已经连续五年',blank:'称霸',post:'全国比赛了。',hint:'(xưng bá, thống trị)',ans:'称霸'},
-  {pre:'这个问题是在什么样的',blank:'背景',post:'下提出来的？',hint:'(bối cảnh)',ans:'背景'},
-  {pre:'学完这本书，你就可以上',blank:'高级',post:'班了。',hint:'(cao cấp)',ans:'高级'},
-  {pre:'我在班里当',blank:'副',post:'班长，帮班长管理班级的事情。',hint:'(phó)',ans:'副'},
-  {pre:'他们花了两年时间，终于把这个应用',blank:'开发',post:'成功了。',hint:'(nghiên cứu phát triển)',ans:'开发'},
-  {pre:'上海是中国的经济',blank:'中心',post:'。',hint:'(trung tâm)',ans:'中心'},
-  {pre:'有问题的话，请联系',blank:'相关',post:'部门。',hint:'(liên quan)',ans:'相关'},
-  {pre:'他',blank:'业务',post:'能力很强，很快就当上了经理。',hint:'(chuyên môn, nghiệp vụ)',ans:'业务'},
-  {pre:'学校的领导、教师',blank:'以及',post:'一些学生代表观看了演出。',hint:'(và, cùng với — văn viết)',ans:'以及',exp:'以及 = và, cùng với (văn viết), nối các danh từ, thường đứng trước thành phần cuối.'},
-  {pre:'问题已经发展到了十分严重的',blank:'程度',post:'。',hint:'(mức độ)',ans:'程度'},
-  {pre:'一家企业如果不',blank:'创新',post:'，很快就会被市场淘汰。',hint:'(đổi mới)',ans:'创新'},
-  {pre:'这家公司在手机市场上一直处于',blank:'领导',post:'地位。',hint:'(dẫn đầu)',ans:'领导'},
-  {pre:'手机在我们的生活中占有非常重要的',blank:'地位',post:'。',hint:'(vị trí, địa vị)',ans:'地位'},
-  {pre:'去旅游的时候，我喜欢尝尝',blank:'当地',post:'的小吃。',hint:'(địa phương)',ans:'当地'},
-  {pre:'这家公司花了很多钱请明星来',blank:'代言',post:'。',hint:'(làm đại diện)',ans:'代言'},
-  {pre:'他是',blank:'华裔',post:'美国人，爷爷奶奶都是广东人。',hint:'(người gốc Hoa)',ans:'华裔'},
-  {pre:'他们一家十年前',blank:'移民',post:'到了澳大利亚。',hint:'(di cư)',ans:'移民'},
-  {pre:'本店销售电视、冰箱、洗衣机',blank:'以及',post:'其他电器。',hint:'(và — đứng trước thành phần cuối)',ans:'以及',exp:'A、B、C以及D: 以及 nối thành phần cuối cùng trong một chuỗi liệt kê (văn viết).'},
-  {pre:'在很大',blank:'程度',post:'上，一个人的未来取决于他所受的教育。',hint:'(mức độ)',ans:'程度'}
+  {pre:'这个学汉语的应用已经有一百多万',blank:'用户',post:'了。',hint:'(người dùng)',ans:'用户',exp:'用户 = người dùng một sản phẩm, dịch vụ: 注册用户, 手机用户.'},
+  {pre:'她是越南很有名的电影',blank:'明星',post:'，很多年轻人都喜欢她。',hint:'(ngôi sao)',ans:'明星',exp:'明星 = ngôi sao (người nổi tiếng): 电影明星, 足球明星.'},
+  {pre:'他每天晚上都在网上做',blank:'直播',post:'，一边玩游戏一边跟大家聊天。',hint:'(phát trực tiếp, livestream)',ans:'直播',exp:'直播 = phát sóng trực tiếp; 做直播 = livestream.'},
+  {pre:'妈妈抱着她的小',blank:'宝贝',post:'，一边走一边唱歌。',hint:'(bé cưng)',ans:'宝贝',exp:'宝贝 = cục cưng (gọi trẻ nhỏ, người thân yêu); nghĩa gốc là báu vật.'},
+  {pre:'他讲了一个笑话，把大家都',blank:'逗',post:'笑了。',hint:'(chọc, trêu cho cười)',ans:'逗',exp:'逗 + người + 笑 = chọc ai cười; 把……逗笑了 là câu 把.'},
+  {pre:'昨晚下了一夜大雪，第二天早上白雪',blank:'覆盖',post:'了整个城市。',hint:'(bao phủ)',ans:'覆盖',exp:'覆盖 = phủ lên, bao trùm: 白雪覆盖了城市; còn dùng cho phạm vi: 覆盖200多个国家.'},
+  {pre:'这家公司的',blank:'总裁',post:'是一位四十岁的女士。',hint:'(chủ tịch, tổng giám đốc)',ans:'总裁',exp:'总裁 = người đứng đầu một công ty lớn; 副总裁 = phó tổng giám đốc.'},
+  {pre:'我们公司跟越南一家企业',blank:'合作',post:'了五年，关系一直很好。',hint:'(hợp tác)',ans:'合作',exp:'跟……合作 = hợp tác với…; 合作伙伴 = đối tác.'},
+  {pre:'他在公司当',blank:'副',post:'经理，经理不在的时候由他负责。',hint:'(phó)',ans:'副',exp:'副 + chức vụ = phó…: 副经理, 副总裁, 副校长.'},
+  {pre:'他的爷爷是中国人，他在美国出生长大，是一个',blank:'华裔',post:'。',hint:'(người gốc Hoa)',ans:'华裔',exp:'华裔 = người mang dòng máu Trung Quốc nhưng sinh ra, mang quốc tịch nước khác.'},
+  {pre:'一百多年前，很多中国人',blank:'移民',post:'到了越南。',hint:'(di cư)',ans:'移民',exp:'移民 = di cư (động từ) / dân di cư (danh từ): 新移民.'},
+  {pre:'为了把小饭馆',blank:'经营',post:'好，他每天早上五点就起床去买菜。',hint:'(kinh doanh, điều hành)',ans:'经营',exp:'经营 + cửa hàng, công ty = kinh doanh, điều hành: 经营饭馆, 经营得很好.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (以及, 程度) ít nhất 2 câu
+// SẮP XẾP CÂU
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['本店','销售','电视、冰箱、洗衣机','以及','其他电器','。'],ans:'本店销售电视、冰箱、洗衣机以及其他电器。',audio:'本店销售电视、冰箱、洗衣机以及其他电器。'},
-  {words:['吃饭时','不要','用筷子','敲打','碗、盘子','以及','桌面','。'],ans:'吃饭时不要用筷子敲打碗、盘子以及桌面。',audio:'吃饭时不要用筷子敲打碗、盘子以及桌面。'},
-  {words:['学校的领导、','教师','以及','一些学生代表','观看了','演出','。'],ans:'学校的领导、教师以及一些学生代表观看了演出。',audio:'学校的领导、教师以及一些学生代表观看了演出。'},
-  {words:['问题','已经','发展到了','十分严重的','程度','。'],ans:'问题已经发展到了十分严重的程度。',audio:'问题已经发展到了十分严重的程度。'},
-  {words:['他','玩手机','已经','到了','不吃饭的','程度','。'],ans:'他玩手机已经到了不吃饭的程度。',audio:'他玩手机已经到了不吃饭的程度。'},
-  {words:['这个市场的','成熟程度','还','比较','低','。'],ans:'这个市场的成熟程度还比较低。',audio:'这个市场的成熟程度还比较低。'},
-  {words:['微信','已经','覆盖了','200多个','国家和地区','。'],ans:'微信已经覆盖了200多个国家和地区。',audio:'微信已经覆盖了200多个国家和地区。'},
-  {words:['梅西','用微信','直播','自己的','颠球技术','。'],ans:'梅西用微信直播自己的颠球技术。',audio:'梅西用微信直播自己的颠球技术。'},
-  {words:['他','把','一个正在哭的','小宝贝','逗笑了','。'],ans:'他把一个正在哭的小宝贝逗笑了。',audio:'他把一个正在哭的小宝贝逗笑了。'},
-  {words:['我们','跟','这家公司','合作','过','两次','。'],ans:'我们跟这家公司合作过两次。',audio:'我们跟这家公司合作过两次。'},
-  {words:['我的','愿望','终于','实现','了','！'],ans:'我的愿望终于实现了！',audio:'我的愿望终于实现了！'},
-  {words:['要想','在这个网站购物','，','你','必须','先','注册','一个邮箱','。'],ans:'要想在这个网站购物，你必须先注册一个邮箱。',audio:'要想在这个网站购物，你必须先注册一个邮箱。'},
-  {words:['张小龙','被','大家','称为','“微信之父”','。'],ans:'张小龙被大家称为“微信之父”。',audio:'张小龙被大家称为“微信之父”。'}
+  {words:['我们','需要','准备','照片','、','护照','以及','其他','相关','资料','。'],ans:'我们需要准备照片、护照以及其他相关资料。',audio:'我们需要准备照片、护照以及其他相关资料。'},
+  {words:['他','紧张','到了','说不出话','的','程度','。'],ans:'他紧张到了说不出话的程度。',audio:'他紧张到了说不出话的程度。'},
+  {words:['老师','针对','我们的','问题','，','又','讲了','一遍','。'],ans:'老师针对我们的问题，又讲了一遍。',audio:'老师针对我们的问题，又讲了一遍。'},
+  {words:['在','这个','家里','，','奶奶的','地位','最高','。'],ans:'在这个家里，奶奶的地位最高。',audio:'在这个家里，奶奶的地位最高。'},
+  {words:['小王','负责','公司','在越南的','业务','，','经常','去','河内','出差','。'],ans:'小王负责公司在越南的业务，经常去河内出差。',audio:'小王负责公司在越南的业务，经常去河内出差。'},
+  {words:['这家','酒店','非常','高级','，','住一晚','要','两千块','。'],ans:'这家酒店非常高级，住一晚要两千块。',audio:'这家酒店非常高级，住一晚要两千块。'},
+  {words:['公司','请了','一位','足球明星','来','代言','新产品','。'],ans:'公司请了一位足球明星来代言新产品。',audio:'公司请了一位足球明星来代言新产品。'},
+  {words:['他家','就在','城市的','中心','，','去哪儿','都','很方便','。'],ans:'他家就在城市的中心，去哪儿都很方便。',audio:'他家就在城市的中心，去哪儿都很方便。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1598,74 +1564,40 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'学校正在____节约用水的重要性。',opts:['宣传','推广','开发','代言'],ans:0,
-   exp:'Làm cho mọi người HIỂU một điều (tầm quan trọng của việc tiết kiệm nước) → 宣传. 推广 cần tân ngữ là thứ được đem ra áp dụng (技术, 经验, 产品); 开发 là phát triển sản phẩm; 代言 không mang tân ngữ kiểu này.'},
-  {wrong:'这种新技术很有用，应该在全国____。',opts:['推广','宣传','销售','覆盖'],ans:0,
-   exp:'Mở rộng phạm vi áp dụng một kỹ thuật → 推广 (推广新技术 trong bảng 词语搭配). 宣传 thiên về truyền bá thông tin; 销售 là bán hàng; 覆盖 là bao phủ, không mang nghĩa đem kỹ thuật ra áp dụng.'},
-  {wrong:'这次小组作业需要大家的____精神。',opts:['合作','伙伴','相关','代言'],ans:0,
-   exp:'合作精神 = tinh thần hợp tác (bảng 词语搭配). 伙伴 là người, không đi với 精神; 相关 là “liên quan”; 代言 là làm đại diện quảng cáo.'},
-  {wrong:'为了____当医生的梦想，她每天都学习到很晚。',opts:['实现','现实','发现','表现'],ans:0,
-   exp:'Động từ mang tân ngữ 梦想 → 实现梦想. 现实 là danh từ (hiện thực) — chỉ đảo chữ nhưng khác từ loại; 发现 là phát hiện; 表现 là thể hiện.'},
-  {wrong:'一个月学会汉语？这个计划不太____。',opts:['现实','实现','发达','相关'],ans:0,
-   exp:'现实 dùng như tính từ: 不太现实 = không thực tế lắm. 实现 là động từ, không đứng sau 不太 để tả kế hoạch; 发达, 相关 không hợp nghĩa.'},
-  {wrong:'学了知识，还要学会把它____到生活中。',opts:['应用','使用','移动','开发'],ans:0,
-   exp:'Đem KIẾN THỨC dùng vào thực tế → 应用到……中. 使用 dùng cho đồ vật cụ thể (使用筷子); 移动 là di chuyển; 开发 là phát triển sản phẩm.'},
-  {wrong:'在网上不要随便告诉别人你的____信息。',opts:['个人','自己','人们','大家'],ans:0,
-   exp:'个人信息 = thông tin cá nhân, 个人 làm định ngữ trực tiếp. 自己 là đại từ, phải nói 你自己的信息; 人们, 大家 sai nghĩa.'},
-  {wrong:'这个城市的交通很____，去哪儿都很方便。',opts:['发达','发展','开发','创新'],ans:0,
-   exp:'很 + TÍNH TỪ tả trình độ cao → 发达. 发展 là động từ (发展交通 / 交通发展得很快); 开发, 创新 không đi với 交通很…….'},
-  {wrong:'我父母在老家____一家小饭馆。',opts:['经营','销售','召开','开发'],ans:0,
-   exp:'Điều hành, kinh doanh một cửa hàng → 经营饭馆. 销售 là bán hàng hoá; 召开 chỉ dùng cho hội nghị; 开发 là phát triển sản phẩm, khai thác.'},
-  {wrong:'这种手机____得很好，一上市就卖完了。',opts:['销售','经营','覆盖','召开'],ans:0,
-   exp:'Hàng bán chạy → 销售得很好 (bảng 词语搭配: 销售得……). 经营得很好 nói về cả cửa hàng / công ty, không nói về một món hàng; 覆盖, 召开 sai nghĩa.'},
-  {wrong:'老师____每个学生的特点，制定了不同的学习计划。',opts:['针对','相关','覆盖','代言'],ans:0,
-   exp:'Nhắm đúng vào đối tượng cụ thể rồi đưa ra biện pháp → 针对 + đối tượng. 相关 là “liên quan”, không mang tân ngữ như vậy; 覆盖, 代言 sai nghĩa.'},
-  {wrong:'我没有他的电话，不过我们加了____好友，可以在上面聊天。',opts:['微信','腾讯','梅西','应用'],ans:0,
-   exp:'加微信好友 = kết bạn WeChat. 腾讯 là tên công ty; 梅西 là cầu thủ; 应用 là danh từ chung, không nói 加应用好友.'},
-  {wrong:'在这条广告片里，国际足球明星____用微信直播自己的颠球技术。',opts:['梅西','张小龙','刘炽平','腾讯'],ans:0,
-   exp:'Theo bài đọc, ngôi sao bóng đá trong quảng cáo là 梅西 (Messi). 张小龙, 刘炽平 là lãnh đạo Tencent; 腾讯 là tên công ty.'},
-  {wrong:'微信是____公司开发的移动通信应用。',opts:['腾讯','微信','梅西','华裔'],ans:0,
-   exp:'Công ty phát triển WeChat là 腾讯 (Tencent). Các phương án khác không phải tên công ty.'},
-  {wrong:'在2013腾讯合作伙伴大会上，腾讯总裁____言语间充满了骄傲。',opts:['刘炽平','张小龙','梅西','腾讯'],ans:0,
-   exp:'Chủ tịch (总裁) Tencent phát biểu ở đại hội là 刘炽平. 张小龙 là PHÓ chủ tịch cấp cao (高级副总裁), “cha đẻ WeChat”.'},
-  {wrong:'被称为“微信之父”的是腾讯公司高级副总裁____。',opts:['张小龙','刘炽平','梅西','华裔'],ans:0,
-   exp:'“微信之父” (cha đẻ WeChat) là 张小龙, phó chủ tịch cấp cao của Tencent. 刘炽平 là chủ tịch.'},
-  {wrong:'他不但聪明，____非常努力。',opts:['而且','以及','和','跟'],ans:0,
-   exp:'Nối hai vế câu tăng tiến: 不但……而且……. 以及, 和, 跟 chỉ nối từ / cụm từ ngang hàng, KHÔNG nối hai vị ngữ tính từ hay hai vế câu.'},
-  {wrong:'他的汉语____很高，已经能看中文电影了。',opts:['水平','程度','地位','背景'],ans:0,
-   exp:'Nói năng lực ngôn ngữ dùng 水平: 汉语水平. 程度 là MỨC ĐỘ (严重的程度, 成熟程度) — bẫy vì tiếng Việt nói “trình độ”; 地位, 背景 sai nghĩa.'},
-  {wrong:'他玩手机已经到了不吃饭的____。',opts:['程度','水平','地位','中心'],ans:0,
-   exp:'到了……的程度 = đến mức …. 水平 là trình độ năng lực, không dùng trong mẫu này; 地位, 中心 sai nghĩa.'}
+  {wrong:'会上，校长、老师____学生都讲了话。',opts:['以及','而且','从而','于是'],ans:0,exp:'以及 nối các danh từ trong chuỗi liệt kê, đứng trước thành phần cuối. 而且, 从而, 于是 nối hai vế câu, không nối danh từ.'},
+  {wrong:'他的汉语已经达到了可以当翻译的____。',opts:['程度','地位','背景','状态'],ans:0,exp:'达到/到了 + ……的程度 = đạt đến mức…. 地位 là địa vị; 背景 là bối cảnh; 状态 là trạng thái.'},
+  {wrong:'这个国家经济很____，人们的生活水平很高。',opts:['发达','发展','现实','移动'],ans:0,exp:'发达 là tính từ: 经济很发达 (đã ở trình độ cao). 发展 là động từ chỉ quá trình, không đứng sau 很 như vậy; 现实, 移动 không hợp.'},
+  {wrong:'这几年，我们这个小县____得很快，变化特别大。',opts:['发展','发达','推广','代言'],ans:0,exp:'Quá trình thay đổi đi lên → 发展得很快. 发达 là trạng thái, không đi với 得很快; 推广 cần tân ngữ; 代言 là làm người đại diện quảng cáo.'},
+  {wrong:'电视上天天都在____节约用水，大家都知道了。',opts:['宣传','代言','召开','销售'],ans:0,exp:'Nói rộng rãi để mọi người biết và làm theo → 宣传. 代言 là đại diện cho sản phẩm; 召开 đi với 会议; 销售 là bán hàng.'},
+  {wrong:'他把学到的电脑技术____到了工作中，做事快了很多。',opts:['应用','使用','作用','引起'],ans:0,exp:'应用到 + lĩnh vực = đem kiến thức, kỹ thuật áp dụng vào thực tế. 使用 là dùng một đồ vật cụ thể, không đi với 到工作中; 作用 là danh từ; 引起 là gây ra.'},
+  {wrong:'明天上午，公司要____一个重要的会议。',opts:['召开','打开','开发','离开'],ans:0,exp:'召开 + 会议 = triệu tập, tổ chức cuộc họp (trang trọng). 打开 là mở; 开发 là phát triển (sản phẩm); 离开 là rời khỏi.'},
+  {wrong:'老师____每个学生的问题，给了不同的建议。',opts:['针对','以及','作为','位于'],ans:0,exp:'针对 + đối tượng/vấn đề = nhắm vào, dành riêng cho. 以及 nối danh từ; 作为 nêu thân phận; 位于 nêu vị trí.'},
+  {wrong:'别放弃，你的愿望早晚会____的。',opts:['实现','现实','表现','出现'],ans:0,exp:'愿望 + 实现 = ước mơ thành hiện thực (động từ). 现实 là danh từ/tính từ “thực tế”; 表现 là thể hiện; 愿望 không “出现”.'},
+  {wrong:'找工作的时候要____一点儿，别只想着高工资。',opts:['现实','实现','现代','发达'],ans:0,exp:'现实 làm tính từ = thực tế, không viển vông. 实现 là động từ “thực hiện”; 现代, 发达 không hợp nghĩa.'},
+  {wrong:'这个月他一个人____了二十台电脑，是全公司最多的。',opts:['销售','经营','消费','购物'],ans:0,exp:'Bán được hàng → 销售 + số lượng hàng. 经营 đi với cửa hàng, công ty; 消费 là chi tiêu; 购物 là mua sắm, không mang tân ngữ.'},
+  {wrong:'去别的城市旅游时，最好尝尝____的小吃。',opts:['当地','当时','当年','地区'],ans:0,exp:'当地 = nơi đó, địa phương đó (当地的小吃). 当时, 当年 chỉ thời gian; 地区 là khu vực, không đi trực tiếp như vậy.'}
 ];
 
 // ══════════════════════════════════════════
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Chỉ cần đăng ký một tài khoản trên điện thoại là bạn có thể xem trực tiếp các trận bóng đá của trường bất cứ lúc nào.', zh:'只要在手机上注册一个账号，你就可以随时收看学校足球比赛的直播。', py:'Zhǐyào zài shǒujī shang zhùcè yí ge zhànghào, nǐ jiù kěyǐ suíshí shōukàn xuéxiào zúqiú bǐsài de zhíbō.', goiY:['只要……就……','注册','直播','随时'], giai:'只要……就…… nêu điều kiện đủ; 随时 (bất cứ lúc nào) đứng trước động từ 收看, không đặt cuối câu như tiếng Việt.'},
-  {vi:'Lớp trưởng không chỉ lo tuyên truyền cho hoạt động lần này mà còn đích thân liên hệ với mấy doanh nghiệp địa phương.', zh:'班长不但负责宣传这次活动，而且亲自联系了当地的几家企业。', py:'Bānzhǎng búdàn fùzé xuānchuán zhè cì huódòng, érqiě qīnzì liánxìle dāngdì de jǐ jiā qǐyè.', goiY:['不但……而且……','宣传','亲自','企业'], giai:'不但……而且…… nối hai việc theo mức tăng dần; hai vế cùng chủ ngữ nên 不但 đứng SAU chủ ngữ 班长. 当地 làm định ngữ cần 的 (当地的企业).'},
-  {vi:'Tuy lúc đầu cậu ấy chỉ dùng ứng dụng này xem livestream cho vui, nhưng bây giờ đã đến mức một ngày không xem là thấy bứt rứt.', zh:'虽然他一开始只是用这个应用随便看看直播，但现在已经到了一天不看就难受的程度。', py:'Suīrán tā yì kāishǐ zhǐshì yòng zhège yìngyòng suíbiàn kànkan zhíbō, dàn xiànzài yǐjīng dàole yì tiān bú kàn jiù nánshòu de chéngdù.', goiY:['虽然……但……','应用','到了……的程度'], giai:'"Đến mức…" = 到了……的程度: phần mô tả mức độ đặt GIỮA 到了 và 的程度, ngược trật tự tiếng Việt; 虽然……但…… nối sự thật với diễn biến trái chiều.'},
-  {vi:'Nếu trường đã định phát triển phần mềm học tập của riêng mình thì nên hỏi ý kiến học sinh, phụ huynh và cả thầy cô trước.', zh:'既然学校打算开发自己的学习软件，就应该先征求学生、家长以及老师们的意见。', py:'Jìrán xuéxiào dǎsuàn kāifā zìjǐ de xuéxí ruǎnjiàn, jiù yīnggāi xiān zhēngqiú xuésheng, jiāzhǎng yǐjí lǎoshīmen de yìjiàn.', goiY:['既然……就……','开发','以及'], giai:'既然 nêu một việc đã xác định rồi rút ra kết luận ở vế 就; 以及 chỉ đặt trước thành phần CUỐI của chuỗi liệt kê (学生、家长以及老师), không lặp giữa các thành phần.'},
-  {vi:'Thay vì suốt ngày than phiền rằng thực tế bất công với mình, chi bằng bình tâm lại nghĩ xem làm thế nào để từng bước thực hiện mục tiêu của bản thân.', zh:'与其整天抱怨现实对自己不公平，不如静下心来想想怎样一步一步实现自己的目标。', py:'Yǔqí zhěngtiān bàoyuàn xiànshí duì zìjǐ bù gōngpíng, bùrú jìng xià xīn lai xiǎngxiang zěnyàng yí bù yí bù shíxiàn zìjǐ de mùbiāo.', goiY:['与其……不如……','抱怨','现实','实现'], giai:'与其 A，不如 B = "thay vì A, chi bằng B" (chọn B); đừng nhầm 现实 (thực tế — danh từ) với 实现 (thực hiện — động từ).'},
-  {vi:'Khi làm bài tập nhóm, một khi người cộng tác không có trách nhiệm thì những người khác phải làm thay phần việc liên quan của người đó, từ đó ảnh hưởng đến tiến độ của cả nhóm.', zh:'做小组作业时，一旦合作伙伴不负责任，其他人就得替他完成相关的部分，从而影响整个小组的进度。', py:'Zuò xiǎozǔ zuòyè shí, yídàn hézuò huǒbàn bú fù zérèn, qítā rén jiù děi tì tā wánchéng xiāngguān de bùfen, cóng’ér yǐngxiǎng zhěnggè xiǎozǔ de jìndù.', goiY:['一旦……就……','从而','合作伙伴','相关'], giai:'一旦 nêu giả thiết về một việc xấu có thể xảy ra, vế sau dùng 就; 从而 (từ đó) mở đầu vế cuối nêu kết quả kéo theo.'},
-  {vi:'Một thành phố phát triển hay không không phải nhìn vào việc nó có bao nhiêu nhà cao tầng, mà là nhìn vào mức sống cũng như trình độ học vấn của người dân bình thường.', zh:'一个城市发达不发达，不是看它有多少高楼，而是看普通人的生活水平以及受教育的程度。', py:'Yí ge chéngshì fādá bu fādá, bú shì kàn tā yǒu duōshao gāolóu, ér shì kàn pǔtōngrén de shēnghuó shuǐpíng yǐjí shòu jiàoyù de chéngdù.', goiY:['不是……而是……','发达','以及','程度'], giai:'不是 A，而是 B phủ định A để khẳng định B; "trình độ học vấn" = 受教育的程度 (cụm từ + 程度), không dịch thành 学问程度.'},
-  {vi:'Sở dĩ phần mềm học tập này nhanh chóng thu hút được vài triệu người dùng là vì đội ngũ làm ra nó không ngừng đổi mới, nhắm đúng nhu cầu của học sinh trung học, chứ không phải nhờ mời người nổi tiếng làm đại diện.', zh:'这款学习软件之所以很快吸引了几百万用户，是因为团队针对中学生的需求不断创新，而不是靠明星代言。', py:'Zhè kuǎn xuéxí ruǎnjiàn zhīsuǒyǐ hěn kuài xīyǐnle jǐ bǎi wàn yònghù, shì yīnwèi tuánduì zhēnduì zhōngxuéshēng de xūqiú búduàn chuàngxīn, ér bú shì kào míngxīng dàiyán.', goiY:['之所以……是因为……','针对','创新','代言'], giai:'之所以 A，是因为 B nêu kết quả trước, nguyên nhân sau (= "sở dĩ… là vì…"); 针对 + đối tượng (nhắm vào) đặt trước động từ 创新.'},
-  {vi:'Cho dù mạng di động đã phủ sóng gần như mọi ngóc ngách, mẹ vẫn không cho tôi mang điện thoại khi ở nội trú, để tránh việc tối đến tôi trốn trong chăn thức khuya lướt video.', zh:'即使移动网络已经覆盖了几乎每一个角落，妈妈也不许我带手机去住校，以免我晚上躲在被子里熬夜刷视频。', py:'Jíshǐ yídòng wǎngluò yǐjīng fùgàile jīhū měi yí ge jiǎoluò, māma yě bù xǔ wǒ dài shǒujī qù zhùxiào, yǐmiǎn wǒ wǎnshang duǒ zài bèizi li áoyè shuā shìpín.', goiY:['即使……也……','以免','覆盖','熬夜'], giai:'即使 + giả thiết/nhượng bộ, 也 + kết quả không đổi (也 đứng sau chủ ngữ 妈妈); 以免 (để khỏi) mở đầu vế cuối, nói điều muốn tránh.'},
-  {vi:'Dù là quảng bá hoạt động trên mạng hay bàn chuyện hợp tác với doanh nghiệp địa phương, câu lạc bộ đều không thể thiếu sự nỗ lực của toàn thể thành viên; chỉ khi đồng lòng đoàn kết thì mới điều hành được nó tốt.', zh:'社团无论在网上推广活动，还是跟当地企业谈合作，都离不开全体成员的努力，只有团结一致，才能把它经营好。', py:'Shètuán wúlùn zài wǎng shang tuīguǎng huódòng, háishi gēn dāngdì qǐyè tán hézuò, dōu lí bu kāi quántǐ chéngyuán de nǔlì, zhǐyǒu tuánjié yízhì, cái néng bǎ tā jīngyíng hǎo.', goiY:['无论……还是……都……','只有……才……','推广','经营'], giai:'无论 A 还是 B，都…… = "dù là A hay B đều…" (vế sau bắt buộc có 都); 只有……才…… là điều kiện duy nhất — không thay bằng 只要……就…… (điều kiện đủ).'}
+  {vi:'Lớp trưởng không chỉ lo tuyên truyền cho hoạt động lần này mà còn đích thân liên hệ với mấy doanh nghiệp địa phương.',zh:'班长不但负责宣传这次活动，而且亲自联系了当地的几家企业。',py:'Bānzhǎng búdàn fùzé xuānchuán zhè cì huódòng, érqiě qīnzì liánxìle dāngdì de jǐ jiā qǐyè.',goiY:['不但……而且……','宣传','亲自','企业'],giai:'不但……而且…… nối hai việc theo mức tăng dần; hai vế cùng chủ ngữ nên 不但 đứng SAU chủ ngữ 班长. 当地 làm định ngữ cần 的 (当地的企业).'},
+  {vi:'Tuy lúc đầu cậu ấy chỉ dùng ứng dụng này xem livestream cho vui, nhưng bây giờ đã đến mức một ngày không xem là thấy bứt rứt.',zh:'虽然他一开始只是用这个应用随便看看直播，但现在已经到了一天不看就难受的程度。',py:'Suīrán tā yì kāishǐ zhǐshì yòng zhège yìngyòng suíbiàn kànkan zhíbō, dàn xiànzài yǐjīng dàole yì tiān bú kàn jiù nánshòu de chéngdù.',goiY:['虽然……但……','应用','到了……的程度'],giai:'"Đến mức…" = 到了……的程度: phần mô tả mức độ đặt GIỮA 到了 và 的程度, ngược trật tự tiếng Việt; 虽然……但…… nối sự thật với diễn biến trái chiều.'},
+  {vi:'Nếu trường đã định phát triển ứng dụng học tập của riêng mình thì nên hỏi ý kiến học sinh, phụ huynh và cả thầy cô trước.',zh:'既然学校打算开发自己的学习应用，就应该先问问学生、家长以及老师们的意见。',py:'Jìrán xuéxiào dǎsuàn kāifā zìjǐ de xuéxí yìngyòng, jiù yīnggāi xiān wènwen xuésheng, jiāzhǎng yǐjí lǎoshīmen de yìjiàn.',goiY:['既然……就……','开发','以及'],giai:'既然 nêu một việc đã xác định rồi rút ra kết luận ở vế 就; 以及 chỉ đặt trước thành phần CUỐI của chuỗi liệt kê (学生、家长以及老师), không lặp giữa các thành phần.'},
+  {vi:'Cậu đừng lúc nào cũng than phiền về thực tế nữa, hãy nghĩ kỹ xem làm thế nào để thực hiện ước mơ của mình đi.',zh:'你别总是抱怨现实，还是好好想想怎样实现自己的愿望吧。',py:'Nǐ bié zǒngshì bàoyuàn xiànshí, háishi hǎohǎo xiǎngxiang zěnyàng shíxiàn zìjǐ de yuànwàng ba.',goiY:['抱怨','现实','实现','还是……吧'],giai:'Đừng nhầm 现实 (thực tế — danh từ) với 实现 (thực hiện — động từ); 还是……吧 = tốt hơn là…, đưa ra lời khuyên.'},
+  {vi:'Khi cùng làm bài tập, nếu người cộng tác không nghiêm túc thì những người khác phải làm thay phần việc liên quan của người đó.',zh:'一起做作业时，如果合作伙伴不认真，其他人就得替他完成相关的部分。',py:'Yìqǐ zuò zuòyè shí, rúguǒ hézuò huǒbàn bú rènzhēn, qítā rén jiù děi tì tā wánchéng xiāngguān de bùfen.',goiY:['如果……就……','合作伙伴','替','相关'],giai:'如果 nêu giả thiết, 就 đứng sau chủ ngữ vế sau (其他人就……); 替 (bài 6) = làm thay; 相关的部分 = phần việc liên quan.'},
+  {vi:'Một thành phố phát triển hay không không phải nhìn vào việc nó có bao nhiêu nhà cao tầng, mà là nhìn vào mức sống cũng như trình độ học vấn của người dân bình thường.',zh:'一个城市发达不发达，不是看它有多少高楼，而是看普通人的生活水平以及教育的程度。',py:'Yí ge chéngshì fādá bu fādá, bú shì kàn tā yǒu duōshao gāolóu, ér shì kàn pǔtōngrén de shēnghuó shuǐpíng yǐjí jiàoyù de chéngdù.',goiY:['不是……而是……','发达','以及','程度'],giai:'不是 A，而是 B phủ định A để khẳng định B; "trình độ học vấn" = 教育的程度 (danh từ + 程度), không dịch thành 学问程度.'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {vi:'Tencent không chỉ mời ngôi sao bóng đá Messi quay phim quảng bá cho WeChat mà còn để anh ấy dùng WeChat livestream kỹ thuật tâng bóng của mình.', zh:'腾讯不仅请足球明星梅西为微信拍宣传片，而且让他用微信直播自己的颠球技术。', py:'Téngxùn bùjǐn qǐng zúqiú míngxīng Méixī wèi Wēixìn pāi xuānchuánpiàn, érqiě ràng tā yòng Wēixìn zhíbō zìjǐ de diān qiú jìshù.', goiY:['不仅……而且…… = không chỉ… mà còn…','宣传 = quảng bá, tuyên truyền','颠球 = tâng bóng'], giai:'不仅……而且…… nối hai việc theo mức tăng dần; 宣传片 là "phim quảng bá", 直播 là "phát trực tiếp / livestream".'},
-  {vi:'Đoạn phim quảng bá này được tung ra đồng loạt ở 15 quốc gia và khu vực trên toàn cầu, đủ thấy Tencent coi trọng đợt quảng bá ra nước ngoài lần này đến mức nào.', zh:'这条宣传片在全球十五个国家和地区同步上线，可见腾讯对这次海外推广有多重视。', py:'Zhè tiáo xuānchuánpiàn zài quánqiú shíwǔ ge guójiā hé dìqū tóngbù shàngxiàn, kějiàn Téngxùn duì zhè cì hǎiwài tuīguǎng yǒu duō zhòngshì.', goiY:['可见 = đủ thấy, có thể thấy','同步 = đồng loạt, cùng lúc','推广 = quảng bá, mở rộng'], giai:'可见 mở đầu vế sau, rút ra kết luận từ sự việc ở vế trước; 有多 + động từ/tính từ = "… đến mức nào".'},
-  {vi:'Ngày nay số người dùng đăng ký WeChat ở nước ngoài đã vượt 70 triệu, hơn nữa WeChat đã phủ tới hơn 200 quốc gia và khu vực.', zh:'如今微信在海外的注册用户已经超过七千万，而且覆盖了二百多个国家和地区。', py:'Rújīn Wēixìn zài hǎiwài de zhùcè yònghù yǐjīng chāoguò qīqiān wàn, érqiě fùgàile èrbǎi duō ge guójiā hé dìqū.', goiY:['而且 = hơn nữa, mà còn','注册用户 = người dùng đăng ký','覆盖 = phủ, bao phủ'], giai:'七千万 = 70 triệu (万 = 10.000), cẩn thận khi đổi đơn vị; 而且 nối thêm một thông tin cùng chiều.'},
-  {vi:'Trong số người dùng ở nước ngoài, ngoài người gốc Hoa và người mới di cư ra, còn có ngày càng nhiều người nước ngoài; điều đó cho thấy WeChat đang dần bước ra khỏi cộng đồng người Hoa.', zh:'在海外用户中，除了华裔和新移民以外，还有越来越多的外国人，这说明微信正在逐渐走出华人的圈子。', py:'Zài hǎiwài yònghù zhōng, chúle huáyì hé xīn yímín yǐwài, hái yǒu yuè lái yuè duō de wàiguórén, zhè shuōmíng Wēixìn zhèngzài zhújiàn zǒuchū huárén de quānzi.', goiY:['除了……以外，还…… = ngoài… ra, còn…','华裔 = người gốc Hoa','移民 = người di cư','逐渐 = dần dần'], giai:'除了……以外，还…… là "ngoài… ra còn…" (bao gồm cả), khác 除了……以外，都…… (loại trừ); 越来越多 dịch "ngày càng nhiều".'},
-  {vi:'WeChat tung ra những quảng cáo khác nhau cho từng quốc gia, khu vực khác nhau, đồng thời mời ngôi sao bản địa làm người đại diện, vì thế hiệu quả thu được khá tốt.', zh:'微信针对不同的国家和地区推出了不同的广告，并且邀请当地明星代言，因此收效相当不错。', py:'Wēixìn zhēnduì bùtóng de guójiā hé dìqū tuīchūle bùtóng de guǎnggào, bìngqiě yāoqǐng dāngdì míngxīng dàiyán, yīncǐ shōuxiào xiāngdāng búcuò.', goiY:['针对 = nhắm vào, dành cho','并且 = đồng thời, và','代言 = làm người đại diện (quảng cáo)'], giai:'针对 + đối tượng đặt trước động từ, dịch "dành riêng cho / nhắm vào…"; 收效 là "hiệu quả thu được", 相当 ở đây là phó từ = "khá".'},
-  {vi:'WeChat do Phó Tổng giám đốc cấp cao của Tencent là Trương Tiểu Long dẫn dắt đội ngũ phát triển; sở dĩ nó được ưa chuộng là vì chức năng liên lạc đơn giản, dễ dùng, lại hoàn toàn miễn phí.', zh:'微信由腾讯高级副总裁张小龙带领团队开发，它之所以受欢迎，是因为其通信功能简单好用，而且完全免费。', py:'Wēixìn yóu Téngxùn gāojí fù zǒngcái Zhāng Xiǎolóng dàilǐng tuánduì kāifā, tā zhīsuǒyǐ shòu huānyíng, shì yīnwèi qí tōngxìn gōngnéng jiǎndān hǎoyòng, érqiě wánquán miǎnfèi.', goiY:['之所以……是因为…… = sở dĩ… là vì…','高级副总裁 = phó tổng giám đốc cấp cao','通信 = liên lạc, truyền tin'], giai:'由 + người + V = "do ai làm"; 之所以……是因为…… nêu kết quả trước, nguyên nhân sau — dịch "sở dĩ… là vì…"; 其 = 它的.'},
-  {vi:'Tại buổi họp báo, Tencent cho biết từ nay sẽ tìm thêm nhiều đối tác ở nước ngoài để có thể phát triển các mảng dịch vụ liên quan phù hợp với thói quen của người dùng bản địa.', zh:'腾讯在召开发布会时表示，今后将寻找更多海外合作伙伴，以便针对当地用户的习惯开发相关业务。', py:'Téngxùn zài zhàokāi fābùhuì shí biǎoshì, jīnhòu jiāng xúnzhǎo gèng duō hǎiwài hézuò huǒbàn, yǐbiàn zhēnduì dāngdì yònghù de xíguàn kāifā xiāngguān yèwù.', goiY:['以便 = để, nhằm (dễ bề)','召开 = tổ chức, triệu tập (hội nghị)','合作伙伴 = đối tác','业务 = mảng kinh doanh, dịch vụ'], giai:'以便 đứng đầu vế sau nêu mục đích (= "để tiện…"); 召开 chỉ dùng với hội nghị, cuộc họp — dịch "tổ chức/ triệu tập", không dịch "mở".'},
-  {vi:'Tổng giám đốc Tencent Lưu Sí Bình cho rằng Internet di động là một cơ hội để bắt đầu lại; chỉ cần nắm bắt được nó, doanh nghiệp Trung Quốc sẽ có khả năng làm bá chủ thị trường toàn cầu.', zh:'腾讯总裁刘炽平认为，移动互联网是一个重新开始的机会，只要抓住它，中国企业就有可能称霸全球市场。', py:'Téngxùn zǒngcái Liú Chìpíng rènwéi, yídòng hùliánwǎng shì yí ge chóngxīn kāishǐ de jīhuì, zhǐyào zhuāzhù tā, Zhōngguó qǐyè jiù yǒu kěnéng chēngbà quánqiú shìchǎng.', goiY:['只要……就…… = chỉ cần… thì…','移动互联网 = Internet di động','称霸 = xưng bá, thống trị'], giai:'只要 nêu điều kiện đủ; 就 đứng SAU chủ ngữ của vế sau (中国企业就……), không đứng trước chủ ngữ.'},
-  {vi:'Do số lượng người dùng Internet cũng như mức độ trưởng thành của thị trường Trung Quốc đều không bằng các nước phát triển, nên doanh nghiệp Trung Quốc khó giành vị trí dẫn đầu về đổi mới sáng tạo.', zh:'由于中国互联网的用户数量以及市场成熟程度都不如发达国家，中国企业很难在创新上占据领导地位。', py:'Yóuyú Zhōngguó hùliánwǎng de yònghù shùliàng yǐjí shìchǎng chéngshú chéngdù dōu bùrú fādá guójiā, Zhōngguó qǐyè hěn nán zài chuàngxīn shang zhànjù lǐngdǎo dìwèi.', goiY:['由于 = do, bởi vì','以及 = cùng với, cũng như','成熟程度 = mức độ trưởng thành','领导地位 = vị trí dẫn đầu'], giai:'由于 nêu nguyên nhân ở vế đầu, vế sau nêu kết quả; 以及 nối hai thành phần ngang hàng — dịch "cũng như"; N + 程度 dịch là "mức độ…".'},
-  {vi:'Tuy ở trong nước WeChat đã phát triển đến mức ai ai cũng dùng, nhưng ở nước ngoài nó hoàn toàn không có chỗ dựa gì, vì vậy Tencent phải bắt đầu lại từ đầu cả về quảng bá lẫn kinh doanh.', zh:'尽管微信在国内发展到了人人都在用的程度，但在海外毫无背景，所以腾讯必须在宣传以及经营上重新开始。', py:'Jǐnguǎn Wēixìn zài guónèi fāzhǎn dàole rénrén dōu zài yòng de chéngdù, dàn zài hǎiwài háo wú bèijǐng, suǒyǐ Téngxùn bìxū zài xuānchuán yǐjí jīngyíng shang chóngxīn kāishǐ.', goiY:['尽管……但…… = mặc dù… nhưng…','到了……的程度 = đến mức…','背景 = bối cảnh, chỗ dựa','以及 = và, cùng với'], giai:'到了……的程度 dịch "đến mức…" và đảo phần mức độ ra sau; 毫无背景 = "hoàn toàn không có chỗ dựa/ tên tuổi gì", không dịch cứng là "không có bối cảnh".'}
+  {vi:'Tencent không chỉ mời ngôi sao bóng đá Messi quay phim quảng bá cho WeChat mà còn để anh ấy dùng WeChat livestream kỹ thuật tâng bóng của mình.',zh:'腾讯不仅请足球明星梅西为微信拍宣传片，而且让他用微信直播自己的颠球技术。',py:'Téngxùn bùjǐn qǐng zúqiú míngxīng Méixī wèi Wēixìn pāi xuānchuánpiàn, érqiě ràng tā yòng Wēixìn zhíbō zìjǐ de diān qiú jìshù.',goiY:['不仅……而且…… = không chỉ… mà còn…','宣传 = quảng bá, tuyên truyền','颠球 = tâng bóng'],giai:'不仅……而且…… nối hai việc theo mức tăng dần; 宣传片 là "phim quảng bá", 直播 là "phát trực tiếp / livestream".'},
+  {vi:'Đoạn phim quảng bá này được tung ra cùng lúc ở 15 quốc gia và khu vực; chịu chi mạnh tay như vậy chứng tỏ Tencent rất coi trọng đợt quảng bá ra nước ngoài lần này.',zh:'这条宣传片在全球十五个国家和地区同时上线，这么大的手笔说明腾讯非常重视这次海外推广。',py:'Zhè tiáo xuānchuánpiàn zài quánqiú shíwǔ ge guójiā hé dìqū tóngshí shàngxiàn, zhème dà de shǒubǐ shuōmíng Téngxùn fēicháng zhòngshì zhè cì hǎiwài tuīguǎng.',goiY:['手笔 = sự chịu chi, mạnh tay','说明 = chứng tỏ','推广 = quảng bá, mở rộng'],giai:'大手笔 = cách làm lớn, chịu chi; 说明 ở đây không phải "giải thích" mà là "chứng tỏ, cho thấy".'},
+  {vi:'WeChat tung ra những quảng cáo khác nhau cho từng quốc gia, khu vực khác nhau, đồng thời mời ngôi sao bản địa làm người đại diện, vì thế hiệu quả thu được khá tốt.',zh:'微信针对不同的国家和地区推出了不同的广告，并且邀请当地明星代言，因此收效相当不错。',py:'Wēixìn zhēnduì bùtóng de guójiā hé dìqū tuīchūle bùtóng de guǎnggào, bìngqiě yāoqǐng dāngdì míngxīng dàiyán, yīncǐ shōuxiào xiāngdāng búcuò.',goiY:['针对 = nhắm vào, dành cho','并且 = đồng thời, và','代言 = làm người đại diện (quảng cáo)'],giai:'针对 + đối tượng đặt trước động từ, dịch "dành riêng cho / nhắm vào…"; 收效 là "hiệu quả thu được", 相当 ở đây là phó từ = "khá".'},
+  {vi:'WeChat do Phó Tổng giám đốc cấp cao của Tencent là Trương Tiểu Long cùng đồng nghiệp phát triển; đây là một ứng dụng liên lạc di động dùng đơn giản, tiện lợi, lại hoàn toàn miễn phí.',zh:'微信是由腾讯高级副总裁张小龙和同事们一起开发的，这个移动通信应用用起来简单方便，而且完全免费。',py:'Wēixìn shì yóu Téngxùn gāojí fù zǒngcái Zhāng Xiǎolóng hé tóngshìmen yìqǐ kāifā de, zhège yídòng tōngxìn yìngyòng yòng qǐlai jiǎndān fāngbiàn, érqiě wánquán miǎnfèi.',goiY:['是由……开发的 = do… phát triển','高级副总裁 = phó tổng giám đốc cấp cao','移动通信 = liên lạc di động'],giai:'是由 + người + V + 的 nhấn mạnh người làm → "do ai làm"; V + 起来 + tính từ = "dùng thấy…" (用起来简单方便).'},
+  {vi:'Tổng giám đốc Tencent Lưu Sí Bình cho rằng Internet di động là một cơ hội để bắt đầu lại; chỉ cần nắm bắt được nó, doanh nghiệp Trung Quốc sẽ có khả năng làm bá chủ thị trường toàn cầu.',zh:'腾讯总裁刘炽平认为，移动互联网是一个重新开始的机会，只要抓住它，中国企业就有可能称霸全球市场。',py:'Téngxùn zǒngcái Liú Chìpíng rènwéi, yídòng hùliánwǎng shì yí ge chóngxīn kāishǐ de jīhuì, zhǐyào zhuāzhù tā, Zhōngguó qǐyè jiù yǒu kěnéng chēngbà quánqiú shìchǎng.',goiY:['只要……就…… = chỉ cần… thì…','移动互联网 = Internet di động','称霸 = xưng bá, thống trị'],giai:'只要 nêu điều kiện đủ; 就 đứng SAU chủ ngữ của vế sau (中国企业就……), không đứng trước chủ ngữ.'},
+  {vi:'Do số lượng người dùng Internet cũng như mức độ trưởng thành của thị trường Trung Quốc đều không theo kịp các nước phát triển, nên doanh nghiệp Trung Quốc khó giữ vị trí dẫn đầu về đổi mới sáng tạo.',zh:'由于中国互联网的用户数量以及市场成熟程度都比不上发达国家，中国企业很难在创新上有领导地位。',py:'Yóuyú Zhōngguó hùliánwǎng de yònghù shùliàng yǐjí shìchǎng chéngshú chéngdù dōu bǐ bu shàng fādá guójiā, Zhōngguó qǐyè hěn nán zài chuàngxīn shang yǒu lǐngdǎo dìwèi.',goiY:['由于 = do, bởi vì','以及 = cùng với, cũng như','比不上 = không bằng','领导地位 = vị trí dẫn đầu'],giai:'由于 nêu nguyên nhân ở vế đầu, vế sau nêu kết quả; 以及 nối hai thành phần ngang hàng — dịch "cũng như"; N + 程度 dịch là "mức độ…".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1729,30 +1661,12 @@ var writingData = {
 
   // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (3 câu đầu là câu 29–31 của sách bài tập)
   sapXep:[
-    {manh:['做过一项调查','我曾经','针对','留学生'],
-     dap:'我曾经针对留学生做过一项调查。',
-     vn:'Tôi từng làm một cuộc khảo sát nhắm vào du học sinh.',
-     giai:'Chủ ngữ 我 → phó từ 曾经 → 针对 + đối tượng → động từ 做过 + 一项调查. 针对…… đứng trước động từ chính như một trạng ngữ.'},
-    {manh:['实现愿望的','请给我','机会','一次'],
-     dap:'请给我一次实现愿望的机会。',
-     vn:'Xin hãy cho tôi một cơ hội để thực hiện ước nguyện.',
-     giai:'给 + người + số lượng (一次) + định ngữ (实现愿望的) + danh từ (机会). Số lượng từ đứng TRƯỚC định ngữ có 的.'},
-    {manh:['以及桌面','你不要用筷子','敲打碗、','盘子'],
-     dap:'你不要用筷子敲打碗、盘子以及桌面。',
-     vn:'Bạn đừng dùng đũa gõ vào bát, đĩa và mặt bàn.',
-     giai:'Chuỗi liệt kê: 碗、盘子 ngăn bằng dấu 、, 以及 đứng trước thành phần CUỐI (桌面).'},
-    {manh:['已经覆盖了','微信','两百多个','国家和地区'],
-     dap:'微信已经覆盖了两百多个国家和地区。',
-     vn:'WeChat đã phủ hơn hai trăm quốc gia và khu vực.',
-     giai:'Chủ ngữ 微信 → 已经 + động từ 覆盖了 → tân ngữ (số lượng + danh từ).'},
-    {manh:['达到了','问题','十分严重的程度','已经'],
-     dap:'问题已经达到了十分严重的程度。',
-     vn:'Vấn đề đã đến mức hết sức nghiêm trọng.',
-     giai:'Mẫu của bài: 达到 / 发展到 + ……的程度. 已经 đứng trước động từ.'},
-    {manh:['推出了','公司','针对年轻人','一款新应用'],
-     dap:'公司针对年轻人推出了一款新应用。',
-     vn:'Công ty đã tung ra một ứng dụng mới nhắm vào giới trẻ.',
-     giai:'Chủ ngữ 公司 → 针对 + đối tượng → động từ 推出了 → tân ngữ. Lượng từ của 应用 / 产品 là 款.'}
+    {manh:['做过一项调查','我曾经','针对','留学生'],dap:'我曾经针对留学生做过一项调查。',vn:'Tôi từng làm một cuộc khảo sát nhắm vào du học sinh.',giai:'Chủ ngữ 我 → phó từ 曾经 → 针对 + đối tượng → động từ 做过 + 一项调查. 针对…… đứng trước động từ chính như một trạng ngữ.'},
+    {manh:['实现愿望的','请给我','机会','一次'],dap:'请给我一次实现愿望的机会。',vn:'Xin hãy cho tôi một cơ hội để thực hiện ước nguyện.',giai:'给 + người + số lượng (一次) + định ngữ (实现愿望的) + danh từ (机会). Số lượng từ đứng TRƯỚC định ngữ có 的.'},
+    {manh:['以及桌子','你不要用筷子','敲打碗、','盘子'],dap:'你不要用筷子敲打碗、盘子以及桌子。',vn:'Bạn đừng dùng đũa gõ vào bát, đĩa và mặt bàn.',giai:'Chuỗi liệt kê: 碗、盘子 ngăn bằng dấu 、, 以及 đứng trước thành phần CUỐI (桌子).'},
+    {manh:['已经覆盖了','微信','两百多个','国家和地区'],dap:'微信已经覆盖了两百多个国家和地区。',vn:'WeChat đã phủ hơn hai trăm quốc gia và khu vực.',giai:'Chủ ngữ 微信 → 已经 + động từ 覆盖了 → tân ngữ (số lượng + danh từ).'},
+    {manh:['达到了','问题','十分严重的程度','已经'],dap:'问题已经达到了十分严重的程度。',vn:'Vấn đề đã đến mức hết sức nghiêm trọng.',giai:'Mẫu của bài: 达到 / 发展到 + ……的程度. 已经 đứng trước động từ.'},
+    {manh:['推出了','公司','针对年轻人','一种新产品'],dap:'公司针对年轻人推出了一种新产品。',vn:'Công ty đã tung ra một sản phẩm mới nhắm vào giới trẻ.',giai:'Chủ ngữ 公司 → 针对 + đối tượng → động từ 推出了 → tân ngữ (一种新产品).'}
   ]
 };
 
@@ -1762,30 +1676,10 @@ var writingData = {
 var speakingData = {
   intro:'Bốn câu hỏi mở về chủ đề <b>科技对生活的影响</b> (ảnh hưởng của công nghệ đến cuộc sống). Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 应用 · 用户 · 以及 · 程度 · 针对 · 实现 · 开发.',
   questions:[
-    {q_zh:'你是从什么时候开始使用聊天应用的？你觉得它在你的生活中重要吗？',
-     q_vn:'Em bắt đầu dùng ứng dụng nhắn tin từ khi nào? Em thấy nó có quan trọng trong cuộc sống của em không?',
-     hint:'Dùng 是……的 để nói thời điểm + 占有……的地位',
-     sample:'我是上初中的时候开始用Zalo的。它在我的生活中占有很重要的地位，我跟同学、老师以及家人都用它联系。',
-     sample_vn:'Tôi bắt đầu dùng Zalo từ hồi lên cấp hai. Nó giữ vị trí rất quan trọng trong cuộc sống của tôi, tôi liên lạc với bạn bè, thầy cô và gia đình đều bằng nó.',
-     note:'Câu hỏi “từ khi nào” → trả lời bằng 是……的 nhấn mạnh thời điểm, đúng ngữ pháp HSK 3–4.'},
-    {q_zh:'手机应用给你带来了哪些好处？',
-     q_vn:'Các ứng dụng điện thoại đem lại cho em những lợi ích gì?',
-     hint:'Liệt kê bằng A、B 以及 C',
-     sample:'手机应用让我的生活方便多了：我可以用它查词典、听中文歌以及跟外国朋友聊天。',
-     sample_vn:'Ứng dụng điện thoại làm cuộc sống tôi tiện hơn nhiều: tôi có thể dùng nó tra từ điển, nghe nhạc tiếng Trung và nhắn tin với bạn nước ngoài.',
-     note:'Liệt kê từ 3 ý trở lên thì 以及 đặt trước ý CUỐI — nghe rất “HSK 5”.'},
-    {q_zh:'手机对你的生活有什么不好的影响吗？',
-     q_vn:'Điện thoại có ảnh hưởng không tốt nào đến cuộc sống của em không?',
-     hint:'Dùng 在一定程度上 / 到了……的程度',
-     sample:'有。有时候我玩手机玩到很晚，在一定程度上影响了第二天的学习。',
-     sample_vn:'Có. Đôi khi tôi chơi điện thoại đến khuya, ở một mức độ nào đó đã ảnh hưởng đến việc học ngày hôm sau.',
-     note:'Nói mặt trái một cách chừng mực — 在一定程度上 giúp câu trả lời khách quan, không cực đoan.'},
-    {q_zh:'如果你能开发一个应用，你想针对什么样的用户？为什么？',
-     q_vn:'Nếu em có thể phát triển một ứng dụng, em muốn nhắm vào người dùng nào? Vì sao?',
-     hint:'Dùng 针对 + 开发 + lý do 因为……',
-     sample:'我想针对中学生开发一个学汉语的应用，因为很多同学觉得记生词太难了，用游戏的方式学会更有意思。',
-     sample_vn:'Tôi muốn phát triển một ứng dụng học tiếng Trung nhắm vào học sinh trung học, vì nhiều bạn thấy nhớ từ mới quá khó, học bằng trò chơi sẽ thú vị hơn.',
-     note:'Câu hỏi giả định “nếu…” — phải nói rõ ĐỐI TƯỢNG và LÝ DO, đừng chỉ nói tên ứng dụng.'}
+    {q_zh:'你是从什么时候开始使用聊天应用的？你觉得它在你的生活中重要吗？',q_vn:'Em bắt đầu dùng ứng dụng nhắn tin từ khi nào? Em thấy nó có quan trọng trong cuộc sống của em không?',hint:'Dùng 是……的 để nói thời điểm + 有……的地位',sample:'我是上大学的时候开始用Zalo的。它在我的生活中有很重要的地位，上课的通知、作业以及朋友们的消息，都是从这里收到的。',sample_vn:'Tôi bắt đầu dùng Zalo từ hồi lên đại học. Nó giữ vị trí rất quan trọng trong cuộc sống của tôi: thông báo lịch học, bài tập và tin nhắn của bạn bè đều nhận qua đây.',note:'Câu hỏi “từ khi nào” → trả lời bằng 是……的 nhấn mạnh thời điểm, đúng ngữ pháp HSK 3–4.'},
+    {q_zh:'手机应用给你带来了哪些好处？',q_vn:'Các ứng dụng điện thoại đem lại cho em những lợi ích gì?',hint:'Liệt kê bằng A、B 以及 C',sample:'手机应用让我的生活方便多了：我可以用它学汉语、看新闻以及跟外国朋友聊天。',sample_vn:'Ứng dụng điện thoại làm cuộc sống tôi tiện hơn nhiều: tôi có thể dùng nó học tiếng Trung, đọc tin tức và nhắn tin với bạn nước ngoài.',note:'Liệt kê từ 3 ý trở lên thì 以及 đặt trước ý CUỐI — nghe rất “HSK 5”.'},
+    {q_zh:'手机对你的生活有什么不好的影响吗？',q_vn:'Điện thoại có ảnh hưởng không tốt nào đến cuộc sống của em không?',hint:'Dùng 在一定程度上 / 到了……的程度',sample:'有。有时候我玩手机玩到很晚，在一定程度上影响了第二天的学习。',sample_vn:'Có. Đôi khi tôi chơi điện thoại đến khuya, ở một mức độ nào đó đã ảnh hưởng đến việc học ngày hôm sau.',note:'Nói mặt trái một cách chừng mực — 在一定程度上 giúp câu trả lời khách quan, không cực đoan.'},
+    {q_zh:'如果你能开发一个应用，你想针对什么样的用户？为什么？',q_vn:'Nếu em có thể phát triển một ứng dụng, em muốn nhắm vào người dùng nào? Vì sao?',hint:'Dùng 针对 + 开发 + lý do 因为……',sample:'我想针对中学生开发一个学汉语的应用，因为很多同学觉得记生词太难了，用游戏的方式学会更有意思。',sample_vn:'Tôi muốn phát triển một ứng dụng học tiếng Trung nhắm vào học sinh trung học, vì nhiều bạn thấy nhớ từ mới quá khó, học bằng trò chơi sẽ thú vị hơn.',note:'Câu hỏi giả định “nếu…” — phải nói rõ ĐỐI TƯỢNG và LÝ DO, đừng chỉ nói tên ứng dụng.'}
   ]
 };
 
@@ -1877,45 +1771,11 @@ var situationData = {
   intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
          'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng bàn hỏi em về điện thoại.',
-     a:{sp:'Bạn',zh:'你手机里最常用的应用是什么？',vn:'Ứng dụng cậu dùng nhiều nhất trong điện thoại là gì?'},
-     need:['Dùng 应用','Liệt kê người em liên lạc bằng 以及'],
-     sample:'我最常用的应用是Zalo，因为我跟同学、老师以及家人都用它联系。',
-     samplePy:'Wǒ zuì cháng yòng de yìngyòng shì Zalo, yīnwèi wǒ gēn tóngxué, lǎoshī yǐjí jiārén dōu yòng tā liánxì.',
-     sampleVn:'Ứng dụng tôi dùng nhiều nhất là Zalo, vì tôi liên lạc với bạn bè, thầy cô và gia đình đều bằng nó.',
-     tip:'以及 chỉ đặt MỘT lần, trước người cuối cùng trong chuỗi; các phần trước ngăn bằng dấu 、.'},
-
-    {scene:'Bạn em tải một ứng dụng học tiếng Trung nhưng không dùng được.',
-     a:{sp:'Bạn',zh:'这个学汉语的应用怎么用啊？我下载了还是打不开。',vn:'Ứng dụng học tiếng Trung này dùng thế nào vậy? Tớ tải về rồi mà vẫn không mở được.'},
-     need:['Dùng 注册','Hướng dẫn theo thứ tự 先……然后……'],
-     sample:'你得先用手机号注册一个账号，然后登录，就能用了。',
-     samplePy:'Nǐ děi xiān yòng shǒujīhào zhùcè yí ge zhànghào, ránhòu dēnglù, jiù néng yòng le.',
-     sampleVn:'Cậu phải đăng ký một tài khoản bằng số điện thoại trước, sau đó đăng nhập là dùng được.',
-     tip:'注册 là đăng ký TÀI KHOẢN; đăng ký dự thi, dự lớp thì dùng 报名 — đừng nhầm.'},
-
-    {scene:'Mẹ lo em dùng điện thoại quá nhiều.',
-     a:{sp:'Mẹ',zh:'你每天玩那么久手机，已经影响学习了吧？',vn:'Ngày nào con cũng chơi điện thoại lâu thế, chắc ảnh hưởng đến việc học rồi phải không?'},
-     need:['Dùng 程度','Giải thích nhẹ nhàng, có con số cụ thể'],
-     sample:'妈妈，我知道玩太多不好，不过还没到影响学习的程度，我每天只玩一个小时。',
-     samplePy:'Māma, wǒ zhīdào wán tài duō bù hǎo, búguò hái méi dào yǐngxiǎng xuéxí de chéngdù, wǒ měi tiān zhǐ wán yí ge xiǎoshí.',
-     sampleVn:'Mẹ ơi, con biết chơi nhiều không tốt, nhưng chưa đến mức ảnh hưởng đến việc học đâu, mỗi ngày con chỉ chơi một tiếng.',
-     tip:'还没到……的程度 = chưa đến mức …. Nói với người lớn nên mở đầu bằng việc thừa nhận ý của mẹ.'},
-
-    {scene:'Trường sắp tổ chức ngày hội tiếng Trung, bạn hỏi kế hoạch quảng bá.',
-     a:{sp:'Bạn',zh:'听说你们要办中文节，打算怎么宣传？',vn:'Nghe nói các cậu sắp tổ chức ngày hội tiếng Trung, định quảng bá thế nào?'},
-     need:['Dùng 针对','Dùng 宣传 hoặc 推广'],
-     sample:'我们打算针对高一新生拍一个宣传片，再在学校的网站上推广。',
-     samplePy:'Wǒmen dǎsuàn zhēnduì gāoyī xīnshēng pāi yí ge xuānchuánpiàn, zài zài xuéxiào de wǎngzhàn shang tuīguǎng.',
-     sampleVn:'Chúng tớ định làm một đoạn phim giới thiệu nhắm vào học sinh lớp 10 mới vào, rồi quảng bá trên trang web của trường.',
-     tip:'针对 + đối tượng đứng TRƯỚC động từ chính (拍). Đây chính là cách WeChat làm trong bài đọc.'},
-
-    {scene:'Thầy chủ nhiệm hỏi về ước mơ của em.',
-     a:{sp:'Thầy',zh:'你长大以后想做什么？',vn:'Lớn lên em muốn làm gì?'},
-     need:['Dùng 实现','Nói em đang làm gì để đạt được'],
-     sample:'我想当一名软件工程师。为了实现这个梦想，我现在要好好学习数学以及英语。',
-     samplePy:'Wǒ xiǎng dāng yì míng ruǎnjiàn gōngchéngshī. Wèile shíxiàn zhège mèngxiǎng, wǒ xiànzài yào hǎohǎo xuéxí shùxué yǐjí Yīngyǔ.',
-     sampleVn:'Em muốn làm kỹ sư phần mềm. Để thực hiện ước mơ này, bây giờ em phải học thật tốt môn Toán và tiếng Anh.',
-     tip:'实现 (động từ) + 梦想; đừng viết nhầm thành 现实梦想.'}
+    {scene:'Bạn cùng bàn hỏi em về điện thoại.',a:{sp:'Bạn',zh:'你手机里最常用的应用是什么？',vn:'Ứng dụng cậu dùng nhiều nhất trong điện thoại là gì?'},need:['Dùng 应用','Liệt kê người em liên lạc bằng 以及'],sample:'我最常用的应用是Zalo，因为我跟同学、老师以及家人都用它联系。',samplePy:'Wǒ zuì cháng yòng de yìngyòng shì Zalo, yīnwèi wǒ gēn tóngxué, lǎoshī yǐjí jiārén dōu yòng tā liánxì.',sampleVn:'Ứng dụng tôi dùng nhiều nhất là Zalo, vì tôi liên lạc với bạn bè, thầy cô và gia đình đều bằng nó.',tip:'以及 chỉ đặt MỘT lần, trước người cuối cùng trong chuỗi; các phần trước ngăn bằng dấu 、.'},
+    {scene:'Bạn em cài một ứng dụng học tiếng Trung nhưng không dùng được.',a:{sp:'Bạn',zh:'这个学汉语的应用怎么用啊？我打开以后什么都看不了。',vn:'Ứng dụng học tiếng Trung này dùng thế nào vậy? Tớ mở ra rồi mà chẳng xem được gì.'},need:['Dùng 注册','Hướng dẫn theo thứ tự: trước tiên làm gì'],sample:'你得先用手机号注册一下，注册好了就能用了。',samplePy:'Nǐ děi xiān yòng shǒujīhào zhùcè yíxià, zhùcè hǎo le jiù néng yòng le.',sampleVn:'Cậu phải đăng ký bằng số điện thoại trước, đăng ký xong là dùng được.',tip:'注册 là đăng ký TÀI KHOẢN; đăng ký dự thi, dự lớp thì dùng 报名 — đừng nhầm.'},
+    {scene:'Mẹ lo em dùng điện thoại quá nhiều.',a:{sp:'Mẹ',zh:'你每天玩那么久手机，已经影响学习了吧？',vn:'Ngày nào con cũng chơi điện thoại lâu thế, chắc ảnh hưởng đến việc học rồi phải không?'},need:['Dùng 程度','Giải thích nhẹ nhàng, có con số cụ thể'],sample:'妈妈，我知道玩太多不好，不过还没到影响学习的程度，我每天只玩一个小时。',samplePy:'Māma, wǒ zhīdào wán tài duō bù hǎo, búguò hái méi dào yǐngxiǎng xuéxí de chéngdù, wǒ měi tiān zhǐ wán yí ge xiǎoshí.',sampleVn:'Mẹ ơi, con biết chơi nhiều không tốt, nhưng chưa đến mức ảnh hưởng đến việc học đâu, mỗi ngày con chỉ chơi một tiếng.',tip:'还没到……的程度 = chưa đến mức …. Nói với người lớn nên mở đầu bằng việc thừa nhận ý của mẹ.'},
+    {scene:'Trường sắp tổ chức ngày hội tiếng Trung, bạn hỏi kế hoạch quảng bá.',a:{sp:'Bạn',zh:'听说下个月学校有中文节，你们打算怎么宣传？',vn:'Nghe nói tháng sau trường có ngày hội tiếng Trung, các cậu định quảng bá thế nào?'},need:['Dùng 针对','Dùng 宣传 hoặc 推广'],sample:'我们打算针对高一新生拍一个宣传片，再在学校的网站上推广。',samplePy:'Wǒmen dǎsuàn zhēnduì gāoyī xīnshēng pāi yí ge xuānchuánpiàn, zài zài xuéxiào de wǎngzhàn shang tuīguǎng.',sampleVn:'Chúng tớ định làm một đoạn phim giới thiệu nhắm vào học sinh lớp 10 mới vào, rồi quảng bá trên trang web của trường.',tip:'针对 + đối tượng đứng TRƯỚC động từ chính (拍). Đây chính là cách WeChat làm trong bài đọc.'},
+    {scene:'Thầy chủ nhiệm hỏi về ước mơ của em.',a:{sp:'Thầy',zh:'你长大以后想做什么？',vn:'Lớn lên em muốn làm gì?'},need:['Dùng 实现','Nói em đang làm gì để đạt được'],sample:'我想开发手机应用。为了实现这个愿望，我现在要好好学习数学和电脑。',samplePy:'Wǒ xiǎng kāifā shǒujī yìngyòng. Wèile shíxiàn zhège yuànwàng, wǒ xiànzài yào hǎohǎo xuéxí shùxué hé diànnǎo.',sampleVn:'Em muốn phát triển ứng dụng điện thoại. Để thực hiện mong muốn này, bây giờ em phải học thật tốt môn Toán và tin học.',tip:'实现 (động từ) + 愿望; đừng viết nhầm thành 现实愿望.'}
   ]
 };
 
@@ -1926,29 +1786,12 @@ var registerData = {
   intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
          'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
   items: [
-    {scene:'Em viết bản kế hoạch học tập nộp cho nhà trường.',
-     a:'本学期我将重点复习语文、数学以及英语。',b:'这学期我要好好复习语文、数学跟英语。',better:'a',
-     why:'Văn bản nộp nhà trường là VĂN VIẾT: 本学期, 将, 以及 trang trọng hơn. Câu b đúng nhưng mang giọng nói chuyện.'},
-
-    {scene:'Em nhắn tin cho bạn thân rủ đi mua sắm.',
-     a:'周末我要去买衣服、鞋以及书包。',b:'周末我要去买衣服、鞋，还有书包。',better:'b',
-     why:'以及 thiên về văn viết, dùng khi nhắn tin bạn thân nghe cứng. Khẩu ngữ thường nói ……，还有…….'},
-
-    {scene:'Em thuyết trình trước lớp về một ứng dụng.',
-     a:'我觉得微信挺好用的。',b:'我个人认为，微信是一款非常实用的应用。',better:'b',
-     why:'Thuyết trình cần giọng khách quan, trang trọng: 我个人认为 + 一款……的应用. Câu a hợp khi tán gẫu hơn.'},
-
-    {scene:'Em rủ bạn cùng chơi một trò chơi trên điện thoại.',
-     a:'你赶快注册一个账号，咱们一起玩儿！',b:'请您先注册账号，然后再使用。',better:'a',
-     why:'Câu b là giọng THÔNG BÁO của công ty (请您……然后再……). Nói với bạn bè thì dùng câu a tự nhiên, thân mật.'},
-
-    {scene:'Thông báo trên trang web của một cửa hàng.',
-     a:'你先注册一下，然后再买吧。',b:'请您先注册会员，然后再购买。',better:'b',
-     why:'Ngược lại với câu trên: thông báo chính thức phải dùng 请您 và 购买 thay cho 买.'},
-
-    {scene:'Em phát biểu trong buổi họp của câu lạc bộ về tình trạng thành viên hay đến muộn.',
-     a:'这个问题已经严重到了影响活动的程度。',b:'这个问题太严重了，都影响活动了。',better:'a',
-     why:'Phát biểu trong cuộc họp: ……到了……的程度 chặt chẽ, trang trọng. Câu b đúng nhưng mang cảm xúc, hợp khi than phiền với bạn.'}
+    {scene:'Em viết bản kế hoạch học tập nộp cho nhà trường.',a:'本学期我会重点复习数学、历史以及汉语。',b:'这学期我要好好复习数学、历史跟汉语。',better:'a',why:'Văn bản nộp nhà trường là VĂN VIẾT: 本学期, 重点, 以及 trang trọng hơn. Câu b đúng nhưng mang giọng nói chuyện.'},
+    {scene:'Em nhắn tin cho bạn thân rủ đi mua sắm.',a:'周末我要去买衣服、帽子以及书包。',b:'周末我要去买衣服、帽子，还有书包。',better:'b',why:'以及 thiên về văn viết, dùng khi nhắn tin bạn thân nghe cứng. Khẩu ngữ thường nói ……，还有…….'},
+    {scene:'Em thuyết trình trước lớp về một ứng dụng.',a:'我觉得微信挺好用的。',b:'我个人认为，微信是一个非常好用的应用。',better:'b',why:'Thuyết trình cần giọng khách quan, trang trọng: 我个人认为 + 一个……的应用. Câu a hợp khi tán gẫu hơn.'},
+    {scene:'Em rủ bạn cùng chơi một trò chơi trên điện thoại.',a:'你快注册一个，咱们一起玩儿！',b:'请您先注册，然后再使用。',better:'a',why:'Câu b là giọng THÔNG BÁO của công ty (请您……然后再……). Nói với bạn bè thì dùng câu a tự nhiên, thân mật.'},
+    {scene:'Thông báo trên trang web của một cửa hàng.',a:'你先注册一下，然后再买吧。',b:'欢迎光临本店，请先注册，然后选择您需要的东西。',better:'b',why:'Ngược lại với câu trên: thông báo chính thức phải dùng 欢迎光临, 请, 您.'},
+    {scene:'Em phát biểu trong buổi họp của câu lạc bộ về tình trạng thành viên hay đến muộn.',a:'这个问题已经严重到了影响活动的程度。',b:'这个问题太严重了，都影响活动了。',better:'a',why:'Phát biểu trong cuộc họp: ……到了……的程度 chặt chẽ, trang trọng. Câu b đúng nhưng mang cảm xúc, hợp khi than phiền với bạn.'}
   ]
 };
 

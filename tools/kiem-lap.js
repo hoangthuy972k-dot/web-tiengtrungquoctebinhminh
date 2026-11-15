@@ -39,19 +39,37 @@ const DUOI = { hsk1v3: [], hsk2v3: ['hsk1v3'], hsk3v3: ['hsk1v3', 'hsk2v3'], yct
 const SO_BAI = { hsk3v3: 18, yct: 11 };
 const SB = (c) => SO_BAI[c] || 15;
 DUOI.hsk4v3 = ['hsk1v3', 'hsk2v3', 'hsk3v3']; SO_BAI.hsk4v3 = 20; // HSK 4 (3.0): 20 bai, cap duoi hsk1v3–hsk3v3
+// HSK2 cu: file bai-N-data.js (khong tien to), cap duoi HSK1 cu; errorFixData tinh nhu mc (cau sua dung), speakingData.tasks
+DUOI.hsk2 = ['hsk1']; const TEP = { hsk2: 'bai-' };
+// HSK3 cu: 20 bai, cap duoi HSK1 cu + HSK2 cu (giong HSK2 cu: errorFixData nhu mc, speakingData.tasks; listenData = de that sach bai tap)
+DUOI.hsk3 = ['hsk1', 'hsk2']; SO_BAI.hsk3 = 20;
+// HSK4 cu: 20 bai, cap duoi HSK1 + HSK2 + HSK3 cu (errorFixData = nguyen bai chon tu SGK, tinh nhu mc; speakingData.tasks; listenData = de that SBT)
+DUOI.hsk4 = ['hsk1', 'hsk2', 'hsk3']; SO_BAI.hsk4 = 20;
+// HSK5 (HSK标准教程5): 36 bai, cap duoi HSK1–HSK4 cu. Khong co mcData/listenData: errorFixData ("Chon tu") tinh bang
+// CAU DA DIEN dap an (muc chon1..); them muc rieng HSK5: situationData (tinh), registerData (hay), writingData.sapXep (viet)
+// + doan mau (vietmau), cau nghe SBT listenExamData (nghe — de bat chep lai), cau bai tap SGK sgkData kho/ab (sgk).
+DUOI.hsk5 = ['hsk1', 'hsk2', 'hsk3', 'hsk4']; SO_BAI.hsk5 = 36;
+// HSK6 (HSK标准教程6): 40 bai, cap duoi HSK1–HSK4 cu + HSK5. Cung dang HSK5 (mucHsk5 voi cap 'hsk6'): cau chon tu da dien, tinh huong,
+// noi sao cho hay, doan mau Luyen viet, cau nghe listenExamData (o HSK6 la cau TU SOAN), cau SGK (kho/ab + dap an gx/bc — rieng HSK6).
+DUOI.hsk6 = ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5']; SO_BAI.hsk6 = 40;
 const CAP = process.argv[2];
 if (!DUOI[CAP]) { console.log('Dung: node tools/kiem-lap.js <' + Object.keys(DUOI).join('|') + '> [bai|a-b] [-v]'); process.exit(2); }
 // Ngoai le co chu y: { cap: { bai: [[cauA, cauB, ly do]] } } — cauB = cauA khi la [TRUNG]
 const CHO_PHEP_CAP = { hsk1v3: {}, hsk2v3: {}, hsk3v3: {}, yct: {}, hsk1: {} };
 CHO_PHEP_CAP.hsk4v3 = CHO_PHEP_CAP.hsk4v3 || {};
+CHO_PHEP_CAP.hsk2 = CHO_PHEP_CAP.hsk2 || {};
+CHO_PHEP_CAP.hsk3 = CHO_PHEP_CAP.hsk3 || {};
+CHO_PHEP_CAP.hsk4 = CHO_PHEP_CAP.hsk4 || {};
+CHO_PHEP_CAP.hsk5 = CHO_PHEP_CAP.hsk5 || {};
+CHO_PHEP_CAP.hsk6 = CHO_PHEP_CAP.hsk6 || {};
 const CHO_PHEP = CHO_PHEP_CAP[CAP];
 const MIN = 3;
 
 function napBai(n, cap) {
-  const c = {};
+  const c = { listenData: [] }; // cap khong co listenData (hsk5) -> rong
   vm.createContext(c);
-  const code = fs.readFileSync(path.join(JS, (cap || CAP) + '-bai-' + n + '-data.js'), 'utf8');
-  vm.runInContext(code + ';this.__D={vocab:vocabData,mc:mcData,fill:fillData,sort:sortData,match:matchData,' +
+  const code = fs.readFileSync(path.join(JS, (TEP[cap || CAP] || (cap || CAP) + '-bai-') + n + '-data.js'), 'utf8');
+  vm.runInContext(code + ';this.__D={vocab:vocabData,mc:(typeof mcData!=="undefined"?mcData:(typeof errorFixData!=="undefined"?errorFixData.map(function(e){return {q:"",opts:e.opts,ans:e.ans,exp:e.exp};}):[])),fill:fillData,sort:sortData,match:matchData,' +
     'listen:listenData,tr:translateData,trRev:translateDataRev,speak:speakingData,dialog:dialogData};', c);
   return c.__D;
 }
@@ -100,6 +118,8 @@ function mucCuaBai(D) {
   ((sp.t1 && sp.t1.models) || []).forEach((m, i) => add('noiA' + (i + 1), 'noi', [m.zh]));
   ((sp.t2 && sp.t2.drills) || []).forEach((d, i) => add('noiB' + (i + 1), 'noi', d.samples || []));
   ((sp.t3 && sp.t3.tasks) || []).forEach((t, i) => add('noiC' + (i + 1), 'noi', [t.sample]));
+  // Luyen noi AI (HSK2 cu): speakingData.tasks
+  (sp.mode === 'ai-speak' && sp.tasks || []).forEach((t, i) => add('noi' + (i + 1), 'noi', [t.q_zh, t.sample]));
   return ds;
 }
 
@@ -133,6 +153,37 @@ const BAI = {};
 for (let n = 1; n <= SB(CAP); n++) BAI[n] = napBai(n);
 const MUC = {};
 for (let n = 1; n <= SB(CAP); n++) MUC[n] = mucCuaBai(BAI[n]);
+// HSK5: thay muc mc (errorFixData, chi co tu) bang cau da dien + them cac muc rieng HSK5
+function mucHsk5(n, cap) {
+  const c = {};
+  vm.createContext(c);
+  vm.runInContext(fs.readFileSync(path.join(JS, (cap || 'hsk5') + '-bai-' + n + '-data.js'), 'utf8') +
+    ';this.__X={ef:errorFixData,sit:situationData,reg:registerData,wr:writingData,le:listenExamData,sgk:typeof sgkData!=="undefined"?sgkData:[]};', c);
+  const X = c.__X, ds = [];
+  const add = (id, loai, chuoi) => {
+    const cau = [];
+    chuoi.forEach((s) => cauTu(s).forEach((h) => { if (cau.indexOf(h) < 0) cau.push(h); }));
+    ds.push({ id, loai, cau, goc: chuoi.filter(coHan).join(' | ') });
+  };
+  X.ef.forEach((e, i) => add('chon' + (i + 1), 'chon', [String(e.wrong || '').replace(/[＿_]+/, e.opts[e.ans])]));
+  ((X.sit && X.sit.items) || []).forEach((t, i) => add('tinh' + (i + 1), 'tinh', [t.a && t.a.zh, t.sample]));
+  ((X.reg && X.reg.items) || []).forEach((t, i) => add('hay' + (i + 1), 'hay', [t.a, t.b]));
+  ((X.wr && X.wr.sapXep) || []).forEach((t, i) => add('viet' + (i + 1), 'viet', [t.dap]));
+  if (X.wr && X.wr.model) add('vietmau', 'vietmau', [X.wr.model.zh]);
+  ((X.le && X.le.items) || []).forEach((t, i) => add('nghe' + (i + 1), 'nghe', (t.lines || []).map((l) => l.zh)));
+  (X.sgk || []).forEach((g, gi) => (g.cau || []).forEach((q, i) => {
+    let s = String(q.s || '');
+    if (g.kieu === 'kho') (q.dap || []).forEach((d) => { s = s.replace(/＿＿/, d); });
+    else if (g.kieu === 'ab' && q.opts) s = s.replace(/＿＿/, q.opts[q.ans]);
+    else if (cap === 'hsk6' && (g.kieu === 'gx' || g.kieu === 'bc') && q.dap) s = String(q.dap);
+    else return;
+    add('sgk' + (gi + 1) + '.' + (i + 1), 'sgk', [s]);
+  }));
+  return ds;
+}
+if (CAP === 'hsk5') for (let n = 1; n <= SB(CAP); n++) MUC[n] = MUC[n].filter((m) => m.loai !== 'mc').concat(mucHsk5(n));
+// HSK6: doan mau Luyen viet (缩写 theo bang 练习5) va cau mau Luyen noi (cung bang 练习5) tom tat cung mot bai khoa -> khong so doan mau (vietmau) voi cac muc khac
+if (CAP === 'hsk6') for (let n = 1; n <= SB(CAP); n++) MUC[n] = MUC[n].filter((m) => m.loai !== 'mc').concat(mucHsk5(n, 'hsk6').filter((m) => m.loai !== 'vietmau'));
 // Bai tap cua cap duoi: [nhan, muc]
 const CU_DUOI = [];
 DUOI[CAP].forEach((d) => { for (let m = 1; m <= SB(d); m++) CU_DUOI.push([d + ' bai ' + m, mucCuaBai(napBai(m, d))]); });

@@ -1393,15 +1393,17 @@ var dialogData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 1 · GHÉP TỪ (Collocation)
+// PHẦN 1 · GHÉP TỪ (Collocation) — ghép hai nửa thành cụm dùng được ngay
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'好吃',right:'面条'},
-  {left:'打',right:'篮球'},
-  {left:'经常',right:'游泳'},
-  {left:'因为',right:'所以'},
-  {left:'买',right:'自行车'},
-  {left:'门',right:'外'},
+  {left:'开一下',right:'门'},
+  {left:'七十',right:'公斤'},
+  {left:'在水里',right:'游泳'},
+  {left:'这个饭店的羊肉',right:'非常好吃'},
+  {left:'坐出租车去看',right:'姐姐'},
+  {left:'中午吃一点儿',right:'面条'},
+  {left:'这些衣服',right:'件件都漂亮'},
 ];
 
 // ══════════════════════════════════════════
@@ -1463,67 +1465,71 @@ var listenData = {
 };
 
 // ══════════════════════════════════════════
-// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi lý do vắng tập, gọi món khác
+// PHẦN 3a · ĐIỀN TỪ — mỗi câu một tình huống mới (怎么 hỏi lý do · lượng từ lặp · 因为……所以…… + từ mới bài 6, ôn bài 1–5)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你',blank:'怎么',post:'没去打篮球？',hint:'(sao, tại sao)',ans:'怎么',exp:'怎么 đứng sau chủ ngữ, trước động từ, dùng hỏi lý do.'},
-  {pre:'',blank:'因为',post:'昨天下雨，',hint:'(vì)',ans:'因为',exp:'因为 nêu nguyên nhân ở vế đầu; vế sau thường có 所以.'},
-  {pre:'',blank:'所以',post:'我没去。',hint:'(nên, cho nên)',ans:'所以',exp:'因为……，所以…… luôn đi thành cặp, không đảo ngược.'},
-  {pre:'你',blank:'经常',post:'游泳吗？',hint:'(thường xuyên)',ans:'经常',exp:'经常 (thường xuyên) là phó từ, đứng trước động từ: 经常游泳.'},
-  {pre:'这个饭店的面条很',blank:'好吃',post:'。',hint:'(ngon)',ans:'好吃'},
-  {pre:'你',blank:'怎么',post:'不吃羊肉了？',hint:'(sao — ôn lại)',ans:'怎么',exp:'怎么 + phủ định = sao (lại)…? hỏi lý do với ý ngạc nhiên: 怎么不吃羊肉了？'},
-  {pre:'我这个星期天天都吃羊肉，',blank:'所以',post:'不想吃了。',hint:'(nên)',ans:'所以',exp:'所以 mở đầu vế kết quả: (因为)天天吃羊肉，所以不想吃了.'},
-  {pre:'我姐姐',blank:'经常',post:'打篮球。',hint:'(thường xuyên)',ans:'经常',exp:'经常 là phó từ, đứng sau chủ ngữ và trước động từ: 我姐姐经常打篮球.'},
+  {pre:'Cả tối bạn chờ điện thoại của bạn thân: “你昨天晚上',blank:'怎么',post:'没给我打电话？” — “对不起，我工作太忙了。”',hint:'(sao — hỏi lý do)',ans:'怎么',exp:'怎么 + 没/不 + động từ = sao lại không…? (hỏi lý do, có ý ngạc nhiên); 怎么 đứng sau chủ ngữ.'},
+  {pre:'“你的中国朋友喜欢吃羊肉吗？” — “喜欢，',blank:'个个',post:'都喜欢，每个星期都去饭店吃。”',hint:'(ai cũng)',ans:'个个',exp:'Lượng từ lặp 个个 = ai cũng, người nào cũng; phía sau luôn có 都.'},
+  {pre:'“你怎么喝了三杯咖啡？” — “',blank:'因为',post:'晚上要准备考试，所以我不想睡觉。”',hint:'(vì)',ans:'因为',exp:'因为 mở đầu vế nguyên nhân, vế sau dùng 所以 nói kết quả.'},
+  {pre:'因为我姐姐最喜欢吃鱼，',blank:'所以',post:'我们经常去那个饭店。',hint:'(cho nên)',ans:'所以',exp:'所以 đứng đầu vế kết quả (trước chủ ngữ 我们), đi cặp với 因为 ở vế trước.'},
+  {pre:'Bạn hỏi người bạn mới quen: “你',blank:'经常',post:'去游泳吗？” — “不经常，我太忙了，没有时间。”',hint:'(thường xuyên)',ans:'经常',exp:'经常 đứng trước động từ: 经常去游泳; trả lời phủ định là 不经常.'},
+  {pre:'“你买了多少羊肉？” — “两',blank:'公斤',post:'，晚上我们一起吃吧。”',hint:'(ki-lô-gam)',ans:'公斤',exp:'公斤 tự là lượng từ: 两公斤羊肉, không thêm 个.'},
+  {pre:'Phòng nóng quá, bạn nhờ em: “房间里太热了，你开一下',blank:'门',post:'吧。”',hint:'(cửa)',ans:'门',exp:'开门 = mở cửa; 开一下门 = mở cửa một chút (động từ + 一下 cho nhẹ nhàng).'},
+  {pre:'“这是谁的',blank:'自行车',post:'？” — “是我姐姐的，是她生日的时候爸爸送的。”',hint:'(xe đạp)',ans:'自行车',exp:'自行车 = xe đạp; 谁的 + danh từ để hỏi đồ của ai.'},
+  {pre:'Bạn giới thiệu món ở nhà hàng quen: “你吃不吃',blank:'羊肉',post:'？这个饭店的羊肉最好吃。”',hint:'(thịt dê, thịt cừu)',ans:'羊肉',exp:'吃不吃 + món = có ăn … không? (câu hỏi chính phản); 羊肉 = thịt dê/cừu.'},
+  {pre:'“中午你想吃什么？” — “我有点儿累，我们去外面吃',blank:'面条',post:'吧。”',hint:'(mì sợi)',ans:'面条',exp:'吃面条 = ăn mì; 去外面吃 = ra ngoài ăn (không nấu ở nhà).'},
+  {pre:'“你',blank:'姐姐',post:'多大了？” — “她二十五岁，已经工作了。”',hint:'(chị gái)',ans:'姐姐',exp:'你姐姐 = chị gái bạn (người thân thì bỏ 的); 多大 hỏi tuổi người lớn.'},
+  {pre:'Trời nóng, bạn rủ bạn cùng lớp: “今天太热了，下午我们一起去',blank:'游泳',post:'吧！”',hint:'(bơi)',ans:'游泳',exp:'去游泳 = đi bơi; 游泳 là động từ, không cần thêm động từ khác.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3b · SẮP XẾP
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng 怎么 / lượng từ lặp / 因为……所以…… / 经常
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['你','怎么','没','去','打篮球','？'],ans:'你怎么没去打篮球？',audio:'你怎么没去打篮球？'},
-  {words:['因为','昨天','下雨','，','所以','我','没','去','。'],ans:'因为昨天下雨，所以我没去。',audio:'因为昨天下雨，所以我没去。'},
-  {words:['你','经常','游泳','吗','？'],ans:'你经常游泳吗？',audio:'你经常游泳吗？'},
-  {words:['这个','饭店','的','面条','很','好吃','。'],ans:'这个饭店的面条很好吃。',audio:'这个饭店的面条很好吃。'},
-  {words:['我','姐姐','经常','打篮球','。'],ans:'我姐姐经常打篮球。',audio:'我姐姐经常打篮球。'},
-  {words:['我','天天','都','吃','羊肉','，','不想','吃','了','。'],ans:'我天天都吃羊肉，不想吃了。',audio:'我天天都吃羊肉，不想吃了。'},
+  {words:['这些','衣服','件件','都','很','漂亮','。'],ans:'这些衣服件件都很漂亮。',audio:'这些衣服件件都很漂亮。'},
+  {words:['因为','今天','是','我','的','生日','，','所以','姐姐','送给','我','一','块','手表','。'],ans:'因为今天是我的生日，所以姐姐送给我一块手表。',audio:'因为今天是我的生日，所以姐姐送给我一块手表。'},
+  {words:['爸爸','天天','早上','都','去','跑步','。'],ans:'爸爸天天早上都去跑步。',audio:'爸爸天天早上都去跑步。',alt:['天天早上爸爸都去跑步。']},
+  {words:['门外','的','自行车','是','谁','的','？'],ans:'门外的自行车是谁的？',audio:'门外的自行车是谁的？'},
+  {words:['我','姐姐','最','喜欢','吃','妈妈','做','的','羊肉','面条','。'],ans:'我姐姐最喜欢吃妈妈做的羊肉面条。',audio:'我姐姐最喜欢吃妈妈做的羊肉面条。'},
+  {words:['今天','你','姐姐','怎么','没','和','你','一起','来','？'],ans:'今天你姐姐怎么没和你一起来？',audio:'今天你姐姐怎么没和你一起来？',alt:['你姐姐今天怎么没和你一起来？']},
+  {words:['星期天','我们','经常','在','学校','外面','打篮球','。'],ans:'星期天我们经常在学校外面打篮球。',audio:'星期天我们经常在学校外面打篮球。',alt:['我们星期天经常在学校外面打篮球。']},
+  {words:['你','今天','怎么','没','喝','咖啡','？'],ans:'你今天怎么没喝咖啡？',audio:'你今天怎么没喝咖啡？',alt:['今天你怎么没喝咖啡？']},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3c · SỬA LỖI SAI
+// PHẦN 3c · SỬA LỖI SAI — lỗi học sinh Việt hay mắc
+// (怎么/怎么样, 吗 với từ để hỏi, 所以 sau chủ ngữ, 没…了, 经常 cuối câu, 都 sai chỗ, "ngoài cửa" = 外门, 有 + tính từ, 已经 sai chỗ...)
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'没去打篮球你怎么？',
-   opts:['你怎么没去打篮球？','怎么你没去打篮球？','你没去怎么打篮球？','你没打篮球怎么去？'],ans:0,
-   exp:'怎么 đứng SAU chủ ngữ, TRƯỚC động từ, dùng để hỏi lý do (= tại sao).'},
-  {wrong:'昨天下雨，我没去所以因为。',
-   opts:['因为昨天下雨，所以我没去。','所以昨天下雨，因为我没去。','昨天下雨因为，所以我没去。','因为昨天下雨我没去所以。'],ans:0,
-   exp:'因为 đứng đầu vế NGUYÊN NHÂN, 所以 đứng đầu vế KẾT QUẢ — không đảo ngược vị trí hai từ này.'},
-  {wrong:'我游泳经常。',
-   opts:['我经常游泳。','经常我游泳。','我游泳常经。','游泳经常我。'],ans:0,
-   exp:'经常 (phó từ tần suất) đứng TRƯỚC động từ, không đặt sau như tiếng Việt "tôi bơi thường xuyên".'},
-  {wrong:'我每天天都吃羊肉。',
-   opts:['我天天都吃羊肉。','我每天天都吃羊肉。','我天每天都吃羊肉。','我都天天吃羊肉每。'],ans:0,
-   exp:'天天 (lặp lại danh từ thời gian) đã mang nghĩa "mỗi ngày", KHÔNG cần thêm 每 phía trước nữa.'},
-  {wrong:'你怎么样没去打篮球？',
-   opts:['你怎么没去打篮球？','你怎么样没去打篮球？','你没去怎么样打篮球？','你没怎么样去打篮球？'],ans:0,
-   exp:'怎么 hỏi LÝ DO (tại sao), còn 怎么样 hỏi Ý KIẾN/TÌNH TRẠNG (thế nào) — hai từ khác nghĩa, học sinh Việt hay nhầm lẫn.'},
+  {wrong:'你怎么样没吃羊肉？（ý: sao bạn không ăn）',
+   opts:['你怎么没吃羊肉吗？','你怎么没吃羊肉？','你没吃羊肉怎么？','你怎么样不吃羊肉？'],ans:1,
+   exp:'Hỏi lý do dùng 怎么 (怎么样 = thế nào); 怎么 đứng sau chủ ngữ, câu đã có 怎么 thì không thêm 吗.'},
+  {wrong:'因为我生病了，我所以没去游泳。',
+   opts:['因为我生病了，所以我没去游泳了。','所以我生病了，因为我没去游泳。','因为我生病了，因为我没去游泳。','因为我生病了，所以我没去游泳。'],ans:3,
+   exp:'所以 đứng đầu vế sau, trước chủ ngữ; việc đã không làm dùng 没 + động từ, không thêm 了.'},
+  {wrong:'我吃面条经常在外面。',
+   opts:['我经常在外面吃面条。','我经常吃面条在外面。','我在外面吃面条经常。','我经常在外面吃了面条。'],ans:0,
+   exp:'Trật tự: chủ ngữ + 经常 + 在 nơi chốn + động từ; thói quen không dùng 了.'},
+  {wrong:'这个月姐姐每天天都去游泳。',
+   opts:['这个月姐姐都天天去游泳。','这个月姐姐天天去游泳都。','这个月姐姐天天都去游泳。','这个月姐姐每天都天天去游泳。'],ans:2,
+   exp:'天天 đã là “ngày nào cũng”, không thêm 每; 都 đứng sau 天天, ngay trước động từ.'},
+  {wrong:'我的朋友都个个会说汉语。',
+   opts:['我的朋友个个会都说汉语。','我的个个朋友都会说汉语。','我的朋友每个个都会说汉语。','我的朋友个个都会说汉语。'],ans:3,
+   exp:'Danh từ + 个个 + 都 + động từ: 朋友个个都会…; 个个 không đứng trước danh từ, không thêm 每.'},
+  {wrong:'我的自行车在外门。（ý: ở ngoài cửa）',
+   opts:['我的自行车在门外。','我的自行车是外门。','我的自行车在门的外。','我的自行车有在门外。'],ans:0,
+   exp:'“Ngoài cửa” = 门外 (vật mốc trước, 外 sau), không dịch từng chữ thành 外门; chỉ vị trí dùng 在.'},
+  {wrong:'这个饭店的面条是好吃。',
+   opts:['这个饭店的面条好吃很。','这个饭店的面条很好吃。','这个饭店面条的很好吃。','这个饭店的面条有好吃。'],ans:1,
+   exp:'Trước tính từ dùng 很, không dùng 是 hay 有 (“có ngon”); 很 đứng trước tính từ.'},
+  {wrong:'我儿子今年八岁，三十公斤已经了。',
+   opts:['我儿子今年八岁，已经了三十公斤。','我儿子今年八岁，已经三十个公斤了。','我儿子今年八岁，已经三十公斤了。','我儿子今年八岁，是已经三十公斤了。'],ans:2,
+   exp:'已经 + số lượng + 了: 已经三十公斤了; 公斤 là lượng từ nên không thêm 个.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 // Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
 // lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
 // dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
@@ -1532,119 +1538,118 @@ var speakingData = {
   intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 6. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Hôm qua cả nhóm đi chơi bóng rổ mà bạn không đến, bạn học hỏi lý do.',
-      q_zh: '昨天你怎么没去打篮球？',
-      q_py: 'Zuótiān nǐ zěnme méi qù dǎ lánqiú?',
-      q_vn: 'Hôm qua sao bạn không đi chơi bóng rổ?',
+      situation: 'Tối qua cả nhóm bạn ăn cơm cùng nhau mà bạn không đến; hôm nay một bạn hỏi lý do.',
+      q_zh: '昨天晚上你怎么没来吃饭？',
+      q_py: 'Zuótiān wǎnshang nǐ zěnme méi lái chī fàn?',
+      q_vn: 'Tối qua sao bạn không đến ăn cơm?',
       grammar: { label: '因为…，所以…', any: ['因为', '所以'] },
       need: [
         { label: 'Dùng 因为 nêu lý do', any: ['因为'] },
         { label: 'Dùng 所以 nêu kết quả', any: ['所以'] },
-        { label: 'Nói việc bạn đã làm thay vào đó', any: ['游泳', '学习', '工作', '休息', '看', '去', '在家'] }
+        { label: 'Nói việc đã không làm (没来 / 没去 / 不能来)', any: ['没', '不能', '不'] }
       ],
-      bonus: { label: 'Nói thêm thời tiết hoặc tình huống (下雨)', any: ['下雨', '天气', '生病', '忙'] },
-      vocab: ['因为', '所以', '打篮球', '游泳'],
+      bonus: { label: 'Nói thêm bạn đã ở đâu / làm gì (在医院 / 在家 / 工作)', any: ['在', '医院', '家', '工作', '学习', '考试', '生病'] },
+      vocab: ['因为', '所以', '姐姐'],
       minLen: 12,
-      sample: '因为昨天下雨，所以我没去打篮球。我去游泳了。',
-      sample_py: 'Yīnwèi zuótiān xià yǔ, suǒyǐ wǒ méi qù dǎ lánqiú. Wǒ qù yóuyǒng le.',
-      sample_vn: 'Vì hôm qua trời mưa nên tôi không đi chơi bóng rổ. Tôi đi bơi.',
-      tip: 'Tiếng Trung dùng đủ cặp 因为…所以…, khác tiếng Việt chỉ cần một vế.'
+      sample: '因为昨天晚上我姐姐生病了，所以我在医院，没来吃饭。对不起！',
+      sample_py: 'Yīnwèi zuótiān wǎnshang wǒ jiějie shēngbìng le, suǒyǐ wǒ zài yīyuàn, méi lái chī fàn. Duìbuqǐ!',
+      sample_vn: 'Vì tối qua chị gái tôi bị ốm nên tôi ở bệnh viện, không đến ăn cơm được. Xin lỗi nhé!',
+      tip: 'Tiếng Trung thường dùng đủ cặp 因为…，所以…; 所以 đứng đầu vế sau, trước chủ ngữ.'
     },
     {
-      situation: 'Trong nhà hàng, bạn ăn ít đi và người bạn hỏi.',
-      q_zh: '今天的羊肉很好吃，你怎么不吃了？',
-      q_py: 'Jīntiān de yángròu hěn hǎochī, nǐ zěnme bù chī le?',
-      q_vn: 'Thịt dê hôm nay ngon lắm, sao bạn không ăn nữa?',
-      grammar: { label: '因为…，所以不想吃了 + 来一点儿…吧', any: ['因为', '不想', '来'] },
+      situation: 'Bạn ăn cơm ở nhà một người bạn Trung Quốc; chủ nhà thấy bạn ngừng đũa và hỏi.',
+      q_zh: '菜不好吃吗？你怎么不吃了？',
+      q_py: 'Cài bù hǎochī ma? Nǐ zěnme bù chī le?',
+      q_vn: 'Món ăn không ngon à? Sao bạn không ăn nữa?',
+      grammar: { label: 'Khen món ăn + 因为…所以…', any: ['因为', '所以', '好吃'] },
       need: [
-        { label: 'Nêu lý do không ăn nữa', any: ['因为', '天天', '不想', '吃过', '饱', '太'] },
-        { label: 'Nói món muốn ăn thay', any: ['面条', '米饭', '菜', '鱼', '汤', '水果'] },
-        { label: 'Dùng 好吃 hoặc 吃', any: ['好吃', '吃'] }
+        { label: 'Khen món ăn (很好吃 / 非常好吃)', any: ['好吃', '不错'] },
+        { label: 'Nêu lý do không ăn nữa', any: ['因为', '已经', '吃了', '不想', '太多', '很多'] },
+        { label: 'Nói món đã ăn (面条 / 羊肉 / 米饭…)', any: ['面条', '羊肉', '米饭', '菜', '鱼', '水果', '东西'] }
       ],
-      bonus: { label: 'Dùng 来一点儿…吧 để gọi món', any: ['来一点儿', '来', '吧'] },
-      vocab: ['羊肉', '好吃', '面条'],
+      bonus: { label: 'Cảm ơn chủ nhà (谢谢)', any: ['谢谢', '太好吃'] },
+      vocab: ['好吃', '面条', '羊肉'],
       minLen: 12,
-      sample: '因为这个星期天天都吃羊肉，所以不想吃了。来一点儿面条吧。',
-      sample_py: 'Yīnwèi zhège xīngqī tiāntiān dōu chī yángròu, suǒyǐ bù xiǎng chī le. Lái yìdiǎnr miàntiáo ba.',
-      sample_vn: 'Vì cả tuần này ngày nào cũng ăn thịt dê nên tôi không muốn ăn nữa. Cho tôi ít mì đi.',
-      tip: '天天 = ngày nào cũng; 来一点儿… là cách gọi món rất tự nhiên.'
+      sample: '菜非常好吃！因为中午我吃了很多面条，所以现在不想吃了。谢谢你！',
+      sample_py: 'Cài fēicháng hǎochī! Yīnwèi zhōngwǔ wǒ chī le hěn duō miàntiáo, suǒyǐ xiànzài bù xiǎng chī le. Xièxie nǐ!',
+      sample_vn: 'Đồ ăn rất ngon! Vì trưa nay tôi ăn nhiều mì quá nên bây giờ không muốn ăn nữa. Cảm ơn bạn!',
+      tip: '怎么不…了？ = sao không … nữa? Khi từ chối khéo, khen món ăn trước rồi mới nêu lý do.'
     },
     {
-      situation: 'Bạn cùng phòng hỏi về thói quen bơi lội của bạn.',
-      q_zh: '你经常游泳吗？你现在多少公斤？',
-      q_py: 'Nǐ jīngcháng yóuyǒng ma? Nǐ xiànzài duōshao gōngjīn?',
-      q_vn: 'Bạn có hay đi bơi không? Bây giờ bạn nặng bao nhiêu ký?',
-      grammar: { label: '我经常 / 天天 + động từ', any: ['经常', '天天', '常常'] },
+      situation: 'Bạn cùng phòng hỏi về thói quen thể thao của bạn.',
+      q_zh: '你经常运动吗？你经常做什么运动？',
+      q_py: 'Nǐ jīngcháng yùndòng ma? Nǐ jīngcháng zuò shénme yùndòng?',
+      q_vn: 'Bạn có thường vận động không? Bạn hay tập môn gì?',
+      grammar: { label: '我经常 / 天天 + động từ', any: ['经常', '天天', '每天', '每个星期'] },
       need: [
-        { label: 'Trả lời có hay bơi không', any: ['经常', '常常', '天天', '不常', '很少'] },
-        { label: 'Dùng 游泳 hoặc môn khác', any: ['游泳', '运动', '跑步', '打篮球'] },
-        { label: 'Nói cân nặng (公斤)', any: ['公斤', '斤'] }
+        { label: 'Nói tần suất (经常 / 天天 / 每个星期…)', any: ['经常', '天天', '每天', '每个', '不经常', '很少'] },
+        { label: 'Nói môn thể thao', any: ['游泳', '打篮球', '跑步', '踢足球', '运动', '打球'] },
+        { label: 'Nói thêm cảm nhận / kết quả', any: ['身体', '觉得', '公斤', '高兴', '累', '好'] }
       ],
-      bonus: { label: 'Nói thay đổi (这个月 / 以前)', any: ['这个月', '以前', '现在', '了'] },
-      vocab: ['经常', '游泳', '公斤'],
+      bonus: { label: 'Nói cân nặng (公斤)', any: ['公斤'] },
+      vocab: ['经常', '游泳', '打篮球', '公斤'],
       minLen: 12,
-      sample: '这个月我天天游泳。我现在七十公斤，比以前瘦了。',
-      sample_py: 'Zhège yuè wǒ tiāntiān yóuyǒng. Wǒ xiànzài qīshí gōngjīn, bǐ yǐqián shòu le.',
-      sample_vn: 'Tháng này ngày nào tôi cũng bơi. Giờ tôi 70 ký, gầy hơn trước.',
-      tip: '经常 và 常常 đều là "thường xuyên", đứng trước động từ.'
+      sample: '我经常游泳，一个星期去四五天。游泳以后我觉得身体很好，现在我六十公斤。',
+      sample_py: 'Wǒ jīngcháng yóuyǒng, yí ge xīngqī qù sì-wǔ tiān. Yóuyǒng yǐhòu wǒ juéde shēntǐ hěn hǎo, xiànzài wǒ liùshí gōngjīn.',
+      sample_vn: 'Tôi thường xuyên bơi, một tuần đi bốn năm ngày. Bơi xong tôi thấy cơ thể rất khỏe, bây giờ tôi 60 ký.',
+      tip: '经常 đứng TRƯỚC động từ: 我经常游泳 — không nói 我游泳经常.'
     },
     {
-      situation: 'Bạn nhìn thấy dấu hiệu bạn mình đã đến trường.',
-      q_zh: '你怎么知道小王已经来学校了？',
-      q_py: 'Nǐ zěnme zhīdào Xiǎo Wáng yǐjīng lái xuéxiào le?',
-      q_vn: 'Sao bạn biết Tiểu Vương đã đến trường rồi?',
-      grammar: { label: '我在…看见他的…了', any: ['看见', '看到'] },
+      situation: 'Bạn về đến nhà, chưa vào đã biết chị gái về rồi; mẹ hỏi sao bạn biết.',
+      q_zh: '你怎么知道姐姐已经回家了？',
+      q_py: 'Nǐ zěnme zhīdào jiějie yǐjīng huí jiā le?',
+      q_vn: 'Sao con biết chị đã về nhà rồi?',
+      grammar: { label: '因为…，所以我知道…', any: ['因为', '所以', '看见'] },
       need: [
-        { label: 'Dùng 看见 / 看到', any: ['看见', '看到'] },
-        { label: 'Nói dấu hiệu (自行车 / 车 / 包 / 书)', any: ['自行车', '车', '包', '书', '衣服', '手机'] },
-        { label: 'Nói vị trí (门外 / 教室里)', any: ['门外', '外', '里', '旁边', '上', '下'] }
+        { label: 'Nói dấu hiệu (自行车 / 车 / 衣服…)', any: ['自行车', '车', '衣服', '东西', '书', '杯子', '电脑'] },
+        { label: 'Nói vị trí (门外 / 在…里 / 在…上)', any: ['门外', '外', '里', '旁边', '上', '前面', '下面'] },
+        { label: 'Dùng 已经…了', any: ['已经'] }
       ],
-      bonus: { label: 'Dùng 已经…了', any: ['已经'] },
+      bonus: { label: 'Dùng 看见', any: ['看见'] },
       vocab: ['门', '外', '自行车'],
       minLen: 12,
-      sample: '我在门外看见他的自行车了，所以我知道他已经来了。',
-      sample_py: 'Wǒ zài ménwài kànjiàn tā de zìxíngchē le, suǒyǐ wǒ zhīdào tā yǐjīng lái le.',
-      sample_vn: 'Tôi thấy xe đạp của cậu ấy ở ngoài cửa nên tôi biết cậu ấy đến rồi.',
-      tip: 'Vị trí đặt trước động từ: 在门外看见…, không nói 看见在门外.'
+      sample: '因为门外有她的自行车，所以我知道她已经回来了。',
+      sample_py: 'Yīnwèi mén wài yǒu tā de zìxíngchē, suǒyǐ wǒ zhīdào tā yǐjīng huílai le.',
+      sample_vn: 'Vì ngoài cửa có xe đạp của chị ấy nên con biết chị ấy về rồi.',
+      tip: '“Ngoài cửa” là 门外 (vật mốc đứng trước); 怎么知道 hỏi “sao biết / làm sao biết”.'
     },
     {
-      situation: 'Đồng nghiệp hỏi vì sao mấy hôm nay không thấy một người bạn.',
-      q_zh: '这两天怎么没看见你的家人（朋友）？他去哪儿了？',
-      q_py: 'Zhè liǎng tiān zěnme méi kànjiàn nǐ de jiārén (péngyou)? Tā qù nǎr le?',
-      q_vn: 'Mấy hôm nay sao không thấy người nhà (bạn) của bạn? Anh ấy đi đâu rồi?',
-      grammar: { label: '他去…了，是去…的', any: ['去', '了'] },
+      situation: 'Một người bạn mới hỏi về anh chị em trong nhà bạn.',
+      q_zh: '你有姐姐吗？她经常做什么？',
+      q_py: 'Nǐ yǒu jiějie ma? Tā jīngcháng zuò shénme?',
+      q_vn: 'Bạn có chị gái không? Chị ấy hay làm gì? (Không có thì kể về một người thân khác.)',
+      grammar: { label: '她经常 + động từ', any: ['经常', '天天', '每天', '每个星期'] },
       need: [
-        { label: 'Nói nơi người đó đi', any: ['北京', '上海', '中国', '家', '学校', '公司', '医院', '国外', '旅游'] },
-        { label: 'Nói mục đích (去看 / 去旅游 / 去工作)', any: ['看', '旅游', '工作', '学习', '玩', '上班'] },
-        { label: 'Nói người đó là ai', any: ['姐姐', '哥哥', '弟弟', '妹妹', '朋友', '同事', '同学'] }
+        { label: 'Giới thiệu người thân', any: ['姐姐', '爸爸', '妈妈', '儿子', '女儿', '朋友', '哥哥', '妹妹', '弟弟'] },
+        { label: 'Nói tuổi hoặc công việc', any: ['岁', '工作', '医生', '老师', '学生', '医院', '学校'] },
+        { label: 'Nói việc người đó hay làm', any: ['游泳', '打篮球', '跑步', '看', '做', '买', '吃', '喝', '去', '运动', '学习'] }
       ],
-      bonus: { label: 'Dùng 听说 để dẫn nguồn tin', any: ['听说'] },
-      vocab: ['姐姐', '因为', '所以'],
+      bonus: { label: 'Nói thêm lý do (因为…所以…)', any: ['因为', '所以'] },
+      vocab: ['姐姐', '经常', '打篮球'],
       minLen: 12,
-      sample: '他去北京了。听说不是去旅游，是去看他姐姐。',
-      sample_py: 'Tā qù Běijīng le. Tīngshuō bú shì qù lǚyóu, shì qù kàn tā jiějie.',
-      sample_vn: 'Anh ấy đi Bắc Kinh rồi. Nghe nói không phải đi du lịch, là đi thăm chị gái.',
-      tip: '听说 = nghe nói, đặt ở đầu câu để dẫn lại thông tin.'
+      sample: '我有一个姐姐，她今年二十六岁，是一个医生。她很喜欢运动，经常去打篮球。',
+      sample_py: 'Wǒ yǒu yí ge jiějie, tā jīnnián èrshíliù suì, shì yí ge yīshēng. Tā hěn xǐhuan yùndòng, jīngcháng qù dǎ lánqiú.',
+      sample_vn: 'Tôi có một chị gái, năm nay 26 tuổi, là bác sĩ. Chị ấy rất thích vận động, thường xuyên đi chơi bóng rổ.',
+      tip: 'Tần suất (经常 / 天天) đặt sau chủ ngữ, trước động từ: 她经常去打篮球.'
     }
   ]
 };
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — dùng từ bài 6 + ôn lại từ bài 1-5 và HSK1
+// LUYỆN DỊCH — câu mới, dùng từ bài 6 + ôn bài 1–5 và HSK1
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Sao bạn lại không ăn cơm thế?', zh:'你怎么不吃饭？', py:'Nǐ zěnme bù chī fàn?'},
-  {vi:'Vì trời mưa nên chúng tôi không đi chơi bóng rổ.', zh:'因为下雨，所以我们没去打篮球。', py:'Yīnwèi xià yǔ, suǒyǐ wǒmen méi qù dǎ lánqiú.'},
-  {vi:'Tuần này ngày nào tôi cũng ăn thịt dê.', zh:'这个星期我天天都吃羊肉。', py:'Zhège xīngqī wǒ tiāntiān dōu chī yángròu.'},
-  {vi:'Chị gái tôi thường xuyên đi bơi.', zh:'我姐姐经常去游泳。', py:'Wǒ jiějie jīngcháng qù yóuyǒng.'},
+  {vi:'Mấy hôm nay sao bạn không đi chạy bộ?', zh:'你这两天怎么没去跑步？', py:'Nǐ zhè liǎng tiān zěnme méi qù pǎobù?'},
+  {vi:'Vì thời tiết nóng quá nên ngày nào chúng tôi cũng đi bơi.', zh:'因为天气太热了，所以我们天天去游泳。', py:'Yīnwèi tiānqì tài rè le, suǒyǐ wǒmen tiāntiān qù yóuyǒng.'},
+  {vi:'Những quyển sách này quyển nào tôi cũng đọc rồi.', zh:'这些书我本本都看了。', py:'Zhèxiē shū wǒ běnběn dōu kàn le.'},
+  {vi:'Chị gái tôi thường xuyên chạy bộ, bây giờ chị ấy nặng 50 cân rồi.', zh:'我姐姐经常跑步，现在她五十公斤了。', py:'Wǒ jiějie jīngcháng pǎobù, xiànzài tā wǔshí gōngjīn le.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì tôi rất bận nên chưa ăn cơm.', zh:'因为我很忙，所以没吃饭。', py:'Yīnwèi wǒ hěn máng, suǒyǐ méi chī fàn.'},
-  {vi:'Chị gái tôi thường xuyên chơi bóng rổ, cũng thường xuyên đi bơi.', zh:'我姐姐经常打篮球，也经常游泳。', py:'Wǒ jiějie jīngcháng dǎ lánqiú, yě jīngcháng yóuyǒng.'},
-  {vi:'Mì rất ngon, thịt dê cũng rất ngon.', zh:'面条很好吃，羊肉也很好吃。', py:'Miàntiáo hěn hǎochī, yángròu yě hěn hǎochī.'},
-  {vi:'Anh ấy đi xe đạp đến trường.', zh:'他骑自行车去学校。', py:'Tā qí zìxíngchē qù xuéxiào.'},
+  {vi:'Hôm nay trời mưa, sao bạn không lái xe đến?', zh:'今天下雨，你怎么没开车来？', py:'Jīntiān xià yǔ, nǐ zěnme méi kāi chē lái?'},
+  {vi:'Vì tôi thường xuyên uống sữa nên sức khỏe rất tốt.', zh:'因为我经常喝牛奶，所以身体非常好。', py:'Yīnwèi wǒ jīngcháng hē niúnǎi, suǒyǐ shēntǐ fēicháng hǎo.'},
+  {vi:'Nhà tôi ai cũng biết bơi.', zh:'我家人人都会游泳。', py:'Wǒ jiā rénrén dōu huì yóuyǒng.'},
 ];

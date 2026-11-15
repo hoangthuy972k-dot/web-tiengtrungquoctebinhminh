@@ -1136,15 +1136,17 @@ var dialogData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 1 · GHÉP TỪ (Collocation)
+// PHẦN 1 · GHÉP TỪ (Collocation) — ghép hai nửa thành cụm dùng được ngay
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'拿',right:'铅笔'},
-  {left:'一直',right:'走'},
-  {left:'往',right:'前'},
-  {left:'路',right:'口'},
-  {left:'长',right:'眼睛'},
-  {left:'爱',right:'笑'},
+  {left:'手里拿着',right:'两本书'},
+  {left:'长着',right:'大眼睛'},
+  {left:'门',right:'开着'},
+  {left:'笑着',right:'说话'},
+  {left:'过了路口',right:'往右走'},
+  {left:'住在',right:'新宾馆'},
+  {left:'我们班',right:'有三十多个学生'},
 ];
 
 // ══════════════════════════════════════════
@@ -1205,67 +1207,71 @@ var listenData = {
 };
 
 // ══════════════════════════════════════════
-// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: đón bạn ở sân bay
+// PHẦN 3a · ĐIỀN TỪ — mỗi câu một tình huống mới (着 · 不是……吗 · 往 + từ mới bài 13, ôn bài trước)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我在机场门口等你，手里拿',blank:'着',post:'一本红色的书。',hint:'(trợ từ động thái)',ans:'着',exp:'Động từ + 着 = trạng thái đang được duy trì.'},
-  {pre:'好的，手里',blank:'拿',post:'着书的就是你吧？',hint:'(cầm)',ans:'拿'},
-  {pre:'对，你怎么一下就认出我了？因为你',blank:'一直',post:'在笑啊！',hint:'(luôn, cứ)',ans:'一直',exp:'一直 + động từ = luôn, cứ (liên tục): 一直在笑 = cứ cười suốt.'},
-  {pre:'她',blank:'不是',post:'你妹妹吗？怎么长这么高了！',hint:'(chẳng phải... sao?)',ans:'不是',exp:'不是……吗？dùng để xác nhận lại, tỏ ý ngạc nhiên.'},
-  {pre:'是啊，她',blank:'长',post:'高了很多。',hint:'(lớn lên, cao lên)',ans:'长'},
-  {pre:'我们从这儿一直',blank:'往',post:'前走吧。',hint:'(hướng về phía)',ans:'往',exp:'往 + phương hướng + động từ = đi về phía…: 往前走 = đi thẳng về phía trước.'},
-  {pre:'到了前面的路',blank:'口',post:'，宾馆就在那儿。',hint:'(chỗ các con đường giao nhau — ngã tư)',ans:'口'},
-  {pre:'',blank:'宾馆',post:'离机场不远，走十分钟就到。',hint:'(khách sạn)',ans:'宾馆'},
+  {pre:'Bạn chỉ cho bạn mới thầy giáo mới: “你看，那个在椅子上坐',blank:'着',post:'看书的人就是我们的新老师。”',hint:'(đang — trạng thái)',ans:'着',exp:'Động từ + 着 + động từ 2: 坐着看书 = ngồi đọc sách (tư thế 坐 kéo dài trong lúc làm việc khác).'},
+  {pre:'“你手里',blank:'拿',post:'着什么？” — “是我给儿子买的牛奶。”',hint:'(cầm)',ans:'拿',exp:'手里拿着 + đồ vật = trong tay đang cầm…; 着 gắn ngay sau 拿.'},
+  {pre:'“你为什么一直',blank:'笑',post:'？” — “今天是我的生日啊！”',hint:'(cười)',ans:'笑',exp:'一直笑 = cười mãi; 笑 là động từ, đứng ngay sau phó từ 一直.'},
+  {pre:'Trời mưa cả ngày, bạn nhắn cho đội bóng: “今天从早上就',blank:'一直',post:'下雨，我们不能去踢足球了。”',hint:'(liên tục, suốt)',ans:'一直',exp:'从…就一直 + động từ = suốt từ … đến giờ: 一直下雨 = mưa liên tục.'},
+  {pre:'Thấy bạn vẫn ở nhà, bạn ngạc nhiên: “你',blank:'不是',post:'去机场接你哥哥了吗？怎么还在家？”',hint:'(chẳng phải… sao)',ans:'不是',exp:'不是……吗？ = chẳng phải … sao? — nhắc lại điều mình tưởng là đúng, tỏ ý ngạc nhiên.'},
+  {pre:'“请问，去医院怎么走？” — “',blank:'往',post:'前走，过了第一个路口就是。”',hint:'(về phía)',ans:'往',exp:'往 + hướng + động từ: 往前走 = đi về phía trước; 往 đứng TRƯỚC từ chỉ hướng.'},
+  {pre:'Bạn chỉ đường cho khách: “过了这个',blank:'路口',post:'往右走，就能看见宾馆了。”',hint:'(ngã tư)',ans:'路口',exp:'过了路口 = qua ngã tư rồi; 过 ở đây là “đi qua”.'},
+  {pre:'“这次来北京，你住在哪儿？” — “住在公司旁边的一个',blank:'宾馆',post:'，离公司很近。”',hint:'(khách sạn)',ans:'宾馆',exp:'住在 + nơi chốn: 住在宾馆 = ở khách sạn; 一个宾馆 dùng lượng từ 个.'},
+  {pre:'“你们',blank:'班',post:'有多少个学生？” — “二十五个，男孩子比女孩子多。”',hint:'(lớp)',ans:'班',exp:'你们班 = lớp các bạn; 班 đứng ngay sau đại từ, không cần 的.'},
+  {pre:'Gặp lại con trai bạn sau một năm: “你儿子',blank:'长',post:'得真高！” — “是啊，他现在比我高了。”',hint:'(lớn lên, trông — đọc zhǎng)',ans:'长',exp:'长得 + tính từ = trông …, lớn lên …: 长得真高 = cao lớn thật; 长 ở đây đọc zhǎng.'},
+  {pre:'“你有',blank:'铅笔',post:'吗？我想写几个汉字。” — “有，给你。”',hint:'(bút chì)',ans:'铅笔',exp:'铅笔 = bút chì; hỏi mượn đồ: 你有……吗？'},
+  {pre:'Bạn bảo bạn đi nhanh lên: “你快一点儿！我们都在门口等',blank:'着',post:'你呢。”',hint:'(đang — trạng thái)',ans:'着',exp:'等着 + người = đang chờ ai đó; cuối câu thêm 呢 cho tự nhiên: 等着你呢.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3b · SẮP XẾP
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng 着 / 不是……吗 / 往 / 一直
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','手里','拿着','一','本','书','。'],ans:'我手里拿着一本书。',audio:'我手里拿着一本书。'},
-  {words:['她','不是','你','妹妹','吗','？'],ans:'她不是你妹妹吗？',audio:'她不是你妹妹吗？'},
-  {words:['从','这儿','一直','往','前','走','。'],ans:'从这儿一直往前走。',audio:'从这儿一直往前走。'},
-  {words:['到','了','路口','往','右','走','。'],ans:'到了路口往右走。',audio:'到了路口往右走。'},
-  {words:['那个','女孩子','一直','在','笑','。'],ans:'那个女孩子一直在笑。',audio:'那个女孩子一直在笑。'},
-  {words:['宾馆','离','机场','不','远','。'],ans:'宾馆离机场不远。',audio:'宾馆离机场不远。'},
+  {words:['她','手里','拿着','两','个','西瓜','。'],ans:'她手里拿着两个西瓜。',audio:'她手里拿着两个西瓜。'},
+  {words:['你','不是','不','喜欢','吃','鱼','吗','？'],ans:'你不是不喜欢吃鱼吗？',audio:'你不是不喜欢吃鱼吗？'},
+  {words:['到了','下','一','个','路口','往','右','走','。'],ans:'到了下一个路口往右走。',audio:'到了下一个路口往右走。'},
+  {words:['那个','坐着','看','报纸','的','男孩子','是','我','弟弟','。'],ans:'那个坐着看报纸的男孩子是我弟弟。',audio:'那个坐着看报纸的男孩子是我弟弟。'},
+  {words:['我们','班','的','同学','都','很','爱','笑','。'],ans:'我们班的同学都很爱笑。',audio:'我们班的同学都很爱笑。'},
+  {words:['从','宾馆','到','公司','坐','公共汽车','要','一','个','小时','。'],ans:'从宾馆到公司坐公共汽车要一个小时。',audio:'从宾馆到公司坐公共汽车要一个小时。'},
+  {words:['他','一直','在','门口','等','你','。'],ans:'他一直在门口等你。',audio:'他一直在门口等你。'},
+  {words:['你','往','外','看','，','下雪','了','！'],ans:'你往外看，下雪了！',audio:'你往外看，下雪了！'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3c · SỬA LỖI SAI
+// PHẦN 3c · SỬA LỖI SAI — lỗi học sinh Việt hay mắc
+// (着 đặt sai chỗ, 不/没 với 着, 不是……吗 tách sai, 往 nhầm với 在/去/从, 一直 cuối câu, 长得/长着...)
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'门着开呢。',
-   opts:['门开着呢。','门着开呢。','门开呢着。','着门开呢。'],ans:0,
-   exp:'着 luôn đứng NGAY SAU động từ (开着), không đặt trước động từ.'},
-  {wrong:'她手里着拿书。',
-   opts:['她手里拿着书。','她手里着拿书。','她手里书拿着。','着她手里拿书。'],ans:0,
-   exp:'着 gắn liền ngay sau động từ chính (拿着), rồi mới đến tân ngữ (书).'},
-  {wrong:'她是不有男朋友吗？',
-   opts:['她不是有男朋友吗？','她是不有男朋友吗？','她有不是男朋友吗？','她男朋友不是有吗？'],ans:0,
-   exp:'Cấu trúc đúng là 不是 (đi liền nhau) + Động từ/Tính từ + 吗？, không tách rời 不 và 是.'},
-  {wrong:'她有男朋友不是吗？',
-   opts:['她不是有男朋友吗？','她有男朋友不是吗？','她不有是男朋友吗？','有她不是男朋友吗？'],ans:0,
-   exp:'不是 phải đứng Ở ĐẦU phần khẳng định (trước động từ 有), không đặt ở cuối câu.'},
-  {wrong:'一直前往走。',
-   opts:['一直往前走。','一直前往走。','往一直前走。','前一直往走。'],ans:0,
-   exp:'Trật tự chuẩn: 一直 + 往 + Hướng (前/左/右) + 走, 往 phải đứng ngay trước từ chỉ hướng.'},
+  {wrong:'今天她着穿红衣服。',
+   opts:['今天她穿着红衣服。','今天她穿红衣服着。','今天她穿了着红衣服。','今天她穿得红衣服。'],ans:0,
+   exp:'着 đứng NGAY SAU động từ, trước tân ngữ: 穿着红衣服; không dùng 了 cùng 着, không nhầm 得.'},
+  {wrong:'你看，门不开着，他不在家。',
+   opts:['你看，门没开了，他不在家。','你看，门没开着，他不在家。','你看，门不开着了，他不在家。','你看，门是不开着，他不在家。'],ans:1,
+   exp:'Phủ định trạng thái V着 dùng 没: 门没开着; không dùng 不, không thêm 了 hay 是.'},
+  {wrong:'你喜欢不是踢足球吗？（ý: chẳng phải bạn thích đá bóng sao）',
+   opts:['你不喜欢是踢足球吗？','你不是喜欢踢足球呢？','你不是喜欢踢足球吗？','你没喜欢踢足球吗？'],ans:2,
+   exp:'不是 đứng sau chủ ngữ, trước cả cụm động từ: 你不是喜欢……吗？; cuối câu dùng 吗, không dùng 呢; 喜欢 không đi với 没.'},
+  {wrong:'你走往前，过了路口就到了。',
+   opts:['你在前走，过了路口就到了。','你去前走，过了路口就到了。','你从前走，过了路口就到了。','你往前走，过了路口就到了。'],ans:3,
+   exp:'往 + hướng đứng TRƯỚC động từ: 往前走; không dịch kiểu “đi về phía trước” thành 走往前, không nhầm 在/去/从.'},
+  {wrong:'他看电视一直，不想睡觉。',
+   opts:['他一直看电视，不想睡觉。','他看一直电视，不想睡觉。','他一直看电视着，不想睡觉。','他一直看着电视了，不想睡觉。'],ans:0,
+   exp:'一直 là phó từ, đứng TRƯỚC động từ: 一直看电视; không đặt cuối câu như tiếng Việt “xem mãi”.'},
+  {wrong:'我同学长着很高。（ý: bạn tôi cao）',
+   opts:['我同学长的很高。','我同学长得很高。','我同学长了很高。','我同学很长得高。'],ans:1,
+   exp:'Nhận xét ngoại hình: 长得 + tính từ (长得很高); 长着 + danh từ (长着大眼睛); không viết 的 thay 得.'},
+  {wrong:'我们去走着吧，宾馆不远。',
+   opts:['我们走去着吧，宾馆不远。','我们着走去吧，宾馆不远。','我们走着去吗，宾馆不远。','我们走着去吧，宾馆不远。'],ans:3,
+   exp:'走着去 = đi bộ đến: V1着 (cách thức) đứng trước V2 (去); rủ rê dùng 吧, không dùng 吗.'},
+  {wrong:'“你看见我的铅笔了吗？” — “你手里是不拿着吗？”',
+   opts:['“你看见我的铅笔了吗？” — “你手里不是拿着吗？”','“你看见我的铅笔了吗？” — “你手里不是拿着了吗？”','“你看见我的铅笔了吗？” — “你手里不是着拿吗？”','“你看见我的铅笔了吗？” — “你手里没是拿着吗？”'],ans:0,
+   exp:'不是 không tách và không đổi thành 没是: 你手里不是拿着吗？ = chẳng phải bạn đang cầm trên tay sao?'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 // Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
 // lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
 // dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
@@ -1274,119 +1280,118 @@ var speakingData = {
   intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 13. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn đến văn phòng tìm người, cửa đang mở.',
-      q_zh: '门开着呢，请进。请问张先生在吗？',
-      q_py: 'Mén kāizhe ne, qǐng jìn. Qǐngwèn Zhāng xiānsheng zài ma?',
-      q_vn: 'Cửa đang mở, mời vào. Cho hỏi anh Trương có đây không?',
-      grammar: { label: '…着呢 (门开着呢) + 他出去了', any: ['着'] },
+      situation: 'Bạn ra sân bay đón một người bạn mới, người đó chưa từng gặp bạn.',
+      q_zh: '你在机场等一个朋友，他不认识你。你怎么告诉他你在哪儿、穿着什么？',
+      q_py: 'Nǐ zài jīchǎng děng yí ge péngyou, tā bú rènshi nǐ. Nǐ zěnme gàosu tā nǐ zài nǎr, chuānzhe shénme?',
+      q_vn: 'Bạn đang đợi một người bạn ở sân bay, người đó không biết mặt bạn. Bạn nói với họ thế nào về chỗ bạn đứng và quần áo bạn mặc?',
+      grammar: { label: 'Động từ + 着 (穿着 / 拿着)', any: ['着'] },
       need: [
-        { label: 'Dùng 着 để nói trạng thái', any: ['着'] },
-        { label: 'Trả lời người đó có ở đây không', any: ['在', '不在', '出去', '回来'] },
-        { label: 'Hẹn lúc khác hoặc hướng dẫn', any: ['下午', '明天', '再来', '等', '一会儿'] }
+        { label: 'Nói chỗ bạn đang ở', any: ['在', '门口', '前面', '旁边', '里', '外面', '后面'] },
+        { label: 'Tả quần áo / màu sắc', any: ['衣服', '白', '黑', '红', '颜色', '穿'] },
+        { label: 'Thêm một đặc điểm để nhận ra (手里拿着… / 长着…)', any: ['拿', '手', '长', '眼睛', '高', '书', '手机'] }
       ],
-      bonus: { label: 'Nói lời lịch sự (谢谢 / 好的)', any: ['谢谢', '好的', '请'] },
-      vocab: ['着', '一直'],
-      minLen: 10,
-      sample: '他出去了，你下午再来吧。门开着呢，你可以在里面等一下。',
-      sample_py: 'Tā chūqu le, nǐ xiàwǔ zài lái ba. Mén kāizhe ne, nǐ kěyǐ zài lǐmiàn děng yíxià.',
-      sample_vn: 'Anh ấy ra ngoài rồi, chiều bạn quay lại nhé. Cửa đang mở, bạn có thể vào trong đợi một lát.',
-      tip: '着 gắn sau động từ để chỉ trạng thái đang duy trì: 开着、拿着、坐着.'
-    },
-    {
-      situation: 'Trong văn phòng, bạn hỏi về hai người đồng nghiệp.',
-      q_zh: '那个正在说话的女孩子是谁？那个手里拿着铅笔的呢？',
-      q_py: 'Nàge zhèngzài shuōhuà de nǚháizi shì shéi? Nàge shǒu lǐ názhe qiānbǐ de ne?',
-      q_vn: 'Cô gái đang nói chuyện kia là ai? Còn người cầm bút chì trong tay?',
-      grammar: { label: '…拿着… / 正在…的', any: ['着'] },
-      need: [
-        { label: 'Dùng 着 (拿着 / 看着…)', any: ['着'] },
-        { label: 'Nói tên hoặc họ của người đó', any: ['姓', '叫', '名字'] },
-        { label: 'Nói bạn có quen hay không', any: ['认识', '不认识', '知道', '不知道'] }
-      ],
-      bonus: { label: 'Nói mối quan hệ (她姐姐是我同学)', any: ['同学', '朋友', '同事', '姐姐', '哥哥'] },
-      vocab: ['着', '手', '拿', '铅笔'],
-      minLen: 12,
-      sample: '我知道她的名字，她姓杨，叫杨笑笑。手里拿着铅笔的那个我不认识。',
-      sample_py: 'Wǒ zhīdào tā de míngzi, tā xìng Yáng, jiào Yáng Xiàoxiao. Shǒu lǐ názhe qiānbǐ de nàge wǒ bú rènshi.',
-      sample_vn: 'Tôi biết tên cô ấy, cô ấy họ Dương, tên Dương Tiếu Tiếu. Người cầm bút chì kia tôi không quen.',
-      tip: '手里拿着… = trong tay đang cầm…; cụm này đặt trước 的 để tả người.'
-    },
-    {
-      situation: 'Bạn học hỏi về người bạn thân của bạn trong lớp.',
-      q_zh: '你们班那个女孩子长什么样？',
-      q_py: 'Nǐmen bān nàge nǚháizi zhǎng shénme yàng?',
-      q_vn: 'Cô gái đó trong lớp bạn trông thế nào?',
-      grammar: { label: '长着 + 特点 (长着两个大眼睛)', any: ['长着', '着'] },
-      need: [
-        { label: 'Dùng 长着 để tả ngoại hình', any: ['长着', '着'] },
-        { label: 'Tả một đặc điểm (眼睛 / 头发 / 个子)', any: ['眼睛', '头发', '脸', '个子', '高', '大'] },
-        { label: 'Nói tính cách hoặc thói quen (爱笑)', any: ['笑', '爱', '喜欢'] }
-      ],
-      bonus: { label: 'Nói lớp hoặc quan hệ (我们班 / 同学)', any: ['班', '同学', '朋友'] },
-      vocab: ['长', '笑', '班'],
-      minLen: 12,
-      sample: '她是我们班那个长着两个大眼睛、非常爱笑的女孩子。',
-      sample_py: 'Tā shì wǒmen bān nàge zhǎngzhe liǎng ge dà yǎnjing, fēicháng ài xiào de nǚháizi.',
-      sample_vn: 'Cô ấy là cô gái có đôi mắt to, rất hay cười trong lớp tôi.',
-      tip: '长 ở đây đọc là zhǎng (mọc, trông), khác với 长 cháng (dài).'
-    },
-    {
-      situation: 'Một người khách hỏi đường đến khách sạn mới.',
-      q_zh: '请问这儿离新宾馆远吗？你能告诉我怎么走吗？',
-      q_py: 'Qǐngwèn zhèr lí xīn bīnguǎn yuǎn ma? Nǐ néng gàosu wǒ zěnme zǒu ma?',
-      q_vn: 'Cho hỏi từ đây đến khách sạn mới có xa không? Bạn chỉ giúp tôi đường đi được không?',
-      grammar: { label: '从这儿一直往前走，到…再往右（左）走', any: ['一直', '往'] },
-      need: [
-        { label: 'Dùng 一直往前走', any: ['一直', '往前'] },
-        { label: 'Dùng 往右 / 往左 tại ngã tư', any: ['往右', '往左', '右', '左'] },
-        { label: 'Nói khoảng cách hoặc thời gian đi', any: ['远', '不远', '分钟', '就到'] }
-      ],
-      bonus: { label: 'Dùng 路口 để nói ngã tư', any: ['路口'] },
-      vocab: ['宾馆', '一直', '往', '路口'],
+      bonus: { label: 'Dặn thêm (你到了给我打电话 / 等着你)', any: ['打电话', '等', '告诉', '到了'] },
+      vocab: ['着', '穿', '拿', '手'],
       minLen: 14,
-      sample: '不远，走路二十分钟就到。从这儿一直往前走，到了前面的路口再往右走。',
-      sample_py: 'Bù yuǎn, zǒulù èrshí fēnzhōng jiù dào. Cóng zhèr yìzhí wǎng qián zǒu, dàole qiánmiàn de lùkǒu zài wǎng yòu zǒu.',
-      sample_vn: 'Không xa, đi bộ hai mươi phút là tới. Từ đây đi thẳng, đến ngã tư phía trước thì rẽ phải.',
-      tip: '往 + hướng + 走: 往前走、往右走、往左走.'
+      sample: '我在机场门口等你，穿着黑衣服，手里拿着一本汉语书。你到了给我打电话吧。',
+      sample_py: 'Wǒ zài jīchǎng ménkǒu děng nǐ, chuānzhe hēi yīfu, shǒu li názhe yì běn Hànyǔ shū. Nǐ dàole gěi wǒ dǎ diànhuà ba.',
+      sample_vn: 'Mình đợi bạn ở cổng sân bay, mặc áo đen, tay cầm một quyển sách tiếng Hán. Bạn đến thì gọi cho mình nhé.',
+      tip: '着 đứng ngay sau động từ: 穿着、拿着; tả nhiều chi tiết thì nối bằng dấu phẩy.'
     },
     {
-      situation: 'Bạn mô tả căn phòng mình đang ngồi cho bạn qua điện thoại.',
-      q_zh: '你现在的房间怎么样？门开着吗？桌子上放着什么？',
-      q_py: 'Nǐ xiànzài de fángjiān zěnmeyàng? Mén kāizhe ma? Zhuōzi shang fàngzhe shénme?',
-      q_vn: 'Phòng bạn đang ngồi thế nào? Cửa có đang mở không? Trên bàn đặt gì?',
-      grammar: { label: '门开着 / 关着，桌子上放着…', any: ['着'] },
+      situation: 'Bạn của bạn nói hôm nay phải đi làm, nhưng chiều nay bạn lại gặp họ ở cửa hàng.',
+      q_zh: '你朋友说今天要上班。今天下午你在商店看见了他，你会问他什么？',
+      q_py: 'Nǐ péngyou shuō jīntiān yào shàngbān. Jīntiān xiàwǔ nǐ zài shāngdiàn kànjiànle tā, nǐ huì wèn tā shénme?',
+      q_vn: 'Bạn bạn nói hôm nay phải đi làm. Chiều nay bạn lại thấy họ ở cửa hàng, bạn sẽ hỏi gì?',
+      grammar: { label: '你不是……吗？', any: ['不是'] },
       need: [
-        { label: 'Dùng 着 ít nhất một lần', any: ['着'] },
-        { label: 'Nói về cửa (门开着 / 门关着)', any: ['门', '开', '关'] },
-        { label: 'Nói đồ vật trong phòng và vị trí', any: ['桌子', '上', '里', '旁边', '电脑', '书', '铅笔', '手机'] }
+        { label: 'Kết thúc câu hỏi bằng 吗', any: ['吗'] },
+        { label: 'Nhắc lại điều họ đã nói (上班 / 很忙 / 工作)', any: ['上班', '忙', '工作', '公司', '说'] },
+        { label: 'Hỏi lý do (怎么 / 为什么)', any: ['怎么', '为什么'] }
       ],
-      bonus: { label: 'Nói thêm ai đang ở trong phòng', any: ['我', '朋友', '同学', '一个人'] },
-      vocab: ['着', '拿', '手'],
+      bonus: { label: 'Rủ thêm một việc (一起…吧)', any: ['一起', '吧'] },
+      vocab: ['不是', '上班'],
       minLen: 12,
-      sample: '门开着呢。桌子上放着我的电脑和一支铅笔。',
-      sample_py: 'Mén kāizhe ne. Zhuōzi shang fàngzhe wǒ de diànnǎo hé yì zhī qiānbǐ.',
-      sample_vn: 'Cửa đang mở. Trên bàn đặt máy tính của tôi và một cây bút chì.',
-      tip: 'Nơi chốn + động từ + 着 + đồ vật: 桌子上放着一本书.'
+      sample: '你不是要上班吗？怎么在这儿买东西？公司今天休息吗？',
+      sample_py: 'Nǐ bú shì yào shàngbān ma? Zěnme zài zhèr mǎi dōngxi? Gōngsī jīntiān xiūxi ma?',
+      sample_vn: 'Chẳng phải hôm nay bạn phải đi làm sao? Sao lại ở đây mua đồ? Hôm nay công ty nghỉ à?',
+      tip: '不是……吗？ để nhắc lại điều bạn tưởng là đúng và tỏ ý ngạc nhiên; tiếp theo hỏi 怎么…？'
+    },
+    {
+      situation: 'Một bạn học mới muốn đến nhà bạn chơi nhưng không biết đường.',
+      q_zh: '从学校到你家怎么走？远不远？',
+      q_py: 'Cóng xuéxiào dào nǐ jiā zěnme zǒu? Yuǎn bu yuǎn?',
+      q_vn: 'Từ trường đến nhà bạn đi thế nào? Có xa không?',
+      grammar: { label: '往 + hướng + 走 / 一直往前走', any: ['往'] },
+      need: [
+        { label: 'Dùng hướng đi (前 / 右 / 右边 / 左边)', any: ['前', '右', '左边', '后'] },
+        { label: 'Dùng 路口 hoặc mốc đường', any: ['路口', '门口', '商店', '医院', '饭店', '宾馆'] },
+        { label: 'Nói xa / gần hoặc mất bao lâu', any: ['远', '近', '分钟', '小时', '就到'] }
+      ],
+      bonus: { label: 'Dùng 一直', any: ['一直'] },
+      vocab: ['往', '一直', '路口'],
+      minLen: 16,
+      sample: '从学校门口往右走，过了两个路口一直往前走，十分钟就到我家了，不远。',
+      sample_py: 'Cóng xuéxiào ménkǒu wǎng yòu zǒu, guòle liǎng ge lùkǒu yìzhí wǎng qián zǒu, shí fēnzhōng jiù dào wǒ jiā le, bù yuǎn.',
+      sample_vn: 'Từ cổng trường rẽ phải, qua hai ngã tư thì cứ đi thẳng, mười phút là đến nhà mình, không xa.',
+      tip: '往 + hướng đứng trước động từ: 往右走、往前走; 一直 đứng trước 往.'
+    },
+    {
+      situation: 'Bạn mới chuyển trường hỏi bạn về các bạn trong lớp.',
+      q_zh: '你们班谁最爱笑？他（她）长得怎么样？',
+      q_py: 'Nǐmen bān shéi zuì ài xiào? Tā zhǎng de zěnmeyàng?',
+      q_vn: 'Lớp bạn ai hay cười nhất? Bạn ấy trông thế nào?',
+      grammar: { label: '长得 + tính từ / 长着 + đặc điểm', any: ['长得', '长着', '长'] },
+      need: [
+        { label: 'Nói người đó là ai (我们班的…)', any: ['班', '同学', '朋友', '叫', '姓'] },
+        { label: 'Dùng 笑', any: ['笑'] },
+        { label: 'Tả ngoại hình (高 / 眼睛 / 漂亮…)', any: ['高', '眼睛', '漂亮', '大', '小', '好看'] }
+      ],
+      bonus: { label: 'Dùng 最 hoặc so sánh 比', any: ['最', '比'] },
+      vocab: ['班', '笑', '长'],
+      minLen: 12,
+      sample: '我们班的小王最爱笑。他长得很高，眼睛大大的，同学都喜欢和他说话。',
+      sample_py: 'Wǒmen bān de Xiǎo Wáng zuì ài xiào. Tā zhǎng de hěn gāo, yǎnjing dàdà de, tóngxué dōu xǐhuan hé tā shuōhuà.',
+      sample_vn: 'Lớp mình Tiểu Vương hay cười nhất. Bạn ấy cao, mắt to, các bạn đều thích nói chuyện với bạn ấy.',
+      tip: '长得 + tính từ (长得很高); 长着 + danh từ (长着大眼睛). 长 ở đây đọc zhǎng.'
+    },
+    {
+      situation: 'Bạn gọi điện cho người nhà đang đi xa, kể cảnh ở nhà lúc này.',
+      q_zh: '现在你家里怎么样？门开着吗？家里人在做什么？',
+      q_py: 'Xiànzài nǐ jiā li zěnmeyàng? Mén kāizhe ma? Jiā li rén zài zuò shénme?',
+      q_vn: 'Bây giờ ở nhà bạn thế nào? Cửa có đang mở không? Người nhà đang làm gì?',
+      grammar: { label: 'Động từ + 着 (开着 / 坐着 / 等着…)', any: ['着'] },
+      need: [
+        { label: 'Nói về cửa (门开着 / 门没开着)', any: ['门'] },
+        { label: 'Nói người trong nhà', any: ['妈妈', '爸爸', '妻子', '丈夫', '儿子', '女儿', '哥哥', '姐姐', '弟弟', '家里人'] },
+        { label: 'Nói việc họ đang làm', any: ['看', '吃', '喝', '做', '写', '睡', '听', '说话', '休息', '洗'] }
+      ],
+      bonus: { label: 'Dùng 正在…呢', any: ['正在', '呢'] },
+      vocab: ['着', '门'],
+      minLen: 12,
+      sample: '门开着，妈妈坐着看电视，爸爸正在做饭呢。我们都在等着你回来。',
+      sample_py: 'Mén kāizhe, māma zuòzhe kàn diànshì, bàba zhèngzài zuò fàn ne. Wǒmen dōu zài děngzhe nǐ huílai.',
+      sample_vn: 'Cửa đang mở, mẹ ngồi xem tivi, bố đang nấu cơm. Cả nhà đều đang chờ bạn về.',
+      tip: 'Động từ + 着 tả trạng thái (门开着) hoặc tư thế khi làm việc khác (坐着看电视).'
     }
   ]
 };
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — dùng từ bài 13 + ôn lại từ bài 1-12 và HSK1
+// LUYỆN DỊCH — câu mới, dùng từ bài 13 + ôn bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cô ấy tay đang cầm bút chì.', zh:'她手里拿着铅笔。', py:'Tā shǒu lǐ názhe qiānbǐ.'},
-  {vi:'Đi thẳng về phía trước.', zh:'一直往前走。', py:'Yìzhí wǎng qián zǒu.'},
-  {vi:'Đến ngã tư thì rẽ phải.', zh:'到了路口再往右走。', py:'Dàole lùkǒu zài wǎng yòu zǒu.'},
-  {vi:'Cô ấy chẳng phải có bạn trai rồi sao?', zh:'她不是有男朋友吗？', py:'Tā bú shì yǒu nán péngyou ma?'},
+  {vi:'Tay tôi đang cầm hai cốc cà phê, bạn mở cửa giúp tôi một chút nhé.', zh:'我手里拿着两杯咖啡，你帮我开一下门吧。', py:'Wǒ shǒu li názhe liǎng bēi kāfēi, nǐ bāng wǒ kāi yíxià mén ba.'},
+  {vi:'Chẳng phải khách sạn này rất đắt sao? Sao bạn lại ở đây?', zh:'这个宾馆不是很贵吗？你怎么住这儿？', py:'Zhège bīnguǎn bú shì hěn guì ma? Nǐ zěnme zhù zhèr?'},
+  {vi:'Cô ấy cứ cười mãi, không nói gì cả.', zh:'她一直笑着，什么也不说。', py:'Tā yìzhí xiàozhe, shénme yě bù shuō.'},
+  {vi:'Con trai tôi lớn lên rồi, năm nay còn cao hơn tôi.', zh:'我儿子长高了，今年比我还高。', py:'Wǒ érzi zhǎng gāo le, jīnnián bǐ wǒ hái gāo.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Anh ấy tay đang cầm điện thoại, cứ nói chuyện mãi.', zh:'他手里拿着手机，一直在说话。', py:'Tā shǒu lǐ názhe shǒujī, yìzhí zài shuōhuà.'},
-  {vi:'Khách sạn ở bên phải ngã tư, bạn đi thẳng là tới.', zh:'宾馆在路口右边，你一直走就到了。', py:'Bīnguǎn zài lùkǒu yòubian, nǐ yìzhí zǒu jiù dào le.'},
-  {vi:'Cô ấy cười rồi, cô ấy rất vui.', zh:'她笑了，她很高兴。', py:'Tā xiào le, tā hěn gāoxìng.'},
-  {vi:'Cô bé đó tay đang cầm bút chì, đang cười.', zh:'那个女孩子手里拿着铅笔，在笑。', py:'Nàge nǚ háizi shǒu lǐ názhe qiānbǐ, zài xiào.'},
+  {vi:'Khách sạn ở ngay bên phải ngã tư phía trước.', zh:'宾馆就在前面那个路口的右边。', py:'Bīnguǎn jiù zài qiánmiàn nàge lùkǒu de yòubian.'},
+  {vi:'Đừng nhìn ra sau, đi về phía trước đi!', zh:'别往后看，往前走吧！', py:'Bié wǎng hòu kàn, wǎng qián zǒu ba!'},
+  {vi:'Đứa bé tay cầm bút chì, đang viết chữ.', zh:'孩子手里拿着铅笔，正在写字呢。', py:'Háizi shǒu li názhe qiānbǐ, zhèngzài xiě zì ne.'},
 ];

@@ -1358,15 +1358,16 @@ var dialogData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 1 · GHÉP TỪ (Collocation)
+// PHẦN 1 · GHÉP TỪ (Collocation) — ghép hai nửa thành cụm dùng được ngay
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
 // ══════════════════════════════════════════
 var matchData = [
+  {left:'接',right:'电话'},
   {left:'生日',right:'快乐'},
-  {left:'已经',right:'开始'},
-  {left:'帮',right:'介绍'},
-  {left:'非常',right:'喜欢'},
-  {left:'接',right:'人'},
-  {left:'长',right:'时间'},
+  {left:'帮我',right:'介绍一下'},
+  {left:'你去问',right:'一下王老师'},
+  {left:'已经',right:'十点了'},
+  {left:'今天晚上',right:'你有时间吗？'},
 ];
 
 // ══════════════════════════════════════════
@@ -1428,67 +1429,74 @@ var listenData = {
 };
 
 // ══════════════════════════════════════════
-// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: chúc mừng sinh nhật + hỏi thăm công việc
+// PHẦN 3a · ĐIỀN TỪ — mỗi câu một tình huống mới (是……的 · ……的时候 · 已经……了 + từ mới bài 4, ôn bài 1–3 và HSK1)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'生日',blank:'快乐',post:'！',hint:'(vui vẻ)',ans:'快乐'},
-  {pre:'谢谢，这本书是你送',blank:'给',post:'我的吗？',hint:'(cho, tặng)',ans:'给',exp:'送给 + người = tặng cho ai; 给 đứng ngay sau động từ 送.'},
-  {pre:'对，是我',blank:'昨天',post:'买的。',hint:'(hôm qua — ôn Bài 3)',ans:'昨天'},
-  {pre:'你',blank:'非常',post:'喜欢踢足球，是不是？',hint:'(vô cùng, cực kỳ)',ans:'非常',exp:'非常 + động từ tâm lý/tính từ = vô cùng, rất: 非常喜欢.'},
-  {pre:'对，我是8岁',blank:'的时候',post:'开始踢足球的。',hint:'(khi, lúc)',ans:'的时候',exp:'……的时候 chỉ thời điểm một việc xảy ra.'},
-  {pre:'你',blank:'已经',post:'踢了多长时间了？',hint:'(đã)',ans:'已经',exp:'已经 + động từ + 了 = đã… rồi; 已经 đứng trước động từ 踢.'},
-  {pre:'',blank:'已经',post:'两年多了。',hint:'(đã)',ans:'已经',exp:'已经 + thời lượng + 了 = đã được… rồi: 已经两年多了.'},
-  {pre:'这个工作是谁',blank:'帮',post:'你介绍的？',hint:'(giúp)',ans:'帮'},
+  {pre:'Bạn đến lớp muộn, cô giáo hỏi: “你今天',blank:'是',post:'几点起床的？” — “八点，对不起！”',hint:'(là — đi cùng 的 ở cuối câu)',ans:'是',exp:'Việc đã xảy ra, muốn hỏi rõ thời gian thì dùng 是 + thời gian + động từ + 的: 是几点起床的？'},
+  {pre:'“你的衣服真漂亮！是谁买',blank:'的',post:'？” — “是我丈夫买的。”',hint:'(… đấy — cuối câu)',ans:'的',exp:'Hỏi AI đã làm việc đó: 是谁 + động từ + 的？ Trả lời: 是 + người + động từ + 的.'},
+  {pre:'“你的汉语非常好！你是',blank:'在',post:'哪儿学习的？” — “在北京。”',hint:'(ở)',ans:'在',exp:'Hỏi NƠI đã làm việc gì: 是 + 在哪儿 + động từ + 的？ Nơi chốn đứng trước động từ.'},
+  {pre:'Bác sĩ dặn: “这个药你吃饭',blank:'的时候',post:'吃。”',hint:'(khi, lúc)',ans:'的时候',exp:'Việc / thời điểm + 的时候 = khi …; cụm này đứng TRƯỚC động từ chính: 吃饭的时候吃.'},
+  {pre:'Bạn kể chuyện hồi du học: “我在美国',blank:'的时候',post:'，每天早上都去跑步。”',hint:'(hồi, khi)',ans:'的时候',exp:'在 + nơi + 的时候 = hồi ở …; câu sau nói việc xảy ra trong thời gian đó (ôn 每天…都).'},
+  {pre:'“你要喝茶吗？” — “不喝了，我',blank:'已经',post:'喝了很多水。”',hint:'(đã … rồi)',ans:'已经',exp:'已经 + động từ + 了 = đã … rồi; 已经 đứng trước động từ.'},
+  {pre:'“你们认识多长时间了？” — “已经十年',blank:'了',post:'，她是我最好的朋友。”',hint:'(rồi)',ans:'了',exp:'已经 + khoảng thời gian + 了 = đã được … rồi; thiếu 了 ở cuối câu thì câu chưa trọn.'},
+  {pre:'“你每天跑步多',blank:'长',post:'时间？” — “四十分钟。”',hint:'(lâu, dài)',ans:'长',exp:'多长时间 = bao lâu (hỏi khoảng thời gian); 几点 mới là hỏi giờ.'},
+  {pre:'Điện thoại reo, bạn đang viết chữ: “妈妈，你帮我',blank:'接',post:'一下电话，好吗？”',hint:'(nghe máy)',ans:'接',exp:'接电话 = nghe máy; 打电话 = gọi điện. 帮我 + động từ = giúp tôi …'},
+  {pre:'“这个字怎么读？” — “我也不知道，你去',blank:'问',post:'老师吧。”',hint:'(hỏi)',ans:'问',exp:'问 + người = hỏi ai: 问老师; không cần thêm giới từ như “hỏi với”.'},
+  {pre:'Ở bữa tiệc, bạn nói với mọi người: “我来',blank:'介绍',post:'一下，这是我的大学同学小王。”',hint:'(giới thiệu)',ans:'介绍',exp:'我来介绍一下 = để tôi giới thiệu một chút — câu mở đầu quen thuộc khi giới thiệu người.'},
+  {pre:'“北京的天气怎么样？” — “',blank:'非常',post:'冷，你要买新衣服。”',hint:'(cực kỳ)',ans:'非常',exp:'非常 + tính từ = cực kỳ, mạnh hơn 很: 非常冷.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3b · SẮP XẾP
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng 是……的 / ……的时候 / 已经……了
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['这','是','我','昨天','买','的','。'],ans:'这是我昨天买的。',audio:'这是我昨天买的。'},
-  {words:['我','是','8','岁','的','时候','开始','踢','足球','的','。'],ans:'我是8岁的时候开始踢足球的。',audio:'我是8岁的时候开始踢足球的。'},
-  {words:['我','已经','工作','两','年','多','了','。'],ans:'我已经工作两年多了。',audio:'我已经工作两年多了。'},
-  {words:['这个','工作','是','朋友','帮','我','介绍','的','。'],ans:'这个工作是朋友帮我介绍的。',audio:'这个工作是朋友帮我介绍的。'},
-  {words:['你','是','什么','时候','开始','工作','的','？'],ans:'你是什么时候开始工作的？',audio:'你是什么时候开始工作的？'},
-  {words:['生日','快乐','，','这','是','送','给','你','的','书','。'],ans:'生日快乐，这是送给你的书。',audio:'生日快乐，这是送给你的书。'},
+  {words:['这','本','书','是','我','在','北京','买','的','。'],ans:'这本书是我在北京买的。',audio:'这本书是我在北京买的。'},
+  {words:['这','本','书','是','谁','给','你','的','？'],ans:'这本书是谁给你的？',audio:'这本书是谁给你的？'},
+  {words:['我','在','北京','的','时候','非常','喜欢','踢','足球','。'],ans:'我在北京的时候非常喜欢踢足球。',audio:'我在北京的时候非常喜欢踢足球。'},
+  {words:['我','和','他','已经','认识','两','年','多','了','。'],ans:'我和他已经认识两年多了。',audio:'我和他已经认识两年多了。'},
+  {words:['晚上','我','给','你','打','电话','。'],ans:'晚上我给你打电话。',audio:'晚上我给你打电话。',alt:['我晚上给你打电话。']},
+  {words:['我们','七','点','开始','吃饭','吧','。'],ans:'我们七点开始吃饭吧。',audio:'我们七点开始吃饭吧。'},
+  {words:['你','学习','汉语','多','长','时间','了','？'],ans:'你学习汉语多长时间了？',audio:'你学习汉语多长时间了？'},
+  {words:['医生','说','我','已经','能','出院','了','。'],ans:'医生说我已经能出院了。',audio:'医生说我已经能出院了。'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3c · SỬA LỖI SAI
+// PHẦN 3c · SỬA LỖI SAI — lỗi học sinh Việt hay mắc
+// (thời gian đặt sau động từ, 是……了 thay 是……的, thiếu 的, “khi” đặt đầu câu, thiếu 了 sau 已经, 二/两, 打/接 điện thoại, 非常 đặt sau)
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'我买是这个的。',
-   opts:['这是我买的。','我是买这个的。','是我这个买的。','我这个是买的。'],ans:0,
-   exp:'是……的 dùng để nhấn mạnh CÁCH/THỜI GIAN/NGƯỜI thực hiện hành động đã xảy ra; 是 đặt đầu, 的 đặt cuối câu.'},
-  {wrong:'我8岁开始的时候踢足球。',
-   opts:['我8岁的时候开始踢足球。','我8岁开始踢的时候足球。','我的时候8岁开始踢足球。','我8岁开始踢足球的时候。'],ans:0,
-   exp:'……的时候 đặt NGAY SAU mốc thời gian/sự việc, TRƯỚC hành động chính.'},
-  {wrong:'我工作已经两年了已经。',
-   opts:['我已经工作两年了。','我工作已经两年已经了。','已经我工作两年了已经。','我已经两年工作了已经。'],ans:0,
-   exp:'已经……了 chỉ dùng MỘT LẦN trong câu, không lặp lại 已经.'},
-  {wrong:'这个工作朋友帮我介绍是的。',
-   opts:['这个工作是朋友帮我介绍的。','这个工作朋友是帮我介绍的。','是这个工作朋友帮我介绍的。','这个工作朋友帮我是介绍的。'],ans:0,
-   exp:'是 phải đứng NGAY SAU chủ ngữ (工作), 的 đứng CUỐI câu.'},
-  {wrong:'快乐生日！',
-   opts:['生日快乐！','快乐的生日！','生日的快乐！','快乐生日的！'],ans:0,
-   exp:'"生日快乐" là cụm cố định, không đảo ngược như "vui sinh nhật" trong tiếng Việt.'},
+  {wrong:'我是来中国九月的。',
+   opts:['我是九月来中国的。','我九月来中国是的。','我是来中国在九月的。','我是九月来中国了。'],ans:0,
+   exp:'Thời gian đứng TRƯỚC động từ: 是 + 九月 + 来中国 + 的; việc đã xảy ra nhấn thời gian dùng 是…的, không dùng 是…了.'},
+  {wrong:'我是坐出租车来了。',
+   opts:['我坐出租车是来的。','我是坐出租车来的。','我是坐出租车了来的。','我是出租车坐来的。'],ans:1,
+   exp:'Nhấn CÁCH đi (bằng gì): 是 + 坐出租车 + 来 + 的; cuối câu là 的, không phải 了.'},
+  {wrong:'这些汉字是我儿子写。',
+   opts:['这些汉字我儿子是写的。','这些汉字是写我儿子的。','这些汉字是我儿子写的。','这些汉字是我儿子的写。'],ans:2,
+   exp:'Nhấn AI làm: 是 + người + động từ + 的; thiếu 的 ở cuối thì câu chưa đúng.'},
+  {wrong:'时候天气不好，我们在家看电视。（ý: khi thời tiết xấu）',
+   opts:['的时候天气不好，我们在家看电视。','天气不好时候的，我们在家看电视。','天气不好的时候，我们看电视在家。','天气不好的时候，我们在家看电视。'],ans:3,
+   exp:'“Khi thời tiết xấu” = 天气不好的时候: sự việc đứng TRƯỚC, 的时候 đứng SAU (ngược với tiếng Việt); nơi chốn 在家 đứng trước động từ.'},
+  {wrong:'我已经吃药。',
+   opts:['我已经吃药了。','我吃药已经了。','我已经是吃药了。','我已经吃药的。'],ans:0,
+   exp:'已经 + động từ + 了: cuối câu cần 了 (không phải 的); không thêm 是.'},
+  {wrong:'我学习汉语已经一年。',
+   opts:['我已经一年学习汉语了。','我学习汉语已经一年了。','我学习汉语一年已经了。','我学习汉语已经了一年。'],ans:1,
+   exp:'Động từ + 已经 + khoảng thời gian + 了: 学习汉语已经一年了; 了 đứng cuối câu.'},
+  {wrong:'他在北京住了二年。',
+   opts:['他住了二年在北京。','他在北京住了两个年。','他在北京住了两年。','他两年在北京住了。'],ans:2,
+   exp:'Trước lượng từ dùng 两, không dùng 二: 两年; 年 tự là lượng từ nên không thêm 个.'},
+  {wrong:'电话来了，你去打一下。（ý: ra nghe máy）',
+   opts:['电话来了，你去接电话一下。','电话来了，你一下去接。','电话来了，你去给接一下。','电话来了，你去接一下。'],ans:3,
+   exp:'Nghe máy = 接电话 (打电话 là gọi đi); 一下 đứng ngay sau động từ: 接一下.'},
+  {wrong:'我喜欢非常这个工作。',
+   opts:['我非常喜欢这个工作。','我非常这个工作喜欢。','我很非常喜欢这个工作。','我喜欢这个工作非常。'],ans:0,
+   exp:'非常 đứng TRƯỚC động từ tâm lý / tính từ: 非常喜欢; không đi cùng 很, không đặt cuối câu.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 // Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
 // lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
 // dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
@@ -1497,119 +1505,118 @@ var speakingData = {
   intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 4. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn học hỏi về sinh nhật của bạn.',
-      q_zh: '你的生日是什么时候？朋友送过你什么礼物？',
-      q_py: 'Nǐ de shēngrì shì shénme shíhou? Péngyou sòngguo nǐ shénme lǐwù?',
-      q_vn: 'Sinh nhật bạn là khi nào? Bạn bè từng tặng bạn quà gì?',
-      grammar: { label: '我的生日是 + ngày tháng + 是…送给我的', any: ['生日'] },
+      situation: 'Bạn mới quen hỏi về sinh nhật của bạn.',
+      q_zh: '你的生日是几月几号？生日的时候你想做什么？',
+      q_py: 'Nǐ de shēngrì shì jǐ yuè jǐ hào? Shēngrì de shíhou nǐ xiǎng zuò shénme?',
+      q_vn: 'Sinh nhật bạn là ngày mấy tháng mấy? Vào dịp sinh nhật bạn muốn làm gì?',
+      grammar: { label: '生日的时候 + việc muốn làm', any: ['的时候', '时候'] },
       need: [
-        { label: 'Nói ngày sinh nhật (月 / 号)', any: ['月', '号', '日'] },
-        { label: 'Nói món quà', any: ['书', '手表', '手机', '衣服', '花', '蛋糕', '礼物', '东西'] },
-        { label: 'Dùng 送 hoặc 给', any: ['送', '给'] }
+        { label: 'Nói ngày tháng (月 / 号)', any: ['月', '号', '日'] },
+        { label: 'Nói việc muốn làm', any: ['吃', '去', '看', '买', '喝', '玩', '唱', '旅游', '运动', '踢'] },
+        { label: 'Nói làm cùng ai (和 / 一起)', any: ['和', '跟', '一起', '朋友', '家', '同学', '妈妈', '爸爸'] }
       ],
-      bonus: { label: 'Thêm lời chúc 生日快乐', any: ['快乐', '高兴', '谢谢'] },
-      vocab: ['生日', '快乐', '给', '送'],
+      bonus: { label: 'Dùng 非常 / 快乐', any: ['非常', '快乐', '高兴'] },
+      vocab: ['生日', '的时候', '快乐'],
       minLen: 12,
-      sample: '我的生日是九月六号。去年朋友送给我一本书，我非常喜欢。',
-      sample_py: 'Wǒ de shēngrì shì jiǔ yuè liù hào. Qùnián péngyou sòng gěi wǒ yì běn shū, wǒ fēicháng xǐhuan.',
-      sample_vn: 'Sinh nhật tôi là ngày 6 tháng 9. Năm ngoái bạn tặng tôi một quyển sách, tôi rất thích.',
-      tip: 'Ngày tháng nói từ lớn đến nhỏ: 九月六号; tặng ai cái gì: 送给我一本书.'
+      sample: '我的生日是九月六号。生日的时候，我想和朋友一起去饭店吃饭。',
+      sample_py: 'Wǒ de shēngrì shì jiǔ yuè liù hào. Shēngrì de shíhou, wǒ xiǎng hé péngyou yìqǐ qù fàndiàn chīfàn.',
+      sample_vn: 'Sinh nhật tôi là ngày 6 tháng 9. Vào dịp sinh nhật, tôi muốn cùng bạn bè đi nhà hàng ăn.',
+      tip: 'Ngày tháng nói từ lớn đến nhỏ: 九月六号; “vào dịp / khi …” = … 的时候, đặt ở đầu câu.'
     },
     {
-      situation: 'Giáo viên hỏi bạn về quá trình học tiếng Trung.',
-      q_zh: '你是什么时候开始学汉语的？已经学了多长时间了？',
-      q_py: 'Nǐ shì shénme shíhou kāishǐ xué Hànyǔ de? Yǐjīng xuéle duō cháng shíjiān le?',
-      q_vn: 'Bạn bắt đầu học tiếng Trung từ khi nào? Đã học bao lâu rồi?',
-      grammar: { label: '我是…开始学的 + 已经学了…了', any: ['开始'] },
+      situation: 'Bạn cùng lớp hỏi về việc học tiếng Trung của bạn.',
+      q_zh: '你是什么时候开始学习汉语的？已经多长时间了？',
+      q_py: 'Nǐ shì shénme shíhou kāishǐ xuéxí Hànyǔ de? Yǐjīng duō cháng shíjiān le?',
+      q_vn: 'Bạn bắt đầu học tiếng Trung từ khi nào? Đã được bao lâu rồi?',
+      grammar: { label: '我是 + thời gian + 开始学习汉语的', any: ['是', '的'] },
       need: [
-        { label: 'Nói mốc bắt đầu (去年 / 2023年 / 十岁的时候)', any: ['年', '月', '岁', '去年', '时候'] },
-        { label: 'Dùng 已经', any: ['已经'] },
-        { label: 'Nói khoảng thời gian đã học', any: ['年', '月', '天', '多长时间', '小时'] }
+        { label: 'Nói thời gian bắt đầu (年 / 月 / 的时候)', any: ['年', '月', '时候', '岁', '昨天', '星期'] },
+        { label: 'Dùng 开始', any: ['开始'] },
+        { label: 'Nói đã bao lâu (已经…了)', any: ['已经', '了'] }
       ],
-      bonus: { label: 'Thêm cảm nhận (非常喜欢 / 有意思)', any: ['非常', '喜欢', '有意思', '难'] },
-      vocab: ['开始', '已经', '长', '非常'],
+      bonus: { label: 'Nói cảm nhận (非常喜欢 / 觉得…)', any: ['非常', '喜欢', '觉得', '有意思'] },
+      vocab: ['开始', '已经', '长'],
       minLen: 14,
-      sample: '我是去年九月开始学汉语的，已经学了一年多了。我非常喜欢汉语。',
-      sample_py: 'Wǒ shì qùnián jiǔ yuè kāishǐ xué Hànyǔ de, yǐjīng xuéle yì nián duō le. Wǒ fēicháng xǐhuan Hànyǔ.',
-      sample_vn: 'Tôi bắt đầu học tiếng Trung từ tháng 9 năm ngoái, đã học hơn một năm rồi. Tôi rất thích tiếng Trung.',
-      tip: 'Nhấn mạnh thời gian của việc đã xảy ra: 是…的 — 我是去年开始学的.'
+      sample: '我是今年三月开始学习汉语的，已经八个多月了。',
+      sample_py: 'Wǒ shì jīnnián sān yuè kāishǐ xuéxí Hànyǔ de, yǐjīng bā ge duō yuè le.',
+      sample_vn: 'Tôi bắt đầu học tiếng Trung từ tháng 3 năm nay, đã được hơn tám tháng rồi.',
+      tip: 'Việc đã xảy ra, nhấn THỜI GIAN: 是 + thời gian + động từ + 的; độ dài: 已经 + khoảng thời gian + 了.'
     },
     {
-      situation: 'Đồng nghiệp mới hỏi bạn làm ở đây bao lâu rồi.',
-      q_zh: '你在这里工作（学习）多长时间了？',
-      q_py: 'Nǐ zài zhèlǐ gōngzuò (xuéxí) duō cháng shíjiān le?',
-      q_vn: 'Bạn làm việc (học) ở đây bao lâu rồi?',
-      grammar: { label: '已经 + số + 年/月 + 了', any: ['已经', '了'] },
+      situation: 'Bạn giới thiệu một người bạn thân với người nhà.',
+      q_zh: '请你介绍一下你的一个好朋友。你们是在哪儿认识的？',
+      q_py: 'Qǐng nǐ jièshào yíxià nǐ de yí ge hǎo péngyou. Nǐmen shì zài nǎr rènshi de?',
+      q_vn: 'Hãy giới thiệu một người bạn thân của bạn. Hai bạn quen nhau ở đâu?',
+      grammar: { label: '我们是在 + nơi + 认识的', any: ['认识的', '是在', '的'] },
       need: [
-        { label: 'Nói khoảng thời gian (两年多 / 三个月)', any: ['年', '月', '天', '星期'] },
-        { label: 'Dùng 工作 hoặc 学习', any: ['工作', '学习', '上班', '上课'] },
-        { label: 'Nói mốc bắt đầu (我是…来的)', any: ['来', '年', '月', '开始'] }
+        { label: 'Giới thiệu tên (这是… / 他叫…)', any: ['叫', '介绍', '这是', '名字'] },
+        { label: 'Nói nơi quen nhau', any: ['在', '学校', '大学', '医院', '公司', '饭店', '北京', '中国'] },
+        { label: 'Nói đã quen bao lâu (已经…了)', any: ['已经', '年', '时候', '了'] }
       ],
-      bonus: { label: 'Nói thêm ai giới thiệu việc này (帮我介绍的)', any: ['介绍', '帮'] },
-      vocab: ['已经', '长', '帮', '介绍'],
-      minLen: 12,
-      sample: '已经两年多了，我是2023年来的。这个工作是我朋友帮我介绍的。',
-      sample_py: 'Yǐjīng liǎng nián duō le, wǒ shì èr líng èr sān nián lái de. Zhège gōngzuò shì wǒ péngyou bāng wǒ jièshào de.',
-      sample_vn: 'Đã hơn hai năm rồi, tôi đến từ năm 2023. Công việc này là bạn tôi giới thiệu giúp.',
-      tip: '多长时间 hỏi độ dài thời gian; 两年多了 = hơn hai năm rồi.'
+      bonus: { label: 'Nói thêm về người đó (工作 / 喜欢 / 漂亮…)', any: ['工作', '喜欢', '漂亮', '高', '医生', '老师', '学生'] },
+      vocab: ['介绍', '已经', '两'],
+      minLen: 14,
+      sample: '这是我的朋友小李。我们是在医院认识的，已经认识五年了。',
+      sample_py: 'Zhè shì wǒ de péngyou Xiǎo Lǐ. Wǒmen shì zài yīyuàn rènshi de, yǐjīng rènshi wǔ nián le.',
+      sample_vn: 'Đây là bạn tôi, Tiểu Lý. Chúng tôi quen nhau ở bệnh viện, đã quen năm năm rồi.',
+      tip: 'Nhấn NƠI của việc đã xảy ra: 是在 + nơi + động từ + 的; giới thiệu người thì mở đầu 这是…, 他/她叫….'
     },
     {
-      situation: 'Có điện thoại gọi đến nhà lúc bạn đi vắng, người nhà hỏi bạn.',
-      q_zh: '早上有你一个电话，你知道电话是谁打的吗？',
-      q_py: 'Zǎoshang yǒu nǐ yí ge diànhuà, nǐ zhīdào diànhuà shì shéi dǎ de ma?',
-      q_vn: 'Sáng nay có điện thoại gọi cho bạn, bạn có biết ai gọi không?',
-      grammar: { label: '是…打的 / 是…接的', any: ['打', '接', '的'] },
+      situation: 'Bạn về nhà, người nhà nói chiều nay có người gọi điện cho bạn.',
+      q_zh: '下午有人给你打电话，你知道是谁吗？你晚上要做什么？',
+      q_py: 'Xiàwǔ yǒu rén gěi nǐ dǎ diànhuà, nǐ zhīdào shì shéi ma? Nǐ wǎnshang yào zuò shénme?',
+      q_vn: 'Chiều nay có người gọi điện cho bạn, bạn biết là ai không? Tối nay bạn sẽ làm gì?',
+      grammar: { label: '是 + người + 打的', any: ['打的', '是', '的'] },
       need: [
-        { label: 'Trả lời biết hay không biết', any: ['知道', '不知道'] },
-        { label: 'Nói ai gọi hoặc ai nghe máy', any: ['朋友', '同学', '老师', '儿子', '女儿', '妈妈', '爸爸', '公司', '同事'] },
-        { label: 'Nói bạn sẽ làm gì (晚上我问一下)', any: ['问', '打', '晚上', '一下'] }
+        { label: 'Nói ai gọi / ai nghe máy', any: ['同学', '朋友', '老师', '妈妈', '爸爸', '儿子', '女儿', '丈夫', '医生', '不知道'] },
+        { label: 'Dùng 电话 / 接 / 打', any: ['电话', '接', '打'] },
+        { label: 'Nói việc buổi tối (晚上 + 问 / 给…打电话)', any: ['晚上', '问', '给'] }
       ],
-      bonus: { label: 'Thêm 已经 / 接', any: ['已经', '接'] },
-      vocab: ['给', '接', '晚上', '问'],
+      bonus: { label: 'Dùng 一下 (问一下)', any: ['一下'] },
+      vocab: ['接', '晚上', '问', '给'],
       minLen: 12,
-      sample: '我不知道，是我儿子接的。晚上我问一下他。',
-      sample_py: 'Wǒ bù zhīdào, shì wǒ érzi jiē de. Wǎnshang wǒ wèn yíxià tā.',
-      sample_vn: 'Tôi không biết, con trai tôi nghe máy. Tối tôi hỏi lại cháu.',
-      tip: '接电话 = nghe máy, 打电话 = gọi điện. Nhấn mạnh ai làm: 是我儿子接的.'
+      sample: '是我同学小王打的。晚上我问一下他明天去不去学校。',
+      sample_py: 'Shì wǒ tóngxué Xiǎo Wáng dǎ de. Wǎnshang wǒ wèn yíxià tā míngtiān qù bu qù xuéxiào.',
+      sample_vn: 'Là bạn học Tiểu Vương gọi. Tối nay tôi sẽ hỏi cậu ấy xem mai có đến trường không.',
+      tip: '打电话 = gọi điện, 接电话 = nghe máy. Nhấn ai làm: 是 + người + 打的.'
     },
     {
-      situation: 'Bạn khoe món đồ mới với bạn cùng phòng.',
-      q_zh: '这个东西是谁给你的？是在哪儿买的？',
-      q_py: 'Zhège dōngxi shì shéi gěi nǐ de? Shì zài nǎr mǎi de?',
-      q_vn: 'Món này ai cho bạn vậy? Mua ở đâu thế?',
-      grammar: { label: '是…给我的 / 是在…买的', any: ['的'] },
+      situation: 'Bạn của bạn thấy một chiếc cốc rất đẹp trên bàn bạn.',
+      q_zh: '这个杯子真漂亮！是谁送给你的？',
+      q_py: 'Zhège bēizi zhēn piàoliang! Shì shéi sòng gěi nǐ de?',
+      q_vn: 'Cái cốc này đẹp thật! Ai tặng bạn thế?',
+      grammar: { label: '是 + người + 送给我的', any: ['的'] },
       need: [
-        { label: 'Nói người tặng', any: ['朋友', '同学', '妈妈', '爸爸', '哥哥', '姐姐', '老师', '自己'] },
-        { label: 'Nói nơi mua', any: ['商店', '网上', '北京', '这儿', '那儿', '超市', '学校'] },
-        { label: 'Dùng 给 hoặc 买', any: ['给', '买', '送'] }
+        { label: 'Nói ai tặng', any: ['妈妈', '爸爸', '朋友', '同学', '女儿', '儿子', '丈夫', '老师', '我'] },
+        { label: 'Dùng 送 / 给 / 买', any: ['送', '给', '买'] },
+        { label: 'Nói khi nào / ở đâu (的时候 / 在…)', any: ['时候', '生日', '在', '昨天', '月'] }
       ],
-      bonus: { label: 'Nói thêm dịp tặng (生日)', any: ['生日', '新年', '快乐'] },
-      vocab: ['给', '介绍', '生日'],
+      bonus: { label: 'Dùng 非常喜欢', any: ['非常', '喜欢'] },
+      vocab: ['生日', '给', '非常'],
       minLen: 12,
-      sample: '这是我朋友给我的生日礼物，是在商店买的。',
-      sample_py: 'Zhè shì wǒ péngyou gěi wǒ de shēngrì lǐwù, shì zài shāngdiàn mǎi de.',
-      sample_vn: 'Đây là quà sinh nhật bạn tôi tặng, mua ở cửa hàng.',
-      tip: 'Hỏi nơi chốn của việc đã xảy ra: 是在哪儿买的？ Trả lời: 是在…买的.'
+      sample: '是我女儿送给我的，我生日的时候她在北京买的。',
+      sample_py: 'Shì wǒ nǚ\'ér sòng gěi wǒ de, wǒ shēngrì de shíhou tā zài Běijīng mǎi de.',
+      sample_vn: 'Là con gái tôi tặng tôi, cháu mua ở Bắc Kinh vào dịp sinh nhật tôi.',
+      tip: 'Nhấn NGƯỜI làm: 是 + người + 送给我的; 送给 + người = tặng cho ai.'
     }
   ]
 };
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — dùng từ bài 4 + ôn lại từ bài 1-3 và HSK1
+// LUYỆN DỊCH — câu mới, dùng từ bài 4 + ôn bài 1–3 và HSK1
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Chúc mừng sinh nhật!', zh:'生日快乐！', py:'Shēngrì kuàilè!'},
-  {vi:'Quyển sách này là do tôi mua.', zh:'这本书是我买的。', py:'Zhè běn shū shì wǒ mǎi de.'},
-  {vi:'Bộ phim đã bắt đầu rồi.', zh:'电影已经开始了。', py:'Diànyǐng yǐjīng kāishǐ le.'},
-  {vi:'Bạn có thể giúp tôi giới thiệu một chút được không?', zh:'你能帮我介绍一下吗？', py:'Nǐ néng bāng wǒ jièshào yíxià ma?'},
+  {vi:'Bạn đến Trung Quốc năm nào? — Tôi đến từ hai năm trước.', zh:'你是哪一年来中国的？——我是两年前来的。', py:'Nǐ shì nǎ yì nián lái Zhōngguó de? —— Wǒ shì liǎng nián qián lái de.'},
+  {vi:'Lúc tôi về đến nhà, bố mẹ đã đi ngủ rồi.', zh:'我回家的时候，爸爸妈妈已经睡觉了。', py:'Wǒ huí jiā de shíhou, bàba māma yǐjīng shuìjiào le.'},
+  {vi:'Tối nào bố tôi cũng đọc báo ở nhà.', zh:'我爸爸每天晚上都在家看报纸。', py:'Wǒ bàba měi tiān wǎnshang dōu zài jiā kàn bàozhǐ.'},
+  {vi:'Bạn có thể giúp tôi hỏi bác sĩ một chút không?', zh:'你能帮我问一下医生吗？', py:'Nǐ néng bāng wǒ wèn yíxià yīshēng ma?'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Chúc mừng sinh nhật! Quyển sách này là tôi tặng bạn.', zh:'生日快乐！这本书是我送你的。', py:'Shēngrì kuàilè! Zhè běn shū shì wǒ sòng nǐ de.'},
-  {vi:'Phim đã bắt đầu rồi, bạn có thể đến không?', zh:'电影已经开始了，你能来吗？', py:'Diànyǐng yǐjīng kāishǐ le, nǐ néng lái ma?'},
-  {vi:'Bạn có thể giúp tôi giới thiệu một chút về con gái bạn không?', zh:'你能帮我介绍一下你女儿吗？', py:"Nǐ néng bāng wǒ jièshào yíxià nǐ nǚ'ér ma?"},
-  {vi:'Đã tối rồi, anh ấy chưa về.', zh:'已经晚上了，他没有回来。', py:'Yǐjīng wǎnshang le, tā méiyǒu huílái.'},
+  {vi:'Hôm sinh nhật tôi, các bạn đều đến, tôi vui lắm.', zh:'生日那天，朋友都来了，我非常快乐。', py:'Shēngrì nà tiān, péngyou dōu lái le, wǒ fēicháng kuàilè.'},
+  {vi:'Cậu ấy đã hai ngày không đến trường rồi, có phải bị ốm không?', zh:'他已经两天没有来学校了，是不是生病了？', py:'Tā yǐjīng liǎng tiān méiyǒu lái xuéxiào le, shì bu shì shēngbìng le?'},
+  {vi:'Bộ phim tối qua bắt đầu lúc mấy giờ? Tôi không xem.', zh:'昨天晚上的电影是几点开始的？我没有看。', py:'Zuótiān wǎnshang de diànyǐng shì jǐ diǎn kāishǐ de? Wǒ méiyǒu kàn.'},
 ];

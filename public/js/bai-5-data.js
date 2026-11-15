@@ -1369,15 +1369,16 @@ var dialogData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 1 · GHÉP TỪ (Collocation)
+// PHẦN 1 · GHÉP TỪ (Collocation) — ghép hai nửa thành cụm dùng được ngay
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'准备',right:'考试'},
-  {left:'有点儿',right:'累'},
   {left:'喝',right:'咖啡'},
-  {left:'一件',right:'衣服'},
-  {left:'对',right:'身体'},
-  {left:'什么',right:'意思'},
+  {left:'准备',right:'考试'},
+  {left:'这件衣服',right:'有点儿大'},
+  {left:'这是什么',right:'意思？'},
+  {left:'多运动',right:'对身体好'},
+  {left:'他就是',right:'我的中国朋友'},
 ];
 
 // ══════════════════════════════════════════
@@ -1439,67 +1440,74 @@ var listenData = {
 };
 
 // ══════════════════════════════════════════
-// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: chuẩn bị thi & mua áo mới
+// PHẦN 3a · ĐIỀN TỪ — mỗi câu một tình huống mới (就 · 还 · 有点儿 + từ mới bài 5, ôn bài 1–4 và HSK1)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你准备好了吗？还没',blank:'准备',post:'好呢，我有点儿累。',hint:'(chuẩn bị)',ans:'准备'},
-  {pre:'你觉得这件衣服',blank:'可以',post:'吗？',hint:'(được, có thể)',ans:'可以',exp:'可以 ở đây = được, ổn (đánh giá): 这件衣服可以吗？= cái áo này được không?'},
-  {pre:'颜色',blank:'还',post:'可以，就是有点儿大。',hint:'(tạm, cũng)',ans:'还',exp:'还可以 = tạm được, không hẳn tốt cũng không tệ.'},
-  {pre:'那你',blank:'就',post:'买那件小的吧。',hint:'(vậy thì)',ans:'就',exp:'就 dùng để chỉ một kết luận/quyết định logic tiếp theo.'},
-  {pre:'好，',blank:'就',post:'买这件。',hint:'(luôn, thì)',ans:'就',exp:'就 nhấn mạnh quyết định dứt khoát: 就买这件 = mua luôn cái này.'},
-  {pre:'考试',blank:'以后',post:'，我们去喝咖啡吧。',hint:'(sau khi, sau này)',ans:'以后',exp:'…以后 = sau khi…, đặt sau sự việc: 考试以后 = sau khi thi.'},
-  {pre:'',blank:'对',post:'啊，我请客！',hint:'(đúng vậy)',ans:'对'},
-  {pre:'这个字是什么',blank:'意思',post:'？',hint:'(ý nghĩa)',ans:'意思'},
+  {pre:'Thử áo ở cửa hàng, bạn thấy hơi chật: “这件衣服',blank:'有点儿',post:'小，有大的吗？”',hint:'(hơi — không như ý)',ans:'有点儿',exp:'有点儿 + tính từ = hơi …, mang ý không hài lòng: 有点儿小 = hơi chật.'},
+  {pre:'“今天外面冷吗？” — “',blank:'有点儿',post:'冷，你喝一杯热茶吧。”',hint:'(hơi)',ans:'有点儿',exp:'有点儿 đứng TRƯỚC tính từ: 有点儿冷 (không nói 冷有点儿 như “lạnh một chút”).'},
+  {pre:'“你觉得这个饭店的菜怎么样？” — “',blank:'还',post:'可以，这儿的鱼很好吃。”',hint:'(cũng, tạm)',ans:'还',exp:'还可以 = tạm được, cũng được (không xuất sắc nhưng không tệ).'},
+  {pre:'“你中午吃了什么？” — “吃了米饭，',blank:'还',post:'吃了鱼。”',hint:'(còn, thêm)',ans:'还',exp:'还 + động từ = còn … nữa (bổ sung thêm việc khác); 还 đứng trước động từ.'},
+  {pre:'Có người hỏi bạn: “你认识李月吗？” — “认识，我',blank:'就',post:'是李月！”',hint:'(chính)',ans:'就',exp:'就是 = chính là, nhấn mạnh: 我就是李月 = tôi chính là Lý Nguyệt.'},
+  {pre:'“请问，商店在哪儿？” — “',blank:'就',post:'在前面，医院旁边。”',hint:'(ngay)',ans:'就',exp:'就在 + nơi = ở ngay …, nhấn mạnh rất gần: 就在前面.'},
+  {pre:'Tối nay có bạn đến nhà ăn cơm: “晚上朋友来我家吃饭，我要',blank:'准备',post:'很多菜。”',hint:'(chuẩn bị)',ans:'准备',exp:'准备 + việc / đồ = chuẩn bị …: 准备很多菜; 要 ở đây = phải.'},
+  {pre:'“你买了几',blank:'件',post:'衣服？” — “三件，都很漂亮。”',hint:'(chiếc — lượng từ của áo)',ans:'件',exp:'Quần áo dùng lượng từ 件: 一件衣服, 几件衣服 (không dùng 个).'},
+  {pre:'“你的汉语',blank:'不错',post:'！” — “谢谢，我每天都学习。”',hint:'(khá tốt)',ans:'不错',exp:'不错 = khá tốt, được đấy — lời khen nhẹ nhàng; trước 不错 không cần 是.'},
+  {pre:'“明天有',blank:'考试',post:'，晚上我在家学习。”',hint:'(kỳ thi, bài thi)',ans:'考试',exp:'考试 vừa là danh từ (有考试 = có bài thi) vừa là động từ (明天考试 = mai thi).'},
+  {pre:'“你为什么不喝咖啡？” — “我觉得喝咖啡',blank:'对',post:'身体不好。”',hint:'(đối với)',ans:'对',exp:'对 + đối tượng + 好 / 不好 = tốt / không tốt cho …: 对身体不好.'},
+  {pre:'“你什么时候给妈妈打电话？” — “晚上回家',blank:'以后',post:'打。”',hint:'(sau khi)',ans:'以后',exp:'Sự việc + 以后 = sau khi …: 回家以后; 以后 đứng SAU sự việc (khác tiếng Việt).'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3b · SẮP XẾP
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng 就 / 还 / 有点儿
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','在','准备','明天','的','考试','。'],ans:'我在准备明天的考试。',audio:'我在准备明天的考试。'},
-  {words:['这件','衣服','颜色','还','可以','。'],ans:'这件衣服颜色还可以。',audio:'这件衣服颜色还可以。'},
-  {words:['我','有点儿','累','。'],ans:'我有点儿累。',audio:'我有点儿累。'},
-  {words:['那','就','买','这件','小','的','吧','。'],ans:'那就买这件小的吧。',audio:'那就买这件小的吧。'},
-  {words:['考试','以后','我们','去','喝','咖啡','。'],ans:'考试以后我们去喝咖啡。',audio:'考试以后我们去喝咖啡。'},
-  {words:['这个','字','是','什么','意思','？'],ans:'这个字是什么意思？',audio:'这个字是什么意思？'},
+  {words:['他','就','在','外面','，','你','去','看','一下','吧','。'],ans:'他就在外面，你去看一下吧。',audio:'他就在外面，你去看一下吧。'},
+  {words:['这','个','房间','有点儿','热','，','我们','去','外面','吧','。'],ans:'这个房间有点儿热，我们去外面吧。',audio:'这个房间有点儿热，我们去外面吧。'},
+  {words:['那','我们','就','星期六','去','吧','。'],ans:'那我们就星期六去吧。',audio:'那我们就星期六去吧。'},
+  {words:['我','觉得','这','件','衣服','还','可以','。'],ans:'我觉得这件衣服还可以。',audio:'我觉得这件衣服还可以。'},
+  {words:['多','吃','水果','对','身体','好','。'],ans:'多吃水果对身体好。',audio:'多吃水果对身体好。'},
+  {words:['我','准备','明天','下午','去','买','鱼','。'],ans:'我准备明天下午去买鱼。',audio:'我准备明天下午去买鱼。',alt:['明天下午我准备去买鱼。']},
+  {words:['你','说','的','是','什么','意思','？'],ans:'你说的是什么意思？',audio:'你说的是什么意思？'},
+  {words:['我','可以','在','这儿','喝','咖啡','吗','？'],ans:'我可以在这儿喝咖啡吗？',audio:'我可以在这儿喝咖啡吗？'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3c · SỬA LỖI SAI
+// PHẦN 3c · SỬA LỖI SAI — lỗi học sinh Việt hay mắc
+// (有点儿 đặt sau / dùng với ý tốt, 还可以 đảo, 还 đặt sai, 就是 / 就在 đặt sai, 对…好 đặt sau, 以后 đặt trước, lượng từ 件)
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'我累有点儿。',
-   opts:['我有点儿累。','我点儿有累。','有点儿我累。','我累点儿有。'],ans:0,
-   exp:'有点儿 đứng NGAY TRƯỚC tính từ/động từ mang nghĩa tiêu cực nhẹ, không đặt sau như "một chút" trong tiếng Việt.'},
-  {wrong:'颜色可以还。',
-   opts:['颜色还可以。','可以颜色还。','还可以颜色。','颜色可以还了。'],ans:0,
-   exp:'还可以 là cụm cố định "tạm được", 还 luôn đứng TRƯỚC 可以.'},
-  {wrong:'买就这件吧。',
-   opts:['就买这件吧。','买这件就吧。','这件就买吧。','买这就件吧。'],ans:0,
-   exp:'就 (khi mang nghĩa quyết định) đứng TRƯỚC động từ chính, không đặt sau như "thì" trong tiếng Việt.'},
-  {wrong:'以后考试，我们去喝咖啡。',
-   opts:['考试以后，我们去喝咖啡。','以后考试，我们去喝咖啡。','我们以后考试去喝咖啡。','考试我们以后去喝咖啡。'],ans:0,
-   exp:'以后 đứng SAU sự việc mốc thời gian: 考试以后 = sau khi thi, không đặt trước.'},
-  {wrong:'这个字什么是意思？',
-   opts:['这个字是什么意思？','这个字什么是意思？','什么字这个是意思？','这个是字什么意思？'],ans:0,
-   exp:'什么意思 là cụm cố định, không tách rời: Chủ ngữ + 是 + 什么意思？'},
+  {wrong:'我的房间小有点儿。',
+   opts:['我的房间有点儿小。','我的房间一点儿小。','我的房间很有点儿小。','我的房间小一点儿有。'],ans:0,
+   exp:'有点儿 đứng TRƯỚC tính từ: 有点儿小; 一点儿 không đứng trước tính từ, 有点儿 không đi cùng 很.'},
+  {wrong:'今天天气有点儿好。（ý: hôm nay trời khá đẹp）',
+   opts:['今天天气不错一点儿。','今天天气还不错。','今天天气好有点儿。','今天天气有点儿不错。'],ans:1,
+   exp:'有点儿 chỉ dùng cho điều KHÔNG như ý (有点儿冷, 有点儿累); khen nhẹ thì dùng 还不错 / 还可以.'},
+  {wrong:'这儿的咖啡可以还。',
+   opts:['这儿的咖啡很还可以。','还这儿的咖啡可以。','这儿的咖啡还可以。','这儿的咖啡还很可以。'],ans:2,
+   exp:'还可以 = tạm được, 还 luôn đứng TRƯỚC 可以 và không thêm 很.'},
+  {wrong:'我买了苹果，买了还牛奶。',
+   opts:['我还买了苹果，牛奶。','还我买了苹果，买了牛奶。','我买了苹果，买了牛奶还。','我买了苹果，还买了牛奶。'],ans:3,
+   exp:'“Còn mua thêm …” = 还 + động từ: 还买了牛奶; 还 đứng trước động từ, không đứng sau.'},
+  {wrong:'那个高高的人是就我丈夫。',
+   opts:['那个高高的人就是我丈夫。','就那个高高的人是我丈夫。','那个高高的人是我丈夫就。','那个高高的人就我丈夫是。'],ans:0,
+   exp:'“Chính là” = 就是, 就 đứng TRƯỚC 是: 那个人就是我丈夫.'},
+  {wrong:'我家在就医院旁边。',
+   opts:['我家在医院就旁边。','我家就在医院旁边。','就我家在医院旁边。','我家在医院旁边就。'],ans:1,
+   exp:'“Ở ngay cạnh …” = 就在 + nơi: 就 đứng TRƯỚC 在, không chen vào giữa 在 và nơi chốn.'},
+  {wrong:'每天跑步好对身体。',
+   opts:['每天跑步身体对很好。','每天跑步对很好身体。','每天跑步对身体很好。','对身体每天跑步很好。'],ans:2,
+   exp:'“Tốt cho sức khoẻ” = 对身体很好: 对 + đối tượng đứng TRƯỚC tính từ, không đặt sau như tiếng Việt.'},
+  {wrong:'以后吃饭，我们去看电影吧。（ý: ăn cơm xong）',
+   opts:['吃饭的以后，我们去看电影吧。','我们以后吃饭去看电影吧。','以后吃饭了，我们去看电影吧。','吃饭以后，我们去看电影吧。'],ans:3,
+   exp:'“Sau khi ăn” = 吃饭以后: sự việc đứng TRƯỚC, 以后 đứng SAU; không thêm 的 như 的时候.'},
+  {wrong:'我买了两个衣服。',
+   opts:['我买了两件衣服。','我买了二件衣服。','我买了衣服两件。','我买了两件的衣服。'],ans:0,
+   exp:'Quần áo dùng lượng từ 件; trước lượng từ dùng 两 (không dùng 二); số + lượng từ đứng trước danh từ, không thêm 的.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 // Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
 // lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
 // dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
@@ -1508,119 +1516,118 @@ var speakingData = {
   intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 5. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Buổi tối, người nhà hỏi bạn muốn ăn ở đâu.',
-      q_zh: '晚上我们去饭馆吃饭还是在家吃？你准备做什么菜？',
-      q_py: 'Wǎnshang wǒmen qù fànguǎn chīfàn háishi zài jiā chī? Nǐ zhǔnbèi zuò shénme cài?',
-      q_vn: 'Tối nay chúng ta đi nhà hàng ăn hay ăn ở nhà? Bạn định nấu món gì?',
-      grammar: { label: '我想在家吃 + 就做…吧', any: ['就', '想'] },
+      situation: 'Buổi tối, người nhà hỏi bạn muốn ra ngoài ăn hay ăn ở nhà.',
+      q_zh: '晚上我们去外面吃饭吗？你想吃什么？',
+      q_py: 'Wǎnshang wǒmen qù wàimiàn chīfàn ma? Nǐ xiǎng chī shénme?',
+      q_vn: 'Tối nay mình ra ngoài ăn không? Bạn muốn ăn gì?',
+      grammar: { label: '就 + quyết định (就在家吃吧 / 就吃鱼吧)', any: ['就'] },
       need: [
-        { label: 'Chọn ăn ở nhà hay ra ngoài', any: ['家', '外面', '饭馆', '饭店'] },
-        { label: 'Nói món định nấu / định ăn', any: ['鱼', '菜', '面条', '羊肉', '鸡蛋', '米饭', '汤', '肉'] },
-        { label: 'Dùng 准备 hoặc 想', any: ['准备', '想', '要'] }
+        { label: 'Nói ăn ở đâu (外面 / 在家 / 饭店)', any: ['外面', '在家', '家里', '饭店', '饭馆'] },
+        { label: 'Nói món muốn ăn', any: ['鱼', '菜', '米饭', '面', '水果', '肉', '饺子', '鸡'] },
+        { label: 'Nêu lý do (有点儿累 / 有点儿冷…)', any: ['有点儿', '累', '冷', '热', '忙', '下雨', '因为'] }
       ],
-      bonus: { label: 'Dùng 就…吧 để chốt phương án', any: ['就', '吧'] },
-      vocab: ['外面', '准备', '就', '鱼'],
+      bonus: { label: 'Dùng 准备', any: ['准备'] },
+      vocab: ['外面', '就', '鱼', '有点儿'],
       minLen: 12,
-      sample: '我不想去外面吃，我想在家吃。就做你爱吃的鱼吧。',
-      sample_py: 'Wǒ bù xiǎng qù wàimian chī, wǒ xiǎng zài jiā chī. Jiù zuò nǐ ài chī de yú ba.',
-      sample_vn: 'Tôi không muốn ra ngoài ăn, tôi muốn ăn ở nhà. Cứ nấu món cá bạn thích đi.',
-      tip: '就…吧 dùng khi chốt nhanh một phương án: 就买这件吧、就做鱼吧.'
+      sample: '我今天有点儿累，不想去外面吃。我们就在家吃鱼吧。',
+      sample_py: 'Wǒ jīntiān yǒudiǎnr lèi, bù xiǎng qù wàimiàn chī. Wǒmen jiù zài jiā chī yú ba.',
+      sample_vn: 'Hôm nay mình hơi mệt, không muốn ra ngoài ăn. Mình cứ ăn cá ở nhà đi.',
+      tip: '就…吧 dùng để chốt nhanh một phương án; 有点儿 + tính từ để nêu lý do không như ý.'
     },
     {
-      situation: 'Trong cửa hàng, bạn nhờ bạn đi cùng cho ý kiến về chiếc áo.',
-      q_zh: '帮我看一下这件衣服怎么样？颜色和大小可以吗？',
-      q_py: 'Bāng wǒ kàn yíxià zhè jiàn yīfu zěnmeyàng? Yánsè hé dàxiǎo kěyǐ ma?',
-      q_vn: 'Xem giúp tôi chiếc áo này thế nào? Màu và cỡ được không?',
-      grammar: { label: '颜色还可以，就是有点儿…', any: ['还', '可以', '不错', '有点儿'] },
+      situation: 'Trong cửa hàng, bạn của bạn thử áo và hỏi ý kiến bạn.',
+      q_zh: '你看，这件衣服怎么样？',
+      q_py: 'Nǐ kàn, zhè jiàn yīfu zěnmeyàng?',
+      q_vn: 'Bạn xem, chiếc áo này thế nào?',
+      grammar: { label: '有点儿 + tính từ / 还可以 / 不错', any: ['有点儿', '还可以', '不错'] },
       need: [
-        { label: 'Nhận xét về màu hoặc cỡ', any: ['颜色', '大', '小', '长', '短', '好看'] },
-        { label: 'Dùng 还可以 / 不错 / 有点儿', any: ['还可以', '不错', '有点儿', '可以'] },
-        { label: 'Đưa ra kết luận mua hay không', any: ['买', '就买', '不买', '换'] }
+        { label: 'Nhận xét màu sắc hoặc kiểu áo', any: ['颜色', '漂亮', '好看', '不错', '还可以'] },
+        { label: 'Nói điểm chưa ổn (有点儿大 / 有点儿长…)', any: ['有点儿', '大', '小', '长'] },
+        { label: 'Gợi ý (看看… / 买… / 那件…)', any: ['看', '买', '那件', '这件', '试'] }
       ],
-      bonus: { label: 'Dùng 就买这件吧 để chốt', any: ['就买', '就'] },
-      vocab: ['件', '还', '可以', '不错'],
+      bonus: { label: 'Chốt: 就买这件吧 / 就…', any: ['就'] },
+      vocab: ['件', '不错', '有点儿', '颜色'],
       minLen: 12,
-      sample: '颜色还可以，就是有点儿大。那件小的不错，就买这件吧。',
-      sample_py: 'Yánsè hái kěyǐ, jiù shì yǒudiǎnr dà. Nà jiàn xiǎo de búcuò, jiù mǎi zhè jiàn ba.',
-      sample_vn: 'Màu thì tạm được, chỉ hơi rộng. Chiếc nhỏ kia khá đẹp, mua chiếc này đi.',
-      tip: '有点儿 + tính từ mang ý chê nhẹ: 有点儿大、有点儿贵.'
+      sample: '这件衣服不错，我觉得有点儿长，你看一下那件吧。',
+      sample_py: 'Zhè jiàn yīfu búcuò, wǒ juéde yǒudiǎnr cháng, nǐ kàn yíxià nà jiàn ba.',
+      sample_vn: 'Chiếc áo này được đấy, mình thấy hơi dài, bạn xem thử chiếc kia đi.',
+      tip: '有点儿 + tính từ mang ý chê nhẹ: 有点儿长, 有点儿大; khen nhẹ: 不错, 还可以.'
     },
     {
       situation: 'Sau kỳ thi, bạn học hỏi bạn làm bài thế nào.',
-      q_zh: '昨天的考试你觉得怎么样？听说读写哪个好？',
-      q_py: 'Zuótiān de kǎoshì nǐ juéde zěnmeyàng? Tīng shuō dú xiě nǎge hǎo?',
-      q_vn: 'Bài thi hôm qua bạn thấy thế nào? Nghe nói đọc viết, phần nào tốt?',
-      grammar: { label: '…还可以，…不好', any: ['还可以', '不好', '可以'] },
+      q_zh: '昨天的考试你觉得怎么样？',
+      q_py: 'Zuótiān de kǎoshì nǐ juéde zěnmeyàng?',
+      q_vn: 'Bạn thấy bài thi hôm qua thế nào?',
+      grammar: { label: '还可以 / 不错 / 有点儿…', any: ['还可以', '还', '不错', '有点儿'] },
       need: [
-        { label: 'Nhận xét chung về bài thi', any: ['还可以', '不错', '难', '不好', '好'] },
-        { label: 'Nói kỹ năng nào tốt / chưa tốt', any: ['听', '说', '读', '写', '字'] },
-        { label: 'Dùng 觉得', any: ['觉得', '我觉得'] }
+        { label: 'Đánh giá chung về bài thi', any: ['考试', '还可以', '不错', '好', '不好'] },
+        { label: 'Nói phần nào tốt / chưa tốt (听 / 说 / 读 / 写)', any: ['听', '说', '读', '写', '汉字', '字'] },
+        { label: 'Dùng 意思 / 知道', any: ['意思', '知道', '认识'] }
       ],
-      bonus: { label: 'Nói thêm về 意思 của chữ chưa hiểu', any: ['意思', '不知道', '不懂'] },
-      vocab: ['考试', '意思', '还', '可以'],
+      bonus: { label: 'Nói dự định 以后 (以后要多…)', any: ['以后', '要多', '多'] },
+      vocab: ['考试', '还', '意思'],
       minLen: 14,
-      sample: '我觉得听和说还可以，读和写不好，很多字我都不知道是什么意思。',
-      sample_py: 'Wǒ juéde tīng hé shuō hái kěyǐ, dú hé xiě bù hǎo, hěn duō zì wǒ dōu bù zhīdào shì shénme yìsi.',
-      sample_vn: 'Tôi thấy nghe và nói thì tạm được, đọc và viết chưa tốt, nhiều chữ tôi không biết nghĩa là gì.',
-      tip: '还可以 = tạm được; 是什么意思 = có nghĩa là gì.'
+      sample: '我觉得考试还可以，听和说不错，有几个字我不知道是什么意思。',
+      sample_py: 'Wǒ juéde kǎoshì hái kěyǐ, tīng hé shuō búcuò, yǒu jǐ ge zì wǒ bù zhīdào shì shénme yìsi.',
+      sample_vn: 'Mình thấy bài thi tạm được, nghe và nói khá tốt, có mấy chữ mình không biết nghĩa là gì.',
+      tip: '还可以 = tạm được; 不知道是什么意思 = không biết nghĩa là gì.'
     },
     {
-      situation: 'Giờ nghỉ ở công ty, đồng nghiệp mời bạn uống cà phê.',
-      q_zh: '休息一下吧，喝咖啡吗？你一天喝几杯？',
-      q_py: 'Xiūxi yíxià ba, hē kāfēi ma? Nǐ yì tiān hē jǐ bēi?',
-      q_vn: 'Nghỉ một chút nhé, uống cà phê không? Một ngày bạn uống mấy cốc?',
-      grammar: { label: '喝多了对身体不好 + 以后我少喝一点儿', any: ['对', '以后'] },
+      situation: 'Giờ nghỉ, đồng nghiệp hỏi thói quen uống cà phê của bạn.',
+      q_zh: '你每天喝咖啡吗？喝几杯？什么时候喝？',
+      q_py: 'Nǐ měi tiān hē kāfēi ma? Hē jǐ bēi? Shénme shíhou hē?',
+      q_vn: 'Bạn có uống cà phê hằng ngày không? Uống mấy cốc? Uống lúc nào?',
+      grammar: { label: 'số + 杯 + 咖啡 / 对身体…', any: ['杯', '对'] },
       need: [
-        { label: 'Trả lời có uống hay không', any: ['喝', '不喝', '已经'] },
-        { label: 'Nói số lượng (一杯 / 两杯)', any: ['杯', '一天', '每天'] },
-        { label: 'Dùng 以后 nói dự định', any: ['以后', '以后我'] }
+        { label: 'Nói có uống hay không (喝 / 不喝)', any: ['喝', '不喝'] },
+        { label: 'Nói thời gian uống', any: ['早上', '上午', '下午', '中午', '晚上', '每天', '时候'] },
+        { label: 'Nói ảnh hưởng (对身体 / 睡觉…)', any: ['对', '身体', '睡觉', '不好', '好'] }
       ],
-      bonus: { label: 'Dùng 对身体不好 để nêu lý do', any: ['对身体', '身体', '不好'] },
-      vocab: ['咖啡', '对', '以后', '休息'],
+      bonus: { label: 'Dùng 以后 để nói dự định', any: ['以后'] },
+      vocab: ['咖啡', '对', '以后'],
       minLen: 12,
-      sample: '不喝了，我已经喝两杯了。咖啡喝多了对身体不好，以后我每天喝一杯。',
-      sample_py: 'Bù hē le, wǒ yǐjīng hē liǎng bēi le. Kāfēi hē duōle duì shēntǐ bù hǎo, yǐhòu wǒ měi tiān hē yì bēi.',
-      sample_vn: 'Thôi không uống nữa, tôi uống hai cốc rồi. Uống nhiều cà phê không tốt cho sức khoẻ, sau này mỗi ngày tôi uống một cốc.',
-      tip: '对 + đối tượng + 好/不好: 对身体好、对眼睛不好.'
+      sample: '我每天早上喝一杯咖啡，下午不喝，喝了晚上不能睡觉。',
+      sample_py: 'Wǒ měi tiān zǎoshang hē yì bēi kāfēi, xiàwǔ bù hē, hēle wǎnshang bù néng shuìjiào.',
+      sample_vn: 'Mỗi sáng tôi uống một cốc cà phê, buổi chiều thì không uống, uống vào tối không ngủ được.',
+      tip: 'Cốc cà phê dùng lượng từ 杯: 一杯咖啡; “tốt / không tốt cho …” = 对 + … + 好 / 不好.'
     },
     {
-      situation: 'Bạn của bạn đang phân vân giữa hai món đồ và hỏi ý kiến bạn.',
-      q_zh: '这两个你觉得哪个好？为什么？',
-      q_py: 'Zhè liǎng ge nǐ juéde nǎge hǎo? Wèi shénme?',
-      q_vn: 'Hai cái này bạn thấy cái nào tốt hơn? Vì sao?',
-      grammar: { label: '我觉得…不错，就买…吧', any: ['觉得'] },
+      situation: 'Bạn bè hỏi kế hoạch của bạn sau kỳ thi.',
+      q_zh: '考试以后你准备做什么？',
+      q_py: 'Kǎoshì yǐhòu nǐ zhǔnbèi zuò shénme?',
+      q_vn: 'Thi xong bạn định làm gì?',
+      grammar: { label: '……以后，我准备……', any: ['以后', '准备'] },
       need: [
-        { label: 'Chọn một cái', any: ['这个', '那个', '第一', '第二', '大', '小', '红', '白', '黑'] },
-        { label: 'Nêu lý do (颜色 / 价格 / 大小)', any: ['颜色', '便宜', '贵', '大', '小', '好看', '不错', '有点儿'] },
-        { label: 'Dùng 觉得 để nêu ý kiến', any: ['觉得'] }
+        { label: 'Nói việc định làm', any: ['去', '买', '看', '旅游', '运动', '休息', '吃', '踢', '跑步', '睡觉'] },
+        { label: 'Nói làm cùng ai / ở đâu', any: ['和', '一起', '朋友', '家', '北京', '外面', '在'] },
+        { label: 'Dùng 还 để nói thêm việc khác', any: ['还'] }
       ],
-      bonus: { label: 'Chốt bằng 就…吧', any: ['就', '吧'] },
-      vocab: ['不错', '可以', '就'],
-      minLen: 12,
-      sample: '我觉得这个不错，颜色好看，也不太贵。就买这个吧。',
-      sample_py: 'Wǒ juéde zhège búcuò, yánsè hǎokàn, yě bú tài guì. Jiù mǎi zhège ba.',
-      sample_vn: 'Tôi thấy cái này khá ổn, màu đẹp, cũng không đắt lắm. Mua cái này đi.',
-      tip: '不太 + tính từ = không… lắm: 不太贵、不太大.'
+      bonus: { label: 'Dùng 就 / 有点儿', any: ['就', '有点儿'] },
+      vocab: ['考试', '以后', '准备', '还'],
+      minLen: 14,
+      sample: '考试以后我准备和朋友去北京旅游，还想买几件新衣服。',
+      sample_py: 'Kǎoshì yǐhòu wǒ zhǔnbèi hé péngyou qù Běijīng lǚyóu, hái xiǎng mǎi jǐ jiàn xīn yīfu.',
+      sample_vn: 'Thi xong tôi định cùng bạn đi Bắc Kinh du lịch, còn muốn mua mấy chiếc áo mới.',
+      tip: 'Sự việc + 以后 = sau khi …; 还 + động từ để thêm một việc nữa.'
     }
   ]
 };
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — dùng từ bài 5 + ôn lại từ bài 1-4 và HSK1
+// LUYỆN DỊCH — câu mới, dùng từ bài 5 + ôn bài 1–4 và HSK1
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cà phê ở đây ngon đấy, vậy uống cà phê đi.', zh:'这儿的咖啡不错，就喝咖啡吧。', py:'Zhèr de kāfēi búcuò, jiù hē kāfēi ba.'},
-  {vi:'Sức khỏe bạn thế nào? — Cũng tạm ổn.', zh:'你身体怎么样？还好。', py:'Nǐ shēntǐ zěnmeyàng? Hái hǎo.'},
-  {vi:'Hôm nay thời tiết hơi lạnh.', zh:'今天天气有点儿冷。', py:'Jīntiān tiānqì yǒudiǎnr lěng.'},
-  {vi:'Bạn không muốn đi thì ở nhà nghỉ ngơi đi.', zh:'你不想去，就在家休息吧。', py:'Nǐ bù xiǎng qù, jiù zài jiā xiūxi ba.'},
+  {vi:'Hôm nay trời hơi nóng, tôi không muốn đi đá bóng.', zh:'今天有点儿热，我不想去踢足球。', py:'Jīntiān yǒudiǎnr rè, wǒ bù xiǎng qù tī zúqiú.'},
+  {vi:'Thầy Vương chính là thầy dạy tiếng Trung của tôi.', zh:'王老师就是我的汉语老师。', py:'Wáng lǎoshī jiù shì wǒ de Hànyǔ lǎoshī.'},
+  {vi:'Sau này tôi muốn làm việc ở Trung Quốc.', zh:'以后我想在中国工作。', py:'Yǐhòu wǒ xiǎng zài Zhōngguó gōngzuò.'},
+  {vi:'Cá bạn nấu khá ngon, tôi còn muốn ăn thêm một chút.', zh:'你做的鱼不错，我还想吃一点儿。', py:'Nǐ zuò de yú búcuò, wǒ hái xiǎng chī yìdiǎnr.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Bộ quần áo này không tồi, bạn thấy thế nào?', zh:'这件衣服不错，你觉得怎么样？', py:'Zhè jiàn yīfu búcuò, nǐ juéde zěnmeyàng?'},
-  {vi:'Thời tiết hơi lạnh, chúng ta cứ ở nhà uống cà phê đi.', zh:'天气有点儿冷，我们就在家喝咖啡吧。', py:'Tiānqì yǒudiǎnr lěng, wǒmen jiù zài jiā hē kāfēi ba.'},
-  {vi:'Sức khỏe bạn vẫn ổn chứ? Cũng tạm được.', zh:'你身体还好吗？还可以。', py:'Nǐ shēntǐ hái hǎo ma? Hái kěyǐ.'},
-  {vi:'Kỳ thi lần này cũng khá tốt.', zh:'这次考试还不错。', py:'Zhè cì kǎoshì hái búcuò.'},
+  {vi:'Tôi đã chuẩn bị rất nhiều hoa quả, các bạn đến ăn đi.', zh:'我准备了很多水果，你们来吃吧。', py:'Wǒ zhǔnbèile hěn duō shuǐguǒ, nǐmen lái chī ba.'},
+  {vi:'Tôi không biết nghĩa của chữ này, chúng ta hỏi thầy giáo một chút đi.', zh:'这个字的意思我不知道，我们问一下老师吧。', py:'Zhège zì de yìsi wǒ bù zhīdào, wǒmen wèn yíxià lǎoshī ba.'},
+  {vi:'Bên ngoài mưa rồi, bạn có thể đi taxi về.', zh:'外面下雨了，你可以坐出租车回去。', py:'Wàimiàn xià yǔ le, nǐ kěyǐ zuò chūzūchē huíqu.'},
 ];

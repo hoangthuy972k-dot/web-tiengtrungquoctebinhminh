@@ -1572,15 +1572,16 @@ var dialogData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 1 · GHÉP TỪ (Collocation)
+// PHẦN 1 · GHÉP TỪ (Collocation) — ghép hai nửa thành cụm dùng được ngay
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'买',right:'手表'},
   {left:'送',right:'牛奶'},
-  {left:'什么',right:'颜色'},
-  {left:'旁边',right:'房间'},
-  {left:'多少',right:'钱'},
-  {left:'真',right:'漂亮'},
+  {left:'这块手表',right:'多少钱？'},
+  {left:'这是谁',right:'的房间？'},
+  {left:'我丈夫坐在',right:'我旁边'},
+  {left:'这些水果是',right:'今天早上买的'},
+  {left:'你看一下',right:'这个颜色'},
 ];
 
 // ══════════════════════════════════════════
@@ -1642,67 +1643,70 @@ var listenData = {
 };
 
 // ══════════════════════════════════════════
-// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ở cửa hàng mua đồng hồ, hỏi màu
+// PHẦN 3a · ĐIỀN TỪ — mỗi câu một tình huống mới (cụm chữ 的 · V + 一下 · 真 + adj + từ mới bài 3, ôn bài 1–2 và HSK1)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你好，这块手表',blank:'多',post:'少钱？',hint:'(hỏi giá: bao nhiêu tiền?)',ans:'多',exp:'多少钱 = bao nhiêu tiền, là cách hỏi giá cố định.'},
-  {pre:'3000',blank:'多',post:'块，不贵。',hint:'(hơn — ôn Bài 1)',ans:'多',exp:'3000 là số tròn nên 多 đứng sau số, trước lượng từ 块: 3000多块 = hơn 3000 đồng.'},
-  {pre:'这块手表真',blank:'漂亮',post:'！',hint:'(đẹp)',ans:'漂亮'},
-  {pre:'是啊，这是我',blank:'昨天',post:'买的。',hint:'(hôm qua)',ans:'昨天',exp:'的 sau động từ để danh hoá cả cụm "hành động + thời gian".'},
-  {pre:'这是谁',blank:'的',post:'房间？',hint:'(trợ từ sở hữu/danh hoá)',ans:'的',exp:'的 dùng để danh hoá: 谁的 = của ai.'},
-  {pre:'是我',blank:'丈夫',post:'的房间。',hint:'(chồng)',ans:'丈夫'},
-  {pre:'你',blank:'要',post:'看一下这个颜色。',hint:'(hãy — ôn Bài 1)',ans:'要'},
-  {pre:'我',blank:'觉得',post:'这个颜色很漂亮。',hint:'(cảm thấy — ôn Bài 1)',ans:'觉得'},
+  {pre:'“这个杯子是你的吗？” — “是我女儿',blank:'的',post:'，她今天早上喝了牛奶。”',hint:'(của — không cần nhắc lại danh từ)',ans:'的',exp:'Người/đại từ + 的 thay cho cả cụm danh từ: 我女儿的 = (cái cốc) của con gái tôi.'},
+  {pre:'Có người gọi cửa từ sáng sớm: “谁来了？” — “是',blank:'送',post:'报纸的，你听，他在叫我们。”',hint:'(đưa, giao)',ans:'送',exp:'送报纸的 = người đưa báo: động từ + tân ngữ + 的 chỉ người làm việc đó.'},
+  {pre:'“你会写我的名字吗？” — “我写',blank:'一下',post:'，你看看。”',hint:'(một chút, thử)',ans:'一下',exp:'一下 đứng NGAY SAU động từ, làm câu nhẹ nhàng: 写一下 = viết thử một chút.'},
+  {pre:'Bạn nhìn ảnh con gái của đồng nghiệp: “这是你女儿？她的眼睛',blank:'真',post:'大！”',hint:'(thật)',ans:'真',exp:'真 + tính từ để cảm thán: 真大 = to thật; 真 đứng trước tính từ, không thêm 很.'},
+  {pre:'“这些牛奶多少钱？” — “二十',blank:'块',post:'。”',hint:'(đồng — đơn vị tiền)',ans:'块',exp:'Nói giá trong khẩu ngữ: số + 块 (+ 钱): 二十块 = hai mươi đồng.'},
+  {pre:'“你知道现在几点吗？” — “我看一下',blank:'手表',post:'，三点二十。”',hint:'(đồng hồ đeo tay)',ans:'手表',exp:'看一下手表 = xem đồng hồ một chút; 一下 đặt sau động từ, tân ngữ đứng sau 一下.'},
+  {pre:'Ở cửa hàng hoa quả, bạn hỏi người đi cùng: “你有',blank:'钱',post:'吗？我想买一个苹果。” — “有，给你十块。”',hint:'(tiền)',ans:'钱',exp:'有钱 / 没有钱 = có / không có tiền; 钱 là danh từ, đứng sau 有.'},
+  {pre:'Mẹ hỏi: “这个牛奶能喝吗？” — “能，是',blank:'昨天',post:'买的。”',hint:'(hôm qua)',ans:'昨天',exp:'昨天买的 = (sữa) mua hôm qua; từ chỉ thời gian đứng trước động từ.'},
+  {pre:'Giới thiệu với đồng nghiệp: “这是我',blank:'丈夫',post:'，他在医院工作，是医生。”',hint:'(chồng)',ans:'丈夫',exp:'丈夫 = chồng; 我丈夫 không cần 的 vì là người thân.'},
+  {pre:'“你的椅子在哪儿？” — “在桌子',blank:'旁边',post:'，你看见了吗？”',hint:'(bên cạnh)',ans:'旁边',exp:'Vật mốc + 旁边 = bên cạnh vật đó: 桌子旁边 (không nói 旁边桌子 như tiếng Việt).'},
+  {pre:'“你觉得这个杯子的',blank:'颜色',post:'怎么样？” — “很漂亮，我也想买一个。”',hint:'(màu sắc)',ans:'颜色',exp:'颜色 = màu sắc; hỏi ý kiến: 你觉得……怎么样？ (ôn bài 1).'},
+  {pre:'Bạn mới chuyển vào ký túc xá, bạn cũ hỏi: “你的',blank:'房间',post:'大不大？” — “不大，有一个桌子、一个椅子。”',hint:'(phòng)',ans:'房间',exp:'房间 = căn phòng; hỏi 大不大 (tính từ khẳng định + phủ định) thì không thêm 吗.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3b · SẮP XẾP
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng cụm chữ 的 / 一下 / 真
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['这','块','手表','是','谁','的','？'],ans:'这块手表是谁的？',audio:'这块手表是谁的？'},
-  {words:['我','昨天','买','了','一','块','新','手表','。'],ans:'我昨天买了一块新手表。',audio:'我昨天买了一块新手表。'},
-  {words:['你','看','一下','这个','颜色','。'],ans:'你看一下这个颜色。',audio:'你看一下这个颜色。'},
-  {words:['这个','房间','真','漂亮','。'],ans:'这个房间真漂亮。',audio:'这个房间真漂亮。'},
-  {words:['谁','送','来','了','牛奶','？'],ans:'谁送来了牛奶？',audio:'谁送来了牛奶？'},
-  {words:['我','觉得','这个','颜色','最','漂亮','。'],ans:'我觉得这个颜色最漂亮。',audio:'我觉得这个颜色最漂亮。'},
+  {words:['这','本','书','是','我','的','，','那','本','是','我','同学','的','。'],ans:'这本书是我的，那本是我同学的。',audio:'这本书是我的，那本是我同学的。'},
+  {words:['我们','在','这儿','休息','一下','吧','。'],ans:'我们在这儿休息一下吧。',audio:'我们在这儿休息一下吧。'},
+  {words:['你','家','的','小猫','真','漂亮','！'],ans:'你家的小猫真漂亮！',audio:'你家的小猫真漂亮！'},
+  {words:['今天','送','报纸','的','没有','来','。'],ans:'今天送报纸的没有来。',audio:'今天送报纸的没有来。',alt:['送报纸的今天没有来。']},
+  {words:['我','丈夫','昨天','买','了','一','块','新','手表','。'],ans:'我丈夫昨天买了一块新手表。',audio:'我丈夫昨天买了一块新手表。',alt:['昨天我丈夫买了一块新手表。']},
+  {words:['桌子','上','的','牛奶','是','谁','的','？'],ans:'桌子上的牛奶是谁的？',audio:'桌子上的牛奶是谁的？'},
+  {words:['我','的','房间','在','妈妈','的','房间','旁边','。'],ans:'我的房间在妈妈的房间旁边。',audio:'我的房间在妈妈的房间旁边。'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3c · SỬA LỖI SAI
+// PHẦN 3c · SỬA LỖI SAI — lỗi học sinh Việt hay mắc
+// (thiếu 的 khi nói “của ai”, 一下 đặt trước động từ, 真 đặt sau tính từ, 吗 với 多少, “người giao sữa” dịch từng chữ, 旁边 đặt trước...)
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'这是手表谁的？',
-   opts:['这块手表是谁的？','这是谁手表的？','手表这是谁的？','这谁是手表的？'],ans:0,
-   exp:'Cấu trúc hỏi sở hữu: Danh từ + 是 + 谁 + 的？'},
-  {wrong:'我一下看。',
-   opts:['我看一下。','一下我看。','我一下看了。','看我一下。'],ans:0,
-   exp:'一下 luôn đứng NGAY SAU động từ, không đặt trước như "một chút" có thể đứng linh hoạt trong tiếng Việt.'},
-  {wrong:'漂亮真这个房间。',
-   opts:['这个房间真漂亮。','这个真房间漂亮。','真这个房间漂亮。','这个房间漂亮真。'],ans:0,
-   exp:'真 đứng NGAY TRƯỚC tính từ, không đặt sau như "đẹp thật" trong tiếng Việt.'},
-  {wrong:'这是我爸爸手表。',
-   opts:['这是我爸爸的手表。','这是我的爸爸手表。','这我爸爸是的手表。','这是的我爸爸手表。'],ans:0,
-   exp:'Khi nói "của ai", giữa danh từ sở hữu và vật phải có 的: 我爸爸的手表.'},
-  {wrong:'颜色什么这是？',
-   opts:['这是什么颜色？','什么这是颜色？','这什么是颜色？','是这什么颜色？'],ans:0,
-   exp:'什么 đứng NGAY TRƯỚC danh từ nó hỏi: 什么颜色, giống 什么时候, 什么运动.'},
+  {wrong:'那个杯子是我妈妈。（ý: cái cốc đó là của mẹ tôi）',
+   opts:['那个杯子是我妈妈的。','那个杯子是的我妈妈。','那个杯子的是我妈妈。','那个杯子是我的妈妈。'],ans:0,
+   exp:'“Là của mẹ tôi” = 是我妈妈的: 的 đứng sau người sở hữu và thay cho “cái cốc”; 是我的妈妈 lại thành “là mẹ của tôi”.'},
+  {wrong:'你一下看这本书。',
+   opts:['你看这本书一下。','你看一下这本书。','你看看一下这本书。','你一下看看这本书。'],ans:1,
+   exp:'一下 đứng ngay sau động từ, tân ngữ đứng sau: 看一下这本书; đã dùng 一下 thì không lặp động từ 看看.'},
+  {wrong:'你妈妈做的菜好吃真！',
+   opts:['你妈妈做的菜很真好吃！','你妈妈做的真菜好吃！','你妈妈做的菜真好吃！','你妈妈做菜的真好吃！'],ans:2,
+   exp:'真 đứng TRƯỚC tính từ (không đặt sau như “ngon thật”), không đi cùng 很: 真好吃.'},
+  {wrong:'你的电脑多少钱吗？',
+   opts:['你的电脑是多少钱吗？','你的电脑钱多少？','多少钱你的电脑吗？','你的电脑多少钱？'],ans:3,
+   exp:'多少钱 đã là câu hỏi nên không thêm 吗; không nói 钱多少 theo kiểu “giá bao nhiêu”.'},
+  {wrong:'送牛奶人来了。',
+   opts:['送牛奶的来了。','人送牛奶的来了。','牛奶送的来了。','送的牛奶来了。'],ans:0,
+   exp:'“Người giao sữa” = 送牛奶的 (động từ + tân ngữ + 的); 送的牛奶 lại là “sữa được giao”.'},
+  {wrong:'这是房间谁的？',
+   opts:['这是谁房间？','这是谁的房间？','这是房间的谁？','这是谁房间的？'],ans:1,
+   exp:'Người sở hữu + 的 đứng TRƯỚC danh từ: 谁的房间 (không đặt sau như “phòng của ai”), không bỏ 的.'},
+  {wrong:'学校在旁边医院。（ý: trường học ở cạnh bệnh viện）',
+   opts:['学校旁边在医院。','学校是旁边医院。','学校在医院旁边。','学校在旁边的医院。'],ans:2,
+   exp:'Vị trí = 在 + vật mốc + 旁边: 在医院旁边; 旁边 đứng sau vật mốc, khác trật tự tiếng Việt.'},
+  {wrong:'我不要这个大，我要那个小的。',
+   opts:['我不要这个大，我要那个小。','我不要大这个的，我要小那个的。','我不要这个是大的，我要那个是小的。','我不要这个大的，我要那个小的。'],ans:3,
+   exp:'Tính từ + 的 thay cho danh từ: 这个大的 = cái to này; bỏ 的 thì câu thiếu danh từ, không chèn 是 vào giữa.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 // Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
 // lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
 // dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
@@ -1712,118 +1716,117 @@ var speakingData = {
   tasks: [
     {
       situation: 'Bạn học khen đồng hồ của bạn và hỏi giá.',
-      q_zh: '这块手表是你的吗？多少钱买的？',
-      q_py: 'Zhè kuài shǒubiǎo shì nǐ de ma? Duōshao qián mǎi de?',
-      q_vn: 'Chiếc đồng hồ này của bạn à? Mua bao nhiêu tiền?',
-      grammar: { label: '是我的 / 是我爸爸的 + 多少块', any: ['的'] },
+      q_zh: '你的手表是新的吗？是你买的吗？',
+      q_py: 'Nǐ de shǒubiǎo shì xīn de ma? Shì nǐ mǎi de ma?',
+      q_vn: 'Đồng hồ của bạn mới à? Bạn tự mua à?',
+      grammar: { label: '是新的 / 是我的 / 是我爸爸的 (cụm chữ 的)', any: ['的'] },
       need: [
-        { label: 'Trả lời của ai (我的 / 我爸爸的)', any: ['我的', '爸爸', '妈妈', '哥哥', '姐姐', '朋友', '不是'] },
-        { label: 'Nói giá tiền (块)', any: ['块', '钱', '元'] },
-        { label: 'Dùng 买 để nói mua', any: ['买'] }
+        { label: 'Trả lời mới hay cũ / của ai', any: ['新的', '我的', '不是', '旧的', '爸爸', '妈妈', '丈夫', '朋友'] },
+        { label: 'Nói giá tiền (块)', any: ['块', '钱', '元', '不知道'] },
+        { label: 'Nói ai mua / ai tặng (买 / 送)', any: ['买', '送'] }
       ],
-      bonus: { label: 'Nói thêm thời gian mua (去年 / 昨天)', any: ['去年', '昨天', '上个月', '今年'] },
+      bonus: { label: 'Nói thêm thời gian (昨天 / 去年…)', any: ['去年', '昨天', '上个月', '今年', '星期'] },
       vocab: ['块', '手表', '钱', '买'],
       minLen: 12,
-      sample: '不是我的，是我爸爸的。三千多块钱买的。',
-      sample_py: 'Bú shì wǒ de, shì wǒ bàba de. Sānqiān duō kuài qián mǎi de.',
-      sample_vn: 'Không phải của tôi, là của bố tôi. Mua hơn ba nghìn tệ.',
-      tip: 'Nói sở hữu chỉ cần 是…的: 是我的、是我爸爸的; 块 là lượng từ của đồng hồ và cũng là đơn vị tiền.'
+      sample: '是新的，是我丈夫昨天送给我的，两千块。',
+      sample_py: 'Shì xīn de, shì wǒ zhàngfu zuótiān sòng gěi wǒ de, liǎngqiān kuài.',
+      sample_vn: 'Mới đấy, là chồng tôi tặng tôi hôm qua, hai nghìn tệ.',
+      tip: '是新的 = (cái) mới; 块 vừa là lượng từ của đồng hồ vừa là đơn vị tiền; số tròn + 多 + 块 = hơn … đồng.'
     },
     {
       situation: 'Bạn dẫn khách đi xem nhà mình.',
-      q_zh: '这是谁的房间？旁边的房间是谁的？',
-      q_py: 'Zhè shì shéi de fángjiān? Pángbiān de fángjiān shì shéi de?',
-      q_vn: 'Đây là phòng của ai? Phòng bên cạnh là của ai?',
-      grammar: { label: '这是我的… / 旁边那个是…的', any: ['的'] },
+      q_zh: '你家有几个房间？这个房间是谁的？旁边的呢？',
+      q_py: 'Nǐ jiā yǒu jǐ ge fángjiān? Zhège fángjiān shì shéi de? Pángbiān de ne?',
+      q_vn: 'Nhà bạn có mấy phòng? Phòng này của ai? Còn phòng bên cạnh?',
+      grammar: { label: '这个是…的 / 旁边那个大的是…的', any: ['的'] },
       need: [
-        { label: 'Nói phòng này của ai', any: ['我', '我们', '爸爸', '妈妈', '哥哥', '姐姐', '弟弟', '妹妹', '丈夫', '女儿'] },
+        { label: 'Nói phòng này của ai', any: ['我', '我们', '爸爸', '妈妈', '哥哥', '姐姐', '弟弟', '妹妹', '丈夫', '女儿', '儿子'] },
         { label: 'Dùng 旁边 để chỉ phòng bên cạnh', any: ['旁边', '边'] },
         { label: 'Dùng 房间', any: ['房间', '屋子'] }
       ],
-      bonus: { label: 'Tả thêm màu sắc hoặc 漂亮', any: ['漂亮', '颜色', '红', '白', '粉', '蓝', '大', '小'] },
+      bonus: { label: 'Tả thêm: 真漂亮 / 颜色 / 大的 / 小的', any: ['漂亮', '颜色', '大', '小', '真'] },
       vocab: ['房间', '旁边', '漂亮', '颜色'],
       minLen: 12,
-      sample: '这是我和我丈夫的房间，旁边那个小的是我女儿的。她的房间很漂亮。',
-      sample_py: 'Zhè shì wǒ hé wǒ zhàngfu de fángjiān, pángbiān nàge xiǎo de shì wǒ nǚ\'ér de. Tā de fángjiān hěn piàoliang.',
-      sample_vn: 'Đây là phòng của tôi và chồng, phòng nhỏ bên cạnh là của con gái tôi. Phòng của cháu rất đẹp.',
-      tip: 'Có thể lược danh từ sau 的: 旁边那个小的 = căn phòng nhỏ bên cạnh.'
+      sample: '我家有三个房间。这个是我爸爸妈妈的，旁边那个小的是我的，房间的颜色很漂亮。',
+      sample_py: 'Wǒ jiā yǒu sān ge fángjiān. Zhège shì wǒ bàba māma de, pángbiān nàge xiǎo de shì wǒ de, fángjiān de yánsè hěn piàoliang.',
+      sample_vn: 'Nhà tôi có ba phòng. Phòng này của bố mẹ tôi, cái nhỏ bên cạnh là của tôi, màu sắc của phòng rất đẹp.',
+      tip: 'Có thể lược danh từ sau 的: 旁边那个小的 = căn phòng nhỏ bên cạnh; 我的 = (phòng) của tôi.'
     },
     {
-      situation: 'Bạn cùng lớp hỏi về sở thích màu sắc của bạn.',
-      q_zh: '你最喜欢什么颜色？你家里人喜欢什么颜色？',
-      q_py: 'Nǐ zuì xǐhuan shénme yánsè? Nǐ jiā lǐ rén xǐhuan shénme yánsè?',
-      q_vn: 'Bạn thích màu gì nhất? Người nhà bạn thích màu gì?',
-      grammar: { label: '…是我最喜欢的颜色', any: ['颜色'] },
+      situation: 'Bạn ngồi cạnh có một quyển sách / tờ báo mới, bạn muốn mượn xem.',
+      q_zh: '你旁边的同学有一本新书，你也想看。你怎么说？',
+      q_py: 'Nǐ pángbiān de tóngxué yǒu yì běn xīn shū, nǐ yě xiǎng kàn. Nǐ zěnme shuō?',
+      q_vn: 'Bạn ngồi cạnh có một quyển sách mới, bạn cũng muốn xem. Bạn nói thế nào?',
+      grammar: { label: 'Động từ + 一下 (看一下 / 给我看一下)', any: ['一下', '看看'] },
       need: [
-        { label: 'Nói màu mình thích', any: ['红', '白', '黑', '蓝', '粉', '绿', '黄', '色'] },
-        { label: 'Dùng 最喜欢', any: ['最喜欢', '喜欢'] },
-        { label: 'Nói màu người nhà thích', any: ['爸爸', '妈妈', '女儿', '丈夫', '姐姐', '哥哥', '弟弟', '妹妹', '家里人'] }
+        { label: 'Lời nhờ lịch sự: 请 / 能…吗 / 吧', any: ['请', '能', '可以', '吗', '吧', '好吗'] },
+        { label: 'Nói đồ vật muốn xem', any: ['书', '报纸', '手表', '电脑', '杯子', '东西'] },
+        { label: 'Khen một câu (真 + tính từ)', any: ['真', '很', '太'] }
       ],
-      bonus: { label: 'Thêm đồ vật màu đó (房间 / 衣服)', any: ['房间', '衣服', '手表', '手机', '车'] },
-      vocab: ['颜色', '漂亮'],
-      minLen: 12,
-      sample: '粉色是我最喜欢的颜色。我女儿也喜欢粉色，她的房间都是粉色的。',
-      sample_py: 'Fěnsè shì wǒ zuì xǐhuan de yánsè. Wǒ nǚ\'ér yě xǐhuan fěnsè, tā de fángjiān dōu shì fěnsè de.',
-      sample_vn: 'Màu hồng là màu tôi thích nhất. Con gái tôi cũng thích màu hồng, phòng của cháu toàn màu hồng.',
-      tip: 'Nói màu sắc: màu + 色 (红色、白色、黑色); "toàn là màu…" dùng 都是…的.'
+      bonus: { label: 'Cảm ơn (谢谢)', any: ['谢谢', '谢'] },
+      vocab: ['一下', '真', '漂亮'],
+      minLen: 10,
+      sample: '你的新书真漂亮！我能看一下吗？谢谢！',
+      sample_py: 'Nǐ de xīn shū zhēn piàoliang! Wǒ néng kàn yíxià ma? Xièxie!',
+      sample_vn: 'Sách mới của bạn đẹp thật! Mình xem một chút được không? Cảm ơn nhé!',
+      tip: '一下 làm lời nhờ nhẹ nhàng hơn và luôn đứng NGAY SAU động từ: 看一下, 听一下.'
     },
     {
-      situation: 'Sáng sớm có tiếng gõ cửa, người nhà hỏi bạn.',
-      q_zh: '你听，是不是送报纸的来了？',
-      q_py: 'Nǐ tīng, shì bu shì sòng bàozhǐ de lái le?',
-      q_vn: 'Bạn nghe xem, có phải người giao báo đến rồi không?',
-      grammar: { label: '不是…，是送…的', any: ['是', '不是'] },
+      situation: 'Sáng sớm có người đến nhà, mẹ hỏi bạn là ai.',
+      q_zh: '早上六点有人来了，你去看了，是谁？',
+      q_py: 'Zǎoshang liù diǎn yǒu rén lái le, nǐ qù kàn le, shì shéi?',
+      q_vn: 'Sáu giờ sáng có người đến, bạn đã ra xem, là ai vậy?',
+      grammar: { label: '是送…的 / 不是…，是…', any: ['的'] },
       need: [
-        { label: 'Trả lời phải hay không phải', any: ['是', '不是'] },
-        { label: 'Nói người giao gì (报纸 / 牛奶)', any: ['报纸', '牛奶', '东西', '快递'] },
-        { label: 'Dùng 送 hoặc 来', any: ['送', '来'] }
+        { label: 'Trả lời ai đến (是… / …来了)', any: ['是', '不是', '来了', '来'] },
+        { label: 'Nói người đó giao gì (报纸 / 牛奶)', any: ['报纸', '牛奶', '东西', '快递', '水果'] },
+        { label: 'Dùng 送', any: ['送'] }
       ],
-      bonus: { label: 'Nói thêm 我看一下 / 早上', any: ['看一下', '看看', '早上'] },
+      bonus: { label: 'Nói thêm 每天早上 / 几点来', any: ['每天', '早上', '点'] },
       vocab: ['报纸', '送', '牛奶'],
       minLen: 10,
-      sample: '我看一下。不是送报纸的，是送牛奶的。',
-      sample_py: 'Wǒ kàn yíxià. Bú shì sòng bàozhǐ de, shì sòng niúnǎi de.',
-      sample_vn: 'Để tôi xem. Không phải người giao báo, là người giao sữa.',
-      tip: '送报纸的 = người giao báo; cấu trúc "động từ + 的" dùng để gọi người làm việc đó.'
+      sample: '我去看了，是送牛奶的人，牛奶在桌子上。',
+      sample_py: 'Wǒ qù kàn le, shì sòng niúnǎi de rén, niúnǎi zài zhuōzi shang.',
+      sample_vn: 'Con ra xem rồi, là người giao sữa, sữa để trên bàn ạ.',
+      tip: '送报纸的 / 送牛奶的 = người đưa báo / người giao sữa: động từ + tân ngữ + 的 để gọi người làm việc đó.'
     },
     {
-      situation: 'Bạn kể cho bạn học về món đồ mới mua hôm qua.',
+      situation: 'Bạn kể cho bạn học về đồ đã mua hôm qua.',
       q_zh: '昨天你买了什么？多少钱？',
       q_py: 'Zuótiān nǐ mǎile shénme? Duōshao qián?',
       q_vn: 'Hôm qua bạn mua gì? Bao nhiêu tiền?',
       grammar: { label: '昨天我买了 + đồ vật + …块钱', any: ['买'] },
       need: [
-        { label: 'Nói món đồ đã mua', any: ['手表', '报纸', '牛奶', '衣服', '手机', '书', '东西', '鞋', '包', '水果'] },
+        { label: 'Nói món đồ đã mua', any: ['手表', '报纸', '牛奶', '衣服', '手机', '书', '东西', '鞋', '包', '水果', '杯子', '苹果'] },
         { label: 'Nói giá (块 / 钱)', any: ['块', '钱', '元'] },
         { label: 'Dùng 昨天', any: ['昨天'] }
       ],
-      bonus: { label: 'Nói thêm màu sắc hoặc cho ai', any: ['颜色', '红', '白', '黑', '给', '送'] },
+      bonus: { label: 'Khen thêm (真好吃 / 真漂亮)', any: ['真', '颜色', '漂亮', '好吃', '好看'] },
       vocab: ['买', '块', '钱', '昨天'],
       minLen: 12,
-      sample: '昨天我买了一块手表，九十多块钱，很好看。',
-      sample_py: 'Zuótiān wǒ mǎile yí kuài shǒubiǎo, jiǔshí duō kuài qián, hěn hǎokàn.',
-      sample_vn: 'Hôm qua tôi mua một chiếc đồng hồ, hơn chín mươi tệ, rất đẹp.',
-      tip: 'Đã làm xong thì thêm 了 sau động từ: 买了、看了、吃了.'
+      sample: '昨天我在商店买了很多水果，五十多块钱。那些苹果真好吃！',
+      sample_py: 'Zuótiān wǒ zài shāngdiàn mǎile hěn duō shuǐguǒ, wǔshí duō kuài qián. Nàxiē píngguǒ zhēn hǎochī!',
+      sample_vn: 'Hôm qua tôi mua rất nhiều hoa quả ở cửa hàng, hơn năm mươi tệ. Mấy quả táo đó ngon thật!',
+      tip: 'Đã làm xong thì thêm 了 sau động từ: 买了很多水果; khen thì dùng 真 + tính từ.'
     }
   ]
 };
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — dùng từ bài 3 + ôn lại từ bài 1-2 và HSK1
+// LUYỆN DỊCH — câu mới, dùng từ bài 3 + ôn bài 1–2 và HSK1
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cái đồng hồ đeo tay này của ai vậy?', zh:'这块手表是谁的？', py:'Zhè kuài shǒubiǎo shì shéi de?'},
-  {vi:'Hôm qua chồng tôi tặng tôi báo.', zh:'昨天我丈夫送我报纸。', py:'Zuótiān wǒ zhàngfu sòng wǒ bàozhǐ.'},
-  {vi:'Phòng của con gái bạn thật đẹp.', zh:'你女儿的房间真漂亮。', py:"Nǐ nǚ'ér de fángjiān zhēn piàoliang."},
-  {vi:'Màu này rất đẹp.', zh:'这个颜色很漂亮。', py:'Zhège yánsè hěn piàoliang.'},
+  {vi:'Người ngồi cạnh bạn là ai thế? Có phải bạn học mới không?', zh:'你旁边的人是谁？是不是新同学？', py:'Nǐ pángbiān de rén shì shéi? Shì bu shì xīn tóngxué?'},
+  {vi:'Tờ báo trên bàn là của hôm qua.', zh:'桌子上的报纸是昨天的。', py:'Zhuōzi shang de bàozhǐ shì zuótiān de.'},
+  {vi:'Con gái tôi muốn mua một chiếc đồng hồ đeo tay mới, cháu không có tiền.', zh:'我女儿想买一块新手表，她没有钱。', py:'Wǒ nǚ\'ér xiǎng mǎi yí kuài xīn shǒubiǎo, tā méiyǒu qián.'},
+  {vi:'Hôm qua mẹ tặng tôi một cái cốc, màu sắc đẹp thật.', zh:'昨天妈妈送给我一个杯子，颜色真漂亮。', py:'Zuótiān māma sòng gěi wǒ yí ge bēizi, yánsè zhēn piàoliang.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Đây là đồng hồ của ai? Là của chồng tôi.', zh:'这是谁的手表？是我丈夫的。', py:'Zhè shì shéi de shǒubiǎo? Shì wǒ zhàngfu de.'},
-  {vi:'Phòng của con gái tôi rất đẹp, màu sắc cũng rất đẹp.', zh:'我女儿的房间很漂亮，颜色也很好。', py:"Wǒ nǚ'ér de fángjiān hěn piàoliang, yánsè yě hěn hǎo."},
-  {vi:'Hôm qua tôi đã mua báo và sữa.', zh:'昨天我买了报纸和牛奶。', py:'Zuótiān wǒ mǎile bàozhǐ hé niúnǎi.'},
-  {vi:'Cái đồng hồ này là mới à?', zh:'这块手表是新的吗？', py:'Zhè kuài shǒubiǎo shì xīn de ma?'},
+  {vi:'Người bên cạnh kia là chồng tôi, anh ấy là giảng viên đại học.', zh:'旁边那个人是我丈夫，他是大学老师。', py:'Pángbiān nàge rén shì wǒ zhàngfu, tā shì dàxué lǎoshī.'},
+  {vi:'Sữa tôi mua để trên bàn, bạn uống đi.', zh:'我买的牛奶在桌子上，你喝吧。', py:'Wǒ mǎi de niúnǎi zài zhuōzi shang, nǐ hē ba.'},
+  {vi:'Bạn nghe một chút xem, có phải có người gọi bạn không?', zh:'你听一下，是不是有人叫你？', py:'Nǐ tīng yíxià, shì bu shì yǒu rén jiào nǐ?'},
 ];

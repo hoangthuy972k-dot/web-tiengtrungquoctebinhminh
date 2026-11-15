@@ -1337,15 +1337,17 @@ var dialogData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 1 · GHÉP TỪ (Collocation)
+// PHẦN 1 · GHÉP TỪ (Collocation) — ghép hai nửa thành cụm dùng được ngay
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
 // ══════════════════════════════════════════
 var matchData = [
   {left:'坐',right:'公共汽车'},
-  {left:'离',right:'远'},
-  {left:'走',right:'路'},
-  {left:'过',right:'生日'},
-  {left:'开',right:'车'},
-  {left:'一个',right:'小时'},
+  {left:'给朋友过',right:'生日'},
+  {left:'一个多',right:'小时'},
+  {left:'在去机场的',right:'路上'},
+  {left:'公司离这儿',right:'很远'},
+  {left:'他还在教室',right:'学习呢'},
+  {left:'早上六点就',right:'起床了'},
 ];
 
 // ══════════════════════════════════════════
@@ -1407,67 +1409,71 @@ var listenData = {
 };
 
 // ══════════════════════════════════════════
-// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi đường đến siêu thị
+// PHẦN 3a · ĐIỀN TỪ — mỗi câu một tình huống mới (还 · 就 · 离 · 呢 + từ mới bài 7, ôn bài 1–6 và HSK1)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'商店',blank:'离',post:'这儿远吗？',hint:'(cách)',ans:'离',exp:'A + 离 + B + 远/近 chỉ khoảng cách: 商店离这儿远吗？'},
-  {pre:'不远，走几分钟',blank:'就',post:'到了。',hint:'(là, liền)',ans:'就',exp:'就 ở đây nhấn mạnh khoảng cách/thời gian NGẮN.'},
-  {pre:'你',blank:'还',post:'在商店吗？',hint:'(vẫn, còn)',ans:'还',exp:'还 + 在 = vẫn còn đang…: 你还在商店吗？= bạn vẫn còn ở cửa hàng à?'},
-  {pre:'对，我还在这儿买东西',blank:'呢',post:'。',hint:'(trợ từ ngữ khí — nhấn mạnh)',ans:'呢',exp:'呢 ở cuối câu (thường đi với 在/还在) nhấn mạnh hành động đang tiếp diễn.'},
-  {pre:'坐公共汽车要一个多',blank:'小时',post:'。',hint:'(tiếng đồng hồ)',ans:'小时'},
-  {pre:'坐公共汽车太',blank:'慢',post:'了。',hint:'(chậm)',ans:'慢'},
-  {pre:'还有一个星期',blank:'就',post:'是我的生日了。',hint:'(là — nhấn mạnh sắp đến)',ans:'就',exp:'还有 + thời gian + 就 + … + 了 = chỉ còn… nữa là…; 就 nhấn mạnh sắp đến.'},
-  {pre:'我们下个星期一起',blank:'过',post:'吧。',hint:'(tổ chức, đón — sinh nhật/lễ)',ans:'过',exp:'过 ở đây là động từ “đón, tổ chức” (sinh nhật, ngày lễ): 一起过 = cùng đón sinh nhật.'},
+  {pre:'Bạn sắp bay đi Bắc Kinh, hỏi người nhà: “机场',blank:'离',post:'我们家远不远？” — “不太远，开车四十分钟。”',hint:'(cách)',ans:'离',exp:'A + 离 + B + 远/不远 = A cách B xa/không xa; 离 đứng giữa hai địa điểm.'},
+  {pre:'Mười giờ tối mẹ gọi điện: “你怎么',blank:'还',post:'在公司？” — “今天很忙，我还要工作一个小时。”',hint:'(vẫn còn)',ans:'还',exp:'还 + 在 + nơi chốn = vẫn còn ở đó (việc chưa kết thúc); 还 đứng trước động từ.'},
+  {pre:'今天我早上五点',blank:'就',post:'起床了，因为要去机场接妈妈。',hint:'(đã … rồi — sớm)',ans:'就',exp:'Thời gian + 就 + động từ + 了 = đã làm từ sớm (sớm hơn bình thường).'},
+  {pre:'Bạn kể về bạn mình vừa về nước: “小王下了飞机',blank:'就',post:'给妈妈打电话了。”',hint:'(là … ngay)',ans:'就',exp:'Động từ 1 + 了 + 就 + động từ 2 = vừa … là … ngay.'},
+  {pre:'“我是坐公共汽车来的，你',blank:'呢',post:'？” — “我是走路来的。”',hint:'(còn bạn?)',ans:'呢',exp:'Nói về mình xong, hỏi lại người kia cùng câu đó: 你呢？ = còn bạn thì sao?'},
+  {pre:'Gọi cho bố đi công tác về: “爸爸，你还在机场',blank:'呢',post:'？” — “不，我已经在出租车上了。”',hint:'(đang — cuối câu)',ans:'呢',exp:'还在 + nơi chốn + 呢？ = vẫn còn đang ở … à? 呢 ở cuối câu hỏi.'},
+  {pre:'这个电脑太',blank:'慢',post:'了，我想买一个新的。',hint:'(chậm)',ans:'慢',exp:'太 + tính từ + 了 = quá …: 太慢了 = chậm quá.'},
+  {pre:'“',blank:'快',post:'点儿！电影七点开始，还有十分钟。” — “好，我来了！”',hint:'(nhanh)',ans:'快',exp:'快点儿！ = nhanh lên! (giục người khác).'},
+  {pre:'“你每天运动多长时间？” — “一个',blank:'小时',post:'，我早上去跑步。”',hint:'(tiếng đồng hồ)',ans:'小时',exp:'一个小时 = một tiếng (phải có 个); 时间 là “thời gian” nói chung.'},
+  {pre:'Thứ Bảy là sinh nhật bố: “星期六我们在家给爸爸',blank:'过',post:'生日吧。”',hint:'(tổ chức, đón)',ans:'过',exp:'给 + người + 过生日 = tổ chức sinh nhật cho ai.'},
+  {pre:'“你的飞机几点',blank:'到',post:'北京？” — “下午四点。”',hint:'(đến nơi)',ans:'到',exp:'到 + địa điểm = tới nơi; 去 chỉ hướng đi, chưa nói đã tới.'},
+  {pre:'“我们坐出租车去吗？” — “不坐了，商店不远，我们',blank:'走',post:'路去吧。”',hint:'(đi bộ)',ans:'走',exp:'走路去 + nơi = đi bộ đến đó.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3b · SẮP XẾP
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng 还 / 就 / 离 / 呢
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['商店','离','这儿','远','吗','？'],ans:'商店离这儿远吗？',audio:'商店离这儿远吗？'},
-  {words:['走','几','分钟','就','到','了','。'],ans:'走几分钟就到了。',audio:'走几分钟就到了。'},
-  {words:['坐','公共汽车','要','一','个','多','小时','。'],ans:'坐公共汽车要一个多小时。',audio:'坐公共汽车要一个多小时。'},
-  {words:['坐','公共汽车','太','慢','了','。'],ans:'坐公共汽车太慢了。',audio:'坐公共汽车太慢了。'},
-  {words:['还','有','一','个','星期','就','是','我','的','生日','了','。'],ans:'还有一个星期就是我的生日了。',audio:'还有一个星期就是我的生日了。'},
-  {words:['我们','下','个','星期','一起','过','吧','。'],ans:'我们下个星期一起过吧。',audio:'我们下个星期一起过吧。'},
+  {words:['我们','的','教室','离','学校','门口','不','远','。'],ans:'我们的教室离学校门口不远。',audio:'我们的教室离学校门口不远。'},
+  {words:['姐姐','已经','到','机场','了','吗','？'],ans:'姐姐已经到机场了吗？',audio:'姐姐已经到机场了吗？'},
+  {words:['我','每天','七','点','就','到','公司','了','。'],ans:'我每天七点就到公司了。',audio:'我每天七点就到公司了。',alt:['每天我七点就到公司了。']},
+  {words:['你们','怎么','还','在','外面','？'],ans:'你们怎么还在外面？',audio:'你们怎么还在外面？'},
+  {words:['坐','公共汽车','去','机场','要','多','长','时间','？'],ans:'坐公共汽车去机场要多长时间？',audio:'坐公共汽车去机场要多长时间？'},
+  {words:['下','个','月','我们','给','姐姐','过','生日','。'],ans:'下个月我们给姐姐过生日。',audio:'下个月我们给姐姐过生日。',alt:['我们下个月给姐姐过生日。']},
+  {words:['我','的','手表','快','了','五','分钟','。'],ans:'我的手表快了五分钟。',audio:'我的手表快了五分钟。'},
+  {words:['离','考试','还','有','两','个','星期','呢','。'],ans:'离考试还有两个星期呢。',audio:'离考试还有两个星期呢。'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3c · SỬA LỖI SAI
+// PHẦN 3c · SỬA LỖI SAI — lỗi học sinh Việt hay mắc
+// (离 sai chỗ, 是 trước tính từ, 还 / 就 sai chỗ, 吗 với từ để hỏi, thời lượng trước động từ, 还没…了...)
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'商店远这儿离吗？',
-   opts:['商店离这儿远吗？','商店这儿离远吗？','离商店这儿远吗？','这儿商店离远吗？'],ans:0,
-   exp:'离 đứng giữa hai ĐỊA ĐIỂM: A + 离 + B + xa/gần.'},
-  {wrong:'到就几分钟走了。',
-   opts:['走几分钟就到了。','就走几分钟到了。','到走几分钟就了。','几分钟走就到了。'],ans:0,
-   exp:'就 đứng NGAY TRƯỚC động từ 到 để nhấn mạnh việc xảy ra nhanh/sớm.'},
-  {wrong:'你在商店还吗？',
-   opts:['你还在商店吗？','你在还商店吗？','还你在商店吗？','你在商店还了吗？'],ans:0,
-   exp:'还 (vẫn, còn) đứng TRƯỚC động từ 在, không đặt cuối câu như "còn" trong tiếng Việt.'},
-  {wrong:'我在这儿买东西还呢。',
-   opts:['我还在这儿买东西呢。','我在这儿还买东西呢。','我在这儿买东西呢还。','还我在这儿买东西呢。'],ans:0,
-   exp:'还 đứng TRƯỚC động từ chính (在), 呢 luôn đứng CUỐI câu.'},
-  {wrong:'公共汽车坐太慢了。',
-   opts:['坐公共汽车太慢了。','公共汽车坐太慢了。','太坐公共汽车慢了。','坐太公共汽车慢了。'],ans:0,
-   exp:'坐 (động từ) phải đứng TRƯỚC phương tiện: 坐 + 公共汽车/飞机/车.'},
+  {wrong:'我家很远离学校。',
+   opts:['我家离学校是很远。','我家离学校很远。','我家离很远学校。','我家很离学校远。'],ans:1,
+   exp:'A + 离 + B + 很远: 离 + nơi chốn đứng trước tính từ; không thêm 是 trước tính từ.'},
+  {wrong:'十一点多了，爸爸在公司还工作呢。',
+   opts:['十一点多了，爸爸在公司工作还呢。','十一点多了，爸爸在还公司工作呢。','十一点多了，爸爸还在公司工作呢。','十一点多了，爸爸还在公司工作了。'],ans:2,
+   exp:'还 (vẫn còn) đứng trước 在 + nơi chốn; việc đang tiếp diễn thì cuối câu dùng 呢, không dùng 了.'},
+  {wrong:'他八点到学校就了。',
+   opts:['他八点就到学校了。','他就八点到学校了。','他八点到就学校了。','他八点就是到学校了。'],ans:0,
+   exp:'就 (sớm) đứng sau thời gian, ngay trước động từ: 八点就到了; không thêm 是.'},
+  {wrong:'我们都到了，小王怎么还不来吗？',
+   opts:['我们都到了，小王怎么不还来呢？','我们都到了，小王还怎么不来呢？','我们都到了，小王怎么是还不来呢？','我们都到了，小王怎么还不来呢？'],ans:3,
+   exp:'Câu có 怎么 đã là câu hỏi, không thêm 吗 (muốn hỏi nhẹ thì thêm 呢); trật tự: 怎么 + 还 + 不 + động từ, không thêm 是.'},
+  {wrong:'离考试还有两天，我们准备好好吧。',
+   opts:['离考试还有两天，我们准备很好吧。','离考试还有两天，我们好好准备吧。','离考试还有两天，我们好好准备吗。','离考试还有两天，我们是好好准备吧。'],ans:1,
+   exp:'好好 + động từ = làm cho thật tốt: 好好准备; không đặt 好好 sau động từ như tiếng Việt “chuẩn bị thật tốt”.'},
+  {wrong:'我姐姐走路慢很。',
+   opts:['我姐姐很慢走路。','我姐姐走路是慢。','我姐姐走路很慢。','我姐姐走路慢了很。'],ans:2,
+   exp:'很 đứng TRƯỚC tính từ: 走路很慢 = đi bộ rất chậm; không nói 慢很 (“chậm lắm”), không thêm 是.'},
+  {wrong:'他每天一个小时游泳。',
+   opts:['他每天游泳一个小时。','他游泳每天一个小时。','他每天游泳一个时间。','他每天是游泳一个小时。'],ans:0,
+   exp:'Thời lượng (一个小时) đứng SAU động từ: 游泳一个小时; 小时 = tiếng đồng hồ, 时间 = thời gian.'},
+  {wrong:'姐姐还没回家了，你给她打电话吧。',
+   opts:['姐姐没还回家呢，你给她打电话吧。','姐姐还没回家呢，你给她打电话吧。','姐姐已经没回家呢，你给她打电话吧。','姐姐还不回家了，你给她打电话吧。'],ans:1,
+   exp:'还没 + động từ + 呢 = vẫn chưa …; câu có 还没 không dùng 了 ở cuối.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 // Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
 // lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
 // dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
@@ -1477,118 +1483,117 @@ var speakingData = {
   tasks: [
     {
       situation: 'Đồng nghiệp mới hỏi đường đi làm của bạn.',
-      q_zh: '你家离公司（学校）远吗？你怎么去？要多长时间？',
-      q_py: 'Nǐ jiā lí gōngsī (xuéxiào) yuǎn ma? Nǐ zěnme qù? Yào duō cháng shíjiān?',
-      q_vn: 'Nhà bạn cách công ty (trường) có xa không? Bạn đi bằng gì? Mất bao lâu?',
-      grammar: { label: '我家离…很远/不远 + 坐…要…', any: ['离'] },
+      q_zh: '你每天怎么去公司？你家离那儿远吗？要多长时间？',
+      q_py: 'Nǐ měitiān zěnme qù gōngsī? Nǐ jiā lí nàr yuǎn ma? Yào duō cháng shíjiān?',
+      q_vn: 'Hằng ngày bạn đến công ty (trường) bằng gì? Nhà bạn cách đó có xa không? Mất bao lâu?',
+      grammar: { label: '我家离… + 远 / 不远', any: ['离'] },
       need: [
-        { label: 'Dùng 离 để nói khoảng cách', any: ['离'] },
+        { label: 'Nói xa hay không xa', any: ['远', '近', '不远'] },
         { label: 'Nói phương tiện (坐公共汽车 / 开车 / 走路)', any: ['公共汽车', '开车', '走路', '走', '骑', '地铁', '出租车', '坐'] },
-        { label: 'Nói thời gian (一个多小时 / 20分钟)', any: ['小时', '分钟', '多'] }
+        { label: 'Nói thời gian (二十分钟 / 一个多小时)', any: ['小时', '分钟'] }
       ],
-      bonus: { label: 'Nhận xét nhanh hay chậm (慢 / 快)', any: ['慢', '快'] },
+      bonus: { label: 'Dùng 就 để nói “chỉ … là tới”', any: ['就'] },
       vocab: ['离', '公司', '远', '公共汽车', '小时'],
       minLen: 14,
-      sample: '我家离公司很远，坐公共汽车要一个多小时，太慢了。',
-      sample_py: 'Wǒ jiā lí gōngsī hěn yuǎn, zuò gōnggòng qìchē yào yí ge duō xiǎoshí, tài màn le.',
-      sample_vn: 'Nhà tôi cách công ty rất xa, đi xe buýt mất hơn một tiếng, chậm quá.',
-      tip: 'A 离 B + 远/近: 我家离公司很远。Đừng dùng 从 ở đây.'
+      sample: '我家离公司不太远，我每天开车去，二十多分钟就到了。',
+      sample_py: 'Wǒ jiā lí gōngsī bú tài yuǎn, wǒ měitiān kāichē qù, èrshí duō fēnzhōng jiù dào le.',
+      sample_vn: 'Nhà tôi cách công ty không xa lắm, hằng ngày tôi lái xe đi, hơn hai mươi phút là tới.',
+      tip: '离 đứng giữa hai địa điểm: 我家离公司…; thời gian ngắn + 就到了 = chỉ … là tới.'
     },
     {
-      situation: 'Một người khách hỏi bạn đường ra ga tàu.',
-      q_zh: '请问，从这儿到学校怎么走？远不远？',
-      q_py: 'Qǐngwèn, cóng zhèr dào xuéxiào zěnme zǒu? Yuǎn bu yuǎn?',
-      q_vn: 'Xin hỏi, từ đây đến trường đi thế nào? Có xa không?',
-      grammar: { label: '从…到… + 走/坐…就到了', any: ['从', '到', '就'] },
+      situation: 'Một du khách hỏi bạn đường ra sân bay.',
+      q_zh: '请问，机场离这儿远吗？怎么去最快？',
+      q_py: 'Qǐngwèn, jīchǎng lí zhèr yuǎn ma? Zěnme qù zuì kuài?',
+      q_vn: 'Xin hỏi, sân bay cách đây có xa không? Đi thế nào là nhanh nhất?',
+      grammar: { label: '机场离这儿… + 坐…最快', any: ['离', '最快', '快'] },
       need: [
-        { label: 'Dùng 从…到…', any: ['从', '到'] },
-        { label: 'Nói cách đi (走路 / 坐车)', any: ['走', '坐', '开车', '骑'] },
-        { label: 'Nói thời gian và dùng 就到了', any: ['分钟', '小时', '就到', '就'] }
+        { label: 'Nói xa hay không xa', any: ['远', '近', '不远'] },
+        { label: 'Nói phương tiện nên đi', any: ['出租车', '公共汽车', '开车', '地铁', '坐', '走'] },
+        { label: 'Nói thời gian đi tới', any: ['分钟', '小时'] }
       ],
-      bonus: { label: 'Nói xa hay gần (不远 / 很近)', any: ['不远', '很近', '近', '远'] },
-      vocab: ['路', '到', '走', '快'],
+      bonus: { label: 'So sánh với phương tiện chậm hơn (慢)', any: ['慢', '太慢', '不快'] },
+      vocab: ['机场', '离', '远', '快', '慢'],
       minLen: 12,
-      sample: '不远，从这儿到学校走路二十分钟就到了。',
-      sample_py: 'Bù yuǎn, cóng zhèr dào xuéxiào zǒulù èrshí fēnzhōng jiù dào le.',
-      sample_vn: 'Không xa, từ đây đến trường đi bộ hai mươi phút là tới.',
-      tip: '就 đặt trước động từ để nhấn "chỉ… là đã…": 走几分钟就到了.'
+      sample: '机场离这儿很远。坐出租车最快，四十分钟就到；坐公共汽车很慢。',
+      sample_py: 'Jīchǎng lí zhèr hěn yuǎn. Zuò chūzūchē zuì kuài, sìshí fēnzhōng jiù dào; zuò gōnggòng qìchē hěn màn.',
+      sample_vn: 'Sân bay cách đây rất xa. Đi taxi là nhanh nhất, bốn mươi phút là tới; đi xe buýt thì chậm.',
+      tip: '最 + 快 = nhanh nhất; 坐 + phương tiện đứng trước: 坐出租车最快.'
     },
     {
-      situation: 'Bạn học hỏi sao bạn không lái xe đi làm.',
-      q_zh: '坐公共汽车太慢了，你怎么不开车？',
-      q_py: 'Zuò gōnggòng qìchē tài màn le, nǐ zěnme bù kāichē?',
-      q_vn: 'Đi xe buýt chậm quá, sao bạn không lái xe?',
-      grammar: { label: '开车也不快，因为…', any: ['快', '慢'] },
+      situation: 'Mười giờ tối, mẹ gọi điện hỏi sao bạn chưa về nhà.',
+      q_zh: '晚上十点了，你还在外面吗？在做什么呢？',
+      q_py: 'Wǎnshang shí diǎn le, nǐ hái zài wàimiàn ma? Zài zuò shénme ne?',
+      q_vn: 'Mười giờ tối rồi, con vẫn còn ở ngoài à? Đang làm gì thế?',
+      grammar: { label: '我还在… + 呢', any: ['还在', '还要', '还没'] },
       need: [
-        { label: 'Trả lời có lái xe hay không', any: ['开车', '不开', '没有车', '会', '不会'] },
-        { label: 'Nêu lý do (车太多 / 太贵 / 没有车)', any: ['车太多', '多', '贵', '没有', '停车', '路上'] },
-        { label: 'Dùng 快 hoặc 慢 để so sánh', any: ['快', '慢'] }
+        { label: 'Nói đang ở đâu', any: ['教室', '公司', '学校', '外面', '路上', '饭店', '商店', '朋友家', '车上'] },
+        { label: 'Nói đang làm gì', any: ['学习', '工作', '准备', '看', '写', '吃', '喝', '买', '运动', '游泳'] },
+        { label: 'Hẹn giờ về (… 点就回家)', any: ['点', '分钟', '小时'] }
       ],
-      bonus: { label: 'Nói phương án bạn chọn (坐地铁 / 骑车)', any: ['地铁', '骑', '走路', '公共汽车'] },
-      vocab: ['慢', '快', '路', '公司'],
+      bonus: { label: 'Dùng 呢 cuối câu', any: ['呢'] },
+      vocab: ['还', '教室', '就'],
       minLen: 12,
-      sample: '开车也不快，路上车太多了。所以我还是坐公共汽车。',
-      sample_py: 'Kāichē yě bú kuài, lù shang chē tài duō le. Suǒyǐ wǒ háishi zuò gōnggòng qìchē.',
-      sample_vn: 'Lái xe cũng không nhanh, trên đường xe đông quá. Nên tôi vẫn đi xe buýt.',
-      tip: '太 + tính từ + 了 = quá…: 太慢了、太多了.'
+      sample: '我还在教室呢。明天有汉语考试，我和同学在一起准备，十一点就回家。',
+      sample_py: 'Wǒ hái zài jiàoshì ne. Míngtiān yǒu Hànyǔ kǎoshì, wǒ hé tóngxué zài yìqǐ zhǔnbèi, shíyī diǎn jiù huí jiā.',
+      sample_vn: 'Con vẫn còn ở lớp ạ. Mai có bài thi tiếng Trung, con cùng các bạn ôn bài, mười một giờ là con về nhà.',
+      tip: '还在 + nơi chốn + 呢 = vẫn còn đang ở …; 还 đứng trước 在.'
     },
     {
-      situation: 'Bạn gọi điện cho người bạn đang trên đường ra sân bay đón bạn.',
-      q_zh: '你现在在哪儿呢？还有多长时间能到？',
-      q_py: 'Nǐ xiànzài zài nǎr ne? Hái yǒu duō cháng shíjiān néng dào?',
-      q_vn: 'Bạn đang ở đâu vậy? Còn bao lâu nữa thì tới?',
-      grammar: { label: '在…的路上 + …分钟就到', any: ['路上', '就到', '到'] },
+      situation: 'Bạn hẹn bạn ở nhà hàng, bạn ấy đến trước và gọi điện cho bạn.',
+      q_zh: '我已经到饭店了，你到哪儿了？',
+      q_py: 'Wǒ yǐjīng dào fàndiàn le, nǐ dào nǎr le?',
+      q_vn: 'Mình đến nhà hàng rồi, bạn đang ở đâu thế?',
+      grammar: { label: '我在… + 呢 / 还在…', any: ['呢', '还在'] },
       need: [
-        { label: 'Nói vị trí hiện tại', any: ['路上', '家', '公司', '学校', '车上', '机场', '地铁'] },
-        { label: 'Nói thời gian còn lại', any: ['分钟', '小时', '就到', '马上'] },
-        { label: 'Dùng 到 để nói "tới nơi"', any: ['到'] }
+        { label: 'Nói vị trí hiện tại', any: ['路上', '车上', '公共汽车', '出租车', '家', '公司', '学校', '门口', '外面', '前面'] },
+        { label: 'Nói còn bao lâu nữa tới (… 分钟 / 下了车就到)', any: ['分钟', '小时', '下车', '下了车', '马上', '很快', '前面'] },
+        { label: 'Dùng 到 = tới nơi', any: ['到'] }
       ],
-      bonus: { label: 'Dùng 已经 nói việc đã xong', any: ['已经'] },
-      vocab: ['路', '到', '机场', '小时'],
-      minLen: 12,
-      sample: '我在去机场的路上，已经快到了，二十分钟就到。',
-      sample_py: 'Wǒ zài qù jīchǎng de lù shang, yǐjīng kuài dào le, èrshí fēnzhōng jiù dào.',
-      sample_vn: 'Tôi đang trên đường ra sân bay, sắp tới rồi, hai mươi phút nữa là tới.',
-      tip: '在去…的路上 = đang trên đường đi đâu đó.'
+      bonus: { label: 'Dùng 就 (… phút là tới)', any: ['就'] },
+      vocab: ['到', '路', '公共汽车', '就'],
+      minLen: 10,
+      sample: '我还在公共汽车上呢，前面就是饭店了，下了车就到。',
+      sample_py: 'Wǒ hái zài gōnggòng qìchē shang ne, qiánmiàn jiù shì fàndiàn le, xià le chē jiù dào.',
+      sample_vn: 'Mình vẫn đang trên xe buýt, phía trước là nhà hàng rồi, xuống xe là tới ngay.',
+      tip: '下了车就到 = xuống xe là tới ngay; 还在…呢 = vẫn còn đang ở ….'
     },
     {
-      situation: 'Bạn rủ bạn thân đi ăn mừng sinh nhật sớm.',
-      q_zh: '今天晚上我们一起吃饭吧，给你过生日，好吗？',
-      q_py: 'Jīntiān wǎnshang wǒmen yìqǐ chīfàn ba, gěi nǐ guò shēngrì, hǎo ma?',
-      q_vn: 'Tối nay chúng ta ăn cơm cùng nhau nhé, mừng sinh nhật bạn, được không?',
-      grammar: { label: '离我的生日还有… / 离这儿不远有…', any: ['离'] },
+      situation: 'Bạn học hỏi về sinh nhật sắp tới của bạn.',
+      q_zh: '离你的生日还有多长时间？你想怎么过生日？',
+      q_py: 'Lí nǐ de shēngrì hái yǒu duō cháng shíjiān? Nǐ xiǎng zěnme guò shēngrì?',
+      q_vn: 'Còn bao lâu nữa là đến sinh nhật bạn? Bạn muốn tổ chức sinh nhật thế nào?',
+      grammar: { label: '离我的生日还有…', any: ['离'] },
       need: [
-        { label: 'Trả lời đồng ý hay chưa tới sinh nhật', any: ['好', '可以', '离', '还有', '不'] },
-        { label: 'Nói địa điểm ăn (饭馆 / 饭店)', any: ['饭馆', '饭店', '家', '学校', '公司'] },
-        { label: 'Nói khoảng cách hoặc thời gian đi tới', any: ['远', '近', '分钟', '走', '就到'] }
+        { label: 'Nói còn bao lâu (… 天 / 星期 / 月)', any: ['天', '星期', '月', '号', '还有'] },
+        { label: 'Dùng 过生日', any: ['过生日', '过'] },
+        { label: 'Nói muốn làm gì, với ai', any: ['朋友', '家', '一起', '吃', '去', '旅游', '买', '唱', '看'] }
       ],
-      bonus: { label: 'Dùng 过生日', any: ['过生日', '生日'] },
-      vocab: ['过', '离', '远', '走'],
+      bonus: { label: 'Thêm 呢 cuối câu (còn … nữa cơ)', any: ['呢'] },
+      vocab: ['离', '过', '还'],
       minLen: 12,
-      sample: '好吧。离这儿不远有一个中国饭馆，走几分钟就到了。',
-      sample_py: 'Hǎo ba. Lí zhèr bù yuǎn yǒu yí ge Zhōngguó fànguǎn, zǒu jǐ fēnzhōng jiù dào le.',
-      sample_vn: 'Được thôi. Cách đây không xa có một quán ăn Trung Quốc, đi vài phút là tới.',
-      tip: '过生日 = tổ chức/đón sinh nhật; 给你过生日 = mừng sinh nhật cho bạn.'
+      sample: '离我的生日还有两个多月呢。我想和朋友一起去北京旅游，在那儿过生日。',
+      sample_py: 'Lí wǒ de shēngrì hái yǒu liǎng ge duō yuè ne. Wǒ xiǎng hé péngyou yìqǐ qù Běijīng lǚyóu, zài nàr guò shēngrì.',
+      sample_vn: 'Còn hơn hai tháng nữa mới đến sinh nhật tôi. Tôi muốn cùng bạn bè đi Bắc Kinh du lịch, tổ chức sinh nhật ở đó.',
+      tip: '离 + mốc thời gian + 还有 + khoảng thời gian = còn … nữa mới đến …'
     }
   ]
 };
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — dùng từ bài 7 + ôn lại từ bài 1-6 và HSK1
+// LUYỆN DỊCH — câu mới, dùng từ bài 7 + ôn bài 1–6 và HSK1
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nhà bạn cách công ty có xa không?', zh:'你家离公司远吗？', py:'Nǐ jiā lí gōngsī yuǎn ma?'},
-  {vi:'Nhà tôi cách trường học không xa.', zh:'我家离学校不远。', py:'Wǒ jiā lí xuéxiào bù yuǎn.'},
-  {vi:'Đi xe buýt chỉ một tiếng là tới trường rồi.', zh:'坐公共汽车一个小时就到学校了。', py:'Zuò gōnggòng qìchē yí ge xiǎoshí jiù dào xuéxiào le.'},
-  {vi:'Đã hơn chín giờ rồi, sao cậu ấy vẫn đang học bài?', zh:'已经九点多了，他怎么还在学习？', py:'Yǐjīng jiǔ diǎn duō le, tā zěnme hái zài xuéxí?'},
+  {vi:'Bệnh viện cách nhà tôi không xa, tôi thường đi bộ đến đó.', zh:'医院离我家不远，我经常走路去那儿。', py:'Yīyuàn lí wǒ jiā bù yuǎn, wǒ jīngcháng zǒulù qù nàr.'},
+  {vi:'Bố tôi vẫn còn ở bệnh viện, vẫn chưa về nhà.', zh:'爸爸还在医院，还没回家。', py:'Bàba hái zài yīyuàn, hái méi huí jiā.'},
+  {vi:'Tôi muốn ăn mì, còn bạn?', zh:'我想吃面条，你呢？', py:'Wǒ xiǎng chī miàntiáo, nǐ ne?'},
+  {vi:'Sáng nay sáu giờ mẹ tôi đã đến công ty rồi.', zh:'今天早上妈妈六点就去公司了。', py:'Jīntiān zǎoshang māma liù diǎn jiù qù gōngsī le.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Sân bay có cách đây xa không?', zh:'机场离这儿远吗？', py:'Jīchǎng lí zhèr yuǎn ma?'},
-  {vi:'Anh ấy đi bộ rất chậm, tôi đi bộ rất nhanh.', zh:'他走路很慢，我走路很快。', py:'Tā zǒulù hěn màn, wǒ zǒulù hěn kuài.'},
-  {vi:'Xe buýt đã đi rồi.', zh:'公共汽车已经走了。', py:'Gōnggòng qìchē yǐjīng zǒu le.'},
-  {vi:'Đến công ty mất một tiếng đồng hồ.', zh:'到公司要一个小时。', py:'Dào gōngsī yào yí ge xiǎoshí.'},
+  {vi:'Chuyến bay ngày mai là lúc tám giờ sáng, sáu giờ là chúng ta phải đi rồi.', zh:'明天的飞机是早上八点的，我们六点就要走。', py:'Míngtiān de fēijī shì zǎoshang bā diǎn de, wǒmen liù diǎn jiù yào zǒu.'},
+  {vi:'Sao bạn vẫn chưa tới? Chúng tôi đã ở cổng rồi.', zh:'你怎么还没到？我们已经在门口了。', py:'Nǐ zěnme hái méi dào? Wǒmen yǐjīng zài ménkǒu le.'},
+  {vi:'Tiểu Vương, bạn vẫn đang ôn thi à? — Không, mình đang xem phim.', zh:'小王，你还在准备考试吗？——不，我在看电影呢。', py:'Xiǎo Wáng, nǐ hái zài zhǔnbèi kǎoshì ma? — Bù, wǒ zài kàn diànyǐng ne.'},
 ];

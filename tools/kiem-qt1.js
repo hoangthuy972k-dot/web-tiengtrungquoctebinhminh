@@ -107,24 +107,70 @@ CAP.hsk2 = {
 CAP.hsk3 = {
   duoi: ['hsk1', 'hsk2'], soTu: 1, soBai: 20,
   ten: [],
-  them: [],
+  // tu la CHINH diem ngu phap cua bai (sach day, co trong bai khoa) nhung khong nam trong bang tu: [dang, bai]
+  // 刚 (bai 6: 刚 va 刚才) · 左右 (bai 11: so uoc luong) · 才 (bai 12: 才 va 就) · 出来 (bai 13 bo ngu xu huong kep; bai 19 nghia mo rong) · 使 (bai 19: 使/叫/让)
+  them: [['刚', 6], ['左右', 11], ['才', 12], ['出来', 13], ['使', 19]],
 };
 // HSK4 cu (HSK标准教程4上+4下): 20 bai, file hsk4-bai-N-data.js; cap duoi = HSK1 + HSK2 + HSK3 cu (HSK 3.0 khong tinh).
 // errorFixData (errorFixMode 'wordchoice') = nguyen bai 练习2 SGK -> kiem nhu mc; listenData = de nghe that SBT (khong kiem).
 CAP.hsk4 = {
-  duoi: ['hsk1', 'hsk2', 'hsk3'], soTu: 1, soBai: 20,
+  duoi: ['hsk1', 'hsk2', 'hsk3'], soTu: 1, soBai: 20, sgkMc: true,
   ten: [],
-  them: [],
+  // dang tu trong bai khoa HSK4 cu la bien the / tach ra / ghep cua tu da hoc (khong co trong bang tu cac cap): [dang, bai]
+  them: [
+    ['他们', 1], ['人们', 1], ['那样', 1], ['兴趣', 1], ['时', 1], ['但', 1], ['中', 1], ['事', 1], ['话', 1], ['出来', 1],
+    ['变', 1], ['唱', 1], ['球', 1], ['普通', 1], ['想起', 1], ['祝', 1], ['新鲜感', 1],
+    ['那么', 2], ['常常', 2], ['怎样', 2], ['不同', 2], ['国外', 2], ['身边', 2], ['日子', 2], ['逛街', 2],
+    ['这样', 4], ['商场', 5], ['网上', 5], ['什么样', 6], ['外国', 8], ['她们', 8], ['父母', 9], ['它们', 11], ['有限', 11],
+    // dang cua chinh diem ngu phap trong sach (另/另外 · 值/值得 · 散散步 AAB · 可不是 · 可/恐怕/怕 · 除此以外 · 叫作 · 在于 · 总的来说 · V+起)
+    ['另', 3], ['值', 6], ['散散步', 7], ['可不是', 8], ['可', 16], ['怕', 16], ['除此以外', 18], ['叫作', 18],
+    ['在于', 19], ['总的来说', 19], ['说起', 20],
+  ],
+};
+// HSK5 (HSK标准教程5上+5下): 36 bai, file hsk5-bai-N-data.js; cap duoi = HSK1 + HSK2 + HSK3 + HSK4 cu (toan bo).
+// Khong co listenData/mcData: errorFixData (errorFixMode 'wordchoice', "Chon tu") kiem nhu mc.
+// QT1 o HSK5 chi ap cho CAC MUC BAI TAP tu soan, khong ap cho bai khoa, de nghe SBT (listenExamData), sgkData:
+//   kiem them (rieng HSK5, co hsk5x): situationData (loi nguoi kia + cau mau), registerData (2 cau),
+//   writingData.sapXep (cau dap) + writingData.model.
+// Bai khoa HSK5 tu nhien co tu ngoai bang tu -> moi tu 2–4 chu xuat hien NGUYEN VEN trong bai khoa (dialogData)
+//   cua bai 1..N, va cac tu trong bang 词语辨析 (synonymData) cua bai 1..N, cung tinh la da hoc (baiKhoa).
+CAP.hsk5 = {
+  duoi: ['hsk1', 'hsk2', 'hsk3', 'hsk4'], soTu: 1, soBai: 36, baiKhoa: true, hsk5x: true,
+  // ho trong cac cau tu soan (小刘, 老陈…)
+  ten: [['刘', 1], ['陈', 1], ['林', 1], ['周', 1], ['赵', 1]],
+  // dang tu do / hinh vi cua tu HSK1–4 cu (bang tu sach khong tach rieng): 们(我们) 子(桌子) 出(出来) 考(考试) 起(一起)
+  // 雨(下雨) 晚(晚上) 忘(忘记) 生(生病) 头(头发) 声(声音) 常(经常) 该(应该) 心(小心) 边(旁边) 名(名字) 动(运动)
+  // 全(全部) 房(房间) 店(商店) 笔(铅笔) 词(生词) 怕(害怕) 跑(跑步) 玩(玩儿) 风(刮风) 山(爬山) 河 桌 酒 餐(餐厅) 片(照片)
+  // 选(选择) 改(改变) 记(记得) 练(练习) 南北东西(南方…) 样(怎么样) 句(句子) 事(事情) 话(说话) 时(时候) 但(但是)
+  // 不同 课文 老公(老婆, bai 1); 'so + 个人' (两个人…: tach tham lam se thanh 两|个人 = tu 个人 cua bai sau)
+  them: '们 子 出 考 起 雨 晚 忘 生 头 声 常 该 心 边 名 动 全 房 店 笔 词 怕 跑 玩 风 山 河 桌 酒 餐 片 选 改 记 练 南 北 东 西 样 句 事 话 时 但 不同 课文 老公 一个人 两个人 三个人 四个人 五个人 十个人 几个人 每个人 这个人 那个人'.split(' ').map((t) => [t, 1]),
+};
+// HSK6 (HSK标准教程6上+6下): 40 bai, file hsk6-bai-N-data.js; cap duoi = HSK1–HSK4 cu + HSK5 (toan bo).
+// Dang giong HSK5 (errorFixData 'wordchoice' kiem nhu mc; Tinh huong / Noi sao cho hay / doan mau Luyen viet: hsk5x).
+// Quy tac tu bai khoa (baiKhoa) nhu HSK5: tu 2–4 chu co nguyen ven trong bai khoa bai 1..N + bang 词语辨析 bai 1..N = da hoc.
+// Rieng HSK6 (ngheDe): listenExamData la cau nghe TU SOAN (sach HSK6 khong co SBT nghe) -> kiem ca loi thoai, cau hoi, phuong an, giai thich.
+// Khong kiem: sgkData (bai tap sach), retellData, writingData.de/dan (de bai sach), speakingData giu nguyen bang 练习5 cua sach (van kiem cau mau).
+CAP.hsk6 = {
+  duoi: ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5'], soTu: 1, soBai: 40, baiKhoa: true, hsk5x: true, ngheDe: true,
+  ten: [],
+  // dang tu do / hinh vi cua tu HSK1–5 (bang tu sach chi ghi tu ghep), them vao danh sach cua hsk5: 日(生日) 力(努力) 海(海洋) 队(排队)
+  // 部(全部) 总(总是) 信(相信) 期(学期) 修(修理) 伤(受伤) 员(服务员) 将(将来) 偷(小偷) 馆(图书馆) 国(中国) 眼(眼睛) 此(因此)
+  // 成(成为) 聊(聊天) 妈 爸 哥 姐(妈妈…) 道(知道) 村(农村) 正(正在) 歌(唱歌) 加(参加) 办(办法) 费(浪费) 机(手机) 报(报纸) 区(地区)
+  // 受(接受) 摔(摔倒) 已(已经) 奖(奖金) 古(古代) 跳(跳舞) 第(第一) 电(电脑) 网(上网) 订(预订) 泪(眼泪) 校(学校) 望(希望) 处(好处)
+  // 间(房间) 身(身体) 管(不管) 查(检查) 鞋(皮鞋) 院(医院) 躲(躲藏) 足(足球) 语(汉语) 琴(钢琴) 演(表演) 散(散步) 排(排队) 市(城市)
+  // 左右(左边) 句(句子) 遇(遇到) 线(路线) 步(跑步) 可(可是) 面(见面) 气(生气) 法(办法) 明(明天) 美(美丽) 表(手表) 游(游泳) 飞(飞机) 鸡(鸡蛋) 肉(羊肉)
+  them: '日 力 海 队 部 总 信 期 修 伤 员 将 偷 馆 国 眼 此 成 聊 妈 爸 哥 姐 道 村 正 歌 加 办 费 机 报 区 受 摔 已 奖 古 跳 第 电 网 订 泪 校 望 处 间 身 管 查 鞋 院 躲 足 语 琴 演 散 排 市 左 右 句 遇 线 步 可 面 气 法 明 美 表 游 飞 鸡 肉'.split(' ').map((t) => [t, 1]),
 };
 const cap = process.argv[2];
 if (!CAP[cap]) { console.log('Dung: node tools/kiem-qt1.js <' + Object.keys(CAP).join('|') + '> [bai|a-b] [--phu]'); process.exit(2); }
 
 function napBai(c0, n) {
-  const c = {};
+  const c = { listenData: [] }; // cap khong co listenData (hsk5) -> rong
   vm.createContext(c);
   const code = fs.readFileSync(path.join(JS, (CAP[c0].tep || c0 + '-bai-') + n + '-data.js'), 'utf8');
   vm.runInContext(code + ';this.__D={vocab:vocabData,mc:(typeof mcData!=="undefined"?mcData:(typeof errorFixData!=="undefined"?errorFixData.map(function(e){return {q:e.wrong,opts:e.opts,ans:e.ans,exp:e.exp};}):[])),fill:fillData,sort:sortData,match:matchData,' +
-    'listen:listenData,tr:translateData,trRev:translateDataRev,speak:speakingData,dialog:dialogData};', c);
+    'listen:listenData,tr:translateData,trRev:translateDataRev,speak:speakingData,dialog:dialogData,' +
+    'x:{syn:typeof synonymData!=="undefined"?synonymData:null,sit:typeof situationData!=="undefined"?situationData:null,reg:typeof registerData!=="undefined"?registerData:null,wr:typeof writingData!=="undefined"?writingData:null,lex:typeof listenExamData!=="undefined"?listenExamData:null}};', c);
   return c.__D;
 }
 const BAI = {};
@@ -146,6 +192,13 @@ function tapChoPhep(n) {
   for (let i = 1; i <= n; i++) BAI[i].vocab.forEach((v) => tuCuaMuc(v).forEach((w) => s.add(w)));
   CAP[cap].ten.concat(CAP[cap].them || []).forEach(([t, b]) => { if (b <= n) s.add(t); });
   if (n >= CAP[cap].soTu) SO.split('').forEach((c) => s.add(c));
+  // HSK5: tu 2–4 chu co nguyen ven trong bai khoa bai 1..N + tu trong bang 词语辨析 bai 1..N
+  if (CAP[cap].baiKhoa) for (let i = 1; i <= n; i++) {
+    (BAI[i].dialog || []).forEach((d) => (d.lines || []).forEach((l) => (String(l.zh || '').match(HAN) || []).forEach((r) => {
+      for (let L = 2; L <= 4; L++) for (let k = 0; k + L <= r.length; k++) s.add(r.substr(k, L));
+    })));
+    ((BAI[i].x && BAI[i].x.syn) || []).forEach((p) => [p.pair].concat((p.items || []).map((it) => it.word)).forEach((w) => (String(w || '').match(HAN) || []).forEach((t) => s.add(t))));
+  }
   return s;
 }
 function tuBaiSau(n) {
@@ -182,7 +235,8 @@ function tach(chuoi, cho) {
 function chuoiCuaBai(D) {
   const out = [];
   const add = (where, s) => { if (s != null && s !== '') out.push([where, String(s)]); };
-  D.mc.forEach((q, i) => { add('mc' + (i + 1) + '.q', q.q); q.opts.forEach((o, j) => add('mc' + (i + 1) + '.opt' + j, o)); add('mc' + (i + 1) + '.exp', q.exp); });
+  // sgkMc (HSK4 cu): mc = nguyen van bai chon tu SGK -> chi kiem phuong an, khong kiem cau sach + loi giai trich cau sach
+  D.mc.forEach((q, i) => { if (!CAP[cap].sgkMc) add('mc' + (i + 1) + '.q', q.q); q.opts.forEach((o, j) => add('mc' + (i + 1) + '.opt' + j, o)); if (!CAP[cap].sgkMc) add('mc' + (i + 1) + '.exp', q.exp); });
   D.fill.forEach((q, i) => { ['pre', 'blank', 'post', 'hint', 'ans', 'exp'].forEach((k) => add('fill' + (i + 1) + '.' + k, q[k])); });
   D.sort.forEach((q, i) => { add('sort' + (i + 1) + '.ans', q.ans); add('sort' + (i + 1) + '.words', (q.words || []).join('')); (q.alt || []).forEach((a) => add('sort' + (i + 1) + '.alt', a)); });
   D.match.forEach((q, i) => { add('match' + (i + 1), String(q.left) + String(q.right)); });
@@ -202,6 +256,17 @@ function chuoiCuaBai(D) {
   ((sp.t3 && sp.t3.tasks) || []).forEach((t, i) => (t.structure || []).concat([t.sample, t.note, t.guide]).forEach((s) => add('noi3.' + (i + 1), s)));
   // Luyen noi AI (HSK2 cu): speakingData.tasks
   (sp.mode === 'ai-speak' && sp.tasks || []).forEach((t, i) => [t.q_zh, t.sample, t.tip].forEach((s) => add('noi' + (i + 1), s)));
+  // HSK5: Tinh huong / Noi sao cho hay / Luyen viet (cau sap xep + doan mau)
+  const x = (CAP[cap].hsk5x && D.x) || {};
+  ((x.sit && x.sit.items) || []).forEach((t, i) => { add('tinhhuong' + (i + 1) + '.a', t.a && t.a.zh); add('tinhhuong' + (i + 1) + '.mau', t.sample); });
+  ((x.reg && x.reg.items) || []).forEach((t, i) => { add('hay' + (i + 1) + '.a', t.a); add('hay' + (i + 1) + '.b', t.b); });
+  ((x.wr && x.wr.sapXep) || []).forEach((t, i) => { add('viet' + (i + 1) + '.dap', t.dap); add('viet' + (i + 1) + '.manh', (t.manh || []).join('')); });
+  if (x.wr && x.wr.model) add('viet.mau', x.wr.model.zh);
+  // HSK6: nghe theo dang de (tu soan) — loi thoai + cau hoi + phuong an + giai thich
+  if (CAP[cap].ngheDe) ((x.lex && x.lex.items) || []).forEach((it, i) => {
+    (it.lines || []).forEach((l) => add('nghe' + (i + 1) + '.loi', l.zh));
+    add('nghe' + (i + 1) + '.q', it.q); (it.opts || []).forEach((o) => add('nghe' + (i + 1) + '.opt', o)); add('nghe' + (i + 1) + '.giai', it.why);
+  });
   return out;
 }
 

@@ -1168,15 +1168,17 @@ var dialogData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 1 · GHÉP TỪ (Collocation)
+// PHẦN 1 · GHÉP TỪ (Collocation) — ghép hai nửa thành cụm dùng được ngay
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'唱',right:'歌'},
-  {left:'说',right:'话'},
-  {left:'去',right:'年'},
-  {left:'贵',right:'姓'},
-  {left:'便',right:'宜'},
-  {left:'女',right:'孩子'},
+  {left:'星期五晚上去',right:'唱歌'},
+  {left:'苹果比西瓜',right:'便宜一些'},
+  {left:'坐在我右边的',right:'那个男孩子'},
+  {left:'上课的时候别',right:'说话'},
+  {left:'明天可能',right:'会下雨'},
+  {left:'这个孩子',right:'六岁了'},
+  {left:'我是去年',right:'来北京的'},
 ];
 
 // ══════════════════════════════════════════
@@ -1237,67 +1239,71 @@ var listenData = {
 };
 
 // ══════════════════════════════════════════
-// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: giờ ăn trưa, bàn về đồng nghiệp mới & giá cơm
+// PHẦN 3a · ĐIỀN TỪ — mỗi câu một tình huống mới (V+的+N · 比 · 可能 + từ mới bài 11, ôn bài 1–10 và HSK1)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'前面吃饭的那个男孩子是谁？他看起来',blank:'比',post:'我们都小。',hint:'(so với)',ans:'比',exp:'A + 比 + B + Tính từ = A hơn B.'},
-  {pre:'他',blank:'姓',post:'王，是新来的同事。',hint:'(họ)',ans:'姓'},
-  {pre:'他是',blank:'去年',post:'来公司的，工作已经一年了。',hint:'(năm ngoái)',ans:'去年'},
-  {pre:'坐在他',blank:'右边',post:'说话的那个女孩子是谁？',hint:'(bên phải)',ans:'右边'},
-  {pre:'那',blank:'可能',post:'是新来的同事。',hint:'(có thể, có lẽ)',ans:'可能',exp:'可能 (có lẽ) đứng trước động từ để phỏng đoán: 那可能是新来的同事.'},
-  {pre:'今天饭店的菜比昨天',blank:'便宜',post:'一些，我们多吃点儿吧。',hint:'(rẻ)',ans:'便宜'},
-  {pre:'她刚才一直在',blank:'说话',post:'，看起来很开心。',hint:'(nói chuyện)',ans:'说话'},
-  {pre:'星期五大家一起去',blank:'唱歌',post:'吧！',hint:'(hát)',ans:'唱歌'},
+  {pre:'“你和你姐姐谁高？” — “她高，她',blank:'比',post:'我高一点儿。”',hint:'(so với, hơn)',ans:'比',exp:'A + 比 + B + tính từ: 她比我高 = chị ấy cao hơn tôi; mức chênh (一点儿) đặt sau tính từ.'},
+  {pre:'“这个杯子二十块，那个十五块。” — “那个比这个',blank:'便宜',post:'五块。”',hint:'(rẻ)',ans:'便宜',exp:'比 + B + 便宜 + số tiền: 便宜五块 = rẻ hơn năm đồng; số đứng SAU tính từ.'},
+  {pre:'Bạn đi chợ, thấy hôm nay lạnh hơn hôm qua, dặn em: “今天比昨天冷',blank:'一点儿',post:'，你多喝点儿热水吧。”',hint:'(một chút)',ans:'一点儿',exp:'So sánh hơn một chút: 比 + B + tính từ + 一点儿 (không dùng 有点儿 hay 很 trong câu 比).'},
+  {pre:'“小王怎么还没来？” — “他',blank:'可能',post:'还在睡觉，昨天晚上他工作到十二点。”',hint:'(có lẽ)',ans:'可能',exp:'可能 + động từ = có lẽ (đoán): 他可能还在睡觉; đặt trước động từ, không đặt sau.'},
+  {pre:'Lần đầu gặp khách, bạn hỏi lịch sự: “请问，您贵',blank:'姓',post:'？” — “我姓张。”',hint:'(họ)',ans:'姓',exp:'您贵姓？ = xin hỏi ông/bà họ gì (lịch sự); trả lời 我姓…, không trả lời 我贵姓….'},
+  {pre:'“你的汉语很好！” — “谢谢，我',blank:'去年',post:'九月开始学习汉语。”',hint:'(năm ngoái)',ans:'去年',exp:'Từ thời gian 去年 đứng TRƯỚC động từ: 去年九月开始学习 = bắt đầu học từ tháng 9 năm ngoái.'},
+  {pre:'“我的手机在哪儿？” — “在电脑',blank:'右边',post:'，你没看见吗？”',hint:'(bên phải)',ans:'右边',exp:'Danh từ + 右边 / 左边 chỉ vị trí: 电脑右边 = bên phải máy tính.'},
+  {pre:'Trong lớp, hai bạn nói chuyện to, cô giáo nhắc: “别',blank:'说话',post:'了，同学都在考试。”',hint:'(nói chuyện)',ans:'说话',exp:'别 + động từ + 了 = đừng … nữa: 别说话了; không nói 不说话了 khi muốn ngăn người khác.'},
+  {pre:'“你女儿喜欢做什么？” — “她最喜欢',blank:'唱歌',post:'，也喜欢跳舞。”',hint:'(hát)',ans:'唱歌',exp:'最喜欢 + động từ: 最喜欢唱歌 = thích hát nhất.'},
+  {pre:'“你们家有几个',blank:'孩子',post:'？” — “两个，一个儿子，一个女儿。”',hint:'(con, trẻ con)',ans:'孩子',exp:'孩子 = con (cái) / trẻ em; dùng lượng từ 个: 两个孩子.'},
+  {pre:'“在门外面打电话',blank:'的',post:'人是谁？” — “是我爸爸。”',hint:'(… mà / người đang …)',ans:'的',exp:'Cụm động từ + 的 + danh từ: 打电话的人 = người đang gọi điện; 的 đứng ngay trước danh từ.'},
+  {pre:'“新来的医生是',blank:'男',post:'的吗？” — “不是，是女的，她姓李。”',hint:'(nam)',ans:'男',exp:'男的 / 女的 = người nam / người nữ (nói tắt, khẩu ngữ); 新来的医生 = bác sĩ mới đến.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3b · SẮP XẾP
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng V+的+N / 比 / 可能
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['那个','男孩子','看起来','比','我们','小','。'],ans:'那个男孩子看起来比我们小。',audio:'那个男孩子看起来比我们小。'},
-  {words:['他','是','去年','来','公司','的','。'],ans:'他是去年来公司的。',audio:'他是去年来公司的。'},
-  {words:['前面','说话','的','那个','人','可能','是','新','同事','。'],ans:'前面说话的那个人可能是新同事。',audio:'前面说话的那个人可能是新同事。'},
-  {words:['饭店','的','菜','比','昨天','便宜','。'],ans:'饭店的菜比昨天便宜。',audio:'饭店的菜比昨天便宜。'},
-  {words:['她','姓','王','，','是','新','来','的','同事','。'],ans:'她姓王，是新来的同事。',audio:'她姓王，是新来的同事。'},
-  {words:['我们','星期六','一起','去','唱歌','吧','。'],ans:'我们星期六一起去唱歌吧。',audio:'我们星期六一起去唱歌吧。'},
+  {words:['坐','在','我','右边','的','女孩子','是','新','同学','。'],ans:'坐在我右边的女孩子是新同学。',audio:'坐在我右边的女孩子是新同学。'},
+  {words:['坐','出租车','比','坐','公共汽车','快','多','了','。'],ans:'坐出租车比坐公共汽车快多了。',audio:'坐出租车比坐公共汽车快多了。'},
+  {words:['他','可能','已经','回','家','了','。'],ans:'他可能已经回家了。',audio:'他可能已经回家了。'},
+  {words:['这个','房间','比','那个','大','一点儿','。'],ans:'这个房间比那个大一点儿。',audio:'这个房间比那个大一点儿。'},
+  {words:['昨天','给','你','打电话','的','人','姓','什么','？'],ans:'昨天给你打电话的人姓什么？',audio:'昨天给你打电话的人姓什么？'},
+  {words:['去年','我们','一起','去','北京','旅游','了','。'],ans:'去年我们一起去北京旅游了。',audio:'去年我们一起去北京旅游了。',alt:['我们去年一起去北京旅游了。']},
+  {words:['左边','唱歌','的','男孩子','是','我','哥哥','的','同学','。'],ans:'左边唱歌的男孩子是我哥哥的同学。',audio:'左边唱歌的男孩子是我哥哥的同学。'},
+  {words:['女儿','比','儿子','喜欢','说话','。'],ans:'女儿比儿子喜欢说话。',audio:'女儿比儿子喜欢说话。'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3c · SỬA LỖI SAI
+// PHẦN 3c · SỬA LỖI SAI — lỗi học sinh Việt hay mắc
+// (định ngữ đặt sau danh từ, 比…很…, số đặt trước tính từ, 可以/可能, thiếu 的, 一点儿 trước tính từ, thiếu lượng từ, thời gian sau động từ)
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'前面的说话那个人是谁？',
-   opts:['前面说话的那个人是谁？','前面的说话那个人是谁？','说话前面的那个人是谁？','前面那个说话是的人谁？'],ans:0,
-   exp:'Cụm động từ (说话) làm định ngữ phải đứng NGAY TRƯỚC 的, rồi mới đến danh từ: [Cụm động từ] + 的 + Danh từ.'},
-  {wrong:'我比他大三岁比。',
-   opts:['我比他大三岁。','我比他大三岁比。','我大比他三岁。','比我他大三岁。'],ans:0,
-   exp:'比 chỉ xuất hiện MỘT LẦN, ngay sau chủ ngữ A và trước đối tượng so sánh B: A + 比 + B + Tính từ.'},
-  {wrong:'他大比我三岁。',
-   opts:['他比我大三岁。','他大比我三岁。','他比大我三岁。','大他比我三岁。'],ans:0,
-   exp:'比 + B phải đứng TRƯỚC tính từ (大/小/便宜...), không đặt tính từ lên trước 比.'},
-  {wrong:'他认识可能你。',
-   opts:['他可能认识你。','他认识可能你。','可能他认识不你。','他不可能认识可能你。'],ans:0,
-   exp:'可能 (có thể, có lẽ) đứng TRƯỚC động từ, không đặt sau động từ như tiếng Việt "quen có thể".'},
-  {wrong:'便宜比昨天饭店的菜。',
-   opts:['饭店的菜比昨天便宜。','便宜比昨天饭店的菜。','饭店的菜昨天比便宜。','比饭店的菜昨天便宜。'],ans:0,
-   exp:'Trật tự câu 比 chuẩn: Chủ ngữ (饭店的菜) + 比 + Đối tượng so sánh (昨天) + Tính từ (便宜), không đảo lên đầu câu.'},
+  {wrong:'我认识那个人在前面说话。（ý: tôi quen người đang nói chuyện phía trước）',
+   opts:['我认识那个在前面说话人。','我认识在前面说话的那个人。','我认识在前面说话那个的人。','我认识那个人的在前面说话。'],ans:1,
+   exp:'Cụm động từ làm định ngữ đứng TRƯỚC danh từ và có 的: 在前面说话的那个人 — không đặt sau như tiếng Việt “người nói chuyện phía trước”.'},
+  {wrong:'这个西瓜比那个很大。',
+   opts:['这个西瓜比那个大多了。','这个西瓜比那个非常大。','这个西瓜很比那个大。','这个西瓜比那个是大。'],ans:0,
+   exp:'Câu 比 không dùng 很 / 非常 / 是 trước tính từ; muốn nói “hơn nhiều” thì thêm 多了 sau tính từ: 大多了.'},
+  {wrong:'我比姐姐两岁小。',
+   opts:['我两岁比姐姐小。','我比两岁姐姐小。','我小比姐姐两岁。','我比姐姐小两岁。'],ans:3,
+   exp:'Số chênh lệch đứng SAU tính từ: 比姐姐小两岁 = kém chị hai tuổi.'},
+  {wrong:'“小李今天怎么没来上课？” — “他可以生病了。”（ý: có lẽ bị ốm）',
+   opts:['“他会生病了。”','“他生病可能了。”','“他可能生病了。”','“他能生病了。”'],ans:2,
+   exp:'“Có lẽ” (đoán) = 可能; 可以 / 能 = được phép, có khả năng làm; 会 = biết / sẽ. 可能 đứng trước động từ.'},
+  {wrong:'这是我昨天买了书。（ý: đây là quyển sách tôi mua hôm qua）',
+   opts:['这是我的昨天买书。','这是我昨天的买书。','这是我昨天买的书。','这是书我昨天买了。'],ans:2,
+   exp:'Định ngữ là cụm động từ: 我昨天买的书 — dùng 的 nối với danh từ, không dùng 了.'},
+  {wrong:'这件衣服比那件一点儿便宜。',
+   opts:['这件衣服比那件有点儿便宜。','这件衣服比那件便宜一点儿。','这件衣服一点儿比那件便宜。','这件衣服比那件很便宜一点儿。'],ans:1,
+   exp:'一点儿 đứng SAU tính từ: 便宜一点儿; 有点儿 (hơi, không như ý) không dùng trong câu 比.'},
+  {wrong:'王老师家有两孩子。',
+   opts:['王老师家有两个孩子。','王老师家有二个孩子。','王老师家有两个的孩子。','王老师家有孩子两个。'],ans:0,
+   exp:'Số + lượng từ + danh từ: 两个孩子; trước lượng từ dùng 两 (không dùng 二), không thêm 的.'},
+  {wrong:'我是来中国去年的。',
+   opts:['我是来中国的去年。','我去年来中国的是。','我是去年来中国了的。','我是去年来中国的。'],ans:3,
+   exp:'Thời gian đứng trước động từ, kẹp giữa 是……的: 我是去年来中国的; không thêm 了.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 // Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
 // lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
 // dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
@@ -1306,119 +1312,118 @@ var speakingData = {
   intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 11. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn học hỏi về anh chị em của bạn.',
-      q_zh: '你有哥哥吗？他比你大几岁？',
-      q_py: 'Nǐ yǒu gēge ma? Tā bǐ nǐ dà jǐ suì?',
-      q_vn: 'Bạn có anh trai không? Hơn bạn mấy tuổi?',
+      situation: 'Bạn mới quen hỏi về gia đình bạn.',
+      q_zh: '你家里谁比你大？大几岁？',
+      q_py: 'Nǐ jiā li shéi bǐ nǐ dà? Dà jǐ suì?',
+      q_vn: 'Trong nhà bạn ai lớn tuổi hơn bạn? Lớn hơn mấy tuổi?',
       grammar: { label: 'A 比 B 大/小 + số + 岁', any: ['比'] },
       need: [
-        { label: 'Dùng 比 để so sánh', any: ['比'] },
+        { label: 'Nói người đó là ai', any: ['哥哥', '姐姐', '弟弟', '妹妹', '爸爸', '妈妈', '朋友', '同学', '孩子', '儿子', '女儿'] },
         { label: 'Nói hơn kém mấy tuổi', any: ['岁'] },
-        { label: 'Nói người đó là ai', any: ['哥哥', '姐姐', '弟弟', '妹妹', '没有'] }
+        { label: 'Dùng 大 / 小', any: ['大', '小'] }
       ],
-      bonus: { label: 'Nói thêm tuổi cụ thể (他25岁)', any: ['岁', '今年'] },
-      vocab: ['比', '哥哥', '孩子'],
+      bonus: { label: 'Nói thêm người đó làm gì (在…工作 / 是学生)', any: ['工作', '学生', '医生', '老师', '公司', '医院', '学校'] },
+      vocab: ['比', '孩子'],
       minLen: 10,
-      sample: '我有一个哥哥，他今年25岁，比我大三岁。',
-      sample_py: 'Wǒ yǒu yí ge gēge, tā jīnnián èrshíwǔ suì, bǐ wǒ dà sān suì.',
-      sample_vn: 'Tôi có một anh trai, năm nay anh 25 tuổi, hơn tôi ba tuổi.',
-      tip: 'Mức chênh lệch đặt sau tính từ: 比我大三岁, không nói 比我三岁大.'
+      sample: '我哥哥比我大五岁，他已经工作了，现在在北京。',
+      sample_py: 'Wǒ gēge bǐ wǒ dà wǔ suì, tā yǐjīng gōngzuò le, xiànzài zài Běijīng.',
+      sample_vn: 'Anh tôi lớn hơn tôi năm tuổi, anh ấy đi làm rồi, bây giờ ở Bắc Kinh.',
+      tip: 'Số chênh lệch đặt sau tính từ: 比我大五岁, không nói 比我五岁大.'
     },
     {
-      situation: 'Ở chợ, bạn hỏi giá dưa hấu hôm nay.',
-      q_zh: '今天的西瓜怎么卖？比昨天便宜吗？',
-      q_py: 'Jīntiān de xīguā zěnme mài? Bǐ zuótiān piányi ma?',
-      q_vn: 'Dưa hấu hôm nay bán thế nào? Có rẻ hơn hôm qua không?',
-      grammar: { label: '…比昨天便宜 + …一斤', any: ['比'] },
+      situation: 'Bạn chỉ cho bạn mới chỗ mua đồ rẻ gần nhà.',
+      q_zh: '你家旁边的商店，什么东西比学校里的便宜？',
+      q_py: 'Nǐ jiā pángbiān de shāngdiàn, shénme dōngxi bǐ xuéxiào li de piányi?',
+      q_vn: 'Cửa hàng cạnh nhà bạn, thứ gì rẻ hơn ở trong trường?',
+      grammar: { label: 'A 比 B 便宜/贵 (+ số tiền)', any: ['比'] },
       need: [
-        { label: 'Nói giá (块 / 斤)', any: ['块', '斤', '钱'] },
-        { label: 'Dùng 比 so sánh với hôm qua', any: ['比'] },
-        { label: 'Dùng 便宜 hoặc 贵', any: ['便宜', '贵'] }
+        { label: 'Nói món đồ', any: ['水果', '苹果', '西瓜', '牛奶', '咖啡', '茶', '水', '鸡蛋', '面条', '米饭', '菜', '杯子', '衣服', '书', '东西', '鱼', '羊肉'] },
+        { label: 'Dùng 便宜 hoặc 贵', any: ['便宜', '贵'] },
+        { label: 'Nói giá / số tiền (块 / 钱)', any: ['块', '钱', '斤', '一点儿', '一些', '多了'] }
       ],
-      bonus: { label: 'Mời khách mua thêm (您来点儿吧)', any: ['来点儿', '吧', '买'] },
+      bonus: { label: 'Rủ bạn đi mua cùng (我们一起去吧)', any: ['一起', '吧'] },
       vocab: ['比', '便宜'],
-      minLen: 10,
-      sample: '三块五一斤，比昨天便宜。苹果也比昨天便宜一些，您来点儿吧。',
-      sample_py: 'Sān kuài wǔ yì jīn, bǐ zuótiān piányi. Píngguǒ yě bǐ zuótiān piányi yìxiē, nín lái diǎnr ba.',
-      sample_vn: 'Ba tệ rưỡi một cân, rẻ hơn hôm qua. Táo cũng rẻ hơn hôm qua một chút, ông/bà mua chút nhé.',
-      tip: '便宜一些 / 便宜一点儿 = rẻ hơn một chút, đặt sau tính từ.'
+      minLen: 12,
+      sample: '我家旁边的商店，水果比学校里的便宜，一斤苹果便宜两块钱。',
+      sample_py: 'Wǒ jiā pángbiān de shāngdiàn, shuǐguǒ bǐ xuéxiào li de piányi, yì jīn píngguǒ piányi liǎng kuài qián.',
+      sample_vn: 'Cửa hàng cạnh nhà tôi, hoa quả rẻ hơn ở trong trường, một cân táo rẻ hơn hai đồng.',
+      tip: 'Số tiền chênh lệch đặt sau 便宜 / 贵: 便宜两块钱.'
     },
     {
-      situation: 'Bạn xem ảnh chụp chung và giới thiệu từng người.',
-      q_zh: '照片里左边那个人是谁？右边的呢？',
-      q_py: 'Zhàopiàn lǐ zuǒbian nàge rén shì shéi? Yòubian de ne?',
-      q_vn: 'Trong ảnh người bên trái là ai? Còn người bên phải?',
-      grammar: { label: '左边那个 + động từ + 的是… / 右边…的是…', any: ['的'] },
+      situation: 'Bạn giới thiệu với bạn mới những người ngồi quanh mình trong lớp.',
+      q_zh: '在教室里，坐在你左边和右边的是谁？在做什么？',
+      q_py: 'Zài jiàoshì li, zuò zài nǐ zuǒbian hé yòubian de shì shéi? Zài zuò shénme?',
+      q_vn: 'Trong lớp, người ngồi bên trái và bên phải bạn là ai? Họ đang làm gì?',
+      grammar: { label: 'động từ + 的 + 人/男孩子/女孩子', any: ['的'] },
       need: [
-        { label: 'Dùng 左边 và 右边', any: ['左边', '右边'] },
-        { label: 'Tả người bằng động từ + 的 (看报纸的 / 写字的)', any: ['看', '写', '说', '唱', '笑', '坐', '站'] },
-        { label: 'Nói quan hệ (姐姐 / 哥哥 / 朋友)', any: ['姐姐', '哥哥', '弟弟', '妹妹', '朋友', '同学', '老师', '爸爸', '妈妈'] }
+        { label: 'Dùng 左边 hoặc 右边', any: ['左边', '右边'] },
+        { label: 'Tả người bằng việc đang làm (看书的 / 写字的 / 说话的)', any: ['看', '写', '说', '唱', '坐', '听', '喝', '吃', '学习', '睡觉'] },
+        { label: 'Nói người đó là ai (男孩子 / 女孩子 / 朋友 / 同学)', any: ['男', '女', '朋友', '同学', '孩子', '姓', '叫'] }
       ],
-      bonus: { label: 'Nói thêm tuổi hoặc so sánh (比我大)', any: ['比', '岁'] },
-      vocab: ['右边', '男', '女', '孩子'],
+      bonus: { label: 'Nói thêm họ của bạn ấy (她姓…)', any: ['姓', '叫'] },
+      vocab: ['右边', '男', '女', '孩子', '姓'],
       minLen: 14,
-      sample: '左边那个看报纸的女孩子是我姐姐，右边写字的那个人是我哥哥。',
-      sample_py: 'Zuǒbian nàge kàn bàozhǐ de nǚháizi shì wǒ jiějie, yòubian xiě zì de nàge rén shì wǒ gēge.',
-      sample_vn: 'Cô gái đang đọc báo bên trái là chị tôi, người đang viết chữ bên phải là anh tôi.',
-      tip: 'Cụm "động từ + 的" dùng để tả người: 看报纸的（人）= người đang đọc báo.'
+      sample: '坐在我左边的是一个女孩子，她姓张。右边看书的男孩子是我的好朋友。',
+      sample_py: 'Zuò zài wǒ zuǒbian de shì yí ge nǚháizi, tā xìng Zhāng. Yòubian kàn shū de nánháizi shì wǒ de hǎo péngyou.',
+      sample_vn: 'Ngồi bên trái tôi là một bạn nữ, bạn ấy họ Trương. Cậu con trai đang đọc sách bên phải là bạn thân của tôi.',
+      tip: 'Cụm “động từ + 的” đứng TRƯỚC người được tả: 看书的男孩子 = cậu bé đang đọc sách.'
     },
     {
-      situation: 'Bạn giới thiệu giáo viên tiếng Trung của mình cho bạn mới.',
-      q_zh: '前面说话的那个人是你的汉语老师吗？他姓什么？多大？',
-      q_py: 'Qiánmiàn shuōhuà de nàge rén shì nǐ de Hànyǔ lǎoshī ma? Tā xìng shénme? Duō dà?',
-      q_vn: 'Người đang nói chuyện phía trước là giáo viên tiếng Trung của bạn à? Thầy họ gì? Bao nhiêu tuổi?',
-      grammar: { label: '他姓… + 他比…小/大…岁', any: ['姓'] },
+      situation: 'Hôm nay bạn cùng lớp không đến, cô giáo hỏi bạn.',
+      q_zh: '今天小王没来上课，你觉得他怎么了？',
+      q_py: 'Jīntiān Xiǎo Wáng méi lái shàngkè, nǐ juéde tā zěnme le?',
+      q_vn: 'Hôm nay Tiểu Vương không đi học, bạn đoán cậu ấy bị sao?',
+      grammar: { label: '他可能 + động từ…', any: ['可能'] },
       need: [
-        { label: 'Dùng 姓 để nói họ', any: ['姓'] },
-        { label: 'Nói tuổi', any: ['岁'] },
-        { label: 'Nói thêm mốc thời gian thầy/cô đến dạy (去年 / 今年)', any: ['去年', '今年', '上个', '来'] }
+        { label: 'Đoán lý do (生病 / 累 / 忙 / 有事)', any: ['生病', '病', '累', '忙', '事', '下雨', '晚', '不舒服', '休息', '医院'] },
+        { label: 'Nêu căn cứ hoặc việc sẽ làm (昨天他说… / 我给他打电话)', any: ['昨天', '因为', '说', '打电话', '告诉', '问', '去看'] },
+        { label: 'Có chủ ngữ chỉ bạn ấy (他 / 小王)', any: ['他', '小王', '她'] }
       ],
-      bonus: { label: 'Dùng 比 so sánh với giáo viên khác', any: ['比'] },
-      vocab: ['说话', '可能', '姓', '去年'],
-      minLen: 12,
-      sample: '是，他是去年来的，他姓王，28岁，比我们的老师小两岁。',
-      sample_py: 'Shì, tā shì qùnián lái de, tā xìng Wáng, èrshíbā suì, bǐ wǒmen de lǎoshī xiǎo liǎng suì.',
-      sample_vn: 'Đúng, thầy đến từ năm ngoái, thầy họ Vương, 28 tuổi, kém giáo viên của chúng tôi hai tuổi.',
-      tip: '姓 dùng cho họ (他姓王), 叫 dùng cho tên đầy đủ (他叫王方).'
+      bonus: { label: 'Dùng 以后 / 下课 để nói khi nào hỏi thăm', any: ['以后', '下课', '晚上', '中午'] },
+      vocab: ['可能'],
+      minLen: 10,
+      sample: '他可能有事情，昨天他说今天要去机场接妈妈。下课以后我给他打电话吧。',
+      sample_py: 'Tā kěnéng yǒu shìqing, zuótiān tā shuō jīntiān yào qù jīchǎng jiē māma. Xiàkè yǐhòu wǒ gěi tā dǎ diànhuà ba.',
+      sample_vn: 'Có lẽ cậu ấy có việc, hôm qua cậu ấy nói hôm nay phải ra sân bay đón mẹ. Tan học em sẽ gọi điện cho cậu ấy.',
+      tip: '可能 (có lẽ) đặt trước động từ: 他可能生病了; đừng nhầm với 可以 (được phép).'
     },
     {
-      situation: 'Bạn học tò mò hỏi về người đi hát cùng bạn hôm qua.',
-      q_zh: '昨天和你一起唱歌的人是谁？是不是男朋友？',
-      q_py: 'Zuótiān hé nǐ yìqǐ chànggē de rén shì shéi? Shì bu shì nánpéngyou?',
-      q_vn: 'Người đi hát cùng bạn hôm qua là ai? Có phải bạn trai không?',
-      grammar: { label: '不是…，是…介绍的 + 第一次见', any: ['不是', '介绍'] },
+      situation: 'Bạn bè hỏi về sở thích hát karaoke của bạn.',
+      q_zh: '你喜欢唱歌吗？去年你和谁一起去唱歌了？',
+      q_py: 'Nǐ xǐhuan chànggē ma? Qùnián nǐ hé shéi yìqǐ qù chànggē le?',
+      q_vn: 'Bạn có thích hát không? Năm ngoái bạn đi hát với ai?',
+      grammar: { label: '和 + người + 一起去唱歌了', any: ['一起', '和'] },
       need: [
-        { label: 'Trả lời phải hay không phải', any: ['是', '不是'] },
-        { label: 'Nói người đó là ai (朋友 / 同学)', any: ['朋友', '同学', '同事', '哥哥', '姐姐'] },
-        { label: 'Dùng 唱歌 hoặc 一起', any: ['唱歌', '一起'] }
+        { label: 'Dùng 唱歌', any: ['唱歌', '唱'] },
+        { label: 'Nói thời gian (去年 / 生日的时候…)', any: ['去年', '时候', '月', '星期', '晚上', '生日'] },
+        { label: 'Nói đi với ai', any: ['朋友', '同学', '哥哥', '姐姐', '爸爸', '妈妈', '同事', '男朋友', '女朋友'] }
       ],
-      bonus: { label: 'Nói thêm ai giới thiệu / lần đầu gặp', any: ['介绍', '第一次'] },
-      vocab: ['唱歌', '男', '女'],
+      bonus: { label: 'Nói hát bao lâu (三个小时)', any: ['小时', '分钟'] },
+      vocab: ['唱歌', '去年'],
       minLen: 12,
-      sample: '不是男朋友，是一个朋友，我们一起唱歌。我同学介绍的，昨天第一次见。',
-      sample_py: 'Bú shì nánpéngyou, shì yí ge péngyou, wǒmen yìqǐ chànggē. Wǒ tóngxué jièshào de, zuótiān dì-yī cì jiàn.',
-      sample_vn: 'Không phải bạn trai, là một người bạn, chúng tôi hát cùng nhau. Bạn học tôi giới thiệu, hôm qua mới gặp lần đầu.',
-      tip: 'Nhấn mạnh bằng cách lặp phủ định rồi khẳng định: 不是…，是….'
+      sample: '我很喜欢唱歌。去年我生日的时候，和同学一起去唱歌了，我们都很高兴。',
+      sample_py: 'Wǒ hěn xǐhuan chànggē. Qùnián wǒ shēngrì de shíhou, hé tóngxué yìqǐ qù chànggē le, wǒmen dōu hěn gāoxìng.',
+      sample_vn: 'Tôi rất thích hát. Năm ngoái vào sinh nhật tôi, tôi cùng các bạn học đi hát, ai cũng rất vui.',
+      tip: '去年 / 生日的时候 đặt trước động từ; đã làm xong thì thêm 了: 去唱歌了.'
     }
   ]
 };
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — dùng từ bài 11 + ôn lại từ bài 1-10 và HSK1
+// LUYỆN DỊCH — câu mới, dùng từ bài 11 + ôn bài 1–10 và HSK1
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Anh trai cao hơn chị gái.', zh:'哥哥比姐姐高。', py:'Gēge bǐ jiějie gāo.'},
-  {vi:'Người cùng hát karaoke với bạn là ai?', zh:'和你一起唱歌的人是谁？', py:'Hé nǐ yìqǐ chàng gē de rén shì shéi?'},
-  {vi:'Có thể bạn không quen biết anh ấy.', zh:'你可能不认识他。', py:'Nǐ kěnéng bú rènshi tā.'},
-  {vi:'Cái này rẻ hơn cái kia một chút.', zh:'这个比那个便宜一点儿。', py:'Zhège bǐ nàge piányi yìdiǎnr.'},
+  {vi:'Người đang uống cà phê bên trái là bố của bạn tôi.', zh:'左边喝咖啡的那个人是我朋友的爸爸。', py:'Zuǒbian hē kāfēi de nàge rén shì wǒ péngyou de bàba.'},
+  {vi:'Quả táo này đắt hơn quả kia hai đồng.', zh:'这个苹果比那个贵两块钱。', py:'Zhège píngguǒ bǐ nàge guì liǎng kuài qián.'},
+  {vi:'Trời mưa rồi, có lẽ chúng ta không đi bơi nữa.', zh:'下雨了，我们可能不去游泳了。', py:'Xià yǔ le, wǒmen kěnéng bú qù yóuyǒng le.'},
+  {vi:'Năm ngoái hoa quả ở đây đắt hơn bây giờ.', zh:'去年这儿的水果比现在贵。', py:'Qùnián zhèr de shuǐguǒ bǐ xiànzài guì.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Cô bé đang hát tên họ là gì?', zh:'唱歌的女孩子姓什么？', py:'Chàng gē de nǚ háizi xìng shénme?'},
-  {vi:'Cậu bé đang nói chuyện bên phải là bạn cùng lớp của tôi.', zh:'右边说话的男孩子是我同学。', py:'Yòubian shuōhuà de nán háizi shì wǒ tóngxué.'},
-  {vi:'Năm ngoái cái này rẻ hơn cái kia.', zh:'去年这个比那个便宜。', py:'Qùnián zhège bǐ nàge piányi.'},
-  {vi:'Có thể bạn không quen biết cô ấy, cô ấy họ Vương.', zh:'你可能不认识她，她姓王。', py:'Nǐ kěnéng bú rènshi tā, tā xìng Wáng.'},
+  {vi:'Cậu bé đang hát kia họ gì?', zh:'那个正在唱歌的男孩子姓什么？', py:'Nàge zhèngzài chànggē de nánháizi xìng shénme?'},
+  {vi:'Mì của nhà hàng này ngon hơn của trường nhiều.', zh:'这个饭店的面条比学校的好吃多了。', py:'Zhège fàndiàn de miàntiáo bǐ xuéxiào de hǎochī duō le.'},
+  {vi:'Điện thoại của tôi có lẽ ở trong lớp, bạn tìm giúp tôi nhé?', zh:'我的手机可能在教室里，你帮我找找，好吗？', py:'Wǒ de shǒujī kěnéng zài jiàoshì li, nǐ bāng wǒ zhǎozhao, hǎo ma?'},
 ];

@@ -1144,15 +1144,16 @@ var dialogData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 1 · GHÉP TỪ (Collocation)
+// PHẦN 1 · GHÉP TỪ (Collocation) — ghép hai nửa thành cụm dùng được ngay
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'打',right:'错'},
-  {left:'从',right:'开始'},
-  {left:'第一',right:'次'},
-  {left:'希望',right:'喜欢'},
-  {left:'听',right:'懂'},
-  {left:'做',right:'完'},
+  {left:'打错',right:'电话了'},
+  {left:'看懂',right:'这些汉字'},
+  {left:'做完',right:'今天的工作'},
+  {left:'从早上八点',right:'开始上班'},
+  {left:'第一次',right:'坐飞机'},
+  {left:'我希望',right:'你们喜欢'},
 ];
 
 // ══════════════════════════════════════════
@@ -1214,67 +1215,72 @@ var listenData = {
 };
 
 // ══════════════════════════════════════════
-// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ngày đầu tiên đi làm
+// PHẦN 3a · ĐIỀN TỪ — mỗi câu một tình huống mới (bổ ngữ kết quả · 从 · 第一 + từ mới bài 9, ôn bài 1–8 và HSK1)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你好，欢迎你来上班！这是你',blank:'第一',post:'次来吧？',hint:'(đầu tiên, thứ nhất)',ans:'第一',exp:'第 + số = số thứ tự: 第一次 = lần đầu tiên.'},
-  {pre:'是的，谢谢，我',blank:'希望',post:'能在这儿工作得很好。',hint:'(hy vọng)',ans:'希望'},
-  {pre:'你',blank:'从',post:'什么时候开始学习汉语的？',hint:'(từ)',ans:'从',exp:'从 + thời điểm + 开始 = bắt đầu từ…; câu hỏi 从什么时候开始.'},
-  {pre:'我从去年开始学的，现在',blank:'已经',post:'懂一点儿了。',hint:'(đã — ôn Bài 4)',ans:'已经',exp:'已经 + động từ = đã…: 已经懂一点儿了 = đã hiểu một chút rồi.'},
-  {pre:'老师说的话你都听',blank:'懂',post:'了吗？',hint:'(hiểu — bổ ngữ kết quả)',ans:'懂',exp:'听懂 = nghe HIỂU (bổ ngữ kết quả chỉ kết quả của hành động nghe).'},
-  {pre:'',blank:'懂',post:'了，可是题太多。',hint:'(hiểu)',ans:'懂'},
-  {pre:'我没做',blank:'完',post:'。',hint:'(xong — bổ ngữ kết quả)',ans:'完',exp:'做完 = làm XONG.'},
-  {pre:'对不起，我写',blank:'错',post:'字了。',hint:'(nhầm — bổ ngữ kết quả)',ans:'错',exp:'错 là bổ ngữ kết quả đứng sau động từ: 写错 = viết sai.'},
+  {pre:'“这本书你看',blank:'完',post:'了吗？” — “看完了，很好看，给你吧。”',hint:'(xong, hết)',ans:'完',exp:'Động từ + 完 = làm xong: 看完 = đọc xong.'},
+  {pre:'“老师的问题你听',blank:'懂',post:'了吗？” — “没有，他说汉语说太快了。”',hint:'(hiểu)',ans:'懂',exp:'听懂 = nghe hiểu; phủ định là 没听懂, không nói 不听懂.'},
+  {pre:'对不起，我写',blank:'错',post:'了你的名字。',hint:'(sai, nhầm)',ans:'错',exp:'Động từ + 错 = làm sai: 写错 = viết sai.'},
+  {pre:'“你买',blank:'到',post:'那本书了吗？” — “没有，商店里没有了。”',hint:'(được — đạt mục đích)',ans:'到',exp:'Động từ + 到 = làm được, đạt mục đích; 没买到 = không mua được.'},
+  {pre:'“明天的考试你准备',blank:'好',post:'了吗？” — “还没呢，今天晚上我再看看书。”',hint:'(xong xuôi, sẵn sàng)',ans:'好',exp:'Động từ + 好 = làm xong xuôi, sẵn sàng: 准备好了 = chuẩn bị xong rồi.'},
+  {pre:'我在公共汽车上',blank:'看见',post:'你的老师了。',hint:'(nhìn thấy)',ans:'看见',exp:'看见 = nhìn thấy (kết quả của 看); 看 chỉ là nhìn, xem.'},
+  {pre:'“',blank:'从',post:'这儿到机场要多长时间？” — “坐出租车一个小时。”',hint:'(từ)',ans:'从',exp:'从 A 到 B = từ A đến B (nơi chốn hoặc thời gian).'},
+  {pre:'我',blank:'从',post:'上个月开始学跳舞，现在会跳舞了。',hint:'(từ — mốc thời gian)',ans:'从',exp:'从 + thời điểm + 开始 + động từ = bắt đầu làm gì từ lúc ….'},
+  {pre:'今天是我',blank:'第一',post:'天上班，我八点就到公司了。',hint:'(thứ nhất, đầu tiên)',ans:'第一',exp:'第一 + lượng từ / 天 / 次 = … đầu tiên: 第一天 = ngày đầu tiên.'},
+  {pre:'明天我们去旅游，我',blank:'希望',post:'明天不下雨。',hint:'(hy vọng, mong)',ans:'希望',exp:'希望 + cả một câu = mong rằng …: 希望明天不下雨.'},
+  {pre:'Khách đến nhà, bạn ra mở cửa: “',blank:'欢迎',post:'你们来我家！请坐，请喝茶。”',hint:'(hoan nghênh, chào mừng)',ans:'欢迎',exp:'欢迎 + người + 来 + nơi = chào mừng ai đến ….'},
+  {pre:'“老师，我有一个',blank:'问题',post:'。” — “好，你说吧。”',hint:'(câu hỏi, vấn đề)',ans:'问题',exp:'有问题 = có câu hỏi / có vấn đề; 没问题 = không vấn đề gì.'},
+  {pre:'“你爸爸每天几点去',blank:'上班',post:'？” — “八点，他坐公共汽车去。”',hint:'(đi làm)',ans:'上班',exp:'去上班 = đi làm; 上班 đã là động từ, không thêm 工作 phía sau.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3b · SẮP XẾP
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng bổ ngữ kết quả / 从 / 第一
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['这','是','你','第一','次','来','吧','？'],ans:'这是你第一次来吧？',audio:'这是你第一次来吧？'},
-  {words:['我','希望','能','在','这儿','工作','得','很','好','。'],ans:'我希望能在这儿工作得很好。',audio:'我希望能在这儿工作得很好。'},
-  {words:['你','从','什么','时候','开始','学习','汉语','的','？'],ans:'你从什么时候开始学习汉语的？',audio:'你从什么时候开始学习汉语的？'},
-  {words:['我','从','去年','开始','学','的','。'],ans:'我从去年开始学的。',audio:'我从去年开始学的。'},
-  {words:['老师','说','的','话','我','都','听','懂','了','。'],ans:'老师说的话我都听懂了。',audio:'老师说的话我都听懂了。'},
-  {words:['题','太','多','，','我','没','做','完','。'],ans:'题太多，我没做完。',audio:'题太多，我没做完。'},
+  {words:['你','的','问题','我','没','听','懂','。'],ans:'你的问题我没听懂。',audio:'你的问题我没听懂。',alt:['我没听懂你的问题。']},
+  {words:['我','女儿','从','五','岁','开始','学','跳舞','。'],ans:'我女儿从五岁开始学跳舞。',audio:'我女儿从五岁开始学跳舞。'},
+  {words:['这','是','我','第一','次','吃','羊肉','面条','。'],ans:'这是我第一次吃羊肉面条。',audio:'这是我第一次吃羊肉面条。'},
+  {words:['你','写','错','了','两','个','字','。'],ans:'你写错了两个字。',audio:'你写错了两个字。'},
+  {words:['同学','都','很','欢迎','我','。'],ans:'同学都很欢迎我。',audio:'同学都很欢迎我。'},
+  {words:['希望','你','的','病','快','点儿','好','。'],ans:'希望你的病快点儿好。',audio:'希望你的病快点儿好。'},
+  {words:['姐姐','在','北京','找','到','了','新','工作','。'],ans:'姐姐在北京找到了新工作。',audio:'姐姐在北京找到了新工作。'},
+  {words:['这','些','汉字','你','都','写','对','了','吗','？'],ans:'这些汉字你都写对了吗？',audio:'这些汉字你都写对了吗？'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3c · SỬA LỖI SAI
+// PHẦN 3c · SỬA LỖI SAI — lỗi học sinh Việt hay mắc
+// (不/没 với bổ ngữ kết quả, tân ngữ chen giữa V và 完, 从 + thời gian đặt sau động từ, thiếu 次, 吗 sai chỗ...)
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'什么时候你从开始学习汉语？',
-   opts:['你从什么时候开始学习汉语？','你什么时候从开始学习汉语？','从你什么时候开始学习汉语？','你从开始什么时候学习汉语？'],ans:0,
-   exp:'从 đứng NGAY TRƯỚC mốc thời gian: 从 + 什么时候/去年/七岁.'},
-  {wrong:'这是一第次来吧？',
-   opts:['这是第一次来吧？','这是一第次来吧？','这是次第一来吧？','第这是一次来吧？'],ans:0,
-   exp:'第 đứng TRƯỚC số đếm để tạo số thứ tự: 第一, 第二, không đặt sau.'},
-  {wrong:'我听这个话不。',
-   opts:['我听不懂这句话。','我听这句话不懂。','我不听懂这句话。','我听懂不这句话。'],ans:0,
-   exp:'Phủ định của bổ ngữ kết quả: Động từ + 不 + Bổ ngữ (听不懂), không dùng 不 + Động từ.'},
-  {wrong:'我做题完了。',
-   opts:['我做完题了。','我做题完了。','我完做题了。','做我完题了。'],ans:0,
-   exp:'Bổ ngữ kết quả (完) phải đứng NGAY SAU động từ (做完), rồi mới đến tân ngữ (题).'},
-  {wrong:'你写了错字。',
-   opts:['你写错字了。','你写了错字。','你错写字了。','你写字错了。'],ans:0,
-   exp:'写错 (bổ ngữ kết quả) là một khối không tách rời, 了 đặt SAU cả cụm 写错 + tân ngữ.'},
+  {wrong:'昨天的考试我不做完。',
+   opts:['昨天的考试我做没完。','昨天的考试我做完没。','昨天的考试我没做完。','昨天的考试我不做完了。'],ans:2,
+   exp:'Phủ định bổ ngữ kết quả (việc đã qua) dùng 没 + động từ + 完: 没做完; không dùng 不, không tách 做 với 完.'},
+  {wrong:'我看书完了，我们去跑步吧。',
+   opts:['我完看书了，我们去跑步吧。','我看完书了，我们去跑步吧。','我已经看书完，我们去跑步吧。','我看了书完，我们去跑步吧。'],ans:1,
+   exp:'完 đứng ngay sau động từ, tân ngữ đứng sau: 看完书了 (không nói 看书完 như “đọc sách xong”).'},
+  {wrong:'这个题你看懂吗了？',
+   opts:['这个题你看懂了吗？','这个题你看了懂吗？','这个题你懂看了吗？','这个题你看懂没了吗？'],ans:0,
+   exp:'Động từ + 懂 + 了吗？ = đã … hiểu chưa?; 了 đứng trước 吗, không chen giữa 看 và 懂.'},
+  {wrong:'我开始上班从下个月。',
+   opts:['我下个月从开始上班。','我从下个月上班开始。','我从下个月是开始上班。','我从下个月开始上班。'],ans:3,
+   exp:'从 + thời gian đứng TRƯỚC động từ: 从下个月开始上班; không đặt 从… cuối câu như tiếng Việt.'},
+  {wrong:'我第一来北京，什么都不知道。',
+   opts:['我来北京第一次，什么都不知道。','我第一个次来北京，什么都不知道。','我第一次来北京，什么都不知道。','我一次来北京，什么都不知道。'],ans:2,
+   exp:'Lần đầu tiên = 第一次 + động từ (đứng trước động từ); 次 đã là lượng từ, không thêm 个.'},
+  {wrong:'对不起，我错打了电话。',
+   opts:['对不起，我打了错电话。','对不起，我打错电话了。','对不起，我没打错电话了。','对不起，我很打错电话了。'],ans:1,
+   exp:'错 là bổ ngữ đứng ngay sau động từ: 打错电话了 = gọi nhầm số; 没 không đi với 了 ở cuối.'},
+  {wrong:'明天的事情我已经准备了好。',
+   opts:['明天的事情我已经好准备了。','明天的事情我已经准备很好了。','明天的事情我已经没准备好了。','明天的事情我已经准备好了。'],ans:3,
+   exp:'Động từ + 好 + 了 = đã làm xong xuôi: 准备好了; 了 đứng sau bổ ngữ, không thêm 很.'},
+  {wrong:'我没找我的手表到。',
+   opts:['我没找到我的手表。','我找没到我的手表。','我不找到我的手表。','我没找到我的手表了。'],ans:0,
+   exp:'找到 không tách rời, tân ngữ đứng sau: 没找到我的手表; phủ định dùng 没, không thêm 了.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 // Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
 // lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
 // dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
@@ -1283,119 +1289,118 @@ var speakingData = {
   intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 9. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn gọi nhầm số điện thoại. Hãy xử lý tình huống.',
-      q_zh: '你好，请问张欢在吗？',
-      q_py: 'Nǐ hǎo, qǐngwèn Zhāng Huān zài ma?',
-      q_vn: 'Xin chào, cho hỏi Trương Hoan có đó không? (Bạn gọi nhầm số, hãy nói lại cho đúng)',
-      grammar: { label: '你打错了 / 对不起，我打错了', any: ['错'] },
+      situation: 'Bạn mới quen hỏi về việc học tiếng Trung của bạn.',
+      q_zh: '你是从什么时候开始学习汉语的？第一天学习的时候怎么样？',
+      q_py: 'Nǐ shì cóng shénme shíhou kāishǐ xuéxí Hànyǔ de? Dì yī tiān xuéxí de shíhou zěnmeyàng?',
+      q_vn: 'Bạn bắt đầu học tiếng Trung từ khi nào? Ngày học đầu tiên thế nào?',
+      grammar: { label: '我是从… 开始学习汉语的', any: ['从'] },
       need: [
-        { label: 'Dùng 错 để nói gọi nhầm', any: ['错', '打错'] },
-        { label: 'Nói lời xin lỗi', any: ['对不起', '不好意思', '抱歉'] },
-        { label: 'Nói rõ ở đây không có người đó hoặc bạn nhầm số', any: ['没有', '不是', '号码', '这儿'] }
+        { label: 'Nói mốc thời gian', any: ['月', '年', '岁', '星期', '时候', '号'] },
+        { label: 'Dùng 第一 (第一次 / 第一天)', any: ['第一'] },
+        { label: 'Dùng bổ ngữ kết quả (听懂 / 做完 / 说错…)', any: ['懂', '完', '错', '到', '好', '会'] }
       ],
-      bonus: { label: 'Thêm lời lịch sự (谢谢 / 再见)', any: ['谢谢', '再见'] },
-      vocab: ['错', '问题'],
-      minLen: 10,
-      sample: '对不起，我打错了。我们这儿没有叫张欢的。',
-      sample_py: 'Duìbuqǐ, wǒ dǎ cuò le. Wǒmen zhèr méiyǒu jiào Zhāng Huān de.',
-      sample_vn: 'Xin lỗi, tôi gọi nhầm rồi. Chỗ chúng tôi không có ai tên Trương Hoan.',
-      tip: '打错了 = gọi nhầm; 说错了 = nói nhầm; 错 đứng sau động từ làm bổ ngữ kết quả.'
-    },
-    {
-      situation: 'Bạn gặp một cô giáo dạy múa và hỏi chuyện.',
-      q_zh: '您从几岁开始学习跳舞的？',
-      q_py: 'Nín cóng jǐ suì kāishǐ xuéxí tiàowǔ de?',
-      q_vn: 'Cô bắt đầu học múa từ năm mấy tuổi? (Hãy trả lời thay cô giáo hoặc nói về bản thân bạn)',
-      grammar: { label: '我从…岁开始 + 第一次…是在…的时候', any: ['从', '开始'] },
-      need: [
-        { label: 'Dùng 从…开始', any: ['从'] },
-        { label: 'Nói tuổi hoặc mốc thời gian', any: ['岁', '年', '时候'] },
-        { label: 'Nói việc học gì (跳舞 / 唱歌 / 汉语)', any: ['跳舞', '唱歌', '汉语', '学习', '学'] }
-      ],
-      bonus: { label: 'Dùng 第一次 để kể lần đầu', any: ['第一次', '第一'] },
-      vocab: ['从', '跳舞', '第一', '开始'],
-      minLen: 12,
-      sample: '我从七岁开始学习跳舞，第一次跳舞是在七岁的时候。',
-      sample_py: 'Wǒ cóng qī suì kāishǐ xuéxí tiàowǔ, dì-yī cì tiàowǔ shì zài qī suì de shíhou.',
-      sample_vn: 'Tôi học múa từ năm bảy tuổi, lần đầu múa là lúc bảy tuổi.',
-      tip: '从 + mốc + 开始 = bắt đầu từ…: 从七岁开始、从下个星期开始.'
-    },
-    {
-      situation: 'Bạn kể tin vui: một người bạn vừa tìm được việc.',
-      q_zh: '你的朋友找到工作了吗？他从什么时候开始上班？',
-      q_py: 'Nǐ de péngyou zhǎodào gōngzuò le ma? Tā cóng shénme shíhou kāishǐ shàngbān?',
-      q_vn: 'Bạn của bạn tìm được việc chưa? Bao giờ bắt đầu đi làm?',
-      grammar: { label: '从…开始上班 + 希望他能…', any: ['从', '希望'] },
-      need: [
-        { label: 'Trả lời đã tìm được việc chưa', any: ['找到', '找', '工作', '还没'] },
-        { label: 'Dùng 从…开始 nói mốc đi làm', any: ['从', '开始'] },
-        { label: 'Dùng 希望', any: ['希望'] }
-      ],
-      bonus: { label: 'Nói đây là việc đầu tiên (第一个工作)', any: ['第一', '第一个'] },
-      vocab: ['希望', '从', '上班', '第一'],
-      minLen: 12,
-      sample: '找到了。他从下个星期一开始上班，这是他的第一个工作，希望他能喜欢。',
-      sample_py: 'Zhǎodào le. Tā cóng xià ge xīngqīyī kāishǐ shàngbān, zhè shì tā de dì-yī ge gōngzuò, xīwàng tā néng xǐhuan.',
-      sample_vn: 'Tìm được rồi. Cậu ấy bắt đầu đi làm từ thứ Hai tuần sau, đây là công việc đầu tiên, mong cậu ấy thích.',
-      tip: '希望 + chủ ngữ + động từ: 希望他能喜欢、希望你早点儿好.'
-    },
-    {
-      situation: 'Sau giờ thi, bạn học hỏi bạn làm bài thế nào.',
-      q_zh: '昨天的考试怎么样？你都听懂了吗？题都做完了没有？',
-      q_py: 'Zuótiān de kǎoshì zěnmeyàng? Nǐ dōu tīngdǒng le ma? Tí dōu zuòwán le méiyǒu?',
-      q_vn: 'Bài thi hôm qua thế nào? Bạn nghe hiểu hết chứ? Làm xong hết bài chưa?',
-      grammar: { label: '听懂了 / 没做完 + 题太多', any: ['懂', '完'] },
-      need: [
-        { label: 'Dùng 懂 để nói nghe hiểu hay không', any: ['懂', '听懂', '不懂'] },
-        { label: 'Dùng 完 để nói làm xong hay chưa', any: ['完', '做完', '没做完'] },
-        { label: 'Nói lý do hoặc nhận xét (题太多 / 太难)', any: ['题', '太多', '难', '时间'] }
-      ],
-      bonus: { label: 'Nói kỹ năng nào chưa tốt', any: ['听', '说', '读', '写', '字'] },
-      vocab: ['懂', '完', '题', '问题'],
-      minLen: 12,
-      sample: '听懂了，但是题太多，我没做完。写的题我做得不太好。',
-      sample_py: 'Tīngdǒng le, dànshì tí tài duō, wǒ méi zuòwán. Xiě de tí wǒ zuò de bú tài hǎo.',
-      sample_vn: 'Tôi nghe hiểu, nhưng đề nhiều quá nên chưa làm xong. Phần đề viết tôi làm chưa tốt lắm.',
-      tip: 'Phủ định của "đã xong" là 没做完, không nói 不做完.'
-    },
-    {
-      situation: 'Giáo viên hỏi về dự định tương lai của bạn.',
-      q_zh: '你希望以后做什么工作？为什么？',
-      q_py: 'Nǐ xīwàng yǐhòu zuò shénme gōngzuò? Wèi shénme?',
-      q_vn: 'Bạn mong sau này làm công việc gì? Vì sao?',
-      grammar: { label: '我希望以后能 + động từ', any: ['希望'] },
-      need: [
-        { label: 'Dùng 希望', any: ['希望', '想'] },
-        { label: 'Nói nghề nghiệp mong muốn', any: ['老师', '医生', '工作', '公司', '汉语', '翻译', '服务员', '学习', '上班'] },
-        { label: 'Nêu lý do', any: ['因为', '喜欢', '有意思', '帮助'] }
-      ],
-      bonus: { label: 'Dùng 第一 hoặc 从…开始 nói bước đầu', any: ['第一', '从', '开始'] },
-      vocab: ['希望', '问题', '上班'],
+      bonus: { label: 'Dùng 是……的 nhấn thời gian', any: ['是从', '的'] },
+      vocab: ['从', '第一', '懂', '问题'],
       minLen: 14,
-      sample: '我希望以后能做汉语老师，因为我很喜欢汉语，也喜欢跟学生说话。',
-      sample_py: 'Wǒ xīwàng yǐhòu néng zuò Hànyǔ lǎoshī, yīnwèi wǒ hěn xǐhuan Hànyǔ, yě xǐhuan gēn xuésheng shuōhuà.',
-      sample_vn: 'Tôi mong sau này làm giáo viên tiếng Trung, vì tôi rất thích tiếng Trung và cũng thích nói chuyện với học sinh.',
-      tip: '希望 + 能 + động từ: 希望能做老师、希望能去中国工作.'
+      sample: '我是从今年三月开始学习汉语的。第一天，老师的问题我都没听懂。',
+      sample_py: 'Wǒ shì cóng jīnnián sān yuè kāishǐ xuéxí Hànyǔ de. Dì yī tiān, lǎoshī de wèntí wǒ dōu méi tīngdǒng.',
+      sample_vn: 'Tôi bắt đầu học tiếng Trung từ tháng Ba năm nay. Ngày đầu tiên, câu hỏi của thầy tôi đều nghe không hiểu.',
+      tip: '从 + thời gian + 开始 + động từ; phủ định bổ ngữ kết quả: 没听懂.'
+    },
+    {
+      situation: 'Vừa ra khỏi phòng thi, bạn của bạn hỏi bài làm thế nào.',
+      q_zh: '考试的时候，你都做完了吗？有没有做错的题？',
+      q_py: 'Kǎoshì de shíhou, nǐ dōu zuòwán le ma? Yǒu méiyǒu zuò cuò de tí?',
+      q_vn: 'Lúc thi bạn làm xong hết chưa? Có câu nào làm sai không?',
+      grammar: { label: 'Động từ + 完 / 错 / 懂', any: ['完', '错', '懂', '好'] },
+      need: [
+        { label: 'Nói có làm xong không', any: ['做完', '没做完', '写完', '完'] },
+        { label: 'Nói về câu sai / câu khó', any: ['错', '题', '问题', '不懂', '没懂'] },
+        { label: 'Thêm thời gian hoặc số lượng', any: ['分钟', '小时', '个', '多', '两', '一'] }
+      ],
+      bonus: { label: 'Dùng 就 (… phút là xong)', any: ['就'] },
+      vocab: ['完', '错', '题'],
+      minLen: 12,
+      sample: '题不太多，我四十分钟就做完了。有一个字我写错了。',
+      sample_py: 'Tí bú tài duō, wǒ sìshí fēnzhōng jiù zuòwán le. Yǒu yí ge zì wǒ xiě cuò le.',
+      sample_vn: 'Đề không nhiều lắm, bốn mươi phút là tôi làm xong. Có một chữ tôi viết sai.',
+      tip: '做完了 = làm xong rồi; 写错了 = viết sai rồi — bổ ngữ đứng ngay sau động từ.'
+    },
+    {
+      situation: 'Một người bạn báo tin vừa tìm được việc làm mới.',
+      q_zh: '我找到新工作了！星期一就去上班。',
+      q_py: 'Wǒ zhǎodào xīn gōngzuò le! Xīngqīyī jiù qù shàngbān.',
+      q_vn: 'Mình tìm được việc mới rồi! Thứ Hai là đi làm luôn.',
+      grammar: { label: '希望 + câu (mong …)', any: ['希望'] },
+      need: [
+        { label: 'Chúc mừng (太好了 / 祝…)', any: ['太好了', '祝', '高兴', '恭喜', '真好', '不错'] },
+        { label: 'Hỏi thêm về công việc (哪儿 / 什么 / 几点上班)', any: ['哪儿', '什么', '几点', '公司', '上班', '远'] },
+        { label: 'Nói về công việc (工作 / 公司)', any: ['工作', '公司', '上班'] }
+      ],
+      bonus: { label: 'Dùng 从…开始', any: ['从'] },
+      vocab: ['希望', '上班', '找'],
+      minLen: 12,
+      sample: '太好了！你在哪个公司上班？希望你喜欢这个新工作。',
+      sample_py: 'Tài hǎo le! Nǐ zài nǎge gōngsī shàngbān? Xīwàng nǐ xǐhuan zhège xīn gōngzuò.',
+      sample_vn: 'Tuyệt quá! Bạn làm ở công ty nào? Mong là bạn thích công việc mới này.',
+      tip: '希望 + cả một câu: 希望你喜欢… = mong bạn thích ….'
+    },
+    {
+      situation: 'Một bạn học mới đến trường ngày đầu tiên, bạn ra chào.',
+      q_zh: '一个新同学第一天来学校，你想对他说什么？',
+      q_py: 'Yí ge xīn tóngxué dì yī tiān lái xuéxiào, nǐ xiǎng duì tā shuō shénme?',
+      q_vn: 'Một bạn học mới đến trường ngày đầu tiên, bạn muốn nói gì với bạn ấy?',
+      grammar: { label: '欢迎你来…！', any: ['欢迎'] },
+      need: [
+        { label: 'Giới thiệu bản thân', any: ['我叫', '我是', '叫'] },
+        { label: 'Đề nghị giúp đỡ', any: ['问题', '问我', '帮', '可以', '告诉', '打电话'] },
+        { label: 'Nói về trường / lớp', any: ['学校', '教室', '老师', '同学', '我们'] }
+      ],
+      bonus: { label: 'Dùng 希望', any: ['希望'] },
+      vocab: ['欢迎', '问题', '第一'],
+      minLen: 12,
+      sample: '欢迎你来我们学校！我叫小王。你有什么问题，可以给我打电话。',
+      sample_py: 'Huānyíng nǐ lái wǒmen xuéxiào! Wǒ jiào Xiǎo Wáng. Nǐ yǒu shénme wèntí, kěyǐ gěi wǒ dǎ diànhuà.',
+      sample_vn: 'Chào mừng bạn đến trường chúng mình! Mình là Tiểu Vương. Bạn có thắc mắc gì thì cứ gọi điện cho mình.',
+      tip: '欢迎 + người + 来 + nơi; 有什么问题 = có thắc mắc gì.'
+    },
+    {
+      situation: 'Bạn bè hỏi về sở thích nhảy múa và dự định học thêm.',
+      q_zh: '你会跳舞吗？你希望学什么？',
+      q_py: 'Nǐ huì tiàowǔ ma? Nǐ xīwàng xué shénme?',
+      q_vn: 'Bạn biết nhảy không? Bạn mong được học gì?',
+      grammar: { label: '我希望从… 开始学…', any: ['希望'] },
+      need: [
+        { label: 'Trả lời biết / không biết nhảy', any: ['会跳舞', '不会', '会', '跳舞'] },
+        { label: 'Nói muốn học gì', any: ['学', '跳舞', '游泳', '汉语', '打篮球', '踢足球', '做菜'] },
+        { label: 'Nói khi nào bắt đầu (从…开始)', any: ['从', '开始', '下个', '明天', '星期'] }
+      ],
+      bonus: { label: 'Nói học với ai / bao lâu một lần', any: ['跟', '和', '次', '每'] },
+      vocab: ['跳舞', '希望', '从'],
+      minLen: 12,
+      sample: '我不会跳舞。我希望从下个月开始跟朋友学跳舞，每个星期六去一次。',
+      sample_py: 'Wǒ bú huì tiàowǔ. Wǒ xīwàng cóng xià ge yuè kāishǐ gēn péngyou xué tiàowǔ, měi ge xīngqīliù qù yí cì.',
+      sample_vn: 'Tôi không biết nhảy. Tôi mong từ tháng sau bắt đầu học nhảy với bạn, mỗi thứ Bảy đi một lần.',
+      tip: '跟 + người + 学 + môn = học … với ai; 从 + thời gian + 开始.'
     }
   ]
 };
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — dùng từ bài 9 + ôn lại từ bài 1-8 và HSK1
+// LUYỆN DỊCH — câu mới, dùng từ bài 9 + ôn bài 1–8 và HSK1
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi đã nghe hiểu rồi.', zh:'我听懂了。', py:'Wǒ tīng dǒng le.'},
-  {vi:'Bạn bắt đầu học múa từ năm mấy tuổi?', zh:'你从几岁开始学习跳舞？', py:'Nǐ cóng jǐ suì kāishǐ xuéxí tiàowǔ?'},
-  {vi:'Đây là công việc đầu tiên của anh ấy.', zh:'这是他的第一个工作。', py:'Zhè shì tā de dì yī ge gōngzuò.'},
-  {vi:'Hoan nghênh bạn đến công ty chúng tôi làm việc.', zh:'欢迎你来我们公司上班。', py:'Huānyíng nǐ lái wǒmen gōngsī shàngbān.'},
+  {vi:'Bộ phim này tôi xem không hiểu, dài quá.', zh:'这个电影我没看懂，太长了。', py:'Zhège diànyǐng wǒ méi kàndǒng, tài cháng le.'},
+  {vi:'Từ nhà tôi đến công ty mất bốn mươi phút.', zh:'从我家到公司要四十分钟。', py:'Cóng wǒ jiā dào gōngsī yào sìshí fēnzhōng.'},
+  {vi:'Tôi hy vọng ngày mai bạn có thể đến nhà tôi.', zh:'我希望你明天能来我家。', py:'Wǒ xīwàng nǐ míngtiān néng lái wǒ jiā.'},
+  {vi:'Bạn nói sai rồi, hôm nay là thứ Năm.', zh:'你说错了，今天是星期四。', py:'Nǐ shuō cuò le, jīntiān shì xīngqīsì.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Câu hỏi của bạn tôi hiểu rồi, hoan nghênh bạn hỏi tiếp.', zh:'你的问题我懂了，欢迎你再问。', py:'Nǐ de wèntí wǒ dǒng le, huānyíng nǐ zài wèn.'},
-  {vi:'Anh ấy từ nhỏ đã thích nhảy múa.', zh:'他从小就喜欢跳舞。', py:'Tā cóngxiǎo jiù xǐhuan tiàowǔ.'},
-  {vi:'Đây là câu hỏi đầu tiên của tôi.', zh:'这是我的第一个问题。', py:'Zhè shì wǒ de dì yī ge wèntí.'},
-  {vi:'Tôi hy vọng bạn hiểu câu hỏi của tôi.', zh:'我希望你懂我的问题。', py:'Wǒ xīwàng nǐ dǒng wǒ de wèntí.'},
+  {vi:'Từ sáng đến giờ tôi chưa ăn gì cả.', zh:'我从早上到现在都没吃东西。', py:'Wǒ cóng zǎoshang dào xiànzài dōu méi chī dōngxi.'},
+  {vi:'Cảm ơn các bạn đến thăm tôi, tuần sau lại đến nhé!', zh:'谢谢你们来看我，欢迎你们下个星期再来！', py:'Xièxie nǐmen lái kàn wǒ, huānyíng nǐmen xià ge xīngqī zài lái!'},
+  {vi:'Cuốn sách đó tôi mua được rồi, mai đưa bạn.', zh:'那本书我买到了，明天给你。', py:'Nà běn shū wǒ mǎidào le, míngtiān gěi nǐ.'},
 ];

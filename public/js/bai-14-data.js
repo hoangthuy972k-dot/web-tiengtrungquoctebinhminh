@@ -831,15 +831,17 @@ var dialogData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 1 · GHÉP TỪ (Collocation)
+// PHẦN 1 · GHÉP TỪ (Collocation) — ghép hai nửa thành cụm dùng được ngay
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'吃',right:'过'},
-  {left:'有',right:'意思'},
-  {left:'虽然',right:'但是'},
-  {left:'去',right:'玩儿'},
-  {left:'天气',right:'晴'},
-  {left:'再',right:'一次'},
+  {left:'坐过',right:'飞机'},
+  {left:'去公园',right:'玩儿'},
+  {left:'明天是',right:'晴天'},
+  {left:'一百多',right:'块钱'},
+  {left:'这个电影',right:'很有意思'},
+  {left:'虽然很累',right:'但是很高兴'},
+  {left:'一次也',right:'没去过'},
 ];
 
 // ══════════════════════════════════════════
@@ -900,67 +902,74 @@ var listenData = {
 };
 
 // ══════════════════════════════════════════
-// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: rủ nhau đi ăn nhà hàng Tứ Xuyên mới mở
+// PHẦN 3a · ĐIỀN TỪ — mỗi câu một tình huống mới (过 · 虽然……但是…… · bổ ngữ động lượng + từ mới bài 14, ôn bài trước)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你吃',blank:'过',post:'四川菜吗？',hint:'(đã từng — kinh nghiệm)',ans:'过',exp:'Động từ + 过 = đã từng làm việc gì.'},
-  {pre:'吃过，',blank:'虽然',post:'很贵，但是很有意思。',hint:'(mặc dù)',ans:'虽然',exp:'虽然……但是……dùng để nêu hai vế tương phản.'},
-  {pre:'吃过，虽然很贵，',blank:'但是',post:'很有意思，我很喜欢。',hint:'(nhưng)',ans:'但是',exp:'虽然…，但是… = tuy… nhưng…; vế trước có 虽然 thì vế sau dùng 但是.'},
-  {pre:'我们上次去吃了一',blank:'次',post:'，这次要不要再去？',hint:'(lần, lượt)',ans:'次',exp:'次 là lượng từ đếm số lần, đứng sau số: 吃了一次 = ăn một lần.'},
-  {pre:'好啊，我们去',blank:'玩儿',post:'一下吧。',hint:'(chơi)',ans:'玩儿'},
-  {pre:'今天天气很',blank:'晴',post:'，吃完米饭正好去外面走走。',hint:'(trời quang, nắng đẹp)',ans:'晴'},
-  {pre:'我学了一',blank:'百',post:'个小时汉语了。',hint:'(trăm)',ans:'百'},
-  {pre:'用汉语点菜很',blank:'有意思',post:'。',hint:'(thú vị)',ans:'有意思'},
+  {pre:'Bạn kể với bạn học về món ăn: “羊肉面条我吃',blank:'过',post:'两次，很好吃。”',hint:'(đã từng)',ans:'过',exp:'Động từ + 过 = đã từng làm; số lần đặt sau 过: 吃过两次.'},
+  {pre:'“你见过王老师的儿子吗？” — “我',blank:'没',post:'见过，听说他很高。”',hint:'(chưa)',ans:'没',exp:'Phủ định của 过 là 没 + động từ + 过: 没见过; không nói 不见过.'},
+  {pre:'“你学过游泳吗？” — “学',blank:'过',post:'，但是现在很少去游泳。”',hint:'(đã từng)',ans:'过',exp:'Trả lời câu hỏi …过…吗？ bằng chính động từ + 过: 学过 = có học rồi.'},
+  {pre:'那家饭店的鱼很好吃，下个星期我们再去吃一',blank:'次',post:'吧。',hint:'(lần)',ans:'次',exp:'Số + 次 đứng sau động từ để đếm số lần: 再去吃一次 = đi ăn thêm một lần.'},
+  {pre:'“下雨了，你还去打篮球吗？” — “去！',blank:'虽然',post:'下雨了，但是我和同学说好了。”',hint:'(mặc dù)',ans:'虽然',exp:'虽然 mở đầu vế nhượng bộ, vế sau dùng 但是: 虽然下雨了，但是….'},
+  {pre:'Bạn khen chiếc đồng hồ mới của bạn: “这块手表虽然不便宜，',blank:'但是',post:'非常漂亮。”',hint:'(nhưng)',ans:'但是',exp:'但是 đứng ĐẦU vế sau, trước chủ ngữ / vị ngữ: …，但是非常漂亮.'},
+  {pre:'“昨天的汉语课怎么样？” — “很',blank:'有意思',post:'，老师和我们一起唱歌了。”',hint:'(thú vị, hay)',ans:'有意思',exp:'有意思 là tính từ, đứng sau 很: 很有意思; không nói 很意思 hay 是有意思.'},
+  {pre:'Bạn mời bạn cùng lớp: “星期天来我家',blank:'玩儿',post:'吧，我妈妈会做很多好吃的菜。”',hint:'(chơi)',ans:'玩儿',exp:'来 / 去 + nơi chốn + 玩儿 = đến … chơi; nơi chốn đứng TRƯỚC 玩儿.'},
+  {pre:'“明天会下雪吗？” — “不会，明天是',blank:'晴',post:'天，可以去公园跑步。”',hint:'(trời quang, nắng)',ans:'晴',exp:'晴天 = ngày nắng ráo; 天晴了 = trời tạnh, nắng lên rồi.'},
+  {pre:'我们学校很大，有两',blank:'百',post:'多个老师。',hint:'(trăm)',ans:'百',exp:'Số + 百 + 多 + lượng từ: 两百多个 = hơn hai trăm (người).'},
+  {pre:'“你哥哥帮你洗衣服吗？” — “不，我的衣服都是我',blank:'自己',post:'洗。”',hint:'(tự mình)',ans:'自己',exp:'Chủ ngữ + 自己 + động từ = tự làm lấy: 我自己洗.'},
+  {pre:'Bạn dặn bạn sắp đi Bắc Kinh: “到了北京，',blank:'一定',post:'要给我打电话啊！”',hint:'(nhất định)',ans:'一定',exp:'一定要 + động từ = nhất định phải làm; 一定 đứng trước 要.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3b · SẮP XẾP
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng 过 / 虽然……但是…… / 次 / 晴 / 百
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['你','吃','过','四川菜','吗','？'],ans:'你吃过四川菜吗？',audio:'你吃过四川菜吗？'},
-  {words:['虽然','很','贵','，','但是','很','好吃','。'],ans:'虽然很贵，但是很好吃。',audio:'虽然很贵，但是很好吃。'},
-  {words:['我们','再','去','吃','一次','吧','。'],ans:'我们再去吃一次吧。',audio:'我们再去吃一次吧。'},
-  {words:['今天','天气','很','晴','。'],ans:'今天天气很晴。',audio:'今天天气很晴。'},
-  {words:['我们','去','外面','玩儿','吧','。'],ans:'我们去外面玩儿吧。',audio:'我们去外面玩儿吧。'},
-  {words:['我','学','了','一百','个','小时','汉语','。'],ans:'我学了一百个小时汉语。',audio:'我学了一百个小时汉语。'},
+  {words:['我','没','吃','过','这个','水果','。'],ans:'我没吃过这个水果。',audio:'我没吃过这个水果。'},
+  {words:['虽然','天气','不','好','，','但是','孩子','都','想','去','外面','玩儿','。'],ans:'虽然天气不好，但是孩子都想去外面玩儿。',audio:'虽然天气不好，但是孩子都想去外面玩儿。'},
+  {words:['他','去年','来','过','我们','家','一次','。'],ans:'他去年来过我们家一次。',audio:'他去年来过我们家一次。',alt:['去年他来过我们家一次。','他去年来过一次我们家。','去年他来过一次我们家。']},
+  {words:['这个','电影','我','看','了','三','次','。'],ans:'这个电影我看了三次。',audio:'这个电影我看了三次。'},
+  {words:['下午','天','晴','了','，','我们','去','踢','足球','吧','。'],ans:'下午天晴了，我们去踢足球吧。',audio:'下午天晴了，我们去踢足球吧。'},
+  {words:['这儿','离','我','家','有','一百','多','米','。'],ans:'这儿离我家有一百多米。',audio:'这儿离我家有一百多米。'},
+  {words:['我','很','想','去','，','但是','明天','要','上班','。'],ans:'我很想去，但是明天要上班。',audio:'我很想去，但是明天要上班。'},
+  {words:['王老师','上课','很','有意思','。'],ans:'王老师上课很有意思。',audio:'王老师上课很有意思。'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3c · SỬA LỖI SAI
+// PHẦN 3c · SỬA LỖI SAI — lỗi học sinh Việt hay mắc
+// (过 đặt sai chỗ / 有+V+过 / 不…过, số lần trước động từ, 他 + 一次, 但是 sau chủ ngữ, 虽然…所以, 去玩儿公园, 是 + tính từ)
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'你过吃四川菜吗？',
-   opts:['你吃过四川菜吗？','你过吃四川菜吗？','你吃四川菜过吗？','过你吃四川菜吗？'],ans:0,
-   exp:'过 phải đứng NGAY SAU động từ (吃过), không đặt trước động từ.'},
-  {wrong:'虽然很贵好吃但是。',
-   opts:['虽然很贵，但是很好吃。','虽然很贵好吃但是。','但是很贵，虽然很好吃。','很贵虽然但是好吃。'],ans:0,
-   exp:'但是 phải đứng ở ĐẦU vế thứ hai, không đặt ở cuối câu.'},
-  {wrong:'但是很贵，虽然很好吃。',
-   opts:['虽然很贵，但是很好吃。','但是很贵，虽然很好吃。','很好吃，但是虽然很贵。','虽然但是很贵很好吃。'],ans:0,
-   exp:'虽然 mở đầu vế nhượng bộ, 但是 mở đầu vế khẳng định — không đảo ngược thứ tự hai liên từ.'},
-  {wrong:'我们再去一次吃。',
-   opts:['我们再去吃一次。','我们再去一次吃。','我们再吃去一次。','我们一次再去吃。'],ans:0,
-   exp:'次 (lượng từ tần suất) đứng SAU động từ chính (去吃), không chen vào giữa hai động từ liên tiếp.'},
-  {wrong:'我学了一百个小时了已经。',
-   opts:['我已经学了一百个小时了。','我学了一百个小时了已经。','已经我学了一百个小时了。','我已经了学一百个小时了。'],ans:0,
-   exp:'已经 (đã) phải đứng TRƯỚC động từ (已经学了), không đặt ở cuối câu.'},
+  {wrong:'这个菜我过吃，非常好吃。',
+   opts:['这个菜我吃了过，非常好吃。','这个菜我吃过，非常好吃。','这个菜我有吃过，非常好吃。','这个菜我过吃了，非常好吃。'],ans:1,
+   exp:'过 đứng NGAY SAU động từ: 吃过; không thêm 了 hay 有 trước động từ như “có ăn qua”.'},
+  {wrong:'我不去过北京。（ý: tôi chưa từng đi Bắc Kinh）',
+   opts:['我没去过北京。','我没去北京过。','我不去北京过。','我没有去过了北京。'],ans:0,
+   exp:'Phủ định kinh nghiệm: 没 + động từ + 过 + nơi chốn (没去过北京); không dùng 不, không thêm 了.'},
+  {wrong:'虽然他很忙，所以他每天都跑步。',
+   opts:['虽然他很忙，他但是每天都跑步。','虽然他很忙，但是他都每天跑步。','因为他很忙，但是他每天都跑步。','虽然他很忙，但是他每天都跑步。'],ans:3,
+   exp:'虽然 đi với 但是 (tuy… nhưng…), không đi với 所以; 但是 đứng đầu vế sau, 都 đứng sau 每天.'},
+  {wrong:'我见过一次他，他很高。',
+   opts:['我一次见过他，他很高。','我见过他一次，他很高。','我见过他一次，他是很高。','我见一次过他，他很高。'],ans:1,
+   exp:'Tân ngữ là đại từ (他) thì đặt trước số lần: 见过他一次; 过 sát động từ; trước tính từ không thêm 是.'},
+  {wrong:'这个电影我两次看过了。',
+   opts:['这个电影我看两次过了。','这个电影我看过两个次了。','这个电影我看过两次了。','这个电影我看过二次了。'],ans:2,
+   exp:'Số lần đứng SAU động từ + 过: 看过两次; 次 đã là lượng từ nên không thêm 个; đếm lần dùng 两, không dùng 二.'},
+  {wrong:'虽然北京很冷，我但是很喜欢那儿。',
+   opts:['虽然北京很冷，但是我很喜欢那儿。','虽然北京是很冷，但是我很喜欢那儿。','虽然北京很冷，但是我那儿很喜欢。','虽然北京很冷，但是很喜欢我那儿。'],ans:0,
+   exp:'但是 đứng đầu vế sau, TRƯỚC chủ ngữ: 但是我很喜欢…; trước tính từ không thêm 是.'},
+  {wrong:'星期六我们去玩儿公园吧。',
+   opts:['星期六我们玩儿去公园吧。','星期六我们去玩儿在公园吧。','星期六我们去公园玩儿吗。','星期六我们去公园玩儿吧。'],ans:3,
+   exp:'Nơi chốn đứng giữa 去 và 玩儿: 去公园玩儿 (không dịch từng chữ “đi chơi công viên”); rủ rê dùng 吧.'},
+  {wrong:'这本书一百块多，太贵了。',
+   opts:['这本书多一百块，太贵了。','这本书一百多块，太贵了。','这本书一百多块，是太贵了。','这本书一百多个块，太贵了。'],ans:1,
+   exp:'Số tròn trăm + 多 + lượng từ: 一百多块; 块 đã là lượng từ nên không thêm 个; không thêm 是 trước 太贵了.'},
+  {wrong:'这个电影是很有意思，你去看看吧。',
+   opts:['这个电影很意思，你去看看吧。','这个电影有很意思，你去看看吧。','这个电影很有意思，你去看看吧。','这个电影很有意思，你去看看吗。'],ans:2,
+   exp:'有意思 là một tính từ: 很有意思 (không bỏ 有, không chen 很 vào giữa); không thêm 是 trước tính từ.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 // Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
 // lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
 // dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
@@ -969,119 +978,118 @@ var speakingData = {
   intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 14. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn học rủ bạn đi xem lại một bộ phim.',
-      q_zh: '你看过那个电影吗？我们今天晚上再去看一次，怎么样？',
-      q_py: 'Nǐ kànguo nàge diànyǐng ma? Wǒmen jīntiān wǎnshang zài qù kàn yí cì, zěnmeyàng?',
-      q_vn: 'Bạn xem phim đó chưa? Tối nay chúng mình đi xem lại một lần nữa nhé?',
-      grammar: { label: '看过 + 再看一次', any: ['过', '次'] },
+      situation: 'Giờ ra chơi, bạn học hỏi bạn về phim đã xem gần đây.',
+      q_zh: '最近你看过什么好看的电影？你看了几次？',
+      q_py: 'Zuìjìn nǐ kànguo shénme hǎokàn de diànyǐng? Nǐ kànle jǐ cì?',
+      q_vn: 'Gần đây bạn đã xem bộ phim nào hay? Bạn xem mấy lần rồi?',
+      grammar: { label: 'Động từ + 过 (đã từng xem)', any: ['过'] },
       need: [
-        { label: 'Dùng 过 để nói đã từng', any: ['过'] },
-        { label: 'Dùng 次 để nói số lần', any: ['次'] },
-        { label: 'Nhận xét bộ phim', any: ['有意思', '好看', '不错', '没意思', '喜欢'] }
+        { label: 'Nói số lần (一次 / 两次…)', any: ['次'] },
+        { label: 'Nhận xét bộ phim', any: ['有意思', '好看', '不错', '没意思', '喜欢', '好'] },
+        { label: 'Nói tên / loại phim', any: ['电影', '中国', '美国', '这个', '那个'] }
       ],
-      bonus: { label: 'Dùng 但是 để nêu điều kiện', any: ['但是', '可以'] },
-      vocab: ['过', '有意思', '次', '但是'],
+      bonus: { label: 'Rủ bạn cùng xem (我们一起…吧)', any: ['一起', '吧', '再'] },
+      vocab: ['过', '有意思', '次'],
       minLen: 12,
-      sample: '看过，很有意思。可以，我们再去看一次，但是我女朋友也想一起去。',
-      sample_py: 'Kànguo, hěn yǒuyìsi. Kěyǐ, wǒmen zài qù kàn yí cì, dànshì wǒ nǚpéngyou yě xiǎng yìqǐ qù.',
-      sample_vn: 'Xem rồi, rất hay. Được thôi, mình đi xem lại một lần nữa, nhưng bạn gái tôi cũng muốn đi cùng.',
-      tip: '过 đứng ngay sau động từ chỉ kinh nghiệm: 看过、去过、吃过.'
+      sample: '上个月我看过一个中国电影，觉得很不错，我看了两次。',
+      sample_py: 'Shàng ge yuè wǒ kànguo yí ge Zhōngguó diànyǐng, juéde hěn búcuò, wǒ kànle liǎng cì.',
+      sample_vn: 'Tháng trước tôi đã xem một bộ phim Trung Quốc, thấy rất hay, tôi xem hai lần.',
+      tip: '过 đứng ngay sau động từ: 看过; số lần đứng sau động từ: 看了两次.'
     },
     {
-      situation: 'Bạn học hỏi về chuyến đi Trung Quốc của bạn.',
-      q_zh: '听说你去过中国，还想再去吗？你去过北京吗？',
-      q_py: 'Tīngshuō nǐ qùguo Zhōngguó, hái xiǎng zài qù ma? Nǐ qùguo Běijīng ma?',
-      q_vn: 'Nghe nói bạn từng đi Trung Quốc, còn muốn đi nữa không? Bạn đến Bắc Kinh chưa?',
-      grammar: { label: '我去过…，但是还没去过…', any: ['过'] },
+      situation: 'Bạn mới quen hỏi bạn đã từng đi du lịch ở đâu.',
+      q_zh: '你去过哪儿旅游？你还想再去吗？',
+      q_py: 'Nǐ qùguo nǎr lǚyóu? Nǐ hái xiǎng zài qù ma?',
+      q_vn: 'Bạn đã từng đi du lịch ở đâu? Bạn còn muốn đi lại nữa không?',
+      grammar: { label: '我去过… / 没去过…', any: ['过'] },
       need: [
-        { label: 'Dùng 过 nói đã từng đi', any: ['过'] },
-        { label: 'Nói nơi đã đi hoặc chưa đi', any: ['北京', '上海', '中国', '广州', '没去过', '地方'] },
-        { label: 'Nói số lần hoặc dự định (一次 / 下次)', any: ['次', '下次', '想', '一定'] }
+        { label: 'Nói nơi đã đi', any: ['北京', '中国', '美国', '上海', '那儿', '这儿', '河内', '旅游'] },
+        { label: 'Dùng 虽然…但是… hoặc 但是', any: ['但是', '虽然'] },
+        { label: 'Nói có muốn đi lại không (再去 / 一次)', any: ['再', '次', '想', '不想'] }
       ],
-      bonus: { label: 'Dùng 虽然…但是…', any: ['虽然', '但是'] },
-      vocab: ['过', '次', '虽然', '但是'],
+      bonus: { label: 'Nêu lý do (漂亮 / 好吃 / 贵 / 远)', any: ['漂亮', '好吃', '贵', '远', '有意思', '便宜'] },
+      vocab: ['过', '虽然', '但是', '次'],
       minLen: 14,
-      sample: '我去过一次，但是还没去过北京。虽然北京很远，但是下次有时间我一定去。',
-      sample_py: 'Wǒ qùguo yí cì, dànshì hái méi qùguo Běijīng. Suīrán Běijīng hěn yuǎn, dànshì xià cì yǒu shíjiān wǒ yídìng qù.',
-      sample_vn: 'Tôi đi một lần rồi, nhưng chưa đến Bắc Kinh. Tuy Bắc Kinh rất xa nhưng lần sau có thời gian tôi nhất định sẽ đi.',
-      tip: 'Phủ định của 过 là 没…过: 没去过、没看过.'
+      sample: '我去过北京旅游，那儿很漂亮。虽然东西有点儿贵，但是我还想再去一次。',
+      sample_py: 'Wǒ qùguo Běijīng lǚyóu, nàr hěn piàoliang. Suīrán dōngxi yǒudiǎnr guì, dànshì wǒ hái xiǎng zài qù yí cì.',
+      sample_vn: 'Tôi từng đi du lịch Bắc Kinh, ở đó rất đẹp. Tuy đồ hơi đắt nhưng tôi vẫn muốn đi lại một lần nữa.',
+      tip: 'Phủ định của 过 là 没 + động từ + 过: 没去过. Đi lại lần nữa = 再去一次.'
     },
     {
       situation: 'Chiều thứ Sáu, bạn cùng phòng hỏi kế hoạch cuối tuần.',
-      q_zh: '周末你想做什么？天气怎么样？',
-      q_py: 'Zhōumò nǐ xiǎng zuò shénme? Tiānqì zěnmeyàng?',
-      q_vn: 'Cuối tuần bạn muốn làm gì? Thời tiết thế nào?',
-      grammar: { label: '我想去…玩儿 + 虽然…但是…', any: ['想', '玩'] },
+      q_zh: '这个周末你想去哪儿玩儿？天气怎么样？',
+      q_py: 'Zhège zhōumò nǐ xiǎng qù nǎr wánr? Tiānqì zěnmeyàng?',
+      q_vn: 'Cuối tuần này bạn muốn đi đâu chơi? Thời tiết thế nào?',
+      grammar: { label: '去 + nơi chốn + 玩儿', any: ['玩儿', '玩'] },
       need: [
-        { label: 'Nói việc định làm', any: ['玩', '公园', '看', '去', '学习', '休息', '运动', '吃'] },
-        { label: 'Nói về thời tiết (晴 / 阴 / 下雨)', any: ['晴', '阴', '下雨', '天气', '冷', '热'] },
-        { label: 'Dùng 周末 hoặc ngày cụ thể', any: ['周末', '星期', '明天'] }
+        { label: 'Nói nơi muốn đi', any: ['公园', '商店', '饭店', '朋友家', '学校', '外面', '家'] },
+        { label: 'Nói về thời tiết (晴 / 下雨 / 冷 / 热)', any: ['晴', '下雨', '天气', '冷', '热', '下雪'] },
+        { label: 'Nói đi cùng ai hoặc làm gì', any: ['和', '跟', '一起', '自己', '踢', '跑步', '看', '吃'] }
       ],
-      bonus: { label: 'Dùng 但是 nêu trở ngại', any: ['但是', '虽然'] },
-      vocab: ['玩儿', '晴', '但是'],
+      bonus: { label: 'Dùng 虽然…但是…', any: ['但是', '虽然'] },
+      vocab: ['玩儿', '晴', '周末', '公园'],
       minLen: 12,
-      sample: '这个周末我想去公园玩儿，今天天气很晴。虽然有点儿热，但是我还是想出去走走。',
-      sample_py: 'Zhè ge zhōumò wǒ xiǎng qù gōngyuán wánr, jīntiān tiānqì hěn qíng. Suīrán yǒudiǎnr rè, dànshì wǒ háishi xiǎng chūqu zǒuzou.',
-      sample_vn: 'Cuối tuần này tôi muốn ra công viên chơi, hôm nay trời nắng đẹp. Tuy hơi nóng nhưng tôi vẫn muốn ra ngoài dạo.',
-      tip: '玩儿 mang nghĩa "chơi, đi chơi": 去公园玩儿、来我家玩儿.'
+      sample: '这个周末我想和姐姐去公园玩儿。听说星期六是晴天，我们想在那儿踢足球。',
+      sample_py: 'Zhège zhōumò wǒ xiǎng hé jiějie qù gōngyuán wánr. Tīngshuō xīngqīliù shì qíngtiān, wǒmen xiǎng zài nàr tī zúqiú.',
+      sample_vn: 'Cuối tuần này tôi muốn cùng chị gái ra công viên chơi. Nghe nói thứ Bảy trời nắng, chúng tôi muốn đá bóng ở đó.',
+      tip: 'Nơi chốn đặt giữa 去 và 玩儿: 去公园玩儿, không nói 去玩儿公园.'
     },
     {
-      situation: 'Giáo viên hỏi bạn thấy chữ Hán khó hay dễ.',
-      q_zh: '你学了几年汉语了？你觉得汉字难不难？',
-      q_py: 'Nǐ xuéle jǐ nián Hànyǔ le? Nǐ juéde Hànzì nán bu nán?',
-      q_vn: 'Bạn học tiếng Trung mấy năm rồi? Bạn thấy chữ Hán khó không?',
-      grammar: { label: '虽然汉字很难，但是我很喜欢…', any: ['虽然', '但是'] },
+      situation: 'Giáo viên hỏi cảm nhận của bạn về việc học tiếng Trung.',
+      q_zh: '你学汉语多长时间了？你觉得汉语难吗？',
+      q_py: 'Nǐ xué Hànyǔ duō cháng shíjiān le? Nǐ juéde Hànyǔ nán ma?',
+      q_vn: 'Bạn học tiếng Trung bao lâu rồi? Bạn thấy tiếng Trung có khó không?',
+      grammar: { label: '虽然…，但是…', any: ['虽然', '但是'] },
       need: [
-        { label: 'Dùng cặp 虽然…但是…', any: ['虽然', '但是'] },
-        { label: 'Nói thời gian đã học', any: ['年', '月', '小时', '百'] },
-        { label: 'Nhận xét về chữ Hán', any: ['难', '有意思', '喜欢', '不难', '好玩'] }
+        { label: 'Nói thời gian đã học', any: ['年', '月', '小时', '百', '星期'] },
+        { label: 'Nhận xét: khó / thú vị', any: ['难', '有意思', '喜欢', '不难', '容易'] },
+        { label: 'Nói việc bạn làm để học', any: ['写', '听', '说', '看', '读', '上课', '学习'] }
       ],
-      bonus: { label: 'Dùng 百 để nói số giờ đã học', any: ['百'] },
-      vocab: ['虽然', '但是', '有意思', '百'],
+      bonus: { label: 'Dùng 百 (一百多个小时)', any: ['百'] },
+      vocab: ['虽然', '但是', '有意思', '百', '难'],
       minLen: 14,
-      sample: '我学了大概一百个小时了。虽然汉字很难，但是我很喜欢写汉字，写汉字很有意思。',
-      sample_py: 'Wǒ xuéle dàgài yìbǎi ge xiǎoshí le. Suīrán Hànzì hěn nán, dànshì wǒ hěn xǐhuan xiě Hànzì, xiě Hànzì hěn yǒuyìsi.',
-      sample_vn: 'Tôi học khoảng một trăm giờ rồi. Tuy chữ Hán rất khó nhưng tôi rất thích viết chữ Hán, viết chữ Hán rất thú vị.',
-      tip: 'Tiếng Trung dùng đủ cặp 虽然…但是…, không bỏ vế sau như tiếng Việt.'
+      sample: '我学了一百多个小时了。虽然说汉语有点儿难，但是我很喜欢上汉语课。',
+      sample_py: 'Wǒ xuéle yìbǎi duō ge xiǎoshí le. Suīrán shuō Hànyǔ yǒudiǎnr nán, dànshì wǒ hěn xǐhuan shàng Hànyǔ kè.',
+      sample_vn: 'Tôi học được hơn một trăm giờ rồi. Tuy nói tiếng Trung hơi khó nhưng tôi rất thích học giờ tiếng Trung.',
+      tip: 'Tiếng Trung dùng đủ cặp 虽然…，但是…; 但是 đứng đầu vế sau.'
     },
     {
-      situation: 'Bạn được hỏi về món ăn Trung Quốc.',
-      q_zh: '你吃过中国菜吗？你觉得怎么样？',
-      q_py: 'Nǐ chīguo Zhōngguó cài ma? Nǐ juéde zěnmeyàng?',
-      q_vn: 'Bạn từng ăn món Trung Quốc chưa? Bạn thấy thế nào?',
-      grammar: { label: '我吃过…次 + 虽然…但是…', any: ['过'] },
+      situation: 'Bạn được bạn người Trung Quốc hỏi về món ăn Trung Quốc.',
+      q_zh: '你吃过中国菜吗？哪个菜你吃过很多次？',
+      q_py: 'Nǐ chīguo Zhōngguó cài ma? Nǎge cài nǐ chīguo hěn duō cì?',
+      q_vn: 'Bạn từng ăn món Trung Quốc chưa? Món nào bạn đã ăn nhiều lần?',
+      grammar: { label: 'Động từ + 过 + số lần', any: ['过'] },
       need: [
-        { label: 'Dùng 过 nói đã từng ăn', any: ['过', '没吃过'] },
-        { label: 'Nói tên món (羊肉 / 面条 / 米饭)', any: ['羊肉', '面条', '鱼', '米饭', '菜', '鸡蛋', '牛奶'] },
-        { label: 'Nhận xét món ăn', any: ['好吃', '不错', '喜欢', '有意思'] }
+        { label: 'Nói tên món (羊肉 / 面条 / 鱼…)', any: ['羊肉', '面条', '鱼', '米饭', '菜', '鸡蛋', '饺子'] },
+        { label: 'Dùng 次 để nói số lần', any: ['次'] },
+        { label: 'Nhận xét / nói ai nấu', any: ['好吃', '不错', '喜欢', '做', '自己'] }
       ],
-      bonus: { label: 'Nói số lần bằng 次', any: ['次'] },
-      vocab: ['过', '次', '但是'],
+      bonus: { label: 'Dùng 虽然…但是…', any: ['虽然', '但是'] },
+      vocab: ['过', '次', '自己'],
       minLen: 12,
-      sample: '吃过，我吃过两三次。虽然我不会做，但是很好吃，我最喜欢吃面条。',
-      sample_py: 'Chīguo, wǒ chīguo liǎng sān cì. Suīrán wǒ bú huì zuò, dànshì hěn hǎochī, wǒ zuì xǐhuan chī miàntiáo.',
-      sample_vn: 'Ăn rồi, tôi ăn hai ba lần. Tuy tôi không biết nấu nhưng rất ngon, tôi thích ăn mì nhất.',
-      tip: 'Số lần đặt sau động từ: 吃过两次、看过一次、去过三次.'
+      sample: '吃过，鱼我吃过很多次。虽然我自己不会做，但是我妻子做得很好。',
+      sample_py: 'Chīguo, yú wǒ chīguo hěn duō cì. Suīrán wǒ zìjǐ bú huì zuò, dànshì wǒ qīzi zuò de hěn hǎo.',
+      sample_vn: 'Ăn rồi, cá thì tôi ăn nhiều lần rồi. Tuy tự tôi không biết nấu nhưng vợ tôi nấu rất ngon.',
+      tip: 'Số lần đặt sau động từ + 过: 吃过很多次、去过两次.'
     }
   ]
 };
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — dùng từ bài 14 + ôn lại từ bài 1-13 và HSK1
+// LUYỆN DỊCH — câu mới, dùng từ bài 14 + ôn bài trước và HSK1
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Bạn đã từng xem bộ phim đó chưa?', zh:'你看过那个电影吗？', py:'Nǐ kànguo nàge diànyǐng ma?'},
-  {vi:'Tuy chữ Hán có nhiều, nhưng tôi rất thích viết chữ Hán.', zh:'虽然汉字很多，但是我很喜欢写汉字。', py:'Suīrán Hànzì hěn duō, dànshì wǒ hěn xǐhuan xiě Hànzì.'},
-  {vi:'Tôi đã từng đến Trung Quốc một lần.', zh:'我去过一次中国。', py:'Wǒ qùguo yí cì Zhōngguó.'},
-  {vi:'Hôm nay trời quang, chúng ta đi chơi đi.', zh:'今天天气晴，我们去玩儿吧。', py:'Jīntiān tiānqì qíng, wǒmen qù wánr ba.'},
+  {vi:'Tôi chưa từng gặp em trai anh ấy.', zh:'我没见过他弟弟。', py:'Wǒ méi jiànguo tā dìdi.'},
+  {vi:'Tuy nhà tôi cách công ty rất xa, nhưng ngày nào tôi cũng đi bộ đi làm.', zh:'虽然我家离公司很远，但是我每天都走路去上班。', py:'Suīrán wǒ jiā lí gōngsī hěn yuǎn, dànshì wǒ měi tiān dōu zǒulù qù shàngbān.'},
+  {vi:'Năm ngoái tôi đi Trung Quốc hai lần.', zh:'我去年去了两次中国。', py:'Wǒ qùnián qùle liǎng cì Zhōngguó.'},
+  {vi:'Món cá này là tự bạn nấu à? Bạn nấu ngon thật!', zh:'这个鱼是你自己做的吗？你做得真好！', py:'Zhège yú shì nǐ zìjǐ zuò de ma? Nǐ zuò de zhēn hǎo!'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tuy hôm nay rất bận, nhưng tôi muốn đi chơi.', zh:'虽然今天很忙，但是我想去玩儿。', py:'Suīrán jīntiān hěn máng, dànshì wǒ xiǎng qù wánr.'},
-  {vi:'Tôi đã từng đến Trung Quốc, cũng đã từng đến Mỹ.', zh:'我去过中国，也去过美国。', py:'Wǒ qùguo Zhōngguó, yě qùguo Měiguó.'},
-  {vi:'Bộ phim này rất thú vị, tôi đã xem hai lần.', zh:'这个电影很有意思，我看了两次。', py:'Zhège diànyǐng hěn yǒuyìsi, wǒ kànle liǎng cì.'},
-  {vi:'Hôm nay trời quang, nhưng hơi lạnh.', zh:'今天晴，但是有点儿冷。', py:'Jīntiān qíng, dànshì yǒudiǎnr lěng.'},
+  {vi:'Công viên này tuy không lớn nhưng buổi sáng có rất nhiều người đến chạy bộ.', zh:'这个公园虽然不大，但是早上来跑步的人很多。', py:'Zhège gōngyuán suīrán bú dà, dànshì zǎoshang lái pǎobù de rén hěn duō.'},
+  {vi:'Tôi đã gọi cho anh ấy ba lần, lần nào anh ấy cũng không nghe máy.', zh:'我给他打过三次电话，他都没接。', py:'Wǒ gěi tā dǎguo sān cì diànhuà, tā dōu méi jiē.'},
+  {vi:'Ông ấy hơn một trăm tuổi rồi, nhưng sức khoẻ vẫn rất tốt.', zh:'他一百多岁了，但是身体还很好。', py:'Tā yìbǎi duō suì le, dànshì shēntǐ hái hěn hǎo.'},
 ];

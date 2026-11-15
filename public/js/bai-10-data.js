@@ -963,15 +963,17 @@ var dialogData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 1 · GHÉP TỪ (Collocation)
+// PHẦN 1 · GHÉP TỪ (Collocation) — ghép hai nửa thành cụm dùng được ngay
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'上',right:'课'},
-  {left:'看',right:'手机'},
-  {left:'洗',right:'手'},
-  {left:'别',right:'找'},
-  {left:'需要',right:'帮助'},
-  {left:'正在',right:'运动'},
+  {left:'洗',right:'衣服'},
+  {left:'上',right:'汉语课'},
+  {left:'多吃鸡蛋',right:'对身体好'},
+  {left:'给哥哥',right:'打电话'},
+  {left:'爸爸正在',right:'开车呢'},
+  {left:'买了一个大',right:'西瓜'},
+  {left:'我的新手机',right:'是白色的'},
 ];
 
 // ══════════════════════════════════════════
@@ -1033,67 +1035,72 @@ var listenData = {
 };
 
 // ══════════════════════════════════════════
-// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ở phòng tập gym
+// PHẦN 3a · ĐIỀN TỪ — mỗi câu một tình huống mới (别/不要……了 · 对 · 正在……呢 + từ mới bài 10, ôn bài trước)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你怎么还在这儿运动？别运动',blank:'了',post:'，已经很晚了。',hint:'(đừng... nữa)',ans:'了',exp:'别/不要 + Động từ + 了 = đừng làm... nữa.'},
-  {pre:'我知道，可是运动',blank:'对',post:'身体很好，我想多运动一下。',hint:'(đối với)',ans:'对',exp:'对 đứng sau chủ ngữ, trước đối tượng chịu tác động: 运动对身体好.'},
-  {pre:'你今天上的是什么运动',blank:'课',post:'？',hint:'(tiết học, lớp học)',ans:'课'},
-  {pre:'这是我',blank:'正在',post:'上的运动课。',hint:'(đang)',ans:'正在',exp:'正在 + động từ = đang làm: 正在上的运动课 = môn thể dục đang học.'},
-  {pre:'运动完以后别忘了',blank:'洗',post:'手再吃东西。',hint:'(rửa)',ans:'洗'},
-  {pre:'对了，你看见我的',blank:'手机',post:'了吗？我找不到了。',hint:'(điện thoại)',ans:'手机'},
-  {pre:'别找了，在桌子上呢。运动对身体真有',blank:'帮助',post:'。',hint:'(giúp ích)',ans:'帮助'},
-  {pre:'',blank:'哥哥',post:'也常常和我一起来运动。',hint:'(anh trai)',ans:'哥哥'},
+  {pre:'Thấy bạn cùng phòng gọi điện thoại đến khuya, bạn nói: “已经十二点了，别打电话',blank:'了',post:'，快睡觉吧。”',hint:'(nữa)',ans:'了',exp:'别 + động từ + tân ngữ + 了 = đừng … nữa (bảo dừng việc đang làm); 了 đứng cuối cụm.'},
+  {pre:'Về nhà, bạn kể: “今天老师',blank:'对',post:'我们说：‘明天上午不上课。’”',hint:'(với — nói với ai)',ans:'对',exp:'Nói với ai = 对 + người + 说; 对 đứng trước 说, không nói 说对我们.'},
+  {pre:'“你的新老师怎么样？” — “王老师',blank:'对',post:'学生非常好，我们都很喜欢她。”',hint:'(đối với)',ans:'对',exp:'对 + người + 很好 = tốt với ai; 对 đặt trước người, tính từ đứng sau cùng.'},
+  {pre:'Bạn khuyên bạn mình: “每天看一点儿报纸，对你的汉语很有',blank:'帮助',post:'。”',hint:'(ích, giúp ích)',ans:'帮助',exp:'A 对 B (很)有帮助 = A có ích cho B; trước 帮助 phải có 有.'},
+  {pre:'“喂，你现在能来公司吗？” — “不能，我',blank:'正在',post:'给学生上课呢。”',hint:'(đang)',ans:'正在',exp:'正在 + động từ (+ 呢) = đang làm việc gì ngay lúc đó; 正在 đứng trước động từ.'},
+  {pre:'“哥哥在家吗？” — “在，他正在房间里准备考试',blank:'呢',post:'。”',hint:'(đấy — việc đang làm)',ans:'呢',exp:'正在……呢: 呢 cuối câu nhấn việc đang diễn ra; không dùng 了 ở đây.'},
+  {pre:'Trời đang mưa, bạn dặn con: “外面下雨呢，',blank:'别',post:'去踢足球了。”',hint:'(đừng)',ans:'别',exp:'别 + động từ + 了 = thôi đừng (làm) nữa; 别 đứng ngay trước động từ.'},
+  {pre:'“这是你的朋友吗？” — “不是，这是我',blank:'哥哥',post:'，他在机场工作。”',hint:'(anh trai)',ans:'哥哥',exp:'哥哥 = anh trai; nói 我哥哥 hay 我的哥哥 đều được.'},
+  {pre:'早上我吃了两个',blank:'鸡蛋',post:'，喝了一杯牛奶。',hint:'(trứng gà)',ans:'鸡蛋',exp:'Lượng từ của 鸡蛋 là 个: 两个鸡蛋 (dùng 两, không dùng 二).'},
+  {pre:'“天气太热了，我们买个',blank:'西瓜',post:'吧！” — “好啊，我最喜欢吃了。”',hint:'(dưa hấu)',ans:'西瓜',exp:'买个西瓜 = 买一个西瓜 (khẩu ngữ bỏ 一); rủ rê dùng 吧.'},
+  {pre:'“你的',blank:'手机',post:'是白色的吗？” — “不是，是黑色的。”',hint:'(điện thoại di động)',ans:'手机',exp:'手机 = điện thoại di động; 白色的 / 黑色的 = cái màu trắng / cái màu đen.'},
+  {pre:'Mẹ nhờ bạn: “你帮我',blank:'洗',post:'一下这些杯子，好吗？”',hint:'(rửa)',ans:'洗',exp:'洗 + 一下 + đồ vật = rửa giúp một chút; ……，好吗？ để nhờ lịch sự.'},
+  {pre:'“明天下午你有',blank:'课',post:'吗？” — “没有，我上午去学校。”',hint:'(tiết học)',ans:'课',exp:'有课 = có tiết học; 上课 = vào học, 下课 = tan học.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3b · SẮP XẾP
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng 别……了 / 对 / 正在……呢 (ôn 已经、完、的时候)
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['别','看','手机','了','，','快','去','运动','吧','。'],ans:'别看手机了，快去运动吧。',audio:'别看手机了，快去运动吧。'},
-  {words:['运动','对','身体','非常','好','。'],ans:'运动对身体非常好。',audio:'运动对身体非常好。'},
-  {words:['我','正在','上','运动','课','呢','。'],ans:'我正在上运动课呢。',audio:'我正在上运动课呢。'},
-  {words:['运动','完','以后','要','洗','手','。'],ans:'运动完以后要洗手。',audio:'运动完以后要洗手。'},
-  {words:['哥哥','常常','帮助','我','运动','。'],ans:'哥哥常常帮助我运动。',audio:'哥哥常常帮助我运动。'},
-  {words:['哥哥','已经','运动','了','一个','小时','了','。'],ans:'哥哥已经运动了一个小时了。',audio:'哥哥已经运动了一个小时了。'},
+  {words:['你','别','在','这儿','等','我','了','。'],ans:'你别在这儿等我了。',audio:'你别在这儿等我了。'},
+  {words:['哥哥','正在','机场','接','朋友','呢','。'],ans:'哥哥正在机场接朋友呢。',audio:'哥哥正在机场接朋友呢。'},
+  {words:['经常','游泳','对','身体','有','帮助','吗','？'],ans:'经常游泳对身体有帮助吗？',audio:'经常游泳对身体有帮助吗？'},
+  {words:['爸爸','对','我','说','他','今天','不','回来','吃饭','了','。'],ans:'爸爸对我说他今天不回来吃饭了。',audio:'爸爸对我说他今天不回来吃饭了。'},
+  {words:['你','要','的','西瓜','我','已经','买','回来','了','。'],ans:'你要的西瓜我已经买回来了。',audio:'你要的西瓜我已经买回来了。'},
+  {words:['下课','以后','我们','一起','去','打篮球','吧','。'],ans:'下课以后我们一起去打篮球吧。',audio:'下课以后我们一起去打篮球吧。'},
+  {words:['我','的','手机','是','哥哥','送','我','的','。'],ans:'我的手机是哥哥送我的。',audio:'我的手机是哥哥送我的。'},
+  {words:['这','件','衣服','你','洗','完','了','吗','？'],ans:'这件衣服你洗完了吗？',audio:'这件衣服你洗完了吗？'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 3c · SỬA LỖI SAI
+// PHẦN 3c · SỬA LỖI SAI — lỗi học sinh Việt hay mắc
+// (了 chen giữa 别 và động từ, 对 đặt cuối câu như “cho”, 很帮助, 说给, 正在……了, 别要, 二个, bổ ngữ sau tân ngữ, 很好对我)
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'不要看手机，了。',
-   opts:['不要看手机了。','不要看手机，了。','不要了看手机。','了不要看手机。'],ans:0,
-   exp:'了 gắn liền ngay sau cụm động từ+tân ngữ, không tách bằng dấu phẩy và không đứng riêng.'},
-  {wrong:'别了看手机。',
-   opts:['别看手机了。','别了看手机。','别看了手机。','看别手机了。'],ans:0,
-   exp:'Cấu trúc là 别 + Động từ + Tân ngữ + 了, 了 luôn đứng ở CUỐI câu/cụm, không chen vào giữa 别 và động từ.'},
-  {wrong:'运动身体对很好。',
-   opts:['运动对身体很好。','运动身体对很好。','对运动身体很好。','运动很好对身体。'],ans:0,
-   exp:'对 đứng NGAY SAU chủ ngữ và NGAY TRƯỚC đối tượng chịu ảnh hưởng: Chủ ngữ + 对 + Đối tượng + Tính từ/Động từ.'},
-  {wrong:'对运动身体很好。',
-   opts:['运动对身体很好。','对运动身体很好。','身体对运动很好。','很好运动对身体。'],ans:0,
-   exp:'对 không đứng ở đầu câu thay cho chủ ngữ — chủ ngữ (运动) phải đứng trước 对.'},
-  {wrong:'我运动已经了一个小时。',
-   opts:['我已经运动了一个小时。','我运动已经了一个小时。','我了已经运动一个小时。','已经我运动了一个小时。'],ans:0,
-   exp:'已经 đứng TRƯỚC động từ (đã học ở Bài 4/9: 已经 + Động từ + 了), không chen 了 vào giữa 已经 và động từ.'},
+  {wrong:'你已经看了两个小时了，别看了电视。',
+   opts:['你已经看了两个小时了，别看电视了。','你已经看了两个小时了，别了看电视。','你已经看了两个小时了，没看电视了。','你已经两个小时看了，别看电视了。'],ans:0,
+   exp:'“Đừng … nữa” = 别 + động từ + tân ngữ + 了: 别看电视了; 了 không chen vào giữa, không dùng 没 để cấm.'},
+  {wrong:'多吃水果对眼睛很帮助。',
+   opts:['多吃水果给眼睛很有帮助。','多吃水果有帮助对眼睛。','多吃水果对眼睛很有帮助。','多吃水果对眼睛是很帮助。'],ans:2,
+   exp:'“Có ích cho …” = 对 + đối tượng + (很)有帮助; không bỏ 有, không dùng 给, không đặt 对… ở cuối câu.'},
+  {wrong:'医生说给我要多喝水。',
+   opts:['医生说对我要多喝水。','医生对我说要多喝水。','医生对我说要喝水多。','医生对我说要很多喝水。'],ans:1,
+   exp:'“Nói với tôi” = 对我说 (对 + người đứng TRƯỚC 说); “uống nhiều” = 多喝, 多 đứng trước động từ.'},
+  {wrong:'“喂，你在做什么？” — “我正在吃饭了。”',
+   opts:['“喂，你在做什么？” — “我正在了吃饭。”','“喂，你在做什么？” — “我吃饭正在呢。”','“喂，你在做什么？” — “我正在吃饭了呢。”','“喂，你在做什么？” — “我正在吃饭呢。”'],ans:3,
+   exp:'Việc đang làm: 正在 + động từ + 呢; không dùng 了 (đã xong) với 正在, 正在 đứng trước động từ.'},
+  {wrong:'他已经睡觉了，你别要给他打电话了。',
+   opts:['他已经睡觉了，你别给他打电话了。','他已经睡觉了，你要别给他打电话了。','他已经睡觉了，你没给他打电话了。','他已经睡觉了，你别给他了打电话。'],ans:0,
+   exp:'别 đã nghĩa là “đừng”, không ghép thành 别要; 给他 đứng trước 打电话, 了 ở cuối câu.'},
+  {wrong:'哥哥买了二个西瓜。',
+   opts:['哥哥买了两西瓜。','哥哥买了两件西瓜。','哥哥买了二西瓜。','哥哥买了两个西瓜。'],ans:3,
+   exp:'Trước lượng từ dùng 两 (không dùng 二), và phải có lượng từ 个: 两个西瓜.'},
+  {wrong:'我已经洗衣服完了。',
+   opts:['我已经完洗衣服了。','我洗完衣服已经了。','我已经洗完衣服了。','我已经洗了完衣服。'],ans:2,
+   exp:'Bổ ngữ kết quả 完 đứng ngay sau động từ, trước tân ngữ: 洗完衣服; 已经 đứng trước động từ, 了 ở cuối.'},
+  {wrong:'我哥哥很好对我，经常帮我。',
+   opts:['我哥哥对我很好，经常帮我。','我哥哥对很好我，经常帮我。','我哥哥给我很好，经常帮我。','我哥哥很对我好，经常帮我。'],ans:0,
+   exp:'“Tốt với tôi” = 对我很好: 对 + người đứng trước, 很好 ở sau; không dịch từng chữ thành 很好对我.'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
-// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
-// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
-// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 // Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
 // lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
 // dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
@@ -1102,126 +1109,118 @@ var speakingData = {
   intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 10. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn đang tìm điện thoại khắp nhà, người nhà nhìn thấy nó. Hãy đóng vai người nhà.',
-      q_zh: '你在找什么？我的手机你看见了吗？',
-      q_py: 'Nǐ zài zhǎo shénme? Wǒ de shǒujī nǐ kànjiàn le ma?',
-      q_vn: 'Bạn đang tìm gì thế? Bạn có thấy điện thoại của tôi không?',
+      situation: 'Người nhà đang tìm điện thoại khắp nhà, bạn biết nó ở đâu. Hãy trả lời họ.',
+      q_zh: '你知道我的手机在哪儿吗？我找了很长时间了。',
+      q_py: 'Nǐ zhīdao wǒ de shǒujī zài nǎr ma? Wǒ zhǎole hěn cháng shíjiān le.',
+      q_vn: 'Bạn có biết điện thoại của tôi ở đâu không? Tôi tìm lâu lắm rồi.',
       grammar: { label: '别找了，…在…呢', any: ['别', '呢'] },
       need: [
         { label: 'Dùng 别…了 để bảo đừng tìm nữa', any: ['别', '不要'] },
-        { label: 'Nói vị trí đồ vật', any: ['桌子', '上', '旁边', '里', '下', '床', '包', '房间'] },
+        { label: 'Nói vị trí đồ vật', any: ['桌子', '上', '旁边', '里', '下', '床', '包', '房间', '前面', '后面'] },
         { label: 'Nói rõ đồ vật (手机 / 电脑…)', any: ['手机', '电脑', '书', '衣服', '钱', '钥匙'] }
       ],
       bonus: { label: 'Thêm màu sắc để nhận ra (白色的)', any: ['白', '黑', '红', '色'] },
       vocab: ['别', '手机', '找'],
       minLen: 10,
-      sample: '别找了，你的手机在桌子上呢，电脑旁边。',
-      sample_py: 'Bié zhǎo le, nǐ de shǒujī zài zhuōzi shang ne, diànnǎo pángbiān.',
-      sample_vn: 'Đừng tìm nữa, điện thoại của bạn ở trên bàn kìa, cạnh máy tính.',
-      tip: '别 + động từ + 了 = đừng… nữa. 呢 ở cuối câu nhấn trạng thái đang tồn tại.'
+      sample: '你别找了，你的手机在哥哥房间的椅子上呢，是白色的那个。',
+      sample_py: 'Nǐ bié zhǎo le, nǐ de shǒujī zài gēge fángjiān de yǐzi shang ne, shì báisè de nàge.',
+      sample_vn: 'Bạn đừng tìm nữa, điện thoại của bạn ở trên ghế trong phòng anh trai kìa, cái màu trắng ấy.',
+      tip: '别 + động từ + 了 = đừng… nữa. 呢 ở cuối câu nhấn “đang ở đó kìa”.'
     },
     {
-      situation: 'Bạn gọi điện về nhà, hỏi mọi người đang làm gì.',
-      q_zh: '家里人现在正在做什么呢？',
-      q_py: 'Jiā lǐ rén xiànzài zhèngzài zuò shénme ne?',
-      q_vn: 'Người nhà bây giờ đang làm gì thế?',
+      situation: 'Bạn gọi điện về nhà, mẹ hỏi cả nhà đang làm gì.',
+      q_zh: '现在你家里人正在做什么呢？',
+      q_py: 'Xiànzài nǐ jiā li rén zhèngzài zuò shénme ne?',
+      q_vn: 'Bây giờ người nhà bạn đang làm gì thế?',
       grammar: { label: '…正在 + động từ + 呢', any: ['正在', '在'] },
       need: [
         { label: 'Dùng 正在…呢', any: ['正在', '在'] },
-        { label: 'Nói người đó là ai', any: ['妈妈', '爸爸', '哥哥', '姐姐', '弟弟', '妹妹', '丈夫', '妻子', '孩子'] },
-        { label: 'Nói việc đang làm', any: ['准备', '做饭', '看', '洗', '吃', '睡', '工作', '学习', '打电话'] }
+        { label: 'Nói người đó là ai', any: ['妈妈', '爸爸', '哥哥', '姐姐', '弟弟', '妹妹', '丈夫', '妻子', '孩子', '我'] },
+        { label: 'Nói việc đang làm', any: ['准备', '做饭', '看', '洗', '吃', '睡', '工作', '学习', '打电话', '上课', '开车'] }
       ],
-      bonus: { label: 'Nói thêm bữa ăn hoặc đồ vật (午饭 / 衣服)', any: ['午饭', '晚饭', '衣服', '碗', '菜'] },
-      vocab: ['正在', '洗', '帮助'],
+      bonus: { label: 'Nói thêm bữa ăn hoặc đồ vật (午饭 / 衣服 / 报纸)', any: ['午饭', '晚饭', '衣服', '碗', '菜', '报纸', '电视'] },
+      vocab: ['正在', '洗', '哥哥'],
       minLen: 10,
-      sample: '妈妈正在准备午饭呢，哥哥在洗衣服。',
-      sample_py: 'Māma zhèngzài zhǔnbèi wǔfàn ne, gēge zài xǐ yīfu.',
-      sample_vn: 'Mẹ đang chuẩn bị cơm trưa, anh trai đang giặt quần áo.',
-      tip: '正在 + động từ + 呢 = đang làm gì đó ngay lúc này.'
+      sample: '爸爸正在看报纸呢，哥哥在洗衣服，我在给朋友打电话。',
+      sample_py: 'Bàba zhèngzài kàn bàozhǐ ne, gēge zài xǐ yīfu, wǒ zài gěi péngyou dǎ diànhuà.',
+      sample_vn: 'Bố đang đọc báo, anh trai đang giặt quần áo, còn tôi đang gọi điện cho bạn.',
+      tip: '正在 + động từ + 呢 = đang làm gì đó ngay lúc này; câu sau có thể chỉ dùng 在.'
     },
     {
-      situation: 'Bạn học tranh luận: xem tivi có giúp học tiếng Trung không?',
-      q_zh: '看电视对学汉语有帮助吗？为什么？',
-      q_py: 'Kàn diànshì duì xué Hànyǔ yǒu bāngzhù ma? Wèi shénme?',
-      q_vn: 'Xem tivi có giúp ích cho việc học tiếng Trung không? Vì sao?',
-      grammar: { label: '…对…有帮助 / 没有帮助', any: ['帮助'] },
+      situation: 'Bạn học hỏi bạn: làm gì thì có ích cho việc học tiếng Trung?',
+      q_zh: '你觉得做什么对学汉语有帮助？为什么？',
+      q_py: 'Nǐ juéde zuò shénme duì xué Hànyǔ yǒu bāngzhù? Wèi shénme?',
+      q_vn: 'Bạn thấy làm gì thì có ích cho việc học tiếng Trung? Vì sao?',
+      grammar: { label: '…对…有帮助', any: ['帮助'] },
       need: [
-        { label: 'Dùng 对…有帮助 hoặc 没有帮助', any: ['帮助'] },
-        { label: 'Trả lời rõ có ích hay không', any: ['有', '没有', '很有'] },
-        { label: 'Nêu lý do (可以听 / 学新词)', any: ['听', '说', '词', '字', '学', '因为'] }
+        { label: 'Dùng 对…有帮助', any: ['帮助'] },
+        { label: 'Nêu việc cụ thể (看电影 / 听 / 读 / 写汉字…)', any: ['看', '听', '读', '写', '说', '电影', '电视', '报纸', '朋友'] },
+        { label: 'Nêu lý do (因为…)', any: ['因为', '可以', '能', '所以'] }
       ],
-      bonus: { label: 'Nói thêm việc học khác (课 / 准备)', any: ['课', '准备', '学习'] },
-      vocab: ['帮助', '课', '别'],
+      bonus: { label: 'Nói thêm về giờ học (课 / 准备)', any: ['课', '准备', '学习', '老师'] },
+      vocab: ['帮助', '课'],
       minLen: 12,
-      sample: '我觉得看电视对学汉语很有帮助，因为可以听很多中国人说话。',
-      sample_py: 'Wǒ juéde kàn diànshì duì xué Hànyǔ hěn yǒu bāngzhù, yīnwèi kěyǐ tīng hěn duō Zhōngguórén shuōhuà.',
-      sample_vn: 'Tôi thấy xem tivi rất có ích cho việc học tiếng Trung, vì được nghe nhiều người Trung Quốc nói chuyện.',
-      tip: 'A 对 B 有帮助 = A có ích cho B: 运动对身体有帮助.'
+      sample: '我觉得看中国电影对学汉语很有帮助，因为可以听中国人说汉语。',
+      sample_py: 'Wǒ juéde kàn Zhōngguó diànyǐng duì xué Hànyǔ hěn yǒu bāngzhù, yīnwèi kěyǐ tīng Zhōngguórén shuō Hànyǔ.',
+      sample_vn: 'Tôi thấy xem phim Trung Quốc rất có ích cho việc học tiếng Trung, vì được nghe người Trung Quốc nói tiếng Trung.',
+      tip: 'A 对 B 有帮助 = A có ích cho B; muốn nói “rất có ích” thì dùng 很有帮助.'
     },
     {
-      situation: 'Bạn vừa đi chợ về, người nhà hỏi bạn mua gì.',
-      q_zh: '你怎么买了这么多东西呀？今天谁回来吃饭？',
-      q_py: 'Nǐ zěnme mǎile zhème duō dōngxi ya? Jīntiān shéi huílai chīfàn?',
-      q_vn: 'Sao bạn mua nhiều đồ thế? Hôm nay ai về ăn cơm?',
-      grammar: { label: '…回来吃饭 + 我买了…', any: ['回来', '买'] },
+      situation: 'Tối nay có khách đến nhà, bạn vừa đi chợ về. Người nhà hỏi bạn.',
+      q_zh: '今天晚上谁来你家吃饭？你去商店买了什么？',
+      q_py: 'Jīntiān wǎnshang shéi lái nǐ jiā chīfàn? Nǐ qù shāngdiàn mǎile shénme?',
+      q_vn: 'Tối nay ai đến nhà bạn ăn cơm? Bạn đã đi cửa hàng mua những gì?',
+      grammar: { label: '…来吃饭，所以我买了…', any: ['买', '来', '回来'] },
       need: [
-        { label: 'Nói ai về ăn cơm', any: ['哥哥', '姐姐', '弟弟', '妹妹', '爸爸', '妈妈', '朋友', '同学', '家里人'] },
-        { label: 'Kể ít nhất hai món đã mua', any: ['鸡蛋', '西瓜', '羊肉', '面条', '牛奶', '水果', '菜', '鱼', '米'] },
+        { label: 'Nói ai đến / về ăn cơm', any: ['哥哥', '姐姐', '弟弟', '妹妹', '爸爸', '妈妈', '朋友', '同学', '老师', '家里人'] },
+        { label: 'Kể ít nhất hai món đã mua', any: ['鸡蛋', '西瓜', '羊肉', '面条', '牛奶', '水果', '菜', '鱼', '米', '苹果'] },
         { label: 'Dùng 买了', any: ['买'] }
       ],
       bonus: { label: 'Nói thêm ai đang nấu ăn (正在准备)', any: ['正在', '准备', '做饭'] },
-      vocab: ['哥哥', '鸡蛋', '西瓜', '正在'],
+      vocab: ['鸡蛋', '西瓜', '哥哥'],
       minLen: 12,
-      sample: '哥哥今天中午回来吃饭，所以我买了羊肉、鸡蛋和一个西瓜。',
-      sample_py: 'Gēge jīntiān zhōngwǔ huílai chīfàn, suǒyǐ wǒ mǎile yángròu, jīdàn hé yí ge xīguā.',
-      sample_vn: 'Trưa nay anh trai về ăn cơm nên tôi mua thịt dê, trứng gà và một quả dưa hấu.',
-      tip: 'Liệt kê nhiều món dùng dấu 、 giữa các từ, từ cuối dùng 和.'
+      sample: '今天晚上姐姐和她的朋友来我家吃饭，所以我买了羊肉、鸡蛋和一个大西瓜。',
+      sample_py: 'Jīntiān wǎnshang jiějie hé tā de péngyou lái wǒ jiā chīfàn, suǒyǐ wǒ mǎile yángròu, jīdàn hé yí ge dà xīguā.',
+      sample_vn: 'Tối nay chị gái và bạn của chị ấy đến nhà tôi ăn cơm, nên tôi mua thịt dê, trứng gà và một quả dưa hấu to.',
+      tip: 'Liệt kê nhiều món dùng dấu 、 giữa các từ, trước món cuối dùng 和.'
     },
     {
-      situation: 'Người nhà bạn ốm nhưng vẫn đọc báo. Hãy nhắc nhở họ.',
-      q_zh: '医生说要多休息，你看见家人还在看报纸，你会怎么说？',
-      q_py: 'Yīshēng shuō yào duō xiūxi, nǐ kànjiàn jiārén hái zài kàn bàozhǐ, nǐ huì zěnme shuō?',
-      q_vn: 'Bác sĩ nói phải nghỉ nhiều, bạn thấy người nhà vẫn đọc báo, bạn sẽ nói gì?',
-      grammar: { label: '别…了，医生说…', any: ['别', '医生说'] },
+      situation: 'Bố bạn bị ốm nhưng vẫn ngồi làm việc trước máy tính. Hãy nhắc bố.',
+      q_zh: '爸爸生病了，现在还在电脑前面工作。你对他说什么？',
+      q_py: 'Bàba shēngbìng le, xiànzài hái zài diànnǎo qiánmiàn gōngzuò. Nǐ duì tā shuō shénme?',
+      q_vn: 'Bố bị ốm mà bây giờ vẫn làm việc trước máy tính. Bạn nói gì với bố?',
+      grammar: { label: '别…了，医生让/说…', any: ['别', '不要'] },
       need: [
-        { label: 'Dùng 别…了', any: ['别', '不要'] },
-        { label: 'Nhắc tới lời bác sĩ', any: ['医生', '大夫', '说'] },
+        { label: 'Dùng 别…了 / 不要…了', any: ['别', '不要'] },
+        { label: 'Nhắc tới lời bác sĩ', any: ['医生', '大夫', '说', '让'] },
         { label: 'Đề nghị việc nên làm (休息 / 吃药 / 喝水)', any: ['休息', '吃药', '药', '喝', '睡'] }
       ],
-      bonus: { label: 'Đề nghị lịch sự (给你…吧)', any: ['吧', '给'] },
-      vocab: ['别', '帮助', '课'],
+      bonus: { label: 'Đề nghị giúp đỡ (我给你… / 我帮你…吧)', any: ['吧', '给', '帮'] },
+      vocab: ['别', '洗'],
       minLen: 12,
-      sample: '别看报纸了，医生说你要多休息。我给你一杯茶吧。',
-      sample_py: 'Bié kàn bàozhǐ le, yīshēng shuō nǐ yào duō xiūxi. Wǒ gěi nǐ yì bēi chá ba.',
-      sample_vn: 'Đừng đọc báo nữa, bác sĩ nói bạn phải nghỉ nhiều. Tôi rót cho bạn cốc trà nhé.',
-      tip: '多 + động từ = làm nhiều hơn: 多休息、多喝水、多运动.'
+      sample: '爸爸，别工作了，医生让你多休息。我给你洗个苹果吧。',
+      sample_py: 'Bàba, bié gōngzuò le, yīshēng ràng nǐ duō xiūxi. Wǒ gěi nǐ xǐ ge píngguǒ ba.',
+      sample_vn: 'Bố ơi, đừng làm việc nữa, bác sĩ bảo bố nghỉ ngơi nhiều vào. Con rửa cho bố quả táo nhé.',
+      tip: '别…了 = đừng… nữa; 让 + người + động từ = bảo ai làm gì (bài 8).'
     }
   ]
 };
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH (Việt→Trung) — cau dich THAT tu giao an PPT bai 10
-// (phan "cau dich Viet-Trung" giao vien da soan de hoc sinh ung dung
-// cach dung tu qua collocation/cau truc di kem)
+// LUYỆN DỊCH — câu mới, dùng từ bài 10 + ôn bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Sáng nay tôi có tiết tiếng Trung, chiều nay có tiết tiếng Anh.', zh:'我上午有汉语课，下午有英语课。', py:'Wǒ shàngwǔ yǒu Hànyǔ kè, xiàwǔ yǒu Yīngyǔ kè.'},
-  {vi:'Học tiếng Trung có ích cho công việc.', zh:'学中文对工作有帮助。', py:'Xué Zhōngwén duì gōngzuò yǒu bāngzhù.'},
-  {vi:'Trời đã muộn rồi, đừng xem TV nữa, đi ngủ đi.', zh:'天很晚了，别看电视了，去睡觉吧。', py:'Tiān hěn wǎn le, bié kàn diànshì le, qù shuìjiào ba.'},
-  {vi:'Mẹ bảo tôi đi mua trứng.', zh:'妈妈让我去买鸡蛋。', py:'Māma ràng wǒ qù mǎi jīdàn.'},
-  {vi:'Tôi muốn mua một chiếc điện thoại mới, nhưng tôi không có nhiều tiền.', zh:'我想买一个新手机，但是我没有很多钱。', py:'Wǒ xiǎng mǎi yí ge xīn shǒujī, dànshì wǒ méiyǒu hěn duō qián.'},
-  {vi:'Bạn có thể giúp tôi rửa mấy cái bát này một chút không?', zh:'你能帮我洗一下这些碗吗？', py:'Nǐ néng bāng wǒ xǐ yíxià zhèxiē wǎn ma?'},
+  {vi:'Anh trai tôi đang làm việc ở công ty, chiều nay bạn gọi lại cho anh ấy nhé.', zh:'我哥哥正在公司工作呢，你下午再给他打电话吧。', py:'Wǒ gēge zhèngzài gōngsī gōngzuò ne, nǐ xiàwǔ zài gěi tā dǎ diànhuà ba.'},
+  {vi:'Cảm ơn sự giúp đỡ của bạn, bây giờ tôi đã đọc hiểu câu này rồi.', zh:'谢谢你的帮助，现在我已经看懂这个题了。', py:'Xièxie nǐ de bāngzhù, xiànzài wǒ yǐjīng kàndǒng zhège tí le.'},
+  {vi:'Đừng làm nữa, bạn đã làm việc cả buổi sáng rồi, nghỉ một chút đi.', zh:'别做了，你已经工作了一个上午了，休息一下吧。', py:'Bié zuò le, nǐ yǐjīng gōngzuòle yí ge shàngwǔ le, xiūxi yíxià ba.'},
+  {vi:'Lúc bạn gọi điện cho tôi, tôi đang giặt quần áo.', zh:'你给我打电话的时候，我正在洗衣服呢。', py:'Nǐ gěi wǒ dǎ diànhuà de shíhou, wǒ zhèngzài xǐ yīfu ne.'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH (chiều Trung→Việt) — cau dich THAT khac, cung tu giao an
-// PPT bai 10, khong trung voi chieu Viet->Trung o tren
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tôi rất hứng thú với tiếng Trung.', zh:'我对汉语很感兴趣。', py:'Wǒ duì Hànyǔ hěn gǎn xìngqù.'},
-  {vi:'Họ đang học trong lớp học.', zh:'他们正在教室里上课。', py:'Tāmen zhèngzài jiàoshì lǐ shàngkè.'},
-  {vi:'Bạn ăn nhiều rồi, đừng ăn nữa.', zh:'你已经吃很多了，别吃了。', py:'Nǐ yǐjīng chī hěn duō le, bié chī le.'},
-  {vi:'Đi ngủ sớm dậy sớm có lợi cho sức khỏe.', zh:'早睡早起对身体有帮助。', py:'Zǎo shuì zǎo qǐ duì shēntǐ yǒu bāngzhù.'},
-  {vi:'Trong giờ học, bạn đừng chơi điện thoại.', zh:'你在课上不要玩手机。', py:'Nǐ zài kè shàng bú yào wán shǒujī.'},
-  {vi:'Điện thoại của tôi sắp hết pin rồi, tôi phải đi sạc.', zh:'我的手机快没电了，我要去充电。', py:'Wǒ de shǒujī kuài méi diàn le, wǒ yào qù chōngdiàn.'},
+  {vi:'Bạn Trung Quốc của tôi rất tốt với tôi, thường mời tôi đến nhà cô ấy ăn cơm.', zh:'我的中国朋友对我很好，经常请我去她家吃饭。', py:'Wǒ de Zhōngguó péngyou duì wǒ hěn hǎo, jīngcháng qǐng wǒ qù tā jiā chīfàn.'},
+  {vi:'Quả dưa hấu này to thật, tối nay chúng ta cùng ăn nhé.', zh:'这个西瓜真大，我们晚上一起吃吧。', py:'Zhège xīguā zhēn dà, wǒmen wǎnshang yìqǐ chī ba.'},
+  {vi:'Trong giờ học đừng xem điện thoại, cô giáo sẽ không vui đâu.', zh:'上课的时候别看手机，老师会不高兴的。', py:'Shàngkè de shíhou bié kàn shǒujī, lǎoshī huì bù gāoxìng de.'},
 ];

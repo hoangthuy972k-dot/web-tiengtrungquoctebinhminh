@@ -432,3 +432,28 @@
 
 /* Bao cao: dong "📅 Da on hom nay" duoi cot Chuoi (ke hoach "Hom nay em on gi" — on-hom-nay.js) */
 .tr-ohn { margin-top: 4px; font-size: 0.8rem; }
+
+/* ---------- Tab "🔊 Giọng đọc" (admin-giong-doc.js) ---------- */
+.gd-canh { padding: 12px 14px; border-radius: 12px; background: var(--color-red-50); color: var(--color-red-700); border: 1.5px solid var(--color-red-100); line-height: 1.5; margin: 0 0 14px; }
+.gd-canh--thu { background: var(--color-gray-50); color: var(--color-gray-700); border-color: var(--color-gray-200); }
+.gd-thanh { height: 8px; border-radius: 999px; background: var(--color-gray-100); overflow: hidden; margin-top: 8px; }
+.gd-thanh span { display: block; height: 100%; background: var(--color-red-500); border-radius: inherit; }
+.gd-goi-y { color: var(--color-gray-600); font-size: 0.9rem; line-height: 1.55; margin: 0 0 12px; }
+.gd-tinh { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 0 0 16px; padding: 12px 14px; background: #fff; border: 1.5px solid var(--color-gray-200); border-radius: 12px; }
+.gd-tinh-muc { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; }
+.gd-tinh-muc b { color: var(--color-red-600); font-variant-numeric: tabular-nums; }
+.gd-tinh-muc input { width: 100%; accent-color: var(--color-red-600); }
+.gd-ds { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.gd-giong { padding: 14px 16px; border: 1.5px solid var(--color-gray-200); border-radius: 12px; background: #fff; display: flex; flex-direction: column; gap: 8px; }
+.gd-giong.is-dung { border-color: var(--color-green-600); box-shadow: 0 0 0 3px var(--color-green-50); }
+.gd-giong header { font-size: 1rem; }
+.gd-gt { color: var(--color-gray-600); font-size: 0.8rem; }
+.gd-nhan { color: var(--color-green-600); font-size: 0.8rem; font-weight: 700; }
+.gd-mo { margin: 0; color: var(--color-gray-600); font-size: 0.86rem; }
+.gd-nut { display: flex; flex-wrap: wrap; gap: 6px; }
+.gd-nut .btn { padding: 6px 12px; font-size: 0.85rem; }
+.gd-dung { width: 100%; margin-top: auto; }
+.gd-kq { margin: 0; min-height: 1.2em; font-size: 0.85rem; color: var(--color-gray-700); }
+.gd-kq:empty { display: none; }
+.gd-pa { width: 100%; max-width: 520px; font: inherit; font-size: 0.9rem; padding: 10px 12px; border: 1.5px solid var(--color-gray-200); border-radius: 10px; }
+.gd-ghichu p { margin: 0 0 8px; line-height: 1.55; color: var(--color-gray-700); font-size: 0.92rem; }

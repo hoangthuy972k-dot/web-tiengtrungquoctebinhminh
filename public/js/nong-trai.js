@@ -151,6 +151,7 @@
   // true / false / null (chua biet: danh sach giong chua nap xong)
   function coGiongZh() {
     if (!window.speechSynthesis) return false;
+    if (window.DocZh && DocZh.bat()) return true; // giong may chu (Azure, doc-zh.js): may khong co giong Trung cung nghe duoc
     if (!giongZh) giongZh = chonGiongZh();
     if (giongZh) return true;
     return (speechSynthesis.getVoices() || []).length ? false : null;
@@ -221,7 +222,7 @@
     } catch (e) { ket(false); }
   }
   // may nay da thu ma khong phat duoc tieng -> khong xin cau nghe nua
-  function mayKhongNghe() { try { return localStorage.getItem('hyv_nt_khong_nghe') === '1'; } catch (e) { return false; } }
+  function mayKhongNghe() { try { return localStorage.getItem((window.DocZh ? DocZh.khoa('hyv_nt_khong_nghe') : 'hyv_nt_khong_nghe')) === '1'; } catch (e) { return false; } }
   function xinCauNghe() { return coGiongZh() === true && !mayKhongNghe(); }
   // May chac chan khong doc duoc (khong co giong Trung, may chu cung khong co giong) -> bo kieu cau nghe
   function nghiDuoc() { return coGiongZh() !== false || !ttsHong; }
@@ -5025,7 +5026,7 @@
       if (lai) lai.addEventListener('click', function () {
         docKiem(zh, function (ok) {
           if (ok) { if (tb && !mayKhongNghe()) tb.textContent = ''; return; }
-          try { localStorage.setItem('hyv_nt_khong_nghe', '1'); } catch (e) { /* bo qua */ }
+          try { localStorage.setItem((window.DocZh ? DocZh.khoa('hyv_nt_khong_nghe') : 'hyv_nt_khong_nghe'), '1'); } catch (e) { /* bo qua */ }
           hienPy();
         });
       });

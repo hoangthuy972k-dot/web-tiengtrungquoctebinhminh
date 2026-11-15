@@ -1,3 +1,11 @@
+// Giong doc may chu (Azure) khi co giao bat o /admin: nap doc-zh.js (cung ?v= voi file nay, xem
+// tools/stamp-assets.js). Khong bat thi doc-zh.js de speechSynthesis chay y nhu cu.
+(function(){
+  if(window.DocZh||document.querySelector('script[src*="/js/doc-zh.js"]')) return;
+  var me=document.currentScript,v=me&&/[?&]v=([^&]+)/.exec(me.src||'');
+  var s=document.createElement('script');s.src='/js/doc-zh.js'+(v?'?v='+v[1]:'');
+  (document.head||document.documentElement).appendChild(s);
+})();
 // ══════════════════════════════════════════
 // AUDIO (Web Speech API — không có file mp3 thật)
 // ══════════════════════════════════════════

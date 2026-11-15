@@ -79,7 +79,7 @@
         nut.addEventListener('click', function () {
           N.docKiem(zh, function (ok) {
             if (ok) return;
-            try { localStorage.setItem('hyv_nt_khong_nghe', '1'); } catch (e) { /* bo qua */ }
+            try { localStorage.setItem((window.DocZh ? DocZh.khoa('hyv_nt_khong_nghe') : 'hyv_nt_khong_nghe'), '1'); } catch (e) { /* bo qua */ }
             hienChu();
           });
         });

@@ -448,7 +448,7 @@
   if (window.speechSynthesis) {
     try { speechSynthesis.addEventListener('voiceschanged', function () { giongZh = chonGiong(); }); } catch (e) { /* bo qua */ }
   }
-  function mayKhongNghe() { try { return localStorage.getItem('hyv_obc_khong_nghe') === '1'; } catch (e) { return false; } }
+  function mayKhongNghe() { try { return localStorage.getItem((window.DocZh ? DocZh.khoa('hyv_obc_khong_nghe') : 'hyv_obc_khong_nghe')) === '1'; } catch (e) { return false; } }
   // Doc 1 lan; xong(true) neu may that su phat tieng (co su kien start), xong(false) neu khong
   function doc(zh, xong) {
     var da = false;

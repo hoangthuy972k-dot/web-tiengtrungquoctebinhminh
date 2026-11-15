@@ -4788,50 +4788,12 @@ app.get('/api/admin/report', requireAdmin, asyncRoute(async (req, res) => {
   res.json({ generatedAt: Date.now(), today, students });
 }));
 
-// Proxies Google Cloud Text-to-Speech so the API key never reaches the
-// browser. Client sends { text }, gets back { audioContent } (base64 MP3).
-app.post('/api/tts', async (req, res) => {
-  if (!GOOGLE_TTS_API_KEY) {
-    return res.status(503).json({ error: 'TTS chưa được cấu hình (thiếu GOOGLE_TTS_API_KEY).' });
-  }
-  // Moi IP toi da 300 lan doc / gio (ca lop dung chung wifi van du) — chong goi lien tuc lam tang hoa don
-  if (quaNhieu('tts', clientIp(req), 300, 3600 * 1000)) {
-    return res.status(429).json({ error: 'Đọc mẫu nhiều quá, đợi một lúc rồi nghe tiếp nhé.' });
-  }
-  const text = typeof req.body?.text === 'string' ? req.body.text.trim() : '';
-  if (!text || text.length > 200) {
-    return res.status(400).json({ error: 'Thiếu hoặc sai định dạng "text".' });
-  }
-  const synth = (voiceName) => fetch(
-    `https://texttospeech.googleapis.com/v1/text:synthesize?key=${encodeURIComponent(GOOGLE_TTS_API_KEY)}`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        input: { text },
-        voice: { languageCode: 'cmn-CN', name: voiceName },
-        audioConfig: { audioEncoding: 'MP3', speakingRate: TTS_SPEED },
-      }),
-    }
-  );
-
-  try {
-    let googleRes = await synth(TTS_VOICE);
-    let data = await googleRes.json();
-    // Giong chinh bi tu choi (ten sai, chua mo cho khu vuc...) thi doc bang
-    // giong du phong, hoc sinh van nghe duoc thay vi mat tieng.
-    if (!googleRes.ok && TTS_VOICE_FALLBACK && TTS_VOICE_FALLBACK !== TTS_VOICE) {
-      console.warn(`[tts] giong "${TTS_VOICE}" loi (${data?.error?.message || googleRes.status}), doc bang "${TTS_VOICE_FALLBACK}"`);
-      googleRes = await synth(TTS_VOICE_FALLBACK);
-      data = await googleRes.json();
-    }
-    if (!googleRes.ok) {
-      return res.status(502).json({ error: data?.error?.message || 'Lỗi từ Google TTS.' });
-    }
-    res.json({ audioContent: data.audioContent });
-  } catch (err) {
-    res.status(502).json({ error: 'Không gọi được dịch vụ TTS.' });
-  }
+// Giong doc tieng Trung (/api/tts GET + POST, /api/tts/cauhinh, tab "🔊 Giong doc" o /admin):
+// Google nhu truoc hoac Azure neural (co giao chon o trang quan tri), co bo nho dem va han muc thang — xem tts-azure.js.
+// Khoa API chi nam o may chu, khong bao gio toi trinh duyet.
+require('./tts-azure')(app, {
+  DATA_DIR, USE_DB, db: () => dbPool, readJsonFile, writeJsonFile, requireAdmin, asyncRoute, quaNhieu, clientIp,
+  GOOGLE_TTS_API_KEY, TTS_VOICE, TTS_VOICE_FALLBACK, TTS_SPEED, AZURE_SPEECH_KEY, AZURE_SPEECH_REGION,
 });
 
 // Liet ke giong doc tieng Trung dang dung duoc voi khoa hien tai, kem giong

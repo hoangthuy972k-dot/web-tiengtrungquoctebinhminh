@@ -112,6 +112,7 @@
   }
   function coGiong() {
     if (!window.speechSynthesis) return false;
+    if (window.DocZh && DocZh.bat()) return true; // giong may chu (Azure, doc-zh.js)
     if (!giongZh) giongZh = chonGiong();
     if (giongZh) return true;
     try { return (speechSynthesis.getVoices() || []).length ? false : null; } catch (e) { return false; }
@@ -137,8 +138,8 @@
       setTimeout(function () { var dang = false; try { dang = speechSynthesis.speaking; } catch (e) { /* bo qua */ } ket(bd > 0 || dang); }, 2500);
     } catch (e) { ket(false); }
   }
-  function mayKhongNghe() { try { return localStorage.getItem('hyv_obc_khong_nghe') === '1'; } catch (e) { return false; } }
-  function ghiKhongNghe(v) { try { if (v) localStorage.setItem('hyv_obc_khong_nghe', '1'); else localStorage.removeItem('hyv_obc_khong_nghe'); } catch (e) { /* bo qua */ } }
+  function mayKhongNghe() { try { return localStorage.getItem((window.DocZh ? DocZh.khoa('hyv_obc_khong_nghe') : 'hyv_obc_khong_nghe')) === '1'; } catch (e) { return false; } }
+  function ghiKhongNghe(v) { try { if (v) localStorage.setItem((window.DocZh ? DocZh.khoa('hyv_obc_khong_nghe') : 'hyv_obc_khong_nghe'), '1'); else localStorage.removeItem((window.DocZh ? DocZh.khoa('hyv_obc_khong_nghe') : 'hyv_obc_khong_nghe')); } catch (e) { /* bo qua */ } }
 
   /* ---------------- du lieu: bo pinyin, gom kho cau ---------------- */
   var PY_RIENG = /[āǎēěīǐōǒūǔǖǘǚǜĀǍĒĚĪǏŌǑŪǓ]/;

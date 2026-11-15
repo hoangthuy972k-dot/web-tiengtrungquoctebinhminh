@@ -2405,159 +2405,151 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 Bài 1–5
 var listenData = [
   {
-    audio: '这个星期放假，我打算去上海看朋友。从北京到上海，坐飞机要两个小时，坐高铁要四个多小时。但是高铁站离我家很近，机场离我家很远，所以我还是选择坐高铁。',
+    audio: '已经八点半了，你该起床了，九点的课你又要迟到了。',
     questions: [
-      { q: '说话人打算去哪儿？', opts: ['北京', '上海', '西安'], ans: 1 },
-      { q: '说话人为什么选择坐高铁？', opts: ['高铁站离家近', '高铁票便宜', '高铁比飞机快'], ans: 0 }
+      { q: 'Người nói nhắc người nghe làm gì?', opts: ['Đi ngủ sớm', 'Dậy ngay', 'Ăn sáng nhanh'], ans: 1, exp: '该起床了 = đến lúc phải dậy rồi; 该 + động từ + 了.' },
+      { q: 'Giờ học bắt đầu lúc mấy giờ?', opts: ['8 giờ rưỡi', '10 giờ', '9 giờ'], ans: 2, exp: '九点的课 = tiết học lúc 9 giờ; 八点半 là giờ hiện tại.' }
     ]
   },
   {
-    audio: '快八点了，电影八点半开始，我们该走了。如果路上车多，我们就会迟到。别急，今天是星期六，路上车不多。过了前面的红绿灯，就到电影院了。',
+    audio: '如果明天不下雨，我们就去爬山；如果下雨，就在家看电影。',
     questions: [
-      { q: '电影几点开始？', opts: ['八点', '八点半', '九点'], ans: 1 },
-      { q: '过了前面的红绿灯就到哪儿了？', opts: ['学校', '高铁站', '电影院'], ans: 2 }
+      { q: 'Nếu ngày mai trời mưa thì họ làm gì?', opts: ['Ở nhà xem phim', 'Vẫn đi leo núi', 'Đi siêu thị'], ans: 0, exp: '如果下雨，就在家看电影 = nếu mưa thì ở nhà xem phim; 如果……，就…… = nếu… thì….' }
     ]
   },
   {
-    audio: '我的手机快没电了，你有充电宝吗？有，在我的包里，你等一下，我给你拿。谢谢！我的手机越来越不好用了，经常没电。那你该换一个新手机了。',
+    audio: '这个电梯坏了，咱们走上去吧，才三层，不太累。',
     questions: [
-      { q: '手机怎么了？', opts: ['坏了', '快没电了', '丢了'], ans: 1 },
-      { q: '充电宝在哪儿？', opts: ['包里', '行李箱里', '桌子上'], ans: 0 }
+      { q: 'Vì sao họ đi bộ lên?', opts: ['Thang máy đông người', 'Thang máy bị hỏng', 'Muốn rèn luyện sức khoẻ'], ans: 1, exp: '电梯坏了 = thang máy hỏng rồi; ôn 坏了 (bài 3).' },
+      { q: 'Họ cần lên tầng mấy?', opts: ['Tầng 3', 'Tầng 2', 'Tầng 5'], ans: 0, exp: '才三层 = chỉ có tầng ba thôi; 层 = tầng.' }
     ]
   },
   {
-    audio: '昨天我和妈妈去火车站接奶奶。车站的人越来越多，所以我们必须早点儿去。我们是坐地铁去的，刷手机就能进站，非常方便。到了车站，我们先坐电梯到二层，在那里等奶奶。',
+    audio: '我以前一点儿也不喜欢运动，现在越来越喜欢了，每天早上都去跑步。',
     questions: [
-      { q: '他们昨天去火车站做什么？', opts: ['接奶奶', '送奶奶', '买票'], ans: 0 },
-      { q: '他们是怎么去火车站的？', opts: ['打车', '坐地铁', '开车'], ans: 1 }
+      { q: 'Trước đây người nói thế nào?', opts: ['Rất thích thể thao', 'Thích chạy bộ buổi tối', 'Không hề thích thể thao'], ans: 2, exp: '以前一点儿也不喜欢运动 = trước đây không hề thích thể thao; ôn 一点儿也不 (bài 4).' },
+      { q: 'Bây giờ người nói thế nào?', opts: ['Ngày càng thích thể thao', 'Vẫn không thích', 'Chỉ thích xem thể thao'], ans: 0, exp: '越来越喜欢了 = ngày càng thích; 越来越 + động từ tâm lý / tính từ.' }
+    ]
+  },
+  {
+    audio: '那个路口的红绿灯坏了，车都开得很慢，所以我迟到了。',
+    questions: [
+      { q: 'Vì sao người nói đến muộn?', opts: ['Ngủ dậy muộn', 'Đi nhầm đường', 'Đèn giao thông ở ngã tư bị hỏng'], ans: 2, exp: '路口的红绿灯坏了 = đèn xanh đèn đỏ ở ngã tư hỏng; 迟到 = đến muộn.' }
+    ]
+  },
+  {
+    audio: '放假的时候，我想带爸爸妈妈坐高铁去西安，他们还没坐过呢。',
+    questions: [
+      { q: 'Người nói định làm gì trong kỳ nghỉ?', opts: ['Ở nhà nghỉ ngơi', 'Đưa bố mẹ đi Tây An bằng tàu cao tốc', 'Đi máy bay sang Thượng Hải'], ans: 1, exp: '带爸爸妈妈坐高铁去西安 = đưa bố mẹ đi tàu cao tốc tới Tây An.' },
+      { q: 'Bố mẹ người nói thế nào?', opts: ['Chưa từng đi tàu cao tốc', 'Đã đi tàu cao tốc nhiều lần', 'Không thích tàu cao tốc'], ans: 0, exp: '他们还没坐过呢 = họ vẫn chưa từng đi; 没 + V + 过 = chưa từng.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '咱们该买', right: '去上海的票了' },
-  { left: '刷护照就能', right: '检票进站' },
-  { left: '前面的人', right: '越来越多' },
-  { left: '这条路车很多，', right: '您小心点儿' },
-  { left: '又安静', right: '又舒服' },
-  { left: '我们一会儿坐', right: '电梯上去' }
+  { left: '刷', right: '信用卡' },
+  { left: '坐', right: '电梯' },
+  { left: '检查', right: '行李' },
+  { left: '上班别', right: '迟到' },
+  { left: '开车要', right: '小心' },
+  { left: '这个房间很', right: '安静' },
+  { left: '我们打算', right: '去旅游' }
 ];
 
 var fillData = [
-  { pre: '我没带钱，可以', blank: '刷', post: '信用卡吗？', hint: '(quẹt)', ans: '刷', exp: '刷 + 卡 / 信用卡 — quẹt thẻ; 信用卡 (ôn HSK3 Bài 3). Câu của sách.' },
-  { pre: '不用太早，星期五', blank: '以前', post: '买票就可以。', hint: '(trước)', ans: '以前', exp: 'Thời gian + 以前 = trước mốc đó (trước thứ Sáu). Câu của sách.' },
-  { pre: '飞机马上就要起飞了，你的手机', blank: '该', post: '关机了。', hint: '(đến lúc phải)', ans: '该', exp: '该……了 — đã đến lúc phải làm (关机 guānjī = tắt máy); 起飞 (ôn HSK3 Bài 4). Câu của sách.' },
-  { pre: '前面的路口人很多，你开慢一点儿，别', blank: '急', post: '。', hint: '(vội)', ans: '急', exp: '别急 = đừng vội (≈ 别着急 – ôn HSK3 Bài 1). Câu của sách.' },
-  { pre: '她开始的时候说要来，', blank: '后来', post: '打电话说不来了。', hint: '(sau đó)', ans: '后来', exp: '开始……，后来…… — lúc đầu… về sau… (việc đã xảy ra). Câu của sách.' },
-  { pre: '你一个人开车，路上要', blank: '小心', post: '。', hint: '(cẩn thận)', ans: '小心', exp: '路上要小心 — đi đường phải cẩn thận. Câu của sách.' },
-  { pre: '马上就要出门了，你再', blank: '检查', post: '一下，护照什么的都带了吧？', hint: '(kiểm tra)', ans: '检查', exp: '检查一下 — kiểm tra một lượt; 出门 (HSK2 Bài 15). Câu của sách.' },
-  { pre: '高铁上又', blank: '安静', post: '又舒服，坐四个小时也不累。', hint: '(yên tĩnh)', ans: '安静', exp: '又……又…… (ôn HSK3 Bài 2) + 安静; 累 (HSK2 Bài 3).' }
+  { pre: '这双鞋已经穿了三年了，', blank: '该', post: '换一双新的了。', hint: '(đến lúc phải)', ans: '该', exp: '该 + động từ + 了 = đến lúc phải… rồi; ôn 鞋 (bài 5), 换 (bài 3).' },
+  { pre: '', blank: '如果', post: '下午下雨，我们就不去拍照了。', hint: '(nếu)', ans: '如果', exp: '如果……，就…… = nếu… thì…; vế sau dùng 就.' },
+  { pre: '天气', blank: '越来越', post: '冷了，出门多穿点儿衣服。', hint: '(ngày càng)', ans: '越来越', exp: '越来越 + tính từ = ngày càng…; không thêm 很 sau 越来越.' },
+  { pre: '下个月放假，你', blank: '打算', post: '去哪儿玩？', hint: '(định)', ans: '打算', exp: '打算 + động từ = định làm gì; 放假 = được nghỉ.' },
+  { pre: '坐飞机', blank: '必须', post: '带护照，别忘了。', hint: '(bắt buộc phải)', ans: '必须', exp: '必须 = nhất định phải (bắt buộc); ôn 护照 (bài 1).' },
+  { pre: '他', blank: '以前', post: '上班总是迟到，后来每天早半个小时出门，就不迟到了。', hint: '(trước đây)', ans: '以前', exp: '以前 = trước đây, đối lập với 后来 = về sau; ôn 总是 (bài 5).' },
+  { pre: '到了机场，我们', blank: '检查', post: '了一下行李，发现护照不见了。', hint: '(kiểm tra)', ans: '检查', exp: '检查一下 = kiểm tra một lượt; ôn 发现, 不见了 (bài 1).' },
+  { pre: '这两个大学都不错，你自己', blank: '选择', post: '吧。', hint: '(lựa chọn)', ans: '选择', exp: '选择 = lựa chọn (trang trọng hơn 选 ở bài 2).' },
+  { pre: '别', blank: '急', post: '，火车还有半个小时才开。', hint: '(vội)', ans: '急', exp: '别急 = đừng vội; ôn 才 (bài 3): còn nửa tiếng nữa mới chạy.' },
+  { pre: '这是我', blank: '常用', post: '的手机号码，有事给我打电话。', hint: '(thường dùng)', ans: '常用', exp: '常用的 + danh từ = … hay dùng; ôn 号码 (bài 1).' },
+  { pre: '我家住在十二层，每天都坐', blank: '电梯', post: '上下楼。', hint: '(thang máy)', ans: '电梯', exp: '坐电梯 = đi thang máy; ôn 层 (bài 3).' }
 ];
 
 var sortData = [
-  { words: ['咱们', '该', '买', '去', '上海', '的', '票', '了', '。'], ans: '咱们该买去上海的票了。', audio: '咱们该买去上海的票了。' },
-  { words: ['如果', '没', '走错', '，', '二十', '分钟', '以前', '就', '到', '了', '。'], ans: '如果没走错，二十分钟以前就到了。', audio: '如果没走错，二十分钟以前就到了。' },
-  { words: ['前面', '的', '人', '越来越', '多', '。'], ans: '前面的人越来越多。', audio: '前面的人越来越多。' },
-  { words: ['刷', '护照', '就', '能', '检票', '进站', '。'], ans: '刷护照就能检票进站。', audio: '刷护照就能检票进站。' },
-  { words: ['高铁', '又', '快', '又', '舒服', '。'], ans: '高铁又快又舒服。', audio: '高铁又快又舒服。' },
-  { words: ['检票口', '在', '二层', '，', '我们', '一会儿', '坐', '电梯', '上去', '。'], ans: '检票口在二层，我们一会儿坐电梯上去。', audio: '检票口在二层，我们一会儿坐电梯上去。' }
+  { words: ['天', '越来越', '黑', '了', '，', '我们', '该', '回家', '了', '。'], ans: '天越来越黑了，我们该回家了。', audio: '天越来越黑了，我们该回家了。' },
+  { words: ['如果', '你', '不想', '一个人', '去', '，', '我', '就', '跟', '你', '一起', '去', '。'], ans: '如果你不想一个人去，我就跟你一起去。', audio: '如果你不想一个人去，我就跟你一起去。' },
+  { words: ['我', '打算', '下个月', '坐', '高铁', '去', '上海', '。'], ans: '我打算下个月坐高铁去上海。', audio: '我打算下个月坐高铁去上海。', alt: ['我下个月打算坐高铁去上海。', '下个月我打算坐高铁去上海。'] },
+  { words: ['他们', '家', '的', '沙发', '又', '大', '又', '舒服', '。'], ans: '他们家的沙发又大又舒服。', audio: '他们家的沙发又大又舒服。' },
+  { words: ['开车', '的', '时候', '一定', '要', '小心', '。'], ans: '开车的时候一定要小心。', audio: '开车的时候一定要小心。' },
+  { words: ['我们', '以前', '住', '在', '一个', '小区', '，', '后来', '他', '搬家', '了', '。'], ans: '我们以前住在一个小区，后来他搬家了。', audio: '我们以前住在一个小区，后来他搬家了。', alt: ['以前我们住在一个小区，后来他搬家了。'] },
+  { words: ['还有', '十分钟', '就', '要', '检票', '了', '，', '咱们', '快', '走', '吧', '。'], ans: '还有十分钟就要检票了，咱们快走吧。', audio: '还有十分钟就要检票了，咱们快走吧。' },
+  { words: ['我', '的', '充电宝', '忘', '在', '高铁', '上', '了', '。'], ans: '我的充电宝忘在高铁上了。', audio: '我的充电宝忘在高铁上了。' }
 ];
 
 var mcData = [
-  { q: '家月，咱们＿＿买去上海的票了。', opts: ['该', '行', '急', '刷'], ans: 0, exp: '该 + động từ + 了 = đến lúc phải… rồi: 该买票了. 行, 急, 刷 không mang nghĩa này.' },
-  { q: '这条路车很多，您＿＿点儿。', opts: ['分开', '小心', '检查', '选择'], ans: 1, exp: '您小心点儿 = ông cẩn thận một chút; đường nhiều xe nên nhắc cẩn thận.' },
-  { q: '你们还有一个小时，应该不会＿＿的。', opts: ['放假', '后来', '迟到', '常用'], ans: 2, exp: 'Còn một tiếng nữa nên sẽ không 迟到 (đến muộn). 不会…的 = chắc chắn sẽ không.' },
-  { q: '我的耳机没电了，你有＿＿吗？', opts: ['电梯', '沙发', '红绿灯', '充电宝'], ans: 3, exp: 'Tai nghe hết pin → cần 充电宝 (sạc dự phòng). 电梯 là thang máy, 红绿灯 là đèn giao thông.' },
-  { q: '不用拿票，＿＿护照就能检票进站。', opts: ['刷', '急', '该', '行'], ans: 0, exp: '刷护照 = quẹt hộ chiếu để qua cửa soát vé. 刷 dùng cho thẻ, hộ chiếu, mã: 刷卡, 刷码.' },
-  { q: '检票口在二层，我们一会儿坐＿＿上去。', opts: ['路口', '电梯', '耳机', '沙发'], ans: 1, exp: '坐电梯上去 = đi thang máy lên (tầng 2). 坐 + phương tiện; 耳机, 沙发 không phải phương tiện.' },
-  { q: '坐在高铁上跟坐在家里的沙发上一样，又＿＿又舒服。', opts: ['必须', '小心', '安静', '以前'], ans: 2, exp: '又安静又舒服: sau 又 cần tính từ. 小心, 必须, 以前 không phải tính từ miêu tả cảm giác.' },
-  { q: 'Chọn câu đúng: "Đã muộn lắm rồi, tôi phải đi ngủ thôi."', opts: ['已经很晚了，我了该睡觉。', '已经很晚了，我该睡觉了。', '已经很晚了，我睡觉该了。', '已经很晚了，该了我睡觉。'], ans: 1, exp: '该 + động từ + 了: 我该睡觉了; 该 đứng trước động từ, 了 đứng cuối câu.' },
-  { q: 'Chọn câu đúng: "Nếu bạn cần giúp đỡ thì gọi điện cho tôi."', opts: ['如果你需要帮忙，所以给我打电话。', '你需要帮忙如果，就给我打电话。', '如果你需要帮忙，就给我打电话。', '如果你需要帮忙，给我就打电话。'], ans: 2, exp: '如果…，就… = nếu… thì…; 就 đứng trước động từ vế sau. 所以 chỉ kết quả, đi với 因为.' },
-  { q: 'Chọn câu đúng: "Cô ấy ngày càng xinh đẹp."', opts: ['她越来越很漂亮了。', '她很越来越漂亮了。', '她越来漂亮越了。', '她越来越漂亮了。'], ans: 3, exp: '越来越 + tính từ = ngày càng…; không thêm 很 trước tính từ.' }
+  { q: 'Đã 12 giờ trưa, bạn nói với đồng nghiệp: “Đến giờ ăn trưa rồi.”', opts: ['该吃午饭吗。', '吃午饭该了。', '该吃午饭了。', '该了吃午饭。'], ans: 2, exp: '该 + động từ + 了: 该吃午饭了; 该 đứng trước động từ, 了 ở cuối câu, không dùng 吗.' },
+  { q: 'Bạn dặn bạn mình: “Nếu thấy mệt thì nghỉ một lát đi.”', opts: ['如果你累了，所以休息一会儿吧。', '如果你累了，就休息一会儿吧。', '你累了如果，就休息一会儿吧。', '如果你累了，休息就一会儿吧。'], ans: 1, exp: '如果……，就……: 就 đứng trước động từ vế sau; 所以 đi với 因为, không đi với 如果.' },
+  { q: 'Bạn khen bạn mình: “Tiếng Trung của bạn ngày càng tốt.”', opts: ['你的汉语越来越很好了。', '你的汉语越来越比以前好了。', '你的汉语越好越来了。', '你的汉语越来越好了。'], ans: 3, exp: '越来越 + tính từ, không thêm 很, không dùng chung với 比.' },
+  { q: 'Câu nào SAI?', opts: ['我们在上海见过，后来再也没见过。', '明天我先去银行，后来去超市。', '他开始不想去，后来还是去了。', '我以前住在北京，后来搬到了上海。'], ans: 1, exp: '后来 chỉ dùng cho việc đã xảy ra; việc ngày mai (chưa xảy ra) không dùng 后来.' },
+  { q: 'A: “明天七点在路口见，行吗？” — B đáp:', opts: ['行，我七点到。', '行吗，我七点到。', '不行，我七点到。', '行了吗，我七点到。'], ans: 0, exp: '行 = được (đồng ý); 不行 mâu thuẫn với 我七点到; trả lời không dùng 吗.' },
+  { q: 'Lớp học ồn quá, cô giáo nói: “Các em phải yên lặng một chút.”', opts: ['大家必须一点儿安静。', '大家必须是安静一点儿。', '大家必须安静一点儿。', '大家安静必须一点儿。'], ans: 2, exp: '必须 đứng trước tính từ / động từ; tính từ + 一点儿; không thêm 是 trước tính từ.' },
+  { q: '“我没带钱，这家店可以＿＿手机吗？”', opts: ['开', '刷', '打', '关'], ans: 1, exp: '刷手机 = quét điện thoại (để trả tiền); 打手机 = gọi điện, 开 / 关手机 = bật / tắt máy.' },
+  { q: 'Bạn muốn nghe nhạc trên tàu mà không làm phiền người khác, bạn cần mang:', opts: ['耳机', '充电宝', '电梯', '沙发'], ans: 0, exp: '耳机 = tai nghe; 充电宝 = sạc dự phòng (khi hết pin).' },
+  { q: 'A: “你怎么又＿＿了？” — B: “不好意思，我坐错车了。”', opts: ['急', '分开', '迟到', '放假'], ans: 2, exp: '迟到 = đến muộn; B xin lỗi vì đi nhầm xe nên đến muộn.' },
+  { q: 'Ga tàu đông người, bạn dặn em: “Em đi theo anh, chúng ta đừng để lạc nhau.”', opts: ['你跟着我，咱们没分开。', '你跟着我，咱们别开分。', '你跟着我，咱们分开别。', '你跟着我，咱们别分开。'], ans: 3, exp: '别 + động từ = đừng…; 分开 = tách ra, lạc nhau; 没 là kể việc đã qua, không phải lời dặn.' },
+  { q: 'A: “银行怎么走？” — B: “Qua đèn giao thông phía trước rẽ trái là đến.”', opts: ['过了前面的红绿灯往左走就到了。', '过了红绿灯前面的往左走就到了。', '前面的红绿灯过了往左走才到了。', '过前面的红绿灯了往左走就到了。'], ans: 0, exp: 'V + 了 + tân ngữ, vế sau 就: 过了……就到了; định ngữ 前面的 đứng trước 红绿灯.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 该……了, 如果……，就……, 越来越 và từ mới của bài.',
   questions: [
     {
-      q_zh: '白家月为什么想坐高铁？',
-      q_vn: 'Vì sao Bạch Gia Nguyệt muốn đi tàu cao tốc?',
-      hint: '因为她还没……，早就……',
-      sample: '因为她还没坐过高铁，早就听说过高铁，她想坐一次。',
-      sample_vn: 'Vì cô ấy chưa từng đi tàu cao tốc, đã nghe nói về tàu cao tốc từ lâu nên muốn đi thử một lần.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. V + 过 — kinh nghiệm (HSK2 Bài 4); 听说 (ôn HSK3 Bài 3).'
+      q_zh: '这次放假你打算做什么？',
+      q_vn: 'Kỳ nghỉ này bạn định làm gì?',
+      hint: '我打算……，如果……，就……',
+      sample: '这次放假我打算坐高铁去西安，如果有时间，就去上海看看。',
+      sample_vn: 'Kỳ nghỉ này tôi định đi tàu cao tốc tới Tây An, nếu có thời gian thì đi Thượng Hải xem sao.',
+      note: '打算 + động từ; 如果……，就…….'
     },
     {
-      q_zh: '刘明为什么说“应该不会迟到”？',
-      q_vn: 'Vì sao Lưu Minh nói “chắc sẽ không bị muộn”?',
-      hint: '因为他们还有……，过了前面的路口就……',
-      sample: '因为他们还有一个小时，过了前面的路口就到高铁站了。',
-      sample_vn: 'Vì họ còn một tiếng nữa, qua giao lộ phía trước là tới ga tàu cao tốc rồi.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. ……了……就…… (ôn HSK3 Bài 5); 应该 = chắc là (ôn HSK3 Bài 1).'
+      q_zh: '你迟到过吗？为什么？',
+      q_vn: 'Bạn đã từng đến muộn chưa? Vì sao?',
+      hint: '我迟到过……，那天……，后来……',
+      sample: '我迟到过一次，那天我起床太晚了，路上车又特别多，后来我每天晚上都早点儿睡觉。',
+      sample_vn: 'Tôi đã từng muộn một lần, hôm đó tôi dậy quá muộn, đường lại rất đông xe, về sau tối nào tôi cũng đi ngủ sớm hơn.',
+      note: 'V + 过; 后来 = về sau (việc đã xảy ra); ôn 特别 (bài 4).'
     },
     {
-      q_zh: '刘明为什么今天走了这条路？',
-      q_vn: 'Vì sao hôm nay Lưu Minh lại đi con đường này?',
-      hint: '因为他一……就……。如果没走错，……',
-      sample: '因为他一急就走错了。如果没走错，他们二十分钟以前就到了。',
-      sample_vn: 'Vì anh ấy vội nên đi nhầm. Nếu không đi nhầm thì họ đã đến từ hai mươi phút trước rồi.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 一……就…… (HSK2 Bài 7); 如果……，就…… (ngữ pháp 2).'
+      q_zh: '你觉得你的汉语越来越好了吗？',
+      q_vn: 'Bạn có thấy tiếng Trung của mình ngày càng tốt không?',
+      hint: '我觉得……越来越……，以前……，现在……',
+      sample: '我觉得我的汉语越来越好了，以前我只会说“你好”，现在能用汉语买东西、点菜了。',
+      sample_vn: 'Tôi thấy tiếng Trung của mình ngày càng tốt, trước đây tôi chỉ biết nói “xin chào”, bây giờ đã có thể dùng tiếng Trung mua đồ, gọi món.',
+      note: '越来越 + tính từ; 以前 ↔ 现在.'
     },
     {
-      q_zh: '他们怎么检票进站？',
-      q_vn: 'Họ soát vé vào ga như thế nào?',
-      hint: '不用……，刷……就能……',
-      sample: '他们不用拿票，刷护照就能检票进站。检票口在二层，他们坐电梯上去。',
-      sample_vn: 'Họ không cần cầm vé, quét hộ chiếu là có thể soát vé vào ga. Cửa soát vé ở tầng hai, họ đi thang máy lên.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. 不用 (ôn HSK3 Bài 2); 层 (ôn HSK3 Bài 3); 上去 (HSK2 Bài 5).'
+      q_zh: '如果明天放假，你想干什么？',
+      q_vn: 'Nếu ngày mai được nghỉ, bạn muốn làm gì?',
+      hint: '如果明天放假，我就……',
+      sample: '如果明天放假，我就在家里的沙发上看一天电影，哪儿都不去。',
+      sample_vn: 'Nếu mai được nghỉ, tôi sẽ nằm trên sofa ở nhà xem phim cả ngày, chẳng đi đâu cả.',
+      note: '如果……，就……; ôn 哪儿都不 (bài 2).'
     },
     {
-      q_zh: '高铁上怎么点外卖？',
-      q_vn: 'Trên tàu cao tốc đặt đồ ăn giao tận nơi như thế nào?',
-      hint: '只需要选择好……，到站时……，服务员就会……',
-      sample: '只需要选择好车站和想吃的东西，到站的时候不用下车，服务员就会给你拿过来。',
-      sample_vn: 'Chỉ cần chọn ga và món muốn ăn, khi tàu đến ga không cần xuống tàu, nhân viên sẽ mang đến cho bạn.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 选择好 — bổ ngữ kết quả (HSK2 Bài 3); 外卖 (ôn HSK3 Bài 2).'
-    },
-    {
-      q_zh: '你坐过哪些交通工具？',
-      q_vn: 'Bạn đã từng đi những phương tiện giao thông nào?',
-      hint: '我坐过……、……，还坐过……，但是还没坐过……',
-      sample: '我坐过公交车、地铁和出租车，还坐过飞机和火车，但是还没坐过高铁。',
-      sample_vn: 'Tôi đã đi xe buýt, tàu điện ngầm và taxi, còn đi máy bay và tàu hoả nữa, nhưng chưa đi tàu cao tốc bao giờ.',
-      note: 'Câu hỏi Khởi động của sách. 交通工具 (jiāotōng gōngjù) = phương tiện giao thông; V + 过 (HSK2 Bài 4); 公交车 (HSK2 Bài 2), 地铁 (HSK2 Bài 12).'
-    },
-    {
-      q_zh: '你最喜欢哪种交通工具？为什么？',
-      q_vn: 'Bạn thích loại phương tiện giao thông nào nhất? Vì sao?',
-      hint: '我最喜欢……，因为……又……又……',
-      sample: '我最喜欢坐地铁，因为地铁又快又方便，刷手机就能进站，也不会迟到。',
-      sample_vn: 'Tôi thích đi tàu điện ngầm nhất, vì tàu điện ngầm vừa nhanh vừa tiện, quét điện thoại là vào ga được, cũng không bị muộn.',
-      note: 'Câu hỏi Khởi động của sách. 又……又…… (ôn HSK3 Bài 2); 方便 (ôn HSK3 Bài 2); 刷、迟到 — từ mới bài này.'
-    },
-    {
-      q_zh: '如果你的朋友第一次坐高铁，你想告诉他什么？',
-      q_vn: 'Nếu bạn của bạn lần đầu đi tàu cao tốc, bạn muốn dặn bạn ấy điều gì?',
-      hint: '我想告诉他：……必须……；如果……，就……',
-      sample: '我想告诉他：坐高铁必须带护照，要早点儿去车站。如果饿了，就在高铁上点外卖。',
-      sample_vn: 'Tôi muốn dặn bạn ấy: đi tàu cao tốc phải mang hộ chiếu, phải đến ga sớm một chút. Nếu đói thì đặt đồ ăn giao tận nơi ngay trên tàu.',
-      note: 'Câu hỏi Hoạt động trên lớp của sách. 必须 + 如果……，就……; 告诉 (HSK2 Bài 13).'
+      q_zh: '出门以前，你会检查什么？',
+      q_vn: 'Trước khi ra khỏi nhà, bạn sẽ kiểm tra những gì?',
+      hint: '出门以前，我会检查一下……，这些都是……',
+      sample: '出门以前，我会检查一下手机、耳机和充电宝，没有它们我就不能听音乐了。',
+      sample_vn: 'Trước khi ra ngoài, tôi sẽ kiểm tra điện thoại, tai nghe và sạc dự phòng, không có chúng tôi chẳng nghe nhạc được.',
+      note: '……以前 = trước khi…; 检查一下.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Chúng ta nên mua vé đi Thượng Hải rồi. Em định đi bằng gì?', zh: '咱们该买去上海的票了。你打算怎么去？', py: 'Zánmen gāi mǎi qù Shànghǎi de piào le. Nǐ dǎsuàn zěnme qù?' },
-  { vi: 'Nếu không đi nhầm thì đã đến từ hai mươi phút trước rồi.', zh: '如果没走错，二十分钟以前就到了。', py: 'Rúguǒ méi zǒucuò, èrshí fēnzhōng yǐqián jiù dào le.' },
-  { vi: 'Phía trước ngày càng nhiều người.', zh: '前面的人越来越多。', py: 'Qiánmiàn de rén yuè lái yuè duō.' },
-  { vi: 'Không cần cầm vé, quét hộ chiếu là có thể soát vé vào ga.', zh: '不用拿票，刷护照就能检票进站。', py: 'Búyòng ná piào, shuā hùzhào jiù néng jiǎnpiào jìn zhàn.' },
-  { vi: 'Tàu cao tốc vừa nhanh vừa thoải mái, chắc chắn em sẽ thích.', zh: '高铁又快又舒服，你一定会喜欢的。', py: 'Gāotiě yòu kuài yòu shūfu, nǐ yídìng huì xǐhuan de.' }
+  { vi: 'Con lớn rồi, nên tự giặt quần áo đi.', zh: '你已经长大了，该自己洗衣服了。', py: 'Nǐ yǐjīng zhǎngdà le, gāi zìjǐ xǐ yīfu le.' },
+  { vi: 'Nếu ngày mai trời đẹp, chúng ta đi chụp ảnh nhé.', zh: '如果明天天气好，我们就去拍照吧。', py: 'Rúguǒ míngtiān tiānqì hǎo, wǒmen jiù qù pāizhào ba.' },
+  { vi: 'Người học tiếng Trung ngày càng nhiều.', zh: '学汉语的人越来越多了。', py: 'Xué Hànyǔ de rén yuè lái yuè duō le.' },
+  { vi: 'Trước đây anh ấy không thích chụp ảnh, về sau lại rất hứng thú với chụp ảnh.', zh: '他以前不喜欢拍照，后来对拍照很感兴趣。', py: 'Tā yǐqián bù xǐhuan pāizhào, hòulái duì pāizhào hěn gǎn xìngqù.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Đường này nhiều xe quá, anh đi cẩn thận một chút nhé.', zh: '这条路车很多，您小心点儿。', py: 'Zhè tiáo lù chē hěn duō, nín xiǎoxīn diǎnr.' },
-  { vi: 'Tại anh bị cuống nên đã đi nhầm.', zh: '我一急就走错了。', py: 'Wǒ yì jí jiù zǒucuò le.' },
-  { vi: 'Những đồ thường dùng anh đều để trong túi rồi.', zh: '这些常用的东西我都放在包里了。', py: 'Zhèxiē cháng yòng de dōngxi wǒ dōu fàng zài bāo li le.' },
-  { vi: 'Ngồi mỏi thì đứng dậy một lát, đói thì đặt đồ ăn giao tận nơi.', zh: '坐累了就站一会儿，饿了就点外卖。', py: 'Zuò lèi le jiù zhàn yíhuìr, è le jiù diǎn wàimài.' },
-  { vi: 'Hiện nay ngày càng có nhiều người thích đi tàu cao tốc.', zh: '现在喜欢坐高铁的人越来越多。', py: 'Xiànzài xǐhuan zuò gāotiě de rén yuè lái yuè duō.' }
+  { vi: 'Bạn đi thang máy lên đi, tôi đi bộ lên.', zh: '你坐电梯上去吧，我走上去。', py: 'Nǐ zuò diàntī shàngqu ba, wǒ zǒu shàngqu.' },
+  { vi: 'Ở đây rất yên tĩnh, tôi hay đến đây đọc sách.', zh: '这里很安静，我经常来这里看书。', py: 'Zhèlǐ hěn ānjìng, wǒ jīngcháng lái zhèlǐ kàn shū.' },
+  { vi: 'Đừng vội, đi đường cẩn thận nhé.', zh: '别急，路上小心。', py: 'Bié jí, lùshang xiǎoxīn.' }
 ];

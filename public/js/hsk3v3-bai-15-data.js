@@ -2402,31 +2402,49 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 bài trước
 var listenData = [
   {
-    audio: '我家附近环境挺好的，过马路就是一个大超市，买东西很方便。小区里有很多树，平时爷爷奶奶喜欢在树下聊天儿，孩子们放学后就在草地上做游戏。',
+    audio: '吃完晚饭，我常常和爸爸妈妈去河边走走，那儿有很多老人在聊天儿。',
     questions: [
-      { q: '说话人家附近有什么？', opts: ['大超市', '银行', '医院'], ans: 0 },
-      { q: '孩子们放学后在哪儿玩？', opts: ['树下', '草地上', '马路边'], ans: 1 }
+      { q: 'Sau bữa tối người nói thường làm gì?', opts: ['Ở nhà xem tivi', 'Đi dạo bờ sông với bố mẹ', 'Ra sông bơi'], ans: 1, exp: '去河边走走 = ra bờ sông đi dạo; 走走 lặp động từ = đi một chút cho thư thả.' },
+      { q: 'Ở đó có nhiều ai?', opts: ['Người già đang trò chuyện', 'Trẻ con đang chơi', 'Khách du lịch chụp ảnh'], ans: 0, exp: '很多老人在聊天儿 = nhiều người già đang trò chuyện; 老人 = người già.' }
     ]
   },
   {
-    audio: '小王，听说你下个月要去西安旅游？对，可是我对西安不太了解，你能给我介绍一下吗？没问题，西安有三千年以上的历史，有名的景点特别多。你哪天有时间，我一点儿一点儿给你讲。',
+    audio: '这个景点太有名了，放假的时候游客特别多，咱们平时去吧。',
     questions: [
-      { q: '小王下个月要去哪儿？', opts: ['南京', '西安', '北京'], ans: 1 },
-      { q: '关于西安，可以知道什么？', opts: ['游客不多', '没有有名的景点', '有三千年以上的历史'], ans: 2 }
+      { q: 'Người nói đề nghị khi nào đi?', opts: ['Vào kỳ nghỉ', 'Buổi tối', 'Ngày thường'], ans: 2, exp: '平时 = ngày thường, đối lập với 放假的时候 (lúc nghỉ lễ).' },
+      { q: 'Vì sao?', opts: ['Kỳ nghỉ khách du lịch rất đông', 'Ngày thường vé rẻ hơn', 'Kỳ nghỉ chỗ đó đóng cửa'], ans: 0, exp: '放假的时候游客特别多 = lúc nghỉ lễ du khách cực đông.' }
     ]
   },
   {
-    audio: '在我看来，每天运动对身体很好。我平时下班以后都去河边跑步，跑完步在草地上坐一会儿，听听鸟叫。一个小时看起来很长，但是不一会儿就过去了。',
+    audio: '同学们别着急，老师叫到谁的名字，谁就进去考试，一个一个地来。',
     questions: [
-      { q: '说话人平时下班以后做什么？', opts: ['去河边跑步', '去河里游泳', '在家看电视'], ans: 0 },
-      { q: '说话人觉得什么对身体很好？', opts: ['多喝水', '早点儿睡觉', '每天运动'], ans: 2 }
+      { q: 'Học sinh vào phòng thi thế nào?', opts: ['Cả lớp vào cùng lúc', 'Từng người một', 'Hai người một lượt'], ans: 1, exp: '一个一个地来 = lần lượt từng người một; số lượng từ lặp + 地 chỉ cách làm.' }
     ]
   },
   {
-    audio: '妈妈，老师根据每个学生的兴趣，给我们选了不一样的书。我的书讲的是黄河的历史。是吗？黄河在中国的历史上很重要，你要认真看，看完给我讲讲。',
+    audio: '你从这儿往前走，经过一个公园，再过一条马路，就到图书馆了。',
     questions: [
-      { q: '老师根据什么给学生选书？', opts: ['学生的成绩', '学生的兴趣', '学生的年级'], ans: 1 },
-      { q: '妈妈让孩子做什么？', opts: ['看完给她讲讲', '把书还给老师', '去黄河旅游'], ans: 0 }
+      { q: 'Trên đường sẽ đi ngang qua đâu trước?', opts: ['Một con sông', 'Một bệnh viện', 'Một công viên'], ans: 2, exp: '经过一个公园 = đi ngang qua một công viên; 经过 + nơi chốn.' },
+      { q: 'Sau đó phải làm gì thì tới thư viện?', opts: ['Qua một con đường lớn', 'Rẽ trái', 'Đi thang máy lên tầng hai'], ans: 0, exp: '再过一条马路 = rồi qua một con đường lớn; 马路 = đường cái.' }
+    ]
+  },
+  {
+    audio: '这个游戏是根据一个有名的故事做的，我爷爷和我弟弟都爱玩。',
+    questions: [
+      { q: 'Trò chơi này được làm dựa vào gì?', opts: ['Một bộ phim', 'Một câu chuyện nổi tiếng', 'Một bài hát'], ans: 1, exp: '根据一个有名的故事做的 = làm dựa theo một câu chuyện nổi tiếng.' },
+      { q: 'Ai thích chơi trò này?', opts: ['Chỉ em trai', 'Chỉ ông nội', 'Cả ông nội lẫn em trai'], ans: 2, exp: '我爷爷和我弟弟都爱玩 = ông và em trai tôi đều thích chơi.' }
+    ]
+  },
+  {
+    audio: '在很多医生看来，每天早上在草地上走一走，比吃什么药都好。',
+    questions: [
+      { q: 'Nhiều bác sĩ cho rằng điều gì tốt hơn mọi loại thuốc?', opts: ['Uống thuốc đều đặn', 'Sáng nào cũng đi bộ trên bãi cỏ', 'Ngủ dậy muộn'], ans: 1, exp: '在很多医生看来 = theo nhiều bác sĩ; 在草地上走一走 = đi bộ trên bãi cỏ, tốt hơn mọi thứ thuốc.' }
+    ]
+  },
+  {
+    audio: '弟弟真是饿坏了，那么大一碗饭，他不一会儿就吃完了。',
+    questions: [
+      { q: 'Em trai ăn bát cơm thế nào?', opts: ['Chẳng mấy chốc đã ăn hết', 'Ăn rất lâu mới xong', 'Ăn một nửa thì bỏ'], ans: 0, exp: '不一会儿就吃完了 = chẳng mấy chốc đã ăn xong; 饿坏了 = đói lả (ôn bài 3).' }
     ]
   }
 ];
@@ -2434,127 +2452,109 @@ var listenData = [
 var matchData = [
   { left: '过', right: '马路' },
   { left: '做', right: '游戏' },
-  { left: '遇见', right: '老朋友' },
-  { left: '有名的', right: '景点' },
-  { left: '小区根据他们的需要', right: '有了很多变化' },
-  { left: '在我们中国人看来', right: '黄河像妈妈一样' }
+  { left: '养', right: '小猫' },
+  { left: '一百个人', right: '以上' },
+  { left: '跟天气有', right: '关系' },
+  { left: '蓝蓝的', right: '天' },
+  { left: '从外地来的', right: '游客' }
 ];
 
 var fillData = [
-  { pre: '我爷爷喜欢', blank: '养', post: '花，他家有很多漂亮的花。', hint: '(nuôi, trồng)', ans: '养', exp: '养花 = trồng hoa (chăm cây hoa); 爷爷 (ôn HSK2 Bài 5). Câu của sách.' },
-  { pre: '昨天我在公园', blank: '遇见', post: '了一位老朋友，聊了很久。', hint: '(tình cờ gặp)', ans: '遇见', exp: '遇见 + người = tình cờ gặp ai; 聊了很久 — bổ ngữ thời lượng (ôn HSK3 Bài 8). Câu của sách.' },
-  { pre: '他是从', blank: '外地', post: '来的，还不太习惯这里的天气。', hint: '(nơi khác)', ans: '外地', exp: '从外地来 = từ nơi khác đến; 习惯 (ôn HSK3 Bài 8). Câu của sách.' },
-  { pre: '这家饭馆在我们城市很', blank: '有名', post: '，很多人都来这里吃饭。', hint: '(nổi tiếng)', ans: '有名', exp: '在 + nơi chốn + 很有名 = nổi tiếng ở đâu; 饭馆 (ôn HSK2 Bài 8). Câu của sách.' },
-  { pre: '这本书我已经看了一', blank: '段', post: '时间了，越看越觉得有意思。', hint: '(quãng, đoạn)', ans: '段', exp: '一段时间 = một khoảng thời gian; 越……越…… (ôn HSK3 Bài 9). Câu của sách.' },
-  { pre: '今天是假期，人一定很多，', blank: '平时', post: '人少的时候再去吧。', hint: '(ngày thường)', ans: '平时', exp: '平时 = ngày thường (đối lập với 假期 – ôn HSK3 Bài 4); 一定 (ôn HSK3 Bài 4). Câu của sách.' },
-  { pre: '公园有两个门，咱们进哪个门？——进东门吧，进去以后会', blank: '经过', post: '一条很漂亮的小河。', hint: '(đi qua)', ans: '经过', exp: '经过 + nơi chốn = đi ngang qua; 进去 (ôn HSK2 Bài 4). Câu của sách.' },
-  { pre: '你对这座城市', blank: '了解', post: '多少？——我只知道这里有很多好吃的，别的还不太清楚。', hint: '(hiểu rõ)', ans: '了解', exp: '对 + N + 了解多少 = hiểu bao nhiêu về…; 清楚 (ôn HSK3 Bài 10). Câu của sách.' }
+  { pre: '我', blank: '平时', post: '七点起床，放假的时候常常睡到九点。', hint: '(ngày thường)', ans: '平时', exp: '平时 = ngày thường, đối lập với lúc nghỉ; đứng sau chủ ngữ, trước động từ.' },
+  { pre: '大学里，学生可以', blank: '根据', post: '自己的兴趣选课。', hint: '(căn cứ vào, theo)', ans: '根据', exp: '根据 + căn cứ (自己的兴趣) đứng trước động từ 选课; ôn 兴趣 (bài 5).' },
+  { pre: '面包太大了，你', blank: '一口一口地', post: '吃，慢慢来。', hint: '(từng miếng một)', ans: '一口一口地', exp: 'Số + lượng từ lặp + 地 + động từ: 一口一口地吃 = ăn từng miếng một.' },
+  { pre: '在我爸爸', blank: '看来', post: '，住在小城市比住在大城市舒服。', hint: '(theo cách nhìn của…)', ans: '看来', exp: '在 + người + 看来 = theo ý ai đó; không nói 在我看起来.' },
+  { pre: '刚才雨下得很大，可是', blank: '不一会儿', post: '就晴了。', hint: '(chẳng mấy chốc)', ans: '不一会儿', exp: '不一会儿 + 就 + V + 了 = chẳng mấy chốc đã…; ôn 刚才 (bài 12).' },
+  { pre: '你第一次来，对这儿还不太', blank: '了解', post: '，有什么问题就问我吧。', hint: '(hiểu rõ)', ans: '了解', exp: '对 + N + 了解 = hiểu rõ về…; 不太了解 = chưa hiểu lắm.' },
+  { pre: '我很喜欢那条裙子，', blank: '可是', post: '太贵了，最后没买。', hint: '(nhưng)', ans: '可是', exp: '可是 = nhưng, nối hai ý trái ngược; ôn 裙子 (bài 7), 最后 (bài 14).' },
+  { pre: '这条老街不长，可是在我们这儿很', blank: '有名', post: '，每年都有很多人来拍照。', hint: '(nổi tiếng)', ans: '有名', exp: '在 + nơi chốn + 很有名 = nổi tiếng ở đâu; 老街 = phố cổ.' },
+  { pre: '奶奶', blank: '养', post: '了两只小狗，每天早上都带它们出去走走。', hint: '(nuôi)', ans: '养', exp: '养 + con vật / hoa = nuôi, trồng; 两只小狗 dùng lượng từ 只.' },
+  { pre: '我上班的路上会', blank: '经过', post: '一家面包店，常常进去买个面包路上吃。', hint: '(đi ngang qua)', ans: '经过', exp: '经过 + nơi chốn = đi ngang qua; 买个面包 = mua cái bánh mì.' },
+  { pre: '学好汉语跟你几岁没有', blank: '关系', post: '，跟努力不努力有关系。', hint: '(liên quan)', ans: '关系', exp: '跟……（没）有关系 = (không) liên quan đến…; ôn 努力 (bài 10).' },
+  { pre: '我来北京已经有一', blank: '段', post: '时间了，现在很习惯这里的生活。', hint: '(quãng, khoảng)', ans: '段', exp: '一段时间 = một khoảng thời gian; 段 là lượng từ cho thời gian, đoạn đường.' }
 ];
 
 var sortData = [
-  { words: ['这几年', '小区', '根据', '他们的', '需要', '，', '有了', '很多', '变化', '。'], ans: '这几年小区根据他们的需要，有了很多变化。', audio: '这几年小区根据他们的需要，有了很多变化。' },
-  { words: ['我', '得', '一点儿', '一点儿', '给您', '讲', '。'], ans: '我得一点儿一点儿给您讲。', audio: '我得一点儿一点儿给您讲。' },
-  { words: ['在', '我们', '中国人', '看来', '，', '黄河', '像', '妈妈', '一样', '。'], ans: '在我们中国人看来，黄河像妈妈一样。', audio: '在我们中国人看来，黄河像妈妈一样。' },
-  { words: ['难过的', '事情', '不一会儿', '就', '忘了', '。'], ans: '难过的事情不一会儿就忘了。', audio: '难过的事情不一会儿就忘了。' },
-  { words: ['小区', '环境', '挺好的', '，', '附近', '买东西', '也', '很方便', '。'], ans: '小区环境挺好的，附近买东西也很方便。', audio: '小区环境挺好的，附近买东西也很方便。' },
-  { words: ['我', '虽然', '不是', '南京人', '，', '可是', '我是', '在南京', '上的', '大学', '。'], ans: '我虽然不是南京人，可是我是在南京上的大学。', audio: '我虽然不是南京人，可是我是在南京上的大学。' }
+  { words: ['在', '我们', '经理', '看来', '，', '附近', '这家', '饭馆', '的', '菜', '最', '好吃', '。'], ans: '在我们经理看来，附近这家饭馆的菜最好吃。', audio: '在我们经理看来，附近这家饭馆的菜最好吃。' },
+  { words: ['他', '喝了', '一杯', '热牛奶', '，', '不一会儿', '就', '睡着', '了', '。'], ans: '他喝了一杯热牛奶，不一会儿就睡着了。', audio: '他喝了一杯热牛奶，不一会儿就睡着了。' },
+  { words: ['大家', '一个', '一个', '地', '上车', '，', '别', '着急', '。'], ans: '大家一个一个地上车，别着急。', audio: '大家一个一个地上车，别着急。' },
+  { words: ['我们', '根据', '天气', '决定', '明天', '去不去', '爬山', '。'], ans: '我们根据天气决定明天去不去爬山。', audio: '我们根据天气决定明天去不去爬山。' },
+  { words: ['这', '是', '我们', '这儿', '最', '有名', '的', '景点', '。'], ans: '这是我们这儿最有名的景点。', audio: '这是我们这儿最有名的景点。' },
+  { words: ['放学', '以后', '，', '弟弟', '常常', '去', '草地上', '踢球', '。'], ans: '放学以后，弟弟常常去草地上踢球。', audio: '放学以后，弟弟常常去草地上踢球。', alt: ['弟弟放学以后，常常去草地上踢球。'] },
+  { words: ['我', '在', '路上', '遇见', '了', '以前', '的', '同学', '。'], ans: '我在路上遇见了以前的同学。', audio: '我在路上遇见了以前的同学。' },
+  { words: ['那个', '穿', '蓝', '衣服', '的', '人', '是', '我们', '经理', '。'], ans: '那个穿蓝衣服的人是我们经理。', audio: '那个穿蓝衣服的人是我们经理。' }
 ];
 
 var mcData = [
-  { q: '小区里有很多树，孩子们＿＿后就在树下做游戏。', opts: ['放学', '平时', '经过', '了解'], ans: 0, exp: '放学后 = sau khi tan học. 平时, 经过 không đi với 后 kiểu này.' },
-  { q: '南京有两千年＿＿的历史。', opts: ['附近', '以上', '西北', '关系'], ans: 1, exp: '数量 + 以上 = trên…: 两千年以上的历史. 附近, 西北 không dùng sau số lượng.' },
-  { q: '南京有很多有名的景点，每年去旅游的＿＿特别多。', opts: ['老人', '马路', '游客', '草地'], ans: 2, exp: '去旅游的游客 = du khách. 老人, 马路 không hợp với 旅游.' },
-  { q: '中国有一条大河，它的名字跟颜色有＿＿。', opts: ['游戏', '景点', '外地', '关系'], ans: 3, exp: '跟…有关系 = có liên quan đến… Tên sông Hoàng Hà liên quan đến màu nước.' },
-  { q: '下班后我请你吃晚饭，咱们边吃边＿＿。', opts: ['聊', '养', '遇见', '经过'], ans: 0, exp: '边吃边聊 = vừa ăn vừa trò chuyện. 养, 经过 không hợp.' },
-  { q: '我选什么课好呢？——你可以＿＿自己的兴趣来选择。', opts: ['了解', '根据', '遇见', '经过'], ans: 1, exp: '根据 + căn cứ = dựa vào: 根据自己的兴趣来选择.' },
-  { q: '那里有高高的大树和绿绿的＿＿。', opts: ['马路', '景点', '草地', '游客'], ans: 2, exp: '绿绿的草地 = bãi cỏ xanh. 马路, 游客 không tả bằng 绿绿的.' },
-  { q: 'Chọn câu đúng: "Những chuyện buồn chẳng mấy chốc là quên hết."', opts: ['难过的事情就不一会儿忘了。', '难过的事情不一会儿就忘了。', '不一会儿难过的事情忘就了。', '难过的事情忘了不一会儿。'], ans: 1, exp: '不一会儿就… = chẳng mấy chốc đã…; 不一会儿 đứng trước 就, sau chủ ngữ.' },
-  { q: 'Chọn câu đúng: "Đối với người Trung Quốc chúng ta, sông Hoàng Hà giống như mẹ."', opts: ['在我们中国人看，黄河像妈妈一样。', '我们中国人看来在，黄河像妈妈一样。', '根据我们中国人，黄河像妈妈一样。', '在我们中国人看来，黄河像妈妈一样。'], ans: 3, exp: '在……看来 = theo cách nhìn của…: 在我们中国人看来.' },
-  { q: '"他们两个两个地走进去了。" — 「两个两个地」 ở đây biểu thị gì?', opts: ['Cách thức: từng tốp hai người một', 'Tổng số người là hai', 'Ai cũng (mỗi người đều)', 'Thời gian rất ngắn'], ans: 0, exp: 'Số lượng từ lặp + 地 chỉ cách thức: 两个两个地 = từng tốp hai người.' }
+  { q: 'Bạn muốn nói: “Thầy giáo căn cứ vào trình độ của chúng tôi, chuẩn bị cho mỗi người bài tập khác nhau.”', opts: ['老师给每个人准备了不同的作业根据我们的水平。', '老师根据我们的水平，给每个人准备了不同的作业。', '根据老师我们的水平，给每个人准备了不同的作业。', '老师根据我们的水平地给每个人准备了不同的作业。'], ans: 1, exp: '根据 + căn cứ đứng TRƯỚC động từ (không đặt cuối câu như tiếng Việt “theo trình độ”); không thêm 地.' },
+  { q: 'A: “这么多问题，怎么办啊？” — B: “没关系，我们＿＿解决。”', opts: ['一个地一个', '一个一个地', '一个个一地', '一个一个得'], ans: 1, exp: '一个一个地 + động từ = giải quyết từng cái một; trợ từ trước động từ là 地, không phải 得.' },
+  { q: 'A: “学校附近的房子为什么这么贵？” — B: “＿＿，住在学校附近，孩子上学方便。”', opts: ['在很多爸爸妈妈看起来', '很多爸爸妈妈在看来', '根据很多爸爸妈妈看来', '在很多爸爸妈妈看来'], ans: 3, exp: '在 + người + 看来 = theo ý người đó; không trộn với 看起来 (trông có vẻ) hay 根据.' },
+  { q: 'Bạn kể: “Bài tập này rất đơn giản, em gái chẳng mấy chốc đã làm xong.”', opts: ['这个练习很简单，妹妹不一会儿就做完了。', '这个练习很简单，妹妹就不一会儿做完了。', '这个练习很简单，妹妹不一会儿才做完了。', '这个练习很简单，妹妹做完了不一会儿。'], ans: 0, exp: '不一会儿 + 就 + V + 了 (nhanh nên dùng 就, không dùng 才); 不一会儿 đứng trước động từ.' },
+  { q: '“这家饭馆的菜很好吃，＿＿离我家太远了，我不常去。”', opts: ['所以', '因为', '可是', '而且'], ans: 2, exp: 'Ý sau trái với ý trước (ngon nhưng xa) → 可是 = nhưng.' },
+  { q: 'A: “你怎么这么晚才回来？” — B: “路上＿＿了一个老同学，聊了一会儿。”', opts: ['了解', '遇见', '经过', '养'], ans: 1, exp: '遇见 + người = tình cờ gặp ai; 经过 + nơi chốn = đi ngang qua; 了解 = hiểu rõ.' },
+  { q: 'Câu nào SAI?', opts: ['这条马路上车很多。', '他是从外地来的游客。', '我们在附近聊天儿了一个小时。', '我家附近有一个大超市。'], ans: 2, exp: '聊天儿 là từ li hợp: phải nói 聊了一个小时的天 hoặc 聊了一个小时, không đặt thời lượng sau cả từ (ôn bài 8).' },
+  { q: 'Trên xe buýt có một cụ già đang đứng, bạn nói với con:', opts: ['你站起来，让那位老人坐吧。', '你站起来，那位老人让坐吧。', '你起来站，让那位老人坐吧。', '你站起来，让坐那位老人吧。'], ans: 0, exp: '让 + người + động từ = để ai làm gì: 让那位老人坐; 站起来 = đứng dậy (bổ ngữ xu hướng).' },
+  { q: 'Bạn đọc thông báo: “Trẻ em cao từ 1m2 trở lên phải mua vé.”', opts: ['身高以上一米二的孩子要买票。', '身高一米二的以上孩子要买票。', '身高一米二上的孩子要买票。', '身高一米二以上的孩子要买票。'], ans: 3, exp: 'Số lượng + 以上 = từ … trở lên: 一米二以上, rồi mới đến 的 + danh từ.' },
+  { q: 'Bạn muốn nói: “Nhà tôi ở phía tây bắc thành phố.”', opts: ['我家在西北边城市。', '我家在城市的西北边。', '我家的城市在西北边。', '我家西北边在城市。'], ans: 1, exp: 'Nơi chốn + 的 + 西北边: 城市的西北边; 我家的城市在西北边 lại thành “thành phố của nhà tôi ở phía tây bắc”.' },
+  { q: 'Bạn muốn nói: “Có một con sông chảy qua trước cổng trường chúng tôi.”', opts: ['一条河有经过我们学校前边。', '有一个河经过我们学校前边。', '有一条河我们学校前边经过。', '有一条河经过我们学校前边。'], ans: 3, exp: 'Sông dùng lượng từ 条 (không dùng 个); 有 + 一条河 + 经过 + nơi chốn (tân ngữ đứng sau 经过).' },
+  { q: '“你是第一次来南京吧？我给你介绍几个＿＿的地方。”', opts: ['有名', '了解', '外地', '平时'], ans: 0, exp: '有名的地方 = nơi nổi tiếng; 了解 = hiểu rõ (động từ), 外地 = nơi khác, 平时 = ngày thường — đều không hợp.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 根据, 在……看来, 不一会儿就……了, số lượng từ lặp (一个一个地) và từ mới (附近, 平时, 有名, 景点…).',
   questions: [
     {
-      q_zh: '蓝天小区附近买东西方便吗？',
-      q_vn: 'Mua sắm gần khu dân cư Lam Thiên có tiện không?',
-      hint: '很方便，过马路就……',
-      sample: '很方便，过马路就是超市，小区附近买东西都很方便。',
-      sample_vn: 'Rất tiện, qua đường là siêu thị, mua sắm quanh khu dân cư đều rất tiện.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 方便 (ôn HSK3 Bài 2); 过马路就是…….'
+      q_zh: '你家附近有什么？你平时常去哪儿？',
+      q_vn: 'Gần nhà bạn có những gì? Ngày thường bạn hay đi đâu?',
+      hint: '我家附近有……，我平时常去……',
+      sample: '我家附近有一个公园和一家超市，我平时下班以后常去公园跑步。',
+      sample_vn: 'Gần nhà tôi có một công viên và một siêu thị, ngày thường tan làm tôi hay ra công viên chạy bộ.',
+      note: '附近 + 有……; 平时 đứng trước động từ.'
     },
     {
-      q_zh: '蓝天小区为老人做什么了？',
-      q_vn: 'Khu dân cư Lam Thiên đã làm gì cho người già?',
-      hint: '这几年小区根据……，有了……',
-      sample: '蓝天小区的老人挺多的，这几年小区根据老人的需要，有了很多变化。',
-      sample_vn: 'Khu Lam Thiên có khá nhiều người già, mấy năm nay khu dân cư căn cứ nhu cầu của họ đã có nhiều thay đổi.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. Giới từ 根据 (ngữ pháp 1); 挺……的 (ôn HSK3 Bài 3).'
+      q_zh: '在你看来，住在大城市好还是住在小城市好？',
+      q_vn: 'Theo bạn, sống ở thành phố lớn tốt hay ở thành phố nhỏ tốt?',
+      hint: '在我看来，住在……好，因为……，可是……',
+      sample: '在我看来，住在小城市好，因为环境比较好，人也不太多，可是工作机会少一点儿。',
+      sample_vn: 'Theo tôi, sống ở thành phố nhỏ tốt hơn, vì môi trường khá tốt, người cũng không đông lắm, nhưng cơ hội việc làm ít hơn.',
+      note: '在……看来 = theo ý…; 可是 nối ý trái ngược.'
     },
     {
-      q_zh: '杨同乐为什么了解南京？',
-      q_vn: 'Vì sao Dương Đồng Lạc hiểu về Nam Kinh?',
-      hint: '因为他是在南京……的，可以说是……',
-      sample: '因为他是在南京上的大学，可以说是半个南京人。',
-      sample_vn: 'Vì anh ấy học đại học ở Nam Kinh, có thể nói là nửa người Nam Kinh.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 是……的 nhấn mạnh nơi chốn; 因为 (ôn HSK2 Bài 4).'
+      q_zh: '你们那儿有什么有名的景点？',
+      q_vn: 'Chỗ bạn có điểm du lịch nổi tiếng nào? Du khách có đông không?',
+      hint: '我们那儿最有名的景点是……，每年……',
+      sample: '我们那儿最有名的景点是一条老街，每年都有很多外地游客来拍照。',
+      sample_vn: 'Điểm du lịch nổi tiếng nhất chỗ tôi là một phố cổ, năm nào cũng có nhiều du khách nơi khác đến chụp ảnh.',
+      note: '有名的景点; 外地游客 = du khách nơi khác.'
     },
     {
-      q_zh: '在中国人看来，黄河像什么一样？为什么？',
-      q_vn: 'Theo người Trung Quốc, sông Hoàng Hà giống như cái gì? Vì sao?',
-      hint: '在中国人看来，黄河像……一样，因为……',
-      sample: '在中国人看来，黄河像妈妈一样，因为很久以前很多中国人都住在黄河边上，黄河养了他们几千年。',
-      sample_vn: 'Theo người Trung Quốc, sông Hoàng Hà giống như mẹ, vì từ rất lâu rồi nhiều người Trung Quốc đã sống ven sông Hoàng Hà, sông đã nuôi dưỡng họ mấy nghìn năm.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. 在……看来 (ngữ pháp 3); A 像 B 一样 (ôn HSK3 Bài 1, 4).'
+      q_zh: '你小时候放学以后常常做什么？',
+      q_vn: 'Hồi nhỏ tan học xong bạn thường làm gì?',
+      hint: '我小时候放学以后，常常跟……一起……',
+      sample: '我小时候放学以后，常常跟邻居的孩子一起在草地上做游戏，玩到天黑才回家。',
+      sample_vn: 'Hồi nhỏ tan học xong, tôi hay cùng bọn trẻ hàng xóm chơi trò chơi trên bãi cỏ, chơi đến tối mịt mới về nhà.',
+      note: '放学以后; 做游戏; ôn 才 (muộn — bài 3).'
     },
     {
-      q_zh: '长大以后，王一雪会去河边做什么？',
-      q_vn: 'Khi lớn lên, Vương Nhất Tuyết hay ra bờ sông làm gì?',
-      hint: '她会去河边的树下……，听听……，看看……',
-      sample: '遇到不开心的事情，她就去河边的树下坐着，听听鸟叫，看看河水，跟遇见的朋友聊聊天儿，不一会儿就不难过了。',
-      sample_vn: 'Gặp chuyện không vui, cô ấy ra ngồi dưới gốc cây bên bờ sông, nghe chim hót, ngắm dòng sông, trò chuyện với những người bạn gặp ở đó, chẳng mấy chốc là hết buồn.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 不一会儿 (ngữ pháp 4); lặp động từ 听听、看看 (ôn HSK2).'
-    },
-    {
-      q_zh: '你喜欢住在大城市吗？为什么？',
-      q_vn: 'Bạn có thích sống ở thành phố lớn không? Vì sao?',
-      hint: '我（不）喜欢……，因为……。可是……',
-      sample: '我喜欢住在大城市，因为大城市坐地铁、买东西都很方便，有名的饭馆也很多。可是大城市的人太多了，有时候让人很累。',
-      sample_vn: 'Tôi thích sống ở thành phố lớn, vì đi tàu điện ngầm, mua sắm đều tiện, quán ăn nổi tiếng cũng nhiều. Nhưng thành phố lớn đông người quá, có lúc khiến người ta rất mệt.',
-      note: 'Câu hỏi Khởi động của sách. 可是 của bài này; 地铁 (ôn HSK2 Bài 12), 让 (ôn HSK2 Bài 1).'
-    },
-    {
-      q_zh: '你家附近环境怎么样？你觉得住在那里方便吗？',
-      q_vn: 'Môi trường xung quanh nhà bạn thế nào? Bạn có thấy sống ở đó thuận tiện không?',
-      hint: '我家附近环境挺……的，过马路就是……',
-      sample: '我家附近环境挺好的，有一条小河，河边有很多树和草地。过马路就是超市，买东西很方便。',
-      sample_vn: 'Môi trường quanh nhà tôi khá tốt, có một con sông nhỏ, ven sông có nhiều cây và bãi cỏ. Qua đường là siêu thị, mua sắm rất tiện.',
-      note: 'Câu hỏi Khởi động của sách. 附近、马路、草地 của bài này; 环境 (ôn HSK3 Bài 3).'
-    },
-    {
-      q_zh: '北京、上海、西安、南京，你最喜欢哪个城市？为什么？',
-      q_vn: 'Bắc Kinh, Thượng Hải, Tây An, Nam Kinh — bạn thích thành phố nào nhất? Vì sao?',
-      hint: '在我看来，……最有意思。……有……年以上的历史，……',
-      sample: '在我看来，西安最有意思。西安有三千年以上的历史，有很多有名的景点，好吃的东西也特别多。',
-      sample_vn: 'Theo tôi, Tây An thú vị nhất. Tây An có lịch sử hơn 3000 năm, có nhiều điểm du lịch nổi tiếng, đồ ăn ngon cũng rất nhiều.',
-      note: 'Hoạt động trên lớp của sách (chọn thành phố yêu thích). 在……看来, 以上, 有名的景点 của bài này.'
+      q_zh: '你有什么好办法，让自己不一会儿就不难过了？',
+      q_vn: 'Khi buồn, bạn có cách gì để chẳng mấy chốc là hết buồn?',
+      hint: '我不开心的时候，就……，不一会儿就……了',
+      sample: '我不开心的时候，就给好朋友打电话，跟她聊聊天儿，不一会儿就不难过了。',
+      sample_vn: 'Khi không vui, tôi gọi điện cho bạn thân, nói chuyện với bạn ấy một lúc, chẳng mấy chốc là hết buồn.',
+      note: '不一会儿就……了; 聊聊天儿 lặp từ li hợp.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Mấy năm nay khu dân cư căn cứ vào nhu cầu của họ, đã có rất nhiều thay đổi.', zh: '这几年小区根据他们的需要，有了很多变化。', py: 'Zhè jǐ nián xiǎoqū gēnjù tāmen de xūyào, yǒule hěn duō biànhuà.' },
-  { vi: 'Vậy thì nhiều lắm, em phải kể cho chị từng chút một.', zh: '那太多了，我得一点儿一点儿给您讲。', py: 'Nà tài duō le, wǒ děi yìdiǎnr yìdiǎnr gěi nín jiǎng.' },
-  { vi: 'Đối với người Trung Quốc chúng ta, sông Hoàng Hà giống như mẹ, đã nuôi dưỡng chúng ta mấy nghìn năm.', zh: '在我们中国人看来，黄河像妈妈一样，养了我们几千年。', py: 'Zài wǒmen Zhōngguó rén kànlái, Huáng Hé xiàng māma yíyàng, yǎngle wǒmen jǐ qiān nián.' },
-  { vi: 'Những chuyện buồn chẳng mấy chốc là quên hết.', zh: '难过的事情不一会儿就忘了。', py: 'Nánguò de shìqing bù yíhuìr jiù wàng le.' },
-  { vi: 'Mặc dù em không phải người Nam Kinh, nhưng em học đại học ở Nam Kinh.', zh: '我虽然不是南京人，可是我是在南京上的大学。', py: 'Wǒ suīrán bú shì Nánjīng rén, kěshì wǒ shì zài Nánjīng shàng de dàxué.' }
+  { vi: 'Theo không ít người nước ngoài, học tiếng Trung rất khó, nhưng tôi không thấy vậy.', zh: '在不少外国人看来，学汉语很难，可是我不这么觉得。', py: 'Zài bù shǎo wàiguó rén kànlái, xué Hànyǔ hěn nán, kěshì wǒ bú zhème juéde.' },
+  { vi: 'Mọi người lần lượt từng người một tự giới thiệu nhé.', zh: '大家一个一个地介绍一下自己吧。', py: 'Dàjiā yí ge yí ge de jièshào yíxià zìjǐ ba.' },
+  { vi: 'Theo yêu cầu của thầy giáo, bài tập phải viết từ ba trăm chữ trở lên.', zh: '根据老师的要求，作业要写三百个字以上。', py: 'Gēnjù lǎoshī de yāoqiú, zuòyè yào xiě sānbǎi ge zì yǐshàng.' },
+  { vi: 'Uống thuốc xong, chẳng mấy chốc tôi đã thấy đỡ hơn nhiều.', zh: '吃了药以后，我不一会儿就觉得好多了。', py: 'Chīle yào yǐhòu, wǒ bù yíhuìr jiù juéde hǎo duō le.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Môi trường khu dân cư khá tốt, mua sắm gần đó cũng rất tiện, qua đường là siêu thị.', zh: '小区环境挺好的，附近买东西也很方便，过马路就是超市。', py: 'Xiǎoqū huánjìng tǐng hǎo de, fùjìn mǎi dōngxi yě hěn fāngbiàn, guò mǎlù jiù shì chāoshì.' },
-  { vi: 'Nam Kinh có lịch sử hơn hai nghìn năm, hằng năm du khách đến du lịch rất đông.', zh: '南京有两千年以上的历史，每年去旅游的游客特别多。', py: 'Nánjīng yǒu liǎngqiān nián yǐshàng de lìshǐ, měi nián qù lǚyóu de yóukè tèbié duō.' },
-  { vi: 'Ngoài những nơi này ra, em nói thêm cho chị vài chỗ mà người nơi khác không biết nhé.', zh: '除了这些以外，你再告诉我一些外地人不知道的地方。', py: 'Chúle zhèxiē yǐwài, nǐ zài gàosu wǒ yìxiē wàidì rén bù zhīdào de dìfang.' },
-  { vi: 'Vì nước sông trông có màu vàng, nên được gọi tên này.', zh: '因为河水看起来是黄色的，所以叫这个名字。', py: 'Yīnwèi héshuǐ kàn qǐlai shì huángsè de, suǒyǐ jiào zhège míngzi.' },
-  { vi: 'Tôi vẫn nhớ hồi nhỏ, cứ đến mùa hè là tôi ra sông bơi.', zh: '还记得小时候，一到夏天我就去河里游泳。', py: 'Hái jìde xiǎoshíhou, yí dào xiàtiān wǒ jiù qù hé li yóuyǒng.' }
+  { vi: 'Buổi tối có rất nhiều người già ra bờ sông trò chuyện.', zh: '晚上有很多老人去河边聊天儿。', py: 'Wǎnshang yǒu hěn duō lǎorén qù hé biān liáotiānr.' },
+  { vi: 'Sông Hoàng Hà tuy không phải sông dài nhất Trung Quốc, nhưng rất nổi tiếng.', zh: '黄河虽然不是中国最长的河，可是非常有名。', py: 'Huáng Hé suīrán bú shì Zhōngguó zuì cháng de hé, kěshì fēicháng yǒumíng.' },
+  { vi: 'Du khách từ nơi khác đến thường đều muốn đi các điểm du lịch nổi tiếng.', zh: '外地来的游客一般都想去有名的景点。', py: 'Wàidì lái de yóukè yìbān dōu xiǎng qù yǒumíng de jǐngdiǎn.' }
 ];

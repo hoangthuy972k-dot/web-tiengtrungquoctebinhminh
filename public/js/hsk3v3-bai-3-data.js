@@ -2401,159 +2401,155 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 Bài 1–2
 var listenData = [
   {
-    audio: '小王，听说你搬家了，新房子怎么样？挺好的，在十二层，空调和冰箱都是新的，小区的环境也不错。离地铁站远吗？不远，走路五分钟就能到。就是离我女儿的初中有点儿远，坐公交车四十分钟才能到。',
+    audio: '我家楼下有一个大花园，早上很多人在那儿跑步，环境挺不错的。',
     questions: [
-      { q: '小王的新房子在几层？', opts: ['二层', '十层', '十二层'], ans: 2 },
-      { q: '小王的女儿坐公交车去学校要多长时间？', opts: ['五分钟', '十四分钟', '四十分钟'], ans: 2 }
+      { q: 'Dưới nhà người nói có gì?', opts: ['Một vườn hoa lớn', 'Một ngân hàng', 'Một trường cấp hai'], ans: 0, exp: '楼下有一个大花园 = dưới lầu có một vườn hoa lớn.' },
+      { q: 'Người nói thấy môi trường ở đó thế nào?', opts: ['Không tốt lắm', 'Rất ồn', 'Khá tốt'], ans: 2, exp: '环境挺不错的 = môi trường khá tốt; 挺……的 = khá ….' }
     ]
   },
   {
-    audio: '妈妈，我回来了。今天热坏了，我想开空调。空调坏了，昨天就不能用了。那冰箱里有没有饮料？有，我上午才买的，你自己拿吧。对了，你走的时候别忘了关灯。',
+    audio: '昨天晚上我十二点才睡觉，今天早上八点半才起床，到公司的时候已经九点半了。',
     questions: [
-      { q: '空调怎么了？', opts: ['开着', '坏了', '是新的'], ans: 1 },
-      { q: '妈妈让孩子做什么？', opts: ['关灯', '买饮料', '开空调'], ans: 0 }
+      { q: 'Tối qua người nói đi ngủ lúc nào?', opts: ['Mười giờ', 'Mười hai giờ', 'Mười một giờ'], ans: 1, exp: '十二点才睡觉 = mãi 12 giờ mới ngủ; 才 cho thấy muộn.' },
+      { q: 'Người nói đến công ty lúc mấy giờ?', opts: ['Chín rưỡi', 'Tám giờ', 'Chín giờ'], ans: 0, exp: '已经九点半了 = đã chín rưỡi rồi.' }
     ]
   },
   {
-    audio: '你好，我想办一张信用卡，需要带什么？带上您的护照就可以了。办信用卡要多长时间？今天办，下个星期才能拿到卡。好的。听说用你们的信用卡买东西还能便宜一点儿，是吗？对，在我们银行旁边的商场买东西都能便宜一点儿。',
+    audio: '我家的冰箱坏了，里面的东西都不能吃了，咱们今天去买一个新的吧。',
     questions: [
-      { q: '说话人想在银行做什么？', opts: ['还钱', '办信用卡', '换钱'], ans: 1 },
-      { q: '什么时候能拿到信用卡？', opts: ['今天', '明天', '下个星期'], ans: 2 }
+      { q: 'Đồ gì trong nhà bị hỏng?', opts: ['Máy giặt', 'Điều hoà', 'Tủ lạnh'], ans: 2, exp: '冰箱坏了 = tủ lạnh hỏng rồi; ở đây 坏了 là hỏng thật.' },
+      { q: 'Người nói đề nghị gì?', opts: ['Gọi người đến xem', 'Hôm nay đi mua cái mới', 'Đặt đồ ăn ngoài'], ans: 1, exp: '咱们今天去买一个新的吧 = hôm nay chúng mình đi mua cái mới đi.' }
     ]
   },
   {
-    audio: '上个月我搬家了。搬家前，我买了二十多个纸箱，准备了一个星期。搬家那天，我找了一家搬家公司，他们来了四个人，三个小时就搬完了。新家离公司很近，我每天早上走路十分钟就能到公司，真方便！',
+    audio: '今天我在银行等了两个小时才办好信用卡，现在饿坏了。',
     questions: [
-      { q: '说话人搬家前买了什么？', opts: ['纸箱', '冰箱', '洗衣机'], ans: 0 },
-      { q: '搬家公司用了多长时间搬完？', opts: ['一个小时', '三个小时', '一个星期'], ans: 1 }
+      { q: 'Người nói đã đợi ở ngân hàng bao lâu?', opts: ['Hai tiếng', 'Nửa tiếng', 'Một tiếng'], ans: 0, exp: '等了两个小时才办好 = đợi hai tiếng mới làm xong (才: lâu hơn mong muốn).' },
+      { q: 'Bây giờ người nói thế nào?', opts: ['Rất vui', 'Đói lả', 'Buồn ngủ'], ans: 1, exp: '饿坏了 = đói muốn xỉu; tính từ + 坏了 = … lắm, … muốn chết.' }
+    ]
+  },
+  {
+    audio: '哥哥七点就出门了，弟弟九点才起床。',
+    questions: [
+      { q: 'Ai dậy muộn?', opts: ['Anh trai', 'Em trai', 'Cả hai'], ans: 1, exp: '就 nhấn mạnh sớm (7 giờ đã ra khỏi nhà), 才 nhấn mạnh muộn (9 giờ mới dậy).' }
+    ]
+  },
+  {
+    audio: '听说你下个星期要搬家，需要我帮忙吗？我那天不上班。',
+    questions: [
+      { q: 'Người nói muốn làm gì?', opts: ['Mượn tiền', 'Giúp chuyển nhà', 'Mời đi ăn'], ans: 1, exp: '听说你要搬家，需要我帮忙吗 = nghe nói bạn sắp chuyển nhà, có cần mình giúp không.' },
+      { q: 'Hôm đó người nói thế nào?', opts: ['Phải đi làm', 'Phải đi bệnh viện', 'Không phải đi làm'], ans: 2, exp: '我那天不上班 = hôm đó tôi không đi làm.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '环境', right: '挺好的' },
-  { left: '办', right: '一张信用卡' },
-  { left: '这几天忙', right: '坏了' },
-  { left: '走的时候忘', right: '关灯了' },
   { left: '打扫', right: '卫生间' },
-  { left: '走路几分钟', right: '就能到' }
+  { left: '出门要关', right: '灯' },
+  { left: '去银行办', right: '信用卡' },
+  { left: '搬家', right: '公司' },
+  { left: '小区的', right: '环境' },
+  { left: '换一个', right: '大点儿的房子' },
+  { left: '住在', right: '十五层' },
+  { left: '热', right: '坏了' }
 ];
 
 var fillData = [
-  { pre: '你走的时候要', blank: '关', post: '灯。', hint: '(tắt)', ans: '关', exp: '关灯 — tắt đèn; ngược lại là 开灯 / 打开 (ôn HSK2 Bài 6).' },
-  { pre: '我要去银行', blank: '办', post: '一张信用卡。', hint: '(làm thủ tục)', ans: '办', exp: '办 + 一张 + 信用卡 — làm thẻ; lượng từ 张 (HSK3 Bài 2).' },
-  { pre: '搬家要准备的东西', blank: '挺', post: '多的。', hint: '(khá)', ans: '挺', exp: '挺 + tính từ + 的 — mức độ khá cao (ngữ pháp 1).' },
-  { pre: '这本书不是我的，明天我要', blank: '还', post: '给朋友。', hint: '(trả)', ans: '还', exp: '还 đọc huán = trả lại (还给 + người); đọc hái = vẫn, còn (HSK1 Bài 3).' },
-  { pre: '我太忙了，没时间打扫新家，可能下个月', blank: '才', post: '搬家。', hint: '(mới)', ans: '才', exp: '才 — việc xảy ra muộn hơn mong muốn (ngữ pháp 3).' },
-  { pre: '你去哪儿了？怎么这么晚才回来？——我一直在', blank: '打扫', post: '新家，今天真是累坏了。', hint: '(dọn dẹp)', ans: '打扫', exp: '打扫 + nơi chốn; 累坏了 — bổ ngữ trình độ (ngữ pháp 2).' },
-  { pre: '你知道她为什么不喜欢这个房子吗？——我', blank: '听说', post: '她不喜欢住一层。', hint: '(nghe nói)', ans: '听说', exp: '听说 + mệnh đề — thông tin nghe người khác kể lại.' },
-  { pre: '这个房子离公司太远了，咱们还是', blank: '换', post: '一个近点儿的吧。', hint: '(đổi)', ans: '换', exp: '换 + một cái khác; 还是……吧 — đề nghị phương án tốt hơn (ôn HSK2 Bài 2).' }
+  { pre: '你的汉语说得', blank: '挺', post: '好的，学了多长时间了？', hint: '(khá)', ans: '挺', exp: '挺 + tính từ + 的 = khá …; ôn bổ ngữ trạng thái 说得…… (HSK2).' },
+  { pre: '今天没开空调，我们都热', blank: '坏', post: '了。', hint: '(… muốn chết)', ans: '坏', exp: 'Tính từ + 坏了 = … quá, … muốn chết: 热坏了 = nóng muốn chết.' },
+  { pre: '我七点就到了，他八点半', blank: '才', post: '来。', hint: '(mới)', ans: '才', exp: '才 = muộn hơn mong đợi; sau 才 không dùng 了.' },
+  { pre: '公司离地铁站很近，下了地铁两分钟', blank: '就', post: '到了。', hint: '(đã, là)', ans: '就', exp: '就 = nhanh, sớm; thường có 了 ở cuối: 两分钟就到了.' },
+  { pre: '这件衣服太小了，我想', blank: '换', post: '一件大的。', hint: '(đổi)', ans: '换', exp: '换 = đổi; 换一件大的 = đổi một cái to hơn.' },
+  { pre: '你的房间没有人，怎么不', blank: '关', post: '灯？', hint: '(tắt)', ans: '关', exp: '关灯 = tắt đèn; ngược lại 开灯 = bật đèn.' },
+  { pre: '上个月花了太多钱，信用卡的钱还没', blank: '还', post: '完呢。', hint: '(trả)', ans: '还', exp: '还 đọc huán = trả: 还没还完 = vẫn (hái) chưa trả (huán) xong.' },
+  { pre: '去银行办信用卡', blank: '需要', post: '带护照吗？', hint: '(cần)', ans: '需要', exp: '需要 + V = cần làm gì; ôn 护照 (bài 1).' },
+  { pre: '我', blank: '听说', post: '你姐姐换工作了，是真的吗？', hint: '(nghe nói)', ans: '听说', exp: '听说 + mệnh đề = nghe nói (tin từ người khác), nên mới hỏi lại 是真的吗.' },
+  { pre: '我家住在十八', blank: '层', post: '，下楼要花五分钟。', hint: '(tầng)', ans: '层', exp: 'Số + 层 = tầng mấy: 十八层 = tầng 18.' },
+  { pre: '明天朋友要来我家玩，今天我得', blank: '打扫', post: '一下房间。', hint: '(dọn dẹp)', ans: '打扫', exp: '打扫 + nơi chốn = dọn dẹp; 打扫一下 = dọn qua một chút.' },
+  { pre: '这个箱子太大了，咱们两个人一起', blank: '搬', post: '吧。', hint: '(khiêng, chuyển)', ans: '搬', exp: '搬 = khiêng, chuyển đồ; 咱们 = chúng mình (gồm cả người nghe).' }
 ];
 
 var sortData = [
-  { words: ['环境', '挺', '好', '的', '，', '离', '地铁站', '还', '不远', '。'], ans: '环境挺好的，离地铁站还不远。', audio: '环境挺好的，离地铁站还不远。' },
-  { words: ['我', '这几天', '忙', '坏了', '。'], ans: '我这几天忙坏了。', audio: '我这几天忙坏了。' },
-  { words: ['中国银行', '很近', '，', '走路', '几分钟', '就', '能', '到', '。'], ans: '中国银行很近，走路几分钟就能到。', audio: '中国银行很近，走路几分钟就能到。' },
-  { words: ['我', '下午', '要', '去', '医院', '，', '很晚', '才', '能', '回来', '。'], ans: '我下午要去医院，很晚才能回来。', audio: '我下午要去医院，很晚才能回来。' },
-  { words: ['咱们', '换', '一个', '近', '点儿', '的', '房子', '吧', '。'], ans: '咱们换一个近点儿的房子吧。', audio: '咱们换一个近点儿的房子吧。' },
-  { words: ['这么多', '事情', '最少', '需要', '两个星期', '才', '能', '做完', '。'], ans: '这么多事情最少需要两个星期才能做完。', audio: '这么多事情最少需要两个星期才能做完。' }
+  { words: ['这个', '小区', '的', '环境', '挺', '好', '的', '。'], ans: '这个小区的环境挺好的。', audio: '这个小区的环境挺好的。' },
+  { words: ['你', '怎么', '十点', '才', '起床', '？'], ans: '你怎么十点才起床？', audio: '你怎么十点才起床？' },
+  { words: ['我', '女儿', '的', '初中', '不远', '，', '走路', '十分钟', '就', '到', '了', '。'], ans: '我女儿的初中不远，走路十分钟就到了。', audio: '我女儿的初中不远，走路十分钟就到了。' },
+  { words: ['冰箱', '和', '空调', '都', '是', '新', '买', '的', '。'], ans: '冰箱和空调都是新买的。', audio: '冰箱和空调都是新买的。', alt: ['空调和冰箱都是新买的。'] },
+  { words: ['卫生间', '的', '灯', '是', '谁', '关', '的', '？'], ans: '卫生间的灯是谁关的？', audio: '卫生间的灯是谁关的？' },
+  { words: ['我家', '的', '洗衣机', '用', '了', '十年', '，', '今天', '坏', '了', '。'], ans: '我家的洗衣机用了十年，今天坏了。', audio: '我家的洗衣机用了十年，今天坏了。' },
+  { words: ['我们', '需要', '很多', '纸箱', '，', '你', '能', '帮', '我', '买', '一些', '吗', '？'], ans: '我们需要很多纸箱，你能帮我买一些吗？', audio: '我们需要很多纸箱，你能帮我买一些吗？' },
+  { words: ['楼下', '的', '花园', '里', '有', '很多', '孩子', '在', '玩', '。'], ans: '楼下的花园里有很多孩子在玩。', audio: '楼下的花园里有很多孩子在玩。' }
 ];
 
 var mcData = [
-  { q: '小雪的＿＿离家有点儿远，咱们换一个近点儿的房子吧。', opts: ['初中', '花园', '银行', '卫生间'], ans: 0, exp: '初中 = trường cấp 2 của Tiểu Tuyết; trường xa nhà nên muốn đổi nhà gần hơn. 花园, 银行 không hợp lý do chuyển nhà.' },
-  { q: '房子里面也不错，＿＿和洗衣机都是新的。', opts: ['纸', '空调', '层', '环境'], ans: 1, exp: '空调和洗衣机 — hai đồ điện trong nhà, đều là mới. 层 là tầng, 环境 là môi trường, không nói "là đồ mới".' },
-  { q: '我今天早上来的时候，＿＿还开着。', opts: ['冰箱', '小区', '灯', '信用卡'], ans: 2, exp: '灯还开着 = đèn vẫn đang bật (V + 着 chỉ trạng thái còn kéo dài), ý là quên tắt đèn.' },
-  { q: '我先用你的钱买吧，明天＿＿给你。', opts: ['办', '换', '关', '还'], ans: 3, exp: '还 đọc huán = trả lại: 还给你. Mượn tiền hôm nay, mai trả. 换 là đổi, 办 là làm (thủ tục).' },
-  { q: '＿＿中国银行的服务不错，咱们去那儿办信用卡吧。', opts: ['听说', '需要', '打扫', '搬'], ans: 0, exp: '听说 = nghe nói, đặt đầu câu để dẫn thông tin nghe từ người khác. 需要, 打扫 không mở đầu câu kiểu này.' },
-  { q: '你能帮我＿＿一下这个箱子吗？', opts: ['关', '还', '搬', '办'], ans: 2, exp: '搬箱子 = khiêng, chuyển cái thùng. 关 là đóng, 还 là trả, 办 là làm thủ tục.' },
-  { q: '这么多事情最少＿＿两个星期才能做完。', opts: ['环境', '听说', '打扫', '需要'], ans: 3, exp: '需要 + khoảng thời gian = cần (bao lâu): 最少需要两个星期才能做完.' },
-  { q: 'Chọn câu đúng: "Mình khá thích màu này."', opts: ['我喜欢挺这个颜色的。', '我挺喜欢这个颜色的。', '我挺这个颜色喜欢的。', '我挺很喜欢这个颜色的。'], ans: 1, exp: '挺 + động từ tâm lý/tính từ (+ 的) = khá…: 我挺喜欢…的. 挺 đứng trước 喜欢 và không dùng chung với 很.' },
-  { q: 'Chọn câu đúng: "Hôm nay không ăn gì, tôi đói lả cả người."', opts: ['我今天没吃东西，很饿坏了。', '我今天没吃东西，坏饿了。', '我今天没吃东西，饿坏了。', '我今天没吃东西，饿得坏了。'], ans: 2, exp: 'Tính từ + 坏了 = …muốn chết, …lả người (mức độ rất cao): 饿坏了. Không thêm 很, không dùng 得.' },
-  { q: '电影八点开始，他七点半＿＿到了。(đến sớm)', opts: ['就', '才', '还', '再'], ans: 0, exp: '就 = sớm, nhanh hơn dự kiến: 8 giờ chiếu mà 7 rưỡi đã đến. 才 thì ngược lại, chỉ muộn hơn dự kiến.' }
+  { q: 'Bạn ăn thử món bạn mình nấu và khen: “Món này khá ngon đấy.”', opts: ['这个菜挺很好吃的。', '这个菜好吃挺的。', '这个菜挺好吃的。', '这个菜挺好吃了的。'], ans: 2, exp: '挺 + tính từ + 的 = khá …; 挺 đứng trước tính từ, không dùng chung với 很, không thêm 了.' },
+  { q: 'Bạn đi bộ cả ngày, về nhà nói: “Hôm nay đi cả ngày, ai cũng mệt rã rời.”', opts: ['今天走了一天，大家都很累坏了。', '今天走了一天，大家都累坏了。', '今天走了一天，大家都坏累了。', '今天走了一天，大家都累得坏。'], ans: 1, exp: 'Tính từ + 坏了 = … rã rời, … muốn chết; không thêm 很 phía trước, 坏 đứng sau tính từ.' },
+  { q: 'A: “听说你考了一百分？” — B: “是啊，我妈妈都＿＿！”', opts: ['坏高兴了', '高兴得坏', '很高兴坏', '高兴坏了'], ans: 3, exp: '高兴坏了 = vui sướng phát điên; 坏了 dùng được cả với cảm xúc tích cực.' },
+  { q: 'A: “你们每天几点起床？” — B: “我六点＿起床了，我妹妹九点＿起床。”', opts: ['就……才', '才……就', '就……就', '才……才'], ans: 0, exp: '6 giờ là sớm → 就 (có 了); 9 giờ là muộn → 才 (không có 了).' },
+  { q: 'Bạn muốn nói: “Tôi đợi anh ấy một tiếng, anh ấy mới đến.”', opts: ['我等了他一个小时，他才来了。', '我等了他一个小时，他就来了。', '我等了他一个小时，才他来。', '我等了他一个小时，他才来。'], ans: 3, exp: '才 + V (không có 了) = mãi mới…; 才 đứng sau chủ ngữ. 他就来了 lại có nghĩa là đến nhanh.' },
+  { q: 'Bạn muốn nói: “Mới năm giờ chiều anh ấy đã về nhà rồi.”', opts: ['下午五点他才回家了。', '下午五点他就回家了。', '下午五点就他回家了。', '下午五点他回家就了。'], ans: 1, exp: '就 + V + 了 = đã … rồi (sớm); 就 đứng sau chủ ngữ, trước động từ. 才 lại chỉ muộn.' },
+  { q: 'A: “你们老师怎么没来上课？” — B: “＿＿她生病了，在医院呢。”', opts: ['以为', '听说', '需要', '打扫'], ans: 1, exp: '听说 = nghe nói (tin từ người khác). 以为 = tưởng (mà thực ra không phải), không hợp vì B đang báo tin.' },
+  { q: 'Câu nào SAI?', opts: ['我们小区有三个花园。', '这张信用卡是在中国银行办的。', '咱们换房子一个大点儿的吧。', '冰箱里什么吃的都没有了。'], ans: 2, exp: 'Định ngữ phải đứng trước danh từ: 换一个大点儿的房子, không đặt sau như tiếng Việt.' },
+  { q: 'A: “办信用卡要多长时间？” — B đáp:', opts: ['今天办，下个星期才能拿到了。', '今天办，下个星期才能拿到。', '今天办，下个星期拿到才能。', '今天办，才下个星期能拿到。'], ans: 1, exp: '才 + 能 + V, đứng ngay trước động từ, không có 了: 下个星期才能拿到 = tuần sau mới lấy được.' },
+  { q: 'A: “你看，卫生间的灯还开着。” — B: “不好意思，我马上去＿＿。”', opts: ['还', '换', '搬', '关'], ans: 3, exp: 'Đèn đang bật → 关 (tắt); ôn 马上 (bài 2). 还 = trả, 搬 = chuyển.' },
+  { q: 'Bạn muốn nói: “Tôi đã chuyển nhà ba lần.”', opts: ['我搬过三次家。', '我搬家过三次。', '我三次搬过家。', '我搬家了三次过。'], ans: 0, exp: '搬家 là từ li hợp: 过 và số lần chen giữa 搬 và 家 → 搬过三次家.' },
+  { q: '“我想写下他的手机号码，你有＿＿吗？”', opts: ['层', '纸', '灯', '碗'], ans: 1, exp: 'Muốn ghi số điện thoại → cần 纸 (giấy). 层 = tầng, 灯 = đèn, 碗 = bát.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 挺……的, tính từ + 坏了, 就 (sớm) / 才 (muộn) và từ mới về nhà cửa, chuyển nhà.',
   questions: [
     {
-      q_zh: '他们为什么要换房子？',
-      q_vn: 'Vì sao họ muốn đổi nhà?',
-      hint: '因为小雪的初中……',
-      sample: '因为小雪的初中离家有点儿远，他们想换一个近点儿的房子。',
-      sample_vn: 'Vì trường cấp hai của Tiểu Tuyết hơi xa nhà, họ muốn đổi sang một căn nhà gần hơn.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. A 离 B + 远/近 (ôn HSK2 Bài 9).'
+      q_zh: '你现在住的房子怎么样？',
+      q_vn: 'Ngôi nhà bạn đang ở thế nào?',
+      hint: '我住在……层，房子……，但是挺……的，楼下……',
+      sample: '我住在八层，房子不太大，但是挺方便的，楼下就有超市和银行。',
+      sample_vn: 'Tôi ở tầng tám, nhà không to lắm nhưng khá tiện, ngay dưới lầu có siêu thị và ngân hàng.',
+      note: 'Số + 层; 挺 + tính từ + 的; ôn 方便 (bài 2).'
     },
     {
-      q_zh: '刘明为什么喜欢这个房子？',
-      q_vn: 'Vì sao Lưu Minh thích căn nhà này?',
-      hint: '因为这个房子在一层，……',
-      sample: '因为这个房子在一层，还带一个小花园。',
-      sample_vn: 'Vì căn nhà này ở tầng một, lại có kèm một khu vườn nhỏ.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 带 = có kèm theo (ôn HSK3 Bài 1).'
+      q_zh: '你一天里什么时候最累？',
+      q_vn: 'Trong một ngày, lúc nào bạn mệt nhất? Lúc đó bạn làm gì?',
+      hint: '……的时候我最累，有时候累坏了，就……',
+      sample: '下班回家的时候我最累，有时候累坏了，就点个外卖，什么都不想做。',
+      sample_vn: 'Lúc tan làm về nhà tôi mệt nhất, có khi mệt rã rời thì gọi đồ ăn, chẳng muốn làm gì cả.',
+      note: '累坏了; ôn 外卖 và 什么都不…… (bài 2).'
     },
     {
-      q_zh: '为什么不能洗衣服？',
-      q_vn: 'Vì sao chưa giặt quần áo được?',
-      hint: '因为卫生间……，所以……',
-      sample: '因为卫生间没打扫好，所以还不能洗衣服。',
-      sample_vn: 'Vì phòng vệ sinh chưa dọn xong nên vẫn chưa giặt quần áo được.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 因为……所以…… (ôn HSK2 Bài 4); 打扫好 — bổ ngữ kết quả (HSK2 Bài 3).'
+      q_zh: '你家里谁起床最早？谁起床最晚？',
+      q_vn: 'Nhà bạn ai dậy sớm nhất, ai dậy muộn nhất?',
+      hint: '……每天……就起床了，……才起床。',
+      sample: '我爸爸每天五点半就起床了，我弟弟不上课的时候，十点才起床。',
+      sample_vn: 'Bố tôi ngày nào cũng năm rưỡi đã dậy rồi, em trai tôi hôm nào không đi học thì mười giờ mới dậy.',
+      note: 'Sớm: 就 + V + 了; muộn: 才 + V (không có 了).'
     },
     {
-      q_zh: '刘明为什么今天不能去银行？',
-      q_vn: 'Vì sao hôm nay Lưu Minh không đi ngân hàng được?',
-      hint: '因为他下午要……，很晚才……',
-      sample: '因为他下午要去医院，很晚才能回来。',
-      sample_vn: 'Vì chiều nay anh ấy phải đi bệnh viện, rất muộn mới về được.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. 很晚 + 才 + V — muộn, không có 了 (ngữ pháp 3).'
+      q_zh: '搬家前需要做些什么？',
+      q_vn: 'Trước khi chuyển nhà cần làm những gì?',
+      hint: '需要买……，还需要……，东西很多的时候……',
+      sample: '需要买一些纸箱，还需要打扫新房子，东西很多的时候，可以请朋友来帮忙。',
+      sample_vn: 'Cần mua một ít thùng giấy, còn cần dọn dẹp nhà mới, khi đồ đạc nhiều thì có thể nhờ bạn bè đến giúp.',
+      note: '需要 + V; 打扫; câu kiêm ngữ 请 + người + 来 + V (HSK2).'
     },
     {
-      q_zh: '刘明打算找谁搬家？王一雪呢？',
-      q_vn: 'Lưu Minh định nhờ ai chuyển nhà? Còn Vương Nhất Tuyết thì sao?',
-      hint: '刘明想请……，王一雪想找……',
-      sample: '刘明想请几位朋友来帮忙，王一雪想找一家搬家公司。',
-      sample_vn: 'Lưu Minh muốn nhờ vài người bạn đến giúp, còn Vương Nhất Tuyết muốn thuê một công ty chuyển nhà.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. Câu kiêm ngữ 请 + người + 来 + V (ôn HSK2 Bài 1).'
-    },
-    {
-      q_zh: '你喜欢现在住的房子吗？为什么？',
-      q_vn: 'Bạn có thích ngôi nhà hiện tại không? Vì sao?',
-      hint: '我挺喜欢的。我家离……，小区的环境……',
-      sample: '我挺喜欢的。我家离地铁站很近，小区的环境也挺好的。',
-      sample_vn: 'Tôi khá thích. Nhà tôi rất gần ga tàu điện ngầm, môi trường khu dân cư cũng khá tốt.',
-      note: 'Câu hỏi Khởi động của sách. Dùng 挺……的 (ngữ pháp 1) + 离 (HSK2 Bài 9).'
-    },
-    {
-      q_zh: '你搬过家吗？你是怎么找到新房子的？',
-      q_vn: 'Bạn đã từng chuyển nhà chưa? Bạn đã tìm được nhà mới bằng cách nào?',
-      hint: '我搬过……次家。新房子是我在……找到的……',
-      sample: '我搬过两次家。这次的新房子是我在网上找到的，我看了五六个房子才找到这个。',
-      sample_vn: 'Tôi đã chuyển nhà hai lần. Căn nhà mới lần này tôi tìm được trên mạng, tôi xem năm sáu căn mới tìm được căn này.',
-      note: 'Câu hỏi Khởi động của sách. 搬过两次家 (过 – HSK2 Bài 4, bổ ngữ động lượng – HSK2 Bài 15); 是……的 (HSK2 Bài 1); 才 (ngữ pháp 3).'
-    },
-    {
-      q_zh: '搬家前你会准备哪些东西？',
-      q_vn: 'Trước khi chuyển nhà bạn sẽ chuẩn bị những gì?',
-      hint: '搬家前我会买一些……，打扫一下……，还会……',
-      sample: '搬家前我会买一些纸箱，打扫一下新家，还会找一家搬家公司帮忙。',
-      sample_vn: 'Trước khi chuyển nhà tôi sẽ mua một ít thùng giấy, dọn dẹp nhà mới một chút, và còn thuê một công ty chuyển nhà giúp.',
-      note: 'Câu hỏi Hoạt động trên lớp của sách. Dùng 纸箱、打扫、搬家公司 của bài này; V + 一下 (HSK1 Bài 13).'
+      q_zh: '你有信用卡吗？你觉得信用卡怎么样？',
+      q_vn: 'Bạn có thẻ tín dụng không? Bạn thấy thẻ tín dụng thế nào?',
+      hint: '我有/没有……，我觉得……挺……的，但是……',
+      sample: '我办了一张信用卡，买东西挺方便的，但是花了多少钱，下个月都要还。',
+      sample_vn: 'Tôi đã làm một thẻ tín dụng, mua đồ khá tiện, nhưng tiêu bao nhiêu thì tháng sau đều phải trả.',
+      note: '办信用卡; 还 (huán) = trả.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Môi trường khá tốt, cũng không xa ga tàu điện ngầm lắm.', zh: '环境挺好的，离地铁站还不远。', py: 'Huánjìng tǐng hǎo de, lí dìtiězhàn hái bù yuǎn.' },
-  { vi: 'Mấy ngày nay anh bận tối mắt tối mũi, chắc lúc đi quên tắt rồi.', zh: '我这几天忙坏了，可能走的时候忘关了。', py: 'Wǒ zhè jǐ tiān máng huài le, kěnéng zǒu de shíhou wàng guān le.' },
-  { vi: 'Ngân hàng Trung Quốc rất gần, đi bộ vài phút là tới.', zh: '中国银行很近，走路几分钟就能到。', py: 'Zhōngguó Yínháng hěn jìn, zǒulù jǐ fēnzhōng jiù néng dào.' },
-  { vi: 'Chiều nay anh phải đến bệnh viện, rất muộn mới về được.', zh: '我下午要去医院，很晚才能回来。', py: 'Wǒ xiàwǔ yào qù yīyuàn, hěn wǎn cái néng huílai.' },
-  { vi: 'Chúng ta làm thẻ tín dụng đi, tiền tiêu rồi có thể trả dần.', zh: '咱们办张信用卡吧，花的钱可以慢慢还。', py: 'Zánmen bàn zhāng xìnyòngkǎ ba, huā de qián kěyǐ mànmàn huán.' }
+  { vi: 'Mấy ngày nay vừa chuyển nhà vừa đi làm, bận tối mắt tối mũi.', zh: '这几天又搬家又上班，忙坏了。', py: 'Zhè jǐ tiān yòu bānjiā yòu shàngbān, máng huài le.' },
+  { vi: 'Ngân hàng khá xa, chúng mình đi taxi đi.', zh: '银行挺远的，咱们打车去吧。', py: 'Yínháng tǐng yuǎn de, zánmen dǎchē qù ba.' },
+  { vi: 'Chín giờ tối anh ấy mới về đến nhà, cơm vẫn chưa ăn.', zh: '他晚上九点才到家，饭还没吃。', py: 'Tā wǎnshang jiǔ diǎn cái dào jiā, fàn hái méi chī.' },
+  { vi: 'Máy giặt hỏng rồi, chúng ta phải mua cái mới.', zh: '洗衣机坏了，我们得买个新的。', py: 'Xǐyījī huài le, wǒmen děi mǎi ge xīn de.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Trường cấp hai của Tiểu Tuyết hơi xa nhà, chúng ta đổi một căn nhà gần hơn đi.', zh: '小雪的初中离家有点儿远，咱们换一个近点儿的房子吧。', py: 'Xiǎoxuě de chūzhōng lí jiā yǒudiǎnr yuǎn, zánmen huàn yí ge jìn diǎnr de fángzi ba.' },
-  { vi: 'Phòng vệ sinh chưa dọn xong, vẫn chưa giặt quần áo được.', zh: '卫生间没打扫好，还不能洗衣服。', py: 'Wèishēngjiān méi dǎsǎo hǎo, hái bù néng xǐ yīfu.' },
-  { vi: 'Nghe nói dịch vụ của Ngân hàng Trung Quốc khá tốt.', zh: '听说中国银行的服务不错。', py: 'Tīngshuō Zhōngguó Yínháng de fúwù búcuò.' },
-  { vi: 'Em nghĩ phải tháng sau mới chuyển nhà được.', zh: '我觉得下个月才能搬家。', py: 'Wǒ juéde xià ge yuè cái néng bānjiā.' },
-  { vi: 'Nhiều việc thế này ít nhất cần hai tuần mới làm xong.', zh: '这么多事情最少需要两个星期才能做完。', py: 'Zhème duō shìqing zuì shǎo xūyào liǎng ge xīngqī cái néng zuòwán.' }
+  { vi: 'Nghe nói căn nhà đó có kèm một vườn hoa nhỏ.', zh: '听说那个房子带一个小花园。', py: 'Tīngshuō nàge fángzi dài yí ge xiǎo huāyuán.' },
+  { vi: 'Bạn ấy chỉ học một năm mà đã nói tiếng Trung rất giỏi rồi.', zh: '他只学了一年，汉语就说得很好了。', py: 'Tā zhǐ xuéle yì nián, Hànyǔ jiù shuō de hěn hǎo le.' },
+  { vi: 'Ra khỏi nhà đừng quên tắt điều hoà.', zh: '出门的时候别忘了关空调。', py: 'Chūmén de shíhou bié wàngle guān kōngtiáo.' }
 ];

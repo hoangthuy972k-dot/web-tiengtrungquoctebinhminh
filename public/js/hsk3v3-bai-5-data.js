@@ -2490,159 +2490,155 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 Bài 1
 var listenData = [
   {
-    audio: '这几天天天下雨，我都没出去锻炼。明天终于是晴天了，我想去爬山，你跟我一起去吗？好啊，我也很长时间没爬山了。那我们明天早上七点在学校门口见吧，别忘了穿运动鞋。',
+    audio: '这几天总是下雨，今天太阳终于出来了，咱们下午去山上走走吧。',
     questions: [
-      { q: '明天天气怎么样？', opts: ['下雨', '阴天', '晴天'], ans: 2 },
-      { q: '他们明天早上在哪儿见？', opts: ['学校门口', '山下', '车站'], ans: 0 }
+      { q: 'Mấy hôm nay thời tiết thế nào?', opts: ['Hôm nào cũng nắng', 'Lúc nào cũng mưa', 'Lúc nào cũng âm u nhưng không mưa'], ans: 1, exp: '总是下雨 = lúc nào cũng mưa; 总是 = luôn luôn, lúc nào cũng.' },
+      { q: 'Người nói rủ chiều nay đi đâu?', opts: ['Lên núi đi dạo', 'Đi bơi', 'Đi nghe hòa nhạc'], ans: 0, exp: '去山上走走 = lên núi đi dạo; 太阳终于出来了 = cuối cùng mặt trời cũng ló ra.' }
     ]
   },
   {
-    audio: '你看，这是我上个月去西安照的照片。张张都很漂亮！你的拍照水平真高。哪里哪里，我对拍照很感兴趣，有时间就出去照相。下次你去拍照的时候，带我一起去吧。',
+    audio: '我弟弟对音乐一点儿也不感兴趣，他只喜欢踢足球，天天下了课就去踢。',
     questions: [
-      { q: '这些照片是在哪儿照的？', opts: ['北京', '西安', '山上'], ans: 1 },
-      { q: '说话人觉得这些照片怎么样？', opts: ['有点儿难看', '每张都很漂亮', '不太好看'], ans: 1 }
+      { q: 'Em trai người nói thích gì?', opts: ['Âm nhạc', 'Chụp ảnh', 'Đá bóng'], ans: 2, exp: '对音乐一点儿也不感兴趣 = không hề hứng thú với âm nhạc; 只喜欢踢足球 = chỉ thích đá bóng.' },
+      { q: 'Cậu ấy đi đá bóng khi nào?', opts: ['Ngày nào tan học cũng đi ngay', 'Chỉ cuối tuần', 'Mỗi sáng trước khi đi học'], ans: 0, exp: '天天 = ngày nào cũng; 下了课就去踢 = tan học xong là đi đá ngay.' }
     ]
   },
   {
-    audio: '小王，你在干什么呢？我在给妈妈写邮件。她下个月过生日，我想送她一张音乐会的门票。妈妈对音乐很感兴趣吗？是啊，她年轻的时候很喜欢唱歌。',
+    audio: '你的手机怎么又没电了？我给你写了三封邮件，你一封也没收到吗？',
     questions: [
-      { q: '小王在干什么？', opts: ['给妈妈打电话', '给妈妈写邮件', '听音乐会'], ans: 1 },
-      { q: '小王想送妈妈什么？', opts: ['一张门票', '一个手机', '一件大衣'], ans: 0 }
+      { q: 'Điện thoại của người nghe làm sao?', opts: ['Bị mất', 'Lại hết pin', 'Bị hỏng màn hình'], ans: 1, exp: '又没电了 = lại hết pin rồi; 电 = điện, pin.' },
+      { q: 'Người nói đã viết mấy email?', opts: ['Một', 'Hai', 'Ba'], ans: 2, exp: '写了三封邮件 = viết ba email; 封 là lượng từ của thư / email.' }
     ]
   },
   {
-    audio: '昨天下午我去看电影。电影四点多结束，我看完了电影就去超市买东西。走出超市的时候，我发现手机没电了，也没带钱，所以我是走路回家的。到家的时候，已经八点多了。',
+    audio: '我们正在上课，教室里走进来一个年轻人，他说他是我们的新老师。',
     questions: [
-      { q: '电影几点结束？', opts: ['四点多', '七点多', '八点多'], ans: 0 },
-      { q: '说话人是怎么回家的？', opts: ['坐出租车', '坐公交车', '走路'], ans: 2 }
+      { q: 'Ai bước vào lớp?', opts: ['Một ông cụ', 'Một người trẻ tuổi', 'Hai học sinh mới'], ans: 1, exp: '教室里走进来一个年轻人 = trong lớp có một người trẻ đi vào (câu tồn hiện: nơi chốn + động từ + người xuất hiện).' },
+      { q: 'Người đó là ai?', opts: ['Thầy giáo mới', 'Anh trai của một bạn', 'Nhân viên nhà trường'], ans: 0, exp: '他说他是我们的新老师 = anh ấy nói anh ấy là thầy giáo mới của chúng tôi.' }
+    ]
+  },
+  {
+    audio: '哈哈，这张照片是谁给你照的？你站在树后面，我只看见了你的头。',
+    questions: [
+      { q: 'Trong ảnh người kia đứng ở đâu?', opts: ['Giữa hai cái cây', 'Trước cửa nhà', 'Sau cái cây'], ans: 2, exp: '站在树后面 = đứng sau cái cây; 树 = cây.' },
+      { q: 'Vì sao người nói cười?', opts: ['Trong ảnh chỉ thấy cái đầu', 'Người kia mặc áo quá to', 'Ảnh chụp bị tối'], ans: 0, exp: '我只看见了你的头 = tôi chỉ thấy mỗi cái đầu của bạn; 哈哈 = tiếng cười ha ha.' }
+    ]
+  },
+  {
+    audio: '今天的会八点结束，结束了我就去机场接你，你下了飞机先给我打个电话。',
+    questions: [
+      { q: 'Khi nào người nói đi sân bay?', opts: ['Trước 8 giờ', 'Sau khi cuộc họp kết thúc', 'Sáng mai'], ans: 1, exp: '会八点结束，结束了我就去机场 = họp xong (8 giờ) là tôi đi sân bay ngay; 会 = cuộc họp.' },
+      { q: 'Xuống máy bay, người nghe cần làm gì trước?', opts: ['Đi taxi về nhà', 'Đến quầy phục vụ', 'Gọi điện cho người nói'], ans: 2, exp: '下了飞机先给我打个电话 = xuống máy bay thì gọi cho tôi trước.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '对拍照', right: '很感兴趣' },
+  { left: '去', right: '爬山' },
   { left: '锻炼', right: '身体' },
-  { left: '穿上', right: '运动鞋' },
-  { left: '手机', right: '没电了' },
-  { left: '收到了', right: '一封邮件' },
-  { left: '这些照片', right: '张张都很好看' }
+  { left: '收到', right: '一封邮件' },
+  { left: '手机没', right: '电了' },
+  { left: '对音乐', right: '感兴趣' },
+  { left: '穿上', right: '大衣' },
+  { left: '音乐会', right: '结束了' }
 ];
 
 var fillData = [
-  { pre: '他的拍照', blank: '水平', post: '比我高多了。', hint: '(trình độ)', ans: '水平', exp: '水平 = trình độ; 比……高多了 (HSK2 Bài 12). Câu của sách.' },
-  { pre: '我', blank: '收到', post: '了一封学校的邮件。', hint: '(nhận được)', ans: '收到', exp: '收到 + 了 + 一封邮件 — nhận được. Câu của sách.' },
-  { pre: '明天又是星期天，我不知道应该', blank: '干', post: '什么。', hint: '(làm)', ans: '干', exp: '干什么 = làm gì (khẩu ngữ, ≈ 做什么); 又 = lại (lặp theo quy luật). Câu của sách.' },
-  { pre: '我觉得前两张照片好看，第三张有点儿', blank: '难看', post: '，你选前两张吧。', hint: '(xấu)', ans: '难看', exp: '好看 ↔ 难看; 有点儿 + Adj — nhận xét không hài lòng. Câu của sách.' },
-  { pre: '他们的飞机到了吗？——', blank: '终于', post: '到了，晚点了五个多小时。', hint: '(cuối cùng)', ans: '终于', exp: '终于 — chờ rất lâu rồi mới đến. Câu của sách.' },
-  { pre: '为什么我照的照片', blank: '总是', post: '不好看？', hint: '(lúc nào cũng)', ans: '总是', exp: '总是 + 不 + Adj — lần nào cũng vậy. Câu của sách.' },
-  { pre: '我有两张音乐会的票，咱们一起去吧。——我对音乐不', blank: '感兴趣', post: '。家月喜欢，你问问她。', hint: '(hứng thú)', ans: '感兴趣', exp: '对……不感兴趣 — không hứng thú với…; 问问 lặp động từ (HSK2 Bài 3). Câu của sách.' },
-  { pre: '这个星期总是阴天，我很长时间没出去', blank: '锻炼', post: '身体了。', hint: '(rèn luyện)', ans: '锻炼', exp: '锻炼身体 — rèn luyện sức khoẻ; 阴天 (HSK2 Bài 12).' }
+  { pre: '爷爷七十多岁了，每天都去楼下', blank: '锻炼', post: '身体，看上去还很年轻。', hint: '(rèn luyện)', ans: '锻炼', exp: '锻炼身体 = rèn luyện sức khoẻ; ôn 看上去 (bài 1).' },
+  { pre: '找了一个多小时，我', blank: '终于', post: '找到了我的护照。', hint: '(cuối cùng)', ans: '终于', exp: '终于 = cuối cùng (sau khi tìm / chờ rất lâu), thường đi với 了; ôn 护照 (bài 1).' },
+  { pre: '他', blank: '总是', post: '忘了带手机，这个月已经丢了两次了。', hint: '(lúc nào cũng)', ans: '总是', exp: '总是 = lúc nào cũng (việc lặp đi lặp lại); ôn 丢 (bài 1).' },
+  { pre: '这个小区的环境好', blank: '得很', post: '，楼下还有一个大花园。', hint: '(… lắm)', ans: '得很', exp: 'Tính từ + 得很 = rất…, … lắm; không thêm 很 trước tính từ (không nói 很好得很).' },
+  { pre: '我们班的同学', blank: '个个', post: '都喜欢她，因为她又热情又客气。', hint: '(ai cũng)', ans: '个个', exp: '个个都 = người nào cũng; lượng từ lặp + 都; ôn 又……又…… (bài 2).' },
+  { pre: '妈妈给我买的衣服', blank: '件件', post: '都很好看，我都喜欢。', hint: '(cái nào cũng)', ans: '件件', exp: 'Áo quần dùng lượng từ 件 → 件件都 = cái nào cũng.' },
+  { pre: '下课了，教室里', blank: '走出去', post: '很多学生，小明一个人还在看书。', hint: '(đi ra)', ans: '走出去', exp: 'Câu tồn hiện (biến mất): nơi chốn + 走出去 + người; không cần 在 ở đầu câu.' },
+  { pre: '明天你下了班', blank: '就', post: '来我家吧，我做几个菜。', hint: '(thì … ngay)', ans: '就', exp: '……了……就…… = xong việc trước thì làm ngay việc sau: 下了班就来.' },
+  { pre: '你给我写的那封邮件，我昨天晚上才', blank: '收到', post: '。', hint: '(nhận được)', ans: '收到', exp: '收到 = nhận được; ôn 才 = muộn mới… (bài 3).' },
+  { pre: '他的小狗不见了，他', blank: '难过', post: '得很，一天都没吃饭。', hint: '(buồn)', ans: '难过', exp: '难过 = buồn; 难过得很 = buồn lắm; ôn 不见了 (bài 1).' },
+  { pre: '这两双鞋我都喜欢，你帮我', blank: '比较', post: '一下，哪双更好看？', hint: '(so sánh)', ans: '比较', exp: '比较 (động từ) = so sánh; 两双鞋 — giày đi theo đôi nên dùng 双.' },
+  { pre: '外面下着大雨，你一个人出去', blank: '干', post: '什么？', hint: '(làm)', ans: '干', exp: '干什么 = làm gì (khẩu ngữ, giống 做什么).' }
 ];
 
 var sortData = [
-  { words: ['现在', '天气', '好', '得', '很', '！'], ans: '现在天气好得很！', audio: '现在天气好得很！' },
-  { words: ['这些', '照片', '张张', '都', '非常', '好看', '。'], ans: '这些照片张张都非常好看。', audio: '这些照片张张都非常好看。' },
-  { words: ['后边', '走', '过去', '两个', '人', '。'], ans: '后边走过去两个人。', audio: '后边走过去两个人。' },
-  { words: ['树上', '飞来', '了', '几只', '鸟', '。'], ans: '树上飞来了几只鸟。', audio: '树上飞来了几只鸟。' },
-  { words: ['你', '听完', '了', '音乐会', '就', '来', '我家', '吃饭', '。'], ans: '你听完了音乐会就来我家吃饭。', audio: '你听完了音乐会就来我家吃饭。' },
-  { words: ['她', '对', '拍照', '一直', '很', '感兴趣', '。'], ans: '她对拍照一直很感兴趣。', audio: '她对拍照一直很感兴趣。' }
+  { words: ['我', '天天', '下了班', '就', '去', '爬山', '。'], ans: '我天天下了班就去爬山。', audio: '我天天下了班就去爬山。' },
+  { words: ['这个', '星期', '的', '天气', '冷', '得很', '。'], ans: '这个星期的天气冷得很。', audio: '这个星期的天气冷得很。' },
+  { words: ['前面', '走', '过来', '一个', '穿', '大衣', '的', '人', '。'], ans: '前面走过来一个穿大衣的人。', audio: '前面走过来一个穿大衣的人。' },
+  { words: ['你', '吃了药', '就', '早点儿', '睡', '吧', '。'], ans: '你吃了药就早点儿睡吧。', audio: '你吃了药就早点儿睡吧。' },
+  { words: ['我', '对', '照相', '不太', '感兴趣', '。'], ans: '我对照相不太感兴趣。', audio: '我对照相不太感兴趣。' },
+  { words: ['那个', '书店', '里', '的', '书', '本本', '都', '很', '新', '。'], ans: '那个书店里的书本本都很新。', audio: '那个书店里的书本本都很新。' },
+  { words: ['天', '晴', '了', '，', '我们', '去', '外面', '照', '几张', '照片', '吧', '。'], ans: '天晴了，我们去外面照几张照片吧。', audio: '天晴了，我们去外面照几张照片吧。' },
+  { words: ['他', '的', '汉语', '水平', '比', '我', '高', '得多', '。'], ans: '他的汉语水平比我高得多。', audio: '他的汉语水平比我高得多。' }
 ];
 
 var mcData = [
-  { q: '这个星期＿＿是阴天，今天终于晴了。', opts: ['总是', '终于', '已经', '比较'], ans: 0, exp: '总是 = lúc nào cũng, suốt; vế sau 今天终于晴了 cho thấy trước đó toàn trời âm u. 终于 đã dùng ở vế sau.' },
-  { q: '又能＿＿身体，又能照好看的照片。', opts: ['照', '锻炼', '爬', '穿'], ans: 1, exp: '锻炼身体 = rèn luyện thân thể (kết hợp cố định). 照, 爬, 穿 không đi với 身体.' },
-  { q: '我回去穿上运动＿＿，拿上大衣。', opts: ['车', '山', '树', '鞋'], ans: 3, exp: '运动鞋 = giày thể thao; đi với động từ 穿上. 运动车/运动山/运动树 không phải từ.' },
-  { q: '她对拍照一直很＿＿。', opts: ['兴趣', '感兴趣', '难过', '水平'], ans: 1, exp: '对…感兴趣 = có hứng thú với…; 兴趣 là danh từ, không đứng thẳng sau 很. Có thể nói 很有兴趣 hoặc 很感兴趣.' },
-  { q: '啊，手机没＿＿了。', opts: ['电', '太阳', '树', '邮件'], ans: 0, exp: '手机没电了 = điện thoại hết pin. 电 ở đây là điện/pin.' },
-  { q: '我＿＿了你的那封邮件，也看到了你给我照的照片。', opts: ['比较', '收到', '结束', '锻炼'], ans: 1, exp: '收到邮件 = nhận được email. 结束, 锻炼 không mang tân ngữ 邮件.' },
-  { q: '音乐会七点多＿＿，你听完了音乐会就来我家吃饭。', opts: ['终于', '收到', '难过', '结束'], ans: 3, exp: '音乐会…结束 = buổi hòa nhạc kết thúc; vế sau 听完了 khớp với ý kết thúc.' },
-  { q: 'Chọn cách nói đúng: "Bây giờ thời tiết đẹp lắm!"', opts: ['现在天气很好得很！', '现在天气好得很！', '现在天气得很好！', '现在天气好很得！'], ans: 1, exp: 'Tính từ + 得很 = rất… (bổ ngữ mức độ): 好得很. Không thêm 很 trước tính từ.' },
-  { q: 'Chọn câu đúng: "Những quả táo này quả nào cũng rất to."', opts: ['这些苹果都个个很大。', '这些个个苹果都很大。', '这些苹果个个都很大。', '这些苹果很大个个都。'], ans: 2, exp: 'Lượng từ lặp 个个 = cái nào cũng; đứng sau chủ ngữ 这些苹果 và trước 都.' },
-  { q: 'Chọn câu tồn hiện đúng: "Phía trước có rất nhiều xe chạy tới."', opts: ['很多车前面开过来。', '在前面开过来很多车。', '开过来很多车前面。', '前面开过来很多车。'], ans: 3, exp: 'Câu tồn hiện: nơi chốn + động từ + bổ ngữ xu hướng + người/vật xuất hiện: 前面开过来很多车. Không cần 在 ở đầu.' }
+  { q: 'Bạn mở cửa sổ, thấy trời rất đẹp, bạn nói: “Hôm nay trời đẹp lắm!”', opts: ['今天天气很好得很！', '今天天气得很好！', '今天天气好得很！', '今天天气是好得很！'], ans: 2, exp: 'Tính từ + 得很 = … lắm; trước tính từ không thêm 很 hay 是.' },
+  { q: 'Bạn xem ảnh của bạn mình và khen: “Ảnh bạn chụp tấm nào cũng đẹp.”', opts: ['你照的照片都张张很好看。', '你照的照片张张都很好看。', '你照的张照片都很好看。', '你照的照片张都很好看。'], ans: 1, exp: 'Lượng từ lặp 张张 đứng sau chủ ngữ, trước 都: 照片张张都…; không bỏ bớt một chữ 张.' },
+  { q: 'Bạn kể: “Chúng tôi đang chụp ảnh thì từ sau cái cây chạy ra một con chó.”', opts: ['一只狗树后面跑出来。', '树后面跑出来狗一只。', '在树后面跑出来了一只的狗。', '树后面跑出来一只狗。'], ans: 3, exp: 'Câu tồn hiện: nơi chốn + động từ + 出来 + số lượng + người/vật: 树后面跑出来一只狗.' },
+  { q: 'A: “咱们什么时候走？” — B: “Ăn sáng xong là đi ngay.”', opts: ['吃了早饭就走。', '吃了早饭才走。', '吃早饭就了走。', '就吃了早饭走。'], ans: 0, exp: '了……就…… = xong việc này là làm ngay việc kia; 才 mang ý muộn, không hợp với “đi ngay”.' },
+  { q: 'Câu nào SAI?', opts: ['他对画画很感兴趣。', '我妹妹对唱歌很有兴趣。', '他很感兴趣音乐。', '他对拍照不感兴趣。'], ans: 2, exp: 'Phải nói 对 + việc + 感兴趣; không đặt tân ngữ sau 感兴趣 (calque từ “hứng thú âm nhạc”).' },
+  { q: '“这件大衣太长了，我穿上有点儿＿＿，换一件吧。”', opts: ['难过', '难看', '好看', '比较'], ans: 1, exp: '难看 = xấu, khó coi (vẻ ngoài); 难过 = buồn (tâm trạng); 好看 trái ý với 换一件.' },
+  { q: 'A: “你怎么不接电话？” — B: “不好意思，我的手机＿＿。”', opts: ['不有电了', '没电过', '没电了', '电不了'], ans: 2, exp: '手机没电了 = điện thoại hết pin; phủ định 有 luôn là 没, không dùng 不有.' },
+  { q: '“我们等了你一个小时，你＿＿来了！”', opts: ['总是', '终于', '一直', '已经'], ans: 1, exp: '终于 = cuối cùng (sau khi chờ lâu). 总是 = lúc nào cũng, 一直 = suốt, không hợp với việc đến một lần.' },
+  { q: 'Trời vừa hửng nắng, bạn rủ bạn: “Nắng rồi, chúng mình đi leo núi đi!”', opts: ['太阳出来了，咱们去爬山吧！', '太阳出来了，咱们去山爬吧！', '太阳出来了，咱们爬去山吧！', '太阳出来了，咱们去爬山吗！'], ans: 0, exp: '爬山 = leo núi (động từ + tân ngữ); rủ rê dùng 吧, không dùng 吗.' },
+  { q: 'Bạn báo với bạn cùng lớp:', opts: ['我收到了老师的一张邮件。', '我收到老师的了一封邮件。', '我收到了老师的一个封邮件。', '我收到了老师的一封邮件。'], ans: 3, exp: 'Email/thư dùng lượng từ 封; 收到 là một khối, 了 đứng ngay sau 收到.' },
+  { q: '“这家饭馆的菜＿＿好吃，就是有点儿贵。”', opts: ['有点儿', '比较', '比', '一点儿'], ans: 1, exp: '比较 + tính từ = khá…; 有点儿 đi với ý không hài lòng (有点儿贵), 一点儿 đứng sau tính từ.' },
+  { q: 'A: “你和她谁的拍照水平高？” — B đáp:', opts: ['她比我很高。', '她没有我高得很。', '她比我高得多。', '她比我更很高。'], ans: 2, exp: 'Câu 比 không dùng 很; muốn nói “hơn nhiều” thì thêm 得多 sau tính từ.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng tính từ + 得很, lượng từ lặp (天天 / 个个 / 张张), ……了……就…… và từ mới của bài.',
   questions: [
     {
-      q_zh: '白家月觉得爬山怎么样？',
-      q_vn: 'Bạch Gia Nguyệt thấy leo núi thế nào?',
-      hint: '她觉得爬山又能……，又能……',
-      sample: '她觉得爬山又能锻炼身体，又能照好看的照片。',
-      sample_vn: 'Cô ấy thấy leo núi vừa có thể tập thể dục, vừa có thể chụp được ảnh đẹp.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 又……又…… — vừa… vừa… (ôn HSK3 Bài 2).'
+      q_zh: '你对什么感兴趣？',
+      q_vn: 'Bạn có hứng thú với điều gì? Bạn thường làm gì với sở thích đó?',
+      hint: '我对……很感兴趣，天天……',
+      sample: '我对音乐很感兴趣，天天下了课就听一会儿歌。',
+      sample_vn: 'Tôi rất hứng thú với âm nhạc, ngày nào tan học cũng nghe nhạc một lúc.',
+      note: '对 + việc + 感兴趣; 天天 = ngày nào cũng; 下了课就…….'
     },
     {
-      q_zh: '李文要带什么东西？',
-      q_vn: 'Lý Văn định mang theo những gì?',
-      hint: '他要带点儿……和……',
-      sample: '他要带点儿水和吃的。',
-      sample_vn: 'Anh ấy định mang theo một ít nước và đồ ăn.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 吃的 — cụm chữ 的 thay cho danh từ (HSK2 Bài 4).'
+      q_zh: '你怎么锻炼身体？',
+      q_vn: 'Bạn rèn luyện sức khoẻ như thế nào?',
+      hint: '我每天……，……了……就……',
+      sample: '我每天早上去楼下跑步，跑了半个小时就回家吃早饭。',
+      sample_vn: 'Sáng nào tôi cũng chạy bộ dưới nhà, chạy nửa tiếng là về nhà ăn sáng.',
+      note: '锻炼身体; ……了……就…… nối hai việc liền nhau.'
     },
     {
-      q_zh: '白家月喜欢哪张照片？为什么？',
-      q_vn: 'Bạch Gia Nguyệt thích tấm ảnh nào? Vì sao?',
-      hint: '她喜欢王一雪……的那张，因为……',
-      sample: '她喜欢王一雪大笑的那张，因为那张看起来很漂亮。',
-      sample_vn: 'Cô ấy thích tấm Vương Nhất Tuyết đang cười to, vì tấm đó trông rất đẹp.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 看起来 (ôn HSK3 Bài 1); 因为 (HSK2 Bài 4).'
+      q_zh: '你喜欢拍照吗？',
+      q_vn: 'Bạn có thích chụp ảnh không? Ảnh bạn chụp thế nào?',
+      hint: '我很喜欢拍照，但是我的水平……',
+      sample: '我很喜欢拍照，但是我的水平不高，照的照片总是有点儿难看。',
+      sample_vn: 'Tôi rất thích chụp ảnh nhưng trình độ không cao, ảnh chụp lúc nào cũng hơi xấu.',
+      note: '水平 = trình độ; 总是 = lúc nào cũng; 有点儿 + tính từ (ý không hài lòng).'
     },
     {
-      q_zh: '白家月为什么要等一下再照？',
-      q_vn: 'Vì sao Bạch Gia Nguyệt phải đợi một lát rồi mới chụp?',
-      hint: '因为后边……',
-      sample: '因为后边走过去两个人。',
-      sample_vn: 'Vì phía sau có hai người đang đi qua.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. Câu tồn hiện: nơi chốn (后边) + 走过去 + 两个人.'
+      q_zh: '你爬过山吗？那天怎么样？',
+      q_vn: 'Bạn đã từng leo núi chưa? Hôm đó thế nào?',
+      hint: '我跟……爬过一次山，那天……得很，……终于……',
+      sample: '去年我跟朋友爬过一次山，那天热得很，我们爬了三个多小时，终于到山上了。',
+      sample_vn: 'Năm ngoái tôi leo núi một lần với bạn, hôm đó nóng lắm, chúng tôi leo hơn ba tiếng, cuối cùng cũng lên tới đỉnh.',
+      note: 'V + 过 = đã từng; tính từ + 得很; 终于 = cuối cùng.'
     },
     {
-      q_zh: '王一雪觉得白家月的拍照水平怎么样？',
-      q_vn: 'Vương Nhất Tuyết thấy trình độ chụp ảnh của Bạch Gia Nguyệt thế nào?',
-      hint: '她觉得白家月的拍照水平比……',
-      sample: '她觉得白家月的拍照水平比一飞高，照片张张都很漂亮。',
-      sample_vn: 'Chị ấy thấy trình độ chụp ảnh của Gia Nguyệt cao hơn Nhất Phi, tấm ảnh nào cũng đẹp.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 比 (HSK2 Bài 8) + lượng từ lặp lại 张张都.'
-    },
-    {
-      q_zh: '你对什么事情感兴趣？为什么？',
-      q_vn: 'Bạn hứng thú với điều gì nhất? Tại sao?',
-      hint: '我对……很感兴趣，因为……',
-      sample: '我对拍照很感兴趣，因为好看的照片能让我记得很多快乐的事情。',
-      sample_vn: 'Tôi rất hứng thú với chụp ảnh, vì những bức ảnh đẹp giúp tôi nhớ được nhiều chuyện vui.',
-      note: 'Câu hỏi Khởi động của sách. 对……感兴趣; 让 (câu kiêm ngữ – HSK2 Bài 1); 记得 (HSK2 Bài 8).'
-    },
-    {
-      q_zh: '你手机里最满意的照片是哪张？为什么？',
-      q_vn: 'Bức ảnh nào trong điện thoại khiến bạn hài lòng nhất? Vì sao?',
-      hint: '我最喜欢……照的那张，那天……',
-      sample: '我最喜欢我和爸爸妈妈在山上照的那张。那天天气好得很，我们三个人都笑得很高兴。',
-      sample_vn: 'Tôi thích nhất tấm tôi chụp cùng bố mẹ trên núi. Hôm đó thời tiết đẹp lắm, cả ba người chúng tôi đều cười rất vui.',
-      note: 'Câu hỏi Khởi động của sách. 好得很 (ngữ pháp 1); 笑得很高兴 — bổ ngữ trạng thái (HSK2 Bài 7).'
-    },
-    {
-      q_zh: '天气好的时候，你会去爬山吗？为什么？',
-      q_vn: 'Khi trời đẹp, bạn có đi leo núi không? Vì sao?',
-      hint: '会，因为……／不会，我对爬山不感兴趣……',
-      sample: '会。天气好的时候，我经常和朋友去爬山，因为爬山能锻炼身体，还能照很多好看的照片。',
-      sample_vn: 'Có. Khi trời đẹp tôi hay đi leo núi với bạn bè, vì leo núi có thể rèn luyện sức khoẻ, lại còn chụp được nhiều ảnh đẹp.',
-      note: 'Câu hỏi Hoạt động trên lớp của sách. ……的时候 (HSK1 Bài 11); 经常 (HSK2 Bài 11) + 锻炼身体.'
+      q_zh: '你什么时候觉得很难过？',
+      q_vn: 'Khi nào bạn cảm thấy rất buồn?',
+      hint: '……的时候，我难过得很……',
+      sample: '我的好朋友回国的时候，我难过了好几天，现在我们还天天写邮件。',
+      sample_vn: 'Lúc bạn thân về nước, tôi buồn mấy ngày liền, bây giờ chúng tôi vẫn ngày nào cũng viết email cho nhau.',
+      note: '难过 = buồn; 天天 = ngày nào cũng; 写邮件 = viết email.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Bây giờ thời tiết đẹp lắm! Chúng mình đi leo núi, em thấy thế nào?', zh: '现在天气好得很！我们去爬山怎么样？', py: 'Xiànzài tiānqì hǎo de hěn! Wǒmen qù pá shān zěnmeyàng?' },
-  { vi: 'Ai đã chụp những bức ảnh này cho chị vậy? Tấm nào cũng rất đẹp.', zh: '这些照片是谁给您照的？张张都非常好看。', py: 'Zhèxiē zhàopiàn shì shéi gěi nín zhào de? Zhāngzhāng dōu fēicháng hǎokàn.' },
-  { vi: 'Những bức ảnh như thế này mới đẹp.', zh: '这样的照片才好看。', py: 'Zhèyàng de zhàopiàn cái hǎokàn.' },
-  { vi: 'Đợi một lát, phía sau có hai người đang đi qua.', zh: '等一下，后边走过去两个人。', py: 'Děng yíxià, hòubian zǒu guòqu liǎng ge rén.' },
-  { vi: 'Nghe xong buổi hoà nhạc thì em đến nhà chị ăn cơm nhé.', zh: '你听完了音乐会就来我家吃饭。', py: 'Nǐ tīngwánle yīnyuèhuì jiù lái wǒ jiā chī fàn.' }
+  { vi: 'Lúc nào cô ấy cũng mặc chiếc áo khoác đen kia.', zh: '她总是穿那件黑大衣。', py: 'Tā zǒngshì chuān nà jiàn hēi dàyī.' },
+  { vi: 'Tan học xong tôi đi siêu thị ngay.', zh: '我下了课就去超市。', py: 'Wǒ xiàle kè jiù qù chāoshì.' },
+  { vi: 'Trên núi có rất nhiều cây, đẹp lắm.', zh: '山上有很多树，漂亮得很。', py: 'Shān shang yǒu hěn duō shù, piàoliang de hěn.' },
+  { vi: 'Trong phòng chạy ra một con mèo nhỏ.', zh: '房间里跑出来一只小猫。', py: 'Fángjiān li pǎo chūlai yì zhī xiǎo māo.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Cả tuần nay trời đều âm u, cuối cùng hôm nay cũng hửng nắng rồi.', zh: '这个星期总是阴天，今天终于晴了。', py: 'Zhège xīngqī zǒngshì yīntiān, jīntiān zhōngyú qíng le.' },
-  { vi: 'Em ấy luôn hứng thú với nhiếp ảnh, thường xuyên chụp ảnh cho chị.', zh: '她对拍照一直很感兴趣，经常给我照相。', py: 'Tā duì pāizhào yìzhí hěn gǎn xìngqù, jīngcháng gěi wǒ zhàoxiàng.' },
-  { vi: 'Trên cây có mấy con chim bay tới, vậy chị sẽ ngắm chúng.', zh: '树上飞来了几只鸟，我就看它们吧。', py: 'Shù shang fēiláile jǐ zhī niǎo, wǒ jiù kàn tāmen ba.' },
-  { vi: 'Chị đã nói với Nhất Phi rằng trình độ chụp ảnh của em cao hơn cô ấy, cô ấy buồn lắm.', zh: '我已经告诉了一飞，你的拍照水平比她高，她难过得很。', py: 'Wǒ yǐjīng gàosule Yīfēi, nǐ de pāizhào shuǐpíng bǐ tā gāo, tā nánguò de hěn.' },
-  { vi: 'Chị không cần nhìn em đâu, muốn làm gì cũng được.', zh: '你不用看着我，想干什么都可以。', py: 'Nǐ búyòng kànzhe wǒ, xiǎng gàn shénme dōu kěyǐ.' }
+  { vi: 'Tôi không có hứng thú với chụp ảnh, nhưng em gái tôi rất thích.', zh: '我对拍照没有兴趣，但是我妹妹很喜欢。', py: 'Wǒ duì pāizhào méiyǒu xìngqù, dànshì wǒ mèimei hěn xǐhuan.' },
+  { vi: 'Buổi hòa nhạc chín giờ mới kết thúc.', zh: '音乐会九点才结束。', py: 'Yīnyuèhuì jiǔ diǎn cái jiéshù.' },
+  { vi: 'Người nhà anh ấy ai cũng cao.', zh: '他家的人个个都很高。', py: 'Tā jiā de rén gègè dōu hěn gāo.' }
 ];

@@ -42,8 +42,49 @@ const CAP = {
       ['高高兴兴', 6], ['舒舒服服', 6], ['睡一觉', 6], ['没错', 7], ['出来', 9], ['跳舞跳得', 14],
     ],
   },
+  hsk3v3: {
+    duoi: ['hsk1v3', 'hsk2v3'], soTu: 1, soBai: 18,
+    ten: [
+      ['王姐', 2], ['小李', 4], ['姓李', 4], ['北京南站', 6], ['刘长春', 9], ['老张', 11], ['英国', 13],
+      ['李老师', 10], ['李叔叔', 18], ['小文', 18],
+    ],
+    // Dang tu trong bai khoa HSK3 la bien the / tach ra / ghep cua tu da hoc: [dang, bai]
+    them: [
+      ['看起来', 1], ['行李箱', 1], ['什么样', 1], ['黑', 1], ['走出', 1], ['绿茶', 2], ['喜不喜欢', 2],
+      ['放', 3], ['纸箱', 3], ['起来', 5], ['步', 8], ['泳', 8], ['发低烧', 8], ['话', 8], ['老', 9], ['奥运会', 9],
+      ['出', 11], ['起', 12], ['今晚', 13], ['画板', 13], ['红茶', 13], ['红', 13], ['老城', 15], ['老街', 15], ['绿', 15],
+      ['身上', 16], ['熊猫', 16], ['大猫熊', 16], ['觉', 16], ['熊猫馆', 16], ['中', 10], ['西边', 17],
+      ['春节', 18], ['假', 18], ['会儿', 18], ['父母', 18],
+    ],
+  },
+  // YCT (thieu nhi): cap rieng, khong co cap duoi; so 一..十 la tu vung bai 1 (khong mo 零百千万两)
+  yct: {
+    duoi: [], soTu: 99, soBai: 11,
+    ten: [['乐乐', 2], ['甜甜', 2], ['明明', 2]],
+    them: [['不谢', 8], ['早', 10]],
+  },
+  // HSK1 cu (HSK标准教程1): cap rieng, khong co cap duoi; so dem tu bai 5 (100以内的数字)
+  hsk1: {
+    duoi: [], soTu: 5,
+    ten: [['李月', 3], ['李', 3], ['王方', 10], ['谢朋', 10], ['北京', 11], ['王', 12], ['大卫', 13], ['张', 14]],
+    them: [['不谢', 2], ['哪国', 4]],
+  },
 };
 
+// So bai cua cap (mac dinh 15; cap nao khac thi khai bao soBai trong CAP)
+const SB = (c) => (CAP[c] && CAP[c].soBai) || 15;
+// HSK 4 (3.0) — 新HSK教程4上+4下, 20 bai; cap duoi = toan bo hsk1v3 + hsk2v3 + hsk3v3
+CAP.hsk4v3 = {
+  duoi: ['hsk1v3', 'hsk2v3', 'hsk3v3'], soTu: 1, soBai: 20,
+  // ten rieng trong bai khoa: [ten, bai gioi thieu]
+  ten: [
+    ['杨哥', 7], ['乐哥', 8], ['林静静', 12], ['林静', 12], ['周力', 13], ['刘小明', 13], ['徐前', 14], ['赵女士', 18], ['刘小雪', 19],
+  ],
+  // dang tu trong bai khoa HSK4 la ghep cua tu da hoc: [dang, bai]
+  them: [
+    ['租房', 2],
+  ],
+};
 const cap = process.argv[2];
 if (!CAP[cap]) { console.log('Dung: node tools/kiem-qt1.js <' + Object.keys(CAP).join('|') + '> [bai|a-b] [--phu]'); process.exit(2); }
 
@@ -56,7 +97,7 @@ function napBai(c0, n) {
   return c.__D;
 }
 const BAI = {};
-for (let n = 1; n <= 15; n++) BAI[n] = napBai(cap, n);
+for (let n = 1; n <= SB(cap); n++) BAI[n] = napBai(cap, n);
 
 // tu cua 1 muc vocab: "做饭" -> ["做饭"]; tach theo ky tu khong phai chu Han
 function tuCuaMuc(v) { return (String(v.zh || '').match(HAN) || []); }
@@ -64,7 +105,7 @@ function tuCuaMuc(v) { return (String(v.zh || '').match(HAN) || []); }
 // Nen: tu + ten + so cua cac cap duoi (toan bo)
 const NEN = new Set();
 CAP[cap].duoi.forEach((d) => {
-  for (let n = 1; n <= 15; n++) napBai(d, n).vocab.forEach((v) => tuCuaMuc(v).forEach((w) => NEN.add(w)));
+  for (let n = 1; n <= SB(d); n++) napBai(d, n).vocab.forEach((v) => tuCuaMuc(v).forEach((w) => NEN.add(w)));
   CAP[d].ten.concat(CAP[d].them || []).forEach(([t]) => NEN.add(t));
   SO.split('').forEach((ch) => NEN.add(ch));
 });
@@ -78,7 +119,7 @@ function tapChoPhep(n) {
 }
 function tuBaiSau(n) {
   const s = new Set();
-  for (let i = n + 1; i <= 15; i++) BAI[i].vocab.forEach((v) => tuCuaMuc(v).forEach((w) => { if (w.length >= 2) s.add(w); }));
+  for (let i = n + 1; i <= SB(cap); i++) BAI[i].vocab.forEach((v) => tuCuaMuc(v).forEach((w) => { if (w.length >= 2) s.add(w); }));
   return s;
 }
 
@@ -123,6 +164,11 @@ function chuoiCuaBai(D) {
   ((D.speak && D.speak.questions) || []).forEach((q, i) => {
     ['q_zh', 'hint', 'sample', 'note'].forEach((k) => add('speak' + (i + 1) + '.' + k, q[k]));
   });
+  // Luyen noi 3 tang (YCT): t1.models / t2.drills / t3.tasks
+  const sp = D.speak || {};
+  ((sp.t1 && sp.t1.models) || []).forEach((m, i) => add('noi1.' + (i + 1), m.zh));
+  ((sp.t2 && sp.t2.drills) || []).forEach((d, i) => [d.frame].concat(d.options || [], d.samples || []).forEach((s) => add('noi2.' + (i + 1), s)));
+  ((sp.t3 && sp.t3.tasks) || []).forEach((t, i) => (t.structure || []).concat([t.sample, t.note, t.guide]).forEach((s) => add('noi3.' + (i + 1), s)));
   return out;
 }
 
@@ -164,7 +210,7 @@ function doPhu(n) {
   return thieu;
 }
 
-const arg = process.argv[3] && !/^--/.test(process.argv[3]) ? process.argv[3] : '1-15';
+const arg = process.argv[3] && !/^--/.test(process.argv[3]) ? process.argv[3] : '1-' + SB(cap);
 const [a, b] = arg.split('-').map(Number);
 const phu = process.argv.includes('--phu');
 let tong = 0;

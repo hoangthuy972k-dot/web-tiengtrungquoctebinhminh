@@ -2404,159 +2404,152 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 bài trước
 var listenData = [
   {
-    audio: '我家养了一只小狗，已经两岁多了。第一次看见它的时候，它又脏又小。现在它变得又干净又可爱，一会儿在我脚边睡觉，一会儿跟着我跑来跑去。周末我常常带它去公园玩。',
+    audio: '我姐姐的女儿今年三岁，一会儿唱歌，一会儿跳舞，可爱极了。',
     questions: [
-      { q: '说话人家的小狗多大了？', opts: ['一岁多', '两岁多', '三岁多'], ans: 1 },
-      { q: '周末说话人常常带小狗去哪儿？', opts: ['动物园', '医院', '公园'], ans: 2 }
+      { q: 'Cháu gái của chị người nói thế nào?', opts: ['Ngồi yên một chỗ', 'Lúc thì hát, lúc thì nhảy', 'Chỉ thích ngủ'], ans: 1, exp: '一会儿唱歌，一会儿跳舞 = lúc thì hát, lúc thì nhảy; 可爱极了 = cực kỳ đáng yêu.' }
     ]
   },
   {
-    audio: '小明，你在看什么书？一本关于野生动物的书。我听说全世界只有中国有野生大熊猫，是真的吗？是真的。其实大熊猫也可以吃肉，但是它们最喜爱吃的还是竹子。',
+    audio: '我们公司的小李每天比别人早来半个小时，先把办公室打扫干净。',
     questions: [
-      { q: '小明在看什么书？', opts: ['关于大熊猫的书', '关于野生动物的书', '关于中国历史的书'], ans: 1 },
-      { q: '关于大熊猫，可以知道什么？', opts: ['只吃肉', '不能吃肉', '最喜爱吃竹子'], ans: 2 }
+      { q: 'Tiểu Lý đến công ty thế nào?', opts: ['Muộn hơn mọi người nửa tiếng', 'Đúng giờ như mọi người', 'Sớm hơn mọi người nửa tiếng'], ans: 2, exp: '比别人早来半个小时 = đến sớm hơn người khác nửa tiếng; 早 đứng trước động từ.' },
+      { q: 'Anh ấy đến sớm để làm gì?', opts: ['Dọn dẹp văn phòng', 'Ăn sáng', 'Gọi điện cho khách'], ans: 0, exp: '把办公室打扫干净 = dọn văn phòng cho sạch (ôn 把 + bổ ngữ kết quả).' }
     ]
   },
   {
-    audio: '一般来说，我每天早上七点起床，晚上十一点睡觉。今天是周末，所以我比平时晚起了两个小时。吃完早饭以后，我去动物园看了半天大熊猫。',
+    audio: '小孩子一般来说吃饱了就想睡觉，你别担心。',
     questions: [
-      { q: '说话人今天几点起床？', opts: ['七点', '九点', '十一点'], ans: 1 },
-      { q: '说话人今天去哪儿了？', opts: ['动物园', '公园', '超市'], ans: 0 }
+      { q: 'Người nói muốn nói gì?', opts: ['Trẻ con không nên ăn quá no', 'Trẻ con ăn no thường buồn ngủ', 'Trẻ con thường ngủ rất ít'], ans: 1, exp: '一般来说 = nói chung, thông thường; 吃饱了就想睡觉 = ăn no là muốn ngủ.' }
     ]
   },
   {
-    audio: '王经理，关于下个月的会议，我还有一些问题想问您。好，你说吧。这次来开会的人比上次多了二十个，我们需要换一个大一点儿的会议室吗？需要，你明天去办吧。',
+    audio: '周末我想带孩子去动物园，听说那儿新来了两只大熊猫。',
     questions: [
-      { q: '这次来开会的人比上次怎么样？', opts: ['少了二十个', '多了二十个', '多了十二个'], ans: 1 },
-      { q: '王经理让他明天做什么？', opts: ['换一个大一点儿的会议室', '去开会', '给经理打电话'], ans: 0 }
+      { q: 'Cuối tuần người nói định đi đâu?', opts: ['Công viên', 'Nhà bà', 'Vườn bách thú'], ans: 2, exp: '去动物园 = đi sở thú; 周末 = cuối tuần.' },
+      { q: 'Vì sao lại đi đó?', opts: ['Mới có hai con gấu trúc đến', 'Vé vào cửa miễn phí', 'Con muốn xem chim'], ans: 0, exp: '新来了两只大熊猫 = mới có hai con gấu trúc đến (câu tồn hiện, ôn bài 5).' }
+    ]
+  },
+  {
+    audio: '我找了半天手机，后来才发现，其实它就在我手里。',
+    questions: [
+      { q: 'Cuối cùng điện thoại ở đâu?', opts: ['Trong túi áo', 'Trên bàn', 'Trong tay người nói'], ans: 2, exp: '其实它就在我手里 = thực ra nó ở ngay trong tay tôi; 找了半天 = tìm mãi.' }
+    ]
+  },
+  {
+    audio: '这次考试我比上次多得了十分，妈妈听了特别高兴。',
+    questions: [
+      { q: 'Kết quả lần thi này thế nào?', opts: ['Hơn lần trước 10 điểm', 'Kém lần trước 10 điểm', 'Bằng lần trước'], ans: 0, exp: 'A 比 B 多 + V + số lượng: 比上次多得了十分 = được nhiều hơn lần trước 10 điểm.' },
+      { q: 'Mẹ cảm thấy thế nào?', opts: ['Hơi lo', 'Rất vui', 'Không tin'], ans: 1, exp: '妈妈听了特别高兴 = mẹ nghe xong rất vui.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '照顾', right: '小猫' },
-  { left: '张着', right: '嘴' },
+  { left: '照顾', right: '病人' },
+  { left: '张', right: '嘴' },
   { left: '野生', right: '动物' },
   { left: '中国的', right: '国宝' },
-  { left: '它一会儿在你脚边睡觉', right: '一会儿在你身上爬' },
-  { left: '冬天比夏天', right: '早关门一个小时' }
+  { left: '洗', right: '脸' },
+  { left: '大熊猫爱吃', right: '竹子' },
+  { left: '周末去', right: '动物园' }
 ];
 
 var fillData = [
-  { pre: '小猫看到妈妈后马上', blank: '张', post: '开嘴要吃的。', hint: '(mở, há)', ans: '张', exp: '张开嘴 = há miệng ra; 马上 (ôn HSK3 Bài 2). Câu của sách.' },
-  { pre: '这个电影介绍了怎么', blank: '照顾', post: '离开爸爸妈妈的小动物。', hint: '(chăm sóc)', ans: '照顾', exp: '照顾 + người / con vật = chăm sóc; 离开 (ôn HSK3 Bài 11), 介绍 (ôn HSK2 Bài 1). Câu của sách.' },
-  { pre: '这只大熊猫没吃', blank: '饱', post: '，你看它还在找吃的东西呢。', hint: '(no)', ans: '饱', exp: '吃饱 — bổ ngữ kết quả, phủ định 没吃饱; 在 + V + 呢 (ôn HSK1 Bài 11). Câu của sách.' },
-  { pre: '这个饭馆的桌子这么', blank: '脏', post: '，碗也不干净，咱们换一家吧。', hint: '(bẩn)', ans: '脏', exp: '脏 ↔ 干净 (ôn HSK3 Bài 4); 碗 (ôn HSK3 Bài 2), 换 (ôn HSK3 Bài 3). Câu của sách.' },
-  { pre: '这只鸟好像飞不起来，而且吃东西的时候看起来也很', blank: '奇怪', post: '。', hint: '(kỳ lạ)', ans: '奇怪', exp: '看起来很奇怪 = trông rất lạ; 看起来 (ôn HSK3 Bài 1), 鸟 (ôn HSK2 Bài 15). Câu của sách.' },
-  { pre: '我的手机不见了，我找了', blank: '半天', post: '也没找到。', hint: '(mãi, cả buổi)', ans: '半天', exp: 'V + 了 + 半天 = làm gì rất lâu; 不见了 (ôn HSK3 Bài 1). Câu của sách.' },
-  { pre: '我忘了名字，是一本', blank: '关于', post: '动物的书。', hint: '(về)', ans: '关于', exp: '关于 + N + 的 + N làm định ngữ: sách về động vật; 忘 (ôn HSK2 Bài 6). Câu của sách.' },
-  { pre: '这只小猫在小区里好几天了，是不是找不到家了？——我', blank: '认得', post: '它，这是我邻居家的小猫。', hint: '(nhận ra)', ans: '认得', exp: '认得 + con vật / người = nhận ra; 邻居 (ôn HSK3 Bài 13), 小区 (ôn HSK3 Bài 3). Câu của sách.' }
+  { pre: '我一进门，小狗就跑到我', blank: '脚', post: '边，跟着我走来走去。', hint: '(chân)', ans: '脚', exp: '脚边 = bên chân; 一……就…… (ôn HSK2) = vừa… là….' },
+  { pre: '孩子在外面玩了一下午，衣服都', blank: '脏', post: '了。', hint: '(bẩn)', ans: '脏', exp: '脏了 = bị bẩn rồi (了 chỉ biến đổi); trái nghĩa 干净.' },
+  { pre: '你去上班吧，我来', blank: '照顾', post: '妈妈，你放心。', hint: '(chăm sóc)', ans: '照顾', exp: '照顾 + người = chăm sóc; ôn 放心 (bài 13).' },
+  { pre: '这个字我', blank: '认得', post: '，可是不会写。', hint: '(nhận ra, biết mặt chữ)', ans: '认得', exp: '认得 + chữ / người / đường = nhận ra, biết; khác 会写 (biết viết).' },
+  { pre: '我在门口等了', blank: '半天', post: '，他才来。', hint: '(mãi, rất lâu)', ans: '半天', exp: 'V + 了 + 半天 = làm gì rất lâu; ôn 才 (muộn — bài 3).' },
+  { pre: '他今天怎么这么', blank: '奇怪', post: '，见了谁都不说话？', hint: '(lạ)', ans: '奇怪', exp: '奇怪 = lạ, khác thường; ôn 谁都 (bài 2).' },
+  { pre: '', blank: '关于', post: '这次旅游的事情，我们明天开会再说。', hint: '(về)', ans: '关于', exp: '关于 + chủ đề đứng ĐẦU câu, rồi mới đến 我们 + động từ.' },
+  { pre: '', blank: '一般来说', post: '，南方的冬天没有北方那么冷。', hint: '(nói chung)', ans: '一般来说', exp: '一般来说 = nói chung, thường thì; đứng đầu câu, có dấu phẩy sau; ôn 南方/北方 (bài 13).' },
+  { pre: '今天我比平时', blank: '早', post: '起了一个小时，有时间吃早饭了。', hint: '(sớm)', ans: '早', exp: 'A 比 B + 早 + V + thời lượng: 比平时早起了一个小时.' },
+  { pre: '你看那只小猫', blank: '张', post: '着嘴，是不是饿了？', hint: '(há, mở)', ans: '张', exp: '张嘴 = há miệng; 张着 = đang há (V + 着 chỉ trạng thái).' },
+  { pre: '这个电影大人和孩子都很', blank: '喜爱', post: '，我们家已经看了好几遍了。', hint: '(yêu thích)', ans: '喜爱', exp: '喜爱 = yêu thích (trang trọng hơn 喜欢); ôn 遍 (bài 10).' },
+  { pre: '我', blank: '其实', post: '不太喜欢吃肉，可是大家都吃，我就吃了一点儿。', hint: '(thực ra)', ans: '其实', exp: '其实 = thực ra, nói điều thật trong lòng khác với bề ngoài.' }
 ];
 
 var sortData = [
-  { words: ['它', '一会儿', '在你脚边', '睡觉', '，', '一会儿', '在你身上', '爬', '。'], ans: '它一会儿在你脚边睡觉，一会儿在你身上爬。', audio: '它一会儿在你脚边睡觉，一会儿在你身上爬。' },
-  { words: ['关于', '这个', '问题', '，', '我得', '慢慢', '给你', '讲', '。'], ans: '关于这个问题，我得慢慢给你讲。', audio: '关于这个问题，我得慢慢给你讲。' },
-  { words: ['一般来说', '，', '熊猫', '每天', '要睡', '很多次', '觉', '。'], ans: '一般来说，熊猫每天要睡很多次觉。', audio: '一般来说，熊猫每天要睡很多次觉。' },
-  { words: ['冬天', '比', '夏天', '早', '关门', '一个小时', '。'], ans: '冬天比夏天早关门一个小时。', audio: '冬天比夏天早关门一个小时。' },
-  { words: ['你们', '把', '它', '照顾', '得', '真好', '。'], ans: '你们把它照顾得真好。', audio: '你们把它照顾得真好。' },
-  { words: ['全世界', '只有', '中国', '有', '野生', '大熊猫', '。'], ans: '全世界只有中国有野生大熊猫。', audio: '全世界只有中国有野生大熊猫。' }
+  { words: ['他', '打电话', '的时候', '，', '一会儿', '站起来', '，', '一会儿', '坐下来', '。'], ans: '他打电话的时候，一会儿站起来，一会儿坐下来。', audio: '他打电话的时候，一会儿站起来，一会儿坐下来。' },
+  { words: ['关于', '明天', '的', '考试', '，', '老师', '说', '了', '什么', '？'], ans: '关于明天的考试，老师说了什么？', audio: '关于明天的考试，老师说了什么？' },
+  { words: ['这家', '超市', '一般来说', '晚上', '十点', '关门', '。'], ans: '这家超市一般来说晚上十点关门。', audio: '这家超市一般来说晚上十点关门。', alt: ['一般来说这家超市晚上十点关门。'] },
+  { words: ['妹妹', '比', '我', '多', '吃', '了', '两块', '蛋糕', '。'], ans: '妹妹比我多吃了两块蛋糕。', audio: '妹妹比我多吃了两块蛋糕。' },
+  { words: ['那只', '大熊猫', '半天', '没', '动', '，', '好像', '睡着', '了', '。'], ans: '那只大熊猫半天没动，好像睡着了。', audio: '那只大熊猫半天没动，好像睡着了。' },
+  { words: ['这个', '动物园', '里', '有', '很多', '野生', '动物', '。'], ans: '这个动物园里有很多野生动物。', audio: '这个动物园里有很多野生动物。' },
+  { words: ['他', '把', '脸', '洗', '干净', '了', '。'], ans: '他把脸洗干净了。', audio: '他把脸洗干净了。' },
+  { words: ['我', '身边', '的', '朋友', '都', '很', '喜欢', '小动物', '。'], ans: '我身边的朋友都很喜欢小动物。', audio: '我身边的朋友都很喜欢小动物。' }
 ];
 
 var mcData = [
-  { q: '第一天看见它的时候，它又＿＿又小。', opts: ['脏', '饱', '全', '奇怪'], ans: 0, exp: '又脏又小 — hai tính từ tả con vật lúc mới thấy. 饱, 全 không tả ngoại hình.' },
-  { q: '咱们没时间＿＿，还是别养了。', opts: ['认得', '照顾', '喜爱', '张'], ans: 1, exp: '没时间照顾 = không có thời gian chăm sóc (thú nuôi).' },
-  { q: '大熊猫这个名字很＿＿，它们跟猫有什么关系？', opts: ['可爱', '野生', '奇怪', '脏'], ans: 2, exp: '名字很奇怪 = tên rất lạ, vì vậy mới hỏi "nó liên quan gì đến mèo".' },
-  { q: '＿＿世界只有中国有野生大熊猫。', opts: ['半', '大', '身', '全'], ans: 3, exp: '全世界 = toàn thế giới. 大, 半 không đi với 世界 ở đây.' },
-  { q: '它好像还没吃＿＿，站起来张着嘴找吃的呢。', opts: ['饱', '脏', '全', '半天'], ans: 0, exp: '吃饱 = ăn no (bổ ngữ kết quả); chưa ăn no nên đứng dậy tìm đồ ăn.' },
-  { q: '它身边那只熊猫＿＿没动，是不是在睡觉呢？', opts: ['周末', '半天', '一会儿', '其实'], ans: 1, exp: '半天没动 = mãi không động đậy (rất lâu, có ý phóng đại), nên mới đoán là nó đang ngủ.' },
-  { q: '你怎么又去动物园了？——＿＿我也不想去，但是妈妈希望我和弟弟一起去。', opts: ['关于', '一般', '其实', '好像'], ans: 2, exp: '其实 = thực ra, nói điều thật khác với điều người khác nghĩ.' },
-  { q: 'Chọn câu đúng: "Dạo này thời tiết lúc thì lạnh, lúc thì nóng."', opts: ['最近天气冷一会儿，热一会儿。', '最近天气一会儿冷，就一会儿热。', '最近天气一会儿冷，也一会儿热。', '最近天气一会儿冷，一会儿热。'], ans: 3, exp: '一会儿A，一会儿B = lúc thì A, lúc thì B. Hai vế không cần 就/也.' },
-  { q: 'Chọn câu đúng: "Về thời gian thi đấu, ngày mai tôi nhất định sẽ báo cho mọi người."', opts: ['比赛的时间关于，我明天一定告诉大家。', '关于比赛的时间，我明天一定告诉大家。', '我关于比赛的时间，明天一定告诉大家。', '关于比赛的时间，明天一定我告诉大家。'], ans: 1, exp: '关于 + đối tượng đặt đầu câu, trước chủ ngữ: 关于比赛的时间，我….' },
-  { q: 'Chọn câu đúng: "Anh trai ăn nhiều hơn em trai ba cái sủi cảo."', opts: ['哥哥比弟弟吃了多三个饺子。', '哥哥多吃了比弟弟三个饺子。', '哥哥比弟弟多吃了三个饺子。', '哥哥比弟弟很多吃了三个饺子。'], ans: 2, exp: 'A 比 B 多 + V + số lượng: 哥哥比弟弟多吃了三个饺子. 多 đứng trước động từ.' }
+  { q: 'Bạn kể: “Thời tiết hôm nay lúc thì nắng, lúc thì mưa to.”', opts: ['今天天气一会儿晴，也一会儿下大雨。', '今天天气晴一会儿，下大雨一会儿。', '今天天气一会儿晴，一会儿下大雨。', '今天天气一会儿晴，就一会儿下大雨。'], ans: 2, exp: '一会儿 A，一会儿 B = lúc thì A, lúc thì B; 一会儿 đứng TRƯỚC A/B, vế sau không thêm 也/就.' },
+  { q: 'A: “你弟弟在家做什么呢？” — B:', opts: ['他看电视一会儿，玩手机一会儿，就是不写作业。', '他一会儿看电视，一会儿玩手机，就是不写作业。', '他一会儿看电视，又一会儿玩手机，就是不写作业。', '他一会儿一会儿看电视玩手机，就是不写作业。'], ans: 1, exp: '一会儿 + V，一会儿 + V = lúc làm cái này, lúc làm cái kia; không đặt 一会儿 sau tân ngữ như tiếng Việt “xem tivi một lúc”.' },
+  { q: 'Bạn muốn nói: “Về chuyện chuyển nhà, cuối tuần chúng ta nói tiếp.”', opts: ['搬家的事情关于，我们周末再说。', '根据搬家的事情，我们周末再说。', '我们周末再说，搬家的事情关于。', '关于搬家的事情，我们周末再说。'], ans: 3, exp: '关于 + chủ đề đứng đầu câu (关于搬家的事情，…); 根据 = căn cứ vào, không dùng để nêu chủ đề.' },
+  { q: '“我想买一本＿＿野生动物的书，送给女儿。”', opts: ['关于', '根据', '对', '跟'], ans: 0, exp: '关于 + N + 的 + N: 关于野生动物的书 = sách về động vật hoang dã.' },
+  { q: 'A: “这种小狗好养吗？” — B:', opts: ['这种小狗来说一般很好养，不太需要照顾。', '一般来说的这种小狗很好养，不太需要照顾。', '这种小狗一般来说很好养，不太需要照顾。', '这种小狗一般来说好养很，不太需要照顾。'], ans: 2, exp: '一般来说 là cụm cố định (không tách 来说 ra trước), đứng đầu câu hoặc sau chủ ngữ; 很 đứng trước tính từ.' },
+  { q: 'Bạn muốn nói: “Hôm nay tôi uống nhiều hơn hôm qua hai cốc nước.”', opts: ['我今天比昨天喝了多两杯水。', '我今天多喝了比昨天两杯水。', '我今天比昨天很多喝了两杯水。', '我今天比昨天多喝了两杯水。'], ans: 3, exp: 'A 比 B + 多 + V + số lượng: 多 đứng TRƯỚC động từ, số lượng sau động từ; không dùng 很 trong câu 比.' },
+  { q: 'A: “小明是跟你一起来公司的吗？” — B: “不是，他比我＿＿。”', opts: ['一年晚来了', '很晚来了一年', '晚来了一年', '来了晚一年'], ans: 2, exp: 'A 比 B + 晚 + V + 了 + thời lượng: 比我晚来了一年 = đến muộn hơn tôi một năm.' },
+  { q: '“大家都以为他是老师，＿＿他也是学生。”', opts: ['其实', '一般', '关于', '全'], ans: 0, exp: '以为……，其实…… = tưởng là…, thực ra…; ôn 以为 (bài 1).' },
+  { q: 'Câu nào SAI?', opts: ['这只小猫可爱极了。', '他的脸红红的。', '周末我在动物园看大熊猫了半天。', '我们全家都喜欢大熊猫。'], ans: 2, exp: 'Có tân ngữ thì thời lượng đứng giữa: 看了半天大熊猫, không nói 看大熊猫了半天.' },
+  { q: 'A: “你出差的时候，谁＿＿你的小狗？” — B: “我邻居。”', opts: ['照顾', '认得', '喜爱', '张'], ans: 0, exp: '照顾小狗 = chăm sóc chó con; 认得 = nhận ra, 喜爱 = yêu thích.' },
+  { q: 'Bạn muốn nói: “Con mèo này giống như con của chúng tôi vậy.”', opts: ['这只小猫好像一样我们的孩子。', '这只小猫好像我们的孩子一样。', '这只小猫一样好像我们的孩子。', '这只小猫是好像我们的孩子。'], ans: 1, exp: '好像 + N + 一样 = giống như…; 一样 đứng cuối, không thêm 是 trước 好像.' },
+  { q: 'Bạn ăn xong mà mẹ còn gắp thêm, bạn nói:', opts: ['妈妈，我饱吃了，不吃了。', '妈妈，我吃得饱了，不吃了。', '妈妈，我很吃饱了，不吃了。', '妈妈，我吃饱了，不吃了。'], ans: 3, exp: '吃饱了 = ăn no rồi (V + bổ ngữ kết quả 饱 + 了); không đảo 饱吃, không thêm 得 hay 很.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 一会儿……一会儿……, 关于, 一般来说, A 比 B 早/晚/多/少 + V + số lượng và từ mới (照顾, 可爱, 周末…).',
   questions: [
     {
-      q_zh: '服务员第一天看见这只小猫的时候，它是什么样的？',
-      q_vn: 'Ngày đầu tiên nhân viên nhìn thấy chú mèo con, nó trông thế nào?',
-      hint: '它又……又……',
-      sample: '服务员第一天看见它的时候，它又脏又小。现在它变得又干净又漂亮了。',
-      sample_vn: 'Ngày đầu nhân viên nhìn thấy nó, nó vừa bẩn vừa nhỏ. Bây giờ nó đã trở nên vừa sạch vừa đẹp.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 又……又…… (ôn HSK3 Bài 2); 变得 + Adj (变 – ôn HSK3 Bài 12).'
+      q_zh: '你养过小动物吗？你是怎么照顾它的？',
+      q_vn: 'Bạn đã từng nuôi con vật nào chưa? Bạn chăm sóc nó thế nào?',
+      hint: '我养过一只……，它……。我每天……',
+      sample: '我养过一只小花猫，它的眼睛大大的，特别可爱。我每天给它吃的，有时候还带它出去走走。',
+      sample_vn: 'Tôi từng nuôi một chú mèo tam thể nhỏ, mắt to tròn, rất đáng yêu. Ngày nào tôi cũng cho nó ăn, thỉnh thoảng còn dắt nó ra ngoài dạo.',
+      note: 'V + 过 = đã từng; tính từ lặp 大大的 tả vẻ ngoài.'
     },
     {
-      q_zh: '大熊猫为什么只吃竹子不吃肉？',
-      q_vn: 'Vì sao gấu trúc chỉ ăn trúc mà không ăn thịt?',
-      hint: '它们跟人一样，也……，但是对……',
-      sample: '大熊猫跟人一样，也可以吃肉，但是它们对肉不感兴趣，所以只吃竹子。',
-      sample_vn: 'Gấu trúc cũng giống người, có thể ăn thịt, nhưng chúng không hứng thú với thịt, nên chỉ ăn trúc.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 对……感兴趣 (ôn HSK3 Bài 5); 跟……一样 (ôn HSK3 Bài 4).'
+      q_zh: '你周末一般都做什么？',
+      q_vn: 'Thường thì cuối tuần bạn hay làm gì?',
+      hint: '周末我一般……，有时候……',
+      sample: '周末我一般比平时晚起一两个小时，下午去超市买东西，有时候跟朋友去看电影。',
+      sample_vn: 'Thường thì cuối tuần tôi dậy muộn hơn ngày thường một hai tiếng, chiều đi siêu thị mua đồ, thỉnh thoảng đi xem phim với bạn.',
+      note: '一般 + V = thường thì; 比平时晚起 + thời lượng (A 比 B 晚 + V + số lượng).'
     },
     {
-      q_zh: '大熊猫为什么是中国的国宝？',
-      q_vn: 'Vì sao gấu trúc là quốc bảo của Trung Quốc?',
-      hint: '因为全世界只有……',
-      sample: '因为全世界只有中国有野生大熊猫，中国是大熊猫的家。',
-      sample_vn: 'Vì trên toàn thế giới chỉ Trung Quốc có gấu trúc hoang dã, Trung Quốc là quê hương của gấu trúc.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 全、野生、国宝 của bài này; 因为 (ôn HSK2 Bài 4).'
+      q_zh: '最近你看过什么有意思的书或者电影？是关于什么的？',
+      q_vn: 'Gần đây bạn đã xem cuốn sách hay bộ phim nào thú vị? Nó nói về điều gì?',
+      hint: '我最近看了一个关于……的电影/一本关于……的书，……',
+      sample: '我最近看了一个关于大熊猫的电影，讲的是一只小熊猫怎么慢慢长大的，大人和孩子都喜欢看。',
+      sample_vn: 'Gần đây tôi xem một bộ phim về gấu trúc, kể chuyện một chú gấu trúc nhỏ dần dần lớn lên thế nào, người lớn và trẻ con đều thích xem.',
+      note: '关于 + N + 的 + 电影/书; ôn 或者 (bài 11).'
     },
     {
-      q_zh: '刘小明觉得大熊猫的生活怎么样？为什么？',
-      q_vn: 'Lưu Tiểu Minh thấy cuộc sống của gấu trúc thế nào? Vì sao?',
-      hint: '他觉得……。一般来说，熊猫每天……，除了……以外，……',
-      sample: '他觉得大熊猫的生活真舒服。一般来说，熊猫每天要睡很多次觉，除了睡觉以外，很多时间都在吃东西。',
-      sample_vn: 'Cậu ấy thấy cuộc sống của gấu trúc thật thoải mái. Nói chung mỗi ngày gấu trúc ngủ rất nhiều giấc, ngoài ngủ ra thì phần lớn thời gian là ăn.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. 一般来说 (ngữ pháp 3); 除了……以外 (ôn HSK3 Bài 4); 舒服 (ôn HSK2 Bài 6).'
+      q_zh: '你每天比家里人早起还是晚起？早多少，晚多少？',
+      q_vn: 'Mỗi ngày bạn dậy sớm hơn hay muộn hơn người nhà? Sớm/muộn hơn bao lâu?',
+      hint: '我每天比……早/晚起……，因为……',
+      sample: '我每天比我妈妈晚起半个小时，因为她要给全家做早饭，我洗个脸、吃个饭就可以走了。',
+      sample_vn: 'Mỗi ngày tôi dậy muộn hơn mẹ nửa tiếng, vì mẹ phải nấu bữa sáng cho cả nhà, tôi rửa mặt, ăn cơm xong là đi được.',
+      note: 'A 比 B + 早/晚 + V + thời lượng; 全家 = cả nhà.'
     },
     {
-      q_zh: '北京动物园夏天和冬天的关门时间有什么不同？',
-      q_vn: 'Giờ đóng cửa mùa hè và mùa đông của vườn thú Bắc Kinh khác nhau thế nào?',
-      hint: '冬天比夏天……，所以冬天比夏天早……',
-      sample: '冬天比夏天游客少，所以冬天比夏天早关门一个小时。夏天晚上七点关门，冬天晚上六点就关门了。',
-      sample_vn: 'Mùa đông ít khách hơn mùa hè, nên mùa đông đóng cửa sớm hơn mùa hè một tiếng. Mùa hè 7 giờ tối đóng cửa, mùa đông 6 giờ tối đã đóng cửa rồi.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. Câu so sánh (11): A 比 B + 早 + V + thời lượng (ngữ pháp 4).'
-    },
-    {
-      q_zh: '你喜欢去动物园吗？你在动物园最喜欢看什么动物？',
-      q_vn: 'Bạn có thích đi sở thú không? Ở sở thú bạn thích xem con vật nào nhất?',
-      hint: '我很喜欢……。在动物园我最喜欢看……，因为……',
-      sample: '我很喜欢去动物园。在动物园我最喜欢看大熊猫，因为大熊猫特别可爱，一会儿爬上去，一会儿跳下来。',
-      sample_vn: 'Tôi rất thích đi sở thú. Ở sở thú tôi thích xem gấu trúc nhất, vì gấu trúc rất đáng yêu, lúc thì trèo lên, lúc thì nhảy xuống.',
-      note: 'Câu hỏi Khởi động của sách. 一会儿……，一会儿…… (ngữ pháp 1); 特别 (ôn HSK3 Bài 4).'
-    },
-    {
-      q_zh: '你养过什么小动物？给同学介绍一下你养过的动物。',
-      q_vn: 'Bạn từng nuôi con vật nhỏ nào? Hãy giới thiệu với các bạn con vật bạn từng nuôi.',
-      hint: '我养过一只……。它的耳朵……，眼睛……。我每天照顾它，……',
-      sample: '我养过一只小狗。它的耳朵大大的，眼睛黑黑的，非常可爱。我每天照顾它，它也认得我。周末我常常带它去公园玩。',
-      sample_vn: 'Tôi từng nuôi một chú chó con. Tai nó to to, mắt đen láy, rất đáng yêu. Ngày nào tôi cũng chăm sóc nó, nó cũng nhận ra tôi. Cuối tuần tôi hay dẫn nó ra công viên chơi.',
-      note: 'Câu hỏi Khởi động của sách. 照顾、认得、周末 của bài này; 耳朵 (ôn HSK3 Bài 8), 眼睛 (ôn HSK2 Bài 14).'
-    },
-    {
-      q_zh: '选一种你喜欢的动物，说说它长什么样，一般生活在什么地方。',
-      q_vn: 'Chọn một loài vật bạn thích, nói xem nó trông thế nào, thường sống ở đâu.',
-      hint: '我喜欢……。它身上……。一般来说，……生活在……',
-      sample: '我喜欢大熊猫。大熊猫身上只有黑色和白色，眼睛和耳朵都是黑的。一般来说，野生大熊猫生活在山里，每天吃很多竹子，除了吃东西以外，就是睡觉。',
-      sample_vn: 'Tôi thích gấu trúc. Trên người gấu trúc chỉ có màu đen và trắng, mắt và tai đều màu đen. Nói chung, gấu trúc hoang dã sống trong núi, mỗi ngày ăn rất nhiều tre, ngoài ăn ra thì là ngủ.',
-      note: 'Hoạt động trên lớp của sách (giới thiệu một loài động vật). 一般来说, 野生, 竹子 của bài này; 长什么样 (ôn HSK3 Bài 1).'
+      q_zh: '你身边有没有一个人，一会儿想做这个，一会儿想做那个？',
+      q_vn: 'Bên cạnh bạn có ai lúc thì muốn làm việc này, lúc thì muốn làm việc kia không?',
+      hint: '我……就是这样，一会儿……，一会儿……',
+      sample: '我弟弟就是这样，一会儿说想学画画，一会儿说想学打球，最后什么都没学。',
+      sample_vn: 'Em trai tôi đúng là như vậy, lúc thì nói muốn học vẽ, lúc thì nói muốn học chơi bóng, cuối cùng chẳng học gì cả.',
+      note: '一会儿……，一会儿……; ôn 什么都没 (bài 2), 最后 (bài 14).'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Nó lúc thì ngủ cạnh chân bạn, lúc thì trèo lên người bạn.', zh: '它一会儿在你脚边睡觉，一会儿在你身上爬。', py: 'Tā yíhuìr zài nǐ jiǎo biān shuìjiào, yíhuìr zài nǐ shēn shang pá.' },
-  { vi: 'Về vấn đề này, mẹ phải từ từ kể cho con nghe.', zh: '关于这个问题，我得慢慢给你讲。', py: 'Guānyú zhège wèntí, wǒ děi mànmàn gěi nǐ jiǎng.' },
-  { vi: 'Nói chung, gấu trúc mỗi ngày phải ngủ rất nhiều giấc.', zh: '一般来说，熊猫每天要睡很多次觉。', py: 'Yìbān lái shuō, xióngmāo měitiān yào shuì hěn duō cì jiào.' },
-  { vi: 'Mùa đông du khách ít hơn mùa hè, nên cũng đóng cửa sớm hơn ngày thường một tiếng.', zh: '冬天比夏天游客少，所以也比平时早关门一个小时。', py: 'Dōngtiān bǐ xiàtiān yóukè shǎo, suǒyǐ yě bǐ píngshí zǎo guānmén yí ge xiǎoshí.' },
-  { vi: 'Trên toàn thế giới chỉ có Trung Quốc có gấu trúc hoang dã.', zh: '全世界只有中国有野生大熊猫。', py: 'Quán shìjiè zhǐyǒu Zhōngguó yǒu yěshēng dàxióngmāo.' }
+  { vi: 'Đứa bé này lúc thì đòi uống nước, lúc thì đòi ra ngoài chơi, chẳng muốn ngủ chút nào.', zh: '这个孩子一会儿要喝水，一会儿要出去玩，一点儿也不想睡觉。', py: 'Zhège háizi yíhuìr yào hē shuǐ, yíhuìr yào chūqu wán, yìdiǎnr yě bù xiǎng shuìjiào.' },
+  { vi: 'Về vấn đề này, tôi cũng không rõ lắm, bạn hỏi người khác xem.', zh: '关于这个问题，我也不太清楚，你问问别人吧。', py: 'Guānyú zhège wèntí, wǒ yě bú tài qīngchu, nǐ wènwen biérén ba.' },
+  { vi: 'Nói chung, người lớn ngủ ít hơn trẻ con.', zh: '大人一般来说比孩子睡得少。', py: 'Dàren yìbān lái shuō bǐ háizi shuì de shǎo.' },
+  { vi: 'Hôm nay tôi đến muộn hơn mọi người mười phút.', zh: '今天我比大家晚到了十分钟。', py: 'Jīntiān wǒ bǐ dàjiā wǎn dàole shí fēnzhōng.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Các cô chăm sóc nó tốt thật đấy.', zh: '你们把它照顾得真好。', py: 'Nǐmen bǎ tā zhàogù de zhēn hǎo.' },
-  { vi: 'Chú gấu trúc này lúc thì trèo lên, lúc thì nhảy xuống, đáng yêu cực kỳ!', zh: '这只大熊猫一会儿爬上去，一会儿跳下来，可爱极了！', py: 'Zhè zhī dàxióngmāo yíhuìr pá shàngqu, yíhuìr tiào xiàlai, kě\'ài jí le!' },
-  { vi: 'Chúng cũng giống người, có thể ăn thịt, nhưng không hứng thú với thịt.', zh: '它们跟人一样，也可以吃肉，但是对肉不感兴趣。', py: 'Tāmen gēn rén yíyàng, yě kěyǐ chī ròu, dànshì duì ròu bù gǎn xìngqù.' },
-  { vi: 'Có vẻ nó vẫn chưa no, đang đứng dậy há miệng tìm đồ ăn kìa.', zh: '它好像还没吃饱，站起来张着嘴找吃的呢。', py: 'Tā hǎoxiàng hái méi chībǎo, zhàn qǐlai zhāngzhe zuǐ zhǎo chī de ne.' },
-  { vi: 'Thứ mà người lớn và trẻ em yêu thích nhất vẫn là gấu trúc.', zh: '大人和孩子最喜爱的还是大熊猫。', py: 'Dàren hé háizi zuì xǐ\'ài de háishi dàxióngmāo.' }
+  { vi: 'Thực ra chuyện này rất đơn giản, bạn đừng nghĩ nó khó quá.', zh: '其实这件事很简单，你别想得太难了。', py: 'Qíshí zhè jiàn shì hěn jiǎndān, nǐ bié xiǎng de tài nán le.' },
+  { vi: 'Ông tôi sống một mình, cuối tuần nào chúng tôi cũng về chăm sóc ông.', zh: '我爷爷一个人住，每个周末我们都回去照顾他。', py: 'Wǒ yéye yí ge rén zhù, měi ge zhōumò wǒmen dōu huíqu zhàogù tā.' },
+  { vi: 'Vườn thú này có hơn một trăm loại động vật.', zh: '这个动物园有一百多种动物。', py: 'Zhège dòngwùyuán yǒu yìbǎi duō zhǒng dòngwù.' }
 ];

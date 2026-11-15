@@ -2489,159 +2489,153 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2
 var listenData = [
   {
-    audio: '小文，你看，站在门口的那个人是你哥哥吗？不是，我哥哥没有那么高，他身高一米七五，头发也比那个人短。是吗？我还以为是你哥哥呢，他们看上去很像。',
+    audio: '我还以为你今天不来了，你怎么这么早就到了？',
     questions: [
-      { q: '小文的哥哥身高多少？', opts: ['一米七', '一米七五', '一米八'], ans: 1 },
-      { q: '站在门口的人是小文的哥哥吗？', opts: ['是', '不是', '不知道'], ans: 1 }
+      { q: 'Người nói đã nghĩ gì?', opts: ['Người kia sẽ đến muộn', 'Hôm nay người kia không đến', 'Người kia đã về nhà'], ans: 1, exp: '以为 = tưởng (mà thực ra không phải): 以为你今天不来了 = tưởng hôm nay bạn không đến nữa.' }
     ]
   },
   {
-    audio: '服务员，你好！我的护照不见了，你们能帮我找一找吗？别着急，您是在哪儿发现护照不见的？在机场的咖啡店，我在那儿喝了一杯咖啡，出来就发现护照不见了。好的，请您写一下您的名字和手机号码，我们找到了就给您打电话。',
+    audio: '我妹妹今年十二岁，身高已经有一米六了，看上去比我还高。',
     questions: [
-      { q: '说话人什么东西不见了？', opts: ['手机', '护照', '行李箱'], ans: 1 },
-      { q: '服务员让他写什么？', opts: ['名字和手机号码', '名字和护照号码', '机票号码'], ans: 0 }
+      { q: 'Em gái người nói cao bao nhiêu?', opts: ['1m50', '1m70', '1m60'], ans: 2, exp: '身高有一米六 = cao 1m60; 一米六 = 1 mét 6.' },
+      { q: 'Trông em gái so với người nói thế nào?', opts: ['Còn cao hơn người nói', 'Thấp hơn người nói', 'Cao bằng người nói'], ans: 0, exp: '看上去比我还高 = trông còn cao hơn tôi; 看上去 = trông có vẻ.' }
     ]
   },
   {
-    audio: '明天我要去机场接王老师，可是我没见过她，她长什么样？她看上去很年轻，个子不高，很瘦，是短头发。她应该会穿一件红色的衣服。好的，那我带着她的照片去吧。',
+    audio: '先生，您的护照是不是丢了？我们在服务台旁边发现了一本护照，上面的照片很像您。',
     questions: [
-      { q: '王老师长什么样？', opts: ['长头发，很瘦', '短头发，个子不高', '短头发，个子很高'], ans: 1 },
-      { q: '明天说话人要做什么？', opts: ['去机场接人', '坐飞机去北京', '去王老师家'], ans: 0 }
+      { q: 'Cuốn hộ chiếu được tìm thấy ở đâu?', opts: ['Trong va li', 'Bên cạnh quầy phục vụ', 'Trên máy bay'], ans: 1, exp: '在服务台旁边发现了一本护照 = phát hiện một cuốn hộ chiếu cạnh quầy phục vụ.' },
+      { q: 'Vì sao nhân viên nghĩ đó là hộ chiếu của ông ấy?', opts: ['Ảnh trong đó giống ông ấy', 'Trên đó có số điện thoại của ông ấy', 'Ông ấy đã gọi điện báo mất'], ans: 0, exp: '上面的照片很像您 = ảnh trên đó rất giống ông.' }
     ]
   },
   {
-    audio: '上个星期我和朋友去西安旅游。到了酒店，我发现手机不见了，非常着急。服务台的服务员帮助我给出租车公司打了电话，他们说手机在出租车上。晚上，出租车公司的人就送来了我的手机。',
+    audio: '你的箱子应该还在机场，我们打个电话问问吧。',
     questions: [
-      { q: '说话人的什么东西不见了？', opts: ['护照', '手机', '行李箱'], ans: 1 },
-      { q: '手机是谁送来的？', opts: ['服务台的服务员', '他的朋友', '出租车公司的人'], ans: 2 }
+      { q: 'Người nói khuyên làm gì?', opts: ['Quay lại sân bay ngay', 'Mua một chiếc va li mới', 'Gọi điện hỏi trước'], ans: 2, exp: '打个电话问问 = gọi điện hỏi thử; 应该还在机场 = chắc là vẫn ở sân bay.' }
+    ]
+  },
+  {
+    audio: '照片上那个站在中间的短头发男孩子就是我弟弟，他看上去很瘦。',
+    questions: [
+      { q: 'Em trai người nói đứng ở đâu trong ảnh?', opts: ['Ở giữa', 'Bên trái', 'Phía sau'], ans: 0, exp: '站在中间 = đứng ở giữa.' },
+      { q: 'Em trai trông thế nào?', opts: ['Tóc dài, rất gầy', 'Tóc ngắn, hơi béo', 'Tóc ngắn, rất gầy'], ans: 2, exp: '短头发 = tóc ngắn; 看上去很瘦 = trông rất gầy.' }
+    ]
+  },
+  {
+    audio: '明天你去火车站接一下王老师吧，她带的行李很多，你帮助她拿一下。',
+    questions: [
+      { q: 'Ngày mai người nghe phải làm gì?', opts: ['Tiễn cô Vương ra sân bay', 'Đón cô Vương ở ga tàu hoả', 'Gọi điện cho cô Vương'], ans: 1, exp: '去火车站接王老师 = ra ga tàu đón cô Vương; 接 = đón.' },
+      { q: 'Vì sao cần giúp cô Vương?', opts: ['Cô ấy không biết đường', 'Cô ấy bị ốm', 'Cô ấy mang nhiều hành lý'], ans: 2, exp: '她带的行李很多 = hành lý cô ấy mang rất nhiều.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '看上去', right: '很年轻' },
-  { left: '电话', right: '号码' },
-  { left: '别', right: '着急' },
-  { left: '拿着护照', right: '去服务台问问' },
-  { left: '穿着黑衣服的', right: '短头发的年轻人' },
-  { left: '身高有', right: '一米八' }
+  { left: '去机场接', right: '朋友' },
+  { left: '他身高', right: '一米七五' },
+  { left: '短', right: '头发' },
+  { left: '去服务台', right: '问一下' },
+  { left: '出门别忘了带', right: '护照' },
+  { left: '手机', right: '号码' },
+  { left: '你们别', right: '着急' }
 ];
 
 var fillData = [
-  { pre: '服务台', blank: '应该', post: '在前面，我们过去问问吧。', hint: '(chắc là)', ans: '应该', exp: '应该 ở đây diễn đạt phỏng đoán: "chắc là".' },
-  { pre: '他已经到了，我们快出去', blank: '接', post: '他吧。', hint: '(đón)', ans: '接', exp: '出去 + 接 + người — ra ngoài đón ai.' },
-  { pre: '我的护照不见了，是不是在机场', blank: '丢', post: '了？', hint: '(làm mất)', ans: '丢', exp: '丢了 — bị mất; 是不是……了？ hỏi phỏng đoán.' },
-  { pre: '我', blank: '以为', post: '这个是你，你们长得太像了。', hint: '(cứ tưởng)', ans: '以为', exp: '以为 — tưởng vậy nhưng thực tế không phải.' },
-  { pre: '到了酒店，我', blank: '发现', post: '手机不见了。', hint: '(phát hiện)', ans: '发现', exp: '发现 + cả một mệnh đề (手机不见了).' },
-  { pre: '你的行李箱找到了？太好了！谢谢您的', blank: '帮助', post: '。', hint: '(sự giúp đỡ)', ans: '帮助', exp: '帮助 dùng như danh từ sau 的; không dùng 帮忙 ở đây.' },
-  { pre: '那个穿着黑衣服的人是王老师吗？——', blank: '好像', post: '是吧，我也不知道。', hint: '(hình như)', ans: '好像', exp: '好像是吧 — trả lời không chắc chắn.' },
-  { pre: '我妹妹今年十四岁，', blank: '身高', post: '已经有一米六了。', hint: '(chiều cao)', ans: '身高', exp: '身高 + 有 + số đo; ôn 已经……了.' }
+  { pre: '我还', blank: '以为', post: '你是老师呢，你也是学生啊？', hint: '(cứ tưởng)', ans: '以为', exp: '以为 = tưởng (nhưng thực tế không phải); 还以为……呢 hay dùng khi phát hiện mình nghĩ sai.' },
+  { pre: '你女儿长得真', blank: '像', post: '你，我一看就知道是你女儿。', hint: '(giống)', ans: '像', exp: '长得像 + người = trông giống ai; ôn 一……就…… (HSK2).' },
+  { pre: '他每天只吃一点儿饭，所以很', blank: '瘦', post: '。', hint: '(gầy)', ans: '瘦', exp: '瘦 = gầy; ôn 因为/所以 (HSK2 bài 4).' },
+  { pre: '她已经五十岁了，但是看上去还很', blank: '年轻', post: '。', hint: '(trẻ)', ans: '年轻', exp: '看上去 + 很 + tính từ: 看上去很年轻 = trông rất trẻ.' },
+  { pre: '学习汉语，每天多听多说很', blank: '重要', post: '。', hint: '(quan trọng)', ans: '重要', exp: '很重要 = rất quan trọng; 重要 là tính từ.' },
+  { pre: '离火车开还有二十分钟，大家别太', blank: '着急', post: '。', hint: '(sốt ruột)', ans: '着急', exp: '别太着急 = đừng quá lo; ôn 离 (HSK2 bài 9).' },
+  { pre: '到了教室，我', blank: '发现', post: '汉语书没带来。', hint: '(phát hiện)', ans: '发现', exp: '发现 + cả một mệnh đề: 发现汉语书没带来 = phát hiện quên mang sách tiếng Trung.' },
+  { pre: '“小明在哪儿？” — “他', blank: '好像', post: '回家了，我给他打个电话问问。”', hint: '(hình như)', ans: '好像', exp: '好像 = hình như (không chắc chắn) — nên mới gọi điện hỏi lại.' },
+  { pre: '这是我小时候的', blank: '照片', post: '，你看我跟现在像不像？', hint: '(ảnh)', ans: '照片', exp: '照片 = ảnh chụp; 像不像 = có giống không.' },
+  { pre: '车上人太多了，我们', blank: '站', post: '了一个多小时。', hint: '(đứng)', ans: '站', exp: '站 = đứng; 站了一个多小时 = đứng hơn một tiếng (ôn bổ ngữ thời lượng).' },
+  { pre: '我的书包怎么', blank: '不见', post: '了？是不是谁拿错了？', hint: '(không thấy đâu)', ans: '不见', exp: '不见了 = biến mất, không thấy đâu; luôn đi với 了.' },
+  { pre: '你的行李太多了，我', blank: '帮助', post: '你拿一个吧。', hint: '(giúp)', ans: '帮助', exp: '帮助 + người + làm gì = giúp ai làm gì.' }
 ];
 
 var sortData = [
-  { words: ['他们', '看上去', '有点儿', '像', '。'], ans: '他们看上去有点儿像。', audio: '他们看上去有点儿像。' },
-  { words: ['我', '好像', '在哪儿', '看到过', '这个', '箱子', '。'], ans: '我好像在哪儿看到过这个箱子。', audio: '我好像在哪儿看到过这个箱子。' },
-  { words: ['那个', '穿着', '黑衣服', '的', '年轻人', '就是', '李文', '。'], ans: '那个穿着黑衣服的年轻人就是李文。', audio: '那个穿着黑衣服的年轻人就是李文。' },
-  { words: ['别', '着急', '，', '我们', '去', '服务台', '问问', '吧', '。'], ans: '别着急，我们去服务台问问吧。', audio: '别着急，我们去服务台问问吧。' },
-  { words: ['她', '看起来', '比', '照片上', '年轻', '。'], ans: '她看起来比照片上年轻。', audio: '她看起来比照片上年轻。' },
-  { words: ['他们', '应该', '快', '出来', '了', '。'], ans: '他们应该快出来了。', audio: '他们应该快出来了。' }
+  { words: ['你', '妈妈', '看上去', '真', '年轻', '。'], ans: '你妈妈看上去真年轻。', audio: '你妈妈看上去真年轻。' },
+  { words: ['我', '好像', '在哪儿', '听过', '这个', '名字', '。'], ans: '我好像在哪儿听过这个名字。', audio: '我好像在哪儿听过这个名字。' },
+  { words: ['我们', '去', '喝', '点儿', '什么', '吧', '。'], ans: '我们去喝点儿什么吧。', audio: '我们去喝点儿什么吧。' },
+  { words: ['我', '那件', '新买的', '黑', '衣服', '不见了', '。'], ans: '我那件新买的黑衣服不见了。', audio: '我那件新买的黑衣服不见了。' },
+  { words: ['照片上', '站', '在', '中间', '的', '人', '是', '我', '爸爸', '。'], ans: '照片上站在中间的人是我爸爸。', audio: '照片上站在中间的人是我爸爸。' },
+  { words: ['飞机', '十点', '到', '，', '他们', '应该', '已经', '下', '飞机', '了', '。'], ans: '飞机十点到，他们应该已经下飞机了。', audio: '飞机十点到，他们应该已经下飞机了。' },
+  { words: ['箱子', '里', '的', '东西', '都', '很', '重要', '。'], ans: '箱子里的东西都很重要。', audio: '箱子里的东西都很重要。' },
+  { words: ['我', '哥哥', '的', '头发', '比', '我', '短', '。'], ans: '我哥哥的头发比我短。', audio: '我哥哥的头发比我短。' }
 ];
 
 var mcData = [
-  { q: '是一个黑色的箱子，上面写着我的名字和电话＿＿。', opts: ['号码', '护照', '照片', '身高'], ans: 0, exp: '电话号码 = số điện thoại (cụm cố định). 护照, 照片, 身高 không đi được với 电话.' },
-  { q: '＿＿着急，我们去服务台问问吧。(đừng)', opts: ['不', '没', '别', '很'], ans: 2, exp: '别 + động từ/tính từ = đừng…, dùng để khuyên. 不着急 chỉ trần thuật "không vội"; 没 phủ định việc đã xảy ra.' },
-  { q: '他的＿＿有一米八，比他哥哥高。', opts: ['头发', '身高', '号码', '中间'], ans: 1, exp: '身高有一米八 = cao 1m80; vế sau "比他哥哥高" nói về chiều cao. 头发 là tóc, 号码 là con số.' },
-  { q: '我＿＿他是中国人，可是他说他是泰国人。', opts: ['以为', '好像', '应该', '发现'], ans: 0, exp: '以为 = tưởng (nhưng thực tế không phải). Vế sau 可是他说他是泰国人 cho thấy nghĩ sai, nên không dùng 发现 hay 好像.' },
-  { q: '坐飞机别忘了＿＿护照。', opts: ['接', '站', '带', '丢'], ans: 2, exp: '带 + đồ vật = mang theo: 带护照. 接 là đón, 站 là đứng, 丢 là đánh mất.' },
-  { q: '飞机早就到了，他们＿＿快出来了。', opts: ['以为', '帮助', '发现', '应该'], ans: 3, exp: '应该 ở đây = chắc là (suy đoán có lý do): máy bay đến lâu rồi nên chắc họ sắp ra. 以为 là "tưởng nhầm".' },
-  { q: '我们一出来就看见了王老师的姐姐，她看起来比照片上＿＿。', opts: ['重要', '年轻', '着急', '中间'], ans: 1, exp: '看起来比照片上 + tính từ: so sánh dáng vẻ bên ngoài → 年轻 (trẻ). 重要, 着急 không dùng để tả ngoại hình.' },
-  { q: 'Chọn cách nói đúng: "Những món này trông đều rất ngon."', opts: ['这些菜看起来都很好吃。', '这些菜看上来都很好吃。', '这些菜都很好吃看起来。', '这些菜看都很好吃。'], ans: 0, exp: '看起来 = trông có vẻ, đứng sau chủ ngữ, trước phần nhận xét. Không có cách nói 看上来; 看起来 không đặt cuối câu.' },
-  { q: '"我好像在哪儿见过他。" — 「哪儿」 ở đây có nghĩa là gì?', opts: ['Ở đâu? (đang hỏi)', 'Ở đâu đó (không rõ chỗ nào)', 'Ở chỗ này', 'Ở khắp mọi nơi'], ans: 1, exp: '哪儿 trong câu trần thuật (好像在哪儿见过) là phiếm chỉ = ở đâu đó, không phải câu hỏi.' },
-  { q: 'Chọn trật tự định ngữ đúng: "Chiếc áo trắng mới mua của tôi"', opts: ['我新买的白色的那衣服件', '白色的衣服我那件新买的', '我那件新买的衣服白色的', '我那件新买的白色的衣服'], ans: 3, exp: 'Trật tự định ngữ: 我 (sở hữu) + 那件 (chỉ thị + lượng từ) + 新买的 + 白色的 + 衣服. Lượng từ 件 phải đứng ngay sau 那.' }
+  { q: 'Bạn gặp một người lạ trông rất quen, bạn nói: “Hình như tôi đã gặp bạn ở đâu đó.”', opts: ['我好像在哪儿见过你。', '我好像见过你在哪儿。', '我好像在哪儿见你过。', '我在哪儿好像见过你吗？'], ans: 0, exp: '哪儿 ở đây = ở đâu đó (không hỏi), nên không thêm 吗; 在哪儿 đứng trước động từ, 过 ngay sau động từ.' },
+  { q: 'A: “你的行李箱是什么样的？” — B đáp:', opts: ['是红色的一个大箱子。', '是一个大箱子红色的。', '是一个红色的大箱子。', '是一个红色大的箱子。'], ans: 2, exp: 'Thứ tự định ngữ: 一个 (số + lượng) → 红色的 → 大 → 箱子; số lượng từ đứng trước, tính từ đơn âm 大 sát danh từ.' },
+  { q: '“这个菜是你做的？我＿是你妈妈做的呢！” (cứ tưởng)', opts: ['还以为', '还觉得', '还发现', '还好像'], ans: 0, exp: '还以为……呢 = cứ tưởng (nhưng sai). 觉得 = cảm thấy (ý kiến), 发现 = phát hiện điều đúng.' },
+  { q: '“下午我要去火车站＿我妈妈，她从西安来看我。”', opts: ['带', '接', '站', '丢'], ans: 1, exp: '去火车站接 + người = ra ga đón ai. 带 = mang / dẫn đi, 站 = đứng, 丢 = làm mất.' },
+  { q: 'Câu nào SAI?', opts: ['他看起来很累。', '这个箱子看上去很大。', '你看起来有点儿不舒服。', '他看上来很高兴。'], ans: 3, exp: 'Chỉ có 看上去 hoặc 看起来, không có 看上来.' },
+  { q: 'A: “天中怎么还没来？” — B: “他家离这儿很远，＿还在路上。”', opts: ['应该', '以为', '发现', '帮助'], ans: 0, exp: '应该 ở đây = chắc là (đoán có lý do: nhà xa nên chắc còn đang trên đường).' },
+  { q: 'Bạn chỉ vào người anh trong ảnh: “Người trẻ cao cao đứng ở giữa kia là anh tôi.”', opts: ['那个站在中间年轻人的高个子是我哥哥。', '那个站在中间的高个子年轻人是我哥哥。', '那个年轻人站在中间的高个子是我哥哥。', '站在中间那个的高个子年轻人是我哥哥。'], ans: 1, exp: 'Định ngữ nhiều tầng: 那个 → cụm động từ (站在中间的) → đặc điểm (高个子) → danh từ (年轻人).' },
+  { q: 'Bạn tìm mãi không thấy điện thoại, bạn nói:', opts: ['我的手机没见了。', '我的手机不见。', '我不见我的手机了。', '我的手机不见了。'], ans: 3, exp: '不见了 = không thấy đâu nữa, luôn có 了; không dùng 没见了, và chủ ngữ là đồ vật bị mất.' },
+  { q: 'A: “你的护照呢？” — B: “不好意思，好像＿。”', opts: ['丢在出租车上了', '丢了在出租车上', '出租车上丢在了', '在出租车丢上了'], ans: 0, exp: 'V + 在 + nơi chốn + 了: 丢在出租车上了 = làm rơi trên taxi; 了 đứng cuối, không chen giữa.' },
+  { q: 'Bạn mời khách: “Bạn có muốn uống chút gì không?”', opts: ['你想喝点儿什么吗？', '你什么想喝点儿吗？', '你想喝点儿吗什么？', '你想喝点儿什么呢吗？'], ans: 0, exp: '什么 ở đây = cái gì đó (không hỏi cụ thể), nên câu hỏi dùng 吗; 什么 đứng sau động từ như tân ngữ.' },
+  { q: 'Bạn nghe tiếng gọi bên ngoài nhưng không rõ ai: “Hình như có ai đang gọi bạn.”', opts: ['外面好像谁有在叫你。', '外面好像有谁在叫你。', '外面谁好像在叫你吗？', '好像外面有谁叫在你。'], ans: 1, exp: '有谁 = có ai đó; 谁 ở đây không hỏi. 在 + động từ = đang; không thêm 吗.' },
+  { q: '“明天的考试很＿，你今天早点儿睡吧。”', opts: ['着急', '年轻', '重要', '好像'], ans: 2, exp: '考试很重要 = kỳ thi rất quan trọng. 着急 = sốt ruột (tả người), 年轻 = trẻ.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 看上去 / 看起来, 以为, 好像, 应该 và cách tả người (身高, 头发, 长得像).',
   questions: [
     {
-      q_zh: '刘明为什么以为李文是杨同乐？',
-      q_vn: 'Vì sao Lưu Minh tưởng Lý Văn là Dương Đồng Lạc?',
-      hint: '因为他们看上去……',
-      sample: '因为李文和杨同乐看上去有点儿像。',
-      sample_vn: 'Vì Lý Văn và Dương Đồng Lạc trông hơi giống nhau.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 看上去 + 有点儿像 — trông hơi giống.'
+      q_zh: '你长得像爸爸还是像妈妈？',
+      q_vn: 'Bạn trông giống bố hay giống mẹ hơn?',
+      hint: '大家都说我长得像……，我们都……',
+      sample: '大家都说我长得像妈妈，我们的眼睛都很大，头发也都是黑的。',
+      sample_vn: 'Mọi người đều nói tôi giống mẹ, mắt chúng tôi đều to, tóc cũng đều đen.',
+      note: '长得像 + người; tả người bằng 眼睛, 头发.'
     },
     {
-      q_zh: '李文长什么样？',
-      q_vn: 'Lý Văn trông như thế nào?',
-      hint: '他个子……，身高……，比同乐……',
-      sample: '李文个子很高，身高有一米八，比同乐瘦一点儿。',
-      sample_vn: 'Lý Văn rất cao, cao khoảng 1m8, gầy hơn Đồng Lạc một chút.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. Ôn câu so sánh 比 + 瘦 + 一点儿 (HSK2 Bài 8).'
+      q_zh: '你的好朋友长什么样？',
+      q_vn: 'Bạn thân nhất của bạn trông thế nào?',
+      hint: '他/她身高……，……头发，看起来……',
+      sample: '我的好朋友身高一米六五，短头发，有点儿瘦，看起来比我年轻。',
+      sample_vn: 'Bạn thân tôi cao 1m65, tóc ngắn, hơi gầy, trông trẻ hơn tôi.',
+      note: '身高 + số đo; 看起来 + 比 + B + tính từ.'
     },
     {
-      q_zh: '白家月的箱子是什么样的？',
-      q_vn: 'Va li của Bạch Gia Nguyệt trông như thế nào?',
-      hint: '是一个……的箱子，上面写着……',
-      sample: '是一个黑色的箱子，上面写着她的名字和电话号码。',
-      sample_vn: 'Là một chiếc va li màu đen, trên đó ghi tên và số điện thoại của cô ấy.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 写着 — động từ + 着 diễn tả trạng thái (HSK2 Bài 11).'
+      q_zh: '你丢过什么重要的东西吗？',
+      q_vn: 'Bạn đã từng làm mất thứ gì quan trọng chưa? Khi đó bạn làm gì?',
+      hint: '有一次，我发现我的……不见了，……',
+      sample: '有一次，我在火车站发现我的钱包不见了，我很着急，就去服务台问了问。',
+      sample_vn: 'Có lần, ở ga tàu tôi phát hiện ví không thấy đâu, tôi rất lo, liền đến quầy phục vụ hỏi.',
+      note: '发现 + mệnh đề; ……不见了; 着急.'
     },
     {
-      q_zh: '刘明看见的年轻人长什么样？',
-      q_vn: 'Người thanh niên mà Lưu Minh nhìn thấy trông như thế nào?',
-      hint: '是一个穿着……的……头发的年轻人。',
-      sample: '他是一个穿着黑衣服的短头发的年轻人。',
-      sample_vn: 'Đó là một chàng trai tóc ngắn, mặc đồ đen.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. Định ngữ đa tầng: trạng thái (穿着黑衣服的) → đặc điểm (短头发的) → danh từ.'
+      q_zh: '你去机场接过人吗？',
+      q_vn: 'Bạn đã từng ra sân bay đón ai chưa? Bạn đón ai?',
+      hint: '我去机场接过……，他/她带了……',
+      sample: '我去机场接过我姐姐，她带了两个大箱子，我帮助她拿行李。',
+      sample_vn: 'Tôi đã từng ra sân bay đón chị gái, chị mang hai va li to, tôi giúp chị xách hành lý.',
+      note: 'V + 过 = đã từng; 帮助 + người + V.'
     },
     {
-      q_zh: '到机场的时候，白家月发现了什么问题？',
-      q_vn: 'Khi đến sân bay, Bạch Gia Nguyệt phát hiện ra vấn đề gì?',
-      hint: '她发现……不见了。',
-      sample: '她发现她的行李箱不见了。',
-      sample_vn: 'Cô ấy phát hiện va li của mình không thấy đâu.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 发现 + mệnh đề; 不见了 luôn có 了.'
-    },
-    {
-      q_zh: '在机场，你的护照丢了，你会怎么做？',
-      q_vn: 'Ở sân bay, hộ chiếu của bạn bị mất, bạn sẽ làm gì?',
-      hint: '别着急，我会去服务台……',
-      sample: '别着急，我会拿着机票去服务台问问，请他们帮助我找一找。',
-      sample_vn: 'Đừng lo, tôi sẽ cầm vé máy bay đến quầy phục vụ hỏi, nhờ họ giúp tôi tìm thử.',
-      note: 'Câu hỏi Khởi động của sách. Kết hợp câu kiêm ngữ 请 + người + V (HSK2 Bài 1).'
-    },
-    {
-      q_zh: '公司让你去机场接人，你没见过这个人，你会怎么做？',
-      q_vn: 'Công ty cử bạn ra sân bay đón khách nhưng bạn chưa từng gặp người đó, bạn sẽ làm gì?',
-      hint: '我会给他打个电话，问他长什么样……',
-      sample: '我会给他打个电话，问他长什么样，穿着什么颜色的衣服。我还会站到中间，这样他好找我。',
-      sample_vn: 'Tôi sẽ gọi điện cho anh ấy, hỏi anh ấy trông thế nào, mặc áo màu gì. Tôi cũng sẽ đứng ra giữa để anh ấy dễ tìm tôi.',
-      note: 'Câu hỏi Khởi động của sách. 给 + người + 打电话 (HSK2 Bài 1); 这样……好 + V — như vậy dễ…'
-    },
-    {
-      q_zh: '请说说你的一个好朋友长什么样。',
-      q_vn: 'Hãy kể xem một người bạn thân của bạn trông như thế nào.',
-      hint: '我的好朋友……个子……，身高……，……头发，看上去……',
-      sample: '我的好朋友小文个子很高，身高有一米七五，短头发，看上去很年轻。',
-      sample_vn: 'Bạn thân của tôi là Tiểu Văn, cậu ấy rất cao, cao khoảng 1m75, tóc ngắn, trông rất trẻ.',
-      note: 'Dùng 身高、头发、看上去 của bài này để miêu tả người.'
+      q_zh: '有没有人以为你是外国人？',
+      q_vn: 'Có ai từng tưởng bạn là người nước khác không? Vì sao?',
+      hint: '有人以为我是……，因为我……',
+      sample: '有一个中国朋友以为我是中国人，因为我的汉语说得很好，长得也有点儿像中国人。',
+      sample_vn: 'Có một người bạn Trung Quốc tưởng tôi là người Trung Quốc, vì tôi nói tiếng Trung rất tốt, trông cũng hơi giống người Trung Quốc.',
+      note: '以为 = tưởng (mà không phải); ôn bổ ngữ trạng thái 说得很好 (HSK2).'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Anh cứ tưởng là Đồng Lạc, trông họ hơi giống nhau.', zh: '我还以为是同乐呢，他们看上去有点儿像。', py: 'Wǒ hái yǐwéi shì Tónglè ne, tāmen kàn shàngqu yǒudiǎnr xiàng.' },
-  { vi: 'Hình như anh đã nhìn thấy cái va li này ở đâu đó rồi.', zh: '我好像在哪儿看到过这个箱子。', py: 'Wǒ hǎoxiàng zài nǎr kàndàoguo zhège xiāngzi.' },
-  { vi: 'Đừng lo lắng, chúng ta cầm hộ chiếu và vé máy bay đến quầy phục vụ hỏi xem sao.', zh: '别着急，我们拿着护照和机票，去服务台问问吧。', py: 'Bié zháojí, wǒmen názhe hùzhào hé jīpiào, qù fúwùtái wènwen ba.' },
-  { vi: 'Chúng ta đứng ra giữa đi, như vậy các em ấy dễ tìm hơn một chút.', zh: '我们站到中间去吧，这样他们好找一些。', py: 'Wǒmen zhàndào zhōngjiān qù ba, zhèyàng tāmen hǎo zhǎo yìxiē.' },
-  { vi: 'Chị ấy trông trẻ hơn so với trong ảnh.', zh: '她看起来比照片上年轻。', py: 'Tā kàn qǐlai bǐ zhàopiàn shang niánqīng.' }
+  { vi: 'Bạn trông hơi mệt, nghỉ ngơi một chút đi.', zh: '你看起来有点儿累，休息一下吧。', py: 'Nǐ kàn qǐlai yǒudiǎnr lèi, xiūxi yíxià ba.' },
+  { vi: 'Tôi cứ tưởng cô ấy là chị của bạn.', zh: '我还以为她是你姐姐呢。', py: 'Wǒ hái yǐwéi tā shì nǐ jiějie ne.' },
+  { vi: 'Hôm nay hình như cô giáo hơi không vui, trong giờ học ít cười.', zh: '今天老师好像有点儿不高兴，上课的时候很少笑。', py: 'Jīntiān lǎoshī hǎoxiàng yǒudiǎnr bù gāoxìng, shàngkè de shíhou hěn shǎo xiào.' },
+  { vi: 'Người phụ nữ trẻ tóc ngắn kia là cô giáo mới của chúng tôi.', zh: '那个短头发的年轻女人是我们的新老师。', py: 'Nà ge duǎn tóufa de niánqīng nǚrén shì wǒmen de xīn lǎoshī.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Tuần sau Gia Nguyệt và Lý Văn sẽ đến Bắc Kinh, em đi sân bay đón các em ấy.', zh: '下个星期家月和李文要来北京，我去机场接他们。', py: 'Xià ge xīngqī Jiāyuè hé Lǐ Wén yào lái Běijīng, wǒ qù jīchǎng jiē tāmen.' },
-  { vi: 'Trong va li có nhiều đồ quan trọng.', zh: '箱子里有不少重要的东西。', py: 'Xiāngzi li yǒu bù shǎo zhòngyào de dōngxi.' },
-  { vi: 'Chắc các em ấy sắp ra rồi.', zh: '他们应该快出来了。', py: 'Tāmen yīnggāi kuài chūlai le.' },
-  { vi: 'Chàng trai tóc ngắn, mặc đồ đen kia chính là Lý Văn.', zh: '那个穿着黑衣服的短头发的年轻人就是李文。', py: 'Nà ge chuānzhe hēi yīfu de duǎn tóufa de niánqīngrén jiù shì Lǐ Wén.' },
-  { vi: 'Gia Nguyệt phát hiện va li không thấy đâu, tôi đưa cô ấy đến quầy phục vụ, giúp cô ấy tìm lại va li.', zh: '家月发现行李箱不见了，我带她去服务台，帮助她找到了行李箱。', py: 'Jiāyuè fāxiàn xínglixiāng bú jiàn le, wǒ dài tā qù fúwùtái, bāngzhù tā zhǎodàole xínglixiāng.' }
+  { vi: 'Đừng lo, đi đến quầy phục vụ hỏi một chút sẽ biết.', zh: '别着急，去服务台问一下就知道了。', py: 'Bié zháojí, qù fúwùtái wèn yíxià jiù zhīdào le.' },
+  { vi: 'Lúc xuống máy bay, tôi phát hiện điện thoại không thấy đâu.', zh: '下飞机的时候，我发现手机不见了。', py: 'Xià fēijī de shíhou, wǒ fāxiàn shǒujī bú jiàn le.' },
+  { vi: 'Bây giờ đã chín giờ rồi, chắc họ đến khách sạn rồi.', zh: '现在已经九点了，他们应该到酒店了。', py: 'Xiànzài yǐjīng jiǔ diǎn le, tāmen yīnggāi dào jiǔdiàn le.' }
 ];

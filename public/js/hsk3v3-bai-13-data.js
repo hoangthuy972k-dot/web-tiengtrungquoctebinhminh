@@ -2491,159 +2491,153 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 bài trước
 var listenData = [
   {
-    audio: '小李，明天你有时间的话，就来我家做客吧。好啊，要不要我带点儿什么？不用了，你来就行。那我给你们带一点儿水果吧。',
+    audio: '明天天气好的话，我们就开车去海边；下雨的话，就在家包饺子。',
     questions: [
-      { q: '说话人请小李做什么？', opts: ['去饭馆吃饭', '去他家做客', '一起去买水果'], ans: 1 },
-      { q: '小李打算带什么？', opts: ['水果', '蛋糕', '酒'], ans: 0 }
+      { q: 'Nếu trời đẹp, họ sẽ làm gì?', opts: ['Ở nhà gói sủi cảo', 'Lái xe ra biển', 'Đi xem phim'], ans: 1, exp: '天气好的话，我们就开车去海边 = nếu trời đẹp thì chúng ta lái xe ra biển; ……的话，就…… = nếu… thì….' },
+      { q: 'Nếu trời mưa thì sao?', opts: ['Ở nhà gói sủi cảo', 'Vẫn lái xe ra biển', 'Đi ăn nhà hàng'], ans: 0, exp: '下雨的话，就在家包饺子 = nếu mưa thì ở nhà gói sủi cảo.' }
     ]
   },
   {
-    audio: '我的新邻居是一位画家，他来自南方。他家里有很多画，每一张都很漂亮。他常常一边喝茶，一边画画。昨天他还把一张画送给了我。',
+    audio: '我的邻居是一对来自南方的夫妻，他们很热情，常常请我去他们家做客。',
     questions: [
-      { q: '说话人的新邻居是做什么的？', opts: ['老师', '画家', '医生'], ans: 1 },
-      { q: '邻居昨天做了什么？', opts: ['请说话人吃饭', '送给说话人一张画', '教说话人画画'], ans: 1 }
+      { q: 'Hàng xóm của người nói là ai?', opts: ['Một hoạ sĩ miền Bắc', 'Một gia đình người Anh', 'Một cặp vợ chồng đến từ miền Nam'], ans: 2, exp: '一对来自南方的夫妻 = một cặp vợ chồng đến từ miền Nam; 来自 = đến từ.' },
+      { q: 'Họ thường làm gì?', opts: ['Nhờ người nói trông nhà', 'Mời người nói sang nhà chơi', 'Đi du lịch xa'], ans: 1, exp: '常常请我去他们家做客 = hay mời tôi sang nhà họ chơi; 做客 = làm khách.' }
     ]
   },
   {
-    audio: '妈妈，客人快来了，饮料放在哪儿了？我已经把饮料放进冰箱里了，客人来了再拿出来。那我去把盘子拿过来吧。好，再把音乐的声音关小一点儿。',
+    audio: '你把这些椅子搬到外面去吧，今天来的客人多，房间里坐不下。',
     questions: [
-      { q: '饮料现在在哪儿？', opts: ['桌子上', '冰箱里', '客人那儿'], ans: 1 },
-      { q: '妈妈还让孩子做什么？', opts: ['把声音关小一点儿', '去买饮料', '给客人打电话'], ans: 0 }
+      { q: 'Người nói nhờ làm gì?', opts: ['Mang ghế ra ngoài', 'Mua thêm ghế', 'Mang ghế vào phòng'], ans: 0, exp: '把这些椅子搬到外面去 = khiêng mấy cái ghế này ra ngoài; 把 + O + V + 到 + nơi + 去.' },
+      { q: 'Vì sao?', opts: ['Ghế bị hỏng', 'Trong phòng quá nóng', 'Khách đông, trong phòng không đủ chỗ ngồi'], ans: 2, exp: '客人多，房间里坐不下 = khách nhiều, trong phòng ngồi không đủ (bổ ngữ khả năng 坐不下).' }
     ]
   },
   {
-    audio: '上个星期六，我和丈夫去朋友家参加生日晚会。朋友做了很多北方菜，我们一边吃，一边聊天儿，直到晚上十一点才回家。北方菜跟南方菜的做法很不同，我们都觉得很好吃。',
+    audio: '我爸爸喜欢一边吃早饭，一边看新闻。妈妈说这样对身体不好。',
     questions: [
-      { q: '说话人去朋友家做什么？', opts: ['参加生日晚会', '学做北方菜', '看电影'], ans: 0 },
-      { q: '他们几点回家？', opts: ['十点', '十一点', '十二点'], ans: 1 }
+      { q: 'Bố người nói làm gì khi ăn sáng?', opts: ['Nghe nhạc', 'Xem tin tức', 'Gọi điện thoại'], ans: 1, exp: '一边吃早饭，一边看新闻 = vừa ăn sáng vừa xem tin tức.' },
+      { q: 'Mẹ nghĩ thế nào?', opts: ['Như vậy không tốt cho sức khoẻ', 'Như vậy đỡ mất thời gian', 'Như vậy rất thú vị'], ans: 0, exp: '这样对身体不好 = như vậy không tốt cho sức khoẻ.' }
+    ]
+  },
+  {
+    audio: '昨天的新年晚会太有意思了，大家一边唱歌一边跳舞，直到十一点多才结束。',
+    questions: [
+      { q: 'Buổi liên hoan kết thúc lúc nào?', opts: ['10 giờ', 'Hơn 11 giờ', '12 giờ'], ans: 1, exp: '直到十一点多才结束 = mãi đến hơn 11 giờ mới kết thúc; 直到……才…….' }
+    ]
+  },
+  {
+    audio: '我们班的同学来自不同的地方，大家都对东方文化很感兴趣。',
+    questions: [
+      { q: 'Các bạn trong lớp đều quan tâm đến điều gì?', opts: ['Món ăn miền Nam', 'Bản đồ thế giới', 'Văn hoá phương Đông'], ans: 2, exp: '对东方文化很感兴趣 = rất hứng thú với văn hoá phương Đông; 来自不同的地方 = đến từ nhiều nơi khác nhau.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '有时间的话', right: '就来我家做客' },
-  { left: '一边喝红茶', right: '一边聊天儿' },
-  { left: '把饮料', right: '放进冰箱里' },
-  { left: '来自英国的', right: '夫妻' },
-  { left: '世界', right: '地图' },
-  { left: '东方的', right: '文化' }
+  { left: '一张世界', right: '地图' },
+  { left: '几个洗干净的', right: '盘子' },
+  { left: '东方', right: '文化' },
+  { left: '送给妈妈的生日', right: '礼物' },
+  { left: '跟邻居', right: '聊天儿' },
+  { left: '参加新年', right: '晚会' },
+  { left: '来自北方的', right: '客人' }
 ];
 
 var fillData = [
-  { pre: '我们一边吃饭一边', blank: '聊天儿', post: '，时间过得很快。', hint: '(trò chuyện)', ans: '聊天儿', exp: '一边……一边…… + động từ; 聊天儿 = trò chuyện. 过得很快 — bổ ngữ trạng thái (ôn HSK2 Bài 7). Câu của sách.' },
-  { pre: '咱们只点了一个鸡肉，再', blank: '加', post: '几个肉菜吧。', hint: '(thêm)', ans: '加', exp: '再 + 加 + số lượng — gọi thêm món; 只 (ôn HSK3 Bài 2). Câu của sách.' },
-  { pre: '谢谢小王今天', blank: '请客', post: '，下周你们都去我家，我给大家做饭吃。', hint: '(mời, đãi)', ans: '请客', exp: '请客 = mời, đãi (trả tiền); 给 + người + V (ôn HSK2 Bài 1). Câu của sách.' },
-  { pre: '在南方的一些城市，你去别人家', blank: '做客', post: '的时候会先喝茶。', hint: '(làm khách)', ans: '做客', exp: '去 + nhà ai + 做客; ……的时候 (ôn HSK1 Bài 11). Câu của sách.' },
-  { pre: '桌子上', blank: '放', post: '着一些饮料，你们想喝什么就拿，跟在自己家一样。', hint: '(đặt, để)', ans: '放', exp: 'Câu tồn hiện: nơi chốn + V + 着 + vật (ôn HSK3 Bài 5); 想……什么就……什么 (ôn HSK3 Bài 2). Câu của sách.' },
-  { pre: '昨天的生日晚会玩得怎么样？——玩得太开心了，', blank: '直到', post: '十一点我才回家。', hint: '(mãi đến)', ans: '直到', exp: '直到 + thời điểm + 才 — mãi đến… mới… (才 – ôn HSK3 Bài 3). Câu của sách.' },
-  { pre: '你去外国人家做客，会不会', blank: '感到', post: '不太习惯？——第一次是有一点儿，但是慢慢就习惯了。', hint: '(cảm thấy)', ans: '感到', exp: '感到 + 不太习惯; 习惯 (ôn HSK3 Bài 8). Câu của sách.' },
-  { pre: '你的同学们是哪国人？——他们都', blank: '来自', post: '不同的地方，大家的文化也不一样。', hint: '(đến từ)', ans: '来自', exp: '来自 + nơi chốn; 不同的 + danh từ; 一样 (ôn HSK3 Bài 4). Câu của sách.' }
+  { pre: '你累了', blank: '的话', post: '，就先回去休息吧，这些工作明天再做。', hint: '(nếu … thì)', ans: '的话', exp: '……的话，就…… = nếu… thì…; 的话 đứng cuối vế điều kiện.' },
+  { pre: '外面太冷了，你把小狗带', blank: '进来', post: '吧。', hint: '(vào đây)', ans: '进来', exp: '把 + 小狗 + 带进来 = dắt con chó vào (hướng về phía người nói nên dùng 来).' },
+  { pre: '你把字写', blank: '得', post: '太小了，我看不清楚。', hint: '(… đến mức)', ans: '得', exp: '把 + O + V + 得 + trạng thái: 把字写得太小了 = viết chữ nhỏ quá.' },
+  { pre: '他喜欢一边做作业，', blank: '一边', post: '玩手机，所以作业总是做得很慢。', hint: '(vừa)', ans: '一边', exp: '一边 V1，一边 V2 = vừa… vừa…; ôn 总是 (bài 5).' },
+  { pre: '这次考试我考了第一名，咱们去吃烤鸭吧，我', blank: '请客', post: '！', hint: '(mời, khao)', ans: '请客', exp: '我请客 = tôi khao (tôi trả tiền).' },
+  { pre: '下个星期天我要去老师家', blank: '做客', post: '，你说带什么礼物好？', hint: '(làm khách)', ans: '做客', exp: '去 + nhà ai + 做客 = đến nhà ai chơi; 礼物 = quà.' },
+  { pre: '我们家的', blank: '邻居', post: '是一对年轻的夫妻，人都很好。', hint: '(hàng xóm)', ans: '邻居', exp: '邻居 = hàng xóm; 一对夫妻 = một cặp vợ chồng.' },
+  { pre: '我喝咖啡不喜欢', blank: '加', post: '牛奶。', hint: '(thêm, cho thêm)', ans: '加', exp: '加 + thứ gì = cho thêm vào: 加牛奶 = cho thêm sữa.' },
+  { pre: '昨天我一直等他，', blank: '直到', post: '晚上九点他才来。', hint: '(mãi đến)', ans: '直到', exp: '直到 + thời điểm + 才 = mãi đến… mới…; ôn 才 (bài 3).' },
+  { pre: '南方人和北方人吃早饭的习惯', blank: '不同', post: '，你去了就知道了。', hint: '(khác nhau)', ans: '不同', exp: 'A 和 B + 不同 = A và B khác nhau; ôn 习惯 (bài 8).' },
+  { pre: '她画画画得非常好，以后想做一名', blank: '画家', post: '。', hint: '(hoạ sĩ)', ans: '画家', exp: '做一名画家 = trở thành một hoạ sĩ; ôn bổ ngữ trạng thái 画得非常好.' },
+  { pre: '你看，地图上这个小红', blank: '点', post: '就是我们的学校。', hint: '(chấm)', ans: '点', exp: '点 (danh từ) = chấm nhỏ: 红点 = chấm đỏ.' }
 ];
 
 var sortData = [
-  { words: ['你们', '有', '时间', '的话', '，', '就', '来', '我家', '做客', '。'], ans: '你们有时间的话，就来我家做客。', audio: '你们有时间的话，就来我家做客。' },
-  { words: ['我', '把', '饮料', '和', '酒', '都', '放进', '冰箱里', '了', '。'], ans: '我把饮料和酒都放进冰箱里了。', audio: '我把饮料和酒都放进冰箱里了。' },
-  { words: ['你', '把', '声音', '开', '得', '太大', '了', '。'], ans: '你把声音开得太大了。', audio: '你把声音开得太大了。' },
-  { words: ['咱们', '一边', '吃', '蛋糕', '，', '一边', '聊天儿', '吧', '。'], ans: '咱们一边吃蛋糕，一边聊天儿吧。', audio: '咱们一边吃蛋糕，一边聊天儿吧。' },
-  { words: ['我的', '新', '邻居', '是', '来自', '英国', '的', '夫妻', '。'], ans: '我的新邻居是来自英国的夫妻。', audio: '我的新邻居是来自英国的夫妻。' },
-  { words: ['他们', '感到', '东方的', '文化', '很', '特别', '。'], ans: '他们感到东方的文化很特别。', audio: '他们感到东方的文化很特别。' }
+  { words: ['你', '不', '舒服', '的话', '，', '就', '别', '去', '上课', '了', '。'], ans: '你不舒服的话，就别去上课了。', audio: '你不舒服的话，就别去上课了。' },
+  { words: ['他', '把', '自行车', '骑', '回', '家', '去', '了', '。'], ans: '他把自行车骑回家去了。', audio: '他把自行车骑回家去了。' },
+  { words: ['妈妈', '把', '饭菜', '做', '得', '特别', '好吃', '。'], ans: '妈妈把饭菜做得特别好吃。', audio: '妈妈把饭菜做得特别好吃。' },
+  { words: ['我们', '一边', '走', '，', '一边', '看', '街上', '的', '花', '。'], ans: '我们一边走，一边看街上的花。', audio: '我们一边走，一边看街上的花。', alt: ['我们一边看街上的花，一边走。'] },
+  { words: ['我们', '班', '的', '同学', '来自', '很多', '不同的', '城市', '。'], ans: '我们班的同学来自很多不同的城市。', audio: '我们班的同学来自很多不同的城市。' },
+  { words: ['第一次', '来', '北方', '，', '我', '感到', '这里', '的', '冬天', '特别', '冷', '。'], ans: '第一次来北方，我感到这里的冬天特别冷。', audio: '第一次来北方，我感到这里的冬天特别冷。' },
+  { words: ['客人', '都', '走', '了', '，', '你', '把', '酒', '放', '回', '冰箱', '里', '吧', '。'], ans: '客人都走了，你把酒放回冰箱里吧。', audio: '客人都走了，你把酒放回冰箱里吧。' },
+  { words: ['你', '能', '在', '地图', '上', '找到', '我们的', '城市', '吗', '？'], ans: '你能在地图上找到我们的城市吗？', audio: '你能在地图上找到我们的城市吗？' }
 ];
 
 var mcData = [
-  { q: '今天我＿＿，你们想吃什么就点什么！', opts: ['做客', '请客', '客人', '放心'], ans: 1, exp: '我请客 = tôi mời (tôi trả tiền), nên mới nói muốn ăn gì cứ gọi.' },
-  { q: '南方菜跟你们北方菜的＿＿不同。', opts: ['做法', '文化', '地图', '晚会'], ans: 0, exp: '做法 = cách làm (món ăn). Câu so sánh món miền Nam và miền Bắc.' },
-  { q: '第一次请新邻居来做客，我总是担心有什么没准备好。——＿＿吧，都已经准备好了。', opts: ['着急', '担心', '放心', '感到'], ans: 2, exp: '放心吧 = yên tâm đi; dùng để đáp lại người đang lo lắng. 担心, 着急 trái nghĩa.' },
-  { q: '他家有一张世界＿＿，上面每一个红点都是他们去过的地方。', opts: ['文化', '礼物', '盘子', '地图'], ans: 3, exp: '世界地图 = bản đồ thế giới; trên đó có chấm đỏ đánh dấu nơi đã đến.' },
-  { q: '谢谢你们来参加我儿子的生日＿＿。', opts: ['晚会', '邻居', '客人', '东方'], ans: 0, exp: '生日晚会 = tiệc sinh nhật (buổi tối). 邻居, 客人 là người, không "tham gia" được.' },
-  { q: '我很喜欢画画，以后想做一名＿＿。', opts: ['司机', '画家', '医生', '邻居'], ans: 1, exp: 'Thích vẽ → muốn làm 画家 (họa sĩ). 一名 + nghề nghiệp.' },
-  { q: '你们国家过生日和这里过生日有什么＿＿？——差不多。', opts: ['一样', '直到', '不同', '来自'], ans: 2, exp: '有什么不同 = có gì khác nhau; câu trả lời 差不多 phù hợp. 一样 không đi với 有什么.' },
-  { q: 'Chọn câu đúng: "Nếu các bạn có thời gian thì đến nhà mình chơi nhé."', opts: ['的话你们有时间，就来我家做客。', '你们有时间的话，就来我家做客。', '你们的话有时间，就来我家做客。', '你们有时间的话，来就我家做客。'], ans: 1, exp: '…的话 đặt cuối vế điều kiện: 你们有时间的话，就…; 就 đứng trước động từ.' },
-  { q: 'Chọn câu chữ 把 đúng: "Anh đã cho đồ uống vào tủ lạnh rồi."', opts: ['我饮料把放进冰箱里了。', '我放进饮料把冰箱里了。', '我把放进饮料冰箱里了。', '我把饮料放进冰箱里了。'], ans: 3, exp: 'Câu 把: 把 + tân ngữ + V + 进 + nơi chốn: 把饮料放进冰箱里了. 把 đứng trước tân ngữ.' },
-  { q: 'Chọn câu đúng: "Tôi thích vừa chạy bộ vừa nghe nhạc."', opts: ['我喜欢一边跑步，一边听音乐。', '我一边喜欢跑步，一边听音乐。', '我喜欢一边跑步，听音乐一边。', '我喜欢跑步一边，听音乐一边。'], ans: 0, exp: '一边 V1，一边 V2: mỗi 一边 đứng ngay trước một động từ; 喜欢 đặt trước cả cấu trúc.' }
+  { q: 'Bạn khuyên bạn cùng lớp: “Nếu không hiểu thì hỏi cô giáo đi.”', opts: ['的话你听不懂，就问老师吧。', '你听不懂的话，问就老师吧。', '你听不懂的话，就问老师吧。', '你的话听不懂，就问老师吧。'], ans: 2, exp: '的话 đặt ở CUỐI vế điều kiện (你听不懂的话); 就 đứng trước động từ của vế sau.' },
+  { q: 'A: “我明天想去你家做客，可以吗？” — B đáp:', opts: ['没问题，你来的话，我就给你做北京菜。', '没问题，你来的话，我才给你做北京菜。', '没问题，你来就的话，我给你做北京菜。', '没问题，你来的话，我就给你做了北京菜。'], ans: 0, exp: 'Vế sau của 的话 dùng 就 (không dùng 才); việc chưa xảy ra nên không có 了.' },
+  { q: 'Bạn nhờ bạn: “Bạn khiêng giúp mình cái va li này lên lầu nhé.”', opts: ['你帮我把这个箱子搬去上楼吧。', '你帮我把这个箱子搬上楼去吧。', '你帮我搬上楼去把这个箱子吧。', '你帮我把这个箱子搬上去楼吧。'], ans: 1, exp: '把 + O + V + 上 + nơi chốn + 去: 搬上楼去; nơi chốn (楼) chen giữa 上 và 去.' },
+  { q: 'Bạn muốn nói: “Tôi đã cho hết quần áo vào va li rồi.”', opts: ['我已经把衣服都放箱子进里了。', '我已经都把衣服放箱子里进了。', '我已经把衣服都放进去箱子里了。', '我已经把衣服都放进箱子里了。'], ans: 3, exp: 'V + 进 + nơi chốn: 放进箱子里; khi có nơi chốn thì 去/来 không đứng trước nơi chốn.' },
+  { q: 'Bạn nhắc bạn cùng phòng: “Bạn bật ti vi to quá, mình không ngủ được.”', opts: ['你把电视的声音开得太大了，我没办法睡觉。', '你把电视的声音开太大得了，我没办法睡觉。', '你开得把电视的声音太大了，我没办法睡觉。', '你把电视的声音太大开得了，我没办法睡觉。'], ans: 0, exp: '把 + O + V + 得 + trạng thái: 把声音开得太大了; 得 đứng ngay sau động từ.' },
+  { q: 'Bạn muốn nói: “Mẹ tôi thường vừa nấu cơm vừa nghe nhạc.”', opts: ['我妈妈一边常常做饭，一边听音乐。', '我妈妈常常一边做饭，一边听音乐。', '我妈妈常常一边做饭，听音乐一边。', '我妈妈常常做饭一边，听音乐一边。'], ans: 1, exp: 'Phó từ 常常 đứng trước cả cấu trúc; mỗi 一边 đứng ngay trước một động từ.' },
+  { q: 'A: “我第一次一个人坐飞机，有点儿紧张。” — B: “＿＿吧，下了飞机我去接你。”', opts: ['担心', '感到', '放心', '着急'], ans: 2, exp: '放心吧 = yên tâm đi (an ủi người đang lo). 担心 / 着急 là lo lắng, 感到 cần bổ ngữ sau.' },
+  { q: '“今天是我的生日，晚饭我＿＿，大家别跟我客气。”', opts: ['做客', '请客', '客人', '邻居'], ans: 1, exp: '请客 = mời, khao (mình trả tiền). 做客 = đi làm khách nhà người khác.' },
+  { q: 'A: “你的新同事是哪儿人？” — B đáp:', opts: ['她从来自南方的一个小城市。', '她是来自南方的一个小城市。', '她来自南方的一个小城市。', '她来自从南方的一个小城市。'], ans: 2, exp: '来自 + nơi chốn = đến từ; 来自 đã có nghĩa “từ” nên không thêm 从; thêm 是 thành “cô ấy là một thành phố nhỏ” — sai.' },
+  { q: '“他每天都工作到很晚，昨天＿＿十一点才回家。”', opts: ['一直', '直到', '已经', '从'], ans: 1, exp: '直到 + thời điểm + 才 = mãi đến… mới…. 一直 = liên tục (không đi trực tiếp với giờ giấc).' },
+  { q: '“这个菜的＿＿很简单，我教你。”', opts: ['文化', '地点', '做法', '声音'], ans: 2, exp: '做法 = cách làm (món ăn); 菜的做法很简单 = cách làm món này rất đơn giản.' },
+  { q: 'Câu nào SAI?', opts: ['我把书放回书包里了。', '你把灯关上吧。', '他把蛋糕拿过来了。', '他把蛋糕拿。'], ans: 3, exp: 'Sau động từ trong câu 把 phải có thành phần khác (bổ ngữ xu hướng, 了…): 他把蛋糕拿过来了.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng ……的话，就……, 把 + tân ngữ + động từ + bổ ngữ xu hướng / 得, 一边……，一边…… và từ về mời khách, làm khách.',
   questions: [
     {
-      q_zh: '这家饭馆什么菜做得很特别？',
-      q_vn: 'Món gì của nhà hàng này được chế biến rất đặc biệt?',
-      hint: '这家饭馆的……做得很特别，因为……',
-      sample: '这家饭馆的鱼做得很特别，因为南方菜跟北方菜的做法不同。',
-      sample_vn: 'Món cá của nhà hàng này được làm rất đặc biệt, vì cách chế biến món miền Nam khác với món miền Bắc.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. Bổ ngữ trạng thái 做得很特别 (ôn HSK2 Bài 7); 不同.'
+      q_zh: '明年有时间的话，你最想去哪儿旅游？',
+      q_vn: 'Nếu sang năm có thời gian, bạn muốn đi du lịch ở đâu nhất?',
+      hint: '明年有时间的话，我就去……，听说……',
+      sample: '明年有时间的话，我就去中国南方旅游，听说那里冬天不冷，菜的做法也跟北方不同。',
+      sample_vn: 'Nếu sang năm có thời gian, tôi sẽ đi du lịch miền Nam Trung Quốc, nghe nói ở đó mùa đông không lạnh, cách nấu món ăn cũng khác miền Bắc.',
+      note: '……的话，就……; 南方 / 北方, 做法, 不同.'
     },
     {
-      q_zh: '王一雪为什么要请同事去她家？',
-      q_vn: 'Vì sao Vương Nhất Tuyết muốn mời đồng nghiệp đến nhà mình?',
-      hint: '因为下周她儿子……，她请大家有时间的话……',
-      sample: '因为下周她儿子过生日，她请大家有时间的话就去她家做客，她给大家做北京菜。',
-      sample_vn: 'Vì tuần sau con trai cô ấy sinh nhật, cô ấy mời mọi người nếu có thời gian thì đến nhà chơi, cô ấy sẽ nấu món Bắc Kinh cho mọi người.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. ……的话，就……; 给 + người + V (ôn HSK2 Bài 1).'
+      q_zh: '你喜欢一边做什么，一边做什么？',
+      q_vn: 'Bạn thích vừa làm gì vừa làm gì?',
+      hint: '我喜欢一边……，一边……，因为……',
+      sample: '我喜欢一边打扫房间，一边唱歌，这样打扫完了也不觉得累。',
+      sample_vn: 'Tôi thích vừa dọn phòng vừa hát, như vậy dọn xong cũng không thấy mệt.',
+      note: '一边……，一边……; ôn 打扫 (bài 3).'
     },
     {
-      q_zh: '刘明把饮料和酒放在哪儿了？',
-      q_vn: 'Lưu Minh đã để đồ uống và rượu ở đâu?',
-      hint: '他把饮料和酒都放进……了。',
-      sample: '他把饮料和酒都放进冰箱里了，客人来了再拿出来。',
-      sample_vn: 'Anh ấy đã cho hết đồ uống và rượu vào tủ lạnh, khách đến rồi mới lấy ra.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. Câu chữ 把 (4): 放进冰箱里, 拿出来.'
+      q_zh: '你去别人家做客的时候，一般带什么礼物？',
+      q_vn: 'Khi đến nhà người khác làm khách, bạn thường mang quà gì?',
+      hint: '我一般带……，因为……',
+      sample: '我一般带一些水果或者一个蛋糕。上次去中国老师家做客，我带了我们那儿的水果，老师和她丈夫都很喜欢。',
+      sample_vn: 'Tôi thường mang một ít hoa quả hoặc một chiếc bánh kem. Lần trước đến nhà cô giáo người Trung Quốc chơi, tôi mang hoa quả quê mình, cô và chồng cô đều rất thích.',
+      note: '做客, 礼物; 或者 trong câu trần thuật (bài 11).'
     },
     {
-      q_zh: '杨同乐送给刘小明什么礼物？小明以后想做什么？',
-      q_vn: 'Dương Đồng Lạc tặng Lưu Tiểu Minh quà gì? Sau này Tiểu Minh muốn làm gì?',
-      hint: '他送给小明……。小明以后想做一名……',
-      sample: '他送给小明的礼物是画板和画笔。小明很喜欢画画，以后想做一名画家。',
-      sample_vn: 'Món quà anh ấy tặng Tiểu Minh là bảng vẽ và bút vẽ. Tiểu Minh rất thích vẽ, sau này muốn trở thành hoạ sĩ.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3 (gộp câu 1 và 3). 画笔 (ôn HSK2 Bài 6).'
+      q_zh: '你的邻居是什么样的人？',
+      q_vn: 'Hàng xóm của bạn là người thế nào?',
+      hint: '我的邻居是……，他们……',
+      sample: '我的邻居是一对年轻夫妻，他们人很好，我出门的时候，常常请他们帮我看看家。',
+      sample_vn: 'Hàng xóm của tôi là một cặp vợ chồng trẻ, họ rất tốt bụng, khi tôi đi vắng, thường nhờ họ trông nhà giúp.',
+      note: '邻居, 夫妻; ôn 一对 (lượng từ cặp).'
     },
     {
-      q_zh: '邻居家的世界地图有什么特别的？',
-      q_vn: 'Tấm bản đồ thế giới nhà hàng xóm có gì đặc biệt?',
-      hint: '地图上面每一个红点都是……',
-      sample: '地图上面每一个红点都是他们去过的地方。',
-      sample_vn: 'Mỗi chấm đỏ trên bản đồ đều là nơi họ đã từng đến.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. V + 过 (ôn HSK2 Bài 4); 每……都…….'
-    },
-    {
-      q_zh: '她的邻居为什么学习中文？',
-      q_vn: 'Vì sao hàng xóm của cô ấy học tiếng Trung?',
-      hint: '因为他们感到……',
-      sample: '因为他们感到东方的文化很特别，所以就开始学习中文了。',
-      sample_vn: 'Vì họ cảm thấy văn hoá phương Đông rất đặc biệt, nên đã bắt đầu học tiếng Trung.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 感到 + Adj; 因为……所以…… (ôn HSK2 Bài 4).'
-    },
-    {
-      q_zh: '你去朋友家做客会带什么礼物？为什么？',
-      q_vn: 'Bạn sẽ mang quà gì khi đến thăm nhà bạn bè? Vì sao?',
-      hint: '我一般会带……，因为……',
-      sample: '我一般会带一些水果，因为水果很新鲜，大家都喜欢吃。',
-      sample_vn: 'Tôi thường mang một ít hoa quả, vì hoa quả tươi, ai cũng thích ăn.',
-      note: 'Câu hỏi Khởi động của sách. 一般 (ôn HSK3 Bài 10); 新鲜 (ôn HSK3 Bài 7).'
-    },
-    {
-      q_zh: '朋友来你家做过客吗？你们一起做什么了？',
-      q_vn: 'Bạn đã từng có bạn đến nhà chơi chưa? Hai bạn đã làm gì cùng nhau?',
-      hint: '我的好朋友来我家做过客。我们一边……，一边……',
-      sample: '上个星期，我的好朋友来我家做客。我们一边吃水果，一边聊天儿，直到晚上十点她才回家。',
-      sample_vn: 'Tuần trước, bạn thân tôi đến nhà tôi chơi. Chúng tôi vừa ăn hoa quả vừa trò chuyện, mãi đến 10 giờ tối bạn ấy mới về.',
-      note: 'Câu hỏi Khởi động của sách. 一边……一边……; 直到……才…….'
+      q_zh: '家里来客人的时候，你一般做什么？',
+      q_vn: 'Khi nhà có khách, bạn thường làm gì?',
+      hint: '我先把……拿出来，再……',
+      sample: '我先把水果洗好拿出来，再请客人喝茶，大家一边喝茶一边聊天儿。',
+      sample_vn: 'Tôi rửa hoa quả rồi mang ra trước, sau đó mời khách uống trà, mọi người vừa uống trà vừa trò chuyện.',
+      note: '客人; 把 + O + V + 出来; 先……再…….'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Nếu các bạn có thời gian thì đến nhà mình chơi, mình nấu món Bắc Kinh cho các bạn.', zh: '你们有时间的话，就来我家做客，我给你们做北京菜。', py: 'Nǐmen yǒu shíjiān dehuà, jiù lái wǒ jiā zuòkè, wǒ gěi nǐmen zuò Běijīng cài.' },
-  { vi: 'Anh đã để đồ uống và rượu vào tủ lạnh hết rồi, khách đến rồi lấy ra.', zh: '我把饮料和酒都放进冰箱里了，客人来了再拿出来。', py: 'Wǒ bǎ yǐnliào hé jiǔ dōu fàngjìn bīngxiāng li le, kèrén lái le zài ná chūlai.' },
-  { vi: 'Em bật nhạc to quá rồi, anh đi vặn nhỏ một chút.', zh: '你把声音开得太大了，我去关小一点儿。', py: 'Nǐ bǎ shēngyīn kāi de tài dà le, wǒ qù guān xiǎo yìdiǎnr.' },
-  { vi: 'Chị đi lấy đĩa lại đây, chúng ta vừa ăn bánh kem vừa trò chuyện nhé.', zh: '我去把盘子拿过来，咱们一边吃蛋糕，一边聊天儿吧。', py: 'Wǒ qù bǎ pánzi ná guòlai, zánmen yìbiān chī dàngāo, yìbiān liáotiānr ba.' },
-  { vi: 'Hôm đó tôi vừa uống trà đen vừa trò chuyện với họ, mãi đến hơn mười hai giờ mới về nhà.', zh: '那天我跟他们一边喝红茶，一边聊天儿，直到十二点多才回家。', py: 'Nà tiān wǒ gēn tāmen yìbiān hē hóngchá, yìbiān liáotiānr, zhídào shí\'èr diǎn duō cái huí jiā.' }
+  { vi: 'Nếu bạn thích quyển sách này thì mang về nhà đọc đi.', zh: '如果你喜欢这本书的话，就拿回家去看吧。', py: 'Rúguǒ nǐ xǐhuan zhè běn shū dehuà, jiù ná huí jiā qù kàn ba.' },
+  { vi: 'Bạn có thể mang đĩa lại đây giúp tôi không?', zh: '你能帮我把盘子拿过来吗？', py: 'Nǐ néng bāng wǒ bǎ pánzi ná guòlai ma?' },
+  { vi: 'Tôi vừa uống trà vừa giới thiệu văn hoá quê mình cho họ.', zh: '我一边喝茶，一边给他们介绍我们那儿的文化。', py: 'Wǒ yìbiān hē chá, yìbiān gěi tāmen jièshào wǒmen nàr de wénhuà.' },
+  { vi: 'Lần đầu đến nhà người khác làm khách, tôi thấy hơi không quen.', zh: '第一次去别人家做客，我感到有点儿不习惯。', py: 'Dì-yī cì qù biérén jiā zuòkè, wǒ gǎndào yǒudiǎnr bù xíguàn.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Hôm nay mình mời, mọi người muốn ăn gì thì cứ gọi món đó!', zh: '今天我请客，你们想吃什么就点什么！', py: 'Jīntiān wǒ qǐngkè, nǐmen xiǎng chī shénme jiù diǎn shénme!' },
-  { vi: 'Cách chế biến món miền Nam khác với món miền Bắc của các bạn.', zh: '南方菜跟你们北方菜的做法不同。', py: 'Nánfāng cài gēn nǐmen běifāng cài de zuòfǎ bù tóng.' },
-  { vi: 'Lần đầu mời hàng xóm mới đến chơi, em cứ lo có gì đó chưa chuẩn bị xong.', zh: '第一次请新邻居来做客，总是担心有什么没准备好。', py: 'Dì-yī cì qǐng xīn línjū lái zuòkè, zǒngshì dānxīn yǒu shénme méi zhǔnbèi hǎo.' },
-  { vi: 'Hàng xóm mới của tôi là một cặp vợ chồng đến từ Vương quốc Anh.', zh: '我的新邻居是来自英国的夫妻。', py: 'Wǒ de xīn línjū shì láizì Yīngguó de fūqī.' },
-  { vi: 'Sau này, họ cảm thấy văn hoá phương Đông rất đặc biệt nên bắt đầu học tiếng Trung.', zh: '后来，他们感到东方的文化很特别，就开始学习中文。', py: 'Hòulái, tāmen gǎndào dōngfāng de wénhuà hěn tèbié, jiù kāishǐ xuéxí Zhōngwén.' }
+  { vi: 'Mẹ yên tâm, con đến nơi sẽ gọi điện cho mẹ ngay.', zh: '妈妈，您放心，我到了就给您打电话。', py: 'Māma, nín fàngxīn, wǒ dào le jiù gěi nín dǎ diànhuà.' },
+  { vi: 'Món này cách làm ở miền Nam và miền Bắc không giống nhau.', zh: '这个菜南方和北方的做法不一样。', py: 'Zhège cài nánfāng hé běifāng de zuòfǎ bù yíyàng.' },
+  { vi: 'Họ mãi đến bốn mươi tuổi mới kết hôn.', zh: '他们直到四十岁才结婚。', py: 'Tāmen zhídào sìshí suì cái jiéhūn.' }
 ];

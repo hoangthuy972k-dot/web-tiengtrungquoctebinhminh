@@ -2397,159 +2397,152 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 Bài 1–5
 var listenData = [
   {
-    audio: '下个星期学校开运动会，你参加什么比赛？我参加篮球比赛。为了准备比赛，我们几个男生每天下午都去球场练球。那你们一定能得到好成绩！到时候我去看你们的比赛。',
+    audio: '为了参加下个月的网球比赛，她每天早上六点就去球场练习。',
     questions: [
-      { q: '他参加什么比赛？', opts: ['足球比赛', '篮球比赛', '网球比赛'], ans: 1 },
-      { q: '他们每天什么时候练球？', opts: ['早上', '中午', '下午'], ans: 2 }
+      { q: 'Vì sao sáng nào cô ấy cũng ra sân từ 6 giờ?', opts: ['Để đi làm sớm', 'Để chạy bộ giảm cân', 'Để chuẩn bị thi quần vợt'], ans: 2, exp: '为了参加网球比赛 = để tham gia thi quần vợt; 为了 nêu mục đích.' }
     ]
   },
   {
-    audio: '小林，你游泳游得这么好，练了多长时间了？我从小就喜欢游泳，几乎每天都游。下个月学校有游泳比赛，我想参加，但是有点儿紧张。别紧张，你游得比我们都快，一定没问题！',
+    audio: '老师，您说得太快了，我听不懂，您能说得慢一点儿吗？',
     questions: [
-      { q: '小林几乎每天都做什么？', opts: ['游泳', '跑步', '打网球'], ans: 0 },
-      { q: '小林为什么有点儿紧张？', opts: ['她游得不快', '她要参加游泳比赛', '她没时间练习'], ans: 1 }
+      { q: 'Vì sao người nói không hiểu?', opts: ['Thầy nói nhanh quá', 'Thầy nói nhỏ quá', 'Bên ngoài ồn quá'], ans: 0, exp: '说得太快了 = nói nhanh quá; 听不懂 = nghe không hiểu (bổ ngữ khả năng).' },
+      { q: 'Người nói muốn thầy làm gì?', opts: ['Viết lên bảng', 'Nói chậm hơn', 'Giải thích bằng tiếng Việt'], ans: 1, exp: '说得慢一点儿 = nói chậm một chút.' }
     ]
   },
   {
-    audio: '昨天晚上的足球比赛你看了吗？看了，越看越着急！几个主要的球员都没来，新球员太紧张了，总是踢不进去。最后的得分是多少？零比二。',
+    audio: '箱子里都是书，我一个人搬不动，你能帮我一下吗？',
     questions: [
-      { q: '看比赛的时候，他觉得怎么样？', opts: ['越看越高兴', '越看越着急', '一点儿也不着急'], ans: 1 },
-      { q: '最后的得分是多少？', opts: ['零比二', '二比零', '一比一'], ans: 0 }
+      { q: 'Người nói nhờ giúp việc gì?', opts: ['Mua một cái va li mới', 'Khiêng cái va li', 'Tìm cái va li bị mất'], ans: 1, exp: '搬不动 = khiêng không nổi; 帮我一下 = giúp tôi một chút.' }
     ]
   },
   {
-    audio: '我最喜欢的运动员是一位网球运动员。她从六岁就开始打网球，十几岁就参加了世界比赛。她受到很多人的欢迎，我也受到了她的影响，现在每个星期都去打两次网球。',
+    audio: '昨天学校的足球比赛，我们班踢得非常好，得分是三比一，大家都开心极了。',
     questions: [
-      { q: '说话人最喜欢的运动员是做什么的？', opts: ['足球运动员', '网球运动员', '游泳运动员'], ans: 1 },
-      { q: '说话人现在每个星期打几次网球？', opts: ['一次', '两次', '三次'], ans: 1 }
+      { q: 'Lớp người nói đá thế nào?', opts: ['Đá rất hay', 'Đá không tốt lắm', 'Không tham gia'], ans: 0, exp: '踢得非常好 = đá rất hay (bổ ngữ trạng thái).' },
+      { q: 'Tỉ số cuối cùng là bao nhiêu?', opts: ['1 – 3', '3 – 3', '3 – 1'], ans: 2, exp: '得分是三比一 = tỉ số 3 – 1; 开心极了 = vui vô cùng (ôn 极了 bài 7).' }
+    ]
+  },
+  {
+    audio: '这本书越看越有意思，我昨天晚上看到十二点才睡。',
+    questions: [
+      { q: 'Người nói thấy cuốn sách thế nào?', opts: ['Càng đọc càng thú vị', 'Đọc mãi không hiểu', 'Rất ngắn, đọc một lúc là xong'], ans: 0, exp: '越看越有意思 = càng đọc càng thú vị.' },
+      { q: 'Tối qua người nói mấy giờ mới ngủ?', opts: ['10 giờ', '11 giờ', '12 giờ'], ans: 2, exp: '看到十二点才睡 = đọc đến 12 giờ mới ngủ; 才 = mới (muộn).' }
+    ]
+  },
+  {
+    audio: '第一次参加世界比赛的时候，他很紧张，几乎一个晚上没睡觉。',
+    questions: [
+      { q: 'Lần đầu thi đấu thế giới, anh ấy thế nào?', opts: ['Ngủ rất ngon', 'Bị ốm phải nghỉ', 'Rất hồi hộp, gần như cả đêm không ngủ'], ans: 2, exp: '很紧张 = rất hồi hộp; 几乎一个晚上没睡觉 = gần như cả đêm không ngủ.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '参加', right: '网球比赛' },
-  { left: '受到', right: '天气的影响' },
+  { left: '参加', right: '运动会' },
   { left: '得到', right: '好成绩' },
-  { left: '为了准备运动会', right: '每天都练球' },
-  { left: '冰箱里有', right: '啤酒和饮料' },
-  { left: '越看', right: '越着急' }
+  { left: '受到', right: '影响' },
+  { left: '校园', right: '卡' },
+  { left: '喝', right: '啤酒' },
+  { left: '去球场', right: '练球' },
+  { left: '怎么', right: '回事' }
 ];
 
 var fillData = [
-  { pre: '我的腿不舒服，所以没', blank: '参加', post: '这次网球比赛。', hint: '(tham gia)', ans: '参加', exp: '参加 + 比赛; 所以 (HSK2 Bài 4); 腿 = chân. Câu của sách.' },
-  { pre: '学校的', blank: '球场', post: '上，每天都有很多同学在那儿做运动。', hint: '(sân bóng)', ans: '球场', exp: '球场上 = trên sân bóng; 运动 (HSK2 Bài 7). Câu của sách.' },
-  { pre: '运动员们为了得到好', blank: '成绩', post: '，每天要练十多个小时。', hint: '(thành tích)', ans: '成绩', exp: '得到 + 好成绩; 为了 — chỉ mục đích (ngữ pháp 1). Câu của sách.' },
-  { pre: '受到天气的', blank: '影响', post: '，今天的足球比赛要晚两个小时开始。', hint: '(ảnh hưởng)', ans: '影响', exp: '受到 + ……的 + 影响 — bị ảnh hưởng bởi…. Câu của sách.' },
-  { pre: '这位运动员觉得', blank: '世界', post: '上最重要的运动会就是奥运会。', hint: '(thế giới)', ans: '世界', exp: '世界上 + 最 + Adj + 的 + N. Câu của sách.' },
-  { pre: '她游泳游得快吗？——她', blank: '几乎', post: '每天都游，现在游得特别快。', hint: '(hầu như)', ans: '几乎', exp: '几乎 + 每天都 — gần như ngày nào cũng; 特别 (ôn HSK3 Bài 4). Câu của sách.' },
-  { pre: '你打得这么好，是羽毛球运动员吗？——打羽毛球', blank: '只是', post: '我的兴趣，我不是运动员。', hint: '(chỉ là)', ans: '只是', exp: '只是 = chỉ là; 兴趣 (ôn HSK3 Bài 5). Câu của sách.' },
-  { pre: '明天要考试了，我有点儿', blank: '紧张', post: '，昨天晚上几乎没睡觉。', hint: '(hồi hộp)', ans: '紧张', exp: '有点儿 + 紧张 — hơi hồi hộp; 几乎 (từ mới); 要……了 — sắp (HSK2 Bài 10).' }
+  { pre: '', blank: '为了', post: '能听懂中国歌，我每天都学十个新词。', hint: '(để)', ans: '为了', exp: '为了 + mục đích, đứng đầu câu; vế sau là việc làm để đạt mục đích.' },
+  { pre: '你的汉字写得不错，再多', blank: '练习', post: '练习就更好了。', hint: '(luyện tập)', ans: '练习', exp: '练习 = luyện tập; lặp lại 练习练习 = luyện tập thêm một chút.' },
+  { pre: '这次运动会，我们班有十二个男生', blank: '参加', post: '。', hint: '(tham gia)', ans: '参加', exp: '参加 + hoạt động / cuộc thi = tham gia.' },
+  { pre: '他太喜欢足球了，', blank: '几乎', post: '每天晚上都看足球比赛。', hint: '(hầu như)', ans: '几乎', exp: '几乎 + 每天都 = gần như ngày nào cũng.' },
+  { pre: '我不是老师，', blank: '只是', post: '比你早学了两年汉语。', hint: '(chỉ là)', ans: '只是', exp: '只是 = chỉ là, chỉ (không có gì hơn).' },
+  { pre: '明天要见女朋友的爸爸妈妈，他有点儿', blank: '紧张', post: '。', hint: '(hồi hộp)', ans: '紧张', exp: '紧张 = hồi hộp, căng thẳng; 有点儿 + tính từ (ý không như mong muốn).' },
+  { pre: '我学汉语', blank: '主要', post: '是因为喜欢中国电影。', hint: '(chủ yếu)', ans: '主要', exp: '主要是因为…… = chủ yếu là vì….' },
+  { pre: '晚上别喝太多咖啡，会', blank: '影响', post: '睡觉的。', hint: '(ảnh hưởng)', ans: '影响', exp: '影响 + việc = ảnh hưởng đến…; 会……的 = sẽ (chắc chắn).' },
+  { pre: '这次考试她的', blank: '成绩', post: '很好，老师和妈妈都很高兴。', hint: '(thành tích, điểm)', ans: '成绩', exp: '成绩 = kết quả, điểm số (thi, học, thi đấu).' },
+  { pre: '他从十岁就开始练网球，现在已经是网球', blank: '运动员', post: '了。', hint: '(vận động viên)', ans: '运动员', exp: '网球运动员 = vận động viên quần vợt.' },
+  { pre: '我最喜欢上', blank: '体育', post: '课，因为可以去球场踢足球。', hint: '(thể dục)', ans: '体育', exp: '体育课 = giờ thể dục; 球场 = sân bóng.' },
+  { pre: '这个菜越吃越', blank: '好吃', post: '，再来一碗吧！', hint: '(ngon)', ans: '好吃', exp: '越 + V + 越 + tính từ = càng … càng …: 越吃越好吃.' }
 ];
 
 var sortData = [
-  { words: ['为了', '准备', '运动会', '，', '他们', '每天', '都', '练球', '。'], ans: '为了准备运动会，他们每天都练球。', audio: '为了准备运动会，他们每天都练球。' },
-  { words: ['不是', '比赛', '，', '打', '不', '好', '没关系', '。'], ans: '不是比赛，打不好没关系。', audio: '不是比赛，打不好没关系。' },
-  { words: ['大家', '打球', '只是', '为了', '锻炼', '身体', '。'], ans: '大家打球只是为了锻炼身体。', audio: '大家打球只是为了锻炼身体。' },
-  { words: ['今天', '总是', '踢', '不', '进去', '！'], ans: '今天总是踢不进去！', audio: '今天总是踢不进去！' },
-  { words: ['今天的', '足球', '比赛', '我', '越', '看', '越', '着急', '。'], ans: '今天的足球比赛我越看越着急。', audio: '今天的足球比赛我越看越着急。' },
-  { words: ['奥运会', '是', '世界上', '影响', '最大', '的', '体育', '比赛', '。'], ans: '奥运会是世界上影响最大的体育比赛。', audio: '奥运会是世界上影响最大的体育比赛。' }
+  { words: ['为了', '身体', '健康', '，', '爷爷', '几乎', '每天', '都', '去', '跑步', '。'], ans: '为了身体健康，爷爷几乎每天都去跑步。', audio: '为了身体健康，爷爷几乎每天都去跑步。' },
+  { words: ['这么', '多', '菜', '，', '我们', '两个人', '吃', '不', '完', '。'], ans: '这么多菜，我们两个人吃不完。', audio: '这么多菜，我们两个人吃不完。' },
+  { words: ['比赛', '结束', '了', '，', '谁', '能', '告诉', '我', '得分', '？'], ans: '比赛结束了，谁能告诉我得分？', audio: '比赛结束了，谁能告诉我得分？' },
+  { words: ['因为', '下雨', '，', '运动会', '受到', '了', '影响', '。'], ans: '因为下雨，运动会受到了影响。', audio: '因为下雨，运动会受到了影响。' },
+  { words: ['他', '是', '世界上', '跑', '得', '最快', '的', '人', '。'], ans: '他是世界上跑得最快的人。', audio: '他是世界上跑得最快的人。' },
+  { words: ['你', '坐', '在', '后面', '，', '看', '得', '见', '吗', '？'], ans: '你坐在后面，看得见吗？', audio: '你坐在后面，看得见吗？' },
+  { words: ['开车', '以前', '不能', '喝', '啤酒', '。'], ans: '开车以前不能喝啤酒。', audio: '开车以前不能喝啤酒。' },
+  { words: ['今天', '体育馆', '里', '有', '好多', '人', '在', '练', '球', '。'], ans: '今天体育馆里有好多人在练球。', audio: '今天体育馆里有好多人在练球。' }
 ];
 
 var mcData = [
-  { q: '家月，对不起，我昨天忘了还你校园＿＿了。', opts: ['卡', '票', '书', '门'], ans: 0, exp: '校园卡 = thẻ sinh viên; 还你校园卡 = trả thẻ cho bạn.' },
-  { q: '听说＿＿准备运动会，你们几个男生每天都练球。', opts: ['因为', '为了', '所以', '虽然'], ans: 1, exp: '为了 + mục đích = để…: 为了准备运动会. 因为 chỉ nguyên nhân, không hợp ở đây.' },
-  { q: '我想参加＿＿比赛，最近一直在练习。', opts: ['啤酒', '世界', '网球', '成绩'], ans: 2, exp: '网球比赛 = thi đấu quần vợt. 啤酒, 成绩 không đứng trước 比赛 kiểu này.' },
-  { q: '我好多年没打羽毛球了，＿＿忘了怎么打了。', opts: ['只是', '主要', '终于', '几乎'], ans: 3, exp: '几乎 = gần như; nhiều năm không chơi nên gần như quên cách chơi. 终于 là cuối cùng (điều mong đợi).' },
-  { q: '新球员第一次参加这么重要的比赛，太＿＿了。', opts: ['紧张', '主要', '影响', '得分'], ans: 0, exp: 'Lần đầu đấu trận quan trọng → 太紧张了 (quá hồi hộp). 主要, 影响 không phải tính từ chỉ cảm xúc.' },
-  { q: '主要的球员没参加比赛，所以大家也都＿＿影响了。', opts: ['收到', '受到', '得到', '找到'], ans: 1, exp: '受到影响 = bị ảnh hưởng (kết hợp cố định). 收到 dùng cho thư, quà; 得到 thường đi với điều tốt.' },
-  { q: '虽然他没有得到好＿＿，但是他让世界认识了中国。', opts: ['体育', '比赛', '运动员', '成绩'], ans: 3, exp: '好成绩 = thành tích tốt; 得到好成绩. 体育, 比赛 không đi với 得到好….' },
-  { q: 'Chọn câu đúng: "Chơi không tốt cũng không sao."', opts: ['不打好没关系。', '打好不没关系。', '没打得好没关系。', '打不好没关系。'], ans: 3, exp: 'Bổ ngữ khả năng: V + 不 + kết quả → 打不好 = chơi không tốt được.' },
-  { q: 'Chọn câu đúng: "Bạn có nghe thấy tôi nói không?"', opts: ['你能听见不见我说话吗？', '你不听得见我说话吗？', '你听得见我说话吗？', '你听见得我说话吗？'], ans: 2, exp: 'Bổ ngữ khả năng: 听得见 = nghe thấy được; câu hỏi thêm 吗 ở cuối.' },
-  { q: 'Chọn câu đúng: "Mẹ càng nói, nó càng không vui."', opts: ['妈妈越说，他越不高兴。', '越妈妈说，他越不高兴。', '妈妈越说，他不高兴越。', '妈妈说越，他越不高兴。'], ans: 0, exp: '越A越B: 妈妈越说，他越不高兴; 越 đứng sau chủ ngữ, trước động từ/tính từ.' }
+  { q: 'Bạn kể với bạn bè: “Để thi tốt, dạo này ngày nào tôi cũng ngủ rất muộn.”', opts: ['因为考好，我最近每天都睡得很晚。', '为了考好，所以我最近每天都睡得很晚。', '为了考好，我最近每天都睡得很晚。', '我最近每天都睡得很晚为了考好。'], ans: 2, exp: '为了 + mục đích đứng đầu câu; không dùng cùng 所以; 因为 chỉ nguyên nhân, không chỉ mục đích.' },
+  { q: '“工作太多了，今天我＿＿，明天再做吧。”', opts: ['做不完', '不做完', '没做得完', '做得不完'], ans: 0, exp: 'Bổ ngữ khả năng phủ định: V + 不 + 完 → 做不完 = làm không xong được.' },
+  { q: 'Bạn hỏi người bạn Trung Quốc: “Tiếng Trung tôi nói, bạn nghe có hiểu không?”', opts: ['我说的汉语，你听得不懂吗？', '我说的汉语，你不听得懂吗？', '我说的汉语，你能听得懂不懂吗？', '我说的汉语，你听得懂吗？'], ans: 3, exp: 'Bổ ngữ khả năng: V + 得 + kết quả → 听得懂; hỏi bằng 吗 hoặc 听得懂听不懂, không trộn cả hai.' },
+  { q: 'Câu nào SAI?', opts: ['爬了三个小时山，我走不动了。', '前面人太多，我们进不去。', '我找不到我的手机了。', '这么多米饭，我们没吃得完。'], ans: 3, exp: 'Phủ định bổ ngữ khả năng dùng 不 chen giữa: 吃不完; không dùng 没 + 得.' },
+  { q: 'Leo núi được một lúc, bạn nói: “Chúng ta càng leo càng mệt, nghỉ ở đây một chút đi.”', opts: ['我们越累越爬，在这儿休息一下吧。', '我们越爬越累，在这儿休息一下吧。', '我们越爬越很累，在这儿休息一下吧。', '我们爬越累越，在这儿休息一下吧。'], ans: 1, exp: '越 + V + 越 + tính từ: 越爬越累; không thêm 很 sau 越.' },
+  { q: 'Bạn kể: “Anh ấy càng nói, tôi càng nghe không hiểu.”', opts: ['越他说，我越听不懂。', '他越说，越我听不懂。', '他越说，我越听不懂。', '他说越多，我听不懂越。'], ans: 2, exp: 'Hai chủ ngữ khác nhau: 越 đứng sau mỗi chủ ngữ → 他越说，我越听不懂.' },
+  { q: '“他的新歌＿＿了很多年轻人的欢迎。”', opts: ['收到', '受到', '找到', '看到'], ans: 1, exp: '受到欢迎 / 受到影响 = được (hoan nghênh) / bị (ảnh hưởng); 收到 dùng cho thư, quà.' },
+  { q: 'A: “这次比赛你们班怎么样？” — B: “我们班＿＿了第一名，大家都很开心。”', opts: ['得到', '受到', '收到', '参加'], ans: 0, exp: '得到第一名 = giành được hạng nhất; 得到 + kết quả tốt.' },
+  { q: 'A: “明天就要比赛了，你＿＿吗？” — B: “有一点儿，这是我第一次参加比赛。”', opts: ['主要', '健康', '紧张', '关心'], ans: 2, exp: '紧张 = hồi hộp; lần đầu thi đấu nên hơi hồi hộp.' },
+  { q: 'Về đến nhà thấy đồ đạc lộn xộn khắp nơi, bạn hỏi: “Đây là chuyện gì vậy?”', opts: ['这是什么回事吗？', '这是怎么事？', '这是回事怎么？', '这是怎么回事？'], ans: 3, exp: '怎么回事 = chuyện gì vậy (回 là lượng từ của 事); đã có 怎么 thì không thêm 吗.' },
+  { q: 'A: “你觉得这个房子怎么样？” — B: “挺好的，＿＿离公司有点儿远。”', opts: ['只是', '几乎', '为了', '主要'], ans: 0, exp: '只是 ở đây = chỉ có điều, nhưng mà (nêu một điểm chưa tốt).' },
+  { q: 'Bạn tìm mãi không thấy hộ chiếu, bạn nói:', opts: ['我的护照不找到了。', '我的护照找不到了。', '我的护照没找得到。', '我的护照找得不到。'], ans: 1, exp: 'V + 不 + 到 = không … được: 找不到 = tìm không thấy.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 为了……, bổ ngữ khả năng (听得懂 / 看不懂 / 做不完), 越A越B và các từ về thể thao, thi đấu.',
   questions: [
     {
-      q_zh: '李文为什么来得很快？',
-      q_vn: 'Vì sao Lý Văn đến rất nhanh?',
-      hint: '因为他正在……，接了……就……',
-      sample: '因为他正在球场打球，接了白家月的电话就跑过来了。',
-      sample_vn: 'Vì anh ấy đang chơi bóng ở sân, nhận điện thoại của Bạch Gia Nguyệt xong là chạy tới ngay.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. ……了……就…… (ôn HSK3 Bài 5); 正在 (HSK1 Bài 11).'
+      q_zh: '为了学好汉语，你每天做什么？',
+      q_vn: 'Để học tốt tiếng Trung, mỗi ngày bạn làm gì?',
+      hint: '为了学好汉语，我每天……，还常……',
+      sample: '为了学好汉语，我每天都听半个小时中国歌，还常看中国电影。',
+      sample_vn: 'Để học tốt tiếng Trung, ngày nào tôi cũng nghe nhạc Trung Quốc nửa tiếng, còn hay xem phim Trung Quốc.',
+      note: '为了 + mục đích đứng đầu câu.'
     },
     {
-      q_zh: '白家月最近在做什么？',
-      q_vn: 'Gần đây Bạch Gia Nguyệt đang làm gì?',
-      hint: '她最近一直在……，因为她想……',
-      sample: '她最近一直在练习网球，因为她想参加运动会的网球比赛。',
-      sample_vn: 'Gần đây cô ấy luôn luyện tập quần vợt, vì cô ấy muốn tham gia thi quần vợt ở đại hội thể thao.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 一直 (ôn HSK3 Bài 4) + 在 + V.'
+      q_zh: '现在中国电影你看得懂吗？',
+      q_vn: 'Bây giờ bạn xem phim Trung Quốc có hiểu không?',
+      hint: '我能听懂……，但是……还看不懂，因为……',
+      sample: '我现在能听懂一些简单的汉语，但是中国电影还看不懂，因为他们说得太快了。',
+      sample_vn: 'Bây giờ tôi nghe hiểu được một số câu đơn giản, nhưng phim Trung Quốc thì vẫn xem không hiểu, vì họ nói nhanh quá.',
+      note: 'Bổ ngữ khả năng 看得懂 / 看不懂; ôn 简单 (bài 2).'
     },
     {
-      q_zh: '白家月为什么不想去？',
-      q_vn: 'Vì sao Bạch Gia Nguyệt không muốn đi (chơi cầu lông)?',
-      hint: '因为她好多年……，如果总是……',
-      sample: '因为她好多年没打羽毛球了，几乎忘了怎么打了。她觉得如果总是接不住球，就太不好意思了。',
-      sample_vn: 'Vì đã nhiều năm cô ấy không chơi cầu lông, gần như quên cách chơi rồi. Cô ấy thấy nếu lúc nào cũng không đỡ được cầu thì ngại lắm.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. Bổ ngữ khả năng 接不住 (ngữ pháp 2); 不好意思 (HSK2 Bài 1).'
+      q_zh: '有没有一件事，你越做越喜欢？',
+      q_vn: 'Có việc nào bạn càng làm càng thích không?',
+      hint: '有，……我越……越喜欢，现在……',
+      sample: '有，学汉语我越学越喜欢，现在每天都想多学一点儿。',
+      sample_vn: 'Có, học tiếng Trung thì tôi càng học càng thích, bây giờ ngày nào cũng muốn học thêm một chút.',
+      note: '越 + V + 越 + tính từ / động từ tâm lý.'
     },
     {
-      q_zh: '今天的足球比赛踢得怎么样？',
-      q_vn: 'Trận bóng đá hôm nay đá thế nào?',
-      hint: '踢得不太好，球员们总是……',
-      sample: '踢得不太好。几个老球员生病了，新球员太紧张，总是踢不进去。',
-      sample_vn: 'Đá không tốt lắm. Mấy cầu thủ kỳ cựu bị ốm, cầu thủ mới quá căng thẳng nên sút mãi không vào.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. Bổ ngữ trạng thái 踢得不太好 (HSK2 Bài 7) + bổ ngữ khả năng 踢不进去.'
+      q_zh: '你参加过什么比赛？成绩怎么样？',
+      q_vn: 'Bạn đã từng tham gia cuộc thi nào? Kết quả thế nào?',
+      hint: '我参加过……，那天我很……，不过……',
+      sample: '我参加过学校运动会的跑步比赛，那天我很紧张，不过得到了第三名。',
+      sample_vn: 'Tôi từng tham gia thi chạy ở đại hội thể thao của trường, hôm đó tôi rất hồi hộp, nhưng cuối cùng giành được hạng ba.',
+      note: 'V + 过 (đã từng); 得到 + kết quả tốt.'
     },
     {
-      q_zh: '刘长春的影响是什么？',
-      q_vn: 'Ảnh hưởng của Lưu Trường Xuân là gì?',
-      hint: '虽然他没有……，但是他让……',
-      sample: '虽然他没有得到好成绩，但是他让世界认识了中国。',
-      sample_vn: 'Tuy ông không đạt được thành tích tốt, nhưng ông đã khiến thế giới biết đến Trung Quốc.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 虽然……但是…… (HSK2 Bài 8); 让 (câu kiêm ngữ – HSK2 Bài 1).'
-    },
-    {
-      q_zh: '你喜欢什么运动？你参加过什么比赛？',
-      q_vn: 'Bạn thích môn thể thao nào? Bạn đã từng tham gia cuộc thi nào?',
-      hint: '我喜欢……，几乎每个星期都……。我参加过……',
-      sample: '我喜欢打篮球，几乎每个星期都打两三次。我参加过学校运动会的篮球比赛，虽然没有得到好成绩，但是非常有意思。',
-      sample_vn: 'Tôi thích chơi bóng rổ, gần như tuần nào cũng chơi hai ba lần. Tôi đã từng tham gia thi bóng rổ ở đại hội thể thao của trường, tuy không đạt thành tích tốt nhưng rất thú vị.',
-      note: 'Câu hỏi Khởi động của sách. 几乎 (từ mới); V + 过 (HSK2 Bài 4); 有意思 (HSK2 Bài 8).'
-    },
-    {
-      q_zh: '你看过体育比赛吗？介绍一下你看过的比赛。',
-      q_vn: 'Bạn đã từng xem thi đấu thể thao chưa? Hãy giới thiệu một trận đấu bạn đã xem.',
-      hint: '看过。……的时候，我在电视上看了……，我越看越……',
-      sample: '看过。去年我在电视上看了奥运会的游泳比赛，运动员们游得非常快，我越看越高兴。',
-      sample_vn: 'Xem rồi. Năm ngoái tôi xem thi bơi Olympic trên TV, các vận động viên bơi rất nhanh, tôi càng xem càng thích.',
-      note: 'Câu hỏi Khởi động của sách. 越A越B (ngữ pháp 3); 游得非常快 — bổ ngữ trạng thái (HSK2 Bài 7).'
-    },
-    {
-      q_zh: '你是受到谁的影响开始喜欢这个运动的？',
-      q_vn: 'Bạn bắt đầu thích môn thể thao này là do chịu ảnh hưởng của ai?',
-      hint: '我是受到……的影响开始喜欢……的',
-      sample: '我是受到爸爸的影响开始喜欢打网球的。爸爸从小就教我打网球，现在我越打越喜欢。',
-      sample_vn: 'Tôi bắt đầu thích quần vợt là do ảnh hưởng của bố. Bố dạy tôi chơi quần vợt từ nhỏ, bây giờ tôi càng chơi càng thích.',
-      note: 'Câu hỏi Hoạt động trên lớp của sách. 是……的 (HSK2 Bài 1); 从小 (HSK2 Bài 12); 教 (HSK2 Bài 13).'
+      q_zh: '你最喜欢的运动员是谁？为什么？',
+      q_vn: 'Vận động viên bạn thích nhất là ai? Vì sao?',
+      hint: '我最喜欢的运动员是……，他/她……，受到了……',
+      sample: '我最喜欢的运动员是一位中国网球运动员，她每天都练习很长时间，受到了很多人的欢迎。',
+      sample_vn: 'Vận động viên tôi thích nhất là một vận động viên quần vợt Trung Quốc, ngày nào cô ấy cũng luyện tập rất lâu, được rất nhiều người yêu mến.',
+      note: '受到 + ……的欢迎 / 影响.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Nghe nói để chuẩn bị cho đại hội thể thao, mấy bạn nam các anh ngày nào cũng tập bóng.', zh: '听说为了准备运动会，你们几个男生每天都练球。', py: 'Tīngshuō wèile zhǔnbèi yùndònghuì, nǐmen jǐ ge nánshēng měi tiān dōu liàn qiú.' },
-  { vi: 'Có phải thi đấu đâu, chơi không tốt cũng không sao.', zh: '不是比赛，打不好没关系。', py: 'Bú shì bǐsài, dǎ bu hǎo méi guānxi.' },
-  { vi: 'Nhiều bạn cùng chơi như vậy, nếu lúc nào cũng không đỡ được cầu thì ngại lắm.', zh: '这么多同学一起打，如果总是接不住球，就太不好意思了。', py: 'Zhème duō tóngxué yìqǐ dǎ, rúguǒ zǒngshì jiē bu zhù qiú, jiù tài bù hǎoyìsi le.' },
-  { vi: 'Càng xem càng sốt ruột. Mình không xem nữa, các bạn báo mình tỉ số nhé.', zh: '越看越着急。我不看了，你们告诉我得分吧。', py: 'Yuè kàn yuè zháojí. Wǒ bú kàn le, nǐmen gàosu wǒ défēn ba.' },
-  { vi: 'Mặc dù ông không đạt được thành tích tốt, nhưng ông đã khiến thế giới biết đến Trung Quốc.', zh: '虽然他没有得到好成绩，但是他让世界认识了中国。', py: 'Suīrán tā méiyǒu dédào hǎo chéngjì, dànshì tā ràng shìjiè rènshile Zhōngguó.' }
+  { vi: 'Để mua được vé, anh ấy đến từ rất sớm.', zh: '为了买到票，他很早就来了。', py: 'Wèile mǎidào piào, tā hěn zǎo jiù lái le.' },
+  { vi: 'Tối qua tôi uống cà phê, ngủ không được.', zh: '昨天晚上我喝了咖啡，睡不着。', py: 'Zuótiān wǎnshang wǒ hēle kāfēi, shuì bu zháo.' },
+  { vi: 'Bài hát này càng nghe càng hay.', zh: '这个歌越听越好听。', py: 'Zhège gē yuè tīng yuè hǎotīng.' },
+  { vi: 'Trước trận đấu, các vận động viên đều rất hồi hộp.', zh: '比赛以前，运动员们都很紧张。', py: 'Bǐsài yǐqián, yùndòngyuánmen dōu hěn jǐnzhāng.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Mọi người chơi cầu chỉ là để rèn luyện sức khoẻ.', zh: '大家打球只是为了锻炼身体。', py: 'Dàjiā dǎ qiú zhǐshì wèile duànliàn shēntǐ.' },
-  { vi: 'Hôm nay bị sao vậy? Sút mãi không vào!', zh: '今天怎么回事？总是踢不进去！', py: 'Jīntiān zěnme huí shì? Zǒngshì tī bu jìnqù!' },
-  { vi: 'Các cầu thủ chủ lực không thi đấu nên mọi người cũng đều bị ảnh hưởng.', zh: '主要的球员没参加比赛，所以大家也都受到影响了。', py: 'Zhǔyào de qiúyuán méi cānjiā bǐsài, suǒyǐ dàjiā yě dōu shòudào yǐngxiǎng le.' },
-  { vi: 'Thế vận hội Olympic là giải thi đấu thể thao có ảnh hưởng lớn nhất thế giới.', zh: '奥运会是世界上影响最大的体育比赛。', py: 'Àoyùnhuì shì shìjiè shang yǐngxiǎng zuì dà de tǐyù bǐsài.' },
-  { vi: 'Đã nhiều năm em không chơi cầu lông, gần như quên mất cách chơi rồi.', zh: '我好多年没打羽毛球了，几乎忘了怎么打了。', py: 'Wǒ hǎoduō nián méi dǎ yǔmáoqiú le, jīhū wàngle zěnme dǎ le.' }
+  { vi: 'Anh ấy học tiếng Trung chủ yếu là vì công việc.', zh: '他学汉语主要是为了工作。', py: 'Tā xué Hànyǔ zhǔyào shì wèile gōngzuò.' },
+  { vi: 'Ở đại hội thể thao bạn tham gia môn thi nào?', zh: '运动会上你参加什么比赛？', py: 'Yùndònghuì shang nǐ cānjiā shénme bǐsài?' },
+  { vi: 'Thành tích học tập của em trai ngày càng tốt.', zh: '弟弟的成绩越来越好了。', py: 'Dìdi de chéngjì yuè lái yuè hǎo le.' }
 ];

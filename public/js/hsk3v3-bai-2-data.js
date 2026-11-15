@@ -2572,159 +2572,159 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2
 var listenData = [
   {
-    audio: '服务员，我们要点菜。好的，这是菜单。你们想喝什么饮料？我们又饿又渴，先来两杯绿茶吧，再要一个鸡肉饭和一碗面条儿。好的，请等一下，我马上给你们拿。',
+    audio: '学校门口那家小饭馆的鸡肉饭又便宜又好吃，我和同学一个星期去三次。',
     questions: [
-      { q: '他们要喝什么？', opts: ['咖啡', '绿茶', '奶茶'], ans: 1 },
-      { q: '他们点了什么菜？', opts: ['鸡肉饭和面条儿', '饺子和包子', '鸡肉饭和饺子'], ans: 0 }
+      { q: 'Món cơm gà ở quán đó thế nào?', opts: ['Ngon nhưng hơi đắt', 'Vừa rẻ vừa ngon', 'Rẻ nhưng không ngon lắm'], ans: 1, exp: '又便宜又好吃 = vừa rẻ vừa ngon; 又A又B nêu hai đặc điểm cùng lúc.' },
+      { q: 'Họ đến quán mấy lần một tuần?', opts: ['Ba lần', 'Hai lần', 'Một lần'], ans: 0, exp: '一个星期去三次 = một tuần đi ba lần.' }
     ]
   },
   {
-    audio: '小王，今天中午我们去哪儿吃饭？我不太饿，吃什么都可以，你想去哪儿，我们就去哪儿。那我们去学校旁边的那家饭馆吧，那里的服务员很热情，菜又便宜又好吃。好啊，我好久没去那儿了。',
+    audio: '我们四个人，桌子上少了一双筷子，请你再拿一双，还要一个勺子。',
     questions: [
-      { q: '那家饭馆的菜怎么样？', opts: ['很贵', '又便宜又好吃', '不太好吃'], ans: 1 },
-      { q: '那家饭馆在哪儿？', opts: ['公司旁边', '超市旁边', '学校旁边'], ans: 2 }
+      { q: 'Họ nhờ nhân viên mang thêm gì?', opts: ['Hai cái bát và một tờ thực đơn', 'Một chai nước và hai cái cốc', 'Một đôi đũa và một cái thìa'], ans: 2, exp: '少了一双筷子 = thiếu một đôi đũa; 再拿一双，还要一个勺子 = lấy thêm một đôi, cần thêm một cái thìa.' }
     ]
   },
   {
-    audio: '妈妈，今天晚上我们别做饭了，点外卖吧。好啊，你在手机上选吧，想吃什么就点什么。我选好了，一个鸡肉饭、一些饺子，还有两杯奶茶。这么多？我们只有两个人。不多不多，我太饿了。',
+    audio: '我从早上到现在什么都没吃，又累又饿，我们去楼下吃碗面条儿吧。',
     questions: [
-      { q: '他们今天晚上怎么吃饭？', opts: ['自己做饭', '去饭馆吃', '点外卖'], ans: 2 },
-      { q: '他们点了什么饮料？', opts: ['奶茶', '绿茶', '咖啡'], ans: 0 }
+      { q: 'Từ sáng đến giờ người nói đã ăn gì?', opts: ['Chưa ăn gì cả', 'Chỉ ăn một bát mì', 'Ăn rất nhiều'], ans: 0, exp: '什么都没吃 = chẳng ăn gì cả; 什么 + 都 + 没 = không … gì hết.' },
+      { q: 'Người nói muốn làm gì?', opts: ['Về nhà ngủ', 'Xuống dưới lầu ăn mì', 'Đặt đồ ăn giao tận nơi'], ans: 1, exp: '去楼下吃碗面条儿 = xuống dưới lầu ăn bát mì.' }
     ]
   },
   {
-    audio: '我的朋友小文很少自己做饭。早饭他只喝一杯牛奶，午饭和晚饭经常吃方便面。我觉得这样不太好，就教他做几个简单的菜。现在他每天都自己做饭，他说自己做的饭又好吃又便宜。',
+    audio: '今天是爸爸的生日，妈妈自己做了一个蛋糕，做得很简单，但是大家都说比商店里的还好吃。',
     questions: [
-      { q: '以前小文午饭和晚饭经常吃什么？', opts: ['面包', '方便面', '蛋糕'], ans: 1 },
-      { q: '说话人教小文做什么？', opts: ['做蛋糕', '做方便面', '做几个简单的菜'], ans: 2 }
+      { q: 'Bánh kem là của ai làm?', opts: ['Bố tự làm', 'Mua ở cửa hàng', 'Mẹ tự làm'], ans: 2, exp: '妈妈自己做了一个蛋糕 = mẹ tự làm một cái bánh kem.' },
+      { q: 'Mọi người thấy chiếc bánh thế nào?', opts: ['Ngon hơn bánh ở cửa hàng', 'Đẹp nhưng không ngon', 'Quá đơn giản'], ans: 0, exp: '比商店里的还好吃 = còn ngon hơn bánh ở cửa hàng; 做得很简单 = làm rất đơn giản.' }
+    ]
+  },
+  {
+    audio: '你不用下楼买饭了，我在手机上点了外卖，半个小时就能送到。',
+    questions: [
+      { q: 'Người nói bảo người nghe thế nào?', opts: ['Xuống lầu mua cơm ngay', 'Không cần xuống lầu mua cơm', 'Tự nấu cơm ở nhà'], ans: 1, exp: '不用 + V = không cần làm gì: 不用下楼买饭了 = không cần xuống lầu mua cơm nữa.' },
+      { q: 'Bao lâu thì đồ ăn được giao đến?', opts: ['Mười phút', 'Một tiếng', 'Nửa tiếng'], ans: 2, exp: '半个小时就能送到 = nửa tiếng là giao tới.' }
+    ]
+  },
+  {
+    audio: '我弟弟什么饮料都不喝，只喝水。',
+    questions: [
+      { q: 'Em trai người nói uống gì?', opts: ['Loại đồ uống nào cũng thích', 'Chỉ uống nước', 'Chỉ uống trà'], ans: 1, exp: '什么饮料都不喝 = đồ uống gì cũng không uống; 只喝水 = chỉ uống nước.' }
+    ]
+  },
+  {
+    audio: '王老师对我们很热情，她说：“你们有什么问题，就问什么，别客气。”',
+    questions: [
+      { q: 'Cô Vương dặn học sinh điều gì?', opts: ['Có thắc mắc gì cứ hỏi, đừng ngại', 'Đừng hỏi trong giờ học', 'Hỏi bạn cùng lớp trước'], ans: 0, exp: '有什么问题，就问什么 = có câu hỏi gì thì hỏi cái đó (hô ứng 什么…就…什么); 别客气 = đừng ngại.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '又饿', right: '又渴' },
-  { left: '好久没吃', right: '饺子了' },
   { left: '一双', right: '筷子' },
-  { left: '别', right: '客气' },
-  { left: '想吃什么', right: '就点什么' },
-  { left: '这张', right: '菜单' }
+  { left: '一碗', right: '鸡肉饭' },
+  { left: '送', right: '外卖' },
+  { left: '你别', right: '客气' },
+  { left: '服务员很', right: '热情' },
+  { left: '饿了就吃', right: '方便面' },
+  { left: '我马上', right: '回来' }
 ];
 
 var fillData = [
-  { pre: '我觉得', blank: '用', post: '筷子吃饭更方便。', hint: '(dùng)', ans: '用', exp: '用 + công cụ + động từ: dùng cái gì để làm gì; 更 — càng, hơn (ôn HSK2 Bài 4).' },
-  { pre: '你', blank: '记', post: '住那个饭馆的名字了吗？', hint: '(nhớ)', ans: '记', exp: '记住 — nhớ kỹ; 住 là bổ ngữ kết quả (ôn HSK2 Bài 3).' },
-  { pre: '她现在很饿，早上', blank: '只', post: '吃了一块蛋糕。', hint: '(chỉ)', ans: '只', exp: '只 đứng trước động từ: chỉ ăn một miếng bánh nên giờ rất đói.' },
-  { pre: '我还不太会用筷子，你们有勺子吗？——有，你等一下，我', blank: '马上', post: '给你拿。', hint: '(ngay)', ans: '马上', exp: '马上 + động từ — làm ngay lập tức.' },
-  { pre: '我找服务员要一下菜单，咱们点菜。——在手机上就可以点菜，', blank: '不用', post: '要菜单。', hint: '(không cần)', ans: '不用', exp: '不用 + V — không cần làm gì (khác 别 = đừng).' },
-  { pre: '你想去哪个饭馆吃饭？——我', blank: '好久', post: '没吃饺子了，去楼下的饺子馆吧。', hint: '(lâu rồi)', ans: '好久', exp: '好久没 + V + 了 — đã lâu không làm gì; 楼 (HSK2 Bài 12).' },
-  { pre: '这家饭馆的服务员都很', blank: '热情', post: '，我们一进去，他们就过来问我们想喝什么。', hint: '(nhiệt tình)', ans: '热情', exp: '很 + 热情; kết hợp 一……就…… (ôn HSK2 Bài 7) và 过来 (HSK2 Bài 2).' },
-  { pre: '我家旁边就有超市，买东西很', blank: '方便', post: '。', hint: '(tiện)', ans: '方便', exp: 'V + 很方便 — làm gì đó rất tiện; 旁边 (HSK2 Bài 9).' }
+  { pre: '我的新手机又小', blank: '又', post: '好用，你也买一个吧。', hint: '(vừa… vừa…)', ans: '又', exp: '又A又B = vừa A vừa B: 又小又好用 = vừa nhỏ vừa dễ dùng.' },
+  { pre: '我中午只吃了一个苹果，现在有点儿', blank: '饿', post: '了。', hint: '(đói)', ans: '饿', exp: '饿 = đói; 有点儿 + tính từ + 了 = thấy hơi … rồi (ôn HSK2).' },
+  { pre: '到了我家就别', blank: '客气', post: '了，想喝茶还是喝咖啡？', hint: '(khách sáo)', ans: '客气', exp: '别客气 = đừng khách sáo; ôn câu hỏi lựa chọn 还是 (HSK2).' },
+  { pre: '我们', blank: '好久', post: '没一起看电影了，星期六去吧？', hint: '(lâu rồi)', ans: '好久', exp: '好久没 + V + 了 = đã lâu không làm gì.' },
+  { pre: '这', blank: '双', post: '筷子是我从中国带回来的，送给你。', hint: '(đôi)', ans: '双', exp: 'Đũa đi theo đôi → 双; ôn 带回来 (HSK3 bài 1, bổ ngữ xu hướng).' },
+  { pre: '这是我妈妈做的包子，你', blank: '尝', post: '一个吧。', hint: '(nếm thử)', ans: '尝', exp: '尝 = nếm, ăn thử; 尝一个 = ăn thử một cái.' },
+  { pre: '今天学的汉字你都', blank: '记', post: '住了吗？', hint: '(nhớ)', ans: '记', exp: '记住 = nhớ kỹ; 住 là bổ ngữ kết quả.' },
+  { pre: '这两件衣服都很漂亮，我不知道', blank: '选', post: '哪件。', hint: '(chọn)', ans: '选', exp: '选 = chọn; 选哪件 = chọn cái nào.' },
+  { pre: '我家离地铁站很近，去哪儿都很', blank: '方便', post: '。', hint: '(tiện)', ans: '方便', exp: '哪儿都 = đi đâu cũng; 很方便 = rất tiện.' },
+  { pre: '这个菜很', blank: '简单', post: '，十分钟就能做好。', hint: '(đơn giản)', ans: '简单', exp: '简单 = đơn giản, dễ làm.' },
+  { pre: '他今天身体不舒服，', blank: '什么', post: '都不想吃。', hint: '(gì cũng)', ans: '什么', exp: '什么 + 都 + 不 + V = không muốn … gì cả.' },
+  { pre: '桌子上有水果和', blank: '饮料', post: '，大家自己拿吧。', hint: '(đồ uống)', ans: '饮料', exp: '饮料 = đồ uống (nước ngọt, trà, nước hoa quả…).' }
 ];
 
 var sortData = [
-  { words: ['我', '现在', '又', '饿', '又', '渴', '。'], ans: '我现在又饿又渴。', audio: '我现在又饿又渴。' },
-  { words: ['你们', '想', '吃', '什么', '就', '点', '什么', '。'], ans: '你们想吃什么就点什么。', audio: '你们想吃什么就点什么。' },
-  { words: ['这里', '的', '饭菜', '又', '便宜', '又', '好吃', '。'], ans: '这里的饭菜又便宜又好吃。', audio: '这里的饭菜又便宜又好吃。' },
-  { words: ['服务员', '都', '记住', '我们', '爱吃', '的', '菜', '了', '。'], ans: '服务员都记住我们爱吃的菜了。', audio: '服务员都记住我们爱吃的菜了。' },
-  { words: ['不用', '拿', '菜单', '，', '在', '手机上', '就', '能', '看到', '。'], ans: '不用拿菜单，在手机上就能看到。', audio: '不用拿菜单，在手机上就能看到。' },
-  { words: ['我', '可能', '好几天', '只', '吃', '方便面', '。'], ans: '我可能好几天只吃方便面。', audio: '我可能好几天只吃方便面。' }
+  { words: ['这家', '饭馆', '的', '服务员', '又', '热情', '又', '客气', '。'], ans: '这家饭馆的服务员又热情又客气。', audio: '这家饭馆的服务员又热情又客气。' },
+  { words: ['谁', '想', '去', '，', '谁', '就', '去', '。'], ans: '谁想去，谁就去。', audio: '谁想去，谁就去。' },
+  { words: ['我', '哥哥', '什么', '菜', '都', '会', '做', '。'], ans: '我哥哥什么菜都会做。', audio: '我哥哥什么菜都会做。' },
+  { words: ['请', '再', '给', '我们', '一张', '菜单', '。'], ans: '请再给我们一张菜单。', audio: '请再给我们一张菜单。' },
+  { words: ['他', '还', '不会', '用', '筷子', '，', '给', '他', '一个', '勺子', '吧', '。'], ans: '他还不会用筷子，给他一个勺子吧。', audio: '他还不会用筷子，给他一个勺子吧。' },
+  { words: ['你', '尝尝', '我', '做', '的', '蛋糕', '。'], ans: '你尝尝我做的蛋糕。', audio: '你尝尝我做的蛋糕。' },
+  { words: ['今天', '太', '累', '了', '，', '我们', '点', '外卖', '吧', '。'], ans: '今天太累了，我们点外卖吧。', audio: '今天太累了，我们点外卖吧。' },
+  { words: ['那天', '晚上', '他', '只', '吃', '了', '一碗', '方便面', '。'], ans: '那天晚上他只吃了一碗方便面。', audio: '那天晚上他只吃了一碗方便面。' }
 ];
 
 var mcData = [
-  { q: '服务员，再给我们拿一＿＿筷子。', opts: ['张', '双', '个', '块'], ans: 1, exp: 'Đũa luôn đi thành đôi → 一双筷子. 张 dùng cho vật phẳng (giấy, bàn), 块 cho miếng, cục.' },
-  { q: '这家饭馆的服务很＿＿，菜也都做得很好吃。', opts: ['热情', '简单', '好久', '方便'], ans: 0, exp: '服务很热情 = phục vụ nhiệt tình — khen thái độ phục vụ. 简单, 方便 không dùng để khen người phục vụ.' },
-  { q: '你可以拿走这＿＿菜单，看看下次还吃点儿什么。', opts: ['双', '杯', '张', '件'], ans: 2, exp: '菜单 là tờ giấy phẳng → 一张菜单. 双 là đôi, 杯 là cốc, 件 dùng cho áo hoặc sự việc.' },
-  { q: '现在很多饭馆都能送＿＿，在家里就能吃到。', opts: ['饮料', '菜单', '服务', '外卖'], ans: 3, exp: '送外卖 = giao đồ ăn tận nơi; vế sau "ở nhà cũng ăn được" cho thấy cần 外卖.' },
-  { q: '在手机上就能看菜单，你＿＿拿了。(không cần)', opts: ['不用', '没', '不会', '不能'], ans: 0, exp: '不用 + động từ = không cần. 不能 là không được/không thể, 没 phủ định việc đã xảy ra, 不会 là sẽ không.' },
-  { q: '跑完步我太＿＿了，想喝一杯水。', opts: ['饿', '累', '忙', '渴'], ans: 3, exp: 'Muốn uống nước → 渴 (khát). 饿 là đói (muốn ăn), 累 là mệt, 忙 là bận.' },
-  { q: '早上我＿＿喝了一杯咖啡，什么都没吃。', opts: ['又', '还', '只', '都'], ans: 2, exp: '只 + động từ = chỉ; vế sau 什么都没吃 cho thấy ngoài cà phê không ăn gì. 又/还 (lại/còn) mâu thuẫn với ý này.' },
-  { q: 'Chọn cách nói đúng: "Món này vừa rẻ vừa ngon."', opts: ['这个菜又便宜和好吃。', '这个菜又很便宜又很好吃。', '这个菜又便宜又好吃。', '这个菜便宜又又好吃。'], ans: 2, exp: '又A又B = vừa A vừa B; sau 又 dùng thẳng tính từ, không thêm 很 và không dùng 和 để nối.' },
-  { q: '"哪个菜都好吃。" — 「哪个」 ở đây có nghĩa là gì?', opts: ['Món nào? (đang hỏi)', 'Bất kỳ món nào (món nào cũng)', 'Món này', 'Món kia'], ans: 1, exp: '哪个 + 都 = bất kỳ cái nào cũng (phiếm chỉ), không phải câu hỏi. Câu này nghĩa là món nào cũng ngon.' },
-  { q: 'Chọn câu đúng: "Bạn muốn đi đâu thì chúng ta đi đó."', opts: ['你想去哪儿，就我们去哪儿。', '你想去哪儿，我们就去哪儿。', '你想去哪儿，我们去就哪儿。', '我们想去哪儿，你就去哪儿。'], ans: 1, exp: 'Hai đại từ nghi vấn hô ứng: 你想去哪儿，我们就去哪儿. 就 đứng sau chủ ngữ vế sau, trước động từ.' }
+  { q: 'Bạn vào nhà hàng, ngồi xuống và muốn xem thực đơn, bạn nói:', opts: ['服务员，请给我们一双菜单。', '服务员，请给我们一张菜单。', '服务员，请给我们菜单一张。', '服务员，菜单给我们一个张。'], ans: 1, exp: 'Thực đơn là tờ giấy → 一张菜单; số + lượng từ đứng trước danh từ. 双 dùng cho vật đi theo đôi.' },
+  { q: 'Bạn khen phòng mới của bạn mình: “Phòng của bạn vừa to vừa đẹp.”', opts: ['你的房间又很大又很漂亮。', '你的房间又大和漂亮。', '你的房间又大又是漂亮。', '你的房间又大又漂亮。'], ans: 3, exp: '又 + tính từ + 又 + tính từ, không thêm 很, không dùng 和, không chèn 是 trước tính từ.' },
+  { q: 'A: “你怎么不去跑步了？” — B: “外面又冷＿＿，我不想出去。”', opts: ['也下雨', '又下雨', '和下雨', '就下雨'], ans: 1, exp: '又A又B có thể nối tính từ với cụm động từ: 又冷又下雨 = vừa lạnh vừa mưa. Không dùng 也/和 ở vế sau.' },
+  { q: 'Bạn muốn nói: “Việc này ai cũng làm được, không cần đợi tôi.”', opts: ['这件事谁都能做，不用等我。', '这件事都谁能做，不用等我。', '这件事谁能做都，不用等我。', '这件事什么人能做，不用等我。'], ans: 0, exp: '谁 + 都 = ai cũng (bất kỳ ai); 都 đứng sau 谁, trước động từ.' },
+  { q: 'Bạn muốn nói: “Hôm nay tôi không muốn đi đâu cả, chỉ muốn ở nhà ngủ.”', opts: ['今天我不想去哪儿都，只想在家睡觉。', '今天我哪儿都不去想，只想在家睡觉。', '今天我哪儿都不想去，只想在家睡觉。', '今天哪儿我都想不去，只想在家睡觉。'], ans: 2, exp: '哪儿 + 都 + 不想去 = đi đâu cũng không muốn; 哪儿都 đứng trước cụm 不想去, không để cuối câu.' },
+  { q: 'A: “我们晚上做什么菜？” — B: “Bạn thích ăn gì thì chúng ta nấu món đó.”', opts: ['你爱吃什么，就我们做什么。', '你爱吃什么，我们做就什么。', '你爱吃什么，我们就做这个。', '你爱吃什么，我们就做什么。'], ans: 3, exp: 'Hô ứng: hai 什么 chỉ cùng một thứ; 就 đứng sau chủ ngữ vế sau, trước động từ.' },
+  { q: 'Bạn của bạn định đi mua cơm, bạn nói: “Không cần đi đâu, tớ đặt đồ ăn rồi.”', opts: ['不用去了，我已经点了外卖。', '没用去了，我已经点了外卖。', '别用去了，我已经点外卖了。', '不用去了，我已经没点外卖。'], ans: 0, exp: '不用 + V = không cần; 没用 = vô dụng; 已经…了 = đã … rồi.' },
+  { q: 'Khách hỏi: “菜怎么还没来？” — Nhân viên đáp: “对不起，＿＿给您送过来。”', opts: ['已经', '好久', '马上', '经常'], ans: 2, exp: '马上 + V = làm ngay lập tức; 已经 = đã (không hợp với lời hứa sẽ làm).' },
+  { q: 'Bạn muốn nói: “Sáng nay tôi chỉ uống một cốc sữa.”', opts: ['今天早上只我喝了一杯牛奶。', '今天早上我喝了只一杯牛奶。', '今天早上我只喝了一杯牛奶。', '今天早上我只喝一杯了牛奶。'], ans: 2, exp: '只 đứng sau chủ ngữ, trước động từ: 我只喝了…; 了 đứng ngay sau động từ.' },
+  { q: 'Câu nào SAI?', opts: ['我买了一张火车票。', '桌子上有两双筷子。', '他吃了三碗米饭。', '请给我一张勺子。'], ans: 3, exp: 'Thìa dùng 个: 一个勺子. 张 dùng cho vật phẳng như vé, ảnh, thực đơn.' },
+  { q: '“我第一次去他家，他爸爸妈妈很＿＿，做了很多好吃的菜。”', opts: ['简单', '热情', '方便', '好久'], ans: 1, exp: '热情 = nhiệt tình, tả thái độ của người; 简单 = đơn giản, 方便 = tiện lợi.' },
+  { q: 'A: “你要不要吃点儿东西？” — B: “不用了，我不饿，就是有点儿＿＿，给我一杯水吧。”', opts: ['饿', '渴', '累', '忙'], ans: 1, exp: 'Muốn uống nước → 渴 (khát); B vừa nói 不饿 nên không thể là 饿.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 又……又……, 谁都 / 什么都 / 哪儿都, ……什么，就……什么 và từ mới về ăn uống.',
   questions: [
     {
-      q_zh: '白家月现在觉得怎么样？',
-      q_vn: 'Bạch Gia Nguyệt bây giờ cảm thấy thế nào?',
-      hint: '她飞了这么远，现在又……又……',
-      sample: '她飞了这么远，现在又饿又渴。',
-      sample_vn: 'Cô ấy bay xa như vậy, bây giờ vừa đói vừa khát.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 又 + tính từ + 又 + tính từ — không thêm 很.'
+      q_zh: '你饿的时候最想吃什么？',
+      q_vn: 'Lúc đói bạn muốn ăn gì nhất? Vì sao?',
+      hint: '我饿的时候最想吃……，因为……又……又……',
+      sample: '我饿的时候最想吃妈妈做的鸡肉饭，因为她做的鸡肉饭又便宜又好吃。',
+      sample_vn: 'Lúc đói tôi muốn ăn nhất là cơm gà mẹ nấu, vì cơm gà mẹ nấu vừa rẻ vừa ngon.',
+      note: '又 + tính từ + 又 + tính từ, không thêm 很.'
     },
     {
-      q_zh: '王一雪觉得这家饭馆怎么样？',
-      q_vn: 'Vương Nhất Tuyết thấy nhà hàng này thế nào?',
-      hint: '她觉得这家饭馆的服务……，菜……',
-      sample: '她觉得这家饭馆的服务很热情，菜也都做得很好吃，又便宜又好吃。',
-      sample_vn: 'Chị ấy thấy nhà hàng này phục vụ rất nhiệt tình, món ăn cũng đều rất ngon, vừa rẻ vừa ngon.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 做得很好吃 — bổ ngữ trạng thái (ôn HSK2 Bài 7).'
+      q_zh: '你会用筷子吗？是谁教你的？',
+      q_vn: 'Bạn có biết dùng đũa không? Ai dạy bạn?',
+      hint: '我会用筷子，是……教我的，……',
+      sample: '我会用筷子，是我爸爸教我的，那时候我五岁，现在我用得很好。',
+      sample_vn: 'Tôi biết dùng đũa, là bố tôi dạy, hồi đó tôi năm tuổi, bây giờ tôi dùng rất giỏi.',
+      note: '是……的 nhấn mạnh người làm (HSK2); 用得很好 bổ ngữ trạng thái.'
     },
     {
-      q_zh: '服务员为什么送了一些水果？',
-      q_vn: 'Vì sao nhân viên phục vụ tặng một ít trái cây?',
-      hint: '因为王一雪经常……',
-      sample: '因为王一雪经常来这家饭馆吃饭，服务员都记住她爱吃的菜了。',
-      sample_vn: 'Vì Vương Nhất Tuyết thường xuyên đến nhà hàng này ăn, nhân viên phục vụ đều nhớ món chị ấy thích ăn.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 因为 (ôn HSK2 Bài 4); 记住 — 住 là bổ ngữ kết quả.'
+      q_zh: '你经常点外卖还是自己做饭？为什么？',
+      q_vn: 'Bạn hay gọi đồ ăn giao tận nơi hay tự nấu? Vì sao?',
+      hint: '我……，因为……；……的时候，我也会……',
+      sample: '我喜欢自己做饭，我觉得自己做的菜又好吃又便宜。工作很忙的时候，我也会在手机上点外卖。',
+      sample_vn: 'Tôi thích tự nấu, tôi thấy món tự nấu vừa ngon vừa rẻ. Lúc công việc rất bận, tôi cũng đặt đồ ăn trên điện thoại.',
+      note: 'Dùng 外卖, 方便, 又……又…….'
     },
     {
-      q_zh: '这家饭馆可以怎么点菜？',
-      q_vn: 'Ở nhà hàng này có thể gọi món bằng cách nào?',
-      hint: '在手机上就能……，也可以选好了……',
-      sample: '在手机上就能看到菜单，也可以选好了让他们送外卖。',
-      sample_vn: 'Có thể xem thực đơn ngay trên điện thoại, cũng có thể chọn xong rồi bảo họ giao đồ ăn tận nơi.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. Câu kiêm ngữ 让 + người + V (ôn HSK2 Bài 1).'
+      q_zh: '你有没有什么都不想做的时候？',
+      q_vn: 'Bạn có lúc nào chẳng muốn làm gì cả không? Lúc đó bạn làm gì?',
+      hint: '……的时候，我什么都不想做，只想……',
+      sample: '工作太累的时候，我什么都不想做，只想一个人在家休息，谁的电话都不接。',
+      sample_vn: 'Lúc làm việc quá mệt, tôi chẳng muốn làm gì cả, chỉ muốn ở nhà một mình nghỉ ngơi, điện thoại của ai cũng không nghe.',
+      note: '什么都不…… / 谁的……都不……: đại từ nghi vấn + 都 = bất kỳ.'
     },
     {
-      q_zh: '李文为什么好几天只吃方便面？',
-      q_vn: 'Vì sao có khi Lý Văn mấy ngày liền chỉ ăn mì ăn liền?',
-      hint: '因为快要考试的时候他又……又……，家里又……',
-      sample: '因为快要考试的时候他又忙又累，没时间出去吃饭，家里又什么吃的都没有。',
-      sample_vn: 'Vì lúc sắp thi anh ấy vừa bận vừa mệt, không có thời gian ra ngoài ăn, trong nhà cũng chẳng có gì để ăn.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 快要……的时候 (ôn HSK2 Bài 10); 什么……都没有 — ngữ pháp 2.'
-    },
-    {
-      q_zh: '你经常点外卖吗？你什么时候一定会点外卖？',
-      q_vn: 'Bạn có thường gọi đồ ăn giao tận nơi không? Khi nào bạn nhất định sẽ gọi đồ ăn?',
-      hint: '我不经常点外卖……，……的时候，我一定会点外卖。',
-      sample: '我不经常点外卖，我喜欢自己做饭。但是太忙太累的时候，我一定会点外卖，想吃什么就点什么，很方便。',
-      sample_vn: 'Tôi không thường gọi đồ ăn ngoài, tôi thích tự nấu ăn. Nhưng những lúc quá bận quá mệt, tôi nhất định sẽ gọi, muốn ăn gì thì gọi nấy, rất tiện.',
-      note: 'Câu hỏi Khởi động của sách. Dùng 想吃什么就点什么 (ngữ pháp 3) và 方便.'
-    },
-    {
-      q_zh: '有外国朋友来中国，你想带他/她去吃什么？为什么？',
-      q_vn: 'Nếu có bạn nước ngoài đến Trung Quốc, bạn muốn dẫn họ đi ăn món gì? Tại sao?',
-      hint: '我想带他去吃……，因为……又……又……',
-      sample: '我想带他去吃北京烤鸭，因为北京烤鸭又好吃又不太贵，外国朋友都很喜欢。',
-      sample_vn: 'Tôi muốn dẫn bạn ấy đi ăn vịt quay Bắc Kinh, vì vịt quay Bắc Kinh vừa ngon lại không đắt lắm, bạn bè nước ngoài đều rất thích.',
-      note: 'Câu hỏi Khởi động của sách. 带 + người + 去 + V (Bài 1); 北京烤鸭 (HSK2 Bài 1).'
-    },
-    {
-      q_zh: '在饭馆吃饭、点外卖、自己做饭，你更喜欢哪个？为什么？',
-      q_vn: 'Ăn ở nhà hàng, gọi đồ ăn giao tận nơi, tự nấu ăn — bạn thích cách nào hơn? Tại sao?',
-      hint: '我更喜欢……，因为……又……又……',
-      sample: '我更喜欢自己做饭，因为自己做的饭又便宜又好吃。我只会做几个简单的菜，但是我很爱吃。',
-      sample_vn: 'Tôi thích tự nấu ăn hơn, vì cơm tự nấu vừa rẻ vừa ngon. Tôi chỉ biết làm vài món đơn giản, nhưng tôi rất thích ăn.',
-      note: 'Hoạt động trên lớp của sách. 更 (ôn HSK2 Bài 4); dùng 又……又……、只、简单 của bài này.'
+      q_zh: '朋友来你家玩，你会对他们说什么？',
+      q_vn: 'Bạn bè đến nhà chơi, bạn sẽ nói gì với họ, làm gì cho họ?',
+      hint: '我会说：“想……什么就……什么，不要客气。”我还会……',
+      sample: '我会说：“来，想喝什么就拿什么，不要客气。”我还会给他们做几个简单的菜。',
+      sample_vn: 'Tôi sẽ nói: “Nào, muốn uống gì thì cứ lấy, đừng khách sáo.” Tôi còn nấu cho họ vài món đơn giản.',
+      note: 'Hô ứng 想V什么就V什么; 不要客气 = đừng khách sáo.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Sau chuyến bay dài như vậy, bây giờ em thực sự vừa đói vừa khát.', zh: '飞了这么远，现在还真是又饿又渴。', py: 'Fēile zhème yuǎn, xiànzài hái zhēn shì yòu è yòu kě.' },
-  { vi: 'Món nào cũng ngon cả.', zh: '哪个菜都好吃。', py: 'Nǎge cài dōu hǎochī.' },
-  { vi: 'Đồ ăn ở đây vừa rẻ vừa ngon.', zh: '这里的饭菜又便宜又好吃。', py: 'Zhèlǐ de fàncài yòu piányi yòu hǎochī.' },
-  { vi: 'Bây giờ rất nhiều nhà hàng có giao đồ ăn tận nơi, muốn ăn gì thì gọi món đó.', zh: '现在很多饭馆都能送外卖，想吃什么就点什么。', py: 'Xiànzài hěn duō fànguǎn dōu néng sòng wàimài, xiǎng chī shénme jiù diǎn shénme.' },
-  { vi: 'Không có gì ngon bằng cơm mẹ nấu.', zh: '什么都没有妈妈做的饭好吃。', py: 'Shénme dōu méiyǒu māma zuò de fàn hǎochī.' }
+  { vi: 'Cô giáo mới của lớp chúng tôi vừa trẻ vừa nhiệt tình.', zh: '我们班的新老师又年轻又热情。', py: 'Wǒmen bān de xīn lǎoshī yòu niánqīng yòu rèqíng.' },
+  { vi: 'Bánh kem ở cửa hàng này loại nào cũng ngon, bạn chọn đi.', zh: '这家店的蛋糕哪个都好吃，你选吧。', py: 'Zhè jiā diàn de dàngāo nǎge dōu hǎochī, nǐ xuǎn ba.' },
+  { vi: 'Bạn thích cái nào thì mua cái đó, mình trả tiền.', zh: '你喜欢哪个就买哪个，我给钱。', py: 'Nǐ xǐhuan nǎge jiù mǎi nǎge, wǒ gěi qián.' },
+  { vi: 'Phục vụ của nhà hàng này rất tốt, chúng tôi lần nào cũng đến đây ăn.', zh: '这家饭馆的服务很好，我们每次都来这儿吃。', py: 'Zhè jiā fànguǎn de fúwù hěn hǎo, wǒmen měi cì dōu lái zhèr chī.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Lâu rồi em không được uống trà Trung Quốc, cũng lâu rồi không được ăn sủi cảo.', zh: '好久没喝中国茶，也好久没吃饺子了。', py: 'Hǎojiǔ méi hē Zhōngguó chá, yě hǎojiǔ méi chī jiǎozi le.' },
-  { vi: 'Em ơi, cho chị thêm một đôi đũa, một cái thìa và một cái bát.', zh: '服务员，再给我们拿一双筷子、一个勺子和一个碗。', py: 'Fúwùyuán, zài gěi wǒmen ná yì shuāng kuàizi, yí ge sháozi hé yí ge wǎn.' },
-  { vi: 'Các em ăn thử đi, xem có thích những món này không.', zh: '你们尝尝，看喜不喜欢这些菜。', py: 'Nǐmen chángchang, kàn xǐ bu xǐhuan zhèxiē cài.' },
-  { vi: 'Không cần lấy thực đơn, xem trên điện thoại là được.', zh: '不用拿菜单，在手机上就能看到。', py: 'Búyòng ná càidān, zài shǒujī shang jiù néng kàndào.' },
-  { vi: 'Lúc sắp thi vừa bận vừa mệt, không có thời gian ra ngoài ăn cơm.', zh: '快要考试的时候又忙又累，没时间出去吃饭。', py: 'Kuàiyào kǎoshì de shíhou yòu máng yòu lèi, méi shíjiān chūqu chī fàn.' }
+  { vi: 'Đừng đi, chờ một chút, tôi đến ngay.', zh: '别走，等一下，我马上就到。', py: 'Bié zǒu, děng yíxià, wǒ mǎshàng jiù dào.' },
+  { vi: 'Chạy bộ một tiếng, bây giờ tôi vừa mệt vừa khát.', zh: '跑了一个小时，现在我又累又渴。', py: 'Pǎole yí ge xiǎoshí, xiànzài wǒ yòu lèi yòu kě.' },
+  { vi: 'Hôm nay người không nhiều, bạn muốn ngồi đâu thì ngồi đó.', zh: '今天人不多，你想坐哪儿就坐哪儿。', py: 'Jīntiān rén bù duō, nǐ xiǎng zuò nǎr jiù zuò nǎr.' }
 ];

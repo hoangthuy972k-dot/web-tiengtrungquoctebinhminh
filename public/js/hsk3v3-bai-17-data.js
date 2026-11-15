@@ -2488,159 +2488,150 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 bài trước
 var listenData = [
   {
-    audio: '小王，你怎么不进去？我有点儿害怕。上次考试我考得不好，我怕老师生气。别害怕，老师不是说过吗？考试的时候出错是很常见的，以后认真一点儿就行了。',
+    audio: '你从这儿一直向前走，到了第二个路口再向右走，银行就在你的左边。',
     questions: [
-      { q: '小王为什么不进去？', opts: ['他害怕老师生气', '他找不到办公室', '他想去楼梯那儿'], ans: 0 },
-      { q: '说话人觉得考试的时候出错怎么样？', opts: ['让人生气', '很常见', '不应该'], ans: 1 }
+      { q: 'Đến ngã tư thứ hai thì phải làm gì?', opts: ['Rẽ trái', 'Rẽ phải', 'Quay lại'], ans: 1, exp: '向右走 = đi về phía bên phải; 向 + phương hướng + động từ.' },
+      { q: 'Ngân hàng ở đâu?', opts: ['Bên trái', 'Bên phải', 'Đối diện ngã tư'], ans: 0, exp: '银行就在你的左边 = ngân hàng ở ngay bên trái bạn.' }
     ]
   },
   {
-    audio: '我哥哥的大学生活马上就要结束了。他想继续学习，打算明年去中国留学，爸爸妈妈都同意了。可他还没想好去哪个城市，我就给他介绍了几个有用的网站，让他上网查一查。',
+    audio: '这本书不是你的吗？怎么在我的书包里？',
     questions: [
-      { q: '说话人的哥哥打算做什么？', opts: ['找工作', '去中国留学', '去中国旅游'], ans: 1 },
-      { q: '说话人给哥哥介绍了什么？', opts: ['几个城市', '几个留学生', '几个有用的网站'], ans: 2 }
+      { q: 'Người nói ngạc nhiên vì sao?', opts: ['Sách của mình bị mất', 'Sách của người kia lại nằm trong cặp mình', 'Sách bị bẩn'], ans: 1, exp: '不是你的吗？ = chẳng phải là của bạn sao? — câu phản vấn, ý khẳng định: sách này là của bạn.' }
     ]
   },
   {
-    audio: '今天早上我在地铁站遇见了小李。我问他：“你不是住在学校附近吗？怎么在这儿？”他说他前天搬家了，现在每天坐地铁上班。他还说，坐地铁比打车方便多了。',
+    audio: '我前天给他打了好几次电话，他都关机了，我有点儿担心。',
     questions: [
-      { q: '说话人在哪儿遇见了小李？', opts: ['学校附近', '地铁站', '公司里'], ans: 1 },
-      { q: '小李为什么在那儿？', opts: ['他搬家了', '他去学校', '他去找工作'], ans: 0 }
+      { q: 'Hôm kia chuyện gì đã xảy ra?', opts: ['Anh ấy bận nên không nghe máy', 'Anh ấy gọi lại ngay', 'Điện thoại anh ấy tắt máy'], ans: 2, exp: '他都关机了 = lần nào máy anh ấy cũng tắt; 前天 = hôm kia.' }
     ]
   },
   {
-    audio: '很多人认为学中文很难，我觉得没有那么难。只有多听、多说、多练习，才能学好。汉字虽然不容易写，但是很有意思。你要每天写一写，更要多看中文书。',
+    audio: '我认为只有每天练习，才能把汉字写好看。',
     questions: [
-      { q: '说话人认为怎么才能学好中文？', opts: ['每天看电视', '找一个好老师', '多听、多说、多练习'], ans: 2 },
-      { q: '说话人觉得汉字怎么样？', opts: ['很容易写', '不容易写，但是很有意思', '没有意思'], ans: 1 }
+      { q: 'Theo người nói, muốn viết chữ Hán đẹp thì phải làm gì?', opts: ['Mua sách đắt tiền', 'Học với giáo viên giỏi', 'Luyện tập mỗi ngày'], ans: 2, exp: '只有每天练习，才能…… = chỉ có luyện mỗi ngày mới có thể…; 只有 đi với 才.' }
+    ]
+  },
+  {
+    audio: '这个问题不难，可小明想了半天也没回答出来，老师有点儿生气了。',
+    questions: [
+      { q: 'Câu hỏi đó thế nào?', opts: ['Không khó', 'Rất khó', 'Không ai hiểu'], ans: 0, exp: '这个问题不难 = câu hỏi này không khó; 可 = nhưng.' },
+      { q: 'Thầy giáo cảm thấy thế nào?', opts: ['Rất vui', 'Hơi giận', 'Lo lắng'], ans: 1, exp: '老师有点儿生气了 = thầy hơi giận rồi.' }
+    ]
+  },
+  {
+    audio: '我弟弟很聪明，数学学得特别好，可他更喜欢画画。',
+    questions: [
+      { q: 'Em trai người nói thích gì hơn?', opts: ['Học toán', 'Vẽ tranh', 'Chơi thể thao'], ans: 1, exp: '更喜欢画画 = thích vẽ hơn; 更 = càng, hơn.' },
+      { q: 'Em trai là người thế nào?', opts: ['Rất thông minh', 'Hơi lười', 'Hay giận'], ans: 0, exp: '我弟弟很聪明 = em tôi rất thông minh.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '我害怕', right: '见李老师' },
-  { left: '上网', right: '查一查' },
-  { left: '有用的', right: '网站' },
-  { left: '跟电脑有关的', right: '书' },
-  { left: '我还没想好学什么', right: '更没想好去哪个国家' },
-  { left: '只有想清楚自己真正喜欢什么', right: '才能做出最合适的选择' }
+  { left: '查', right: '地图' },
+  { left: '出国', right: '留学' },
+  { left: '回答', right: '问题' },
+  { left: '走错', right: '方向' },
+  { left: '上', right: '楼梯' },
+  { left: '向老师', right: '请假' }
 ];
 
 var fillData = [
-  { pre: '在生活中，因为不认真做错事情是很', blank: '常见', post: '的。', hint: '(thường gặp)', ans: '常见', exp: '……是很常见的 = là chuyện thường gặp; 生活 (ôn HSK3 Bài 11), 认真 (ôn HSK3 Bài 10). Câu của sách.' },
-  { pre: '我认为大学的时候就应该选好以后工作的', blank: '方向', post: '。', hint: '(phương hướng)', ans: '方向', exp: '工作的方向 = hướng đi trong công việc; 应该 (ôn HSK3 Bài 1), 选 (ôn HSK3 Bài 2). Câu của sách.' },
-  { pre: '他说的话我一句也不', blank: '同意', post: '，你也不要受他的影响。', hint: '(đồng ý)', ans: '同意', exp: '一句也不同意 = không đồng ý câu nào (一……也不…… – ôn HSK3 Bài 4); 受……影响 (ôn HSK3 Bài 9). Câu của sách.' },
-  { pre: '这个问题我还没想清楚怎么', blank: '回答', post: '他。', hint: '(trả lời)', ans: '回答', exp: '回答 + người = trả lời ai; 想清楚 (清楚 – ôn HSK3 Bài 10). Câu của sách.' },
-  { pre: '对我来说，怎么让父母同意我的选择是一个', blank: '难题', post: '。', hint: '(vấn đề nan giải)', ans: '难题', exp: '是一个难题 = là một vấn đề nan giải; 对……来说 (ôn HSK3 Bài 11). Câu của sách.' },
-  { pre: '你为什么', blank: '到处', post: '找我？有什么急事？', hint: '(khắp nơi)', ans: '到处', exp: '到处 + V = làm gì ở khắp nơi; 急 (ôn HSK3 Bài 6). Câu của sách.' },
-  { pre: '今天下午的会议跟留学生', blank: '有关', post: '吗？——没有，留学生都不用参加。', hint: '(có liên quan)', ans: '有关', exp: '跟……有关 = có liên quan đến…; 会议 (ôn HSK3 Bài 11), 参加 (ôn HSK3 Bài 9). Câu của sách.' },
-  { pre: '中国的很多城市历史都很长，', blank: '比如', post: '北京、南京、西安。', hint: '(ví dụ như)', ans: '比如', exp: '比如 + liệt kê ví dụ; 历史 (ôn HSK3 Bài 10), 城市 (ôn HSK3 Bài 11). Câu của sách.' }
+  { pre: '我小时候很', blank: '害怕', post: '一个人在家，现在不怕了。', hint: '(sợ)', ans: '害怕', exp: '害怕 + việc/người = sợ; nói gọn là 怕.' },
+  { pre: '这件事是我做错了，我应该', blank: '向', post: '她说对不起。', hint: '(với, hướng về)', ans: '向', exp: '向 + người + 说对不起 = xin lỗi ai; 向 đứng trước động từ.' },
+  { pre: '这件事你', blank: '不是', post: '早就知道了吗？为什么不告诉我？', hint: '(chẳng phải… sao)', ans: '不是', exp: '不是……吗？ = chẳng phải… sao? — trách nhẹ: bạn biết từ lâu rồi mà.' },
+  { pre: '这个问题老师都不知道，我们', blank: '更', post: '不知道了。', hint: '(càng)', ans: '更', exp: '……，更…… = …, càng… hơn: thầy còn không biết thì chúng tôi càng không biết.' },
+  { pre: '只有考到六十分以上，', blank: '才', post: '能参加下一次比赛。', hint: '(mới)', ans: '才', exp: '只有……，才…… = chỉ khi… mới…; không dùng 就 sau 只有; ôn 以上 (bài 15).' },
+  { pre: '我昨天忘了她的生日，她到现在还在', blank: '生气', post: '呢。', hint: '(giận)', ans: '生气', exp: '在 + V + 呢 = đang…; 生气 = giận.' },
+  { pre: '这孩子真', blank: '聪明', post: '，什么东西一学就会。', hint: '(thông minh)', ans: '聪明', exp: '聪明 = thông minh; 一……就…… = vừa… là….' },
+  { pre: '我们家小狗不见了，全家人', blank: '到处', post: '找了半天。', hint: '(khắp nơi)', ans: '到处', exp: '到处 + V = làm gì khắp nơi; 找了半天 = tìm mãi (ôn bài 16).' },
+  { pre: '休息十分钟，然后我们', blank: '继续', post: '上课。', hint: '(tiếp tục)', ans: '继续', exp: '继续 + V = tiếp tục làm gì; ôn 然后 (bài 14).' },
+  { pre: '你的手机怎么', blank: '关机', post: '了？我给你打了好几次电话。', hint: '(tắt máy)', ans: '关机', exp: '手机关机了 = điện thoại tắt máy.' },
+  { pre: '电梯坏了，我们只好走', blank: '楼梯', post: '上去。', hint: '(cầu thang bộ)', ans: '楼梯', exp: '走楼梯 = đi cầu thang bộ; 只好 = đành phải.' },
+  { pre: '这本词典对学汉语很', blank: '有用', post: '，我送给你吧。', hint: '(có ích)', ans: '有用', exp: '对 + N + 很有用 = rất có ích cho…; ôn 词典 (bài 14).' }
 ];
 
 var sortData = [
-  { words: ['以后', '我', '要', '多', '向', '认真的人', '学习', '。'], ans: '以后我要多向认真的人学习。', audio: '以后我要多向认真的人学习。' },
-  { words: ['做错', '事情', '是', '很', '常见', '的', '。'], ans: '做错事情是很常见的。', audio: '做错事情是很常见的。' },
-  { words: ['你', '不是', '喜欢', '玩', '电脑', '吗', '？'], ans: '你不是喜欢玩电脑吗？', audio: '你不是喜欢玩电脑吗？' },
-  { words: ['我', '还没', '想好', '学什么', '，', '更', '没想好', '去哪个', '国家', '。'], ans: '我还没想好学什么，更没想好去哪个国家。', audio: '我还没想好学什么，更没想好去哪个国家。' },
-  { words: ['我', '给你', '介绍', '几个', '有用的', '网站', '。'], ans: '我给你介绍几个有用的网站。', audio: '我给你介绍几个有用的网站。' },
-  { words: ['只有', '想清楚', '自己', '真正', '喜欢什么', '，', '才能', '做出', '最合适的', '选择', '。'], ans: '只有想清楚自己真正喜欢什么，才能做出最合适的选择。', audio: '只有想清楚自己真正喜欢什么，才能做出最合适的选择。' }
+  { words: ['有', '不懂的', '地方', '，', '你', '可以', '向', '老师', '请教', '。'], ans: '有不懂的地方，你可以向老师请教。', audio: '有不懂的地方，你可以向老师请教。' },
+  { words: ['你', '不是', '已经', '吃过', '饭', '了', '吗', '？'], ans: '你不是已经吃过饭了吗？', audio: '你不是已经吃过饭了吗？' },
+  { words: ['我', '没', '去过', '上海', '，', '更', '没', '在', '那儿', '住过', '。'], ans: '我没去过上海，更没在那儿住过。', audio: '我没去过上海，更没在那儿住过。' },
+  { words: ['只有', '你', '自己', '努力', '，', '才能', '真正', '学好', '汉语', '。'], ans: '只有你自己努力，才能真正学好汉语。', audio: '只有你自己努力，才能真正学好汉语。' },
+  { words: ['你', '先', '别', '生气', '，', '听', '我', '说', '。'], ans: '你先别生气，听我说。', audio: '你先别生气，听我说。' },
+  { words: ['这些', '都是', '跟', '留学', '有关', '的', '书', '。'], ans: '这些都是跟留学有关的书。', audio: '这些都是跟留学有关的书。' },
+  { words: ['他', '是', '我们', '班', '最', '聪明', '的', '学生', '。'], ans: '他是我们班最聪明的学生。', audio: '他是我们班最聪明的学生。' },
+  { words: ['屋子', '里', '太', '热', '了', '，', '咱们', '去', '外边', '坐', '一会儿', '吧', '。'], ans: '屋子里太热了，咱们去外边坐一会儿吧。', audio: '屋子里太热了，咱们去外边坐一会儿吧。' }
 ];
 
 var mcData = [
-  { q: '你怎么还来图书馆学习？同学们都在＿＿找工作呢。', opts: ['到处', '继续', '比如', '真正'], ans: 0, exp: '到处 = khắp nơi: 在到处找工作. 继续, 比如 không hợp.' },
-  { q: '我不想现在就工作，还想＿＿学习，我爸妈也同意。', opts: ['同意', '继续', '回答', '认为'], ans: 1, exp: '继续学习 = tiếp tục học; không muốn đi làm ngay.' },
-  { q: '最近我做错了好几件事，我怕李老师＿＿。', opts: ['聪明', '容易', '生气', '有用'], ans: 2, exp: 'Làm sai nhiều việc → sợ thầy 生气 (giận).' },
-  { q: '我记得那个屋子里有些跟电脑＿＿的书。', opts: ['有用', '有名', '有意思', '有关'], ans: 3, exp: '跟…有关 = liên quan đến…: 跟电脑有关的书.' },
-  { q: '天中，你的手机怎么＿＿了？——我的手机没电了。', opts: ['关机', '留学', '同意', '查'], ans: 0, exp: '手机关机了 = điện thoại tắt máy (vì hết pin).' },
-  { q: '“你以后想做什么”，这个问题真不＿＿回答。', opts: ['聪明', '容易', '常见', '真正'], ans: 1, exp: '不容易回答 = không dễ trả lời. 聪明 dùng cho người.' },
-  { q: '我们走错＿＿了，机场在东边。', opts: ['难题', '屋子', '国家', '方向'], ans: 3, exp: '走错方向 = đi nhầm hướng; sân bay ở phía đông.' },
-  { q: 'Chọn câu đúng: "Sau này mình sẽ học hỏi nhiều từ những người cẩn thận."', opts: ['以后我要多学习向认真的人。', '以后我要多向认真的人学习。', '以后我向要多认真的人学习。', '以后我要多认真的人向学习。'], ans: 1, exp: '向 + người + 学习 = học hỏi ai; phó từ 多 đứng trước 向.' },
-  { q: '"你不是喜欢玩电脑吗？" — câu này có ý gì?', opts: ['Hỏi xem bạn có thích chơi máy tính không', 'Cho rằng bạn không thích máy tính', 'Nhắc lại: bạn THÍCH chơi máy tính mà', 'Người nói không thích máy tính'], ans: 2, exp: '不是…吗？ là câu phản vấn mang ý khẳng định: bạn THÍCH chơi máy tính mà.' },
-  { q: '只有每天锻炼身体，＿＿会越来越健康。', opts: ['就', '都', '也', '才'], ans: 3, exp: '只有…才… = chỉ có… mới…; 只有 luôn đi với 才, còn 只要 đi với 就.' }
+  { q: 'Bạn muốn nói: “Anh ấy vừa cười vừa đi về phía tôi.”', opts: ['他笑着走过来向我。', '他笑着向我走过来。', '他笑向着我走过来。', '他向我走过来笑着。'], ans: 1, exp: '向 + người/hướng đứng TRƯỚC động từ: 向我走过来; V1 着 + V2 (笑着走) — ôn bài 7.' },
+  { q: 'A: “小李汉语说得真好！” — B: “是啊，我们都应该多＿＿。”', opts: ['学习向他', '向学习他', '向他学习', '他向学习'], ans: 2, exp: '向 + người + 学习 = học hỏi ai; cụm 向他 đứng trước động từ.' },
+  { q: 'Bạn thấy bạn mình đang ăn thịt, bạn ngạc nhiên: “Chẳng phải bạn không ăn thịt sao?”', opts: ['你是不是不吃肉吗？', '你不是不吃肉呢？', '你没是不吃肉吗？', '你不是不吃肉吗？'], ans: 3, exp: 'Câu phản vấn: 不是 + ý cần nhắc lại + 吗？; 是不是 đã là câu hỏi nên không thêm 吗; không dùng 没是.' },
+  { q: 'A: “我们明天去爬山吧！” — B: “明天＿＿要下雨吗？还是下个星期再去吧。”', opts: ['不是', '没有', '是不是', '别'], ans: 0, exp: '不是……吗？ = chẳng phải… sao? (nhắc điều cả hai đều biết: mai trời mưa).' },
+  { q: 'Bạn muốn nói: “Tôi ít khi nấu cơm, càng không biết làm bánh ngọt.”', opts: ['我很少做饭，不会更做蛋糕。', '我很少做饭，也更会做蛋糕。', '我很少做饭，更不会做蛋糕。', '我很少做饭，更会不做蛋糕。'], ans: 2, exp: '……，更 + 不/没 + V = càng không…; 更 đứng trước 不会.' },
+  { q: 'A: “我怎么才能考好？” — B: “＿＿认真复习，才能考好。”', opts: ['虽然', '因为', '只有', '如果'], ans: 2, exp: '只有……，才…… = chỉ có… mới…; 如果 đi với 就, 虽然 đi với 但是/可是.' },
+  { q: 'Con bạn làm vỡ bát, đứng im không dám nói gì. Bạn nói: “别＿＿，妈妈不生气。”', opts: ['害怕', '聪明', '常见', '同意'], ans: 0, exp: '别害怕 = đừng sợ; 聪明 = thông minh, 常见 = thường gặp, 同意 = đồng ý.' },
+  { q: 'Câu nào SAI?', opts: ['他认为这个办法不错。', '这个问题很容易回答。', '我同意不你去。', '感冒是很常见的。'], ans: 2, exp: '不 đứng trước động từ: 我不同意你去, không nói 同意不.' },
+  { q: 'A: “这个超市能买到哪些水果？” — B: “很多，＿＿苹果、香蕉、西瓜。”', opts: ['到处', '比如', '真正', '继续'], ans: 1, exp: '比如 + liệt kê = ví dụ như….' },
+  { q: 'A: “这个字怎么读？” — B: “我也不认得，你＿＿一下词典吧。”', opts: ['看见', '找到', '回答', '查'], ans: 3, exp: '查词典 = tra từ điển; 看见/找到 là động từ kết quả, không đi với 一下.' },
+  { q: 'Bạn nhận ra mình đi nhầm hướng, bạn nói:', opts: ['我走错方向了，得回去。', '我走方向错了，得回去。', '我错走方向了，得回去。', '我走错方向过了，得回去。'], ans: 0, exp: '走错 (V + bổ ngữ kết quả 错) + tân ngữ 方向 + 了; không tách 走…错, không đảo 错走.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 向, 不是……吗？, ……，更……, 只有……，才…… và từ mới (害怕, 认为, 比如, 留学…).',
   questions: [
     {
-      q_zh: '小雪的同学为什么害怕见李老师？',
-      q_vn: 'Vì sao bạn học của Tiểu Tuyết sợ gặp cô Lý?',
-      hint: '因为他最近……，他怕……',
-      sample: '因为他最近做错了好几件事，他怕李老师生气，觉得他不认真。',
-      sample_vn: 'Vì gần đây cậu ấy làm sai mấy việc, cậu ấy sợ cô Lý giận và nghĩ cậu không cẩn thận.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 害怕、生气 của bài này; 最近 (ôn HSK3 Bài 8), 认真 (ôn HSK3 Bài 10).'
+      q_zh: '你小时候害怕什么？现在还害怕吗？',
+      q_vn: 'Hồi nhỏ bạn sợ gì? Bây giờ còn sợ không?',
+      hint: '我小时候很害怕……，现在……',
+      sample: '我小时候很害怕狗，看见狗就跑，现在我自己也养了一只，一点儿也不怕了。',
+      sample_vn: 'Hồi nhỏ tôi rất sợ chó, thấy chó là chạy, bây giờ chính tôi cũng nuôi một con, chẳng sợ chút nào nữa.',
+      note: '害怕 + N; ôn 一点儿也不 (bài 4), 养 (bài 15).'
     },
     {
-      q_zh: '白家月为什么说“太阳从西边出来了”？',
-      q_vn: 'Vì sao Bạch Gia Nguyệt nói “Mặt trời mọc ở hướng tây”?',
-      hint: '因为陈天中平时……，可这几天……',
-      sample: '因为陈天中平时不常去图书馆，可这几天她总是在图书馆看见他，所以她这样说。',
-      sample_vn: 'Vì bình thường Trần Thiên Trung ít khi đến thư viện, vậy mà mấy hôm nay cô ấy lúc nào cũng thấy cậu ở đó, nên cô nói như vậy (ý: chuyện hiếm thấy).',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 可 của bài này; 平时 (ôn HSK3 Bài 15), 总是 (ôn HSK3 Bài 5).'
+      q_zh: '你认为怎么样才能学好汉语？',
+      q_vn: 'Bạn cho rằng làm thế nào mới học tốt được tiếng Trung?',
+      hint: '我认为只有……，才能……',
+      sample: '我认为只有多跟中国人聊天儿，多看中文电影，汉语水平才能提高。',
+      sample_vn: 'Tôi cho rằng chỉ có nói chuyện nhiều với người Trung Quốc, xem nhiều phim tiếng Trung thì trình độ tiếng Trung mới nâng cao được.',
+      note: '认为 = cho rằng; 只有……，(chủ ngữ) + 才能……; ôn 提高 (bài 10).'
     },
     {
-      q_zh: '李文给陈天中出了什么主意？',
-      q_vn: 'Lý Văn đã gợi ý cho Trần Thiên Trung điều gì?',
-      hint: '李文让他去……，比如……',
-      sample: '李文让他去中国学中文，比如可以去北京、上海这样的大城市，还给他介绍了几个有用的网站。',
-      sample_vn: 'Lý Văn bảo cậu ấy sang Trung Quốc học tiếng Trung, chẳng hạn đến những thành phố lớn như Bắc Kinh, Thượng Hải, còn giới thiệu cho cậu vài trang web hữu ích.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. 比如、有用 của bài này; 主意 (ôn HSK3 Bài 4), 让 (ôn HSK2 Bài 1).'
+      q_zh: '如果有机会，你想去哪个国家留学？',
+      q_vn: 'Nếu có cơ hội, bạn muốn đi du học ở nước nào? Vì sao?',
+      hint: '我想去……留学，因为……，比如……',
+      sample: '我想去中国留学，因为中国有很多好大学，比如北京大学，而且我还能每天说汉语。',
+      sample_vn: 'Tôi muốn sang Trung Quốc du học, vì Trung Quốc có nhiều trường đại học tốt, ví dụ Đại học Bắc Kinh, hơn nữa tôi còn có thể nói tiếng Trung mỗi ngày.',
+      note: '比如 + ví dụ; ôn 如果 (bài 6), 而且 (bài 7).'
     },
     {
-      q_zh: '陈天中的同学们有哪些不同的选择？',
-      q_vn: 'Các bạn của Trần Thiên Trung có những lựa chọn khác nhau nào?',
-      hint: '有的……，有的……，还有的……',
-      sample: '有的想继续在学校学习，有的打算出国留学，还有的决定先找工作。',
-      sample_vn: 'Có người muốn tiếp tục học ở trường, có người định ra nước ngoài du học, còn có người quyết định tìm việc trước.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 有的……有的…… (ôn HSK1 Bài 14); 打算 (ôn HSK3 Bài 6), 决定 (ôn HSK3 Bài 7).'
+      q_zh: '在工作或者学习中，你最想向谁学习？',
+      q_vn: 'Trong công việc hoặc học tập, bạn muốn học hỏi ai nhất? Vì sao?',
+      hint: '我最想向……学习，因为……',
+      sample: '我最想向我们经理学习，因为她做事又快又认真，遇到难题也不着急。',
+      sample_vn: 'Tôi muốn học hỏi chị giám đốc của chúng tôi nhất, vì chị ấy làm việc vừa nhanh vừa cẩn thận, gặp vấn đề khó cũng không cuống.',
+      note: '向 + người + 学习; ôn 又……又…… (bài 2), 或者 (bài 11).'
     },
     {
-      q_zh: '陈天中知道自己真正喜欢什么吗？',
-      q_vn: 'Trần Thiên Trung có biết bản thân thực sự thích gì không?',
-      hint: '他还不太清楚。他认为只有……，才……',
-      sample: '他还不太清楚。他认为只有想清楚自己真正喜欢什么，才能做出最合适的选择，可是对他来说，这是个难题。',
-      sample_vn: 'Cậu ấy vẫn chưa rõ lắm. Cậu cho rằng chỉ khi nghĩ rõ mình thực sự thích gì mới đưa ra được lựa chọn phù hợp nhất, nhưng với cậu, đó là một vấn đề nan giải.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 只有……才…… (ngữ pháp 4); 对……来说 (ôn HSK3 Bài 11).'
-    },
-    {
-      q_zh: '什么时候你会觉得紧张？为什么？',
-      q_vn: 'Khi nào bạn sẽ cảm thấy căng thẳng? Vì sao?',
-      hint: '……的时候我会觉得很紧张，因为我害怕……',
-      sample: '考试以前我会觉得很紧张，因为我害怕考不好。只有好好复习，我才不那么紧张。',
-      sample_vn: 'Trước kỳ thi tôi thấy rất căng thẳng, vì tôi sợ thi không tốt. Chỉ khi ôn tập kỹ thì tôi mới đỡ căng thẳng.',
-      note: 'Câu hỏi Khởi động của sách. 害怕、只有……才…… của bài này; 紧张 (ôn HSK3 Bài 9), 复习 (ôn HSK3 Bài 10), bổ ngữ khả năng 考不好 (ôn HSK3 Bài 9).'
-    },
-    {
-      q_zh: '父母不同意你的决定，你会怎么办？',
-      q_vn: 'Nếu bố mẹ không đồng ý với quyết định của bạn, bạn sẽ làm gì?',
-      hint: '我会跟他们好好聊聊，……只有……，他们才会同意。',
-      sample: '我会跟他们好好聊聊，告诉他们我为什么这样决定。只有让他们真正了解我，他们才会同意。',
-      sample_vn: 'Tôi sẽ nói chuyện tử tế với bố mẹ, cho họ biết vì sao tôi quyết định như vậy. Chỉ khi để bố mẹ thực sự hiểu tôi, họ mới đồng ý.',
-      note: 'Câu hỏi Khởi động của sách. 同意、真正 của bài này; 聊、了解 (ôn HSK3 Bài 15), 决定 (ôn HSK3 Bài 7).'
-    },
-    {
-      q_zh: '你上一次很生气是什么时候？出了什么事？最后你是怎么解决的？',
-      q_vn: 'Lần gần nhất bạn rất giận là khi nào? Đã xảy ra chuyện gì? Cuối cùng bạn giải quyết thế nào?',
-      hint: '上个星期我很生气。……后来他向我……',
-      sample: '上个星期我很生气。我的好朋友借了我的书，可他把书丢了，也没告诉我。后来他向我说了“对不起”，还给我买了一本新的，我就不生气了。',
-      sample_vn: 'Tuần trước tôi rất giận. Bạn thân mượn sách của tôi, nhưng cậu ấy làm mất sách mà cũng không nói với tôi. Sau đó cậu ấy xin lỗi tôi, còn mua cho tôi một cuốn mới, nên tôi hết giận.',
-      note: 'Hoạt động trên lớp của sách (chọn một cảm xúc và kể lại). 生气、向、可 của bài này; 借 (ôn HSK3 Bài 12), 丢 (ôn HSK3 Bài 1), 后来 (ôn HSK3 Bài 6), câu chữ 把 (ôn HSK3 Bài 10).'
+      q_zh: '最近你遇到过什么难题？',
+      q_vn: 'Gần đây bạn có gặp vấn đề khó nào không? Bạn giải quyết thế nào?',
+      hint: '最近我遇到了一个难题：……。我……',
+      sample: '最近我遇到了一个难题：工作太多，没有时间学习。我决定每天早起一个小时，先学汉语再去上班。',
+      sample_vn: 'Gần đây tôi gặp một vấn đề khó: việc quá nhiều, không có thời gian học. Tôi quyết định mỗi ngày dậy sớm một tiếng, học tiếng Trung trước rồi mới đi làm.',
+      note: '难题 = vấn đề khó; 先……再…… (ôn bài 14).'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Từ giờ trở đi, mình sẽ học hỏi nhiều từ những người cẩn thận.', zh: '以后我要多向认真的人学习。', py: 'Yǐhòu wǒ yào duō xiàng rènzhēn de rén xuéxí.' },
-  { vi: 'Chẳng phải bạn thích chơi máy tính sao? Bạn có thể đọc sách liên quan đến máy tính.', zh: '你不是喜欢玩电脑吗？你可以去看看跟电脑有关系的书。', py: 'Nǐ bú shì xǐhuan wán diànnǎo ma? Nǐ kěyǐ qù kànkan gēn diànnǎo yǒu guānxì de shū.' },
-  { vi: 'Mình vẫn chưa nghĩ kỹ sẽ học gì, càng chưa nghĩ kỹ sẽ đi nước nào.', zh: '我还没想好学什么，更没想好去哪个国家。', py: 'Wǒ hái méi xiǎnghǎo xué shénme, gèng méi xiǎnghǎo qù nǎge guójiā.' },
-  { vi: 'Chỉ khi nghĩ rõ bản thân thực sự thích gì, mới có thể đưa ra lựa chọn phù hợp nhất.', zh: '只有想清楚自己真正喜欢什么，才能做出最合适的选择。', py: 'Zhǐyǒu xiǎng qīngchu zìjǐ zhēnzhèng xǐhuan shénme, cái néng zuòchū zuì héshì de xuǎnzé.' },
-  { vi: 'Có những người tuy rất thông minh, nhưng lại mắc lỗi trong những việc đơn giản.', zh: '有的人虽然很聪明，但是会在简单的事情中出错。', py: 'Yǒude rén suīrán hěn cōngmíng, dànshì huì zài jiǎndān de shìqing zhōng chūcuò.' }
+  { vi: 'Chẳng phải bạn nói hôm nay rất bận sao? Sao lại có thời gian đến đây?', zh: '你不是说今天很忙吗？怎么有时间来这儿？', py: 'Nǐ bú shì shuō jīntiān hěn máng ma? Zěnme yǒu shíjiān lái zhèr?' },
+  { vi: 'Chỉ có đi ngủ sớm, ngày mai mới dậy sớm được.', zh: '只有早点儿睡觉，明天才能早起。', py: 'Zhǐyǒu zǎo diǎnr shuìjiào, míngtiān cái néng zǎo qǐ.' },
+  { vi: 'Các học sinh đều chạy về phía sân bóng.', zh: '学生们都向球场跑去。', py: 'Xuéshengmen dōu xiàng qiúchǎng pǎo qù.' },
+  { vi: 'Câu hỏi này tôi đọc còn không hiểu, càng không biết trả lời.', zh: '这个问题我看都看不懂，更不会回答了。', py: 'Zhège wèntí wǒ kàn dōu kàn bu dǒng, gèng bú huì huídá le.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Gần đây mình làm sai mấy việc, mình sợ cô Lý giận.', zh: '最近我做错了好几件事，我怕李老师生气。', py: 'Zuìjìn wǒ zuòcuòle hǎojǐ jiàn shì, wǒ pà Lǐ lǎoshī shēngqì.' },
-  { vi: 'Các bạn học đều đang đi khắp nơi tìm việc làm.', zh: '同学们都在到处找工作呢。', py: 'Tóngxuémen dōu zài dàochù zhǎo gōngzuò ne.' },
-  { vi: 'Giờ mình chưa muốn đi làm, mình còn muốn tiếp tục học, bố mẹ mình cũng đồng ý.', zh: '我不想现在就工作，还想继续学习，我爸妈也同意。', py: 'Wǒ bù xiǎng xiànzài jiù gōngzuò, hái xiǎng jìxù xuéxí, wǒ bà mā yě tóngyì.' },
-  { vi: 'Ví dụ có thể đến những thành phố lớn như Bắc Kinh, Thượng Hải, ở đó có nhiều trường đại học tốt.', zh: '比如可以去北京、上海这样的大城市，那里有很多好大学。', py: 'Bǐrú kěyǐ qù Běijīng, Shànghǎi zhèyàng de dà chéngshì, nàlǐ yǒu hěn duō hǎo dàxué.' },
-  { vi: 'Tôi cũng đã hỏi vài bạn học, hướng đi mọi người chọn đều khác nhau.', zh: '我也问了几个同学，大家选择的方向都不同。', py: 'Wǒ yě wènle jǐ ge tóngxué, dàjiā xuǎnzé de fāngxiàng dōu bù tóng.' }
+  { vi: 'Năm sau anh trai tôi định sang Trung Quốc du học.', zh: '我哥哥打算明年去中国留学。', py: 'Wǒ gēge dǎsuàn míngnián qù Zhōngguó liúxué.' },
+  { vi: 'Bố mẹ không đồng ý cho tôi đi du lịch một mình.', zh: '爸爸妈妈不同意我一个人去旅游。', py: 'Bàba māma bù tóngyì wǒ yí ge rén qù lǚyóu.' },
+  { vi: 'Học lái xe không dễ như bạn nghĩ đâu.', zh: '学开车没有你想的那么容易。', py: 'Xué kāichē méiyǒu nǐ xiǎng de nàme róngyì.' }
 ];

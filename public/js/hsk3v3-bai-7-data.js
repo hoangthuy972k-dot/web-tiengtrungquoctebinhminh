@@ -2490,159 +2490,156 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 Bài 1–5
 var listenData = [
   {
-    audio: '小李，你的自行车真漂亮，是新买的吗？是啊，我那辆旧的太矮了，骑着很不舒服。这辆多少钱？八百多块，不比旧的贵多少，而且骑着非常舒服。',
+    audio: '这辆自行车是我哥哥以前骑的，虽然有点儿旧，但是骑着还挺舒服的。',
     questions: [
-      { q: '小李为什么买新自行车？', opts: ['旧的太矮了', '旧的坏了', '旧的丢了'], ans: 0 },
-      { q: '新自行车多少钱？', opts: ['四百多块', '八十多块', '八百多块'], ans: 2 }
+      { q: 'Chiếc xe đạp này thế nào?', opts: ['Mới mua tuần trước', 'Hơi cũ nhưng đi vẫn thoải mái', 'Quá thấp, đi không thoải mái'], ans: 1, exp: '有点儿旧 = hơi cũ; 骑着还挺舒服的 = đạp vẫn khá thoải mái; ôn 挺……的 (bài 3).' },
+      { q: 'Trước đây ai đi chiếc xe này?', opts: ['Anh trai người nói', 'Bố người nói', 'Em gái người nói'], ans: 0, exp: '是我哥哥以前骑的 = trước đây anh trai tôi đi; 辆 là lượng từ của xe.' }
     ]
   },
   {
-    audio: '您好，苹果怎么卖？六块钱一斤。香蕉呢？香蕉三块五一斤，又新鲜又甜。那我要两斤苹果，两斤香蕉。好的，一共十九块。',
+    audio: '香蕉六块钱一公斤，我要了两公斤，又买了一个西瓜，一共花了三十块。',
     questions: [
-      { q: '香蕉多少钱一斤？', opts: ['三块五', '三块', '六块'], ans: 0 },
-      { q: '说话人一共要给多少钱？', opts: ['十二块', '十九块', '二十块'], ans: 1 }
+      { q: 'Người nói mua bao nhiêu chuối?', opts: ['1 cân (0,5 kg)', '2 kg', '6 kg'], ans: 1, exp: '要了两公斤 = lấy hai ki-lô; 公斤 = kg, 斤 = 0,5 kg.' },
+      { q: 'Tổng cộng người nói tiêu hết bao nhiêu?', opts: ['12 tệ', '20 tệ', '30 tệ'], ans: 2, exp: '一共花了三十块 = tổng cộng tiêu 30 tệ (chuối 12 tệ + dưa hấu).' }
     ]
   },
   {
-    audio: '妈妈，你看这条裙子怎么样？颜色不错，但是有点儿长，你再试试那条短一点儿的。这条大小合适，我穿着也很舒服。好，就买这条吧，我们再去看看鞋。',
+    audio: '你别看他个子矮，他打篮球打得好极了，比很多高个子都好。',
     questions: [
-      { q: '第一条裙子怎么样？', opts: ['太短了', '有点儿长', '太贵了'], ans: 1 },
-      { q: '她们买完裙子还想看什么？', opts: ['鞋', '衣服', '裤子'], ans: 0 }
+      { q: 'Anh ấy chơi bóng rổ thế nào?', opts: ['Không giỏi lắm', 'Cực kỳ giỏi', 'Mới bắt đầu học'], ans: 1, exp: '打得好极了 = chơi giỏi cực kỳ; tính từ + 极了 = cực kỳ.' },
+      { q: 'Vóc dáng anh ấy thế nào?', opts: ['Thấp', 'Rất cao', 'Rất gầy'], ans: 0, exp: '个子矮 = dáng người thấp; 矮 ↔ 高.' }
     ]
   },
   {
-    audio: '我哥哥下个月结婚，我想送他一个礼物，但是不知道送什么好。他们搬了新家，你可以送一个电视。现在的电视不但不贵，而且叫一声就能开机，非常方便。好主意，我晚上就在网上选一个。',
+    audio: '这家店的东西不比超市贵，而且离家很近，我们就在这儿买吧。',
     questions: [
-      { q: '说话人的哥哥下个月做什么？', opts: ['搬家', '过生日', '结婚'], ans: 2 },
-      { q: '说话人想在哪儿买电视？', opts: ['网上', '商场', '超市'], ans: 0 }
+      { q: 'Đồ ở cửa hàng này so với siêu thị thế nào?', opts: ['Đắt hơn nhiều', 'Rẻ bằng một nửa', 'Không đắt hơn'], ans: 2, exp: 'A 不比 B 贵 = A không đắt hơn B (có thể ngang giá).' },
+      { q: 'Vì sao người nói muốn mua ở đây?', opts: ['Gần nhà', 'Nhiều đồ hơn', 'Nhân viên nhiệt tình'], ans: 0, exp: '而且离家很近 = hơn nữa lại gần nhà.' }
+    ]
+  },
+  {
+    audio: '妈妈笑着说：“你穿这条黄色的裙子真好看，就买这条吧。”',
+    questions: [
+      { q: 'Mẹ nói với thái độ thế nào?', opts: ['Vừa cười vừa nói', 'Rất bực mình', 'Rất buồn'], ans: 0, exp: '笑着说 = cười nói (V1着 + V2: V1 là cách làm V2).' },
+      { q: 'Chiếc váy màu gì?', opts: ['Trắng', 'Vàng', 'Đen'], ans: 1, exp: '黄色的裙子 = chiếc váy màu vàng.' }
+    ]
+  },
+  {
+    audio: '我姐姐下个月结婚，她不但请了很多朋友，而且还请了她的小学老师。',
+    questions: [
+      { q: 'Tháng sau chị gái người nói làm gì?', opts: ['Chuyển nhà', 'Kết hôn', 'Đi du lịch'], ans: 1, exp: '下个月结婚 = tháng sau kết hôn.' },
+      { q: 'Ngoài bạn bè, chị ấy còn mời ai?', opts: ['Đồng nghiệp', 'Hàng xóm', 'Thầy cô tiểu học'], ans: 2, exp: '不但……，而且还请了她的小学老师 = không những mời bạn bè mà còn mời cả thầy cô tiểu học.' }
     ]
   }
 ];
 
 var matchData = [
   { left: '一辆', right: '自行车' },
-  { left: '两斤', right: '香蕉' },
   { left: '大小', right: '合适' },
-  { left: '冰西瓜', right: '甜极了' },
-  { left: '坐着', right: '看电视' },
-  { left: '叫它一声', right: '就能开机' }
+  { left: '甜', right: '极了' },
+  { left: '他们下个月', right: '结婚' },
+  { left: '叫了他一', right: '声' },
+  { left: '一共', right: '三十五块五毛' },
+  { left: '两公斤', right: '香蕉' },
+  { left: '一条黄色的', right: '短裤' }
 ];
 
 var fillData = [
-  { pre: '你的手机很', blank: '旧', post: '，买个新的吧。', hint: '(cũ)', ans: '旧', exp: '旧 = cũ, trái nghĩa với 新 (HSK1 Bài 5). Câu của sách.' },
-  { pre: '她比我大两岁，但是比我还', blank: '矮', post: '一点儿。', hint: '(thấp)', ans: '矮', exp: '比 + 还 + Adj + 一点儿 (HSK2 Bài 8, 13); 矮 = thấp. Câu của sách.' },
-  { pre: '这条短裤比那条', blank: '更', post: '合适，买这条吧。', hint: '(hơn)', ans: '更', exp: 'Trong câu 比, trước tính từ dùng 更 / 还, không dùng 很. Câu của sách.' },
-  { pre: '我们都听见了他在教室外面的笑', blank: '声', post: '。', hint: '(tiếng)', ans: '声', exp: '笑声 = tiếng cười (笑 – HSK2 Bài 10); 听见 (HSK1 Bài 14). Câu của sách.' },
-  { pre: '我想去看海，不知道这个时间是不是', blank: '合适', post: '。', hint: '(thích hợp)', ans: '合适', exp: '合适 = thích hợp; 海 (ôn HSK3 Bài 4). Câu của sách.' },
-  { pre: '你们两个准备什么时候', blank: '结婚', post: '？——可能今年10月，到时候一定告诉你。', hint: '(kết hôn)', ans: '结婚', exp: '结婚 không mang tân ngữ; 准备 (HSK2 Bài 5); 一定 (ôn HSK3 Bài 4). Câu của sách.' },
-  { pre: '苹果两斤，八块；香蕉四斤，十二块。', blank: '一共', post: '二十块。', hint: '(tổng cộng)', ans: '一共', exp: '一共 + số tiền: 8 + 12 = 20 tệ; 斤 (HSK1 Bài 10). Câu của sách.' },
-  { pre: '这个西瓜又大又', blank: '新鲜', post: '，一定很甜。', hint: '(tươi)', ans: '新鲜', exp: '又……又…… (ôn HSK3 Bài 2) + 新鲜 = tươi.' }
+  { pre: '这双鞋我能', blank: '试', post: '一下吗？', hint: '(thử)', ans: '试', exp: '试一下 = thử một chút (mặc / đi thử); ôn 鞋 (bài 5).' },
+  { pre: '我的手机已经用了五年，太', blank: '旧', post: '了，该换一个了。', hint: '(cũ)', ans: '旧', exp: '旧 = cũ, trái nghĩa với 新; ôn 该……了 (bài 6).' },
+  { pre: '这张桌子太', blank: '矮', post: '了，孩子坐着写字很不舒服。', hint: '(thấp)', ans: '矮', exp: '矮 = thấp (chiều cao); 坐着写字 = ngồi viết (V1着 + V2).' },
+  { pre: '坐高铁比坐飞机', blank: '更', post: '方便，因为高铁站离我家很近。', hint: '(hơn)', ans: '更', exp: 'Câu 比: trước tính từ dùng 更 / 还, không dùng 很; ôn 高铁 (bài 6).' },
+  { pre: '这条裙子太长了，我穿着不太', blank: '合适', post: '。', hint: '(vừa vặn)', ans: '合适', exp: '合适 = vừa, hợp; 穿着 + cảm nhận = mặc vào thấy….' },
+  { pre: '去北京还是去上海？你们快点儿', blank: '决定', post: '吧，我要买票了。', hint: '(quyết định)', ans: '决定', exp: '决定 = quyết định; ôn 还是 trong câu hỏi lựa chọn.' },
+  { pre: '昨天的音乐会好听', blank: '极了', post: '，我还想再去一次。', hint: '(cực kỳ)', ans: '极了', exp: 'Tính từ + 极了 = cực kỳ…; trước tính từ không thêm 很; ôn 音乐会 (bài 5).' },
+  { pre: '这家饭馆的菜不但便宜，', blank: '而且', post: '服务员都很热情。', hint: '(mà còn)', ans: '而且', exp: '不但……，而且…… = không những… mà còn…; không dùng 但是 ở vế sau; ôn 热情 (bài 2).' },
+  { pre: '我觉得这家的香蕉', blank: '不比', post: '那家新鲜，还贵两块钱。', hint: '(không hơn)', ans: '不比', exp: 'A 不比 B + tính từ = A không … hơn B; vế sau 还贵两块钱 nên không đáng mua.' },
+  { pre: '你别站', blank: '着', post: '吃饭，坐下来吃吧。', hint: '(trong tư thế)', ans: '着', exp: 'V1着 + V2: 站着吃饭 = đứng ăn; 着 chỉ tư thế khi làm việc khác.' },
+  { pre: '这些菜是今天早上买的，很', blank: '新鲜', post: '。', hint: '(tươi)', ans: '新鲜', exp: '新鲜 = tươi; rau mới mua sáng nay nên tươi.' },
+  { pre: '他叫了我一', blank: '声', post: '，但是我没听见。', hint: '(tiếng)', ans: '声', exp: '叫一声 = gọi một tiếng; 声 là lượng từ cho âm thanh.' }
 ];
 
 var sortData = [
-  { words: ['咱们', '可以', '走', '着', '去', '。'], ans: '咱们可以走着去。', audio: '咱们可以走着去。' },
-  { words: ['那条', '裙子', '比', '短裤', '更', '好看', '。'], ans: '那条裙子比短裤更好看。', audio: '那条裙子比短裤更好看。' },
-  { words: ['裙子', '不比', '短裤', '贵', '多少', '。'], ans: '裙子不比短裤贵多少。', audio: '裙子不比短裤贵多少。' },
-  { words: ['这块', '冰', '西瓜', '甜', '极了', '！'], ans: '这块冰西瓜甜极了！', audio: '这块冰西瓜甜极了！' },
-  { words: ['现在的', '电视', '不但', '便宜', '，', '而且', '用着', '非常', '方便', '。'], ans: '现在的电视不但便宜，而且用着非常方便。', audio: '现在的电视不但便宜，而且用着非常方便。' },
-  { words: ['我们', '在', '新家', '坐', '着', '看', '电视', '。'], ans: '我们在新家坐着看电视。', audio: '我们在新家坐着看电视。' }
+  { words: ['她', '每天', '听着', '音乐', '跑步', '。'], ans: '她每天听着音乐跑步。', audio: '她每天听着音乐跑步。' },
+  { words: ['这个', '房间', '不比', '那个', '大', '，', '但是', '贵', '多了', '。'], ans: '这个房间不比那个大，但是贵多了。', audio: '这个房间不比那个大，但是贵多了。' },
+  { words: ['这条', '黄色', '的', '裙子', '漂亮', '极了', '。'], ans: '这条黄色的裙子漂亮极了。', audio: '这条黄色的裙子漂亮极了。' },
+  { words: ['她', '不但', '会', '唱歌', '，', '而且', '唱', '得', '很好', '。'], ans: '她不但会唱歌，而且唱得很好。', audio: '她不但会唱歌，而且唱得很好。' },
+  { words: ['香蕉', '八块', '钱', '一斤', '，', '有点儿', '贵', '。'], ans: '香蕉八块钱一斤，有点儿贵。', audio: '香蕉八块钱一斤，有点儿贵。' },
+  { words: ['他们', '已经', '结婚', '五年', '了', '。'], ans: '他们已经结婚五年了。', audio: '他们已经结婚五年了。' },
+  { words: ['孩子们', '笑着', '跑', '进', '了', '教室', '。'], ans: '孩子们笑着跑进了教室。', audio: '孩子们笑着跑进了教室。' },
+  { words: ['这个', '冰箱', '太', '旧', '了', '，', '我们', '决定', '买', '个', '新的', '。'], ans: '这个冰箱太旧了，我们决定买个新的。', audio: '这个冰箱太旧了，我们决定买个新的。' }
 ];
 
 var mcData = [
-  { q: '这＿＿自行车是小雪八岁的时候买的。', opts: ['条', '辆', '张', '件'], ans: 1, exp: '辆 là lượng từ cho xe: 一辆自行车, 一辆汽车. 条 cho vật dài mềm, 张 cho vật phẳng, 件 cho áo.' },
-  { q: '她现在长高了，这辆车已经太＿＿了。', opts: ['矮', '旧', '甜', '新鲜'], ans: 0, exp: 'Cô bé đã cao lên nên chiếc xe trở nên thấp so với cô → 太矮了. 旧, 甜, 新鲜 không liên quan việc cao lên.' },
-  { q: '大小＿＿，但我觉得那条裙子比短裤更好看。', opts: ['决定', '一共', '合适', '结婚'], ans: 2, exp: '大小合适 = kích cỡ vừa vặn; vế sau 但 vẫn thích váy hơn. 决定, 结婚 là động từ, không đi sau 大小.' },
-  { q: '我多看看再＿＿。你看，那边有买二送一！', opts: ['结婚', '开机', '合适', '决定'], ans: 3, exp: '多看看再决定 = xem thêm rồi mới quyết định; 再 = rồi mới (việc sau).' },
-  { q: '西瓜又大又＿＿，不甜不要钱！', opts: ['新鲜', '矮', '旧', '黄色'], ans: 0, exp: '又大又新鲜 = vừa to vừa tươi. 矮, 旧 không dùng để quảng cáo dưa hấu.' },
-  { q: '＿＿五十八块五毛。', opts: ['更', '一共', '极', '而且'], ans: 1, exp: '一共 + số tiền = tổng cộng. 更, 极, 而且 không đứng trước số tiền.' },
-  { q: '有的电视叫它一＿＿就能开机。', opts: ['斤', '毛', '声', '辆'], ans: 2, exp: '声 là động lượng từ cho âm thanh: 叫一声 = gọi một tiếng. 斤, 毛, 辆 không dùng với 叫.' },
-  { q: 'Chọn câu đúng: "Chúng mình có thể đi bộ đến đó."', opts: ['咱们可以走去着。', '咱们可以着走去。', '咱们可以走着去。', '咱们可以去走着。'], ans: 2, exp: 'V1着 + V2: V1 chỉ cách thức của V2 → 走着去 = đi bộ đến đó.' },
-  { q: 'Chọn câu đúng: "Tiếng Trung của anh ấy cũng chẳng giỏi hơn bạn."', opts: ['他的中文不比你好。', '他的中文比你不好。', '他的中文比不你好。', '他的中文不比你很好。'], ans: 0, exp: 'A 不比 B + tính từ = A không hơn B (có thể ngang nhau). 不 đặt trước 比; câu 比 không dùng 很.' },
-  { q: 'Chọn cách nói đúng: "Miếng dưa hấu ướp lạnh này ngọt cực kỳ."', opts: ['这块冰西瓜很甜极了。', '这块冰西瓜极了甜。', '这块冰西瓜甜极。', '这块冰西瓜甜极了。'], ans: 3, exp: 'Tính từ + 极了 = cực kỳ: 甜极了. 极了 phải có 了 và không dùng chung với 很.' }
+  { q: 'Bạn kể: “Bà tôi thích ngồi nghe nhạc.”', opts: ['我奶奶喜欢听着坐音乐。', '我奶奶喜欢坐听着音乐。', '我奶奶喜欢坐着听音乐。', '我奶奶喜欢着坐听音乐。'], ans: 2, exp: 'V1着 + V2: 坐着 (tư thế) đứng trước 听音乐 (việc chính).' },
+  { q: 'A: “我觉得坐高铁比坐飞机贵。” — B: “Không đâu, tàu cao tốc chẳng đắt hơn máy bay.”', opts: ['高铁不比飞机贵。', '高铁比飞机不贵。', '高铁比不飞机贵。', '高铁不比飞机很贵。'], ans: 0, exp: 'A 不比 B + tính từ: 不 đứng trước 比; câu 比 không dùng 很.' },
+  { q: 'A: “你妹妹比你高吧？” — B đáp (thật ra hai chị em cao bằng nhau):', opts: ['她没有我高，我们一样高。', '她不比我高，我们一样高。', '她比我不高，我们一样高。', '她比我高，我们一样高。'], ans: 1, exp: '不比 = không hơn (có thể bằng); 没有我高 = thấp hơn tôi, mâu thuẫn với 一样高.' },
+  { q: 'Bạn vừa ăn một miếng món mẹ nấu và khen: “Ngon tuyệt!”', opts: ['很好吃极了！', '极了好吃！', '好吃极了！', '好吃极！'], ans: 2, exp: 'Tính từ + 极了, phải có 了; không thêm 很 trước tính từ.' },
+  { q: 'Bạn giới thiệu khách sạn: “Khách sạn này không những sạch sẽ mà còn rất yên tĩnh.”', opts: ['这个宾馆不但干净，但是很安静。', '这个宾馆不但干净，而且很安静。', '这个宾馆而且干净，不但很安静。', '这个宾馆不但干净，所以很安静。'], ans: 1, exp: '不但 (vế 1) …，而且 (vế 2) …; không ghép 不但 với 但是 / 所以; ôn 干净 (bài 4), 安静 (bài 6).' },
+  { q: '“楼下那＿＿黄色的自行车是谁的？”', opts: ['个', '只', '条', '辆'], ans: 3, exp: 'Xe cộ dùng lượng từ 辆: 一辆自行车.' },
+  { q: '“这双鞋大小正＿＿，我就买这双了。”', opts: ['满意', '合适', '新鲜', '决定'], ans: 1, exp: '大小合适 = cỡ vừa; 满意 dùng cho người (我很满意), 新鲜 dùng cho thức ăn.' },
+  { q: 'Người bán nói: “西瓜三块钱一斤。” Bạn mua quả dưa hấu nặng 1 kg, bạn phải trả:', opts: ['3 tệ', '6 tệ', '1,5 tệ', '12 tệ'], ans: 1, exp: '1 公斤 = 2 斤, nên 1 kg = 2 × 3 = 6 tệ.' },
+  { q: 'A: “我买这些，多少钱？” — B: “Tổng cộng 15 tệ 5 hào.”', opts: ['一共十五毛五块。', '一共十五块五毛。', '十五块五毛一共。', '一共十五块五分。'], ans: 1, exp: 'Thứ tự đơn vị: 块 → 毛; 一共 đứng trước số tiền; 分 nhỏ hơn 毛 (sai số tiền).' },
+  { q: 'Câu nào SAI?', opts: ['他是去年结婚的。', '他跟她结婚了。', '他结婚了她。', '我哥哥还没结婚。'], ans: 2, exp: '结婚 là động từ li hợp, không mang tân ngữ; phải nói 跟 + người + 结婚.' },
+  { q: 'A: “香蕉和西瓜，你喜欢吃哪个？” — B: “都喜欢，不过我＿喜欢吃西瓜。”', opts: ['比', '更', '极', '一共'], ans: 1, exp: '更 + động từ / tính từ = … hơn; 极 phải dùng dạng tính từ + 极了.' },
+  { q: '“手机关了一个晚上，你＿＿看看有没有我的邮件。”', opts: ['开机', '结婚', '决定', '一共'], ans: 0, exp: '开机 = bật máy; điện thoại tắt cả đêm nên phải bật máy mới xem được email.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng V1着 + V2, A 不比 B + tính từ, tính từ + 极了, 不但……，而且…… và từ mới của bài.',
   questions: [
     {
-      q_zh: '他们为什么想给小雪买新自行车？',
-      q_vn: 'Vì sao họ muốn mua xe đạp mới cho Tiểu Tuyết?',
-      hint: '因为小雪……，那辆自行车……',
-      sample: '因为小雪长高了，那辆自行车看起来有点儿旧了，而且已经太矮了。',
-      sample_vn: 'Vì Tiểu Tuyết đã cao lên, chiếc xe đạp đó trông hơi cũ, hơn nữa đã quá thấp rồi.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 看起来 (ôn HSK3 Bài 1); 而且 (từ mới bài này).'
+      q_zh: '你每天怎么去上班？',
+      q_vn: 'Hằng ngày bạn đi làm (hoặc đi học) bằng cách nào?',
+      hint: '我每天……着……去……，又……又……',
+      sample: '我家离公司不远，我每天骑着自行车去上班，又快又能锻炼身体。',
+      sample_vn: 'Nhà tôi cách công ty không xa, ngày nào tôi cũng đạp xe đi làm, vừa nhanh vừa rèn luyện được sức khoẻ.',
+      note: 'V1着 + V2: 骑着自行车去; ôn 又……又…… (bài 2), 锻炼 (bài 5).'
     },
     {
-      q_zh: '他们为什么想带小雪一起去？',
-      q_vn: 'Vì sao họ muốn đưa Tiểu Tuyết đi cùng?',
-      hint: '因为他们想让小雪……',
-      sample: '因为他们想让小雪自己试一下新自行车。',
-      sample_vn: 'Vì họ muốn để Tiểu Tuyết tự đi thử xe đạp mới.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 让 — câu kiêm ngữ (HSK2 Bài 1); 自己 (HSK2 Bài 3).'
+      q_zh: '你买衣服的时候会先试一下吗？',
+      q_vn: 'Khi mua quần áo bạn có mặc thử trước không?',
+      hint: '会，……大小合适，……我才买。',
+      sample: '会，我一定先试一下，大小合适、穿着舒服，我才买。',
+      sample_vn: 'Có, tôi nhất định thử trước, cỡ vừa, mặc vào thoải mái thì tôi mới mua.',
+      note: '试一下; 穿着 + cảm nhận; ôn 才 (bài 3).'
     },
     {
-      q_zh: '王一雪为什么不想买裙子？',
-      q_vn: 'Vì sao Vương Nhất Tuyết không muốn mua váy?',
-      hint: '因为裙子比短裤……',
-      sample: '因为裙子比短裤贵一点儿，裙子四百八十块，短裤四百块。',
-      sample_vn: 'Vì váy đắt hơn quần soóc một chút, váy 480 tệ, quần soóc 400 tệ.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 比 + Adj + 一点儿 (HSK2 Bài 13).'
+      q_zh: '你最喜欢吃什么水果？为什么？',
+      q_vn: 'Bạn thích ăn loại hoa quả nào nhất? Vì sao?',
+      hint: '我最喜欢吃……，……不但……，而且……',
+      sample: '我最喜欢吃西瓜，西瓜不但甜，而且冰的西瓜好吃极了。',
+      sample_vn: 'Tôi thích ăn dưa hấu nhất, dưa hấu không những ngọt mà dưa hấu ướp lạnh còn ngon tuyệt.',
+      note: '不但……，而且……; tính từ + 极了.'
     },
     {
-      q_zh: '西瓜多少钱一斤？',
-      q_vn: 'Dưa hấu bao nhiêu tiền một cân (斤)?',
-      hint: '西瓜五块钱一公斤，就是……一斤。',
-      sample: '西瓜五块钱一公斤，就是两块五一斤。',
-      sample_vn: 'Dưa hấu năm tệ một ki-lô, tức là hai tệ rưỡi một cân.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. Chú ý: bài khoá nói 公斤 (kg), câu hỏi hỏi 斤 (= 0,5 kg).'
+      q_zh: '你觉得网上的东西比商店便宜吗？',
+      q_vn: 'Bạn có thấy đồ trên mạng rẻ hơn ở cửa hàng không?',
+      hint: '我觉得网上的东西不比商店……，而且……',
+      sample: '我觉得网上的东西不比商店便宜多少，而且不能先试，所以我还是喜欢去商店买。',
+      sample_vn: 'Tôi thấy đồ trên mạng chẳng rẻ hơn cửa hàng bao nhiêu, lại không thử trước được, nên tôi vẫn thích ra cửa hàng mua.',
+      note: 'A 不比 B + tính từ + 多少 = A chẳng … hơn B bao nhiêu.'
     },
     {
-      q_zh: '刘明为什么觉得新电视用着很方便？',
-      q_vn: 'Vì sao Lưu Minh thấy ti vi mới dùng rất tiện?',
-      hint: '因为有的电视叫它……就能……',
-      sample: '因为现在的电视不但便宜，而且有的电视叫它一声就能开机。',
-      sample_vn: 'Vì ti vi bây giờ không những rẻ, mà có loại chỉ cần gọi một tiếng là mở máy.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 不但……，而且…… (ngữ pháp 4).'
-    },
-    {
-      q_zh: '你喜欢在网上买东西吗？为什么？',
-      q_vn: 'Bạn có thích mua đồ online không? Tại sao?',
-      hint: '喜欢，因为在网上买东西不但……，而且……',
-      sample: '喜欢。因为在网上买东西不但便宜，而且很方便，在家里坐着就能买到很多东西。',
-      sample_vn: 'Có. Vì mua đồ trên mạng không những rẻ mà còn rất tiện, ngồi ở nhà là mua được rất nhiều thứ.',
-      note: 'Câu hỏi Khởi động của sách. 网上 (HSK2 Bài 2); 坐着 + V (ngữ pháp 1); 方便 (ôn HSK3 Bài 2).'
-    },
-    {
-      q_zh: '你会去商店买什么东西？为什么？',
-      q_vn: 'Bạn thường đến cửa hàng mua những gì? Tại sao?',
-      hint: '我会去商店买……，因为……',
-      sample: '我会去商店买衣服和鞋，因为在商店可以穿着试试，大小合适不合适马上就知道了。',
-      sample_vn: 'Tôi thường đến cửa hàng mua quần áo và giày, vì ở cửa hàng có thể mặc thử, cỡ có vừa hay không là biết ngay.',
-      note: 'Câu hỏi Khởi động của sách. 穿着试试 (ngữ pháp 1); 马上 (ôn HSK3 Bài 2).'
-    },
-    {
-      q_zh: '请用“着”说一说你的一位同学：他／她穿着什么？在做什么？',
-      q_vn: 'Hãy dùng “着” miêu tả một bạn cùng lớp: bạn ấy đang mặc gì? Đang làm gì?',
-      hint: '他穿着一件……，他坐着……',
-      sample: '他穿着一件白衣服，跟朋友一起坐着聊天儿。他笑着说话，看起来很高兴。',
-      sample_vn: 'Cậu ấy mặc một chiếc áo trắng, đang ngồi trò chuyện cùng bạn bè. Cậu ấy vừa cười vừa nói, trông rất vui.',
-      note: 'Câu hỏi Hoạt động trên lớp của sách (miêu tả bằng 着 để bạn đoán). 穿着 (HSK2 Bài 11); 坐着聊天儿、笑着说话 — câu liên động với 着.'
+      q_zh: '说一说你家里一件很旧的东西。',
+      q_vn: 'Hãy kể về một món đồ rất cũ trong nhà bạn.',
+      hint: '我家有一……很旧的……，是……的时候买的',
+      sample: '我家有一辆很旧的自行车，是我爸爸结婚的时候买的，现在还能骑。',
+      sample_vn: 'Nhà tôi có một chiếc xe đạp rất cũ, bố tôi mua lúc cưới, bây giờ vẫn còn đi được.',
+      note: '辆 cho xe; 旧 = cũ; 结婚的时候 = lúc kết hôn.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Chiếc xe đạp này mua khi Tiểu Tuyết tám tuổi, trông hơi cũ rồi.', zh: '这辆自行车是小雪八岁的时候买的，看起来有点儿旧了。', py: 'Zhè liàng zìxíngchē shì Xiǎoxuě bā suì de shíhou mǎi de, kàn qǐlai yǒudiǎnr jiù le.' },
-  { vi: 'Trung tâm thương mại không xa, chúng mình có thể đi bộ đến đó.', zh: '商场不远，咱们可以走着去。', py: 'Shāngchǎng bù yuǎn, zánmen kěyǐ zǒuzhe qù.' },
-  { vi: 'Anh thấy chiếc váy kia đẹp hơn quần soóc.', zh: '我觉得那条裙子比短裤更好看。', py: 'Wǒ juéde nà tiáo qúnzi bǐ duǎnkù gèng hǎokàn.' },
-  { vi: 'Chị nếm thử miếng dưa hấu ướp lạnh này đi, ngọt cực kỳ!', zh: '您先尝尝这块冰西瓜，甜极了！', py: 'Nín xiān chángchang zhè kuài bīng xīguā, tián jí le!' },
-  { vi: 'Ti vi bây giờ không những rẻ mà còn dùng rất tiện.', zh: '现在的电视不但便宜，而且用着非常方便。', py: 'Xiànzài de diànshì búdàn piányi, érqiě yòngzhe fēicháng fāngbiàn.' }
+  { vi: 'Anh ấy đứng nói chuyện điện thoại.', zh: '他站着打电话。', py: 'Tā zhànzhe dǎ diànhuà.' },
+  { vi: 'Chiếc váy này không đắt hơn chiếc kia, mà còn đẹp hơn.', zh: '这条裙子不比那条贵，而且更好看。', py: 'Zhè tiáo qúnzi bù bǐ nà tiáo guì, érqiě gèng hǎokàn.' },
+  { vi: 'Trời nóng quá, tôi muốn uống một cốc nước đá.', zh: '天太热了，我想喝一杯冰水。', py: 'Tiān tài rè le, wǒ xiǎng hē yì bēi bīng shuǐ.' },
+  { vi: 'Hôm nay tôi mua hai cân chuối, tổng cộng mười tệ.', zh: '我今天买了两斤香蕉，一共十块钱。', py: 'Wǒ jīntiān mǎile liǎng jīn xiāngjiāo, yígòng shí kuài qián.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Váy không đắt hơn quần soóc bao nhiêu, em mua váy đi.', zh: '裙子不比短裤贵多少，还是买裙子吧。', py: 'Qúnzi bù bǐ duǎnkù guì duōshao, háishi mǎi qúnzi ba.' },
-  { vi: 'Em xem thêm một chút rồi mới quyết định.', zh: '我多看看再决定。', py: 'Wǒ duō kànkan zài juédìng.' },
-  { vi: 'Tổng cộng là năm mươi tám tệ năm hào.', zh: '一共五十八块五毛。', py: 'Yígòng wǔshíbā kuài wǔ máo.' },
-  { vi: 'Có loại ti vi chỉ cần gọi một tiếng là mở máy.', zh: '有的电视叫它一声就能开机。', py: 'Yǒude diànshì jiào tā yì shēng jiù néng kāijī.' },
-  { vi: 'Mấy ngày nay khi ngồi xem ti vi ở nhà mới, chúng tôi lại phát hiện ra vấn đề mới.', zh: '这几天我们在新家坐着看电视的时候，又发现了新问题。', py: 'Zhè jǐ tiān wǒmen zài xīn jiā zuòzhe kàn diànshì de shíhou, yòu fāxiànle xīn wèntí.' }
+  { vi: 'Nhà mới không những rộng mà ngay dưới tầng còn có siêu thị.', zh: '新房子不但大，而且楼下就有超市。', py: 'Xīn fángzi búdàn dà, érqiě lóu xià jiù yǒu chāoshì.' },
+  { vi: 'Bạn thử chiếc quần soóc màu vàng này xem.', zh: '你试试这条黄色的短裤吧。', py: 'Nǐ shìshi zhè tiáo huángsè de duǎnkù ba.' },
+  { vi: 'Anh ấy quyết định sang Trung Quốc học tiếng Trung.', zh: '他决定去中国学汉语。', py: 'Tā juédìng qù Zhōngguó xué Hànyǔ.' }
 ];

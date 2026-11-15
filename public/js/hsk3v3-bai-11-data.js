@@ -2490,159 +2490,153 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 bài trước
 var listenData = [
   {
-    audio: '小李，明天的会议几点开始？上午九点，在第二会议室。我还没收到邮件呢。经理让我下午给大家发邮件，你别着急。那开会的时候要带笔记本电脑吗？带或者不带都可以，会议室里有电脑。',
+    audio: '今天下午不开会了，经理让我告诉大家，会议换到后天上午九点。',
     questions: [
-      { q: '明天的会议在哪儿开？', opts: ['第一会议室', '第二会议室', '经理办公室'], ans: 1 },
-      { q: '开会的时候要带笔记本电脑吗？', opts: ['一定要带', '不能带', '带不带都可以'], ans: 2 }
+      { q: 'Cuộc họp được chuyển sang lúc nào?', opts: ['Chiều nay', '9 giờ sáng ngày kia', '9 giờ sáng mai'], ans: 1, exp: '会议换到后天上午九点 = cuộc họp chuyển sang 9 giờ sáng ngày kia; 后天 = ngày kia.' }
     ]
   },
   {
-    audio: '我的手机坏了，打电话的时候听不见声音。我先自己检查了一下，可是没找到问题。看来我没办法解决，只能拿到手机店去，请别人帮我看看了。',
+    audio: '你星期五或者星期六来都可以，这两天我都不上班。',
     questions: [
-      { q: '说话人的手机有什么问题？', opts: ['听不见声音', '看不见东西', '不能上网'], ans: 0 },
-      { q: '说话人打算怎么办？', opts: ['自己再检查一下', '买一个新手机', '去手机店请别人帮忙'], ans: 2 }
+      { q: 'Người nói hẹn người kia đến khi nào?', opts: ['Chỉ thứ Sáu', 'Chủ nhật', 'Thứ Sáu hoặc thứ Bảy đều được'], ans: 2, exp: '或者 dùng trong câu trần thuật: 星期五或者星期六来都可以 = thứ Sáu hoặc thứ Bảy đến đều được.' },
+      { q: 'Vì sao hai ngày đó đều được?', opts: ['Người nói không đi làm', 'Người nói phải đi công tác', 'Công ty đóng cửa'], ans: 0, exp: '这两天我都不上班 = hai ngày này tôi đều không đi làm.' }
     ]
   },
   {
-    audio: '王经理，我妈妈生病住院了，我想请三天假，可以吗？当然可以，你快去医院吧。那我的工作怎么办？我怕做不完。别担心，我让小张帮你把这些工作做完。',
+    audio: '我给小李打了好几次电话都没人接，看来他今天请假了。',
     questions: [
-      { q: '说话人为什么要请假？', opts: ['自己感冒了', '妈妈住院了', '要去旅游'], ans: 1 },
-      { q: '说话人的工作谁来做？', opts: ['小张', '王经理', '说话人自己'], ans: 0 }
+      { q: 'Người nói đoán gì về Tiểu Lý?', opts: ['Tiểu Lý đổi số điện thoại', 'Hôm nay Tiểu Lý xin nghỉ', 'Tiểu Lý đang họp'], ans: 1, exp: '看来 = xem ra: gọi mãi không ai nghe → đoán 他今天请假了 (hôm nay anh ấy xin nghỉ).' }
     ]
   },
   {
-    audio: '我在北京生活了十年。最近有一个去上海工作的机会，那儿的工作环境很好，可是我妻子和孩子都在北京。对我来说，家人比工作更重要，所以我不愿意离开北京。',
+    audio: '对很多年轻人来说，大城市的机会比较多，但是我妈妈更喜欢小城市安静的生活。',
     questions: [
-      { q: '说话人在北京生活了多长时间？', opts: ['十年', '五年', '十五年'], ans: 0 },
-      { q: '说话人为什么不愿意去上海？', opts: ['上海的工作环境不好', '不想离开家人', '上海没有好机会'], ans: 1 }
+      { q: 'Với nhiều người trẻ, thành phố lớn có gì?', opts: ['Nhiều cơ hội hơn', 'Cuộc sống yên tĩnh', 'Nhà rẻ hơn'], ans: 0, exp: '对很多年轻人来说 = đối với nhiều người trẻ; 大城市的机会比较多 = thành phố lớn khá nhiều cơ hội.' },
+      { q: 'Mẹ người nói thích gì hơn?', opts: ['Công việc ở thành phố lớn', 'Cuộc sống yên tĩnh ở thành phố nhỏ', 'Sống ở nước ngoài'], ans: 1, exp: '但是我妈妈更喜欢小城市安静的生活 = nhưng mẹ tôi thích cuộc sống yên tĩnh ở thành phố nhỏ hơn.' }
+    ]
+  },
+  {
+    audio: '我的电脑没有声音了，我自己检查了半个小时也没找到问题，只能请同事帮我看看。',
+    questions: [
+      { q: 'Máy tính của người nói bị làm sao?', opts: ['Không lên hình', 'Không có tiếng', 'Không vào được mạng'], ans: 1, exp: '电脑没有声音了 = máy tính không có tiếng nữa; 声音 = âm thanh.' },
+      { q: 'Cuối cùng người nói làm gì?', opts: ['Nhờ đồng nghiệp xem giúp', 'Mua máy tính mới', 'Tự sửa xong'], ans: 0, exp: '只能请同事帮我看看 = chỉ còn cách nhờ đồng nghiệp xem giúp; 只能 = chỉ có thể.' }
+    ]
+  },
+  {
+    audio: '公司有一个去上海工作的机会，经理问我愿意不愿意去。我到现在还没决定，因为我不想离开家人。',
+    questions: [
+      { q: 'Giám đốc hỏi người nói điều gì?', opts: ['Có muốn nghỉ phép không', 'Có muốn đổi phòng làm việc không', 'Có muốn đi Thượng Hải làm việc không'], ans: 2, exp: '一个去上海工作的机会 = một cơ hội đi Thượng Hải làm việc; 愿意不愿意去 = có muốn đi không.' },
+      { q: 'Vì sao người nói còn chưa quyết định?', opts: ['Không muốn xa gia đình', 'Không thích Thượng Hải', 'Công việc mới quá khó'], ans: 0, exp: '不想离开家人 = không muốn rời xa gia đình; 离开 = rời khỏi.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '给大家', right: '发邮件' },
-  { left: '想', right: '办法' },
+  { left: '给同事们发', right: '邮件' },
+  { left: '解决', right: '问题' },
   { left: '跟经理', right: '请假' },
-  { left: '会议室的电脑或者', right: '自己的电脑都可以' },
-  { left: '对我来说', right: '生活也很重要' },
-  { left: '我跟您一起把这些工作', right: '做完' }
+  { left: '公司的', right: '邮箱' },
+  { left: '声音', right: '有点儿小' },
+  { left: '不愿意离开', right: '家人' },
+  { left: '去北京学习的', right: '机会' }
 ];
 
 var fillData = [
-  { pre: '这是同事们', blank: '为', post: '你准备的礼物。', hint: '(cho, vì)', ans: '为', exp: '为 + người + V — làm gì cho ai; 准备、礼物 (ôn HSK2 Bài 5). Câu của sách.' },
-  { pre: '下班以前我得把这封邮件', blank: '发', post: '给大家。', hint: '(gửi)', ans: '发', exp: '把 + O + 发给 + người — câu chữ 把 (2) (ôn HSK3 Bài 10); 封 (ôn HSK3 Bài 5). Câu của sách.' },
-  { pre: '今天好几个人请假了，我们明天', blank: '或者', post: '后天再开会吧。', hint: '(hoặc)', ans: '或者', exp: 'Câu trần thuật nêu các khả năng → 或者 (mai hoặc ngày kia); trong câu hỏi mới dùng 还是. Câu của sách.' },
-  { pre: '每次开会我都不说话，因为我总是', blank: '怕', post: '说错话。', hint: '(sợ)', ans: '怕', exp: '怕 + mệnh đề — sợ (mình) nói sai; 总是 (ôn HSK3 Bài 5), 错 (ôn HSK2 Bài 10). Câu của sách.' },
-  { pre: '这次去上海开会是个好', blank: '机会', post: '，你可以多认识一些新同事。', hint: '(cơ hội)', ans: '机会', exp: '好机会 — cơ hội tốt; 认识 (ôn HSK1 Bài 2). Câu của sách.' },
-  { pre: '你为什么要', blank: '离开', post: '现在的公司？——对我来说，多跟家人在一起比工作更重要。', hint: '(rời khỏi)', ans: '离开', exp: '离开 + nơi chốn; 对……来说 của bài này; 比……更 (ôn HSK3 Bài 7). Câu của sách.' },
-  { pre: '每次遇到问题，他都会帮我们一起想', blank: '办法', post: '。', hint: '(cách)', ans: '办法', exp: '想办法 — nghĩ cách; 遇到 (ôn HSK3 Bài 10). Câu của sách.' },
-  { pre: '这么多工作今天做不完了，', blank: '只能', post: '明天再说。', hint: '(chỉ có thể)', ans: '只能', exp: '只能 + V — chỉ còn cách…; 做不完 — bổ ngữ khả năng (ôn HSK3 Bài 9). Câu của sách.' }
+  { pre: '后天开会的', blank: '地点', post: '在二楼，你别走错了。', hint: '(địa điểm)', ans: '地点', exp: '开会的地点 = địa điểm họp; ôn 别 + V + 错 (HSK2).' },
+  { pre: '这件事你自己去问经理，', blank: '还是', post: '让我帮你问？', hint: '(hay là — câu hỏi)', ans: '还是', exp: 'Câu hỏi đưa ra hai lựa chọn → dùng 还是, không dùng 或者.' },
+  { pre: '明天上午', blank: '或者', post: '下午我都有时间，你什么时候来都行。', hint: '(hoặc — câu trần thuật)', ans: '或者', exp: 'Câu trần thuật nêu các khả năng → 或者; ôn 什么时候……都…… (bất kỳ lúc nào, bài 2).' },
+  { pre: '外面下大雨了，', blank: '看来', post: '今天的足球比赛要换个时间了。', hint: '(xem ra)', ans: '看来', exp: '看来 = xem ra, kết luận dựa vào tình hình (trời mưa to); ôn 比赛 (bài 9), 换 (bài 3).' },
+  { pre: '我已经把会议要用的电脑接', blank: '好', post: '了，您看看有没有声音。', hint: '(xong, ổn — bổ ngữ kết quả)', ans: '好', exp: '把 + 电脑 + 接好 = nối xong; bổ ngữ kết quả 好 đứng ngay sau động từ, 了 ở cuối.' },
+  { pre: '对七十多岁的爷爷', blank: '来说', post: '，用手机发邮件不是一件简单的事。', hint: '(… mà nói)', ans: '来说', exp: '对 + người + 来说 = đối với ai mà nói; ôn 简单 (bài 2).' },
+  { pre: '我明天要带孩子去医院，得跟经理', blank: '请假', post: '。', hint: '(xin nghỉ)', ans: '请假', exp: '跟 + người + 请假 = xin ai cho nghỉ (vì có việc riêng).' },
+  { pre: '他很热情，同事有问题，他都', blank: '愿意', post: '帮忙。', hint: '(sẵn lòng)', ans: '愿意', exp: '愿意 + V = sẵn lòng làm gì; ôn 热情 (bài 2).' },
+  { pre: '下个月我要', blank: '休假', post: '一个星期，跟家人去海边玩。', hint: '(nghỉ phép)', ans: '休假', exp: '休假 = nghỉ phép theo chế độ; khác 请假 = xin nghỉ vì có việc. Ôn 海 (bài 4).' },
+  { pre: '我', blank: '怕', post: '明天考试的时候太紧张，今天晚上想早点儿睡。', hint: '(sợ, lo là)', ans: '怕', exp: '怕 + cả một mệnh đề = sợ/lo rằng…; ôn 紧张 (bài 9).' },
+  { pre: '有问题你可以给我打电话', blank: '或', post: '发邮件。', hint: '(hoặc — ngắn gọn)', ans: '或', exp: '或 = 或者, dạng ngắn, hay gặp trong văn viết, thông báo.' },
+  { pre: '我习惯用', blank: '笔记本', post: '记下老师讲的重要句子。', hint: '(sổ ghi chép)', ans: '笔记本', exp: '笔记本 = sổ ghi chép (hoặc máy tính xách tay); ôn 讲, 句子 (bài 10).' }
 ];
 
 var sortData = [
-  { words: ['我们', '用', '会议室的电脑', '还是', '自己的', '笔记本电脑', '？'], ans: '我们用会议室的电脑还是自己的笔记本电脑？', audio: '我们用会议室的电脑还是自己的笔记本电脑？' },
-  { words: ['看来', '我', '没', '办法', '解决', '这个', '问题', '。'], ans: '看来我没办法解决这个问题。', audio: '看来我没办法解决这个问题。' },
-  { words: ['你', '帮', '我', '把', '电脑', '接好', '吧', '。'], ans: '你帮我把电脑接好吧。', audio: '你帮我把电脑接好吧。' },
-  { words: ['我', '跟', '您', '一起', '把', '这些', '工作', '做完', '。'], ans: '我跟您一起把这些工作做完。', audio: '我跟您一起把这些工作做完。' },
-  { words: ['对', '我', '来说', '，', '生活', '也', '很', '重要', '。'], ans: '对我来说，生活也很重要。', audio: '对我来说，生活也很重要。' },
-  { words: ['开会', '前', '这么多', '工作', '我', '怕', '干不完', '。'], ans: '开会前这么多工作我怕干不完。', audio: '开会前这么多工作我怕干不完。' }
+  { words: ['你', '喜欢', '住', '在', '大城市', '还是', '小城市', '？'], ans: '你喜欢住在大城市还是小城市？', audio: '你喜欢住在大城市还是小城市？', alt: ['你喜欢住在小城市还是大城市？'] },
+  { words: ['天', '这么', '黑', '，', '看来', '要', '下雨', '了', '。'], ans: '天这么黑，看来要下雨了。', audio: '天这么黑，看来要下雨了。' },
+  { words: ['我', '还', '没', '把', '这些', '邮件', '看完', '呢', '。'], ans: '我还没把这些邮件看完呢。', audio: '我还没把这些邮件看完呢。' },
+  { words: ['对', '我', '妹妹', '来说', '，', '数学', '比', '历史', '难', '多了', '。'], ans: '对我妹妹来说，数学比历史难多了。', audio: '对我妹妹来说，数学比历史难多了。' },
+  { words: ['经理', '让', '我', '把', '会议的', '地点', '发到', '大家的', '邮箱', '里', '。'], ans: '经理让我把会议的地点发到大家的邮箱里。', audio: '经理让我把会议的地点发到大家的邮箱里。' },
+  { words: ['这个', '问题', '我们', '一起', '想', '办法', '解决', '吧', '。'], ans: '这个问题我们一起想办法解决吧。', audio: '这个问题我们一起想办法解决吧。' },
+  { words: ['你明天', '跟', '小李', '或者', '同乐', '一起', '去', '吧', '。'], ans: '你明天跟小李或者同乐一起去吧。', audio: '你明天跟小李或者同乐一起去吧。', alt: ['你明天跟同乐或者小李一起去吧。'] },
+  { words: ['他', '为了', '孩子', '离开', '了', '自己', '生活', '了', '十年', '的', '城市', '。'], ans: '他为了孩子离开了自己生活了十年的城市。', audio: '他为了孩子离开了自己生活了十年的城市。' }
 ];
 
 var mcData = [
-  { q: '我们下午三点在第一会议室＿＿。', opts: ['开会', '会议', '地点', '同事'], ans: 0, exp: '在会议室开会: cần động từ 开会. 会议 là danh từ, không đứng sau nơi chốn để làm vị ngữ.' },
-  { q: '明天开会前要发到公司的＿＿里。', opts: ['邮件', '城市', '邮箱', '办法'], ans: 2, exp: '发到邮箱里 = gửi vào hộp thư. 邮件 là bản thân lá thư/email, không nói 发到邮件里.' },
-  { q: '听得见＿＿，但是有点儿小，听不清楚。', opts: ['地点', '声音', '生活', '同事'], ans: 1, exp: '听得见声音 = nghe thấy được âm thanh; vế sau 有点儿小 nói về âm lượng.' },
-  { q: '老张说家里有点儿事，所以＿＿了。', opts: ['休息', '离开', '开会', '请假'], ans: 3, exp: '家里有事，所以请假了 = xin nghỉ phép. 休息 không cần xin phép; 离开 không hợp lý do.' },
-  { q: '工作中遇到不能＿＿的问题，你怎么办？', opts: ['解决', '愿意', '发', '怕'], ans: 0, exp: '解决问题 = giải quyết vấn đề (kết hợp cố định).' },
-  { q: '你＿＿去别的城市工作吗？——经理已经问过我了，我还没想好呢。', opts: ['只能', '怕', '愿意', '为'], ans: 2, exp: '愿意 + V = sẵn lòng, muốn; dùng để hỏi ý người khác có đồng ý làm không.' },
-  { q: '虽然去上海可能会有更好的＿＿，但是我不想离开家人。', opts: ['城市', '机会', '邮箱', '声音'], ans: 1, exp: '更好的机会 = cơ hội tốt hơn khi đi Thượng Hải. 城市, 声音 không hợp nghĩa.' },
-  { q: 'Chọn câu đúng: "Bạn muốn uống trà hay cà phê?"', opts: ['你想喝茶或者咖啡？', '你想喝茶或咖啡？', '你想或者喝茶还是咖啡？', '你想喝茶还是咖啡？'], ans: 3, exp: 'Câu hỏi lựa chọn dùng 还是: 喝茶还是咖啡？ 或者 dùng trong câu trần thuật.' },
-  { q: '"这么晚了，看来他今天不会来了。" — 「看来」 ở đây biểu thị gì?', opts: ['Mời người khác đến xem', 'Suy đoán, kết luận dựa trên tình hình', 'Nói về vẻ bề ngoài của một người', 'Thời gian trong tương lai'], ans: 1, exp: '看来 = xem ra; suy đoán, kết luận dựa trên tình hình (đã muộn thế này).' },
-  { q: 'Chọn câu chữ 把 (3) đúng: "Mẹ đã giặt sạch quần áo rồi."', opts: ['妈妈把衣服洗干净了。', '妈妈把衣服洗了干净。', '妈妈洗干净把衣服了。', '妈妈把衣服洗。'], ans: 0, exp: 'Câu 把 phải có thành phần khác sau động từ: 洗干净了. Bổ ngữ 干净 đứng liền sau 洗, 了 ở cuối.' }
+  { q: 'Bạn hỏi đồng nghiệp: “Chúng ta họp ở phòng họp hay ở văn phòng giám đốc?”', opts: ['我们在会议室或者在经理办公室开会？', '我们在会议室还是在经理办公室开会？', '我们在会议室开会还是在经理办公室吗？', '我们会议室还是经理办公室在开会？'], ans: 1, exp: 'Câu hỏi lựa chọn dùng 还是; 或者 chỉ dùng trong câu trần thuật; đã có 还是 thì không thêm 吗; 在 + nơi chốn đứng trước động từ.' },
+  { q: 'A: “你哪天有时间？” — B muốn nói “Thứ Bảy hoặc Chủ nhật đều được.”', opts: ['星期六还是星期天都可以。', '星期六或者星期天都可以吗？', '我可以星期六还是星期天。', '星期六或者星期天都可以。'], ans: 3, exp: 'Câu trả lời là câu trần thuật → 或者 ……都可以; 还是 dành cho câu hỏi.' },
+  { q: 'Đường rất đông xe, đã 8 giờ 50 rồi, bạn nói: “Xem ra chúng ta sắp muộn rồi.”', opts: ['看来我们迟到要了。', '看来我们要迟到了吗？', '看来我们要迟到了。', '看来我们要迟到过了。'], ans: 2, exp: '看来 + nhận định rút ra từ tình hình; 要……了 = sắp; câu kết luận nên không thêm 吗, không dùng 过.' },
+  { q: 'Bạn dọn phòng xong, nói với mẹ: “Con đã dọn sạch phòng rồi.”', opts: ['我把房间打扫了干净。', '我打扫干净把房间了。', '我把房间干净打扫了。', '我把房间打扫干净了。'], ans: 3, exp: '把 + 房间 + 打扫干净 + 了: bổ ngữ kết quả 干净 đứng sát sau động từ, 了 ở cuối câu.' },
+  { q: 'Bạn muốn nói: “Đối với tôi, khó nhất trong tiếng Trung là chữ Hán.”', opts: ['对我说，汉语最难的是汉字。', '对我来说，汉语最难的是汉字。', '我对来说，汉语最难的是汉字。', '对我来看，汉语最难的是汉字。'], ans: 1, exp: 'Khung cố định 对 + người + 来说; không bỏ 来, không đổi thành 来看, 对 đứng trước người.' },
+  { q: '“这是同事们＿你准备的生日蛋糕，快打开看看！”', opts: ['对', '为', '离', '从'], ans: 1, exp: '为 + người + V = làm gì cho ai. 对 = đối với (thái độ), 离 = cách (khoảng cách), 从 = từ.' },
+  { q: 'A: “地铁已经没有了，我们怎么回家？” — B: “＿＿打车回去了。”', opts: ['只是', '愿意', '只能', '怕'], ans: 2, exp: '只能 + V = chỉ còn cách (không có lựa chọn khác). 只是 = chỉ là / có điều, 愿意 = sẵn lòng.' },
+  { q: '“这件事你别告诉＿＿，我只跟你一个人说了。”', opts: ['别人', '别的', '其他', '自己'], ans: 0, exp: '别人 = người khác, dùng một mình được; 别的 / 其他 phải có danh từ theo sau (别的人, 其他同学).' },
+  { q: 'Câu nào SAI?', opts: ['你是坐飞机去还是坐高铁去？', '我坐飞机或者坐高铁去都行。', '你坐飞机去或者坐高铁去？', '我还没想好坐飞机还是坐高铁。'], ans: 2, exp: 'Hỏi để người kia chọn một trong hai → phải dùng 还是. 我还没想好……还是…… đúng vì vẫn là một lựa chọn chưa quyết.' },
+  { q: 'A: “你怎么不坐飞机去？” — B: “我＿＿坐飞机，每次坐都很不舒服。”', opts: ['愿意', '怕', '为', '只能'], ans: 1, exp: '怕 + V = sợ làm gì; vế sau 每次都很不舒服 giải thích lý do sợ.' },
+  { q: 'Câu nào SAI?', opts: ['我把门关好了。', '他把那杯咖啡喝完了。', '我把作业没写完。', '你把这些字写清楚一点儿。'], ans: 2, exp: '没 / 不 phải đứng trước 把: 我没把作业写完. Các câu khác đều có bổ ngữ kết quả đúng chỗ.' },
+  { q: 'Bạn gọi điện nhưng nghe không rõ, bạn nói: “Tiếng bạn nhỏ quá, mình nghe không rõ.”', opts: ['你的声音太小了，我不听清楚。', '你的声音太小了，我听不清楚。', '你的声音太小了，我没听不清楚。', '你的声音太小了，我听得不清楚吗？'], ans: 1, exp: 'Bổ ngữ khả năng phủ định: V + 不 + 清楚 = không nghe rõ được; không thêm 没 hay 吗.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 还是 / 或者, 看来, 把 + tân ngữ + động từ + bổ ngữ kết quả, 对……来说.',
   questions: [
     {
-      q_zh: '今天为什么不开会了？',
-      q_vn: 'Vì sao hôm nay không họp nữa?',
-      hint: '因为今天下午经理……，所以……',
-      sample: '因为今天下午经理不在，所以不开会了。',
-      sample_vn: 'Vì chiều nay giám đốc không có ở công ty nên không họp nữa.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 因为……所以…… (ôn HSK2 Bài 4).'
+      q_zh: '你觉得大城市的生活好还是小城市的生活好？',
+      q_vn: 'Bạn thấy cuộc sống ở thành phố lớn tốt hay ở thành phố nhỏ tốt?',
+      hint: '对我们……来说，……的生活更好，因为……',
+      sample: '对我们一家人来说，小城市的生活更好，因为那里人少，环境也好，每天上班不用坐很长时间的车。',
+      sample_vn: 'Với cả nhà tôi, cuộc sống ở thành phố nhỏ tốt hơn, vì ở đó ít người, môi trường cũng tốt, hằng ngày đi làm không phải ngồi xe lâu.',
+      note: '对……来说; ôn 环境 (bài 3), 不用 (bài 2).'
     },
     {
-      q_zh: '会议换到了什么时间和地点？',
-      q_vn: 'Cuộc họp được dời sang thời gian và địa điểm nào?',
-      hint: '会议换到了……，地点是……',
-      sample: '会议换到了后天上午十点，地点是第一会议室。',
-      sample_vn: 'Cuộc họp được dời sang 10 giờ sáng ngày kia, địa điểm là Phòng họp số 1.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 换到 (换 – ôn HSK3 Bài 3); 后天、地点 của bài này.'
+      q_zh: '你上一次请假是什么时候？为什么？',
+      q_vn: 'Lần gần nhất bạn xin nghỉ là khi nào? Vì sao?',
+      hint: '上个月我跟……请假了，因为……',
+      sample: '上个月我跟老师请假了，因为我发烧了，在家休息了两天。',
+      sample_vn: 'Tháng trước tôi xin cô giáo cho nghỉ, vì tôi bị sốt, nghỉ ở nhà hai ngày.',
+      note: '跟 + người + 请假; ôn 发烧 (bài 8).'
     },
     {
-      q_zh: '杨同乐检查以后，电脑怎么样了？',
-      q_vn: 'Sau khi Dương Đồng Lạc kiểm tra, máy tính thế nào rồi?',
-      hint: '……看得见了，但是……；后来……',
-      sample: '杨同乐检查以后，王一雪看得见了，但是听不见声音。后来听得见了，可是声音有点儿小，听不清楚。',
-      sample_vn: 'Sau khi Dương Đồng Lạc kiểm tra, Vương Nhất Tuyết nhìn thấy được rồi nhưng không nghe thấy tiếng. Sau đó nghe được, nhưng âm thanh hơi nhỏ, không nghe rõ.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. Bổ ngữ khả năng 看得见 / 听不见 (ôn HSK3 Bài 9); 检查 (ôn HSK3 Bài 6), 后来 (ôn HSK3 Bài 6).'
+      q_zh: '如果有一个去国外工作的机会，你愿意离开家吗？',
+      q_vn: 'Nếu có cơ hội ra nước ngoài làm việc, bạn có sẵn lòng rời xa nhà không?',
+      hint: '我愿意 / 不愿意……，因为……',
+      sample: '我愿意去，因为这样的机会不多，我可以学到很多新东西，放假的时候再回家看家人。',
+      sample_vn: 'Tôi sẵn lòng đi, vì cơ hội như vậy không nhiều, tôi có thể học được nhiều điều mới, nghỉ thì lại về thăm gia đình.',
+      note: '愿意 + V; 机会; ôn 如果……就…… (bài 6).'
     },
     {
-      q_zh: '王一雪为什么没时间吃饭？',
-      q_vn: 'Vì sao Vương Nhất Tuyết không có thời gian ăn cơm?',
-      hint: '因为好几个同事都……，她怕……',
-      sample: '因为好几个同事都休假了，开会前工作太多，她怕干不完，所以想再干一会儿。',
-      sample_vn: 'Vì mấy đồng nghiệp đều nghỉ phép, trước cuộc họp việc quá nhiều, chị ấy sợ làm không xong nên muốn làm thêm một lát.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. 怕 + 干不完 (bổ ngữ khả năng – ôn HSK3 Bài 9); 一会儿 (ôn HSK2 Bài 5).'
+      q_zh: '你遇到很难的问题，一般怎么解决？',
+      q_vn: 'Khi gặp vấn đề khó, bạn thường giải quyết thế nào?',
+      hint: '我一般先……，要是……，就……',
+      sample: '我一般先自己想办法，要是我一个人解决不了，就去问老师或者同学。',
+      sample_vn: 'Tôi thường tự nghĩ cách trước, nếu một mình không giải quyết được thì đi hỏi thầy cô hoặc bạn học.',
+      note: '想办法, 解决不了 (bổ ngữ khả năng); 或者 trong câu trần thuật.'
     },
     {
-      q_zh: '对王一雪来说，工作和生活哪个更重要？',
-      q_vn: 'Đối với Vương Nhất Tuyết, công việc và cuộc sống cái nào quan trọng hơn?',
-      hint: '对王一雪来说，……更重要，她不愿意……',
-      sample: '对王一雪来说，生活更重要，她不愿意为工作离开家人。',
-      sample_vn: 'Đối với Vương Nhất Tuyết, cuộc sống quan trọng hơn, chị ấy không muốn vì công việc mà rời xa gia đình.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 对……来说, 为 + V, 离开 của bài này; 更 (ôn HSK2 Bài 4).'
-    },
-    {
-      q_zh: '你觉得工作和家人哪个更重要？为什么？',
-      q_vn: 'Bạn cho rằng công việc và gia đình, cái nào quan trọng hơn? Vì sao?',
-      hint: '对我来说，……更重要，因为……',
-      sample: '对我来说，家人更重要。我工作是为了让家人生活得更好，所以我不愿意为工作离开家人。',
-      sample_vn: 'Đối với tôi, gia đình quan trọng hơn. Tôi làm việc là để gia đình sống tốt hơn, nên tôi không muốn vì công việc mà rời xa gia đình.',
-      note: 'Câu hỏi Khởi động của sách. 对……来说 của bài này; 为了 (ôn HSK3 Bài 9); 让 + người + V (ôn HSK2 Bài 1).'
-    },
-    {
-      q_zh: '你愿意一个人完成工作还是跟同事一起完成工作？为什么？',
-      q_vn: 'Bạn thích làm việc một mình hay làm việc cùng đồng nghiệp? Vì sao?',
-      hint: '我愿意……，因为遇到问题的时候……',
-      sample: '我愿意跟同事一起完成工作。因为遇到问题的时候，大家可以一起想办法，这样工作得更快。',
-      sample_vn: 'Tôi thích cùng đồng nghiệp hoàn thành công việc. Vì khi gặp vấn đề, mọi người có thể cùng nghĩ cách, như vậy làm việc nhanh hơn.',
-      note: 'Câu hỏi Khởi động của sách. 还是 trong câu hỏi lựa chọn; 遇到 (ôn HSK3 Bài 10); V + 得 + 更快 (ôn HSK2 Bài 7).'
-    },
-    {
-      q_zh: '请介绍一个工作，别说它的名字，让大家说说这是什么工作。',
-      q_vn: 'Hãy miêu tả một nghề nhưng đừng nói tên, để mọi người đoán đó là nghề gì.',
-      hint: '对很多人来说，……就会去找他。他一般在……工作，穿……',
-      sample: '对很多人来说，如果身体不舒服就会去找他。他一般在医院工作，常常穿白色的衣服。——他是医生！',
-      sample_vn: 'Với nhiều người, nếu cơ thể không khoẻ thì sẽ đi tìm người này. Người này thường làm việc ở bệnh viện, hay mặc áo trắng. — Đó là bác sĩ!',
-      note: 'Hoạt động trên lớp của sách (đoán nghề nghiệp) — câu mẫu của sách. 如果……就…… (ôn HSK3 Bài 6); 舒服 (ôn HSK2 Bài 6).'
+      q_zh: '星期天你喜欢在家休息还是出去玩？',
+      q_vn: 'Chủ nhật bạn thích ở nhà nghỉ ngơi hay ra ngoài chơi?',
+      hint: '我喜欢……，看来……',
+      sample: '我喜欢出去玩，但是这几天天气不好，看来这次只能在家看电视了。',
+      sample_vn: 'Tôi thích ra ngoài chơi, nhưng mấy hôm nay thời tiết xấu, xem ra lần này chỉ có thể ở nhà xem ti vi thôi.',
+      note: '还是 trong câu hỏi; 看来; 只能.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Máy tính của phòng họp hoặc máy tính cá nhân đều được.', zh: '会议室的电脑或者自己的电脑都可以。', py: 'Huìyìshì de diànnǎo huòzhě zìjǐ de diànnǎo dōu kěyǐ.' },
-  { vi: 'Xem ra em không thể giải quyết được vấn đề này, chỉ có thể nhờ người khác đến giúp thôi.', zh: '看来我没办法解决这个问题，只能找别人来帮帮忙了。', py: 'Kànlái wǒ méi bànfǎ jiějué zhège wèntí, zhǐ néng zhǎo biérén lái bāngbang máng le.' },
-  { vi: 'Ăn xong, em sẽ cùng chị làm xong những việc này.', zh: '吃完饭，我跟您一起把这些工作做完。', py: 'Chīwán fàn, wǒ gēn nín yìqǐ bǎ zhèxiē gōngzuò zuòwán.' },
-  { vi: 'Đối với tôi mà nói, cuộc sống cũng rất quan trọng.', zh: '对我来说，生活也很重要。', py: 'Duì wǒ lái shuō, shēnghuó yě hěn zhòngyào.' },
-  { vi: 'Vậy tới lúc đó chúng ta đến sớm một chút, em giúp chị kết nối máy tính nhé.', zh: '那到时候咱们早点儿过去，你帮我把电脑接好吧。', py: 'Nà dào shíhou zánmen zǎo diǎnr guòqu, nǐ bāng wǒ bǎ diànnǎo jiēhǎo ba.' }
+  { vi: 'Bạn muốn mời đồng nghiệp hay mời bạn bè đến nhà?', zh: '你想请同事还是请朋友来家里？', py: 'Nǐ xiǎng qǐng tóngshì háishi qǐng péngyou lái jiā li?' },
+  { vi: 'Xem ra hôm nay giám đốc rất bận, ngày mai chúng ta lại đến tìm ông ấy nhé.', zh: '看来经理今天很忙，我们明天再来找他吧。', py: 'Kànlái jīnglǐ jīntiān hěn máng, wǒmen míngtiān zài lái zhǎo tā ba.' },
+  { vi: 'Bạn nhớ tắt hết đèn trong phòng họp nhé.', zh: '你记得把会议室的灯关好。', py: 'Nǐ jìde bǎ huìyìshì de dēng guānhǎo.' },
+  { vi: 'Đối với người mới đến thành phố này, tìm được một căn nhà tốt rất khó.', zh: '对第一次来这个城市的人来说，找一个好房子很难。', py: 'Duì dì-yī cì lái zhège chéngshì de rén lái shuō, zhǎo yí ge hǎo fángzi hěn nán.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Khi họp, chúng ta dùng máy tính của phòng họp hay máy tính xách tay của mình?', zh: '开会的时候，我们用会议室的电脑还是自己的笔记本电脑？', py: 'Kāihuì de shíhou, wǒmen yòng huìyìshì de diànnǎo háishi zìjǐ de bǐjìběn diànnǎo?' },
-  { vi: 'Nghe thấy tiếng rồi, nhưng âm thanh hơi nhỏ, nghe không rõ.', zh: '听得见声音，但是声音有点儿小，听不清楚。', py: 'Tīng de jiàn shēngyīn, dànshì shēngyīn yǒudiǎnr xiǎo, tīng bu qīngchu.' },
-  { vi: 'Mấy đồng nghiệp đều nghỉ phép rồi, trước cuộc họp nhiều việc thế này chị sợ làm không xong.', zh: '好几个同事都休假了，开会前这么多工作我怕干不完。', py: 'Hǎo jǐ ge tóngshì dōu xiūjià le, kāihuì qián zhème duō gōngzuò wǒ pà gàn bu wán.' },
-  { vi: 'Họ hỏi tôi có muốn cũng đến Thượng Hải không.', zh: '他们问我愿意不愿意也去上海。', py: 'Tāmen wèn wǒ yuànyì bu yuànyì yě qù Shànghǎi.' },
-  { vi: 'Tôi không muốn vì công việc hay việc học mà rời xa gia đình.', zh: '我不愿意为工作或学习离开家人。', py: 'Wǒ bú yuànyì wèi gōngzuò huò xuéxí líkāi jiārén.' }
+  { vi: 'Tối nay hoặc sáng mai bạn gửi cho tôi đều được.', zh: '你今天晚上或者明天早上发给我都可以。', py: 'Nǐ jīntiān wǎnshang huòzhě míngtiān zǎoshang fā gěi wǒ dōu kěyǐ.' },
+  { vi: 'Tôi sợ người khác nghe không hiểu tiếng Trung tôi nói.', zh: '我怕别人听不懂我说的汉语。', py: 'Wǒ pà biérén tīng bu dǒng wǒ shuō de Hànyǔ.' },
+  { vi: 'Đồng nghiệp của tôi nghỉ phép rồi, tuần sau mới về.', zh: '我的同事休假了，下个星期才回来。', py: 'Wǒ de tóngshì xiūjià le, xià ge xīngqī cái huílai.' }
 ];

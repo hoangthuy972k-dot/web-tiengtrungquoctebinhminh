@@ -2490,159 +2490,152 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 Bài 1–3
 var listenData = [
   {
-    audio: '小王，下个假期你想去哪儿玩儿？我想去海边，我特别喜欢海。现在去海边会不会有点儿冷？不冷，那儿一点儿也不冷，每天都可以游泳。太好了，我也想跟你一起去。',
+    audio: '这个假期我们一家人去海边住了五天，每天都游泳，孩子们一点儿也不想回来。',
     questions: [
-      { q: '小王想去哪儿玩儿？', opts: ['海边', '草原', '北京'], ans: 0 },
-      { q: '小王说那儿的天气怎么样？', opts: ['有点儿冷', '一点儿也不冷', '每天都下雨'], ans: 1 }
+      { q: 'Họ ở biển mấy ngày?', opts: ['Ba ngày', 'Năm ngày', 'Một tuần'], ans: 1, exp: '去海边住了五天 = ra biển ở năm ngày.' },
+      { q: 'Bọn trẻ thế nào?', opts: ['Chẳng muốn về chút nào', 'Muốn về sớm', 'Không thích bơi'], ans: 0, exp: '一点儿也不想回来 = không muốn về chút nào; 一点儿也不 + V = không … chút nào.' }
     ]
   },
   {
-    audio: '您好，欢迎来我们宾馆！您好，我姓王，昨天打过电话。王先生，您的房间在八层。除了这个箱子以外，您还有别的行李吗？没有了，就这一个箱子。好的，早饭在一层，早上七点到九点。',
+    audio: '我们的飞机晚点了，九点一刻才起飞，到宾馆的时候已经十二点了。',
     questions: [
-      { q: '王先生有几个箱子？', opts: ['两个', '没有箱子', '一个'], ans: 2 },
-      { q: '早饭在哪儿吃？', opts: ['八层', '一层', '房间里'], ans: 1 }
+      { q: 'Máy bay cất cánh lúc mấy giờ?', opts: ['9 giờ', '9 giờ 15', '9 giờ 45'], ans: 1, exp: '一刻 = 15 phút: 九点一刻 = 9 giờ 15; 三刻 mới là 45 phút.' },
+      { q: 'Họ đến khách sạn lúc mấy giờ?', opts: ['10 giờ', '11 giờ', '12 giờ'], ans: 2, exp: '到宾馆的时候已经十二点了 = đến khách sạn thì đã 12 giờ.' }
     ]
   },
   {
-    audio: '喂，小李，我们的飞机晚点了，可能要晚一个多小时才能到。没关系，我会一直在机场等你们，你们别着急，到了给我打电话。太好了，谢谢你！不好意思，让你久等了。',
+    audio: '我们家的人除了哥哥以外，都骑过马。',
     questions: [
-      { q: '飞机怎么了？', opts: ['已经起飞了', '晚点了', '已经到了'], ans: 1 },
-      { q: '小李会做什么？', opts: ['先回家', '去宾馆休息', '一直在机场等'], ans: 2 }
+      { q: 'Ai chưa từng cưỡi ngựa?', opts: ['Anh trai người nói', 'Cả nhà người nói', 'Bố người nói'], ans: 0, exp: '除了……以外，……都 = loại trừ: trừ anh trai ra, mọi người đều đã cưỡi ngựa.' }
     ]
   },
   {
-    audio: '上个月我和妈妈去草原旅游了。我们住的宾馆很特别，房间又大又干净，一出门就能看见很多牛和羊。除了骑马以外，我们还吃了羊肉，晚上一起看了月亮。妈妈对这次旅游非常满意，她说明年还想再去。',
+    audio: '我和姐姐长得一样高，但是她比我瘦一点儿。',
     questions: [
-      { q: '他们在草原上做了什么？', opts: ['骑马、吃羊肉', '游泳、看海', '看电影、唱歌'], ans: 0 },
-      { q: '妈妈觉得这次旅游怎么样？', opts: ['有点儿累', '不太满意', '非常满意'], ans: 2 }
+      { q: 'Người nói và chị gái ai cao hơn?', opts: ['Chị cao hơn', 'Cao bằng nhau', 'Người nói cao hơn'], ans: 1, exp: '一样高 = cao như nhau.' },
+      { q: 'Ai gầy hơn?', opts: ['Chị gái', 'Người nói', 'Hai người gầy như nhau'], ans: 0, exp: '她比我瘦一点儿 = chị ấy gầy hơn tôi một chút (ôn 比 và 瘦).' }
+    ]
+  },
+  {
+    audio: '这家宾馆不太大，但是服务员都很热情，房间也很干净，我们都很满意。',
+    questions: [
+      { q: 'Họ thấy khách sạn này thế nào?', opts: ['Rất to nhưng bẩn', 'Phục vụ không nhiệt tình', 'Phòng sạch, phục vụ nhiệt tình, rất hài lòng'], ans: 2, exp: '房间很干净 = phòng sạch; 服务员很热情; 都很满意 = đều rất hài lòng.' }
+    ]
+  },
+  {
+    audio: '我除了相机以外，还带了两本书，在飞机上可以看。',
+    questions: [
+      { q: 'Ngoài máy ảnh, người nói còn mang gì?', opts: ['Ít hoa quả', 'Hai quyển sách', 'Một chiếc ô'], ans: 1, exp: '除了……以外，还…… = ngoài … ra còn (bổ sung thêm): còn mang hai quyển sách.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '好久没', right: '骑马了' },
-  { left: '这个主意', right: '真不错' },
-  { left: '飞机', right: '晚点了' },
-  { left: '让您', right: '久等了' },
-  { left: '跟我想的', right: '一样漂亮' },
-  { left: '除了这个行李箱以外', right: '还有别的东西吗' }
+  { left: '骑', right: '马' },
+  { left: '看', right: '月亮' },
+  { left: '这是个好', right: '主意' },
+  { left: '火车', right: '晚点了' },
+  { left: '等了很', right: '久' },
+  { left: '别忘了拿', right: '相机' },
+  { left: '飞机', right: '起飞' }
 ];
 
 var fillData = [
-  { pre: '已经八点一', blank: '刻', post: '了，快起床吧。', hint: '(15 phút)', ans: '刻', exp: '一刻 = 15 phút; 八点一刻 = 8 giờ 15 (câu của sách).' },
-  { pre: '飞机晚点了，小李在机场等了很', blank: '久', post: '。', hint: '(lâu)', ans: '久', exp: '等了很久 — thời lượng 很久 đứng sau động từ (câu của sách).' },
-  { pre: '我', blank: '先', post: '打车过去，你们可以慢慢走过去。', hint: '(trước)', ans: '先', exp: '先 + V — làm trước; 打车 (ôn HSK2 Bài 2), 慢慢 (慢 ôn HSK2 Bài 11).' },
-  { pre: '我对这里的服务非常', blank: '满意', post: '，下次还会再来。', hint: '(hài lòng)', ans: '满意', exp: '对 + đối tượng + 满意 — hài lòng với… (câu của sách).' },
-  { pre: '草原真是太漂亮了，跟我想的', blank: '一样', post: '。', hint: '(giống nhau)', ans: '一样', exp: 'A 跟 B 一样 — giống nhau (ngữ pháp 2).' },
-  { pre: '这个房间又大又', blank: '干净', post: '，我很满意。', hint: '(sạch sẽ)', ans: '干净', exp: '又大又干净 — 又……又…… (ôn HSK3 Bài 2) + tính từ 干净.' },
-  { pre: '除了这个箱子，你还有', blank: '别的', post: '东西吗？', hint: '(khác)', ans: '别的', exp: '别的 + danh từ — cái khác; 除了……，还…… (ngữ pháp 3).' },
-  { pre: '没关系，我会', blank: '一直', post: '在机场等您。', hint: '(suốt, luôn)', ans: '一直', exp: '一直 + V — liên tục, suốt, không đi đâu (câu của sách).' }
+  { pre: '这个菜', blank: '一点儿', post: '也不好吃，我们换一家吧。', hint: '(chút nào)', ans: '一点儿', exp: '一点儿也不 + tính từ = không … chút nào; ôn 换 (bài 3).' },
+  { pre: '我', blank: '一次', post: '都没去过草原，真想去看看。', hint: '(một lần)', ans: '一次', exp: '一次都没 + V + 过 = chưa từng … lần nào.' },
+  { pre: '我的相机跟你的', blank: '一样', post: '，我们是一起买的。', hint: '(giống nhau)', ans: '一样', exp: 'A 跟 B 一样 = A giống B.' },
+  { pre: '这个星期', blank: '除了', post: '星期三，我每天都要上班。', hint: '(trừ… ra)', ans: '除了', exp: '除了……，都…… = trừ … ra thì đều (loại trừ thứ Tư).' },
+  { pre: '这次旅游，我们除了去海边', blank: '以外', post: '，还去了草原。', hint: '(ngoài… ra)', ans: '以外', exp: '除了……以外，还…… = ngoài … ra còn (bổ sung).' },
+  { pre: '电影七点三', blank: '刻', post: '开始，我们七点半在门口见吧。', hint: '(15 phút)', ans: '刻', exp: '三刻 = 45 phút: 七点三刻 = 7 giờ 45, nên hẹn 7 rưỡi.' },
+  { pre: '对不起，公交车一直不来，让你等了很', blank: '久', post: '吧？', hint: '(lâu)', ans: '久', exp: '等了很久 = đợi rất lâu; 很久 đứng sau động từ.' },
+  { pre: '你们', blank: '先', post: '吃吧，别等我了，我九点才能到家。', hint: '(trước)', ans: '先', exp: '先 + V = làm trước; ôn 才 (bài 3): 九点才能到家.' },
+  { pre: '从我家', blank: '一直', post: '往前走，十分钟就到银行了。', hint: '(thẳng)', ans: '一直', exp: '一直往前走 = cứ đi thẳng về phía trước; ôn 就 (nhanh) và 银行 (bài 3).' },
+  { pre: '房间我已经打扫', blank: '干净', post: '了，你来看看吧。', hint: '(sạch)', ans: '干净', exp: '打扫干净 = dọn sạch; 干净 làm bổ ngữ kết quả.' },
+  { pre: '到了宾馆，你', blank: '一定', post: '要给妈妈打个电话。', hint: '(nhất định)', ans: '一定', exp: '一定要 + V = nhất định phải làm.' },
+  { pre: '这家店的羊肉', blank: '特别', post: '好吃，每次来我都要点。', hint: '(đặc biệt)', ans: '特别', exp: '特别 + tính từ = cực kỳ, rất; 羊肉 = thịt cừu/dê.' }
 ];
 
 var sortData = [
-  { words: ['草原', '一点儿', '也', '不', '冷', '。'], ans: '草原一点儿也不冷。', audio: '草原一点儿也不冷。' },
-  { words: ['这家', '宾馆', '跟', '别的', '都', '不', '一样', '。'], ans: '这家宾馆跟别的都不一样。', audio: '这家宾馆跟别的都不一样。' },
-  { words: ['除了', '这个', '行李箱', '以外', '，', '还有', '别的', '东西', '吗', '？'], ans: '除了这个行李箱以外，还有别的东西吗？', audio: '除了这个行李箱以外，还有别的东西吗？' },
-  { words: ['宾馆的', '房间', '跟', '我想的', '一样', '漂亮', '。'], ans: '宾馆的房间跟我想的一样漂亮。', audio: '宾馆的房间跟我想的一样漂亮。' },
-  { words: ['司机', '小李', '一直', '在', '机场', '等', '我们', '。'], ans: '司机小李一直在机场等我们。', audio: '司机小李一直在机场等我们。' },
-  { words: ['两位', '到了', '可以', '先', '休息休息', '。'], ans: '两位到了可以先休息休息。', audio: '两位到了可以先休息休息。' }
+  { words: ['今天', '的', '月亮', '特别', '大', '。'], ans: '今天的月亮特别大。', audio: '今天的月亮特别大。' },
+  { words: ['外面', '一个人', '也', '没有', '。'], ans: '外面一个人也没有。', audio: '外面一个人也没有。' },
+  { words: ['这件', '衣服', '的', '颜色', '跟', '那件', '一样', '。'], ans: '这件衣服的颜色跟那件一样。', audio: '这件衣服的颜色跟那件一样。' },
+  { words: ['我', '除了', '羊肉', '以外', '什么', '都', '吃', '。'], ans: '我除了羊肉以外什么都吃。', audio: '我除了羊肉以外什么都吃。', alt: ['除了羊肉以外我什么都吃。'] },
+  { words: ['司机', '在', '宾馆', '门口', '等', '我们', '呢', '。'], ans: '司机在宾馆门口等我们呢。', audio: '司机在宾馆门口等我们呢。' },
+  { words: ['大家', '对', '这次', '旅游', '都', '很', '满意', '。'], ans: '大家对这次旅游都很满意。', audio: '大家对这次旅游都很满意。' },
+  { words: ['你', '有', '什么', '好', '主意', '吗', '？'], ans: '你有什么好主意吗？', audio: '你有什么好主意吗？' },
+  { words: ['星期六', '我们', '去', '草原', '骑', '马', '吧', '。'], ans: '星期六我们去草原骑马吧。', audio: '星期六我们去草原骑马吧。', alt: ['我们星期六去草原骑马吧。'] }
 ];
 
 var mcData = [
-  { q: '星期六上午十点一＿＿起飞。', opts: ['刻', '久', '先', '直'], ans: 0, exp: '一刻 = 15 phút: 十点一刻 = 10 giờ 15. 久, 先, 直 không dùng để nói giờ.' },
-  { q: '不好意思，飞机＿＿了，让您久等了。', opts: ['起飞', '晚点', '欢迎', '满意'], ans: 1, exp: '飞机晚点了 = máy bay trễ giờ; vì thế mới nói 让您久等了 (để anh chờ lâu).' },
-  { q: '这个＿＿好！我好久没骑马了。', opts: ['主意', '假期', '司机', '相机'], ans: 0, exp: '这个主意好 = ý này hay, dùng để đáp lại một đề nghị (đi cưỡi ngựa).' },
-  { q: '在草原上＿＿马、吃羊肉、看月亮，一定很有意思。', opts: ['坐', '开', '骑', '走'], ans: 2, exp: '骑 dùng cho thứ ngồi dạng chân: 骑马, 骑自行车. Không nói 坐马 hay 开马.' },
-  { q: '我们不用带太多东西，别忘了拿上新买的＿＿。', opts: ['海', '相机', '月亮', '草原'], ans: 1, exp: '新买的 + đồ vật có thể mang theo → 相机. 海, 月亮, 草原 không "mang theo" được.' },
-  { q: '宾馆的房间又大又＿＿，我非常满意。', opts: ['一直', '久', '干净', '先'], ans: 2, exp: '又大又干净 = vừa rộng vừa sạch; sau 又 là tính từ. 一直, 先 là phó từ, 久 không tả phòng ở.' },
-  { q: '＿＿你们！我是你们的司机，我姓李。', opts: ['满意', '晚点', '起飞', '欢迎'], ans: 3, exp: '欢迎你们 = chào mừng các bạn, câu chào khi đón khách. 满意, 晚点 không dùng để chào.' },
-  { q: 'Chọn cách nói đúng: "Tôi chẳng có chút thời gian nào."', opts: ['我没有一点儿时间也。', '我一点儿时间也没有。', '我一点儿也时间没有。', '我时间一点儿没有也。'], ans: 1, exp: '一点儿 + danh từ + 也 + 没有 = không có chút… nào; 也 đứng sau 一点儿时间, ngay trước 没有.' },
-  { q: 'Chọn câu đúng: "Chiếc điện thoại mới anh ấy mua không giống của tôi."', opts: ['他买的新手机跟我的一样不。', '他买的新手机跟我的不一样。', '他买的新手机一样跟我的不。', '他买的新手机跟我的没一样。'], ans: 1, exp: 'A 跟 B (不)一样: phủ định đặt 不 ngay trước 一样. Không nói 没一样, không đặt 不 cuối câu.' },
-  { q: '"除了我以外，大家都在玩手机。" — câu này có nghĩa là gì?', opts: ['Mọi người, kể cả tôi, đều đang chơi điện thoại.', 'Chỉ có tôi đang chơi điện thoại.', 'Tôi không chơi điện thoại, những người khác đều đang chơi.', 'Không ai chơi điện thoại cả.'], ans: 2, exp: '除了…以外，都… = ngoài… ra thì (loại trừ): tôi không chơi, những người khác đều chơi. Khác với 除了…还/也 (bổ sung).' }
+  { q: 'A: “海边冷吗？” — B: “＿＿，今天还能游泳呢。”', opts: ['一点儿也冷不', '有一点儿不冷', '一点儿也不冷', '一点儿不也冷'], ans: 2, exp: '一点儿也不 + tính từ = không … chút nào; 也 đứng ngay sau 一点儿, 不 sát tính từ.' },
+  { q: 'Bạn muốn nói: “Hôm nay tôi chưa uống một ngụm nước nào.”', opts: ['我今天一口水也没喝。', '我今天一口水也不喝了。', '我今天没喝一口水也。', '我今天一口也水没喝。'], ans: 0, exp: '一 + lượng từ + danh từ + 也 + 没 + V: việc đã qua dùng 没; 也不喝了 lại là “sẽ không uống nữa”.' },
+  { q: 'A: “你去过上海吗？” — B: “我＿＿。”', opts: ['一次也不去过', '一次没也去过', '没一次去过也', '一次也没去过'], ans: 3, exp: 'Kinh nghiệm (过) phủ định bằng 没: 一次也没去过 = chưa đi lần nào; không dùng 不 với 过.' },
+  { q: 'Bạn muốn nói: “Em trai tôi cao bằng tôi rồi.”', opts: ['我弟弟跟我高一样了。', '我弟弟跟我一样高了。', '我弟弟一样跟我高了。', '我弟弟跟我一样很高了。'], ans: 1, exp: 'A 跟 B 一样 + tính từ: 跟我一样高; tính từ đứng sau 一样, không thêm 很.' },
+  { q: 'A: “你的手机跟我的一样吗？” — B: “＿＿，我的是新买的。”', opts: ['没一样', '一样不', '不一样', '不跟一样'], ans: 2, exp: 'Phủ định của 一样 là 不一样 (không dùng 没).' },
+  { q: 'Bạn muốn nói: “Trừ tôi ra, người nhà ai cũng thích ăn thịt bò.”', opts: ['家里人除了我以外还喜欢吃牛肉。', '家里人我以外除了都喜欢吃牛肉。', '家里人除了我以外也不喜欢吃牛肉。', '家里人除了我以外都喜欢吃牛肉。'], ans: 3, exp: 'Loại trừ: 除了……以外，……都……; dùng 还 thì thành nghĩa bổ sung (sai ý).' },
+  { q: 'A: “这个假期你去了哪儿？” — B: “除了北京，我＿＿去了上海。”', opts: ['还', '都', '就', '才'], ans: 0, exp: 'Bổ sung: 除了A，还B = ngoài A ra còn B. 都 dùng khi loại trừ.' },
+  { q: 'Bạn muốn nói: “Bạn về trước đi, tôi làm xong rồi về.”', opts: ['你回去先吧，我做完了再回去。', '先你回去吧，我做完了再回去。', '你先回去吧，我做完了再回去。', '你先回去吧，我再做完了回去。'], ans: 2, exp: '先 đứng sau chủ ngữ, trước động từ: 你先回去; 再 đứng trước động từ sau: 再回去.' },
+  { q: 'A: “明天你来我家吃饭吧。” — B: “好，我＿＿去。”', opts: ['一直', '一定', '一样', '特别'], ans: 1, exp: '一定 = chắc chắn, nhất định (hứa hẹn). 一直 = suốt, liên tục.' },
+  { q: 'A: “这件衣服我不太喜欢。” — B: “那你看看＿＿吧，这儿还有很多。”', opts: ['一直', '别的', '特别', '一样'], ans: 1, exp: '别的 = cái khác; 别的 + (danh từ) = những cái khác. 一样 = giống nhau, 特别 = đặc biệt.' },
+  { q: 'Câu nào SAI?', opts: ['我们骑马去草原上看看吧。', '我每天骑车去上班。', '他坐飞机去海边了。', '我们坐马去宾馆吧。'], ans: 3, exp: 'Ngựa, xe đạp (dạng ngồi dạng chân) dùng 骑: 骑马. Không nói 坐马.' },
+  { q: 'Bạn ra sân bay đón người bạn từ Việt Nam sang, bạn nói:', opts: ['欢迎你中国来！', '欢迎你来中国！', '你来中国欢迎！', '欢迎来你中国！'], ans: 1, exp: '欢迎 + người + 来 + nơi chốn: 欢迎你来中国 = chào mừng bạn đến Trung Quốc.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 一……也/都 + 不/没, A 跟 B 一样, 除了……以外，还/都…… và từ mới về du lịch.',
   questions: [
     {
-      q_zh: '王一飞为什么不想去海边？',
-      q_vn: 'Vì sao Vương Nhất Phi không muốn đi biển?',
-      hint: '因为现在去海边……',
-      sample: '因为现在去海边有点儿冷。',
-      sample_vn: 'Vì bây giờ đi biển hơi lạnh.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 有点儿 + tính từ — điều không như ý (ôn HSK1); 因为 (ôn HSK2 Bài 4).'
+      q_zh: '这个假期你想去哪儿玩？',
+      q_vn: 'Kỳ nghỉ này bạn muốn đi đâu chơi? Vì sao?',
+      hint: '这个假期我想去……，在那儿可以……，一定……',
+      sample: '这个假期我想去海边，每天游泳、看海，晚上在海边看月亮，一定特别有意思。',
+      sample_vn: 'Kỳ nghỉ này tôi muốn ra biển, ngày nào cũng bơi, ngắm biển, tối ngắm trăng ở bờ biển, chắc chắn rất thú vị.',
+      note: '一定 = chắc chắn; 特别 + tính từ.'
     },
     {
-      q_zh: '他们在草原上可以做什么？',
-      q_vn: 'Trên thảo nguyên họ có thể làm gì?',
-      hint: '他们可以……、……、……',
-      sample: '他们在草原上可以骑马、吃羊肉、看月亮。',
-      sample_vn: 'Trên thảo nguyên họ có thể cưỡi ngựa, ăn thịt cừu, ngắm trăng.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. Liệt kê nhiều hoạt động bằng dấu "、".'
+      q_zh: '有什么事你一次也没做过？',
+      q_vn: 'Có việc gì bạn chưa làm lần nào không?',
+      hint: '我一次也没……过，我特别想……',
+      sample: '我一次也没骑过马，我特别想去草原骑一次。',
+      sample_vn: 'Tôi chưa cưỡi ngựa lần nào, tôi rất muốn đến thảo nguyên cưỡi một lần.',
+      note: '一次也没 + V + 过; dùng 没, không dùng 不.'
     },
     {
-      q_zh: '王一飞选的宾馆怎么样？',
-      q_vn: 'Khách sạn Vương Nhất Phi chọn thế nào?',
-      hint: '这家宾馆很……，跟别的……，一出门就……',
-      sample: '这家宾馆很特别，跟别的都不一样，一出门就能看见牛和羊。',
-      sample_vn: 'Khách sạn này rất đặc biệt, không giống những khách sạn khác, bước ra cửa là thấy bò và cừu.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. A 跟 B 不一样 (ngữ pháp 2); 一……就…… — vừa… là…'
+      q_zh: '你跟你的家人哪儿一样？哪儿不一样？',
+      q_vn: 'Bạn giống và khác người nhà ở điểm nào?',
+      hint: '我跟……一样，都……，但是我们的……不一样。',
+      sample: '我跟我妈妈一样，都喜欢唱歌，但是我们的头发不一样，她是长头发，我是短头发。',
+      sample_vn: 'Tôi giống mẹ, đều thích hát, nhưng tóc chúng tôi khác nhau, mẹ tóc dài, tôi tóc ngắn.',
+      note: 'A 跟 B 一样 / 不一样; ôn 头发, 短 (bài 1).'
     },
     {
-      q_zh: '王一飞为什么觉得小李很热情？',
-      q_vn: 'Vì sao Vương Nhất Phi thấy Tiểu Lý rất nhiệt tình?',
-      hint: '因为小李一直……，一点儿也没……，路上还……',
-      sample: '因为飞机晚点了，小李一直在机场等他们，一点儿也没着急，路上还给他们介绍了很多东西，准备了水果。',
-      sample_vn: 'Vì máy bay trễ, Tiểu Lý vẫn đợi họ suốt ở sân bay, không hề sốt ruột, dọc đường còn giới thiệu cho họ nhiều thứ và chuẩn bị trái cây.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 一点儿也没 + V (ngữ pháp 1); 热情 (ôn HSK3 Bài 2); 着急 (ôn HSK3 Bài 1).'
+      q_zh: '除了学汉语以外，你还喜欢做什么？',
+      q_vn: 'Ngoài học tiếng Trung ra, bạn còn thích làm gì?',
+      hint: '除了学汉语以外，我还喜欢……',
+      sample: '除了学汉语以外，我还喜欢游泳和看电影，有时间就去。',
+      sample_vn: 'Ngoài học tiếng Trung ra, tôi còn thích bơi và xem phim, có thời gian là đi.',
+      note: '除了……以外，还…… = bổ sung.'
     },
     {
-      q_zh: '宾馆的房间怎么样？',
-      q_vn: 'Phòng khách sạn thế nào?',
-      hint: '房间跟她想的一样……，又……又……',
-      sample: '宾馆的房间跟她想的一样漂亮，又大又干净，她非常满意。',
-      sample_vn: 'Phòng khách sạn đẹp đúng như cô ấy nghĩ, vừa rộng vừa sạch, cô ấy rất hài lòng.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 跟……一样 + tính từ (ngữ pháp 2); 又……又…… (ôn HSK3 Bài 2).'
-    },
-    {
-      q_zh: '你喜欢旅游吗？为什么？',
-      q_vn: 'Bạn có thích đi du lịch không? Tại sao?',
-      hint: '我很喜欢旅游，因为……',
-      sample: '我很喜欢旅游，因为旅游的时候可以看到很多不一样的东西，还可以吃很多好吃的。',
-      sample_vn: 'Tôi rất thích du lịch, vì khi đi du lịch có thể thấy nhiều điều khác lạ, còn được ăn nhiều món ngon.',
-      note: 'Câu hỏi Khởi động của sách. 因为…… (ôn HSK2 Bài 4); 不一样 (ngữ pháp 2).'
-    },
-    {
-      q_zh: '下一个假期，你打算去哪儿旅游？',
-      q_vn: 'Kỳ nghỉ tới, bạn định đi đâu du lịch?',
-      hint: '下个假期我想去……，因为……',
-      sample: '下个假期我想去草原旅游，因为我没骑过马，我想在草原上骑马、看月亮。',
-      sample_vn: 'Kỳ nghỉ tới tôi muốn đi thảo nguyên du lịch, vì tôi chưa cưỡi ngựa bao giờ, tôi muốn cưỡi ngựa và ngắm trăng trên thảo nguyên.',
-      note: 'Câu hỏi Khởi động của sách. 打算 = định, dự định; 没 + V过 (ôn HSK2 Bài 4).'
-    },
-    {
-      q_zh: '请介绍一下你住过的一家宾馆。',
-      q_vn: 'Hãy giới thiệu một khách sạn bạn từng ở.',
-      hint: '那家宾馆离……，房间……，除了……以外，还……',
-      sample: '我住过的一家宾馆离海边很近，走路五分钟就到了。房间又大又干净，除了早饭以外，还有很多水果，我非常满意。',
-      sample_vn: 'Khách sạn tôi từng ở rất gần biển, đi bộ năm phút là tới. Phòng vừa rộng vừa sạch, ngoài bữa sáng ra còn có nhiều trái cây, tôi rất hài lòng.',
-      note: 'Hoạt động trên lớp (giới thiệu chuyến du lịch). Dùng 离 (ôn HSK2 Bài 9)、又……又……、除了……以外，还…….'
+      q_zh: '你住过让你特别满意的宾馆吗？',
+      q_vn: 'Bạn đã từng ở khách sạn nào khiến bạn rất hài lòng chưa?',
+      hint: '我住过一家……的宾馆，……，我特别满意。',
+      sample: '我住过一家海边的宾馆，一出门就能看到海，我特别满意。',
+      sample_vn: 'Tôi từng ở một khách sạn bên bờ biển, ra khỏi cửa là thấy biển, tôi rất hài lòng.',
+      note: '满意; 一……就…… (HSK2).'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Ở thảo nguyên không lạnh chút nào cả.', zh: '草原一点儿也不冷。', py: 'Cǎoyuán yìdiǎnr yě bù lěng.' },
-  { vi: 'Khách sạn này rất đặc biệt, không giống những khách sạn khác.', zh: '这家宾馆很特别，跟别的都不一样。', py: 'Zhè jiā bīnguǎn hěn tèbié, gēn biéde dōu bù yíyàng.' },
-  { vi: 'Ngoài chiếc va li này ra, anh chị còn đồ gì khác không?', zh: '除了这个行李箱以外，还有别的东西吗？', py: 'Chúle zhège xínglixiāng yǐwài, hái yǒu biéde dōngxi ma?' },
-  { vi: 'Xin lỗi, máy bay bị trễ, để em phải đợi lâu rồi.', zh: '不好意思，飞机晚点了，让您久等了。', py: 'Bù hǎoyìsi, fēijī wǎndiǎn le, ràng nín jiǔ děng le.' },
-  { vi: 'Phòng khách sạn đẹp đúng như tôi nghĩ, vừa rộng vừa sạch.', zh: '宾馆的房间跟我想的一样漂亮，又大又干净。', py: 'Bīnguǎn de fángjiān gēn wǒ xiǎng de yíyàng piàoliang, yòu dà yòu gānjìng.' }
+  { vi: 'Hôm nay tôi bận quá, chẳng có chút thời gian nào để ăn cơm.', zh: '今天我太忙了，一点儿吃饭的时间也没有。', py: 'Jīntiān wǒ tài máng le, yìdiǎnr chī fàn de shíjiān yě méiyǒu.' },
+  { vi: 'Cô ấy nói tiếng Trung giỏi như người Trung Quốc.', zh: '她的汉语说得跟中国人一样好。', py: 'Tā de Hànyǔ shuō de gēn Zhōngguórén yíyàng hǎo.' },
+  { vi: 'Ngoài cưỡi ngựa, trên thảo nguyên chúng tôi còn thấy rất nhiều bò và cừu.', zh: '除了骑马，我们在草原上还看到了很多牛和羊。', py: 'Chúle qí mǎ, wǒmen zài cǎoyuán shang hái kàndàole hěn duō niú hé yáng.' },
+  { vi: 'Máy bay cất cánh lúc 3 giờ 45, chúng ta phải đi trước đây.', zh: '飞机三点三刻起飞，我们得先走了。', py: 'Fēijī sān diǎn sān kè qǐfēi, wǒmen děi xiān zǒu le.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Anh muốn đi đâu thì mình đi đó.', zh: '你想去哪儿，咱们就去哪儿。', py: 'Nǐ xiǎng qù nǎr, zánmen jiù qù nǎr.' },
-  { vi: 'Cưỡi ngựa, ăn thịt cừu, ngắm trăng trên thảo nguyên chắc chắn rất thú vị.', zh: '在草原上骑马、吃羊肉、看月亮，一定很有意思。', py: 'Zài cǎoyuán shang qí mǎ, chī yángròu, kàn yuèliang, yídìng hěn yǒu yìsi.' },
-  { vi: 'Chuyến bay cất cánh lúc 10 giờ 15 sáng thứ Bảy.', zh: '星期六上午十点一刻起飞。', py: 'Xīngqīliù shàngwǔ shí diǎn yí kè qǐfēi.' },
-  { vi: 'Tài xế Tiểu Lý đợi chúng tôi suốt ở sân bay, không hề sốt ruột chút nào.', zh: '司机小李一直在机场等我们，一点儿也没着急。', py: 'Sījī Xiǎo Lǐ yìzhí zài jīchǎng děng wǒmen, yìdiǎnr yě méi zháojí.' },
-  { vi: 'Đến nơi anh chị có thể nghỉ ngơi trước, đến giờ ăn tối em sẽ gọi.', zh: '两位到了可以先休息休息，晚饭的时候我叫你们。', py: 'Liǎng wèi dàole kěyǐ xiān xiūxi xiūxi, wǎnfàn de shíhou wǒ jiào nǐmen.' }
+  { vi: 'Kỳ nghỉ này chúng tôi muốn đi Bắc Kinh ngắm tuyết.', zh: '这个假期我们想去北京看雪。', py: 'Zhège jiàqī wǒmen xiǎng qù Běijīng kàn xuě.' },
+  { vi: 'Sao bạn đến muộn thế, mọi người đợi bạn lâu lắm rồi.', zh: '你怎么来得这么晚，大家等你很久了。', py: 'Nǐ zěnme lái de zhème wǎn, dàjiā děng nǐ hěn jiǔ le.' },
+  { vi: 'Trong khách sạn này, ngoài tôi ra không ai biết nói tiếng Trung.', zh: '这家宾馆里除了我，谁都不会说汉语。', py: 'Zhè jiā bīnguǎn li chúle wǒ, shéi dōu bú huì shuō Hànyǔ.' }
 ];

@@ -2578,159 +2578,153 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 bài trước
 var listenData = [
   {
-    audio: '小王，明天的数学考试你复习了吗？还没有呢，我今天晚上要好好复习。我上课的笔记记得不太清楚，你能把你的笔记给我看看吗？当然可以，我现在就去拿。',
+    audio: '请大家把手机放在书包里，现在开始考试。',
     questions: [
-      { q: '明天有什么考试？', opts: ['历史考试', '数学考试', '外语考试'], ans: 1 },
-      { q: '小王想做什么？', opts: ['看朋友的笔记', '去办公室问老师', '去朋友家复习'], ans: 0 }
+      { q: 'Thầy giáo yêu cầu làm gì?', opts: ['Tắt điện thoại', 'Cất điện thoại vào cặp', 'Nộp điện thoại cho thầy'], ans: 1, exp: '把手机放在书包里 = để điện thoại vào trong cặp.' }
     ]
   },
   {
-    audio: '我妹妹今年上小学三年级。她学习很认真，每天写完作业，都要把第二天上课用的书放到书包里。她最喜欢数学，数学成绩一直很好。',
+    audio: '这个句子我已经讲了三遍了，你们还不明白吗？好，那我写在黑板上。',
     questions: [
-      { q: '说话人的妹妹上几年级？', opts: ['一年级', '三年级', '六年级'], ans: 1 },
-      { q: '妹妹每天写完作业做什么？', opts: ['看电视', '复习数学', '把书放到书包里'], ans: 2 }
+      { q: 'Thầy đã giảng câu này mấy lần?', opts: ['Một lần', 'Hai lần', 'Ba lần'], ans: 2, exp: '讲了三遍 = giảng ba lượt; 遍 = lượt (từ đầu đến cuối).' },
+      { q: 'Bây giờ thầy sẽ làm gì?', opts: ['Viết câu đó lên bảng', 'Cho thêm bài tập', 'Cho cả lớp nghỉ'], ans: 0, exp: '写在黑板上 = viết lên bảng.' }
     ]
   },
   {
-    audio: '李老师，这个句子是什么意思？我看了好几遍，还是不明白。这个句子不难，我再给你讲一遍。哦，我明白了！谢谢老师。不客气，以后遇到什么问题，都可以来办公室问我。',
+    audio: '天中，你把这本历史书带给李老师吧，她在办公室等你。',
     questions: [
-      { q: '学生有什么问题？', opts: ['不明白一个句子', '作业没写完', '找不到办公室'], ans: 0 },
-      { q: '老师让学生以后怎么做？', opts: ['多看几遍书', '遇到问题去办公室问她', '每天写作业'], ans: 1 }
+      { q: 'Thiên Trung phải mang gì cho cô Lý?', opts: ['Sách Toán', 'Sách Lịch sử', 'Vở bài tập'], ans: 1, exp: '这本历史书 = cuốn sách Lịch sử; 把……带给李老师 = mang … cho cô Lý.' },
+      { q: 'Cô Lý đang ở đâu?', opts: ['Trong lớp học', 'Ở nhà thi đấu', 'Ở văn phòng'], ans: 2, exp: '她在办公室等你 = cô ấy đang đợi ở văn phòng.' }
     ]
   },
   {
-    audio: '我上高中的时候，外语成绩挺差的。高中二年级的时候，我遇到了一位很好的外语老师。在她的帮助下，我每天多听多说，还认真记笔记。一年以后，我的外语成绩提高了很多。',
+    audio: '我弟弟今年上初中一年级，他数学挺好的，就是外语有点儿差，所以每天晚上都复习一个小时外语。',
     questions: [
-      { q: '说话人上高中的时候，什么成绩挺差的？', opts: ['数学', '历史', '外语'], ans: 2 },
-      { q: '说话人的成绩为什么提高了？', opts: ['换了学校', '遇到了一位好老师', '每天去办公室'], ans: 1 }
+      { q: 'Em trai người nói học lớp mấy?', opts: ['Năm nhất cấp hai', 'Năm hai cấp hai', 'Năm nhất cấp ba'], ans: 0, exp: '初中一年级 = năm thứ nhất trung học cơ sở; 年级 = khối lớp.' },
+      { q: 'Em trai kém môn nào?', opts: ['Toán', 'Ngoại ngữ', 'Lịch sử'], ans: 1, exp: '外语有点儿差 = ngoại ngữ hơi kém; 数学挺好的 = toán khá tốt.' }
+    ]
+  },
+  {
+    audio: '我们班的同学学习都很努力，这次数学考试，几乎每个人都考得不错。',
+    questions: [
+      { q: 'Kết quả bài thi Toán của lớp thế nào?', opts: ['Gần như ai cũng làm tốt', 'Nhiều bạn làm sai', 'Chưa có kết quả'], ans: 0, exp: '几乎每个人都考得不错 = gần như ai cũng thi khá (ôn 几乎 bài 9).' }
+    ]
+  },
+  {
+    audio: '后年我就要考大学了，所以现在得多努力，每天都要认真复习。',
+    questions: [
+      { q: 'Khi nào người nói thi đại học?', opts: ['Năm sau', 'Năm nay', 'Năm sau nữa'], ans: 2, exp: '后年 = năm sau nữa; 明年 = năm sau.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '认真', right: '记笔记' },
-  { left: '提高', right: '成绩' },
-  { left: '复习', right: '外语' },
+  { left: '提高', right: '水平' },
   { left: '遇到', right: '问题' },
-  { left: '明天再把书', right: '还给我' },
-  { left: '在老师的帮助下', right: '我的成绩提高很快' }
+  { left: '复习', right: '外语' },
+  { left: '认真', right: '记笔记' },
+  { left: '第五', right: '页' },
+  { left: '初中', right: '二年级' },
+  { left: '讲', right: '一遍' }
 ];
 
 var fillData = [
-  { pre: '我再说一', blank: '遍', post: '，请大家认真听。', hint: '(lượt)', ans: '遍', exp: '遍 — động lượng từ, đứng sau động từ: 说一遍 = nói một lượt (trọn vẹn). Câu của sách.' },
-  { pre: '你的汉字写得太', blank: '差', post: '了，要多练习才能写得好。', hint: '(kém)', ans: '差', exp: '太 + 差 + 了 — kém quá; 才 = mới (ôn HSK3 Bài 3). Câu của sách.' },
-  { pre: '老师上课说什么我没听', blank: '清楚', post: '，你再告诉我一下吧。', hint: '(rõ)', ans: '清楚', exp: '没听清楚 — bổ ngữ kết quả 清楚; 告诉 (ôn HSK2 Bài 13). Câu của sách.' },
-  { pre: '李老师，可以给我', blank: '讲', post: '一下我做错的这几个题吗？', hint: '(giảng)', ans: '讲', exp: '给 + người + 讲 + bài — giảng cho ai; 错 (ôn HSK2 Bài 10). Câu của sách.' },
-  { pre: '今天这几个题有点儿', blank: '难', post: '，好多同学都没听明白。', hint: '(khó)', ans: '难', exp: '有点儿 + 难 — hơi khó (không hài lòng); 没听明白. Câu của sách.' },
-  { pre: '今天的作业你写完了吗？——没有，老师', blank: '要求', post: '写500个字，我只写了一半。', hint: '(yêu cầu)', ans: '要求', exp: '老师要求 + V — thầy cô yêu cầu làm gì; 一半 (ôn HSK1 Bài 13). Câu của sách.' },
-  { pre: '你有什么', blank: '提高', post: '外语水平的好方法吗？——没什么特别的，多听多说就行了。', hint: '(nâng cao)', ans: '提高', exp: '提高 + 水平 (水平 – ôn HSK3 Bài 5). Câu của sách.' },
-  { pre: '我高中的时候没遇到好老师。——老师', blank: '当然', post: '重要，但是自己的努力也很重要。', hint: '(đương nhiên)', ans: '当然', exp: 'A 当然……，但是 B 也…… — thừa nhận A rồi nhấn mạnh B (但是 – ôn HSK2 Bài 8). Câu của sách.' }
+  { pre: '这个字你写错了，再写一', blank: '遍', post: '吧。', hint: '(lượt)', ans: '遍', exp: '遍 = lượt (làm trọn từ đầu đến cuối), đứng sau động từ: 写一遍.' },
+  { pre: '他只说了一', blank: '句', post: '“对不起”，就走了。', hint: '(câu — lượng từ)', ans: '句', exp: '句 là lượng từ của lời nói: 一句话 = một câu.' },
+  { pre: '他做作业很', blank: '认真', post: '，几乎没有错。', hint: '(cẩn thận, chăm chỉ)', ans: '认真', exp: '认真 = nghiêm túc, cẩn thận; ôn 几乎 (bài 9).' },
+  { pre: '后面的同学说：“老师，黑板上的字我看不', blank: '清楚', post: '。”', hint: '(rõ)', ans: '清楚', exp: '看不清楚 = nhìn không rõ (bổ ngữ khả năng, ôn bài 9).' },
+  { pre: '这个题我看了好几遍，还是不', blank: '明白', post: '。', hint: '(hiểu)', ans: '明白', exp: '明白 = hiểu; 还是不明白 = vẫn không hiểu.' },
+  { pre: '这次历史考试不太', blank: '难', post: '，大家都考得不错。', hint: '(khó)', ans: '难', exp: '难 = khó; 不太难 = không khó lắm.' },
+  { pre: '我的数学成绩比较', blank: '差', post: '，得多做练习。', hint: '(kém)', ans: '差', exp: '差 = kém; ôn 比较 (bài 5), 得 děi = phải (bài 8).' },
+  { pre: 'A: “我可以看看你的笔记吗？” — B: “', blank: '当然', post: '可以，给你。”', hint: '(đương nhiên)', ans: '当然', exp: '当然可以 = đương nhiên là được.' },
+  { pre: '她每天学习到晚上十二点，真', blank: '努力', post: '！', hint: '(chăm chỉ, cố gắng)', ans: '努力', exp: '努力 = cố gắng, chăm chỉ (tính từ / động từ).' },
+  { pre: '老师', blank: '要求', post: '我们每天读二十分钟汉语书。', hint: '(yêu cầu)', ans: '要求', exp: '要求 + người + làm gì = yêu cầu ai làm gì.' },
+  { pre: '请把你的名字写', blank: '在', post: '这张纸上。', hint: '(vào, ở)', ans: '在', exp: '把 + O + V + 在 + nơi chốn: 把名字写在纸上 = viết tên vào tờ giấy.' },
+  { pre: '我把我的旧自行车送', blank: '给', post: '弟弟了。', hint: '(cho)', ans: '给', exp: '把 + O1 + V + 给 + O2: 把自行车送给弟弟 = tặng xe đạp cho em trai.' }
 ];
 
 var sortData = [
-  { words: ['我', '会', '把', '这些', '题', '都', '记在', '本子上', '。'], ans: '我会把这些题都记在本子上。', audio: '我会把这些题都记在本子上。' },
-  { words: ['你', '明天', '再', '把', '书', '还给', '我', '。'], ans: '你明天再把书还给我。', audio: '你明天再把书还给我。' },
-  { words: ['在', '学习', '上', '，', '遇到', '什么', '问题', '都', '可以', '问我', '。'], ans: '在学习上，遇到什么问题都可以问我。', audio: '在学习上，遇到什么问题都可以问我。' },
-  { words: ['我', '每天', '写作业', '以前', '，', '都', '要', '看', '一遍', '。'], ans: '我每天写作业以前，都要看一遍。', audio: '我每天写作业以前，都要看一遍。' },
-  { words: ['这些', '句子', '一点儿', '也', '不', '难', '。'], ans: '这些句子一点儿也不难。', audio: '这些句子一点儿也不难。' },
-  { words: ['在', '你的', '影响', '下', '，', '我', '也', '开始', '喜欢', '拍照', '了', '。'], ans: '在你的影响下，我也开始喜欢拍照了。', audio: '在你的影响下，我也开始喜欢拍照了。' }
+  { words: ['我', '把', '笔记', '忘', '在', '办公室', '了', '。'], ans: '我把笔记忘在办公室了。', audio: '我把笔记忘在办公室了。' },
+  { words: ['请', '把', '这些', '椅子', '搬', '到', '楼下', '。'], ans: '请把这些椅子搬到楼下。', audio: '请把这些椅子搬到楼下。' },
+  { words: ['妈妈', '把', '她的', '相机', '送给', '我', '了', '。'], ans: '妈妈把她的相机送给我了。', audio: '妈妈把她的相机送给我了。' },
+  { words: ['在', '爸爸', '的', '影响', '下', '，', '我', '从小', '就', '喜欢', '历史', '。'], ans: '在爸爸的影响下，我从小就喜欢历史。', audio: '在爸爸的影响下，我从小就喜欢历史。' },
+  { words: ['他', '在', '工作', '上', '非常', '认真', '。'], ans: '他在工作上非常认真。', audio: '他在工作上非常认真。' },
+  { words: ['老师', '又', '给', '我们', '讲', '了', '一遍', '。'], ans: '老师又给我们讲了一遍。', audio: '老师又给我们讲了一遍。' },
+  { words: ['写', '完', '作业', '以后', '，', '我', '还', '要', '复习', '外语', '。'], ans: '写完作业以后，我还要复习外语。', audio: '写完作业以后，我还要复习外语。' },
+  { words: ['我', '妹妹', '后年', '就', '要', '上', '小学', '了', '。'], ans: '我妹妹后年就要上小学了。', audio: '我妹妹后年就要上小学了。' }
 ];
 
 var mcData = [
-  { q: '这个电影很好看，我看了三＿＿。', opts: ['遍', '页', '句', '年级'], ans: 0, exp: '遍 = lượt (từ đầu đến cuối): 看了三遍. 页 là trang, 句 là câu.' },
-  { q: '老师写在＿＿上的题都很重要。', opts: ['办公室', '黑板', '对话', '作业'], ans: 1, exp: '写在黑板上 = viết trên bảng. 办公室, 作业 không đi với 写在…上 trong lớp học.' },
-  { q: '书上第五＿＿的这个对话我看不懂。', opts: ['句', '遍', '页', '本'], ans: 2, exp: '第五页 = trang thứ 5 trong sách. 遍 chỉ số lần, 本 chỉ số cuốn.' },
-  { q: '这个方法真好！我以后也试试，希望能＿＿成绩。', opts: ['复习', '遇到', '讲', '提高'], ans: 3, exp: '提高成绩 = nâng cao thành tích. 复习, 讲 không mang tân ngữ 成绩.' },
-  { q: '明天还有考试呢，别想那么多了，先＿＿外语吧。', opts: ['复习', '明白', '要求', '一般'], ans: 0, exp: '复习外语 = ôn ngoại ngữ trước kỳ thi. 明白, 要求 không hợp.' },
-  { q: '为了考上好高中，我现在非常＿＿。', opts: ['一般', '努力', '难', '当然'], ans: 1, exp: '为了考上好高中，我非常努力 = để đỗ trường tốt nên rất cố gắng. 难, 一般 không hợp nghĩa.' },
-  { q: '中国的学校＿＿是小学六年，初中三年，高中三年。', opts: ['当然', '认真', '一般', '差'], ans: 2, exp: '一般 = thông thường, nói về quy định chung (tiểu học 6 năm…). 当然, 认真 không hợp.' },
-  { q: 'Chọn câu chữ 把 đúng: "Mình sẽ ghi những bài này vào vở."', opts: ['我会把这些题记本子上。', '我把会这些题记在本子上。', '我会把这些题记在本子上。', '我会记这些题把在本子上。'], ans: 2, exp: 'Câu 把 có trợ động từ: S + 会 + 把 + O + V + 在 + nơi chốn. Trợ động từ đứng trước 把, không bỏ 在.' },
-  { q: 'Chọn câu đúng: "Ngày mai em trả sách lại cho cô nhé."', opts: ['你明天再把书还我给。', '你把明天再书还给我。', '你明天再还把书给我。', '你明天再把书还给我。'], ans: 3, exp: 'Phó từ 再 đứng trước 把: 再把书还给我; động từ + 给 + người.' },
-  { q: '"在老师的帮助下，我的成绩提高很快。" — 「在……下」 ở đây biểu thị gì?', opts: ['Nơi chốn (ở phía dưới)', 'Điều kiện', 'Thời gian', 'Phạm vi, phương diện'], ans: 1, exp: '在……下 = trong điều kiện… (nhờ sự giúp đỡ của cô giáo) → biểu thị điều kiện, không phải nơi chốn.' }
+  { q: 'Bạn nhờ bạn cùng phòng: “Đặt cái túi lên bàn giúp mình.”', opts: ['请把包放桌子上在。', '请放包在桌子上。', '请把包放在桌子上。', '请在桌子上把包放。'], ans: 2, exp: '把 + O + V + 在 + nơi chốn: 把包放在桌子上; không nói 放包在桌子上 (dịch từng chữ tiếng Việt).' },
+  { q: 'A: “你的自行车呢？” — B: “我把它＿＿了。”', opts: ['骑学校到', '骑到学校', '到学校骑', '骑在学校去'], ans: 1, exp: 'V + 到 + nơi chốn: 骑到学校 = đạp xe đến trường (rồi để ở đó).' },
+  { q: 'Bạn muốn nói: “Mình trả sách cho cô Lý rồi.”', opts: ['我把书还李老师给了。', '我还给书李老师了。', '我把书给还李老师了。', '我把书还给李老师了。'], ans: 3, exp: '把 + O1 + V + 给 + O2: 把书还给李老师; 给 đứng ngay sau động từ, trước người nhận.' },
+  { q: 'Câu nào SAI?', opts: ['我把作业写完了。', '你把门关上吧。', '我把这个句子明白了。', '他把照片放在包里了。'], ans: 2, exp: 'Câu 把 cần động từ hành động tác động lên tân ngữ; 明白 không dùng với 把 → 我明白这个句子了.' },
+  { q: 'Bạn nói với bạn: “Về vấn đề này, mình nghĩ giống bạn.”', opts: ['在这个问题上，我跟你想的一样。', '在这个问题下，我跟你想的一样。', '在这个问题里，我跟你想的一样。', '这个问题在上，我跟你想的一样。'], ans: 0, exp: '在……上 = về mặt, về phương diện…; 在……下 dùng cho điều kiện (在……帮助下).' },
+  { q: 'Bạn cảm ơn cô giáo: “Nhờ sự giúp đỡ của cô, thành tích của em đã tiến bộ.”', opts: ['在您的帮助上，我的成绩提高了。', '在您的帮助下，我的成绩提高了。', '在您的帮助里，我的成绩提高了。', '在下您的帮助，我的成绩提高了。'], ans: 1, exp: '在 + ……的帮助 + 下 = nhờ sự giúp đỡ của… (chỉ điều kiện); 提高 = nâng cao.' },
+  { q: 'A: “这个电影你看过吗？” — B: “看过，我都看了三＿＿了。”', opts: ['页', '本', '遍', '句'], ans: 2, exp: '看了三遍 = xem ba lượt (từ đầu đến cuối). 页 = trang, 句 = câu.' },
+  { q: '“请大家打开书，看第三十＿＿的对话。”', opts: ['页', '遍', '张', '岁'], ans: 0, exp: '第三十页 = trang 30; 对话 = đoạn hội thoại.' },
+  { q: 'A: “这家饭馆的菜怎么样？” — B: “＿＿，不太好吃，也不太难吃。”', opts: ['当然', '认真', '清楚', '一般'], ans: 3, exp: '一般 ở đây = bình thường, tàm tạm.' },
+  { q: '“昨天我在路上＿＿了我的初中老师，她还是那么年轻。”', opts: ['遇到', '提高', '复习', '要求'], ans: 0, exp: '遇到 + người = tình cờ gặp ai.' },
+  { q: 'Bạn nhờ bạn cùng lớp: “Bạn giảng cho mình bài toán này được không?”', opts: ['你能讲给我讲这个数学题吗？', '你能给我讲讲这个数学题吗？', '你能给我讲这个数学题讲吗？', '你能讲讲我这个数学题吗？'], ans: 1, exp: '给 + người + 讲 + việc = giảng cho ai; 讲讲 = giảng một chút.' },
+  { q: 'Năm nay là 2026, em gái bạn sẽ vào đại học năm 2028. Bạn nói:', opts: ['我妹妹明年上大学。', '我妹妹去年上大学。', '我妹妹今年上大学。', '我妹妹后年上大学。'], ans: 3, exp: '后年 = năm sau nữa (2028); 明年 = năm sau (2027).' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 把 + O + V + 在/到 + nơi chốn, 把 + O + V + 给 + người, 在……上 / 在……下 và từ về việc học.',
   questions: [
     {
-      q_zh: '刘小雪的数学为什么越来越好？',
-      q_vn: 'Vì sao môn Toán của Lưu Tiểu Tuyết càng ngày càng tốt?',
-      hint: '因为她认真……，认真……',
-      sample: '因为她认真听课，认真记笔记，每天写作业以前都要把笔记看一遍。',
-      sample_vn: 'Vì cô ấy chăm chú nghe giảng, chăm chỉ ghi chép, ngày nào trước khi làm bài tập cũng xem lại vở ghi một lượt.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 越来越 (ôn HSK3 Bài 6); 把笔记看一遍.'
+      q_zh: '回到家，你一般把书包放在哪儿？',
+      q_vn: 'Về đến nhà, bạn thường để cặp sách ở đâu?',
+      hint: '回到家，我一般把书包放到……，把……放在……',
+      sample: '回到家，我一般把书包放到我的房间里，把衣服放在椅子上。',
+      sample_vn: 'Về đến nhà, tôi thường để cặp vào phòng mình, để quần áo trên ghế.',
+      note: '把 + O + 放到 / 放在 + nơi chốn.'
     },
     {
-      q_zh: '刘小雪的同学打算怎么做？为什么？',
-      q_vn: 'Bạn học của Lưu Tiểu Tuyết định làm gì? Vì sao?',
-      hint: '他打算……，因为他希望……',
-      sample: '他打算以后也认真记笔记，因为他希望能提高成绩。',
-      sample_vn: 'Cậu ấy định sau này cũng chăm chỉ ghi chép, vì cậu ấy hy vọng có thể nâng cao thành tích.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 希望 (ôn HSK2 Bài 13) + 提高成绩.'
+      q_zh: '你把什么礼物送给过朋友？',
+      q_vn: 'Bạn đã từng tặng bạn bè món quà gì?',
+      hint: '去年……，我把……送给了……',
+      sample: '去年我的好朋友过生日，我把一张我画的画送给了她，她特别开心。',
+      sample_vn: 'Năm ngoái sinh nhật bạn thân, tôi tặng cô ấy một bức tranh tôi vẽ, cô ấy rất vui.',
+      note: '把 + O1 + 送给 + O2; ôn 开心 (bài 8).'
     },
     {
-      q_zh: '刘小雪和同学为什么一起去办公室？',
-      q_vn: 'Vì sao Lưu Tiểu Tuyết và bạn học cùng đến văn phòng?',
-      hint: '因为外语作业里的几个题……',
-      sample: '因为外语作业里有几个题刘小雪也不会，所以他们一起去办公室问李老师。',
-      sample_vn: 'Vì trong bài tập ngoại ngữ có mấy câu Lưu Tiểu Tuyết cũng không biết làm, nên họ cùng đến văn phòng hỏi cô Lý.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 因为……所以…… (ôn HSK2 Bài 4).'
+      q_zh: '你是在谁的影响下开始学汉语的？',
+      q_vn: 'Bạn bắt đầu học tiếng Trung do ảnh hưởng của ai?',
+      hint: '我是在……的影响下开始学汉语的，……',
+      sample: '我是在我姐姐的影响下开始学汉语的，她常给我看中国电影。',
+      sample_vn: 'Tôi bắt đầu học tiếng Trung do ảnh hưởng của chị gái, chị ấy hay cho tôi xem phim Trung Quốc.',
+      note: '在 + ……的影响 + 下; 是……的 nhấn mạnh (HSK2).'
     },
     {
-      q_zh: '李老师为什么给他们一本书？',
-      q_vn: 'Vì sao cô Lý đưa cho họ một quyển sách?',
-      hint: '因为书上还有几个练习，……明天再把书……',
-      sample: '因为李老师的书上还有几个练习，她让他们回家做一做，明天再把书还给她。',
-      sample_vn: 'Vì trong sách của cô Lý còn vài bài tập, cô bảo họ về nhà làm thử, ngày mai trả lại sách cho cô.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. 让 + người + V (ôn HSK2 Bài 1); câu chữ 把 (2): 把书还给她.'
+      q_zh: '你觉得什么课最难？为什么？',
+      q_vn: 'Bạn thấy môn nào khó nhất? Vì sao?',
+      hint: '我觉得……最难，因为……',
+      sample: '我觉得数学最难，因为很多题我看不明白，成绩也比较差。',
+      sample_vn: 'Tôi thấy Toán khó nhất, vì nhiều bài tôi đọc không hiểu, điểm cũng khá kém.',
+      note: '看不明白 (bổ ngữ khả năng, bài 9); 差 = kém.'
     },
     {
-      q_zh: '中国的学校一般是怎么样的？你们国家呢？',
-      q_vn: 'Trường học ở Trung Quốc thường được chia thế nào? Còn ở nước bạn thì sao?',
-      hint: '中国的学校一般是小学……年，初中……年，高中……年。越南……',
-      sample: '中国的学校一般是小学六年，初中三年，高中三年。越南的学校一般是小学五年，初中四年，高中三年。',
-      sample_vn: 'Trường học ở Trung Quốc thường là 6 năm tiểu học, 3 năm THCS, 3 năm THPT. Ở Việt Nam thường là 5 năm tiểu học, 4 năm THCS, 3 năm THPT.',
-      note: 'Theo yêu cầu sau Bài khoá 4 (giới thiệu hệ thống lên lớp). 一般 của bài này.'
-    },
-    {
-      q_zh: '上课的时候你记笔记吗？你一般记什么？',
-      q_vn: 'Khi lên lớp bạn có ghi chép không? Bạn thường ghi những gì?',
-      hint: '我一般把……记在本子上。',
-      sample: '我记笔记。我一般把老师写在黑板上的题和重要的句子记在本子上。',
-      sample_vn: 'Có. Tôi thường ghi các bài cô viết trên bảng và những câu quan trọng vào vở.',
-      note: 'Câu hỏi Khởi động của sách. Câu chữ 把 (1): 把 + O + 记在本子上.'
-    },
-    {
-      q_zh: '在家写作业的时候看到不会的题，你怎么办？',
-      q_vn: 'Khi làm bài tập ở nhà mà gặp bài không biết làm, bạn sẽ làm thế nào?',
-      hint: '我先……，还是不会，就……',
-      sample: '我先看看笔记，还是不会，就第二天去办公室问老师。',
-      sample_vn: 'Tôi xem lại vở ghi trước, vẫn không biết thì hôm sau đến văn phòng hỏi thầy cô.',
-      note: 'Câu hỏi Khởi động của sách. 先……，就…… (先 – ôn HSK3 Bài 4).'
-    },
-    {
-      q_zh: '你有什么提高外语水平的好方法？',
-      q_vn: 'Bạn có phương pháp nào hay để nâng cao trình độ ngoại ngữ?',
-      hint: '我觉得……很重要。我每天……',
-      sample: '我觉得多听多说很重要。我每天听中文歌，认真记笔记，有时间就跟中国朋友用中文对话。',
-      sample_vn: 'Tôi thấy nghe nhiều nói nhiều rất quan trọng. Ngày nào tôi cũng nghe nhạc Trung, chăm chỉ ghi chép, có thời gian là trò chuyện bằng tiếng Trung với bạn Trung Quốc.',
-      note: 'Hoạt động trên lớp của sách (trao đổi phương pháp học ngoại ngữ). 提高水平, 对话 của bài này.'
+      q_zh: '考试以前，你怎么复习？',
+      q_vn: 'Trước khi thi, bạn ôn tập thế nào?',
+      hint: '考试以前，我把……看几遍，遇到……就……',
+      sample: '考试以前，我把笔记认真看几遍，遇到不会的题，就去办公室问老师。',
+      sample_vn: 'Trước khi thi, tôi xem kỹ vở ghi vài lượt, gặp bài không biết làm thì đến văn phòng hỏi thầy cô.',
+      note: '把 + O + V + số lượt (遍); 遇到 = gặp phải.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Những bài cô giáo viết trên bảng đều rất quan trọng, vì vậy mình sẽ ghi hết vào vở.', zh: '老师写在黑板上的题都很重要，所以我会把这些题都记在本子上。', py: 'Lǎoshī xiě zài hēibǎn shang de tí dōu hěn zhòngyào, suǒyǐ wǒ huì bǎ zhèxiē tí dōu jì zài běnzi shang.' },
-  { vi: 'Trong việc học, gặp vấn đề gì cũng có thể hỏi mình.', zh: '在学习上，遇到什么问题都可以问我。', py: 'Zài xuéxí shang, yùdào shénme wèntí dōu kěyǐ wèn wǒ.' },
-  { vi: 'Cô đã giảng những câu này trên lớp rồi, để cô giảng lại cho các em một lần nữa.', zh: '我课上讲过这几句话，再给你们讲一遍。', py: 'Wǒ kè shang jiǎngguo zhè jǐ jù huà, zài gěi nǐmen jiǎng yí biàn.' },
-  { vi: 'Các em về nhà làm thử nhé, ngày mai trả lại sách cho cô.', zh: '你们回家也做一做，明天再把书还给我。', py: 'Nǐmen huí jiā yě zuò yi zuò, míngtiān zài bǎ shū huán gěi wǒ.' },
-  { vi: 'Do ảnh hưởng của chị, em cũng bắt đầu thích chụp ảnh rồi.', zh: '在你的影响下，我也开始喜欢拍照了。', py: 'Zài nǐ de yǐngxiǎng xià, wǒ yě kāishǐ xǐhuan pāizhào le.' }
+  { vi: 'Bạn để điện thoại ở đâu rồi?', zh: '你把手机放在哪儿了？', py: 'Nǐ bǎ shǒujī fàng zài nǎr le?' },
+  { vi: 'Ngày mai mình mang cuốn sách đó cho bạn.', zh: '明天我把那本书带给你。', py: 'Míngtiān wǒ bǎ nà běn shū dài gěi nǐ.' },
+  { vi: 'Theo yêu cầu của mẹ, tối nào tôi cũng làm xong bài tập trước 9 giờ.', zh: '在妈妈的要求下，我每天晚上九点以前写完作业。', py: 'Zài māma de yāoqiú xià, wǒ měi tiān wǎnshang jiǔ diǎn yǐqián xiěwán zuòyè.' },
+  { vi: 'Bài thi Toán lần này hơi khó, tôi làm sai hai câu.', zh: '这次数学考试有点儿难，我做错了两个题。', py: 'Zhè cì shùxué kǎoshì yǒudiǎnr nán, wǒ zuòcuòle liǎng ge tí.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Môn Toán của bạn càng ngày càng tốt, bạn có thể giới thiệu phương pháp học tập không?', zh: '你的数学越来越好，能不能介绍一下学习方法？', py: 'Nǐ de shùxué yuè lái yuè hǎo, néng bu néng jièshào yíxià xuéxí fāngfǎ?' },
-  { vi: 'Bài thi Toán mình không đọc kỹ yêu cầu, làm sai mấy câu liền.', zh: '数学考试我没看清楚要求，做错了好几个题。', py: 'Shùxué kǎoshì wǒ méi kàn qīngchu yāoqiú, zuòcuòle hǎo jǐ ge tí.' },
-  { vi: 'Cuối cùng em cũng hiểu rồi, những câu này chẳng khó chút nào.', zh: '我终于懂了，这些句子一点儿也不难。', py: 'Wǒ zhōngyú dǒng le, zhèxiē jùzi yìdiǎnr yě bù nán.' },
-  { vi: 'Trường học ở Trung Quốc thường là sáu năm tiểu học, ba năm trung học cơ sở, ba năm trung học phổ thông.', zh: '中国的学校一般是小学六年，初中三年，高中三年。', py: 'Zhōngguó de xuéxiào yìbān shì xiǎoxué liù nián, chūzhōng sān nián, gāozhōng sān nián.' },
-  { vi: 'Để thi đỗ trường cấp 3 tốt, cấp 2 phải có thành tích khá, vì vậy bây giờ em rất cố gắng.', zh: '为了考上好高中，初中就得有一个不错的成绩，所以我现在非常努力。', py: 'Wèile kǎoshàng hǎo gāozhōng, chūzhōng jiù děi yǒu yí ge búcuò de chéngjì, suǒyǐ wǒ xiànzài fēicháng nǔlì.' }
+  { vi: 'Học ngoại ngữ thì đương nhiên phải nói nhiều.', zh: '学外语，当然要多说。', py: 'Xué wàiyǔ, dāngrán yào duō shuō.' },
+  { vi: 'Tôi đã viết số điện thoại của mình lên bảng rồi.', zh: '我把我的手机号码写在黑板上了。', py: 'Wǒ bǎ wǒ de shǒujī hàomǎ xiě zài hēibǎn shang le.' },
+  { vi: 'Chúng ta dùng tiếng Trung để nói chuyện nhé.', zh: '我们用汉语对话吧。', py: 'Wǒmen yòng Hànyǔ duìhuà ba.' },
+  { vi: 'Trong số các bạn học này, trình độ tiếng Trung của cậu ấy cao nhất.', zh: '在这些同学中，他的汉语水平最高。', py: 'Zài zhèxiē tóngxué zhōng, tā de Hànyǔ shuǐpíng zuì gāo.' }
 ];

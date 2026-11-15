@@ -2582,31 +2582,43 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 Bài 1–5
 var listenData = [
   {
-    audio: '小王，最近怎么没看见你来打羽毛球？我感冒了，发了三天烧，昨天才好一点儿。那你得多休息。是啊，医生也这么说。下个星期我再去打球吧。',
+    audio: '我感冒三天了，今天还在发低烧，头也有点儿疼。',
     questions: [
-      { q: '小王最近怎么了？', opts: ['感冒发烧了', '腿疼住院了', '去旅游了'], ans: 0 },
-      { q: '小王什么时候再去打球？', opts: ['明天', '今天下午', '下个星期'], ans: 2 }
+      { q: 'Người nói bị cảm bao lâu rồi?', opts: ['Ba ngày', 'Một tuần', 'Hai ngày'], ans: 0, exp: '感冒三天了 = bị cảm được ba ngày rồi (thời gian + 了 cuối câu).' },
+      { q: 'Hôm nay người nói thế nào?', opts: ['Sốt cao hơn hôm qua', 'Vẫn còn sốt nhẹ', 'Khỏi hẳn rồi'], ans: 1, exp: '还在发低烧 = vẫn đang sốt nhẹ; 低 = thấp.' }
     ]
   },
   {
-    audio: '我爷爷今年七十岁了，身体很健康。他有很好的生活习惯：每天早上六点起床，吃了早饭就去楼下锻炼一个小时。他很少生病，上次住院已经过去差不多五年了。',
+    audio: '我朋友住院三天了，我下午想去医院看看他，你跟我一起去吧。',
     questions: [
-      { q: '爷爷每天锻炼多长时间？', opts: ['半个小时', '一个小时', '两个小时'], ans: 1 },
-      { q: '爷爷上次住院是什么时候？', opts: ['差不多五年以前', '差不多两年以前', '一个月以前'], ans: 0 }
+      { q: 'Bạn của người nói nằm viện bao lâu rồi?', opts: ['Hai ngày', 'Một tuần', 'Ba ngày'], ans: 2, exp: '住院三天了 = nằm viện được ba ngày rồi.' },
+      { q: 'Chiều nay người nói định làm gì?', opts: ['Đi thăm bạn ở bệnh viện', 'Đón bạn ra viện', 'Đi khám bệnh'], ans: 0, exp: '去医院看看他 = đến bệnh viện thăm anh ấy; 看 + người = thăm.' }
     ]
   },
   {
-    audio: '医生，我这两天头疼、发烧，耳朵也有点儿不舒服。你感冒了，我给你开两种药。这种药饭前吃，那种药饭后吃，每天都吃三次。好的，谢谢医生，我会注意的。',
+    audio: '这个电影太没意思了，我们别看下去了，去体育馆打羽毛球吧。',
     questions: [
-      { q: '病人怎么了？', opts: ['腿疼', '感冒了', '胖了'], ans: 1 },
-      { q: '医生开的药应该怎么吃？', opts: ['每天吃三次', '每天睡前吃一次', '每天吃两次'], ans: 0 }
+      { q: 'Người nói đề nghị làm gì?', opts: ['Xem tiếp bộ phim', 'Đi chơi cầu lông', 'Về nhà nghỉ'], ans: 1, exp: '别看下去了 = đừng xem tiếp nữa; 去体育馆打羽毛球 = đến nhà thi đấu chơi cầu lông.' }
     ]
   },
   {
-    audio: '我妹妹以前很胖，因为她特别喜欢吃蛋糕，也不喜欢运动。去年她开始每天跑步，吃饭以前还喝一杯水，现在已经瘦了二十斤。她说：运动以后，我心里也开心多了。',
+    audio: '你每天吃完晚饭就坐在沙发上看手机，这个习惯不太健康，饭后应该出去走一走。',
     questions: [
-      { q: '妹妹以前为什么很胖？', opts: ['不喜欢运动', '常常生病', '每天喝水'], ans: 0 },
-      { q: '现在妹妹觉得怎么样？', opts: ['很累', '更开心了', '还想再胖一点儿'], ans: 1 }
+      { q: 'Người nói cho rằng thói quen nào không lành mạnh?', opts: ['Ăn tối quá muộn', 'Không ăn sáng', 'Ăn xong là ngồi xem điện thoại'], ans: 2, exp: '吃完晚饭就坐在沙发上看手机 = ăn tối xong là ngồi sofa xem điện thoại.' },
+      { q: 'Người nói khuyên làm gì?', opts: ['Sau bữa ăn ra ngoài đi bộ một chút', 'Đi ngủ sớm hơn', 'Ăn ít đi'], ans: 0, exp: '饭后 = sau bữa ăn; 出去走一走 = ra ngoài đi dạo một chút.' }
+    ]
+  },
+  {
+    audio: '医生，我的耳朵疼了两天了，是不是游泳的时候进水了？',
+    questions: [
+      { q: 'Người nói bị đau ở đâu?', opts: ['Chân', 'Tai', 'Đầu'], ans: 1, exp: '耳朵 = tai; 腿 = chân.' },
+      { q: 'Người nói nghĩ vì sao bị đau?', opts: ['Bị cảm', 'Chạy bộ nhiều quá', 'Lúc bơi bị vào nước'], ans: 2, exp: '游泳的时候进水了 = lúc bơi bị nước vào.' }
+    ]
+  },
+  {
+    audio: '医生给我开了两种药，白色的饭前吃，黄色的饭后吃，每天都吃两次。',
+    questions: [
+      { q: 'Thuốc màu trắng uống lúc nào?', opts: ['Trước bữa ăn', 'Sau bữa ăn', 'Trước khi đi ngủ'], ans: 0, exp: '白色的饭前吃 = loại màu trắng uống trước bữa ăn; 饭前 = trước bữa ăn.' }
     ]
   }
 ];
@@ -2614,127 +2626,108 @@ var listenData = [
 var matchData = [
   { left: '打', right: '羽毛球' },
   { left: '发', right: '低烧' },
-  { left: '医生给我开了', right: '几种药' },
   { left: '吃药的', right: '方法' },
-  { left: '我都记在', right: '心里了' },
-  { left: '谢谢', right: '关心' }
+  { left: '记在', right: '心里' },
+  { left: '谢谢大家的', right: '关心' },
+  { left: '去体育馆', right: '跑步' },
+  { left: '左', right: '腿' }
 ];
 
 var fillData = [
-  { pre: '李医生特别', blank: '关心', post: '病人。', hint: '(quan tâm)', ans: '关心', exp: '关心 + tân ngữ trực tiếp: 关心病人; 特别 (ôn HSK3 Bài 4). Câu của sách.' },
-  { pre: '医生说你下个星期', blank: '得', post: '回来检查一下。', hint: '(phải)', ans: '得', exp: '得 (děi) + V = phải làm gì (khẩu ngữ). Câu của sách.' },
-  { pre: '您一直很健康，有什么好的锻炼', blank: '方法', post: '吗？', hint: '(phương pháp)', ans: '方法', exp: '锻炼方法 = cách tập luyện; 锻炼 (ôn HSK3 Bài 5). Câu của sách.' },
-  { pre: '如果你的病好了，医生就不会给你', blank: '开', post: '药了。', hint: '(kê thuốc)', ans: '开', exp: '给 + người + 开药 = kê thuốc cho ai. Câu của sách.' },
-  { pre: '感冒的时候能吃这', blank: '种', post: '药吗？你再问一下医生。', hint: '(loại)', ans: '种', exp: '这种药 — lượng từ 种 chỉ chủng loại. Câu của sách.' },
-  { pre: '你什么时候能出院？——可能两天', blank: '以后', post: '，我还需要做几个检查。', hint: '(sau)', ans: '以后', exp: 'Thời gian + 以后 = sau (bao lâu) nữa (ngữ pháp 4). Câu của sách.' },
-  { pre: '你疼了多长时间了？——有时候疼，有时候不疼，', blank: '差不多', post: '一个月吧。', hint: '(khoảng, xấp xỉ)', ans: '差不多', exp: '差不多 + số lượng = khoảng chừng; 吧 phỏng đoán. Câu của sách.' },
-  { pre: '我奶奶上个月住院了，这个星期已经', blank: '出院', post: '了。', hint: '(ra viện)', ans: '出院', exp: '住院 ↔ 出院; 已经……了 (HSK2 Bài 1); 奶奶 (HSK2 Bài 5).' }
+  { pre: '我小时候身体不太好，', blank: '常', post: '生病，所以爸爸每天早上带我去跑步。', hint: '(thường)', ans: '常', exp: '常 + động từ = thường, hay; đứng trước động từ 生病.' },
+  { pre: '来中国半年了，我已经', blank: '习惯', post: '这里的菜了。', hint: '(quen với)', ans: '习惯', exp: '习惯 + danh từ = quen với…; 来中国半年了 = sang Trung Quốc được nửa năm rồi.' },
+  { pre: '你别每天吃蛋糕了，再这样吃下去，你会越来越', blank: '胖', post: '的。', hint: '(béo)', ans: '胖', exp: '越来越胖 = càng ngày càng béo (ôn 越来越 bài 6); 吃下去 = cứ ăn tiếp.' },
+  { pre: '多吃水果，多运动，身体才会', blank: '健康', post: '。', hint: '(khoẻ mạnh)', ans: '健康', exp: '身体健康 = cơ thể khoẻ mạnh; 才 = mới (ôn bài 3).' },
+  { pre: '妈妈每次打电话都问我吃得好不好、睡得好不好，她很', blank: '关心', post: '我。', hint: '(quan tâm)', ans: '关心', exp: '关心 + người = quan tâm ai (không cần 到 hay 对).' },
+  { pre: '外面很冷，出门的时候多穿点儿衣服，', blank: '注意', post: '身体。', hint: '(chú ý)', ans: '注意', exp: '注意身体 = giữ gìn sức khoẻ, chú ý sức khoẻ.' },
+  { pre: '他昨天还好好的，今天怎么', blank: '突然', post: '发烧了？', hint: '(đột nhiên)', ans: '突然', exp: '突然 + V = đột nhiên; dùng cho việc xảy ra bất ngờ.' },
+  { pre: '孩子晚上十点了还没回家，妈妈非常', blank: '担心', post: '。', hint: '(lo lắng)', ans: '担心', exp: '担心 = lo lắng (vì sợ có chuyện không hay); 关心 = quan tâm.' },
+  { pre: '你的腿疼了一个星期了，', blank: '得', post: '去医院看看。', hint: '(phải — děi)', ans: '得', exp: '得 (děi) + V = phải; khẩu ngữ, nghĩa giống 必须 nhưng nhẹ hơn.' },
+  { pre: '从我家到体育馆，走路', blank: '差不多', post: '要二十分钟。', hint: '(khoảng, gần như)', ans: '差不多', exp: '差不多 + số lượng = khoảng chừng, xấp xỉ.' },
+  { pre: '这种颜色我不太喜欢，有', blank: '其他', post: '颜色的吗？', hint: '(khác)', ans: '其他', exp: '其他 + danh từ = … khác; 其他颜色 = màu khác.' },
+  { pre: '他已经迟到半个小时了，咱们不等', blank: '下去', post: '了，先走吧。', hint: '(tiếp)', ans: '下去', exp: 'V + 下去 = tiếp tục việc đang làm: 不等下去了 = không chờ tiếp nữa; ôn 迟到半个小时了 (thời gian + 了).' }
 ];
 
 var sortData = [
-  { words: ['我', '每天', '下午', '都', '来', '跑', '一个小时', '步', '。'], ans: '我每天下午都来跑一个小时步。', audio: '我每天下午都来跑一个小时步。' },
-  { words: ['我', '今年', '胖了', '十多斤', '，', '不能', '再', '胖', '下去', '了', '。'], ans: '我今年胖了十多斤，不能再胖下去了。', audio: '我今年胖了十多斤，不能再胖下去了。' },
-  { words: ['昨天', '游', '完', '泳', '以后', '，', '耳朵', '一直', '有点儿', '疼', '。'], ans: '昨天游完泳以后，耳朵一直有点儿疼。', audio: '昨天游完泳以后，耳朵一直有点儿疼。' },
-  { words: ['我', '上次', '来', '医院', '已经', '过去', '差不多', '两年', '了', '。'], ans: '我上次来医院已经过去差不多两年了。', audio: '我上次来医院已经过去差不多两年了。' },
-  { words: ['有', '一种', '药', '需要', '每天', '睡前', '吃', '一次', '。'], ans: '有一种药需要每天睡前吃一次。', audio: '有一种药需要每天睡前吃一次。' },
-  { words: ['医生', '给', '我', '开', '了', '几种', '药', '。'], ans: '医生给我开了几种药。', audio: '医生给我开了几种药。' }
+  { words: ['如果', '你', '再', '这样', '累', '下去', '，', '会', '生病', '的', '。'], ans: '如果你再这样累下去，会生病的。', audio: '如果你再这样累下去，会生病的。' },
+  { words: ['他们', '唱', '了', '两个小时', '歌', '，', '我的', '耳朵', '都', '疼', '了', '。'], ans: '他们唱了两个小时歌，我的耳朵都疼了。', audio: '他们唱了两个小时歌，我的耳朵都疼了。' },
+  { words: ['我们', '搬', '到', '这儿', '已经', '五年', '了', '。'], ans: '我们搬到这儿已经五年了。', audio: '我们搬到这儿已经五年了。' },
+  { words: ['考', '完', '试', '以后', '，', '我们', '一起', '去', '海边', '玩', '吧', '。'], ans: '考完试以后，我们一起去海边玩吧。', audio: '考完试以后，我们一起去海边玩吧。' },
+  { words: ['这个', '病人', '的', '腿', '比', '昨天', '好', '一点儿', '了', '。'], ans: '这个病人的腿比昨天好一点儿了。', audio: '这个病人的腿比昨天好一点儿了。' },
+  { words: ['孩子', '突然', '发烧', '住院', '了', '，', '妈妈', '特别', '担心', '。'], ans: '孩子突然发烧住院了，妈妈特别担心。', audio: '孩子突然发烧住院了，妈妈特别担心。' },
+  { words: ['你', '耳朵', '不', '舒服', '，', '这几天', '别', '去', '游泳', '了', '。'], ans: '你耳朵不舒服，这几天别去游泳了。', audio: '你耳朵不舒服，这几天别去游泳了。' }
 ];
 
 var mcData = [
-  { q: '天中，＿＿常看见你来体育馆。', opts: ['最近', '以后', '突然', '差不多'], ans: 0, exp: '最近常看见你 = dạo này hay thấy bạn (việc đã xảy ra). 以后 chỉ tương lai, 突然 không đi với 常.' },
-  { q: '我下课以后常去打＿＿，你也来玩吧。', opts: ['体育馆', '羽毛球', '习惯', '方法'], ans: 1, exp: '打 + môn bóng: 打羽毛球 = chơi cầu lông. 体育馆 là nơi chốn, không đi sau 打.' },
-  { q: '是不是＿＿了？发烧吗？', opts: ['健康', '开心', '感冒', '关心'], ans: 2, exp: 'Hỏi bệnh: 感冒了？发烧吗？ 健康, 开心, 关心 không phải bệnh.' },
-  { q: '你怎么＿＿住院了？大家都很担心你。', opts: ['差不多', '常', '其他', '突然'], ans: 3, exp: '怎么突然 + V = sao tự dưng lại…; nhập viện là chuyện bất ngờ. 常 không hợp với 住院 ở đây.' },
-  { q: '谢谢关心，我会＿＿的。', opts: ['注意', '担心', '习惯', '希望'], ans: 0, exp: '我会注意的 = tôi sẽ chú ý; đáp lại lời quan tâm, nhắc nhở. 担心 là lo lắng, không hợp để trả lời.' },
-  { q: '有一种药需要每天睡前吃一次，＿＿几种每天吃三次。', opts: ['方法', '其他', '健康', '心里'], ans: 1, exp: '其他几种 = mấy loại khác (còn lại), đối với 一种 ở vế trước.' },
-  { q: '我都记在＿＿了，回家以后一定会多注意。', opts: ['耳朵', '病人', '身体', '心里'], ans: 3, exp: '记在心里 = ghi nhớ trong lòng. 耳朵, 身体 không dùng với 记在.' },
-  { q: 'Chọn câu đúng: "Tôi không thể béo thêm nữa."', opts: ['我不能再胖起来了。', '我不能再胖下去了。', '我不能再下去胖了。', '我不能胖再下去了。'], ans: 1, exp: '下去 (nghĩa mở rộng) = tiếp tục trạng thái đang có: 不能再胖下去了. 起来 là bắt đầu có trạng thái mới.' },
-  { q: 'Chọn câu đúng (từ li hợp): "Hôm qua tôi bơi một tiếng."', opts: ['昨天我游泳了一个小时。', '昨天我一个小时游泳了。', '昨天我游了一个小时泳。', '昨天我游一个小时了泳。'], ans: 2, exp: '游泳 là từ li hợp: thời lượng chen vào giữa: 游了一个小时泳. Không đặt thời lượng sau cả từ 游泳.' },
-  { q: 'Chọn câu đúng: "Anh ấy về nước được hai tháng rồi."', opts: ['他两个月回国了。', '他回两个月国了。', '他回国过两个月。', '他回国两个月了。'], ans: 3, exp: 'Động từ không kéo dài (回国) + thời gian + 了 = đã được bao lâu kể từ lúc việc xảy ra: 回国两个月了.' }
+  { q: 'Bạn của bạn đang kể chuyện thì dừng lại. Bạn muốn nói: “Kể tiếp đi, sau đó thế nào?”', opts: ['你说下去，后来怎么样了？', '你说起来，后来怎么样了？', '你下去说，后来怎么样了？', '你说上去，后来怎么样了？'], ans: 0, exp: 'V + 下去 = tiếp tục việc đang làm: 说下去 = nói tiếp; 下去 đứng sau động từ.' },
+  { q: 'Bơi xong, bạn thấy đói, bạn rủ bạn bè: “Bơi xong rồi, đi ăn chút gì đi.”', opts: ['游泳完了，我们去吃点儿东西吧。', '游完泳了，我们去吃点儿东西吧。', '完游泳了，我们去吃点儿东西吧。', '游泳了完，我们去吃点儿东西吧。'], ans: 1, exp: '游泳 là từ li hợp: bổ ngữ 完 chen vào giữa → 游完泳, không nói 游泳完.' },
+  { q: 'Bạn kể: “Hôm qua tôi chạy bộ bốn mươi phút.”', opts: ['昨天我跑步了四十分钟。', '昨天我四十分钟跑步了。', '昨天我跑了步四十分钟。', '昨天我跑了四十分钟步。'], ans: 3, exp: '跑步 là từ li hợp: thời lượng chen giữa → 跑了四十分钟步.' },
+  { q: 'Bạn giới thiệu anh trai: “Anh tôi kết hôn được năm năm rồi.”', opts: ['我哥哥五年结婚了。', '我哥哥结婚了五年。', '我哥哥结婚五年了。', '我哥哥结婚过五年。'], ans: 2, exp: '结婚 không kéo dài được: V + thời gian + 了 = đã được bao lâu kể từ lúc việc xảy ra → 结婚五年了.' },
+  { q: 'A: “你奶奶出院多长时间了？” — B đáp:', opts: ['她出院已经两个星期了。', '她已经两个星期出院了。', '她出院了两个星期。', '她两个星期了出院。'], ans: 0, exp: '出院 + (已经) + thời gian + 了 = ra viện được bao lâu rồi; thời gian đứng sau cả động từ 出院.' },
+  { q: 'Bạn nhắc em nhỏ: “Trước khi ăn cơm phải rửa tay.”', opts: ['以前吃饭要洗手。', '吃饭以前要洗手。', '吃饭的以前要洗手。', '吃饭以前了要洗手。'], ans: 1, exp: 'Việc/thời điểm + 以前 = trước khi…; 以前 đứng SAU, ngược với tiếng Việt “trước khi ăn”.' },
+  { q: 'Bạn gọi điện cho mẹ khi bị ốm, bạn muốn nói: “Mẹ đừng lo, con đỡ hơn một chút rồi.”', opts: ['妈妈，别关心，我已经好一点儿了。', '妈妈，别注意，我已经好一点儿了。', '妈妈，不担心，我已经好一点儿了。', '妈妈，别担心，我已经好一点儿了。'], ans: 3, exp: '别担心 = đừng lo; 关心 = quan tâm, 注意 = chú ý; khuyên “đừng” dùng 别, không dùng 不.' },
+  { q: 'A: “医生怎么说？” — B: “是感冒，他给我＿＿了三种药。”', opts: ['开', '做', '看', '有'], ans: 0, exp: '开药 = kê thuốc; 给 + người + 开了 + số + 种 + 药.' },
+  { q: 'Câu nào SAI?', opts: ['这个工作很有意思，我想一直做下去。', '我下去要好好学汉语。', '你已经跑了一个小时了，别再跑下去了。', '我们的汉语课很有意思，大家都想学下去。'], ans: 1, exp: '下去 đứng sau động từ (= tiếp tục), không mang nghĩa “từ nay về sau”; phải nói 以后我要好好学汉语.' },
+  { q: 'A: “好久不见，你＿＿怎么样？” — B: “挺好的，就是有点儿忙。”', opts: ['以后', '最近', '其他', '马上'], ans: 1, exp: '最近 = dạo này (khoảng thời gian vừa qua đến nay); 以后 = sau này.' },
+  { q: 'Bạn nằm viện, các bạn cùng lớp đến thăm. Bạn nói: “Các bạn đến thăm, trong lòng mình vui lắm.”', opts: ['你们来看我，我很心里开心。', '你们来看我，我心里是开心。', '你们来看我，我心里很开心。', '你们来看我，我开心心里。'], ans: 2, exp: '心里 + 很 + tính từ: 心里很开心; không thêm 是 trước tính từ.' },
+  { q: 'Bác sĩ dặn: “Thuốc này uống nửa tiếng sau bữa ăn.”', opts: ['这种药半个小时饭后吃。', '这种药后饭半个小时吃。', '这种药饭半个小时后吃。', '这种药饭后半个小时吃。'], ans: 3, exp: '饭后 = sau bữa ăn; 饭后 + 半个小时 = nửa tiếng sau bữa ăn.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng V + 下去, từ li hợp (游完泳, 跑……步), thời gian + 了 (来中国两年了), ……以前 / 以后 và các từ về sức khoẻ.',
   questions: [
     {
-      q_zh: '陈天中每天下午去体育馆做什么？',
-      q_vn: 'Chiều nào Trần Thiên Trung cũng đến nhà thi đấu để làm gì?',
-      hint: '他每天下午都去体育馆……',
-      sample: '他每天下午都去体育馆跑一个小时步。',
-      sample_vn: 'Chiều nào anh ấy cũng đến nhà thi đấu chạy bộ một tiếng.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. Từ li hợp 跑步: thời lượng chen giữa → 跑一个小时步 (ngữ pháp 2).'
+      q_zh: '学汉语很累吧？你还会学下去吗？为什么？',
+      q_vn: 'Học tiếng Trung mệt lắm nhỉ? Bạn còn học tiếp không? Vì sao?',
+      hint: '会，虽然……，但是……，我会……下去。',
+      sample: '会，虽然有时候很累，但是我觉得汉语越来越有意思，以后我会一直学下去。',
+      sample_vn: 'Có, tuy có lúc rất mệt nhưng tôi thấy tiếng Trung ngày càng thú vị, sau này tôi sẽ học tiếp mãi.',
+      note: 'V + 下去 = tiếp tục; ôn 越来越 (bài 6).'
     },
     {
-      q_zh: '陈天中羽毛球打得怎么样？',
-      q_vn: 'Trần Thiên Trung đánh cầu lông thế nào?',
-      hint: '他说自己打得……，所以……',
-      sample: '他说自己羽毛球打得不怎么样，所以李文要教他。',
-      sample_vn: 'Anh ấy nói mình đánh cầu lông không giỏi lắm, nên Lý Văn sẽ dạy anh ấy.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 不怎么样 = không tốt lắm (khẩu ngữ); 打得…… bổ ngữ trạng thái (HSK2 Bài 7); 自己 (HSK2 Bài 3).'
+      q_zh: '你每天运动吗？每次运动多长时间？',
+      q_vn: 'Bạn có vận động mỗi ngày không? Thường vận động bao lâu?',
+      hint: '我每天……跑……步／游……泳。',
+      sample: '我每天下了班都去跑半个小时步，星期六还常去游一个小时泳。',
+      sample_vn: 'Ngày nào tan làm tôi cũng đi chạy bộ nửa tiếng, thứ Bảy còn hay đi bơi một tiếng.',
+      note: 'Từ li hợp: thời lượng chen giữa → 跑半个小时步, 游一个小时泳.'
     },
     {
-      q_zh: '陈天中是什么时候开始不舒服的？',
-      q_vn: 'Trần Thiên Trung bắt đầu thấy khó chịu từ lúc nào?',
-      hint: '他是昨天……以后开始不舒服的。',
-      sample: '他是昨天游完泳以后开始不舒服的，耳朵一直有点儿疼。',
-      sample_vn: 'Anh ấy bắt đầu khó chịu từ hôm qua sau khi bơi xong, tai cứ hơi đau.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 是……的 nhấn mạnh thời gian (HSK2 Bài 1); 游完泳以后 — từ li hợp + ……以后.'
+      q_zh: '你和你的好朋友认识多长时间了？',
+      q_vn: 'Bạn và người bạn thân nhất quen nhau bao lâu rồi? Quen nhau khi nào?',
+      hint: '我们认识……了，是……的时候认识的。',
+      sample: '我们认识差不多八年了，是上初中的时候认识的。',
+      sample_vn: 'Chúng tôi quen nhau gần tám năm rồi, quen từ hồi học cấp hai.',
+      note: 'Thời gian + 了; 是……的 nhấn mạnh thời gian (HSK2); 初中 (bài 3).'
     },
     {
-      q_zh: '陈天中为什么住院了？',
-      q_vn: 'Vì sao Trần Thiên Trung phải nằm viện?',
-      hint: '因为他的腿……，医生说……',
-      sample: '因为他的腿疼了几个星期了，医生说需要住院做检查。',
-      sample_vn: 'Vì chân anh ấy đau mấy tuần rồi, bác sĩ nói cần nằm viện làm kiểm tra.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. 疼了几个星期了 — bổ ngữ thời lượng; 需要 (ôn HSK3 Bài 3).'
+      q_zh: '睡觉以前，你常做什么？',
+      q_vn: 'Trước khi đi ngủ, bạn thường làm gì?',
+      hint: '睡觉以前，我常……，有时候……',
+      sample: '睡觉以前，我常看一会儿书，有时候也听听音乐。',
+      sample_vn: 'Trước khi ngủ, tôi thường đọc sách một lát, có lúc cũng nghe chút nhạc.',
+      note: '……以前 đứng sau việc; 常 + V; 听听 (lặp động từ).'
     },
     {
-      q_zh: '医生给陈天中开的药应该怎么吃？',
-      q_vn: 'Thuốc bác sĩ kê cho Trần Thiên Trung phải uống thế nào?',
-      hint: '有一种药……，其他几种……',
-      sample: '有一种药每天睡前吃一次，其他几种每天吃三次，饭后吃。',
-      sample_vn: 'Có một loại thuốc mỗi ngày uống một lần trước khi ngủ, mấy loại khác mỗi ngày uống ba lần, sau bữa ăn.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 睡前 / 饭后 — cấu trúc ……前 / 后 (ngữ pháp 4).'
-    },
-    {
-      q_zh: '你有哪些健康的生活习惯？',
-      q_vn: 'Bạn có những thói quen sống lành mạnh nào?',
-      hint: '我每天……，还常……',
-      sample: '我每天早上都跑半个小时步，晚上十一点以前睡觉，还常喝水，很少吃方便面。',
-      sample_vn: 'Sáng nào tôi cũng chạy bộ nửa tiếng, tối ngủ trước 11 giờ, còn hay uống nước, ít khi ăn mì ăn liền.',
-      note: 'Câu hỏi Khởi động của sách. 跑……步 (từ li hợp); ……以前 (ngữ pháp 4); 方便面 (ôn HSK3 Bài 2).'
-    },
-    {
-      q_zh: '身体不舒服的时候，你会怎么办？你会去看医生吗？',
-      q_vn: 'Khi cơ thể không khoẻ, bạn sẽ làm gì? Bạn có đi khám bác sĩ không?',
-      hint: '如果只是……，我会……；如果……，我就……',
-      sample: '如果只是有点儿感冒，我会多喝热水，好好睡一觉。如果发高烧，我就一定去医院看医生。',
-      sample_vn: 'Nếu chỉ hơi cảm thì tôi sẽ uống nhiều nước ấm, ngủ một giấc thật ngon. Nếu sốt cao thì tôi nhất định đi bệnh viện khám.',
-      note: 'Câu hỏi Khởi động của sách. 如果……就…… (ôn HSK3 Bài 6); 睡一觉、发高烧 — từ li hợp.'
-    },
-    {
-      q_zh: '你住过院吗？住了几天？为什么？',
-      q_vn: 'Bạn đã từng nằm viện chưa? Nằm mấy ngày? Vì sao?',
-      hint: '我住过……次院。……／我没住过院……',
-      sample: '我住过一次院。小时候我发高烧，在医院住了三天院。出院以后，我就很注意身体了。',
-      sample_vn: 'Tôi từng nằm viện một lần. Hồi nhỏ tôi sốt cao, nằm viện ba ngày. Ra viện xong tôi rất chú ý giữ gìn sức khoẻ.',
-      note: 'Câu hỏi Hoạt động trên lớp của sách. 住过一次院、住了三天院 — từ li hợp (ngữ pháp 2); 小时候 (HSK2 Bài 12).'
+      q_zh: '你感冒的时候会做些什么？',
+      q_vn: 'Khi bị cảm, bạn sẽ làm những gì?',
+      hint: '感冒的时候，我会……；如果发烧了，我就……',
+      sample: '感冒的时候，我会多喝热水，多休息；如果发烧了，我就去医院看病。',
+      sample_vn: 'Khi bị cảm, tôi sẽ uống nhiều nước nóng, nghỉ ngơi nhiều; nếu sốt thì tôi đi bệnh viện khám.',
+      note: 'Ôn 如果……就…… (bài 6); 看病 = đi khám bệnh.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Năm nay mình tăng hơn mười cân, không thể béo thêm nữa.', zh: '我今年胖了十多斤，不能再胖下去了。', py: 'Wǒ jīnnián pàngle shí duō jīn, bù néng zài pàng xiàqu le.' },
-  { vi: 'Hôm qua sau khi bơi xong, tai mình cứ hơi đau.', zh: '昨天游完泳以后，耳朵一直有点儿疼。', py: 'Zuótiān yóuwán yǒng yǐhòu, ěrduo yìzhí yǒudiǎnr téng.' },
-  { vi: 'Lần trước mình đến bệnh viện đã cách đây gần hai năm rồi.', zh: '我上次来医院已经过去差不多两年了。', py: 'Wǒ shàng cì lái yīyuàn yǐjīng guòqu chàbuduō liǎng nián le.' },
-  { vi: 'Có một loại thuốc mỗi ngày cần uống một lần trước khi ngủ.', zh: '有一种药需要每天睡前吃一次。', py: 'Yǒu yì zhǒng yào xūyào měi tiān shuì qián chī yí cì.' },
-  { vi: 'Mình về nhà ngủ một giấc trước đã, có lẽ nghỉ ngơi một chút là khỏi.', zh: '我先回去睡一觉，可能休息休息就好了。', py: 'Wǒ xiān huíqu shuì yí jiào, kěnéng xiūxi xiūxi jiù hǎo le.' }
+  { vi: 'Tôi học tiếng Trung được gần hai năm rồi.', zh: '我学汉语差不多两年了。', py: 'Wǒ xué Hànyǔ chàbuduō liǎng nián le.' },
+  { vi: 'Cách này rất tốt, bạn nên dùng tiếp.', zh: '这个方法很好，你应该一直用下去。', py: 'Zhège fāngfǎ hěn hǎo, nǐ yīnggāi yìzhí yòng xiàqu.' },
+  { vi: 'Ăn cơm xong chúng ta đi xem phim nhé.', zh: '吃完饭我们去看电影吧。', py: 'Chīwán fàn wǒmen qù kàn diànyǐng ba.' },
+  { vi: 'Sau khi ra viện, bạn phải chú ý nghỉ ngơi.', zh: '出院以后，你得注意休息。', py: 'Chūyuàn yǐhòu, nǐ děi zhùyì xiūxi.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Chiều nào mình cũng đến đây chạy bộ một tiếng.', zh: '我每天下午都来跑一个小时步。', py: 'Wǒ měi tiān xiàwǔ dōu lái pǎo yí ge xiǎoshí bù.' },
-  { vi: 'Trông bạn chẳng giống bệnh nhân chút nào cả.', zh: '你看起来一点儿也不像病人。', py: 'Nǐ kàn qǐlai yìdiǎnr yě bú xiàng bìngrén.' },
-  { vi: 'Mình đưa bạn đến bệnh viện để bác sĩ kiểm tra nhé.', zh: '我送你去医院，让医生检查一下吧。', py: 'Wǒ sòng nǐ qù yīyuàn, ràng yīshēng jiǎnchá yíxià ba.' },
-  { vi: 'Ngoài uống thuốc ra, bác sĩ còn nói điều quan trọng nhất là nghỉ ngơi nhiều.', zh: '除了吃药，医生还说最重要的是多休息。', py: 'Chúle chī yào, yīshēng hái shuō zuì zhòngyào de shì duō xiūxi.' },
-  { vi: 'Có người đến thăm, mình vui hơn nhiều rồi.', zh: '有人来看我，我就开心多了。', py: 'Yǒu rén lái kàn wǒ, wǒ jiù kāixīn duō le.' }
+  { vi: 'Dạo này hình như bạn béo hơn trước rồi.', zh: '你最近好像比以前胖了。', py: 'Nǐ zuìjìn hǎoxiàng bǐ yǐqián pàng le.' },
+  { vi: 'Anh ấy rất quan tâm đến sức khoẻ của bố mẹ.', zh: '他很关心爸爸妈妈的身体。', py: 'Tā hěn guānxīn bàba māma de shēntǐ.' },
+  { vi: 'Bạn có cách nào hay để không bị cảm không?', zh: '你有没有不感冒的好方法？', py: 'Nǐ yǒu méiyǒu bù gǎnmào de hǎo fāngfǎ?' }
 ];

@@ -2493,159 +2493,151 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 bài trước
 var listenData = [
   {
-    audio: '明天我们去公园坐船吧？明天是工作日，公园里人应该不多。好啊，可是我明天上午有课。那咱们或者明天下午去，或者后天去，你决定吧。那就明天下午去吧。',
+    audio: '刚才还是晴天，现在突然刮起风来了，可能一会儿就要下雨了。',
     questions: [
-      { q: '他们想去公园做什么？', opts: ['跑步', '坐船', '拍照'], ans: 1 },
-      { q: '他们打算什么时候去公园？', opts: ['明天上午', '明天下午', '后天'], ans: 1 }
+      { q: 'Thời tiết thay đổi thế nào?', opts: ['Đang mưa thì tạnh', 'Vừa nãy còn nắng, giờ bỗng nổi gió', 'Mưa to suốt từ sáng'], ans: 1, exp: '刚才还是晴天 = vừa nãy còn nắng; 刮起风来了 = bắt đầu nổi gió (起 + 风 + 来).' }
     ]
   },
   {
-    audio: '今天早上出门的时候还是大晴天，所以我没带伞。可是下午突然刮起风来了，雨也下起来了。我的同学把她的伞借给了我，我才能回家。',
+    audio: '我们班的同学都去过那个公园，就我没去过。听说春天的时候，那里的花特别多。',
     questions: [
-      { q: '说话人早上为什么没带伞？', opts: ['早上是晴天', '伞丢了', '伞借给别人了'], ans: 0 },
-      { q: '谁借给说话人一把伞？', opts: ['老师', '妈妈', '同学'], ans: 2 }
+      { q: 'Ai chưa đến công viên đó?', opts: ['Cả lớp', 'Cô giáo', 'Chỉ người nói'], ans: 2, exp: '就我没去过 = chỉ có mình tôi chưa đi; 就 + người = chỉ riêng (ngoại lệ).' },
+      { q: 'Công viên đó nhiều hoa nhất vào mùa nào?', opts: ['Mùa xuân', 'Mùa hè', 'Mùa thu'], ans: 0, exp: '春天的时候，那里的花特别多 = mùa xuân hoa ở đó đặc biệt nhiều.' }
     ]
   },
   {
-    audio: '我是越南人，来北京已经一年多了。北京的冬天特别冷，开始的时候我很不习惯。这一年多住下来，我已经习惯了，也开始喜欢下雪了。我觉得北京的秋天最漂亮，树上的叶子都变成了红色、黄色。',
+    audio: '新闻里说，这个星期每天都会下雨，就星期五是晴天。',
     questions: [
-      { q: '说话人来北京多长时间了？', opts: ['半年', '一年多', '两年多'], ans: 1 },
-      { q: '说话人觉得北京哪个季节最漂亮？', opts: ['春天', '秋天', '冬天'], ans: 1 }
+      { q: 'Bản tin nói thời tiết tuần này thế nào?', opts: ['Ngày nào cũng nắng', 'Ngày nào cũng mưa, chỉ thứ Sáu nắng', 'Chỉ thứ Sáu có mưa'], ans: 1, exp: '新闻里说 = bản tin nói; 每天都会下雨，就星期五是晴天 = ngày nào cũng mưa, chỉ riêng thứ Sáu nắng.' }
     ]
   },
   {
-    audio: '新闻里说，明天天气会冷起来，晚上还会刮大风。妈妈让我们明天都多穿一件衣服，别感冒了。我们家的人都穿得很多，就爸爸穿得少，他说他一点儿也不冷。',
+    audio: '这个汉语课一共三个月，虽然每天都很累，但是我一次也没请假，终于学下来了。',
     questions: [
-      { q: '新闻里说明天天气怎么样？', opts: ['会热起来', '会冷起来', '会下雨'], ans: 1 },
-      { q: '家里谁穿得少？', opts: ['妈妈', '说话人', '爸爸'], ans: 2 }
+      { q: 'Người nói đã học khoá tiếng Trung đó thế nào?', opts: ['Bỏ giữa chừng', 'Chưa bắt đầu học', 'Đã theo học đến hết'], ans: 2, exp: '学下来了 = đã học trọn (việc tốn thời gian, công sức); 终于 = cuối cùng.' }
+    ]
+  },
+  {
+    audio: '这个星期天我们或者去公园坐船，或者在家看电影，你说呢？',
+    questions: [
+      { q: 'Người nói đề xuất gì cho Chủ nhật?', opts: ['Hoặc đi chèo thuyền, hoặc ở nhà xem phim', 'Chỉ đi công viên', 'Đi xem phim ở rạp'], ans: 0, exp: '或者……，或者…… = hoặc là… hoặc là…: 去公园坐船 hoặc 在家看电影.' }
+    ]
+  },
+  {
+    audio: '我们这儿夏天很长，常常下雨；秋天最舒服，不冷不热，很凉快。',
+    questions: [
+      { q: 'Mùa hè ở đây thế nào?', opts: ['Dài và hay mưa', 'Ngắn và rất nóng', 'Mát mẻ dễ chịu'], ans: 0, exp: '夏天很长，常常下雨 = mùa hè dài, thường xuyên mưa.' },
+      { q: 'Mùa nào dễ chịu nhất?', opts: ['Mùa xuân', 'Mùa đông', 'Mùa thu'], ans: 2, exp: '秋天最舒服，不冷不热，很凉快 = mùa thu dễ chịu nhất, không lạnh không nóng, rất mát.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '刮', right: '大风' },
-  { left: '一把', right: '雨伞' },
-  { left: '这个季节天气', right: '变化很快' },
-  { left: '或者明天去，', right: '或者后天去' },
-  { left: '雨已经', right: '下起来了' },
-  { left: '树上的叶子', right: '变成了红色' }
+  { left: '一把', right: '伞' },
+  { left: '外面刮起了', right: '大风' },
+  { left: '公园里的树', right: '开花了' },
+  { left: '看今天的', right: '新闻' },
+  { left: '下雨了，穿上', right: '雨衣' },
+  { left: '去公园坐', right: '船' },
+  { left: '树上的', right: '叶子' }
 ];
 
 var fillData = [
-  { pre: '突然', blank: '刮', post: '起风来了，可能会下雨。', hint: '(thổi)', ans: '刮', exp: '刮 + 风 — (gió) thổi; 刮起风来 = nổi gió lên (tân ngữ 风 đứng giữa 起 và 来). Câu của sách.' },
-  { pre: '这', blank: '把', post: '雨伞不大不小，可以放在书包里。', hint: '(cái – lượng từ)', ans: '把', exp: '把 — lượng từ cho vật có tay cầm: 一把伞; 不大不小 = vừa phải; 书包 (ôn HSK2 Bài 4). Câu của sách.' },
-  { pre: '我把这件雨衣', blank: '借', post: '给你吧，我开车不需要穿。', hint: '(cho mượn)', ans: '借', exp: '把 + vật + 借给 + người (câu chữ 把 (2) – ôn HSK3 Bài 10); 需要 (ôn HSK3 Bài 3). Câu của sách.' },
-  { pre: '这里的冬天', blank: '常常', post: '下雪吗？——不是，每年就二月雪最多。', hint: '(thường xuyên)', ans: '常常', exp: '常常 + V — thường xuyên; câu đáp dùng 就 chỉ phạm vi (chỉ riêng tháng Hai). Câu của sách.' },
-  { pre: '', blank: '刚才', post: '下大雨了，天气凉快了很多。——没错，每天都能这么凉快就好了。', hint: '(vừa nãy)', ans: '刚才', exp: '刚才 — vừa nãy, đứng đầu câu; Adj + 了很多 = … hơn nhiều. Câu của sách.' },
-  { pre: '这几天天气不好，我怕下午的飞机会晚点。——放心吧，我一直在', blank: '关注', post: '天气，下午是晴天。', hint: '(theo dõi)', ans: '关注', exp: '一直在 + 关注 + 天气 — vẫn luôn theo dõi; 晚点 (ôn HSK3 Bài 4), 一直 (ôn HSK3 Bài 4). Câu của sách.' },
-  { pre: '这里以前是一片草地，现在', blank: '变成', post: '了学校和医院。——是啊，变化真大，都不认识了。', hint: '(trở thành)', ans: '变成', exp: '变成 + danh từ — biến thành; 以前 (ôn HSK3 Bài 6). 草地 = bãi cỏ. Câu của sách.' },
-  { pre: '下了一晚上的雪，外面全都', blank: '变', post: '白了。——是的，太漂亮了！', hint: '(trở nên)', ans: '变', exp: '变 + tính từ (白) + 了 — trở nên trắng xoá; 变成 thì phải đi với danh từ (变成白色). Câu của sách.' }
+  { pre: '这次放假，我', blank: '或者', post: '回家看爷爷奶奶，或者跟朋友去海边玩，还没决定。', hint: '(hoặc là)', ans: '或者', exp: '或者……，或者…… = hoặc là… hoặc là… (câu trần thuật, chưa chọn); ôn 决定 (bài 7), 海 (bài 4).' },
+  { pre: '妈妈一进门，小狗就高兴地叫', blank: '起来', post: '了。', hint: '(bắt đầu …)', ans: '起来', exp: 'V + 起来 = bắt đầu làm gì: 叫起来了 = bắt đầu sủa; ôn 一……就…… (HSK2), 地 + động từ.' },
+  { pre: '这个月我们这儿', blank: '就', post: '下了一次雨，花和树都很需要水。', hint: '(chỉ)', ans: '就', exp: '就 + V + 了 + số lượng = chỉ … (cho là ít); ôn 需要 (bài 3).' },
+  { pre: '她每天写一页汉字，三个月写', blank: '下来', post: '，字写得好看多了。', hint: '(… đến cùng — sau cả quá trình)', ans: '下来', exp: 'V + 下来 = làm xong / kiên trì đến cùng một việc tốn thời gian, công sức; ôn 页 (bài 10).' },
+  { pre: '', blank: '刚才', post: '经理来找过你，你去他办公室看看吧。', hint: '(vừa nãy)', ans: '刚才', exp: '刚才 = lúc nãy, danh từ thời gian, đứng đầu câu được; ôn 经理 (bài 11).' },
+  { pre: '我想找一个安静的', blank: '地方', post: '看书，你知道哪儿好吗？', hint: '(nơi, chỗ)', ans: '地方', exp: '一个安静的地方 = một nơi yên tĩnh; ôn 安静 (bài 6).' },
+  { pre: '我的笔记本电脑坏了，能', blank: '借', post: '你的用一下吗？', hint: '(mượn)', ans: '借', exp: '借 + 你的 + 用一下 = mượn của bạn dùng một lát; ôn 笔记本 (bài 11).' },
+  { pre: '妈妈很', blank: '关注', post: '我的学习，每次考完试都要问我的成绩。', hint: '(quan tâm, theo dõi)', ans: '关注', exp: '关注 + việc = quan tâm, theo dõi sát; ôn 成绩 (bài 9).' },
+  { pre: '一年没见，你', blank: '变', post: '了很多，跟照片上很不一样了。', hint: '(thay đổi)', ans: '变', exp: '变 = thay đổi, trở nên khác; 变了很多 = thay đổi nhiều.' },
+  { pre: '天气太冷的时候，水就会', blank: '变成', post: '冰。', hint: '(biến thành)', ans: '变成', exp: '变成 + danh từ = biến thành; ôn 冰 (bài 7).' },
+  { pre: '下过雨以后，天气', blank: '凉快', post: '多了，我们去街上走一走吧。', hint: '(mát mẻ)', ans: '凉快', exp: 'Tính từ + 多了 = … hơn nhiều: 凉快多了 = mát hơn nhiều.' },
+  { pre: '这个公园一年', blank: '四季', post: '都很漂亮，春天看花，秋天看叶子。', hint: '(bốn mùa)', ans: '四季', exp: '一年四季 = quanh năm, cả bốn mùa; 都 tổng kết “mùa nào cũng”.' }
 ];
 
 var sortData = [
-  { words: ['或者', '明天', '去', '，', '或者', '后天', '去', '。'], ans: '或者明天去，或者后天去。', audio: '或者明天去，或者后天去。' },
-  { words: ['怎么', '突然', '就', '刮', '起', '风', '来', '了', '？'], ans: '怎么突然就刮起风来了？', audio: '怎么突然就刮起风来了？' },
-  { words: ['雨', '已经', '下起来了', '，', '咱们', '快点儿', '走', '吧', '。'], ans: '雨已经下起来了，咱们快点儿走吧。', audio: '雨已经下起来了，咱们快点儿走吧。' },
-  { words: ['我', '每天', '书包里', '都', '放着', '雨伞', '，', '就', '今天', '没', '带', '。'], ans: '我每天书包里都放着雨伞，就今天没带。', audio: '我每天书包里都放着雨伞，就今天没带。' },
-  { words: ['北京', '常常', '下雪', '，', '但', '听说', '今年', '就', '下了', '一次', '。'], ans: '北京常常下雪，但听说今年就下了一次。', audio: '北京常常下雪，但听说今年就下了一次。' },
-  { words: ['这', '一年多', '住', '下来', '，', '我', '还是', '更', '喜欢', '北京的', '四季', '。'], ans: '这一年多住下来，我还是更喜欢北京的四季。', audio: '这一年多住下来，我还是更喜欢北京的四季。' }
+  { words: ['我们', '或者', '今天晚上', '走', '，', '或者', '明天早上', '走', '。'], ans: '我们或者今天晚上走，或者明天早上走。', audio: '我们或者今天晚上走，或者明天早上走。', alt: ['我们或者明天早上走，或者今天晚上走。'] },
+  { words: ['孩子们', '一', '下课', '就', '唱', '起', '歌', '来', '了', '。'], ans: '孩子们一下课就唱起歌来了。', audio: '孩子们一下课就唱起歌来了。' },
+  { words: ['同学们', '都', '穿', '了', '雨衣', '，', '就', '他', '一个人', '没', '穿', '。'], ans: '同学们都穿了雨衣，就他一个人没穿。', audio: '同学们都穿了雨衣，就他一个人没穿。' },
+  { words: ['这几个月', '学', '下来', '，', '我的', '汉语', '水平', '提高', '了', '很多', '。'], ans: '这几个月学下来，我的汉语水平提高了很多。', audio: '这几个月学下来，我的汉语水平提高了很多。' },
+  { words: ['冬天', '这里', '常常', '刮', '大风', '。'], ans: '冬天这里常常刮大风。', audio: '冬天这里常常刮大风。', alt: ['这里冬天常常刮大风。'] },
+  { words: ['每到', '春天', '，', '这条', '街', '上', '的', '花', '都', '开', '了', '。'], ans: '每到春天，这条街上的花都开了。', audio: '每到春天，这条街上的花都开了。' },
+  { words: ['你', '能', '借', '给', '我', '一把', '伞', '吗', '？'], ans: '你能借给我一把伞吗？', audio: '你能借给我一把伞吗？' },
+  { words: ['几年', '不见', '，', '这里', '已经', '变成', '了', '一个', '大', '公园', '。'], ans: '几年不见，这里已经变成了一个大公园。', audio: '几年不见，这里已经变成了一个大公园。' }
 ];
 
 var mcData = [
-  { q: '今天是＿＿，公园里人应该不多。', opts: ['工作日', '季节', '新闻', '地方'], ans: 0, exp: '工作日 = ngày làm việc, nên công viên ít người. 季节, 新闻 không hợp.' },
-  { q: '我车里有一＿＿伞和一件雨衣。', opts: ['件', '条', '把', '张'], ans: 2, exp: '把 còn là lượng từ cho vật có tay cầm: 一把伞. 件 dùng cho áo, 条 cho vật dài.' },
-  { q: '好像＿＿里说今天有雨。', opts: ['季节', '新闻', '雨衣', '叶子'], ans: 1, exp: '新闻里说 = trên bản tin nói. 季节, 叶子 không "nói" được.' },
-  { q: '我今天下午有课，不能去太远的＿＿。', opts: ['刚才', '常常', '季节', '地方'], ans: 3, exp: '太远的地方 = nơi quá xa. 刚才, 常常 là từ chỉ thời gian/tần suất.' },
-  { q: '夏天白天很热，但是晚上比较＿＿。', opts: ['凉快', '变化', '关注', '刚才'], ans: 0, exp: '晚上比较凉快 — đối lập với ban ngày nóng. 变化, 关注 không phải tính từ.' },
-  { q: '秋天树上的叶子都＿＿了红色、黄色。', opts: ['变', '变成', '变化', '借'], ans: 1, exp: '变成 + kết quả = biến thành: 变成了红色、黄色. 变化 không mang tân ngữ kết quả kiểu này.' },
-  { q: '我没＿＿过北京的天气，但是新闻里说过……', opts: ['开花', '刮', '关注', '借'], ans: 2, exp: '关注 + sự việc = quan tâm, theo dõi: 关注天气. 开花, 刮 không mang tân ngữ 天气.' },
-  { q: 'Chọn câu đúng: "Hoặc là ngày mai, hoặc là ngày kia, cô sẽ gọi điện cho em."', opts: ['还是明天去，还是后天去，我给你打电话。', '或者明天去，或者后天去，我给你打电话。', '明天或者去，后天或者去，我给你打电话。', '或者明天去，后天去或者，我给你打电话。'], ans: 1, exp: '或者…或者… = hoặc… hoặc… trong câu trần thuật. 还是 dùng cho câu hỏi lựa chọn.' },
-  { q: 'Chọn câu đúng: "Sao bỗng nhiên lại nổi gió thế?"', opts: ['怎么突然就刮风起来了？', '怎么突然就起来刮风了？', '怎么突然就刮风来起了？', '怎么突然就刮起风来了？'], ans: 3, exp: 'Bổ ngữ 起来 có tân ngữ: V + 起 + tân ngữ + 来 → 刮起风来.' },
-  { q: '"我每天书包里都放着雨伞，就今天没带。" — 「就」 ở đây biểu thị gì?', opts: ['Ngay lập tức (sắp xảy ra)', 'Số lượng nhiều', 'Tình huống ngoại lệ — chỉ riêng hôm nay', 'Thời gian sớm hơn dự kiến'], ans: 2, exp: '就 ở đây = chỉ (riêng): ngày nào cũng mang ô, chỉ hôm nay không mang → tình huống ngoại lệ.' }
+  { q: 'Bạn rủ bạn: “Thứ Bảy mình hoặc đi chèo thuyền, hoặc đi leo núi, bạn chọn đi.”', opts: ['星期六我们还是去坐船，还是去爬山，你选吧。', '星期六我们或者去坐船，还是去爬山，你选吧。', '星期六我们或者去坐船，或者去爬山，你选吧。', '星期六我们去坐船或者，去爬山或者，你选吧。'], ans: 2, exp: 'Câu trần thuật nêu hai khả năng: 或者……，或者……; 还是 dùng để hỏi; 或者 đứng trước phần được chọn.' },
+  { q: 'Đang chơi bóng ngoài sân thì trời bắt đầu mưa, bạn kể lại:', opts: ['我们正在外面打球，突然下雨起来了。', '我们正在外面打球，突然下起雨来了。', '我们正在外面打球，突然下起来雨了。', '我们正在外面打球，突然起来下雨了。'], ans: 1, exp: 'Động từ có tân ngữ + 起来: tân ngữ chen giữa 起 và 来 → 下起雨来了.' },
+  { q: 'A: “你感冒好点儿了吗？” — B: “吃了一个星期的药，身体＿＿。”', opts: ['好下来了', '好起了来', '起来好了', '好起来了'], ans: 3, exp: 'Tính từ + 起来 + 了 = bắt đầu chuyển sang trạng thái mới: 好起来了 = khoẻ lên rồi.' },
+  { q: 'Bạn muốn nói: “Cả lớp đều thích mùa hè, chỉ có mình tôi thích mùa đông.”', opts: ['我们班同学都喜欢夏天，就我喜欢冬天。', '我们班同学都喜欢夏天，才我喜欢冬天。', '我们班同学都喜欢夏天，只我喜欢冬天。', '我们班同学都喜欢夏天，我都喜欢冬天。'], ans: 0, exp: '……都……，就 + 我 + …… = mọi người đều…, chỉ riêng tôi (ngoại lệ). 才 / 只 không đứng trước chủ ngữ như vậy.' },
+  { q: 'A: “昨天晚上你学了多长时间汉语？” — B: “太累了，＿＿。”', opts: ['我学了就半个小时', '我就学了半个小时', '我就半个小时学了', '我学就了半个小时'], ans: 1, exp: '就 đứng trước động từ: 就 + 学了 + 半个小时 = chỉ học có nửa tiếng (cho là ít).' },
+  { q: 'Bạn kể: “Cuộc thi chạy 3000 mét, không ngờ tôi lại chạy hết được.”', opts: ['三千米的比赛，没想到我跑起来了。', '三千米的比赛，没想到我下来跑了。', '三千米的比赛，没想到我跑下来了。', '三千米的比赛，没想到我跑上去了。'], ans: 2, exp: '跑下来 = chạy được đến cùng (việc tốn sức). 跑起来 = bắt đầu chạy — sai nghĩa.' },
+  { q: '“＿＿外面还在下雨，现在已经出太阳了。”', opts: ['常常', '刚才', '以后', '一直'], ans: 1, exp: '刚才 = vừa nãy, đối lập với 现在. 常常 = thường, 以后 = sau này, 一直 = luôn luôn.' },
+  { q: 'A: “我的伞坏了。” — B: “我这儿还有一＿，你拿去用吧。”', opts: ['件', '张', '把', '条'], ans: 2, exp: 'Lượng từ 把 dùng cho vật có tay cầm: 一把伞. 件 cho áo, 张 cho vật phẳng, 条 cho vật dài.' },
+  { q: '“这个城市这几年＿＿很大，街上多了很多新饭馆。”', opts: ['变', '变成', '变化', '关注'], ans: 2, exp: '变化很大 = thay đổi lớn (变化 làm chủ ngữ/danh từ). 变 không đi với 很大 như vậy; 变成 cần danh từ sau.' },
+  { q: 'Câu nào SAI?', opts: ['我的头发变长了。', '外面的天气慢慢变冷了。', '他变成很高了。', '那个小饭馆变成了一家大饭馆。'], ans: 2, exp: '变成 + danh từ; với tính từ phải dùng 变 + tính từ: 他变高了.' },
+  { q: '“下雨了，我没带伞，只能跟同事＿一把。”', opts: ['还', '借', '给', '送'], ans: 1, exp: '跟 + người + 借 + vật = mượn của ai. 还 = trả lại, 送 = tặng, 给 không đi sau 跟 như vậy.' },
+  { q: 'A: “星期六去公园吧？” — B: “星期六人太多了，我们＿＿去吧。”', opts: ['季节', '工作日', '新闻', '四季'], ans: 1, exp: '工作日 = ngày làm việc (thứ Hai–thứ Sáu), công viên ít người hơn.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 或者……，或者……, 起来, 就 (= chỉ), V + 下来 và từ về thời tiết, bốn mùa.',
   questions: [
     {
-      q_zh: '上周王一飞去公园做什么了？',
-      q_vn: 'Tuần trước Vương Nhất Phi đi công viên làm gì?',
-      hint: '上周她去公园……了，公园里的……',
-      sample: '上周王一飞去公园坐船了，她说公园里的花也开了。',
-      sample_vn: 'Tuần trước Vương Nhất Phi đi công viên chèo thuyền, cô ấy nói hoa trong công viên cũng nở rồi.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. Câu liên động 去公园坐船 (ôn HSK3 Bài 7).'
+      q_zh: '你们那儿一年有几个季节？哪个季节最舒服？',
+      q_vn: 'Quê bạn một năm có mấy mùa? Mùa nào dễ chịu nhất?',
+      hint: '我们那儿……，……最舒服，因为……',
+      sample: '我们那儿一年有四个季节，我觉得春天最舒服，那时候天气不冷，风也不大，公园里的花都开了。',
+      sample_vn: 'Quê tôi một năm có bốn mùa, tôi thấy mùa xuân dễ chịu nhất, lúc đó trời không lạnh, gió cũng không to, hoa trong công viên đều nở.',
+      note: '季节, 春天, 风; ôn 那时候.'
     },
     {
-      q_zh: '她们可能什么时候去公园？',
-      q_vn: 'Họ có thể đi công viên vào lúc nào?',
-      hint: '她们或者……，或者……',
-      sample: '她们或者明天去，或者后天去，王老师会给白家月打电话。',
-      sample_vn: 'Họ hoặc là đi ngày mai, hoặc là ngày kia, cô Vương sẽ gọi điện cho Bạch Gia Nguyệt.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 或者……，或者…… của bài này; 给 + người + 打电话 (ôn HSK1 Bài 13).'
+      q_zh: '下个星期天你有什么打算？',
+      q_vn: 'Chủ nhật tới bạn định làm gì?',
+      hint: '我或者……，或者……',
+      sample: '我或者去公园跑步，或者在家好好休息，要看那天的天气怎么样。',
+      sample_vn: 'Tôi hoặc là ra công viên chạy bộ, hoặc là ở nhà nghỉ ngơi cho khoẻ, còn phải xem hôm đó thời tiết thế nào.',
+      note: '或者……，或者……; ôn 打算 (bài 6).'
     },
     {
-      q_zh: '她们现在要做什么？为什么？',
-      q_vn: 'Bây giờ họ phải làm gì? Tại sao?',
-      hint: '她们要……，因为雨已经……',
-      sample: '她们要快点儿走，因为雨已经下起来了。白家月没带伞，王老师可以把车里的伞借给她。',
-      sample_vn: 'Họ phải đi nhanh lên, vì trời đã bắt đầu mưa. Bạch Gia Nguyệt không mang ô, cô Vương có thể cho cô ấy mượn chiếc ô trong xe.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 因为 (ôn HSK2 Bài 4); 下起来 (bổ ngữ xu hướng 起来); 把……借给…… (ôn HSK3 Bài 10).'
+      q_zh: '学了这么长时间汉语，你觉得自己有什么变化？',
+      q_vn: 'Học tiếng Trung lâu như vậy, bạn thấy mình có thay đổi gì?',
+      hint: '……学下来，我……',
+      sample: '我学了一年多汉语，一年多学下来，我已经能用汉语跟中国朋友说话了，汉字也写得越来越好看。',
+      sample_vn: 'Tôi học tiếng Trung hơn một năm, hơn một năm học đến giờ, tôi đã có thể nói chuyện với bạn Trung Quốc bằng tiếng Trung, chữ Hán cũng viết ngày càng đẹp.',
+      note: 'V + 下来; 变化; ôn 越来越 (bài 6).'
     },
     {
-      q_zh: '王一飞对什么还不太习惯？',
-      q_vn: 'Vương Nhất Phi vẫn chưa quen lắm với điều gì?',
-      hint: '别的她早就习惯了，就是……',
-      sample: '别的她早就习惯了，就是这里的天气她还不太习惯，她觉得冬天太冷了。',
-      sample_vn: 'Những thứ khác cô ấy đã quen từ lâu, chỉ có thời tiết ở đây là cô ấy vẫn chưa quen lắm, cô thấy mùa đông lạnh quá.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. 习惯 (ôn HSK3 Bài 8); 就是 = chỉ có điều.'
+      q_zh: '你们那儿冬天冷不冷？常常下雪吗？',
+      q_vn: 'Mùa đông ở quê bạn có lạnh không? Có hay có tuyết không?',
+      hint: '我们那儿冬天……，就……',
+      sample: '我们那儿冬天不太冷，一般不下雪，就有一年下过一次小雪，大家都高兴得跑到外面去看。',
+      sample_vn: 'Mùa đông quê tôi không lạnh lắm, thường không có tuyết, chỉ có một năm có tuyết rơi nhẹ một lần, mọi người vui đến mức chạy ra ngoài xem.',
+      note: '冬天, 常常; 就 = chỉ; ôn 一般 (bài 10).'
     },
     {
-      q_zh: '王一飞为什么最不喜欢冬天？',
-      q_vn: 'Vì sao Vương Nhất Phi không thích mùa đông nhất?',
-      hint: '因为北京的冬天不但……，而且……',
-      sample: '因为北京的冬天不但冷，而且风很大。',
-      sample_vn: 'Vì mùa đông Bắc Kinh không chỉ lạnh mà gió còn rất to.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 不但……而且…… (ôn HSK3 Bài 7).'
-    },
-    {
-      q_zh: '对你来说，天气会影响你吗？',
-      q_vn: 'Đối với bạn, thời tiết có ảnh hưởng đến bạn không?',
-      hint: '对我来说，天气……。下雨的时候我……，天气好的时候我……',
-      sample: '对我来说，天气会影响我。下雨的时候我不想出门，天气好的时候我常常去公园跑步。',
-      sample_vn: 'Với tôi, thời tiết có ảnh hưởng. Trời mưa thì tôi không muốn ra ngoài, trời đẹp thì tôi hay ra công viên chạy bộ.',
-      note: 'Câu hỏi Khởi động của sách. 对……来说 (ôn HSK3 Bài 11); 影响 (ôn HSK3 Bài 9); 出门 (ôn HSK2 Bài 15).'
-    },
-    {
-      q_zh: '你愿意生活在一年有两个季节的地方还是有四个季节的地方？',
-      q_vn: 'Bạn thích sống ở nơi một năm có hai mùa hay nơi có bốn mùa?',
-      hint: '我更喜欢有……个季节的地方，因为……',
-      sample: '我更喜欢有四个季节的地方。春天花都开了，秋天叶子变成了红色、黄色，每个季节都不一样，都很漂亮。',
-      sample_vn: 'Tôi thích nơi có bốn mùa hơn. Mùa xuân hoa nở, mùa thu lá chuyển sang đỏ và vàng, mỗi mùa một khác, mùa nào cũng đẹp.',
-      note: 'Câu hỏi Khởi động của sách. 还是 trong câu hỏi lựa chọn (ôn HSK2 Bài 2); 更 (ôn HSK2 Bài 4).'
-    },
-    {
-      q_zh: '你最喜欢哪个季节？为什么？',
-      q_vn: 'Bạn thích mùa nào nhất? Tại sao?',
-      hint: '我最喜欢……，因为……',
-      sample: '我最喜欢秋天，因为秋天不冷不热，很凉快，树上的叶子也变成了红色、黄色，非常漂亮。',
-      sample_vn: 'Tôi thích mùa thu nhất, vì mùa thu không lạnh không nóng, rất mát mẻ, lá trên cây cũng chuyển sang đỏ và vàng, rất đẹp.',
-      note: 'Hoạt động trên lớp của sách (thảo luận về thành phố đang sống). Cấu trúc 不A不B (不冷不热) của bài này; 变成.'
+      q_zh: '你跟别人借过东西吗？借过什么？',
+      q_vn: 'Bạn đã từng mượn đồ của ai chưa? Mượn gì?',
+      hint: '借过。上个月……，我跟……借了……',
+      sample: '借过。上个月我的自行车坏了，我就跟同学借了一辆，骑了一个星期才还给他。',
+      sample_vn: 'Có. Tháng trước xe đạp của tôi hỏng, tôi mượn của bạn học một chiếc, đi một tuần mới trả lại.',
+      note: '跟 + người + 借 + vật; 还给 = trả lại; ôn 才 (bài 3).'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Được, hoặc là ngày mai, hoặc là ngày kia, cô sẽ gọi điện cho em.', zh: '行。或者明天去，或者后天去，我给你打电话。', py: 'Xíng. Huòzhě míngtiān qù, huòzhě hòutiān qù, wǒ gěi nǐ dǎ diànhuà.' },
-  { vi: 'Vừa nãy trời còn đang nắng, sao bỗng nhiên lại nổi gió thế nhỉ?', zh: '刚才还是大晴天呢，怎么突然就刮起风来了？', py: 'Gāngcái hái shì dà qíngtiān ne, zěnme tūrán jiù guā qǐ fēng lai le?' },
-  { vi: 'Ngày nào em cũng để ô trong cặp sách, chỉ riêng hôm nay không mang.', zh: '我每天书包里都放着雨伞，就今天没带。', py: 'Wǒ měitiān shūbāo li dōu fàngzhe yǔsǎn, jiù jīntiān méi dài.' },
-  { vi: 'Bắc Kinh thường xuyên có tuyết, nhưng nghe nói năm nay chỉ rơi có một lần.', zh: '北京常常下雪，但听说今年就下了一次。', py: 'Běijīng chángcháng xià xuě, dàn tīngshuō jīnnián jiù xiàle yí cì.' },
-  { vi: 'Sống ở đây hơn một năm, tôi vẫn thích bốn mùa ở Bắc Kinh hơn.', zh: '这一年多住下来，我还是更喜欢北京的四季。', py: 'Zhè yì nián duō zhù xiàlai, wǒ háishi gèng xǐhuan Běijīng de sìjì.' }
+  { vi: 'Hoặc bạn gọi điện cho tôi, hoặc bạn đến nhà tìm tôi, đều được.', zh: '或者给我打电话，或者来我家找我，都可以。', py: 'Huòzhě gěi wǒ dǎ diànhuà, huòzhě lái wǒ jiā zhǎo wǒ, dōu kěyǐ.' },
+  { vi: 'Nghe xong câu chuyện cười đó, cả lớp đều bật cười.', zh: '听完那个笑话，我们班的同学都笑起来了。', py: 'Tīngwán nà ge xiàohua, wǒmen bān de tóngxué dōu xiào qǐlai le.' },
+  { vi: 'Kỳ nghỉ năm nay tôi chỉ đi có một nơi.', zh: '今年放假我就去了一个地方。', py: 'Jīnnián fàngjià wǒ jiù qùle yí ge dìfang.' },
+  { vi: 'Mùa thu là mùa đẹp nhất ở đây.', zh: '秋天是这儿最漂亮的季节。', py: 'Qiūtiān shì zhèr zuì piàoliang de jìjié.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Trời đã bắt đầu mưa rồi, chúng ta đi nhanh lên thôi.', zh: '雨已经下起来了，咱们快点儿走吧。', py: 'Yǔ yǐjīng xià qǐlai le, zánmen kuài diǎnr zǒu ba.' },
-  { vi: 'Thời tiết mùa này thay đổi rất nhanh.', zh: '这个季节天气变化很快。', py: 'Zhège jìjié tiānqì biànhuà hěn kuài.' },
-  { vi: 'Những thứ khác cô đã quen từ lâu, chỉ có thời tiết là cô vẫn chưa quen lắm.', zh: '别的早就习惯了，就是天气我还不太习惯。', py: 'Biéde zǎo jiù xíguàn le, jiùshì tiānqì wǒ hái bú tài xíguàn.' },
-  { vi: 'Mùa xuân ở Bắc Kinh dễ chịu nhất, trời không lạnh cũng không nóng.', zh: '北京的春天最舒服，天气不冷不热。', py: 'Běijīng de chūntiān zuì shūfu, tiānqì bù lěng bú rè.' },
-  { vi: 'Mùa thu, lá trên cây đều chuyển thành màu đỏ, màu vàng, vô cùng đẹp.', zh: '秋天树上的叶子都变成了红色、黄色，非常漂亮。', py: 'Qiūtiān shù shang de yèzi dōu biànchéngle hóngsè, huángsè, fēicháng piàoliang.' }
+  { vi: 'Tôi thường xuyên theo dõi tin tức thời tiết.', zh: '我常常关注天气新闻。', py: 'Wǒ chángcháng guānzhù tiānqì xīnwén.' },
+  { vi: 'Mùa hè ở đây rất nóng, chỉ có buổi tối là mát một chút.', zh: '这儿的夏天很热，就晚上凉快一点儿。', py: 'Zhèr de xiàtiān hěn rè, jiù wǎnshang liángkuai yìdiǎnr.' },
+  { vi: 'Sau khi chúng tôi rời đi, con phố này đã thay đổi rất nhiều.', zh: '我们离开以后，这条街变化很大。', py: 'Wǒmen líkāi yǐhòu, zhè tiáo jiē biànhuà hěn dà.' }
 ];

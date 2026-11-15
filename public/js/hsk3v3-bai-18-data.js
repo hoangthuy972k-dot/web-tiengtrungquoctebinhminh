@@ -2580,159 +2580,157 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 bài trước
 var listenData = [
   {
-    audio: '下个星期就是春节了，我打算回家过节。我家离这儿很远，坐高铁大概要七八个小时。我已经买好票了，后天早上八点出发。',
+    audio: '离出发还有两三个小时，咱们先去吃点儿东西吧。',
     questions: [
-      { q: '说话人打算怎样过春节？', opts: ['回家过节', '出去旅游', '在学校过节'], ans: 0 },
-      { q: '说话人坐高铁大概要多长时间？', opts: ['两三个小时', '七八个小时', '十几个小时'], ans: 1 }
+      { q: 'Còn bao lâu nữa thì xuất phát?', opts: ['Hơn mười tiếng', 'Khoảng hai ba tiếng', 'Nửa tiếng'], ans: 1, exp: '两三个小时 = khoảng hai ba tiếng (hai số liền nhau = số ước lượng).' },
+      { q: 'Người nói đề nghị làm gì?', opts: ['Ngủ một lát', 'Đi mua vé', 'Đi ăn chút gì trước'], ans: 2, exp: '先去吃点儿东西 = đi ăn chút gì đó trước; ôn 离 (HSK2).' }
     ]
   },
   {
-    audio: '王阿姨，过年好！这是我给您带的小礼物，请您收下。谢谢你，你太客气了！快进来坐吧，桌子上有矿泉水和饮料，想喝什么就自己拿。',
+    audio: '你看，现在的雨比刚才小多了，我们走吧。',
     questions: [
-      { q: '客人给王阿姨带了什么？', opts: ['矿泉水', '小礼物', '饺子'], ans: 1 },
-      { q: '王阿姨让客人做什么？', opts: ['帮她包饺子', '看春节联欢晚会', '自己拿饮料喝'], ans: 2 }
+      { q: 'Mưa bây giờ thế nào?', opts: ['To hơn lúc nãy', 'Nhỏ hơn lúc nãy nhiều', 'Vẫn như lúc nãy'], ans: 1, exp: '比刚才小多了 = nhỏ hơn lúc nãy nhiều; 刚才 là danh từ thời gian nên đứng sau 比 được.' }
     ]
   },
   {
-    audio: '我刚刚收到哥哥的邮件，他说这个学期结束以后就要毕业了。哥哥三年前出国留学，他刚离开家的时候，妈妈很不习惯，只要几天不跟他视频，就很想他。',
+    audio: '我刚到这家公司半年，很多事情还不太懂，大家多帮助我吧。',
     questions: [
-      { q: '哥哥什么时候毕业？', opts: ['这个学期结束以后', '三年以后', '明年春节'], ans: 0 },
-      { q: '哥哥刚离开家的时候，妈妈怎么样？', opts: ['很高兴', '经常想他', '每天去看他'], ans: 1 }
+      { q: 'Người nói làm ở công ty này bao lâu rồi?', opts: ['Hai năm', 'Mới một tuần', 'Mới nửa năm'], ans: 2, exp: '刚 + V + thời lượng: 刚到这家公司半年 = mới đến công ty nửa năm.' }
     ]
   },
   {
-    audio: '我从去年九月起开始学习汉语，到现在大概学了一年了。刚开始的时候我觉得汉语很难，可是老师说，只要每天坚持，就一定能学好。我今年的目标是能用汉语跟中国朋友聊天儿。',
+    audio: '只要你今天写完作业，周末妈妈就带你去动物园。',
     questions: [
-      { q: '说话人学了多长时间汉语了？', opts: ['半年', '大概一年', '三四年'], ans: 1 },
-      { q: '说话人今年的目标是什么？', opts: ['去中国留学', '每天学习两个小时', '能用汉语跟中国朋友聊天儿'], ans: 2 }
+      { q: 'Điều kiện để cuối tuần được đi sở thú là gì?', opts: ['Viết xong bài tập hôm nay', 'Dọn phòng sạch sẽ', 'Thi được điểm cao'], ans: 0, exp: '只要……，就…… = chỉ cần… thì…: chỉ cần hôm nay viết xong bài tập.' }
+    ]
+  },
+  {
+    audio: '从下个星期一起，学校图书馆晚上十点才关门。',
+    questions: [
+      { q: 'Từ thứ Hai tuần sau thư viện thay đổi thế nào?', opts: ['Đóng cửa cả ngày', '10 giờ sáng mới mở cửa', '10 giờ tối mới đóng cửa'], ans: 2, exp: '从……起 = bắt đầu từ…; 十点才关门 = 10 giờ mới đóng cửa (muộn hơn trước).' }
+    ]
+  },
+  {
+    audio: '我女儿出生的那天正好是春节，所以我们家每年过两个节。',
+    questions: [
+      { q: 'Con gái người nói sinh vào ngày nào?', opts: ['Đúng ngày Tết Nguyên đán', 'Ngày sinh nhật của bố', 'Ngày khai giảng'], ans: 0, exp: '出生的那天正好是春节 = ngày con sinh ra đúng vào Tết.' },
+      { q: 'Vì vậy mỗi năm nhà họ thế nào?', opts: ['Đi du lịch hai lần', 'Đón hai ngày lễ cùng lúc', 'Không đón Tết'], ans: 1, exp: '每年过两个节 = mỗi năm đón hai cái lễ (Tết + sinh nhật con); 过节 = đón lễ.' }
+    ]
+  },
+  {
+    audio: '张阿姨总说，过去的事情就别想了，要向前看。',
+    questions: [
+      { q: 'Cô Trương hay nói gì?', opts: ['Phải nhớ kỹ chuyện cũ', 'Chuyện đã qua thì đừng nghĩ nữa', 'Đừng tin người lạ'], ans: 1, exp: '总说 = lúc nào cũng nói; 过去的事情就别想了 = chuyện đã qua đừng nghĩ nữa; 向前看 = nhìn về phía trước.' }
     ]
   }
 ];
 
 var matchData = [
   { left: '包', right: '饺子' },
-  { left: '完成', right: '目标' },
-  { left: '这是我准备的礼物', right: '请收下' },
-  { left: '时间过得真快', right: '好像是不久前发生的一样' },
-  { left: '只要几天不跟他视频', right: '就很想他' },
-  { left: '李文高中的时候想学医', right: '从那时起就努力学习' }
+  { left: '大学', right: '毕业' },
+  { left: '完成', right: '作业' },
+  { left: '坚持', right: '锻炼' },
+  { left: '喝', right: '矿泉水' },
+  { left: '春节联欢', right: '晚会' },
+  { left: '这几年城市', right: '发展得很快' }
 ];
 
 var fillData = [
-  { pre: '我', blank: '刚', post: '来中国几个月，还没在中国过过春节。', hint: '(vừa mới)', ans: '刚', exp: '刚 + V + thời lượng = mới… được bao lâu; 过过 — 过 chỉ kinh nghiệm (ôn HSK2). Câu của sách.' },
-  { pre: '这是我给您和叔叔准备的小礼物，请您', blank: '收', post: '下。', hint: '(nhận)', ans: '收', exp: '收下 = nhận lấy — lời mời lịch sự khi tặng quà; 准备 (ôn HSK2 Bài 5). Câu của sách.' },
-  { pre: '过年的时候，小孩子', blank: '总', post: '会收到大人给的红包。', hint: '(luôn luôn)', ans: '总', exp: '总 = luôn luôn (như 总是 – ôn HSK3 Bài 5); 收到 (ôn HSK3 Bài 5). Câu của sách.' },
-  { pre: '从上个月', blank: '起', post: '，妈妈就开始为春节做准备了。', hint: '(bắt đầu từ…)', ans: '起', exp: '从……起 = bắt đầu từ… (ngữ pháp 4 của bài); 为 (ôn HSK3 Bài 11). Câu của sách.' },
-  { pre: '春节的时候只要有时间，就一定要跟小时候的朋友们', blank: '见面', post: '。', hint: '(gặp mặt)', ans: '见面', exp: '跟 + người + 见面 (từ ly hợp, không mang tân ngữ); 只要……就…… (ngữ pháp 3); 小时候 (ôn HSK2 Bài 12). Câu của sách.' },
-  { pre: '你想', blank: '怎样', post: '过今年的春节？——我好几年没回爸爸妈妈家了，今年打算回去过节。', hint: '(thế nào)', ans: '怎样', exp: '怎样 + V hỏi cách thức (= 怎么 – ôn HSK1 Bài 6); 打算 (ôn HSK3 Bài 6). Câu của sách.' },
-  { pre: '这一年', blank: '发生', post: '了很多开心的事。——希望明年更好！', hint: '(xảy ra)', ans: '发生', exp: '发生 + 了 + sự việc = đã xảy ra…; 希望 (ôn HSK2 Bài 13). Câu của sách.' },
-  { pre: '快12点了，你是不是想睡觉了？——我一定要', blank: '坚持', post: '到12点，新的一年开始以后再睡觉。', hint: '(kiên trì)', ans: '坚持', exp: '坚持 + 到 + thời điểm = cố gắng đến…; 是不是 (ôn HSK2); 以后再…… (ôn HSK3 Bài 8). Câu của sách.' }
+  { pre: '这双鞋不贵，', blank: '两三百', post: '块钱就能买到。', hint: '(khoảng hai ba trăm)', ans: '两三百', exp: 'Hai số liền nhau = số ước lượng: 两三百块 = khoảng hai, ba trăm tệ.' },
+  { pre: '我', blank: '刚刚', post: '来北京一个月，还不认识路。', hint: '(vừa mới — 2 chữ)', ans: '刚刚', exp: '刚刚 / 刚 + V + thời lượng = mới… được bao lâu; 刚才 không dùng được ở đây.' },
+  { pre: '', blank: '刚才', post: '的电话是谁打来的？', hint: '(lúc nãy)', ans: '刚才', exp: '刚才 là danh từ thời gian nên làm định ngữ được: 刚才的电话 = cuộc điện thoại lúc nãy.' },
+  { pre: '只要你喜欢，这件衣服我', blank: '就', post: '送给你。', hint: '(thì)', ans: '就', exp: '只要……，就…… = chỉ cần… thì…; 就 đứng sau chủ ngữ vế sau.' },
+  { pre: '从明天', blank: '起', post: '，我不再喝咖啡了。', hint: '(bắt đầu từ)', ans: '起', exp: '从 + thời điểm + 起 = bắt đầu từ…; không nói 从明天起来.' },
+  { pre: '他上课', blank: '总', post: '迟到，老师已经说过他好几次了。', hint: '(lúc nào cũng)', ans: '总', exp: '总 = luôn luôn (như 总是); ôn 迟到 (bài 6).' },
+  { pre: '我跟他在网上聊了一年了，下个月终于要', blank: '见面', post: '了。', hint: '(gặp mặt)', ans: '见面', exp: '跟 + người + 见面; 见面 là từ li hợp, không mang tân ngữ phía sau.' },
+  { pre: '昨天路上', blank: '发生', post: '了什么事？怎么那么多人？', hint: '(xảy ra)', ans: '发生', exp: '发生 + 了 + sự việc = đã xảy ra chuyện gì.' },
+  { pre: '我姐姐大学', blank: '毕业', post: '以后，在一家银行工作。', hint: '(tốt nghiệp)', ans: '毕业', exp: '大学毕业 (không nói 毕业大学); ôn 以后 (bài 8).' },
+  { pre: '学汉语最重要的是', blank: '坚持', post: '，每天学一点儿也很好。', hint: '(kiên trì)', ans: '坚持', exp: '坚持 = kiên trì; ôn 一点儿.' },
+  { pre: '我是在南京', blank: '出生', post: '的，三岁的时候跟爸爸妈妈搬到了上海。', hint: '(sinh ra)', ans: '出生', exp: '是 + 在 + nơi chốn + 出生 + 的 = nhấn mạnh nơi sinh; ôn 南京 (bài 15).' },
+  { pre: '春节以前，我们班要开一个', blank: '联欢', post: '会，大家都要表演一个节目。', hint: '(liên hoan)', ans: '联欢', exp: '联欢会 = buổi liên hoan; ôn 表演节目 (bài 14).' }
 ];
 
 var sortData = [
-  { words: ['春节', '是', '中国', '最', '重要的', '节日', '。'], ans: '春节是中国最重要的节日。', audio: '春节是中国最重要的节日。' },
-  { words: ['春节', '大概', '放', '七八天', '假', '。'], ans: '春节大概放七八天假。', audio: '春节大概放七八天假。' },
-  { words: ['我', '刚刚', '看视频', '学会了', '包饺子', '。'], ans: '我刚刚看视频学会了包饺子。', audio: '我刚刚看视频学会了包饺子。' },
-  { words: ['只要', '几天', '不跟他', '视频', '，', '就', '很想他', '。'], ans: '只要几天不跟他视频，就很想他。', audio: '只要几天不跟他视频，就很想他。' },
-  { words: ['他', '从', '那时', '起', '就', '努力', '学习', '。'], ans: '他从那时起就努力学习。', audio: '他从那时起就努力学习。' },
-  { words: ['只要', '一直', '坚持', '，', '就', '能', '完成', '自己的', '目标', '。'], ans: '只要一直坚持，就能完成自己的目标。', audio: '只要一直坚持，就能完成自己的目标。' }
+  { words: ['他', '刚刚', '出发', '，', '大概', '半个小时', '以后', '到', '。'], ans: '他刚刚出发，大概半个小时以后到。', audio: '他刚刚出发，大概半个小时以后到。' },
+  { words: ['只要', '你', '不', '着急', '，', '问题', '就', '一定', '能', '解决', '。'], ans: '只要你不着急，问题就一定能解决。', audio: '只要你不着急，问题就一定能解决。' },
+  { words: ['他', '从', '小学', '起', '就', '喜欢', '画画', '。'], ans: '他从小学起就喜欢画画。', audio: '他从小学起就喜欢画画。' },
+  { words: ['我们', '大概', '有', '两三年', '没', '见面', '了', '。'], ans: '我们大概有两三年没见面了。', audio: '我们大概有两三年没见面了。' },
+  { words: ['这个', '学期', '的', '作业', '我', '都', '完成', '了', '。'], ans: '这个学期的作业我都完成了。', audio: '这个学期的作业我都完成了。', alt: ['我这个学期的作业都完成了。'] },
+  { words: ['叔叔', '，', '您', '要', '喝', '矿泉水', '吗', '？'], ans: '叔叔，您要喝矿泉水吗？', audio: '叔叔，您要喝矿泉水吗？' },
+  { words: ['这个', '城市', '发展', '得', '越来越', '快', '了', '。'], ans: '这个城市发展得越来越快了。', audio: '这个城市发展得越来越快了。' },
+  { words: ['经过', '这件', '事', '，', '他', '懂得', '了', '很多', '。'], ans: '经过这件事，他懂得了很多。', audio: '经过这件事，他懂得了很多。' }
 ];
 
 var mcData = [
-  { q: '春节是中国最重要的＿＿，我们一般会回家，跟家人一起过。', opts: ['节日', '学期', '目标', '过去'], ans: 0, exp: '春节 là một 节日 (ngày lễ tết). 学期, 目标 không hợp.' },
-  { q: '春节放几天假？——＿＿七八天。', opts: ['刚刚', '大概', '总', '只要'], ans: 1, exp: '大概 + số lượng = khoảng chừng. 刚刚, 只要 không đứng trước số ngày.' },
-  { q: '总听小文说起你，今天终于有机会＿＿了。', opts: ['出发', '毕业', '见面', '发生'], ans: 2, exp: '见面 = gặp mặt; là từ li hợp nên không mang tân ngữ.' },
-  { q: '桌子上有饮料，还有＿＿，你想喝什么就自己拿。', opts: ['红包', '饺子', '礼物', '矿泉水'], ans: 3, exp: '想喝什么 → đồ uống: 矿泉水. 红包, 饺子, 礼物 không uống được.' },
-  { q: '还有最后一个＿＿就要毕业了，他很快就会回来了。', opts: ['学期', '节日', '目标', '过去'], ans: 0, exp: '最后一个学期 = học kỳ cuối, sau đó tốt nghiệp.' },
-  { q: '在他身上，我懂得了，只要一直坚持，就能＿＿自己的目标。', opts: ['发生', '完成', '出发', '懂得'], ans: 1, exp: '完成目标 = hoàn thành mục tiêu. 发生, 出发 không mang tân ngữ 目标.' },
-  { q: '我相信，他以后一定会＿＿得更好。', opts: ['收', '起', '发展', '出生'], ans: 2, exp: '发展得更好 = phát triển tốt hơn. 收, 起 không đi với 得更好 ở đây.' },
-  { q: 'Chọn câu đúng: "Cuộc điện thoại lúc nãy là mẹ tôi gọi đến."', opts: ['刚才电话的是我妈妈打来的。', '刚才的电话是我妈妈打来的。', '电话刚刚的是我妈妈打来的。', '刚的电话是我妈妈打来的。'], ans: 1, exp: '刚才 là danh từ thời gian nên làm định ngữ được: 刚才的电话 (cuộc điện thoại lúc nãy). 的 phải đứng sau 刚才, trước 电话; 刚 một mình không làm định ngữ.' },
-  { q: 'Chọn câu đúng: "Chỉ cần có thời gian, tôi sẽ đến thăm bạn."', opts: ['只要有时间，就我去看你。', '只要有时间，我才去看你。', '只要有时间，我去看你就。', '只要有时间，我就去看你。'], ans: 3, exp: '只要…，就… = chỉ cần… thì…; 就 đứng sau chủ ngữ vế sau, trước động từ.' },
-  { q: '"教室里来了五六个学生。" — 「五六个」 ở đây biểu thị gì?', opts: ['Số ước lượng: khoảng năm, sáu người', 'Đúng 56 người', 'Năm hoặc sáu lần', 'Thứ tự thứ năm, thứ sáu'], ans: 0, exp: 'Hai số liền nhau (五六个) = số ước lượng: khoảng năm, sáu người.' }
+  { q: 'Bạn kể: “Hôm qua có khoảng năm sáu người bạn đến nhà tôi.”', opts: ['昨天有五个六个朋友来我家了。', '昨天有六五个朋友来我家了。', '昨天有五六个朋友来我家了。', '昨天有五六个的朋友来我家了。'], ans: 2, exp: 'Số ước lượng: hai số liền nhau từ nhỏ đến lớn + lượng từ: 五六个朋友; không lặp lượng từ, không thêm 的.' },
+  { q: 'A: “你每天晚上看多长时间电视？” — B: “不一定，＿＿。”', opts: ['一个两个小时吧', '一两个小时吧', '两一个小时吧', '一两小时个吧'], ans: 1, exp: '一两个小时 = khoảng một hai tiếng; số ước lượng + lượng từ 个 + 小时.' },
+  { q: 'A: “＿＿你去哪儿了？我找了你半天。” — B: “我去图书馆还书了。”', opts: ['刚', '不久', '过去', '刚才'], ans: 3, exp: '刚才 là danh từ thời gian, đứng đầu câu được (= lúc nãy); 刚 là phó từ, phải đứng sau chủ ngữ, trước động từ.' },
+  { q: 'Câu nào SAI?', opts: ['你刚才为什么不说？', '他刚下飞机，还没到家。', '我刚才毕业两年。', '刚才有人给你打电话了。'], ans: 2, exp: 'Sau 刚才 không đi với thời lượng; phải nói 我刚毕业两年 (刚 / 刚刚 + V + thời lượng).' },
+  { q: '“＿＿你说一声，我马上就来帮你。”', opts: ['只要', '只有', '虽然', '因为'], ans: 0, exp: '只要……就…… = chỉ cần… là…; 只有 phải đi với 才, không đi với 就.' },
+  { q: 'A: “这个周末你能来帮我搬家吗？” — B:', opts: ['只要不加班，我才去。', '只要不加班，就我去。', '只有不加班，我就去。', '只要不加班，我就去。'], ans: 3, exp: '只要 đi với 就 (không với 才); 就 đứng sau chủ ngữ 我, trước động từ.' },
+  { q: 'Bạn muốn nói: “Bắt đầu từ tháng sau, tôi sẽ đi làm bằng tàu điện ngầm.”', opts: ['从下个月起，我坐地铁上班。', '下个月从起，我坐地铁上班。', '从起下个月，我坐地铁上班。', '从下个月起来，我坐地铁上班。'], ans: 0, exp: '从 + thời điểm + 起 = bắt đầu từ…; không dùng 起来 (起来 = bắt đầu làm gì, đứng sau động từ).' },
+  { q: 'Bạn muốn nói: “Ngày mai tôi gặp cô ấy.”', opts: ['我明天见面她。', '我明天跟她见面。', '我明天见面跟她。', '我跟她明天见面了。'], ans: 1, exp: '见面 không mang tân ngữ: 跟 + người + 见面; việc chưa xảy ra nên không thêm 了.' },
+  { q: '“我昨天＿＿了一封邮件，是我小学老师写来的。”', opts: ['收到', '收下', '发生', '完成'], ans: 0, exp: '收到邮件 = nhận được thư; 收下 dùng khi nhận quà người khác đưa tận tay.' },
+  { q: 'A: “你知道昨天学校里＿＿了什么事吗？” — B: “不知道，怎么了？”', opts: ['出生', '发生', '出发', '发展'], ans: 1, exp: '发生 + 了 + 什么事 = xảy ra chuyện gì; 出生 = sinh ra, 出发 = khởi hành, 发展 = phát triển.' },
+  { q: 'Bạn muốn nói: “Tôi tốt nghiệp đại học năm 2020.”', opts: ['我2020年毕业大学。', '我毕业了大学2020年。', '我2020年大学毕业。', '我2020年毕业了大学。'], ans: 2, exp: '大学毕业 / 从大学毕业; 毕业 không mang tân ngữ phía sau như tiếng Việt “tốt nghiệp đại học”.' },
+  { q: '“这个词＿＿用？你能给我说几个句子吗？”', opts: ['多少', '什么', '怎样', '几'], ans: 2, exp: '怎样 + V = làm thế nào (hỏi cách thức) = 怎么; ôn 句子 (bài 10).' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng số ước lượng (两三个, 七八天), 刚才 / 刚刚, 只要……就……, 从……起 và từ mới (节日, 过节, 目标, 坚持…).',
   questions: [
     {
-      q_zh: '李文为什么很高兴？',
-      q_vn: 'Vì sao Lý Văn rất vui?',
-      hint: '因为他第一次请……来家里……',
-      sample: '因为他第一次请外国朋友来家里过春节，所以他很高兴。',
-      sample_vn: 'Vì đây là lần đầu anh ấy mời bạn nước ngoài về nhà đón Tết, nên anh ấy rất vui.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 因为……所以…… (ôn HSK2 Bài 4); 第一次.'
+      q_zh: '你们国家最重要的节日是什么？你们怎样过节？',
+      q_vn: 'Ngày lễ quan trọng nhất ở nước bạn là gì? Mọi người đón lễ thế nào?',
+      hint: '我们国家最重要的节日是……，放……天假，大家……',
+      sample: '我们国家最重要的节日也是春节，大概放七八天假，大家都回家跟家人一起吃饭、聊天儿，小孩子还会收到红包。',
+      sample_vn: 'Ngày lễ quan trọng nhất ở nước tôi cũng là Tết, được nghỉ khoảng bảy tám ngày, mọi người đều về nhà ăn cơm, trò chuyện với gia đình, trẻ con còn được nhận lì xì.',
+      note: 'Số ước lượng 七八天; 怎样过节; 收到红包.'
     },
     {
-      q_zh: '李文和家人春节的时候会做什么？',
-      q_vn: 'Dịp Tết, Lý Văn và gia đình sẽ làm gì?',
-      hint: '他们会一边……，一边……，一直到……才……',
-      sample: '他们会一边包饺子，一边看春节联欢晚会，一直到十二点以后才睡觉。',
-      sample_vn: 'Họ vừa gói sủi cảo vừa xem Gala Đêm hội mùa xuân, đến sau 12 giờ đêm mới đi ngủ.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 一边……一边…… (ôn HSK3 Bài 13); 才 (ôn HSK3 Bài 3).'
+      q_zh: '你是从什么时候起开始学汉语的？',
+      q_vn: 'Bạn bắt đầu học tiếng Trung từ khi nào? Vì sao?',
+      hint: '我是从……起开始学汉语的，因为……',
+      sample: '我是从去年九月起开始学汉语的，因为我想去中国工作。',
+      sample_vn: 'Tôi bắt đầu học tiếng Trung từ tháng chín năm ngoái, vì tôi muốn sang Trung Quốc làm việc.',
+      note: '从 + thời điểm + 起; 是……的 nhấn mạnh thời gian.'
     },
     {
-      q_zh: '白家月送礼物的时候说什么了？',
-      q_vn: 'Khi tặng quà, Bạch Gia Nguyệt đã nói gì?',
-      hint: '她说：“……，过年好！这是……，请……。”',
-      sample: '她说：“张阿姨，李叔叔，过年好！这是我准备的礼物，请收下。”',
-      sample_vn: 'Cô ấy nói: “Cô Trương, chú Lý, chúc mừng năm mới! Đây là quà cháu chuẩn bị, mong cô chú nhận cho ạ.”',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. 阿姨、叔叔、收 của bài này; 准备、礼物 (ôn HSK2 Bài 5).'
+      q_zh: '你今年的目标是什么？',
+      q_vn: 'Mục tiêu năm nay của bạn là gì? Bạn định làm thế nào để hoàn thành?',
+      hint: '我今年的目标是……。只要……，就……',
+      sample: '我今年的目标是看完二十本中文书。只要每天看半个小时，我就一定能完成。',
+      sample_vn: 'Mục tiêu năm nay của tôi là đọc xong hai mươi cuốn sách tiếng Trung. Chỉ cần mỗi ngày đọc nửa tiếng, tôi nhất định sẽ hoàn thành.',
+      note: '目标; 只要……，就……; 完成.'
     },
     {
-      q_zh: '李文刚离开家的时候，张阿姨怎么样？',
-      q_vn: 'Lúc Lý Văn mới rời nhà, cô Trương thế nào?',
-      hint: '她很不……，只要……，就……',
-      sample: '他刚离开家的时候，张阿姨很不习惯，只要几天不跟他视频，就很想他。',
-      sample_vn: 'Lúc anh ấy mới rời nhà, cô Trương không quen lắm, chỉ cần vài ngày không gọi video với anh ấy là cô rất nhớ.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. 只要……就…… (ngữ pháp 3); 刚 của bài này; 习惯 (ôn HSK3 Bài 8).'
+      q_zh: '你刚开始学汉语的时候，觉得什么最难？',
+      q_vn: 'Lúc mới bắt đầu học tiếng Trung, bạn thấy cái gì khó nhất?',
+      hint: '我刚开始学汉语的时候，觉得……最难，现在……',
+      sample: '我刚开始学汉语的时候，觉得汉字最难，可是坚持写了两三个月以后，就觉得没那么难了。',
+      sample_vn: 'Lúc mới bắt đầu học tiếng Trung, tôi thấy chữ Hán khó nhất, nhưng kiên trì viết hai ba tháng thì thấy không khó đến thế nữa.',
+      note: '刚 + V (phó từ, trước động từ); 坚持; số ước lượng 两三个月.'
     },
     {
-      q_zh: '李文为什么能得到出国留学的机会？',
-      q_vn: 'Vì sao Lý Văn có được cơ hội đi du học?',
-      hint: '因为他从……起就……，高三的时候……',
-      sample: '因为他高中的时候想学医，从那时起就努力学习。高三的时候他的成绩特别好，所以得到了出国留学的机会。',
-      sample_vn: 'Vì hồi cấp ba anh ấy muốn học y, từ đó đã chăm chỉ học tập. Năm lớp 12 thành tích của anh ấy rất tốt, nên có được cơ hội đi du học.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 从……起 (ngữ pháp 4); 成绩、得到 (ôn HSK3 Bài 9).'
-    },
-    {
-      q_zh: '你在中国过过哪些节日？',
-      q_vn: 'Bạn đã từng đón những ngày lễ nào ở Trung Quốc?',
-      hint: '我在中国过过……。/ 我还没在中国过过节，……',
-      sample: '我还没在中国过过节。我最想在中国过春节，跟中国朋友一起包饺子、看春节联欢晚会。',
-      sample_vn: 'Tôi chưa đón lễ nào ở Trung Quốc. Tôi muốn nhất là đón Tết ở Trung Quốc, cùng bạn bè Trung Quốc gói sủi cảo, xem Gala Đêm hội mùa xuân.',
-      note: 'Câu hỏi Khởi động của sách. 过节、节日、联欢 của bài này; 过 chỉ kinh nghiệm (ôn HSK2).'
-    },
-    {
-      q_zh: '你知道中国人怎么过春节吗？',
-      q_vn: 'Bạn có biết người Trung Quốc đón Tết như thế nào không?',
-      hint: '中国人一般会……，吃……，还会……',
-      sample: '知道。中国人一般会回家跟家人一起过春节。过年以前大家会打扫房子，晚上全家一起吃年夜饭、包饺子、看春节联欢晚会，小孩子还会收到红包。',
-      sample_vn: 'Biết. Người Trung Quốc thường về nhà đón Tết cùng gia đình. Trước Tết mọi người dọn dẹp nhà cửa, buổi tối cả nhà cùng ăn cơm tất niên, gói sủi cảo, xem Gala Xuân, trẻ con còn được nhận lì xì.',
-      note: 'Câu hỏi Khởi động của sách. Từ ngữ phần Khởi động: 打扫房子 (ôn HSK3 Bài 3), 年夜饭, 红包.'
-    },
-    {
-      q_zh: '请介绍一下你们国家的一个节日。',
-      q_vn: 'Hãy giới thiệu một ngày lễ của nước bạn.',
-      hint: '……是我们国家最重要的节日。大概放……天假。从……起，大家就……',
-      sample: '春节也是越南最重要的节日，大概放七八天假。从春节前一个星期起，大家就开始打扫房子、准备吃的东西。过年的时候，我们跟家人一起吃饭，小孩子会收到红包。只要能跟家人在一起，大家就很开心。',
-      sample_vn: 'Tết cũng là ngày lễ quan trọng nhất của Việt Nam, được nghỉ khoảng bảy tám ngày. Từ một tuần trước Tết, mọi người đã bắt đầu dọn nhà, chuẩn bị đồ ăn. Ngày Tết, chúng tôi cùng gia đình ăn cơm, trẻ con được nhận lì xì. Chỉ cần được ở bên gia đình là mọi người đều vui.',
-      note: 'Hoạt động trên lớp của sách (giới thiệu một ngày lễ truyền thống). Số ước lượng, 从……起, 只要……就…… của bài này.'
+      q_zh: '你和老朋友多长时间见一次？',
+      q_vn: 'Bao lâu bạn gặp bạn cũ một lần? Các bạn thường làm gì?',
+      hint: '我跟老朋友大概……见一次，我们……',
+      sample: '我跟老朋友大概一两个月见一次，我们一起吃饭，聊聊过去的事情。',
+      sample_vn: 'Khoảng một hai tháng tôi gặp bạn cũ một lần, chúng tôi cùng ăn cơm, nói chuyện ngày xưa.',
+      note: '大概 + số ước lượng (一两个月); 见一次 = gặp một lần; 过去 = quá khứ.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Tết Nguyên đán là ngày lễ quan trọng nhất ở Trung Quốc.', zh: '春节是中国最重要的节日。', py: 'Chūnjié shì Zhōngguó zuì zhòngyào de jiérì.' },
-  { vi: 'Tết được nghỉ khoảng bảy tám ngày.', zh: '春节大概放七八天假。', py: 'Chūnjié dàgài fàng qī-bā tiān jià.' },
-  { vi: 'Cháu vừa mới xem video học được cách gói sủi cảo.', zh: '我刚刚看视频学会了包饺子。', py: 'Wǒ gānggāng kàn shìpín xuéhuìle bāo jiǎozi.' },
-  { vi: 'Chỉ cần vài ngày không gọi video cho nó là cô rất nhớ nó.', zh: '只要几天不跟他视频，就很想他。', py: 'Zhǐyào jǐ tiān bù gēn tā shìpín, jiù hěn xiǎng tā.' },
-  { vi: 'Lý Văn từ lúc đó đã cố gắng học tập.', zh: '李文从那时起就努力学习。', py: 'Lǐ Wén cóng nà shí qǐ jiù nǔlì xuéxí.' }
+  { vi: 'Cuốn sách này tôi đã đọc hai ba lần rồi.', zh: '这本书我已经看了两三遍了。', py: 'Zhè běn shū wǒ yǐjīng kànle liǎng-sān biàn le.' },
+  { vi: 'Lúc nãy bạn nói gì vậy? Tôi nghe không rõ.', zh: '你刚才说什么？我没听清楚。', py: 'Nǐ gāngcái shuō shénme? Wǒ méi tīng qīngchu.' },
+  { vi: 'Chỉ cần có bạn bè bên cạnh, tôi sẽ không thấy buồn.', zh: '只要有朋友在身边，我就不会觉得难过。', py: 'Zhǐyào yǒu péngyou zài shēnbiān, wǒ jiù bú huì juéde nánguò.' },
+  { vi: 'Bắt đầu từ năm nay, mỗi ngày tôi đều kiên trì chạy bộ nửa tiếng.', zh: '从今年起，我每天都坚持跑步半个小时。', py: 'Cóng jīnnián qǐ, wǒ měitiān dōu jiānchí pǎobù bàn ge xiǎoshí.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Nhà anh sẽ vừa gói sủi cảo, vừa xem Gala Đêm hội mùa xuân.', zh: '我们家会一边包饺子，一边看春节联欢晚会。', py: 'Wǒmen jiā huì yìbiān bāo jiǎozi, yìbiān kàn Chūnjié liánhuān wǎnhuì.' },
-  { vi: 'Tiểu Văn lúc nào cũng nhắc về cháu, hôm nay cuối cùng cũng có dịp gặp nhau rồi.', zh: '总听小文说起你，今天终于有机会见面了。', py: 'Zǒng tīng Xiǎowén shuōqǐ nǐ, jīntiān zhōngyú yǒu jīhuì jiànmiàn le.' },
-  { vi: 'Thời gian trôi nhanh thật, cứ như mới xảy ra cách đây không lâu vậy.', zh: '时间过得真快，好像是不久前发生的一样。', py: 'Shíjiān guò de zhēn kuài, hǎoxiàng shì bùjiǔ qián fāshēng de yíyàng.' },
-  { vi: 'Chỉ còn học kỳ cuối cùng nữa là tốt nghiệp rồi.', zh: '还有最后一个学期就要毕业了。', py: 'Hái yǒu zuìhòu yí ge xuéqī jiù yào bìyè le.' },
-  { vi: 'Chỉ cần luôn kiên trì là có thể hoàn thành mục tiêu của mình.', zh: '只要一直坚持，就能完成自己的目标。', py: 'Zhǐyào yìzhí jiānchí, jiù néng wánchéng zìjǐ de mùbiāo.' }
+  { vi: 'Mục tiêu của tôi là sau này làm một bác sĩ giỏi.', zh: '我的目标是以后做一个好医生。', py: 'Wǒ de mùbiāo shì yǐhòu zuò yí ge hǎo yīshēng.' },
+  { vi: 'Họ kết hôn không lâu thì chuyển đến Thượng Hải.', zh: '他们结婚不久就搬到上海去了。', py: 'Tāmen jiéhūn bùjiǔ jiù bān dào Shànghǎi qù le.' },
+  { vi: 'Tết năm nay bạn định đón thế nào?', zh: '今年春节你打算怎样过？', py: 'Jīnnián Chūnjié nǐ dǎsuàn zěnyàng guò?' }
 ];

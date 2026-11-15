@@ -2488,159 +2488,152 @@ var dialogData = [
 // Nghe hiểu — tình huống MỚI (không lặp lại bài khoá), dùng lại từ/ngữ pháp bài này + HSK 1–2 + HSK3 bài trước
 var listenData = [
   {
-    audio: '小李，你的词典能借我用一下吗？对不起，我的词典被同学借走了。那怎么办？我明天有考试。你别着急，图书馆有很多词典，你可以去借一本。',
+    audio: '我的笔记本电脑被哥哥借走了，今天只能去图书馆用电脑了。',
     questions: [
-      { q: '小李的词典怎么了？', opts: ['丢了', '被同学借走了', '放在家里了'], ans: 1 },
-      { q: '小李说可以去哪儿借词典？', opts: ['图书馆', '书店', '办公室'], ans: 0 }
+      { q: 'Máy tính xách tay của người nói đâu rồi?', opts: ['Bị hỏng', 'Bị anh trai mượn đi', 'Bị để quên ở thư viện'], ans: 1, exp: '被哥哥借走了 = bị anh trai mượn đi rồi; câu bị động: chủ thể + 被 + người làm + V + 走了.' },
+      { q: 'Hôm nay người nói sẽ làm gì?', opts: ['Mua máy tính mới', 'Nghỉ học ở nhà', 'Đến thư viện dùng máy tính'], ans: 2, exp: '只能去图书馆用电脑了 = đành phải đến thư viện dùng máy tính.' }
     ]
   },
   {
-    audio: '我每天早上先去公园跑步，然后回家吃早饭。吃完早饭，我一般先看一会儿报纸，再去上班。晚上下了班，我喜欢在手机上看电子书。',
+    audio: '你先去图书馆还书，然后来教室找我，我们一块儿去吃饭。',
     questions: [
-      { q: '说话人每天早上先做什么？', opts: ['看报纸', '去公园跑步', '吃早饭'], ans: 1 },
-      { q: '晚上说话人喜欢做什么？', opts: ['看电子书', '看视频', '去图书馆'], ans: 0 }
+      { q: 'Người nghe phải làm gì trước?', opts: ['Đến lớp tìm người nói', 'Đến thư viện trả sách', 'Đi ăn cơm'], ans: 1, exp: '先去图书馆还书 = trước tiên đến thư viện trả sách; 先……，然后…… = trước…, sau đó….' },
+      { q: 'Sau đó hai người sẽ cùng làm gì?', opts: ['Đi ăn cơm', 'Đi mượn sách', 'Đi học'], ans: 0, exp: '我们一块儿去吃饭 = chúng ta cùng đi ăn; 一块儿 = cùng nhau.' }
     ]
   },
   {
-    audio: '下个月学校有新年晚会，我们班级要表演一个节目。我想跳舞，可是一想到要在那么多人面前跳，我就有些紧张。紧张什么啊，你跳得那么好，我相信大家都会喜欢的。',
+    audio: '明天表演你怕什么啊？你都练了两个月了，一定能跳好。',
     questions: [
-      { q: '说话人的班级下个月要做什么？', opts: ['参加比赛', '表演节目', '去旅游'], ans: 1 },
-      { q: '说话人为什么有些紧张？', opts: ['跳得不好', '没找到人一起跳', '要在很多人面前跳舞'], ans: 2 }
+      { q: 'Người nói có ý gì?', opts: ['Trách người kia luyện tập ít', 'An ủi, bảo người kia đừng sợ', 'Hỏi người kia sợ điều gì'], ans: 1, exp: '你怕什么啊 = có gì mà phải sợ (phản bác để an ủi), không phải câu hỏi thật.' }
     ]
   },
   {
-    audio: '昨天我去图书馆借书，可是我的校园卡被我忘在家里了，进不去图书馆。没办法，我先回家拿了卡，然后再去图书馆。可是我想借的那本书已经被别人借走了。',
+    audio: '这个网站上有很多中文视频，每个都不长，你最好每天看一个。',
     questions: [
-      { q: '说话人为什么进不去图书馆？', opts: ['图书馆关门了', '校园卡忘在家里了', '校园卡丢了'], ans: 1 },
-      { q: '说话人最后借到那本书了吗？', opts: ['借到了', '没借到，书被别人借走了', '借到了电子书'], ans: 1 }
+      { q: 'Người nói khuyên gì?', opts: ['Mỗi ngày xem một video', 'Xem hết trong một ngày', 'Chỉ xem video dài'], ans: 0, exp: '最好每天看一个 = tốt nhất là mỗi ngày xem một cái; 最好 = tốt nhất là (lời khuyên).' }
+    ]
+  },
+  {
+    audio: '我们班有十二个留学生，女生比男生多两个。',
+    questions: [
+      { q: 'Lớp có bao nhiêu bạn nữ?', opts: ['5 bạn', '7 bạn', '6 bạn'], ans: 1, exp: '12 lưu học sinh, 女生比男生多两个 = nữ nhiều hơn nam 2 bạn → 7 nữ, 5 nam.' }
+    ]
+  },
+  {
+    audio: '我新买的雨衣被我忘在出租车上了，现在外面下着大雨，不知道怎么办。',
+    questions: [
+      { q: 'Chiếc áo mưa mới đâu rồi?', opts: ['Bị bạn mượn mất', 'Bị để quên trên taxi', 'Bị rách'], ans: 1, exp: '被我忘在出租车上了 = bị tôi để quên trên taxi.' },
+      { q: 'Người nói đang cảm thấy thế nào?', opts: ['Rất vui', 'Không quan tâm', 'Không biết phải làm sao'], ans: 2, exp: '不知道怎么办 = không biết phải làm sao; 怎么办 = làm thế nào bây giờ.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '表演', right: '节目' },
-  { left: '相信', right: '自己' },
-  { left: '学校的', right: '网站' },
-  { left: '这本书被别人', right: '借走了' },
-  { left: '先去图书馆借书', right: '然后去游泳' },
-  { left: '紧张什么啊', right: '你要相信自己' }
+  { left: '一本汉语', right: '词典' },
+  { left: '听爷爷讲', right: '故事' },
+  { left: '你要相信', right: '自己' },
+  { left: '在大家', right: '面前' },
+  { left: '借书要去', right: '图书馆' },
+  { left: '新年', right: '快乐' },
+  { left: '跟同学们一块儿', right: '跳舞' }
 ];
 
 var fillData = [
-  { pre: '你今天看起来', blank: '有些', post: '难过，遇到什么问题了？', hint: '(hơi)', ans: '有些', exp: '有些 + tính từ = hơi… (gần với 有点儿); 看起来 (ôn HSK3 Bài 1), 难过 (ôn HSK3 Bài 5). Câu của sách.' },
-  { pre: '图书馆的这本书我已经看完了，我很喜欢这个', blank: '故事', post: '。', hint: '(câu chuyện)', ans: '故事', exp: '这个故事 — câu chuyện này; 已经……了 (ôn HSK2 Bài 1). Câu của sách.' },
-  { pre: '她读不懂中文报纸，你', blank: '最好', post: '把那个新闻给她讲一下。', hint: '(tốt nhất là)', ans: '最好', exp: '最好 + V — lời khuyên “tốt nhất là…”; câu chữ 把 (ôn HSK3 Bài 10), 新闻 (ôn HSK3 Bài 12). Câu của sách.' },
-  { pre: '网站上已经可以看到晚会的视频了，咱们', blank: '一块儿', post: '看吧。', hint: '(cùng nhau)', ans: '一块儿', exp: '一块儿 + V = 一起 + V; 咱们 (ôn HSK3 Bài 3). Câu của sách.' },
-  { pre: '你要', blank: '相信', post: '自己，这次一定能比上次更好！', hint: '(tin)', ans: '相信', exp: '相信自己 — tin vào bản thân; 比……更…… (ôn HSK3 Bài 7). Câu của sách.' },
-  { pre: '我刚才想说什么？突然就', blank: '忘记', post: '了。', hint: '(quên)', ans: '忘记', exp: '忘记了 — quên mất; 刚才 (ôn HSK3 Bài 12), 突然 (ôn HSK3 Bài 8). Câu của sách.' },
-  { pre: '你唱歌唱得那么好听，为什么没参加昨天的晚会？——我不喜欢在很多人', blank: '面前', post: '表演。', hint: '(trước mặt)', ans: '面前', exp: '在 + người + 面前 + V — làm gì trước mặt ai; 参加 (ôn HSK3 Bài 9). Câu của sách.' },
-  { pre: '这次考试你考得怎么样？——我已经很努力了，希望', blank: '最后', post: '的成绩能好一些！', hint: '(cuối cùng)', ans: '最后', exp: '最后的成绩 — kết quả cuối cùng; 努力 (ôn HSK3 Bài 10), 希望 (ôn HSK2 Bài 13). Câu của sách.' }
+  { pre: '我放在桌子上的词典', blank: '被', post: '谁拿走了？', hint: '(bị)', ans: '被', exp: 'Câu bị động: vật + 被 + 谁 / người + V + 走了 = bị ai lấy mất.' },
+  { pre: '桌子上的纸被风刮', blank: '走', post: '了，快去找找！', hint: '(đi mất)', ans: '走', exp: '被 + 风 + 刮走了 = bị gió thổi bay mất; sau động từ trong câu 被 phải có thành phần khác (走了); ôn 刮, 风 (bài 12).' },
+  { pre: '下了课，我先回家放书包，', blank: '然后', post: '去图书馆。', hint: '(sau đó)', ans: '然后', exp: '先……，然后…… = trước…, sau đó… (kể các việc theo thứ tự).' },
+  { pre: 'A：“我这次只考了八十分。” B：“八十分也不错了，你难过', blank: '什么', post: '？下次努力就行了。”', hint: '(… gì mà …)', ans: '什么', exp: 'Tính từ / động từ + 什么（啊） = có gì mà phải… (phản bác để an ủi); ôn 难过 (bài 5), 努力 (bài 10).' },
+  { pre: '外面风很大，你出门', blank: '最好', post: '多穿一件衣服。', hint: '(tốt nhất là)', ans: '最好', exp: '最好 + V = tốt nhất là… (lời khuyên).' },
+  { pre: '我', blank: '忘记', post: '带笔记本了，能借我一张纸吗？', hint: '(quên)', ans: '忘记', exp: '忘记 + V = quên làm gì; ôn 借 (bài 12), 笔记本 (bài 11).' },
+  { pre: '我', blank: '相信', post: '这次比赛我们班一定能得第一。', hint: '(tin rằng)', ans: '相信', exp: '相信 + cả mệnh đề = tin rằng…; ôn 比赛 (bài 9).' },
+  { pre: '第一次在这么多人面前说汉语，我', blank: '有些', post: '不好意思。', hint: '(hơi)', ans: '有些', exp: '有些 + tính từ = hơi… (giống 有点儿); 在……面前 = trước mặt….' },
+  { pre: '我们学校有很多', blank: '留学生', post: '，大家常常一块儿学汉语。', hint: '(lưu học sinh)', ans: '留学生', exp: '留学生 = lưu học sinh; 一块儿 = cùng nhau.' },
+  { pre: '今天上午我有四', blank: '节', post: '课，中午只能在学校吃饭。', hint: '(tiết — lượng từ)', ans: '节', exp: 'Lượng từ 节 cho tiết học: 四节课 = bốn tiết học.' },
+  { pre: '这本书讲的是一些', blank: '名人', post: '小时候的故事。', hint: '(người nổi tiếng)', ans: '名人', exp: '名人 = người nổi tiếng; 故事 = câu chuyện.' },
+  { pre: '他每次都是', blank: '最后', post: '一个到教室的。', hint: '(cuối cùng)', ans: '最后', exp: '最后一个 + V = người cuối cùng làm gì; 是……的 nhấn mạnh.' }
 ];
 
 var sortData = [
-  { words: ['这本书', '都', '被', '别人', '借走', '了', '。'], ans: '这本书都被别人借走了。', audio: '这本书都被别人借走了。' },
-  { words: ['我', '要', '先', '去', '图书馆', '借书', '，', '然后', '去', '游泳', '。'], ans: '我要先去图书馆借书，然后去游泳。', audio: '我要先去图书馆借书，然后去游泳。' },
-  { words: ['可能', '被', '我', '放在', '家里', '了', '。'], ans: '可能被我放在家里了。', audio: '可能被我放在家里了。' },
-  { words: ['紧张', '什么', '啊', '，', '你', '要', '相信', '自己', '。'], ans: '紧张什么啊，你要相信自己。', audio: '紧张什么啊，你要相信自己。' },
-  { words: ['每个', '班级', '的', '同学', '都', '表演', '节目', '了', '。'], ans: '每个班级的同学都表演节目了。', audio: '每个班级的同学都表演节目了。' },
-  { words: ['过几天', '学校的', '网站', '上', '会', '有', '晚会的', '视频', '。'], ans: '过几天学校的网站上会有晚会的视频。', audio: '过几天学校的网站上会有晚会的视频。' }
+  { words: ['我的', '手机', '被', '妹妹', '拿', '走', '了', '。'], ans: '我的手机被妹妹拿走了。', audio: '我的手机被妹妹拿走了。' },
+  { words: ['那本', '书', '没有', '被', '别人', '借走', '。'], ans: '那本书没有被别人借走。', audio: '那本书没有被别人借走。' },
+  { words: ['我们', '先', '去', '超市', '买', '东西', '，', '然后', '回家', '做饭', '。'], ans: '我们先去超市买东西，然后回家做饭。', audio: '我们先去超市买东西，然后回家做饭。' },
+  { words: ['着急', '什么', '啊', '，', '离', '上课', '还有', '二十分钟', '呢', '。'], ans: '着急什么啊，离上课还有二十分钟呢。', audio: '着急什么啊，离上课还有二十分钟呢。' },
+  { words: ['爷爷', '每天', '早上', '都', '要', '看', '一会儿', '报纸', '。'], ans: '爷爷每天早上都要看一会儿报纸。', audio: '爷爷每天早上都要看一会儿报纸。' },
+  { words: ['我们', '班级', '要', '在', '新年', '晚会', '上', '表演', '一个', '节目', '。'], ans: '我们班级要在新年晚会上表演一个节目。', audio: '我们班级要在新年晚会上表演一个节目。' },
+  { words: ['现在', '很多', '人', '喜欢', '在', '手机上', '看', '电子书', '。'], ans: '现在很多人喜欢在手机上看电子书。', audio: '现在很多人喜欢在手机上看电子书。' },
+  { words: ['这个', '网站', '上', '的', '视频', '对', '学', '汉语', '很', '有', '帮助', '。'], ans: '这个网站上的视频对学汉语很有帮助。', audio: '这个网站上的视频对学汉语很有帮助。' }
 ];
 
 var mcData = [
-  { q: '她学过＿＿，可以跟你们一起准备这个节目。', opts: ['故事', '表演', '名人', '网站'], ans: 1, exp: '学过表演 = từng học biểu diễn, nên giúp chuẩn bị tiết mục được.' },
-  { q: '你们学校的＿＿多吗？——越来越多，今年有三千多人。', opts: ['留学生', '节目', '报纸', '视频'], ans: 0, exp: 'Trả lời có ba nghìn người → hỏi về người: 留学生. 节目, 报纸 không đếm bằng người.' },
-  { q: '下午我只有两＿＿课，可以帮你去图书馆还书。', opts: ['本', '遍', '节', '页'], ans: 2, exp: '节 là lượng từ cho tiết học: 两节课. 遍 là lượt, 页 là trang.' },
-  { q: '咱们一起走吧，我想去图书馆看看中文＿＿。', opts: ['网站', '校长', '女生', '报纸'], ans: 3, exp: '中文报纸 = báo tiếng Trung, đọc ở thư viện. 网站, 校长 không "xem" ở thư viện.' },
-  { q: '进不去图书馆也没关系，上网看看有没有＿＿。', opts: ['电子书', '班级', '节目', '新年'], ans: 0, exp: '上网看看有没有电子书 = lên mạng xem có sách điện tử không.' },
-  { q: '我想唱中文歌，但是还没找到人一起表演，不知道＿＿。', opts: ['什么', '怎么办', '为什么', '怎么样'], ans: 1, exp: '不知道怎么办 = không biết làm thế nào. 怎么样 hỏi tình hình, 为什么 hỏi lý do.' },
-  { q: '过几天学校的网站上会有晚会的＿＿，我打算再看一遍。', opts: ['女生', '故事', '面前', '视频'], ans: 3, exp: '晚会的视频 = video của buổi tiệc, xem trên trang web.' },
-  { q: 'Chọn câu bị động đúng: "Hoa quả có lẽ đã bị em trai ăn mất rồi."', opts: ['水果被弟弟可能吃了。', '水果可能被弟弟吃。', '水果可能被弟弟吃了。', '弟弟可能被水果吃了。'], ans: 2, exp: 'Câu 被: phó từ/trợ động từ (可能) đứng trước 被; sau động từ cần 了.' },
-  { q: 'Chọn câu đúng: "Bạn đi mua vé vào cửa trước, rồi hãy đến đây tìm mình."', opts: ['你先去买门票，再来这里找我。', '你去先买门票，再来这里找我。', '你先去买门票，来再这里找我。', '你再去买门票，先来这里找我。'], ans: 0, exp: '先…再… = trước… rồi mới…; 先 và 再 đứng trước động từ của từng vế.' },
-  { q: 'A: 明天就要考试了，我好紧张。 B: “＿＿，我们都相信你。”', opts: ['紧张吗', '什么紧张啊', '很紧张什么', '紧张什么啊'], ans: 3, exp: 'V/Adj + 什么(啊) là câu phản vấn, ý "việc gì phải…" → khuyên đừng lo lắng.' }
+  { q: 'Bạn giải thích với cô giáo (đùa): “Bài tập của em bị con chó ăn mất rồi.”', opts: ['我的作业被小狗吃。', '小狗被我的作业吃了。', '我的作业被小狗吃了。', '我的作业小狗被吃了。'], ans: 2, exp: 'Vật chịu tác động + 被 + người/vật gây ra + V + 了: 作业被小狗吃了; thiếu 了 thì câu chưa xong.' },
+  { q: 'Bạn muốn nói: “Cái ô của tôi có lẽ bị người khác cầm nhầm rồi.”', opts: ['我的伞被别人可能拿错了。', '我的伞可能被别人拿错了。', '我的伞可能被别人拿了错。', '我的伞可能别人被拿错了。'], ans: 1, exp: 'Phó từ / trợ động từ (可能, 没, 已经) đứng TRƯỚC 被; bổ ngữ 错 sát sau động từ.' },
+  { q: 'Bạn chỉ đường: “Bạn cứ đi thẳng trước, đến ngã tư rồi rẽ trái.”', opts: ['你往前走先，到了路口再往左走。', '你先往前走，再到了路口往左走。', '你再往前走，到了路口先往左走。', '你先往前走，到了路口再往左走。'], ans: 3, exp: '先 + V1，再 + V2: 先 và 再 đứng ngay trước động từ của từng vế, theo đúng thứ tự việc.' },
+  { q: '“我们先去书店看看，＿＿去看电影，好吗？”', opts: ['以后', '然后', '刚才', '后来'], ans: 1, exp: '先……，然后…… = trước…, sau đó…. 后来 chỉ dùng kể chuyện đã qua; 以后 = sau này.' },
+  { q: 'Bạn của bạn lo vì ngày mai phải nói trước lớp, bạn an ủi: “Có gì mà phải lo, bạn chuẩn bị kỹ lắm rồi mà.”', opts: ['什么担心啊，你已经准备得很好了。', '你担心什么吗？你已经准备得很好了。', '担心什么啊，你已经准备得很好了。', '担心啊什么，你已经准备得很好了。'], ans: 2, exp: 'Động từ / tính từ + 什么啊 = có gì mà phải… (an ủi); 什么 đứng SAU 担心, không thêm 吗.' },
+  { q: 'A: “这个菜太贵了，别点了。” — B: “这个菜贵什么啊？今天我请客！” — B có ý gì?', opts: ['B hỏi món ăn đắt ở chỗ nào', 'B cho rằng không đắt, cứ gọi đi', 'B đồng ý là món ăn đắt', 'B muốn gọi món khác'], ans: 1, exp: '贵什么啊 = đắt gì mà đắt (phản bác), không phải hỏi; ôn 请客 (bài 13).' },
+  { q: 'A: “我明天想去爬山，你觉得怎么样？” — B: “新闻里说明天有大雨，你＿＿别去。”', opts: ['最好', '最后', '有些', '然后'], ans: 0, exp: '最好 + (别) V = tốt nhất là (đừng)… — lời khuyên. 最后 = cuối cùng.' },
+  { q: '“今天我＿＿不舒服，想早点儿回家。”', opts: ['一些', '有的', '有些', '一点儿'], ans: 2, exp: '有些 + tính từ = hơi…. 一点儿 phải đứng sau tính từ (舒服一点儿), không đứng trước 不舒服.' },
+  { q: 'A: “我的护照丢了，＿＿？” — B: “别着急，我们先去服务台问问。”', opts: ['怎么样', '为什么', '干什么', '怎么办'], ans: 3, exp: '……，怎么办？ = phải làm sao bây giờ? 怎么样 hỏi tình hình, 为什么 hỏi lý do.' },
+  { q: '“他不喜欢在别人＿＿说汉语，因为怕说错。”', opts: ['前面', '面前', '以前', '中间'], ans: 1, exp: '在 + người + 面前 = trước mặt ai. 前面 chỉ vị trí phía trước (không gian), 以前 là thời gian.' },
+  { q: 'Câu nào SAI?', opts: ['他被校长叫到办公室去了。', '那本书被我看完了。', '我的自行车被骑走了。', '我被这个问题解决了。'], ans: 3, exp: 'Chủ ngữ câu 被 là đối tượng chịu tác động: 这个问题被我解决了. “我被这个问题解决了” sai nghĩa.' },
+  { q: 'A: “晚会上你表演什么？” — B: “我和几个女生＿＿跳舞。”', opts: ['一边', '一块儿', '一样', '一下'], ans: 1, exp: '一块儿 + V = cùng nhau làm. 一边 phải đi thành cặp, 一样 = giống nhau.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách + tình huống thực tế), rồi tự ghi âm câu trả lời — cố dùng từ mới và ngữ pháp của bài.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng câu bị động 被, 先……，然后/再……, “× 什么啊” để an ủi, và từ về trường học, thư viện, biểu diễn.',
   questions: [
     {
-      q_zh: '李文请白家月帮他借什么书？',
-      q_vn: 'Lý Văn nhờ Bạch Gia Nguyệt mượn giúp quyển sách gì?',
-      hint: '李文请白家月帮他借……',
-      sample: '李文请白家月帮他借《名人的故事》。',
-      sample_vn: 'Lý Văn nhờ Bạch Gia Nguyệt mượn giúp quyển “Câu chuyện về các danh nhân”.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. 请 + người + V (ôn HSK2 Bài 1); 借 (ôn HSK3 Bài 12).'
+      q_zh: '你有没有什么东西被别人拿走过？',
+      q_vn: 'Bạn đã từng bị người khác lấy mất (mượn đi) thứ gì chưa?',
+      hint: '有一次，我的……被……了，……',
+      sample: '上个月我的自行车被一个朋友骑走了，他忘记告诉我，我还以为丢了呢。',
+      sample_vn: 'Tháng trước xe đạp của tôi bị một người bạn đi mất, bạn ấy quên báo cho tôi, tôi còn tưởng là bị mất cơ.',
+      note: '被 + người + V + 走了; 忘记; ôn 以为 (bài 1).'
     },
     {
-      q_zh: '李文为什么没借到这本书？',
-      q_vn: 'Vì sao Lý Văn không mượn được quyển sách này?',
-      hint: '因为他去了好几次图书馆，这本书都被……',
-      sample: '因为他去了好几次图书馆，这本书都被别人借走了。',
-      sample_vn: 'Vì anh ấy đến thư viện mấy lần rồi, quyển sách này lúc nào cũng bị người khác mượn mất.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 1. Câu bị động 被 của bài này; 好几次 (好多 – ôn HSK3 Bài 9).'
+      q_zh: '你每天早上起床以后，先做什么，然后做什么？',
+      q_vn: 'Mỗi sáng thức dậy, bạn làm gì trước, rồi làm gì?',
+      hint: '我先……，然后……，再……',
+      sample: '我起床以后先喝一杯水，然后去楼下跑步，跑完再回家吃早饭。',
+      sample_vn: 'Thức dậy tôi uống một cốc nước trước, sau đó xuống dưới nhà chạy bộ, chạy xong mới về nhà ăn sáng.',
+      note: '先……，然后……，再…….'
     },
     {
-      q_zh: '白家月为什么不能进图书馆？她觉得校园卡可能在哪儿？',
-      q_vn: 'Vì sao Bạch Gia Nguyệt không vào được thư viện? Cô ấy nghĩ thẻ sinh viên có thể ở đâu?',
-      hint: '因为她的校园卡……，没有卡……。她觉得可能被她……',
-      sample: '因为她的校园卡不见了，没有卡进不去图书馆。她觉得校园卡可能被她放在家里了。',
-      sample_vn: 'Vì thẻ sinh viên của cô ấy không thấy đâu, không có thẻ thì không vào được thư viện. Cô ấy nghĩ có thể mình đã để thẻ ở nhà.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 2. Bổ ngữ khả năng 进不去 (ôn HSK3 Bài 9); 被 + người + 放在 + nơi chốn.'
+      q_zh: '你在很多人面前表演过节目吗？',
+      q_vn: 'Bạn đã từng biểu diễn tiết mục trước đông người chưa?',
+      hint: '表演过。……的时候，我和……一块儿……',
+      sample: '表演过。去年新年晚会的时候，我和几个同学一块儿唱了中文歌，开始有些紧张，后来就好了。',
+      sample_vn: 'Có. Dạ hội năm mới năm ngoái, tôi cùng mấy bạn hát bài hát tiếng Trung, lúc đầu hơi căng thẳng, sau thì ổn.',
+      note: '在……面前, 表演节目, 一块儿, 有些.'
     },
     {
-      q_zh: '李文为什么紧张？白家月是怎么说的？',
-      q_vn: 'Vì sao Lý Văn căng thẳng? Bạch Gia Nguyệt đã nói thế nào?',
-      hint: '因为一想到要在……面前表演，他就……。白家月说：“紧张什么啊，……”',
-      sample: '因为一想到要在校长、老师和那么多同学面前表演，他就有些紧张。白家月说：“紧张什么啊，我们都喜欢听你唱歌，你要相信自己。”',
-      sample_vn: 'Vì cứ nghĩ đến việc phải biểu diễn trước mặt hiệu trưởng, thầy cô và bao nhiêu bạn học là anh ấy thấy hơi căng thẳng. Bạch Gia Nguyệt nói: “Có gì mà phải căng thẳng chứ, tụi em đều thích nghe anh hát, anh phải tin vào bản thân.”',
-      note: 'Câu hỏi đọc hiểu Bài khoá 3. 一……就…… (ôn HSK3 Bài 1); “× 什么啊” để an ủi.'
+      q_zh: '朋友考试前很紧张，你会怎么跟他说？',
+      q_vn: 'Bạn của bạn rất căng thẳng trước kỳ thi, bạn sẽ nói gì với bạn ấy?',
+      hint: '你还……什么啊，你……，我相信……',
+      sample: '我会跟他说：“你还紧张什么啊，你学得那么认真，我相信你一定能考好。”',
+      sample_vn: 'Tôi sẽ nói với bạn ấy: “Có gì mà phải căng thẳng, cậu học chăm thế mà, tớ tin cậu nhất định sẽ thi tốt.”',
+      note: '× 什么啊 (an ủi); 相信; ôn 认真 (bài 10).'
     },
     {
-      q_zh: '白家月最喜欢哪个节目？为什么？',
-      q_vn: 'Bạch Gia Nguyệt thích tiết mục nào nhất? Vì sao?',
-      hint: '她最喜欢……，因为最后老师和校长也被……',
-      sample: '她最喜欢留学生们跳舞，因为最后老师和校长也被叫起来一块儿跳，特别有意思。',
-      sample_vn: 'Cô ấy thích nhất tiết mục nhảy của các lưu học sinh, vì cuối cùng thầy cô và hiệu trưởng cũng được mời lên nhảy cùng, rất thú vị.',
-      note: 'Câu hỏi đọc hiểu Bài khoá 4. 特别 (ôn HSK3 Bài 4); 被叫起来 — câu bị động.'
-    },
-    {
-      q_zh: '下课以后，你常常做什么？',
-      q_vn: 'Sau giờ học bạn thường làm gì?',
-      hint: '下课以后，我常常先……，然后……',
-      sample: '下课以后，我常常先去图书馆看一会儿书，然后去游泳或者跑步。',
-      sample_vn: 'Sau giờ học, tôi thường đến thư viện đọc sách một lát trước, sau đó đi bơi hoặc chạy bộ.',
-      note: 'Câu hỏi Khởi động của sách. 先……，然后…… của bài này; 或者 (ôn HSK3 Bài 11).'
-    },
-    {
-      q_zh: '你觉得学校最有意思的活动是什么？为什么？',
-      q_vn: 'Bạn thấy hoạt động thú vị nhất ở trường là gì? Vì sao?',
-      hint: '我觉得最有意思的是……，因为……',
-      sample: '我觉得最有意思的是新年晚会，因为每个班级都表演节目，大家又唱又跳，开心极了。',
-      sample_vn: 'Tôi thấy thú vị nhất là dạ hội năm mới, vì lớp nào cũng biểu diễn tiết mục, mọi người vừa hát vừa nhảy, vui cực kỳ.',
-      note: 'Câu hỏi Khởi động của sách (活动 huódòng = hoạt động). 又……又…… (ôn HSK3 Bài 2); ……极了 (ôn HSK3 Bài 7).'
-    },
-    {
-      q_zh: '请说说你“最倒霉的一天”，那天你遇到了什么事？',
-      q_vn: 'Hãy kể về “ngày xui xẻo nhất” của bạn, hôm đó bạn đã gặp những chuyện gì?',
-      hint: '那天我的……被……了，……也被……了。',
-      sample: '那天我的自行车被朋友骑走了，我只能走路去学校，还迟到了。中午我买的水果被我忘在超市了。晚上我想看的那本书也被别人借走了。',
-      sample_vn: 'Hôm đó xe đạp của tôi bị bạn đi mất, tôi đành đi bộ đến trường, lại còn bị muộn. Buổi trưa hoa quả tôi mua bị tôi để quên ở siêu thị. Buổi tối quyển sách tôi muốn đọc cũng bị người khác mượn mất.',
-      note: 'Hoạt động trên lớp của sách (倒霉 dǎoméi = xui xẻo): dùng càng nhiều câu 被 càng tốt. 迟到 (ôn HSK3 Bài 6), 自行车 (ôn HSK3 Bài 7).'
+      q_zh: '你喜欢看纸书还是电子书？为什么？',
+      q_vn: 'Bạn thích đọc sách giấy hay sách điện tử? Vì sao?',
+      hint: '我更喜欢……，因为……，但是……',
+      sample: '我更喜欢看电子书，因为在手机上就能看，很方便，但是看久了眼睛有些累。',
+      sample_vn: 'Tôi thích đọc sách điện tử hơn, vì đọc ngay trên điện thoại được, rất tiện, nhưng đọc lâu thì mắt hơi mỏi.',
+      note: '电子书; 还是 trong câu hỏi (bài 11); ôn 方便 (bài 2), 久 (bài 4).'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Anh đi thư viện mấy lần rồi, quyển sách này lúc nào cũng bị người khác mượn mất.', zh: '我去了好几次图书馆，这本书都被别人借走了。', py: 'Wǒ qùle hǎo jǐ cì túshūguǎn, zhè běn shū dōu bèi biérén jièzǒu le.' },
-  { vi: 'Mình phải đến thư viện mượn sách trước, sau đó đi bơi.', zh: '我要先去图书馆借书，然后去游泳。', py: 'Wǒ yào xiān qù túshūguǎn jiè shū, ránhòu qù yóuyǒng.' },
-  { vi: 'Mình không nhớ nữa, có thể mình đã để nó ở nhà rồi.', zh: '我忘记了，可能被我放在家里了。', py: 'Wǒ wàngjì le, kěnéng bèi wǒ fàng zài jiā li le.' },
-  { vi: 'Có gì mà phải căng thẳng chứ, tụi em đều thích nghe anh hát, anh phải tin vào bản thân.', zh: '紧张什么啊，我们都喜欢听你唱歌，你要相信自己。', py: 'Jǐnzhāng shénme a, wǒmen dōu xǐhuan tīng nǐ chàng gē, nǐ yào xiāngxìn zìjǐ.' },
-  { vi: 'Cuối cùng thầy cô và hiệu trưởng cũng được mời lên nhảy cùng, đặc biệt thú vị.', zh: '最后老师和校长也被叫起来一块儿跳，特别有意思。', py: 'Zuìhòu lǎoshī hé xiàozhǎng yě bèi jiào qǐlai yíkuàir tiào, tèbié yǒu yìsi.' }
+  { vi: 'Tên của tôi bị cô giáo viết sai rồi.', zh: '我的名字被老师写错了。', py: 'Wǒ de míngzi bèi lǎoshī xiěcuò le.' },
+  { vi: 'Chúng ta ăn cơm trước, rồi đi dạo phố.', zh: '我们先吃饭，再去街上走走。', py: 'Wǒmen xiān chī fàn, zài qù jiē shang zǒuzou.' },
+  { vi: 'Ở đây cách trường xa gì mà xa? Đạp xe năm phút là đến.', zh: '这儿离学校远什么？骑车五分钟就到了。', py: 'Zhèr lí xuéxiào yuǎn shénme? Qí chē wǔ fēnzhōng jiù dào le.' },
+  { vi: 'Tốt nhất là bạn hỏi thầy cô trước, sau đó hãy quyết định.', zh: '你最好先问问老师，然后再决定。', py: 'Nǐ zuìhǎo xiān wènwen lǎoshī, ránhòu zài juédìng.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Quyển từ điển anh mượn tốt nhất là hôm nay phải trả, nhưng anh không có thời gian đi.', zh: '我借的这本词典最好今天还，但是我没时间去。', py: 'Wǒ jiè de zhè běn cídiǎn zuìhǎo jīntiān huán, dànshì wǒ méi shíjiān qù.' },
-  { vi: 'Không có thẻ thì không vào được thư viện.', zh: '没有卡进不去图书馆。', py: 'Méiyǒu kǎ jìn bu qù túshūguǎn.' },
-  { vi: 'Không vào được thư viện cũng không sao, lên mạng xem có sách điện tử không.', zh: '进不去图书馆也没关系，上网看看有没有电子书。', py: 'Jìn bu qù túshūguǎn yě méi guānxi, shàngwǎng kànkan yǒu méiyǒu diànzǐshū.' },
-  { vi: 'Cứ nghĩ đến việc phải biểu diễn trước mặt hiệu trưởng, thầy cô và bao nhiêu bạn học là anh thấy hơi căng thẳng.', zh: '一想到要在校长、老师和那么多同学面前表演，我就有些紧张。', py: 'Yì xiǎngdào yào zài xiàozhǎng, lǎoshī hé nàme duō tóngxué miànqián biǎoyǎn, wǒ jiù yǒuxiē jǐnzhāng.' },
-  { vi: 'Vài ngày nữa trên trang web của trường sẽ có video buổi dạ hội, tôi định xem lại một lượt.', zh: '过几天学校的网站上会有晚会的视频，我打算再看一遍。', py: 'Guò jǐ tiān xuéxiào de wǎngzhàn shang huì yǒu wǎnhuì de shìpín, wǒ dǎsuàn zài kàn yí biàn.' }
+  { vi: 'Tôi quên mất tên bộ phim đó rồi.', zh: '我忘记那个电影的名字了。', py: 'Wǒ wàngjì nà ge diànyǐng de míngzi le.' },
+  { vi: 'Ở dạ hội năm mới, hiệu trưởng cũng nhảy cùng các lưu học sinh.', zh: '新年晚会上，校长也跟留学生们一块儿跳舞了。', py: 'Xīnnián wǎnhuì shang, xiàozhǎng yě gēn liúxuéshēngmen yíkuàir tiàowǔ le.' },
+  { vi: 'Tối nay có chương trình gì hay không?', zh: '今天晚上有什么好看的节目吗？', py: 'Jīntiān wǎnshang yǒu shénme hǎokàn de jiémù ma?' }
 ];

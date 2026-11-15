@@ -34,11 +34,16 @@ const NGAT = /[，。？！；：、…—,?!;:\s“”「」]+/;
 const CONG_THUC = new Set(['不客气', '没关系', '对不起', '谢谢你', '谢谢您', '老师好', '你们好', '同学们好', '再见', '不用谢', '没什么',
   '好的', '是的', '不是', '你呢', '我也是', '不好意思']);
 // Cap: cap duoi (bai tap cua cap duoi cung tinh la 'bai truoc' cho [CU])
-const DUOI = { hsk1v3: [], hsk2v3: ['hsk1v3'] };
+const DUOI = { hsk1v3: [], hsk2v3: ['hsk1v3'], hsk3v3: ['hsk1v3', 'hsk2v3'], yct: [], hsk1: [] };
+// So bai moi cap (mac dinh 15)
+const SO_BAI = { hsk3v3: 18, yct: 11 };
+const SB = (c) => SO_BAI[c] || 15;
+DUOI.hsk4v3 = ['hsk1v3', 'hsk2v3', 'hsk3v3']; SO_BAI.hsk4v3 = 20; // HSK 4 (3.0): 20 bai, cap duoi hsk1v3–hsk3v3
 const CAP = process.argv[2];
 if (!DUOI[CAP]) { console.log('Dung: node tools/kiem-lap.js <' + Object.keys(DUOI).join('|') + '> [bai|a-b] [-v]'); process.exit(2); }
 // Ngoai le co chu y: { cap: { bai: [[cauA, cauB, ly do]] } } — cauB = cauA khi la [TRUNG]
-const CHO_PHEP_CAP = { hsk1v3: {}, hsk2v3: {} };
+const CHO_PHEP_CAP = { hsk1v3: {}, hsk2v3: {}, hsk3v3: {}, yct: {}, hsk1: {} };
+CHO_PHEP_CAP.hsk4v3 = CHO_PHEP_CAP.hsk4v3 || {};
 const CHO_PHEP = CHO_PHEP_CAP[CAP];
 const MIN = 3;
 
@@ -90,6 +95,11 @@ function mucCuaBai(D) {
   D.tr.forEach((t, i) => add('dich' + (i + 1), 'dich', [t.zh]));
   D.trRev.forEach((t, i) => add('dichN' + (i + 1), 'dichN', [t.zh]));
   ((D.speak && D.speak.questions) || []).forEach((q, i) => add('noi' + (i + 1), 'noi', [q.q_zh, q.sample]));
+  // Luyen noi 3 tang (YCT): t1 cau mau / t2 khung thay the (moi khung 1 muc) / t3 cau mau tinh huong
+  const sp = D.speak || {};
+  ((sp.t1 && sp.t1.models) || []).forEach((m, i) => add('noiA' + (i + 1), 'noi', [m.zh]));
+  ((sp.t2 && sp.t2.drills) || []).forEach((d, i) => add('noiB' + (i + 1), 'noi', d.samples || []));
+  ((sp.t3 && sp.t3.tasks) || []).forEach((t, i) => add('noiC' + (i + 1), 'noi', [t.sample]));
   return ds;
 }
 
@@ -116,16 +126,16 @@ function tuCuaBai(D) {
   return [...new Set(s)];
 }
 
-const arg = process.argv[3] && !/^-/.test(process.argv[3]) ? process.argv[3] : '1-15';
+const arg = process.argv[3] && !/^-/.test(process.argv[3]) ? process.argv[3] : '1-' + SB(CAP);
 const [A, B] = arg.split('-').map(Number);
 const chiTiet = process.argv.includes('-v');
 const BAI = {};
-for (let n = 1; n <= 15; n++) BAI[n] = napBai(n);
+for (let n = 1; n <= SB(CAP); n++) BAI[n] = napBai(n);
 const MUC = {};
-for (let n = 1; n <= 15; n++) MUC[n] = mucCuaBai(BAI[n]);
+for (let n = 1; n <= SB(CAP); n++) MUC[n] = mucCuaBai(BAI[n]);
 // Bai tap cua cap duoi: [nhan, muc]
 const CU_DUOI = [];
-DUOI[CAP].forEach((d) => { for (let m = 1; m <= 15; m++) CU_DUOI.push([d + ' bai ' + m, mucCuaBai(napBai(m, d))]); });
+DUOI[CAP].forEach((d) => { for (let m = 1; m <= SB(d); m++) CU_DUOI.push([d + ' bai ' + m, mucCuaBai(napBai(m, d))]); });
 const daHoc = (n) => { const s = new Set(); for (let i = 1; i <= n; i++) BAI[i].vocab.forEach((v) => (String(v.zh || '').match(/[㐀-鿿]+/g) || []).forEach((w) => s.add(w))); return s; };
 
 let TONG = { trung: 0, gan: 0, khoa: 0, nhieu: 0, cu: 0, ghep: 0, phu: 0, muc: 0, sach: 0 };
@@ -191,7 +201,8 @@ for (let n = A; n <= (B || A); n++) {
 
   const nghe = (Array.isArray(D.listen) ? D.listen : []).length;
   const so = 'mc ' + D.mc.length + ' · fill ' + D.fill.length + ' · sort ' + D.sort.length + ' · nghe ' + nghe +
-    ' · ghep ' + D.match.length + ' · dich ' + D.tr.length + '/' + D.trRev.length + ' · noi ' + ((D.speak && D.speak.questions) || []).length;
+    ' · ghep ' + D.match.length + ' · dich ' + D.tr.length + '/' + D.trRev.length + ' · noi ' + ((D.speak && D.speak.questions) || []).length +
+    (D.speak && D.speak.t1 ? '+' + D.speak.t1.models.length + '/' + ((D.speak.t2 || {}).drills || []).length + '/' + ((D.speak.t3 || {}).tasks || []).length : '');
   const diem = Math.round(100 * (1 - dinh.size / ds.length));
   console.log(CAP + ' bai ' + n + ': ' + so + ' → trung ' + loi.trung.length + ', gan ' + loi.gan.length + ', bai khoa ' + loi.khoa.length +
     ', phuong an ' + loi.nhieu.length + ', cu ' + loi.cu.length + ', ghep ' + loi.ghep.length + ', thieu tu ' + loi.phu.length + ' · diem ' + diem + '/100');

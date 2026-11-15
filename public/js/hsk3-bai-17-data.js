@@ -1793,74 +1793,79 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'请',right:'假'},
-  {left:'一共',right:'三天'},
-  {left:'过去是',right:'邻居'},
-  {left:'很多',right:'爱好'},
-  {left:'有',right:'办法'},
-  {left:'为了',right:'健康'},
-  {left:'决定',right:'每天跑步'},
-  {left:'谁都喜欢',right:'小丽。'},
-  {left:'虽然他有很多爱好，',right:'但是最近没时间玩儿了。'},
-  {left:'如果你渴了，',right:'就喝点儿水吧。'},
-  {left:'只要你根据情况运动，',right:'身体就会更健康。'},
+  {left:'谢谢，不用了，我已经吃', right:'饱'},
+  {left:'他喜欢唱歌、画画儿，有很多', right:'爱好'},
+  {left:'住在我家楼上的是我们的', right:'邻居'},
+  {left:'这件事情太难了，我们一起想想', right:'办法'},
+  {left:'踢了一个小时足球，我口', right:'渴'},
+  {left:'苹果和香蕉一共', right:'多少钱'},
+  {left:'医生会根据你的身体', right:'情况'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这个周末我可以',blank:'请假',post:'吗？',hint:'(xin nghỉ phép)',ans:'请假'},
-  {pre:'只要经理同意，我',blank:'一共',post:'可以请五天假。',hint:'(tổng cộng)',ans:'一共'},
-  {pre:'我们过去是',blank:'邻居',post:'。',hint:'(láng giềng)',ans:'邻居'},
-  {pre:'',blank:'后来',post:'是大学同学。',hint:'(sau này, sau đó)',ans:'后来',exp:'后来 = sau này, về sau (chuyện đã qua); khác 然后 = sau đó, nối hai hành động liên tiếp.'},
-  {pre:'他有很多',blank:'爱好',post:'。',hint:'(sở thích)',ans:'爱好'},
-  {pre:'谁都有',blank:'办法',post:'看好你的"病"。',hint:'(cách, biện pháp)',ans:'办法'},
-  {pre:'你吃',blank:'饱',post:'了就休息休息。',hint:'(no)',ans:'饱',exp:'吃饱 = ăn no; 饱 là bổ ngữ kết quả của 吃.'},
-  {pre:'',blank:'为了',post:'以后能找到好工作，他决定每天多练习两个小时。',hint:'(để, vì)',ans:'为了',exp:'为了 + mục đích đặt đầu câu = để…: 为了以后能找到好工作…'},
-  {pre:'我',blank:'决定',post:'每天去跑步。',hint:'(quyết định)',ans:'决定'},
-  {pre:'要',blank:'选择',post:'"对"的时间。',hint:'(lựa chọn)',ans:'选择'},
-  {pre:'',blank:'冬天',post:'要再晚一点儿。',hint:'(mùa đông)',ans:'冬天'},
-  {pre:'',blank:'必须',post:'要根据自己的健康情况运动。',hint:'(cần phải)',ans:'必须'},
-  {pre:'老师会',blank:'根据',post:'学生的水平给他们练习。',hint:'(căn cứ vào, dựa vào)',ans:'根据'},
-  {pre:'医生会根据你的身体',blank:'情况',post:'给你药。',hint:'(tình hình, tình trạng)',ans:'情况'},
-  {pre:'记得刚运动完',blank:'口',post:'渴。',hint:'(miệng)',ans:'口'},
-  {pre:'记得刚运动完口',blank:'渴',post:'，不要马上喝水。',hint:'(khát)',ans:'渴'},
+  {pre:'A：小王今天怎么没来上班？B：他发烧了，早上给经理打电话', blank:'请假', post:'了。', hint:'(xin nghỉ)', ans:'请假', exp:'给 + người + 打电话请假 = gọi điện xin nghỉ; ôn 给 + người + động từ.'},
+  {pre:'我们班', blank:'一共', post:'有二十个学生，今天来了十八个。', hint:'(tổng cộng)', ans:'一共', exp:'一共 đứng TRƯỚC động từ/số lượng: 一共有二十个 = tổng cộng có hai mươi.'},
+  {pre:'我们的', blank:'邻居', post:'很热情，经常给我们送水果。', hint:'(hàng xóm)', ans:'邻居', exp:'邻居 = hàng xóm; ôn 热情 (bài 4), 经常 = thường xuyên.'},
+  {pre:'第一次来中国的时候，我一个汉字也不认识，', blank:'后来', post:'每天练习，现在能看懂报纸了。', hint:'(về sau)', ans:'后来', exp:'后来 = về sau (chuyện đã xảy ra); ôn 一……也不 (bài 1) và bổ ngữ 看懂.'},
+  {pre:'A：你有什么', blank:'爱好', post:'？B：我最喜欢足球，周末经常跟朋友去踢。', hint:'(sở thích)', ans:'爱好', exp:'有什么爱好 = có sở thích gì; 跟 + người + 去 + V (bài 1).'},
+  {pre:'电脑突然坏了，我一点儿', blank:'办法', post:'也没有，你能来帮帮我吗？', hint:'(cách, biện pháp)', ans:'办法', exp:'一点儿办法也没有 = chẳng có cách nào; ôn 突然 (bài 6), 坏 (bài 13).'},
+  {pre:'中午我吃得太', blank:'饱', post:'了，现在一点儿也不饿。', hint:'(no)', ans:'饱', exp:'吃得太饱 = ăn no quá (bổ ngữ trạng thái với 得, bài 16); 饿 = đói, ngược nghĩa.'},
+  {pre:'', blank:'为了', post:'提高汉语水平，他每天都和中国朋友聊天。', hint:'(để, vì)', ans:'为了', exp:'为了 + mục đích đứng đầu câu, vế sau nói việc làm; ôn 提高/水平 (bài 15).'},
+  {pre:'想了很久，我', blank:'决定', post:'下个月去北京留学。', hint:'(quyết định)', ans:'决定', exp:'决定 + việc sẽ làm = quyết định làm gì; ôn 留学 (bài 15).'},
+  {pre:'这两件衣服都很漂亮，我不知道应该', blank:'选择', post:'哪一件。', hint:'(lựa chọn)', ans:'选择', exp:'选择 + 哪 + lượng từ = chọn cái nào; ôn 应该 (bài 13).'},
+  {pre:'北京的', blank:'冬天', post:'经常下雪，比我们这儿冷多了。', hint:'(mùa đông)', ans:'冬天', exp:'冬天 = mùa đông; ôn câu 比 + tính từ + 多了.'},
+  {pre:'后天就要考试了，今天晚上我', blank:'必须', post:'把这些词语都复习好。', hint:'(nhất định phải)', ans:'必须', exp:'必须 + động từ = bắt buộc phải; ôn 就要……了, câu 把 (bài 14), 词语 (bài 16).'},
+  {pre:'我们应该', blank:'根据', post:'天气情况决定明天去不去爬山。', hint:'(dựa vào)', ans:'根据', exp:'根据 + căn cứ + động từ = dựa vào … để …; 去不去 = có đi hay không.'},
+  {pre:'踢完足球，我', blank:'渴', post:'极了，先喝一杯水吧。', hint:'(khát)', ans:'渴', exp:'渴极了 = khát vô cùng (ôn 极了, bài 15).'},
+  {pre:'你累了一天了，坐下来', blank:'休息休息', post:'吧。', hint:'(nghỉ ngơi một chút)', ans:'休息休息', exp:'Động từ hai âm tiết lặp ABAB (休息休息) = làm một chút, giọng nhẹ nhàng, hay dùng khi khuyên.'},
+  {pre:'A：晚上你想吃什么？B：我', blank:'什么', post:'都可以，你决定吧。', hint:'(gì cũng)', ans:'什么', exp:'Đại từ nghi vấn + 都 = bất kỳ … cũng: 什么都可以 = gì cũng được.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','的','一个','老','朋友','结婚','，','我','跟','他','两年','没','见面','了','。'],ans:'我的一个老朋友结婚，我跟他两年没见面了。',audio:'我的一个老朋友结婚，我跟他两年没见面了。'},
-  {words:['谁','都','有','办法','解决','这个','问题','。'],ans:'谁都有办法解决这个问题。',audio:'谁都有办法解决这个问题。'},
-  {words:['他','有','很多','爱好','，','什么','都','会','。'],ans:'他有很多爱好，什么都会。',audio:'他有很多爱好，什么都会。'},
-  {words:['为了','身体','健康','，','他','每天','早上','都','去','公园','跑步','。'],ans:'为了身体健康，他每天早上都去公园跑步。',audio:'为了身体健康，他每天早上都去公园跑步。'},
-  {words:['谁','都','喜欢','小丽','。'],ans:'谁都喜欢小丽。',audio:'谁都喜欢小丽。'},
-  {words:['虽然','他','有','很多','爱好','，','但是','最近','没','时间','玩儿','了','。'],ans:'虽然他有很多爱好，但是最近没时间玩儿了。',audio:'虽然他有很多爱好，但是最近没时间玩儿了。'},
-  {words:['如果','你','饿','了','，','就','吃','点儿','东西','吧','。'],ans:'如果你饿了，就吃点儿东西吧。',audio:'如果你饿了，就吃点儿东西吧。'},
-  {words:['我们','必须','根据','老师','的','要求','认真','复习','。'],ans:'我们必须根据老师的要求认真复习。',audio:'我们必须根据老师的要求认真复习。'},
+  {words:['这个','问题','谁','都','不','知道','怎么','回答','。'], ans:'这个问题谁都不知道怎么回答。', audio:'这个问题谁都不知道怎么回答。'},
+  {words:['周末','我','哪儿','也','不','想','去','，','就','想','在','家','睡觉','。'], ans:'周末我哪儿也不想去，就想在家睡觉。', audio:'周末我哪儿也不想去，就想在家睡觉。'},
+  {words:['你','帮','我','检查','检查','这个','句子','对','不','对','。'], ans:'你帮我检查检查这个句子对不对。', audio:'你帮我检查检查这个句子对不对。'},
+  {words:['为了','不','迟到','，','他','每天','早上','六点','就','起床','了','。'], ans:'为了不迟到，他每天早上六点就起床了。', audio:'为了不迟到，他每天早上六点就起床了。'},
+  {words:['这个','蛋糕','很','好吃','，','你','吃','一','口','吧','。'], ans:'这个蛋糕很好吃，你吃一口吧。', audio:'这个蛋糕很好吃，你吃一口吧。'},
+  {words:['我们','是','在','图书馆','认识','的','，','后来','经常','一起','复习','。'], ans:'我们是在图书馆认识的，后来经常一起复习。', audio:'我们是在图书馆认识的，后来经常一起复习。'},
+  {words:['这件','事情','你','必须','先','告诉','经理','。'], ans:'这件事情你必须先告诉经理。', audio:'这件事情你必须先告诉经理。'},
+  {words:['我们','一共','花','了','三百','块','钱','。'], ans:'我们一共花了三百块钱。', audio:'我们一共花了三百块钱。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'你介绍认识认识我们吧。',
-   opts:['你介绍我们认识认识吧。','你介绍认识认识我们吧。','你认识认识我们介绍吧。','你我们介绍认识认识吧。'],ans:0,
-   exp:'Tân ngữ (我们) phải đặt TRƯỚC động từ lặp (认识认识), không chen vào giữa.'},
-  {wrong:'我真应该多锻炼了锻炼。',
-   opts:['我真应该多锻炼锻炼了。','我真应该多锻炼了锻炼。','我真应该多了锻炼锻炼。','我真应该锻炼多锻炼了。'],ans:0,
-   exp:'了 phải đặt SAU CẢ CỤM động từ lặp (锻炼锻炼), không chen vào giữa hai âm tiết lặp.'},
-  {wrong:'谁运动都喜欢。',
-   opts:['谁都喜欢运动。','谁运动都喜欢。','运动谁都喜欢。','谁都运动喜欢。'],ans:0,
-   exp:'都 phải đứng NGAY SAU đại từ nghi vấn (谁), trước động từ, không tách rời cấu trúc.'},
-  {wrong:'我们去公园都怎么可以。',
-   opts:['我们怎么去公园都可以。','我们去公园都怎么可以。','我们怎么都去公园可以。','我们都怎么去公园可以。'],ans:0,
-   exp:'怎么 phải đứng TRƯỚC động từ (去), 都 đứng SAU cụm động từ, không đảo lộn thứ tự.'},
-  {wrong:'最近我觉得都哪儿不舒服。',
-   opts:['最近我觉得哪儿都不舒服。','最近我觉得都哪儿不舒服。','最近我都觉得哪儿不舒服。','最近哪儿我觉得都不舒服。'],ans:0,
-   exp:'都 phải đứng SAU đại từ nghi vấn (哪儿), không đứng trước.'},
+  {wrong:'你给我们介绍一介绍你的家吧。',
+   opts:['你给我们介绍介绍你的家吧。','你给我们介绍介绍了你的家吧。','你介绍介绍给我们你的家吧。','你给我们介绍你的家介绍吧。'], ans:0,
+   exp:'Động từ hai âm tiết lặp theo kiểu ABAB (介绍介绍), không chèn 一, không thêm 了 sau cụm lặp khi khuyên/đề nghị; 给我们 đứng trước động từ.'},
+  {wrong:'这件事情知道谁都。',
+   opts:['这件事情都谁知道。','谁这件事情知道都。','这件事情谁都知道。','这件事情谁知道都。'], ans:2,
+   exp:'谁 + 都 + động từ = ai cũng …; 都 đứng ngay sau 谁, trước động từ 知道.'},
+  {wrong:'他今天都什么没吃。',
+   opts:['他今天什么没都吃。','他今天什么都没吃了。','他今天没什么都吃。','他今天什么都没吃。'], ans:3,
+   exp:'什么 + 都 + 没 + động từ = chẳng … gì cả; có 没 thì không thêm 了.'},
+  {wrong:'他每天早上跑步了为了健康。',
+   opts:['为了健康，他每天早上都去跑步。','健康为了，他每天早上都去跑步。','他每天早上为了跑步了健康。','为了健康了，他每天早上去跑步了。'], ans:0,
+   exp:'为了 + mục đích đứng ĐẦU câu (hoặc trước động từ); việc làm hằng ngày (每天) không thêm 了.'},
+  {wrong:'我想请假跟经理。',
+   opts:['我跟想经理请假。','我想跟经理请假。','我想请假经理跟。','我想跟请假经理。'], ans:1,
+   exp:'跟 + người đứng TRƯỚC động từ: 跟经理请假 = xin nghỉ với giám đốc; 想 đứng trước cả cụm.'},
+  {wrong:'这些东西多少钱一共？',
+   opts:['这些东西多少一共钱？','这些东西一共钱多少？','这些东西一共多少钱？','一共这些东西钱多少？'], ans:2,
+   exp:'一共 là phó từ, đứng TRƯỚC 多少钱 — không đặt cuối câu như tiếng Việt “tổng cộng”.'},
+  {wrong:'我吃了饱。',
+   opts:['我饱吃了。','我吃得饱了得。','我吃饱得了。','我吃饱了。'], ans:3,
+   exp:'饱 là bổ ngữ kết quả đứng ngay sau 吃: 吃饱了; 了 đứng sau cả cụm.'},
+  {wrong:'明天我先去银行，后来去商店。',
+   opts:['我明天后来去银行，先去商店。','明天我先去银行，然后去商店。','明天我先去银行，去然后商店。','明天我然后去银行，先去商店。'], ans:1,
+   exp:'后来 chỉ dùng cho chuyện ĐÃ qua; kế hoạch sắp làm (明天) dùng 先……，然后…… (bài 14).'},
 ];
 
 // ══════════════════════════════════════════
@@ -1868,97 +1873,97 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 17. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 17 (động từ hai âm tiết lặp ABAB; 谁/什么/哪儿 + 都/也 chỉ “bất kỳ”). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn cần nghỉ vài ngày để về quê dự đám cưới bạn cũ.',
-      q_zh: '你要请假的时候，会怎么跟经理或者老师说？一共请几天？',
-      q_py: 'Nǐ yào qǐngjià de shíhou, huì zěnme gēn jīnglǐ huòzhě lǎoshī shuō? Yígòng qǐng jǐ tiān?',
-      q_vn: 'Khi cần xin nghỉ, bạn sẽ nói với giám đốc hoặc thầy cô thế nào? Xin nghỉ tổng cộng mấy ngày?',
-      grammar: { label: '请 + số ngày + 假 (từ ly hợp 请假)', any: ['请假', '请'] },
+      situation: 'Ngày mai bạn có việc không đến lớp được. Bạn gọi điện cho cô giáo.',
+      q_zh: '明天你不能来上课，怎么跟老师说？',
+      q_py: 'Míngtiān nǐ bù néng lái shàngkè, zěnme gēn lǎoshī shuō?',
+      q_vn: 'Ngày mai bạn không đến lớp được, bạn nói với cô giáo thế nào?',
+      grammar: { label: '跟 + người + 请假', any: ['请假'] },
       need: [
-        { label: 'Nói xin nghỉ mấy ngày', any: ['天', '一共', '假'] },
-        { label: 'Nêu lý do', any: ['结婚', '生病', '家里', '事', '朋友'] }
+        { label: 'Nêu lý do nghỉ', any: ['医院', '检查', '生病', '事情', '发烧', '接'] },
+        { label: 'Hứa làm bài / học bù', any: ['作业', '完成', '复习', '练习'] }
       ],
-      bonus: { label: 'Hứa hoàn thành công việc bằng 完成', any: ['完成', '一定', '回来'] },
-      vocab: ['请假', '一共', '办法'],
-      minLen: 20,
-      sample: '我会说：经理，下个星期我想请假，因为老朋友结婚，一共三天。我会想办法在走以前把工作完成。',
-      sample_py: 'Wǒ huì shuō: jīnglǐ, xià ge xīngqī wǒ xiǎng qǐngjià, yīnwèi lǎo péngyou jiéhūn, yígòng sān tiān. Wǒ huì xiǎng bànfǎ zài zǒu yǐqián bǎ gōngzuò wánchéng.',
-      sample_vn: 'Tôi sẽ nói: Thưa giám đốc, tuần sau tôi muốn xin nghỉ vì bạn cũ kết hôn, tổng cộng ba ngày. Tôi sẽ tìm cách hoàn thành công việc trước khi đi.',
-      tip: '请假 là từ ly hợp: 请三天假, không nói 请假三天。'
-    },
-    {
-      situation: 'Đồng nghiệp hỏi bạn cuối tuần thường nghỉ ngơi thế nào.',
-      q_zh: '周末你一般怎么休息？',
-      q_py: 'Zhōumò nǐ yìbān zěnme xiūxi?',
-      q_vn: 'Cuối tuần bạn thường nghỉ ngơi thế nào?',
-      grammar: { label: 'Động từ hai âm tiết lặp lại (ABAB): 休息休息、运动运动', any: ['休息休息', '运动运动', '聊聊', '看看', '走走', '锻炼锻炼'] },
-      need: [
-        { label: 'Dùng động từ lặp lại', any: ['休息休息', '运动运动', '聊聊', '走走', '看看'] },
-        { label: 'Nói sở thích của bạn', any: ['爱好', '跑步', '音乐', '看书', '游泳', '爬山'] }
-      ],
-      bonus: { label: 'Nhắc đến hàng xóm hoặc bạn bè', any: ['邻居', '朋友', '同事'] },
-      vocab: ['邻居', '爱好', '后来'],
-      minLen: 20,
-      sample: '周末我一般在家休息休息，下午跟邻居聊聊天儿、运动运动。我的爱好是跑步，后来我又开始学游泳了。',
-      sample_py: 'Zhōumò wǒ yìbān zài jiā xiūxixiūxi, xiàwǔ gēn línjū liáo liáo tiān ér, yùndòng yùndòng. Wǒ de àihào shì pǎobù, hòulái wǒ yòu kāishǐ xué yóuyǒng le.',
-      sample_vn: 'Cuối tuần tôi thường nghỉ ngơi ở nhà, chiều trò chuyện với hàng xóm, vận động một chút. Sở thích của tôi là chạy bộ, sau này tôi còn bắt đầu học bơi.',
-      tip: 'Động từ hai âm tiết lặp ABAB làm giọng nhẹ đi: 我们商量商量。'
-    },
-    {
-      situation: 'Bạn học hỏi bạn cách xử lý khi gặp khó khăn.',
-      q_zh: '遇到问题的时候，你觉得应该怎么找办法？',
-      q_py: 'Yùdào wèntí de shíhou, nǐ juéde yīnggāi zěnme zhǎo bànfǎ?',
-      q_vn: 'Khi gặp vấn đề, bạn thấy nên tìm cách giải quyết thế nào?',
-      grammar: { label: 'Đại từ nghi vấn chỉ chung: 谁都、什么都', any: ['谁都', '什么都', '哪儿都'] },
-      need: [
-        { label: 'Dùng 谁都 / 什么都', any: ['谁都', '什么都', '哪儿都'] },
-        { label: 'Nói cách chọn giải pháp', any: ['办法', '选择', '根据', '情况', '问'] }
-      ],
-      bonus: { label: 'Khuyên đừng vội bằng 别着急', any: ['别着急', '不要着急', '慢慢'] },
-      vocab: ['办法', '根据', '情况', '选择'],
-      minLen: 20,
-      sample: '我觉得谁都会遇到问题，所以别着急。可以根据情况选择办法，自己想不出来的时候就问问别人。',
-      sample_py: 'Wǒ juéde shéi dōu huì yùdào wèntí, suǒyǐ bié zháojí. Kěyǐ gēnjù qíngkuàng xuǎnzé bànfǎ, zìjǐ xiǎng bù chū lái de shíhou jiù wènwen biérén.',
-      sample_vn: 'Tôi thấy ai cũng gặp vấn đề, nên đừng vội. Có thể tùy tình huống mà chọn cách, tự nghĩ không ra thì hỏi người khác.',
-      tip: '谁都 + 会/不 = ai cũng…: 谁都知道这件事。'
-    },
-    {
-      situation: 'Bạn vừa quyết định thay đổi lối sống để khỏe hơn.',
-      q_zh: '为了身体健康，你最近决定做什么？',
-      q_py: 'Wèile shēntǐ jiànkāng, nǐ zuìjìn juédìng zuò shénme?',
-      q_vn: 'Vì sức khỏe, gần đây bạn quyết định làm gì?',
-      grammar: { label: '为了 + mục đích，(主语)决定/必须……', any: ['为了'] },
-      need: [
-        { label: 'Dùng 为了 nêu mục đích', any: ['为了'] },
-        { label: 'Nói quyết định cụ thể', any: ['决定', '每天', '跑', '锻炼', '不吃', '早睡'] }
-      ],
-      bonus: { label: 'Dùng 必须 nhấn mạnh việc bắt buộc', any: ['必须'] },
-      vocab: ['为了', '决定', '必须', '饱'],
-      minLen: 20,
-      sample: '为了身体健康，我决定每天早上跑二十分钟，晚上不吃得太饱，睡觉以前必须放下手机。',
-      sample_py: 'Wèile shēntǐ jiànkāng, wǒ juédìng měitiān zǎoshang pǎo èr shífēn zhōng, wǎnshang bù chī děi tài bǎo, shuìjiào yǐqián bìxū fàng xià shǒujī.',
-      sample_vn: 'Vì sức khỏe, tôi quyết định mỗi sáng chạy 20 phút, buổi tối không ăn quá no, trước khi ngủ nhất định phải bỏ điện thoại xuống.',
-      tip: '为了 + mục đích đứng đầu câu: 为了提高水平，我每天练习。'
-    },
-    {
-      situation: 'Mùa đông đến, bạn bè nói về đồ uống yêu thích.',
-      q_zh: '冬天你一般喝什么？渴的时候呢？',
-      q_py: 'Dōng tiān nǐ yìbān hē shénme? Kě de shíhou ne?',
-      q_vn: 'Mùa đông bạn thường uống gì? Lúc khát thì sao?',
-      grammar: { label: 'Lượng từ 口: 一口一口地喝', any: ['口'] },
-      need: [
-        { label: 'Nói đồ uống mùa đông', any: ['茶', '热水', '牛奶', '咖啡', '汤'] },
-        { label: 'Nói khi khát làm gì', any: ['渴', '喝', '水'] }
-      ],
-      bonus: { label: 'Nêu lý do liên quan sức khỏe', any: ['健康', '生病', '身体', '冷'] },
-      vocab: ['冬', '渴', '口'],
+      bonus: { label: 'Dùng 根据 / 要求', any: ['根据', '要求'] },
+      vocab: ['请假', '根据'],
       minLen: 18,
-      sample: '冬天我一般喝热茶或者热水。渴的时候我先喝一口热水，不喝太冷的，因为冬天喝冷的容易生病。',
-      sample_py: 'Dōng tiān wǒ yìbān hē rè chá huòzhě rè shuǐ. Kě de shíhou wǒ xiān hē yì kǒu rè shuǐ, bù hē tài lěng de, yīnwèi dōng tiān hē lěng de róngyì shēngbìng.',
-      sample_vn: 'Mùa đông tôi thường uống trà nóng hoặc nước nóng. Lúc khát tôi uống một ngụm nước ấm trước, không uống đồ quá lạnh, vì mùa đông uống lạnh dễ ốm.',
-      tip: '口 là lượng từ cho ngụm, miếng: 喝一口水、吃一口菜。'
+      sample: '老师，您好！明天上午我要去医院检查身体，想跟您请假。作业我会根据您的要求完成。',
+      sample_py: 'Lǎoshī, nín hǎo! Míngtiān shàngwǔ wǒ yào qù yīyuàn jiǎnchá shēntǐ, xiǎng gēn nín qǐngjià. Zuòyè wǒ huì gēnjù nín de yāoqiú wánchéng.',
+      sample_vn: 'Em chào cô! Sáng mai em phải đi bệnh viện khám sức khoẻ, em muốn xin cô cho nghỉ. Bài tập em sẽ làm theo yêu cầu của cô.',
+      tip: '跟 + người + 请假 = xin ai cho nghỉ; nói với thầy cô dùng 您.'
+    },
+    {
+      situation: 'Bạn thân than cả tuần làm việc mệt quá, hỏi cuối tuần nên làm gì.',
+      q_zh: '这个星期我工作太累了，周末应该做什么？',
+      q_py: 'Zhège xīngqī wǒ gōngzuò tài lèi le, zhōumò yīnggāi zuò shénme?',
+      q_vn: 'Tuần này mình làm việc mệt quá, cuối tuần nên làm gì nhỉ?',
+      grammar: { label: 'Động từ hai âm tiết lặp ABAB', any: ['休息休息', '运动运动', '锻炼锻炼', '打扫打扫', '准备准备', '复习复习', '了解了解'] },
+      need: [
+        { label: 'Khuyên nghỉ ngơi', any: ['休息', '睡觉', '在家'] },
+        { label: 'Gợi ý một hoạt động', any: ['公园', '运动', '锻炼', '游泳', '爬山', '朋友', '电影'] }
+      ],
+      bonus: { label: 'Dùng 为了 nêu mục đích', any: ['为了'] },
+      vocab: ['爱好'],
+      minLen: 16,
+      sample: '你应该在家好好儿休息休息，下午再去公园运动运动，做一点儿自己的爱好。',
+      sample_py: 'Nǐ yīnggāi zài jiā hǎohāor xiūxi xiūxi, xiàwǔ zài qù gōngyuán yùndòng yùndòng, zuò yìdiǎnr zìjǐ de àihào.',
+      sample_vn: 'Bạn nên ở nhà nghỉ ngơi cho đã, chiều lại ra công viên vận động một chút, làm chút việc mình thích.',
+      tip: 'Động từ hai âm tiết lặp nguyên cả từ (ABAB): 休息休息、运动运动 — giữa hai lần lặp không chèn 一.'
+    },
+    {
+      situation: 'Bạn mới chuyển nhà. Bạn bè hỏi hàng xóm của bạn thế nào.',
+      q_zh: '你的邻居怎么样？你认识吗？',
+      q_py: 'Nǐ de línjū zěnmeyàng? Nǐ rènshi ma?',
+      q_vn: 'Hàng xóm của bạn thế nào? Bạn có quen không?',
+      grammar: { label: '谁/什么/哪儿 + 都/也', any: ['谁都', '什么都', '哪儿都', '谁也', '什么也', '哪儿也'] },
+      need: [
+        { label: 'Tả hàng xóm', any: ['奶奶', '爷爷', '叔叔', '阿姨', '热情', '年轻'] },
+        { label: 'Kể một việc hàng xóm làm', any: ['帮', '送', '照顾', '问', '聊天'] }
+      ],
+      bonus: { label: 'Nói quen nhau từ khi nào (后来)', any: ['后来', '以前', '过去'] },
+      vocab: ['邻居'],
+      minLen: 18,
+      sample: '我家旁边住着一个老奶奶，她非常热情，谁都喜欢她。我有什么问题，都可以去问她。',
+      sample_py: 'Wǒ jiā pángbiān zhùzhe yí ge lǎo nǎinai, tā fēicháng rèqíng, shéi dōu xǐhuan tā. Wǒ yǒu shénme wèntí, dōu kěyǐ qù wèn tā.',
+      sample_vn: 'Cạnh nhà tôi có một bà cụ, bà rất nhiệt tình, ai cũng quý bà. Tôi có vấn đề gì cũng có thể sang hỏi bà.',
+      tip: '谁都 + động từ = ai cũng …; 都 luôn đứng ngay trước động từ.'
+    },
+    {
+      situation: 'Đi khám sức khoẻ xong, bác sĩ khuyên bạn nên vận động nhiều hơn.',
+      q_zh: '为了身体健康，你决定以后怎么做？',
+      q_py: 'Wèile shēntǐ jiànkāng, nǐ juédìng yǐhòu zěnme zuò?',
+      q_vn: 'Vì sức khoẻ, bạn quyết định sau này sẽ làm thế nào?',
+      grammar: { label: '为了 + mục đích', any: ['为了'] },
+      need: [
+        { label: 'Nói quyết định cụ thể', any: ['决定', '每天', '跑步', '游泳', '锻炼', '公园'] },
+        { label: 'Nói thời gian/tần suất', any: ['每天', '周末', '分钟', '小时', '早上', '下班'] }
+      ],
+      bonus: { label: 'Dùng 必须', any: ['必须'] },
+      vocab: ['为了', '决定', '必须'],
+      minLen: 18,
+      sample: '为了身体健康，我决定每天下班以后去公园跑步，周末必须去游泳。',
+      sample_py: 'Wèile shēntǐ jiànkāng, wǒ juédìng měi tiān xiàbān yǐhòu qù gōngyuán pǎobù, zhōumò bìxū qù yóuyǒng.',
+      sample_vn: 'Vì sức khoẻ, tôi quyết định mỗi ngày tan làm sẽ ra công viên chạy bộ, cuối tuần nhất định phải đi bơi.',
+      tip: '为了 + mục đích đặt đầu câu, sau đó mới nói việc làm: 为了健康，我……'
+    },
+    {
+      situation: 'Bạn mới quen hỏi về sở thích du lịch của bạn.',
+      q_zh: '你喜欢旅游吗？想去哪儿？',
+      q_py: 'Nǐ xǐhuan lǚyóu ma? Xiǎng qù nǎr?',
+      q_vn: 'Bạn có thích du lịch không? Muốn đi đâu?',
+      grammar: { label: 'Đại từ nghi vấn + 都 (đâu cũng …)', any: ['哪儿都', '什么都', '哪儿也', '什么也'] },
+      need: [
+        { label: 'Nói sở thích', any: ['爱好', '喜欢', '旅游'] },
+        { label: 'Nêu lý do', any: ['文化', '东西', '吃', '有意思', '漂亮', '了解'] }
+      ],
+      bonus: { label: 'Nói mùa muốn đi', any: ['冬天', '夏天', '春天'] },
+      vocab: ['爱好', '冬天', '选择'],
+      minLen: 18,
+      sample: '旅游是我最大的爱好，去哪儿都可以。我想冬天去北京，因为可以看到雪，还能了解那儿的文化。',
+      sample_py: 'Lǚyóu shì wǒ zuì dà de àihào, qù nǎr dōu kěyǐ. Wǒ xiǎng dōngtiān qù Běijīng, yīnwèi kěyǐ kàndào xuě, hái néng liǎojiě nàr de wénhuà.',
+      sample_vn: 'Du lịch là sở thích lớn nhất của tôi, đi đâu cũng được. Tôi muốn mùa đông đi Bắc Kinh, vì có thể ngắm tuyết, còn tìm hiểu được văn hoá ở đó.',
+      tip: 'V + 哪儿 + 都可以 = đi đâu cũng được; 都 đứng sau đại từ nghi vấn.'
     }
   ]
 };
@@ -1967,28 +1972,20 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tuần sau em xin nghỉ mấy ngày được không ạ?', zh:'下个星期我可以请几天假吗？', py:'Xià ge xīngqī wǒ kěyǐ qǐng jǐ tiān jià ma?'},
-  {vi:'Nếu bạn cũng xin nghỉ phép, thì tuần này lớp chúng ta tổng cộng có ba người xin nghỉ.', zh:'如果你也请假，我们班这个星期一共就有三个人请假了。', py:'Rúguǒ nǐ yě qǐngjià, wǒmen bān zhège xīngqī yígòng jiù yǒu sān ge rén qǐngjià le.'},
-  {vi:'Trước đây chúng tôi là hàng xóm, sau đó là bạn học đại học.', zh:'我们过去是邻居，后来是大学同学。', py:'Wǒmen guòqù shì línjū, hòulái shì dàxué tóngxué.'},
-  {vi:'Chỉ cần bạn đi hỏi thầy giáo, thầy nhất định có cách giúp bạn.', zh:'只要你去问老师，他一定有办法帮你。', py:'Zhǐyào nǐ qù wèn lǎoshī, tā yídìng yǒu bànfǎ bāng nǐ.'},
-  {vi:'Để có thể nghe hiểu tin tức tiếng Trung, anh ấy quyết định mỗi ngày xem nửa tiếng tin tức.', zh:'为了能听懂中文新闻，他决定每天看半个小时新闻。', py:'Wèile néng tīngdǒng Zhōngwén xīnwén, tā juédìng měitiān kàn bàn ge xiǎoshí xīnwén.'},
-  {vi:'Nếu muốn thành công thì phải chọn đúng thời gian và địa điểm.', zh:'如果想成功，就要选择对的时间和地点。', py:'Rúguǒ xiǎng chénggōng, jiù yào xuǎnzé duì de shíjiān hé dìdiǎn.'},
-  {vi:'Mỗi người đều phải dựa theo tình huống thực tế của mình mà đưa ra quyết định.', zh:'每个人都必须根据自己的实际情况做决定。', py:'Měi ge rén dōu bìxū gēnjù zìjǐ de shíjì qíngkuàng zuò juédìng.'},
-  {vi:'Lúc vừa vận động xong khát nước, đừng uống nước ngay.', zh:'刚运动完口渴的时候，不要马上喝水。', py:'Gāng yùndòng wán kǒu kě de shíhou, búyào mǎshàng hē shuǐ.'},
+  {vi:'Câu hỏi này rất dễ, ai cũng trả lời được.', zh:'这个问题很容易，谁都能回答。', py:'Zhège wèntí hěn róngyì, shéi dōu néng huídá.'},
+  {vi:'Hồi nhỏ tôi rất sợ bơi, về sau bố dạy tôi biết bơi.', zh:'我小时候很害怕游泳，后来爸爸教会了我。', py:'Wǒ xiǎoshíhou hěn hàipà yóuyǒng, hòulái bàba jiāohuìle wǒ.'},
+  {vi:'Mùa đông ở đây không lạnh lắm, nhưng hay mưa.', zh:'这儿的冬天不太冷，但是经常下雨。', py:'Zhèr de dōngtiān bú tài lěng, dànshì jīngcháng xià yǔ.'},
+  {vi:'Khách sắp đến rồi, chúng ta dọn phòng một chút đi.', zh:'客人快来了，我们打扫打扫房间吧。', py:'Kèrén kuài lái le, wǒmen dǎsǎo dǎsǎo fángjiān ba.'},
+  {vi:'Bạn phải dựa vào tình hình của mình để lựa chọn.', zh:'你必须根据自己的情况来选择。', py:'Nǐ bìxū gēnjù zìjǐ de qíngkuàng lái xuǎnzé.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Ai cũng thích mùa đông ở đây.', zh:'谁都喜欢这里的冬天。', py:'Shéi dōu xǐhuan zhèli de dōngtiān.'},
-  {vi:'Tiểu Cương cái gì cũng thích ăn.', zh:'小刚什么都喜欢吃。', py:'Xiǎogāng shénme dōu xǐhuan chī.'},
-  {vi:'Chúng ta ăn gì cũng được.', zh:'我们吃什么都可以。', py:'Wǒmen chī shénme dōu kěyǐ.'},
-  {vi:'Gần đây anh ấy cảm thấy chuyện gì cũng chẳng có gì thú vị.', zh:'最近他觉得什么都没意思。', py:'Zuìjìn tā juéde shénme dōu méi yìsi.'},
-  {vi:'Bạn giới thiệu công việc mới này cho tôi đi.', zh:'你给我介绍介绍这份新工作吧。', py:'Nǐ gěi wǒ jièshào jièshào zhè fèn xīn gōngzuò ba.'},
-  {vi:'Anh ấy mới đến, lúc nào rảnh bạn giúp đỡ anh ấy chút đi.', zh:'他是新来的，有时间你帮助帮助他吧。', py:'Tā shì xīn lái de, yǒu shíjiān nǐ bāngzhu bāngzhu tā ba.'},
-  {vi:'Chỉ cần bạn vận động dựa theo tình trạng sức khỏe thì cơ thể sẽ khỏe hơn.', zh:'只要你根据情况运动，身体就会更健康。', py:'Zhǐyào nǐ gēnjù qíngkuàng yùndòng, shēntǐ jiù huì gèng jiànkāng.'},
-  {vi:'Nếu bạn vẫn chưa quyết định thì hãy nghĩ thêm chút đi.', zh:'如果你还没决定，就再想一想吧。', py:'Rúguǒ nǐ hái méi juédìng, jiù zài xiǎng yi xiǎng ba.'},
+  {vi:'Tôi khát nước rồi, ở đây có chỗ nào bán nước không?', zh:'我口渴了，这儿有没有卖水的地方？', py:'Wǒ kǒu kě le, zhèr yǒu méiyǒu mài shuǐ de dìfang?'},
+  {vi:'Chuyện này tôi nghĩ rất lâu mà vẫn không biết chọn thế nào.', zh:'这件事情我想了很久，还是不知道怎么选择。', py:'Zhè jiàn shìqing wǒ xiǎngle hěn jiǔ, háishi bù zhīdào zěnme xuǎnzé.'},
+  {vi:'Chúng tôi đi tổng cộng ba tiếng, ai cũng mệt đến mức không muốn nói.', zh:'我们一共走了三个小时，大家都累得不想说话了。', py:'Wǒmen yígòng zǒule sān ge xiǎoshí, dàjiā dōu lèi de bù xiǎng shuōhuà le.'},
 ];
 
 // ══════════════════════════════════════════

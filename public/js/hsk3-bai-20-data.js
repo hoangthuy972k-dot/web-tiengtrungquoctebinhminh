@@ -1581,71 +1581,76 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'照相机',right:'被拿走了'},
-  {left:'信用卡里的',right:'钱'},
-  {left:'关心',right:'体育'},
-  {left:'天天看',right:'比赛'},
-  {left:'成绩',right:'差极了'},
-  {left:'拿着',right:'碗吃面条'},
-  {left:'分出来',right:'哪个是哥哥'},
-  {left:'试着',right:'洗洗'},
-  {left:'只有爱，',right:'才能让人有变化。'},
-  {left:'解决',right:'问题'},
-  {left:'多么',right:'难的问题'},
+  {left:'桌子上的蛋糕', right:'被弟弟吃完了'},
+  {left:'吃完饭，我来', right:'洗碗'},
+  {left:'这件衬衫很漂亮，你可以', right:'试一试'},
+  {left:'爷爷奶奶最', right:'关心我们的身体'},
+  {left:'这家超市买东西可以用', right:'信用卡'},
+  {left:'学校的东门外', right:'有一家小饭馆'},
+  {left:'别着急，这个问题我们一起想办法', right:'解决'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我的',blank:'照相机',post:'被谁拿走了？',hint:'(máy chụp ảnh)',ans:'照相机'},
-  {pre:'我的手机',blank:'被',post:'谁放在这儿了？',hint:'(bị, giới từ chỉ thể bị động)',ans:'被',exp:'Câu bị động: Vật + 被 + người làm + động từ: 我的手机被谁放在这儿了？'},
-  {pre:'别',blank:'难过',post:'，再买一个吧。',hint:'(buồn)',ans:'难过'},
-  {pre:'公司',blank:'东',post:'门外有一个大公园。',hint:'(phía đông)',ans:'东'},
-  {pre:'我这个月',blank:'信用卡',post:'里的钱已经花得差不多了。',hint:'(thẻ tín dụng)',ans:'信用卡'},
-  {pre:'虽然工作很忙，但是他还是很',blank:'关心',post:'家人的生活。',hint:'(quan tâm, chú ý)',ans:'关心'},
-  {pre:'我的',blank:'成绩',post:'差极了。',hint:'(thành tích, kết quả)',ans:'成绩'},
-  {pre:'那个拿着',blank:'碗',post:'吃面条的人是你哥哥吗？',hint:'(bát)',ans:'碗'},
-  {pre:'只有你们的爸爸妈妈才能',blank:'分',post:'出来。',hint:'(phân biệt)',ans:'分'},
-  {pre:'所以得',blank:'试',post:'着洗洗。',hint:'(thử)',ans:'试'},
-  {pre:'只有',blank:'真正',post:'了解问题，才能解决问题。',hint:'(thật sự)',ans:'真正'},
-  {pre:'',blank:'多么',post:'重的行李箱，他都能一个人搬走。',hint:'(dù nặng đến đâu đi nữa)',ans:'多么'},
-  {pre:'不同的问题有不同的',blank:'解决',post:'办法。',hint:'(giải quyết)',ans:'解决'},
+  {pre:'A：你的新', blank:'照相机', post:'真漂亮，多少钱？B：不太贵，三千多块。', hint:'(máy chụp ảnh)', ans:'照相机', exp:'照相机 = máy ảnh; ôn 多 sau số tròn: 三千多块 = hơn ba nghìn tệ.'},
+  {pre:'A：我的面包呢？B：对不起，', blank:'被', post:'我吃了，我再给你买一个吧。', hint:'(bị)', ans:'被', exp:'Câu bị động: (vật) + 被 + người làm + động từ + 了; 面包 đã nói ở câu A nên B lược chủ ngữ.'},
+  {pre:'我的小狗病了，我很', blank:'难过', post:'，一天都没吃饭。', hint:'(buồn)', ans:'难过', exp:'难过 = buồn; ôn 一 + lượng từ + 都没… (一天都没吃饭 = cả ngày không ăn gì).'},
+  {pre:'学校的', blank:'东', post:'门旁边有一个超市，下课以后很多学生去那儿买饮料。', hint:'(phía đông)', ans:'东', exp:'东门 = cổng phía đông; 东 ↔ 西 (bài 12), đứng trước danh từ chỉ nơi: 东门, 西门.'},
+  {pre:'奶奶一个人住在南方，我每个星期都给她打电话，很', blank:'关心', post:'她的身体。', hint:'(quan tâm)', ans:'关心', exp:'关心 + người / việc = quan tâm đến…, tân ngữ đứng ngay sau (关心她的身体).'},
+  {pre:'A：妈妈，我能看电视吗？B：', blank:'只有', post:'写完作业，你才能看电视。', hint:'(chỉ có)', ans:'只有', exp:'只有 + điều kiện duy nhất, … 才 + kết quả = chỉ có… mới…; khác 只要…就 (bài 18: chỉ cần… là).'},
+  {pre:'只有每天练习，你的汉语', blank:'才', post:'能越来越好。', hint:'(mới)', ans:'才', exp:'只有 đi với 才, 才 đứng sau chủ ngữ, trước 能; không dùng 就 sau 只有.'},
+  {pre:'这个月他非常努力，考试', blank:'成绩', post:'比上个月好多了。', hint:'(thành tích, điểm)', ans:'成绩', exp:'考试成绩 = điểm thi; ôn 比 + tính từ + 多了 (không thêm 很).'},
+  {pre:'吃完饭以后，请把', blank:'碗', post:'和筷子都洗干净。', hint:'(bát)', ans:'碗', exp:'碗 = bát; ôn 把 + vật + V + 干净 (làm cho sạch).'},
+  {pre:'这两个孩子长得太像了，我', blank:'分', post:'不清楚哪个是哥哥。', hint:'(phân biệt)', ans:'分', exp:'分不清楚 = không phân biệt rõ được: 不 chen giữa 分 và 清楚.'},
+  {pre:'A：我的电脑突然不能上网了。B：别着急，我来帮你', blank:'解决', post:'。', hint:'(giải quyết)', ans:'解决', exp:'解决 + vấn đề = giải quyết; 我来 + V = để tôi làm (ôn 突然, bài 6).'},
+  {pre:'学了三年汉语，到了中国我才', blank:'真正', post:'了解中国人的生活。', hint:'(thật sự)', ans:'真正', exp:'真正 + động từ = thật sự…; 才 = mới (muộn hơn mình nghĩ).'},
+  {pre:'你看，这儿的花', blank:'多么', post:'漂亮啊！', hint:'(biết bao, sao mà)', ans:'多么', exp:'多么 + tính từ + 啊 = … biết bao! (câu cảm thán).'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','的','信用卡','被','谁','拿走','了','？'],ans:'我的信用卡被谁拿走了？',audio:'我的信用卡被谁拿走了？'},
-  {words:['别','难过','，','下次','一定','能','提高','成绩','。'],ans:'别难过，下次一定能提高成绩。',audio:'别难过，下次一定能提高成绩。'},
-  {words:['我','的','成绩','被','这次','考试','影响','了','。'],ans:'我的成绩被这次考试影响了。',audio:'我的成绩被这次考试影响了。'},
-  {words:['只有','努力','复习','，','才','能','提高','成绩','。'],ans:'只有努力复习，才能提高成绩。',audio:'只有努力复习，才能提高成绩。'},
-  {words:['碗','还','没有','被','洗','干净','呢','。'],ans:'碗还没有被洗干净呢。',audio:'碗还没有被洗干净呢。'},
-  {words:['这个','字','经常','被','学生','写错','。'],ans:'这个字经常被学生写错。',audio:'这个字经常被学生写错。'},
-  {words:['只有','爸爸','、','妈妈','才','能','分','出来','。'],ans:'只有爸爸、妈妈才能分出来。',audio:'只有爸爸、妈妈才能分出来。'},
-  {words:['多么','脏','的','碗','，','她','都','能','洗','干净','。'],ans:'多么脏的碗，她都能洗干净。',audio:'多么脏的碗，她都能洗干净。'},
+  {words:['我的','照相机','被','朋友','借','走','了','。'], ans:'我的照相机被朋友借走了。', audio:'我的照相机被朋友借走了。'},
+  {words:['这个','问题','到','现在','还','没有','被','解决','。'], ans:'这个问题到现在还没有被解决。', audio:'这个问题到现在还没有被解决。'},
+  {words:['只有','到了','冬天','，','这儿','才','会','下雪','。'], ans:'只有到了冬天，这儿才会下雪。', audio:'只有到了冬天，这儿才会下雪。'},
+  {words:['我的','蛋糕','被','小狗','吃','了','一半','。'], ans:'我的蛋糕被小狗吃了一半。', audio:'我的蛋糕被小狗吃了一半。'},
+  {words:['外面','的','雪','下','得','多么','大','啊','！'], ans:'外面的雪下得多么大啊！', audio:'外面的雪下得多么大啊！'},
+  {words:['他','总是','关心','别人','，','大家','都','很','喜欢','他','。'], ans:'他总是关心别人，大家都很喜欢他。', audio:'他总是关心别人，大家都很喜欢他。'},
+  {words:['因为','经常','玩儿','游戏','，','他的','成绩','越来越','差','。'], ans:'因为经常玩儿游戏，他的成绩越来越差。', audio:'因为经常玩儿游戏，他的成绩越来越差。'},
+  {words:['从','东门','进去','，','往','右','走','就是','图书馆','。'], ans:'从东门进去，往右走就是图书馆。', audio:'从东门进去，往右走就是图书馆。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'我钱包被拿走了谁？',
-   opts:['我的钱包被谁拿走了？','我钱包被拿走了谁？','我的钱包谁被拿走了？','谁被我的钱包拿走了？'],ans:0,
-   exp:'Cấu trúc bị động: 主语+被+宾语(谁)+动词+其他, 谁 phải đứng SAU 被 và TRƯỚC động từ, không đặt cuối câu.'},
-  {wrong:'照相机被没有找到呢还。',
-   opts:['照相机还没有被找到呢。','照相机被没有找到呢还。','照相机没有还被找到呢。','照相机还被没有找到呢。'],ans:0,
-   exp:'Phó từ phủ định (没有) và các thành phần khác phải đặt TRƯỚC 被, không đặt sau.'},
-  {wrong:'蛋糕吃完了让弟弟。',
-   opts:['蛋糕让弟弟吃完了。','蛋糕吃完了让弟弟。','蛋糕让吃完了弟弟。','弟弟蛋糕让吃完了。'],ans:0,
-   exp:'Cấu trúc 让/叫/被: 主语+让+宾语(弟弟)+动词(吃完), thứ tự không được đảo.'},
-  {wrong:'洗完碗只有，才能出去玩儿。',
-   opts:['只有洗完碗，才能出去玩儿。','洗完碗只有，才能出去玩儿。','只有才洗完碗，能出去玩儿。','洗完只有碗，才能出去玩儿。'],ans:0,
-   exp:'只有 phải đứng ở ĐẦU câu, trước điều kiện, không đặt giữa câu.'},
-  {wrong:'只有多运动才，能更健康。',
-   opts:['只有多运动，才能更健康。','只有多运动才，能更健康。','只有才多运动，能更健康。','只有多运动，能才更健康。'],ans:0,
-   exp:'才 phải đứng NGAY TRƯỚC động từ năng nguyện (能), không tách rời.'},
+  {wrong:'我的手机被拿走了弟弟。',
+   opts:['我的手机弟弟被拿走了。','我的手机被弟弟拿走了。','我的手机被弟弟拿了走。','被我的手机弟弟拿走了。'], ans:1,
+   exp:'Câu 被: vật + 被 + người làm + động từ + kết quả: người làm (弟弟) đứng ngay sau 被, không đặt cuối câu; 拿走 không tách ra.'},
+  {wrong:'我的自行车被没有骑走，还在楼下。',
+   opts:['我的自行车被骑走没有，还在楼下。','我的自行车没有被骑走了，还在楼下。','我的自行车不被骑走，还在楼下。','我的自行车没有被骑走，还在楼下。'], ans:3,
+   exp:'Phủ định 没(有) đứng TRƯỚC 被; câu phủ định với 没 không dùng 了, cũng không dùng 不 cho việc đã xảy ra.'},
+  {wrong:'只有多听多说，就能学好汉语。',
+   opts:['只有多听多说，才能学好汉语。','只有多听多说，能才学好汉语。','只要多听多说，才能学好汉语。','只有多听多说，才学好汉语能。'], ans:0,
+   exp:'只有 đi với 才 (chỉ có… mới…), 只要 đi với 就 (bài 18); 才 đứng ngay trước 能.'},
+  {wrong:'我的电脑被哥哥用了坏。',
+   opts:['我的电脑被用哥哥坏了。','我的电脑被哥哥坏用了。','我的电脑被哥哥用坏了。','我的电脑哥哥被用坏了。'], ans:2,
+   exp:'Bổ ngữ kết quả (坏) đi liền sau động từ: 用坏了, 了 đứng sau cả cụm; người làm đứng ngay sau 被.'},
+  {wrong:'他是一个朋友真正。',
+   opts:['他是一个真正朋友的。','他是真正一个的朋友。','他是一个真正地朋友。','他是一个真正的朋友。'], ans:3,
+   exp:'Định ngữ đứng TRƯỚC danh từ (khác tiếng Việt “bạn thật sự”): 一个真正的朋友; trước danh từ dùng 的, không dùng 地.'},
+  {wrong:'妈妈很关心对我的学习。',
+   opts:['妈妈对很关心我的学习。','妈妈很关心我的学习。','妈妈很关心了我的学习。','妈妈关心很我的学习。'], ans:1,
+   exp:'关心 là động từ, tân ngữ đứng ngay sau: 关心我的学习, không thêm 对 (khác 对…感兴趣, bài 7); 很 đứng trước động từ.'},
+  {wrong:'我的信用卡被拿走了昨天。',
+   opts:['我的信用卡昨天被拿走了。','我的信用卡被昨天拿走了。','我的信用卡被拿走昨天了。','我的信用卡昨天被拿了走。'], ans:0,
+   exp:'Thời gian (昨天) đứng sau chủ ngữ, trước 被 — không đặt cuối câu như tiếng Việt; 走 đi liền sau 拿.'},
+  {wrong:'我吃了两个碗米饭。',
+   opts:['我吃了米饭两碗。','我吃两碗了米饭。','我吃了两碗米饭。','我吃了两只碗米饭。'], ans:2,
+   exp:'碗 vừa là “cái bát” vừa làm lượng từ: 两碗米饭 = hai bát cơm, không thêm 个 / 只; số lượng đứng trước danh từ.'},
 ];
 
 // ══════════════════════════════════════════
@@ -1653,97 +1658,96 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 20. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 20 (câu chữ 被, 只有……才……). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Đồ của bạn bị người khác cầm nhầm ở lớp.',
+      situation: 'Bạn bè hỏi bạn đã bao giờ bị mất đồ chưa và sau đó giải quyết thế nào.',
       q_zh: '你的东西被别人拿走过吗？后来怎么解决的？',
-      q_py: 'Nǐ de dōngxi bèi biérén ná zǒu guo ma? Hòulái zěnme jiějué de?',
-      q_vn: 'Đồ của bạn từng bị người khác cầm đi chưa? Sau đó giải quyết thế nào?',
-      grammar: { label: 'Câu chữ 被: A 被 B + động từ', any: ['被'] },
+      q_py: 'Nǐ de dōngxi bèi biérén názǒuguo ma? Hòulái zěnme jiějué de?',
+      q_vn: 'Đồ của bạn đã bao giờ bị người khác lấy đi chưa? Sau đó giải quyết thế nào?',
+      grammar: { label: 'Câu chữ 被: vật + 被 + (người) + động từ + kết quả', any: ['被'] },
       need: [
-        { label: 'Dùng câu chữ 被', any: ['被'] },
-        { label: 'Nói cách giải quyết', any: ['解决', '打电话', '找', '还', '问'] }
+        { label: 'Nói đồ gì bị mất', any: ['手机', '钱包', '照相机', '信用卡', '伞', '衣服', '书', '自行车'] },
+        { label: 'Nói cách giải quyết', any: ['解决', '找到', '打电话', '还', '问', '买'] }
       ],
-      bonus: { label: 'Nói cảm xúc lúc đó bằng 难过 / 着急', any: ['难过', '着急', '生气'] },
-      vocab: ['照相机', '被', '难过', '解决'],
-      minLen: 20,
-      sample: '有一次我的照相机被同学拿走了，我很难过。后来他给我打电话说拿错了，第二天就还给我，问题很快就解决了。',
-      sample_py: 'Yǒu yí cì wǒ de zhàoxiàngjī bèi tóngxué ná zǒu le, wǒ hěn nánguò. Hòulái tā gěi wǒ dǎdiànhuà shuō ná cuò le, dì èr tiān jiù hái gěi wǒ, wèntí hěn kuài jiù jiějué le.',
-      sample_vn: 'Có lần máy ảnh của tôi bị bạn học cầm đi, tôi rất buồn. Sau đó cậu ấy gọi điện bảo cầm nhầm, hôm sau trả lại, vấn đề được giải quyết rất nhanh.',
-      tip: 'Câu 被 thường nói việc ngoài ý muốn: 我的自行车被人骑走了。'
+      bonus: { label: 'Nói cảm xúc bằng 难过 / 着急', any: ['难过', '着急', '生气'] },
+      vocab: ['被', '难过', '解决', '东'],
+      minLen: 18,
+      sample: '上个月我的自行车被人骑走了，我难过了好几天。后来我在学校东门旁边找到了它，问题终于解决了。',
+      sample_py: 'Shàng ge yuè wǒ de zìxíngchē bèi rén qízǒu le, wǒ nánguòle hǎo jǐ tiān. Hòulái wǒ zài xuéxiào dōngmén pángbiān zhǎodàole tā, wèntí zhōngyú jiějué le.',
+      sample_vn: 'Tháng trước xe đạp của tôi bị người ta lấy mất, tôi buồn mấy ngày liền. Sau đó tôi tìm thấy nó cạnh cổng đông của trường, cuối cùng chuyện cũng được giải quyết.',
+      tip: 'Câu 被 hay dùng cho việc không mong muốn; kết quả (走 / 坏 / 完) đứng ngay sau động từ: 被人骑走了.'
     },
     {
-      situation: 'Thầy hỏi cả lớp bí quyết học tốt.',
-      q_zh: '你觉得只有怎么做，才能提高汉语成绩？',
-      q_py: 'Nǐ juéde zhǐyǒu zěnme zuò, cái néng tígāo Hànyǔ chéngjì?',
-      q_vn: 'Bạn thấy chỉ có làm thế nào mới nâng được điểm tiếng Hán?',
+      situation: 'Thầy giáo hỏi cả lớp: muốn điểm thi tốt hơn thì phải làm gì.',
+      q_zh: '你觉得怎么做才能提高考试成绩？',
+      q_py: 'Nǐ juéde zěnme zuò cái néng tígāo kǎoshì chéngjì?',
+      q_vn: 'Bạn thấy phải làm thế nào mới nâng được điểm thi?',
       grammar: { label: '只有……，才……', any: ['只有'] },
       need: [
-        { label: 'Dùng 只有……才……', any: ['只有'] },
-        { label: 'Nói cách học cụ thể', any: ['练习', '每天', '听', '说', '写', '复习', '问'] }
+        { label: 'Nói cách học cụ thể', any: ['练习', '复习', '每天', '听', '写', '问', '课'] },
+        { label: 'Nói kết quả', any: ['成绩', '提高', '水平', '好'] }
       ],
       bonus: { label: 'Dùng 真正 nhấn mạnh', any: ['真正'] },
-      vocab: ['成绩', '真正', '解决'],
-      minLen: 20,
-      sample: '我觉得只有每天练习，才能真正提高成绩。上课认真听，下课多说多写，遇到不懂的问题马上解决。',
-      sample_py: 'Wǒ juéde zhǐyǒu měitiān liànxí, cái néng zhēnzhèng tígāo chéngjì. Shàngkè rènzhēn tīng, xiàkè duō shuō duō xiě, yùdào bù dǒng de wèntí mǎshàng jiějué.',
-      sample_vn: 'Tôi thấy chỉ có luyện tập mỗi ngày mới thật sự nâng được điểm. Trên lớp nghe nghiêm túc, hết giờ nói và viết nhiều, gặp chỗ không hiểu thì giải quyết ngay.',
-      tip: '只有……才…… nêu điều kiện duy nhất: 只有努力，才能成功。'
+      vocab: ['只有', '才', '成绩'],
+      minLen: 16,
+      sample: '我觉得只有每天复习，考试成绩才能真正提高。不懂的地方，我会马上问老师。',
+      sample_py: 'Wǒ juéde zhǐyǒu měi tiān fùxí, kǎoshì chéngjì cái néng zhēnzhèng tígāo. Bù dǒng de dìfang, wǒ huì mǎshàng wèn lǎoshī.',
+      sample_vn: 'Tôi thấy chỉ có ôn bài mỗi ngày thì điểm thi mới thật sự tăng lên. Chỗ nào không hiểu, tôi sẽ hỏi thầy ngay.',
+      tip: '只有 đi với 才, 只要 đi với 就 — đừng nói 只有……就…….'
     },
     {
-      situation: 'Bạn thanh toán ở siêu thị và người bạn hỏi cách trả tiền.',
-      q_zh: '你买东西喜欢用信用卡还是用手机？为什么？',
-      q_py: 'Nǐ mǎi dōngxi xǐhuan yòng xìnyòngkǎ háishi yòng shǒujī? Wèishénme?',
-      q_vn: 'Mua đồ bạn thích dùng thẻ tín dụng hay điện thoại? Vì sao?',
-      grammar: { label: '用 + công cụ + động từ', any: ['用'] },
+      situation: 'Bạn kể ai là người hiểu và quan tâm bạn nhất khi bạn buồn.',
+      q_zh: '你难过的时候，谁最关心你？',
+      q_py: 'Nǐ nánguò de shíhou, shéi zuì guānxīn nǐ?',
+      q_vn: 'Lúc bạn buồn, ai quan tâm bạn nhất?',
+      grammar: { label: '只有……才…… (chỉ có ai mới…)', any: ['只有'] },
       need: [
-        { label: 'Nói cách trả tiền', any: ['信用卡', '手机', '钱', '卡'] },
-        { label: 'Nêu lý do', any: ['方便', '安全', '习惯', '快', '便宜'] }
+        { label: 'Nói người đó là ai', any: ['妈妈', '爸爸', '姐姐', '哥哥', '妹妹', '弟弟', '朋友', '奶奶', '爷爷'] },
+        { label: 'Nói người đó làm gì', any: ['关心', '问', '带', '听', '陪', '打电话', '吃'] }
       ],
-      bonus: { label: 'Nhắc đến số tiền nhỏ bằng 角/分', any: ['角', '分', '块'] },
-      vocab: ['信用卡', '分', '真正'],
-      minLen: 20,
-      sample: '买贵一点儿的东西我用信用卡，买小东西的时候用手机，因为这样又快又方便。几角几分的东西我一般用零钱。',
-      sample_py: 'Mǎi guì yìdiǎnr de dōngxi wǒ yòng xìnyòngkǎ, mǎi xiǎo dōngxi de shíhou yòng shǒujī, yīnwèi zhè yàng yòu kuài yòu fāngbiàn. Jǐ jiǎo jǐ fēn de dōngxi wǒ yìbān yòng língqián.',
-      sample_vn: 'Mua đồ đắt tiền thì tôi dùng thẻ tín dụng, mua đồ nhỏ thì dùng điện thoại, vì như vậy vừa nhanh vừa tiện. Mấy hào mấy xu thì tôi thường dùng tiền lẻ.',
-      tip: '一块 = 10角 = 100分; trong khẩu ngữ hay nói 块、角、分.'
+      vocab: ['难过', '关心'],
+      minLen: 18,
+      sample: '我难过的时候，只有我姐姐才知道我在想什么。她最关心我，经常带我去吃好吃的。',
+      sample_py: 'Wǒ nánguò de shíhou, zhǐyǒu wǒ jiějie cái zhīdao wǒ zài xiǎng shénme. Tā zuì guānxīn wǒ, jīngcháng dài wǒ qù chī hǎochī de.',
+      sample_vn: 'Lúc tôi buồn, chỉ có chị gái tôi mới biết tôi đang nghĩ gì. Chị ấy quan tâm tôi nhất, hay dẫn tôi đi ăn món ngon.',
+      tip: '只有 + người, 才 + V: 只有我姐姐才知道 — 才 đứng sau chủ ngữ, trước động từ.'
     },
     {
-      situation: 'Bạn nói chuyện với bạn bè về gia đình mình.',
-      q_zh: '家里人怎么关心你？你怎么关心他们？',
-      q_py: 'Jiā lǐ rén zěnme guānxīn nǐ? Nǐ zěnme guānxīn tāmen?',
-      q_vn: 'Người nhà quan tâm bạn thế nào? Bạn quan tâm họ ra sao?',
-      grammar: { label: '关心 + người; 被 + người + 关心', any: ['关心'] },
+      situation: 'Bạn kể việc nhà: ở nhà ai rửa bát, có lần nào bát đĩa bị làm vỡ không.',
+      q_zh: '在你家，吃完饭谁洗碗？碗被打坏过吗？',
+      q_py: 'Zài nǐ jiā, chīwán fàn shéi xǐ wǎn? Wǎn bèi dǎhuàiguo ma?',
+      q_vn: 'Ở nhà bạn, ăn xong ai rửa bát? Bát đã bao giờ bị làm vỡ chưa?',
+      grammar: { label: 'Câu chữ 被', any: ['被'] },
       need: [
-        { label: 'Kể người nhà quan tâm thế nào', any: ['关心', '问', '打电话', '做饭', '照顾'] },
-        { label: 'Kể việc bạn làm cho họ', any: ['打电话', '回家', '帮', '买', '做饭', '照顾'] }
+        { label: 'Nói ai rửa bát', any: ['我', '妈妈', '爸爸', '哥哥', '姐姐', '弟弟', '妹妹'] },
+        { label: 'Kể chuyện bát / đĩa', any: ['打坏', '坏', '碗', '盘子', '杯子'] }
       ],
-      bonus: { label: 'Nói tần suất bằng 每个星期 / 经常', any: ['每个星期', '经常', '常常', '每天'] },
-      vocab: ['关心', '难过', '碗'],
-      minLen: 20,
-      sample: '我妈妈很关心我，常常问我吃饭了没有，我难过的时候她一直听我说。我也关心他们，每个星期都打电话，放假回家帮他们做饭、洗碗。',
-      sample_py: 'Wǒ māma hěn guānxīn wǒ, chángcháng wèn wǒ chīfàn le méiyǒu, wǒ nánguò de shíhou tā yì zhí tīng wǒ shuō. Wǒ yě guānxīn tāmen, měi ge xīngqī dōu dǎdiànhuà, fàng jiǎ huí jiā bāng tāmen zuòfàn, xǐ wǎn.',
-      sample_vn: 'Mẹ tôi rất quan tâm tôi, hay hỏi tôi ăn cơm chưa, lúc tôi buồn mẹ luôn lắng nghe. Tôi cũng quan tâm họ, tuần nào cũng gọi điện, nghỉ lễ về nhà nấu cơm, rửa bát giúp.',
-      tip: '关心 + người/việc: 关心孩子的学习、关心身体。'
+      bonus: { label: 'Kể bố mẹ nói gì bằng 叫 / 让', any: ['叫', '让'] },
+      vocab: ['碗', '被'],
+      minLen: 18,
+      sample: '在我家，一般是我洗碗。有一次两个盘子被我打坏了，妈妈没有生气，只叫我下次小心一点儿。',
+      sample_py: 'Zài wǒ jiā, yìbān shì wǒ xǐ wǎn. Yǒu yí cì liǎng ge pánzi bèi wǒ dǎhuài le, māma méiyǒu shēngqì, zhǐ jiào wǒ xià cì xiǎoxīn yìdiǎnr.',
+      sample_vn: 'Ở nhà tôi, thường là tôi rửa bát. Có lần hai cái đĩa bị tôi làm vỡ, mẹ không giận, chỉ bảo tôi lần sau cẩn thận một chút.',
+      tip: 'Câu 被 có kết quả sau động từ: 被我打坏了 — không nói 被我打了坏.'
     },
     {
-      situation: 'Bạn được giao một việc trông có vẻ rất khó.',
+      situation: 'Bạn được giao một việc trông có vẻ rất khó. Bạn bè hỏi bạn có dám thử không.',
       q_zh: '遇到看上去很难的事情，你会先试一试吗？',
-      q_py: 'Yùdào kàn shàng qù hěn nán de shìqing, nǐ huì xiān shì yi shì ma?',
-      q_vn: 'Gặp việc trông rất khó, bạn có thử làm trước không?',
-      grammar: { label: '多么 + tính từ; 试一试', any: ['多么', '试'] },
+      q_py: 'Yùdào kàn shangqu hěn nán de shìqing, nǐ huì xiān shì yi shì ma?',
+      q_vn: 'Gặp việc trông có vẻ rất khó, bạn có thử trước không?',
+      grammar: { label: '只有……才…… / 多么……都……', any: ['只有', '多么'] },
       need: [
         { label: 'Trả lời có thử hay không', any: ['试', '会', '不会', '先'] },
-        { label: 'Nêu suy nghĩ của bạn', any: ['难', '简单', '做起来', '看上去', '真正'] }
+        { label: 'Nêu suy nghĩ', any: ['难', '简单', '真正', '办法', '相信'] }
       ],
-      bonus: { label: 'Dùng 多么 để nhấn mạnh', any: ['多么'] },
-      vocab: ['试', '多么', '真正'],
-      minLen: 20,
-      sample: '我会先试一试。有些问题看上去多么难，做起来其实很简单，只有真正做了以后，才知道难还是不难。',
-      sample_py: 'Wǒ huì xiān shì yi shì. Yǒuxiē wèntí kàn shàng qù duōme nán, zuò qǐlai qíshí hěn jiǎndān, zhǐyǒu zhēnzhèng zuò le yǐhòu, cái zhīdao nán háishi bù nán.',
-      sample_vn: 'Tôi sẽ thử trước. Có những vấn đề nhìn khó đến thế, làm thì thật ra rất đơn giản, chỉ khi thật sự bắt tay làm mới biết khó hay không.',
-      tip: '多么 + tính từ dùng để cảm thán hoặc nhấn mạnh: 多么漂亮的花儿！'
+      bonus: { label: 'Dùng 多么 + tính từ', any: ['多么'] },
+      vocab: ['试', '真正', '多么', '解决'],
+      minLen: 18,
+      sample: '我会先试一试，只有真正做了，才知道它难不难。我相信多么难的问题，大家一起想办法都能解决。',
+      sample_py: 'Wǒ huì xiān shì yi shì, zhǐyǒu zhēnzhèng zuò le, cái zhīdao tā nán bu nán. Wǒ xiāngxìn duōme nán de wèntí, dàjiā yìqǐ xiǎng bànfǎ dōu néng jiějué.',
+      sample_vn: 'Tôi sẽ thử trước, chỉ khi thật sự làm rồi mới biết nó có khó hay không. Tôi tin vấn đề khó đến mấy, mọi người cùng nghĩ cách đều giải quyết được.',
+      tip: '多么 + tính từ + 的 + danh từ, … 都 … = dù… đến mấy cũng…; 试一试 = thử xem.'
     }
   ]
 };
@@ -1752,28 +1756,20 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cuốn sách của tôi bị ai lấy đi rồi?', zh:'我的书被谁拿走了？', py:'Wǒ de shū bèi shéi ná zǒu le?'},
-  {vi:'Đừng buồn, ngày mai mình đi ăn ngon nhé.', zh:'别难过，明天我们去吃好吃的吧。', py:'Bié nánguò, míngtiān wǒmen qù chī hǎochī de ba.'},
-  {vi:'Cuối tuần của tôi bị trận mưa lớn này ảnh hưởng.', zh:'我的周末被这场大雨影响了。', py:'Wǒ de zhōumò bèi zhè chǎng dà yǔ yǐngxiǎng le.'},
-  {vi:'Chỉ có kiên trì luyện tập, mới có thể nói tiếng Trung giỏi.', zh:'只有坚持练习，才能说好中文。', py:'Zhǐyǒu jiānchí liànxí, cái néng shuōhǎo Zhōngwén.'},
-  {vi:'Cái bát này thường bị mọi người dùng nhầm.', zh:'这个碗经常被大家用错。', py:'Zhège wǎn jīngcháng bèi dàjiā yòngcuò.'},
-  {vi:'Chỉ có bác sĩ mới có thể phân biệt được hai loại thuốc này.', zh:'只有医生才能分出来这两种药。', py:'Zhǐyǒu yīshēng cái néng fēn chulai zhè liǎng zhǒng yào.'},
-  {vi:'Có những vấn đề nhìn có vẻ khó, nhưng làm thì lại rất đơn giản.', zh:'有些问题看上去很难，但是做起来非常简单。', py:'Yǒuxiē wèntí kàn shangqu hěn nán, dànshì zuò qilai fēicháng jiǎndān.'},
-  {vi:'Máy ảnh đắt đến mấy, anh ấy cũng đều muốn mua.', zh:'多么贵的照相机，他都想买。', py:'Duōme guì de zhàoxiàngjī, tā dōu xiǎng mǎi.'},
+  {vi:'Cái bánh mì tôi để trong tủ lạnh bị ai ăn rồi?', zh:'我放在冰箱里的面包被谁吃了？', py:'Wǒ fàng zài bīngxiāng li de miànbāo bèi shéi chī le?'},
+  {vi:'Chỉ có tự bạn thử một lần mới biết ngon hay không.', zh:'只有你自己试一次，才知道好吃不好吃。', py:'Zhǐyǒu nǐ zìjǐ shì yí cì, cái zhīdao hǎochī bu hǎochī.'},
+  {vi:'Đừng buồn, lần sau thành tích của bạn nhất định sẽ tốt hơn.', zh:'别难过，下次你的成绩一定会更好。', py:'Bié nánguò, xià cì nǐ de chéngjì yídìng huì gèng hǎo.'},
+  {vi:'Quán ăn này không dùng được thẻ tín dụng, chỉ có thể dùng điện thoại.', zh:'这家饭馆不能用信用卡，只能用手机。', py:'Zhè jiā fànguǎn bù néng yòng xìnyòngkǎ, zhǐ néng yòng shǒujī.'},
+  {vi:'Chiếc ô của tôi bị người khác cầm nhầm rồi.', zh:'我的伞被别人拿错了。', py:'Wǒ de sǎn bèi biérén nácuò le.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Bức tranh vẫn chưa được treo lên đâu.', zh:'画还没有被挂上呢。', py:'Huà hái méiyǒu bèi guà shàng ne.'},
-  {vi:'Bệnh nhân vẫn chưa được đưa đến bệnh viện.', zh:'病人还没被送到医院呢。', py:'Bìngrén hái méi bèi sòngdào yīyuàn ne.'},
-  {vi:'Tháng sau cô ấy sẽ được mẹ gửi sang Mỹ.', zh:'下个月她会被妈妈送到美国。', py:'Xià ge yuè tā huì bèi māma sòngdào Měiguó.'},
-  {vi:'Chỉ có giải quyết xong vấn đề này, mới có thể yên tâm đi ngủ.', zh:'只有解决完这个问题，才能放心睡觉。', py:'Zhǐyǒu jiějué wán zhège wèntí, cái néng fàngxīn shuìjiào.'},
-  {vi:'Chỉ có cơm mẹ nấu cô ấy mới thích ăn.', zh:'只有妈妈做的饭，她才爱吃。', py:'Zhǐyǒu māma zuò de fàn, tā cái ài chī.'},
-  {vi:'Mũ bị gió thổi bay mất rồi.', zh:'帽子被刮跑了。', py:'Màozi bèi guā pǎo le.'},
-  {vi:'Cơm bị em gái ăn hết rồi.', zh:'饭让妹妹吃完了。', py:'Fàn ràng mèimei chīwán le.'},
-  {vi:'Chỉ khi thật sự sống ở nước ngoài mới hiểu được nỗi nhớ nhà.', zh:'只有真正在国外生活的时候，才能了解想家的感觉。', py:'Zhǐyǒu zhēnzhèng zài guówài shēnghuó de shíhou, cái néng liǎojiě xiǎngjiā de gǎnjué.'},
+  {vi:'Vấn đề này trông thì đơn giản, nhưng thật sự giải quyết thì rất khó.', zh:'这个问题看起来很简单，但是真正解决起来很难。', py:'Zhège wèntí kàn qǐlai hěn jiǎndān, dànshì zhēnzhèng jiějué qǐlai hěn nán.'},
+  {vi:'Chỉ có mẹ tôi mới phân biệt rõ được giọng của tôi và em gái tôi.', zh:'只有我妈妈才能分清楚我和我妹妹的声音。', py:'Zhǐyǒu wǒ māma cái néng fēn qīngchu wǒ hé wǒ mèimei de shēngyīn.'},
+  {vi:'Ngày nào ông nội cũng quan tâm đến tin tức, đọc báo xong còn xem tivi.', zh:'爷爷每天都关心新闻，看完报纸还要看电视。', py:'Yéye měi tiān dōu guānxīn xīnwén, kànwán bàozhǐ hái yào kàn diànshì.'},
 ];
 
 // ══════════════════════════════════════════

@@ -1579,72 +1579,81 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'放在',right:'耳朵后面'},
-  {left:'使她的',right:'脸看上去漂亮'},
-  {left:'骑得',right:'最快'},
-  {left:'一位',right:'老师'},
-  {left:'蓝',right:'西服'},
-  {left:'一张',right:'照片'},
-  {left:'学',right:'鸟叫'},
-  {left:'使脸看上去',right:'更漂亮。'},
-  {left:'考试',right:'让我很担心。'},
-  {left:'前边的车越开越慢，',right:'慢下来了。'},
-  {left:'只要他爸爸学小鸟叫，',right:'她马上就安静下来了。'},
+  {left:'黄河上慢慢开过来一条', right:'大船'},
+  {left:'奶奶八十岁了，我们要给她', right:'过一个热闹的生日'},
+  {left:'我家门前的树上住着', right:'几只小鸟'},
+  {left:'外面太冷了，他的脸和', right:'耳朵都红了'},
+  {left:'他今天穿了一件', right:'蓝衬衫'},
+  {left:'以前我的头发很长，现在', right:'短多了'},
+  {left:'他小时候在爷爷家学会了骑', right:'马'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'女儿最近喜欢把头发放在',blank:'耳朵',post:'后面。',hint:'(tai)',ans:'耳朵'},
-  {pre:'虽然今天有点儿累，但她的',blank:'脸',post:'看上去还是很健康。',hint:'(mặt, khuôn mặt)',ans:'脸'},
-  {pre:'她以前喜欢',blank:'短',post:'头发。',hint:'(ngắn)',ans:'短'},
-  {pre:'你会骑',blank:'马',post:'？',hint:'(ngựa)',ans:'马'},
-  {pre:'我选择了几',blank:'张',post:'洗出来了。',hint:'(tờ, tấm)',ans:'张',exp:'张 là lượng từ cho vật phẳng như ảnh, giấy: 几张 (照片).'},
-  {pre:'骑得最快的这',blank:'位',post:'是谁？',hint:'(vị)',ans:'位',exp:'位 là lượng từ lịch sự cho người: 这位.'},
-  {pre:'他今天穿',blank:'蓝',post:'西服。',hint:'(có màu xanh da trời)',ans:'蓝'},
-  {pre:'她去年',blank:'秋',post:'天出生的。',hint:'(mùa thu)',ans:'秋'},
-  {pre:'刚',blank:'过',post:'完一岁生日。',hint:'(ăn mừng, trải qua)',ans:'过',exp:'过 ở đây là động từ “đón, trải qua”: 过完一岁生日 = vừa đón xong sinh nhật một tuổi.'},
-  {pre:'学小',blank:'鸟',post:'叫。',hint:'(chim)',ans:'鸟'},
-  {pre:'一',blank:'哭',post:'，他爸爸就学小鸟叫。',hint:'(khóc)',ans:'哭'},
-  {pre:'我先去看了',blank:'黄河',post:'。',hint:'(Hoàng Hà)',ans:'黄河'},
-  {pre:'我坐在',blank:'船',post:'上。',hint:'(thuyền, tàu)',ans:'船'},
-  {pre:'一路上',blank:'经过',post:'了很多地方。',hint:'(đi ngang qua)',ans:'经过'},
+  {pre:'奶奶的', blank:'耳朵', post:'不太好，你跟她说话的时候声音要大一点儿。', hint:'(tai)', ans:'耳朵', exp:'耳朵不好 = tai kém, nghe không rõ; ôn 声音 (bài 14) và tính từ + 一点儿.'},
+  {pre:'他踢完足球回来，', blank:'脸', post:'红红的，一直在喝水。', hint:'(mặt)', ans:'脸', exp:'脸红红的 = mặt đỏ ửng (tính từ lặp + 的 để tả); ôn V + 完 (踢完).'},
+  {pre:'A：你的头发怎么这么', blank:'短', post:'？B：夏天太热了，短一点儿舒服。', hint:'(ngắn)', ans:'短', exp:'短 = ngắn, trái nghĩa với 长 (bài 16); 这么 + tính từ = … thế này.'},
+  {pre:'我第一次骑', blank:'马', post:'的时候有点儿害怕，后来就不害怕了。', hint:'(ngựa)', ans:'马', exp:'骑马 = cưỡi ngựa (cùng động từ 骑 như 骑自行车); ôn 害怕 (bài 8), 后来 (bài 17).'},
+  {pre:'你好，我要两', blank:'张', post:'明天上午去北京的票。', hint:'(tấm, tờ)', ans:'张', exp:'张 là lượng từ cho vật mỏng, phẳng: 两张票, 一张照片, 一张桌子.'},
+  {pre:'A：欢迎！请问您几', blank:'位', post:'？B：我们三个人，有没有安静一点儿的桌子？', hint:'(vị — đếm người lịch sự)', ans:'位', exp:'几位 = mấy vị, cách phục vụ hỏi khách lịch sự; nói về mình thì dùng 三个人.'},
+  {pre:'A：今年新年你在哪儿', blank:'过', post:'？B：我回家跟爷爷奶奶一起过。', hint:'(đón, ăn mừng)', ans:'过', exp:'过新年 / 过生日 = đón năm mới / mừng sinh nhật; đây là động từ, khác 过 sau động từ (đã từng).'},
+  {pre:'我还在睡觉，树上的小', blank:'鸟', post:'就开始叫了，叫得很好听。', hint:'(chim)', ans:'鸟', exp:'小鸟 = chim nhỏ; 就 nhấn mạnh “sớm”; ôn V + 得 + bổ ngữ: 叫得很好听 = hót rất hay.'},
+  {pre:'孩子', blank:'哭', post:'了，你快去看看他是不是饿了。', hint:'(khóc)', ans:'哭', exp:'哭 = khóc, ngược với 笑; 是不是 + V = có phải… không (hỏi phỏng đoán).'},
+  {pre:'每天上班我都要', blank:'经过', post:'一个公园，那儿早上有很多人在锻炼。', hint:'(đi ngang qua)', ans:'经过', exp:'经过 + nơi chốn = đi ngang qua; ôn 在 + V (đang làm), 锻炼 (bài 6).'},
+  {pre:'到了十月，天气慢慢冷', blank:'下来', post:'了，早上要多穿一件衣服。', hint:'(dần … đi, xuống)', ans:'下来', exp:'冷下来 = trời trở lạnh dần (nóng → lạnh): 下来 đứng ngay sau tính từ, 了 ở cuối câu.'},
+  {pre:'A：你昨天晚上没睡好吗？你看', blank:'起来', post:'很累。B：是啊，作业写到十二点。', hint:'(看__ = trông có vẻ)', ans:'起来', exp:'看起来 + tính từ = trông có vẻ…; ôn 没 + V + 好 (没睡好).'},
+  {pre:'A：这次旅游怎么样？B：好极了！那儿的人都很热情，', blank:'让', post:'我觉得像在自己家一样。', hint:'(khiến, làm cho)', ans:'让', exp:'让 + người + cảm nhận = khiến ai thấy…; ôn 像……一样 và 极了.'},
+  {pre:'A：给你打电话的是谁？你听', blank:'出来', post:'了吗？B：没听出来，他的声音太小了。', hint:'(nhận ra)', ans:'出来', exp:'听出来 / 看出来 = nghe ra, nhìn ra (nhận biết được); phủ định: 没听出来.'}
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['如果','你','把','头发','放','在','耳朵','后面','，','就','会','看上去','更','漂亮','。'],ans:'如果你把头发放在耳朵后面，就会看上去更漂亮。',audio:'如果你把头发放在耳朵后面，就会看上去更漂亮。'},
-  {words:['如果','你','笑一笑','，','你的','脸','就','会','看上去','更','好看','。'],ans:'如果你笑一笑，你的脸就会看上去更好看。',audio:'如果你笑一笑，你的脸就会看上去更好看。'},
-  {words:['你','没','看出来','吗','？','他','是','小刚','啊','。'],ans:'你没看出来吗？他是小刚啊。',audio:'你没看出来吗？他是小刚啊。'},
-  {words:['只要','他','爸爸','学','小鸟','叫','，','她','马上','就','安静','下来','了','。'],ans:'只要他爸爸学小鸟叫，她马上就安静下来了。',audio:'只要他爸爸学小鸟叫，她马上就安静下来了。'},
-  {words:['读书','使','我','快乐','。'],ans:'读书使我快乐。',audio:'读书使我快乐。'},
-  {words:['考试','让','我','很','担心','。'],ans:'考试让我很担心。',audio:'考试让我很担心。'},
-  {words:['穿','运动服','让','他','更','年轻','。'],ans:'穿运动服让他更年轻。',audio:'穿运动服让他更年轻。'},
-  {words:['我','想','快点儿','把','照片','发给','大家','，','叫','朋友们','也','高兴高兴','。'],ans:'我想快点儿把照片发给大家，叫朋友们也高兴高兴。',audio:'我想快点儿把照片发给大家，叫朋友们也高兴高兴。'},
+  {words:['看了','这张','照片','，','我','想','起来','很多','小时候','的','事情','。'], ans:'看了这张照片，我想起来很多小时候的事情。', audio:'看了这张照片，我想起来很多小时候的事情。'},
+  {words:['多','喝','热','水','会','让','你','舒服','一点儿','。'], ans:'多喝热水会让你舒服一点儿。', audio:'多喝热水会让你舒服一点儿。'},
+  {words:['到了','路口','，','前面','的','车','慢','下来','了','。'], ans:'到了路口，前面的车慢下来了。', audio:'到了路口，前面的车慢下来了。'},
+  {words:['电影','还','没','结束','，','妹妹','就','哭','起来','了','。'], ans:'电影还没结束，妹妹就哭起来了。', audio:'电影还没结束，妹妹就哭起来了。'},
+  {words:['我们','坐','的','船','经过','了','很多','有名','的','城市','。'], ans:'我们坐的船经过了很多有名的城市。', audio:'我们坐的船经过了很多有名的城市。'},
+  {words:['我的','生日','在','秋天','，','今年','我','想','跟','几个','好朋友','一起','过','。'], ans:'我的生日在秋天，今年我想跟几个好朋友一起过。', audio:'我的生日在秋天，今年我想跟几个好朋友一起过。'},
+  {words:['这','只','小鸟','的','嘴','是','红色','的','，','可爱','极了','。'], ans:'这只小鸟的嘴是红色的，可爱极了。', audio:'这只小鸟的嘴是红色的，可爱极了。'},
+  {words:['爸爸','叫','我','把','房间','打扫','干净','。'], ans:'爸爸叫我把房间打扫干净。', audio:'爸爸叫我把房间打扫干净。'},
+  {words:['我','一看','就','看出来','他','是','北方人','了','。'], ans:'我一看就看出来他是北方人了。', audio:'我一看就看出来他是北方人了。'}
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'这个字你出来能写吗？',
-   opts:['这个字你能写出来吗？','这个字你出来能写吗？','这个字你能出来写吗？','这个字出来你能写吗？'],ans:0,
-   exp:'出来 phải đứng SAU cả cụm động từ (能写), không chen vào giữa.'},
-  {wrong:'天黑了下来，孩子们要回家了。',
-   opts:['天黑下来了，孩子们要回家了。','天黑了下来，孩子们要回家了。','天下来黑了，孩子们要回家了。','天黑下了来，孩子们要回家了。'],ans:0,
-   exp:'下来 phải đứng NGAY SAU tính từ (黑), 了 đặt SAU 下来, không đảo ngược.'},
-  {wrong:'我想起你说的话不来了。',
-   opts:['我想不起来你说的话了。','我想起你说的话不来了。','我不想起来你说的话了。','我想起来不你说的话了。'],ans:0,
-   exp:'Phủ định 不 phải chen vào GIỮA 想 và 起来 (想不起来), không đặt sau tân ngữ.'},
-  {wrong:'旅游很开心使我。',
-   opts:['旅游使我很开心。','旅游很开心使我。','使旅游我很开心。','旅游使很开心我。'],ans:0,
-   exp:'Cấu trúc 使/叫/让 + đối tượng + kết quả: 使+我(đối tượng)+很开心(kết quả), không đảo lộn.'},
-  {wrong:'穿蓝色衣服她更漂亮让。',
-   opts:['穿蓝色衣服让她更漂亮。','穿蓝色衣服她更漂亮让。','穿蓝色衣服让更漂亮她。','让穿蓝色衣服她更漂亮。'],ans:0,
-   exp:'让 phải đứng NGAY SAU chủ ngữ gây khiến (穿蓝色衣服), trước đối tượng bị ảnh hưởng (她).'},
+  {wrong:'我想起来不他的名字了。',
+   opts:['我不想起来他的名字了。','我想起来没他的名字。','我想不起来他的名字了。','我想他的名字不起来了。'], ans:2,
+   exp:'Không nhớ ra = 想不起来: 不 chen GIỮA 想 và 起来, tân ngữ (他的名字) đứng sau cả cụm.'},
+  {wrong:'六点以后，天下来黑了。',
+   opts:['六点以后，天黑下来了。','六点以后，天很黑下来了。','六点以后，天黑下了来。','六点以后，天黑得下来了。'], ans:0,
+   exp:'黑下来 = tối dần: 下来 đứng ngay sau tính từ 黑, 了 ở cuối; không thêm 很 trước, không dùng 得.'},
+  {wrong:'你的礼物让很高兴奶奶。',
+   opts:['你的礼物很高兴让奶奶。','你的礼物让奶奶高兴很。','你的礼物让奶奶是很高兴。','你的礼物让奶奶很高兴。'], ans:3,
+   exp:'Câu khiến: A + 让 + người + cảm xúc: 让奶奶很高兴; người đứng ngay sau 让, không thêm 是 trước tính từ.'},
+  {wrong:'妈妈让不我晚上玩儿手机，她说对眼睛不好。',
+   opts:['妈妈没让我晚上玩儿手机了，她说对眼睛不好。','妈妈不让我晚上玩儿手机，她说对眼睛不好。','妈妈不让我玩儿手机晚上，她说对眼睛不好。','妈妈不让晚上我玩儿手机，她说对眼睛不好。'], ans:1,
+   exp:'Không cho = 不让 + người + việc: 不 đứng TRƯỚC 让; thời gian (晚上) đứng trước động từ, không đặt cuối câu như tiếng Việt.'},
+  {wrong:'那个位先生是我们的新经理。',
+   opts:['那只先生是我们的新经理。','那位先生是我们的经理新。','那位先生是我们的新经理。','那个位先生是我们新经理的。'], ans:2,
+   exp:'位 đã là lượng từ (lịch sự) nên nói 那位先生, không thêm 个; 只 chỉ dùng cho con vật; 新 đứng trước danh từ.'},
+  {wrong:'桌子上两张放着照片。',
+   opts:['两张照片放着在桌子上。','桌子上放了着两张照片。','桌子上放着两个照片。','桌子上放着两张照片。'], ans:3,
+   exp:'Câu tồn tại: nơi chốn + V + 着 + số + lượng từ + danh từ; ảnh dùng lượng từ 张, không dùng 个 (ôn V + 着).'},
+  {wrong:'我们过了一个很快乐的周末在爷爷家。',
+   opts:['我们在爷爷家过了一个很快乐的周末。','我们过了在爷爷家一个很快乐的周末。','我们在爷爷家过了一个很快乐地周末。','我们在爷爷家过了一个快乐很的周末。'], ans:0,
+   exp:'Nơi chốn (在爷爷家) đứng TRƯỚC động từ 过, không đặt cuối câu như tiếng Việt; trước danh từ dùng 的, không dùng 地.'},
+  {wrong:'孩子一看见医生就起来哭了。',
+   opts:['孩子一看见医生就哭下来了。','孩子一看见医生就哭起来了。','孩子看见医生一就哭起来了。','孩子一看见医生哭就起来了。'], ans:1,
+   exp:'Bật khóc = 哭起来: 起来 đứng SAU động từ (không đặt trước như “bắt đầu” trong tiếng Việt); 一…就… = vừa… là….'},
+  {wrong:'多运动使身体健康我们。',
+   opts:['多运动使健康我们的身体。','多运动我们使身体健康。','多运动使我们身体是健康。','多运动使我们身体健康。'], ans:3,
+   exp:'使 + người/vật + tính từ: 使我们身体健康 — đối tượng chịu tác động đứng NGAY SAU 使, không chèn 是 trước tính từ.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1652,97 +1661,96 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 19. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 19 (让/叫 + người + …, V/tính từ + 起来 / 下来). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn bè hỏi điều gì khiến bạn thấy vui nhất.',
-      q_zh: '什么事情能让你觉得很快乐？',
-      q_py: 'Shénme shìqing néng ràng nǐ juéde hěn kuàilè?',
-      q_vn: 'Chuyện gì khiến bạn thấy rất vui?',
-      grammar: { label: '让/使/叫 + người + tính từ hoặc động từ', any: ['让', '使', '叫'] },
+      situation: 'Bạn bè hỏi gần đây có chuyện gì khiến bạn vui nhất.',
+      q_zh: '最近什么事情让你最高兴？',
+      q_py: 'Zuìjìn shénme shìqing ràng nǐ zuì gāoxìng?',
+      q_vn: 'Gần đây chuyện gì khiến bạn vui nhất?',
+      grammar: { label: '让 + người + cảm xúc', any: ['让', '叫'] },
       need: [
-        { label: 'Dùng 让 hoặc 使', any: ['让', '使'] },
-        { label: 'Kể việc cụ thể', any: ['吃饭', '家里人', '朋友', '音乐', '运动', '旅游', '照片'] }
+        { label: 'Kể một sự việc cụ thể', any: ['生日', '礼物', '考试', '比赛', '旅游', '工作', '朋友'] },
+        { label: 'Nói cảm xúc', any: ['高兴', '快乐', '满意', '有意思'] }
       ],
-      bonus: { label: 'Tả cảm xúc trên gương mặt', any: ['脸', '笑', '高兴'] },
-      vocab: ['脸', '过', '短'],
-      minLen: 18,
-      sample: '跟家里人一起吃饭最让我快乐，这时候我的脸上一直有笑。听听音乐也使我很舒服，一天的累很快就过去了。',
-      sample_py: 'Gēn jiā lǐ rén yìqǐ chīfàn zuì ràng wǒ kuàilè, zhè shíhou wǒ de liǎn shàng yì zhí yǒu xiào. Tīngting yīnyuè yě shǐ wǒ hěn shūfu, yì tiān de lèi hěn kuài jiù guòqù le.',
-      sample_vn: 'Được ăn cơm cùng gia đình khiến tôi vui nhất, lúc đó mặt tôi lúc nào cũng có nụ cười. Nghe nhạc cũng khiến tôi dễ chịu, mệt mỏi cả ngày qua rất nhanh.',
-      tip: '让/使 + đối tượng + trạng thái: 这件事让我很难过。'
+      bonus: { label: 'Dùng 过 (đón, mừng) hoặc lượng từ 只 / 张', any: ['过生日', '过新年', '只', '张'] },
+      vocab: ['过', '让'],
+      minLen: 14,
+      sample: '上个星期我过生日，几个好朋友送了我一只小狗，这件事情让我高兴了好几天。',
+      sample_py: 'Shàng ge xīngqī wǒ guò shēngrì, jǐ ge hǎo péngyou sòngle wǒ yì zhī xiǎo gǒu, zhè jiàn shìqing ràng wǒ gāoxìngle hǎo jǐ tiān.',
+      sample_vn: 'Tuần trước tôi mừng sinh nhật, mấy người bạn thân tặng tôi một con chó con, chuyện này khiến tôi vui suốt mấy ngày.',
+      tip: '让 + người + cảm xúc: 这件事情让我很高兴 — người đứng ngay sau 让, không nói 让很高兴我.'
     },
     {
-      situation: 'Cả nhóm đang nói về những lúc dễ xúc động.',
-      q_zh: '什么事情会让你笑起来或者哭起来？',
-      q_py: 'Shénme shìqing huì ràng nǐ xiào qǐlai huòzhě kū qǐlai?',
-      q_vn: 'Chuyện gì khiến bạn bật cười hoặc bật khóc?',
-      grammar: { label: 'Nghĩa mở rộng của bổ ngữ xu hướng: 笑起来、哭起来', any: ['起来'] },
+      situation: 'Bạn gặp lại một người quen cũ trên đường nhưng không nhớ ra tên. Bạn kể lại.',
+      q_zh: '你有没有想不起来别人名字的时候？那时候你怎么做？',
+      q_py: 'Nǐ yǒu méiyǒu xiǎng bu qǐlái biérén míngzi de shíhou? Nà shíhou nǐ zěnme zuò?',
+      q_vn: 'Bạn có lúc nào không nhớ ra tên người khác không? Lúc đó bạn làm thế nào?',
+      grammar: { label: '想起来 / 想不起来', any: ['想起来', '想不起来', '起来'] },
       need: [
-        { label: 'Dùng 起来 với 笑 hoặc 哭', any: ['笑起来', '哭起来', '起来'] },
-        { label: 'Nói tình huống cụ thể', any: ['照片', '电影', '朋友', '故事', '家里人', '新闻'] }
+        { label: 'Nói gặp ai, ở đâu', any: ['路上', '同学', '朋友', '老师', '邻居', '以前'] },
+        { label: 'Nói mình đã làm gì', any: ['问', '笑', '手机', '照片', '告诉'] }
       ],
-      bonus: { label: 'Nhận xét về bản thân', any: ['容易', '常常', '我这个人'] },
-      vocab: ['哭', '过', '位'],
-      minLen: 18,
-      sample: '看到小时候的照片，我会马上笑起来；看难过的电影的时候，我也容易哭起来。朋友们都说我这个人很容易感动。',
-      sample_py: 'Kàn dào xiǎoshí hòu de zhàopiàn, wǒ huì mǎshàng xiào qǐlai; kàn nánguò de diànyǐng de shíhou, wǒ yě róngyì kū qǐlai. Péngyou men dōu shuō wǒ zhège rén hěn róngyì gǎndòng.',
-      sample_vn: 'Nhìn ảnh hồi bé là tôi bật cười ngay; xem phim buồn thì tôi cũng dễ bật khóc. Bạn bè đều bảo tôi là người dễ xúc động.',
-      tip: 'V + 起来 còn chỉ bắt đầu một hành động/trạng thái: 唱起来、下起雨来。'
+      vocab: ['位', '起来'],
+      minLen: 16,
+      sample: '有一次我在路上遇到一位以前的同学，我想了半天也想不起来他叫什么，最后只能笑着问他。',
+      sample_py: 'Yǒu yí cì wǒ zài lù shang yùdào yí wèi yǐqián de tóngxué, wǒ xiǎngle bàntiān yě xiǎng bu qǐlái tā jiào shénme, zuìhòu zhǐ néng xiàozhe wèn tā.',
+      sample_vn: 'Có lần tôi gặp một bạn học cũ trên đường, tôi nghĩ mãi cũng không nhớ ra bạn ấy tên gì, cuối cùng đành cười rồi hỏi bạn ấy.',
+      tip: 'Không nhớ ra = 想不起来 (不 ở giữa); nhớ ra rồi = 想起来了.'
     },
     {
-      situation: 'Bạn kể chuyến đi mùa thu năm ngoái.',
-      q_zh: '你去过什么河或者海？坐过船吗？',
-      q_py: 'Nǐ qù guo shénme hé huòzhě hǎi? Zuò guo chuán ma?',
-      q_vn: 'Bạn từng đến con sông hay biển nào? Từng đi thuyền chưa?',
-      grammar: { label: '经过 + nơi chốn; 坐船', any: ['经过', '坐船', '船'] },
+      situation: 'Đồng nghiệp hỏi khi bực mình hoặc căng thẳng, bạn làm gì để bình tĩnh lại.',
+      q_zh: '你生气的时候，怎么让自己安静下来？',
+      q_py: 'Nǐ shēngqì de shíhou, zěnme ràng zìjǐ ānjìng xiàlái?',
+      q_vn: 'Khi tức giận, bạn làm thế nào để bản thân bình tĩnh lại?',
+      grammar: { label: 'Tính từ + 下来 (dịu xuống, lặng lại)', any: ['下来'] },
       need: [
-        { label: 'Nói nơi đã đến', any: ['黄河', '河', '海', '山', '去过'] },
-        { label: 'Nói phương tiện hoặc hoạt động', any: ['船', '坐', '照相', '走'] }
+        { label: 'Nói việc bạn làm', any: ['音乐', '跑步', '睡觉', '喝', '走', '洗澡', '公园'] },
+        { label: 'Nói kết quả', any: ['安静', '舒服', '好', '不生气'] }
       ],
-      bonus: { label: 'Nói thời gian bằng mùa', any: ['秋', '春', '夏', '冬'] },
-      vocab: ['秋', '黄河', '船', '经过'],
-      minLen: 20,
-      sample: '去年秋天我去过黄河。我们坐船在河上走了两个小时，经过的地方都很漂亮，我照了很多张照片。',
-      sample_py: 'Qùnián qiū tiān wǒ qù guo Huáng Hé. Wǒmen zuò chuán zài hé shàng zǒu le liǎng ge xiǎoshí, jīngguò de dìfang dōu hěn piàoliang, wǒ zhào le hěn duō zhāng zhàopiàn.',
-      sample_vn: 'Mùa thu năm ngoái tôi đã đến sông Hoàng Hà. Chúng tôi ngồi thuyền đi trên sông hai tiếng, những nơi đi qua đều rất đẹp, tôi chụp rất nhiều ảnh.',
-      tip: '经过 = đi qua (nơi chốn) hoặc trải qua (thời gian, sự việc).'
+      bonus: { label: 'Nhắc tiếng chim / thiên nhiên', any: ['鸟', '树', '草', '太阳'] },
+      vocab: ['鸟', '下来'],
+      minLen: 16,
+      sample: '我生气的时候就去公园走一走，听听鸟叫，半个小时以后，我就慢慢安静下来了。',
+      sample_py: 'Wǒ shēngqì de shíhou jiù qù gōngyuán zǒu yi zǒu, tīngting niǎo jiào, bàn ge xiǎoshí yǐhòu, wǒ jiù mànmàn ānjìng xiàlái le.',
+      sample_vn: 'Khi tức giận tôi ra công viên đi dạo một chút, nghe chim hót, nửa tiếng sau là tôi dần bình tĩnh lại.',
+      tip: '安静下来 = lặng lại: 下来 đặt ngay sau tính từ, 了 ở cuối câu (安静下来了).'
     },
     {
-      situation: 'Đồng nghiệp rủ bạn đi cưỡi ngựa cuối tuần.',
-      q_zh: '你骑过马吗？跟几位朋友一起去的？',
-      q_py: 'Nǐ qí guo mǎ ma? Gēn jǐ wèi péngyou yìqǐ qù de?',
-      q_vn: 'Bạn từng cưỡi ngựa chưa? Đi cùng mấy người bạn?',
-      grammar: { label: 'Lượng từ 位 (lịch sự) và 张 (ảnh, bàn, giấy)', any: ['位', '张'] },
+      situation: 'Bạn kể cho bạn bè hồi nhỏ bố mẹ không cho bạn làm gì và bắt bạn làm gì.',
+      q_zh: '小时候，爸爸妈妈不让你做什么？',
+      q_py: 'Xiǎoshíhou, bàba māma bú ràng nǐ zuò shénme?',
+      q_vn: 'Hồi nhỏ bố mẹ không cho bạn làm gì?',
+      grammar: { label: '不让 / 叫 + người + việc', any: ['不让', '让', '叫'] },
       need: [
-        { label: 'Nói đã từng hay chưa', any: ['骑过', '没骑过', '马'] },
-        { label: 'Dùng lượng từ 位 với người', any: ['位'] }
+        { label: 'Nói việc bị cấm', any: ['电视', '游戏', '手机', '可乐', '饮料', '晚上', '冰箱'] },
+        { label: 'Nói lý do', any: ['因为', '身体', '眼睛', '作业', '不好'] }
       ],
-      bonus: { label: 'Dùng 张 khi nói về ảnh', any: ['张'] },
-      vocab: ['马', '位', '张'],
-      minLen: 18,
-      sample: '我骑过一次马，是跟三位同事一起去的。那天我们照了很多张照片，我有点儿害怕，可是特别高兴。',
-      sample_py: 'Wǒ qí guo yí cì mǎ, shì gēn sān wèi tóngshì yìqǐ qù de. Nà tiān wǒmen zhào le hěn duō zhāng zhàopiàn, wǒ yǒudiǎnr hàipà, kěshì tèbié gāoxìng.',
-      sample_vn: 'Tôi từng cưỡi ngựa một lần, đi cùng ba đồng nghiệp. Hôm đó chúng tôi chụp rất nhiều ảnh, tôi hơi sợ nhưng vô cùng vui.',
-      tip: '位 dùng khi nói về người một cách lịch sự: 三位老师、那位先生。'
+      bonus: { label: 'Dùng 叫 + người + việc (bố mẹ bảo làm gì)', any: ['叫'] },
+      vocab: ['让', '叫'],
+      minLen: 16,
+      sample: '小时候妈妈不让我喝可乐，她说喝多了对身体不好，她还叫我每天晚上九点就睡觉。',
+      sample_py: 'Xiǎoshíhou māma bú ràng wǒ hē kělè, tā shuō hē duōle duì shēntǐ bù hǎo, tā hái jiào wǒ měi tiān wǎnshang jiǔ diǎn jiù shuìjiào.',
+      sample_vn: 'Hồi nhỏ mẹ không cho tôi uống cola, mẹ nói uống nhiều không tốt cho sức khoẻ, mẹ còn bắt tôi tối nào cũng chín giờ là đi ngủ.',
+      tip: '不 đứng trước 让: 妈妈不让我… (không nói 妈妈让不我…).'
     },
     {
-      situation: 'Bạn vừa thay đổi kiểu tóc và đồng nghiệp nhận xét.',
-      q_zh: '说一说你最近的变化：头发长了还是短了？',
-      q_py: 'Shuō yi shuō nǐ zuìjìn de biànhuà: tóufa zhǎng le háishi duǎn le?',
-      q_vn: 'Hãy kể thay đổi gần đây của bạn: tóc dài ra hay ngắn đi?',
-      grammar: { label: '使/让 + người + 看起来 + tính từ', any: ['使', '让', '看起来'] },
+      situation: 'Bạn cho bạn bè xem ảnh một người trong gia đình trên điện thoại và giới thiệu.',
+      q_zh: '这张照片上的人是谁？他看起来怎么样？',
+      q_py: 'Zhè zhāng zhàopiàn shang de rén shì shéi? Tā kàn qǐlái zěnmeyàng?',
+      q_vn: 'Người trong tấm ảnh này là ai? Trông người ấy thế nào?',
+      grammar: { label: '看起来 / 看上去 + tính từ', any: ['看起来', '看上去'] },
       need: [
-        { label: 'Nói tóc dài hay ngắn', any: ['头发', '短', '长'] },
-        { label: 'Nói người khác nhận xét thế nào', any: ['同事', '朋友', '说', '年轻', '好看'] }
+        { label: 'Nói người đó là ai', any: ['爸爸', '妈妈', '哥哥', '姐姐', '弟弟', '妹妹', '爷爷', '奶奶', '叔叔', '阿姨'] },
+        { label: 'Tả ngoại hình', any: ['脸', '头发', '短', '长', '耳朵', '蓝', '衬衫', '高', '瘦', '胖', '个子'] }
       ],
-      bonus: { label: 'Tả thêm khuôn mặt hoặc tai', any: ['脸', '耳朵', '瘦'] },
-      vocab: ['短', '脸', '耳朵'],
+      bonus: { label: 'So sánh với hiện tại bằng 比', any: ['比'] },
+      vocab: ['张', '蓝', '短', '脸'],
       minLen: 18,
-      sample: '我最近把头发弄短了一些，同事说这样使我看起来更年轻。头发短了以后，脸比以前瘦了，耳朵也看得见了。',
-      sample_py: 'Wǒ zuìjìn bǎ tóufa nòng duǎn le yì xiē, tóngshì shuō zhè yàng shǐ wǒ kàn qǐlai gèng niánqīng. Tóufa duǎn le yǐhòu, liǎn bǐ yǐqián shòu le, ěrduo yě kàn děi jiàn le.',
-      sample_vn: 'Gần đây tôi cắt tóc ngắn đi một chút, đồng nghiệp nói như vậy khiến tôi trông trẻ hơn. Tóc ngắn rồi thì mặt gọn hơn trước, tai cũng lộ ra.',
-      tip: '使 mang sắc thái trang trọng hơn 让, thường dùng trong văn viết.'
+      sample: '这张照片上穿蓝衬衫的是我哥哥，那时候他头发很短，脸很瘦，看起来比现在年轻多了。',
+      sample_py: 'Zhè zhāng zhàopiàn shang chuān lán chènshān de shì wǒ gēge, nà shíhou tā tóufa hěn duǎn, liǎn hěn shòu, kàn qǐlái bǐ xiànzài niánqīng duō le.',
+      sample_vn: 'Người mặc sơ mi xanh trong tấm ảnh này là anh trai tôi, hồi đó anh ấy tóc rất ngắn, mặt gầy, trông trẻ hơn bây giờ nhiều.',
+      tip: '看起来 + tính từ = trông có vẻ…; so sánh dùng 比 + tính từ + 多了, không thêm 很.'
     }
   ]
 };
@@ -1751,28 +1759,20 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Chỉ cần bạn để tóc ra sau tai là mẹ sẽ khen bạn xinh.', zh:'只要你把头发放在耳朵后面，妈妈就会说你很漂亮。', py:'Zhǐyào nǐ bǎ tóufa fàng zài ěrduo hòumiàn, māma jiù huì shuō nǐ hěn piàoliang.'},
-  {vi:'Chỉ cần bạn tập thể dục mỗi ngày là khuôn mặt sẽ trông tinh thần hơn.', zh:'只要你天天运动，你的脸就会看上去更精神。', py:'Zhǐyào nǐ tiāntiān yùndòng, nǐ de liǎn jiù huì kàn shangqu gèng jīngshen.'},
-  {vi:'Tuy tấm ảnh hơi cũ nhưng tôi vẫn nhận ra ngay.', zh:'虽然照片有点儿旧，但是我还是一下就认出来了。', py:'Suīrán zhàopiàn yǒudiǎnr jiù, dànshì wǒ háishi yíxià jiù rèn chulai le.'},
-  {vi:'Chỉ cần nhìn thấy chim trên cây là em trai sẽ không khóc nữa.', zh:'只要看到树上的鸟，弟弟就不哭了。', py:'Zhǐyào kàndào shù shang de niǎo, dìdi jiù bù kū le.'},
-  {vi:'Vận động khiến tôi khỏe mạnh.', zh:'运动使我健康。', py:'Yùndòng shǐ wǒ jiànkāng.'},
-  {vi:'Ngày mưa khiến tôi cảm thấy rất dễ chịu.', zh:'下雨天让我觉得很舒服。', py:'Xià yǔ tiān ràng wǒ juéde hěn shūfu.'},
-  {vi:'Lúc chúng tôi đi thuyền qua Hoàng Hà, suốt đường đã chụp rất nhiều ảnh.', zh:'我们坐船经过黄河的时候，一路上拍了很多照片。', py:'Wǒmen zuò chuán jīngguò Huáng Hé de shíhou, yílù shang pāile hěn duō zhàopiàn.'},
-  {vi:'Tuy những nơi đi qua không nhiều nhưng mỗi nơi đều rất đẹp.', zh:'虽然经过的地方不多，但是每个地方都很美。', py:'Suīrán jīngguò de dìfang bù duō, dànshì měi ge dìfang dōu hěn měi.'},
+  {vi:'Mùa thu năm ngoái tôi đã cùng bố đi thuyền trên sông Hoàng Hà.', zh:'去年秋天我跟爸爸在黄河上坐过船。', py:'Qùnián qiūtiān wǒ gēn bàba zài Huáng Hé shang zuòguo chuán.'},
+  {vi:'Mỗi ngày đi bộ khiến tôi ngủ ngon hơn.', zh:'每天走路让我睡得更好了。', py:'Měi tiān zǒulù ràng wǒ shuì de gèng hǎo le.'},
+  {vi:'Vị khách kia nói ông ấy từng cưỡi ngựa ở Bắc Kinh.', zh:'那位客人说他在北京骑过马。', py:'Nà wèi kèrén shuō tā zài Běijīng qíguo mǎ.'},
+  {vi:'Lúc đi ngang qua cửa hàng, tôi mua hai tấm bản đồ.', zh:'经过商店的时候，我买了两张地图。', py:'Jīngguò shāngdiàn de shíhou, wǒ mǎile liǎng zhāng dìtú.'},
+  {vi:'Tôi nhớ ra rồi, hôm nay là sinh nhật mẹ!', zh:'我想起来了，今天是妈妈的生日！', py:'Wǒ xiǎng qǐlái le, jīntiān shì māma de shēngrì!'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Từ nay tôi sẽ nghĩ ra một cách học tiếng Trung tốt.', zh:'朋友想出来一个学汉语的好办法。', py:'Péngyou xiǎng chulai yí ge xué Hànyǔ de hǎo bànfǎ.'},
-  {vi:'Bạn vẽ nhanh thật, một lát là vẽ xong rồi.', zh:'你画得真快，一会儿就画出来了。', py:'Nǐ huà de zhēn kuài, yíhuìr jiù huà chulai le.'},
-  {vi:'Bạn nghe ra không? Đây là giọng của ai?', zh:'你听出来了吗？这是谁的声音？', py:'Nǐ tīng chulai le ma? Zhè shì shéi de shēngyīn?'},
-  {vi:'Chiếc xe phía trước càng chạy càng chậm, dừng hẳn lại rồi.', zh:'前边的车越开越慢，停下来了。', py:'Qiánbian de chē yuè kāi yuè màn, tíng xialai le.'},
-  {vi:'Đèn đột nhiên tối dần đi, mọi người đều hơi sợ.', zh:'灯突然暗下来了，大家都有点儿害怕。', py:'Dēng tūrán àn xialai le, dàjiā dōu yǒudiǎnr hàipà.'},
-  {vi:'Xin lỗi, tôi không nhớ ra tên bạn nữa.', zh:'对不起，我想不起来你的名字了。', py:'Duìbuqǐ, wǒ xiǎng bu qǐlai nǐ de míngzi le.'},
-  {vi:'Cắt tóc ngắn khiến cô ấy trông tinh thần hơn.', zh:'剪短头发让她看上去更精神。', py:'Jiǎn duǎn tóufa ràng tā kàn shangqu gèng jīngshen.'},
-  {vi:'Tôi muốn sắp xếp hết những tấm ảnh này, cho vào album.', zh:'我想把这些照片都整理好，放进相册里。', py:'Wǒ xiǎng bǎ zhèxiē zhàopiàn dōu zhěnglǐ hǎo, fàng jìn xiàngcè li.'},
+  {vi:'Con gái tôi hễ khóc là tôi kể chuyện cho nó nghe, nó rất nhanh là nín.', zh:'我女儿一哭，我就给她讲故事，她很快就不哭了。', py:'Wǒ nǚ\'ér yì kū, wǒ jiù gěi tā jiǎng gùshi, tā hěn kuài jiù bù kū le.'},
+  {vi:'Thầy giáo này giảng rất rõ ràng, khiến chúng tôi nghe một lần là hiểu.', zh:'这位老师讲得很清楚，让我们一听就明白。', py:'Zhè wèi lǎoshī jiǎng de hěn qīngchu, ràng wǒmen yì tīng jiù míngbai.'},
+  {vi:'Bầu trời mùa thu đặc biệt xanh, chúng ta ra công viên đi dạo đi.', zh:'秋天的天特别蓝，我们去公园走走吧。', py:'Qiūtiān de tiān tèbié lán, wǒmen qù gōngyuán zǒuzou ba.'},
 ];
 
 // ══════════════════════════════════════════

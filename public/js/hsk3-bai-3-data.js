@@ -1906,75 +1906,76 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'洗',right:'澡'},
-  {left:'一条',right:'裤子'},
-  {left:'一件',right:'衬衫'},
-  {left:'很',right:'新鲜'},
-  {left:'很',right:'甜'},
-  {left:'很',right:'舒服'},
-  {left:'因为工作很累，',right:'所以他想喝杯热咖啡。'},
-  {left:'虽然这条裤子不便宜，',right:'但是很漂亮。'},
-  {left:'如果你不小心，',right:'就很容易感冒。'},
-  {left:'只要你有时间，',right:'我们就去爬山。'},
+  {left:'我昨天买了一条', right:'裤子'},
+  {left:'他今天穿了一件白', right:'衬衫'},
+  {left:'公园里的树都', right:'绿了'},
+  {left:'商店里有茶、咖啡和别的', right:'饮料'},
+  {left:'今天天气很好，我们去', right:'爬山吧'},
+  {left:'你拿着这么多杯子，走路要', right:'小心'},
+  {left:'那个商店在哪儿，你还', right:'记得吗'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我哥哥的腿很长，很喜欢去',blank:'爬山',post:'。',hint:'(leo núi)',ans:'爬山'},
-  {pre:'这儿的路不好走，你',blank:'小心',post:'点儿。',hint:'(cẩn thận)',ans:'小心'},
-  {pre:'如果这',blank:'条',post:'鱼不新鲜，你就别买了。',hint:'(lượng từ vật dài)',ans:'条',exp:'条 là lượng từ cho vật dài: 一条鱼, 一条裤子.'},
-  {pre:'如果你觉得这条',blank:'裤子',post:'太长了，就跟我说一下。',hint:'(quần)',ans:'裤子'},
-  {pre:'你还',blank:'记得',post:'我们第一次见面吗？',hint:'(nhớ)',ans:'记得'},
-  {pre:'我想买件',blank:'衬衫',post:'，你跟我去超市吧。',hint:'(áo sơ mi)',ans:'衬衫'},
-  {pre:'虽然这件衬衫要300',blank:'元',post:'，但是穿起来很舒服。',hint:'(đồng — tiền tệ)',ans:'元'},
-  {pre:'水果看起来很',blank:'新鲜',post:'，我们买一点儿吧。',hint:'(tươi)',ans:'新鲜'},
-  {pre:'这个西瓜真',blank:'甜',post:'，我们再买一个吧。',hint:'(ngọt)',ans:'甜'},
-  {pre:'今天我',blank:'只',post:'吃了一个鸡蛋，还很饿。',hint:'(chỉ)',ans:'只',exp:'只 + động từ = chỉ: 只吃了一个鸡蛋 = chỉ ăn một quả trứng.'},
-  {pre:'手机不知道',blank:'放',post:'哪儿了，我找了半天。',hint:'(đặt, để)',ans:'放'},
-  {pre:'桌子上有很多',blank:'饮料',post:'，你想喝哪个？',hint:'(đồ uống)',ans:'饮料'},
-  {pre:'你想喝牛奶',blank:'或者',post:'咖啡，都可以跟我说。',hint:'(hoặc)',ans:'或者',exp:'或者 = hoặc, dùng trong câu trần thuật (chọn cái nào cũng được); 还是 dùng trong câu hỏi lựa chọn.'},
-  {pre:'洗澡以后会觉得很',blank:'舒服',post:'。',hint:'(dễ chịu)',ans:'舒服'},
-  {pre:'公园里种着很多',blank:'花',post:'，非常漂亮。',hint:'(hoa)',ans:'花'},
+  {pre:'A：你喝绿茶', blank:'还是', post:'咖啡？B：绿茶吧，我不太喜欢喝咖啡。', hint:'(hay, hay là)', ans:'还是', exp:'Câu hỏi chọn một trong hai “A hay B?” dùng 还是; câu hỏi có 还是 không thêm 吗.'},
+  {pre:'晚上我想看电影', blank:'或者', post:'去公园走走，你想一起去吗？', hint:'(hoặc)', ans:'或者', exp:'Câu kể (không hỏi) nêu hai việc có thể làm → dùng 或者 nối hai việc.'},
+  {pre:'A：我们星期六去还是星期天去？B：星期六', blank:'或者', post:'星期天都可以，我这个周末不忙。', hint:'(hoặc)', ans:'或者', exp:'A hỏi nên dùng 还是; B trả lời “ngày nào cũng được” (câu kể + 都可以) nên dùng 或者.'},
+  {pre:'我的桌子上', blank:'放着', post:'两本汉语书和一杯饮料。', hint:'(đang để, đặt sẵn)', ans:'放着', exp:'Câu tồn tại: nơi chốn + 放着 + số lượng + danh từ; 着 cho biết đồ vật vẫn đang nằm ở đó.'},
+  {pre:'A：你看，前面的树下', blank:'坐着', post:'一个人，是不是周经理？B：是他，我们去问问。', hint:'(đang ngồi)', ans:'坐着', exp:'Nơi chốn + 坐着 + 一个人 = ở đó có một người đang ngồi; đầu câu là nơi chốn, không thêm 在.'},
+  {pre:'A：天这么阴，下午', blank:'会', post:'下雨吗？B：可能会，你出去的时候带一把伞吧。', hint:'(sẽ — đoán trước)', ans:'会', exp:'会 + động từ = có khả năng sẽ xảy ra; ôn lượng từ 一把伞 (Bài 2).'},
+  {pre:'你每天都复习，明天的考试不', blank:'会', post:'很难的，别着急。', hint:'(sẽ)', ans:'会', exp:'不会……的 = chắc chắn sẽ không…, dùng để trấn an; ôn 着急 (Bài 1).'},
+  {pre:'我妹妹买了两', blank:'条', post:'裤子，一条红色的，一条绿色的。', hint:'(chiếc — dùng cho đồ dài)', ans:'条', exp:'Quần, cá, con đường… dùng lượng từ 条; áo dùng 件.'},
+  {pre:'A：你还', blank:'记得', post:'我的手机号吗？B：不记得了，你再告诉我一次吧。', hint:'(nhớ, còn nhớ)', ans:'记得', exp:'记得 = còn nhớ; phủ định là 不记得 (không nói 没记得 khi nói “không nhớ”).'},
+  {pre:'妈妈每天早上去买菜，她说早上的菜最', blank:'新鲜', post:'。', hint:'(tươi)', ans:'新鲜', exp:'新鲜 = tươi, dùng cho rau, quả, cá thịt; 最 + tính từ = nhất.'},
+  {pre:'A：这些苹果', blank:'甜', post:'不甜？B：很甜，我已经吃了两个了。', hint:'(ngọt)', ans:'甜', exp:'Hỏi chính phản: 甜不甜 = có ngọt không; ôn 已经……了 (HSK2).'},
+  {pre:'A：今天来上课的学生多吗？B：不多，', blank:'只', post:'来了十二个。', hint:'(chỉ)', ans:'只', exp:'只 đứng trước động từ: 只来了十二个 = chỉ đến có mười hai người.'},
+  {pre:'A：你怎么了？B：我有点儿不', blank:'舒服', post:'，想回家休息。', hint:'(dễ chịu, khỏe)', ans:'舒服', exp:'不舒服 = thấy khó chịu, không khỏe; ôn 有点儿 + tính từ (điều không như ý).'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['因为','脚','还','没','好','，','所以','我们','别','去','爬山','了','。'],ans:'因为脚还没好，所以我们别去爬山了。',audio:'因为脚还没好，所以我们别去爬山了。'},
-  {words:['虽然','这','杯','咖啡','有点儿','贵','，','但是','很','好喝','。'],ans:'虽然这杯咖啡有点儿贵，但是很好喝。',audio:'虽然这杯咖啡有点儿贵，但是很好喝。'},
-  {words:['如果','西瓜','不','甜','，','就','不','要','钱','。'],ans:'如果西瓜不甜，就不要钱。',audio:'如果西瓜不甜，就不要钱。'},
-  {words:['只要','你','穿','着','外套','，','下雪','也','没','关系','。'],ans:'只要你穿着外套，下雪也没关系。',audio:'只要你穿着外套，下雪也没关系。'},
-  {words:['桌子','上','放','着','一','杯','咖啡','。'],ans:'桌子上放着一杯咖啡。',audio:'桌子上放着一杯咖啡。'},
-  {words:['他','下','了','飞机','就','给','我','发','电子邮件','。'],ans:'他下了飞机就给我发电子邮件。',audio:'他下了飞机就给我发电子邮件。'},
-  {words:['西瓜','或者','香蕉','，','都','很','新鲜','。'],ans:'西瓜或者香蕉，都很新鲜。',audio:'西瓜或者香蕉，都很新鲜。'},
-  {words:['喝','杯','热','咖啡','会','让','人','觉得','很','舒服','。'],ans:'喝杯热咖啡会让人觉得很舒服。',audio:'喝杯热咖啡会让人觉得很舒服。'},
+  {words:['我们','坐','公共汽车','去','还是','走路','去','？'], ans:'我们坐公共汽车去还是走路去？', audio:'我们坐公共汽车去还是走路去？'},
+  {words:['星期六','或者','星期天','，','我们','一起','去','爬山','吧','。'], ans:'星期六或者星期天，我们一起去爬山吧。', audio:'星期六或者星期天，我们一起去爬山吧。'},
+  {words:['办公室','门口','放着','两把','伞','，','你','拿','一把','走','吧','。'], ans:'办公室门口放着两把伞，你拿一把走吧。', audio:'办公室门口放着两把伞，你拿一把走吧。'},
+  {words:['天','阴','了','，','晚上','可能','会','下雪','。'], ans:'天阴了，晚上可能会下雪。', audio:'天阴了，晚上可能会下雪。'},
+  {words:['这么','新鲜','的','西瓜','，','一个','只','卖','八元','。'], ans:'这么新鲜的西瓜，一个只卖八元。', audio:'这么新鲜的西瓜，一个只卖八元。'},
+  {words:['明天','考试','，','你','记得','早点儿','睡觉','。'], ans:'明天考试，你记得早点儿睡觉。', audio:'明天考试，你记得早点儿睡觉。'},
+  {words:['下雪','了','，','路上','开车','要','小心','点儿','。'], ans:'下雪了，路上开车要小心点儿。', audio:'下雪了，路上开车要小心点儿。'},
+  {words:['学校','里','的','树','都','绿','了','，','花','也','开','了','。'], ans:'学校里的树都绿了，花也开了。', audio:'学校里的树都绿了，花也开了。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'桌子上一杯咖啡放着。',
-   opts:['桌子上放着一杯咖啡。','桌子上一杯咖啡放着。','放着桌子上一杯咖啡。','一杯咖啡桌子上放着。'],ans:0,
-   exp:'Câu tồn tại đúng thứ tự: [nơi chốn] + 放着 + [số lượng+danh từ]: 桌子上 + 放着 + 一杯咖啡, không đặt cụm danh từ trước động từ.'},
-  {wrong:'桌子上放着照片一张。',
-   opts:['桌子上放着一张照片。','桌子上放着照片一张。','桌子上照片放着一张。','一张桌子上放着照片。'],ans:0,
-   exp:'Trong câu tồn tại "放着", cụm [số lượng+danh từ] phải đứng NGUYÊN VẸN sau 放着: 放着 + 一张照片, không tách rời số lượng ra sau danh từ.'},
-  {wrong:'你想买裤子或者买衬衫？',
-   opts:['你想买裤子还是买衬衫？','你想买裤子或者买衬衫？','你想还是买裤子买衬衫？','你想或者买裤子买衬衫？'],ans:0,
-   exp:'Trong CÂU HỎI lựa chọn, phải dùng 还是, không dùng 或者 (或者 chỉ dùng trong câu trần thuật).'},
-  {wrong:'裤子还是衬衫都可以。',
-   opts:['裤子或者衬衫都可以。','裤子还是衬衫都可以。','裤子衬衫或者都可以。','或者裤子衬衫都可以。'],ans:0,
-   exp:'Trong CÂU TRẦN THUẬT nêu 2 lựa chọn đều được, phải dùng 或者, không dùng 还是 (还是 chỉ dùng trong câu hỏi).'},
-  {wrong:'我吃只鸡蛋，不吃面包。',
-   opts:['我只吃鸡蛋，不吃面包。','我吃只鸡蛋，不吃面包。','只我吃鸡蛋，不吃面包。','我吃鸡蛋只，不吃面包。'],ans:0,
-   exp:'只 (phó từ) phải đứng NGAY TRƯỚC động từ mà nó bổ nghĩa: 只 + 吃 (我只吃鸡蛋), không đặt 只 sau động từ hoặc ở vị trí khác trong câu.'},
-  {wrong:'我不裤子记得放哪儿了。',
-   opts:['我不记得裤子放哪儿了。','我不裤子记得放哪儿了。','我裤子不记得放哪儿了。','我不记得放裤子哪儿了。'],ans:0,
-   exp:'记得 (động từ) phải đứng liền trước mệnh đề mà nó chi phối: 不记得 + 裤子放哪儿了, không chen 裤子 vào giữa 不 và 记得.'},
+  {wrong:'你喜欢红色或者绿色？',
+   opts:['你喜欢红色还是绿色吗？','你还是喜欢红色绿色？','你喜欢红色还是绿色？','你喜欢或者红色还是绿色？'], ans:2,
+   exp:'Hỏi chọn một trong hai dùng 还是 (không dùng 或者); câu hỏi với 还是 không thêm 吗.'},
+  {wrong:'周末我在家看书还是看电视。',
+   opts:['周末我在家看书或者看电视。','周末我或者在家看书看电视。','周末我在家或者看书看电视。','或者周末我在家看书看电视。'], ans:0,
+   exp:'Câu kể nêu các việc có thể làm → dùng 或者, đặt ngay giữa hai việc: 看书或者看电视.'},
+  {wrong:'在椅子上放着一件衬衫。',
+   opts:['椅子上放着衬衫一件。','椅子上放着一件衬衫。','椅子上放了着一件衬衫。','椅子上一件衬衫放着。'], ans:1,
+   exp:'Câu tồn tại bắt đầu bằng nơi chốn, không thêm 在 ở đầu câu; 了 không đi cùng 着; 一件衬衫 đứng sau 放着.'},
+  {wrong:'这件裤子太长了。',
+   opts:['这裤子条太长了。','这个条裤子太长了。','这条裤子长太了。','这条裤子太长了。'], ans:3,
+   exp:'Quần dùng lượng từ 条 (件 dùng cho áo): 这条裤子 — không thêm 个, không đảo lượng từ ra sau danh từ, 太 đứng trước tính từ.'},
+  {wrong:'经理今天下午不来会。',
+   opts:['经理今天下午没会来。','经理今天下午不会来过。','经理今天下午不会来。','经理今天下午会没来。'], ans:2,
+   exp:'会 (sẽ) đứng trước động từ; phủ định là 不会 + động từ, không nói 没会, không thêm 过.'},
+  {wrong:'我今天带了只五十元。',
+   opts:['我今天只带了五十元。','只我今天带了五十元。','我今天带只了五十元。','我今天带了五十元只。'], ans:0,
+   exp:'只 là phó từ, đứng TRƯỚC động từ: 只带了五十元 — không đặt sau động từ như tiếng Việt “mang có mỗi…”.'},
+  {wrong:'这把椅子是舒服。',
+   opts:['这把椅子舒服很。','这把椅子很舒服。','这把椅子是舒服的很。','这把椅子太舒服。'], ans:1,
+   exp:'Tính từ làm vị ngữ không cần 是, thường thêm 很 phía trước; 太 phải đi với 了 (太舒服了).'},
+  {wrong:'这个西瓜比那个一点儿甜。',
+   opts:['这个西瓜比那个有点儿甜。','这个西瓜比那个很甜。','这个西瓜一点儿比那个甜。','这个西瓜比那个甜一点儿。'], ans:3,
+   exp:'Câu 比: tính từ trước, 一点儿 sau (甜一点儿); không dùng 有点儿 / 很 trong câu 比 (ôn HSK2).'},
 ];
 
 // ══════════════════════════════════════════
@@ -1982,97 +1983,96 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 3. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 3 (还是 / 或者, nơi chốn + V着 + số lượng + danh từ, 会 = sẽ). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Cuối tuần trời đẹp, bạn cùng phòng hỏi bạn muốn đi chơi hay ở nhà.',
-      q_zh: '周末你想去爬山还是在家休息？如果下雨呢？',
-      q_py: 'Zhōumò nǐ xiǎng qù páshān háishi zài jiā xiūxi? Rúguǒ xiàyǔ ne?',
-      q_vn: 'Cuối tuần bạn muốn đi leo núi hay ở nhà nghỉ? Nếu trời mưa thì sao?',
-      grammar: { label: '还是 (câu hỏi lựa chọn) / 或者 (kể lựa chọn)', any: ['还是', '或者'] },
+      situation: 'Bạn cùng lớp hỏi kế hoạch cuối tuần này của bạn.',
+      q_zh: '这个周末你有什么打算？',
+      q_py: 'Zhège zhōumò nǐ yǒu shénme dǎsuàn?',
+      q_vn: 'Cuối tuần này bạn có dự định gì?',
+      grammar: { label: '或者 (kể các khả năng: A hoặc B)', any: ['或者'] },
       need: [
-        { label: 'Chọn một trong hai', any: ['爬山', '休息', '在家'] },
-        { label: 'Nói phương án khi trời mưa', any: ['下雨', '就', '如果', '要是'] }
+        { label: 'Nói thời gian', any: ['星期六', '星期天', '上午', '下午', '晚上', '早上'] },
+        { label: 'Kể việc định làm', any: ['爬山', '复习', '看', '游泳', '跑步', '买', '玩儿', '休息'] }
       ],
-      bonus: { label: 'Dùng 或者 để nêu hai việc thay thế', any: ['或者'] },
-      vocab: ['爬山', '还是', '或者'],
-      minLen: 18,
-      sample: '周末我想去爬山，因为山上空气很好。如果下雨，我就在家看书或者听音乐。',
-      sample_py: 'Zhōumò wǒ xiǎng qù páshān, yīnwèi shān shàng kōngqì hěn hǎo. Rúguǒ xiàyǔ, wǒ jiù zài jiā kàn shū huòzhě tīng yīnyuè.',
-      sample_vn: 'Cuối tuần tôi muốn đi leo núi, vì trên núi không khí rất tốt. Nếu mưa thì tôi ở nhà đọc sách hoặc nghe nhạc.',
-      tip: '还是 dùng trong câu hỏi, 或者 dùng trong câu trần thuật: 你喝茶还是咖啡？我喝茶或者咖啡都行。'
+      bonus: { label: 'Ôn 跟 + người + V (Bài 1)', any: ['跟'] },
+      vocab: ['或者', '爬山'],
+      minLen: 16,
+      sample: '星期六上午我想跟朋友去爬山，下午在家休息。星期天复习汉语或者去商店买衣服。',
+      sample_py: 'Xīngqīliù shàngwǔ wǒ xiǎng gēn péngyou qù páshān, xiàwǔ zài jiā xiūxi. Xīngqītiān fùxí Hànyǔ huòzhě qù shāngdiàn mǎi yīfu.',
+      sample_vn: 'Sáng thứ bảy mình định đi leo núi với bạn, chiều ở nhà nghỉ. Chủ nhật ôn tiếng Hán hoặc đi cửa hàng mua quần áo.',
+      tip: '或者 nối hai việc trong câu kể; nếu bạn hỏi lại người kia “A hay B?” thì đổi sang 还是.'
     },
     {
-      situation: 'Bạn đang thử quần áo trong cửa hàng và người bán hỏi ý bạn.',
-      q_zh: '你买衣服的时候喜欢什么颜色？这条裤子多少钱？',
-      q_py: 'Nǐ mǎi yīfu de shíhou xǐhuan shénme yánsè? Zhè tiáo kùzi duōshao qián?',
-      q_vn: 'Khi mua quần áo bạn thích màu gì? Chiếc quần này bao nhiêu tiền?',
-      grammar: { label: 'Lượng từ 条/件 + giá tiền …元', any: ['条', '件', '元', '块'] },
+      situation: 'Bạn cùng phòng mới sắp chuyển đến và hỏi trong phòng đã có những gì.',
+      q_zh: '我们的房间里有什么？我要带桌子吗？',
+      q_py: 'Wǒmen de fángjiān li yǒu shénme? Wǒ yào dài zhuōzi ma?',
+      q_vn: 'Phòng của chúng mình có những gì? Mình có phải mang bàn không?',
+      grammar: { label: 'Nơi chốn + V着 + số lượng + danh từ', any: ['放着', '着'] },
       need: [
-        { label: 'Nói màu yêu thích', any: ['绿', '白', '黑', '红', '蓝', '颜色'] },
-        { label: 'Nói giá bằng 元 hoặc 块', any: ['元', '块'] }
+        { label: 'Kể đồ đạc trong phòng', any: ['桌子', '椅子', '电脑', '电视', '书', '花', '伞'] },
+        { label: 'Nói có cần mang không', any: ['别', '要', '带'] }
       ],
-      bonus: { label: 'Nhận xét mặc có thoải mái không', any: ['舒服', '合适', '好看'] },
-      vocab: ['裤子', '衬衫', '元'],
-      minLen: 18,
-      sample: '我喜欢买绿色的衬衫。这条裤子一百二十元，不太贵，穿着也很舒服。',
-      sample_py: 'Wǒ xǐhuan mǎi lǜ sè de chènshān. Zhè tiáo kùzi yì bǎi èr shí yuán, bú tài guì, chuān zhe yě hěn shūfu.',
-      sample_vn: 'Tôi thích mua áo sơ mi màu xanh lá. Chiếc quần này 120 tệ, không đắt lắm, mặc cũng rất thoải mái.',
-      tip: '条 dùng cho quần, váy, cá, sông; 件 dùng cho áo, việc: 一条裤子、一件衬衫。'
+      bonus: { label: 'Dùng lượng từ 张 / 把', any: ['张', '把'] },
+      vocab: ['放', '花'],
+      minLen: 16,
+      sample: '你别带桌子了，房间里放着两张桌子和两把椅子，桌子上还放着一些花。你带衣服和书就可以了。',
+      sample_py: 'Nǐ bié dài zhuōzi le, fángjiān li fàngzhe liǎng zhāng zhuōzi hé liǎng bǎ yǐzi, zhuōzi shang hái fàngzhe yìxiē huā. Nǐ dài yīfu hé shū jiù kěyǐ le.',
+      sample_vn: 'Bạn đừng mang bàn nữa, trong phòng có sẵn hai cái bàn và hai cái ghế, trên bàn còn có mấy bông hoa. Bạn mang quần áo và sách là được.',
+      tip: 'Đầu câu là nơi chốn, không thêm 在: nói 房间里放着…, không nói 在房间里放着….'
     },
     {
-      situation: 'Bạn gọi video cho gia đình và họ muốn xem phòng của bạn.',
-      q_zh: '说一说你的房间：桌子上放着什么？',
-      q_py: 'Shuō yi shuō nǐ de fángjiān: zhuōzi shàng fàng zhe shénme?',
-      q_vn: 'Hãy kể về phòng của bạn: trên bàn để những gì?',
-      grammar: { label: 'Nơi chốn + V 着 + số lượng + danh từ', any: ['着'] },
+      situation: 'Nhóm bạn định chủ nhật đi leo núi và hỏi bạn hôm đó thời tiết có ổn không.',
+      q_zh: '星期天我们去爬山，你看那天会下雨吗？',
+      q_py: 'Xīngqītiān wǒmen qù páshān, nǐ kàn nà tiān huì xiàyǔ ma?',
+      q_vn: 'Chủ nhật bọn mình đi leo núi, bạn xem hôm đó có mưa không?',
+      grammar: { label: '会 + động từ (đoán điều sẽ xảy ra)', any: ['会'] },
       need: [
-        { label: 'Dùng 放着 hoặc 有 để tả đồ trên bàn', any: ['放着', '有', '摆着'] },
-        { label: 'Kể ít nhất hai món đồ', any: ['电脑', '书', '手机', '杯子', '饮料', '花', '本子', '笔'] }
+        { label: 'Đoán thời tiết', any: ['下雨', '阴', '晴', '冷', '热', '下雪'] },
+        { label: 'Dặn dò bạn', any: ['带', '小心', '穿', '记得'] }
       ],
-      bonus: { label: 'Tả thêm một chỗ khác trong phòng', any: ['旁边', '上面', '下面', '床', '前面', '后面'] },
-      vocab: ['放', '花', '饮料'],
+      bonus: { label: 'Ôn lượng từ 把 (一把伞, Bài 2)', any: ['把伞'] },
+      vocab: ['会', '小心', '记得'],
       minLen: 18,
-      sample: '我的桌子上放着一台电脑和两本书，旁边还放着一杯饮料和一些花，房间不大，但是很舒服。',
-      sample_py: 'Wǒ de zhuōzi shàng fàng zhe yì tái diànnǎo hé liǎng běn shū, pángbiān hái fàng zhe yì bēi yǐnliào hé yì xiē huā, fángjiān bú dà, dànshì hěn shūfu.',
-      sample_vn: 'Trên bàn tôi để một cái máy tính và hai quyển sách, bên cạnh còn để một cốc nước và ít hoa, phòng không lớn nhưng rất thoải mái.',
-      tip: 'Câu tồn tại: 桌子上放着一本书 = trên bàn có đặt một quyển sách (nhấn trạng thái đang tồn tại).'
+      sample: '天气预报说星期天是阴天，可能会下雨。你们记得带一把伞，走路的时候小心点儿。',
+      sample_py: 'Tiānqì yùbào shuō xīngqītiān shì yīntiān, kěnéng huì xiàyǔ. Nǐmen jìde dài yì bǎ sǎn, zǒulù de shíhou xiǎoxīn diǎnr.',
+      sample_vn: 'Dự báo thời tiết nói chủ nhật trời âm u, có thể sẽ mưa. Các bạn nhớ mang theo ô, đi đường cẩn thận một chút.',
+      tip: '会 + động từ nói điều có thể xảy ra: 可能会下雨; phủ định là 不会下雨, không nói 没会.'
     },
     {
-      situation: 'Bạn và bạn bè đang xem dự báo thời tiết cho ngày mai.',
-      q_zh: '你觉得明天会下雨吗？如果下雨，你的计划会变吗？',
-      q_py: 'Nǐ juéde míngtiān huì xiàyǔ ma? Rúguǒ xiàyǔ, nǐ de jìhuà huì biàn ma?',
-      q_vn: 'Bạn thấy ngày mai trời có mưa không? Nếu mưa, kế hoạch của bạn có đổi không?',
-      grammar: { label: '会 + động từ (khả năng sẽ xảy ra)', any: ['会'] },
+      situation: 'Bạn đi mua quần cùng bạn thân, bạn ấy phân vân giữa hai chiếc và hỏi ý bạn.',
+      q_zh: '这两条裤子，你觉得哪条好？',
+      q_py: 'Zhè liǎng tiáo kùzi, nǐ juéde nǎ tiáo hǎo?',
+      q_vn: 'Hai chiếc quần này, bạn thấy chiếc nào được?',
+      grammar: { label: '还是 (hỏi lại: A hay B?)', any: ['还是'] },
       need: [
-        { label: 'Đoán trời mưa hay không bằng 会', any: ['会'] },
-        { label: 'Nói kế hoạch thay thế', any: ['就', '在家', '看', '听', '复习', '去'] }
+        { label: 'Nhận xét màu hoặc giá', any: ['绿', '红', '白', '黑', '颜色', '元', '块', '贵', '便宜'] },
+        { label: 'Nói mặc thế nào', any: ['舒服', '好看', '长', '大', '小'] }
       ],
-      bonus: { label: 'Nhắc bạn mình cẩn thận bằng 小心', any: ['小心', '记得'] },
-      vocab: ['记得', '小心', '还是'],
+      bonus: { label: 'Dùng 比 để so sánh hai chiếc (HSK2)', any: ['比'] },
+      vocab: ['条', '裤子', '元', '舒服'],
       minLen: 18,
-      sample: '我觉得明天会下雨。如果下雨，我就不去爬山了，在家复习汉语。你出门记得带伞，路上小心。',
-      sample_py: 'Wǒ juéde míngtiān huì xiàyǔ. Rúguǒ xiàyǔ, wǒ jiù bú qù páshān le, zài jiā fùxí Hànyǔ. Nǐ chū mén jìde dài sǎn, lù shàng xiǎoxīn.',
-      sample_vn: 'Tôi thấy mai trời sẽ mưa. Nếu mưa thì tôi không đi leo núi nữa, ở nhà ôn tiếng Hán. Bạn ra ngoài nhớ mang ô, đi đường cẩn thận.',
-      tip: '会 ở đây nói về khả năng xảy ra trong tương lai: 明天会冷。'
+      sample: '绿色的那条比白色的便宜五十元，穿着也很舒服。你自己喜欢绿的还是白的？',
+      sample_py: 'Lǜsè de nà tiáo bǐ báisè de piányi wǔshí yuán, chuānzhe yě hěn shūfu. Nǐ zìjǐ xǐhuan lǜ de háishi bái de?',
+      sample_vn: 'Chiếc màu xanh lá rẻ hơn chiếc màu trắng năm mươi tệ, mặc cũng rất thoải mái. Bản thân bạn thích chiếc xanh hay chiếc trắng?',
+      tip: 'Hỏi “A hay B?” dùng 还是 và không thêm 吗 ở cuối câu.'
     },
     {
-      situation: 'Bạn đi siêu thị mua hoa quả cho cả nhà.',
-      q_zh: '在超市买水果的时候，你怎么看水果新鲜不新鲜？',
-      q_py: 'Zài chāoshì mǎi shuǐguǒ de shíhou, nǐ zěnme kàn shuǐguǒ xīnxiān bù xīnxiān?',
-      q_vn: 'Khi mua hoa quả ở siêu thị, bạn xem hoa quả tươi hay không bằng cách nào?',
-      grammar: { label: 'Tính từ 新鲜 / 甜 để nhận xét đồ ăn', any: ['新鲜', '甜'] },
+      situation: 'Bạn đến nhà bạn chơi lúc 10 giờ tối, bạn ấy mời bạn uống cà phê.',
+      q_zh: '已经十点了，你还喝咖啡吗？我这儿还有茶和饮料。',
+      q_py: 'Yǐjīng shí diǎn le, nǐ hái hē kāfēi ma? Wǒ zhèr hái yǒu chá hé yǐnliào.',
+      q_vn: 'Đã mười giờ rồi, bạn còn uống cà phê không? Chỗ mình còn có trà và nước ngọt.',
+      grammar: { label: '会 + kết quả có thể xảy ra (会睡不好…)', any: ['会'] },
       need: [
-        { label: 'Nói cách chọn', any: ['看', '问', '闻', '颜色', '服务员'] },
-        { label: 'Nhận xét hoa quả', any: ['新鲜', '甜', '好吃'] }
+        { label: 'Nói uống hay không', any: ['不喝', '喝', '要'] },
+        { label: 'Chọn đồ uống khác', any: ['茶', '花茶', '绿茶', '牛奶', '水', '饮料'] }
       ],
-      bonus: { label: 'Nói mua bao nhiêu', any: ['斤', '个', '一些', '两'] },
-      vocab: ['新鲜', '甜', '只'],
-      minLen: 18,
-      sample: '我先看颜色，再问问服务员。这些水果很新鲜，也很甜，所以我买了两斤回家。',
-      sample_py: 'Wǒ xiān kàn yánsè, zài wènwen fúwùyuán. Zhèxiē shuǐguǒ hěn xīnxiān, yě hěn tián, suǒyǐ wǒ mǎi le liǎng jīn huí jiā.',
-      sample_vn: 'Tôi xem màu trước, rồi hỏi nhân viên. Mấy loại quả này rất tươi, cũng rất ngọt, nên tôi mua hai cân về nhà.',
-      tip: '新鲜 dùng cho rau quả, cá thịt và cả không khí: 空气很新鲜。'
+      vocab: ['饮料', '花'],
+      minLen: 14,
+      sample: '不喝了，晚上喝咖啡我会睡不好。你这儿有花茶吗？给我一杯热的就可以。',
+      sample_py: 'Bù hē le, wǎnshang hē kāfēi wǒ huì shuì bu hǎo. Nǐ zhèr yǒu huāchá ma? Gěi wǒ yì bēi rè de jiù kěyǐ.',
+      sample_vn: 'Thôi không uống đâu, buổi tối uống cà phê mình sẽ ngủ không ngon. Bạn có trà hoa không? Cho mình một cốc nóng là được.',
+      tip: '会 nói hậu quả có thể xảy ra: 喝咖啡会睡不好 = uống cà phê thì sẽ khó ngủ.'
     }
   ]
 };
@@ -2081,28 +2081,21 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Vì chân tôi bị đau nên hôm nay tôi không đi leo núi được.', zh:'因为我的脚疼，所以今天不能去爬山。', py:'Yīnwèi wǒ de jiǎo téng, suǒyǐ jīntiān bù néng qù páshān.'},
-  {vi:'Tuy cái quần này hơi to nhưng màu sắc rất đẹp.', zh:'虽然这条裤子有点儿大，但是颜色很好看。', py:'Suīrán zhè tiáo kùzi yǒudiǎnr dà, dànshì yánsè hěn hǎokàn.'},
-  {vi:'Nếu trái cây không tươi thì chúng ta đừng mua.', zh:'如果水果不新鲜，我们就别买。', py:'Rúguǒ shuǐguǒ bù xīnxiān, wǒmen jiù bié mǎi.'},
-  {vi:'Chỉ cần bạn nhớ đường thì chúng ta sẽ không bị lạc.', zh:'只要你记得路，我们就不会迷路。', py:'Zhǐyào nǐ jìde lù, wǒmen jiù bú huì mílù.'},
-  {vi:'Anh ấy vừa mặc áo sơ mi vừa nói chuyện điện thoại.', zh:'他一边穿衬衫，一边打电话。', py:'Tā yìbiān chuān chènshān, yìbiān dǎ diànhuà.'},
-  {vi:'Trên bàn làm việc của tôi luôn để một ly trà nóng.', zh:'我的办公桌上总是放着一杯热茶。', py:'Wǒ de bàngōngzhuō shang zǒngshì fàngzhe yì bēi rè chá.'},
-  {vi:'Bạn uống trà hoa hay trà xanh cũng được, tôi đều có.', zh:'你喝花茶或者绿茶都可以，我都有。', py:'Nǐ hē huāchá huòzhě lǜchá dōu kěyǐ, wǒ dōu yǒu.'},
-  {vi:'Vì cái quần đó chỉ còn một cái nên tôi mua ngay.', zh:'因为那条裤子只剩一条了，所以我马上买了。', py:'Yīnwèi nà tiáo kùzi zhǐ shèng yì tiáo le, suǒyǐ wǒ mǎshàng mǎi le.'},
+  {vi:'Cuối tuần bạn đi leo núi với chúng mình hay ở nhà ôn bài?', zh:'周末你跟我们去爬山还是在家复习？', py:'Zhōumò nǐ gēn wǒmen qù páshān háishi zài jiā fùxí?'},
+  {vi:'Trên bàn giám đốc đặt rất nhiều hoa, đều là thư ký mua.', zh:'经理的桌子上放着很多花，都是秘书买的。', py:'Jīnglǐ de zhuōzi shang fàngzhe hěn duō huā, dōu shì mìshū mǎi de.'},
+  {vi:'Bạn mặc ít như vậy, ra ngoài sẽ bị lạnh đấy.', zh:'你穿得这么少，出去会冷的。', py:'Nǐ chuān de zhème shǎo, chūqu huì lěng de.'},
+  {vi:'Thật ra chiếc áo sơ mi này tôi mới mặc có một lần.', zh:'其实这件衬衫我只穿过一次。', py:'Qíshí zhè jiàn chènshān wǒ zhǐ chuānguo yí cì.'},
+  {vi:'Tôi nhớ dưa hấu của cửa hàng đó rất ngọt, chúng ta đến đó mua đi.', zh:'我记得那个商店的西瓜很甜，我们去那儿买吧。', py:'Wǒ jìde nàge shāngdiàn de xīguā hěn tián, wǒmen qù nàr mǎi ba.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tuy dưa hấu này không rẻ nhưng ăn rất ngọt.', zh:'虽然这个西瓜不便宜，但是吃起来很甜。', py:'Suīrán zhège xīguā bù piányi, dànshì chī qǐlai hěn tián.'},
-  {vi:'Nếu bạn không mang theo tiền thì tôi cho bạn mượn.', zh:'如果你没带钱，我借给你吧。', py:'Rúguǒ nǐ méi dài qián, wǒ jiè gěi nǐ ba.'},
-  {vi:'Trong tủ lạnh nhà tôi để rất nhiều loại đồ uống.', zh:'我家冰箱里放着很多种饮料。', py:'Wǒ jiā bīngxiāng lǐ fàngzhe hěn duō zhǒng yǐnliào.'},
-  {vi:'Chỉ cần trời không mưa thì chúng tôi vẫn đi leo núi.', zh:'只要天不下雨，我们还是去爬山。', py:'Zhǐyào tiān bú xiàyǔ, wǒmen háishi qù páshān.'},
-  {vi:'Bà ấy vừa xem tivi vừa uống một ly trà xanh nóng.', zh:'她一边看电视，一边喝一杯热绿茶。', py:'Tā yìbiān kàn diànshì, yìbiān hē yì bēi rè lǜchá.'},
-  {vi:'Vì áo sơ mi này giặt xong rất nhanh khô nên tôi thích nó.', zh:'因为这件衬衫洗了很快就干，所以我很喜欢它。', py:'Yīnwèi zhè jiàn chènshān xǐle hěn kuài jiù gān, suǒyǐ wǒ hěn xǐhuan tā.'},
-  {vi:'Nếu bạn cảm thấy không dễ chịu thì nên đi khám bác sĩ.', zh:'如果你觉得不舒服，就应该去看医生。', py:'Rúguǒ nǐ juéde bù shūfu, jiù yīnggāi qù kàn yīshēng.'},
-  {vi:'Chị ấy thích cắm hoa trong nhà, mỗi tuần đều mua hoa mới.', zh:'她喜欢在家里插花，每个星期都买新鲜的花。', py:'Tā xǐhuan zài jiālǐ chāhuā, měi ge xīngqī dōu mǎi xīnxiān de huā.'},
+  {vi:'Cá ở nhà hàng này rất tươi, chúng tôi đã đến đây hai lần rồi.', zh:'这家饭馆的鱼很新鲜，我们来过两次了。', py:'Zhè jiā fànguǎn de yú hěn xīnxiān, wǒmen láiguo liǎng cì le.'},
+  {vi:'Tuy chiếc áo sơ mi này rất rẻ nhưng mặc chẳng dễ chịu chút nào.', zh:'虽然这件衬衫很便宜，但是穿着一点儿也不舒服。', py:'Suīrán zhè jiàn chènshān hěn piányi, dànshì chuānzhe yìdiǎnr yě bù shūfu.'},
+  {vi:'Anh ấy nói tháng sau sẽ chuyển xuống miền Nam.', zh:'他说下个月会搬到南方去。', py:'Tā shuō xià ge yuè huì bān dào nánfāng qù.'},
+  {vi:'Đồ uống bạn cần mình để ở cửa rồi, bạn xuống lấy nhé.', zh:'你要的饮料我放在门口了，你下来拿吧。', py:'Nǐ yào de yǐnliào wǒ fàng zài ménkǒu le, nǐ xiàlai ná ba.'},
 ];
 
 // ══════════════════════════════════════════

@@ -2122,72 +2122,81 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'去',right:'图书馆'},
-  {left:'借',right:'一本书'},
-  {left:'还',right:'词典'},
-  {left:'关',right:'空调'},
-  {left:'坐',right:'地铁'},
-  {left:'一双',right:'筷子'},
-  {left:'喝',right:'啤酒'},
-  {left:'因为爸爸不能喝啤酒，',right:'所以别让他拿啤酒瓶子。'},
-  {left:'虽然会议结束了，',right:'但是他忘了把空调关了。'},
-  {left:'如果你去图书馆，',right:'就帮我把词典还了吧。'},
-  {left:'只要你习惯用笔记本电脑，',right:'就会越来越方便。'},
+  {left:'服务员，请再拿一双', right:'筷子'},
+  {left:'我每天坐', right:'地铁上班'},
+  {left:'下午的会议几点', right:'结束'},
+  {left:'早上起床以后，我先看', right:'电子邮件'},
+  {left:'房间里太热了，把空调', right:'打开吧'},
+  {left:'这本词典是从图书馆', right:'借来的'},
+  {left:'走的时候别忘记', right:'关灯'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'',blank:'图书馆',post:'离我家不远，走路一会儿就到。',hint:'(thư viện)',ans:'图书馆'},
-  {pre:'放学后，我想',blank:'借',post:'你的自行车骑一下。',hint:'(mượn)',ans:'借'},
-  {pre:'你能把这本',blank:'词典',post:'借给我一天吗？',hint:'(từ điển)',ans:'词典'},
-  {pre:'我明天一定把钱',blank:'还',post:'给你。',hint:'(trả)',ans:'还',exp:'还 đọc huán = trả lại: 把钱还给你; khác với 还 (hái) = vẫn, còn.'},
-  {pre:'房间里太黑了，你去把',blank:'灯',post:'打开吧。',hint:'(đèn)',ans:'灯'},
-  {pre:'今天下午三点有一个',blank:'会议',post:'，你别迟到。',hint:'(cuộc họp)',ans:'会议'},
-  {pre:'今天的课八点',blank:'结束',post:'，我们早点儿回家吧。',hint:'(kết thúc)',ans:'结束'},
-  {pre:'你别',blank:'忘记',post:'带雨伞，外面下雨了。',hint:'(quên)',ans:'忘记'},
-  {pre:'夏天房间很热，我们开',blank:'空调',post:'吧。',hint:'(máy điều hòa)',ans:'空调'},
-  {pre:'从我家到公司，坐',blank:'地铁',post:'很快就到。',hint:'(tàu điện ngầm)',ans:'地铁'},
-  {pre:'还差一',blank:'双',post:'筷子。',hint:'(đôi)',ans:'双',exp:'双 là lượng từ cho vật đi theo đôi: 一双筷子.'},
-  {pre:'他一',blank:'口',post:'水都没喝，就走了。',hint:'(ngụm)',ans:'口',exp:'口 là lượng từ “ngụm, miếng”: 一口水都没喝 = một ngụm nước cũng không uống.'},
-  {pre:'桌子上的',blank:'瓶子',post:'里是什么？',hint:'(chai, lọ)',ans:'瓶子'},
-  {pre:'来中国以后，我已经',blank:'习惯',post:'用筷子了。',hint:'(quen)',ans:'习惯'},
+  {pre:'这本书我还没看完，能不能下个星期再', blank:'还', post:'给图书馆？', hint:'(trả lại)', ans:'还', exp:'还 đọc huán = trả lại (还给 + nơi/người); 还没 ở đầu câu đọc hái = vẫn chưa.'},
+  {pre:'A：今天我没带笔记本电脑，能', blank:'借', post:'你的用一下吗？B：可以，你用吧。', hint:'(mượn)', ans:'借', exp:'借 + đồ của ai + 用一下 = mượn dùng một lát; 用 (bài 5).'},
+  {pre:'这个字我不认识，你的', blank:'词典', post:'能给我看看吗？', hint:'(từ điển)', ans:'词典', exp:'词典 = từ điển; động từ lặp 看看 = xem thử một chút (HSK2).'},
+  {pre:'教室里一个人也没有，但是', blank:'灯', post:'还开着。', hint:'(đèn)', ans:'灯', exp:'灯开着 = đèn đang bật (V + 着 chỉ trạng thái, HSK2); 一个人也没有 (bài 1).'},
+  {pre:'今天的', blank:'会议', post:'比上次长多了，从两点一直开到五点。', hint:'(cuộc họp)', ans:'会议', exp:'会议 = cuộc họp; ôn A 比 B + tính từ + 多了 (bài 10) và 一直 (bài 1).'},
+  {pre:'A：比赛什么时候', blank:'结束', post:'？B：大概四点半吧。', hint:'(kết thúc)', ans:'结束', exp:'结束 = kết thúc, trái nghĩa với 开始; 比赛 (bài 4).'},
+  {pre:'昨天我', blank:'忘记', post:'给妈妈打电话了，她很着急。', hint:'(quên)', ans:'忘记', exp:'忘记 + việc cần làm = quên làm gì; 着急 = sốt ruột (bài 1).'},
+  {pre:'外面三十八度，没有', blank:'空调', post:'的房间热得我睡不着。', hint:'(máy điều hoà)', ans:'空调', exp:'没有空调的房间 = căn phòng không có điều hoà; ôn 热得 + kết quả (HSK2) và 睡不着 (bài 6).'},
+  {pre:'A：电视你看完了吗？B：看完了，我已经把电视', blank:'关', post:'了。', hint:'(tắt)', ans:'关', exp:'Câu 把: 把 + vật (电视) + 关 + 了 = đã tắt TV đi; sau động từ phải có 了.'},
+  {pre:'服务员，我们多了一个人，请再拿一', blank:'双', post:'筷子来。', hint:'(đôi)', ans:'双', exp:'双 = đôi, dùng cho vật đi theo cặp: 一双筷子.'},
+  {pre:'这个蛋糕太甜了，我只吃了一', blank:'口', post:'就不想吃了。', hint:'(miếng, ngụm)', ans:'口', exp:'口 = miếng / ngụm: 一口; 只 = chỉ, 甜 (bài 3).'},
+  {pre:'A：这个', blank:'瓶子', post:'里是什么？B：是牛奶，昨天买的。', hint:'(chai, lọ)', ans:'瓶子', exp:'瓶子 = cái chai/lọ; 瓶子里 = trong chai.'},
+  {pre:'A：你怎么每天早上都喝咖啡？B：上班以后就有了这个', blank:'习惯', post:'，不喝就想睡觉。', hint:'(thói quen)', ans:'习惯', exp:'习惯 ở đây là danh từ = thói quen (这个习惯); 不……就…… = không … thì ….'},
+  {pre:'你', blank:'把', post:'这些面包吃了吧，明天就不新鲜了。', hint:'(đem, lấy)', ans:'把', exp:'Câu 把: 把 + vật xác định (这些面包) + 吃了 = ăn hết đi; 新鲜 (bài 3).'},
+  {pre:'A：从这儿到地铁站要走多长时间？B：十分钟', blank:'左右', post:'吧，不远。', hint:'(khoảng, chừng)', ans:'左右', exp:'左右 đứng SAU số lượng / thời gian: 十分钟左右 = khoảng mười phút.'}
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['他','常常','去','图书馆','借','词典','。'],ans:'他常常去图书馆借词典。',audio:'他常常去图书馆借词典。'},
-  {words:['请','你','把','这','本','词典','还给','图书馆','吧','。'],ans:'请你把这本词典还给图书馆吧。',audio:'请你把这本词典还给图书馆吧。'},
-  {words:['下班','以后','，','请','你','把','笔记本','电脑','关','了','。'],ans:'下班以后，请你把笔记本电脑关了。',audio:'下班以后，请你把笔记本电脑关了。'},
-  {words:['弟弟','把','手机','忘','在','教室','了','。'],ans:'弟弟把手机忘在教室了。',audio:'弟弟把手机忘在教室了。'},
-  {words:['因为','爸爸','不能','喝啤酒','，','所以','别','让','他','拿','啤酒','瓶子','。'],ans:'因为爸爸不能喝啤酒，所以别让他拿啤酒瓶子。',audio:'因为爸爸不能喝啤酒，所以别让他拿啤酒瓶子。'},
-  {words:['虽然','会议','结束','了','，','但是','他','忘','了','把','空调','关','了','。'],ans:'虽然会议结束了，但是他忘了把空调关了。',audio:'虽然会议结束了，但是他忘了把空调关了。'},
-  {words:['如果','你','去','图书馆','，','就','帮','我','把','词典','还','了','吧','。'],ans:'如果你去图书馆，就帮我把词典还了吧。',audio:'如果你去图书馆，就帮我把词典还了吧。'},
-  {words:['我','朋友','的','笔记本','电脑','是','今年','买','的','，','要','四百','块','左右','。'],ans:'我朋友的笔记本电脑是今年买的，要四百块左右。',audio:'我朋友的笔记本电脑是今年买的，要四百块左右。'},
+  {words:['你','把','空调','开','一下','吧','，','大家','都','很','热','。'], ans:'你把空调开一下吧，大家都很热。', audio:'你把空调开一下吧，大家都很热。'},
+  {words:['我','坐','地铁','去','公司','，','半个小时','就','到','了','。'], ans:'我坐地铁去公司，半个小时就到了。', audio:'我坐地铁去公司，半个小时就到了。'},
+  {words:['哥哥','把','那','两','个','啤酒','瓶子','拿','走','了','。'], ans:'哥哥把那两个啤酒瓶子拿走了。', audio:'哥哥把那两个啤酒瓶子拿走了。'},
+  {words:['我','还','不','太','习惯','用','筷子','吃','面条儿','。'], ans:'我还不太习惯用筷子吃面条儿。', audio:'我还不太习惯用筷子吃面条儿。'},
+  {words:['会议','结束','以后','，','经理','让','我','把','这件','事情','告诉','大家','。'], ans:'会议结束以后，经理让我把这件事情告诉大家。', audio:'会议结束以后，经理让我把这件事情告诉大家。'},
+  {words:['这个','笔记本电脑','是','我','从','同事','那儿','借','的','。'], ans:'这个笔记本电脑是我从同事那儿借的。', audio:'这个笔记本电脑是我从同事那儿借的。'},
+  {words:['我','每天','早上','先','看','电子邮件','，','再','去','跑步','。'], ans:'我每天早上先看电子邮件，再去跑步。', audio:'我每天早上先看电子邮件，再去跑步。'},
+  {words:['图书馆','里','很','安静','，','大家','都','在','看书','。'], ans:'图书馆里很安静，大家都在看书。', audio:'图书馆里很安静，大家都在看书。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'请你那本词典把还给我。',
-   opts:['请你把那本词典还给我。','请你那本词典把还给我。','请你把还那本词典给我。','那本词典请你把还给我。'],ans:0,
-   exp:'Cấu trúc 把字句: A+把+B+động từ, 把+B (danh từ xác định) phải đứng liền trước động từ, không tách rời.'},
-  {wrong:'你把手机别忘了。',
-   opts:['你别把手机忘了。','你把手机别忘了。','别你把手机忘了。','你把别手机忘了。'],ans:0,
-   exp:'Phó từ phủ định (别) phải đặt TRƯỚC từ 把, không đặt sau.'},
-  {wrong:'我把笔记本电脑不能给你。',
-   opts:['我不能把笔记本电脑给你。','我把笔记本电脑不能给你。','我不能笔记本电脑把给你。','把我不能笔记本电脑给你。'],ans:0,
-   exp:'Động từ năng nguyện (不能) phải đặt TRƯỚC từ 把, không đặt sau.'},
-  {wrong:'这个笔记本电脑左右要五百块。',
-   opts:['这个笔记本电脑要五百块左右。','这个笔记本电脑左右要五百块。','这个笔记本电脑要左右五百块。','左右这个笔记本电脑要五百块。'],ans:0,
-   exp:'左右 (số ước lượng) phải đặt SAU con số cụ thể (五百块左右), không đặt trước.'},
-  {wrong:'王经理左右两点有个会议。',
-   opts:['王经理两点左右有个会议。','王经理左右两点有个会议。','王经理两点有左右个会议。','左右王经理两点有个会议。'],ans:0,
-   exp:'左右 phải đặt NGAY SAU con số/thời gian cụ thể (两点左右), không đặt trước.'},
+  {wrong:'我把作业写。',
+   opts:['我写作业把完了。','我把作业写完了。','我把写完作业了。','我把作业完写了。'], ans:1,
+   exp:'Câu 把: sau động từ phải có thành phần khác (完了 / 好 / 了), không dừng ở một động từ trơn; 完 đứng ngay sau 写.'},
+  {wrong:'我把那本词典没还给他。',
+   opts:['我没把那本词典还给他了。','我把没那本词典还给他。','我没把那本词典还了给他。','我没把那本词典还给他。'], ans:3,
+   exp:'Phủ định đặt TRƯỚC 把: 没把……; việc chưa làm dùng 没, không thêm 了 (ôn 没 + V, HSK2).'},
+  {wrong:'我把一本书借了。',
+   opts:['我借了一本书。','我把一本书借。','我把了一本书借。','我一本书把借了。'], ans:0,
+   exp:'Vật sau 把 phải là vật đã xác định (这本、那本); “một quyển sách” bất kỳ thì nói 借了一本书.'},
+  {wrong:'你把灯能关一下吗？',
+   opts:['你能关一下把灯吗？','你把能灯关一下吗？','你能把灯关一下吗？','你能把灯一下关吗？'], ans:2,
+   exp:'Động từ năng nguyện (能、想、要) đứng TRƯỚC 把; 一下 đứng sau động từ 关.'},
+  {wrong:'他把了我的笔记本电脑借走。',
+   opts:['他借走了把我的笔记本电脑。','他把我的笔记本电脑借走了。','他把我的笔记本电脑走借了。','他借把我的笔记本电脑走了。'], ans:1,
+   exp:'了 đứng cuối cụm động từ: 把 + vật + 借走 + 了; không đặt 了 ngay sau 把, 走 là kết quả nên đứng sau 借.'},
+  {wrong:'他喝了两个口啤酒。',
+   opts:['他喝了两口啤酒。','他喝了啤酒两口。','他两口喝了啤酒。','他喝了两双啤酒。'], ans:0,
+   exp:'口 tự là lượng từ (ngụm), đứng ngay sau số, không thêm 个; số + lượng từ đứng trước danh từ 啤酒.'},
+  {wrong:'请给我们两个筷子。',
+   opts:['请给我们二双筷子。','请给我们两双个筷子。','请两双筷子给我们。','请给我们两双筷子。'], ans:3,
+   exp:'Đũa đi theo đôi nên dùng lượng từ 双; trước lượng từ nói 两, không nói 二 (ôn HSK1).'},
+  {wrong:'我还没习惯了这儿的天气。',
+   opts:['我还不习惯了这儿的天气。','我还没习惯这儿的天气。','我没还习惯这儿的天气。','我还没这儿的天气习惯。'], ans:1,
+   exp:'还没 + 习惯 + đối tượng = vẫn chưa quen; 没 không đi cùng 了, 还 đứng trước 没.'},
+  {wrong:'会议左右三点结束。',
+   opts:['会议三点结束左右。','会议三点左右结束。','会议在左右三点结束。','会议结束三点左右。'], ans:1,
+   exp:'左右 đứng ngay sau thời điểm, cả cụm 三点左右 đặt trước động từ 结束 (không đặt thời gian sau động từ như tiếng Việt).'}
 ];
 
 // ══════════════════════════════════════════
@@ -2195,97 +2204,97 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 11. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 11 (câu chữ 把: A 把 B + động từ + 了/完/好…, 习惯 + động từ). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn là người cuối cùng rời khỏi phòng làm việc buổi tối.',
-      q_zh: '出门以前，你会把灯和空调怎么样？',
-      q_py: 'Chū mén yǐqián, nǐ huì bǎ dēng hé kōngtiáo zěnmeyàng?',
-      q_vn: 'Trước khi ra khỏi phòng, bạn sẽ xử lý đèn và điều hòa thế nào?',
-      grammar: { label: 'Câu chữ 把: A 把 B + động từ + …', any: ['把'] },
+      situation: 'Bạn về sau cùng ở văn phòng. Đồng nghiệp gọi điện hỏi bạn đã tắt hết đồ điện chưa.',
+      q_zh: '你走的时候，办公室里的东西都关好了吗？',
+      q_py: 'Nǐ zǒu de shíhou, bàngōngshì li de dōngxi dōu guānhǎo le ma?',
+      q_vn: 'Lúc bạn về, đồ đạc trong văn phòng đã tắt hết chưa?',
+      grammar: { label: 'Câu 把: 把 + đồ vật + 关 + 了/好', any: ['把'] },
       need: [
-        { label: 'Dùng câu chữ 把', any: ['把'] },
-        { label: 'Nói tắt đèn, tắt điều hòa', any: ['关', '灯', '空调'] }
+        { label: 'Kể ít nhất hai thứ đã tắt', any: ['灯', '空调', '电脑', '电视'] },
+        { label: 'Nói đã tắt', any: ['关了', '关好', '关上'] }
       ],
-      bonus: { label: 'Nói đó là thói quen của bạn bằng 习惯', any: ['习惯'] },
-      vocab: ['灯', '空调', '关', '习惯'],
+      bonus: { label: 'Bảo người kia yên tâm', any: ['放心'] },
+      vocab: ['灯', '空调', '关'],
+      minLen: 14,
+      sample: '我走的时候把灯和空调都关了，电脑也关好了，没问题。',
+      sample_py: 'Wǒ zǒu de shíhou bǎ dēng hé kōngtiáo dōu guān le, diànnǎo yě guānhǎo le, méi wèntí.',
+      sample_vn: 'Lúc về tôi đã tắt cả đèn lẫn điều hoà, máy tính cũng tắt xong rồi, không vấn đề gì đâu.',
+      tip: 'Sau 把 + đồ vật phải có động từ + 了/好: 把灯关了 — không nói 把灯关 rồi dừng.'
+    },
+    {
+      situation: 'Bạn cùng lớp hỏi bạn có hay đến thư viện không, lần trước mượn gì.',
+      q_zh: '你经常去图书馆吗？上次借了什么？还了没有？',
+      q_py: 'Nǐ jīngcháng qù túshūguǎn ma? Shàng cì jièle shénme? Huánle méiyǒu?',
+      q_vn: 'Bạn có hay đến thư viện không? Lần trước mượn gì? Đã trả chưa?',
+      grammar: { label: 'Câu 把: 把 + sách/từ điển + 还 + 了/给…', any: ['把'] },
+      need: [
+        { label: 'Nói mượn gì', any: ['借'] },
+        { label: 'Nói đã trả hay chưa', any: ['还了', '还给', '还没'] }
+      ],
+      bonus: { label: 'Nói bao lâu đi một lần', any: ['次', '每个星期', '每个月'] },
+      vocab: ['图书馆', '借', '还', '词典'],
       minLen: 18,
-      sample: '出门以前我一定把灯关上，也把空调关了，这已经是我的习惯了。',
-      sample_py: 'Chū mén yǐqián wǒ yí dìng bǎ dēng guān shàng, yě bǎ kōngtiáo guān le, zhè yǐjīng shì wǒ de xíguàn le.',
-      sample_vn: 'Trước khi ra ngoài tôi nhất định tắt đèn, cũng tắt điều hòa, đây đã thành thói quen của tôi rồi.',
-      tip: 'Câu chữ 把 nhấn mạnh xử lý đồ vật: 把灯关上、把门关好。'
+      sample: '我一个月去两三次图书馆。上次借了一本汉语词典，昨天已经把它还了。',
+      sample_py: 'Wǒ yí ge yuè qù liǎng sān cì túshūguǎn. Shàng cì jièle yì běn Hànyǔ cídiǎn, zuótiān yǐjīng bǎ tā huán le.',
+      sample_vn: 'Mỗi tháng tôi đến thư viện hai ba lần. Lần trước mượn một cuốn từ điển tiếng Hán, hôm qua đã trả rồi.',
+      tip: '还 = trả lại đọc huán; vật đã nhắc đến rồi có thể nói 把它还了.'
     },
     {
-      situation: 'Bạn ở thư viện trường và bạn cùng lớp hỏi bạn mượn sách gì.',
-      q_zh: '你在图书馆借过什么书？什么时候还？',
-      q_py: 'Nǐ zài túshūguǎn jiè guo shénme shū? Shénme shíhou hái?',
-      q_vn: 'Bạn từng mượn sách gì ở thư viện? Khi nào trả?',
-      grammar: { label: '把 + đồ vật + 还 + 回去/给…', any: ['把', '还'] },
+      situation: 'Cuộc họp chiều nay vừa xong, sếp hỏi bạn sẽ làm gì tiếp theo.',
+      q_zh: '今天下午开完会，你还要做什么？',
+      q_py: 'Jīntiān xiàwǔ kāiwán huì, nǐ hái yào zuò shénme?',
+      q_vn: 'Chiều nay họp xong, bạn còn phải làm gì nữa?',
+      grammar: { label: 'Câu 把: 把 + việc/đồ + động từ + 好/完', any: ['把'] },
       need: [
-        { label: 'Nói mượn sách gì', any: ['借', '书', '词典', '图书馆'] },
-        { label: 'Nói khi nào trả', any: ['还', '星期', '天', '月', '昨天', '明天'] }
+        { label: 'Nói việc phải làm', any: ['电子邮件', '告诉', '写', '准备'] },
+        { label: 'Nói làm xong hay khi nào xong', any: ['写好', '写完', '做完', '准备好', '以前', '点'] }
       ],
-      bonus: { label: 'Nói bạn đọc trong bao lâu', any: ['看了', '读了', '个星期', '天'] },
-      vocab: ['图书馆', '借', '词典', '还'],
-      minLen: 20,
-      sample: '上个月我在图书馆借了一本汉语词典，看了两三个星期，昨天已经把它还回去了。',
-      sample_py: 'Shàng ge yuè wǒ zài túshūguǎn jiè le yì běn Hànyǔ cídiǎn, kàn le liǎng sān ge xīngqī, zuótiān yǐjīng bǎ tā hái huí qù le.',
-      sample_vn: 'Tháng trước tôi mượn một cuốn từ điển tiếng Hán ở thư viện, đọc hai ba tuần, hôm qua đã trả lại rồi.',
-      tip: '还 ở đây đọc là huán (trả lại), khác với 还 hái (còn, vẫn).'
+      bonus: { label: 'Dùng 先……再…… (bài 9)', any: ['先'] },
+      vocab: ['会议', '电子邮件'],
+      minLen: 16,
+      sample: '我先把今天会议的事情写好，再给大家写一个电子邮件，五点以前能写完。',
+      sample_py: 'Wǒ xiān bǎ jīntiān huìyì de shìqing xiěhǎo, zài gěi dàjiā xiě yí ge diànzǐ yóujiàn, wǔ diǎn yǐqián néng xiěwán.',
+      sample_vn: 'Tôi sẽ viết xong nội dung cuộc họp hôm nay trước, rồi viết một email cho mọi người, trước năm giờ là viết xong.',
+      tip: '先 đứng trước 把: 先把……写好，再…… — không nói 把……先写好 khi muốn kể thứ tự việc.'
     },
     {
-      situation: 'Đồng nghiệp mới hỏi bạn về lịch họp của công ty.',
-      q_zh: '你们公司的会议一般几点开始？几点结束？',
-      q_py: 'Nǐmen gōngsī de huìyì yìbān jǐ diǎn kāishǐ? Jǐ diǎn jiéshù?',
-      q_vn: 'Cuộc họp của công ty bạn thường mấy giờ bắt đầu? Mấy giờ kết thúc?',
-      grammar: { label: 'Số ước lượng với 左右 (九点左右)', any: ['左右'] },
+      situation: 'Một người bạn nước ngoài mới sang Việt Nam hỏi bạn có quen dùng máy tính để học không.',
+      q_zh: '你现在习惯用电脑学习，还是习惯用铅笔写？',
+      q_py: 'Nǐ xiànzài xíguàn yòng diànnǎo xuéxí, háishi xíguàn yòng qiānbǐ xiě?',
+      q_vn: 'Bây giờ bạn quen học bằng máy tính hay quen viết bằng bút?',
+      grammar: { label: '习惯 + động từ (quen làm gì)', any: ['习惯'] },
       need: [
-        { label: 'Nói giờ bắt đầu', any: ['点', '开始'] },
-        { label: 'Nói giờ kết thúc', any: ['结束', '点', '完'] }
+        { label: 'Chọn máy tính hay bút', any: ['电脑', '笔记本', '铅笔', '笔'] },
+        { label: 'Nói khi nào dùng cái kia', any: ['的时候', '但是', '还是'] }
       ],
-      bonus: { label: 'Dùng 左右 để nói khoảng chừng', any: ['左右'] },
-      vocab: ['会议', '结束', '电子邮件'],
-      minLen: 20,
-      sample: '我们的会议一般九点左右开始，十点半左右结束。结束以后我就把会议的内容写成电子邮件发给同事。',
-      sample_py: 'Wǒmen de huìyì yìbān jiǔ diǎn zuǒyòu kāishǐ, shí diǎn bàn zuǒyòu jiéshù. Jiéshù yǐhòu wǒ jiù bǎ huìyì de nèiróng xiě chéng diànzǐyóujiàn fā gěi tóngshì.',
-      sample_vn: 'Cuộc họp của chúng tôi thường bắt đầu khoảng 9 giờ, kết thúc khoảng 10 rưỡi. Xong họp tôi viết nội dung thành email gửi cho đồng nghiệp.',
-      tip: '左右 đặt sau số lượng để chỉ khoảng chừng: 三十岁左右、十点左右。'
+      bonus: { label: 'Nêu lý do bằng 因为', any: ['因为', '所以'] },
+      vocab: ['习惯', '笔记本电脑'],
+      minLen: 18,
+      sample: '上大学以后，我习惯用笔记本电脑做作业了，但是学汉字的时候，我还是用铅笔写。',
+      sample_py: 'Shàng dàxué yǐhòu, wǒ xíguàn yòng bǐjìběn diànnǎo zuò zuòyè le, dànshì xué Hànzì de shíhou, wǒ háishi yòng qiānbǐ xiě.',
+      sample_vn: 'Từ khi lên đại học tôi đã quen làm bài tập bằng máy tính xách tay, nhưng lúc học chữ Hán tôi vẫn viết bằng bút chì.',
+      tip: '习惯 đứng trước cả cụm việc: 习惯用电脑做作业; đã quen thì thêm 了 ở cuối: 习惯……了.'
     },
     {
-      situation: 'Bạn kể một lần đãng trí đáng nhớ.',
-      q_zh: '你忘记过什么重要的东西吗？后来怎么办的？',
-      q_py: 'Nǐ wàngjì guo shénme zhòngyào de dōngxi ma? Hòulái zěnme bàn de?',
-      q_vn: 'Bạn từng quên thứ gì quan trọng chưa? Sau đó bạn xử lý thế nào?',
-      grammar: { label: '把 + đồ vật + 忘在 + nơi chốn', any: ['忘', '把'] },
+      situation: 'Tối nay nhà có khách, mẹ hỏi bạn giúp được gì.',
+      q_zh: '今天晚上家里有客人，你能帮妈妈做什么？',
+      q_py: 'Jīntiān wǎnshang jiā li yǒu kèrén, nǐ néng bāng māma zuò shénme?',
+      q_vn: 'Tối nay nhà có khách, con giúp mẹ được việc gì?',
+      grammar: { label: 'Câu 把: 把 + đồ vật + động từ + 好', any: ['把'] },
       need: [
-        { label: 'Nói quên đồ gì', any: ['忘记', '忘', '词典', '书', '手机', '钱', '包', '本子'] },
-        { label: 'Nói cách xử lý sau đó', any: ['回去', '再', '找', '老师', '同学', '打电话'] }
+        { label: 'Kể việc chuẩn bị bàn ghế / bát đũa', any: ['桌子', '椅子', '筷子', '杯子'] },
+        { label: 'Kể đồ uống / món ăn', any: ['啤酒', '饮料', '水果', '菜'] }
       ],
-      bonus: { label: 'Nói bạn rút ra bài học gì', any: ['以后', '习惯', '注意', '每次'] },
-      vocab: ['忘记', '词典', '习惯'],
-      minLen: 20,
-      sample: '有一次我把词典忘在教室里了，第二天才发现。还好老师帮我拿到了办公室，以后我养成了走以前看一遍桌子的习惯。',
-      sample_py: 'Yǒu yí cì wǒ bǎ cídiǎn wàng zài jiàoshì lǐ le, dì èr tiān cái fāxiàn. Hái hǎo lǎoshī bāng wǒ ná dào le bàngōngshì, yǐhòu wǒ yǎngchéng le zǒu yǐqián kàn yí biàn zhuōzi de xíguàn.',
-      sample_vn: 'Có lần tôi để quên từ điển trong lớp, hôm sau mới phát hiện. May là thầy cầm về văn phòng giúp, từ đó tôi có thói quen nhìn lại bàn một lượt trước khi đi.',
-      tip: '把……忘在…… nói quên đồ ở đâu: 我把手机忘在车上了。'
-    },
-    {
-      situation: 'Bạn nước ngoài hỏi bạn đã quen dùng đũa chưa.',
-      q_zh: '你习惯用筷子吃饭吗？家里有几双？',
-      q_py: 'Nǐ xíguàn yòng kuàizi chīfàn ma? Jiā lǐ yǒu jǐ shuāng?',
-      q_vn: 'Bạn đã quen dùng đũa ăn cơm chưa? Ở nhà có mấy đôi?',
-      grammar: { label: '习惯 + động từ; lượng từ 双/瓶/口', any: ['习惯', '双', '瓶'] },
-      need: [
-        { label: 'Nói đã quen hay chưa', any: ['习惯', '不习惯', '已经'] },
-        { label: 'Dùng lượng từ 双 với đũa', any: ['双'] }
-      ],
-      bonus: { label: 'Nói thêm về đồ uống bằng 瓶 hoặc 口', any: ['瓶', '口', '啤酒'] },
-      vocab: ['习惯', '双', '筷子', '啤酒'],
-      minLen: 20,
-      sample: '我已经习惯用筷子了，家里有十几双筷子。吃面条儿的时候用筷子很方便，喝啤酒的时候我一口一口地慢慢喝。',
-      sample_py: 'Wǒ yǐjīng xíguàn yòng kuàizi le, jiā lǐ yǒu shí jǐ shuāng kuàizi. Chī miàntiáor de shíhou yòng kuàizi hěn fāngbiàn, hē píjiǔ de shíhou wǒ yì kǒu yi kǒu de mànmàn hē.',
-      sample_vn: 'Tôi đã quen dùng đũa rồi, ở nhà có hơn chục đôi đũa. Ăn mì dùng đũa rất tiện, uống bia thì tôi uống từng ngụm chậm rãi.',
-      tip: '双 dùng cho đồ có đôi: 一双筷子、一双鞋。'
+      bonus: { label: 'Dùng 先……再……', any: ['先'] },
+      vocab: ['双', '筷子', '啤酒'],
+      minLen: 18,
+      sample: '我先把桌子和椅子搬好，再给每个人拿一双筷子，还要给爸爸和客人准备几杯啤酒。',
+      sample_py: 'Wǒ xiān bǎ zhuōzi hé yǐzi bānhǎo, zài gěi měi ge rén ná yì shuāng kuàizi, hái yào gěi bàba hé kèrén zhǔnbèi jǐ bēi píjiǔ.',
+      sample_vn: 'Con sẽ kê bàn ghế cho xong trước, rồi lấy cho mỗi người một đôi đũa, còn chuẩn bị vài cốc bia cho bố và khách.',
+      tip: 'Đũa dùng lượng từ 双 (一双筷子), bia rót cốc dùng 杯 (一杯啤酒).'
     }
   ]
 };
@@ -2294,28 +2303,21 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Bạn nhớ trả cây dù đó cho bạn học nhé.', zh:'你记得把那把伞还给同学吧。', py:'Nǐ jìde bǎ nà bǎ sǎn huán gěi tóngxué ba.'},
-  {vi:'Nếu trời tối rồi thì bạn mở đèn lên đi.', zh:'如果天黑了，你就把灯打开吧。', py:'Rúguǒ tiān hēi le, nǐ jiù bǎ dēng dǎkāi ba.'},
-  {vi:'Nếu cuộc họp kết thúc muộn thì đừng quên gọi điện cho tôi.', zh:'如果会议结束得晚，就别忘记给我打电话。', py:'Rúguǒ huìyì jiéshù de wǎn, jiù bié wàngjì gěi wǒ dǎ diànhuà.'},
-  {vi:'Nếu bạn không muốn đi taxi thì có thể đi tàu điện ngầm đến đây.', zh:'如果你不想打车，就可以坐地铁过来。', py:'Rúguǒ nǐ bù xiǎng dǎchē, jiù kěyǐ zuò dìtiě guòlai.'},
-  {vi:'Bạn thấy chúng ta cần mấy đôi đũa?', zh:'你觉得我们需要几双筷子？', py:'Nǐ juéde wǒmen xūyào jǐ shuāng kuàizi?'},
-  {vi:'Anh ấy quên mất số điện thoại của tôi rồi.', zh:'他把我的手机号忘了。', py:'Tā bǎ wǒ de shǒujī hào wàng le.'},
-  {vi:'Nếu bạn cảm thấy nóng thì uống một ngụm nước đi.', zh:'如果你觉得热，就喝一口水吧。', py:'Rúguǒ nǐ juéde rè, jiù hē yì kǒu shuǐ ba.'},
-  {vi:'Tôi vẫn chưa quen dậy sớm để tập thể dục.', zh:'我还不习惯早起锻炼身体。', py:'Wǒ hái bù xíguàn zǎoqǐ duànliàn shēntǐ.'},
+  {vi:'Chiếc xe đạp này bạn mượn của ai vậy? Vẫn còn mới lắm.', zh:'你这辆自行车是跟谁借的？还很新呢。', py:'Nǐ zhè liàng zìxíngchē shì gēn shéi jiè de? Hái hěn xīn ne.'},
+  {vi:'Tôi đã ăn hết chỗ hoa quả mẹ mua rồi.', zh:'我把妈妈买的水果都吃完了。', py:'Wǒ bǎ māma mǎi de shuǐguǒ dōu chīwán le.'},
+  {vi:'Thư viện trường chúng tôi rất lớn, mỗi lần có thể mượn năm cuốn sách.', zh:'我们学校的图书馆很大，每次可以借五本书。', py:'Wǒmen xuéxiào de túshūguǎn hěn dà, měi cì kěyǐ jiè wǔ běn shū.'},
+  {vi:'Tuy anh ấy đã sống ở Trung Quốc hai năm nhưng vẫn chưa quen uống trà ở đây.', zh:'虽然他在中国住了两年了，但是还没习惯喝这儿的茶。', py:'Suīrán tā zài Zhōngguó zhùle liǎng nián le, dànshì hái méi xíguàn hē zhèr de chá.'},
+  {vi:'Họp xong rồi, mọi người tắt máy tính xách tay đi.', zh:'会议结束了，大家把笔记本电脑关了吧。', py:'Huìyì jiéshù le, dàjiā bǎ bǐjìběn diànnǎo guān le ba.'},
+  {vi:'Từ nhà tôi đến công ty đi tàu điện ngầm mất khoảng bốn mươi phút.', zh:'从我家到公司坐地铁要四十分钟左右。', py:'Cóng wǒ jiā dào gōngsī zuò dìtiě yào sìshí fēnzhōng zuǒyòu.'}
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Nếu bạn có thời gian thì giúp mình đi thư viện mượn một quyển từ điển nhé.', zh:'如果你有空，就帮我去图书馆借一本词典吧。', py:'Rúguǒ nǐ yǒu kòng, jiù bāng wǒ qù túshūguǎn jiè yì běn cídiǎn ba.'},
-  {vi:'Chỉ cần bạn thường xuyên luyện tập thì sẽ quen nói tiếng Trung.', zh:'只要你经常练习，就会习惯说汉语了。', py:'Zhǐyào nǐ jīngcháng liànxí, jiù huì xíguàn shuō Hànyǔ le.'},
-  {vi:'Tuy máy điều hòa đã tắt nhưng phòng vẫn còn hơi nóng.', zh:'虽然空调已经关了，但是房间还有点儿热。', py:'Suīrán kōngtiáo yǐjīng guān le, dànshì fángjiān hái yǒudiǎnr rè.'},
-  {vi:'Lúc đến công ty đừng quên mang theo máy tính xách tay nhé.', zh:'去公司的时候别忘了带笔记本电脑。', py:'Qù gōngsī de shíhou bié wàngle dài bǐjìběn diànnǎo.'},
-  {vi:'Giám đốc Chu khoảng 3 giờ sẽ đến công ty.', zh:'周经理三点左右会到公司。', py:'Zhōu jīnglǐ sān diǎn zuǒyòu huì dào gōngsī.'},
-  {vi:'Chiếc điện thoại đó anh ấy mua tháng trước với giá khoảng hai nghìn đồng.', zh:'那个手机他上个月买的时候要两千块左右。', py:'Nàge shǒujī tā shàng ge yuè mǎi de shíhou yào liǎngqiān kuài zuǒyòu.'},
-  {vi:'Bố bảo tôi đi mua hai chai bia.', zh:'爸爸让我去买两瓶啤酒。', py:'Bàba ràng wǒ qù mǎi liǎng píng píjiǔ.'},
-  {vi:'Chuyện hôm qua bạn nhắc tôi, tôi đã quên mất rồi.', zh:'昨天你提醒我的事，我已经忘了。', py:'Zuótiān nǐ tíxǐng wǒ de shì, wǒ yǐjīng wàng le.'},
+  {vi:'Hôm nay trên tàu điện ngầm đông người quá, tôi phải đứng suốt.', zh:'今天地铁上人太多了，我一直站着。', py:'Jīntiān dìtiě shang rén tài duō le, wǒ yìzhí zhànzhe.'},
+  {vi:'Bạn đóng cửa giúp tôi một chút được không? Bên ngoài hơi lạnh.', zh:'你帮我把门关一下好吗？外面有点儿冷。', py:'Nǐ bāng wǒ bǎ mén guān yíxià hǎo ma? Wàimiàn yǒudiǎnr lěng.'},
+  {vi:'Lần sau đến nhà tôi đừng mang bia nữa nhé, bố tôi không uống được.', zh:'下次来我家别带啤酒了，我爸爸不能喝。', py:'Xià cì lái wǒ jiā bié dài píjiǔ le, wǒ bàba bù néng hē.'},
 ];
 
 // ══════════════════════════════════════════

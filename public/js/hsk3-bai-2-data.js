@@ -2167,18 +2167,13 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'脚',right:'疼'},
-  {left:'一双',right:'脚'},
-  {left:'很',right:'难'},
-  {left:'一辆',right:'自行车'},
-  {left:'张',right:'经理'},
-  {left:'周',right:'太太'},
-  {left:'一把',right:'椅子'},
-  {left:'上',right:'楼'},
-  {left:'因为他工作很忙，',right:'所以没有时间休息。'},
-  {left:'虽然他很瘦，',right:'但是身体很好。'},
-  {left:'如果你忙，',right:'就不用来了。'},
-  {left:'秘书接了客人，',right:'就告诉经理。'},
+  {left:'外面下雨了，你带一把', right:'伞'},
+  {left:'楼下有一辆', right:'出租车'},
+  {left:'经理不在，你可以问他的', right:'秘书'},
+  {left:'走了一天的路，我的脚很', right:'疼'},
+  {left:'太热了，我们去前面的', right:'树下坐坐'},
+  {left:'他每天晚上去跑步，现在', right:'瘦多了'},
+  {left:'这些题一点儿也不难，都很', right:'容易'},
 ];
 
 // ══════════════════════════════════════════
@@ -2388,59 +2383,63 @@ var listenData = {
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我姐姐的',blank:'腿',post:'很长，跑步很快。',hint:'(chân, đùi)',ans:'腿'},
-  {pre:'我这几天头很',blank:'疼',post:'，可能感冒了。',hint:'(đau)',ans:'疼'},
-  {pre:'弟弟的',blank:'脚',post:'比我的大。',hint:'(bàn chân)',ans:'脚'},
-  {pre:'因为院子里有很多',blank:'树',post:'，所以夏天很舒服。',hint:'(cây)',ans:'树'},
-  {pre:'这次面试比我想的',blank:'容易',post:'多了。',hint:'(dễ)',ans:'容易'},
-  {pre:'虽然这道题很',blank:'难',post:'，但是他还是回答对了。',hint:'(khó)',ans:'难'},
-  {pre:'那位',blank:'太太',post:'每天早上都去公园运动。',hint:'(bà, phu nhân)',ans:'太太'},
-  {pre:'新来的',blank:'秘书',post:'工作很认真。',hint:'(thư ký)',ans:'秘书'},
-  {pre:'因为',blank:'经理',post:'今天开会，所以我不能跟他见面。',hint:'(giám đốc)',ans:'经理'},
-  {pre:'如果你找不到我，就来我',blank:'办公室',post:'找我吧。',hint:'(văn phòng)',ans:'办公室'},
-  {pre:'这儿有很多',blank:'辆',post:'车，找不到我的了。',hint:'(chiếc — xe cộ)',ans:'辆',exp:'辆 là lượng từ cho xe cộ: 很多辆车.'},
-  {pre:'我朋友住在这个',blank:'楼',post:'的五层。',hint:'(tòa nhà)',ans:'楼'},
-  {pre:'出门前，你别忘了',blank:'拿',post:'伞。',hint:'(cầm, lấy)',ans:'拿'},
-  {pre:'大家都以为他很有钱，',blank:'其实',post:'他没有多少钱。',hint:'(thực ra)',ans:'其实',exp:'其实 = thực ra, nêu sự thật ngược với điều mọi người tưởng (以为).'},
-  {pre:'下雨了，你带',blank:'把',post:'伞出去吧。',hint:'(lượng từ — đồ có tay cầm)',ans:'把',exp:'把 ở đây là lượng từ cho đồ có tay cầm như ô: 带把伞 = mang một cái ô.'},
+  {pre:'我们经理的', blank:'办公室', post:'比我们的大多了，还有一张很大的桌子。', hint:'(văn phòng)', ans:'办公室', exp:'办公室 = văn phòng; ôn câu so sánh A 比 B + tính từ + 多了 (HSK2).'},
+  {pre:'A：您好，我找王经理。B：我是他的', blank:'秘书', post:'，他正在开会，有什么问题您可以问我。', hint:'(thư ký)', ans:'秘书', exp:'秘书 = thư ký, người nhận điện thoại thay giám đốc; 正在 + động từ = đang (HSK2).'},
+  {pre:'哥哥的', blank:'腿', post:'很长，他走路比我快多了。', hint:'(chân, cẳng chân)', ans:'腿', exp:'腿 = chân (phần từ hông đến cổ chân); 脚 mới là bàn chân.'},
+  {pre:'我们学校里有很多', blank:'树', post:'，中午坐在下面看书一点儿也不热。', hint:'(cây)', ans:'树', exp:'树 = cây; ôn 一点儿也不 + tính từ = chẳng … chút nào (Bài 1).'},
+  {pre:'A：这次的作业', blank:'难', post:'不难？B：不太难，我一个小时就写完了。', hint:'(khó)', ans:'难', exp:'Câu hỏi chính phản: 难不难 = có khó không; câu trả lời dùng 不太难.'},
+  {pre:'门口有一', blank:'辆', post:'红色的自行车，是谁的？', hint:'(chiếc — dùng cho xe)', ans:'辆', exp:'Xe đạp, ô tô, taxi đều dùng lượng từ 辆: 一辆自行车.'},
+  {pre:'天阴了，你', blank:'拿', post:'一把伞再走吧。', hint:'(cầm, lấy)', ans:'拿', exp:'拿 + đồ vật = cầm lấy; 一把伞 = một cái ô (把 là lượng từ cho đồ có tay cầm).'},
+  {pre:'A：你是不是', blank:'胖', post:'了？B：是啊，过年的时候吃得太多了。', hint:'(béo, mập)', ans:'胖', exp:'胖了 = béo lên (了 chỉ sự thay đổi); ôn bổ ngữ trạng thái 吃得太多 (HSK2).'},
+  {pre:'A：你汉语说得这么好，在中国住过吧？B：没有，', blank:'其实', post:'我一次也没去过中国。', hint:'(thật ra)', ans:'其实', exp:'其实 = thật ra, nói sự thật khác điều người kia nghĩ; ôn 一次也没 + V + 过.'},
+  {pre:'A：我已经到你家楼下了，你快下', blank:'来', post:'吧。B：好，我穿好衣服就下去。', hint:'(lại đây — về phía người nói)', ans:'来', exp:'A đứng dưới nhà gọi B đi về phía mình nên nói 下来; B đi xa khỏi chỗ mình nên nói 下去.'},
+  {pre:'妈妈在楼上叫我，我得上', blank:'去', post:'看看。', hint:'(đi — rời xa chỗ người nói)', ans:'去', exp:'Tôi ở dưới, đi lên chỗ mẹ (xa chỗ mình) → 上去; nếu mẹ gọi tôi lên chỗ mẹ thì mẹ nói 上来.'},
+  {pre:'他每天到了公司', blank:'就', post:'喝一杯咖啡，不喝就不想工作。', hint:'(là … ngay)', ans:'就', exp:'V了 + tân ngữ + 就 + V: làm xong việc này là làm ngay việc kia; 就 đứng trước động từ thứ hai.'},
+  {pre:'A：我昨天玩儿游戏玩儿到早上四点。B：玩儿到四点，你今天', blank:'能', post:'不累吗？', hint:'(có thể … sao)', ans:'能', exp:'能 + 不 + tính từ + 吗 = sao mà không … được (chắc chắn là mệt); ôn 游戏 (Bài 1).'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['因为','脚','很','疼','，','所以','他','不','想','走路','。'],ans:'因为脚很疼，所以他不想走路。',audio:'因为脚很疼，所以他不想走路。'},
-  {words:['虽然','那','把','伞','很','小','，','但是','很','好用','。'],ans:'虽然那把伞很小，但是很好用。',audio:'虽然那把伞很小，但是很好用。'},
-  {words:['如果','你','去','楼上','，','就','能','看到','经理','。'],ans:'如果你去楼上，就能看到经理。',audio:'如果你去楼上，就能看到经理。'},
-  {words:['他','拿','了','伞','就','出去','了','。'],ans:'他拿了伞就出去了。',audio:'他拿了伞就出去了。'},
-  {words:['秘书','到','了','办公室','就','开始','工作','。'],ans:'秘书到了办公室就开始工作。',audio:'秘书到了办公室就开始工作。'},
-  {words:['他','每天','工作','这么','忙','，','能','不','瘦','吗','？'],ans:'他每天工作这么忙，能不瘦吗？',audio:'他每天工作这么忙，能不瘦吗？'},
-  {words:['因为','这','个','树','很','大','，','所以','夏天','很多','人','来','这儿','坐','。'],ans:'因为这个树很大，所以夏天很多人来这儿坐。',audio:'因为这个树很大，所以夏天很多人来这儿坐。'},
-  {words:['虽然','找','工作','不','容易','，','但是','他','还是','找到','了','。'],ans:'虽然找工作不容易，但是他还是找到了。',audio:'虽然找工作不容易，但是他还是找到了。'},
+  {words:['他','下了课','就','回家','复习','了','。'], ans:'他下了课就回家复习了。', audio:'他下了课就回家复习了。'},
+  {words:['周太太','每天','吃了','早饭','就','去','公园','走走','。'], ans:'周太太每天吃了早饭就去公园走走。', audio:'周太太每天吃了早饭就去公园走走。'},
+  {words:['秘书','给','我们','拿来','两杯','咖啡','。'], ans:'秘书给我们拿来两杯咖啡。', audio:'秘书给我们拿来两杯咖啡。'},
+  {words:['你','天天','坐着','玩儿','游戏','，','眼睛','能','不','疼','吗','？'], ans:'你天天坐着玩儿游戏，眼睛能不疼吗？', audio:'你天天坐着玩儿游戏，眼睛能不疼吗？'},
+  {words:['那辆','白色','的','车','是','我们','经理','的','。'], ans:'那辆白色的车是我们经理的。', audio:'那辆白色的车是我们经理的。'},
+  {words:['大家','都','觉得','他','胖','，','其实','他','比','我','还','瘦','。'], ans:'大家都觉得他胖，其实他比我还瘦。', audio:'大家都觉得他胖，其实他比我还瘦。'},
+  {words:['周明','回','北方','去','了','，','下个月','回来','。'], ans:'周明回北方去了，下个月回来。', audio:'周明回北方去了，下个月回来。'},
+  {words:['这个','汉字','很','容易','写','错','。'], ans:'这个汉字很容易写错。', audio:'这个汉字很容易写错。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'他去伞拿把了。',
-   opts:['他去拿把伞了。','他去伞拿把了。','他把伞去拿了。','伞把他去拿了。'],ans:0,
-   exp:'把 + danh từ (把伞) là một cụm từ liền, phải đứng NGUYÊN VẸN sau động từ 拿, không tách rời hay đảo vị trí.'},
-  {wrong:'我明天回去学校。',
-   opts:['我明天回学校去。','我明天回去学校。','我明天学校回去。','回我明天去学校。'],ans:0,
-   exp:'Tân ngữ chỉ NƠI CHỐN (学校) phải đứng GIỮA động từ và 来/去: 回 + 学校 + 去, không đặt 去 trước tân ngữ nơi chốn.'},
-  {wrong:'他拿伞了就走了。',
-   opts:['他拿了伞就走了。','他拿伞了就走了。','他了拿伞就走了。','拿了他伞就走了。'],ans:0,
-   exp:'了 phải đứng NGAY SAU động từ 拿, TRƯỚC tân ngữ 伞: 拿 + 了 + 伞, không đặt 了 sau tân ngữ.'},
-  {wrong:'他洗了澡去就上班。',
-   opts:['他洗了澡就去上班。','他洗了澡去就上班。','他就洗了澡去上班。','他洗就了澡去上班。'],ans:0,
-   exp:'Cấu trúc V了……就V…… : 就 phải đứng NGAY TRƯỚC động từ thứ hai (去上班), không chen vào giữa hay đặt sai vị trí.'},
-  {wrong:'经理到公司了就开会。',
-   opts:['经理到了公司就开会。','经理到公司了就开会。','经理了到公司就开会。','到了经理公司就开会。'],ans:0,
-   exp:'了 (biểu thị hành động hoàn thành) phải đứng ngay sau động từ 到, trước tân ngữ 公司: 到 + 了 + 公司.'},
-  {wrong:'他每天都运动，能累不吗？',
-   opts:['他每天都运动，能不累吗？','他每天都运动，能累不吗？','他每天都运动，不能累吗？','他每天都运动，累能不吗？'],ans:0,
-   exp:'Trong câu phản vấn 能……吗, phó từ phủ định 不 phải đứng NGAY TRƯỚC tính từ/động từ: 能 + 不 + 累 + 吗, không đặt 不 sau tính từ.'},
+  {wrong:'周经理回去办公室了。',
+   opts:['周经理回去了办公室。','周经理回办公室去了。','周经理去回办公室了。','周经理回办公室了去。'], ans:1,
+   exp:'Tân ngữ chỉ nơi chốn đứng GIỮA động từ và 来/去: 回 + 办公室 + 去.'},
+  {wrong:'你到了北京给我就打电话。',
+   opts:['你到了北京就给我打电话。','你就到了北京给我打电话。','你到北京了给我就打电话。','你到了北京给我打电话就。'], ans:0,
+   exp:'V了……就V……: 就 đứng ngay trước cụm động từ thứ hai (给我打电话), không chen vào giữa 给我 và 打电话.'},
+  {wrong:'他这次考试得了一百分，他能高兴不吗？',
+   opts:['他这次考试得了一百分，他能没高兴吗？','他这次考试得了一百分，他能是不高兴吗？','他这次考试得了一百分，他能高兴吗不？','他这次考试得了一百分，他能不高兴吗？'], ans:3,
+   exp:'Câu phản vấn 能 + 不 + tính từ + 吗 = sao mà không vui được; dùng 不 (không phải 没) và không chèn 是.'},
+  {wrong:'我家楼下有两个自行车。',
+   opts:['我家楼下有二辆自行车。','我家楼下有两把自行车。','我家楼下有两辆自行车。','我家楼下两辆自行车有。'], ans:2,
+   exp:'Xe dùng lượng từ 辆 (把 dùng cho ô, ghế…); trước lượng từ nói 两, không nói 二.'},
+  {wrong:'今天的作业是很难。',
+   opts:['今天的作业很难。','今天的作业难很。','今天的作业是难的很。','今天的作业太难很了。'], ans:0,
+   exp:'难 là tính từ: chủ ngữ + 很 + 难, không chèn 是 (lỗi do tiếng Việt nói “là”).'},
+  {wrong:'他比我很胖。',
+   opts:['他比我多胖了。','他比我胖多了。','他比我非常胖。','他很比我胖。'], ans:1,
+   exp:'Câu 比 không dùng 很/非常; muốn nói “hơn nhiều” thì thêm 多了 sau tính từ (ôn HSK2).'},
+  {wrong:'经理开会在办公室。',
+   opts:['经理开会在办公室里。','经理在开会办公室。','经理开在办公室会。','经理在办公室开会。'], ans:3,
+   exp:'在 + nơi chốn đứng TRƯỚC động từ: 在办公室开会 — không đặt sau như tiếng Việt “họp ở văn phòng”.'},
+  {wrong:'外面冷，你们快进来教室吧。',
+   opts:['外面冷，你们快进了教室来吧。','外面冷，你们快进教室吧来。','外面冷，你们快进教室来吧。','外面冷，你们快教室进来吧。'], ans:2,
+   exp:'Động từ + nơi chốn + 来: 进教室来; 来 không đứng trước tân ngữ chỉ nơi chốn, 了 không chen vào.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2448,97 +2447,96 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 2. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 2 (động từ + 来/去, V了……就V……, 能……吗). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Sau buổi chạy bộ, bạn thấy người ê ẩm và bạn bè hỏi thăm.',
-      q_zh: '运动以后你哪儿疼过？后来你是怎么做的？',
-      q_py: 'Yùndòng yǐhòu nǐ nǎr téng guo? Hòulái nǐ shì zěnme zuò de?',
-      q_vn: 'Sau khi vận động bạn từng đau ở đâu? Sau đó bạn đã làm gì?',
-      grammar: { label: 'A 也……，B 也…… (liệt kê hai trạng thái)', any: ['也'] },
+      situation: 'Bạn đang ở ngoài, bạn cùng phòng gọi điện hỏi bạn ở đâu và khi nào về.',
+      q_zh: '我做好饭了，你什么时候到家？七点前能回来吗？',
+      q_py: 'Wǒ zuòhǎo fàn le, nǐ shénme shíhou dào jiā? Qī diǎn qián néng huílai ma?',
+      q_vn: 'Mình nấu xong cơm rồi, bao giờ bạn về đến nhà? Trước bảy giờ về được không?',
+      grammar: { label: 'Động từ + 来/去 (回去, 上来, 下去…)', any: ['回去', '回来', '上来', '上去', '下来', '下去', '进来', '进去', '过来', '过去'] },
       need: [
-        { label: 'Nói chỗ bị đau', any: ['腿', '脚', '手', '头', '疼'] },
-        { label: 'Nói cách xử lý', any: ['休息', '看医生', '吃药', '不运动', '睡'] }
+        { label: 'Nói đang ở đâu', any: ['商店', '公司', '学校', '饭馆', '楼下', '医院', '公园', '朋友家'] },
+        { label: 'Nói bao lâu nữa về', any: ['点', '分钟', '小时', '能'] }
       ],
-      bonus: { label: 'Nói thêm bây giờ đã đỡ chưa', any: ['现在', '好了', '好多了'] },
-      vocab: ['腿', '疼', '脚'],
-      minLen: 18,
-      sample: '上个星期我跑步以后，腿也疼，脚也疼，所以我在家休息了两天，现在好多了。',
-      sample_py: 'Shàng ge xīngqī wǒ pǎobù yǐhòu, tuǐ yě téng, jiǎo yě téng, suǒyǐ wǒ zài jiā xiūxi le liǎng tiān, xiànzài hǎo duō le.',
-      sample_vn: 'Tuần trước sau khi chạy bộ, chân tôi đau, bàn chân cũng đau, nên tôi nghỉ ở nhà hai hôm, giờ đỡ nhiều rồi.',
-      tip: 'Cấu trúc A也…，B也… dùng để kể hai việc cùng xảy ra: 他也累，我也累。'
+      bonus: { label: 'Dùng 就 để nói làm xong là về ngay', any: ['就'] },
+      vocab: ['楼', '回去'],
+      minLen: 14,
+      sample: '我在楼下的商店买水果呢，买好了就回去，十分钟以后到家。',
+      sample_py: 'Wǒ zài lóu xià de shāngdiàn mǎi shuǐguǒ ne, mǎihǎo le jiù huíqu, shí fēnzhōng yǐhòu dào jiā.',
+      sample_vn: 'Mình đang mua hoa quả ở cửa hàng dưới nhà, mua xong là về, mười phút nữa tới nhà.',
+      tip: 'Người kia ở nhà hỏi “回来”, bạn ở ngoài trả lời “回去” — chọn 来/去 theo chỗ người nói.'
     },
     {
-      situation: 'Trời đổ mưa lúc bạn chuẩn bị ra khỏi nhà.',
-      q_zh: '外面下雨了，出门的时候你会拿什么？',
-      q_py: 'Wàimian xiàyǔ le, chū mén de shíhou nǐ huì ná shénme?',
-      q_vn: 'Bên ngoài mưa rồi, lúc ra khỏi nhà bạn sẽ cầm gì?',
-      grammar: { label: 'Động từ + 来/去 (bổ ngữ xu hướng)', any: ['出去', '回来', '下去', '上来', '过去', '进来', '回去'] },
+      situation: 'Bạn mới quen hỏi về buổi sáng của bạn trước khi đi học / đi làm.',
+      q_zh: '你每天早上起床以后做什么？几点去学校？',
+      q_py: 'Nǐ měitiān zǎoshang qǐchuáng yǐhòu zuò shénme? Jǐ diǎn qù xuéxiào?',
+      q_vn: 'Mỗi sáng sau khi dậy bạn làm gì? Mấy giờ đi học?',
+      grammar: { label: 'V了……就V…… (xong việc này là làm ngay việc kia)', any: ['就'] },
       need: [
-        { label: 'Nói cầm theo đồ gì', any: ['伞', '雨伞', '衣服', '帽子'] },
-        { label: 'Dùng lượng từ 把 với cái ô', any: ['一把', '把伞'] }
+        { label: 'Kể việc làm buổi sáng', any: ['洗', '吃', '跑步', '喝', '看', '运动'] },
+        { label: 'Nói giờ đi', any: ['点'] }
       ],
-      bonus: { label: 'Nói thêm cách đi lại hôm mưa', any: ['出租车', '公共汽车', '开车', '走路', '地铁'] },
-      vocab: ['拿', '把', '伞'],
+      bonus: { label: 'Ôn V + 好 (吃好, 准备好)', any: ['好了', '准备好', '吃好'] },
+      vocab: ['就'],
       minLen: 16,
-      sample: '外面下雨了，我会拿一把伞出去，如果雨很大，我就叫辆出租车。',
-      sample_py: 'Wàimian xiàyǔ le, wǒ huì ná yì bǎ sǎn chū qù, rúguǒ yǔ hěn dà, wǒ jiù jiào liàng chūzūchē.',
-      sample_vn: 'Bên ngoài mưa rồi, tôi sẽ cầm một chiếc ô ra ngoài, nếu mưa to thì tôi gọi một chiếc taxi.',
-      tip: '来/去 đứng sau động từ cho biết hướng: 拿出去、走回来。'
+      sample: '早上我喝了一杯牛奶就去跑步，跑步回来吃个面包，七点就去学校了。',
+      sample_py: 'Zǎoshang wǒ hēle yì bēi niúnǎi jiù qù pǎobù, pǎobù huílai chī ge miànbāo, qī diǎn jiù qù xuéxiào le.',
+      sample_vn: 'Buổi sáng tôi uống một cốc sữa là đi chạy bộ, chạy về ăn cái bánh mì, bảy giờ thì đi học.',
+      tip: '了 đứng ngay sau động từ thứ nhất (喝了一杯牛奶), 就 đứng trước động từ thứ hai (就去跑步).'
     },
     {
-      situation: 'Bạn của bạn than dạo này tăng cân nhanh và hỏi thói quen buổi tối của bạn.',
-      q_zh: '你晚上吃了饭就做什么？这样对身体好吗？',
-      q_py: 'Nǐ wǎnshang chī le fàn jiù zuò shénme? Zhè yàng duì shēntǐ hǎo ma?',
-      q_vn: 'Buổi tối ăn cơm xong bạn làm gì ngay? Như vậy có tốt cho sức khỏe không?',
-      grammar: { label: 'V 了……就 V…… (làm xong việc này là làm ngay việc kia)', any: ['了就', '就'] },
+      situation: 'Đồng nghiệp than cả tuần làm việc đến khuya. Hãy đáp bằng một câu phản vấn rồi khuyên họ.',
+      q_zh: '我这个星期每天都工作到晚上十一点，觉得很累。',
+      q_py: 'Wǒ zhège xīngqī měitiān dōu gōngzuò dào wǎnshang shíyī diǎn, juéde hěn lèi.',
+      q_vn: 'Tuần này ngày nào mình cũng làm đến mười một giờ đêm, thấy mệt lắm.',
+      grammar: { label: 'Câu phản vấn 能……吗？(sao mà … được)', any: ['能'] },
       need: [
-        { label: 'Kể việc làm ngay sau bữa tối', any: ['走走', '散步', '看书', '睡觉', '洗', '运动', '学'] },
-        { label: 'Nhận xét tốt hay không tốt', any: ['好', '不好', '容易胖', '健康'] }
+        { label: 'Khuyên nghỉ ngơi', any: ['休息', '睡觉', '睡'] },
+        { label: 'Nói lúc nào nghỉ', any: ['周末', '今天', '明天', '晚上'] }
       ],
-      bonus: { label: 'Nhắc đến chuyện béo/gầy bằng 胖 hoặc 瘦', any: ['胖', '瘦'] },
-      vocab: ['其实', '胖', '瘦'],
-      minLen: 18,
-      sample: '我吃了饭就出去走走，不马上睡觉。其实吃了饭就睡很容易胖，对身体也不好。',
-      sample_py: 'Wǒ chī le fàn jiù chū qù zǒuzou, bù mǎshàng shuìjiào. Qíshí chī le fàn jiù shuì hěn róngyì pàng, duì shēntǐ yě bù hǎo.',
-      sample_vn: 'Tôi ăn cơm xong là ra ngoài đi dạo, không đi ngủ ngay. Thật ra ăn xong ngủ luôn rất dễ béo, cũng không tốt cho sức khỏe.',
-      tip: 'V了…就V… nhấn mạnh hai việc nối nhau: 我下了班就回家。'
+      bonus: { label: 'Dùng 别 để khuyên', any: ['别'] },
+      vocab: ['能'],
+      minLen: 14,
+      sample: '天天工作到十一点，身体能好吗？这个周末别工作了，在家好好休息吧。',
+      sample_py: 'Tiāntiān gōngzuò dào shíyī diǎn, shēntǐ néng hǎo ma? Zhège zhōumò bié gōngzuò le, zài jiā hǎohāo xiūxi ba.',
+      sample_vn: 'Ngày nào cũng làm đến mười một giờ, sức khoẻ sao mà tốt được? Cuối tuần này đừng làm nữa, ở nhà nghỉ ngơi cho tử tế nhé.',
+      tip: '能好吗 = “sao mà tốt được” (chắc chắn không tốt); 能不累吗 = “sao mà không mệt” — 不 đứng ngay trước tính từ.'
     },
     {
-      situation: 'Bạn gọi điện đến công ty nhưng giám đốc không có ở văn phòng.',
-      q_zh: '你给经理打电话，秘书说他不在办公室，你会怎么说？',
-      q_py: 'Nǐ gěi jīnglǐ dǎdiànhuà, mìshū shuō tā bú zài bàngōngshì, nǐ huì zěnme shuō?',
-      q_vn: 'Bạn gọi cho giám đốc, thư ký nói ông ấy không có ở văn phòng, bạn sẽ nói gì?',
-      grammar: { label: 'Câu phản vấn 能……吗？(nhờ vả lịch sự)', any: ['能', '可以'] },
+      situation: 'Lâu không gặp, một người bạn khen bạn gầy đi và hỏi bạn làm thế nào.',
+      q_zh: '你瘦了！你是怎么做的？',
+      q_py: 'Nǐ shòu le! Nǐ shì zěnme zuò de?',
+      q_vn: 'Bạn gầy đi rồi! Bạn đã làm thế nào vậy?',
+      grammar: { label: '其实 + sự thật khác điều người kia nghĩ', any: ['其实'] },
       need: [
-        { label: 'Chào và nói muốn tìm ai', any: ['您好', '我找', '经理'] },
-        { label: 'Nhờ nhắn lại hoặc hẹn gọi lại', any: ['告诉', '打', '下午', '一下'] }
+        { label: 'Nói đã vận động gì', any: ['跑步', '运动', '走路', '游泳', '打篮球', '踢足球'] },
+        { label: 'Nói kết quả', any: ['瘦', '公斤', '胖'] }
       ],
-      bonus: { label: 'Nói lời cảm ơn lịch sự', any: ['谢谢', '麻烦'] },
-      vocab: ['经理', '秘书', '办公室'],
-      minLen: 18,
-      sample: '您好，我找周经理。他不在办公室吗？那我下午再打来，能麻烦您告诉他一下吗？谢谢您。',
-      sample_py: 'Nín hǎo, wǒ zhǎo Zhōu jīnglǐ. Tā bú zài bàngōngshì ma? Nà wǒ xiàwǔ zài dǎ lái, néng máfan nín gàosu tā yíxià ma? Xièxie nín.',
-      sample_vn: 'Chào chị, tôi tìm giám đốc Chu. Anh ấy không ở văn phòng ạ? Vậy chiều tôi gọi lại, phiền chị nhắn giúp tôi được không? Cảm ơn chị.',
-      tip: '能……吗？là cách nhờ vả lịch sự: 能帮我一下吗？'
+      bonus: { label: 'Dùng V了……就V……', any: ['就'] },
+      vocab: ['其实', '瘦', '胖'],
+      minLen: 16,
+      sample: '谢谢！其实我没少吃饭，我每天下了班就去游泳，两个月瘦了四公斤。',
+      sample_py: 'Xièxie! Qíshí wǒ méi shǎo chī fàn, wǒ měitiān xiàle bān jiù qù yóuyǒng, liǎng ge yuè shòule sì gōngjīn.',
+      sample_vn: 'Cảm ơn! Thật ra mình không ăn ít đi, mỗi ngày tan làm là mình đi bơi, hai tháng gầy đi bốn cân.',
+      tip: 'Gầy đi / béo lên bao nhiêu: 瘦了 / 胖了 + số + 公斤.'
     },
     {
-      situation: 'Một người bạn buồn vì nghĩ mình béo lên, bạn an ủi họ.',
-      q_zh: '朋友说自己太胖了，很不高兴，你会怎么跟他说？',
-      q_py: 'Péngyou shuō zìjǐ tài pàng le, hěn bù gāoxìng, nǐ huì zěnme gēn tā shuō?',
-      q_vn: 'Bạn của bạn nói mình béo quá và rất buồn, bạn sẽ nói gì với họ?',
-      grammar: { label: '其实 + ý kiến thật của bạn', any: ['其实'] },
+      situation: 'Trời mưa, bạn cùng lớp không mang ô và hỏi bạn có ô không. Ô của bạn để trên văn phòng.',
+      q_zh: '下雨了！我今天没带伞，你带了吗？',
+      q_py: 'Xiàyǔ le! Wǒ jīntiān méi dài sǎn, nǐ dài le ma?',
+      q_vn: 'Mưa rồi! Hôm nay mình không mang ô, bạn có mang không?',
+      grammar: { label: 'Động từ + 来/去 (上去, 拿来, 下来…)', any: ['上去', '下去', '上来', '下来', '回去', '拿来', '拿去', '进去', '过来'] },
       need: [
-        { label: 'An ủi bạn', any: ['不胖', '别', '没关系', '很好看'] },
-        { label: 'Góp ý cách làm', any: ['运动', '锻炼', '走走', '吃', '睡'] }
+        { label: 'Dùng lượng từ 把 với ô', any: ['一把', '两把', '这把', '那把'] },
+        { label: 'Nói chỗ để ô', any: ['办公室', '楼上', '教室', '家'] }
       ],
-      bonus: { label: 'Dùng 一点儿也不 của bài trước', any: ['一点儿也', '一点儿都'] },
-      vocab: ['其实', '胖', '瘦'],
-      minLen: 18,
-      sample: '其实你一点儿也不胖，比以前还瘦了一些。多出去走走、少吃甜的就好了，别不高兴。',
-      sample_py: 'Qíshí nǐ yìdiǎnr yě bú pàng, bǐ yǐqián hái shòu le yì xiē. Duō chū qù zǒuzou, shǎo chī tián de jiù hǎo le, bié bù gāoxìng.',
-      sample_vn: 'Thật ra bạn chẳng béo chút nào, còn gầy hơn trước một chút. Chịu khó ra ngoài đi dạo, bớt ăn ngọt là được, đừng buồn.',
-      tip: '其实 dùng khi nói ra sự thật khác với điều người kia nghĩ: 其实我不累。'
+      vocab: ['把', '伞', '拿', '办公室'],
+      minLen: 16,
+      sample: '有，我办公室里有两把伞，我们一起上去拿吧，你拿一把回家。',
+      sample_py: 'Yǒu, wǒ bàngōngshì li yǒu liǎng bǎ sǎn, wǒmen yìqǐ shàngqu ná ba, nǐ ná yì bǎ huí jiā.',
+      sample_vn: 'Có, trong văn phòng mình có hai cái ô, chúng mình cùng lên lấy nhé, bạn cầm một cái về nhà.',
+      tip: 'Ô dùng lượng từ 把: 一把伞; nói 两把, không nói 二把.'
     }
   ]
 };
@@ -2547,26 +2545,19 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Vì chân tôi bị đau nên hôm nay tôi không đi leo núi được.', zh:'因为我的腿疼，所以今天不能去爬山。', py:'Yīnwèi wǒ de tuǐ téng, suǒyǐ jīntiān bù néng qù páshān.'},
-  {vi:'Tuy công việc thư ký không khó, nhưng cần phải rất cẩn thận.', zh:'虽然秘书的工作不难，但是要很小心。', py:'Suīrán mìshū de gōngzuò bù nán, dànshì yào hěn xiǎoxīn.'},
-  {vi:'Nếu chiếc ô này bị hỏng thì bạn dùng cái của tôi đi.', zh:'如果这把伞坏了，你就用我的吧。', py:'Rúguǒ zhè bǎ sǎn huài le, nǐ jiù yòng wǒ de ba.'},
-  {vi:'Vì anh ấy béo lên nhiều nên quần áo cũ đều mặc không vừa nữa.', zh:'因为他胖了很多，所以旧衣服都穿不下了。', py:'Yīnwèi tā pàngle hěn duō, suǒyǐ jiù yīfu dōu chuān bu xià le.'},
-  {vi:'Tuy cô ấy gầy đi nhiều nhưng vẫn ăn rất khỏe.', zh:'虽然她瘦了很多，但是还是吃得很多。', py:'Suīrán tā shòule hěn duō, dànshì háishi chī de hěn duō.'},
-  {vi:'Thư ký vừa lên lầu vừa gọi điện cho giám đốc.', zh:'秘书一边上楼，一边给经理打电话。', py:'Mìshū yìbiān shànglóu, yìbiān gěi jīnglǐ dǎ diànhuà.'},
-  {vi:'Chỉ cần bạn mang theo ô thì dù trời mưa cũng không sao.', zh:'只要你带着伞，下雨就没关系。', py:'Zhǐyào nǐ dàizhe sǎn, xiàyǔ jiù méi guānxi.'},
-  {vi:'Cây trong sân nhà tôi vừa cao vừa to, mùa hè rất mát.', zh:'我家院子里的树又高又大，夏天很凉快。', py:'Wǒ jiā yuànzi lǐ de shù yòu gāo yòu dà, xiàtiān hěn liángkuai.'},
+  {vi:'Giám đốc về đến văn phòng là gọi thư ký vào ngay.', zh:'经理到了办公室就叫秘书进去。', py:'Jīnglǐ dàole bàngōngshì jiù jiào mìshū jìnqu.'},
+  {vi:'Chân đau thế này, bạn đi bộ về nhà sao được?', zh:'脚这么疼，你能走回家吗？', py:'Jiǎo zhème téng, nǐ néng zǒu huí jiā ma?'},
+  {vi:'Cái ô này là của bà Chu, ngày mai tôi mang trả lại cho bà ấy.', zh:'这把伞是周太太的，明天我给她送回去。', py:'Zhè bǎ sǎn shì Zhōu tàitai de, míngtiān wǒ gěi tā sòng huíqu.'},
+  {vi:'Thật ra bài thi lần này không khó, dễ hơn lần trước nhiều.', zh:'其实这次考试不难，比上次容易多了。', py:'Qíshí zhè cì kǎoshì bù nán, bǐ shàng cì róngyì duō le.'},
+  {vi:'Nhà tôi ở ngay trong tòa nhà phía sau trường, đi bộ năm phút là tới.', zh:'我家就在学校后面的楼里，走路五分钟就到了。', py:'Wǒ jiā jiù zài xuéxiào hòumiàn de lóu li, zǒulù wǔ fēnzhōng jiù dào le.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì anh Chu họp đến rất muộn nên thư ký vẫn đang đợi anh ấy ở văn phòng.', zh:'因为周先生开会开到很晚，所以秘书还在办公室等他。', py:'Yīnwèi Zhōu xiānsheng kāihuì kāi dào hěn wǎn, suǒyǐ mìshū hái zài bàngōngshì děng tā.'},
-  {vi:'Tuy chiếc xe đó không đắt nhưng lái rất tốt.', zh:'虽然那辆车不贵，但是很好开。', py:'Suīrán nà liàng chē bú guì, dànshì hěn hǎo kāi.'},
-  {vi:'Nếu bà Chu gọi điện đến, bạn cứ nói với bà ấy là giám đốc mai sẽ về.', zh:'如果周太太打电话来，你就告诉她经理明天回来。', py:'Rúguǒ Zhōu tàitai dǎ diànhuà lái, nǐ jiù gàosu tā jīnglǐ míngtiān huílai.'},
-  {vi:'Anh ấy vừa cầm được ô là lập tức ra cửa ngay.', zh:'他一拿到伞，就马上出门了。', py:'Tā yì nádào sǎn, jiù mǎshàng chūmén le.'},
-  {vi:'Thư ký tuy rất bận nhưng văn phòng lúc nào cũng rất sạch sẽ.', zh:'秘书虽然很忙，但是办公室一直很干净。', py:'Mìshū suīrán hěn máng, dànshì bàngōngshì yìzhí hěn gānjìng.'},
-  {vi:'Chỉ cần bạn nghỉ ngơi nhiều hơn thì chân sẽ đỡ đau hơn.', zh:'只要你多休息，腿就不会那么疼了。', py:'Zhǐyào nǐ duō xiūxi, tuǐ jiù bú huì nàme téng le.'},
-  {vi:'Cái cây đó vừa to vừa già, đã ở đây một trăm năm rồi.', zh:'那棵树又大又老，已经在这儿一百年了。', py:'Nà kē shù yòu dà yòu lǎo, yǐjīng zài zhèr yìbǎi nián le.'},
-  {vi:'Bạn mỗi ngày vừa bận chăm con vừa phải đi làm, sao mà không mệt được?', zh:'你每天忙着照顾孩子，还要上班，能不累吗？', py:'Nǐ měitiān mángzhe zhàogù háizi, hái yào shàngbān, néng bú lèi ma?'},
+  {vi:'Chiếc xe này là của vợ tôi, tôi rất ít khi lái.', zh:'这辆车是我太太的，我很少开。', py:'Zhè liàng chē shì wǒ tàitai de, wǒ hěn shǎo kāi.'},
+  {vi:'Dưới gốc cây có rất nhiều người đang ngồi đợi xe buýt.', zh:'树下坐着很多人，都在等公共汽车。', py:'Shù xià zuòzhe hěn duō rén, dōu zài děng gōnggòng qìchē.'},
+  {vi:'Tuy ngày nào anh ấy cũng đi chạy bộ nhưng chẳng gầy đi được cân nào.', zh:'虽然他每天都去跑步，但是他一公斤也没瘦。', py:'Suīrán tā měitiān dōu qù pǎobù, dànshì tā yì gōngjīn yě méi shòu.'},
+  {vi:'Bạn xuống đi, mình đang đợi bạn ở cửa tòa nhà.', zh:'你下来吧，我在楼门口等你。', py:'Nǐ xiàlai ba, wǒ zài lóu ménkǒu děng nǐ.'},
 ];

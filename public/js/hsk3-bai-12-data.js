@@ -1581,72 +1581,80 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'太阳',right:'从西边出来'},
-  {left:'经理',right:'生气了'},
-  {left:'放到',right:'行李箱里'},
-  {left:'照顾好',right:'自己'},
-  {left:'忘带',right:'护照'},
-  {left:'飞机',right:'起飞'},
-  {left:'写在',right:'黑板上'},
-  {left:'因为经理生气了，',right:'所以小刚8点前要到公司。'},
-  {left:'虽然他没带铅笔，',right:'但是老师还是教了他画画儿。'},
-  {left:'如果你把重要的东西放在我这儿，',right:'我就帮你拿好。'},
-  {left:'只要你自己照顾好自己，',right:'我就放心了。'},
+  {left:'快点儿，飞机就要', right:'起飞了'},
+  {left:'从这儿一直往', right:'西走'},
+  {left:'他在黑板上', right:'画了一个太阳'},
+  {left:'你的护照放在', right:'我的包里'},
+  {left:'这件事情你要', right:'自己想想'},
+  {left:'他又迟到了，经理很', right:'生气'},
+  {left:'去北京旅游需要', right:'多少钱'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'因为今天没有云，所以',blank:'太阳',post:'特别亮。',hint:'(mặt trời)',ans:'太阳'},
-  {pre:'如果你从',blank:'西',post:'边走，就能更快到公园。',hint:'(phía tây)',ans:'西'},
-  {pre:'经理',blank:'生气',post:'了。',hint:'(giận, tức giận)',ans:'生气'},
-  {pre:'如果你东西太多，就把书放到',blank:'行李箱',post:'里吧。',hint:'(hành lý, vali)',ans:'行李箱'},
-  {pre:'如果没有人帮你，你就得',blank:'自己',post:'解决。',hint:'(tự mình, bản thân)',ans:'自己'},
-  {pre:'因为外面下雨，所以我把伞放在',blank:'包',post:'里了。',hint:'(cặp, túi)',ans:'包'},
-  {pre:'打开包以后我才',blank:'发现',post:'钱包没了。',hint:'(phát hiện)',ans:'发现'},
-  {pre:'到了机场，我才发现没带',blank:'护照',post:'，只好又回家拿。',hint:'(hộ chiếu)',ans:'护照'},
-  {pre:'请大家坐好，飞机就要',blank:'起飞',post:'了。',hint:'(cất cánh)',ans:'起飞'},
-  {pre:'',blank:'司机',post:'把我送到机场以后。',hint:'(tài xế)',ans:'司机'},
-  {pre:'她',blank:'教',post:'我们说中文。',hint:'(dạy)',ans:'教'},
-  {pre:'妹妹喜欢',blank:'画',post:'小动物。',hint:'(vẽ)',ans:'画'},
-  {pre:'下次学生',blank:'需要',post:'带的东西写在黑板上。',hint:'(cần)',ans:'需要'},
-  {pre:'我把东西写在',blank:'黑板',post:'上。',hint:'(bảng đen)',ans:'黑板'},
+  {pre:'夏天中午的', blank:'太阳', post:'很热，去外面的时候别忘记带伞。', hint:'(mặt trời)', ans:'太阳', exp:'太阳 = mặt trời; 忘记 + 带 = quên mang (bài 11).'},
+  {pre:'A：请问，银行怎么走？B：从这儿往', blank:'西', post:'走，过两个路口就到了。', hint:'(phía tây)', ans:'西', exp:'往 + hướng + 走 = đi về hướng…; 路口 = ngã tư (HSK2), 银行 (bài 7).'},
+  {pre:'A：你怎么不跟小丽说话了？B：她借了我的词典一直没还，我有点儿', blank:'生气', post:'。', hint:'(giận)', ans:'生气', exp:'有点儿 + 生气 = hơi giận; ôn 借 / 还 (bài 11) và 一直 (bài 1).'},
+  {pre:'你已经十八岁了，这些事情要', blank:'自己', post:'做，别总是让妈妈帮你。', hint:'(tự mình)', ans:'自己', exp:'自己 + động từ = tự mình làm; 总是 = lúc nào cũng (bài 4).'},
+  {pre:'回到家，我', blank:'发现', post:'忘记关空调了。', hint:'(phát hiện, nhận ra)', ans:'发现', exp:'发现 = nhận ra (lúc đó mới biết); 忘记关空调 (bài 11).'},
+  {pre:'飞机十点', blank:'起飞', post:'，我们八点就要到机场。', hint:'(cất cánh)', ans:'起飞', exp:'起飞 = cất cánh; 八点就要到 = 8 giờ đã phải có mặt (就 = sớm).'},
+  {pre:'A：你爸爸做什么工作？B：他是公共汽车', blank:'司机', post:'，每天要开十个小时车。', hint:'(tài xế)', ans:'司机', exp:'公共汽车司机 = tài xế xe buýt; 开车 = lái xe.'},
+  {pre:'A：你的汉语说得真好！B：都是我们老师', blank:'教', post:'得好。', hint:'(dạy)', ans:'教', exp:'教 đọc jiāo = dạy; 教得好 = dạy giỏi (ôn bổ ngữ 得, HSK2).'},
+  {pre:'妹妹', blank:'画', post:'了一只小猫，画得真漂亮。', hint:'(vẽ)', ans:'画', exp:'画 = vẽ; 画了一只小猫 = đã vẽ một con mèo (lượng từ 只 cho con vật).'},
+  {pre:'你什么时候', blank:'需要', post:'电脑就告诉我，我把我的借给你。', hint:'(cần)', ans:'需要', exp:'需要 = cần; 把 + vật + 借给 + người = cho ai mượn cái gì.'},
+  {pre:'大家请看', blank:'黑板', post:'，今天我们学这几个汉字。', hint:'(bảng đen)', ans:'黑板', exp:'黑板 = bảng đen; 看黑板 = nhìn lên bảng.'},
+  {pre:'A：我的眼镜呢？B：你自己把它放', blank:'在', post:'椅子上了，你忘记了？', hint:'(ở)', ans:'在', exp:'把 + vật + 放在 + nơi chốn = để vật ở đâu; 在 đứng ngay sau động từ 放.'},
+  {pre:'我弟弟很聪明，学了两个星期', blank:'就', post:'会游泳了。', hint:'(đã — nhanh hơn nghĩ)', ans:'就', exp:'Thời gian + 就 + V + 了 = nhanh/sớm hơn mong đợi; 聪明 (bài 4).'},
+  {pre:'会议九点开始，他九点半', blank:'才', post:'来，大家等了他半个小时。', hint:'(mới — muộn hơn mong đợi)', ans:'才', exp:'才 + động từ = muộn / chậm hơn mong đợi, sau 才 thường không có 了; ngược lại 就……了 = sớm / nhanh.'}
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['太阳','出来','以后','，','我们','就','去','跑步','了','。'],ans:'太阳出来以后，我们就去跑步了。',audio:'太阳出来以后，我们就去跑步了。'},
-  {words:['妈妈','有点儿','生气','。'],ans:'妈妈有点儿生气。',audio:'妈妈有点儿生气。'},
-  {words:['我','帮','你','把','水果','放到','包','里','吧','。'],ans:'我帮你把水果放到包里吧。',audio:'我帮你把水果放到包里吧。'},
-  {words:['下课','以后','我','才','发现','忘','拿','课本','了','。'],ans:'下课以后我才发现忘拿课本了。',audio:'下课以后我才发现忘拿课本了。'},
-  {words:['因为','学生','忘','了','拿','铅笔','，','所以','老师','有点儿','生气','。'],ans:'因为学生忘了拿铅笔，所以老师有点儿生气。',audio:'因为学生忘了拿铅笔，所以老师有点儿生气。'},
-  {words:['虽然','外面','下雨','，','但是','他','还是','去','公园','画画儿','了','。'],ans:'虽然外面下雨，但是他还是去公园画画儿了。',audio:'虽然外面下雨，但是他还是去公园画画儿了。'},
-  {words:['如果','你','把','重要','的','东西','放在','我','这儿','，','我','就','帮','你','拿好','。'],ans:'如果你把重要的东西放在我这儿，我就帮你拿好。',audio:'如果你把重要的东西放在我这儿，我就帮你拿好。'},
-  {words:['我','看','你','还是','把','重要','的','东西','放在','我','这儿','吧','。'],ans:'我看你还是把重要的东西放在我这儿吧。',audio:'我看你还是把重要的东西放在我这儿吧。'},
+  {words:['他','把','两个','行李箱','都','搬','到','楼上','了','。'], ans:'他把两个行李箱都搬到楼上了。', audio:'他把两个行李箱都搬到楼上了。'},
+  {words:['妈妈','六点','就','起床','了','，','比','我们','早','多了','。'], ans:'妈妈六点就起床了，比我们早多了。', audio:'妈妈六点就起床了，比我们早多了。'},
+  {words:['司机','把','我','送','到','了','机场','门口','。'], ans:'司机把我送到了机场门口。', audio:'司机把我送到了机场门口。'},
+  {words:['我','打开','包','以后','，','发现','护照','不见','了','。'], ans:'我打开包以后，发现护照不见了。', audio:'我打开包以后，发现护照不见了。'},
+  {words:['姐姐','把','她','的','旧','手机','送给','我','了','。'], ans:'姐姐把她的旧手机送给我了。', audio:'姐姐把她的旧手机送给我了。'},
+  {words:['你','需要','什么','就','告诉','我','，','我','给','你','买','。'], ans:'你需要什么就告诉我，我给你买。', audio:'你需要什么就告诉我，我给你买。'},
+  {words:['我','到','机场','的','时候','，','飞机','已经','起飞','了','。'], ans:'我到机场的时候，飞机已经起飞了。', audio:'我到机场的时候，飞机已经起飞了。'},
+  {words:['他','把','自己','的','名字','写','在','了','照片','后面','。'], ans:'他把自己的名字写在了照片后面。', audio:'他把自己的名字写在了照片后面。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'我早上五点起床就了。',
-   opts:['我早上五点就起床了。','我早上五点起床就了。','我早上就五点起床了。','我早上五点了就起床。'],ans:0,
-   exp:'就 (phó từ) phải đứng NGAY TRƯỚC động từ, không tách rời hoặc đặt sau 了.'},
-  {wrong:'弟弟三个小时洗才完衣服。',
-   opts:['弟弟三个小时才洗完衣服。','弟弟三个小时洗才完衣服。','弟弟才三个小时洗完衣服。','弟弟三个小时洗完才衣服。'],ans:0,
-   exp:'才 phải đứng NGAY TRƯỚC động từ (洗完), không chen vào giữa động từ và bổ ngữ.'},
-  {wrong:'我把照片你的包在放了。',
-   opts:['我把照片放在你的包里了。','我把照片你的包在放了。','我把照片放你的包在里了。','我照片把放在你的包里了。'],ans:0,
-   exp:'Cấu trúc 把字句2: A+把+B+动词+在+vị trí, các thành phần phải đúng thứ tự, không đảo lộn.'},
-  {wrong:'我朋友把书我借了。',
-   opts:['我朋友把书借给我了。','我朋友把书我借了。','我朋友把书借我给了。','我把朋友书借给我了。'],ans:0,
-   exp:'Cấu trúc A+把+B+动词+给+người: 给+người phải đứng sau động từ, diễn tả chuyển giao sự vật.'},
-  {wrong:'妈妈把行李箱到车上放了。',
-   opts:['妈妈把行李箱放到车上了。','妈妈把行李箱到车上放了。','妈妈把行李箱放车上到了。','把妈妈行李箱放到车上了。'],ans:0,
-   exp:'Động từ (放) phải đứng NGAY SAU 把+B(行李箱), trước 到+vị trí, không đảo ngược thứ tự.'},
+  {wrong:'我放在桌子上把护照了。',
+   opts:['我把护照放桌子上在了。','我把在桌子上护照放了。','我护照把放在桌子上了。','我把护照放在桌子上了。'], ans:3,
+   exp:'Câu 把 (2): 把 + vật + động từ + 在 + nơi chốn: 把护照放在桌子上; 在 đứng ngay sau 放.'},
+  {wrong:'我把那本词典给了他还。',
+   opts:['我把那本词典还给他了。','我把那本词典还他给了。','我那本词典把还给他了。','我还给他把那本词典了。'], ans:0,
+   exp:'把 + vật + 还给 + người + 了: 给 dính liền sau động từ 还, người nhận đứng sau 给.'},
+  {wrong:'司机把我们没送到机场。',
+   opts:['司机把我们不送到机场。','司机没把我们送到机场。','司机没把我们送到机场了。','司机没送把我们到机场。'], ans:1,
+   exp:'没 đứng TRƯỚC 把; đã phủ định bằng 没 thì không thêm 了 ở cuối.'},
+  {wrong:'请把你的行李箱放这儿到。',
+   opts:['请到这儿把你的行李箱放。','请把你的行李箱到这儿放。','请把你的行李箱放到这儿。','请把到这儿你的行李箱放。'], ans:2,
+   exp:'放到 + nơi chốn: 到 đứng ngay sau động từ, nơi chốn đứng sau 到 — không đặt nơi chốn trước như tiếng Việt “để đây”.'},
+  {wrong:'他学了三个月会说汉语就了。',
+   opts:['他学了三个月会就说汉语了。','他就了学三个月会说汉语。','他学就了三个月会说汉语。','他学了三个月就会说汉语了。'], ans:3,
+   exp:'就 đứng ngay trước động từ / động từ năng nguyện (就会说), 了 ở cuối câu: nhanh hơn mong đợi.'},
+  {wrong:'妈妈生气我了。',
+   opts:['妈妈对我生气了。','妈妈生气了我。','妈妈对生气我了。','妈妈我对生气了。'], ans:0,
+   exp:'生气 không mang tân ngữ: giận ai = 对 + người + 生气.'},
+  {wrong:'老师教汉语我们。',
+   opts:['老师我们教汉语。','老师教给汉语我们。','老师教我们汉语。','老师对我们教汉语。'], ans:2,
+   exp:'教 + người + nội dung: 教我们汉语 (người học đứng trước môn học), không dùng 对.'},
+  {wrong:'弟弟坐公共汽车去学校自己。',
+   opts:['弟弟自己坐公共汽车去学校。','弟弟坐自己公共汽车去学校。','自己弟弟坐公共汽车去学校。','弟弟自己的坐公共汽车去学校。'], ans:0,
+   exp:'自己 (tự mình) đứng ngay sau chủ ngữ, trước động từ: 弟弟自己坐…… — không để cuối câu như tiếng Việt “tự đi”.'},
+  {wrong:'我等了一个小时，他才来了。',
+   opts:['我等了一个小时，才他来。','我等了一个小时，他才来。','我等了一个小时，他来才。','我等了一个小时，他才没来。'], ans:1,
+   exp:'Đến muộn (phải chờ lâu): chủ ngữ + 才 + động từ, không thêm 了; 才 đứng sau chủ ngữ, trước động từ.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1654,97 +1662,97 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 12. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 12 (câu chữ 把: 把 B + động từ + 在/到/给…, 就 = sớm/nhanh hơn mong đợi). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn đang xếp đồ cho chuyến bay sáng mai.',
-      q_zh: '出门旅游以前，你会把护照和钱放在哪儿？',
-      q_py: 'Chū mén lǚyóu yǐqián, nǐ huì bǎ hùzhào hé qián fàng zài nǎr?',
-      q_vn: 'Trước khi đi du lịch, bạn để hộ chiếu và tiền ở đâu?',
-      grammar: { label: '把 + đồ vật + 放在/放到 + nơi chốn', any: ['放在', '放到', '把'] },
+      situation: 'Ngày mai bạn đi du lịch bằng máy bay. Bạn cùng phòng hỏi bạn xếp đồ thế nào.',
+      q_zh: '明天你要坐飞机去旅游，什么东西放在包里？什么放在行李箱里？',
+      q_py: 'Míngtiān nǐ yào zuò fēijī qù lǚyóu, shénme dōngxi fàng zài bāo li? Shénme fàng zài xínglixiāng li?',
+      q_vn: 'Mai bạn đi du lịch bằng máy bay, đồ gì để trong túi? Đồ gì để trong vali?',
+      grammar: { label: '把 + đồ vật + 放在/放到 + nơi chốn', any: ['放在', '放到'] },
       need: [
-        { label: 'Dùng 把……放在/放到……', any: ['放在', '放到'] },
-        { label: 'Nói rõ để ở đâu', any: ['包', '行李箱', '口袋', '身上'] }
+        { label: 'Nói đồ để trong túi', any: ['包'] },
+        { label: 'Nói đồ để trong vali', any: ['行李箱'] }
       ],
-      bonus: { label: 'Nói lý do làm vậy', any: ['放心', '方便', '安全', '容易找'] },
+      bonus: { label: 'Nói lý do (tiện, dễ tìm…)', any: ['方便', '因为', '所以'] },
       vocab: ['护照', '包', '行李箱'],
-      minLen: 20,
-      sample: '出门以前我会把护照和钱放在包里，把大件的衣服放到行李箱里，这样比较方便，也放心。',
-      sample_py: 'Chū mén yǐqián wǒ huì bǎ hùzhào hé qián fàng zài bāo lǐ, bǎ dà jiàn de yīfu fàng dào xínglixiāng lǐ, zhè yàng bǐjiào fāngbiàn, yě fàngxīn.',
-      sample_vn: 'Trước khi đi tôi để hộ chiếu và tiền vào túi xách, còn quần áo to thì cho vào vali, như vậy tiện hơn và yên tâm.',
-      tip: '把 + O + 放在 + nơi chốn: 把书放在桌子上。'
+      minLen: 18,
+      sample: '我会把护照和手机放在包里，把衣服放到行李箱里，到了机场找东西很方便。',
+      sample_py: 'Wǒ huì bǎ hùzhào hé shǒujī fàng zài bāo li, bǎ yīfu fàngdào xínglixiāng li, dàole jīchǎng zhǎo dōngxi hěn fāngbiàn.',
+      sample_vn: 'Tôi sẽ để hộ chiếu và điện thoại trong túi, để quần áo vào vali, như vậy đến sân bay tìm đồ rất tiện.',
+      tip: 'Nơi chốn đứng SAU 放在/放到: 把护照放在包里 — không nói 把护照在包里放.'
     },
     {
-      situation: 'Bạn cùng phòng thấy bạn thức khuya cuối tuần nên hỏi giờ giấc của bạn.',
-      q_zh: '你平时几点睡觉？周末呢？',
-      q_py: 'Nǐ píngshí jǐ diǎn shuìjiào? Zhōumò ne?',
-      q_vn: 'Ngày thường bạn ngủ lúc mấy giờ? Cuối tuần thì sao?',
-      grammar: { label: '就 (sớm/nhanh) và 才 (muộn/chậm)', any: ['就', '才'] },
+      situation: 'Bạn mới quen hỏi bạn học tiếng Trung đã bao lâu và học có nhanh không.',
+      q_zh: '你学了多久汉语了？开始的时候学得快吗？',
+      q_py: 'Nǐ xuéle duō jiǔ Hànyǔ le? Kāishǐ de shíhou xué de kuài ma?',
+      q_vn: 'Bạn học tiếng Trung bao lâu rồi? Lúc mới bắt đầu học có nhanh không?',
+      grammar: { label: 'Thời gian + 就 + V + 了 (nhanh hơn mong đợi)', any: ['就'] },
       need: [
-        { label: 'Dùng 就 cho ngày thường', any: ['就'] },
-        { label: 'Dùng 才 cho cuối tuần', any: ['才'] }
+        { label: 'Nói đã học bao lâu', any: ['年', '个月', '星期'] },
+        { label: 'Kể một việc làm được nhanh', any: ['会', '能', '认识'] }
       ],
-      bonus: { label: 'Nói cảm nhận về việc ngủ muộn', any: ['累', '不舒服', '需要', '休息'] },
-      vocab: ['发现', '自己', '需要'],
-      minLen: 20,
-      sample: '我平时十点半就睡觉了，周末常常十二点才睡。我发现晚睡以后自己第二天特别累，所以还是需要早点儿休息。',
-      sample_py: 'Wǒ píngshí shí diǎn bàn jiù shuìjiào le, zhōumò chángcháng shí èr diǎn cái shuì. Wǒ fāxiàn wǎn shuì yǐhòu zìjǐ dì èr tiān tèbié lèi, suǒyǐ háishi xūyào zǎo diǎn ér xiūxi.',
-      sample_vn: 'Ngày thường 10 rưỡi tôi đã ngủ, cuối tuần thường 12 giờ mới ngủ. Tôi thấy ngủ muộn thì hôm sau mình rất mệt, nên vẫn cần nghỉ sớm hơn.',
-      tip: '就 = sớm hơn mong đợi, 才 = muộn hơn mong đợi: 他五点就来了 / 他五点才来。'
+      bonus: { label: 'Nhắc đến người dạy bằng 教', any: ['教'] },
+      vocab: ['教'],
+      minLen: 16,
+      sample: '我学了一年多了。开始的时候老师教得很好，我两个星期就会写一百个汉字了。',
+      sample_py: 'Wǒ xuéle yì nián duō le. Kāishǐ de shíhou lǎoshī jiāo de hěn hǎo, wǒ liǎng ge xīngqī jiù huì xiě yìbǎi ge Hànzì le.',
+      sample_vn: 'Tôi học được hơn một năm rồi. Lúc đầu cô dạy rất hay, hai tuần tôi đã biết viết một trăm chữ Hán.',
+      tip: '就 đứng ngay trước động từ, 了 ở cuối: 两个星期就会写了 — không nói 两个星期会写就了.'
     },
     {
-      situation: 'Bạn thân hỏi bạn có hay nổi nóng không.',
-      q_zh: '什么事情会让你生气？生气的时候你会怎么办？',
-      q_py: 'Shénme shìqing huì ràng nǐ shēngqì? Shēngqì de shíhou nǐ huì zěnme bàn?',
-      q_vn: 'Chuyện gì khiến bạn tức giận? Lúc tức giận bạn làm gì?',
-      grammar: { label: '让 + người + 生气; 先……再……', any: ['让', '先', '再'] },
+      situation: 'Bạn thân hỏi gần đây có chuyện gì làm bạn bực mình không.',
+      q_zh: '最近有什么事情让你生气了？',
+      q_py: 'Zuìjìn yǒu shénme shìqing ràng nǐ shēngqì le?',
+      q_vn: 'Gần đây có chuyện gì làm bạn bực mình không?',
+      grammar: { label: 'Câu 把 + 借给/还给/送给 + người', any: ['借给', '还给', '送给'] },
       need: [
-        { label: 'Nói việc khiến bạn giận', any: ['生气', '迟到', '不认真', '骗', '吵', '不守'] },
-        { label: 'Nói cách xử lý', any: ['走走', '想', '说', '休息', '安静', '听音乐'] }
+        { label: 'Kể chuyện xảy ra', any: ['借', '还', '用', '没'] },
+        { label: 'Nói cảm xúc', any: ['生气', '不高兴'] }
       ],
-      bonus: { label: 'Nói bạn tự xử lý bằng 自己', any: ['自己'] },
-      vocab: ['生气', '自己', '发现'],
-      minLen: 20,
-      sample: '别人不注意时间、常常迟到的时候我会有点儿生气。不过我一般不马上说，先自己出去走走，想清楚了再跟他说。',
-      sample_py: 'Biérén bú zhùyì shíjiān, chángcháng chídào de shíhou wǒ huì yǒudiǎnr shēngqì. Búguò wǒ yìbān bù mǎshàng shuō, xiān zìjǐ chū qù zǒuzou, xiǎng qīngchu le zài gēn tā shuō.',
-      sample_vn: 'Khi người khác không để ý giờ giấc, hay đến muộn thì tôi hơi bực. Nhưng tôi thường không nói ngay, ra ngoài đi dạo một mình trước, nghĩ thông rồi mới nói với họ.',
-      tip: '让 + người + tính từ/động từ: 这件事让我很高兴。'
+      bonus: { label: 'Dùng 发现 (phát hiện)', any: ['发现'] },
+      vocab: ['生气', '发现'],
+      minLen: 18,
+      sample: '上个月我把笔记本电脑借给了一个同学，他用了三个星期还没还给我，我很生气。',
+      sample_py: 'Shàng ge yuè wǒ bǎ bǐjìběn diànnǎo jiè gěi le yí ge tóngxué, tā yòngle sān ge xīngqī hái méi huán gěi wǒ, wǒ hěn shēngqì.',
+      sample_vn: 'Tháng trước tôi cho một bạn cùng lớp mượn máy tính xách tay, bạn ấy dùng ba tuần rồi vẫn chưa trả, tôi hơi bực.',
+      tip: '给 + người đứng ngay sau động từ: 借给他 / 还给我; giận ai thì nói 对他生气, không nói 生气他.'
     },
     {
-      situation: 'Bạn kể một lần suýt lỡ chuyến bay.',
-      q_zh: '坐飞机的时候，你一般提前多久到机场？',
-      q_py: 'Zuò fēijī de shíhou, nǐ yìbān tíqián duō jiǔ dào jīchǎng?',
-      q_vn: 'Khi đi máy bay, bạn thường đến sân bay sớm bao lâu?',
-      grammar: { label: '把 + người/đồ + 送到 + nơi chốn', any: ['送到', '把'] },
+      situation: 'Đồng nghiệp hỏi bạn khi đi máy bay thường đến sân bay sớm hay sát giờ.',
+      q_zh: '你坐过飞机吗？那天你几点到机场的？',
+      q_py: 'Nǐ zuòguo fēijī ma? Nà tiān nǐ jǐ diǎn dào jīchǎng de?',
+      q_vn: 'Bạn đi máy bay bao giờ chưa? Hôm đó mấy giờ bạn tới sân bay?',
+      grammar: { label: '就 (sớm hơn cần thiết)', any: ['就'] },
       need: [
-        { label: 'Nói đến sớm bao lâu', any: ['小时', '分钟', '提前', '早'] },
-        { label: 'Nhắc đến máy bay cất cánh', any: ['起飞', '飞机'] }
+        { label: 'Nói giờ của chuyến bay', any: ['起飞', '点的', '飞机'] },
+        { label: 'Nói giờ mình tới sân bay', any: ['点', '机场'] }
       ],
-      bonus: { label: 'Kể một lần suýt muộn', any: ['差点儿', '迟到', '着急', '快'] },
-      vocab: ['司机', '起飞', '需要'],
-      minLen: 20,
-      sample: '我一般提前两个小时到机场。上次司机把我送到机场的时候，离起飞只有四十分钟，我着急得不行，以后我需要早点儿出门。',
-      sample_py: 'Wǒ yìbān tíqián liǎng ge xiǎoshí dào jīchǎng. Shàng cì sījī bǎ wǒ sòng dào jīchǎng de shíhou, lí qǐfēi zhǐyǒu sì shífēn zhōng, wǒ zháojí děi bù xíng, yǐhòu wǒ xūyào zǎo diǎn ér chū mén.',
-      sample_vn: 'Tôi thường đến sân bay trước hai tiếng. Lần trước lúc tài xế đưa tôi tới sân bay thì chỉ còn 40 phút là cất cánh, tôi lo sốt vó, sau này tôi cần đi sớm hơn.',
-      tip: '把……送到…… = đưa ai/cái gì đến đâu: 把孩子送到学校。'
+      bonus: { label: 'Nêu lý do bằng 因为 / 担心', any: ['因为', '担心'] },
+      vocab: ['护照'],
+      minLen: 18,
+      sample: '我坐过两次飞机。那次的飞机是中午十二点的，我九点就到机场了，因为我担心找不到护照。',
+      sample_py: 'Wǒ zuòguo liǎng cì fēijī. Nà cì de fēijī shì zhōngwǔ shí\'èr diǎn de, wǒ jiǔ diǎn jiù dào jīchǎng le, yīnwèi wǒ dānxīn zhǎo bu dào hùzhào.',
+      sample_vn: 'Tôi đi máy bay hai lần rồi. Lần đó chuyến bay lúc 12 giờ trưa, 9 giờ tôi đã tới sân bay, vì tôi lo không tìm thấy hộ chiếu.',
+      tip: 'Giờ + 就 + động từ + 了 = sớm: 九点就到了; kể chuyện đã qua có thể dùng 是……的: 几点到的.'
     },
     {
-      situation: 'Lớp học vẽ hỏi bạn về khả năng hội họa của mình.',
-      q_zh: '你会画画儿吗？谁教你的？',
-      q_py: 'Nǐ huì huà huà ér ma? Shéi jiāo nǐ de?',
-      q_vn: 'Bạn biết vẽ không? Ai dạy bạn?',
-      grammar: { label: '教 + người + làm gì; 把 + tranh + 画在 + nơi chốn', any: ['教', '画'] },
+      situation: 'Thầy giáo lớp vẽ hỏi về sở thích vẽ hồi nhỏ của bạn.',
+      q_zh: '小时候谁教你画画儿？你画好的画儿放在哪儿？',
+      q_py: 'Xiǎoshíhou shéi jiāo nǐ huà huàr? Nǐ huàhǎo de huàr fàng zài nǎr?',
+      q_vn: 'Hồi nhỏ ai dạy bạn vẽ? Tranh vẽ xong bạn để ở đâu?',
+      grammar: { label: '把 + tranh + 放在/送给 …', any: ['把'] },
       need: [
-        { label: 'Nói biết vẽ hay không', any: ['会', '不会', '一点儿'] },
-        { label: 'Nói ai dạy hoặc học ở đâu', any: ['教', '妈妈', '老师', '自己', '学'] }
+        { label: 'Nói ai dạy', any: ['教'] },
+        { label: 'Nói thích vẽ gì', any: ['太阳', '树', '猫', '狗', '花', '房子', '人'] }
       ],
-      bonus: { label: 'Kể thứ bạn hay vẽ', any: ['太阳', '山', '花', '猫', '房子', '人'] },
-      vocab: ['教', '画', '黑板', '太阳'],
-      minLen: 20,
-      sample: '我会画一点儿。小时候是我妈妈教我的，老师也常常让我在黑板上画。现在我最喜欢画太阳和山。',
-      sample_py: 'Wǒ huì huà yìdiǎnr. Xiǎoshí hòu shì wǒ māma jiāo wǒ de, lǎoshī yě chángcháng ràng wǒ zài hēibǎn shàng huà. Xiànzài wǒ zuì xǐhuan huà tàiyáng hé shān.',
-      sample_vn: 'Tôi biết vẽ chút ít. Hồi nhỏ mẹ dạy tôi, thầy cô cũng hay cho tôi vẽ trên bảng. Giờ tôi thích vẽ mặt trời và núi nhất.',
-      tip: '教 + người + nội dung: 老师教我们汉语。'
+      bonus: { label: 'Dùng 自己', any: ['自己'] },
+      vocab: ['教', '画', '太阳'],
+      minLen: 18,
+      sample: '小时候是爸爸教我画画儿的。我最喜欢画太阳和大树，画好以后就把画儿放在爸爸的桌子上。',
+      sample_py: 'Xiǎoshíhou shì bàba jiāo wǒ huà huàr de. Wǒ zuì xǐhuan huà tàiyáng hé dà shù, huàhǎo yǐhòu jiù bǎ huàr fàng zài bàba de zhuōzi shang.',
+      sample_vn: 'Hồi nhỏ bố dạy tôi vẽ. Tôi thích vẽ mặt trời và cây to nhất, vẽ xong thì để tranh lên bàn của bố.',
+      tip: '画 vừa là động từ “vẽ” vừa là danh từ “tranh”: 画画儿 = vẽ tranh.'
     }
   ]
 };
@@ -1753,28 +1761,21 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Sao anh phải ra khỏi nhà sớm thế?', zh:'你怎么这么早就要出门了？', py:'Nǐ zěnme zhème zǎo jiù yào chūmén le?'},
-  {vi:'Để tôi giúp bạn cho hộ chiếu vào túi nhé.', zh:'我帮你把护照放到包里吧。', py:'Wǒ bāng nǐ bǎ hùzhào fàngdào bāo li ba.'},
-  {vi:'Tôi đã để vé máy bay vào túi của bạn rồi đấy.', zh:'我已经把机票放在你的包里了。', py:'Wǒ yǐjīng bǎ jīpiào fàng zài nǐ de bāo li le.'},
-  {vi:'Về đến nhà tôi mới phát hiện quên mang chìa khóa.', zh:'回到家我才发现忘带钥匙了。', py:'Huídào jiā wǒ cái fāxiàn wàng dài yàoshi le.'},
-  {vi:'Cuộc họp sắp bắt đầu rồi, nhanh lên đi.', zh:'会议就要开始了，快点吧。', py:'Huìyì jiù yào kāishǐ le, kuài diǎn ba.'},
-  {vi:'Tôi thấy bạn nên đổi vé máy bay thì hơn.', zh:'我看你还是换一下机票吧。', py:'Wǒ kàn nǐ háishi huàn yíxià jīpiào ba.'},
-  {vi:'Cô ấy dạy tôi vẽ hoa.', zh:'她教我画花儿。', py:'Tā jiāo wǒ huà huār.'},
-  {vi:'Tôi viết tên của mình lên bảng.', zh:'我把自己的名字写在黑板上了。', py:'Wǒ bǎ zìjǐ de míngzi xiě zài hēibǎn shàng le.'},
+  {vi:'Tối qua mới mười giờ tôi đã đi ngủ rồi.', zh:'昨天晚上我十点就睡觉了。', py:'Zuótiān wǎnshang wǒ shí diǎn jiù shuìjiào le.'},
+  {vi:'Bạn để hộ chiếu ở đâu rồi? Tôi tìm mãi không thấy.', zh:'你把护照放在哪儿了？我一直找不到。', py:'Nǐ bǎ hùzhào fàng zài nǎr le? Wǒ yìzhí zhǎo bu dào.'},
+  {vi:'Tôi muốn tặng tấm bản đồ này cho bạn.', zh:'我想把这张地图送给你。', py:'Wǒ xiǎng bǎ zhè zhāng dìtú sòng gěi nǐ.'},
+  {vi:'Tài xế nói mười phút nữa là đến khách sạn.', zh:'司机说再过十分钟就到宾馆了。', py:'Sījī shuō zài guò shí fēnzhōng jiù dào bīnguǎn le.'},
+  {vi:'Đi Trung Quốc du lịch cần mang những gì?', zh:'去中国旅游需要带什么东西？', py:'Qù Zhōngguó lǚyóu xūyào dài shénme dōngxi?'},
+  {vi:'Hôm qua tôi làm bài tập đến mười một giờ đêm mới đi ngủ.', zh:'昨天我写作业写到晚上十一点才睡觉。', py:'Zuótiān wǒ xiě zuòyè xiě dào wǎnshang shíyī diǎn cái shuìjiào.'}
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Chỉ cần bạn tự chú ý an toàn thì tôi sẽ không lo nữa.', zh:'只要你自己多注意安全，我就不担心了。', py:'Zhǐyào nǐ zìjǐ duō zhùyì ānquán, wǒ jiù bù dānxīn le.'},
-  {vi:'Tuy bài này rất khó nhưng học sinh vẫn học được rất tốt.', zh:'虽然这课很难，但是学生还是学得很好。', py:'Suīrán zhè kè hěn nán, dànshì xuésheng háishi xué de hěn hǎo.'},
-  {vi:'Nếu bạn không biết dùng cái này thì tôi sẽ dạy bạn.', zh:'如果你不会用这个，我就教你。', py:'Rúguǒ nǐ bú huì yòng zhège, wǒ jiù jiāo nǐ.'},
-  {vi:'Chị gái tôi tặng cho tôi cái túi rồi.', zh:'我姐姐把包送给我了。', py:'Wǒ jiějie bǎ bāo sòng gěi wǒ le.'},
-  {vi:'Em trai không trả tiền lại cho anh trai.', zh:'弟弟没把钱还给哥哥。', py:'Dìdi méi bǎ qián huán gěi gēge.'},
-  {vi:'Anh trai đưa em đến trường rồi.', zh:'哥哥把我送到学校了。', py:'Gēge bǎ wǒ sòngdào xuéxiào le.'},
-  {vi:'Ngồi máy bay một tiếng là đến rồi.', zh:'坐飞机一个小时就到了。', py:'Zuò fēijī yí ge xiǎoshí jiù dào le.'},
-  {vi:'Máy bay chín giờ cất cánh, anh ấy chín giờ mười phút mới đến sân bay.', zh:'飞机九点起飞，他九点十分才到机场。', py:'Fēijī jiǔ diǎn qǐfēi, tā jiǔ diǎn shí fēn cái dào jīchǎng.'},
+  {vi:'Tôi thấy hôm nay mẹ không vui lắm, có phải chúng ta lại làm mẹ giận không?', zh:'我发现妈妈今天不太高兴，是不是我们又让她生气了？', py:'Wǒ fāxiàn māma jīntiān bú tài gāoxìng, shì bu shì wǒmen yòu ràng tā shēngqì le?'},
+  {vi:'Bạn mang cốc cà phê này đến văn phòng giám đốc nhé.', zh:'你把这杯咖啡送到经理的办公室吧。', py:'Nǐ bǎ zhè bēi kāfēi sòngdào jīnglǐ de bàngōngshì ba.'},
+  {vi:'Anh ấy vẽ rất đẹp, tôi muốn nhờ anh ấy dạy tôi.', zh:'他画画儿画得很好，我想请他教我。', py:'Tā huà huàr huà de hěn hǎo, wǒ xiǎng qǐng tā jiāo wǒ.'},
 ];
 
 // ══════════════════════════════════════════

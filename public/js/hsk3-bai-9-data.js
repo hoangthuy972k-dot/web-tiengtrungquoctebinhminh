@@ -1608,71 +1608,75 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'越说',right:'越好'},
-  {left:'最后',right:'一块'},
-  {left:'不会',right:'迟到'},
-  {left:'越爬山',right:'越冷'},
-  {left:'比较',right:'了解'},
-  {left:'从中间',right:'上去'},
-  {left:'一点儿',right:'影响也没有'},
-  {left:'因为他家的人都很瘦，',right:'所以吃不胖。'},
-  {left:'虽然山很高，',right:'但是路上花很漂亮。'},
-  {left:'如果你不放心，',right:'就跟我一起去吧。'},
-  {left:'只要你多休息，',right:'就会好得越快。'},
+  {left:'他在北京住了十年，对北京很', right:'了解'},
+  {left:'晚上玩儿手机会', right:'影响睡觉'},
+  {left:'孩子一个人去旅游，妈妈很', right:'担心'},
+  {left:'上课的时候，我坐在小丽和小明', right:'中间'},
+  {left:'这次比赛你也想', right:'参加吗'},
+  {left:'他学了三年汉语，看得懂', right:'中文报纸'},
+  {left:'别着急，这是', right:'最后一个问题'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'李静老师教的',blank:'中文',post:'课很清楚。',hint:'(tiếng Trung Quốc)',ans:'中文'},
-  {pre:'马可不是我们',blank:'班',post:'的学生。',hint:'(lớp)',ans:'班'},
-  {pre:'这次考试的成绩跟上次',blank:'一样',post:'好。',hint:'(giống nhau, như nhau)',ans:'一样',exp:'跟 + B + 一样 + tính từ = … giống như / bằng B: 跟上次一样好.'},
-  {pre:'这是',blank:'最后',post:'一次考试，你要认真准备。',hint:'(cuối cùng)',ans:'最后'},
-  {pre:'妈妈，你',blank:'放心',post:'，我一定不会迟到。',hint:'(yên tâm)',ans:'放心'},
-  {pre:'我',blank:'一定',post:'不会忘记。',hint:'(nhất định)',ans:'一定'},
-  {pre:'妈妈总是',blank:'担心',post:'我一个人在外面不安全。',hint:'(lo lắng)',ans:'担心'},
-  {pre:'李静老师觉得这次考试',blank:'比较',post:'简单。',hint:'(tương đối, khá)',ans:'比较',exp:'比较 + tính từ = tương đối, khá: 比较简单.'},
-  {pre:'大山对中文很',blank:'了解',post:'。',hint:'(hiểu rõ)',ans:'了解'},
-  {pre:'那我们',blank:'先',post:'休息一下。',hint:'(trước, trước hết)',ans:'先'},
-  {pre:'照片',blank:'中间',post:'的那个人是我爸爸。',hint:'(giữa)',ans:'中间'},
-  {pre:'学校的篮球比赛，你打算',blank:'参加',post:'吗？',hint:'(tham gia)',ans:'参加'},
-  {pre:'一点儿',blank:'影响',post:'也没有。',hint:'(ảnh hưởng)',ans:'影响'},
+  {pre:'下个星期就要考试了，我越想', blank:'越', post:'着急，一点儿也睡不着。', hint:'(càng)', ans:'越', exp:'越 + V + 越 + tính từ = càng … càng …: 越想越着急; ôn 就要……了, 一点儿也不 (bài 1), 睡不着 (bài 6).'},
+  {pre:'A：今天公园里怎么没有人？B：天气越冷，来锻炼的人就越', blank:'少', post:'。', hint:'(ít)', ans:'少', exp:'越 A（就）越 B: B thay đổi theo A — trời càng lạnh thì người đến tập càng ít; ôn 锻炼 (bài 6).'},
+  {pre:'我的手机跟你的', blank:'一样', post:'，都是黑色的。', hint:'(giống nhau)', ans:'一样', exp:'A 跟 B 一样 = A giống B; 跟 + B đứng trước 一样.'},
+  {pre:'弟弟今年十五岁，已经', blank:'跟', post:'爸爸一样高了。', hint:'(như, bằng)', ans:'跟', exp:'A 跟 B 一样 + tính từ = A … bằng B: 跟爸爸一样高; ôn 已经……了.'},
+  {pre:'A：你和你姐姐都喜欢运动吗？B：我们', blank:'不', post:'一样，她喜欢看书，我喜欢踢足球。', hint:'(không)', ans:'不', exp:'Phủ định: (A 跟 B) 不一样 — 不 đứng ngay trước 一样, không nói 一样不.'},
+  {pre:'他写字很慢，每次考试都是', blank:'最后', post:'一个写完的。', hint:'(cuối cùng)', ans:'最后', exp:'最后一个 = người cuối cùng; 是……的 nhấn mạnh cách việc đã xảy ra; ôn V + 完.'},
+  {pre:'妈妈，你', blank:'放心', post:'吧，到了北京我马上给你打电话。', hint:'(yên tâm)', ans:'放心', exp:'你放心吧 = mẹ cứ yên tâm; ôn 马上 (bài 8).'},
+  {pre:'明天的比赛很重要，你', blank:'一定', post:'要早点儿睡觉。', hint:'(nhất định)', ans:'一定', exp:'一定 + 要 + V = nhất định phải …; ôn 重要 (bài 8).'},
+  {pre:'A：女儿十二点了还没回家，我有点儿', blank:'担心', post:'。B：别着急，我给她打个电话。', hint:'(lo lắng)', ans:'担心', exp:'有点儿担心 = hơi lo; 有点儿 + tính từ/động từ tâm lý (việc không như ý); ôn 别着急 (bài 1).'},
+  {pre:'这家饭馆的菜', blank:'比较', post:'贵，但是特别好吃。', hint:'(khá)', ans:'比较', exp:'比较 + tính từ = khá …; đây không phải câu so sánh 比 nên không cần đối tượng so sánh.'},
+  {pre:'A：我们现在去看电影吗？B：我们', blank:'先', post:'吃饭，再去看电影吧。', hint:'(trước)', ans:'先', exp:'先……再…… = làm … trước, sau đó mới …; 先 và 再 đều đứng trước động từ.'},
+  {pre:'你看，坐在爸爸和妈妈', blank:'中间', post:'的那个孩子就是我。', hint:'(ở giữa)', ans:'中间', exp:'A 和 B 中间 = ở giữa A và B; cả cụm làm định ngữ trước 的那个孩子.'},
+  {pre:'晚上别喝咖啡了，会', blank:'影响', post:'睡觉的。', hint:'(ảnh hưởng)', ans:'影响', exp:'影响 + việc = ảnh hưởng tới …; 会……的 = sẽ … (dự đoán chắc chắn).'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['同学们','的','中文','越','学','越','好','。'],ans:'同学们的中文越学越好。',audio:'同学们的中文越学越好。'},
-  {words:['李静','写字','写得','跟','老师','一样','漂亮','。'],ans:'李静写字写得跟老师一样漂亮。',audio:'李静写字写得跟老师一样漂亮。'},
-  {words:['你','总是','吃','甜','的','东西','，','会','越','吃','越','胖','。'],ans:'你总是吃甜的东西，会越吃越胖。',audio:'你总是吃甜的东西，会越吃越胖。'},
-  {words:['山','越','高','，','路','越','难走','。'],ans:'山越高，路越难走。',audio:'山越高，路越难走。'},
-  {words:['因为','他家','的','人','都','很瘦','，','所以','吃','不','胖','。'],ans:'因为他家的人都很瘦，所以吃不胖。',audio:'因为他家的人都很瘦，所以吃不胖。'},
-  {words:['虽然','山','很高','，','但是','路上','花','很漂亮','。'],ans:'虽然山很高，但是路上花很漂亮。',audio:'虽然山很高，但是路上花很漂亮。'},
-  {words:['如果','你','不','放心','，','就','跟','我','一起','去','吧','。'],ans:'如果你不放心，就跟我一起去吧。',audio:'如果你不放心，就跟我一起去吧。'},
-  {words:['小刚','一定','会','参加','篮球','比赛','，','一点儿','问题','也','没有','。'],ans:'小刚一定会参加篮球比赛，一点儿问题也没有。',audio:'小刚一定会参加篮球比赛，一点儿问题也没有。'},
+  {words:['这本','中文','书','我','越','看','越','觉得','有意思','。'], ans:'这本中文书我越看越觉得有意思。', audio:'这本中文书我越看越觉得有意思。'},
+  {words:['他','跟','他','哥哥','一样','喜欢','踢','足球','。'], ans:'他跟他哥哥一样喜欢踢足球。', audio:'他跟他哥哥一样喜欢踢足球。'},
+  {words:['我们','先','去','银行','，','再','去','超市','买','东西','。'], ans:'我们先去银行，再去超市买东西。', audio:'我们先去银行，再去超市买东西。'},
+  {words:['这次','考试','比较','难','，','很多','同学','都','没','写','完','。'], ans:'这次考试比较难，很多同学都没写完。', audio:'这次考试比较难，很多同学都没写完。'},
+  {words:['大山','在','中国','住','了','三年','，','对','中国','很','了解','。'], ans:'大山在中国住了三年，对中国很了解。', audio:'大山在中国住了三年，对中国很了解。'},
+  {words:['我们','班','的','同学','都','参加','了','这次','比赛','。'], ans:'我们班的同学都参加了这次比赛。', audio:'我们班的同学都参加了这次比赛。'},
+  {words:['咖啡','喝','得','越','多','，','晚上','越','睡','不','着','。'], ans:'咖啡喝得越多，晚上越睡不着。', audio:'咖啡喝得越多，晚上越睡不着。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'雨下越大越。',
-   opts:['雨越下越大。','雨下越大越。','越雨下越大。','雨越大越下。'],ans:0,
-   exp:'Cấu trúc 越A越B: 越 phải đặt ngay trước mỗi động từ/tính từ (越下越大), không tách rời khỏi vế của nó.'},
-  {wrong:'这个蛋糕那个一样甜跟。',
-   opts:['这个蛋糕跟那个一样甜。','这个蛋糕那个一样甜跟。','这个蛋糕跟一样那个甜。','这个蛋糕跟那个甜一样。'],ans:0,
-   exp:'Cấu trúc A跟B一样(+tính từ): 跟+B phải đứng ngay trước 一样, tính từ bổ nghĩa đặt sau 一样.'},
-  {wrong:'这件衬衫的颜色那件不一样跟。',
-   opts:['这件衬衫的颜色跟那件不一样。','这件衬衫的颜色那件不一样跟。','这件衬衫的颜色跟那件一样不。','这件衬衫不一样的颜色跟那件。'],ans:0,
-   exp:'Phủ định của 一样 là thêm 不 vào TRƯỚC 一样 (不一样); giới từ 跟 vẫn đứng trước danh từ so sánh, không đặt cuối câu.'},
-  {wrong:'休息越多，好越快。',
-   opts:['休息得越多，好得越快。','休息越多，好越快。','休息得越多，好越多快。','越休息多，越好快。'],ans:0,
-   exp:'Khi động từ/tính từ mang bổ ngữ trình độ (休息得, 好得), phải giữ 得 trước khi thêm 越……越……'},
-  {wrong:'我一定不忘记会。',
-   opts:['我一定不会忘记。','我一定不忘记会。','我不一定会忘记。','我会一定不忘记。'],ans:0,
-   exp:'会 (trợ động từ khả năng) phải đứng ngay trước động từ chính (忘记), không đặt sau động từ.'},
+  {wrong:'他越走得越快。',
+   opts:['他越走快越。','他越走越快。','他走越越快。','他越快越走。'], ans:1,
+   exp:'越 + V + 越 + tính từ: 越走越快; không chèn 得 sau động từ thứ nhất, mỗi 越 đứng ngay trước vế của nó.'},
+  {wrong:'我妹妹越长越很漂亮。',
+   opts:['我妹妹越长很漂亮。','我妹妹很越长越漂亮。','我妹妹越漂亮越长。','我妹妹越长越漂亮。'], ans:3,
+   exp:'Sau 越 không thêm 很 (越 đã chỉ mức độ): 越长越漂亮 = càng lớn càng xinh.'},
+  {wrong:'这件衣服一样跟那件。',
+   opts:['这件衣服跟那件一样。','这件衣服跟一样那件。','这件衣服一样那件跟。','这件衣服和那件一样的很。'], ans:0,
+   exp:'A 跟 B 一样: 跟 + B đứng TRƯỚC 一样, không đặt sau như tiếng Việt “giống với”.'},
+  {wrong:'我的房间跟你的一样很大。',
+   opts:['我的房间跟你的大一样。','我的房间跟你的一样大。','我的房间一样跟你的大。','我的房间跟你的很一样大。'], ans:1,
+   exp:'A 跟 B 一样 + tính từ: 一样大 = rộng bằng nhau; không thêm 很 trước hoặc sau 一样.'},
+  {wrong:'北方的天气跟南方一样不。',
+   opts:['北方的天气跟南方没一样。','北方的天气跟南方一样没有。','北方的天气跟南方不一样。','北方的天气跟南方不一样的很。'], ans:2,
+   exp:'Phủ định: 跟……不一样 (不 đứng trước 一样, không dùng 没); ôn 南方 / 北方 (bài 1).'},
+  {wrong:'你洗手先，再吃蛋糕。',
+   opts:['你先洗手，再吃蛋糕。','你洗先手，再吃蛋糕。','先你洗手，再吃蛋糕了。','你先洗手，又吃蛋糕。'], ans:0,
+   exp:'先 là phó từ, đứng TRƯỚC động từ (先洗手), không đặt cuối như tiếng Việt “rửa tay trước”; việc chưa làm dùng 再, không dùng 又 (ôn bài 8).'},
+  {wrong:'你不担心，我会照顾好自己的。',
+   opts:['你没担心，我会照顾好自己的。','你担心不，我会照顾好自己的。','你别担心，我会照顾好自己的。','你不要放心，我会照顾好自己的。'], ans:2,
+   exp:'Khuyên ai đừng lo: 别担心 / 不要担心 (không dùng 不 hay 没 đơn thuần); ôn 照顾 (bài 5), V + 好.'},
+  {wrong:'这家饭馆比那家比较贵。',
+   opts:['这家饭馆比那家很贵。','这家饭馆比较那家贵。','这家饭馆比那家比较贵一点儿。','这家饭馆比那家贵一点儿。'], ans:3,
+   exp:'Câu 比 không dùng 比较 / 很 trước tính từ; muốn nói “hơn một chút” thì thêm 一点儿 sau tính từ.'},
 ];
 
 // ══════════════════════════════════════════
@@ -1680,97 +1684,97 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 9. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 9 (越A越B, A 跟 B 一样 / 不一样). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn học hỏi cảm nhận của bạn sau một năm học tiếng Hán.',
-      q_zh: '你觉得汉语越学越难还是越学越有意思？为什么？',
-      q_py: 'Nǐ juéde Hànyǔ yuè xué yuè nán háishi yuè xué yuè yǒuyìsi? Wèishénme?',
-      q_vn: 'Bạn thấy tiếng Hán càng học càng khó hay càng học càng thú vị? Vì sao?',
+      situation: 'Bạn mới quen hỏi cảm nhận của bạn sau một thời gian học tiếng Trung.',
+      q_zh: '你学中文多久了？你觉得中文难不难？',
+      q_py: 'Nǐ xué Zhōngwén duō jiǔ le? Nǐ juéde Zhōngwén nán bu nán?',
+      q_vn: 'Bạn học tiếng Trung bao lâu rồi? Bạn thấy tiếng Trung có khó không?',
       grammar: { label: '越 A 越 B', any: ['越'] },
       need: [
-        { label: 'Dùng 越……越……', any: ['越'] },
-        { label: 'Nêu lý do cụ thể', any: ['词', '生词', '语法', '汉字', '听', '说', '因为'] }
+        { label: 'Nói học bao lâu', any: ['年', '个月'] },
+        { label: 'Nói cảm nhận (khó / hay)', any: ['难', '有意思', '容易', '喜欢'] }
       ],
-      bonus: { label: 'Nói về việc bạn hiểu được gì bằng 了解 / 比较', any: ['了解', '比较'] },
-      vocab: ['中文', '比较', '了解'],
-      minLen: 20,
-      sample: '我觉得汉语越学越有意思。词越多，我越能看懂中文新闻，也比较了解中国人的生活了。',
-      sample_py: 'Wǒ juéde Hànyǔ yuè xué yuè yǒuyìsi. Cí yuè duō, wǒ yuè néng kàn dǒng Zhōngwén xīnwén, yě bǐjiào liǎojiě zhōngguórén de shēnghuó le.',
-      sample_vn: 'Tôi thấy tiếng Hán càng học càng thú vị. Từ càng nhiều, tôi càng đọc hiểu được tin tức tiếng Trung, cũng hiểu hơn về cuộc sống của người Trung Quốc.',
-      tip: '越 A 越 B: mức độ B tăng theo A — 雨越下越大。'
+      bonus: { label: 'Nói một kỹ năng tiến bộ', any: ['汉字', '说', '听', '写'] },
+      vocab: ['中文'],
+      minLen: 16,
+      sample: '我学中文学了一年了。开始觉得很难，但是越学越有意思，汉字也越写越好看了。',
+      sample_py: 'Wǒ xué Zhōngwén xuéle yì nián le. Kāishǐ juéde hěn nán, dànshì yuè xué yuè yǒu yìsi, Hànzì yě yuè xiě yuè hǎokàn le.',
+      sample_vn: 'Tôi học tiếng Trung được một năm rồi. Lúc đầu thấy rất khó, nhưng càng học càng thú vị, chữ Hán cũng càng viết càng đẹp.',
+      tip: '越 đứng ngay trước mỗi vế: 越学越有意思 — sau 越 không thêm 很.'
     },
     {
-      situation: 'Bạn giới thiệu bản thân và người bạn thân trước lớp.',
-      q_zh: '说一说你跟你的好朋友：你们哪儿一样，哪儿不一样？',
-      q_py: 'Shuō yi shuō nǐ gēn nǐ de hǎo péngyou: nǐmen nǎr yí yàng, nǎr bù yí yàng?',
-      q_vn: 'Hãy nói về bạn và người bạn thân: hai người giống nhau chỗ nào, khác nhau chỗ nào?',
-      grammar: { label: 'A 跟 B 一样 (+ tính từ)', any: ['一样'] },
+      situation: 'Bạn học hỏi bạn giống ai trong nhà.',
+      q_zh: '你家里谁跟你一样？你们哪儿一样，哪儿不一样？',
+      q_py: 'Nǐ jiā li shéi gēn nǐ yíyàng? Nǐmen nǎr yíyàng, nǎr bù yíyàng?',
+      q_vn: 'Trong nhà ai giống bạn? Hai người giống nhau ở đâu, khác nhau ở đâu?',
+      grammar: { label: 'A 跟 B 一样 / 不一样', any: ['一样'] },
       need: [
-        { label: 'Nói điểm giống nhau bằng 一样', any: ['一样'] },
-        { label: 'Nói điểm khác nhau', any: ['不一样', '可是', '但是', '比较'] }
+        { label: 'Nói điểm giống', any: ['一样高', '一样喜欢', '一样'] },
+        { label: 'Nói điểm khác', any: ['不一样', '但是'] }
       ],
-      bonus: { label: 'Nói thêm về sở thích chung', any: ['爱好', '运动', '音乐', '一起'] },
-      vocab: ['一样', '比较', '参加'],
-      minLen: 20,
-      sample: '我跟我的好朋友一样喜欢运动，我们常常一起参加学校的比赛。可是他比较安静，我比较热情，这一点不太一样。',
-      sample_py: 'Wǒ gēn wǒ de hǎo péngyou yí yàng xǐhuan yùndòng, wǒmen chángcháng yìqǐ cānjiā xuéxiào de bǐsài. Kěshì tā bǐjiào ānjìng, wǒ bǐjiào rèqíng, zhè yì diǎn bú tài yí yàng.',
-      sample_vn: 'Tôi và bạn thân giống nhau ở chỗ đều thích thể thao, chúng tôi hay cùng tham gia thi đấu của trường. Nhưng cậu ấy khá trầm, tôi khá sôi nổi, điểm này không giống nhau.',
-      tip: 'A 跟 B 一样 + tính từ: 我跟他一样高。Phủ định: A 跟 B 不一样。'
+      bonus: { label: 'Dùng 比 để so sánh thêm', any: ['比'] },
+      vocab: ['一样'],
+      minLen: 18,
+      sample: '我跟我爸爸一样高，也一样喜欢踢足球。但是他喜欢喝茶，我喜欢喝咖啡。',
+      sample_py: 'Wǒ gēn wǒ bàba yíyàng gāo, yě yíyàng xǐhuan tī zúqiú. Dànshì tā xǐhuan hē chá, wǒ xǐhuan hē kāfēi.',
+      sample_vn: 'Tôi cao bằng bố, cũng thích đá bóng giống bố. Nhưng bố thích uống trà, tôi thích uống cà phê.',
+      tip: '跟 + người + 一样 + tính từ / động từ: 跟爸爸一样高; phủ định là 不一样.'
     },
     {
-      situation: 'Bạn đi học xa nhà, bố mẹ gọi điện vì lo lắng.',
-      q_zh: '家里人担心你的时候，你会怎么让他们放心？',
-      q_py: 'Jiā lǐ rén dānxīn nǐ de shíhou, nǐ huì zěnme ràng tāmen fàngxīn?',
-      q_vn: 'Khi người nhà lo cho bạn, bạn sẽ làm gì để họ yên tâm?',
-      grammar: { label: '先……，再/然后…… + 让……放心', any: ['先', '让', '放心'] },
+      situation: 'Bạn sắp một mình lên Bắc Kinh học, mẹ rất lo. Bạn trấn an mẹ.',
+      q_zh: '你一个人去北京，妈妈很担心你。你会怎么跟妈妈说？',
+      q_py: 'Nǐ yí ge rén qù Běijīng, māma hěn dānxīn nǐ. Nǐ huì zěnme gēn māma shuō?',
+      q_vn: 'Bạn một mình đi Bắc Kinh, mẹ rất lo cho bạn. Bạn sẽ nói với mẹ thế nào?',
+      grammar: { label: '一定 + V (hứa chắc chắn)', any: ['一定'] },
       need: [
-        { label: 'Nói việc làm để trấn an', any: ['打电话', '告诉', '照片', '视频', '说'] },
-        { label: 'Dùng 放心 hoặc 别担心', any: ['放心', '别担心', '不用担心'] }
+        { label: 'Bảo mẹ yên tâm / đừng lo', any: ['放心', '别担心', '不要担心'] },
+        { label: 'Hứa việc sẽ làm', any: ['打电话', '照顾', '吃饭', '休息'] }
       ],
-      bonus: { label: 'Dùng 一定 để hứa hẹn', any: ['一定'] },
-      vocab: ['担心', '放心', '先'],
-      minLen: 20,
-      sample: '我会先给他们打个电话，告诉他们我吃得好、睡得好，让他们放心。我也一定注意身体，别让他们担心。',
-      sample_py: 'Wǒ huì xiān gěi tāmen dǎ ge diànhuà, gàosu tāmen wǒ chī děi hǎo, shuì děi hǎo, ràng tāmen fàngxīn. Wǒ yě yí dìng zhùyì shēntǐ, bié ràng tāmen dānxīn.',
-      sample_vn: 'Tôi sẽ gọi điện cho họ trước, nói rằng tôi ăn ngon ngủ tốt để họ yên tâm. Tôi cũng nhất định chú ý sức khỏe, không để họ lo.',
-      tip: '让 + người + động từ: 让他们放心、让我想想。'
+      bonus: { label: 'Dùng 先……再…… để nói thứ tự việc làm', any: ['先'] },
+      vocab: ['放心', '一定', '担心', '先'],
+      minLen: 18,
+      sample: '妈妈，不要担心，我已经长大了，一定会照顾好自己。到北京以后，我先给你打电话。',
+      sample_py: 'Māma, búyào dānxīn, wǒ yǐjīng zhǎngdà le, yídìng huì zhàogù hǎo zìjǐ. Dào Běijīng yǐhòu, wǒ xiān gěi nǐ dǎ diànhuà.',
+      sample_vn: 'Mẹ ơi, mẹ đừng lo, con lớn rồi, nhất định sẽ tự chăm sóc tốt cho mình. Đến Bắc Kinh, con sẽ gọi điện cho mẹ trước tiên.',
+      tip: '一定 đứng trước động từ / 会: 一定会照顾好; khuyên đừng lo nói 不要担心 / 别担心, không nói 不担心.'
     },
     {
-      situation: 'Bạn kể về một lớp học hoặc câu lạc bộ mình từng tham gia.',
-      q_zh: '你参加过什么班或者活动？对你有什么影响？',
-      q_py: 'Nǐ cānjiā guo shénme bān huòzhě huódòng? Duì nǐ yǒu shénme yǐngxiǎng?',
-      q_vn: 'Bạn từng tham gia lớp hoặc hoạt động gì? Nó ảnh hưởng thế nào đến bạn?',
-      grammar: { label: '对……有影响 / 影响 + người', any: ['影响'] },
+      situation: 'Bạn cùng phòng hỏi bạn dùng điện thoại mỗi ngày bao lâu.',
+      q_zh: '你每天玩儿多长时间手机？对你有影响吗？',
+      q_py: 'Nǐ měi tiān wánr duō cháng shíjiān shǒujī? Duì nǐ yǒu yǐngxiǎng ma?',
+      q_vn: 'Mỗi ngày bạn dùng điện thoại bao lâu? Có ảnh hưởng gì tới bạn không?',
+      grammar: { label: 'V 得越……，……越…… (càng … càng …)', any: ['越'] },
       need: [
-        { label: 'Nói lớp hoặc hoạt động nào', any: ['班', '比赛', '活动', '课', '参加'] },
-        { label: 'Nói ảnh hưởng', any: ['影响', '帮助', '越来越', '提高', '更'] }
+        { label: 'Nói thời gian dùng', any: ['小时', '分钟'] },
+        { label: 'Nói ảnh hưởng', any: ['影响', '累', '眼睛', '睡'] }
       ],
-      bonus: { label: 'Nhắc đến thầy cô hoặc bạn học', any: ['老师', '同学', '朋友'] },
-      vocab: ['班', '参加', '影响'],
-      minLen: 20,
-      sample: '我参加过一个中文班，那个班的老师很认真，对我影响很大。现在我越来越爱说汉语，也认识了不少新朋友。',
-      sample_py: 'Wǒ cānjiā guo yí ge Zhōngwén bān, nàge bān de lǎoshī hěn rènzhēn, duì wǒ yǐngxiǎng hěn dà. Xiànzài wǒ yuè lái yuè ài shuō Hànyǔ, yě rènshi le bù shǎo xīn péngyou.',
-      sample_vn: 'Tôi từng tham gia một lớp tiếng Trung, thầy lớp đó rất tận tâm, ảnh hưởng đến tôi rất lớn. Giờ tôi ngày càng thích nói tiếng Hán, cũng quen thêm nhiều bạn mới.',
-      tip: '影响 vừa là động từ vừa là danh từ: 他影响了我 / 对我影响很大。'
+      bonus: { label: 'Dùng 比较 để nói mức độ', any: ['比较'] },
+      vocab: ['影响', '比较'],
+      minLen: 18,
+      sample: '我每天玩儿两个多小时手机。玩儿得越多，眼睛越累，对学习的影响也比较大。',
+      sample_py: 'Wǒ měi tiān wánr liǎng ge duō xiǎoshí shǒujī. Wánr de yuè duō, yǎnjing yuè lèi, duì xuéxí de yǐngxiǎng yě bǐjiào dà.',
+      sample_vn: 'Mỗi ngày tôi dùng điện thoại hơn hai tiếng. Dùng càng nhiều, mắt càng mỏi, ảnh hưởng tới việc học cũng khá lớn.',
+      tip: 'Hai vế có hai chủ ngữ: 玩儿得越多，眼睛越累 — 越 luôn đứng sau chủ ngữ của từng vế.'
     },
     {
-      situation: 'Trong lớp có bạn mới và mọi người đang làm quen.',
-      q_zh: '你怎么了解一个新朋友？',
-      q_py: 'Nǐ zěnme liǎojiě yí ge xīn péngyou?',
-      q_vn: 'Bạn tìm hiểu một người bạn mới bằng cách nào?',
-      grammar: { label: '先……，最后…… (trình tự)', any: ['先', '最后'] },
+      situation: 'Trường bạn sắp có một cuộc thi. Bạn học hỏi bạn có tham gia không.',
+      q_zh: '最近学校有什么比赛？你参加吗？为什么？',
+      q_py: 'Zuìjìn xuéxiào yǒu shénme bǐsài? Nǐ cānjiā ma? Wèi shénme?',
+      q_vn: 'Gần đây trường có cuộc thi gì? Bạn có tham gia không? Vì sao?',
+      grammar: { label: '虽然……但是…… + 比较', any: ['比较', '虽然'] },
       need: [
-        { label: 'Nói bước đầu tiên', any: ['先', '聊天', '问', '打招呼', '说'] },
-        { label: 'Nói việc làm cùng nhau sau đó', any: ['一起', '运动', '吃饭', '看电影', '学习'] }
+        { label: 'Nói cuộc thi gì', any: ['比赛'] },
+        { label: 'Nói có tham gia không, vì sao', any: ['参加', '因为', '机会'] }
       ],
-      bonus: { label: 'Dùng 了解 nói kết quả', any: ['了解'] },
-      vocab: ['了解', '最后', '先'],
-      minLen: 20,
-      sample: '我一般先跟他聊聊天儿，问问他的爱好，最后再一起去做一样的事情，比如运动或者看电影，这样就慢慢了解他了。',
-      sample_py: 'Wǒ yìbān xiān gēn tā liáo liáo tiān ér, wènwen tā de àihào, zuìhòu zài yìqǐ qù zuò yí yàng de shìqing, bǐrú yùndòng huòzhě kàn diànyǐng, zhè yàng jiù mànmàn liǎojiě tā le.',
-      sample_vn: 'Tôi thường trò chuyện với bạn ấy trước, hỏi về sở thích, cuối cùng cùng nhau làm việc gì đó giống nhau như tập thể thao hoặc xem phim, như vậy dần dần sẽ hiểu bạn ấy.',
-      tip: '了解 nhấn mạnh hiểu sâu; 知道 chỉ là biết thông tin.'
+      bonus: { label: 'Nói về lớp bạn bằng 班', any: ['班'] },
+      vocab: ['参加', '班', '比较'],
+      minLen: 18,
+      sample: '下个月学校有汉语比赛，我们班有三个人参加，我也是一个。虽然比较难，但是这是一个很好的机会。',
+      sample_py: 'Xià ge yuè xuéxiào yǒu Hànyǔ bǐsài, wǒmen bān yǒu sān ge rén cānjiā, wǒ yě shì yí ge. Suīrán bǐjiào nán, dànshì zhè shì yí ge hěn hǎo de jīhuì.',
+      sample_vn: 'Tháng sau trường có cuộc thi tiếng Hán, lớp tôi có ba người tham gia, tôi là một trong số đó. Tuy khá khó nhưng đây là một cơ hội rất tốt.',
+      tip: '参加 + cuộc thi / hoạt động: 参加比赛; 比较 + tính từ = khá …, không dùng trong câu 比.'
     }
   ]
 };
@@ -1779,28 +1783,20 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Con trai tôi nói tiếng Trung ngày càng lưu loát rồi.', zh:'我儿子的中文说得越来越流利了。', py:'Wǒ érzi de Zhōngwén shuō de yuè lái yuè liúlì le.'},
-  {vi:'Đôi giày này giá cả giống với đôi kia.', zh:'这双鞋的价钱跟那双一样。', py:'Zhè shuāng xié de jiàqián gēn nà shuāng yíyàng.'},
-  {vi:'Đây là quả táo cuối cùng trong tủ lạnh.', zh:'这是冰箱里最后一个苹果。', py:'Zhè shì bīngxiāng lǐ zuìhòu yí ge píngguǒ.'},
-  {vi:'Bạn yên tâm, kỳ thi lần này sẽ không khó đâu.', zh:'你放心，这次考试不会很难。', py:'Nǐ fàngxīn, zhè cì kǎoshì bú huì hěn nán.'},
-  {vi:'Vì thời tiết không tốt nên thầy cô hơi lo lắng về sự an toàn khi chúng tôi leo núi.', zh:'因为天气不好，所以老师有点儿担心我们爬山的安全。', py:'Yīnwèi tiānqì bù hǎo, suǒyǐ lǎoshī yǒudiǎnr dānxīn wǒmen páshān de ānquán.'},
-  {vi:'Tuy anh ấy mới đến nhưng đã khá hiểu rõ tình hình ở đây.', zh:'虽然他刚来，但是对这儿已经比较了解了。', py:'Suīrán tā gāng lái, dànshì duì zhèr yǐjīng bǐjiào liǎojiě le.'},
-  {vi:'Họ quyết định ăn cơm trước, rồi mới đi leo núi.', zh:'他们决定先吃饭，再去爬山。', py:'Tāmen juédìng xiān chīfàn, zài qù páshān.'},
-  {vi:'Hoạt động leo núi lần này, Đại Sơn chắc chắn sẽ tham gia, không có gì nguy hiểm cả.', zh:'这次爬山活动，大山一定会参加，一点儿危险也没有。', py:'Zhè cì páshān huódòng, Dàshān yídìng huì cānjiā, yìdiǎnr wēixiǎn yě méiyǒu.'},
+  {vi:'Bạn càng nói nhanh, tôi càng nghe không hiểu.', zh:'你说得越快，我越听不懂。', py:'Nǐ shuō de yuè kuài, wǒ yuè tīng bu dǒng.'},
+  {vi:'Tiếng Trung của em gái tôi giỏi như của tôi.', zh:'我妹妹的中文跟我一样好。', py:'Wǒ mèimei de Zhōngwén gēn wǒ yíyàng hǎo.'},
+  {vi:'Đừng lo, bệnh viện này khá lớn, bác sĩ đều rất giỏi.', zh:'别担心，这家医院比较大，医生都很好。', py:'Bié dānxīn, zhè jiā yīyuàn bǐjiào dà, yīshēng dōu hěn hǎo.'},
+  {vi:'Chúng ta ăn chút gì trước rồi hãy đi, phim tám giờ bắt đầu.', zh:'我们先吃点儿东西再走吧，电影八点开始。', py:'Wǒmen xiān chī diǎnr dōngxi zài zǒu ba, diànyǐng bā diǎn kāishǐ.'},
+  {vi:'Tôi không hiểu rõ anh ấy lắm, chỉ biết anh ấy là người lớp mình.', zh:'我对他不太了解，只知道他是我们班的。', py:'Wǒ duì tā bú tài liǎojiě, zhǐ zhīdào tā shì wǒmen bān de.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì người nhà anh ấy đều gầy nên anh ấy ăn không béo được.', zh:'因为他家的人都很瘦，所以他吃不胖。', py:'Yīnwèi tā jiā de rén dōu hěn shòu, suǒyǐ tā chī bú pàng.'},
-  {vi:'Núi càng cao, không khí càng lạnh.', zh:'山越高，空气越冷。', py:'Shān yuè gāo, kōngqì yuè lěng.'},
-  {vi:'Tuy con đường ở giữa khó đi nhưng phong cảnh rất đẹp.', zh:'虽然中间这条路难走，但是风景很漂亮。', py:'Suīrán zhōngjiān zhè tiáo lù nán zǒu, dànshì fēngjǐng hěn piàoliang.'},
-  {vi:'Nếu bạn không yên tâm thì cùng tôi đi kiểm tra một lần nữa.', zh:'如果你不放心，就跟我再检查一次吧。', py:'Rúguǒ nǐ bú fàngxīn, jiù gēn wǒ zài jiǎnchá yí cì ba.'},
-  {vi:'Chỉ cần bạn nghỉ ngơi nhiều thì sẽ khỏi nhanh hơn.', zh:'只要你多休息，就会好得更快。', py:'Zhǐyào nǐ duō xiūxi, jiù huì hǎo de gèng kuài.'},
-  {vi:'Buổi biểu diễn văn nghệ của trường tháng sau, Tiểu Minh chắc chắn sẽ tham gia.', zh:'下个月学校的文艺演出，小明一定会参加。', py:'Xià ge yuè xuéxiào de wényì yǎnchū, Xiǎomíng yídìng huì cānjiā.'},
-  {vi:'Giấc ngủ không đủ ảnh hưởng không nhỏ đến sức khỏe của Tiểu Minh.', zh:'睡眠不够对小明的身体影响不小。', py:'Shuìmián bú gòu duì Xiǎomíng de shēntǐ yǐngxiǎng bù xiǎo.'},
-  {vi:'Giáo viên tiếng Trung của chúng tôi nói tiếng Anh cũng giỏi như người Mỹ vậy.', zh:'我们的汉语老师说英语说得跟美国人一样好。', py:'Wǒmen de Hànyǔ lǎoshī shuō Yīngyǔ shuō de gēn Měiguórén yíyàng hǎo.'},
+  {vi:'Thời tiết hôm nay giống hôm qua, đều rất lạnh.', zh:'今天的天气跟昨天一样，都很冷。', py:'Jīntiān de tiānqì gēn zuótiān yíyàng, dōu hěn lěng.'},
+  {vi:'Người ngồi ở giữa là cô giáo tiếng Trung của chúng tôi.', zh:'坐在中间的那个人是我们的中文老师。', py:'Zuò zài zhōngjiān de nàge rén shì wǒmen de Zhōngwén lǎoshī.'},
+  {vi:'Đây là lần cuối cùng tôi đến muộn, sau này nhất định sẽ không đến muộn nữa.', zh:'这是我最后一次迟到，以后一定不会再迟到了。', py:'Zhè shì wǒ zuìhòu yí cì chídào, yǐhòu yídìng bú huì zài chídào le.'},
 ];
 
 // ══════════════════════════════════════════

@@ -2000,74 +2000,76 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'看',right:'比赛'},
-  {left:'一张',right:'照片'},
-  {left:'一个',right:'年级'},
-  {left:'又聪明',right:'又热情'},
-  {left:'认真',right:'回答'},
-  {left:'进',right:'超市'},
-  {left:'吃',right:'蛋糕'},
-  {left:'因为工作很努力，',right:'所以经理很喜欢她。'},
-  {left:'虽然她总是笑着，',right:'但是工作很认真。'},
-  {left:'如果你饿了，',right:'我们就去超市买东西。'},
-  {left:'只要你认真复习，',right:'就不难。'},
+  {left:'下午我们去看足球', right:'比赛'},
+  {left:'我想看看你小时候的', right:'照片'},
+  {left:'我弟弟今年上小学二', right:'年级'},
+  {left:'家里没有牛奶了，我去', right:'超市买'},
+  {left:'今天是妹妹的生日，我们买了一个', right:'蛋糕'},
+  {left:'这个问题太难了，谁也不会', right:'回答'},
+  {left:'这家饭馆的菜很好吃，每天都有很多', right:'客人'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'只要你参加',blank:'比赛',post:'，就会更快乐。',hint:'(cuộc thi đấu)',ans:'比赛'},
-  {pre:'虽然我们不是一个',blank:'年级',post:'，但是经常一起复习。',hint:'(lớp/khối)',ans:'年级'},
-  {pre:'那家',blank:'又',post:'便宜又好吃的蛋糕店，就在超市旁边。',hint:'(vừa…vừa…)',ans:'又',exp:'又…又… = vừa… vừa…, nối hai tính từ: 又便宜又好吃.'},
-  {pre:'虽然妹妹很',blank:'聪明',post:'，但是复习总是不认真。',hint:'(thông minh)',ans:'聪明'},
-  {pre:'只要服务员对客人',blank:'热情',post:'，客人就会常来。',hint:'(nhiệt tình)',ans:'热情'},
-  {pre:'如果你不认真听，就不能',blank:'回答',post:'老师的问题。',hint:'(trả lời)',ans:'回答'},
-  {pre:'只要有空，他就喜欢',blank:'站',post:'在门口看比赛。',hint:'(đứng)',ans:'站'},
-  {pre:'虽然我有点儿',blank:'饿',post:'，但是想先喝杯咖啡。',hint:'(đói)',ans:'饿'},
-  {pre:'因为附近没有',blank:'超市',post:'，所以买东西不太方便。',hint:'(siêu thị)',ans:'超市'},
-  {pre:'虽然这块',blank:'蛋糕',post:'不便宜，但是很好吃。',hint:'(bánh kem)',ans:'蛋糕'},
-  {pre:'因为服务员比较',blank:'年轻',post:'，所以学得特别快。',hint:'(trẻ tuổi)',ans:'年轻'},
-  {pre:'虽然弟弟很年轻，但是工作很',blank:'认真',post:'。',hint:'(nghiêm túc)',ans:'认真'},
-  {pre:'因为她总是热情地帮助',blank:'客人',post:'，所以大家都很喜欢她。',hint:'(khách hàng)',ans:'客人'},
+  {pre:'我的新手机', blank:'又', post:'小又好看，一点儿也不贵。', hint:'(vừa … vừa)', ans:'又', exp:'又 + tính từ + 又 + tính từ = vừa … vừa …, hai tính chất cùng chiều; ôn 一点儿也不 + tính từ (Bài 1).'},
+  {pre:'A：你觉得新来的秘书怎么样？B：她又', blank:'热情', post:'又认真，有问题问她，她都会帮你。', hint:'(nhiệt tình)', ans:'热情', exp:'又热情又认真 = vừa nhiệt tình vừa nghiêm túc; ôn 会 = sẽ (Bài 3).'},
+  {pre:'爸爸每天', blank:'站着', post:'吃早饭，吃完就去上班。', hint:'(đứng)', ans:'站着', exp:'V1着 + V2: 站着吃 = đứng ăn (tư thế khi làm việc chính); 着 gắn ngay sau động từ thứ nhất.'},
+  {pre:'A：小明呢？B：你看，他在那儿', blank:'拿着', post:'照片给大家看呢。', hint:'(đang cầm)', ans:'拿着', exp:'拿着照片 + 给大家看: cầm ảnh cho mọi người xem — 拿着 là cách thức của việc làm phía sau.'},
+  {pre:'弟弟', blank:'总是', post:'玩儿游戏玩儿到晚上十二点，所以早上不想起床。', hint:'(luôn luôn, lúc nào cũng)', ans:'总是', exp:'总是 = lúc nào cũng, đứng trước động từ; ôn 游戏 (Bài 1) và 因为/所以.'},
+  {pre:'虽然他不太聪明，但是学习很', blank:'努力', post:'，每天都复习到晚上十一点。', hint:'(chăm chỉ, cố gắng)', ans:'努力', exp:'努力 = chăm chỉ, cố gắng; ôn 虽然……但是…… (HSK2) và 复习 (Bài 1).'},
+  {pre:'A：上课的时候老师问你问题了吗？B：问了，我', blank:'回答', post:'对了。', hint:'(trả lời)', ans:'回答', exp:'回答 = trả lời (câu hỏi); 回答对了 = trả lời đúng (động từ + 对 chỉ kết quả).'},
+  {pre:'我早上只喝了一杯牛奶，现在有点儿', blank:'饿', post:'了。', hint:'(đói)', ans:'饿', exp:'有点儿 + tính từ + 了 = hơi … rồi (trạng thái mới); ôn 只 + động từ (Bài 3).'},
+  {pre:'学校旁边新开了一家', blank:'超市', post:'，那儿的水果都很新鲜。', hint:'(siêu thị)', ans:'超市', exp:'超市 = siêu thị, lượng từ 家 (一家超市); ôn 新鲜 (Bài 3).'},
+  {pre:'A：你们经理多大了？B：不到三十岁，很', blank:'年轻', post:'。', hint:'(trẻ)', ans:'年轻', exp:'年轻 = trẻ tuổi (tính từ); đừng nhầm với 年级 = khối lớp.'},
+  {pre:'她写汉字写得很', blank:'认真', post:'，一个字也没写错。', hint:'(nghiêm túc, cẩn thận)', ans:'认真', exp:'V + O + V + 得 + 很认真 (HSK2); ôn 一……也没 + V (Bài 1).'},
+  {pre:'今天家里要来', blank:'客人', post:'，妈妈早上就去买菜了。', hint:'(khách)', ans:'客人', exp:'客人 = khách (đến nhà, đến quán); 要……了 / 要来 = sắp đến.'},
+  {pre:'A：昨天的足球', blank:'比赛', post:'你看了吗？B：看了，我们学校的同学踢得非常好。', hint:'(trận đấu, cuộc thi)', ans:'比赛', exp:'比赛 = trận đấu, cuộc thi; 足球比赛 = trận bóng đá; ôn 踢得非常好 (V + 得).'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['因为','服务员','工作','很','认真','，','所以','客人','都','很','满意','。'],ans:'因为服务员工作很认真，所以客人都很满意。',audio:'因为服务员工作很认真，所以客人都很满意。'},
-  {words:['如果','你','想','买','便宜','的','蛋糕','，','就','去','那','家','超市','看看','。'],ans:'如果你想买便宜的蛋糕，就去那家超市看看。',audio:'如果你想买便宜的蛋糕，就去那家超市看看。'},
-  {words:['很多','人','拿','着','花','站','在','门口','。'],ans:'很多人拿着花站在门口。',audio:'很多人拿着花站在门口。'},
-  {words:['因为','客人','越来越','多','，','所以','她','总是','很','忙','。'],ans:'因为客人越来越多，所以她总是很忙。',audio:'因为客人越来越多，所以她总是很忙。'},
-  {words:['虽然','弟弟','不是','很','聪明','，','但是','他','复习','特别','努力','。'],ans:'虽然弟弟不是很聪明，但是他复习特别努力。',audio:'虽然弟弟不是很聪明，但是他复习特别努力。'},
-  {words:['如果','你','总是','不','认真','，','老师','就','会','生气','。'],ans:'如果你总是不认真，老师就会生气。',audio:'如果你总是不认真，老师就会生气。'},
-  {words:['如果','你','饿','了','，','就','去','超市','买','点儿','东西','吧','。'],ans:'如果你饿了，就去超市买点儿东西吧。',audio:'如果你饿了，就去超市买点儿东西吧。'},
-  {words:['我们','回家','吃','着','蛋糕','看','比赛','，','怎么样','？'],ans:'我们回家吃着蛋糕看比赛，怎么样？',audio:'我们回家吃着蛋糕看比赛，怎么样？'},
+  {words:['这个','蛋糕','又','甜','又','好看','，','是','妈妈','做','的','。'], ans:'这个蛋糕又甜又好看，是妈妈做的。', audio:'这个蛋糕又甜又好看，是妈妈做的。'},
+  {words:['我们','是','一个','年级','的','，','但是','不','在','一个','班','。'], ans:'我们是一个年级的，但是不在一个班。', audio:'我们是一个年级的，但是不在一个班。'},
+  {words:['学校','不','远','，','走着','去','十','分钟','就','到','了','。'], ans:'学校不远，走着去十分钟就到了。', audio:'学校不远，走着去十分钟就到了。'},
+  {words:['爸爸','总是','看着','报纸','喝','咖啡','。'], ans:'爸爸总是看着报纸喝咖啡。', audio:'爸爸总是看着报纸喝咖啡。'},
+  {words:['教室','前面','站着','一个','年轻人','，','他','是','新','来','的','老师','。'], ans:'教室前面站着一个年轻人，他是新来的老师。', audio:'教室前面站着一个年轻人，他是新来的老师。'},
+  {words:['我们','的','新','经理','又','年轻','又','聪明','。'], ans:'我们的新经理又年轻又聪明。', audio:'我们的新经理又年轻又聪明。'},
+  {words:['其实','他','很','聪明','，','就是','不太','努力','。'], ans:'其实他很聪明，就是不太努力。', audio:'其实他很聪明，就是不太努力。'},
+  {words:['客人','已经','到','楼下','了','，','你','快','下去','接','吧','。'], ans:'客人已经到楼下了，你快下去接吧。', audio:'客人已经到楼下了，你快下去接吧。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'她聪明又热情又。',
-   opts:['她又聪明又热情。','她聪明又热情又。','又她聪明又热情。','她又又聪明热情。'],ans:0,
-   exp:'又……又…… phải đặt NGAY TRƯỚC mỗi tính từ được liệt kê: 又+adj1+又+adj2, không đặt 又 sau tính từ.'},
-  {wrong:'她总是回答着笑老师的问题。',
-   opts:['她总是笑着回答老师的问题。','她总是回答着笑老师的问题。','她总是笑回答着老师的问题。','她笑着总是回答老师的问题。'],ans:0,
-   exp:'Cấu trúc V1着+V2: động từ diễn tả trạng thái đi kèm (笑) đứng trước và gắn liền với 着, rồi mới đến động từ chính (回答)+tân ngữ.'},
-  {wrong:'很多客人站着拿蛋糕在超市门口。',
-   opts:['很多客人拿着蛋糕站在超市门口。','很多客人站着拿蛋糕在超市门口。','很多客人拿蛋糕着站在超市门口。','蛋糕很多客人拿着站在超市门口。'],ans:0,
-   exp:'Động tác đi kèm (拿着 — cầm) phải đứng trước, hành động chính (站在超市门口 — đứng ở cửa siêu thị) đứng sau: V1着+V2, không đảo ngược thứ tự.'},
-  {wrong:'超市又便宜蛋糕又好吃。',
-   opts:['超市的蛋糕又便宜又好吃。','超市又便宜蛋糕又好吃。','超市蛋糕又又便宜好吃。','又超市的蛋糕便宜又好吃。'],ans:0,
-   exp:'Chủ ngữ (超市的蛋糕) phải đứng nguyên vẹn trước cấu trúc 又……又……, không được chen danh từ vào giữa 又 và tính từ.'},
-  {wrong:'我有点儿了饿。',
-   opts:['我有点儿饿了。','我有点儿了饿。','我了有点儿饿。','有点儿我饿了。'],ans:0,
-   exp:'了 đặt CUỐI CÂU khi diễn tả trạng thái mới xảy ra: 有点儿+tính từ+了, không chen 了 vào giữa 有点儿 và tính từ.'},
-  {wrong:'我们喝咖啡着吃蛋糕。',
-   opts:['我们喝着咖啡吃蛋糕。','我们喝咖啡着吃蛋糕。','我们喝着咖啡着吃蛋糕。','我们着喝咖啡吃蛋糕。'],ans:0,
-   exp:'着 phải gắn liền ngay sau động từ thứ nhất (喝着), không đặt sau cả cụm động từ+tân ngữ (喝咖啡着 là sai).'},
+  {wrong:'我的房间很小又冷。',
+   opts:['我的房间又小和冷。','我的房间又小又冷。','我的房间又小冷。','我的房间小又冷又。'], ans:1,
+   exp:'又 đứng trước MỖI tính từ: 又小又冷; không nối hai tính từ bằng 和, không bỏ bớt 又.'},
+  {wrong:'妹妹做作业坐着。',
+   opts:['妹妹坐做着作业。','妹妹着坐做作业。','妹妹坐着了做作业。','妹妹坐着做作业。'], ans:3,
+   exp:'V1着 + V2: tư thế (坐着) đứng TRƯỚC việc chính (做作业), không đặt sau như tiếng Việt “làm bài ngồi”; 着 không đi cùng 了.'},
+  {wrong:'他拿书着站在门口。',
+   opts:['他拿着书站在门口。','他拿着书着站在门口。','他着拿书站在门口。','他拿了着书站在门口。'], ans:0,
+   exp:'着 gắn ngay sau động từ, trước tân ngữ: 拿着书 (không phải 拿书着); chỉ dùng một 着.'},
+  {wrong:'他来得总是很早。',
+   opts:['他来得很总是早。','他来总是得很早。','他总是来得很早。','他来得很早总是。'], ans:2,
+   exp:'总是 là phó từ, đứng TRƯỚC động từ: 总是来得很早; không chen vào giữa động từ và 得.'},
+  {wrong:'他回答得问题很好。',
+   opts:['他回答问题得很好。','他回答问题回答得很好。','他回答问题回答的很好。','他回答很好问题。'], ans:1,
+   exp:'Có tân ngữ thì lặp lại động từ: 回答问题 + 回答得很好; trước bổ ngữ trạng thái dùng 得, không dùng 的 (ôn HSK2).'},
+  {wrong:'他是三年级学生的。',
+   opts:['他是三年级的学生。','他是年级三的学生。','他三年级是的学生。','他是三个年级的学生。'], ans:0,
+   exp:'Số đứng trước 年级: 三年级 (không nói 年级三 như tiếng Việt “lớp ba”); 的 đứng trước danh từ 学生.'},
+  {wrong:'我去超市明天买东西。',
+   opts:['明天我去买东西超市。','我去超市买东西明天。','我明天去超市买东西。','我明天去买东西在超市。'], ans:2,
+   exp:'Thời gian đứng trước động từ, nơi chốn đi theo 去: 明天去超市买东西 — không đặt thời gian, nơi chốn ở cuối câu như tiếng Việt.'},
+  {wrong:'我给你看一个照片。',
+   opts:['我给你看一把照片。','我看给你一张照片。','我给你一张看照片。','我给你看一张照片。'], ans:3,
+   exp:'Ảnh dùng lượng từ 张 (一张照片); 把 dùng cho ô, ghế (ôn Bài 2); 给你看 = cho bạn xem.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2075,97 +2077,97 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 4. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 4 (又……又……, V1着 + V2). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn giới thiệu với lớp về một người bạn thân của mình.',
-      q_zh: '说一说你的一个好朋友，他是个什么样的人？',
-      q_py: 'Shuō yi shuō nǐ de yí ge hǎo péngyou, tā shì ge shénme yàng de rén?',
-      q_vn: 'Hãy kể về một người bạn thân của bạn, bạn ấy là người thế nào?',
-      grammar: { label: '又……又…… (vừa… vừa…)', any: ['又'] },
+      situation: 'Một người bạn mới quen hỏi về giáo viên tiếng Hán của bạn.',
+      q_zh: '你的汉语老师怎么样？',
+      q_py: 'Nǐ de Hànyǔ lǎoshī zěnmeyàng?',
+      q_vn: 'Giáo viên tiếng Hán của bạn thế nào?',
+      grammar: { label: '又……又…… (vừa … vừa …)', any: ['又'] },
       need: [
-        { label: 'Dùng 又……又…… để tả tính cách', any: ['又'] },
-        { label: 'Kể một việc bạn ấy hay làm', any: ['帮', '回答', '学习', '努力', '认真', '问题'] }
+        { label: 'Tả tính cách / ngoại hình', any: ['聪明', '热情', '认真', '年轻', '高', '漂亮', '好'] },
+        { label: 'Kể một việc thầy/cô hay làm', any: ['总是', '上课', '问题', '笑', '帮', '站'] }
       ],
-      bonus: { label: 'Dùng 总是 để nói việc thường xuyên', any: ['总是', '经常'] },
-      vocab: ['聪明', '热情', '努力'],
-      minLen: 20,
-      sample: '我的朋友又聪明又热情，学习很努力。同学有问题的时候，他总是认真地回答。',
-      sample_py: 'Wǒ de péngyou yòu cōngming yòu rèqíng, xuéxí hěn nǔlì. Tóngxué yǒu wèntí de shíhou, tā zǒngshì rènzhēn de huídá.',
-      sample_vn: 'Bạn tôi vừa thông minh vừa nhiệt tình, học rất chăm. Khi các bạn có câu hỏi, cậu ấy luôn trả lời rất nghiêm túc.',
-      tip: '又……又…… nối hai tính chất cùng có: 这个菜又便宜又好吃。'
+      bonus: { label: 'Dùng V着 (站着 / 笑着)', any: ['着'] },
+      vocab: ['又', '热情', '总是', '年轻'],
+      minLen: 18,
+      sample: '我的汉语老师又年轻又热情。她上课的时候总是站着，一点儿也不觉得累，学生都很喜欢她。',
+      sample_py: 'Wǒ de Hànyǔ lǎoshī yòu niánqīng yòu rèqíng. Tā shàngkè de shíhou zǒngshì zhànzhe, yìdiǎnr yě bù juéde lèi, xuésheng dōu hěn xǐhuan tā.',
+      sample_vn: 'Cô giáo tiếng Hán của mình vừa trẻ vừa nhiệt tình. Lúc lên lớp cô lúc nào cũng đứng, chẳng thấy mệt chút nào, học sinh đều rất quý cô.',
+      tip: '又……又…… đặt ngay trước mỗi tính từ và không thêm 很: 又年轻又热情.'
     },
     {
-      situation: 'Bạn đang xem lại ảnh cũ cùng người nhà.',
-      q_zh: '看这张照片，照片上的人在做什么？',
-      q_py: 'Kàn zhè zhāng zhàopiàn, zhàopiàn shàng de rén zài zuò shénme?',
-      q_vn: 'Xem tấm ảnh này, người trong ảnh đang làm gì?',
-      grammar: { label: 'V1 着 (O1) + V2 (O2) — vừa… vừa làm', any: ['着'] },
+      situation: 'Bạn cho bạn bè xem một tấm ảnh gia đình trong điện thoại.',
+      q_zh: '这张照片上是你家里人吗？大家在做什么？',
+      q_py: 'Zhè zhāng zhàopiàn shang shì nǐ jiā li rén ma? Dàjiā zài zuò shénme?',
+      q_vn: 'Người trong ảnh này là gia đình bạn à? Mọi người đang làm gì vậy?',
+      grammar: { label: 'V1着 (O1) + V2 (O2) — làm việc kia trong tư thế / cách thức này', any: ['着'] },
       need: [
-        { label: 'Dùng V着 tả tư thế', any: ['站着', '坐着', '拿着', '笑着', '看着'] },
-        { label: 'Nói việc người đó đang làm', any: ['吃', '喝', '说', '照', '玩', '唱'] }
+        { label: 'Nói ai trong ảnh', any: ['爸爸', '妈妈', '哥哥', '姐姐', '弟弟', '妹妹', '我'] },
+        { label: 'Tả tư thế / hành động', any: ['站', '坐着', '拿着', '笑着', '吃', '喝', '看'] }
       ],
-      bonus: { label: 'Nhận xét tâm trạng trong ảnh', any: ['高兴', '快乐', '热情', '年轻'] },
+      bonus: { label: 'Nói ảnh chụp khi nào', any: ['去年', '生日', '时候', '新年'] },
       vocab: ['照片', '站', '蛋糕'],
       minLen: 18,
-      sample: '照片上的人站着吃蛋糕，手里还拿着一杯咖啡，看上去很高兴。',
-      sample_py: 'Zhàopiàn shàng de rén zhàn zhe chī dàngāo, shǒu lǐ hái ná zhe yì bēi kāfēi, kàn shàng qù hěn gāoxìng.',
-      sample_vn: 'Người trong ảnh đứng ăn bánh ga-tô, trên tay còn cầm một cốc cà phê, trông rất vui.',
-      tip: 'V1着 + V2 cho biết tư thế khi làm việc kia: 他笑着说、我站着吃。'
+      sample: '对，这是我去年生日的照片。爸爸妈妈坐着喝茶，我站在后面，手里拿着一个大蛋糕。',
+      sample_py: 'Duì, zhè shì wǒ qùnián shēngrì de zhàopiàn. Bàba māma zuòzhe hē chá, wǒ zhàn zài hòumiàn, shǒu li názhe yí ge dà dàngāo.',
+      sample_vn: 'Đúng rồi, đây là ảnh sinh nhật mình năm ngoái. Bố mẹ ngồi uống trà, mình đứng phía sau, tay cầm một cái bánh kem to.',
+      tip: 'V1着 + V2: 坐着喝茶 = ngồi uống trà; 着 gắn ngay sau động từ chỉ tư thế, rồi mới đến việc chính.'
     },
     {
-      situation: 'Thầy giáo hỏi cả lớp về kinh nghiệm tham gia cuộc thi.',
-      q_zh: '你参加过什么比赛？后来结果怎么样？',
-      q_py: 'Nǐ cānjiā guo shénme bǐsài? Hòulái jiéguǒ zěnmeyàng?',
-      q_vn: 'Bạn từng tham gia cuộc thi gì? Kết quả sau đó thế nào?',
-      grammar: { label: '参加 + 比赛, dùng 过 kể trải nghiệm', any: ['过', '参加'] },
+      situation: 'Bạn thân hỏi bạn có hay vừa ăn vừa xem điện thoại không.',
+      q_zh: '你吃饭的时候看手机吗？',
+      q_py: 'Nǐ chī fàn de shíhou kàn shǒujī ma?',
+      q_vn: 'Lúc ăn cơm bạn có xem điện thoại không?',
+      grammar: { label: 'V1着 + V2 (看着手机吃饭)', any: ['着'] },
       need: [
-        { label: 'Nói cuộc thi nào', any: ['比赛', '考试', '汉语', '唱歌', '跑步', '足球', '篮球'] },
-        { label: 'Nói kết quả', any: ['第一', '第二', '第三', '名', '得', '没', '成绩'] }
+        { label: 'Nói có hay không, có thường xuyên không', any: ['经常', '总是', '有时候', '不看', '看'] },
+        { label: 'Nói lý do hoặc ảnh hưởng', any: ['眼睛', '身体', '不好', '累', '因为', '一个人'] }
       ],
-      bonus: { label: 'Nói bạn đã chuẩn bị thế nào', any: ['认真', '努力', '准备', '练习'] },
-      vocab: ['比赛', '认真', '努力'],
-      minLen: 20,
-      sample: '去年我参加过一次汉语比赛。那时候我准备得很认真，每天都练习，最后得了第二名。',
-      sample_py: 'Qùnián wǒ cānjiā guo yí cì Hànyǔ bǐsài. Nà shíhou wǒ zhǔnbèi děi hěn rènzhēn, měitiān dōu liànxí, zuìhòu děi le dì èr míng.',
-      sample_vn: 'Năm ngoái tôi từng tham gia một cuộc thi tiếng Hán. Hồi đó tôi chuẩn bị rất nghiêm túc, ngày nào cũng luyện, cuối cùng được giải nhì.',
-      tip: '过 đặt sau động từ để kể việc đã từng làm: 我去过中国。'
+      bonus: { label: 'Ôn 其实 (Bài 2)', any: ['其实'] },
+      vocab: ['总是'],
+      minLen: 16,
+      sample: '我经常看着手机吃饭，妈妈说对眼睛不好。其实我也知道，但是一个人吃饭的时候总是想看。',
+      sample_py: 'Wǒ jīngcháng kànzhe shǒujī chī fàn, māma shuō duì yǎnjing bù hǎo. Qíshí wǒ yě zhīdào, dànshì yí ge rén chī fàn de shíhou zǒngshì xiǎng kàn.',
+      sample_vn: 'Mình hay vừa xem điện thoại vừa ăn cơm, mẹ bảo không tốt cho mắt. Thật ra mình cũng biết, nhưng lúc ăn một mình là cứ muốn xem.',
+      tip: '“Vừa xem điện thoại vừa ăn” nói là 看着手机吃饭: việc phụ + 着 đứng trước, việc chính đứng sau.'
     },
     {
-      situation: 'Bạn tan làm về nhà, bụng đói mà tủ lạnh trống trơn.',
-      q_zh: '下班回家你饿了，可是家里没有吃的，你会怎么办？',
-      q_py: 'Xiàbān huí jiā nǐ è le, kěshì jiā lǐ méiyǒu chī de, nǐ huì zěnme bàn?',
-      q_vn: 'Tan làm về nhà bạn đói, nhưng ở nhà không có gì ăn, bạn sẽ làm thế nào?',
-      grammar: { label: '先……，再/然后…… (trình tự việc làm)', any: ['先', '然后', '再'] },
+      situation: 'Bạn tan học về, bụng đói; bạn cùng phòng rủ đi siêu thị.',
+      q_zh: '你饿了吗？我们去超市买点儿什么？',
+      q_py: 'Nǐ è le ma? Wǒmen qù chāoshì mǎi diǎnr shénme?',
+      q_vn: 'Bạn đói chưa? Chúng mình đi siêu thị mua gì đó nhé?',
+      grammar: { label: '又……又…… (khen món muốn mua)', any: ['又'] },
       need: [
-        { label: 'Nói đi mua hay gọi đồ ăn', any: ['超市', '买', '饭馆', '外面', '点'] },
-        { label: 'Nói món ăn cụ thể', any: ['面包', '鸡蛋', '面条', '米饭', '菜', '蛋糕'] }
+        { label: 'Nói đói hay không', any: ['饿', '不饿'] },
+        { label: 'Nói món muốn mua', any: ['蛋糕', '面包', '水果', '西瓜', '苹果', '鸡蛋', '牛奶', '饮料'] }
       ],
-      bonus: { label: 'Nói thêm vì sao chọn cách đó', any: ['因为', '方便', '便宜', '快'] },
-      vocab: ['饿', '超市', '蛋糕'],
+      bonus: { label: 'Ôn 只 / 还是 (Bài 3)', any: ['只', '还是'] },
+      vocab: ['饿', '超市'],
       minLen: 18,
-      sample: '我饿了就先去超市买点儿面包和鸡蛋，然后回家做一个简单的菜，因为这样又快又便宜。',
-      sample_py: 'Wǒ è le jiù xiān qù chāoshì mǎi diǎn ér miànbāo hé jīdàn, ránhòu huí jiā zuò yí ge jiǎndān de cài, yīnwèi zhè yàng yòu kuài yòu piányi.',
-      sample_vn: 'Đói thì tôi ra siêu thị mua ít bánh mì và trứng trước, rồi về nhà nấu một món đơn giản, vì như vậy vừa nhanh vừa rẻ.',
-      tip: '先……然后…… nói thứ tự các việc: 先写作业，然后看电视。'
+      sample: '饿了，中午我只吃了一个面包。超市里的西瓜又大又甜，我们买一个回来吧。你还想喝点儿什么？',
+      sample_py: 'È le, zhōngwǔ wǒ zhǐ chīle yí ge miànbāo. Chāoshì li de xīguā yòu dà yòu tián, wǒmen mǎi yí ge huílai ba. Nǐ hái xiǎng hē diǎnr shénme?',
+      sample_vn: 'Đói rồi, trưa mình chỉ ăn có một cái bánh mì. Dưa hấu ở siêu thị vừa to vừa ngọt, mình mua một quả về nhé. Bạn còn muốn uống gì không?',
+      tip: '又……又…… thường nối hai tính chất cùng tốt hoặc cùng xấu: 又大又甜, 又小又冷.'
     },
     {
-      situation: 'Một người bạn nước ngoài hỏi về lớp học của bạn.',
-      q_zh: '介绍一下你们班：同学们年轻吗？大家学得怎么样？',
-      q_py: 'Jièshào yíxià nǐmen bān: tóngxué men niánqīng ma? Dàjiā xué děi zěnmeyàng?',
-      q_vn: 'Giới thiệu về lớp bạn: các bạn học sinh có trẻ không? Mọi người học thế nào?',
-      grammar: { label: '又……又…… + 总是 (tả chung cả nhóm)', any: ['又', '总是', '都'] },
+      situation: 'Tháng sau có cuộc thi tiếng Hán, giáo viên hỏi bạn nên cử ai trong lớp đi thi.',
+      q_zh: '下个月有汉语比赛，你觉得我们班谁去好？为什么？',
+      q_py: 'Xià ge yuè yǒu Hànyǔ bǐsài, nǐ juéde wǒmen bān shéi qù hǎo? Wèi shénme?',
+      q_vn: 'Tháng sau có cuộc thi tiếng Hán, bạn thấy lớp mình ai đi thì tốt? Vì sao?',
+      grammar: { label: '又……又…… (nêu hai ưu điểm)', any: ['又'] },
       need: [
-        { label: 'Nói về tuổi hoặc khối lớp', any: ['年轻', '年级', '岁', '大学'] },
-        { label: 'Nhận xét tinh thần học', any: ['认真', '努力', '聪明', '热情'] }
+        { label: 'Nói chọn ai', any: ['我', '他', '她', '小明', '同学'] },
+        { label: 'Nói lý do', any: ['聪明', '努力', '认真', '因为', '说得'] }
       ],
-      bonus: { label: 'Kể một hoạt động chung của lớp', any: ['比赛', '一起', '活动', '照片', '参加'] },
-      vocab: ['年级', '年轻', '认真'],
-      minLen: 20,
-      sample: '我们班的同学都很年轻，大部分是三年级的学生。大家学得又认真又努力，上个月还一起参加了汉语比赛。',
-      sample_py: 'Wǒmen bān de tóngxué dōu hěn niánqīng, dà bùfen shì sān niánjí de xuésheng. Dàjiā xué děi yòu rènzhēn yòu nǔlì, shàng ge yuè hái yìqǐ cānjiā le Hànyǔ bǐsài.',
-      sample_vn: 'Các bạn lớp tôi đều rất trẻ, phần lớn là sinh viên năm ba. Mọi người học vừa nghiêm túc vừa chăm chỉ, tháng trước còn cùng nhau tham gia cuộc thi tiếng Hán.',
-      tip: '年级 là khối/năm học, 年轻 là trẻ tuổi — đừng nhầm hai từ này.'
+      bonus: { label: 'Ôn bổ ngữ trạng thái V + 得 (说得好)', any: ['得'] },
+      vocab: ['比赛', '聪明', '努力', '认真'],
+      minLen: 18,
+      sample: '我觉得小明去好。他又聪明又努力，汉语说得比我们都好，上课的时候总是认真听老师说。',
+      sample_py: 'Wǒ juéde Xiǎomíng qù hǎo. Tā yòu cōngming yòu nǔlì, Hànyǔ shuō de bǐ wǒmen dōu hǎo, shàngkè de shíhou zǒngshì rènzhēn tīng lǎoshī shuō.',
+      sample_vn: 'Mình thấy Tiểu Minh đi là tốt. Cậu ấy vừa thông minh vừa chăm chỉ, nói tiếng Hán giỏi hơn tất cả bọn mình, lên lớp lúc nào cũng chăm chú nghe thầy cô giảng.',
+      tip: 'So sánh với bổ ngữ 得: 说得比我们好 — 比 + người đứng sau 得 hoặc trước động từ (他比我们说得好).'
     }
   ]
 };
@@ -2174,28 +2176,20 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Anh trai tôi vừa cao vừa thông minh, ai cũng thích cậu ấy.', zh:'我哥哥又高又聪明，谁都喜欢他。', py:'Wǒ gēge yòu gāo yòu cōngming, shéi dōu xǐhuan tā.'},
-  {vi:'Vì thầy giáo rất nhiệt tình nên học sinh đều thích giờ học của thầy.', zh:'因为老师很热情，所以学生都喜欢他的课。', py:'Yīnwèi lǎoshī hěn rèqíng, suǒyǐ xuésheng dōu xǐhuan tā de kè.'},
-  {vi:'Tuy bài tập nhiều nhưng cô ấy vẫn làm rất nghiêm túc.', zh:'虽然作业很多，但是她还是做得很认真。', py:'Suīrán zuòyè hěn duō, dànshì tā háishi zuò de hěn rènzhēn.'},
-  {vi:'Nếu bạn đói thì chúng ta đi siêu thị mua chút bánh kem.', zh:'如果你饿了，我们就去超市买点儿蛋糕。', py:'Rúguǒ nǐ è le, wǒmen jiù qù chāoshì mǎi diǎnr dàngāo.'},
-  {vi:'Anh ấy vừa cười vừa trả lời khách hàng.', zh:'他笑着回答客人。', py:'Tā xiàozhe huídá kèrén.'},
-  {vi:'Chỉ cần bạn chăm chỉ thì cha mẹ sẽ rất vui.', zh:'只要你努力，爸妈就会很高兴。', py:'Zhǐyào nǐ nǔlì, bàmā jiù huì hěn gāoxìng.'},
-  {vi:'Cô phục vụ đó vừa trẻ vừa nhiệt tình, khách ai cũng thích.', zh:'那个服务员又年轻又热情，客人都很喜欢她。', py:'Nàge fúwùyuán yòu niánqīng yòu rèqíng, kèrén dōu hěn xǐhuan tā.'},
-  {vi:'Bạn nữ đang đứng ở cửa cầm hoa tươi là ai vậy?', zh:'站在门口拿着鲜花的女孩儿是谁？', py:'Zhàn zài ménkǒu názhe xiānhuā de nǚháir shì shéi?'},
+  {vi:'Chị tôi vừa xinh vừa nhiệt tình, ai cũng muốn làm bạn với chị.', zh:'我姐姐又漂亮又热情，谁都想跟她做朋友。', py:'Wǒ jiějie yòu piàoliang yòu rèqíng, shéi dōu xiǎng gēn tā zuò péngyou.'},
+  {vi:'Đừng đứng đọc sách nữa, lại đây ngồi đi.', zh:'别站着看书了，来这儿坐吧。', py:'Bié zhànzhe kàn shū le, lái zhèr zuò ba.'},
+  {vi:'Thật ra người phục vụ đó rất trẻ, năm nay mười chín tuổi.', zh:'那个服务员其实很年轻，今年十九岁。', py:'Nàge fúwùyuán qíshí hěn niánqīng, jīnnián shíjiǔ suì.'},
+  {vi:'Bạn muốn ăn bánh kem hay bánh mì? Trong siêu thị đều có.', zh:'你想吃蛋糕还是面包？超市里都有。', py:'Nǐ xiǎng chī dàngāo háishi miànbāo? Chāoshì li dōu yǒu.'},
+  {vi:'Anh ấy cười trả lời: “Không sao đâu.”', zh:'他笑着回答：“没关系。”', py:'Tā xiàozhe huídá: “Méi guānxi.”'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì cô ấy luôn cười với mọi người nên rất nhiều người thích cô ấy.', zh:'因为她总是对每个人都笑，所以很多人喜欢她。', py:'Yīnwèi tā zǒngshì duì měi ge rén dōu xiào, suǒyǐ hěn duō rén xǐhuan tā.'},
-  {vi:'Chỉ cần bạn认真复习，考试就没问题。', zh:'只要你认真复习，考试就没问题。', py:'Zhǐyào nǐ rènzhēn fùxí, kǎoshì jiù méi wèntí.'},
-  {vi:'Chị gái tôi vừa xinh vừa nhiệt tình, làm việc cũng rất chăm chỉ.', zh:'我姐姐又漂亮又热情，工作也很努力。', py:'Wǒ jiějie yòu piàoliang yòu rèqíng, gōngzuò yě hěn nǔlì.'},
-  {vi:'Nếu你还年轻，就应该多出去看看。', zh:'如果你还年轻，就应该多出去看看。', py:'Rúguǒ nǐ hái niánqīng, jiù yīnggāi duō chūqu kànkan.'},
-  {vi:'Bọn trẻ đang vừa ăn bánh kem vừa xem tivi.', zh:'孩子们正吃着蛋糕看电视。', py:'Háizimen zhèng chīzhe dàngāo kàn diànshì.'},
-  {vi:'Tuy cửa hàng đó nhỏ nhưng người phục vụ rất nhiệt tình.', zh:'虽然那家店很小，但是服务员很热情。', py:'Suīrán nà jiā diàn hěn xiǎo, dànshì fúwùyuán hěn rèqíng.'},
-  {vi:'Cậu học sinh đó thông minh nhưng không chăm chỉ lắm.', zh:'那个学生很聪明，但是不太努力。', py:'Nàge xuésheng hěn cōngming, dànshì bú tài nǔlì.'},
-  {vi:'Mấy người khách đang đứng trước cửa siêu thị đợi bạn.', zh:'几个客人正站在超市门口等你。', py:'Jǐ ge kèrén zhèng zhàn zài chāoshì ménkǒu děng nǐ.'},
+  {vi:'Những người trong bức ảnh này đều là bạn cùng khối của chúng tôi.', zh:'这张照片上的人都是我们年级的同学。', py:'Zhè zhāng zhàopiàn shang de rén dōu shì wǒmen niánjí de tóngxué.'},
+  {vi:'Ngày nào anh ấy tan làm là đi siêu thị mua thức ăn, về nhà nấu cơm.', zh:'他每天下了班就去超市买菜，回家做饭。', py:'Tā měitiān xiàle bān jiù qù chāoshì mǎi cài, huí jiā zuò fàn.'},
+  {vi:'Cô ấy vừa ăn bánh kem vừa nói: “Cái bánh này chẳng ngọt chút nào.”', zh:'她吃着蛋糕说：“这个蛋糕一点儿也不甜。”', py:'Tā chīzhe dàngāo shuō: “Zhège dàngāo yìdiǎnr yě bù tián.”'},
 ];
 
 // ══════════════════════════════════════════

@@ -1370,70 +1370,76 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'新',right:'同事'},
-  {left:'在',right:'银行'},
-  {left:'对……',right:'感兴趣'},
-  {left:'下个月',right:'结婚'},
-  {left:'欢迎',right:'你来'},
-  {left:'来',right:'接我'},
-  {left:'一',right:'刻'},
-  {left:'因为她刚来公司，',right:'所以我们都不认识她。'},
-  {left:'虽然我们刚认识，',right:'但是觉得很好。'},
-  {left:'如果你对音乐感兴趣，',right:'就来听音乐会吧。'},
-  {left:'只要你七点半来接我，',right:'我们就不会迟到。'},
+  {left:'她对中国音乐很', right:'感兴趣'},
+  {left:'七点半去机场', right:'接客人'},
+  {left:'下个月小丽要', right:'结婚'},
+  {left:'她以前在', right:'银行工作'},
+  {left:'对不起，让你等了这么', right:'久'},
+  {left:'公司来了一个新', right:'同事'},
+  {left:'路上车太多，今天上班', right:'迟到了'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'办公室里那位很热情的新',blank:'同事',post:'姓什么？',hint:'(đồng nghiệp)',ans:'同事'},
-  {pre:'',blank:'以前',post:'你去过银行工作吗？',hint:'(trước đây)',ans:'以前'},
-  {pre:'她在',blank:'银行',post:'工作了两年。',hint:'(ngân hàng)',ans:'银行'},
-  {pre:'你们在银行门口等了很',blank:'久',post:'，是吗？',hint:'(lâu)',ans:'久'},
-  {pre:'你同事对什么运动比较',blank:'感兴趣',post:'？',hint:'(có hứng thú)',ans:'感兴趣'},
-  {pre:'我跟小丽下个月',blank:'结婚',post:'。',hint:'(kết hôn)',ans:'结婚'},
-  {pre:'',blank:'欢迎',post:'你来。',hint:'(hoan nghênh)',ans:'欢迎'},
-  {pre:'都八点半了，你怎么又',blank:'迟到',post:'了？',hint:'(đến muộn)',ans:'迟到'},
-  {pre:'我们八点',blank:'半',post:'在公司门口见面，好吗？',hint:'(rưỡi)',ans:'半',exp:'半 đặt sau 点: 八点半 = 8 giờ rưỡi.'},
-  {pre:'谁明天去机场',blank:'接',post:'新同事？',hint:'(đón)',ans:'接'},
-  {pre:'我们在这儿等了一',blank:'刻',post:'了，他还没来。',hint:'(mười lăm phút)',ans:'刻',exp:'一刻 = 15 phút: 等了一刻了 = đã đợi 15 phút rồi.'},
-  {pre:'你看，都',blank:'差',post:'五分六点了，我们该走了。',hint:'(kém, thiếu)',ans:'差',exp:'差 + số phút + giờ = … kém…: 差五分六点 = 6 giờ kém 5.'},
+  {pre:'A：那个穿红衣服的人是谁？B：她是我的', blank:'同事', post:'，我们在一个办公室工作。', hint:'(đồng nghiệp)', ans:'同事', exp:'同事 = đồng nghiệp, người làm cùng công ty / cùng văn phòng.'},
+  {pre:'我', blank:'以前', post:'不喜欢吃鱼，来中国以后越来越喜欢了。', hint:'(trước đây)', ans:'以前', exp:'以前 = trước đây, đứng sau chủ ngữ hoặc đầu câu; ôn 越来越 + tính từ/động từ tâm lý (bài 5).'},
+  {pre:'A：你去哪儿？B：我去', blank:'银行', post:'，钱都用完了。', hint:'(ngân hàng)', ans:'银行', exp:'去银行 = đi ngân hàng; 用完了 = dùng hết rồi (ôn bổ ngữ kết quả 完).'},
+  {pre:'A：对不起，让你等了这么', blank:'久', post:'。B：没关系，我也没等多长时间。', hint:'(lâu)', ans:'久', exp:'等了这么久 = đợi lâu như vậy; 久 đứng sau 这么 / 很 / 多, giữ vị trí bổ ngữ thời lượng sau động từ.'},
+  {pre:'我妈妈对做菜特别', blank:'感兴趣', post:'，每个周末都给我们做好吃的。', hint:'(có hứng thú)', ans:'感兴趣', exp:'对 + việc/người + (特别/很) 感兴趣; phó từ mức độ đứng ngay trước 感兴趣, không đứng trước 对.'},
+  {pre:'姐姐和她男朋友认识六年了，今年夏天就要', blank:'结婚', post:'了。', hint:'(kết hôn)', ans:'结婚', exp:'就要……了 = sắp (HSK2); 认识六年了 = quen nhau sáu năm rồi (thời lượng + 了).'},
+  {pre:'A：八点上课，现在已经七点五十了！B：别着急，坐出租车不会', blank:'迟到', post:'的。', hint:'(đến muộn)', ans:'迟到', exp:'不会……的 = chắc chắn sẽ không …; 迟到 = đến muộn; ôn 别着急 (bài 1).'},
+  {pre:'从北京到这儿，坐飞机要两个', blank:'半', post:'小时。', hint:'(rưỡi)', ans:'半', exp:'两个半小时 = hai tiếng rưỡi: 半 đứng sau 个, trước 小时 — không nói 两个小时半 như tiếng Việt.'},
+  {pre:'A：电影几点开始？B：八点半。现在是八点一', blank:'刻', post:'，我们还有十五分钟。', hint:'(mười lăm phút)', ans:'刻', exp:'一刻 = 15 phút: 八点一刻 = 8 giờ 15; 八点半 = 8 giờ 30.'},
+  {pre:'我的手表慢了十分钟，现在不是七点四十五，是', blank:'差', post:'五分八点。', hint:'(kém)', ans:'差', exp:'差 + số phút + giờ = … kém …: 差五分八点 = 8 giờ kém 5 (7:55).'},
+  {pre:'明天你的朋友几点到机场？我开车去', blank:'接', post:'她吧。', hint:'(đón)', ans:'接', exp:'去 + 接 + người = đi đón ai; 接 cũng là “nghe máy” (接电话), ở đây là đón.'},
+  {pre:'爸爸在这家公司工作', blank:'了', post:'二十年了，大家都认识他。', hint:'(đã … được)', ans:'了', exp:'V + 了 + thời lượng + 了 = đã làm được … (đến giờ vẫn tiếp tục).'},
+  {pre:'昨天晚上我看电视', blank:'看', post:'了两个小时，作业还没做完呢。', hint:'(xem)', ans:'看', exp:'Động từ có tân ngữ + thời lượng thì lặp lại động từ: 看电视看了两个小时; 还没……呢 = vẫn chưa (HSK2).'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['那位','新','同事','虽然','刚','来','，','但是','大家','都','很','喜欢','她','。'],ans:'那位新同事虽然刚来，但是大家都很喜欢她。',audio:'那位新同事虽然刚来，但是大家都很喜欢她。'},
-  {words:['如果','你','想','去','银行','工作','，','就','得','先','问问','经理','。'],ans:'如果你想去银行工作，就得先问问经理。',audio:'如果你想去银行工作，就得先问问经理。'},
-  {words:['虽然','我','对','唱歌','不','感兴趣','，','但是','我','很','喜欢','听','音乐会','。'],ans:'虽然我对唱歌不感兴趣，但是我很喜欢听音乐会。',audio:'虽然我对唱歌不感兴趣，但是我很喜欢听音乐会。'},
-  {words:['我','朋友','明年','春天','结婚','，','你','一定','要','来','。'],ans:'我朋友明年春天结婚，你一定要来。',audio:'我朋友明年春天结婚，你一定要来。'},
-  {words:['因为','她','刚','来','公司','，','所以','我们','都','不','认识','她','。'],ans:'因为她刚来公司，所以我们都不认识她。',audio:'因为她刚来公司，所以我们都不认识她。'},
-  {words:['虽然','我们','刚','认识','，','但是','觉得','很好','。'],ans:'虽然我们刚认识，但是觉得很好。',audio:'虽然我们刚认识，但是觉得很好。'},
-  {words:['如果','你','对','音乐','感兴趣','，','就','来','听','音乐会','吧','。'],ans:'如果你对音乐感兴趣，就来听音乐会吧。',audio:'如果你对音乐感兴趣，就来听音乐会吧。'},
-  {words:['如果','车','再','不','来','，','我们','就','要','迟到','一','刻','了','。'],ans:'如果车再不来，我们就要迟到一刻了。',audio:'如果车再不来，我们就要迟到一刻了。'},
+  {words:['我们','在','机场','等','了','一个多','小时','，','飞机','还','没','到','。'], ans:'我们在机场等了一个多小时，飞机还没到。', audio:'我们在机场等了一个多小时，飞机还没到。'},
+  {words:['这个','周末','我们','去','爬山','，','你','感兴趣','吗','？'], ans:'这个周末我们去爬山，你感兴趣吗？', audio:'这个周末我们去爬山，你感兴趣吗？'},
+  {words:['下午','的','课','两点半','开始','，','我们','别','迟到','了','。'], ans:'下午的课两点半开始，我们别迟到了。', audio:'下午的课两点半开始，我们别迟到了。'},
+  {words:['她','以前','在','银行','工作','，','现在','是','我们','公司','的','经理','。'], ans:'她以前在银行工作，现在是我们公司的经理。', audio:'她以前在银行工作，现在是我们公司的经理。'},
+  {words:['我','姐姐','结婚','已经','五年','了','，','孩子','都','三岁','了','。'], ans:'我姐姐结婚已经五年了，孩子都三岁了。', audio:'我姐姐结婚已经五年了，孩子都三岁了。'},
+  {words:['差','一刻','九点','的','时候','，','客人','都','到','了','。'], ans:'差一刻九点的时候，客人都到了。', audio:'差一刻九点的时候，客人都到了。'},
+  {words:['电影','太','长','了','，','我','看','了','一半','就','睡着','了','。'], ans:'电影太长了，我看了一半就睡着了。', audio:'电影太长了，我看了一半就睡着了。'},
+  {words:['欢迎','你们','周末','来','我家','玩儿','！'], ans:'欢迎你们周末来我家玩儿！', audio:'欢迎你们周末来我家玩儿！'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'她工作三年了在北京。',
-   opts:['她在北京工作三年了。','她工作三年了在北京。','她三年了在北京工作。','她在北京三年了工作。'],ans:0,
-   exp:'Cấu trúc "Sub+V+了+thời lượng": bổ ngữ thời lượng (三年) phải đứng ngay sau động từ (工作), không tách khỏi động từ.'},
-  {wrong:'我很对音乐感兴趣。',
-   opts:['我对音乐很感兴趣。','我很对音乐感兴趣。','我对很音乐感兴趣。','我音乐对很感兴趣。'],ans:0,
-   exp:'Phó từ mức độ (很) phải đặt NGAY TRƯỚC 感兴趣, không đặt trước giới từ 对.'},
-  {wrong:'已经一刻差八点了。',
-   opts:['已经差一刻八点了。','已经一刻差八点了。','已经八点一刻差了。','已经差八点一刻了。'],ans:0,
-   exp:'Cấu trúc nói giờ kém: 差 + [khoảng thời gian] + [giờ] (差一刻八点), không đảo thứ tự.'},
-  {wrong:'我跟她结婚了都认识五年。',
-   opts:['我跟她都认识五年了。','我跟她结婚了都认识五年。','我跟她认识都五年了。','我都跟她认识五年了。'],ans:0,
-   exp:'Cấu trúc "Sub+V+了+thời lượng+了": 都 (đều/đã) đặt trước động từ 认识, 了 đặt cuối câu.'},
-  {wrong:'同事迟到了小时半个。',
-   opts:['同事迟到了半个小时。','同事迟到了小时半个。','同事半个小时了迟到。','同事迟到小时了半个。'],ans:0,
-   exp:'Bổ ngữ số lượng "半个小时" (số từ+lượng từ+danh từ: 半+个+小时) phải đứng nguyên vẹn sau 了, không đảo thành "小时半个".'},
+  {wrong:'我一个小时找了你。',
+   opts:['我找了一个小时你。','我找你了一个小时。','我找了你一个小时。','我一个小时找你了。'], ans:2,
+   exp:'Thời lượng đứng SAU động từ; tân ngữ là đại từ (你) thì đặt giữa: 找了你一个小时 — không đặt thời lượng trước động từ.'},
+  {wrong:'我对中国菜感兴趣很。',
+   opts:['我很感兴趣对中国菜。','我对中国菜很感兴趣。','我对很中国菜感兴趣。','我对中国菜是感兴趣。'], ans:1,
+   exp:'对 + đối tượng + 很 + 感兴趣: 很 đứng ngay trước 感兴趣; không chèn 是, không đưa 对 ra sau.'},
+  {wrong:'电影一刻差七点开始。',
+   opts:['电影差一刻七点开始。','电影差七点一刻开始。','电影开始差一刻七点。','电影七点开始差一刻。'], ans:0,
+   exp:'Giờ kém: 差 + số phút + giờ (差一刻七点 = 6:45); giờ là trạng ngữ nên đứng trước động từ 开始.'},
+  {wrong:'从我家到机场，坐车要一个小时半。',
+   opts:['从我家到机场，坐车要一半个小时。','从我家到机场，要一个半小时坐车。','从我家到机场，坐车一个半小时要。','从我家到机场，坐车要一个半小时。'], ans:3,
+   exp:'“Một tiếng rưỡi” = 一个半小时 (半 đứng trước 小时), không dịch từng chữ thành 一个小时半.'},
+  {wrong:'他工作在银行三年了。',
+   opts:['他在银行工作三年了。','他在银行三年了工作。','他工作三年了在银行。','他三年在银行工作了。'], ans:0,
+   exp:'在 + nơi chốn đứng TRƯỚC động từ, thời lượng đứng SAU động từ: 在银行工作三年了.'},
+  {wrong:'今天他十分钟迟到了。',
+   opts:['今天他迟到得十分钟。','今天他是十分钟迟到。','今天他迟到了十分钟。','今天他迟到十分钟的。'], ans:2,
+   exp:'迟到 + 了 + thời lượng: 迟到了十分钟; thời lượng không đứng trước động từ, không tách 迟到.'},
+  {wrong:'我昨天看了电视三个小时。',
+   opts:['我昨天看电视了三个小时。','我昨天看电视看了三个小时。','我昨天三个小时看了电视。','我昨天看了电视看三个小时。'], ans:1,
+   exp:'Có tân ngữ thì lặp động từ: 看电视 + 看了 + thời lượng; 了 đi sau động từ lặp lại.'},
+  {wrong:'弟弟给足球一点儿也不感兴趣。',
+   opts:['弟弟跟足球一点儿也不感兴趣。','弟弟对足球不一点儿也感兴趣。','弟弟对足球一点儿感兴趣也不。','弟弟对足球一点儿也不感兴趣。'], ans:3,
+   exp:'Hứng thú với cái gì dùng 对, không dùng 给/跟; 一点儿也不 đứng ngay trước 感兴趣 (ôn bài 1).'},
 ];
 
 // ══════════════════════════════════════════
@@ -1441,97 +1447,97 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 7. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 7 (bổ ngữ thời lượng, 对……感兴趣, nói giờ với 半 / 刻 / 差). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
       situation: 'Một người bạn Trung Quốc mới quen hỏi bạn học tiếng Hán bao lâu rồi.',
-      q_zh: '你学汉语学了多长时间了？每天学多久？',
-      q_py: 'Nǐ xué Hànyǔ xué le duō zhǎng shíjiān le? Měitiān xué duō jiǔ?',
+      q_zh: '你学了多长时间汉语了？每天学多久？',
+      q_py: 'Nǐ xuéle duō cháng shíjiān Hànyǔ le? Měi tiān xué duō jiǔ?',
       q_vn: 'Bạn học tiếng Hán được bao lâu rồi? Mỗi ngày học bao lâu?',
-      grammar: { label: 'Bổ ngữ thời lượng: V + 了 + thời gian + 了', any: ['了', '年', '个月', '小时'] },
+      grammar: { label: 'Bổ ngữ thời lượng: V + (O + V) + 了 + thời gian', any: ['年', '个月', '小时', '分钟'] },
       need: [
         { label: 'Nói học được bao lâu', any: ['年', '个月', '星期'] },
         { label: 'Nói mỗi ngày học bao lâu', any: ['小时', '分钟', '半', '每天'] }
       ],
-      bonus: { label: 'Nói cuối tuần học khác ngày thường bằng 更 / 久', any: ['久', '更', '周末'] },
-      vocab: ['久', '半', '以前'],
+      bonus: { label: 'So sánh cuối tuần với ngày thường', any: ['周末', '更', '久'] },
+      vocab: ['久', '半'],
       minLen: 18,
-      sample: '我学汉语学了两年了，每天学一个半小时。周末没有课，我学得更久一些。',
-      sample_py: 'Wǒ xué Hànyǔ xué le liǎng nián le, měitiān xué yí ge bàn xiǎoshí. Zhōumò méiyǒu kè, wǒ xué děi gèng jiǔ yì xiē.',
-      sample_vn: 'Tôi học tiếng Hán được hai năm rồi, mỗi ngày học một tiếng rưỡi. Cuối tuần không có lớp, tôi học lâu hơn một chút.',
-      tip: 'Thời lượng đặt sau động từ, tân ngữ lặp động từ: 我学汉语学了两年。'
+      sample: '我学汉语学了一年半了，每天学一个小时。周末没有课，有时候我学三个小时。',
+      sample_py: 'Wǒ xué Hànyǔ xuéle yì nián bàn le, měi tiān xué yí ge xiǎoshí. Zhōumò méiyǒu kè, yǒu shíhou wǒ xué sān ge xiǎoshí.',
+      sample_vn: 'Tôi học tiếng Hán được một năm rưỡi rồi, mỗi ngày học một tiếng. Cuối tuần không có lớp, có khi tôi học ba tiếng.',
+      tip: 'Thời lượng đứng sau động từ; có tân ngữ thì lặp động từ: 学汉语学了一年半 — “một năm rưỡi” là 一年半.'
     },
     {
-      situation: 'Trong buổi làm quen, mọi người kể về sở thích của mình.',
-      q_zh: '你对什么感兴趣？为什么？',
-      q_py: 'Nǐ duì shénme gǎnxìngqù? Wèishénme?',
-      q_vn: 'Bạn hứng thú với cái gì? Vì sao?',
-      grammar: { label: '对……感兴趣 / 对……有兴趣', any: ['感兴趣', '有兴趣'] },
+      situation: 'Trong buổi làm quen ở lớp, mọi người kể sở thích của mình.',
+      q_zh: '你对什么感兴趣？以前也感兴趣吗？',
+      q_py: 'Nǐ duì shénme gǎn xìngqù? Yǐqián yě gǎn xìngqù ma?',
+      q_vn: 'Bạn có hứng thú với cái gì? Trước đây cũng thích vậy à?',
+      grammar: { label: '对 + đối tượng + 感兴趣', any: ['感兴趣'] },
       need: [
-        { label: 'Dùng 对……感兴趣', any: ['感兴趣', '有兴趣'] },
-        { label: 'Nêu lý do hoặc việc bạn hay làm', any: ['因为', '所以', '常常', '经常', '每天'] }
+        { label: 'Nói bạn thích cái gì (dùng 对)', any: ['对'] },
+        { label: 'So sánh với trước đây', any: ['以前', '现在'] }
       ],
-      bonus: { label: 'So sánh với trước đây bằng 以前', any: ['以前'] },
+      bonus: { label: 'Nói ai làm bạn bắt đầu thích', any: ['朋友', '同事', '老师', '让'] },
       vocab: ['感兴趣', '以前', '同事'],
-      minLen: 20,
-      sample: '我对中国文化很感兴趣，特别是中国菜和中国电影。以前我一点儿也不懂，现在我常常跟同事一起看中文节目。',
-      sample_py: 'Wǒ duì Zhōngguó wénhuà hěn gǎnxìngqù, tèbié shì Zhōngguó cài hé Zhōngguó diànyǐng. Yǐqián wǒ yìdiǎnr yě bù dǒng, xiànzài wǒ chángcháng gēn tóngshì yìqǐ kàn Zhōngwén jiémù.',
-      sample_vn: 'Tôi rất hứng thú với văn hóa Trung Quốc, nhất là món ăn và phim Trung Quốc. Trước đây tôi chẳng hiểu gì, giờ tôi hay xem chương trình tiếng Trung cùng đồng nghiệp.',
-      tip: 'Cấu trúc: 对 + đối tượng + 感兴趣。Ví dụ: 我对历史很感兴趣。'
+      minLen: 18,
+      sample: '我对爬山特别感兴趣，每个月都跟同事去一次。以前我对运动一点儿也不感兴趣，现在身体越来越好了。',
+      sample_py: 'Wǒ duì páshān tèbié gǎn xìngqù, měi ge yuè dōu gēn tóngshì qù yí cì. Yǐqián wǒ duì yùndòng yìdiǎnr yě bù gǎn xìngqù, xiànzài shēntǐ yuè lái yuè hǎo le.',
+      sample_vn: 'Tôi cực kỳ thích leo núi, tháng nào cũng đi một lần với đồng nghiệp. Trước đây tôi chẳng hứng thú gì với thể thao, bây giờ sức khoẻ ngày càng tốt.',
+      tip: '很 / 特别 đứng ngay trước 感兴趣: 对爬山特别感兴趣 — không nói 很对音乐感兴趣.'
     },
     {
-      situation: 'Bạn kể lịch một ngày của mình cho người bạn nước ngoài.',
-      q_zh: '你今天几点起床？几点到公司或者学校？',
-      q_py: 'Nǐ jīntiān jǐ diǎn qǐchuáng? Jǐ diǎn dào gōngsī huòzhě xuéxiào?',
-      q_vn: 'Hôm nay bạn dậy lúc mấy giờ? Mấy giờ đến công ty hoặc trường?',
+      situation: 'Một người bạn nước ngoài hỏi lịch buổi sáng của bạn.',
+      q_zh: '星期一到星期五，你早上几点起床？几点到学校或者公司？',
+      q_py: 'Xīngqīyī dào xīngqīwǔ, nǐ zǎoshang jǐ diǎn qǐchuáng? Jǐ diǎn dào xuéxiào huòzhě gōngsī?',
+      q_vn: 'Từ thứ hai đến thứ sáu, buổi sáng bạn dậy lúc mấy giờ? Mấy giờ đến trường hoặc công ty?',
       grammar: { label: 'Nói giờ với 半 / 刻 / 差', any: ['半', '刻', '差'] },
       need: [
-        { label: 'Nói giờ dậy', any: ['点', '半', '刻'] },
-        { label: 'Nói giờ đến nơi', any: ['到', '点', '差', '刻'] }
+        { label: 'Nói giờ dậy', any: ['起床'] },
+        { label: 'Nói giờ đến nơi', any: ['到'] }
       ],
-      bonus: { label: 'Nói thời gian đi đường mất bao lâu', any: ['分钟', '小时', '路上'] },
+      bonus: { label: 'Nói đi đường mất bao lâu', any: ['分钟', '小时'] },
       vocab: ['半', '刻', '差'],
       minLen: 18,
-      sample: '我今天六点半起床，差一刻八点就到公司了。路上要坐半个小时的地铁，所以我起得比较早。',
-      sample_py: 'Wǒ jīntiān liù diǎn bàn qǐchuáng, chà yí kè bā diǎn jiù dào gōngsī le. Lù shàng yào zuò bàn ge xiǎoshí de dìtiě, suǒyǐ wǒ qǐ děi bǐjiào zǎo.',
-      sample_vn: 'Hôm nay tôi dậy lúc 6 rưỡi, 7 giờ 45 đã đến công ty. Trên đường phải đi tàu điện ngầm nửa tiếng, nên tôi dậy khá sớm.',
-      tip: '差一刻八点 = 7 giờ 45; 八点一刻 = 8 giờ 15; 八点半 = 8 giờ 30.'
+      sample: '我每天六点半起床，坐四十分钟公共汽车，差一刻八点到公司。',
+      sample_py: 'Wǒ měi tiān liù diǎn bàn qǐchuáng, zuò sìshí fēnzhōng gōnggòng qìchē, chà yí kè bā diǎn dào gōngsī.',
+      sample_vn: 'Mỗi ngày tôi dậy lúc 6 rưỡi, đi xe buýt bốn mươi phút, 8 giờ kém 15 đến công ty.',
+      tip: '差一刻八点 = 7:45; 八点一刻 = 8:15; 八点半 = 8:30. Giờ đứng trước động từ: 六点半起床.'
     },
     {
-      situation: 'Sáng nay tắc đường, bạn sẽ đến lớp muộn.',
-      q_zh: '如果你要迟到了，会怎么跟老师或者经理说？',
-      q_py: 'Rúguǒ nǐ yào chídào le, huì zěnme gēn lǎoshī huòzhě jīnglǐ shuō?',
-      q_vn: 'Nếu sắp đến muộn, bạn sẽ nói gì với thầy cô hoặc giám đốc?',
-      grammar: { label: '会 + động từ (dự định) + 请您……', any: ['会', '请'] },
+      situation: 'Bạn học hỏi lần gần nhất bạn đến muộn là khi nào.',
+      q_zh: '你上次迟到是什么时候？迟到了多久？为什么？',
+      q_py: 'Nǐ shàng cì chídào shì shénme shíhou? Chídàole duō jiǔ? Wèi shénme?',
+      q_vn: 'Lần trước bạn đến muộn là khi nào? Muộn bao lâu? Vì sao?',
+      grammar: { label: '迟到了 + thời lượng', any: ['分钟', '小时', '一刻'] },
       need: [
-        { label: 'Xin lỗi và báo đến muộn', any: ['对不起', '迟到', '晚'] },
-        { label: 'Nói lý do', any: ['车', '路上', '堵', '雨', '地铁', '堵车'] }
+        { label: 'Nói muộn bao lâu', any: ['迟到了'] },
+        { label: 'Nêu lý do', any: ['因为', '下雨', '车', '起床', '睡'] }
       ],
-      bonus: { label: 'Nói sẽ đến trong bao lâu nữa', any: ['分钟', '一会儿', '马上'] },
-      vocab: ['迟到', '久', '接'],
-      minLen: 20,
-      sample: '我会先给老师打个电话说：对不起，路上车太多了，我可能会迟到十分钟，请您等我一会儿，不会太久，到了我就接着上课。',
-      sample_py: 'Wǒ huì xiān gěi lǎoshī dǎ ge diànhuà shuō: duìbuqǐ, lù shàng chē tài duō le, wǒ kěnéng huì chídào shífēn zhōng, qǐng nín děng wǒ yíhuìr, bú huì tài jiǔ, dào le wǒ jiù jiēzhe shàngkè.',
-      sample_vn: 'Tôi sẽ gọi điện cho thầy trước và nói: Em xin lỗi, đường đông quá, chắc em sẽ muộn 10 phút, thầy đợi em một lát, không lâu đâu, đến nơi em sẽ học tiếp ngay.',
-      tip: 'Báo muộn nên có ba phần: xin lỗi + lý do + thời gian sẽ đến.'
+      bonus: { label: 'Nói kết quả hoặc bài học', any: ['以后', '早', '所以'] },
+      vocab: ['迟到', '久'],
+      minLen: 18,
+      sample: '上个星期一我迟到了二十分钟，因为早上下雨，公共汽车走得特别慢。以后下雨天我要早点儿起床。',
+      sample_py: 'Shàng ge xīngqīyī wǒ chídàole èrshí fēnzhōng, yīnwèi zǎoshang xià yǔ, gōnggòng qìchē zǒu de tèbié màn. Yǐhòu xià yǔ tiān wǒ yào zǎo diǎnr qǐchuáng.',
+      sample_vn: 'Thứ hai tuần trước tôi đến muộn hai mươi phút, vì sáng mưa, xe buýt đi cực kỳ chậm. Sau này trời mưa tôi sẽ dậy sớm hơn.',
+      tip: 'Thời lượng đứng sau 迟到了: 迟到了二十分钟 — không nói 二十分钟迟到.'
     },
     {
-      situation: 'Một đồng nghiệp thân thiết vừa báo tin sắp kết hôn.',
-      q_zh: '同事要结婚了，你会说什么？还会做什么？',
-      q_py: 'Tóngshì yào jiéhūn le, nǐ huì shuō shénme? Hái huì zuò shénme?',
-      q_vn: 'Đồng nghiệp sắp kết hôn, bạn sẽ nói gì? Còn làm gì nữa?',
-      grammar: { label: '欢迎 + người + làm gì / 祝 + lời chúc', any: ['祝', '欢迎'] },
+      situation: 'Bạn thân sắp cưới, nhờ bạn ra sân bay đón khách và hỏi mấy giờ bạn đi.',
+      q_zh: '我结婚那天，你能去机场接我的客人吗？几点去？',
+      q_py: 'Wǒ jiéhūn nà tiān, nǐ néng qù jīchǎng jiē wǒ de kèrén ma? Jǐ diǎn qù?',
+      q_vn: 'Hôm mình cưới, cậu ra sân bay đón khách giúp mình được không? Mấy giờ đi?',
+      grammar: { label: 'Nói giờ hẹn với 半 / 刻', any: ['半', '刻', '差'] },
       need: [
-        { label: 'Nói lời chúc', any: ['祝', '快乐', '高兴', '幸福'] },
-        { label: 'Nói việc bạn sẽ làm', any: ['礼物', '参加', '去', '接', '买', '照片'] }
+        { label: 'Đồng ý giúp', any: ['当然', '可以', '能', '没问题'] },
+        { label: 'Nói giờ máy bay đến / giờ đi', any: ['点'] }
       ],
-      bonus: { label: 'Mời họ đến nhà chơi bằng 欢迎', any: ['欢迎'] },
-      vocab: ['结婚', '同事', '欢迎'],
-      minLen: 20,
-      sample: '我会说：祝你们快乐！然后跟别的同事一起给他们买个礼物，以后也欢迎他们来我家做客。',
-      sample_py: 'Wǒ huì shuō: zhù nǐmen kuàilè! Ránhòu gēn biéde tóngshì yìqǐ gěi tāmen mǎi ge lǐwù, yǐhòu yě huānyíng tāmen lái wǒ jiā zuò kè.',
-      sample_vn: 'Tôi sẽ nói: Chúc hai bạn hạnh phúc! Rồi cùng các đồng nghiệp khác mua quà cho họ, sau này cũng hoan nghênh họ đến nhà tôi chơi.',
-      tip: '欢迎 + người + động từ: 欢迎你来我家。'
+      bonus: { label: 'Chào đón khách bằng 欢迎', any: ['欢迎'] },
+      vocab: ['结婚', '接', '欢迎'],
+      minLen: 18,
+      sample: '当然可以！飞机不是十点一刻到吗？我九点半就从家里走，在机场等你的客人。',
+      sample_py: 'Dāngrán kěyǐ! Fēijī bú shì shí diǎn yí kè dào ma? Wǒ jiǔ diǎn bàn jiù cóng jiā li zǒu, zài jīchǎng děng nǐ de kèrén.',
+      sample_vn: 'Tất nhiên được! Máy bay chẳng phải 10 giờ 15 đến sao? 9 rưỡi mình đi từ nhà, đợi khách của cậu ở sân bay.',
+      tip: '不是……吗？= chẳng phải … sao? dùng để xác nhận điều mình nhớ; 九点半就走 = 9 rưỡi đã đi (sớm).'
     }
   ]
 };
@@ -1540,28 +1546,20 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Vì đồng nghiệp mới vừa đến công ty, nên tôi phải giúp cô ấy nhiều.', zh:'因为新同事刚来公司，所以我得多帮她。', py:'Yīnwèi xīn tóngshì gāng lái gōngsī, suǒyǐ wǒ děi duō bāng tā.'},
-  {vi:'Trước đây chúng tôi làm việc ở ngân hàng, bây giờ đều làm ở công ty này.', zh:'我们以前在银行工作，现在都在这家公司工作。', py:'Wǒmen yǐqián zài yínháng gōngzuò, xiànzài dōu zài zhè jiā gōngsī gōngzuò.'},
-  {vi:'Bạn có hứng thú với công việc mới không?', zh:'你对新工作感兴趣吗？', py:'Nǐ duì xīn gōngzuò gǎn xìngqù ma?'},
-  {vi:'Đồng nghiệp của tôi tháng sau kết hôn, hoan nghênh mọi người đến.', zh:'我同事下个月结婚，欢迎大家来。', py:'Wǒ tóngshì xià ge yuè jié hūn, huānyíng dàjiā lái.'},
-  {vi:'Bạn không phải nói chín giờ đến đón tôi sao? Bạn đến muộn nửa tiếng rồi.', zh:'你不是说九点来接我吗？你迟到了半个小时。', py:'Nǐ bú shì shuō jiǔ diǎn lái jiē wǒ ma? Nǐ chídàole bàn ge xiǎoshí.'},
-  {vi:'Bây giờ là kém mười lăm phút nữa 3 giờ, buổi họp sắp bắt đầu rồi.', zh:'现在差一刻三点，会议快要开始了。', py:'Xiànzài chà yí kè sān diǎn, huìyì kuàiyào kāishǐ le.'},
-  {vi:'Chúng tôi hát ở đó nửa tiếng, tuy mệt nhưng rất vui.', zh:'我们在那儿唱了半个小时，虽然累，但是很高兴。', py:'Wǒmen zài nàr chàngle bàn ge xiǎoshí, suīrán lèi, dànshì hěn gāoxìng.'},
-  {vi:'Nếu bạn thích thể thao thì cuối tuần chúng ta cùng đi xem bóng đá đi.', zh:'如果你对运动感兴趣，我们周末就一起去看足球吧。', py:'Rúguǒ nǐ duì yùndòng gǎn xìngqù, wǒmen zhōumò jiù yìqǐ qù kàn zúqiú ba.'},
+  {vi:'Trước đây mẹ tôi làm ở ngân hàng, bây giờ ở nhà chăm em trai tôi.', zh:'以前我妈妈在银行工作，现在在家照顾我弟弟。', py:'Yǐqián wǒ māma zài yínháng gōngzuò, xiànzài zài jiā zhàogù wǒ dìdi.'},
+  {vi:'Tôi đã đợi bạn ở cổng trường bốn mươi phút rồi.', zh:'我在学校门口等了你四十分钟了。', py:'Wǒ zài xuéxiào ménkǒu děngle nǐ sìshí fēnzhōng le.'},
+  {vi:'Bạn có hứng thú với phim Trung Quốc không? Chỗ mình có nhiều lắm.', zh:'你对中国电影感兴趣吗？我这儿有很多。', py:'Nǐ duì Zhōngguó diànyǐng gǎn xìngqù ma? Wǒ zhèr yǒu hěn duō.'},
+  {vi:'Chín giờ kém mười lăm vào học, tám rưỡi chúng ta gặp nhau ở cửa lớp nhé.', zh:'差一刻九点上课，我们八点半在教室门口见吧。', py:'Chà yí kè jiǔ diǎn shàngkè, wǒmen bā diǎn bàn zài jiàoshì ménkǒu jiàn ba.'},
+  {vi:'Hôm qua tôi đá bóng với đồng nghiệp hai tiếng.', zh:'昨天我跟同事踢了两个小时足球。', py:'Zuótiān wǒ gēn tóngshì tīle liǎng ge xiǎoshí zúqiú.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì giám đốc mới đến công ty làm việc, nên các đồng nghiệp đều rất hoan nghênh anh ấy.', zh:'因为经理刚来公司工作，所以同事们都很欢迎他。', py:'Yīnwèi jīnglǐ gāng lái gōngsī gōngzuò, suǒyǐ tóngshìmen dōu hěn huānyíng tā.'},
-  {vi:'Chỉ cần bạn đến sớm nửa tiếng, chúng ta sẽ không cần vội vàng.', zh:'只要你早来半个小时，我们就不用着急了。', py:'Zhǐyào nǐ zǎo lái bàn ge xiǎoshí, wǒmen jiù búyòng zháojí le.'},
-  {vi:'Tuy đồng hồ của tôi chạy nhanh nhưng tôi vẫn đến đúng giờ.', zh:'虽然我的表快了，但是我还是准时到了。', py:'Suīrán wǒ de biǎo kuài le, dànshì wǒ háishi zhǔnshí dào le.'},
-  {vi:'Tiểu Lệ và bạn trai cô ấy quen nhau năm năm rồi mới kết hôn.', zh:'小丽和她男朋友认识五年了才结婚。', py:'Xiǎolì hé tā nánpéngyou rènshi wǔ nián le cái jiéhūn.'},
-  {vi:'Bà tôi đã hơn 80 tuổi rồi nhưng vẫn thích nghe nhạc trẻ.', zh:'我奶奶已经80多岁了，但是还喜欢听年轻人的音乐。', py:'Wǒ nǎinai yǐjīng bāshí duō suì le, dànshì hái xǐhuan tīng niánqīngrén de yīnyuè.'},
-  {vi:'Tiểu Cương đã đợi ở cửa ngân hàng nửa tiếng rồi, sao bạn còn chưa đến?', zh:'小刚已经在银行门口等了半个小时了，你怎么还没到？', py:'Xiǎogāng yǐjīng zài yínháng ménkǒu děngle bàn ge xiǎoshí le, nǐ zěnme hái méi dào?'},
-  {vi:'Con trai hai tuổi của tôi rất thích nghe nhạc.', zh:'我两岁的儿子很喜欢听音乐。', py:'Wǒ liǎng suì de érzi hěn xǐhuan tīng yīnyuè.'},
-  {vi:'Bạn có thể đến công ty đón tôi lúc tám giờ kém mười lăm không?', zh:'你能差一刻八点来公司接我吗？', py:'Nǐ néng chà yí kè bā diǎn lái gōngsī jiē wǒ ma?'},
+  {vi:'Bạn đến muộn mười lăm phút, chúng tôi đợi bạn lâu lắm rồi.', zh:'你迟到了一刻，我们等你等了很久了。', py:'Nǐ chídàole yí kè, wǒmen děng nǐ děngle hěn jiǔ le.'},
+  {vi:'Trước khi kết hôn, anh ấy sống ở miền Nam năm năm.', zh:'结婚以前，他在南方住了五年。', py:'Jiéhūn yǐqián, tā zài nánfāng zhùle wǔ nián.'},
+  {vi:'Tối nào tôi cũng tập thể dục nửa tiếng trong công viên.', zh:'每天晚上我都在公园锻炼半个小时。', py:'Měi tiān wǎnshang wǒ dōu zài gōngyuán duànliàn bàn ge xiǎoshí.'},
 ];
 
 // ══════════════════════════════════════════

@@ -1905,72 +1905,75 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'买',right:'房子'},
-  {left:'坐',right:'电梯'},
-  {left:'二十',right:'层'},
-  {left:'小',right:'熊猫'},
-  {left:'再',right:'见面'},
-  {left:'喝',right:'可乐'},
-  {left:'去',right:'洗手间'},
-  {left:'因为二十层太高了，',right:'所以她往下看很害怕。'},
-  {left:'虽然他几乎没变化，',right:'但是他说自己胖了。'},
-  {left:'如果你不满意，',right:'我们就再去看看别的。'},
-  {left:'只要你喜欢，',right:'想吃什么就吃什么。'},
+  {left:'洗手间在三', right:'层'},
+  {left:'对不起，我去一下', right:'洗手间'},
+  {left:'很多孩子都喜欢', right:'熊猫'},
+  {left:'这儿人很少，非常', right:'安静'},
+  {left:'身体健康比什么都', right:'重要'},
+  {left:'我们好久没', right:'见面了'},
+  {left:'五年没见，你几乎没有', right:'变化'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'今天',blank:'又',post:'去看了看。',hint:'(lại)',ans:'又',exp:'又 = lại (việc lặp lại đã xảy ra); 再 dùng cho việc chưa xảy ra.'},
-  {pre:'你对这份工作',blank:'满意',post:'吗？',hint:'(hài lòng)',ans:'满意'},
-  {pre:'这个楼没有',blank:'电梯',post:'，老人上下楼很难。',hint:'(thang máy)',ans:'电梯'},
-  {pre:'但是在二十',blank:'层',post:'。',hint:'(tầng)',ans:'层',exp:'层 là lượng từ cho tầng nhà: 二十层 = tầng 20.'},
-  {pre:'往下看多',blank:'害怕',post:'啊！',hint:'(sợ)',ans:'害怕'},
-  {pre:'这个小',blank:'熊猫',post:'送给你。',hint:'(gấu trúc)',ans:'熊猫'},
-  {pre:'我们下个月还会在上海',blank:'见面',post:'。',hint:'(gặp nhau)',ans:'见面'},
-  {pre:'我们去图书馆吧，那儿很',blank:'安静',post:'。',hint:'(yên tĩnh)',ans:'安静'},
-  {pre:'外面这么热，我们喝杯冰',blank:'可乐',post:'吧。',hint:'(coca-cola)',ans:'可乐'},
-  {pre:'你先在这儿坐',blank:'一会儿',post:'，我去买杯咖啡就回来。',hint:'(một lát)',ans:'一会儿',exp:'一会儿 là thời lượng, đứng sau động từ: 坐一会儿 = ngồi một lát.'},
-  {pre:'我',blank:'马上',post:'回来。',hint:'(ngay lập tức)',ans:'马上'},
-  {pre:'他说他要先去一下',blank:'洗手间',post:'，马上就回来。',hint:'(nhà vệ sinh)',ans:'洗手间'},
-  {pre:'都十年了，这条街道',blank:'几乎',post:'没变化。',hint:'(hầu như)',ans:'几乎'},
-  {pre:'对我来说，家人最',blank:'重要',post:'，工作没有那么重要。',hint:'(quan trọng)',ans:'重要'},
+  {pre:'A：你怎么', blank:'又', post:'感冒了？B：昨天晚上睡觉的时候太冷了。', hint:'(lại)', ans:'又', exp:'又 + V + 了 = lại (việc lặp lại đã xảy ra); ôn 感冒 (bài 5).'},
+  {pre:'A：这个电影太好看了！B：是啊，下个周末我想', blank:'再', post:'看一次。', hint:'(lại, thêm lần nữa)', ans:'再', exp:'再 = lại, dùng cho việc CHƯA xảy ra (下个周末); việc đã xảy ra mới dùng 又.'},
+  {pre:'A：新房子怎么样？B：又大又安静，我们都很', blank:'满意', post:'。', hint:'(hài lòng)', ans:'满意', exp:'(对……) 很满意 = rất hài lòng; 又……又…… = vừa … vừa ….'},
+  {pre:'我们公司在二十层，每天早上坐', blank:'电梯', post:'的人特别多。', hint:'(thang máy)', ans:'电梯', exp:'坐电梯 = đi thang máy (dùng động từ 坐); 二十层 = tầng 20.'},
+  {pre:'我妹妹很', blank:'害怕', post:'狗，一看见狗就站在妈妈后面。', hint:'(sợ)', ans:'害怕', exp:'害怕 + danh từ = sợ cái gì; 一……就…… = hễ … là ….'},
+  {pre:'A：我们明天几点', blank:'见面', post:'？B：九点半，在学校门口吧。', hint:'(gặp nhau)', ans:'见面', exp:'见面 không mang tân ngữ: 跟 + người + 见面 (không nói 见面你); ôn 九点半 (bài 7).'},
+  {pre:'孩子刚才睡着了，大家', blank:'安静', post:'一点儿。', hint:'(yên lặng)', ans:'安静', exp:'安静一点儿 = yên lặng một chút (tính từ + 一点儿 khi đề nghị); ôn 睡着, 刚才 (bài 6).'},
+  {pre:'A：我们走吧！B：你等我', blank:'一会儿', post:'，我去一下洗手间。', hint:'(một lát)', ans:'一会儿', exp:'一会儿 = một lát, là thời lượng nên đứng SAU động từ: 等我一会儿.'},
+  {pre:'A：菜都做好了，你过来吃饭吧！B：好，我', blank:'马上', post:'来！', hint:'(ngay)', ans:'马上', exp:'马上 = ngay lập tức, đứng trước động từ: 马上来; ôn V + 好 (bài 1).'},
+  {pre:'十年没回来，这儿的变化太大了，我', blank:'几乎', post:'不认识了。', hint:'(gần như)', ans:'几乎', exp:'几乎 = hầu như, gần như, đứng trước động từ / 不 / 没.'},
+  {pre:'我爸爸六十岁了，身体还很', blank:'健康', post:'，每个周末都去爬山。', hint:'(khoẻ mạnh)', ans:'健康', exp:'身体很健康 = sức khoẻ rất tốt; 还 = vẫn; ôn 爬山 (bài 3).'},
+  {pre:'A：我们什么时候去看熊猫？B：你什么时候有时间，我们就', blank:'什么时候', post:'去。', hint:'(lúc đó)', ans:'什么时候', exp:'Từ để hỏi + 就 + cùng từ để hỏi: 你什么时候有时间，我们就什么时候去 = lúc nào bạn rảnh thì lúc đó đi.'},
+  {pre:'这些苹果特别新鲜，你要', blank:'多少', post:'就拿多少。', hint:'(bao nhiêu)', ans:'多少', exp:'要多少就拿多少 = cần bao nhiêu lấy bấy nhiêu; ôn 新鲜 (bài 3), 拿 (bài 2).'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','昨天','去','超市','买','了','面包','，','今天','又','去','买','了','一次','。'],ans:'我昨天去超市买了面包，今天又去买了一次。',audio:'我昨天去超市买了面包，今天又去买了一次。'},
-  {words:['这条','路','太','黑','了','，','一个','人','走','多','害怕','啊','！'],ans:'这条路太黑了，一个人走多害怕啊！',audio:'这条路太黑了，一个人走多害怕啊！'},
-  {words:['这张','熊猫','照片','送给','你','，','希望','你','喜欢','北京','。'],ans:'这张熊猫照片送给你，希望你喜欢北京。',audio:'这张熊猫照片送给你，希望你喜欢北京。'},
-  {words:['你','坐','哪儿','我','就','坐','哪儿','。'],ans:'你坐哪儿我就坐哪儿。',audio:'你坐哪儿我就坐哪儿。'},
-  {words:['因为','楼下','太','吵','了','，','所以','我们','换','了','一个','安静','的','房间','。'],ans:'因为楼下太吵了，所以我们换了一个安静的房间。',audio:'因为楼下太吵了，所以我们换了一个安静的房间。'},
-  {words:['虽然','他','几乎','没','变化','，','但是','他','说','自己','胖','了','。'],ans:'虽然他几乎没变化，但是他说自己胖了。',audio:'虽然他几乎没变化，但是他说自己胖了。'},
-  {words:['如果','你','不','满意','，','我们','就','再','去','看看','别的','。'],ans:'如果你不满意，我们就再去看看别的。',audio:'如果你不满意，我们就再去看看别的。'},
-  {words:['我','想','吃','什么','就','吃','什么','。'],ans:'我想吃什么就吃什么。',audio:'我想吃什么就吃什么。'},
+  {words:['那个','熊猫','吃','了','一会儿','就','睡着','了','。'], ans:'那个熊猫吃了一会儿就睡着了。', audio:'那个熊猫吃了一会儿就睡着了。'},
+  {words:['电梯','里','人','太','多','了','，','我们','等','一会儿','再','上去','吧','。'], ans:'电梯里人太多了，我们等一会儿再上去吧。', audio:'电梯里人太多了，我们等一会儿再上去吧。'},
+  {words:['这家','老','饭馆','的','鱼','做','得','特别','好吃','。'], ans:'这家老饭馆的鱼做得特别好吃。', audio:'这家老饭馆的鱼做得特别好吃。'},
+  {words:['谁','的','汉语','说','得','好','，','谁','就','去','机场','接','客人','。'], ans:'谁的汉语说得好，谁就去机场接客人。', audio:'谁的汉语说得好，谁就去机场接客人。'},
+  {words:['他','几乎','每天','都','喝','可乐','，','对','身体','不好','。'], ans:'他几乎每天都喝可乐，对身体不好。', audio:'他几乎每天都喝可乐，对身体不好。'},
+  {words:['这个','电影','我','上个月','看','过','，','昨天','又','跟','朋友','看','了','一次','。'], ans:'这个电影我上个月看过，昨天又跟朋友看了一次。', audio:'这个电影我上个月看过，昨天又跟朋友看了一次。'},
+  {words:['你','几点','到','，','我','就','几点','去','接','你','。'], ans:'你几点到，我就几点去接你。', audio:'你几点到，我就几点去接你。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'我上午给他发了电子邮件，下午再发了一次。',
-   opts:['我上午给他发了电子邮件，下午又发了一次。','我上午给他发了电子邮件，下午再发了一次。','我上午给他再发了电子邮件，下午又发了一次。','我下午给他发了电子邮件，上午又发了一次。'],ans:0,
-   exp:'又 dùng cho hành động ĐÃ lặp lại (rồi), 再 dùng cho hành động CHƯA/SẼ lặp lại — "buổi chiều" ở đây là việc đã xảy ra rồi nên phải dùng 又, không dùng 再.'},
-  {wrong:'你只吃了一点儿面条，又吃一点儿吧。',
-   opts:['你只吃了一点儿面条，再吃一点儿吧。','你只吃了一点儿面条，又吃一点儿吧。','你只吃了一点儿面条，吃再一点儿吧。','你只吃了一点儿面条，吃一点儿又吧。'],ans:0,
-   exp:'再 dùng cho hành động CHƯA xảy ra (lời đề nghị ăn thêm), không dùng 又 (又 chỉ dùng cho việc đã xảy ra).'},
-  {wrong:'哪儿你去我就去哪儿。',
-   opts:['你去哪儿我就去哪儿。','哪儿你去我就去哪儿。','你哪儿去就我去哪儿。','你去我就哪儿去哪儿。'],ans:0,
-   exp:'Khi hai mệnh đề có chủ ngữ KHÁC nhau (你/我), mệnh đề đầu giữ nguyên trật tự S+V+O nghi vấn, mệnh đề sau đặt chủ ngữ trước 就.'},
-  {wrong:'想吃什么吃就什么。',
-   opts:['想吃什么就吃什么。','想吃什么吃就什么。','就想吃什么吃什么。','想吃什么什么就吃。'],ans:0,
-   exp:'就 phải đứng ngay trước động từ thứ hai (吃), không chen vào giữa động từ và tân ngữ nghi vấn (什么).'},
-  {wrong:'谁喜欢他就喜欢他谁。',
-   opts:['谁喜欢他，他就喜欢谁。','谁喜欢他就喜欢他谁。','他谁喜欢就喜欢谁。','谁就喜欢他喜欢谁。'],ans:0,
-   exp:'Khi hai mệnh đề có chủ ngữ KHÁC nhau (谁/他), chủ ngữ thứ hai (他) phải đặt TRƯỚC 就.'},
+  {wrong:'这个菜很好吃，明天我们又来吃吧。',
+   opts:['这个菜很好吃，明天我们来再吃吧。','这个菜很好吃，明天我们再来吃吧。','这个菜很好吃，明天我们还来了吃吧。','这个菜很好吃，我们明天又来吃了吧。'], ans:1,
+   exp:'Việc chưa xảy ra (明天, lời rủ 吧) dùng 再, đứng trước động từ 来; 又 chỉ dùng cho việc đã lặp lại.'},
+  {wrong:'他昨天迟到了，今天再迟到了。',
+   opts:['他昨天迟到了，今天迟到又了。','他昨天迟到了，又今天迟到了。','他昨天迟到了，今天再迟到一次了。','他昨天迟到了，今天又迟到了。'], ans:3,
+   exp:'Việc đã lặp lại (今天……了) dùng 又, đặt sau từ chỉ thời gian, ngay trước động từ: 今天又迟到了; ôn 迟到 (bài 7).'},
+  {wrong:'妈妈做什么，就我们吃什么。',
+   opts:['妈妈做什么，我们就吃什么。','妈妈做什么，我们吃就什么。','妈妈什么做，我们就吃什么。','妈妈做什么，我们就吃什么吗。'], ans:0,
+   exp:'Hai chủ ngữ khác nhau: chủ ngữ thứ hai (我们) đứng TRƯỚC 就; câu này không phải câu hỏi nên không thêm 吗.'},
+  {wrong:'谁想去，就去谁。',
+   opts:['谁想去，就谁去。','谁想去，谁就去。','想去谁，谁就去。','谁想去，谁去就。'], ans:1,
+   exp:'谁……谁就……: ai muốn đi thì người đó đi; 谁 thứ hai làm chủ ngữ nên đứng trước 就.'},
+  {wrong:'请你一会儿等，饭马上就好。',
+   opts:['请你等了一会儿，饭马上就好。','请你一会儿等等，饭马上就好。','请你等一会儿，饭马上就好。','请你等一会儿，马上饭就好。'], ans:2,
+   exp:'一会儿 là thời lượng, đứng SAU động từ (等一会儿); 马上 đứng sau chủ ngữ 饭, trước 就 + động từ.'},
+  {wrong:'我朋友住十八层在。',
+   opts:['我朋友住在十八层。','我朋友在住十八层。','我朋友住在十八个层。','我朋友住在层十八。'], ans:0,
+   exp:'住在 + nơi chốn; 层 tự là lượng từ nên không thêm 个: 十八层.'},
+  {wrong:'这个房间是安静。',
+   opts:['这个房间安静很。','这个房间很安静。','这个房间是安静的很。','这个房间安静是。'], ans:1,
+   exp:'安静 là tính từ: chủ ngữ + 很 + 安静, không chèn 是 (lỗi do tiếng Việt nói “là”).'},
+  {wrong:'我满意对新工作。',
+   opts:['我很满意对新工作。','我对新工作满意很。','我给新工作很满意。','我对新工作很满意。'], ans:3,
+   exp:'对 + đối tượng + 很满意: cụm 对新工作 đứng trước 满意; không dùng 给.'},
 ];
 
 // ══════════════════════════════════════════
@@ -1978,97 +1981,97 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 8. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 8 (又 / 再, từ để hỏi + 就 + từ để hỏi). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Huấn luyện viên hỏi bạn hôm qua tập gì và hôm nay có tập nữa không.',
-      q_zh: '你昨天做了什么运动？今天还会再做一次吗？',
-      q_py: 'Nǐ zuótiān zuò le shénme yùndòng? Jīntiān hái huì zài zuò yí cì ma?',
-      q_vn: 'Hôm qua bạn tập môn gì? Hôm nay có tập lại không?',
+      situation: 'Bạn học hỏi gần đây bạn đi chơi ở đâu và có muốn quay lại không.',
+      q_zh: '最近你去哪儿玩儿了？以后还想再去吗？',
+      q_py: 'Zuìjìn nǐ qù nǎr wánr le? Yǐhòu hái xiǎng zài qù ma?',
+      q_vn: 'Gần đây bạn đi chơi ở đâu? Sau này còn muốn đi lại không?',
       grammar: { label: '又 (đã lại) / 再 (sẽ lại)', any: ['又', '再'] },
       need: [
-        { label: 'Kể việc đã làm hôm qua bằng 又', any: ['又'] },
-        { label: 'Nói dự định hôm nay bằng 再', any: ['再'] }
+        { label: 'Kể nơi đã đi', any: ['去了', '北京', '公园', '南方', '北方'] },
+        { label: 'Nói có muốn đi lại không', any: ['还想', '再去', '不想'] }
       ],
-      bonus: { label: 'Nói lý do liên quan đến sức khỏe', any: ['健康', '身体', '重要'] },
-      vocab: ['又', '健康', '重要'],
+      bonus: { label: 'Nói đã xem / làm gì ở đó', any: ['熊猫', '看', '吃', '爬山'] },
+      vocab: ['又', '熊猫'],
       minLen: 18,
-      sample: '我昨天又去跑步了，今天下午还打算再去一次，因为我觉得运动对健康非常重要。',
-      sample_py: 'Wǒ zuótiān yòu qù pǎobù le, jīntiān xiàwǔ hái dǎsuàn zài qù yí cì, yīnwèi wǒ juéde yùndòng duì jiànkāng fēicháng zhòngyào.',
-      sample_vn: 'Hôm qua tôi lại đi chạy bộ, chiều nay định đi thêm lần nữa, vì tôi thấy vận động rất quan trọng với sức khỏe.',
-      tip: '又 dùng cho việc đã lặp lại, 再 dùng cho việc sắp lặp lại: 他又来了。明天再来吧。'
+      sample: '上个月我去北京旅游，看了熊猫。上个星期我又去了一次，下个月我还想再去。',
+      sample_py: 'Shàng ge yuè wǒ qù Běijīng lǚyóu, kànle xióngmāo. Shàng ge xīngqī wǒ yòu qùle yí cì, xià ge yuè wǒ hái xiǎng zài qù.',
+      sample_vn: 'Tháng trước tôi đi du lịch Bắc Kinh, xem gấu trúc. Tuần trước tôi lại đi một lần nữa, tháng sau tôi còn muốn đi nữa.',
+      tip: 'Đã lặp lại: 又 + V + 了 (又去了一次); sẽ lặp lại: 再 + V (还想再去).'
     },
     {
-      situation: 'Bạn bè rủ đi ăn và hỏi bạn muốn ăn gì.',
-      q_zh: '跟朋友吃饭的时候，他问你想吃什么，你会怎么回答？',
-      q_py: 'Gēn péngyou chīfàn de shíhou, tā wèn nǐ xiǎng chī shénme, nǐ huì zěnme huídá?',
-      q_vn: 'Khi đi ăn với bạn, bạn ấy hỏi bạn muốn ăn gì, bạn sẽ trả lời thế nào?',
-      grammar: { label: '疑问代词 + 就 + 疑问代词 (什么……就什么……)', any: ['就'] },
+      situation: 'Bạn thân mời bạn đi ăn và hỏi bạn muốn đến quán nào.',
+      q_zh: '今天我请你吃饭，你想去哪家饭馆？想吃什么？',
+      q_py: 'Jīntiān wǒ qǐng nǐ chī fàn, nǐ xiǎng qù nǎ jiā fànguǎn? Xiǎng chī shénme?',
+      q_vn: 'Hôm nay mình mời cậu ăn cơm, cậu muốn đến quán nào? Muốn ăn gì?',
+      grammar: { label: 'Từ để hỏi + 就 + từ để hỏi', any: ['我就', '我们就'] },
       need: [
-        { label: 'Dùng cặp nghi vấn 什么…就什么 / 哪儿…就哪儿', any: ['什么', '哪儿', '谁'] },
-        { label: 'Nói thêm ý kiến riêng', any: ['我觉得', '我想', '我一般', '都可以', '随便'] }
+        { label: 'Để bạn chọn quán', any: ['哪家', '哪儿'] },
+        { label: 'Để bạn chọn món', any: ['什么'] }
       ],
-      bonus: { label: 'Gợi ý một món cụ thể', any: ['面条', '米饭', '菜', '鱼', '羊肉', '可乐'] },
-      vocab: ['满意', '马上', '可乐'],
+      bonus: { label: 'Cảm ơn bạn', any: ['谢谢'] },
+      vocab: ['马上'],
+      minLen: 14,
+      sample: '谢谢你！你喜欢哪家，我们就去哪家。我什么菜都吃。我们马上走吧！',
+      sample_py: 'Xièxie nǐ! Nǐ xǐhuan nǎ jiā, wǒmen jiù qù nǎ jiā. Wǒ shénme cài dōu chī. Wǒmen mǎshàng zǒu ba!',
+      sample_vn: 'Cảm ơn cậu! Cậu thích quán nào thì mình đi quán đó. Món gì mình cũng ăn. Mình đi ngay thôi!',
+      tip: 'Hai từ để hỏi giống nhau chỉ cùng một thứ; chủ ngữ thứ hai đứng trước 就: 你喜欢哪家，我们就去哪家.'
+    },
+    {
+      situation: 'Bạn vừa chuyển đến nhà mới. Bạn học hỏi về căn nhà.',
+      q_zh: '你家在几层？有电梯吗？你对你家满意吗？',
+      q_py: 'Nǐ jiā zài jǐ céng? Yǒu diàntī ma? Nǐ duì nǐ jiā mǎnyì ma?',
+      q_vn: 'Nhà bạn ở tầng mấy? Có thang máy không? Bạn có hài lòng với nhà mình không?',
+      grammar: { label: '对 + … + 满意', any: ['满意'] },
+      need: [
+        { label: 'Nói tầng mấy', any: ['层'] },
+        { label: 'Nói có thang máy không', any: ['电梯'] }
+      ],
+      bonus: { label: 'Nói thêm một điểm chưa tốt bằng 但是', any: ['但是'] },
+      vocab: ['层', '电梯', '满意', '安静'],
       minLen: 18,
-      sample: '我一般说：你想吃什么我们就吃什么，你想去哪儿我们就去哪儿。要是你也没想好，我们马上去楼下那家饭馆儿，我对那儿的面条儿很满意。',
-      sample_py: 'Wǒ yìbān shuō: nǐ xiǎng chī shénme wǒmen jiù chī shénme, nǐ xiǎng qù nǎr wǒmen jiù qù nǎr. Yàoshi nǐ yě méi xiǎng hǎo, wǒmen mǎshàng qù lóu xià nà jiā fàn guǎn ér, wǒ duì nàr de miàntiáor hěn mǎnyì.',
-      sample_vn: 'Tôi thường nói: Bạn muốn ăn gì thì mình ăn cái đó, muốn đi đâu thì mình đi đó. Nếu bạn cũng chưa nghĩ ra, mình xuống quán dưới nhà luôn, tôi rất ưng món mì ở đó.',
-      tip: 'Cặp đại từ nghi vấn hô ứng: 你什么时候来，我什么时候走。'
+      sample: '我家在十五层，有两个电梯。房间不大，但是很安静，住在这儿我很满意。',
+      sample_py: 'Wǒ jiā zài shíwǔ céng, yǒu liǎng ge diàntī. Fángjiān bú dà, dànshì hěn ānjìng, zhù zài zhèr wǒ hěn mǎnyì.',
+      sample_vn: 'Nhà tôi ở tầng mười lăm, có hai thang máy. Phòng không rộng nhưng rất yên tĩnh, sống ở đây tôi rất hài lòng.',
+      tip: 'Tầng mấy dùng 层: 在十五层 (không thêm 个); hài lòng với gì: 对 + … + 满意.'
     },
     {
-      situation: 'Khách đến công ty hỏi đường lên phòng bạn.',
-      q_zh: '你家或者公司在几层？你坐电梯还是走楼梯？',
-      q_py: 'Nǐ jiā huòzhě gōngsī zài jǐ céng? Nǐ zuò diàntī háishi zǒu lóu tī?',
-      q_vn: 'Nhà hoặc công ty bạn ở tầng mấy? Bạn đi thang máy hay cầu thang bộ?',
-      grammar: { label: 'Số + 层 / 坐电梯 · 走楼梯', any: ['层', '电梯', '楼梯'] },
+      situation: 'Bác sĩ hỏi thói quen ăn uống của bạn.',
+      q_zh: '你觉得什么最重要？你每天吃什么、喝什么？',
+      q_py: 'Nǐ juéde shénme zuì zhòngyào? Nǐ měi tiān chī shénme, hē shénme?',
+      q_vn: 'Bạn thấy điều gì quan trọng nhất? Mỗi ngày bạn ăn gì, uống gì?',
+      grammar: { label: '想 + V + 多少 / 什么 + 就 + V + 多少 / 什么', any: ['就吃', '就喝'] },
       need: [
-        { label: 'Nói tầng mấy', any: ['层', '楼'] },
-        { label: 'Nói đi thang máy hay cầu thang', any: ['电梯', '楼梯', '走'] }
+        { label: 'Nói điều quan trọng nhất', any: ['重要', '健康'] },
+        { label: 'Kể thứ bạn hầu như không ăn / uống', any: ['几乎', '不喝', '不吃'] }
       ],
-      bonus: { label: 'Nói lý do chọn cách đó', any: ['锻炼', '快', '人多', '方便', '健康'] },
-      vocab: ['电梯', '层', '健康'],
+      bonus: { label: 'Nói bạn có tập thể dục', any: ['锻炼', '运动', '跑步'] },
+      vocab: ['健康', '重要', '几乎', '可乐'],
       minLen: 18,
-      sample: '我们公司在十二层，我一般坐电梯上去。电梯人太多的时候，我就走楼梯，这样也能锻炼身体。',
-      sample_py: 'Wǒmen gōngsī zài shí èr céng, wǒ yìbān zuò diàntī shàng qù. Diàntī rén tài duō de shíhou, wǒ jiù zǒu lóu tī, zhè yàng yě néng duànliàn shēntǐ.',
-      sample_vn: 'Công ty tôi ở tầng 12, tôi thường đi thang máy. Khi thang máy đông người, tôi đi cầu thang bộ, như vậy cũng rèn luyện được sức khỏe.',
-      tip: 'Tầng nhà dùng 层: 三层 = tầng 3; 楼 thường chỉ tòa nhà: 那座楼。'
+      sample: '我觉得健康最重要。水果我想吃多少就吃多少，但是我几乎不喝可乐。',
+      sample_py: 'Wǒ juéde jiànkāng zuì zhòngyào. Shuǐguǒ wǒ xiǎng chī duōshao jiù chī duōshao, dànshì wǒ jīhū bù hē kělè.',
+      sample_vn: 'Tôi thấy sức khoẻ quan trọng nhất. Hoa quả thì muốn ăn bao nhiêu tôi ăn bấy nhiêu, nhưng tôi hầu như không uống coca.',
+      tip: '几乎 đứng trước 不/没 + động từ: 几乎不喝可乐; 想吃多少就吃多少 = muốn ăn bao nhiêu thì ăn bấy nhiêu.'
     },
     {
-      situation: 'Bạn và bạn bè đang nói chuyện về nơi chốn khiến mình thấy dễ chịu.',
-      q_zh: '你害怕什么？什么样的地方让你觉得安静、舒服？',
-      q_py: 'Nǐ hàipà shénme? Shénme yàng de dìfang ràng nǐ juéde ānjìng, shūfu?',
-      q_vn: 'Bạn sợ cái gì? Nơi thế nào khiến bạn thấy yên tĩnh, dễ chịu?',
-      grammar: { label: '害怕 + danh từ/động từ; 几乎 + động từ', any: ['害怕', '几乎'] },
+      situation: 'Bạn vừa gặp lại một bạn học cũ sau nhiều năm.',
+      q_zh: '你最好的老同学，你跟他多久没见面了？他有什么变化？',
+      q_py: 'Nǐ zuì hǎo de lǎo tóngxué, nǐ gēn tā duō jiǔ méi jiànmiàn le? Tā yǒu shénme biànhuà?',
+      q_vn: 'Người bạn học cũ thân nhất của bạn, bạn bao lâu chưa gặp bạn ấy? Bạn ấy có thay đổi gì?',
+      grammar: { label: '又 / 再 (gặp lại)', any: ['又', '再'] },
       need: [
-        { label: 'Nói điều mình sợ', any: ['害怕', '怕'] },
-        { label: 'Nói nơi yên tĩnh bạn thích', any: ['安静', '图书馆', '公园', '家', '河边', '山'] }
+        { label: 'Nói bao lâu chưa gặp', any: ['年', '个月', '没见面'] },
+        { label: 'Tả thay đổi', any: ['变化', '胖', '瘦', '高', '老'] }
       ],
-      bonus: { label: 'Dùng 几乎 nói mức độ', any: ['几乎'] },
-      vocab: ['害怕', '安静', '几乎'],
-      minLen: 20,
-      sample: '我有点儿害怕大狗。我喜欢安静的地方，比如图书馆和公园，在那儿我几乎能看一下午的书。',
-      sample_py: 'Wǒ yǒudiǎnr hàipà dà gǒu. Wǒ xǐhuan ānjìng de dìfang, bǐrú túshūguǎn hé gōngyuán, zài nàr wǒ jīhū néng kàn yíxià wǔ de shū.',
-      sample_vn: 'Tôi hơi sợ chó to. Tôi thích chỗ yên tĩnh, ví dụ thư viện và công viên, ở đó tôi gần như ngồi đọc sách được cả buổi chiều.',
-      tip: '几乎 = gần như: 我几乎每天都跑步。'
-    },
-    {
-      situation: 'Cuối năm, cả lớp kể về thay đổi của mình trong một năm qua.',
-      q_zh: '这一年你有什么变化？',
-      q_py: 'Zhè yì nián nǐ yǒu shénme biànhuà?',
-      q_vn: 'Một năm qua bạn có thay đổi gì?',
-      grammar: { label: '变化 + 大/不小; 越来越 + tính từ', any: ['变化', '越来越'] },
-      need: [
-        { label: 'Nói thay đổi lớn hay nhỏ', any: ['变化', '不小', '很大', '一些'] },
-        { label: 'Kể một thay đổi cụ thể', any: ['健康', '汉语', '工作', '锻炼', '认识', '朋友', '习惯'] }
-      ],
-      bonus: { label: 'Dùng 几乎 hoặc 又 để nói thói quen mới', any: ['几乎', '又', '每天'] },
-      vocab: ['变化', '健康', '几乎'],
-      minLen: 20,
-      sample: '这一年我的变化不小：身体比以前健康了，也不那么害怕说汉语了，现在我几乎每天都跟同学用汉语聊天儿。',
-      sample_py: 'Zhè yì nián wǒ de biànhuà bù xiǎo: shēntǐ bǐ yǐqián jiànkāng le, yě bú nàme hàipà shuō Hànyǔ le, xiànzài wǒ jīhū měitiān dōu gēn tóngxué yòng Hànyǔ liáo tiān ér.',
-      sample_vn: 'Một năm qua tôi thay đổi không ít: cơ thể khỏe hơn trước, cũng không còn sợ nói tiếng Hán nữa, giờ gần như ngày nào tôi cũng trò chuyện với bạn bằng tiếng Hán.',
-      tip: '变化 vừa là danh từ vừa là động từ: 变化很大、天气变化了。'
+      bonus: { label: 'Hẹn lần sau gặp lại', any: ['下次', '以后'] },
+      vocab: ['老', '见面', '变化'],
+      minLen: 18,
+      sample: '我跟我的老同学三年没见面了。上个星期我们又见面了，他的变化很大，比以前胖了，也更热情了。',
+      sample_py: 'Wǒ gēn wǒ de lǎo tóngxué sān nián méi jiànmiàn le. Shàng ge xīngqī wǒmen yòu jiànmiàn le, tā de biànhuà hěn dà, bǐ yǐqián pàng le, yě gèng rèqíng le.',
+      sample_vn: 'Tôi và bạn học cũ ba năm chưa gặp. Tuần trước chúng tôi lại gặp nhau, bạn ấy thay đổi nhiều, béo hơn trước, cũng nhiệt tình hơn.',
+      tip: '多久没见面了 = bao lâu chưa gặp: khoảng thời gian + 没 + V + 了; lần gặp lại đã xảy ra dùng 又见面了.'
     }
   ]
 };
@@ -2077,28 +2080,20 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Hôm qua tôi đã giặt quần áo, hôm nay lại giặt thêm một lần nữa.', zh:'我昨天洗了衣服，今天又洗了一次。', py:'Wǒ zuótiān xǐle yīfu, jīntiān yòu xǐle yí cì.'},
-  {vi:'Anh ấy rất hài lòng với cuộc sống hiện tại.', zh:'他对现在的生活很满意。', py:'Tā duì xiànzài de shēnghuó hěn mǎnyì.'},
-  {vi:'Cửa hàng này không có thang máy, mua đồ rất mệt.', zh:'这家商店没有电梯，买东西很累。', py:'Zhè jiā shāngdiàn méiyǒu diàntī, mǎi dōngxi hěn lèi.'},
-  {vi:'Cuốn sách này tặng bạn, hoan nghênh bạn thường xuyên đến nhà tôi chơi.', zh:'这本书送给你，欢迎你常来我家玩。', py:'Zhè běn shū sòng gěi nǐ, huānyíng nǐ cháng lái wǒ jiā wán.'},
-  {vi:'Bạn muốn ngồi đâu thì tôi ngồi đó.', zh:'你想坐哪儿我就坐哪儿。', py:'Nǐ xiǎng zuò nǎr wǒ jiù zuò nǎr.'},
-  {vi:'Đối với người già mà nói, sức khỏe quan trọng hơn tất cả.', zh:'对老人来说，身体健康比什么都重要。', py:'Duì lǎorén láishuō, shēntǐ jiànkāng bǐ shénme dōu zhòngyào.'},
-  {vi:'Cô ấy hầu như không uống coca, chỉ uống nước.', zh:'她几乎不喝可乐，只喝水。', py:'Tā jīhū bù hē kělè, zhǐ hē shuǐ.'},
-  {vi:'Nếu bạn không hài lòng với màu này thì chúng ta đổi cái khác đi.', zh:'如果你对这个颜色不满意，我们就换一个吧。', py:'Rúguǒ nǐ duì zhège yánsè bù mǎnyì, wǒmen jiù huàn yí ge ba.'},
+  {vi:'Hôm qua tôi đã gọi điện cho anh ấy, hôm nay lại gọi một lần nữa, nhưng anh ấy vẫn không nghe máy.', zh:'我昨天给他打了电话，今天又打了一次，但是他还是没接。', py:'Wǒ zuótiān gěi tā dǎle diànhuà, jīntiān yòu dǎle yí cì, dànshì tā háishi méi jiē.'},
+  {vi:'Lần sau bạn đến Bắc Kinh, chúng ta lại gặp nhau nhé.', zh:'下次你来北京，我们再见面吧。', py:'Xià cì nǐ lái Běijīng, wǒmen zài jiànmiàn ba.'},
+  {vi:'Bố tôi sợ đi thang máy, lần nào cũng đi bộ lên.', zh:'我爸爸害怕坐电梯，每次都走上去。', py:'Wǒ bàba hàipà zuò diàntī, měi cì dōu zǒu shangqu.'},
+  {vi:'Quán kia yên tĩnh hơn ở đây, chúng ta sang đó ngồi một lát đi.', zh:'那家饭馆比这儿安静，我们去那儿坐一会儿吧。', py:'Nà jiā fànguǎn bǐ zhèr ānjìng, wǒmen qù nàr zuò yíhuìr ba.'},
+  {vi:'Công viên này có rất nhiều người già, sáng nào cũng có người tập thể dục.', zh:'这个公园里老人很多，每天早上都有人在锻炼。', py:'Zhège gōngyuán li lǎorén hěn duō, měi tiān zǎoshang dōu yǒu rén zài duànliàn.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì trong thang máy quá đông người nên tôi quyết định đi cầu thang lên.', zh:'因为电梯里人太多，所以我决定走楼梯上去。', py:'Yīnwèi diàntī lǐ rén tài duō, suǒyǐ wǒ juédìng zǒu lóutī shàngqu.'},
-  {vi:'Chỉ cần bạn thích thì muốn ăn gì cứ ăn đó.', zh:'只要你喜欢，想吃什么就吃什么。', py:'Zhǐyào nǐ xǐhuan, xiǎng chī shénme jiù chī shénme.'},
-  {vi:'Tuy thành phố này hầu như không thay đổi nhưng người đông hơn nhiều.', zh:'虽然这个城市几乎没变化，但是人多了很多。', py:'Suīrán zhège chéngshì jīhū méi biànhuà, dànshì rén duōle hěn duō.'},
-  {vi:'Ai thích cô ấy thì cô ấy thích lại người đó.', zh:'谁喜欢她，她就喜欢谁。', py:'Shéi xǐhuan tā, tā jiù xǐhuan shéi.'},
-  {vi:'Tuy mọi người đều bận nhưng mỗi năm đều gặp nhau một lần.', zh:'虽然大家很忙，但是每年都会见一次面。', py:'Suīrán dàjiā hěn máng, dànshì měinián dōu huì jiàn yí cì miàn.'},
-  {vi:'Bạn đợi một lát ở dưới lầu, tôi xuống là tới ngay.', zh:'你在楼下等一会儿，我下楼就到。', py:'Nǐ zài lóuxià děng yíhuìr, wǒ xiàlóu jiù dào.'},
-  {vi:'Chỉ cần bạn muốn uống coca, tôi sẽ xuống dưới mua ngay.', zh:'只要你想喝可乐，我就去楼下买。', py:'Zhǐyào nǐ xiǎng hē kělè, wǒ jiù qù lóuxià mǎi.'},
-  {vi:'Quán ăn này tuy cũ nhưng hương vị vẫn luôn rất ngon.', zh:'这家饭馆虽然老了，但是味道一直很好。', py:'Zhè jiā fànguǎn suīrán lǎo le, dànshì wèidao yìzhí hěn hǎo.'},
+  {vi:'Bạn thấy công việc quan trọng hay gia đình quan trọng?', zh:'你觉得工作重要还是家重要？', py:'Nǐ juéde gōngzuò zhòngyào háishi jiā zhòngyào?'},
+  {vi:'Món này bạn muốn nấu thế nào thì nấu thế ấy, tôi đều thích ăn.', zh:'这个菜你想怎么做就怎么做，我都喜欢吃。', py:'Zhège cài nǐ xiǎng zěnme zuò jiù zěnme zuò, wǒ dōu xǐhuan chī.'},
+  {vi:'Mẹ tôi gần như ngày nào cũng gọi điện cho tôi.', zh:'我妈妈几乎每天都给我打电话。', py:'Wǒ māma jīhū měi tiān dōu gěi wǒ dǎ diànhuà.'},
 ];
 
 // ══════════════════════════════════════════

@@ -1693,72 +1693,79 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'找',right:'不到'},
-  {left:'看',right:'不清楚'},
-  {left:'睡',right:'不着'},
-  {left:'去',right:'公园'},
-  {left:'听',right:'音乐'},
-  {left:'跟朋友',right:'聊天儿'},
-  {left:'过来',right:'帮忙'},
-  {left:'因为题特别难，',right:'所以我不会回答。'},
-  {left:'虽然公园很大，',right:'但是走走也不错。'},
-  {left:'如果你看不清楚，',right:'就找眼镜吧。'},
-  {left:'只要你锻炼完了，',right:'就过来吧。'},
+  {left:'每天早上去公园', right:'锻炼身体'},
+  {left:'周末经常跟朋友', right:'聊天儿'},
+  {left:'晚上喝了咖啡，我', right:'睡不着'},
+  {left:'没有眼镜，我', right:'看不清楚'},
+  {left:'她做饭的时候喜欢听', right:'音乐'},
+  {left:'东西太多了，快来', right:'帮忙'},
+  {left:'这个问题老师', right:'讲得很明白'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'虽然我的',blank:'眼镜',post:'有点儿旧了，但是看得还很清楚。',hint:'(mắt kính)',ans:'眼镜'},
-  {pre:'昨天还好好的手机，怎么',blank:'突然',post:'不能用了？',hint:'(bỗng nhiên)',ans:'突然'},
-  {pre:'我',blank:'离',post:'不开眼镜。',hint:'(rời khỏi)',ans:'离',exp:'离不开 = không rời được; động từ + 不 + 开 là bổ ngữ khả năng ở dạng phủ định.'},
-  {pre:'虽然教室里的灯有点儿旧了，但是黑板上的字我还看得',blank:'清楚',post:'。',hint:'(rõ ràng)',ans:'清楚',exp:'看得清楚 = nhìn rõ được; động từ + 得 + kết quả là bổ ngữ khả năng.'},
-  {pre:'你的手机是不是',blank:'刚才',post:'忘在教室里了？',hint:'(lúc nãy)',ans:'刚才'},
-  {pre:'房间里的东西太重了，你快过来',blank:'帮忙',post:'搬一下吧。',hint:'(giúp đỡ)',ans:'帮忙'},
-  {pre:'今天这些题',blank:'特别',post:'难。',hint:'(vô cùng, rất)',ans:'特别'},
-  {pre:'这个问题',blank:'讲',post:'不明白。',hint:'(nói, giải thích)',ans:'讲'},
-  {pre:'老师讲了两次，我才',blank:'明白',post:'这道题的意思。',hint:'(rõ ràng, dễ hiểu)',ans:'明白'},
-  {pre:'虽然外边有点儿冷，但是我还是想去公园',blank:'锻炼',post:'一会儿。',hint:'(tập thể dục)',ans:'锻炼'},
-  {pre:'她喜欢听',blank:'音乐',post:'。',hint:'(âm nhạc)',ans:'音乐'},
-  {pre:'那去',blank:'公园',post:'走走。',hint:'(công viên)',ans:'公园'},
-  {pre:'他昨天喝了很多咖啡，所以晚上',blank:'睡不着',post:'觉。',hint:'(ngủ không được)',ans:'睡不着',exp:'睡不着 = không ngủ được; động từ + 不 + 着 là bổ ngữ khả năng phủ định.'},
-  {pre:'喝杯牛奶，可以睡得',blank:'更',post:'好些。',hint:'(càng, hơn nữa)',ans:'更',exp:'更 + tính từ = … hơn: 睡得更好些.'},
+  {pre:'A：桌子上的苹果', blank:'呢', post:'？B：弟弟刚才吃了。', hint:'(… đâu rồi?)', ans:'呢', exp:'Danh từ + 呢？= … đâu rồi? dùng khi đang tìm một đồ vật; không cần thêm 在哪儿 hay 吗.'},
+  {pre:'A：你身体这么好，经常运动吗？B：对，我每天下班以后都', blank:'锻炼', post:'一个小时。', hint:'(tập thể dục)', ans:'锻炼', exp:'锻炼 = rèn luyện, tập thể dục; thời lượng 一个小时 đứng sau động từ (ôn HSK2).'},
+  {pre:'', blank:'刚才', post:'我没听清楚，你能再说一次吗？', hint:'(lúc nãy)', ans:'刚才', exp:'刚才 = lúc nãy (từ chỉ thời gian), đứng đầu câu hoặc sau chủ ngữ và đi được với 没.'},
+  {pre:'这本书上的字太小了，没有眼镜我看不', blank:'清楚', post:'。', hint:'(rõ)', ans:'清楚', exp:'看不清楚 = không thể nhìn rõ: động từ + 不 + bổ ngữ là bổ ngữ khả năng phủ định.'},
+  {pre:'后天就要比赛了，我有点儿着急，一直睡不', blank:'着', post:'。', hint:'(chìm vào giấc ngủ)', ans:'着', exp:'睡不着 = không ngủ được, 着 đọc zháo; khác 着 (zhe) trong V着 (HSK2); ôn 就要……了.'},
+  {pre:'A：老师给的题这么多，今天晚上你做得', blank:'完', post:'吗？B：做得完，不太难。', hint:'(xong)', ans:'完', exp:'做得完 = làm xong được; hỏi bằng V得C吗, trả lời lặp lại 做得完 / 做不完.'},
+  {pre:'早上天气还很好，下午', blank:'突然', post:'下雨了，公园里的人都走了。', hint:'(bỗng nhiên)', ans:'突然', exp:'突然 = bỗng nhiên, việc xảy ra không ngờ, đứng trước động từ.'},
+  {pre:'这家饭馆的鱼', blank:'特别', post:'好吃，我们下次再来吧。', hint:'(cực kỳ, đặc biệt)', ans:'特别', exp:'特别 + tính từ = cực kỳ …, mạnh hơn 很; 再 = lần sau lại (việc chưa xảy ra).'},
+  {pre:'A：你的汉语说得比我好。B：哪儿啊，小丽说得', blank:'更', post:'好。', hint:'(càng, còn … hơn)', ans:'更', exp:'更 + tính từ = còn … hơn (so với điều vừa nói); ôn 比 + bổ ngữ trạng thái (HSK2).'},
+  {pre:'A：这张桌子你一个人搬得了吗？B：搬不了，你能过来', blank:'帮忙', post:'吗？', hint:'(giúp một tay)', ans:'帮忙', exp:'帮忙 = giúp một tay, không mang tân ngữ người phía sau (không nói 帮忙我, nói 帮我).'},
+  {pre:'老师又讲了一次，这次我听', blank:'明白', post:'了。', hint:'(hiểu rõ)', ans:'明白', exp:'听明白 = nghe hiểu rõ; ôn 又 + V + 了 (bài 4) cho việc lặp lại đã xảy ra.'},
+  {pre:'A：这个题我不会做。B：没关系，我给你', blank:'讲', post:'一下。', hint:'(giảng, giải thích)', ans:'讲', exp:'给 + người + 讲 = giảng cho ai nghe; 一下 sau động từ làm câu nhẹ nhàng hơn.'},
+  {pre:'他', blank:'离开', post:'北京已经三年了，但是还经常给那儿的朋友打电话。', hint:'(rời khỏi)', ans:'离开', exp:'离开 + nơi chốn = rời khỏi; 已经 … 了 nói thời gian đã trôi qua.'},
+  {pre:'A：我们去吃饭吧？B：不了，我', blank:'刚', post:'吃完饭，你们去吧。', hint:'(vừa mới)', ans:'刚', exp:'刚 là phó từ, đứng ngay trước động từ: 刚吃完饭 = vừa ăn xong; 刚才 (lúc nãy) là danh từ thời gian, có thể đứng đầu câu.'}
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','的','眼镜','怎么','突然','找','不','到','了','？'],ans:'我的眼镜怎么突然找不到了？',audio:'我的眼镜怎么突然找不到了？'},
-  {words:['虽然','声音','很','小','，','但是','我','还','听','得','清楚','。'],ans:'虽然声音很小，但是我还听得清楚。',audio:'虽然声音很小，但是我还听得清楚。'},
-  {words:['虽然','这个','故事','很','长','，','但是','奶奶','讲','得','很','清楚','。'],ans:'虽然这个故事很长，但是奶奶讲得很清楚。',audio:'虽然这个故事很长，但是奶奶讲得很清楚。'},
-  {words:['虽然','音乐会','人','很','多','，','但是','我们','买','到','了','票','。'],ans:'虽然音乐会人很多，但是我们买到了票。',audio:'虽然音乐会人很多，但是我们买到了票。'},
-  {words:['如果','房间','太','吵','，','我','就','睡','不','着','觉','。'],ans:'如果房间太吵，我就睡不着觉。',audio:'如果房间太吵，我就睡不着觉。'},
-  {words:['因为','题','特别','难','，','所以','我','不','会','回答','。'],ans:'因为题特别难，所以我不会回答。',audio:'因为题特别难，所以我不会回答。'},
-  {words:['虽然','公园','很','大','，','但是','走走','也','不错','。'],ans:'虽然公园很大，但是走走也不错。',audio:'虽然公园很大，但是走走也不错。'},
-  {words:['如果','你','锻炼','完','了','，','就','过来','吧','。'],ans:'如果你锻炼完了，就过来吧。',audio:'如果你锻炼完了，就过来吧。'},
+  {words:['晚上','我们','在','宾馆','旁边','的','公园','里','聊天儿','。'], ans:'晚上我们在宾馆旁边的公园里聊天儿。', audio:'晚上我们在宾馆旁边的公园里聊天儿。'},
+  {words:['虽然','天气','很','冷','，','但是','爸爸','每天','早上','都','去','跑步','。'], ans:'虽然天气很冷，但是爸爸每天早上都去跑步。', audio:'虽然天气很冷，但是爸爸每天早上都去跑步。'},
+  {words:['爸爸','的','报纸','呢','？','我','刚才','还','在','桌子上','看见','了','。'], ans:'爸爸的报纸呢？我刚才还在桌子上看见了。', audio:'爸爸的报纸呢？我刚才还在桌子上看见了。'},
+  {words:['这么','多','菜','，','我们','两个','人','吃','得','完','吗','？'], ans:'这么多菜，我们两个人吃得完吗？', audio:'这么多菜，我们两个人吃得完吗？'},
+  {words:['电影','还','没','完','，','他','怎么','突然','离开','了','？'], ans:'电影还没完，他怎么突然离开了？', audio:'电影还没完，他怎么突然离开了？'},
+  {words:['听','着','音乐','，','我','很','快','就','睡着','了','。'], ans:'听着音乐，我很快就睡着了。', audio:'听着音乐，我很快就睡着了。'},
+  {words:['你','在','说','什么','？','电话','里','我','听','不','见','。'], ans:'你在说什么？电话里我听不见。', audio:'你在说什么？电话里我听不见。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'我找到不好地方。',
-   opts:['我找不到好地方。','我找到不好地方。','我不找到好地方。','我找好地方不到。'],ans:0,
-   exp:'Bổ ngữ khả năng dạng phủ định: Động từ + 不 + bổ ngữ (找+不+到), không đảo vị trí 不 và bổ ngữ.'},
-  {wrong:'你看清楚得那个字吗？',
-   opts:['你看得清楚那个字吗？','你看清楚得那个字吗？','你清楚看得那个字吗？','那个字你得看清楚吗？'],ans:0,
-   exp:'Bổ ngữ khả năng dạng khẳng định: Động từ + 得 + bổ ngữ (看+得+清楚), 得 phải đứng ngay sau động từ.'},
-  {wrong:'你的车在哪儿呢？',
-   opts:['你的车呢？','你的车在哪儿呢？','呢你的车？','你的车哪儿呢？'],ans:0,
-   exp:'"Danh từ + 呢" đã tự mang nghĩa hỏi vị trí ("ở đâu rồi?"), không cần thêm 在哪儿 phía trước 呢.'},
-  {wrong:'我才完成作业，你呢？',
-   opts:['我刚完成作业，你呢？','我才完成作业，你呢？','我完成刚作业，你呢？','刚我完成作业，你呢？'],ans:0,
-   exp:'刚 (phó từ, đứng trước động từ) diễn tả hành động vừa xảy ra cách đây không lâu, phải đứng ngay trước động từ (完成); 才 mang nghĩa khác (mãi mới, muộn), không phù hợp ngữ cảnh này.'},
-  {wrong:'这道题他明白讲不。',
-   opts:['这道题他讲不明白。','这道题他明白讲不。','这道题他不讲明白。','这道题他讲明白不。'],ans:0,
-   exp:'Bổ ngữ khả năng: Động từ(讲)+不+bổ ngữ(明白) phải đứng liền nhau theo đúng thứ tự, không đảo lộn.'},
+  {wrong:'黑色的字我看清楚不。',
+   opts:['黑色的字我不看清楚。','黑色的字我看不清楚。','黑色的字我没看得清楚。','黑色的字我清楚不看。'], ans:1,
+   exp:'Bổ ngữ khả năng phủ định: động từ + 不 + bổ ngữ (看不清楚); 不 không đứng trước động từ, không dùng 没 với 得.'},
+  {wrong:'我没吃饭刚才，现在有点儿饿。',
+   opts:['我刚才没吃了饭，现在有点儿饿。','我没刚才吃饭，现在有点儿饿。','我刚才没有吃饭了，现在有点儿饿。','刚才我没吃饭，现在有点儿饿。'], ans:3,
+   exp:'刚才 (lúc nãy) đứng đầu câu hoặc ngay sau chủ ngữ, trước 没 — không đặt cuối câu như tiếng Việt; 没 không đi với 了.'},
+  {wrong:'电影里的人说得这么快，你听懂得吗？',
+   opts:['电影里的人说得这么快，你听得懂吗？','电影里的人说得这么快，你得听懂吗？','电影里的人说得这么快，你听得懂不懂吗？','电影里的人说得这么快，你听不得懂吗？'], ans:0,
+   exp:'Bổ ngữ khả năng: 得 đứng giữa động từ và bổ ngữ (听得懂); câu hỏi chính phản (听得懂听不懂) thì không thêm 吗.'},
+  {wrong:'我们的小狗在哪儿吗？',
+   opts:['我们的小狗哪儿呢吗？','我们的小狗是在哪儿吗？','我们的小狗呢？','我们的小狗呢吗？'], ans:2,
+   exp:'Hỏi đồ vật / con vật đang tìm: danh từ + 呢？; câu đã có từ để hỏi (哪儿) hay 呢 thì không thêm 吗.'},
+  {wrong:'我找手机不到了。',
+   opts:['我不找到手机了。','我没找得到手机了。','我找到不手机了。','我找不到手机了。'], ans:3,
+   exp:'找不到 phải đi liền nhau, tân ngữ 手机 đứng SAU cả cụm: 找不到手机.'},
+  {wrong:'这家的面包比那家很好吃。',
+   opts:['这家的面包比那家特别好吃。','这家的面包比那家更好吃。','这家的面包比那家是好吃。','这家的面包好吃比那家。'], ans:1,
+   exp:'Câu 比 không dùng 很 / 特别 / 是 trước tính từ; muốn nhấn mạnh thì dùng 更 (ôn 比, HSK2).'},
+  {wrong:'你能帮忙我搬桌子吗？',
+   opts:['你能搬桌子帮我吗？','你能帮我搬桌子吗？','你帮我能搬桌子吗？','你能帮我桌子搬吗？'], ans:1,
+   exp:'帮 + người + việc: 帮我搬桌子; 帮忙 không mang tân ngữ người; 能 đứng trước 帮.'},
+  {wrong:'昨天晚上太热了，十二点我还不睡着。',
+   opts:['昨天晚上太热了，十二点我还睡没着。','昨天晚上太热了，十二点我还没睡着了。','昨天晚上太热了，十二点我还不睡得着。','昨天晚上太热了，十二点我还没睡着。'], ans:3,
+   exp:'Việc đã qua chưa xảy ra: 还没 + 睡着; 不 không đứng trước 睡着, 没 không đi với 了.'},
+  {wrong:'他刚才来北京一个月。',
+   opts:['他刚来北京一个月。','刚他来北京一个月。','他刚才来了北京一个月。','他来北京一个月刚。'], ans:0,
+   exp:'Mới đến được một tháng dùng 刚 + động từ; 刚才 chỉ “lúc nãy” (vài phút trước) nên không đi với 一个月, và 刚 phải đứng trước động từ.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1766,97 +1773,96 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 6. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 6 (bổ ngữ khả năng V + 得/不 + bổ ngữ, danh từ + 呢？, 刚才). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Sau tiết học, thầy hỏi bạn nghe giảng có hiểu không.',
-      q_zh: '老师讲的汉语你听得懂吗？哪儿还不太清楚？',
-      q_py: 'Lǎoshī jiǎng de Hànyǔ nǐ tīng děi dǒng ma? Nǎr hái bú tài qīngchu?',
-      q_vn: 'Tiếng Hán thầy giảng bạn nghe hiểu không? Chỗ nào còn chưa rõ lắm?',
-      grammar: { label: 'Bổ ngữ khả năng: V + 得/不 + bổ ngữ (听得懂 / 听不懂)', any: ['得懂', '不懂', '得清楚', '不清楚', '得明白', '不明白'] },
+      situation: 'Sau giờ học, cô giáo hỏi bạn nghe giảng có hiểu không.',
+      q_zh: '老师讲的汉语你都听得懂吗？',
+      q_py: 'Lǎoshī jiǎng de Hànyǔ nǐ dōu tīng de dǒng ma?',
+      q_vn: 'Tiếng Hán cô giảng em đều nghe hiểu chứ?',
+      grammar: { label: 'Bổ ngữ khả năng: V + 得/不 + bổ ngữ', any: ['得懂', '不懂', '得清楚', '不清楚', '得明白', '不明白'] },
       need: [
         { label: 'Nói nghe hiểu được hay không', any: ['听得懂', '听不懂', '明白', '清楚'] },
-        { label: 'Nói chỗ còn khó', any: ['快', '词', '生词', '语法', '声调', '有些'] }
+        { label: 'Nói khi nào còn khó', any: ['快', '生词', '时候', '汉字'] }
       ],
-      bonus: { label: 'Nói cách bạn khắc phục', any: ['问', '复习', '练习', '再听', '录'] },
+      bonus: { label: 'Nói bạn sẽ làm gì để hiểu hơn', any: ['问', '复习', '再听'] },
       vocab: ['讲', '清楚', '明白'],
-      minLen: 20,
-      sample: '老师讲得很清楚，大部分我都听得懂。可是老师说得快的时候，有些词我还听不明白，下课以后我会再问一下。',
-      sample_py: 'Lǎoshī jiǎng děi hěn qīngchu, dà bùfen wǒ dōu tīng děi dǒng. Kěshì lǎoshī shuō děi kuài de shíhou, yǒuxiē cí wǒ hái tīng bù míngbai, xiàkè yǐhòu wǒ huì zài wèn yíxià.',
-      sample_vn: 'Thầy giảng rất rõ, phần lớn em nghe hiểu. Nhưng khi thầy nói nhanh, có vài từ em vẫn nghe không hiểu, tan học em sẽ hỏi lại.',
-      tip: 'Bổ ngữ khả năng: 听得懂 (nghe hiểu được) / 听不懂 (nghe không hiểu được).'
-    },
-    {
-      situation: 'Bạn tìm mãi không thấy kính của mình ở nhà.',
-      q_zh: '你找不到眼镜的时候，会怎么问家里人？',
-      q_py: 'Nǐ zhǎo bú dào yǎnjìng de shíhou, huì zěnme wèn jiā lǐ rén?',
-      q_vn: 'Khi không tìm thấy kính, bạn sẽ hỏi người nhà thế nào?',
-      grammar: { label: 'Danh từ + 呢？(hỏi vị trí)', any: ['呢'] },
-      need: [
-        { label: 'Hỏi đồ vật ở đâu', any: ['呢', '在哪儿', '哪儿'] },
-        { label: 'Kể lại lúc nãy để ở đâu', any: ['刚才', '放', '桌子', '包', '床'] }
-      ],
-      bonus: { label: 'Dùng 突然 để nói bỗng dưng không thấy', any: ['突然'] },
-      vocab: ['眼镜', '突然', '刚才'],
       minLen: 18,
-      sample: '妈，我的眼镜呢？刚才我还放在桌子上，现在突然找不到了，您看见了吗？',
-      sample_py: 'Mā, wǒ de yǎnjìng ne? Gāngcái wǒ hái fàng zài zhuōzi shàng, xiànzài tūrán zhǎo bú dào le, nín kànjiàn le ma?',
-      sample_vn: 'Mẹ ơi, kính của con đâu? Lúc nãy con còn để trên bàn, giờ tự nhiên không thấy nữa, mẹ có thấy không?',
-      tip: '名词 + 呢？là cách hỏi ngắn về vị trí: 我的手机呢？'
+      sample: '老师讲得很清楚，我都听得懂。但是同学说得快的时候，我还听不明白。',
+      sample_py: 'Lǎoshī jiǎng de hěn qīngchu, wǒ dōu tīng de dǒng. Dànshì tóngxué shuō de kuài de shíhou, wǒ hái tīng bu míngbai.',
+      sample_vn: 'Cô giảng rất rõ, em đều nghe hiểu. Nhưng lúc các bạn nói nhanh thì em vẫn nghe chưa hiểu.',
+      tip: '得 / 不 đứng giữa động từ và bổ ngữ: 听得懂 / 听不懂 — không nói 听懂不.'
     },
     {
-      situation: 'Bác sĩ khuyên bạn vận động nhiều hơn và hỏi thói quen của bạn.',
-      q_zh: '你平时在哪儿锻炼？一般锻炼多长时间？',
-      q_py: 'Nǐ píngshí zài nǎr duànliàn? Yìbān duànliàn duō zhǎng shíjiān?',
-      q_vn: 'Bình thường bạn tập ở đâu? Thường tập bao lâu?',
-      grammar: { label: 'Bổ ngữ thời lượng: V + 时间 (跑三十分钟)', any: ['分钟', '小时', '半'] },
+      situation: 'Sắp đi làm, bạn không thấy điện thoại đâu. Bạn hỏi người nhà.',
+      q_zh: '你要去上班了，但是找不到手机，你会怎么问家里人？',
+      q_py: 'Nǐ yào qù shàngbān le, dànshì zhǎo bu dào shǒujī, nǐ huì zěnme wèn jiā li rén?',
+      q_vn: 'Bạn sắp đi làm mà không tìm thấy điện thoại, bạn sẽ hỏi người nhà thế nào?',
+      grammar: { label: 'Danh từ + 呢？(… đâu rồi?)', any: ['呢'] },
       need: [
-        { label: 'Nói nơi tập', any: ['公园', '家', '房间', '学校', '楼下', '健身'] },
-        { label: 'Nói thời gian tập', any: ['分钟', '小时', '半'] }
+        { label: 'Hỏi đồ vật đâu rồi', any: ['呢', '哪儿'] },
+        { label: 'Nói lúc nãy còn dùng / để ở đâu', any: ['刚才', '桌子', '房间', '用'] }
       ],
-      bonus: { label: 'Nói cảm giác sau khi tập bằng 特别 / 更', any: ['特别', '更'] },
-      vocab: ['锻炼', '公园', '特别'],
-      minLen: 18,
-      sample: '我一般在家附近的公园锻炼，每天跑三十分钟。跑完以后觉得特别舒服，晚上也睡得更好。',
-      sample_py: 'Wǒ yìbān zài jiā fùjìn de gōngyuán duànliàn, měitiān pǎo sān shífēn zhōng. Pǎo wán yǐhòu juéde tèbié shūfu, wǎnshang yě shuì děi gèng hǎo.',
-      sample_vn: 'Tôi thường tập ở công viên gần nhà, mỗi ngày chạy 30 phút. Chạy xong thấy rất dễ chịu, buổi tối cũng ngủ ngon hơn.',
-      tip: 'Thời lượng đặt sau động từ: 跑三十分钟、学两个小时。'
+      bonus: { label: 'Nhờ người nhà giúp', any: ['帮', '帮忙', '打'] },
+      vocab: ['刚才', '突然', '帮忙'],
+      minLen: 16,
+      sample: '妈妈，我的手机呢？刚才我还在用，怎么突然找不到了？你帮我打一下我的电话吧。',
+      sample_py: 'Māma, wǒ de shǒujī ne? Gāngcái wǒ hái zài yòng, zěnme tūrán zhǎo bu dào le? Nǐ bāng wǒ dǎ yíxià wǒ de diànhuà ba.',
+      sample_vn: 'Mẹ ơi, điện thoại của con đâu rồi? Lúc nãy con còn đang dùng, sao tự nhiên không thấy nữa? Mẹ gọi giúp con vào số của con nhé.',
+      tip: 'Chỉ cần “danh từ + 呢？” là đủ nghĩa “… đâu rồi?”: 我的手机呢？'
     },
     {
-      situation: 'Bạn cùng phòng hỏi vì sao đêm qua bạn trằn trọc mãi.',
-      q_zh: '你晚上容易睡着吗？睡不着的时候你会做什么？',
-      q_py: 'Nǐ wǎnshang róngyì shuìzháo ma? Shuì bù zhe de shíhou nǐ huì zuò shénme?',
-      q_vn: 'Buổi tối bạn có dễ ngủ không? Lúc không ngủ được bạn làm gì?',
+      situation: 'Bạn thân gọi lại và hỏi vì sao lúc nãy bạn không nghe máy.',
+      q_zh: '刚才我给你打电话，你怎么没接？',
+      q_py: 'Gāngcái wǒ gěi nǐ dǎ diànhuà, nǐ zěnme méi jiē?',
+      q_vn: 'Lúc nãy mình gọi cho cậu, sao cậu không nghe máy?',
+      grammar: { label: '刚才 (lúc nãy)', any: ['刚才'] },
+      need: [
+        { label: 'Nói lúc nãy bạn đang làm gì', any: ['锻炼', '跑步', '洗', '睡', '上课', '公园'] },
+        { label: 'Nói bây giờ bạn đang ở đâu / làm xong chưa', any: ['现在', '到家', '完'] }
+      ],
+      bonus: { label: 'Hỏi lại bạn ấy có việc gì', any: ['什么事情', '怎么了'] },
+      vocab: ['刚才', '锻炼', '公园'],
+      minLen: 16,
+      sample: '对不起，刚才我在公园锻炼，没带手机。现在我已经到家了，你有什么事情吗？',
+      sample_py: 'Duìbuqǐ, gāngcái wǒ zài gōngyuán duànliàn, méi dài shǒujī. Xiànzài wǒ yǐjīng dào jiā le, nǐ yǒu shénme shìqing ma?',
+      sample_vn: 'Xin lỗi, lúc nãy mình đang tập ở công viên, không mang điện thoại. Giờ mình về đến nhà rồi, cậu có việc gì thế?',
+      tip: '刚才 = lúc nãy, đứng đầu câu hoặc sau chủ ngữ và đi được với 没: 刚才没接 — không đặt 刚才 ở cuối câu.'
+    },
+    {
+      situation: 'Bạn cùng phòng hỏi buổi tối bạn có dễ ngủ không.',
+      q_zh: '你晚上睡得着吗？睡不着的时候你做什么？',
+      q_py: 'Nǐ wǎnshang shuì de zháo ma? Shuì bu zháo de shíhou nǐ zuò shénme?',
+      q_vn: 'Buổi tối cậu có ngủ được không? Lúc không ngủ được cậu làm gì?',
       grammar: { label: '睡得着 / 睡不着 (bổ ngữ khả năng)', any: ['睡着', '睡得着', '睡不着'] },
       need: [
-        { label: 'Nói dễ ngủ hay khó ngủ', any: ['睡着', '睡不着', '容易', '很快'] },
-        { label: 'Kể việc làm khi không ngủ được', any: ['音乐', '看书', '听', '喝', '走走'] }
+        { label: 'Nói dễ ngủ hay khó ngủ, vì sao', any: ['睡不着', '睡得着', '因为', '忙'] },
+        { label: 'Kể việc làm khi không ngủ được', any: ['音乐', '看书', '牛奶', '听'] }
       ],
-      bonus: { label: 'Nói điều bạn tránh làm trước khi ngủ', any: ['手机', '咖啡', '不玩', '别'] },
-      vocab: ['睡着', '音乐', '更'],
+      bonus: { label: 'Nói kết quả bằng 更', any: ['更'] },
+      vocab: ['睡着', '音乐', '特别'],
       minLen: 18,
-      sample: '我一般很快就睡着了。睡不着的时候，我会听听音乐或者看一会儿书，不玩儿手机，这样睡得更快。',
-      sample_py: 'Wǒ yìbān hěn kuài jiù shuìzháo le. Shuì bù zhe de shíhou, wǒ huì tīngting yīnyuè huòzhě kàn yíhuìr shū, bù wánr shǒujī, zhè yàng shuì děi gèng kuài.',
-      sample_vn: 'Tôi thường ngủ rất nhanh. Khi không ngủ được, tôi nghe nhạc hoặc đọc sách một lát, không nghịch điện thoại, như vậy ngủ nhanh hơn.',
-      tip: '睡着 (zháo) nghĩa là chìm vào giấc ngủ, khác với 睡觉 (đi ngủ).'
+      sample: '最近工作特别忙，我晚上经常睡不着。睡不着的时候，我就听听音乐，听着听着就睡着了。',
+      sample_py: 'Zuìjìn gōngzuò tèbié máng, wǒ wǎnshang jīngcháng shuì bu zháo. Shuì bu zháo de shíhou, wǒ jiù tīngting yīnyuè, tīngzhe tīngzhe jiù shuìzháo le.',
+      sample_vn: 'Dạo này công việc cực kỳ bận, buổi tối tôi hay không ngủ được. Những lúc đó tôi nghe nhạc, nghe một lúc là ngủ thiếp đi.',
+      tip: '睡着 đọc shuìzháo = chìm vào giấc ngủ; 睡觉 chỉ là “đi ngủ”.'
     },
     {
-      situation: 'Đồng nghiệp của bạn cần người phụ giúp chuyển nhà.',
-      q_zh: '同事需要帮忙的时候，你会怎么做？',
-      q_py: 'Tóngshì xūyào bāngmáng de shíhou, nǐ huì zěnme zuò?',
-      q_vn: 'Khi đồng nghiệp cần giúp đỡ, bạn sẽ làm gì?',
-      grammar: { label: '帮 + người + làm gì / 帮忙', any: ['帮忙', '帮'] },
+      situation: 'Cuối tuần này bạn chuyển nhà, đồ đạc rất nhiều. Bạn kể với bạn học.',
+      q_zh: '这个周末你要搬家，东西多吗？你会请谁来帮忙？',
+      q_py: 'Zhège zhōumò nǐ yào bān jiā, dōngxi duō ma? Nǐ huì qǐng shéi lái bāngmáng?',
+      q_vn: 'Cuối tuần này bạn chuyển nhà, đồ có nhiều không? Bạn sẽ nhờ ai đến giúp?',
+      grammar: { label: 'Bổ ngữ khả năng: 搬不完 / 搬得了', any: ['不完', '得完', '不了', '得了'] },
       need: [
-        { label: 'Nói có giúp hay không', any: ['帮忙', '帮', '一定'] },
-        { label: 'Kể một việc cụ thể đã giúp', any: ['搬', '打扫', '买', '做', '接', '送'] }
+        { label: 'Nói mời ai đến giúp', any: ['帮忙', '帮', '请'] },
+        { label: 'Nói làm gì sau khi chuyển xong', any: ['吃饭', '聊天', '喝', '休息'] }
       ],
-      bonus: { label: 'Kể chuyện trò sau khi giúp xong bằng 聊天儿', any: ['聊天'] },
-      vocab: ['帮忙', '聊天', '离开'],
-      minLen: 20,
-      sample: '同事要是有事，我一定帮忙。上个星期他搬家，我帮他搬了一下午，离开以前我们还一起聊天儿、喝了杯咖啡。',
-      sample_py: 'Tóngshì yàoshi yǒu shì, wǒ yí dìng bāngmáng. Shàng ge xīngqī tā bān jiā, wǒ bāng tā bān le yíxià wǔ, líkāi yǐqián wǒmen hái yìqǐ liáo tiān ér, hē le bēi kāfēi.',
-      sample_vn: 'Đồng nghiệp có việc thì tôi nhất định giúp. Tuần trước anh ấy chuyển nhà, tôi giúp cả buổi chiều, trước khi về chúng tôi còn trò chuyện, uống cà phê.',
-      tip: '帮忙 là từ ly hợp, không nói 帮忙他 mà nói 帮他的忙 hoặc 帮他。'
+      vocab: ['帮忙', '聊天儿'],
+      minLen: 18,
+      sample: '东西太多了，我一个人搬不完，我想请哥哥来帮忙。搬好以后，我请他吃饭，跟他聊天儿。',
+      sample_py: 'Dōngxi tài duō le, wǒ yí ge rén bān bu wán, wǒ xiǎng qǐng gēge lái bāngmáng. Bānhǎo yǐhòu, wǒ qǐng tā chī fàn, gēn tā liáotiānr.',
+      sample_vn: 'Đồ nhiều quá, một mình tôi chuyển không hết, tôi muốn nhờ anh trai đến giúp. Chuyển xong tôi mời anh ấy ăn cơm, trò chuyện với anh ấy.',
+      tip: '帮忙 không mang tân ngữ: 请哥哥来帮忙 / 请哥哥帮我 — không nói 帮忙我.'
     }
   ]
 };
@@ -1865,28 +1871,21 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nếu bạn tìm không thấy chìa khóa xe thì cứ hỏi hàng xóm xem sao.', zh:'如果你找不到车钥匙，就问问邻居吧。', py:'Rúguǒ nǐ zhǎo bu dào chē yàoshi, jiù wènwen línjū ba.'},
-  {vi:'Tuy trời tối nhưng con đường đó tôi vẫn nhìn thấy rất rõ.', zh:'虽然天黑了，但是那条路我还看得很清楚。', py:'Suīrán tiān hēi le, dànshì nà tiáo lù wǒ hái kàn de hěn qīngchu.'},
-  {vi:'Bài này khó quá, tôi không hiểu, bạn giúp tôi được không?', zh:'这道题特别难，我看不懂，你能帮我吗？', py:'Zhè dào tí tèbié nán, wǒ kàn bu dǒng, nǐ néng bāng wǒ ma?'},
-  {vi:'Bạn đến nhà tôi đi, tôi giảng cho bạn.', zh:'你来我家吧，我给你讲讲。', py:'Nǐ lái wǒ jiā ba, wǒ gěi nǐ jiǎngjiang.'},
-  {vi:'Công viên người đông quá, đi dạo cũng mệt.', zh:'公园人太多，走走也很累。', py:'Gōngyuán rén tài duō, zǒuzou yě hěn lèi.'},
-  {vi:'Bạn không phải nói hôm nay không cần đi làm sao?', zh:'你不是说今天不用上班吗？', py:'Nǐ bú shì shuō jīntiān bú yòng shàngbān ma?'},
-  {vi:'Nghe một bản nhạc nhẹ, có thể giúp bạn ngủ ngon hơn.', zh:'听一首轻音乐，可以帮助你睡得更好。', py:'Tīng yì shǒu qīng yīnyuè, kěyǐ bāngzhù nǐ shuì de gèng hǎo.'},
-  {vi:'Tôi vừa mới tập thể dục xong, hơi mệt.', zh:'我刚锻炼完，有点儿累。', py:'Wǒ gāng duànliàn wán, yǒudiǎnr lèi.'},
+  {vi:'Lúc nãy tôi đi siêu thị mua ít hoa quả và sữa.', zh:'刚才我去超市买了一些水果和牛奶。', py:'Gāngcái wǒ qù chāoshì mǎile yìxiē shuǐguǒ hé niúnǎi.'},
+  {vi:'Phòng này nhỏ quá, sáu người ngồi không đủ chỗ.', zh:'这个房间太小了，六个人坐不下。', py:'Zhège fángjiān tài xiǎo le, liù ge rén zuò bu xià.'},
+  {vi:'Bạn nói chậm một chút nhé, tôi nghe không hiểu.', zh:'请你说慢一点儿，我听不懂。', py:'Qǐng nǐ shuō màn yìdiǎnr, wǒ tīng bu dǒng.'},
+  {vi:'Câu hỏi này khó, câu hỏi kia còn khó hơn.', zh:'这个问题很难，那个问题更难。', py:'Zhège wèntí hěn nán, nàge wèntí gèng nán.'},
+  {vi:'Lúc nãy ai gọi điện cho bạn thế? Sao bạn vui vậy?', zh:'刚才谁给你打电话了？你怎么这么高兴？', py:'Gāngcái shéi gěi nǐ dǎ diànhuà le? Nǐ zěnme zhème gāoxìng?'},
+  {vi:'Tôi vừa mới về đến nhà thì mẹ gọi điện tới.', zh:'我刚回到家，妈妈就打电话来了。', py:'Wǒ gāng huídào jiā, māma jiù dǎ diànhuà lái le.'}
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Nếu bạn nhìn không rõ thì nên đeo kính.', zh:'如果你看不清楚，就应该戴眼镜。', py:'Rúguǒ nǐ kàn bu qīngchu, jiù yīnggāi dài yǎnjìng.'},
-  {vi:'Vì món đó đặc biệt cay nên tôi không ăn được nhiều.', zh:'因为那个菜特别辣，所以我吃不了很多。', py:'Yīnwèi nàge cài tèbié là, suǒyǐ wǒ chī bu liǎo hěn duō.'},
-  {vi:'Chỉ cần thầy giáo giảng chậm một chút thì học sinh sẽ nghe hiểu.', zh:'只要老师讲得慢一点儿，学生就能听懂。', py:'Zhǐyào lǎoshī jiǎng de màn yìdiǎnr, xuésheng jiù néng tīngdǒng.'},
-  {vi:'Tuy công viên hôm nay đông người nhưng không khí đặc biệt trong lành.', zh:'虽然公园今天人很多，但是空气特别新鲜。', py:'Suīrán gōngyuán jīntiān rén hěn duō, dànshì kōngqì tèbié xīnxiān.'},
-  {vi:'Chỉ cần bạn thấy cuộc gọi của tôi thì gọi lại cho tôi nhé.', zh:'只要你看见我的电话，就给我回个电话吧。', py:'Zhǐyào nǐ kànjiàn wǒ de diànhuà, jiù gěi wǒ huí ge diànhuà ba.'},
-  {vi:'Chỉ cần rảnh rỗi, ông tôi liền thích tán gẫu với hàng xóm.', zh:'只要有空，我爷爷就喜欢跟邻居聊天儿。', py:'Zhǐyào yǒu kòng, wǒ yéye jiù xǐhuan gēn línjū liáotiānr.'},
-  {vi:'Anh trai tôi vừa tập thể dục xong liền đi tắm.', zh:'我哥哥刚锻炼完就去洗澡了。', py:'Wǒ gēge gāng duànliàn wán jiù qù xǐzǎo le.'},
-  {vi:'Cốc cà phê này tôi chỉ uống một nửa.', zh:'这杯咖啡我只喝了一半。', py:'Zhè bēi kāfēi wǒ zhǐ hēle yíbàn.'},
+  {vi:'Tôi học tiếng Hán được hai tháng rồi, phim Trung Quốc vẫn xem không hiểu.', zh:'我学了两个月汉语了，中国电影还看不懂。', py:'Wǒ xuéle liǎng ge yuè Hànyǔ le, Zhōngguó diànyǐng hái kàn bu dǒng.'},
+  {vi:'Bố tôi không thể thiếu cà phê, sáng nào cũng phải uống một cốc.', zh:'爸爸离不开咖啡，每天早上都要喝一杯。', py:'Bàba lí bu kāi kāfēi, měi tiān zǎoshang dōu yào hē yì bēi.'},
+  {vi:'Quán ăn đó ồn ào quá, chúng tôi nói chuyện mà nghe không rõ.', zh:'那家饭馆太热闹了，我们说话都听不清楚。', py:'Nà jiā fànguǎn tài rènao le, wǒmen shuōhuà dōu tīng bu qīngchu.'},
 ];
 
 // ══════════════════════════════════════════

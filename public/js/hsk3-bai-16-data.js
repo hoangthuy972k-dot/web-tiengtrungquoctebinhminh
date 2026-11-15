@@ -1794,74 +1794,77 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'住',right:'城市'},
-  {left:'送',right:'皮鞋和帽子'},
-  {left:'长得',right:'可爱'},
-  {left:'检查',right:'牙'},
-  {left:'好好儿',right:'刷牙'},
-  {left:'别人的',right:'关系'},
-  {left:'用',right:'词语'},
-  {left:'如果你太累了，',right:'就休息一会儿。'},
-  {left:'虽然钱不是问题了，',right:'但是主要是没有时间。'},
-  {left:'如果能多用"您好""谢谢"这样的词语，',right:'关系就会更好。'},
-  {left:'只要你多对别人笑笑，',right:'别人就会愿意帮助你。'},
+  {left:'妹妹生日，我送给她一双', right:'皮鞋'},
+  {left:'外面太阳很大，出去的时候带个', right:'帽子'},
+  {left:'他人很热情，跟同事的', right:'关系'},
+  {left:'北京是一个很大的', right:'城市'},
+  {left:'这个孩子眼睛大大的，真', right:'可爱'},
+  {left:'感冒好几天了，你快去医院', right:'检查'},
+  {left:'这本书里有很多我不认识的', right:'词语'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我不喜欢一直住在同一个',blank:'城市',post:'。',hint:'(thành phố)',ans:'城市'},
-  {pre:'',blank:'如果',post:'有钱，就去了。',hint:'(nếu)',ans:'如果',exp:'如果…，就… = nếu… thì…'},
-  {pre:'虽然大家都说这个办法很好，但是我',blank:'认为',post:'还是有点儿问题。',hint:'(cho rằng)',ans:'认为'},
-  {pre:'你送的小',blank:'皮鞋',post:'和小帽子真漂亮！',hint:'(giày da)',ans:'皮鞋'},
-  {pre:'他过生日，我送了他一个新',blank:'帽子',post:'。',hint:'(mũ, nón)',ans:'帽子'},
-  {pre:'乐乐，你',blank:'长',post:'高了。',hint:'(trưởng thành, lớn lên)',ans:'长',exp:'长 đọc zhǎng = lớn lên: 长高了 = cao lên rồi.'},
-  {pre:'你女儿长得白白的、胖胖的，真',blank:'可爱',post:'！',hint:'(đáng yêu)',ans:'可爱'},
-  {pre:'从这儿到学校差不多有五十',blank:'米',post:'。',hint:'(mét)',ans:'米'},
-  {pre:'这个行李箱太重了，差不多有三十',blank:'公斤',post:'。',hint:'(kilôgram)',ans:'公斤'},
-  {pre:'她',blank:'鼻子',post:'小小的，头发黑黑的。',hint:'(mũi)',ans:'鼻子'},
-  {pre:'奶奶老了，',blank:'头发',post:'已经白白的了。',hint:'(tóc)',ans:'头发'},
-  {pre:'虽然只是头疼，但奶奶还是决定去医院',blank:'检查',post:'一下。',hint:'(kiểm tra, khám)',ans:'检查'},
-  {pre:'回家好好儿',blank:'刷牙',post:'。',hint:'(chải răng)',ans:'刷牙'},
-  {pre:'虽然很久没见面，但是他们的',blank:'关系',post:'还是很好。',hint:'(quan hệ)',ans:'关系'},
-  {pre:'我们应该多对',blank:'别人',post:'笑笑。',hint:'(người khác)',ans:'别人'},
-  {pre:'多用"您好""谢谢"这样的',blank:'词语',post:'。',hint:'(từ ngữ)',ans:'词语'},
+  {pre:'A：周末我们去公园吧？B：好啊，', blank:'如果', post:'天气好，我们就骑自行车去。', hint:'(nếu)', ans:'如果', exp:'如果……，就…… = nếu … thì …; 就 đứng sau chủ ngữ của vế sau (我们就); ôn 骑自行车 (bài 10).'},
+  {pre:'大家都说这个电影没意思，但是我', blank:'认为', post:'它很有意思。', hint:'(cho rằng)', ans:'认为', exp:'认为 = cho rằng, dùng để nêu ý kiến của mình (gần nghĩa 觉得); ôn 虽然/但是.'},
+  {pre:'一年没见，你弟弟', blank:'长', post:'得比你还高了！', hint:'(lớn lên)', ans:'长', exp:'长 (zhǎng) = lớn lên; 长得 + mô tả = trông …; ôn câu 比 + 还 + tính từ.'},
+  {pre:'我哥哥一', blank:'米', post:'八，打篮球打得特别好。', hint:'(mét)', ans:'米', exp:'一米八 = 1m80 (số + 米 + số lẻ); ôn bổ ngữ trạng thái 打篮球打得特别好 (lặp động từ khi có tân ngữ).'},
+  {pre:'我这个月胖了两', blank:'公斤', post:'，以后得少吃点儿蛋糕了。', hint:'(ki-lô-gam)', ans:'公斤', exp:'胖了 + số + 公斤 = béo lên … cân; 得 (děi) = phải; 少吃 = ăn ít đi (少 trước động từ).'},
+  {pre:'这几天感冒，', blank:'鼻子', post:'一直不舒服，晚上也睡不着。', hint:'(mũi)', ans:'鼻子', exp:'鼻子不舒服 = mũi khó chịu; 睡不着 = không ngủ được (ôn 睡着, bài 6).'},
+  {pre:'A：你去哪儿了？B：我去洗', blank:'头发', post:'了，你等了很久吗？', hint:'(tóc)', ans:'头发', exp:'洗头发 = gội đầu (tiếng Trung nói “gội tóc”); ôn 久 (bài 7).'},
+  {pre:'作业写完以后，要再', blank:'检查', post:'一下，看看有没有写错的字。', hint:'(kiểm tra)', ans:'检查', exp:'检查 = kiểm tra (bài làm) hoặc khám (sức khoẻ); V + 一下 = làm thử một chút.'},
+  {pre:'晚上吃完东西以后，一定要', blank:'刷牙', post:'再睡觉。', hint:'(đánh răng)', ans:'刷牙', exp:'一定要 + V = nhất định phải (bài 9); A 再 B = làm A rồi mới B.'},
+  {pre:'A：那个人跟你是什么', blank:'关系', post:'？B：他是我叔叔的儿子。', hint:'(quan hệ)', ans:'关系', exp:'跟……是什么关系 = có quan hệ gì với …; ôn 叔叔 (bài 14).'},
+  {pre:'图书馆里要安静，别影响', blank:'别人', post:'看书。', hint:'(người khác)', ans:'别人', exp:'别 + 影响 + 别人 = đừng làm ảnh hưởng người khác; ôn 影响 (bài 9), 图书馆 (bài 11), 安静 (bài 8).'},
+  {pre:'这个', blank:'词语', post:'我在书上见过，但是不记得是什么意思了。', hint:'(từ ngữ)', ans:'词语', exp:'这个词语 = từ này; 见过 = đã từng thấy (ôn 过); 记得 = nhớ (bài 3).'},
+  {pre:'今天我走了两个小时，走', blank:'得', post:'腿都疼了。', hint:'(đến nỗi)', ans:'得', exp:'V + 得 + kết quả: 走得腿都疼了 = đi đến mức đau cả chân; ôn 腿/疼 (bài 2).'},
+  {pre:'这个苹果', blank:'红红', post:'的，看起来很好吃。', hint:'(đỏ đỏ)', ans:'红红', exp:'Tính từ một âm tiết lặp lại + 的: 红红的 = đỏ au; đã dùng AA的 thì không thêm 很; ôn 看起来 (bài 13).'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['虽然','这个','城市','很','方便','，','但是','我','还是','想','去','别的','地方','看看','。'],ans:'虽然这个城市很方便，但是我还是想去别的地方看看。',audio:'虽然这个城市很方便，但是我还是想去别的地方看看。'},
-  {words:['如果','你','还是','不','舒服','，','就','去','药店','买','点儿','药','吃','吧','。'],ans:'如果你还是不舒服，就去药店买点儿药吃吧。',audio:'如果你还是不舒服，就去药店买点儿药吃吧。'},
-  {words:['那个','小','孩子','长','得','瘦瘦','的','、','高高','的','，','很','可爱','。'],ans:'那个小孩子长得瘦瘦的、高高的，很可爱。',audio:'那个小孩子长得瘦瘦的、高高的，很可爱。'},
-  {words:['我','每天','累','得','下','了','班','就','想','睡着','。'],ans:'我每天累得下了班就想睡着。',audio:'我每天累得下了班就想睡着。'},
-  {words:['如果','你','想','学好','中文','，','就','应该','每天','多','说','多','问','。'],ans:'如果你想学好中文，就应该每天多说多问。',audio:'如果你想学好中文，就应该每天多说多问。'},
-  {words:['虽然','工作','很','忙','，','但是','他','每天','都','回家','休息','。'],ans:'虽然工作很忙，但是他每天都回家休息。',audio:'虽然工作很忙，但是他每天都回家休息。'},
-  {words:['如果','能','多','用','您好','、','谢谢','这样','的','词语','，','关系','就','会','更好','。'],ans:'如果能多用您好、谢谢这样的词语，关系就会更好。',audio:'如果能多用您好、谢谢这样的词语，关系就会更好。'},
-  {words:['有的','人','觉得','住','在','大','城市','很','方便','，','有的','人','觉得','很','累','。'],ans:'有的人觉得住在大城市很方便，有的人觉得很累。',audio:'有的人觉得住在大城市很方便，有的人觉得很累。'},
+  {words:['如果','路上','车','多','，','我们','就','坐','地铁','去','。'], ans:'如果路上车多，我们就坐地铁去。', audio:'如果路上车多，我们就坐地铁去。'},
+  {words:['那个','小','女孩','的','头发','长长的','，','很','可爱','。'], ans:'那个小女孩的头发长长的，很可爱。', audio:'那个小女孩的头发长长的，很可爱。'},
+  {words:['我们','玩儿','得','很','高兴','，','一直','玩儿','到','十二','点','。'], ans:'我们玩儿得很高兴，一直玩儿到十二点。', audio:'我们玩儿得很高兴，一直玩儿到十二点。'},
+  {words:['如果','你','喜欢','这个','帽子','，','我','就','送','给','你','。'], ans:'如果你喜欢这个帽子，我就送给你。', audio:'如果你喜欢这个帽子，我就送给你。'},
+  {words:['我','认为','他','说','得','很','对','，','我们','应该','听','他','的','。'], ans:'我认为他说得很对，我们应该听他的。', audio:'我认为他说得很对，我们应该听他的。'},
+  {words:['医生','检查','了','一下','，','说','我','的','身体','很','健康','。'], ans:'医生检查了一下，说我的身体很健康。', audio:'医生检查了一下，说我的身体很健康。'},
+  {words:['这','双','皮鞋','花','了','我','五百','块','钱','。'], ans:'这双皮鞋花了我五百块钱。', audio:'这双皮鞋花了我五百块钱。'},
+  {words:['多','跟','别人','聊天','，','你的','汉语','会','提高','得','很','快','。'], ans:'多跟别人聊天，你的汉语会提高得很快。', audio:'多跟别人聊天，你的汉语会提高得很快。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'如果你喜欢，就我给你买。',
-   opts:['如果你喜欢，我就给你买。','如果你喜欢，就我给你买。','我如果你喜欢，就给你买。','如果你喜欢我，就给你买。'],ans:0,
-   exp:'Chủ ngữ của mệnh đề thứ hai (我) phải đặt TRƯỚC 就, không đặt sau.'},
-  {wrong:'孩子们不想回家得玩儿。',
-   opts:['孩子们玩儿得不想回家。','孩子们不想回家得玩儿。','孩子们得玩儿不想回家。','孩子们玩儿不想得回家。'],ans:0,
-   exp:'Cấu trúc bổ ngữ trạng thái: động từ(玩儿)+得+cụm động từ(不想回家), không đảo ngược.'},
-  {wrong:'弟弟跳了起来高兴得。',
-   opts:['弟弟高兴得跳了起来。','弟弟跳了起来高兴得。','弟弟得高兴跳了起来。','弟弟高兴跳了得起来。'],ans:0,
-   exp:'得 phải đứng NGAY SAU tính từ/động từ (高兴), rồi mới đến cụm động từ mô tả trạng thái.'},
-  {wrong:'他鼻子小的小，长得像谁？',
-   opts:['他鼻子小小的，长得像谁？','他鼻子小的小，长得像谁？','他鼻子的小小，长得像谁？','他鼻子小小，长得像谁的？'],ans:0,
-   exp:'Tính từ đơn âm tiết lặp lại phải viết liền thành "AA的" (小小的), không tách rời.'},
-  {wrong:'你女儿长得白、白的，胖胖的。',
-   opts:['那个房间静静的，很舒服。','你女儿长得白、白的，胖胖的。','你女儿长得白白、的胖胖的。','你女儿白白的长得、胖胖的。'],ans:0,
-   exp:'"AA的" viết liền không tách bằng dấu phẩy giữa hai âm tiết lặp.'},
+  {wrong:'如果你明天有时间，就我们去看电影吧。',
+   opts:['你如果明天有时间，就我们去看电影吧。','如果你明天有时间，我们去看电影就吧。','如果你明天有时间，我们就去看电影吧。','如果你有时间明天，我们就去看电影吧。'], ans:2,
+   exp:'Vế sau: chủ ngữ + 就 + động từ (我们就去), 就 không đứng trước chủ ngữ; thời gian 明天 đứng trước 有时间.'},
+  {wrong:'昨天我得忙没时间吃午饭。',
+   opts:['昨天我忙得没时间吃午饭。','昨天我忙的没时间吃午饭。','昨天我很忙得没时间吃午饭。','昨天我没时间忙得吃午饭。'], ans:0,
+   exp:'Tính từ + 得 + kết quả: 忙得没时间… = bận đến nỗi không có thời gian…; dùng 得 (không phải 的), không thêm 很 trước 忙得.'},
+  {wrong:'她的眼睛很大大的。',
+   opts:['她的眼睛是大大。','她的眼睛大的大。','她的眼睛很大大。','她的眼睛大大的。'], ans:3,
+   exp:'AA的 (大大的) đã mang nghĩa mức độ nên không thêm 很, cũng không chèn 是; 的 đứng sau cả AA.'},
+  {wrong:'这个孩子很长得像妈妈。',
+   opts:['这个孩子长很像得妈妈。','这个孩子长得很像妈妈。','这个孩子长得妈妈很像。','这个孩子得长很像妈妈。'], ans:1,
+   exp:'长得 + 很 + 像 + người: 很 đứng sau 长得, trước 像; ôn 像 (bài 14).'},
+  {wrong:'我去检查身体医院明天。',
+   opts:['我明天检查身体去医院。','明天我去检查身体在医院。','我去医院明天检查身体。','我明天去医院检查身体。'], ans:3,
+   exp:'Trật tự: chủ ngữ + thời gian + 去 + nơi chốn + việc làm: 我明天去医院检查身体 — thời gian, nơi chốn không đặt cuối câu như tiếng Việt.'},
+  {wrong:'他不愿意说话跟别人。',
+   opts:['他不愿意跟别人说话。','他不愿意别人跟说话。','他不跟别人愿意说话。','他没愿意跟别人说话了。'], ans:0,
+   exp:'跟 + người đứng TRƯỚC động từ: 跟别人说话; ôn 愿意 (bài 13), phủ định ý muốn dùng 不愿意.'},
+  {wrong:'我买了一个皮鞋。',
+   opts:['我买了双一皮鞋。','我买了一双皮鞋。','我买一双了皮鞋。','我一双买了皮鞋。'], ans:1,
+   exp:'Giày đi theo đôi nên lượng từ là 双: 一双皮鞋; 了 đứng ngay sau động từ 买.'},
+  {wrong:'我和他关系是很好。',
+   opts:['我和他关系是好很。','我和他的关系很好的是。','我和他是关系很好。','我和他的关系很好。'], ans:3,
+   exp:'关系 + 很好: tính từ làm vị ngữ không cần 是 (lỗi do tiếng Việt nói “là”).'},
 ];
 
 // ══════════════════════════════════════════
@@ -1869,97 +1872,97 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 16. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 16 (如果……，就……; bổ ngữ trạng thái với 得; tính từ lặp lại AA的). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn bè hỏi kế hoạch cuối tuần, nhưng thời tiết chưa chắc chắn.',
-      q_zh: '如果这个周末天气很好，你就做什么？下雨呢？',
-      q_py: 'Rúguǒ zhège zhōumò tiānqì hěn hǎo, nǐ jiù zuò shénme? Xiàyǔ ne?',
-      q_vn: 'Nếu cuối tuần này thời tiết đẹp, bạn sẽ làm gì? Còn nếu mưa?',
-      grammar: { label: '如果……(的话)，(主语)就……', any: ['如果', '要是'] },
+      situation: 'Bạn bè rủ cuối tuần đi chơi, nhưng dự báo có thể mưa.',
+      q_zh: '听说这个周末可能下雨，你还出去玩儿吗？',
+      q_py: 'Tīngshuō zhège zhōumò kěnéng xià yǔ, nǐ hái chūqu wánr ma?',
+      q_vn: 'Nghe nói cuối tuần này có thể mưa, bạn còn ra ngoài chơi không?',
+      grammar: { label: '如果……，就……', any: ['如果'] },
       need: [
-        { label: 'Dùng 如果……就……', any: ['如果', '要是'] },
-        { label: 'Nói hai phương án khác nhau', any: ['下雨', '在家', '出去', '公园', '看书', '电影'] }
+        { label: 'Nói việc làm nếu trời mưa', any: ['下雨', '在家', '电视', '电影', '书'] },
+        { label: 'Nói việc làm nếu trời đẹp', any: ['天气好', '不下雨', '晴', '公园', '爬山', '出去'] }
       ],
-      bonus: { label: 'Nói rõ đi cùng ai', any: ['朋友', '同事', '家里人', '一起'] },
-      vocab: ['如果', '城市', '认为'],
-      minLen: 20,
-      sample: '如果这个周末天气很好，我就跟朋友去城市旁边的公园照相；如果下雨，我就在家看书、听音乐。',
-      sample_py: 'Rúguǒ zhège zhōumò tiānqì hěn hǎo, wǒ jiù gēn péngyou qù chéngshì pángbiān de gōngyuán zhào xiàng; rúguǒ xiàyǔ, wǒ jiù zài jiā kàn shū, tīng yīnyuè.',
-      sample_vn: 'Nếu cuối tuần này trời đẹp, tôi sẽ cùng bạn ra công viên cạnh thành phố chụp ảnh; nếu mưa thì tôi ở nhà đọc sách, nghe nhạc.',
-      tip: '如果……就…… luôn có 就 ở vế sau: 如果你来，我就在家等你。'
-    },
-    {
-      situation: 'Thầy hỏi bạn tự đánh giá khả năng tiếng Hán của mình.',
-      q_zh: '你觉得自己汉语说得怎么样？写汉字写得快吗？',
-      q_py: 'Nǐ juéde zìjǐ Hànyǔ shuō děi zěnmeyàng? Xiě hànzì xiě děi kuài ma?',
-      q_vn: 'Bạn thấy mình nói tiếng Hán thế nào? Viết chữ Hán có nhanh không?',
-      grammar: { label: 'Bổ ngữ trạng thái: V + 得 + …', any: ['得'] },
-      need: [
-        { label: 'Dùng V得 để tự nhận xét', any: ['说得', '写得', '学得', '记得'] },
-        { label: 'Nói điểm còn yếu', any: ['慢', '不太', '还', '错', '忘'] }
-      ],
-      bonus: { label: 'Nói cách khắc phục', any: ['练习', '检查', '每天', '多写'] },
-      vocab: ['词语', '检查', '认为'],
-      minLen: 20,
-      sample: '我汉语说得还可以，可是写汉字写得比较慢，有些词语记得也不太清楚。我认为只要多练习、常检查，就能写得又快又好。',
-      sample_py: 'Wǒ Hànyǔ shuō děi hái kěyǐ, kěshì xiě hànzì xiě děi bǐjiào màn, yǒuxiē cíyǔ jìde yě bú tài qīngchu. Wǒ rènwéi zhǐyào duō liànxí, cháng jiǎnchá, jiù néng xiě děi yòu kuài yòu hǎo.',
-      sample_vn: 'Tôi nói tiếng Hán cũng tạm được, nhưng viết chữ Hán khá chậm, có vài từ nhớ cũng chưa rõ. Tôi cho rằng chỉ cần luyện nhiều, hay kiểm tra lại là viết vừa nhanh vừa đẹp.',
-      tip: 'V + 得 + tính từ nhận xét mức độ: 他跑得很快、我写得不好。'
-    },
-    {
-      situation: 'Bạn cho bạn bè xem ảnh hồi nhỏ của mình.',
-      q_zh: '说一说你小时候的样子：头发长不长？',
-      q_py: 'Shuō yi shuō nǐ xiǎoshí hòu de yàngzi: tóufa zhǎng bu zhǎng?',
-      q_vn: 'Hãy kể dáng vẻ hồi nhỏ của bạn: tóc dài hay ngắn?',
-      grammar: { label: 'Tính từ đơn âm lặp lại: 短短的、大大的', any: ['短短', '大大', '小小', '白白', '长长', '胖胖'] },
-      need: [
-        { label: 'Tả tóc', any: ['头发', '长', '短'] },
-        { label: 'Tả một nét trên khuôn mặt', any: ['眼睛', '鼻子', '脸', '嘴'] }
-      ],
-      bonus: { label: 'Dùng 可爱 để nhận xét', any: ['可爱'] },
-      vocab: ['头发', '鼻子', '可爱', '长'],
+      bonus: { label: 'Nói làm cùng ai', any: ['跟', '一起', '朋友'] },
+      vocab: ['如果'],
       minLen: 18,
-      sample: '我小时候头发短短的，眼睛大大的，鼻子小小的，大家都说我很可爱。现在我的头发比那时候长多了。',
-      sample_py: 'Wǒ xiǎoshí hòu tóufa duǎn duǎn de, yǎnjing dà dà de, bízi xiǎo xiǎo de, dàjiā dōu shuō wǒ hěn kě\'ài. Xiànzài wǒ de tóufa bǐ nà shíhou zhǎng duō le.',
-      sample_vn: 'Hồi nhỏ tóc tôi ngắn ngắn, mắt to tròn, mũi nhỏ nhỏ, ai cũng bảo tôi đáng yêu. Giờ tóc tôi dài hơn hồi đó nhiều.',
-      tip: 'Tính từ một âm tiết lặp lại + 的 làm câu mềm và sinh động: 红红的脸。'
+      sample: '如果周末下雨，我就在家看电视；如果不下雨，我就跟朋友去爬山。',
+      sample_py: 'Rúguǒ zhōumò xià yǔ, wǒ jiù zài jiā kàn diànshì; rúguǒ bú xià yǔ, wǒ jiù gēn péngyou qù páshān.',
+      sample_vn: 'Nếu cuối tuần mưa, tôi sẽ ở nhà xem tivi; nếu không mưa, tôi sẽ cùng bạn đi leo núi.',
+      tip: 'Vế sau luôn có 就, và 就 đứng SAU chủ ngữ: 我就在家, không nói 就我在家.'
     },
     {
-      situation: 'Bạn đi khám sức khỏe định kỳ và y tá hỏi thông tin.',
-      q_zh: '你多高？多重？多长时间检查一次身体？',
-      q_py: 'Nǐ duō gāo? Duō zhòng? Duō zhǎng shíjiān jiǎnchá yí cì shēntǐ?',
-      q_vn: 'Bạn cao bao nhiêu? Nặng bao nhiêu? Bao lâu kiểm tra sức khỏe một lần?',
-      grammar: { label: 'Đơn vị 米 / 公斤 + số lần 一次', any: ['米', '公斤', '次'] },
+      situation: 'Đồng nghiệp hỏi dạo này bạn có bận không.',
+      q_zh: '你最近忙不忙？每天下班以后做什么？',
+      q_py: 'Nǐ zuìjìn máng bu máng? Měi tiān xiàbān yǐhòu zuò shénme?',
+      q_vn: 'Dạo này bạn có bận không? Mỗi ngày tan làm xong bạn làm gì?',
+      grammar: { label: 'Tính từ + 得 + kết quả (… đến nỗi …)', any: ['忙得', '累得', '饿得', '得不想', '得没'] },
       need: [
-        { label: 'Nói chiều cao hoặc cân nặng', any: ['米', '公斤'] },
-        { label: 'Nói tần suất khám', any: ['一次', '一年', '半年', '检查'] }
+        { label: 'Nói bận hay không', any: ['忙', '累', '不忙'] },
+        { label: 'Kể việc sau giờ làm', any: ['回家', '做饭', '睡觉', '休息', '锻炼', '电视'] }
       ],
-      bonus: { label: 'Nói kết quả hoặc lời dặn của bác sĩ', any: ['医生', '健康', '注意', '锻炼'] },
-      vocab: ['米', '公斤', '检查'],
+      bonus: { label: 'Nói giờ đi ngủ', any: ['点'] },
+      vocab: ['别人'],
+      minLen: 16,
+      sample: '最近我忙极了，每天下班回家都累得不想做饭，也不想跟别人说话，还没到十点就睡觉了。',
+      sample_py: 'Zuìjìn wǒ máng jí le, měi tiān xiàbān huí jiā dōu lèi de bù xiǎng zuò fàn, yě bù xiǎng gēn biérén shuōhuà, hái méi dào shí diǎn jiù shuìjiào le.',
+      sample_vn: 'Dạo này tôi bận vô cùng, ngày nào tan làm về nhà cũng mệt đến mức không muốn nấu cơm, cũng chẳng muốn nói chuyện với ai, chưa đến mười giờ đã đi ngủ.',
+      tip: '累得 + việc xảy ra: 累得不想做饭 — 得 nối tính từ với kết quả, không dùng 的.'
+    },
+    {
+      situation: 'Bạn cho bạn bè xem ảnh một người thân nhỏ tuổi trong nhà.',
+      q_zh: '你家里谁最可爱？他（她）多大了？长得像谁？',
+      q_py: 'Nǐ jiā li shéi zuì kě\'ài? Tā duō dà le? Zhǎng de xiàng shéi?',
+      q_vn: 'Trong nhà bạn ai đáng yêu nhất? Người đó bao nhiêu tuổi? Trông giống ai?',
+      grammar: { label: 'Tính từ lặp lại AA的', any: ['大大的', '小小的', '黑黑的', '矮矮的', '胖胖的', '白白的', '甜甜的', '长长的', '高高的', '瘦瘦的'] },
+      need: [
+        { label: 'Nói đó là ai, mấy tuổi', any: ['妹妹', '弟弟', '女儿', '儿子', '岁'] },
+        { label: 'Tả ít nhất hai nét', any: ['眼睛', '鼻子', '头发', '个子', '声音'] }
+      ],
+      bonus: { label: 'Dùng 长得 / 像', any: ['长得', '像'] },
+      vocab: ['可爱', '长'],
       minLen: 18,
-      sample: '我一米七，六十五公斤。我一年检查一次身体，上次检查以后医生说我很健康，只要多锻炼就好。',
-      sample_py: 'Wǒ yì mǐ qī, liù shí wǔ gōngjīn. Wǒ yì nián jiǎnchá yí cì shēntǐ, shàng cì jiǎnchá yǐhòu yīshēng shuō wǒ hěn jiànkāng, zhǐyào duō duànliàn jiù hǎo.',
-      sample_vn: 'Tôi cao 1m70, nặng 65kg. Mỗi năm tôi khám sức khỏe một lần, lần trước khám xong bác sĩ nói tôi rất khỏe, chỉ cần tập luyện nhiều hơn.',
-      tip: '一米七 = 1m70; 六十五公斤 = 65kg. Số lần đặt sau động từ: 检查一次。'
+      sample: '我家最可爱的是我的小妹妹，她今年三岁，个子矮矮的，胖胖的，说话的声音甜甜的。',
+      sample_py: 'Wǒ jiā zuì kě\'ài de shì wǒ de xiǎo mèimei, tā jīnnián sān suì, gèzi ǎi\'ǎi de, pàngpàng de, shuōhuà de shēngyīn tiántián de.',
+      sample_vn: 'Người đáng yêu nhất nhà tôi là em gái út, năm nay ba tuổi, người thấp thấp, mũm mĩm, giọng nói ngọt ngào.',
+      tip: 'AA的 đứng sau bộ phận được tả: 眼睛大大的; không nói 很大大的.'
     },
     {
-      situation: 'Nha sĩ hỏi bạn về thói quen chăm sóc răng miệng.',
-      q_zh: '你每天刷几次牙？为什么这个习惯很重要？',
-      q_py: 'Nǐ měitiān shuā jǐ cì yá? Wèishénme zhège xíguàn hěn zhòngyào?',
-      q_vn: 'Mỗi ngày bạn đánh răng mấy lần? Vì sao thói quen này quan trọng?',
-      grammar: { label: '如果……就…… + 跟别人的关系', any: ['如果', '关系'] },
+      situation: 'Bạn cùng lớp hỏi khi bị ốm bạn thường làm gì.',
+      q_zh: '你身体不舒服的时候，会去医院检查吗？',
+      q_py: 'Nǐ shēntǐ bù shūfu de shíhou, huì qù yīyuàn jiǎnchá ma?',
+      q_vn: 'Khi không khoẻ, bạn có đi bệnh viện khám không?',
+      grammar: { label: '如果……，就……', any: ['如果'] },
       need: [
-        { label: 'Nói số lần đánh răng', any: ['刷牙', '次', '早上', '晚上'] },
-        { label: 'Nêu lý do quan trọng', any: ['坏', '健康', '牙', '别人', '关系'] }
+        { label: 'Nói trường hợp nhẹ', any: ['感冒', '多喝水', '休息', '药'] },
+        { label: 'Nói khi nào đi khám', any: ['发烧', '医院', '检查', '医生'] }
       ],
-      bonus: { label: 'Dùng 如果 nêu hậu quả', any: ['如果', '要是'] },
-      vocab: ['刷牙', '别人', '关系'],
-      minLen: 20,
-      sample: '我每天早上和晚上各刷一次牙。如果不刷牙，牙容易坏，跟别人说话的时候也不太好，所以这个习惯跟健康关系很大。',
-      sample_py: 'Wǒ měitiān zǎoshang hé wǎnshang gè shuā yí cì yá. Rúguǒ bù shuāyá, yá róngyì huài, gēn biérén shuōhuà de shíhou yě bú tài hǎo, suǒyǐ zhège xíguàn gēn jiànkāng guānxi hěn dà.',
-      sample_vn: 'Mỗi ngày tôi đánh răng sáng một lần, tối một lần. Nếu không đánh răng, răng dễ hỏng, lúc nói chuyện với người khác cũng không hay, nên thói quen này liên quan nhiều đến sức khỏe.',
-      tip: '各 + động từ + số lượng: 早晚各一次 = sáng tối mỗi buổi một lần.'
+      bonus: { label: 'Dùng 马上 / 一下', any: ['马上', '一下'] },
+      vocab: ['检查'],
+      minLen: 18,
+      sample: '如果有点儿感冒，我就多喝水、多休息；如果发烧了，我就马上去医院检查一下。',
+      sample_py: 'Rúguǒ yǒudiǎnr gǎnmào, wǒ jiù duō hē shuǐ, duō xiūxi; rúguǒ fāshāo le, wǒ jiù mǎshàng qù yīyuàn jiǎnchá yíxià.',
+      sample_vn: 'Nếu hơi cảm, tôi sẽ uống nhiều nước, nghỉ ngơi nhiều; nếu sốt thì tôi đi bệnh viện khám ngay.',
+      tip: 'Hai trường hợp khác nhau thì lặp lại 如果……，就……; 多 + động từ = làm nhiều hơn.'
+    },
+    {
+      situation: 'Bạn mới quen hỏi bạn thích sống ở thành phố lớn hay nhỏ.',
+      q_zh: '你喜欢住在大城市还是小城市？为什么？',
+      q_py: 'Nǐ xǐhuan zhù zài dà chéngshì háishi xiǎo chéngshì? Wèi shénme?',
+      q_vn: 'Bạn thích sống ở thành phố lớn hay thành phố nhỏ? Vì sao?',
+      grammar: { label: '认为 + ý kiến', any: ['认为'] },
+      need: [
+        { label: 'Chọn thành phố lớn hay nhỏ', any: ['大城市', '小城市'] },
+        { label: 'Nêu lý do', any: ['方便', '安静', '忙', '环境', '关系', '人多'] }
+      ],
+      bonus: { label: 'Dùng 得 để tả', any: ['得'] },
+      vocab: ['城市', '认为', '关系'],
+      minLen: 18,
+      sample: '我认为大城市比小城市方便，但是大家都忙得没时间见面，所以我更喜欢小城市，人和人的关系好一些。',
+      sample_py: 'Wǒ rènwéi dà chéngshì bǐ xiǎo chéngshì fāngbiàn, dànshì dàjiā dōu máng de méi shíjiān jiànmiàn, suǒyǐ wǒ gèng xǐhuan xiǎo chéngshì, rén hé rén de guānxi hǎo yìxiē.',
+      sample_vn: 'Tôi cho rằng thành phố lớn tiện hơn thành phố nhỏ, nhưng ai cũng bận đến mức không có thời gian gặp nhau, nên tôi thích thành phố nhỏ hơn, quan hệ giữa người với người tốt hơn một chút.',
+      tip: '认为 đứng ngay sau chủ ngữ, phía sau là cả một ý kiến: 我认为……'
     }
   ]
 };
@@ -1968,28 +1971,20 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nếu có cơ hội, tôi muốn đi thử vài thành phố khác.', zh:'如果有机会，我想去试试别的城市。', py:'Rúguǒ yǒu jīhuì, wǒ xiǎng qù shìshi bié de chéngshì.'},
-  {vi:'Nếu trời mưa thì chúng ta ở nhà xem phim đi.', zh:'如果外边下雨，我们就在家看电影吧。', py:'Rúguǒ wàibian xià yǔ, wǒmen jiù zài jiā kàn diànyǐng ba.'},
-  {vi:'Con trai bạn trông đen đen, cao cao, rất khỏe mạnh.', zh:'你儿子长得黑黑的、高高的，很健康。', py:'Nǐ érzi zhǎng de hēihēi de, gāogāo de, hěn jiànkāng.'},
-  {vi:'Anh ấy mệt đến mức về nhà là ngủ luôn, cơm cũng không ăn.', zh:'他累得一回家就睡着了，饭也没吃。', py:'Tā lèi de yì huí jiā jiù shuì zháo le, fàn yě méi chī.'},
-  {vi:'Mỗi lần bị cảm, mẹ đều bảo tôi uống nhiều nước nóng, nghỉ ngơi nhiều.', zh:'每次感冒，妈妈都让我多喝热水、多休息。', py:'Měi cì gǎnmào, māma dōu ràng wǒ duō hē rè shuǐ, duō xiūxi.'},
-  {vi:'Nhiều bạn trẻ bây giờ thích vừa làm việc vừa đi du lịch.', zh:'现在很多年轻人喜欢一边工作一边旅游。', py:'Xiànzài hěn duō niánqīng rén xǐhuan yìbiān gōngzuò yìbiān lǚyóu.'},
-  {vi:'Chúng ta nên thường xuyên dùng những từ ngữ lịch sự với người khác.', zh:'我们应该常常对别人说一些礼貌的词语。', py:'Wǒmen yīnggāi chángcháng duì biéren shuō yìxiē lǐmào de cíyǔ.'},
-  {vi:'Nếu bạn thường xuyên liên lạc với bạn bè thì quan hệ sẽ ngày càng tốt hơn.', zh:'如果你常常跟朋友联系，关系就会越来越好。', py:'Rúguǒ nǐ chángcháng gēn péngyou liánxì, guānxi jiù huì yuèláiyuè hǎo.'},
+  {vi:'Nếu bạn không hiểu từ này thì đi hỏi thầy giáo nhé.', zh:'如果你不懂这个词语，就去问老师吧。', py:'Rúguǒ nǐ bù dǒng zhège cíyǔ, jiù qù wèn lǎoshī ba.'},
+  {vi:'Con trai anh ấy năm nay mười tuổi, đã cao 1m40 rồi.', zh:'他儿子今年十岁，已经一米四了。', py:'Tā érzi jīnnián shí suì, yǐjīng yì mǐ sì le.'},
+  {vi:'Cô ấy vui đến mức cả buổi tối cứ cười mãi.', zh:'她高兴得一个晚上都在笑。', py:'Tā gāoxìng de yí ge wǎnshang dōu zài xiào.'},
+  {vi:'Cái mũ này nhỏ quá, có cái nào to hơn một chút không?', zh:'这个帽子太小了，有没有大一点儿的？', py:'Zhège màozi tài xiǎo le, yǒu méiyǒu dà yìdiǎnr de?'},
+  {vi:'Trước khi đi ngủ nhớ đánh răng nhé.', zh:'睡觉以前，记得刷牙。', py:'Shuìjiào yǐqián, jìde shuāyá.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Nếu con đường này không thông thì chúng ta đi đường khác đi.', zh:'如果这条路不通，我们就走别的路吧。', py:'Rúguǒ zhè tiáo lù bù tōng, wǒmen jiù zǒu bié de lù ba.'},
-  {vi:'Tuy trời tối rồi nhưng cô ấy vẫn muốn ra ngoài đi dạo.', zh:'虽然天黑了，但是她还想出去散散步。', py:'Suīrán tiān hēi le, dànshì tā hái xiǎng chūqu sànsan bù.'},
-  {vi:'Chỉ cần con chăm chỉ học tập thì thành tích sẽ ngày càng tốt hơn.', zh:'只要你努力学习，成绩就会越来越好。', py:'Zhǐyào nǐ nǔlì xuéxí, chéngjì jiù huì yuèláiyuè hǎo.'},
-  {vi:'Anh ấy làm việc đến mức quên cả ăn cơm.', zh:'他工作得忘了吃饭。', py:'Tā gōngzuò de wàngle chī fàn.'},
-  {vi:'Bà nội vui đến mức cười không ngừng.', zh:'奶奶高兴得笑个不停。', py:'Nǎinai gāoxìng de xiào ge bù tíng.'},
-  {vi:'Hoa bạn tặng đỏ đỏ, tôi rất thích.', zh:'你送的花红红的，我很喜欢。', py:'Nǐ sòng de huā hónghóng de, wǒ hěn xǐhuan.'},
-  {vi:'Mấy ngọn cỏ này xanh xanh, đẹp thật.', zh:'这些草绿绿的，真漂亮。', py:'Zhèxiē cǎo lǜlǜ de, zhēn piàoliang.'},
-  {vi:'Cô ấy mắt to to, giống mẹ nhất.', zh:'她眼睛大大的，最像妈妈。', py:'Tā yǎnjing dàdà de, zuì xiàng māma.'},
+  {vi:'Tôi cho rằng môi trường của thành phố này tốt hơn trước nhiều rồi.', zh:'我认为这个城市的环境比以前好多了。', py:'Wǒ rènwéi zhège chéngshì de huánjìng bǐ yǐqián hǎo duō le.'},
+  {vi:'Anh ấy làm việc rất chăm chỉ, nên mọi người đều thích làm cùng anh ấy.', zh:'他工作得很认真，所以大家都喜欢跟他一起工作。', py:'Tā gōngzuò de hěn rènzhēn, suǒyǐ dàjiā dōu xǐhuan gēn tā yìqǐ gōngzuò.'},
+  {vi:'Cốc cà phê này còn nóng hổi, bạn uống nhanh đi.', zh:'这杯咖啡热热的，你快喝吧。', py:'Zhè bēi kāfēi rèrè de, nǐ kuài hē ba.'},
 ];
 
 // ══════════════════════════════════════════

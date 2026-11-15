@@ -1759,75 +1759,77 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'写',right:'作业'},
-  {left:'玩儿',right:'游戏'},
-  {left:'一张',right:'地图'},
-  {left:'一个',right:'面包'},
-  {left:'很',right:'着急'},
-  {left:'去',right:'南方'},
-  {left:'因为作业还没写完，',right:'所以他很着急。'},
-  {left:'虽然南方很热，',right:'但是我还是想去。'},
-  {left:'如果你没带地图，',right:'就用手机看吧。'},
-  {left:'只要你早点儿复习，',right:'就不用着急了。'},
+  {left:'写完', right:'作业'},
+  {left:'玩儿电脑', right:'游戏'},
+  {left:'一张北京', right:'地图'},
+  {left:'早上吃了一个', right:'面包'},
+  {left:'考试快到了，我在', right:'复习'},
+  {left:'下个月去南方', right:'旅游'},
+  {left:'时间还早，你别', right:'着急'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'虽然这个',blank:'周末',post:'工作很多，但是我还是想去旅游。',hint:'(cuối tuần)',ans:'周末'},
-  {pre:'你周末有什么',blank:'打算',post:'？',hint:'(kế hoạch, dự định)',ans:'打算'},
-  {pre:'好',blank:'啊',post:'，我们一起去吧。',hint:'(trợ từ ngữ khí)',ans:'啊',exp:'好啊 = được đấy; 啊 ở cuối câu làm giọng đồng ý thân mật, nhiệt tình.'},
-  {pre:'如果你明天有空，就能',blank:'跟',post:'我一起去图书馆吗？',hint:'(cùng, với)',ans:'跟',exp:'跟 + người + 一起 + động từ = cùng ai làm gì: 跟我一起去.'},
-  {pre:'因为工作很忙，所以他',blank:'一直',post:'没有时间休息。',hint:'(suốt, liên tục)',ans:'一直',exp:'一直 + 没(有) + động từ = suốt thời gian đó không…: 一直没有时间休息.'},
-  {pre:'因为今天下雨，所以弟弟一整天都在玩儿',blank:'游戏',post:'。',hint:'(trò chơi)',ans:'游戏'},
-  {pre:'老师，今天的',blank:'作业',post:'是什么？',hint:'(bài tập về nhà)',ans:'作业'},
-  {pre:'考试快到了，你别',blank:'着急',post:'。',hint:'(lo lắng)',ans:'着急'},
-  {pre:'你',blank:'复习',post:'得怎么样了？',hint:'(ôn tập)',ans:'复习'},
-  {pre:'冬天',blank:'南方',post:'不太冷。',hint:'(miền Nam)',ans:'南方'},
-  {pre:'虽然我在南方出生，但是我妈妈是',blank:'北方',post:'人。',hint:'(miền Bắc)',ans:'北方'},
-  {pre:'这家店的',blank:'面包',post:'很好吃。',hint:'(bánh mì)',ans:'面包'},
-  {pre:'出门前记得',blank:'带',post:'伞。',hint:'(mang theo)',ans:'带'},
-  {pre:'我没带',blank:'地图',post:'，我们问问路吧。',hint:'(bản đồ)',ans:'地图'},
-  {pre:'下个月我们要',blank:'搬',post:'家了。',hint:'(dọn, chuyển)',ans:'搬'},
+  {pre:'下课以后，你有什么', blank:'打算', post:'？想去哪儿玩儿？', hint:'(dự định)', ans:'打算', exp:'有什么打算 = có dự định gì; 打算 ở đây là danh từ, đứng sau 什么.'},
+  {pre:'', blank:'周末', post:'我经常睡到十点，起床以后跟朋友去喝咖啡。', hint:'(cuối tuần)', ans:'周末', exp:'周末 = cuối tuần, đứng đầu câu làm trạng ngữ thời gian; 经常 = thường (HSK2).'},
+  {pre:'我想', blank:'跟', post:'哥哥学打篮球，他打得非常好。', hint:'(với, theo)', ans:'跟', exp:'跟 + người + động từ: 跟哥哥学 = học với anh trai; ôn bổ ngữ trạng thái 打得非常好 (HSK2).'},
+  {pre:'今天从早上到晚上', blank:'一直', post:'在下雨，我们哪儿也没去。', hint:'(suốt, liên tục)', ans:'一直', exp:'一直 = suốt, liên tục trong cả khoảng thời gian 从早上到晚上.'},
+  {pre:'A：小刚怎么还没来？我们等了他一个小时了！B：别', blank:'着急', post:'，他说路上车很多。', hint:'(sốt ruột)', ans:'着急', exp:'别着急 = đừng sốt ruột; câu sau nêu lý do để người kia yên tâm.'},
+  {pre:'下星期就要考试了，这几天我每天晚上都在', blank:'复习', post:'。', hint:'(ôn tập)', ans:'复习', exp:'在 + động từ = đang làm; 就要……了 = sắp (HSK2).'},
+  {pre:'我是', blank:'北方', post:'人，去年第一次去南方，觉得那儿比我家热多了。', hint:'(miền Bắc)', ans:'北方', exp:'北方人 = người miền Bắc; ôn câu so sánh 比 + tính từ + 多了 (HSK2).'},
+  {pre:'早上没时间吃饭，我就在路上买了一个', blank:'面包', post:'。', hint:'(bánh mì)', ans:'面包', exp:'一个面包 = một cái bánh mì; lượng từ 个.'},
+  {pre:'我', blank:'带', post:'了一些水果，我们在路上吃吧。', hint:'(mang theo)', ans:'带', exp:'带 + 了 + đồ vật = đã mang theo; 了 đứng ngay sau động từ.'},
+  {pre:'这是一张北京', blank:'地图', post:'，你看，我们的宾馆在这儿。', hint:'(bản đồ)', ans:'地图', exp:'地图 dùng lượng từ 张: 一张地图.'},
+  {pre:'桌子和椅子太多了，我们一起', blank:'搬', post:'吧。', hint:'(khiêng, chuyển)', ans:'搬', exp:'搬 = khiêng, chuyển đồ (搬家 = chuyển nhà).'},
+  {pre:'鱼和米饭都做', blank:'好', post:'了，快来吃吧！', hint:'(xong, ổn)', ans:'好', exp:'Động từ + 好 = làm xong và ổn thoả: 做好了 = nấu xong rồi.'},
+  {pre:'弟弟一直在玩儿游戏，作业一个字', blank:'也', post:'没写。', hint:'(cũng)', ans:'也', exp:'一 + lượng từ + danh từ + 也 + 没/不 = một … cũng không (phủ định hoàn toàn).'},
+  {pre:'A：我今天不想出去吃饭。B：', blank:'那', post:'我们在家做饭吧。', hint:'(vậy thì)', ans:'那', exp:'那 đứng đầu câu = vậy thì, đưa ra đề nghị dựa vào lời người kia vừa nói.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['因为','作业','还','没','写完','，','所以','他','很','着急','。'],ans:'因为作业还没写完，所以他很着急。',audio:'因为作业还没写完，所以他很着急。'},
-  {words:['虽然','南方','很','热','，','但是','我','还是','想','去','。'],ans:'虽然南方很热，但是我还是想去。',audio:'虽然南方很热，但是我还是想去。'},
-  {words:['如果','你','没','带','地图','，','就','用','手机','看','吧','。'],ans:'如果你没带地图，就用手机看吧。',audio:'如果你没带地图，就用手机看吧。'},
-  {words:['只要','夏天','不','太','热','，','我们','就','打算','去','南方','旅游','。'],ans:'只要夏天不太热，我们就打算去南方旅游。',audio:'只要夏天不太热，我们就打算去南方旅游。'},
-  {words:['他','早','就','把','作业','写','好','了','。'],ans:'他早就把作业写好了。',audio:'他早就把作业写好了。'},
-  {words:['这','是','我','昨天','下午','准备','好','的','。'],ans:'这是我昨天下午准备好的。',audio:'这是我昨天下午准备好的。'},
-  {words:['他','一边','准备','行李箱','，','一边','检查','地图','和','手机','。'],ans:'他一边准备行李箱，一边检查地图和手机。',audio:'他一边准备行李箱，一边检查地图和手机。'},
-  {words:['我们','是','去','旅游','，','不','是','搬家','。'],ans:'我们是去旅游，不是搬家。',audio:'我们是去旅游，不是搬家。'},
+  {words:['电影票','我','已经','买','好','了','，','是','明天','晚上','的','。'], ans:'电影票我已经买好了，是明天晚上的。', audio:'电影票我已经买好了，是明天晚上的。'},
+  {words:['我们','一起','去','南方','旅游','吧','。'], ans:'我们一起去南方旅游吧。', audio:'我们一起去南方旅游吧。'},
+  {words:['他','一个','面包','也','没','吃','就','去','上班','了','。'], ans:'他一个面包也没吃就去上班了。', audio:'他一个面包也没吃就去上班了。'},
+  {words:['那','我们','明天','再','去','吧','。'], ans:'那我们明天再去吧。', audio:'那我们明天再去吧。'},
+  {words:['作业','写','完','了','，','我','可以','玩儿','游戏','了','吗','？'], ans:'作业写完了，我可以玩儿游戏了吗？', audio:'作业写完了，我可以玩儿游戏了吗？'},
+  {words:['下个月','我们','要','搬到','学校','旁边','去','。'], ans:'下个月我们要搬到学校旁边去。', audio:'下个月我们要搬到学校旁边去。'},
+  {words:['他','一直','在','找','那张','地图','。'], ans:'他一直在找那张地图。', audio:'他一直在找那张地图。'},
+  {words:['跟','朋友','一起','复习','，','我','觉得','很','有意思','。'], ans:'跟朋友一起复习，我觉得很有意思。', audio:'跟朋友一起复习，我觉得很有意思。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'我想好早就了。',
-   opts:['我早就想好了。','我想好早就了。','早就我想好了。','我想早就好了。'],ans:0,
-   exp:'Bổ ngữ kết quả 好 phải đứng NGAY SAU động từ 想: 想 + 好, phó từ thời gian 早就 đứng đầu câu (trước động từ), không chen vào giữa động từ và bổ ngữ.'},
-  {wrong:'我一个面包不想吃也。',
-   opts:['我一个面包也不想吃。','我一个面包不想吃也。','一个面包我也不想吃了。','我不想也一个面包吃。'],ans:0,
-   exp:'Cấu trúc phủ định hoàn toàn "一 + lượng từ + danh từ + 也/都 + 不/没 + động từ": 也 phải đứng NGAY TRƯỚC phủ định 不, không đặt ở cuối câu.'},
-  {wrong:'他一点儿也着急不。',
-   opts:['他一点儿也不着急。','他一点儿也着急不。','他也一点儿不着急。','一点儿他也不着急。'],ans:0,
-   exp:'Cấu trúc "一点儿也/都 + 不/没 + tính từ": 不 phải đứng NGAY TRƯỚC tính từ 着急, không đặt sau nó.'},
-  {wrong:'那不能一直也玩儿啊。',
-   opts:['那也不能一直玩儿啊。','那不能一直也玩儿啊。','那一直也不能玩儿啊。','那不能也一直玩儿啊。'],ans:0,
-   exp:'也 (cũng) phải đứng NGAY SAU liên từ 那 và TRƯỚC động từ năng nguyện 能: 那 + 也 + 不能 + 一直玩儿.'},
-  {wrong:'你跟去朋友一起吗？',
-   opts:['你想跟朋友一起去吗？','你跟去朋友一起吗？','你去跟朋友一起吗？','你一起跟朋友去吗？'],ans:0,
-   exp:'Cụm giới từ "跟 + người" phải đứng TRƯỚC động từ chính 去, không tách rời 跟 và 去 ra hai phía của đối tượng.'},
-  {wrong:'我们少带还是一些吧。',
-   opts:['我们还是少带一些吧。','我们少带还是一些吧。','还是我们少带一些吧。','我们少还是带一些吧。'],ans:0,
-   exp:'连词 "还是" (thôi thì, hay là) khi dùng để đề nghị phải đứng NGAY SAU chủ ngữ, TRƯỚC động từ: 我们 + 还是 + 少带一些吧.'},
+  {wrong:'电影票我还没买好了。',
+   opts:['电影票我还没买好。','电影票我还不买好。','电影票我没还买好。','电影票我还没好买。'], ans:0,
+   exp:'Phủ định của “V + 好” là 没 + V + 好, không thêm 了 ở cuối; 还 đứng trước 没.'},
+  {wrong:'昨天我一个电话没打也。',
+   opts:['昨天我也一个电话没打。','昨天我一个电话也没打。','昨天我一个电话也不打了。','昨天一个电话我没也打。'], ans:1,
+   exp:'一 + lượng từ + danh từ + 也 + 没 + động từ; việc đã qua (昨天) phủ định bằng 没, không dùng 不.'},
+  {wrong:'我想去北京跟朋友一起。',
+   opts:['我想一起跟朋友去北京。','我想跟一起朋友去北京。','我想跟朋友去一起北京。','我想跟朋友一起去北京。'], ans:3,
+   exp:'跟 + người + 一起 đứng TRƯỚC động từ: 跟朋友一起去北京 — không đặt cuối câu như tiếng Việt.'},
+  {wrong:'妈妈是很着急。',
+   opts:['妈妈很着急。','妈妈着急很。','妈妈是着急的很。','妈妈很是着急了吗。'], ans:0,
+   exp:'着急 là tính từ: chủ ngữ + 很 + 着急, không chèn 是 (lỗi hay gặp vì tiếng Việt nói “là”).'},
+  {wrong:'我带了没地图。',
+   opts:['我不带了地图。','我没带了地图。','我没带地图。','我带地图没有了。'], ans:2,
+   exp:'Chưa/không mang: 没 + 带 + tân ngữ; 没 không đi cùng 了.'},
+  {wrong:'南方比北方很热。',
+   opts:['南方比北方是热。','南方热比北方。','南方比北方热。','南方比北方非常热。'], ans:2,
+   exp:'Câu 比: A 比 B + tính từ, không thêm 很 / 非常 / 是 trước tính từ.'},
+  {wrong:'我已经买电影票好了。',
+   opts:['我已经好买电影票了。','我已经买好电影票了。','我已经买电影票了好。','我好已经买电影票了。'], ans:1,
+   exp:'Bổ ngữ 好 đứng NGAY SAU động từ, trước tân ngữ: 买好电影票.'},
+  {wrong:'他复习得好很。',
+   opts:['他复习很好得。','他得复习很好。','他复习得很好。','他复习好得很好。'], ans:2,
+   exp:'Bổ ngữ trạng thái: động từ + 得 + 很 + tính từ: 复习得很好.'},
 ];
 
 // ══════════════════════════════════════════
@@ -1835,98 +1837,96 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 1. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 1 (V + 好, 一……也/都 + 不/没, 那 đầu câu). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Chiều thứ sáu, bạn học nhắn hỏi kế hoạch cuối tuần của bạn.',
-      q_zh: '这个周末你打算做什么？跟谁一起去？',
-      q_py: 'Zhège zhōumò nǐ dǎsuàn zuò shénme? Gēn shéi yìqǐ qù?',
+      situation: 'Chiều thứ sáu, bạn học hỏi kế hoạch cuối tuần của bạn.',
+      q_zh: '这个周末你打算做什么？跟谁一起？',
+      q_py: 'Zhège zhōumò nǐ dǎsuàn zuò shénme? Gēn shéi yìqǐ?',
       q_vn: 'Cuối tuần này bạn định làm gì? Đi cùng ai?',
-      grammar: { label: '打算 + động từ', any: ['打算'] },
+      grammar: { label: '打算 + việc định làm', any: ['打算'] },
       need: [
-        { label: 'Nói rõ dự định cuối tuần', any: ['打算', '想', '要'] },
-        { label: 'Nói đi cùng ai', any: ['跟', '和', '一个人'] },
-        { label: 'Kể một việc cụ thể', any: ['看电影', '吃饭', '爬山', '咖啡', '游戏', '复习', '买'] }
+        { label: 'Nói việc định làm', any: ['打算', '想', '要'] },
+        { label: 'Nói làm cùng ai', any: ['跟', '和', '一个人'] }
       ],
-      bonus: { label: 'Nói thêm việc làm sau đó bằng 然后 / 再', any: ['然后', '再'] },
+      bonus: { label: 'Nói thêm việc làm sau đó bằng 再', any: ['再'] },
       vocab: ['周末', '打算', '跟'],
-      minLen: 18,
-      sample: '这个周末我打算跟朋友一起去看电影，看完电影再去喝咖啡。',
-      sample_py: 'Zhège zhōumò wǒ dǎsuàn gēn péngyou yìqǐ qù kàn diànyǐng, kàn wán diànyǐng zài qù hē kāfēi.',
-      sample_vn: 'Cuối tuần này tôi định cùng bạn đi xem phim, xem xong phim rồi đi uống cà phê.',
-      tip: '打算 + động từ nói về dự định: 我打算去旅游。Người cùng làm đặt sau 跟: 跟朋友一起去。'
+      minLen: 16,
+      sample: '这个周末我打算跟妹妹一起去买衣服，买好衣服我们再去喝咖啡。',
+      sample_py: 'Zhège zhōumò wǒ dǎsuàn gēn mèimei yìqǐ qù mǎi yīfu, mǎihǎo yīfu wǒmen zài qù hē kāfēi.',
+      sample_vn: 'Cuối tuần này tôi định cùng em gái đi mua quần áo, mua xong chúng tôi lại đi uống cà phê.',
+      tip: '跟 + người + 一起 đứng trước động từ: 跟妹妹一起去. Việc làm tiếp theo dùng 再.'
     },
     {
-      situation: 'Mẹ hỏi bạn đã làm xong bài tập chưa và chiều nay học gì.',
-      q_zh: '今天的作业你写好了吗？下午你打算复习什么？',
-      q_py: 'Jīntiān de zuòyè nǐ xiě hǎo le ma? Xiàwǔ nǐ dǎsuàn fùxí shénme?',
-      q_vn: 'Bài tập hôm nay bạn viết xong chưa? Chiều nay bạn định ôn gì?',
-      grammar: { label: 'Động từ + 好 (了) — làm xong và hài lòng', any: ['写好', '做好', '准备好', '想好'] },
+      situation: 'Mẹ hỏi bạn đã làm bài tập xong chưa và tối nay định học gì.',
+      q_zh: '今天的作业你写好了吗？晚上你要复习什么？',
+      q_py: 'Jīntiān de zuòyè nǐ xiěhǎo le ma? Wǎnshang nǐ yào fùxí shénme?',
+      q_vn: 'Bài tập hôm nay con viết xong chưa? Tối nay con định ôn gì?',
+      grammar: { label: 'Động từ + 好 (làm xong)', any: ['写好', '做好', '准备好', '想好', '复习好'] },
       need: [
-        { label: 'Trả lời bài tập xong hay chưa', any: ['写好', '做好', '还没', '已经'] },
-        { label: 'Nói sẽ ôn môn gì', any: ['复习', '汉语', '数学', '历史', '课文', '生词'] }
+        { label: 'Bài tập xong hay chưa', any: ['写好', '做好', '还没', '已经'] },
+        { label: 'Nói sẽ ôn gì', any: ['复习', '汉语', '汉字', '课'] }
       ],
-      bonus: { label: 'Nói thêm kế hoạch buổi tối', any: ['晚上', '然后', '以后'] },
-      vocab: ['作业', '复习', '打算'],
-      minLen: 18,
-      sample: '今天的作业我已经写好了，下午我打算复习汉语，晚上再玩儿一会儿游戏。',
-      sample_py: 'Jīntiān de zuòyè wǒ yǐjīng xiě hǎo le, xiàwǔ wǒ dǎsuàn fùxí Hànyǔ, wǎnshang zài wánr yíhuìr yóuxì.',
-      sample_vn: 'Bài tập hôm nay tôi đã viết xong rồi, chiều tôi định ôn tiếng Hán, tối chơi game một lát.',
-      tip: '好 đứng sau động từ nghĩa là xong xuôi, vừa ý: 饭做好了、票买好了。'
+      bonus: { label: 'Dùng 早就 để nói đã xong từ sớm', any: ['早就'] },
+      vocab: ['作业', '复习'],
+      minLen: 16,
+      sample: '今天的作业我早就写好了，晚上我想复习一下汉字。',
+      sample_py: 'Jīntiān de zuòyè wǒ zǎo jiù xiěhǎo le, wǎnshang wǒ xiǎng fùxí yíxià Hànzì.',
+      sample_vn: 'Bài tập hôm nay con viết xong từ lâu rồi, tối nay con muốn ôn lại chữ Hán một chút.',
+      tip: '好 đứng ngay sau động từ: 写好了; chưa xong thì nói 还没写好 (không có 了).'
     },
     {
-      situation: 'Sắp thi, bạn cùng lớp thấy bạn vẫn rất bình tĩnh nên hỏi thăm.',
-      q_zh: '快考试了，你着急吗？为什么？',
-      q_py: 'Kuài kǎoshì le, nǐ zháojí ma? Wèishénme?',
-      q_vn: 'Sắp thi rồi, bạn có sốt ruột không? Vì sao?',
-      grammar: { label: '一点儿也/都 + 不/没 …', any: ['一点儿也', '一点儿都', '一点也', '一点都'] },
+      situation: 'Hôm qua bạn ốm, nghỉ học. Hôm nay bạn cùng lớp hỏi thăm.',
+      q_zh: '昨天你怎么没来上课？',
+      q_py: 'Zuótiān nǐ zěnme méi lái shàngkè?',
+      q_vn: 'Hôm qua sao bạn không đến lớp?',
+      grammar: { label: '一 + lượng từ + danh từ + 也/都 + 没', any: ['也没', '都没', '也不', '都不'] },
       need: [
-        { label: 'Nói có sốt ruột hay không', any: ['着急', '紧张', '担心'] },
-        { label: 'Nêu lý do', any: ['因为', '所以', '每天', '已经'] }
+        { label: 'Nêu lý do nghỉ', any: ['生病', '不舒服', '累', '医院'] },
+        { label: 'Kể một việc hoàn toàn không làm', any: ['也没', '都没'] }
       ],
-      bonus: { label: 'Nói thêm cách chuẩn bị của bạn', any: ['复习', '作业', '练习', '准备'] },
-      vocab: ['着急', '复习', '一直'],
+      bonus: { label: 'Nói hôm nay đã khoẻ hơn', any: ['今天', '好了', '好多了'] },
+      vocab: ['一直'],
       minLen: 18,
-      sample: '我一点儿也不着急，因为我每天都复习，作业也一直写得很认真。',
-      sample_py: 'Wǒ yìdiǎnr yě bù zháojí, yīnwèi wǒ měitiān dōu fùxí, zuòyè yě yì zhí xiě děi hěn rènzhēn.',
-      sample_vn: 'Tôi không sốt ruột chút nào, vì ngày nào tôi cũng ôn bài, bài tập cũng luôn làm rất nghiêm túc.',
-      tip: '一点儿也不 + tính từ là phủ định hoàn toàn: 一点儿也不累、一点儿也不难。'
+      sample: '昨天我生病了，在家睡了一天，一点儿东西也没吃，一本书也没看。',
+      sample_py: 'Zuótiān wǒ shēngbìng le, zài jiā shuìle yì tiān, yìdiǎnr dōngxi yě méi chī, yì běn shū yě méi kàn.',
+      sample_vn: 'Hôm qua tôi bị ốm, ở nhà ngủ cả ngày, chẳng ăn chút gì, một cuốn sách cũng không đọc.',
+      tip: '也/都 đứng ngay trước 没: 一本书也没看 — không nói 一本书没看也.'
     },
     {
-      situation: 'Cả nhà đang bàn xem kỳ nghỉ nên đi miền Nam hay miền Bắc.',
-      q_zh: '放假你想去南方还是去北方？为什么？',
-      q_py: 'Fàng jiǎ nǐ xiǎng qù nánfāng háishi qù běifāng? Wèishénme?',
-      q_vn: 'Nghỉ lễ bạn muốn đi miền Nam hay miền Bắc? Vì sao?',
-      grammar: { label: '那 + câu kết luận (vậy thì…)', any: ['那'] },
+      situation: 'Bạn rủ bạn thân tối nay đi xem phim, bạn ấy trả lời như dưới đây. Hãy đề nghị một hôm khác.',
+      q_zh: '今天晚上我没有时间，我要复习。',
+      q_py: 'Jīntiān wǎnshang wǒ méiyǒu shíjiān, wǒ yào fùxí.',
+      q_vn: 'Tối nay mình không có thời gian, mình phải ôn bài.',
+      grammar: { label: '那 + đề nghị (vậy thì…)', any: ['那'] },
+      need: [
+        { label: 'Đề nghị thời gian khác', any: ['明天', '周末', '星期', '后天'] },
+        { label: 'Nói ai mua vé / chuẩn bị', any: ['票', '买', '准备'] }
+      ],
+      vocab: ['周末'],
+      minLen: 12,
+      sample: '没关系啊，那我们周末去吧，电影票我来买。',
+      sample_py: 'Méi guānxi a, nà wǒmen zhōumò qù ba, diànyǐngpiào wǒ lái mǎi.',
+      sample_vn: 'Không sao đâu, vậy cuối tuần chúng mình đi nhé, vé xem phim để mình mua.',
+      tip: '那 đứng đầu câu trả lời = “vậy thì”, nối tiếp điều người kia vừa nói.'
+    },
+    {
+      situation: 'Tháng sau bạn đi du lịch. Bạn cùng phòng hỏi bạn đi đâu và mang gì.',
+      q_zh: '下个月你想去哪儿旅游？要带什么东西？',
+      q_py: 'Xià ge yuè nǐ xiǎng qù nǎr lǚyóu? Yào dài shénme dōngxi?',
+      q_vn: 'Tháng sau bạn muốn đi du lịch ở đâu? Phải mang những gì?',
+      grammar: { label: '带 + đồ vật', any: ['带'] },
       need: [
         { label: 'Chọn miền Nam hay miền Bắc', any: ['南方', '北方'] },
-        { label: 'Nêu lý do về thời tiết', any: ['冷', '热', '天气', '舒服'] }
+        { label: 'Kể ít nhất hai món đồ', any: ['衣服', '地图', '手机', '面包', '水果', '电脑'] }
       ],
-      bonus: { label: 'Dùng 那 để chốt lại kế hoạch', any: ['那'] },
-      vocab: ['南方', '北方', '舒服'],
+      bonus: { label: 'Nêu lý do bằng 因为 / 所以', any: ['因为', '所以'] },
+      vocab: ['南方', '北方', '带', '地图'],
       minLen: 18,
-      sample: '我想去北方，因为北方不冷也不热，很舒服。那我们就买去北方的票吧。',
-      sample_py: 'Wǒ xiǎng qù běifāng, yīnwèi běifāng bù lěng yě bú rè, hěn shūfu. Nà wǒmen jiù mǎi qù běifāng de piào ba.',
-      sample_vn: 'Tôi muốn đi miền Bắc, vì miền Bắc không lạnh cũng không nóng, rất dễ chịu. Vậy chúng ta mua vé đi miền Bắc nhé.',
-      tip: '那 đứng đầu câu để chốt lại theo ý vừa nghe: 那我们就走吧。'
-    },
-    {
-      situation: 'Trước chuyến đi chơi, bạn cùng phòng hỏi bạn chuẩn bị mang gì.',
-      q_zh: '去旅游以前，你要带什么东西？',
-      q_py: 'Qù lǚyóu yǐqián, nǐ yào dài shénme dōngxi?',
-      q_vn: 'Trước khi đi du lịch, bạn cần mang những gì?',
-      grammar: { label: '带 + đồ vật, liệt kê thêm bằng 还有', any: ['带'] },
-      need: [
-        { label: 'Kể ít nhất hai món đồ', any: ['面包', '水果', '地图', '手机', '电脑', '衣服', '钱', '药'] },
-        { label: 'Dùng động từ 带', any: ['带'] }
-      ],
-      bonus: { label: 'Liệt kê thêm bằng 还有', any: ['还有', '还要'] },
-      vocab: ['带', '面包', '地图'],
-      minLen: 18,
-      sample: '去旅游以前我要带面包、水果和茶，还有手机、地图和相机。',
-      sample_py: 'Qù lǚyóu yǐqián wǒ yào dài miànbāo, shuǐguǒ hé chá, hái yǒu shǒujī, dìtú hé xiàng jī.',
-      sample_vn: 'Trước khi đi du lịch tôi sẽ mang bánh mì, hoa quả và trà, còn có điện thoại, bản đồ và máy ảnh.',
-      tip: 'Liệt kê đồ vật dùng 、 giữa các từ, cuối cùng thêm 还有 cho ý bổ sung.'
+      sample: '我想去北方旅游，北方比南方冷，所以我要多带几件衣服，还要带一张地图。',
+      sample_py: 'Wǒ xiǎng qù běifāng lǚyóu, běifāng bǐ nánfāng lěng, suǒyǐ wǒ yào duō dài jǐ jiàn yīfu, hái yào dài yì zhāng dìtú.',
+      sample_vn: 'Tôi muốn đi du lịch miền Bắc, miền Bắc lạnh hơn miền Nam nên tôi phải mang thêm vài bộ quần áo, còn phải mang một tấm bản đồ.',
+      tip: 'Mang thêm = 多 + 带 (多带几件衣服), 多 đứng trước động từ.'
     }
   ]
 };
@@ -1935,28 +1935,21 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Vì cuối tuần này tôi có việc nên không thể đi du lịch với bạn được.', zh:'因为这个周末我有事，所以不能跟你去旅游。', py:'Yīnwèi zhège zhōumò wǒ yǒu shì, suǒyǐ bù néng gēn nǐ qù lǚyóu.'},
-  {vi:'Tuy tôi đã ôn tập xong nhưng vẫn cảm thấy hơi lo lắng.', zh:'虽然我已经复习好了，但是还是觉得有点儿着急。', py:'Suīrán wǒ yǐjīng fùxí hǎo le, dànshì háishi juéde yǒudiǎnr zháojí.'},
-  {vi:'Nếu bạn không mang theo bản đồ thì chúng ta sẽ dễ đi lạc đường.', zh:'如果你不带地图，我们就容易走错路。', py:'Rúguǒ nǐ bú dài dìtú, wǒmen jiù róngyì zǒucuò lù.'},
-  {vi:'Chỉ cần bạn làm xong bài tập thì có thể chơi game một lúc.', zh:'只要你写完作业，就可以玩儿一会儿游戏。', py:'Zhǐyào nǐ xiěwán zuòyè, jiù kěyǐ wánr yíhuìr yóuxì.'},
-  {vi:'Anh ấy vừa chuyển nhà vừa gọi điện hỏi thăm bạn bè.', zh:'他一边搬家，一边打电话问朋友。', py:'Tā yìbiān bān jiā, yìbiān dǎ diànhuà wèn péngyou.'},
-  {vi:'Trên bàn học của tôi luôn để một tấm bản đồ Trung Quốc.', zh:'我的书桌上总是放着一张中国地图。', py:'Wǒ de shūzhuō shang zǒngshì fàngzhe yì zhāng Zhōngguó dìtú.'},
-  {vi:'Bạn đi miền Nam hay miền Bắc đều được, tôi đều rất thích.', zh:'你去南方或者北方都可以，我都很喜欢。', py:'Nǐ qù nánfāng huòzhě běifāng dōu kěyǐ, wǒ dōu hěn xǐhuan.'},
-  {vi:'Vì bánh mì ở tiệm đó chỉ còn một cái nên tôi mua ngay.', zh:'因为那家店的面包只剩一个了，所以我马上买了。', py:'Yīnwèi nà jiā diàn de miànbāo zhǐ shèng yí ge le, suǒyǐ wǒ mǎshàng mǎi le.'},
+  {vi:'Tôi đã chuẩn bị xong quà sinh nhật cho mẹ từ lâu rồi.', zh:'给妈妈的生日东西我早就准备好了。', py:'Gěi māma de shēngrì dōngxi wǒ zǎo jiù zhǔnbèi hǎo le.'},
+  {vi:'Anh ấy bận cả buổi sáng, một chút nước cũng chưa uống.', zh:'他忙了一个上午，一点儿水也没喝。', py:'Tā mángle yí ge shàngwǔ, yìdiǎnr shuǐ yě méi hē.'},
+  {vi:'Nhà mới cách công ty rất gần, tuần sau chúng tôi chuyển đến.', zh:'新家离公司很近，下个星期我们就搬家。', py:'Xīn jiā lí gōngsī hěn jìn, xià ge xīngqī wǒmen jiù bān jiā.'},
+  {vi:'A: Mình không biết đường. — B: Vậy thì mình xem bản đồ trên điện thoại đi.', zh:'A：我不知道怎么走。B：那我们看看手机上的地图吧。', py:'A: Wǒ bù zhīdào zěnme zǒu. B: Nà wǒmen kànkan shǒujī shang de dìtú ba.'},
+  {vi:'Tuy ngày mai thi nhưng cậu ấy không sốt ruột chút nào.', zh:'虽然明天考试，但是他一点儿也不着急。', py:'Suīrán míngtiān kǎoshì, dànshì tā yìdiǎnr yě bù zháojí.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tuy trò chơi này thú vị nhưng tôi không có nhiều thời gian để chơi.', zh:'虽然这个游戏很有意思，但是我没有很多时间玩儿。', py:'Suīrán zhège yóuxì hěn yǒu yìsi, dànshì wǒ méiyǒu hěn duō shíjiān wánr.'},
-  {vi:'Nếu bạn chưa nghĩ xong kế hoạch thì đừng vội quyết định.', zh:'如果你还没想好打算，就别着急决定。', py:'Rúguǒ nǐ hái méi xiǎnghǎo dǎsuàn, jiù bié zháojí juédìng.'},
-  {vi:'Trong túi tôi để rất nhiều đồ, một tấm bản đồ cũng có.', zh:'我包里放着很多东西，一张地图也有。', py:'Wǒ bāo lǐ fàngzhe hěn duō dōngxi, yì zhāng dìtú yě yǒu.'},
-  {vi:'Chỉ cần bố mẹ đồng ý thì tôi cuối tuần này sẽ đi chơi xa.', zh:'只要爸爸妈妈同意，我这个周末就去远一点儿的地方玩儿。', py:'Zhǐyào bàba māma tóngyì, wǒ zhège zhōumò jiù qù yuǎn yìdiǎnr de dìfang wánr.'},
-  {vi:'Chị ấy vừa ôn tập vừa nghe nhạc, cảm thấy rất thoải mái.', zh:'她一边复习，一边听音乐，觉得很舒服。', py:'Tā yìbiān fùxí, yìbiān tīng yīnyuè, juéde hěn shūfu.'},
-  {vi:'Vì phải chuyển nhà gấp nên cả nhà đều rất bận rộn mấy ngày nay.', zh:'因为要赶着搬家，所以全家这几天都很忙。', py:'Yīnwèi yào gǎnzhe bān jiā, suǒyǐ quánjiā zhè jǐ tiān dōu hěn máng.'},
-  {vi:'Nếu bạn cảm thấy lo lắng thì cứ nói với tôi, đừng giữ trong lòng.', zh:'如果你觉得着急，就跟我说，别放在心里。', py:'Rúguǒ nǐ juéde zháojí, jiù gēn wǒ shuō, bié fàng zài xīnlǐ.'},
-  {vi:'Cậu ấy thích ăn bánh mì vào buổi sáng, hầu như ngày nào cũng mua.', zh:'他早上喜欢吃面包，几乎每天都买。', py:'Tā zǎoshang xǐhuan chī miànbāo, jīhū měitiān dōu mǎi.'},
+  {vi:'Bạn mang nhiều bánh mì thế, chúng ta ăn hết sao được?', zh:'你带了这么多面包，我们怎么吃得完？', py:'Nǐ dàile zhème duō miànbāo, wǒmen zěnme chī de wán?'},
+  {vi:'Tôi sống ở miền Nam ba năm rồi, thích nhất là hoa quả ở đây.', zh:'我在南方住了三年了，最喜欢这儿的水果。', py:'Wǒ zài nánfāng zhùle sān nián le, zuì xǐhuan zhèr de shuǐguǒ.'},
+  {vi:'Cuối tuần trước tôi chẳng đi đâu cả, ở nhà ôn bài suốt.', zh:'上个周末我哪儿也没去，一直在家复习。', py:'Shàng ge zhōumò wǒ nǎr yě méi qù, yìzhí zài jiā fùxí.'},
+  {vi:'Bạn đã nghĩ kỹ chưa? Có muốn đi cùng chúng tôi không?', zh:'你想好了吗？要不要跟我们一起去？', py:'Nǐ xiǎnghǎo le ma? Yào bu yào gēn wǒmen yìqǐ qù?'},
 ];
 
 // ══════════════════════════════════════════

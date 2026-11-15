@@ -1689,73 +1689,80 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'终于',right:'回来了'},
-  {left:'买',right:'蛋糕'},
-  {left:'送',right:'礼物'},
-  {left:'一边喝咖啡',right:'一边说过去的事'},
-  {left:'走',right:'回来'},
-  {left:'很少',right:'去爬山'},
-  {left:'站',right:'起来'},
-  {left:'因为太忙，',right:'所以我看不到他。'},
-  {left:'虽然他是校长了，',right:'但是还是很忙。'},
-  {left:'如果你多休息，',right:'我就放心了。'},
-  {left:'只要你愿意，',right:'我们就可以一起去。'},
+  {left:'过生日的时候，朋友送了我很多', right:'礼物'},
+  {left:'老师进来了，请大家', right:'站起来'},
+  {left:'上个星期在超市', right:'遇到了老同学'},
+  {left:'他喜欢一边听音乐', right:'一边写作业'},
+  {left:'他是我们学校的', right:'校长'},
+  {left:'你感冒了，', right:'应该多喝水'},
+  {left:'这些水果是从商店', right:'买回来的'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你',blank:'终于',post:'回来了！',hint:'(cuối cùng)',ans:'终于'},
-  {pre:'这是给',blank:'爷爷',post:'的礼物。',hint:'(ông nội)',ans:'爷爷'},
-  {pre:'这是给爷爷奶奶的',blank:'礼物',post:'。',hint:'(quà biếu, quà tặng)',ans:'礼物'},
-  {pre:'明天我们去看看爷爷',blank:'奶奶',post:'。',hint:'(bà nội)',ans:'奶奶'},
-  {pre:'王老师是我昨天在书店',blank:'遇到',post:'的一位老同学。',hint:'(tình cờ gặp)',ans:'遇到'},
-  {pre:'我们',blank:'一边',post:'喝咖啡一边聊天儿。',hint:'(vừa)',ans:'一边',exp:'一边…一边… = vừa… vừa…, hai hành động diễn ra cùng lúc.'},
-  {pre:'一边喝咖啡一边说了些',blank:'过去',post:'的事。',hint:'(quá khứ)',ans:'过去'},
-  {pre:'周末你',blank:'一般',post:'跟小刚出去爬山吗？',hint:'(thông thường)',ans:'一般'},
-  {pre:'我更',blank:'愿意',post:'在家看新闻。',hint:'(muốn)',ans:'愿意'},
-  {pre:'在飞机上坐久了可以站',blank:'起来',post:'走一走。',hint:'(chỉ sự di chuyển hướng lên)',ans:'起来',exp:'站起来 = đứng dậy; 起来 chỉ hướng từ dưới lên.'},
-  {pre:'你',blank:'应该',post:'多出去走走。',hint:'(nên, cần phải)',ans:'应该',exp:'应该 + động từ = nên…, dùng để khuyên.'},
-  {pre:'这样你们的',blank:'生活',post:'会更有意思。',hint:'(đời sống, cuộc sống)',ans:'生活'},
-  {pre:'他已经是',blank:'校长',post:'了。',hint:'(hiệu trưởng)',ans:'校长'},
-  {pre:'孩子们玩儿了一天，都要累',blank:'坏',post:'了。',hint:'(quá, quá mức)',ans:'坏',exp:'Tính từ + 坏了 chỉ mức độ rất cao: 累坏了 = mệt lử.'},
-  {pre:'我希望孩子们能',blank:'经常',post:'去看看爷爷奶奶。',hint:'(thường xuyên)',ans:'经常'},
+  {pre:'A：等了你半个小时，你', blank:'终于', post:'来了！B：对不起，路上车太多了。', hint:'(cuối cùng)', ans:'终于', exp:'终于 = cuối cùng (sau khi chờ lâu), đứng trước động từ; 半个小时 (bài 7).'},
+  {pre:'A：明天是小丽的生日，你准备好', blank:'礼物', post:'了吗？B：准备好了，我给她买了一本书。', hint:'(quà)', ans:'礼物', exp:'礼物 = quà; ôn V + 好 = làm xong (bài 1).'},
+  {pre:'昨天在地铁上我', blank:'遇到', post:'了一个小学同学，我们十年没见了。', hint:'(tình cờ gặp)', ans:'遇到', exp:'遇到 = tình cờ gặp; 地铁 (bài 11).'},
+  {pre:'我妹妹喜欢', blank:'一边', post:'唱歌一边做饭。', hint:'(vừa)', ans:'一边', exp:'一边 + V1 + 一边 + V2 = vừa … vừa … (một người làm hai việc cùng lúc).'},
+  {pre:'', blank:'过去', post:'的事情就别想了，以后我们要更努力。', hint:'(quá khứ, chuyện đã qua)', ans:'过去', exp:'过去 = quá khứ, trái nghĩa với 以后 (sau này); 努力 (bài 4).'},
+  {pre:'A：你周末', blank:'一般', post:'做什么？B：在家休息，有时候去看电影。', hint:'(thường thường)', ans:'一般', exp:'一般 = thường thường, nói về thói quen; đứng trước động từ.'},
+  {pre:'A：明天的会议你', blank:'愿意', post:'去吗？B：当然愿意，这个机会很好。', hint:'(sẵn lòng, muốn)', ans:'愿意', exp:'愿意 + V = sẵn lòng làm; 当然 (bài 5), 会议 (bài 11).'},
+  {pre:'A：七点了，你怎么还不', blank:'起来', post:'？B：今天是星期六，我想多睡一会儿。', hint:'(dậy)', ans:'起来', exp:'起来 = dậy (rời chỗ nằm, hướng lên); 还不起来 = vẫn chưa chịu dậy; 一会儿 (bài 8).'},
+  {pre:'天冷了，你', blank:'应该', post:'多穿一件衣服。', hint:'(nên)', ans:'应该', exp:'应该 + V = nên…, dùng để khuyên; 多 + V = làm nhiều hơn (多穿).'},
+  {pre:'来中国以后，我的', blank:'生活', post:'比以前忙多了。', hint:'(cuộc sống)', ans:'生活', exp:'生活 = cuộc sống; ôn A 比 B + tính từ + 多了 (bài 10) và 以前 (bài 7).'},
+  {pre:'我们学校的', blank:'校长', post:'很年轻，对学生非常热情。', hint:'(hiệu trưởng)', ans:'校长', exp:'校长 = hiệu trưởng; 对 + người + 热情 (bài 4).'},
+  {pre:'搬了一天家，我累', blank:'坏', post:'了。', hint:'(… quá, … lắm)', ans:'坏', exp:'Tính từ + 坏了 = … lắm, … quá: 累坏了 = mệt rã rời; 搬家 (bài 1).'},
+  {pre:'A：外面太冷了！B：快进', blank:'来', post:'，喝杯热茶吧。', hint:'(về phía người nói)', ans:'来', exp:'B ở trong nhà, mời người kia đi vào về phía mình nên dùng 进来; 进去 = đi vào xa người nói.'},
+  {pre:'A：你的包里有什么？B：我拿', blank:'出来', post:'给你看看。', hint:'(ra — lấy ra phía người nói)', ans:'出来', exp:'拿出来 = lấy ra (hướng về phía người nói); bổ ngữ xu hướng kép: động từ + 出来.'}
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','终于','找到','工作','了','！'],ans:'我终于找到工作了！',audio:'我终于找到工作了！'},
-  {words:['那','是','给','奶奶','的','生日蛋糕','。'],ans:'那是给奶奶的生日蛋糕。',audio:'那是给奶奶的生日蛋糕。'},
-  {words:['一边','走','一边','讲','了','些','工作','的','事','。'],ans:'一边走一边讲了些工作的事。',audio:'一边走一边讲了些工作的事。'},
-  {words:['没有','公共','汽车','了','，','我','是','走','回来','的','。'],ans:'没有公共汽车了，我是走回来的。',audio:'没有公共汽车了，我是走回来的。'},
-  {words:['因为','太','忙','，','所以','我','看不到','他','。'],ans:'因为太忙，所以我看不到他。',audio:'因为太忙，所以我看不到他。'},
-  {words:['虽然','今天','很','忙','，','但是','我','还是','想','去','看看','爷爷奶奶','。'],ans:'虽然今天很忙，但是我还是想去看看爷爷奶奶。',audio:'虽然今天很忙，但是我还是想去看看爷爷奶奶。'},
-  {words:['如果','你','能','少','一些','会议','，','我','就','放心','了','。'],ans:'如果你能少一些会议，我就放心了。',audio:'如果你能少一些会议，我就放心了。'},
-  {words:['希望','你','能','少','喝','一些','咖啡','，','多','运动','一下','，','可以','经常','和','我们','一起','出去','走走','。'],ans:'希望你能少喝一些咖啡，多运动一下，可以经常和我们一起出去走走。',audio:'希望你能少喝一些咖啡，多运动一下，可以经常和我们一起出去走走。'},
+  {words:['她','把','椅子','搬','回','教室','去','了','。'], ans:'她把椅子搬回教室去了。', audio:'她把椅子搬回教室去了。'},
+  {words:['我','一边','走路','一边','给','妈妈','打电话','。'], ans:'我一边走路一边给妈妈打电话。', audio:'我一边走路一边给妈妈打电话。'},
+  {words:['你','把','那些','书','拿','过来','，','我','看看','。'], ans:'你把那些书拿过来，我看看。', audio:'你把那些书拿过来，我看看。'},
+  {words:['爷爷','奶奶','经常','一边','喝茶','一边','聊天儿','。'], ans:'爷爷奶奶经常一边喝茶一边聊天儿。', audio:'爷爷奶奶经常一边喝茶一边聊天儿。'},
+  {words:['这个','问题','我','想','了','很久','，','终于','明白','了','。'], ans:'这个问题我想了很久，终于明白了。', audio:'这个问题我想了很久，终于明白了。'},
+  {words:['吃饭','的','时候','，','你','应该','把','手机','放','下','。'], ans:'吃饭的时候，你应该把手机放下。', audio:'吃饭的时候，你应该把手机放下。'},
+  {words:['他','从','楼上','走','下来','，','手','里','拿','着','一个','礼物','。'], ans:'他从楼上走下来，手里拿着一个礼物。', audio:'他从楼上走下来，手里拿着一个礼物。'},
+  {words:['五月','以后','，','天气','慢慢','热','起来','了','。'], ans:'五月以后，天气慢慢热起来了。', audio:'五月以后，天气慢慢热起来了。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'周太太走进去咖啡店。',
-   opts:['周太太走进咖啡店去。','周太太走进去咖啡店。','周太太走咖啡店进去。','周太太进去走咖啡店。'],ans:0,
-   exp:'Khi tân ngữ là nơi chốn (咖啡店), phải đặt TRƯỚC 去, không đặt sau.'},
-  {wrong:'老师走进来教室。',
-   opts:['老师走进教室来。','老师走进来教室。','老师走教室进来。','老师教室走进来。'],ans:0,
-   exp:'Khi tân ngữ là nơi chốn (教室), phải đặt TRƯỚC 来, không đặt sau.'},
-  {wrong:'你可以站休息一会儿。',
-   opts:['你可以站起来休息一会儿。','你可以站休息一会儿。','你可以起来站休息一会儿。','你可以休息站起来一会儿。'],ans:0,
-   exp:'Thiếu bổ ngữ xu hướng kép 起来 sau động từ 站 — câu cần đủ 站+起来 để diễn tả đứng dậy.'},
-  {wrong:'爸爸一边看报纸吃水果。',
-   opts:['爸爸一边看报纸一边吃水果。','爸爸一边看报纸吃水果。','爸爸看报纸一边吃水果一边。','爸爸一边吃水果看报纸。'],ans:0,
-   exp:'Cấu trúc 一边……一边…… cần đủ CẢ HAI 一边, không được bỏ một bên.'},
-  {wrong:'我同事喜欢喝咖啡一边看新闻一边。',
-   opts:['我同事喜欢一边喝咖啡一边看新闻。','我同事喜欢喝咖啡一边看新闻一边。','我同事一边喜欢喝咖啡看新闻一边。','我同事喜欢一边看新闻喝咖啡一边。'],ans:0,
-   exp:'一边 phải đứng NGAY TRƯỚC mỗi động từ, không đặt ở cuối câu.'},
+  {wrong:'爸爸走上去楼了。',
+   opts:['爸爸走楼上去了。','爸爸上楼走去了。','爸爸走上楼去了。','爸爸走上去了楼。'], ans:2,
+   exp:'Bổ ngữ xu hướng kép có tân ngữ nơi chốn: V + 上 + nơi chốn (楼) + 去 — nơi chốn chen giữa 上 và 去.'},
+  {wrong:'我在楼上，你上去吧。',
+   opts:['我在楼上，你上来吧。','我在楼上，你来上吧。','我在楼上，你上去来吧。','我在楼上，你去上来吧。'], ans:0,
+   exp:'Người nói ở trên lầu, người kia đi lên VỀ PHÍA mình nên dùng 上来; 去 = đi xa người nói.'},
+  {wrong:'一边他看电视，一边吃饭。',
+   opts:['他看电视一边，吃饭一边。','他一边看电视，一边吃饭。','他一边看电视，吃饭一边。','他一边看电视，一边吃饭着。'], ans:1,
+   exp:'Chủ ngữ đứng trước, mỗi 一边 đứng ngay trước một động từ: 他一边看电视，一边吃饭; không thêm 着 ở cuối.'},
+  {wrong:'她一边漂亮一边聪明。',
+   opts:['她漂亮一边聪明一边。','她一边很漂亮一边很聪明。','她又漂亮一边聪明。','她又漂亮又聪明。'], ans:3,
+   exp:'一边……一边…… chỉ nối hai HÀNH ĐỘNG; hai tính từ thì dùng 又……又…… (ôn 又, bài 4/8).'},
+  {wrong:'你一边走路一边看手机不应该。',
+   opts:['你不应该一边走路一边看手机。','你一边不应该走路一边看手机。','你没应该一边走路一边看手机。','你不应该一边走路看手机一边。'], ans:0,
+   exp:'不应该 đứng trước cả cụm 一边……一边……; phủ định 应该 dùng 不, không dùng 没.'},
+  {wrong:'我们等了很久，飞机起飞终于了。',
+   opts:['我们等了很久，飞机起飞了终于。','我们等了很久，飞机终于了起飞。','我们等了很久，飞机终于起飞了。','我们等了很久，飞机终于起飞过。'], ans:2,
+   exp:'终于 đứng ngay trước động từ, 了 ở cuối: 终于起飞了; không dùng 过 cho kết quả vừa đạt được.'},
+  {wrong:'一天没吃东西，孩子坏饿了。',
+   opts:['一天没吃东西，孩子饿坏了。','一天没吃东西，孩子饿了坏。','一天没吃东西，孩子很饿坏了。','一天没吃东西，孩子坏了饿。'], ans:0,
+   exp:'坏了 đứng SAU tính từ để chỉ mức độ cao: 饿坏了; đã có 坏了 thì không thêm 很.'},
+  {wrong:'他起床一般六点。',
+   opts:['他六点起床一般。','一般他起床六点。','他起床六点一般。','他一般六点起床。'], ans:3,
+   exp:'一般 và thời gian (六点) đều đứng TRƯỚC động từ: 他一般六点起床 — không đặt giờ sau động từ như tiếng Việt “dậy lúc 6 giờ”.'},
+  {wrong:'他出来从房间里走了。',
+   opts:['他从房间里走出来了。','他走出来从房间里了。','他从房间走里出来了。','他从房间里出来走了。'], ans:0,
+   exp:'Bổ ngữ xu hướng kép đứng ngay sau động từ: 走出来; cụm 从房间里 đặt trước động từ, 了 ở cuối câu.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1763,97 +1770,97 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 13. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu là một tình huống thật, trả lời về chính bạn bằng từ và mẫu câu của Bài 13 (bổ ngữ xu hướng kép 上来/下去/回来/过去/起来…, 一边……一边……). Bấm 🎙️ rồi nói bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Cả nhà đang nói về thói quen trong bữa cơm.',
-      q_zh: '你吃饭的时候喜欢一边吃一边做什么？',
-      q_py: 'Nǐ chīfàn de shíhou xǐhuan yìbiān chī yìbiān zuò shénme?',
-      q_vn: 'Lúc ăn cơm bạn thích vừa ăn vừa làm gì?',
+      situation: 'Bạn cùng phòng thấy bạn đeo tai nghe khi học, hỏi bạn có thích vừa học vừa nghe nhạc không.',
+      q_zh: '你做作业的时候，喜欢一边做一边听音乐吗？',
+      q_py: 'Nǐ zuò zuòyè de shíhou, xǐhuan yìbiān zuò yìbiān tīng yīnyuè ma?',
+      q_vn: 'Lúc làm bài tập, bạn có thích vừa làm vừa nghe nhạc không?',
       grammar: { label: '一边……一边…… (vừa… vừa…)', any: ['一边'] },
       need: [
-        { label: 'Dùng 一边……一边……', any: ['一边'] },
-        { label: 'Nói việc làm kèm theo', any: ['听音乐', '看电视', '聊天', '看手机', '新闻'] }
+        { label: 'Nói có hay không', any: ['喜欢', '不喜欢', '不听'] },
+        { label: 'Kể một lúc khác bạn làm hai việc cùng lúc', any: ['地铁', '公共汽车', '走路', '做饭', '跑步'] }
       ],
-      bonus: { label: 'Nêu ý kiến nên hay không nên bằng 应该', any: ['应该', '不应该'] },
-      vocab: ['一边', '应该', '经常'],
-      minLen: 18,
-      sample: '我喜欢一边吃饭一边听音乐。可是妈妈说，经常一边吃饭一边看手机对身体不好，应该好好吃饭。',
-      sample_py: 'Wǒ xǐhuan yìbiān chīfàn yìbiān tīng yīnyuè. Kěshì māma shuō, jīngcháng yìbiān chīfàn yìbiān kàn shǒujī duì shēntǐ bù hǎo, yīnggāi hǎohāo chīfàn.',
-      sample_vn: 'Tôi thích vừa ăn cơm vừa nghe nhạc. Nhưng mẹ nói thường xuyên vừa ăn vừa xem điện thoại không tốt cho sức khỏe, nên ăn cho tử tế.',
-      tip: '一边……一边…… dùng cho hai việc làm cùng lúc, chủ ngữ giống nhau.'
+      bonus: { label: 'Nêu lý do bằng 因为', any: ['因为', '所以'] },
+      vocab: ['一边', '经常'],
+      minLen: 16,
+      sample: '做作业的时候我不听音乐，因为我会做得很慢。坐地铁的时候，我经常一边听音乐一边看看外面。',
+      sample_py: 'Zuò zuòyè de shíhou wǒ bù tīng yīnyuè, yīnwèi wǒ huì zuò de hěn màn. Zuò dìtiě de shíhou, wǒ jīngcháng yìbiān tīng yīnyuè yìbiān kànkan wàimiàn.',
+      sample_vn: 'Lúc làm bài tập tôi không nghe nhạc, vì tôi sẽ làm rất chậm. Lúc đi tàu điện ngầm, tôi hay vừa nghe nhạc vừa ngắm bên ngoài.',
+      tip: 'Mỗi 一边 đứng ngay trước một động từ, chủ ngữ chỉ nói một lần ở đầu: 我一边听音乐一边看书.'
     },
     {
-      situation: 'Bạn kể buổi sáng của mình cho lớp nghe.',
-      q_zh: '你早上一般几点起来？起来以后先做什么？',
-      q_py: 'Nǐ zǎoshang yìbān jǐ diǎn qǐlai? Qǐlai yǐhòu xiān zuò shénme?',
-      q_vn: 'Buổi sáng bạn thường dậy lúc mấy giờ? Dậy rồi làm gì trước?',
-      grammar: { label: 'Bổ ngữ xu hướng phức: 起来 / 下去 / 出来', any: ['起来', '下去', '出来', '回来', '过来'] },
+      situation: 'Bạn của bạn đến chơi, đang đứng dưới chân toà nhà và gọi điện hỏi đường lên.',
+      q_zh: '我到你家楼下了，怎么上去？',
+      q_py: 'Wǒ dào nǐ jiā lóu xià le, zěnme shàngqu?',
+      q_vn: 'Mình tới dưới nhà bạn rồi, lên thế nào đây?',
+      grammar: { label: 'Bổ ngữ xu hướng: 上来 / 过来 / 进来 (về phía người nói)', any: ['上来', '过来', '进来'] },
       need: [
-        { label: 'Nói giờ thức dậy', any: ['点', '半', '起来', '起床'] },
-        { label: 'Kể việc làm đầu tiên', any: ['喝', '水', '跑步', '洗', '吃', '走'] }
+        { label: 'Nói nhà ở tầng mấy', any: ['层', '楼'] },
+        { label: 'Chỉ cách lên', any: ['电梯', '走'] }
       ],
-      bonus: { label: 'Dùng 然后 hoặc 再 nối các việc', any: ['然后', '再', '先'] },
-      vocab: ['起来', '一般', '经常'],
-      minLen: 18,
-      sample: '我一般六点半起来，起来以后先喝一杯水，然后下楼跑跑步。经常运动以后，我一天都很有力气。',
-      sample_py: 'Wǒ yìbān liù diǎn bàn qǐlai, qǐlai yǐhòu xiān hē yì bēi shuǐ, ránhòu xià lóu pǎo pǎobù. Jīngcháng yùndòng yǐhòu, wǒ yì tiān dōu hěn yǒu lìqi.',
-      sample_vn: 'Tôi thường dậy lúc 6 rưỡi, dậy rồi uống một cốc nước trước, sau đó xuống nhà chạy bộ. Vận động thường xuyên xong, cả ngày tôi rất có sức.',
-      tip: '起来 ngoài nghĩa "đứng dậy" còn dùng cho bắt đầu một trạng thái: 天气热起来了。'
+      bonus: { label: 'Nói bạn sẽ đợi ở đâu', any: ['等'] },
+      vocab: [],
+      minLen: 12,
+      sample: '我家在五层，你坐电梯上来吧，我在电梯门口等你。',
+      sample_py: 'Wǒ jiā zài wǔ céng, nǐ zuò diàntī shànglai ba, wǒ zài diàntī ménkǒu děng nǐ.',
+      sample_vn: 'Nhà mình ở tầng năm, bạn đi thang máy lên nhé, mình đợi bạn ở cửa thang máy.',
+      tip: 'Bạn đang ở trên, người kia đi về phía bạn: 上来 (không nói 上去).'
     },
     {
-      situation: 'Sắp đến ngày lễ, bạn chọn quà cho ông bà.',
-      q_zh: '过节的时候你给爷爷奶奶买什么礼物？',
-      q_py: 'Guo jié de shíhou nǐ gěi yéye nǎinai mǎi shénme lǐwù?',
-      q_vn: 'Vào dịp lễ bạn mua quà gì cho ông bà?',
-      grammar: { label: '给 + người + 买 + đồ vật', any: ['给'] },
+      situation: 'Cuối tuần là sinh nhật bà. Mẹ hỏi bạn định tặng gì và mang sang thế nào.',
+      q_zh: '奶奶过生日，你想送什么礼物？什么时候送过去？',
+      q_py: 'Nǎinai guò shēngrì, nǐ xiǎng sòng shénme lǐwù? Shénme shíhou sòng guòqu?',
+      q_vn: 'Bà sắp sinh nhật, con muốn tặng quà gì? Khi nào mang sang?',
+      grammar: { label: 'Bổ ngữ xu hướng kép: 送过去 / 带过去 / 拿回来…', any: ['过去', '回去', '回来'] },
       need: [
-        { label: 'Nói món quà', any: ['礼物', '水果', '茶', '衣服', '照片', '药', '花'] },
-        { label: 'Dùng 给 chỉ người nhận', any: ['给', '送'] }
+        { label: 'Nói món quà', any: ['礼物', '衣服', '蛋糕', '水果', '茶', '照片', '花'] },
+        { label: 'Nói khi nào mang sang', any: ['周末', '星期', '明天', '上午', '下午', '晚上'] }
       ],
-      bonus: { label: 'Kể phản ứng của ông bà', any: ['高兴', '笑', '愿意', '喜欢'] },
-      vocab: ['礼物', '爷爷', '奶奶'],
-      minLen: 20,
-      sample: '过节的时候我一般给爷爷奶奶买一些水果和茶。去年我还送了他们一张全家的照片，他们非常高兴。',
-      sample_py: 'Guo jié de shíhou wǒ yìbān gěi yéye nǎinai mǎi yì xiē shuǐguǒ hé chá. Qùnián wǒ hái sòng le tāmen yì zhāng quán jiā de zhàopiàn, tāmen fēicháng gāoxìng.',
-      sample_vn: 'Dịp lễ tôi thường mua ít hoa quả và trà cho ông bà. Năm ngoái tôi còn tặng họ một tấm ảnh cả nhà, ông bà rất vui.',
-      tip: '给 + người + động từ: 给妈妈打电话、给他买礼物。'
+      bonus: { label: 'Nói đi cùng ai', any: ['跟', '和', '一起'] },
+      vocab: ['奶奶', '礼物'],
+      minLen: 16,
+      sample: '我想给奶奶买一件新衣服，星期六上午跟爸爸妈妈一起把蛋糕和衣服送过去。',
+      sample_py: 'Wǒ xiǎng gěi nǎinai mǎi yí jiàn xīn yīfu, xīngqīliù shàngwǔ gēn bàba māma yìqǐ bǎ dàngāo hé yīfu sòng guòqu.',
+      sample_vn: 'Con muốn mua cho bà một bộ quần áo mới, sáng thứ bảy cùng bố mẹ mang bánh kem và quần áo sang.',
+      tip: '送过去 = mang sang chỗ người khác (xa mình); 带回来 = mang về chỗ mình.'
     },
     {
-      situation: 'Bạn học nhóm hỏi cách bạn xử lý bài khó.',
-      q_zh: '遇到不会做的问题，你愿意自己想还是问别人？',
-      q_py: 'Yùdào bú huì zuò de wèntí, nǐ yuànyì zìjǐ xiǎng háishi wèn biérén?',
-      q_vn: 'Gặp bài không làm được, bạn thích tự nghĩ hay hỏi người khác?',
-      grammar: { label: '愿意 + động từ; 遇到 + vấn đề', any: ['愿意', '遇到'] },
+      situation: 'Bạn kể cho đồng nghiệp chuyện tình cờ gặp một người quen cũ.',
+      q_zh: '你在路上遇到过以前的同学吗？你们做了什么？',
+      q_py: 'Nǐ zài lùshang yùdàoguo yǐqián de tóngxué ma? Nǐmen zuòle shénme?',
+      q_vn: 'Bạn từng tình cờ gặp bạn học cũ trên đường chưa? Hai người đã làm gì?',
+      grammar: { label: '一边……一边……', any: ['一边'] },
       need: [
-        { label: 'Nói tự nghĩ hay đi hỏi', any: ['自己', '问', '老师', '同学', '愿意'] },
-        { label: 'Nói thứ tự làm', any: ['先', '再', '然后', '最后'] }
+        { label: 'Nói gặp ở đâu', any: ['遇到'] },
+        { label: 'Kể hai người làm gì', any: ['走', '喝', '吃', '聊天', '说'] }
       ],
-      bonus: { label: 'Dùng 终于 nói kết quả', any: ['终于'] },
-      vocab: ['遇到', '愿意', '终于'],
-      minLen: 20,
-      sample: '遇到不会做的问题，我一般先自己想一想。想了很久还不明白，我才愿意去问老师或者同学。终于明白的时候，我特别高兴。',
-      sample_py: 'Yùdào bú huì zuò de wèntí, wǒ yìbān xiān zìjǐ xiǎng yi xiǎng. Xiǎng le hěn jiǔ hái bù míngbai, wǒ cái yuànyì qù wèn lǎoshī huòzhě tóngxué. Zhōngyú míngbai de shíhou, wǒ tèbié gāoxìng.',
-      sample_vn: 'Gặp bài không làm được, tôi thường tự nghĩ trước. Nghĩ lâu vẫn không hiểu thì tôi mới hỏi thầy hoặc bạn. Lúc cuối cùng hiểu ra, tôi rất vui.',
-      tip: '终于 dùng cho kết quả đạt được sau quá trình dài: 我终于明白了。'
+      bonus: { label: 'Nói bao lâu chưa gặp', any: ['年', '没见'] },
+      vocab: ['遇到', '一边'],
+      minLen: 16,
+      sample: '上个月我在公园遇到了一个小学同学，我们一边走一边聊天儿，说了两个多小时。',
+      sample_py: 'Shàng ge yuè wǒ zài gōngyuán yùdàole yí ge xiǎoxué tóngxué, wǒmen yìbiān zǒu yìbiān liáotiānr, shuōle liǎng ge duō xiǎoshí.',
+      sample_vn: 'Tháng trước tôi tình cờ gặp một bạn tiểu học ở công viên, chúng tôi vừa đi vừa trò chuyện, nói hơn hai tiếng đồng hồ.',
+      tip: '遇到 = tình cờ gặp (không hẹn trước); 见面 = gặp có hẹn.'
     },
     {
-      situation: 'Bạn cũ lâu ngày gặp lại hỏi thăm cuộc sống của bạn.',
-      q_zh: '说一说你现在的生活：经常做什么？',
-      q_py: 'Shuō yi shuō nǐ xiànzài de shēnghuó: jīngcháng zuò shénme?',
-      q_vn: 'Hãy kể về cuộc sống hiện nay của bạn: thường làm gì?',
-      grammar: { label: '经常 + động từ; 一般 + động từ', any: ['经常', '一般'] },
+      situation: 'Một người bạn hỏi bạn có hài lòng với cuộc sống bây giờ không.',
+      q_zh: '你对现在的生活满意吗？你觉得自己应该多做什么？',
+      q_py: 'Nǐ duì xiànzài de shēnghuó mǎnyì ma? Nǐ juéde zìjǐ yīnggāi duō zuò shénme?',
+      q_vn: 'Bạn có hài lòng với cuộc sống hiện tại không? Bạn thấy mình nên làm gì nhiều hơn?',
+      grammar: { label: '应该 + động từ (nên làm gì)', any: ['应该'] },
       need: [
-        { label: 'Kể việc ban ngày', any: ['上班', '上课', '学习', '工作'] },
-        { label: 'Kể việc buổi tối hoặc cuối tuần', any: ['晚上', '周末', '公园', '朋友', '休息', '运动'] }
+        { label: 'Nói hài lòng hay không', any: ['满意', '不错', '太忙'] },
+        { label: 'Nói việc nên làm nhiều hơn', any: ['锻炼', '运动', '休息', '学习', '看书', '爬山'] }
       ],
-      bonus: { label: 'Nhận xét chung về cuộc sống', any: ['简单', '安静', '忙', '快乐', '生活'] },
-      vocab: ['生活', '经常', '一般'],
-      minLen: 20,
-      sample: '我现在的生活比较简单：白天上班，晚上经常去公园走走或者跟朋友聊天儿。周末我一般在家休息，生活很安静。',
-      sample_py: 'Wǒ xiànzài de shēnghuó bǐjiào jiǎndān: báitiān shàngbān, wǎnshang jīngcháng qù gōngyuán zǒuzou huòzhě gēn péngyou liáo tiān ér. Zhōumò wǒ yìbān zài jiā xiūxi, shēnghuó hěn ānjìng.',
-      sample_vn: 'Cuộc sống của tôi giờ khá đơn giản: ban ngày đi làm, buổi tối hay ra công viên đi dạo hoặc trò chuyện với bạn. Cuối tuần tôi thường nghỉ ở nhà, cuộc sống rất yên bình.',
-      tip: '经常 = thường xuyên, 一般 = thông thường, nói về thói quen.'
+      bonus: { label: 'Dùng 经常 / 一般', any: ['经常', '一般'] },
+      vocab: ['生活', '应该'],
+      minLen: 16,
+      sample: '我对现在的生活比较满意，就是太忙了。我觉得自己应该多锻炼身体，周末经常去爬山。',
+      sample_py: 'Wǒ duì xiànzài de shēnghuó bǐjiào mǎnyì, jiùshì tài máng le. Wǒ juéde zìjǐ yīnggāi duō duànliàn shēntǐ, zhōumò jīngcháng qù páshān.',
+      sample_vn: 'Tôi khá hài lòng với cuộc sống hiện tại, chỉ là bận quá. Tôi thấy mình nên tập thể dục nhiều hơn, cuối tuần hay đi leo núi.',
+      tip: '应该 đứng trước động từ: 应该多锻炼; không nên = 不应该 (không nói 没应该).'
     }
   ]
 };
@@ -1862,28 +1869,20 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Chúng tôi cuối cùng cũng đến rồi!', zh:'我们终于到了！', py:'Wǒmen zhōngyú dào le!'},
-  {vi:'Đây là món quà tặng cho bà nội.', zh:'这是给奶奶的礼物。', py:'Zhè shì gěi nǎinai de lǐwù.'},
-  {vi:'Cô ấy là một người bạn học cũ tôi tình cờ gặp trên đường.', zh:'她是我在路上遇到的一个老同学。', py:'Tā shì wǒ zài lùshang yùdào de yí ge lǎo tóngxué.'},
-  {vi:'Không còn taxi nữa, tôi là đi xe đạp về đấy.', zh:'没有出租车了，我是骑车回来的。', py:'Méiyǒu chūzūchē le, wǒ shì qí chē huílai de.'},
-  {vi:'Tôi thích uống cà phê ở quán hơn.', zh:'我更愿意在咖啡店喝咖啡。', py:'Wǒ gèng yuànyì zài kāfēidiàn hē kāfēi.'},
-  {vi:'Làm việc lâu nên đứng dậy vận động một chút.', zh:'工作久了应该站起来活动一下。', py:'Gōngzuò jiǔ le yīnggāi zhàn qilai huódòng yíxià.'},
-  {vi:'Bạn nên đi ngủ sớm hơn một chút.', zh:'你应该早点儿睡觉。', py:'Nǐ yīnggāi zǎodiǎnr shuìjiào.'},
-  {vi:'Hiện giờ anh ấy đã là giám đốc rồi.', zh:'现在他已经是经理了。', py:'Xiànzài tā yǐjīng shì jīnglǐ le.'},
+  {vi:'Đừng vừa ăn vừa nói chuyện.', zh:'别一边吃饭一边说话。', py:'Bié yìbiān chīfàn yìbiān shuōhuà.'},
+  {vi:'Thầy hiệu trưởng bước vào lớp, chúng tôi đều đứng dậy.', zh:'校长走进教室来了，我们都站起来了。', py:'Xiàozhǎng zǒujìn jiàoshì lái le, wǒmen dōu zhàn qǐlai le.'},
+  {vi:'Hôm qua tôi tình cờ gặp thầy giáo cũ ở ngân hàng.', zh:'昨天我在银行遇到了以前的老师。', py:'Zuótiān wǒ zài yínháng yùdàole yǐqián de lǎoshī.'},
+  {vi:'Nghe nói bạn sắp đi Bắc Kinh, bạn có muốn đi cùng chúng tôi không?', zh:'听说你要去北京，你愿意跟我们一起去吗？', py:'Tīngshuō nǐ yào qù Běijīng, nǐ yuànyì gēn wǒmen yìqǐ qù ma?'},
+  {vi:'Anh ấy mang về rất nhiều quà cho người nhà.', zh:'他给家里人带回来很多礼物。', py:'Tā gěi jiā li rén dài huílai hěn duō lǐwù.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì trời mưa to nên chúng tôi không đi được.', zh:'因为下大雨，所以我们去不了。', py:'Yīnwèi xià dàyǔ, suǒyǐ wǒmen qù bu liǎo.'},
-  {vi:'Tuy anh ấy đã là hiệu trưởng rồi nhưng anh ấy vẫn đạp xe đi làm mỗi ngày.', zh:'虽然他已经是校长了，但是他还是每天骑车上班。', py:'Suīrán tā yǐjīng shì xiàozhǎng le, dànshì tā háishi měitiān qí chē shàngbān.'},
-  {vi:'Nếu bạn có thể nghỉ ngơi nhiều hơn thì tôi sẽ yên tâm.', zh:'如果你能多休息，我就放心了。', py:'Rúguǒ nǐ néng duō xiūxi, wǒ jiù fàngxīn le.'},
-  {vi:'Chị gái vừa uống trà vừa đọc sách.', zh:'姐姐一边喝茶一边看书。', py:'Jiějie yìbiān hē chá yìbiān kàn shū.'},
-  {vi:'Tôi thật sự sợ em ấy học nhiều quá sẽ mệt đến kiệt sức.', zh:'我真怕她学习太多，都要累坏了。', py:'Wǒ zhēn pà tā xuéxí tài duō, dōu yào lèihuài le.'},
-  {vi:'Con chó nhỏ chạy ra khỏi phòng.', zh:'小狗从房间跑出来。', py:'Xiǎogǒu cóng fángjiān pǎo chulai.'},
-  {vi:'Anh trai mua một quả dưa hấu mang về.', zh:'哥哥买回来一个西瓜。', py:'Gēge mǎi huilai yí ge xīguā.'},
-  {vi:'Mẹ mang một số quà từ chợ về nhà.', zh:'妈妈从市场带回来一些礼物。', py:'Māma cóng shìchǎng dài huilai yìxiē lǐwù.'},
+  {vi:'Bà nội tôi năm nay tám mươi tuổi rồi, sáng nào cũng đi dạo ở công viên.', zh:'我奶奶今年八十岁了，每天早上都在公园走一走。', py:'Wǒ nǎinai jīnnián bāshí suì le, měi tiān zǎoshang dōu zài gōngyuán zǒu yi zǒu.'},
+  {vi:'Bạn mang cái ghế này qua đó giúp tôi nhé.', zh:'你帮我把这把椅子拿过去吧。', py:'Nǐ bāng wǒ bǎ zhè bǎ yǐzi ná guòqu ba.'},
+  {vi:'Bạn nên thường xuyên gọi điện cho bố mẹ.', zh:'你应该经常给爸爸妈妈打电话。', py:'Nǐ yīnggāi jīngcháng gěi bàba māma dǎ diànhuà.'},
 ];
 
 // ══════════════════════════════════════════
